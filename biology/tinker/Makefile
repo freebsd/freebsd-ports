@@ -7,6 +7,7 @@
 
 PORTNAME=	tinker
 PORTVERSION=	3.9
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
@@ -28,7 +29,7 @@ pre-fetch:
 	@${ECHO_MSG} If you get a CHECKSUM mismatch, try doing a \'make distclean\' first.
 	@${ECHO_MSG} ""
 
-.if defined(WANT_VIEWER)
+.if defined(WITH_VIEWER)
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
 .elif ${XFREE86_VERSION} == 4
@@ -42,7 +43,7 @@ post-build:
 pre-extract:
 	@${ECHO} ""
 	@${ECHO} If you would like to also build
-	@${ECHO} the molecular viewer, define WANT_VIEWER.
+	@${ECHO} the molecular viewer, define WITH_VIEWER.
 	@${ECHO} ""
 .endif
 
@@ -114,7 +115,7 @@ ${PREFIX}/share/tinker/bench
 	@${INSTALL_DATA} ${WRKDIR}/tinker/test/* ${PREFIX}/share/tinker/test
 .endif
 
-.if defined(WANT_VIEWER)
+.if defined(WITH_VIEWER)
 	@${MKDIR} ${PREFIX}/share/tinker/rasmol
 	@${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${FILESDIR}/tview ${PREFIX}/bin

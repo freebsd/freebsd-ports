@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Sat Jul 21 10:04:48 2001
-+++ ../make/Makefile	Wed Sep  5 13:51:19 2001
+--- ../make/Makefile.orig	Tue Nov 13 10:16:27 2001
++++ ../make/Makefile	Mon Dec 31 15:33:40 2001
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -68,7 +68,7 @@
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -494,11 +512,13 @@
+@@ -497,11 +515,13 @@
             xyzpdb.x \
             xyzsybyl.x
  
@@ -84,7 +84,7 @@
  
  all:	${EXEFILES}
  
-@@ -509,57 +529,57 @@
+@@ -512,58 +532,58 @@
  	cat *.i *.f > tinker.txt
  
  rename:
@@ -104,6 +104,7 @@
 -	mv  minimize.x   $(BINDIR)/minimize
 -	mv  minirot.x    $(BINDIR)/minirot
 -	mv  minrigid.x   $(BINDIR)/minrigid
+-	mv  monte.x      $(BINDIR)/monte
 -	mv  newton.x     $(BINDIR)/newton
 -	mv  newtrot.x    $(BINDIR)/newtrot
 -	mv  nucleic.x    $(BINDIR)/nucleic
@@ -155,6 +156,7 @@
 +	${INSTALL_PROGRAM}  minimize.x   $(BINDIR)/minimize
 +	${INSTALL_PROGRAM}  minirot.x    $(BINDIR)/minirot
 +	${INSTALL_PROGRAM}  minrigid.x   $(BINDIR)/minrigid
++	${INSTALL_PROGRAM}  monte.x      $(BINDIR)/monte
 +	${INSTALL_PROGRAM}  newton.x     $(BINDIR)/newton
 +	${INSTALL_PROGRAM}  newtrot.x    $(BINDIR)/newtrot
 +	${INSTALL_PROGRAM}  nucleic.x    $(BINDIR)/nucleic
@@ -193,13 +195,3 @@
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
-@@ -682,8 +702,8 @@
-         bspline.o \
-         calendar.o \
-         center.o \
--        chkxyz.o \
-         cholesky.o \
-+        chkxyz.o \
-         clock.o \
-         cluster.o \
-         column.o \
