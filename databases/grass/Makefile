@@ -8,7 +8,7 @@
 PORTNAME=	grass
 PORTVERSION=	5.0.2
 PORTREVISION=	3
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass50/source/ \
 		http://grass.meteo.uni.wroc.pl/grass50/source/ \
