@@ -1,0 +1,10 @@
+A Utility for saying hello to the world and reading email
+
+From the included Texinfo file:
+	The GNU hello program produces a familiar, friendly greeting.
+	It allows nonprogrammers to use a classic computer science
+	tool which would otherwise be unavailable to them.  Because
+	it is protected by the GNU General Public License, users
+	are free to share and change it.
+
+see hello --help for more info
