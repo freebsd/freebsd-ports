@@ -1,0 +1,24 @@
+************************************************************
+NOTE: If you do not use Gnome as your desktop (if you do
+not have the gnomecore port/package installed), you may need
+to edit your ~/.gnome/Gnome file in order to see the Grip
+help pages.
+
+The following settings worked for me:
+
+--8<----8<----8<----8<----8<----8<----8<----8<----8<----8<--
+[URL Handlers]
+default-show=gnome-moz-remote --newwin "%s"
+info-show=kfmclient openURL "%s"
+man-show=kfmclient openURL "%s"
+ghelp-show=gnome-moz-remote --newwin "%s"
+--8<----8<----8<----8<----8<----8<----8<----8<----8<----8<--
+
+Note to KDE users: using 'konqueror' or 'kfmclient' will
+not work, since the help pages use a 'ghelp:' URL, which is
+not understood by KDE.
+************************************************************
+
+
+
+
