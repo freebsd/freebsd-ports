@@ -3,22 +3,31 @@
 # Date created:         27  Dec 1996
 # Whom:                 proff@iq.org
 #
-# $Id: Makefile,v 1.2 1997/02/18 10:09:08 obrien Exp $
+# $Id: Makefile,v 1.3 1997/02/19 04:58:23 asami Exp $
 #
 
-DISTNAME=       sced-0.94
+DISTNAME=       sced-1.01
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.cs.su.oz.au/stephen/sced/src/
+MASTER_SITES=	http://www.cs.berkeley.edu/~schenney/sced/src/ \
+		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
-GNU_CONFIGURE=	true
-IS_INTERACTIVE=	true
+MAINTAINER=	ports@FreeBSD.ORG
 
-do-install: all
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+
+USE_XLIB=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		sced.1
+
+do-install:
 	${INSTALL_PROGRAM}  ${WRKSRC}/sced ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/sced
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/sced
-	${MKDIR} ${PREFIX}/lib/sced/tutorials
-	${INSTALL_DATA} ${WRKSRC}/tutorials/* ${PREFIX}/lib/sced/tutorials
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/sced.1 ${PREFIX}/man/man1
+	${MKDIR} ${PREFIX}/lib/sced
 	${INSTALL_DATA} ${WRKSRC}/scenerc ${PREFIX}/lib/sced
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/sced
+	${INSTALL_DATA} ${WRKSRC}/docs/guide.* ${PREFIX}/share/doc/sced
+.endif
 
 .include <bsd.port.mk>

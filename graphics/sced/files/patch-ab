@@ -1,0 +1,369 @@
+--- configure.orig	Thu Jun 25 21:43:01 1998
++++ configure	Sun Dec 27 02:18:54 1998
+@@ -2398,7 +2398,7 @@
+   cached=n
+   sc_cv_sup_povray=yes
+   answer=
+-  read answer
++  echo
+   if test ! -z "$answer"; then
+     if test ! \( "$answer" = "y" -o "$answer" = "Y" \) ; then
+       sc_cv_sup_povray=no
+@@ -2419,8 +2419,8 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cached=n
+-    sc_cv_prog_povray=
+-    read sc_cv_prog_povray
++    sc_cv_prog_povray=${prefix}/bin/povray
++    echo $sc_cv_prog_povray
+   
+ fi
+ 
+@@ -2433,8 +2433,8 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cached=n
+-    sc_cv_opt_povray=
+-    read sc_cv_opt_povray
++    sc_cv_opt_povray="+d +p"
++    echo $sc_cv_opt_povray
+   
+ fi
+ 
+@@ -2454,262 +2454,6 @@
+ 
+ echo
+ 
+-echo $ac_n Radiance support [y]?" $ac_c"
+-cached=
+-if eval "test \"`echo '$''{'sc_cv_sup_radiance'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-  sc_cv_sup_radiance=yes
+-  answer=
+-  read answer
+-  if test ! -z "$answer"; then
+-    if test ! \( "$answer" = "y" -o "$answer" = "Y" \) ; then
+-      sc_cv_sup_radiance=no
+-    else
+-      sc_cv_sup_radiance=yes
+-    fi
+-  fi
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_sup_radiance" 1>&6
+-  fi
+-
+-if test ! "$sc_cv_sup_radiance" = "no"; then
+-  echo $ac_n Radiance path?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_prog_radiance'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-    sc_cv_prog_radiance=
+-    read sc_cv_prog_radiance
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_prog_radiance" 1>&6
+-  fi
+-  echo $ac_n Radiance arguments?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_opt_radiance'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-    sc_cv_opt_radiance=
+-    read sc_cv_opt_radiance
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_opt_radiance" 1>&6
+-  fi
+-  radiance_support=1
+-  RADIANCE_SRC=\$\(C_DIR\)/radiance.c
+-  RADIANCE_OBJ=\$\(C_DIR\)/radiance.o
+-else
+-  sc_cv_prog_radiance=
+-  sc_cv_opt_radiance=
+-  radiance_support=0
+-  RADIANCE_SRC=
+-  RADIANCE_OBJ=
+-fi
+-
+-echo
+-
+-echo $ac_n Rayshade support [y]?" $ac_c"
+-cached=
+-if eval "test \"`echo '$''{'sc_cv_sup_rayshade'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-  answer=
+-  sc_cv_sup_rayshade=yes
+-  read answer
+-  if test ! -z "$answer"; then
+-    if test ! \( "$answer" = "y" -o "$answer" = "Y" \) ; then
+-      sc_cv_sup_rayshade=no
+-    else
+-      sc_cv_sup_rayshade=yes
+-    fi
+-  fi
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_sup_rayshade" 1>&6
+-  fi
+-
+-if test ! "$sc_cv_sup_rayshade" = "no"; then
+-  echo $ac_n Rayshade path?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_prog_rayshade'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-    sc_cv_prog_rayshade=
+-    read sc_cv_prog_rayshade
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_prog_rayshade" 1>&6
+-  fi
+-  echo $ac_n Rayshade arguments?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_opt_rayshade'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-    sc_cv_opt_rayshade=
+-    read sc_cv_opt_rayshade
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_opt_rayshade" 1>&6
+-  fi
+-  rayshade_support=1
+-  RAYSHADE_SRC=\$\(C_DIR\)/rayshade.c
+-  RAYSHADE_OBJ=\$\(C_DIR\)/rayshade.o
+-else
+-  sc_cv_prog_rayshade=
+-  sc_cv_opt_rayshade=
+-  rayshade_support=0
+-  RAYSHADE_SRC=
+-  RAYSHADE_OBJ=
+-fi
+-
+-echo
+-
+-echo $ac_n Renderman support [y]?" $ac_c"
+-cached=
+-if eval "test \"`echo '$''{'sc_cv_sup_renderman'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  cached=n
+-  sc_cv_sup_renderman=yes
+-  answer=
+-  read answer
+-  if test ! -z "$answer"; then
+-    if test ! \( "$answer" = "y" -o "$answer" = "Y" \) ; then
+-      sc_cv_sup_renderman=no
+-    else
+-      sc_cv_sup_renderman=yes
+-    fi
+-  fi
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_sup_renderman" 1>&6
+-  fi
+-
+-if test ! "$sc_cv_sup_renderman" = "no"; then
+-  echo $ac_n Renderman path?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_prog_renderman'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  sc_cv_prog_renderman=
+-    read sc_cv_prog_renderman
+-    cached=n
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_prog_renderman" 1>&6
+-  fi
+-  echo $ac_n Renderman arguments?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_opt_renderman'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  sc_cv_opt_renderman=
+-    read sc_cv_opt_renderman
+-    cached=n
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_opt_renderman" 1>&6
+-  fi
+-  renderman_support=1
+-  RENDERMAN_SRC=\$\(C_DIR\)/renderman.c
+-  RENDERMAN_OBJ=\$\(C_DIR\)/renderman.o
+-else
+-  sc_cv_prog_renderman=
+-  sc_cv_opt_renderman=
+-  renderman_support=0
+-  RENDERMAN_SRC=
+-  RENDERMAN_OBJ=
+-fi
+-
+-echo
+-
+-echo $ac_n VRML support [y]?" $ac_c"
+-cached=
+-if eval "test \"`echo '$''{'sc_cv_sup_vrml'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  sc_cv_sup_vrml=yes
+-  answer=
+-  read answer
+-  cached=n
+-  if test ! -z "$answer"; then
+-    if test ! \( "$answer" = "y" -o "$answer" = "Y" \) ; then
+-      sc_cv_sup_vrml=no
+-    else
+-      sc_cv_sup_vrml=yes
+-    fi
+-  fi
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_sup_vrml" 1>&6
+-  fi
+-
+-if test ! "$sc_cv_sup_vrml" = "no"; then
+-  echo $ac_n VRML path?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_prog_vrml'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  sc_cv_prog_vrml=
+-    read sc_cv_prog_vrml
+-    cached=n
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_prog_vrml" 1>&6
+-  fi
+-  echo $ac_n VRML arguments?" $ac_c"
+-  cached=
+-  if eval "test \"`echo '$''{'sc_cv_opt_vrml'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  sc_cv_opt_vrml=
+-    read sc_cv_opt_vrml
+-    cached=n
+-  
+-fi
+-
+-  if test -z "$cached"; then
+-    echo "$ac_t""$sc_cv_opt_vrml" 1>&6
+-  fi
+-  vrml_support=1
+-  VRML_SRC=\$\(C_DIR\)/vrml.c
+-  VRML_OBJ=\$\(C_DIR\)/vrml.o
+-else
+-  sc_cv_prog_vrml=
+-  sc_cv_opt_vrml=
+-  vrml_support=0
+-  VRML_SRC=
+-  VRML_OBJ=
+-fi
+-
+-echo
+-
+ #
+ # Add support for previous versions, if required.
+ #
+@@ -2720,7 +2464,7 @@
+ else
+   sc_cv_oldvers=yes
+   vers_answer=
+-  read vers_answer
++  echo
+   if test ! -z "$vers_answer"; then
+     if test ! \( "$vers_answer" = "y" -o "$vers_answer" = "Y" \) ; then
+       sc_cv_oldvers=no
+@@ -2785,51 +2529,51 @@
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RADIANCE_SUPPORT $radiance_support
++#define RADIANCE_SUPPORT 0
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RADIANCE_PATH "$sc_cv_prog_radiance"
++#define RADIANCE_PATH ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RADIANCE_OPTIONS "$sc_cv_opt_radiance"
++#define RADIANCE_OPTIONS ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RAYSHADE_SUPPORT $rayshade_support
++#define RAYSHADE_SUPPORT 0
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RAYSHADE_PATH "$sc_cv_prog_rayshade"
++#define RAYSHADE_PATH ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RAYSHADE_OPTIONS "$sc_cv_opt_rayshade"
++#define RAYSHADE_OPTIONS ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RENDERMAN_SUPPORT $renderman_support
++#define RENDERMAN_SUPPORT 0
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RENDERMAN_PATH "$sc_cv_prog_renderman"
++#define RENDERMAN_PATH ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define RENDERMAN_OPTIONS "$sc_cv_opt_renderman"
++#define RENDERMAN_OPTIONS ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define VRML_SUPPORT $vrml_support
++#define VRML_SUPPORT 0
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define VRML_PATH "$sc_cv_prog_vrml"
++#define VRML_PATH ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
+-#define VRML_OPTIONS "$sc_cv_opt_vrml"
++#define VRML_OPTIONS ""
+ EOF
+ 
+ cat >> confdefs.h <<EOF
