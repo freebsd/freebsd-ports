@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.orig	Wed Jan 14 08:48:38 2004
-+++ Makefile	Fri Jan 30 02:25:09 2004
+--- Makefile.orig	Thu Apr  1 01:43:10 2004
++++ Makefile	Wed Apr 14 22:08:43 2004
 @@ -43,10 +43,10 @@
  #K6OPT  = -DK6OPT
  
@@ -25,7 +25,7 @@ $FreeBSD$
  
  # Staging directory
  # Files are copied here temporarily during the install process
-@@ -88,28 +88,26 @@
+@@ -88,28 +88,27 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -51,11 +51,11 @@ $FreeBSD$
  MODULES_DIR=$(ASTLIBDIR)/modules
  AGI_DIR=$(ASTVARLIBDIR)/agi-bin
  
- INCLUDE=-Iinclude -I../include
+ INCLUDE=-Iinclude -I../include 
 -CFLAGS=-pipe  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
-+CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
++CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
  CFLAGS+=$(OPTIMIZE)
--CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+ CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
  CFLAGS+=$(shell if uname -m | grep -q ppc; then echo "-fsigned-char"; fi)
  ifeq (${OSARCH},FreeBSD)
 -CFLAGS+=-pthread
@@ -64,7 +64,7 @@ $FreeBSD$
  endif
  ifeq (${OSARCH},OpenBSD)
  CFLAGS+=-pthread
-@@ -151,7 +149,7 @@
+@@ -151,7 +150,7 @@
  LIBS=-pthread
  else
  ifeq (${OSARCH},FreeBSD)
@@ -73,7 +73,7 @@ $FreeBSD$
  else
  endif
  endif
-@@ -179,7 +177,7 @@
+@@ -179,7 +178,7 @@
  SOLINK=-shared -Xlinker -x
  endif
  
@@ -82,7 +82,7 @@ $FreeBSD$
  INSTALL=install
  
  _all: all
-@@ -200,13 +198,13 @@
+@@ -200,13 +199,13 @@
  	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
@@ -103,7 +103,7 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
  include .depend
-@@ -244,8 +242,8 @@
+@@ -244,8 +243,8 @@
  		exit 1; \
  	fi
  
@@ -114,7 +114,7 @@ $FreeBSD$
  
  subdirs: 
  	for x in $(SUBDIRS); do $(MAKE) -C $$x || exit 1 ; done
-@@ -260,10 +258,10 @@
+@@ -260,10 +259,10 @@
  	$(MAKE) -C stdtime clean
  
  datafiles: all
@@ -127,7 +127,7 @@ $FreeBSD$
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -271,18 +269,18 @@
+@@ -271,18 +270,18 @@
  	done
  	for x in sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
@@ -151,7 +151,7 @@ $FreeBSD$
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -294,105 +292,74 @@
+@@ -294,105 +293,74 @@
  	fi
  
  bininstall: all

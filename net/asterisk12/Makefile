@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	0.7.2
+PORTVERSION=	0.9.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
-
-FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/27c331d5-64c7-11d8-80e3-0020ed76ef5a.html
 
 ONLY_FOR_ARCHS=	i386
 
@@ -36,4 +34,14 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		OSVERSION=${OSVERSION} \
 		CXX="${CXX}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ZAPTEL) || exists(${LOCALBASE}/include/zaptel.h)
+BUILD_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+PLIST_SUB=	ZAPTEL=""
+.else
+PLIST_SUB=	ZAPTEL="@comment "
+.endif
+
+.include <bsd.port.post.mk>
