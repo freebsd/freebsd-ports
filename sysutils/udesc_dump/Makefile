@@ -18,4 +18,9 @@ MANCOMPRESSED=	yes
 
 MAKE_ENV+=	MANDIR=${PREFIX}/man/man
 
+USE_REINPLACE=	yes
+
+do-patch:
+	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
