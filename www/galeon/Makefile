@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/sobomax/
