@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.12
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
 
 MAINTAINER=	kiwi@oav.net
-COMMENT=	LMTPD is a lmtp server compliant with RFC 2033 and Maildir++
+COMMENT=	LMTP server compliant with RFC 2033 and Maildir++
 
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -26,8 +26,13 @@ CONFIGURE_ARGS=	--with-mysqllog --with-db3 -without-db4 --with-pcre --without-pe
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		lmtpd.8
+DOCS=		NEWS README TODO
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/lmtpd.conf-sample ${PREFIX}/etc/lmtpd.conf.dist
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
