@@ -776,6 +776,7 @@
     SUBDIR += ruby-sdl
     SUBDIR += ruby-setup.rb
     SUBDIR += ruby-slang
+    SUBDIR += ruby-strongtyping
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-testunit
     SUBDIR += ruby-textbuf
