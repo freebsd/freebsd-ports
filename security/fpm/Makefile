@@ -15,6 +15,7 @@ MAINTAINER=	anders@FreeBSD.org
 
 USE_GNOME=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 SOURCEFILES=	main.c fpm.c support.c interface.c passfile.c callbacks.c \
 		blowfish.c fpm_crypt.c fpm_gpw.c md5.c fpm_clist.c fpm_pref.c
@@ -26,7 +27,7 @@ GNOME_LIBS?=	`${GNOME_CONFIG} --libs gnomeui` \
 CFLAGS+=	-DHAVE_CONFIG_H -I. -I.. ${GNOME_CFLAGS}
 
 pre-build:
-	${PERL} -pi -e "s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
+	${REINPLACE_CMD} -E -e ""s@encrypt\(@bfishencrypt\(@g" ${WRKSRC}/src/blowfish.c
 
 do-build:
 .for f in ${SOURCEFILES}

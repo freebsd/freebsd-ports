@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 MAINTAINER=	anders@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 DOCFILES=	README AUTHORS ChangeLog NEWS TODO BUGS
 
@@ -25,7 +26,7 @@ MAN8=		oftpd.8
 
 post-patch:
 .if defined(MAX_NUM_CLIENTS)
-	@${PERL} -pi -e "s,MAX_NUM_CLIENTS 300,MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}," ${WRKSRC}/src/oftpd.h
+	${REINPLACE_CMD} -e "s@MAX_NUM_CLIENTS 300@MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}@" ${WRKSRC}/src/oftpd.h
 .endif
 
 do-install:
