@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure	2001/10/27 12:43:19	1.1
-+++ configure	2001/10/27 12:43:58
-@@ -5747,9 +5747,9 @@
+--- configure.orig	Mon Jan  7 11:09:58 2002
++++ configure	Fri Jan 11 11:51:55 2002
+@@ -2151,9 +2151,9 @@
    rm -f conf.glibtest
  
  
@@ -15,12 +15,12 @@ $FreeBSD$
  
  
  for ac_prog in 'bison -y' byacc
-@@ -7273,57 +7273,47 @@
+@@ -3757,37 +3757,30 @@
  fi
  
  
 +echo $ac_n "checking how many vectors writev is capable to handle""... $ac_c" 1>&6
-+echo "configure:7278: checking how many vectors writev is capable to handle" >&5
++echo "configure:3761: checking how many vectors writev is capable to handle" >&5
  if test "$cross_compiling" = yes; then
 -  cat >> confdefs.h <<\EOF
 -#define HAVE_LIMITED_WRITEV 1
@@ -29,18 +29,16 @@ $FreeBSD$
 +  MAXIOV=16
  else
    cat > conftest.$ac_ext <<EOF
--#line 7284 "configure"
-+#line 7283 "configure"
+ #line 3768 "configure"
  #include "confdefs.h"
  
 -#include <fcntl.h>
 +#include <sys/types.h>
  #include <sys/uio.h>
 -#define NIOVECS 50
--int main(int argc, char *argv[])
 +#include <fcntl.h>
 +#include <stdio.h>
-+int main()
+ int main(int argc, char *argv[])
  {
 -	char dumbuf[20] = "\n";
 -	struct iovec iovecs[NIOVECS];
@@ -56,25 +54,22 @@ $FreeBSD$
 -		return(1);
 -
 -	if(writev(fd, iovecs, NIOVECS) < 0)
--		return 1;
--
 +	FILE *f;
 +	int fd, i;
 +	static struct iovec iovecs[4097];
 +	if ((f = fopen("conftestval", "w")) == NULL || \
 +	    (fd = open("/dev/null", O_WRONLY)) < 0)
-+		exit(1);
+ 		return 1;
+-
 +	for (i = 1; i < 4098 && writev(fd, iovecs, i) >= 0; i++);
 +	fprintf(f, "%d\n", i - 1);
 +	fclose(f);
  	close(fd);
--	return 0;
-+	exit(0);
+ 	return 0;
  }
- 
+@@ -3795,19 +3788,16 @@
  EOF
--if { (eval echo configure:7313: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
-+if { (eval echo configure:7306: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
+ if { (eval echo configure:3797: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext} && (./conftest; exit) 2>/dev/null
  then
 -  :
 +  MAXIOV=`cat conftestval`
@@ -95,7 +90,7 @@ $FreeBSD$
  
  
  #######################
-@@ -8260,7 +8250,7 @@
+@@ -4740,7 +4730,7 @@
  s%@LIB_WRAP@%$LIB_WRAP%g
  s%@HAVE_HOSTS_ACCESS_TRUE@%$HAVE_HOSTS_ACCESS_TRUE%g
  s%@HAVE_HOSTS_ACCESS_FALSE@%$HAVE_HOSTS_ACCESS_FALSE%g
@@ -104,7 +99,7 @@ $FreeBSD$
  s%@subdirs@%$subdirs%g
  s%@pkglibdir@%$pkglibdir%g
  
-@@ -8584,10 +8574,6 @@
+@@ -5064,10 +5054,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
