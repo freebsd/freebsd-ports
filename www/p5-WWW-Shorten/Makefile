@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	1.84
+PORTVERSION=	1.86
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Shorten.3 \
+		WWW::Shorten::BabyURL.3 \
 		WWW::Shorten::EkDk.3 \
 		WWW::Shorten::MakeAShorterLink.3 \
 		WWW::Shorten::Metamark.3 \
@@ -33,10 +34,12 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::TinyClick.3 \
 		WWW::Shorten::TinyURL.3 \
 		WWW::Shorten::Tinylink.3 \
+		WWW::Shorten::URLjr.3 \
+		WWW::Shorten::V3.3 \
 		WWW::Shorten::qURL.3
 
 DOCS=		AUTHORS Artistic COPYING CREDITS ChangeLog Changes \
-		INSTALL LICENSE MANIFEST MANIFEST.SKIP META.yml \
+		INSTALL LICENCE MANIFEST MANIFEST.SKIP META.yml \
 		README SIGNATURE
 EXAMPLES=	shorten shortenrc
 
