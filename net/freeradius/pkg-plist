@@ -427,6 +427,7 @@ sbin/rc.radiusd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/raddb/certs/demoCA
+@dirrm etc/raddb/certs
 @exec mkdir -p /var/log/raddb
 @exec chmod -R og= /var/log/raddb
 @unexec rm -fr /var/log/raddb

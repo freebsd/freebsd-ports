@@ -94,6 +94,10 @@ MAKE_ENV+=	NOPORTDOCS=yes
 #CONFIGURE_ARGS+=--without-rlm_x99_token
 PLIST_SUB+=	TOKEN=""
 
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=	--with-pic
+.endif
+
 INSTALLS_SHLIB=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
