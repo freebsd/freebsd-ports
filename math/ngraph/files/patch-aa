@@ -3,7 +3,7 @@
 @@ -1,26 +1,26 @@
  #
  MAINVERSION = '"6.03"'
- GUIVERSION = '".20"'
+ GUIVERSION = '".30"'
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
 -BINDIR = /usr/local/bin
