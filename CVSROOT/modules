@@ -6372,6 +6372,7 @@ p5-AI-Pathfinding-AStar	ports/devel/p5-AI-Pathfinding-AStar
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
 p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-AcePerl	ports/biology/p5-AcePerl
+p5-AddressBook	ports/net/p5-AddressBook
 p5-Agent	ports/devel/p5-Agent
 p5-Algorithm-Annotate	ports/devel/p5-Algorithm-Annotate
 p5-Algorithm-Cluster	ports/devel/p5-Algorithm-Cluster
