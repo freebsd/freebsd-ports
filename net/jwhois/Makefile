@@ -7,7 +7,7 @@
 
 PORTNAME=	jwhois
 PORTVERSION=	3.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
@@ -33,13 +33,21 @@ MANLANG=	"" sv
 MAN1=	jwhois.1
 INFO=	jwhois
 
+.include <bsd.port.pre.mk>
+
+.if exists(${FILESDIR}/jwhois.conf)
+JWHOIS_CONF_SRC=${FILESDIR}/jwhois.conf
+.else
+JWHOIS_CONF_SRC=${WRKSRC}/example/jwhois.conf
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/var/jwhois
 	${CHOWN} :nogroup ${PREFIX}/var/jwhois
 	${CHMOD} g+w ${PREFIX}/var/jwhois
 	${CHOWN} :nogroup ${PREFIX}/bin/jwhois
 	${CHMOD} g+s ${PREFIX}/bin/jwhois
-	${INSTALL_DATA} ${WRKSRC}/example/jwhois.conf ${PREFIX}/etc/jwhois.conf.sample
+	${INSTALL_DATA} ${JWHOIS_CONF_SRC} ${PREFIX}/etc/jwhois.conf.sample
 	if [ ! -f ${PREFIX}/etc/jwhois.conf ]; then ${INSTALL_DATA} ${PREFIX}/etc/jwhois.conf.sample ${PREFIX}/etc/jwhois.conf; fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
