@@ -10,9 +10,8 @@ PORTVERSION=	1.2.0
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	rdesktop-1.2.0
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	matt@fruitsalad.org
 COMMENT=	RDP client for Windows NT Terminal Server
 
 USE_XLIB=	yes
@@ -20,6 +19,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+CFLAGS+=	-DSAVE_LICENSE
 
 MAN1=		rdesktop.1
 
