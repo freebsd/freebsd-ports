@@ -32,7 +32,12 @@ WITH_DRWEBSMF_HOSTNAME!=hostname
 .endif
 .endif
 
+.if defined(BATCH)
+RANDOM_NUMBER=!!!___EDIT_THIS___!!!
+.else
 RANDOM_NUMBER!=dd if=/dev/random count=1 2> /dev/null | md5
+.endif
+
 LANGS=en ru
 CONFS=drweb_smf users
 TMPLS=error-admin mailbomb-admin mailbomb-sender skipobj-sender \
