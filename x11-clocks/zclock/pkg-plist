@@ -1,0 +1,9 @@
+etc/CORBA/servers/zclock.gnorba
+bin/zclock
+share/gnome/applets/Clocks/zclock.desktop
+share/gnome/help/zclock_applet/C/index.html
+share/gnome/help/zclock_applet/C/topic.dat
+share/locale/es/LC_MESSAGES/zclock.mo
+@dirrm share/gnome/help/zclock_applet/C/stylesheet-images
+@dirrm share/gnome/help/zclock_applet/C
+@dirrm share/gnome/help/zclock_applet
