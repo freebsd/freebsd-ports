@@ -1222,12 +1222,24 @@ LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)?DEPENDS/) {
 		&checkearlier($file, $tmp, @varnames);
 
+		my %seen_depends;
+
 		if (!defined $ENV{'PORTSDIR'}) {
 			$ENV{'PORTSDIR'} = $portsdir;
 		}
 		foreach my $i (grep(/^[A-Z_]*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
 			$i =~ s/^([A-Z_]*DEPENDS)[?+]?=[ \t]*//;
 			$j = $1;
+			$seen_depends{$j}++;
+			if ($j ne 'DEPENDS' &&
+				$i =~ /^\${([A-Z_]+DEPENDS)}\s*$/ &&
+				$seen_depends{$1} &&
+				$j ne $1)
+			{
+				print "OK: $j refers to $1, skipping checks.\n"
+					if ($verbose);
+				next;
+			}
 			print "OK: checking ports listed in $j.\n"
 				if ($verbose);
 			foreach my $k (split(/\s+/, $i)) {
