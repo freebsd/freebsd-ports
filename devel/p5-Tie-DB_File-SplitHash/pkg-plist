@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Tie/DB_File/SplitHash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_File/SplitHash/.packlist
-@dirrm %%SITE_PERL%%/Tie/DB_File
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_File/SplitHash
 @unexec rmdir %D/%%SITE_PERL%%/Tie/DB_File 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_File/SplitHash 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Tie 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/DB_File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
