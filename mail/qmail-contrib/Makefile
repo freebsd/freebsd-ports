@@ -52,8 +52,8 @@ NO_MTREE=	yes
 
 pre-patch:
 	@cd ${WRKFF} \
-	&& ${PATCH} -s <${FILESDIR}/patch-newaliases
-#	&& ${PATCH} <${FILESDIR}/patch-striplocal
+	&& ${PATCH} -s <${PATCHDIR}/extra-patch-newaliases
+#	&& ${PATCH} <${PATCHDIR}/extra-patch-striplocal
 #	apparently the above patch is no longer needed
 
 post-patch:
