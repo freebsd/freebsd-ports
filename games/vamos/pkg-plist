@@ -5,10 +5,11 @@ include/vamos/body/Body.h
 include/vamos/body/Brake.h
 include/vamos/body/Car.h
 include/vamos/body/Clutch.h
-include/vamos/body/Component.h
+include/vamos/body/Contact_Point.h
 include/vamos/body/Differential.h
 include/vamos/body/Drivetrain.h
 include/vamos/body/Engine.h
+include/vamos/body/Exerter.h
 include/vamos/body/Frame.h
 include/vamos/body/Fuel_Tank.h
 include/vamos/body/Gl_Car.h
