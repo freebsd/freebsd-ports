@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0.21
+PORTVERSION=	6.0.23
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-.for p in	01 02 03 04 05 06 07 08 09 10 11 13 14 15 16 17 18 19 20 21
+.for p in	01 02 03 04 05 06 07 08 09 10 11 13 14 15 16 17 18 19 20 21 22 23
 PATCHFILES+=	${PORTVERSION:C/\.[0-9]*$//}.0${p}
 .endfor
 
@@ -49,7 +49,7 @@ MLINKS=		vim.1 rvim.1  vim.1 rview.1
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
 		eview.1 gvimdiff.1
 
-MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
+MAKE_ARGS+=	CONF_OPT_FEAT="--with-features=big"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
 .if defined(NO_GUI)
