@@ -3,12 +3,12 @@
 # Date created:         20 Sep 1997
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/12/07 20:46:39 billf Exp $
+# $Id: Makefile,v 1.8 1999/01/07 08:19:39 simokawa Exp $
 #
 
 DISTNAME=       xfpovray-1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://crazyhorse.msfc.nasa.gov/~mallors/software/xfpovray/v1.3.1/ \
+MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/software/xfpovray/v1.3.1/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/rays/pov
 EXTRACT_SUFX=	.tgz
