@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.103 1998/05/05 05:08:39 mph Exp $
+# $Id: Makefile,v 1.104 1998/05/07 15:59:43 vanilla Exp $
 #
 
     SUBDIR += ElectricFence
     SUBDIR += SWIG
     SUBDIR += SpecTcl
+    SUBDIR += amulet
     SUBDIR += asl
     SUBDIR += autoconf
     SUBDIR += automake
