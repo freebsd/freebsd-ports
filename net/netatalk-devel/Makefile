@@ -27,7 +27,7 @@ LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
-			--with-pkgconfdir=${PREFIX}/etc \
+			--with-pkgconfdir=${PREFIX}/etc
 .if defined(WITH_PAM)
 PLIST_SUB+=	NETATALKPAM=""
 .else
