@@ -1,0 +1,11 @@
+--- lib/Makefile.orig	Thu Sep 30 10:33:02 1999
++++ lib/Makefile	Thu Sep 30 10:33:09 1999
+@@ -1,7 +1,7 @@
+ include ../Make.defines
+ 
+ # Following required by Solaris 2.x for Posix version of sigwait().
+-CFLAGS += -D_POSIX_PTHREAD_SEMANTICS
++CFLAGS += -D_POSIX_PTHREAD_SEMANTICS -I..
+ 
+ all:	${LIB_OBJS}
+ 		ar rv ${LIBUNPIPC_NAME} $?

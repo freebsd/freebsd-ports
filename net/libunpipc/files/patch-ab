@@ -1,0 +1,13 @@
+--- configure.orig	Tue Sep 28 11:52:17 1999
++++ configure	Tue Sep 28 11:52:24 1999
+@@ -2894,10 +2894,6 @@
+ LIB_OBJS="$LIB_OBJS signal.o"
+ LIB_OBJS="$LIB_OBJS signal_intr.o"
+ LIB_OBJS="$LIB_OBJS sleep_us.o"
+-if test $ac_cv_have_siginfo_t_struct = yes ; then
+-    LIB_OBJS="$LIB_OBJS signal_rt.o"
+-    LIB_OBJS="$LIB_OBJS signal_rt_intr.o"
+-fi
+ if test "$ac_cv_func_snprintf" = no ; then
+    LIB_OBJS="$LIB_OBJS snprintf.o"
+ fi
