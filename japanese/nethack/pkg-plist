@@ -1,4 +1,5 @@
 bin/jnethack
+lib/jnethackdir/jnethack
 @exec mkdir %D/lib/jnethackdir/save
 @exec chmod 775 %D/lib/jnethackdir/save
 @exec chown games.games %D/lib/jnethackdir/save
@@ -89,7 +90,6 @@ lib/jnethackdir/jcmdhelp
 lib/jnethackdir/jhelp
 lib/jnethackdir/jhh
 lib/jnethackdir/jjj
-lib/jnethackdir/jnethack
 lib/jnethackdir/jopthelp
 lib/jnethackdir/joracles
 lib/jnethackdir/jrumors
