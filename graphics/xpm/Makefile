@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1998/10/05 04:03:38 jkh Exp $
+# $Id: Makefile,v 1.21 1998/11/11 05:37:23 asami Exp $
 #
 
 DISTNAME=       xpm-3.4k
@@ -15,6 +15,7 @@ MAINTAINER=	jseger@FreeBSD.org
 USE_IMAKE=	yes
 
 MAN1=		cxpm.1 sxpm.1
+NOMANCOMPRESS=	yes
 
 .include <bsd.port.pre.mk>
 
