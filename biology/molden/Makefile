@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	3.7
-PORTREVISION=	2
+PORTVERSION=	3.8
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -22,8 +21,12 @@ RESTRICTED=	"free for academic, non profit usage;"
 NO_CDROM=	"Do not re-distribute source and executable."
 NO_PACKAGE=	"Though the source codes are accessible, the author is hoping for distribution in an original form."
 MAKEFILE=	${WRKSRC}/makefile
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/xwin.c
 
 post-configure:
 	@${ECHO_MSG} "********************"
