@@ -76,29 +76,19 @@ COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .if ${PORTVERSION} == 2.0 && !defined(INTERNATIONAL_PRODUCTS)
 LANGS=		ja
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
 PLIST=		${MASTERDIR}/pkg-plist20
 .elif ${PORTVERSION} == 1.3
 PLIST=		${MASTERDIR}/pkg-plist13
 .elif ${PORTVERSION} == 1.3.1
 LANGS=		de es fr it ja ko nl pt zh zh_TW
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ko/LC_COLLATE:${PORTSDIR}/korean/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/zh_TW.Big5/LC_COLLATE:${PORTSDIR}/chinese/linux_locale
 #RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/cmex16m.pcf.gz:${PORTSDIR}/chinese/cmexfonts
 PLIST=		${MASTERDIR}/pkg-plist131
 .elif ${PORTVERSION} == 1.0
 LANGS=		de es fr it ja ko nl pt zh zh_TW
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ko/LC_COLLATE:${PORTSDIR}/korean/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/zh_TW.Big5/LC_COLLATE:${PORTSDIR}/chinese/linux_locale
 #RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/cmex16m.pcf.gz:${PORTSDIR}/chinese/cmexfonts
 PLIST=		${MASTERDIR}/pkg-plist10
 .elif defined(INTERNATIONAL_PRODUCTS) || ${PORTVERSION} == 2.1
 LANGS=		de es fr it ja ko nl pt zh zh_TW
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ko/LC_COLLATE:${PORTSDIR}/korean/linux_locale
-RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/zh_TW.Big5/LC_COLLATE:${PORTSDIR}/chinese/linux_locale
 #RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/cmex16m.pcf.gz:${PORTSDIR}/chinese/cmexfonts
 PLIST=		${MASTERDIR}/pkg-plist21
 .endif
