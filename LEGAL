@@ -398,6 +398,7 @@ motoya/*		ports/japanese/motoya-ttfonts	Personal use only and
 moviedb/*		ports/misc/moviedb	No commercial use
 MPlayer*		ports/multimedia/mplayer Restricted binary distribution
 msql-*			ports/databases/msql	Not free for commercial org.
+MT-2.*			ports/www/MT		No redistribution
 mtv-*.tar.gz		ports/multimedia/mtv	No redistribution
 mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia-*		ports/japanese/mypaedia-fpw The original dictionary is not free
