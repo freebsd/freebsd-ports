@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.89 1997/12/19 06:53:28 vanilla Exp $
+# $Id: Makefile,v 1.90 1998/01/21 07:08:49 ache Exp $
 #
 
     SUBDIR += ElectricFence
@@ -17,6 +17,7 @@
     SUBDIR += crosssco
     SUBDIR += cs
     SUBDIR += cutils
+    SUBDIR += cweb
     SUBDIR += cxref
     SUBDIR += ddd
     SUBDIR += dmake
