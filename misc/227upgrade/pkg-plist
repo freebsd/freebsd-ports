@@ -2,3 +2,4 @@ usr/share/mk/bsd.port.mk
 usr/share/mk/bsd.port.pre.mk
 usr/share/mk/bsd.port.post.mk
 usr/share/mk/bsd.port.subdir.mk
+usr/share/mk/sys.mk
