@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.9.2
+PORTVERSION=	2.9.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
