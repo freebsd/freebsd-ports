@@ -1,0 +1,10 @@
+--- src/misc.c.bak	Wed Feb 14 01:54:53 2001
++++ src/misc.c	Wed May  8 12:34:16 2002
+@@ -3,7 +3,6 @@
+ #include <config.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <ctype.h>
+ #ifdef MEMWATCH

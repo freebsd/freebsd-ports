@@ -1,0 +1,11 @@
+--- doc/Makefile.in.bak	Sat May 12 22:37:55 2001
++++ doc/Makefile.in	Wed May  8 13:15:17 2002
+@@ -101,7 +101,7 @@
+ INFO_DEPS = authforce.info
+ DVIS = authforce.dvi
+ TEXINFOS = authforce.texi
+-mangdir = $(mandir)/mang
++mangdir = $(mandir)/man1
+ MANS = $(man_MANS)
+ 
+ NROFF = nroff

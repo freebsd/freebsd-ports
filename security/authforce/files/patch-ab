@@ -1,0 +1,10 @@
+--- src/methods.c.bak	Mon May  7 01:02:47 2001
++++ src/methods.c	Wed May  8 12:34:16 2002
+@@ -5,7 +5,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <malloc.h>
+ #ifdef MEMWATCH
+ #include "memwatch.h"
+ #endif /* MEMWATCH */
