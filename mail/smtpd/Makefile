@@ -7,7 +7,7 @@
 
 PORTNAME=	smtpd
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	ftp://ftp.obtuse.com/pub/smtpd/
 
@@ -17,8 +17,6 @@ PATCHFILES=	patch-smtpd-2.0-RBL.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Obtuse smtpd/smtpfwdd, part of the Juniper firewall toolkit
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail-old
-
 #  Directory where smtpd will chroot to, and put the received mail
 #  If you change it here, change also patches/patch-aa
 SPOOLBASE=	/var/smtpd
@@ -27,10 +25,6 @@ post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.tmp
 	@${SED} s+!!SPOOLBASE!!+${SPOOLBASE}+g < ${WRKSRC}/Makefile.tmp \
 	                                    > ${WRKSRC}/Makefile
-
-pre-install:
-	@${ECHO_CMD} "Does not work with Sendmail-8.12, checking Version:"
-	${LOCALBASE}/sbin/sendmail -d -t </dev/null | grep Version.8.11
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/smtpd
