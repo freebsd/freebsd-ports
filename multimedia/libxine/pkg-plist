@@ -10,6 +10,7 @@ include/xine/input_plugin.h
 include/xine/lrb.h
 include/xine/metronom.h
 include/xine/osd.h
+include/xine/ppcasm_string.h
 include/xine/resample.h
 include/xine/scratch.h
 include/xine/spu_decoder.h
@@ -24,13 +25,14 @@ include/xine/xmllexer.h
 include/xine/xmlparser.h
 include/xine.h
 lib/libxine.so
-lib/libxine.so.0
+lib/libxine.so.1
 lib/libxineutils.so
-lib/libxineutils.so.0
+lib/libxineutils.so.1
 %%HAVE_ARTS%%lib/xine/plugins/xineplug_ao_out_arts.so
 lib/xine/plugins/xineplug_ao_out_esd.so
 lib/xine/plugins/xineplug_ao_out_oss.so
 lib/xine/plugins/xineplug_decode_a52.so
+lib/xine/plugins/xineplug_decode_adpcm.so
 lib/xine/plugins/xineplug_decode_cinepak.so
 lib/xine/plugins/xineplug_decode_cyuv.so
 lib/xine/plugins/xineplug_decode_divx4.so
@@ -40,20 +42,25 @@ lib/xine/plugins/xineplug_decode_lpcm.so
 lib/xine/plugins/xineplug_decode_mad.so
 lib/xine/plugins/xineplug_decode_mpeg2.so
 lib/xine/plugins/xineplug_decode_msvc.so
+lib/xine/plugins/xineplug_decode_roqaudio.so
+lib/xine/plugins/xineplug_decode_roqvideo.so
 lib/xine/plugins/xineplug_decode_spu.so
 lib/xine/plugins/xineplug_decode_spucc.so
 lib/xine/plugins/xineplug_decode_sputext.so
+lib/xine/plugins/xineplug_decode_svq1.so
 %%HAVE_VORBIS%%lib/xine/plugins/xineplug_decode_vorbis.so
 lib/xine/plugins/xineplug_decode_w32dll.so
 lib/xine/plugins/xineplug_dmx_asf.so
 lib/xine/plugins/xineplug_dmx_avi.so
 lib/xine/plugins/xineplug_dmx_cda.so
+lib/xine/plugins/xineplug_dmx_film.so
 lib/xine/plugins/xineplug_dmx_mpeg.so
 lib/xine/plugins/xineplug_dmx_mpeg_audio.so
 lib/xine/plugins/xineplug_dmx_mpeg_block.so
 lib/xine/plugins/xineplug_dmx_mpeg_elem.so
 lib/xine/plugins/xineplug_dmx_mpeg_pes.so
 lib/xine/plugins/xineplug_dmx_mpeg_ts.so
+lib/xine/plugins/xineplug_dmx_roq.so
 %%HAVE_OGG%%lib/xine/plugins/xineplug_dmx_ogg.so
 lib/xine/plugins/xineplug_dmx_qt.so
 lib/xine/plugins/xineplug_inp_dvd.so
@@ -150,9 +157,9 @@ share/xine/fonts/serif-16.xinefont.gz
 share/xine/fonts/serif-20.xinefont.gz
 share/xine/fonts/serif-24.xinefont.gz
 share/xine/fonts/serif-32.xinefont.gz
-share/xine/skins/xine_logo.mpg
-share/xine/skins/xine_logo.png
+share/xine/skins/xine_logo.mpv
 @dirrm include/xine
+@dirrm lib/xine/plugins/vidix
 @dirrm lib/xine/plugins
 @dirrm lib/xine
 @dirrm share/doc/xine/xine-lib-API/html
