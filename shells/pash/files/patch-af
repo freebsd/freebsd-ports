@@ -1,0 +1,13 @@
+--- keyboard.h.orig	Mon Nov  6 09:43:04 1995
++++ keyboard.h		Sat Dec 30 02:36:25 2000
+@@ -61,7 +61,8 @@
+ #include <limits.h>
+ #include <signal.h>
+ #include <setjmp.h>
+-#include <termio.h>
++#include <termios.h>
++#include <term.h>
+ #include <fcntl.h>
+ #include <errno.h>
+ #include <unistd.h>
+Only in old: pash.sources.tar.gz

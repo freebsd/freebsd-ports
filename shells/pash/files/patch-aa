@@ -1,0 +1,20 @@
+--- ash.c.orig	Sun Jan 12 17:39:42 1997
++++ ash.c	Sat Dec 30 03:05:28 2000
+@@ -1850,7 +1850,7 @@
+      printf("Display=Color|B/W\n");
+      printf("\n[Press Enter for more...]");
+      fflush(stdout);
+-     gets(DummyStr);
++     fgets(DummyStr, DUMMYSTR_SIZE, stdin);
+      printf("\nOverriding configuration file on the command line:\n\n");
+      printf("-s pc|vt|text                    for screen configuration\n");
+      printf("-k posix|system_v|bsd|/usr/group for keyboard configuration\n");
+@@ -2012,7 +2012,7 @@
+     printf("Type pash -h or see pash.txt for informations about this file.\n\n");
+     printf("[Press Enter to go on...]");
+     fflush(stdout);
+-    gets(Buffer);
++    fgets(Buffer, sizeof(Buffer), stdin);
+    }
+ 
+   for(i=1;i<argc;i++)

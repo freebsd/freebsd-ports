@@ -9,6 +9,7 @@
     SUBDIR += flash
     SUBDIR += ksh93
     SUBDIR += osh
+    SUBDIR += pash
     SUBDIR += pdksh
     SUBDIR += perlsh
     SUBDIR += rc

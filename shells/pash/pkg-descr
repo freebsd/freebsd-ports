@@ -1,0 +1,17 @@
+Pash 2.2 is a full screen shell, a Commander for Unix. The versions
+distributed through this website are ports of Pash to PC Unix
+Operating Systems.
+
+The standard main screen displays 2 windows containing a listing of
+the 2 current directories, a menu bar and a command line.
+
+Pash can switch to a 4 window mode. Here's a view of this feature
+along with part of the pull-down menu system. Selected files in each
+window will be highlighted.
+
+Besides all the classical file manipulation functions (copy, move,
+...), Pash also acts as a shell, allowing you to control Processes and
+IPC devices.
+
+- George Reid
+greid@ukug.uk.freebsd.org
