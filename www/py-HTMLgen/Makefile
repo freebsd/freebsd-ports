@@ -5,29 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=		py-HTMLgen
-PORTVERSION=		2.2.2
-CATEGORIES=		www python
-MASTER_SITES=		http://starship.python.net/crew/friedrich/
-DISTNAME=		HTMLgen
+PORTNAME=	HTMLgen
+PORTVERSION=	2.2.2
+CATEGORIES=	www python
+MASTER_SITES=	http://starship.python.net/crew/friedrich/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	HTMLgen
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python library for the generation of HTML documents
 
-USE_PYTHON=		yes
+USE_PYTHON=	yes
+NO_BUILD=	yes
 
-WRKSRC=			${WRKDIR}/HTMLgen
-
-DOCDIR=			${PREFIX}/share/doc/HTMLgen
-
-pre-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/HTMLgen
+PORTDOCS=	*
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
 	@${TAR} -C ${WRKSRC} -cf - README html image | \
-		${TAR} -C ${DOCDIR} -xvf -
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${DOCDIR}
-	@${FIND} ${DOCDIR} -type d -exec ${CHMOD} 0555 {} \;
-	@${FIND} ${DOCDIR} -type f -exec ${CHMOD} 0444 {} \;
+		${TAR} -C ${DOCSDIR} -xvf -
+	@${CHOWN} -R ${BINOWN}:${BINGRP} ${DOCSDIR}
+	@${FIND} ${DOCSDIR} -type d -exec ${CHMOD} 0555 {} \;
+	@${FIND} ${DOCSDIR} -type f -exec ${CHMOD} 0444 {} \;
 .endif
 
 .include <bsd.port.mk>
