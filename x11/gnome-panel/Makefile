@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomepanel
 PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/2.8
@@ -40,12 +40,12 @@ GCONF_SCHEMAS=	clock.schemas fish.schemas gnome-panel-screenshot.schemas \
 		panel-toplevel.schemas window-list.schemas \
 		workspace-switcher.schemas
 
-.include <bsd.port.pre.mk>
-
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_GNOME
 WITH_GNOME=	yes
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
