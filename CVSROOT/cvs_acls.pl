@@ -131,11 +131,12 @@ while (<AVAIL>) {
 
 	print "--------------------\n" if $debug;
 
-	my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
+	my $rule = $_;
+	my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $rule);
 
 	# Skip anything not starting with "avail" or "unavail" and complain.
 	if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/) {
-		print "Bad avail line: $_\n";
+		print "Bad avail line: $rule\n";
 		next;
 	}
 
@@ -152,7 +153,7 @@ while (<AVAIL>) {
 	# $cfg::COMMITTER considered "in user list" if actually in list
 	# or is NULL
 	my $in_user = (!$u || grep ($_ eq $cfg::COMMITTER, split(/[\s,]+/,$u)));
-	print "$$ \$cfg::COMMITTER ($cfg::COMMITTER) in user list: $_\n"
+	print "$$ \$cfg::COMMITTER ($cfg::COMMITTER) in user list: $rule\n"
 	    if $debug && $in_user;
 
 	# Module matches if it is a NULL module list in the avail line.
@@ -172,7 +173,7 @@ while (<AVAIL>) {
 			}
 		}
 	}
-	print "$$ \$repos($repos) in repository list: $_\n"
+	print "$$ \$repos($repos) in repository list: $rule\n"
 	    if $debug && $in_repo;
 
 	print "$$ Expanded user list: $u\n" if $debug;
