@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.30 1998/11/18 10:51:53 asami Exp $
+# $Id: Makefile,v 1.31 1998/12/10 13:18:16 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.2
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.1/ \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	glib11.0:${PORTSDIR}/devel/glib
+
+BROKEN=		upgrade
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
