@@ -7,8 +7,7 @@
 PORTNAME=	kimagemapeditor
 PORTVERSION=	1.0
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	kimagemap
+MASTER_SITES=	http://www.brueffer.de/distfiles/
 
 MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	KDE-based editor for HTML image maps
@@ -20,11 +19,11 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
