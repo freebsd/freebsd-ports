@@ -318,67 +318,81 @@ diff -rNu ../../../virgin/etherboot-4.1/src-32/makerom.c ./makerom.c
  	if ((fs = fread(rom, sizeof(char), romsize, fd)) < 0) {
  		perror("fread");
  		exit(1);
-diff -rNu ../../../virgin/etherboot-4.1/src-32/objdump86.c ./objdump86.c
---- ../../../virgin/etherboot-4.1/src-32/objdump86.c	Sun Feb 22 04:39:10 1998
-+++ ./objdump86.c	Tue Apr 13 16:31:19 1999
-@@ -1,5 +1,10 @@
- #include	<stdio.h>
-+#ifdef __FreeBSD__
-+#include <a.out.h>
-+#define A_HEADERSIZ (sizeof(struct exec))
-+#else
- #include	"a.out.h"
-+#endif
+*** pci.h.orig	Wed Apr 21 05:24:33 1999
+--- pci.h	Mon Jul 26 12:45:20 1999
+***************
+*** 89,96 ****
+  #define PCI_DEVICE_ID_KTI_ET32P2        0x3000
+  #define PCI_VENDOR_ID_NETVIN            0x4a14
+  #define PCI_DEVICE_ID_NETVIN_NV5000SC   0x5000
+  
+! /*#define PCI_VENDOR_ID_SMC		0x10B8*/
+  #ifndef PCI_DEVICE_ID_SMC_EPIC100
+  # define PCI_DEVICE_ID_SMC_EPIC100	0x0005
+  #endif
+--- 89,107 ----
+  #define PCI_DEVICE_ID_KTI_ET32P2        0x3000
+  #define PCI_VENDOR_ID_NETVIN            0x4a14
+  #define PCI_DEVICE_ID_NETVIN_NV5000SC   0x5000
++ #define PCI_VENDOR_ID_3COM		0x10b7
++ #define PCI_DEVICE_ID_3COM_3C905B_TX	0x9055
++ #define PCI_VENDOR_ID_INTEL		0x8086
++ #define PCI_DEVICE_ID_INTEL_82557	0x1229
++ #define PCI_VENDOR_ID_AMD		0x1022
++ #define PCI_DEVICE_ID_AMD_LANCE		0x2000
++ #define PCI_VENDOR_ID_DEC		0x1011
++ #define PCI_DEVICE_ID_DEC_TULIP		0x0002
++ #define PCI_DEVICE_ID_DEC_TULIP_FAST	0x0009
++ #define PCI_DEVICE_ID_DEC_TULIP_PLUS	0x0014
++ #define PCI_DEVICE_ID_DEC_21142		0x0019
+  
+! #define PCI_VENDOR_ID_SMC		0x10B8
+  #ifndef PCI_DEVICE_ID_SMC_EPIC100
+  # define PCI_DEVICE_ID_SMC_EPIC100	0x0005
+  #endif
+*** Makefile.orig	Mon Jul 26 13:45:33 1999
+--- Makefile	Mon Jul 26 13:45:40 1999
+***************
+*** 74,79 ****
+--- 74,80 ----
+  VERSION=	4.2.4
+  CFLAGS+=	-DVERSION=\"$(VERSION)\"
+  CFLAGS+=	-DRELOC=$(RELOCADDR)
++ AS=		`echo ../../bin*/gas/as-new`
+  # Stack must be below 640kb so we have real memory there
+  # In 32 bit version, stack is automatically set using BIOS call 
+  # to avoid trampling on extended BIOS area at top of 640kB
+***************
+*** 166,173 ****
+  .S.s:
+  	$(CC) $(LCONFIG) $(CFLAGS) $(ASFLAGS) -E $< > $@
+  
+  .S.o:
+! 	$(CC) $(LCONFIG) $(CFLAGS) $(ASFLAGS) -c -o $@ $<
+  
+  # general rule for .roms, may be overriden
+  .o.rom:	config-$*.o $(RLOADER) $(START)
+--- 166,177 ----
+  .S.s:
+  	$(CC) $(LCONFIG) $(CFLAGS) $(ASFLAGS) -E $< > $@
+  
++ #.S.o:
++ #	$(CC) $(LCONFIG) $(CFLAGS) $(ASFLAGS) -c -o $@ $<
++ 
+  .S.o:
+! 	$(CC) -E $(LCONFIG) $(CFLAGS) $(ASFLAGS) $< | \
+!                 $(AS) $(ASFLAGS) -o $@
+  
+  # general rule for .roms, may be overriden
+  .o.rom:	config-$*.o $(RLOADER) $(START)
+--- Makefile.orig	Wed Jul 28 13:10:28 1999
++++ Makefile	Wed Jul 28 13:10:40 1999
+@@ -110,7 +110,7 @@
+ # If you have made changes to the *.asm files
+ # and you want to rebuild *loader.bin and floppyload.bin and you have nasm
+ # (not most people)
+-#AS86=		nasm
++AS86=		nasm
  
- /* Fix to work when running on big-endian systems - */
- /* jim.hague@acm.org, 1998-02-06. */
-@@ -33,19 +38,22 @@
- 	if ((f = fopen(filename, "r")) == NULL)
- 	{
- 		perror(filename);
--		return;
-+		exit(1);
- 	}
- 	if (fread(&ex, sizeof(ex), 1, f) != 1)
- 	{
- 		fprintf(stderr, "%s: Cannot read header\n", filename);
- 		fclose(f);
--		return;
-+		exit(1);
- 	}
--	if (BADMAG(ex))
-+	if (N_BADMAG(ex))
- 	{
- 		fprintf(stderr, "%s: Not an a.out file\n", filename);
-+		fprintf(stderr, "bad magic (%#x %#x)",
-+			ex.a_midmag & 0xff,
-+			ex.a_midmag & 0xff00 >>8);
- 		fclose(f);
--		return;
-+		exit(1) ;
- 	}
- 	if (fseek(f, (long)A_HEADERSIZ, SEEK_SET) < 0)
- 	{
-diff -rNu ../../../virgin/etherboot-4.1/src-32/pci.h ./pci.h
---- ../../../virgin/etherboot-4.1/src-32/pci.h	Wed Mar 31 23:15:37 1999
-+++ ./pci.h	Tue Apr 13 16:37:44 1999
-@@ -87,8 +87,18 @@
- #define PCI_DEVICE_ID_KTI_ET32P2        0x3000
- #define PCI_VENDOR_ID_NETVIN            0x4a14
- #define PCI_DEVICE_ID_NETVIN_NV5000SC   0x5000
-+#define PCI_VENDOR_ID_3COM		0x10b7
-+#define PCI_DEVICE_ID_3COM_3C905B_TX	0x9055
-+#define PCI_VENDOR_ID_INTEL		0x8086
-+#define PCI_DEVICE_ID_INTEL_82557	0x1229
-+#define PCI_VENDOR_ID_AMD		0x1022
-+#define PCI_DEVICE_ID_AMD_LANCE		0x2000
-+#define PCI_VENDOR_ID_DEC		0x1011
-+#define PCI_DEVICE_ID_DEC_TULIP		0x0002
-+#define PCI_DEVICE_ID_DEC_TULIP_FAST	0x0009
-+#define PCI_DEVICE_ID_DEC_TULIP_PLUS	0x0014
- 
--/*#define PCI_VENDOR_ID_SMC		0x10B8*/
-+#define PCI_VENDOR_ID_SMC		0x10B8
- #ifndef PCI_DEVICE_ID_SMC_EPIC100
- # define PCI_DEVICE_ID_SMC_EPIC100	0x0005
- #endif
+ # if your as has trouble with .code16, .code32, or data32, uncomment this
+ # but note that the premade start*.o will be larger than necessary because it
