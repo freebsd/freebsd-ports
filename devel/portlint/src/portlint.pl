@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.38 2004/01/22 20:01:54 marcus Exp $
+# $Id: portlint.pl,v 1.41 2004/03/10 06:25:06 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1032,6 +1032,7 @@ sub checkmakefile {
 
 		my @other_early = qw(
 			EMACS_PORT_NAME
+			OPTIONS
 		);
 
 		my $earlypattern = join('|', 'USE_(?:'.join('|', @use_early).')',
@@ -1049,7 +1050,7 @@ sub checkmakefile {
 	#
 	print "OK: checking for anything after bsd.port(.post).mk.\n"
 		if ($verbose);
-	if ($whole =~ /^\.include\s+<bsd\.port(?:\.post)\.mk>\s*[^\s]/m) {
+	if ($whole =~ /^\.include\s+<bsd\.port(?:\.post)?\.mk>\s*[^\s]/m) {
 		&perror("FATAL: $file: do not include anything after ".
 			"bsd.port(.post).mk.");
 	}
@@ -1119,9 +1120,9 @@ sub checkmakefile {
 	my %cmdnames = ();
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach my $i (qw(
-awk basename brandelf cat chmod chown cp cpio dialog echo expr false file find
-gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch pax perl printf
-rm rmdir ruby sed sh sort touch tr which xargs xmkmf
+awk basename brandelf cat chmod chown cp cpio dialog dirname echo egrep expr
+false file find gmake grep gzcat ldconfig ln md5 mkdir mv objcopy paste patch
+pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	)) {
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
