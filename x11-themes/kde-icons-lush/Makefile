@@ -7,8 +7,8 @@
 
 PORTNAME=	lush
 PORTVERSION=	0.1.0
-MASTER_SITES=	http://projects.dims.org/~dave/distribution/
-DISTNAME=	${PORTNAME}-${PORTVERSION}dave
+MASTER_SITES=	http://www.icon-king.com/files/
+EXTRACT_SUFX=	.tgz
 
 COMMENT=	KDE Lush complete iconset
 
