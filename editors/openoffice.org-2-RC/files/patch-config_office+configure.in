@@ -1,0 +1,14 @@
+o http://www.openoffice.org/issues/show_bug.cgi?id=44913
+o configure7
+
+--- config_office/configure.in~	Wed Mar  9 01:31:52 2005
++++ config_office/configure.in	Sun Mar 13 15:53:13 2005
+@@ -565,7 +565,7 @@
+ 		test_cups=no
+ 		_os=Darwin
+ 		;;
+-	freebsd)
++	freebsd*)
+ 		test_x=yes
+ 		test_gtk=yes
+ 		test_kde=yes
