@@ -1,0 +1,10 @@
+--- backends/platform.pl.in.orig	Mon Aug 23 12:33:17 2004
++++ backends/platform.pl.in	Mon Aug 23 12:33:28 2004
+@@ -72,6 +72,7 @@
+   "slackware-10.0.0" => "Slackware 10.0.0",
+   "freebsd-4"       => "FreeBSD 4",
+   "freebsd-5"       => "FreeBSD 5",
++  "freebsd-6"       => "FreeBSD 6",
+   "gentoo"          => "Gentoo Linux",
+   "pld-1.0"         => "PLD 1.0 Ra",
+   "pld-1.1"         => "PLD 1.1 Ra",

@@ -1,0 +1,10 @@
+--- backends/shares-conf.in.orig	Mon Aug 23 12:34:42 2004
++++ backends/shares-conf.in	Mon Aug 23 12:34:54 2004
+@@ -92,6 +92,7 @@
+   "suse-7.0"     => "redhat-6.2",
+   "freebsd-4"    => "freebsd-4",
+   "freebsd-5"    => "freebsd-4",
++  "freebsd-6"    => "freebsd-4",
+   "turbolinux-7.0"   => "redhat-7.0"
+ };
+ 

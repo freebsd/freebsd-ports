@@ -1,0 +1,31 @@
+--- backends/time-conf.in.orig	Fri Aug 20 05:32:03 2004
++++ backends/time-conf.in	Mon Aug 23 12:53:52 2004
+@@ -71,7 +71,7 @@
+               "slackware-8.0.0", "slackware-8.1", "slackware-9.0.0", "slackware-9.1.0", "slackware-10.0.0",
+               "gentoo", "pld-1.0", "pld-1.1", "pld-1.99", "fedora-1", "fedora-2", "specifix",
+               "vine-3.0", "vine-3.1",
+-              "freebsd-5" );
++              "freebsd-5", "freebsd-6" );
+ 
+ $description =<<"end_of_description;";
+        Configures your system clock, timezone and time server list.
+@@ -478,7 +478,8 @@
+    "vine-3.0"        => "redhat-7.0",
+    "vine-3.1"        => "redhat-7.0",
+ 
+-   "freebsd-5"       => "freebsd-5"
++   "freebsd-5"       => "freebsd-5",
++   "freebsd-6"       => "freebsd-5"
+    );
+ 
+   my %dist_tables =
+@@ -704,7 +705,8 @@
+    "vine-3.0"        => "redhat-7.0",
+    "vine-3.1"        => "redhat-7.0",
+ 
+-   "freebsd-5"       => "freebsd-5"
++   "freebsd-5"       => "freebsd-5",
++   "freebsd-6"       => "freebsd-5"
+    );
+ 
+   my %dist_tables =

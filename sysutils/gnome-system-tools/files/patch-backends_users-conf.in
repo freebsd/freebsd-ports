@@ -1,0 +1,19 @@
+--- backends/users-conf.in.orig	Mon Aug 23 12:35:34 2004
++++ backends/users-conf.in	Mon Aug 23 12:35:53 2004
+@@ -76,7 +76,7 @@
+               "debian-2.2", "debian-3.0", "debian-sarge",
+               "suse-7.0", "suse-9.0", "turbolinux-7.0",
+               "slackware-8.0.0", "slackware-8.1", "slackware-9.0.0", "slackware-9.1.0", "slackware-10.0.0",
+-              "freebsd-4", "freebsd-5",
++              "freebsd-4", "freebsd-5", "freebsd-6",
+               "gentoo",
+               "pld-1.0", "pld-1.1", "pld-1.99", "fedora-1", "fedora-2", "specifix", "vine-3.0", "vine-3.1");
+ 
+@@ -350,6 +350,7 @@
+   'slackware-10.0.0' => $gentoo_logindefs_defaults,
+   'freebsd-4'       => $freebsd_logindefs_defaults,
+   'freebsd-5'       => $freebsd_logindefs_defaults,
++  'freebsd-6'       => $freebsd_logindefs_defaults,
+   'suse-7.0'        => $gentoo_logindefs_defaults,
+   'suse-9.0'        => $gentoo_logindefs_defaults,
+ 

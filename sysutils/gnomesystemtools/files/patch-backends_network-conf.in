@@ -1,0 +1,11 @@
+--- backends/network-conf.in.orig	Mon Aug 23 12:31:32 2004
++++ backends/network-conf.in	Mon Aug 23 12:31:50 2004
+@@ -79,7 +79,7 @@
+               "conectiva-9", "conectiva-10",
+               "vine-3.0", "vine-3.1",
+               "slackware-9.1.0", "slackware-10.0.0",
+-              "gentoo", "freebsd-5");
++              "gentoo", "freebsd-5", "freebsd-6");
+ 
+ $description =<<"end_of_description;";
+        Configures all network parameters and interfaces.
