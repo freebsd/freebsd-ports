@@ -3,7 +3,7 @@
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/19 07:39:16 flathill Exp $
+# $Id: Makefile,v 1.2 1998/11/23 06:38:19 asami Exp $
 #
 
 DISTNAME=	gicq-0.22
@@ -17,8 +17,9 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libicq.a:${PORTSDIR}/japanese/libicq \
-		${X11BASE}/lib/libgtk.a:${PORTSDIR}/japanese/gtk
+LIB_DEPENDS=	icq.0:${PORTSDIR}/japanese/libicq \
+		gtkjp.1:${PORTSDIR}/japanese/gtk
+# sada: Libname 'licq' seems to cause conflict (^^;
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
