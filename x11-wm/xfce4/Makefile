@@ -34,7 +34,7 @@ WITH_GDM=	yes
 RUN_DEPENDS+=	${X11BASE}/bin/gdm:${PORTSDIR}/x11/gdm2
 PLIST_SUB+=	GDM=""
 .else
-PLIST_SUB+=	GDM="@comment"
+PLIST_SUB+=	GDM="@comment "
 .endif
 
 .if !defined(WITHOUT_EXTRAS)
