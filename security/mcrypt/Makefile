@@ -12,7 +12,7 @@ PORTVERSION=	2.6.4
 PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
-		ftp://ftp.ntua.gr/pub/security/mcrypt/attic/ \
+		ftp://ftp.ntua.gr/pub/security/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
 # distfile on sourceforge is uncompressed
 # MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
