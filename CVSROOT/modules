@@ -2578,6 +2578,7 @@ gnugadu		ports/polish/gnugadu
 gnugadu2	ports/polish/gnugadu2
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
+gnulibiberty	ports/devel/gnulibiberty
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
 gnumeric	ports/math/gnumeric
