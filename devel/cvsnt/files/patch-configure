@@ -1,28 +1,12 @@
---- configure.orig	Wed Dec 10 23:43:42 2003
-+++ configure	Wed Feb  4 02:44:05 2004
-@@ -19209,6 +19209,7 @@
+--- configure.orig	Mon Feb  9 21:48:11 2004
++++ configure	Sun Feb 22 03:02:53 2004
+@@ -19221,7 +19221,8 @@
+ 
  
  # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
++/usr/local/share/libtool13/ltconfig13 $LIBTOOL_DEPS
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -25221,7 +25222,7 @@
- rm -f conftest.err conftest.$ac_objext \
-       conftest$ac_exeext conftest.$ac_ext
- if test "$ac_cv_search_SSL_CTX_new" = no; then
--  for ac_lib in ssl ssleay32; do
-+  for ac_lib in "ssl -lcrypto" ssleay32; do
-     LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
-     cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
-@@ -27699,7 +27700,7 @@
- #define LOCKSERVER_SUPPORT
- _ACEOF
- 
--  enable_server="yes"
-+  enable_lockserver="yes"
- fi
- fi;
- echo "$as_me:$LINENO: result: $enable_lockserver" >&5
