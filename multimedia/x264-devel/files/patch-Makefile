@@ -29,7 +29,7 @@
  	$(CC) $(CFLAGS) -o x264 x264.o libx264.a -lm
 +
 +$(SHARED_LIB_VER): $(OBJS) x264
-+	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS)
++	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) -lm
  
  checkasm: testing/checkasm.c libx264.a
  	$(CC) $(CFLAGS) -o checkasm $< libx264.a -lm
