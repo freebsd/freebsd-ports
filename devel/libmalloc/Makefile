@@ -3,7 +3,7 @@
 # Date created:		11 January 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1998/11/28 01:48:32 asami Exp $
+# $Id: Makefile,v 1.15 1998/12/01 10:13:02 obrien Exp $
 #
 
 DISTNAME=	malloc-1.18
@@ -18,7 +18,7 @@ MAINTAINER=	obrien@FreeBSD.org
 MANUAL_PACKAGE_BUILD=	installs malloc.h
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@(cd ${PREFIX}/include ; ln -sf malloc.h libmalloc.h)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libmalloc
