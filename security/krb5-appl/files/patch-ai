@@ -1,0 +1,25 @@
+*** appl/gssftp/ftpd/ftpd.c.ORIG	Fri Feb  6 19:41:25 1998
+--- appl/gssftp/ftpd/ftpd.c	Tue Jun 30 19:46:01 1998
+***************
+*** 374,380 ****
+  #ifndef LOG_DAEMON
+  #define LOG_DAEMON 0
+  #endif
+! 	openlog("ftpd", LOG_PID | LOG_NDELAY, LOG_DAEMON);
+  	addrlen = sizeof (his_addr);
+  	if (getpeername(0, (struct sockaddr *)&his_addr, &addrlen) < 0) {
+  		syslog(LOG_ERR, "getpeername (%s): %m",argv[0]);
+--- 374,386 ----
+  #ifndef LOG_DAEMON
+  #define LOG_DAEMON 0
+  #endif
+! 
+! #ifndef LOG_FTP
+! #define FACILITY	LOG_DAEMON
+! #else
+! #define FACILITY	LOG_FTP
+! #endif
+! 	openlog("ftpd", LOG_PID | LOG_NDELAY, FACILITY);
+  	addrlen = sizeof (his_addr);
+  	if (getpeername(0, (struct sockaddr *)&his_addr, &addrlen) < 0) {
+  		syslog(LOG_ERR, "getpeername (%s): %m",argv[0]);

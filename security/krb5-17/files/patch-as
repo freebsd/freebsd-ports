@@ -1,0 +1,194 @@
+*** clients/ksu/main.c.ORIG	Fri Feb  6 19:41:57 1998
+--- clients/ksu/main.c	Tue Jun 30 19:46:02 1998
+***************
+*** 56,62 ****
+     ill specified arguments to commands */        
+  
+  void usage (){
+! 	fprintf(stderr, "Usage: %s [target user] [-n principal] [-c source cachename] [-C target cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
+  
+  }
+  
+--- 56,62 ----
+     ill specified arguments to commands */        
+  
+  void usage (){
+! 	fprintf(stderr, "Usage: %s [target user] [-m] [-n principal] [-c source cachename] [-C target cachename] [-k] [-D] [-r time] [-pf] [-l lifetime] [-zZ] [-q] [-e command [args... ] ] [-a [args... ] ]\n", prog_name);
+  
+  }
+  
+***************
+*** 75,80 ****
+--- 75,81 ----
+  	int argc;
+  	char ** argv;
+  { 
++ int asme = 0;
+  int hp =0;
+  int some_rest_copy = 0;	
+  int all_rest_copy = 0;	
+***************
+*** 90,95 ****
+--- 91,97 ----
+  char * cc_target_tag = NULL; 
+  char * target_user = NULL;
+  char * source_user;
++ char * source_shell;
+  
+  krb5_ccache cc_source = NULL;
+  char * cc_source_tag = NULL; 
+***************
+*** 174,180 ****
+          }
+  
+  
+!     while(!done && ((option = getopt(pargc, pargv,"n:c:C:r:a:zZDfpkql:e:")) != EOF)){
+  	switch (option) {
+  	case 'r':
+  	    options.opt |= KDC_OPT_RENEWABLE;
+--- 176,182 ----
+          }
+  
+  
+!     while(!done && ((option = getopt(pargc, pargv,"n:c:C:r:a:zZDfpkmql:e:")) != EOF)){
+  	switch (option) {
+  	case 'r':
+  	    options.opt |= KDC_OPT_RENEWABLE;
+***************
+*** 216,221 ****
+--- 218,226 ----
+  		errflg++;
+  	    }
+  	    break;
++ 	case 'm':
++ 	    asme = 1;
++ 	    break;
+  	case 'n': 
+  	    if ((retval = krb5_parse_name(ksu_context, optarg, &client))){
+  		com_err(prog_name, retval, "when parsing name %s", optarg); 
+***************
+*** 355,362 ****
+      		exit(1);
+  	}
+  
+! 	/* allocate space and copy the usernamane there */        
+  	source_user = strdup(pwd->pw_name);
+  	source_uid = pwd->pw_uid;
+  	source_gid = pwd->pw_gid;
+  
+--- 360,368 ----
+      		exit(1);
+  	}
+  
+! 	/* allocate space and copy the username there */        
+  	source_user = strdup(pwd->pw_name);
++ 	source_shell = strdup(pwd->pw_shell);
+  	source_uid = pwd->pw_uid;
+  	source_gid = pwd->pw_gid;
+  
+***************
+*** 727,769 ****
+  	/* get the shell of the user, this will be the shell used by su */      
+  	target_pwd = getpwnam(target_user);
+  
+! 	if (target_pwd->pw_shell)
+! 		shell = strdup(target_pwd->pw_shell);
+! 	else {
+! 		shell = _DEF_CSH;  /* default is cshell */   
+!     	}
+  
+  #ifdef HAVE_GETUSERSHELL
+  
+        /* insist that the target login uses a standard shell (root is omited) */ 
+  
+!        if (!standard_shell(target_pwd->pw_shell) && source_uid) {
+! 	       fprintf(stderr, "ksu: permission denied (shell).\n");
+! 	       sweep_up(ksu_context, use_source_cache, cc_target);
+! 	       exit(1);
+  	}
+  #endif /* HAVE_GETUSERSHELL */
+  	
+!        if (target_pwd->pw_uid){
+! 	
+! 	      if(set_env_var("USER", target_pwd->pw_name)){
+!    		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 	        sweep_up(ksu_context, use_source_cache, cc_target);
+! 	        exit(1);
+! 	      } 			
+!        }	
+! 
+!       if(set_env_var( "HOME", target_pwd->pw_dir)){
+! 		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 	        sweep_up(ksu_context, use_source_cache, cc_target);
+! 	        exit(1);
+!       } 			
+! 
+!       if(set_env_var( "SHELL", shell)){
+! 		fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 	        sweep_up(ksu_context, use_source_cache, cc_target);
+! 	        exit(1);
+!       } 			
+  
+        /* set the cc env name to target */         	
+  
+--- 733,792 ----
+  	/* get the shell of the user, this will be the shell used by su */      
+  	target_pwd = getpwnam(target_user);
+  
+! 	if (asme) {
+! 		if (source_shell && *source_shell) {
+! 			shell = strdup(source_shell);
+! 		} else {
+! 			shell = _DEF_CSH;
+! 		}
+! 	} else {
+! 		if (target_pwd->pw_shell)
+! 			shell = strdup(target_pwd->pw_shell);
+! 		else {
+! 			shell = _DEF_CSH;  /* default is cshell */   
+! 		}
+! 	}
+  
+  #ifdef HAVE_GETUSERSHELL
+  
+        /* insist that the target login uses a standard shell (root is omited) */ 
+  
+! 	if (asme) {
+! 		if (!standard_shell(pwd->pw_shell) && source_uid) {
+! 			fprintf(stderr, "ksu: permission denied (shell).\n");
+! 			sweep_up(ksu_context, use_source_cache, cc_target);
+! 			exit(1);
+! 		}
+! 	} else {
+! 		if (!standard_shell(target_pwd->pw_shell) && source_uid) {
+! 			fprintf(stderr, "ksu: permission denied (shell).\n");
+! 			sweep_up(ksu_context, use_source_cache, cc_target);
+! 			exit(1);
+! 		}
+  	}
+  #endif /* HAVE_GETUSERSHELL */
+  	
+! 	if (!asme) {
+! 		if (target_pwd->pw_uid){
+! 		      if (set_env_var("USER", target_pwd->pw_name)){
+! 			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 			sweep_up(ksu_context, use_source_cache, cc_target);
+! 			exit(1);
+! 		      } 			
+! 		}
+! 
+! 		if (set_env_var( "HOME", target_pwd->pw_dir)){
+! 			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 			sweep_up(ksu_context, use_source_cache, cc_target);
+! 			exit(1);
+! 		}
+! 
+! 		if (set_env_var( "SHELL", shell)){
+! 			fprintf(stderr,"ksu: couldn't set environment variable USER\n");
+! 			sweep_up(ksu_context, use_source_cache, cc_target);
+! 			exit(1);
+! 		} 			
+! 	}
+  
+        /* set the cc env name to target */         	
+  
