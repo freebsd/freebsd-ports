@@ -90,15 +90,11 @@ PLIST_SUB+=	K1999="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (needs to link to shared libraries)"
-.endif
-
 .if ${OSVERSION} < 500041
 CPPFLAGS+=	-I${X11BASE}/include -fPIC
 .else
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -DHAVE_DECL_GETOPT -fPIC" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" CXXFLAGS="-fPIC" CFLAGS="-fPIC"
 .endif
 
 .if !defined(WITHOUT_FREEGLUT)
