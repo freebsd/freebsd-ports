@@ -1,5 +1,14 @@
---- dwf_main.c.bak	Mon Jul 30 05:14:43 2001
-+++ dwf_main.c	Sat Aug 25 18:08:18 2001
+--- dwf_main.c.orig	Mon Jul 30 05:14:43 2001
++++ dwf_main.c	Sat Aug 25 19:44:40 2001
+@@ -199,7 +199,7 @@
+             dprintLib("Results: daemon return code %#x (%s)\n", retcode, getDaemonCode( retcode ) );
+         }
+     }
+-    return retcode;
++    _exit(retcode);     /* due to core dump in stdio cleanup() after signal */
+ }
+ 
+ /* ----------------------------------------------------------------------- */
 @@ -251,7 +251,7 @@
              wprintLib( "can not change directory to root" );
              return -1;
