@@ -1,10 +1,14 @@
-libexec/sqwebmail/authlib/authdaemon
-libexec/sqwebmail/authlib/authdaemon.passwd
-libexec/sqwebmail/authlib/authdaemond
+libexec/sqwebmail/authlib/authcram
+libexec/sqwebmail/authlib/authcustom
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemon.passwd
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond
 %%PGSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.pgsql
-libexec/sqwebmail/authlib/authdaemond.plain
+%%AUTHDFLAG%%libexec/sqwebmail/authlib/authdaemond.plain
 %%MYSQLFLAG%%libexec/sqwebmail/authlib/authdaemond.mysql
+libexec/sqwebmail/authlib/authpam
 libexec/sqwebmail/authlib/authsystem.passwd
+libexec/sqwebmail/authlib/authuserdb
 libexec/sqwebmail/sqwebmail/deliverquota
 libexec/sqwebmail/sqwebmail/maildirmake
 libexec/sqwebmail/sqwebmail/makedatprog
@@ -12,7 +16,7 @@ libexec/sqwebmail/sqwebmail/makemime
 libexec/sqwebmail/sqwebmail/mimegpg
 libexec/sqwebmail/sqwebmail/pcpd
 libexec/sqwebmail/sqwebmail/reformime
-share/sqwebmail/authdaemonrc.dist
+%%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
 share/sqwebmail/authmodulelist
 %%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
 %%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
@@ -81,7 +85,7 @@ share/sqwebmail/webgpg
 @dirrm share/sqwebmail/var/calendar/private
 @dirrm share/sqwebmail/var/calendar/localcache
 @dirrm share/sqwebmail/var/calendar
-@dirrm share/sqwebmail/var/authdaemon
+%%AUTHDFLAG%%@dirrm share/sqwebmail/var/authdaemon
 @dirrm share/sqwebmail/var
 @dirrm share/sqwebmail/share/locale
 @dirrm share/sqwebmail/share

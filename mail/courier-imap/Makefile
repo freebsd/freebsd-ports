@@ -26,6 +26,7 @@ USE_GMAKE=	YES
 #
 # WITHOUT_OPENSSL:		Don't build in TLS support
 # WITHOUT_PAM:			Don't build in PAM support
+# WITHOUT_AUTHDAEMON		Don't build the authdaemon
 # WITH_CRAM:			Build in CRAM-MD5 authentication support
 # WITH_VPOPMAIL:		Build in vpopmail support
 # WITH_MYSQL:			Build in mysql support
@@ -68,10 +69,10 @@ CONFIGURE_ARGS=	--without-authshadow \
 		--with-locking-method=fcntl
 
 .if !defined(WITH_VPOPMAIL)
-CONFIGURE_ARGS+= --without-authvchkpw
+CONFIGURE_ARGS+=--without-authvchkpw
 PLIST_SUB+=	VPOPMAILFLAG="@comment "
 .else
-CONFIGURE_ARGS+= --with-authvchkpw
+CONFIGURE_ARGS+=--with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 PLIST_SUB+=	VPOPMAILFLAG=""
 .endif
@@ -81,10 +82,10 @@ WITH_LDAP21=	yes
 .endif
 
 .if !defined(WITH_LDAP1) && !defined(WITH_LDAP20) && !defined(WITH_LDAP21)
-CONFIGURE_ARGS+= --without-authldap
+CONFIGURE_ARGS+=--without-authldap
 PLIST_SUB+=	LDAPFLAG="@comment "
 .else
-CONFIGURE_ARGS+= --with-authldap
+CONFIGURE_ARGS+=--with-authldap
 PLIST_SUB+=	LDAPFLAG=""
 
 .if defined(WITH_LDAP21)
@@ -100,7 +101,7 @@ LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
 .endif
 
 .if !defined(WITH_MYSQL)
-CONFIGURE_ARGS+= --without-authmysql
+CONFIGURE_ARGS+=--without-authmysql
 PLIST_SUB+=	MYSQLFLAG="@comment "
 .else
 CONFIGURE_ARGS+=--with-authmysql \
@@ -111,7 +112,7 @@ PLIST_SUB+=	MYSQLFLAG=""
 .endif
 
 .if !defined(WITH_POSTGRESQL)
-CONFIGURE_ARGS+= --without-authpgsql
+CONFIGURE_ARGS+=--without-authpgsql
 PLIST_SUB+=	PGSQLFLAG="@comment "
 .else
 POSTGRESQL_PORT?=	databases/postgresql7
@@ -119,16 +120,24 @@ LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 PLIST_SUB+=	PGSQLFLAG=""
 .endif
 
-.if !defined(WITHOUT_PAM)
-CONFIGURE_ARGS+= --with-authpam
+.if !defined(WITHOUT_AUTHDAEMON)
+CONFIGURE_ARGS+=--with-authdaemon
+PLIST_SUB+=	AUTHDFLAG=""
 .else
-CONFIGURE_ARGS+= --without-authpam
+CONFIGURE_ARGS+=--without-authdaemon
+PLIST_SUB+=	AUTHDFLAG="@comment "
+.endif
+
+.if !defined(WITHOUT_PAM)
+CONFIGURE_ARGS+=--with-authpam
+.else
+CONFIGURE_ARGS+=--without-authpam
 .endif
 
 .if !defined(WITH_CRAM)
-CONFIGURE_ARGS+= --without-authcram
+CONFIGURE_ARGS+=--without-authcram
 .else
-CONFIGURE_ARGS+= --with-authcram
+CONFIGURE_ARGS+=--with-authcram
 .endif
 
 .if defined(WITH_FAM)

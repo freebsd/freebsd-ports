@@ -4,7 +4,7 @@ bin/deliverquota
 bin/imapd
 bin/maildirmake
 bin/pop3d
-%%CONFDIR%%/authdaemonrc.dist
+%%AUTHDFLAG%%%%CONFDIR%%/authdaemonrc.dist
 %%LDAPFLAG%%%%CONFDIR%%/authldaprc.dist
 %%MYSQLFLAG%%%%CONFDIR%%/authmysqlrc.dist
 %%PGSQLFLAG%%%%CONFDIR%%/authpgsqlrc.dist
@@ -20,12 +20,12 @@ bin/pop3d
 %%RCDIR%%/courier-imap-pop3d.sh.sample
 %%RCDIR%%/courier-imap-pop3d-ssl.sh.sample
 %%LIBEXECDIR%%/authlib/authcustom
-%%LIBEXECDIR%%/authlib/authdaemon
-%%LIBEXECDIR%%/authlib/authdaemond
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemon
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond
 %%LDAPFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.ldap
 %%MYSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.mysql
 %%PGSQLFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.pgsql
-%%LIBEXECDIR%%/authlib/authdaemond.plain
+%%AUTHDFLAG%%%%LIBEXECDIR%%/authlib/authdaemond.plain
 %%LIBEXECDIR%%/authlib/authpam
 %%LIBEXECDIR%%/authlib/authuserdb
 %%VPOPMAILFLAG%%%%LIBEXECDIR%%/authlib/authvchkpw
@@ -55,7 +55,7 @@ share/courier-imap/vchkpw2userdb
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/README
-@dirrm var/authdaemon
+%%AUTHDFLAG%%@dirrm var/authdaemon
 @dirrm var
 @dirrm %%DOCSDIR%%
 @dirrm share/courier-imap
