@@ -47,7 +47,11 @@ INSTALLS_SHLIB=	yes
 .if defined(OPENSSL_OVERWRITE_BASE)
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	3
+.else
 SHLIBVER=	2
+.endif
 OPENSSLDIR=	/etc/ssl
 MANPREFIX=	${PREFIX}/openssl
 PLIST_SUB+=	MANDIR=""
