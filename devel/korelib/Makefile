@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Missing dependency on autoheader"
-
 USE_KDELIBS_VER=3
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
@@ -22,8 +20,9 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 pre-configure:
-	${REINPLACE_CMD} -e "s@-g -O2@${CXXFLAGS}@g" -e "s@-O2@${CFLAGS}@g" \
+	${REINPLACE_CMD} -e "s@-g -O2@${CXXFLAGS}@g; s@-O2@${CFLAGS}@g" \
 		${WRKSRC}/configure ${WRKSRC}/*/Makefile.in ${WRKSRC}/*/*/Makefile.in
+	${REINPLACE_CMD} -e "s@autoheader@autoheader213@" ${WRKSRC}/aclocal.m4
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libkore.la
