@@ -102,10 +102,12 @@ post-install:
 		-e ' end;' \
 		-e 'end' \
 		${IRB_WITH_SUFFIX}
-	${MKDIR} ${LOCALBASE}/lib/xemacs/site-lisp
 	${MKDIR} ${RUBY_ELISPDIR}
+	${TOUCH} ${RUBY_ELISPDIR}/.keep_me
 	${MKDIR} ${RUBY_EXAMPLESDIR}
+	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
 	${MKDIR} ${RUBY_DOCDIR}
+	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses

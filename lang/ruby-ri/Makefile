@@ -36,6 +36,7 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/Emacs.rb ${RUBY_SITELIBDIR}/${PORTNAME}/op/
+	${MKDIR} ${XEMACSLISPDIR}
 .for f in ${ELISP_FILES}
 	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/${f} ${RUBY_ELISPDIR}/
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
