@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
-		gtkhtml.4:${PORTSDIR}/www/gtkhtml \
+		gtkhtml.5:${PORTSDIR}/www/gtkhtml \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		bz2.1:${PORTSDIR}/archivers/bzip2
 
