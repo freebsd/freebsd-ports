@@ -1,0 +1,12 @@
+=======================================================================
+
+The getmail rc file (configuration file) format has changed since 
+version 3.x.  If you are upgrading from version 3, you will need 
+to write a new configuration file based on the contents of your old one. 
+The new file format resembles the old in many ways. 
+
+Each account you retrieve mail from will require a separate rc file, 
+but getmail can operate with multiple rc files simultaneously 
+if you wish to retrieve mail from multiple accounts.
+
+=======================================================================
