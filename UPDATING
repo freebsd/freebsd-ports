@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040719:
+  AFFECTS: users of PHP
+  AUTHOR: ale@FreeBSD.org
+
+  The old lang/php4 and lang/php5 ports have been splitted into 'base' PHP,
+  PEAR, and shared extensions to allow more flexibility and add new features.
+  Upgrading your current PHP installation will result in a 'base' PHP
+  installation (no PEAR and no extensions).
+  PEAR can be found in the new devel/php4-pear and devel/php5-pear ports, while
+  the set of PHP extensions to install can be choosen via the meta-ports
+  lang/php4-extensions and lang/php5-extensions, or installing singular
+  extensions individually.
+
 20040717:
   AFFECTS: users of net/openldap2[12]{,-sasl}-client
 
