@@ -9,7 +9,7 @@ PORTNAME=	crossgo32-f77
 PORTVERSION=	2.95.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://troutmask.apl.washington.edu/pub/ \
-		ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu
+		ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2gnu/
 DISTNAME=	f77-freebsd.0.3
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} g772952b.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
