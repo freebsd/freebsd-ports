@@ -8,9 +8,7 @@
 PORTNAME=	ecawave
 PORTVERSION=	0.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://ecasound.seul.org/download/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	ecawave
+MASTER_SITES=	http://ecasound.seul.org/download/
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
 
