@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.37.2
-PORTREVISION=	0
+PORTVERSION=	0.37.2.20020125
 CATEGORIES=	mail ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.courier-mta.org/beta/%SUBDIR%/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	yds@CoolRat.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
+RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
 #
 # User-serviceable variables
@@ -22,16 +23,16 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR
 # [ There's no need to add trailing ``/''s ]
 #
 # set IMAGEURL to where on the web server URL the images are found
-# set CACHEOWNER to who you'd like to own the cache files
+# set CACHEOWN to who you'd like to own the cache files
 # set MAILDROPDEFAULT to what you'd like the $DEFAULT in maildrop to be
 #     recomended values are: /var/mail, ./Mailbox or ./Maildir
 #
 IMAGEURL?=	/webmail
-CACHEOWNER?=	pop
+CACHEOWN?=	pop
 MAILDROPDEFAULT?=./Maildir
 # End of user-serviceable variables
-MAILUSER=	courier
-MAILGROUP=	courier
+MAILOWN=	courier
+MAILGRP=	courier
 MAILUID=	62
 MAILGID=	62
 ETCDIR=		${PREFIX}/etc
@@ -47,6 +48,7 @@ MIMETYPES=	${LOCALBASE}/etc/apache/mime.types
 IS_INTERACTIVE=	yes
 .endif
 
+USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
@@ -55,8 +57,8 @@ USE_AUTOMAKE_VER=14
 USE_AUTOCONF_VER=213
 CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-syslog=1 --enable-use-flock \
-		--with-mailuser=${MAILUSER} \
-		--with-mailgroup=${MAILGROUP} \
+		--with-mailuser=${MAILOWN} \
+		--with-mailgroup=${MAILGRP} \
 		--with-mailuid=${MAILUID} \
 		--with-mailgid=${MAILGID} \
  		--with-etcdir=${ETCDIR} \
@@ -68,7 +70,7 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--enable-mimetypes=${MIMETYPES} \
 		--enable-imageurl=${IMAGEURL} \
 		--with-cachedir=${CACHEDIR} \
-		--with-cacheowner=${CACHEOWNER} \
+		--with-cacheowner=${CACHEOWN} \
 		--with-calendardir=${CALENDIR} \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--enable-workarounds-for-imap-client-bugs
@@ -86,7 +88,10 @@ PKGMESSAGE=	${WRKDIR}/.PKGMESSAGE
 
 INSTALL_TARGET=	install-strip install-perms
 
-PLIST_SUB+=	CACHEOWNER="${CACHEOWNER}"
+PLIST_SUB+=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" \
+		MAILOWN="${MAILOWN}" MAILGRP="${MAILGRP}" \
+		MAILUID="${MAILUID}" MAILGID="${MAILGID}" \
+		CACHEOWN="${CACHEOWN}"
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
@@ -94,9 +99,10 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .include "${.CURDIR}/Makefile.man"
 .include "${.CURDIR}/Makefile.doc"
+.include "${.CURDIR}/Makefile.own"
 
 pre-everything::
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.courier
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
@@ -109,7 +115,7 @@ post-patch:
 	@${PERL} -pi -e 's:^(TLS_CERTFILE=)\@datadir\@:$$1\@sysconfdir\@:g;' \
 		${WRKSRC}/*/*.dist.in \
 		${WRKSRC}/*/*/*.dist.in
-	@${PERL} -pi -e 's:^(RANDFILE = )\@datadir\@:$$1\@sysconfdir\@:g;' \
+	@${PERL} -pi -e 's:^(RANDFILE = )\@datadir\@\S+:$$1\@sysconfdir\@/random.tmp:g;' \
 		${WRKSRC}/*/*.cnf.in \
 		${WRKSRC}/*/*/*.cnf.in
 
@@ -155,12 +161,15 @@ post-install:
 	@${INSTALL_DATA} /dev/null ${SYSCONFDIR}/locallowercase
 	@${INSTALL_SCRIPT} ${FILESDIR}/courier.sh ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${WRKDIR}/crontab ${PREFIX}/etc/courier/
+.for file in ${OWNER0}
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/${file}
+.endfor
 	@${GREP} '^@exec ' ${TMPPLIST} \
 		| ${SED} -e 's:^@exec ::' -e 's:%D:${PREFIX}:g' \
 		> ${WRKDIR}/.PLIST.exec \
 		&& ${SH} ${WRKDIR}/.PLIST.exec
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR}/html
+	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${DATADIR}/htmldoc/* ${DOCSDIR}/html
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
@@ -170,8 +179,8 @@ post-install:
 	@for F in ${MANPREFIX}/man/man[1-9ln]/*; \
 		do ${CHMOD} ${MANMODE} $$F; \
 	done
-	@${CHOWN} -R ${MANOWN}:${MANGRP} ${MANPREFIX}/man/man[1-9ln]
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${CHOWN} -Rh ${MANOWN}:${MANGRP} ${MANPREFIX}/man/man[1-9ln]
+	@${CHOWN} -Rh ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${CHMOD} -R a-w ${DATADIR}
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-install,v 1.1 2002-01-15 06:17:26 dwhite Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/Attic/pkg-install,v 1.2 2002-01-30 03:56:07 pat Exp $
 #
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
@@ -32,6 +32,20 @@ yesno() {
         esac
         echo "Please answer yes or no."
     done
+}
+
+replace() {
+    local orig repl
+    
+    orig=$1
+    repl=$2
+    if [ -e ${orig} ]; then
+        mv -f ${orig} ${orig}.OFF
+        chmod 0 ${orig}.OFF
+    fi
+    if [ -e ${repl} ]; then
+        ln -s ${repl} ${orig}
+    fi
 }
 
 if [ x"$2" = xPRE-INSTALL ]; then
@@ -67,20 +81,6 @@ if [ x"$2" = xPRE-INSTALL ]; then
         fi
     fi
 fi
-
-replace() {
-    local orig repl
-    
-    orig=$1
-    repl=$2
-    if [ -e ${orig} ]; then
-        mv -f ${orig} ${orig}.OFF
-        chmod 0 ${orig}.OFF
-    fi
-    if [ -e ${repl} ]; then
-        ln -s ${repl} ${orig}
-    fi
-}
 
 if [ x"$2" = xPOST-INSTALL -a -z "${PACKAGE_BUILDING}" ]; then
     if [ -x /sbin/sysctl ]; then

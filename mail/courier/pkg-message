@@ -1,6 +1,5 @@
-			ATTENTION.........ATTENTION
 
-		RTFM before configuring and runnig Courier!!!
+		RTFM before configuring and running Courier!!!
 
 	Check and/or modify the following configuration files to
 	suit your needs:
@@ -12,6 +11,7 @@
 		%%PREFIX%%/etc/courier/courierd
 		%%PREFIX%%/etc/courier/esmtpd
 		%%PREFIX%%/etc/courier/esmtpd-msa
+		%%PREFIX%%/etc/courier/esmtpd-ssl
 		%%PREFIX%%/etc/courier/imapd
 		%%PREFIX%%/etc/courier/imapd-ssl
 		%%PREFIX%%/etc/courier/ldapaddressbook
