@@ -2,7 +2,7 @@
 # $FreeBSD$
 LIBDIR=@LIBDIR@
 SPOOLDIR=@SPOOLDIR@
-if [ x$2 = xPOST-INSTALL -a x$LEAFNODE_SETUP_WRKDIRS != x ]; then
+if [ x$2 = xPOST-INSTALL ]; then
  if [ ! -d $LIBDIR ]; then
 	mkdir -p $LIBDIR
 	chown -R news.news $LIBDIR/.
