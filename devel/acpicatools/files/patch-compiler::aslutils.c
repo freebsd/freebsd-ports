@@ -1,5 +1,5 @@
---- compiler/aslutils.c.orig	Fri Aug 16 09:25:16 2002
-+++ compiler/aslutils.c	Thu Aug 22 17:41:16 2002
+--- acpica-unix-20030523/compiler/aslutils.c.orig	Thu Jun 12 15:48:25 2003
++++ acpica-unix-20030523/compiler/aslutils.c	Thu Jun 12 15:48:34 2003
 @@ -126,7 +126,7 @@
  
  #ifdef _USE_BERKELEY_YACC
