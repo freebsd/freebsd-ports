@@ -2,10 +2,12 @@ bin/amor
 bin/kmoon
 bin/kteatime
 bin/kworldwatch
-share/applnk/Games/amor.kdelnk
-share/applnk/Utilities/kmoon.desktop
-share/applnk/Utilities/kteatime.desktop
-share/applnk/Utilities/kworldwatch.desktop
+lib/libkeyesapplet.la
+lib/libkeyesapplet.so.1
+share/applnk/Toys/amor.desktop
+share/applnk/Toys/kmoon.desktop
+share/applnk/Toys/kteatime.desktop
+share/applnk/Toys/kworldwatch.desktop
 share/apps/amor/b/b-f.xpm
 share/apps/amor/b/b-f2.xpm
 share/apps/amor/b/b1-r.xpm
@@ -173,6 +175,7 @@ share/apps/amor/ghost/ghost_z5.xpm
 share/apps/amor/ghostrc
 share/apps/amor/tips-en
 share/apps/kdesktop/programs/kdeworld.desktop
+share/apps/kicker/applets/eyesapplet.desktop
 share/apps/kmoon/pics/moon1.png
 share/apps/kmoon/pics/moon10.png
 share/apps/kmoon/pics/moon11.png
@@ -202,13 +205,13 @@ share/apps/kmoon/pics/moon6.png
 share/apps/kmoon/pics/moon7.png
 share/apps/kmoon/pics/moon8.png
 share/apps/kmoon/pics/moon9.png
-share/apps/kworldwatch/pics/bio_800.jpg
-share/apps/kworldwatch/pics/depths_400.jpg
+share/apps/kworldwatch/pics/bio_800.png
+share/apps/kworldwatch/pics/depths_400.png
 share/apps/kworldwatch/pics/flag-blue.xpm
 share/apps/kworldwatch/pics/flag-green.xpm
 share/apps/kworldwatch/pics/flag-red.xpm
 share/apps/kworldwatch/pics/flag-yellow.xpm
-share/apps/kworldwatch/pics/photo_400.jpg
+share/apps/kworldwatch/pics/photo_400.png
 share/apps/kworldwatch/pics/world2.png
 share/doc/HTML/en/mouse/.anchors
 share/doc/HTML/en/mouse/compilationandinstallation.html
@@ -220,6 +223,7 @@ share/doc/HTML/en/mouse/index.html
 share/doc/HTML/en/mouse/installation.html
 share/doc/HTML/en/mouse/introduction.html
 share/doc/HTML/en/mouse/onscreenoperation.html
+share/icons/hicolor/32x32/apps/amor.png
 share/icons/hicolor/32x32/apps/kmoon.png
 share/icons/hicolor/32x32/apps/kworldwatch.png
 share/icons/hicolor/48x48/apps/kmoon.png
@@ -228,18 +232,15 @@ share/icons/locolor/16x16/apps/amor.png
 share/icons/locolor/16x16/apps/kmoon.png
 share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/kworldwatch.png
-share/icons/locolor/32x32/apps/amor.png
 share/icons/locolor/32x32/apps/kmoon.png
 share/icons/locolor/32x32/apps/kworldwatch.png
-@unexec rm -f %D/share/apps/amor/tips-default
-@unexec rm -f %D/share/doc/HTML/en/mouse/common
 @dirrm share/doc/HTML/en/mouse
 @dirrm share/apps/kworldwatch/pics
 @dirrm share/apps/kworldwatch
 @dirrm share/apps/kmoon/pics
 @dirrm share/apps/kmoon
+@dirrm share/apps/kicker/applets
 @dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop
 @dirrm share/apps/amor/ghost
 @dirrm share/apps/amor/eyes
 @dirrm share/apps/amor/blob

@@ -39,9 +39,5 @@ include/mimelib/uuencode.h
 lib/libQwSpriteField.la
 lib/libQwSpriteField.so.8
 lib/libmimelib.la
-lib/libmimelib.so.3
-@exec ln -sf libQwSpriteField.so.7 %D/lib/libQwSpriteField.so
-@exec ln -sf libmimelib.so.3 %D/lib/libmimelib.so
-@dirrm include/mimelib
-@unexec rm -f %D/lib/libQwSpriteField.so
-@unexec rm -f %D/lib/libmimelib.so
+lib/libmimelib.so.1
+include/mimelib
