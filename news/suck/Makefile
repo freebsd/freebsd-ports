@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=     system/news/transport
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
