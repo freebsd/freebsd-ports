@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6a33477e-3a9c-11d9-84ad-000c6e8f12ef">
+    <topic>phpMyAdmin -- cross-site scripting vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><le>2.6.0.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple cross-site scripting vulnerabilities, caused
+       	  by improper input parameter sanitizing, were
+       	  detected in phpMyAdmin, which may enable an attacker
+	  to do cross-site scripting attacks.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2004-3</url>
+    </references>
+    <dates>
+      <discovery>2004-11-18</discovery>
+      <entry>2004-11-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="759b8dfe-3972-11d9-a9e7-0001020eed82">
     <topic>Overflow error in fetch</topic>
     <affects>
