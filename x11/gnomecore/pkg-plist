@@ -1,0 +1,251 @@
+bin/background-properties
+bin/batmon_applet
+bin/battery_applet
+bin/bell-properties
+bin/bussign_applet
+bin/clockmail_applet
+bin/cpuload_applet
+bin/cpumemusage_applet
+bin/dialer_applet
+bin/diskusage_applet
+bin/drivemount_applet
+bin/fifteen_applet
+bin/fish_applet
+bin/gen_util_applet
+bin/gmenu
+bin/gnome-help-browser
+bin/gnome-info2html
+bin/gnome-man2html
+bin/gnome-session
+bin/gnome-smproxy
+bin/gnome-terminal
+bin/gnomecc
+bin/keyboard-properties
+bin/mixer_applet
+bin/modemlights_applet
+bin/mouse-properties
+bin/netload_applet
+bin/panel
+bin/save-session
+bin/session-properties
+bin/ui-properties
+bin/webcontrol_applet
+bin/wmpager_applet
+include/applet-lib.h
+include/applet-widget.h
+lib/libpanel_applet.a
+lib/libpanel_applet.la
+lib/libpanel_applet.so
+lib/libpanel_applet.so.0.27
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+share/gnome/appletsConf.sh
+share/gnome/applets/Amusements/.directory
+share/gnome/applets/Amusements/bussign_applet.desktop
+share/gnome/applets/Amusements/fifteen_applet.desktop
+share/gnome/applets/Amusements/fish_applet.desktop
+share/gnome/applets/Monitors/.directory
+share/gnome/applets/Monitors/batmon_applet.desktop
+share/gnome/applets/Monitors/battery_applet.desktop
+share/gnome/applets/Monitors/cpuload_applet.desktop
+share/gnome/applets/Monitors/cpumemusage_applet.desktop
+share/gnome/applets/Monitors/diskusage_applet.desktop
+share/gnome/applets/Multimedia/.directory
+share/gnome/applets/Multimedia/mixer_applet.desktop
+share/gnome/applets/Network/.directory
+share/gnome/applets/Network/dialer_applet.desktop
+share/gnome/applets/Network/mailcheck_applet.desktop
+share/gnome/applets/Network/modemlights_applet.desktop
+share/gnome/applets/Network/netload_applet.desktop
+share/gnome/applets/Network/webcontrol_applet.desktop
+share/gnome/applets/Utility/.directory
+share/gnome/applets/Utility/clock_applet.desktop
+share/gnome/applets/Utility/clockmail_applet.desktop
+share/gnome/applets/Utility/drivemount_applet.desktop
+share/gnome/applets/Utility/printer.desktop
+share/gnome/applets/Utility/wmpager_applet.desktop
+share/gnome/apps/.order
+share/gnome/apps/Administration/.directory
+share/gnome/apps/Applications/.directory
+share/gnome/apps/Applications/Emacs.desktop
+share/gnome/apps/Applications/Netscape.desktop
+share/gnome/apps/Audio/.directory
+share/gnome/apps/Games/.directory
+share/gnome/apps/Gmc.desktop
+share/gnome/apps/Graphics/.directory
+share/gnome/apps/Graphics/GIMP.desktop
+share/gnome/apps/Network/.directory
+share/gnome/apps/Network/Balsa.desktop
+share/gnome/apps/Network/Tkrat.desktop
+share/gnome/apps/Productivity/.directory
+share/gnome/apps/System/.directory
+share/gnome/apps/System/Imlib_config.desktop
+share/gnome/apps/System/background.desktop
+share/gnome/apps/System/bell.desktop
+share/gnome/apps/System/gmenu.desktop
+share/gnome/apps/System/gnomecc.desktop
+share/gnome/apps/System/keyboard.desktop
+share/gnome/apps/System/mouse.desktop
+share/gnome/apps/System/session.desktop
+share/gnome/apps/System/ui.desktop
+share/gnome/apps/Utilities/.directory
+share/gnome/apps/Utilities/Eterm.desktop
+share/gnome/apps/Utilities/Kterm.desktop
+share/gnome/apps/Utilities/UNIX-regular.desktop
+share/gnome/apps/Utilities/UNIX.desktop
+share/gnome/apps/Utilities/gnome-terminal.desktop
+share/gnome/apps/gnome-help.desktop
+share/gnome/default.session
+share/gnome/help/gnome-intro/C/a-sample-session.html
+share/gnome/help/gnome-intro/C/a-sample-session75.html
+share/gnome/help/gnome-intro/C/c93.html
+share/gnome/help/gnome-intro/C/c93127.html
+share/gnome/help/gnome-intro/C/c93175.html
+share/gnome/help/gnome-intro/C/c93191.html
+share/gnome/help/gnome-intro/C/c93230.html
+share/gnome/help/gnome-intro/C/c93302.html
+share/gnome/help/gnome-intro/C/c93372.html
+share/gnome/help/gnome-intro/C/c93412.html
+share/gnome/help/gnome-intro/C/docbook.css
+share/gnome/help/gnome-intro/C/f13.html
+share/gnome/help/gnome-intro/C/f1346.html
+share/gnome/help/gnome-intro/C/gnome-intro.html
+share/gnome/help/gnome-intro/C/index.html
+share/gnome/help/gnome-intro/C/pix/background-properties.gif
+share/gnome/help/gnome-intro/C/pix/calendar.gif
+share/gnome/help/gnome-intro/C/pix/ee-menu.gif
+share/gnome/help/gnome-intro/C/pix/freecell.gif
+share/gnome/help/gnome-intro/C/pix/gcalc.gif
+share/gnome/help/gnome-intro/C/pix/gedit-2files.gif
+share/gnome/help/gnome-intro/C/pix/ghex-2files.gif
+share/gnome/help/gnome-intro/C/pix/ghex-basic.gif
+share/gnome/help/gnome-intro/C/pix/gmc-basic.gif
+share/gnome/help/gnome-intro/C/pix/gmix.gif
+share/gnome/help/gnome-intro/C/pix/gnomine.gif
+share/gnome/help/gnome-intro/C/pix/gtcd-cddb.gif
+share/gnome/help/gnome-intro/C/pix/gtcd-track-list.gif
+share/gnome/help/gnome-intro/C/pix/gtcd.gif
+share/gnome/help/gnome-intro/C/pix/gtop-kill.gif
+share/gnome/help/gnome-intro/C/pix/gtop-mem.gif
+share/gnome/help/gnome-intro/C/pix/gtop-procs.gif
+share/gnome/help/gnome-intro/C/pix/gtt-2proj.gif
+share/gnome/help/gnome-intro/C/pix/gtt-basic.gif
+share/gnome/help/gnome-intro/C/pix/gtt-new.gif
+share/gnome/help/gnome-intro/C/pix/gulp.gif
+share/gnome/help/gnome-intro/C/pix/help-browser-initial.gif
+share/gnome/help/gnome-intro/C/pix/help-browser-sample.gif
+share/gnome/help/gnome-intro/C/pix/help-icon.gif
+share/gnome/help/gnome-intro/C/pix/mahjongg.gif
+share/gnome/help/gnome-intro/C/pix/panel-add-icon.gif
+share/gnome/help/gnome-intro/C/pix/panel-basic.gif
+share/gnome/help/gnome-intro/C/pix/panel-icons.gif
+share/gnome/help/gnome-intro/C/pix/panel-menu-select.gif
+share/gnome/help/gnome-intro/C/pix/panel-menu.gif
+share/gnome/help/gnome-intro/C/pix/same-gnome.gif
+share/gnome/help/gnome-intro/C/pix/terminal.gif
+share/gnome/help/gnome-intro/C/topic.dat
+share/gnome/help/help-browser/C/bg.xpm
+share/gnome/help/help-browser/C/default-page.html
+share/gnome/help/help-browser/C/gnome-logo2.xpm
+share/gnome/help/help-browser/C/help-browser.html
+share/gnome/help/help-browser/C/index.html
+share/gnome/help/help-browser/C/topic.dat
+share/locale/de/LC_MESSAGES/gnome-core.mo
+share/locale/es/LC_MESSAGES/gnome-core.mo
+share/locale/fi/LC_MESSAGES/gnome-core.mo
+share/locale/fr/LC_MESSAGES/gnome-core.mo
+share/locale/ga/LC_MESSAGES/gnome-core.mo
+share/locale/it/LC_MESSAGES/gnome-core.mo
+share/locale/ja/LC_MESSAGES/gnome-core.mo
+share/locale/ko/LC_MESSAGES/gnome-core.mo
+share/locale/no/LC_MESSAGES/gnome-core.mo
+share/locale/pt/LC_MESSAGES/gnome-core.mo
+share/locale/sv/LC_MESSAGES/gnome-core.mo
+share/gnome/panelrc
+share/gnome/pixmaps/batmon-ac.xpm
+share/gnome/pixmaps/batmon-bat.xpm
+share/gnome/pixmaps/emacs.png
+share/gnome/pixmaps/gnome-aorta.png
+share/gnome/pixmaps/gnome-audio2.png
+share/gnome/pixmaps/gnome-background.png
+share/gnome/pixmaps/gnome-balsa2.png
+share/gnome/pixmaps/gnome-calc2.png
+share/gnome/pixmaps/gnome-calendar.png
+share/gnome/pixmaps/gnome-cromagnon.png
+share/gnome/pixmaps/gnome-default.png
+share/gnome/pixmaps/gnome-ee.png
+share/gnome/pixmaps/gnome-file-c.png
+share/gnome/pixmaps/gnome-file-h.png
+share/gnome/pixmaps/gnome-folder.png
+share/gnome/pixmaps/gnome-gegl.png
+share/gnome/pixmaps/gnome-gemvt.png
+share/gnome/pixmaps/gnome-gimp.png
+share/gnome/pixmaps/gnome-globe.png
+share/gnome/pixmaps/gnome-gmenu.png
+share/gnome/pixmaps/gnome-gmush.png
+share/gnome/pixmaps/gnome-gnomine.png
+share/gnome/pixmaps/gnome-gsame.png
+share/gnome/pixmaps/gnome-help.png
+share/gnome/pixmaps/gnome-html.png
+share/gnome/pixmaps/gnome-image-gif.png
+share/gnome/pixmaps/gnome-image-jpeg.png
+share/gnome/pixmaps/gnome-irc.png
+share/gnome/pixmaps/gnome-lockscreen.png
+share/gnome/pixmaps/gnome-log.png
+share/gnome/pixmaps/gnome-menu-down.png
+share/gnome/pixmaps/gnome-menu-left.png
+share/gnome/pixmaps/gnome-menu-right.png
+share/gnome/pixmaps/gnome-menu-up.png
+share/gnome/pixmaps/gnome-mnemonic.png
+share/gnome/pixmaps/gnome-money.png
+share/gnome/pixmaps/gnome-mouse.png
+share/gnome/pixmaps/gnome-networktool.png
+share/gnome/pixmaps/gnome-note.png
+share/gnome/pixmaps/gnome-qeye.png
+share/gnome/pixmaps/gnome-talk.png
+share/gnome/pixmaps/gnome-term-linux.png
+share/gnome/pixmaps/gnome-term-linux2.png
+share/gnome/pixmaps/gnome-term-night.png
+share/gnome/pixmaps/gnome-term-tiger.png
+share/gnome/pixmaps/gnome-term.png
+share/gnome/pixmaps/gnome-tigert.png
+share/gnome/pixmaps/gnome-unknown.png
+share/gnome/pixmaps/gnome-word.png
+share/gnome/pixmaps/kterm.xpm
+share/gnome/pixmaps/launcher-program.xpm
+share/gnome/pixmaps/mailcheck/email-e.xpm
+share/gnome/pixmaps/mailcheck/email.xpm
+share/gnome/pixmaps/mailcheck/tux-anim.xpm
+share/gnome/pixmaps/monitor.xpm
+share/gnome/pixmaps/netscape.png
+share/gnome/pixmaps/panel-arrow-down.xpm
+share/gnome/pixmaps/panel-arrow-left.xpm
+share/gnome/pixmaps/panel-arrow-right.xpm
+share/gnome/pixmaps/panel-arrow-up.xpm
+share/gnome/pixmaps/panel-drawer.png
+share/gnome/pixmaps/panel-folder.xpm
+share/gnome/pixmaps/panel-knob.png
+share/gnome/pixmaps/panel-menu-main.xpm
+@dirrm share/gnome/applets/Amusements
+@dirrm share/gnome/applets/Monitors
+@dirrm share/gnome/applets/Multimedia
+@dirrm share/gnome/applets/Network
+@dirrm share/gnome/applets/Utility
+@dirrm share/gnome/applets
+@dirrm share/gnome/apps/Administration
+@dirrm share/gnome/apps/Applications
+@dirrm share/gnome/apps/Audio
+@dirrm share/gnome/apps/Games
+@dirrm share/gnome/apps/Graphics
+@dirrm share/gnome/apps/Network
+@dirrm share/gnome/apps/Productivity
+@dirrm share/gnome/apps/System
+@dirrm share/gnome/apps/Utilities
+@dirrm share/gnome/apps
+@dirrm share/gnome/help/gnome-intro/C/pix
+@dirrm share/gnome/help/gnome-intro/C
+@dirrm share/gnome/help/gnome-intro
+@dirrm share/gnome/help/help-browser/C
+@dirrm share/gnome/help/help-browser
+@dirrm share/gnome/help
+@dirrm share/gnome/pixmaps/mailcheck
