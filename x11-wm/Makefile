@@ -22,6 +22,7 @@
     SUBDIR += icewm
     SUBDIR += iconmaker
     SUBDIR += libdockapp
+    SUBDIR += libwmfun
     SUBDIR += lwm
     SUBDIR += mlvwm
     SUBDIR += olvwm
