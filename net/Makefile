@@ -249,6 +249,7 @@
     SUBDIR += ipex
     SUBDIR += ipfm
     SUBDIR += ipfw-graph
+    SUBDIR += ipgrab
     SUBDIR += iplog
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
