@@ -5,7 +5,7 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1998/02/26 10:14:39 ache Exp $
+# $Id: Makefile,v 1.8 1998/04/07 17:33:28 ache Exp $
 #
 
 DISTNAME=       premail-0.45
@@ -19,6 +19,11 @@ MAINTAINER=	ache@FreeBSD.ORG
 USE_PERL5=      Yes
 NO_BUILD=       Yes
 RESTRICTED=     "Author treats it as ITAR subject"
+
+post-patch:
+	cd ${WRKSRC}; \
+	cp premail premail.old; \
+	sed 's=%PERL5%=${PERL5}=' < premail.old > premail
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} premail ${PREFIX}/bin
