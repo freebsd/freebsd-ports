@@ -92,7 +92,7 @@ post-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split groff.texinfo
 .endif
 	cd ${WRKSRC} && ${FIND} font -name DESC \
-	| xargs ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
+	| ${XARGS} ${REINPLACE_CMD} -e 's|pro \(.*\)|pro ${PREFIX}/bin/\1|g;'
 
 post-install: install-links
 .if !defined(WITHOUT_INFO)
