@@ -6,35 +6,36 @@
 #
 
 PORTNAME=	vtcl
-PORTVERSION=	1.2.0
-CATEGORIES=	devel tk82
-MASTER_SITES=	http://vtcl.sourceforge.net/dload/
+PORTVERSION=	1.6.0a1
+CATEGORIES=	devel tk83
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
+HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
-post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/vt.tcl
+pre-configure:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/vtcl/images
-	@${MKDIR} ${PREFIX}/lib/vtcl/images/edit
-	@${MKDIR} ${PREFIX}/lib/vtcl/lib
-	@${MKDIR} ${PREFIX}/share/doc/vtcl
 	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${PREFIX}/share/doc/vtcl
-.for data in Announce ChangeLog README vt.tcl
+	@${MKDIR} ${PREFIX}/lib/vtcl
+.for data in ChangeLog LICENSE README vtcl.tcl vtsetup.tcl
 	${INSTALL_DATA} ${WRKSRC}/${data} ${PREFIX}/lib/vtcl
 .endfor
+	@${MKDIR} ${PREFIX}/lib/vtcl/images
 .for sufx in gif ppm xbm xpm
 	${INSTALL_DATA} ${WRKSRC}/images/*.${sufx} ${PREFIX}/lib/vtcl/images
 .endfor
+	@${MKDIR} ${PREFIX}/lib/vtcl/images/edit
 	${INSTALL_DATA} ${WRKSRC}/images/edit/*.gif ${PREFIX}/lib/vtcl/images/edit
-.for sufx in sh tcl
-	${INSTALL_DATA} ${WRKSRC}/lib/*.${sufx} ${PREFIX}/lib/vtcl/lib
-.endfor
+	@${MKDIR} ${PREFIX}/lib/vtcl/lib
+	${CP} -r ${WRKSRC}/lib/* ${PREFIX}/lib/vtcl/lib
+	@${MKDIR} ${PREFIX}/share/doc/vtcl
+	${INSTALL_DATA} ${WRKSRC}/doc/tutorial.txt ${PREFIX}/share/doc/vtcl
 
 .include <bsd.port.mk>
