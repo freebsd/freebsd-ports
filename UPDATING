@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040512:
+  AFFECTS: users of print/teTeX
+
+  The print/teTeX no longer installs dvipsk by default.  To build and
+  install dvipsk, you have to specify WITH_DVIPSK, or the dvipsk utility
+  in the print/teTeX is also available print/dvipsk-tetex separately.
+  This change is to resolve conflicts between various versions of dvips.
+
 20040504:
   AFFECTS: users of mail/drac
 
