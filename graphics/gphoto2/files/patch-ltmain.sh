@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Sat Mar  2 08:58:32 2002
-+++ ltmain.sh	Sat Mar  2 08:59:07 2002
-@@ -958,6 +958,7 @@
+--- ltmain.sh.orig	Tue Jun 25 20:57:40 2002
++++ ltmain.sh	Sat Dec 21 03:49:50 2002
+@@ -967,6 +967,7 @@
  	;;
  
        -avoid-version)
@@ -8,7 +8,16 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -4247,10 +4248,12 @@
+@@ -1063,7 +1064,7 @@
+ 	  case $host in
+ 	 *-*-openbsd* | *-*-freebsd*)
+ 	    # Do not include libc_r directly, use -pthread flag.
+-	    continue
++	    #continue
+ 	    ;;
+ 	  esac
+ 	fi
+@@ -4273,10 +4274,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
