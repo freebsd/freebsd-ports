@@ -6,7 +6,7 @@ tempfile=`mktemp -t checklist`
 if [ "${BATCH}" = "yes" ]; then
 	set \"common\"
 else
-	/usr/bin/dialog --title "Postfix configuration options" --clear \
+	/usr/bin/dialog --title "Papaya-plugins configuration options" --clear \
 			--checklist "\n\
 Please select desired options:" -1 -1 8 \
 common		"Enable common generic plugins" ON \
