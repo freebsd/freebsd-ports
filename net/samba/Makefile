@@ -35,6 +35,8 @@ AUDIT?=         "@comment "
 RECYCLE?=       "@comment "
 LIBSAMBA?=      "@comment "
 BUILD_VFS?=     "@comment "
+WITH_WINBIND?=  "@comment "
+WITH_WINBIND_AUTH_CHALLENGE?= "@comment "
 
 .if defined(WITH_AUDIT)
 AUDIT=		""
@@ -111,10 +113,12 @@ WITH_CUPS=	yes
 
 .if defined(WITH_WINBIND)
 CONFIGURE_ARGS+=	--with-winbind
+WITH_WINBIND=	""
 .endif
 
 .if defined(WITH_WINBIND_AUTH_CHALLENGE)
 CONFIGURE_ARGS+=	--with-winbind-auth-challenge
+WITH_WINBIND_AUTH_CHALLENGE=	""
 .endif
 
 pre-fetch:
@@ -166,7 +170,9 @@ SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 PLIST_SUB=      AUDIT=${AUDIT} \
 		RECYCLE=${RECYCLE} \
 		LIBSAMBA=${LIBSAMBA} \
-		BUILD_VFS=${BUILD_VFS}
+		BUILD_VFS=${BUILD_VFS} \
+		WITH_WINBIND=${WITH_WINBIND} \
+		WITH_WINBIND_AUTH_CHALLENGE=${WITH_WINBIND_AUTH_CHALLENGE}
 
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 post-build:
