@@ -39,6 +39,7 @@
     SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
+    SUBDIR += dtdparse
     SUBDIR += eruby
     SUBDIR += expat
     SUBDIR += expat2

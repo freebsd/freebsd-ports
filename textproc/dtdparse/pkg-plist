@@ -1,0 +1,30 @@
+bin/contentmodel
+bin/dtdflatten
+bin/dtdformat
+bin/dtdparse
+bin/dtdstats
+bin/elements
+lib/perl5/site_perl/%%PERL_VER%%/XML/DTDParse/Catalog.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DTDParse/ContentModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DTDParse/DTD.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/DTDParse/Tokenizer.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DTDParse
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/modules/html.pl
+lib/perl5/site_perl/%%PERL_VER%%/modules/plain.pl
+lib/perl5/site_perl/%%PERL_VER%%/modules/refentry.pl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/modules
+@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall dtdparse
+share/xml/dtdparse/catalog
+@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install dtdparse
+share/xml/dtdparse/dtd.dtd
+@dirrm share/xml/dtdparse
+@unexec rmdir %D/share/xml 2>/dev/null || true
+share/examples/dtdparse/sample.dtd
+share/examples/dtdparse/sample.mod
+share/examples/dtdparse/simple-inline.mod
+share/examples/dtdparse/simple.dtd
+@dirrm share/examples/dtdparse
+share/doc/dtdparse/README
+share/doc/dtdparse/WhatsNew
+@dirrm share/doc/dtdparse
