@@ -19,4 +19,7 @@ USE_AUTOMAKE=	yes
 USE_BISON=	yes
 MAN1=		treecc.1
 
+post-install:
+	@${LN} -sf treecc ${PREFIX}/bin/${DISTNAME}
+
 .include <bsd.port.mk>
