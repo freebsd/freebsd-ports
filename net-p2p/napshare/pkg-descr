@@ -1,9 +1,9 @@
 NapShare is a GUI based Gnutella Client.
 
 It's a fully featured Gnutella Client designed to share any type of
-file the user wishes to share. Take a nap while it does the work! When
-finished, you will supply a list of keywords and filters then it will
-download overnight, automatically, also sharing whatever it gets.
+file the user wishes to share. You supply a list of keywords and
+filters for the file types you want and it downloads them overnight,
+automatically
 
 WWW: http://napshare.sourceforge.net/
 - Mike Heffner
