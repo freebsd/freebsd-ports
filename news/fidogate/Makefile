@@ -1,16 +1,16 @@
 # New ports collection makefile for:    fidogate
-# Version required:     fidogate-4.2.9
+# Version required:     fidogate-4.3.6
 # Date created:         02 Dez 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fidogate-4.2.9
+DISTNAME=	fidogate-4.3.6
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		ftp://ftp.lan-ks.de/pub/approved/
-MASTER_SITE_SUBDIR=	system/fido
+MASTER_SITES=	ftp://ftp.fido.de/pub/fidogate/ \
+		ftp://ftp.gwdg.de/pub/linux/fido/fidogate/ \
+		ftp://ftp.fu-berlin.de/unix/news/fidogate/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
@@ -22,8 +22,7 @@ FORBIDDEN=	indefinite hang
 .endif
 
 USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/fidogate
+USE_PERL5=	yes
 
 pre-configure:
 	@${MV} ${WRKSRC}/config.make ${WRKSRC}/config.make.sed
@@ -40,10 +39,10 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/doc/fidogate/gatebau
 
 DOCLIST = \
-	Fido-Point-HOWTO Fido-Point-eng-HOWTO \
 	fidogate.texi fidogate.txt \
 	gatebau94.txt kludge-rfc.doc msgid.doc \
 	qmail.txt texinfo.tex \
+	dirs.html index.html template.html \
 	fido \
 	howto \
 	misc \
