@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1995/11/27 04:10:25 asami Exp $
+# $Id: Makefile,v 1.14 1995/12/13 21:38:24 ache Exp $
 #
 
 DISTNAME=       lynx2-4-FM
@@ -12,7 +12,7 @@ CATEGORIES+=	www
 
 #MASTER_SITES=   http://www.wfbr.edu/lynx/
 #NCFTP=          w3c
-#NCFTPFLAGS=     -v -to multipart/x-zip -timeout 240 -o ${DISTFILES}
+#NCFTPFLAGS=     -to multipart/x-zip -timeout 120 -o ${DISTFILES}
 #FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
 
 MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/nidr/www/
