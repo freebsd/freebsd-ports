@@ -6,5 +6,7 @@ for quick conversions of individual messages to HTML without adding them to
 the index.  MIME attachments in mail messages are handled.  MHTML is
 also supported.
 
-The program is highly customizable and is well documented.  See URL 
-"http://www.oac.uci.edu/indiv/ehood/mhonarc.doc.html" for more information.
+The program is highly customizable and is well documented.  See below URL 
+for more information.
+
+WWW: http://www.oac.uci.edu/indiv/ehood/mhonarc.doc.html
