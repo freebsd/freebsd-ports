@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 
 INFO=		mydns
 MAN5=		mydns.conf.5
-MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydns-conf.8
+MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydnsptrconvert.8 mydns-conf.8
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
