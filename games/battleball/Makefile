@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 
 MAINTAINER=	will@FreeBSD.org
 
+USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
 
 do-install:
