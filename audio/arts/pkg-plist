@@ -1,3 +1,4 @@
+@comment 20021010 on wwweasel.geeksrus.net by AlanE@FreeBSD.org
 bin/artsc-config
 bin/artscat
 bin/artsd
