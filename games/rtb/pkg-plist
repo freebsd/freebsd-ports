@@ -1,68 +1,43 @@
-bin/RealTimeBattle
-games/RealTimeBattle/Arenas/Circle.arena
-games/RealTimeBattle/Arenas/Circles.arena
-games/RealTimeBattle/Arenas/Cross.arena
-games/RealTimeBattle/Arenas/Diamond.arena
-games/RealTimeBattle/Arenas/Flower.arena
-games/RealTimeBattle/Arenas/Forest.arena
-games/RealTimeBattle/Arenas/Labyrinth.arena
-games/RealTimeBattle/Arenas/Nippon.arena
-games/RealTimeBattle/Arenas/Pool.arena
-games/RealTimeBattle/Arenas/Rooms.arena
-games/RealTimeBattle/Arenas/Square.arena
-games/RealTimeBattle/Arenas/Star.arena
-games/RealTimeBattle/Arenas/Triangle.arena
-games/RealTimeBattle/Robots/empty.robot
-games/RealTimeBattle/Robots/empty/empty.c
-games/RealTimeBattle/Robots/empty/Makefile.am
-games/RealTimeBattle/Robots/rotate_and_fire_signal.robot
-games/RealTimeBattle/Robots/rotate_and_fire_blocking.robot
-games/RealTimeBattle/Robots/rotate_and_fire_select.robot
-games/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.cc
-games/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire.h
-games/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_signal.cc
-games/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_blocking.cc
-games/RealTimeBattle/Robots/rotate_and_fire/rotate_and_fire_select.cc
-games/RealTimeBattle/Robots/rotate_and_fire/Makefile.am
-games/RealTimeBattle/Robots/seek_and_destroy.robot
-games/RealTimeBattle/Robots/seek_and_destroy/seek_and_destroy.cc
-games/RealTimeBattle/Robots/seek_and_destroy/Makefile.am
-games/RealTimeBattle/Documentation/RealTimeBattle-1.html
-games/RealTimeBattle/Documentation/RealTimeBattle-2.html
-games/RealTimeBattle/Documentation/RealTimeBattle-3.html
-games/RealTimeBattle/Documentation/RealTimeBattle-4.html
-games/RealTimeBattle/Documentation/RealTimeBattle-5.html
-games/RealTimeBattle/Documentation/RealTimeBattle-6.html
-games/RealTimeBattle/Documentation/RealTimeBattle.html
-games/RealTimeBattle/Documentation/next.gif
-games/RealTimeBattle/Documentation/prev.gif
-games/RealTimeBattle/Documentation/toc.gif
-games/RealTimeBattle/Documentation/RealTimeBattle.dvi
-games/RealTimeBattle/Messagetypes.h
-games/RealTimeBattle/RealTimeBattle.xpm
-games/RealTimeBattle/tournament.txt
-games/RealTimeBattle/ABOUT-NLS
-games/RealTimeBattle/BUGS
-games/RealTimeBattle/FAQ
-games/RealTimeBattle/TODO
-games/RealTimeBattle/README
-games/RealTimeBattle/INSTALL
-games/RealTimeBattle/ChangeLog
-games/RealTimeBattle/CVS-Help
-include/Messagetypes.h
-@unexec install-info --delete %D/info/RealTimeBattle.info.gz %D/info/dir
-info/RealTimeBattle.info.gz
+bin/realtimebattle
+include/RealTimeBattle/ArenaBase.h
+include/RealTimeBattle/ArenaController.h
+include/RealTimeBattle/ArenaRealTime.h
+include/RealTimeBattle/ArenaReplay.h
+include/RealTimeBattle/ArenaWindow.h
+include/RealTimeBattle/ControlWindow.h
+include/RealTimeBattle/Dialog.h
+include/RealTimeBattle/Extras.h
+include/RealTimeBattle/GeometricalObjects.h
+include/RealTimeBattle/Gui.h
+include/RealTimeBattle/IntlDefs.h
+include/RealTimeBattle/List.h
+include/RealTimeBattle/MessageWindow.h
+include/RealTimeBattle/Messagetypes.h
+include/RealTimeBattle/MovingObject.h
+include/RealTimeBattle/Options.h
+include/RealTimeBattle/OptionsWindow.h
+include/RealTimeBattle/Robot.h
+include/RealTimeBattle/ScoreWindow.h
+include/RealTimeBattle/Shape.h
+include/RealTimeBattle/Shot.h
+include/RealTimeBattle/StartTournamentWindow.h
+include/RealTimeBattle/StatisticsWindow.h
+include/RealTimeBattle/String.h
+include/RealTimeBattle/Structs.h
+include/RealTimeBattle/Timer.h
+include/RealTimeBattle/Various.h
+include/RealTimeBattle/Vector2D.h
+include/RealTimeBattle/Wall.h
+include/RealTimeBattle/fdstream.h
 share/locale/de/LC_MESSAGES/RealTimeBattle.mo
+share/locale/es/LC_MESSAGES/RealTimeBattle.mo
 share/locale/gl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
-@dirrm games/RealTimeBattle/Robots/empty
-@dirrm games/RealTimeBattle/Robots/rotate_and_fire
-@dirrm games/RealTimeBattle/Robots/seek_and_destroy
-@dirrm games/RealTimeBattle/Arenas
-@dirrm games/RealTimeBattle/Documentation
-@dirrm games/RealTimeBattle/Robots
-@dirrm games/RealTimeBattle
-@dirrm games
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/RealTimeBattle
