@@ -1,11 +1,15 @@
+bin/rapper
+bin/raptor-config
 bin/redland-config
+bin/redland-db-upgrade
 include/librdf.h
+include/ntriples.h
+include/raptor.h
 include/rdf_concepts.h
 include/rdf_digest.h
 include/rdf_files.h
 include/rdf_hash.h
 include/rdf_hash_bdb.h
-include/rdf_hash_gdbm.h
 include/rdf_hash_memory.h
 include/rdf_heuristics.h
 include/rdf_init.h
@@ -26,7 +30,9 @@ include/rdf_types.h
 include/rdf_uri.h
 include/rdf_utf8.h
 include/redland.h
+lib/libraptor.a
+lib/libraptor.so
+lib/libraptor.so.0
 lib/librdf.a
 lib/librdf.so
 lib/librdf.so.0
-@dirrm share/redland

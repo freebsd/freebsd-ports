@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	0.9.11
-PORTREVISION=	2
+PORTVERSION=	0.9.12
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -18,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xmlparse.1:${PORTSDIR}/www/libwww
@@ -27,15 +25,20 @@ LIBWWW_CONFIG?=	${LOCALBASE}/bin/libwww-config
 
 USE_OPENSSL=	yes
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-bdb=${LOCALBASE} --with-libwww
 INSTALLS_SHLIB=	yes
 
-MAN3=		redland.3
+MAN1=		rapper.1
+MAN3=		libraptor.3 redland.3
 
-CPPFLAGS=	-I${LOCALBASE}/include/db2 -I${LOCALBASE}/include \
-		`${LIBWWW_CONFIG} --cflags`
-LDFLAGS=	-L${LOCALBASE}/lib `${LIBWWW_CONFIG} --libs`
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|\@INSTALL\@|/usr/bin/install -c|g ; \
+		 s|^CPPFLAGS = -I|CPPFLAGS = \@CPPFLAGS\@ -I|g ; \
+		 s|^LDFLAGS = \@LIBRDF_|LDFLAGS = \@LDFLAGS\@ \@LIBRDF_|g ; \
+		 s|^LIBS = \@LIBRDF_|LIBS = \@LIBS\@ \@LIBRDF_|g'
 
 .include <bsd.port.mk>
