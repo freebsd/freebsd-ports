@@ -8,7 +8,7 @@
 PORTNAME=	nickle
 PORTVERSION=	1.99.2
 CATEGORIES=	lang
-MASTER_SITES=	http://nickle.keithp.com/release/
+MASTER_SITES=	http://www.nickle.org/release/
 
 MAINTAINER=	ports@FreeBSD.org
 
