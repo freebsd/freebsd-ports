@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.21 1998/02/19 17:42:54 obrien Exp $
+# $Id: Makefile,v 1.22 1998/02/19 18:08:46 obrien Exp $
 #
 
 DISTNAME=	vim-5.0
@@ -36,7 +36,6 @@ pre-build:
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || /bin/ln -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
-	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@/bin/ln -sf ${PREFIX}/man/man1/ctags.1.gz ${PREFIX}/man/man1/etags.1.gz
 
 .include <bsd.port.mk>
