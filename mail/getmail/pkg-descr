@@ -1,3 +1,4 @@
-POP3 mail retriever written in Python
+POP3 mail retriever written in Python.  maildrop includes many features
+similiar to fetchmail and intends to be a complete replacement.
 
 WWW: http://www.qcc.sk.ca/~charlesc/software/getmail-2.0/
