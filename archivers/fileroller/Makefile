@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -38,6 +37,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if defined(WITH_RAR) || exists(${LOCALBASE}/bin/rar)
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
+.endif
+
+.if defined(WITH_BZIP) || exists(${LOCALBASE}/bin/bzip)
+RUN_DEPENDS+=	bzip:${PORTSDIR}/archivers/bzip
 .endif
 
 post-install:
