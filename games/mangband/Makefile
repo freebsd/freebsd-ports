@@ -10,7 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=   http://www.umr.edu/~keldon/MAngband/
 DISTNAME=       mangband-054
 
-MAINTAINER=     ache@freebsd.org
+MAINTAINER=     ports@freebsd.org
 
 WRKSRC=         ${WRKDIR}/mangband/src
 ALL_TARGET=     install
