@@ -1,0 +1,30 @@
+%%PYTHON_SITELIBDIR%%/msnp/__init__.py
+%%PYTHON_SITELIBDIR%%/msnp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/msnp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/msnp/chat.py
+%%PYTHON_SITELIBDIR%%/msnp/chat.pyc
+%%PYTHON_SITELIBDIR%%/msnp/chat.pyo
+%%PYTHON_SITELIBDIR%%/msnp/codec.py
+%%PYTHON_SITELIBDIR%%/msnp/codec.pyc
+%%PYTHON_SITELIBDIR%%/msnp/codec.pyo
+%%PYTHON_SITELIBDIR%%/msnp/command.py
+%%PYTHON_SITELIBDIR%%/msnp/command.pyc
+%%PYTHON_SITELIBDIR%%/msnp/command.pyo
+%%PYTHON_SITELIBDIR%%/msnp/error.py
+%%PYTHON_SITELIBDIR%%/msnp/error.pyc
+%%PYTHON_SITELIBDIR%%/msnp/error.pyo
+%%PYTHON_SITELIBDIR%%/msnp/friend.py
+%%PYTHON_SITELIBDIR%%/msnp/friend.pyc
+%%PYTHON_SITELIBDIR%%/msnp/friend.pyo
+%%PYTHON_SITELIBDIR%%/msnp/net.py
+%%PYTHON_SITELIBDIR%%/msnp/net.pyc
+%%PYTHON_SITELIBDIR%%/msnp/net.pyo
+%%PYTHON_SITELIBDIR%%/msnp/protocol.py
+%%PYTHON_SITELIBDIR%%/msnp/protocol.pyc
+%%PYTHON_SITELIBDIR%%/msnp/protocol.pyo
+%%PYTHON_SITELIBDIR%%/msnp/session.py
+%%PYTHON_SITELIBDIR%%/msnp/session.pyc
+%%PYTHON_SITELIBDIR%%/msnp/session.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/msnp
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
