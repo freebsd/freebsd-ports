@@ -6346,6 +6346,7 @@ tet		ports/misc/tet
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
 tex		ports/print/tex
+tex2im		ports/textproc/tex2im
 texi2html	ports/textproc/texi2html
 texinfo		src/gnu/usr.bin/texinfo
 textedit	ports/editors/textedit
