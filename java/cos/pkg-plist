@@ -15,8 +15,10 @@ share/java/cos/doc/com.oreilly.servlet.HttpsMessage.html
 share/java/cos/doc/com.oreilly.servlet.LocaleNegotiator.html
 share/java/cos/doc/com.oreilly.servlet.LocaleToCharsetMap.html
 share/java/cos/doc/com.oreilly.servlet.MailMessage.html
+share/java/cos/doc/com.oreilly.servlet.MultipartFilter.html
 share/java/cos/doc/com.oreilly.servlet.MultipartRequest.html
 share/java/cos/doc/com.oreilly.servlet.MultipartResponse.html
+share/java/cos/doc/com.oreilly.servlet.MultipartWrapper.html
 share/java/cos/doc/com.oreilly.servlet.ParameterNotFoundException.html
 share/java/cos/doc/com.oreilly.servlet.ParameterParser.html
 share/java/cos/doc/com.oreilly.servlet.RemoteDaemonHttpServlet.html
@@ -54,8 +56,11 @@ share/java/cos/doc/images/variable-index.gif
 share/java/cos/doc/images/variables.gif
 share/java/cos/doc/images/yellow-ball-small.gif
 share/java/cos/doc/images/yellow-ball.gif
+share/java/cos/doc/package-list
 share/java/cos/doc/packages.html
+share/java/cos/doc/stylesheet.css
 share/java/cos/doc/tree.html
+share/java/cos/doc/upload.war
 @dirrm share/java/cos/doc/images
 @dirrm share/java/cos/doc
 @dirrm share/java/cos
