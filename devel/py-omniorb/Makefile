@@ -32,6 +32,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
@@ -47,6 +48,10 @@ EXAMPLESDIR=	${PREFIX}/share/examples/omniORBpy
 pre-configure:
 	@ ${MKDIR} ${CONFIGURE_WRKSRC}
 	@ cd ${OMNIORB_WRKSRC} && find idl | ${CPIO} ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
+		${WRKSRC}/mk/beforeauto.mk.in
 
 pre-install:
 .if !defined(NOPORTDOCS)
