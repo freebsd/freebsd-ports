@@ -1,0 +1,16 @@
+--- configure.in.orig	Thu Sep 10 17:23:35 1998
++++ configure.in	Sun Dec  6 15:31:53 1998
+@@ -23,10 +23,11 @@
+ AC_PROG_INSTALL
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(curses, initscr, LIBS="$LIBS -lcurses",
+-AC_CHECK_LIB(ncurses, initscr, LIBS="$LIBS -lncurses"))
++AC_CHECK_LIB(ncurses, initscr, LIBS="$LIBS -lncurses",
++AC_CHECK_LIB(curses, initscr, LIBS="$LIBS -lcurses"))
+ 
+ dnl Checks for header files.
++AC_CHECK_HEADER(ncurses.h, [AC_DEFINE(HAVE_NCURSES_H)])
+ AC_HEADER_STDC
+ AC_HEADER_SYS_WAIT
+ AC_CHECK_HEADERS(fcntl.h unistd.h)
