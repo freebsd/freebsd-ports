@@ -8,6 +8,7 @@
     SUBDIR += bulb
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += dailystrips
     SUBDIR += gaddr
     SUBDIR += gcal
     SUBDIR += gemcal
