@@ -1,0 +1,38 @@
+--- configure.orig	Wed Dec 10 03:06:43 2003
++++ configure	Sun Mar 27 23:43:58 2005
+@@ -17,12 +17,10 @@
+ while [ $# -gt 0 ]; do
+ 	case "$1" in
+ 		--prefix=*)
+-			PREFIX=`expr "${1}" : "--prefix=\(.*\)"`
+ 			shift
+ 			;;
+ 
+ 		--qtdir=*)
+-			QTDIR=`expr "${1}" : "--qtdir=\(.*\)"`
+ 			shift
+ 			;;
+ 
+@@ -76,7 +74,7 @@
+ 		echo Warning: qmake not in \$QTDIR/bin/qmake
+ 		echo trying to find it in \$PATH
+ 	fi
+-	qm=`type -p qmake`
++	qm=`which qmake`
+ 	if [ -x "$qm" ]; then
+ 		if [ "$QC_DEBUG" = "Y" ]; then
+ 			echo qmake found in $qm
+@@ -477,13 +475,6 @@
+ 	echo
+ 	exit 1;
+ fi
+-cat >Makefile.tmp <<EOT
+-export QTDIR = $QTDIR
+-EOT
+-cat Makefile >> Makefile.tmp
+-rm -f Makefile
+-cp -f Makefile.tmp Makefile
+-rm -f Makefile.tmp
+ 
+ echo
+ echo Good, your configure finished.  Now run \'make\'.
