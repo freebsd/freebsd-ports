@@ -7,6 +7,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi
@@ -18,13 +19,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	michaelnottebrock@gmx.net
 COMMENT=	A collection of simple PIN or passphrase entry dialogs
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		ksba.7:${PORTSDIR}/security/libksba
 
-WANT_GTK=	yes
+USE_AUTOMAKE_VER=	15
+USE_GNOMENG=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -37,15 +37,24 @@ CONFIGURE_ARGS+=--with-included-gettext=no
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_QT)
-#USE_QT_VER=	3
-BROKEN=	The QT pinentry-helper is currently non-functional
-.else
-CONFIGURE_ARGS+=--disable-pinentry-qt
+.if exists(${X11BASE}/bin/moc)
+WITH_QT=yes
 .endif
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if defined(WITH_QT)
+USE_QT_VER=	3
+PLIST_SUB+=	WITH_QT=""
+.else
+CONFIGURE_ARGS+=--disable-pinentry-qt
+PLIST_SUB+=WITH_QT="@comment "
+.endif
+
+.if !defined(WITHOUT_GTK)
+USE_GNOME+=	gtk12
+PLIST_SUB+=WITH_GTK=""
+.else
+CONFIGURE_ARGS+=--disable-pinentry-gtk
+PLIST_SUB+=WITH_GTK="@comment "
 .endif
 
 post-extract:

@@ -1,5 +1,5 @@
 bin/pinentry-curses
-bin/pinentry-gtk
+%%WITH_GTK%%bin/pinentry-gtk
 %%WITH_QT%%bin/pinentry-qt
 @unexec install-info --delete %D/info/pinentry.info %D/info/dir
 info/pinentry.info
