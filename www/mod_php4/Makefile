@@ -1,13 +1,13 @@
-# New ports collection makefile for:	apache HTTPD / php3
+# New ports collection makefile for:	Apache / PHP
 # Version required:	1.3* / 3.0*
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.82 1999/07/30 21:06:59 dirk Exp $
+# $Id: Makefile,v 1.83 1999/08/10 16:07:26 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
-PKGNAME=	apache+php3-${VERSION_APACHE}+${VERSION_PHP3}
+PKGNAME=	apache+php-${VERSION_APACHE}+${VERSION_PHP}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.rge.com/pub/infosystems/apache/dist/ \
@@ -29,14 +29,14 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
-DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
+DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP}.tar.gz
 
-MAINTAINER=	dirk@FreeBSD.ORG
+MAINTAINER=	dirk@FreeBSD.org
 
 Y2K=		http://www.php.net/y2k.php3
 
 VERSION_APACHE=	1.3.6
-VERSION_PHP3=	3.0.12
+VERSION_PHP=	3.0.12
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -80,9 +80,9 @@ MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apache.8 apachectl.8 apxs.8 logresolve.8 rotatelogs.8
 
 APACHEDOCDIR=	${PREFIX}/share/doc/apache
-PHP3DOCDIR=	${PREFIX}/share/doc/php3
+PHPDOCDIR=	${PREFIX}/share/doc/php
 
-PHP3_CONF_ARGS=	--prefix=${PREFIX} \
+PHP_CONF_ARGS=	--prefix=${PREFIX} \
 		${CONFIGURE_TARGET} \
 		--with-system-regex \
 		--with-apache=${WRKSRC} \
@@ -96,19 +96,19 @@ pre-fetch:
 .endif
 
 post-extract:
-	@${LN} -s php-${VERSION_PHP3} ${WRKDIR}/php3
+	@${LN} -s php-${VERSION_PHP} ${WRKDIR}/php
 
 pre-configure:
 	@cd ${WRKSRC} \
 	&& ./configure > /dev/null \
-	&& cd ${WRKDIR}/php-${VERSION_PHP3} \
-	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP3}" \
+	&& cd ${WRKDIR}/php-${VERSION_PHP} \
+	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP}" \
 	&& CC="${CC}" \
 	   CFLAGS="${CFLAGS}" \
 	   CPPFLAGS="-I${PREFIX}/include -I${PREFIX}/include/gd" \
 	   LDFLAGS=-L${PREFIX}/lib \
-	   ./configure ${PHP3_CONF_ARGS} \
-	&& ${ECHO_MSG} "===>  Building for PHP-${VERSION_PHP3}" \
+	   ./configure ${PHP_CONF_ARGS} \
+	&& ${ECHO_MSG} "===>  Building for PHP-${VERSION_PHP}" \
 	&& ${MAKE} install \
 	&& ${ECHO_MSG} "===>  Configuring for Apache-${VERSION_APACHE}"
 
@@ -120,21 +120,21 @@ post-install:
 		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start${SSL} > /dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/php3.ini-dist ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/php3.ini-dist ${PREFIX}/etc
 .for i in php2 php3 phpi phps
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/extra/icons/$i.gif ${PREFIX}/share/apache/icons
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/extra/icons/$i.gif ${PREFIX}/share/apache/icons
 .endfor
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${APACHEDOCDIR} ${PHP3DOCDIR}
+	${MKDIR} ${APACHEDOCDIR} ${PHPDOCDIR}
 .for i in README LICENSE ABOUT_APACHE
 	${INSTALL_DATA} ${WRKSRC}/$i ${APACHEDOCDIR}
 .endfor
 .for i in CODING_STANDARDS LICENSE
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/$i ${PHP3DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/$i ${PHPDOCDIR}
 .endfor
 	@${ECHO} "Docs reside in ${APACHEDOCDIR}"
-	@${ECHO} "and in ${PHP3DOCDIR}"
+	@${ECHO} "and in ${PHPDOCDIR}"
 .endif
 
 # This was copied from bsd.port.mk because a missing post-clean target

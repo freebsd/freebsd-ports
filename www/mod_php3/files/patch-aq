@@ -1,5 +1,5 @@
---- ../php3/configure.orig	Wed Jul 28 19:07:49 1999
-+++ ../php3/configure	Fri Jul 30 17:55:10 1999
+--- ../php/configure.orig	Wed Jul 28 19:07:49 1999
++++ ../php/configure	Fri Jul 30 17:55:10 1999
 @@ -5072,29 +5072,9 @@
    if test -n "$unique" && test "`eval $cmd`" = "" ; then
      eval "LIBPATH$unique=set"
