@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscorch
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.15
 CATEGORIES=	games
 MASTER_SITES=	http://chaos2.org/xscorch/ \
 		http://mirror.dok.org/xscorch/
@@ -20,6 +20,7 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk
@@ -31,12 +32,14 @@ MAN6=		xscorch.6
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomelibs
 PKGNAMESUFFIX=	-gnome
+PLIST_SUB+=	GNOME="gnome"
 .else
 CONFIGURE_ARGS+=	--without-gnome
+PLIST_SUB+=	GNOME=""
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's,MSG_NOSIGNAL,0,' \
+	@${REINPLACE_CMD} -e 's,MSG_NOSIGNAL,0,' \
 		${WRKSRC}/snet/tcpnet/tn_internal.c \
 		${WRKSRC}/snet/tcpnet/tn_read.c
 
