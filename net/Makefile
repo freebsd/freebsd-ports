@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.127 1997/11/17 00:48:49 jdp Exp $
+# $Id: Makefile,v 1.128 1997/11/17 13:20:20 tg Exp $
 #
 
     SUBDIR += archie
@@ -80,6 +80,7 @@
     SUBDIR += tinyfugue
     SUBDIR += traceroute
     SUBDIR += trafshow
+    SUBDIR += ttt
     SUBDIR += ucd-snmp
     SUBDIR += wais
     SUBDIR += wget
