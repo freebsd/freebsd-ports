@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
+BROKEN=		"Changes ownership/permission of manpages, broken pkg-plist"
+
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
