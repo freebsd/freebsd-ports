@@ -1,0 +1,25 @@
+share/doc/mars_nwe/BUGS
+share/doc/mars_nwe/BUGS.nl
+share/doc/mars_nwe/CHANGES
+share/doc/mars_nwe/CREDITS
+share/doc/mars_nwe/FAQS
+share/doc/mars_nwe/FILESHARING
+share/doc/mars_nwe/FRAGEN
+share/doc/mars_nwe/FRAGEN.erik
+share/doc/mars_nwe/HOWTO.ger
+share/doc/mars_nwe/INSTALL
+share/doc/mars_nwe/INSTALL.ger
+share/doc/mars_nwe/INSTALL.nl
+share/doc/mars_nwe/NEWS
+share/doc/mars_nwe/PIPE-FS
+share/doc/mars_nwe/PIPE-FS.ger
+share/doc/mars_nwe/PPP
+share/doc/mars_nwe/PPP.isdn
+share/doc/mars_nwe/README
+share/doc/mars_nwe/README.FREEBSD
+share/doc/mars_nwe/README.NLS
+share/doc/mars_nwe/README.ger
+share/doc/mars_nwe/TRUSTEES
+share/doc/mars_nwe/VRAGEN.NL
+share/doc/mars_nwe/mars_nwe.lsm
+@dirrm share/doc/mars_nwe
