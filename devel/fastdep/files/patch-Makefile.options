@@ -1,0 +1,12 @@
+--- Makefile.options.orig	Wed Oct 30 20:44:36 2002
++++ Makefile.options	Wed Oct 30 20:44:45 2002
+@@ -1,8 +1,7 @@
+-PREFIX=/opt
+ CATEGORY=devel/c
+ NAME=fastdep
+ BINARY=fastdep
+ # Possible values for CONFIGURATION
+ #	release : optimized code with no debug symbols
+ #	debug : non-optimized code with debug symbols
+-CONFIGURATION=debug
++CONFIGURATION=release

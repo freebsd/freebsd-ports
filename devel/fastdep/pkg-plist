@@ -1,0 +1,3 @@
+bin/fastdep
+%%PORTDOCS%%share/doc/fastdep/Using fastdep.txt
+%%PORTDOCS%%@dirrm share/doc/fastdep

@@ -165,6 +165,7 @@
     SUBDIR += fam
     SUBDIR += fampp
     SUBDIR += fastcrc
+    SUBDIR += fastdep
     SUBDIR += fc++
     SUBDIR += ffcall
     SUBDIR += fhist
