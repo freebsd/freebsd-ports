@@ -50,7 +50,11 @@ CONFIGURE_ARGS+=	--with-openssl=/usr
 .elif exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
 LIB_DEPENDS+=	ssl.1:${PORTSDIR}/security/openssl
 CONFIGURE_ARGS+=	-with-includes=${LOCALBASE}/include/openssl --with-openssl=${LOCALBASE}
-CONFIGURE_ENV+=		RSAGLUE="-lrsaref -lRSAglue"
+CONFIGURE_ENV+=	RSAGLUE="${RSAGLUE}"
+.if exists(${LOCALBASE}/lib/librsaref.a)
+RSAGLUE=	-lrsaref
+.endif
+RSAGLUE+=	-lRSAglue
 .endif
 
 post-patch:
