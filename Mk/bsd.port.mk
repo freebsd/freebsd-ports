@@ -968,6 +968,11 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 .endif
 .endif
 
+.if ${OSVERSION} >= 500032
+PERL_VERSION?=	5.6.1
+PERL_VER?=		5.6.1
+PERL_ARCH?=		mach
+.else
 .if ${OSVERSION} >= 500007
 PERL_VERSION?=	5.6.0
 PERL_VER?=		5.6.0
@@ -980,6 +985,7 @@ PERL_VERSION?=	5.00502
 .endif
 PERL_VER?=		5.005
 PERL_ARCH?=		${ARCH}-freebsd
+.endif
 .endif
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
