@@ -66,7 +66,6 @@ taginfo		CVSROOT taginfo
 4va		ports/graphics/4va
 54321		ports/games/54321
 6tunnel		ports/net/6tunnel
-8hz-mp3		ports/audio/8hz-mp3
 9e		ports/archivers/9e
 9menu		ports/x11-wm/9menu
 9term		ports/x11/9term
@@ -168,8 +167,6 @@ XttXF98srv-WSNA		ports/x11-servers/XttXF98srv-WSNA
 a2ps-a4		ports/print/a2ps-a4
 a2ps-letter	ports/print/a2ps-letter
 a2ps-letterdj	ports/print/a2ps-letterdj
-a2ps43-a4	ports/print/a2ps43-a4
-a2ps43-letter	ports/print/a2ps43-letter
 aafid2		ports/security/aafid2
 aalib		ports/graphics/aalib
 abacus		ports/deskutils/abacus
@@ -238,7 +235,6 @@ agenda-libs	ports/devel/agenda-libs
 agenda-snow-libs	ports/devel/agenda-snow-libs
 agenda-static-libs	ports/devel/agenda-static-libs
 aggregate	ports/net/aggregate
-agm		ports/games/agm
 agrep		ports/textproc/agrep
 agsatellite	ports/audio/agsatellite
 aic7xxx		src/sys/dev/aic7xxx
@@ -284,8 +280,6 @@ antiword	ports/textproc/antiword
 aolserver	ports/www/aolserver
 apache-contrib	ports/www/apache-contrib
 apache-jserv	ports/www/apache-jserv
-apache12	ports/www/apache12
-apache12-fp	ports/www/apache12-fp
 apache13	ports/www/apache13
 apache13+ipv6	ports/www/apache13+ipv6
 apache13-fp	ports/www/apache13-fp
@@ -294,10 +288,7 @@ apache13-ssl	ports/www/apache13-ssl
 apache2		ports/www/apache2
 apc		ports/math/apc
 apcupsd		ports/sysutils/apcupsd
-apel-emacs	ports/editors/apel-emacs
-apel-emacs20	ports/editors/apel-emacs20
 apel-mule	ports/editors/apel-mule
-apel-xemacs-mule	ports/editors/apel-xemacs-mule
 apg		ports/security/apg
 apm		src/usr.sbin/apm
 apmconf		src/usr.sbin/apmconf
@@ -364,7 +355,6 @@ asp2php		ports/www/asp2php
 aspell		ports/textproc/aspell
 aspostit	ports/deskutils/aspostit
 asprint		ports/print/asprint
-asrpages	ports/sysutils/asrpages
 astime		ports/x11-clocks/astime
 astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
@@ -435,8 +425,6 @@ battleball	ports/games/battleball
 battlestar	src/games/battlestar
 battstat-applet ports/sysutils/battstat-applet
 bayonne		ports/comms/bayonne
-bb		ports/net/bb
-bbsnet		ports/net/bbsnet
 bbapm		ports/x11-wm/bbapm
 bbbike		ports/german/BBBike
 bbconf		ports/x11-wm/bbconf
@@ -460,7 +448,6 @@ bdes		src/secure/usr.bin/bdes
 bdfresize	ports/x11-fonts/bdfresize
 beav		ports/editors/beav
 beecrypt	ports/security/beecrypt
-beroftpd	ports/ftp/beroftpd
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
@@ -485,7 +472,6 @@ binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
 binutils	src/gnu/usr.bin/binutils
-binutils-m68k	ports/devel/binutils-m68k
 biojava		ports/biology/biojava
 biorythm	ports/games/biorythm
 biosboot	src/sys/i386/boot/biosboot
@@ -620,7 +606,6 @@ cadubi		ports/graphics/cadubi
 caesar		src/games/caesar
 caitoo		ports/ftp/caitoo
 cal		src/usr.bin/cal
-cal-color	ports/misc/cal
 calamaris	ports/www/calamaris
 calc		ports/math/calc
 calctool	ports/math/calctool
@@ -669,7 +654,6 @@ cdpd		ports/net/cdpd
 cdplay		src/usr.sbin/cdplay
 cdplayer.app	ports/audio/cdplayer.app
 cdrdao		ports/audio/cdrdao
-cdrecord	ports/sysutils/cdrecord
 cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
 centericq	ports/net/centericq
@@ -948,16 +932,13 @@ cvs		src/gnu/usr.bin/cvs
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
 cvsgraph	ports/devel/cvsgraph
-cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvspadm		ports/devel/cvspadm
 cvsstat		ports/devel/cvsstat
 cvsup		ports/net/cvsup
-cvsup-bin	ports/net/cvsup-bin
 cvsup-devel	ports/net/cvsup-devel
 cvsup-mirror	ports/net/cvsup-mirror
-cvsupd-bin	ports/net/cvsupd-bin
 cvsupit		ports/net/cvsupit
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
@@ -1088,7 +1069,6 @@ digger-vgl	ports/games/digger-vgl
 digictl		src/usr.sbin/digictl
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
-dip		ports/net/dip
 dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
 dirname		src/usr.bin/dirname
@@ -1263,7 +1243,6 @@ engradient	ports/x11-toolkits/engradient
 enigma		src/usr.bin/enigma
 enjoympeg	ports/graphics/enjoympeg
 enlightenment	ports/x11-wm/enlightenment
-enlightenment-conf	ports/x11-wm/enlightenment-conf
 enscript-a4	ports/print/enscript-a4
 enscript-letter	ports/print/enscript-letter
 enscriptfonts	ports/print/enscriptfonts
@@ -1330,8 +1309,6 @@ exim-ldap2	ports/mail/exim-ldap2
 exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
 exim-postgresql	ports/mail/exim-postgresql
-exmh		ports/mail/exmh
-exmh2		ports/mail/exmh2
 expand		src/usr.bin/expand
 expat		ports/textproc/expat
 expat2		ports/textproc/expat2
@@ -1454,19 +1431,10 @@ flash		ports/shells/flash
 flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
-flawfinder	ports/devel/flawfinder
 flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
 flightgear	ports/games/flightgear
-flim-emacs	ports/editors/flim-emacs
-flim-emacs-current	ports/editors/flim-emacs-current
-flim-emacs20		ports/editors/flim-emacs20
-flim-emacs20-current	ports/editors/flim-emacs20-current
-flim-mule		ports/editors/flim-mule
-flim-mule-current	ports/editors/flim-mule-current
-flim-xemacs-mule	ports/editors/flim-xemacs-mule
-flim-xemacs-mule-current	ports/editors/flim-xemacs-mule-current
 flog		ports/sysutils/flog
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
@@ -1589,7 +1557,6 @@ fxtv		ports/graphics/fxtv
 g-gcl		ports/www/g-gcl
 g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
-g77		ports/lang/g77
 gaa		ports/devel/gaa
 gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
@@ -1619,7 +1586,6 @@ gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcc-6811	ports/devel/gcc-6811
 gcc-devel	ports/lang/gcc-devel
-gcc-m68k	ports/devel/gcc-m68k
 gcc27		ports/lang/gcc27
 gcc28		ports/lang/gcc28
 gcc295		ports/lang/gcc295
@@ -1633,10 +1599,8 @@ gcore		src/usr.bin/gcore
 gctpc		ports/misc/gctpc
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
-gd-old		ports/graphics/gd-old
 gdal		ports/graphics/gdal
 gdb		src/gnu/usr.bin/gdb
-gdb-m68k	ports/devel/gdb-m68k
 gdb51		ports/devel/gdb51
 gdbm		ports/databases/gdbm
 gdcd		ports/audio/gdcd
@@ -1982,12 +1946,8 @@ gtkextra	ports/x11-toolkits/gtkextra
 gtkextra--	ports/x11-toolkits/gtkextra--
 gtkfig		ports/graphics/gtkfig
 gtkfind		ports/misc/gtkfind
-gtkgl		ports/x11-toolkits/gtkgl
-gtkglarea	ports/x11-toolkits/gtkglarea
-gtkglarea--	ports/x11-toolkits/gtkglarea--
 gtkgraph	ports/graphics/gtkgraph
 gtkhtml		ports/www/gtkhtml
-gtkicq		ports/net/gtkicq
 gtkportscan	ports/security/gtkportscan
 gtkscintilla	ports/x11-toolkits/gtkscintilla
 gtksee		ports/graphics/gtksee
@@ -2096,7 +2056,6 @@ hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hping		ports/security/hping
 hppsmtools	ports/graphics/hppsmtools
-hpscan		ports/graphics/hpscan
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
 htdump		ports/www/htdump
@@ -2175,7 +2134,6 @@ id3tool		ports/audio/id3tool
 id3v2		ports/audio/id3v2
 ident2		ports/security/ident2
 identify	ports/security/identify
-idl4		ports/lang/idl4
 idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
 ifconfig	src/sbin/ifconfig
@@ -2267,7 +2225,6 @@ ircd-hybrid	ports/irc/ircd-hybrid
 irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
 irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
 irchat-pj-xemacs21-mule	ports/irc/irchat-pj-xemacs21-mule
-ircii-epic	ports/irc/ircii-epic
 iroffer		ports/irc/iroffer
 irsim		ports/cad/irsim
 irssi		ports/irc/irssi
@@ -2381,7 +2338,6 @@ ja-gal		ports/japanese/gal
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
 ja-gicq		ports/japanese/gicq
-ja-gimp		ports/japanese/gimp
 ja-gn-gnspool	ports/japanese/gn-gnspool
 ja-gn-mnews	ports/japanese/gn-mnews
 ja-gnome	ports/japanese/gnome
@@ -2391,8 +2347,6 @@ ja-gnumeric	ports/japanese/gnumeric
 ja-gp		ports/japanese/gp
 ja-grep		ports/japanese/grep
 ja-groff	ports/japanese/groff
-ja-gtk		ports/japanese/gtk
-ja-gtkicq	ports/japanese/gtkicq
 ja-gxditview	ports/japanese/gxditview
 ja-handbook	doc/ja_JP.eucJP/books/handbook
 ja-hex		ports/japanese/hex
@@ -2443,7 +2397,6 @@ ja-kde2-i18n	ports/japanese/kde2-i18n
 ja-kdeaddons	ports/japanese/kdeaddons
 ja-kdebase2	ports/japanese/kdebase2
 ja-kdelibs2	ports/japanese/kdelibs2
-ja-kdelocale	ports/japanese/kdelocale
 ja-kdenetwork2	ports/japanese/kdenetwork2
 ja-kdevelop	ports/japanese/kdevelop
 ja-kdrill	ports/japanese/kdrill
@@ -2678,7 +2631,6 @@ ja-vfxdvi300	ports/japanese/vfxdvi300
 ja-vfxdvi360	ports/japanese/vfxdvi360
 ja-vfxdvi400	ports/japanese/vfxdvi400
 ja-vfxdvi600	ports/japanese/vfxdvi600
-ja-vje-trial	ports/japanese/vje-trial
 ja-vje30	ports/japanese/vje30
 ja-vje30-trial	ports/japanese/vje30-trial
 ja-w3		ports/japanese/w3
@@ -2720,7 +2672,6 @@ ja-xmsgsaver	ports/japanese/xmsgsaver
 ja-xnetmaj	ports/japanese/xnetmaj
 ja-xshodo	ports/japanese/xshodo
 ja-xshodou	ports/japanese/xshodou
-ja-xt		ports/japanese/xt
 ja-xv		ports/japanese/xv
 ja-xyagamo	ports/japanese/xyagamo
 ja-xyaku	ports/japanese/xyaku
@@ -2745,13 +2696,11 @@ jasper		ports/graphics/jasper
 java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
 java2html	ports/textproc/java2html
-javac_netscape	ports/java/javac_netscape
 javadc		ports/net/javadc
 javamail	ports/java/javamail
 javavmwrapper	ports/java/javavmwrapper
 jbigkit		ports/graphics/jbigkit
 jce-aba		ports/java/jce-aba
-jconv		ports/palm/jconv
 jday		ports/astro/jday
 jdbc-oracle816	ports/databases/jdbc-oracle816
 jdbcpool	ports/java/jdbcpool
@@ -2836,8 +2785,6 @@ kdb_util	src/eBones/kdb_util
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
 kde-i18n-uk	ports/ukrainian/kde-i18n-uk
-kde-qt-addon	ports/x11-toolkits/kde-qt-addon
-kde11		ports/x11/kde11
 kde2		ports/x11/kde2
 kde2-i18n	ports/misc/kde2-i18n
 kdeaddons	ports/misc/kdeaddons
@@ -2845,16 +2792,12 @@ kdeadmin	ports/sysutils/kdeadmin
 kdeartwork	ports/x11-wm/kdeartwork
 kdebase11	ports/x11/kdebase11
 kdebase2	ports/x11/kdebase2
-kdegames11	ports/games/kdegames11
 kdegames2	ports/games/kdegames2
-kdegraphics11	ports/graphics/kdegraphics11
 kdegraphics2	ports/graphics/kdegraphics2
 kdelibdocs	ports/devel/kdelibdocs
 kdelibs11	ports/x11/kdelibs11
 kdelibs2	ports/x11/kdelibs2
-kdemultimedia11	ports/audio/kdemultimedia11
 kdemultimedia2		ports/audio/kdemultimedia2
-kdenetwork11	ports/net/kdenetwork11
 kdenetwork2	ports/net/kdenetwork2
 kdepim		ports/deskutils/kdepim
 kdesdk		ports/devel/kdesdk
@@ -2863,9 +2806,7 @@ kdestudio	ports/devel/kdestudio
 kdesupport11	ports/converters/kdesupport11
 kdesupport2	ports/converters/kdesupport2
 kdetelnet	ports/net/kdetelnet
-kdetoys11	ports/x11-clocks/kdetoys11
 kdetoys2	ports/x11-clocks/kdetoys2
-kdeutils11	ports/misc/kdeutils11
 kdeutils2	ports/misc/kdeutils2
 kdevelop	ports/devel/kdevelop
 kdirstat	ports/misc/kdirstat
@@ -3051,7 +2992,6 @@ korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
 kpilot		ports/palm/kpilot
-kplot3d		ports/graphics/kplot3d
 kpp		ports/devel/kpp
 kproject	ports/deskutils/kproject
 kprop		src/eBones/kprop
@@ -3059,7 +2999,6 @@ kpropd		src/eBones/kpropd
 kpuzzle		ports/games/kpuzzle
 krb		src/eBones/krb
 krb5		ports/security/krb5
-krb5-beta	ports/security/krb5-beta
 krbinclude	src/eBones/include
 krbman		src/eBones/man
 krio		ports/audio/krio
@@ -3278,7 +3217,6 @@ libm		src/lib/libm
 libmalloc	ports/devel/libmalloc
 libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
-libmcrypt-nm	ports/security/libmcrypt-nm
 libmd		src/lib/libmd
 libmenu		src/lib/libmenu
 libmikmod	ports/audio/libmikmod
@@ -3315,7 +3253,6 @@ libresolv	src/lib/libresolv
 libretto-config	ports/sysutils/libretto-config
 librkinit	src/eBones/lib/librkinit
 librpcsvc	src/lib/librpcsvc
-librsaintl	ports/security/librsaintl
 librsvg		ports/graphics/librsvg
 librsync	ports/net/librsync
 libscrypt	src/lib/libcrypt
@@ -3362,7 +3299,6 @@ libvanessa_socket	ports/devel/libvanessa_socket
 libvgl		src/lib/libvgl
 libvorbis	ports/audio/libvorbis
 libwmf		ports/graphics/libwmf
-libwmfun	ports/x11-wm/libwmfun
 libworkman	ports/audio/libworkman
 libwrap		src/lib/libwrap
 libwww		ports/www/libwww
@@ -3439,7 +3375,6 @@ linux_mesa	ports/graphics/linux_mesa
 linux_mesa3	ports/graphics/linux_mesa3
 linux_rar	ports/archivers/linux_rar
 linuxdoc	ports/textproc/linuxdoc
-linuxdoom	ports/games/linuxdoom
 linuxthreads	ports/devel/linuxthreads
 listar		ports/mail/listar
 listmanager	ports/mail/listmanager
@@ -3543,7 +3478,6 @@ m68k-rtems-g77	ports/devel/m68k-rtems-g77
 m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gcj	ports/devel/m68k-rtems-gcj
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
-m68k-rtems-objc	ports/devel/m68k-rtems-objs
 macipgw		ports/net/macipgw
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
@@ -3621,7 +3555,6 @@ matrix		ports/math/matrix
 matrix-kmod	ports/misc/matrix-kmod
 maverik		ports/graphics/maverik
 mawk		ports/lang/mawk
-maxima		ports/math/maxima
 mboxgrep	ports/mail/mboxgrep
 mbr		src/sys/boot/i386/mbr
 mbx2mbox	ports/mail/mbx2mbox
@@ -3654,7 +3587,6 @@ metis		ports/math/metis
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
 mew-mule	ports/mail/mew-mule
-mew-xemacs-mule	ports/mail/mew-xemacs-mule
 mew-xemacs21	ports/mail/mew-xemacs21
 mew-xemacs21-mule	ports/mail/mew-xemacs21-mule
 mew2		ports/mail/mew2
@@ -3679,7 +3611,6 @@ mhc-emacs20	ports/deskutils/mhc-emacs20
 mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
 mico		ports/devel/mico
-mico-latest	ports/devel/mico-latest
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
 midimountain	ports/audio/midimountain
@@ -3702,7 +3633,6 @@ minidom		ports/textproc/minidom
 minigzip	src/usr.bin/minigzip
 minimalist	ports/mail/minimalist
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
-mipsel-linux-egcs	ports/devel/mipsel-linux-egcs
 mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
 mirror		ports/ftp/mirror
@@ -3752,7 +3682,6 @@ mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
 mnogosearch	ports/www/mnogosearch
 mob		ports/devel/mob
-mocka		ports/lang/mocka
 mod_access_identd	ports/www/mod_access_identd
 mod_access_referer	ports/www/mod_access_referer
 mod_auth_any	ports/www/mod_auth_any
@@ -3803,9 +3732,6 @@ mod_zap		ports/www/mod_zap
 modload		src/sbin/modload
 modlogan	ports/textproc/modlogan
 modstat		src/usr.bin/modstat
-modula-3	ports/lang/modula-3
-modula-3-lib	ports/lang/modula-3-lib
-modula-3-socks	ports/lang/modula-3-socks
 modunload	src/sbin/modunload
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
@@ -3948,17 +3874,13 @@ mwavem		ports/comms/mwavem
 mxv		ports/audio/mxv
 myodbc		ports/databases/myodbc
 mysql++		ports/databases/mysql++
-mysql-editor	ports/database/mysql-editor
 mysql-gui	ports/databases/mysql-gui
 mysql-jdbc-mm	ports/databases/mysql-jdbc-mm
 mysql-navigator	ports/databases/mysql-navigator
 mysql2pgsql	ports/databases/mysql2pgsql
-mysql322-client	ports/databases/mysql322-client
-mysql322-server	ports/databases/mysql322-server
 mysql323-client	ports/databases/mysql323-client
 mysql323-server	ports/databases/mysql323-server
 mysqltcl	ports/databases/mysqltcl
-mysqltutor	ports/databases/mysqltutor
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
 nab		ports/biology/nab
@@ -4053,9 +3975,7 @@ netscape4-communicator	ports/www/netscape4-communicator
 netscape4-communicator.us	ports/www/netscape4-communicator.us
 netscape4-navigator	ports/www/netscape4-navigator
 netscape47-communicator	ports/www/netscape47-communicator
-netscape47-communicator.us	ports/www/netscape47-communicator.us
 netscape47-navigator	ports/www/netscape47-navigator
-netscape47-navigator.us	ports/www/netscape47-navigator.us
 netscript	ports/net/netscript
 netsed		ports/net/netsed
 netshow		ports/graphics/netshow
@@ -4068,7 +3988,6 @@ newfs_msdos	src/sbin/newfs_msdos
 newkey		src/usr.bin/newkey
 newkind		ports/games/newkind
 newlfs		src/sbin/newlfs
-newlib-m68k	ports/devel/newlib-m68k
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
 newsfetch	ports/news/newsfetch
@@ -4209,7 +4128,6 @@ opengatekeeper	ports/net/opengatekeeper
 opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openh323	ports/net/openh323
-openh323_1.1	ports/net/openh323_1.1
 openh323proxy	ports/net/openh323proxy
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
@@ -4315,15 +4233,6 @@ p5-C-Scan	ports/devel/p5-C-Scan
 p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDDB		ports/audio/p5-CDDB
 p5-CDDB_get	ports/audio/p5-CDDB_get
-p5-CGI		ports/www/p5-CGI
-p5-CGI-Application	ports/www/p5-CGI-Application
-p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
-p5-CGI-Cache	ports/www/p5-CGI-Cache
-p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
-p5-CGI-Minimal		ports/www/p5-CGI-Minimal
-p5-CGI-XMLApplication	ports/www/p5-CGI-XMLApplication
-p5-CGI.pm	ports/www/p5-CGI.pm
-p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Cdk		ports/devel/p5-Cdk
@@ -4906,8 +4815,6 @@ pclprint	ports/print/pclprint
 pcnfsd		ports/net/pcnfsd
 pcre		ports/devel/pcre
 pcvt		src/usr.sbin/pcvt
-pdflib		ports/print/pdflib
-pdflib3		ports/print/pdflib3
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
 pdmenu		ports/misc/pdmenu
@@ -4944,7 +4851,6 @@ pfinger		ports/net/pfinger
 pflogsumm	ports/mail/pflogsumm
 pg		ports/misc/pg
 pgcc		ports/lang/pgcc
-pgcc-current	ports/lang/pgcc-current
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
 pgp		ports/security/pgp
@@ -4994,7 +4900,6 @@ pim6sd		ports/net/pim6sd
 pimp3		ports/audio/pimp3
 pine.language	ports/ukrainian/pine.language
 pine4		ports/mail/pine4
-pine4-ssl	ports/mail/pine4-ssl
 pinfo		ports/misc/pinfo
 ping		src/sbin/ping
 ping6		src/sbin/ping6
@@ -5095,7 +5000,6 @@ porteasy	ports/misc/porteasy
 porters-handbook	doc/en_US.ISO8859-1/books/porters-handbook
 portlint	ports/devel/portlint
 portmap		src/usr.sbin/portmap
-portmap_tcpd	ports/security/portmap_tcpd
 portoseguro	ports/x11/portoseguro
 ports		ports
 ports_Mk	ports/Mk
@@ -5134,7 +5038,6 @@ ports_japanese	ports/japanese
 ports_java	ports/java
 ports_korean	ports/korean
 ports_lang	ports/lang
-ports_less	ports/sysutils/less
 ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
@@ -5147,7 +5050,6 @@ ports_openssh	ports/security/openssh
 ports_palm	ports/palm
 ports_patch	ports/devel/patch
 ports_picobsd	ports/picobsd
-ports_plan9	ports/plan9
 ports_pr	ports/comms/pr
 ports_print	ports/print
 ports_russian	ports/russian
@@ -5218,7 +5120,6 @@ pptpclient	ports/net/pptpclient
 ppunpack	ports/archivers/ppunpack
 ppxp		ports/net/ppxp
 pr		src/usr.bin/pr
-prag		ports/textproc/prag
 prboom		ports/games/prboom
 prc-tools-binutils	ports/palm/prc-tools-binutils
 prc-tools-gcc	ports/palm/prc-tools-gcc
@@ -5257,7 +5158,6 @@ psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
-psgml-xemacs-mule	ports/editors/psgml-xemacs-mule
 psi88		ports/biology/psi88
 psiconv		ports/converters/psiconv
 psim-freebsd	ports/emulators/psim-freebsd
@@ -5389,7 +5289,6 @@ pysol-music	ports/games/pysol-music
 pysol-sound-server	ports/audio/pysol-sound-server
 python		ports/lang/python
 python+ipv6	ports/lang/python+ipv6
-python-beta	ports/lang/python-beta
 python-doc-html	ports/lang/python-doc-html
 python-doc-pdf-a4	ports/lang/python-doc-pdf-a4
 python-doc-pdf-letter	ports/lang/python-doc-pdf-letter
@@ -5503,7 +5402,6 @@ rblcheck	ports/mail/rblcheck
 rboot		ports/net/rboot
 rbootd		src/libexec/rbootd
 rc		ports/shells/rc
-rc5des		ports/misc/rc5des
 rcalc		ports/math/rcalc
 rclock		ports/x11-clocks/rclock
 rcp		src/bin/rcp
@@ -5794,7 +5692,6 @@ ruby-romp	ports/net/ruby-romp
 ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
 ruby-rudl	ports/devel/ruby-rudl
-ruby-runit	ports/devel/ruby-runit
 ruby-sablot	ports/textproc/ruby-sablot
 ruby-sdl	ports/devel/ruby-sdl
 ruby-search-namazu	ports/databases/ruby-search-namazu
@@ -5932,7 +5829,6 @@ sdlmm		ports/devel/sdlmm
 sdlroids	ports/games/sdlroids
 sdocbook-xml	ports/textproc/sdocbook-xml
 sdr		ports/mbone/sdr
-sdr-current	ports/mbone/sdr-current
 sdts++		ports/devel/sdts++
 se-ispell	ports/textproc/se-ispell
 seabattle	ports/games/seabattle
@@ -5952,14 +5848,6 @@ securelib	src/secure/lib
 sed		src/usr.bin/sed
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
-semi-emacs	ports/editors/semi-emacs
-semi-emacs-current	ports/editors/semi-emacs-current
-semi-emacs20	ports/editors/semi-emacs20
-semi-emacs20-current	ports/editors/semi-emacs20-current
-semi-mule	ports/editors/semi-mule
-semi-mule-current	ports/editors/semi-mule-current
-semi-xemacs-mule	ports/editors/semi-xemacs-mule
-semi-xemacs-mule-current	ports/editors/semi-xemacs-mule-current
 send-pr		src/gnu/usr.bin/send-pr
 sendfile	ports/net/sendfile
 sendip		ports/net/sendip
@@ -6098,7 +5986,6 @@ slstat		src/usr.sbin/slstat
 slurp		ports/news/slurp
 slurpie		ports/security/slurpie
 slush		ports/security/slush
-sma		ports/misc/sma
 smacx		ports/games/smacx
 smail		ports/mail/smail
 smalleiffel	ports/lang/smalleiffel
@@ -6423,8 +6310,6 @@ tcl-manual	ports/lang/tcl-manual
 tcl-memchan	ports/devel/tcl-memchan
 tcl-neo		ports/devel/tcl-neo
 tcl80		ports/lang/tcl80
-tcl81		ports/lang/tcl81
-tcl81-thread	ports/lang/tcl81-thread
 tcl82		ports/lang/tcl82
 tcl83		ports/lang/tcl83
 tcl84		ports/lang/tcl84
@@ -6467,7 +6352,6 @@ tdir		ports/sysutils/tdir
 tdl		ports/devel/tdl
 tdtd.el		ports/textproc/tdtd.el
 teTeX		ports/print/teTeX
-teTeX-beta	ports/print/teTeX-beta
 tea-total	ports/security/tea-total
 team		ports/misc/team
 teapop		ports/mail/teapop
@@ -6498,7 +6382,6 @@ textmaze	ports/games/textmaze
 textutils	ports/textproc/textutils
 tftp		src/usr.bin/tftp
 tftpd		src/libexec/tftpd
-tgd		ports/graphics/tgd
 tgif		ports/graphics/tgif
 tgif-nls	ports/graphics/tgif-nls
 tgif2tex	ports/print/tgif2tex
@@ -6545,7 +6428,6 @@ titano		ports/devel/titano
 tits		ports/comms/tits
 tix		ports/x11-toolkits/tix
 tk80		ports/x11-toolkits/tk80
-tk81		ports/x11-toolkits/tk81
 tk82		ports/x11-toolkits/tk82
 tk83		ports/x11-toolkits/tk83
 tk84		ports/x11-toolkits/tk84
@@ -6671,7 +6553,6 @@ uae		ports/emulators/uae
 ubench		ports/benchmarks/ubench
 ubh		ports/news/ubh
 ucblogo		ports/lang/logo
-ucd-snmp	ports/net/ucd-snmp
 ucl		ports/archivers/ucl
 uclient		ports/games/uclient
 uclmmbase	ports/devel/uclmmbase
@@ -6729,7 +6610,6 @@ ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
 urlendec	ports/net/urlendec
-urlget		ports/www/urlget
 urlview		ports/textproc/urlview
 urt		ports/graphics/urt
 urwfonts	ports/x11-fonts/urwfonts
@@ -6754,8 +6634,6 @@ uudeview	ports/converters/uudeview
 uudx		ports/converters/uudx
 uuencode	src/usr.bin/uuencode
 uulib		ports/converters/uulib
-uvscan		ports/security/uvscan
-uvscan-dat	ports/security/uvscan-dat
 uwatch		ports/sysutils/uwatch
 uwm		ports/x11-wm/uwm
 uzap		ports/editors/uzap
@@ -6813,7 +6691,6 @@ vilearn		ports/editors/vilearn
 vim		ports/editors/vim
 vim-lite	ports/editors/vim-lite
 vim5		ports/editors/vim5
-vim5beta	ports/editors/vim5beta
 vim6+ruby	ports/editors/vim6+ruby
 vinum		src/sbin/vinum
 vipec		ports/cad/vipec
@@ -6848,7 +6725,6 @@ vqadmin		ports/mail/vqadmin
 vrflash		ports/comms/vrflash
 vrfy		ports/mail/vrfy
 vrrp		ports/net/vrrp
-vrweb		ports/www/vrweb
 vscan		ports/security/vscan
 vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
@@ -6904,14 +6780,6 @@ webredirect	ports/www/webredirect
 webresolve	ports/www/webresolve
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
-wemi-emacs	ports/editors/wemi-emacs
-wemi-emacs-current	ports/editors/wemi-emacs-current
-wemi-emacs20	ports/editors/wemi-emacs20
-wemi-emacs20-current	ports/editors/wemi-emacs20-current
-wemi-mule	ports/editors/wemi-mule
-wemi-mule-current	ports/editors/wemi-mule-current
-wemi-xemacs-mule	ports/editors/wemi-xemacs-mule
-wemi-xemacs-mule-current	ports/editors/wemi-xemacs-mule-current
 wget		ports/ftp/wget
 wget+ipv6	ports/ftp/wget+ipv6
 what		src/usr.bin/what
@@ -7084,7 +6952,6 @@ xblast		ports/games/xblast
 xblast-beta	ports/games/xblast-beta
 xblood		ports/games/xblood
 xbloody		ports/games/xbloody
-xbm2gif		ports/graphics/xbm2gif
 xbmbrowser	ports/graphics/xbmbrowser
 xboard		ports/games/xboard
 xboing		ports/games/xboing
@@ -7387,7 +7254,6 @@ xscrabble	ports/games/xscrabble
 xscreensaver	ports/x11/xscreensaver
 xshipwars-client	ports/games/xshipwars-client
 xshisen		ports/games/xshisen
-xshodou		ports/x11/xshodou
 xshogi		ports/games/xshogi
 xsidplay	ports/audio/xsidplay
 xskat		ports/games/xskat
@@ -7639,7 +7505,6 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 pari-devel	ports/math/pari-devel
-apel-emacs19	ports/editors/apel-emacs19
 flim113-emacs19	ports/editors/flim113-emacs19
 p5-HTML-Template-Expr	ports/www/p5-HTML-Template-Expr
 phplot		ports/graphics/phplot
