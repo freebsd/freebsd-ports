@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	jdk
-PORTVERSION=	${JDK_VERSION:S/-//g}
+PORTVERSION=	${INSTALL_JDK_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTFILES=	j2sdk-${JDK_VERSION:S/./_/g}-linux-i386.bin
+DISTNAME=	j2sdk-${DL_JDK_VERSION:S/./_/g}-linux-i386
+EXTRACT_SUFX=	.bin
 
 MAINTAINER=	ernst@jollem.com
 
@@ -28,21 +29,22 @@ EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/j2sdk1.4.0
-PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
+PLIST_SUB+=	TARGET_PREFIX=${TARGET_DIR:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-JDK_VERSION=	1.4.0-beta
+DL_JDK_VERSION=	1.4.0-beta
+INSTALL_JDK_VERSION=	1.4.0b1
 ONLY_FOR_ARCHS=	i386
-TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/#linux
+PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the Java 2 Development Kit ${JDK_VERSION} for Linux archive (${DISTFILES}) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=You must manually fetch the ${PORTTITLE} archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
-.endfor
 
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
@@ -53,6 +55,6 @@ post-patch:
 do-install:
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION}
 	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION} -xpf-
-	${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk${PORTVERSION}/bin/java # Linux-JDK${PORTVERSION}"
+	${LOCALBASE}/bin/registervm "${TARGET_DIR}/bin/java # Linux-Sun-JDK${PORTVERSION}"
 
 .include <bsd.port.post.mk>
