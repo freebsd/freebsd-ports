@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpick
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +19,6 @@ GNU_CONFIGURE=	yes
 
 MANLANG=	"" it
 MAN8=		tcpick.8
-
-PLIST_FILES=	bin/tcpick
 
 post-install:
 	${MKDIR} ${PREFIX}/man/it/man8

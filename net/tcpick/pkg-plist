@@ -1,0 +1,3 @@
+bin/tcpick
+@unexec rmdir %D/man/it/man8 2>/dev/null || true
+@unexec rmdir %D/man/it 2>/dev/null || true
