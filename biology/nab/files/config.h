@@ -21,8 +21,8 @@
 #       You can choose ARCH as you wish, but it would generally 
 #       be related to the output of the "uname" command.
 #
-BINDIR=$(NABHOME)/bin/
-LIBDIR=$(NABHOME)/lib/
+BINDIR=$(NABHOME)/bin
+LIBDIR=$(NABHOME)/lib
 INCDIR=$(NABHOME)/include
 #
 ###############################################################################
