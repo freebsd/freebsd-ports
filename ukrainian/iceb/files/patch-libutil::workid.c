@@ -76,7 +76,7 @@
 -   return(ttyname_b);
 +char* workid() {
 +	// get host name
-+	static const long length = sysconf(_SC_HOST_NAME_MAX);
++	static const long length = 1024; //sysconf(_SC_HOST_NAME_MAX);
 +	char host[length];
 +	host[0] = '\0';
 +	gethostname(host, length);
