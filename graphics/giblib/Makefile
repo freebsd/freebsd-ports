@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	giblib
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
