@@ -9,7 +9,9 @@ PORTNAME=	fbdesk
 PORTVERSION=	1.2.1
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
-		${MASTER_SITE_GENTOO}
+		${MASTER_SITE_GENTOO} \
+		http://dl.fkb.wormulon.net/fbdesk/ \
+		http://dl.kel.wormulon.net/fbdesk/
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	hendrik@scholz.net
