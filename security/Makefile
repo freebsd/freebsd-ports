@@ -48,6 +48,7 @@
     SUBDIR += nessus-plugins
     SUBDIR += nmap
     SUBDIR += nmapfe
+    SUBDIR += oidentd
     SUBDIR += openssh
     SUBDIR += openssh-askpass
     SUBDIR += openssl
