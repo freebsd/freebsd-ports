@@ -1,0 +1,11 @@
+--- config.h~	Thu Jun 30 16:34:57 1994
++++ config.h	Wed Mar 15 10:52:12 1995
+@@ -51,7 +51,7 @@
+  *  サウンド関係の設定
+  */
+ 
+-#undef	USE_SOUND			/* サウンドを使う？ */
++#define	USE_SOUND			/* サウンドを使う？ */
+ 
+ /* #define	EmiClockLib	/usr/local/lib/X11/EmiClock */
+ /* $(LIBDIR)/EmiClock 以外の場所にサウンドファイルをインストール */
