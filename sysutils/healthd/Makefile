@@ -12,6 +12,7 @@ CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	A daemon to monitor vital motherboard parameters
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}

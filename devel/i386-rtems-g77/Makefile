@@ -21,6 +21,7 @@ PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	FSF F77-gcc-3.2.1 base-port for RTEMS development
 
 LCLTARGET?=	i386-rtems
 
