@@ -103,7 +103,6 @@
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw
-    SUBDIR += notif2
     SUBDIR += ocaml-lablgtk
     SUBDIR += open-motif
     SUBDIR += p5-GdkImlib

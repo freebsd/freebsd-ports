@@ -83,6 +83,7 @@
     SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += notif2
     SUBDIR += phase
     SUBDIR += qinx
     SUBDIR += qnxstyle
