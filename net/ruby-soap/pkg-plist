@@ -17,11 +17,14 @@
 %%RUBY_SITELIBDIR%%/soap/rpcRouter.rb
 %%RUBY_SITELIBDIR%%/soap/rpcUtils.rb
 %%RUBY_SITELIBDIR%%/soap/saxdriver.rb
+%%RUBY_SITELIBDIR%%/soap/server.rb
 %%RUBY_SITELIBDIR%%/soap/soap.rb
+%%RUBY_SITELIBDIR%%/soap/standaloneServer.rb
 %%RUBY_SITELIBDIR%%/soap/streamHandler.rb
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
 @dirrm %%RUBY_SITELIBDIR%%/soap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/httpserver.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
@@ -65,7 +68,10 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/SOAP4R_SOAPBuildersInteropTest_R2GroupB.wsdl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/SOAP4R_SOAPBuildersInteropTest_R2base.wsdl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/base.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/client.NetRemoting.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/client4S4C.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientApacheAxis.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientApacheSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientASP.NET.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientBase.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSOAP4R.rb
@@ -73,6 +79,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWhiteMesa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/iSimonReg.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/simonReg.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interopR2
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interop

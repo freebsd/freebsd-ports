@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	soap
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/SOAP4R/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,8 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/application.rb:${PORTSDIR}/sysutils/ruby-application.rb \
-		${RUBY_SITELIBDIR}/urb.rb:${PORTSDIR}/net/ruby-urb \
-		${RUBY_SITELIBDIR}/http-access.rb:${PORTSDIR}/www/ruby-http-access \
+		${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri \
+		${RUBY_SITELIBDIR}/http-access2.rb:${PORTSDIR}/www/ruby-http-access \
+		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver \
 		${RUBY_SITELIBDIR}/date3.rb:${PORTSDIR}/devel/ruby-date2 \
 		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
 
@@ -28,6 +28,9 @@ NO_BUILD=	yes
 
 DOCS_EN=	RELEASE_en.html rubyStyle.css
 DOCS_JA=	RELEASE_ja.html
+
+post-extract:
+	${CP} ${WRKSRC}/redist/soap/httpserver.rb ${WRKSRC}/sample/
 
 post-patch:
 	${RUBY} -i -pe 'gsub /\brubyStyle.css\b/, "../\\1"' ${WRKSRC}/RELEASE_ja.html
