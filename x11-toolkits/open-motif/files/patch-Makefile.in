@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Feb 14 23:15:46 2002
-+++ Makefile.in	Tue Sep  3 23:22:53 2002
-@@ -118,7 +118,7 @@
-              tools \
-              clients \
-              doc \
--             demos
-+             $(DEMOS)
+--- Makefile.in.orig	Tue Apr  6 13:50:25 2004
++++ Makefile.in	Thu Jul 29 21:14:05 2004
+@@ -101,7 +101,7 @@
+ MAINTAINERCLEANFILES = Makefile.in              configure libtool              config.guess              config.sub              config.log              ltconfig ltmain.sh              aclocal.m4              config.h.in              install-sh              missing mkinstalldirs
+ 
+ 
+-SUBDIRS = bindings bitmaps              config              localized              lib              include              tools              clients              doc              demos
++SUBDIRS = bindings bitmaps              config              localized              lib              include              tools              clients              doc              $(DEMOS)
  
  AUTOMAKE_OPTIONS = 1.4
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

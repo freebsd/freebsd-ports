@@ -118,6 +118,7 @@ MAN3= \
 	XmCreateDragIcon.3 \
 	XmCreateDrawingArea.3 \
 	XmCreateDrawnButton.3 \
+	XmCreateDropDown.3 \
 	XmCreateDropDownComboBox.3 \
 	XmCreateDropDownList.3 \
 	XmCreateErrorDialog.3 \
@@ -136,6 +137,7 @@ MAN3= \
 	XmCreateMenuShell.3 \
 	XmCreateMessageBox.3 \
 	XmCreateMessageDialog.3 \
+	XmCreateMultiList.3 \
 	XmCreateNotebook.3 \
 	XmCreateOptionMenu.3 \
 	XmCreatePanedWindow.3 \
@@ -195,6 +197,12 @@ MAN3= \
 	XmDragStart.3 \
 	XmDrawingArea.3 \
 	XmDrawnButton.3 \
+	XmDropDown.3 \
+	XmDropDownGetArrow.3 \
+	XmDropDownGetLabel.3 \
+	XmDropDownGetList.3 \
+	XmDropDownGetText.3 \
+	XmDropDownGetValue.3 \
 	XmDropSite.3 \
 	XmDropSiteConfigureStackingOrder.3 \
 	XmDropSiteEndUpdate.3 \
@@ -208,7 +216,6 @@ MAN3= \
 	XmDropTransfer.3 \
 	XmDropTransferAdd.3 \
 	XmDropTransferStart.3 \
-	XmExt18List.3 \
 	XmFileSelectionBox.3 \
 	XmFileSelectionBoxGetChild.3 \
 	XmFileSelectionDoSearch.3 \
@@ -320,6 +327,18 @@ MAN3= \
 	XmMenuShell.3 \
 	XmMessageBox.3 \
 	XmMessageBoxGetChild.3 \
+	XmMultiList.3 \
+	XmMultiListDeselectAllItems.3 \
+	XmMultiListDeselectItem.3 \
+	XmMultiListDeselectItems.3 \
+	XmMultiListDeselectRow.3 \
+	XmMultiListGetSelectedRowArray.3 \
+	XmMultiListGetSelectedRows.3 \
+	XmMultiListMakeRowVisible.3 \
+	XmMultiListSelectAllItems.3 \
+	XmMultiListSelectItems.3 \
+	XmMultiListSelectRow.3 \
+	XmMultiListToggleRow.3 \
 	XmNotebook.3 \
 	XmNotebookGetPageInfo.3 \
 	XmObjectAtPoint.3 \
@@ -575,7 +594,7 @@ MAN3= \
 	XmVaCreateSimplePulldownMenu.3 \
 	XmVaCreateSimpleRadioBox.3 \
 	XmWidgetGetBaselines.3 \
-	XmWidgetGetDisplayRect.3 
+	XmWidgetGetDisplayRect.3
 MAN5= \
 	Traits.5 \
 	UIL.5 \
