@@ -1,12 +1,12 @@
 # New ports collection makefile for:	radiusd-cistron
-# Version required:	cistron radiusd 1.5.4.3 (beta14)
+# Version required:	cistron radiusd 1.5.4.3 (beta16)
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id$
+# $Id: Makefile,v 1.2 1999/01/18 03:10:23 steve Exp $
 #
 
-DISTNAME=	radiusd-cistron-1.5.4.3-beta14
+DISTNAME=	radiusd-cistron-1.5.4.3-beta16
 PKGNAME=	radiusd-cistron-1.5.4.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
