@@ -1,0 +1,74 @@
+--- ia32/bin/icc.orig	Fri Jan 10 16:57:18 2003
++++ ia32/bin/icc	Fri Jan 10 17:09:38 2003
+@@ -1,29 +1,62 @@
+ #!/bin/sh
+ 
+-INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
++PREFIX=@@PREFIX@@
++export PREFIX;
++INTEL_LICENSE_FILE=${INTEL_LICENSE_FILE:-${PREFIX}/intel/licenses}
+ export INTEL_LICENSE_FILE;
+ 
+ if [ -z LD_LIBRARY_PATH ]
+ then 
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib;
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib;
+ else
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib:$LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler70/ia32/lib:$LD_LIBRARY_PATH
+ fi
+ export LD_LIBRARY_PATH;
+ 
+ if [ -z PATH ]
+ then
+- PATH=<INSTALLDIR>/compiler70/ia32/bin;
++ PATH=${PREFIX}/intel/compiler70/ia32/bin;
+ else
+- PATH=<INSTALLDIR>/compiler70/ia32/bin:$PATH;
++ PATH=${PREFIX}/intel/compiler70/ia32/bin:$PATH;
+ fi
+ export PATH;
+ 
+-export -n IA32ROOT; unset IA32ROOT;
+-
+ if [ $# != 0 ]
+ then
+- exec -a "<INSTALLDIR>/compiler70/ia32/bin/icc" <INSTALLDIR>/compiler70/ia32/bin/iccbin "$@";
++ i=0
++ argc=$#
++ while [ $i -lt $argc ] ; do
++  val1=$1
++  shift
++  for s in .C .cc .cpp .cxx .c++; do
++   val2=${val1%$s}
++   if [ ${#val1} -gt ${#val2} ] ; then
++    echo "Please use icpc to compile C++ source."
++    exit 1
++   fi
++  done
++  val2=${val1#"-openmp"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  val2=${val1#"-par"}
++  if [ ${#val1} -gt ${#val2} ] ; then
++   echo "Sorry, option '$val1' is not supported on FreeBSD."
++   exit 1
++  fi
++  if [ "${val1}" = "-Kpic" ] || [ "${val1}" = "-KPIC" ] || \
++   [ "${val1}" = "-fpic" ] || [ "${val1}" = "-fPIC" ] ; then
++   set -- "$@" "-Qoption,ld,-PIC"
++  fi
++  if [ "${val1}" = "-mt" ] ; then
++   unset val1
++   set -- "$@" "-Qoption,ld,-MT"
++  fi
++  set -- "$@" "$val1"
++  i=$(($i+1))
++ done
++ exec ${PREFIX}/intel/compiler70/ia32/bin/iccbin "$@";
+ else
+- exec -a "<INSTALLDIR>/compiler70/ia32/bin/icc" <INSTALLDIR>/compiler70/ia32/bin/iccbin;
++ exec ${PREFIX}/intel/compiler70/ia32/bin/iccbin;
+ fi

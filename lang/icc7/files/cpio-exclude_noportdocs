@@ -1,0 +1,14 @@
+*/opt/intel/%%COMPILERDIR%%/docs/C++ReleaseNotes.htm
+*/opt/intel/%%COMPILERDIR%%/docs/asm_lan.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/asm_ug*
+*/opt/intel/%%COMPILERDIR%%/docs/asm_ug.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/c_ug*
+*/opt/intel/%%COMPILERDIR%%/docs/c_ug_lnx.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/ccompindex.htm
+*/opt/intel/%%COMPILERDIR%%/docs/credist.txt
+*/opt/intel/%%COMPILERDIR%%/docs/flex_ug.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/icid.htm
+*/opt/intel/%%COMPILERDIR%%/docs/icpi.htm
+*/opt/intel/%%COMPILERDIR%%/docs/notes*
+*/opt/intel/%%COMPILERDIR%%/docs/ref*
+*/opt/intel/%%COMPILERDIR%%/training*

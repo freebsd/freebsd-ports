@@ -1,0 +1,36 @@
+--- ia32/include/cwchar.orig	Mon Nov 25 16:38:57 2002
++++ ia32/include/cwchar	Mon Nov 25 16:40:01 2002
+@@ -13,23 +13,23 @@
+ 
+  #ifdef _GLOBAL_USING
+ _STD_BEGIN
+-using ::mbstate_t; using ::size_t; using ::tm; using ::wint_t;
++using ::mbstate_t; using ::size_t; /* using ::tm; */ using ::wint_t;
+ 
+ 
+-using ::btowc;
+-using ::mbrlen; using ::mbrtowc; using ::mbsrtowcs;
+-using ::mbsinit;
+-using ::wcrtomb;
+-using ::wcsrtombs; using ::wcstol; using ::wcscat;
+-using ::wcschr; using ::wcscmp; using ::wcscoll;
++//using ::btowc;
++//using ::mbrlen; using ::mbrtowc; using ::mbsrtowcs;
++//using ::mbsinit;
++//using ::wcrtomb;
++/* using ::wcsrtombs; using ::wcstol; */ using ::wcscat;
++using ::wcschr; using ::wcscmp; // using ::wcscoll;
+ using ::wcscpy; using ::wcscspn; using ::wcslen;
+ using ::wcsncat; using ::wcsncmp; using ::wcsncpy;
+ using ::wcspbrk; using ::wcsrchr; using ::wcsspn;
+-using ::wcstod; using ::wcstoul; using ::wcsstr;
+-using ::wcstok; using ::wcsxfrm; using ::wctob;
++/* using ::wcstod; using ::wcstoul; */ using ::wcsstr;
++//using ::wcstok; using ::wcsxfrm; using ::wctob;
+ using ::wmemchr; using ::wmemcmp; using ::wmemcpy;
+ using ::wmemmove; using ::wmemset;
+-using ::wcsftime;
++//using ::wcsftime;
+ 
+ #ifdef __USE_ISOC99
+ using ::fwide; using ::fwprintf;
