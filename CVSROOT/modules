@@ -1333,6 +1333,7 @@ docbook-241	ports/textproc/docbook-241
 docbook-300	ports/textproc/docbook-300
 docbook-310	ports/textproc/docbook-310
 docbook-410	ports/textproc/docbook-410
+docbook-sk	ports/textproc/docbook-sk
 docbook-tdg	ports/textproc/docbook-tdg
 docbook-to-man	ports/textproc/docbook-to-man
 docbook-xml	ports/textproc/docbook-xml
