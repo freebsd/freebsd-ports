@@ -1,0 +1,22 @@
+#!/bin/sh
+CLASSDIR=@NDIR@/java/classes
+XLOCALEDIR=@X11BASE@/lib/X11/locale/zh_TW.Big5
+
+if [ "$2" = "DEINSTALL" ]; then
+  exit 0;
+fi
+
+#
+# Restore font.properties.zh_GB2312, font.properties.zh_TW_Big5
+# and XLC_LOCALE.
+#
+if [ -f ${CLASSDIR}/font.properties.zh_GB2312.orig ]; then
+  mv -f ${CLASSDIR}/font.properties.zh_GB2312.orig ${CLASSDIR}/font.properties.zh_GB2312
+fi
+if [ -f ${CLASSDIR}/font.properties.zh_TW_Big5.orig ]; then
+  mv -f ${CLASSDIR}/font.properties.zh_TW_Big5.orig ${CLASSDIR}/font.properties.zh_TW_Big5
+fi
+if [ -f ${XLOCALEDIR}/XLC_LOCALE.orig ]; then
+  mv -f ${XLOCALEDIR}/XLC_LOCALE.orig ${XLOCALEDIR}/XLC_LOCALE
+fi
+
