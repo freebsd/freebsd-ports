@@ -308,6 +308,7 @@ share/texmf/dvips/config/tx8r.enc
 share/texmf/dvips/config/txr.map
 share/texmf/dvips/config/txr1.map
 share/texmf/dvips/config/txr2.map
+share/texmf/dvipdfm/config/txr3.map
 @dirrm share/doc/txfonts
 @dirrm share/texmf/fonts/afm/txr
 @dirrm share/texmf/fonts/tfm/txr
