@@ -72,6 +72,7 @@
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
+    SUBDIR += imapfilter
     SUBDIR += imp
     SUBDIR += imp3
     SUBDIR += isoqlog
