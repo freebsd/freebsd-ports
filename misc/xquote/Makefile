@@ -16,6 +16,5 @@ MAINTAINER=	mph@freebsd.org
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>

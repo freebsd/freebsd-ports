@@ -1,5 +1,5 @@
---- Imakefile.orig	Sat Feb 13 16:01:41 1999
-+++ Imakefile	Sat Feb 13 16:02:13 1999
+--- Imakefile.orig	Wed Nov  5 08:13:15 1997
++++ Imakefile	Wed Nov  1 10:38:34 2000
 @@ -13,7 +13,7 @@
  
  DEFINES = -DSHAPE -DXQUOTE
@@ -9,3 +9,10 @@
  DEPLIBS = 
  
  SRCS =  about.c color.c file.c help.c optdetail.c option.c optnet.c \
+@@ -24,5 +24,5 @@
+ 	opttick.o optupdate.o parse.o pixmap.o remote.o server.o session.o \
+ 	status.o tape.o util.o view.o xquote.o xutil.o
+ 
+-ComplexProgramTarget(Xquote)
++ComplexProgramTargetNoMan(Xquote)
+ InstallAppDefaults(Xquote)
