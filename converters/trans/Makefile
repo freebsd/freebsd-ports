@@ -3,7 +3,7 @@
 # Date created:         6 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/07/13 22:41:46 ache Exp $
+# $Id: Makefile,v 1.3 1996/11/27 10:58:51 ache Exp $
 #
 
 DISTNAME=       trans111
@@ -22,7 +22,7 @@ do-install:
 	for i in $(ALL); do \
 		$(INSTALL_MAN) $$i.man ${PREFIX}/man/cat1/$$i.1; \
 	done
-	-mkdir -p ${LIBDIR}/tables ${LIBDIR}/xlt ${LIBDIR}/doc
+	${MKDIR} ${LIBDIR}/tables ${LIBDIR}/xlt ${LIBDIR}/doc
 	cd ${WRKSRC} && \
 	$(INSTALL_SCRIPT) checkall mkbintab mklist one iso ${LIBDIR}
 	cd ${WRKSRC} && \
