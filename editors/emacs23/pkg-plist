@@ -8,9 +8,10 @@ bin/etags
 bin/emacsclient
 @exec if [ ! -d %d/share/emacs/site-lisp ]; then mkdir -p %D/share/emacs/site-lisp; fi
 @exec if [ ! -d %d/share/emacs/%%EMACS_VERSION%%/site-lisp ]; then mkdir -p %D/share/emacs/%%EMACS_VERSION%%/site-lisp; fi
-@comment these two can fail if other ports are installed, no need to
+@exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
+etc/rc.d/emacs.sh
+@comment This can fail if other ports are installed, no need to
 @comment scare user in that case
-@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
 @unexec rmdir %D/share/emacs/%%EMACS_VERSION%%/site-lisp 2>/dev/null || true
 @unexec install-info --delete %D/info/emacs %D/info/dir
 @unexec install-info --delete %D/info/vip %D/info/dir
@@ -125,6 +126,7 @@ libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/vcdiff
 libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/yow
 @dirrm libexec/emacs/%%EMACS_VERSION%%/i386--freebsd
 @dirrm libexec/emacs/%%EMACS_VERSION%%
+@unexec rmdir %D/libexec/emacs 2>/dev/null || true
 share/emacs/%%EMACS_VERSION%%/etc/3B-MAXMEM
 share/emacs/%%EMACS_VERSION%%/etc/AIX.DUMP
 share/emacs/%%EMACS_VERSION%%/etc/BABYL
