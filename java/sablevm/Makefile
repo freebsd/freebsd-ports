@@ -18,8 +18,7 @@ MAINTAINER=	archie@freebsd.org
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi \
-		gmp.6:${PORTSDIR}/math/libgmp4 \
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+		gmp.6:${PORTSDIR}/math/libgmp4
 
 PATCH_WRKSRC=	${WRKDIR}
 PATCH_STRIP=	-p1
@@ -47,8 +46,9 @@ pre-fetch:
 	@${ECHO} '***' You do not seem to have the Gnome libraries installed.
 	@${ECHO} '***' Therefore, SableVM will be built without graphics
 	@${ECHO} '***' support. If you would like to install the Gnome
-	@${ECHO} '***' libraries for include graphics support, hit Control-C
+	@${ECHO} '***' libraries to include graphics support, hit Control-C
 	@${ECHO} '***' now and type \'make USE_GNOMELIBS=yes\'.
+	@${ECHO} '***'
 	@${ECHO} ''
 	@sleep 3
 .endif
