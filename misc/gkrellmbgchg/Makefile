@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gkrellmbgchg
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	misc
-MASTER_SITES=	http://www.uni-jena.de/~p6best/comp/sources/
+MASTER_SITES=	http://www.uni-jena.de/~p6best/comp/sources/ \
+		http://141.35.2.84/~p6best/comp/sources/
 
 MAINTAINER=	firewolf@lightningfire.net
 
