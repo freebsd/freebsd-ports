@@ -1,17 +1,10 @@
-diff -uNr gs5.10-ori/devs.mak devs.mak
---- gs5.10-ori/devs.mak	Mon Mar 30 19:08:35 1998
-+++ devs.mak	Mon Mar 30 19:18:43 1998
-@@ -742,8 +742,13 @@
+--- gs_init.ps.orig	Thu Jan  2 19:23:13 1997
++++ gs_init.ps	Thu Jan  2 19:24:46 1997
+@@ -1363,3 +1363,7 @@
+ (END GC) VMDEBUG
  
- cdeskjet_=gdevcdj.$(OBJ) $(HPPCL)
- 
-+cdeskjet8_=gdevcd8.$(OBJ) $(HPPCL)
+ % The interpreter will run the initial procedure (start).
 +
- cdeskjet.dev: $(cdeskjet_) page.dev
- 	$(SETPDEV) cdeskjet $(cdeskjet_)
-+
-+cdj850.dev: $(cdeskjet8_) page.dev
-+	$(SETPDEV) cdj850 $(cdeskjet8_)
- 
- cdjcolor.dev: $(cdeskjet_) page.dev
- 	$(SETPDEV) cdjcolor $(cdeskjet_)
++% unofficial patch:
++% make it possible to print from within acroread pdf viewer
++/Default currenthalftone /Halftone defineresource pop
