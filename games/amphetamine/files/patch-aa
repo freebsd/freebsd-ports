@@ -1,0 +1,84 @@
+--- Makefile.orig	Sun Feb 27 15:45:57 2000
++++ Makefile	Mon Jun  5 14:43:04 2000
+@@ -5,14 +5,14 @@
+ # User settings
+ #===============
+ 
+-PREFIX := /usr/local
+-INSTALL_DIR := ${PREFIX}/games/amph
++#PREFIX := /usr/local
++INSTALL_DIR := ${PREFIX}/share/amph
+ 
+ # Linux or SPARC
+ TARGET_ARCH := Linux
+ 
+ USE_LIB_XPM := TRUE
+-SDL_HEADERS := `sdl-config --cflags`
++SDL_HEADERS := `${LOCALBASE}/bin/sdl-config --cflags`
+ # For framerate dislpay (doesn't work yet)
+ USE_LIB_SGE := FLASE
+ 
+@@ -24,7 +24,7 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS}
++SEARCHDIRS := -I${MYCODEDIR} ${SDL_HEADERS} -I ${X11BASE}/include
+ 
+ # makemake variables
+ 
+@@ -35,12 +35,12 @@
+ # C
+ 
+ CC     := gcc
+-CFLAGS  = ${DEPENDFLAGS}
++CFLAGS += ${DEPENDFLAGS}
+ 
+ # C++
+ 
+ CXX      := g++ 
+-CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
++CXXFLAGS += ${DEPENDFLAGS} -O9 -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
+ 
+ %.o : %.cpp
+ 	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS} -o $@
+@@ -65,7 +65,7 @@
+ 
+ # linker
+ 
+-LOADLIBES := -lm `sdl-config --libs`
++LOADLIBES := -lm `${LOCALBASE}/bin/sdl-config --libs`
+ 
+ ifeq ($(USE_LIB_XPM),TRUE)
+     LOADLIBES := $(LOADLIBES) -lXpm -lXt
+@@ -75,7 +75,7 @@
+     LOADLIBES := $(LOADLIBES) -lSGE
+ endif
+ 
+-LDFLAGS   = -L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib 
++LDFLAGS   = -L${X11BASE}/lib
+ 
+ .PHONY : default
+ default : amph
+@@ -83,9 +83,9 @@
+ .PHONY : install
+ install: amph
+ 	@./mkinstalldirs ${INSTALL_DIR}
+-	@install -c ./amph ${INSTALL_DIR}
+-	@strip ${INSTALL_DIR}/amph
+-	@ln -s ${INSTALL_DIR}/amph ${PREFIX}/bin/amph
++	@${BSD_INSTALL_PROGRAM} ./amph ${PREFIX}/bin/amph
++#${INSTALL_DIR}
++#	@ln -s ${INSTALL_DIR}/amph ${PREFIX}/bin/amph
+ 
+ # This is what makemake added
+ 
+@@ -203,7 +203,7 @@
+ 
+ ./src/Surface.o: ./src/AmpHead.hpp ./src/Clut.hpp ./src/ConstVal.hpp ./src/Graphfil.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
+ 
+-./src/System.o: ./src/AmpHead.hpp ./src/Graphfil.hpp ./src/System.hpp /usr/include/X11/xpm.h /usr/include/fcntl.h /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/stat.h /usr/include/sys/time.h /usr/include/sys/types.h /usr/include/unistd.h
++./src/System.o: ./src/AmpHead.hpp ./src/Graphfil.hpp ./src/System.hpp ${X11BASE}/include/X11/xpm.h /usr/include/fcntl.h /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h /usr/include/string.h /usr/include/sys/stat.h /usr/include/sys/time.h /usr/include/sys/types.h /usr/include/unistd.h
+ 
+ ./src/Thing.o: ./src/AmpHead.hpp ./src/Appl.hpp ./src/Bullet.hpp ./src/ConstVal.hpp ./src/Element.hpp ./src/File.hpp ./src/Graphfil.hpp ./src/Level.hpp ./src/ObjInfo.hpp ./src/Object.hpp ./src/Pltform.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp ./src/Thing.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
+ 

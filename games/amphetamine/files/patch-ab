@@ -1,0 +1,27 @@
+--- src/Main.cpp.orig	Mon Jun  5 14:34:38 2000
++++ src/Main.cpp	Mon Jun  5 14:34:30 2000
+@@ -1,3 +1,5 @@
++#include <floatingpoint.h>
++
+ #include "System.hpp"
+ #include "Appl.hpp"
+ #include "Clut.hpp"
+@@ -74,7 +76,7 @@
+ 	my_argc = argc;
+ 	my_argv = argv;
+ 	if (checkCommandLine()) return 0;
+-	
++	fpsetmask(fpgetmask() & ~(FP_X_DZ|FP_X_INV));	
+ 	gApplication = new CApplication();
+ 	gApplication->InitGraphics();
+ 	gApplication->LoadData();
+@@ -82,6 +84,9 @@
+ 	gApplication->UnloadData();
+ 	gApplication->Quit();
+ 	delete gApplication;
++
++	fpresetsticky(FP_X_DZ|FP_X_INV);
++	fpsetmask(FP_X_DZ|FP_X_INV);
+ 
+ 	return 0;
+ }
