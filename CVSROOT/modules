@@ -4125,6 +4125,7 @@ larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
 latd		ports/net/latd
 latex		ports/print/latex
+latex-arydshln	ports/print/latex-arydshln
 latex-beamer	ports/print/latex-beamer
 latex-biblist	ports/print/latex-biblist
 latex-bibtopic	ports/print/latex-bibtopic
