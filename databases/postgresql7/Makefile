@@ -87,11 +87,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		NO_OPENSSL="${NO_OPENSSL}" \
 		DISTNAME="${DISTNAME}"
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-pre-extract:
+pre-fetch:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 pre-install:
@@ -189,5 +185,9 @@ post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 post-extract: ${POSTEXTRACT}
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
 
 .include <bsd.port.mk>
