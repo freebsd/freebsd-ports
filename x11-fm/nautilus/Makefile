@@ -20,6 +20,8 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
+WITHOUT_MOZILLA=	"Doesn't work with Mozilla-0.9.9"
+
 .if !defined(WITHOUT_MOZILLA)
 .if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
