@@ -7192,6 +7192,7 @@ stella		ports/emulators/stella
 stickynotes_applet	ports/misc/stickynotes_applet
 sting		ports/net/sting
 stk		ports/lang/STk
+stklos		ports/lang/stklos
 stldoc		ports/lang/stldoc
 stlport		ports/devel/stlport
 stlport-icc	ports/devel/stlport-icc
