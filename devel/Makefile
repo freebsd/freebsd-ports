@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.79 1997/10/03 22:19:29 andreas Exp $
+# $Id: Makefile,v 1.80 1997/10/15 20:02:14 max Exp $
 #
 
     SUBDIR += SWIG
@@ -38,6 +38,7 @@
     SUBDIR += mkmf
     SUBDIR += mprof
     SUBDIR += nana
+    SUBDIR += nasm
     SUBDIR += noweb
     SUBDIR += omniBroker
     SUBDIR += omniORB
