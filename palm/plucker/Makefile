@@ -27,6 +27,8 @@ PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-prc-files install-data install-pyplucker
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR} \
 		--disable-desktopbuild \
 		--disable-unpluck \
