@@ -17,14 +17,18 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 CONFIGURE_ARGS=	--with=tmail
 
 WRKDIR_TMAIL=	${WRKSRC}/packages/tmail
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.7
+RUN_DEPENDS+=	${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
+.endif
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -35,4 +39,4 @@ do-install:
 	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities.ja ${WRKDIR_TMAIL}/README.ja ${WRKDIR_TMAIL}/doc.ja/* ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
