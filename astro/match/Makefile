@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	match
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	astro
-MASTER_SITES=	http://acd188a-005.rit.edu/match/
+MASTER_SITES=	http://spiff.rit.edu/match/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for matching star lists
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
