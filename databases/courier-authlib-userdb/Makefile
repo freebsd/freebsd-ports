@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -32,6 +32,9 @@ USE_LIBLTDL=	yes
 # WITH_POSTGRESQL:		Build in postgresql support
 # WITH_LDAP:			Build in ldap support with openldap
 # WITH_GDBM:			Use gdbm files instead of bdb
+# WITH_MAILUSER:		The user running authlib
+# WITH_MAILGROUP:		The group running authlib
+# WITHOUT_AUTHUSERDB:		Don't build in authuserdb
 #
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
@@ -98,8 +101,24 @@ CONFIGURE_ARGS+=--without-authpam
 PLIST_SUB+=	PAMFLAG="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+.if defined(WITHOUT_AUTHUSERDB)
+CONFIGURE_ARGS+=--without-authuserdb
+PLIST_SUB+=     AUTHUSERDBFLAG="@comment "
+.else
+PLIST_SUB+=     AUTHUSERDBFLAG=""
+.endif
 
+.if defined(WITH_MAILUSER)
+CONFIGURE_ARGS+=--with-mailuser=${WITH_MAILUSER}
+.endif
+
+.if defined(WITH_MAILGROUP)
+CONFIGURE_ARGS+=--with-mailgroup=${WITH_MAILGROUP}
+.endif
+
+
+.include <bsd.port.pre.mk>
+++ pkg-plist   Fri Feb  4 02:29:24 2005
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=		courierlogger.1
