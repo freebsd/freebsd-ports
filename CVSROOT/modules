@@ -772,6 +772,7 @@ botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
 bounce		ports/net/bounce
 bouncycastle	ports/java/bouncycastle
+boxbackup	ports/sysutils/boxbackup
 boxes		ports/misc/boxes
 boxtools	ports/x11-wm/boxtools
 bozohttpd	ports/www/bozohttpd
