@@ -19,7 +19,6 @@ COMMENT=	AfterStep basic functionality library
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fPIC"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sharedlibs --with-x
 INSTALLS_SHLIB=	yes
