@@ -1,0 +1,63 @@
+--- aclocal.in.orig	Sat Oct 12 23:14:57 2002
++++ aclocal.in	Thu Feb 13 14:57:16 2003
+@@ -29,7 +29,7 @@
+ 
+ BEGIN
+ {
+-  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
++  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
+   unshift @INC, $perllibdir;
+ }
+ 
+@@ -42,8 +42,9 @@
+ $PACKAGE = '@PACKAGE@';
+ # Note that this isn't pkgdatadir, but a separate directory.
+ # Note also that the versioned directory is handled later.
+-$acdir = '@datadir@/aclocal';
++$acdir = '@datadir@/aclocal@APIPVERSION@';
+ $default_acdir = $acdir;
++$acdir_x11 = '%%X11BASE%%/share/aclocal';
+ # contains a list of directories, one per line, to be added
+ # to the dirlist in addition to $acdir, as if -I had been
+ # added to the command line.  If acdir has been redirected,
+@@ -188,11 +189,7 @@
+     $default_dirlist="$acdir/dirlist"
+ 	if $acdir ne $default_acdir;
+ 
+-    # Search the versioned directory near the end, and then the
+-    # unversioned directory last.  Only do this if the user didn't
+-    # override acdir.
+-    push (@dirlist, "$acdir-$APIVERSION")
+-	if $acdir eq $default_acdir;
++    unshift @dirlist, $acdir_x11 if -d "$acdir_x11/.";
+ 
+     # By default $(datadir)/aclocal doesn't exist.  We don't want to
+     # get an error in the case where we are searching the default
+@@ -290,12 +287,13 @@
+ 	$file_contents{'acinclude.m4'} = &scan_file ('acinclude.m4');
+     }
+ 
++    local (@skipinolist) = ();
+     local ($m4dir);
+     foreach $m4dir (@dirlist)
+     {
+ 	opendir (DIR, $m4dir)
+ 	    || die "aclocal: couldn't open directory `$m4dir': $!\n";
+-	local ($file, $fullfile);
++	local ($file, $fullfile, $ino);
+ 	foreach $file (sort grep (! /^\./, readdir (DIR)))
+ 	{
+ 	    # Only examine .m4 files.
+@@ -305,6 +303,12 @@
+ 	    next if $file eq 'aclocal.m4';
+ 
+ 	    $fullfile = $m4dir . '/' . $file;
++
++	    # Do not scan a file more than once.
++	    $ino = (stat($fullfile))[1];
++	    next if grep($ino eq $_, @skipinolist);
++	    push @skipinolist, $ino;
++
+ 	    $file_contents{$fullfile} = &scan_file ($fullfile);
+ 	}
+ 	closedir (DIR);
