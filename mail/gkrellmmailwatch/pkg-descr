@@ -1,0 +1,6 @@
+GKrellM mailwatch plugin
+
+A plugin for gkrellm, that watches in multiple mailboxes for new mail.
+
+Author:	Sjoerd Simons <Sjoerd@donald-duck.ele.tue.nl>
+WWW:	http://gkrellm.luon.net/mailwatch.phtml
