@@ -1,0 +1,57 @@
+*** libs/Makefile.in.ORIG	Thu Sep 19 13:08:41 1996
+--- libs/Makefile.in	Mon Oct  7 21:21:13 1996
+***************
+*** 72,97 ****
+  libs: $(SHLIBS) pkgIndex.tcl
+  
+  $(TKG_SHLIB): tkg.o tkgButton.o
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkg.o tkgButton.o
+  	@chmod 0755 $@
+  
+  $(XPM_SHLIB): tixImgXpm.o
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tixImgXpm.o
+  	@chmod 0755 $@
+  
+  $(BLT_SHLIB): $(BLTSHARED)
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) $(BLTSHARED)
+  	@chmod 0755 $@
+  
+  $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkNetscape.o clientWin.o
+  
+  $(FVWM_SHLIB): tkFvwm.o
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkFvwm.o
+  	@chmod 0755 $@
+  
+  $(STEAL_SHLIB): tkXAccess.o
+! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkXAccess.o
+  	@chmod 0755 $@
+  
+  tkgwish: $(TKGWISH_NAME)
+--- 72,97 ----
+  libs: $(SHLIBS) pkgIndex.tcl
+  
+  $(TKG_SHLIB): tkg.o tkgButton.o
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkg.o tkgButton.o
+  	@chmod 0755 $@
+  
+  $(XPM_SHLIB): tixImgXpm.o
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tixImgXpm.o
+  	@chmod 0755 $@
+  
+  $(BLT_SHLIB): $(BLTSHARED)
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) $(BLTSHARED)
+  	@chmod 0755 $@
+  
+  $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkNetscape.o clientWin.o
+  
+  $(FVWM_SHLIB): tkFvwm.o
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkFvwm.o
+  	@chmod 0755 $@
+  
+  $(STEAL_SHLIB): tkXAccess.o
+! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkXAccess.o
+  	@chmod 0755 $@
+  
+  tkgwish: $(TKGWISH_NAME)
