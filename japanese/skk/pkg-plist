@@ -2,7 +2,7 @@ bin/skkdic-expr
 bin/skkdic-count
 bin/skkdic-sort
 libexec/skkserv
-@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).	Yet another Japanese Inputting Method. (Japanese )" %D/info/skk.info %D/info/dir
+@unexec install-info --delete --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).		Yet another Japanese Inputting Method. (Japanese )" %D/info/skk.info %D/info/dir
 info/skk.info
 info/skk.info-1
 info/skk.info-2
@@ -11,7 +11,7 @@ info/skk.info-4
 info/skk.info-5
 info/skk.info-6
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).	Yet another Japanese Inputting Method. (Japanese )" %D/info/skk.info %D/info/dir
+@exec install-info --section="The Emacs editor and associated tools" --entry="* Skk: (skk.info).		Yet another Japanese Inputting Method. (Japanese )" %D/info/skk.info %D/info/dir
 share/emacs/site-lisp/avltree.el
 share/emacs/site-lisp/avltree.elc
 share/emacs/site-lisp/elib-node.el
