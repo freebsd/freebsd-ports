@@ -32,8 +32,10 @@ share/locale/el/LC_MESSAGES/gnupg.mo
 share/locale/eo/LC_MESSAGES/gnupg.mo
 share/locale/es/LC_MESSAGES/gnupg.mo
 share/locale/et/LC_MESSAGES/gnupg.mo
+share/locale/fi/LC_MESSAGES/gnupg.mo
 share/locale/fr/LC_MESSAGES/gnupg.mo
 share/locale/gl/LC_MESSAGES/gnupg.mo
+share/locale/hu/LC_MESSAGES/gnupg.mo
 share/locale/id/LC_MESSAGES/gnupg.mo
 share/locale/it/LC_MESSAGES/gnupg.mo
 share/locale/ja/LC_MESSAGES/gnupg.mo
@@ -41,8 +43,10 @@ share/locale/nl/LC_MESSAGES/gnupg.mo
 share/locale/pl/LC_MESSAGES/gnupg.mo
 share/locale/pt/LC_MESSAGES/gnupg.mo
 share/locale/pt_BR/LC_MESSAGES/gnupg.mo
+share/locale/sk/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
 share/locale/tr/LC_MESSAGES/gnupg.mo
+share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @dirrm share/gnupg
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/da 2>/dev/null || true
@@ -56,6 +60,8 @@ share/locale/tr/LC_MESSAGES/gnupg.mo
 @unexec rmdir %D/share/locale/eo 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/id 2>/dev/null || true
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
