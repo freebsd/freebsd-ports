@@ -7,6 +7,7 @@
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.12.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -41,5 +42,6 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/orbit2rc ]; then \
 		${CP} -p ${PREFIX}/etc/orbit2rc.default ${PREFIX}/etc/orbit2rc ; \
 	fi
+	@${MKDIR} ${PREFIX}/lib/orbit-2.0
 
 .include <bsd.port.mk>
