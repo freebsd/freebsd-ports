@@ -23,6 +23,7 @@ USE_GNOME=	imlib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		qiv.1
+PLIST_FILES=	bin/qiv
 
 do-configure:
 	@ ${MV} ${WRKSRC}/qiv.1 ${WRKSRC}/qiv.1.pre_sed

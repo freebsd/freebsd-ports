@@ -14,5 +14,6 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/streamripper
 
 .include <bsd.port.mk>

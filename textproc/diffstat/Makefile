@@ -19,5 +19,6 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 
 MAN1=		diffstat.1
+PLIST_FILES=	bin/diffstat
 
 .include <bsd.port.mk>
