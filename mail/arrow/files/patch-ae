@@ -1,5 +1,5 @@
---- programs/arrow/code/SMTPMessage.cc.orig	Wed Jun 14 14:15:43 2000
-+++ programs/arrow/code/SMTPMessage.cc	Wed Jun 14 14:37:44 2000
+--- programs/arrow/code/SMTPMessage.cc.orig	Fri Sep 24 15:22:05 1999
++++ programs/arrow/code/SMTPMessage.cc	Wed Aug  1 01:17:26 2001
 @@ -42,7 +42,7 @@
  #include <ace/LSOCK_Connector.h>
  #include <ace/LSOCK_Stream.h>
@@ -25,7 +25,7 @@
 +	struct timezone tz;
 +
 +	gettimeofday(&t, &tz);
-+	JString date(ctime(&(t.tv_sec)));
++	JString date(ctime((const time_t *) &(t.tv_sec)));
 +
 +/* END of ftime replacement */
 +	
