@@ -1,0 +1,224 @@
+*** EventHandler.cpp.BACKUP	Mon Sep 25 19:46:01 2000
+--- EventHandler.cpp	Mon Sep 25 19:52:32 2000
+***************
+*** 77,127 ****
+          ("(Shift or control)-middle and dragging changes the viewing perspective.\n");
+      printf("Type 'h' for a list of key commands.\n");
+  
+!     widgets->addButton(Widgets::ButtonData("Undo", &undo_cb, (void*)0));
+!     widgets->addButton(Widgets::ButtonData("Redo", &redo_cb, (void*)0));
+      static Widgets::ButtonData twist_items[] = {
+!         Widgets::ButtonData(" 1 twist", &scramble_cb, (void *)1),
+!         Widgets::ButtonData(" 2 twists", &scramble_cb, (void *)2),
+!         Widgets::ButtonData(" 3 twists", &scramble_cb, (void *)3),
+!         Widgets::ButtonData(" 4 twists", &scramble_cb, (void *)4),
+!         Widgets::ButtonData(" 5 twists", &scramble_cb, (void *)5),
+!         Widgets::ButtonData(" 6 twists", &scramble_cb, (void *)6),
+!         Widgets::ButtonData(" 7 twists", &scramble_cb, (void *)7),
+!         Widgets::ButtonData(" 8 twists", &scramble_cb, (void *)8),
+!         Widgets::ButtonData("Full Scramble", &scramble_cb, (void *)NSCRAMBLECHEN),
+      };
+      int         n_items = sizeof(twist_items) / sizeof(twist_items[0]);
+      assert(n_items == 9);
+      widgets->addMenuButton("Scramble...", n_items, twist_items);
+!     widgets->addButton(Widgets::ButtonData("Solve", &cheat_cb, 0));
+!     widgets->addButton(Widgets::ButtonData("Reset", &reset_cb, 0));
+      static Widgets::ButtonData new_puzzle_items[] = {
+          // widgets_button_create_data(
+          // MAXLENGTH<1 ? NULL : "1x1x1x1", new_puzzle_cb, (void *)1,
+          Widgets::ButtonData(MAXLENGTH < 2 ? 0 :
+!                             Widgets::ButtonData("2x2x2x2", &newPuzzle_cb,
+                                                  (void *)2)),
+          Widgets::ButtonData(MAXLENGTH < 3 ? 0 :
+!                             Widgets::ButtonData("3x3x3x3", &newPuzzle_cb,
+                                                  (void *)3)),
+          Widgets::ButtonData(MAXLENGTH < 4 ? 0 :
+!                             Widgets::ButtonData("4x4x4x4", &newPuzzle_cb,
+                                                  (void *)4)),
+          Widgets::ButtonData(MAXLENGTH < 5 ? 0 :
+!                             Widgets::ButtonData("5x5x5x5", &newPuzzle_cb,
+                                                  (void *)5)),
+          Widgets::ButtonData(MAXLENGTH < 6 ? 0 :
+!                             Widgets::ButtonData("6x6x6x6", &newPuzzle_cb,
+                                                  (void *)6)),
+          Widgets::ButtonData(MAXLENGTH < 7 ? 0 :
+!                             Widgets::ButtonData("7x7x7x7", &newPuzzle_cb,
+                                                  (void *)7)),
+      };
+      n_items = sizeof(new_puzzle_items) / sizeof(new_puzzle_items[0]);
+      widgets->addMenuButton("New Puzzle...", n_items, new_puzzle_items);
+!     widgets->addButton(Widgets::ButtonData("Save", &save_cb, 0)); 
+!     widgets->addButton(Widgets::ButtonData("Print", &print_cb, 0)); 
+!     widgets->addButton(Widgets::ButtonData("Quit", &quit_cb, 0)); 
+  
+      readLogfile(this->preferences.getStringProperty(M4D_LOGFILE));
+  
+--- 77,127 ----
+          ("(Shift or control)-middle and dragging changes the viewing perspective.\n");
+      printf("Type 'h' for a list of key commands.\n");
+  
+!     widgets->addButton(Widgets::ButtonData("Undo", &EventHandler::undo_cb, (void*)0));
+!     widgets->addButton(Widgets::ButtonData("Redo", &EventHandler::redo_cb, (void*)0));
+      static Widgets::ButtonData twist_items[] = {
+!         Widgets::ButtonData(" 1 twist", &EventHandler::scramble_cb, (void *)1),
+!         Widgets::ButtonData(" 2 twists", &EventHandler::scramble_cb, (void *)2),
+!         Widgets::ButtonData(" 3 twists", &EventHandler::scramble_cb, (void *)3),
+!         Widgets::ButtonData(" 4 twists", &EventHandler::scramble_cb, (void *)4),
+!         Widgets::ButtonData(" 5 twists", &EventHandler::scramble_cb, (void *)5),
+!         Widgets::ButtonData(" 6 twists", &EventHandler::scramble_cb, (void *)6),
+!         Widgets::ButtonData(" 7 twists", &EventHandler::scramble_cb, (void *)7),
+!         Widgets::ButtonData(" 8 twists", &EventHandler::scramble_cb, (void *)8),
+!         Widgets::ButtonData("Full Scramble", &EventHandler::scramble_cb, (void *)NSCRAMBLECHEN),
+      };
+      int         n_items = sizeof(twist_items) / sizeof(twist_items[0]);
+      assert(n_items == 9);
+      widgets->addMenuButton("Scramble...", n_items, twist_items);
+!     widgets->addButton(Widgets::ButtonData("Solve", &EventHandler::cheat_cb, 0));
+!     widgets->addButton(Widgets::ButtonData("Reset", &EventHandler::reset_cb, 0));
+      static Widgets::ButtonData new_puzzle_items[] = {
+          // widgets_button_create_data(
+          // MAXLENGTH<1 ? NULL : "1x1x1x1", new_puzzle_cb, (void *)1,
+          Widgets::ButtonData(MAXLENGTH < 2 ? 0 :
+!                             Widgets::ButtonData("2x2x2x2", &EventHandler::newPuzzle_cb,
+                                                  (void *)2)),
+          Widgets::ButtonData(MAXLENGTH < 3 ? 0 :
+!                             Widgets::ButtonData("3x3x3x3", &EventHandler::newPuzzle_cb,
+                                                  (void *)3)),
+          Widgets::ButtonData(MAXLENGTH < 4 ? 0 :
+!                             Widgets::ButtonData("4x4x4x4", &EventHandler::newPuzzle_cb,
+                                                  (void *)4)),
+          Widgets::ButtonData(MAXLENGTH < 5 ? 0 :
+!                             Widgets::ButtonData("5x5x5x5", &EventHandler::newPuzzle_cb,
+                                                  (void *)5)),
+          Widgets::ButtonData(MAXLENGTH < 6 ? 0 :
+!                             Widgets::ButtonData("6x6x6x6", &EventHandler::newPuzzle_cb,
+                                                  (void *)6)),
+          Widgets::ButtonData(MAXLENGTH < 7 ? 0 :
+!                             Widgets::ButtonData("7x7x7x7", &EventHandler::newPuzzle_cb,
+                                                  (void *)7)),
+      };
+      n_items = sizeof(new_puzzle_items) / sizeof(new_puzzle_items[0]);
+      widgets->addMenuButton("New Puzzle...", n_items, new_puzzle_items);
+!     widgets->addButton(Widgets::ButtonData("Save", &EventHandler::save_cb, 0)); 
+!     widgets->addButton(Widgets::ButtonData("Print", &EventHandler::print_cb, 0)); 
+!     widgets->addButton(Widgets::ButtonData("Quit", &EventHandler::quit_cb, 0)); 
+  
+      readLogfile(this->preferences.getStringProperty(M4D_LOGFILE));
+  
+***************
+*** 132,143 ****
+      polymgr->getUntwistedFrame(&untwisted_frame);
+  
+      /* an expose event will happen immediately */
+!     machine->addEventHandler(1 << EXPOSE, &expose_handler, 0);
+!     machine->addEventHandler(1 << RESIZE, &expose_handler, 0);
+!     machine->addEventHandler(1 << BUTTONDOWN, &buttonDown_handler, 0);
+!     machine->addEventHandler(1 << KEYPRESS, &keyPress_handler, 0);
+!     machine->addEventHandler(1 << KEYRELEASE, &keyRelease_handler, 0);
+!     machine->addEventHandler(1 << DRAG, &drag_handler, 0);
+  }
+  
+  EventHandler::Callback*
+--- 132,143 ----
+      polymgr->getUntwistedFrame(&untwisted_frame);
+  
+      /* an expose event will happen immediately */
+!     machine->addEventHandler(1 << EXPOSE, &EventHandler::expose_handler, 0);
+!     machine->addEventHandler(1 << RESIZE, &EventHandler::expose_handler, 0);
+!     machine->addEventHandler(1 << BUTTONDOWN, &EventHandler::buttonDown_handler, 0);
+!     machine->addEventHandler(1 << KEYPRESS, &EventHandler::keyPress_handler, 0);
+!     machine->addEventHandler(1 << KEYRELEASE, &EventHandler::keyRelease_handler, 0);
+!     machine->addEventHandler(1 << DRAG, &EventHandler::drag_handler, 0);
+  }
+  
+  EventHandler::Callback*
+***************
+*** 689,700 ****
+          return;
+      }
+  
+!     static Widgets::ButtonData button("Cancel", &cancelApplyMacro_cb, 0);
+      widgets->createDialog("Click on three reference stickers.\n", 1, &button);
+  
+      number_of_reference_stickers_needed = 3;
+      reference_stickers_needed = refs;
+!     what_to_do_after_got_reference_stickers = &applyMacroCBAfterGotRefStickers;
+  }
+  
+  void
+--- 689,700 ----
+          return;
+      }
+  
+!     static Widgets::ButtonData button("Cancel", &EventHandler::cancelApplyMacro_cb, 0);
+      widgets->createDialog("Click on three reference stickers.\n", 1, &button);
+  
+      number_of_reference_stickers_needed = 3;
+      reference_stickers_needed = refs;
+!     what_to_do_after_got_reference_stickers = &EventHandler::applyMacroCBAfterGotRefStickers;
+  }
+  
+  void
+***************
+*** 745,756 ****
+  
+      widgets->addMacro("", macromgr->getNMacros() - 1);
+  
+!     static Widgets::ButtonData button("Cancel", &cancelAdd_cb, 0);
+      widgets->createDialog("Click on three\nreference stickers.\n", 1, &button);
+  
+      number_of_reference_stickers_needed = 3;
+      reference_stickers_needed = refs;
+!     what_to_do_after_got_reference_stickers = &addCBAfterGotRefStickers;
+  }
+  
+  void
+--- 745,756 ----
+  
+      widgets->addMacro("", macromgr->getNMacros() - 1);
+  
+!     static Widgets::ButtonData button("Cancel", &EventHandler::cancelAdd_cb, 0);
+      widgets->createDialog("Click on three\nreference stickers.\n", 1, &button);
+  
+      number_of_reference_stickers_needed = 3;
+      reference_stickers_needed = refs;
+!     what_to_do_after_got_reference_stickers = &EventHandler::addCBAfterGotRefStickers;
+  }
+  
+  void
+***************
+*** 758,765 ****
+  {
+      widgets->destroyDialog();
+      static Widgets::ButtonData make_macro[2] = {
+!         Widgets::ButtonData("Done", &doneAdd_cb, 0),
+!         Widgets::ButtonData("Cancel", &cancelAdd_cb, 0),
+      };
+  
+      // FIX THIS-- it obscures the window!
+--- 758,765 ----
+  {
+      widgets->destroyDialog();
+      static Widgets::ButtonData make_macro[2] = {
+!         Widgets::ButtonData("Done", &EventHandler::doneAdd_cb, 0),
+!         Widgets::ButtonData("Cancel", &EventHandler::cancelAdd_cb, 0),
+      };
+  
+      // FIX THIS-- it obscures the window!
+***************
+*** 806,812 ****
+          return;
+      }
+  
+!     static Widgets::ButtonData button("Cancel", &cancelDelete_cb, 0);
+      widgets->createDialog
+          ("Click on the \"Apply\" button\nof the macro you wish to delete.", 1,
+           &button);
+--- 806,812 ----
+          return;
+      }
+  
+!     static Widgets::ButtonData button("Cancel", &EventHandler::cancelDelete_cb, 0);
+      widgets->createDialog
+          ("Click on the \"Apply\" button\nof the macro you wish to delete.", 1,
+           &button);
