@@ -9,3 +9,4 @@ lib/X11/tgif/tgificon.xbm
 lib/X11/tgif/tgificon.xpm
 lib/X11/tgif/tangram.sym
 lib/X11/tgif/keys.obj
+@dirrm lib/X11/tgif
