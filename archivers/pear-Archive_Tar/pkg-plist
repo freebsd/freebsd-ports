@@ -1,0 +1,8 @@
+@exec mv %D/lib/php/Archive %D/lib/php/Archive.dist
+%%PORTDOCS%%@exec mv %D/lib/php/docs/Archive_Tar %D/lib/php/docs/Archive_Tar.dist
+%%PEARDIR%%/Archive/Tar.php
+%%PORTDOCS%%%%PEARDIR%%/docs/Archive_Tar/Archive_Tar.txt
+@dirrm %%PEARDIR%%/Archive
+%%PORTDOCS%%@dirrm %%PEARDIR%%/docs/Archive_Tar
+@unexec mv %D/lib/php/Archive.dist %D/lib/php/Archive || true
+%%PORTDOCS%%@unexec mv %D/lib/php/docs/Archive_Tar.dist %D/lib/php/docs/Archive_Tar || true
