@@ -1,0 +1,24 @@
+bin/katalog
+share/applnk/Applications/katalog.desktop
+share/apps/katalog/katalogui.rc
+share/doc/HTML/en/katalog/index.html
+share/doc/HTML/en/katalog/katalog.png
+share/doc/HTML/en/katalog/minidialog.png
+share/doc/HTML/en/katalog/miniories.png
+share/doc/HTML/en/katalog/minisearch.png
+share/doc/HTML/en/katalog/miniviewer.png
+share/icons/locolor/16x16/apps/katalog.png
+share/icons/locolor/32x32/apps/katalog.png
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/katalog
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/katalog
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

@@ -138,6 +138,7 @@
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
+    SUBDIR += katalog
     SUBDIR += kcd
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n
