@@ -1,0 +1,24 @@
+--- configure.in.orig	Fri Jul 13 19:50:41 2001
++++ configure.in	Wed Nov  7 16:50:08 2001
+@@ -97,7 +97,9 @@
+ 
+ # Some systems don't have Tcl.  Don't build
+ # the Tcl products if we don't have the library.
+-TCLCONFIG=${TCLSH_EXEC_PREFIX}/lib/tclConfig.sh
++if test -z $TCLCONFIG; then
++    TCLCONFIG=${TCLSH_EXEC_PREFIX}/lib/tclConfig.sh
++fi
+ if test -f $TCLCONFIG; then
+     AC_MSG_RESULT([using $TCLCONFIG])
+     file=${TCLCONFIG}
+@@ -173,7 +175,9 @@
+ 
+ # Some systems have Tcl, but not TK.  Don't build
+ # the Tk products if we don't have the library.
+-TKCONFIG=${WISH_EXEC_PREFIX}/lib/tkConfig.sh
++if test -z $TKCONFIG; then
++    TKCONFIG=${WISH_EXEC_PREFIX}/lib/tkConfig.sh
++fi
+ if test -f $TKCONFIG; then
+     AC_MSG_RESULT([using $TKCONFIG])
+     file=${TKCONFIG}
