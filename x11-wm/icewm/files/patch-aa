@@ -1,6 +1,7 @@
---- Makefile.orig	Fri Apr  3 17:09:47 1998
-+++ Makefile	Fri Apr  3 17:12:42 1998
-@@ -1,12 +1,12 @@
+--- Makefile.orig	Mon Jul 20 01:34:31 1998
++++ Makefile	Fri Jul 24 20:28:53 1998
+@@ -1,13 +1,13 @@
+ include ./VERSION
  
 -PREFIX      = /usr/local
 +PREFIX      = $(X11BASE)
@@ -18,13 +19,13 @@
  INSTALLLIB  = $(INSTALL) -m 444
  #INSTALLETC  = $(INSTALL) -m 644
  
-@@ -16,8 +16,7 @@
- XPMDIRS     = themes/nice themes/motif themes/win95 themes/warp3 themes/warp4 themes/win31 themes/metal ledclock taskbar icons
+@@ -19,8 +19,7 @@
+               metal-big blueice monte-carlo jaywalk
  
- all:
+ all:	config
 -	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR))
 -	(cd doc ; make)
 +	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX))
  
- doc:
- 	(cd doc ; make)
+ config:
+ 	(cd src ; ln -sf MakeConfig.`uname` MakeConfig)
