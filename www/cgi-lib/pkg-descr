@@ -1,0 +1,8 @@
+A cgi-lib.pl library makes CGI scripting in Perl easy enough for
+anyone to process forms and create dynamic Web content.
+
+Official Web site for cgi-lib.pl:
+WWW: http://cgi-lib.stanford.edu/cgi-lib/
+
+- SADA Kenji
+sada@FreeBSD.org
