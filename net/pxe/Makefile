@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 MAINTAINER=	anders@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 			--with-log=/var/log/pxe.log \
 			--with-setuid=nobody
@@ -21,7 +22,7 @@ CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 DOCS=	Changes INSTALL LICENCE README
 
 post-patch:
-	${PERL} -pi -e "s,^CFLAGS.*,CFLAGS=\t\@CFLAGS\@,; \
+	${REINPLACE_CMD} -e "s,^CFLAGS.*,CFLAGS=\t\@CFLAGS\@,; \
 		s,^CC.*,CC=\t${CXX}," \
 	${WRKSRC}/Makefile.in
 
