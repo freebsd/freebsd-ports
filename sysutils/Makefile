@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.56 1998/12/27 18:06:51 sada Exp $
+# $Id: Makefile,v 1.57 1999/01/05 13:13:04 vanilla Exp $
 #
 
     SUBDIR += LPRng
     SUBDIR += afio
     SUBDIR += asapm
     SUBDIR += asrpages
+    SUBDIR += bchunk
     SUBDIR += bkpupsd
     SUBDIR += cd-write
     SUBDIR += cdrecord
