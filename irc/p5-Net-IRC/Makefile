@@ -35,6 +35,8 @@ pre-install:
 .endif
 	${ECHO} @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/IRC >> ${PLIST}
 	${ECHO} @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net >> ${PLIST}
+	${ECHO} @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net \
+		>> ${PLIST}
 	${ECHO} @dirrm share/examples/p5-Net-IRC >> ${PLIST}
 
 post-install:
