@@ -64,7 +64,6 @@
     SUBDIR += iv
     SUBDIR += iwidgets
     SUBDIR += jx
-    SUBDIR += lablgtk
     SUBDIR += lesstif
     SUBDIR += libbonoboui
     SUBDIR += libgail-gnome
@@ -84,6 +83,7 @@
     SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += notif2
+    SUBDIR += ocaml-lablgtk
     SUBDIR += open-motif
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf

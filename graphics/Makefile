@@ -165,7 +165,6 @@
     SUBDIR += kisomandel
     SUBDIR += kludge3d
     SUBDIR += kuickshow
-    SUBDIR += lablgl
     SUBDIR += landscape
     SUBDIR += lcms
     SUBDIR += leafpak
@@ -243,6 +242,7 @@
     SUBDIR += netpbm
     SUBDIR += netshow
     SUBDIR += nurbs++
+    SUBDIR += ocaml-lablgl
     SUBDIR += ogle
     SUBDIR += ogle-gui
     SUBDIR += okle
