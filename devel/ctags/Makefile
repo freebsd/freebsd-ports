@@ -8,11 +8,9 @@
 PORTNAME=	ctags
 PORTVERSION=	5.0.1
 CATEGORIES=	devel
-MASTER_SITES=	http://ctags.sourceforge.net/archives/ \
-		${MASTER_SITE_SUNSITE} \
-		http://fly.hiwaay.net/~darren/archives/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	devel/lang/c jkoshy
+MASTER_SITE_SUBDIR=	ctags jkoshy
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
