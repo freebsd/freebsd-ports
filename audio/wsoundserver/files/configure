@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# WMSound configuration and compilation script
+# (C) Copyright 1998, Anthony Quinn & Pascal Hofstee
+# Modified for FreeBSD port installation by Glenn Johnson
+
+VERSION="0.9.0"
+DEVICE="/dev/dsp"
+
+(echo "{";\
+echo "  SoundPath = (\"~/GNUstep/Library/WindowMaker/Sounds\",";\
+echo "              \"/usr/X11R6/share/WindowMaker/Sounds\");";\
+echo "  SoundSetsPath = (\"~/GNUstep/Library/WindowMaker/SoundSets\",";\
+echo "              \"/usr/X11R6/share/WindowMaker/SoundSets\");";\
+echo "  Device = $DEVICE;";\
+echo "  AppExit = appexit.wav;";\
+echo "  AppStart = appstart.wav;";\
+echo "  Hide = hide.wav;";\
+echo "  Iconify = iconify.wav;";\
+echo "  Maximize = maximize.wav;";\
+echo "  UnMaximize = unmaximize.wav;";\
+echo "  Shade = shade.wav;";\
+echo "  Startup = startup.wav;";\
+echo "  UnHide = unhide.wav;";\
+echo "  DeIconify = uniconify.wav;";\
+echo "  UnShade = unshade.wav;";\
+echo "  UserDefined = replaceme.wav;";\
+echo "}";)
+
