@@ -3,7 +3,7 @@
 # Date Created:		3 Jul 1996
 # Whom:			Tim Vanderhoek <ac199@hwcn.org>
 #
-# $Id: Makefile,v 1.2 1997/11/08 13:26:08 hoek Exp $
+# $Id: Makefile,v 1.3 1997/12/24 01:21:44 alex Exp $
 #
 
 DISTNAME=	tvp-0.9.7.1
@@ -35,5 +35,6 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/tvp.6 ${PREFIX}/man/man6/tvp.6
 	a='${PREFIX}/share/doc/tvp/' perl -pi -e 's/TOKEN/$$ENV{a}/' \
 		${PREFIX}/man/man6/tvp.6
+	strip ${PREFIX}/bin/xpwish ${PREFIX}/bin/aprez ${PREFIX}/bin/prez
 
 .include <bsd.port.mk>
