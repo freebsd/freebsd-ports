@@ -25,7 +25,7 @@ dvi2xx.tar.gz:
 	  else \
 		echo ">> $@ Fetched!" ; \
 	  fi; fi)
-	
+
 pre-install:
 	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/man/man1
