@@ -7,13 +7,13 @@
 #
 
 DISTNAME=       procmail-3.13.1
-PKGNAME=        procmail-3.13.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
-INSTALL_TARGET= install-suid install.man
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+INSTALL_TARGET= install-suid install.man
 
 # It asks for list af directories to do test for file locking
 # (defaults to /tmp and ".", so return should suffice in most cases).
