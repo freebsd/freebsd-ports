@@ -100,7 +100,6 @@
     SUBDIR += p0f
     SUBDIR += p5-Altoids
     SUBDIR += p5-Cflow
-    SUBDIR += p5-JUNOScript
     SUBDIR += p5-Mon
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-IP

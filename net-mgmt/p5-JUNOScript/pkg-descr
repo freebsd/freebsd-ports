@@ -1,6 +1,0 @@
-The JUNOScript application programming interface (API) is an Extensible
-Markup Language (XML) application that Juniper Networks routers use to
-exchange information with client applications. XML is a metalanguage for
-defining how to mark the organizational structures and individual elements
-in a data set or document with tags that describe the function of the
-structures and elements.
