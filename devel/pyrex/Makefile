@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9
 CATEGORIES=	devel lang python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
@@ -27,6 +27,7 @@ post-patch:
 		-e 's|\.\./py|${PREFIX}/bin/py|g' ${WRKSRC}/Demos/Makefile
 	@${REINPLACE_CMD} -e "s|'Plex'||g" ${WRKSRC}/setup.py
 	@${RM} -f ${WRKSRC}/Demos/Makefile.bak
+	@${FIND} ${WRKSRC} -name .DS_Store | ${XARGS} ${RM} -f
 
 post-install:
 	@# precompile lexicon pickle
