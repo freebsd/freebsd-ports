@@ -412,6 +412,7 @@
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome
     SUBDIR += libgtop2
+    SUBDIR += libgutenfetch
     SUBDIR += libhash
     SUBDIR += libhoard
     SUBDIR += libical
