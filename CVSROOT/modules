@@ -5997,6 +5997,7 @@ net-snmp4	ports/net-mgmt/net-snmp4
 netams		ports/net-mgmt/netams
 netatalk	ports/net/netatalk
 netbeans	ports/java/netbeans
+netbeans3	ports/java/netbeans3
 netcat		ports/net/netcat
 netcdf		ports/math/netcdf
 netcomponents	ports/java/netcomponents
