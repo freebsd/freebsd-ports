@@ -11,6 +11,7 @@
     SUBDIR += gnomemc
     SUBDIR += jafm
     SUBDIR += mfm
+    SUBDIR += nautilus
     SUBDIR += offix-files
     SUBDIR += tkdesk
     SUBDIR += vide
