@@ -1,6 +1,5 @@
 include/libzvbi.h
 lib/libzvbi.a
-lib/libzvbi.la
 lib/libzvbi.so
 lib/libzvbi.so.3
 share/locale/de/LC_MESSAGES/zvbi.mo
