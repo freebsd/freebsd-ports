@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Thu Aug 24 20:43:26 2000
++++ Makefile.am	Sun Sep 17 16:26:39 2000
+@@ -3,7 +3,6 @@
+ SUBDIRS		= elvi
+ 
+ bin_SCRIPTS	= surfraw surfraw-netscape-remote
+-sysconf_DATA	= surfraw.conf
+ devel_extra	= banner prebuild
+ EXTRA_DIST	= surfraw.lsm.in surfraw.in surfraw.spec.in \
+                   aclocal.m4 \

@@ -3,6 +3,7 @@ bin/altavista
 bin/appwatch
 bin/ask
 bin/austlii
+bin/britannica
 bin/cite
 bin/cnn
 bin/currency
@@ -13,6 +14,7 @@ bin/freshmeat
 bin/ftpsearch
 bin/google
 bin/ircsearch
+bin/jake
 bin/linuxdoc
 bin/netbsd
 bin/newscientist
@@ -20,6 +22,7 @@ bin/pubmed
 bin/raging
 bin/rhyme
 bin/slashdot
+bin/stockquote
 bin/sundocs
 bin/sunsolve
 bin/surfraw
@@ -30,6 +33,7 @@ bin/webster
 bin/wetandwild
 bin/xxx
 bin/yahoo
-etc/surfraw.conf.sample
+share/examples/surfraw/surfraw.conf
 share/surfraw/surfraw_elvi.list
+@dirrm share/examples/surfraw
 @dirrm share/surfraw
