@@ -10,7 +10,7 @@ PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nast.berlios.de/src/ \
-		http://voodoo.oberon.net/downloads/
+		http://voodoo.oberon.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	krion@FreeBSD.org
