@@ -17,7 +17,4 @@ share/locale/tr/LC_MESSAGES/xMule.mo
 @unexec rmdir %D/share/locale/ko 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ee 2>/dev/null || true
-@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/gnome/locale 2>/dev/null || true
-@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
