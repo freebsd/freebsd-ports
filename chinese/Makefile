@@ -30,6 +30,7 @@
     SUBDIR += gbscript
     SUBDIR += ghostscript6
     SUBDIR += gnumeric
+    SUBDIR += gugod-clean
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += irssi
