@@ -1,0 +1,11 @@
+GNU iconv is known as giconv on FreeBSD
+
+	-mi
+
+--- libdjvu/GUnicode.cpp	Tue Oct 23 17:09:25 2001
++++ libdjvu/GUnicode.cpp	Thu Feb  7 13:57:53 2002
+@@ -44,3 +44,3 @@
+ #ifdef HAS_ICONV
+-#include <iconv.h>
++#include <giconv.h>
+ #endif
