@@ -1,6 +1,6 @@
 --- install.sh.orig	Tue Jun  1 12:35:02 2004
 +++ install.sh	Tue Jun  1 19:40:04 2004
-@@ -760,9 +760,7 @@
+@@ -760,12 +760,10 @@
  
      wrapper_opera_plugin_paths="    \"\${HOME}/.opera/plugins\" \\
      ${str_localdirplugin} \\
@@ -10,7 +10,11 @@
 +    /usr/local/share/opera/plugins \\"
  
      case "${machine}:${os}" in
- 	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
+-	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
++	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|amd64:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
+ 	    wrapper_plugin_paths="
+     /usr/local/Acrobat[45]/Browsers/intellinux \\
+     /usr/lib/Acrobat[45]/Browsers/intellinux \\
 @@ -817,15 +815,10 @@
  	;;
      esac
