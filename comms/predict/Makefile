@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.amsat.org/amsat/software/Linux/
 MAINTAINER=	db@db.net
 COMMENT=	Satellite tracking program for amateur radio satellites
 
-BROKEN=		Size mismatch
-
 INSTALL_TARGET=	install install.man
 
 MAN1=		predict.1
