@@ -140,6 +140,7 @@
     SUBDIR += mono
     SUBDIR += moscow_ml
     SUBDIR += mozart
+    SUBDIR += munger
     SUBDIR += nawk
     SUBDIR += nhc98
     SUBDIR += nickle
