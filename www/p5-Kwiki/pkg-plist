@@ -2,6 +2,7 @@ bin/kwiki
 %%SITE_PERL%%/Kwiki.pm
 %%SITE_PERL%%/Kwiki/Archive.pm
 %%SITE_PERL%%/Kwiki/Base.pm
+%%SITE_PERL%%/Kwiki/BrowserDetect.pm
 %%SITE_PERL%%/Kwiki/CGI.pm
 %%SITE_PERL%%/Kwiki/Command.pm
 %%SITE_PERL%%/Kwiki/Config.pm
@@ -15,9 +16,9 @@ bin/kwiki
 %%SITE_PERL%%/Kwiki/Icons.pm
 %%SITE_PERL%%/Kwiki/Installer.pm
 %%SITE_PERL%%/Kwiki/Javascript.pm
-%%SITE_PERL%%/Kwiki/Htaccess.pm
 %%SITE_PERL%%/Kwiki/Hub.pm
 %%SITE_PERL%%/Kwiki/Pages.pm
+%%SITE_PERL%%/Kwiki/Pane.pm
 %%SITE_PERL%%/Kwiki/Plugin.pm
 %%SITE_PERL%%/Kwiki/Preferences.pm
 %%SITE_PERL%%/Kwiki/Registry.pm
@@ -28,6 +29,7 @@ bin/kwiki
 %%SITE_PERL%%/Kwiki/Theme/Basic.pm
 %%SITE_PERL%%/Kwiki/Toolbar.pm
 %%SITE_PERL%%/Kwiki/Users.pm
+%%SITE_PERL%%/Kwiki/WebFile.pm
 %%SITE_PERL%%/Kwiki/Widgets.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki
