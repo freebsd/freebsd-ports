@@ -62,6 +62,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://xforce.iss.net/xforce/alerts/id/180</url>
       <url>http://www.osvdb.org/9116</url>
+      <url>http://secunia.com/advisories/12362</url>
+      <bid>11015</bid>
     </references>
     <dates>
       <discovery>2004-08-23</discovery>
@@ -124,9 +126,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://www.osvdb.org/displayvuln.php?osvdb_id=8194</url>
-      <url>http://www.osvdb.org/displayvuln.php?osvdb_id=8195</url>
+      <url>http://www.osvdb.org/8194</url>
+      <url>http://www.osvdb.org/8195</url>
       <url>http://security.gentoo.org/glsa/glsa-200408-25.xml</url>
+      <url>http://secunia.com/advisories/11832</url>
+      <bid>10805</bid>
+      <bid>10801</bid>
     </references>
     <dates>
       <discovery>2004-07-21</discovery>
@@ -159,6 +164,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0792</cvename>
       <url>http://samba.org/rsync/#security_aug04</url>
       <mlist>http://lists.samba.org/archive/rsync-announce/2004/000017.html</mlist>
+      <url>http://secunia.com/advisories/12294</url>
+      <url>http://www.osvdb.org/8829</url>
     </references>
     <dates>
       <discovery>2004-08-12</discovery>
@@ -224,7 +231,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0557</cvename>
-      <url>http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0014.html</url>
+      <mlist msgid="1091040793.4107f6193d81a@webmail.uu.se">http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0014.html</mlist>
       <url>http://secunia.com/advisories/12175</url>
       <url>http://www.osvdb.org/8267</url>
     </references>
@@ -272,6 +279,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://www.osvdb.org/9117</url>
       <url>http://secunia.com/advisories/12341</url>
       <url>http://www.acros.si/papers/session_fixation.pdf</url>
+      <bid>10991</bid>
     </references>
     <dates>
       <discovery>2004-08-23</discovery>
@@ -311,6 +319,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://www.open-security.org/advisories/6</url>
       <url>http://cvs.sourceforge.net/viewcvs.py/xine/xine-vcdnav/input/xineplug_inp_vcd.c#rev1.109</url>
+      <url>http://secunia.com/advisories/12194</url>
+      <url>http://sourceforge.net/mailarchive/forum.php?thread_id=5143955&amp;forum_id=11923</url>
+      <url>http://www.osvdb.org/8409</url>
     </references>
     <dates>
       <discovery>2004-07-18</discovery>
@@ -339,7 +350,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767</url>
+      <mlist>http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767</mlist>
       <url>http://search.cpan.org/src/JMASON/Mail-SpamAssassin-2.64/Changes</url>
     </references>
     <dates>
@@ -397,8 +408,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0777</cvename>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-August/025478.html</url>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-August/025478.html</mlist>
       <url>http://www.idefense.com/application/poi/display?id=131&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <bid>10976</bid>
     </references>
     <dates>
       <discovery>2004-08-18</discovery>
@@ -461,7 +473,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0457</cvename>
       <url>http://www.debian.org/security/2004/dsa-540</url>
-      <url>http://lists.mysql.com/internals/15185</url>
+      <mlist>http://lists.mysql.com/internals/15185</mlist>
     </references>
     <dates>
       <discovery>08-18-2004</discovery>
@@ -541,7 +553,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0448</cvename>
       <url>http://www.debian.org/security/2004/dsa-510</url>
-      <url>http://www.securityfocus.com/bid/10438</url>
+      <bid>10438</bid>
       <url>http://xforce.iss.net/xforce/xfdb/16271</url>
     </references>
     <dates>
@@ -793,7 +805,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0456</cvename>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-July/023322.html</url>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-July/023322.html</mlist>
       <url>http://www.osvdb.org/7319</url>
     </references>
     <dates>
@@ -1368,7 +1380,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</mlist>
       <url>http://bugs.mysql.com/bug.php?id=3284</url>
       <bid>9976</bid>
       <cvename>CAN-2004-0381</cvename>
@@ -1524,7 +1536,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107997911025558</mlist>
       <bid>9939</bid>
     </references>
     <dates>
@@ -2186,7 +2198,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000</url>
+      <mlist>http://www.apsis.ch/pound/pound_list/archive/2003/2003-12/1070234315000</mlist>
     </references>
     <dates>
       <discovery>2003-12-01</discovery>
@@ -2471,7 +2483,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</mlist>
       <url>http://www.rapid7.com/advisories/R7-0017.html</url>
       <cvename>CAN-2004-0183</cvename>
       <cvename>CAN-2004-0184</cvename>
@@ -2744,7 +2756,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://www.mplayerhq.hu/homepage/design6/news.html</url>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108066964709058</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108066964709058</mlist>
       <freebsdpr>ports/64974</freebsdpr>
     </references>
     <dates>
@@ -2807,7 +2819,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2003-0858</cvename>
       <url>http://rhn.redhat.com/errata/RHSA-2003-305.html</url>
       <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=107140</url>
-      <url>http://lists.quagga.net/pipermail/quagga-users/2003-November/000906.html</url>
+      <mlist>http://lists.quagga.net/pipermail/quagga-users/2003-November/000906.html</mlist>
     </references>
     <dates>
       <discovery>2003-11-20</discovery>
@@ -3085,7 +3097,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0113</cvename>
       <url>http://www.apacheweek.com/features/security-20</url>
       <url>http://cvs.apache.org/viewcvs.cgi/httpd-2.0/modules/ssl/ssl_engine_io.c?r1=1.100.2.11&amp;r2=1.100.2.12</url>
-      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</url>
+      <mlist>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869699329638</mlist>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=27106</url>
       <bid>9826</bid>
     </references>
@@ -3119,7 +3131,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</url>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-March/018290.html</mlist>
       <bid>9772</bid>
       <cvename>CAN-2004-0353</cvename>
       <cvename>CAN-2004-0354</cvename>
@@ -3265,7 +3277,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</url>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</mlist>
       <url>http://www.debian.org/security/2004/dsa-468</url>
       <cvename>CAN-2004-0152</cvename>
       <cvename>CAN-2004-0153</cvename>
@@ -3292,7 +3304,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108032454818873</mlist>
       <bid>9984</bid>
     </references>
     <dates>
@@ -3366,7 +3378,8 @@ misc.c:
       <url>http://cvs.apache.org/viewcvs.cgi/apache-1.3/src/modules/standard/mod_access.c?r1=1.46&amp;r2=1.47</url>
       <url>http://www.apacheweek.com/features/security-13</url>
       <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=23850</url>
-      <url>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</url>
+      <mlist>http://marc.theaimsgroup.com/?l=apache-cvs&amp;m=107869603013722</mlist>
+      <bid>9829</bid>
     </references>
     <dates>
       <discovery>2004-03-07</discovery>
@@ -3583,9 +3596,9 @@ misc.c:
     </description>
     <references>
       <url>http://security.nnov.ru/search/document.asp?docid=5748</url>
-      <url>http://www.securityfocus.com/archive/1/348375</url>
+      <mlist>http://www.securityfocus.com/archive/1/348375</mlist>
       <url>http://www.security-corporation.com/advisories-027.html</url>
-      <url>http://www.securityfocus.com/archive/1/353201</url>
+      <mlist>http://www.securityfocus.com/archive/1/353201</mlist>
     </references>
     <dates>
       <discovery>2003-12-12</discovery>
@@ -3616,7 +3629,7 @@ misc.c:
     <references>
       <cvename>CAN-2004-0158</cvename>
       <url>http://www.debian.org/security/2004/dsa-445</url>
-      <url>http://www.securityfocus.com/archive/1/354760</url>
+      <mlist>http://www.securityfocus.com/archive/1/354760</mlist>
     </references>
     <dates>
       <discovery>2004-02-21</discovery>
@@ -3640,7 +3653,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://lists.debian.org/debian-security-announce/debian-security-announce-2004/msg00044.html</url>
+      <mlist>http://lists.debian.org/debian-security-announce/debian-security-announce-2004/msg00044.html</mlist>
     </references>
     <dates>
       <discovery>2004-02-22</discovery>
@@ -3718,7 +3731,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2004-0129</cvename>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</mlist>
       <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
     </references>
     <dates>
@@ -3759,7 +3772,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-February/017366.html</url>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-February/017366.html</mlist>
     </references>
     <dates>
       <discovery>2004-02-15</discovery>
@@ -3793,8 +3806,8 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.geocrawler.com/mail/msg.php3?msg_id=3438808&amp;list=405</url>
-      <url>http://www.securityfocus.com/archive/1/352333</url>
+      <mlist>http://www.geocrawler.com/mail/msg.php3?msg_id=3438808&amp;list=405</mlist>
+      <mlist>http://www.securityfocus.com/archive/1/352333</mlist>
     </references>
     <dates>
       <discovery>2004-01-30</discovery>
@@ -4001,7 +4014,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</mlist>
       <cvename>CAN-2002-1320</cvename>
     </references>
     <dates>
@@ -4058,7 +4071,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2003-0962</cvename>
-      <url>http://lists.samba.org/archive/rsync-announce/2003/000011.html</url>
+      <mlist>http://lists.samba.org/archive/rsync-announce/2003/000011.html</mlist>
       <url>http://rsync.samba.org/#security</url>
     </references>
     <dates>
@@ -4212,8 +4225,8 @@ misc.c:
       <cvename>CAN-2003-0989</cvename>
       <cvename>CAN-2003-1029</cvename>
       <cvename>CAN-2004-0057</cvename>
-      <url>http://www.tcpdump.org/lists/workers/2003/12/msg00083.html</url>
-      <url>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107325073018070&amp;w=2</url>
+      <mlist>http://www.tcpdump.org/lists/workers/2003/12/msg00083.html</mlist>
+      <mlist>http://marc.theaimsgroup.com/?l=tcpdump-workers&amp;m=107325073018070&amp;w=2</mlist>
     </references>
     <dates>
       <discovery>2003-12-24</discovery>
@@ -4241,7 +4254,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html</url>
+      <mlist>http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html</mlist>
     </references>
     <dates>
       <discovery>2004-01-07</discovery>
@@ -4316,7 +4329,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2003-0971</cvename>
-      <url>http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html</url>
+      <mlist>http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html</mlist>
     </references>
     <dates>
       <discovery>2003-11-27</discovery>
@@ -4464,7 +4477,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104162752401212&amp;w=2</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104162752401212&amp;w=2</mlist>
       <cvename>CAN-2003-0031</cvename>
       <cvename>CAN-2003-0032</cvename>
     </references>
@@ -4974,7 +4987,7 @@ misc.c:
     </description>
     <references>
       <url>http://www.debian.org/security/2004/dsa-537</url>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109267579822250&amp;w=2</url>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109267579822250&amp;w=2</mlist>
     </references>
     <dates>
       <discovery>2004-08-16</discovery>
