@@ -1,0 +1,17 @@
+--- addin/websearch.sh.in.orig	Sat Sep  2 22:19:15 2000
++++ addin/websearch.sh.in	Thu Dec  7 07:23:04 2000
+@@ -53,6 +53,14 @@
+ 
+ # Search for the target word
+ case "$WEBSITE" in
++google)
++	URL="http://www.google.com/search?q=$target";;
++google-bsd)
++	URL="http://www.google.com/search?restrict=bsd&q=$target";;
++freebsd-cvsweb)
++	URL="http://www.FreeBSD.org/cgi/cvsweb.cgi/$target";;
++freebsd-pr)
++	URL="http://www.FreeBSD.org/cgi/query-pr.cgi?pr=$target";;
+ yahoo.co.jp)
+ 	URL="http://search.yahoo.co.jp/bin/search?p=$target";;
+ yahoo | yahoo.com | yahoo*)
