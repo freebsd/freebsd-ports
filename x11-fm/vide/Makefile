@@ -17,7 +17,8 @@ RUN_DEPENDS=    vim:${PORTSDIR}/editors/vim5
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomelibs
+USE_GNOME=	gnomeprefix gnomelibs
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-DHAVE_SYS_PARAM_H"
 
@@ -26,6 +27,6 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 PATCH_WRKSRC=   ${WRKSRC}/src
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>
