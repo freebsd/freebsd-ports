@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Curses/UI/PasswordEntry.pm
 %%SITE_PERL%%/Curses/UI/Buttonbox.pm
 %%SITE_PERL%%/Curses/UI/Checkbox.pm
+%%SITE_PERL%%/Curses/UI/Language/chinese.pm
 %%SITE_PERL%%/Curses/UI/Language/french.pm
 %%SITE_PERL%%/Curses/UI/Language/german.pm
 %%SITE_PERL%%/Curses/UI/Language/italian.pm
@@ -21,6 +22,8 @@
 %%SITE_PERL%%/Curses/UI/Language/polish.pm
 %%SITE_PERL%%/Curses/UI/Language/portuguese.pm
 %%SITE_PERL%%/Curses/UI/Language/dutch.pm
+%%SITE_PERL%%/Curses/UI/Language/spanish.pm
+%%SITE_PERL%%/Curses/UI/Language/turkish.pm
 %%SITE_PERL%%/Curses/UI/Menubar.pm
 %%SITE_PERL%%/Curses/UI/TextEntry.pm
 %%SITE_PERL%%/Curses/UI/Calendar.pm
