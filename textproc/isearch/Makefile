@@ -7,13 +7,13 @@
 #
 
 DISTNAME=	Isearch-1.14
-PKGNAME=	isearch-1.14	
+PKGNAME=	isearch-1.14
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 
 MAINTAINER=	giffunip@asme.org
 
-GNU_CONFIGURE= yes 
+GNU_CONFIGURE= yes
 
 post-install:
 	strip ${PREFIX}/bin/Isearch
