@@ -39,7 +39,7 @@ LIB_DIR=!!PREFIX!!/etc/smail
 UTIL_BIN_DIR=!!PREFIX!!/libexec/smail
 
 # Enable rfc1413 (ident protocol) and ESMTP sending support (EHLO)
-HAVE=$HAVE:EHLO
+HAVE=$HAVE:EHLO:RFC1413
 
 # NOBODY - a user with few access capabilities
 NOBODY=nobody
