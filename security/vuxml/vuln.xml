@@ -32,6 +32,53 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="03653079-8594-11d9-afa0-003048705d5a">
+    <topic> phpbb - multiple information disclosure vulnerabilities </topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><lt>2.0.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The ChangeLog for phpBB 2.0.12 states:</p>
+	<blockquote cite="http://www.phpbb.com/support/documents.php?mode=changelog">
+	  <p>Changes since 2.0.10</p>
+	  <ul>
+	    <li>Added confirm table to admin_db_utilities.php</li>
+	    <li>Prevented full path display on critical messages</li>
+	    <li>Fixed full path disclosure in username handling caused
+	      by a PHP 4.3.10 bug - <strong>AnthraX101</strong></li>
+	    <li>Added exclude list to unsetting globals (if
+	      register_globals is on) -
+	      <strong>SpoofedExistence</strong></li>
+	    <li>Fixed arbitrary file disclosure vulnerability in avatar
+	      handling functions - <strong>AnthraX101</strong></li>
+	    <li>Fixed arbitrary file unlink vulnerability in avatar
+	      handling functions - <strong>AnthraX101</strong></li>
+	    <li>Removed version number from powered by line</li>
+	    <li>Merged database update files to update_to_latest.php
+	      file</li>
+	    <li>Fixed path disclosure bug in search.php caused by a
+	      PHP 4.3.10 bug (related to AnthraX101's discovery)</li>
+	    <li>Fixed path disclosure bug in viewtopic.php caused by
+	      a PHP 4.3.10 bug - <strong>matrix_killer</strong></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpbb.com/support/documents.php?mode=changelog</url>
+      <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=265423</url>
+      <freebsdpr>ports/77943</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2005-02-22</discovery>
+      <entry>2005-02-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1d3a2737-7eb7-11d9-acf7-000854d03344">
     <topic>unace -- multiple vulnerabilities</topic>
     <affects>
