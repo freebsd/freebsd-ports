@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,8 @@ CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 MAN8=		openvpn.8
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/openvpn.sh.sample \
+		${PREFIX}/etc/rc.d/openvpn.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docs in AUTHORS COPYING COPYRIGHT.GPL ChangeLog INSTALL NEWS \

@@ -1,4 +1,8 @@
 ### ---------------------------------------------------------------------- ###
+###  To use the tap driver, you may need to do: kldload if_tap             ###
+###  See ${PREFIX}/etc/rc.d/openvpn.sh.sample for how to do this  	   ###
+###  automatically at system boot-up time.                                 ###
+### ---------------------------------------------------------------------- ###
 ###  To retain backwards compatibility of OpenVPN 1.3.0 with OpenVPN peers ###
 ###  that run older versions (back to 1.1.0), you will have to set the MTU ###
 ###  explicitly by command line options since OpenVPN 1.3.0.               ###
