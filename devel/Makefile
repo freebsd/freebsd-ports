@@ -75,6 +75,7 @@
     SUBDIR += cweb
     SUBDIR += cxref
     SUBDIR += ddd
+    SUBDIR += dia2code
     SUBDIR += diffconvert
     SUBDIR += dmake
     SUBDIR += dmalloc
