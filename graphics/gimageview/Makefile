@@ -49,24 +49,39 @@ WITH_MPLAYER=	yes
 
 .if defined(WITH_LIBMNG)
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
+PLIST_SUB+=	WITH_LIBMNG=""
+.else
+PLIST_SUB+=	WITH_LIBMNG="@comment "
 .endif
 
 .if defined(WITH_LIBWMF)
 LIB_DEPENDS+=	wmf.2:${PORTSDIR}/graphics/libwmf
+PLIST_SUB+=	WITH_LIBWMF=""
+.else
+PLIST_SUB+=	WITH_LIBWMF="@comment "
 .endif
 
 .if defined(WITH_LIBRSVG)
 LIB_DEPENDS+=	rsvg.1:${PORTSDIR}/graphics/librsvg
+PLIST_SUB+=	WITH_LIBRSVG=""
+.else
+PLIST_SUB+=	WITH_LIBRSVG="@comment "
 .endif
 
 .if defined(WITH_MPLAYER)
 RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 CONFIGURE_ARGS+=	--enable-mplayer
+PLIST_SUB+=	WITH_LIBMPLAYER=""
+.else
+PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
 .endif
 
 .if defined(WITH_LIBXINE)
 LIB_DEPENDS+=	xine.3:${PORTSDIR}/graphics/libxine
 CONFIGURE_ARGS+=	--with-xine
+PLIST_SUB+=	WITH_LIBXINE=""
+.else
+PLIST_SUB+=	WITH_LIBXINE="@comment "
 .endif
 
 post-patch:

@@ -6,19 +6,21 @@ lib/gimageview/archiver/libgimv_zip_extarc.so
 lib/gimageview/image_loader/libgimv_bmp_loader.so
 lib/gimageview/image_loader/libgimv_jpeg_loader.so
 lib/gimageview/image_loader/libgimv_mag_loader.so
-lib/gimageview/image_loader/libgimv_mng_loader.so
+%%WITH_LIBMNG%%lib/gimageview/image_loader/libgimv_mng_loader.so
 lib/gimageview/image_loader/libgimv_pcx_loader.so
 lib/gimageview/image_loader/libgimv_pixbuf_loader.so
 lib/gimageview/image_loader/libgimv_png_loader.so
+%%WITH_LIBRSVG%%lib/gimageview/image_loader/libgimv_rsvg_loader.la
 lib/gimageview/image_loader/libgimv_tga_loader.so
-lib/gimageview/image_loader/libgimv_wmf_loader.so
+%%WITH_LIBWMF%%lib/gimageview/image_loader/libgimv_wmf_loader.so
 lib/gimageview/image_loader/libgimv_xbm_loader.so
 lib/gimageview/image_loader/libgimv_xcf_loader.so
 lib/gimageview/image_loader/libgimv_xvpics_loader.so
 lib/gimageview/image_saver/libgimv_png_saver.so
 lib/gimageview/image_saver/libgimv_pnm_saver.so
 lib/gimageview/image_saver/libgimv_xvpics_saver.so
-lib/gimageview/image_view/libgimv_mplayer.so
+%%WITH_LIBMPLAYER%%lib/gimageview/image_view/libgimv_mplayer.so
+%%WITH_LIBXINE%%lib/gimageview/image_view/libgimv_xine.so
 lib/gimageview/io_stream/libgimv_bz_io.so
 lib/gimageview/io_stream/libgimv_gzip_io.so
 lib/gimageview/thumbnail/libgimv_ee_thumb.so
@@ -121,7 +123,7 @@ share/pixmaps/gimv.png
 @dirrm lib/gimageview/archiver
 @dirrm lib/gimageview/image_loader
 @dirrm lib/gimageview/image_saver
-@dirrm lib/gimageview/image_view
+@unexec rmdir %D/lib/gimageview/image_view 2>/dev/null || true
 @dirrm lib/gimageview/io_stream
 @dirrm lib/gimageview/thumbnail
 @dirrm lib/gimageview/thumbnail_view
