@@ -25,7 +25,6 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 STRIP=
 CONFIGURE_ARGS= --with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11 ${LOCALBASE}/include"
 MAN1=		lyx.1 reLyX.1
