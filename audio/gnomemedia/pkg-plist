@@ -4,13 +4,55 @@ bin/gmix
 bin/grecord
 bin/gtcd
 bin/vumeter
+etc/CORBA/servers/gtcd.goad
 share/gnome/apps/Multimedia/Soundrecorder.desktop
 share/gnome/apps/Multimedia/gmix.desktop
 share/gnome/apps/Multimedia/gtcd.desktop
 share/gnome/apps/Multimedia/vumeter.desktop
 share/gnome/cddb-submit-methods
+share/gnome/help/gmix/C/authors.html
+share/gnome/help/gmix/C/bugs.html
+share/gnome/help/gmix/C/figures/gmix-prefs.png
+share/gnome/help/gmix/C/figures/gmix.png
+share/gnome/help/gmix/C/gmix-prefs.html
+share/gnome/help/gmix/C/gmix-use.html
+share/gnome/help/gmix/C/gmix.sgml
+share/gnome/help/gmix/C/index.html
+share/gnome/help/gmix/C/license.html
+share/gnome/help/gmix/C/ln7.html
+share/gnome/help/gmix/C/topic.dat
+share/gnome/help/gmix/it/authors.html
+share/gnome/help/gmix/it/bugs.html
+share/gnome/help/gmix/it/figures/gmix-prefs.png
+share/gnome/help/gmix/it/figures/gmix.png
+share/gnome/help/gmix/it/gmix-prefs.html
+share/gnome/help/gmix/it/gmix-use.html
+share/gnome/help/gmix/it/gmix.sgml
+share/gnome/help/gmix/it/index.html
+share/gnome/help/gmix/it/license.html
+share/gnome/help/gmix/it/ln10.html
+share/gnome/help/gmix/it/topic.dat
+share/gnome/help/gtcd/C/authors.html
+share/gnome/help/gtcd/C/bugs.html
+share/gnome/help/gtcd/C/figures/gtcd-props.png
+share/gnome/help/gtcd/C/figures/gtcd-window.png
+share/gnome/help/gtcd/C/figures/gtcd.png
+share/gnome/help/gtcd/C/figures/track-number.png
+share/gnome/help/gtcd/C/figures/track-time.png
+share/gnome/help/gtcd/C/figures/trackeditor.png
+share/gnome/help/gtcd/C/gtcd.sgml
+share/gnome/help/gtcd/C/index.html
+share/gnome/help/gtcd/C/license.html
+share/gnome/help/gtcd/C/ln7.html
+share/gnome/help/gtcd/C/topic.dat
+share/gnome/help/gtcd/C/usage.html
+share/gnome/idl/gtcd.idl
 share/gnome/mime-info/grecord.keys
 share/gnome/mime-info/grecord.mime
+share/gnome/omf/gnome-media/gmix-C.omf
+share/gnome/omf/gnome-media/gmix-it.omf
+share/gnome/omf/gnome-media/gtcd-C.omf
+share/gnome/pixmaps/gnome-grecord.png
 share/gnome/pixmaps/gnome-mixer.png
 share/gnome/pixmaps/gnome-vumeter.png
 share/gnome/pixmaps/gtcd.png
@@ -24,6 +66,7 @@ share/gnome/pixmaps/tcd/play.xpm
 share/gnome/pixmaps/tcd/prev_t.xpm
 share/gnome/pixmaps/tcd/rw.xpm
 share/gnome/pixmaps/tcd/stop.xpm
+share/locale/az/LC_MESSAGES/gnome-media.mo
 share/locale/ca/LC_MESSAGES/gnome-media.mo
 share/locale/cs/LC_MESSAGES/gnome-media.mo
 share/locale/da/LC_MESSAGES/gnome-media.mo
@@ -48,9 +91,23 @@ share/locale/pt/LC_MESSAGES/gnome-media.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-media.mo
 share/locale/ro/LC_MESSAGES/gnome-media.mo
 share/locale/ru/LC_MESSAGES/gnome-media.mo
+share/locale/sk/LC_MESSAGES/gnome-media.mo
+share/locale/sl/LC_MESSAGES/gnome-media.mo
 share/locale/sv/LC_MESSAGES/gnome-media.mo
 share/locale/tr/LC_MESSAGES/gnome-media.mo
 share/locale/uk/LC_MESSAGES/gnome-media.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-media.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-media.mo
-@dirrm share/gnome/pixmaps/tcd/
+@dirrm share/gnome/pixmaps/tcd
+@dirrm share/gnome/omf/gnome-media
+@dirrm share/gnome/help/gtcd/C/stylesheet-images
+@dirrm share/gnome/help/gtcd/C/figures
+@dirrm share/gnome/help/gtcd/C
+@dirrm share/gnome/help/gtcd
+@dirrm share/gnome/help/gmix/it/stylesheet-images
+@dirrm share/gnome/help/gmix/it/figures
+@dirrm share/gnome/help/gmix/it
+@dirrm share/gnome/help/gmix/C/stylesheet-images
+@dirrm share/gnome/help/gmix/C/figures
+@dirrm share/gnome/help/gmix/C
+@dirrm share/gnome/help/gmix
