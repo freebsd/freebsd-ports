@@ -1,0 +1,12 @@
+bin/gendiff
+bin/rpm
+bin/find-requires
+bin/find-provides
+bin/rpm2cpio
+include/rpm/rpmlib.h
+include/rpm/dbindex.h
+include/rpm/header.h
+lib/librpm.a
+man/man8/rpm.8.gz
+man/man8/rpm2cpio.8.gz
+share/misc/rpmrc
