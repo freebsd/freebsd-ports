@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	giFT-FastTrack
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.5
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/gift-fasttrack/
 
