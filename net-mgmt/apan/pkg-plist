@@ -1,0 +1,27 @@
+@exec mkdir -p /var/spool/nagios/rrd
+@exec chmod 775 /var/spool/nagios/rrd
+@exec chmod nagios:nagios /var/spool/nagios/rrd
+@unexec rmdir /var/spool/nagios/rrd 2>/dev/null || true
+etc/apan/apan.cfg-sample
+etc/apan/apan.defs-sample
+share/nagios/cgi-bin/apan.cgi
+share/nagios/cgi-bin/generate.cgi
+libexec/nagios/apan.sh
+libexec/nagios/check_megaide
+libexec/nagios/check_nt_load
+libexec/nagios/check_unix_load
+libexec/nagios/disk_by_snmp
+libexec/nagios/uptime_by_snmp
+libexec/apan/debug.sh
+libexec/apan/disk.sh
+libexec/apan/load.sh
+libexec/apan/nt_utils.sh
+libexec/apan/printer.sh
+libexec/apan/snmp.sh
+libexec/apan/utils.sh
+share/nagios/images/logos/graph.png
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+@dirrm libexec/apan
+@dirrm etc/apan
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

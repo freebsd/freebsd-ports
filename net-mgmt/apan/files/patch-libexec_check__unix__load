@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libexec/check_unix_load.orig	Fri Mar 26 12:25:41 2004
++++ libexec/check_unix_load	Fri Mar 26 12:28:41 2004
+@@ -6,7 +6,7 @@
+ #
+ #
+ # Change this if you don't have a default installation
+-. /usr/local/nagios/apan/apan.defs
++. %%APANCONFDIR%%/apan.defs
+ 
+ 
+ HOST=$1

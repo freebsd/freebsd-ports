@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- apan.defs.orig	Fri Mar 26 12:01:53 2004
++++ apan.defs	Fri Mar 26 12:14:02 2004
+@@ -1,23 +1,23 @@
+ #Base-directory for nagios:
+-NAGIOSDIR=/usr/local/nagios
++NAGIOSDIR=%%PREFIX%%/share/nagios
+ 
+ #The directory where apan is installed
+-APANDIR=$NAGIOSDIR/apan
++APANDIR=%%PREFIX%%/share/apan
+ 
+ #The directory where Nagios plugins resides
+-PLUGINSDIR=$NAGIOSDIR/libexec
++PLUGINSDIR=%%NAGIOSPLUGINSDIR%%
+ 
+ #The directory where Nagios .cfg-files resides
+-ETCDIR=$NAGIOSDIR/etc
++ETCDIR=%%PREFIX%%/etc/nagios
+ 
+ # The directory where apans plugins resides
+-PLUGSDIR=$APANDIR/plugs
++PLUGSDIR=%%APANPLUGSDIR%%
+ 
+ # The main config-file for apan
+-CFGFILE=$APANDIR/apan.cfg
++CFGFILE=%%APANCONFDIR%%/apan.cfg
+ 
+ # Path to rrdtool
+-RRDTOOL=/usr/local/bin/rrdtool
++RRDTOOL=%%PREFIX%%/bin/rrdtool
+ 
+ # Set DEBUG to 1 and define a DEBUGFILE to get debug-info from apan
+ DEBUG=1

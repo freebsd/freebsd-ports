@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libexec/check_nt_load.orig	Fri Mar 26 12:24:44 2004
++++ libexec/check_nt_load	Fri Mar 26 12:25:15 2004
+@@ -11,7 +11,7 @@
+ #
+ #
+ # Change this if you don't have a default installation
+-. /usr/local/nagios/apan/apan.defs
++. %%APANCONFDIR%%/apan.defs
+ 
+ 
+ HOST=$1

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libexec/disk_by_snmp.orig	Fri Mar 26 12:29:05 2004
++++ libexec/disk_by_snmp	Fri Mar 26 12:30:45 2004
+@@ -82,7 +82,7 @@
+ #
+ #
+ # Change this if you have installed NAgios in a non-default place:
+-NAGIOSPLUGSDIR=/usr/local/nagios/libexec
++NAGIOSPLUGSDIR=%%NAGIOSPLUGINSDIR%%
+ 
+ HOST=$1
+ COMM=$2

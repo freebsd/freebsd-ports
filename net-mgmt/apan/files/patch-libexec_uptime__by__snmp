@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libexec/uptime_by_snmp.orig	Fri Mar 26 12:31:02 2004
++++ libexec/uptime_by_snmp	Fri Mar 26 12:31:57 2004
+@@ -40,7 +40,7 @@
+ #
+ #
+ # Change this if you have installed NAgios in a non-default place:
+-NAGIOSPLUGSDIR=/usr/local/nagios/libexec
++NAGIOSPLUGSDIR=%%NAGIOSPLUGINSDIR%%
+ 
+ 
+ 

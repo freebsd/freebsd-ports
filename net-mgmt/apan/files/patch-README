@@ -1,0 +1,156 @@
+
+$FreeBSD$
+
+--- README.orig	Fri Mar 26 12:44:00 2004
++++ README	Fri Mar 26 13:01:48 2004
+@@ -61,7 +61,7 @@
+ 7)  Add apan.sh to checkcommands.cfg;
+ 	define command {
+ 	command_name                   apan
+-	command_line                   /usr/local/nagios/apan/apan.sh $ARG1$ $HOSTNAME$ "$SERVICEDESC$" $TIMET$ $ARG2$ $ARG3$
++	command_line                   /%%NAGIOSPLUGINSDIR%%/apan.sh $ARG1$ $HOSTNAME$ "$SERVICEDESC$" $TIMET$ $ARG2$ $ARG3$
+ 	}
+ 
+ 8)  Add sevices to nagios;
+@@ -73,12 +73,118 @@
+ 	normal_check_interval          5
+ }
+ 
+-9)  Add the host/service to apan.cfg
+-	host1;Disk-usage;/usr/local/nagios/rrd/host1_Disk-usage.rrd;c|d;c-used:AREA c-free:STACK d-used:AREA d-free:STACK;Disk usage;Bytes;-l 1 -b 1024
++or  ping service
++
++	define service {
++	host_name                      sheriff,bandit,WC-router-holland
++	service_description            Ping
++	check_command                  apan!ping!100.0,20%!500.0,60%
++	name                           Ping
++	use                            generic-service
++	normal_check_interval          1
++}
++
++Note: 
++- The second argument in the check_command is the name of the plugin that 
++apan will use. Read more about each plugin in next section of the docs. 
++- The third and fourth argument is used by the plugins, mainly to specify 
++warning and critical levels. 
++
++9) Creating RRD's
++I am no expert on RRD-tool, so maybe these examples are not so optimized.. 
++For example: 
++ rrdtool create /usr/local/nagios/rrd/raket_Net-use.rrd -s 60  \
++ DS:IN:COUNTER:300:0:U DS:OUT:COUNTER:300:U:U RRA:AVERAGE:0.5:1:50400 \
++ RRA:AVERAGE:0.5:60:43800
++
++Creates an RRD with two datasets named IN and OUT. The datasets are counters 
++supposed to store the number of network packages sent and received on a 
++network-interface. Samplerate is one minute and RRA's are set up to store 
++minut-average for 35 days and hour-average for 5 years. 
++
++To store Pig round-trip times you can use the same syntax, but change the 
++DS-type to 'GAUGE'; 
++rrdtool create /usr/local/nagios/rrd/bandit-ping.rrd -s 60 \
++DS:ping:GAUGE:300:0:U RRA:AVERAGE:0.5:1:50400 RRA:AVERAGE:0.5:60:43800
++
++The thing you probably want to look more at is the samplerate and heartbeat 
++values. Read more about RRD-tool at 
++
++http://people.ee.ethz.ch/~oetiker/webtools/rrdtool
++
++10) Configuring Apan
++
++Now its time for the hard step, the config-file apan.cfg. For each service
++you want apan to handle you must add a line in apan.cfg. The line is made
++up of 8 fields separated by ';'.
++
++The fields are: 
++
++Host name ; Service name ; RRD-file ; argument-1|argument-2|..argument-n ;
++DS-name-1:plot-function-1 DS-name-2:plot-function-2
++DS-name-n:plot-function-n ; Comment ; Y-unit ; Extra command
++
++In more detail: 
++
++Host name
++The name of the host, should be exactly the same name as in Nagios. 
++
++Service name
++The name of the service, should be exactly the same name as in Nagios. 
++
++RRD-file
++Full name of the RRD-file including the full path. 
++
++argument-1|argument-2|..argument-n 
++Arguments to be used by the plugin. The plugin will be called one time for
++each argument. Arguments can contain any character exept '|'.
++
++DS-name-1:plot-function-1 DS-name-2:plot-function-2 DS-name-n:plot-function-n
++DS-name is the name of the dataset that corresponds to the argument in the
++previous field. Plot-function is the format that rrdtool will use to plot
++the corresponding dataset when the graphs are constructed.
++
++Comment
++An additional informativ string that is displayed on the we-page with the
++graphs.
++
++Y-unit
++The unit displayed on the Y-axis in the graphs. 
++
++Extra command
++Here you can define extra command-line arguments that will be used by
++rrdtool when the graps are created.
++
++OK, that's the theoretical part, maybe some examples could help? 
++
++barbar;apan-disk;/usr/local/nagios/rrd/barbar_disk.rrd;/;-:LINE2;Disk-usage;%
++
++This line defines the service 'apan-disk' for host 'barbar'. The RRD,
++/usr/local/nagios/rrd/barbar_disk.rrd, have one DS named '-'. The plugin
++is called once with the argument '/'. When a graph is plotted, LINE2 (a
++medium-thick line) is used for drawing and the Y-axis is labeled '%'.
++
++sdl-www-01;Network-10;/usr/local/nagios/rrd/sdl-www-01_Network-10.rrd;public:.1.3.6.1.2.1.2.2.1.10.16777220|public:.1.3.6.1.2.1.2.2.1.16.16777220;10_IN:LINE2 
++10_OUT:LINE2;Network throughput;Bytes/sek;
++
++In this definition, the RRD have two datasets named '10_IN' and '10_OUT'.
++The plugin is called twice with the arguments
++'public:.1.3.6.1.2.1.2.2.1.10.16777220' and
++'public:.1.3.6.1.2.1.2.2.1.16.16777220' (The SNMP oid's for sent and
++received network packages).
++
++adsrv;Disk-usage;/usr/local/nagios/rrd/adsrv_disk.rrd;c;c-used:AREA c-free:STACK;Disk usage;Bytes;-l 1 -b 1024
++
++Here, the RRD have the datasets 'c-used' and 'c-free'. The plugin is
++called once wit the argument 'c'. When we generate a graph for this data,
++'c-used' will become a filled area with 'c-free' stacked upon it. When the
++y-axis is scaled, 1024 will be used as base-value and it will always start
++from 0 (-l 1 -b 1024 in the 'Extra command'-field).
++
++Simple?? For more information on the arguments, DS-values, etc - look at
++the plugin-documentation for the specific plugin used.
++
+ 
+-10)  Create a RRD-file;
+-rrdtool create /usr/local/nagios/rrd/host1_Disk-usage.rrd -s 60 DS:c-used:GAUGE:900:0:U DS:c-free:GAUGE:900:0:U DS:d-used:GAUGE:900:0:U DS:d-free:GAUGE:900:0:U RRA:AVERAGE:0.5:1:50400 RRA:AVERAGE:0.5:60:43800
+-    Make sure that the Nagios-user have write-permissions on the file.
+ 
+ 11) Add a link to the graphs as an extended service info;
+ 	define serviceextinfo{  
+@@ -90,6 +196,17 @@
+ }
+ 
+ 12) Start Nagios!
++
++13) Debugging
++
++To enable debugging output from Apan, set the variables DEBUG to 1 and the
++variable DEBUGFILE to point to a file in apan.defs; Debugging output from
++the cgi's ic controlled by CGIDEBUG and CGIDEBUGFILE
++
++DEBUG=1
++DEBUGFILE=/tmp/apan.debug
++CGIDEBUG=1
++CGIDEBUGFILE=/tmp/apancgi.debug
+ 
+ 
+ 

@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- libexec/check_megaide.orig	Fri Jan 17 11:45:55 2003
++++ libexec/check_megaide	Mon Mar 29 17:09:48 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!%%PREFIX%%/bin/bash
+ #
+ # 2002-12-16, Fredrik Wanglund
+ #
+@@ -33,7 +33,7 @@
+ #
+ # If you have installed Nagios in a non-default location, you need
+ # to change the path in the check-command and the variable below
+-NAGIOSPLUGSDIR=/usr/local/nagios/libexec
++NAGIOSPLUGSDIR=%%NAGIOSPLUGINSDIR%%
+ 
+ 
+ 
