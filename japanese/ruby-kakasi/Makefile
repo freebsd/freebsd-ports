@@ -28,8 +28,8 @@ DOCS_JA=	README.jp
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-patch:
-	${PERL} -i -pe 's,/usr/local,${PREFIX},g' ${WRKSRC}/extconf.rb
-	${PERL} -i -pe 's,\./(kakasi),$$1,g' ${WRKSRC}/test.rb
+	${RUBY} -i -pe 'gsub %r"/usr/local", "${PREFIX}"' ${WRKSRC}/extconf.rb
+	${RUBY} -i -pe 'gsub %r"\./(kakasi)", "\\1"' ${WRKSRC}/test.rb
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wdcnt ${PREFIX}/bin/
