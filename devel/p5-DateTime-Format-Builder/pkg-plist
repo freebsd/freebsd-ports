@@ -7,10 +7,6 @@
 %%SITE_PERL%%/DateTime/Format/Builder/Parser/Strptime.pm
 %%SITE_PERL%%/DateTime/Format/Builder/Parser/generic.pm
 %%SITE_PERL%%/DateTime/Format/Builder/Tutorial.pod
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Builder/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Builder
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime 2>/dev/null || true
 @dirrm %%SITE_PERL%%/DateTime/Format/Builder/Parser
 @dirrm %%SITE_PERL%%/DateTime/Format/Builder
 @unexec rmdir %D/%%SITE_PERL%%/DateTime/Format 2>/dev/null || true
