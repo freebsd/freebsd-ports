@@ -2,4 +2,5 @@
 
 export JAVALIBDIR
 
-perl -pi -e 's|%%JAVALIBDIR%%|$ENV{JAVALIBDIR}|g;s|%%LOCALBASE%%|$ENV{LOCALBASE}|g;' ${WRKSRC}/bin/sdoc
+/usr/bin/sed  -i "" -E  -e "s|%%JAVALIBDIR%%|${JAVALIBDIR}|g" \
+			-e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/bin/sdoc
