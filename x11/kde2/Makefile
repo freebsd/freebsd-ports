@@ -20,8 +20,8 @@ RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
 		kdessh:${PORTSDIR}/misc/kdeutils2 \
 		kword:${PORTSDIR}/editors/koffice \
 		kppp:${PORTSDIR}/net/kdenetwork2 \
-		pixie:${PORTSDIR}/graphics/kdegraphics2 \
-		kaiman:${PORTSDIR}/audio/kdemultimedia2
+		kview:${PORTSDIR}/graphics/kdegraphics2 \
+		kmidi:${PORTSDIR}/audio/kdemultimedia2
 
 NO_BUILD=	yes
 
