@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Feb 10 02:18:57 2001
-+++ configure.in	Mon Mar  5 17:20:20 2001
+--- configure.in.orig	Mon Mar  5 18:37:33 2001
++++ configure.in	Tue Apr 17 15:11:11 2001
 @@ -102,7 +102,7 @@
      CFLAGS="-g -DDEBUG"
    fi
@@ -9,12 +9,3 @@
  fi
  
  if test "x$mail_announce" = "xyes" ; then
-@@ -434,7 +434,7 @@
- fi
- 
- case "$host_os" in
--	freebsd3*|freebsd4*)	LDSHARED="ld -Bshareable"
-+	freebsd[[3-9]]*)	LDSHARED="ld -Bshareable"
- 			WYVERN_LDFLAGS="-export-dynamic";;
- 	freebsd2*)	LDSHARED="ld -Bshareable";;
- 	netbsd1.5*)	LDSHARED="ld -Bshareable"
