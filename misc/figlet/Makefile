@@ -7,15 +7,11 @@
 #
 
 PORTNAME=	figlet
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	misc
-MASTER_SITES=	ftp://wuarchive.wustl.edu/graphics/graphics/misc/figlet/program/unix/ \
-		ftp://ftp.funet.fi/pub/unix/tools/figlet/program/unix/ \
-		ftp://ftp.internexus.net/pub/figlet/program/unix/ \
-		${MASTER_SITE_LOCAL} \
-		ftp://nuxi.ucdavis.edu/pub/misc/
-MASTER_SITE_SUBDIR=	obrien
-DISTNAME=	figlet22
+MASTER_SITES=	http://ftp.plig.org/pub/figlet/program/unix/ \
+		ftp://ftp.figlet.org/pub/figlet/program/unix/
+DISTNAME=	figlet221
 
 MAINTAINER=	obrien@FreeBSD.org
 
