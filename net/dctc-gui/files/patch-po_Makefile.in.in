@@ -1,0 +1,10 @@
+--- po/Makefile.in.in.orig	Wed Feb  4 13:19:32 2004
++++ po/Makefile.in.in	Wed Feb  4 13:19:41 2004
+@@ -87,6 +87,7 @@
+ 	$(XGETTEXT) --default-domain=$(PACKAGE) --directory=$(top_srcdir) \
+ 	  --add-comments --keyword=_ --keyword=N_ \
+ 	  --files-from=$(srcdir)/POTFILES.in \
++	  --from-code=ISO-8859-1 \
+ 	&& test ! -f $(PACKAGE).po \
+ 	   || ( rm -f $(srcdir)/$(PACKAGE).pot \
+ 		&& mv $(PACKAGE).po $(srcdir)/$(PACKAGE).pot )
