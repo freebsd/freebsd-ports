@@ -8,7 +8,9 @@
 PORTNAME=	9menu
 PORTVERSION=	1.5
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
+MASTER_SITES=	ftp://ftp.comintern.ru/pub/unix/X11/plan9/ \
+		ftp://ftp.mathcs.emory.edu/pub/arnold/
+		
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
