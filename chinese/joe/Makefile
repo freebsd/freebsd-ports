@@ -8,7 +8,7 @@
 MASTERDIR=	${.CURDIR}/../../editors/joe
 
 PATCH_SITES=	ftp://mail.elife.idv.tw/pub/work/collection/cjoe/
-PATCHFILES=	zh-joe-2.8-patch
+PATCHFILES=	zh-joe-2.8_3-patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	statue@mail.elife.idv.tw
