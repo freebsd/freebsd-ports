@@ -18,4 +18,6 @@ COMMENT=	Parallel Events and Asynchronous tasKing Library
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.mk>
