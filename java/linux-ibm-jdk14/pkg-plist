@@ -13,7 +13,6 @@
 %%T%%/bin/javaw
 %%T%%/bin/jdb
 %%T%%/bin/jformat
-%%T%%/bin/jvmtcf
 %%T%%/bin/keytool
 %%T%%/bin/native2ascii
 %%T%%/bin/policytool
@@ -22,6 +21,7 @@
 %%T%%/bin/rmiregistry
 %%T%%/bin/serialver
 %%T%%/bin/tnameserv
+%%T%%/bin/utetcf
 %%T%%/demo/applets/Animator/Animation.class
 %%T%%/demo/applets/Animator/AnimationFrame.class
 %%T%%/demo/applets/Animator/Animator.class
@@ -161,6 +161,7 @@
 %%T%%/demo/applets/JumpingBox/example1.html
 %%T%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
 %%T%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
+%%T%%/demo/applets/JumpingBox/sounds/danger.au
 %%T%%/demo/applets/JumpingBox/sounds/ip.au
 %%T%%/demo/applets/JumpingBox/sounds/that.hurts.au
 %%T%%/demo/applets/JumpingBox/sounds/thin.bell.au
@@ -232,6 +233,13 @@
 %%T%%/demo/bigdecimal/README.txt
 %%T%%/demo/bigdecimal/decdemo.class
 %%T%%/demo/bigdecimal/decdemo.java
+%%T%%/demo/jdbcodbc/Makefile
+%%T%%/demo/jdbcodbc/README
+%%T%%/demo/jdbcodbc/bridgetest.class
+%%T%%/demo/jdbcodbc/bridgetest.java
+%%T%%/demo/jdbcodbc/odbctest.c
+%%T%%/demo/jdbcodbc/sql.h
+%%T%%/demo/jdbcodbc/sqlext.h
 %%T%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
 %%T%%/demo/jfc/FileChooserDemo/README.txt
 %%T%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
@@ -455,8 +463,10 @@
 %%T%%/demo/jni/FileStatDemo.java
 %%T%%/demo/jni/FileStatException.java
 %%T%%/demo/jni/README
+%%T%%/demo/jpda/README
 %%T%%/demo/jpda/examples.jar
 %%T%%/demo/misc/JavaMemory.java
+%%T%%/demo/misc/README
 %%T%%/demo/rmi-iiop/hello/RemoteHello.java
 %%T%%/demo/rmi-iiop/hello/RemoteHelloApplet.java
 %%T%%/demo/rmi-iiop/hello/RemoteHelloApplication.java
@@ -470,26 +480,6 @@
 %%T%%/demo/rmi-iiop/idl/helloidl.html
 %%T%%/demo/rmi-iiop/idl/idl.html
 %%T%%/demo/rmi-iiop/javalogo52x88.gif
-%%T%%/demo/sound/JavaSound.html
-%%T%%/demo/sound/JavaSound.jar
-%%T%%/demo/sound/README.txt
-%%T%%/demo/sound/media/ambient.rmf
-%%T%%/demo/sound/media/bark.aiff
-%%T%%/demo/sound/media/bong.wav
-%%T%%/demo/sound/media/classical.rmf
-%%T%%/demo/sound/media/modern-rock.rmf
-%%T%%/demo/sound/media/sfx-medley.rmf
-%%T%%/demo/sound/media/spacemusic.au
-%%T%%/demo/sound/media/trance.rmf
-%%T%%/demo/sound/media/trippygaia1.mid
-%%T%%/demo/sound/src/CapturePlayback.java
-%%T%%/demo/sound/src/ControlContext.java
-%%T%%/demo/sound/src/Groove.java
-%%T%%/demo/sound/src/JavaSound.java
-%%T%%/demo/sound/src/JavaSoundApplet.java
-%%T%%/demo/sound/src/Juke.java
-%%T%%/demo/sound/src/MidiSynth.java
-%%T%%/demo/sound/src/TempoDial.java
 %%T%%/docs/COPYRIGHT
 %%T%%/docs/japaneseinfo.lnxia32.en.htm
 %%T%%/docs/japaneseinfo.lnxia32.jp.htm
@@ -506,17 +496,24 @@
 %%T%%/docs/jre/LICENSE_tc.html
 %%T%%/docs/jre/LICENSE_tr.html
 %%T%%/docs/jre/LICENSE_zh.html
-%%T%%/docs/jre/readmefirst.lnxia32.txt
-%%T%%/docs/jre/runtimeguide.lnxia32.br.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.cn.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.de.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.en.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.es.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.fr.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.it.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.jp.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.ko.htm
-%%T%%/docs/jre/runtimeguide.lnxia32.zh.htm
+%%T%%/docs/jre/Notices.htm
+%%T%%/docs/jre/ThirdPartyLicenses.htm
+%%T%%/docs/jre/readmefirst.lnx.txt
+%%T%%/docs/jre/runtimeguide.lnx.br.htm
+%%T%%/docs/jre/runtimeguide.lnx.cn.htm
+%%T%%/docs/jre/runtimeguide.lnx.de.htm
+%%T%%/docs/jre/runtimeguide.lnx.en.htm
+%%T%%/docs/jre/runtimeguide.lnx.es.htm
+%%T%%/docs/jre/runtimeguide.lnx.fr.htm
+%%T%%/docs/jre/runtimeguide.lnx.it.htm
+%%T%%/docs/jre/runtimeguide.lnx.jp.htm
+%%T%%/docs/jre/runtimeguide.lnx.ko.htm
+%%T%%/docs/jre/runtimeguide.lnx.tw.htm
+%%T%%/docs/navigation/banner.html
+%%T%%/docs/navigation/index.en.htm
+%%T%%/docs/navigation/main.html
+%%T%%/docs/navigation/nav.js
+%%T%%/docs/navigation/toc.htm
 %%T%%/docs/rmi-iiop/rmi_iiop_pg.html
 %%T%%/docs/sdk/LICENSE_cs.html
 %%T%%/docs/sdk/LICENSE_de.html
@@ -531,8 +528,11 @@
 %%T%%/docs/sdk/LICENSE_tc.html
 %%T%%/docs/sdk/LICENSE_tr.html
 %%T%%/docs/sdk/LICENSE_zh.html
-%%T%%/docs/sdk/sdkguide.lnxia32.htm
+%%T%%/docs/sdk/Notices.htm
+%%T%%/docs/sdk/ThirdPartyLicenses.htm
+%%T%%/docs/sdk/sdkguide.lnx.htm
 %%T%%/docs/sdk/securityguide.lnx.htm
+%%T%%/docs/startHere.htm
 %%T%%/include/jawt.h
 %%T%%/include/jawt_md.h
 %%T%%/include/jni.h
@@ -541,6 +541,8 @@
 %%T%%/include/jvmmi.h
 %%T%%/include/jvmpi.h
 %%T%%/include/jvmras.h
+%%T%%/jre/.systemPrefs/.system.lock
+%%T%%/jre/.systemPrefs/.systemRootModFile
 %%T%%/jre/bin/JavaPluginControlPanel
 %%T%%/jre/bin/awt_robot
 %%T%%/jre/bin/classic/libcore.so
@@ -561,6 +563,7 @@
 %%T%%/jre/bin/java_pt_BR.properties
 %%T%%/jre/bin/java_ru.properties
 %%T%%/jre/bin/java_sk.properties
+%%T%%/jre/bin/java_sl.properties
 %%T%%/jre/bin/java_tr.properties
 %%T%%/jre/bin/java_zh.properties
 %%T%%/jre/bin/java_zh_TW.properties
@@ -568,13 +571,14 @@
 %%T%%/jre/bin/javaw
 %%T%%/jre/bin/jextract
 %%T%%/jre/bin/jvmdcf
-%%T%%/jre/bin/jvmtcf
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/kinit
 %%T%%/jre/bin/klist
 %%T%%/jre/bin/ktab
+%%T%%/jre/bin/libJdbcOdbc.so
 %%T%%/jre/bin/libawt.so
 %%T%%/jre/bin/libcmm.so
+%%T%%/jre/bin/libdbgmalloc.so
 %%T%%/jre/bin/libdcpr.so
 %%T%%/jre/bin/libdt_socket.so
 %%T%%/jre/bin/libfontmanager.so
@@ -591,18 +595,66 @@
 %%T%%/jre/bin/libjdwp.so
 %%T%%/jre/bin/libjitc.so
 %%T%%/jre/bin/libjpeg.so
+%%T%%/jre/bin/libjpkcs11.so
 %%T%%/jre/bin/libjsig.so
 %%T%%/jre/bin/libjsound.so
+%%T%%/jre/bin/libjsoundalsa.so
 %%T%%/jre/bin/libnet.so
 %%T%%/jre/bin/libnio.so
 %%T%%/jre/bin/librmi.so
+%%T%%/jre/bin/libute.so
 %%T%%/jre/bin/libxhpi.so
 %%T%%/jre/bin/libzip.so
 %%T%%/jre/bin/policytool
 %%T%%/jre/bin/rmid
 %%T%%/jre/bin/rmiregistry
 %%T%%/jre/bin/tnameserv
-%%T%%/jre/bin/webstart_install_sdk.sh
+%%T%%/jre/bin/utetcf
+%%T%%/jre/javaws/cacerts
+%%T%%/jre/javaws/javaws
+%%T%%/jre/javaws/javaws.jar
+%%T%%/jre/javaws/javaws.policy
+%%T%%/jre/javaws/javawsbin
+%%T%%/jre/javaws/jnlp.jar
+%%T%%/jre/javaws/resources/copyright.jpg
+%%T%%/jre/javaws/resources/copyright_ca_ES.jpg
+%%T%%/jre/javaws/resources/copyright_cs_CZ.jpg
+%%T%%/jre/javaws/resources/copyright_de_DE.jpg
+%%T%%/jre/javaws/resources/copyright_es_ES.jpg
+%%T%%/jre/javaws/resources/copyright_fr_FR.jpg
+%%T%%/jre/javaws/resources/copyright_hu_HU.jpg
+%%T%%/jre/javaws/resources/copyright_it_IT.jpg
+%%T%%/jre/javaws/resources/copyright_ja_JP.jpg
+%%T%%/jre/javaws/resources/copyright_ko_KR.jpg
+%%T%%/jre/javaws/resources/copyright_pl_PL.jpg
+%%T%%/jre/javaws/resources/copyright_pt_BR.jpg
+%%T%%/jre/javaws/resources/copyright_ru_RU.jpg
+%%T%%/jre/javaws/resources/copyright_sk_SK.jpg
+%%T%%/jre/javaws/resources/copyright_sl_SI.jpg
+%%T%%/jre/javaws/resources/copyright_tr_TR.jpg
+%%T%%/jre/javaws/resources/copyright_zh_CN.jpg
+%%T%%/jre/javaws/resources/copyright_zh_TW.jpg
+%%T%%/jre/javaws/resources/messages.properties
+%%T%%/jre/javaws/resources/messages_ca.properties
+%%T%%/jre/javaws/resources/messages_cs.properties
+%%T%%/jre/javaws/resources/messages_de.properties
+%%T%%/jre/javaws/resources/messages_es.properties
+%%T%%/jre/javaws/resources/messages_fr.properties
+%%T%%/jre/javaws/resources/messages_hu.properties
+%%T%%/jre/javaws/resources/messages_it.properties
+%%T%%/jre/javaws/resources/messages_ja.properties
+%%T%%/jre/javaws/resources/messages_ko.properties
+%%T%%/jre/javaws/resources/messages_pl.properties
+%%T%%/jre/javaws/resources/messages_pt_BR.properties
+%%T%%/jre/javaws/resources/messages_ru.properties
+%%T%%/jre/javaws/resources/messages_sk.properties
+%%T%%/jre/javaws/resources/messages_sv.properties
+%%T%%/jre/javaws/resources/messages_tr.properties
+%%T%%/jre/javaws/resources/messages_zh.properties
+%%T%%/jre/javaws/resources/messages_zh_TW.properties
+%%T%%/jre/javaws/resources/miniSplash.jpg
+%%T%%/jre/javaws/resources/splash.jpg
+%%T%%/jre/javaws/updateSettings.sh
 %%T%%/jre/lib/TraceFormat.dat
 %%T%%/jre/lib/audio/soundbank.gm
 %%T%%/jre/lib/charsets.jar
@@ -614,9 +666,13 @@
 %%T%%/jre/lib/colorname.properties
 %%T%%/jre/lib/content-types.properties
 %%T%%/jre/lib/core.jar
+%%T%%/jre/lib/ext/dumpfmt.jar
 %%T%%/jre/lib/ext/gskikm.jar
-%%T%%/jre/lib/ext/ibmjceprovider.jar
 %%T%%/jre/lib/ext/ibmjcefips.jar
+%%T%%/jre/lib/ext/ibmjceprovider.jar
+%%T%%/jre/lib/ext/ibmjsseprovider2.jar
+%%T%%/jre/lib/ext/ibmpkcs11.jar
+%%T%%/jre/lib/ext/ibmpkcs11impl.jar
 %%T%%/jre/lib/ext/indicim.jar
 %%T%%/jre/lib/ext/jaccess.jar
 %%T%%/jre/lib/ext/ldapsec.jar
@@ -675,7 +731,15 @@
 %%T%%/jre/lib/fonts/fonts.dir
 %%T%%/jre/lib/fonts/fonts.scale
 %%T%%/jre/lib/graphics.jar
+%%T%%/jre/lib/ibmcertpathprovider.jar
+%%T%%/jre/lib/ibmjaaslm.jar
+%%T%%/jre/lib/ibmjcefw.jar
+%%T%%/jre/lib/ibmjgssprovider.jar
 %%T%%/jre/lib/ibmjssefips.jar
+%%T%%/jre/lib/ibmjsseprovider.jar
+%%T%%/jre/lib/ibmorb.jar
+%%T%%/jre/lib/ibmorbapi.jar
+%%T%%/jre/lib/ibmpkcs.jar
 %%T%%/jre/lib/images/cursors/cursors.properties
 %%T%%/jre/lib/images/cursors/invalid32x32.gif
 %%T%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
@@ -706,7 +770,7 @@
 %%T%%/src.jar
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # IBM-JDK%%PORTVERSION%%"
+@exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-IBM-JDK%%PORTVERSION%%"
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/lib
 @dirrm %%T%%/jre/lib/security
@@ -718,17 +782,18 @@
 @dirrm %%T%%/jre/lib/audio
 @dirrm %%T%%/jre/lib/applet
 @dirrm %%T%%/jre/lib
+@dirrm %%T%%/jre/javaws/resources
+@dirrm %%T%%/jre/javaws
 @dirrm %%T%%/jre/bin/classic
 @dirrm %%T%%/jre/bin
+@dirrm %%T%%/jre/.systemPrefs
 @dirrm %%T%%/jre
 @dirrm %%T%%/include
 @dirrm %%T%%/docs/sdk
 @dirrm %%T%%/docs/rmi-iiop
+@dirrm %%T%%/docs/navigation
 @dirrm %%T%%/docs/jre
 @dirrm %%T%%/docs
-@dirrm %%T%%/demo/sound/src
-@dirrm %%T%%/demo/sound/media
-@dirrm %%T%%/demo/sound
 @dirrm %%T%%/demo/rmi-iiop/idl
 @dirrm %%T%%/demo/rmi-iiop/hello
 @dirrm %%T%%/demo/rmi-iiop
@@ -777,6 +842,7 @@
 @dirrm %%T%%/demo/jfc/FileChooserDemo/images
 @dirrm %%T%%/demo/jfc/FileChooserDemo
 @dirrm %%T%%/demo/jfc
+@dirrm %%T%%/demo/jdbcodbc
 @dirrm %%T%%/demo/bigdecimal
 @dirrm %%T%%/demo/applets/WireFrame/models
 @dirrm %%T%%/demo/applets/WireFrame

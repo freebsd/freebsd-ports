@@ -7,14 +7,13 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2
 CATEGORIES=	java
 PKGNAMEPREFIX=	linux-ibm-
-DISTNAME=	IBMJava2-SDK-141
+DISTNAME=	IBMJava2-SDK-${JDK_VERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
-COMMENT=	IBM Java Development Kit 1.4.1 for Linux
+COMMENT=	IBM Java Development Kit 1.4 for Linux
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
@@ -27,7 +26,7 @@ PLIST_SUB+=	PORTREVISION=${PORTREVISION}
 NO_BUILD=	yes
 USE_LINUX=	yes
 USE_REINPLACE=	yes
-JDK_VERSION=	1.4.1
+JDK_VERSION=	1.4.2
 ONLY_FOR_ARCHS=	i386
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 
@@ -57,7 +56,7 @@ do-install:
 	${MKDIR} ${APP_HOME}
 	cd ${WRKSRC} && ${FIND} . \
 		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
-	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}"
+	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-IBM-JDK${PORTVERSION}"
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
