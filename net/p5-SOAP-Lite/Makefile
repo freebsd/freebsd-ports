@@ -38,6 +38,7 @@ MAN3=		Apache::SOAP.3 \
 		SOAP::Transport::TCP.3 \
 		UDDI::Lite.3 \
 		XML::Parser::Lite.3 \
-		XMLRPC::Lite.3
+		XMLRPC::Lite.3 \
+		XMLRPC::Transport::HTTP.3
 
 .include <bsd.port.mk>
