@@ -1,5 +1,5 @@
---- configure.orig	Sun Jan  9 20:38:14 2000
-+++ configure	Wed Feb  9 16:18:35 2000
+--- configure.orig	Sun Apr 23 05:57:29 2000
++++ configure	Thu Jul 20 20:11:29 2000
 @@ -1865,6 +1865,19 @@
        ELF_LINK_CMD="\$(ELF_LINK)\$(ELFLIB_MAJOR)"
      fi
@@ -20,10 +20,10 @@
    * )
      echo "Note: ELF compiler for host_os=$host_os may be wrong"
      ELF_CC="\$(CC)"
-@@ -2181,16 +2194,8 @@
+@@ -2199,16 +2212,8 @@
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
- echo "configure:2184: checking SLANG_VERSION" >&5
+ echo "configure:2202: checking SLANG_VERSION" >&5
 -slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
 -               awk '{ print $3 }'`
 -slang_major_version=`echo $slang_version |
