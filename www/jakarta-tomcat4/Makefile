@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	4.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-${PORTVERSION:R}/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
