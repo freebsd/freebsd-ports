@@ -3,7 +3,8 @@ etc/rc.d/nsd.sh
 etc/nsd/nsd.zones.sample
 etc/nsd/nsdc.conf.sample
 sbin/nsd
-sbin/nsd-notify
-sbin/nsdc
 sbin/zonec
+sbin/nsdc
+sbin/nsd-notify
+sbin/nsd-xfer
 @dirrm etc/nsd
