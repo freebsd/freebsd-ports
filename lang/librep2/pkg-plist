@@ -18,21 +18,15 @@ info/librep.info-6
 info/librep.info-7
 info/librep.info-8
 @exec install-info %D/info/librep.info %D/info/dir
-lib/librep.la
 lib/librep.so
 lib/librep.so.9
 libexec/rep/%%VERSION%%/%%GNUHOST%%/DOC
-libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.so
-libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.so
 libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rules.mk
