@@ -1,0 +1,11 @@
+--- Makefile    Thu Apr 22 23:03:07 2004
++++ Makefile.orig       Thu Apr 22 23:03:03 2004
+@@ -3,6 +3,7 @@
+
+ aop: aop.c
+
++all:
+ install: aop
+        install -d /usr/local/bin
+        install -d /usr/local/share/aop
+
