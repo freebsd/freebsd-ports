@@ -37,7 +37,6 @@
     SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk--2
-    SUBDIR += gtk-qt-engine
     SUBDIR += gtk-sharp
     SUBDIR += gtk12
     SUBDIR += gtk12-apireference
