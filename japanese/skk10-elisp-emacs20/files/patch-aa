@@ -1,0 +1,20 @@
+--- SKK-MK.orig	Wed Jul 19 14:26:14 2000
++++ SKK-MK	Wed Jul 19 14:25:31 2000
+@@ -396,7 +396,7 @@
+       (find-file x)
+       (setq obuf (current-buffer))
+       (condition-case nil
+-	  (texinfo-format-buffer)
++	  (texinfo-format-buffer t)
+ 	(error				; one more try with no @direntry
+ 	 ;;(kill-buffer (current-buffer))
+ 	 (set-buffer obuf)
+@@ -407,7 +407,7 @@
+ 	     (setq beg (match-beginning 0))
+ 	     (when (re-search-forward "@end direntry" nil t)
+ 	       (delete-region beg (match-end 0)) )))
+-	 (texinfo-format-buffer) ))
++	 (texinfo-format-buffer t) ))
+       (save-buffer)
+       (kill-buffer (current-buffer))	; info
+       (kill-buffer obuf)		; texi
