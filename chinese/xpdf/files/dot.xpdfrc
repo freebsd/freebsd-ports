@@ -16,4 +16,6 @@ unicodeMap	GBK		/usr/X11R6/share/xpdf/chinese-simplified/GBK.unicodeMap
 cMapDir		Adobe-GB1	/usr/local/share/ghostscript/Resource/CMap
 toUnicodeDir			/usr/local/share/ghostscript/Resource/CMap
 displayCIDFontX	Adobe-GB1	"-*-fangsong ti-medium-r-normal-*-%s-*-*-*-*-*-gb2312.1980-0" ISO-2022-CN
+# If you have the Arhpic fonts, you may want to use this instead:
+# displayCIDFontX Adobe-GB1	"-arphic-ar pl sungtil gb-medium-r-normal--%s-*-*-*-c-*-iso10646-1" UCS-2
 #----- end Chinese Simplified support package
