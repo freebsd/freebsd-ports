@@ -540,6 +540,7 @@ bin86		ports/devel/bin86
 bind8		ports/net/bind8
 bind9		ports/net/bind9
 bind9-dlz	ports/net/bind9-dlz
+bincimap	ports/mail/bincimap
 binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
@@ -7223,6 +7224,7 @@ speyes		ports/games/speyes
 sphinx		ports/audio/sphinx
 spice		ports/cad/spice
 spider		ports/games/spider
+spidermonkey	ports/lang/spidermoney
 spigot		ports/multimedia/spigot
 spim		ports/emulators/spim
 spin		ports/devel/spin
