@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.64
+PORTVERSION=	1.65
 CATEGORIES=	mail
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
@@ -29,7 +29,7 @@ do-install:
 .for dir in sessions users
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/${dir}
 .endfor
-.for file in openwebmail.pl openwebmail-main.pl openwebmail-read.pl openwebmail-viewatt.pl openwebmail-send.pl openwebmail-spell.pl openwebmail-prefs.pl openwebmail-folder.pl checkmail.pl
+.for file in openwebmail.pl openwebmail-main.pl openwebmail-read.pl openwebmail-viewatt.pl openwebmail-send.pl openwebmail-spell.pl openwebmail-prefs.pl openwebmail-folder.pl openwebmail-abook.pl checkmail.pl
 	@${CHMOD} 4555 ${OWCGIDIR}/${file}
 .endfor
 	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}
