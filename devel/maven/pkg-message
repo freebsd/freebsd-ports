@@ -7,3 +7,7 @@ To work with Maven you need to set the following environment variables:
 
 Then, you should initialize your repository with:
   /usr/local/share/java/maven/bin/install_repo.sh ~/.maven/repository
+
+If you are behind a proxy, create a ~/.mavenrc file with something like:
+  MAVEN_OPTS="$MAVEN_OPTS -Dmaven.proxy.host=YOUR_PROXY_HOSTNAME
+    -Dmaven.proxy.port=YOUR_PROXY_PORT"
