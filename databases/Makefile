@@ -200,6 +200,7 @@
     SUBDIR += pydbdesigner
     SUBDIR += qdbm
     SUBDIR += qt-mysql-plugin
+    SUBDIR += qt-odbc-plugin
     SUBDIR += qt-pgsql-plugin
     SUBDIR += rdb
     SUBDIR += rdfdb
