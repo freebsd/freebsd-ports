@@ -14,7 +14,7 @@ unavail
 avail||CVSROOT
 avail||distrib
 avail||doc
-avail||ports
+avail|kris,lioux|ports
 avail||projects
 avail||src
 unavail||src/contrib/binutils,src/contrib/file
