@@ -15,5 +15,6 @@ info/zebra.info
 info/zebra.info-1
 info/zebra.info-2
 info/zebra.info-3
+info/zebra.info-4
 @exec install-info %D/info/zebra.info %D/info/dir
 @dirrm etc/zebra
