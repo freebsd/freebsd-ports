@@ -23,6 +23,10 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
 .endif
 
+.if ${OSVERSION} >= 500000
+NO_QT_OBJPRELINK=	yes
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_MESA=	yes
 USE_GMAKE=	yes
