@@ -1,0 +1,6 @@
+bin/ecore-config
+include/Ecore.h
+lib/libecore.a
+lib/libecore.so
+lib/libecore.so.0
+share/aclocal/ecore.m4
