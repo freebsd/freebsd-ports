@@ -1,0 +1,8 @@
+--- doc/rrdtutorial.pod.orig	Thu Feb 22 13:16:30 2001
++++ doc/rrdtutorial.pod	Thu Feb 22 13:16:40 2001
+@@ -1,5 +1,3 @@
+-=for html <div align="right">Go <a href="rrdtutorial.es.html">Spanish</a></div> 
+-
+ =head1 NAME
+ 
+ rrdtutorial - Alex van den Bogaerdt's RRDtool tutorial
