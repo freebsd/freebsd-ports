@@ -3401,6 +3401,7 @@ jpeg		ports/graphics/jpeg
 jpeg2ps-a4	ports/graphics/jpeg2ps-a4
 jpeg2ps-letter	ports/graphics/jpeg2ps-letter
 jpeginfo	ports/graphics/jpeginfo
+jpegoptim	ports/graphics/jpegoptim
 jpegpixi	ports/graphics/jpegpixi
 jpgraph		ports/graphics/jpgraph
 jpgtn		ports/graphics/jpgtn
