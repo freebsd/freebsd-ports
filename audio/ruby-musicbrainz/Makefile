@@ -28,6 +28,8 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING ChangeLog README TODO doc
 
+IGNORE=	"Distfile needs to be updated for new libmusicbrainz"
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
