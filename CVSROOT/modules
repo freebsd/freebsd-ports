@@ -4727,6 +4727,7 @@ liteamp		ports/audio/liteamp
 liveMedia	ports/net/liveMedia
 livecd		ports/sysutils/livecd
 ljcharm		ports/deskutils/ljcharm
+ljclive		ports/deskutils/ljclive
 ljdeps		ports/www/ljdeps
 lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
