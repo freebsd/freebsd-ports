@@ -51,3 +51,4 @@ include/X11/extensions/xcmiscstr.h
 include/X11/extensions/xtestext1.h
 include/X11/extensions/xteststr.h
 libdata/pkgconfig/xextensions.pc
+@dirrm share/doc/xextensions
