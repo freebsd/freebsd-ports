@@ -71,19 +71,19 @@ lib/erlang/lib/ejabberd-%%VERSION%%/priv/msgs/es.msg
 lib/erlang/lib/ejabberd-%%VERSION%%/priv/msgs/fr.msg
 lib/erlang/lib/ejabberd-%%VERSION%%/priv/msgs/nl.msg
 lib/erlang/lib/ejabberd-%%VERSION%%/priv/msgs/ru.msg
-%%DOCSDIR%%/confacls.png
-%%DOCSDIR%%/confhostname.png
-%%DOCSDIR%%/dev.html
-%%DOCSDIR%%/dev.tex
-%%DOCSDIR%%/disco.png
-%%DOCSDIR%%/discoallusers.png
-%%DOCSDIR%%/discorunnodes.png
-%%DOCSDIR%%/discorus.png
-%%DOCSDIR%%/guide.html
-%%DOCSDIR%%/guide.tex
-%%DOCSDIR%%/logo.png
-%%DOCSDIR%%/webadmmain.png
-%%DOCSDIR%%/webadmmainru.png
+%%PORTDOCS%%%%DOCSDIR%%/confacls.png
+%%PORTDOCS%%%%DOCSDIR%%/confhostname.png
+%%PORTDOCS%%%%DOCSDIR%%/dev.html
+%%PORTDOCS%%%%DOCSDIR%%/dev.tex
+%%PORTDOCS%%%%DOCSDIR%%/disco.png
+%%PORTDOCS%%%%DOCSDIR%%/discoallusers.png
+%%PORTDOCS%%%%DOCSDIR%%/discorunnodes.png
+%%PORTDOCS%%%%DOCSDIR%%/discorus.png
+%%PORTDOCS%%%%DOCSDIR%%/guide.html
+%%PORTDOCS%%%%DOCSDIR%%/guide.tex
+%%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
+%%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/erlang/lib/ejabberd-%%VERSION%%/priv/lib
 @dirrm lib/erlang/lib/ejabberd-%%VERSION%%/priv/msgs
