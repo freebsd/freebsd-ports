@@ -1,0 +1,12 @@
+Net::Domain::ExpireDate gets WHOIS information of given domain
+using Net::Whois::Raw and tries to obtain expiration date of 
+domain. Unfortunately there are too many different whois servers 
+which provides whois info in very different formats. 
+
+Net::Domain::ExpireDate knows more than 40 different formats of 
+expiration date representation provided by different servers (almost 
+all gTLD registrars and some ccTLD registrars are covered). 
+Now obtaining of domain creation date is also supported.
+
+WWW: http://search.cpan.org/dist/Net-Domain-ExpireDate
+Author: Walery Studennikov
