@@ -1,11 +1,14 @@
---- doc/example_mararc.orig	Tue Apr 24 06:32:35 2001
-+++ doc/example_mararc	Sat May 26 20:20:04 2001
-@@ -11,7 +11,7 @@
+--- doc/example_mararc.orig	Sun Jul 22 21:20:30 2001
++++ doc/example_mararc	Sun Jul 22 21:20:44 2001
+@@ -15,9 +15,9 @@
  # The directory with all of the zone files
  chroot_dir = "/etc/maradns"
  # The numeric UID MaraDNS will run as
 -maradns_uid = 99
 +maradns_uid = 53
+ # The (optional) numeric GID MaraDNS will run as
+-# maradns_gid = 99
++maradns_gid = 53
  # The maximum number of processes MaraDNS is allowed to use
  maxprocs = 64
  

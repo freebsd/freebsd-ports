@@ -1,5 +1,5 @@
---- dns/Makefile.orig	Wed Jun 20 19:30:47 2001
-+++ dns/Makefile	Mon Jun 25 00:42:32 2001
+--- dns/Makefile.orig	Sun Jul 22 21:27:54 2001
++++ dns/Makefile	Sun Jul 22 21:28:03 2001
 @@ -4,7 +4,7 @@
  OBJECTS=$(DOBJECTS) $(JOBJS) $(MJOBJS)
  
@@ -8,19 +8,4 @@
 +FLAGS = -g $(CFLAGS)
  
  all: Queries.o Compress.o bobbit.o
- 
-@@ -12,11 +12,11 @@
- 	rm -f Queries.o Compress.o bobbit.o
- 
- Queries.o: Queries.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o Queries.o Queries.c 
-+	$(CC) -c $(FLAGS) -o Queries.o Queries.c 
- 
- Compress.o: Compress.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o Compress.o Compress.c 
-+	$(CC) -c $(FLAGS) -o Compress.o Compress.c 
- 
- bobbit.o: bobbit.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o bobbit.o bobbit.c 
-+	$(CC) -c $(FLAGS) -o bobbit.o bobbit.c 
  

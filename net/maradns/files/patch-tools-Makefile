@@ -1,5 +1,5 @@
---- tools/Makefile.orig	Wed Jun 20 19:33:25 2001
-+++ tools/Makefile	Mon Jun 25 00:45:15 2001
+--- tools/Makefile.orig	Sun Jul 22 21:24:18 2001
++++ tools/Makefile	Sun Jul 22 21:24:30 2001
 @@ -5,7 +5,7 @@
  EXECS=askmara strip.control benchmark
  
@@ -8,19 +8,4 @@
 +FLAGS = -g $(CFLAGS)
  
  all: $(EXECS)
- 
-@@ -13,11 +13,11 @@
- 	rm -f $(OBJECTS) core $(EXECS)
- 
- askmara: askmara.c askmara_labels_en.h $(OBJECTS) 
--	gcc $(FLAGS) -o askmara askmara.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o askmara askmara.c $(OBJECTS)
- 
- benchmark: benchmark.c askmara_labels_en.h $(OBJECTS) 
--	gcc $(FLAGS) -o benchmark benchmark.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o benchmark benchmark.c $(OBJECTS)
- 
- strip.control: strip.control.c
--	gcc $(FLAGS) -o strip.control strip.control.c
-+	$(CC) $(FLAGS) -o strip.control strip.control.c
  

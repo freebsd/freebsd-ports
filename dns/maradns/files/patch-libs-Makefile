@@ -1,5 +1,5 @@
---- libs/Makefile.orig	Sat Jun 23 08:20:57 2001
-+++ libs/Makefile	Mon Jun 25 00:44:00 2001
+--- libs/Makefile.orig	Sun Jul 22 21:21:11 2001
++++ libs/Makefile	Sun Jul 22 21:21:38 2001
 @@ -1,6 +1,6 @@
  OBJECTS = JessStr.o JessStrOS.o JessStrCP.o MaraHash.o
  #FLAGS = -O2 -Wall
@@ -7,35 +7,4 @@
 +FLAGS = -g $(CFLAGS)
  
  all: tests mtest
- 
-@@ -8,23 +8,23 @@
- 	rm -f core $(OBJECTS) tests mtest
- 
- MaraHash.o: JessStr.h MaraHash.c
--	gcc -c $(FLAGS) -o MaraHash.o MaraHash.c
-+	$(CC) -c $(FLAGS) -o MaraHash.o MaraHash.c
- 
- JessStr.o: JessStr.h JessStr.c
--	gcc -c $(FLAGS) -o JessStr.o JessStr.c 
-+	$(CC) -c $(FLAGS) -o JessStr.o JessStr.c 
- 
- JessStrOS.o: JessStr.h JessStrOS.c
--	gcc -c $(FLAGS) -o JessStrOS.o JessStrOS.c 
-+	$(CC) -c $(FLAGS) -o JessStrOS.o JessStrOS.c 
- 
- JessStrCP.o: JessStr.h JessStrCP.c
--	gcc -c $(FLAGS) -o JessStrCP.o JessStrCP.c 
-+	$(CC) -c $(FLAGS) -o JessStrCP.o JessStrCP.c 
- 
- mtest: mtest.c $(OBJECTS)
--	gcc $(FLAGS) -o mtest mtest.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o mtest mtest.c $(OBJECTS)
- 
- tests: tests.c $(OBJECTS)
--	gcc $(FLAGS) -o tests tests.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o tests tests.c $(OBJECTS)
- 
- #onetime: $(OBJECTS) kiwi.h config.h onetime.c do_scramble.o cryptdate.o
--#	gcc $(FLAGS) -o onetime onetime.c do_scramble.o cryptdate.o
-+#	$(CC) $(FLAGS) -o onetime onetime.c do_scramble.o cryptdate.o
  

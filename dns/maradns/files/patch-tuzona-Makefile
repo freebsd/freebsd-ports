@@ -1,22 +1,11 @@
---- tuzona/Makefile.old	Mon Jun 25 00:51:03 2001
-+++ tuzona/Makefile	Mon Jun 25 00:51:22 2001
+--- tuzona/Makefile.orig	Sun Jul 22 21:25:11 2001
++++ tuzona/Makefile	Sun Jul 22 21:25:18 2001
 @@ -5,7 +5,7 @@
  OBJECTS=$(JOBJS) $(MJOBJS) $(DOBJECTS) $(POBJECTS)
  EXECS=getzone zoneserver
  
 -FLAGS = -O2
-+FLAGS = $(CFLAGS)
++FLAGS = -O2 $(CFLAGS)
  #FLAGS = -g
  
  all: $(EXECS)
-@@ -14,8 +14,8 @@
- 	rm -f $(OBJECTS) core $(EXECS)
- 
- getzone: getzone.c $(OBJECTS) 
--	gcc $(FLAGS) -o getzone getzone.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o getzone getzone.c $(OBJECTS)
- 
- zoneserver: zoneserver.c $(OBJECTS)
--	gcc $(FLAGS) -o zoneserver zoneserver.c $(OBJECTS)
-+	$(CC) $(FLAGS) -o zoneserver zoneserver.c $(OBJECTS)
- 

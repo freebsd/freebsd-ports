@@ -1,5 +1,5 @@
---- utf8/Makefile.orig	Wed Jun 20 19:33:48 2001
-+++ utf8/Makefile	Mon Jun 25 00:46:08 2001
+--- utf8/Makefile.orig	Sun Jul 22 21:25:44 2001
++++ utf8/Makefile	Sun Jul 22 21:25:51 2001
 @@ -5,7 +5,7 @@
  EXECS=utf8test
  
@@ -8,15 +8,4 @@
 +FLAGS = -g $(CFLAGS)
  
  all: $(EXECS)
- 
-@@ -13,8 +13,8 @@
- 	rm -f $(OBJECTS) core $(EXECS)
- 
- Utf8.o: Utf8.c ../libs/JessStr.h ../libs/MaraHash.h ../MaraDns.h
--	gcc -c $(FLAGS) -o Utf8.o Utf8.c 
-+	$(CC) -c $(FLAGS) -o Utf8.o Utf8.c 
- 
- utf8test: utf8test.c $(OBJECTS) 
--	gcc $(FLAGS) -o utf8test utf8test.c $(OBJECTS) 
-+	$(CC) $(FLAGS) -o utf8test utf8test.c $(OBJECTS) 
  
