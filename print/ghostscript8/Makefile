@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		http://hp.sourceforge.net/:hp2200 \
@@ -59,7 +59,7 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}" WITHOUT_X11="${WITHOUT_X11}"
-PLIST_SUB=	GS_VERSION=${GS_VERSION} EPLASER_GSVERS=${EPLASER_GSVERS}
+PLIST_SUB=	GS_VERSION=${GS_VERSION}
 
 SCRIPTS_ENV=	GS_OPTIONS="${GS_OPTIONS}" WITHOUT_X11="${WITHOUT_X11}"
 
@@ -175,9 +175,8 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # http://www.epkowa.co.jp/linux/lpd.html
 EPLASER=	eplaser
 EPLASER_VERS=	3.0.6
-EPLASER_GSVERS=	652
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
-EPLASER_SRCS=	${EPLASER_NAME}-${EPLASER_GSVERS}.tgz
+EPLASER_SRCS=	${EPLASER_NAME}-652.tgz
 
 # MJC - additional driver for Epson MachJet series
 MJC=		mjc
@@ -412,6 +411,7 @@ pre-install:
 	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
@@ -492,7 +492,7 @@ post-install:
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
-.for i in readme-eplaser-${EPLASER_GSVERS}.euc readme-eplaser-${EPLASER_GSVERS}-jp.euc
+.for i in readme-eplaser-652.euc readme-eplaser-652-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .endfor
