@@ -1,0 +1,14 @@
+bin/sirc
+bin/ssfe
+libexec/sirc/ChangeLog
+libexec/sirc/LICENSE
+libexec/sirc/PROGRAMMING
+libexec/sirc/README
+libexec/sirc/README.socks
+libexec/sirc/dsirc
+libexec/sirc/n0thing.pl
+libexec/sirc/sirc.help.gz
+libexec/sirc/socks.pl
+man/man1/sirc.1.gz
+man/man1/ssfe.1.gz
+@dirrm libexec/sirc

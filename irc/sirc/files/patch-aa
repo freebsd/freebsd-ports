@@ -1,0 +1,16 @@
+--- sirc-proto	Tue May  5 00:23:11 1998
++++ sirc-proto	Tue May  5 00:32:45 1998
+@@ -3,6 +3,13 @@
+ PREFIX=
+ SIRCLIB=${PREFIX}/libexec/sirc ; export SIRCLIB
+ 
++# See README.socks in SIRCLIB for more details
++SOCKS_SERVER= ; export SOCKS_SERVER
++# 1080 is the default
++SOCKS_PORT=1080; export SOCKS_PORT
++# Uncomment only if you have no access to a name server
++#SOCKS_DNS=1; export SOCKS_DNS
++
+ if test -z "$SIRCSERVER" && test -z "$IRCSERVER"
+ then
+   SIRCSERVER="irc.dal.net"
