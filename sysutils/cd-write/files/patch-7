@@ -1,0 +1,10 @@
+--- c++tk/c++tk.h~	Thu Sep 25 03:43:24 1997
++++ c++tk/c++tk.h	Tue Nov 19 01:14:24 2002
+@@ -31,6 +31,7 @@
+ #define __CXXTK_H__
+ 
+ #include <stdlib.h> // for free()
++#include <string.h>
+ 
+ extern int TkError;
+ 
