@@ -18,6 +18,8 @@ DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	murray@FreeBSD.org
 
+BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
@@ -44,6 +46,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.mk>
