@@ -287,7 +287,6 @@ lib/libwine.so
 lib/libwine.so.1
 lib/libwine_unicode.so
 lib/libwine_unicode.so.1
-lib/libwine_uuid.a
 lib/wine/advapi32.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
@@ -384,6 +383,7 @@ lib/wine/libdmsynth.def
 lib/wine/libdmusic.def
 lib/wine/libdmusic32.def
 lib/wine/libdpnhpast.def
+lib/wine/libdxguid.a
 lib/wine/libglut32.def
 lib/wine/libmshtml.def
 lib/wine/libmsvcrtd.def
@@ -412,6 +412,7 @@ lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
 lib/wine/libmsvfw32.def
+lib/wine/libmsvidc32.def
 lib/wine/libmswsock.def
 lib/wine/libnetapi32.def
 lib/wine/libnewdev.def
@@ -431,6 +432,7 @@ lib/wine/libquartz.def
 lib/wine/librasapi32.def
 lib/wine/libriched32.def
 lib/wine/librpcrt4.def
+lib/wine/librsabase.def
 lib/wine/libserialui.def
 lib/wine/libsetupapi.def
 lib/wine/libshdocvw.def
@@ -446,6 +448,7 @@ lib/wine/libunicows.def
 lib/wine/liburl.def
 lib/wine/liburlmon.def
 lib/wine/libuser32.def
+lib/wine/libuuid.a
 lib/wine/libuxtheme.def
 lib/wine/libversion.def
 lib/wine/libw32skrnl.def
@@ -492,6 +495,7 @@ lib/wine/msvcrt20.dll.so
 lib/wine/msvcrt40.dll.so
 lib/wine/msvcrtd.dll.so
 lib/wine/msvfw32.dll.so
+lib/wine/msvidc32.dll.so
 lib/wine/msvideo.dll.so
 lib/wine/mswsock.dll.so
 lib/wine/netapi32.dll.so
@@ -525,6 +529,7 @@ lib/wine/regsvr32.exe.so
 lib/wine/riched32.dll.so
 lib/wine/rpcrt4.dll.so
 lib/wine/rpcss.exe.so
+lib/wine/rsabase.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/serialui.dll.so
 lib/wine/setupapi.dll.so

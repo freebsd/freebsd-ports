@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20040121
-PORTREVISION=	2
+PORTVERSION=	20040213
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -28,15 +27,12 @@ ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_SIZE=	yes
 # GCC 3.2 also seems fine, but the ports collection requires specifying
 # a concrete version.
 USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-BROKEN=		"Not supported on systems prior to FreeBSD 4.x"
-.endif
 
 .if ${OSVERSION} >= 502000
 BROKEN=		"Broken pkg-plist"
