@@ -73,16 +73,10 @@ USE_GCC=3.1
 #
 # OO is still broken with the system gcc on CURRENT.
 #
-.if !defined(USE_GCC)
-USE_GCC=3.1
-.endif
-.if defined(USE_GCC) && ${USE_GCC} == 3.1
-#
-# We depend on the port. System g++ is broken at the moment.
-#
-BUILD_DEPENDS+= gcc31:${PORTSDIR}/lang/gcc31
-CC=		gcc31
-CXX=		g++31
+.if defined(USE_GCC) && ${USE_GCC} == 3.2
+BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+CC=		gcc32
+CXX=		g++32
 .endif
 .endif
 
