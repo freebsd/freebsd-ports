@@ -102,9 +102,9 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 +  * 2.2-current has been bumped to 199512 recently).  Recognize the old
 +  * 2.2-current as NFSv3 for a grace period.
 +  * FreeBSD 2.0.5 was 199504, btw.  Both, 2.0.5 and 2.1 don't have
-+  * NFSv3.
++  * NFSv3.  (FreeBSD-2.1.5 is 199607)
 +  */
-+ #if __FreeBSD_version > 199511 || __FreeBSD_version == 199508
++ #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 + # define HAS_NFS_V3
 + #endif /* FreeBSD_version */
 + 
@@ -488,7 +488,7 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 + 	struct swdevt *sw;
 + 	long blocksize, *perdev;
 + 	struct rlist head;
-+ #if __FreeBSD_version > 199511 || __FreeBSD_version == 199508
++ #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 +         struct rlisthdr swaplist;
 +         struct rlist *swapptr;
 + #else
@@ -507,14 +507,14 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 + 	/* Count up swap space. */
 + 	nfree = 0;
 + 	memset(perdev, 0, nswdev * sizeof(*perdev));
-+ #if __FreeBSD_version > 199511 || __FreeBSD_version == 199508
++ #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 + 	swapptr = swaplist.rlh_list;
 + 	while (swapptr) {
 + #else
 + 	while (swaplist) {
 + #endif
 + 		int	top, bottom, next_block;
-+ #if __FreeBSD_version > 199511 || __FreeBSD_version == 199508
++ #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 + 		kvm_read(kd, (u_long)swapptr, &head, sizeof(struct rlist));
 + #else
 + 		kvm_read(kd, (u_long)swaplist, &head, sizeof(struct rlist));
@@ -544,7 +544,7 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 + 		}
 + 		perdev[(bottom / dmmax) % nswdev] +=
 + 			top - bottom + 1;
-+ #if __FreeBSD_version > 199511 || __FreeBSD_version == 199508
++ #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 + 		swapptr = head.rl_next;
 + #else
 + 		swaplist = head.rl_next;
