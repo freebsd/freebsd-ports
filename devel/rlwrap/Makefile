@@ -11,7 +11,7 @@ PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Readline wrapper
 
 USE_GETOPT_LONG=	yes
