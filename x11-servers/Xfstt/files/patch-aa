@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 25 11:21:12 1998
-+++ Makefile	Wed Dec 23 19:32:02 1998
+--- Makefile.orig	Mon May 31 09:28:44 1999
++++ Makefile	Fri Mar 17 17:42:37 2000
 @@ -2,13 +2,13 @@
  MISCOPT =
  OPT = $(MISCOPT) $(MAXOPT)
@@ -7,7 +7,8 @@
 -CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
 +#CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
  #CFLAGS = -fprofile-arcs -ftest-coverage -DMAGNIFY=0
- CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
+-CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
++CFLAGS += -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
  #CFLAGS = -O -Wall -pedantic -DDEBUG $(MISCOPT)
  
 -LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
@@ -17,7 +18,7 @@
  
  CC = c++
  LD = c++
-@@ -55,8 +55,8 @@
+@@ -56,8 +56,8 @@
  	$(LD) -o $@ $(OBJS) xfstt.o encoding.o $(LFLAGS) -lm
  
  xfstt.o : xfstt.cpp xfstt.h ttf.h arch.h Makefile
