@@ -17,6 +17,4 @@ MANCOMPRESSED= no
 USE_GMAKE=     yes
 GNU_CONFIGURE= yes
 
-MAN1=	elf.1
-
 .include <bsd.port.mk>
