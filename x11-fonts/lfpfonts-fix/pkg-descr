@@ -8,5 +8,3 @@ $ xset fp rehash
 
 or by adding it to your X-server configuration file (usually
 /etc/X11/XF86Config) and restarting the X-server.
-
-WWW: http://dreamer.nitro.dk/linux/lfp/lfpfonts-fix.html
