@@ -6109,6 +6109,7 @@ radreport	ports/net/radreport
 radvd		ports/net/radvd
 ragel		ports/devel/ragel
 rain		src/games/rain
+rancid		ports/net/rancid
 rand		ports/textproc/rand
 random		src/games/random
 ranlib		src/usr.bin/ranlib
