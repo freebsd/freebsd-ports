@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sgmlformat
-# Version required:	1.0
+# Version required:	1.1
 # Date created:		July 16, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/18 15:46:19 jfieber Exp $
 #
 
-DISTNAME=	sgmlformat-1.0
+DISTNAME=	sgmlformat-1.1
 CATEGORIES=	textproc print
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
