@@ -4,16 +4,16 @@
  @c %**start of header
 -@setfilename automake.info
 -@settitle automake
-+@setfilename automake18.info
-+@settitle automake18
++@setfilename automake19.info
++@settitle automake19
  @setchapternewpage off
 @@ -36,3 +36,3 @@
  @direntry
 -* automake: (automake).		Making Makefile.in's.
-+* automake18: (automake18).		Making Makefile.in's.
++* automake19: (automake19).		Making Makefile.in's.
  @end direntry
 @@ -41,3 +41,3 @@
  @direntry
 -* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
-+* aclocal18: (automake18)Invoking aclocal.          Generating aclocal.m4.
++* aclocal19: (automake19)Invoking aclocal.          Generating aclocal.m4.
  @end direntry
