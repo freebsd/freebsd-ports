@@ -1,3 +1,7 @@
 bin/gdis
-share/gdis/gdis.lib
+%%PORTDOCS%%share/doc/gdis/CHANGELOG
+%%PORTDOCS%%share/doc/gdis/README
+%%PORTDOCS%%share/doc/gdis/TODO
+share/gdis/gdis.elements
 @dirrm share/gdis
+%%PORTDOCS%%@dirrm share/doc/gdis
