@@ -1,1 +1,8 @@
 bin/pfaedit
+share/pfaedit/Adobe-CNS1-3.cidmap
+share/pfaedit/Adobe-Identity-0.cidmap
+share/pfaedit/Adobe-Japan2-0.cidmap
+share/pfaedit/Adobe-GB1-4.cidmap
+share/pfaedit/Adobe-Japan1-4.cidmap
+share/pfaedit/Adobe-Korea1-2.cidmap
+@dirrm share/pfaedit
