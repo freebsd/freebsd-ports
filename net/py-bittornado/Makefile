@@ -8,7 +8,8 @@
 PORTNAME=	shadow-BitTorrent
 PORTVERSION=	5.8.11
 CATEGORIES?=	net python
-MASTER_SITES=	http://mediahost.inetsalestech.com/shadow/
+MASTER_SITES=	http://home.gil.com.au/~cbadsl/shadow/ \
+		http://mediahost.inetsalestech.com/shadow/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	BitTorrent-experimental-S-${PORTVERSION}
 
