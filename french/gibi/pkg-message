@@ -1,0 +1,19 @@
+Avertissement
+=============
+
+Toute personne chargeant le logiciel GIBI s'engage à ne l'utiliser qu'en
+couplage avec le logiciel Code_ASTER. Pour tout autre usage, un droit de
+licence est nécessaire.
+
+Contacter le C.E.A. à l'adresse : <kk2000@semt2.smts.cea.fr>.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Warning
+=======
+
+You can use GIBI freely in conjunction with Code_Aster (i.e. the FreeBSD
+port french/aster).
+
+If you want to use GIBI for any other purpose, you have to acquire a
+license: please contact <kk2000@semt2.smts.cea.fr>.
