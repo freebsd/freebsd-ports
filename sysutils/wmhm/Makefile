@@ -9,8 +9,8 @@ PORTNAME=	wmhm
 PORTVERSION=	1.45
 PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	ftp://muir.yi.org/pub/wmhm/ \
-		http://www.es.co.nz/~mmuir/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 
 MAINTAINER=	mmuir@cwnet.com
 
