@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.haskell.org/HaXml/ \
 PKGNAMEPREFIX=	hs-
 DISTNAME=	HaXml-${PORTVERSION}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
 USE_SIZE=	yes

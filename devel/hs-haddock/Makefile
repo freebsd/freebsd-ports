@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

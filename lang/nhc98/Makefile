@@ -16,7 +16,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-1.16-typesyn \
 		patch-1.16-ghc6
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A fully-fledged compiler for Haskell 98
 
 ONLY_FOR_ARCHS=	i386

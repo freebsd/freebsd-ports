@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cs.mu.oz.au/~bjpop/buddha/download/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A declarative debugger for Haskell 98
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

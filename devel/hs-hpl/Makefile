@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/ports/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	ports-${PORTVERSION}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Ports Library provides ports in Haskell
 
 BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5

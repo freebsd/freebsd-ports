@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.haskell.org/crypto/downloads/
 PKGNAMEPREFIX=	hs-
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell Cryptographic Library
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
