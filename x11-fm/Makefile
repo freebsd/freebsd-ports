@@ -15,6 +15,7 @@
     SUBDIR += offix-files
     SUBDIR += rox-base
     SUBDIR += rox-filer
+    SUBDIR += rox-session
     SUBDIR += systemg
     SUBDIR += tkdesk
     SUBDIR += vide

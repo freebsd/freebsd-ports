@@ -1,0 +1,16 @@
+apps/ROX-Session/AppIcon.xpm
+apps/ROX-Session/AppMenu
+apps/ROX-Session/AppRun
+apps/ROX-Session/FreeBSD-ix86/ROX-Session
+apps/ROX-Session/Help/COPYING
+apps/ROX-Session/Help/Changes
+apps/ROX-Session/Help/README
+apps/ROX-Session/Login
+apps/ROX-Session/MakeDefault.sh
+apps/ROX-Session/Setup
+apps/ROX-Session/Styles
+bin/rox-session
+@dirrm apps/ROX-Session/Help
+@dirrm apps/ROX-Session/FreeBSD-ix86
+@dirrm apps/ROX-Session
+@unexec rmdir %D/apps 2>/dev/null || true
