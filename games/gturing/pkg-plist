@@ -61,14 +61,9 @@ share/locale/vi/LC_MESSAGES/gturing-2.0.mo
 share/locale/wa/LC_MESSAGES/gturing-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gturing-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gturing-2.0.mo
-@dirrm share/gnome/pixmaps
 @dirrm share/gnome/omf/gturing
-@dirrm share/gnome/omf
 @dirrm share/gnome/help/gturing/C/figures
 @dirrm share/gnome/help/gturing/C
 @dirrm share/gnome/help/gturing
-@dirrm share/gnome/help
-@dirrm share/gnome/applications
-@dirrm share/gnome
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

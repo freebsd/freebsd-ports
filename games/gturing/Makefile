@@ -7,7 +7,7 @@
 
 PORTNAME=	gturing
 PORTVERSION=	0.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
@@ -30,6 +30,10 @@ EXAMPLEDIR=	${PREFIX}/share/examples/gturing
 EXAMPLES=	3ones2zeroes.tur  add.tur  bb3.tur  dashnumbers.tur  addbin.tur \
 		bb5.tur  dec2bin.tur  dec2bin_shift.tur  bb2.tur  bin2dec.tur \
 		bin2dec_shift.tur  sort.tur  subst.tur
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
 
 post-install:
 	${INSTALL} -d -o root -g wheel -m 0755 ${EXAMPLEDIR}
