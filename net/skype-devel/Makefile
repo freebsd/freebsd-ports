@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	1.0.0.1
+PORTVERSION=	1.0.0.7
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
