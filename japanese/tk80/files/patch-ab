@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Fri May  7 06:28:28 1999
-+++ Makefile.in	Fri May  7 06:32:11 1999
+--- Makefile.in.ORIG	Wed Dec  8 12:06:17 1999
++++ Makefile.in	Wed Dec  8 12:47:57 1999
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -48,7 +48,7 @@
  #TK_LIB_FILE = libtk.a
  
  TK_LIB_FLAG = @TK_LIB_FLAG@
-@@ -321,6 +328,10 @@
+@@ -318,6 +325,10 @@
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
@@ -59,7 +59,7 @@
  all: wish
  
  # The following target is configured by autoconf to generate either
-@@ -329,6 +340,14 @@
+@@ -326,6 +337,14 @@
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
  	$(RANLIB) ${TK_LIB_FILE}
@@ -74,7 +74,7 @@
  
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
-@@ -378,13 +397,13 @@
+@@ -375,13 +394,13 @@
  	TK_LIBRARY=$(TOP_DIR)/library; export TK_LIBRARY; \
  	./tktest
  
@@ -90,7 +90,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -398,13 +417,22 @@
+@@ -395,13 +414,22 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -114,7 +114,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -414,8 +442,18 @@
+@@ -411,8 +439,18 @@
  		else true; \
  		fi; \
  	    done;
@@ -135,7 +135,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -485,6 +523,7 @@
+@@ -482,6 +520,7 @@
  	    chmod 755 $(SCRIPT_INSTALL_DIR)/demos.jp/$$i; \
  	    done;
  	(cd $(SCRIPT_INSTALL_DIR)/demos.jp; \
@@ -143,7 +143,7 @@
  	    rm -rf images; \
  	    ln -s $(SCRIPT_INSTALL_DIR)/demos/images .)
  
-@@ -501,10 +540,10 @@
+@@ -498,10 +537,10 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -157,7 +157,7 @@
  	    done;
  	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(SRC_DIR)/doc; for i in *.3; \
-@@ -512,19 +551,26 @@
+@@ -509,19 +548,26 @@
  	    echo "Installing doc/$$i"; \
  	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \

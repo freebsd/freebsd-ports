@@ -1,5 +1,5 @@
---- configure.in.ORIG	Wed Mar 24 11:32:28 1999
-+++ configure.in	Wed Mar 24 11:32:37 1999
+--- configure.in.ORIG	Wed Dec  8 12:06:07 1999
++++ configure.in	Wed Dec  8 12:07:38 1999
 @@ -10,6 +10,7 @@
  TK_MINOR_VERSION=0
  TK_PATCH_LEVEL=".5"
@@ -28,19 +28,19 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -564,7 +567,11 @@
+@@ -575,7 +578,11 @@
      TK_SHARED_BUILD=1
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
 +    if test "X$PORTOBJFORMAT" = "Xelf"; then
-+    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} -Wl,-soname,\${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
++    MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} -Wl,-S,-soname=\${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
 +    else
      MAKE_LIB="\${SHLIB_LD} -o \${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
 +    fi
      RANLIB=":"
  else
      TK_SHARED_BUILD=0
-@@ -606,10 +613,12 @@
+@@ -617,10 +624,12 @@
  AC_SUBST(SHLIB_VERSION)
  AC_SUBST(TCL_BIN_DIR)
  AC_SUBST(TCL_BUILD_LIB_SPEC)
