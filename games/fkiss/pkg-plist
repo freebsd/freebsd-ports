@@ -1,3 +1,5 @@
 bin/fkiss
 share/examples/fkiss/frkismi4.lzh
+share/doc/ja/fkiss/fkiss.doc
 @dirrm share/examples/fkiss
+@dirrm share/doc/ja/fkiss
