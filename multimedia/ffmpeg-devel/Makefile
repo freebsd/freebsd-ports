@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -41,8 +42,6 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 ##
 ## arch detection
 ##
-CONFIGURE_ARGS+=        --cpu=${ARCH:L}
-#
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
 .endif
@@ -156,6 +155,11 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
 		${WRKSRC}/ffserver.c
+# we support "v4l" per default through Steve O'Hara-Smith's bktr(4)
+# patch
+	@${REINPLACE_CMD} -E -e \
+		's|^(v4l).*$$|\1="yes"|' \
+		${WRKSRC}/configure
 # malloc.h was deprecated in favor of stdlib.h
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
