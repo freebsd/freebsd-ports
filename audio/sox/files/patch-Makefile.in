@@ -1,0 +1,11 @@
+--- Makefile.in~	Sat Feb  8 08:39:19 2003
++++ Makefile.in	Thu Mar 27 22:24:53 2003
+@@ -28,7 +28,7 @@
+ GSM_LIB_1 = -lgsm
+ GSM_SUPPORT  = @GSM_SUPPORT@
+ 
+-CFLAGS	= @CFLAGS@ -I$(srcdir) -I$(builddir)
++CFLAGS	= @CFLAGS@ @CPPFLAGS@ -I$(srcdir) -I$(builddir)
+ LDFLAGS	= -L. -L./gsm @LDFLAGS@
+ LIBS	= -lst $(GSM_LIB_$(GSM_SUPPORT)) @LIBS@
+ 
