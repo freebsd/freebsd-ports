@@ -4,15 +4,15 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.69 1999/03/26 16:07:13 ache Exp $
+# $Id: Makefile,v 1.70 1999/04/15 05:53:43 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-19990413
 PKGNAME=        tinpre-1.4.19990413
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
-		ftp://nuxi.ucdavis.edu/pub/tin/pre-v1.4/ \
-		ftp://ftp.nuxi.com/pub/tin/pre-v1.4/
+		ftp://nuxi.ucdavis.edu/pub/tin/current/ \
+		ftp://ftp.nuxi.com/pub/tin/current/
 USE_BZIP2=      yes
 
 MAINTAINER=     ache@FreeBSD.org
