@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1998/10/13 02:20:19 jseger Exp $
+# $Id: Makefile,v 1.8 1998/12/01 09:16:45 asami Exp $
 #
 
 DISTNAME=	linux_devel-0.2
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MAINTAINER=	erich@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+ONLY_FOR_ARCHS=	i386
 
 NO_FILTER_SHLIBS=	yes
 

@@ -3,7 +3,7 @@
 # Date created:         3 Nov 1995
 # Whom:                 markm@FreeBSD.org
 #
-# $Id: Makefile,v 1.21 1998/10/09 01:29:00 asami Exp $
+# $Id: Makefile,v 1.22 1998/10/31 09:28:05 markm Exp $
 #
 
 DISTNAME=	linux_lib-2.6
@@ -11,6 +11,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	erich@FreeBSD.org
+
+ONLY_FOR_ARCHS=	i386
 
 PREFIX=		/compat/linux
 NO_MTREE=	yes
