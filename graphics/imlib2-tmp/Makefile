@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.19 1998/04/29 21:32:41 vanilla Exp $
+# $Id: Makefile,v 1.20 1998/05/04 20:22:44 jseger Exp $
 #
 
 DISTNAME=	imlib-1.3
@@ -20,7 +20,7 @@ LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png \
 		gtk\\.1\\.:${PORTSDIR}/x11/gtk
 
 USE_GMAKE=	yes
-USE_X11=	ues
+USE_X11=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib \
