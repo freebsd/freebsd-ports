@@ -16,6 +16,7 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/energymech.pm
 %%SITE_PERL%%/Pisg/Parser/Format/irssi.pm
 %%SITE_PERL%%/Pisg/Parser/Format/mIRC.pm
+%%SITE_PERL%%/Pisg/Parser/Format/mIRC6hack.pm
 %%SITE_PERL%%/Pisg/Parser/Format/ircle.pm
 %%SITE_PERL%%/Pisg/Parser/Format/psybnc.pm
 %%SITE_PERL%%/Pisg/Parser/Format/virc98.pm
