@@ -5,15 +5,13 @@ PREFIX?=	/usr/local
 SRCS=crypt.c setuid.c limit.c utime.c metaPackage.c
 
 CFLAGS+=-I${LOCALBASE}/include/tcl${TCL_DVER} -DUSE_TCL_STUBS \
-	-DTclhttpdbin_Init=${LIB}_Init -Wall -Werror
+	-DTclhttpdbin_Init=${LIBNAME}_Init -Wall -Werror
 LDADD+=-L${LOCALBASE}/lib -ltclstub${TCL_VER} -lcrypt
 
 .PATH:	${.CURDIR}/src ${FILESDIR}
 
-LIB=	Tclhttpdbin
-SHLIB_NAME=	lib${LIB}.so
-INTERNALLIB=	no need for static version
-NOPROFILE=	no need for profiling this
+LIBNAME=	Tclhttpdbin
+SHLIB_NAME=	lib${LIBNAME}.so
 
 ech:
 	@echo ${SHLIB_NAME}
