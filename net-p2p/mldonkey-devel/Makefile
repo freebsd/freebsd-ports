@@ -48,6 +48,12 @@ PLIST_SUB+=	CORE=""	GUICORE=""
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt FAQ.html \
 		Install.txt Readme.txt Todo.txt ed2k_links.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_CORE)
 	@${ECHO_MSG} "You can disable the GUI by defining WITHOUT_GUI."
@@ -93,4 +99,4 @@ install-user: extract
 		${HOME}/.mldonkey_gui_messages.ini
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

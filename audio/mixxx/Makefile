@@ -37,6 +37,14 @@ CONFIGURE_ENV=		QTDIR="${X11BASE}" \
 			NOPORTDOCS="${NOPORTDOCS}"
 MAKE_ENV=		QTDIR="${X11BASE}"
 
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=		--prefix=${PREFIX}
+
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|@LOCALBASE@|${LOCALBASE}|g' \
@@ -49,9 +57,5 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/Mixxx-Manual.pdf ${WRKSRC}/README ${DOCSDIR}
 .endif
-
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS=		--prefix=${PREFIX}
 
 .include <bsd.port.post.mk>
