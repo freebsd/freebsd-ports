@@ -8,8 +8,7 @@
 PORTNAME=	bwbasic
 PORTVERSION=	2.20p2
 CATEGORIES=	lang
-# mastersite disappeared in September 2002
-MASTER_SITES=	# ftp://ftp.rahul.net/pub2/rhn/www/files/
+MASTER_SITES=	http://www.nicholson.com/rhn/files/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,12 +23,12 @@ pre-patch:
 	cd ${WRKTOP} && ${MV} bwb-2.20-patch01/* ${WRKSUBDIR}
 	cd ${WRKTOP} && ${MV} bwb-2.20-patch02/* ${WRKSUBDIR}
 
-# This puts the documentation in ${PREFIX}/share/bwbasic, and the
-# test programs in ${PREFIX}/share/bwbasic/bwbtest.
-
+.if !defined(NOPORTDOCS)
 post-install:
-	-${MKDIR} ${PREFIX}/share/bwbasic
-	${CP} ${WRKSRC}/bwbasic.doc ${PREFIX}/share/bwbasic/
-	${CP} -r ${WRKSRC}/bwbtest ${PREFIX}/share/bwbasic/
+	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/bwbasic.doc ${DOCSDIR}
+	${CP} -r ${WRKSRC}/bwbtest ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
