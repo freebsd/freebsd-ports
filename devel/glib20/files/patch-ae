@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Feb 15 18:43:40 2002
-+++ configure	Wed Feb 27 09:37:41 2002
-@@ -16692,8 +16692,8 @@
+--- configure.orig	Fri Mar  8 17:54:21 2002
++++ configure	Mon Mar 11 10:21:32 2002
+@@ -16768,8 +16768,8 @@
  rm -f conftest.$ac_objext conftest.$ac_ext
  		fi
  		;;
@@ -14,30 +14,22 @@ $FreeBSD$
  
  		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
  		# -mthreads flag.
-@@ -16771,13 +16771,13 @@
-            	fi
+@@ -16849,7 +16849,7 @@
+ 	     *-*-openbsd* | *-*-freebsd*)
+ 	        # FreeBSD and OpenBSD want us to use the -pthread flag
+                 # instead of linking to -lc_r and libtool enforces that.
+-		G_THREAD_LIBS="-pthread"
++		G_THREAD_LIBS="$PTHREAD_LIBS"
  		;;
               *)
--		for thread_lib in "" pthread pthread32 pthreads c_r thread dce; do
-+		for thread_lib in "$PTHREAD_LIBS" "" pthread pthread32 pthreads c_r thread dce; do
- 			if test x"$thread_lib" = x; then
- 				add_thread_lib=""
- 				IN=""
- 			else
--				add_thread_lib="-l$thread_lib"
--				IN=" in -l$thread_lib"
-+				add_thread_lib="$thread_lib"
-+				IN=" in $thread_lib"
- 			fi
- 			if test x"$have_threads" = xposix; then
- 				defattr=0
-@@ -17974,13 +17974,13 @@
-    #
-    # Check for libiconv
-    #
--   echo "$as_me:17977: checking for libiconv_open in -liconv" >&5
+ 		for thread_lib in "" pthread pthread32 pthreads thread dce; do
+@@ -18048,13 +18048,13 @@
+ 
+     # Check if we have GNU libiconv
+     if test $found_iconv = "no"; then
+-      echo "$as_me:18051: checking for libiconv_open in -liconv" >&5
 -echo $ECHO_N "checking for libiconv_open in -liconv... $ECHO_C" >&6
-+   echo "$as_me:17977: checking for libiconv_open in -lgiconv" >&5
++      echo "$as_me:18051: checking for libiconv_open in -lgiconv" >&5
 +echo $ECHO_N "checking for libiconv_open in -lgiconv... $ECHO_C" >&6
  if test "${ac_cv_lib_iconv_libiconv_open+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
@@ -46,14 +38,76 @@ $FreeBSD$
 -LIBS="-liconv  $LIBS"
 +LIBS="-lgiconv  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 17985 "configure"
+ #line 18059 "configure"
  #include "confdefs.h"
-@@ -18042,7 +18042,7 @@
+@@ -18108,15 +18108,15 @@
  fi
  
- if test "x$with_libiconv" = "xyes" ; then
--  ICONV_LIBS="-liconv"
-+  ICONV_LIBS="-lgiconv"
-   cat >>confdefs.h <<\_ACEOF
- #define USE_LIBICONV 1
+     fi
+-    # Check if we have a iconv in -liconv, possibly from vendor
++    # Check if we have a iconv in -lgiconv, possibly from vendor
+     if test $found_iconv = "no"; then
+-      echo "$as_me:18113: checking for iconv_open in -liconv" >&5
+-echo $ECHO_N "checking for iconv_open in -liconv... $ECHO_C" >&6
++      echo "$as_me:18113: checking for iconv_open in -lgiconv" >&5
++echo $ECHO_N "checking for iconv_open in -lgiconv... $ECHO_C" >&6
+ if test "${ac_cv_lib_iconv_iconv_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-liconv  $LIBS"
++LIBS="-lgiconv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 18121 "configure"
+ #include "confdefs.h"
+@@ -18242,13 +18242,13 @@
+ 
+     ;;
+   gnu|yes)
+-    echo "$as_me:18245: checking for libiconv_open in -liconv" >&5
+-echo $ECHO_N "checking for libiconv_open in -liconv... $ECHO_C" >&6
++    echo "$as_me:18245: checking for libiconv_open in -lgiconv" >&5
++echo $ECHO_N "checking for libiconv_open in -lgiconv... $ECHO_C" >&6
+ if test "${ac_cv_lib_iconv_libiconv_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-liconv  $LIBS"
++LIBS="-lgiconv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 18253 "configure"
+ #include "confdefs.h"
+@@ -18303,13 +18303,13 @@
+ 
+     ;;
+   native)
+-    echo "$as_me:18306: checking for iconv_open in -liconv" >&5
+-echo $ECHO_N "checking for iconv_open in -liconv... $ECHO_C" >&6
++    echo "$as_me:18306: checking for iconv_open in -lgiconv" >&5
++echo $ECHO_N "checking for iconv_open in -lgiconv... $ECHO_C" >&6
+ if test "${ac_cv_lib_iconv_iconv_open+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-liconv  $LIBS"
++LIBS="-lgiconv  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 18314 "configure"
+ #include "confdefs.h"
+@@ -18373,14 +18373,14 @@
+ 
+ case $with_libiconv in
+   gnu)
+-    ICONV_LIBS="-liconv"
++    ICONV_LIBS="-lgiconv"
+     cat >>confdefs.h <<\_ACEOF
+ #define USE_LIBICONV_GNU Using GNU libiconv
+ _ACEOF
+ 
+     ;;
+   native)
+-    ICONV_LIBS="-liconv"
++    ICONV_LIBS="-lgiconv"
+     cat >>confdefs.h <<\_ACEOF
+ #define USE_LIBICONV_NATIVE Using a native implementation of iconv in a separate library
  _ACEOF
