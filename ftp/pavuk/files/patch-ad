@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 13 23:12:20 2000
++++ Makefile.in	Sun Feb 13 23:13:13 2000
+@@ -109,7 +109,7 @@
+ config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+ $(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
++	cd $(srcdir) && $(CONFIGURE_ENV) $(AUTOCONF)
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.

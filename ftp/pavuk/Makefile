@@ -18,7 +18,7 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-GNU_CONFIGURE=		yes
+USE_AUTOCONF=		yes
 
 .if defined(NO_X11)
 CONFIGURE_ARGS=		--disable-gtk
@@ -28,6 +28,19 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 .endif
 
 USE_GMAKE=		yes
+
+.if defined(USE_SSL)
+USE_OPENSSL=	RSA
+.else
+CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(OPENSSL_RSAREF)
+CONFIGURE_ENV+=		EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref" \
+			OPENSSLLIB=${OPENSSLLIB}
+.endif
 
 MAN1=			pavuk.1
 
@@ -51,4 +64,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

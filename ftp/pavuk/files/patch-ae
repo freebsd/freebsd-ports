@@ -1,0 +1,18 @@
+--- configure.in.orig	Sun Jul 25 15:18:07 1999
++++ configure.in	Thu Feb 10 16:30:46 2000
+@@ -197,14 +197,14 @@
+ fi
+ 
+ if eval "test x$WITH_SSL = xyes"; then
+-	AC_CHECK_LIB(ssl, SSLv23_client_method, SSL_LIBS="-lssl", ,"-lcrypto")
++	AC_CHECK_LIB(ssl, SSLv23_client_method, SSL_LIBS="-lssl", ,-lcrypto $EXTRA_SSL_LIBS)
+ 	if test -n "$SSL_LIBS"; then
+ 		AC_CHECK_HEADER(ssl.h, SSLEAY=yes, SSLEAY=no)
+ 		AC_CHECK_HEADER(openssl/ssl.h, OPENSSL=yes, OPENSSL=no)
+ 		if eval "test x$SSLEAY = xno -a  x$OPENSSL = xno"; then
+ 			AC_WARN("SSLeay headers not found --\> use --disable-ssl option or set --with-ssl-includes to apropriate location")
+ 		fi
+-		AC_CHECK_LIB(crypto, SSLeay, SSL_LIBS="$SSL_LIBS -lcrypto", SSL_LIBS='')
++		AC_CHECK_LIB(crypto, SSLeay, SSL_LIBS="$SSL_LIBS -lcrypto $EXTRA_SSL_LIBS", SSL_LIBS='', $EXTRA_SSL_LIBS)
+ 	fi
+ fi
