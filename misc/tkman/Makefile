@@ -1,19 +1,19 @@
 # New ports collection makefile for:	tkman
-# Version required:     1.7.5
+# Version required:     1.8b5
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.15 1996/01/18 15:30:33 tg Exp $
+# $Id: Makefile,v 1.16 1996/06/15 06:24:23 asami Exp $
 #
 
-DISTNAME=	tkman-1.7.5
+DISTNAME=	tkman-1.8b5
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+MAINTAINER=	tg@freebsd.org
 
-LIB_DEPENDS=	tk40\\.1\\.:${PORTSDIR}/x11/tk4
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
 		glimpse:${PORTSDIR}/misc/glimpse
 
