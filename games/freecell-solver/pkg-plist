@@ -11,7 +11,17 @@ include/freecell-solver/fcs_enums.h
 include/freecell-solver/fcs_move.h
 include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
-lib/libfreecell-solver.la
 lib/libfreecell-solver.so
-lib/libfreecell-solver.so.4
+lib/libfreecell-solver.so.5
+share/freecell-solver/presetrc
+share/freecell-solver/presets/abra-kadabra.sh
+share/freecell-solver/presets/cool-jives.sh
+share/freecell-solver/presets/crooked-nose.sh
+share/freecell-solver/presets/fools-gold.sh
+share/freecell-solver/presets/hello-world.sh
+share/freecell-solver/presets/john_galt_line-500.sh
+share/freecell-solver/presets/rin-tin-tin.sh
+share/freecell-solver/presets/yellow-brick-road.sh
+@dirrm share/freecell-solver/presets
+@dirrm share/freecell-solver
 @dirrm include/freecell-solver
