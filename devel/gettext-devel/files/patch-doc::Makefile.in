@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig	Wed May 23 23:48:53 2001
++++ doc/Makefile.in	Tue May 29 11:38:28 2001
+@@ -97,7 +97,7 @@
+ aclocaldir = @aclocaldir@
+ lispdir = @lispdir@
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ dvidir = $(docdir)
+ psdir = $(docdir)
+ pdfdir = $(docdir)
+@@ -108,7 +108,7 @@
+ SED = sed
+ RM = rm -f
+ 
+-MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@
++MAKEINFO = env LANG= LANGUAGE= @MAKEINFO@ --no-split
+ 
+ info_TEXINFOS = gettext.texi
+ gettext_TEXINFOS = iso-639.texi iso-3166.texi

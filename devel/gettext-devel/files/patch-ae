@@ -1,6 +1,9 @@
---- configure.orig	Fri May  1 07:48:25 1998
-+++ configure	Wed Feb 17 02:05:55 1999
-@@ -837,13 +837,13 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue May 29 12:17:37 2001
++++ configure	Tue May 29 12:19:59 2001
+@@ -980,13 +980,13 @@
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -18,8 +21,8 @@
 +#fi
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
- echo "configure:850: checking for working autoconf" >&5
-@@ -863,13 +863,13 @@
+ echo "configure:993: checking for working autoconf" >&5
+@@ -1006,13 +1006,13 @@
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -37,17 +40,8 @@
 +#fi
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
- echo "configure:876: checking for working autoheader" >&5
-@@ -3958,7 +3958,7 @@
-    fi
-    
- 
--      l=
-+      l=l
-    
- 
-          test -d po || mkdir po
-@@ -4004,7 +4004,7 @@
+ echo "configure:1019: checking for working autoheader" >&5
+@@ -4855,7 +4855,7 @@
    ;;
  esac
  fi
@@ -56,3 +50,18 @@
  if test -n "$EMACS"; then
    echo "$ac_t""$EMACS" 1>&6
  else
+@@ -5157,10 +5157,10 @@
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@PACKAGE@%$PACKAGE%g
+ s%@VERSION@%$VERSION%g
+-s%@ACLOCAL@%$ACLOCAL%g
+-s%@AUTOCONF@%$AUTOCONF%g
+-s%@AUTOMAKE@%$AUTOMAKE%g
+-s%@AUTOHEADER@%$AUTOHEADER%g
++s%@ACLOCAL@%/usr/bin/true%g
++s%@AUTOCONF@%/usr/bin/true%g
++s%@AUTOMAKE@%/usr/bin/true%g
++s%@AUTOHEADER@%/usr/bin/true%g
+ s%@MAKEINFO@%$MAKEINFO%g
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@CC@%$CC%g

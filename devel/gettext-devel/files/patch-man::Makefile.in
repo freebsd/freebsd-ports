@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- man/Makefile.in	2001/05/29 08:45:39	1.1
++++ man/Makefile.in	2001/05/29 08:46:06
+@@ -101,7 +101,7 @@
+ 
+ VERSION = @VERSION@
+ mandir = @mandir@
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ htmldir = $(docdir)
+ 
+ AUTOMAKE_OPTIONS = 1.2 gnits
