@@ -8,8 +8,8 @@
 PORTNAME=	e-uae
 PORTVERSION=	0.8.27
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION}/
-#DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION}/ \
+		http://www.energyhq.es.eu.org/files/
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
