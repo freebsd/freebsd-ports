@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/
 
 MAINTAINER=	coda@cs.cmu.edu
 
-LIB_DEPENDS=	lwp.1:${PORTSDIR}/devel/lwp
+LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
