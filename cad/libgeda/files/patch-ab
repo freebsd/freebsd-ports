@@ -1,0 +1,85 @@
+*** src/s_cue_20010304.c	Mon Mar  5 21:11:17 2001
+--- src/s_cue.c	Mon Mar  5 21:11:24 2001
+***************
+*** 63,68 ****
+--- 63,69 ----
+      fprintf(fp, "%d %d fbox\n", offset2, offset2);
+  }
+  
++ 
+  void s_cue_postscript_fillcircle(TOPLEVEL * w_current, FILE * fp, int x,
+  				 int y)
+  {
+***************
+*** 77,82 ****
+--- 78,86 ----
+      fprintf(fp, "fill\n");
+  }
+  
++ 
++ #ifdef HAS_LIBGDGEDA
++ 
+  void s_cue_image_fillbox(TOPLEVEL * w_current, OBJECT * object, int world_x,
+  			 int world_y)
+  {
+***************
+*** 131,136 ****
+--- 135,143 ----
+  
+  }
+  
++ #endif
++ 
++ 
+  void s_cue_output_all(TOPLEVEL * w_current, OBJECT * head, FILE * fp,
+  		      int type)
+  {
+***************
+*** 206,221 ****
+--- 213,232 ----
+  	    if (count < 1) {	/* Didn't find anything connected there */
+  		if (output_type == POSTSCRIPT) {
+  		    s_cue_postscript_fillbox(w_current, fp, x, y);
++ #ifdef HAS_LIBGDGEDA
+  		} else if (output_type == PNG) {
+  		    s_cue_image_fillbox(w_current, object, x, y);
++ #endif
+  		}
+  
+  
+  	    } else if (count >= 2) {
+  		if (output_type == POSTSCRIPT) {
+  		    s_cue_postscript_fillcircle(w_current, fp, x, y);
++ #ifdef HAS_LIBGDGEDA
+  		} else if (output_type == PNG) {
+  		    s_cue_image_fillcircle(w_current, x, y);
++ #endif
+  		}
+  	    }
+  	}
+***************
+*** 224,231 ****
+--- 235,244 ----
+      case (CONN_MIDPOINT):
+  	if (output_type == POSTSCRIPT) {
+  	    s_cue_postscript_fillcircle(w_current, fp, x, y);
++ #ifdef HAS_LIBGDGEDA
+  	} else if (output_type == PNG) {
+  	    s_cue_image_fillcircle(w_current, x, y);
++ #endif
+  	}
+      }
+  
+***************
+*** 250,257 ****
+--- 263,272 ----
+  	    y = conn->y;
+  	    if (output_type == POSTSCRIPT) {
+  		s_cue_postscript_fillcircle(w_current, fp, x, y);
++ #ifdef HAS_LIBGDGEDA
+  	    } else if (output_type == PNG) {
+  		s_cue_image_fillcircle(w_current, x, y);
++ #endif
+  	    }
+  	    break;
+  	}
