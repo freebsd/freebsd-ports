@@ -1,0 +1,13 @@
+@owner games
+@mode 4755
+bin/yamsweeper
+@exec mkdir %D/lib/X11/yamsweeper && chmod 755 %D/lib/X11/yamsweeper && chown games.bin %D/lib/X11/yamsweeper
+lib/X11/yamsweeper/yams.log
+@unexec rm -rf %D/lib/X11/yamsweeper
+@mode 444
+@owner bin
+man/man1/yamsweeper.1.gz
+@cwd /usr/X11R6
+@mode 444
+@owner games
+lib/X11/app-defaults/Yamsweeper
