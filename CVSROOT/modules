@@ -10583,6 +10583,7 @@ ss		ports/math/ss
 ssamtse		ports/games/ssamtse
 ssc		ports/games/ssc
 sscalc		ports/astro/sscalc
+sscep		ports/security/sscep
 ssed		ports/editors/ssed
 ssh		ports/security/ssh
 ssh-gui		ports/security/ssh-gui
