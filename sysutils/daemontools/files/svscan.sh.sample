@@ -49,8 +49,8 @@
 name="svscan"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/svscan"
-svscan_enable="NO"
-svscan_servicedir="%%SERVICEDIR%%"
+svscan_enable=${svscan_enable-"NO"}
+svscan_servicedir=${svscan_servicedir-"/var/service"}
 
 start_cmd="svscan_start"
 stop_postcmd="svscan_stop_post"
@@ -60,15 +60,15 @@ load_rc_config $name
 required_dirs="${svscan_servicedir}"
 
 svscan_start () {
+	echo "Starting svscan."
 	/usr/bin/env \
 	PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-	/usr/sbin/daemon -f /bin/sh -c "$command $svscan_servicedir | %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ 2>&1 &"
-	echo "Starting svscan."
+	/usr/sbin/daemon -f /bin/sh -c "$command $svscan_servicedir 2>&1 | %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &"
 }
 
 svscan_stop_post () {
 	echo "Stopping svscan."
-	%%PREFIX%%/bin/svc -dx `/bin/ls -d $svscan_servicedir/* $svscan_servicedir/*/log 2>/dev/null`
+	find -L "$svscan_servicedir" -maxdepth 2 -type d \( -depth 1 -or \( -depth 2 -name 'log' \) \) -print0 | xargs -0 %%PREFIX%%/bin/svc -dx
 }
 
 run_rc_command "$1"
