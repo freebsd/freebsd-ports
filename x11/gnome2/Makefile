@@ -35,7 +35,8 @@ RUN_DEPENDS=	battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gdm:${PORTSDIR}/x11/gdm2 \
 		${X11BASE}/share/themes/Metal/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gtk-engines2 \
 		nautilus:${PORTSDIR}/x11-fm/nautilus2 \
-		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml
+		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml \
+		xscreensaver:${PORTSDIR}/x11/xscreensaver
 
 NO_BUILD=	yes
 
