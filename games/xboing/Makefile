@@ -8,5 +8,6 @@ DISTNAME=	xboing2.2
 EXTRACT_SUFX=	.tar.gz
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.icm.edu.pl/pub/X11/contrib/games/
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 .include <bsd.port.mk>
