@@ -3,13 +3,14 @@
 # Date created:        25 March 1997
 # Whom:                Soren Dossing <sauber@netcom.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 05:47:00 asami Exp $
+# $Id: Makefile,v 1.2 1997/06/29 11:51:02 obrien Exp $
 #
 
 DISTNAME=      WebStone-2.0
 PKGNAME=       webstone-2.0.1
 CATEGORIES=    www benchmarks
-MASTER_SITES=  http://www.sgi.com/Products/WebFORCE/WebStone/
+#WebStone no longer distributed by SGi
+#MASTER_SITES=  http://www.sgi.com/Products/WebFORCE/WebStone/
 
 MAINTAINER=    sauber@netcom.com
 
