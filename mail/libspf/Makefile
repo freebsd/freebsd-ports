@@ -14,9 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 MAINTAINER=	daniel@roe.ch
 COMMENT=	Sender Policy Framework (SPF) library and client
 
-# Require getopt_long_only - USE_GETOPT_LONG is *not* sufficient
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.25
 USE_GMAKE=	yes
@@ -24,8 +22,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LIBSPF_REV=	1
 PLIST_SUB=	PORTNAME=${PORTNAME} LIBSPF_REV=${LIBSPF_REV}
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${WRKSRC}"
+LDFLAGS+=	-L${WRKSRC}
 
 # Supported tunables:
 #
@@ -70,18 +67,17 @@ post-patch:
 	    -e 's,^CFLAGS:=.*,CFLAGS+=-Wall -D_BSD_SOURCE ${SPF_CFLAGS},' \
 	    -e 's/^CPPFLAGS:=/#CPPFLAGS:=/' \
 	    -e 's/^LDFLAGS:=/#LDFLAGS:=/' \
-	    -e 's/make/gmake/g' \
+	    -e 's/make /${GMAKE} /g' \
 	    -e 's/-lresolv//g' \
 	    -e 's/libspf.a : -lc/libspf.a :/g' \
 	    -e 's/libspf\.so\.1\.0\.1/libspf.so.${LIBSPF_REV}/g' \
 	    -e 's/-soname,libspf\.so\.1/-soname,libspf.so.${LIBSPF_REV}/g' \
 	    ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
-	    -e 's/^CFLAGS:=/#CFLAGS:=/' \
-	    -e 's/^CPPFLAGS:=/#CPPFLAGS:=/' \
-	    -e 's/^LDFLAGS:=/#LDFLAGS:=/' \
-	    -e 's/make/gmake/g' \
-	    -e 's/\(-o spfquery ..\)/\1 -lgnugetopt/g' \
+	    -e 's,^CFLAGS:=,CFLAGS:=${CFLAGS} ${CPPFLAGS},' \
+	    -e 's,^CPPFLAGS:=,CPPFLAGS:=${CPPFLAGS},' \
+	    -e 's,^LDFLAGS:=.*,LDFLAGS=${LDFLAGS},' \
+	    -e 's/make /${GMAKE} /g' \
 	    -e 's/-o spfquery/-o spfquery-${PORTNAME}/g' \
 	    ${WRKSRC}/tools/Makefile
 	@${REINPLACE_CMD} \
@@ -93,6 +89,8 @@ post-patch:
 	    ${WRKSRC}/util.h
 	@${REINPLACE_CMD} \
 	    -e 's/spfquery /spfquery-${PORTNAME} /' \
+	    -e 's/getopt_long_only/getopt_long/g' \
+	    -E -e '/stderr/s/ -([a-z]{2,})/ --\1/g' \
 	    ${WRKSRC}/tools/spfquery.c
 
 post-build:
