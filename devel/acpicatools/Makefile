@@ -17,4 +17,7 @@ NO_WRKSUBDIR=	yes
 
 MAINTAINER=	iwasaki@FreeBSD.org
 
+pre-install:
+		@${MKDIR} ${PREFIX}/man/man8
+
 .include <bsd.port.mk>
