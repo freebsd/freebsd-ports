@@ -219,23 +219,42 @@ MASTER_SITE_SOURCEFORGE+= \
 
 MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
+	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.nuri.net/pub/Linux/metalab/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/%SUBDIR%/ \
-	ftp://ftp.rz.uni-wuerzburg.de/pub/linux/MIRROR.sunsite/%SUBDIR%/ \
+	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/%SUBDIR%/ \
+	ftp://ftp.univie.ac.at/systems/linux/metalab/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.sun.ac.za/pub/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.nuri.net/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/%SUBDIR%/ \
+	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/%SUBDIR%/ \
+	ftp://ftp.uni-jena.de/pub/linux/MIRROR.sunsite/%SUBDIR%/ \
+	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/%SUBDIR%/ \
+	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.rediris.es/software/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.uniovi.es/pub1/linux/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.medasys-digital-systems.fr/pub1/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub5/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
+	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/%SUBDIR%/ \
+	ftp://ftp.man.poznan.pl/vols/vol1/sunsite/%SUBDIR%/ \
+	ftp://ftp.pku.edu.cn/pub/linux/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
-	ftp://ftp.u-aizu.ac.jp/pub/os/Linux/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/linux/sunsite-unc/%SUBDIR%/ \
+	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/vol/2/metalab/%SUBDIR%/ \
-	ftp://sunsite.anu.edu.au/mnt/disk1/linux/metalab/%SUBDIR%/ \
-	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/ \
-	http://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.nluug.nl/vol/3/metalab/%SUBDIR%/ \
+	ftp://software.anu.edu.au/pub/linux/metalab/%SUBDIR%/ \
+	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_TCLTK+= \
