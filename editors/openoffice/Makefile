@@ -187,6 +187,19 @@ pre-fetch:
 	@${ECHO} "OO.org debug support.
 	@${ECHO}
 .endif
+.if !defined(WITH_TTF_BYTECODE_ENABLED)
+	@${ECHO}
+	@${ECHO} "You may set WITH_TTF_BYTECODE_ENABLED=YES"
+	@${ECHO} "if you like to use the Freetype library to"
+	@${ECHO} "render TTF fonts. Normally the TTF lib is"
+	@${ECHO} "not used to render fonts."
+	@${ECHO}
+	@${ECHO} "If you have licensed the Apple patents"
+	@${ECHO} "US05155805 US05159668 and US05325479"
+	@${ECHO} "you can enable this option to get better"
+	@${ECHO} "quality of glyphs at small bitmap sizes."
+	@${ECHO}
+.endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
 	@${ECHO} "OS-VERSION ${OSVERSION} too low"
@@ -268,6 +281,15 @@ post-extract:
 	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 
 post-patch:
+.if defined(WITH_TTF_BYTECODE_ENABLED)
+	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
+		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
+		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
+			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
+		fi; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype::patch ; \
+	fi
+.endif
 .if defined(WITH_DEBUG)
 	@if [ "`echo ${PATCHDIR}/debugpatch-*`" != "${PATCHDIR}/debugpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional debug ${OPSYS} patches for ${PKGNAME}" ; \
