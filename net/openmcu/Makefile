@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	openmcu
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openmcu_1.0.7
+DISTNAME=	openmcu_1.0.8
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NOCLEANDEPENDS=	yes
 
 USE_NEWGCC=	yes
-USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
