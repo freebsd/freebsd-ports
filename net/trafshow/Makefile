@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ryan@sasknow.com
 COMMENT=	Full screen visualization of network traffic
 
+CONFLICTS=	trafshow-4.*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TRAFSHOW_SLANG) || \

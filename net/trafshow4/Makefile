@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ryan@sasknow.com
 COMMENT=	Full screen visualization of network traffic
 
+CONFLICTS=	trafshow-3.*
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TRAFSHOW_SLANG) || \
