@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	tf
-PORTVERSION=	5.0a14
+PORTVERSION=	5.0b2
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
 		ftp://ftp.minet.uni-jena.de/pub/tf/
-DISTNAME=	tf-50a14
+DISTVERSION=	${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A popular programmable MUD client, with macro support and more
