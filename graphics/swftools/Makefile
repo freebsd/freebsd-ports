@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.quiss.org/swftools/
 
@@ -16,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -24,8 +24,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGSS="-L${LOCALBASE}/lib"
 
-MAN1=	font2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 swfcombine.1 swfdump.1 \
-	swfextract.1 swfstrings.1 wav2swf.1
+MAN1=	font2swf.1 jpeg2swf.1 pdf2swf.1 png2swf.1 swfbbox.1 swfc.1 swfcombine.1 \
+	swfdump.1 swfextract.1 swfstrings.1 wav2swf.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O | |g' ${WRKSRC}/configure
