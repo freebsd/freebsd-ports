@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTVERSION=	2.1.10
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/ \
@@ -92,16 +92,19 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-06.txt \
-	draft-ietf-cat-sasl-gssapi-05.txt draft-myers-saslrev-02.txt \
-	draft-sasl-login.txt rfc1321.txt rfc1939.txt rfc2104.txt \
-	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
-	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
-	server-plugin-flow.fig testing.txt
+	draft-ietf-cat-sasl-gssapi-05.txt draft-melnikov-rfc2831bis-02.txt \
+	draft-myers-saslrev-02.txt draft-nerenberg-sasl-crammd5-03.txt \
+	draft-newman-sasl-c-api-00.txt draft-sasl-login.txt \
+	draft-zeilenga-sasl-anon-01.txt draft-zeilenga-sasl-plain-01.txt \
+	rfc1321.txt rfc1939.txt rfc2104.txt rfc2195.txt rfc2222.txt \
+	rfc2243.txt rfc2245.txt rfc2289.txt rfc2444.txt rfc2595.txt \
+	rfc2831.txt rfc2945.txt rfc3174.txt server-plugin-flow.fig \
+	testing.txt
 
 SASLAUTHD_DOCS=	AUTHORS COPYING ChangeLog INSTALL LDAP_SASLAUTHD NEWS README
 
-HTDOCS=	advanced appconvert gssapi index install macosx options \
-	plugprog programming readme sysadmin upgrading
+HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
+	options plugprog programming readme sysadmin upgrading
 
 PLIST_SUB=	PREFIX=${PREFIX} \
 		OTP=${OTP} \
