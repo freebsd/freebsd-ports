@@ -1,0 +1,7 @@
+chord2html is a small Perl script to convert CHORD input files (the .chopro
+files in OLGA) to HTML. The HTML files are similar to the PostScript documents
+produced by CHORD; chord2html reads a text file containing the lyrics and
+chords of a song to produce a page with chord names above the words and a
+graphical representation of the chords at the end of the songs.
+
+WWW: http://helllabs.org/~claudio/chord/
