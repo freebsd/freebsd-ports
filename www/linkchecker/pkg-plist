@@ -89,6 +89,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.py
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/httplib2.py
+%%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/httplib2.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.py
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/i18n.pyo
@@ -154,16 +157,16 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/log
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/parser
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck
-%%DATADIR%%/examples/check.js
-%%DATADIR%%/examples/index.html
-%%DATADIR%%/examples/lc.cgi
-%%DATADIR%%/examples/lc.fcgi
-%%DATADIR%%/examples/lc.sz_fcgi
-%%DATADIR%%/examples/lc_cgi.html.de
-%%DATADIR%%/examples/lc_cgi.html.en
-%%DATADIR%%/examples/leer.html.de
-%%DATADIR%%/examples/leer.html.en
-%%DATADIR%%/examples/linkchecker.bat
+%%EXAMPLESDIR%%/check.js
+%%EXAMPLESDIR%%/index.html
+%%EXAMPLESDIR%%/lc.cgi
+%%EXAMPLESDIR%%/lc.fcgi
+%%EXAMPLESDIR%%/lc.sz_fcgi
+%%EXAMPLESDIR%%/lc_cgi.html.de
+%%EXAMPLESDIR%%/lc_cgi.html.en
+%%EXAMPLESDIR%%/leer.html.de
+%%EXAMPLESDIR%%/leer.html.en
+%%EXAMPLESDIR%%/linkchecker.bat
 %%DATADIR%%/linkcheckerrc
-@dirrm %%DATADIR%%/examples
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
