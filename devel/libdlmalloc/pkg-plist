@@ -1,5 +1,6 @@
 lib/libdlmalloc.a
 @exec ranlib %D/%F
+lib/libdlmalloc.so
 lib/libdlmalloc.so.2.6
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
