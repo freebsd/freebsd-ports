@@ -1,12 +1,12 @@
 # Ports collection Makefile for:	heimdal
-# Version required:			0.2d
+# Version required:			0.2j
 # Date created:				10/23/1999
 # Whom:					nectar@FreeBSD.ORG
 #
 # $FreeBSD$
 #
 
-DISTNAME=		heimdal-0.2d
+DISTNAME=		heimdal-0.2j
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -28,7 +28,6 @@ MAN8=			hprop.8 hpropd.8 kdc.8 kpasswdd.8 kstash.8 ktutil.8 \
 			push.8
 
 USE_LIBTOOL=		YES
-USE_GMAKE=		YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
 
 .if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
