@@ -15,4 +15,4 @@ MASTERDIR=	${.CURDIR}/../../devel/pcl-cvs-emacs
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
