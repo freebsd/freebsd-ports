@@ -4,14 +4,19 @@ GZIP_CMD?=	gzip
 MKBOLD_CMD?=	mkbold
 MKITALIC_CMD?=	mkitalic
 
+CAT?=		/bin/cat
 CP?=		/bin/cp
 PATCH?=		/usr/bin/patch
 SED?=		/usr/bin/sed
 
 DIST_ALL=	10x20L2b.bdf 10x20L2m.bdf 10x20L3b.bdf 10x20L3m.bdf \
-		10x20L9b.bdf 10x20L9m.bdf 10x20b.bdf 10x20m.bdf \
+		10x20L4b.bdf 10x20L4m.bdf 10x20L5b.bdf 10x20L5m.bdf \
+		10x20L6b.bdf 10x20L6m.bdf 10x20L7b.bdf 10x20L7m.bdf \
+		10x20L8b.bdf 10x20L8m.bdf 10x20L9b.bdf 10x20L9m.bdf \
+		10x20L10b.bdf 10x20L10m.bdf 10x20b.bdf 10x20m.bdf \
 		10x20rkb.bdf 10x20rkm.bdf ipa-10x20b.bdf ipa-10x20m.bdf \
-		k20b.bdf k20m.bdf
+		k20b.bdf k20m.bdf \
+		10x20gm.bdf 10x20grkm.bdf k20gm.bdf
 
 MADE_BDF=	vk20b.bdf vk20m.bdf nk20b-1.bdf
 
@@ -47,7 +52,8 @@ nk20b-1.bdf: k20b.bdf newjis.diff
 fonts.alias: Makefile.dist
 	${SED} -n '/^.*echo \(.*\) >>.*$$/ s//\1/p' $> > $@
 	${SED} -n '/^.*echo \(.*\) >>.*$$/ s//\1/p' $> | ${SED} 's/-r-/-i-/g;s/\(^[^-][^ 	]*\) /\1i /' >> $@
-	egrep -iv '^(-kappa-[^ 	]*--20-|(v?k|a|r)20[mb]i?[ 	]|(ipa-)?10x20[mb]i?[ 	]|10x20(rk|L[2-9])[mb]i?[ 	])' ${PREFIX}/${FONTSDIR}/fonts.alias >> fonts.alias || true
+	${CAT} fonts.alias.ayu >> $@
+	egrep -iv '^(-(kappa|ayu)-[^ 	]*--20-|(v?k|a|r)20g?[mb]i?[ 	]*|(ipa-)?10x20g?(rk|L[1-9]0?)?[mb]i?[ 	]*)' ${PREFIX}/${FONTSDIR}/fonts.alias >> fonts.alias || true
 
 install:
 	mkdir -p ${PREFIX}/${FONTSDIR}
