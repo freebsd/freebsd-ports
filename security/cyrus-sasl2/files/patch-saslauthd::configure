@@ -1,0 +1,20 @@
+--- saslauthd/configure.orig	Mon Apr 14 20:07:50 2003
++++ saslauthd/configure	Tue Apr 15 01:39:33 2003
+@@ -3441,7 +3441,7 @@
+ 	    BDB_LIBADD=""
+ 	fi
+ 
+-        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
++        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+           do
+             echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
+ echo "configure:3448: checking for db_create in -l$dbname" >&5
+@@ -3832,7 +3832,7 @@
+ 	    BDB_LIBADD=""
+ 	fi
+ 
+-        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
++        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+           do
+             echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
+ echo "configure:3839: checking for db_create in -l$dbname" >&5
