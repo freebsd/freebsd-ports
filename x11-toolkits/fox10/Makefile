@@ -26,6 +26,8 @@ PATCH_DIST_STRIP=	-p1
 #EXTRA_PATCHES=	${PATCHDIR}/xunicode.patch-*
 
 BUILD_DEPENDS=	${X11BASE}/lib/libxunicode.a:${PORTSDIR}/converters/xunicode
+
+CONFIGURE_ENV=	X_CFLAGS=-DUSE_XUNICODE
 .endif
 
 USE_MESA=	yes
