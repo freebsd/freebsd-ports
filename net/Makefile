@@ -471,6 +471,7 @@
     SUBDIR += p5-NetPacket
     SUBDIR += p5-POE-Component-RRDTool
     SUBDIR += p5-Parallel-MPI
+    SUBDIR += p5-Parallel-Pvm
     SUBDIR += p5-PlRPC
     SUBDIR += p5-RPC-XML
     SUBDIR += p5-ResourcePool-Resource-Net-LDAP

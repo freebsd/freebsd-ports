@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Parallel/Pvm.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/Pvm.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/Pvm.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/code2symbol.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/code2text.al
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Parallel 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel 2>/dev/null || true
