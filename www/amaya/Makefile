@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	6.2
+PORTVERSION=	6.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gtk --without-graphic-libs --without-i18n
+CONFIGURE_ARGS=	--with-gtk --without-graphic-libs
 
 DICT?=		none
 

@@ -1,4 +1,5 @@
 Amaya/amaya/AmayaPage.html
+Amaya/amaya/AmayaPage.html.de
 Amaya/amaya/AmayaPage.html.fr
 Amaya/amaya/AmayaSrcSyncIndex.gif
 Amaya/amaya/Annot.conf
@@ -43,6 +44,11 @@ Amaya/amaya/TextFilePP.PRS
 Amaya/amaya/TextFilePPUS.PRS
 Amaya/amaya/TextFileT.TRA
 Amaya/amaya/TextFileUSL.PRS
+Amaya/amaya/Timeline.STR
+Amaya/amaya/Timeline.conf
+Amaya/amaya/TimelineP.PRS
+Amaya/amaya/TimelineT.TRA
+Amaya/amaya/TimelineTX.TRA
 Amaya/amaya/XLink.STR
 Amaya/amaya/XLink.en
 Amaya/amaya/XLinkP.PRS
@@ -58,10 +64,17 @@ Amaya/amaya/XMLT.TRA
 Amaya/amaya/XMLUSL.PRS
 Amaya/amaya/advice.png
 Amaya/amaya/amaya.png
+Amaya/amaya/anim_color_sh.png
+Amaya/amaya/anim_color_sh_db.png
+Amaya/amaya/anim_help_sh.png
+Amaya/amaya/anim_motion_sh.png
+Amaya/amaya/anim_motion_sh_db.png
 Amaya/amaya/annot.gif
 Amaya/amaya/annot.png
 Amaya/amaya/annotorp.gif
 Amaya/amaya/change.png
+Amaya/amaya/collapse1.png
+Amaya/amaya/collapse2.png
 Amaya/amaya/comment.png
 Amaya/amaya/example.png
 Amaya/amaya/explanation.png
@@ -71,7 +84,11 @@ Amaya/amaya/question.png
 Amaya/amaya/radio-s.gif
 Amaya/amaya/radio.gif
 Amaya/amaya/seealso.png
+Amaya/amaya/slider.gif
 Amaya/amaya/target.gif
+Amaya/amaya/timeline_arrow.gif
+Amaya/amaya/timeline_cross.gif
+Amaya/amaya/timelinetoolbar_sh4.png
 Amaya/amaya/toggle-s.gif
 Amaya/amaya/toggle.gif
 Amaya/annotlib/Annot.STR
@@ -82,6 +99,7 @@ Amaya/applis/bin/amaya
 @unexec rm -f %D/bin/amaya
 Amaya/applis/bin/print
 Amaya/config/XKeysymDB
+Amaya/config/amaya.emacs
 Amaya/config/amaya.keyboard
 Amaya/config/amaya.profiles
 Amaya/config/annot.schemas
@@ -99,6 +117,10 @@ Amaya/config/es-amayadialogue
 Amaya/config/es-amayamsg
 Amaya/config/es-corrdialogue
 Amaya/config/es-libdialogue
+Amaya/config/fi-amayadialogue
+Amaya/config/fi-amayamsg
+Amaya/config/fi-corrdialogue
+Amaya/config/fi-libdialogue
 Amaya/config/fr-amayadialogue
 Amaya/config/fr-amayamsg
 Amaya/config/fr-corrdialogue
@@ -107,10 +129,17 @@ Amaya/config/it-amayadialogue
 Amaya/config/it-amayamsg
 Amaya/config/it-corrdialogue
 Amaya/config/it-libdialogue
+Amaya/config/pt-amayadialogue
+Amaya/config/pt-amayamsg
+Amaya/config/pt-corrdialogue
+Amaya/config/pt-libdialogue
+Amaya/config/replytypes.rdf
+Amaya/config/thread.rdf
 Amaya/config/tr-amayadialogue
 Amaya/config/tr-amayamsg
 Amaya/config/tr-corrdialogue
 Amaya/config/tr-libdialogue
+Amaya/config/typeIcon.rdf
 Amaya/config/unix-thot.rc
 Amaya/dicopar/Eperso.dic
 Amaya/dicopar/Eprinc.dic
@@ -477,6 +506,7 @@ Amaya/doc/html/viewing/working_with_document_views.html
 Amaya/doc/html/viewing/working_with_document_views.html.de
 Amaya/doc/images/Back.gif
 Amaya/doc/images/Browser.gif
+Amaya/doc/images/BrowsingMenu-fr.gif
 Amaya/doc/images/CacheMenu-fr.gif
 Amaya/doc/images/CacheMenu.gif
 Amaya/doc/images/ColorMenu-de.gif
@@ -534,6 +564,7 @@ Amaya/doc/images/annotationwindow-de.png
 Amaya/doc/images/annotationwindow-es.png
 Amaya/doc/images/annotationwindow.png
 Amaya/doc/images/annotorp.png
+Amaya/doc/images/browsing_preferences.png
 Amaya/doc/images/cache_preferences-de.png
 Amaya/doc/images/cache_preferences.png
 Amaya/doc/images/check.gif
