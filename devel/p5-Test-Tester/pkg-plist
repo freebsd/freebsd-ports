@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester/.packlist
+%%SITE_PERL%%/Test/Tester.pm
+%%SITE_PERL%%/Test/Tester/Capture.pm
+%%SITE_PERL%%/Test/Tester/CaptureRunner.pm
+%%SITE_PERL%%/Test/Tester/Delegate.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Tester
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Test/Tester
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null || true
