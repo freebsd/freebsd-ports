@@ -19,6 +19,10 @@ USE_AUTOMAKE=	yes
 USE_BISON=	yes
 MAN1=		treecc.1
 
+pre-patch:
+	@${PERL} -pi -e 's|etc doc tests examples|etc doc|g ;'  \
+		${WRKSRC}/Makefile.*
+
 post-install:
 	@${LN} -sf treecc ${PREFIX}/bin/${DISTNAME}
 
