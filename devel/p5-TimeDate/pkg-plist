@@ -2,6 +2,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Date/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Austrian.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Czech.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Dutch.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language/English.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language/French.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language/German.pm
