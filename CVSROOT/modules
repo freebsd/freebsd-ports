@@ -1376,6 +1376,7 @@ dnrd		ports/dns/dnrd
 dns_balance	ports/dns/dns_balance
 dnsflood	ports/dns/dnsflood
 dnsmasq		ports/dns/dnsmasq
+dnsproxy	ports/dns/dnsproxy
 dnssecwalker	ports/dns/dnssecwalker
 dnstop		ports/dns/dnstop
 dnstracer	ports/dns/dnstracer
