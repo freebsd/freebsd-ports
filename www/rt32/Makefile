@@ -7,7 +7,7 @@
 
 PORTNAME=	rt3
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/
@@ -21,10 +21,7 @@ BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
 		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${ARCH_PERL}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/DBIx/DataSource.pm:${PORTSDIR}/databases/p5-DBIx-DataSource \
 		${SITE_PERL}/DBIx/SearchBuilder.pm:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
@@ -32,7 +29,7 @@ BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${ARCH_PERL}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/HTML/Formatter.pm:${PORTSDIR}/textproc/p5-HTML-Format \
+		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
 		${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/Locale/Maketext.pm:${PORTSDIR}/devel/p5-Locale-Maketext \
 		${SITE_PERL}/Locale/Maketext/Fuzzy.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Fuzzy \
@@ -50,7 +47,6 @@ BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
 		${ARCH_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
@@ -81,6 +77,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .if defined(WITH_APACHE2)
 APACHE_PORT?=	${PORTSDIR}/www/apache2
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_perl.so:${PORTSDIR}/www/mod_perl2
+DEPENDS_ARGS+=	WITHOUT_MODPERL=yes
+DEPENDS_ARGS+=	WITH_MODPERL2=yes
 .else
 APACHE_PORT?=	${PORTSDIR}/www/apache13
 BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
@@ -133,6 +131,7 @@ pre-install:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${RT_PATH}/README
+	@${INSTALL_SCRIPT} ${FILESDIR}/ap2mp2-fix.pl ${RT_PATH}/bin
 .if defined(UPGRADE)
 	@echo Upgrade of RT3 complete.
 .else
