@@ -3,10 +3,10 @@
 # Date created:		11 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id: Makefile,v 1.3 1999/06/28 02:20:06 billf Exp $
+# $Id: Makefile,v 1.4 1999/08/01 00:46:36 cpiazza Exp $
 #
 
-DISTNAME=	blackened-1.7.0
+DISTNAME=	blackened-${VERSION}
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/ \
 		http://www.psn.net/~andrews/blackened/
