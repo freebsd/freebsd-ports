@@ -64,6 +64,10 @@ CONFIGURE_ARGS+=--with-openldap=${LOCALBASE}
 CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+=--with-pic
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${GREP} -l '<db.h>' | \
 		${XARGS} ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
