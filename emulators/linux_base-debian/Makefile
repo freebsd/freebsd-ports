@@ -20,7 +20,7 @@ COMMENT=	Debian base set for the Linux mode
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	alpha amd64 i386
 
 RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
 
@@ -35,9 +35,10 @@ LATEST_LINK=	${PORTNAME:C/linux_base/linux32_base/}
 ARCH=		i386
 .endif
 
-DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}
+DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}-${ARCH}
 DISTDATE=	2002-07-18
 WRKSRC=		${WRKDIR}/var/cache/apt/archives
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 NO_BUILD=	yes
 NO_MTREE=	yes
 NO_FILTER_SHLIBS=	yes
