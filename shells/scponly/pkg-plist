@@ -1,1 +1,3 @@
-sbin/scponly
+bin/scponly
+etc/scponly/debuglevel
+@dirrm etc/scponly
