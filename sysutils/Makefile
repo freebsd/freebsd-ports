@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1997/06/18 08:38:52 tg Exp $
+# $Id: Makefile,v 1.22 1997/09/19 02:18:25 itojun Exp $
 #
 
     SUBDIR += LPRng
@@ -12,6 +12,7 @@
     SUBDIR += mkisofs
     SUBDIR += pib
     SUBDIR += rtty
+    SUBDIR += setquota
     SUBDIR += skill
     SUBDIR += socket
     SUBDIR += star
