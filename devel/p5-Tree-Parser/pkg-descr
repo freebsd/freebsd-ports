@@ -1,0 +1,11 @@
+This module can parse various types of input (formatted and containing
+hierarchal information) into a tree structures. It can also deparse the
+same tree structures back into a string. It accepts various types of input,
+such as; strings, filenames, array references. The tree structure is a
+hierarchy of Tree::Simple objects.
+
+WWW: http://search.cpan.org/dist/Tree-Parser/
+Author: Stevan Little <stevan@iinteractive.com>
+
+- Aaron Dalton
+aaron@daltons.ca
