@@ -226,6 +226,7 @@
     SUBDIR += kpacman
     SUBDIR += kpictorial
     SUBDIR += krosswordplayer
+    SUBDIR += kslide
     SUBDIR += ktritoc
     SUBDIR += kwappen
     SUBDIR += kxl

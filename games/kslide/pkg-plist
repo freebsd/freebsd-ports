@@ -1,0 +1,35 @@
+bin/kslide
+share/applnk/Applications/kslide.desktop
+share/apps/kslide/kslideui.rc
+share/apps/kslide/pics/frame0.png
+share/apps/kslide/pics/frame1.png
+share/apps/kslide/pics/frame2.png
+share/apps/kslide/pics/frame0m.png
+share/apps/kslide/pics/puzzle0.jpg
+share/apps/kslide/pics/puzzle1.jpg
+share/apps/kslide/pics/puzzle2.jpg
+share/apps/kslide/pics/puzzle3.jpg
+share/apps/kslide/pics/puzzle4.jpg
+share/apps/kslide/pics/puzzle5.jpg
+share/apps/kslide/pics/puzzle6.jpg
+share/apps/kslide/pics/puzzle7.jpg
+share/apps/kslide/pics/tiles0.png
+share/apps/kslide/pics/tiles1.png
+share/apps/kslide/pics/tiles2.png
+share/apps/kslide/pics/tiles0m.png
+share/apps/kslide/pics/kslide.jpg
+share/apps/kslide/pics/playername.jpg
+share/apps/kslide/pics/texture.jpg
+share/apps/kslide/pics/ball.png
+share/apps/kslide/pics/credits0.png
+share/apps/kslide/pics/credits1.png
+share/apps/kslide/pics/credits2.png
+share/apps/kslide/pics/credits3.png
+share/icons/hicolor/16x16/apps/kslide.png
+share/icons/hicolor/32x32/apps/kslide.png
+share/icons/hicolor/48x48/apps/kslide.png
+share/icons/locolor/16x16/apps/kslide.png
+share/icons/locolor/32x32/apps/kslide.png
+share/icons/hicolor/16x16/actions/solve.png
+@dirrm share/apps/kslide/pics
+@dirrm share/apps/kslide
