@@ -1,7 +1,7 @@
-*** Makefile.orig	Sun Aug 27 22:48:39 1995
---- Makefile	Wed Aug 30 19:36:13 1995
+*** Makefile.orig	Thu Sep  7 18:15:26 1995
+--- Makefile	Fri Sep 15 03:09:44 1995
 ***************
-*** 29,35 ****
+*** 30,36 ****
   MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
@@ -9,7 +9,7 @@
   
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
---- 29,35 ----
+--- 30,36 ----
   MAN_DIR = $(PREFIX)/man
   
   # Where to put the compression methods description
@@ -18,7 +18,7 @@
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
 ***************
-*** 50,57 ****
+*** 51,58 ****
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -27,7 +27,7 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
---- 50,59 ----
+--- 51,60 ----
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -39,50 +39,19 @@
   #
   # C compiler flags and libraries for each machine.
 ***************
-*** 236,242 ****
+*** 239,245 ****
   display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
-  st_virt$O
+  st_virt$O automaton$O
+  
+! all:    version.c config.h tracker${EXE} randomize${EXE} splitmod${EXE} doc
+  
+  config.h: $(CONFIG)config.h Makefile
+  	rm -f config.h
+--- 241,247 ----
+  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
+  st_virt$O automaton$O
   
 ! all:    version.c config.h tracker${EXE} randomize${EXE} splitmod${EXE}
   
   config.h: $(CONFIG)config.h Makefile
   	rm -f config.h
---- 238,244 ----
-  display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
-  st_virt$O
-  
-! all:    version.c config.h tracker${EXE} randomize${EXE}
-  
-  config.h: $(CONFIG)config.h Makefile
-  	rm -f config.h
-***************
-*** 248,261 ****
-  install: 
-  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
-  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
-- 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
-  	[ -f ${COMPRESSION_FILE} ] || \
-  		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
-  
-  install.man:
-  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
-  
-! 
-  
-  devel: 
-  	-rm -f $(BIN_DIR)/dtracker #$(BIN_DIR)/splitmod
---- 250,263 ----
-  install: 
-  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
-  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
-  	[ -f ${COMPRESSION_FILE} ] || \
-  		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
-  
-  install.man:
-  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
-  
-! install.info:
-! 	gzip < Docs/tracker.guide > $(PREFIX)/info/tracker.info.gz
-  
-  devel: 
-  	-rm -f $(BIN_DIR)/dtracker #$(BIN_DIR)/splitmod
