@@ -1,0 +1,9 @@
+lib/libiodbc.so.2
+lib/libiodbc.so
+lib/libiodbc.a
+include/isql.h
+include/isqlext.h
+include/isqltypes.h
+include/sql.h
+include/sqlext.h
+include/sqltypes.h

@@ -12,6 +12,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
+    SUBDIR += libiodbc
     SUBDIR += metakit
     SUBDIR += msql
     SUBDIR += mysql-editor
