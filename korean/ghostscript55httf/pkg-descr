@@ -10,13 +10,9 @@ This version can handle Korean(and Japanese) Truetype fonts
 using FreeType library. It also has some bugfix for correctly working 
 CID-Keyed fonts.
 
-Korean CID-Keyed fonts(Munhwa and MunhwaGothic) is provided by
-Adobe, and original Type 1 fonts is from Ministry of Culture and Sports
-of Korea Government. These fonts are free to use.
-
 GS with Korean Web page:
-	http://jazz.snu.ac.kr/~junker/work/gs-ko/
+	http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/
 
 --
 Ports by CHOI Junho <cjh@kr.freebsd.org>
-WWW: http://jazz.snu.ac.kr/~junker/work/gs-ko/
+WWW: http://www.kr.freebsd.org/~cjh/freetime/printings/gs-ko/

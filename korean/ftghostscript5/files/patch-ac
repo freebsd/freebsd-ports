@@ -1,0 +1,19 @@
+*** unix-end.mak.orig	Fri Dec 25 10:45:04 1998
+--- unix-end.mak	Fri Dec 25 10:47:40 1998
+***************
+*** 91,97 ****
+  	do if ( test -f $$f ); then $(INSTALL_PROGRAM) $$f $(scriptdir)/$$f; fi;\
+  	done'
+  
+! MAN1_PAGES=gs pdf2dsc pdf2ps ps2ascii ps2epsi ps2pdf
+  install-data: gs.1
+  	-mkdir $(mandir)
+  	-mkdir $(man1dir)
+--- 91,97 ----
+  	do if ( test -f $$f ); then $(INSTALL_PROGRAM) $$f $(scriptdir)/$$f; fi;\
+  	done'
+  
+! MAN1_PAGES=gs pdf2dsc pdf2ps ps2ascii ps2epsi ps2pdf gs-hpdj
+  install-data: gs.1
+  	-mkdir $(mandir)
+  	-mkdir $(man1dir)
