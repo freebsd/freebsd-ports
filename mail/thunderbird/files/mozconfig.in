@@ -16,6 +16,7 @@ ac_add_options --disable-profilesharing
 ac_add_options --enable-extensions=wallet,spellcheck
 ac_add_options --enable-necko-protocols=http,file,jar,viewsource,res,data
 ac_add_options --enable-image-decoders=png,gif,jpeg
+ac_add_options --enable-default-toolkit=gtk2
 ######################################################################
 # FBSD specific
 export CPPFLAGS="@CPPFLAGS@"
@@ -61,9 +62,4 @@ if test -z "$WITHOUT_XFT"; then
 else
     ac_add_options --disable-xft
 fi # test -z "$WITHOUT_XFT"
-if test -n "$WITH_GTK2"; then
-    ac_add_options --enable-default-toolkit=gtk2
-else
-    ac_add_options --enable-default-toolkit=gtk
-fi # test -n "$WITH_GTK2"
 ######################################################################
