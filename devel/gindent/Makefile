@@ -16,13 +16,20 @@ DISTNAME=	indent-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU indent
 
-USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DBERKELEY_DEFAULTS=1" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--program-prefix=g
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN1=		gindent.1
 INFO=		indent
