@@ -1,0 +1,6 @@
+--- po/LINGUAS.orig	Tue Mar 23 15:57:52 2004
++++ po/LINGUAS	Tue Mar 23 15:57:57 2004
+@@ -1,2 +1,2 @@
+ # Set of available languages.
+-da en@boldquot en@quot fr pl sr sv
++da fr pl sr sv

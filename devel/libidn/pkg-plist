@@ -10,6 +10,10 @@ lib/libidn.so.13
 libdata/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
+share/locale/da/LC_MESSAGES/libidn.mo
+share/locale/fr/LC_MESSAGES/libidn.mo
+share/locale/pl/LC_MESSAGES/libidn.mo
+share/locale/sr/LC_MESSAGES/libidn.mo
 share/locale/sv/LC_MESSAGES/libidn.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
