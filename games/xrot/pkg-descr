@@ -1,0 +1,12 @@
+A falling ball puzzle game for X. Rotate the playfield and use gravity
+to guide a ball around a maze toward the goal.
+
+Use right and left cursor keys to rotate the game screen.
+Down for less bounce.
+Up for jump.
+Space for speed up.
+Return to restart.
+ESC to return to the title.
+q to quit.
+
+Requires PseudoColor (256 colors).
