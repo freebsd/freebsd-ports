@@ -2574,6 +2574,7 @@ gnu-finger	ports/net/gnu-finger
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
 gnubg		ports/games/gnubg
+gnubiff		ports/mail/gnubiff
 gnuboy		ports/emulators/gnuboy
 gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
