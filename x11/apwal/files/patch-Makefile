@@ -1,21 +1,22 @@
---- Makefile.orig	Wed Nov 26 11:46:50 2003
-+++ Makefile	Wed Nov 26 12:20:34 2003
-@@ -5,11 +5,11 @@
+--- Makefile.orig	Sun Dec 19 21:23:27 2004
++++ Makefile	Thu Dec 23 10:05:09 2004
+@@ -5,8 +5,8 @@
  CFLAGS=-g -Wall -Werror `pkg-config --cflags gtk+-2.0 gthread-2.0` -DGTK_DISABLE_DEPRECATED -DAPWAL_DEBUG
  LDFLAGS=`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
  else
 -CFLAGS=-O2 `pkg-config --cflags gtk+-2.0 gthread-2.0`
 -LDFLAGS=-O2 `pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
 +CFLAGS+=`pkg-config --cflags gtk+-2.0 gthread-2.0`
-+LDFLAGS+=`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
++LDFLAGS+=-`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
  endif
  
--OBJS=main.o app.o launcher.o editor.o property.o \
-+OBJS=group_member.o main.o app.o launcher.o editor.o property.o \
-      gtkstuff.o sysstuff.o iconsel.o cereimg.o fromgtk2src/gtkmarshalers.o \
-      apwalapp.o iconsel_interface.o filesel.o xmlrc.o iconlist.o log.o about.o \
-      apwalpref.o 
-@@ -28,7 +28,7 @@
+ OBJS=main.o app.o launcher.o editor.o property.o \
+@@ -24,11 +24,11 @@
+ ifdef APWAL_DEBUG
+ all: checktraceformat apwal tags
+ apwal: $(OBJS)
+-	gcc -o $@ $^ $(LDFLAGS)
++	$(CC) -o $@ $^ $(LDFLAGS)
  else
  all: apwal
  apwal: $(OBJS)
