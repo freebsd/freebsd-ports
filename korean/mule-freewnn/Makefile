@@ -7,6 +7,7 @@
 
 CATEGORIES=	korean
 PKGNAMESUFFIX=	-freewnn
+COMMENT=	A multilingual emacs, with FreeWnn support built in (Only the executables)
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
 PKGDIR=		${.CURDIR}

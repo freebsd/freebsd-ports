@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-canna
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with Canna support built in (Only the executables)
 
 CANNA=		yes
 

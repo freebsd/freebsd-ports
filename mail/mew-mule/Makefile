@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Message interface to Emacs Window for mule
 
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew

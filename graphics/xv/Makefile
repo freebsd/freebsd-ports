@@ -34,6 +34,7 @@ PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch \
 		tiff1200.patch gssafer.patch
 
 MAINTAINER?=	shige@FreeBSD.org
+COMMENT?=	An X11 program that displays images of various formats
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \

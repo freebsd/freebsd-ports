@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Japanized Vim-3.0 (with Canna)
+
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim3

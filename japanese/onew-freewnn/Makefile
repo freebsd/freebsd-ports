@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 DISTNAME=	jvim2.0r+${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	A library for a Japanese Input Method: FreeWnn
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 # A value 'all' must not be set to TARGET.

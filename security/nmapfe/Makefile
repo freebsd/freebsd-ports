@@ -7,6 +7,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../nmap
+COMMENT=	GUI frontend for the nmap scanning utility
 
 PORTNAME=	nmapfe
 

@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Portuguese (Portugal) MySpell dictionary for OpenOffice.org
 CATEGORIES=	portuguese
 
 LANGPREFIX=	pt

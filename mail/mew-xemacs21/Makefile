@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Message interface to Emacs Window for xemacs21
 
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew

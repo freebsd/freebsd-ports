@@ -6,6 +6,8 @@
 #
 
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with Canna, FreeWnn, Wnn6 and Wnn7 support built-in
+
 CANNA=		yes
 WNN7=		yes
 

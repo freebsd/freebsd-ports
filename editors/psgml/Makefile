@@ -19,6 +19,7 @@ PATCH_SITE_SUBDIR=	kuriyama
 PATCHFILES=	psgml-symbol-conflict-020120.gz
 
 MAINTAINER?=	shige@FreeBSD.org
+COMMENT?=	A major mode for editing SGML and XML documents for emacs21
 
 # distfile version
 PSGML_VER=		1.2.4

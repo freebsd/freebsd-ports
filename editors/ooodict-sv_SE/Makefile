@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Swedish (Sweden) MySpell dictionary for OpenOffice.org
 CATEGORIES=	editors
 
 LANGPREFIX=	sv

@@ -6,6 +6,7 @@
 #
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/qt23
+COMMENT=	GUI C++ IDE based on QT
 
 PORTNAME=	qt-designer
 CATEGORIES=	devel

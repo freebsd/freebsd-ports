@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	A library for Japanese Input Method Wnn6
+
 WNN6=		yes
 
 MASTERDIR=	${.CURDIR}/../onew-freewnn

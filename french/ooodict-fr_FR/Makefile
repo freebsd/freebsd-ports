@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	French (France) MySpell dictionary for OpenOffice.org
 CATEGORIES=	french
 
 LANGPREFIX=	fr

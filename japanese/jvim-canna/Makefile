@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-canna
+COMMENT=	Japanized Vim (with Canna)
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim

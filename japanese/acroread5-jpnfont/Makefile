@@ -8,6 +8,7 @@
 DISTNAME=	jpnfont
 DIST_SUBDIR=	Acrobat5
 CATEGORIES=	japanese
+COMMENT=	Asian Font Packs for Acrobat Reader 5.0 (for Japanese)
 
 MASTERDIR=	${.CURDIR}/../../print/acroread5-commfont
 

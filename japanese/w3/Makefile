@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	WWW browser based on emacs/mule
 CATEGORIES=	japanese
 
 # Don't RUN_DEPENDS on mule because we don't know which version the

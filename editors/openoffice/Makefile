@@ -106,9 +106,7 @@ CXX=		g++32
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
-.if !defined(COMMENT)
-COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-.endif
+COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 #.if !defined(USE_GCC)
 #BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 #.endif

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/custom/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
+COMMENT?=	The Custom Library for emacs
 
 # custom library
 CUSTOM_VER=	1.9962

@@ -10,6 +10,8 @@ FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 MD5_FILE=	${.CURDIR}/distinfo
 
+COMMENT=	Korean pk fonts collection of hLaTeXp(1200dpi)
+
 # pkfonts dpi
 RESOLUTION=	1200
 

@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-lib
+COMMENT=	A Japanese/Chinese/Korean input method (Korean client libraries)
 CATEGORIES=	korean
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}

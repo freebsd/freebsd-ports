@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.itbrain.co.jp/~ueda/GP/
 DISTNAME=	GP-2.5p2	
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT?=	A GUI Printer manager written with Tcl/Tk
 
 PATCHDIR=	${.CURDIR}/../../print/gp/files
 FILESDIR=	${.CURDIR}/../../print/gp/files

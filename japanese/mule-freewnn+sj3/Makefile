@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-freewnn+sj3
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with sj3 and FreeWnn support built in (Only the executables)
 
 SJ3=		yes
 FREEWNN=	yes

@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Danish (Denmark) MySpell dictionary for OpenOffice.org
 CATEGORIES=	editors
 
 LANGPREFIX=	da

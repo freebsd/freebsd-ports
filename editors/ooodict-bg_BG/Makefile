@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Bulgarian (Bulgaria) MySpell dictionary for OpenOffice.org
 CATEGORIES=	editors
 
 LANGPREFIX=	bg

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Input server of Japanese text (Wnn6)
+
 WNN6=		yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-freewnn/

@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-canna+freewnn
 CATEGORIES=	japanese
+COMMENT=	Multilingual emacs, with Canna and FreeWnn support built-in
 
 CANNA=		yes
 FREEWNN=	yes
