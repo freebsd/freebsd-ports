@@ -418,12 +418,12 @@ lib/libUil.so.2
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.2
-share/doc/openmotif/BUGREPORT
+%%PORTDOCS%%share/doc/openmotif/BUGREPORT
 share/doc/openmotif/CLOSEDBUGS.gz
-share/doc/openmotif/COPYRIGHT.MOTIF
+%%PORTDOCS%%share/doc/openmotif/COPYRIGHT.MOTIF
 share/doc/openmotif/OPENBUGS.gz
-share/doc/openmotif/README
-share/doc/openmotif/RELNOTES
+%%PORTDOCS%%share/doc/openmotif/README
+%%PORTDOCS%%share/doc/openmotif/RELNOTES
 share/doc/openmotif/guides/README
 share/doc/openmotif/guides/mot-cdesgr.ps.Z
 share/doc/openmotif/guides/mot-csgcc.ps.Z
