@@ -3,11 +3,11 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1999/01/07 02:31:48 simokawa Exp $
+# $Id: Makefile,v 1.12 1999/04/08 07:41:18 dima Exp $
 #
 
 DISTNAME=	linux-ar-40
-PKGNAME=	acroread-40
+PKGNAME=	acroread-4.0b
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/beta/
 
