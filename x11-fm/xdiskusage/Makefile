@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 
-BROKEN=		"needs fltk 1.0.10"
-
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
@@ -25,7 +23,7 @@ USE_X_PREFIX=	yes
 do-build:
 .for i in panels xdiskusage
 	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -c \
-		${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
+		-DFLTK_1_0_COMPAT ${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
 .endfor
 	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -L${X11BASE}/lib -o \
 		${WRKSRC}/xdiskusage ${WRKSRC}/panels.o \
