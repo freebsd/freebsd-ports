@@ -1,15 +1,15 @@
---- gnome-config.in.orig	Mon May 31 06:04:01 1999
-+++ gnome-config.in	Mon Jul 12 10:27:28 1999
+--- gnome-config.in.orig	Fri Sep 10 13:25:18 1999
++++ gnome-config.in	Thu Sep 23 12:18:53 1999
 @@ -19,7 +19,7 @@
  pkglibdir=${libdir}/@PACKAGE@
  pkgincludedir=${includedir}/@PACKAGE@
  MODULE_VERSION=@PACKAGE@-@VERSION@
--module_dirs="$libdir:$GNOME_LIBCONFIG_PATH"
-+module_dirs="$sysconfdir:$GNOME_LIBCONFIG_PATH"
+-module_dirs="$libdir"
++module_dirs="$sysconfdir"
  
- usage()
- {
-@@ -46,18 +46,18 @@
+ # stolen from autoconf
+ if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null; then
+@@ -65,18 +65,18 @@
  
  Known values for LIBRARY are:
  
@@ -31,7 +31,7 @@
  
  is looked in for the necessary information.  Those currently installed 
  appear to be:
-@@ -149,19 +149,19 @@
+@@ -161,19 +161,19 @@
  	usage 1
  	;;
      glib)
