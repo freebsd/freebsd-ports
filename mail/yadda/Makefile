@@ -9,8 +9,6 @@ PORTNAME=	yadda
 PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://code.printf.dk/~decius/yadda/ \
-		http://casius.dk/mirrors/yadda/ \
-		http://yadda.salkin.dk/mirror/ \
 		http://users.cybercity.dk/~dsl22381/
 
 MAINTAINER=	jesper@noehr.org
