@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ripmime
-PORTVERSION=	1.3.0.5
+PORTVERSION=	1.3.1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
