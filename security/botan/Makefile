@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
 CONFIGURE_ARGS=	gcc-freebsd-generic
