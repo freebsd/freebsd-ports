@@ -8,6 +8,7 @@
     SUBDIR += elm.language
     SUBDIR += gd
     SUBDIR += koi8r-ps
+    SUBDIR += messarge
     SUBDIR += netscape3.language
     SUBDIR += pgp.language
     SUBDIR += pine.language
