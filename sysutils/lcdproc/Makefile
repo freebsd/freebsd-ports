@@ -16,16 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		lcdproc.1
 MAN8=		LCDd.8
 
 pre-patch:
-	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.orig
-	@${SED} -e 's|CFLAGS=\"-O3\"||' ${WRKSRC}/configure.orig \
-		> ${WRKSRC}/configure
-	@${CP} ${FILESDIR}/LCDd.sh.sample ${WRKSRC}/LCDd.sh.sample.orig
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/LCDd.sh.sample.orig \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/LCDd.sh.sample \
 		> ${WRKSRC}/LCDd.sh.sample
 
 post-install:
