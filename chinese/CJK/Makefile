@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	CJK
-PORTVERSION=	4.3.0
+PORTVERSION=	4.5.1
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/
-DISTNAME=	cjk-20011008
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cjk/\
+  		ftp://ftp.ffii.org/pub/cjk/
+DISTNAME=	cjk-${PORTVERSION}
 
 MAINTAINER=	keith@FreeBSD.org
 
@@ -22,11 +23,13 @@ NO_PACKAGE=	"Needs ttf2pk source from FreeType"
 
 USE_GMAKE=	yes
 USE_FREETYPE=	yes
-WRKSRC=		${WRKDIR}/cjk-current
 ARPHICDIR=	${PREFIX}/share/texmf/fonts/truetype/arphic
 
 MAN1=		bg5conv.1 cef5conv.1 cefconv.1 cefsconv.1 extconv.1 \
 		hbf2gf.1 sjisconv.1 ttf2pk.1 ttf2tfm.1
+
+pre-patch:
+	${RM} -fr ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -251,6 +251,8 @@ share/texmf/hbf2gf/jsso12.cfg
 share/texmf/hbf2gf/ksso17.cfg
 share/texmf/tex/generic/babel/pinyin.ldf
 share/texmf/tex/generic/hyphen/pyhyph.tex
+share/texmf/tex/latex/CJK/Bg5/c00bsmi.fd
+share/texmf/tex/latex/CJK/Bg5/c00bsmir.fd
 share/texmf/tex/latex/CJK/Bg5/Bg5.cap
 share/texmf/tex/latex/CJK/Bg5/Bg5.chr
 share/texmf/tex/latex/CJK/Bg5/Bg5.cpx
@@ -279,6 +281,7 @@ share/texmf/tex/latex/CJK/CNS/c34song.fd
 share/texmf/tex/latex/CJK/CNS/c35song.fd
 share/texmf/tex/latex/CJK/CNS/c36song.fd
 share/texmf/tex/latex/CJK/CNS/c37song.fd
+share/texmf/tex/latex/CJK/GB/c10gbsn.fd
 share/texmf/tex/latex/CJK/GB/GB.cap
 share/texmf/tex/latex/CJK/GB/GB.cpx
 share/texmf/tex/latex/CJK/GB/c10fs.fd
@@ -454,6 +457,7 @@ share/texmf/tex/latex/CJK/thai/c90cmtt.fd
 share/texmf/tex/latex/CJK/thai/c90dbss.fd
 share/texmf/tex/latex/CJK/thai/c90nrsr.fd
 share/texmf/tex/latex/CJK/thai/thaicjk.ldf
+share/texmf/tex/latex/CJK/thai/c90enc.def
 share/texmf/ttf2pk/Big5.sfd
 share/texmf/ttf2pk/ET5.enc
 share/texmf/ttf2pk/EUC.sfd
