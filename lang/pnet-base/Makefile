@@ -45,8 +45,8 @@ MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 .include "${.CURDIR}/../pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Coredump during build on alpha
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Configure fails on !i386 and !alpha"
 .endif
 
 post-everything::
