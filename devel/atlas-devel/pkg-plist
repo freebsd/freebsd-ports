@@ -53,6 +53,7 @@ include/Atlas-C++-0.5/Atlas/Objects/Operation/Talk.h
 include/Atlas-C++-0.5/Atlas/Objects/Operation/Touch.h
 include/Atlas-C++-0.5/Atlas/Objects/Root.h
 include/Atlas-C++-0.5/Atlas/Task.h
+include/Atlas-C++-0.5/Atlas/Version.h
 lib/libAtlas-0.5.la
 lib/libAtlas-0.5.so
 lib/libAtlas-0.5.so.1

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Atlas
-PORTVERSION=	0.4.93
+PORTVERSION=	0.4.94
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.worldforge.org/pub/worldforge/libs/Atlas-C++/transitional/ \
