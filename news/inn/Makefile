@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	inn
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
+FORBIDDEN=	"Changes ownership of system directories"
+
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes

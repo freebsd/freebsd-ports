@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
+FORBIDDEN=	"Changes ownership of system directories"
+
 BRANCH=		current
 SNAPSHOT=	20040118
 
