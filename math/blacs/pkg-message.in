@@ -1,0 +1,12 @@
+*********************************************************************
+ Please test your blacs installation
+ Test programs are located at /usr/local/share/BLACS/TESTING
+
+ Example:
+  % cd /usr/local/share/BLACS/TESTING
+  % /usr/local/mpich/bin/mpirun -np 4 xCbtest_MPI-FreeBSD
+  % /usr/local/mpich/bin/mpirun -np 4 xFbtest_MPI-FreeBSD
+
+You can change -np 4 to any number to meet your local environment.
+See files at /usr/local/share/doc/blacs for detail.
+*********************************************************************
