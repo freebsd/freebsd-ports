@@ -26,7 +26,7 @@ Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 
 # non-version specific components
 _USE_GNOME_ALL=	gnomehack lthack gnomeprefix gnomehier esound gnomemimedata \
-				gnometarget pkgconfig intlhack
+				gnometarget pkgconfig intltool intlhack
 
 # GNOME 1 components
 _USE_GNOME_ALL+=libghttp glib12 gtk12 libxml gdkpixbuf imlib orbit \
@@ -41,7 +41,8 @@ _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 \
 		libgnome libbonoboui libgnomeui atspi libgailgnome \
 		libgtkhtml gnomedesktop libwnck vte libzvt librsvg2 eel2 \
 		gnomepanel nautilus2 metacity gal2 gnomecontrolcenter2 libgda2 \
-		libgnomedb gtksourceview libgsf pygtk2 pygnome2 gstreamerplugins
+		libgnomedb gtksourceview libgsf pygtk2 pygnome2 gstreamerplugins \
+		gtkhtml3
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -233,7 +234,7 @@ pango_USE_GNOME_IMPL=	glib20
 
 gtk20_LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 gtk20_DETECT=		${X11BASE}/libdata/pkgconfig/gtk+-x11-2.0.pc
-gtk20_USE_GNOME_IMPL=	atk pango
+gtk20_USE_GNOME_IMPL=	intltool atk pango
 
 linc_LIB_DEPENDS=	linc.1:${PORTSDIR}/net/linc
 linc_DETECT=		${LOCALBASE}/libdata/pkgconfig/linc.pc
@@ -397,10 +398,17 @@ gstreamerplugins_LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plu
 gstreamerplugins_DETECT=        ${X11BASE}/libdata/pkgconfig/gstreamer-play-0.6.pc
 gstreamerplugins_USE_GNOME_IMPL=        gconf2
 
-intlhack_BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
+intltool_DETECT=		${LOCALBASE}/bin/intltool-extract
+intltool_BUILD_DEPENDS=	${intltool_DETECT}:${PORTSDIR}/textproc/intltool
+
 intlhack_PRE_PATCH=		${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
 						's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
 						 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
+intlhack_USE_GNOME_IMPL=intltool
+
+gtkhtml3_LIB_DEPENDS=	gtkhtml-3.0.3:${PORTSDIR}/www/gtkhtml3
+gtkhtml3_DETECT=		${X11BASE}/libdata/pkgconfig/libgtkhtml-3.0.pc
+gtkhtml3_USE_GNOME_IMPL=gal2 gail
 
 # End component definition section
 
