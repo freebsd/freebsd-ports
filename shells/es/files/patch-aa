@@ -37,39 +37,57 @@
   
   es	: ${OFILES} initial.o
   	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}
-*** prim-sys.c~	Mon Jul 31 16:20:31 1995
---- prim-sys.c	Mon Jul 31 16:21:25 1995
-***************
-*** 194,200 ****
-  
-  static void printlimit(const Limit *limit, Boolean hard) {
-  	struct rlimit rlim;
-! 	long lim;
-  	getrlimit(limit->flag, &rlim);
-  	if (hard)
-  		lim = rlim.rlim_max;
---- 194,200 ----
-  
-  static void printlimit(const Limit *limit, Boolean hard) {
-  	struct rlimit rlim;
-! 	u_quad_t lim;
-  	getrlimit(limit->flag, &rlim);
-  	if (hard)
-  		lim = rlim.rlim_max;
-***************
-*** 213,219 ****
-  	}
-  }
-  
-! static long parselimit(const Limit *limit, char *s) {
-  	long lim;
-  	char *t;
-  	const Suffix *suf = limit->suffix;
---- 213,219 ----
-  	}
-  }
-  
-! static u_quad_t parselimit(const Limit *limit, char *s) {
-  	long lim;
-  	char *t;
-  	const Suffix *suf = limit->suffix;
+--- prim-sys.c.orig	Tue May 30 06:13:51 1995
++++ prim-sys.c	Thu Apr 10 10:15:40 1997
+@@ -194,7 +194,7 @@
+ 
+ static void printlimit(const Limit *limit, Boolean hard) {
+ 	struct rlimit rlim;
+-	long lim;
++	u_quad_t lim;
+ 	getrlimit(limit->flag, &rlim);
+ 	if (hard)
+ 		lim = rlim.rlim_max;
+@@ -209,11 +209,11 @@
+ 				lim /= suf->amount;
+ 				break;
+ 			}
+-		print("%-8s\t%d%s\n", limit->name, lim, (suf == NULL || lim == 0) ? "" : suf->name);
++		print("%-8s\t%ud%s\n", limit->name, (unsigned int)lim, (suf == NULL || lim == 0) ? "" : suf->name);
+ 	}
+ }
+ 
+-static long parselimit(const Limit *limit, char *s) {
++static u_quad_t parselimit(const Limit *limit, char *s) {
+ 	long lim;
+ 	char *t;
+ 	const Suffix *suf = limit->suffix;
+--- main.c~	Tue May 30 06:13:50 1995
++++ main.c	Thu Apr 10 09:20:49 1997
+@@ -9,7 +9,7 @@
+ Boolean gcinfo		= FALSE;	/* -I */
+ #endif
+ 
+-#if !HPUX && !defined(linux)
++#if !HPUX && !defined(linux) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ extern int getopt (int argc, char **argv, const char *optstring);
+ #endif
+ extern int optind;
+--- stdenv.h~	Tue May 30 06:13:53 1995
++++ stdenv.h	Thu Apr 10 09:32:22 1997
+@@ -283,6 +283,7 @@
+ 
+ /* stdlib */
+ 
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ extern noreturn exit(int);
+ extern noreturn abort(void);
+ extern long strtol(const char *num, char **end, int base);
+@@ -290,6 +291,7 @@
+ 	void *base, size_t nmemb, size_t size,
+ 	int (*compar)(const void *, const void *)
+ );
++#endif
+ 
+ /* setjmp */
+ 
