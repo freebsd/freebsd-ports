@@ -1,5 +1,5 @@
---- ../dist/Makefile.in.orig	Thu Nov 30 21:07:11 2000
-+++ ../dist/Makefile.in	Fri Feb  9 17:47:58 2001
+--- ../dist/Makefile.in.orig	Thu Nov 30 17:07:33 2000
++++ ../dist/Makefile.in	Tue May 29 11:11:15 2001
 @@ -34,11 +34,11 @@
  libdb=		libdb.a
  
@@ -39,19 +39,25 @@
  
  dmode=	755
  emode=	555
-@@ -452,6 +452,7 @@
+@@ -452,8 +452,8 @@
  	@cd $(libdir) && $(rm) -f \
  	    $(libso_target) $(libso) $(libso_default) $(libso_major)
  	@$(INSTALLER) $(libso_target) $(libdir)
-+	@cd $(libdir) && $(chmod) $(fmode) $(libso)
- 	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
- 	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
+-	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
+-	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
++	@cd $(libdir) && $(chmod) $(fmode) $(libso_major)
++	@cd $(libdir) && $(ln) -s $(libso_major) $(libso_default)
  	@$(LIBTOOL) --mode=finish $(libdir)
-@@ -463,6 +464,7 @@
+ 
+ install_dynamic_cxx:
+@@ -463,8 +463,8 @@
  	@cd $(libdir) && $(rm) -f \
  	    $(libxso_target) $(libxso) $(libxso_default) $(libxso_major)
  	@$(INSTALLER) $(libxso_target) $(libdir)
-+	@cd $(libdir) && $(chmod) $(fmode) $(libxso)
- 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
- 	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
+-	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
+-	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
++	@cd $(libdir) && $(chmod) $(fmode) $(libxso_major)
++	@cd $(libdir) && $(ln) -s $(libxso_major) $(libxso_default)
  
+ install_tcl:
+ 	@echo "Installing DB Tcl library: $(libdir) ..."
