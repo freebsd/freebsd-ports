@@ -21,8 +21,8 @@ WRKSRC=			${WRKDIR}/${PKGNAME}
 
 GRAILSUBDIR=		share/grail
 GRAILDIR=		${PREFIX}/${GRAILSUBDIR}
-DIRS_CMD=		${CAT} ${PLIST} | ${GREP} '^@dirrm' | ${SED} 's,@dirrm ,,'
-FILES_CMD=		${CAT} ${PLIST} | ${GREP} -v '^@' | ${SED} 's,${GRAILSUBDIR}/,,'
+DIRS_CMD=		${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
+FILES_CMD=		${SED} -e '/^share\//bok' -e 'D' -e ':ok' -e 's,${GRAILSUBDIR}/,,' < ${PLIST}
 
 FIND?=find
 PYTHON?=python
