@@ -131,7 +131,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-bz2=${BZ2PREFIX}"
 			;;
 		\"mcrypt\")
-			echo "LIB_DEPENDS+=	mcrypt.6:\${PORTSDIR}/security/libmcrypt"
+			echo "LIB_DEPENDS+=	mcrypt.7:\${PORTSDIR}/security/libmcrypt"
 			echo "CONFIGURE_ARGS+=--with-mcrypt=\${LOCALBASE}"
 			;;
 		\"mhash\")
