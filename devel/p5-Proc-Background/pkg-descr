@@ -1,10 +1,8 @@
-This is the Proc::Generic package.  It provides a generic interface to
-running background processes.  Through this interface, users can run
-background processes on different operating systems without concerning
-themselves about the specifics of doing this.  Users of this package
-create new Proc::Generic objects that provide an object oriented
-interface to process management.
+This is a generic interface for placing processes in the background on
+both Unix and Win32 platforms.  This module lets you start, kill, wait
+on, retrieve exit values, and see if background processes still exist.
 
 Author: Blair Zajac <blair@akamai.com>
+WWW: http://search.cpan.org/search?dist=Proc-Background
 
 --will
