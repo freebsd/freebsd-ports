@@ -1467,6 +1467,7 @@ djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
 dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
+dkftpbench	ports/benchmarks/dkftpbench
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
 dlume		ports/deskutils/dlume
