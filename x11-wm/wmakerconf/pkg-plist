@@ -18,6 +18,7 @@ share/locale/pl/LC_MESSAGES/wmakerconf.mo
 share/locale/pl/LC_MESSAGES/wmakerconf-data.mo
 share/locale/pt_BR/LC_MESSAGES/wmakerconf.mo
 share/locale/ru/LC_MESSAGES/wmakerconf.mo
+share/locale/ru/LC_MESSAGES/wmakerconf-data.mo
 share/locale/sv/LC_MESSAGES/wmakerconf.mo
 share/locale/tr/LC_MESSAGES/wmakerconf.mo
 share/wmakerconf/ABOUT-NLS
