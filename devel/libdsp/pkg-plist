@@ -15,8 +15,10 @@ include/dsp/Transform4.hh
 include/dsp/Transform8.hh
 include/dsp/TransformS.hh
 include/dsp/X86.h
+include/dsp/dspop.h
+include/dsp/dsptypes.h
 lib/libdsp.a
 lib/libdsp.la
 lib/libdsp.so
-lib/libdsp.so.3
+lib/libdsp.so.4
 @dirrm include/dsp
