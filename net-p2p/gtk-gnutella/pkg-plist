@@ -22,8 +22,10 @@ share/gtk-gnutella/pixmaps/smallserver.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
+share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
 share/locale/es/LC_MESSAGES/gtk-gnutella.mo
 share/locale/fr/LC_MESSAGES/gtk-gnutella.mo
 share/locale/nl/LC_MESSAGES/gtk-gnutella.mo
+share/locale/hu/LC_MESSAGES/gtk-gnutella.mo
 @dirrm share/gtk-gnutella/pixmaps
 @dirrm share/gtk-gnutella
