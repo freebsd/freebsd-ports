@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	1.9.5
-PORTREVISION=	1
+PORTVERSION=	2.1.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	contrib
-DISTNAME=	onigd20031112
+DISTNAME=	onigd20040202
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,20 +18,9 @@ COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
-MAKEFILE=	BSDmakefile
-MAKE_ARGS=	NOPROFILE=true
 INSTALLS_SHLIB=	yes
 
 DOCS=		HISTORY README doc/*
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502000
-BROKEN=		"Does not compile"
-.endif
-
-pre-build:
-	${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}/
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -44,4 +32,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
