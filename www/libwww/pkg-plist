@@ -149,7 +149,7 @@ lib/libpics.a
 lib/libwww.a
 lib/libwww.la
 lib/libwww.so
-lib/libwww.so.5.3
+lib/libwww.so.6.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libwww/User/Applications.html
@@ -242,7 +242,6 @@ share/doc/libwww/User/Patch/Makefile
 share/doc/libwww/User/Patch/Makefile.am
 share/doc/libwww/User/Patch/Makefile.in
 share/doc/libwww/User/Patch/Overview.html
-share/doc/libwww/User/Patch/README
 share/doc/libwww/User/Patch/lib_3.0_1.fix
 share/doc/libwww/User/Patch/lib_3.1_1.fix
 share/doc/libwww/User/Patch/lib_4.0C_1.fix
@@ -319,6 +318,7 @@ share/doc/libwww/User/Using/RuleSyntax.html
 share/doc/libwww/User/Using/Rules.html
 share/doc/libwww/User/Using/Startup.html
 share/doc/libwww/User/Using/Streams.html
+share/doc/libwww/User/Using/Timers.html
 share/doc/libwww/User/Using/Transport.html
 share/doc/libwww/User/Using/UserProfile.html
 share/doc/libwww/User/Using/Utils.html
