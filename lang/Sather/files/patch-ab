@@ -1,0 +1,35 @@
+*** Makefile.0	Thu Feb 16 07:44:53 1995
+--- Makefile	Sat Feb 25 01:12:57 1995
+***************
+*** 23,37 ****
+  #
+  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
+  
+! CPP= /lib/cpp -C -P
+  RANLIB= ranlib
+  CC= gcc 
+! CFLAGS= -O
+  GC_CC= ${CC}
+  MV= mv
+  CMP= cmp
+  CS= cs
+! SHOME= /u/davids/Sather/Working
+  AR= ar
+  RM= rm -f
+  TEST= test
+--- 23,37 ----
+  #
+  # Don't forget to edit (or at least inspect) the file System/CONFIG.proto.
+  
+! CPP= /usr/bin/cpp -C -P
+  RANLIB= ranlib
+  CC= gcc 
+! CFLAGS= -O2
+  GC_CC= ${CC}
+  MV= mv
+  CMP= cmp
+  CS= cs
+! SHOME= ..
+  AR= ar
+  RM= rm -f
+  TEST= test
