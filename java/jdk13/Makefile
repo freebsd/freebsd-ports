@@ -85,6 +85,7 @@ PLIST_SUB+=	DEBUG:=""
 .if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
 PLIST_SUB+=    NATIVE:=""
 MAKE_ARGS+=    HPIS="green native"
+USE_REINPLACE= yes
 .else
 PLIST_SUB+=    NATIVE:="@comment "
 .endif
@@ -97,7 +98,6 @@ PLIST_SUB+=    PLUGIN:=""
 
 .if defined(WITH_HOTSPOT)
 PLIST_SUB+=    HOTSPOT:=""
-USE_REINPLACE= yes
 .if defined(NODEBUG)
 HOTSPOT_TARGETS=product1 product
 .else
@@ -119,6 +119,17 @@ JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
 JDK13DIR=	${LOCALBASE}/diablo-jdk${JDK_VERSION}
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/diablo-jdk13
 .endif
+.endif
+
+.if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
+PTHREAD_FILES=	common/Defs.gmk \
+	common/Program.gmk \
+	java/hpi/native/Makefile \
+	sun/cmm/Makefile \
+	../ext/plugin/build/solaris/GNUmakefile \
+	../../hotspot1.3.1/build/linux/platform_i486 \
+	../../hotspot1.3.1/build/bsd/makefiles/gcc.make \
+	../../hotspot1.3.1/build/linux/makefiles/vm.make
 .endif
 
 .if defined(WITH_HOTSPOT) && ${OSVERSION} < 500039
@@ -194,6 +205,11 @@ post-patch:
 	done
 	@${REINPLACE_CMD} -e "s:PATH[)]gcc:PATH)gcc32:g ; s:PATH[)]g\+\+:PATH)g\+\+32:g" ${WRKSRC}/common/Defs-bsd.gmk 
 .endif
+.endif
+.if defined(WITH_NATIVE_THREADS) || defined(WITH_HOTSPOT)
+	@for file in ${PTHREAD_FILES}; do \
+        	${REINPLACE_CMD} -e "s:-pthread:${PTHREAD_LIBS}:g" ${WRKSRC}/$${file}; \
+	done
 .endif
 
 pre-build:
