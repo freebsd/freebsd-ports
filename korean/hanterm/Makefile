@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hanterm
-PORTVERSION=	3.1.4
-PORTREVISION=	1
+PORTVERSION=	3.1.5
+#PORTREVISION=	1
 CATEGORIES=	korean x11
-MASTER_SITES=	http://quagga.kaist.ac.kr/hanterm/download/
+MASTER_SITES=	http://hanterm.org/download/
 
 MAINTAINER=	cjh@FreeBSD.org
 
@@ -21,7 +21,7 @@ ALL_TARGET=	hanterm
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/hanterm
-	${INSTALL_DATA} ${WRKSRC}/hanterm.html ${PREFIX}/share/doc/hanterm/
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/hanterm/
+	${INSTALL_DATA} ${WRKSRC}/doc/hanterm.html ${PREFIX}/share/doc/hanterm/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/hanterm/
 
 .include <bsd.port.mk>
