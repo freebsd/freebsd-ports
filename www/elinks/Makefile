@@ -8,7 +8,7 @@
 PORTNAME=	elinks
 PORTVERSION=	0.3.0
 CATEGORIES=	www
-MASTER_SITES=	http://pasky.ji.cz/elinks/
+MASTER_SITES=	http://elinks.pld.org.pl/download/
 
 MAINTAINER=	jharris@widomaker.com
 
