@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	010909
-PORTREVISION=	2
+PORTVERSION=	010919
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/lisp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -25,11 +24,6 @@ PLIST_SUB=	XEMACS="@comment "
 .elif ${EMACS_PORT_NAME} == xemacs21-mule
 PLIST_SUB=	XEMACS=""
 .endif
-
-post-patch:
-	cd ${WRKSRC}; \
-	${PERL} -pi -e 's/index2.html/index.html/' \
-		navi2ch-net.el navi2ch-util.el
 
 post-install:
 .if !defined(NOPORTDOCS)
