@@ -26,7 +26,7 @@ MAN3=		iconv.3 iconv_open.3 iconv_close.3
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 430000
-BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/gperf
+BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf
 GPERF=	${LOCALBASE}/bin/gperf
 .else
 GPERF=	/usr/bin/gperf
