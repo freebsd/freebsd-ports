@@ -8,14 +8,21 @@
 
 PORTNAME=	tetradraw
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	ftp://tentacle.dhs.org/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fully featured ANSI art editor/viewer with TCP/IP multidraw support
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS =.*$$|CFLAGS = @CFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
