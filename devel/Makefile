@@ -616,6 +616,7 @@
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
+    SUBDIR += ruby-fam
     SUBDIR += ruby-filelock
     SUBDIR += ruby-flex_rb
     SUBDIR += ruby-gconf

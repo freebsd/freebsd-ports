@@ -1,0 +1,37 @@
+# New ports collection makefile for:	FAM-Ruby
+# Date created:		11 June 2002
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fam
+PORTVERSION=	0.1.0
+CATEGORIES=	devel ruby
+MASTER_SITES=	http://www.pablotron.org/download/
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
+INSTALL_TARGET=	site-install
+
+DOCS=		COPYING ChangeLog README doc
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${CP} -R ${WRKSRC}/examples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
