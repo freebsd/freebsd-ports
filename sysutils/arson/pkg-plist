@@ -1,0 +1,57 @@
+bin/arson
+share/doc/HTML/en/arson-apidocs/common
+share/locale/de/LC_MESSAGES/arson.mo
+share/locale/es/LC_MESSAGES/arson.mo
+share/icons/hicolor/16x16/actions/cdcopy.png
+share/icons/hicolor/16x16/apps/arson.png
+share/icons/hicolor/22x22/actions/addfile.png
+share/icons/hicolor/22x22/actions/addfolder.png
+share/icons/hicolor/22x22/actions/burn.png
+share/icons/hicolor/22x22/actions/cdcopy.png
+share/icons/hicolor/22x22/actions/readimg.png
+share/icons/hicolor/22x22/actions/rip.png
+share/icons/hicolor/22x22/actions/shuffle.png
+share/icons/hicolor/22x22/actions/toggle.png
+share/icons/hicolor/22x22/actions/writedir.png
+share/icons/hicolor/22x22/actions/writeimg.png
+share/icons/hicolor/22x22/apps/arson.png
+share/icons/hicolor/32x32/actions/burn.png
+share/icons/hicolor/32x32/actions/cdcopy.png
+share/icons/hicolor/32x32/actions/cdscan.png
+share/icons/hicolor/32x32/actions/rip.png
+share/icons/hicolor/32x32/apps/arson.png
+share/icons/hicolor/48x48/apps/arson.png
+share/icons/locolor/16x16/apps/arson.png
+share/icons/locolor/32x32/apps/arson.png
+share/apps/arson/isoopts.xml
+share/apps/arson/arsonisorc.xml
+share/apps/arson/genres.xml
+share/apps/arson/arsonui.rc
+share/applnk/Utilities/Arson-Copy.desktop
+share/applnk/Utilities/Arson-CUE.desktop
+share/applnk/Utilities/Arson-ISO.desktop
+share/applnk/Utilities/Arson.desktop
+share/mimelnk/application/x-iso.desktop
+share/mimelnk/application/x-cue.desktop
+share/mimelnk/application/x-arson.desktop
+@dirrm share/doc/HTML/en/arson-apidocs/src/pics/html
+@dirrm share/doc/HTML/en/arson-apidocs/src/pics
+@dirrm share/doc/HTML/en/arson-apidocs/src/html
+@dirrm share/doc/HTML/en/arson-apidocs/src
+@dirrm share/doc/HTML/en/arson-apidocs/po/html
+@dirrm share/doc/HTML/en/arson-apidocs/po
+@dirrm share/doc/HTML/en/arson-apidocs/doc/html
+@dirrm share/doc/HTML/en/arson-apidocs/doc
+@dirrm share/doc/HTML/en/arson-apidocs
+@dirrm share/apps/arson/pics
+@dirrm share/apps/arson
+@dirrm share/applnk/Utilities
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
