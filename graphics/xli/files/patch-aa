@@ -1,0 +1,10 @@
+--- ./xli.h.org	Thu Jul 28 18:13:28 1994
++++ ./xli.h	Wed Nov 23 21:03:24 1994
+@@ -288,6 +288,7 @@
+ 
+ void          flipBits();	/* value.c */
+ 
++#define zopen zzopen /* to avoid conflict with zopen in stdio.h */
+ ZFILE   *zopen(); /* zio.c */
+ int      zread();
+ void     zunread();

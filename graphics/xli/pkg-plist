@@ -1,0 +1,7 @@
+@cwd /usr/X11R6
+bin/xli
+bin/xlito
+bin/xview
+bin/xsetbg
+man/man1/xli.1.gz
+man/man1/xlito.1.gz
