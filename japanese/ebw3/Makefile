@@ -18,6 +18,12 @@ VERSION=	0.2-b4
 
 STARTUP_SCRIPT=	$(PREFIX)/etc/rc.d/ebw3d.sh.sample
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/www/cgi-bin
 	${INSTALL} -c -o nobody -g nobody -m 555 ${WRKSRC}/cdsearch \
@@ -32,4 +38,4 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${FILESDIR}/ebw3d.sh.sample $(PREFIX)/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
