@@ -3230,6 +3230,7 @@ libdialog	src/gnu/lib/libdialog
 libdisk		src/lib/libdisk
 libdivxdecore	ports/graphics/libdivxdecore
 libdivxdecore-devel	ports/graphics/libdivxdecore-devel
+libdivxencore	ports/graphics/libdivxencore
 libdjvu++	ports/graphics/libdjvu++
 libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
