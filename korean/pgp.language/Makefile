@@ -3,7 +3,7 @@
 # Date created:         22 Jul 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/17 14:14:50 kuriyama Exp $
 #
 # This is based on ja-pgp.
 #
@@ -18,6 +18,8 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
+
+RESTRICTED=	"Crypto"
 
 EXTRACT_CMD=	unzip
 EXTRACT_ARGS=	-q
