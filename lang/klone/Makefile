@@ -5,33 +5,35 @@
 # $FreeBSD$
 #
 
-PORTNAME=	Klone
+PORTNAME=	klone
 PORTVERSION=	2.1.359
+PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://koala.ilog.fr/ftp/Klone/
-DISTNAME=	Klone359
+MASTER_SITES=	http://koala.ilog.fr/ftp/pub/Klone/
+DISTNAME=	Klone${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Klone
 
-post-extract:
-	@sed -e s#!!PREFIX!!#${PREFIX}# \
-		${FILESDIR}/freebsd > ${WRKSRC}/Configs/freebsd
-
 do-configure:
-	@cp -f ${WRKSRC}/Configs/freebsd ${WRKSRC}/Config.freebsd
-	@echo "freebsd" > ${WRKSRC}/.dir
-	@rm -f makefile
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' \
+		-e 's:%%CC%%:${CC}:' \
+		-e 's:%%CFLAGS%%:${CFLAGS}:' \
+		${FILESDIR}/freebsd > ${WRKSRC}/Configs/freebsd
+	@${CP} -f ${WRKSRC}/Configs/freebsd ${WRKSRC}/Config.freebsd
+	@${ECHO} "freebsd" > ${WRKSRC}/.dir
+	@${RM} -f makefile
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/klone/scripts
 	${INSTALL_PROGRAM} ${WRKSRC}/klone ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/klone
 	${INSTALL_DATA} ${WRKSRC}/kl/* ${PREFIX}/lib/klone
+	@${MKDIR} ${PREFIX}/lib/klone/scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/lib/klone/scripts
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/klone
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/klone
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

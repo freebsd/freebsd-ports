@@ -3,13 +3,13 @@
                     # defines this to the binary type: sun4, sun4solaris...
 MACHINE_TYPE   =    freebsd
                     # default path for looking for klone files
-KLONEPATH      ="\".:~/kl:!!PREFIX!!/lib/klone\""
+KLONEPATH      ="\".:~/kl:%%PREFIX%%/lib/klone\""
                     # system-needed libraries
 LIBS           =
                     # compilation flags , -O or -g
-FLAGS	       = -O
+FLAGS	       = %%CFLAGS%%
                     # name (absolute or relative) of the compiler: cc, /bin/cc
-C_COMPILER     = cc
+C_COMPILER     = %%CC%%
                     # various defines:
 DEFINES        = -DSYSV_TIME -DVOID_SIGNALS
                     # other linker -specific flags
