@@ -1198,6 +1198,7 @@ efancylauncher	ports/x11/efancylauncher
 egcs		ports/lang/egcs
 ehnt		ports/net/ehnt
 eieio		ports/devel/eieio
+eieio-emacs20	ports/devel/eieio-emacs20
 eiffel		ports/lang/eiffel
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
