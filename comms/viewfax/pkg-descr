@@ -1,0 +1,11 @@
+g3view displays a group 3 fax file in an X11 window.  The input file
+must be a raw, single-page fax received by a fax modem.
+The fax image is rendered at full resolution and then successively
+scaled down by a linear factor of 2 prior to display until it fits on
+the screen.  The display can be controlled interactively using mouse
+and keyboard commands.  The left mouse button expands the image by a
+factor of two and the right button reduces it by the same factor.  If
+the image is bigger than the available window size, the middle mouse
+button can be used to reposition it within the window.  To see the
+right bottom corner of the image, click near in the right bottom
+corner of the window, etc.
