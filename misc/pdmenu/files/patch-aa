@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jan  9 14:08:32 1999
++++ configure.in	Sat Jan  9 14:10:14 1999
+@@ -46,7 +46,7 @@
+ dnl The function we check for in libslang is important, because
+ dnl we need to make sure we have the right version of slang.
+ AC_CHECK_LIB(slang, SLsig_block_signals,, 
+-	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.))
++	AC_MSG_ERROR(can't find required slang library or library is obsolete. Try setting the SLANG_LIB_LOC environment variable to point to the directory containing the slang library.),-ltermcap)
+ 
+ dnl Checks for header files.
+ AC_HEADER_STDC
