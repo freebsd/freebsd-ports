@@ -1,0 +1,9 @@
+%%SITE_PERL%%/XML/Elemental.pm
+%%SITE_PERL%%/XML/Parser/Style/Elemental.pm
+%%SITE_PERL%%/XML/Elemental/Element.pm
+%%SITE_PERL%%/XML/Elemental/Node.pm
+%%SITE_PERL%%/XML/Elemental/Characters.pm
+%%SITE_PERL%%/XML/Elemental/Document.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental/.packlist
+@dirrm %%SITE_PERL%%/XML/Elemental
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Elemental
