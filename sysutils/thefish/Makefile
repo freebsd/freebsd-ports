@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://energyhq.homeip.net/files/
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	ports@FreeBSD.org
 
 .if !defined(NO_GUI) && defined(WITH_GTK2)
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20

@@ -10,7 +10,7 @@ PORTVERSION=	2.15
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
