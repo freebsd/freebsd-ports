@@ -56,6 +56,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1052</cvename>
       <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
       <url>http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2004-11-03</url>
       <url>http://www.gotbnc.com/changes.html</url>
