@@ -1,0 +1,20 @@
+--- amavisdconf.orig	Fri Dec 27 14:56:01 2002
++++ amavisdconf	Thu Mar  6 21:18:16 2003
+@@ -9,7 +9,7 @@
+ #  (none) show the value as will be used by amavisd;
+ #   -d  show default value as in the absence of the config file;
+ #   -n  only show variable if its value is different from the default.
+-#   -c conf-file ... use the specified file instead of /etc/amavisd.conf
++#   -c conf-file ... use the specified file instead of %%PREFIX%%/etc/amavisd.conf
+ #
+ # If a variable is specified, show only that variable, otherwise show
+ # all configurable variables. (Note: the leading $, @ or % must be included
+@@ -179,7 +179,7 @@
+   }
+ 
+   my($what,$onevar);
+-  my($config_file) = '/etc/amavisd.conf';
++  my($config_file) = '%%PREFIX%%/etc/amavisd.conf';
+   while (@ARGV) {
+     if (@ARGV >= 1 && $ARGV[0] =~ /^-([nd])$/) {
+       $what = $1; shift @ARGV;
