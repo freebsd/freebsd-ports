@@ -1,0 +1,11 @@
+--- portscanner.c.old	Tue Aug 11 17:11:20 1998
++++ portscanner.c	Tue Aug 11 17:11:27 1998
+@@ -35,7 +35,7 @@
+ int sock = -1;
+ struct sockaddr_in address;
+ int result;
+-extern char *sys_errlist[];
++/* extern char *sys_errlist[]; */
+ extern int errno;
+ int current_port = 0; 
+ u_short base_port = 0;
