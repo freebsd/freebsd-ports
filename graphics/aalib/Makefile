@@ -3,19 +3,16 @@
 # Date created:				9 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/03/28 19:19:25 asami Exp $
+# $Id: Makefile,v 1.4 1998/03/29 01:33:10 steve Exp $
 #
 
-DISTNAME=		aalib-1.2
-CATEGORIES=		graphics
-MASTER_SITES=		ftp://ftp.ta.jcu.cz/pub/aa/
+DISTNAME=	aalib-1.2
+CATEGORIES=	graphics
+MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=	andy@icc.surw.chel.su
 
-GNU_CONFIGURE=		yes
-
-pre-configure:
-	@${RM} ${WRKSRC}/config.cache
+GNU_CONFIGURE=	yes
 
 pre-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
