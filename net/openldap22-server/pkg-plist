@@ -55,8 +55,11 @@ etc/openldap/schema/openldap.schema.default
 etc/rc.d/slapd.sh.sample
 include/disptmpl.h
 include/lber.h
+include/lber_types.h
 include/ldap.h
 include/ldap_cdefs.h
+include/ldap_features.h
+include/ldap_schema.h
 include/srchpref.h
 lib/liblber.a
 lib/liblber.so
@@ -72,6 +75,7 @@ libexec/go500
 libexec/go500gw
 libexec/in.xfingerd
 libexec/mail500
+libexec/maildap
 libexec/rcpt500
 libexec/rp500
 libexec/slapd

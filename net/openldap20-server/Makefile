@@ -7,6 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -27,6 +28,7 @@ USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
+		--with-threads \
 		--enable-shared \
 		--enable-dnssrv \
 		--with-tls=openssl
@@ -57,6 +59,7 @@ BINS=		bin/ldapadd \
 		libexec/go500gw \
 		libexec/in.xfingerd \
 		libexec/mail500 \
+		libexec/maildap \
 		libexec/rcpt500 \
 		libexec/rp500 \
 		libexec/slapd \
