@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}					\
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${APACHE_PORT}
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${APACHE_PORT}			\
 		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 		${PBASE}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql		\
 		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
@@ -27,7 +27,7 @@ USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 USE_REINPLACE=	yes
 
-APACHE_PORT?=	${PORTSDIR}/www/apache13
+APACHE_PORT?=	www/apache13
 APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PBASE=		${SITE_PERL}
@@ -80,7 +80,7 @@ do-install:
 	@${RM} ${FACT_CNF}.beforeFacturier
 	@${CP} -p ${FACT_CNF} ${FACT_CNF}.dist
 # Set perms
-	@${CHOWN} -R www:www ${FACT_REP}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${FACT_REP}
 	@${CHMOD} -R 644 ${FACT_REP}
 	@${FIND} ${FACT_REP} -type d -exec ${CHMOD} a+x {} \;
 	@${CHMOD} -R u+x ${FACT_REP}/cgi-bin
