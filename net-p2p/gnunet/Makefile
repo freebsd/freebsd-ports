@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -93,8 +92,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
+	@{FIND} ${WRKSRC} -name configure | ${XARGS} \
 	@${REINPLACE_CMD} -e \
 		's|-pthread [\$$]CFLAGS|${PTHREAD_CFLAGS} \$$CFLAGS|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 .include <bsd.port.mk>
