@@ -22,8 +22,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mserver.sh.sample ${PREFIX}/etc/rc.d/mserver.sh.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/mserver
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mserver
-	${INSTALL_MAN} ${WRKSRC}/README.tcpconn ${PREFIX}/share/doc/mserver
+	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/mserver
+	@${INSTALL_MAN} ${WRKSRC}/README.tcpconn ${PREFIX}/share/doc/mserver
 .endif
 
 .include <bsd.port.mk>
