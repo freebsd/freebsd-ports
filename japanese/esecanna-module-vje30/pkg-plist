@@ -1,0 +1,3 @@
+lib/esecanna/vje30.so
+@unexec rmdir %D/lib/esecanna 2>/dev/null || true
+share/doc/esecanna/README.vje30.jp
