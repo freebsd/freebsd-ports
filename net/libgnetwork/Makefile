@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GLib-based networking wrapper
 
+BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf2
