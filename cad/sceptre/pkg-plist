@@ -1,0 +1,15 @@
+bin/exec1
+bin/ngp_gnu
+bin/asa
+bin/sceptre
+bin/sceptre.inst
+bin/ngp
+etc/ngp.rc
+lib/exec2.o
+lib/libx2.a
+lib/libx3.a
+lib/usrlib.a
+lib/modellib.dat
+share/doc/sceptre/doc_en.pdf
+share/doc/sceptre/doc_ger.pdf
+@dirrm share/doc/sceptre

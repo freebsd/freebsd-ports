@@ -14,6 +14,7 @@
     SUBDIR += pcb
     SUBDIR += pisces
     SUBDIR += qcad
+    SUBDIR += sceptre
     SUBDIR += sis
     SUBDIR += spice
     SUBDIR += tkgate
