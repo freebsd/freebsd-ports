@@ -27,7 +27,6 @@ post-patch:
 .for i in dict.1 dictd.8
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${PKGMESSAGE}
 .for i in dictd.conf example.conf
 	@${PERL} -pi -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
