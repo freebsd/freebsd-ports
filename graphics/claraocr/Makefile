@@ -9,11 +9,7 @@ PORTNAME=	claraocr
 PORTVERSION=	0.9.9
 PORTREVISION?=	1
 CATEGORIES=	graphics accessibility
-MASTER_SITES=	ftp://carroll.cac.psu.edu/pub/linux/distributions/mandrake-devel/projects/claraocr/ \
-		ftp://ftp.wtfo.com/pub/linux/Mandrake-devel/projects/claraocr/ \
-		ftp://gd.tuwien.ac.at/pub/linux/Mandrake-devel/projects/claraocr/ \
-		ftp://mandrake.redbox.cz/Mandrake-devel/projects/claraocr/ \
-		ftp://ftp.proxad.net/pub/Distributions_Linux/Mandrake-devel/projects/claraocr/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	clara-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
