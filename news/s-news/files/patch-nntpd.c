@@ -1,5 +1,5 @@
---- nntpd.c	Sat May 18 20:21:56 2002
-+++ nntpd.c	Wed Aug 21 22:09:46 2002
+--- nntpd.c.orig	Sat May 18 22:21:56 2002
++++ nntpd.c	Wed Aug  4 03:40:06 2004
 @@ -2,6 +2,7 @@
   *  S-News version 0.1.9 - A Simple News Server
   *  Copyright (C) 1998 Christopher John Purnell
@@ -8,7 +8,16 @@
   *
   *  This program is free software; you can redistribute it and/or modify
   *  it under the terms of the GNU General Public License as published by
-@@ -106,6 +107,7 @@
+@@ -22,6 +23,8 @@
+ #include "config.h"
+ #endif
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <sys/utsname.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+@@ -106,6 +109,7 @@
  static void do_listgroup(char *);
  static void do_xover(char *);
  static void do_xhdr(char *);
@@ -16,7 +25,7 @@
  static void do_xpath(char *);
  static void do_ihave(char *);
  static void do_post(char *);
-@@ -239,6 +241,10 @@
+@@ -239,6 +243,10 @@
  		{
  			do_xhdr(arg);
  		}
@@ -27,7 +36,7 @@
  		else if (!strcasecmp(line,"xover"))
  		{
  			do_xover(arg);
-@@ -811,10 +817,11 @@
+@@ -811,10 +819,11 @@
  	printf(".\r\n");
  }
  
@@ -41,7 +50,7 @@
  	char *fmt,*cp;
  	unsigned char c;
  	int i;
-@@ -835,7 +842,7 @@
+@@ -835,7 +844,7 @@
  	i = -1; fmt = "%u \r\n";
  	for (u=0; u<7; ++u)
  	{
@@ -50,7 +59,7 @@
  		{
  			fmt = ((i=u) < 5) ? "%u %s\r\n" : "%u %u\r\n";
  		}
-@@ -1118,6 +1125,7 @@
+@@ -1118,6 +1127,7 @@
  		printf("ARTICLE   HEAD      BODY      STAT\r\n");
  		printf("GROUP     LIST      NEXT      LAST\r\n");
  		printf("LISTGROUP XHDR      XOVER     XPATH\r\n");
@@ -58,7 +67,7 @@
  	}
  	if (canpost)
  	{
-@@ -1127,7 +1135,7 @@
+@@ -1127,7 +1137,7 @@
  	{
  		printf("IHAVE     ");
  	}
@@ -67,7 +76,7 @@
  }
  
  static int match_pat(char *pat,char *str)
-@@ -1533,3 +1541,177 @@
+@@ -1533,3 +1543,177 @@
  
  	return str;
  }

@@ -1,5 +1,5 @@
---- qnews.c	2002-05-18 20:21:42.000000000 +0100
-+++ qnews.c	2002-10-12 19:23:55.000000000 +0100
+--- qnews.c.orig	Sat May 18 22:21:42 2002
++++ qnews.c	Wed Aug  4 03:24:43 2004
 @@ -2,6 +2,8 @@
   *  S-News version 0.1.9 - A Simple News Server
   *  Copyright (C) 1998 Christopher John Purnell
@@ -9,7 +9,7 @@
   *
   *  This program is free software; you can redistribute it and/or modify
   *  it under the terms of the GNU General Public License as published by
-@@ -22,7 +24,13 @@
+@@ -22,7 +24,18 @@
  #include "config.h"
  #endif
  
@@ -20,10 +20,15 @@
 +#endif
 +#include <fcntl.h>
 +
++#ifdef HAVE_MALLOC_H
++#include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
  #endif
-@@ -79,15 +87,37 @@
+@@ -79,15 +92,37 @@
  			if (match_group(ptr->value,line,end))
  			{
  				FILE *fp;
@@ -44,7 +49,7 @@
 -					return (1);
 +				    perror(file);
 +				    return (1);
-+				}
+ 				}
 +				if (flock(fd,LOCK_EX) == -1)
 +				{
 +				    perror(file);
@@ -54,7 +59,7 @@
 +				{
 +				    perror(file);
 +				    return (1);
- 				}
++				}
 +			#else
 +                                if (!(fp = fopen(file,"a")))
 +                                {
@@ -65,7 +70,7 @@
  
  				if (fputs(line,fp) < 0 ||
  				    fputc('\n',fp) < 0)
-@@ -103,6 +133,9 @@
+@@ -103,6 +138,9 @@
  					return (1);
  				}
  
@@ -75,7 +80,7 @@
  				break;
  			}
  		}
-@@ -204,7 +237,7 @@
+@@ -204,7 +242,7 @@
  				return (0);
  			break;
  		case '[':
@@ -84,7 +89,7 @@
  			{
  				unsigned char rev,mat=0,l=0,h,u=*str;
  
-@@ -229,6 +262,8 @@
+@@ -229,6 +267,8 @@
  				if (mat==rev)
  					return (0);
  			}
