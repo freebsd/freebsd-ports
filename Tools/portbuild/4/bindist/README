@@ -2,13 +2,25 @@
 
     Copy the following files from a running 4.0 system:
 
-    /dev/{bpf0,kmem,lkm,mem,null,stderr,stdin,stdout,tty,zero}
+    /dev/{bpf0,kmem,lkm,mem,null,random,stderr,stdin,stdout,tty,zero}
     /dev/fd/[0-9]
     /etc/resolv.conf
 
-    Copy the following files from a very recent 4.0 system:
+    /usr/bin/openssl
+    /usr/include/openssl/evp.h
+    /usr/include/openssl/rsa.h
+    /usr/include/openssl/rsaref.h
+    /usr/lib/libRSAglue.a
+    /usr/lib/libRSAglue.so.1
+    /usr/lib/libcrypto.a
+    /usr/lib/libcrypto.so.1
+    /usr/lib/libssl.a
+    /usr/lib/libssl.so.1
 
-    (empty)
+    Copy the following files from a running 4-current system or a
+    2.2-stable system.  In the latter case, it will be in /usr/lib.
+
+    /usr/lib/aout/c++rt0.o
 
     Copy the following files from a very recent 4.0 system or source tree:
 
