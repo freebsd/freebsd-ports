@@ -1,5 +1,5 @@
---- configure.orig	Wed Jan 27 14:41:59 1999
-+++ configure	Thu Feb  4 19:50:16 1999
+--- configure.orig	Mon Apr  5 01:46:35 1999
++++ configure	Tue Apr  6 23:08:43 1999
 @@ -2199,30 +2199,7 @@
  echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
  echo "configure:2201: checking "how to check if pid exists"" >&5
@@ -56,3 +56,12 @@
  fi
  
  # Force static compilation to avoid linking probles/get more speed
+@@ -7004,7 +6971,7 @@
+     echo ""
+     echo "Configuring MIT Pthreads"
+     # We will never install so installation paths are not needed.
+-    (cd mit-pthreads; sh ./configure)
++    (cd mit-pthreads; sh ./configure ${CONFIGURE_ARGS})
+     echo "End of MIT Pthreads configuration"
+     echo ""
+   fi
