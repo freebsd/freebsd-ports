@@ -36,6 +36,7 @@ lib/zhcon/input/winpy.mb
 lib/zhcon/input/winsp.mb
 lib/zhcon/input/winzm.mb
 share/locale/ja/LC_MESSAGES/zhcon.mo
+share/locale/kr/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/zhcon.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/zhcon.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/zhcon.mo
