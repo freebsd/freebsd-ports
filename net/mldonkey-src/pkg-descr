@@ -4,7 +4,7 @@ peer-to-peer networks.
 (see http://www.overnet.com/)
 
 It is separated into a core with telnet and web interfaces, and
-brings a GTK GUI (see the separate mldonkey-gui port).
+a GTK GUI. This port will build it from sources.
 
 Other features over the original eDonkey client are:
 - better stability
