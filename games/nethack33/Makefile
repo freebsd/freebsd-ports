@@ -18,7 +18,7 @@ MAINTAINER?=	glewis@FreeBSD.org
 COMMENT?=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-LATEST_LINK=	nethack33
+LATEST_LINK=	nethack33${PKGNAMESUFFIX}
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
