@@ -83,8 +83,12 @@ do-install:
 .for i in ${PORTDOCS:S/${HOWTO}//}
 	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
 .endfor
+.if !defined(WITHOUT_COMPILER_LINKS)
 	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}
 .endif
+.endif
+.if !defined(WITHOUT_COMPILER_LINKS)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
