@@ -38,7 +38,7 @@ KRB5_IMPL=		mit
 .endif
 
 .if defined(KRB5_IMPL) && ${KRB5_IMPL} == heimdal
-LIB_DEPENDS=		krb5.18:${PORTSDIR}/security/heimdal
+LIB_DEPENDS=		krb5.19:${PORTSDIR}/security/heimdal
 .if defined(HEIMDAL_HOME)
 KRB5_DIR?=		${HEIMDAL_HOME}
 .endif
