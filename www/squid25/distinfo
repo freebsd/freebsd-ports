@@ -26,3 +26,5 @@ MD5 (squid2.5/squid-2.5.STABLE6-errorpage_quote.patch) = b9f329cdf98c7c5a048cdad
 SIZE (squid2.5/squid-2.5.STABLE6-errorpage_quote.patch) = 377
 MD5 (squid2.5/squid-2.5.STABLE6-heap_segfault.patch) = c82d9f3972419833b757c0c116c216f8
 SIZE (squid2.5/squid-2.5.STABLE6-heap_segfault.patch) = 867
+MD5 (squid2.5/squid-2.5.STABLE6-ntlm_fetch_string.patch) = dbf1826522c14dc64c0c37430bb27b2e
+SIZE (squid2.5/squid-2.5.STABLE6-ntlm_fetch_string.patch) = 1606
