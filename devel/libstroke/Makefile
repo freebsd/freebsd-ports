@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.etla.net/libstroke/
 
 MAINTAINER=	jerry@thehutt.org
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
