@@ -159,6 +159,7 @@
     SUBDIR += xrootconsole
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
+    SUBDIR += xsel
     SUBDIR += xskyroot
     SUBDIR += xsnow
     SUBDIR += xstarroll
