@@ -409,6 +409,7 @@
     SUBDIR += vpnc
     SUBDIR += vpnd
     SUBDIR += vscan
+    SUBDIR += vulnerability-test-port
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xmlsec
