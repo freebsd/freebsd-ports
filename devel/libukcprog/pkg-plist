@@ -3,4 +3,3 @@ lib/libukcprog.a
 lib/libukcprog.so
 lib/libukcprog.so.0
 libdata/pkgconfig/libukcprog.pc
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
