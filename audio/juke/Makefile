@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		juke
-PORTVERSION=		0.5
+PORTVERSION=		0.6
 CATEGORIES=		audio
 MASTER_SITES=		http://www.nocrew.org/software/juke/archive/
 
