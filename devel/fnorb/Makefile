@@ -7,7 +7,7 @@
 
 PORTNAME=	fnorb
 PORTVERSION=	1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/ \
 		ftp://ftp.dstc.edu.au/DSTC/fnorb/
@@ -23,24 +23,33 @@ ALL_TARGET=
 
 CPIO=		cpio --quiet -pdum -R
 FNORB_DIR=	${PYTHON_SITELIBDIR}/Fnorb
-FNORB_SHAREDIR=	${PREFIX}/share/fnorb
+FNORB_EGDIR=	${PREFIX}/share/examples/fnorb
 FNORB_DOCDIR=	${PREFIX}/share/doc/fnorb
+FNORB_BINS=	fnaming fnendian fnfeed fngen fnidl fnifr fnior fnlogger \
+		fnmetrics fnmkior fnoptions fnping
 
 do-configure:
 	@ (cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 	  Makefile.pre.in boot)
 
+post-build:
+	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -f ${WRKSRC}
+	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -f ${WRKSRC}
+
 post-install:
-	@ ${MKDIR} ${FNORB_DIR}
-	@ (cd ${WRKSRC} && find *.py compiler cos orb parser \! -name \*.orig \
+	@ ${MKDIR} ${FNORB_DIR}/script
+	@ (cd ${WRKSRC} && find *.py *.pyc *.pyo compiler cos orb parser \
+	  script/*.py script/*.pyc script/*.pyo \! -name \*.orig \
 	  | ${CPIO} ${BINOWN}:${BINGRP} ${FNORB_DIR})
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -f ${FNORB_DIR}
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -f ${FNORB_DIR}
-	@ ${MKDIR} ${FNORB_SHAREDIR}
-	@ (cd ${WRKSRC} && find script examples \! -name \*.bat \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${FNORB_SHAREDIR})
+	@ ${MKDIR} ${PREFIX}/bin
+.for fnscript in ${FNORB_BINS}
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/script/${fnscript} ${PREFIX}/bin
+.endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/etc/fnorb.cfg \
 	  ${PREFIX}/etc/fnorb.cfg.sample
+	@ ${MKDIR} ${FNORB_EGDIR}
+	@ (cd ${WRKSRC}/examples && find * \
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${FNORB_EGDIR})
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${FNORB_DOCDIR}
 	@ (cd ${WRKSRC}/doc && find . \
