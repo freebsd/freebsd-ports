@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	0.9.4.2
+PORTVERSION=	0.9.6.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	openscenegraph
 DISTNAME=	OpenSceneGraph-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads \
+		${X11BASE}/lib/libProducer.so:${PORTSDIR}/graphics/openproducer
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		Producer.0:${PORTSDIR}/graphics/openproducer
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -29,7 +34,7 @@ USE_GMAKE=	yes
 MAKE_ENV=	OSGHOME=${WRKSRC} \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 MAKEFILE=	GNUmakefile
-WRKSRC=		${WRKDIR}/OpenSceneGraph-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/OpenSceneGraph-${PORTVERSION:R}-${PORTVERSION:E}
 
 # opt = optimized ($OPTF added); debug = debug ($DBGF added); opt is default
 ALL_TARGET=	opt
