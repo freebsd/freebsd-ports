@@ -1,9 +1,9 @@
-bin/mix
-%%PORTDOCS%%share/doc/mixal/MIX.DOC
-%%PORTDOCS%%share/doc/mixal/NOTES
-%%PORTDOCS%%share/doc/mixal/READ.ME
-%%PORTDOCS%%share/doc/mixal/elevator.mix
-%%PORTDOCS%%share/doc/mixal/mystery.mix
-%%PORTDOCS%%share/doc/mixal/opcodes
-%%PORTDOCS%%share/doc/mixal/prime.mix
-@dirrm share/doc/mixal
+bin/mixal
+%%PORTDOCS%%%%DOCSDIR%%/MIX.DOC
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/elevator.mix
+%%PORTDOCS%%%%DOCSDIR%%/mystery.mix
+%%PORTDOCS%%%%DOCSDIR%%/opcodes
+%%PORTDOCS%%%%DOCSDIR%%/prime.mix
+@dirrm %%DOCSDIR%%

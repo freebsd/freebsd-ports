@@ -7,21 +7,25 @@
 #
 
 PORTNAME=	mixal
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	lang
-MASTER_SITES=	http://www.catb.org/~esr/retro/ \
-		http://dl.droso.net/ports/
+MASTER_SITES=	http://www.catb.org/~esr/mixal/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler and interpreter for Donald Knuth's mythical MIX computer
 
-ALL_TARGET=	# none
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
+
+MAN1=		mixal.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mix ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mixal ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mixal.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for F in READ.ME MIX.DOC NOTES opcodes *.mix
+.for F in MIX.DOC NOTES README opcodes *.mix
 	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
 .endfor
 .endif
