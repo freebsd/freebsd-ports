@@ -1,0 +1,9 @@
+#!/bin/sh
+
+PREFIX=${PREFIX:-/usr/local}
+
+echo "BINDIR = $PREFIX/bin"     >> $WRKSRC/Makefile || exit 1;
+echo "MANDIR = $PREFIX/man"     >> $WRKSRC/Makefile || exit 1;
+echo "all: default"             >> $WRKSRC/Makefile || exit 1;
+echo "install: inst-dviselect"  >> $WRKSRC/Makefile || exit 1;
+exit 0;

@@ -1,0 +1,19 @@
+*** dviselect.c~	Tue Nov 27 08:53:14 1990
+--- dviselect.c	Thu Oct  6 22:01:13 1994
+***************
+*** 122,128 ****
+  /* save some string space: we use this a lot */
+  char	writeerr[] = "error writing DVI file";
+  
+! char	*malloc(), *realloc(), *sprintf();
+  
+  /*
+   * lint gets rather confused with the current definitions of getc and putc,
+--- 122,128 ----
+  /* save some string space: we use this a lot */
+  char	writeerr[] = "error writing DVI file";
+  
+! char	*malloc(), *realloc();
+  
+  /*
+   * lint gets rather confused with the current definitions of getc and putc,

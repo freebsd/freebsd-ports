@@ -1,0 +1,14 @@
+*** lib/font.c~	Tue Nov 27 08:53:20 1990
+--- lib/font.c	Thu Oct  6 22:02:07 1994
+***************
+*** 67,75 ****
+   */
+  extern	int errno;
+  char	*getenv(), *malloc(), *strsave();
+- #ifndef sys5
+- char	*sprintf();
+- #endif
+  
+  static readconf();
+  static setfont();
+--- 67,72 ----
