@@ -80,6 +80,8 @@ MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
 		netatalk.conf.5 papd.conf.5
 MAN8=		afpd.8 atalkd.8 papd.8 papstatus.8 psf.8 timelord.8
 
+CONFLICTS=	bigloo-2.* cap-6.0.* tct-1.*
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Netatalk has the following tunable options:"
