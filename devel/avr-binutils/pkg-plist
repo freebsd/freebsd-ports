@@ -98,5 +98,4 @@ share/locale/tr/LC_MESSAGES/ld.mo
 @dirrm avr/lib/ldscripts
 @dirrm avr/lib
 @dirrm avr/bin
-@dirrm avr/include
 @dirrm avr
