@@ -8,7 +8,7 @@
 PORTNAME=	fceu
 PORTVERSION=	0.98.12
 CATEGORIES=	emulators
-MASTER_SITES=	http://fceultra.sourceforge.net/releases/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	xcas@cox.net
