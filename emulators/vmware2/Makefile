@@ -97,6 +97,7 @@ post-patch:
 	${PERL} -i -pe 's,<sys/select\.h>,<sys/selinfo.h>,' \
 		${WRKSRC}/vmmon-only/freebsd/*.c
 .endif
+	cd ${WRKSRC}/vmmon-only/freebsd && ${TOUCH} bus_if.h device_if.h
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
