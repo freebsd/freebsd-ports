@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Spec/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/Functions.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/Mac.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/OS2.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/Unix.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/VMS.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec/Win32.pm
+lib/perl5/site_perl/%%PERL_VER%%/File/Spec.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Spec
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/File/Spec
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
