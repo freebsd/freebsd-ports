@@ -15,9 +15,10 @@ COMMENT=	CGI program to deliver hierarchy of web links
 
 HAS_CONFIGURE=	yes
 
-CGI_BIN=	${LOCALBASE}/www/cgi-bin
+CGI_BIN=	${PREFIX}/www/cgi-bin
 
 do-install:
+	${MKDIR} ${CGI_BIN}
 	${INSTALL_PROGRAM} ${WRKSRC}/emp ${CGI_BIN}/emp.cgi
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Samples/links.sample ${EXAMPLESDIR}
