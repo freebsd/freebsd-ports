@@ -1,0 +1,11 @@
+--- babble/src/bitcp.cc.orig	Sat Jun 19 17:24:53 1999
++++ babble/src/bitcp.cc	Sat Jun 19 17:25:04 1999
+@@ -39,7 +39,7 @@
+ #include <fstream.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <String.h>
++#include <string.h>
+ #include <unistd.h>
+ #include "../../mtc++/include/MTC++.h"
+ #include "../../mtc++/include/mstring.h"
