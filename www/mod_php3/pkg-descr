@@ -9,7 +9,7 @@ more easily.
 
 This version has PHP3 compiled in. PHP3 is a server-side, cross-platform,
 HTML embedded scripting language which offers easy database integration.
-SSL support (mod_ssl + SSLeay) is available as an option.
+SSL support (mod_ssl + OpenSSL) is available as an option.
 
 Documentation
 =============
@@ -17,4 +17,4 @@ Documentation
 Apache:		http://www.apache.org/
 PHP3:		http://www.php.net/
 mod_ssl:	http://www.engelschall.com/sw/mod_ssl/
-SSLeay:		http://www.ssleay.org/
+OpenSSL:	http://www.openssl.org/
