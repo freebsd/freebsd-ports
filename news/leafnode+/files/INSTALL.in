@@ -5,7 +5,7 @@ SPOOLDIR=@SPOOLDIR@
 if [ x$2 = xPOST-INSTALL ]; then
  if [ ! -d $LIBDIR ]; then
 	mkdir -p $LIBDIR
-	chown -R news.news $LIBDIR/.
+	chown -R news:news $LIBDIR/.
  fi
  if [ ! -d $SPOOLDIR ]; then
 	mkdir -p $SPOOLDIR
@@ -20,7 +20,7 @@ if [ x$2 = xPOST-INSTALL ]; then
 				${a}${b}9 ; \
 		done
 	done
-	chown -R news.news $SPOOLDIR/.
+	chown -R news:news $SPOOLDIR/.
 	chmod 2750 $SPOOLDIR
  fi
 fi
