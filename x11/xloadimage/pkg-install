@@ -6,7 +6,7 @@
 #
 set -e
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
-PREFIX=${PKG_PREFIX:-/usr/local}
+PREFIX=${PREFIX:-${PKG_PREFIX:-/usr/local}}
 CONFIG_FILE=${PREFIX}/etc/xloadimagerc
 SAMPLE_CONFIG_DIR=${PREFIX}/share/examples/xloadimage
 
