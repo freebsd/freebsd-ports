@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	ppmcaption
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jwz.org/ppmcaption/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A utility which adds text to images
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-builtin="ncenB24.bdf -scale 0.5 -blur 5"
-MAN1=	ppmcaption.1
+MAN1=		ppmcaption.1
 
 .include <bsd.port.mk>
