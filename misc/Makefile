@@ -108,6 +108,7 @@
     SUBDIR += gnomeutils
     SUBDIR += gnomeutils2
     SUBDIR += gnuls
+    SUBDIR += gnustep-examples
     SUBDIR += goblin
     SUBDIR += goldstr
     SUBDIR += gone
