@@ -1,18 +1,18 @@
 # New ports collection makefile for:    XFree86-contrib
-# Version required:     3.3
+# Version required:     3.3.3
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.10 1998/04/13 14:33:17 markm Exp $
+# $Id: Makefile,v 1.11 1998/10/05 05:17:48 steve Exp $
 #
 
-DISTNAME=	X332contrib
-PKGNAME=	XFree86-contrib-3.3.2
+DISTNAME=	X333contrib
+PKGNAME=	XFree86-contrib-3.3.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.2/source/ \
-		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.2/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.2/source/
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
+		ftp://ftp.ibp.fr/pub/X11/XFree86/XFree86-3.3.3/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.3/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmz@FreeBSD.ORG
