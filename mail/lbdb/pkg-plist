@@ -4,11 +4,15 @@ bin/lbdb_dotlock
 bin/nodelist2lbdb
 libexec/fetchaddr
 libexec/lbdb-munge
+libexec/lbdb_bbdb_query.el
 libexec/lbdb_lib
 libexec/munge
 libexec/munge-keeporder
+libexec/m_bbdb
 libexec/m_fido
 libexec/m_finger
+libexec/m_gpg
+libexec/m_gnomecard
 libexec/m_inmail
 libexec/m_muttalias
 libexec/m_palm
