@@ -25,7 +25,7 @@ pre-fetch:
 .else
 USE_XLIB=	yes
 ALL_TARGET=	both
-PLIST=		${PKGDIR}/PLIST.xae
+PLIST=		${PKGDIR}/pkg-plist.xae
 .endif
 
 MAN1=		aee.1
