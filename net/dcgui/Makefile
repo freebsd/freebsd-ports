@@ -19,6 +19,7 @@ DISTNAME=	dcgui-0.1beta11
 
 MAINTAINER=	e96sv@yahoo.se
 COMMENT=	A Direct Connect client QT GUI
+FORBIDDEN=	"security bug--see <URL:http://dc.ketelhot.de/news.php>"
 
 LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2

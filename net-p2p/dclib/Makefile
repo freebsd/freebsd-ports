@@ -19,6 +19,7 @@ DISTNAME=	dclib-0.1beta11
 
 MAINTAINER=	e96sv@yahoo.se
 COMMENT=	Direct connect interface library for dcgui
+FORBIDDEN=	"security bug--see <URL:http://dc.ketelhot.de/news.php>"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		xml2.5:${PORTSDIR}/textproc/libxml2
