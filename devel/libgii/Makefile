@@ -8,20 +8,26 @@
 PORTNAME=	libgii
 PORTVERSION=	0.8.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/
-DISTNAME=	$(PORTNAME)-$(PORTVERSION).src
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ggi
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	API for input sources
+COMMENT=	GGI API for input sources
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-# NOTE: We can not define USE_LIBTOOL for this port to build.
-#USE_LIBTOOL=	yes
-CFLAGS+=	${PTHREAD_LIBS}
+
+.if exists(/usr/include/kii/kii.h)
+CONFIGURE_ARGS+=	--enable-kii
+PLIST_SUB+=	KII=""
+.else
+PLIST_SUB+=	KII="@comment "
+.endif
 
 MAN1=		mhub.1
 MAN3=		giiEventPoll.3 giiEventSend.3 giiInit.3 \
