@@ -8,8 +8,6 @@ WWW: http://www.gnupg.org/
 
 Here are modules to use the deprecated (and patented) encodings.
 
-	- sign and check PGP2.x signaturs
+	- sign and check PGP2.x signatures
 	- decode PGP2.x messages.
 	- You can't encrypt to PGP2.x users.
-
-dirk.meyer@dinoex.sub.org
