@@ -74,6 +74,10 @@ ForceNormalLib?=	DEFAULT
 DebuggableLibraries?=	DEFAULT
 # End of XFree86 User Config
 
+.ifdef USE_XLIB
+.error You have `USE_XLIB' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 # BuildXF86DRI is false for FreeBSD < 4.1

@@ -50,6 +50,10 @@ CONFIGURE_ARGS+=	-Dusemymalloc=n
 
 INCLUDEDIR=	/usr/include
 
+.ifdef USE_PERL5
+.error You have `USE_PERL5' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 MAN1=	a2p.1 c2ph.1 dprofpp.1 find2perl.1 h2ph.1 h2xs.1 perl.1 \

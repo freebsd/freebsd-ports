@@ -23,6 +23,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
+.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
+.error You have `USE_AUTOMAKE' or `USE_AUTOMAKE_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 post-patch:
 	@-${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi
 	${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi

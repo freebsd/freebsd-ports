@@ -21,6 +21,10 @@ USE_BZIP2=	yes
 
 LATEST_LINK=	gcc295
 
+.ifdef USE_GCC
+.error You have `USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 GCC_REV=	${DISTNAME:S/gcc-//g:S/.test3//g}

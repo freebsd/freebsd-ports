@@ -27,6 +27,10 @@ MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \
 		bzgrep.1 bzfgrep.1 \
 		bzmore.1 bzless.1
 
+.ifdef USE_BZIP2
+.error You have `USE_BZIP2' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2

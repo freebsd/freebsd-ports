@@ -35,6 +35,10 @@ MANCOMPRESSED=	yes
 INSTALL_TARGET=	install install.man
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 
+.ifdef USE_IMAKE
+.error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 do-configure:
 	@${ECHO_CMD} > ${WRKSRC}/cf/host.def
 	@(cd ${WRKDIR}/xc; \

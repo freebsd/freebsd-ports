@@ -21,6 +21,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
+.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
+.error You have `USE_AUTOMAKE' or `USE_AUTOMAKE_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 pre-configure:
 	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
 

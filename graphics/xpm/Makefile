@@ -18,6 +18,10 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		cxpm.1 sxpm.1
 
+.ifdef USE_XPM
+.error You have `USE_XPM' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 post-install:
 	@ranlib ${PREFIX}/lib/libXpm.a
 

@@ -28,6 +28,10 @@ INSTALLS_SHLIB=	yes
 
 DEMOS_SRC=	${WRKSRC}/demos/programs
 
+.ifdef USE_MOTIF
+.error You have `USE_MOTIF' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} >= 4

@@ -28,6 +28,10 @@ CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=213 --datadir=${PREFIX}/share/autoconf213
 WRKSRC=		${WRKDIR}/autoconf
 
+.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
+.error You have `USE_AUTOCONF' or `USE_AUTOCONF_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 post-patch:
 	@-${RM} ${WRKSRC}/*.info*
 

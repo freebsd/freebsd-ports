@@ -23,6 +23,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H -DHAVE_LC_MESSAG
 
 MAN1=		gmake.1
 
+.ifdef USE_GMAKE
+.error You have `USE_GMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 # joerg@freebsd.org says our getloadavg() no longer requires setgid kmem
 
 post-install:

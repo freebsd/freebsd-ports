@@ -28,10 +28,12 @@ GNU_CONFIGURE=	yes
 MAN1=		dgs.1 dpsnx.agent.1
 MANN=		dpsexec.man makepsres.man xepsf.man
 
+.ifdef USE_DGS
+.error You have `USE_DGS' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|manm|mann|g'
-
-
 
 .include <bsd.port.mk>

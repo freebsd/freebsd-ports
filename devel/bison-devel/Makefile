@@ -27,6 +27,10 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		bison.1
 
+.ifdef USE_BISON
+.error You have `USE_BISON' variable defined either in environment or in make(1) arguments. Please undefine and try again.
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/bison.info*
 
