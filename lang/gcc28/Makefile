@@ -37,6 +37,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 
 PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++
+CONFIGURE_ARGS+= --program-suffix=28
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
@@ -74,8 +75,9 @@ post-install:
 	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/cpp ; \
 		do ${STRIP_CMD} $$prog ; \
 		done)
-	${LN} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
-	${LN} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++28
+	@${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
+	@${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/g++28
+	@${MV} ${PREFIX}/bin/gcov ${PREFIX}/bin/gcov28
 	@${MV} ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/cccp28.1
 	@${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++28.1
 	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc28.1
