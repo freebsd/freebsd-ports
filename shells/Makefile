@@ -1,7 +1,5 @@
-# $Id: Makefile,v 1.6 1995/02/12 16:35:14 torstenb Exp $
+# $Id: Makefile,v 1.7 1995/04/23 09:01:41 asami Exp $
 #
-# BROKEN= pdksh (not really pdksh's fault, but will hang -current)
-#
-SUBDIR=	bash tcsh zsh
+SUBDIR=	bash pdksh tcsh zsh
 
 .include <bsd.port.subdir.mk>
