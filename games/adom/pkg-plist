@@ -2,4 +2,5 @@ bin/adom
 %%PORTDOCS%%share/doc/adom/adomfaq.txt
 %%PORTDOCS%%share/doc/adom/manual.doc
 %%PORTDOCS%%share/doc/adom/readme.1st
+%%PORTDOCS%%share/doc/adom/techstat.doc
 %%PORTDOCS%%@dirrm share/doc/adom
