@@ -27,7 +27,6 @@ PLIST_SUB=	GS_VERSION=${PORTVERSION}
 USE_XLIB=	yes
 EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_DRV}
 WRKSRC=		${WRKDIR}/gs${PORTVERSION}
-USE_GMAKE=	yes
 MAKEFILE=	src/unix-gcc.mak
 CFLAGS+=	-I${PREFIX}/include
 # Note: the order that the manpages are listed here matters because
