@@ -16,17 +16,15 @@ EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core \
-		${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
-		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk13
+RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core
 
+USE_JAVA=	1.3+
 NO_BUILD=	yes
+JAVA_NO_BUILD_DEPENDS=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE} \
 		WRAPPER=${PORTNAME}${PKGNAMESUFFIX}
 
-JDK_VERSION=	1.3.1
 JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}
 

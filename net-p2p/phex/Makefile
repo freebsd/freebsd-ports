@@ -14,16 +14,13 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
-		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk13
-
+USE_JAVA=	1.3+
 USE_ZIP=	yes
 NO_BUILD=	yes
+JAVA_NO_BUILD_DEPENDS=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE}
 
-JDK_VERSION=	1.3.1
 JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}/
 JAR_MANIFEST=	${FILESDIR}/manifest

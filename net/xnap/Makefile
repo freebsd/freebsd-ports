@@ -15,11 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
-		${LOCALBASE}/jdk1.3.1/bin/java:${PORTSDIR}/java/jdk13
-
+USE_JAVA=	1.3+
 NO_BUILD=	yes
+JAVA_NO_BUILD_DEPENDS=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
 JAVAVM=		${LOCALBASE}/bin/javavm
