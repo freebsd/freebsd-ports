@@ -35,7 +35,6 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/version.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/dump.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
-lib/perllocal.pod-CGI-Session
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI/Session
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/CGI/Session
