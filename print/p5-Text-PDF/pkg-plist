@@ -18,10 +18,14 @@ lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/SFont.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Utils.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/TTFont.pm
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Number.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/CD.CFG
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/graph.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/hello.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfaddobj.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfaddpg.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfcrop.pl
 lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/pdfgetobj.pl
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples/test.pdf
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/PDF
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/examples
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF
