@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ImageMagick
-# Version required:     4.1.4
+# Version required:     4.1.6
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.59 1998/11/25 09:01:17 asami Exp $
+# $Id: Makefile,v 1.60 1998/12/12 21:03:35 jseger Exp $
 #
 
-DISTNAME=       ImageMagick-4.1.4
+DISTNAME=       ImageMagick-4.1.6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
