@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tkseti
-PORTVERSION=	3.07
+PORTVERSION=	3.10.2
 CATEGORIES=	astro tk84
-MASTER_SITES=	http://phileimer.9online.fr/tkseti/
+MASTER_SITES=	http://norlug.org/~chipster/resources/tkseti/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk-based interface to SETI@Home
@@ -16,21 +16,27 @@ COMMENT=	Tk-based interface to SETI@Home
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
-USE_BZIP2=	yes
 
-MAN1=	tkseti.1
+MAN1=		tkseti.1
+PORTDOCS=	DOC README
+PLIST_FILES=	bin/tkseti
+
+WISH=		${LOCALBASE}/bin/wish8.4
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|g' ${WRKSRC}/tkseti
+	@cd ${WRKSRC}/man && ${BZIP2_CMD} -d tkseti.1.bz2
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkseti ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tkseti.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/tkseti.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/tkseti
-	${INSTALL_DATA}	${WRKSRC}/DOC ${PREFIX}/share/doc/tkseti/DOC
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tkseti/README
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/docs/DOC ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
