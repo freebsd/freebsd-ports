@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	ssh2
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.5
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.ssh.com/pub/ssh/ \
 		ftp://sunsite.unc.edu/pub/packages/security/ssh/ \
-		ftp://ftp.kyoto.wide.ad.jp/pub/security/ssh/ \
-		ftp://ftp.cis.fed.gov/pub/ssh/ \
 		ftp://ftp.keystealth.org/pub/ssh/ \
-		ftp://mirror.chpc.utah.edu/pub/ssh/ \
 		ftp://metalab.unc.edu/pub/packages/security/ssh/ \
-		ftp://herbie.ucs.indiana.edu/pub/security/ssh/
+		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/ \
+		ftp://ftp.cronyx.ru/mirror/ssh/ \
+		ftp://ftp.univie.ac.at/applications/ssh.com/
 DISTNAME=	ssh-${PORTVERSION}
 
-MAINTAINER=	larse@ISI.EDU
+MAINTAINER=	marius@alchemy.franken.de
 COMMENT=	Secure shell client and server (remote login program)
 
 GNU_CONFIGURE=	YES
+USE_REINPLACE=	YES
 
 CONFIGURE_ARGS=	--with-etcdir=${SSH2_ETC} --disable-debug
 
@@ -29,43 +29,43 @@ SSH2_ETC=	${PREFIX}/etc/ssh2
 SSH2_RCD=	${PREFIX}/etc/rc.d
 CONFIG_FILES=	ssh2_config sshd2_config
 
-# Uncomment if all your users are in their own group and their homedir
-# is writeable by that group.  Beware the security implications!
-#
-#CONFIGURE_ARGS+=	--enable-group-writeability
-
-# Kerberos support is untested.
-#
-#.if defined(KRB5_HOME) && exists(${KRB5_HOME})
-#CONFIGURE_ARGS+=--with-kerberos5=${KRB5_HOME} --disable-suid-ssh-signer
-#.endif
-
-# Auto-configure tcp_wrappers support.
-#
-.if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCPWRAP) && \
-	!defined(WITHOUT_TCPWRAP)
-CONFIGURE_ARGS+=	--with-libwrap
-.elif defined(WITH_TCPWRAP)
-CONFIGURE_ARGS+=	--with-libwrap="-L${LOCALBASE}/lib -lwrap"
-
-LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
-
 .include <bsd.port.pre.mk>
 
-# This is necessary for a working ssh-chrootmgr. Added by mic@nethack.at
+# Define if all your users are in their own group and their homedir
+# is writeable by that group.  Beware the security implications!
+#
+.if defined(WITH_GROUP_WRITEABILITY)
+CONFIGURE_ARGS+=	--enable-group-writeability
+.endif
+
+# Kerberos5 support in ssh2 is EXPERIMENTAL and requires MIT Kerberos,
+# Heimdal is unsupported.
+#
+.if defined(WITH_KERBEROS) && defined(KRB5_HOME) && \
+	exists(${KRB5_HOME}/lib/libkrb5.a)
+CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME} --disable-suid-ssh-signer
+.endif
+
+.if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCPWRAP)
+CONFIGURE_ARGS+=	--with-libwrap
+.endif
+
+# This is necessary for a working ssh-chrootmgr. Added by mic@nethack.at.
 #
 .if defined(WITH_STATIC_SFTP)
 CONFIGURE_ARGS+=	--enable-static
+PLIST_SUB=		STATIC=""
+.else
+PLIST_SUB=		STATIC="@comment "
 .endif
 
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
 	&& exists(${X11BASE}/bin/xauth) && !defined(WITHOUT_X11))
 USE_XLIB=	yes
-PLIST_SUB=	WITH_X11:=""
+PLIST_SUB+=	WITH_X11:=""
 .else
 CONFIGURE_ARGS+=	--without-x
-PLIST_SUB=	WITH_X11:="@comment "
+PLIST_SUB+=	WITH_X11:="@comment "
 .endif
 
 MAN1=		ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 scp2.1 sftp2.1 \
@@ -81,6 +81,14 @@ MANCOMPRESSED=	no
 PORTDOCS=	CHANGES FAQ INSTALL LICENSE MANIFEST NEWS README \
 		REGEX-SYNTAX SSH2.QUICKSTART
 
+post-patch:
+.for i in ${MAN1} ${MAN5} ${MAN8}
+	@${REINPLACE_CMD} -e 's|\/etc\/ssh2|${PREFIX}&|g;' \
+		${WRKSRC}/apps/ssh/${i}
+.endfor
+	@${REINPLACE_CMD} -E -e 's|\$$\(ETCDIR\)|${PREFIX}\/etc|g;' \
+		${WRKSRC}/apps/ssh/ssh_dummy_shell.out
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -88,11 +96,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
-	@if [ ! -f ${SSH2_ETC}/hostkey ]; then \
-	    ${ECHO} "Generating a secret host key..."; \
-	    ${PREFIX}/bin/ssh-keygen2 -P -b 1024 -t dsa ${SSH2_ETC}/hostkey; \
-	fi; \
-	if [ "`grep ssh /etc/inetd.conf|grep -v ^#ssh`" = "" ]; then \
+	if [ "`${GREP} ssh /etc/inetd.conf | ${GREP} -v ^#ssh`" = "" ]; then \
 	    if [ ! -f ${SSH2_RCD}/sshd.sh ]; then \
 		${ECHO} "Installing ${SSH2_RCD}/sshd.sh startup file."; \
 		${SED} -e 's+!!PREFIX!!+${PREFIX}+' < ${FILESDIR}/sshd.sh \
