@@ -1,0 +1,13 @@
+--- mew-xemacs.el~	Mon Aug 30 12:43:16 1999
++++ mew-xemacs.el	Mon Aug 30 20:58:26 1999
+@@ -30,8 +30,8 @@
+   (defvar mew-summary-toolbar nil)
+   (defvar mew-draft-toolbar nil))
+  (t
+-  (defvar mew-icon-directory nil)
+-
++  (defvar mew-icon-directory (if (fboundp 'locate-data-directory)
++				 (locate-data-directory "mew")))
+   (defvar mew-icon-separate
+     (toolbar-make-button-list
+      (expand-file-name "mew-sep.xpm" mew-icon-directory)))
