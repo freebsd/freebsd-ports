@@ -3,27 +3,31 @@
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/12 17:30:28 hoek Exp $
+# $Id: Makefile,v 1.2 1998/02/22 22:26:23 wosch Exp $
 #
 
-DISTNAME=	catdoc
-PKGNAME=	catdoc-0.3
+DISTNAME=	catdoc-0.3
 CATEGORIES=	textproc
-# Uses on-the-fly tar, which may not work with all of MASTER_SITE_TEX_CTAN.
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/tex/ctan/support/
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/catdoc
+DISTFILES=	catdoc.c catdoc.1 wordview
 
 MAINTAINER=	brion@queeg.com
 
-EXTRACT_BEFORE_ARGS=	-xf
-CFLAGS+=	-DLATIN1=1
+DIST_SUBDIR=	catdoc
+NO_WRKSUBDIR=	yes
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	.
 
 MAN1=		catdoc.1
+
+# Remove the below line to get Cyrillic code page support instead
+CFLAGS+=	-DLATIN1=1
 
 # The wordview tcl/tk script is small and not required.  If the user
 # has tk, it will work.  It comes preset for tk-8.0, but works with less.
 
-# You may define LATIN1 in CFLAGS.  Little effect.  See source.
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o catdoc catdoc.c)
 
