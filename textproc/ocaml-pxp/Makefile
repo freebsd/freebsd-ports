@@ -23,6 +23,12 @@ USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
 
+USE_REINPLACE=  yes
+
 ALL_TARGET=	all opt
+
+# to avoid a conflict with PACKAGES in bsd.port.mk
+post-extract:
+	${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e 's/PACKAGES/PXP_PACKAGES/'
 
 .include <bsd.port.mk>
