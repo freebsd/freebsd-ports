@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.149 1997/08/20 20:03:17 jkh Exp $
+# $Id: Makefile,v 1.150 1997/08/25 14:10:09 itojun Exp $
 #
 
     SUBDIR += FWF
@@ -69,6 +69,7 @@
     SUBDIR += xcolors
     SUBDIR += xdaliclock
     SUBDIR += xdtm
+    SUBDIR += xfce
     SUBDIR += xfed
     SUBDIR += xfedor
     SUBDIR += xfishtank
