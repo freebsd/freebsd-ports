@@ -3,7 +3,7 @@
 # Date created:         20 June 1996
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/10 22:33:13 asami Exp $
+# $Id: Makefile,v 1.2 1996/07/11 17:51:35 andreas Exp $
 #
 
 DISTNAME=       finger-1.37
@@ -12,7 +12,7 @@ CATEGORIES=     net
 MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ \
 		ftp://ftp.cc.keio.ac.jp/pub/mirror/GNU/
 
-MAINTAINE=      sanpei@yy.cs.keio.ac.jp
+MAINTAINER=     sanpei@yy.cs.keio.ac.jp
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET= server
