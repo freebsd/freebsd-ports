@@ -9,7 +9,8 @@ PORTNAME=	xmps-opendivx-plugin
 PORTVERSION=	0.0.1
 PORTREVISION=	4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
+MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/ \
+		http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin using OpenDivX decoding engine from Project Mayo
