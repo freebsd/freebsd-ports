@@ -75,10 +75,10 @@ cybercalendar/setup/httpd.conf.changes
 @dirrm cybercalendar/setup/db
 @dirrm cybercalendar/setup
 @dirrm cybercalendar/
-%%PORTDOCS%%share/doc/cybercalendar/CHANGES
-%%PORTDOCS%%share/doc/cybercalendar/COPYING
-%%PORTDOCS%%share/doc/cybercalendar/INSTALL
-%%PORTDOCS%%share/doc/cybercalendar/INSTALL.NOSITEPERL
-%%PORTDOCS%%share/doc/cybercalendar/README
-%%PORTDOCS%%share/doc/cybercalendar/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.NOSITEPERL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm share/doc/cybercalendar
