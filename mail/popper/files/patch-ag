@@ -1,5 +1,5 @@
 --- pop_msg.c.orig	Sat Jun 27 03:09:47 1998
-+++ pop_msg.c	Sat Jun 27 03:14:27 1998
++++ pop_msg.c	Sat Jun 27 14:35:49 1998
 @@ -27,6 +27,7 @@
  {
      POP             *   p;
@@ -28,14 +28,42 @@
      if (format) 
  #ifdef HAVE_VPRINTF
 -        vsprintf(mp,format,ap);
-+        vsnprintf(mp,len-3,format,ap);
++        vsnprintf(mp,len,format,ap);
  #else
  # ifdef PYRAMID
 -        (void)sprintf(mp,format, arg1, arg2, arg3, arg4, arg5, arg6);
-+        (void)snprintf(mp,len-3,format, arg1, arg2, arg3, arg4, arg5, arg6);
++        (void)snprintf(mp,len,format, arg1, arg2, arg3, arg4, arg5, arg6);
  # else
 -        (void)sprintf(mp,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
-+        (void)snprintf(mp,len-3,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
++        (void)snprintf(mp,len,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
                  ((int *)ap)[3],((int *)ap)[4]);
  # endif
  #endif
+@@ -87,7 +90,8 @@
+                (p->user ? p->user : "(null)"), p->client, message);
+ 
+     /*  Append the <CR><LF> */
+-    (void)strcat(message, "\r\n");
++    len -= strlen(message);
++    (void)strncat(message, len, "\r\n");
+         
+     /*  Send the message to the client */
+     (void)fputs(message,p->output);
+--- pop_log.c.orig	Wed Nov 19 13:20:38 1997
++++ pop_log.c	Sat Jun 27 14:46:17 1998
+@@ -47,12 +47,12 @@
+ #endif
+ 
+ #ifdef HAVE_VPRINTF
+-        vsprintf(msgbuf,format,ap);
++        vsnprintf(msgbuf,sizeof msgbuf,format,ap);
+ #else
+ # ifdef PYRAMID
+-        (void)sprintf(msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
++        (void)snprintf(msgbuf,sizeof msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
+ # else
+-        (void)sprintf (msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
++        (void)snprintf (msgbuf,sizeof msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
+                 ((int *)ap)[3],((int *)ap)[4],((int *)ap)[5]);
+ # endif
+     va_end(ap);
