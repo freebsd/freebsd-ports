@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.33 1998/10/09 04:49:29 kuriyama Exp $
+# $Id: Makefile,v 1.34 1999/01/09 08:52:04 asami Exp $
 #
 
+    SUBDIR += asmodem
     SUBDIR += bpl+
     SUBDIR += conserver
     SUBDIR += ecu
