@@ -1,0 +1,7 @@
+Eights is a text based card game.  The objective is to get rid of all your cards
+before the computer does.  You must play the same number or suit as what is 
+discarded.  Eights are wild and are worth 50 points.  You want the least amount
+of points.
+
+- Bob Bomar
+<bob@fly.homeunix.org>

@@ -70,6 +70,7 @@
     SUBDIR += dungeon
     SUBDIR += eboard
     SUBDIR += editss
+    SUBDIR += eights
     SUBDIR += empire
     SUBDIR += falconseye
     SUBDIR += farblazer
