@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 BASEVERSION=	0.9.1a
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
@@ -19,10 +19,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	des@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
+		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
-		${X11BASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
+		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 
 USE_X_PREFIX=	yes
