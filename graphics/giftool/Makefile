@@ -20,12 +20,12 @@ ALL_TARGET=	giftool
 .if defined(RETVALUE)
 pre-patch::
 	@${ECHO_MSG} "Return value patch enabled....."
-EXTRA_PATCHES=	${FILESDIR}/patch-aa
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
 .endif
 .if defined(MALLOCSIZE)
 pre-patch::
 	@${ECHO_MSG} "Malloc size improve parch enabled....."
-EXTRA_PATCHES+=	${FILESDIR}/patch-ab
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
 .endif
 
 do-install:
