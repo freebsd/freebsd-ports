@@ -7,7 +7,7 @@
 
 PORTNAME=	gibi
 PORTVERSION=	2000
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	french cad linux
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -23,8 +23,8 @@ COMMENT=	GIBI est la partie mailleur et post de CASTEM
 #			zsh (default), bash or ksh.
 #-----------------------------------------------------------------------
 
-BUILD_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster
-RUN_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster \
+BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster
+RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster \
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
 		${SHELL_RUN_GIBI}:${PORTSDIR}/shells/${SHRGDEP}
 
@@ -63,20 +63,16 @@ SHELL_RUN_GIBI=	${LOCALBASE}/bin/${SHRG}
 
 LGIBIDIR?=	apps/${PORTNAME}
 GIBIDIR=	${PREFIX}/${LGIBIDIR}
-ASTER_VER=	7.3
+ASTER_VER=	7.4
 vaster=		STA${ASTER_VER}
-ASTER_TOOLS=	${LOCALBASE}/aster/${vaster}/outils
+ASTER_TOOLS=	${LOCALBASE}/aster/outils
 ARCHI=		PC_Linux_
 ARCHIVER=	${ARCHI}${PORTVERSION}
 GIBIBIN=	${PORTNAME}${PORTVERSION}
 
 DOCS=		DOC/HTML DOC/index.html DOC/pdf DOC/postscript README
 
-.include <bsd.port.pre.mk>
-
 PLIST_SUB=	GIBIDIR=${LGIBIDIR} ASTER_TOOLS=${ASTER_TOOLS}
-
-BRANDELF?=	/usr/bin/brandelf -t Linux
 
 post-extract:
 	@(cd ${WRKDIR} && \
@@ -97,7 +93,7 @@ do-install:
 		${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/${PORTNAME}${ARCHIVER}			\
 		${GIBIDIR}/bin
-	@${BRANDELF} ${GIBIDIR}/bin/${PORTNAME}${ARCHIVER}
+	@${BRANDELF} -t Linux ${GIBIDIR}/bin/${PORTNAME}${ARCHIVER}
 	@${BRANDELF} ${GIBIDIR}/DATA/kinstall_${ARCHIVER}
 	@(cd ${GIBIDIR}/DATA							\
 	&& ./kinstall_${ARCHIVER} < ${FILESDIR}/clef >/dev/null 2>&1		\
@@ -105,6 +101,7 @@ do-install:
 	@${RM} ${GIBIDIR}/DATA/kinstall_${ARCHIVER}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${GIBIDIR}
 	@${LN} -fs ${PREFIX}/bin/${GIBIBIN} ${ASTER_TOOLS}/${PORTNAME}
+	@${LN} -fs ${PREFIX}/bin/${GIBIBIN} ${ASTER_TOOLS}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -119,4 +116,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
