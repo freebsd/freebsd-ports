@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	dinoex
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
+CONFLICTS?=	suckblow-1.*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
@@ -33,6 +34,7 @@ MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT}
+CONFLICTS+=	suck-4.*
 .else
 CFLAGS+=	-DNO_CONFIGDATA
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
@@ -41,6 +43,7 @@ MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
 MAKE_ENV+=	DB_INC_LOC=-I${LOCALBASE}/news/include
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
+CONFLICTS+=	suck-cnews-4.*
 .endif
 
 .if !defined(SUCK_WITHOUT_SSL) && !defined(WITHOUT_SSL)
