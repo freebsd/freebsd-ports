@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -120,6 +120,15 @@ pre-install:
 	 fi ; \
 	fi
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/po/translation.php.orig
+	@${RM} ${WRKSRC}/lib/Horde.php.orig
+	@${RM} ${WRKSRC}/scripts/db/README.orig
+	@${RM} ${WRKSRC}/scripts/set_perms.sh.orig
+	@${RM} ${WRKSRC}/config/horde.php.dist.orig
+	@${RM} ${WRKSRC}/config/registry.php.dist.orig
+	@${RM} ${WRKSRC}/config/mime_drivers.php.dist.orig
 
 do-install:
 	@${MKDIR}  ${HORDEDIR}
