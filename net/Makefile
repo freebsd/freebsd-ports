@@ -228,6 +228,7 @@
     SUBDIR += msend
     SUBDIR += mtr
     SUBDIR += mudix
+    SUBDIR += mutella
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += napshare
