@@ -1,0 +1,10 @@
+--- gtk-extensions/Makefile.in.orig	Wed Jan  8 02:32:35 2003
++++ gtk-extensions/Makefile.in	Tue Apr  6 10:13:09 2004
+@@ -119,7 +119,6 @@
+ INCLUDES = \
+ 	-I$(top_srcdir)			\
+ 	-I$(top_srcdir)/intl		\
+-	-DGTK_DISABLE_DEPRECATED	\
+ 	$(GTK_CFLAGS)
+ 
+ 

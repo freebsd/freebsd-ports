@@ -1,0 +1,12 @@
+--- libexif-gtk/Makefile.in.orig	Wed Jan  8 02:32:35 2003
++++ libexif-gtk/Makefile.in	Tue Apr  6 10:20:49 2004
+@@ -121,8 +121,7 @@
+ 	-I$(top_srcdir)/intl				\
+ 	-I$(top_srcdir)/gtk-extensions			\
+ 	$(LIBEXIF_GTK_CFLAGS)				\
+-	-DG_LOG_DOMAIN=\"libexif\"			\
+-	-DGTK_DISABLE_DEPRECATED
++	-DG_LOG_DOMAIN=\"libexif\"
+ 
+ 
+ lib_LTLIBRARIES = libexif-gtk.la
