@@ -7,13 +7,22 @@
 #
 
 PORTNAME=	whatmask
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
-MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/whatmask/
+MASTER_SITES=	http://moog.laffeycomputer.com:8080/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easily convert between three common subnet mask notations
 
 GNU_CONFIGURE=	yes
+
+MAN1=		whatmask.1
+DOCS=		AUTHORS ChangeLog README
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
