@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enhallmail
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
