@@ -752,6 +752,7 @@ bonobo-conf	ports/devel/bonobo-conf
 boodler		ports/audio/boodler
 bookmarkbridge	ports/www/bookmarkbridge
 boost		ports/devel/boost
+boost-python		ports/devel/boost-python
 bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
 botan		ports/security/botan
@@ -10302,7 +10303,6 @@ spinner		ports/sysutils/spinner
 spiralloops	ports/audio/spiralloops
 spiralsynth	ports/audio/spiralsynth
 spiralsynthmodular	ports/audio/spiralsynthmodular
-spirit		ports/devel/spirit
 spl		ports/lang/spl
 splashsetter	ports/deskutils/splashsetter
 splay		ports/audio/splay
