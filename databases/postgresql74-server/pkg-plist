@@ -127,7 +127,9 @@ share/doc/pgsql/FAQ_FreeBSD
 share/doc/pgsql/FAQ_HPUX
 share/doc/pgsql/FAQ_Irix
 share/doc/pgsql/FAQ_Linux
+share/doc/pgsql/FAQ_Solaris
 share/doc/pgsql/FAQ_SCO
+share/doc/pgsql/README.Charsets
 share/doc/pgsql/README.NT
 share/doc/pgsql/README.fsync
 share/doc/pgsql/README.inet

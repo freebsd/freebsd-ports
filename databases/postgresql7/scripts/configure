@@ -4,4 +4,4 @@
 
 cd $WRKSRC || exit 1
 
-perl -pi -e "s=!!JAVA_HOME!!=${JAVA_HOME}=" ${WRKSRC}/interfaces/jdbc/Makefile
+perl -pi -e "s=!!JAVA_HOME!!=${JAVA_HOME}=; s=!!PREFIX!!=${PREFIX}=" ${WRKSRC}/interfaces/jdbc/Makefile

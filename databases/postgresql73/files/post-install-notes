@@ -8,6 +8,7 @@ You may wish to subscribe to the PostgreSQL user-support mailing list.
 Send an e-mail to pgsql-questions-request@postgresql.org with the
 text "subscribe" in the message body.
 
-If you build PostgreSQL with TCL support, then you can use the
-TCL/TK based database frontend "pgaccess" for database operations.
+If you built PostgreSQL with TCL support, you can install the port
+"pgaccess" to get a TCL/TK based database frontend for database
+operations.
 

@@ -1,11 +1,11 @@
---- configure~	Sun May 30 09:01:09 1999
-+++ configure	Mon Jun 21 16:52:53 1999
-@@ -663,7 +663,7 @@
-    exit;;
- esac
- 
--if test "X$elf" = "Xyes"
-+if test "X$PORTOBJFORMAT" = "Xelf"
+--- configure.orig	Sun Oct 10 14:37:07 1999
++++ configure	Sun Oct 10 14:37:29 1999
+@@ -1429,7 +1429,7 @@
+   ELF_SYS=true
+ else
+   rm -rf conftest*
+-  if test "X$elf" = "Xyes"
++  if test "X$PORTOBJFORMAT" = "Xelf"
  then
  	ELF_SYS=true
  else
