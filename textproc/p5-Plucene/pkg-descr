@@ -1,0 +1,11 @@
+Plucene is a fully-featured and highly customizable search engine
+toolkit based on the Lucene API.
+
+It is not, in and of itself, a functional search engine - you are
+expected to subclass and tie all the pieces together to suit your own
+needs.  The synopsis above gives a rough indication of how to use the
+engine in simple cases. See Plucene::Simple in the distribution for one
+example of tying it all together.
+
+WWW: http://search.cpan.org/dist/Plucene/
+WWW: http://jakarta.apache.org/lucene
