@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.46 1997/10/10 14:29:12 rse Exp $
+# $Id: Makefile,v 1.47 1997/11/10 22:04:42 dima Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -109,10 +109,10 @@ post-install:
 # Following stuff must be after <bsd.port.mk> to expand exists() properly
 
 .if defined(USE_PERL) && ${USE_PERL} == YES || \
-    exists(${PREFIX}/bin/perl5.00401) && \
+    exists(${PREFIX}/bin/perl5.00404) && \
     (!defined(USE_PERL) || ${USE_PERL} != NO)
-BUILD_DEPENDS+= perl5.00401:${PORTSDIR}/lang/perl5
-CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.00401
+BUILD_DEPENDS+= perl5.00404:${PORTSDIR}/lang/perl5
+CONFIGURE_ENV+= PERL=${PREFIX}/bin/perl5.00404
 .else
 CONFIGURE_ENV+= PERL=/replace_it_with_PERL_path
 .endif
