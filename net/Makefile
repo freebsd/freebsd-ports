@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1995/08/02 11:03:40 asami Exp $
+# $Id: Makefile,v 1.50 1995/08/21 07:27:37 asami Exp $
 #
 
     SUBDIR += archie
@@ -19,6 +19,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp2
+    SUBDIR += netscape
     SUBDIR += nv
     SUBDIR += pcnfsd
     SUBDIR += pmf
