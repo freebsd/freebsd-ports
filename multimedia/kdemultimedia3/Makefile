@@ -8,7 +8,6 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -68,7 +67,7 @@ DO_NOT_COMPILE+=	xine_artsplugin
 CONFIGURE_ARGS+=	--disable-xinetest
 .endif
 
-.if defined(WITH_MPEGLIB)
+.if !defined(WITHOUT_MPEGLIB)
 PLIST_APPEND+=	plist.mpeglib
 .elseif defined(WITHOUT_MPEGLIB)
 PLIST_APPEND+=	plist.no-mpeglib
@@ -79,7 +78,7 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 pre-configure:
-.if !defined(WITH_MPEGLIB)
+.if defined(WITHOUT_MPEGLIB)
 	${REINPLACE_CMD} -e \
 	'/FreeBSD/,/;$$/s/kde_mpeglib_compiles=yes/kde_mpeglib_compiles=no/g' \
 		${WRKSRC}/configure

@@ -1,52 +1,60 @@
---- soundserver/Makefile.in.orig	Sun Feb 29 22:25:27 2004
-+++ soundserver/Makefile.in	Thu Mar  4 16:07:59 2004
-@@ -344,7 +344,7 @@
+--- soundserver/Makefile.in.orig	Wed Apr  7 09:12:08 2004
++++ soundserver/Makefile.in	Wed Apr  7 09:14:08 2004
+@@ -20,7 +20,7 @@
  
  
- ###### "real" programs
--bin_PROGRAMS = artsd artsplay artscat artswrapper artsshell artsrec
-+bin_PROGRAMS = artsd artsplay artscat artsshell artsrec
  
- artsd_LDADD = libsoundserver_idl.la $(FLOWLIBS) \
-               $(top_builddir)/mcop_mt/libmcop_mt.la $(USE_THREADS)
-@@ -364,10 +364,6 @@
- artsplay_SOURCES = artsplay.cc
- artsplay_COMPILE_FIRST = soundserver.h artsversion.h
+-SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
++SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES)
  
--artswrapper_SOURCES = artswrapper.c
--artswrapper_INCLUDES = -I$(top_builddir) -DEXECUTE=\"$(artsdpath)\"
--artswrapper_LDADD = $(LIBPOSIX4)
--
- artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS)
- artsshell_SOURCES = artsshell.cc tradercheck.cc
- artsshell_COMPILE_FIRST = soundserver.h artsversion.h
-@@ -431,7 +427,7 @@
- #>+ 1
- libsoundserver_idl_la_OBJECTS = soundserver.lo
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -46,7 +46,7 @@
+ host_triplet = @host@
+ target_triplet = @target@
  bin_PROGRAMS = artsd$(EXEEXT) artsplay$(EXEEXT) artscat$(EXEEXT) \
 -	artswrapper$(EXEEXT) artsshell$(EXEEXT) artsrec$(EXEEXT)
 +	artsshell$(EXEEXT) artsrec$(EXEEXT)
- PROGRAMS = $(bin_PROGRAMS)
- 
- am_artscat_OBJECTS = artscat.$(OBJEXT)
-@@ -568,14 +564,14 @@
+ subdir = soundserver
+ DIST_COMMON = $(artsinclude_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in $(srcdir)/artsversion-new.h.in
+@@ -234,12 +234,12 @@
  	$(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) \
  	$(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) \
  	$(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) \
 -	$(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
 +	$(artsrec_SOURCES) $(artsshell_SOURCES)
+ DIST_SOURCES = $(libartsgslplayobject_la_SOURCES) \
+ 	$(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) \
+ 	$(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) \
+ 	$(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) \
+-	$(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
++	$(artsrec_SOURCES) $(artsshell_SOURCES)
+ mcopclassDATA_INSTALL = $(INSTALL_DATA)
+ mcoptypeDATA_INSTALL = $(INSTALL_DATA)
  DATA = $(mcopclass_DATA) $(mcoptype_DATA)
+@@ -558,9 +558,6 @@
+ artsplay_LDADD = libsoundserver_idl.la $(USE_THREADS)
+ artsplay_SOURCES = artsplay.cc
+ artsplay_COMPILE_FIRST = soundserver.h artsversion.h
+-artswrapper_SOURCES = artswrapper.c
+-artswrapper_INCLUDES = -I$(top_builddir) -DEXECUTE=\"$(artsdpath)\"
+-artswrapper_LDADD = $(LIBPOSIX4)
+ artsshell_LDADD = libsoundserver_idl.la $(USE_THREADS)
+ artsshell_SOURCES = artsshell.cc tradercheck.cc
+ artsshell_COMPILE_FIRST = soundserver.h artsversion.h
+@@ -571,10 +568,6 @@
+ mcopclassdir = $(libdir)/mcop/Arts
+ mcopclass_DATA = FileInputStream.mcopclass $(WAV_MCOPCLASS) GSLPlayObject.mcopclass
  
- HEADERS = $(artsinclude_HEADERS)
- 
- DIST_COMMON = $(artsinclude_HEADERS) Makefile.am Makefile.in \
- 	artsversion-new.h.in
--SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES) $(artswrapper_SOURCES)
-+SOURCES = $(libartsgslplayobject_la_SOURCES) $(libartswavplayobject_la_SOURCES) $(libkmedia2_la_SOURCES) $(libkmedia2_idl_la_SOURCES) $(libsoundserver_idl_la_SOURCES) $(artscat_SOURCES) $(artsd_SOURCES) $(artsplay_SOURCES) $(artsrec_SOURCES) $(artsshell_SOURCES)
- 
- #>- all: all-am
- #>+ 1
-@@ -691,9 +687,6 @@
+-#install-exec-hook: 
+-#	@(chown root $(DESTDIR)$(bindir)/artswrapper && chmod 4755 $(DESTDIR)$(bindir)/artswrapper) \
+-#		|| echo "please make $(DESTDIR)$(bindir)/artswrapper suid root"
+-
+ ######## install idl typeinfo files
+ mcoptypedir = $(libdir)/mcop
+ mcoptype_DATA = soundserver.mcoptype soundserver.mcopclass \
+@@ -725,9 +718,6 @@
  artsshell$(EXEEXT): $(artsshell_OBJECTS) $(artsshell_DEPENDENCIES) 
  	@rm -f artsshell$(EXEEXT)
  	$(CXXLINK) $(artsshell_LDFLAGS) $(artsshell_OBJECTS) $(artsshell_LDADD) $(LIBS)
@@ -55,4 +63,4 @@
 -	$(LINK) $(artswrapper_LDFLAGS) $(artswrapper_OBJECTS) $(artswrapper_LDADD) $(LIBS)
  
  mostlyclean-compile:
- 	-rm -f *.$(OBJEXT) core *.core
+ 	-rm -f *.$(OBJEXT)

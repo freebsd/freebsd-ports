@@ -68,7 +68,6 @@ if [ -z "${BATCH}" ]; then
 Please select what additional KDE modules you would like to install.\n\n" \
 -1 -1 15 \
 "KDEACCESS."    "Accessibility applications for KDE" "$status_kdeaccessibility" \
-"KDEADDONS"     "Additional plugins and scripts for some applications" "$status_kdeaddons" \
 "KDEADMIN"      "KDE applications related to system administration" "$status_kdeadmin" \
 "KDEARTWORK"    "Additional themes, sounds, wallpapers and window styles" "$status_kdeartwork" \
 "KDEVELOP"      "Powerful IDE for developing KDE/Qt-based applications" "$status_kdevelop" \

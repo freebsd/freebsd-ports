@@ -395,6 +395,12 @@ share/doc/HTML/da/kcron/print.png
 share/doc/HTML/da/kdat/common
 share/doc/HTML/da/kdat/index.cache.bz2
 share/doc/HTML/da/kdat/index.docbook
+share/doc/HTML/da/kde_app_devel/common
+share/doc/HTML/da/kde_app_devel/index.cache.bz2
+share/doc/HTML/da/kde_app_devel/index.docbook
+share/doc/HTML/da/kdearch/common
+share/doc/HTML/da/kdearch/index.cache.bz2
+share/doc/HTML/da/kdearch/index.docbook
 share/doc/HTML/da/kdebugdialog/common
 share/doc/HTML/da/kdebugdialog/index.cache.bz2
 share/doc/HTML/da/kdebugdialog/index.docbook
@@ -418,6 +424,15 @@ share/doc/HTML/da/kdeprint/theory.docbook
 share/doc/HTML/da/kdesu/common
 share/doc/HTML/da/kdesu/index.cache.bz2
 share/doc/HTML/da/kdesu/index.docbook
+share/doc/HTML/da/kdevelop/applicationwizard.docbook
+share/doc/HTML/da/kdevelop/common
+share/doc/HTML/da/kdevelop/index.cache.bz2
+share/doc/HTML/da/kdevelop/index.docbook
+share/doc/HTML/da/kdevelop/kdevelop-install.docbook
+share/doc/HTML/da/kdevelop/kdevelop-survey.docbook
+share/doc/HTML/da/kdevelop/project-management.docbook
+share/doc/HTML/da/kdevelop/setup.docbook
+share/doc/HTML/da/kdevelop/unixdev.docbook
 share/doc/HTML/da/kdf/common
 share/doc/HTML/da/kdf/index.cache.bz2
 share/doc/HTML/da/kdf/index.docbook
@@ -1241,24 +1256,6 @@ share/locale/da/LC_MESSAGES/crashesplugin.mo
 share/locale/da/LC_MESSAGES/cupsdconf.mo
 share/locale/da/LC_MESSAGES/cvsservice.mo
 share/locale/da/LC_MESSAGES/dcopservice.mo
-share/locale/da/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/da/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/da/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/da/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/da/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/da/LC_MESSAGES/desktop_kdebase.mo
-share/locale/da/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/da/LC_MESSAGES/desktop_kdegames.mo
-share/locale/da/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/da/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/da/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/da/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/da/LC_MESSAGES/desktop_kdepim.mo
-share/locale/da/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/da/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/da/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/da/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/da/LC_MESSAGES/desktop_quanta.mo
 share/locale/da/LC_MESSAGES/devicesapplet.mo
 share/locale/da/LC_MESSAGES/dirfilterplugin.mo
 share/locale/da/LC_MESSAGES/display.mo
@@ -1421,6 +1418,7 @@ share/locale/da/LC_MESSAGES/kdesktop.mo
 share/locale/da/LC_MESSAGES/kdessh.mo
 share/locale/da/LC_MESSAGES/kdesu.mo
 share/locale/da/LC_MESSAGES/kdesud.mo
+share/locale/da/LC_MESSAGES/kdevelop.mo
 share/locale/da/LC_MESSAGES/kdevtipofday.mo
 share/locale/da/LC_MESSAGES/kdf.mo
 share/locale/da/LC_MESSAGES/kdgantt.mo
@@ -1483,6 +1481,7 @@ share/locale/da/LC_MESSAGES/kghostview.mo
 share/locale/da/LC_MESSAGES/kgoldrunner.mo
 share/locale/da/LC_MESSAGES/kgpg.mo
 share/locale/da/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/da/LC_MESSAGES/kgreet_classic.mo
 share/locale/da/LC_MESSAGES/khangman.mo
 share/locale/da/LC_MESSAGES/khelpcenter.mo
 share/locale/da/LC_MESSAGES/khexedit.mo
@@ -1538,6 +1537,10 @@ share/locale/da/LC_MESSAGES/kmenuedit.mo
 share/locale/da/LC_MESSAGES/kmessedwords.mo
 share/locale/da/LC_MESSAGES/kmid.mo
 share/locale/da/LC_MESSAGES/kmidi.mo
+share/locale/da/LC_MESSAGES/kmilo_generic.mo
+share/locale/da/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/da/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/da/LC_MESSAGES/kmilod.mo
 share/locale/da/LC_MESSAGES/kmines.mo
 share/locale/da/LC_MESSAGES/kminipagerapplet.mo
 share/locale/da/LC_MESSAGES/kmix.mo
@@ -1555,6 +1558,7 @@ share/locale/da/LC_MESSAGES/knotify.mo
 share/locale/da/LC_MESSAGES/kodo.mo
 share/locale/da/LC_MESSAGES/kolf.mo
 share/locale/da/LC_MESSAGES/kolourpicker.mo
+share/locale/da/LC_MESSAGES/kommander.mo
 share/locale/da/LC_MESSAGES/kompare.mo
 share/locale/da/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/da/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -1870,9 +1874,12 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kdm
 @dirrm share/doc/HTML/da/kdict
 @dirrm share/doc/HTML/da/kdf
+@dirrm share/doc/HTML/da/kdevelop
 @dirrm share/doc/HTML/da/kdesu
 @dirrm share/doc/HTML/da/kdeprint
 @dirrm share/doc/HTML/da/kdebugdialog
+@dirrm share/doc/HTML/da/kdearch
+@dirrm share/doc/HTML/da/kde_app_devel
 @dirrm share/doc/HTML/da/kdat
 @dirrm share/doc/HTML/da/kcron
 @dirrm share/doc/HTML/da/kcontrol/windowmanagement

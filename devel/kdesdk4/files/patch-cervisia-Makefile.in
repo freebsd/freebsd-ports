@@ -1,20 +1,18 @@
---- cervisia/Makefile.in.orig	Sun Feb 29 22:52:03 2004
-+++ cervisia/Makefile.in	Wed Mar  3 00:16:46 2004
-@@ -351,13 +351,10 @@
+--- cervisia/Makefile.in.orig	Wed Apr  7 09:09:30 2004
++++ cervisia/Makefile.in	Wed Apr  7 09:09:58 2004
+@@ -571,11 +571,9 @@
+ cervisia_SOURCES = main.cpp cervisiashell.cpp
  cervisia_LDFLAGS = $(all_libraries) $(KDE_RPATH)
  cervisia_LDADD = $(LIB_KPARTS) $(LIB_KUTILS) cvsservice/libcvsservice.la libcervisia.la
- 
 -man_MANS = cervisia.1
--
  #>- METASOURCES = AUTO
  KDE_ICON = AUTO
- 
  EXTRA_DIST = cervisia.desktop cervisia.png cervisia-small.png
 -CLEANFILES = cervisia.1
- 
  xdg_apps_DATA = cervisia.desktop
- 
-@@ -1209,14 +1206,6 @@
+ partrcdir = $(kde_datadir)/cervisiapart
+ partrc_DATA = cervisiaui.rc
+@@ -1220,14 +1218,6 @@
  srcdoc:
  	$(kde_bindir)/kdoc -a -p -d classdocs -n 'Cervisia' *.h -lqt -lkdecore -lkdeui -lkparts
  
@@ -29,12 +27,12 @@
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
-@@ -1422,7 +1411,7 @@
- 	-rm -f  cvsprogressdlg.moc updatedlg.moc cervisiashell.moc updateview.moc protocolview.moc annotateview.moc historydlg.moc tagdlg.moc diffview.moc qttableview.moc commitdlg.moc cervisiapart.moc mergedlg.moc loglist.moc settingsdlg.moc tiplabel.moc logtree.moc logplainview.moc checkoutdlg.moc repositorydlg.moc progressdlg.moc resolvedlg.moc addrepositorydlg.moc logdlg.moc diffdlg.moc
+@@ -1433,7 +1423,7 @@
+ 	-rm -f  loglist.moc tagdlg.moc checkoutdlg.moc cervisiashell.moc repositorydlg.moc diffdlg.moc logplainview.moc resolvedlg.moc tiplabel.moc mergedlg.moc annotateview.moc diffview.moc updatedlg.moc logdlg.moc progressdlg.moc historydlg.moc logtree.moc updateview.moc qttableview.moc cvsprogressdlg.moc settingsdlg.moc commitdlg.moc addrepositorydlg.moc protocolview.moc cervisiapart.moc
  
  #>+ 2
--KDE_DIST=stringmatcher.h HACKING logtree.h misc.h cervisia.1.in updateview_items.h cervisiashell.h repositories.h cvsprogressdlg.h addrepositorydlg.h loginfo.h LICENSE.QPL annotatedlg.h settingsdlg.h overview.h annotateview.h resolvedlg.h annotatectl.h cervisiaui.rc cr16-app-cervisia.png diffdlg.h globalconfig.h updateview_visitors.h historydlg.h changelogdlg.h checkoutdlg.h protocolview.h cvsdir.h qttableview.h tiplabel.h cervisiapart.h updatedlg.h addremovedlg.h progressdlg.h cervisiashellui.rc diffview.h logdlg.h tagdlg.h cr22-app-cervisia.png configutils.h mergedlg.h change_colors.pl move_repositories.pl version.h logplainview.h loglist.h cervisia.pod watchdlg.h updateview.h cr48-app-cervisia.png entry.h repositorydlg.h cr32-app-cervisia.png commitdlg.h cervisia.upd watchersdlg.h cervisia.lsm 
-+KDE_DIST=stringmatcher.h HACKING logtree.h misc.h updateview_items.h cervisiashell.h repositories.h cvsprogressdlg.h addrepositorydlg.h loginfo.h LICENSE.QPL annotatedlg.h settingsdlg.h overview.h annotateview.h resolvedlg.h annotatectl.h cervisiaui.rc cr16-app-cervisia.png diffdlg.h globalconfig.h updateview_visitors.h historydlg.h changelogdlg.h checkoutdlg.h protocolview.h cvsdir.h qttableview.h tiplabel.h cervisiapart.h updatedlg.h addremovedlg.h progressdlg.h cervisiashellui.rc diffview.h logdlg.h tagdlg.h cr22-app-cervisia.png configutils.h mergedlg.h change_colors.pl move_repositories.pl version.h logplainview.h loglist.h cervisia.pod watchdlg.h updateview.h cr48-app-cervisia.png entry.h repositorydlg.h cr32-app-cervisia.png commitdlg.h cervisia.upd watchersdlg.h cervisia.lsm 
+-KDE_DIST=repositories.h cr22-app-cervisia.png configutils.h cervisia.lsm cervisia.upd tiplabel.h loginfo.h annotatectl.h cervisiaui.rc repositorydlg.h cvsprogressdlg.h watchersdlg.h HACKING cr16-app-cervisia.png logdlg.h updateview_visitors.h watchdlg.h misc.h cervisia.1.in updateview_items.h annotateview.h updatedlg.h logplainview.h stringmatcher.h globalconfig.h cervisiashellui.rc checkoutdlg.h resolvedlg.h logtree.h move_repositories.pl protocolview.h changelogdlg.h LICENSE.QPL annotatedlg.h cr48-app-cervisia.png updateview.h qttableview.h diffview.h diffdlg.h loglist.h addrepositorydlg.h addremovedlg.h cervisiapart.h settingsdlg.h cr32-app-cervisia.png tagdlg.h cervisia.pod Makefile.in commitdlg.h version.h overview.h cvsdir.h mergedlg.h historydlg.h entry.h Makefile.am progressdlg.h cervisiashell.h change_colors.pl 
++KDE_DIST=repositories.h cr22-app-cervisia.png configutils.h cervisia.lsm cervisia.upd tiplabel.h loginfo.h annotatectl.h cervisiaui.rc repositorydlg.h cvsprogressdlg.h watchersdlg.h HACKING cr16-app-cervisia.png logdlg.h updateview_visitors.h watchdlg.h misc.h updateview_items.h annotateview.h updatedlg.h logplainview.h stringmatcher.h globalconfig.h cervisiashellui.rc checkoutdlg.h resolvedlg.h logtree.h move_repositories.pl protocolview.h changelogdlg.h LICENSE.QPL annotatedlg.h cr48-app-cervisia.png updateview.h qttableview.h diffview.h diffdlg.h loglist.h addrepositorydlg.h addremovedlg.h cervisiapart.h settingsdlg.h cr32-app-cervisia.png tagdlg.h cervisia.pod Makefile.in commitdlg.h version.h overview.h cvsdir.h mergedlg.h historydlg.h entry.h Makefile.am progressdlg.h cervisiashell.h change_colors.pl 
  
  #>+ 5
  clean-idl:

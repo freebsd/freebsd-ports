@@ -23,7 +23,6 @@ share/applnk/Applications/kmdr-executor.desktop
 share/applnk/Development/kmdr-editor.desktop
 share/applnk/Development/kxsldbg.desktop
 share/applnk/Development/quanta.desktop
-share/applnk/Utilities/kfilereplacepart.desktop
 share/apps/kafkapart/entities
 share/apps/kafkapart/pics/php.png
 share/apps/kfilereplacepart/kfilereplacepartui.rc
@@ -1471,7 +1470,6 @@ share/services/kxsldbg_part.desktop
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kafkapart/pics
 @dirrm share/apps/kafkapart
-@dirrm share/applnk/Utilities
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
 @dirrm share/applnk

@@ -205,7 +205,7 @@ share/apps/kapptemplate/appframework/no-exe/INSTALL
 share/apps/kapptemplate/appframework/po-Makefile.am
 share/apps/kapptemplate/bin/mkinstalldirs
 share/apps/kapptemplate/existing/app-Makefile.am
-share/apps/kapptemplate/existing/app.desktop
+share/apps/kapptemplate/existing/app-desktop
 share/apps/kapptemplate/include/existing.module
 share/apps/kapptemplate/include/kapptemplate.common
 share/apps/kapptemplate/include/kapptemplate.module
@@ -213,8 +213,8 @@ share/apps/kapptemplate/include/kpartapp.module
 share/apps/kapptemplate/include/kpartplugin.module
 share/apps/kapptemplate/kapp/app-Makefile.am
 share/apps/kapptemplate/kapp/app-configure.in.in
+share/apps/kapptemplate/kapp/app-desktop
 share/apps/kapptemplate/kapp/app.cpp
-share/apps/kapptemplate/kapp/app.desktop
 share/apps/kapptemplate/kapp/app.h
 share/apps/kapptemplate/kapp/app_client.cpp
 share/apps/kapptemplate/kapp/appiface.h
@@ -240,11 +240,11 @@ share/apps/kapptemplate/kapp/no-exe/lo32-app-app.png
 share/apps/kapptemplate/kapp/pics-Makefile.am
 share/apps/kapptemplate/kpartapp/app-Makefile.am
 share/apps/kapptemplate/kpartapp/app-configure.in.in
+share/apps/kapptemplate/kpartapp/app-desktop
 share/apps/kapptemplate/kpartapp/app.cpp
-share/apps/kapptemplate/kpartapp/app.desktop
 share/apps/kapptemplate/kpartapp/app.h
+share/apps/kapptemplate/kpartapp/app_part-desktop
 share/apps/kapptemplate/kpartapp/app_part.cpp
-share/apps/kapptemplate/kpartapp/app_part.desktop
 share/apps/kapptemplate/kpartapp/app_part.h
 share/apps/kapptemplate/kpartapp/app_part.rc
 share/apps/kapptemplate/kpartapp/app_shell.rc
@@ -271,6 +271,7 @@ share/apps/kapptemplate/kpartplugin/plugin_app.cpp
 share/apps/kapptemplate/kpartplugin/plugin_app.h
 share/apps/kapptemplate/kpartplugin/plugin_app.rc
 share/apps/kbabel/icons/hicolor/16x16/actions/autodiff.png
+share/apps/kbabel/icons/hicolor/16x16/actions/catalogmanager.png
 share/apps/kbabel/icons/hicolor/16x16/actions/diff.png
 share/apps/kbabel/icons/hicolor/16x16/actions/insert_arg.png
 share/apps/kbabel/icons/hicolor/16x16/actions/insert_tag.png
@@ -299,6 +300,7 @@ share/apps/kbabel/icons/hicolor/16x16/actions/syntax.png
 share/apps/kbabel/icons/hicolor/16x16/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/16x16/actions/transsearch.png
 share/apps/kbabel/icons/hicolor/22x22/actions/autodiff.png
+share/apps/kbabel/icons/hicolor/22x22/actions/catalogmanager.png
 share/apps/kbabel/icons/hicolor/22x22/actions/diff.png
 share/apps/kbabel/icons/hicolor/22x22/actions/insert_arg.png
 share/apps/kbabel/icons/hicolor/22x22/actions/insert_tag.png
@@ -323,6 +325,7 @@ share/apps/kbabel/icons/hicolor/22x22/actions/syntax.png
 share/apps/kbabel/icons/hicolor/22x22/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/22x22/actions/transsearch.png
 share/apps/kbabel/icons/hicolor/32x32/actions/autodiff.png
+share/apps/kbabel/icons/hicolor/32x32/actions/catalogmanager.png
 share/apps/kbabel/icons/hicolor/32x32/actions/diff.png
 share/apps/kbabel/icons/hicolor/32x32/actions/insert_arg.png
 share/apps/kbabel/icons/hicolor/32x32/actions/insert_tag.png
@@ -347,6 +350,7 @@ share/apps/kbabel/icons/hicolor/32x32/actions/syntax.png
 share/apps/kbabel/icons/hicolor/32x32/actions/togglefuzzy.png
 share/apps/kbabel/icons/hicolor/32x32/actions/transsearch.png
 share/apps/kbabel/icons/locolor/16x16/actions/autodiff.png
+share/apps/kbabel/icons/locolor/16x16/actions/catalogmanager.png
 share/apps/kbabel/icons/locolor/16x16/actions/diff.png
 share/apps/kbabel/icons/locolor/16x16/actions/insert_arg.png
 share/apps/kbabel/icons/locolor/16x16/actions/insert_tag.png
@@ -377,6 +381,7 @@ share/apps/kbabel/icons/locolor/16x16/actions/transsearch.png
 share/apps/kbabel/icons/locolor/22x22/actions/statistics.png
 share/apps/kbabel/icons/locolor/22x22/actions/syntax.png
 share/apps/kbabel/icons/locolor/32x32/actions/autodiff.png
+share/apps/kbabel/icons/locolor/32x32/actions/catalogmanager.png
 share/apps/kbabel/icons/locolor/32x32/actions/diff.png
 share/apps/kbabel/icons/locolor/32x32/actions/insert_arg.png
 share/apps/kbabel/icons/locolor/32x32/actions/insert_tag.png
@@ -506,11 +511,6 @@ share/apps/umbrello/pics/datatype.xpm
 share/apps/umbrello/pics/dependency.xpm
 share/apps/umbrello/pics/end_state.xpm
 share/apps/umbrello/pics/enum.xpm
-share/apps/umbrello/pics/folder_green.png
-share/apps/umbrello/pics/folder_green_open.png
-share/apps/umbrello/pics/folder_grey.png
-share/apps/umbrello/pics/folder_grey_open.png
-share/apps/umbrello/pics/folder_home.png
 share/apps/umbrello/pics/fork.xpm
 share/apps/umbrello/pics/generalization.xpm
 share/apps/umbrello/pics/hline.xpm

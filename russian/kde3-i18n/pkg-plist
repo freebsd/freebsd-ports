@@ -195,6 +195,9 @@ share/doc/HTML/ru/kdeprint/lprng.docbook
 share/doc/HTML/ru/kdeprint/rlpr.docbook
 share/doc/HTML/ru/kdeprint/tech-overview.docbook
 share/doc/HTML/ru/kdeprint/theory.docbook
+share/doc/HTML/ru/kdevelop/common
+share/doc/HTML/ru/kdevelop/index.cache.bz2
+share/doc/HTML/ru/kdevelop/index.docbook
 share/doc/HTML/ru/kdict/common
 share/doc/HTML/ru/kdict/index.cache.bz2
 share/doc/HTML/ru/kdict/index.docbook
@@ -595,24 +598,6 @@ share/locale/ru/LC_MESSAGES/clockapplet.mo
 share/locale/ru/LC_MESSAGES/crashesplugin.mo
 share/locale/ru/LC_MESSAGES/cupsdconf.mo
 share/locale/ru/LC_MESSAGES/cvsservice.mo
-share/locale/ru/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/ru/LC_MESSAGES/desktop_kdebase.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/ru/LC_MESSAGES/desktop_kdegames.mo
-share/locale/ru/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/ru/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/ru/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/ru/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/ru/LC_MESSAGES/desktop_kdepim.mo
-share/locale/ru/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/ru/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/ru/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/ru/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/ru/LC_MESSAGES/desktop_quanta.mo
 share/locale/ru/LC_MESSAGES/devicesapplet.mo
 share/locale/ru/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ru/LC_MESSAGES/display.mo
@@ -769,6 +754,7 @@ share/locale/ru/LC_MESSAGES/kdesktop.mo
 share/locale/ru/LC_MESSAGES/kdessh.mo
 share/locale/ru/LC_MESSAGES/kdesu.mo
 share/locale/ru/LC_MESSAGES/kdesud.mo
+share/locale/ru/LC_MESSAGES/kdevelop.mo
 share/locale/ru/LC_MESSAGES/kdevtipofday.mo
 share/locale/ru/LC_MESSAGES/kdf.mo
 share/locale/ru/LC_MESSAGES/kdgantt.mo
@@ -864,6 +850,7 @@ share/locale/ru/LC_MESSAGES/kio_smbro.mo
 share/locale/ru/LC_MESSAGES/kio_smtp.mo
 share/locale/ru/LC_MESSAGES/kioexec.mo
 share/locale/ru/LC_MESSAGES/kit.mo
+share/locale/ru/LC_MESSAGES/kiten.mo
 share/locale/ru/LC_MESSAGES/kjobviewer.mo
 share/locale/ru/LC_MESSAGES/kjots.mo
 share/locale/ru/LC_MESSAGES/kjumpingcube.mo
@@ -919,6 +906,7 @@ share/locale/ru/LC_MESSAGES/kpartapp.mo
 share/locale/ru/LC_MESSAGES/kpartsaver.mo
 share/locale/ru/LC_MESSAGES/kpat.mo
 share/locale/ru/LC_MESSAGES/kpdf.mo
+share/locale/ru/LC_MESSAGES/kpersentage.mo
 share/locale/ru/LC_MESSAGES/kpersonalizer.mo
 share/locale/ru/LC_MESSAGES/kpf.mo
 share/locale/ru/LC_MESSAGES/kpilot.mo
@@ -982,6 +970,7 @@ share/locale/ru/LC_MESSAGES/kuick_plugin.mo
 share/locale/ru/LC_MESSAGES/kuickshow.mo
 share/locale/ru/LC_MESSAGES/kuiviewer.mo
 share/locale/ru/LC_MESSAGES/kuser.mo
+share/locale/ru/LC_MESSAGES/kverbos.mo
 share/locale/ru/LC_MESSAGES/kview.mo
 share/locale/ru/LC_MESSAGES/kview_scale.mo
 share/locale/ru/LC_MESSAGES/kviewbrowserplugin.mo
@@ -992,6 +981,7 @@ share/locale/ru/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/ru/LC_MESSAGES/kviewshell.mo
 share/locale/ru/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/ru/LC_MESSAGES/kviewviewer.mo
+share/locale/ru/LC_MESSAGES/kvoctrain.mo
 share/locale/ru/LC_MESSAGES/kwalletmanager.mo
 share/locale/ru/LC_MESSAGES/kweather.mo
 share/locale/ru/LC_MESSAGES/kwifimanager.mo
@@ -1142,6 +1132,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kdvi
 @dirrm share/doc/HTML/ru/kdm
 @dirrm share/doc/HTML/ru/kdict
+@dirrm share/doc/HTML/ru/kdevelop
 @dirrm share/doc/HTML/ru/kdeprint
 @dirrm share/doc/HTML/ru/kdebugdialog
 @dirrm share/doc/HTML/ru/kcron

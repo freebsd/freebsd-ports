@@ -34,6 +34,9 @@ share/doc/HTML/de/artsbuilder/modules.docbook
 share/doc/HTML/de/artsbuilder/porting.docbook
 share/doc/HTML/de/artsbuilder/references.docbook
 share/doc/HTML/de/artsbuilder/tools.docbook
+share/doc/HTML/de/atlantik/common
+share/doc/HTML/de/atlantik/index.cache.bz2
+share/doc/HTML/de/atlantik/index.docbook
 share/doc/HTML/de/cervisia/common
 share/doc/HTML/de/cervisia/index.cache.bz2
 share/doc/HTML/de/cervisia/index.docbook
@@ -135,16 +138,22 @@ share/doc/HTML/de/kate-plugins/xmlcheck.docbook
 share/doc/HTML/de/kate-plugins/xmltools.docbook
 share/doc/HTML/de/kate/advanced.docbook
 share/doc/HTML/de/kate/common
+share/doc/HTML/de/kate/configdialog01.png
+share/doc/HTML/de/kate/configdialog02.png
 share/doc/HTML/de/kate/configuring.docbook
 share/doc/HTML/de/kate/fundamentals.docbook
+share/doc/HTML/de/kate/highlighted.png
 share/doc/HTML/de/kate/highlighting.docbook
 share/doc/HTML/de/kate/index.cache.bz2
 share/doc/HTML/de/kate/index.docbook
+share/doc/HTML/de/kate/kate.png
 share/doc/HTML/de/kate/mdi.docbook
 share/doc/HTML/de/kate/menus.docbook
+share/doc/HTML/de/kate/mimetypechooser.png
 share/doc/HTML/de/kate/part.docbook
 share/doc/HTML/de/kate/plugins.docbook
 share/doc/HTML/de/kate/regular-expressions.docbook
+share/doc/HTML/de/kate/unhighlighted.png
 share/doc/HTML/de/katomic/common
 share/doc/HTML/de/katomic/index.cache.bz2
 share/doc/HTML/de/katomic/index.docbook
@@ -824,6 +833,12 @@ share/doc/HTML/de/konsole/common
 share/doc/HTML/de/konsole/index.cache.bz2
 share/doc/HTML/de/konsole/index.docbook
 share/doc/HTML/de/konsole/konsole.png
+share/doc/HTML/de/konsolekalendar/common
+share/doc/HTML/de/konsolekalendar/index.cache.bz2
+share/doc/HTML/de/konsolekalendar/index.docbook
+share/doc/HTML/de/kontact/common
+share/doc/HTML/de/kontact/index.cache.bz2
+share/doc/HTML/de/kontact/index.docbook
 share/doc/HTML/de/kooka/common
 share/doc/HTML/de/kooka/index.cache.bz2
 share/doc/HTML/de/kooka/index.docbook
@@ -1236,24 +1251,6 @@ share/locale/de/LC_MESSAGES/crashesplugin.mo
 share/locale/de/LC_MESSAGES/cupsdconf.mo
 share/locale/de/LC_MESSAGES/cvsservice.mo
 share/locale/de/LC_MESSAGES/dcopservice.mo
-share/locale/de/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/de/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/de/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/de/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/de/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/de/LC_MESSAGES/desktop_kdebase.mo
-share/locale/de/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/de/LC_MESSAGES/desktop_kdegames.mo
-share/locale/de/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/de/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/de/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/de/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/de/LC_MESSAGES/desktop_kdepim.mo
-share/locale/de/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/de/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/de/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/de/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/de/LC_MESSAGES/desktop_quanta.mo
 share/locale/de/LC_MESSAGES/devicesapplet.mo
 share/locale/de/LC_MESSAGES/dirfilterplugin.mo
 share/locale/de/LC_MESSAGES/display.mo
@@ -1416,6 +1413,7 @@ share/locale/de/LC_MESSAGES/kdesktop.mo
 share/locale/de/LC_MESSAGES/kdessh.mo
 share/locale/de/LC_MESSAGES/kdesu.mo
 share/locale/de/LC_MESSAGES/kdesud.mo
+share/locale/de/LC_MESSAGES/kdevelop.mo
 share/locale/de/LC_MESSAGES/kdevtipofday.mo
 share/locale/de/LC_MESSAGES/kdf.mo
 share/locale/de/LC_MESSAGES/kdgantt.mo
@@ -1533,6 +1531,10 @@ share/locale/de/LC_MESSAGES/kmenuedit.mo
 share/locale/de/LC_MESSAGES/kmessedwords.mo
 share/locale/de/LC_MESSAGES/kmid.mo
 share/locale/de/LC_MESSAGES/kmidi.mo
+share/locale/de/LC_MESSAGES/kmilo_generic.mo
+share/locale/de/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/de/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/de/LC_MESSAGES/kmilod.mo
 share/locale/de/LC_MESSAGES/kmines.mo
 share/locale/de/LC_MESSAGES/kminipagerapplet.mo
 share/locale/de/LC_MESSAGES/kmix.mo
@@ -1778,6 +1780,8 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/korganizer
 @dirrm share/doc/HTML/de/kopete
 @dirrm share/doc/HTML/de/kooka
+@dirrm share/doc/HTML/de/kontact
+@dirrm share/doc/HTML/de/konsolekalendar
 @dirrm share/doc/HTML/de/konsole
 @dirrm share/doc/HTML/de/konquest
 @dirrm share/doc/HTML/de/konqueror
@@ -1932,6 +1936,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/flashkard
 @dirrm share/doc/HTML/de/common
 @dirrm share/doc/HTML/de/cervisia
+@dirrm share/doc/HTML/de/atlantik
 @dirrm share/doc/HTML/de/artsbuilder
 @dirrm share/doc/HTML/de/ark
 @dirrm share/doc/HTML/de/amor

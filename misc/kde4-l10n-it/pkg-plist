@@ -180,6 +180,9 @@ share/doc/HTML/it/kcontrol/kmixcfg/index.docbook
 share/doc/HTML/it/kcontrol/lanbrowser/common
 share/doc/HTML/it/kcontrol/lanbrowser/index.cache.bz2
 share/doc/HTML/it/kcontrol/lanbrowser/index.docbook
+share/doc/HTML/it/kcontrol/mouse/common
+share/doc/HTML/it/kcontrol/mouse/index.cache.bz2
+share/doc/HTML/it/kcontrol/mouse/index.docbook
 share/doc/HTML/it/kcontrol/netpref/common
 share/doc/HTML/it/kcontrol/netpref/index.cache.bz2
 share/doc/HTML/it/kcontrol/netpref/index.docbook
@@ -211,6 +214,30 @@ share/doc/HTML/it/kcron/index.docbook
 share/doc/HTML/it/kdat/common
 share/doc/HTML/it/kdat/index.cache.bz2
 share/doc/HTML/it/kdat/index.docbook
+share/doc/HTML/it/kdearch/common
+share/doc/HTML/it/kdearch/index.cache.bz2
+share/doc/HTML/it/kdearch/index.docbook
+share/doc/HTML/it/kdesu/common
+share/doc/HTML/it/kdesu/index.cache.bz2
+share/doc/HTML/it/kdesu/index.docbook
+share/doc/HTML/it/kdevelop/automake-file-popup.png
+share/doc/HTML/it/kdevelop/automake-subproject-popup.png
+share/doc/HTML/it/kdevelop/automake-target-popup.png
+share/doc/HTML/it/kdevelop/automakemanager.png
+share/doc/HTML/it/kdevelop/classview.png
+share/doc/HTML/it/kdevelop/common
+share/doc/HTML/it/kdevelop/create-new-project-cvs.png
+share/doc/HTML/it/kdevelop/createnewproject.png
+share/doc/HTML/it/kdevelop/doctreeview.png
+share/doc/HTML/it/kdevelop/filetree.png
+share/doc/HTML/it/kdevelop/gideon-ideal-mode.png
+share/doc/HTML/it/kdevelop/gideon-mdi-mode.png
+share/doc/HTML/it/kdevelop/gideon-tabbed-mode.png
+share/doc/HTML/it/kdevelop/gideon-toplevel-mode.png
+share/doc/HTML/it/kdevelop/importdirectory.png
+share/doc/HTML/it/kdevelop/index.cache.bz2
+share/doc/HTML/it/kdevelop/index.docbook
+share/doc/HTML/it/kdevelop/select-user-interface.png
 share/doc/HTML/it/kdf/common
 share/doc/HTML/it/kdf/index.cache.bz2
 share/doc/HTML/it/kdf/index.docbook
@@ -651,6 +678,9 @@ share/doc/HTML/it/kstars/tools.docbook
 share/doc/HTML/it/kstars/utime.docbook
 share/doc/HTML/it/kstars/wut.docbook
 share/doc/HTML/it/kstars/zenith.docbook
+share/doc/HTML/it/ksysguard/common
+share/doc/HTML/it/ksysguard/index.cache.bz2
+share/doc/HTML/it/ksysguard/index.docbook
 share/doc/HTML/it/ksysv/common
 share/doc/HTML/it/ksysv/index.cache.bz2
 share/doc/HTML/it/ksysv/index.docbook
@@ -723,6 +753,9 @@ share/doc/HTML/it/kwin4/index.docbook
 share/doc/HTML/it/kworldclock/common
 share/doc/HTML/it/kworldclock/index.cache.bz2
 share/doc/HTML/it/kworldclock/index.docbook
+share/doc/HTML/it/kwrite/common
+share/doc/HTML/it/kwrite/index.cache.bz2
+share/doc/HTML/it/kwrite/index.docbook
 share/doc/HTML/it/kwuftpd/common
 share/doc/HTML/it/kwuftpd/index.cache.bz2
 share/doc/HTML/it/kwuftpd/index.docbook
@@ -735,9 +768,6 @@ share/doc/HTML/it/lskat/index.docbook
 share/doc/HTML/it/megami/common
 share/doc/HTML/it/megami/index.cache.bz2
 share/doc/HTML/it/megami/index.docbook
-share/doc/HTML/it/mouse/common
-share/doc/HTML/it/mouse/index.cache.bz2
-share/doc/HTML/it/mouse/index.docbook
 share/doc/HTML/it/noatun/common
 share/doc/HTML/it/noatun/index.cache.bz2
 share/doc/HTML/it/noatun/index.docbook
@@ -762,24 +792,6 @@ share/locale/it/LC_MESSAGES/crashesplugin.mo
 share/locale/it/LC_MESSAGES/cupsdconf.mo
 share/locale/it/LC_MESSAGES/cvsservice.mo
 share/locale/it/LC_MESSAGES/dcopservice.mo
-share/locale/it/LC_MESSAGES/desktop_kde-i18n.mo
-share/locale/it/LC_MESSAGES/desktop_kdeaccessibility.mo
-share/locale/it/LC_MESSAGES/desktop_kdeaddons.mo
-share/locale/it/LC_MESSAGES/desktop_kdeadmin.mo
-share/locale/it/LC_MESSAGES/desktop_kdeartwork.mo
-share/locale/it/LC_MESSAGES/desktop_kdebase.mo
-share/locale/it/LC_MESSAGES/desktop_kdeedu.mo
-share/locale/it/LC_MESSAGES/desktop_kdegames.mo
-share/locale/it/LC_MESSAGES/desktop_kdegraphics.mo
-share/locale/it/LC_MESSAGES/desktop_kdelibs.mo
-share/locale/it/LC_MESSAGES/desktop_kdemultimedia.mo
-share/locale/it/LC_MESSAGES/desktop_kdenetwork.mo
-share/locale/it/LC_MESSAGES/desktop_kdepim.mo
-share/locale/it/LC_MESSAGES/desktop_kdesdk.mo
-share/locale/it/LC_MESSAGES/desktop_kdetoys.mo
-share/locale/it/LC_MESSAGES/desktop_kdeutils.mo
-share/locale/it/LC_MESSAGES/desktop_kdevelop.mo
-share/locale/it/LC_MESSAGES/desktop_quanta.mo
 share/locale/it/LC_MESSAGES/devicesapplet.mo
 share/locale/it/LC_MESSAGES/dirfilterplugin.mo
 share/locale/it/LC_MESSAGES/display.mo
@@ -942,6 +954,7 @@ share/locale/it/LC_MESSAGES/kdesktop.mo
 share/locale/it/LC_MESSAGES/kdessh.mo
 share/locale/it/LC_MESSAGES/kdesu.mo
 share/locale/it/LC_MESSAGES/kdesud.mo
+share/locale/it/LC_MESSAGES/kdevelop.mo
 share/locale/it/LC_MESSAGES/kdevtipofday.mo
 share/locale/it/LC_MESSAGES/kdf.mo
 share/locale/it/LC_MESSAGES/kdgantt.mo
@@ -1004,6 +1017,7 @@ share/locale/it/LC_MESSAGES/kghostview.mo
 share/locale/it/LC_MESSAGES/kgoldrunner.mo
 share/locale/it/LC_MESSAGES/kgpg.mo
 share/locale/it/LC_MESSAGES/kgpgcertmanager.mo
+share/locale/it/LC_MESSAGES/kgreet_classic.mo
 share/locale/it/LC_MESSAGES/khangman.mo
 share/locale/it/LC_MESSAGES/khelpcenter.mo
 share/locale/it/LC_MESSAGES/khexedit.mo
@@ -1059,6 +1073,10 @@ share/locale/it/LC_MESSAGES/kmenuedit.mo
 share/locale/it/LC_MESSAGES/kmessedwords.mo
 share/locale/it/LC_MESSAGES/kmid.mo
 share/locale/it/LC_MESSAGES/kmidi.mo
+share/locale/it/LC_MESSAGES/kmilo_generic.mo
+share/locale/it/LC_MESSAGES/kmilo_kvaio.mo
+share/locale/it/LC_MESSAGES/kmilo_powerbook.mo
+share/locale/it/LC_MESSAGES/kmilod.mo
 share/locale/it/LC_MESSAGES/kmines.mo
 share/locale/it/LC_MESSAGES/kminipagerapplet.mo
 share/locale/it/LC_MESSAGES/kmix.mo
@@ -1172,6 +1190,7 @@ share/locale/it/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/it/LC_MESSAGES/kviewviewer.mo
 share/locale/it/LC_MESSAGES/kvoctrain.mo
 share/locale/it/LC_MESSAGES/kwalletmanager.mo
+share/locale/it/LC_MESSAGES/kwatchgnupg.mo
 share/locale/it/LC_MESSAGES/kweather.mo
 share/locale/it/LC_MESSAGES/kwifimanager.mo
 share/locale/it/LC_MESSAGES/kwin.mo
@@ -1206,6 +1225,7 @@ share/locale/it/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/it/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/it/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/it/LC_MESSAGES/libkickermenu_recentdocs.mo
+share/locale/it/LC_MESSAGES/libkleopatra.mo
 share/locale/it/LC_MESSAGES/libkonq.mo
 share/locale/it/LC_MESSAGES/libkpimexchange.mo
 share/locale/it/LC_MESSAGES/libkscan.mo
@@ -1250,11 +1270,11 @@ share/locale/it/charset
 share/locale/it/entry.desktop
 share/locale/it/flag.png
 @dirrm share/doc/HTML/it/noatun
-@dirrm share/doc/HTML/it/mouse
 @dirrm share/doc/HTML/it/megami
 @dirrm share/doc/HTML/it/lskat
 @dirrm share/doc/HTML/it/lisa
 @dirrm share/doc/HTML/it/kwuftpd
+@dirrm share/doc/HTML/it/kwrite
 @dirrm share/doc/HTML/it/kworldclock
 @dirrm share/doc/HTML/it/kwin4
 @dirrm share/doc/HTML/it/kweather
@@ -1268,6 +1288,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/ktimer
 @dirrm share/doc/HTML/it/kteatime
 @dirrm share/doc/HTML/it/ksysv
+@dirrm share/doc/HTML/it/ksysguard
 @dirrm share/doc/HTML/it/kstars
 @dirrm share/doc/HTML/it/kspell
 @dirrm share/doc/HTML/it/kspaceduel
@@ -1348,6 +1369,9 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/keduca
 @dirrm share/doc/HTML/it/kdvi
 @dirrm share/doc/HTML/it/kdf
+@dirrm share/doc/HTML/it/kdevelop
+@dirrm share/doc/HTML/it/kdesu
+@dirrm share/doc/HTML/it/kdearch
 @dirrm share/doc/HTML/it/kdat
 @dirrm share/doc/HTML/it/kcron
 @dirrm share/doc/HTML/it/kcontrol/useragent
@@ -1358,6 +1382,7 @@ share/locale/it/flag.png
 @dirrm share/doc/HTML/it/kcontrol/passwords
 @dirrm share/doc/HTML/it/kcontrol/panelappearance
 @dirrm share/doc/HTML/it/kcontrol/netpref
+@dirrm share/doc/HTML/it/kcontrol/mouse
 @dirrm share/doc/HTML/it/kcontrol/lanbrowser
 @dirrm share/doc/HTML/it/kcontrol/kmixcfg
 @dirrm share/doc/HTML/it/kcontrol/khtml
