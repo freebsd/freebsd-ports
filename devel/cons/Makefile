@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dsmit.com/cons/stable/ \
 		http://www.baldmt.com/cons/stable/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rv@dsmit.com
+MAINTAINER=	rv@gnu.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${ARCH}-freebsd/MD5.pm:${PORTSDIR}/security/p5-MD5
 
