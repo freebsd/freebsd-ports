@@ -1,0 +1,26 @@
+usr/doc/libxml-1.7.3/AUTHORS
+usr/doc/libxml-1.7.3/COPYING
+usr/doc/libxml-1.7.3/COPYING.LIB
+usr/doc/libxml-1.7.3/ChangeLog
+usr/doc/libxml-1.7.3/NEWS
+usr/doc/libxml-1.7.3/README
+usr/doc/libxml-1.7.3/TODO
+usr/doc/libxml-1.7.3/html/book1.html
+usr/doc/libxml-1.7.3/html/gnome-xml-entities.html
+usr/doc/libxml-1.7.3/html/gnome-xml-error.html
+usr/doc/libxml-1.7.3/html/gnome-xml-htmlparser.html
+usr/doc/libxml-1.7.3/html/gnome-xml-htmltree.html
+usr/doc/libxml-1.7.3/html/gnome-xml-nanohttp.html
+usr/doc/libxml-1.7.3/html/gnome-xml-parser.html
+usr/doc/libxml-1.7.3/html/gnome-xml-parserinternals.html
+usr/doc/libxml-1.7.3/html/gnome-xml-tree.html
+usr/doc/libxml-1.7.3/html/gnome-xml-valid.html
+usr/doc/libxml-1.7.3/html/gnome-xml-xml-error.html
+usr/doc/libxml-1.7.3/html/gnome-xml-xmlmemory.html
+usr/doc/libxml-1.7.3/html/gnome-xml-xpath.html
+usr/doc/libxml-1.7.3/html/index.sgml
+usr/doc/libxml-1.7.3/html/libxml.html
+usr/lib/libxml.so.1
+usr/lib/libxml.so.1.7.3
+@dirrm usr/doc/libxml-1.7.3/html
+@dirrm usr/doc/libxml-1.7.3
