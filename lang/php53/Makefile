@@ -556,6 +556,9 @@ pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
 post-patch:
+.if defined(WITH_GD_GIF_OUT)
+	@${PATCH} -b .orig -d ${WRKSRC} -N -s -E -p1 -t < ${FILESDIR}/gd_gif_out.diff
+.endif
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
 
