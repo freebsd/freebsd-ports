@@ -1,3 +1,8 @@
+share/xpdf/chinese-simplified/Adobe-GB1.cidToUnicode
+share/xpdf/chinese-simplified/EUC-CN.unicodeMap
+share/xpdf/chinese-simplified/GBK.unicodeMap
+share/xpdf/chinese-simplified/ISO-2022-CN.unicodeMap
+share/xpdf/chinese-simplified/README
 share/xpdf/chinese-traditional/Adobe-CNS1.cidToUnicode
 share/xpdf/chinese-traditional/Big5.unicodeMap
 share/xpdf/chinese-traditional/Big5ascii.unicodeMap
