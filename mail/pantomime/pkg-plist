@@ -1,5 +1,6 @@
 Local/Headers/Pantomime/Charset.h
 Local/Headers/Pantomime/Constants.h
+Local/Headers/Pantomime/Connection.h
 Local/Headers/Pantomime/Flags.h
 Local/Headers/Pantomime/Folder.h
 Local/Headers/Pantomime/GSMD5.h
@@ -50,8 +51,11 @@ Local/Headers/Pantomime/TCPConnection.h
 Local/Headers/Pantomime/Transport.h
 Local/Headers/Pantomime/URLName.h
 Local/Headers/Pantomime/UTF8.h
+Local/Headers/Pantomime/WINDOWS_1250.h
 Local/Headers/Pantomime/WINDOWS_1251.h
 Local/Headers/Pantomime/WINDOWS_1252.h
+Local/Headers/Pantomime/WINDOWS_1253.h
+Local/Headers/Pantomime/WINDOWS_1254.h
 Local/Headers/Pantomime/elm_defs.h
 Local/Headers/Pantomime/elm_lib.h
 Local/Headers/Pantomime/parseaddrs.h
