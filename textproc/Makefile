@@ -247,6 +247,7 @@
     SUBDIR += texi2html
     SUBDIR += textutils
     SUBDIR += tkdiff
+    SUBDIR += tnef2txt
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += txt2man
