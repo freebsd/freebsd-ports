@@ -17,6 +17,17 @@
 Java_Include=				bsd.java.mk
 Java_Include_MAINTAINER=	znerd@FreeBSD.org
 
+#
+# There are the following stages:
+#
+# Stage 1: Define constants
+# Stage 2: Deal with JAVA_HOME if it is already set
+# Stage 3: Decide the exact JDK version if only a minimum version is specified
+# Stage 4: Decide the exact JDK to use
+# Stage 5: Define all settings for the port to use
+# Stage 6: Add any dependencies if necessary
+#
+
 .	if defined(USE_JAVA)
 
 
@@ -47,7 +58,7 @@ _JAVA_PORT_SUN_LINUX_1_4=		java/linux-jdk14
 
 # Set the name of the file that indicates that a JDK is indeed installed, as a
 # relative path within the JAVA_HOME directory.
-JDK_FILE=bin/javac
+_JDK_FILE=bin/javac
 
 # Set the path to Jikes and define the Jikes dependency
 _JIKES_PATH=	${LOCALBASE}/bin/jikes
@@ -114,23 +125,23 @@ JAVA_HOME=	${_JAVA_HOME}
 # option at the moment.
 
 .		if (${USE_JAVA} == "1.1+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE})
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
 USE_JAVA=	1.3
-.			elif exists(${_JAVA_HOME_FREEBSD_1_2}/${JDK_FILE}) || \
-			     exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${JDK_FILE})
+.			elif exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE}) || \
+			     exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE})
 USE_JAVA=	1.2
-.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${JDK_FILE})
+.			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
 USE_JAVA=	1.1
 .			else
 USE_JAVA=	1.4
 .			endif
 
 .		elif (${USE_JAVA} == "1.2+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE})
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
 USE_JAVA=	1.3
 .			elif !exists(${_JAVA_HOME_SUN_LINUX_1_4})
 USE_JAVA=	1.2
@@ -138,10 +149,10 @@ USE_JAVA=	1.2
 USE_JAVA=	1.4
 .			endif
 .		elif (${USE_JAVA} == "1.3+")
-.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})   || \
-			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) || \
-			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE}) || \
-			  !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${JDK_FILE})
+.			if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})   || \
+			   exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) || \
+			   exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE}) || \
+			  !exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
 USE_JAVA=	1.3
 .			else
 USE_JAVA=	1.4
@@ -156,7 +167,7 @@ USE_JAVA=	1.4
 
 
 #-----------------------------------------------------------------------------
-# Stage 4: Decide the exact JDK to use.
+# Stage 4: Decide the exact JDK to use
 #
 
 # Apply different settings for different values of USE_JAVA.
@@ -180,8 +191,8 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_1}
 # installed, then the Blackdown JDK will be used as the dependency. Otherwise
 # the FreeBSD JDK 1.2.2 will be used as the dependency.
 .		elif ${USE_JAVA} == "1.2"
-.			if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_2}/${JDK_FILE})
+.			if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE})
 JAVA_VENDOR=	Blackdown
 JAVA_VER=		1.2.2
 JAVA_OS=		Linux
@@ -209,16 +220,16 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_2}
 # used. If it is not installed, but the IBM JDK 1.3.1 is installed, then that
 # one will be used.
 .		elif ${USE_JAVA} == "1.3"
-.			if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})
+.			if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
 JAVA_VENDOR=	IBM
 JAVA_VER=		1.3.1
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_IBM_LINUX_1_3}
 JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_3}
-.			elif exists(${_JAVA_HOME_SUN_LINUX_1_3}/${JDK_FILE}) \
-			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${JDK_FILE})
+.			elif exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE}) \
+			&& !exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
 JAVA_VENDOR=	Sun
 JAVA_VER=		1.3.1
 JAVA_OS=		Linux
@@ -276,15 +287,6 @@ WITH_JIKES=	YES
 JAVAC=	${JAVA_HOME}/bin/javac
 .		endif
 
-.		if ${JAVAC} == ${_JIKES_PATH}
-.			if !defined(NO_BUILD_DEPENDS_JAVA)
-BUILD_DEPENDS+=		${_DEPEND_JIKES}
-.			endif
-.			if !defined(NO_RUN_DEPENDS_JAVA)
-RUN_DEPENDS+=		${_DEPEND_JIKES}
-.			endif
-.		endif
-
 # Define the location of some more executables.
 APPLETVIEWER=	${JAVA_HOME}/bin/appletviewer
 JAR=			${JAVA_HOME}/bin/jar
@@ -311,7 +313,21 @@ JAVA_CLASSES=	${JAVA_HOME}/lib/classes.zip
 JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 .		endif
 
-# Add the Java port to the dependencies
+
+#-----------------------------------------------------------------------------
+# Stage 6: Add any dependencies if necessary
+
+# Possibly add Jikes to the dependencies
+.		if ${JAVAC} == ${_JIKES_PATH}
+.			if !defined(NO_BUILD_DEPENDS_JAVA)
+BUILD_DEPENDS+=		${_DEPEND_JIKES}
+.			endif
+.			if !defined(NO_RUN_DEPENDS_JAVA)
+RUN_DEPENDS+=		${_DEPEND_JIKES}
+.			endif
+.		endif
+
+# Add the JDK port to the dependencies
 .		if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
 .BEGIN:
 	@${ECHO} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
