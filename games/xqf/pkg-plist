@@ -1,13 +1,15 @@
 @comment $FreeBSD$
 bin/xqf
-%%PORTDOCS%%share/doc/xqf/xqfdocs.html
+%%PORTDOCS%%%%DOCSDIR%%/xqfdocs.html
 share/locale/ca/LC_MESSAGES/xqf.mo
 share/locale/da/LC_MESSAGES/xqf.mo
 share/locale/de/LC_MESSAGES/xqf.mo
 share/locale/es/LC_MESSAGES/xqf.mo
 share/locale/fr/LC_MESSAGES/xqf.mo
-share/xqf/qstat.cfg
-share/xqf/pixmaps/xqflogo.png
-@dirrm share/xqf/pixmaps
-@dirrm share/xqf
-%%PORTDOCS%%@dirrm share/doc/xqf
+%%DATADIR%%/default/flags/lan.png
+%%DATADIR%%/default/splash.png
+%%DATADIR%%/qstat.cfg
+@dirrm %%DATADIR%%/default/flags
+@dirrm %%DATADIR%%/default
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
