@@ -23,3 +23,6 @@ share/locale/sv/LC_MESSAGES/gtkpod.mo
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DATADIR%%/pixmaps
+%%PORTDOCS%%@dirrm %%DATADIR%%/scripts
+%%PORTDOCS%%@dirrm %%DATADIR%%
