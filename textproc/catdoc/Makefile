@@ -17,7 +17,7 @@ COMMENT=	Convert MS Word/Excel documents to plain ASCII or TeX.  TK viewer inclu
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-MAN1=		catdoc.1 xls2csv.1
+MAN1=		catdoc.1 wordview.1 xls2csv.1
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
