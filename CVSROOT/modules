@@ -9197,6 +9197,7 @@ tank		ports/games/tank
 tardy		ports/archivers/tardy
 tas		ports/net-mgmt/tas
 task		ports/sysutils/task
+tasks		ports/www/tasks
 taucs		ports/math/taucs
 tavrasm		ports/devel/tavrasm
 taxipilot	ports/games/taxipilot
