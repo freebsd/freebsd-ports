@@ -86,7 +86,6 @@
     SUBDIR += libcii
     SUBDIR += libdlmalloc
     SUBDIR += libffi
-    SUBDIR += libg++
     SUBDIR += libgetline
     SUBDIR += libgii
     SUBDIR += libglade
