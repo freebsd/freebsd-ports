@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zssh
 
     SUBDIR += asmodem
     SUBDIR += bayonne
