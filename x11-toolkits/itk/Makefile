@@ -7,6 +7,7 @@
 
 PORTNAME=	itk
 PORTVERSION=	${MAJOR}.${MINOR}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
@@ -47,6 +48,9 @@ post-patch:
 		-e 's,package require Itk,load \
 			[glob ${WRKSRC}/${ITK_LIB_FILE}*],;' \
 		-e 's,return$$,exit,' ${WRKSRC}/tests/*
+	${PERL} -pi \
+		-e 's,\@itk_LIB_FILE\@,${ITK_LIB_FILE},' \
+		${WRKSRC}/pkgIndex.tcl.in
 
 .if defined(DISPLAY)
 post-build test:
