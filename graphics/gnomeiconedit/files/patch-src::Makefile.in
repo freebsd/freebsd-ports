@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/12/19 10:47:52	1.1
++++ src/Makefile.in	2001/12/19 10:54:53
+@@ -118,7 +118,7 @@
+ 
+ bin_PROGRAMS = gnome-iconedit $(COMPONENT)
+ 
+-INCLUDES =   -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
++INCLUDES =   $(GDK_PIXBUF_CFLAGS)	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"  -DGNOMEDATADIR=\""$(datadir)"\"  -I$(includedir)  -I$(top_srcdir)  -I$(top_srcdir)/src/widgets  $(GNOME_INCLUDEDIR)
+ 
+ 
+ CORBA_GENERATED =  	Iconedit.h			Iconedit-stubs.c		Iconedit-skels.c		Iconedit-common.c	
+@@ -130,7 +130,7 @@
+ gnome_iconedit_SOURCES = app.c					$(CORBA_GENERATED)					corba.c					menus.c 				iconedit.c					palette.c					grid.c 				view.c					mode.c					edit.c					io.c					pastebuffer.c					layers.c					art_rgba.c					art_rgba.h					app.h 					menus.h 					iconedit.h 					palette.h 					grid.h 					view.h					edit.h					io.h					pastebuffer.h					layers.h					corba.h						art_misc.h
+ 
+ 
+-@USE_GNOME_PRINT_TRUE@print_libs = $(GNOME_PRINT_PREFIX)/lib/libgnomeprint.a
++@USE_GNOME_PRINT_TRUE@print_libs = -lgnomeprint
+ 
+ gnome_iconedit_LDADD =  	widgets/libwidgets.a		$(GNOME_LIBDIR) 	$(GNOMEUI_LIBS) 	$(GNORBA_LIBS)		-lgdk_pixbuf -lz -lpng -lXpm -lxml -lz 	$(OAF_LIBS)		$(print_libs)
+ 
