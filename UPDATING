@@ -7,7 +7,7 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20040813:
-  AFFECTS: users of kdm (x11/kdebase3)
+  AFFECTS: users of x11/kdebase3 (kdm)
   AUTHOR: kde@freebsd.org
 
   If you are unable to login to X via kdm after portupgrading to the latest 
