@@ -8,8 +8,8 @@
 PORTNAME=	wminet
 PORTVERSION=	2.0.2
 CATEGORIES=	sysutils windowmaker
-# All previous master sites no longer carry the tarball
-# MASTER_SITES=
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kevlo
 
 MAINTAINER=	sk-ports@vegamuse.org
 
