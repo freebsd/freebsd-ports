@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Nov 28 20:08:56 1999
-+++ Makefile	Sun Nov 28 20:14:20 1999
-@@ -5,17 +5,17 @@
+--- Makefile.orig      Sun Nov 28 20:08:56 1999
++++ Makefile   Sat Nov 11 14:14:53 2000
+@@ -5,24 +5,24 @@
  # very welcome).
  
  # for linux
@@ -24,6 +24,15 @@
  OBJS=cd-console.o cd.o $(EXTRA_OBJS)
  LIBS = -lncurses
  
+ # common
+-CFLAGS=-O2 -Wall $(DEFS)
++CFLAGS+= $(DEFS)
+ #CFLAGS=-g -Wall $(DEFS)
+-CC = gcc
++#CC = gcc
+ 
+ all:
+       make cd-console
 @@ -38,10 +38,13 @@
  	$(CC) -c cd_ll_linux.cpp $(CFLAGS)
  
