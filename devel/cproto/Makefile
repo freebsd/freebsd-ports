@@ -9,7 +9,8 @@
 PORTNAME=	cproto
 PORTVERSION=	4.6
 CATEGORIES=	devel
-MASTER_SITES=	http://www.vex.net/~cthuang/cproto/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cproto
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -18,4 +18,3 @@
 -#define MAX_TEXT_SIZE 256
 +#define MAX_TEXT_SIZE 4096
  #endif
- 
