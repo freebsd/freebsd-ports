@@ -108,8 +108,8 @@ post-build:
 .endif
 
 post-install:
-	@${MKDIR} -p ${PREFX}/share/semi
-	@${TOUCH} ${PREFX}/share/semi/${SEMI_COOKIE}
+	@${MKDIR} -p ${PREFIX}/share/semi
+	@${TOUCH} ${PREFIX}/share/semi/${SEMI_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
 .endif
