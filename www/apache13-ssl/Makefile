@@ -9,7 +9,6 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
-PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_APACHE_SSL:S/$/:ssl/}
@@ -20,7 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		${MASTER_SITE_APACHE_HTTPD}
 PATCH_SITE_SUBDIR=	patches/apply_to_${APACHE_VERSION}
-PATCHFILES=		no_zombies.patch 
+PATCHFILES=		no_zombies.patch
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
@@ -30,7 +29,7 @@ CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
 APACHE_VERSION=		1.3.28
-APACHE_SSL_VERSION=	1.51
+APACHE_SSL_VERSION=	1.52
 USE_OPENSSL=		yes
 USE_PERL5=		yes
 HAS_CONFIGURE=		yes

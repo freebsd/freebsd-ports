@@ -642,4 +642,4 @@ www/icons/world2.png
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
-@dirrm www
+@unexec rmdir %D/www 2> /dev/null || true
