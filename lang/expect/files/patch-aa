@@ -1,5 +1,5 @@
---- configure.orig	Mon May 18 15:22:13 1998
-+++ configure	Sun May 24 14:03:56 1998
+--- configure.orig	Tue May 19 00:22:13 1998
++++ configure	Thu Oct  1 08:14:36 1998
 @@ -1236,6 +1236,8 @@
  # It thinks the first close brace ends the variable substitution.
  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
@@ -9,16 +9,20 @@
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
  
-@@ -5902,7 +5904,7 @@
+@@ -5902,7 +5904,11 @@
  if test "$enable_shared" = "yes" && test "x${TCL_SHLIB_SUFFIX}" != "x" ; then
    EXP_SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
  #  EXP_SHARED_LIB_FILE=libexpect$EXP_LIB_VERSION$TCL_SHLIB_SUFFIX
 -  eval "EXP_SHARED_LIB_FILE=libexpect${TCL_SHARED_LIB_SUFFIX}"
-+  eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.1.2"
++  if test X`objformat` = Xelf ; then
++    eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.1"
++  else
++    eval "EXP_SHARED_LIB_FILE=libexpect`echo ${VERSION} | tr -d .`.so.1.2"
++  fi
    EXP_LIB_FILE=$EXP_SHARED_LIB_FILE
    EXP_LIB_FILES="$EXP_SHARED_LIB_FILE $EXP_UNSHARED_LIB_FILE"
    echo "$ac_t""both shared and unshared" 1>&6
-@@ -6099,17 +6101,18 @@
+@@ -6099,17 +6105,18 @@
  s%@TCL_SHLIB_LD@%$TCL_SHLIB_LD%g
  s%@SHLIB_SUFFIX@%$SHLIB_SUFFIX%g
  s%@TCL_LD_FLAGS@%$TCL_LD_FLAGS%g
