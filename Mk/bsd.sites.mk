@@ -161,19 +161,14 @@ MASTER_SITE_RINGSERVER+=	\
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.sourceforge.net/pub/sourceforge/kde/%SUBDIR%/ \
+	ftp://ftp.sourceforge.net/pub/mirrors/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
-	ftp://ftp2.sinica.edu.tw/pub5/wmgrs/kde/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.synesis.net/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/hci/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/ \
-	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
+	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/
 
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
