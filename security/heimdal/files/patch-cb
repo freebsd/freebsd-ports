@@ -1,0 +1,13 @@
+--- configure.in.orig	Tue Feb 22 21:42:25 2000
++++ configure.in	Thu Mar 30 22:52:03 2000
+@@ -73,6 +73,10 @@
+ fi
+ ])
+ 
++dnl Kerberos 4 libraries are quite likely to need to link against
++dnl libcom_err. 
++AC_CHECK_LIB(com_err, init_error_table)
++
+ AC_TEST_PACKAGE_NEW(krb4,[#include <krb.h>],-lkrb,-ldes,/usr/athena)
+ 
+ LIB_kdb=
