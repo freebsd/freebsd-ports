@@ -7,6 +7,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	1.56.2
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -15,10 +16,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
 
+RUN_DEPENDS=	getdp:${PORTSDIR}/science/getdp
 LIB_DEPENDS=	gsl.6:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
-.if defined(WITH_TRIANGLE)
+.if defined(PACKAGE_BUILDING)
+WITHOUT_TRIANGLE=	yes
+.endif
+
+.if !defined(WITHOUT_TRIANGLE)
 EXTRACT_DEPENDS+=	${NONEXISTENT}:${TRIANGLE_PORTDIR}:patch
 .endif
 
@@ -36,19 +42,12 @@ ALL_TARGET=	all utils
 
 MAN1=		gmsh.1
 
-.if defined(WITH_TRIANGLE)
+.if !defined(WITHOUT_TRIANGLE)
 NO_CDROM=	Triangle must not be sold for profit
 .endif
 
-pre-everything::
-.if !defined(WITH_TRIANGLE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can make with WITH_TRIANGLE for faster 2d meshing"
-	@${ECHO_MSG}
-.endif
-
 post-extract:
-.if defined(WITH_TRIANGLE)
+.if !defined(WITHOUT_TRIANGLE)
 	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.* ${WRKSRC}/Triangle
 .endif
 
@@ -59,8 +58,8 @@ post-patch:
 .endfor
 
 do-install:
-.for file in dxf2geo gmsh mshsort
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.for f in dxf2geo gmsh mshsort
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/doc/gmsh.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
