@@ -3,6 +3,6 @@ lib/X11/xmahjongg/bridge
 lib/X11/xmahjongg/default
 lib/X11/xmahjongg/wedges
 @dirrm lib/X11/xmahjongg
-lib/X11/fonts/misc/xmahjongg.bdf 
+lib/X11/fonts/local/xmahjongg.bdf 
 @exec /usr/X11R6/bin/mkfontdir %B
 @unexec /usr/X11R6/bin/mkfontdir %B
