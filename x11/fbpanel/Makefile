@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fbpanel
-PORTVERSION=	3.18
+PORTVERSION=	4.1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A desktop panel that includes a taskbar, pager, launchbar and more
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --transparency
+CONFIGURE_ARGS=	--prefix=${PREFIX} --cpu=off
 USE_GMAKE=	yes
 
 MAN1=		fbpanel.1

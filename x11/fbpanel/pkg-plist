@@ -8,6 +8,8 @@ bin/fbpanel
 %%DATADIR%%/images/Networking.png
 %%DATADIR%%/images/bottom-left.xpm
 %%DATADIR%%/images/bottom-right.xpm
+%%DATADIR%%/images/default.xpm
+%%DATADIR%%/images/settings.png
 %%DATADIR%%/images/top-left.xpm
 %%DATADIR%%/images/top-right.xpm
 %%DATADIR%%/pager
