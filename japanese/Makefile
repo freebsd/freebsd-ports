@@ -149,6 +149,7 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
+    SUBDIR += kcode
     SUBDIR += kde3-i18n
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
