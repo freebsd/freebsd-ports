@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.86 1999/03/19 22:23:57 asami Exp $
+# $Id: Makefile,v 1.87 1999/03/30 19:07:39 taoka Exp $
 #
 
     SUBDIR += adcomplain
@@ -54,6 +54,7 @@
     SUBDIR += pine4
     SUBDIR += poppassd
     SUBDIR += popper
+    SUBDIR += postfix
     SUBDIR += premail
     SUBDIR += procmail
     SUBDIR += qmail
