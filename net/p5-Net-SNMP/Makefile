@@ -22,6 +22,7 @@ RUN_DEPENDS=	${ARCH_PERL}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
 
 PERL_CONFIGURE=	yes
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
+CONFLICTS=	p5-Net-SNMP3
 
 MAN1=		snmpkey.1
 MAN3=		Net::SNMP.3
