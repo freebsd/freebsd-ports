@@ -2,6 +2,7 @@ sbin/apcupsd
 sbin/apcaccess
 sbin/apcnisd
 sbin/apctest
+sbin/smtp
 %%POWERFL%%sbin/powerflute
 etc/apcupsd/apcupsd.conf.net-master.sample
 etc/apcupsd/apcupsd.conf.net-slave.sample
