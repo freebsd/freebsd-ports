@@ -13,6 +13,7 @@
     SUBDIR += angband
     SUBDIR += antipolix
     SUBDIR += awele
+    SUBDIR += baduki
     SUBDIR += battalion
     SUBDIR += battleball
     SUBDIR += biorythm

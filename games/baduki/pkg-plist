@@ -1,0 +1,5 @@
+bin/baduki
+share/baduki/baduki.gtkrc
+share/baduki/board.xpm
+share/locale/ko/LC_MESSAGES/baduki.mo
+@dirrm share/baduki
