@@ -1,4 +1,5 @@
 bin/nap
+bin/napping
 %%PORTDOCS%%share/doc/nap/NEWS
 %%PORTDOCS%%share/doc/nap/README
 %%PORTDOCS%%share/doc/nap/napster.txt
