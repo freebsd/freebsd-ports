@@ -21,6 +21,7 @@ COMMENT=	Simple GTK-based text/HTML editor
 DOCVERSION=	1.2.0
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_XPM=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gtk12
@@ -33,7 +34,7 @@ MAN1=	gnp.1
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's|use_gtkhtml=yes|use_gtkhtml=no|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(use_gtkhtml=\)yes|\1no|g' ${WRKSRC}/configure.in
 
 .if !defined(NOPORTDOCS)
 post-extract:

@@ -23,6 +23,7 @@ ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 
 USE_LINUX=	yes
+USE_REINPLACE=	yes
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_CMD=	${CAT}
@@ -57,7 +58,7 @@ post-extract:
 	@${GZIP_CMD} -d ${WRKDIR}/applicat.rdb.gz
 
 post-configure:
-	@${PERL} -pi.orig -e 's|DefaultDestPath = "Office51";|DefaultDestPath = "${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
+	@${REINPLACE_CMD} -e 's|\(DefaultDestPath = \)"Office51";|\1"${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
 
 do-install:
 	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
@@ -76,7 +77,7 @@ do-install:
 	@${CHMOD} 100755 ${PREFIX}/Office51/lib/libsdb517li.so
 	@${PATCH} -s ${PREFIX}/Office51/bin/setup ${FILESDIR}/setup.patch
 	@${PATCH} -s ${PREFIX}/Office51/bin/soffice ${FILESDIR}/soffice.patch
-	@${PERL} -pi -e 's|DefaultDestPath = "${PREFIX}/Office51";|DefaultDestPath = "~/Office51";|' ${PREFIX}/Office51/instdb.ins
+	@${REINPLACE_CMD} -e 's|\(DefaultDestPath = \)"${PREFIX}/Office51";|\1"~/Office51";|' ${PREFIX}/Office51/instdb.ins
 
 install-user:
 	${PREFIX}/Office51/bin/setup

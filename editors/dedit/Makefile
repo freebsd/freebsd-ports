@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs gnomeprefix gnomehack gtk12 glib12 orbit
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,8 +30,8 @@ MAN1=		dedit.1
 MANLANG=	"" ja
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\(\$$(datadir)/\)gnome/|\1|g ; \
 		 s|dedit.ja.1||'
 
 post-install:
