@@ -250,8 +250,8 @@ PYTHON_SUFFIX!=		${PYTHON_CMD} -c 'import sys; h = "%x" % sys.hexversion; \
 						print h[0]+h[2]'
 
 .else
-.BEGIN:
-	@${ECHO} "Error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
+check-makevars::
+	@${ECHO} "Makefile error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
 	@${ECHO} "Legal values are:"
 	@${ECHO} "  python1.5"
 	@${ECHO} "  python1.6"

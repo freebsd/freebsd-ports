@@ -83,7 +83,6 @@ TARGETS+=	configure
 TARGETS+=	deinstall
 TARGETS+=	depend
 TARGETS+=	depends
-TARGETS+=	describe
 TARGETS+=	distclean
 TARGETS+=	extract
 TARGETS+=	fetch
@@ -108,7 +107,7 @@ ${__target}:
 
 .if defined(SUBDIR) && !empty(SUBDIR)
 
-.for __target in ${TARGETS} checksubdirs readmes
+.for __target in ${TARGETS} checksubdirs describe readmes
 ${SUBDIR:S/^/_/:S/$/.${__target}/}: _SUBDIRUSE
 .endfor
 
@@ -184,6 +183,43 @@ checksubdir:
 	    ${ECHO} "Warning: directory $$s in SUBDIR does not exist"; \
 	  fi \
 	done
+.endif
+
+.if !target(describe)
+.if defined(PORTSTOP)
+describe: ${SUBDIR:S/^/_/:S/$/.describe/}
+.else
+describe:
+	@TMPFILE=`mktemp -q /tmp/describe.XXXXXX` || exit 1; \
+	for sub in ${SUBDIR}; do \
+	OK=""; \
+	for dud in $$DUDS; do \
+		if [ $${dud} = $$sub ]; then \
+			OK="false"; \
+			${ECHO_MSG} "===> ${DIRPRFX}$$sub skipped"; \
+		fi; \
+	done; \
+	if test -d ${.CURDIR}/$${sub}.${MACHINE_ARCH}; then \
+		edir=$${sub}.${MACHINE_ARCH}; \
+	elif test -d ${.CURDIR}/$${sub}; then \
+		edir=$${sub}; \
+	else \
+		OK="false"; \
+		${ECHO_MSG} "===> ${DIRPRFX}$${sub} non-existent"; \
+	fi; \
+	if [ "$$OK" = "" ]; then \
+		${ECHO_MSG} "===> ${DIRPRFX}$${edir}"; \
+		cd ${.CURDIR}/$${edir}; \
+		${MAKE} -B describe 2>$${TMPFILE}; \
+		if [ -s $${TMPFILE} ]; then \
+			echo "===> ${DIRPRFX}$${sub} failed:" >&2; \
+			cat $${TMPFILE} >&2; \
+			echo -n >$${TMPFILE}; \
+		fi; \
+	fi; \
+	done; \
+	rm -f $${TMPFILE}
+.endif
 .endif
 
 .if !target(readmes)

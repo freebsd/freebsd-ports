@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.11 2003-12-05 08:20:51 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.12 2004-01-20 09:14:09 marcus Exp $
 #
 # Use of 'USE_OPENSSL=yes' includes this Makefile after bsd.ports.pre.mk
 #
@@ -62,8 +62,8 @@ OPENSSLBASE=		/usr
 OPENSSLDIR=		/etc/ssl
 
 .if !exists(/usr/lib/libcrypto.so)
-.BEGIN:
-	@${ECHO_CMD} "This port requires the OpenSSL library, which is part of"
+check-depends::
+	@${ECHO_CMD} "Dependency error: this port requires the OpenSSL library, which is part of"
 	@${ECHO_CMD} "the FreeBSD crypto distribution but not installed on your"
 	@${ECHO_CMD} "machine. Please see the \"OpenSSL\" section in the handbook"
 	@${ECHO_CMD} "(at \"http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/openssl.html\", for instance)"
@@ -72,10 +72,10 @@ OPENSSLDIR=		/etc/ssl
 	@${FALSE}
 .endif
 .if exists(${LOCALBASE}/lib/libcrypto.so)
-.BEGIN:
-	@${ECHO_CMD} "This port wants the OpenSSL library from the FreeBSD"
+check-depends::
+	@${ECHO_CMD} "Dependency error: this port wants the OpenSSL library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
-	@${ECHO_CMD} "Version is installed by a port."
+	@${ECHO_CMD} "version is installed by a port."
 	@${ECHO_CMD} "Please deinstall the port or undefine WITH_OPENSSL_BASE."
 	@${FALSE}
 .endif
