@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
@@ -49,10 +48,6 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_typing_break.schemas
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libgnome_gnome-program.c
-.endif
 
 post-patch:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
