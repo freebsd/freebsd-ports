@@ -8,15 +8,17 @@
 
 CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../mail/mutt
+MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-EXTRA_PATCHES=	${.CURDIR}/files/patch-init.h  \
-		${.CURDIR}/files/patch-parse.c  \
-		${.CURDIR}/files/patch-pgp.c  \
-		${.CURDIR}/files/patch-sendlib.c 
+PATCH_SITES=	http://www.cirx.org/~clive/dist/mutt13/
+PATCHFILES=	${PKGNAMEPREFIX}mutt-${PORTVERSION}.diff.gz
+PATCH_DIST_ARGS=	-d ${WRKDIR} --quiet
+
+WITH_MUTT_LOCALES_FIX=	yes
+
+MD5_FILE=	${.CURDIR}/distinfo
+PKGMESSAGE=	${.CURDIR}/pkg-message
 
 .include "${MASTERDIR}/Makefile"
-
-CONFIGURE_ARGS+= --enable-locales-fix
