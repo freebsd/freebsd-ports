@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cups-pstoraster
-PORTVERSION=	7.05.5
-PORTREVISION=	2
+PORTVERSION=	7.05.6
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.easysw.com/pub/ghostscript/
@@ -33,10 +33,6 @@ CONFIGURE_ARGS=	--without-x --without-ijs --without-gimp-print \
 		--enable-compiled-inits --without-omni
 
 USE_REINPLACE=	yes
-
-post-patch:
-	${REINPLACE_CMD} -e 's|%%DATADIR%%|${LOCALBASE}/share/ghostscript|g' \
-		${WRKSRC}/lib/gs_res.ps
 
 pre-build:
 	${MKDIR} ${WRKSRC}/bin
