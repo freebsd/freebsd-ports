@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.39
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -23,7 +23,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER?=	perky@FreeBSD.org
 
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 LATEST_LINK=	apache2
 

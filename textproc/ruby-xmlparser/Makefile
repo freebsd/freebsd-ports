@@ -7,6 +7,7 @@
 
 PORTNAME=	xmlparser
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 # to utilize encoding maps included in p5-XML-Parser

@@ -7,12 +7,13 @@
 
 PORTNAME=	neon
 PORTVERSION=	0.21.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 .ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	XML-Parser
 PORTVERSION=	2.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://wwwx.netheaven.com/~coopercc/xmlparser/
@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}.${PORTVERSION}.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include

@@ -7,6 +7,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	20020707163141
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.apache.org/dist/apr/not-released/
 DISTFILES=	apr_${PORTVERSION}.tar.gz apr-util_20020707163148.tar.gz
@@ -15,7 +16,7 @@ MAINTAINER=	rooneg@electricjellyfish.net
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.3:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	portmgr@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.2:${PORTSDIR}/textproc/expat2
+		expat.3:${PORTSDIR}/textproc/expat2
 
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
