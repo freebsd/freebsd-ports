@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
@@ -16,11 +17,12 @@ DISTFILES=	${PORTNAME}-core-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-objc-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-g77-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-ada-${GCCVERSION}${EXTRACT_SUFX}
-DIST_SUBDIR=	mingw
 
 PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	mingw
-PATCHFILES=	${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}.src.diff.gz
+# Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
+#               will be placed to subdirectory
+#               It allows to use main gcc sources from other ports.
+PATCHFILES=	mingw/${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}-src.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	lev@FreeBSD.org
@@ -30,8 +32,8 @@ BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
-GCCVERSION=	3.2
-PATCHVERSION=	20020817.1
+GCCVERSION=	3.2.3
+PATCHVERSION=	20030504.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 
@@ -53,16 +55,7 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
 
-BINARIES	= gcc cpp g++ g77 gcov
-
-# May be gcc sources was downloaded for some other port?
-pre-fetch:
-	for F in ${DISTFILES}; do \
-		${TEST} -f ${DISTDIR}/$${F} && \
-		${TEST} ! -f ${DISTDIR}/${DIST_SUBDIR}/$${F} && \
-		${LN} ${DISTDIR}/$${F} ${DISTDIR}/${DIST_SUBDIR}/$${F} || \
-		true ;\
-	done
+BINARIES=	gcc cpp g++ g77 gcov
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
