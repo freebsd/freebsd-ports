@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frox
-PORTVERSION=	0.7.11
+PORTVERSION=	0.7.12
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -19,11 +19,22 @@ COMMENT=	Transparent FTP proxy with caching support
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+USE_RC_SUBR=	yes
+RC_DIR?=	${PREFIX}/etc/rc.d
+RC_SUFX?=	.sh
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		-e 's|%%RC_DIR%%|${RC_DIR}|g' \
+		-e 's|%%RC_SUFX%%|${RC_SUFX}|g'
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} RC_SUFX=${RC_SUFX}
 
 MAN1=	frox.1
 MAN5=	frox.conf.5
 
-DOCS=	FAQ SECURITY CREDITS ChangeLog
+PORTDOCS=	FAQ SECURITY CREDITS ChangeLog
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -63,7 +74,8 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 pre-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
+	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message >${PKGMESSAGE}
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/frox.sh > ${WRKDIR}/frox.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/frox ${PREFIX}/sbin
@@ -74,15 +86,13 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
-	@${STRIP_CMD} ${PREFIX}/sbin/frox
-	@if [ ! -f ${PREFIX}/etc/rc.d/${PORTNAME}.sh ]; then \
-		${ECHO_MSG} "Install ${PREFIX}/etc/rc.d/${PORTNAME}.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d/${PORTNAME}.sh; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${STRIP_CMD} ${PREFIX}/sbin/frox; \
+	${ECHO_MSG} "Install ${RC_DIR}/frox${RC_SUFX} startup file."; \
+	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/frox.sh ${RC_DIR}/frox${RC_SUFX}; \
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
