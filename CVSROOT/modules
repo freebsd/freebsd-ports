@@ -10188,6 +10188,7 @@ trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
 tsclient	ports/net/tsclient
+tse3		ports/audio/tse3
 tsocks		ports/net/tsocks
 tt		ports/games/tt
 ttcp		ports/benchmarks/ttcp
