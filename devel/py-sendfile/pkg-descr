@@ -1,0 +1,3 @@
+py-sendfile is a Python module that interfaces to the sendfile(2) system call.
+
+WWW: http://tautology.org/software/python-modules/sendfile

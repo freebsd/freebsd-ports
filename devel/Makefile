@@ -1257,6 +1257,7 @@
     SUBDIR += py-rlcompleter2
     SUBDIR += py-ro
     SUBDIR += py-roxlib
+    SUBDIR += py-sendfile
     SUBDIR += py-simpleparse
     SUBDIR += py-simpy
     SUBDIR += py-sip
