@@ -6,6 +6,7 @@ include/opencl/checksum.h
 include/opencl/config.h
 include/opencl/cscipher.h
 include/opencl/des.h
+include/opencl/desx.h
 include/opencl/emac.h
 include/opencl/encoder.h
 include/opencl/exceptn.h
@@ -53,19 +54,20 @@ include/opencl/triple.h
 include/opencl/twofish.h
 include/opencl/types.h
 include/opencl/util.h
+include/opencl/version.h
 include/opencl/x917.h
 include/opencl/xtea.h
 @dirrm include/opencl
 lib/libopencl.a
 lib/libopencl-%%PORTVERSION%%.so
+lib/libopencl-0.7.so
+lib/libopencl-0.so
 lib/libopencl.so
-share/doc/OpenCL-%%PORTVERSION%%/OpenCL.spec
 share/doc/OpenCL-%%PORTVERSION%%/license.txt
-share/doc/OpenCL-%%PORTVERSION%%/opencl.asc
+share/doc/OpenCL-%%PORTVERSION%%/log.txt
 share/doc/OpenCL-%%PORTVERSION%%/opencl.ps
-share/doc/OpenCL-%%PORTVERSION%%/opencl.tex
+share/doc/OpenCL-%%PORTVERSION%%/pgpkeys.asc
 share/doc/OpenCL-%%PORTVERSION%%/readme.txt
 share/doc/OpenCL-%%PORTVERSION%%/relnotes.txt
 share/doc/OpenCL-%%PORTVERSION%%/thanks.txt
-share/doc/OpenCL-%%PORTVERSION%%/todo.txt
 @dirrm share/doc/OpenCL-%%PORTVERSION%%
