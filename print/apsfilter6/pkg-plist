@@ -2,7 +2,6 @@ share/apsfilter/SETUP
 share/apsfilter/bin/apsfilter
 share/apsfilter/bin/setup_dvips.sh
 share/apsfilter/filter/.keep_me
-share/apsfilter/global/GLOBAL.sh
 share/apsfilter/lib/redir_gs_msg.ps
 share/apsfilter/setup/README
 share/apsfilter/setup/devices-5.50
