@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Email/Delete.pm
+%%SITE_PERL%%/Email/Delete/Maildir.pm
+%%SITE_PERL%%/Email/Delete/Mbox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Delete/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Delete 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email/Delete 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Email 2>/dev/null || true
