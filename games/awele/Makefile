@@ -17,13 +17,9 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
 MAN6=		xawele.6
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/xawele.man ${PREFIX}/man/man6/xawele.6
+	${PERL} -pi -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
