@@ -1,0 +1,75 @@
+--- src/gensound.c.orig	Mon May  1 02:04:06 2000
++++ src/gensound.c	Wed Apr 18 22:32:49 2001
+@@ -50,7 +50,7 @@
+ 
+ static unsigned int sound_sampsperfield = 0;
+ static int sound_dev = 0;
+-/* static int sound_dump = 0; */
++static int sound_dump = 0;
+ static uint16 soundbuf[2][SOUND_MAXRATE/50]; /* pal is lowest framerate */
+ static int sound_format;
+ static int sound_stereo;
+@@ -69,15 +69,19 @@
+ {
+   audio_buf_info sound_info;
+ 
++  return 0;
++
+   LOG_NORMAL(("Initialising sound..."));
+   sound_sampsperfield = SOUND_SAMPLERATE / vdp_framerate;
+ 
+-  /* sound_dump = open("/tmp/sound_dump", O_CREAT|O_WRONLY|O_TRUNC); */
++  sound_dump = open("/tmp/sound_dump", O_CREAT|O_WRONLY|O_TRUNC);
+ 
+-  if ((sound_dev = open(SOUND_DEVICE, O_WRONLY, 0)) == -1) {
++/*
++  if ((sound_dev = open("/dev/null", O_WRONLY, 0)) == -1) {
+     LOG_CRITICAL(("open " SOUND_DEVICE " failed: %s", strerror(errno)));
+     return 1;
+   }
++  sound_dev = sound_dump;
+   sound_frag = (SOUND_FRAGMENTS<<16 |
+ 		(int)(ceil(log10(sound_sampsperfield*4)/log10(2))));
+   if (ioctl(sound_dev, SNDCTL_DSP_SETFRAGMENT, &sound_frag) == -1) {
+@@ -142,6 +146,7 @@
+     return 1;
+   LOG_NORMAL(("YM2612 Initialised @ sample rate %d", sound_speed));
+   return 0;
++*/
+ }
+ 
+ /*** sound_final - finalise this sub-unit ***/
+@@ -169,6 +174,7 @@
+ 
+ void sound_genreset(void)
+ {
++  return 0;
+ #ifdef JFM
+   jfm_reset(sound_ctx);
+ #else
+@@ -211,6 +217,8 @@
+   audio_buf_info sound_info;
+   unsigned int pending;
+ 
++  return 0;
++
+   if (ioctl(sound_dev, SNDCTL_DSP_GETOSPACE, &sound_info) == -1)
+     ui_err("Error getting output space info", strerror(errno));
+   pending = (sound_info.fragstotal*sound_info.fragsize)-sound_info.bytes;
+@@ -232,14 +240,14 @@
+       buffer[i*2+1] = (soundbuf[1][i] >> 8) | ((soundbuf[1][i] << 8) & 0xff00);
+     }
+   }
++/*
+   if (write(sound_dev, buffer, sound_sampsperfield*4) == -1) {
+     if (errno != EINTR)
+       ui_err("Error writing to sound device: %s", strerror(errno));
+   }
+-  /*
++*/
+   if (write(sound_dump, buffer, sound_sampsperfield*4) == -1)
+     ui_err("Error writing to dump file: %s", strerror(errno));
+-  */
+ }
+ 
+ #ifdef JFM

@@ -1,0 +1,6 @@
+bin/generator-tcltk
+share/generator/copyright.hlp
+share/generator/gen.tcl
+share/generator/generator.hlp
+share/generator/genesis.hlp
+@dirrm share/generator

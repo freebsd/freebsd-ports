@@ -1,0 +1,34 @@
+--- src/snd/fm.c.orig	Wed Apr 18 22:37:06 2001
++++ src/snd/fm.c	Wed Apr 18 22:37:27 2001
+@@ -1231,6 +1231,8 @@
+ {
+     int fn;
+ 
++return 0;
++
+     /* frequency base */
+     OPN->ST.freqbase = (OPN->ST.rate) ? ((double)OPN->ST.clock * 4096.0 / OPN->ST.rate) / pris : 0;
+     /* Timer base time */
+@@ -3183,6 +3185,8 @@
+     YM2612 *F2612 = &(FM2612[n]);
+     int addr;
+ 
++    return 0;
++
+     switch( a&3){
+     case 0: /* address port 0 */
+         F2612->OPN.ST.address = v & 0xff;
+@@ -3227,8 +3231,13 @@
+ }
+ unsigned char YM2612Read(int n,int a)
+ {
++/*
+     YM2612 *F2612 = &(FM2612[n]);
+     int addr = F2612->OPN.ST.address;
++*/
++    YM2612 *F2612; int addr;
++
++    return 0;
+ 
+     switch( a&3){
+     case 0: /* status 0 */
