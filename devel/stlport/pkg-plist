@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/stlport/algorithm
 include/stlport/bitset
 include/stlport/cassert
@@ -13,7 +12,6 @@ include/stlport/config/_epilog.h
 include/stlport/config/_msvc_warnings_off.h
 include/stlport/config/_prolog.h
 include/stlport/config/stl_apcc.h
-include/stlport/config/stl_apple.bak.h
 include/stlport/config/stl_apple.h
 include/stlport/config/stl_as400.h
 include/stlport/config/stl_bc.h
@@ -21,6 +19,7 @@ include/stlport/config/stl_como.h
 include/stlport/config/stl_confix.h
 include/stlport/config/stl_dec.h
 include/stlport/config/stl_dec_vms.h
+include/stlport/config/stl_fujitsu.h
 include/stlport/config/stl_gcc.h
 include/stlport/config/stl_hpacc.h
 include/stlport/config/stl_ibm.h
@@ -33,6 +32,7 @@ include/stlport/config/stl_mycomp.h
 include/stlport/config/stl_sco.h
 include/stlport/config/stl_select_lib.h
 include/stlport/config/stl_sgi.h
+include/stlport/config/stl_solaris.h
 include/stlport/config/stl_sunpro.h
 include/stlport/config/stl_symantec.h
 include/stlport/config/stl_watcom.h
@@ -46,7 +46,6 @@ include/stlport/cstddef
 include/stlport/cstdio
 include/stlport/cstdlib
 include/stlport/cstring
-include/stlport/cstring.h
 include/stlport/ctime
 include/stlport/ctype.h
 include/stlport/cwchar
@@ -54,6 +53,7 @@ include/stlport/cwctype
 include/stlport/deque
 include/stlport/exception
 include/stlport/exception.h
+include/stlport/export
 include/stlport/fstream
 include/stlport/fstream.h
 include/stlport/functional
@@ -77,13 +77,40 @@ include/stlport/map
 include/stlport/math.h
 include/stlport/mem.h
 include/stlport/memory
-include/stlport/memory.new
 include/stlport/mmemory.h
 include/stlport/new
 include/stlport/new.h
 include/stlport/numeric
+include/stlport/old_hp/algo.h
+include/stlport/old_hp/algobase.h
+include/stlport/old_hp/alloc.h
+include/stlport/old_hp/bvector.h
+include/stlport/old_hp/defalloc.h
+include/stlport/old_hp/deque.h
+include/stlport/old_hp/function.h
+include/stlport/old_hp/hash_map.h
+include/stlport/old_hp/hash_set.h
+include/stlport/old_hp/hashtable.h
+include/stlport/old_hp/heap.h
+include/stlport/old_hp/iterator.h
+include/stlport/old_hp/list.h
+include/stlport/old_hp/map.h
+include/stlport/old_hp/multimap.h
+include/stlport/old_hp/multiset.h
+include/stlport/old_hp/numeric.h
+include/stlport/old_hp/pair.h
+include/stlport/old_hp/pthread_alloc.h
+include/stlport/old_hp/queue.h
+include/stlport/old_hp/rope.h
+include/stlport/old_hp/set.h
+include/stlport/old_hp/slist.h
+include/stlport/old_hp/stack.h
+include/stlport/old_hp/tempbuf.h
+include/stlport/old_hp/tree.h
+include/stlport/old_hp/vector.h
 include/stlport/ostream
 include/stlport/ostream.h
+include/stlport/pthread.h
 include/stlport/pthread_alloc
 include/stlport/queue
 include/stlport/rope
@@ -97,25 +124,32 @@ include/stlport/stdarg.h
 include/stlport/stddef.h
 include/stlport/stdexcept
 include/stlport/stdio.h
+include/stlport/stdio_streambuf
 include/stlport/stdlib.h
+include/stlport/stl/_abbrevs.h
 include/stlport/stl/_algo.c
 include/stlport/stl/_algo.h
 include/stlport/stl/_algobase.c
 include/stlport/stl/_algobase.h
 include/stlport/stl/_alloc.c
 include/stlport/stl/_alloc.h
+include/stlport/stl/_auto_ptr.h
 include/stlport/stl/_bitset.c
 include/stlport/stl/_bitset.h
 include/stlport/stl/_bvector.h
 include/stlport/stl/_check_config.h
+include/stlport/stl/_cmath.h
 include/stlport/stl/_codecvt.h
 include/stlport/stl/_collate.h
 include/stlport/stl/_complex.c
 include/stlport/stl/_complex.h
 include/stlport/stl/_config.h
+include/stlport/stl/_config_compat.h
+include/stlport/stl/_config_compat_post.h
 include/stlport/stl/_construct.h
 include/stlport/stl/_ctraits_fns.h
 include/stlport/stl/_ctype.h
+include/stlport/stl/_cwchar.h
 include/stlport/stl/_deque.c
 include/stlport/stl/_deque.h
 include/stlport/stl/_epilog.h
@@ -123,6 +157,7 @@ include/stlport/stl/_exception.h
 include/stlport/stl/_fstream.c
 include/stlport/stl/_fstream.h
 include/stlport/stl/_function.h
+include/stlport/stl/_function_base.h
 include/stlport/stl/_hash_fun.h
 include/stlport/stl/_hash_map.h
 include/stlport/stl/_hash_set.h
@@ -136,27 +171,34 @@ include/stlport/stl/_ios_base.h
 include/stlport/stl/_iosfwd.h
 include/stlport/stl/_istream.c
 include/stlport/stl/_istream.h
+include/stlport/stl/_istreambuf_iterator.h
 include/stlport/stl/_iterator.h
 include/stlport/stl/_iterator_base.h
+include/stlport/stl/_iterator_old.h
 include/stlport/stl/_limits.c
 include/stlport/stl/_limits.h
 include/stlport/stl/_list.c
 include/stlport/stl/_list.h
-include/stlport/stl/_locale.c
 include/stlport/stl/_locale.h
 include/stlport/stl/_map.h
 include/stlport/stl/_messages_facets.h
 include/stlport/stl/_monetary.c
 include/stlport/stl/_monetary.h
 include/stlport/stl/_null_stream.h
+include/stlport/stl/_num_get.c
+include/stlport/stl/_num_get.h
+include/stlport/stl/_num_put.c
+include/stlport/stl/_num_put.h
 include/stlport/stl/_numeric.c
 include/stlport/stl/_numeric.h
-include/stlport/stl/_numeric_facets.c
-include/stlport/stl/_numeric_facets.h
+include/stlport/stl/_numpunct.h
 include/stlport/stl/_ostream.c
 include/stlport/stl/_ostream.h
+include/stlport/stl/_ostreambuf_iterator.h
 include/stlport/stl/_pair.h
 include/stlport/stl/_prolog.h
+include/stlport/stl/_pthread_alloc.c
+include/stlport/stl/_pthread_alloc.h
 include/stlport/stl/_ptrs_specialize.h
 include/stlport/stl/_queue.h
 include/stlport/stl/_range_errors.h
@@ -173,6 +215,7 @@ include/stlport/stl/_slist.c
 include/stlport/stl/_slist.h
 include/stlport/stl/_slist_base.c
 include/stlport/stl/_slist_base.h
+include/stlport/stl/_sparc_atomic.h
 include/stlport/stl/_sstream.c
 include/stlport/stl/_sstream.h
 include/stlport/stl/_stack.h
@@ -180,6 +223,7 @@ include/stlport/stl/_stdio_file.h
 include/stlport/stl/_stream_iterator.h
 include/stlport/stl/_streambuf.c
 include/stlport/stl/_streambuf.h
+include/stlport/stl/_streambuf_iterator.h
 include/stlport/stl/_string.c
 include/stlport/stl/_string.h
 include/stlport/stl/_string_fwd.c
@@ -204,7 +248,6 @@ include/stlport/stl/_vector.h
 include/stlport/stl/c_locale.h
 include/stlport/stl/char_traits.h
 include/stlport/stl/concept_checks.h
-include/stlport/stl/container_concepts.h
 include/stlport/stl/debug/_debug.c
 include/stlport/stl/debug/_debug.h
 include/stlport/stl/debug/_deque.h
@@ -216,7 +259,6 @@ include/stlport/stl/debug/_string.h
 include/stlport/stl/debug/_tree.h
 include/stlport/stl/debug/_vector.h
 include/stlport/stl/msl_string.h
-include/stlport/stl/stdio_streambuf
 include/stlport/stl/type_traits.h
 include/stlport/stl/wrappers/_deque.h
 include/stlport/stl/wrappers/_hash_map.h
@@ -243,6 +285,7 @@ include/stlport/using/h/fstream.h
 include/stlport/using/h/iomanip.h
 include/stlport/using/h/iostream.h
 include/stlport/using/h/ostream.h
+include/stlport/using/h/streambuf.h
 include/stlport/using/h/strstream.h
 include/stlport/using/iomanip
 include/stlport/using/ios
@@ -260,6 +303,7 @@ include/stlport/vector
 include/stlport/wchar.h
 include/stlport/wctype.h
 include/stlport/wrap_std/complex
+include/stlport/wrap_std/export
 include/stlport/wrap_std/fstream
 include/stlport/wrap_std/h/fstream.h
 include/stlport/wrap_std/h/iostream.h
@@ -277,63 +321,53 @@ include/stlport/wrap_std/streambuf
 include/stlport/wrap_std/strstream
 lib/libstlport_gcc.a
 lib/libstlport_gcc.so
-lib/libstlport_gcc.so.4_0_0
-lib/libstlport_gcc_debug.a
-lib/libstlport_gcc_debug.so
-lib/libstlport_gcc_debug.so.4_0_0
+lib/libstlport_gcc.so_4_5
 lib/libstlport_gcc_stldebug.a
 lib/libstlport_gcc_stldebug.so
-lib/libstlport_gcc_stldebug.so.4_0_0
-share/doc/html/stlport/FAQ.html
-share/doc/html/stlport/README.BC.html
-share/doc/html/stlport/README.CW.html
-share/doc/html/stlport/README.DEC.html
-share/doc/html/stlport/README.VC++.html
-share/doc/html/stlport/README.aCC.html
-share/doc/html/stlport/README.gcc.html
-share/doc/html/stlport/README.os390.html
-share/doc/html/stlport/README.pow.html
-share/doc/html/stlport/README.sgi40.html
-share/doc/html/stlport/README.sunpro.html
-share/doc/html/stlport/README.xlC.html
-share/doc/html/stlport/auto_configure.html
-share/doc/html/stlport/bug_report.html
-share/doc/html/stlport/buglist.html
-share/doc/html/stlport/build.html
-share/doc/html/stlport/build_nosgi.html
-share/doc/html/stlport/compiler_readmes.html
-share/doc/html/stlport/configure.html
-share/doc/html/stlport/contributors.html
-share/doc/html/stlport/copyrights.html
-share/doc/html/stlport/debug_mode.html
-share/doc/html/stlport/eh_testsuite.html
-share/doc/html/stlport/exception_safety.html
-share/doc/html/stlport/extensions.html
-share/doc/html/stlport/getting_started.html
-share/doc/html/stlport/images/blue.gif
-share/doc/html/stlport/images/logo.jpg
-share/doc/html/stlport/images/logo_1.jpg
-share/doc/html/stlport/index.html
-share/doc/html/stlport/install.html
-share/doc/html/stlport/license.html
-share/doc/html/stlport/major_modes.html
-share/doc/html/stlport/platforms.html
-share/doc/html/stlport/prepare.html
-share/doc/html/stlport/projects.html
-share/doc/html/stlport/release_notes.html
-share/doc/html/stlport/select_io.html
-share/doc/html/stlport/sgi_stl.html
-share/doc/html/stlport/story.html
-share/doc/html/stlport/style.css
-share/doc/html/stlport/test.html
-share/doc/html/stlport/testsuite.html
-share/doc/html/stlport/thanks.html
-share/doc/html/stlport/use_stlport.html
-share/doc/html/stlport/vendor_interface.html
-share/doc/html/stlport/wrappers.html
-@dirrm share/doc/html/stlport/images
-@dirrm share/doc/html/stlport
-@unexec rmdir %D/share/doc/html 2>/dev/null || true
+lib/libstlport_gcc_stldebug.so_4_5
+%%PORTDOCS%%share/doc/stlport/README.BC.html
+%%PORTDOCS%%share/doc/stlport/README.CW.html
+%%PORTDOCS%%share/doc/stlport/README.DEC.html
+%%PORTDOCS%%share/doc/stlport/README.MPW.html
+%%PORTDOCS%%share/doc/stlport/README.VC++.html
+%%PORTDOCS%%share/doc/stlport/README.aCC.html
+%%PORTDOCS%%share/doc/stlport/README.gcc.html
+%%PORTDOCS%%share/doc/stlport/README.os390.html
+%%PORTDOCS%%share/doc/stlport/README.pow.html
+%%PORTDOCS%%share/doc/stlport/README.sgi40.html
+%%PORTDOCS%%share/doc/stlport/README.sunpro.html
+%%PORTDOCS%%share/doc/stlport/README.xlC.html
+%%PORTDOCS%%share/doc/stlport/auto_configure.html
+%%PORTDOCS%%share/doc/stlport/bug_report.html
+%%PORTDOCS%%share/doc/stlport/buglist.html
+%%PORTDOCS%%share/doc/stlport/compiler_readmes.html
+%%PORTDOCS%%share/doc/stlport/configure.html
+%%PORTDOCS%%share/doc/stlport/copyrights.html
+%%PORTDOCS%%share/doc/stlport/cvs.html
+%%PORTDOCS%%share/doc/stlport/debug_mode.html
+%%PORTDOCS%%share/doc/stlport/doc.css
+%%PORTDOCS%%share/doc/stlport/eh_testsuite.html
+%%PORTDOCS%%share/doc/stlport/exception_safety.html
+%%PORTDOCS%%share/doc/stlport/images/black.gif
+%%PORTDOCS%%share/doc/stlport/images/stl_logo_doc.gif
+%%PORTDOCS%%share/doc/stlport/images/t_doc2.gif
+%%PORTDOCS%%share/doc/stlport/images/trans.gif
+%%PORTDOCS%%share/doc/stlport/index.html
+%%PORTDOCS%%share/doc/stlport/install.html
+%%PORTDOCS%%share/doc/stlport/license.html
+%%PORTDOCS%%share/doc/stlport/platforms.html
+%%PORTDOCS%%share/doc/stlport/projects.html
+%%PORTDOCS%%share/doc/stlport/release_notes.html
+%%PORTDOCS%%share/doc/stlport/select_io.html
+%%PORTDOCS%%share/doc/stlport/sgi_stl.html
+%%PORTDOCS%%share/doc/stlport/story.html
+%%PORTDOCS%%share/doc/stlport/testsuite.html
+%%PORTDOCS%%share/doc/stlport/thanks.html
+%%PORTDOCS%%share/doc/stlport/use_stlport.html
+%%PORTDOCS%%share/doc/stlport/vendor_interface.html
+%%PORTDOCS%%share/doc/stlport/wrappers.html
+%%PORTDOCS%%@dirrm share/doc/stlport/images
+%%PORTDOCS%%@dirrm share/doc/stlport
 @dirrm include/stlport/wrap_std/h
 @dirrm include/stlport/wrap_std
 @dirrm include/stlport/using/h
@@ -341,5 +375,6 @@ share/doc/html/stlport/wrappers.html
 @dirrm include/stlport/stl/wrappers
 @dirrm include/stlport/stl/debug
 @dirrm include/stlport/stl
+@dirrm include/stlport/old_hp
 @dirrm include/stlport/config
 @dirrm include/stlport
