@@ -23,8 +23,6 @@ INSTALLS_SHLIB=	yes
 
 .if ${OSVERSION} < 500000
 USE_GCC=	3.2
-.else
-USE_GCC=	yes
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
