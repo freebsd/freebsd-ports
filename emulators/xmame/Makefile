@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.86
+PORTVERSION?=	0.87
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -218,11 +218,12 @@ ESOUNDCOMMENT=\#
 # XXX Network support is *broken* in 0.85+, leave commented out for now
 # Option WITH_NETWORK
 #.if ${MAMEMESS} == "mame"
-#.if !defined(WITH_NETWORK)
+.if !defined(WITH_NETWORK)
 WITH_NETWORK=	no
-#.endif
+.endif
 
 .if ${WITH_NETWORK:L} != "no"
+BROKEN=	"Networking support is currently broken"
 NETWORK=
 .else
 NETWORK=\#
