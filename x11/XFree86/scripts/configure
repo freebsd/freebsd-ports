@@ -1,7 +1,92 @@
 #!/bin/sh
 
+yesno () {
+  answ=X;
+  while [ $answ = X ]; do
+    echo -n "$1"
+    read answ
+    if [ X$answ = X ]; then answ="YES"; fi
+    case $answ in
+      y|yes|Y|YES) answ=YES;;
+      n|no|N|NO)   answ=NO;;
+      *) echo invalid answer
+      answ=X
+      ;;
+    esac
+  done
+}
+
+if [ -f $WRKDIR/.cdrom ]; then
+  X11FIXES=`cat $WRKDIR/.cdrom`
+  echo -n 'Where is the "xc" directory on the cdrom? [/cdrom] '
+  read X11R6; if [ X$X11R6 = X ]; then X11R6=/cdrom; fi
+  if [ ! -d $X11R6/xc/config/cf ]; then 
+    echo "Can't find X11R6 in $X11R6"
+    exit 1
+  fi
+
+  yesno "Is your cdrom distibution already patched? [y] ";
+  if [ $answ = YES ]; then
+    echo -n "What is the patchlevel of the distribution? [3] ";
+    read pl; if [ X$pl = X ]; then pl=3; fi
+    pl=`expr $pl + 1`
+    if [ $pl -lt 10 ]; then pl=0$pl; fi
+  else
+    pl=01
+  fi
+  echo "==> building the tree (please wait)"
+  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
+else
+  X11FIXES=`cat $WRKDIR/.ftp`
+  pl=01
+fi
+
+echo -n "==> applying XC patches (please wait)"
+ok=0
+for i in 01 02 03 04 05 06 07 08 09 10 11; do
+  if [ $i = $pl ]; then ok=1; fi
+  if [ $ok = 1 ]; then
+    echo -n .;
+    patch -d $WRKSRC --forward --quiet -E -p1 < $X11FIXES/fix-$i
+    if [ $i = 10 ]; then
+      zcat  $X11FIXES/fix10fonts.Z | patch -d $WRKSRC --forward --quiet -E -p1
+    fi
+    if [ $i = 11 ]; then
+      rm -rf $WRKDIR/xc/programs/Xserver/hw/xfree86
+      tar -C $WRKDIR -xzf $X11FIXES/XFree86-3.1.1.tar.gz 
+    fi
+  fi
+done
+echo 
+echo "==> applying XFree86 patches (please wait)"
+zcat $X11FIXES/XFree86-3.1.1.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
+
+
 cd $WRKSRC/config/cf/ || exit 1;
-cat >> xf86site.def << EOF
+
+F=xf86site.def
+
+cat <<END
+ Which servers do you wish to build, you can save a lot of disk space
+ by only compiling the server you will be using.  It will also save you
+ considerable compile time.
+END
+servers="SVGA VGA16 VGA16Dual Mono MonoDual S3 I8514 Mach8 Mach32 Mach64 P9000 AGX  W32"
+for i in $servers; do
+  yesno "Do you want to build the $i server? [YES] "
+  echo "#undef XF86${i}Server"           >>$F
+  echo "#define XF86${i}Server   $answ"  >>$F
+done
+
+echo
+echo -n "default server to install. [none] "
+read answ
+if [ X$answ = X ]; then answ=none; fi
+if [ $answ != none ]; then
+  echo "#define ServerToInstall		XF86_$i" >>$F
+fi
+
+cat >> $F <<END
 #define XF86SvgaDrivers		et4000 et3000 pvga1 gvga ati tvga8900 cirrus \
 				ncr77c22 compaq oak mx al2101 ali cl64xx \
 				video7 chips generic
@@ -15,16 +100,57 @@ cat >> xf86site.def << EOF
 
 #define XF86W32Drivers		et4000w32
 
-EOF
+END
+
+cat <<END
+
+
+ Do you want to install the default system config files, this will overwrite
+ and files that you may be currently using.  This would only be required
+ on a first time build.
+END
+yesno "Install xdm config? [YES] "
+echo "#undef InstallXdmConfig" >> $F
+echo "#define InstallXdmConfig	$answ" >> $F
+yesno "Install xinit config? [YES] "
+echo "#undef InstallXinitConfig" >> $F
+echo "#define InstallXinitConfig $answ" >> $F
+
+yesno "Do you want to include support for the FontServer? [YES] "
+echo "#undef BuildFontServer" >>$F
+echo "#define  BuildFontServer $answ" >>$F
+echo "#undef InstallFSConfig" >>$F
+echo "#define   InstallFSConfig $answ" >>$F
+
+cat <<'END'
+ Do you want to Build Fonts (Usually you only want to build and install
+ fonts once, if this is a first time install you will want to build the
+ fonts)
+END
+yesno "Build fonts? [YES] "
+if [ $answ = NO ]; then
+  echo "#define BuildFonts		NO" >> $F
+fi
+yesno "Build PEX? [YES] "
+if [ $answ = NO ]; then
+  echo "#define BuildPexExt		NO" >> $F
+fi
+yesno "Build XIE? [YES] "
+if [ $answ = NO ]; then
+  echo "#define BuildXIE		NO" >> $F
+fi
 
 version=`uname -r`
 set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
 mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/12.0/$version/"                       \
+sed -e "s/2.0/$version/"                       \
     -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
     -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
     -e "s/OSTeenyVersion *0/OSTeenyVersion $3/"  \
     <FreeBSD.cf.old >FreeBSD.cf
-#you may change ExtraLibraries too!
+#you may change ExtraLibraries too:
+#echo "#undef     ExtraLibraries >> FreeBSD.cf
+#echo "#define    ExtraLibraries -lgnumalloc >>FreeBSD.cf
+
 exit 0
 
