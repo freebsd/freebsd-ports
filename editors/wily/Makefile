@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the Plan9 editor `acme'
 
 RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
-		${X11BASE}/lib/X11/fonts/unicode.9.font:${PORTSDIR}/x11-fonts/Xg
+		${X11BASE}/lib/X11/fonts/Xg/unicode.9.font:${PORTSDIR}/x11-fonts/Xg
 
 USE_XLIB=	YES
 GNU_CONFIGURE=	YES
