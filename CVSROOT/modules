@@ -8163,6 +8163,7 @@ ruby-acl	ports/security/ruby-acl
 ruby-aes	ports/security/ruby-aes
 ruby-algebra	ports/math/ruby-algebra
 ruby-amatch	ports/textproc/ruby-amatch
+ruby-amazon	ports/www/ruby-amazon
 ruby-amrita	ports/textproc/ruby-amrita
 ruby-amstd	ports/devel/ruby-amstd
 ruby-asp	ports/www/ruby-asp
