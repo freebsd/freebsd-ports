@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  1 01:51:59 PST 1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.6 1995/11/22 13:11:56 asami Exp $
+# $Id: Makefile,v 1.7 1996/10/19 05:56:26 max Exp $
 #
 
 DISTNAME =	gofer230a
@@ -15,7 +15,7 @@ WRKSRC = ${WRKDIR}/src
 LIBDIR = ${PREFIX}/lib/Gofer
 
 do-install:
-	-/bin/mkdir -p ${LIBDIR}
+	${MKDIR} -p ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/*.prelude ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/prelude.h ${LIBDIR}
 	${INSTALL_DATA} ${WRKDIR}/src/gofc.h ${LIBDIR}
@@ -29,7 +29,7 @@ do-install:
 .if !defined(NOMANCOMPRESS)
 	gzip -9nf ${PREFIX}/man/man1/gofer.1
 .endif
-	-/bin/mkdir -p ${LIBDIR}/docs
+	${MKDIR} -p ${LIBDIR}/docs
 	${INSTALL_DATA} ${WRKDIR}/docs/* ${LIBDIR}/docs
 
 .include <bsd.port.mk>

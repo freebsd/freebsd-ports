@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.4 1996/09/20 20:29:03 max Exp $
+# $Id: Makefile,v 1.5 1996/09/20 23:04:17 asami Exp $
 #
 
 DISTNAME=	pine3.95
@@ -43,9 +43,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1
-	@(if [ ! -d ${PREFIX}/lib/pine ]; then \
-	     /bin/mkdir -p ${PREFIX}/lib/pine ;\
-	 fi)
+	     ${MKDIR} -p ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.hlp ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.ndx ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.hlp ${PREFIX}/lib/pine
