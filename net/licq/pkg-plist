@@ -21,7 +21,7 @@ include/licq/licq_onevent.h
 include/licq/licq_packets.h
 include/licq/licq_plugin.h
 include/licq/licq_plugind.h
-include/licq/licq_remoteserver.h
+include/licq/licq_proxy.h
 include/licq/licq_sar.h
 include/licq/licq_sighandler.h
 include/licq/licq_socket.h
@@ -78,6 +78,7 @@ share/licq/translations/SWEDISH
 share/licq/translations/SWEDISH_NAMES
 share/licq/translations/SWEDISH_NAMES_COM
 share/licq/translations/SWISS
+share/licq/translations/UKRAINIAN_WIN
 share/licq/translations/UNITED_KINGDOM
 share/licq/translations/UNITED_KINGDOM_COM
 share/licq/utilities/BackOrifice.utility
