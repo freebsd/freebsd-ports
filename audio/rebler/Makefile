@@ -19,6 +19,12 @@ LIB_DEPENDS=	mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
 		aviplay.0:${PORTSDIR}/multimedia/avifile \
 		popt:${PORTSDIR}/devel/popt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BZIP2=	yes
 AVIFILE_CONFIG?=	${LOCALBASE}/bin/avifile-config
 CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
@@ -33,4 +39,4 @@ do-build:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rebler ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

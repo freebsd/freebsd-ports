@@ -43,6 +43,10 @@ ADDITIONAL_DOCS=	about.html \
 
 .include "${FILESDIR}/conffiles"
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 do-build:
 	(cd ${WRKSRC}/src ; ${MAKE} -f fte-unix.mak)
 	(cd ${WRKSRC}/config ; ../src/cfte main.fte)

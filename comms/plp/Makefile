@@ -16,6 +16,12 @@ DISTNAME=	${PORTNAME}_1_8
 MAINTAINER=	maurice@serc.rmit.edu.au
 COMMENT=	Transfer data between a Psion Series 5(mx) and Unix
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
@@ -28,4 +34,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/ncp ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rfsv ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

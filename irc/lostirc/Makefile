@@ -18,6 +18,12 @@ COMMENT=	LostIRC is a simple and minimal IRC client for X
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
 		intl.4:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
@@ -39,4 +45,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

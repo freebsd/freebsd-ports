@@ -13,6 +13,12 @@ MASTER_SITES=	http://dllab.caltech.edu/avida/versions/
 MAINTAINER=	karlj000@unbc.ca
 COMMENT=	Avida is an auto-adaptive genetic system designed for ALife research
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[[:alnum:]]+$//}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -37,4 +43,4 @@ post-patch:
 	| ${SED} -e 's#%%PORTNAME%%#${PORTNAME}#g' \
 	> ${WRKSRC}/source/support/genesis.heads
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

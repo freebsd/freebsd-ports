@@ -14,6 +14,12 @@ DISTNAME=		yacl-0170-beta
 MAINTAINER=		ports@freebsd.org
 COMMENT=	Portable programming library for C++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 MAKE_ENV=		YACLPATH=${WRKDIR}
@@ -51,4 +57,4 @@ post-install:
 	@strip ${PREFIX}/share/yacl/apps/bmpview
 	@strip ${PREFIX}/share/yacl/apps/dlged
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

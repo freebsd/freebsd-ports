@@ -23,6 +23,12 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
 		iconv:${PORTSDIR}/converters/libiconv \
 		gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
@@ -39,4 +45,4 @@ MAN5=		filtermailrc.5 filtermailex.5
 EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filtermail/g' | ${TAR} -xf -
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

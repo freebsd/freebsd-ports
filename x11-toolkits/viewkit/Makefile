@@ -21,6 +21,12 @@ COMMENT=	ViewKit workalike from Hungry Programmers
 
 BUILD_DEPENDS=   ${AUTOCONFIG}:${PORTSDIR}/devel/${AUTOCONFIG}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 AUTOCONFIG=      autoconf
 
 MOTIFPACKAGE?=   open-motif
@@ -32,4 +38,4 @@ CONFIGURE_ARGS=	--with-${MOTIFPACKAGE}
 pre-configure:
 	@cd ${WRKSRC}; ${CHMOD} +w configure; ${AUTOCONFIG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -15,6 +15,12 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/.//}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/battleball-2.1-src
@@ -32,4 +38,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -17,6 +17,12 @@ COMMENT=	The UCB/LBNL Network Simulator Version 2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 MAN1=		ns.1
 MANCOMPRESSED=	no
 
@@ -32,4 +38,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/examples/ns2
 	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${PREFIX}/share/examples/ns2
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -16,6 +16,12 @@ COMMENT=	FTN Messages tracker
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsmapi.a:${PORTSDIR}/mail/smapi
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -48,4 +54,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/${FILE} ${PREFIX}/etc/ftrack
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,6 +14,12 @@ DISTNAME=		estic-${PORTVERSION}-sources
 MAINTAINER=		jhs@FreeBSD.org
 COMMENT=	Controller for ISDN TK-Anlage (PBX) made by Istec
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_XLIB=		yes
 USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
@@ -80,4 +86,4 @@ demo:
 # CDROMs, # (despite the original German phraseology) as I (<jhs@freebsd.org>)
 # have obtained a waiver.  See ${FILESDIR}/README for explanation.
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

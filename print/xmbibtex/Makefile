@@ -14,10 +14,16 @@ MASTER_SITE_SUBDIR=	apps/tex
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A reference manager based on the BibTeX file format
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -22,6 +22,12 @@ BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_KDEBASE_VER=3
 GNU_CONFIGURE=	yes
 QTCFGLIBS+=	-pthread
@@ -40,4 +46,4 @@ pre-configure:
 	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.dist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

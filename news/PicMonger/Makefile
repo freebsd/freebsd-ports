@@ -16,9 +16,15 @@ COMMENT=	An automated USENET (NNT) picture decoding client
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

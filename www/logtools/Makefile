@@ -14,7 +14,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	xaa+ports@timewasters.nl
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 GNU_CONFIGURE=	yes
 MAN1=		clfmerge.1 logprn.1 funnel.1 clfsplit.1 clfdomainsplit.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

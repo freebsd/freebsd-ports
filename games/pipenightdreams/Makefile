@@ -15,6 +15,12 @@ COMMENT=	A puzzle game similar to PipeMania
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -34,4 +40,4 @@ post-patch:
 	${REINPLACE_CMD} "s|/usr/share/games|${LOCALBASE}/share|g" \
 		${WRKSRC}/src/main.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -16,6 +16,12 @@ MASTER_SITE_SUBDIR=	vis5d
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL-based volumetric visualization program for scientific datasets
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
@@ -35,4 +41,4 @@ INSTALLS_SHLIB=	yes
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_FLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} 
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

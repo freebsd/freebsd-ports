@@ -20,6 +20,12 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 ONLY_FOR_ARCHS=	i386
@@ -38,4 +44,4 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/libavixmms.so ${PREFIX}/lib/xmms/Input
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,10 +18,16 @@ COMMENT=	A small C++ tools library based on STL
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB= yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

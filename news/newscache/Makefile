@@ -17,6 +17,12 @@ COMMENT=	NewsCache is a free cache server for USENET News
 
 LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_AUTOMAKE_VER=	15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" 
@@ -28,4 +34,4 @@ MAN8=	newscache.8 newscacheclean.8 updatenews.8
 post-patch:
 	cd ${WRKSRC}; ./autogen
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

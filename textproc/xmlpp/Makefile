@@ -14,6 +14,12 @@ MASTER_SITES=	http://www.root.at/download/gpl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Parser and Validator
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_REINPLACE=	yes
 FETCH_CMD=	/usr/bin/fetch
 USE_GMAKE=	yes
@@ -23,4 +29,4 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local/share|$$(datadir)|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

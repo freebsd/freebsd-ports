@@ -16,6 +16,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT=	IMAP4rev1 and POP3 server from the DBOX BBS package
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -47,4 +53,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,6 +14,12 @@ MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Simple X-based text editor
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -37,4 +43,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/xe
 	${INSTALL_DATA} ${WRKSRC}/xerc ${PREFIX}/share/examples/xe/sample.xerc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

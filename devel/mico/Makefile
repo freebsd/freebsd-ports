@@ -13,6 +13,12 @@ MASTER_SITES=	http://www.mico.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2.0 implementation which goal is freely available
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=			${WRKDIR}/mico
 INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
@@ -61,4 +67,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/traderd
 	@${STRIP_CMD} ${PREFIX}/bin/traversald
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

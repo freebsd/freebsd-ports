@@ -16,6 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Source code browsing on UNIX-like operating systems
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_REINPLACE=	yes
@@ -28,4 +34,4 @@ pre-patch:
 		 s|CXXFLAGS=.*$$|CXXFLAGS="\$$CXXFLAGS"|g ; \
 		 s|bindir="/usr/local/bin"||g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
