@@ -1649,6 +1649,7 @@ fluctuate	ports/biology/fluctuate
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-devel	ports/x11-wm/fluxbox-devel
 fluxconf	ports/x11-wm/fluxconf
+fluxter		ports/x11-wm/fluxter
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
