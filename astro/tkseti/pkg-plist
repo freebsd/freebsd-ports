@@ -1,4 +1,4 @@
 bin/tkseti
-share/doc/tkseti/DOC
-share/doc/tkseti/README
-@dirrm share/doc/tkseti
+%%PORTDOCS%%share/doc/tkseti/DOC
+%%PORTDOCS%%share/doc/tkseti/README
+%%PORTDOCS%%@dirrm share/doc/tkseti
