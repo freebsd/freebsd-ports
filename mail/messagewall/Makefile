@@ -7,7 +7,7 @@
 
 PORTNAME=	messagewall
 PORTVERSION=	1.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.messagewall.org/download/
 DISTNAME=	messagewall-${PORTVERSION}
@@ -22,34 +22,61 @@ MAN1=		messagewall.1 messagewallctl.1 messagewallstats.1
 MAN5=		messagewall.conf.5 messagewall_profiles.5
 CONF1=		messagewall.conf
 
+OPTIONS=	BROKEN_PARAMETER "Detect unwanted extensions properly" off \
+			ESMTP_SIZE_OPTION  "Handle the size option in MAIL FROM" off \
+			MULTI_RCPT "Allow multiple recipients" off \
+			PARANOIA "Detect faked mails from AOL, Hotmail" off \
+			SPAM_STATS "Add spam statistics to messagewallstats" off
 WRKSRC=		${WRKDIR}/messagewall
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "    -DMESSAGEWALL_ALLOW_MULT_RCPT to allow multiple recipients"
-	@${ECHO} "	 The profile for the first recipient will be applied to all"
-	@${ECHO} "	 recipients of the message."
-	@${ECHO} ""
-	@${ECHO} "    -DWITH_ESMTP_SIZE_OPTION to allow messagewall to handle the"
-	@${ECHO} "	 size option in MAIL FROM: <foo@bar.com> SIZE=12345678 (RFC1870)"
-	@${ECHO} "	 This can safe a lot of bandwith, because it rejects any email,"
-	@${ECHO} "	 if message size is greater than max message size."
-	@${ECHO} ""
+.include <bsd.port.pre.mk>
 
 # Patch from "Quentin Guernsey" <quentin@wingateweb.com>
-# for details see http://www.messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showmsg&list=messagewall-discuss&month=200303&msgnum=921&threadid=lcjcimckfmdphlhpjjhn
-.if defined(MESSAGEWALL_ALLOW_MULT_RCPT)
+# Allow multiple recipients, The profile for the first recipient will be
+# applied to all recipients of the message.
+# For details see http://www.messagewall.org/cgi-bin/ezmlm-browse.cgi?command=showmsg&list=messagewall-discuss&month=200303&msgnum=921&threadid=lcjcimckfmdphlhpjjhn
+.if defined(WITH_MULTI_RCPT) || defined(MESSAGEWALL_ALLOW_MULT_RCPT)
 EXTRA_PATCHES+=	${PATCHDIR}/allow-multiple-recipients.patch
 .endif
 
 # Patch from "Michael Ranner" <mranner@inode.at>
-# for details see http://www.ranner.jawa.at/messagewall.php
+# Allow messagewall to handle the size option in MAIL FROM: <foo@bar.com>
+# SIZE=12345678 (RFC1870). This can safe a lot of bandwith, because it rejects
+# any email, if message size is greater than max message size.
+# For details see http://www.ranner.jawa.at/messagewall.php
 .if defined(WITH_ESMTP_SIZE_OPTION)
 EXTRA_PATCHES+=	${PATCHDIR}/esmtpsize.patch
+.endif
+
+# Patch from "Collin Mulliner" <collin@mulliner.org>
+# Some email viruses use badly composed mime attachments. MessageWall can't
+# handle these by default. This breaks the detection of files with unwanted
+# extensions. This patch removes this disadvantage.
+# For details see http://www.mulliner.org/collin/patches.php
+.if defined(WITH_BROKEN_PARAMETER)
+EXTRA_PATCHES+=	${PATCHDIR}/broken_parameter_value.patch
+.else
+EXTRA_PATCHES+=	${PATCHDIR}/applemail.patch
+.endif
+
+# Patch from "Collin Mulliner" <collin@mulliner.org>
+# This adds a check method to detect faked mails from big sites like Hotmail
+# or AOL. It checks the by/from fields in the mail trace header "Received:"
+# for a host name that matches the domain of the senders address.
+# A new profile option is available to configure which domains to check.
+# For details see http://www.mulliner.org/collin/patches.php
+.if defined(WITH_PARANOIA)
+EXTRA_PATCHES+=	${PATCHDIR}/paranoia.patch
+.endif
+
+# Patch from "Collin Mulliner" <collin@mulliner.org>
+# Adds some nice spam statistics to the end of the output from
+# messagewallstats
+# For details see http://www.mulliner.org/collin/patches.php
+.if defined(WITH_SPAM_STATS)
+EXTRA_PATCHES+=	${PATCHDIR}/spam_stats.patch
 .endif
 
 post-patch:
@@ -58,6 +85,9 @@ post-patch:
 		${WRKSRC}/firemake.ldflags
 	${REINPLACE_CMD} -e 's|-lcrypto|-lcrypto ${PTHREAD_LIBS}|' \
 		${WRKSRC}/firemake.libs
+.if defined(WITH_PARANOIA)
+	@${RM} ${WRKSRC}/profiles/Warning.orig
+.endif
 
 do-install:
 	@${CP} ${WRKSRC}/messagewall ${PREFIX}/bin
@@ -79,4 +109,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

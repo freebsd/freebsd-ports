@@ -1,0 +1,433 @@
+--- dbase.c.orig	2002-10-18 17:24:16.000000000 +0200
++++ dbase.c	2003-01-26 13:33:27.000000000 +0100
+@@ -653,6 +653,8 @@
+ 		dbase_load_estr_score_ll(config,&profile->filename_reject,"filename_reject");
+ 		dbase_load_estr_score_ll(config,&profile->mime_reject,"mime_reject");
+ 
++		dbase_load_estr_score_ll(config,&profile->fakedbighost_reject,"fakedbighost_reject");
++		
+ 		dbase_load_estr_ll(config,&profile->mime_strip,"mime_strip");
+ 		dbase_load_estr_ll(config,&profile->mime_allow,"mime_allow");
+ 		dbase_load_int(config,&profile->reject,"reject");
+--- firemake.binaries.orig	2002-06-28 22:29:44.000000000 +0200
++++ firemake.binaries	2003-01-26 13:33:27.000000000 +0100
+@@ -1,3 +1,3 @@
+-messagewall: auth.o client.o dbase.o dnsbl.o dnsdcc.o md5.o messagewall.o mime.o rdns.o rfc822.o rmx.o security.o smtp.o tls.o virus.o
++messagewall: auth.o client.o dbase.o dnsbl.o dnsdcc.o md5.o messagewall.o mime.o rdns.o rfc822.o rmx.o security.o smtp.o tls.o virus.o paranoia.o
+ messagewallctl: messagewallctl.o
+ messagewallstats: messagewallstats.o
+--- man/messagewall_profiles.5.orig	2002-07-22 17:17:33.000000000 +0200
++++ man/messagewall_profiles.5	2003-01-26 13:33:27.000000000 +0100
+@@ -1,5 +1,5 @@
+ .\" (C) 2002 Ian Gulliver
+-.TH messagewall_profiles 5 2002-06-08
++.TH messagewall_profiles 5 2002-12-06
+ .SH DESCRIPTION
+ Any regular files in the directory defined as
+ .B profile_dir
+@@ -42,7 +42,7 @@
+ .I Default: 1
+ .br
+ This is the score at which MessageWall will reject the message.
+-Any message acheiving a score below this will simply have warnings
++Any message achieving a score below this will simply have warnings
+ added to its headers indicating which tests it failed.
+ 
+ .B mime_strip
+@@ -138,6 +138,29 @@
+ return mail cause the message to be rejected.  This should be safe
+ to use in almost all cases.
+ 
++.B fakedbighost_reject
++.br
++.I Example:
++.br
++.I fakedbighost_reject=1,hotmail.com
++.br
++The value of a
++.B fakedbighost_reject
++line should contain a domain/host name. Incoming mail from this
++domain (the domainname is taken from the sending address) is checked against 
++the "Received:" header fields. If NO match is found the assigned score is added. 
++Use this with extreme care! And only use this for big sites that have their 
++mail servers host name in the Received header line. If only the ip address 
++is shown in the Received header (which is ok with rfc821) this feature is
++worthless. Many small sites are
++virtual which means the host name of the actual domain the mail belongs 
++to isn't shown in any of the Received lines. Instead the name or ip 
++address of the ISP hosting the virtual domain is in the Received line.
++And don't forget nearly all header lines can be forged.
++There can be multiple
++.B fakedbighost_reject
++lines.
++
+ .B header_reject
+ .br
+ .I Example:
+@@ -146,7 +169,7 @@
+ .br
+ The value of a
+ .B header_reject
+-line should contain a colon seperated
++line should contain a colon separated
+ string of Header:Key.  The "Key" will be case-sensitively searched
+ for in the value of the header.  If a match is found, the message
+ is refused.  There can be multiple
+@@ -161,7 +184,7 @@
+ .br
+ The value of a
+ .B header_rejecti
+-line should contain a colon seperated
++line should contain a colon separated
+ string of Header:Key.  The "Key" will be case-insensitively searched
+ for in the value of the header.  If a match is found, the message
+ is refused.  There can be multiple
+--- messagewall.h.orig	2002-10-18 17:24:16.000000000 +0200
++++ messagewall.h	2003-01-26 13:33:39.000000000 +0100
+@@ -167,6 +167,7 @@
+ 	int reject;
+ 	struct messagewall_header_reject_t *header_rejecti;
+ 	struct messagewall_header_reject_t *header_reject;
++	struct messagewall_estr_score_ll_t *fakedbighost_reject;
+ 	struct messagewall_estr_score_ll_t *body_reject;
+ 	struct messagewall_estr_score_ll_t *body_rejecti;
+ 	struct messagewall_estr_score_ll_t *filename_reject;
+--- messagewallstats.c.orig	2002-10-18 17:24:16.000000000 +0200
++++ messagewallstats.c	2003-01-26 13:33:27.000000000 +0100
+@@ -21,6 +21,7 @@
+ #include <string.h>
+ #include <firestring.h>
+ 
++
+ static const char tagstring[] = "$Id: messagewallstats.c,v 1.17.2.3 2002/10/01 19:05:22 ian Exp $";
+ 
+ struct counter {
+@@ -37,6 +38,7 @@
+ struct counter *rmx = NULL;
+ struct counter *rmx_temp = NULL;
+ struct counter *to_cc = NULL;
++struct counter *fakedbighost = NULL;
+ struct counter *from = NULL;
+ struct counter *dnsbl_domain = NULL;
+ struct counter *dnsdcc = NULL;
+@@ -118,6 +120,7 @@
+ 	int filter_dnsbl_domain = 0;
+ 	int filter_dnsbl = 0;
+ 	int filter_to_cc = 0;
++	int filter_fakedbighost = 0;
+ 	int filter_from = 0;
+ 	int filter_rmx = 0;
+ 	int filter_rdns = 0;
+@@ -302,6 +305,20 @@
+ 			}
+ 			continue;
+ 		}
++
++		if (strstr(line, "no matching host of domain from sending address found in mail trace header") != NULL) {
++			filter_fakedbighost++;
++			start = strstr(line,"PARANOIA/WARNING: ");
++			if (start == NULL)
++				continue;
++			start += 18;
++			end = strchr(start,':');
++			if (end != NULL) {
++				*end = '\0';
++				increment(&fakedbighost,start);
++			}
++			continue;
++		}
+ 		
+ 		if (strstr(line,"envelope reverse path not in From\n") != NULL) {
+ 			filter_from++;
+@@ -574,6 +591,8 @@
+ 	fprintf(stdout,"Messages Rejected by Filter: %d\n",filter_reject);
+ 	fprintf(stdout,"\tFailed To/CC: %d\n",filter_to_cc);
+ 	print(to_cc,"\t\t");
++	fprintf(stdout,"\tFailed From/faked big host: %d\n",filter_fakedbighost);
++	print(fakedbighost,"\t\t");
+ 	fprintf(stdout,"\tFailed From: %d\n",filter_from);
+ 	print(from,"\t\t");
+ 	fprintf(stdout,"\tMatched DNSBL: %d\n",filter_dnsbl);
+--- paranoia.c.orig	1970-01-01 01:00:00.000000000 +0100
++++ paranoia.c	2003-01-26 13:33:27.000000000 +0100
+@@ -0,0 +1,145 @@
++/*
++paranoia.c - paranoia host checking for MessageWall
++Copyright (C) 2002 Collin R. Mulliner
++
++MessageWall Copyright (C) 2002 Ian Gulliver
++
++This program is free software; you can redistribute it and/or modify
++it under the terms of version 2 of the GNU General Public License as
++published by the Free Software Foundation.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++*/
++
++#include <stdio.h>
++#include <string.h>
++#include <firestring.h>
++#include "messagewall.h"
++#include "mime.h"
++#include "smtp.h"
++#include "rfc822.h"
++#include "paranoia.h"
++
++/*
++ *  look for domain in "by" and "from" part of mail path (in "Received" line)
++ */
++int check_by_from(struct firestring_estr_t *hline, struct firestring_estr_t *domain)
++{
++	struct firestring_estr_t host;
++	int i;
++	
++	
++	i = firestring_estr_stristr(hline, "from", 0);
++	if (i != -1) {
++		i += 4;
++		while (hline->l > i && strchr(RFC822_WHITESPACE, hline->s[i])) { i++; }
++		host.s = &hline->s[i];
++		host.l = i;
++		while (hline->l > i && !strchr(RFC822_WHITESPACE, hline->s[i])) { i++; }
++		host.l = i - host.l; 
++		host.a = host.l;
++		
++		if (firestring_estr_estristr(&host, domain, 0) != -1) return(0);
++	}
++	
++	i = firestring_estr_stristr(hline, "by", 0);
++	if (i != -1) {
++		i += 2;
++		while (hline->l > i && strchr(RFC822_WHITESPACE, hline->s[i])) { i++; }
++		host.s = &hline->s[i];
++		host.l = i;
++		while (hline->l > i && !strchr(RFC822_WHITESPACE, hline->s[i])) { i++; }
++		host.l = i - host.l; 
++		host.a = host.l;
++		
++		if (firestring_estr_estristr(&host, domain, 0) != -1) return(0);
++	}
++	
++	return(1);
++}
++
++/*
++ * mail path checking
++ */
++int paranoia_fakedbighost_check(struct rfc822_message_t *message, struct messagewall_estr_score_ll_t *head, struct firestring_estr_t *address)
++{
++	struct firestring_estr_t *value;
++	int i, n;
++	struct firestring_estr_t domain_part, *recv;
++	int atpos, dotpos, lastdotpos, llastdotpos;
++	int docheck = 0;
++
++/*	fprintf(stderr, "Paranoia DEBUG: address=");
++	for (i = 0; i < address->l; i++) {
++		fprintf(stderr, "%c", address->s[i]);
++	}
++	fprintf(stderr, "\n");
++*/
++	/* we only want the second level domain, no subdomain or host */
++	atpos = firestring_estr_strchr(address, '@', 0);
++	if (atpos != -1) {
++		dotpos = atpos;
++		lastdotpos = atpos;
++		do {
++			llastdotpos = lastdotpos;
++			lastdotpos = dotpos;
++			dotpos = firestring_estr_strchr(address, '.', lastdotpos+1);
++		} while (dotpos != -1);
++	
++		firestring_estr_alloc(&domain_part, address->l);
++		firestring_estr_estrcpy(&domain_part, address, llastdotpos+1);
++	}
++	else return(0);
++
++/*	fprintf(stderr, "Paranoia DEBUG: domain=");
++	for (i = 0; i < domain_part.l; i++) {
++		fprintf(stderr, "%c", domain_part.s[i]);
++	}
++	fprintf(stderr, "\n");
++*/	
++	/* do we have to check this message? */
++	while (head != NULL) {
++		if (firestring_estr_estristr(&head->string, &domain_part, 0) == 0) {
++			docheck = 1;
++			break;
++		}
++		head = head->next;
++	}
++	
++	/* don't do check! - return ok */
++	if (docheck == 0) {
++		firestring_estr_free(&domain_part);
++		return(0);
++	}
++	
++	/* some debbuging stuff */
++/*	fprintf(stderr,"Paranoia DEBUG: [from: %s] [domain: %s]\n", address->s, domain_part.s);
++*/	
++	/* step thru all received lines and check the by/from hosts */
++	n = 0;
++	do {
++		recv = rfc822_header_value_n(message, "Received:", n);
++	
++		if (recv != NULL) {
++			/* if check is successful return */
++			if (check_by_from(recv, &domain_part) == 0) {
++				firestring_estr_free(&domain_part);
++				return(0);
++			}
++		}
++		n++;
++	} while (recv != NULL);
++	
++	/* free memory */
++	firestring_estr_free(&domain_part);
++	
++	/* return score when not found */
++	return(head->score);
++}
+--- paranoia.h.orig	1970-01-01 01:00:00.000000000 +0100
++++ paranoia.h	2003-01-26 13:33:27.000000000 +0100
+@@ -0,0 +1,31 @@
++/*
++paranoia.c - paranoia host checking declarations for MessageWall
++Copyright (C) 2002 Collin R. Mulliner
++
++MessageWall Copyright (C) 2002 Ian Gulliver
++
++This program is free software; you can redistribute it and/or modify
++it under the terms of version 2 of the GNU General Public License as
++published by the Free Software Foundation.
++
++This program is distributed in the hope that it will be useful,
++but WITHOUT ANY WARRANTY; without even the implied warranty of
++MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++GNU General Public License for more details.
++
++You should have received a copy of the GNU General Public License
++along with this program; if not, write to the Free Software
++Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++*/
++
++#ifndef _PARANOIA_H
++#define _PARANOIA_H
++
++#define PARANOIA_MSG "no matching host of domain from sending address found in mail trace header"
++
++#include <firestring.h>
++
++int check_by_from(struct firestring_estr_t *hline, struct firestring_estr_t *domain);
++int paranoia_fakedbighost_check(struct rfc822_message_t *message, struct messagewall_estr_score_ll_t *head, struct firestring_estr_t *address);
++
++#endif
+--- profiles/Warning.orig	2002-06-21 19:02:51.000000000 +0200
++++ profiles/Warning	2003-01-26 13:33:27.000000000 +0100
+@@ -31,3 +31,6 @@
+ header_rejecti=1,X-Mailer:bulk
+ virus_scan=1,virus.patterns
+ mime_allow=text/plain
++fakedbighost_reject=1,hotmail.com
++fakedbighost_reject=1,aol.com
++
+--- rfc822.c.orig	2002-07-12 19:45:03.000000000 +0200
++++ rfc822.c	2003-01-26 13:33:27.000000000 +0100
+@@ -51,6 +51,44 @@
+ 	}
+ }
+ 
++/*
++ * get header value of header line with more then one accurence
++ * get Nth line (starts at 0 (zero)), count beginns top of mail
++ */
++struct firestring_estr_t *rfc822_header_value_n(struct rfc822_message_t *message, char *header, int n) {
++	static struct firestring_estr_t ret;
++	int i,j,l,c = 0;
++	int newline = 1;
++
++	l = strlen(header);
++	for (i = 0; i < message->header.l - l; i++) {
++		if (newline == 1 && firestring_strncasecmp(&message->header.s[i],header,l) == 0) {
++		   if (c < n) { c++; continue; }
++			/*
++			 * got it
++			 */
++			i += l;
++			while (i < message->header.l && strchr(RFC822_WHITESPACE,message->header.s[i++]) != NULL);
++			i--;
++			for (j = i; j <= message->header.l - 2; j++)
++				if (memcmp(&message->header.s[j],"\r\n",2) == 0)
++					if (j >= message->header.l - 3 || strchr(RFC822_WHITESPACE,message->header.s[j+2]) == NULL)
++						break;
++			ret.s = &message->header.s[i];
++			ret.a = ret.l = j - i;
++			return &ret;
++		} else if (memcmp(&message->header.s[i],"\r\n",2) == 0) {
++			/*
++			 * new line
++			 */
++			newline = 1;
++			i++;
++		} else
++			newline = 0;
++	}
++	return NULL;
++}
++
+ struct firestring_estr_t *rfc822_header_value(struct rfc822_message_t *message, char *header) {
+ 	static struct firestring_estr_t ret;
+ 	int i,j,l;
+--- rfc822.h.orig	2002-06-24 20:45:00.000000000 +0200
++++ rfc822.h	2003-01-26 13:33:27.000000000 +0100
+@@ -30,6 +30,7 @@
+ 
+ int rfc822_split_message(struct firestring_estr_t *data, struct rfc822_message_t *message);
+ 
++struct firestring_estr_t *rfc822_header_value_n(struct rfc822_message_t *message, char *header, int n);
+ struct firestring_estr_t *rfc822_header_value(struct rfc822_message_t *message, char *header);
+ struct firestring_estr_t *rfc822_eheader_value(struct rfc822_message_t *message, struct firestring_estr_t *header);
+ struct firestring_estr_t *rfc822_parameter_value(struct firestring_estr_t *headervalue, char *parameter);
+--- smtp.c.orig	2002-10-18 17:24:16.000000000 +0200
++++ smtp.c	2003-01-26 13:33:27.000000000 +0100
+@@ -206,6 +206,7 @@
+ 
+ int smtp_checks_gotmessage(int client) {
+ 	int numparts;
++	int score = 0;
+ 
+ 	/*
+ 	 * clear dnsdcc queries for client
+@@ -263,6 +264,14 @@
+ 	}
+ 
+ 	/*
++	 * check for "faked big host"
++	 */
++	if ((score = paranoia_fakedbighost_check(&clients[client].parts[0].message, clients[client].profile->fakedbighost_reject, &clients[client].from)) != 0) {
++		if (smtp_reject(client,"PARANOIA","%e: no matching host of domain from sending address found in mail trace header",SMTP_FROM_RECEIVED,score,0,&clients[client].from,NULL) != 0)
++			return(0);
++	}
++	
++	/*
+ 	 * header rejection checks
+ 	 */
+ 	if (rfc822_header_reject_check(client) == 1 || rfc822_header_rejecti_check(client) == 1)
+--- smtp.h.orig	2002-09-28 19:21:02.000000000 +0200
++++ smtp.h	2003-01-26 13:33:27.000000000 +0100
+@@ -63,6 +63,7 @@
+ #define SMTP_7BIT "501 MessageWall: SMTP/FATAL: Server sent an 8bit character to a 7bit server\r\n"
+ #define SMTP_TO_CC "552 MessageWall: RFC822/REJECT: %e: Target address must be in To or CC headers\r\n"
+ #define SMTP_FROM "552 MessageWall: RFC822/REJECT: %e: Source address must be in From header\r\n"
++#define SMTP_FROM_RECEIVED "552 MessageWall: PARANOIA/REJECT: %e: no matching host of domain from sending address found in mail trace header\r\n"
+ #define SMTP_REALNAME "552 MessageWall: RFC822/REJECT: From address must contain a real name\r\n"
+ #define SMTP_HEADER "552 MessageWall: RFC822/REJECT: Message contained banned header fields: %e%e\r\n"
+ #define SMTP_ERRORS "554 MessageWall: SMTP/REJECT: Too many errors, goodbye\r\n"

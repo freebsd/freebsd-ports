@@ -1,0 +1,21 @@
+--- rfc822.c.orig	Fri Jul 12 19:45:03 2002
++++ rfc822.c	Sun May  2 18:04:34 2004
+@@ -156,7 +156,7 @@
+ 	} else {
+ 		j = i;
+ 		while (j < headervalue->l &&
+-			strchr(RFC822_WHITESPACE,headervalue->s[j]) == NULL)
++			strchr(RFC822_WHITESPACE_LOOSE,headervalue->s[j]) == NULL && headervalue->s[j] != ';')
+ 			j++;
+ 	}
+ 
+--- rfc822.h.orig	Mon Jun 24 20:45:00 2002
++++ rfc822.h	Sun May  2 18:04:34 2004
+@@ -21,6 +21,7 @@
+ #include <firestring.h>
+ 
+ #define RFC822_WHITESPACE " \t"
++#define RFC822_WHITESPACE_LOOSE "\t\n\r"
+ #define RFC822_VALUE_MAXLEN 256
+ 
+ struct rfc822_message_t {
