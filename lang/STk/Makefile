@@ -3,10 +3,10 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.7 1995/04/24 21:50:34 asami Exp $
+# $Id: Makefile,v 1.8 1995/04/24 22:10:25 asami Exp $
 #
 
-DISTNAME=       STk-2.1.6
+DISTNAME=       STk-2.1.7
 CATEGORIES+=	languages
 MASTER_SITES=	ftp://kaolin.unice.fr/pub/
 
