@@ -8,6 +8,7 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.5.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
