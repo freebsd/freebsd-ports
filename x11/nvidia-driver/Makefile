@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
@@ -66,7 +66,7 @@ pre-everything::
 	@${ECHO_MSG} "Define WITH_VM86_INT10CALL to use VM86 interface for INT10 calls (video BIOS)"
 .endif
 .if !defined(WITH_ACPI)
-	@${ECHO_MSG} "Define WITH_ACPI to enable support for ACPI Power Management (5.X only!)"
+	@${ECHO_MSG} "Define WITH_ACPI to enable support for ACPI Power Management (5.x/6.x only!)"
 .endif
 .if !defined(WITHOUT_LINUX)
 	@${ECHO_MSG} "Define WITHOUT_LINUX to build without support for Linux compatibility"
