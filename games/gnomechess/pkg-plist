@@ -28,6 +28,7 @@ share/gnome/help/gnome-chess-manual/C/usage.html
 share/gnome/mime-info/gnome-chess.keys
 share/gnome/mime-info/gnome-chess.mime
 share/gnome/omf/gnome-chess/gnome-chess-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-chess/gnome-chess-manual-C.omf 2>/dev/null || true
 share/gnome/pixmaps/gnome-chess.png
 share/gnome/pixmaps/gnome-chess/B.png
 share/gnome/pixmaps/gnome-chess/K.png
@@ -76,3 +77,4 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-chess.mo
 @dirrm share/gnome/help/gnome-chess-manual
 @dirrm share/gnome/gnome-chess/glade
 @dirrm share/gnome/gnome-chess
+@exec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-chess/gnome-chess-manual-C.omf 2>/dev/null || true
