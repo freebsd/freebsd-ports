@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Decision/ACL.pm
+%%SITE_PERL%%/Decision/ACL.pod
+%%SITE_PERL%%/Decision/ACL/Constants.pm
+%%SITE_PERL%%/Decision/ACL/Rule.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision/ACL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision/ACL
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Decision 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Decision/ACL
+@unexec rmdir %D/%%SITE_PERL%%/Decision 2>/dev/null || true
