@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hierarchical database for Python
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray
-LIB_DEPENDS=	hdf5.0:${PORTSDIR}/graphics/hdf5 \
+LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
 		lzo.1:${PORTSDIR}/archivers/lzo \
 		ucl.1:${PORTSDIR}/archivers/ucl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numarray/__init__.py:${PORTSDIR}/math/py-numarray

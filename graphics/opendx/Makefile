@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
-		df.1:${PORTSDIR}/graphics/hdf \
+		df.1:${PORTSDIR}/science/hdf \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libctl.a:${PORTSDIR}/science/libctl \
 		bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	atlas.1:${PORTSDIR}/math/atlas \
 		fftw.2:${PORTSDIR}/math/fftw \
-		hdf5.0:${PORTSDIR}/graphics/hdf5 \
+		hdf5.0:${PORTSDIR}/science/hdf5 \
 		guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes

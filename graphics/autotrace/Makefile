@@ -16,7 +16,7 @@ MAINTAINER=	kanou@khdd.net
 COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
-		df.1:${PORTSDIR}/graphics/hdf \
+		df.1:${PORTSDIR}/science/hdf \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
