@@ -7,7 +7,7 @@
 
 PORTNAME=	id-utils
 PORTVERSION=	3.2d
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,6 +31,14 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+.if exists(${LOCALBASE}/bin/emacs)
+PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
+.elif exists(${LOCALBASE}/bin/xemacs)
+PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
+.else
+PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
 .endif
 
 post-patch:
