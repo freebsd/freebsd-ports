@@ -5,22 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=		ding
+PORTNAME=	ding
 PORTVERSION=	1.2
-CATEGORIES=		german
+PORTREVISION=	1
+CATEGORIES=	german tk84
 MASTER_SITES=	http://cgi.tu-chemnitz.de/ftp-home/pub/Local/urz/ding/ \
-				ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
+		ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
-MAINTAINER=		nectar@FreeBSD.ORG
-COMMENT=		A German-English dictionary program for X windows/Unix
+MAINTAINER=	nectar@FreeBSD.ORG
+COMMENT=	A German-English dictionary program for X windows/Unix
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
-				agrep:${PORTSDIR}/textproc/agrep
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		agrep:${PORTSDIR}/textproc/agrep
 
 USE_X_PREFIX=	yes
 
 do-build:
-	${SED} -E -e '1,/^exec/ s!wish!wish8.3!' \
+	${SED} -E -e '1,/^exec/ s!wish!wish8.4!' \
 	  -e 's!/usr/share/dict/ger-eng.txt!${PREFIX}/share/ding/ger-eng.txt!' \
 	  ${WRKSRC}/ding > ${WRKSRC}/dingX
 
