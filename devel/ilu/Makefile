@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.16 1998/12/01 16:21:59 cracauer Exp $
+# $Id: Makefile,v 1.17 1998/12/02 23:37:41 cracauer Exp $
 #
 
 DISTNAME=	ilu-2.0alpha13
@@ -55,7 +55,7 @@ startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
 
 post-extract:
-	chmod -R u+w work
+	chmod -R u+w ${WRKDIR}
 
 post-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${SHLIBPATCH}
