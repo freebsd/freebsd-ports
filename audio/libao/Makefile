@@ -9,9 +9,10 @@ PORTNAME=	libao
 PORTVERSION=	0.8.3
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
-		http://www.oddsock.org/vorbis/unix/ \
+MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
+		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
 		http://www.casterclub.com/vorbis/unix/ \
+		http://www.cyclooctane.com/vorbis/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
