@@ -14,8 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Java DirectConnect (TM) command-line client
 
-USE_JAVA=	1.2+
-NEED_JAVAC=	YES
+USE_JAVA=	yes
+JAVA_VERSION=	1.3
+USE_JIKES=	no
 WRKSRC=		${WRKDIR}/DirectConnect${PORTVERSION}
 BUILD_WRKSRC=	${WRKDIR}/classes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
@@ -36,7 +37,7 @@ post-patch:
 # as far as build goes... ;)
 do-build:
 	@${MKDIR} ${BUILD_WRKSRC}
-	@${JAVAC} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} ${CLASS_SRCDIR}/*.java 2>/dev/null
+	@${JAVAC} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} ${CLASS_SRCDIR}/*.java
 	@${CP} ${CLASS_SRCDIR}/*.txt ${BUILD_WRKSRC}
 	@cd ${BUILD_WRKSRC} && ${JAR} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} *
 
