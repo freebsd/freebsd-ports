@@ -18,7 +18,7 @@ COMMENT=	Mpeg-4 library and tools from mpeg4ip
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
@@ -33,8 +33,8 @@ INSTALL_WRKSRC=	${WRKSRC}/lib/mp4v2
 BROKEN=	"Please remove older version of faad before attempting to build ${PORTNAME}"
 .endif
 
-.if ${OSVERSION} < 502110
-USE_GCC=	3.4
+.if ${OSVERSION} < 500000
+CFLAGS+=	-O2
 .endif
 
 post-patch:
