@@ -7,7 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=    2.11
-PORTREVISION=	1
+PORTREVISION=   2
 CATEGORIES=	mail perl5
 MASTER_SITES=   http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -16,8 +16,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
+BUILD_DEPENDS=  ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Razor/Client.pm:${PORTSDIR}/mail/razor-agents
 
 PERL_CONFIGURE=	yes
