@@ -1,0 +1,6 @@
+HybServ was specifically designed to run with hybrid ircd, although it
+*should* work with CSr as well. These services (more or less same code) 
+are currently used by EFNet / DalNet / ICQ / WFNet / HybNet / 
+EFNow / Openprojects Network.
+
+WWW: http://www.srce.hr/~kreator/projects/hybserv/
