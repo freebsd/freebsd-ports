@@ -1,6 +1,6 @@
---- Makefile.orig	Mon May  5 10:29:16 1997
-+++ Makefile	Thu Jun  5 09:52:07 1997
-@@ -49,16 +49,16 @@
+--- Makefile.orig	Mon May 29 23:03:08 2000
++++ Makefile	Thu Sep 14 23:35:11 2000
+@@ -54,28 +54,28 @@
  SHELL=	/bin/sh
  
  # CONFIGURE: Set location of executable, it's group and mode.
@@ -21,14 +21,26 @@
  
  # CONFIGURE(Config): Add any OS-specific options here.
  COPTS=	
-@@ -97,8 +97,8 @@
+ 
+ # CONFIGURE(Config): Add any special libraries your system needs.
+-LIBS=	
++LIBS=	-lkvm
+ 
+ SRCS=	main.c argparse.c getproc.c
+ OBJS=	main.o argparse.o getproc.o
+ HDRS=	conf.h
+ 
+-CFLAGS=	-O ${COPTS}
++#CFLAGS=	-O ${COPTS}
+ 
+ all:	skill
+ 
+@@ -102,7 +102,7 @@
  #	install -c -m 644 skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
  	cp skill.1 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
  	chmod 644 ${DESTDIR}/${MANDIR}/skill.${MANSFX}
 -	ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
--		${DESTDIR}/${MANDIR}/snice.${MANSFX}
 +	@# ln ${DESTDIR}/${MANDIR}/skill.${MANSFX}\
-+		${DESTDIR}/${MANDIR}/snice.${MANSFX}
+ 		${DESTDIR}/${MANDIR}/snice.${MANSFX}
  
  config Config: FRC
- 	./Config
