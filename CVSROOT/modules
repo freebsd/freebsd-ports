@@ -9966,6 +9966,7 @@ slib-guile	ports/lang/slib-guile
 sliderule	ports/deskutils/sliderule
 slides		ports/textproc/slides
 slideshow	ports/multimedia/slideshow
+slime		ports/editors/slime
 slimserver	ports/audio/slimserver
 slingshot	ports/x11-toolkits/slingshot
 slirc		ports/irc/slirc
