@@ -19,7 +19,7 @@ PATCHFILES=	patch-1.1.6fix1.gz patch-1.1.6fix2.gz patch-1.1.6fix3.gz \
 		patch-1.1.6fix4.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
