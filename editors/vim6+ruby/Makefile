@@ -7,6 +7,8 @@
 
 MASTERDIR=	${.CURDIR}/../vim6
 
+PORTREVISION=	1
+
 CATEGORIES=	editors ruby
 PKGNAMESUFFIX=	+ruby
 
