@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.nl.musicbrainz.org/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 
-MAINTAINER=	frerich.raabe@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TRM generator to generate acoustic fingerprints
 
 BUILD_DEPENDS=	madplay:${PORTSDIR}/audio/mad
