@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.5.5
+PORTVERSION=	5.5.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU}
@@ -18,20 +18,17 @@ COMMENT=	The Automated Program Generator
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
-XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
-
-USE_GNOME=	libxml2
+USE_GNOME=	gnometarget libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
 MAN3=	optionFree.3 optionLoadLine.3 optionProcess.3 optionRestore.3 \
 	optionSaveFile.3 optionSaveState.3 optionVersion.3
+INFO=	autogen
 
 pre-build:
 	@cd ${WRKSRC}/snprintfv && ${SETENV} ${MAKE_ENV} \
