@@ -2,7 +2,7 @@
 
 u=ganglia
 g=ganglia
-ugid=97
+ugid=102
 homedir=/nonexistent
 shell=/sbin/nologin
 rrd_rootdir=/var/db/ganglia/rrds
