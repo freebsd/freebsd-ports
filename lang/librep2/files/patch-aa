@@ -1,0 +1,11 @@
+--- configure.orig	Sun Mar 12 09:41:29 2000
++++ configure	Thu Mar 23 18:17:51 2000
+@@ -2228,7 +2228,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  GDBM_LIBS="-lgdbm"
++  GDBM_LIBS="-lgdbm $LIBS"
+ 	      
+ else
+   echo "$ac_t""no" 1>&6

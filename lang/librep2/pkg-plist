@@ -9,7 +9,6 @@ include/rep_regexp.h
 include/rep_subrs.h
 @unexec install-info --delete %D/info/librep.info %D/info/dir
 info/librep.info
-@exec install-info %D/info/librep.info %D/info/dir
 info/librep.info-1
 info/librep.info-2
 info/librep.info-3
@@ -17,92 +16,93 @@ info/librep.info-4
 info/librep.info-5
 info/librep.info-6
 info/librep.info-7
+@exec install-info %D/info/librep.info %D/info/dir
 lib/librep.la
 lib/librep.so
 lib/librep.so.8
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-libexec/rep/0.11/%%GNUHOST%%/gdbm.la
-libexec/rep/0.11/%%GNUHOST%%/gdbm.so
-libexec/rep/0.11/%%GNUHOST%%/gettext.la
-libexec/rep/0.11/%%GNUHOST%%/gettext.so
-libexec/rep/0.11/%%GNUHOST%%/readline.la
-libexec/rep/0.11/%%GNUHOST%%/readline.so
-libexec/rep/0.11/%%GNUHOST%%/sdbm.la
-libexec/rep/0.11/%%GNUHOST%%/sdbm.so
-libexec/rep/0.11/%%GNUHOST%%/tables.la
-libexec/rep/0.11/%%GNUHOST%%/tables.so
-libexec/rep/0.11/%%GNUHOST%%/timers.la
-libexec/rep/0.11/%%GNUHOST%%/timers.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/gettext.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/readline.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/sdbm.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.so
+libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.la
+libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.so
 libexec/rep/%%GNUHOST%%/libtool
 libexec/rep/%%GNUHOST%%/rules.mk
 share/aclocal/rep.m4
-share/rep/0.11/DOC
-share/rep/0.11/lisp/autoload.jl
-share/rep/0.11/lisp/backquote.jl
-share/rep/0.11/lisp/backquote.jlc
-share/rep/0.11/lisp/bytecodes.jl
-share/rep/0.11/lisp/bytecodes.jlc
-share/rep/0.11/lisp/cgi-get.jl
-share/rep/0.11/lisp/cgi-get.jlc
-share/rep/0.11/lisp/compiler-opt.jl
-share/rep/0.11/lisp/compiler-opt.jlc
-share/rep/0.11/lisp/compiler.jl
-share/rep/0.11/lisp/compiler.jlc
-share/rep/0.11/lisp/date.jl
-share/rep/0.11/lisp/date.jlc
-share/rep/0.11/lisp/debug.jl
-share/rep/0.11/lisp/debug.jlc
-share/rep/0.11/lisp/define.jl
-share/rep/0.11/lisp/define.jlc
-share/rep/0.11/lisp/disassembler.jl
-share/rep/0.11/lisp/disassembler.jlc
-share/rep/0.11/lisp/dump.jl
-share/rep/0.11/lisp/dump.jlc
-share/rep/0.11/lisp/environ.jl
-share/rep/0.11/lisp/environ.jlc
-share/rep/0.11/lisp/gaol.jl
-share/rep/0.11/lisp/gaol.jlc
-share/rep/0.11/lisp/init.jl
-share/rep/0.11/lisp/init.jlc
-share/rep/0.11/lisp/lisp-doc.jl
-share/rep/0.11/lisp/lisp-doc.jlc
-share/rep/0.11/lisp/lisp.jl
-share/rep/0.11/lisp/lisp.jlc
-share/rep/0.11/lisp/mailaddr.jl
-share/rep/0.11/lisp/mailaddr.jlc
-share/rep/0.11/lisp/memoize.jl
-share/rep/0.11/lisp/memoize.jlc
-share/rep/0.11/lisp/mutex.jl
-share/rep/0.11/lisp/mutex.jlc
-share/rep/0.11/lisp/pwd-prompt.jl
-share/rep/0.11/lisp/pwd-prompt.jlc
-share/rep/0.11/lisp/remote-ftp.jl
-share/rep/0.11/lisp/remote-ftp.jlc
-share/rep/0.11/lisp/remote-rcp.jl
-share/rep/0.11/lisp/remote-rcp.jlc
-share/rep/0.11/lisp/remote-rep.jl
-share/rep/0.11/lisp/remote-rep.jlc
-share/rep/0.11/lisp/remote.jl
-share/rep/0.11/lisp/remote.jlc
-share/rep/0.11/lisp/rep.jl
-share/rep/0.11/lisp/rep.jlc
-share/rep/0.11/lisp/ring.jl
-share/rep/0.11/lisp/ring.jlc
-share/rep/0.11/lisp/sort.jl
-share/rep/0.11/lisp/sort.jlc
-share/rep/0.11/lisp/string-util.jl
-share/rep/0.11/lisp/string-util.jlc
-share/rep/0.11/lisp/tar-file-handler.jl
-share/rep/0.11/lisp/tar-file-handler.jlc
-share/rep/0.11/lisp/threads.jl
-share/rep/0.11/lisp/threads.jlc
-share/rep/0.11/lisp/tilde.jl
-share/rep/0.11/lisp/tilde.jlc
-@dirrm libexec/rep/0.11/%%GNUHOST%%
-@dirrm libexec/rep/0.11
+share/rep/%%VERSION%%/DOC
+share/rep/%%VERSION%%/lisp/autoload.jl
+share/rep/%%VERSION%%/lisp/backquote.jl
+share/rep/%%VERSION%%/lisp/backquote.jlc
+share/rep/%%VERSION%%/lisp/bytecodes.jl
+share/rep/%%VERSION%%/lisp/bytecodes.jlc
+share/rep/%%VERSION%%/lisp/cgi-get.jl
+share/rep/%%VERSION%%/lisp/cgi-get.jlc
+share/rep/%%VERSION%%/lisp/compiler-opt.jl
+share/rep/%%VERSION%%/lisp/compiler-opt.jlc
+share/rep/%%VERSION%%/lisp/compiler.jl
+share/rep/%%VERSION%%/lisp/compiler.jlc
+share/rep/%%VERSION%%/lisp/date.jl
+share/rep/%%VERSION%%/lisp/date.jlc
+share/rep/%%VERSION%%/lisp/debug.jl
+share/rep/%%VERSION%%/lisp/debug.jlc
+share/rep/%%VERSION%%/lisp/define.jl
+share/rep/%%VERSION%%/lisp/define.jlc
+share/rep/%%VERSION%%/lisp/disassembler.jl
+share/rep/%%VERSION%%/lisp/disassembler.jlc
+share/rep/%%VERSION%%/lisp/dump.jl
+share/rep/%%VERSION%%/lisp/dump.jlc
+share/rep/%%VERSION%%/lisp/environ.jl
+share/rep/%%VERSION%%/lisp/environ.jlc
+share/rep/%%VERSION%%/lisp/gaol.jl
+share/rep/%%VERSION%%/lisp/gaol.jlc
+share/rep/%%VERSION%%/lisp/init.jl
+share/rep/%%VERSION%%/lisp/init.jlc
+share/rep/%%VERSION%%/lisp/lisp-doc.jl
+share/rep/%%VERSION%%/lisp/lisp-doc.jlc
+share/rep/%%VERSION%%/lisp/lisp.jl
+share/rep/%%VERSION%%/lisp/lisp.jlc
+share/rep/%%VERSION%%/lisp/mailaddr.jl
+share/rep/%%VERSION%%/lisp/mailaddr.jlc
+share/rep/%%VERSION%%/lisp/memoize.jl
+share/rep/%%VERSION%%/lisp/memoize.jlc
+share/rep/%%VERSION%%/lisp/mutex.jl
+share/rep/%%VERSION%%/lisp/mutex.jlc
+share/rep/%%VERSION%%/lisp/pwd-prompt.jl
+share/rep/%%VERSION%%/lisp/pwd-prompt.jlc
+share/rep/%%VERSION%%/lisp/remote-ftp.jl
+share/rep/%%VERSION%%/lisp/remote-ftp.jlc
+share/rep/%%VERSION%%/lisp/remote-rcp.jl
+share/rep/%%VERSION%%/lisp/remote-rcp.jlc
+share/rep/%%VERSION%%/lisp/remote-rep.jl
+share/rep/%%VERSION%%/lisp/remote-rep.jlc
+share/rep/%%VERSION%%/lisp/remote.jl
+share/rep/%%VERSION%%/lisp/remote.jlc
+share/rep/%%VERSION%%/lisp/rep.jl
+share/rep/%%VERSION%%/lisp/rep.jlc
+share/rep/%%VERSION%%/lisp/ring.jl
+share/rep/%%VERSION%%/lisp/ring.jlc
+share/rep/%%VERSION%%/lisp/sort.jl
+share/rep/%%VERSION%%/lisp/sort.jlc
+share/rep/%%VERSION%%/lisp/string-util.jl
+share/rep/%%VERSION%%/lisp/string-util.jlc
+share/rep/%%VERSION%%/lisp/tar-file-handler.jl
+share/rep/%%VERSION%%/lisp/tar-file-handler.jlc
+share/rep/%%VERSION%%/lisp/threads.jl
+share/rep/%%VERSION%%/lisp/threads.jlc
+share/rep/%%VERSION%%/lisp/tilde.jl
+share/rep/%%VERSION%%/lisp/tilde.jlc
+@dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%
+@dirrm libexec/rep/%%VERSION%%
 @dirrm libexec/rep/%%GNUHOST%%
 @dirrm libexec/rep
-@dirrm share/rep/0.11/lisp
-@dirrm share/rep/0.11
+@dirrm share/rep/%%VERSION%%/lisp
+@dirrm share/rep/%%VERSION%%
 @dirrm share/rep
