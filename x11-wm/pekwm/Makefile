@@ -21,17 +21,15 @@ USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--enable-xinerama
 .endif
 
-.if !defined(WITH_XINERAMA)
-pre-everything:
-	@${ECHO_CMD} "To enable xinerama support define WITH_XINERAMA"
-.endif
-
 .if defined(WITH_HARBOUR)
 CONFIGURE_ARGS+=	--enable-harbour
 .endif
 
-.if !defined(WITH_HARBOUR)
 pre-everything:
+.if !defined(WITH_XINERAMA)
+	@${ECHO_CMD} "To enable xinerama support define WITH_XINERAMA"
+.endif
+.if !defined(WITH_HARBOUR)
 	@${ECHO_CMD} "To enable basic DockApp support define WITH_HARBOUR"
 .endif
 
