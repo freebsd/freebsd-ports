@@ -247,6 +247,7 @@
     SUBDIR += scotty3
     SUBDIR += sdl_net
     SUBDIR += sendfile
+    SUBDIR += sendip
     SUBDIR += sharity-light
     SUBDIR += sing
     SUBDIR += slirp
