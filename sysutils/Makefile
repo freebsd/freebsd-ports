@@ -47,6 +47,7 @@
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += du2ps
+    SUBDIR += durep
     SUBDIR += dvdtape
     SUBDIR += e2fsprogs
     SUBDIR += eject
