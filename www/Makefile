@@ -98,6 +98,7 @@
     SUBDIR += epiphany-extensions
     SUBDIR += erwn
     SUBDIR += evg
+    SUBDIR += evolution-webcal
     SUBDIR += fcgi
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
