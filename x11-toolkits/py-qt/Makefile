@@ -6,14 +6,14 @@
 # $FreeBSD$
 
 PORTNAME=	py-qt
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	PyQt-${PORTVERSION}
 
 MAINTAINER=	adsharma@sharmas.dhs.org
 
-LIB_DEPENDS=	sip.2:${PORTSDIR}/devel/sip
+LIB_DEPENDS=	sip.3:${PORTSDIR}/devel/sip
 
 USE_QT=		yes
 USE_LIBTOOL=	yes
