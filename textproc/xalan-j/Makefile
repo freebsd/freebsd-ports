@@ -41,6 +41,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/build/docs && ${FIND} ${PORTDOCS} \
 	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [ DONE ]"
