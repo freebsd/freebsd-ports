@@ -56,7 +56,6 @@
     SUBDIR += wmsolar
     SUBDIR += wmspaceweather
     SUBDIR += wmsun
-    SUBDIR += x3arth
     SUBDIR += xearth
     SUBDIR += xephem
     SUBDIR += xglobe
