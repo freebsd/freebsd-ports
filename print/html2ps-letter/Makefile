@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.2 1998/08/31 13:16:21 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/15 21:31:51 asami Exp $
 #
 
 DISTNAME=	html2ps-1.0b1
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint
 
-site_perl=	${PREFIX}/lib/perl5/site_perl
+site_perl=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 USE_PERL5=	YES
 NO_BUILD=	YES
 IS_INTERACTIVE=	YES
