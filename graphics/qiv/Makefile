@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.klografx.com/files/
+MASTER_SITES=	http://www.klografx.net/qiv/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
@@ -16,6 +17,7 @@ MAINTAINER=	billf@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		qiv.1
 
