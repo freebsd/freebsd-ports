@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f11b219a-44b6-11d9-ae2f-021106004fd6">
+    <topic>rssh &amp; scponly -- arbitrary command execution</topic>
+    <affects>
+      <package>
+	<name>rssh</name>
+	<range><le>2.2.2</le></range>
+      </package>
+      <package>
+	<name>scponly</name>
+	<range><lt>4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jason Wies identified both rssh &amp; scponly have a vulnerability
+	  that allows arbitrary command execution.  He reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110202047507273">
+	  <p>The problem is compounded when you recognize that the main use of rssh and
+	    scponly is to allow file transfers, which in turn allows a malicious user to
+	    transfer and execute entire custom scripts on the remote machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/74633</freebsdpr>
+      <mlist msgid="20041202135143.GA7105@xc.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110202047507273</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-28</discovery>
+      <entry>2004-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b4d5288-447e-11d9-9ebb-000854d03344">
     <topic>rockdodger -- buffer overflows</topic>
     <affects>
