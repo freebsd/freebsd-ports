@@ -6045,6 +6045,7 @@ pkg_install	src/usr.sbin/pkg_install
 pkg_remove	ports/sysutils/pkg_remove
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
+pkgview		ports/sysutils/pkgview
 pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktrace		ports/print/pktrace
