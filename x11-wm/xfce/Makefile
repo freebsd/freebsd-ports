@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce
-PORTVERSION=	3.8.16
+PORTVERSION=	3.8.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xfce.org/archive/
@@ -14,17 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 USE_XPM=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gdkpixbuf
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
@@ -32,11 +30,12 @@ CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 		--with-locale-dir=${PREFIX}/share/locale \
 		--with-xpm=${X11BASE} \
 		--enable-gtk-engine=${PREFIX}/lib/gtk/themes/engines \
-		--disable-arts
+		--disable-arts \
+		--enable-taskbar
 
-MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfumed.1 xfglob.1 xfgnome.1 \
-		xfhelp.1 xflock.1 xfmountdev.1 xfmouse.1 xfpager.1 xfprint.1 \
-		xfrun.1 xfskin.1 xfsound.1 xfterm.1 xftrash.1 xftree.1 xfwm.1
+MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
+		xflock.1 xfmountdev.1 xfmouse.1 xfpager.1 xfprint.1 xfrun.1 \
+		xfskin.1 xfsound.1 xfterm.1 xftrash.1 xftree.1 xfumed.1 xfwm.1
 
 .include <bsd.port.pre.mk>
 
@@ -61,13 +60,11 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|=aclocal|=${TRUE}|g ; \
 		 s|=autoconf|=${TRUE}|g ; \
 		 s|=automake|=${TRUE}|g ; \
-		 s|=autoheader|=${TRUE}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
+		 s|=autoheader|=${TRUE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
-
-post-install:
-	@${LN} -sf ${PREFIX}/share/xfce/help/html/images \
-		${PREFIX}/share/xfce/help/images
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/other/xinitrc.in
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
+	@${REINPLACE_CMD} -e 's|/opt/kde3|${LOCALBASE}|g ; \
+		 s|/opt/gnome|${X11BASE}|g' ${WRKSRC}/xfmenu/xfmenu.c
 
 .include <bsd.port.post.mk>
