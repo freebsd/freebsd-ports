@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.b3
+PORTVERSION=	1.0.b4
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
