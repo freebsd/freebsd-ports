@@ -27,12 +27,13 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 DIST_SUBDIR=	hylafax
 
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \
-		--with-MAKE=gmake --with-CC=/usr/bin/cc \
 		--with-LIBTIFF="-L${LOCALBASE}/lib -ltiff -ljpeg" \
-		--with-TIFFINC="${LOCALBASE}/include"
+		--with-ZLIB=no --with-LIBZ=-lz --with-ZLIBINC=none \
+		--with-TIFFINC="${LOCALBASE}/include" \
+		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
 MAN1=   hylafax.1 faxalter.1 faxcover.1 faxmail.1 faxrm.1 faxstat.1 sendfax.1 \
 	sendpage.1 sgi2fax.1 textfmt.1
@@ -49,6 +50,9 @@ MAN8=   cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 
 SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
+
+post-extract:
+	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
 
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
