@@ -2,6 +2,7 @@
 # Date created:         2003-01-01
 # Whom:                 Juli Mallett
 #
+# $Id: Makefile,v 1.10 2004/12/09 04:45:12 tmclau02 Exp $
 # $FreeBSD$
 #
 
@@ -24,6 +25,8 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
 USE_GNOME=	gnomehack libgnomedb gtkhtml3 vte librsvg2
+
+MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
