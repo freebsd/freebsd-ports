@@ -5,7 +5,7 @@
 # by MANTANI Nobutaka <nobutaka@nobutaka.com>
 
 $progname = "gimp.setfont";
-$version = "Version 0.2 Aug 1 1999";
+$version = "Version 0.3 Sep 22 1999";
 
 # Show usage
 sub usage() {
@@ -14,20 +14,25 @@ Usage: gimp.setfont <language>
 
 ----------------------------------------------------------------
 [language]          [fontset]
+ czech               -*-fixed-(iso8859-2)
+ danish              -*-helvetica-(iso8859-1)
  dutch               -*-helvetica-(iso8859-1)
  english             -*-helvetica-(iso8859-1)
  finnish             -*-helvetica-(iso8859-1)
  french              -*-helvetica-(iso8859-1)
  german              -*-helvetica-(iso8859-1)
- hungarian           -*-helvetica-(iso8859-2)
+ hungarian           -*-fixed-(iso8859-2)
  italian             -*-helvetica-(iso8859-1)
  japanese            -*-fixed-(iso8859-1,jisx0201,jisx0208)
- korean              -*-fixed-(iso8859-1)/-daewoo-gothic-(ksc5601)
- polish              -*-helvetica-(iso8859-2)
+ korean              -*-fixed-(iso8859-1),-daewoo-gothic-(ksc5601)
+ polish              -*-fixed-(iso8859-2)
  russian             -*-helvetica-(koi8-r)
  swedish             -*-helvetica-(iso8859-1)
  norwegian           -*-helvetica-(iso8859-1)
 ----------------------------------------------------------------
+
+If you need iso8859-2 fonts, please install etlfonts
+(ports/x11-fonts/etlfonts).
 
 EOF
 }
@@ -40,11 +45,11 @@ sub write_gtkrc($) {
     if (-d $path) {
 	if (-e "$path/gtkrc") {
 	    chmod(0644, "$path/gtkrc");
-	    print "renaming $path/gtkrc to ${path}/gtkrc.old...\n";
+	    print "Renaming $path/gtkrc to ${path}/gtkrc.old...\n";
 	    rename($path, "${path}/gtkrc.old");
 	}
 
-	print "writing $path/gtkrc...\n";
+	print "Writing $path/gtkrc...\n";
 	open(FILE, ">$path/gtkrc");
 	print FILE <<EOF;
 \# style <name> [= <name>]
@@ -86,6 +91,36 @@ EOF
 
 if (@ARGV != 1) {
     usage();
+    exit;
+}
+
+if ($lang eq "czech") {
+    $fontset = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+
+    print "Setting for Czech language...\n\n";
+
+    write_gtkrc($fontset);
+
+    print <<EOF;
+Please set "LANG" environment variable to "cs_CZ.ISO8859-2" and execute "gimp".
+And please make symbolic link from lt_LN.ISO_8859-2 to cs_CZ.ISO8859-2 in 
+/usr/share/locale.
+
+EOF
+    exit;
+}
+
+if ($lang eq "danish") {
+    $fontset = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1";
+
+    print "Setting for Danish language...\n\n";
+
+    write_gtkrc($fontset);
+
+    print <<EOF;
+Please set "LANG" environment variable to "da_DK.ISO_8859-1" and execute "gimp".
+
+EOF
     exit;
 }
 
@@ -156,7 +191,7 @@ EOF
 }
 
 if ($lang eq "hungarian") {
-    $fontset = "-*-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-2";
+    $fontset = "-*-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-2";
     print "Setting for Hungarian language...\n\n";
 
     write_gtkrc($fontset);
