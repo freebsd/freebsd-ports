@@ -164,6 +164,7 @@
     SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox
+    SUBDIR += ruby-fox-devel
     SUBDIR += ruby-gnomeprintui
     SUBDIR += ruby-gtk
     SUBDIR += ruby-gtk2
