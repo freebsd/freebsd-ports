@@ -45,6 +45,7 @@ MAN1=		${LCLTARGET}-ar.1 ${LCLTARGET}-nm.1 ${LCLTARGET}-objdump.1 \
 		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-as.1 ${LCLTARGET}-ld.1 \
 		${LCLTARGET}-dlltool.1 ${LCLTARGET}-readelf.1 \
 		${LCLTARGET}-windres.1
+INFO=		bfd binutils as ld
 
 pre-configure:
 	@(cd ${WRKDIR} ; ${MKDIR} build-${LCLTARGET})
