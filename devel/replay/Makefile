@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	replay
+PORTNAME=	devel-replay
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/replay/
+DISTNAME=	replay-${PORTVERSION}
 USE_BZIP2=	dongs
 
 MAINTAINER=	alfred@FreeBSD.org
