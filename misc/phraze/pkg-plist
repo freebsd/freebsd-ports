@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/phraze
+%%DATADIR%%/phraze.dict
+@dirrm %%DATADIR%%
