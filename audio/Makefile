@@ -417,6 +417,7 @@
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-uade
     SUBDIR += xmms-volnorm
+    SUBDIR += xmms-wma
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
