@@ -1,16 +1,24 @@
+@cwd %%LOCALBASE%%
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.py
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/_db.so
 %%PYTHON_SITELIBDIR%%/bsddb3/db.py
 %%PYTHON_SITELIBDIR%%/bsddb3/db.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/db.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/dbobj.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbobj.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbobj.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/dbrecio.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbrecio.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbrecio.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/dbshelve.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbshelve.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbshelve.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/dbtables.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbtables.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbtables.pyo
 %%PYTHON_SITELIBDIR%%/bsddb3/dbutils.py
 %%PYTHON_SITELIBDIR%%/bsddb3/dbutils.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbutils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bsddb3
