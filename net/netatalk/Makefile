@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5p7
+PORTREVISION=	1
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -78,9 +79,6 @@ post-install:
 .for i in ${LINKS}
 	( cd ${PREFIX}/bin && ${LN} -sf megatron ${i} )
 .endfor
-
-.if defined(WITH_PAM)
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
