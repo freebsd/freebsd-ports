@@ -1,8 +1,8 @@
 The dkimap4 and dkpop3 daemons should be invoked by your /etc/inetd.conf file
 with lines such as:
 
-pop3	stream	tcp	nowait	root	/usr/local/libexec/dkpop3	dkpop3
-imap4	stream	tcp	nowait	root	/usr/local/libexec/dkimap4	dkimap4
+pop3	stream	tcp	nowait	root	%%PREFIX%%/libexec/dkpop3	dkpop3
+imap4	stream	tcp	nowait	root	%%PREFIX%%/libexec/dkimap4	dkimap4
 
 You also need to set up PAM properly, as PAM is enabled by default. Use
 something like this in /etc/pam.conf:

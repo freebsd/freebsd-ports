@@ -1,5 +1,0 @@
-bin/movemail
-libexec/dkimap4
-libexec/dkpop3
-%%PORTDOCS%%share/doc/dkimap4/README
-%%PORTDOCS%%@dirrm share/doc/dkimap4
