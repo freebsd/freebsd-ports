@@ -3,7 +3,7 @@
 # Date created:		01 May 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/05 08:00:27 tg Exp $
 #
 
 DISTNAME=	awele
@@ -19,7 +19,7 @@ NO_INSTALL_MANPAGES=	yes
 MAN6=		xawele.6
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|@@LOCALBASE@@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
+	@/usr/bin/perl -pi -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xawele.man ${PREFIX}/man/man6/xawele.6
