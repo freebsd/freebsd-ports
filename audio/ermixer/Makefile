@@ -12,7 +12,8 @@ PORTVERSION=	0.8
 PORTREVISION=	0
 PORTEPOCH=	0
 CATEGORIES=	audio kde
-MASTER_SITES=	http://erevan.cuore.org/files/ermixer/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	alane@FreeBSD.org
 COMMENT=	A command-line, ncurses, and Qt-GUI OSS audio mixer
