@@ -1,0 +1,16 @@
+LyX is a document processor interfaced with LaTeX, which gives both the
+ease-of-use of a wordprocessor, and the flexibility and power of
+LaTeX.
+
+Quasi-WYSIWYG interface, many LaTeX styles and layouts automatically
+generated. Speeds up learning LaTeX and makes complicated layouts
+easy and intuitive. New features include spell-checking, international
+character support, WYSIWYG graphics, tables, and equations.
+
+http://www.lyx.org/
+
+for japanize patch information,
+http://cgi.din.or.jp/~kawakami/
+
+Author:		Matthias Ettrich <ettrich@informatik.uni-tuebingen.de>
+Maintained-by:	Lars Gullik Bj$Bxn(Bnes <larsbj@ifi.uio.no>
