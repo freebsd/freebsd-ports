@@ -1,0 +1,15 @@
+--- Seat.cpp	Fri Jan 31 22:47:58 1997
++++ /home/andy/tmp/wrk/Seat.cpp	Sat Jul  4 19:48:21 1998
+@@ -151,10 +151,10 @@
+ 	   gcv.font = XLoadFont(_dpy, "10x20"); 
+ 		gcflags = GCForeground | GCBackground | GCGraphicsExposures;
+ 		_redgc = XCreateGC(_dpy, RootWindow(_dpy, _screen), gcflags, &gcv);
++		// allocate drawing area background color, set areas 
++		XAllocNamedColor(_dpy, cmap, "Forest Green", &color, &color);
+ 	 
+ 	}
+-	// allocate drawing area background color, set areas 
+-	XAllocNamedColor(_dpy, cmap, "Forest Green", &color, &color);
+ 	i = 0;
+ 	XtSetArg(args[i], XmNbackground, color.pixel);   i++;
+ 	XtSetArg(args[i], XmNforeground, whitepixel);   i++;
