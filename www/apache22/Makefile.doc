@@ -87,6 +87,8 @@
 ##           WITH_CUSTOM_AUTH="auth auth_dbm"
 ##      make WITHOUT_MODULES="access speling status" WITH_PROXY_MODULES=yes
 ##      make WITH_MODULES="include rewrite auth"
+##      Note: If you define your custom options in /etc/make.conf, don't forget
+##            to do not use quotes.
 ##
 
 DOCSDIR=	${PREFIX}/share/doc/apache21
