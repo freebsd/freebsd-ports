@@ -5,9 +5,19 @@
 #
 # $FreeBSD$
 #
-
 # There are several knobs which are used to define additions to the core
-# mutt functionality. The two most important are:
+# mutt functionality.
+#
+# As all of the knobs have a unique name which should not interfere with
+# other ports you can add them to /etc/make.conf, e.g. a line like
+# "WITH_MUTT_HTML=yes" will enable mutt's HTML documentation.
+#
+# In addition to the knobs listed below you can enable other configuration
+# options of mutt by adding them to the MUTT_CONFIGURE_ARGS variable. For
+# example you could say "MUTT_CONFIGURE_ARGS=--with-homespool=MyMail" to
+# configure a different directory for mutt's homespool.
+#
+# The two most important knobs are:
 #
 # In general you can choose between using the SLANG port (which is really
 # recommended and is now the default) and ncurses (WITH_MUTT_NCURSES). If you
@@ -68,6 +78,9 @@ CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
 		--with-libiconv-prefix=${PREFIX}
+.if defined(MUTT_CONFIGURE_ARGS)
+CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
+.endif
 
 .include <bsd.port.pre.mk>
 
