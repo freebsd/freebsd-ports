@@ -519,6 +519,7 @@ axelq		ports/ftp/axelq
 axis		ports/www/axis
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
+ayam		ports/graphics/ayam
 ayttm		ports/net/ayttm
 b2bua		ports/net/b2bua
 babel		ports/biology/babel
