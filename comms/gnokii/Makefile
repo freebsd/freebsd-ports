@@ -104,7 +104,7 @@ post-patch:
 		${WRKSRC}/${f}
 .endfor
 .if ${OSVERSION} <= 500027
-	@${FIND} ${WRKSRC}/src -type f | ${XARGS} ${REINPLACE_CMD} \
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|<stdint.h>|<inttypes.h>|'
 .endif
 
