@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtoaster
-PORTVERSION=	2001033113
+PORTVERSION=	1.0.Beta6
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gnometoaster.rulez.org/archive/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}1.0Beta6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eric@FreeBSD.org
