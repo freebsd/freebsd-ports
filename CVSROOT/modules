@@ -6578,6 +6578,7 @@ p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-LeakTrace	ports/devel/p5-Devel-LeakTrace
 p5-Devel-Modlist	ports/devel/p5-Devel-Modlist
 p5-Devel-ObjectTracker	ports/devel/p5-Devel-ObjectTracker
+p5-Devel-PPPort	ports/devel/p5-Devel-PPPort
 p5-Devel-Peek	ports/devel/p5-Devel-Peek
 p5-Devel-Pointer	ports/devel/p5-Devel-Pointer
 p5-Devel-Profile	ports/devel/p5-Devel-Profile
