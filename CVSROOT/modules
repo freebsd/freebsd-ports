@@ -4448,7 +4448,7 @@ linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
 linux-allegro		ports/devel/linux-allegro
 linux-arts	ports/audio/linux-arts
-linux-atk	ports/devel/linux-atk
+linux-atk	ports/accessibility/linux-atk
 linux-beonex	ports/www/linux-beonex
 linux-blackdown-jdk12	ports/java/linux-blackdown-jdk12
 linux-blackdown-jdk13	ports/java/linux-blackdown-jdk13
