@@ -64,7 +64,7 @@ SUEXEC_USERDIR?= public_html
 CONFIGURE_ARGS+= --enable-suexec \
 		--with-suexec-caller=www \
 		--with-suexec-userdir="${SUEXEC_USERDIR}" \
-		--with-suexec-uidmim=1000 --with-suexec-gidmin=1000 \
+		--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
 		--with-suexec-docroot="${PREFIX}/www/data" \
 		--with-suexec-safepath="${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
 		--with-suexec-logfile="/var/log/httpd-suexec.log"
