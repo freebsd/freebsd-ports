@@ -73,6 +73,7 @@
     SUBDIR += editss
     SUBDIR += eights
     SUBDIR += empire
+    SUBDIR += exult
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fkiss
