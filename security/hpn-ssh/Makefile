@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
-USE_OPENSSL_BASE=	yes
+WITH_OPENSSL_BASE=	yes
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
 MANPREFIX=	${PREFIX}/share

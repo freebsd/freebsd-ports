@@ -2,16 +2,16 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.2 2003-04-07 05:54:39 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.3 2003-04-13 11:47:23 dinoex Exp $
 #
 # this substitutes USE_OPENSSL=yes
 # just include this makefile after bsd.ports.pre.mk
 #
 # the user/port can now set this options in the makefiles.
 #
-# USE_OPENSSL_BASE=yes	- Use the version in the base system.
-# USE_OPENSSL_PORT=yes	- Use the port, even if base if up to date
-# USE_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
+# WITH_OPENSSL_BASE=yes	- Use the version in the base system.
+# WITH_OPENSSL_PORT=yes	- Use the port, even if base if up to date
+# WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
 #
 # The makefile sets this variables:
 # OPENSSLBASE		- "/usr" or ${LOCALBASE}
@@ -22,23 +22,31 @@
 # MAKE_ENV		- extended with the variables above
 # LIB_DEPENDS		- are added if needed
 
+# honor obsolete options for a bit
+.if defined(USE_OPENSSL_BASE) && !defined(WITH_OPENSSL_BASE)
+WITH_OPENSSL_BASE=yes
+.endif
+.if defined(USE_OPENSSL_PORT) && !defined(WITH_OPENSSL_PORT)
+WITH_OPENSSL_PORT=yes
+.endif
+
 #	if no preference was set, check for an up to date base version
 #	but give an installed port preference over it.
-.if	!defined(USE_OPENSSL_BASE) && \
-	!defined(USE_OPENSSL_BETA) && \
-	!defined(USE_OPENSSL_PORT) && \
+.if	!defined(WITH_OPENSSL_BASE) && \
+	!defined(WITH_OPENSSL_BETA) && \
+	!defined(WITH_OPENSSL_PORT) && \
 	!exists(${LOCALBASE}/lib/libcrypto.so)
 #	Security: version in base must be 0.9.7a
 .if exists(/usr/lib/libcrypto.so.3)
 OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_NUMBER/ { print $$3 }' \
 		/usr/include/openssl/opensslv.h
-.if ${OPENSSLVER} == 0x0090701fL
-USE_OPENSSL_BASE=yes
+.if ${OPENSSLVER} == 0x0090702fL
+WITH_OPENSSL_BASE=yes
 .endif
 .endif
 .endif
 
-.if defined(USE_OPENSSL_BASE)
+.if defined(WITH_OPENSSL_BASE)
 OPENSSLBASE=		/usr
 OPENSSLDIR=		/etc/ssl
 
@@ -57,7 +65,7 @@ OPENSSLDIR=		/etc/ssl
 	@${ECHO_CMD} "This port wants the OpenSSL library from the FreeBSD"
 	@${ECHO_CMD} "base system. You can't build against it, while a newer"
 	@${ECHO_CMD} "Version is installed by a port."
-	@${ECHO_CMD} "Please deinstall the port or undefine USE_OPENSSL_BASE."
+	@${ECHO_CMD} "Please deinstall the port or undefine WITH_OPENSSL_BASE."
 	@${FALSE}
 .endif
 
@@ -88,7 +96,7 @@ SHLIBVER=	4
 .endif
 
 OPENSSLBASE=		${LOCALBASE}
-.if defined(USE_OPENSSL_BETA)
+.if defined(WITH_OPENSSL_BETA)
 OPENSSLDIR=		${OPENSSLBASE}/openssl
 LIB_DEPENDS+=		crypto.${SHLIBVER}:${PORTSDIR}/security/openssl-beta
 .else
