@@ -16,9 +16,11 @@ MAINTAINER=	mharo@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
+# Manpage is empty
 #MAN1=		naim.1
 
 post-install:
+	@ ${RM} ${PREFIX}/man/man1/naim.1
 	@ ${MKDIR} ${PREFIX}/share/examples/naim
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/faimrc_sample ${PREFIX}/share/examples/naim/
 .if !defined(NOPORTDOCS)
