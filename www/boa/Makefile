@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.boa.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-FETCH_BEFORE_ARGS=	-b
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

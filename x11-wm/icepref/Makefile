@@ -20,7 +20,6 @@ USE_PYTHON=	yes
 USE_GTK=	yes
 NO_BUILD=	yes
 MAN1=		icepref.1
-FETCH_BEFORE_ARGS=	-b
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/icepref ${PREFIX}/bin
