@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fmio
-PORTVERSION=	1.2.25
-PORTREVISION=	1
+PORTVERSION=	1.2.29
 CATEGORIES=	audio
-MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
+MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/ \
+		http://www.tele2.chel.ru/~pva/src/fmio/
 
 MAINTAINER=	kunia@istc.kiev.ua
 
@@ -42,6 +42,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fmio ${PREFIX}/bin
 	${CHMOD} 4555 ${PREFIX}/bin/fmio
 	${INSTALL_MAN} ${WRKSRC}/fmio.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changelog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/FAQ.ru ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 
 post-install:
 .if !defined(WITH_BKTR)
