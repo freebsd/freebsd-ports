@@ -17,3 +17,20 @@
 #define XF86AGXServer		YES
 #define XF86W32Server		YES
 #define XF86I128Server		YES
+
+#define BuildPC98Servers	YES
+
+#define XF98EGCServer		YES
+#define XF98GA968Server		YES
+#define XF98GANBWAPServer	YES
+#define XF98MGAServer		YES
+#define XF98NEC480Server	YES
+#define XF98NECS3Server		YES
+#define XF98NKVNECServer	YES
+#define XF98PWLBServer		YES
+#define XF98PWSKBServer		YES
+#define XF98SVGAServer		YES
+#define XF98TGUIServer		YES
+#define XF98WABEPServer		YES
+#define XF98WABSServer		YES
+#define XF98WSNAServer		YES

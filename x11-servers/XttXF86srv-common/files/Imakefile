@@ -54,6 +54,20 @@ initialize::
 	${ECHO} "#undef XF86AGXServer" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86W32Server" >> ${CONFFILE}; \
 	${ECHO} "#undef XF86I128Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98EGCServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98GA968Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98GANBWAPServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98MGAServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98NEC480Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98NECS3Server" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98NKVNECServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98PWLBServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98PWSKBServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98SVGAServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98TGUIServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98WABEPServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98WABSServer" >> ${CONFFILE}; \
+	${ECHO} "#undef XF98WSNAServer" >> ${CONFFILE}; \
 	${ECHO} "#undef BuildFontServer" >> ${CONFFILE}; \
 	${ECHO} "#undef BuildFonts" >> ${CONFFILE}; \
 	${ECHO} "#undef XnestServer" >> ${CONFFILE}; \

@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.8 1998/11/14 09:43:38 asami Exp $
+# $Id: Makefile,v 1.9 1998/12/01 03:06:46 asami Exp $
 #
 
 DISTNAME=	xc
@@ -20,7 +20,7 @@ PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.2/fixes/ \
 		http://hawk.ise.chuo-u.ac.jp/student/person/tshiozak/x-tt/dists/ \
 		ftp://www.tohoku.iij.ad.jp/xtt/
 PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3 \
-		xtt10-to-pl00.diff.gz 
+		xtt10-to-pl00.diff.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -48,6 +48,9 @@ PATCH_DIST_STRIP=	-p1
 ALL_SERVER=	XF86_8514 XF86_AGX XF86_I128 XF86_Mach32 XF86_Mach64 \
 		XF86_Mach8 XF86_Mono XF86_P9000 XF86_S3 XF86_S3V \
 		XF86_SVGA XF86_VGA16 XF86_W32
+ALL_SERVER+=	XF98_EGC XF98_GA968 XF98_GANBWAP XF98_MGA XF98_NEC480 \
+		XF98_NECS3 XF98_NKVNEC XF98_PWLB XF98_PWSKB XF98_SVGA \
+		XF98_TGUI XF98_WABEP XF98_WABS XF98_WSNA
 HOSTDEFLOCAL=	${WRKDIR}/host.def.local
 .if defined(SERVER) && (${SERVER} == xfs)
 ALL_TARGET=	xfs
