@@ -8,7 +8,7 @@ DISTNAME=	xevil1.3
 PKGNAME=	xevil-1.3
 CATEGORIES+=	games x11
 MASTER_SITES=	ftp://ftp.x.org/contrib/games/
-DISTFILES=	xevil1.3.tar.Z
+DISTFILES=	xevil1.3.src_only.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
