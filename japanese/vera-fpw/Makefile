@@ -7,7 +7,7 @@
 
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/vera/
 DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}
@@ -19,8 +19,8 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/vera
 EXTRACT_BEFORE_ARGS=	-qL
-VERA_VER=	1.7
-VERAFPW_VER=	1.0.2
+VERA_VER=	1.8
+VERAFPW_VER=	1.0.3
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/data
