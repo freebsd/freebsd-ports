@@ -38,7 +38,7 @@ pre-build:
 .endif
 .else
 MASTER_SITES=	http://leed.t.u-tokyo.ac.jp/~yamagata/flash/
-DISTNAME=	libswf.so
+DISTNAME=	libswf-19990503.so
 EXTRACT_SUFX=	.gz
 
 NO_WRKSUBDIR=	yes
