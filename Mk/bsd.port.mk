@@ -1289,11 +1289,11 @@ GCCVERSION=		030100
 .if ${OSVERSION} >= 500039 && ${OSVERSION} < 501103
 GCCVERSION=		030200
 .endif
-.if ${OSVERSION} >= 501103
+.if ${OSVERSION} >= 501103 && ${OSVERSION} < 502126
 GCCVERSION=		030301
 .endif
-.if ${OSVERSION} >= 599999
-GCCVERSION=		030400
+.if ${OSVERSION} >= 502126
+GCCVERSION=		030402
 .endif
 .endif
 
@@ -1311,26 +1311,26 @@ F77=			g77-31
 BUILD_DEPENDS+=	gcc31:${PORTSDIR}/lang/gcc31
 GCCVERSION=		030100
 .endif
-.if ${USE_GCC} == 3.2 && ${OSVERSION} < 500039
+.if ${USE_GCC} == 3.2 && ( ${OSVERSION} < 500039 || ${OSVERSION} > 501102 )
 CC=				gcc32
 CXX=			g++32
 F77=			g77-32
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 GCCVERSION=		030200
 .endif
-.if ${USE_GCC} == 3.3 && ${OSVERSION} < 501103
+.if ${USE_GCC} == 3.3 && ( ${OSVERSION} < 501103 || ${OSVERSION} > 502125 )
 CC=				gcc33
 CXX=			g++33
 F77=			g77-33
 BUILD_DEPENDS+=	gcc33:${PORTSDIR}/lang/gcc33
 GCCVERSION=		030301
 .endif
-.if ${USE_GCC} == 3.4 # Not yet available in any OSVERSION
+.if ${USE_GCC} == 3.4 && ${OSVERSION} < 502126
 CC=				gcc34
 CXX=			g++34
 F77=			g77-34
 BUILD_DEPENDS+=	gcc34:${PORTSDIR}/lang/gcc34
-GCCVERSION=		030400
+GCCVERSION=		030402
 .endif
 MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
 .endif
@@ -2793,7 +2793,7 @@ pre-everything::
 	@${DO_NADA}
 
 buildanyway-message:
-.if defined(TRYBROKEN)
+.if defined(TRYBROKEN) && defined(BROKEN)
 	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
 .else
 	@${DO_NADA}
