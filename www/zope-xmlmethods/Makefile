@@ -36,7 +36,7 @@ do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} $CPIO_FLAGS} ${BINOWN}:${BINGRP} \
+	  | ${CPIO} ${CPIO_FLAGS} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 post-install:
