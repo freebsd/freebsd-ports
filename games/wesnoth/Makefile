@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.wesnoth.org/files/
 
-MAINTAINER=	mezz7@cox.net
+MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-USE_SDL=	image mixer net ttf sdl
+USE_SDL=	image mixer net ttf
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
