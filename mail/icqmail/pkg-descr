@@ -1,8 +1,9 @@
 ICQMail is a simple ICQ client which forwards all messages to given
 email address.
       
-WWW: http://sourceforge.net/projects/icqmail/
+WWW:   http://sourceforge.net/projects/icqmail/
+Author:        Vadim Zaliva <lord@crocodile.org>
 
 --
-Michael Vasilenko
-acid@cn.ua
+Alexandr Kovalenko
+never@nevermind.kiev.ua

@@ -1,0 +1,10 @@
+--- src/icqmail.c.orig	Fri Dec 29 17:06:21 2000
++++ src/icqmail.c	Fri Dec 29 17:06:34 2000
+@@ -46,7 +46,7 @@
+ 
+ /* Our headers */
+ #include "cfg.h"
+-#include "icq.h"
++#include <icq0.h>
+ #include "icqbyteorder.h"
+ #include "subst.h"
