@@ -1,0 +1,18 @@
+bin/spruce
+share/spruce/attach.xpm
+share/spruce/csave.xpm
+share/spruce/del.xpm
+share/spruce/fwd.xpm
+share/spruce/maddr.xpm
+share/spruce/msave.xpm
+share/spruce/new.xpm
+share/spruce/reply.xpm
+share/spruce/send.xpm
+share/spruce/splashscreen.xpm
+share/spruce/splashscreen2.xpm
+share/spruce/spruce-attach.xpm
+share/spruce/spruce-comp-save.xpm
+share/spruce/spruce-icon.xpm
+share/spruce/spruce-options.xpm
+share/spruce/spruce-send.xpm
+@dirrm share/spruce

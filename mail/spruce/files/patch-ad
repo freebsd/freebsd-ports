@@ -1,0 +1,13 @@
+--- sockio.h.orig	Mon May 17 17:42:53 1999
++++ sockio.h	Sat Jun  5 14:55:46 1999
+@@ -19,9 +19,8 @@
+ #ifndef SOCKIO_H
+ #define SOCKIO_H
+ 
+-#include <sys/socket.h>
+ #include <sys/types.h>
+-#include <sys/param.h>
++#include <sys/socket.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
+ #include <unistd.h>

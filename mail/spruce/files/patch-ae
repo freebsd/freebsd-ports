@@ -1,0 +1,10 @@
+--- smtpio.c.orig	Sat Jun  5 10:54:01 1999
++++ smtpio.c	Sat Jun  5 14:55:46 1999
+@@ -17,6 +17,7 @@
+ */
+ 
+ #include "smtpio.h"
++#include <sys/param.h>
+ 
+ static char *smtp_errlist[] = {"",
+                                ": Hostname failed to resolve", 
