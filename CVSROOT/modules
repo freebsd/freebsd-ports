@@ -4503,6 +4503,7 @@ p5-Locale-gettext	ports/devel/p5-Locale-gettext
 p5-LockFile-Simple	ports/devel/p5-LockFile-Simple
 p5-Log-Agent	ports/devel/p5-Log-Agent
 p5-Log-Dispatch	ports/devel/p5-Log-Dispatch
+p5-Log-TraceMessages	ports/devel/p5-Log-TraceMessages
 p5-MARC		ports/textproc/p5-MARC
 p5-MD5		ports/security/p5-MD5
 p5-MIME-Base64	ports/converters/p5-MIME-Base64
