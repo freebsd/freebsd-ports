@@ -1,6 +1,6 @@
 USE_IMAKE=	yes
 DISTNAME=	pixmap
-LIB_DEPENDS=	Xpm\\.3\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 MASTER_SITES=	ftp://ftp.x.org/pub/R6untarred/contrib/programs/
 
 .if !defined(MASTER_SITE_OVERRIDE)
