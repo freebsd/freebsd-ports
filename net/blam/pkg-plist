@@ -1,0 +1,47 @@
+bin/blam
+lib/blam/blam.exe
+lib/blam/libblam.a
+lib/blam/libblam.so
+lib/blam/libblam.so.0
+lib/blam/rss.dll
+share/gnome/applications/blam.desktop
+share/gnome/blam/collection.xml
+share/gnome/blam/images/blam-box-bottom-left.png
+share/gnome/blam/images/blam-box-bottom-right.png
+share/gnome/blam/images/blam-box-pad.png
+share/gnome/blam/images/blam-box-top-left.png
+share/gnome/blam/images/blam-box-top-right.png
+share/gnome/pixmaps/blam.png
+share/locale/bg/LC_MESSAGES/blam.mo
+share/locale/bs/LC_MESSAGES/blam.mo
+share/locale/ca/LC_MESSAGES/blam.mo
+share/locale/cs/LC_MESSAGES/blam.mo
+share/locale/da/LC_MESSAGES/blam.mo
+share/locale/de/LC_MESSAGES/blam.mo
+share/locale/el/LC_MESSAGES/blam.mo
+share/locale/en_CA/LC_MESSAGES/blam.mo
+share/locale/en_GB/LC_MESSAGES/blam.mo
+share/locale/es/LC_MESSAGES/blam.mo
+share/locale/eu/LC_MESSAGES/blam.mo
+share/locale/fi/LC_MESSAGES/blam.mo
+share/locale/fr/LC_MESSAGES/blam.mo
+share/locale/ga/LC_MESSAGES/blam.mo
+share/locale/gu/LC_MESSAGES/blam.mo
+share/locale/he/LC_MESSAGES/blam.mo
+share/locale/hr/LC_MESSAGES/blam.mo
+share/locale/nb/LC_MESSAGES/blam.mo
+share/locale/nl/LC_MESSAGES/blam.mo
+share/locale/no/LC_MESSAGES/blam.mo
+share/locale/pa/LC_MESSAGES/blam.mo
+share/locale/pt/LC_MESSAGES/blam.mo
+share/locale/pt_BR/LC_MESSAGES/blam.mo
+share/locale/sq/LC_MESSAGES/blam.mo
+share/locale/sr/LC_MESSAGES/blam.mo
+share/locale/sr@Latn/LC_MESSAGES/blam.mo
+share/locale/sv/LC_MESSAGES/blam.mo
+share/locale/tr/LC_MESSAGES/blam.mo
+share/locale/uk/LC_MESSAGES/blam.mo
+share/locale/zh_CN/LC_MESSAGES/blam.mo
+@dirrm share/gnome/blam/images
+@dirrm share/gnome/blam
+@dirrm lib/blam

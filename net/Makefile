@@ -41,6 +41,7 @@
     SUBDIR += bfilter
     SUBDIR += bing
     SUBDIR += binkd
+    SUBDIR += blam
     SUBDIR += bld
     SUBDIR += bmon
     SUBDIR += bnbt
