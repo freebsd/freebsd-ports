@@ -5582,6 +5582,7 @@ p5-RDF-Core	ports/textproc/p5-RDF-Core
 p5-RDF-Notation3	ports/textproc/p5-RDF-Notation3
 p5-RDFStore	ports/textproc/p5-RDFStore
 p5-RPC-XML	ports/net/p5-RPC-XML
+p5-Rcs	ports/devel/p5-Rcs
 p5-Rcs-Agent	ports/devel/p5-Rcs-Agent
 p5-ReadLine-Gnu	ports/devel/p5-ReadLine-Gnu
 p5-ReadLine-Perl	ports/devel/p5-ReadLine-Perl
