@@ -3,7 +3,7 @@
 # $FreeBSD$
 
 OPTIONS=""
-IFACES="SET_THIS"
+IFACES=""
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
 	echo "$0: Cannot determine the PREFIX" >&2
@@ -12,7 +12,8 @@ fi
 
 case "$1" in
 start)
-	${PREFIX}/sbin/dhcpd $OPTIONS $IFACES
+	${PREFIX}/sbin/dhcpd $OPTIONS $IFACES > /dev/null 2>&1
+	echo -n ' dhcpd'
 	;;
 stop)
 	killall dhcpd
