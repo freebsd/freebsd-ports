@@ -1,15 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/BMP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/GIF.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/JPEG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/PNG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/PPM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/SVG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/XBM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/Info/XPM.pm
-lib/perl5/site_perl/%%PERL_VER%%/Image/TIFF.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Info
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Image/Info
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Image 2>/dev/null || true
+%%SITE_PERL%%/Image/Info.pm
+%%SITE_PERL%%/Image/Info/BMP.pm
+%%SITE_PERL%%/Image/Info/GIF.pm
+%%SITE_PERL%%/Image/Info/JPEG.pm
+%%SITE_PERL%%/Image/Info/PNG.pm
+%%SITE_PERL%%/Image/Info/PPM.pm
+%%SITE_PERL%%/Image/Info/SVG.pm
+%%SITE_PERL%%/Image/Info/TIFF.pm
+%%SITE_PERL%%/Image/Info/XBM.pm
+%%SITE_PERL%%/Image/Info/XPM.pm
+%%SITE_PERL%%/Image/TIFF.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Info
+@dirrm %%SITE_PERL%%/Image/Info
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Image 2>/dev/null || true
