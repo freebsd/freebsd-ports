@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	shtool
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.engelschall.com/sw/shtool/
+		ftp://ftp.ossp.org/pkg/tool/shtool/
 MASTER_SITE_SUBDIR=	shtool
 
 MAINTAINER=	rse@engelschall.com
