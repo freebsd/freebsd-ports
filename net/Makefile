@@ -403,6 +403,7 @@
     SUBDIR += openldap22-sasl-server
     SUBDIR += openldap22-server
     SUBDIR += openmcu
+    SUBDIR += openntpd
     SUBDIR += openradius
     SUBDIR += openslp
     SUBDIR += openverse
