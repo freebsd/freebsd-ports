@@ -8,9 +8,9 @@
 PORTNAME=	openwebmail
 PORTVERSION=	2.32
 CATEGORIES=	mail
-MASTER_SITES=	http://openwebmail.com/openwebmail/download/ \
-		http://turtle.ee.ncku.edu.tw/openwebmail/download/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://openwebmail.org/openwebmail/download/release/ \
+		http://turtle.ee.ncku.edu.tw/openwebmail/download/release/
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A webmail system designed to manage big mail folder files efficiently
