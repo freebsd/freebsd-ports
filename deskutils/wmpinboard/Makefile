@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	wmpinboard
-PORTVERSION=	0.10
+PORTVERSION=	1.0
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/wmpinboard.app
-
 USE_BZIP2=	yes
-USE_IMAKE=	yes
 USE_XPM=	yes
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 MAN1=		wmpinboard.1
-
-post-extract:
-	(cd ${WRKSRC}; ${CP} -p wmpinboard.1 wmpinboard.man)
 
 .include <bsd.port.mk>

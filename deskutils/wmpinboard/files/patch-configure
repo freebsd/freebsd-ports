@@ -1,0 +1,11 @@
+--- configure.orig	Wed Apr 18 13:02:06 2001
++++ configure	Wed Apr 18 13:02:10 2001
+@@ -1035,7 +1035,7 @@
+ cross_compiling=$ac_cv_prog_cc_cross
+ 
+ 
+-CFLAGS="$CFLAGS -D_BSD_SOURCE -D_POSIX_SOURCE=199506L"
++#CFLAGS="$CFLAGS -D_BSD_SOURCE -D_POSIX_SOURCE=199506L"
+ 
+ if test x$GCC = xyes; then
+   CFLAGS="$CFLAGS -Wall -ansi -pedantic"
