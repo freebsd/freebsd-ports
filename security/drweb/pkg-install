@@ -36,6 +36,7 @@ fi
 
 if ! grep -q "^!${USER}" /etc/syslog.conf; then
   echo "You may also add this lines to your /etc/syslog.conf:"
+  echo "!drwebd"
   echo "*.*             /var/log/drwebd.log"
   echo ""
 fi
