@@ -1,0 +1,11 @@
+--- auto/configure.orig	Sun May  9 20:47:46 2004
++++ auto/configure	Sun May  9 20:46:02 2004
+@@ -1931,7 +1931,7 @@
+ 	    echo "$ac_t""$try/tclConfig.sh" 1>&6
+ 	    . $try/tclConfig.sh
+ 	    	    TCL_LIBS=`eval echo "$TCL_LIB_SPEC $TCL_LIBS"`
+-	    	    	    TCL_DEFS=`echo $TCL_DEFS | tr ' ' '\012' | sed -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr -d '\012'`
++	    	    	    TCL_DEFS=`echo $TCL_DEFS | tr ' ' '\012' | sed -e '/^[^-]/d' -e '/^-[^D]/d' -e '/-D[^_]/d' -e 's/-D_/ -D_/' | tr -d '\012'`
+ 	    break
+ 	  fi
+ 	done
