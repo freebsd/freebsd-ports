@@ -14,7 +14,6 @@ lib/FileRunner/frcolor
 lib/FileRunner/frftp
 lib/FileRunner/ftp.tcl
 lib/FileRunner/http.tcl
-lib/FileRunner/palette.tcl
 lib/FileRunner/tclIndex
 lib/FileRunner/bitmaps/cross.bit
 lib/FileRunner/bitmaps/frterm.bit
