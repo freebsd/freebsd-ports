@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.50 1998/12/11 22:58:37 billf Exp $
+# $Id: Makefile,v 1.51 1998/12/22 08:40:47 asami Exp $
 
 APACHE= 	1.3.3
 APACHE-SSL=	1.28
@@ -28,7 +28,7 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
 		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
 		http://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
 		http://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
-		http://www.asap.cs.nott.ac.uk/SSL
+		http://www.asap.cs.nott.ac.uk/SSL/
 
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
