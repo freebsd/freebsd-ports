@@ -7,8 +7,7 @@
 
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 .else
 PORTVERSION=	1.8.0
 PORTREVISION=	2
@@ -46,13 +45,18 @@ CONFIGURE_ARGS+=	--disable-openssl
 PLIST_SUB+=	OPENSSL="@comment "
 .else
 USE_OPENSSL=	yes
-.if defined(WITH_GNUSTEP_DEVEL)
-PLIST_SUB+=	OPENSSL="@comment "
-.else
 PLIST_SUB+=	OPENSSL=""
-.endif
 MAKE_APPS=	SSL
 INSTALL_APPS=	SSL
+.endif
+
+.if defined(WITH_GNUSTEP_DEVEL)
+LIBS+=		-lkvm
+CONFIGURE_ENV+=	LIBS="${LIBS}"
+.endif
+
+.if !defined(WITH_GNUSTEP_DEVEL)
+EXTRA_PATCHES+=	${FILESDIR}/NSFileManager.m.patch
 .endif
 
 .include <bsd.port.pre.mk>
@@ -88,5 +92,5 @@ test:
 
 .include <bsd.port.post.mk>
 
-# bsd.port.post.mk clobbers MAKE_ENV
-MAKE_ENV+=	PATH=${autotools_path}:$(PREFIX)/System/Tools:${PATH}
+# bsd.autotools.mk clobbers MAKE_ENV
+MAKE_ENV+=	PATH=${AUTOTOOLS_PATH}:${PREFIX}/System/Tools:${PATH}

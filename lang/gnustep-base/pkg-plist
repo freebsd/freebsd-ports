@@ -5,10 +5,17 @@ System/Library/DTDs/gsdoc-0_6_5.dtd
 System/Library/DTDs/gsdoc-0_6_6.dtd
 System/Library/DTDs/gsdoc-0_6_7.dtd
 System/Library/DTDs/gsdoc-1_0_0.dtd
+%%GNUSTEP_DEVEL%%System/Library/DTDs/gsdoc-1_0_1.dtd
 System/Library/DTDs/plist-0_9.dtd
-System/Library/DocTemplates/AutoDocTemplate.gsdoc
-System/Library/DocTemplates/indextemplate.gsdoc
+%%GNUSTEP_STABLE%%System/Library/DocTemplates/AutoDocTemplate.gsdoc
+%%GNUSTEP_STABLE%%System/Library/DocTemplates/indextemplate.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/autogsdoc.1.gz
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/cvtenc.1.gz
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/defaults.1.gz
 System/Library/Documentation/man/man1/gdnc.1.gz
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/pldes.1.gz
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/sfparse.1.gz
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/xmlparse.1.gz
 System/Library/Documentation/man/man8/gdomap.8.gz
 System/Library/Headers/Foundation/Foundation.h
 System/Library/Headers/Foundation/GSMime.h
@@ -37,6 +44,7 @@ System/Library/Headers/Foundation/NSDistantObject.h
 System/Library/Headers/Foundation/NSDistributedLock.h
 System/Library/Headers/Foundation/NSDistributedNotificationCenter.h
 System/Library/Headers/Foundation/NSEnumerator.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/Foundation/NSError.h
 System/Library/Headers/Foundation/NSException.h
 System/Library/Headers/Foundation/NSFileHandle.h
 System/Library/Headers/Foundation/NSFileManager.h
@@ -136,6 +144,7 @@ System/Library/Libraries/Resources/gnustep-base/Languages/Dutch
 System/Library/Libraries/Resources/gnustep-base/Languages/English
 System/Library/Libraries/Resources/gnustep-base/Languages/French
 System/Library/Libraries/Resources/gnustep-base/Languages/German
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/Hungarian
 System/Library/Libraries/Resources/gnustep-base/Languages/Italian
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.aliases
 System/Library/Libraries/Resources/gnustep-base/Languages/Locale.encodings
