@@ -1,0 +1,25 @@
+#!/bin/sh
+
+DAEMON=/usr/local/sbin/spamass-milter
+SOCKET=/var/run/spamass-milter.sock
+PIDFILE=/var/run/spamass-milter.pid
+
+case "$1" in
+start)
+	if [ -f "${DAEMON}" -a -x "${DAEMON}" ]
+	then
+		"${DAEMON}" "${SOCKET}" &
+		echo $! > "${PIDFILE}"
+		echo -n ' spamass-milter'
+	fi
+;;
+stop)
+	if [ -f "${PIDFILE}" ]
+	then
+		read -r pid junk < "${PIDFILE}"
+		kill ${pid}
+		rm -f "${SOCKET}" "${PIDFILE}"
+		echo -n ' spamass-milter'
+	fi
+;;
+esac
