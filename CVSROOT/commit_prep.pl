@@ -139,7 +139,7 @@ sub check_version {
 	return (0);
     }
     ($id, $rname, $version) = split(' ', substr($line, $pos));
-    if ($cvsversion{$filename} == 0) {
+    if ($cvsversion{$filename} eq '0') {
 	if (!$bareid) {
 	    printf($NoName, $filename);
 	    return(1);
