@@ -58,6 +58,7 @@
     SUBDIR += crafty-open-small
     SUBDIR += crimson
     SUBDIR += crossfire
+    SUBDIR += cryptoslam
     SUBDIR += cursive
     SUBDIR += deal
     SUBDIR += defendguin
