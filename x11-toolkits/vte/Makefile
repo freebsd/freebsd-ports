@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.10.20
+PORTVERSION=	0.10.22
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Terminal widget with improved accessibility and I18N support
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
