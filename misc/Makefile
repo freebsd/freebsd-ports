@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.104 1997/04/27 00:03:07 asami Exp $
+# $Id: Makefile,v 1.105 1997/04/27 00:14:27 asami Exp $
 #
 
     SUBDIR += amanda
@@ -24,6 +24,7 @@
     SUBDIR += logsurfer
     SUBDIR += mc
     SUBDIR += mmv
+    SUBDIR += most
     SUBDIR += mshell
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
