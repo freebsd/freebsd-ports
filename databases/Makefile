@@ -279,6 +279,7 @@
     SUBDIR += useracc
     SUBDIR += usogres
     SUBDIR += wfb2sql
+    SUBDIR += xbase
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
     SUBDIR += zodb
