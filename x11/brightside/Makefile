@@ -23,4 +23,6 @@ CONFIGURE_ARGS=	--enable-tray-icon
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	brightside.schemas
+
 .include <bsd.port.mk>

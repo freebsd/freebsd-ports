@@ -26,6 +26,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASA}/lib"
 
+GCONF_SCHEMAS=	monster-masher.schemas
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500010

@@ -26,6 +26,8 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	drivel.schemas
+
 .ifndef(WITHOUT_RHYTHMBOX)
 CONFIGURE_ARGS+=	--with-rhythmbox
 BUILD_DEPENDS+=		rhythmbox:${PORTSDIR}/audio/rhythmbox

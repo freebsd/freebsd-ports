@@ -1,8 +1,5 @@
 bin/brightside
 bin/brightside-properties
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/brightside.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/brightside.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/brightside.schemas > /dev/null || /usr/bin/true
 share/gnome/brightside/brightside-16.png
 share/gnome/brightside/brightside-48.png
 share/gnome/brightside/brightside-brightness.png

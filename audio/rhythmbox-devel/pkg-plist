@@ -1,7 +1,4 @@
 bin/rhythmbox
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/rhythmbox.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/rhythmbox.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/rhythmbox.schemas > /dev/null || /usr/bin/true
 lib/bonobo/librb-nautilus-context-menu.so
 libdata/bonobo/servers/GNOME_Rhythmbox.server
 libdata/bonobo/servers/Rhythmbox_Nautilus_Context_Menu.server

@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	--enable-nautilus-menu
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
+GCONF_SCHEMAS=	rhythmbox.schemas
+
 OPTIONS=	XINE "Use xine backend instead of GStreamer" off \
 		MONKEYMEDIA "Use MonkeyMedia metadata reader" off \
 		IPOD "Enable iPod support" off
