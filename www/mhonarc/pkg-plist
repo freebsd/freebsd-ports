@@ -235,6 +235,7 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/excs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/expireage.html
 %%PORTDOCS%%share/doc/MHonArc/resources/expiredate.html
+%%PORTDOCS%%share/doc/MHonArc/resources/fasttempfiles.html
 %%PORTDOCS%%share/doc/MHonArc/resources/fieldorder.html
 %%PORTDOCS%%share/doc/MHonArc/resources/fieldsbeg.html
 %%PORTDOCS%%share/doc/MHonArc/resources/fieldsend.html
