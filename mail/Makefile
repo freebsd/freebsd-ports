@@ -426,6 +426,7 @@
     SUBDIR += sendmail812
     SUBDIR += sentinel
     SUBDIR += serialmail
+    SUBDIR += sid-milter
     SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += silkymail

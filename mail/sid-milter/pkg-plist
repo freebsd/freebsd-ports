@@ -1,0 +1,11 @@
+etc/rc.d/milter-sid.sh.sample
+include/ar.h
+lib/libar.a
+libexec/sid-filter
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-SenderID
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
