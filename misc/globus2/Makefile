@@ -57,8 +57,8 @@ GPT_BUILD?=	${GPT_LOCATION}/sbin/gpt-build
 GLOBUS_BASE?=	globus
 GLOBUS_LOCATION=${PREFIX}/${GLOBUS_BASE}
 
-BUILD_DEPENDS+=	${GPT_BUILD}:${PORTSDIR}/misc/gpt
-RUN_DEPENDS+=	${GPT_BUILD}:${PORTSDIR}/misc/gpt
+BUILD_DEPENDS+=	${GPT_BUILD}:${PORTSDIR}/misc/gpt31
+RUN_DEPENDS+=	${GPT_BUILD}:${PORTSDIR}/misc/gpt31
 
 # Don't extract anything
 NO_BUILD=	yes
