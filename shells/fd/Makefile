@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03l
+PORTVERSION=	1.03o
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/ \
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	steve
 DISTNAME=	FD-${PORTVERSION}
