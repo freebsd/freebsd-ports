@@ -1,7 +1,7 @@
 Index: src/Makefile.src
 diff -u src/Makefile.src.orig src/Makefile.src
---- src/Makefile.src.orig	Fri Oct 13 01:00:12 2000
-+++ src/Makefile.src	Sat Oct 14 04:01:17 2000
+--- src/Makefile.src.orig	Tue Oct 17 06:05:39 2000
++++ src/Makefile.src	Thu Oct 19 16:32:03 2000
 @@ -13,7 +13,7 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
@@ -16,8 +16,8 @@ diff -u src/Makefile.src.orig src/Makefile.src
  endif
  
 -
--CC = gcc -Wall $(FLAGS)
+-CC = gcc -Wall $(FLAGS) $(CFLAGS)
 +CFLAGS += $(FLAGS)
  
- GNOME_PREFIX = `gnome-config --prefix`
- 
+ OBJS =	main.o apm.o clock.o cpu.o disk.o fs.o hostname.o \
+ 	inet.o mail.o meminfo.o net.o proc.o sensors.o uptime.o \
