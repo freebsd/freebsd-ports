@@ -3,11 +3,11 @@
 # Date created:		26 Jan 1998
 # Whom:			griffin
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/18 02:04:44 mph Exp $
+# $Id: Makefile,v 1.2 1998/04/19 05:35:31 mph Exp $
 #
 
-DISTNAME=	ircii-pana-74p4
-PKGNAME=	bitchx-74p4
+DISTNAME=	ircii-pana-75p1
+PKGNAME=	bitchx-75p1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/
 
