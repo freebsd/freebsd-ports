@@ -1,0 +1,16 @@
+==========================================================================
+
+  Bugzilla has now been installed.  To get it up and running you have to:
+
+  1. Create bugs database at your MySQL server.
+  2. Run ${PREFIX}/www/data.default/checksetup.pl to create configuration
+     file (you need to do it at installation time only)
+  3. Edit newly created ${PREFIX}/www/data.default/localconfig file
+     to customize Bugzilla setup for your system
+  4. Run ${PREFIX}/www/data.default/checksetup.pl again to create required
+     Bugzilla data directories and fix files permissions.
+
+  For more complete instructions on installation, setup and security notes
+  read Bugzilla Guide in ${PREFIX}/share/doc/bugzilla (chapter 3: Installation)
+
+==========================================================================

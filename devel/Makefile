@@ -51,6 +51,7 @@
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
     SUBDIR += bugbuddy
+    SUBDIR += bugzilla
     SUBDIR += c2lib
     SUBDIR += c4
     SUBDIR += c_c++_reference
