@@ -1,0 +1,11 @@
+--- test/oaf-slay.in.orig	Fri Oct 18 15:33:00 2002
++++ test/oaf-slay.in	Fri Oct 18 15:33:12 2002
+@@ -51,7 +51,7 @@
+ 
+ # get OAF files
+ #
+-@oaf_dirs = ( "@prefix@/share/oaf" );
++@oaf_dirs = ( "@datadir@/oaf" );
+ foreach $dir (split(':', $ENV{'OAF_INFO_PATH'})) {
+ 	if (-d $dir) {
+ 		push @oaf_dirs, $dir;
