@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,10 +34,5 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread [\$$]CFLAGS|${PTHREAD_CFLAGS} \$$CFLAGS|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-.for file in src/include/server/startup.h src/server/startup.c \
-	src/textui/gnunetdownload.c src/textui/insertmain.c \
-	src/textui/insertmulti.c src/util/getopt.c src/util/getopt1.c
-	@${REINPLACE_CMD} -e 's|"getopt.h"|"util/getopt.h"|g' ${WRKSRC}/${file}
-.endfor
 
 .include <bsd.port.mk>
