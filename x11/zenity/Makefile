@@ -14,14 +14,11 @@ MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/zenity/1.0/
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
 
-LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
-		gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
