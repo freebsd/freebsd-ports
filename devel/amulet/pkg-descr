@@ -1,8 +1,5 @@
 Amulet is a toolkit for building graphical user interfaces in C++.
 
-Get the manual from: 
-     http://www.cs.cmu.edu/~amulet/amulet3-documentation.html
-
 This port builds three versions of the library:
   libamulet.so.3.0:         shared library with the inspector
 			    (for development)
@@ -19,6 +16,8 @@ There is also a sample Makefile (sample.Makefile) in that directory
 that you can use to build amulet programs. This is an adaption
 of the Makefiles that come with amulet, which does not require the 
 AMULET_DIR and AMULET_VARS_FILE to be set.
+
+http://pecan.srv.cs.cmu.edu/afs/cs/project/amulet/www/
 
 Filip Bovyn
 bovynf@awe.be

@@ -1,10 +1,9 @@
 # New ports collection makefile for:	nedit
 # Version required:			5.0.2
 # Date created:				7 April 1996
-#
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
+# $Id: Makefile,v 1.11 1998/07/27 23:24:14 asami Exp $
 #
 
 DISTNAME=	nedit-5.0.2

@@ -10,3 +10,5 @@ you don't have to specify file names.  So,  if you are looking for a
 needle anywhere in your file system, all you have to do is say
 glimpse  needle  and  all  lines containing needle will appear preceded
 by the file name.
+
+http://glimpse.cs.arizona.edu/
