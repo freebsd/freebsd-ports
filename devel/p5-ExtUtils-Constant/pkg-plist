@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Constant/.packlist
+%%SITE_PERL%%/ExtUtils/Constant.pm
+%%SITE_PERL%%/ExtUtils/Constant/Aaargh56Hash.pm
+%%SITE_PERL%%/ExtUtils/Constant/Base.pm
+%%SITE_PERL%%/ExtUtils/Constant/Utils.pm
+%%SITE_PERL%%/ExtUtils/Constant/XS.pm
+@dirrm %%SITE_PERL%%/ExtUtils/Constant
+@unexec rmdir %D/%%SITE_PERL%%/ExtUtils 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils/Constant
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/ExtUtils 2>/dev/null || true

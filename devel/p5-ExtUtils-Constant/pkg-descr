@@ -1,0 +1,7 @@
+ExtUtils::Constant facilitates generating C and XS wrapper code to allow
+perl modules to AUTOLOAD constants defined in C library header files.
+It is principally used by the h2xs utility, on which this code is based.
+It doesn't contain the routines to scan header files to extract these
+constants.
+
+WWW: http://search.cpan.org/dist/ExtUtils-Constant/
