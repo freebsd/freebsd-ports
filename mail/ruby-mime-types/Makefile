@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime-types
-PORTVERSION=	1.003.1
+PORTVERSION=	1.004
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
