@@ -1,5 +1,3 @@
-bin/ldcc
-bin/ltcp
 %%PKGINFODIR%%/MANIFEST.liece
 %%ETCDIR%%/icons/back.xpm
 %%ETCDIR%%/icons/ball.blank.xpm
