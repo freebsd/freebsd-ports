@@ -1,5 +1,5 @@
 --- Imakefile.orig	Sun Jul  4 18:47:11 1999
-+++ Imakefile	Thu Mar 30 03:59:25 2000
++++ Imakefile	Fri Oct 27 03:04:18 2000
 @@ -1,12 +1,12 @@
  #include "configure.h"
  
@@ -16,3 +16,17 @@
  
  #ifdef SOUND_RPLAY
  RPLAYLIB = -lrplay
+@@ -23,12 +23,10 @@
+ 
+ ComplexProgramTarget(xdigger)
+ InstallNonExecFile(xdigger.level,XDIGGER_LIB_DIR)
+-#ifdef SOUND_RPLAY
+ InstallNamedNonExec(audio/diamond.au,diamond.au,XDIGGER_LIB_DIR)
+ InstallNamedNonExec(audio/step.au,step.au,XDIGGER_LIB_DIR)
+ InstallNamedNonExec(audio/stone.au,stone.au,XDIGGER_LIB_DIR)
+-#endif
+-InstallNamedNonExec(pixmaps/xdigger.xpm,xdigger.xpm,$(ICONDIR))
++/* InstallNamedNonExec(pixmaps/xdigger.xpm,xdigger.xpm,$(ICONDIR)) */
+ /* InstallNonExecFileNoClobber(xdigger.hiscore,XDIGGER_HISCORE_DIR) */
+ 
+ install::
