@@ -1,0 +1,20 @@
+bin/xsim
+etc/xsimrc
+%%DATADIR%%/plugins/jianpin.so
+%%DATADIR%%/plugins/wubi.so
+%%DATADIR%%/plugins/table.so
+%%DATADIR%%/plugins/panel_std.so
+%%DATADIR%%/plugins/statuspanel_std.so
+%%DATADIR%%/bin/char2db
+%%DATADIR%%/bin/word2db
+%%DATADIR%%/bin/word2db.wubi
+%%DATADIR%%/bin/word2db.table
+%%DATADIR%%/bin/xsim
+%%DATADIR%%/dat/chardb
+%%DATADIR%%/dat/worddb
+%%DATADIR%%/dat/worddb.cj
+%%DATADIR%%/dat/worddb.wubi
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/dat
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%
