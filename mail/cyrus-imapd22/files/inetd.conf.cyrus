@@ -1,0 +1,12 @@
+#
+# Example entry for inetd.conf for the Cyrus IMAP server.
+# $Id$
+#
+# Replace /usr/local with the path where you've installed the package.
+#
+# The IMAP-4 server.
+imap4	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/imapd	imapd
+#
+# To be able to access the IMAP mailbox by POP-3, use this line.
+pop3	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/pop3d	imapd
+#
