@@ -7,13 +7,14 @@
 
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
-CATEGORIES=	emulators tk82
+PORTREVISION=	1
+CATEGORIES=	emulators tk84
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Yet Another HFS Utility
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl --with-tk
