@@ -29,19 +29,12 @@ USE_XLIB=	yes
 AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ARGS=	--without-magick
 CONFIGURE_ENV=	ARCH="" \
-		CFLAGS="${CFLAGS} -I${PREFIX}/include" \
+		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
-		CXXFLAGS="${CFLAGS} -I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
+		CXXFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
+		LDFLAGS="-L${PREFIX}/lib ${LDFLAGS} ${PTHREAD_LIBS}"
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
-
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} >= 4
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
@@ -59,4 +52,4 @@ post-install:
 	  xargs ${PERL} -pi -e "s;/usr/lpp;${PREFIX};g"
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
