@@ -7572,6 +7572,7 @@ tRNAscan-SE	ports/biology/tRNAscan-SE
 t_coffee	ports/biology/t_coffee
 tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
+tacshell	ports/net/tacshell
 tads		ports/games/tads
 taipan		ports/games/taipan
 tamago		ports/editors/tamago
