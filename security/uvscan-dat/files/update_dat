@@ -2,7 +2,7 @@
 #
 # $Id$
 #
-cd /usr/local/libexec/uvscan/
+cd @PREFIX@/libexec/uvscan/
 ftp http://download.nai.com/products/datfiles/4.x/nai/update.ini >/dev/null
 AVVER=`grep DATVersion update.ini | head -1 | cut -f2 -d= | sed -e 's/^\(4[0-9]*\).$/\1/'`
 if [ ! -f dat-$AVVER.tar ]; then
