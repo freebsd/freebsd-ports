@@ -3,13 +3,13 @@
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.13 1997/08/15 23:13:58 jmz Exp $
+# $Id: Makefile,v 1.14 1997/11/10 11:23:39 asami Exp $
 #
 
 DISTNAME=	psutils-p17
 PKGNAME=	psutils-${PAPERSIZE}-1.17
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk//pub/ajcd/
+MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	jmz@FreeBSD.org
 

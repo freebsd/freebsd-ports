@@ -3,14 +3,14 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.20 1997/09/16 01:03:26 max Exp $
+# $Id: Makefile,v 1.21 1997/11/23 17:02:37 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@58
 PKGNAME=		mailagent-3.0.58
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/RAM/
+MASTER_SITE_SUBDIR=	../../authors/id/RAM
 
 MAINTAINER=	max@FreeBSD.ORG
 

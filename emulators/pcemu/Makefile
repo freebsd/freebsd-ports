@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.7 1995/11/22 11:48:17 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/12 02:16:49 obrien Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
@@ -21,7 +21,7 @@ CATEGORIES=	emulators
 #
 # a selection of sites archie has been reporting:
 #
-MASTER_SITES+=	ftp://ftp.germany.eu.net//pub/os/Linux/Local.EUnet/ALPHA/dosemu/Misc/
+MASTER_SITES+=	ftp://ftp.germany.eu.net/pub/os/Linux/Local.EUnet/ALPHA/dosemu/Misc/
 MASTER_SITES+=	ftp://minnie.cs.adfa.oz.au/BSD/phillip/FreeBSD/pc-emulator/
 MASTER_SITES+=	ftp://ftp.iij.ad.jp/pub/linux/tsx-11/ALPHA/dosemu/Misc/
 #

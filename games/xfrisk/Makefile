@@ -3,14 +3,14 @@
 # Date created:        20 April 1997
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1997/11/19 00:04:02 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/19 03:43:53 asami Exp $
 #
 
 DISTNAME=	XFrisk-0.99c0pl9
 PKGNAME=	xfrisk-0.99c09
 CATEGORIES=	games
 MASTER_SITES=	$(MASTER_SITE_XCONTRIB)
-MASTER_SITE_SUBDIR=	games/multiplayer/
+MASTER_SITE_SUBDIR=	games/multiplayer
 
 MAINTAINER=	mph@pobox.com
 

@@ -3,7 +3,7 @@
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.3 1997/12/09 05:28:31 asami Exp $
+# $Id: Makefile,v 1.4 1997/12/10 11:25:41 jseger Exp $
 #
 
 DISTNAME=       ifmail-2.12
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.demos.su/unix/linux/source/fido/ \
 		ftp://ftp.average.org/ifmail/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
-MASTER_SITE_SUBDIR=	fido/mail/
+MASTER_SITE_SUBDIR=	fido/mail
 
 MAINTAINER=     dirk.meyer@dinoex.sub.org
 
