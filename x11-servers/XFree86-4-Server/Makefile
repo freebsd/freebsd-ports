@@ -7,6 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -125,7 +126,6 @@ PLIST_SUB+=	ALPHA_NA=""
 
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64_NA="@comment "
-PLIST_SUB+=	AMD64_I386=""
 MAN4+=		apm.4 \
 		chips.4 \
 		cirrus.4 \
@@ -139,7 +139,6 @@ MAN4+=		apm.4 \
 		vesa.4
 .else
 PLIST_SUB+=	AMD64_NA=""
-PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
 .if ${ARCH} == ia64
@@ -167,7 +166,6 @@ MAN4+=		glint.4 \
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
-PLIST_SUB+=	AMD64_I386=""
 MAN1+=		scanpci.1
 MAN4+=		apm.4 \
 		chips.4 \
@@ -186,6 +184,11 @@ MAN4+=		apm.4 \
 		vmware.4
 .else
 PLIST_SUB+=	I386="@comment "
+.endif
+
+.if ${ARCH} == i386 || ${ARCH} == amd64
+PLIST_SUB+=	AMD64_I386=""
+.else
 PLIST_SUB+=	AMD64_I386="@comment "
 .endif
 
