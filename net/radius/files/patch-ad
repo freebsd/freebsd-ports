@@ -1,6 +1,14 @@
-diff -ru orig/src/rad.kerberos.c ./src/rad.kerberos.c
---- orig/src/rad.kerberos.c	Wed Sep 18 11:34:21 1996
-+++ src/rad.kerberos.c	Sat Jul 26 17:33:30 1997
+--- src/rad.kerberos.c.orig	Wed Sep 18 17:34:21 1996
++++ src/rad.kerberos.c	Tue Aug 26 12:57:28 1997
+@@ -84,7 +84,7 @@
+ extern int      mit_passwd_to_key ();
+ extern int      afs_passwd_to_key ();
+ 
+-static int      krb_pass PROTO((AUTH_REQ *, int, char *));
++static int      krb_pass (AUTH_REQ *, int, char *);
+ 
+ #if defined(A_KERB)
+ static AATV     akrb_aatv =
 @@ -177,7 +177,8 @@
  #if defined(M_KERB)
  	if (strcmp (authreq->direct_aatv->id, "MKERB") == 0)
