@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.24 1999/04/14 00:26:56 scrappy Exp $
+# $Id: Makefile,v 1.25 1999/05/09 16:27:52 steve Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -56,8 +56,8 @@ SUID_EXES= 	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 		${PREFIX}/bin/faxrm ${PREFIX}/bin/faxalter
 
 post-install:
-	chown uucp ${SUID_EXES}
-	chmod 4555 ${SUID_EXES}
+	${CHOWN} uucp ${SUID_EXES}
+	${CHMOD} 4555 ${SUID_EXES}
 	@if [ ! -f ${PREFIX}/etc/rc.d/hylafax.sh.sample ]; then	\
 		${CP} ${FILESDIR}/hylafax.sh.sample ${PREFIX}/etc/rc.d;	\
 	fi

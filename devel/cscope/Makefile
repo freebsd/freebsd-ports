@@ -3,7 +3,7 @@
 # Date created:		1998-11-21
 # Whom:			Castor Fu
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/04/13 17:15:54 taoka Exp $
 #
 
 DISTNAME=	cscope-13.7
@@ -57,7 +57,7 @@ pre-extract:
 #
 
 post-extract:
-	@(chmod +w ${WRKSRC})
+	@(${CHMOD} +w ${WRKSRC})
 	@(for file in ${WRKSRC}/* ; do ${TR} -d '\015' < $$file > $$file.x ; ${MV} -f $$file.x $$file ; done)
 	@(for file in ${TRUNCATED_NAMES} ; do \
 		x=`echo $$file | ${SED} -e 's/^\(......\).*/\1/'` ; \

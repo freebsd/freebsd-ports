@@ -3,7 +3,7 @@
 # Date created:         28 December 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.7 1998/09/26 23:46:08 steve Exp $
+# $Id: Makefile,v 1.8 1999/07/18 06:02:55 cpiazza Exp $
 #
 
 DISTNAME=       bytebench-3.1
@@ -23,7 +23,7 @@ do-install:
 	${ECHO} "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
 	${ECHO} "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
 	${ECHO} "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
-	chmod 755 $(PREFIX)/bin/bytebench
+	${CHMOD} 755 $(PREFIX)/bin/bytebench
 	chmod 644 $(PREFIX)/lib/bytebench/Makefile
 	chmod 644 $(PREFIX)/lib/bytebench/README
 	chmod 755 $(PREFIX)/lib/bytebench/Run

@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1999/01/07 02:31:48 simokawa Exp $
+# $Id: Makefile,v 1.12 1999/07/21 14:55:38 marcel Exp $
 #
 
 DISTNAME=	ar302lin
@@ -36,7 +36,7 @@ post-install:
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat3/bin/acroread ${PREFIX}/bin && \
 	  ${RM} acroread.orig
 	@brandelf -t Linux ${PREFIX}/Acrobat3/Reader/intellinux/bin/acroread
-	@chmod +x ${PREFIX}/bin/acroread
+	@${CHMOD} +x ${PREFIX}/bin/acroread
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat3/Reader/License.pdf"
 

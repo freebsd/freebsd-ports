@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.29 1998/03/21 08:43:22 adam Exp $
+# $Id: Makefile,v 1.30 1998/07/20 16:30:13 adam Exp $
 #
 
 DISTNAME=	dgd-net-1.1p6
@@ -49,7 +49,7 @@ post-build:
 	@mv ${WRKDIR}/dgd/bin/precomp ${WRKDIR}/dgd/bin/precomp.net
 	@mv ${WRKDIR}/dgd/doc/Introduction ${WRKDIR}/dgd/doc/Introduction.NET
 	@mv ${WRKDIR}/dgd/doc/kfun/send_message ${WRKDIR}/dgd/doc/kfun/send_message.NET
-	@chmod o+r ${WRKDIR}/dgd/doc/kfun/*
+	@${CHMOD} o+r ${WRKDIR}/dgd/doc/kfun/*
 
 do-install:
 	@-mv ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old

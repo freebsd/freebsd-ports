@@ -3,7 +3,7 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/09/17 00:32:36 asami Exp $
+# $Id: Makefile,v 1.4 1999/01/12 16:51:18 vanilla Exp $
 #
 
 DISTNAME=	xdeblo_v1.0
@@ -22,7 +22,7 @@ NO_INSTALL_MANPAGES=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdeblo ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/X11/xdeblock/mapf
-	chmod 777 ${PREFIX}/lib/X11/xdeblock/mapf
+	${CHMOD} 777 ${PREFIX}/lib/X11/xdeblock/mapf
 	${INSTALL_DATA} ${WRKSRC}/mapf/*.txt ${PREFIX}/lib/X11/xdeblock/mapf
 
 .include <bsd.port.mk>

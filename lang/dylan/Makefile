@@ -3,7 +3,7 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id: Makefile,v 1.5 1999/04/21 06:52:09 mharo Exp $
+# $Id: Makefile,v 1.6 1999/04/22 07:42:45 nectar Exp $
 #
 
 DISTNAME=	gd-2.2.0
@@ -41,6 +41,6 @@ MAN7=		dylan.7 gwydion.7
 
 post-extract:
 	$(GUNZIP_CMD) -c $(DISTDIR)/d2c-2.2.0-FreeBSD.gz > $(WRKDIR)/d2c
-	chmod ugo+x $(WRKDIR)/d2c
+	${CHMOD} ugo+x $(WRKDIR)/d2c
 
 .include <bsd.port.mk>

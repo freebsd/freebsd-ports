@@ -3,7 +3,7 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.10 1998/10/13 23:46:16 jseger Exp $
+# $Id: Makefile,v 1.11 1999/06/06 12:51:53 jseger Exp $
 #
 
 DISTNAME=       pmf-1.13.1
@@ -21,7 +21,7 @@ pre-install:
 	@-mv ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
 	@tar -C ${WRKSRC}/../system_dir -cf - . \
 		| tar -C ${PREFIX}/lib/pmf -xf -
-	@chown -R bin.bin ${PREFIX}/lib/pmf
-	@chmod -R a-w ${PREFIX}/lib/pmf
+	@${CHOWN} -R bin.bin ${PREFIX}/lib/pmf
+	@${CHMOD} -R a-w ${PREFIX}/lib/pmf
 
 .include <bsd.port.mk>

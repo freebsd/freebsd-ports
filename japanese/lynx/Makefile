@@ -3,7 +3,7 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/07/04 13:51:00 shige Exp $
+# $Id: Makefile,v 1.5 1999/07/05 03:26:49 asami Exp $
 #
 
 DISTNAME=       lynx2.8.2rel.1
@@ -39,8 +39,8 @@ HELPFILE_SUFFIX= .gz
 post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} ; make install-doc)
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_DOCDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_DOCDIR}
 .endif
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_HELPDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_HELPDIR}
 
 .include <bsd.port.mk>

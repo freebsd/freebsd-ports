@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.39 1999/07/23 06:41:41 hosokawa Exp $
+# $Id: Makefile,v 1.40 1999/07/24 00:53:52 hosokawa Exp $
 #
 
 DISTNAME=	samba-2.0.5a
@@ -56,7 +56,7 @@ post-install:
 		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
 			${STARTUP_SCRIPT} ;				\
 	fi
-	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && chmod 1777 ${SAMBA_SPOOL}
+	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}
 	@if [ ! -f ${SAMPLE_CONFIG} ]; then				\
 		${SED} -e 's!%%SAMBA_SPOOL%%!${SAMBA_SPOOL}!'		\
 			-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'	\
@@ -67,16 +67,16 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 	if [ ! -d ${SAMBA_PRIVATE} ] ; then				\
 		${MKDIR} ${SAMBA_PRIVATE} ;				\
-		chown root.wheel ${SAMBA_PRIVATE} ;			\
+		${CHOWN} root.wheel ${SAMBA_PRIVATE} ;			\
 	fi
-	chmod 700 ${SAMBA_PRIVATE}
+	${CHMOD} 700 ${SAMBA_PRIVATE}
 	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
 		${CAT} /etc/passwd | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd ; \
-		chmod 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
+		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
 	fi
-	chmod 500 ${SAMBA_PRIVATE}
-	chown root.wheel ${PREFIX}/bin/smbpasswd
-	chmod 111 ${PREFIX}/bin/smbpasswd
+	${CHMOD} 500 ${SAMBA_PRIVATE}
+	${CHOWN} root.wheel ${PREFIX}/bin/smbpasswd
+	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/samba

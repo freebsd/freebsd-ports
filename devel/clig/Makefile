@@ -3,7 +3,7 @@
 # Date created:        27 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.5 1998/12/29 18:22:56 billf Exp $
+# $Id: Makefile,v 1.6 1999/08/07 20:44:32 billf Exp $
 #
 
 DISTNAME=	clig-1.1.3
@@ -24,7 +24,7 @@ MAKE_ENV=	tclsh=${PREFIX}/bin/tclsh8.0
 PLIST_SUB=	VERSION=${DISTNAME}
 
 do-patch:
-	@/usr/sbin/chmod a+r ${WRKSRC}/CHANGES
+	@${CHMOD} a+r ${WRKSRC}/CHANGES
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
 	@${SED} -e 's#prefix =~/tools#prefix =${PREFIX}/share#' \
 	       -e 's#LROOT =~/tools#LROOT =${PREFIX}#' \

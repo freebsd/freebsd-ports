@@ -3,7 +3,7 @@
 # Date created:				14 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/05 03:05:57 cpiazza Exp $
 #
 
 DISTNAME=	omega-0.90-pa4
@@ -20,15 +20,15 @@ MAN6=		omega.6
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/docs/omega.6 ${PREFIX}/man/man6
-	@ chown games:games ${PREFIX}/bin/omega
-	@ chmod 4711 ${PREFIX}/bin/omega
+	@ ${CHOWN} games:games ${PREFIX}/bin/omega
+	@ ${CHMOD} 4711 ${PREFIX}/bin/omega
 	@ ${MKDIR} ${PREFIX}/share/omega
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/omega
 	@ ${RM} ${PREFIX}/share/omega/license.old
-	@ chmod 0600 ${PREFIX}/share/omega/omega.hi
-	@ chmod 0600 ${PREFIX}/share/omega/omega.log
+	@ ${CHMOD} 0600 ${PREFIX}/share/omega/omega.hi
+	@ ${CHMOD} 0600 ${PREFIX}/share/omega/omega.log
 	@ ${CP} ${PREFIX}/share/omega/omega.hi ${PREFIX}/share/omega/omegahi.bak
-	@ chown -R games:games ${PREFIX}/share/omega
+	@ ${CHOWN} -R games:games ${PREFIX}/share/omega
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:11 asami Exp $
+# $Id: Makefile,v 1.7 1999/05/29 09:43:06 mharo Exp $
 #
 
 DISTNAME=	hobbes-icons-xpm3
@@ -24,7 +24,7 @@ LIBDIR=		${PREFIX}/include/X11/pixmaps
 do-install:
 	${MKDIR} ${LIBDIR}
 	${CP} -R ${WRKSRC}/* ${LIBDIR}
-	chown -R ${BINOWN}:${BINGRP} ${LIBDIR}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${LIBDIR}
 	-${RM} ${LIBDIR}/README
 	-${RM} ${LIBDIR}/readem.shar
 

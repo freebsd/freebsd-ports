@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.20 1999/02/22 03:56:51 steve Exp $
+# $Id: Makefile,v 1.21 1999/06/10 08:00:06 steve Exp $
 #
 
 DISTNAME=	c-news
@@ -57,17 +57,17 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${PREFIX}/lib
 	${MKDIR} ${NEWSSPOOL} ${NEWSBIN} ${NEWSLIB}
 	-ln -s ${NEWSSPOOL} /var/news
-	chown news.news ${NEWSSPOOL} ${NEWSLIB}
-	chown bin.bin ${NEWSBIN}
+	${CHOWN} news.news ${NEWSSPOOL} ${NEWSLIB}
+	${CHOWN} bin.bin ${NEWSBIN}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${NEWSBIN}/pgpverify
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
 .for f in checknews cnewsdo inews injnews postnews readnews
-	chown bin.bin ${PREFIX}/bin/$f
+	${CHOWN} bin.bin ${PREFIX}/bin/$f
 .endfor
-	chown news.news ${NEWSBIN}/input/newsspool
-	chmod 6755 ${NEWSBIN}/input/newsspool
+	${CHOWN} news.news ${NEWSBIN}/input/newsspool
+	${CHMOD} 6755 ${NEWSBIN}/input/newsspool
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man1
 .endfor

@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:54:20 max Exp $
+# $Id: Makefile,v 1.3 1997/10/10 06:53:40 obrien Exp $
 #
 
 DISTNAME=	vnless
@@ -20,8 +20,8 @@ MAN1=		vnless.1 vnlesskey.1
 
 post-install:
 	@strip ${PREFIX}/bin/vnless*
-	@chmod a+rx ${PREFIX}/bin/vnless*
-	@chmod a+r ${PREFIX}/share/misc/vnless.help
-	@chmod a+r ${PREFIX}/man/man1/vnless*.1*
+	@${CHMOD} a+rx ${PREFIX}/bin/vnless*
+	@${CHMOD} a+r ${PREFIX}/share/misc/vnless.help
+	@${CHMOD} a+r ${PREFIX}/man/man1/vnless*.1*
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         22 Mar 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.12 1997/01/03 09:37:10 obrien Exp $
+# $Id: Makefile,v 1.13 1997/12/25 22:29:19 asami Exp $
 #
 
 DISTNAME=       xemeraldia-0.3
@@ -28,7 +28,7 @@ do-extract:
 
 post-install:
 	touch ${PREFIX}/lib/X11/.xemeraldia.scores
-	chmod 666 ${PREFIX}/lib/X11/.xemeraldia.scores
+	${CHMOD} 666 ${PREFIX}/lib/X11/.xemeraldia.scores
 
 pre-clean:
 	@${RM} -f ${DISTDIR}/${DISTNAME}.tar.gz

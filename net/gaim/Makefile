@@ -3,7 +3,7 @@
 # Date created:			26 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/08/07 09:31:45 cpiazza Exp $
+# $Id: Makefile,v 1.7 1999/08/12 09:20:43 jim Exp $
 #
 
 DISTNAME=	gaim-0.9.7
@@ -26,7 +26,7 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/gaim ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/gaim/pixmaps && chmod a+rx ${PREFIX}/share/gaim/pixmaps
+	@${MKDIR} ${PREFIX}/share/gaim/pixmaps && ${CHMOD} a+rx ${PREFIX}/share/gaim/pixmaps
 	@${ECHO} "===>   Installing pixmaps"
 	@${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/share/gaim/pixmaps
 

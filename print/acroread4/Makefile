@@ -3,7 +3,7 @@
 # Date created:		16 November 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1999/06/17 02:29:24 dima Exp $
+# $Id: Makefile,v 1.15 1999/07/21 14:55:39 marcel Exp $
 #
 
 DISTNAME=	linux-ar-40
@@ -34,7 +34,7 @@ post-install:
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
 	     ${PREFIX}/bin/acroread4 && ${RM} acroread.orig
 	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
-	@chmod +x ${PREFIX}/bin/acroread4
+	@${CHMOD} +x ${PREFIX}/bin/acroread4
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
 

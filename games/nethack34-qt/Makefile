@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1999/01/27 07:41:13 fenner Exp $
+# $Id: Makefile,v 1.22 1999/05/29 10:57:29 andreas Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -47,15 +47,15 @@ pre-build:
 	(cd ${WRKSRC}/util; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} tile2x11 )
 
 post-install:
-	@ cd ${WRKSRC}/doc; chmod 644 *.6
+	@ cd ${WRKSRC}/doc; ${CHMOD} 644 *.6
 	@ cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/nethack
 	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
 .endif
 	@ cd ${PREFIX}/lib/nethackdir; tar xzf ${DISTDIR}/${QT_SOUND}
-	@ cd ${PREFIX}/lib/nethackdir; chown games.games *.au .nethackrc
-	@ cd ${PREFIX}/lib/nethackdir; chmod 444 *.au .nethackrc
+	@ cd ${PREFIX}/lib/nethackdir; ${CHOWN} games.games *.au .nethackrc
+	@ cd ${PREFIX}/lib/nethackdir; ${CHMOD} 444 *.au .nethackrc
 	@ ${ECHO}  "-----------------------"
 	@ ${ECHO}  "post-installation hints
 	@ ${ECHO}  "-----------------------"

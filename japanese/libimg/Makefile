@@ -3,7 +3,7 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:08:14 steve Exp $
+# $Id: Makefile,v 1.2 1999/05/03 04:10:45 steve Exp $
 #
 
 DISTNAME=	img1.2b2
@@ -28,7 +28,7 @@ TKVERSION=	8.0
 PORTDOCDIR=	${PREFIX}/share/doc/img
 
 pre-configure:
-	chmod 755 ${WRKSRC}/configure
+	${CHMOD} 755 ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 

@@ -3,7 +3,7 @@
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.81 1999/06/18 20:02:11 ache Exp $
+# $Id: Makefile,v 1.82 1999/06/24 19:29:50 obrien Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
@@ -58,14 +58,17 @@ MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \
 	scp2.1 sftp2.1
 MAN8=	sshd2.8
 
+MLINKS=	ssh2.1 ssh.1 \
+	ssh-keygen2.1 ssh-keygen.1 \
+	ssh-add2.1 ssh-add.1 \
+	ssh-agent2.1 ssh-agent.1 \
+	scp2.1 scp.1 \
+	sftp2.1 sftp.1 \
+	sshd2.8 sshd.8
+
 PORTDOCS=	CHANGES LICENSING README
 .if !defined(USE_SSH1) || (defined(USE_SSH1) && ${USE_SSH1} != YES)
 PLIST=		${PKGDIR}/PLIST.ssh2_only
-.endif
-.if defined(NOMANCOMPRESS)
-MAN_SUFX=	""
-.else
-MAN_SUFX=	.gz
 .endif
 
 post-install:
@@ -74,15 +77,6 @@ post-install:
 	${MV} -f ${PREFIX}/man/man1/${i}.1${MAN_SUFX} ${PREFIX}/man/man1/${i}.old.1${MAN_SUFX}
 .endfor
 	${MV} -f ${PREFIX}/man/man8/sshd.8${MAN_SUFX} ${PREFIX}/man/man8/sshd.old.8${MAN_SUFX}
-.endif
-#
-.if !defined(NOMANCOMPRESS)
-.for i in ssh ssh-keygen ssh-add ssh-agent scp sftp
-	${RM} -f ${PREFIX}/man/man1/${i}.1
-	${LN} -sf ${i}2.1.gz ${PREFIX}/man/man1/${i}.1.gz
-.endfor
-	${RM} -f ${PREFIX}/man/man8/sshd.8
-	${LN} -sf sshd2.8.gz ${PREFIX}/man/man8/sshd.8.gz
 .endif
 #
 .if !defined(NOPORTDOCS)
@@ -96,7 +90,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
 		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
 .include <bsd.port.mk>

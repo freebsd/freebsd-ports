@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/08/01 02:29:39 steve Exp $
+# $Id: Makefile,v 1.5 1999/08/17 19:08:35 shige Exp $
 #
 
 DISTNAME=	skk9.6
@@ -42,7 +42,7 @@ post-install:
 		${ECHO} '	echo "usage: $$0 {start|stop}" 1>&2' >> ${STARTUP_SCRIPT}; \
 		${ECHO} "	;;" >> ${STARTUP_SCRIPT}; \
 		${ECHO} 'esac' >> ${STARTUP_SCRIPT}; \
-		chmod ${BINMODE} ${STARTUP_SCRIPT}; \
+		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi
 
 .include <bsd.port.mk>

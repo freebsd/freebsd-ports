@@ -3,7 +3,7 @@
 # Date created:         20 Oct 1998
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.4 1998/10/28 22:48:35 steve Exp $
+# $Id: Makefile,v 1.5 1999/01/18 02:58:54 steve Exp $
 #
 
 DISTNAME=	skill-3.7@P6
@@ -22,6 +22,6 @@ MAN1=		skill.1
 MLINKS=		skill.1 snice.1
 
 pre-configure:
-	@chmod a+x ${WRKSRC}/Config
+	@${CHMOD} a+x ${WRKSRC}/Config
 
 .include <bsd.port.mk>

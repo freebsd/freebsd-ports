@@ -3,7 +3,7 @@
 # Date created:         01 May 1998
 # Whom:                 tonym
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/28 07:07:25 cpiazza Exp $
 #
 
 DISTNAME=       Generic-NQS-3.50.4
@@ -89,7 +89,7 @@ MAN1=	nqs.1 nqsconfig.1 nqsgs.1 nqsrn.1\
 pre-configure:
 	@ ${CP} ${FILESDIR}/${TEMPLATE} ${PLATFORMDIR}/${PLATFORM}; \
 	${CP}   ${FILESDIR}/${DUMMYMAKE} ${WRKSRC}; \
-	chmod 555 ${WRKDIR}/${DISTNAME}/Source-Tree/SETUP/all-systems/*
+	${CHMOD} 555 ${WRKDIR}/${DISTNAME}/Source-Tree/SETUP/all-systems/*
 
 #
 # Install system boot startup file but need to find out exactly where

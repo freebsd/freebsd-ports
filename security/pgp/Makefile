@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.23 1999/02/07 06:29:53 ache Exp $
+# $Id: Makefile,v 1.24 1999/05/07 03:26:25 jseger Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -27,8 +27,7 @@ do-install:
 	cd ${WRKSRC}/../doc; \
 		  install -c -o bin -g bin -m 444 pgp.1 ${PREFIX}/man/man1
 	-mkdir -p ${PGPLIB}
-	chown bin.bin ${PGPLIB}
-	chmod 555 ${PGPLIB}
+	${CHMOD} 555 ${PGPLIB}
 	cd ${WRKSRC}/..; \
 	    install -c -o bin -g bin -m 444 pgp.hlp \
 			      doc/pgpdoc1.txt doc/pgpdoc2.txt ${PGPLIB}; \

@@ -3,7 +3,7 @@
 # Date created:		15 Oct 1997
 # Whom:			Ian Vaudrey <i.vaudrey@cableinet.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/09 00:28:23 steve Exp $
 #
 
 DISTNAME=	xiuni23d
@@ -17,7 +17,7 @@ MAINTAINER=	i.vaudrey@cableinet.co.uk
 NO_WRKSUBDIR=	yes
 
 do-build:
-	@/bin/chmod +x ${WRKSRC}/xibuild
+	@${CHMOD} +x ${WRKSRC}/xibuild
 	@${SETENV} TOPDIR=${WRKSRC} ${SH} ${WRKSRC}/xibuild
 
 do-install:
@@ -26,7 +26,7 @@ do-install:
 	@${CAT} ${FILESDIR}/defaults.cfg.tmpl | ${SED} s:PREFIX:${PREFIX}: > ${WRKDIR}/defaults.cfg
 	@${INSTALL_DATA} ${WRKDIR}/defaults.cfg ${PREFIX}/xitami
 	@${INSTALL_DATA} ${FILESDIR}/xitami.aut ${PREFIX}/xitami
-	@/bin/chmod u+w ${PREFIX}/xitami/*
+	@${CHMOD} u+w ${PREFIX}/xitami/*
 	@${INSTALL_DATA} ${WRKSRC}/src/smt/xitami.cfg ${PREFIX}/xitami
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/smt/xitami ${PREFIX}/xitami
 	@${INSTALL_PROGRAM} ${WRKSRC}/cgi-src/testcgi ${PREFIX}/xitami/cgi-bin

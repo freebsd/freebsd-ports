@@ -3,7 +3,7 @@
 # Date created:		19 June 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/09/17 06:29:25 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:28 asami Exp $
 #
 
 DISTNAME=	femlab-2d-v1.1
@@ -29,7 +29,7 @@ do-install:
 	${MKDIR} ${FEMLAB_HOME}/config
 	${INSTALL_DATA} ${WRKSRC}/config/modules ${FEMLAB_HOME}/config
 	${SED} -e "s|@@FEMLAB_HOME@@|${FEMLAB_HOME}|" <${FILESDIR}/femlab.sh >${PREFIX}/bin/femlab
-	chmod +x ${PREFIX}/bin/femlab
+	${CHMOD} +x ${PREFIX}/bin/femlab
 
 post-install:
 .if !defined(NOPORTDOCS)

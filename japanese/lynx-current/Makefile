@@ -3,7 +3,7 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/02/28 09:09:48 shige Exp $
+# $Id: Makefile,v 1.7 1999/05/23 11:57:18 shige Exp $
 #
 
 DISTNAME=	lynx2.8.2pre.5
@@ -27,9 +27,9 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lynx.cfg ${PREFIX}/etc/lynx.cfg.sample
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} ; make install-doc)
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/lynx
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/lynx
 	@${INSTALL_DATA} ${WRKSRC}/lynx.cfg ${PREFIX}/share/doc/lynx/samples/
 .endif
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lynx_help
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lynx_help
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 # Date created:         Mon Oct 28, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1997/08/25 06:18:14 obrien Exp $
+# $Id: Makefile,v 1.5 1997/10/10 06:53:35 obrien Exp $
 #
 
 DISTNAME=	spim5.9
@@ -27,7 +27,7 @@ pre-configure:
 	@${RM} -f ${WRKSRC}/y.tab.*
 	
 pre-install:
-	@${MKDIR} ${PREFIX}/share/spim && chmod a+rx ${PREFIX}/share/spim
+	@${MKDIR} ${PREFIX}/share/spim && ${CHMOD} a+rx ${PREFIX}/share/spim
 
 post-install:
 	[ -e ${PREFIX}/bin/cl-spim ] &&  \
@@ -37,7 +37,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "Installing spim/xspim documentation"
 	@${MKDIR} ${PREFIX}/share/doc/spim  \
-		&& chmod a+rx ${PREFIX}/share/doc/spim
+		&& ${CHMOD} a+rx ${PREFIX}/share/doc/spim
 	${INSTALL_DATA} ${WRKSRC}/Documentation/spim.ps  \
 		${PREFIX}/share/doc/spim
 	${INSTALL_DATA} ${WRKSRC}/Documentation/cycle.ps  \

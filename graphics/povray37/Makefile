@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.14 1999/06/07 12:03:44 kris Exp $
+# $Id: Makefile,v 1.15 1999/06/22 17:18:22 steve Exp $
 #
 
 DISTNAME=	povray3
@@ -40,7 +40,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
 	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
-	@chmod -R og-r ${POVLIB}
-	@chmod -R a+r ${POVLIB}
+	@${CHMOD} -R og-r ${POVLIB}
+	@${CHMOD} -R a+r ${POVLIB}
 
 .include <bsd.port.mk>

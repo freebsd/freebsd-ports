@@ -3,7 +3,7 @@
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/01/12 16:51:28 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/01/27 07:41:14 fenner Exp $
 #
 
 DISTNAME=	xshogi-1.2p03
@@ -26,8 +26,8 @@ post-configure:
 
 post-install:
 	@strip ${PREFIX}/bin/xshogi
-	@chmod 755 ${PREFIX}/bin/xshogi
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshogi
+	@${CHMOD} 755 ${PREFIX}/bin/xshogi
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshogi
 	${INSTALL_MAN} ${WRKSRC}/xshogi.man ${PREFIX}/man/man6/xshogi.6
 
 .include <bsd.port.mk>

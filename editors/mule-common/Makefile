@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.41 1999/06/05 22:29:22 mharo Exp $
+# $Id: Makefile,v 1.42 1999/07/01 23:15:54 sada Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -154,9 +154,9 @@ post-install:
 		${ECHO} "else" >> ${STARTUP_SCRIPT}; \
 		${ECHO} "     mkdir -p /var/run/emacs/lock" >> ${STARTUP_SCRIPT}; \
 		${ECHO} "fi" >> ${STARTUP_SCRIPT} ; \
-		${ECHO} "chmod 1777 /var/run/emacs/lock${lockdir}" >> ${STARTUP_SCRIPT} ; \
-		chmod 755 ${STARTUP_SCRIPT} ;				\
-		chown bin.bin ${STARTUP_SCRIPT};			\
+		${ECHO} "${CHMOD} 1777 /var/run/emacs/lock${lockdir}" >> ${STARTUP_SCRIPT} ; \
+		${CHMOD} 755 ${STARTUP_SCRIPT} ;				\
+		${CHOWN} bin.bin ${STARTUP_SCRIPT};			\
 	fi
 
 post-package:

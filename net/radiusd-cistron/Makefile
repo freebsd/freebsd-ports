@@ -3,7 +3,7 @@
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
-# $Id: Makefile,v 1.5 1999/07/22 23:25:07 billf Exp $
+# $Id: Makefile,v 1.6 1999/08/01 04:07:50 steve Exp $
 #
 
 DISTNAME=	radiusd-cistron-1.5.4.3
@@ -70,7 +70,7 @@ do-install:
 post-install:
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=g" ${FILESDIR}/radiusd.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/radiusd.sh
-	@chmod 555 ${PREFIX}/etc/rc.d/radiusd.sh
-	@chown root.wheel ${PREFIX}/etc/rc.d/radiusd.sh
+	@${CHMOD} 555 ${PREFIX}/etc/rc.d/radiusd.sh
+	@${CHOWN} root.wheel ${PREFIX}/etc/rc.d/radiusd.sh
 
 .include <bsd.port.mk>

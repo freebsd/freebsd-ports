@@ -3,7 +3,7 @@
 # Date Created:		2 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/18 03:09:05 jseger Exp $
 #
 
 DISTNAME=	STLport-3.01
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 
 pre-configure:
-	chmod +x ${WRKSRC}/configure
+	${CHMOD} +x ${WRKSRC}/configure
 
 do-install:
 	${MKDIR} ${PREFIX}/include/stlport

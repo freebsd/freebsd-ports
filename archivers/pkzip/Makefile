@@ -3,7 +3,7 @@
 # Date created:         17 Mar 1999
 # Whom:                 xxx
 #
-# $Id: Makefile,v 1.2 1999/05/24 02:02:55 steve Exp $
+# $Id: Makefile,v 1.3 1999/07/21 14:55:26 marcel Exp $
 #
 
 DISTNAME=       pklin251
@@ -27,7 +27,7 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${MKDIR} ${WRKSRC}
 	${CP} ${PORTSDIR}/distfiles/${DISTFILES} ${WRKSRC}/.
-	chmod 700 ${WRKSRC}/${DISTFILES}
+	${CHMOD} 700 ${WRKSRC}/${DISTFILES}
 	cd ${WRKSRC} && \
 	    ./${DISTFILES}
 

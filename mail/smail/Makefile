@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.21 1998/09/17 10:53:27 asami Exp $
+# $Id: Makefile,v 1.22 1999/05/02 20:27:11 torstenb Exp $
 #
 
 DISTNAME=	smail-3.2.0.106
@@ -15,7 +15,9 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 MAINTAINER=	torstenb@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident
+.if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
+.endif
 
 INSTALL_TARGET=	install installman
 
@@ -37,28 +39,28 @@ replace:
 	if [ -e /usr/sbin/sendmail ]; then \
 		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK; \
 		if [ -f /usr/sbin/sendmail.BAK ]; then \
-			chmod 0 /usr/sbin/sendmail.BAK; \
+			${CHMOD} 0 /usr/sbin/sendmail.BAK; \
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/smail ]; then \
-		cp -fp ${PREFIX}/bin/smail /usr/sbin/sendmail; \
+		${CP} -fp ${PREFIX}/bin/smail /usr/sbin/sendmail; \
 	fi
 	if [ -f /usr/sbin/mailstats ]; then \
-		chmod 0 /usr/sbin/mailstats; \
+		${CHMOD} 0 /usr/sbin/mailstats; \
 	fi
 	if [ -e /usr/bin/newaliases ]; then \
 		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.BAK; \
 		if [ -f /usr/bin/newaliases.BAK ]; then \
-			chmod 0 /usr/bin/newaliases.BAK; \
+			${CHMOD} 0 /usr/bin/newaliases.BAK; \
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/newaliases ]; then \
-		cp -fp ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
+		${CP} -fp ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
 	fi
 	if [ -e /usr/bin/mailq ]; then \
 		${MV} -f /usr/bin/mailq /usr/bin/mailq.BAK; \
 		if [ -f /usr/bin/mailq.BAK ]; then \
-			chmod 0 /usr/bin/mailq.BAK; \
+			${CHMOD} 0 /usr/bin/mailq.BAK; \
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/mailq ]; then \

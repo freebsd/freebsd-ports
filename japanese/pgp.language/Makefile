@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.5 1999/02/03 11:11:49 asami Exp $
+# $Id: Makefile,v 1.6 1999/05/01 12:34:27 jseger Exp $
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
@@ -32,8 +32,8 @@ OBJS=		language.txt ${PGP_LANG}.hlp README.${PGP_LANG}
 do-install:
 	-[ -d ${PGPLIB} ] || { \
 		${MKDIR} ${PGPLIB} ; \
-		chown bin.bin ${PGPLIB} ; \
-		chmod 555 ${PGPLIB} ; }
+		${CHOWN} bin.bin ${PGPLIB} ; \
+		${CHMOD} 555 ${PGPLIB} ; }
 	-[ -f ${PGPLIB}/language.txt ] && \
 		${MV} ${PGPLIB}/language.txt ${PGPLIB}/language.txt.bak
 	@cd ${WRKSRC}; \

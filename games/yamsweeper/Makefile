@@ -3,7 +3,7 @@
 # Date created:		14 Sep 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/01/03 09:38:01 obrien Exp $
+# $Id: Makefile,v 1.5 1998/09/28 02:25:34 steve Exp $
 #
 
 DISTNAME=       yamsweeper-1.9
@@ -20,7 +20,7 @@ pre-configure:
 	@cp ${FILESDIR}/Imakefile ${WRKSRC}
 
 post-install:
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/man/man1/yamsweeper.1.gz
-	@/usr/sbin/chown games.${BINGRP} ${X11BASE}/lib/X11/app-defaults/Yamsweeper
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/man/man1/yamsweeper.1.gz
+	@${CHOWN} games.${BINGRP} ${X11BASE}/lib/X11/app-defaults/Yamsweeper
 
 .include <bsd.port.mk>

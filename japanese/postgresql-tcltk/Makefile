@@ -3,7 +3,7 @@
 # Date created:		25 Nov 1998
 # Whom:			Ichiro Fukuhara <ichiro@ichiro.org>
 #
-# $Id: Makefile,v 1.7 1999/04/17 18:38:44 max Exp $
+# $Id: Makefile,v 1.8 1999/04/17 19:43:23 max Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
@@ -146,14 +146,14 @@ post-install:
 		${ECHO} "#export TZ" \
 			>> ${PREFIX}/${INSTALL_DIR}/.profile; \
 	fi
-	@ chown -R ${PGSQL_UID}:${PGSQL_GID} ${PREFIX}/${INSTALL_DIR}
+	@ ${CHOWN} -R ${PGSQL_UID}:${PGSQL_GID} ${PREFIX}/${INSTALL_DIR}
 	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
 	@ ${LDCONFIG} -m ${PREFIX}/${INSTALL_DIR}/lib
 	@ /usr/bin/su -l ${PGSQL_UID} -c '${PREFIX}/${INSTALL_DIR}/bin/initdb --pglib=${PREFIX}/${INSTALL_DIR}/lib --pgdata=${PREFIX}/${INSTALL_DIR}/data'
 	@ ${SED} "s=!!PG_PATH!!=${PREFIX}/${INSTALL_DIR}=g ; s=!!PGSQL_UID!!=${PGSQL_UID}=g" \
 		< ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/etc/rc.d/pgsql.sh
-	@ chmod 554 ${PREFIX}/etc/rc.d/pgsql.sh
-	@ chown root.${PGSQL_GID} ${PREFIX}/etc/rc.d/pgsql.sh
+	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
+	@ ${CHOWN} root.${PGSQL_GID} ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/${INSTALL_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${INSTALL_DIR}

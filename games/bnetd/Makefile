@@ -3,7 +3,7 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.6 1999/08/03 03:42:07 cpiazza Exp $
+# $Id: Makefile,v 1.7 1999/08/12 00:27:08 taoka Exp $
 #
 
 DISTNAME=	bnetd-0.4.16
@@ -34,7 +34,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/bnetd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/bnetd.sh; \
 		${ECHO} "cd ${PREFIX}; [ -x sbin/bnetd -a -f bnetd/conf/bnetd.conf ] && sbin/bnetd -c bnetd/conf/bnetd.conf > /dev/null && ${ECHO} -n ' bnetd'" >> ${PREFIX}/etc/rc.d/bnetd.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/bnetd.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/bnetd.sh; \
 	fi
 
 .include <bsd.port.mk>

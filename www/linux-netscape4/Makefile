@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1999/02/22 04:31:40 steve Exp $
+# $Id: Makefile,v 1.9 1999/07/21 14:55:40 marcel Exp $
 #
 
 DISTNAME=	communicator-v408-export.x86-unknown-linux2.0_libc5
@@ -35,7 +35,7 @@ do-install:
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/nls ${NDIR}/movemail-src ${NDIR}/XKeysymDB
-	chown -R ${BINOWN}.${BINGRP} ${NDIR}
+	${CHOWN} -R ${BINOWN}.${BINGRP} ${NDIR}
 
 post-install:
 	@${CAT} ${PKGDIR}/DESCR

@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.77 1999/07/16 06:09:42 mharo Exp $
+# $Id: Makefile,v 1.78 1999/08/09 17:12:44 markm Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -108,7 +108,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
 		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
-		/bin/chmod 751 ${PREFIX}/etc/rc.d/sshd.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
 .include <bsd.port.pre.mk>

@@ -3,7 +3,7 @@
 # Date created:				1998-nov-01
 # Whom:					Berend de Boer <berend@pobox.com>
 #
-# $Id: Makefile,v 1.2 1998/12/26 19:42:05 obrien Exp $
+# $Id: Makefile,v 1.3 1999/06/22 16:42:42 steve Exp $
 #
 
 DISTNAME=	IB_4.0_FreeBSD
@@ -35,7 +35,7 @@ do-fetch:
 do-install:
 	@${MKDIR} ${IB_PATH}
 	@[ -d ${PREFIX}/lib/aout ] || ${MKDIR} ${PREFIX}/lib/aout
-	@chmod 777 ${IB_PATH}
+	@${CHMOD} 777 ${IB_PATH}
 	@(cd ${IB_PATH}; tar xfv ${ARCHIVE})
 	@ln -sf ${IB_PATH}/include/gds.h   ${PREFIX}/include/gds.h
 	@ln -sf ${IB_PATH}/include/ibase.h ${PREFIX}/include/ibase.h
@@ -45,11 +45,11 @@ do-install:
 	@ln -sf ${IB_PATH}/lib/gdsintl     ${PREFIX}/lib/aout/libgdsintl.so
 	@ln -sf libgdslib.so.1.0	   ${PREFIX}/lib/aout/libgdslib.so
 	@${TOUCH} ${IB_PATH}/isc_event.gbl.localhost
-	@chmod 777 ${IB_PATH}/isc_event.gbl.localhost
+	@${CHMOD} 777 ${IB_PATH}/isc_event.gbl.localhost
 	@${ECHO} "Building Interbase sample databases."
 	@${LDCONFIG} -aout -m ${PREFIX}/lib/aout
 .for file in isc4.gdb help/help.gdb examples/v3/atlas.gdb examples/v3/emp.gdb examples/v4/employee.gdb examples/v4/intlemp.gdb
-	@chmod uog=rw ${IB_PATH}/${file}
+	@${CHMOD} uog=rw ${IB_PATH}/${file}
 .endfor
 	@ln -sf ${IB_PATH} /usr/interbase
 

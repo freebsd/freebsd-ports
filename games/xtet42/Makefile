@@ -3,7 +3,7 @@
 # Date created:        14 Feb 1999
 # Whom:                gmarco@scotty.masternet.it
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/19 04:21:27 steve Exp $
 #
 
 DISTNAME= 	xtet42-2.21
@@ -20,8 +20,8 @@ MAN6=	xtet42.6
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/X11/xtet42
-	@chown games:games ${PREFIX}/lib/X11/xtet42
-	@chmod 775 ${PREFIX}/lib/X11/xtet42
+	@${CHOWN} games:games ${PREFIX}/lib/X11/xtet42
+	@${CHMOD} 775 ${PREFIX}/lib/X11/xtet42
 	${INSTALL} -c -m 2755 -g games ${WRKSRC}/xtet42 ${PREFIX}/bin
 	${INSTALL} -c -m 664  -g games ${WRKSRC}/xtet42.hiscore ${PREFIX}/lib/X11/xtet42/.xtet42.hiscore
 	${INSTALL} -c -m 664  -g games ${WRKSRC}/xtet42.hiscore.single ${PREFIX}/lib/X11/xtet42/.xtet42.hiscore.single

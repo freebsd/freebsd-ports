@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.26 1999/01/25 22:06:11 gj Exp $
+# $Id: Makefile,v 1.27 1999/02/03 23:44:25 steve Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -74,9 +74,9 @@ post-install:
 	strip ${PREFIX}/bin/${file}
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
-	chmod 1777 /var/run/emacs/lock
-	chmod 755 ${PREFIX}/lib/xemacs/site-lisp
-	chmod 755 ${PREFIX}/share/emacs/site-lisp
+	${CHMOD} 1777 /var/run/emacs/lock
+	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
+	${CHMOD} 755 ${PREFIX}/share/emacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
 # install xemacs20.sh into ${PREFIX}/etc/rc.d
 	@if [ ! -d ${PREFIX}/etc/rc.d ]; then mkdir -p ${PREFIX}/etc/rc.d; fi

@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1), 14 Feb 1999 (2.2)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.31 1999/05/02 20:28:00 torstenb Exp $
+# $Id: Makefile,v 1.32 1999/05/12 07:26:27 torstenb Exp $
 #
 
 DISTNAME=	inn-2.2
@@ -58,6 +58,6 @@ MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
 
 post-install:
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
-		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
+		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				1 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/04 00:40:47 steve Exp $
 #
 
 DISTNAME=		mirrormagic-1.3
@@ -36,7 +36,7 @@ do-install:
 .for file in CHANGES COPYRIGHT DISCLAIMER README
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mirrormagic
 .endfor
-#	@ chmod a=rwx ${PREFIX}/share/mirrormagic/data
-	@ chmod a=rw  ${PREFIX}/share/mirrormagic/data/RAY.*
+#	@ ${CHMOD} a=rwx ${PREFIX}/share/mirrormagic/data
+	@ ${CHMOD} a=rw  ${PREFIX}/share/mirrormagic/data/RAY.*
 
 .include <bsd.port.mk>

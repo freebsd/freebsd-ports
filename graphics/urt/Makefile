@@ -3,7 +3,7 @@
 # Date created:		Jan 5 1997
 # Whom:			cfs@ing.puc.cl (original)
 #
-# $Id: Makefile,v 1.12 1999/01/10 18:11:45 steve Exp $
+# $Id: Makefile,v 1.13 1999/02/03 11:11:47 asami Exp $
 #
 
 DISTNAME=	urt
@@ -68,9 +68,9 @@ post-install:
 	${RM} -rf doc; \
 	cd ${PREFIX}/share/examples/urt; \
 	${TAR} xf $(DISTDIR)/urt-img.tar; \
-	chown -R root:wheel . ; \
-	find . -type d -exec chmod 775 '{}' \; ; \
-	find . -type f -exec chmod 664 '{}' \;
+	${CHOWN} -R root:wheel . ; \
+	find . -type d -exec ${CHMOD} 775 '{}' \; ; \
+	find . -type f -exec ${CHMOD} 664 '{}' \;
 .endif
 
 .include <bsd.port.mk>

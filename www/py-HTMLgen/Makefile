@@ -3,7 +3,7 @@
 # Date created:				03/20/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/20 08:50:50 nectar Exp $
+# $Id: Makefile,v 1.2 1999/05/28 20:55:37 nectar Exp $
 #
 
 DISTNAME=		HTMLgen
@@ -21,8 +21,6 @@ WRKSRC=			${WRKDIR}/HTMLgen
 PLIST=			${WRKDIR}/PLIST
 
 DOCDIR=			${PREFIX}/share/doc/HTMLgen
-CHMOD?=			chmod
-CHOWN?=			chown
 FIND?=			find
 
 pre-install:

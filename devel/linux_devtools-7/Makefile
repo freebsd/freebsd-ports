@@ -3,7 +3,7 @@
 # Date created:         Jul 9, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id: Makefile,v 1.11 1999/08/11 18:46:08 marcel Exp $
+# $Id: Makefile,v 1.12 1999/08/18 12:49:53 marcel Exp $
 #
 
 DISTNAME=		linux_devtools
@@ -94,7 +94,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/dev
 	@${RM} -f ${PREFIX}/dev/null
 	@mknod ${PREFIX}/dev/null c 2 2
-	@chmod 666 ${PREFIX}/dev/null
+	@${CHMOD} 666 ${PREFIX}/dev/null
 .if defined(NEEDLOADLINK)
 	@${MKDIR} ${PREFIX}/compat
 	@${LN} -s / ${PREFIX}/compat/linux

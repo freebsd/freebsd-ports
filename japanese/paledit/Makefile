@@ -3,7 +3,7 @@
 # Date created:		14 Jan 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:34:36 steve Exp $
+# $Id: Makefile,v 1.2 1999/03/01 09:38:12 shige Exp $
 #
 
 DISTNAME=	paledit-0.91
@@ -17,7 +17,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
-	@chmod 2754 ${PREFIX}/sbin/paledit
-	@chown root:dialer ${PREFIX}/sbin/paledit
+	@${CHMOD} 2754 ${PREFIX}/sbin/paledit
+	@${CHOWN} root:dialer ${PREFIX}/sbin/paledit
 
 .include <bsd.port.mk>

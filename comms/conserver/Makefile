@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.7 1999/06/05 19:49:48 mharo Exp $
+# $Id: Makefile,v 1.8 1999/08/18 19:56:41 cpiazza Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -41,7 +41,7 @@ post-install:
 		${ECHO} "if [ -x ${PREFIX}/sbin/conserver -a -f ${PREFiX}/etc/conserver.cf ]; then" >> ${PREFIX}/etc/rc.d/conserver.sh; \
 		${ECHO} "	${PREFIX}/sbin/conserver -d -n ; ${ECHO} -n ' conserver'" >> ${PREFIX}/etc/rc.d/conserver.sh; \
 		${ECHO} "fi" >> ${PREFIX}/etc/rc.d/conserver.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/conserver.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/conserver.sh; \
 	fi
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.42 1999/08/19 14:23:10 rse Exp $
+# $Id: Makefile,v 1.43 1999/08/20 06:27:46 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -130,7 +130,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
 		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl startssl >/dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/01 02:02:40 taoka Exp $
 #
 
 DISTNAME=	sol-1.0.6
@@ -31,10 +31,10 @@ do-install:
 	@ ${MKDIR} ${PREFIX}/share/doc/sol
 	@ ${INSTALL_DATA} ${WRKSRC}/CREDITS ${PREFIX}/share/doc/sol
 	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sol
-	@ chown games:games ${PREFIX}/bin/sol
-	@ chown games:games ${PREFIX}/share/sol/sol.score
-	@ chmod 6755 ${PREFIX}/bin/sol
-	@ chmod 770 ${PREFIX}/share/sol
-	@ chmod 660 ${PREFIX}/share/sol/sol.score
+	@ ${CHOWN} games:games ${PREFIX}/bin/sol
+	@ ${CHOWN} games:games ${PREFIX}/share/sol/sol.score
+	@ ${CHMOD} 6755 ${PREFIX}/bin/sol
+	@ ${CHMOD} 770 ${PREFIX}/share/sol
+	@ ${CHMOD} 660 ${PREFIX}/share/sol/sol.score
 
 .include <bsd.port.mk>

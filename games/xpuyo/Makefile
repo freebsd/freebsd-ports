@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/01/12 16:51:24 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/06/22 17:45:27 steve Exp $
 #
 
 DISTNAME=	xpuyo
@@ -20,8 +20,8 @@ NO_INSTALL_MANPAGES=yes
 RESTRICTED=	"The author\'s ashamed of the quality of this version"
 
 post-install:
-	@chmod 755 ${PREFIX}/bin/xpuyo
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xpuyo
+	@${CHMOD} 755 ${PREFIX}/bin/xpuyo
+	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xpuyo
 	${MKDIR} ${PREFIX}/share/doc/xpuyo
 	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/xpuyo
 

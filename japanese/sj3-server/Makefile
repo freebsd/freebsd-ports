@@ -3,7 +3,7 @@
 # Date created:		18 Aug 1998
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/11/28 02:18:43 asami Exp $
+# $Id: Makefile,v 1.9 1998/11/28 05:08:27 asami Exp $
 #
 
 DISTNAME=	sj3-2.0.1.20
@@ -36,8 +36,8 @@ post-install:
 		${ECHO} 'if [ -f $$sj3 ]; then' >> ${STARTUP_SCRIPT} ;	\
 		${ECHO} '     $$sj3' >> ${STARTUP_SCRIPT} ;		\
 		${ECHO} "fi" >> ${STARTUP_SCRIPT} ;			\
-		chmod 755 ${STARTUP_SCRIPT} ;				\
-		chown bin.bin ${STARTUP_SCRIPT};			\
+		${CHMOD} 755 ${STARTUP_SCRIPT} ;				\
+		${CHOWN} bin.bin ${STARTUP_SCRIPT};			\
 	fi
 	${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL

@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.9 1999/01/31 22:23:03 obrien Exp $
+# $Id: Makefile,v 1.10 1999/07/21 14:55:43 marcel Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -68,7 +68,7 @@ do-install:
 	${RM} -rf ${NDIR}/netscape-dynMotif
 	${RM} -rf ${NDIR}/libnullplugin-dynMotif.so
 	${RM} -rf ${NDIR}/movemail-src
-	chown -R ${BINOWN}.${BINGRP} ${NDIR}
+	${CHOWN} -R ${BINOWN}.${BINGRP} ${NDIR}
 
 post-install:
 	@${CAT} ${PKGDIR}/DESCR

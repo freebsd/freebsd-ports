@@ -3,7 +3,7 @@
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/06/28 02:22:13 billf Exp $
+# $Id: Makefile,v 1.4 1999/06/28 18:33:58 billf Exp $
 #
 
 DISTNAME=	swing11
@@ -35,6 +35,6 @@ do-install:
 	${MKDIR} ${PREFIX}/${JFCSUBDIR}
 	(cd ${WRKSRC} && tar -c -f - .) \
 		| (cd ${PREFIX}/${JFCSUBDIR} && tar fx -)
-	chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/${JFCSUBDIR}
+	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/${JFCSUBDIR}
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1999/08/12 07:55:40 jim Exp $
+# $Id: Makefile,v 1.22 1999/08/16 06:43:15 jim Exp $
 #
 
 DISTNAME=	xchat-1.1.8
@@ -41,7 +41,7 @@ post-install:
 	@strip ${PREFIX}/bin/xchat
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing xchat docs in ${PREFIX}/share/doc/xchat"
-	@${MKDIR} ${PREFIX}/share/doc/xchat && chmod a+rx ${PREFIX}/share/doc/xchat
+	@${MKDIR} ${PREFIX}/share/doc/xchat && ${CHMOD} a+rx ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.* ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xchat
 	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/xchat

@@ -3,7 +3,7 @@
 # Date created:		Dec 28 1998
 # Whom:			Lars Koeller <lkoeller@cc.fh-lippe.de>
 #
-# $Id: Makefile,v 1.2 1999/05/12 07:43:47 asami Exp $
+# $Id: Makefile,v 1.3 1999/05/29 04:23:04 steve Exp $
 #
 
 DISTNAME=	grace-5.0.2beta
@@ -46,7 +46,7 @@ INSTALL_TARGET= install links
 post-patch:
 	${MV} ${WRKSRC}/configure ${WRKSRC}/configure.input
 	${SED} "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure.input > ${WRKSRC}/configure
-	chmod 755 ${WRKSRC}/configure
+	${CHMOD} 755 ${WRKSRC}/configure
 	${RM} -f ${WRKSRC}/configure.input
 
 .include <bsd.port.mk>

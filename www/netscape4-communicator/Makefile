@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.42 1999/07/14 22:39:25 sada Exp $
+# $Id: Makefile,v 1.43 1999/08/14 18:37:52 sada Exp $
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
@@ -63,7 +63,7 @@ post-configure:
 		-e "s;@BROWSER@;${BROWSER};g" \
 		-e "s;@BROWSER_VER@;${BROWSER_VER};g" \
 		${WRAPPER_TEMPLATE} >${WRKSRC}/netscape
-	chmod +x ${WRKSRC}/netscape
+	${CHMOD} +x ${WRKSRC}/netscape
 	${ECHO} -n ${INFILE_HEAD},${NDIR} >${WRKSRC}/infile
 
 pre-install:
@@ -94,7 +94,7 @@ do-install:
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
 		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
 .endif
-	chown -R root:wheel ${NDIR}
+	${CHOWN} -R root:wheel ${NDIR}
 
 post-install:
 	${CAT} ${PKGDIR}/DESCR

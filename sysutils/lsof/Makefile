@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.43 1999/06/26 01:06:41 obrien Exp $
+# $Id: Makefile,v 1.44 1999/07/31 17:22:26 obrien Exp $
 #
 
 DISTNAME=	lsof_4.45_W
@@ -59,7 +59,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${PREFIX}/man/man8/lsof.8
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
-	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
+	@${CHMOD} 0444 ${PREFIX}/share/lsof/00*
 
 .if !exists(/sys/miscfs/fdesc/fdesc.h) && !exists(/usr/src/miscfs/fdesc/fdesc.h)
 post-install:

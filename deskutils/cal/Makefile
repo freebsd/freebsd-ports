@@ -3,7 +3,7 @@
 # Date created:				2 April 1997
 # Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
-# $Id: Makefile,v 1.6 1998/08/07 22:17:51 asami Exp $
+# $Id: Makefile,v 1.7 1999/03/31 15:31:09 steve Exp $
 #
 
 DISTNAME=		cal-3.5
@@ -24,7 +24,7 @@ do-install:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/cal.1.orig > ${WRKSRC}/cal.1
 	${INSTALL_MAN}  ${WRKSRC}/cal.1 ${PREFIX}/man/man1/cal.1
 	@${MKDIR} ${PREFIX}/etc/cal
-	@chmod 0755  ${PREFIX}/etc/cal
+	@${CHMOD} 0755  ${PREFIX}/etc/cal
 	if [ ! -f ${PREFIX}/etc/cal/calcol ]; then ${INSTALL_DATA} ${WRKDIR}/cal-3.5/cal.col ${PREFIX}/etc/cal/calcol; fi
 	if [ ! -f ${PREFIX}/etc/cal/caldat ]; then ${INSTALL_DATA} ${WRKDIR}/cal-3.5/cal.dat ${PREFIX}/etc/cal/caldat; fi
 

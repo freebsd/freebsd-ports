@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.10 1998/09/03 22:49:17 max Exp $
+# $Id: Makefile,v 1.11 1998/09/21 22:33:23 steve Exp $
 #
 
 DISTNAME=       elvis-1.8
@@ -48,8 +48,8 @@ post-install:
 		echo '	done'						\
 			>> ${STARTUP_SCRIPT};				\
 		echo 'fi' >> ${STARTUP_SCRIPT};				\
-		chmod 755 ${STARTUP_SCRIPT};				\
-		chown bin.bin ${STARTUP_SCRIPT};                        \
+		${CHMOD} 755 ${STARTUP_SCRIPT};				\
+		${CHOWN} bin.bin ${STARTUP_SCRIPT};                        \
 	fi
 
 .include <bsd.port.mk>

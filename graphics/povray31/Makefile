@@ -3,7 +3,7 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.3 1999/05/11 02:05:36 flathill Exp $
+# $Id: Makefile,v 1.4 1999/06/22 17:19:59 steve Exp $
 #
 
 DISTNAME=	povray31
@@ -49,7 +49,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/allscene.sh ${POVLIB}/
 	@${RM} -f ${PREFIX}/man/man1/povray.1*
 	@${INSTALL_MAN} ${WRKSRC}/povray.1 ${PREFIX}/man/man1
-	@chmod -R a+rX,og-w ${POVLIB}
+	@${CHMOD} -R a+rX,og-w ${POVLIB}
 
 post-install:
 	@${SH} ${FILESDIR}/script

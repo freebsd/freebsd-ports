@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/01 03:21:01 steve Exp $
 #
 
 DISTNAME=	httperf-0.6
@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/httperf ${PREFIX}/bin
-	chmod 750 ${PREFIX}/bin/httperf
+	${CHMOD} 750 ${PREFIX}/bin/httperf
 	@${MKDIR} ${PREFIX}/share/httperf
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/httperf
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/httperf

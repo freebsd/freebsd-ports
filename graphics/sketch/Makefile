@@ -3,7 +3,7 @@
 # Date created:		04 November 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/05/19 09:41:06 tg Exp $
+# $Id: Makefile,v 1.5 1999/08/06 08:45:21 tg Exp $
 #
 
 DISTNAME=	sketch-0.6.1
@@ -42,8 +42,8 @@ do-install:
 	(cd ${WRKSRC}/Examples; tar cf - .) | (cd ${SKETCHEXDIR}; tar xf -)
 	(cd ${SKETCHDIR}; python finishinst.py)
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
-	chmod +x ${PREFIX}/bin/sketch
+	${CHMOD} +x ${PREFIX}/bin/sketch
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
-	chmod +x ${PREFIX}/bin/sk2ps
+	${CHMOD} +x ${PREFIX}/bin/sk2ps
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.24 1999/01/04 20:21:59 sada Exp $
+# $Id: Makefile,v 1.25 1999/01/15 12:05:10 asami Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -43,7 +43,7 @@ do-configure:
 
 pre-install:
 	${MKDIR} /var/run/canna
-	chown bin.bin /var/run/canna
+	${CHOWN} bin.bin /var/run/canna
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"

@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/10/16 02:43:27 jseger Exp $
+# $Id: Makefile,v 1.7 1998/12/05 10:35:17 kuriyama Exp $
 #
 
 DISTNAME=	nh2ps-2.3.1
@@ -21,7 +21,7 @@ post-patch:
 	@(cd ${WRKSRC}; \
 	  ${SED} s@/usr/local/bin/perl@${PERL5}@ mkpsfontmap.pl > mk.pl; \
 	  ${MV} -f mk.pl mkpsfontmap.pl; \
-	  chmod +x mkpsfontmap.pl)
+	  ${CHMOD} +x mkpsfontmap.pl)
 
 pre-install:
 	@(cd ${WRKSRC}; make install.man)

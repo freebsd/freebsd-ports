@@ -3,7 +3,7 @@
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/07/10 02:40:12 cpiazza Exp $
+# $Id: Makefile,v 1.7 1999/08/14 07:11:55 jim Exp $
 #
 
 DISTNAME=	irssi-0.7.13-2
@@ -44,7 +44,7 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 post-install:
 	@${ECHO} "===>   Installing example irssi.conf to ${PREFIX}/share/examples/irssi"
 	@${ECHO} "===>   You will find a ~/.irssi.conf after running irssi for the first time."
-	@${MKDIR} ${PREFIX}/share/examples/irssi && chmod a+rx ${PREFIX}/share/examples/irssi
+	@${MKDIR} ${PREFIX}/share/examples/irssi && ${CHMOD} a+rx ${PREFIX}/share/examples/irssi
 	@${INSTALL_DATA} ${WRKSRC}/irssi.conf ${PREFIX}/share/examples/irssi
 
 .include <bsd.port.mk>

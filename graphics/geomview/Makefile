@@ -3,7 +3,7 @@
 # Date created:				5 November 1996
 # Whom:					fenner
 #
-# $Id: Makefile,v 1.15 1999/05/04 22:03:15 fenner Exp $
+# $Id: Makefile,v 1.16 1999/06/08 22:14:18 steve Exp $
 
 DISTNAME=	geomview-1.6.1
 CATEGORIES=	graphics tk80
@@ -36,7 +36,7 @@ MAN5=		discgrp.5 geomview.5 oogl.5
 MAKE_ENV=	CPU=FreeBSD PATH=${FILESDIR}:${PATH} MAPLE_LIB=${MAPLE_LIB}
 
 post-extract:
-	-/bin/chmod +x ${FILESDIR}/nroff
+	-${CHMOD} +x ${FILESDIR}/nroff
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/geomview
@@ -57,8 +57,6 @@ SHARE_DIRS=	data maple mathematica
 SHARE_MODS=	tcl
 LIBEXEC_DIRS=	bin
 LIBEXEC_MODS=	x11
-
-CHOWN?=		/usr/sbin/chown
 
 post-install:
 	${MKDIR} ${PREFIX}/info

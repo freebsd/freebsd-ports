@@ -4,7 +4,7 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.4 1997/08/04 20:47:58 obrien Exp $
+# $Id: Makefile,v 1.5 1998/12/09 20:19:18 billf Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
@@ -20,8 +20,8 @@ MAN1=		icmpinfo.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icmpinfo ${PREFIX}/bin
-	/usr/sbin/chown root ${PREFIX}/bin/icmpinfo
-	/bin/chmod 4555 ${PREFIX}/bin/icmpinfo
+	${CHOWN} root ${PREFIX}/bin/icmpinfo
+	${CHMOD} 4555 ${PREFIX}/bin/icmpinfo
 	${INSTALL_MAN} ${WRKSRC}/icmpinfo.man ${PREFIX}/man/man1/${MAN1}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/icmpinfo

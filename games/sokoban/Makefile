@@ -3,7 +3,7 @@
 # Date created:				2 July 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/02 07:13:50 tg Exp $
 #
 
 DISTNAME=		sokoban-src
@@ -19,17 +19,17 @@ ALL_TARGET=
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/sokoban ${PREFIX}/bin/sokoban
-	@ chown games:bin ${PREFIX}/bin/sokoban
-	@ chmod 4555 ${PREFIX}/bin/sokoban
+	@ ${CHOWN} games:bin ${PREFIX}/bin/sokoban
+	@ ${CHMOD} 4555 ${PREFIX}/bin/sokoban
 	@ ${MKDIR} ${PREFIX}/share/sokoban
-	@ chown games:bin ${PREFIX}/share/sokoban
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban
 	@ ${MKDIR} ${PREFIX}/share/sokoban/screens
-	@ chown games:bin ${PREFIX}/share/sokoban/screens
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/screens
 	@ ${INSTALL_DATA} ${WRKSRC}/screens/* ${PREFIX}/share/sokoban/screens
 	@ if [ ! -f ${PREFIX}/share/sokoban/highscore ]; then \
 		dd if=/dev/zero of=${PREFIX}/share/sokoban/highscore bs=1 count=2; \
 	  fi
-	@ chown games:bin ${PREFIX}/share/sokoban/highscore
-	@ chmod 0600 ${PREFIX}/share/sokoban/highscore
+	@ ${CHOWN} games:bin ${PREFIX}/share/sokoban/highscore
+	@ ${CHMOD} 0600 ${PREFIX}/share/sokoban/highscore
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1999/05/27 02:08:13 nectar Exp $
+# $Id: Makefile,v 1.10 1999/06/05 22:31:36 mharo Exp $
 #
 
 DISTNAME=		krb5-1.0.6
@@ -107,7 +107,6 @@ HTML_DOCS=		admin.html install_foot.html user-guide.html          \
 			install.html krb425_toc.html
 SETUID_EXE=		bin/ksu bin/v4rcp
 
-CHOWN?=		chown
 SUPERUSER?=	root
 
 .include <bsd.port.pre.mk>

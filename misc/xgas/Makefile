@@ -3,7 +3,7 @@
 # Date created:         20 Oct 1996
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/04 22:41:24 steve Exp $
+# $Id: Makefile,v 1.3 1999/01/12 16:51:21 vanilla Exp $
 #
 
 DISTNAME=	xgas
@@ -17,7 +17,7 @@ USE_IMAKE=	yes
 MAN1=		xgas.1
 
 post-install:
-	@chmod 755 ${PREFIX}/bin/xgas
-	@chown bin.bin ${PREFIX}/bin/xgas
+	@${CHMOD} 755 ${PREFIX}/bin/xgas
+	@${CHOWN} bin.bin ${PREFIX}/bin/xgas
 
 .include <bsd.port.mk>

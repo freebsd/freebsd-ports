@@ -3,7 +3,7 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.14 1998/11/04 09:45:14 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/11/19 18:05:31 vanilla Exp $
 #
 
 DISTNAME=	hfsutils-3.2.6
@@ -37,6 +37,6 @@ MAN1=		hattrib.1 \
 		xhfs.1
 
 post-install:
-		chmod 755 ${PREFIX}/bin/hfs
+		${CHMOD} 755 ${PREFIX}/bin/hfs
 
 .include <bsd.port.mk>

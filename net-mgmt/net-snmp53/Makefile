@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.27 1999/04/18 19:14:44 nectar Exp $
+# $Id: Makefile,v 1.28 1999/04/30 12:59:50 kris Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.1
@@ -60,7 +60,7 @@ post-install:
 		${ECHO} "Creating ${PREFIX}/etc/rc.d/snmpd.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${STARTUP_FILE}; \
 		${ECHO} "[ -x ${PREFIX}/sbin/snmpd ] && ${PREFIX}/sbin/snmpd && ${ECHO} -n ' snmpd'" >> ${STARTUP_FILE}; \
-		chmod 751 ${STARTUP_FILE}; \
+		${CHMOD} 751 ${STARTUP_FILE}; \
 	 fi
 	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 

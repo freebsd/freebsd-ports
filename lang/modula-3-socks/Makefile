@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/01 02:37:33 jdp Exp $
+# $Id: Makefile,v 1.2 1996/11/12 02:18:42 obrien Exp $
 #
 
 DISTNAME=	modula-3-socks
@@ -39,7 +39,7 @@ pre-install:
 	@cd ${PREFIX}/lib; \
 	    test -d m3/FreeBSD2 || { \
 		${MKDIR} m3/FreeBSD2; \
-		chown ${BINOWN}.${BINGRP} m3 m3/FreeBSD2; \
+		${CHOWN} ${BINOWN}.${BINGRP} m3 m3/FreeBSD2; \
 	    }
 
 post-install:

@@ -3,7 +3,7 @@
 # Date created:		Sept 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.3 1998/06/27 05:19:37 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/11 16:01:08 jfieber Exp $
 #
 
 DISTNAME=	html-4.0b
@@ -24,7 +24,7 @@ pre-install:
 
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
-	@chmod ${SHAREMODE} `find ${INSTDIR} -type f`
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHMOD} ${SHAREMODE} `find ${INSTDIR} -type f`
+	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 # Date created:         Thur Nov 21, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/22 08:16:48 obrien Exp $
+# $Id: Makefile,v 1.2 1997/10/10 06:53:33 obrien Exp $
 #
 
 DISTNAME=	nc110
@@ -26,7 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nc ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/netcat \
-		&& chmod a+rx ${PREFIX}/share/doc/netcat
+		&& ${CHMOD} a+rx ${PREFIX}/share/doc/netcat
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/netcat
 .endif
 

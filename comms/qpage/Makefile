@@ -3,7 +3,7 @@
 # Date created:		02 Aug 1997
 # Whom:			joes@seaport.net
 #
-# $Id: Makefile,v 1.6 1998/08/31 05:30:20 asami Exp $
+# $Id: Makefile,v 1.7 1998/10/27 03:45:02 fenner Exp $
 #
 
 DISTNAME=	qpage-3.2
@@ -21,7 +21,7 @@ post-install:
 		${ECHO} "Install ${PREFIX}/etc/rc.d/qpage.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/qpage.sh; \
 		${ECHO} "[ -x ${PREFIX}/bin/qpage ] && ${PREFIX}/bin/qpage -q10 && echo -n ' qpage'" >> ${PREFIX}/etc/rc.d/qpage.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/qpage.sh; \
+		${CHMOD} 751 ${PREFIX}/etc/rc.d/qpage.sh; \
 	fi
 
 .include <bsd.port.mk>

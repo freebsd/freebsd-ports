@@ -3,7 +3,7 @@
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.16 1999/03/15 18:30:05 nectar Exp $
+# $Id: Makefile,v 1.17 1999/05/29 04:10:06 steve Exp $
 #
 
 DISTNAME=	Eterm-0.8.8
@@ -32,8 +32,8 @@ pre-patch:
 .endif
 
 post-install:
-	chown root.wheel ${PREFIX}/bin/Eterm
-	chmod 4755 ${PREFIX}/bin/Eterm
+	${CHOWN} root.wheel ${PREFIX}/bin/Eterm
+	${CHMOD} 4755 ${PREFIX}/bin/Eterm
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/colortest.sh ${PREFIX}/share/Eterm
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/Eterm

@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.9 1999/02/13 00:19:51 asami Exp $
+# $Id: Makefile,v 1.10 1999/04/21 12:53:54 jseger Exp $
 #
 
 DISTNAME=	R-0.62.2
@@ -47,9 +47,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/R.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Rdconv.1 ${PREFIX}/man/man1
 	${SED} 's:PREFIX:${PREFIX}:;s:DEFAULTPAPER:${PAPERSIZE}:' ${FILESDIR}/R > ${PREFIX}/bin/R
-	(cd ${WRKSRC}; find . -type d -exec chmod a+rx \{\} \; )
-	(cd ${WRKSRC}; find . -type f -exec chmod a+r \{\} \; )
-	chmod a+x ${PREFIX}/bin/R
+	(cd ${WRKSRC}; find . -type d -exec ${CHMOD} a+rx \{\} \; )
+	(cd ${WRKSRC}; find . -type f -exec ${CHMOD} a+r \{\} \; )
+	${CHMOD} a+x ${PREFIX}/bin/R
 	${MKDIR} ${PREFIX}/share/R
 	${MKDIR} ${PREFIX}/share/R/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/R.binary ${PREFIX}/share/R/bin

@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1999/01/29 02:34:08 jmz Exp $
+# $Id: Makefile,v 1.14 1999/02/01 22:11:18 asami Exp $
 #
 
 DISTNAME=	texinfo
@@ -24,7 +24,7 @@ NO_WRKSUBDIR=	yes
 
 pre-configure:
 	@${CP} ${DISTDIR}/texinfo.tex ${DISTDIR}/lcircle10.tfm ${WRKDIR}
-	@chmod +w ${WRKDIR}/*
+	@${CHMOD} +w ${WRKDIR}/*
 
 do-build:
 	@(cd ${WRKDIR}; initex '&tex texinfo @dump')
