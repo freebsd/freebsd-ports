@@ -15,7 +15,8 @@ DISTNAME=	irchat-pj-${PORTVERSION}p
 MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
 BUILD_DEPENDS=	${LOCALBASE}/${LISPDIR:S,/${PORTNAME}$,/pure,}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME}
-RUN_DEPENDS=	${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc
+RUN_DEPENDS=	${LOCALBASE}/${LISPDIR:S,/${PORTNAME}$,/pure,}/pure-make.el:${PORTSDIR}/irc/pure-${EMACS_PORT_NAME} \
+		${LOCALBASE}/bin/dcc:${PORTSDIR}/irc/dcc
 
 EMACS_PORT_NAME?=	emacs20
 LISPDIR?=	${EMACS_LIBDIR}/site-lisp/${PORTNAME}
