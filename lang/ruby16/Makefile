@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY} \
 DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
 			${ONIGURUMA_DISTFILE:S,$,:oniguruma,}
 DIST_SUBDIR=	ruby
-EXTRACT_ONLY=	${RUBY_DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITE_RUBY}
 PATCH_SITE_SUBDIR=	snapshots
@@ -27,7 +26,7 @@ MAINTAINER=	knu@FreeBSD.org
 .if defined(WITH_ONIGURUMA)
 ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
 ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
-ONIGURUMA_DISTFILE=		onigd20021210.tar.gz
+ONIGURUMA_DISTFILE=		onigd20030109.tar.gz
 PLIST_SUB+=	ONIGURUMA=""
 .else
 PLIST_SUB+=	ONIGURUMA="@comment "
@@ -85,16 +84,7 @@ OBSOLETED_MODULES=	sha1 \
 			urb \
 			uri
 
-post-extract:
-.if defined(WITH_ONIGURUMA)
-	${TAR} -zxvf ${DISTDIR}/${DIST_SUBDIR}/${ONIGURUMA_DISTFILE} -C ${WRKDIR}
-.endif
-
 post-patch:
-.if defined(WITH_ONIGURUMA)
-	${CP} -f ${WRKDIR}/oniguruma/*.[ch] ${WRKSRC}/
-	cd ${WRKSRC}; ${PATCH} < ${WRKDIR}/oniguruma/re.c.166.patch
-.endif
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 .for d in Win32API
 	${RM} -rf ${WRKSRC}/ext/${d}
@@ -102,6 +92,11 @@ post-patch:
 .for d in gdbm tcltklib tk
 	${MV} ${WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
+
+pre-configure:
+.if defined(WITH_ONIGURUMA)
+	cd ${WRKDIR}/oniguruma; ./configure; ${MAKE} 16 RUBYDIR=${WRKSRC}
+.endif
 
 post-install:
 .if defined(STRIP) && ${STRIP} == -s
