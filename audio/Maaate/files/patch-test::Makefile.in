@@ -1,0 +1,32 @@
+--- test/Makefile.in.orig	Tue Jan 23 22:12:01 2001
++++ test/Makefile.in	Mon Feb 12 16:02:38 2001
+@@ -110,13 +110,13 @@
+ MaaatePlay_LDADD = $(top_builddir)/src/tier1/libMaaateP.la
+ 
+ analyseMPaudio_SOURCES = analyseMPaudio.cc
+-analyseMPaudio_LDADD = $(top_builddir)/src/tier1/libMaaateP.la $(top_builddir)/src/tier2/libMaaateA.la -ldl
++analyseMPaudio_LDADD = $(top_builddir)/src/tier1/libMaaateP.la $(top_builddir)/src/tier2/libMaaateA.la
+ 
+ cMaaatePlay_SOURCES = cMaaatePlay.c
+ cMaaatePlay_LDADD = $(top_builddir)/src/tier1/libMaaateP.la
+ 
+ canalyseMPaudio_SOURCES = canalyseMPaudio.c
+-canalyseMPaudio_LDADD = $(top_builddir)/src/tier1/libMaaateP.la $(top_builddir)/src/tier2/libMaaateA.la -ldl
++canalyseMPaudio_LDADD = $(top_builddir)/src/tier1/libMaaateP.la $(top_builddir)/src/tier2/libMaaateA.la
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -259,11 +259,11 @@
+ 
+ cMaaatePlay: $(cMaaatePlay_OBJECTS) $(cMaaatePlay_DEPENDENCIES)
+ 	@rm -f cMaaatePlay
+-	$(LINK) $(cMaaatePlay_LDFLAGS) $(cMaaatePlay_OBJECTS) $(cMaaatePlay_LDADD) $(LIBS)
++	$(CXXLINK) $(cMaaatePlay_LDFLAGS) $(cMaaatePlay_OBJECTS) $(cMaaatePlay_LDADD) $(LIBS)
+ 
+ canalyseMPaudio: $(canalyseMPaudio_OBJECTS) $(canalyseMPaudio_DEPENDENCIES)
+ 	@rm -f canalyseMPaudio
+-	$(LINK) $(canalyseMPaudio_LDFLAGS) $(canalyseMPaudio_OBJECTS) $(canalyseMPaudio_LDADD) $(LIBS)
++	$(CXXLINK) $(canalyseMPaudio_LDFLAGS) $(canalyseMPaudio_OBJECTS) $(canalyseMPaudio_LDADD) $(LIBS)
+ .cc.o:
+ 	$(CXXCOMPILE) -c $<
+ .cc.lo:
