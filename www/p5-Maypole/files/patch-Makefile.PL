@@ -1,14 +1,6 @@
---- Makefile.PL.orig	Thu Mar 25 13:33:42 2004
-+++ Makefile.PL	Thu Apr  8 18:13:57 2004
-@@ -20,14 +20,17 @@
-         Template => 0,
-     }, # e.g., Module::Name => 1.1
-     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
--      (ABSTRACT_FROM  => 'lib/Apache/MVC.pm', # retrieve abstract from module
-+      (ABSTRACT_FROM  => 'lib/Maypole.pm', # retrieve abstract from module
-        AUTHOR         => 'Simon Cozens <simon@simon-cozens.org>') : ()),
- );
- 
+--- Makefile.PL.orig	Fri Apr 16 19:16:55 2004
++++ Makefile.PL	Sat Apr 17 22:15:01 2004
+@@ -27,7 +27,10 @@
  if (!-e "t/beerdb.db") {
      print "Making SQLite DB\n";
      eval { require DBD::SQLite };

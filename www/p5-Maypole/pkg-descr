@@ -1,4 +1,6 @@
-Maypole is an MVC-based web application framework, built around
-Class::DBI and Template Toolkit.
+Maypole is a Perl framework for MVC-oriented web applications,
+similar to Jakarta's Struts. Maypole is designed to minimize coding
+requirements for creating simple web interfaces to databases, while
+remaining flexible enough to support enterprise web applications.
 
-WWW: http://search.cpan.org/~simon/Maypole/
+WWW: http://search.cpan.org/dist/Maypole/
