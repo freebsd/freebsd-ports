@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/linkchecker
 share/locale/de/LC_MESSAGES/linkcheck.mo
 share/locale/fr/LC_MESSAGES/linkcheck.mo
@@ -89,6 +90,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/containers.py
+%%PYTHON_SITELIBDIR%%/linkcheck/containers.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/containers.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/debug.py
 %%PYTHON_SITELIBDIR%%/linkcheck/debug.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/debug.pyo
