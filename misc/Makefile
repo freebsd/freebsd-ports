@@ -347,6 +347,7 @@
     SUBDIR += upclient
     SUBDIR += us-zipcodes
     SUBDIR += utf8locale
+    SUBDIR += utftools
     SUBDIR += vbidecode
     SUBDIR += vera
     SUBDIR += videotext
