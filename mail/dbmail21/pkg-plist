@@ -35,8 +35,5 @@ etc/dbmail.conf-dist
 %%PGSQL%%%%DATADIR%%/sql/md5_alter_users.7.3-pgsql
 %%PGSQL%%%%DATADIR%%/sql/md5_alter_users.pre_7.3-pgsql
 %%PGSQL%%%%DATADIR%%/sql/pop_before_smtp.pgsql
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%

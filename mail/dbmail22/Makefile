@@ -7,6 +7,7 @@
 
 PORTNAME=	dbmail
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}
@@ -40,7 +41,11 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 FILES_TO_PATCH=		imapd.c main.c maintenance.c pop3d.c user.c
-DOCS=			INSTALL README
+PORTDOCS=		INSTALL README
+
+MAN1=			dbmail-adduser.1 dbmail-config.1 dbmail-imapd.1 \
+			dbmail-maintenance.1 dbmail-pop3d.1 dbmail-smtp.1
+MANCOMPRESSED=		no
 
 pre-everything::
 	@${ECHO} ""
@@ -60,9 +65,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${PREFIX}/etc/dbmail.conf-dist
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
+	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
