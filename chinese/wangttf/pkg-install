@@ -13,8 +13,6 @@ FONTDIR=${PREFIX}/share/fonts/TrueType
 FONTS="wcl-01.ttf wcl-02.ttf wcl-03.ttf wcl-04.ttf wcl-05.ttf \
        wcl-06.ttf wcl-07.ttf wcl-08.ttf wcl-09.ttf wcl-10.ttf"
 
-[ "X$WANT_X" = "X" ] && WANT_X=YES
-
 if [ ! -x $TTFM ]; then
     echo "$TTFM not found!"
     exit 1
@@ -22,11 +20,11 @@ fi
 
 rm -f $FONTDIR/$PKGNAME
 
-if [ "$WANT_CJK" = "YES" -o "$WANT_CJK" = "yes" ]; then
+if [ "X$WANT_CJK" != "X" ]; then
     # There's no CJK module now.
 fi
 
-if [ "$WANT_GS6" = "YES" -o "$WANT_GS6" = "yes" ]; then
+if [ "X$WANT_GS6" != "X" ]; then
     for f in $FONTS; do
         $TTFM --add ghostscript6 $FONTDIR/$f
     done
@@ -39,7 +37,7 @@ if [ "$WANT_GS6" = "YES" -o "$WANT_GS6" = "yes" ]; then
     echo "ghostscript6" >> $FONTDIR/$PKGNAME
 fi
 
-if [ "$WANT_X" = "YES" -o "$WANT_X" = "yes" ]; then
+if [ "X$WITHOUT_X" = "X" ]; then
     for f in $FONTS; do
         $TTFM --add xttfm $FONTDIR/$f
     done
