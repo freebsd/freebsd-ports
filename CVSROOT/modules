@@ -3351,6 +3351,7 @@ kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
+kimagemapeiditor	ports/graphics/kimagemapeditor
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
