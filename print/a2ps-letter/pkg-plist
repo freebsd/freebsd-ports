@@ -88,6 +88,9 @@ share/locale/ru/LC_MESSAGES/a2ps.mo
 share/locale/sl/LC_MESSAGES/a2ps.mo
 share/locale/sv/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
+@unexec rmdir share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/* 2>/dev/null || true
+@unexec rmdir share/locale 2>/dev/null || true
 share/a2ps/sheets/sheets.map
 share/a2ps/sheets/ada.ssh
 share/a2ps/sheets/asn1.ssh
