@@ -444,6 +444,7 @@
     SUBDIR += pear-APC
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Header
+    SUBDIR += pear-HTTP_Session
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
