@@ -1,0 +1,8 @@
+The debug memory allocation or dmalloc library has been designed as a
+portable drop in replacement for the system's memory management
+routines while providing powerful debugging facilities configurable at
+runtime.  These facilities include such things as memory-leak
+tracking, fence-post write detection, file/line number reporting, and
+general logging of statistics.  Online documentation is available at:
+
+WWW: http://dmalloc.com/

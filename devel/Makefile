@@ -64,6 +64,7 @@
     SUBDIR += cxref
     SUBDIR += ddd
     SUBDIR += dmake
+    SUBDIR += dmalloc
     SUBDIR += doc++
     SUBDIR += doxygen
     SUBDIR += dryad
