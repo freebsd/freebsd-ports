@@ -10,7 +10,7 @@ PORTVERSION=	4.5
 CATEGORIES=	japanese
 DISTFILES=	# none
 
-MAINTAINER=	horikawa@jp.FreeBSD.org
+MAINTAINER=	horikawa@FreeBSD.org
 
 PREFIX?=	/usr
 NO_CHECKSUM=	yes
