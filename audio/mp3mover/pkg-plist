@@ -1,6 +1,0 @@
-bin/mp3mover
-%%PORTDOCS%%%%DOCSDIR%%/readme
-%%DATADIR%%/sample-.mp3moverrc
-%%DATADIR%%/shellperfect-.mp3moverrc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
