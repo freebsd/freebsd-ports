@@ -68,12 +68,13 @@ man/man8/prunehistory.8.gz
 man/man8/scanlogs.8.gz
 man/man8/tally.control.8.gz
 man/man8/writelog.8.gz
-man/man8/cvtbatch.8.gz
 man/man8/actsync.8.gz
+man/man8/cvtbatch.8.gz
 man/man8/innstat.8.gz
 man/man8/news-recovery.8.gz
 man/man8/newsrequeue.8.gz
 man/man8/tally.unwanted.8.gz
+news/lib/overview.fmt
 news/lib/parsecontrol
 news/lib/send-ihave
 news/lib/send-nntp
@@ -97,7 +98,6 @@ news/lib/innwatch.ctl
 news/lib/distrib.pats
 news/lib/actsync.cfg
 news/lib/actsync.ign
-news/lib/overview.fmt
 news/bin/control/checkgroups
 news/bin/control/default
 news/bin/control/ihave
