@@ -12,8 +12,8 @@
 <xsl:output
   method="xml"
   encoding="utf-8"
-  doctype-system="http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd"
-  doctype-public="-//vuxml.org//DTD VuXML 1.0//EN"
+  doctype-system="http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd"
+  doctype-public="-//vuxml.org//DTD VuXML 1.1//EN"
   indent="yes"
   />
 
