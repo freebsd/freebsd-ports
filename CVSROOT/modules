@@ -7613,6 +7613,7 @@ pebrot		ports/net/pebrot
 pecl-fribidi	ports/converters/pecl-fribidi
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
+pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
