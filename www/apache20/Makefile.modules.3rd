@@ -26,19 +26,13 @@ BROKEN=		"This module require apache13 and you have apache2 installed"
 .   endif
 .elif exists(${LOCALBASE}/include/apache/http_core.h)
 WITH_APACHE13=	YES
-.if exists(${LOCALBASE}/sbin/pkg_info)
-PKGINFO=	${LOCALBASE}/sbin/pkg_info
-.else 
-PKGINFO=	/usr/sbin/pkg_info
-.endif
-APACHE_PORT!= 	${PKGINFO} -qo `${PKGINFO} -qW /usr/local/include/apache/http_core.h `
 .   if defined (WANT_APACHE)
 .     if ${WANT_APACHE} == 2
-BROKEN=		"This module require apache2 and you have ${APACHE_PORT} installed"
+BROKEN=		"This module require apache2 and you have apache13 installed"
 .     endif
 .   endif
 .   ifdef(WITH_APACHE2)
-.error You have `WITH_APACHE2' variable defined either in environment or in make(1) argumentsm. but ${APACHE_PORT} is installed Please undefine and try again.
+.error You have `WITH_APACHE2' variable defined either in environment or in make(1) argumentsm. but apache13 is installed Please undefine and try again.
 .   endif
 .endif
 
@@ -60,9 +54,7 @@ AP_VER=		2
 .else
 AP_BUILDEXT=	so
 PLIST_SUB+=	APACHEMODDIR="libexec/apache"
-.   if !defined(APACHE_PORT)
-APACHE_PORT=	www/apache13
-.   endif
+APACHE_PORT?=	www/apache13
 AP_VER=		13
 .endif
 
