@@ -6,6 +6,8 @@ share/gnome/pixmaps/gnomeicu-chat.xpm
 share/gnome/pixmaps/gnomeicu-chat2.xpm
 share/gnome/pixmaps/gnomeicu-dnd.xpm
 share/gnome/pixmaps/gnomeicu-ffc.xpm
+share/gnome/pixmaps/gnomeicu-file.xpm
+share/gnome/pixmaps/gnomeicu-info.xpm
 share/gnome/pixmaps/gnomeicu-inv.xpm
 share/gnome/pixmaps/gnomeicu-message.xpm
 share/gnome/pixmaps/gnomeicu-na.xpm
