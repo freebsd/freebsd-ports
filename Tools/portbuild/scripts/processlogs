@@ -7,7 +7,7 @@ find $of -mtime 2 -delete 2>/dev/null
 
 if [ -f $of ]; then exit; fi
 
-if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
+if [ -e .stamp -a $(echo $(find . -maxdepth 1 -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
 echo "<html><head><title>Package building errors</title>" >$of
 echo "<h1>Package building errors</h1>" >>$of
@@ -50,7 +50,7 @@ else
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
     echo -n "</td><td>" >>$of
     if grep -q 'list of extra files and directories' $1; then
-      reason="extra"; tag="extra"
+      reason="mtree"; tag="mtree"
     elif grep -q 'Checksum mismatch' $1; then
       reason="checksum"; tag="checksum"
     elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
@@ -113,8 +113,10 @@ else
       reason="PLIST"; tag="plist"
     elif grep -q "Can't open display" $1; then
       reason="DISPLAY"; tag="display"
+    elif grep -q " is already installed - perhaps an older version" $1; then
+      reason="depend object"; tag="dependobj"
     elif grep -q "error in dependency .*, exiting" $1; then
-      reason="dependency"; tag="dependency"
+      reason="depend package"; tag="dependpkg"
     else
       reason="???"; tag="unknown"
     fi
