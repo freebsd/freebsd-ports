@@ -1,5 +1,5 @@
---- ../arpwatch.orig/report.c	Sat Sep 30 19:41:10 2000
-+++ ./report.c	Fri Sep 12 18:57:04 2003
+--- report.c.orig	Sat Sep 30 19:41:10 2000
++++ report.c	Mon Mar 29 14:24:36 2004
 @@ -45,6 +45,8 @@
 
  #include <ctype.h>
@@ -45,7 +45,7 @@
 +	/* these types are sent to syslog instead of reported on.
 +	 * only continue if there are other events as well
 +	 */
-+	if (event == NULL || (event & ~(IP_ETHER_REUSE | FLIPFLOP_DECNET) == 0))
++	if (event == 0 || (event & ~(IP_ETHER_REUSE | FLIPFLOP_DECNET) == 0))
 +	  return;
 +
  	if (debug) {

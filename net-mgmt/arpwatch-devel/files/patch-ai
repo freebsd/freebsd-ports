@@ -1,5 +1,5 @@
---- ../arpwatch.orig/db.c	Sat Sep 30 19:39:58 2000
-+++ ./db.c	Mon Sep 15 13:17:07 2003
+--- db.c.orig	Sat Sep 30 19:39:58 2000
++++ db.c	Mon Mar 29 14:26:14 2004
 @@ -41,6 +41,7 @@
  #include <string.h>
  #include <syslog.h>
@@ -58,7 +58,7 @@
  	register u_int len;
  	u_char *e2;
  	time_t t2;
-+	register evt_type event = NULL;
++	register evt_type event = 0;
 +	char *if2 = NULL;
 +
 +	pthread_mutex_lock(&mtx_einfo);
@@ -81,7 +81,7 @@
 +		  strncpy(ep->iface, interface, sizeof(ep->iface));
 +		  event |= ETHER_NEW;
 +		  e2 = NULL;
-+		  t2 = NULL;
++		  t2 = 0;
 +		}
 +	} else if (! initializing) {
 +		if (strncmp(ep->iface, interface, sizeof(ep->iface)) != 0) {
@@ -127,7 +127,7 @@
 +		ap->elist[0] = elist_alloc(a, e, t, h, interface);
 +		event |= IP_NEW;
 +		e2 = NULL;
-+		t2 = NULL;
++		t2 = 0;
  	}
 
  	/* Check for a flip-flop */
