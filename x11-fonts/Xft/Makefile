@@ -7,12 +7,13 @@
 
 PORTNAME=	Xft
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A client-sided font API for X applications
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
@@ -26,6 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LIBS="-L${X11BASE}/lib"
 WRKSRC=	${WRKDIR}/${DISTNAME}/Xft
 
+MAN3=		Xft.3
+
 .include <bsd.port.pre.mk>
 
 # TODO Add a check to make sure we're not using XFree86 4.3.x which will
@@ -36,5 +39,8 @@ BROKEN=	Xft2 requires XFree86 4.x to build.
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/Xft.man ${PREFIX}/man/man3/Xft.3
 
 .include <bsd.port.post.mk>
