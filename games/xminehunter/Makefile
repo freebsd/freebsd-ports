@@ -1,16 +1,15 @@
 # New ports collection makefile for:	xminehunter
-# Version required:	0.3
+# Version required:	0.4
 # Date created:		09 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/01/10 12:23:20 asami Exp $
+# $Id: Makefile,v 1.3 1997/02/13 10:21:24 asami Exp $
 #
 
-DISTNAME=	xminehunter-0.3
+DISTNAME=	xminehunter-0.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.ORG
 
