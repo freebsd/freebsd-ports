@@ -120,6 +120,31 @@
 %%PORTDOCS%%%%DOCSDIR%%/xml/troubleshooting.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/using.xml
 %%BUGZILLADIR%%/1x1.gif
+%%BUGZILLADIR%%/Bugzilla/Auth/Cookie.pm
+%%BUGZILLADIR%%/Bugzilla/Auth/CGI.pm
+%%BUGZILLADIR%%/Bugzilla/Auth/DB.pm
+%%BUGZILLADIR%%/Bugzilla/Auth/LDAP.pm
+%%BUGZILLADIR%%/Bugzilla/Attachment.pm
+%%BUGZILLADIR%%/Bugzilla/Auth.pm
+%%BUGZILLADIR%%/Bugzilla/Bug.pm
+%%BUGZILLADIR%%/Bugzilla/BugMail.pm
+%%BUGZILLADIR%%/Bugzilla/CGI.pm
+%%BUGZILLADIR%%/Bugzilla/Chart.pm
+%%BUGZILLADIR%%/Bugzilla/Config.pm
+%%BUGZILLADIR%%/Bugzilla/Constants.pm
+%%BUGZILLADIR%%/Bugzilla/DB.pm
+%%BUGZILLADIR%%/Bugzilla/Error.pm
+%%BUGZILLADIR%%/Bugzilla/Flag.pm
+%%BUGZILLADIR%%/Bugzilla/FlagType.pm
+%%BUGZILLADIR%%/Bugzilla/RelationSet.pm
+%%BUGZILLADIR%%/Bugzilla/Search.pm
+%%BUGZILLADIR%%/Bugzilla/Series.pm
+%%BUGZILLADIR%%/Bugzilla/Template.pm
+%%BUGZILLADIR%%/Bugzilla/Token.pm
+%%BUGZILLADIR%%/Bugzilla/User.pm
+%%BUGZILLADIR%%/Bugzilla/Util.pm
+%%BUGZILLADIR%%/Bugzilla/Template/Plugin/Bugzilla.pm
+%%BUGZILLADIR%%/Bugzilla/Template/Plugin/Hook.pm
 %%BUGZILLADIR%%/Bugzilla.pm
 %%BUGZILLADIR%%/CGI.pl
 %%BUGZILLADIR%%/QUICKSTART
@@ -133,6 +158,10 @@
 %%BUGZILLADIR%%/colchange.cgi
 %%BUGZILLADIR%%/collectstats.pl
 %%BUGZILLADIR%%/config.cgi
+%%BUGZILLADIR%%/js/duplicates.js
+%%BUGZILLADIR%%/skins/standard/duplicates.css
+%%BUGZILLADIR%%/skins/standard/global.css
+%%BUGZILLADIR%%/skins/standard/show_multiple.css
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/BugzillaEmail.pm
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/README
 %%CONTRIB%%%%BUGZILLADIR%%/contrib/README.Mailif
@@ -395,6 +424,13 @@
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib/bugzilla-submit
 %%CONTRIB%%@dirrm %%BUGZILLADIR%%/contrib
+@dirrm %%BUGZILLADIR%%/Bugzilla/Auth
+@dirrm %%BUGZILLADIR%%/Bugzilla/Template/Plugin
+@dirrm %%BUGZILLADIR%%/Bugzilla/Template
+@dirrm %%BUGZILLADIR%%/Bugzilla
+@dirrm %%BUGZILLADIR%%/js
+@dirrm %%BUGZILLADIR%%/skins/standard
+@dirrm %%BUGZILLADIR%%/skins
 @dirrm %%BUGZILLADIR%%
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/xml
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/txt
