@@ -1822,6 +1822,7 @@ finger_mysql	ports/security/finger_mysql
 firebird	ports/databases/firebird
 firebird-devel	ports/databases/firebird-devel
 firedns		ports/dns/firedns
+firefox		ports/www/firefox
 fireprofile	ports/databases/fireprofile
 firestring	ports/misc/firestring
 firetalk	ports/net/firetalk
@@ -5030,7 +5031,6 @@ mozilla		ports/www/mozilla
 mozilla-bonobo	ports/www/mozilla-bonobo
 mozilla-devel	ports/www/mozilla-devel
 mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
-mozilla-firebird	ports/www/mozilla-firebird
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
 mozilla-thunderbird	ports/mail/mozilla-thunderbird
