@@ -4218,8 +4218,8 @@ kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
 kdetoys3	ports/x11-clocks/kdetoys3
 kdeutils3	ports/misc/kdeutils3
-kdewebdev	ports/www/kdewebdev
 kdevelop	ports/devel/kdevelop
+kdewebdev	ports/www/kdewebdev
 kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
 kdissert	ports/deskutils/kdissert
@@ -4458,8 +4458,8 @@ lamarc		ports/biology/lamarc
 lambda		ports/math/lambda
 lambdamoo	ports/net/lambdamoo
 lame		ports/audio/lame
-landscape	ports/graphics/landscape
 lanbrowsing	ports/net/lanbrowsing
+landscape	ports/graphics/landscape
 lapack		ports/math/lapack
 lapack++	ports/math/lapack++
 lapack95	ports/math/lapack95
@@ -6188,8 +6188,8 @@ openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
 opera		ports/www/opera
-opieprint	ports/security/opieprint
 ophoto		ports/graphics/ophoto
+opieprint	ports/security/opieprint
 opmixer		ports/audio/opmixer
 oproute		ports/net-mgmt/oproute
 optipng		ports/graphics/optipng
