@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.42
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -35,6 +36,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 USE_XLIB=	yes
 USE_GTK=	yes
 .else
+EXTRA_PATCHES= ${FILESDIR}/kill-gtk
 CONFIGURE_ARGS+=--with-gtk-prefix=/nopath
 .endif
 
