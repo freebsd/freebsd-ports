@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.10.0
-PORTREVISION=	3
+PORTVERSION=	0.10.1
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
-MAINTAINER=	simond@irrelevant.org
+MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	DNS server designed to utilize the MySQL database
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
@@ -28,8 +27,6 @@ MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydns-conf.8
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
-.include <bsd.port.pre.mk>
-
 .if defined (WITH_ALIAS)
 CONFIGURE_ARGS+=--enable-alias
 .endif
@@ -39,19 +36,13 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if defined (WITH_PGSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
 CONFIGURE_ARGS+=--without-mysql
 PKGNAMESUFFIX=	-pg
 .else
 CONFIGURE_ARGS+=--without-pgsql
 PKGNAMESUFFIX=	-mysql
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
+USE_MYSQL=	yes
 .endif
 
 pre-fetch:
@@ -60,7 +51,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "      WITH_PGSQL=yes          Build with PostgreSQL support"
 	@${ECHO} "      WITH_ALIAS=yes          Enable server side aliases"
-	@${ECHO} "      WITH_OPENSSL=yes        Enable OpenSSL (needed if MySQL is linked with OpenSSL"
+	@${ECHO} "      WITH_OPENSSL=yes        Enable OpenSSL (needed if MySQL is linked with OpenSSL)"
 	@${ECHO} ""
 
 post-install:
@@ -78,4 +69,4 @@ post-install:
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
 	@${SED} -e 's,%%%PREFIX%%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
