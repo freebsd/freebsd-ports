@@ -1,8 +1,8 @@
-PCRE is a Perl-compatible library of regular expressions.
-They are based on a completely separate code-base from Henry
-Spencer's originals.  The library has been designed to make
-efficient use of memory for compiled regular expressions.
+The PCRE library is a set of functions that implement regular expression
+pattern matching using the same syntax and semantics as Perl 5, with just
+a few differences. The current implementation corresponds to Perl 5.005.
+PCRE is  used by many programs, including Exim, Postfix, and PHP.
 
-Original Author:  Phil Hazel <ph10@cam.ac.uk>
+Written by: Phil Hazel <ph10@cam.ac.uk>
 
-WWW: http://www.pcre.org/
+WWW: http://freshmeat.net/projects/pcre/
