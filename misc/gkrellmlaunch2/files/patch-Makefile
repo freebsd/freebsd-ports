@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Nov  5 13:17:40 2001
++++ Makefile	Tue Nov  6 19:33:41 2001
+@@ -1,22 +1,20 @@
+ # Sample Makefile for a GKrellM plugin
+ 
+-GTK_INCLUDE = `gtk-config --cflags`
+-GTK_LIB = `gtk-config --libs`
++GTK_INCLUDE = `${GTK_CONFIG} --cflags`
++GTK_LIB = `${GTK_CONFIG} --libs`
+ 
+-IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+-IMLIB_LIB = `imlib-config --libs-gdk`
++IMLIB_INCLUDE = `${IMLIB_CONFIG} --cflags-gdk`
++IMLIB_LIB = `${IMLIB_CONFIG} --libs-gdk`
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE)
++CFLAGS += $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+ 
+ LFLAGS = -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
+-
+ OBJS = gkrellmlaunch.o
+ 
+ gkrellmlaunch.so: $(OBJS)
+-	$(CC) $(OBJS) -o gkrellmlaunch.so $(LFLAGS) $(LIBS)
++	$(CC) $(OBJS) -o gkrellmlaunch.so $(CFLAGS) $(LFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~
