@@ -1,0 +1,10 @@
+--- fung_calc/libfungcalcui/2D/polargraphmain.ui.h.orig	Tue Jun 10 10:08:35 2003
++++ fung_calc/libfungcalcui/2D/polargraphmain.ui.h	Tue Jun 10 10:08:48 2003
+@@ -6,6 +6,7 @@
+ ** a constructor, and a destroy() slot in place of a destructor.
+ *****************************************************************************/
+ #include <fstream>
++#include <ctime>
+ 
+ #include "expression.h"
+ 

@@ -1,0 +1,10 @@
+--- fung_calc/libfungcalcui/3D/glcylindricalgraphmain.ui.h.orig	Tue Jun 10 10:16:57 2003
++++ fung_calc/libfungcalcui/3D/glcylindricalgraphmain.ui.h	Tue Jun 10 10:17:06 2003
+@@ -8,6 +8,7 @@
+ 
+ #include <fstream>
+ #include <iostream>
++#include <ctime>
+ 
+ #include "expression.h"
+ 
