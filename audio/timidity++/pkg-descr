@@ -1,7 +1,13 @@
-TiMidity  is  a MIDI to WAVE converter using Gravis Ultra-
-sound-compatible patch files  to  generate  digital  audio
-data from General MIDI files.  The data can be stored in a
-file for processing, or played in  real  time  through  an
-audio device.
+TiMidity++ is a MIDI player without external MIDI instruments.
+This can also convert MIDI files to various formatted audio files
+(ex. wav, au, etc..).
+In addition to this port, "Gravis Ultra Sound" compatible patch files
+(or SF2 format SoundFont) are required to play files.
 
-WWW: http://www.goice.co.jp/member/mo/timidity/
+Formerly, the original version of this program was written by Tuuka
+Toivonen(until version 0.2i).
+Now, Masanao Izumo and many hackers are developing "TiMidity++".
+Official site is
+http://www.goice.co.jp/member/mo/timidity/
+
+Yoichi Asai <yatt@msc.biglobe.ne.jp>
