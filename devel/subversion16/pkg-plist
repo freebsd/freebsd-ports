@@ -73,7 +73,9 @@ lib/libsvn_subr-1.so.0
 lib/libsvn_wc-1.a
 lib/libsvn_wc-1.so
 lib/libsvn_wc-1.so.0
+%%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.a
 %%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
+%%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.a
 %%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav_svn libexec/apache2/mod_dav_svn.so
