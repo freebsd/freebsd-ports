@@ -2,7 +2,7 @@
 
 Enable mod_perl built as DSO, by adding to httpd.conf:
 
-  LoadModule perl_module modules/mod_perl.so
+  LoadModule perl_module libexec/apache2/mod_perl.so
 
 Next, tell Perl where to find mod_perl2 libraries:
 
