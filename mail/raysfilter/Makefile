@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.sendmail-filter.lsbu.ac.uk/
 DISTNAME=	rays-filter-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configurable filter for Sendmail
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
