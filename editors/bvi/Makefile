@@ -8,7 +8,8 @@
 PORTNAME=	bvi
 PORTVERSION=	1.3.0
 CATEGORIES=	editors
-MASTER_SITES=	http://bvi.linuxave.net/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= bvi
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	jedgar@FreeBSD.org
