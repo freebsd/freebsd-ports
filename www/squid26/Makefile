@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.36 1998/01/04 09:30:18 peter Exp $
+# $Id: Makefile,v 1.37 1998/01/10 14:38:23 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta11
@@ -16,6 +16,9 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.2.beta/
 EXTRACT_SUFX=	-src.tar.gz
 
+# Note, these are generated with CVS and the new patch does not correctly
+# apply them, so we have to force the new patch into better POSIX compliant
+# mode. See end of Makefile.  See also post-extract.
 PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
 PATCHFILES+=    1.2.beta11.patches
 
@@ -64,6 +67,9 @@ MAKEFILE=	makefile
 #  - Show malloc statistics in cachemgr status pages
 #CONFIGURE_ARGS+= --enable-xmalloc-statistics
 
+# For the benefit of the new broken patch.
+post-extract:
+	touch ${WRKSRC}/lib/malloc-2.6.4.c
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
@@ -84,3 +90,6 @@ post-install:
 	fi
 
 .include <bsd.port.mk>
+
+# Stupid GNU Make 2.5!!!
+PATCH:=         env POSIXLY_CORRECT=yes ${PATCH}
