@@ -13,11 +13,7 @@ MASTERDIR=	${.CURDIR}/../../news/tin
 MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
-		${.CURDIR}/files/patch-charset.c \
-		${.CURDIR}/files/patch-cook.c \
-		${.CURDIR}/files/patch-init.c \
-		${.CURDIR}/files/patch-misc.c \
-		${.CURDIR}/files/patch-page.c
+		${.CURDIR}/files/patch-init.c
 
 .include "${MASTERDIR}/Makefile"
 
