@@ -131,6 +131,7 @@
     SUBDIR += dia
     SUBDIR += diff-pdf
     SUBDIR += diffpdf
+    SUBDIR += dify
     SUBDIR += digikam
     SUBDIR += dilay
     SUBDIR += diplib
