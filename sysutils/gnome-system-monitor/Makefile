@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	gnomesystemmonitor
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-system-monitor/2.4
 DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME 2.0 system monitor program
+COMMENT=	GNOME 2 system monitor program
 
 LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eog2
-PORTVERSION=	2.2.1
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
 DISTNAME=	eog-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -19,11 +19,16 @@ COMMENT=	The Eye Of Gnome image viewer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui libgnomeprintui \
-	   	librsvg2
+USE_GNOME=	gnomeprefix gnomehack gnomehier eel2 libgnomeprintui librsvg2
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+	
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if defined(WITH_EXIF) || exists(${LOCALBASE}/lib/libexif.so.8)
+LIB_DEPENDS+=	exif.8:${PORTSDIR}/graphics/libexif
+.endif
+
+.include <bsd.port.post.mk>

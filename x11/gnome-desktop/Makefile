@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomedesktop
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.4
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -26,12 +26,10 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-gnome-distributor="FreeBSD GNOME Project"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-about.1
-
-post-patch:
-	@${REINPLACE_CMD} -E -e 's|GNOME_VENDOR=.*$$|GNOME_VENDOR="FreeBSD GNOME Project"|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.4.1.6
+PORTVERSION=	2.4.4.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.4
@@ -23,9 +24,11 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui librsvg2
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 GDMDIR?=	${PREFIX}/etc/gdm
+
+MAN1=		gdm.1
 
 .include <bsd.port.pre.mk>
 
@@ -33,15 +36,6 @@ GDMDIR?=	${PREFIX}/etc/gdm
 PLIST_SUB=	PAM_MISC=""
 .else
 PLIST_SUB=	PAM_MISC="@comment "
-.endif
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE=	yes
-.endif
-
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-pre-fetch:
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 post-extract:

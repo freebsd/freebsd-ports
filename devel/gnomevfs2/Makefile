@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.2.5
+PORTVERSION=	2.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.4
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -23,7 +23,6 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier gnomemimedata gconf2 libbonobo
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTVERSION=	2.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-applets/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-applets/2.4
 DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

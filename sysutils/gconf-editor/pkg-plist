@@ -15,8 +15,10 @@ share/locale/ar/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
 share/locale/bg/LC_MESSAGES/gconf-editor.mo
+share/locale/bn/LC_MESSAGES/gconf-editor.mo
 share/locale/ca/LC_MESSAGES/gconf-editor.mo
 share/locale/cs/LC_MESSAGES/gconf-editor.mo
+share/locale/cy/LC_MESSAGES/gconf-editor.mo
 share/locale/da/LC_MESSAGES/gconf-editor.mo
 share/locale/de/LC_MESSAGES/gconf-editor.mo
 share/locale/el/LC_MESSAGES/gconf-editor.mo
@@ -35,7 +37,10 @@ share/locale/it/LC_MESSAGES/gconf-editor.mo
 share/locale/ja/LC_MESSAGES/gconf-editor.mo
 share/locale/kn/LC_MESSAGES/gconf-editor.mo
 share/locale/ko/LC_MESSAGES/gconf-editor.mo
+share/locale/li/LC_MESSAGES/gconf-editor.mo
+share/locale/lt/LC_MESSAGES/gconf-editor.mo
 share/locale/lv/LC_MESSAGES/gconf-editor.mo
+share/locale/mk/LC_MESSAGES/gconf-editor.mo
 share/locale/ml/LC_MESSAGES/gconf-editor.mo
 share/locale/mn/LC_MESSAGES/gconf-editor.mo
 share/locale/ms/LC_MESSAGES/gconf-editor.mo

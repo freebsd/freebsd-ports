@@ -1,0 +1,11 @@
+--- registryd/Makefile.in.orig	Fri Aug  8 12:15:34 2003
++++ registryd/Makefile.in	Fri Aug  8 12:20:05 2003
+@@ -150,7 +150,7 @@
+ at_spi_registryd_SOURCES =  	desktop.c			desktop.h			deviceeventcontroller.c		deviceeventcontroller.h		registry-main.c			registry.c			registry.h
+ 
+ 
+-LDADD = $(top_builddir)/libspi/libspi.la $(X_LIBS) $(XTST_LIBS) $(XEVIE_LIBS) $(REGISTRYD_LIBS) 
++LDADD = -L$(top_builddir)/libspi/.libs $(top_builddir)/libspi/libspi.la $(X_LIBS) $(XTST_LIBS) $(XEVIE_LIBS) $(REGISTRYD_LIBS) 
+ 
+ serverinfodir = $(prefix)/libdata/bonobo/servers
+ serverinfo_DATA = Accessibility_Registry.server

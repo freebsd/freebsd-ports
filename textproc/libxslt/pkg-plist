@@ -3,6 +3,7 @@ bin/xsltproc
 etc/xsltConf.sh
 include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
+include/libexslt/exsltexports.h
 include/libxslt/attributes.h
 include/libxslt/documents.h
 include/libxslt/extensions.h
@@ -21,6 +22,7 @@ include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
 include/libxslt/xsltconfig.h
+include/libxslt/xsltexports.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.so
@@ -38,6 +40,7 @@ share/aclocal/libxslt.m4
 %%PYTHON:%%share/doc/libxslt-python/TODO
 %%PYTHON:%%share/doc/libxslt-python/examples/basic.py
 %%PYTHON:%%share/doc/libxslt-python/examples/exslt.py
+%%PYTHON:%%share/doc/libxslt-python/examples/extelem.py
 %%PYTHON:%%share/doc/libxslt-python/examples/extfunc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/pyxsltproc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/test.xml
@@ -85,7 +88,6 @@ share/doc/libxslt/html/libxslt-transform.html
 share/doc/libxslt/html/libxslt-variables.html
 share/doc/libxslt/html/libxslt-xslt.html
 share/doc/libxslt/html/libxslt-xsltInternals.html
-share/doc/libxslt/html/libxslt-xsltinternals.html
 share/doc/libxslt/html/libxslt-xsltutils.html
 share/doc/libxslt/html/news.html
 share/doc/libxslt/html/node.gif

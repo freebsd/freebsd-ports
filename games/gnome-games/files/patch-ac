@@ -1,5 +1,5 @@
---- freecell/gdk-card-image/Makefile.in.orig	Wed May  8 16:32:35 2002
-+++ freecell/gdk-card-image/Makefile.in	Wed May  8 16:32:41 2002
+--- gdk-card-image/Makefile.in.orig	Wed May  8 16:32:35 2002
++++ gdk-card-image/Makefile.in	Wed May  8 16:32:41 2002
 @@ -164,7 +164,7 @@
  libgdkcardimage_la_SOURCES = gdk-card-image.c
  libgdkcardimageincludedir = $(includedir)/gdkcardimage

@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	gok
-PORTVERSION=	0.7.5
-CATEGORIES=	sysutils gnome
+PORTVERSION=	0.8.2
+CATEGORIES=	sysutils gnome accessibility
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME On-Screen Keyboard (GOK)
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui atspi libwnck
 USE_REINPLACE=	yes

@@ -22,8 +22,10 @@ share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/az/LC_MESSAGES/GConf2.mo
 share/locale/be/LC_MESSAGES/GConf2.mo
 share/locale/bg/LC_MESSAGES/GConf2.mo
+share/locale/bn/LC_MESSAGES/GConf2.mo
 share/locale/ca/LC_MESSAGES/GConf2.mo
 share/locale/cs/LC_MESSAGES/GConf2.mo
+share/locale/cy/LC_MESSAGES/GConf2.mo
 share/locale/da/LC_MESSAGES/GConf2.mo
 share/locale/de/LC_MESSAGES/GConf2.mo
 share/locale/el/LC_MESSAGES/GConf2.mo
@@ -36,6 +38,7 @@ share/locale/ga/LC_MESSAGES/GConf2.mo
 share/locale/gl/LC_MESSAGES/GConf2.mo
 share/locale/hi/LC_MESSAGES/GConf2.mo
 share/locale/hu/LC_MESSAGES/GConf2.mo
+share/locale/id/LC_MESSAGES/GConf2.mo
 share/locale/it/LC_MESSAGES/GConf2.mo
 share/locale/ja/LC_MESSAGES/GConf2.mo
 share/locale/ko/LC_MESSAGES/GConf2.mo
@@ -54,6 +57,7 @@ share/locale/ro/LC_MESSAGES/GConf2.mo
 share/locale/ru/LC_MESSAGES/GConf2.mo
 share/locale/sk/LC_MESSAGES/GConf2.mo
 share/locale/sl/LC_MESSAGES/GConf2.mo
+share/locale/sq/LC_MESSAGES/GConf2.mo
 share/locale/sr/LC_MESSAGES/GConf2.mo
 share/locale/sr@Latn/LC_MESSAGES/GConf2.mo
 share/locale/sv/LC_MESSAGES/GConf2.mo
@@ -64,8 +68,8 @@ share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 share/sgml/gconf/gconf-1.0.dtd
-@dirrm share/sgml/gconf
 @dirrm share/doc/gconf
+@dirrm share/sgml/gconf
 @dirrm lib/GConf/2
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2

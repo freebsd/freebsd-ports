@@ -1,6 +1,6 @@
---- libgnomeui/Makefile.in.orig	Wed Jun  4 10:23:03 2003
-+++ libgnomeui/Makefile.in	Wed Jun  4 10:23:38 2003
-@@ -144,7 +144,7 @@
+--- libgnomeui/Makefile.in.orig	Fri Jun 13 14:41:05 2003
++++ libgnomeui/Makefile.in	Fri Jun 13 14:41:43 2003
+@@ -148,7 +148,7 @@
  #
  libgnomeuiincludedir = $(includedir)/libgnomeui-2.0/libgnomeui
  

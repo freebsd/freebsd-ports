@@ -1,13 +1,15 @@
---- Makefile.in.orig	Thu Sep 26 14:59:25 2002
-+++ Makefile.in	Tue Oct  8 01:09:21 2002
-@@ -123,19 +123,17 @@
+--- Makefile.in.orig	Fri Sep 12 15:22:17 2003
++++ Makefile.in	Fri Sep 12 15:24:38 2003
+@@ -139,21 +139,20 @@
  @WITH_DEBUGGER_TRUE@  	libexslt \
  @WITH_DEBUGGER_TRUE@  	xsltproc \
  @WITH_DEBUGGER_TRUE@  	doc \
 -@WITH_DEBUGGER_TRUE@	@PYTHON_SUBDIR@ \
 -@WITH_DEBUGGER_TRUE@  	tests
-+@WITH_DEBUGGER_TRUE@	@WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@ \
- @WITH_DEBUGGER_FALSE@SUBDIRS = @WITH_DEBUGGER_FALSE@\
++@WITH_DEBUGGER_TRUE@   @WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
++
+ 
+ @WITH_DEBUGGER_FALSE@SUBDIRS = \
  @WITH_DEBUGGER_FALSE@	libxslt \
  @WITH_DEBUGGER_FALSE@	libexslt \
  @WITH_DEBUGGER_FALSE@	xsltproc \
@@ -15,6 +17,7 @@
 -@WITH_DEBUGGER_FALSE@	@PYTHON_SUBDIR@ \
 -@WITH_DEBUGGER_FALSE@	tests
 +@WITH_DEBUGGER_FALSE@	@WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
+ 
  
  DIST_SUBDIRS = libxslt libexslt xsltproc python doc tests breakpoint
  

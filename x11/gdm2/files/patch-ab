@@ -1,84 +1,47 @@
---- config/gdm.conf.in.orig	Fri Aug 23 18:53:53 2002
-+++ config/gdm.conf.in	Sun Oct 13 17:57:14 2002
-@@ -33,14 +33,14 @@
- # The gdm configuration program that is run from the login screen, you should
- # probably leave this alone
- Configurator=@EXPANDED_GDMCONFIGDIR@/gdmsetup --disable-sound --disable-crash-dialog
--GnomeDefaultSession=@EXPANDED_DATADIR@/gnome/default.session
-+GnomeDefaultSession=@EXPANDED_DATADIR@/default.session
- # The chooser program.  Must output the chosen host on stdout, probably you
- # should leave this alone
- Chooser=@EXPANDED_BINDIR@/gdmchooser
- # Default path to set.  The profile scripts will likely override this
- DefaultPath=/bin:/usr/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:@EXPANDED_BINDIR@
- # Default path for root.  The profile scripts will likely override this
--RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:@EXPANDED_BINDIR@
-+RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:@EXPANDED_BINDIR@
- DisplayInitDir=@EXPANDED_SYSCONFDIR@/gdm/Init
- # Greeter for local (non-xdmcp) logins.  Change gdmlogin to gdmgreeter to
- # get the new graphical greeter.
-@@ -57,7 +57,7 @@
+--- config/gdm.conf.in.orig	Wed Aug 20 13:40:45 2003
++++ config/gdm.conf.in	Wed Aug 20 22:29:47 2003
+@@ -73,7 +73,7 @@
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
- KillInitClients=true
--LogDir=@EXPANDED_AUTHDIR@
+ #KillInitClients=true
+-LogDir=@EXPANDED_LOGDIR@
 +LogDir=/var/log
  # You should probably never change this value unless you have a weird setup
  PidFile=/var/run/gdm.pid
- PostSessionScriptDir=@EXPANDED_SYSCONFDIR@/gdm/PostSession/
-@@ -72,7 +72,7 @@
+ # Note that a post login script is run before a PreSession script.
+@@ -93,7 +93,7 @@
  # Reboot, Halt and suspend commands, you can add different commands
  # separated by a semicolon and gdm will use the first one it can find
- RebootCommand=/sbin/shutdown -r now;/usr/sbin/shutdown -r now
--HaltCommand=/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now
+ #RebootCommand=/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now
+-#HaltCommand=/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now
 +HaltCommand=/sbin/shutdown -p now;/usr/sbin/shutdown -p now
- SuspendCommand=
+ #SuspendCommand=
  # Probably should not touch the below this is the standard setup
  ServAuthDir=@EXPANDED_AUTHDIR@
-@@ -84,16 +84,16 @@
- UserAuthFBDir=/tmp
- UserAuthFile=.Xauthority
- # The X server to use if we can't figure out what else to run.
--StandardXServer=/usr/X11R6/bin/X
-+StandardXServer=@EXPANDED_BINDIR@/X
- # The maximum number of flexible X servers to run.
- FlexibleXServers=5
- # the X nest command
--Xnest=/usr/X11R6/bin/Xnest -name Xnest
-+Xnest=@EXPANDED_BINDIR@/Xnest -name Xnest
- # Automatic VT allocation.  Right now only works on Linux.  This way
+@@ -123,7 +123,7 @@
  # we force X to use specific vts.  turn VTAllocation to false if this
  # is causing problems.
- FirstVT=7
--VTAllocation=true
+ #FirstVT=7
+-#VTAllocation=true
 +VTAllocation=false
- 
- [security]
- # If any distributions ship with this one off, they should be shot
-@@ -153,7 +153,7 @@
+ # Should double login be treated with a warning (and possibility to change
+ # vts on linux systems for console logins)
+ #DoubleLoginWarning=true
+@@ -200,7 +200,7 @@
  # The 'theme'.  By default we're using the default gtk theme
  # Of course assuming that gtk got installed in the same prefix,
  # if not change this.
--GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
+-#GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
 +GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk-2.0/gtkrc
  # Maximum size of an icon, larger icons are scaled down
- MaxIconWidth=128
- MaxIconHeight=128
-@@ -281,7 +281,7 @@
- # Definition of the standard X server.
- [server-Standard]
- name=Standard server
--command=/usr/X11R6/bin/X
-+command=@EXPANDED_BINDIR@/X vt9
- flexible=true
- 
- # To use this server type you should add -query host or -indirect host
-@@ -289,7 +289,7 @@
- [server-Terminal]
- name=Terminal server
- # Add -terminate to make things behave more nicely
--command=/usr/X11R6/bin/X -terminate
-+command=@EXPANDED_BINDIR@/X -terminate
- # Make this not appear in the flexible servers (we need extra params
- # anyway, and terminate would be bad for xdmcp)
- flexible=false
+ #MaxIconWidth=128
+ #MaxIconHeight=128
+@@ -372,7 +372,7 @@
+ # to the command line
+ [server-Chooser]
+ name=Chooser server
+-command=@X_SERVER@
++command=@X_SERVER@ vt9
+ # Make this not appear in the flexible servers for now, but if you
+ # wish to allow a chooser server then make this true.  This is the
+ # only way to make a flexible chooser server that behaves nicely.

@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia audio
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-MASTER_SITES=	http://gstreamer.net/releases/${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/gst-plugins/0.6
 PKGNAMESUFFIX=	-plugins
 DISTNAME=	gst-plugins-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GStreamer written collection of plugins handling several media types
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
+		pkgconfig \
 		gconf2
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
@@ -195,9 +195,10 @@ WITH_LIBDV=yes
 .endif
 
 # libdvdnav
-.if exists(${LOCALBASE}/lib/libdvdnav.so)
-WITH_LIBDVDNAV=yes
-.endif
+# XXX libdvdnav needs to be updated to 0.1.9 or higher
+#.if exists(${LOCALBASE}/lib/libdvdnav.so)
+.undef WITH_LIBDVDNAV
+#.endif
 
 # libdvdread
 .if exists(${LOCALBASE}/lib/libdvdread.a)
@@ -590,7 +591,7 @@ PLIST_SUB+=	VORBIS=""
 CONFIGURE_ARGS+=	--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
 .else
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 CONFIGURE_ARGS+=	--with-xmms-prefix=${X11BASE} \
 			--with-xmms-exec-prefix=${X11BASE}

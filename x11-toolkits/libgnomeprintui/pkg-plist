@@ -6,11 +6,13 @@ include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-unit-selector.h
 lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.so
-lib/libgnomeprintui-2-2.so.0
+lib/libgnomeprintui-2-2.so.1
 libdata/pkgconfig/libgnomeprintui-2.2.pc
 share/doc/libgnomeprintui/c7.html
+share/doc/libgnomeprintui/home.png
 share/doc/libgnomeprintui/index.html
 share/doc/libgnomeprintui/index.sgml
+share/doc/libgnomeprintui/left.png
 share/doc/libgnomeprintui/libgnomeprintui-gnome-font-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-copies.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-print-dialog.html
@@ -20,6 +22,8 @@ share/doc/libgnomeprintui/libgnomeprintui-gnome-print-preview.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-dialog.html
 share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-selector.html
 share/doc/libgnomeprintui/libgnomeprintui.html
+share/doc/libgnomeprintui/right.png
+share/doc/libgnomeprintui/up.png
 share/locale/am/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ar/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/az/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -28,6 +32,7 @@ share/locale/bg/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ca/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/cs/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/cy/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/da/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/de/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/el/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -49,9 +54,9 @@ share/locale/it/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ja/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/kn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/li/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
-share/locale/mk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ml/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprintui-2.2.mo

@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.2.3
+PORTVERSION=	2.4.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A help browser for GNOME 2.0 desktop
+COMMENT=	A help browser for the GNOME 2 desktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -55,6 +55,7 @@ lib/gstreamer-%%VERSION%%/libgstlevel.so
 %%LIBMAD%%lib/gstreamer-%%VERSION%%/libgstmad.so
 lib/gstreamer-%%VERSION%%/libgstmedian.so
 %%LIBMIKMOD%%lib/gstreamer-%%VERSION%%/libgstmikmod.so
+lib/gstreamer-%%VERSION%%/libgstmodplug.so
 lib/gstreamer-%%VERSION%%/libgstmono2stereo.so
 lib/gstreamer-%%VERSION%%/libgstmonoscope.so
 lib/gstreamer-%%VERSION%%/libgstmp1videoparse.so

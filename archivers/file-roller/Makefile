@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fileroller
-PORTVERSION=	2.2.5
+PORTVERSION=	2.4.0.1
 PORTEPOCH=	1
 CATEGORIES=	archivers gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/file-roller/2.2
+MASTER_SITE_SUBDIR=	sources/file-roller/2.4
 DISTNAME=	file-roller-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -18,11 +18,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An archive manager for zip files, tar, etc
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
-		lzop:${PORTSDIR}/archivers/lzop
+		lzop:${PORTSDIR}/archivers/lzop \
+		zoo:${PORTSDIR}/archivers/zoo
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui

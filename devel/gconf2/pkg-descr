@@ -1,4 +1,22 @@
-GConf is a configuration database system for the GNOME desktop,
-functionally similar to the Windows registry but lots better :-)
+GConf attempts to leapfrog the registry concept. It's a library which provides
+a simple configuration data storage interface to applications, and also an
+architecture that tries to make things easy for system administrators.
+
+Here are some of the features of GConf:
+
+    * Replaceable backend architecture.
+
+    * Configuration key documentation. Applications can install documentation
+      along with their configuration data, explaining the possible settings and
+      the effect of each configuration key.
+
+    * Data change notification service. If configuration data is changed, all
+      interested applications are notified. The notification service works
+      across the network, affecting all login sessions for a single user.
+
+    * The client API is very abstract.
+
+    * GConf does proper locking so that the configuration data doesn't get
+      corrupted when multiple applications try to use it.
 
 WWW: http://www.gnome.org/projects/gconf/

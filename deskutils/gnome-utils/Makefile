@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gnomeutils2
-PORTVERSION=	2.2.3
+PORTVERSION=	2.4.0
 PORTEPOCH=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-utils/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-utils/2.4
 DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,8 +27,6 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=	gnome-calculator.1 \
-	gnome-character-map.1 gnome-dictionary.1 \
-	gnome-search-tool.1 gnome-system-log.1 gdialog.1
+MAN1=	gnome-dictionary.1 gnome-search-tool.1 gnome-system-log.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- docs/reference/libgail-util/Makefile.in.orig	Thu May 15 14:45:49 2003
++++ docs/reference/libgail-util/Makefile.in	Thu May 15 14:47:43 2003
+@@ -299,8 +299,6 @@
+ 	echo '-- Installing '$$i ; \
+ 	$(INSTALL_DATA) $$i $(DESTDIR)$(TARGET_DIR); \
+ 	  done; \
+-	  echo '-- Installing $(srcdir)/html/index.sgml' ; \
+-	  $(INSTALL_DATA) $(srcdir)/html/index.sgml $(DESTDIR)$(TARGET_DIR); \
+ 	fi)
+ 
+ #

@@ -5,13 +5,14 @@ include/vte/vte.h
 include/vte/vteaccess.h
 lib/libvte.a
 lib/libvte.so
-lib/libvte.so.4
+lib/libvte.so.5
 lib/vte/decset
 lib/vte/interpret
 lib/vte/iso8859mode
 lib/vte/nativeecho
 lib/vte/osc
 lib/vte/slowcat
+lib/vte/vterdb
 lib/vte/utf8echo
 lib/vte/utf8mode
 lib/vte/window
@@ -40,7 +41,9 @@ share/locale/is/LC_MESSAGES/vte.mo
 share/locale/it/LC_MESSAGES/vte.mo
 share/locale/ja/LC_MESSAGES/vte.mo
 share/locale/ko/LC_MESSAGES/vte.mo
+share/locale/li/LC_MESSAGES/vte.mo
 share/locale/lv/LC_MESSAGES/vte.mo
+share/locale/mk/LC_MESSAGES/vte.mo
 share/locale/ml/LC_MESSAGES/vte.mo
 share/locale/mn/LC_MESSAGES/vte.mo
 share/locale/ms/LC_MESSAGES/vte.mo

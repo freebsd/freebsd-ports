@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	gnomemedia2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.4.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-media/2.2
+MASTER_SITE_SUBDIR=	sources/gnome-media/2.4
 DISTNAME=	gnome-media-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Multimedia applications for the GNOME 2.0 desktop
+COMMENT=	Multimedia applications for the GNOME 2 desktop
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
@@ -22,11 +22,11 @@ LIB_DEPENDS=	gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gail gnomedesktop
+GNOME_DESKTOP_VERSION=2
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop gail
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
