@@ -1,5 +1,6 @@
---- Makefile.ORG	Sun Sep 22 20:00:16 1996
-+++ Makefile	Wed Nov 20 23:03:00 1996
+diff -ru orig/Makefile ./Makefile
+--- orig/Makefile	Sun Sep 22 14:00:16 1996
++++ Makefile	Tue Jun 17 16:36:26 1997
 @@ -51,11 +51,11 @@
  # Where the configuration files live.
  RADDB		= ./raddb
@@ -26,7 +27,32 @@
  
  # Define SRV to hold any combination of server names you'd like to override:
  #SRV3	  = -DDEFAULT_TACACS_SERVER=\"vms.dns.name\"
-@@ -219,12 +219,12 @@
+@@ -110,17 +110,21 @@
+ # radiusd -- the default
+ #
+ #--------------------------------------------------------------------------
++.if !defined(MAKE_EBONES)
+ DEFS	  = -DHAVE_SETVBUF -DNOSHADOW $(MERIT) $(STUFF)
+ RADLIBS	  =
+ INCS	  =
++.endif
+ 
+ #
+ # mkerb
+ #
+ #--------------------------------------------------------------------------
+-#DEFS	  = -DHAVE_SETVBUF -DM_KERB -DNOSHADOW $(MERIT) $(STUFF)
+-#RADLIBS	  = /usr/kerberos/lib/libkrb.a /usr/kerberos/lib/libdes.a
+-#INCS	  = -I/usr/kerberos/include
++.if defined(MAKE_EBONES)
++DEFS	  = -DHAVE_SETVBUF -DM_KERB -DNOSHADOW $(MERIT) $(STUFF)
++RADLIBS	  = -lkrb -ldes
++INCS	  = -I/usr/include/kerberosIV
++.endif
+ 
+ #
+ # akerb
+@@ -219,12 +223,12 @@
  #
  #--------------------------------------------------------------------------
  
@@ -45,7 +71,7 @@
  
  #
  # Solaris 2.x
-@@ -304,14 +304,17 @@
+@@ -304,14 +308,17 @@
  #
  #--------------------------------------------------------------------------
  
@@ -61,7 +87,7 @@
 +CFLAGS += -DRADIUS_DIR=\"${PREFIX}/lib/radius/db\" \
 +	-DRADACCT_DIR=\"${PREFIX}/lib/radius/acct\" \
 +	-DRADIUS_COMPRESS=\"/usr/bin/gzip\" \
-+	$(DEFS)
++	$(DEFS) $(INCS)
 +LDFLAGS	  =
 +LIBS	  = -lcrypt -lcompat
 +MOSTUTIL  = $(RADCHECK) $(RADPWTST) $(RADPASS) $(DNSCHECK)
@@ -71,7 +97,7 @@
  #
  # AIX 3.2.5 (if using xlc(1) add -D_ALL_SOURCE to CFLAGS below)
  #
-@@ -604,8 +607,6 @@
+@@ -604,8 +611,6 @@
  						$(MAN_INSDIR)/man5/clients.5
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/dictionary.5 \
  						$(MAN_INSDIR)/man5/dictionary.5
@@ -80,7 +106,7 @@
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/radius.fsm.5 \
  						$(MAN_INSDIR)/man5/radius.fsm.5
  	$(INSTALL) $(M) 644 $(O) $(RADOWN) $(G) $(RADGRP) $(MAN)/users.5 \
-@@ -625,17 +626,17 @@
+@@ -625,17 +630,17 @@
  		/bin/mkdir -p $(RADDB_INSDIR) ;\
  	fi
  	$(INSTALL) $(M) 660 $(O) $(RADOWN) $(G) $(RADGRP) $(RADDB)/authfile \

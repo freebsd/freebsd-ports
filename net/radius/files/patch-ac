@@ -1,0 +1,48 @@
+diff -ru orig/src/krb_conf.h ./src/krb_conf.h
+--- orig/src/krb_conf.h	Tue Jul 18 15:00:20 1995
++++ src/krb_conf.h	Tue Jun 17 16:09:47 1997
+@@ -22,7 +22,7 @@
+ #ifndef KRB_CONF_DEFS
+ #define KRB_CONF_DEFS
+ 
+-#include <mit-copyright.h>
++/* #include <mit-copyright.h> */
+ 
+ /* Byte ordering */
+ extern int      krbONE;
+diff -ru orig/src/krb_get_in_tkt.c ./src/krb_get_in_tkt.c
+--- orig/src/krb_get_in_tkt.c	Tue Jul 18 15:01:05 1995
++++ src/krb_get_in_tkt.c	Tue Jun 17 16:09:47 1997
+@@ -16,7 +16,7 @@
+ 
+ #endif				/* lint */
+ 
+-#include <mit-copyright.h>
++/* #include <mit-copyright.h> */
+ #include <krb.h>
+ #include <des.h>
+ 
+diff -ru orig/src/mit_stringtokey.c ./src/mit_stringtokey.c
+--- orig/src/mit_stringtokey.c	Tue Jul 18 15:01:02 1995
++++ src/mit_stringtokey.c	Tue Jun 17 16:10:20 1997
+@@ -30,7 +30,7 @@
+ 
+ #endif	/* lint */
+ 
+-#include <mit-copyright.h>
++/* #include <mit-copyright.h> */
+ #include <stdio.h>
+ #include <des.h>
+ /*#include "des_internal.h"*/
+diff -ru orig/src/prot.h ./src/prot.h
+--- orig/src/prot.h	Wed May 22 09:53:11 1996
++++ src/prot.h	Tue Jun 17 16:09:47 1997
+@@ -13,7 +13,7 @@
+  * Include file with authentication protocol information.
+  */
+ 
+-#include <mit-copyright.h>
++/* #include <mit-copyright.h> */
+ 
+ #include "krb_conf.h"
+ 
