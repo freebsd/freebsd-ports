@@ -1,0 +1,6 @@
+mod_tsunami is an apache module which dynamically limits
+the number of httpd slots used per main web directories.
+It is useful if you provide home pages hosting, and don't
+want one site to use all the resources.
+
+WWW: http://mod-tsunami.sourceforge.net/
