@@ -23,3 +23,4 @@ share/games/xroads/map17.xrm
 share/games/xroads/map18.xrm
 @dirrm share/doc/xroads
 @dirrm share/games/xroads
+@dirrm share/games
