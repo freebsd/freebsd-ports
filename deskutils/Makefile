@@ -55,6 +55,7 @@
     SUBDIR += kickpim
     SUBDIR += kluje
     SUBDIR += knowit
+    SUBDIR += krefty
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += ktagebuch
