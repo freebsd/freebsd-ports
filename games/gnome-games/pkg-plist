@@ -786,6 +786,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/xbill/C
 @dirrm share/gnome/help/xbill
 @dirrm share/gnome/help/same-gnome/C/figures
+@dirrm share/gnome/help/gnotski
 @dirrm share/gnome/help/gnomine/C/figures
 @dirrm share/gnome/help/gnomine/C
 @dirrm share/gnome/help/gnomine

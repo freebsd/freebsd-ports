@@ -41,3 +41,4 @@ share/guile/g-wrap/runtime.scm
 share/guile/g-wrap/simple-type.scm
 share/guile/g-wrap/sorting.scm
 @dirrm share/guile/g-wrap
+@dirrm include/g-wrap
