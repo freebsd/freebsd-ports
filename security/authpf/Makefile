@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-altq
 .endif
 DISTNAME=	pf_freebsd_${PORTVERSION}
 
-MAINTAINER=	max@love2party.net
+MAINTAINER=	mlaier@freebsd.org
 COMMENT=	Authentification shell for pf gateways
 
 RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf

@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-altq
 .endif
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	max@love2party.net
+MAINTAINER=	mlaier@freebsd.org
 COMMENT=	OpenBSD pf as a kldmodule
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
