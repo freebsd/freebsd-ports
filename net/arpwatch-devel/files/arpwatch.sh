@@ -1,5 +1,12 @@
 #!/bin/sh
 
+if [ -r /etc/defaults/rc.conf ]; then
+	. /etc/defaults/rc.conf
+	source_rc_confs
+elif [ -r /etc/rc.conf ]; then
+	. /etc/rc.conf
+fi
+
 prog=$(realpath $0) || exit 1
 dir=${prog%/*}
 PREFIX=${dir%/etc/rc.d}
@@ -12,9 +19,26 @@ fi
 
 case $1 in
 start)
-	if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
-		"$PREFIX"/sbin/arpwatch && echo -n ' arpwatch'
+	if [ ! -e "$PREFIX"/arpwatch/arp.dat ]; then
+		if [ -e "$PREFIX"/arpwatch/arp.dat- ]; then
+			cp "$PREFIX"/arpwatch/arp.dat- "$PREFIX"/arpwatch/arp.dat	
+		else
+			touch "$PREFIX"/arpwarch/arp.dat
+		fi
 	fi
+
+	case ${arpwatch_interfaces} in
+	'')
+		if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
+			"$PREFIX"/sbin/arpwatch && echo -n ' arpwatch'
+		fi
+		;;
+	*)
+		for interface in ${arpwatch_interfaces}; do
+			"$PREFIX"/sbin/arpwatch -i "${interface}" && echo -n " arpwatch(${interface})"
+		done
+		;;
+	esac
 	;;
 stop)
 	killall arpwatch && echo -n ' arpwatch'
