@@ -1,0 +1,26 @@
+--- ./gopherd/AUTH.c.org	Mon Feb  6 13:25:13 1995
++++ ./gopherd/AUTH.c	Thu May 11 19:26:05 1995
+@@ -216,19 +216,23 @@
+ 	  return(AUTHRES_SYSERR);
+      }
+ 
++#ifndef __FreeBSD__
+      if (fgetpwent(ourpasswd) == NULL) {
+ 	  Debugmsg("fgetpwent failed...");
+ 	  return(AUTHRES_SYSERR);
+      }
++#endif
+ 
+      fseek(ourpasswd, 0L,SEEK_SET);
+ 
+      /** Mimic getpwnam, sigh why isn't setpwfile() everywhere....**/
+ 
++#ifndef __FreeBSD__
+      while ((pw = fgetpwent(ourpasswd)) != NULL) {
+ 	  if (strcmp(pw->pw_name, username) == 0)
+ 	       return(AUTHunix_checkuser(pw, password));
+      }
++#endif
+      return(AUTHRES_NOUSER);
+ #else
+      return(AUTHRES_SYSERR);
