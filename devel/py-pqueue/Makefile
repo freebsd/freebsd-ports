@@ -9,7 +9,7 @@ PORTNAME=	pqueue
 PORTVERSION=	0.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.csse.monash.edu.au/hons/projects/1999/Andrew.Snare/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PQueue-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -19,7 +19,6 @@ USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 WRKSRC=		${WRKDIR}/PQueue
 
 .include <bsd.port.mk>
