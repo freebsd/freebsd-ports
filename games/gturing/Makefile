@@ -12,11 +12,11 @@ CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
 MAINTAINER=	rael@vectorstar.net
+COMMENT=	A simple turing machine simulator for gnome 2
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
-BROKEN=		"Requires update to work with libgnomeprint-2-2"
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
