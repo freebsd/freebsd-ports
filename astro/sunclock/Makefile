@@ -18,7 +18,6 @@ COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
 
