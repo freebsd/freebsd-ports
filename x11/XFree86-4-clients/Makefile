@@ -37,7 +37,7 @@ XINSTALL_DIRS=		programs fonts/util
 XINSTALL_MAN_DIRS=	programs
 
 .for pf in patch-bdftruncate.pl patch-ucs2any.pl \
-	   patch-Xres.cpp patch-Imake.rules
+	   patch-Xres.cpp patch-Imake.rules patch-mkfontscale.c
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
