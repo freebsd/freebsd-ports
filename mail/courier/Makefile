@@ -109,6 +109,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		WITH_SENDFAX="${WITH_SENDFAX:L}" \
 		WITH_IPV6="${WITH_IPV6:L}" \
 		WITH_TRANSPORT="${WITH_TRANSPORT}" \
+		WITH_GHOSTSCRIPT_AFPL="${WITH_GHOSTSCRIPT_AFPL:no}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}"
 
@@ -121,6 +122,14 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 pre-everything::
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-patch:
 	@${PERL} -pi -e 's:\@datadir\@:\@sysconfdir\@:g;' \
