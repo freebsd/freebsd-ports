@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hartzell@fruitfly.org
 COMMENT=	This is a thin wrapper around the shellwords.pl package
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Shellwords.3
