@@ -1,0 +1,19 @@
+--- configure.orig	Thu May 27 21:18:02 2004
++++ configure	Thu May 27 23:03:36 2004
+@@ -16128,6 +16128,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -23221,7 +23222,7 @@
+     return version.compare("$REQUIREDTSEVERSIONNO") < 0;
+ }
+ EOF
+-    $CXX $CXXFLAGS -I$inc_libtse3 -L$lib_libtse3 tse3vtest.cpp -Wl,-rpath $lib_libtse3 -ltse3 -o tse3vtest
++    $CXX $CXXFLAGS -I$inc_libtse3 -L$lib_libtse3 tse3vtest.cpp -Wl,-rpath $lib_libtse3 -ltse3 $PTHREAD_LIBS -o tse3vtest
+     if test $? -ne 0; then
+       echo ""
+       echo " Error: Couldn't build a simple TSE3 example program."
