@@ -1,9 +1,7 @@
 sbin/freebsd-update
 freebsd-update/Makefile
-freebsd-update/README
-freebsd-update/VERSION
 freebsd-update/CHANGELOG
 freebsd-update/LICENSE
-freebsd-update/update.conf.sample
+etc/freebsd-update.conf.sample
 freebsd-update/verify
 @dirrm freebsd-update
