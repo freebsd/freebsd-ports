@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeamp
-PORTVERSION=	2.1.rc4
+PORTVERSION=	2.1.rc5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
