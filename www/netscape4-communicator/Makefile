@@ -14,9 +14,6 @@ DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
 MAINTAINER?=	sada@FreeBSD.org
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
-.if ${ARCH} == "alpha"
-RUN_DEPENDS+=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
-.endif
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
@@ -60,6 +57,10 @@ RESTRICTED=     "Contains strong cryptography"
 
 .if !defined(_PREMKINCLUDED)
 .include <bsd.port.pre.mk>
+.endif
+
+.if ${ARCH} == "alpha"
+RUN_DEPENDS+=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 .endif
 
 .if (${ARCH} == "i386") && !defined(USE_LINUX_LIB) && !defined(WITHOUT_AOUT)
