@@ -27,7 +27,7 @@ pre-configure:
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} _des.h _md2.h _md5.h rsaref.h global.h \
+		${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h rsaref.h global.h \
 			${PREFIX}/include
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} librsaref.a librsaref.so.2.0 \
