@@ -5,14 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	muttprint
+PORTNAME?=	muttprint
 PORTVERSION=	0.71
-CATEGORIES=	print mail
+CATEGORIES?=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
 
-MAINTAINER=	obraun@FreeBSD.org
-COMMENT=	Utility to print mail for most any mail client
+MAINTAINER?=	obraun@FreeBSD.org
+COMMENT?=	Utility to print mail for most any mail client
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=	letter
