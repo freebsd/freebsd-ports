@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zhcon
     SUBDIR += CJK
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
