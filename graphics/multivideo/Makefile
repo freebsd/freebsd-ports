@@ -14,12 +14,21 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	wx_gtk-2.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	# empty
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+ALL_TARGET=	default
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|g++|\$$\(CXX)|g ; \
+		 s|-O2 -g -Wall -W|\$$\(CXXFLAGS\)|g ; \
+		 s|[(]CC[)]|\(CXX\)|g ; \
+		 s|gcc|\$$\(CXX\)|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multivideo ${PREFIX}/bin
