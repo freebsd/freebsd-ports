@@ -1661,6 +1661,7 @@ festlex-ogi	ports/audio/festlex-ogi
 festlex-poslex	ports/audio/festlex-poslex
 festogi-spanish	ports/audio/festogi-spanish
 festvox-abc	ports/audio/festvox-abc
+festvox-aec	ports/audio/festvox-aec
 festvox-don	ports/audio/festvox-don
 festvox-el11	ports/audio/festvox-el11
 festvox-hvs	ports/audio/festvox-hvs
