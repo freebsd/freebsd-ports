@@ -23,11 +23,16 @@ LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
 USE_GMAKE=	yes
-USE_GTK=	yes
-USE_IMLIB=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
 WANT_GNOME=	yes
+.if defined(HAVE_GNOME)
+USE_GTK=	yes
+USE_IMLIB=	yes
+.endif
 
 GNU_CONFIGURE=	yes
 
@@ -46,13 +51,12 @@ CONFIGURE_ARGS+=	--disable-shape
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 .else
-CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints
+CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
+			--disable-gtktest --disable-imlibtest
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 .endif
 
