@@ -32,6 +32,8 @@ libexec/uucp/uuxqt
 @group wheel
 sbin/uuchk
 sbin/uuconv
+@dirrm etc/periodic/daily
+@dirrm etc/periodic/weekly
 @dirrm etc/periodic
 @dirrm etc/uucp
 @dirrm libexec/uucp
