@@ -12,6 +12,8 @@ MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	dillon@FreeBSD.ORG
 
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+
 MAN1=		crw.1
 MANCOMPRESSED=	yes
 
