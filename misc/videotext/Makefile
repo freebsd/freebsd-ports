@@ -1,9 +1,9 @@
 # New ports collection makefile for:	vbidecode
-# Version required:	1.1.3
-# Date created:		Mon June 8 15:11:00 BST 1999
+# Version required:	0.6.971023
+# Date created:		Tue June 8 15:11:00 BST 1999
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1999/06/07 22:23:36 roger Exp $
+# $Id: Makefile,v 1.1.1.1 1999/06/08 17:48:36 roger Exp $
 #
 
 DISTNAME=	videotext-0.6.971023
@@ -16,7 +16,19 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		png.3:${PORTSDIR}/graphics/png \
 		xview.3:${PORTSDIR}/x11-toolkits/xview
 
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 MAN1=		videotext.1 tunerctl.1
+
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if !exists(${X11BASE}/lib/X11/fonts/local)
+	@${ECHO} "*********************************************************"
+	@${ECHO} "Please update your XFree86 to version 3.3.3 or later"
+	@${ECHO} "or add ${X11BASE}/lib/X11/fonts/local to your font path"
+	@${ECHO} "in /etc/XF86Config."
+	@${ECHO} "*********************************************************"
+.endif
 
 .include <bsd.port.mk>
