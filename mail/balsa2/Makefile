@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa2
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -45,6 +45,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		balsa.1
+
+.if defined(WITH_GPG)
+LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme
+CONFIGURE_ARGS+=	--enable-gpgme
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
