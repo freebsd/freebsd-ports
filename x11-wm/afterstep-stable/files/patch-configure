@@ -1,0 +1,22 @@
+$FreeBSD$
+
+--- configure.orig	Mon Sep 13 11:43:06 2004
++++ configure	Mon Sep 13 11:43:30 2004
+@@ -1734,7 +1734,7 @@
+ # Check whether --enable-reuse-font or --disable-reuse-font was given.
+ if test "${enable_reuse_font+set}" = set; then
+   enableval="$enable_reuse_font"
+-  if test x$enableval == "xyes"; then
++  if test x$enableval = "xyes"; then
+ cat >>confdefs.h <<\_ACEOF
+ #define MODULE_REUSE_LOADED_FONT 1
+ _ACEOF
+@@ -5450,7 +5450,7 @@
+ 
+ have_shmimage=no
+ 
+-if test "x$CYGWIN" == "xyes"; then
++if test "x$CYGWIN" = "xyes"; then
+ 	enable_shmimage=no
+ fi
+ 
