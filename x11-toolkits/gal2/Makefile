@@ -1,29 +1,30 @@
-# New ports collection makefile for:	gal
-# Date created:				5th October 2000
-# Whom:					Ade Lovett <ade@FreeBSD.org>
+# New ports collection makefile for:	gal2
+# Date created:				25 August 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gal
-PORTVERSION=	0.19.3
-CATEGORIES?=	x11-toolkits gnome
+PORTNAME=	gal2
+PORTVERSION=	0.0.5
+CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/gal
-DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	2.0.1/sources/${PORTNAME}
+DISTNAME=	${PORTNAME}-0-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
-MAINTAINER?=	gnome@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
-GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
+USE_GNOME=	gnomehack gnomeprefix gnomehier
+GNOME_HTML_DIR=	${PREFIX}/share/doc/gal2
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
