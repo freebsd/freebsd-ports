@@ -7,7 +7,7 @@
 
 PORTNAME=	libXt
 PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
@@ -28,5 +28,8 @@ USE_LIBTOOL_VER=13
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
+
+post-extract:
+	@${MV} ${WRKSRC}/ObjectP.h ${WRKSRC}/include/X11
 
 .include <bsd.port.mk>
