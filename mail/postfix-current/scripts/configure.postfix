@@ -23,9 +23,8 @@ NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
-TLS		"SSL and TLS (BROKEN)" "$status_TLS" \
-IPv6		"IPv6 support (BROKEN)" "$status_IPv6" \
-IPv6TLS		"IPv6 support with SSL and TLS (BROKEN)" "$status_IPv6TLS" \
+SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
+TLS		"SSL and TLS" "$status_TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
@@ -33,7 +32,6 @@ DB42		"Berkeley DB4.2 (required if SASL also built with DB4.2)" "$status_DB42" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
 PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
 PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
-PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
 NIS		"NIS map lookups" "$status_NIS" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
@@ -62,9 +60,7 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 echo "PREFIX=	${PREFIX}"
 
-SUB_TLS="@comment "
 SUB_TEST="@comment "
-SUB_IPV6="@comment "
 
 while [ "$1" ]; do
 	case $1 in
@@ -104,16 +100,14 @@ while [ "$1" ]; do
 		SASLKRB)
                         echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
 			;;
+		SASLKRB5)
+			echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcrypt -lcom_err -lasn1 -lroken"
+			;;
 		TLS)
-			echo "MAN8+=		tlsmgr.8"
 			echo "USE_OPENSSL=	yes"
-			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
+			echo "POSTFIX_CCARGS+=	-DUSE_TLS -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.19-2.2-20040919-0.9.7d.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.19-2.2-20040919-0.9.7d/pfixtls.diff"
-			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
-			SUB_TLS=""
 			;;
 		DB3)
 			if [ "X$BDB_SELECTED" != "X" ]; then
@@ -170,22 +164,15 @@ while [ "$1" ]; do
 			echo "MYSQL_SUFFIX=	+mysql"
 			;;
 		PgSQL)
-			echo "POSTGRESQL_PORT?=	databases/postgresql7"
+			echo "POSTGRESQL_PORT?=	databases/postgresql74-client"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		PgSQL73)
-			echo "POSTGRESQL_PORT?=	databases/postgresql73"
+			echo "POSTGRESQL_PORT?=	databases/postgresql73-client"
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
-			;;
-		PgSQL72)
-			echo "POSTGRESQL_PORT?=	databases/postgresql72"
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
@@ -205,37 +192,6 @@ while [ "$1" ]; do
 #			echo "MAN1+=		smtp-sink.1 smtp-source.1 qmqp-sink.1 qmqp-source.1"
 			SUB_TEST=""
 			;;
-		IPv6)
-			if [ X$SUB_TLS = "X" ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.25-pf-2.2-20040616.patch.gz"
-			echo "PATCH_DIST_STRIP=	-p1"
-			echo "IPv6_SUFFIX=	+ipv6"
-			echo ""
-			IPv6SELECTED=YES
-			SUB_IPV6=""
-			;;
-		IPv6TLS)
-			if [ X$SUB_TLS = "X" -o X$IPv6SELECTED != X ]; then
-				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
-				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
-			fi
-			echo "MAN8+=		tlsmgr.8"
-			echo "USE_OPENSSL=	yes"
-			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
-			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.25-pf-2.2-20040616.patch.gz"
-			echo "PATCH_DIST_STRIP=	-p1"
-			echo "TLS_SUFFIX=	+tls+ipv6"
-			SUB_TLS=""
-			SUB_IPV6=""
-			;;
 		*)
 			echo "Unknown option(s): $*" > /dev/stderr
 			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
@@ -245,12 +201,10 @@ while [ "$1" ]; do
 	shift
 done
 
-echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
-echo "PLIST_SUB+=	SUB_IPV6=\"${SUB_IPV6}\""
 
 # for some reason, if we alter the pkg name this way, the first build (where
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will.  so "make; make install" will build twice.
 # don't do this for now.
-#echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}\${NIS_SUFFIX}"
+#echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${NIS_SUFFIX}"
