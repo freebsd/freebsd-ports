@@ -25,7 +25,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 
 ALL_TARGET=	default
-CONFIGURE_ENV=	WITH_GTK2=yes
+CONFIGURE_ENV=	WITH_GTK2=yes \
+		LOCALBASE=${LOCALBASE}
 FAKEDIR=	${WRKDIR}/fake
 FAKESUBDIR=	${FAKEDIR}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
@@ -77,7 +78,7 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
+LDFLAGS+=		-L${X11BASE}/lib
 LIBS+=			${PTHREAD_LIBS}
 
 EXTRA_SCRIPTS=		${PORTNAME}.rb
@@ -145,7 +146,6 @@ pre-install:
 .for ii in firefox Firefox firefox-config ${EXTRA_SCRIPTS}
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
-	@${ECHO_CMD} lib/firefox/lib/mozilla-1.6/libnspr4.so.1 >> ${PLIST}
 	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
 		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
@@ -174,8 +174,6 @@ post-install:
 	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
 		's|${FAKEDIR}|${PREFIX}|g'
-	${LN} -sf ${LOCAL_PREFIX}/lib/mozilla-1.6/libnspr4.so \
-		${LOCAL_PREFIX}/lib/mozilla-1.6/libnspr4.so.1
 	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
