@@ -22,6 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
+		--disable-gif \
 		--libdir=${PREFIX}/share/${PORTNAME}
 
 post-install:
