@@ -1,0 +1,121 @@
+--- Makefile.org	Mon Oct 27 00:15:08 1997
++++ Makefile	Wed Feb 18 22:34:28 1998
+@@ -3,11 +3,11 @@
+ OBJS	= ladder.o lplay.o ltime.o lscore.o lscreens.o
+ 
+ CC		= gcc
+-CFLAGS	= -O -pedantic -I/usr/include/ncurses
++CFLAGS	= -O2 -pedantic -Wall
+ LDFLAGS	= -s
+ M4		= m4
+ LIBS	= -lncurses
+-SCOREFILE	= ./ladder.scores
++SCOREFILE	= /var/games/ladder.scores
+ 
+ .SUFFIXES:	.o .c .m4
+ 
+@@ -21,6 +21,14 @@
+ 	$(CC) -o $(TARGET) $(LDFLAGS) $(OBJS) $(LIBS)
+ 
+ $(OBJS):	ladder.h
++
++clean:
++	-$(RM)	$(OBJS) $(TARGET) *.core
++
++all: $(TARGET)
++
++install:
++	install -c -s -o games -g bin -m 4555 ladder ${PREFIX}/bin
+ 
+ # ladder.c:	ladder.m4
+ 
+--- ladder.c.org	Mon Oct 27 00:07:23 1997
++++ ladder.c	Wed Feb 18 22:33:55 1998
+@@ -14,7 +14,7 @@
+     char *d = t;
+     int i;
+     
+-    for( ; *s; *s++ ) 
++    for( ; *s; s++ ) 
+         if( *s & 0200 )
+             for( i = 210 - (unsigned char)*s; i; i-- )
+                 *d++ = ' ';
+--- lplay.c.org	Tue Nov 11 20:01:51 1997
++++ lplay.c	Wed Feb 18 22:33:56 1998
+@@ -54,7 +54,7 @@
+         mvaddstr(row,0,t);
+ 
+         /* find points of release */
+-        for( s = t; s = strchr(s,CRELEAS); s++ )
++        for( s = t; (s = strchr(s,CRELEAS)); s++ )
+         {
+             rel->row = row;
+             rel->col = s - t;
+@@ -67,7 +67,7 @@
+ 
+     /* find lad */
+     for( row = 0; row < DIMROW; row++ ) 
+-        for( s = t = bg[row]; s = strchr(s,CLAD); s++ )
++        for( s = t = bg[row]; (s = strchr(s,CLAD)); s++ )
+         {
+             /* nasty, check for CLAD's surrounded by CFREEs */
+             if( s[-1] != CFREE || s[1] != CFREE )
+@@ -433,6 +433,8 @@
+                     else
+                         dir = STOP;
+                     break;
++				default:
++					break;
+             }
+         }
+ 
+--- lscore.c.org	Mon Oct 27 00:07:24 1997
++++ lscore.c	Wed Feb 18 22:33:56 1998
+@@ -21,7 +21,7 @@
+     FILE *lfp;
+ 
+     for( i = 3; i; i-- )
+-        if( lfp = fopen(lf,"r") )
++        if( (lfp = fopen(lf,"r")) )
+         {
+             fclose(lfp);
+             sleep(2);
+@@ -47,7 +47,7 @@
+ 
+     lock_score();
+     memset(scores,0,sizeof(scores));
+-    if( sfp = fopen(sf,"r") )
++    if( (sfp = fopen(sf,"r")) )
+     {
+         for( scp = scores; scp < &scores[MAXSCORE]; scp++ )
+             if( fscanf(sfp,"%d%d%d%d",
+@@ -67,8 +67,8 @@
+     SCORE *scp;
+     for( scp = &scores[MAXSCORE]; scp > scores; scp-- )
+         if( scp[0].score >  scp[-1].score ||
+-            scp[0].score == scp[-1].score &&
+-            scp[0].level >= scp[-1].level )
++            (scp[0].score == scp[-1].score &&
++             scp[0].level >= scp[-1].level ))
+         {
+             SCORE tmp = scp[0];
+             scp[0] = scp[-1];
+@@ -113,7 +113,7 @@
+         if( scores[i].score )
+         {
+             printw("%5d00  %2d  ",scores[i].score,scores[i].level + 1);
+-            if( pw = getpwuid(scores[i].uid) )
++            if( (pw = getpwuid(scores[i].uid)) )
+                 addstr(pw->pw_name);
+             else
+                 printw("UID %d",scores[i].uid);
+--- ltime.c.org	Mon Oct 27 00:07:24 1997
++++ ltime.c	Wed Feb 18 22:33:56 1998
+@@ -2,6 +2,7 @@
+ #include <sys/types.h>
+ #include <sys/times.h>
+ #include <sys/time.h>
++#include <unistd.h>
+ 
+ static void waittcs(unsigned int tcs)
+ {
