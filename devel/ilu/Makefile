@@ -65,10 +65,10 @@ post-patch:
 do-install:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	# Empty dir, but we really need it
-	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
-	${ECHO} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec ${CHMOD} 1777 %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
+	${ECHO_CMD} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
+	${ECHO_CMD} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
+	${ECHO_CMD} @exec ${CHMOD} 1777 %D/ilu/lib/binding >> ${PLIST}
+	${ECHO_CMD} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
 	# Empty dirs we don't need
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
 	${RMDIR} ${PREFIX}/ilu/lisp
@@ -78,18 +78,18 @@ do-install:
 		| tail -r | ${GREP} -v lib/binding >> ${PLIST}
 	(cd ${PREFIX}/ilu/bin ; for file in * ; do \
 		${LN} -fs ${PREFIX}/ilu/bin/$$file ${PREFIX}/bin/. ; \
-		${ECHO} bin/$$file ; \
+		${ECHO_CMD} bin/$$file ; \
 		done) >> ${PLIST}
 	(cd ${PREFIX}/ilu/man/man1 ; for file in * ; do \
 		${LN} -fs ${PREFIX}/ilu/man/man1/$$file ${PREFIX}/man/man1/. ; \
-		${ECHO} man/man1/$$file ; \
+		${ECHO_CMD} man/man1/$$file ; \
 		done) >> ${PLIST}
-	${ECHO} etc/rc.d/50.ilu.sh >> ${PLIST}
+	${ECHO_CMD} etc/rc.d/50.ilu.sh >> ${PLIST}
 	${ECHO} "Installing ${startup_script} file"
 	test -d ${startup_dir} || ${MKDIR} ${startup_dir}
-	${ECHO} "#!/bin/sh" > ${startup_script}
-	${ECHO} "${ECHO} -n ' ILU-shlibs'" >> ${startup_script}
-	${ECHO} "${LDCONFIG} -m ${PREFIX}/ilu/lib" >> ${startup_script}
+	${ECHO_CMD} "#!/bin/sh" > ${startup_script}
+	${ECHO_CMD} "${ECHO_CMD} -n ' ILU-shlibs'" >> ${startup_script}
+	${ECHO_CMD} "${LDCONFIG} -m ${PREFIX}/ilu/lib" >> ${startup_script}
 	${CHMOD} 755 ${startup_script};
 	${startup_script}
 

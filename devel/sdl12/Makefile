@@ -51,10 +51,10 @@ CONFIGURE_ARGS+=--enable-video-opengl
 
 .include <bsd.port.pre.mk>
 
-MAN3!=		/bin/cat ${FILESDIR}/man3
+MAN3!=		${CAT} ${FILESDIR}/man3
 
 pre-configure:
-	@find ${WRKSRC} -type f -name Makefile.in | xargs ${TOUCH}
+	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${TOUCH}
 
 post-configure:
 	@cd ${WRKSRC} && \
@@ -71,7 +71,7 @@ post-install:
 .for file in BUGS COPYING CREDITS README WhatsNew docs.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SDL11
 .endfor
-	@cd ${WRKSRC}/docs; tar cf - `${ECHO} [^Mm]*` | \
+	@cd ${WRKSRC}/docs; ${TAR} cf - `${ECHO_CMD} [^Mm]*` | \
 		(cd ${PREFIX}/share/doc/SDL11/docs; ${TAR} --unlink -xf - )
 .endif
 	@${DISPLAY_MSG}

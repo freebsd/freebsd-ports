@@ -42,8 +42,8 @@ do-install::
 	@(cd ${WRKSRC}; ${SETENV} ${PMAKE_ENV} ${PREFIX}/bin/pmake new; \
 	  ${SETENV} ${PMAKE_ENV} ${PREFIX}/bin/pmake install)
 	@${ECHO} "Adding customs service to /etc/services..."
-	@${ECHO} -e 'customs\t\t8231/tcp\t# pmake customs server'>>/etc/services
-	@${ECHO} -e 'customs\t\t8231/udp\t# pmake customs server'>>/etc/services
+	@${ECHO_CMD} -e 'customs\t\t8231/tcp\t# pmake customs server'>>/etc/services
+	@${ECHO_CMD} -e 'customs\t\t8231/udp\t# pmake customs server'>>/etc/services
 .else
 do-install::
 	@(cd ${WRKSRC}/doc; ${SETENV} ${PMAKE_ENV} ${PREFIX}/bin/pmake)

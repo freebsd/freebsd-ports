@@ -32,7 +32,7 @@ MAKE_ENV+=	NEO_LIBRARY=${NEO_LIBRARY}
 DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
 
 post-build:
-	cd ${WRKSRC}/../neolibs && ${ECHO} 'auto_mkindex . */*.tcl' | tclsh8.3
+	cd ${WRKSRC}/../neolibs && ${ECHO_CMD} 'auto_mkindex . */*.tcl' | tclsh8.3
 
 NEO_LIBRARY=	${PREFIX}/lib/neo8.2
 

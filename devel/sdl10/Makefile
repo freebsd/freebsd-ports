@@ -42,7 +42,7 @@ post-install:
 .for file in BUGS COPYING CREDITS README WhatsNew docs.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SDL
 .endfor
-	cd ${WRKSRC}/docs; tar cf - `${ECHO} [^M]*` | \
+	cd ${WRKSRC}/docs; ${TAR} cf - `${ECH_CMDO} [^M]*` | \
 		(cd ${PREFIX}/share/doc/SDL; ${TAR} --unlink -xf - )
 .endif
 

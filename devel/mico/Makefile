@@ -16,7 +16,7 @@ LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 WRKSRC=		${WRKDIR}/mico
 
-MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
+MICOVER=	`${ECHO_CMD} ${DISTNAME} | ${SED} 's/mico-//'`
 
 .if defined(QT2)
 USE_QT_VER=	2

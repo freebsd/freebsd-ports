@@ -71,7 +71,7 @@ do-install:
 
 post-install:
 .if defined(PACKAGE_BUILDING)
-	${ECHO} "@unexec rmdir -p %D/${CGIDIR} %D/${ICONSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec rmdir -p %D/${CGIDIR} %D/${ICONSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

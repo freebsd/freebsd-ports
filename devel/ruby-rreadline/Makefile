@@ -20,8 +20,8 @@ RUBY_NO_BUILD_DEPENDS=	yes
 NO_BUILD=	yes
 
 post-extract:
-	${ECHO} '#!/bin/sh' > ${WRKSRC}/rbsh
-	${ECHO} 'ruby RubyShell.rb' >> ${WRKSRC}/rbsh
+	${ECHO_CMD} '#!/bin/sh' > ${WRKSRC}/rbsh
+	${ECHO_CMD} 'ruby RubyShell.rb' >> ${WRKSRC}/rbsh
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/*.rb ${RUBY_SITELIBDIR}/

@@ -95,11 +95,11 @@ do-install:
 
 post-install:
 .for f in ${BIN_FILES}
-	${ECHO} bin/${f} >> ${TMPPLIST}
+	${ECHO_CMD} bin/${f} >> ${TMPPLIST}
 .endfor
 .for f in ${SBIN_FILES}
-	${ECHO} sbin/${f} >> ${TMPPLIST}
+	${ECHO_CMD} sbin/${f} >> ${TMPPLIST}
 .endfor
-	${ECHO} "@unexec /bin/rmdir ${PERFORCE_ROOT} ${PERFORCE_LOGS} ${PERFORCE_HOME} 2>/dev/null || true" >> ${TMPPLIST}
+	${ECHO_CMD} "@unexec /bin/rmdir ${PERFORCE_ROOT} ${PERFORCE_LOGS} ${PERFORCE_HOME} 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

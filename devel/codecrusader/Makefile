@@ -83,9 +83,9 @@ post-extract:
 .endfor
 
 post-patch:
-	@${ECHO} "SEARCHDIRS += ${PORTINCLUDES}" >> \
+	@${ECHO_CMD} "SEARCHDIRS += ${PORTINCLUDES}" >> \
 		${WRKSRC}/${EXTRALIBFILES_MAKE_WRKSRC}/jx_constants
-	@${ECHO} "\nLOADLIBS += ${PORTLIBS}" >> \
+	@${ECHO_CMD} "\nLOADLIBS += ${PORTLIBS}" >> \
 		${WRKSRC}/programs/${PORTNAME}/Make.header
 
 pre-build:

@@ -29,7 +29,7 @@ INSTALL_TARGET=	install install.man
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 
 do-configure:
-	@${ECHO} > ${WRKSRC}/cf/host.def
+	@${ECHO_CMD} > ${WRKSRC}/cf/host.def
 	@(cd ${WRKDIR}/xc; \
 	  ${MAKE} Makefile.boot ; \
 	  ${MAKE} -f xmakefile SUBDIRS="include config" VerifyOS Makefiles includes)

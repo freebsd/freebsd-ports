@@ -56,7 +56,7 @@ PLIST_SUB+=	LOADPATHSETUP:="@comment "
 .endif
 
 post-build:
-	@${ECHO} "(provide 'elib-startup)" >> ${WRKSRC}/${PORT_SETUPEL}
+	@${ECHO_CMD} "(provide 'elib-startup)" >> ${WRKSRC}/${PORT_SETUPEL}
 
 post-install:
 .if defined(INSTALL_LOADPATHSETUP)

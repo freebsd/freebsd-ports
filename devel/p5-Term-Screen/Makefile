@@ -29,9 +29,9 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term
 	${INSTALL_SCRIPT} ${WRKSRC}/Screen.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term
 	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen
-	${ECHO} '${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term/Screen.pm' >> \
+	${ECHO_CMD} '${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Term/Screen.pm' >> \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen/.packlist
-	${ECHO} '${MAN3PREFIX}/man/man3/${MAN3}' >> \
+	${ECHO_CMD} '${MAN3PREFIX}/man/man3/${MAN3}' >> \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/Term/Screen/.packlist
 
 .include <bsd.port.mk>
