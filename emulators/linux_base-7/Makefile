@@ -108,7 +108,7 @@ BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
 LINUX_ELF=		3
-PREVIOUS_ELF!=		sysctl -n ${FALLBACK_ELF_MIB}
+PREVIOUS_ELF!=		/sbin/sysctl -n ${FALLBACK_ELF_MIB}
 
 do-patch:
 	@${DO_NADA}
@@ -132,7 +132,7 @@ do-install:
 # Install all packages. Ignore dependencies just like the Red Hat installer.
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
-	@sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
+	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
 	@for R in ${DISTFILES}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
@@ -146,7 +146,7 @@ do-install:
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
-	@sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
+	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
 #
 # Install yp.conf as a hint to NIS users
 #
