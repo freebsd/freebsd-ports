@@ -3,12 +3,13 @@ display file attributes in color.  There is a -G flag (somewhat
 similar to the -F flag).  Take a look at the man page for details.
 
 The program is called "colorls" and installs itself in /usr/local/bin.
-The file patches/patch-aa is the diffs from the 3.0-current (as of
-1997/01/01) /usr/src/bin/ls directory.
+The file patches/patch-aa is the diffs from the 3.0-stable (as of
+2000/06/01) /usr/src/bin/ls directory.
 
-Standard xterm prior to XFree86 3.1.2B doesn't know about colors, so
-you should use update your XFree86 or use kterm (available from the ports
-collection).
+Also, note that you need a "color-capable" terminal to enable colorls --
+this means you should set your TERM to "xterm-color" or "kterm-color"
+when using normal xterm or kterm, not "xterm" or "kterm" (which
+termcap doesn't know that are color-capable).
 
 Satoshi Asami
-asami@cs.berkeley.edu
+asami@FreeBSD.org
