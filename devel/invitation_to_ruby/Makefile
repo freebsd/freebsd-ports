@@ -52,4 +52,3 @@ do-install:
 	${CHMOD} -R ugo-w,ugo+rX ${DOCSDIR}
 
 .include <bsd.port.post.mk>
-#EOF
