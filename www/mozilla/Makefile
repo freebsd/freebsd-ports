@@ -275,8 +275,8 @@ pre-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		${PREFIX}/lib/${MOZILLA}/mozilla \
-		${PREFIX}/lib/${MOZILLA}/mozilla-config
+		${FAKEDIR}/bin/mozilla \
+		${FAKEDIR}/bin/mozilla-config
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
