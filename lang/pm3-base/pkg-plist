@@ -348,7 +348,6 @@ lib/m3/pkg/m3core/%%TARGET%%/libm3core.m3x
 lib/m3/pkg/m3core/%%TARGET%%/libm3core.so
 lib/m3/pkg/m3core/src/C/%%TARGET%%/Csetjmp.i3
 lib/m3/pkg/m3core/src/C/%%TARGET%%/Csignal.i3
-lib/m3/pkg/m3core/src/C/%%TARGET%%/Cstdio.i3
 lib/m3/pkg/m3core/src/C/%%TARGET%%/Cstring.i3
 lib/m3/pkg/m3core/src/C/%%WORDSIZE%%BITS/BasicCtypes.i3
 lib/m3/pkg/m3core/src/C/Common/Cerrno.i3
