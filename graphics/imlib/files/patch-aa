@@ -1,6 +1,6 @@
-*** Imakefile.orig	Fri May  9 01:33:37 1997
---- Imakefile	Sun May 25 15:32:25 1997
-***************
+*** Imakefile.orig	Fri Aug 15 16:15:58 1997
+--- Imakefile	Fri Aug 15 16:16:29 1997
+*************** LIBREV=1.0
 *** 11,17 ****
   #ifdef UseEtcX11
   ETCDIR=/etc/X11/$(LIBNAME)
@@ -13,11 +13,11 @@
   #ifdef UseEtcX11
   ETCDIR=/etc/X11/$(LIBNAME)
   #else
-! ETCDIR=/usr/X11R6/lib/X11/enlightenment
+! ETCDIR=X11BASE/lib/X11/enlightenment
   #endif /* def UseEtcX11 */
   
   CNFDIR = $(ETCDIR)
-***************
+*************** InstallMultiple($(HDRS),$(INCROOT)/X11)
 *** 59,65 ****
   CNFSRC = ./sys_conf
   CNFS = $(CNFSRC)/imrc 
