@@ -69,7 +69,6 @@
     SUBDIR += guitar
     SUBDIR += gupsc
     SUBDIR += healthd
-    SUBDIR += heat
     SUBDIR += idled
     SUBDIR += installwatch
     SUBDIR += ipa
