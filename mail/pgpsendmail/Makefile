@@ -3,7 +3,7 @@
 # Date created:         20 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1995/07/11 04:08:25 asami Exp $
+# $Id: Makefile,v 1.7 1995/07/13 00:55:38 asami Exp $
 #
 
 DISTNAME=       PGPsendmail-v1.4
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.dhp.com/pub/crypto/pgp/PGPsendmail/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-EXEC_DEPENDS += pgp:${PORTSDIR}/security/pgp
+BUILD_DEPENDS += pgp:${PORTSDIR}/security/pgp
 
 WRKSRC=         ${WRKDIR}/pgpsendmail
 INSTALL_TARGET= all_install
