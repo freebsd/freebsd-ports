@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,16 +26,16 @@ EXCEPTFILES=	${DOCFILES} LICENSE.txt
 CPIO=		cpio --quiet -pdum -R
 PLIST_SUB=	GALLERYDIR=${GALLERYDIR}
 
-GALLERYDIR?=	www/data/gallery
-WWWOWN?=	www
-WWWGRP?=	www
-
 pre-fetch:
 .if !defined(GALLERYDIR)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Define GALLERYDIR to override default of 'www/data/gallery'."
 	@${ECHO_MSG} ""
 .endif
+
+GALLERYDIR?=	www/data/gallery
+WWWOWN?=	www
+WWWGRP?=	www
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
