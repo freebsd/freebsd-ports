@@ -123,6 +123,8 @@ post-clean:
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+= --disable-cups
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
