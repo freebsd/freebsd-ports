@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A falling ball puzzle game for X
 
 ALL_TARGET=	xrot
 WRKSRC=		${WRKDIR}/xrot

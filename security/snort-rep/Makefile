@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/snort-rep/pub/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A Snort reporting tool that can produce text or HTML from logs
 
 USE_PERL5=	yes
 MAN1=		snort-rep.1

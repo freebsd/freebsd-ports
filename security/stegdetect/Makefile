@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mirrors.wiretapped.net/security/steganography/stegdetec
 		http://www.outguess.org/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An automated tool for detecting steganographic content in jpegs
 
 .if !defined(WITHOUT_X11)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent

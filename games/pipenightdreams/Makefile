@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A puzzle game similar to PipeMania
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

@@ -11,9 +11,11 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A vector graphics space shoot'em up game
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

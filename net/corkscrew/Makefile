@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.agroman.net/corkscrew/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A HTTP tunnelling utility for SSH
 
 GNU_CONFIGURE=	yes
 

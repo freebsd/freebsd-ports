@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	Combines multiples images to create a single customisable image
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg

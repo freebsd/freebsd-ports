@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	X eye candy for displaying CPU and memory load in a dock
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

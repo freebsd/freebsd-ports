@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.panix.com/~mbh/pscal/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A utility for generating Postscript calendars
 
 NO_BUILD=	yes
 

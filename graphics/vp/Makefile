@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An image viewer for X
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
@@ -22,7 +23,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt" \
 		ac_cv_func_getopt_long=yes
 USE_REINPLACE=	yes
-MAN1=	vp.1
+MAN1=		vp.1
 
 post-patch:
 	${REINPLACE_CMD} 's@ getopt_long/Makefile@@g' ${WRKSRC}/configure
