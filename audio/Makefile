@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.80 1999/04/13 23:37:35 mharo Exp $
+# $Id: Makefile,v 1.81 1999/04/16 06:45:07 flathill Exp $
 #
 
     SUBDIR += amp
@@ -25,6 +25,7 @@
     SUBDIR += linux-realplayer
     SUBDIR += maplay
     SUBDIR += mikmod
+    SUBDIR += mixer.app
     SUBDIR += mp3encode
     SUBDIR += mp3info
     SUBDIR += mpegaudio
