@@ -32,6 +32,7 @@ post-patch:
 			${REINPLACE_CMD} -e 's@__aligned@dice_aligned@g'
 
 do-install:
+		@${RM} ${WRKSRC}/doc/loadabs.c.bak
 		@for i in ${WRKSRC}/ubin/*; \
 		do \
 			${INSTALL_PROGRAM} $$i ${PREFIX}/bin; \
