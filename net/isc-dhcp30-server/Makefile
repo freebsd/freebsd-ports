@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r2.1
+PORTVERSION=	3.0.r3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. dhcp-3.0-history
