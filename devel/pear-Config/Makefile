@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	Config
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.10.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
-COMMENT=	PEAR Config package provides methods for configuration manipulation
+COMMENT=	Your configurations swiss-army knife
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser \
 		${PEARDIR}/XML/Util.php:${PORTSDIR}/devel/pear-XML_Util
 
 FILES=		Config.php Config/Container.php Config/Container/Apache.php \
-		Config/Container/IniCommented.php Config/Container/PHPArray.php \
-		Config/Container/GenericConf.php Config/Container/IniFile.php \
+		Config/Container/GenericConf.php Config/Container/IniCommented.php \
+		Config/Container/IniFile.php Config/Container/PHPArray.php \
 		Config/Container/XML.php
-EXAMPLES=	Apache.php IniCommented.php IniFromScratch.php
-_EXAMPLESDIR=	docs
+DOCS=		Apache.php IniCommented.php IniFromScratch.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
