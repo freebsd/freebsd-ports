@@ -82,7 +82,7 @@ PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 # Python-2.0
 .if ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYXML=			${PYTHON_LIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	BeOpen-Python-2.0.tar.gz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
@@ -93,7 +93,7 @@ PYTHON_WRKSRC=		${WRKDIR}/Python-2.0
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
 PYDISTUTILS=	${PYTHON_LIBDIR}/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-PYXML=			${PYTHON_LIBDIR}/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
+PYXML=			${PYTHON_SITELIBDIR}/xml/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	py152.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
