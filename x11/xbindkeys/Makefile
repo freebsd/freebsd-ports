@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.6.5
+PORTVERSION=	1.7.0
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
@@ -16,8 +16,8 @@ COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
+USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	xbindkeys.1
 
@@ -32,12 +32,19 @@ CONFIGURE_ARGS+=	--disable-tk
 PLIST_SUB+=	WITH_GUI="@comment "
 .endif
 
+.if defined(WITH_GUILE)
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
+CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=	--disable-guile
+.endif
+
 pre-everything::
-.if !defined(WITH_GUI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	Define WITH_GUI to install xbindkeys_show (requires Tk)"
+	@${ECHO_MSG} "	Define WITH_GUILE to allow guile configuration file style"
 	@${ECHO_MSG} ""
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| wish | ${WISH} |g' ${WRKSRC}/xbindkeys_show
