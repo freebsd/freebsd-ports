@@ -3,7 +3,7 @@
 # Date created:		Sat Nov  8 10:46:42 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.8 1997/12/31 09:20:22 andreas Exp $
+# $Id: Makefile,v 1.9 1998/01/31 10:22:48 andreas Exp $
 #
 
 DISTNAME=	tclplug20-src
@@ -15,7 +15,6 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape4-communicator
 
-NO_PACKAGE=	yes
 WRKSRC=		${WRKDIR}/tclplugin2.0/plugin2.0/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${WRKDIR}/tclplugin2.0/tcl8.0/unix \
