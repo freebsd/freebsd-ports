@@ -4,12 +4,16 @@ lib/logo/logolib/#
 lib/logo/logolib/`
 lib/logo/logolib/?rest
 lib/logo/logolib/Messages
+lib/logo/logolib/Messages.fr
+lib/logo/logolib/Messages.sp
 lib/logo/logolib/buryall
 lib/logo/logolib/buryname
+lib/logo/logolib/case
 lib/logo/logolib/cascade
 lib/logo/logolib/cascade.2
 lib/logo/logolib/closeall
 lib/logo/logolib/combine
+lib/logo/logolib/cond
 lib/logo/logolib/crossmap
 lib/logo/logolib/dequeue
 lib/logo/logolib/do.until
@@ -80,7 +84,9 @@ lib/logo/logolib/ycor
 %%EMACS_LOGO_MODE%%lib/logo/emacs/dot.loops
 %%EMACS_LOGO_MODE%%lib/logo/emacs/edfunc.el
 %%EMACS_LOGO_MODE%%lib/logo/emacs/letrec.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/letrec.elc
 %%EMACS_LOGO_MODE%%lib/logo/emacs/logo.el
+%%EMACS_LOGO_MODE%%lib/logo/emacs/logo.elc
 %%EMACS_LOGO_MODE%%lib/logo/emacs/tutor1.lg
 %%EMACS_LOGO_MODE%%lib/logo/emacs/tutorial.lg
 lib/logo/helpfiles/HELPCONTENTS
@@ -91,6 +97,7 @@ lib/logo/helpfiles/and
 lib/logo/helpfiles/apply
 lib/logo/helpfiles/arc
 lib/logo/helpfiles/arctan
+lib/logo/helpfiles/arity
 lib/logo/helpfiles/array
 lib/logo/helpfiles/arrayp
 lib/logo/helpfiles/arraytolist
@@ -119,6 +126,7 @@ lib/logo/helpfiles/butfirsts
 lib/logo/helpfiles/butlast
 lib/logo/helpfiles/bye
 lib/logo/helpfiles/cascade
+lib/logo/helpfiles/case
 lib/logo/helpfiles/caseignoredp
 lib/logo/helpfiles/catch
 lib/logo/helpfiles/char
@@ -129,6 +137,7 @@ lib/logo/helpfiles/close
 lib/logo/helpfiles/closeall
 lib/logo/helpfiles/co
 lib/logo/helpfiles/combine
+lib/logo/helpfiles/cond
 lib/logo/helpfiles/contents
 lib/logo/helpfiles/continue
 lib/logo/helpfiles/copydef
@@ -152,6 +161,7 @@ lib/logo/helpfiles/dribble
 lib/logo/helpfiles/dsetbf
 lib/logo/helpfiles/dsetfirst
 lib/logo/helpfiles/dsetitem
+lib/logo/helpfiles/dsetsegmentsize
 lib/logo/helpfiles/ed
 lib/logo/helpfiles/edall
 lib/logo/helpfiles/edit
@@ -198,6 +208,7 @@ lib/logo/helpfiles/fullscreen
 lib/logo/helpfiles/fulltext
 lib/logo/helpfiles/gc
 lib/logo/helpfiles/gensym
+lib/logo/helpfiles/global
 lib/logo/helpfiles/goto
 lib/logo/helpfiles/gprop
 lib/logo/helpfiles/greaterp
@@ -352,15 +363,19 @@ lib/logo/helpfiles/rw
 lib/logo/helpfiles/save
 lib/logo/helpfiles/savel
 lib/logo/helpfiles/savepict
+lib/logo/helpfiles/screenmode
 lib/logo/helpfiles/scrunch
 lib/logo/helpfiles/se
 lib/logo/helpfiles/sentence
 lib/logo/helpfiles/setbackground
 lib/logo/helpfiles/setbg
 lib/logo/helpfiles/setcursor
+lib/logo/helpfiles/seteditor
 lib/logo/helpfiles/seth
 lib/logo/helpfiles/setheading
+lib/logo/helpfiles/sethelploc
 lib/logo/helpfiles/setitem
+lib/logo/helpfiles/setlibloc
 lib/logo/helpfiles/setmargins
 lib/logo/helpfiles/setpalette
 lib/logo/helpfiles/setpc
@@ -374,6 +389,7 @@ lib/logo/helpfiles/setread
 lib/logo/helpfiles/setreadpos
 lib/logo/helpfiles/setscrunch
 lib/logo/helpfiles/settc
+lib/logo/helpfiles/settemploc
 lib/logo/helpfiles/settextcolor
 lib/logo/helpfiles/setwrite
 lib/logo/helpfiles/setwritepos
@@ -410,6 +426,7 @@ lib/logo/helpfiles/traced
 lib/logo/helpfiles/tracedp
 lib/logo/helpfiles/transfer
 lib/logo/helpfiles/ts
+lib/logo/helpfiles/turtlemode
 lib/logo/helpfiles/type
 lib/logo/helpfiles/unbury
 lib/logo/helpfiles/unburyall
@@ -419,6 +436,7 @@ lib/logo/helpfiles/unstep
 lib/logo/helpfiles/until
 lib/logo/helpfiles/untrace
 lib/logo/helpfiles/uppercase
+lib/logo/helpfiles/usealternatenames
 lib/logo/helpfiles/wait
 lib/logo/helpfiles/while
 lib/logo/helpfiles/window
@@ -435,6 +453,7 @@ lib/logo/helpfiles/ycor
 %%WITH_FULL_DOCS%%info/ucblogo.info-2
 %%WITH_FULL_DOCS%%info/ucblogo.info-3
 %%WITH_FULL_DOCS%%info/ucblogo.info-4
+%%WITH_FULL_DOCS%%info/ucblogo.info-5
 %%WITH_FULL_DOCS%%info/loops.info.gz
 %%WITH_FULL_DOCS%%info/loops.info-1.gz
 %%WITH_FULL_DOCS%%info/loops.info-2.gz
@@ -449,6 +468,7 @@ lib/logo/helpfiles/ycor
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_13.html
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_14.html
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_15.html
+%%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_16.html
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_2.html
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_3.html
 %%WITH_FULL_DOCS%%share/doc/logo/html/usermanual_4.html

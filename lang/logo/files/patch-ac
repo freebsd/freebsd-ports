@@ -1,78 +1,25 @@
-*** makefile.in.orig	Wed Jul 25 19:29:35 2001
---- makefile.in	Thu May 16 00:56:26 2002
-***************
-*** 2,10 ****
-  CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@ -O0
-  LDFLAGS	= @LDFLAGS@
-  LIBS  = @X_PRE_LIBS@ @X_LIBS@ @LIBS@ @X_EXTRA_LIBS@
-! prefix = @prefix@
-! BINDIR        = $(prefix)/bin
-! LIBLOC        = $(prefix)/lib/logo
-  
-  # LIBLOC      = `pwd`
-  
---- 2,14 ----
-  CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@ -O0
-  LDFLAGS	= @LDFLAGS@
-  LIBS  = @X_PRE_LIBS@ @X_LIBS@ @LIBS@ @X_EXTRA_LIBS@
-! 
-! BINDIR        = $(PREFIX)/bin
-! LIBLOC        = $(PREFIX)/lib/logo
-! XMPDIR        = $(PREFIX)/share/examples/logo
-! .ifndef NOPORTDOCS
-! DOCDIR        = $(PREFIX)/share/doc/logo
-! .endif
-  
-  # LIBLOC      = `pwd`
-  
-***************
-*** 18,24 ****
-  
-  HDRS	= globals.h logo.h xgraphics.h
-  
-! all:	logo logolib helpfiles helpfiles/HELPCONTENTS logo-mode
-  
-  mem.o:	mem.c
-  	$(CC) $(CFLAGS) -O0 -c mem.c
---- 22,28 ----
-  
-  HDRS	= globals.h logo.h xgraphics.h
-  
-! all:	logo logolib helpfiles helpfiles/HELPCONTENTS
-  
-  mem.o:	mem.c
-  	$(CC) $(CFLAGS) -O0 -c mem.c
-***************
-*** 62,72 ****
-  	cd emacs; gmake ship
-  
-  install: all
-! 	for d in $(BINDIR) $(LIBLOC) $(LIBLOC)/logolib $(LIBLOC)/helpfiles; do [ -d $$d ] || mkdir -p $$d || exit 1; done
-! 	cp logo $(BINDIR)/.
-! 	cp -f logolib/* $(LIBLOC)/logolib/.
-! 	cp -f helpfiles/* $(LIBLOC)/helpfiles/.
-! 	export prefix=$(prefix); export LIBLOC=$(LIBLOC); export BINDIR=$(BINDIR); cd emacs; gmake install
-  
-  logo-mode: 
-  	@export prefix=$(prefix); export LIBLOC=$(LIBLOC); export BINDIR=$(BINDIR); cd emacs; gmake
---- 66,85 ----
-  	cd emacs; gmake ship
-  
-  install: all
-! 	for d in $(BINDIR) $(LIBLOC) $(LIBLOC)/logolib $(LIBLOC)/helpfiles $(XMPDIR)/csls $(DOCDIR); do [ -d $$d ] || mkdir -p $$d || exit 1; done
-! 	install -c -s -o bin -g bin -m 555 logo $(BINDIR)/
-! 	install -c -o bin -g bin -m 444 logolib/* $(LIBLOC)/logolib/
-! 	install -c -o bin -g bin -m 444 helpfiles/* $(LIBLOC)/helpfiles/
-! 	install -c -o bin -g bin -m 444 csls/* $(XMPDIR)/csls/
-! .ifndef NOPORTDOCS
-! 	install -c -o bin -g bin -m 444 usermanual $(DOCDIR)/
-! .endif
-! .ifdef WITH_FULL_DOCS
-! 	@export prefix=$(prefix); export LIBLOC=$(LIBLOC); export BINDIR=$(BINDIR); cd emacs; gmake install-docs
-! .endif
-! .ifdef EMACS_LOGO_MODE
-! 	export prefix=$(prefix); export LIBLOC=$(LIBLOC); export BINDIR=$(BINDIR); cd emacs; gmake install-emacs
-! .endif
-  
-  logo-mode: 
-  	@export prefix=$(prefix); export LIBLOC=$(LIBLOC); export BINDIR=$(BINDIR); cd emacs; gmake
+--- makefile.in.orig	Thu Sep 12 00:02:00 2002
++++ makefile.in	Sat Nov  9 20:48:38 2002
+@@ -2,9 +2,10 @@
+ CFLAGS	= @CFLAGS@ @CPPFLAGS@ @X_CFLAGS@ -O0
+ LDFLAGS	= @LDFLAGS@
+ LIBS  = @X_PRE_LIBS@ @X_LIBS@ @LIBS@ @X_EXTRA_LIBS@
+-prefix = @prefix@
+-BINDIR        = $(prefix)/bin
+-LIBLOC        = $(prefix)/lib/logo
++
++BINDIR        = $(PREFIX)/bin
++LIBLOC        = $(PREFIX)/lib/logo
++XMPDIR        = $(PREFIX)/share/examples/logo
+ 
+ # LIBLOC      = `pwd`
+ 
+@@ -18,7 +22,7 @@
+ 
+ HDRS	= globals.h logo.h xgraphics.h
+ 
+-all:	logo logolib helpfiles helpfiles/HELPCONTENTS logo-mode
++all:	logo logolib helpfiles helpfiles/HELPCONTENTS
+ 
+ mem.o:	mem.c
+ 	$(CC) $(CFLAGS) -O0 -c mem.c

@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ucblogo
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	lang
 MASTER_SITES= 	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
 MASTER_SITE_SUBDIR=non-gnu/ucblogo
 
-WRKSRC=		${WRKDIR}/ucblogo
+MAINTAINER=	ports@FreeBSD.org
 
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
@@ -23,13 +23,16 @@ BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
 		ps2pdf:${PORTSDIR}/print/ghostscript-gnu
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
-
 USE_XLIB=	yes
 MAKEFILE=	makefile
 HAS_CONFIGURE=	yes
 
 ALL_TARGET=	all
+
+.if defined(WITH_FULL_DOCS) || defined(EMACS_LOGO_MODE)
+USE_GMAKE=	yes
+MAKE_ENV+=	LIBLOC="${PREFIX}/lib/logo" BINDIR="${PREFIX}/bin"
+.endif
 
 .if defined(WITH_FULL_DOCS)
 ALL_TARGET+=	docs
@@ -58,4 +61,22 @@ pre-fetch:
 	@${ECHO} ""
 .endif
 
+do-install:
+.for d in lib/logo lib/logo/logolib \
+	lib/logo/helpfiles share/examples/logo/csls share/doc/logo
+	${MKDIR} ${PREFIX}/$d
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/logo ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/logolib/* ${PREFIX}/lib/logo/logolib/
+	${INSTALL_DATA} ${WRKSRC}/helpfiles/* ${PREFIX}/lib/logo/helpfiles/
+	${INSTALL_DATA} ${WRKSRC}/csls/* ${PREFIX}/share/examples/logo/csls/
+.if !defined(NOPORTSDOCS)
+	${INSTALL_DATA} ${WRKSRC}/usermanual $(PREFIX)/share/doc/logo
+.endif
+.if defined(WITH_FULL_DOCS)
+	cd ${WRKSRC}/emacs/ ;${SETENV} ${MAKE_ENV} ${GMAKE} install-docs
+.endif
+.ifdef defined(EMACS_LOGO_MODE)
+	cd ${WRKSRC}/emacs; ${SETENV} ${MAKE_ENV} ${GMAKE} install-emacs
+.endif
 .include <bsd.port.mk>
