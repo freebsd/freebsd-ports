@@ -2,6 +2,7 @@
 #
 
     SUBDIR += IglooFTP
+    SUBDIR += afd
     SUBDIR += axyftp
     SUBDIR += bftpd
     SUBDIR += caitoo
