@@ -1,10 +1,19 @@
 bin/frost
+bin/frost-convert
+share/java/jar/frost/frost.jar
+share/java/jar/frost/fecImpl.jar
+share/java/jar/frost/genChkImpl.jar
+share/java/jar/frost/xercesImpl.jar
+share/java/jar/frost/xml-apis.jar
+share/java/jar/frost/xmlParserAPIs.jar
+share/java/jar/frost/converter.jar
+share/frost/boards.xml.default
 %%PORTDOCS%%%%DOCSDIR%%/Frost.tex
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/gpl.txt
 %%PORTDOCS%%%%DOCSDIR%%/history.txt
-%%PORTDOCS%%%%DOCSDIR%%/notes.txt
 @dirrm share/java/jar/frost
+@dirrm share/frost
 @unexec rmdir %D/share/java/jar 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

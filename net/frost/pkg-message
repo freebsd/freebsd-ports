@@ -1,0 +1,7 @@
+*********************************************
+You can use %%PREFIX%%/bin/frost-convert
+to convert your old Frost-WOT identities file
+to the new format. The identities file to be
+converted must be in your current work
+directory for the tool to find it.
+*********************************************
