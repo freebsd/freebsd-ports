@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gnome2-devel
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.2.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The "meta-port" for the GNOME 2.0 development API
+COMMENT=	The "meta-port" for the GNOME 2 development API
 
 RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnomecommon 
