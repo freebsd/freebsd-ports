@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	XML-Sablotron
-PORTVERSION=	0.98
+PORTVERSION=	1.0
 CATEGORIES=	textproc perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	XML
+MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
