@@ -39,6 +39,10 @@ lib/ROX-Lib2/Messages/fr.po
 lib/ROX-Lib2/Messages/it.gmo
 lib/ROX-Lib2/Messages/it.po
 lib/ROX-Lib2/Messages/update-po
+lib/ROX-Lib2/Messages/zh_CN.gmo
+lib/ROX-Lib2/Messages/zh_CN.po
+lib/ROX-Lib2/Messages/zh_TW.gmo
+lib/ROX-Lib2/Messages/zh_TW.po
 lib/ROX-Lib2/python/make_docs.py
 lib/ROX-Lib2/python/make_docs.pyc
 lib/ROX-Lib2/python/make_docs.pyo
@@ -133,6 +137,9 @@ lib/ROX-Lib2/tests/python/testproxy.pyo
 lib/ROX-Lib2/tests/python/testsu.py
 lib/ROX-Lib2/tests/python/testsu.pyc
 lib/ROX-Lib2/tests/python/testsu.pyo
+lib/ROX-Lib2/tests/python/testtasks.py
+lib/ROX-Lib2/tests/python/testtasks.pyc
+lib/ROX-Lib2/tests/python/testtasks.pyo
 @dirrm lib/ROX-Lib2/tests/python
 @dirrm lib/ROX-Lib2/tests
 @dirrm lib/ROX-Lib2/python/rox
