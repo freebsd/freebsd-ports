@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flexbackup
-PORTVERSION=	1.2.0
-PORTREVISION?=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 		http://www.reynoldsnet.org/flexbackup/tarball/
@@ -15,9 +14,16 @@ MASTER_SITES=	http://www.edwinh.org/flexbackup/tarball/ \
 MAINTAINER=	johnjen@reynoldsnet.org
 COMMENT=	Perl-based flexible backup system that can use dump/afio/cpio/tar/star
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 MAKE_ARGS=	PERLPATH=${PERL}
 
 USE_PERL5=	yes
+
+.if defined(WITH_PREFIX_CONF)
+MAKE_ARGS+=	CONFFILE=${PREFIX}/etc/flexbackup.conf
+CONFDIR=	${PREFIX}
+.endif
 
 .if defined(WITH_AFIO)
 RUN_DEPENDS+=	afio:${PORTSDIR}/sysutils/afio
@@ -57,9 +63,17 @@ pre-fetch:
 	@${ECHO} "flexbackup.conf file to point to 'gtar'"
 	@${ECHO}
 
+MAN1=		flexbackup.1
+MAN5=		flexbackup.conf.5
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fb.install ${LOCALBASE}/bin/flexbackup
-	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${LOCALBASE}/etc/flexbackup.conf.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/fb.install ${PREFIX}/bin/flexbackup
+	${INSTALL_DATA} ${WRKSRC}/flexbackup.conf ${PREFIX}/etc/flexbackup.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/flexbackup.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/flexbackup.conf.5 ${MAN5PREFIX}/man/man5
+
+post-configure:
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" -e "s:%%CONFDIR%%:${CONFDIR}:g" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -68,5 +82,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:%%PREFIX%%:${PREFIX}:g'
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>

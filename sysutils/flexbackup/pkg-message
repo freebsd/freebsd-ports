@@ -7,7 +7,7 @@ copy of this configuration file has been installed into
 
 Please copy this file as 
 
-  /etc/flexbackup.conf
+  %%CONFDIR%%/etc/flexbackup.conf
 
 (on all machines where you will run flexbackup) and edit appropriately for your
 site configuration. 
@@ -17,7 +17,7 @@ site configuration.
  ****************************************************************************
 
 Also see %%PREFIX%%/share/doc/flexbackup/README
-for more information on how to use flexbackup (until the man 
-pages are written :).
+for more information on how to use flexbackup. Man pages have also been written
+and included in this version of the port!
 
 -------------------------------------------------------------------------------
