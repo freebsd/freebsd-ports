@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Feb  8 17:57:22 2004
++++ src/Makefile.in	Sun Feb  8 22:51:32 2004
+@@ -849,7 +849,7 @@
+ 
+ # Dependancies.
+ 
+-sndfile.c : Symbols
++#sndfile.c : Symbols
+ 
+ aiff.c au.c au_g72x.c ircam.c mat4.c mat5.c nist.c paf.c pvf.c : sndfile.h common.h
+ raw.c svx.c voc.c w64.c wav.c wav_w64.c htk.c sd2.c rx2.c txw.c : sndfile.h common.h

@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget lthack pkgconfig
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
