@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Wed Nov 15 05:33:51 2000
++++ Makefile.in	Wed Nov 15 05:40:52 2000
+@@ -90,13 +90,10 @@
+ 	@echo
+ 	@echo "Performing DSO installation."
+ 	@echo
+-	$(INSTALL) src/mod_python.so $(LIBEXECDIR)
++	/usr/local/sbin/apxs -i -a src/mod_python.so
+ 	@$(MAKE) install_py_lib
+ 	@echo
+-	@echo "Now don't forget to edit your main config and add"
+-	@echo "    LoadModule python_module $(LIBEXECDIR)/mod_python.so"
+-	@echo "and if your configuration uses ClearModuleList, then also"
+-	@echo "    AddModule mod_python.c"
++	@echo "  ## Apache has to be restarted."
+ 	@echo
+ 
+ 
