@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz
@@ -16,6 +17,8 @@ COMMENT=	An MPEG-2 Encoder and Decoder
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mpeg2
+
+CFLAGS+=-DVERIFY -DVERBOSE -DTRACE
 
 do-install:
 .for i in dec enc
