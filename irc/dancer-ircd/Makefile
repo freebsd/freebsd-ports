@@ -7,6 +7,7 @@
 
 PORTNAME=	dancer-ircd
 PORTVERSION=	1.0.31m8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.doc.ic.ac.uk/~aps100/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases
@@ -45,7 +46,10 @@ post-install:
 		${CP} ${PREFIX}/etc/dancer-ircd/${f}.sample ${PREFIX}/etc/dancer-ircd/${f}; \
 	fi
 .endfor
-	${CHMOD} -R ${SHAREMODE} ${PREFIX}/etc/dancer-ircd
+	${FIND} ${PREFIX}/etc/dancer-ircd -type d -print0 | \
+		${XARGS} -0 ${CHMOD} 700
+	${FIND} ${PREFIX}/etc/dancer-ircd -type f -print0 | \
+		${XARGS} -0 ${CHMOD} 600
 	${CHOWN} -R ircd:ircd ${PREFIX}/etc/dancer-ircd
 	${SED} -e "s,%PREFIX%,${PREFIX},g" ${FILESDIR}/dancer-ircd.sh \
 		> ${WRKDIR}/dancer-ircd.sh
