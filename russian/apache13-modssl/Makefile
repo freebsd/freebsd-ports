@@ -6,28 +6,46 @@
 #
 
 PORTNAME=	apache+mod_ssl
-PORTVERSION=	${VERSION_APACHE}+${RA_VERSION}+${VERSION_MODSSL}
+PORTVERSION=	${VERSION_APACHE}.${VERSION_RA}.${VERSION_MODSSL}
 CATEGORIES=	russian www security
-MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
-		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/ \
-		ftp://ftp.chg.ru/pub/WWW/httpd/apache-rus/ \
-		http://www.modssl.org/source/ \
-		ftp://ftp.modssl.org/source/ \
-		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
-		ftp://ftp.ecrc.net/pub/security/mod_ssl/ \
-		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
-		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
-		ftp://glock.missouri.edu/pub/mod_ssl/ \
-		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
-		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
-DISTNAME=	apache_${VERSION_APACHE}rusPL${RA_VERSION}
+MASTER_SITES=	http://www.apache.org/dist/httpd/ \
+		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
+		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
+		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
+		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
+		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
+		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
+		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
+		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
+		ftp://www3.service.digital.com/apache/dist/httpd/ \
+		ftp://galileo.galilei.com/pub/apache/httpd/ \
+		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
+		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
+		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
+		${MASTER_SITES_MODSSL:S/$/:modssl/} \
+		${MASTER_SITES_RA:S/$/:rapatches/}
+
+MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
+			ftp://ftp.modssl.org/source/ \
+			ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
+			ftp://ftp.ecrc.net/pub/security/mod_ssl/ \
+			ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
+			ftp://ftp.ulpgc.es/pub/mod_ssl/ \
+			ftp://glock.missouri.edu/pub/mod_ssl/ \
+			ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
+			ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
+
+MASTER_SITES_RA=	ftp://ftp.lexa.ru/pub/apache-rus/ \
+			ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
+
+
+DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
+		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl \
+		patches_${VERSION_APACHE}rusPL${VERSION_RA}.tar.gz:rapatches
 
 MAINTAINER=	lev@serebryakov.spb.ru
-
-FORBIDDEN=	"Vulnerable to denial-of-service.  See" \
-		"http://httpd.apache.org/info/security_bulletin_20020617.txt"
 
 USE_OPENSSL=	YES
 
@@ -35,9 +53,9 @@ USE_OPENSSL=	YES
 
 LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
-VERSION_APACHE=	1.3.22
-VERSION_MODSSL=	2.8.5
-RA_VERSION=	30.9
+VERSION_APACHE=	1.3.26
+VERSION_MODSSL=	2.8.10
+VERSION_RA=	30.14
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -48,13 +66,14 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
+		--enable-shared=remain \
 		--enable-module=most \
 		--enable-module=auth_db \
-		--enable-module=mmap_static \
-		--disable-module=auth_dbm \
-		--enable-shared=max \
 		--enable-module=ssl \
-		--enable-module=define
+		--disable-shared=ssl \
+		--enable-module=define \
+		--disable-shared=define \
+		--disable-module=auth_dbm
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
@@ -100,6 +119,11 @@ CONFIGURE_ARGS+=	${APACHE_CONFIGURE_ARGS}
 .endif
 
 pre-patch:
+	@cd ${WRKDIR}/apache_${VERSION_APACHE} \
+	&& ${ECHO_MSG} "===>  Applying Russian Apache extension" \
+	&& ${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/RA-1.3rusPL${VERSION_RA}.patch
+	@cd ${WRKDIR} \
+	&& tar cf - src conf htdocs | tar xf - -C ${WRKDIR}/apache_${VERSION_APACHE}
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
 	&& ${ECHO_MSG} "===>  Applying mod_ssl-${VERSION_MODSSL} extension" \
 	&& ./configure --with-apache=../${DISTNAME} --expert
@@ -125,7 +149,7 @@ pre-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rc.apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 .if defined(WITH_SUEXEC)
 	@${ECHO_CMD} "sbin/suexec" >> ${TMPPLIST}

@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/russian/apache13-modssl/Attic/pkg-deinstall,v 1.1 2001-11-08 11:23:21 demon Exp $
+# $FreeBSD: /tmp/pcvs/ports/russian/apache13-modssl/Attic/pkg-deinstall,v 1.2 2002-07-02 08:44:07 demon Exp $
 #
 
 if [ "$2" != "POST-DEINSTALL" ]; then
@@ -9,12 +9,7 @@ fi
 USER=www
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if pw userdel ${USER}; then
-		echo "Delete user/group \"${USER}\"."
-	else
-		echo "Deleting user/group \"${USER}\" failed..."
-		exit 1
-	fi
+	echo "To delete Apache user permanently, use 'pw userdel ${USER}'"
 fi
 
 exit 0

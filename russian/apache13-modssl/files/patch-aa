@@ -1,23 +1,19 @@
---- configure.orig	Tue Nov  6 11:37:00 2001
-+++ configure	Tue Nov  6 11:41:25 2001
-@@ -1275,8 +1275,8 @@
+--- configure.orig	Mon Jun 24 17:04:22 2002
++++ configure	Mon Jun 24 17:04:51 2002
+@@ -1263,7 +1263,7 @@
      echo "       DEFAULT_PIDLOG: ${runtimedir_relative}${thetarget}.pid"
      echo "   DEFAULT_SCOREBOARD: ${runtimedir_relative}${thetarget}.scoreboard"
      echo "     DEFAULT_LOCKFILE: ${runtimedir_relative}${thetarget}.lock"
--    echo "      DEFAULT_XFERLOG: ${logfiledir_relative}access_log"
 -    echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}error_log"
-+    echo "      DEFAULT_XFERLOG: ${logfiledir_relative}httpd-access.log"
 +    echo "     DEFAULT_ERRORLOG: ${logfiledir_relative}httpd-error.log"
      echo "    TYPES_CONFIG_FILE: ${sysconfdir_relative}mime.types"
      echo "   SERVER_CONFIG_FILE: ${sysconfdir_relative}${thetarget}.conf"
      echo "   ACCESS_CONFIG_FILE: ${sysconfdir_relative}access.conf"
-@@ -1377,8 +1377,8 @@
+@@ -1361,7 +1361,7 @@
  echo "echo '-DDEFAULT_PIDLOG=\"${runtimedir_relative}${thetarget}.pid\"'" >>$src/apaci
  echo "echo '-DDEFAULT_SCOREBOARD=\"${runtimedir_relative}${thetarget}.scoreboard\"'" >>$src/apaci
  echo "echo '-DDEFAULT_LOCKFILE=\"${runtimedir_relative}${thetarget}.lock\"'" >>$src/apaci
--echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}access_log\"'" >>$src/apaci
 -echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}error_log\"'" >>$src/apaci
-+echo "echo '-DDEFAULT_XFERLOG=\"${logfiledir_relative}httpd-access.log\"'" >>$src/apaci
 +echo "echo '-DDEFAULT_ERRORLOG=\"${logfiledir_relative}httpd-error.log\"'" >>$src/apaci
  echo "echo '-DTYPES_CONFIG_FILE=\"${sysconfdir_relative}mime.types\"'" >>$src/apaci
  echo "echo '-DSERVER_CONFIG_FILE=\"${sysconfdir_relative}${thetarget}.conf\"'" >>$src/apaci
