@@ -20,8 +20,6 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	marshall@chezmarshall.com
 COMMENT=	Perforce client and server
 
-BROKEN=		"Size mismatch"
-
 #
 # This is a kludge.  I don't know a better way to set PORTVERSION and
 # PORTREVISION such that pkg_version figures out an update is needed
@@ -32,7 +30,7 @@ ARCH?= i386
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
 VERSION=	03.2
-REVISION=	6
+REVISION=	7
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
