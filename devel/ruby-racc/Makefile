@@ -8,7 +8,7 @@
 PORTNAME=	racc
 PORTVERSION=	1.3.8
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
+MASTER_SITES=	http://www.xdsl.ne.jp/Cd/aamine/soft/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
