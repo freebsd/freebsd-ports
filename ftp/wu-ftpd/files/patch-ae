@@ -1,0 +1,13 @@
+--- src/config/config.fbs.bak	Sat Jul  1 22:03:07 2000
++++ src/config/config.fbs	Sun Jul 29 23:37:56 2001
+@@ -79,10 +79,6 @@
+ typedef void SIGNAL_TYPE;
+ 
+ #include "../config.h"
+-/* SKEY should always be defined on FreeBSD */
+-#ifndef SKEY
+-#define SKEY
+-#endif
+ #ifdef SKEY
+ #define SKEY_NAME
+ #endif

@@ -1,11 +1,14 @@
---- src/makefiles/Makefile.fbs.orig	Tue Aug 31 03:55:26 1999
-+++ src/makefiles/Makefile.fbs	Wed Oct 20 20:34:07 1999
-@@ -30,7 +30,7 @@
+--- src/makefiles/Makefile.fbs.orig	Sat Jul  1 22:57:50 2000
++++ src/makefiles/Makefile.fbs	Sun Jul 29 23:33:47 2001
+@@ -30,9 +30,9 @@
  #CC       = cc
  IFLAGS   = -I.. -I../support
  LFLAGS   = -L../support -s
 -CFLAGS   = -O ${IFLAGS} ${LFLAGS} -DNO_CRYPT_PROTO
 +CFLAGS   += ${IFLAGS} ${LFLAGS} -DNO_CRYPT_PROTO
  XOBJS    = 
- LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
+-LIBES    = -lsupport -lutil -lskey -lmd -lcrypt 
++LIBES    = -lsupport -lutil -lopie -lmd -lcrypt
  LIBC     = /usr/lib/libc.a
+ LINTFLAGS=	
+ LKERB    = -lauth -lckrb -lkrb -ldes

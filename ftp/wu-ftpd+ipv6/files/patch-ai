@@ -1,15 +1,17 @@
---- config.h.orig	Mon Feb 21 03:51:58 2000
-+++ config.h	Mon Feb 21 04:18:17 2000
-@@ -101,7 +101,7 @@
-  * See FIXES-2.4-HOBBIT for more information on this option.
+--- config.h.orig	Sun Jul 29 23:29:57 2001
++++ config.h	Sun Jul 29 23:30:55 2001
+@@ -109,9 +109,7 @@
+  * Add OPIE support -- REQUIRES OPIE libraries
   */
  
--#undef SKEY
-+/* #undef SKEY */
+-#if !defined (LINUX)		/* Linux autodetects OPIE */
+-#undef OPIE
+-#endif
++#define OPIE
  
  /*
-  * OPIE
-@@ -132,7 +132,7 @@
+  * ALTERNATE_CD
+@@ -132,7 +130,7 @@
   * Define this if you want to use RFC 931 'authentication' - this improves
   * the logging at the cost of a possible slight delay in connection.
   */
@@ -18,7 +20,7 @@
  
  /*
   * BUFFER_SIZE
-@@ -232,7 +232,7 @@
+@@ -232,7 +230,7 @@
   * Undefine this to let NOOP reset the idle timeout.
   */
  
@@ -27,7 +29,7 @@
  
  /*
   * XFERLOG_REALPATH
-@@ -286,7 +286,7 @@
+@@ -286,7 +284,7 @@
   * the risk of PASV port race stealing the connection.  It also is non-RFC
   * compliant, so it may cause problems for some client sites.
   */
