@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtypist
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,10 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CONFIG_SHELL="${SH}" \
 		EMACS=no
 
+INFO=		gtypist
 MAN1=		gtypist.1 typefortune.1
-
-# Note:
-# Reformatting the info documentation would require makeinfo 4.2,
-# so we'll install multiple gtypist.info-* files as included.
 
 .include <bsd.port.mk>
