@@ -7564,6 +7564,7 @@ tuxtype		ports/games/tuxtype
 tvark		ports/net/tvark
 tvguide		ports/misc/tvguide
 tvision		ports/devel/tvision
+tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
 twin		ports/emulators/twin
