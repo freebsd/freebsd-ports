@@ -7,19 +7,15 @@
 #
 
 PORTNAME=	exiftags
-PORTVERSION=	0.93
+PORTVERSION=	0.94
 CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREIFX}"
 
 MAN1=	exiftags.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CC,#CC,g" -e "s,^CFLAGS,#CFLAGS,g" \
-		-e "s,^PREFIX,#PREFIX,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/exiftags ${PREFIX}/bin
