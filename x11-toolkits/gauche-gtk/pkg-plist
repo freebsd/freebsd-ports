@@ -1,12 +1,17 @@
 lib/gauche/%%VERSION%%/%%TARGET%%/gauche-gtk.so
+%%GTKGLEXT%%lib/gauche/%%VERSION%%/%%TARGET%%/gauche-gtkgl.so
 share/gauche/%%VERSION%%/lib/gtk.scm
 share/gauche/%%VERSION%%/lib/gtk/error-dialog.scm
 share/gauche/%%VERSION%%/lib/gtk/gdkkeysyms.scm
 share/gauche/%%VERSION%%/lib/gtk/gtkaux.scm
+%%GTKGLEXT%%share/gauche/%%VERSION%%/lib/gtk/gtkgl.scm
 share/gauche/%%VERSION%%/lib/gtk/listener.scm
 @dirrm share/gauche/%%VERSION%%/lib/gtk
 %%PORTDOCS%%%%EXAMPLESDIR%%/error-dialog.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/gdk-animation.scm
+%%PORTDOCS%%%%GTKGLEXT%%%%EXAMPLESDIR%%/gtkglext/README
+%%PORTDOCS%%%%GTKGLEXT%%%%EXAMPLESDIR%%/gtkglext/font.scm
+%%PORTDOCS%%%%GTKGLEXT%%%%EXAMPLESDIR%%/gtkglext/gears.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/COPYING
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/arrow.scm
@@ -38,6 +43,7 @@ share/gauche/%%VERSION%%/lib/gtk/listener.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/table.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/gtk-tutorial/wheelbarrow.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/listener.scm
+%%PORTDOCS%%%%GTKGLEXT%%@dirrm %%EXAMPLESDIR%%/gtkglext
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/gtk-tutorial
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@unexec rmdir %D/share/examples/gauche 2>/dev/null || true
