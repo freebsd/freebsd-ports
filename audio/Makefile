@@ -440,6 +440,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms-a52dec
+    SUBDIR += xmms-arts_output
     SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
     SUBDIR += xmms-cdparanoia
