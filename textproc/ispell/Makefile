@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.8 1995/04/15 03:45:43 asami Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -22,12 +22,24 @@ DISTFILES+=	   ${EXTRA_DICT}
 
 MAKE_FLAGS=	TMPDIR=${.CURDIR} -f 
 
+pre-extract:
+.if !defined(LANG) 
+	@echo '******************************************************' 
+	@echo '* Note that you can build a british version by       *' 
+	@echo '* typing "make british" following a "make clean"     *' 
+	@echo '******************************************************' 
+.endif	
+
 pre-configure:
 .if defined(EXTRA_DICT)
 	@echo ${EXTRA_DICT} > ${WRKDIR}/extra_dict
 .else
 	@echo -n
 .endif
+
+british:
+	@echo "Okay, making a british version of ispell...."
+	@${MAKE} ${.MAKEFLAGS} LANG=british all 
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
@@ -36,3 +48,7 @@ pre-install:
 	@mkdir -p ${PREFIX}/man/man4
 
 .include <bsd.port.mk>
+
+
+
+
