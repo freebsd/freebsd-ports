@@ -1387,3 +1387,4 @@ databases/postgresql73|databases/postgresql73-server|2005-01-30|port split into 
 databases/postgresql7|databases/postgresql74-server|2005-01-30|port split into postgresql74-server and -client
 x11-themes/lila-xffm||2005-02-02|don't work with new xfce4
 x11-themes/lila-xfce4-panel||2005-02-02|don't work with new xfce4
+print/teTeX-latex2e||2005-02-06|obsolete by new teTeX-texmf

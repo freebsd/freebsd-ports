@@ -243,7 +243,6 @@
     SUBDIR += t1utils
     SUBDIR += teTeX
     SUBDIR += teTeX-base
-    SUBDIR += teTeX-latex2e
     SUBDIR += teTeX-texmf
     SUBDIR += tex
     SUBDIR += tex-omegaware-old
