@@ -20,14 +20,14 @@
  	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
  	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(libdir)/$(libprefix)mc.hlp 
  
---- doc/Makefile.in.orig	Fri Nov 14 03:25:51 1997
-+++ doc/Makefile.in	Sun Nov 30 01:52:16 1997
-@@ -14,7 +14,7 @@
+--- doc/Makefile.in.orig	Mon Mar 30 05:26:09 1998
++++ doc/Makefile.in	Sun Apr 12 03:23:15 1998
+@@ -15,7 +15,7 @@
  all:
  
  install:
--	-$(SEDCMD2) < $(srcdir)/mc.1 > $(DESTDIR)$(mandir)/$(manprefix)mc.$(manext)
-+	-$(SEDCMD2) < $(srcdir)/mc.1 > $(DESTDIR)$(mandir)/$(manprefix)midc.$(manext)
- 	-$(SEDCMD2) < $(srcdir)/mcedit.1 > $(DESTDIR)$(mandir)/$(manprefix)mcedit.$(manext)
- 	-$(SEDCMD2) < $(srcdir)/mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
+-	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(mandir)/$(manprefix)mc.$(manext)
++	-$(SEDCMD2) < mc.1 > $(DESTDIR)$(mandir)/$(manprefix)midc.$(manext)
+ 	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(mandir)/$(manprefix)mcedit.$(manext)
+ 	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
  

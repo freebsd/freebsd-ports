@@ -15,6 +15,7 @@ lib/mc/extfs/cpio
 lib/mc/extfs/deb
 lib/mc/extfs/extfs.ini
 lib/mc/extfs/ftplist
+lib/mc/extfs/hp48
 lib/mc/extfs/lha
 lib/mc/extfs/lslR
 lib/mc/extfs/rar
