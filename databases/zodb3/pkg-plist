@@ -1,3 +1,14 @@
+bin/fsdump.py
+bin/fsrefs.py
+bin/fstail.py
+bin/fstest.py
+bin/repozo.py
+bin/zeopack.py
+bin/zconfig
+bin/runzeo.py
+bin/mkzeoinst.py
+bin/zdrun.py
+bin/zdctl.py
 %%PYTHON_INCLUDEDIR%%/ZODB3/ExtensionClass.h
 %%PYTHON_INCLUDEDIR%%/ZODB3/cPersistence.h
 %%PYTHON_SITELIBDIR%%/Acquisition.so
