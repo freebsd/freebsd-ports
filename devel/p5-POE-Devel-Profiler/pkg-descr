@@ -1,0 +1,4 @@
+This module profiles POE programs, in the same way the Devel::DProf
+family of modules do.
+
+WWW: http://search.cpan.org/dist/POE-Devel-Profiler/
