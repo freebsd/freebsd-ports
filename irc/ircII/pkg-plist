@@ -1,5 +1,5 @@
 bin/irc
-bin/irc-4.4S
+bin/irc-4.4U
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -105,6 +105,7 @@ share/irc/help/deop
 share/irc/help/describe
 share/irc/help/die
 share/irc/help/digraph
+share/irc/help/disconnect
 share/irc/help/dmsg
 share/irc/help/dquery
 share/irc/help/echo
