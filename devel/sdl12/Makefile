@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Cross-platform multi-media development API
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
