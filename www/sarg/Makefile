@@ -13,6 +13,8 @@ MASTER_SITES=	http://web.onda.com.br/orso/
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
 
+BROKEN=		Broken pkg-plist
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --enable-bindir="${PREFIX}/bin" --enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" --with-gcc
 
