@@ -1,6 +1,6 @@
 --- capture.h.orig	Thu Jul 27 02:15:05 2000
-+++ capture.h	Sun Mar  9 18:18:21 2003
-@@ -16,20 +16,34 @@
++++ capture.h	Thu Oct 16 10:58:38 2003
+@@ -16,20 +16,37 @@
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
  #define _XOPEN_SOURCE 500
@@ -29,7 +29,10 @@
 +#else
 +#include <sys/pciio.h>
 +#include "pci.h" /*This is taken from Linux kernel*/
++#include <osreldate.h>
++#if __FreeBSD_version <= 500041
 +#define O_SYNC O_FSYNC
++#endif
 +#include <sys/stat.h>
 +#endif
  #include <sys/time.h>
