@@ -3461,6 +3461,7 @@ kaptain		ports/devel/kaptain
 kaskade		ports/cad/kaskade
 kawa		ports/lang/kawa
 kb2mb2		ports/x11/kb2mb2
+kbarcode	ports/graphics/kbarcode
 kbdcontrol	src/usr.sbin/kbdcontrol
 kbdmap		src/usr.sbin/kbdmap
 kbear		ports/ftp/kbear
