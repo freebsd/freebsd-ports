@@ -4,6 +4,7 @@ bin/webmagick
 info/webmagick.info
 info/webmagick.info-1
 info/webmagick.info-2
+info/webmagick.info-3
 www/data/webmagick/aqua_next.gif
 www/data/webmagick/aqua_prev.gif
 www/data/webmagick/blank.html
@@ -19,6 +20,10 @@ www/data/webmagick/blue_prev.gif
 www/data/webmagick/blue_readme.gif
 www/data/webmagick/blue_top.gif
 www/data/webmagick/blue_up.gif
+www/data/webmagick/frame-style-1.jpg
+www/data/webmagick/frame-style-2.jpg
+www/data/webmagick/frame-style-3.jpg
+www/data/webmagick/frame-style-4.jpg
 www/data/webmagick/gray_next.gif
 www/data/webmagick/gray_prev.gif
 www/data/webmagick/webmagick.js
