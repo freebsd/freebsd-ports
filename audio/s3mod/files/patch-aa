@@ -1,0 +1,351 @@
+diff -cr s3mod-v1.08A/Makefile s3mod-v1.08A.port/Makefile
+*** ./Makefile	Mon Mar  7 05:54:59 1994
+--- ..port/Makefile	Thu Mar  9 13:02:33 1995
+***************
+*** 30,36 ****
+  # Uncomment these for Linux (DSP and GUS support)
+  #
+   COPTS	= -O2
+!  DEFINES	= -DLINUX -DGUS
+   INCLUDES	=
+   LIBS	=
+   LIBDIR	=
+--- 30,36 ----
+  # Uncomment these for Linux (DSP and GUS support)
+  #
+   COPTS	= -O2
+!  DEFINES	= -DGUS
+   INCLUDES	=
+   LIBS	=
+   LIBDIR	=
+***************
+*** 55,60 ****
+--- 55,63 ----
+  
+  dep:
+  	makedepend $(CFLAGS) $(LFLAGS) $(CFILES)
++ 
++ install:
++ 	install -m 555 s3mod /usr/local/bin 
+  
+  # DO NOT DELETE THIS LINE -- make depend depends on it.
+  
+diff -cr s3mod-v1.08A/gus.c s3mod-v1.08A.port/gus.c
+*** ./gus.c	Mon Mar  7 05:19:56 1994
+--- ..port/gus.c	Thu Mar  9 12:56:50 1995
+***************
+*** 20,27 ****
+  /* See the associated README file for Thanks       */
+  /***************************************************/
+  
+! #include <sys/soundcard.h>
+! #include <sys/ultrasound.h>
+  #include <unistd.h>
+  #include "gus.h"
+  #include "mod.h"
+--- 20,27 ----
+  /* See the associated README file for Thanks       */
+  /***************************************************/
+  
+! #include <machine/soundcard.h>
+! #include <machine/ultrasound.h>
+  #include <unistd.h>
+  #include "gus.h"
+  #include "mod.h"
+diff -cr s3mod-v1.08A/main.c s3mod-v1.08A.port/main.c
+*** ./main.c	Mon Mar  7 05:56:44 1994
+--- ..port/main.c	Thu Mar  9 12:59:57 1995
+***************
+*** 38,47 ****
+   * Portability conditions                
+   */
+  
+! #ifdef LINUX
+! #include <linux/soundcard.h>
+! #include <bytesex.h>
+! #endif /* LINUX */
+  #ifdef GUS
+  #include "gus.h"
+  #endif /* GUS */
+--- 38,47 ----
+   * Portability conditions                
+   */
+  
+! #ifdef __FreeBSD__
+! #include <machine/soundcard.h>
+! #include <machine/endian.h>
+! #endif /* __FreeBSD__ */
+  #ifdef GUS
+  #include "gus.h"
+  #endif /* GUS */
+***************
+*** 81,96 ****
+    printf("For information email (s3mod@uiuc.edu).\n");
+    printf("s3mod [-sbfqnl] [sampling frequency] filename\n");
+    printf("     -s stereo\n");
+! #ifdef LINUX
+    printf("     -b 16 bit samples\n");
+! #endif /* ?LINUX */
+    printf("     -f set frequency\n");
+    printf("     -q quiet (don't print anything)\n");
+    printf("     -n don't loop\n");
+    printf("     -l loud mode (shift voices louder)\n");
+! #ifdef LINUX
+    printf("     -g do NOT use GUS native mode\n");
+! #endif /* ?LINUX */
+    printf("     -p PAL speed adjustment (145bpm start)\n");
+    printf("s3mod -sbf 44100 foobar.mod\n");
+    printf("   plays in stereo, 16 bits, 44.1 kHz\n\n");
+--- 81,96 ----
+    printf("For information email (s3mod@uiuc.edu).\n");
+    printf("s3mod [-sbfqnl] [sampling frequency] filename\n");
+    printf("     -s stereo\n");
+! #ifdef __FreeBSD__
+    printf("     -b 16 bit samples\n");
+! #endif /* ?__FreeBSD__ */
+    printf("     -f set frequency\n");
+    printf("     -q quiet (don't print anything)\n");
+    printf("     -n don't loop\n");
+    printf("     -l loud mode (shift voices louder)\n");
+! #ifdef __FreeBSD__
+    printf("     -g do NOT use GUS native mode\n");
+! #endif /* ?__FreeBSD__ */
+    printf("     -p PAL speed adjustment (145bpm start)\n");
+    printf("s3mod -sbf 44100 foobar.mod\n");
+    printf("   plays in stereo, 16 bits, 44.1 kHz\n\n");
+***************
+*** 98,104 ****
+    printf("4,6,or 8 track MODs.\n\n");
+  #ifdef DEC
+    printf("NOTE: DEC AF support is in it's ALPHA stages\n\n");
+! #endif /* ?LINUX */
+    exit(1);
+  }
+  
+--- 98,104 ----
+    printf("4,6,or 8 track MODs.\n\n");
+  #ifdef DEC
+    printf("NOTE: DEC AF support is in it's ALPHA stages\n\n");
+! #endif /* ?__FreeBSD__ */
+    exit(1);
+  }
+  
+***************
+*** 110,116 ****
+  {
+    int found_gus=0;
+  
+! #ifdef LINUX
+  #ifdef GUS 
+    if (use_gus)
+      {
+--- 110,116 ----
+  {
+    int found_gus=0;
+  
+! #ifdef __FreeBSD__
+  #ifdef GUS 
+    if (use_gus)
+      {
+***************
+*** 124,130 ****
+  #else /* GUS */
+    get_dsp_device();
+  #endif /* GUS */
+! #endif /* LINUX */
+  
+  #ifdef SUN
+    get_sun_device();
+--- 124,130 ----
+  #else /* GUS */
+    get_dsp_device();
+  #endif /* GUS */
+! #endif /* __FreeBSD__ */
+  
+  #ifdef SUN
+    get_sun_device();
+***************
+*** 231,237 ****
+  #endif /* ?SUN */
+  
+  
+! #ifdef LINUX 
+  int get_dsp_device(void)
+  {
+    uint32 j;
+--- 231,237 ----
+  #endif /* ?SUN */
+  
+  
+! #ifdef __FreeBSD__ 
+  int get_dsp_device(void)
+  {
+    uint32 j;
+***************
+*** 279,285 ****
+    audio_curptr = audio_start_buffer;  
+  
+  }
+! #endif /* ?LINUX */
+  
+  
+  
+--- 279,285 ----
+    audio_curptr = audio_start_buffer;  
+  
+  }
+! #endif /* ?__FreeBSD__ */
+  
+  
+  
+diff -cr s3mod-v1.08A/mix.c s3mod-v1.08A.port/mix.c
+*** ./mix.c	Mon Mar  7 05:19:25 1994
+--- ..port/mix.c	Thu Mar  9 12:56:16 1995
+***************
+*** 27,39 ****
+  #include <string.h>
+  #include "mod.h"
+  
+! #ifdef LINUX
+! #include <sys/soundcard.h>
+! #include <bytesex.h>
+! #endif /* ?LINUX */
+  
+  #ifdef GUS
+! #include <sys/ultrasound.h>
+  #include "gus.h"
+  #endif /* ?GUS */
+  
+--- 27,39 ----
+  #include <string.h>
+  #include "mod.h"
+  
+! #ifdef __FreeBSD__
+! #include <machine/soundcard.h>
+! #include <machine/endian.h>
+! #endif /* ?__FreeBSD__ */
+  
+  #ifdef GUS
+! #include <machine/ultrasound.h>
+  #include "gus.h"
+  #endif /* ?GUS */
+  
+diff -cr s3mod-v1.08A/mod.c s3mod-v1.08A.port/mod.c
+*** ./mod.c	Mon Mar  7 05:19:01 1994
+--- ..port/mod.c	Thu Mar  9 12:53:53 1995
+***************
+*** 30,42 ****
+  #include "mod.h"
+  #include "main.h"
+  
+! #ifdef LINUX
+! #include <sys/soundcard.h>
+! #include <bytesex.h>
+! #endif /* ?LINUX */
+  
+  #ifdef GUS
+! #include <sys/ultrasound.h>
+  #include "gus.h"
+  #endif /* GUS */
+  
+--- 30,42 ----
+  #include "mod.h"
+  #include "main.h"
+  
+! #ifdef __FreeBSD__
+! #include <machine/soundcard.h>
+! #include <machine/endian.h>
+! #endif /* ?__FreeBSD__ */
+  
+  #ifdef GUS
+! #include <machine/ultrasound.h>
+  #include "gus.h"
+  #endif /* GUS */
+  
+diff -cr s3mod-v1.08A/mod.h s3mod-v1.08A.port/mod.h
+*** ./mod.h	Mon Mar  7 05:21:18 1994
+--- ..port/mod.h	Thu Mar  9 12:53:09 1995
+***************
+*** 22,28 ****
+  #define __BYTE_ORDER 4321
+  #endif 
+  
+! #ifdef linux
+  #define BIT_32
+  #undef NEAR_FAR_PTR
+  #endif
+--- 22,28 ----
+  #define __BYTE_ORDER 4321
+  #endif 
+  
+! #ifdef __FreeBSD__
+  #define BIT_32
+  #undef NEAR_FAR_PTR
+  #endif
+diff -cr s3mod-v1.08A/play.c s3mod-v1.08A.port/play.c
+*** ./play.c	Mon Mar  7 05:18:08 1994
+--- ..port/play.c	Thu Mar  9 12:55:46 1995
+***************
+*** 31,43 ****
+  
+  #include "main.h"
+  
+! #ifdef LINUX
+! #include <bytesex.h>
+! #include <sys/soundcard.h>
+! #endif /* ?LINUX */
+  
+  #ifdef GUS
+! #include <sys/ultrasound.h>
+  #include "gus.h"
+  #endif /* ?GUS */
+  
+--- 31,43 ----
+  
+  #include "main.h"
+  
+! #ifdef __FreeBSD__
+! #include <machine/endian.h>
+! #include <machine/soundcard.h>
+! #endif /* ?__FreeBSD__ */
+  
+  #ifdef GUS
+! #include <machine/ultrasound.h>
+  #include "gus.h"
+  #endif /* ?GUS */
+  
+diff -cr s3mod-v1.08A/s3m.c s3mod-v1.08A.port/s3m.c
+*** ./s3m.c	Mon Mar  7 05:18:37 1994
+--- ..port/s3m.c	Thu Mar  9 12:55:01 1995
+***************
+*** 22,35 ****
+  
+  #include <stdio.h>
+  #include <string.h>
+  
+  #include <fcntl.h>
+  
+  #include "mod.h"
+  
+! #ifdef LINUX
+! #include <bytesex.h>
+! #include <linux/soundcard.h>
+  #endif
+  
+  #ifdef GUS
+--- 22,36 ----
+  
+  #include <stdio.h>
+  #include <string.h>
++ #include <stdlib.h>
+  
+  #include <fcntl.h>
+  
+  #include "mod.h"
+  
+! #ifdef __FreeBSD__
+! #include <machine/endian.h>
+! #include <machine/soundcard.h>
+  #endif
+  
+  #ifdef GUS
