@@ -1,0 +1,9 @@
+Epiphany-extensions is a set of plugins for the Epiphany web browser that
+extend its base functionality.  Currently, the following extensions are
+supported:
+
+* Mouse gestures
+* Pop-up blocker
+* Tabs menu
+
+WWW: http://savannah.nongnu.org/projects/ephyplugins/

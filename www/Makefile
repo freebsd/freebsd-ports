@@ -86,6 +86,7 @@
     SUBDIR += emacs-w3m-xemacs21-mule
     SUBDIR += emp
     SUBDIR += epiphany
+    SUBDIR += epiphany-extensions
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
