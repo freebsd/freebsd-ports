@@ -1,0 +1,9 @@
+--- ripmime/build_ripOLE.orig	Wed Jul 16 21:18:54 2003
++++ ripmime/build_ripOLE	Wed Feb 18 10:31:19 2004
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+ cd ripOLE
+-make clean 
+-make
++${GMAKE} clean 
++${GMAKE}

@@ -200,6 +200,7 @@
     SUBDIR += nullmailer
     SUBDIR += offlineimap
     SUBDIR += openwebmail
+    SUBDIR += p3scan
     SUBDIR += p5-Email-Filter
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Folder

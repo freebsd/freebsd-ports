@@ -1,0 +1,4 @@
+etc/p3scan.conf.sample
+etc/p3scan.mail.sample
+etc/rc.d/p3scan.sh
+sbin/p3scan

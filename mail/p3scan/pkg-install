@@ -1,0 +1,154 @@
+#!/bin/sh
+
+chmods_done=" "
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+make_account() {
+    local u g gcos homeopt home
+
+    u=$1
+    g=$2
+    gcos=$3
+    homeopt=${4:+"-d $4"}
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${g} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${u}:" ${PASSWD}; then
+		echo "While you're at it, please create a user \"${u}\" too,"
+		echo "with a default group of \"${g}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${u} -g ${g} -h - ${homeopt} \
+		-s ${NONEXISTENT} -c "${gcos}" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if [ x"$homeopt" = x ]; then
+	eval home=~${u}
+	if [ ! -d "${home}" ]; then
+	    if yesno \
+		"Would you like me to create ${u}'s home directory (${home})" y
+	    then
+		(umask 77 && \
+		    mkdir -p ${home}) || exit
+		chown -R ${u}:${g} ${home} || exit
+	    else
+		echo "Please create it, and try again."
+		exit 1
+	    fi
+	fi
+    fi
+}
+
+case $2 in
+
+POST-INSTALL)
+    if which -s pw && which -s lockf; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "lockf" and/or "pw" utilities.  I need these utilities.
+Please get them and install them, and try again.  You can get the
+sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.bin/lockf.tar.gz
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+
+    user=p3scan
+    group=p3scan
+    spooldir=/var/spool/p3scan
+    childrendir=/var/spool/p3scan/children
+    notifydir=/var/spool/p3scannotify
+    piddir=/var/run/p3scan/
+    etcdir=${PREFIX:-$PKG_PREFIX}/etc
+
+    echo ""
+    make_account ${user} ${group} "P3Scan Daemon" ${spooldir}
+
+    if [ ! -d ${spooldir} ]; then
+	echo "Creating \"${spooldir}\"."
+	mkdir -p ${spooldir}
+    fi
+    echo "Fixing ownerships and modes in \"${spooldir}\"."
+    chown -R ${user}:${group} ${spooldir}
+    chmod -R go= ${spooldir}
+
+    if [ ! -d ${childrendir} ]; then
+	echo "Creating \"${childrendir}\"."
+	mkdir -p ${childrendir}
+    fi
+    echo "Fixing ownerships and modes in \"${childrendir}\"."
+    chown -R ${user}:${group} ${childrendir}
+    chmod -R go= ${childrendir}
+
+    if [ ! -d ${notifydir} ]; then
+	echo "Creating \"${notifydir}\"."
+	mkdir -p ${notifydir}
+    fi
+    echo "Fixing ownerships and modes in \"${notifydir}\"."
+    chown -R ${user}:${group} ${notifydir}
+    chmod -R go= ${notifydir}
+
+    if [ ! -d ${piddir} ]; then
+	echo "Creating \"${piddir}\"."
+	mkdir -p ${piddir}
+    fi
+    echo "Fixing ownerships and modes in \"${piddir}\"."
+    chown -R ${user}:${group} ${piddir}
+    chmod -R go= ${piddir}
+
+    ;;
+esac
