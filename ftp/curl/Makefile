@@ -3,7 +3,7 @@
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1999/02/09 15:31:34 billf Exp $
 
 DISTNAME=       curl-5.5
 CATEGORIES=	net www
@@ -23,7 +23,7 @@ BUILD_DEPENDS=  ssleay:${PORTSDIR}/security/SSLeay
 CONFIGURE_ENV+=	CPPFLAGS='-I${PREFIX}/include' LDFLAGS='-L${PREFIX}/lib'
 .endif
 
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 MAKEFILES=	Makefile src/Makefile
 
 post-configure:
