@@ -107,6 +107,9 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 # needed for aps2file :-/
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
 
+# HP IJS driver is not automatically part of ghostscript port anymore
+RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hpijs
+
 MAN1=		apsfilter.1 aps2file.1 apsfilter-bug.1 apspreview.1
 MAN5=		apsfilterrc.5
 
