@@ -2097,6 +2097,7 @@ iconv		ports/converters/iconv
 iconv-extra	ports/converters/iconv-extra
 iconv-rfc1345	ports/converters/iconv-rfc1345
 icqlib		ports/net/icqlib
+icqlib0		ports/net/icqlib0
 icqmail		ports/mail/icqmail
 icqnix		ports/net/icqnix
 icu		ports/devel/icu
