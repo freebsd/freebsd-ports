@@ -1,0 +1,11 @@
+yydecode started life as a decoder for yEnc encoded binaries, which have
+recently appeared on Usenet. yydecode works almost identically to the infamous
+uudecode program. Version 0.2.8 and onwards contains a superset of uudecode's
+functionality, (ie. decodes standard uuencoded files, as well as Base64
+[RFC2045] encoded files produced by uuencode) and hence can be used as a
+drop-in replacement in all circumstances.
+
+WWW: http://yydecode.sf.net/
+
+- Mikolaj Rydzewski
+miki@ceti.pl

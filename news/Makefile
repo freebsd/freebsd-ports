@@ -95,5 +95,6 @@
     SUBDIR += xmitbin
     SUBDIR += xrn
     SUBDIR += yencode
+    SUBDIR += yydecode
 
 .include <bsd.port.subdir.mk>
