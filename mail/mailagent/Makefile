@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.23 1998/04/04 09:08:00 max Exp $
+# $Id: Makefile,v 1.24 1998/08/10 12:39:39 max Exp $
 #
 
 DISTNAME=		mailagent-3.0@63
@@ -20,27 +20,26 @@ IS_INTERACTIVE=		yes
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-dres \
-			-Dperlpath='${PERLPATH}/perl' \
+			-Dperlpath='${PERL5}' \
 			-Dutmp='/var/run/utmp' \
 			-Dprefix='${PREFIX}' -Dmansrc='${PREFIX}/man/man1' \
 			-Dnotifypatches='false'
-MAKE_ENV=	PATH=${PERLPATH}:${PATH}
+MAKE_ENV=	PATH=`dirname ${PERL5}`:${PATH}
 INSTALL_TARGET=	install install.man
 
 # Note that mailhelp.1 is intentionally left uncompressed as it is referred
 # from several other man pages with .so macro.
 MAN1=			edusers.1 mailagent.1 maildist.1  \
 			maillist.1 mailpatch.1 package.1
-PERLPATH?=		${PREFIX}/bin
 
 pre-extract:
 	@if [ `${SH} -c umask` != 0022 ]; then \
-	  echo "Please set umask to 022 before running make,"; \
-	  echo "or mailagent will not build successfully."; \
-	  false; fi
+	  ${ECHO} "Please set umask to 022 before running make,"; \
+	  ${ECHO} "or mailagent will not build successfully."; \
+	  ${FALSE}; fi
 	@if [ `id -u` = 0 ]; then \
-	  echo "Do not build mailagent as root or it won't pass the sanity tests."; \
-	  false; fi
+	  ${ECHO} "Do not build mailagent as root or it won't pass the sanity tests."; \
+	  ${FALSE}; fi
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/mailagent/agent
