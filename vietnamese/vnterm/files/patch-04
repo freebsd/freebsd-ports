@@ -1,0 +1,11 @@
+--- ../lib/vntype/Makefile.orig	Tue Aug 10 18:26:33 1993
++++ ../lib/vntype/Makefile	Sun Nov 24 20:09:15 1996
+@@ -18,7 +18,7 @@
+ #FLAGS	= -DNOANSI_C
+ CFLAGS	= $(FLAGS) $(INC)
+ CC	= cc
+-CPP	= /lib/cpp
++CPP	= cpp
+ 
+ .I.srt:
+ 	@echo -n "Generating $@ from $*.I..."
