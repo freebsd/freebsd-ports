@@ -52,6 +52,7 @@ pager='builtin++'
 startsh='#!/bin/sh'
 define='define'
 loclist='
+basename
 cat
 chgrp
 chmod
@@ -86,8 +87,8 @@ mv='/bin/mv'
 cp='/bin/cp'
 tail=''
 tr='/usr/bin/tr'
-sort=''
-uniq=''
+sort='/usr/bin/sort'
+uniq='/usr/bin/uniq'
 grep='/usr/bin/grep'
 fgrep='/usr/bin/fgrep'
 head='/usr/bin/head'
@@ -96,6 +97,7 @@ Mcc
 compress
 cpp
 date
+diff
 emacs
 execmail
 finger
@@ -106,7 +108,6 @@ lint
 lp
 locale
 lpr
-mailx
 metamail
 mips
 more
@@ -130,7 +131,7 @@ uname
 uuname
 vi
 '
-test='/bin/test'
+test='test'
 inews=''
 ispell='${LOCALBASE}/bin/ispell'
 egrep='/usr/bin/egrep'
@@ -138,7 +139,7 @@ more='/usr/bin/more'
 pg='pg'
 Mcc='Mcc'
 vi='/usr/bin/vi'
-mailx='mailx'
+mailx=''
 mail=''
 cpp='/usr/bin/cpp'
 perl=''
@@ -166,6 +167,7 @@ lpr='/usr/bin/lpr'
 lp='/usr/bin/lp'
 touch='/usr/bin/touch'
 make='/usr/bin/make'
+make_sets_make='define'
 date='/bin/date'
 csh=''
 pmake='pmake'
@@ -176,7 +178,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='sun nls c_s'
 noaddlib='yes'
-c_date='Sun May 13 02:00:14 CEST 2001'
+c_date='Fri Jan 18 00:59:09 CET 2002'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -255,12 +257,13 @@ d_setlinebuf='define'
 d_shared='define'
 d_shared_rev='${d_shared_rev}'
 d_dlopen_libs='define'
-shared_list='iconv tls'
+shared_list='iconv smtp tls'
 d_dynamic_main='define'
 dynamic_opt='-rdynamic'
 dlopen_lib=''
 rpath_opt='-rpath '
 soname_opt='-shared -soname '
+soname_include_path='define'
 tempnamo=''
 tempnamc=''
 d_termio='undef'
@@ -272,9 +275,9 @@ d_directyry_type='USE_DIRENT'
 defbatsub='no subject (file transmission)'
 defeditor='/usr/bin/vi'
 editoropts=''
-hostname=''
+hostname='localhost'
 phostname='hostname'
-mydomain='tld.invalid'
+mydomain='.invalid'
 autohostname='define'
 i_memory='define'
 i_time='define'
@@ -328,6 +331,7 @@ xenlf=''
 d_xenix='undef'
 d_bsd='define'
 locale='locale'
+have_codeset='undef'
 d_pgp='define'
 pgp='${LOCALBASE}/bin/pgp'
 pgp2_path='${LOCALBASE}/bin/pgp'
@@ -349,6 +353,14 @@ iconv_dir='${LOCALBASE}'
 iconv_include_dir='${LOCALBASE}/include'
 iconv_lib_dir='${LOCALBASE}/lib'
 iconv_link='iconv'
+EOF
+
+mv ${WRKSRC}/shared_libs/smtp/README.ME+ \
+   ${WRKSRC}/shared_libs/smtp/README.SMTP
+
+tee -a ${WRKSRC}/config.sh > ${WRKSRC}/shared_libs/smtp/config.res << EOF
+#  Support for SMTP
+smtp_ok='define'
 EOF
 
 mv ${WRKSRC}/shared_libs/tls/README.ME+ \
