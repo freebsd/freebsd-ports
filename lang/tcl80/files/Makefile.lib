@@ -39,7 +39,7 @@ SRCS=	\
 		$(GENERIC_DIR)/tclCompile.c $(GENERIC_DIR)/tclExecute.c\
 		$(GENERIC_DIR)/tclBinary.c $(GENERIC_DIR)/tclCompExpr.c\
 		$(GENERIC_DIR)/tclIndexObj.c $(GENERIC_DIR)/tclListObj.c\
-		$(GENERIC_DIR)/tclNamesp.c\
+		$(GENERIC_DIR)/tclNamesp.c $(GENERIC_DIR)/tclResolve.c\
 		$(GENERIC_DIR)/tclObj.c $(GENERIC_DIR)/tclPipe.c\
 		$(GENERIC_DIR)/tclStringObj.c $(GENERIC_DIR)/tclTimer.c\
 		$(UNIX_DIR)/tclUnixChan.c $(UNIX_DIR)/tclUnixFCmd.c \
