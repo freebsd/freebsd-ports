@@ -27,8 +27,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN6=		gnome-mud.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Links against conflicting thread libraries"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|prefix)/games|prefix)/bin|g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

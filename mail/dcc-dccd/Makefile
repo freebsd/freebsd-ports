@@ -32,10 +32,16 @@ CONFIGURE_ARGS+=	--disable-dccm --disable-dccifd
 PLIST_SUB+=	WITH_SENDMAIL="@comment"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Links against conflicting thread libraries"
+.endif
+
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' {} \;
 	${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
