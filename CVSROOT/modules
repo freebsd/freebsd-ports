@@ -2824,6 +2824,7 @@ gtkada		ports/x11-toolkits/gtkada
 gtkam		ports/graphics/gtkam
 gtkballs	ports/games/gtkballs
 gtkbe		ports/x11-themes/gtkbe
+gtkchtheme	ports/x11/gtkchtheme
 gtkdatabox	ports/x11-toolkits/gtkdatabox
 gtkdiff		ports/textproc/gtkdiff
 gtkdps		ports/graphics/gtkdps
