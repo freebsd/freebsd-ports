@@ -6,7 +6,7 @@
 
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
-PORTREVISION=	1
+PORTREVISION=	2
 VERSION=	2002-06-28
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
