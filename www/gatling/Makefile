@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gatling
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -18,6 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat
 
 USE_BZIP2=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/libowfat
 MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lowfat" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -26,7 +26,7 @@ examples=	run-gatling
 examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README README.ftp README.http README.performance \
-		README.prefetch
+		README.prefetch README.proxy README.redirect
 .endif
 
 OPTIONS=	BENCHMARKS "Install system benchmark programs" on
