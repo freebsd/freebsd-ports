@@ -7,11 +7,10 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc3
 
 MAINTAINER=	ahze@ahze.net
 COMMENT=	A LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder
@@ -20,21 +19,51 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_AUTOMAKE_VER=	15
-USE_AUTOHEADER=		yes
+USE_AUTOMAKE_VER=15
+USE_AUTOHEADER=	yes
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GETOPT_LONG=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
+USE_SDL=	yes
 
 CONFIGURE_ARGS=	--with-mp4v2 --with-drm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libmp4v2.a)
+HAS_MP4V2=	yes
+.endif
+
+.if defined(WITHOUT_MPEG4IP) && !defined(HAS_MP4V2)
+PLIST_FILES+=	include/mp4.h include/mpeg4ip.h include/systems.h \
+		lib/libmp4v2.so lib/libmp4v2.so.0 lib/libmp4v2.a
+.else
+LIB_DEPENDS+=	mp4.0:${PORTSDIR}/multimedia/mpeg4ip
+PLIST_FILES+=	lib/mp4player_plugin/faad2_plugin.a \
+		lib/mp4player_plugin/faad2_plugin.so \
+		lib/mp4player_plugin/faad2_plugin.so.0
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "===>"
+.if !defined(WITHOUT_MPEG4IP)
+	@${ECHO_MSG} "===> you can disable mpeg4ip support by"
+	@${ECHO_MSG} "===> defining WITHOUT_MPEG4IP"
+.else
+	@${ECHO_MSG} "===> WARNING: WITHOUT_MPEG4IP is defined"
+	@${ECHO_MSG} "===> Having WITHOUT_MPEG4IP defined conflicts"
+	@${ECHO_MSG} "===> with multimedia/mpeg4ip and you will not"
+	@${ECHO_MSG} "===> be able to install mpeg4ip after you install faad2"
+.endif
+	@${ECHO_MSG} "===>"
 
 pre-patch: build-depends
 
@@ -45,17 +74,25 @@ post-patch:
 		${SETENV} ${SCRIPTS_ENV} ${LIBTOOLIZE} --automake
 	@${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
 		${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e 's|<SDL|<SDL11|' \
+		${WRKSRC}/plugins/mpeg4ip/faad2.cpp
+	@${ECHO_CMD} "SUBDIRS = libfaad common frontend plugins" > \
+		${WRKSRC}/Makefile.am
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|uint8_t|unsigned char|; \
+		s|uint16_t|unsigned short|; s|uint32_t|unsigned long|; \
+		s|int8_t|char|;' ${WRKSRC}/libfaad/structs.h
+	@${REINPLACE_CMD} -e 's|stdint.h|sys/inttypes.h|' \
+		${WRKSRC}/common/mp4ff/mp4ff_int_types.h
+.endif
 # CFLAGS safeness
-	@${FIND} ${WRKSRC} -type f -name Makefile.am | \
+	 @${FIND} ${WRKSRC} -type f -name Makefile.am | \
 		${XARGS} -n 5 -x \
 			${REINPLACE_CMD} -e \
 				's|-O2|${CFLAGS}|'
-
-post-configure:
-# sync the multiple libtool copies
-	@${CP} ${WRKSRC}/libtool ${WRKSRC}/common/mp4v2/
-
 post-install:
+.if defined(WITHOUT_MPEG4IP)
 	@${INSTALL_DATA} ${WRKSRC}/common/mp4v2/systems.h ${PREFIX}/include
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
