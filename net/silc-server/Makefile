@@ -7,6 +7,7 @@
 
 PORTNAME=	silc
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/ \
 		ftp://ftp.silcnet.org/pub/silc/ \
