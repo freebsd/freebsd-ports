@@ -1,0 +1,20 @@
+--- Makefile.orig	Tue Mar 20 20:27:15 2001
++++ Makefile	Fri Jul 27 16:59:05 2001
+@@ -1,13 +1,14 @@
+ CC = gcc
+-CFLAGS = -Wall -g -ansi `gtk-config --cflags` -I. -Ifoodock
+-LFLAGS = `gtk-config --libs`
++CFLAGS += -Wall `${GTK_CONFIG} --cflags` $(INCDIR)
++LFLAGS = `${GTK_CONFIG} --libs`
++INCDIR = -I. -Ifoodock -I${X11BASE}/include
+ OBJECTS = wmcliphist.o
+ TARGET = wmcliphist
+ 
+ all: $(TARGET)
+ 
+ wmcliphist: $(OBJECTS) foodock/foodock.o
+-	$(CC) $(LFLAGS) -o $@ $(OBJECTS) foodock/foodock.o
++	$(CC) $(CFLAGS) $(LFLAGS) -o $@ $(OBJECTS) foodock.o
+ 
+ wmcliphist.o: wmcliphist.c icon.xpm foodock/foodock.h
+ 
