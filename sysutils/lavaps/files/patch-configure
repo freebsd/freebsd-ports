@@ -1,0 +1,9 @@
+--- configure	Sun Jun  6 22:20:50 2004
++++ configure	Sat Nov 20 07:37:39 2004
+@@ -6494,5 +6494,5 @@
+ TCLTK_INCLUDES=${PLATFORM_SPECIFIC_TCLTK_INCLUDES:-""}
+ TCLTK_LIBS=${PLATFORM_SPECIFIC_TCLTK_LIBS:-"tba"}
+-TCLTK_DL_LIB=${PLATFORM_SPECIFIC_TCLTK_DL_LIB:-"-ldl"}
++TCLTK_DL_LIB=${PLATFORM_SPECIFIC_TCLTK_DL_LIB}
+ 
+ echo "$as_me:$LINENO: checking for platform-specific tcl/tk code" >&5

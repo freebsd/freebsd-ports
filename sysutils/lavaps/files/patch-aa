@@ -1,0 +1,15 @@
+--- src/change_tracking.hh	Tue Jul 15 00:42:06 2003
++++ src/change_tracking.hh	Sat Nov 20 08:35:14 2004
+@@ -77,9 +77,9 @@
+ protected:
+ 	static SUM s_;
+-	void update_sum() { s_.sum_ += change_; }
++	void update_sum() { s_.sum_ += change_tracking<T>::change_; }
+ public:
+ 	sum_change_tracking() {};
+-	sum_change_tracking(T first) : change_tracking<T>(first) { update_sum(frst); };
+-	~sum_change_tracking() { tick_incr(-last_); };
++	sum_change_tracking(T first) : change_tracking<T>(first) { update_sum(first); };
++	~sum_change_tracking() { tick_incr(-change_tracking<T>::last_); };
+ 
+ 
