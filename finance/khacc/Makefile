@@ -31,6 +31,7 @@ STRIP=		# none
 post-patch:
 	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
 		 s|/usr/local/q|${X11BASE}/lib/q|g' ${WRKSRC}/khacc/khacc.orig
+	@${REINPLACE_CMD} -e 's|-pedantic||g' ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/khacc-*
