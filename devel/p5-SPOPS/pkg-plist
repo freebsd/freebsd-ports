@@ -1,0 +1,128 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SPOPS/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/ClassFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/ClassFactory/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/ClassFactory/DefaultBehavior.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/ClassFactory/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Configure.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Configure/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Configure/Ruleset.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/InterBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/Oracle.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/Pg.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/SQLite.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI/Sybase.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Error.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Exception/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Exception/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Exception/Security.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/DBI/Data.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/Perl.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/SQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/XML.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/GDBM.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/HashFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/Data.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/InterBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/MySQL.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/Oracle.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/Pg.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/SQLite.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform/Sybase.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Initialize.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Iterator/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Iterator/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Iterator/WrapList.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/DBI/HandleField.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/DBI/Identity.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/DBI/Pool.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/DBI/Sequence.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/Random.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/UUID.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/LDAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/LDAP/MultiDatasource.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Loopback.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/CodeGeneration.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Configuration.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Cookbook.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Datasource.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Exceptions.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/ImportExport.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Intro.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Object.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/ObjectRules.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Relationships.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Security.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual/Serialization.pod
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/SQLInterface.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Secure.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Secure/Hierarchy.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tie.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tie/StrictField.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/DBI/Datasource.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/DBI/DiscoverField.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/DBI/FindDefaults.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/LDAP/Datasource.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/ReadOnly.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/UTFConvert.pm
+lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Utility.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/Common.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/Doodad.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/Group.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/LDAPConnect.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/Security.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/My/User.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/datasource_configure.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/datasource_configure_ldap.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/export_doodads.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/fetch_all.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/fetch_doodads.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/find_defaults_demo.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/ldap_multidatasource.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/stock_doodads.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/stock_user_group.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_clear.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_clear_interbase.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_clear_oracle.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_clear_pgsql.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_interbase.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_mysql.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_oracle.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_pgsql.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_sqlite.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/users_groups_tsql.sql
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/My
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/ClassFactory
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Configure
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Exception
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Export
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI/TableTransform
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Import
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Iterator
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Key
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/LDAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Manual
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Secure
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tie
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool/LDAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS/Tool
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SPOPS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SPOPS
