@@ -4,7 +4,7 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.18 1998/09/15 17:23:26 ache Exp $
+# $Id: Makefile,v 1.19 1998/09/16 11:44:54 ache Exp $
 #
 
 DISTNAME=       adcomplain-4.42
@@ -24,7 +24,7 @@ NO_BUILD=       YES
 post-patch:
 	cd ${WRKSRC}; \
 	cp adcomplain.pl adcomplain.pl.old; \
-	sed 's=%PERL5%=${PERL5}=' < adcomplain.pl.old > adcomplain.pl
+	sed 's=%PERL5%=${PERL}=' < adcomplain.pl.old > adcomplain.pl
 
 do-install:
 	cd ${WRKSRC}; \

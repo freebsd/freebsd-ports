@@ -5,7 +5,7 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1998/10/02 06:31:03 ache Exp $
+# $Id: Makefile,v 1.10 1998/10/06 15:15:22 ache Exp $
 #
 
 DISTNAME=       premail-0.46
@@ -25,7 +25,7 @@ RESTRICTED=     "Author treats it as ITAR subject"
 post-patch:
 	cd ${WRKSRC}; \
 	cp premail premail.old; \
-	sed 's=%PERL5%=${PERL5}=' < premail.old > premail
+	sed 's=%PERL5%=${PERL}=' < premail.old > premail
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_SCRIPT} premail ${PREFIX}/bin
