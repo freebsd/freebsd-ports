@@ -7,7 +7,7 @@ Fix the wrapper for ftruncate so that it deals properly with the 64-bit
 arguments.
 
 --- m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Tue Jun  2 14:22:48 1998
++++ m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c	Sat Sep 19 10:35:49 1998
 @@ -80,7 +80,8 @@
  #include <sys/file.h>
  #include <sys/param.h>
@@ -437,7 +437,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -950,44 +920,40 @@
+@@ -950,44 +920,41 @@
    return result;
  }
  
@@ -459,7 +459,8 @@ arguments.
 -  return result;
 -}
 +int
-+#if __FreeBSD_version >= 300002
++#if (227002 <= __FreeBSD_version && __FreeBSD_version < 300000) || \
++  __FreeBSD_version >= 300002
 +semctl(int semid, int semnum, int cmd, ...)
 +#else
 +semctl(int semid, int semnum, int cmd, union semun arg)
@@ -507,7 +508,7 @@ arguments.
      break;
    }
    result = syscall(SYS_semsys, 0, semid, semnum, cmd, arg);
-@@ -1012,24 +978,6 @@
+@@ -1012,24 +979,6 @@
    return result;
  }
  
@@ -532,7 +533,7 @@ arguments.
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,29 +999,8 @@
+@@ -1051,29 +1000,8 @@
    return result;
  }
  
@@ -563,7 +564,7 @@ arguments.
  int namelen;
  { int result;
  
-@@ -1086,7 +1013,7 @@
+@@ -1086,7 +1014,7 @@
  
  int setgroups(ngroups, gidset)   /* ok */
  int ngroups;
@@ -572,7 +573,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1097,7 +1024,7 @@
+@@ -1097,7 +1025,7 @@
  }
  
  int sethostname(name, namelen)   /* ok */
@@ -581,7 +582,7 @@ arguments.
  int namelen;
  { int result;
  #if __FreeBSD__ >= 2
-@@ -1213,20 +1140,20 @@
+@@ -1213,20 +1141,20 @@
    return result;
  }
  
@@ -609,7 +610,7 @@ arguments.
  int sigaltstack(ss, oss)   /* ok */
  const struct sigaltstack *ss;
  struct sigaltstack *oss;
-@@ -1239,20 +1166,6 @@
+@@ -1239,20 +1167,6 @@
    EXIT_CRITICAL;
    return result;
  }
@@ -630,7 +631,7 @@ arguments.
  
  int socketpair(d, type, protocol, sv)   /* ok */
  int d, type, protocol;
-@@ -1267,7 +1180,7 @@
+@@ -1267,7 +1181,7 @@
  }
  
  int stat(path, buf)   /* ok */
@@ -639,7 +640,7 @@ arguments.
  struct stat *buf;
  { int result;
  
-@@ -1280,7 +1193,7 @@
+@@ -1280,7 +1194,7 @@
  }
  
  int swapon(special)   /* ok */
@@ -648,7 +649,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1291,8 +1204,8 @@
+@@ -1291,8 +1205,8 @@
  }
  
  int symlink(name1, name2)   /* ok */
@@ -659,7 +660,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1304,14 +1217,14 @@
+@@ -1304,14 +1218,14 @@
  }
  
  int truncate(path, length)   /* ok */
@@ -678,7 +679,7 @@ arguments.
    EXIT_CRITICAL;
    return result;
  }
-@@ -1328,7 +1241,7 @@
+@@ -1328,7 +1242,7 @@
  }
  
  int unlink(path)   /* ok */
@@ -687,7 +688,7 @@ arguments.
  { int result;
  
    ENTER_CRITICAL;
-@@ -1414,19 +1327,6 @@
+@@ -1414,19 +1328,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
