@@ -100,7 +100,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>pdftohtml</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.36_2</lt></range>
       </package>
     </affects>
     <description>
@@ -128,7 +128,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-06</discovery>
       <entry>2005-01-26</entry>
-      <modified>2005-01-27</modified>
+      <modified>2005-01-31</modified>
     </dates>
   </vuln>
 
