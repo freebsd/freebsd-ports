@@ -10,11 +10,3 @@ Chinese-GB:	(set-language-environment "Chinese-GB")
 Chinese-CNS:	(set-language-environment "Chinese-CNS")
 
 add to their `~/.emacs' file.
-
-Tamago uses unix domain socket to connect to Canna server by default.
-If you want to use Canna via unix domain socket, you need to install
-japanese/yc.el, too.  Or, you may want to use inet domain socket by
-following settings:
-
-	(setq canna-hostname "localhost")
-	(setq canna-server-port "canna")
