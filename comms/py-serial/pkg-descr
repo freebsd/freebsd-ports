@@ -1,7 +1,7 @@
-This module capsulates the access for the serial port.
-It provides backends for stadard Python running on Windows,
-Linux, BSD (possibly any POSIX compilant system) and Jython.
-The module named "serial" automaticaly selects the appropriate
-backed.
+This module incapsulates the access for the serial port.
+It provides backends for standard Python running on Windows,
+Linux, BSD (possibly any POSIX compliant system) and Jython.
+The module named "serial" automatically selects the appropriate
+backend.
 
 WWW: http://pyserial.sourceforge.net/
