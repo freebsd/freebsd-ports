@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Feb 19 04:20:52 2001
++++ configure.in	Mon Feb 19 04:20:59 2001
+@@ -14,7 +14,7 @@
+ changequote([, ])
+ 
+ AC_MSG_CHECKING(for Lingua::Romkan perl module)
+-if $PERL -e "use Lingua::Romkan $ROMKAN_VERSION;"; then
++if $PERL -e "use lib Lingua-Romkan; use Lingua::Romkan $ROMKAN_VERSION;"; then
+     ROMKAN=yes
+     AC_MSG_RESULT(yes)
+ else
