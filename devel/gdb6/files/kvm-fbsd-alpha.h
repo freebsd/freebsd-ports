@@ -51,6 +51,7 @@ fetch_kcore_registers (struct pcb *pcbp)
 }
 
 
+#if __FreeBSD_version >= 500032
 CORE_ADDR
 fbsd_kern_frame_saved_pc (struct frame_info *fi)
 {
@@ -77,3 +78,4 @@ fbsd_kern_frame_saved_pc (struct frame_info *fi)
       return (this_saved_pc);
     }
 }
+#endif	// __FreeBSD_version >= 500032

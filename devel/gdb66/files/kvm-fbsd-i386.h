@@ -56,6 +56,7 @@ ksym_maxuseraddr (void)
    but we don't think that's too important right now.  */
 enum frametype { tf_normal, tf_trap, tf_interrupt, tf_syscall };
 
+#if __FreeBSD_version >= 500032
 CORE_ADDR
 fbsd_kern_frame_saved_pc (struct frame_info *fi)
 {
@@ -99,6 +100,7 @@ fbsd_kern_frame_saved_pc (struct frame_info *fi)
 #undef oEIP
     }
 }
+#endif	// __FreeBSD_version >= 500032
 
 static void
 fetch_kcore_registers (struct pcb *pcb)
