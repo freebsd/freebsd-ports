@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.41 1998/02/09 01:35:20 peter Exp $
+# $Id: Makefile,v 1.42 1998/02/14 03:12:37 peter Exp $
 #
 
 DISTNAME=	squid-1.2.beta14
@@ -71,8 +71,8 @@ post-install:
 	fi
 .endfor
 .for file in cachemgr.cgi dnsserver pinger unlinkd
-	if [ -f ${PREFIX}/sbin/${file} ] ; then \
-		strip ${PREFIX}/sbin/${file} ; \
+	if [ -f ${PREFIX}/libexec/${file} ] ; then \
+		strip ${PREFIX}/libexec/${file} ; \
 	fi
 .endfor
 	${MKDIR} ${PREFIX}/squid/logs
