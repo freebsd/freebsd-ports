@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.8.0";
+my $VERSION	= "2.8.1";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -355,13 +355,10 @@ sub update_index() {
     $ifn = capture(\&cmd, ("make", "-f$portsdir/Makefile", "-VINDEXFILE"));
     if ($update) {
 	info("Retrieving $ifn");
-	cmd(&PATH_FETCH, $verbose ? "-mv" : "-m", "-o$portsdir/$ifn.www",
+	cmd(&PATH_FETCH, $verbose ? "-mv" : "-m", "-o$portsdir/$ifn",
 	    "http://www.freebsd.org/ports/$ifn");
     }
-    $index = "$portsdir/$ifn.www";
-    if (! -f $index) {
-	$index = "$portsdir/$ifn";
-    }
+    $index = "$portsdir/$ifn";
     if (! -f $index) {
 	$index = "$portsdir/INDEX";
     }
@@ -720,7 +717,6 @@ sub update_ports(@) {
     my @origins = @_;
 
     my %need_update;
-    my @updated;
 
     foreach my $origin (@origins) {
 	my ($category, $port) = split('/', $origin);
@@ -745,11 +741,9 @@ sub update_ports(@) {
 		or bsd::errx(1, "error updating $category ports");
 	    foreach my $port (keys(%{$need_update{$category}})) {
 		$have_updated{$category}->{$port} = 1;
-		push(@updated, "$category/$port");
 	    }
 	}
     }
-    return @updated;
 }
 
 #
@@ -758,23 +752,32 @@ sub update_ports(@) {
 sub update_ports_tree(@) {
     my @ports = @_;		# Ports to update
 
+    my @more_ports;		# Additional ports to update
     my %processed;		# Hash of processed ports
     my $n;			# Pass count
 
+    @more_ports = @ports;
+    @ports = ();
     for ($n = 0; ; ++$n) {
-	my @update_now;		# Ports that need updating now
 	my $item;		# Iterator
 	my $master;		# Master port
 	my $dependency;		# Dependency
 
 	setproctitle("updating");
 
-	@update_now = update_ports(@ports);
-	last unless (@update_now);
-	info("Pass $n:", @update_now);
+	if (@more_ports) {
+	    info("Ports added since previous pass:", join(' ', @more_ports));
+	    update_ports(@more_ports);
+	    push(@ports, @more_ports);
+	    @more_ports = ();
+	}
+	info("Pass $n:", @ports - keys(%processed));
+	info("Ports:", sort(@ports));
+	info("Processed:", sort(keys(%processed)));
+	last if (keys(%processed) == @ports);
 
 	# Process all unprocessed ports we know of so far
-	foreach my $port (@update_now) {
+	foreach my $port (@ports) {
 	    next if ($processed{$port});
 	    if (! -f "$portsdir/$port/Makefile") {
 		bsd::warnx("$port does not exist in $portsdir");
@@ -785,8 +788,8 @@ sub update_ports_tree(@) {
 	    setproctitle("updating $port");
 
 	    # See if the port has an unprocessed master port
-	    # XXX what if the master has a master?
 	    if (($master = find_master($port)) && !$processed{$master}) {
+		info("$port has unprocessed master: $master");
 		update_ports($master);
 	    }
 
@@ -804,11 +807,13 @@ sub update_ports_tree(@) {
 	    foreach $dependency (find_dependencies($port)) {
 		next if ($processed{$dependency});
 		add_port($dependency, &REQ_IMPLICIT);
-		info("Adding $dependency to back of line\n");
-		push(@ports, $dependency);
+		info("Adding $dependency to back of line");
+		push(@more_ports, $dependency)
+		    unless(grep({ $_ eq $dependency } (@ports, @more_ports)));
 	    }
 
 	    # Mark port as processed
+	    info("marking $port as processed");
 	    $processed{$port} = 1;
 	}
     }
