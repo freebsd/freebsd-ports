@@ -1,0 +1,34 @@
+for the changes made on FreeBSD-2.2.5.
+From: Jun YAMASHITA <junkun@esys.tsukuba.ac.jp>
+
+*** fbsdscsi.c.orig	Mon Sep  9 19:52:06 1996
+--- fbsdscsi.c	Tue Dec 16 02:08:57 1997
+***************
+*** 26,38 ****
+  	if (psrq->timeout == 0)
+  		psrq->timeout = 2*1000;
+  	psrq->senselen = SENSEBUFLEN;
+! 	ioctl (fd, SCIOCCOMMAND, psrq);
+! 	if ((SCSIDriverStatus = psrq->retsts) != SCCMD_OK)
+  		stat = FAILURE;
+! 	else if ((SCSIStatus = psrq->status) == S_GOOD)
+  		stat = SUCCESS;
+  	else
+  	{
+  		stat = FAILURE;
+  		if (SCSIStatus == S_CHECK)
+  		{
+--- 26,38 ----
+  	if (psrq->timeout == 0)
+  		psrq->timeout = 2*1000;
+  	psrq->senselen = SENSEBUFLEN;
+! 	if (ioctl (fd, SCIOCCOMMAND, psrq) == FAILURE)
+  		stat = FAILURE;
+! 	else if ((SCSIDriverStatus = psrq->retsts) == SCCMD_OK)
+  		stat = SUCCESS;
+  	else
+  	{
++ 		SCSIStatus = psrq->status;
+  		stat = FAILURE;
+  		if (SCSIStatus == S_CHECK)
+  		{
