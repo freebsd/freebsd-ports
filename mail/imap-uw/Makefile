@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap-uw
-PORTVERSION= 	4.7b
+PORTVERSION=	4.7c
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}1${EXTRACT_SUFX} \
 		imap-utils${EXTRACT_SUFX}
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
