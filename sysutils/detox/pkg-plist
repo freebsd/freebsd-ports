@@ -1,0 +1,11 @@
+bin/detox
+@unexec if cmp -s %D/etc/detoxrc %D/etc/detoxrc.sample; then rm -f %D/etc/detoxrc; fi
+etc/detoxrc.sample
+@exec [ -f %D/etc/detoxrc ] || cp %B/%f %D/etc/detoxrc
+@unexec if cmp -s %D/%%DATADIR%%/iso8859_1.tbl %D/%%DATADIR%%/iso8859_1.tbl.sample; then rm -f %D/%%DATADIR%%/iso8859_1.tbl; fi
+%%DATADIR%%/iso8859_1.tbl.sample
+@exec [ -f %D/%%DATADIR%%/iso8859_1.tbl ] || cp %B/%f %D/%%DATADIR%%/iso8859_1.tbl
+@unexec if cmp -s %D/%%DATADIR%%/unicode.tbl %D/%%DATADIR%%/unicode.tbl.sample; then rm -f %D/%%DATADIR%%/unicode.tbl; fi
+%%DATADIR%%/unicode.tbl.sample
+@exec [ -f %D/%%DATADIR%%/unicode.tbl ] || cp %B/%f %D/%%DATADIR%%/unicode.tbl
+@dirrm share/detox

@@ -1,0 +1,9 @@
+This is a port of detox, which is a program that renames files to make them
+easier to work with under Unix and related operating systems.  Spaces and
+various other unsafe characters (such as "$") get replaced with "_".  ISO
+8859-1 (Latin-1) characters can be replaced as well, as can UTF-8 characters.
+
+WWW: http://detox.sourceforge.net/
+
+- Doug Harple
+purgedhalo@users.sourceforge.net
