@@ -18,13 +18,20 @@ IS_INTERACTIVE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_LINUX=	yes
 
+INSTALLDIR?=	steam
+
+PLIST_SUB+=	INSTALLDIR=${INSTALLDIR}
+
+pre-everything::
+	@ ${ECHO_MSG} "You can use the INSTALLDIR option to change the install dir"
+
 do-build:
 	@ ${CHMOD} +x ${WRKDIR}/hldsupdatetool.bin && cd ${WRKDIR} && ./hldsupdatetool.bin
 	@ ${CAT} pkg-message | ${SED} 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/${PORTNAME}
-	@ ${CP} ${WRKDIR}/${PORTNAME} ${PREFIX}/${PORTNAME}/
+	@ ${MKDIR} ${PREFIX}/${INSTALLDIR}
+	@ ${CP} ${WRKDIR}/${PORTNAME} ${PREFIX}/${INSTALLDIR}/
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
