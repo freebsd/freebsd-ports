@@ -6,7 +6,7 @@
 
 PORTNAME=	taxipilot
 PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	taxipilot
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	taxipilot
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spacetaxi clone
 
-LIB_DEPENDS=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
+LIB_DEPENDS=	noatun.3:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
