@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTVERSION=	1.1.1
+PORTREVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
@@ -40,15 +40,18 @@ NO_BUILD=	yes
 ABYSS_FILE=		Abyss-1.1.tar.bz2
 ALIENMIND_FILE=		AlienMind-1.2.tar.bz2
 AVIFILE_FILE=		avifile-1.6.tar.bz2
-DEFAULT_FILE=		Blue-1.4.tar.bz2
-DEFAULT_SMALL_FILE=	Blue-small-1.2.tar.bz2
+BLUECURVE_FILE=		bluecurve-1.1.tar.bz2
 BLUEHEART_FILE=		BlueHeart-1.5.tar.bz2
 CANARY_FILE=		Canary-1.2.tar.bz2
 CORELIAN_FILE=		Corelian-1.1.tar.bz2
-CORNERMP_FILE=		CornerMP-1.2.tar.bz2
 CORNERMP_AQUA_FILE=	CornerMP-aqua-1.4.tar.bz2
+CORNERMP_FILE=		CornerMP-1.2.tar.bz2
+CUBICPLAYER_FILE=	CubicPlayer-1.1.tar.bz2
 CYRUS_FILE=		Cyrus-1.2.tar.bz2
+DEFAULT_FILE=		Blue-1.4.tar.bz2
+DEFAULT_SMALL_FILE=	Blue-small-1.2.tar.bz2
 DISAPPEARER_FILE=	disappearer-1.1.tar.bz2
+DIVXPLAYER_FILE=	divxplayer-1.3.tar.bz2
 DUSHKU_FILE=		Dushku-1.2.tar.bz2
 DVDPLAYER_FILE=		DVDPlayer-1.1.tar.bz2
 GNOME_FILE=		gnome-1.1.tar.bz2
@@ -56,12 +59,17 @@ HANDHELD_FILE=		handheld-1.0.tar.bz2
 HAYRAPHON_FILE=		hayraphon-1.0.tar.bz2
 HWSW_FILE=		hwswskin-1.1.tar.bz2
 INDUSTRIAL_FILE=	Industrial-1.0.tar.bz2
+ITUNES_FILE=		iTunes-1.1.tar.bz2
+ITUNES_MINI_FILE=	iTunes-mini-1.1.tar.bz2
 JIMPLAYER_FILE=		JiMPlayer-1.4.tar.bz2
 KDE_FILE=		KDE-0.3.tar.bz2
 KRYSTAL_FILE=		krystal-1.1.tar.bz2
 MENTALIC_FILE=		mentalic-1.2.tar.bz2
 MIDNIGHTLOVE_FILE=	MidnightLove-1.6.tar.bz2
 MINI_FILE=		mini-0.1.tar.bz2
+MOONPHASE_FILE=		moonphase-1.0.tar.bz2
+MPLAYER_RED_FILE=	mplayer_red-1.0.tar.bz2
+NETSCAPE4_FILE=		netscape4-1.0.tar.bz2
 NEUTRON_FILE=		neutron-1.5.tar.bz2
 NEWAGE_FILE=		new-age-1.0.tar.bz2
 ORANGE_FILE=		Orange-1.3.tar.bz2
@@ -72,12 +80,15 @@ PLASTIC_FILE=		plastic-1.2.tar.bz2
 POWERPLAYER_FILE=	PowerPlayer-1.1.tar.bz2
 PROTON_FILE=		proton-1.2.tar.bz2
 QPLAYER_FILE=		QPlayer-1.2.tar.bz2
+QUICKSILVER_FILE=	QuickSilver-1.0.tar.bz2
+SESSENE_FILE=		sessene-1.0.tar.bz2
 SLIM_FILE=		slim-1.2.tar.bz2
 SOFTGRIP_FILE=		softgrip-1.1.tar.bz2
 TERMINATOR3_FILE=	Terminator3-1.1.tar.bz2
 TRIUM_FILE=		trium-1.3.tar.bz2
 TVISOR_FILE=		tvisor-1.1.tar.bz2
 ULTRAFINA_FILE=		ultrafina-1.1.tar.bz2
+WEBBY_FILE=		webby-1.2.tar.bz2
 WMP6_FILE=		WMP6-2.2.tar.bz2
 XANIM_FILE=		xanim-1.6.tar.bz2
 XFCE4_FILE=		XFce4-1.0.tar.bz2
@@ -93,13 +104,16 @@ OPTIONS+=	SKIN_DEFAULT_SMALL "compact version of the default skin" off
 OPTIONS+=	SKIN_ABYSS "beautiful MPlayer skin" off
 OPTIONS+=	SKIN_ALIENMIND "AlienMind XMMS" off
 OPTIONS+=	SKIN_AVIFILE "aviplay look" off
+OPTIONS+=	SKIN_BLUECURVE "bluecurve" off
 OPTIONS+=	SKIN_BLUEHEART "BlueHeart XMMS" off
 OPTIONS+=	SKIN_CANARY "small, compact" off
 OPTIONS+=	SKIN_CORELIAN "plain look" off
 OPTIONS+=	SKIN_CORNERMP "WinAMP corner" off
 OPTIONS+=	SKIN_CORNERMP_AQUA "WinAMP corner aqua" off
+OPTIONS+=	SKIN_CUBICPLAYER "CubicPlayer" off
 OPTIONS+=	SKIN_CYRUS "Cyrus XMMS" off
 OPTIONS+=	SKIN_DISAPPEARER "very slim" off
+OPTIONS+=	SKIN_DIVXPLAYER "Divx" off
 OPTIONS+=	SKIN_DUSHKU "Eliza Dushku" off
 OPTIONS+=	SKIN_DVDPLAYER "hardware player lookalike" off
 OPTIONS+=	SKIN_GNOME "based on the GNOME logo" off
@@ -107,12 +121,17 @@ OPTIONS+=	SKIN_HANDHELD "remote control look" off
 OPTIONS+=	SKIN_HAYRAPHON "Hayraphon" off
 OPTIONS+=	SKIN_HWSW "simplistic" off
 OPTIONS+=	SKIN_INDUSTRIAL "Industrial GTK theme" off
+OPTIONS+=	SKIN_ITUNES "iTunes" off
+OPTIONS+=	SKIN_ITUNES_MINI "iTunes mini" off
 OPTIONS+=	SKIN_JIMPLAYER "round and colorful" off
 OPTIONS+=	SKIN_KDE "uses KDE images" off
 OPTIONS+=	SKIN_KRYSTAL "very colorful" off
 OPTIONS+=	SKIN_MENTALIC "sharp and shiny" off
 OPTIONS+=	SKIN_MIDNIGHTLOVE "XMMS skin of Rei Ayanami" off
 OPTIONS+=	SKIN_MINI "MPlayer-plugin for mozilla" off
+OPTIONS+=	SKIN_MOONPHASE "MoonPhase" off
+OPTIONS+=	SKIN_MPLAYER_RED "MPlayer RED" off
+OPTIONS+=	SKIN_NETSCAPE4 "Netscape \"unatkozok\"" off
 OPTIONS+=	SKIN_NEUTRON "futuristic look" off
 OPTIONS+=	SKIN_NEWAGE "clean and simple" off
 OPTIONS+=	SKIN_ORANGE "clean, good looking" off
@@ -123,12 +142,15 @@ OPTIONS+=	SKIN_PLASTIC "plastic remote control" off
 OPTIONS+=	SKIN_POWERPLAYER "PowerDVD lookalike" off
 OPTIONS+=	SKIN_PROTON "silver, shiny" off
 OPTIONS+=	SKIN_QPLAYER "playful look" off
+OPTIONS+=	SKIN_QUICKSILVER "QuickSilver" off
+OPTIONS+=	SKIN_SESSENE "Sessene" off
 OPTIONS+=	SKIN_SLIM "small and cute" off
 OPTIONS+=	SKIN_SOFTGRIP "strange design" off
 OPTIONS+=	SKIN_TERMINATOR3 "inspired by Terminator 3" off
 OPTIONS+=	SKIN_TRIUM "based on a mobile phone" off
 OPTIONS+=	SKIN_TVISOR "simple, well-designed" off
 OPTIONS+=	SKIN_ULTRAFINA "XMMS ultrafina" off
+OPTIONS+=	SKIN_WEBBY "Webby" off
 OPTIONS+=	SKIN_WINDOWSMEDIAPLAYER6 "Windows Media Player 6" off
 OPTIONS+=	SKIN_XANIM "XAnim feeling" off
 OPTIONS+=	SKIN_XFCE4 "default XFce4 theme" off
@@ -152,14 +174,16 @@ WITH_SKIN_ALL=yes
 #
 # Allskins
 #
-ALLSKINS=	ABYSS ALIENMIND AVIFILE BLUEHEART CANARY CORELIAN \
-		CORNERMP CORNERMP_AQUA CYRUS DISAPPEARER DUSHKU \
-		DVDPLAYER GNOME HANDHELD HAYRAPHON HWSW INDUSTRIAL \
-		JIMPLAYER KDE KRYSTAL MENTALIC MIDNIGHTLOVE MINI \
-		NEUTRON NEWAGE ORANGE OSXBRUSHED OSXMOD PHONY PLASTIC \
-		POWERPLAYER PROTON QPLAYER SLIM SOFTGRIP TERMINATOR3 \
-		TRIUM TVISOR ULTRAFINA WINDOWSMEDIAPLAYER6 XANIM \
-		XFCE4 XINE_LCD XMMPLAYER \
+ALLSKINS=	ABYSS ALIENMIND AVIFILE BLUECURVE BLUEHEART CANARY \
+		CORELIAN CORNERMP CORNERMP_AQUA CUBICPLAYER CYRUS \
+		DISAPPEARER DIVXPLAYER DUSHKU DVDPLAYER GNOME HANDHELD \
+		HAYRAPHON HWSW INDUSTRIAL ITUNES ITUNES_MINI JIMPLAYER \
+		KDE KRYSTAL MENTALIC MIDNIGHTLOVE MINI MOONPHASE \
+		MPLAYER_RED NETSCAPE4 NEUTRON NEWAGE ORANGE OSXBRUSHED \
+		OSXMOD PHONY PLASTIC POWERPLAYER PROTON QPLAYER \
+		QUICKSILVER SESSENE SLIM SOFTGRIP TERMINATOR3 TRIUM \
+		TVISOR ULTRAFINA WEBBY WINDOWSMEDIAPLAYER6 XANIM XFCE4 \
+		XINE_LCD XMMPLAYER \
 		DEFAULT DEFAULT_SMALL
 
 # Build and install all skins (rather expensive)
