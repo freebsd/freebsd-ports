@@ -44,6 +44,7 @@
     SUBDIR += sattrack
     SUBDIR += setiathome
     SUBDIR += spacechart
+    SUBDIR += squeuer
     SUBDIR += sscalc
     SUBDIR += starplot
     SUBDIR += stars

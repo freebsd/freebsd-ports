@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/astro/squeuer/Attic/pkg-install,v 1.1 2003-08-13 17:35:21 glewis Exp $
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+USER=squeuer
+GROUP=${USER}
+UID=96
+GID=${UID}
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/bin/sh" -d "/nonexistent" \
+		-c "SQueuer Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+exit 0
