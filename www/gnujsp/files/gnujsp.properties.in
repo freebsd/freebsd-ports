@@ -44,4 +44,4 @@ autoreload.file=true
 # but I guess you may prefer the default locale :-) (alph)
 
 servlet.gnujsp.code=org.gjt.jsp.JspServlet
-servlet.gnujsp.initArgs=checkclass=true,pagebase=%%PREFIX%%/www/data,scratchdir=%%PREFIX%%/www/gnujsp,debug=true,compiler=builtin-javac -classpath %classpath%:%scratchdir%:%%PREFIX%%/gnujsp10.jar:%%PREFIX%%/servlet-2.0-plus.jar -d %scratchdir% -deprecation %source%
+servlet.gnujsp.initArgs=checkclass=true,pagebase=%%PREFIX%%/www/data,scratchdir=%%PREFIX%%/www/gnujsp,debug=true,compiler=builtin-javac -classpath %classpath%:%scratchdir%:%%PREFIX%%/share/java/classes/gnujsp10.jar:%%PREFIX%%/share/java/classes/servlet-2.0-plus.jar -d %scratchdir% -deprecation %source%
