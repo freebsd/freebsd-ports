@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE} \
