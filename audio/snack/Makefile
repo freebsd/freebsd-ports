@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snack
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.8
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -19,6 +19,8 @@ LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 
+OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,12 +28,14 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 		--with-tk=${LOCALBASE}/lib/tk8.4
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
-PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
-
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 \
 		-I${LOCALBASE}/include
 
-OPTIONS=	VORBIS "Support for OGG/Vorbis Audio" off
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
+PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
