@@ -15,6 +15,8 @@ MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib
 
+BROKEN=		Does not work with current icq protocol
+
 USE_KDELIBS_VER=1
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
