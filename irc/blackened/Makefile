@@ -11,6 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/
 
 MAINTAINER=	toast@blackened.com
+COMMENT=	The Blackened IRC Client
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}

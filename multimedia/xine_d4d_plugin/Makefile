@@ -14,6 +14,7 @@ MASTER_SITES=	http://debianlinux.net/ \
 FORBIDDEN=	Incompatible with the current version of xine
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+COMMENT=	A dvd input plugin for xine
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine
 

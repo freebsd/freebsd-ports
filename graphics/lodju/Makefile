@@ -12,6 +12,7 @@ CATEGORIES+=	graphics
 MASTER_SITES=	http://liw.iki.fi/liw/lodju/tarballs/
 
 MAINTAINER?=	jylitalo@iki.fi
+COMMENT?=	An image management tool for the X Window System
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \

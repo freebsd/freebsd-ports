@@ -13,6 +13,7 @@ DISTNAME=	H.fonts
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	nadav@cs.technion.ac.il
+COMMENT=	A collection of Hebrew fonts from El-Mar software Ltd
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

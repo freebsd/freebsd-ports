@@ -11,6 +11,7 @@ CATEGORIES=	irc tk83
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
 MAINTAINER=	rox@fearme.com
+COMMENT=	A tcl/tk irc client
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.wwco.com/~wls/opensource/
 DISTNAME=	duhdraw-2.7.1
 
 MAINTAINER=	mkm@ieee.org
+COMMENT=	An ANSI graphic drawing program
 
 WRKSRC=		${WRKDIR}/duhdraw-2.7.1
 do-install:

@@ -12,6 +12,7 @@ MASTER_SITES=	http://julien.carme.free.fr/
 DISTNAME=	infinity-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	paranormal
 DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	An adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12

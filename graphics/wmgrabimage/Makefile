@@ -13,6 +13,7 @@ MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sascha@root-login.org
+COMMENT=	Monitor your favorite web image
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 

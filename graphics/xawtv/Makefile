@@ -12,6 +12,7 @@ MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lehmann@ans-netz.de
+COMMENT=	A TV viewing application and a few TV utilities
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \

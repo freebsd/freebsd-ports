@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=tgif
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@WillsCreek.COM
+COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://xzgv.browser.org/ \
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 
 MAINTAINER=	nosuzuki@postcard.st
+COMMENT=	An image viewer with thumbnail-based file selector for X
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gwenview
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
+COMMENT=	An image viewer and browser for the KDE environment
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

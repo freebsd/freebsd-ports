@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johnston@vectaport.com
+COMMENT=	Drawing editors derived from idraw
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 

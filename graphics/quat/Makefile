@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=   http://www.physcip.uni-stuttgart.de/phy11733/download/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A Three-dimensional fractal creator (command line only)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gui \

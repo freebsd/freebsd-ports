@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://www8.cc.huji.ac.il/pub/pine/ \
 DISTNAME=	pine4.44_heb2.09
 
 MAINTAINER?=	nadav@cs.technion.ac.il
+COMMENT?=	PINE(tm) -- a Program for Internet News & Email
 
 MAN1=		pine.1 pico.1 pilot.1
 

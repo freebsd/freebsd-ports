@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A system of IRC services for IRC networks
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

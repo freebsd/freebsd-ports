@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	malte.lance@gmx.net
+COMMENT=	Four-Dimensional graphics tumbler for X11
 
 USE_XLIB=	yes
 MAN1=		4va.1

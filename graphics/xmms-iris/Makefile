@@ -12,6 +12,7 @@ MASTER_SITES=	http://cdelfosse.free.fr/xmms-iris/
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	An adaptation of the "OpenGL Spectrum Analyzer" from XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

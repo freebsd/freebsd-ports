@@ -12,6 +12,7 @@ MASTER_SITES=	http://scrollz.broken.com/source/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	eviilboy@cox.net
+COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=	andreas@marvin.robin.de
+COMMENT=	Window based interface to Mandelbrot sets and Julia sets
 
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
+COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		df.1:${PORTSDIR}/graphics/hdf \

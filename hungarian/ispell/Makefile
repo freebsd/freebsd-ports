@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 DISTNAME=	magyarispell-${PORTVERSION}
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
+COMMENT=	Hungarian dictionary for ispell
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		gm4:${PORTSDIR}/devel/m4

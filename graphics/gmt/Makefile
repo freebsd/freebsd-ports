@@ -21,6 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}_progs${EXTRACT_SUFX} \
 		${DISTNAME}_man${EXTRACT_SUFX}
 
 MAINTAINER=	sec@42.org
+COMMENT=	The Generic Mapping Tools data processing and display software package
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dgilbert@velocet.ca
+COMMENT=	A GL Tubing and Extrusion Library
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

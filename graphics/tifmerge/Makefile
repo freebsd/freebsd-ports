@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.whizkidtech.net/fports/
 DISTNAME=	tiff
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
 BUILD_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
 

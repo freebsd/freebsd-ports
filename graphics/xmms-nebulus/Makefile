@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	A XMMS visualization plugin that uses SDL and OpenGL
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12

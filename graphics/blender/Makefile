@@ -13,6 +13,7 @@ DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386
 DIST_SUBDIR=	blender
 
 MAINTAINER=	freebsd-admin@blender.nl
+COMMENT=	Fully functional 3D modeling/rendering/animation/gaming package
 
 USE_X_PREFIX=	YES
 NO_BUILD=	YES

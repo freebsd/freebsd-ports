@@ -11,6 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/2_0_beta_3/
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	A flexible drawing library
 
 LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 

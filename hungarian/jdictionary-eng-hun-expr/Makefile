@@ -14,6 +14,7 @@ DISTNAME=	SmartEngHunExp-1_4.jar
 EXTRACT_SUFX=	#
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	JDictionary plugin: English-Hungarian expression dictionary
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13 \

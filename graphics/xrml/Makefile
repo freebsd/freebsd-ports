@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	RenderPark
 
 MAINTAINER=	tiamat@telegraph.spb.ru
+COMMENT=	Extensible scene graph library based on VRML'97
 
 WRKSRC=		${WRKDIR}/XRML
 

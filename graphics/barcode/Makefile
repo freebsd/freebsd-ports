@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	barcode
 
 MAINTAINER=	jev@ecad.org
+COMMENT=	A barcode generation library along with a command line frontend
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 

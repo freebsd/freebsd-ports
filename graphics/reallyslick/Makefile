@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	rss-glx
 DISTNAME=	rss_glx-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
+COMMENT=	OpenGL screensaver collection
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

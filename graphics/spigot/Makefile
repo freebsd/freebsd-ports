@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	fenner
 DISTFILES=	spigot.1.7.tar.gz
 
 MAINTAINER=	james@cs.uwm.edu
+COMMENT=	Video spigot for Windows library
 
 # binary package
 NO_BUILD=	yes

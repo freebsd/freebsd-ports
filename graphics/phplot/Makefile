@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	phplot
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	yukinopo@livedoor.com
+COMMENT=	A PHP class for creating scientific and business charts
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd

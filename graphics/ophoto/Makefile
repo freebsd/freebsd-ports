@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fromme.com/o/ophoto/
 DISTNAME=	ophoto
 
 MAINTAINER=	witr@rwwa.com
+COMMENT=	USB support for Kodak DC240 and DC280 cameras under FreeBSD
 
 ALL_TARGET=	ophoto
 

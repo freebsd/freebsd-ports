@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.pp.iij4u.or.jp/~tagami/gtk/
 DISTNAME=	IRcatLite-r20000308
 
 MAINTAINER=	goto@snowy.to
+COMMENT=	A GTK based 'Internet Relay Chat' Client
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes

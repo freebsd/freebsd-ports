@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	giconedit
 DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	j.el-rayes@muthaland.at
+COMMENT=	A small GNOME Icon Editor
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

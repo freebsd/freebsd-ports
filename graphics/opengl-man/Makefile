@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www2.cons.org:8000/freebsd-distfiles/
 MASTER_SITE_SUBDIR=	cracauer
 MAINTAINER=	cracauer@cons.org
+COMMENT=	Section 3 manpages for OpenGL: gl, glx, glu, gle, glut
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	graphics www
 MASTER_SITES=	http://puchol.com/cpg/software/cthumb/
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	cthumb - a themable web picture album generator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pnmscale:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \

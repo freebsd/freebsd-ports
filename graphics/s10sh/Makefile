@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.reynoldsnet.org/s10sh/ \
 		http://www.kyuzz.org/antirez/s10sh-src/
 
 MAINTAINER=	johnjen@reynoldsnet.org
+COMMENT=	USB/serial userspace driver for the Canon PowerShot digital cameras
 
 # Don't extract the libusb bundled with s10sh:
 EXTRACT_AFTER_ARGS=     | ${TAR} -xf - --exclude '*/libusb*'

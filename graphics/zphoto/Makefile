@@ -12,6 +12,7 @@ MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
+COMMENT=	Zooming photo album generator
 
 LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming \
 		Imlib2.1:${PORTSDIR}/graphics/imlib2 \

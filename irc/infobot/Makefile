@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.infobot.org/src/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	perlguy@perlguy.com
+COMMENT=	Bot written in Perl with a rabid AI
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PERL5=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.xaric.org/pub/xaric/
 
 MAINTAINER=	alanp@unixpower.org
+COMMENT=	Xaric IRC Client
 
 MAN1=		xaric.1
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ircd-hybrid
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	so14k@so14k.com
+COMMENT=	An irc daemon with a number of new features
 
 MAN8=		ircd.8
 
