@@ -49,7 +49,7 @@ _JAVA_HOME_BLACKDOWN_LINUX_1_4=	${LOCALBASE}/linux-blackdown-jdk1.4.1
 _JAVA_HOME_IBM_LINUX_1_3=		${LOCALBASE}/linux-ibm-jdk1.3.1
 _JAVA_HOME_SUN_LINUX_1_2=		${LOCALBASE}/linux-sun-jdk1.2.2
 _JAVA_HOME_SUN_LINUX_1_3=		${LOCALBASE}/linux-sun-jdk1.3.1
-_JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-sun-jdk1.4.0
+_JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-sun-jdk1.4.1
 
 # Set the JDK ports for all recognized JDK's
 _JAVA_PORT_FREEBSD_1_1=			java/jdk11
@@ -172,7 +172,7 @@ JAVA_HOME=	${_JAVA_HOME}
 # If the setting is 1.3+, then see if the Sun JDK 1.4 for Linux is installed,
 # while no 1.3 JDK's are installed. If that is the case, then USE_JAVA will be
 # set to 1.4. Otherwise it will be set to 1.3. All 1.3 JDK's are currently
-# preferred over a 1.4.0 JDK since it is considered less stable.
+# preferred over a 1.4.x JDK since it is considered less stable.
 #
 # If the setting is 1.4+, then set it to 1.4 right away. There is no other
 # option at the moment.
@@ -319,10 +319,10 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_3}
 .			endif
 
 # If the port needs JDK 1.4, then there's currently only one choice, the Sun
-# JDK 1.4.0 for Linux.
+# JDK 1.4.x for Linux.
 .		elif ${USE_JAVA} == "1.4"
 JAVA_VENDOR=	Sun
-JAVA_VER=		1.4.0
+JAVA_VER=		1.4.1
 JAVA_OS=		Linux
 JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_4}
 JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
