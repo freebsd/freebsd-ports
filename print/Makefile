@@ -93,6 +93,7 @@
     SUBDIR += kcdlabel
     SUBDIR += kover
     SUBDIR += latex
+    SUBDIR += latex-arydshln
     SUBDIR += latex-beamer
     SUBDIR += latex-biblist
     SUBDIR += latex-bibtopic
