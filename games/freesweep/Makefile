@@ -6,31 +6,31 @@
 #
 
 PORTNAME=	freesweep
-PORTVERSION=	0.88
+PORTVERSION=	0.90
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Minesweeper-style game for text-mode terminals
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-prefsdir=${PREFIX}/share/freesweep \
-		--with-scoresdir=${PREFIX}/share/freesweep \
+CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
+		--with-scoresdir=${DATADIR}\
 		--disable-debug-log
+USE_GETOPT_LONG=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
 ALL_TARGET=	# empty
 
 MAN6=		freesweep.6
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/freesweep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/freesweep.6 ${PREFIX}/man/man6
-	@${MKDIR} ${PREFIX}/share/freesweep
-	${INSTALL_DATA} ${WRKSRC}/sweeprc ${PREFIX}/share/freesweep
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/freesweep
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/freesweep
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/freesweep
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- config.h.in.orig	Wed Nov 12 04:24:48 2003
++++ config.h.in	Wed Nov 12 04:25:07 2003
+@@ -25,7 +25,7 @@
+ #undef SCORESDIR
+ 
+ /* Comment this out to use a shared best times file. */
+-#undef USE_GROUP_BEST_FILE
++/* #undef USE_GROUP_BEST_FILE */
+ 
+ 
+ /* Leave that blank line there!!  Autoheader needs it.
