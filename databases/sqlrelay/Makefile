@@ -150,6 +150,8 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 
 .if ${OSVERSION} < 500000
 BROKEN=		"Broken pkg-plist"
+.else
+BROKEN=		"Does not compile on 5.x"
 .endif
 
 .if ${OSVERSION} >= 500000
