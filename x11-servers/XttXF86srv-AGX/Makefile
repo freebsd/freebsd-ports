@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/15 09:49:27 asami Exp $
+# $Id: Makefile,v 1.7 1999/04/02 08:28:00 taoka Exp $
 #
 
 DISTNAME=	xc
@@ -13,6 +13,8 @@ CATEGORIES=	x11
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
+
+ONLY_FOR_ARCHS=	i386
 
 SERVER=		XF86_AGX
 
