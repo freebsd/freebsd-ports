@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	apr
-PORTVERSION=	0.9.2.a
-INTERNALPORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.apache.org/dist/apr/
-DISTFILES=	apr-${INTERNALPORTVERSION}-alpha.tar.gz apr-util-${INTERNALPORTVERSION}-alpha.tar.gz
+MASTER_SITES=	http://www.apache.org/dist/apr/testing/
+DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
 MAINTAINER=	rodrigc@attbi.com
 COMMENT=	The Apache Group's Portability Library
@@ -36,28 +35,28 @@ APR_UTIL_CONF_ENV=${CONFIGURE_ENV} \
 		CPPFLAGS="-I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib"
 
-APR_UTIL_CONF_ARGS=	--with-apr=../apr-${INTERNALPORTVERSION} \
+APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 			--with-expat=${PREFIX} \
 			--with-iconv=${PREFIX}
 
 pre-configure:
-	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ./buildconf
-	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ./buildconf \
-		--with-apr=../apr-${INTERNALPORTVERSION}
+	cd ${WRKDIR}/apr-${PORTVERSION}; ./buildconf
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ./buildconf \
+		--with-apr=../apr-${PORTVERSION}
 
 do-configure:
-	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; \
+	cd ${WRKDIR}/apr-${PORTVERSION}; \
 		${SETENV} ${APR_CONF_ENV} ./configure ${CONFIGURE_ARGS}
-	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; \
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
 		${SETENV} ${APR_UTIL_CONF_ENV} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
 
 do-build:
-	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make
-	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make
 
 do-install:
-	cd ${WRKDIR}/apr-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make install
-	cd ${WRKDIR}/apr-util-${INTERNALPORTVERSION}; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
+	cd ${WRKDIR}/apr-util-${PORTVERSION}; ${SETENV} ${MAKE_ENV} make install
 
 .include <bsd.port.mk>
