@@ -16,10 +16,10 @@ MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
 EXTRACT_SUFX=	.tar
 DISTFILES=	applicat.rdb.gz libofa517li.so libsdb517li.so
 
+MAINTAINER=	dkiwebe@hagenhomes.com
+
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
-MAINTAINER=	dkiwebe@hagenhomes.com
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
@@ -30,6 +30,7 @@ EXTRACT_BEFORE_ARGS=	-u
 NO_BUILD=	yes
 DIST_SUBDIR=	staroffice5
 WRKSRC=		${WRKDIR}/so51inst
+TEMPDIR=	${WRKDIR}/tmp
 
 .include <bsd.port.pre.mk>
 
@@ -59,13 +60,14 @@ post-configure:
 	@${PERL} -pi.orig -e 's|DefaultDestPath = "Office51";|DefaultDestPath = "${PREFIX}/Office51";|' ${WRKSRC}/office51/setup.ins
 
 do-install:
-	@${ECHO} "${WRKDIR}/tmp" >> /compat/linux/etc/ld.so.conf
-	@${ECHO} "/tmp/sv001.tmp" >> /compat/linux/etc/ld.so.conf
-	@PATH=${PATH}:/tmp/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/tmp:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
-	@/usr/compat/linux/sbin/ldconfig
+	@${CP} /compat/linux/etc/ld.so.conf ${TMPDIR}/ld.so.conf.tmp
+	@${ECHO} "${WRKDIR}/tmp" >> ${TMPDIR}/ld.so.conf.tmp
+	@${ECHO} "${TEMPDIR}/sv001.tmp" >> ${TMPDIR}/ld.so.conf.tmp
+	@PATH=${PATH}:${TEMPDIR}/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
+	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TEMPDIR}:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
+	@/usr/compat/linux/sbin/ldconfig -f ${TMPDIR}/ld.so.conf.tmp
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-${WRKDIR}/so51inst/office51/setup /net
+	@-TEMP=${TEMPDIR} ${WRKDIR}/so51inst/office51/setup /net
 
 # A seperate target as we need to be able to run this stuff independantly.
 post-install:
