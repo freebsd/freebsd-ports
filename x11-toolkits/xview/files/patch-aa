@@ -1,6 +1,6 @@
-diff -rc ../old/xview3.2p1-X11R6/config/Imakefile ./config/Imakefile
+diff -rc ../old/xview3.2p1-X11R6/config/Imakefile Imakefile
 *** ../old/xview3.2p1-X11R6/config/Imakefile	Tue Jun 29 01:13:19 1993
---- ./config/Imakefile	Sun Nov 20 13:38:58 1994
+--- Imakefile	Sun Nov 20 13:38:58 1994
 ***************
 *** 8,14 ****
   /**/# config directory
@@ -18,9 +18,9 @@ diff -rc ../old/xview3.2p1-X11R6/config/Imakefile ./config/Imakefile
   CFFILES = $(XVFILES) $(HEADERS)
   
   InstallMultipleDestFlags(install,$(CFFILES),$(CONFIGDIR),$(INSTDATFLAGS))
-diff -rc ../old/xview3.2p1-X11R6/config/XView.cf ./config/XView.cf
+diff -rc ../old/xview3.2p1-X11R6/config/XView.cf XView.cf
 *** ../old/xview3.2p1-X11R6/config/XView.cf	Sun Jun 26 22:09:19 1994
---- ./config/XView.cf	Sun Nov 20 13:38:58 1994
+--- XView.cf	Sun Nov 20 13:38:58 1994
 ***************
 *** 101,107 ****
    *	the appropriate value.
@@ -106,9 +106,9 @@ diff -rc ../old/xview3.2p1-X11R6/config/XView.cf ./config/XView.cf
   #endif
   
   /*
-diff -rc ../old/xview3.2p1-X11R6/config/XView.obj ./config/XView.obj
+diff -rc ../old/xview3.2p1-X11R6/config/XView.obj XView.obj
 *** ../old/xview3.2p1-X11R6/config/XView.obj	Tue Jun 29 01:13:20 1993
---- ./config/XView.obj	Sun Nov 20 13:38:59 1994
+--- XView.obj	Sun Nov 20 13:38:59 1994
 ***************
 *** 15,21 ****
               STD_DEFINES = StandardDefines LibXViewDefines 
@@ -178,9 +178,9 @@ diff -rc ../old/xview3.2p1-X11R6/config/XView.obj ./config/XView.obj
   # endif
   # if InstallPrivateHeaders
   #  if NotLibXView
-diff -rc ../old/xview3.2p1-X11R6/config/XView.rules ./config/XView.rules
+diff -rc ../old/xview3.2p1-X11R6/config/XView.rules XView.rules
 *** ../old/xview3.2p1-X11R6/config/XView.rules	Tue Jun 29 01:13:20 1993
---- ./config/XView.rules	Sun Nov 20 13:38:59 1994
+--- XView.rules	Sun Nov 20 13:38:59 1994
 ***************
 *** 366,374 ****
   #ifndef InstallSharedLibraryNoBuild
@@ -202,9 +202,9 @@ diff -rc ../old/xview3.2p1-X11R6/config/XView.rules ./config/XView.rules
   
   #endif /* InstallSharedLibraryNoBuild */
   
-diff -rc ../old/xview3.2p1-X11R6/config/XView.tmpl ./config/XView.tmpl
+diff -rc ../old/xview3.2p1-X11R6/config/XView.tmpl XView.tmpl
 *** ../old/xview3.2p1-X11R6/config/XView.tmpl	Sun Jun 26 22:10:00 1994
---- ./config/XView.tmpl	Sun Nov 20 13:38:59 1994
+--- XView.tmpl	Sun Nov 20 13:38:59 1994
 ***************
 *** 96,102 ****
    *      Work around small conflict with Project.tmpl file
