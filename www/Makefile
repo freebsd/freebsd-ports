@@ -263,6 +263,7 @@
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += mozilla
+    SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
     SUBDIR += mozilla-devel-gtk2
     SUBDIR += mozilla-firebird
