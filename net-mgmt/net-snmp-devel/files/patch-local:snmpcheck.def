@@ -1,0 +1,8 @@
+--- local/snmpcheck.def.orig	Thu May 29 05:28:22 2003
++++ local/snmpcheck.def	Thu May 29 05:29:49 2003
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!%%PERL%% -w
+ 
+ use strict 'refs';
+ require Net::Ping;

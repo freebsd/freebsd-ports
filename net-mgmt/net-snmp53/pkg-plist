@@ -22,8 +22,11 @@ bin/snmptrap
 bin/snmpusm
 bin/snmpvacm
 bin/snmpwalk
+%%WITH_TKMIB%%bin/tkmib
 bin/traptoemail
 etc/rc.d/snmpd.sh
+etc/rc.d/snmptrapd.sh
+@exec mkdir %D/etc/snmp 2>/dev/null || true
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h
@@ -91,9 +94,9 @@ include/net-snmp/library/snmp-tc.h
 include/net-snmp/library/snmp.h
 include/net-snmp/library/snmpCallbackDomain.h
 include/net-snmp/library/snmpTCPDomain.h
-include/net-snmp/library/snmpTCPIPv6Domain.h
+%%WITH_IPV6%%include/net-snmp/library/snmpTCPIPv6Domain.h
 include/net-snmp/library/snmpUDPDomain.h
-include/net-snmp/library/snmpUDPIPv6Domain.h
+%%WITH_IPV6%%include/net-snmp/library/snmpUDPIPv6Domain.h
 include/net-snmp/library/snmpUnixDomain.h
 include/net-snmp/library/snmp_alarm.h
 include/net-snmp/library/snmp_api.h
@@ -158,152 +161,172 @@ include/net-snmp/types.h
 include/net-snmp/utilities.h
 include/net-snmp/varbind_api.h
 include/net-snmp/version.h
-@dirrm include/net-snmp/agent
-@dirrm include/net-snmp/library
-@dirrm include/net-snmp/machine
-@dirrm include/net-snmp/system
-@dirrm include/net-snmp
 lib/libnetsnmp.a
-lib/libnetsnmp.so
-lib/libnetsnmp.so.%%shlib%%
+lib/libnetsnmp.so.%%SHLIB_VERSION%%
+@exec ln -fs libnetsnmp.so.%%SHLIB_VERSION%% %B/libnetsnmp.so
+@unexec rm -f %B/libnetsnmp.so 2> /dev/null || true
 lib/libnetsnmpagent.a
-lib/libnetsnmpagent.so
-lib/libnetsnmpagent.so.%%shlib%%
+lib/libnetsnmpagent.so.%%SHLIB_VERSION%%
+@exec ln -fs libnetsnmpagent.so.%%SHLIB_VERSION%% %B/libnetsnmpagent.so
+@unexec rm -f %B/libnetsnmpagent.so 2> /dev/null || true
 lib/libnetsnmphelpers.a
-lib/libnetsnmphelpers.so
-lib/libnetsnmphelpers.so.%%shlib%%
+lib/libnetsnmphelpers.so.%%SHLIB_VERSION%%
+@exec ln -fs libnetsnmphelpers.so.%%SHLIB_VERSION%% %B/libnetsnmphelpers.so
+@unexec rm -f %B/libnetsnmphelpers.so 2> /dev/null || true
 lib/libnetsnmpmibs.a
-lib/libnetsnmpmibs.so
-lib/libnetsnmpmibs.so.%%shlib%%
+lib/libnetsnmpmibs.so.%%SHLIB_VERSION%%
+@exec ln -fs libnetsnmpmibs.so.%%SHLIB_VERSION%% %B/libnetsnmpmibs.so
+@unexec rm -f %B/libnetsnmpmibs.so 2> /dev/null || true
 lib/libnetsnmptrapd.a
-lib/libnetsnmptrapd.so
-lib/libnetsnmptrapd.so.%%shlib%%
+lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
+@exec ln -fs libnetsnmptrapd.so.%%SHLIB_VERSION%% %B/libnetsnmptrapd.so
+@unexec rm -f %B/libnetsnmptrapd.so 2> /dev/null || true
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Makefile.subs.pl
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/ASN.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/OID.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/default_store.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/netsnmp_request_infoPtr.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/default_store.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SNMP.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/default_store.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/default_store.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/default_store.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/default_store.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/SNMP.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/SNMP.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/autosplit.ix
 sbin/snmpd
 sbin/snmptrapd
-share/snmp/mib2c.access_functions.conf
-share/snmp/mib2c.array-user.conf
-share/snmp/mib2c.check_values.conf
-share/snmp/mib2c.check_values_local.conf
-share/snmp/mib2c.column_defines.conf
-share/snmp/mib2c.column_enums.conf
-share/snmp/mib2c.conf
-share/snmp/mib2c.create-dataset.conf
-share/snmp/mib2c.int_watch.conf
-share/snmp/mib2c.iterate.conf
-share/snmp/mib2c.iterate_access.conf
-share/snmp/mib2c.old-api.conf
-share/snmp/mib2c.scalar.conf
-share/snmp/mibs/AGENTX-MIB.txt
-share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt
-share/snmp/mibs/DISMAN-SCRIPT-MIB.txt
-share/snmp/mibs/EtherLike-MIB.txt
-share/snmp/mibs/HCNUM-TC.txt
-share/snmp/mibs/HOST-RESOURCES-MIB.txt
-share/snmp/mibs/HOST-RESOURCES-TYPES.txt
-share/snmp/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
-share/snmp/mibs/IANA-LANGUAGE-MIB.txt
-share/snmp/mibs/IANAifType-MIB.txt
-share/snmp/mibs/IF-INVERTED-STACK-MIB.txt
-share/snmp/mibs/IF-MIB.txt
-share/snmp/mibs/INET-ADDRESS-MIB.txt
-share/snmp/mibs/IP-FORWARD-MIB.txt
-share/snmp/mibs/IP-MIB.txt
-share/snmp/mibs/IPV6-ICMP-MIB.txt
-share/snmp/mibs/IPV6-MIB.txt
-share/snmp/mibs/IPV6-TC.txt
-share/snmp/mibs/IPV6-TCP-MIB.txt
-share/snmp/mibs/IPV6-UDP-MIB.txt
-share/snmp/mibs/NET-SNMP-AGENT-MIB.txt
-share/snmp/mibs/NET-SNMP-EXAMPLES-MIB.txt
-share/snmp/mibs/NET-SNMP-MIB.txt
-share/snmp/mibs/NET-SNMP-TC.txt
-share/snmp/mibs/NOTIFICATION-LOG-MIB.txt
-share/snmp/mibs/RFC-1215.txt
-share/snmp/mibs/RFC1155-SMI.txt
-share/snmp/mibs/RFC1213-MIB.txt
-share/snmp/mibs/RMON-MIB.txt
-share/snmp/mibs/SMUX-MIB.txt
-share/snmp/mibs/SNMP-COMMUNITY-MIB.txt
-share/snmp/mibs/SNMP-FRAMEWORK-MIB.txt
-share/snmp/mibs/SNMP-MPD-MIB.txt
-share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt
-share/snmp/mibs/SNMP-PROXY-MIB.txt
-share/snmp/mibs/SNMP-TARGET-MIB.txt
-share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
-share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
-share/snmp/mibs/SNMPv2-CONF.txt
-share/snmp/mibs/SNMPv2-MIB.txt
-share/snmp/mibs/SNMPv2-SMI.txt
-share/snmp/mibs/SNMPv2-TC.txt
-share/snmp/mibs/SNMPv2-TM.txt
-share/snmp/mibs/TCP-MIB.txt
-share/snmp/mibs/UCD-DEMO-MIB.txt
-share/snmp/mibs/UCD-DISKIO-MIB.txt
-share/snmp/mibs/UCD-DLMOD-MIB.txt
-share/snmp/mibs/UCD-IPFWACC-MIB.txt
-share/snmp/mibs/UCD-SNMP-MIB.txt
-share/snmp/mibs/UDP-MIB.txt
-@unexec rm -f %D/share/snmp/mibs/.index 2>/dev/null || true
-share/snmp/snmpconf-data/snmp-data/authopts
-share/snmp/snmpconf-data/snmp-data/debugging
-share/snmp/snmpconf-data/snmp-data/mibs
-share/snmp/snmpconf-data/snmp-data/output
-share/snmp/snmpconf-data/snmp-data/snmpconf-config
-share/snmp/snmpconf-data/snmpd-data/acl
-share/snmp/snmpconf-data/snmpd-data/basic_setup
-share/snmp/snmpconf-data/snmpd-data/extending
-share/snmp/snmpconf-data/snmpd-data/monitor
-share/snmp/snmpconf-data/snmpd-data/operation
-share/snmp/snmpconf-data/snmpd-data/snmpconf-config
-share/snmp/snmpconf-data/snmpd-data/system
-share/snmp/snmpconf-data/snmpd-data/trapsinks
-share/snmp/snmpconf-data/snmptrapd-data/formatting
-share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
-share/snmp/snmpconf-data/snmptrapd-data/traphandle
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/default_store.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/default_store.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/default_store.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/default_store.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/SNMP.so
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/SNMP.bs
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/autosplit.ix
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/.packlist
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Makefile.subs.pl
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/default_store.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/ASN.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/OID.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/netsnmp_request_infoPtr.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/default_store.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent.pm
-%%WITHPERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SNMP.pm
-@dirrm share/snmp/snmpconf-data/snmp-data
-@dirrm share/snmp/snmpconf-data/snmpd-data
-@dirrm share/snmp/snmpconf-data/snmptrapd-data
-@dirrm share/snmp/snmpconf-data
-@dirrm share/snmp/mibs
-@unexec rmdir %D/share/snmp 2>/dev/null || true
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP
-%%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle 2>/dev/null || true
-%%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-%%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent
-%%WITHPERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP
-%%WITHPERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP 2>/dev/null || true
+%%PORTDOCS%%%%DOCSDIR%%/AGENT.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.agentx
+%%PORTDOCS%%%%DOCSDIR%%/README.krb5
+%%PORTDOCS%%%%DOCSDIR%%/README.snmpv3
+%%PORTDOCS%%%%DOCSDIR%%/README.thread
+%%PORTDOCS%%%%DOCSDIR%%/README.smux
+%%DATADIR%%/mib2c.access_functions.conf
+%%DATADIR%%/mib2c.array-user.conf
+%%DATADIR%%/mib2c.check_values.conf
+%%DATADIR%%/mib2c.check_values_local.conf
+%%DATADIR%%/mib2c.column_defines.conf
+%%DATADIR%%/mib2c.column_enums.conf
+%%DATADIR%%/mib2c.conf
+%%DATADIR%%/mib2c.create-dataset.conf
+%%DATADIR%%/mib2c.int_watch.conf
+%%DATADIR%%/mib2c.iterate.conf
+%%DATADIR%%/mib2c.iterate_access.conf
+%%DATADIR%%/mib2c.old-api.conf
+%%DATADIR%%/mib2c.scalar.conf
+%%DATADIR%%/mibs/AGENTX-MIB.txt
+%%WITH_EVENT-MIB%%%%DATADIR%%/mibs/DISMAN-EVENT-MIB.txt
+%%DATADIR%%/mibs/DISMAN-SCHEDULE-MIB.txt
+%%DATADIR%%/mibs/DISMAN-SCRIPT-MIB.txt
+%%DATADIR%%/mibs/EtherLike-MIB.txt
+%%DATADIR%%/mibs/HCNUM-TC.txt
+%%DATADIR%%/mibs/HOST-RESOURCES-MIB.txt
+%%DATADIR%%/mibs/HOST-RESOURCES-TYPES.txt
+%%DATADIR%%/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
+%%DATADIR%%/mibs/IANA-LANGUAGE-MIB.txt
+%%DATADIR%%/mibs/IANAifType-MIB.txt
+%%DATADIR%%/mibs/IF-INVERTED-STACK-MIB.txt
+%%DATADIR%%/mibs/IF-MIB.txt
+%%DATADIR%%/mibs/INET-ADDRESS-MIB.txt
+%%DATADIR%%/mibs/IP-FORWARD-MIB.txt
+%%DATADIR%%/mibs/IP-MIB.txt
+%%DATADIR%%/mibs/IPV6-ICMP-MIB.txt
+%%DATADIR%%/mibs/IPV6-MIB.txt
+%%DATADIR%%/mibs/IPV6-TC.txt
+%%DATADIR%%/mibs/IPV6-TCP-MIB.txt
+%%DATADIR%%/mibs/IPV6-UDP-MIB.txt
+%%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/MTA-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-AGENT-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-EXAMPLES-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-TC.txt
+%%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
+%%DATADIR%%/mibs/NOTIFICATION-LOG-MIB.txt
+%%DATADIR%%/mibs/RFC-1215.txt
+%%DATADIR%%/mibs/RFC1155-SMI.txt
+%%DATADIR%%/mibs/RFC1213-MIB.txt
+%%DATADIR%%/mibs/RMON-MIB.txt
+%%DATADIR%%/mibs/SMUX-MIB.txt
+%%DATADIR%%/mibs/SNMP-COMMUNITY-MIB.txt
+%%DATADIR%%/mibs/SNMP-FRAMEWORK-MIB.txt
+%%DATADIR%%/mibs/SNMP-MPD-MIB.txt
+%%DATADIR%%/mibs/SNMP-NOTIFICATION-MIB.txt
+%%DATADIR%%/mibs/SNMP-PROXY-MIB.txt
+%%DATADIR%%/mibs/SNMP-TARGET-MIB.txt
+%%DATADIR%%/mibs/SNMP-USER-BASED-SM-MIB.txt
+%%DATADIR%%/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
+%%DATADIR%%/mibs/SNMPv2-CONF.txt
+%%DATADIR%%/mibs/SNMPv2-MIB.txt
+%%DATADIR%%/mibs/SNMPv2-SMI.txt
+%%DATADIR%%/mibs/SNMPv2-TC.txt
+%%DATADIR%%/mibs/SNMPv2-TM.txt
+%%DATADIR%%/mibs/TCP-MIB.txt
+%%DATADIR%%/mibs/UCD-DEMO-MIB.txt
+%%DATADIR%%/mibs/UCD-DISKIO-MIB.txt
+%%DATADIR%%/mibs/UCD-DLMOD-MIB.txt
+%%DATADIR%%/mibs/UCD-IPFWACC-MIB.txt
+%%DATADIR%%/mibs/UCD-SNMP-MIB.txt
+%%DATADIR%%/mibs/UDP-MIB.txt
+@unexec rm -f %D/%%DATADIR%%/mibs/.index 2>/dev/null || true
+%%WITH_PERL%%%%DATADIR%%/snmp_perl.pl
+%%DATADIR%%/snmpconf-data/snmp-data/authopts
+%%DATADIR%%/snmpconf-data/snmp-data/debugging
+%%DATADIR%%/snmpconf-data/snmp-data/mibs
+%%DATADIR%%/snmpconf-data/snmp-data/output
+%%DATADIR%%/snmpconf-data/snmp-data/snmpconf-config
+%%DATADIR%%/snmpconf-data/snmpd-data/acl
+%%DATADIR%%/snmpconf-data/snmpd-data/basic_setup
+%%DATADIR%%/snmpconf-data/snmpd-data/extending
+%%DATADIR%%/snmpconf-data/snmpd-data/monitor
+%%DATADIR%%/snmpconf-data/snmpd-data/operation
+%%DATADIR%%/snmpconf-data/snmpd-data/snmpconf-config
+%%DATADIR%%/snmpconf-data/snmpd-data/system
+%%DATADIR%%/snmpconf-data/snmpd-data/trapsinks
+%%DATADIR%%/snmpconf-data/snmptrapd-data/formatting
+%%DATADIR%%/snmpconf-data/snmptrapd-data/snmpconf-config
+%%DATADIR%%/snmpconf-data/snmptrapd-data/traphandle
+@dirrm %%DATADIR%%/snmpconf-data/snmptrapd-data
+@dirrm %%DATADIR%%/snmpconf-data/snmpd-data
+@dirrm %%DATADIR%%/snmpconf-data/snmp-data
+@dirrm %%DATADIR%%/snmpconf-data
+@unexec rmdir %D/%%DATADIR%%/mibs 2>/dev/null || true
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle 2>/dev/null || true
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP
+%%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
+@dirrm include/net-snmp/system
+@dirrm include/net-snmp/machine
+@dirrm include/net-snmp/library
+@dirrm include/net-snmp/agent
+@dirrm include/net-snmp
+@unexec rmdir %D/etc/snmp 2>/dev/null || true

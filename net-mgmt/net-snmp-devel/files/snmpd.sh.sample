@@ -28,8 +28,9 @@ fi
 name=snmpd
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/snmpd
-pidfile='/var/run/snmpd.pid'
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+sig_stop=-KILL
 
-load_rc_config $name
+load_rc_config ${name}
 run_rc_command "$1"
