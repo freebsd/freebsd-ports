@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat May  5 19:30:42 2001
++++ Makefile	Sat May  5 19:31:41 2001
+@@ -1,5 +1,5 @@
+-linux: nbsmtp.c
+-	gcc -o nbsmtp nbsmtp.c
++all: nbsmtp.c
++	gcc $(CFLAGS) -o nbsmtp nbsmtp.c
+ 
+ solaris: nbsmtp.c
+ 	gcc -o nbsmtp nbsmtp.c -lxnet 
