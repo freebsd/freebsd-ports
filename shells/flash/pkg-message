@@ -1,0 +1,5 @@
+  ------------------------ WARNING ------------------------
+This software is not yet ready-to-go on your system. You need
+to configure flash in /usr/local/lib/flash in order for it to
+work properly.
+  ---------------------------------------------------------

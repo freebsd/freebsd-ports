@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flash
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
 
@@ -19,40 +19,44 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	prefix=${PREFIX}
-WRKSRC=		${WRKDIR}/flash
+GNU_CONFIGURE=	yes
+
 MAN1=		flash.1
 
-pre-configure:
+PROGRAM=	background countdown
+SCRIPT=		mailshell system.menu system.menu.9798 system.menu.oldlast \
+		system.menu.old
+DATA=		checkflash system.bg.Netsoc.3 system.bg.Netsoc.4 \
+		system.flashlogin system.maillogin system.module \
+		system.module.9798 system.rc system.rc.mailshell
+
 .if ${OSVERSION} < 400000
-MAKE_ENV+=	NCURSES=-DHAVE_NCURSES_NCURSES_H \
-		NC_CFLAGS="-I${LOCALBASE}/include" \
-		NC_LFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_NCURSES_NCURSES_H" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-pre-build:
-	@${RM} -rf ${WRKSRC}/modules/countdown ${WRKSRC}/modules/background
+post-patch:
+.for file in ${SCRIPT}
+	@${PERL} -pi -e "s:/usr/slocal:${PREFIX}:g" ${WRKSRC}/orcasetup/${file}
+.endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/flash ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/flash/flashdocs/
-.for DOC in checkflash system.bg.Netsoc.3 system.bg.Netsoc.4 system.flashlogin \
-	    system.maillogin system.module system.module.9798 system.rc system.rc.mailshell
-	@${INSTALL_DATA} ${WRKSRC}/orcasetup/${DOC} ${PREFIX}/lib/flash/
+	${INSTALL_PROGRAM} ${WRKSRC}/flash ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/flash.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/lib/flash
+	${INSTALL_DATA} ${WRKSRC}/Manual ${PREFIX}/lib/flash
+.for file in ${PROGRAM}
+	${INSTALL_PROGRAM} ${WRKSRC}/modules/${file} ${PREFIX}/lib/flash
 .endfor
-.for PROG in background countdown
-	@${INSTALL_PROGRAM} ${WRKSRC}/modules/${PROG} ${PREFIX}/lib/flash/
+.for file in ${SCRIPT}
+	${INSTALL_SCRIPT} ${WRKSRC}/orcasetup/${file} ${PREFIX}/lib/flash
 .endfor
-.for SCRIPT in mailshell system.menu system.menu.9798 system.menu.oldlast system.menu~ \
-	       system.menu.old
-	@${PERL} -pi -e "s:/usr/slocal:${PREFIX}:g" ${WRKSRC}/orcasetup/${SCRIPT}
-	@${INSTALL_SCRIPT} ${WRKSRC}/orcasetup/${SCRIPT} ${PREFIX}/lib/flash
+.for file in ${DATA}
+	${INSTALL_DATA} ${WRKSRC}/orcasetup/${file} ${PREFIX}/lib/flash
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/orcasetup/flashdocs/* ${PREFIX}/lib/flash/flashdocs/
-	@${INSTALL_MAN} ${WRKSRC}/flash.1 ${PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/flash ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/flash/flashdocs
+	${INSTALL_DATA} ${WRKSRC}/orcasetup/flashdocs/* ${PREFIX}/lib/flash/flashdocs
 
 post-install:
 	@${ECHO} "Updating /etc/shells"
@@ -60,11 +64,6 @@ post-install:
 	@(${GREP} -v ${PREFIX}/bin/flash /etc/shells.bak; \
 	${ECHO} ${PREFIX}/bin/flash) > /etc/shells
 	@${RM} /etc/shells.bak
-	@${ECHO}
-	@${ECHO} "  -------------------- WARNING --------------------------  "
-	@${ECHO} "This software is not yet ready-to-go on your system. You "
-	@${ECHO} "need to configure flash in ${PREFIX}/lib/flash in order for"
-	@${ECHO} "it to work properly."
-	@${ECHO}
+	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
