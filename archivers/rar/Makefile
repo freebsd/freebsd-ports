@@ -17,7 +17,6 @@ COMMENT=	File archiver (binary port)
 
 CAT1=		rar.1
 
-CONFLICTS=      unrar-*
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
@@ -31,7 +30,6 @@ STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin/unrar
 	cd ${WRKSRC} && \
 		${INSTALL_MAN} rar.txt ${PREFIX}/man/cat1/rar.1 && \
 		${INSTALL_DATA} rarfiles.lst \
