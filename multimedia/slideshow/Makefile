@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slideshow
-PORTVERSION=	0.8.0.p4
+PORTVERSION=	0.8.0.p5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION:S/.p/-pre/}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
@@ -19,8 +19,10 @@ LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
+WRKSRC=		${WRKDIR}/${DISTNAME:C/-pre.*//}
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
@@ -62,6 +64,5 @@ do-install:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/libslideshow.so.0
 #	@${STRIP_CMD} ${PYTHONPREFIX_SITELIBDIR}/_slideshow.so
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
