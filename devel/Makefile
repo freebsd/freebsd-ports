@@ -389,6 +389,7 @@
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
     SUBDIR += p5-String-Approx
+    SUBDIR += p5-String-CRC32
     SUBDIR += p5-String-Checker
     SUBDIR += p5-String-Random
     SUBDIR += p5-String-RexxParse
