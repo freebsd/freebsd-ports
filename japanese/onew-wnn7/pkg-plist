@@ -1,0 +1,20 @@
+lib/libonew-wnn6.a
+share/doc/ja-onew-wnn6/README.ONEW
+@dirrm share/doc/ja-onew-wnn6
+lib/wnn/ja_JP/rk.wnn6/1B_TOUPPER
+lib/wnn/ja_JP/rk.wnn6/1B_ZENHIRA
+lib/wnn/ja_JP/rk.wnn6/1B_ZENKATA
+lib/wnn/ja_JP/rk.wnn6/1B_newTOUPPER
+lib/wnn/ja_JP/rk.wnn6/2A_CTRL
+lib/wnn/ja_JP/rk.wnn6/2B_DAKUTEN
+lib/wnn/ja_JP/rk.wnn6/2B_JIS
+lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA
+lib/wnn/ja_JP/rk.wnn6/2_TCODE
+lib/wnn/ja_JP/rk.wnn6/3B_HANKATA
+lib/wnn/ja_JP/rk.wnn6/3B_KATAKANA
+lib/wnn/ja_JP/rk.wnn6/3B_ZENKAKU
+lib/wnn/ja_JP/rk.wnn6/autork
+lib/wnn/ja_JP/rk.wnn6/mode
+lib/wnn/ja_JP/rk.wnn6/mode.hankata
+lib/wnn/ja_JP/rk.wnn6/mode.nohankata
+@dirrm lib/wnn/ja_JP/rk.wnn6
