@@ -43,6 +43,7 @@ share/gnome/gnucash/doc/examples/trading2.xac
 share/gnome/gnucash/doc/examples/web.qif
 share/gnome/gnucash/doc/examples/xfer.xac
 share/gnome/gnucash/doc/gnc.html
+share/gnome/gnucash/doc/gnucash.engine_wrap.doc
 share/gnome/gnucash/doc/guile-hackers.txt
 share/gnome/gnucash/html/C/RAW-NOTES
 share/gnome/gnucash/html/C/bofa-mym.html
@@ -67,6 +68,7 @@ share/gnome/gnucash/html/C/image/logo-sgi.gif
 share/gnome/gnucash/html/C/image/logo-skunkware.gif
 share/gnome/gnucash/html/C/image/newaccwin-code.gif
 share/gnome/gnucash/html/C/image/newaccwin-trade.gif
+share/gnome/gnucash/html/C/image/recninfo.gif
 share/gnome/gnucash/html/C/image/recnwin.gif
 share/gnome/gnucash/html/C/image/regwin-double.gif
 share/gnome/gnucash/html/C/image/regwin-multi.gif
@@ -230,6 +232,7 @@ share/gnome/gnucash/scm/utilities.scm
 share/gnome/gnucash/scm/xml-generator.scm
 share/locale/de/LC_MESSAGES/gnucash.mo
 share/locale/en_GB/LC_MESSAGES/gnucash.mo
+share/locale/es/LC_MESSAGES/gnucash.mo
 share/locale/fr/LC_MESSAGES/gnucash.mo
 share/locale/it/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
