@@ -16,7 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT} \
-		${PREFIX}/bin/lwp-download:${PORTSDIR}/www/p5-libwww
+		${PREFIX}/bin/lwp-download:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 APACHE_PORT?=	apache13
 USE_PERL5=	yes
@@ -56,6 +58,7 @@ MAN3=		Apache.3 \
 		mod_perl_traps.3 \
 		mod_perl_tuning.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL \
