@@ -1,8 +1,0 @@
-This is a port of objprelink. This application is used on object files
-before the linking stage to improve performance in applications which
-rely heavily upon dynamic linking performance such as a Qt and KDE.
-
-WWW: http://leon.bottou.com/objprelink/
-
-- Dominic
-dominic_marks@btinternet.com
