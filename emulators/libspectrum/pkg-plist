@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+include/libspectrum.h
+lib/libspectrum.a
+lib/libspectrum.la
+lib/libspectrum.so
+lib/libspectrum.so.2
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/libspectrum.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

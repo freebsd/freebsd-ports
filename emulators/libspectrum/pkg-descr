@@ -1,0 +1,18 @@
+libspectrum is a fairly simple library designed to make the handling
+of various ZX Spectrum emulator-related file formats easy.  
+So far it handles:
+
+* Snapshots: .z80, .szx, .sna (all read/write), .zxs, .sp., 
+  .snp and +D snapshots (read only)
+* Tape images: .tzx, .tap (read/write) and Warajevo .tap (read only)
+* Input recordings: .rzx (read/write)
+* Timex cartridges: .dck (read only)
+
+There are also some subsidiary functions which may be generally useful
+for Spectrum-related utilities.
+
+Author:	Philip Kendall <pak21-spectrum@srcf.ucam.org>
+WWW:	http://www.srcf.ucam.org/~pak21/spectrum/libspectrum.html
+-- 
+Alexey V. Antipovsky
+kemm@in-line.ru
