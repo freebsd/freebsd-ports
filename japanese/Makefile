@@ -180,6 +180,7 @@
     SUBDIR += libslang
     SUBDIR += linux-JM
     SUBDIR += linux-mozillafirebird-gtk1
+    SUBDIR += linux-ttfonts
     SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup
