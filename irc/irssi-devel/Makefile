@@ -1,12 +1,12 @@
 # New ports collection makefile for:	irssi
-# Version required:		0.7.16
+# Version required:		0.7.17
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	irssi-0.7.16
+DISTNAME=	irssi-0.7.17
 CATEGORIES=	irc
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
 
@@ -14,6 +14,9 @@ MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		PropList.2:${PORTSDIR}/devel/libPropList
+.if defined(USE_GNOME)
+LIB_DEPENDS+=	gnome.3:${PORTSDIR}/x11/gnomelibs
+.endif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
@@ -26,7 +29,7 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pthreads --without-socks --without-textui \
+CONFIGURE_ARGS=	--without-pthreads --without-socks --with-textui \
 		--with-proplist=${LOCALBASE} --without-servertest
 
 .if defined(USE_GNOME)

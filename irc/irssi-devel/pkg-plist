@@ -1,5 +1,5 @@
 bin/irssi
-bin/irssi-bot
+bin/irssi-text
 lib/irssi/plugins/libbot.a
 lib/irssi/plugins/libbot.so
 lib/irssi/plugins/libbot.so.0
@@ -18,8 +18,12 @@ lib/irssi/plugins/libspeech.so.0
 lib/irssi/plugins/libsound.a
 lib/irssi/plugins/libsound.so
 lib/irssi/plugins/libsound.so.0
+share/gnome/help/irssi/C/index.html
+share/gnome/help/irssi/C/topic.dat
 etc/irssi/colorless.theme
 etc/irssi/config
 @dirrm lib/irssi/plugins
 @dirrm lib/irssi
 @dirrm etc/irssi
+@dirrm share/gnome/help/irssi/C
+@dirrm share/gnome/help/irssi
