@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	converters
 MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
-MAINTAINER=	Konstantin.Chuguev@dante.org.uk
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
