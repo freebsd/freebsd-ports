@@ -24,6 +24,8 @@ JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 SUB_FILES=	jftp.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+PLIST_FILES=	bin/jftp %%DATADIR%%/jftp.jar
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/jftp.sh ${PREFIX}/bin/jftp

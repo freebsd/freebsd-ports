@@ -18,6 +18,7 @@ COMMENT=	Memory Profiler and Leak Detector
 NO_WRKSUBDIR=	yes
 MAKEFILE=	Makefile.i386
 MAN1=		mprof.1
+PLIST_FILES=	bin/mprof lib/libc_mp.a
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mprof ${PREFIX}/bin

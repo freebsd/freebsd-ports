@@ -17,10 +17,12 @@ RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	YES
 NO_BUILD=	YES
+PLIST_FILES=	bin/jmirror %%EXAMPLESDIR%%/sample.jmirror.conf
+PLIST_DIRS=	%%EXAMPLESDIR%%
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/jmirror
 	${INSTALL_SCRIPT} ${WRKSRC}/jmirror ${PREFIX}/bin/jmirror
-	${INSTALL_DATA} ${WRKSRC}/sample.jmirror.conf ${PREFIX}/lib/jmirror/sample.jmirror.conf
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample.jmirror.conf ${EXAMPLESDIR}/sample.jmirror.conf
 
 .include <bsd.port.mk>
