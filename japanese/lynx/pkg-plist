@@ -30,36 +30,39 @@ etc/lynx.cfg.sample
 %%HELPDIR%%/lynx-dev.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/lynx_help_main.html%%HELPFILE_SUFFIX%%
 %%HELPDIR%%/lynx_url_support.html%%HELPFILE_SUFFIX%%
-%%DOCDIR%%/CHANGES
-%%DOCDIR%%/COPYHEADER
-%%DOCDIR%%/COPYING
-%%DOCDIR%%/PROBLEMS
-%%DOCDIR%%/README
-%%DOCDIR%%/samples/blue-background.lss
-%%DOCDIR%%/samples/cernrules.txt
-%%DOCDIR%%/samples/installdirs.html
-%%DOCDIR%%/samples/jumpsUnix.html
-%%DOCDIR%%/samples/jumpsVMS.html
-%%DOCDIR%%/samples/lynx-keymaps
-%%DOCDIR%%/samples/lynx.com
-%%DOCDIR%%/samples/lynx.lss
-%%DOCDIR%%/samples/mailcap
-%%DOCDIR%%/samples/mild-colors.lss
-%%DOCDIR%%/samples/mime.types
-%%DOCDIR%%/test/ALT88592.html
-%%DOCDIR%%/test/ISO_LATIN1_test.html
-%%DOCDIR%%/test/README.txt
-%%DOCDIR%%/test/TestComment.html
-%%DOCDIR%%/test/c1.html
-%%DOCDIR%%/test/iso8859-1.html
-%%DOCDIR%%/test/iso88592.html
-%%DOCDIR%%/test/raw8bit.html
-%%DOCDIR%%/test/sgml.html
-%%DOCDIR%%/test/spaces.html
-%%DOCDIR%%/test/tabtest.html
-%%DOCDIR%%/test/unicode.html
-@dirrm %%DOCDIR%%/test
-@dirrm %%DOCDIR%%/samples
-@dirrm %%DOCDIR%%
+%%PORTDOCS%%%%DOCDIR%%/CHANGES
+%%PORTDOCS%%%%DOCDIR%%/CHANGES.orig
+%%PORTDOCS%%%%DOCDIR%%/COPYHEADER
+%%PORTDOCS%%%%DOCDIR%%/COPYING
+%%PORTDOCS%%%%DOCDIR%%/PROBLEMS
+%%PORTDOCS%%%%DOCDIR%%/README
+%%PORTDOCS%%%%DOCDIR%%/samples/blue-background.lss
+%%PORTDOCS%%%%DOCDIR%%/samples/bright-blue.lss
+%%PORTDOCS%%%%DOCDIR%%/samples/cernrules.txt
+%%PORTDOCS%%%%DOCDIR%%/samples/installdirs.html
+%%PORTDOCS%%%%DOCDIR%%/samples/jumpsUnix.html
+%%PORTDOCS%%%%DOCDIR%%/samples/jumpsVMS.html
+%%PORTDOCS%%%%DOCDIR%%/samples/lynx-keymaps
+%%PORTDOCS%%%%DOCDIR%%/samples/lynx.com
+%%PORTDOCS%%%%DOCDIR%%/samples/lynx.lss
+%%PORTDOCS%%%%DOCDIR%%/samples/mailcap
+%%PORTDOCS%%%%DOCDIR%%/samples/mailto-form.pl
+%%PORTDOCS%%%%DOCDIR%%/samples/mild-colors.lss
+%%PORTDOCS%%%%DOCDIR%%/samples/mime.types
+%%PORTDOCS%%%%DOCDIR%%/test/ALT88592.html
+%%PORTDOCS%%%%DOCDIR%%/test/ISO_LATIN1_test.html
+%%PORTDOCS%%%%DOCDIR%%/test/README.txt
+%%PORTDOCS%%%%DOCDIR%%/test/TestComment.html
+%%PORTDOCS%%%%DOCDIR%%/test/c1.html
+%%PORTDOCS%%%%DOCDIR%%/test/iso8859-1.html
+%%PORTDOCS%%%%DOCDIR%%/test/iso88592.html
+%%PORTDOCS%%%%DOCDIR%%/test/raw8bit.html
+%%PORTDOCS%%%%DOCDIR%%/test/sgml.html
+%%PORTDOCS%%%%DOCDIR%%/test/spaces.html
+%%PORTDOCS%%%%DOCDIR%%/test/tabtest.html
+%%PORTDOCS%%%%DOCDIR%%/test/unicode.html
+%%PORTDOCS%%@dirrm %%DOCDIR%%/test
+%%PORTDOCS%%@dirrm %%DOCDIR%%/samples
+%%PORTDOCS%%@dirrm %%DOCDIR%%
 @dirrm %%HELPDIR%%/keystrokes
 @dirrm %%HELPDIR%%
