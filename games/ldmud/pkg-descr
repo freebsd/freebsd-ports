@@ -1,0 +1,9 @@
+LDMud started as a project to clean up and modernize Amylaar's LPMud
+gamedriver. Primary goals are full documentation, a commented source
+body and out-of-the-box support for the major mudlibs, of which the
+commented source body has been pretty much completed. During the
+course of work a lot of bug fixes and improvements found their way
+into the driver - much more than originally expected, and definitely
+enough to make LDMud a driver in its own right.
+
+WWW: http://www.bearnip.com/lars/proj/ldmud.html

@@ -1,0 +1,37 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" = "PRE-INSTALL" ]; then
+	exit 0
+fi
+
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+USER=mud
+GROUP=${USER}
+UID=97
+GID=${UID}
+
+if pw groupshow "${GROUP}" 2>/dev/null; then
+	echo "Using existing group \"${GROUP}\"."
+else
+	if pw groupadd "${GROUP}" -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if pw usershow "${USER}" 2>/dev/null; then
+	echo "Using existing user \"${USER}\"."
+else
+	if pw useradd "${USER}" -u ${UID} -g "${GROUP}" -h - \
+		-s "/bin/sh" -d "/nonexistent" -c "MUD Owner"
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
