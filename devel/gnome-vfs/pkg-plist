@@ -2,49 +2,54 @@ bin/gnome-vfs-config
 etc/gnome-vfs-mime-magic
 etc/vfs/modules/default-modules.conf
 etc/vfsConf.sh
-etc/vfspthreadConf.sh
-include/libgnomevfs/gnome-vfs-application-registry.h
-include/libgnomevfs/gnome-vfs-async-ops.h
-include/libgnomevfs/gnome-vfs-backend.h
-include/libgnomevfs/gnome-vfs-cancellable-ops.h
-include/libgnomevfs/gnome-vfs-cancellation.h
-include/libgnomevfs/gnome-vfs-configuration.h
-include/libgnomevfs/gnome-vfs-constants.h
-include/libgnomevfs/gnome-vfs-context.h
-include/libgnomevfs/gnome-vfs-directory-filter.h
-include/libgnomevfs/gnome-vfs-directory.h
-include/libgnomevfs/gnome-vfs-file-info.h
-include/libgnomevfs/gnome-vfs-file-size.h
-include/libgnomevfs/gnome-vfs-find-directory.h
-include/libgnomevfs/gnome-vfs-handle.h
-include/libgnomevfs/gnome-vfs-inet-connection.h
-include/libgnomevfs/gnome-vfs-init.h
-include/libgnomevfs/gnome-vfs-iobuf.h
-include/libgnomevfs/gnome-vfs-list-sort.h
-include/libgnomevfs/gnome-vfs-messages.h
-include/libgnomevfs/gnome-vfs-method.h
-include/libgnomevfs/gnome-vfs-mime-handlers.h
-include/libgnomevfs/gnome-vfs-mime-info.h
-include/libgnomevfs/gnome-vfs-mime-magic.h
-include/libgnomevfs/gnome-vfs-mime-monitor.h
-include/libgnomevfs/gnome-vfs-mime-sniff-buffer.h
-include/libgnomevfs/gnome-vfs-mime.h
-include/libgnomevfs/gnome-vfs-module-shared.h
-include/libgnomevfs/gnome-vfs-module.h  
-include/libgnomevfs/gnome-vfs-ops.h
-include/libgnomevfs/gnome-vfs-parse-ls.h
-include/libgnomevfs/gnome-vfs-private-types.h
-include/libgnomevfs/gnome-vfs-private-utils.h
-include/libgnomevfs/gnome-vfs-private.h
-include/libgnomevfs/gnome-vfs-regexp-filter.h
-include/libgnomevfs/gnome-vfs-result.h
-include/libgnomevfs/gnome-vfs-seekable.h
-include/libgnomevfs/gnome-vfs-shellpattern-filter.h
-include/libgnomevfs/gnome-vfs-types.h
-include/libgnomevfs/gnome-vfs-uri.h
-include/libgnomevfs/gnome-vfs-utils.h
-include/libgnomevfs/gnome-vfs-xfer.h
-include/libgnomevfs/gnome-vfs.h
+include/libgnomevfs
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-async-ops.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-backend.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-cancellable-ops.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-cancellation.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-configuration.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-context.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-directory-filter.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-directory.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-file-info.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-file-size.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-find-directory.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-handle.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-inet-connection.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-init.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-iobuf.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-messages.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-method.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime-handlers.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime-info.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime-magic.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime-monitor.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime-sniff-buffer.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-mime.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-module-callback-module-api.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-module-callback.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-module-shared.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-module.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-ops.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-parse-ls.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-private-utils.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-private.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-regexp-filter.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-result.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-seekable.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-shellpattern-filter.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-socket-buffer.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-socket.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-ssl-private.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-ssl.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-standard-callbacks.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-transform.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-types.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-uri.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-utils.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-xfer.h
+include/gnome-vfs-1.0/libgnomevfs/gnome-vfs.h
 lib/libgnomevfs-pthread.a
 lib/libgnomevfs-pthread.so
 lib/libgnomevfs-pthread.so.0
@@ -68,16 +73,25 @@ lib/vfs/extfs/tar
 lib/vfs/extfs/trpm
 lib/vfs/extfs/zip
 lib/vfs/extfs/zoo
-lib/vfs/include/gnome-vfs-file-size.h
+lib/vfs/modules/libbzip2.a
 lib/vfs/modules/libbzip2.so
+lib/vfs/modules/libextfs.a
 lib/vfs/modules/libextfs.so
+lib/vfs/modules/libfile.a
 lib/vfs/modules/libfile.so
+lib/vfs/modules/libftp.a
 lib/vfs/modules/libftp.so
+lib/vfs/modules/libgconf.a
 lib/vfs/modules/libgconf.so
+lib/vfs/modules/libgzip.a
 lib/vfs/modules/libgzip.so
+lib/vfs/modules/libhttp.a
 lib/vfs/modules/libhttp.so
+lib/vfs/modules/libvfs-pipe.a
 lib/vfs/modules/libvfs-pipe.so
+lib/vfs/modules/libvfs-test.a
 lib/vfs/modules/libvfs-test.so
+lib/vfs/modules/libvfs-translate.a
 lib/vfs/modules/libvfs-translate.so
 share/gnome/application-registry/gnome-vfs.applications
 share/gnome/mime-info/gnome-vfs.keys
@@ -108,13 +122,15 @@ share/locale/sk/LC_MESSAGES/gnome-vfs.mo
 share/locale/sl/LC_MESSAGES/gnome-vfs.mo
 share/locale/sv/LC_MESSAGES/gnome-vfs.mo
 share/locale/tr/LC_MESSAGES/gnome-vfs.mo
-share/locale/uk/LC_MESSAGES/gnome-vfs.mo  
+share/locale/uk/LC_MESSAGES/gnome-vfs.mo
 share/locale/wa/LC_MESSAGES/gnome-vfs.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-vfs.mo
+@dirrm share/gnome/gtk-doc/html/gnome-vfs
 @dirrm share/gnome/application-registry
 @dirrm lib/vfs/modules
-@dirrm lib/vfs/include
 @dirrm lib/vfs/extfs
 @dirrm lib/vfs
-@dirrm include/libgnomevfs
+@dirrm include/gnome-vfs-1.0/libgnomevfs
+@dirrm include/gnome-vfs-1.0
 @dirrm etc/vfs/modules
 @dirrm etc/vfs

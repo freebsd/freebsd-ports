@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- vfsConf.sh.in	2001/09/28 11:13:40	1.1
++++ vfsConf.sh.in	2001/09/28 11:15:11
+@@ -2,6 +2,6 @@
+ #  Configuration file for using the gnome-vfs library
+ #
+ VFS_LIBDIR="@VFS_LIBDIR@"
+-VFS_LIBS="@VFS_LIBS@"
++VFS_LIBS="@VFS_LIBS@ @PTHREAD_LIB@"
+ VFS_INCLUDEDIR="@VFS_INCLUDEDIR@"
+ MODULE_VERSION="gnome-vfs-@VERSION@"

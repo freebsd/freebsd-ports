@@ -1,18 +1,31 @@
---- configure.orig	Mon May  7 18:12:27 2001
-+++ configure	Thu May 10 13:24:14 2001
-@@ -2365,3 +2365,3 @@
-   VFS_CAPPLET_LIBS="`gnome-config --libs gnome gnomeui capplet`"
--  VFS_GLIB_CONFIG="glib-config"
-+  VFS_GLIB_CONFIG="$GLIB_CONFIG"
- else
-@@ -6924,4 +6924,4 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Sep 17 17:07:27 2001
++++ configure	Mon Sep 17 17:08:56 2001
+@@ -5868,7 +5868,7 @@
+ VFS_GNOMEUI_LIBS="`gnome-config --libs gnome gnomeui`"
+ VFS_GNOMEGNORBA_LIBS="`gnome-config --libs gnome gnomeui gnorba`"
+ VFS_CAPPLET_LIBS="`gnome-config --libs gnome gnomeui capplet`"
+-VFS_GLIB_CONFIG="glib-config"
++VFS_GLIB_CONFIG="$GLIB_CONFIG"
+ 
+ 
+ 
+@@ -10472,8 +10472,8 @@
+   done
+ fi
  
 -echo $ac_n "checking for bzCompressInit in -lbz2""... $ac_c" 1>&6
--echo "configure:6927: checking for bzCompressInit in -lbz2" >&5
+-echo "configure:10477: checking for bzCompressInit in -lbz2" >&5
 +echo $ac_n "checking for BZ2_bzCompressInit in -lbz2""... $ac_c" 1>&6
-+echo "configure:6927: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo "configure:10477: checking for BZ2_bzCompressInit in -lbz2" >&5
  ac_lib_var=`echo bz2'_'bzCompressInit | sed 'y%./+-%__p_%'`
-@@ -6938,6 +6938,6 @@
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -10486,10 +10486,10 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
      builtin and then its argument prototype would still apply.  */
 -char bzCompressInit();
 +char BZ2_bzCompressInit();
@@ -21,3 +34,5 @@
 -bzCompressInit()
 +BZ2_bzCompressInit()
  ; return 0; }
+ EOF
+ if { (eval echo configure:10496: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
