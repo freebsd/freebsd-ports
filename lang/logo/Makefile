@@ -12,6 +12,8 @@ MASTER_SITES= 	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.berkeley.edu/pub/ucblogo/
 MASTER_SITE_SUBDIR=non-gnu/ucblogo
 
+WRKSRC=		${WRKDIR}/ucblogo
+
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
 .endif
