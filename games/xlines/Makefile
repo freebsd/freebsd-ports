@@ -3,7 +3,7 @@
 # Date created:				11 February 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/02/13 18:08:28 vanilla Exp $
 #
 
 DISTNAME=	xlines
@@ -17,18 +17,19 @@ LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11/qt
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 
 USE_X11=	yes
-WRKSRC=		${WRKDIR}
+NO_WRKSUBDIR=	yes
 
-pre-patch:
-	 @ ${TR} -d "\015" < ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.new
-	 @ ${MV} ${WRKSRC}/Makefile.new ${WRKSRC}/Makefile
+pre-build:
+	@ ${RM} ${WRKSRC}/lines.moc
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xlines ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/xlines
 	@ ${INSTALL_DATA} ${WRKSRC}/trolltech.gif ${PREFIX}/share/xlines
+.if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/xlines
 	@ ${INSTALL_DATA} ${WRKSRC}/readme.lines ${PREFIX}/share/doc/xlines
 	@ ${INSTALL_DATA} ${WRKSRC}/readme.qt ${PREFIX}/share/doc/xlines
+.endif
 
 .include <bsd.port.mk>

@@ -1,20 +1,16 @@
---- Makefile.orig	Fri Feb 13 23:57:06 1998
-+++ Makefile	Fri Feb 13 23:57:30 1998
+--- Makefile	Mon Apr 27 21:47:35 1998
++++ /home/andy/tmp/wrk/Makefile	Mon Jul  6 11:56:02 1998
 @@ -1,8 +1,8 @@
 -INCDIR=/usr/local/qt/include
--CFLAGS=-O2 -I/usr/X11/include 
+-CFLAGS=-O2 -I/usr/X11/include -DSHOW_NEXT_COLORS
 -LFLAGS=-L/usr/local/qt/lib -lqt -L/usr/X11/lib -lX11
-+INCDIR=/usr/X11R6/include/X11/qt
-+CFLAGS=-O2 -m486 -pipe -I/usr/X11R6/include 
-+LFLAGS=-L/usr/X11R6/lib -lX11 -lqt
- CC=gcc
+-CC=gcc
 -MOC=/usr/local/qt/bin/moc
-+MOC=/usr/X11R6/bin/moc
++INCDIR=${X11BASE}/include/X11/qt
++CFLAGS+=-I${X11BASE}/include -DSHOW_NEXT_COLORS
++LFLAGS=-L${X11BASE}/lib -lqt -lX11
++#CC=gcc
++MOC=${X11BASE}/bin/moc
  
  SRC=lines.cpp lines.moc
- OBJECTS=lines.o
-@@ -23,3 +23,4 @@
- 
- lines.moc: lines.h
- 	$(MOC) lines.h -o lines.moc
-+
+ OBJECTS=lines.o 
