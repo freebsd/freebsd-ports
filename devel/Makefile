@@ -927,7 +927,6 @@
     SUBDIR += rvm
     SUBDIR += scandoc
     SUBDIR += scons
-    SUBDIR += sdcc
     SUBDIR += sdl12
     SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
