@@ -20,9 +20,8 @@ LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
