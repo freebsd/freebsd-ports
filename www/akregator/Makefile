@@ -8,8 +8,9 @@ PORTNAME=	akregator
 PORTVERSION=	1.0.b8
 PORTREVISION=	2
 CATEGORIES=	www kde
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://people.freebsd.org/~lofi/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/_beta/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -23,10 +24,5 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
 USE_REINPLACE=		yes
-
-post-patch:
-	${TOUCH} -t 200411261335.39 ${WRKSRC}/configure.in.in
-	${TOUCH} -t 200411261335.45 ${WRKSRC}/configure.in
-	${REINPLACE_CMD} -e "s,xx,," ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
