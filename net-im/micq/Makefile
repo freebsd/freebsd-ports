@@ -1,14 +1,14 @@
 # New ports collection makefile for:	micq
-# Version required:			0.4.0
+# Version required:                     0.4.*
 # Date created:				11 Oct 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.4 1999/01/07 18:38:53 mph Exp $
+# $Id: Makefile,v 1.5 1999/04/06 20:46:56 mph Exp $
 #
 
-DISTNAME=	micq-0.4.0
+DISTNAME=       micq-0.4.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://micq.chatzone.org/pub/micq/V0.4.0/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.1/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mph@freebsd.org
