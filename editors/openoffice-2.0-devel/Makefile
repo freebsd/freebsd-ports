@@ -27,9 +27,10 @@ CUT?=	/usr/bin/cut
 AWK?=	/usr/bin/awk
 GREP?=	/usr/bin/grep
 MOUNT?=	/sbin/mount
-ZIP?=	${PREFIX}/bin/zip
-UNZIP?=	${PREFIX}/bin/unzip
 TCSH?=	/bin/tcsh
+ZIP?=	${LOCALBASE}/bin/zip
+UNZIP?=	${LOCALBASE}/bin/unzip
+ANT?=   ${LOCALBASE}/bin/ant
 
 .include <bsd.port.pre.mk>
 
