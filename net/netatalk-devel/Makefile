@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5p7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -64,6 +64,9 @@ MAN8=		afpd.8 atalkd.8 pap.8 papd.8 papstatus.8 psf.8
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/netatalk.sh \
 		> ${WRKSRC}/netatalk.sh
+
+post-configure:
+	@${TOUCH} ${WRKSRC}/config/Makefile.in
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
