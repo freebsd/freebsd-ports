@@ -1008,6 +1008,7 @@ cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
 cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
+cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
 d1489		ports/russian/d1489
 dadadodo	ports/textproc/dadadodo
