@@ -19,7 +19,7 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack lthack gnomeprefix gnometarget libxml2 pkgconfig
+USE_GNOME=	gnomehack lthack gnomeprefix gnometarget glib20 libxml2 pkgconfig
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
