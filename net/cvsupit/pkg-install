@@ -75,6 +75,7 @@ just the kernel, for example, then select src-sys.
     "src-base"		"Misc files directly under /usr/src" No \
     "src-bin"		"Sources for things in /bin" No \
     "src-contrib"	"Sources for contributed packages" No \
+    "src-crypto"	"Sources for cryptographic utilities" No \
     "src-etc"		"Sources for things in /etc" No \
     "src-games"		"Sources for things in /usr/games" No \
     "src-gnu"		"Sources for GNU utils (requires src-contrib)" No \
@@ -84,6 +85,7 @@ just the kernel, for example, then select src-sys.
     "src-lib"		"Sources for things in /usr/lib" No \
     "src-libexec"	"Sources for things in /usr/libexec" No \
     "src-release"	"Sources for release building tools" No \
+    "src-secure"	"Sources for security applications" No \
     "src-sbin"		"Sources for things in /sbin" No \
     "src-share"		"Sources for things in /usr/share" No \
     "src-sys"		"Sources for the kernel (/usr/src/sys)" No \
@@ -119,10 +121,9 @@ will, select the CVS repository tag (note: you will still need to use
 CVS in manually checking out and maintaining a /usr/src tree if you
 choose to go this route).
 " -1 -1 5 \
-    "RELENG_4_5" "The 4.5 point release / patch branch" \
+    "RELENG_4_6" "The 4.6 point release / patch branch" \
     "RELENG_4" "The 4.x-stable branch" \
     "RELENG_3" "The 3.x-stable branch" \
-    "RELENG_2_2" "The 2.2.x-stable branch" \
     "cvs" "The CVS repository (all branches)" \
     "." "The 5.0-current branch (. = HEAD)" \
     "none" "Skip the updating of /usr/src" 2>/tmp/menu.src.$$; then
