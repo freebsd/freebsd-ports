@@ -65,6 +65,7 @@
     SUBDIR += mupen64-glide
     SUBDIR += mupen64-gln64
     SUBDIR += mupen64-input
+    SUBDIR += mupen64-rice
     SUBDIR += osf1_base
     SUBDIR += p-interp
     SUBDIR += pcemu

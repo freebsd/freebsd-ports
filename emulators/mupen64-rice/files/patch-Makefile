@@ -1,0 +1,18 @@
+--- Makefile.orig	Sat Jul  3 22:23:08 2004
++++ Makefile	Thu Aug 12 16:37:42 2004
+@@ -1,10 +1,10 @@
+-CC = gcc
++#CC = gcc
+ #CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -g -mmmx -msse
+-CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -O3 -mcpu=athlon -ffast-math -funroll-loops -fomit-frame-pointer -msse -mmmx
+-CXX = g++
++#CFLAGS = -DUSE_GTK `sdl-config --cflags` `gtk-config --cflags` -O3 -mcpu=athlon -ffast-math -funroll-loops -fomit-frame-pointer -msse -mmmx
++#CXX = g++
+ CPPFLAGS = $(CFLAGS)
+-LD = g++
+-LDFLAGS = -lGL -lGLU -L/usr/X11R6/lib -lSDL
++#LD = g++
++#LDFLAGS = -lGL -lGLU -L/usr/X11R6/lib -lSDL
+ 
+ OBJECTS = DaedalusGraphics.o \
+ 	DaedalusRenderBase.o \
