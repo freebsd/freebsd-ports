@@ -1,0 +1,29 @@
+bin/sbcl
+lib/sbcl.core
+share/doc/sbcl/BUGS
+share/doc/sbcl/COPYING
+share/doc/sbcl/CREDITS
+%%PORTDOCS%%share/doc/sbcl/html/HTML.manifest
+%%PORTDOCS%%share/doc/sbcl/html/beyond-ansi.html
+%%PORTDOCS%%share/doc/sbcl/html/compiler-policy.html
+%%PORTDOCS%%share/doc/sbcl/html/compiler.html
+%%PORTDOCS%%share/doc/sbcl/html/efficiency.html
+%%PORTDOCS%%share/doc/sbcl/html/extensions.html
+%%PORTDOCS%%share/doc/sbcl/html/ffi.html
+%%PORTDOCS%%share/doc/sbcl/html/idiosyncrasies.html
+%%PORTDOCS%%share/doc/sbcl/html/implementation.html
+%%PORTDOCS%%share/doc/sbcl/html/index.html
+%%PORTDOCS%%share/doc/sbcl/html/intro.html
+%%PORTDOCS%%share/doc/sbcl/html/x1042.html
+%%PORTDOCS%%share/doc/sbcl/html/x1054.html
+%%PORTDOCS%%share/doc/sbcl/html/x1077.html
+%%PORTDOCS%%share/doc/sbcl/html/x1169.html
+%%PORTDOCS%%share/doc/sbcl/html/x282.html
+%%PORTDOCS%%share/doc/sbcl/html/x42.html
+%%PORTDOCS%%share/doc/sbcl/html/x452.html
+%%PORTDOCS%%share/doc/sbcl/html/x731.html
+%%PORTDOCS%%share/doc/sbcl/html/x897.html
+%%PORTDOCS%%share/doc/sbcl/html/x983.html
+%%PORTDOCS%%share/doc/sbcl/html/z1195.html
+%%PORTDOCS%%@dirrm share/doc/sbcl/html
+@dirrm share/doc/sbcl
