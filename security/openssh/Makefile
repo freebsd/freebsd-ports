@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -29,10 +29,14 @@ MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
 		ssh-keygen/Makefile ssh-keyscan/Makefile sshd/Makefile
+ADDME+=		netdb.h auth-pam.c auth-pam.h auth2-pam.c
+ADDLIB+=	strlcat.c strlcpy.c \
+		getaddrinfo.c name6.c bindresvport.c rcmd.c getnameinfo.c
 PRECIOUS=	ssh_config sshd_config \
 		ssh_host_key ssh_host_key.pub \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
 		ssh_host_dsa_key ssh_host_dsa_key.pub
+PAM=no
 
 .include <bsd.port.pre.mk>
 
@@ -69,14 +73,13 @@ ETCSSH=		${PREFIX}/etc/ssh
 WRKSRC=		${WRKDIR}/ssh
 
 post-extract:
-	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
 	@${CP} ${FILESDIR}/sshd.sh ${WRKSRC}/
-.if ${OSVERSION} < 400014
-	@${CP} ${FILESDIR}/getaddrinfo.c  ${FILESDIR}/name6.c ${WRKSRC}/lib/
-	@${CP} ${FILESDIR}/bindresvport.c ${FILESDIR}/rcmd.c ${WRKSRC}/lib/
-	@${CP} ${FILESDIR}/getnameinfo.c ${WRKSRC}/lib/
-	@${CP} ${FILESDIR}/netdb.h ${WRKSRC}/
-.endif
+.for i in ${ADDLIB}
+	@${CP} ${FILESDIR}/${i} ${WRKSRC}/lib/
+.endfor
+.for i in ${ADDME}
+	@${CP} ${FILESDIR}/${i} ${WRKSRC}/
+.endfor
 
 post-patch:
 .for i in ${MODIFY:S/pathnames.h//} ${MAN1:S/slogin.1//} ${MAN5} ${MAN8}
@@ -101,11 +104,15 @@ post-configure:
 		-e "s=AFS[:]L=AFS=" \
 		-e "s=TCP_WRAPPERS[:]L=TCP_WRAPPERS=" \
 		-e "s=SKEY[:]L=SKEY=" \
+		-e "s=PAM[:]L=PAM=" \
 		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
 .endif
 
 pre-install:
+	if ! pw groupshow sshd; then pw groupadd sshd -g 22; fi
+	if ! pw usershow sshd; then pw useradd sshd -g sshd -u 22 \
+		-h - -d ${PREFIX}/empty -s /nonexistent -c "sshd privilege separation"; fi
 	${MKDIR} ${PREFIX}/libdata/ssh
 	${MKDIR} ${PREFIX}/empty
 	${MKDIR} ${ETCSSH}

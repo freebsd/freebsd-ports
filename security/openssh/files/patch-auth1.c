@@ -1,6 +1,6 @@
 --- auth1.c.orig	Wed Jun 19 02:27:55 2002
-+++ auth1.c	Mon Jun 24 21:18:53 2002
-@@ -27,6 +27,14 @@
++++ auth1.c	Mon Jun 24 23:54:35 2002
+@@ -27,6 +27,15 @@
  #include "uidswap.h"
  #include "monitor_wrap.h"
  
@@ -8,6 +8,7 @@
 +#include <login_cap.h>
 +#endif /* HAVE_LOGIN_CAP */
 +#ifdef USE_PAM
++#include "canohost.h"
 +#include "auth-pam.h"
 +#include <security/pam_appl.h>
 +#endif /* USE_PAM */
@@ -15,7 +16,7 @@
  /* import */
  extern ServerOptions options;
  
-@@ -75,6 +83,16 @@
+@@ -75,6 +84,16 @@
  	u_int ulen;
  	int type = 0;
  	struct passwd *pw = authctxt->pw;
@@ -32,7 +33,7 @@
  
  	debug("Attempting authentication for %s%.100s.",
  	    authctxt->valid ? "" : "illegal user ", authctxt->user);
-@@ -84,7 +102,11 @@
+@@ -84,7 +103,11 @@
  #if defined(KRB4) || defined(KRB5)
  	    (!options.kerberos_authentication || options.kerberos_or_local_passwd) &&
  #endif
@@ -45,7 +46,7 @@
  		auth_log(authctxt, 1, "without authentication", "");
  		return;
  	}
-@@ -94,6 +116,8 @@
+@@ -94,6 +117,8 @@
  	packet_send();
  	packet_write_wait();
  
@@ -54,7 +55,7 @@
  	for (;;) {
  		/* default to fail */
  		authenticated = 0;
-@@ -243,12 +267,48 @@
+@@ -243,12 +268,48 @@
  			packet_check_eom();
  
  			/* Try authentication with the password. */
@@ -104,7 +105,7 @@
  		case SSH_CMSG_AUTH_TIS:
  			debug("rcvd SSH_CMSG_AUTH_TIS");
  			if (options.challenge_response_authentication == 1) {
-@@ -275,6 +335,12 @@
+@@ -275,6 +336,12 @@
  				xfree(response);
  			}
  			break;
@@ -117,7 +118,7 @@
  
  		default:
  			/*
-@@ -284,6 +350,34 @@
+@@ -284,6 +351,34 @@
  			log("Unknown message during authentication: type %d", type);
  			break;
  		}
@@ -152,7 +153,7 @@
  #ifdef BSD_AUTH
  		if (authctxt->as) {
  			auth_close(authctxt->as);
-@@ -299,9 +393,24 @@
+@@ -299,9 +394,24 @@
  		    !auth_root_allowed(get_authname(type)))
  			authenticated = 0;
  
@@ -178,7 +179,7 @@
  		if (authenticated)
  			return;
  
-@@ -354,6 +463,11 @@
+@@ -354,6 +464,11 @@
  		authctxt->valid = 1;
  	else
  		debug("do_authentication: illegal user %s", user);

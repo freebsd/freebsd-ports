@@ -1,5 +1,5 @@
---- sshd/Makefile.orig	Fri Jun 21 23:06:22 2002
-+++ sshd/Makefile	Fri Jun 21 23:06:56 2002
+--- sshd/Makefile.orig	Tue Jun 25 00:07:14 2002
++++ sshd/Makefile	Tue Jun 25 00:17:30 2002
 @@ -5,8 +5,9 @@
  PROG=	sshd
  BINOWN=	root
@@ -24,7 +24,7 @@
  SRCS+=  auth-krb5.c
  LDADD+= -lkrb5 -lkafs -lasn1 -lcom_err
  DPADD+= ${LIBKRB5} ${LIBKAFS} ${LIBASN1} ${LIBCOM_ERR}
-@@ -33,15 +35,15 @@
+@@ -33,15 +35,22 @@
  LDADD+=  -lkafs
  DPADD+=  ${LIBKAFS}
  .endif # AFS
@@ -36,6 +36,13 @@
  DPADD+=	 ${LIBKRB}
  .endif # KERBEROS
  
++.if (${PAM:L} == "yes")
++CFLAGS+= -DUSE_PAM -Dmm_auth_pam_password=auth_pam_password
++SRCS+= auth-pam.c auth2-pam.c
++LDADD+= -lpam
++DPADD+= ${PAM}
++.endif
++
  .include <bsd.prog.mk>
  
 -LDADD+=	-lcrypto -lutil -lz -ldes
@@ -43,3 +50,11 @@
  DPADD+=	${LIBCRYPTO} ${LIBUTIL} ${LIBZ} ${LIBDES}
  
  .if (${TCP_WRAPPERS:L} == "yes")
+@@ -52,6 +61,6 @@
+ 
+ .if (${SKEY:L} == "yes")
+ CFLAGS+= -DSKEY
+-LDADD+= -lskey
++LDADD+= -lopie
+ DPADD+= ${SKEY}
+ .endif

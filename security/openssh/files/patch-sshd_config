@@ -6,7 +6,7 @@
  #UseLogin no
 +UseLogin yes
  #UsePrivilegeSeparation yes
-+UsePrivilegeSeparation no
++UsePrivilegeSeparation yes
  #Compression yes
  
  #MaxStartups 10
