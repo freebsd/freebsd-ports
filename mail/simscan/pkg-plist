@@ -1,0 +1,7 @@
+@cwd %%QMAIL_DIR%%
+bin/simscanmk
+bin/simscan
+@unexec rmdir %%QMAIL_DIR%%/%%SIMSCAN_DIR%% || true
+@unexec echo ""
+@unexec echo "If you're not updating this port, you can delete %%QMAIL_DIR%%/%%SIMSCAN_DIR%% directory"
+@unexec echo ""

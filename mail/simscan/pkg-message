@@ -1,0 +1,23 @@
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=
+NOTES:
+
+* You have to configure your anti-virus and anti-spam products!
+
+* You have to modify your qmail startup files to call simscan.
+In most cases, you just need to edit /var/qmail/tcp.smtp in
+order to call simscan instead of qmail-queue, by setting up
+QMAILQUEUE variable. For example:
+
+127.0.0.1:allow,RELAYCLIENT=""
+192.168.0.:allow,RELAYCLIENT="",QMAILQUEUE="/var/qmail/bin/simscan"
+:allow,QMAILQUEUE="/var/qmail/bin/simscan"
+
+* Don't forget to rebuild tcp.smtp.cdb from new tcp.smtp using tcprules!
+
+* Also, read documentation about how to configure 
+attachment blocking and per domain processing. 
+Additional documentation can be found here: 
+http://qmailwiki.inter7.com/index.php?title=Simscan
+
+=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=

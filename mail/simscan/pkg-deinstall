@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+USER=simscan
+GROUP=${USER}
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+pw groupdel -n ${GROUP} || true
+pw userdel -n ${GROUP} || true

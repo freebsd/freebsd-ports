@@ -433,6 +433,7 @@
     SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += silkymail
+    SUBDIR += simscan
     SUBDIR += sma
     SUBDIR += smail
     SUBDIR += smtpclient
