@@ -1,11 +1,7 @@
-Bash is the GNU Project's Bourne
-Again SHell, an interactive shell with Bourne shell syntax (/bin/sh);
+This is GNU Bash, version 3.0.  Bash is the GNU Project's Bourne
+Again SHell, a complete implementation of the POSIX.2 shell spec,
 but also with interactive command line editing, job control on
-architectures that support it, Csh-like history features and brace
-expansion, and a slew of other stuff.  For more information on the
-features of Bash that are new to this type of shell, see the file
-`documentation/features.texi'.  There is also a processed DVI file
-there, as well as a large man page.
+architectures that support it, csh-like features such as history
+substitution and brace expansion, and a slew of other features. 
 
-WWW: http://www.gnu.org/software/bash/
-     http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
+WWW: http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html

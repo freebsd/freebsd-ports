@@ -7,6 +7,7 @@
     SUBDIR += bash-completion
     SUBDIR += bash1
     SUBDIR += bash2
+    SUBDIR += bash3
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += fd
