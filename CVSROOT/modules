@@ -6430,6 +6430,7 @@ qiv		ports/graphics/qiv
 qix		ports/games/qix
 qkmj		ports/games/qkmj
 qlas		ports/misc/qlas
+qlogtools	ports/sysutils/qlogtools
 qlwm		ports/x11-wm/qlwm
 qmHandle	ports/mail/qmHandle
 qmail		ports/mail/qmail
