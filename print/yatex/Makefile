@@ -40,10 +40,12 @@ INFODIR=	${EMACSDIR}/info
 PLIST=		${PKGDIR}/PLIST.xemacs-mule
 MANIFEST=	MANIFEST.yatex
 .elif defined(MULE)
+EMACS=		mule
 EMACSDIR=	${PREFIX}/share/mule
 INFODIR=	${PREFIX}/info
 PLIST=		${PKGDIR}/PLIST.mule
 .else
+EMACS=		emacs
 EMACSDIR=	${PREFIX}/share/emacs
 INFODIR=	${PREFIX}/info
 PLIST=		${PKGDIR}/PLIST.emacs
