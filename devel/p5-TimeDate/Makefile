@@ -3,7 +3,7 @@
 # Date created:			Mon Sep  1 17:03:41 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-#   $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/01 16:05:36 andreas Exp $
 #
 
 DISTNAME=	TimeDate-1.07

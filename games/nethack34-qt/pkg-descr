@@ -1,14 +1,11 @@
 From: http://www.uq.edu.au/~cswallis/nhqt/
 
-NetHack QT - What is it?
-
 NetHack is a Free graphical one-player roleplaying game with a
 highly modular window system interface supporting TTY, VGA, Mac,
 Amiga, and other displays. Qt is a graphical user interface toolkit.
 So, "NetHack with Qt interface" is a version of NetHack which has
 a user interface module written using the Qt toolkit.
 
-How is it better than the plain X11 interface?
 The Qt interface has these extra features: 
 
 o   Tiles (graphics) in the inventory and other item-menu windows. 
@@ -23,32 +20,3 @@ o   You rarely need to put the mouse in a pop-up to interact with it.
 o   Macros - hidden feature - F1=multi-rest F2=multi-search F3=try-it 
 o   It is much easier to code, so new feature-requests are more easily done. 
 o   Sound support.
-
-The standard NetHack X11 interface is written in C using the Athena
-Widgets toolkit. The strongest reason for doing it that way was
-that NetHack is one of the most incredibly portable programs of
-any kind, and the Athena Widget Set is also available for free on
-a large number of X11 implementations. The problem is that Athena
-Widgets (also known as Xaw) is very ugly, difficult to program in,
-and buggy. The Qt interface toolkit on the other hand is written
-in C++ and is freely portable to any X11 implementation, but is
-less widespread, making it inappropriate for the standard NetHack
-X11 interface.
-
-Sound support
-
-The QtNetHack patch includes experimental support for sounds to be
-played based on messages. For example, you can arrange for a gong
-to sound when the message "... cursing shoplifter..." appears. The
-system maps any regular expression (can be just some text) to a
-sound. The QtNetHack windowport is the only one providing this
-method, and it does so using the NAS (Network Audio System) . As
-distributed, the patch enables this feature - see include/config.h
-once you have applied the patch, and look for USER_SOUNDS for an
-explanation of how to disable it if you want to.
-
-You will also want to collect some sound samples to try it out,
-and a .nethackrc attaching them to messages. This package contains
-the .au files that I use, and my ~/.nethackrc. Many of the sounds
-are from the nhsound package, which you can find referenced on the
-NetHack Home Page.

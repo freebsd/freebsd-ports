@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.16 1997/05/04 03:26:54 max Exp $
+# $Id: Makefile,v 1.17 1997/07/13 18:49:26 max Exp $
 #
 
 DISTNAME=	bb
@@ -34,7 +34,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/logs
 	@${MKDIR} ${PREFIX}/${DISTNAME}/www/notes
 	@${MKDIR} ${PREFIX}/${DISTNAME}/tmp
-	@/usr/bin/touch ${PREFIX}/${DISTNAME}/tmp/.keep_me
+	@${TOUCH} ${PREFIX}/${DISTNAME}/tmp/.keep_me
 	${INSTALL_DATA} ${WRKSRC}/README \
 				${PREFIX}/${DISTNAME}/README
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bb \

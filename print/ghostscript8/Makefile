@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.10 1997/09/03 06:57:04 andreas Exp $
+# $Id: Makefile,v 1.11 1997/09/04 14:57:14 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -18,7 +18,6 @@ MAINTAINER=	andreas@FreeBSD.org
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg \
 		/nonexistent:${PORTSDIR}/graphics/png \
 		unzip:${PORTSDIR}/archivers/unzip
-DEPENDS_TARGET=	extract
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}
@@ -50,14 +49,13 @@ pre-fetch:
 	@${ECHO_MSG} "Using -DA4 for compilation."
 .endif
 
-
 post-extract:
-	touch ${WRKSRC}/adler32.c
-	touch ${WRKSRC}/deflate.c
-	touch ${WRKSRC}/trees.c
-	touch ${WRKSRC}/adler32.o
-	touch ${WRKSRC}/deflate.o
-	touch ${WRKSRC}/trees.o
+	${TOUCH} ${WRKSRC}/adler32.c
+	${TOUCH} ${WRKSRC}/deflate.c
+	${TOUCH} ${WRKSRC}/trees.c
+	${TOUCH} ${WRKSRC}/adler32.o
+	${TOUCH} ${WRKSRC}/deflate.o
+	${TOUCH} ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6a ${WRKSRC}/jpeg-6a
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-0.96 ${WRKSRC}/libpng
 	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
