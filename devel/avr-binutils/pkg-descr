@@ -1,3 +1,8 @@
 GNU binutils for Atmel AVR cross-development
 
 Prerequisite for the GCC for AVR cross-compilation environment.
+
+Also included now is the "AVR COFF beta" patch.  It allows avr-objcopy to
+generate AVR (extended) COFF files to be used on Atmel AVR Studio and
+VMLAB.  Note that this patch has known issues, see
+http://www.sax.de/~joerg/README.coff-avr-patch
