@@ -58,8 +58,14 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-nls \
 		--without-motif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-install:
 	-(cd ${PREFIX} && ${GREP} -v "@" ${PLIST} | \
 	  ${XARGS} ${STRIP_CMD} 2> /dev/null || ${TRUE})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

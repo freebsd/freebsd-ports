@@ -30,6 +30,12 @@ MYDESTDIR=	${PREFIX}/BBBike
 PLIST=		${PKGDIR}/pkg-plist.5005
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 do-build:
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
 	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} clean
@@ -54,4 +60,4 @@ do-install:
 	${LN} -s  ${MYDESTDIR}/$f ${PREFIX}/bin/$f
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
