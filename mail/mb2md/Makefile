@@ -12,7 +12,7 @@ MASTER_SITES=	http://batleth.sapienti-sat.org/projects/mb2md/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.pl
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	andy@evo6.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts mbox mailboxes to Maildir
 
 RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
