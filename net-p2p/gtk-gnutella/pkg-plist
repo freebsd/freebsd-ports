@@ -1,1 +1,7 @@
 bin/gtk-gnutella
+share/gtk-gnutella/pixmaps/arrow_down.xpm
+share/gtk-gnutella/pixmaps/arrow_up.xpm
+share/gtk-gnutella/pixmaps/firewall.xpm
+share/gtk-gnutella/pixmaps/no_firewall.xpm
+@dirrm share/gtk-gnutella/pixmaps
+@dirrm share/gtk-gnutella
