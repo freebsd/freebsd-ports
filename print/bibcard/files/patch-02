@@ -1,5 +1,5 @@
 --- bt_ex.c.orig	Thu May 14 09:10:37 1992
-+++ bt_ex.c	Tue Apr  8 15:26:22 1997
++++ bt_ex.c	Sun Mar 31 19:35:56 2002
 @@ -212,7 +212,8 @@
  
  
@@ -27,16 +27,38 @@
  #define	NULL	0
  
  char *				/* found string, or NULL if none */
-@@ -286,7 +290,7 @@
+@@ -286,29 +290,7 @@
  	return(NULL);
      return(scan);
  }
 -
+-
+-char *				/*A case insensitive version */
+-  strcasestr(s, wanted)
+-CONST char *s;
+-CONST char *wanted;
+-{
+-    register CONST char *scan;
+-    register SIZET len;
+-    register char firstc;
+-    extern int strcmp();
+-    extern SIZET strlen();
+-    
+-    firstc =  ( isupper( *wanted) ? tolower( *wanted) : *wanted);
+-    len = strlen(wanted);
+-    for (scan = s; strncasecmp(scan, wanted, len) != 0; ) {
+-	
+-	if (*scan++ == '\0')
+-	  return(NULL);
+-    }
+-    return(scan);
+-}
+-
 +#endif
  
- char *				/*A case insensitive version */
-   strcasestr(s, wanted)
-@@ -640,9 +644,11 @@
+ void toLower(s1)
+      
+@@ -640,9 +622,11 @@
  /* limit for ATTR_LIST including a pad */
  #define MAX_XVIEW_ATTRIBUTES    (255 - 20)
  
