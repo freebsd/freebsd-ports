@@ -18,7 +18,6 @@ COMMENT=	Access a MySQL database through Python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_MYSQL=		yes
-BROKEN_WITH_MYSQL=	41
 
 DOCS=		MANIFEST README doc/*.html
 
