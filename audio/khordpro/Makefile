@@ -15,13 +15,15 @@ MAINTAINER=	sethk@meowfishies.com
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_KDELIBS_VER=2
-USE_AUTOCONF=	yes
 
 post-patch:
-	${PERL} -pi -e "s@-lqt @-lqt2 @g" ${WRKSRC}/khordpro/Makefile.am
-	${PERL} -pi -e "s@/usr/bin@${LOCALBASE}/bin@g" ${WRKSRC}/khordpro/cpm_html.cpp
+	@${PERL} -pi -e "s@-lqt @-lqt2 @g" ${WRKSRC}/khordpro/Makefile.in
+	@${PERL} -pi -e "s@/usr/bin@${LOCALBASE}/bin@g" ${WRKSRC}/khordpro/cpm_html.cpp
+	@${PERL} -pi -e "s@/usr/bin/perl@${PERL}@" ${WRKSRC}/cpm.pl
+	@${PERL} -pi -e "s@-O2@${CFLAGS}@g" ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/khordpro/Makefile.in
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cpm.pl ${PREFIX}/bin/cpm
+	@${INSTALL_SCRIPT} ${WRKSRC}/cpm.pl ${PREFIX}/bin/cpm
 
 .include <bsd.port.mk>
