@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.14 1998/08/18 03:45:02 obrien Exp $
+# $Id: Makefile,v 1.15 1998/09/27 04:25:56 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN_ELF=	"/usr/lib/aout/crt0.o: file not recognized: File format not recognized"
 PLIST_SUB=	GNUHOST=${GNUHOST}
 GNUHOST=	i386-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
@@ -52,10 +53,3 @@ post-install:
 	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc28.1
 
 .include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-BROKEN=		"/usr/lib/aout/crt0.o: file not recognized: File format not recognized"
-GNUHOST=	i386-unknown-freebsdelf
-.else
-GNUHOST=	i386-unknown-freebsd
-.endif
