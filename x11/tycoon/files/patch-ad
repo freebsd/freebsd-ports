@@ -1,0 +1,22 @@
+--- ./xchooser/Imakefile.orig	Fri Sep 19 00:02:41 1997
++++ ./xchooser/Imakefile	Fri Sep 19 00:04:39 1997
+@@ -2,14 +2,14 @@
+ SRCS = xchooser.c xchooser_cb.c xchooser_main.c
+ OBJS = xchooser.o xchooser_cb.o xchooser_main.o
+ XCOMM for LINUX: 
+-EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm XCOMM 
++XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm XCOMM 
+ 
+-XCOMM FOR Solaris
+-XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm -lnsl
++XCOMM FOR FreeBSD
++EXTRA_LIBRARIES  = -lxforms -lXpm -lm
+ 
+ 
+-EXTRA_INCLUDES  = -I/usr/local/include -I/u/grad/mitnits/lib -I.
++EXTRA_INCLUDES  = -I.
+-EXTRA_DEFINES  = -DICON_DIR=\"/usr/include/X11/pixmaps\"
++EXTRA_DEFINES  = -DICON_DIR=\"${INCDIR}/pixmaps\"
+ LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
+ 
+ ComplexProgramTarget(xchooser)

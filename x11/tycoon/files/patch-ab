@@ -1,0 +1,13 @@
+--- ./tycoon/Imakefile.orig	Thu Sep 18 23:46:15 1997
++++ ./tycoon/Imakefile	Thu Sep 18 23:47:03 1997
+@@ -26,8 +26,8 @@
+ VERSION=1.07o
+ SRCS = wiconsh.c blip.c tycoon.c main.c DragAndDrop.c menu.c
+ OBJS = wiconsh.o blip.o tycoon.o main.o DragAndDrop.o menu.o
+-EXTRA_LIBRARIES  = -L/usr/local/lib -L/users/matar/interu/segel/mitnits/lib -lXpm
+-EXTRA_INCLUDES  = -I/usr/local/include -I/users/matar/interu/segel/mitnits/lib -I.
++EXTRA_LIBRARIES  = -lXpm
++EXTRA_INCLUDES  = -I.
+ EXTRA_DEFINES = -DVERSION=\"$(VERSION)\"
+ LDLIBS = $(EXTRA_LIBRARIES) $(XAWLIB) $(XMULIB) \
+ 	$(XTOOLLIB) $(EXTENSIONLIB) $(XLIB) 

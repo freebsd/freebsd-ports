@@ -1,0 +1,15 @@
+--- ./fclock/Imakefile.orig	Thu Sep 18 23:52:13 1997
++++ ./fclock/Imakefile	Thu Sep 18 23:52:46 1997
+@@ -1,9 +1,9 @@
+ 
+ SRCS =  clock_main.c
+ OBJS =  clock_main.o
+-EXTRA_LIBRARIES  = -L/usr/local/lib -lforms -lXpm -lm
++EXTRA_LIBRARIES  = -lxforms -lXpm -lm
+-EXTRA_INCLUDES  = -I/usr/local/include -I.
++EXTRA_INCLUDES  = -I.
+-EXTRA_DEFINES  = -DICON_DIR=\"/usr/include/X11/pixmaps\"
++EXTRA_DEFINES  = -DICON_DIR=\"${INCDIR}/pixmaps/\"
+ LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
+ 
+ ComplexProgramTarget(fclock)

@@ -1,0 +1,22 @@
+--- ./xprompt/Imakefile.orig	Thu Sep 18 23:49:06 1997
++++ ./xprompt/Imakefile	Fri Sep 19 00:05:45 1997
+@@ -2,14 +2,14 @@
+ SRCS = xprompt.c xprompt_cb.c xprompt_main.c
+ OBJS = xprompt.o xprompt_cb.o xprompt_main.o
+ XCOMM for LINUX: 
+-EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm XCOMM 
++XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -lforms -lXpm -lm XCOMM 
+ 
+-XCOMM FOR Solaris
+-XCOMM EXTRA_LIBRARIES  = -L/usr/local/lib -L/u/grad/mitnits/lib -lforms -lXpm -lm -lnsl
++XCOMM FOR FreeBSD
++EXTRA_LIBRARIES  = -lxforms -lXpm -lm
+ 
+ 
+-EXTRA_INCLUDES  = -I/usr/local/include -I/u/grad/mitnits/lib -I.
+-EXTRA_DEFINES  = -DICON_DIR=\"/usr/include/X11/pixmaps\"
++EXTRA_INCLUDES  = -I.
++EXTRA_DEFINES  = -DICON_DIR=\"${INCDIR}/pixmaps\"
+ LDLIBS = $(EXTRA_LIBRARIES) $(EXTENSIONLIB) $(XLIB)
+ 
+ ComplexProgramTarget(xprompt)
