@@ -1,4 +1,5 @@
 bin/portaudit
+etc/portaudit.conf.sample
 %%PERIODICDIR%%/security/910.portaudit
 %%PERIODICDIR%%/daily/330.fetchaudit
 %%DATADIR%%/portaudit.functions

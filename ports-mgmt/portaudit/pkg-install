@@ -3,16 +3,14 @@
 # $FreeBSD$
 #
 
-ECHO_CMD=echo
-
 case $2 in
 POST-INSTALL)
   if [ ! -f "%%DATABASEDIR%%/auditfile.tbz" ]; then
-    ${ECHO_CMD}
-    ${ECHO_CMD} "===>  To check your installed ports for known vulnerabilities now do:"
-    ${ECHO_CMD}
-    ${ECHO_CMD} "      %%PREFIX%%/bin/portaudit -F -a"
-    ${ECHO_CMD}
+    echo
+    echo "===>  To check your installed ports for known vulnerabilities now do:"
+    echo
+    echo "      %%PREFIX%%/bin/portaudit -F -a"
+    echo
   fi
   ;;
 esac

@@ -34,34 +34,57 @@
 . %%DATADIR%%/portaudit.functions
 portaudit_confs
 
+opt_audit=false
+opt_version=false
+opt_dbversion=false
+opt_fetch=false
+opt_quiet=false
+
 if [ $# -eq 0 ] ; then
+	opt_audit=true
+fi
+
+while getopts aVdFq opt; do
+	case "$opt" in
+	a)
+		opt_audit=true;;
+	d)
+		opt_dbversion=true;;
+	F)
+		opt_fetch=true;;
+	q)
+		opt_quiet=true;;
+	V)
+		opt_version=true;;
+	?)
+		echo "Usage: $0 -adFqV"
+		exit 2;;
+	esac
+done
+
+shift $(($OPTIND - 1))
+
+if $opt_version; then
+	echo "portaudit version %%PORTVERSION%%"
+fi
+
+if $opt_fetch; then
+	fetch_auditfile || echo "failed."
+fi
+
+if $opt_dbversion; then
+	if [ ! -f "${portaudit_dir}/${portaudit_filename}" ]; then
+		echo "portaudit: database missing. run \`portaudit -F' to update."
+		exit 2
+	fi
+	if ! checksum_auditfile; then
+		echo "portaudit: database corrupt."
+		exit 2
+	fi
+	echo "database created: `getcreated_auditfile`"
+fi
+
+if $opt_audit; then
 	portaudit_prerequisites
 	audit_installed || true
 fi
-
-while [ $# -gt 0 ]; do
-	case "$1" in
-	-a)
-		portaudit_prerequisites
-		audit_installed || true
-		;;
-	-V)
-		echo "portaudit version %%PORTVERSION%%"
-		;;
-	-d)
-		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ]; then
-			echo "portaudit: database missing. run \`portaudit -F' to update."
-			exit 2
-		fi
-		if ! checksum_auditfile; then
-			echo "portaudit: database corrupt."
-			exit 2
-		fi
-		echo "database created: `getcreated_auditfile`"
-		;;
-	-F)
-		fetch_auditfile || echo "failed."
-		;;
-	esac
-	shift
-done
