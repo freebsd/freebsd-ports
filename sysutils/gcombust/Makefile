@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gcombust
-# Version required:	0.1.19
+# Version required:	0.1.20
 # Date created:		Tue Jun 22 21:17:03 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id: Makefile,v 1.2 1999/06/30 03:47:55 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/08/14 08:04:50 cpiazza Exp $
 #
 
-DISTNAME=	gcombust-0.1.19
+DISTNAME=	gcombust-0.1.20
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
