@@ -28,9 +28,12 @@ lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/pircbot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/winbot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/RacBot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/kvirc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/moobot.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Logfile.pm
 share/pisg/layout/darkgalaxy.css
 share/pisg/layout/default.css
+share/pisg/layout/ocean.css
+share/pisg/layout/darkred.css
 share/pisg/gfx/blue-h.png
 share/pisg/gfx/blue-v.png
 share/pisg/gfx/green-h.png
