@@ -1,5 +1,5 @@
 --- premail.orig	Sat Oct 25 02:19:07 1997
-+++ premail	Mon May 17 03:07:52 1999
++++ premail	Thu Jul  6 11:55:51 2000
 @@ -2,7 +2,7 @@
  #
  # premail, an e-mail privacy package
@@ -9,21 +9,21 @@
  $version = '0.46';
  
  # Copyright 1996,1997 Raph Levien <raph@acm.org>
-@@ -85,8 +85,11 @@
+@@ -87,15 +87,24 @@
  
- $config{'rlist-valid'} = 300;
- 
--$config{'rlist-url'} = 'http://www.publius.net/rlist';
--$config{'pubring-url'} = 'http://www.publius.net/pubring.pgp';
-+#$config{'rlist-url'} = 'http://www.publius.net/rlist';
-+#$config{'pubring-url'} = 'http://www.publius.net/pubring.pgp';
+ $config{'rlist-url'} = 'http://www.publius.net/rlist';
+ $config{'pubring-url'} = 'http://www.publius.net/pubring.pgp';
+-$config{'type2-list-url'} = 'http://www.jpunix.com/type2.html';
+-$config{'pubring-mix-url'} = 'http://www.jpunix.com/pubring.html';
++$config{'type2-list-url'} = 'http://www.publius.net/type2.list';
++$config{'pubring-mix-url'} = 'http://www.publius.net/pubring.mix';
 +
-+$config{'rlist-url'} = 'finger:rlist@anon.lcs.mit.edu';
-+$config{'pubring-url'} = 'finger:pubring@anon.lcs.mit.edu';
- $config{'type2-list-url'} = 'http://www.jpunix.com/type2.html';
- $config{'pubring-mix-url'} = 'http://www.jpunix.com/pubring.html';
++#$config{'rlist-url'} = 'finger:rlist@anon.lcs.mit.edu';
++#$config{'pubring-url'} = 'finger:pubring@anon.lcs.mit.edu';
++#$config{'type2-list-url'} = 'http://www.jpunix.com/type2.html';
++#$config{'pubring-mix-url'} = 'http://www.jpunix.com/pubring.html';
  
-@@ -94,8 +97,12 @@
+ $config{'charset'} = 'iso-8859-1';
  
  $config{'encrypt'} = 'yes';
  
@@ -36,7 +36,7 @@
  
  # Global state
  
-@@ -112,6 +119,7 @@
+@@ -112,6 +121,7 @@
  $editfile = '';			# name of file to edit
  $dashoi = 0;			# -oi on cmd line
  $more_input = 1;
@@ -44,7 +44,7 @@
  $header_sep = '';
  $in_body = '';			# the filename of the input message body
  $prezilla = 0;			# special mode for Netscape Navigator 2.1
-@@ -226,7 +234,7 @@
+@@ -226,7 +236,7 @@
  # Return the name of the real sendmail executable
      if (!defined $config{'sendmail'} || $config{'sendmail'} eq '') {
  	# Standard place
@@ -53,7 +53,7 @@
  	# Newer BSD-based systems
  	(-x '/usr/sbin/sendmail') && return '/usr/sbin/sendmail';
  	# Okay, I give up
-@@ -306,8 +314,16 @@
+@@ -306,8 +316,16 @@
  	} elsif (/^\-oe(.)$/) {
  	    $error_mode = $1;
  	    if ($1 =~ /^[mwpqe]$/) { push (@sendmail_args, $_); }
@@ -70,7 +70,7 @@
          } elsif (/^\-f$/) {
  	    if ($#_ < 0) { &error ("$_ option needs an argument\n"); }
  	    shift;		# discard
-@@ -363,7 +379,7 @@
+@@ -363,7 +381,7 @@
      &apply_cmdline_configs ();
      if ($config{'preferences'}) {
  	$preferences = &tilde_expand ($config{'preferences'});
@@ -79,7 +79,7 @@
  	while (<PREF>) {
  	    if (/^\s*\$config\{\"([^\"]+)\"\}\s*\=\s*\"([^\"]*)\"/
  		|| /^\s*\$config\{\'([^\']+)\'\}\s*\=\s*\'([^\']*)\'/) {
-@@ -371,10 +387,11 @@
+@@ -371,10 +389,11 @@
  	    }
  	}
  	close (PREF);
@@ -92,7 +92,7 @@
  	while (<ADDR>) {
  	    if (/^([\w\-\_\+\.\@\!]+)\:\s*(.*)$/) {
  		$recip = &strip_address ($1);
-@@ -382,6 +399,7 @@
+@@ -382,6 +401,7 @@
  	    }
  	}
  	close (ADDR);
@@ -100,7 +100,7 @@
      }
      if ($config{'logfile'}) {
  	open (LOG, '>>'.&tilde_expand_mkdir ($config{'logfile'}));
-@@ -413,6 +431,7 @@
+@@ -413,6 +433,7 @@
  	if (!open (IN, $editfile)) {
  	    &error ("cannot open edit file $editfile\n");
  	}
@@ -108,7 +108,7 @@
  	return 1;
      } elsif ($dashbs) {
  	# do simple SMTP
-@@ -463,7 +482,9 @@
+@@ -463,7 +484,9 @@
  
      @in_headers = ();
      for ($lineno = 0;;$lineno++) {
@@ -119,7 +119,7 @@
  	if ($handle_from && $lineno == 0 && $line =~ /^From /) {
  	    return $line;
  	}
-@@ -495,16 +516,16 @@
+@@ -495,16 +518,16 @@
      my $line;
  
      if ($edit || $post) {
@@ -139,7 +139,7 @@
      return $line;
  }
  
-@@ -516,6 +537,7 @@
+@@ -516,6 +539,7 @@
  #   }
      if ($edit || $post) {
  	close (IN);
@@ -147,7 +147,7 @@
      } elsif ($dashbs) {
  	print "250 Message accepted for delivery\n";
  	$more_input = 1;
-@@ -600,10 +622,7 @@
+@@ -600,10 +624,7 @@
  
      # suppress cmdline remailers in -t mode; sendmail 8.6.8 manpage '-t'
      if ($dasht) {
@@ -159,7 +159,7 @@
      }
  
      @recips = ();
-@@ -1268,7 +1287,7 @@
+@@ -1268,7 +1289,7 @@
      my ($body, @the_recips) = @_;
      my ($key_type, $key);
      my (@keys);
@@ -168,7 +168,7 @@
      my (@mime_fields, $prefix, $boundary);
      my ($sign_type, $sign);
      my ($invoc, $errfile);
-@@ -1354,7 +1373,7 @@
+@@ -1354,7 +1375,7 @@
      my ($body, @the_recips) = @_;
      my ($key_type, $key);
      my (@keys);
@@ -177,7 +177,7 @@
      my (@mime_fields, $prefix);
      my ($sign_type, $sign);
      my ($invoc, $errfile);
-@@ -1487,6 +1506,16 @@
+@@ -1487,6 +1508,16 @@
      } else {
  	$num_shuf = 3;
      }
@@ -194,7 +194,7 @@
      foreach $hop (@chain) {
  	if ($hop =~ /^\d+$/) {
  	    for ($i = 0; $i < $hop; $i++) {
-@@ -1498,8 +1527,14 @@
+@@ -1498,8 +1529,14 @@
  			  || &member ('eric', @options))) {
  			next;
  		    }
@@ -211,7 +211,7 @@
  		    if ($config{'encrypt'} &&
  			(&member ('pgp', @options)
  			 || &member ('pgp.', @options))) {
-@@ -1511,7 +1546,8 @@
+@@ -1511,7 +1548,8 @@
  			     || &member ('pgponly', @options)) { next; }
  		    if ($config{'no-middle'}
  			&& &member ('middle', @options)) { next; }
@@ -221,7 +221,7 @@
  		    if (&member ('filter', @options)) { $score -= 10; }
  		    if (&member ('mon', @options)) { $score -= 10; }
  		    if ($#new_chain < 0 && !$erb
-@@ -1687,7 +1723,7 @@
+@@ -1687,7 +1725,7 @@
  	    }
  	}
  	if ($put_open) { close (PUT); }
@@ -230,7 +230,7 @@
      }
  }
  
-@@ -1817,7 +1853,7 @@
+@@ -1817,7 +1855,7 @@
  	}
      }
      push (@deliver_headers, "To\: $new_to\n");
@@ -239,7 +239,7 @@
  	$hash = "$1\n".$hash;
  	$body = &cat_tail ($body, "\*\*\n");
      }
-@@ -2214,7 +2250,7 @@
+@@ -2214,7 +2252,7 @@
  	# we know it's sendmail
  	$invoc = &bin_sendmail ();
  	if ($#sendmail_args >= 0) {
@@ -248,7 +248,7 @@
  	}
  	$invoc .= ' -oi';
  	foreach $recip (@the_recips) {
-@@ -2252,11 +2288,11 @@
+@@ -2252,11 +2290,11 @@
      &close_body ($body);
      if ($post) {
  	close (DELIVER);
@@ -264,7 +264,7 @@
  	unlink $tmpfile;
      } elsif ($edit && !$prezilla) {
  	close (DELIVER);
-@@ -2441,6 +2477,7 @@
+@@ -2441,6 +2479,7 @@
      }
      $strip =~ s/^\s+//s;
      $strip =~ s/\s+$//s;
@@ -272,7 +272,7 @@
      return ($strip, $caret);
  }
  
-@@ -2801,6 +2838,7 @@
+@@ -2801,6 +2840,7 @@
  # (@new_dict) = &delete_field ($key, @dict)
      my ($key, @dict) = @_;
      my (@new_dict);
@@ -280,7 +280,7 @@
  
      @new_dict = ();
      foreach $field (@dict) {
-@@ -2972,8 +3010,8 @@
+@@ -2972,8 +3012,8 @@
  
      $data = '';
      if (open (ERRFILE, $file)) {
@@ -290,7 +290,7 @@
  	    $data .= $_;
  	}
  	close (ERRFILE);
-@@ -3040,7 +3078,7 @@
+@@ -3040,7 +3080,7 @@
  	$pass = '';
      }
      if ($pubring) { $invoc .= ' +pubring='.&shell_quote ($pubring); }
@@ -299,7 +299,7 @@
      if ($sign) {
  	$invoc .= 's -u '.&shell_quote ($signuser);
  	&load_secrets ();
-@@ -3126,7 +3164,7 @@
+@@ -3126,7 +3166,7 @@
  	$signuser = '0x';
  	$pass = '';
      }
@@ -308,7 +308,7 @@
      $invoc .= ' -u '.&shell_quote ($signuser);
      unless (defined $pass) {
  	if (defined $pgppass{$signuser}) {
-@@ -3182,7 +3220,7 @@
+@@ -3182,7 +3222,7 @@
  	$signuser = '0x';
  	$pass = '';
      }
@@ -317,7 +317,7 @@
      $invoc .= ' -u '.&shell_quote ($signuser);
      unless (defined $pass) {
  	if (defined $pgppass{$signuser}) {
-@@ -3238,7 +3276,7 @@
+@@ -3238,7 +3278,7 @@
      return ($mimefile, $err, $boundary);
  }
  
@@ -326,7 +326,7 @@
  sub pgp_decrypt {
  # ($out_body, $err) = &pgp_decrypt ($body, $pass)
  # Try to decrypt $body using passphrase $pass. $out_body is null on error.
-@@ -3251,7 +3289,7 @@
+@@ -3251,7 +3291,7 @@
      $outfile = &tmp_filename ();
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -335,7 +335,7 @@
      $invoc .= " +pubring=$PUBRING" if $PUBRING;
      $invoc .= " +secring=$SECRING" if $SECRING;
  #    if ($pass =~ /^RING$;/) {
-@@ -3299,7 +3337,7 @@
+@@ -3299,7 +3339,7 @@
  
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -344,7 +344,7 @@
      $invoc .= ' '.$pgp_file;
      $invoc .= ' '.$signed_file;
      $invoc .= ' > '.$errfile.' 2>&1';
-@@ -3344,6 +3382,7 @@
+@@ -3344,6 +3384,7 @@
      $ENV{'TMP'} = $pgp_tmpdir;
      if ($pass) {
  	pipe (READER, WRITER);
@@ -352,7 +352,7 @@
  	$ENV{'PGPPASSFD'} = fileno(READER);
      }
      $status = open (PGP, $invoc);
-@@ -3390,7 +3429,7 @@
+@@ -3390,7 +3431,7 @@
      $chars_needed = 2 + sprintf ("%d", $bits / 8);
      &pdv ($config{'pgp'}." +makerandom=$chars_needed $outf"
  	." >/dev/null 2>&1\n");
@@ -361,7 +361,7 @@
  	." >/dev/null 2>&1";
      &pdv ($status."\n");
      if (!$status) {
-@@ -3592,6 +3631,7 @@
+@@ -3592,6 +3633,7 @@
      if ($x) {
  	if ($ENV{'DISPLAY'}) {
  	    pipe (READER, WRITER);
@@ -369,7 +369,7 @@
  	    system 'xterm -geometry 42x4-5-5 -e perl -e \''
  		.'system "stty -echo";print "\n";'
  		.'print "   Remember to logout when done.\n";'
-@@ -3626,11 +3666,14 @@
+@@ -3626,11 +3668,14 @@
  
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -385,7 +385,7 @@
      $status = &open_pgp ($invoc, $pass, '');
      $err = &read_and_delete ($errfile);
      &pdv ($err);
-@@ -3647,7 +3690,7 @@
+@@ -3647,7 +3692,7 @@
  	unlink $ps_pgp;
      }
      $invoc = &tilde_expand ($config{'pgp'});
@@ -394,7 +394,7 @@
      $invoc .= ' < '.$ps;
      $invoc .= ' > '.$ps_pgp;
      $invoc .= ' 2> '.$errfile;
-@@ -3910,7 +3953,8 @@
+@@ -3910,7 +3955,8 @@
  		&replace_field ('Content-Type: text/plain; charset='
  				.$config{'charset'}."\n",
  				@deliver_headers);
@@ -404,7 +404,7 @@
  	    # Should we detect other charsets which are supersets of us-ascii?
  	    if (!$mv_present) {
  		push (@deliver_headers, 'MIME-Version: 1.0'."\n");
-@@ -3923,7 +3967,8 @@
+@@ -3923,7 +3969,8 @@
  	}
      }
      # must deal with existing cte, charset, etc.
@@ -414,7 +414,7 @@
  	# Do the QP
  	&pdv ("Doing QP encoding!\n");
  	if (!$mv_present) {
-@@ -4336,6 +4381,8 @@
+@@ -4336,6 +4383,8 @@
      exit 0;
  }
  
@@ -423,7 +423,7 @@
  sub decode_msg {
  # &decode_msg ($msg)
  # This is possibly the ugliest function in all of premail. Most of it is
-@@ -5129,7 +5176,7 @@
+@@ -5129,7 +5178,7 @@
      &load_secrets ();
      foreach (keys %pgpring) {
  	my ($tpr, $tsr) = &makerings ($pgpring{$_});
@@ -432,7 +432,7 @@
  	#filecat ($tpr, $pr);
  	filecat ($tsr, $sr);
  	&delete_tmpfile ($tpr);
-@@ -5157,12 +5204,12 @@
+@@ -5157,12 +5206,12 @@
  #   &pdv ('&makerings ("'.join ('", "', @_)."\")\n");
      foreach ([$pr, $pk], [$sr, $sk]) {
  	open TMP, ">$$_[0]";
@@ -447,7 +447,7 @@
  	    . "$id $pr $pubring 2>&1";
  	&pdv ("$invoc > /dev/null\n");
  	system "$invoc > /dev/null";
-@@ -5189,7 +5236,7 @@
+@@ -5189,7 +5238,7 @@
      $outfile = &tmp_filename ();
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -456,7 +456,7 @@
      $invoc .= " +pubring=$pr +secring=$sr ";
      $invoc .= $cmd;
      $invoc .= ' < ' . $infile if $infile;
-@@ -5248,7 +5295,7 @@
+@@ -5248,7 +5297,7 @@
  EOF
      <STDIN>;
  
@@ -465,7 +465,7 @@
  	print STDERR "\nKey generation failed.\n";
  	&killbaks ($pr, $sr);
  	&delete_open_tmpfiles ();
-@@ -5272,7 +5319,7 @@
+@@ -5272,7 +5321,7 @@
      foreach $a ("$kid $pr",
  		"$remid $pr " . &tilde_expand ($config{'pubring'}),
  		"$kid $sr $defsr") {
@@ -474,7 +474,7 @@
  #	print STDERR "+ $invoc\n";
  	my $result = `$invoc`;
  	unless ($result =~ /^Key extracted/m) {
-@@ -5300,7 +5347,7 @@
+@@ -5300,7 +5349,7 @@
  EOF
      <STDIN>;
  
@@ -483,7 +483,7 @@
  #    print STDERR "+ $invoc\n";
      if (system ($invoc)) {
  	print STDERR "Edit failed.\n";
-@@ -5495,6 +5542,7 @@
+@@ -5495,6 +5544,7 @@
  	    }
  	}
      }
@@ -491,7 +491,7 @@
      if ($#args >= 1) {
  	$to = $args[1];
      } elsif ($#args < 0) {
-@@ -5609,7 +5657,6 @@
+@@ -5609,7 +5659,6 @@
  		$fullname = &query ('Full name of pseudonym (not just '
  				    . 'E-mail address)', $fullname);
  		$fullname =~ s/[\'\^\n]//g;  # kludge for secrets file
@@ -499,7 +499,7 @@
  		$signsend = &query ('Sign mail with (R)emailer key, '
  				    . '(P)seudonym key or (N)o key?',
  				    $signsend);
-@@ -5652,7 +5699,7 @@
+@@ -5652,7 +5701,7 @@
      }
  #   print "Here's the encrypted block:\n";
  #   system "cat $replyblock_fn";
@@ -508,7 +508,7 @@
      if (&member ('newnym', @options)) {
  	$secret = "\$nym\{\'$time\,$remailer\=$nym\'\} \= ".
  	    "\'chain=$chain\^to=$to^"
-@@ -5771,6 +5818,7 @@
+@@ -5771,6 +5820,7 @@
      if (!open (IN, $body)) {
  	&error ("Internal error opening replyblock\n");
      }
@@ -516,7 +516,7 @@
      @in_headers = ("To: $to\n");
      push (@in_headers, "Chain: $chain\n") if $chain;
      $header_sep = "\n";
-@@ -5784,6 +5832,7 @@
+@@ -5784,6 +5834,7 @@
      }
      &send_group ($groups[0]);
      close (IN);
@@ -524,7 +524,7 @@
  }
  
  sub find_nym {
-@@ -5997,7 +6046,7 @@
+@@ -5997,7 +6048,7 @@
  
      # The main loop
      $quit = 0;
@@ -533,7 +533,7 @@
      while (!$quit) {
  	$rin = $win = $ein = '';
  	vec ($rin, fileno(STDIN), 1) = 1 unless $ineof;
-@@ -6315,7 +6364,7 @@
+@@ -6315,7 +6366,7 @@
  # Open a Web connection for the file as file handle WWW.
      my ($url) = @_;
      my ($host, $port, $suf);
@@ -542,7 +542,7 @@
      my ($name, $proto);
      my ($that);
      my ($savesel, $gotsep);
-@@ -6330,7 +6379,7 @@
+@@ -6330,7 +6381,7 @@
  	$host = $1;
  	$port = $2;
  	$suf = $3;
@@ -551,7 +551,7 @@
  	else { $port = 80; }
  	($fqdn, $aliases, $type, $len, $thataddr) = gethostbyname ($host);
  	return &pdv ("Host not found: $host\n") if ($thataddr eq '');
-@@ -6345,7 +6394,7 @@
+@@ -6345,7 +6396,7 @@
  		       unpack ('C4', $thataddr), $port));
  	eval {
  	    $SIG{'ALRM'} = sub { die "Timeout error on $url\n" };
@@ -560,7 +560,7 @@
  #	    bind(WWW, $this) || &die_disarm ("bind: $!\n");
  #	    &pdv ("bound the socket...\n");
  	    connect(WWW, $that) || &die_disarm ("connect: $!\n");
-@@ -6368,6 +6417,21 @@
+@@ -6368,6 +6419,21 @@
  	};
  	if ($@) { return &pdv ($@); }
  	return &pdv ("No response from server\n") unless $gotsep;

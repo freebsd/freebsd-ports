@@ -18,7 +18,6 @@ BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
 WRKSRC=         ${WRKDIR}/premail
 USE_PERL5=      Yes
 NO_BUILD=       Yes
-RESTRICTED=     "Author treats it as ITAR subject"
 
 post-patch:
 	cd ${WRKSRC}; \
