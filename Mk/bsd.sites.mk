@@ -355,14 +355,12 @@ MASTER_SITE_PACKETSTORM+= \
 	http://packetstorm.troop218.org/%SUBDIR%/ \
 	http://packetstormsecurity.packetstorm.org/%SUBDIR%/ \
 	http://packetstorm.linuxsecurity.com/%SUBDIR%/ \
-	http://packetstorm.acm.miami.edu/%SUBDIR%/ \
 	http://packetstorm.touchpointmedia.com/%SUBDIR%/ \
 	http://packetstorm.digital-network.net/%SUBDIR%/ \
 	http://packetstorm.icx.fr/%SUBDIR%/ \
 	http://packetstorm.security-guide.de/%SUBDIR%/ \
 	http://packetstorm.trustica.cz/%SUBDIR%/ \
 	http://packetstorm.dyn.org/%SUBDIR%/ \
-	http://packetstormsecurity.com.ar/%SUBDIR%/ \
 	http://packetstorm.digitallinx.com/%SUBDIR%/ \
 	http://packetstormsecurity.org.pk/%SUBDIR%/
 
