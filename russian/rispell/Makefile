@@ -19,6 +19,7 @@ WRKSRC=         ${WRKDIR}/russian-ispell
 
 do-install:
 	cd ${WRKSRC} && \
-	${INSTALL_DATA} russian.hash russian.aff ${PREFIX}/lib
+	${INSTALL_DATA} russian.hash russian.aff ${PREFIX}/share/ispell
+	${INSTALL_SCRIPT} ${FILESDIR}/rispell.sh ${PREFIX}/bin/rispell
 
 .include <bsd.port.mk>

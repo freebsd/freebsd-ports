@@ -1,2 +1,3 @@
-lib/russian.hash
-lib/russian.aff
+bin/rispell
+share/ispell/russian.hash
+share/ispell/russian.aff
