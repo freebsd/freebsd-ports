@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	xbae
-PORTVERSION=	4.8.4
+PORTVERSION=	4.9.0
 CATEGORIES=	x11-toolkits math
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/ \
 		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/lesstif/srcdist/
