@@ -63,5 +63,6 @@ post-install:
 	${RM} ${PREFIX}/include/tix/generic/tix.h
 	@# These two files are the same
 	${LN} -sf ../../tix.h ${PREFIX}/include/tix/generic
+	${MV} ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
