@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	adsharma@sharmas.dhs.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		uu.1:${PORTSDIR}/converters/uulib
+		uu.1:${PORTSDIR}/converters/uulib \
 		mimelib.1:${PORTSDIR}/converters/mimelib
 
 USE_KDELIBS_VER=1
