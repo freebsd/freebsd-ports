@@ -322,7 +322,7 @@ PLIST_FILES+=	lib/vlc/libi420_rgb_mmx.a lib/vlc/libi420_ymga_mmx.a \
 		lib/vlc/libmemcpymmxext.a
 .endif
 
-.if ${OSVERSION} >= 502010
+.if ${OSVERSION} >= 502102
 BROKEN=		"conflicts with new threads architecture"
 .endif
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
