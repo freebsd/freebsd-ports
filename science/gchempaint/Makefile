@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	science
 MASTER_SITES=	http://savannah.nongnu.org/download/gchempaint/unstable.pkg/${PORTVERSION}/
 
