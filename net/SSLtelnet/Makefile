@@ -1,11 +1,11 @@
 # New ports collection makefile for:	SSLtelnet
-# Version required:	0.11
+# Version required:	0.13
 # Date created:		Mar 29, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/08/26 09:14:48 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/09/25 10:20:18 asami Exp $
 
-DISTNAME=		SSLtelnet-0.11
+DISTNAME=		SSLtelnet-0.13
 CATEGORIES=		net security
 MASTER_SITES=		ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
 
