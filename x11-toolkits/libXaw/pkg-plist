@@ -73,4 +73,3 @@ lib/libXaw.la
 lib/libXaw.so
 lib/libXaw.so.7
 libdata/pkgconfig/xaw.pc
-man/man3/Xaw.3
