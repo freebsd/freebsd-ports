@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+libexec/apache2/mod_traf_thief.so
+@exec %D/sbin/apxs -e -A -n traf_thief %D/%F
+@unexec echo "===>  If you do not plan on reinstalling mod_traf_thief, you must manually remove"; echo "===>  references to it in httpd.conf."
