@@ -1,0 +1,11 @@
+--- vmnet-only/freebsd/vmnet.c.orig	Mon Jul 31 08:36:25 2000
++++ vmnet-only/freebsd/vmnet.c	Mon Sep 11 00:34:08 2000
+@@ -164,7 +164,7 @@
+ 
+ 	s = splimp();
+ 	if_attach(ifp);
+-	ether_ifattach(ifp);
++	ether_ifattach(ifp, ETHER_BPF_SUPPORTED);
+ 	bpfattach(ifp, DLT_EN10MB, sizeof(struct ether_header));
+ 	splx(s);
+ 	
