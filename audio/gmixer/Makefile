@@ -8,7 +8,7 @@
 
 DISTNAME=	gmixer-0.98c
 CATEGORIES=	audio
-MASTER_SITES=	http://junior.technion.ac.il/~sergey/linux/
+MASTER_SITES=	http://www.freebsd.org/~cpiazza/distfiles/	
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
