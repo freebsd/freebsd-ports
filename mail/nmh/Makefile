@@ -1,5 +1,5 @@
 # New ports collection makefile for:	nmh
-# Version required:     1.0.2
+# Version required:     1.0.3
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
@@ -28,8 +28,14 @@
 # NMH_PAGER - pass an PAGER specification through to nmh's configure
 #           script's '--with-pager' option.
 #
+# NMH_LOCKING - specify the style of locking to be used by nmh for the
+#           users' spool files (e.g. the 'inc' command). Must match the
+#           locking style used by your MTA - the default is FLOCK_LOCKING
+#           (the documented behavior for the 'mail.local' delivery
+#           program).
+#
 
-DISTNAME=	nmh-1.0.2
+DISTNAME=	nmh-1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		http://people.FreeBSD.org/~jkoshy/PORTS/
@@ -48,6 +54,11 @@ CONFIGURE_ARGS+= --with-editor=${NMH_EDITOR}
 .ifdef NMH_PAGER
 CONFIGURE_ARGS+= --with-pager=${NMH_PAGER}
 .endif
+
+.ifndef NMH_LOCKING
+NMH_LOCKING=FLOCK_LOCKING
+.endif
+CFLAGS+= -D$(NMH_LOCKING)
 
 MAN1= ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
       inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
