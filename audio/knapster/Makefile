@@ -12,14 +12,12 @@ MASTER_SITES=	http://www.chariot.net.au/~donoghue/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 USE_QT=		yes
-
-pre-configure:
-	@${PERL} -pi.orig -e 's|lpthread|pthread|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
