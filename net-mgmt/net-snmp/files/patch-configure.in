@@ -1,7 +1,7 @@
---- configure.in.orig	Thu Mar  6 07:41:13 2003
-+++ configure.in	Tue May 27 14:53:22 2003
-@@ -1246,7 +1246,7 @@
-   dnl fall back
+--- configure.in.orig	Sat Oct 30 14:05:59 2004
++++ configure.in	Sat Oct 30 15:02:25 2004
+@@ -2071,7 +2071,7 @@
+   # fall back
    CFLAG="-f"
  fi
 -for i in /vmunix /hp-ux /stand/vmunix /dev/ksyms /kernel/unix /kernel/genunix /netbsd /unix /kernel /bsd /mach_kernel
@@ -9,17 +9,17 @@
    do
    if test -f $i -o $CFLAG $i; then
      ac_cv_KERNEL_LOC="$i"
-@@ -1659,7 +1659,7 @@
+@@ -2357,7 +2357,7 @@
  AC_HEADER_SYS_WAIT
- AC_CHECK_HEADERS(stdarg.h string.h fcntl.h limits.h sys/file.h sys/ioctl.h syslog.h unistd.h netinet/tcpip.h netinet/in.h netinet/ip.h netinet/ip_icmp.h net/if.h netdb.h sys/dmap.h machine/pte.h xti.h sys/sockio.h sys/socket.h sys/un.h fstab.h sys/fs.h mtab.h ufs/fs.h ufs/ffs/fs.h sys/fixpoint.h machine/param.h sys/vm.h vm/vm.h sys/vmmeter.h sys/vmparam.h sys/vmmac.h sys/vmsystm.h sys/mbuf.h sys/time.h sys/swap.h inet/mib2.h sys/statvfs.h sys/vfs.h sys/mnttab.h sys/user.h sys/proc.h sys/select.h mntent.h sys/mntent.h kstat.h utsname.h sys/utsname.h sys/cdefs.h getopt.h locale.h pthread.h sys/loadavg.h regex.h linux/tasks.h pwd.h grp.h utmpx.h)
+ AC_CHECK_HEADERS(stdarg.h string.h fcntl.h limits.h sys/file.h sys/ioctl.h syslog.h unistd.h netinet/tcpip.h netinet/in.h netinet/ip.h netinet/ip_icmp.h net/if.h net/if_arp.h netdb.h sys/dmap.h machine/pte.h xti.h sys/sockio.h sys/socket.h sys/un.h fstab.h sys/fs.h mtab.h ufs/fs.h ufs/ffs/fs.h sys/fixpoint.h machine/param.h sys/vm.h vm/vm.h sys/vmmeter.h sys/vmparam.h sys/vmmac.h sys/vmsystm.h sys/mbuf.h sys/time.h sys/times.h sys/swap.h inet/mib2.h sys/statvfs.h sys/vfs.h sys/mnttab.h sys/user.h sys/proc.h sys/select.h mntent.h sys/mntent.h kstat.h utsname.h sys/utsname.h sys/cdefs.h getopt.h locale.h pthread.h sys/loadavg.h regex.h linux/tasks.h pwd.h grp.h utmpx.h)
  # FreeBSD required headers
 -AC_CHECK_HEADERS(malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h machine/types.h sys/socketvar.h)
 +AC_CHECK_HEADERS(malloc.h sys/param.h net/if_dl.h sys/sysctl.h stdlib.h net/if_mib.h net/if_types.h net/if_var.h sys/queue.h osreldate.h sys/socketvar.h)
  # Linux
  AC_CHECK_HEADERS(sys/conf.h netinet/in_systm.h netinet/tcp.h netinet/udp.h netinet/in_var.h netinet/if_ether.h netinet/ip_var.h netinet/tcp_timer.h netinet/tcp_var.h netinet/tcp_fsm.h netinet/udp_var.h netinet/icmp_var.h sys/protosw.h nlist.h ioctls.h asm/page.h netipx/ipx.h)
  # NetBSD required headers
-@@ -1866,6 +1866,26 @@
- dnl checking for 4.3 vs 4.4 rtentry.
+@@ -2811,6 +2811,26 @@
+ # checking for 4.3 vs 4.4 rtentry.
  AC_CACHE_CHECK(type of rtentry structure,ac_cv_RTENTRY_TYPE,
  [
 +
@@ -43,5 +43,5 @@
 +  rt.rt_dst;
 +  ], ac_cv_RTENTRY_TYPE="BSD-4.4")
  
- dnl 4.4 compat
+ # 4.4 compat
  AC_TRY_COMPILE([

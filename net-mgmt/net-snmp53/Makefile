@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.1.2
-PORTREVISION=	1
+PORTVERSION=	5.2
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -61,6 +60,7 @@ CONFIGURE_ARGS+=--with-dummy-values
 
 .if defined(WITHOUT_PERL)
 PLIST_SUB+=	WITH_PERL="@comment "
+CONFIGURE_ARGS+=--disable-embedded-perl --without-perl-modules
 .else
 CONFIGURE_ARGS+=--enable-embedded-perl --with-perl-modules
 PLIST_SUB+=	WITH_PERL=""
@@ -80,7 +80,7 @@ PLIST_SUB+=	WITH_IPV6=""
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
-SHLIB_VERSION=	6
+SHLIB_VERSION=	7
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
@@ -142,7 +142,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3 \
 		netsnmp_Container_iterator.3 \
-		netsnmp_asn1_packet_parse.3 netsnmp_baby_steps.3 \
+		netsnmp_baby_steps.3 \
 		netsnmp_cache_handler.3 netsnmp_container.3 \
 		netsnmp_iterator_info_s.3 \
 		netsnmp_leaf.3 \
@@ -151,6 +151,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 
 .if !defined(WITHOUT_PERL)
 MAN3PERL=	NetSNMP::ASN.3 NetSNMP::OID.3 NetSNMP::agent.3 \
+		NetSNMP::TrapReceiver.3 \
 		NetSNMP::agent::default_store.3 \
 		NetSNMP::default_store.3 \
 		NetSNMP::netsnmp_request_infoPtr.3 SNMP.3
@@ -158,7 +159,7 @@ MAN3PERLPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 _MANPAGES+=	${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 .endif
 
-MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
+MAN5=		mib2c.conf.5 snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
 
@@ -238,7 +239,7 @@ post-build:
 		'
 .endif
 
-post-install: strip-files install-startup-files install-doc-files display-message
+post-install: strip-files install-startup-files install-config-files install-doc-files display-message
 
 strip-files:
 	@cd ${PREFIX}/bin; ${STRIP_CMD} ${BIN_FILES}
@@ -248,6 +249,9 @@ install-startup-files:
 .for file in ${STARTUP_FILES}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${file} ${STARTUP_DIR}
 .endfor
+
+install-config-files:
+	@${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf ${DATADIR}/snmpd.conf.example
 
 install-doc-files:
 .if !defined(NOPORTDOCS)
