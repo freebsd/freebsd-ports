@@ -19,4 +19,13 @@ After modifying /etc/inetd.conf, you must (as root) run:
 
 	killall -HUP inetd
 
+Fam also requires that portmapper is running.  Add the appropriate
+entry to /etc/rc.conf:
+
+For 4.x:
+Add portmap_enable="YES" and either reboot or run /usr/sbin/portmap.
+
+For 5.x:
+Add rpcbind_enable="YES" and either reboot or run /usr/sbin/rpcbind.
+
 ************************************************************************
