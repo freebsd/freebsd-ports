@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmplayer
-DISTVERSION=	0.8.4a
+DISTVERSION=	0.9.0-pre2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
@@ -61,7 +61,7 @@ post-patch:
 ## Support Activation
 ###
 # gstreamer
-.undef WITH_GSTREAMER
+#.undef WITH_GSTREAMER
 .if defined(WITH_GSTREAMER)
 USE_GSTREAMER+=	yes
 
@@ -74,11 +74,6 @@ CONFIGURE_ARGS+=	--without-gstreamer
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 
 PLIST_FILES+=	bin/kxineplayer
-.endif
-
-# GCC < 3.1
-.if ${OSVERSION} < 500035
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::kmplayerplaylist.cpp
 .endif
 
 .include <bsd.port.post.mk>
