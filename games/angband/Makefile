@@ -14,6 +14,8 @@ DISTFILES=	angband-283.tar.gz ext-x11-283.tar.gz
 
 MAINTAINER=	mph@freebsd.org
 
+BROKEN=		"Security hole (buffer overflow)"
+
 USE_X_PREFIX=	yes
 DIST_SUBDIR=	angband
 
