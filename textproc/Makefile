@@ -86,6 +86,7 @@
     SUBDIR += mguesser
     SUBDIR += minidom
     SUBDIR += mkcatalog
+    SUBDIR += modlogan
     SUBDIR += mswordview
     SUBDIR += nfbtrans
     SUBDIR += nicetext

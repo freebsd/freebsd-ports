@@ -1,0 +1,86 @@
+bin/modlogan
+etc/modlogan/group.extension.conf
+etc/modlogan/group.host.conf
+etc/modlogan/group.os.conf
+etc/modlogan/group.ua.conf
+etc/modlogan/match.os.conf
+etc/modlogan/match.searchengines.conf
+etc/modlogan/match.ua.conf
+@unexec if cmp -s %D/etc/modlogan/modlogan.conf %D/etc/modlogan/modlogan.conf-dist; then rm -f %D/etc/modlogan/modlogan.conf; fi
+etc/modlogan/modlogan.conf-dist
+@unexec if cmp -s %D/etc/modlogan/modlogan.css %D/etc/modlogan/modlogan.css-dist; then rm -f %D/etc/modlogan/modlogan.css; fi
+etc/modlogan/modlogan.css-dist
+@unexec if cmp -s %D/etc/modlogan/modlogan.def.conf %D/etc/modlogan/modlogan.def.conf-dist; then rm -f %D/etc/modlogan/modlogan.def.conf; fi
+etc/modlogan/modlogan.def.conf-dist
+@dirrm etc/modlogan
+lib/libmla_input_bsdftpd.so
+lib/libmla_input_clf.so
+lib/libmla_input_elmeg.so
+lib/libmla_input_flow.so
+lib/libmla_input_flowraw.so
+lib/libmla_input_hicom116.so
+lib/libmla_input_ipchains.so
+lib/libmla_input_isdnlog.so
+lib/libmla_input_msiis.so
+lib/libmla_input_msmedia.so
+lib/libmla_input_netscape.so
+lib/libmla_input_null.so
+lib/libmla_input_pureftpd.so
+lib/libmla_input_qmail.so
+lib/libmla_input_qtss.so
+lib/libmla_input_realserver.so
+lib/libmla_input_sendmail.so
+lib/libmla_input_shoutcast.so
+lib/libmla_input_squid.so
+lib/libmla_input_viruswall.so
+lib/libmla_input_wuftpd.so
+lib/libmla_mdata_brokenlink.so
+lib/libmla_mdata_count.so
+lib/libmla_mdata_match.so
+lib/libmla_mdata_netmask.so
+lib/libmla_mdata_query.so
+lib/libmla_mdata_record.so
+lib/libmla_mdata_split.so
+lib/libmla_mdata_state.so
+lib/libmla_mdata_sublist.so
+lib/libmla_mdata_traffic.so
+lib/libmla_mdata_visit.so
+lib/libmla_mdata_visited.so
+lib/libmla_mdata_webhist.so
+lib/libmla_output_csv.so
+lib/libmla_output_modlogan.so
+lib/libmla_output_null.so
+lib/libmla_output_template.so
+lib/libmla_output_text.so
+lib/libmla_output_tkcontrol.so
+lib/libmla_output_webalizer.so
+lib/libmla_processor_accounting.so
+lib/libmla_processor_firewall.so
+lib/libmla_processor_mail.so
+lib/libmla_processor_null.so
+lib/libmla_processor_telecom.so
+lib/libmla_processor_web.so
+%%PORTDOCS%%share/doc/modlogan/faq.txt
+%%PORTDOCS%%share/doc/modlogan/glosar
+%%PORTDOCS%%share/doc/modlogan/manual.txt
+%%PORTDOCS%%share/doc/modlogan/plugin-options.txt
+%%PORTDOCS%%share/doc/modlogan/using-plugins.txt
+%%PORTDOCS%%share/doc/modlogan/writing-plugins.txt
+share/examples/modlogan/convert_to_055.pl
+share/examples/modlogan/convert_to_060.pl
+share/examples/modlogan/footer.ihtml
+share/examples/modlogan/header.ihtml
+share/locale/cs/LC_MESSAGES/modlogan.mo
+share/locale/de/LC_MESSAGES/modlogan.mo
+share/locale/es/LC_MESSAGES/modlogan.mo
+share/locale/it/LC_MESSAGES/modlogan.mo
+@dirrm share/doc/modlogan
+@dirrm share/examples/modlogan
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
