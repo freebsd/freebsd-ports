@@ -1,5 +1,0 @@
-*shared*
-
-# Anthony Baxter's gdbm module.  GNU dbm(3) will require -lgdbm:
-
-gdbm gdbmmodule.c -I${PREFIX}/include -L${PREFIX}/lib -lgdbm
