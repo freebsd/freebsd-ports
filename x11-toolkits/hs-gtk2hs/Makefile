@@ -19,6 +19,8 @@ COMMENT=	A GTK2 Binding for Haskell
 BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
+BROKEN=		"Does not compile"
+
 USE_GNOME=	gtk20
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-c2hs=no

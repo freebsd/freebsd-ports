@@ -20,6 +20,8 @@ LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 		ORBit-2-cpp.8:${PORTSDIR}/devel/orbitcpp
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
+BROKEN=		"Does not compile"
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

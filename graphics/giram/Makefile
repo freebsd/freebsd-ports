@@ -16,6 +16,8 @@ COMMENT=	A POV-Ray oriented modeller
 
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds
 
+BROKEN=		"Does not compile"
+
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gtk20
