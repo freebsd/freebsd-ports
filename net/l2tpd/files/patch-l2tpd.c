@@ -1,5 +1,5 @@
 --- l2tpd.c.orig	Mon Aug 19 17:12:17 2002
-+++ l2tpd.c	Sat Nov 23 19:12:09 2002
++++ l2tpd.c	Wed Apr 16 16:07:19 2003
 @@ -34,8 +34,6 @@
  #include <netdb.h>
  #include <string.h>
@@ -17,7 +17,7 @@
  char *args;
  
  char *dial_no_tmp;              /* jz: Dialnumber for Outgoing Call */
-@@ -384,6 +384,7 @@
+@@ -384,6 +383,7 @@
  
          /* close the control pipe fd */
          close (control_fd);
@@ -25,7 +25,7 @@
  
          execv (PPPD, stropt);
          log (LOG_WARN, "%s: Exec of %s failed!\n", __FUNCTION__, PPPD);
-@@ -764,8 +765,8 @@
+@@ -764,8 +764,8 @@
      struct lac *lac;
      int call;
      int tunl;
@@ -36,7 +36,7 @@
      {
          cnt = read (control_fd, buf, sizeof (buf));
          if (cnt > 0)
-@@ -920,7 +921,9 @@
+@@ -920,7 +920,9 @@
      }
      /* Otherwise select goes nuts */
      close (control_fd);
@@ -46,7 +46,7 @@
  }
  
  void usage(void) {
-@@ -985,6 +988,7 @@
+@@ -985,6 +987,7 @@
      char buf[STRLEN];
      int pidfilewritten=0;
  
@@ -54,7 +54,7 @@
      if((pid = fork()) < 0) {
          log(LOG_LOG, "%s: Unable to fork ()\n",__FUNCTION__);
          close(server_socket);
-@@ -998,6 +1002,12 @@
+@@ -998,6 +1001,12 @@
                           to do a proper fix for this */
      close(1);
      close(2);
@@ -67,7 +67,7 @@
  
      /* Read previous pid file. */
      if ((i = open(gconfig.pidfile,O_RDONLY)) > 0) {
-@@ -1075,6 +1085,7 @@
+@@ -1075,6 +1084,7 @@
      init_scheduler ();
      mkfifo (CONTROL_PIPE, 0600);
      control_fd = open (CONTROL_PIPE, O_RDONLY | O_NONBLOCK, 0600);
@@ -75,3 +75,14 @@
      if (control_fd < 0)
      {
          log (LOG_CRIT, "%s: Unable to open " CONTROL_PIPE " for reading.",
+@@ -1087,8 +1097,8 @@
+          "Written by Mark Spencer, Copyright (C) 1998, Adtran, Inc.\n");
+     log (LOG_LOG, "Forked by Scott Balmos and David Stipp, (C) 2001\n");
+     log (LOG_LOG, "Inhereted by Jeff McAdams, (C) 2002\n");
+-    log (LOG_LOG, "%s version %s on a %s, port %d\n", uts.sysname,
+-         uts.release, uts.machine, gconfig.port);
++    log (LOG_LOG, "%s version %s on a %s, addr %s, port %d\n", uts.sysname,
++         uts.release, uts.machine, inet_ntoa(gconfig.addr), gconfig.port);
+     lac = laclist;
+     while (lac)
+     {

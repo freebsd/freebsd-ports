@@ -7,7 +7,7 @@
 
 PORTNAME=	l2tpd
 PORTVERSION=	0.69
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.l2tpd.org/downloads/
 
