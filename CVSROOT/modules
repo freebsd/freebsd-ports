@@ -3418,6 +3418,7 @@ lbpp		ports/devel/lbpp
 lbrate		ports/archivers/lbrate
 lbreakout	ports/games/lbreakout
 lc		ports/misc/lc
+lcdproc		ports/sysutils/lcdproc
 lcms		ports/graphics/lcms
 ld		src/gnu/usr.bin/ld
 ldapsdk		ports/net/ldapsdk
