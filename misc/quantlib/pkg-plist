@@ -1,24 +1,31 @@
+bin/BermudanSwaption
 bin/DiscreteHedging
 bin/EuropeanOption
 bin/SwapValuation
 bin/quantlib-config
 include/ql/Calendars/frankfurt.hpp
 include/ql/Calendars/helsinki.hpp
+include/ql/Calendars/johannesburg.hpp
 include/ql/Calendars/london.hpp
 include/ql/Calendars/milan.hpp
 include/ql/Calendars/newyork.hpp
+include/ql/Calendars/sydney.hpp
 include/ql/Calendars/target.hpp
+include/ql/Calendars/tokyo.hpp
+include/ql/Calendars/toronto.hpp
 include/ql/Calendars/wellington.hpp
 include/ql/Calendars/zurich.hpp
 include/ql/CashFlows/cashflowvectors.hpp
 include/ql/CashFlows/coupon.hpp
 include/ql/CashFlows/fixedratecoupon.hpp
 include/ql/CashFlows/floatingratecoupon.hpp
+include/ql/CashFlows/shortfloatingcoupon.hpp
 include/ql/CashFlows/simplecashflow.hpp
 include/ql/DayCounters/actual360.hpp
 include/ql/DayCounters/actual365.hpp
 include/ql/DayCounters/actualactual.hpp
 include/ql/DayCounters/thirty360.hpp
+include/ql/FiniteDifferences/americancondition.hpp
 include/ql/FiniteDifferences/boundarycondition.hpp
 include/ql/FiniteDifferences/bsmoperator.hpp
 include/ql/FiniteDifferences/cranknicolson.hpp
@@ -30,20 +37,40 @@ include/ql/FiniteDifferences/expliciteuler.hpp
 include/ql/FiniteDifferences/fdtypedefs.hpp
 include/ql/FiniteDifferences/finitedifferencemodel.hpp
 include/ql/FiniteDifferences/impliciteuler.hpp
+include/ql/FiniteDifferences/mixedscheme.hpp
+include/ql/FiniteDifferences/onefactoroperator.hpp
+include/ql/FiniteDifferences/shoutcondition.hpp
 include/ql/FiniteDifferences/stepcondition.hpp
 include/ql/FiniteDifferences/tridiagonaloperator.hpp
 include/ql/FiniteDifferences/valueatcenter.hpp
+include/ql/Indexes/audlibor.hpp
+include/ql/Indexes/cadlibor.hpp
+include/ql/Indexes/chflibor.hpp
 include/ql/Indexes/euribor.hpp
 include/ql/Indexes/gbplibor.hpp
+include/ql/Indexes/jpylibor.hpp
 include/ql/Indexes/usdlibor.hpp
 include/ql/Indexes/xibor.hpp
 include/ql/Indexes/xibormanager.hpp
+include/ql/Indexes/zarlibor.hpp
+include/ql/Instruments/capfloor.hpp
 include/ql/Instruments/plainoption.hpp
 include/ql/Instruments/simpleswap.hpp
 include/ql/Instruments/stock.hpp
 include/ql/Instruments/swap.hpp
+include/ql/Instruments/swaption.hpp
+include/ql/Lattices/binomialtree.hpp
+include/ql/Lattices/bsmlattice.hpp
+include/ql/Lattices/lattice.hpp
+include/ql/Lattices/lattice2d.hpp
+include/ql/Lattices/tree.hpp
+include/ql/Lattices/trinomialtree.hpp
+include/ql/Math/bilinearinterpolation.hpp
+include/ql/Math/chisquaredistribution.hpp
 include/ql/Math/cubicspline.hpp
+include/ql/Math/gammadistribution.hpp
 include/ql/Math/interpolation.hpp
+include/ql/Math/interpolation2D.hpp
 include/ql/Math/lexicographicalview.hpp
 include/ql/Math/linearinterpolation.hpp
 include/ql/Math/matrix.hpp
@@ -73,25 +100,43 @@ include/ql/MonteCarlo/path.hpp
 include/ql/MonteCarlo/pathgenerator.hpp
 include/ql/MonteCarlo/pathpricer.hpp
 include/ql/MonteCarlo/sample.hpp
-include/ql/Patterns/factory.hpp
+include/ql/Optimization/armijo.hpp
+include/ql/Optimization/conjugategradient.hpp
+include/ql/Optimization/constraint.hpp
+include/ql/Optimization/costfunction.hpp
+include/ql/Optimization/criteria.hpp
+include/ql/Optimization/leastsquare.hpp
+include/ql/Optimization/linesearch.hpp
+include/ql/Optimization/method.hpp
+include/ql/Optimization/problem.hpp
+include/ql/Optimization/simplex.hpp
+include/ql/Optimization/steepestdescent.hpp
 include/ql/Patterns/observable.hpp
-include/ql/Pricers/americancondition.hpp
-include/ql/Pricers/americanoption.hpp
+include/ql/Pricers/analyticalcapfloor.hpp
 include/ql/Pricers/barrieroption.hpp
-include/ql/Pricers/bermudanoption.hpp
 include/ql/Pricers/binaryoption.hpp
-include/ql/Pricers/bsmnumericaloption.hpp
+include/ql/Pricers/binomialplainoption.hpp
+include/ql/Pricers/blackcapfloor.hpp
+include/ql/Pricers/blackswaption.hpp
+include/ql/Pricers/capfloorpricer.hpp
 include/ql/Pricers/cliquetoption.hpp
 include/ql/Pricers/continuousgeometricapo.hpp
 include/ql/Pricers/discretegeometricapo.hpp
 include/ql/Pricers/discretegeometricaso.hpp
-include/ql/Pricers/dividendamericanoption.hpp
-include/ql/Pricers/dividendeuropeanoption.hpp
-include/ql/Pricers/dividendoption.hpp
-include/ql/Pricers/dividendshoutoption.hpp
 include/ql/Pricers/europeanengine.hpp
 include/ql/Pricers/europeanoption.hpp
-include/ql/Pricers/finitedifferenceeuropean.hpp
+include/ql/Pricers/fdamericanoption.hpp
+include/ql/Pricers/fdbermudanoption.hpp
+include/ql/Pricers/fdbsmoption.hpp
+include/ql/Pricers/fddividendamericanoption.hpp
+include/ql/Pricers/fddividendeuropeanoption.hpp
+include/ql/Pricers/fddividendoption.hpp
+include/ql/Pricers/fddividendshoutoption.hpp
+include/ql/Pricers/fdeuropean.hpp
+include/ql/Pricers/fdmultiperiodoption.hpp
+include/ql/Pricers/fdshoutoption.hpp
+include/ql/Pricers/fdstepconditionoption.hpp
+include/ql/Pricers/jamshidianswaption.hpp
 include/ql/Pricers/mcbasket.hpp
 include/ql/Pricers/mcdiscretearithmeticapo.hpp
 include/ql/Pricers/mcdiscretearithmeticaso.hpp
@@ -101,18 +146,30 @@ include/ql/Pricers/mchimalaya.hpp
 include/ql/Pricers/mcmaxbasket.hpp
 include/ql/Pricers/mcpagoda.hpp
 include/ql/Pricers/mcpricer.hpp
-include/ql/Pricers/multiperiodoption.hpp
-include/ql/Pricers/shoutcondition.hpp
-include/ql/Pricers/shoutoption.hpp
 include/ql/Pricers/singleassetoption.hpp
-include/ql/Pricers/stepconditionoption.hpp
+include/ql/Pricers/swaptionpricer.hpp
+include/ql/Pricers/treecapfloor.hpp
+include/ql/Pricers/treeswaption.hpp
 include/ql/RandomNumbers/boxmullergaussianrng.hpp
 include/ql/RandomNumbers/centrallimitgaussianrng.hpp
-include/ql/RandomNumbers/inversecumulativegaussianrng.hpp
+include/ql/RandomNumbers/inversecumgaussianrng.hpp
 include/ql/RandomNumbers/knuthuniformrng.hpp
 include/ql/RandomNumbers/lecuyeruniformrng.hpp
 include/ql/RandomNumbers/randomarraygenerator.hpp
 include/ql/RandomNumbers/rngtypedefs.hpp
+include/ql/ShortRateModels/CalibrationHelpers/caphelper.hpp
+include/ql/ShortRateModels/CalibrationHelpers/swaptionhelper.hpp
+include/ql/ShortRateModels/OneFactorModels/blackkarasinski.hpp
+include/ql/ShortRateModels/OneFactorModels/coxingersollross.hpp
+include/ql/ShortRateModels/OneFactorModels/extendedcoxingersollross.hpp
+include/ql/ShortRateModels/OneFactorModels/hullwhite.hpp
+include/ql/ShortRateModels/OneFactorModels/vasicek.hpp
+include/ql/ShortRateModels/TwoFactorModels/g2.hpp
+include/ql/ShortRateModels/calibrationhelper.hpp
+include/ql/ShortRateModels/model.hpp
+include/ql/ShortRateModels/onefactormodel.hpp
+include/ql/ShortRateModels/parameter.hpp
+include/ql/ShortRateModels/twofactormodel.hpp
 include/ql/Solvers1D/bisection.hpp
 include/ql/Solvers1D/brent.hpp
 include/ql/Solvers1D/falseposition.hpp
@@ -120,6 +177,7 @@ include/ql/Solvers1D/newton.hpp
 include/ql/Solvers1D/newtonsafe.hpp
 include/ql/Solvers1D/ridder.hpp
 include/ql/Solvers1D/secant.hpp
+include/ql/TermStructures/affinetermstructure.hpp
 include/ql/TermStructures/flatforward.hpp
 include/ql/TermStructures/piecewiseflatforward.hpp
 include/ql/TermStructures/ratehelpers.hpp
@@ -129,24 +187,33 @@ include/ql/Utilities/filteringiterator.hpp
 include/ql/Utilities/iteratorcategories.hpp
 include/ql/Utilities/processingiterator.hpp
 include/ql/Utilities/steppingiterator.hpp
+include/ql/Volatilities/capflatvolvector.hpp
+include/ql/Volatilities/swaptionvolmatrix.hpp
 include/ql/argsandresults.hpp
 include/ql/array.hpp
+include/ql/blackmodel.hpp
 include/ql/calendar.hpp
+include/ql/capvolstructures.hpp
 include/ql/cashflow.hpp
 include/ql/config.hpp
 include/ql/currency.hpp
 include/ql/dataformatters.hpp
 include/ql/date.hpp
 include/ql/daycounter.hpp
+include/ql/diffusionprocess.hpp
 include/ql/errors.hpp
+include/ql/exercise.hpp
 include/ql/expressiontemplates.hpp
-include/ql/forwardvolsurface.hpp
+include/ql/functions/daycounters.hpp
+include/ql/functions/mathf.hpp
+include/ql/grid.hpp
 include/ql/handle.hpp
 include/ql/history.hpp
 include/ql/index.hpp
 include/ql/instrument.hpp
 include/ql/marketelement.hpp
 include/ql/null.hpp
+include/ql/numericalmethod.hpp
 include/ql/option.hpp
 include/ql/qldefines.hpp
 include/ql/quantlib.hpp
@@ -154,21 +221,29 @@ include/ql/relinkablehandle.hpp
 include/ql/riskstatistics.hpp
 include/ql/scheduler.hpp
 include/ql/solver1d.hpp
-include/ql/swaptionvolsurface.hpp
+include/ql/swaptionvolstructure.hpp
 include/ql/termstructure.hpp
 include/ql/types.hpp
 lib/libQuantLib.a
 lib/libQuantLib.so
 lib/libQuantLib.so.0
 share/aclocal/quantlib.m4
+@dirrm include/ql/functions
+@dirrm include/ql/Volatilities
 @dirrm include/ql/Utilities
 @dirrm include/ql/TermStructures
 @dirrm include/ql/Solvers1D
+@dirrm include/ql/ShortRateModels/TwoFactorModels
+@dirrm include/ql/ShortRateModels/OneFactorModels
+@dirrm include/ql/ShortRateModels/CalibrationHelpers
+@dirrm include/ql/ShortRateModels
 @dirrm include/ql/RandomNumbers
 @dirrm include/ql/Pricers
 @dirrm include/ql/Patterns
+@dirrm include/ql/Optimization
 @dirrm include/ql/MonteCarlo
 @dirrm include/ql/Math
+@dirrm include/ql/Lattices
 @dirrm include/ql/Instruments
 @dirrm include/ql/Indexes
 @dirrm include/ql/FiniteDifferences
