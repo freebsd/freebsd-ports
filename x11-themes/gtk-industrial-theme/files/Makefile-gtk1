@@ -1,0 +1,46 @@
+CC = cc
+CPP = cc -E
+CXX = c++
+CXXCPP = c++ -E
+GDK_PIXBUF_CFLAGS = `$(GDK_PIXBUF_CONFIG) --cflags`
+GDK_PIXBUF_CONFIG = /usr/X11R6/bin/gdk-pixbuf-config
+GDK_PIXBUF_LIBS = `$(GDK_PIXBUF_CONFIG) --libs`
+GTK_CFLAGS = `$(GTK_CONFIG) --cflags`
+GTK_CONFIG = /usr/X11R6/bin/gtk12-config
+GTK_LIBS = `$(GTK_CONFIG) --libs`
+LIBTOOL = libtool
+LN_S = ln -s
+INCLUDES = $(GTK_CFLAGS) $(GDK_PIXBUF_CFLAGS)
+libdir=/usr/X11R6/lib
+enginedir = $(libdir)/gtk/themes/engines
+engine_LTLIBRARIES = libindustrial.la
+libindustrial_la_LDFLAGS = -module -avoid-version
+libindustrial_la_LIBADD = $(GTK_LIBS) $(GDK_PIXBUF_LIBS)
+EXTRA_DIST = raleigh_dot.c
+LTLIBRARIES =  $(engine_LTLIBRARIES)
+CPPFLAGS = -I/usr/local/include -I/usr/X11R6/include  -I/usr/X11R6/include -D_GETOPT_H -D_THREAD_SAFE
+LDFLAGS = 
+LIBS = -Wl,-export-dynamic -L/usr/local/lib -L/usr/X11R6/lib
+libindustrial_la_DEPENDENCIES = 
+libindustrial_la_OBJECTS =  industrial1_theme_main.lo \
+industrial_style.lo
+CFLAGS = -O2
+COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
+all: all-am
+.SUFFIXES:
+.SUFFIXES: .S .c .lo .o .obj .s
+.c.o:
+	$(COMPILE) -c $<
+.c.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+.s.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+.S.lo:
+	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
+libindustrial.la: $(libindustrial_la_OBJECTS) $(libindustrial_la_DEPENDENCIES)
+	$(LINK) -rpath $(enginedir) $(libindustrial_la_LDFLAGS) $(libindustrial_la_OBJECTS) $(libindustrial_la_LIBADD) $(LIBS)
+all-am: $(LTLIBRARIES)
+.NOEXPORT:

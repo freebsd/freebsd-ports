@@ -1,0 +1,29 @@
+lib/gtk/themes/engines/libindustrial.so
+%%GTK2%%lib/gtk-2.0/%%GTKVERSION%%/engines/libindustrial.so
+share/themes/Industrial/gtk/gtkrc
+%%GTK2%%share/themes/Industrial/gtk-2.0/gtkrc
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_apply.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_bottom-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_bottom.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_cancel-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_cancel.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_down-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_down.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_first-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_first.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_last-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_last.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_left-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_left.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_ok.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_refresh-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_refresh.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_right-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_right.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_top-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_top.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_up-16.png
+%%GTK2%%share/themes/Industrial/gtk-2.0/stock_up.png
+@dirrm share/themes/Industrial/gtk
+%%GTK2%%@dirrm share/themes/Industrial/gtk-2.0
+@dirrm share/themes/Industrial
