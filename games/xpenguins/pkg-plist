@@ -74,6 +74,8 @@ share/xpenguins/themes/Daemon/config
 share/xpenguins/themes/Daemon/daemon.png
 share/xpenguins/themes/Daemon/walker.xpm
 share/xpenguins/themes/Daemon/faller.xpm
+share/xpenguins/themes/Daemon/explosion.xpm
+share/xpenguins/themes/Daemon/exit.xpm
 @dirrm share/xpenguins/themes/Turtles
 @dirrm share/xpenguins/themes/Penguins
 @dirrm share/xpenguins/themes/Classic_Penguins
