@@ -1,0 +1,20 @@
+--- kernel/unix.c.orig	Mon May 18 19:35:03 1998
++++ kernel/unix.c	Sun Apr 30 20:35:33 2000
+@@ -240,7 +240,7 @@
+     /* The scorefile is only writable by the owner of the Xconq
+        executable, but we normally run as the user, so switch over
+        before writing. */
+-    setuid(games_uid);
++    setgid(games_uid);
+     fp = fopen(score_file_pathname(name), "a");
+     return fp;
+ }
+@@ -251,7 +251,7 @@
+ {
+     fclose(fp);
+     /* Reset the uid back to the user who started the game. */
+-    setuid(getuid());
++    setgid(getgid());
+ }
+ 
+ static char *scorenamebuf;
