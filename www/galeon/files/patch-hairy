@@ -715,9 +715,19 @@ $FreeBSD$
 +END_GNOME_DECLS
 +
 +#endif /* NAUTILUS_VIEW_H */
---- src/Makefile.in.orig	Mon Mar 24 14:30:07 2003
-+++ src/Makefile.in	Mon Mar 24 14:31:36 2003
-@@ -251,7 +251,8 @@
+--- src/Makefile.in.orig	Sun Jun 27 20:19:43 2004
++++ src/Makefile.in	Sun Jun 27 20:21:00 2004
+@@ -87,7 +87,8 @@
+ 	window_callbacks.c window_notifiers.c window_notifiers.h \
+ 	xbel.c xlink.c xlink.h mozilla/gcc2abi.cpp \
+ 	galeon-nautilus-view.c galeon-nautilus-view.h eel-gtk-macros.h
+-am__objects_1 = galeon-nautilus-view.$(OBJEXT)
++am__objects_1 = galeon-nautilus-view.$(OBJEXT) \
++		nautstub.$(OBJEXT)
+ @ENABLE_NAUTILUS_VIEW_TRUE@am__objects_2 = $(am__objects_1)
+ am_galeon_bin_OBJECTS = GaleonAutomation-common.$(OBJEXT) \
+ 	Galeon-impl.$(OBJEXT) GaleonAutomation-stubs.$(OBJEXT) \
+@@ -441,7 +442,8 @@
  NAUTILUS_VIEW_SRC = \
  	galeon-nautilus-view.c \
  	galeon-nautilus-view.h \
@@ -725,15 +735,5 @@ $FreeBSD$
 +	eel-gtk-macros.h \
 +	nautstub.c
  
- 
  @ENABLE_NAUTILUS_VIEW_TRUE@NAUTILUS_VIEW_SRC_TO_COMPILE = $(NAUTILUS_VIEW_SRC)
-@@ -445,7 +446,8 @@
- 	window_notifiers.c window_notifiers.h xbel.c xlink.c xlink.h \
- 	mozilla/gcc2abi.cpp galeon-nautilus-view.c \
- 	galeon-nautilus-view.h eel-gtk-macros.h
--am__objects_1 = galeon-nautilus-view.$(OBJEXT)
-+am__objects_1 = galeon-nautilus-view.$(OBJEXT) \
-+		nautstub.$(OBJEXT)
- @ENABLE_NAUTILUS_VIEW_TRUE@am__objects_2 = $(am__objects_1)
- am_galeon_bin_OBJECTS = GaleonAutomation-common.$(OBJEXT) \
- 	Galeon-impl.$(OBJEXT) GaleonAutomation-stubs.$(OBJEXT) \
+ galeon_bin_SOURCES = \
