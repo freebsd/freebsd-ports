@@ -5,51 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	postgresql-tcltk
-CATEGORIES=	japanese databases
+PORTNAME=	postgresql
+PORTREVISION=	0
+CATEGORIES=	japanese databases tcl${TCLVERSION:C/[^0-9]//g}
+PKGNAMESUFFIX=	-tcltk
 
 MAINTAINER=	saito@a2z.co.jp
-COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
-
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../../databases/postgresql7/Makefile>
-
-LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
-		pq:${PORTSDIR}/databases/postgresql7 \
-		tcl80jp.1:${PORTSDIR}/japanese/tcl80 \
-		tk80jp.1:${PORTSDIR}/japanese/tk80
+COMMENT=	A TCL interface to the database PostgreSQL, including a tk GUI
 
 TCLVERSION?=	8.0jp
-PLIST_SUB+=	TCLVERSION=${TCLVERSION}
-CONFIGURE_ARGS=	--with-tcl \
-		--with-tclconfig=${TCLCONFIG} \
-		--with-includes=${INCDIRS}
 
-TCL_INCDIR=	${LOCALBASE}/include/tcl${TCLVERSION}
-TCLCONFIG=	${LOCALBASE}/lib/tcl${TCLVERSION}
-MAKE_ENV+=	TCL_INCDIR=${TCL_INCDIR}
-CONFIGURE_ENV+=	LIBS="-lm -L${LOCALBASE}/lib -ltcl${TCLVERSION:S/.//}" \
-	               CFLAGS=-DPGTCL_USE_TCLOBJ
-CONFIGURE_ARGS+= --with-tkconfig="${TKCONFIG}"
-TK_INCDIR=	${LOCALBASE}/include/tk${TCLVERSION}
-TKCONFIG=	${LOCALBASE}/lib/tk${TCLVERSION}
-INCDIRS=	${TCL_INCDIR}:${TK_INCDIR}
-PLIST_SUB+=	TK=""
+TCLPORTDIR=	${PORTSDIR}/japanese/tcl
+TKPORTDIR=	${PORTSDIR}/japanese/tk
 
-pre-build:
-	cd ${WRKSRC}/src/port; ${GMAKE}
-
-do-build:
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl
-
-do-install:
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/bin/pgtclsh install
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/libpgtcl install
-# Preparing a loadable TCL-package (pkgIndex.tcl)
-	@${MKDIR} ${PREFIX}/lib/tcl${TCLVERSION}/Pgtcl1.3
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/pkgIndex.tcl.in \
-		> ${PREFIX}/lib/tcl${TCLVERSION}/Pgtcl1.3/pkgIndex.tcl
-
-.include <bsd.port.mk>
+.include <${.CURDIR}/../../databases/postgresql-tcltk/Makefile>

@@ -25,7 +25,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 
 CONFLICTS?=	bind-8.* bind84-8.* bind9-9.* bind9-sdb-mysql-* host-* skalibs-*
-POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 ISCVERSION=	9.2.2
@@ -51,7 +50,7 @@ NO_DESCRIBE=yes
 .if defined(WITH_POSTGRESQL_DRIVER)
 .if !defined(WITHOUT_POSTGRESQL_DRIVER)
 POSTGRESQL_SUFFIX=	+postgres
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-dlz-postgres
 .endif
 .endif

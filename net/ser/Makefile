@@ -15,14 +15,12 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A very fast and configurable SIP proxy
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-LIB_DEPENDS=	radiusclient.2:${PORTSDIR}/net/radiusclient \
-		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+LIB_DEPENDS=	radiusclient.2:${PORTSDIR}/net/radiusclient
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-POSTGRESQL_PORT?=	databases/postgresql7
-
+USE_PGSQL=	yes
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 

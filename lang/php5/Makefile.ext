@@ -248,8 +248,7 @@ PHP_HEADER_DIRS=pcrelib
 .endif
 
 .if ${PHP_MODNAME} == "pgsql"
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	YES
 
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif

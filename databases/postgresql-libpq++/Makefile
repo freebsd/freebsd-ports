@@ -7,7 +7,7 @@
 
 PORTNAME=	libpq++
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqpp/stable/
 PKGNAMEPREFIX=	postgresql-
@@ -16,9 +16,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	C++ interface for  PostgreSQL
 
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
+USE_PGSQL=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
 INSTALLS_SHLIB=	YES

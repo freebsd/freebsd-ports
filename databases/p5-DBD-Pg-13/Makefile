@@ -16,9 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
-POSTGRESQL_PORT?=	databases/postgresql7
+USE_PGSQL=	yes
 
 PERL_CONFIGURE=	yes
 
@@ -37,17 +35,8 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
-.if defined(WITH_OLD_LAYOUT)
-CONFIGURE_ENV+=	POSTGRES_INCLUDE=${LOCALBASE}/include/pgsql \
-		POSTGRES_LIB=${LOCALBASE}/lib
-.else
-.if exists(${LOCALBASE}/pgsql/bin/pg_config)
-PG_CONFIG=	${LOCALBASE}/pgsql/bin/pg_config
-.else
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
-.endif
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
 		POSTGRES_LIB=`${PG_CONFIG} --libdir`
-.endif
 
 .include <bsd.port.post.mk>

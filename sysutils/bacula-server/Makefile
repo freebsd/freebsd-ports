@@ -56,7 +56,7 @@ OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
 .else
 OPTIONS=	MYSQL "Use MySQL database instead of SqLite" off
-OPTIONS+=	POSTGRESQL7 "Use PostgreSQL 7.X database instead of SqLite" off
+OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
 .endif
 
@@ -107,9 +107,9 @@ CONFFILES=		sd dir
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 DBTYPE=			mysql
-.elif defined(WITH_POSTGRESQL7)
+.elif defined(WITH_POSTGRESQL)
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
 DBTYPE=			postgresql
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
@@ -136,9 +136,9 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_WXCONSOLE=yes	if you only want a wxGTK based GUI console."
 	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes	if you only want a GNOME based GUI console."
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
-.if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL7)
+.if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
-	@${ECHO_MSG} "  WITH_POSTGRESQL7=yes	if you want PostgreSQL 7.X instead of SqLite as the database."
+	@${ECHO_MSG} "  WITH_POSTGRESQL=yes		if you want PostgreSQL instead of SqLite as the database."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite!"
 .endif

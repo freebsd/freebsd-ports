@@ -40,7 +40,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--enable-pgsql=yes \
 			--with-pgsql_include=${LOCALBASE}/include \
 			--with-pgsql_lib=${LOCALBASE}/lib

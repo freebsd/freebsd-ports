@@ -75,7 +75,7 @@ WITH_FREETYPE=	yes
 WITH_MYSQL=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libpq.so.2)
+.if exists(${LOCALBASE}/lib/libpq.so)
 WITH_POSTGRES=	yes
 .endif
 
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+= --without-mysql
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 CONFIGURE_ARGS+= --with-pgsql=${PREFIX}
 .else
 CONFIGURE_ARGS+= --without-pgsql

@@ -364,6 +364,21 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # WITH_MYSQL_VER
 #				- User defined variable to set MySQL version.
 ##
+# USE_PGSQL		- Add PostgreSQL client dependency.
+#				  If no version is given (by the maintainer via the port or
+#				  by the user via defined variable), try to find the
+#				  currently installed version.  Fall back to default if
+#				  necessary (PostgreSQL-7.4 = 74).
+# DEFAULT_PGSQL_VER
+#				- PostgreSQL default version. Can be overridden within a port.
+#				  Default: 74.
+# WANT_PGSQL_VER
+#				- Maintainer can set an arbitrary version of PostgreSQL by
+#				  using it.
+# BROKEN_WITH_PGSQL
+#				- This variable can be defined if the ports doesn't support
+#				  one or more versions of PostgreSQL.
+##
 # USE_RC_SUBR	- If set, the ports startup/shutdown script uses the common
 #				  routines found in etc/rc.subr and may need to
 #				  depend on the sysutils/rc_subr port.
@@ -1688,6 +1703,44 @@ LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysq
 BROKEN=		"unknown MySQL version: ${MYSQL_VER}"
 .endif # Check for correct libs
 .endif # USE_MYSQL
+
+.if defined(USE_PGSQL)
+DEFAULT_PGSQL_VER?=	74
+
+# Setting/finding PostgreSQL version we want.
+.if defined(WANT_PGSQL_VER)
+PGSQL_VER=	${WANT_PGSQL_VER}
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif # WANT_PGSQL_VER
+
+# And now we are checking if we can use it
+.if exists(${PORTSDIR}/databases/postgresql${PGSQL_VER}-client)
+.if defined(BROKEN_WITH_PGSQL)
+.	for VER in ${BROKEN_WITH_PGSQL}
+.		if (${PGSQL_VER} == "${VER}")
+BROKEN=		"Doesn't work with PostgreSQL version : ${PGSQL_VER} (Doesn't support PostgresSQL ${BROKEN_WITH_PGSQL})"
+.		endif
+.	endfor
+.endif # BROKEN_WITH_PGSQL
+LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
+.else
+BROKEN=		"unknown PostgreSQL version: ${PGSQL_VER}"
+.endif # Check for correct version
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif # USE_PGSQL
+
+.if defined(USE_XLIB)
+LIB_DEPENDS+=	X11.6:${X_LIBRARIES_PORT}
+# Add explicit X options to avoid problems with false positives in configure
+.if defined(GNU_CONFIGURE)
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+.endif
+.endif
 
 # XXX: (not yet): .if defined(USE_AUTOTOOLS)
 .include "${PORTSDIR}/Mk/bsd.autotools.mk"

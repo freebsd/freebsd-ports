@@ -7,6 +7,7 @@
 
 PORTNAME=	Pg
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/
@@ -16,9 +17,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	An interface for using perl5 to access PostgreSQL databases
 
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
+USE_PGSQL=	yes
 USE_PERL5=	yes
 
 MAN3=		Pg.3

@@ -36,9 +36,9 @@ OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_CHASEN   "Enable ChaSen japanese analyzer"       off \
 		DPSEARCH_APACHE   "Enable mod_dpsearch for Apache"        off \
 		DPSEARCH_IDN      "Enable Internationalized Domain Names" off \
-		DPSEARCH_PGSQL    "Use PGSQL  (mutually exclusive)"       off \
-		DPSEARCH_MYSQL    "Use MySQL  (mutually exclusive)"       on \
-		DPSEARCH_SQLITE   "Use SQLite (mutually exclusive)"       off \
+		DPSEARCH_PGSQL    "Use PostgreSQL  (mutually exclusive)"  off \
+		DPSEARCH_MYSQL    "Use MySQL       (mutually exclusive)"  on \
+		DPSEARCH_SQLITE   "Use SQLite      (mutually exclusive)"  off
 
 .include <bsd.port.pre.mk>
 
@@ -109,8 +109,7 @@ pre-fetch:
 .endif
 
 .if defined(WITH_DPSEARCH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 
 .elif defined(WITH_DPSEARCH_MYSQL)

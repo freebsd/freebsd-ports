@@ -45,8 +45,7 @@ RT_VERSION=	${PORTVERSION:C/\./-/g}
 DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server

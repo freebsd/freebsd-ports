@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	0.9.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
@@ -15,13 +15,12 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+
+USE_PGSQL=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 .include <bsd.port.pre.mk>
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 .if exists(${APXS})
 APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no

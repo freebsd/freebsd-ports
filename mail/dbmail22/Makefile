@@ -31,7 +31,7 @@ SED_SCRIPT+=    -e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 
 .if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 DATABASE=		postgresql
 PLIST_SUB+=		PGSQL=""
 PLIST_SUB+=		MYSQL="@comment "

@@ -8,6 +8,7 @@
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/      \
 		ftp://ftp.silug.org/pub/qt/             \
@@ -21,11 +22,9 @@ COMMENT=	A plugin for QT to connect to PostgreSQL-Databases
 
 DB=		psql
 
-LIB_DEPENDS+=	pq:${PORTSDIR}/${POSTGRESQL_PORT} \
-		qt-mt:${PORTSDIR}/x11-toolkits/qt33
+LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 
-POSTGRESQL_PORT?=	databases/postgresql7
-
+USE_PGSQL=	yes
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
 DRIVER=		src/sql/drivers/${DB}

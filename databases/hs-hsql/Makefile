@@ -7,6 +7,7 @@
 
 PORTNAME=	hsql
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	databases haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	htoolkit
@@ -16,10 +17,10 @@ DISTNAME=	HSQL-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell access to SQL
 
-BUILD_DEPENDS=	psql:${PORTSDIR}/databases/postgresql7 \
-		ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	psql:${PORTSDIR}/databases/postgresql7 \
-		ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+
+USE_PGSQL=	yes
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock

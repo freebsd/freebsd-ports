@@ -5,19 +5,33 @@
 # $FreeBSD$
 #
 
+PORTNAME=	postgresql
 PORTREVISION=	0
 PKGNAMESUFFIX=	-docs
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The PostgreSQL documentation set
 
-POSTGRESQL_SUBPORT=	YES
-POSTGRESQL_PORT?=	databases/postgresql7
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
+MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
+
+DEFAULT_PGSQL_VER?=74
+
+# can't include <bsd.port.pre.mk> in a slave port
+# so set these instead:
+LOCALBASE?=	${DESTDIR}/usr/local
+SED?=		/usr/bin/sed
+
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
 DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
-.undef USE_GMAKE
-.undef GNU_CONFIGURE
 NO_BUILD=	YES
+SLAVE_ONLY=	YES
+PATCHDIR=	mustnotexist
 
 do-install:
 	@ $(MKDIR) ${DOCSDIR}/html; \
@@ -32,4 +46,4 @@ post-install:
 	  ${ECHO} @dirrm ${DOCSDIR:S,^${PREFIX}/,,}/html >> ${TMPPLIST} ;\
 	  ${ECHO} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2> /dev/null || true" >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

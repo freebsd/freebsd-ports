@@ -40,8 +40,7 @@ EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/mysql
 EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 .elif defined(WITH_POSTGRESQL)
 ALL_TARGET=	pgsql it ${LANGUAGE}
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 .else

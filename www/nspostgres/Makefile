@@ -7,7 +7,7 @@
 
 PORTNAME=	nspostgres
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -16,11 +16,10 @@ DISTNAME=	nspostgres3_0
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A driver to access PostgreSQL databases from Aolserver
 
-BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver \
-		${LOCALBASE}/bin/postmaster:${PORTSDIR}/${POSTGRESQL_PORT}
+BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-POSTGRESQL_PORT?=	databases/postgresql7
+USE_PGSQL=	yes
 
 WRKSRC=		${WRKDIR}/nspostgres
 

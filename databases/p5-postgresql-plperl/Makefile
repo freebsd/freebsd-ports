@@ -5,27 +5,37 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
+PORTNAME=	postgresql
 CATEGORIES=	databases perl5
-PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-plperl
 
 MAINTAINER=	girgen@FreeBSD.org
-COMMENT=	A module for using Perl5 to write SQL functions
+COMMENT=	Write SQL functions for PostgreSQL using Perl5
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include "../../${POSTGRESQL_PORT}/Makefile"
+MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
+RUN_DEPENDS=	postgres:${.CURDIR}/../postgresql${PGSQL_VER}-server
+
+DEFAULT_PGSQL_VER?=74
+
+# can't include <bsd.port.pre.mk> in a slave port
+# so set these instead:
+LOCALBASE?=	${DESTDIR}/usr/local
+SED?=		/usr/bin/sed
+
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | ${SED} -n 's/postmaster.*PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
 
 USE_PERL5=	yes
 CONFIGURE_ARGS=	--with-perl
 
-MAKE_ARGS+=	-C src/pl/plperl
-MAKEFILE=	GNUmakefile
+BUILD_DIRS=	src/pl/plperl
+SLAVE_ONLY=	yes
 
-post-install:
-	@ ${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

@@ -64,8 +64,8 @@ MAN8=		teapop.8
 ##
 
 .if defined(WITH_PGSQL)
+USE_PGSQL=		YES
 CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
 .endif
 
 .if defined(WITH_MYSQL)

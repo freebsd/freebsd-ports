@@ -5,21 +5,40 @@
 # $FreeBSD$
 #
 
+PORTNAME=	postgresql
+PORTREVISION=	1
 CATEGORIES=	databases python
 PKGNAMESUFFIX=	-plpython
 
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	A module for using Python to write SQL functions
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include "../../${POSTGRESQL_PORT}/Makefile"
-
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
-USE_PYTHON=	yes
+MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-MAKE_ARGS+=	-C src/pl/plpython
+DEFAULT_PGSQL_VER?=74
+
+# can't include <bsd.port.pre.mk> in a slave port
+# so set these instead:
+LOCALBASE?=	${DESTDIR}/usr/local
+SED?=		/usr/bin/sed
+
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | ${SED} -n 's/postmaster.*PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
+USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python
 
-.include <bsd.port.mk>
+BUILD_DIRS=	src/pl/plpython
+SLAVE_ONLY=	yes
+
+POSTGRESQL_PORT=databases/postgresql${PGSQL_VER}-server
+
+.include "${MASTERDIR}/Makefile"

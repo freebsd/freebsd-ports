@@ -6,7 +6,7 @@
 
 PORTNAME=	mod_auth_pgsql
 PORTVERSION=	2.0.2b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql2/dist/
 
@@ -15,7 +15,8 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
+
+USE_PGSQL=	yes
 
 LATEST_LINK=	mod_auth_pgsql2
 

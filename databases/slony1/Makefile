@@ -7,13 +7,14 @@
 
 PORTNAME=	slony1
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple slaves replication system
 
-PGSQL_PORT=	${PORTSDIR}/databases/postgresql7
+PGSQL_PORT=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 BUILD_DEPENDS=	${NONEXISTENT}:${PGSQL_PORT}:configure
 .if ! defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:${PORTSDIR}/graphics/netpbm \
@@ -43,6 +44,19 @@ PLIST_FILES=	bin/slon bin/slonik bin/slony_setup.pl \
 		share/postgresql/xxid.v74.sql
 PORTDOCS=	*.pdf howto COPYRIGHT README slonik_commands.html
 
+DEFAULT_PGSQL_VER?=74
+
+.include <bsd.port.pre.mk>
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
+		${SED} -n 's/postmaster.*PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
 pre-configure:
 	cd ${PGSQL_SRC}/src/interfaces/libpq && ${GMAKE} all
 	cd ${PGSQL_SRC}/src/port && ${GMAKE} all
@@ -61,4 +75,4 @@ do-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

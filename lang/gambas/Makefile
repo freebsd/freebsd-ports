@@ -69,11 +69,11 @@ NEW${lib:U}!=	${LDCONFIG} -r | ${GREP} ${lib} | ${GREP} -v 'compat/pkg'	\
 		| ${AWK} -F 'lib\/' '{print $$2}'
 .endfor
 
-.if exists(${LOCALBASE}/include/postgresql/server/postgres.h)
+.if exists(${LOCALBASE}/bin/pg_config)
 WITH_PGSQL=		yes
 .endif
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql-includes=${LOCALBASE}/include/postgresql/server \
 			--with-postgresql-libraries=${LOCALBASE}/lib
 PLIST_SUB+=		PGSQL=""

@@ -16,8 +16,7 @@ DIST_SUBDIR=	postgresql
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A new C++ interface for PostgreSQL
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
+USE_PGSQL=	YES
 USE_INC_LIBTOOL_VER=15
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
@@ -27,8 +26,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ARGS=	--with-postgres=${LOCALBASE} \
 		--enable-shared \
 		--with-postgres-include=${LOCALBASE}/include/postgresql
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 .include <bsd.port.pre.mk>
 

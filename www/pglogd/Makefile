@@ -7,14 +7,14 @@
 
 PORTNAME=	pglogd
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.digitalstratum.com/pglogd/
 
 MAINTAINER=	allie@pajunas.com
 COMMENT=	Sends web server log entries to a PostgreSQL database
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
-
+USE_PGSQL=	yes
 USE_REINPLACE=	yes
 
 post-extract:

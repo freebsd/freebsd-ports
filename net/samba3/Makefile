@@ -155,7 +155,7 @@ PLIST_SUB+=		SAMMYSQL="@comment "
 .endif
 
 .if defined(WITH_SAM_PGSQL)
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-pgsql-prefix=${LOCALBASE}
 WANT_EXPSAM_MODULES+=	pgsql
 PLIST_SUB+=		SAMPGSQL=""

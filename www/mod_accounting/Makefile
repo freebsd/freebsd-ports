@@ -22,7 +22,7 @@ MAKE_ARGS+=	APXS="${APXS}"
 .if defined(WITHOUT_PGSQL)
 MAKE_ARGS+=	WITHOUT_PGSQL=YES
 .else
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	YES
 .endif
 
 .if defined(WITHOUT_MYSQL)

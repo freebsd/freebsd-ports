@@ -32,9 +32,8 @@ FILES_TKI18N=	tcltkgrass-i18n${EXTRACT_SUFX}
 FILES_FONTS=	grass${PORTVERSION}_i686-pc-linux-i18n-ipafull-gnu_bin${EXTRACT_SUFX}
 
 .if defined(WITH_POSTGRES)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT} \
-		odbc.1:${PORTSDIR}/databases/unixODBC
+USE_PGSQL=	yes
+LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-postgres \
 		--with-postgres-includes=${LOCALBASE}/include/postgresql/internal/ \
 		--with-odbc

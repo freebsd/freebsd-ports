@@ -24,8 +24,7 @@ OPTIONS=	MYSQL "With MySQL support" off \
 USE_MYSQL=	yes
 .endif
 .if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-v${PORTVERSION}beta

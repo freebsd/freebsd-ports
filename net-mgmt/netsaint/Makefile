@@ -46,8 +46,7 @@ CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 .endif
 
 .if defined(WITH_POSTGRES)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	YES
 CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/lib \
 		--with-pgsql-inc=${LOCALBASE}/include \
 		--with-pgsql-xdata

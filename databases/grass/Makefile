@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass50/source/ \
@@ -19,7 +19,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
-POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -27,7 +26,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw.2:${PORTSDIR}/math/fftw \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		pq.3:${PORTSDIR}/${POSTGRESQL_PORT} \
 		odbc.1:${PORTSDIR}/databases/unixODBC \
 		lapack.3:${PORTSDIR}/math/lapack
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
@@ -39,6 +37,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude *CVS*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
+USE_PGSQL=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
 USE_GL=		yes

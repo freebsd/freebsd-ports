@@ -7,6 +7,25 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050130:
+  AFFECTS: users of PostgreSQL
+  AUTHOR: girgen@FreeBSD.org
+
+  Each of the PostgreSQL ports have been split into a server and a
+  client part. Please use postgresqlNN-server and/or
+  postgresqlNN-client as needed. Versions currently supported are 7.3,
+  7.4 and 8.0.
+
+  To start the PostgreSQL server at boot time, add the following to
+  /etc/rc.conf:
+
+  postgresql_enable=yes
+
+  The maintainance script is installed in etc/periodic/daily, and is
+  controlled by a set of new knobs in periodic.conf. Use it for
+  vacuuming your databases and get daily backups. Note that daily
+  vacuuming is on by default. See the script for details.
+
+20050130:
   AFFECTS: users of net/howl
   AUTHOR: marcus@FreeBSD.org
 

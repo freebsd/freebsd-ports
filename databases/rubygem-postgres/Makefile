@@ -7,7 +7,7 @@
 
 PORTNAME=	postgres
 PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.postgresql.jp/interfaces/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,10 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
-POSTGRESQL_PORT?=	databases/postgresql7
-
+USE_PGSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 

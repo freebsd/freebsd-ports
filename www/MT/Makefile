@@ -37,8 +37,7 @@ USE_MYSQL=		yes
 .elif defined(WITH_POSTGRES)
 DB_DIR?=		${PREFIX}/pgsql/data/blog
 # Or somewhere defined in $PGDATA
-
-RUN_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 .elif defined(WITH_SQLITE)
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
 RUN_DEPENDS+=\

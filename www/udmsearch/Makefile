@@ -27,8 +27,7 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 		--localstatedir=/var/udmsearch
 
 .if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=		YES
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
 
 .elif defined(WITH_MSQL)

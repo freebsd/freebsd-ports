@@ -7,6 +7,7 @@
 
 PORTNAME=	sqldjbdns
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://home.tiscali.cz:8080/~cz210552/distfiles/
 
@@ -15,8 +16,9 @@ COMMENT=	DJB dns server with PostgreSQL backend
 
 DJ_PORT?=	${PORTSDIR}/dns/djbdns
 BUILD_DEPENDS=	${NONEXISTENT}:${DJ_PORT}:extract
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools
+
+USE_PGSQL=	YES
 
 PORTDOCS=	ANNOUNCEMENT STATUS pgsqldns.html NEWS TODO README \
 		pgsqldns-conf.html sqldns.html pgsqldns-schema.html

@@ -7,6 +7,7 @@
 
 PORTNAME=	PyGreSQL
 PORTVERSION=	3.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
@@ -18,9 +19,8 @@ COMMENT=	A Python interface to PostgreSQL, both classic and DP-API 2.0
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq:${PORTSDIR}/${POSTGRESQL_PORT}
 
-POSTGRESQL_PORT?=	databases/postgresql7
+USE_PGSQL=	yes
 USE_PYTHON=	yes
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 USE_REINPLACE=yes
