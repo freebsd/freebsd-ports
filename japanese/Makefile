@@ -225,6 +225,7 @@
     SUBDIR += migemo-emacs21
     SUBDIR += migemo-xemacs21-mule
     SUBDIR += mimekit
+    SUBDIR += ming
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
     SUBDIR += mnews-im
