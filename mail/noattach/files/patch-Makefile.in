@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Aug 21 15:56:27 2003
++++ Makefile.in	Tue Oct 12 17:14:38 2004
+@@ -122,7 +122,7 @@
+ noattach_LDFLAGS =
+ 
+ DEFS = @DEFS@
+-DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
++DEFAULT_INCLUDES = $(MILTER_INCLUDES) -I. -I$(srcdir) -I.
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
