@@ -16,7 +16,7 @@ MAINTAINER=	hanspb@persbraten.vgs.no
 
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt142
 LIB_DEPENDS=	qt.2:${PORTSDIR}/x11-toolkits/qt142 \
-		gif.3:${PORTSDIR}/graphics/giflib \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.2:${PORTSDIR}/x11/kdelibs11

@@ -16,7 +16,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.3:${PORTSDIR}/graphics/giflib \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

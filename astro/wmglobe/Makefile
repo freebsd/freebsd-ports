@@ -18,7 +18,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.3:${PORTSDIR}/graphics/giflib \
+		gif.5:${PORTSDIR}/graphics/giflib \
 		wraster.3:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
