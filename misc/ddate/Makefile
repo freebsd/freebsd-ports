@@ -26,6 +26,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "      US_FORMAT   if you wish to use the US format for"
 	@${ECHO} "                  aneristic dates (m-d-y), as opposed to"
+	@${ECHO} "                  the Commonwealth format"
 	@${ECHO} ""
 	@${ECHO} "      PRAISE_BOB  if you wish ddate to contain SubGenius"
 	@${ECHO} "                  slogans"
