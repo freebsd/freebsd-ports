@@ -1,14 +1,14 @@
---- sources/main.c.orig	Sat Dec 20 11:16:21 2003
-+++ sources/main.c	Wed May  5 11:28:52 2004
+--- sources/main.c.orig	Mon Aug 30 13:19:03 2004
++++ sources/main.c	Wed Sep 15 15:03:04 2004
 @@ -23,6 +23,7 @@
- char defaultFileName[MAX_PATH_LEN+1];
- char logFileName[MAX_PATH_LEN+1];
- char mimeTypesFileName[MAX_PATH_LEN+1];
-+char phpFileName[MAX_PATH_LEN+1];
- char cgiRoot[MAX_PATH_LEN+1]; /* root for CGI scripts exec */
- struct timeval sockTimeVal;
- mimeData *mimeArray; /* here we will hold all MIME data, inited once, never to be changed */
-@@ -316,10 +317,13 @@
+ char	    	defaultFileName[MAX_PATH_LEN+1];
+ char	    	logFileName[MAX_PATH_LEN+1];
+ char	    	mimeTypesFileName[MAX_PATH_LEN+1];
++char            phpFileName[MAX_PATH_LEN+1];
+ char	    	cgiRoot[MAX_PATH_LEN+1]; /* root for CGI scripts exec */
+ struct timeval	sockTimeVal;
+ mimeData    	*mimeArray;  /* here we will hold all MIME data, inited once, never to be changed */
+@@ -322,10 +323,13 @@
          reqStruct->keepAlive = YES;
      else if (!strncmp(reqArray[1], "Connection: Keep-Alive", strlen("Connection: keep-alive")))
          reqStruct->keepAlive = YES;
@@ -23,7 +23,7 @@
      while (i < readLines)
      {
          if (!strncmp(reqArray[i], "User-Agent:", strlen("User-Agent:")))
-@@ -334,6 +338,20 @@
+@@ -340,6 +344,20 @@
  #ifdef PRINTF_DEBUG
  	    printf("content length %ld\n", reqStruct->contentLength);
  #endif
@@ -44,7 +44,7 @@
  	}
          i++;
      }
-@@ -431,18 +449,39 @@
+@@ -437,18 +455,39 @@
                      /* we append the default file name */
                      strcat(completeFilePath, defaultFileName);
                      analyzeExtension(mimeType, completeFilePath);
@@ -87,7 +87,7 @@
              }
          }
      } else if (!strcmp(req.method, "HEAD"))
-@@ -511,7 +550,14 @@
+@@ -517,7 +556,14 @@
                  strcat(completeFilePath, defaultFileName);
              }
              analyzeExtension(mimeType, completeFilePath);
@@ -103,7 +103,7 @@
          }
      } else if (!strcmp(req.method, "POST"))
      {
-@@ -525,13 +571,6 @@
+@@ -531,13 +577,6 @@
          int readFinished;
          
          printf("Handling of POST method\n");
@@ -117,7 +117,7 @@
  #ifdef PRINTF_DEBUG
          printf ("begin of post handling\n");
  
-@@ -547,7 +586,7 @@
+@@ -553,7 +592,7 @@
              return -1;
          } else if (req.contentLength >= BUFFER_SIZE)
          {
@@ -126,7 +126,7 @@
              return -1;
          }
          while (!readFinished)
-@@ -625,7 +664,77 @@
+@@ -631,7 +670,77 @@
  #ifdef PRINTF_DEBUG
              printf("buff: |%s|\n", buff);
  #endif
@@ -205,7 +205,7 @@
          }
      } else
      {
-@@ -654,7 +763,7 @@
+@@ -660,7 +769,7 @@
      f = fopen(configFile, "r");
      if (f == NULL)
      {
@@ -214,7 +214,7 @@
          *serverPort = DEFAULT_PORT;
          *maxChildren = DEFAULT_MAX_CHILDREN;
          strcpy(homePath, DEFAULT_DOCS_LOCATION);
-@@ -663,7 +772,9 @@
+@@ -669,7 +778,9 @@
          sockTimeVal.tv_usec = DEFAULT_USEC_TO;
          strcpy(logFileName, DEFAULT_LOG_FILE);
          strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
@@ -224,7 +224,7 @@
          return -1;
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
-@@ -764,11 +875,25 @@
+@@ -770,11 +881,25 @@
          if (mimeTypesFileName == NULL)
          {
              strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
@@ -252,7 +252,7 @@
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
      if (str1 != NULL && str2 != NULL && !strcmp(str1, "cgiRoot"))
-@@ -1002,7 +1127,7 @@
+@@ -1008,7 +1133,7 @@
                          } */
                      } else
                      {
