@@ -1,36 +1,34 @@
-*** Configure.bak	Mon Mar 11 18:47:43 1996
---- Configure	Tue Mar 12 14:52:18 1996
-***************
-*** 18,28 ****
-  PATH=".:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
-  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
-  
-- if test ! -t 0; then
--     echo "Say 'sh Configure', not 'sh <Configure'"
--     exit 1
-- fi
-- 
-  (alias) >/dev/null 2>&1 && \
-      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
-      echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
---- 18,23 ----
-***************
-*** 2278,2284 ****
-  
-  : see if crypt exists
-  echo " "
-! if $contains '^crypt$' libc.list >/dev/null 2>&1; then
-      echo 'crypt() found.'
-      d_crypt="$define"
-      cryptlib=''
---- 2273,2282 ----
-  
-  : see if crypt exists
-  echo " "
-! if $test "$cryptlib" = -lcrypt; then
-!     echo 'crypt() found.'
-!     d_crypt="$define"
-! elif $contains '^crypt$' libc.list >/dev/null 2>&1; then
-      echo 'crypt() found.'
-      d_crypt="$define"
-      cryptlib=''
+--- Configure.bak     Fri Dec 15 08:00:55 2000
++++ Configure  Mon Oct 21 21:11:16 2002
+@@ -18,11 +18,6 @@
+ PATH=".:/bin:/usr/bin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
+ export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
+ 
+-if test ! -t 0; then
+-    echo "Say 'sh Configure', not 'sh <Configure'"
+-    exit 1
+-fi
+-
+ (alias) >/dev/null 2>&1 && \
+     echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
+     echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
+@@ -2055,6 +2050,7 @@
+     libc=/usr/lib/libc.a
+ else
+ set /usr/ccs/lib/libc.so
++test -f $1 || set /usr/lib/libc.a
+ test -f $1 || set /usr/lib/libc.so
+ test -f $1 || set /usr/lib/libc.so.[0-9]*
+ test -f $1 || set /lib/libsys_s.a
+@@ -2496,7 +2492,10 @@
+ #
+ : see if crypt exists
+ echo " "
+-if $contains '^crypt$' libc.list >/dev/null 2>&1; then
++if $test "$cryptlib" = -lcrypt; then
++    echo 'crypt() found.'
++    d_crypt="$define"
++elif $contains '^crypt$' libc.list >/dev/null 2>&1; then
+     echo 'crypt() found.'
+     d_crypt="$define"
+     cryptlib=''
