@@ -1,0 +1,3 @@
+sbin/hidentd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
