@@ -43,9 +43,7 @@ DOC_FILES=	FAQ INSTALL LICENSE README
 # Port-patch
 #
 
-post-patch: patch-message
-
-patch-message:
+post-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Post-install
