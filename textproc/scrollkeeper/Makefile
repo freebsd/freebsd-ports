@@ -10,7 +10,7 @@ PORTVERSION=	0.3.9
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc1
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-rc2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -62,9 +62,7 @@ post-patch:
 		${WRKSRC}/cl/src/update.c
 	@${REINPLACE_CMD} -e 's|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g' \
 		${WRKSRC}/extract/dtds/Makefile.in
-
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
