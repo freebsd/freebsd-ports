@@ -18,9 +18,7 @@ COMMENT=	A declarative debugger for Haskell 98
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
-USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 MAN1=	buddha.1

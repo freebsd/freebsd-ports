@@ -24,8 +24,8 @@ USE_GMAKE=	yes
 ALL_TARGET=	all
 
 do-install:
-	@(cd ${WRKSRC}/src && ${CP} green-card ${PREFIX}/bin)
-	-@mkdir ${PREFIX}/lib/green-card
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/green-card ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib/green-card
 	@(cd ${WRKSRC}/lib/ghc && ${CP} StdDIS.* libHSgreencard.a ${PREFIX}/lib/green-card)
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/doc && ${CP} -R green-card ${PREFIX}/share/doc \

@@ -19,4 +19,5 @@ Package
     extra_ld_opts = [ "-L$PKG_PREFIX/lib", "-lncurses"  ]
 }
 CONFEOF
+/bin/rm -f $PKG_PREFIX/lib/ghc-GHC_VERSION/package.conf.old
 fi

@@ -10,8 +10,8 @@ PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/happy/dist/${PORTVERSION}/ \
 		http://www.mirror.ac.uk/sites/www.haskell.org/happy/dist/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
