@@ -1,0 +1,13 @@
+bin/proz
+etc/prozilla.conf-sample
+%%PORTDOCS%%share/doc/prozilla/ANNOUNCE
+%%PORTDOCS%%share/doc/prozilla/AUTHORS
+%%PORTDOCS%%share/doc/prozilla/COPYING
+%%PORTDOCS%%share/doc/prozilla/CREDITS
+%%PORTDOCS%%share/doc/prozilla/ChangeLog
+%%PORTDOCS%%share/doc/prozilla/FAQ
+%%PORTDOCS%%share/doc/prozilla/INSTALL
+%%PORTDOCS%%share/doc/prozilla/NEWS
+%%PORTDOCS%%share/doc/prozilla/README
+%%PORTDOCS%%share/doc/prozilla/TODO
+%%PORTDOCS%%@dirrm share/doc/prozilla

@@ -59,6 +59,7 @@
     SUBDIR += pftpd
     SUBDIR += proftpd
     SUBDIR += profxp
+    SUBDIR += prozilla
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += py-curl
