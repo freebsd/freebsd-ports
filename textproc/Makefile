@@ -197,6 +197,7 @@
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Pod-Constants
+    SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-PodParser
     SUBDIR += p5-RADIUS-UserFile
