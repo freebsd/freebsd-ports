@@ -1,5 +1,5 @@
---- src/system/makeml.orig	Wed Apr 18 17:43:09 2001
-+++ src/system/makeml	Wed Aug 15 18:36:30 2001
+--- src/system/makeml.orig	Fri May 17 22:48:38 2002
++++ src/system/makeml	Thu May 23 02:25:57 2002
 @@ -6,7 +6,9 @@
  twoup=`pwd`
  cd $here
@@ -15,9 +15,9 @@
  # ... unless it was already set at the time we run this script.
  #
  
--CM_PATHCONFIG_DEFAULT=${CM_PATHCONFIG_DEFAULT:-$twoup/lib/pathconfig}
-+CM_PATHCONFIG_DEFAULT=${CM_PATHCONFIG_DEFAULT:-$INSTALLROOT/lib/pathconfig}
- export CM_PATHCONFIG_DEFAULT
+-CM_PATHCONFIG=${CM_PATHCONFIG:-$twoup/lib/pathconfig}
++CM_PATHCONFIG=${CM_PATHCONFIG:-$INSTALLROOT/lib/pathconfig}
+ export CM_PATHCONFIG
  
  #
  # use the arch-n-opsys script to determine the ARCH/OS if possible

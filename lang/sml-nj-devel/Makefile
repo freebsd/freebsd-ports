@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.39
+PORTVERSION=	110.40
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/working/${PORTVERSION}/ \
 		ftp://flint.cs.yale.edu/pub/smlnj/working/${PORTVERSION}/ \
@@ -64,9 +64,6 @@ MLEXE+=		ml-burg ml-nlffigen nowhere
 PLIST=		${WRKDIR}/.PLIST
 MLSRCPLIST=	${WRKDIR}/.PLIST.src
 MLPLISTFILES=	${.CURDIR}/pkg-plist ${FILESDIR}/plist-everything ${MLSRCPLIST}
-.if defined(WITH_FLINT)
-MLPLISTFILES+=	${FILESDIR}/plist-flint
-.endif
 .endif
 
 pre-fetch:
@@ -86,7 +83,9 @@ pre-fetch:
 	@${ECHO} 'Use make WITH_FLINT=yes to apply a p''atch w''hich makes'
 	@${ECHO} ' the compiler'"'"'s FLINT structures visible (see'
 	@${ECHO} ' http://flint.cs.yale.edu/flint/publications/tcif.html),'
-	@${ECHO} ' use it with CM.autoload "$$smlnj/viscomp/core_flint.cm";'
+	@${ECHO} ' use it with CM.autoload "$$smlnj/viscomp/core.cm";'
+	@${ECHO} ' or see http://offshore.free.de/~5/FLINTerpreter/sml2flint/'
+	@${ECHO} ' for code that should help you to get started.'
 	@${ECHO} ' This implies WITH_RECOMPILE.'
 .endif
 	@${ECHO}
