@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LCDEF_CMD}:${PORTSDIR}/emulators/linux_base
 
 USE_LINUX_PREFIX=	yes
 WRKSRC=		${WRKDIR}/locale-ja-${VERSION}
-PLIST_SUB=	VER=${VERSION}
+PLIST_SUB=	VER=${VERSION} LINUXBASE=${LINUXBASE}
 
 VERSION=	18
 SRCDEF=		${WRKSRC}/ja_JP
@@ -34,6 +34,15 @@ DOCDIR=		${PREFIX}/usr/doc/locale-ja-${VERSION}
 LOCALE_ADD=	ja_JP.EUC
 LOCALE_DEF_ja_JP.EUC=	ja_JP.eucJP
 
+.include <bsd.port.pre.mk>
+
+LOCALE_GREP=	${GREP} -q
+.for locale in ${LOCALE_ADD}
+LOCALE_ALIASES!=	${ECHO} ${LOCALE_ALIASES} ${locale}:${LOCALE_DEF_${locale}}
+LOCALE_GREP!=	${ECHO} "${LOCALE_GREP} -e '^${locale}'"
+.endfor
+PLIST_SUB+=	LOCALE_ALIASES="${LOCALE_ALIASES}" LOCALE_GREP="${LOCALE_GREP}"
+
 do-build:
 	${MKDIR} ${WRKDIR}/LC_MESSAGES
 	${LCDEF_CMD} ${LCDEF_ARGS} ${WRKDIR}
@@ -48,8 +57,9 @@ do-install:
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/debian/* ${DOCDIR}
 .for locale in ${LOCALE_ADD}
-	@${ECHO} "${locale}	${LOCALE_DEF_${locale}}" \
+	${GREP} -q -e ^${locale} ${LINUXBASE}/usr/share/locale/locale.alias \
+	 || ${ECHO} "${locale}	${LOCALE_DEF_${locale}}" \
 		>> ${LINUXBASE}/usr/share/locale/locale.alias
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
