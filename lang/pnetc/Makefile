@@ -13,7 +13,8 @@ MASTER_SITES=	${PNET_MASTER_SITES}
 MAINTAINER=	ahze@ahze.net
 COMMENT=	ANSI-compatible C library for pnet's cscc compiler
 
-LIB_DEPENDS=	XsharpSupport.0:${PORTSDIR}/lang/pnetlib
+BUILD_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
+RUN_DEPENDS=	${LOCALBASE}/lib/cscc/lib/libXsharpSupport.so.0:${PORTSDIR}/lang/pnetlib
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

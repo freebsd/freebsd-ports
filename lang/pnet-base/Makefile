@@ -30,7 +30,7 @@ CONFIGURE_ARGS+=	--disable-optimizations
 INFO=	pnettools
 MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 	csdoc2texi.1 cssrc2html.1 ilalink.1 ilasm.1 ildasm.1 ildd.1 \
-	ilfind.1 ilheader.1 ilnative.1 ilranlib.1 ilrun.1 ilsize.1 \
+	ilfind.1 ilgac.1 ilheader.1 ilnative.1 ilranlib.1 ilrun.1 ilsize.1 \
 	ilstrip.1 ilverify.1 resgen.1
 
 .include <bsd.port.pre.mk>
