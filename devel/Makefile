@@ -558,6 +558,7 @@
     SUBDIR += p5-Log-Agent
     SUBDIR += p5-Log-Agent-Logger
     SUBDIR += p5-Log-Dispatch
+    SUBDIR += p5-Log-Log4perl
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
