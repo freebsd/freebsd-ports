@@ -1,2 +1,4 @@
-MD5 (drweb-clients-4.31-sources.tar.gz) = 7215ff50a75d088eab210bcdb257effe
-SIZE (drweb-clients-4.31-sources.tar.gz) = 537926
+MD5 (drweb-sendmail-4.32.1-freebsd49.tar.gz) = 911c4a97b39f474d89d75eef3f373c6e
+SIZE (drweb-sendmail-4.32.1-freebsd49.tar.gz) = 394843
+MD5 (drweb-sendmail-4.32.1-freebsd53.tar.gz) = a0f2877dd6eadcf6cb6f66fd73793bdf
+SIZE (drweb-sendmail-4.32.1-freebsd53.tar.gz) = 494608
