@@ -14,3 +14,4 @@ share/locale/de/LC_MESSAGES/gtk-imonc.mo
 share/pixmaps/gtk-imonc.png
 @dirrm share/gtk-imonc/pixmaps
 @dirrm share/gtk-imonc
+@unexec rmdir %D/share/pixmaps 2> /dev/null || true
