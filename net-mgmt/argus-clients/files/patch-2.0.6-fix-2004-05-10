@@ -1,0 +1,189 @@
+diff -u3 -r ./ChangeLog /tmp/1/argus-clients-2.0.6.fixes.1/ChangeLog
+--- ./ChangeLog	Fri Dec  5 17:46:00 2003
++++ /tmp/1/argus-clients-2.0.6.fixes.1/ChangeLog	Mon May 10 19:12:28 2004
+@@ -1,3 +1,8 @@
++Mon May 10 13:11:35 EDT 2004
++   argus-clients-2.0.6.fixes.1
++      Modified RaAutoCorrection to be off by default (fixes ragator).
++      Turned off reporting ArgusAgrStruct in raxml().
++
+ Fri Dec  5 11:43:08 EST 2003
+    argus-clients-2.0.6
+       Minor modification for compat.h and BSD.
+diff -u3 -r ./MANIFEST /tmp/1/argus-clients-2.0.6.fixes.1/MANIFEST
+--- ./MANIFEST	Thu May  6 15:39:48 2004
++++ /tmp/1/argus-clients-2.0.6.fixes.1/MANIFEST	Mon May 10 19:12:55 2004
+@@ -21,10 +21,10 @@
+ 
+ Argus Clients distribution.
+ .:
+-total 332
++total 328
+ -rw-rw-r--    1 argus    argus       17992 Jun  4  2001 COPYING
+ -rw-rw-r--    1 argus    argus         764 Mar 24  2003 CREDITS
+--rw-rw-r--    1 argus    argus       16161 Dec  5 11:46 ChangeLog
++-rw-rw-r--    1 argus    argus       16346 May 10 13:12 ChangeLog
+ -rw-rw-r--    1 argus    argus        6669 Mar 26  2003 INSTALL
+ -rw-rw-r--    1 argus    argus       16245 May  6 09:39 MANIFEST
+ -rw-rw-r--    1 argus    argus        6096 Jul 10  2003 Makefile.in
+@@ -33,18 +33,18 @@
+ -rw-rw-r--    1 argus    argus       14644 May  6 09:39 aclocal.m4
+ -rwxrwxr-x    1 argus    argus      173518 May  6 09:39 configure
+ -rw-rw-r--    1 argus    argus        2240 Oct 24  2002 configure.in
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 bin
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 clients
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 common
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 bin
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 clients
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 common
+ drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 config
+ drwxrwxr-x    5 argus    argus        4096 Dec  5 21:49 contrib
+ drwxrwxr-x    4 argus    argus        4096 Dec  5 21:49 doc
+-drwxrwxr-x    5 argus    argus        4096 Jan 13 17:40 include
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 lib
++drwxrwxr-x    5 argus    argus        4096 May 10 11:40 include
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 lib
+ drwxrwxr-x    6 argus    argus        4096 Dec  5 21:49 man
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 ragraph
+-drwxrwxr-x    4 argus    argus        4096 May  6 09:34 ragrep
+-drwxrwxr-x    3 argus    argus        4096 May  6 09:34 ratop
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 ragraph
++drwxrwxr-x    4 argus    argus        4096 May 10 13:12 ragrep
++drwxrwxr-x    3 argus    argus        4096 May 10 13:12 ratop
+ drwxrwxr-x    8 argus    argus        4096 Dec  5 21:49 support
+ 
+ ./bin:
+@@ -80,13 +80,13 @@
+ -rw-rw-r--    1 argus    argus       15501 Mar 27  2003 rastrip.c
+ -rw-rw-r--    1 argus    argus        1375 Mar 26  2003 rastrip.h
+ -rw-rw-r--    1 argus    argus        8090 Mar 27  2003 ratemplate.c
+--rw-rw-r--    1 argus    argus       35052 Mar 27  2003 raxml.c
++-rw-rw-r--    1 argus    argus       35058 May 10 11:46 raxml.c
+ 
+ ./common:
+ total 636
+ -rwxrwxr-x    1 argus    argus        4517 Jul 10  2003 Makefile.in
+ -rw-rw-r--    1 argus    argus       16122 Dec  6 12:47 argus_auth.c
+--rw-rw-r--    1 argus    argus      137243 Mar 27  2003 argus_client.c
++-rw-rw-r--    1 argus    argus      137439 May 10 09:41 argus_client.c
+ -rw-rw-r--    1 argus    argus      134325 Mar 26  2003 argus_filter.c
+ -rw-rw-r--    1 argus    argus      143199 Dec  6 12:42 argus_parse.c
+ -rw-rw-r--    1 argus    argus      110901 Dec  6 12:43 argus_util.c
+@@ -203,7 +203,7 @@
+ total 284
+ -rw-rw-r--    1 argus    argus       17956 Oct  9  2002 CflowdFlowPdu.h
+ -rw-rw-r--    1 argus    argus        4036 Mar 26  2003 argus-namedb.h
+--rw-rw-r--    1 argus    argus       42631 Jan 13 17:40 argus_client.h
++-rw-rw-r--    1 argus    argus       42631 May 10 11:40 argus_client.h
+ -rw-rw-r--    1 argus    argus       11614 Mar 26  2003 argus_def.h
+ -rw-rw-r--    1 argus    argus        8082 Mar 26  2003 argus_filter.h
+ -rw-rw-r--    1 argus    argus        9203 Mar 26  2003 argus_out.h
+@@ -313,7 +313,7 @@
+ total 24
+ -rw-rw-r--    1 argus    argus        2569 Mar 26  2003 README
+ drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 Archive
+-drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 Config
++drwxrwxr-x    3 argus    argus        4096 May 10 09:39 Config
+ drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 System
+ drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 Tools
+ drwxrwxr-x    3 argus    argus        4096 Dec  5 21:49 Xml
+diff -u3 -r ./VERSION /tmp/1/argus-clients-2.0.6.fixes.1/VERSION
+--- ./VERSION	Fri Dec  5 17:46:42 2003
++++ /tmp/1/argus-clients-2.0.6.fixes.1/VERSION	Mon May 10 19:13:02 2004
+@@ -1 +1 @@
+-2.0.6
++2.0.6.fixes.1
+diff -u3 -r ./clients/raxml.c /tmp/1/argus-clients-2.0.6.fixes.1/clients/raxml.c
+--- ./clients/raxml.c	Thu Mar 27 15:55:39 2003
++++ /tmp/1/argus-clients-2.0.6.fixes.1/clients/raxml.c	Mon May 10 17:46:16 2004
+@@ -430,7 +430,9 @@
+    RaXMLPrintMetricsData(argus);
+    RaXMLPrintTimeData(argus);
+    RaXMLPrintUsrData(argus);
++/*
+    RaXMLPrintAgrData (argus);
++*/
+ }
+ 
+ #if defined(__OpenBSD__)
+diff -u3 -r ./common/argus_client.c /tmp/1/argus-clients-2.0.6.fixes.1/common/argus_client.c
+--- ./common/argus_client.c	Thu Mar 27 15:55:39 2003
++++ /tmp/1/argus-clients-2.0.6.fixes.1/common/argus_client.c	Mon May 10 15:41:34 2004
+@@ -2174,6 +2174,7 @@
+ }
+ 
+ 
++int RaParseProtoField = 1;
+ struct RaPolicyStruct *
+ RaParsePolicyEntry (char *str)
+ {
+@@ -2249,32 +2250,35 @@
+                break;
+    
+             case RA_POLICYPROTO: 
+-               switch (type) {
+-                  case RA_FLOWLIST:
+-                     if (isdigit((int)*ptr)) {
+-                        retn->proto = atoi(ptr);
+-                     } else {
+-                        if (*ptr == '*') {
+-                           retn->proto = 0xFF;
++               if (RaParseProtoField) {
++                  switch (type) {
++                     case RA_FLOWLIST:
++                        if (isdigit((int)*ptr)) {
++                           retn->proto = atoi(ptr);
+                         } else {
+-                           struct protoent *proto;
+-                           if ((proto = getprotobyname(ptr)) != NULL)
+-                              retn->proto = proto->p_proto;
+-                           else
+-                              error++;
++                           if (*ptr == '*') {
++                              retn->proto = 0xFF;
++                           } else {
++                              struct protoent *proto;
++                              if ((proto = getprotobyname(ptr)) != NULL)
++                                 retn->proto = proto->p_proto;
++                              else {
++                                 error++;
++                              }
++                           }
+                         }
+-                     }
+-                     break;
++                        break;
+ 
+-                  case RA_MODELIST:
+-                     if ((strstr(ptr, "yes")) != NULL)
+-                        retn->proto = 0xFF;
+-                     else
+-                        if ((strstr(ptr, "no")) != NULL)
+-                           retn->proto = 0x00;
++                     case RA_MODELIST:
++                        if ((strstr(ptr, "yes")) != NULL)
++                           retn->proto = 0xFF;
+                         else
+-                           error++;
+-                     break;
++                           if ((strstr(ptr, "no")) != NULL)
++                              retn->proto = 0x00;
++                           else
++                              error++;
++                        break;
++                  }
+                }
+                break;
+ 
+diff -u3 -r ./include/argus_client.h /tmp/1/argus-clients-2.0.6.fixes.1/include/argus_client.h
+--- ./include/argus_client.h	Tue Jan 13 23:40:11 2004
++++ /tmp/1/argus-clients-2.0.6.fixes.1/include/argus_client.h	Mon May 10 17:40:32 2004
+@@ -285,7 +285,7 @@
+ int RaCumulativeMerge = 1;
+ int RaPrintActualValues = 1;
+ int RaReportAggregation = 1;
+-int RaAutoCorrection = 1;
++int RaAutoCorrection = 0;
+ 
+ int RaAllocHashTableHeaders = 0;
+ int RaAllocArgusRecordStore = 0;
