@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	libfreenet
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://thalassocracy.org/libfreenet/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	yes
 USE_LIBTOOL=	yes
