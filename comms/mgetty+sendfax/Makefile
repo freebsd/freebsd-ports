@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	mgetty
-PORTVERSION=	1.1.30.12.16
-PORTREVISION=	4
+PORTVERSION=	1.1.31
+PORTREVISION=	0
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
-DISTNAME=	mgetty1.1.30-Dec16
+DISTNAME=	${PORTNAME}${PORTVERSION}-Jul24
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Handle external logins, send and receive faxes
 
 USE_PERL5=	yes
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.30
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_FLAGS=	CFLAGS="${CFLAGS}" prefix=${PREFIX} -f
+ALL_TARGET=	noident all
+INFO=		mgetty
 MAN1=		autopvf.1 \
 		basictopvf.1 \
 		coverpg.1 \
@@ -32,6 +34,7 @@ MAN1=		autopvf.1 \
 		lintopvf.1 \
 		pbm2g3.1 \
 		pvf.1 \
+		sff2g3.1 \
 		zplay.1
 MAN4=		mgettydefs.4
 MAN5=		faxqueue.5
