@@ -15,8 +15,8 @@ MASTER_SITES=	http://www.dsl.gr.jp/~tf/
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	WAEIJIRO English - Japanese Dictionary (EPWING V1 format)
 
+EXTRACT_DEPENDS=${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing
 BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
-		${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
