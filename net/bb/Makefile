@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.17 1997/07/13 18:49:26 max Exp $
+# $Id: Makefile,v 1.18 1997/10/04 14:53:01 andreas Exp $
 #
 
 DISTNAME=	bb
@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.iti.qc.ca/iti/users/sean/bb-dnld/
 EXTRACT_SUFX=   -src.tgz
 
-MAINTAINER=	andreas@klemm.gtn.com
+MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 

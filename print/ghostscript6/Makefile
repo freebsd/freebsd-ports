@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1997/09/04 14:57:14 andreas Exp $
+# $Id: Makefile,v 1.12 1997/10/04 14:53:04 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs503/ \
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV}
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg \
 		/nonexistent:${PORTSDIR}/graphics/png \

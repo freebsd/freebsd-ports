@@ -3,14 +3,14 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.8 1996/12/06 10:56:31 max Exp $
+# $Id: Makefile,v 1.9 1996/12/07 09:28:40 max Exp $
 #
 
 DISTNAME=       bzip-0.21
 CATEGORIES=	archivers
 MASTER_SITES=   http://www.cs.man.ac.uk/arch/people/j-seward/
 
-MAINTAINER=     andreas@klemm.gtn.com
+MAINTAINER=     andreas@FreeBSD.ORG
 
 NO_CDROM=       "Restrictive copyright (don't sell for profit)"
 MAN1=		bzip.1 bunzip.1

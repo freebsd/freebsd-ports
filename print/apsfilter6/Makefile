@@ -3,14 +3,14 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.14 1997/09/22 17:01:09 andreas Exp $
+# $Id: Makefile,v 1.15 1997/10/04 14:52:58 andreas Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	andreas@klemm.gtn.com
+MAINTAINER=	andreas@FreeBSD.ORG
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		transfig:${PORTSDIR}/print/transfig \
