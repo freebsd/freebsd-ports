@@ -7993,6 +7993,7 @@ snort		ports/security/snort
 snort-rep	ports/security/snort-rep
 snortsnarf	ports/security/snortsnarf
 snowflake	ports/misc/snowflake
+snownews	ports/www/snownews
 snowstar	ports/audio/snowstar
 sntop		ports/net/sntop
 socat		ports/net/socat
