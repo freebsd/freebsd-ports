@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libgtkhtml
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Lightweight HTML rendering/printing/editing engine
 
 LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
 		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
