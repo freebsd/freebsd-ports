@@ -8,8 +8,10 @@
 
 DISTNAME=	Wnn4.2
 MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
-PKG_CMD=	pkg_create -N
+IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/Xsi
+PKG_ARGS?=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
+			-r ${PKGDIR}/REQ -i ${PKGDIR}/INSTALL -p ${PREFIX}
 
 # These are necesary because this package uses a different Makefile for
 #  building and installing etc.
@@ -19,9 +21,12 @@ pre-build:
 build: configure pre-build depends ${BUILD_COOKIE}
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 
+pre-install:
+	@PREFIX=${PREFIX} ${SCRIPTDIR}/pre-install
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
-pre-install:
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+
+pre-reinstall: pre-install
 
 .include <bsd.port.mk>
