@@ -14,13 +14,13 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	A Ruby library to access to low level information on mp3 files
+COMMENT=	A Ruby library to access to information on mp3 files
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-DOCS=		README	doc
+DOCS=		doc
 #EXAMPLES=	test.rb
 
 post-install:
