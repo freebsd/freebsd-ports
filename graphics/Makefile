@@ -138,6 +138,7 @@
     SUBDIR += togl
     SUBDIR += txtmerge
     SUBDIR += urt
+    SUBDIR += vcdgear
     SUBDIR += vcg
     SUBDIR += whirlgif
     SUBDIR += wmgrabimage
