@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-cpugraph-plugin
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
 		http://matt.nerim.net/xfce-goodies/
@@ -18,7 +18,7 @@ COMMENT=	XFce4 systemload plugin with multiple CPU display modes
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 

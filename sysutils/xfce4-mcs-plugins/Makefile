@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	xfce4-mcs-plugins
-PORTVERSION=	4.0.6
-PORTREVISION=	1
+PORTVERSION=	4.2.0
+PORTREVISION=	0
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
-		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/
+MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
+		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/ \
+		http://public.fh-wolfenbuettel.de/~luedickj/xfce4/xfce-${PORTVERSION}/
 DISTNAME=	xfce-mcs-plugins-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
@@ -19,12 +20,12 @@ COMMENT=	XFce 4 settings manager plugins
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \

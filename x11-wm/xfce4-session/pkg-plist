@@ -1,36 +1,46 @@
-@comment $FreeBSD$
 bin/xfce4-session
-sbin/xfce4-shutdown
-etc/xfce4/default.session
-etc/xfce4/shutdown.allow
-etc/xfce4/xinitrc.xfce4-session
-lib/xfce4/mcs-plugins/session_settings.la
+bin/xfce4-session-logout
+etc/xdg/xfce4-session/xfce4-session.rc
+include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-engine.h
+include/xfce4/xfce4-session-4.2/libxfsm/xfsm-splash-rc.h
+lib/libxfsm-4.2.so.0
+lib/libxfsm-4.2.so
+lib/libxfsm-4.2.a
 lib/xfce4/mcs-plugins/session_settings.so
-lib/xfce4/mcs-plugins/session_settings.a
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/locale/az/LC_MESSAGES/xfce4-session.mo
-share/locale/ca/LC_MESSAGES/xfce4-session.mo
-share/locale/de/LC_MESSAGES/xfce4-session.mo
-share/locale/es/LC_MESSAGES/xfce4-session.mo
-share/locale/es_MX/LC_MESSAGES/xfce4-session.mo
-share/locale/hi/LC_MESSAGES/xfce4-session.mo
-share/locale/it/LC_MESSAGES/xfce4-session.mo
-share/locale/ko/LC_MESSAGES/xfce4-session.mo
-share/locale/nl/LC_MESSAGES/xfce4-session.mo
-share/locale/sv/LC_MESSAGES/xfce4-session.mo
-share/locale/ta/LC_MESSAGES/xfce4-session.mo
-share/locale/tr/LC_MESSAGES/xfce4-session.mo
-share/locale/zh_CN/LC_MESSAGES/xfce4-session.mo
-share/locale/zh_TW/LC_MESSAGES/xfce4-session.mo
-share/xfce4/splash/Default/splash.theme
-share/xfce4/splash/Default/logo.png
-share/xfce4/splash/Default/preview.png
-@unexec rmdir %D/etc/xfce4 2>/dev/null || true
-@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
-@dirrm share/xfce4/splash/Default
-@dirrm share/xfce4/splash
+lib/xfce4/mcs-plugins/splash_settings.so
+lib/xfce4/splash/engines/libbalou.so
+lib/xfce4/splash/engines/libmice.so
+lib/xfce4/splash/engines/libsimple.so
+lib/pkgconfig/xfce4-session-1.0.pc
+libexec/balou-export-theme
+libexec/balou-install-theme
+libexec/xfsm-shutdown-helper
+share/xfce4/doc/C/images/xfsm-advanced.png
+share/xfce4/doc/C/images/xfsm-general.png
+share/xfce4/doc/C/images/xfsm-splash.png
+share/xfce4/doc/C/xfce4-session.html
+share/themes/Default/balou/logo.png
+share/themes/Default/balou/themerc
+share/icons/hicolor/48x48/apps/xfce4-session.png
+share/icons/hicolor/48x48/apps/xfce4-splash.png
+share/icons/hicolor/48x48/apps/xfsm-shutdown.png
+share/icons/hicolor/64x64/apps/xfsm-gnome-kde-logo.png
+share/icons/hicolor/72x72/apps/xfsm-trash-hilight.png
+share/icons/hicolor/72x72/apps/xfsm-trash-normal.png
+share/icons/hicolor/128x128/apps/xfce4-session.png
+share/icons/hicolor/scalable/apps/xfce4-session.svg
+share/icons/hicolor/scalable/apps/xfsm-shutdown.svg
+share/applications/xfce-session-settings.desktop
+share/applications/xfce-splash-settings.desktop
+@dirrm etc/xdg/xfce4-session
+@dirrm include/xfce4/xfce4-session-4.2/libxfsm
+@dirrm include/xfce4/xfce4-session-4.2
+@unexec rmdir %D/include/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/splash/engines 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/splash 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true

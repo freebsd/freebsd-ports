@@ -1,35 +1,46 @@
-lib/xfce4/panel-plugins/libmixer.a
-lib/xfce4/panel-plugins/libmixer.la
+bin/xfce4-mixer
+lib/xfce4/modules/libxfce4mixer.a
+lib/xfce4/modules/libxfce4mixer.so
+lib/xfce4/modules/libxfce4mixer.so.0
+lib/xfce4/mcs-plugins/sound_settings.so
 lib/xfce4/panel-plugins/libmixer.so
+share/applications/xfce-mixer-settings.desktop
+share/icons/hicolor/48x48/apps/xfce4-mixer.png
 share/locale/ar/LC_MESSAGES/xfce4-mixer.mo
 share/locale/az/LC_MESSAGES/xfce4-mixer.mo
+share/locale/be/LC_MESSAGES/xfce4-mixer.mo
 share/locale/bg/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ca/LC_MESSAGES/xfce4-mixer.mo
-share/locale/cs/LC_MESSAGES/xfce4-mixer.mo
 share/locale/de/LC_MESSAGES/xfce4-mixer.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es/LC_MESSAGES/xfce4-mixer.mo
+share/locale/es_MX/LC_MESSAGES/xfce4-mixer.mo
 share/locale/et/LC_MESSAGES/xfce4-mixer.mo
 share/locale/eu/LC_MESSAGES/xfce4-mixer.mo
-share/locale/fa_IR/LC_MESSAGES/xfce4-mixer.mo
+share/locale/fa/LC_MESSAGES/xfce4-mixer.mo
+share/locale/fi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fr/LC_MESSAGES/xfce4-mixer.mo
-share/locale/hi/LC_MESSAGES/xfce4-mixer.mo
+share/locale/gu/LC_MESSAGES/xfce4-mixer.mo
+share/locale/he/LC_MESSAGES/xfce4-mixer.mo
 share/locale/hu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/it/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ja/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ko/LC_MESSAGES/xfce4-mixer.mo
 share/locale/lt/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ms/LC_MESSAGES/xfce4-mixer.mo
+share/locale/nb_NO/LC_MESSAGES/xfce4-mixer.mo
 share/locale/nl/LC_MESSAGES/xfce4-mixer.mo
-share/locale/no/LC_MESSAGES/xfce4-mixer.mo
-share/locale/pl/LC_MESSAGES/xfce4-mixer.mo
+share/locale/pa/LC_MESSAGES/xfce4-mixer.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-mixer.mo
 share/locale/pt_PT/LC_MESSAGES/xfce4-mixer.mo
+share/locale/ro/LC_MESSAGES/xfce4-mixer.mo
 share/locale/ru/LC_MESSAGES/xfce4-mixer.mo
-share/locale/ta/LC_MESSAGES/xfce4-mixer.mo
+share/locale/sk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/tr/LC_MESSAGES/xfce4-mixer.mo
-share/locale/uk/LC_MESSAGES/xfce4-mixer.mo
 share/locale/vi/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
+@unexec rmdir %D/lib/xfce4/modules 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true

@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-menueditor
 PORTVERSION=	1.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://users.skynet.be/p0llux/files/ \
 		http://matt.nerim.net/xfce-goodies/
@@ -17,7 +17,7 @@ MAINTAINER=	matt@bsdfly.org
 COMMENT=	Menu Editor for the XFce desktop environment
 
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20 libxml2
 USE_BZIP2=	yes

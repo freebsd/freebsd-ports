@@ -4,18 +4,48 @@ include/xfce4/libxfce4util/libxfce4util.h
 include/xfce4/libxfce4util/libxfce4util-config.h
 include/xfce4/libxfce4util/utf8.h
 include/xfce4/libxfce4util/util.h
+include/xfce4/libxfce4util/xfce-desktopentry.h
+include/xfce4/libxfce4util/xfce-fileutils.h
+include/xfce4/libxfce4util/xfce-generics.h
+include/xfce4/libxfce4util/xfce-kiosk.h
+include/xfce4/libxfce4util/xfce-miscutils.h
+include/xfce4/libxfce4util/xfce-rc.h
+include/xfce4/libxfce4util/xfce-resource.h
 lib/libxfce4util.a
-lib/libxfce4util.la
 lib/libxfce4util.so
 lib/libxfce4util.so.1
 libdata/pkgconfig/libxfce4util-1.0.pc
-share/xfce4/i18n/nls.alias
+sbin/xfce4-kiosk-query
+share/gtk-doc/html/libxfce4util/home.png
+share/gtk-doc/html/libxfce4util/index.html
+share/gtk-doc/html/libxfce4util/index.sgml
+share/gtk-doc/html/libxfce4util/left.png
+share/gtk-doc/html/libxfce4util/libxfce4util-Desktop-entries.html
+share/gtk-doc/html/libxfce4util/libxfce4util-File-Utilities.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Internationalisation.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Miscellaneous-Utilities.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Resource-Config-File-Support.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Resource-lookup-functions.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Standard-Macros.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Unicode-Support-Functions.html
+share/gtk-doc/html/libxfce4util/up.png
+share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Generics.html
+share/gtk-doc/html/libxfce4util/libxfce4util-Xfce-Kiosk-functions.html
+share/gtk-doc/html/libxfce4util/libxfce4util-core.html
+share/gtk-doc/html/libxfce4util/libxfce4util-datatypes.html
+share/gtk-doc/html/libxfce4util/libxfce4util-fundamentals.html
+share/gtk-doc/html/libxfce4util/libxfce4util-utilities.html
+share/gtk-doc/html/libxfce4util/libxfce4util.devhelp
+share/gtk-doc/html/libxfce4util/reference.html
+share/gtk-doc/html/libxfce4util/right.png
 share/xfce4/m4/X11.m4
 share/xfce4/m4/debug.m4
 share/xfce4/m4/depends.m4
 share/xfce4/m4/i18n.m4
 @dirrm include/xfce4/libxfce4util
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
-@dirrm share/xfce4/i18n
+@dirrm share/gtk-doc/html/libxfce4util
+@unexec rmdir %D/share/gtk-doc/html 2>/dev/null || true
+@unexec rmdir %D/share/gtk-doc 2>/dev/null || true
 @dirrm share/xfce4/m4
 @unexec rmdir %D/share/xfce4 2>/dev/null || true

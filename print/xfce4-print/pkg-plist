@@ -1,33 +1,45 @@
 bin/xfprint-manager
 bin/xfprint4
-lib/libxfprint.a
-lib/libxfprint.la
-lib/libxfprint.so
-lib/libxfprint.so.0
+lib/xfce4/mcs-plugins/xfprint_plugin.so
+lib/xfce4/xfprint-plugins/file_plugin.so
+%%LPR%%lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
+%%CUPS%%lib/xfce4/xfprint-plugins/cups_plugin.so
+share/applications/xfprint.desktop
+share/applications/xfprint-manager.desktop
+share/applications/xfce-xfprint-settings.desktop
+share/icons/hicolor/scalable/apps/xfprint.svg
+share/icons/hicolor/48x48/apps/xfprint.png
 share/locale/ar/LC_MESSAGES/xfprint.mo
 share/locale/az/LC_MESSAGES/xfprint.mo
+share/locale/be/LC_MESSAGES/xfprint.mo
 share/locale/bg/LC_MESSAGES/xfprint.mo
 share/locale/ca/LC_MESSAGES/xfprint.mo
 share/locale/cs/LC_MESSAGES/xfprint.mo
 share/locale/de/LC_MESSAGES/xfprint.mo
+share/locale/en_GB/LC_MESSAGES/xfprint.mo
 share/locale/es/LC_MESSAGES/xfprint.mo
 share/locale/es_MX/LC_MESSAGES/xfprint.mo
 share/locale/et/LC_MESSAGES/xfprint.mo
 share/locale/eu/LC_MESSAGES/xfprint.mo
-share/locale/fa_IR/LC_MESSAGES/xfprint.mo
+share/locale/fa/LC_MESSAGES/xfprint.mo
+share/locale/fi/LC_MESSAGES/xfprint.mo
 share/locale/fr/LC_MESSAGES/xfprint.mo
+share/locale/gu/LC_MESSAGES/xfprint.mo
+share/locale/he/LC_MESSAGES/xfprint.mo
 share/locale/hi/LC_MESSAGES/xfprint.mo
 share/locale/hu/LC_MESSAGES/xfprint.mo
 share/locale/it/LC_MESSAGES/xfprint.mo
 share/locale/ja/LC_MESSAGES/xfprint.mo
+share/locale/ko/LC_MESSAGES/xfprint.mo
 share/locale/lt/LC_MESSAGES/xfprint.mo
 share/locale/ms/LC_MESSAGES/xfprint.mo
 share/locale/nl/LC_MESSAGES/xfprint.mo
-share/locale/no/LC_MESSAGES/xfprint.mo
+share/locale/pa/LC_MESSAGES/xfprint.mo
 share/locale/pl/LC_MESSAGES/xfprint.mo
 share/locale/pt_BR/LC_MESSAGES/xfprint.mo
 share/locale/pt_PT/LC_MESSAGES/xfprint.mo
 share/locale/ru/LC_MESSAGES/xfprint.mo
+share/locale/sk/LC_MESSAGES/xfprint.mo
 share/locale/sv/LC_MESSAGES/xfprint.mo
 share/locale/ta/LC_MESSAGES/xfprint.mo
 share/locale/tr/LC_MESSAGES/xfprint.mo
@@ -35,3 +47,20 @@ share/locale/uk/LC_MESSAGES/xfprint.mo
 share/locale/vi/LC_MESSAGES/xfprint.mo
 share/locale/zh_CN/LC_MESSAGES/xfprint.mo
 share/locale/zh_TW/LC_MESSAGES/xfprint.mo
+share/xfce4/doc/C/images/xfprint_headings.png
+share/xfce4/doc/C/images/xfprint_input.png
+share/xfce4/doc/C/images/xfprint-manager.png
+share/xfce4/doc/C/images/xfprint-manager-queue.png
+share/xfce4/doc/C/images/xfprint_mcs_plugin.png
+share/xfce4/doc/C/images/xfprint_prettyprinting.png
+share/xfce4/doc/C/images/xfprint_sheets.png
+share/xfce4/doc/C/images/xfprint_virtualpages.png
+share/xfce4/doc/C/xfprint.html
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/xfprint-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true 
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-xmms-controller-plugin
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://eoin.angrystickman.com/files/
 DIST_SUBDIR=	xfce4
@@ -16,7 +17,7 @@ COMMENT=	XMMS controller plugin for the xfce4 panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
-		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui \
+		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
