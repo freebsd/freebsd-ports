@@ -7,6 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.4
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
@@ -21,8 +22,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 
-CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host" --with-gnu-ld \
-		 --with-libwrap
+CONFIGURE_ARGS+= --enable-shared --with-mib-modules="host ucd-snmp/diskio" \
+		 --with-gnu-ld --with-libwrap --with-libs="-ldevstat"
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
@@ -62,9 +63,6 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
-.endif
-.if !defined(WITHOUT_SNMP_DISKIO)
-CONFIGURE_ARGS+=--with-mib-modules="ucd-snmp/diskio" --with-libs="-ldevstat"
 .endif
 
 SHLIB_VERSION=	4
