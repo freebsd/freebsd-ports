@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/zephyr
 
 USE_XLIB=	yes
+USE_BISON=	yes
 
 GNU_CONFIGURE=	yes
 .if exists(/usr/lib/libkrb.a) && defined(MAKE_EBONES)
