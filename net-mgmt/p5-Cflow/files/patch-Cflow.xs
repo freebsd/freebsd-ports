@@ -5,7 +5,7 @@
  #            ifdef OSU /* [ */
  		      struct fttime first, last;
 -                      if ((FILE *)0 == fp) {
-+                      if (0 == ftio_check_generic(&fs)) {
++                      if (0 <= ftio_check_generic(&fs)) {
  		         fdata = ftio_read(&fs);
                           if ((void *)0 == fdata) {
                              break;
