@@ -7,6 +7,7 @@
 
 PORTNAME=	wzdftpd
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Modular FTP server configurable online using SITE commands
 
+USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
@@ -22,6 +24,7 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS+=	--without-mysql
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(PACKAGE_BUILDING)
 WITH_UTF8=	yes
@@ -55,6 +58,9 @@ CONFIGURE_ARGS+=	--enable-ipv6
 DOCS=		AUTHORS Permissions.ReadMeFirst README TLS.ReadMeFirst \
 		ChangeLog src/DOCS_XFERLOG_FORMAT src/KNOWN_BUGS src/TODO
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
+
 post-extract:
 .if defined(WITH_TCL)
 	@${REINPLACE_CMD} -e 's|-ltcl8.4|-ltcl84|g' ${WRKSRC}/configure
@@ -62,11 +68,15 @@ post-extract:
 
 post-install:
 	${MV} ${PREFIX}/etc/wzd.cfg ${PREFIX}/etc/wzd.cfg.sample
-	${MV} ${PREFIX}/etc/users ${DATADIR}/users.sample
+	${MV} ${PREFIX}/etc/users ${PREFIX}/etc/users.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
+	@${SED} -e 's,PREFIX,${PREFIX},g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/wzdftpd.sh > ${PREFIX}/etc/rc.d/wzdftpd.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/wzdftpd.sh
 
 .include <bsd.port.mk>
