@@ -3,34 +3,39 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/02/21 15:46:28 steve Exp $
+# $Id: Makefile,v 1.4 1998/11/28 09:07:13 asami Exp $
 #
 
-DISTNAME=	ocaml-1.07
+DISTNAME=	ocaml-2.02
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/ \
-		ftp://ftp.inria.fr/lang/caml-light/
+MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	ortmann@isl.net
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	world bootstrap opt
+# targets not yet working (due to Elf) ==> ocamlc.opt ocamlopt.opt
+
 MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
-		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1
+		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1
+# manpages not yet installing (due to Elf) ==> ocamlc.opt.1 ocamlopt.opt.1
 
 CONFIGURE_ENV=	PREFIX=${PREFIX} X11BASE=${X11BASE} BATCH=${BATCH}
 
 .if !defined(NOPORTDOCS)
-DOCFILES=	${DISTNAME}-refman.html.tar.gz
+DOCFILES=	${DISTNAME}-refman.html.tar.gz ${DISTNAME}-refman.ps.gz
 .endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ocaml/html
 	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} * ${PREFIX}/share/doc/ocaml/html
+	@cp ${DISTDIR}/${DISTNAME}-refman.ps.gz ${PREFIX}/share/doc/ocaml
 .endif
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 
