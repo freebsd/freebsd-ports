@@ -7,4 +7,4 @@ Note: If Java applets fail to display.  Type this as root:
 		chmod 444 fonts.dir
       And then exit and restart your X server.
 
-WWW: http://www.fortify.net
+WWW: http://www.fortify.net/

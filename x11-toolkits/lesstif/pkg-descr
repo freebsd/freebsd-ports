@@ -9,7 +9,7 @@ naming scheme where an even minor number indicates a stable release
 of the libraries and an odd number is a development release. *Ports will
 be made for even number releases only.*
 
-WWW: http://www.lesstif.org
+WWW: http://www.lesstif.org/
 
 --
 Steve

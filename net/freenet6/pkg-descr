@@ -25,7 +25,7 @@ the IPv6 broker model. The protocol could be integrated directly
 into the operating system to give a service like DHCP but for
 requesting IPv6 addresses or prefixes over an IPv4 network (Internet).
 
-WWW: http://www.freenet6.net
+WWW: http://www.freenet6.net/
 
 - Edwin Groothuis
 edwin@mavetju.org

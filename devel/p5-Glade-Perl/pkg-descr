@@ -4,4 +4,4 @@ the UI using the Gtk-Perl bindings. It is possible, using Glade from version
 0.5.0, for you to specify a language of 'Perl' and generate source code from 
 Glade's 'Build' button. 
 
-WWW: http://www.glade.perl.connectfree.co.uk
+WWW: http://www.glade.perl.connectfree.co.uk/

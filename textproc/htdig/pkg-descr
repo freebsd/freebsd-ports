@@ -10,6 +10,6 @@ ht://Dig can span several web servers at a site. The type of these
 different web servers doesn't matter as long as they understand the
 HTTP 1.0 protocol. 
 
-WWW: http://www.htdig.org
+WWW: http://www.htdig.org/
 
 Bill Fumerola <billf@FreeBSD.org>

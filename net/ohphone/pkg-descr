@@ -7,4 +7,4 @@ and a Bt848/878 based video card (using the bktr driver) for video capture.
 
 It uses the OpenH323 and PWLib libraries, developed by Equivalence Pty.
 
-WWW: http://www.openh323.org
+WWW: http://www.openh323.org/

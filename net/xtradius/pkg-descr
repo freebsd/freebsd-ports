@@ -5,4 +5,4 @@ The XtRadius server is based on Cistron Radius 1.6.3. You can write script to
 make you own auth and/or accounting routines without having to patch the main
 server.
 
-WWW: http://www.xtradius.com
+WWW: http://www.xtradius.com/

@@ -16,7 +16,7 @@ Features :
  *  An automagic interface to the PGP public key servers through HTTP or hkp
  *  Supports GnuPG
 
-WWW: http://mailcrypt.sourceforge.net
+WWW: http://mailcrypt.sourceforge.net/
 
 - Murray Stokely
 murray@FreeBSD.org
