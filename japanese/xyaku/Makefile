@@ -9,7 +9,7 @@ PORTNAME=	xyaku
 PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/xyaku/
+MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/
 
 MAINTAINER=	knu@FreeBSD.org
 
