@@ -10,8 +10,8 @@ PORTVERSION=	2.95.3
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	newlib
-DISTFILES=	${OBJCNAME}.tar.gz ${NEWLIBNAME}.tar.gz
+MASTER_SITE_SUBDIR=	newlib gcc/releases/${OBJCNAME}
+DISTFILES=	${NEWLIBNAME}.tar.gz ${OBJCNAME}.tar.gz 
 PATCHFILES=	${OBJCNAME}-rtems-20010622a.diff \
 		${NEWLIBNAME}-rtems-20010622.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \

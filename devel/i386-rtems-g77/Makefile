@@ -10,9 +10,9 @@ PORTVERSION=	2.95.3
 PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	newlib
-DISTFILES=	${F77NAME}.tar.gz ${NEWLIBNAME}.tar.gz
-PATCHFILES=	${F77NAME}-rtems-20010622a.diff \
+MASTER_SITE_SUBDIR=	newlib gcc/releases/${G77NAME}
+DISTFILES=	${NEWLIBNAME}.tar.gz ${G77NAME}.tar.gz 
+PATCHFILES=	${G77NAME}-rtems-20010622a.diff \
 		${NEWLIBNAME}-rtems-20010622.diff
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
@@ -21,7 +21,7 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET?=	i386-rtems
 
-F77NAME=	gcc-2.95.3
+G77NAME=	gcc-2.95.3
 NEWLIBNAME=	newlib-1.9.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-g77
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
@@ -40,7 +40,7 @@ CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
 			--enable-languages="f77"
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
-CONFIGURE_SCRIPT?=	../${F77NAME}/configure
+CONFIGURE_SCRIPT?=	../${G77NAME}/configure
 
 PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
@@ -49,7 +49,7 @@ MAKE_FLAGS=	LANGUAGES="f77"
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
-	cd ${F77NAME} ; ${LN} -fs ../${NEWLIBNAME}/newlib . ; \
+	cd ${G77NAME} ; ${LN} -fs ../${NEWLIBNAME}/newlib . ; \
 	cd .. ; \
 	${MKDIR} build-${LCLTARGET})
 
