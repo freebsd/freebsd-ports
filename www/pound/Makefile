@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 
 CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
@@ -25,4 +25,9 @@ MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
 
 MAN8=	pound.8
 
+post-install:
+	@${ECHO} "===>  Installing ${PREFIX}/etc/rc.d/pound.sh"
+	@${ECHO} "===>  startup file as ${PREFIX}/etc/rc.d/pound.sh.sample"
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/pound.sh \
+			${PREFIX}/etc/rc.d/pound.sh.sample
 .include <bsd.port.mk>
