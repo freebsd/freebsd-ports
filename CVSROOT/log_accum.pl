@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.31 1999/02/17 17:14:40 peter Exp $
+# $Id: log_accum.pl,v 1.32 1999/02/17 20:59:45 msmith Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -347,12 +347,12 @@ sub mail_notification {
     @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
 
     if ($debug) {
-	open(MAIL, "| /usr/sbin/sendmail -odb -oem peter");
+	open(MAIL, "| /usr/local/bin/mailsend -H peter");
     } else {
-	open(MAIL, "| /usr/sbin/sendmail -odb -oem -t");
+	open(MAIL, "| /usr/local/bin/mailsend -H cvs-committers cvs-all");
     }
 
-    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
+#    print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 # This is turned off since the To: lines go overboard.
 #    foreach $line (@mailaddrs) {
 #	next if ($unique{$line});
@@ -360,7 +360,7 @@ sub mail_notification {
 #	next if /^cvs-/;
 #	print(MAIL ", " . $line . $dom);
 #    }
-    print(MAIL "\n");
+#    print(MAIL "\n");
 
     $subject = 'Subject: cvs commit:';
     @subj = &read_logfile("$SUBJ_FILE.$id", "");
@@ -388,7 +388,6 @@ sub mail_notification {
     if ($subject ne "") {
 	print(MAIL $subject, "\n");
     }
-    print (MAIL "Precedence: bulk\n");
     print (MAIL "\n");
 
     print(MAIL join("\n", @text));
