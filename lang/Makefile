@@ -45,7 +45,6 @@
     SUBDIR += icon
     SUBDIR += intel2gas
     SUBDIR += intercal
-    SUBDIR += irb
     SUBDIR += itcl
     SUBDIR += lcc
     SUBDIR += libobjects
@@ -104,6 +103,7 @@
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
     SUBDIR += ruby14
+    SUBDIR += ruby14-irb
     SUBDIR += ruby14-tcltklib
     SUBDIR += scheme48
     SUBDIR += schemetoc
