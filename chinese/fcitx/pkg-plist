@@ -5,7 +5,6 @@ bin/txt2mb
 %%DATADIR%%/data/cj.mb
 %%DATADIR%%/data/erbi.mb
 %%DATADIR%%/data/punc.mb
-%%DATADIR%%/data/py.mb
 %%DATADIR%%/data/pySym.mb
 %%DATADIR%%/data/pybase.mb
 %%DATADIR%%/data/pyphrase.mb
