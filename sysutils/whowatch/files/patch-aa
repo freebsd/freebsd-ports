@@ -6,8 +6,8 @@
  install: whowatch
 -	$(INSTALL) -m 755 whowatch $(bindir)/whowatch
 -	$(INSTALL) -m 644 whowatch.1 $(mandir)/man1/whowatch.1
-+	$(BSD_INSTALL_PROGRAM) whowatch $(bindir)/whowatch
-+	$(BSD_INSTALL_MAN) whowatch.1 $(mandir)/man1/whowatch.1
++	$(INSTALL_PROGRAM) whowatch $(bindir)/whowatch
++	$(INSTALL_MAN) whowatch.1 $(mandir)/man1/whowatch.1
  	
  distclean:
  	make clean
