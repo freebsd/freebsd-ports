@@ -1,11 +1,12 @@
---- getopt/Makefile.in.orig    Thu Feb 22 08:41:45 2001
-+++ getopt/Makefile.in
-@@ -79,7 +79,7 @@
- mdump_dist = @mdump_dist@
+--- getopt/Makefile.in.orig    Sun Aug 29 06:33:21 2004
++++ getopt/Makefile.in Sun Nov  7 08:57:49 2004
+@@ -161,7 +161,7 @@
  suid = @suid@
- 
--CFLAGS = -O6 -s -Wall
-+#CFLAGS = -O6 -s -Wall
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -O6 -s -Wall
++#AM_CFLAGS = -O6 -s -Wall
  noinst_LIBRARIES = libgetopt.a
  libgetopt_a_SOURCES = getopt.c getopt1.c getopt.h
- 
+ EXTRA_DIST = Makefile.unix
+

@@ -1,5 +1,5 @@
 bin/imwheel
 etc/imwheelrc
-%%PORTDOCS%%share/doc/imwheel/README
-%%PORTDOCS%%share/doc/imwheel/EMACS
-%%PORTDOCS%%@dirrm share/doc/imwheel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/EMACS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

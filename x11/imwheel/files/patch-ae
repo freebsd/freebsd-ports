@@ -1,20 +1,21 @@
---- imwheel.1.orig	Tue Feb 22 08:53:56 2000
-+++ imwheel.1	Tue Feb 22 08:57:21 2000
-@@ -162,7 +162,7 @@
- buttons.  This mode doesn't use any grabs to function.
- .LP
+--- imwheel.1.orig      Sun Nov  7 08:47:14 2004
++++ imwheel.1   Sun Nov  7 08:49:03 2004
+@@ -329,7 +329,7 @@
+ .fi
+ .RE
  .SH "IMWHEELRC"
--IMWheel uses, optionally, two configuration files.  One called /etc/imwheelrc,
+-IMWheel uses, optionally, two configuration files.  One called /etc/X11/imwheel/imwheelrc,
 +IMWheel uses, optionally, two configuration files.  One called %%PREFIX%%/etc/imwheelrc,
  which is used for everybody.  The other is $HOME/.imwheelrc, used only for one
- user.  One is supplied and should have been installed automatically in /etc
+ user.  One is supplied and should have been installed automatically in /etc/X11/imwheel/
  if not also in the installing users $HOME as well.  All whitespace is ignored
-@@ -397,7 +397,7 @@
+@@ -671,7 +671,7 @@
  $HOME/.imwheelrc
- 	The users configuration file.
- 
--/etc/.imwheelrc
+        The users configuration file.
+
+-/etc/X11/imwheel/imwheelrc
 +%%PREFIX%%/etc/imwheelrc
- 	The global location for the configuration
- 	file, it is always loaded.  Overided by
- 	the users configuration file.
+	The global location for the configuration
+	file, it is always loaded.  Overided by
+	the users configuration file.
+
