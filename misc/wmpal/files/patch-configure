@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Apr 20 03:56:43 2001
++++ configure	Fri Apr 20 15:14:17 2001
+@@ -1205,7 +1205,8 @@
+ fi
+ 
+ 
+-LDFLAGS=`gtk-config --cflags`
++CFLAGS="${CFLAGS} `${GTK_CONFIG} --cflags`"
++LDFLAGS="${LDFLAGS} `${GTK_CONFIG} --libs`"
+ 
+ 
+ 
