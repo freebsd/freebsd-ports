@@ -24,7 +24,9 @@ bin/ltcp
 %%ETCDIR%%/icons/reload.xpm
 %%ETCDIR%%/icons/search.xpm
 %%ETCDIR%%/icons/stop.xpm
+%%ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES/liece.mo
 %%ETCDIR%%/po/ja.po
+%%ETCDIR%%/po/ja
 %%ETCDIR%%/styles/bottom
 %%ETCDIR%%/styles/middle
 %%ETCDIR%%/styles/top
@@ -36,6 +38,8 @@ bin/ltcp
 %%PORTDOCS%%@dirrm %%ETCDIR%%/doc
 %%PORTDOCS%%%%ETCDIR%%/sample.dot.emacs
 @dirrm %%ETCDIR%%/icons
+@dirrm %%ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES
+@dirrm %%ETCDIR%%/po/ja_JP.EUC
 @dirrm %%ETCDIR%%/po
 @dirrm %%ETCDIR%%/styles
 @dirrm %%ETCDIR%%
