@@ -7,6 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.28
+PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		${MASTER_SITE_RINGSERVER}
