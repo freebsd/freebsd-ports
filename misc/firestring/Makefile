@@ -57,7 +57,13 @@ MAN3=		firestring_chomp.3 firestring_chug.3 \
 		firestring_strncpy.3 firestring_trim.3 \
 		firestring_vfprintf.3 libfirestring.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Installs into /usr/lib"
+.endif
+
 pre-configure:
 	@-${RM} ${WRKSRC}/firemake/*.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
