@@ -22,7 +22,7 @@ LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=257
+USE_AUTOCONF_VER=259
 
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \

@@ -19,8 +19,7 @@ COMMENT=	Perl Compatible Regular Expressions library
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	\
-		14
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 

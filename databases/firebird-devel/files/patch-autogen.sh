@@ -5,7 +5,7 @@
  DIE=0
  
 -VER=`autoconf --version|grep '^[Aa]utoconf'|sed 's/^[^0-9]*//'`
-+VER=`autoconf257 --version|grep '^[Aa]utoconf'|sed 's/^[^0-9]*//'`
++VER=`autoconf259 --version|grep '^[Aa]utoconf'|sed 's/^[^0-9]*//'`
  case "$VER" in
   0* | 1\.* | 2\.[0-9] | 2\.[0-9][a-z]* | \
   2\.[1-4][0-9] | 2\.5[0-6][a-z]* )
@@ -33,11 +33,11 @@
  
  echo "Running autoheader ..."
 -autoheader || exit 1
-+autoheader257 || exit 1
++autoheader259 || exit 1
  
  echo "Running autoconf ..."
 -autoconf || exit 1
-+autoconf257 || exit 1
++autoconf259 || exit 1
  
  # If NOCONFIGURE is set, skip the call to configure
  if test "x$NOCONFIGURE" = "x"; then

@@ -19,9 +19,9 @@ COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+WANT_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	257
+WANT_AUTOCONF_VER=	259
 USE_GCC=	3.3
 
 CONFLICTS=	firebird-1.*
@@ -51,9 +51,6 @@ pre-everything::
 .if !defined(BATCH)
 	@sleep 10
 .endif
-
-patch-autotools:
-	@${DO_NADA}
 
 do-configure:
 	@(cd ${WRKSRC} && ${ENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE} ./autogen.sh --prefix=${PREFIX}/firebird --with-lock-manager --with-editline)

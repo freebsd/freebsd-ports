@@ -91,8 +91,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
-		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
+		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
+		-e 's|%%LTMAIN%%|${LTMAIN}|g' \
 		${WRKSRC}/aclocal.m4
 
 post-install:

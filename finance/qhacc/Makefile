@@ -20,7 +20,7 @@ USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	257
+USE_AUTOCONF_VER=	259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib

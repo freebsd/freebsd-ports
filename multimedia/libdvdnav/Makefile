@@ -30,10 +30,10 @@ post-patch:
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib|-L${LOCALBASE}/lib|g ; \
 		 s|-I/usr/local/include|-I${LOCALBASE}/include|g ; \
-		 s|aclocal-1.7|aclocal17|g ; \
-		 s|automake-1.7|automake17|g ; \
-		 s|autoconf|autoconf257|g ; \
-		 s|autoheader|autoheader257|g' ${WRKSRC}/configure \
+		 s|aclocal-1.7|${TRUE}|g ; \
+		 s|automake-1.7|${TRUE}|g ; \
+		 s|autoconf|${TRUE}|g ; \
+		 s|autoheader|${TRUE}|g' ${WRKSRC}/configure \
 		 ${WRKSRC}/missing ${WRKSRC}/aclocal.m4 ${WRKSRC}/autogen.sh
 		
 .include <bsd.port.mk>

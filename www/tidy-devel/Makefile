@@ -65,8 +65,8 @@ patch-autotools:
 	@(cd ${PATCH_WRKSRC};			\
 	for file in ${LIBTOOLFILES}; do		\
 		${CP} $$file $$file.tmp;	\
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}^g" \
-			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LIBTOOL_SHAREDIR}/ltmain.sh^g" \
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 			$$file.tmp > $$file;	\
 	 done);
 .endif

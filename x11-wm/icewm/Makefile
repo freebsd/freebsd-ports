@@ -19,7 +19,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	257
+USE_AUTOCONF_VER=	259
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-shaped-decorations \

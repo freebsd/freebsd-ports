@@ -24,7 +24,7 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOCONF_VER=	257
+USE_AUTOCONF_VER=	259
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
@@ -80,11 +80,11 @@ post-patch:
 post-build:
 .if !defined(WITHOUT_PGCLUSTER_REPLICATION)
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp run-autotools do-configure
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp AUTOCONF=autoconf257 do-build
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pgrp AUTOCONF=${AUTOCONF} do-build
 .endif
 .if !defined(WITHOUT_PGCLUSTER_LOADBALANCER)
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb run-autotools do-configure
-	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb AUTOCONF=autconf257 do-build
+	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb AUTOCONF=${AUTOCONF} do-build
 .endif
 
 pre-install:

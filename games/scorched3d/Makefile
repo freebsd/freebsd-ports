@@ -28,7 +28,7 @@ GNU_CONFIGURE=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
 USE_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	257
+USE_AUTOCONF_VER=	259
 
 AUTOMAKE_ARGS=		--foreign
 CONFIGURE_ARGS=		--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
@@ -48,7 +48,7 @@ BROKEN=			"Does not compile on !i386 and !amd64"
 
 pre-configure:
 	@cd ${WRKSRC}/scripts && ${PERL} createAMMakefile.pl
-	@cd ${WRKSRC} && aclocal
+	@cd ${WRKSRC} && ${ACLOCAL}
 
 pre-install:
 	@mkdir -p ${PREFIX}/games/scorched3d

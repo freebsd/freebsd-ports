@@ -13,7 +13,7 @@ MASTER_SITES=	http://zekiller.skytech.org/fichiers/
 MAINTAINER=	machiel_mastenbroek@hotmail.com
 COMMENT=	A library required by smssend (same author)
 
-USE_AUTOCONF_VER?=257
+USE_AUTOCONF_VER?=259
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 

@@ -57,13 +57,11 @@
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
-    SUBDIR += autoconf257
     SUBDIR += autoconf259
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += automake14
-    SUBDIR += automake17
     SUBDIR += automake18
     SUBDIR += avalon-framework
     SUBDIR += avarice
@@ -447,7 +445,6 @@
     SUBDIR += libticalcs
     SUBDIR += libtifiles
     SUBDIR += libtool13
-    SUBDIR += libtool14
     SUBDIR += libtool15
     SUBDIR += libukcprog
     SUBDIR += libunicode

@@ -1179,3 +1179,6 @@ converters/xunicode||2004-06-21|no longer maintained
 www/mozilla-devel-gtk1||2004-06-28|removed obsolete port
 security/drwebd|security/drweb|2004-06-29|functionality already in security/drweb
 www/drivel|deskutils/drivel|2004-06-30|moved to category deskutils
+devel/autoconf257||2004-07-01|autotools cleanup
+devel/automake17||2004-07-01|autotools cleanup
+devel/libtool14||2004-07-01|autotools cleanup

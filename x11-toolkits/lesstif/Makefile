@@ -16,8 +16,8 @@ COMMENT=	API compatible clone of the Motif toolkit
 
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-WANT_AUTOMAKE_VER=	15
-USE_AUTOCONF_VER=	257
+WANT_AUTOMAKE_VER=	18
+USE_AUTOCONF_VER=	259
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=	13
@@ -76,6 +76,8 @@ post-install:
 	${RM} -f ${PREFIX}/lib/libMrm.la
 	${RM} -f ${PREFIX}/lib/libDtPrint.la
 	${RM} -f ${PREFIX}/lib/libUil.la
+	${INSTALL_DATA} ${WRKSRC}/scripts/autoconf/ac_find_motif.m4 \
+		${LOCALBASE}/share/aclocal
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
