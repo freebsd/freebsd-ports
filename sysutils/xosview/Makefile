@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.14 1999/03/14 18:12:25 billf Exp $
+# $Id: Makefile,v 1.15 1999/05/10 16:33:50 flathill Exp $
 #
 
 DISTNAME=	xosview-1.7.1
@@ -18,7 +18,5 @@ FETCH_BEFORE_ARGS=	-b
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MAN1=		xosview.1
-
-# BROKEN=	SwapMeter broken for 4.0+
 
 .include <bsd.port.mk>
