@@ -1,0 +1,81 @@
+*** Makefile.old	Fri Jul 23 20:58:57 1999
+--- Makefile	Mon Jul  2 09:49:54 2001
+***************
+*** 4,15 ****
+  		obj/org/freebsd/io/comm/FreebsdParallel.class \
+  
+  
+! JAVAC=javac
+  OBJDIR= obj
+  JARFILE=jar/CommDriver.jar
+  JFLAGS=
+! LIBDIR=/usr/local/lib
+! CFLAGS= -O2 -shared -I /usr/java/include -I /usr/java/include/freebsd -L /usr/java/lib/i386/green_threads/
+  obj/%.class: src/%.java
+  	cd src;\
+  	$(JAVAC) ../$< $(JFLAGS) -d ../obj
+--- 4,16 ----
+  		obj/org/freebsd/io/comm/FreebsdParallel.class \
+  
+  
+! JDKDIR=/usr/local/jdk1.3.1
+! JAVAC=$(JDKDIR)/bin/javac
+  OBJDIR= obj
+  JARFILE=jar/CommDriver.jar
+  JFLAGS=
+! LIBDIR=$(JDKDIR)/jre/lib/i386
+! CFLAGS= -O2 -shared -I $(JDKDIR)/include -I $(JDKDIR)/include/freebsd 
+  obj/%.class: src/%.java
+  	cd src;\
+  	$(JAVAC) ../$< $(JFLAGS) -d ../obj
+***************
+*** 18,24 ****
+  
+  $(JARFILE): $(OBJ)
+  	cd obj; \
+! 	jar -cvf0 ../$(JARFILE) org/freebsd/io/comm/ 
+  	cp jar/* tests/sun/
+  	cp jar/* tests/java/
+  
+--- 19,25 ----
+  
+  $(JARFILE): $(OBJ)
+  	cd obj; \
+! 	$(JDKDIR)/bin/jar -cvf0 ../$(JARFILE) org/freebsd/io/comm/ 
+  	cp jar/* tests/sun/
+  	cp jar/* tests/java/
+  
+***************
+*** 44,54 ****
+  
+  src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdParallel.h: src/org/freebsd/io/comm/libParallel.c
+  	cd obj; \
+! 	javah -jni -d ../src/org/freebsd/io/comm/ org.freebsd.io.comm.FreebsdParallel
+  
+  src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdSerial.h: src/org/freebsd/io/comm/libSerial.c
+  	cd obj; \
+! 	javah -jni -d ../src/org/freebsd/io/comm/ org.freebsd.io.comm.FreebsdSerial
+  
+  lib/libParallel.so:  src/org/freebsd/io/comm/libParallel.c src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdParallel.h
+  	gcc $(CFLAGS) -o lib/libParallel.so src/org/freebsd/io/comm/libParallel.c 
+--- 45,55 ----
+  
+  src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdParallel.h: src/org/freebsd/io/comm/libParallel.c
+  	cd obj; \
+! 	$(JDKDIR)/bin/javah -classpath .:$(JDKDIR)/jre/lib/ext/comm.jar -jni -d ../src/org/freebsd/io/comm/ org.freebsd.io.comm.FreebsdParallel
+  
+  src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdSerial.h: src/org/freebsd/io/comm/libSerial.c
+  	cd obj; \
+! 	$(JDKDIR)/bin/javah -classpath .:$(JDKDIR)/jre/lib/ext/comm.jar -jni -d ../src/org/freebsd/io/comm/ org.freebsd.io.comm.FreebsdSerial
+  
+  lib/libParallel.so:  src/org/freebsd/io/comm/libParallel.c src/org/freebsd/io/comm/org_freebsd_io_comm_FreebsdParallel.h
+  	gcc $(CFLAGS) -o lib/libParallel.so src/org/freebsd/io/comm/libParallel.c 
+***************
+*** 62,65 ****
+--- 63,68 ----
+  install: libs
+  	install -c -o bin -g bin -m 0444 lib/libParallel.so $(LIBDIR)
+  	install -c -o bin -g bin -m 0444 lib/libSerial.so $(LIBDIR)
++ 	install -c -o bin -g bin -m 0444 jar/CommDriver.jar $(JDKDIR)/jre/lib/ext
++ 	install -c -o bin -g bin -m 0444 javax.comm.properties $(JDKDIR)/jre/lib
+  
