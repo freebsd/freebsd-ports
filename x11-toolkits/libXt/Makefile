@@ -29,4 +29,6 @@ CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
 
+BROKEN=	"Needs fixes not to include Xalloca.h"
+
 .include <bsd.port.mk>
