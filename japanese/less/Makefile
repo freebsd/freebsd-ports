@@ -8,14 +8,15 @@
 PORTNAME=	less
 PORTVERSION=	332
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.big.or.jp/pub/usr2/jam/less/contrib/
+MASTER_SITES=	http://www.io.com/~kazushi/less/ \
+		http://www.pobox.com/~jam/less/ \
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	less
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		regex_cs-lwp9k.shar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/less/
+PATCH_SITES=	http://www.io.com/~kazushi/less/
 PATCHFILES=	${DISTNAME}-iso242.patch.gz \
 		${DISTNAME}-iso242-243.patch.gz \
 		${DISTNAME}-iso243-244.patch.gz \
@@ -27,7 +28,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	nobu@psrc.isac.co.jp
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS = --with-cs-regex
+CONFIGURE_ARGS=	--with-cs-regex
 MAN1=		jless.1 jlesskey.1
 
 post-patch:
