@@ -13,6 +13,7 @@ libdata/pkgconfig/gtkspell-2.0.pc
 share/locale/be/LC_MESSAGES/gtkspell.mo
 share/locale/de/LC_MESSAGES/gtkspell.mo
 share/locale/eo/LC_MESSAGES/gtkspell.mo
+share/locale/eu/LC_MESSAGES/gtkspell.mo
 share/locale/fr/LC_MESSAGES/gtkspell.mo
 share/locale/ga/LC_MESSAGES/gtkspell.mo
 share/locale/mn/LC_MESSAGES/gtkspell.mo
