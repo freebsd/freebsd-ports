@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@find {WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
 		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>
