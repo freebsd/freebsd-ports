@@ -2,7 +2,7 @@ etc/exim/configure.default
 info/exim.info
 info/exim_filter.info
 sbin/exim
-sbin/exim-4.00-1
+sbin/exim-%%EXIM_VERSION%%-1
 sbin/exim_checkaccess
 sbin/exim_dumpdb
 sbin/exim_fixdb
