@@ -3,6 +3,8 @@ jakarta-tomcat4.1/webapps/jetspeed.war
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/projects.xml
+%%PORTDOCS%%%%DOCSDIR%%/FIXES.html
 %%PORTDOCS%%%%DOCSDIR%%/jetspeed.war
 %%PORTDOCS%%%%DOCSDIR%%/WARNING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
