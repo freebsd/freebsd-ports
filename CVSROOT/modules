@@ -3753,6 +3753,7 @@ mod_auth_kerb	ports/www/mod_auth_kerb
 mod_auth_mysql	ports/www/mod_auth_mysql
 mod_auth_pam	ports/www/mod_auth_pam
 mod_auth_pgsql	ports/www/mod_auth_pgsql
+mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_backhand	ports/www/mod_backhand
 mod_bf		ports/www/mod_bf
 mod_cgi_debug	ports/www/mod_cgi_debug
