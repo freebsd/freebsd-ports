@@ -3,7 +3,7 @@
 # Date created:		13 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.12 1998/08/20 07:35:23 asami Exp $
+# $Id: Makefile,v 1.13 1998/10/05 05:17:56 steve Exp $
 #
 
 DISTNAME=	emu-1.31
@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	me@FreeBSD.org
 
-.if !defined(DISPLAY) 
-BROKEN=         Requires an X Display to build
+.if !defined(DISPLAY) || ${DISPLAY} == ""
+BROKEN=         "Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X."
 .endif
+
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/emu
 MAN1=		emu.1
