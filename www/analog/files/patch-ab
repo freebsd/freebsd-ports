@@ -1,5 +1,5 @@
---- analhead.h.orig	Sat Jul 13 14:48:54 1996
-+++ analhead.h	Sun Aug  4 09:31:54 1996
+--- analhead.h.orig	Sat Jul 13 10:48:54 1996
++++ analhead.h	Mon Aug  5 21:13:30 1996
 @@ -17,11 +17,11 @@
  /* the URL of your host's home page, for linking to at the top of the
     output; use "-" for no linking. */
@@ -19,7 +19,7 @@
     empty string "" for the same directory as the output page. */
  
 -#define DEFAULTCONFIGFILE "/usr/local/etc/httpd/analog/analog.cfg"
-+#define DEFAULTCONFIGFILE "/usr/local/share/analog/analog.cfg"
++#define DEFAULTCONFIGFILE "none"
  /* the name of the default configuration file; see README.html for a
     description of this file. Use "none" for no configuration file. */
  
