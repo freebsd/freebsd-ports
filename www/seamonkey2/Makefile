@@ -195,7 +195,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
 
 .if defined(WITH_SMB)
 USE_GNOME+=	gnomevfs2
-RUN_DEPENDS+=	${X11BASE}/lib/gnome-vfs-2.0/modules/libsmb.so:${PORTSDIR}/devel/gnomevfs-extras
 .else
 CONFIGURE_ARGS+=--disable-gnomevfs
 .endif
