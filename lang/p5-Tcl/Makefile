@@ -3,7 +3,7 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1998/09/15 21:31:46 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/26 23:11:01 steve Exp $
 #
 
 DISTNAME=	Tcl-b2
@@ -17,6 +17,8 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 LIB_DEPENDS=	tcl76.1:${PORTSDIR}/lang/tcl76
 
 USE_PERL5=	YES
+
+BROKEN_ELF=	cannot open -ltcl76: No such file or directory
 
 WRKSRC=		${WRKDIR}/Tcl
 
