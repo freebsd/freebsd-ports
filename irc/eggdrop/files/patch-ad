@@ -1,0 +1,11 @@
+--- src/mod/filesys.mod/filesys.c.orig	Wed Dec  9 20:05:21 1998
++++ src/mod/filesys.mod/filesys.c	Wed Dec  9 20:09:13 1998
+@@ -458,7 +458,7 @@
+   if (at_limit(nick)) {
+     char xxx[1024];
+ 
+-    sprintf(xxx, "%d*%s%s", strlen(dccdir), dccdir, dir);
++    sprintf(xxx, "%lu*%s%s", strlen(dccdir), dccdir, dir);
+     queue_file(xxx, fn, dcc[idx].nick, nick);
+     dprintf(idx, "Queued: %s to %s\n", fn, nick);
+     my_free(s);

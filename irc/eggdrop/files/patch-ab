@@ -1,0 +1,39 @@
+--- src/main.c.orig	Sun Jul 15 09:15:14 2001
++++ src/main.c	Thu Nov  1 12:55:48 2001
+@@ -61,7 +61,7 @@
+ #define _POSIX_SOURCE 1
+ #endif
+ 
+-extern char		 origbotname[], userfile[], botnetnick[];
++extern char		 origbotname[], userfile[], botnetnick[], tempdir[];
+ extern int		 dcc_total, conmask, cache_hit, cache_miss,
+ 			 max_logs, quick_logs;
+ extern struct dcc_t	*dcc;
+@@ -94,7 +94,7 @@
+ 				   stats? */
+ int	term_z = 0;		/* Foreground: use the terminal as a party
+ 				   line? */
+-char	configfile[121] = "eggdrop.conf"; /* Name of the config file */
++char	configfile[121] = __PREFIX__ "/etc/eggdrop.conf";
+ char	helpdir[121];		/* Directory of help files (if used) */
+ char	textdir[121] = "";	/* Directory for text files that get dumped */
+ int	keep_all_logs = 0;	/* Never erase logfiles, no matter how old
+@@ -709,6 +709,8 @@
+     setrlimit(RLIMIT_CORE, &cdlim);
+   }
+ #endif
++
++  chdir(__PREFIX__ "/share/eggdrop");
+ 
+   /* Initialise context list */
+   for (i = 0; i < 16; i++)
+@@ -809,7 +809,8 @@
+   cache_miss = 0;
+   cache_hit = 0;
+   if (!pid_file[0])
+-  egg_snprintf(pid_file, sizeof pid_file, "pid.%s", botnetnick);
++  egg_snprintf(pid_file, sizeof pid_file, "%.100s/pid.%.32s", 
++		tempdir, botnetnick);
+ 
+   /* Check for pre-existing eggdrop! */
+   f = fopen(pid_file, "r");

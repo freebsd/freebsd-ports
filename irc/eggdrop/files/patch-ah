@@ -1,0 +1,11 @@
+--- src/modules.c.orig	Mon Jul 16 18:54:01 2001
++++ src/modules.c	Fri Nov  2 11:49:45 2001
+@@ -94,7 +94,7 @@
+ #ifndef STATIC
+ 
+ /* Directory to look for modules */
+-char moddir[121] = "modules/";
++char moddir[121] = __PREFIX__ "/lib/eggdrop/";
+ 
+ #else
+ 

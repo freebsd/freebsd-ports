@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Thu Nov 23 06:56:40 2000
++++ src/Makefile.in	Thu Nov  1 12:57:48 2001
+@@ -16,7 +16,7 @@
+ LD = @CC@
+ STRIP = @STRIP@
+ CFLAGS = @CFLAGS@ -I.. -I$(top_srcdir) @DEFS@ $(CFLGS)
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = @CPPFLAGS@ '-D__PREFIX__="@prefix@"'
+ 
+ eggdrop_objs = bg.o botcmd.o botmsg.o botnet.o chanprog.o cmds.o dcc.o \
+ dccutil.o dns.o flags.o language.o main.o mem.o misc.o misc_file.o \
+@@ -37,7 +37,7 @@
+ 	@echo "Linking eggdrop... $(EGGBUILD)"
+ 	@echo ""
+ 	@touch mod/mod.xlibs
+-	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
++	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLDFLAGS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
+ 	$(STRIP) ../$(EGGEXEC)
+ 	@echo "Successful compile: $(EGGEXEC)"
+ 	@echo ""
