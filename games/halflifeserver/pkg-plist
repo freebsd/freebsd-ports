@@ -1,4 +1,5 @@
 %%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
+%%PORTDOCS%%%%HLDSDIR%%3108a_changes.txt
 %%HLDSDIR%%dmc/cl_dlls/client.dll
 %%HLDSDIR%%dmc/delta.lst
 %%HLDSDIR%%dmc/dlls/dmc_i386.so
