@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	tcpsocketpipe
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	net ruby
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib
+MASTER_SITES=	http://rrr.jin.gr.jp/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	TCPSocketPipe-${PORTVERSION:S/./_/g}
+DISTNAME=	socketproxy.rb
+EXTRACT_SUFX=	# none
 DIST_SUBDIR=	ruby
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to create I/O pipes for TCP socket tunneling
-
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/dump.rb:${PORTSDIR}/converters/ruby-dump.rb
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	devel-logger
@@ -25,10 +24,6 @@ USE_RUBY_FEATURES=	devel-logger
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/TCPSocketPipe.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/monitor.rb ${RUBY_MODEXAMPLESDIR}/
-.endif
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/socketproxy.rb ${RUBY_SITELIBDIR}/
 
 .include <bsd.port.mk>
