@@ -1,0 +1,23 @@
+SPOPS is a robust and powerful module that allows you to serialize objects.  It
+is unique in that it also allows you to apply security to these objects using
+a fairly simple but powerful scheme of users and groups.
+
+It's also unique in that for most objects, you will not need to write any code.
+A fairly simple configuration file is all you need which you can then feed to
+SPOPS and have a class for your object ready to go, right out of thin air.
+
+The configuration you specify not only lists the properties of the object and
+possibly some information about where its data should be stored, but can also
+describe the relationship an object might have with another object (or
+objects).
+
+One great benefit is that you can retrofit SPOPS to existing data.  If you
+don't use any of the metadata layers or security, you can simply describe your
+data in a configuration file, process the configuration and start making (and
+processing) objects.  If you want to add security to these objects later, it's
+easy!
+
+WWW: http://search.cpan.org/search?dist=SPOPS
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
