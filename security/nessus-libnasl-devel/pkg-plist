@@ -5,3 +5,4 @@ lib/libnasl.a
 lib/libnasl.la
 lib/libnasl.so
 lib/libnasl.so.3
+var/nessus/nessus_org.pem
