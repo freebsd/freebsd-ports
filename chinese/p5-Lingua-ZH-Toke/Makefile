@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	Lingua-ZH-Toke
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@dragon2.net
 COMMENT=	A Chinese Tokenizer on steroids
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Lingua/ZH/TaBE.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE
