@@ -8,11 +8,8 @@ bin/lpstat
 etc/lpd.conf.sample
 @unexec if [ -f %D/etc/lpd.perms ]; then cmp -s %D/etc/lpd.perms.sample %D/etc/lpd.perms && rm -f %D/etc/lpd.perms || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/lpd.perms`` to remove config files left." | fmt ; fi
 etc/lpd.perms.sample
-etc/lprng.sh
 etc/printcap.sample
 etc/rc.d/lprng.sh
-lib/liblpr.a
-lib/liblpr.la
 lib/liblpr.so
 lib/liblpr.so.0
 libexec/filters/lpbanner
@@ -22,6 +19,8 @@ libexec/filters/psbanner
 sbin/checkpc
 sbin/lpc
 sbin/lpd
+sbin/lprng_certs
+sbin/lprng_index_certs
 share/doc/LPRng/CHANGES
 share/doc/LPRng/LISA98.ppt
 share/doc/LPRng/LPRng-HOWTO.dsl
@@ -32,5 +31,35 @@ share/doc/LPRng/LPRng-HOWTO.sgml
 share/doc/LPRng/LPRng.jpg
 share/doc/LPRng/LPRngT-L.jpg
 share/doc/LPRng/LPRngT-S.jpg
+share/doc/LPRng/HTML/LPRng.jpg
+share/doc/LPRng/HTML/LPRngT-L.jpg
+share/doc/LPRng/HTML/LPRngT-S.jpg
+share/doc/LPRng/HTML/chooser.png
+share/doc/LPRng/HTML/clients.png 
+share/doc/LPRng/HTML/configfiles.png
+share/doc/LPRng/HTML/filter.png
+share/doc/LPRng/HTML/index.html
+share/doc/LPRng/HTML/network.png
+share/doc/LPRng/HTML/parallel.png
+share/doc/LPRng/HTML/pooling.png
+share/doc/LPRng/HTML/printserver.png
+share/doc/LPRng/HTML/samba.png
+share/doc/LPRng/HTML/serial.png
+share/doc/LPRng/HTML/spooler.png
+share/doc/LPRng/HTML/x_add.png
+share/doc/LPRng/HTML/x_advanced.png
+share/doc/LPRng/HTML/x_checkpc.png
+share/doc/LPRng/HTML/x_edit.png 
+share/doc/LPRng/HTML/x_ifhpfilter.png
+share/doc/LPRng/HTML/x_nup.png
+share/doc/LPRng/HTML/x_open.png
+share/doc/LPRng/HTML/x_printcaps.png
+share/doc/LPRng/HTML/x_reread.png
+share/doc/LPRng/HTML/x_results.png
+share/doc/LPRng/HTML/x_smb.png
+share/doc/LPRng/HTML/x_write.png
+share/doc/LPRng/PDF/Cookbook.pdf
 @dirrm libexec/filters
+@dirrm share/doc/LPRng/HTML
+@dirrm share/doc/LPRng/PDF
 @dirrm share/doc/LPRng

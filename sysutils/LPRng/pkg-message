@@ -8,9 +8,12 @@ To activate the new printing system do the following:
   start the new one (`@@PREFIX@@/sbin/lpd')
 - remember to adjust your aliases or your PATH to use the new programs
 
-Note that LPRng uses /etc/printcap, /etc/lpd.conf, and /etc/lpd.perms
+Note that LPRng uses /etc/printcap, @@PREFIX@@/etc/lpd.conf, and 
+@@PREFIX@@/etc/lpd.perms
 
 For further information, have a look at:
   @@PREFIX@@/share/doc/LPRng
+
 also:
-  WWW: http://www.astart.com/lprng.html
+  WWW: http://www.lprng.com/
+
