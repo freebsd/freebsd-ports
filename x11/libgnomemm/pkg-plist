@@ -1,3 +1,4 @@
+include/libgnomemm-2.0/libgnomemm.h
 include/libgnomemm-2.0/libgnomemm/init.h
 include/libgnomemm-2.0/libgnomemm/main.h
 include/libgnomemm-2.0/libgnomemm/moduleinfo.h
@@ -6,13 +7,12 @@ include/libgnomemm-2.0/libgnomemm/private/moduleinfo_p.h
 include/libgnomemm-2.0/libgnomemm/private/program_p.h
 include/libgnomemm-2.0/libgnomemm/program.h
 include/libgnomemm-2.0/libgnomemm/wrap_init.h
-include/libgnomemm-2.0/libgnomemm.h
+lib/libgnomemm-2.0.a
+lib/libgnomemm-2.0.so
+lib/libgnomemm-2.0.so.1
 lib/libgnomemm-2.0/include/libgnomemmconfig.h
 lib/libgnomemm-2.0/proc/m4/convert.m4
 lib/libgnomemm-2.0/proc/m4/convert_libgnomemm.m4
-lib/libgnomemm-1.3.a
-lib/libgnomemm-1.3.so
-lib/libgnomemm-1.3.so.10
 libdata/pkgconfig/libgnomemm-2.0.pc
 @dirrm lib/libgnomemm-2.0/include
 @dirrm lib/libgnomemm-2.0/proc/m4
