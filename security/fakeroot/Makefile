@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fakeroot
-PORTVERSION=	0.9.6
+PORTVERSION=	1.2.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	Meno.Abels@Adviser.com
 COMMENT=	Simulate the root user behaviour
 
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
