@@ -1,56 +1,32 @@
-*** Makefile.in.orig	Sun Apr 19 03:06:51 1998
---- Makefile.in	Sat Jun 27 23:05:50 1998
-***************
-*** 40,49 ****
-  ### 
-  
-  ### directory for lclint libraries
-! LIBDIR     = @installdir@/lib
-  
-  ### directory for lclint standard imports
-! IMPORTSDIR = @installdir@/imports
-  
-  ### directory for lclint binary
-  INSTALLDIR = @installdir@/bin
---- 40,49 ----
-  ### 
-  
-  ### directory for lclint libraries
-! LIBDIR     = @installdir@/share/lclint-2.4b/lib
-  
-  ### directory for lclint standard imports
-! IMPORTSDIR = @installdir@/share/lclint-2.4b/imports
-  
-  ### directory for lclint binary
-  INSTALLDIR = @installdir@/bin
-***************
-*** 231,244 ****
-  dolibraries:
-  	@echo '//  Installing libraries in '$(LIBDIR)
-  	@echo "    (This will complain if the directory already exists, don't worry about it.)"
-! 	-mkdir $(LIBDIR)
-  	$(CP) $(LCLINTLIB)/* $(LIBDIR)
-  	@echo '//  Installed libraries.'
-  
-  doimports:
-  	@echo '//  Installing imports in '$(IMPORTSDIR)
-  	@echo "    (This will complain if the directory already exists, don't worry about it.)"
-! 	-mkdir $(IMPORTSDIR)
-  	$(CP) $(LCLINTIMPORTS)/* $(IMPORTSDIR)
-  	@echo '//  Installed imports.'
-  
---- 231,244 ----
-  dolibraries:
-  	@echo '//  Installing libraries in '$(LIBDIR)
-  	@echo "    (This will complain if the directory already exists, don't worry about it.)"
-! 	-mkdir -p $(LIBDIR)
-  	$(CP) $(LCLINTLIB)/* $(LIBDIR)
-  	@echo '//  Installed libraries.'
-  
-  doimports:
-  	@echo '//  Installing imports in '$(IMPORTSDIR)
-  	@echo "    (This will complain if the directory already exists, don't worry about it.)"
-! 	-mkdir -p $(IMPORTSDIR)
-  	$(CP) $(LCLINTIMPORTS)/* $(IMPORTSDIR)
-  	@echo '//  Installed imports.'
-  
+--- Makefile.in.orig	Tue May 23 17:01:30 2000
++++ Makefile.in	Sun Jun 18 12:04:23 2000
+@@ -41,10 +41,10 @@
+ ### 
+ 
+ ### directory for lclint libraries
+-LIBDIR     = @installdir@/lib
++LIBDIR     = @installdir@/share/lclint-2.5q/lib
+ 
+ ### directory for lclint standard imports
+-IMPORTSDIR = @installdir@/imports
++IMPORTSDIR = @installdir@/share/lclint-2.5q/imports
+ 
+ ### directory for lclint binary
+ INSTALLDIR = @installdir@/bin
+@@ -232,14 +232,14 @@
+ dolibraries:
+ 	@echo '//  Installing libraries in '$(LIBDIR)
+ 	@echo "    (This will complain if the directory already exists, don't worry about it.)"
+-	-mkdir $(LIBDIR)
++	-mkdir -p $(LIBDIR)
+ 	$(CP) $(LCLINTLIB)/* $(LIBDIR)
+ 	@echo '//  Installed libraries.'
+ 
+ doimports:
+ 	@echo '//  Installing imports in '$(IMPORTSDIR)
+ 	@echo "    (This will complain if the directory already exists, don't worry about it.)"
+-	-mkdir $(IMPORTSDIR)
++	-mkdir -p $(IMPORTSDIR)
+ 	$(CP) $(LCLINTIMPORTS)/* $(IMPORTSDIR)
+ 	@echo '//  Installed imports.'
+ 
