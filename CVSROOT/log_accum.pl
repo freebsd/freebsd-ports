@@ -26,50 +26,6 @@ use strict;
 use lib $ENV{CVSROOT};
 use CVSROOT::cfg;
 
-use Sys::Hostname;	# get hostname() function
-
-############################################################
-#
-# Configurable options
-# (these are gradually being migrated to cfg.pm)
-#
-############################################################
-
-# The command used to mail the log messages.  Usually something
-# like '/usr/sbin/sendmail'.  
-my $MAILCMD = "/usr/local/bin/mailsend -H";
-
-
-# Email addresses of recipients of commit mail. (might be overridden below)
-my $MAILADDRS = "nobody";
-
-
-# Extra banner to add to top of commit messages.
-# i.e. $MAILBANNER = "Project X CVS Repository";
-my $MAILBANNER = "";
-
-
-# The file prefix used for the temporary files.
-my $FILE_PREFIX = "#cvs.files";
-
-
-#-------------------------------------------------------
-# FreeBSD site localisation
-# Remember to comment out if using for other purposes.
-#-------------------------------------------------------
-if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
-	my $meister;
-
-	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
-	if ($1 =~ /freefall/i) {
-		$meister = 'peter@FreeBSD.org';
-	} else {
-		$meister = 'markm@FreeBSD.org';
-		$MAILBANNER = "FreeBSD International Crypto Repository";
-	}
-	$MAILADDRS = $meister if $cfg::DEBUG;
-}
-
 
 ############################################################
 #
@@ -82,7 +38,7 @@ my $STATE_ADDED   = 2;
 my $STATE_REMOVED = 3;
 my $STATE_LOG     = 4;
 
-my $BASE_FN       = "$cfg::TMPDIR/$FILE_PREFIX";
+my $BASE_FN       = "$cfg::TMPDIR/$cfg::FILE_PREFIX";
 my $LAST_FILE     = "$BASE_FN.lastdir";
 my $CHANGED_FILE  = "$BASE_FN.changed";
 my $ADDED_FILE    = "$BASE_FN.added";
@@ -114,7 +70,7 @@ sub cleanup_tmpfiles {
 	return if $cfg::DEBUG;
 
 	opendir DIR, $cfg::TMPDIR or die "Cannot open directory: $cfg::TMPDIR!";
-	push @files, grep /^$FILE_PREFIX\..*$PID$/, readdir(DIR);
+	push @files, grep /^$cfg::FILE_PREFIX\..*$PID$/, readdir(DIR);
 	closedir DIR;
 
 	foreach (@files) {
@@ -330,7 +286,7 @@ sub build_header {
 	my @text;
 	push @text, $header;
 	push @text, "";
-	push @text, "$MAILBANNER\n" if $MAILBANNER;
+	push @text, "$cfg::MAILBANNER\n" if $cfg::MAILBANNER;
 
 	return @text;
 }
@@ -401,7 +357,8 @@ sub mail_notification {
 	print "Mailing the commit message...\n";
 
 	my @mailaddrs = &read_logfile("$MAIL_FILE.$PID");
-	open MAIL, "| $MAILCMD $MAILADDRS" or die 'Please check $MAILCMD.';
+	open MAIL, "| $cfg::MAILCMD $cfg::MAILADDRS"
+	    or die "Please check $cfg::MAILCMD.";
 
 # This is turned off since the To: lines go overboard.
 # Also it has bit-rotted since, and can't just be switched on again.

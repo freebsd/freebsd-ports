@@ -10,7 +10,8 @@
 
 package cfg;
 use strict;
-use vars qw($DEBUG $TMPDIR %TEMPLATE_HEADERS);
+use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
+	    $TMPDIR %TEMPLATE_HEADERS);
 
 
 ######################
@@ -24,6 +25,9 @@ $DEBUG = 0;
 
 # Location of temporary directory.
 $TMPDIR = "/tmp/";
+
+# The file prefix used for the temporary files.
+$FILE_PREFIX = "#cvs.files";
 
 
 ################
@@ -45,6 +49,45 @@ $TMPDIR = "/tmp/";
 	"PR"			=> '.*',
 	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
 );
+
+
+####################
+### log_accum.pl ###
+####################
+
+# The command used to mail the log messages.  Usually something
+# like '/usr/sbin/sendmail'.  
+$MAILCMD = "/usr/local/bin/mailsend -H";
+
+# Email addresses of recipients of commit mail. (might be overridden below)
+$MAILADDRS = "nobody";
+
+# Extra banner to add to top of commit messages.
+# i.e. $MAILBANNER = "Project X CVS Repository";
+$MAILBANNER = "";
+
+
+
+
+##############################################################
+##############################################################
+# FreeBSD site localisation [overrides configuration above].
+# Remember to comment out if using for other purposes.
+##############################################################
+##############################################################
+use Sys::Hostname;		# get hostname() function
+if (hostname() =~ /^(freefall|internat)\.freebsd\.org$/i) {
+	my $meister;
+
+	$MAILADDRS='cvs-committers@FreeBSD.org cvs-all@FreeBSD.org';
+	if ($1 =~ /freefall/i) {
+		$meister = 'peter@FreeBSD.org';
+	} else {
+		$meister = 'markm@FreeBSD.org';
+		$MAILBANNER = "FreeBSD International Crypto Repository";
+	}
+	$MAILADDRS = $meister if $DEBUG;
+}
 
 
 #end
