@@ -1,0 +1,11 @@
+--- Makefile.in	2000/09/20 16:08:11	1.1
++++ Makefile.in	2000/09/20 16:08:25
+@@ -89,7 +89,7 @@
+ 
+ lib_LTLIBRARIES = libSDL_ttf.la
+ 
+-libSDL_ttfincludedir = $(includedir)/SDL
++libSDL_ttfincludedir = $(includedir)/SDL11
+ libSDL_ttfinclude_HEADERS =  	SDL_ttf.h
+ 
+ 
