@@ -1,0 +1,16 @@
+The Var_Dump class is a wrapper for the var_dump function.
+
+The var_dump function displays structured information about expressions that
+includes its type and value. Arrays are explored recursively with values
+indented to show structure.
+
+The Var_Dump class captures the output of the var_dump function, by using output
+control functions, and then uses external renderer classes for displaying the
+result in various graphical ways:
+* Simple text,
+* HTML/XHTML text,
+* HTML/XHTML table,
+* XML,
+* ...
+
+WWW: http://pear.php.net/package/Var_Dump/
