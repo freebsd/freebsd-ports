@@ -9,7 +9,6 @@
 
 PORTNAME=	cups-base
 PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	1
 PORTREVISION=	${CUPS_PORTREV}
 PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
@@ -26,6 +25,8 @@ MANLANG=	""
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
 		${WRKSRC}/Makedefs.in
+	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
+		${WRKSRC}/man/Makefile ${WRKSRC}/man/es/Makefile
 	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/cups|/usr/local/etc/cups|g' \
@@ -49,7 +50,7 @@ post-install:
 	${MKDIR} ${CUPS_SPOOLDIR} ${CUPS_SPOOLDIR}/tmp
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>

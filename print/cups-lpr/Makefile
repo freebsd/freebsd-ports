@@ -9,7 +9,6 @@
 
 PORTNAME=	cups-lpr
 PORTVERSION=	${CUPS_PORTVER}
-PORTREVISION=	1
 PORTREVISION=	${CUPS_PORTREV}
 PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
@@ -42,6 +41,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
 		${WRKSRC}/Makedefs.in
+	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
+		${WRKSRC}/man/Makefile ${WRKSRC}/man/es/Makefile
 	@${REINPLACE_CMD} -e '/LN/d' -e '/cat/d' \
 		${WRKSRC}/man/Makefile ${WRKSRC}/man/fr/Makefile
 
