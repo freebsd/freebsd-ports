@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.6 1997/05/24 13:17:13 jfitz Exp $
+#   $Id: Makefile,v 1.7 1997/06/24 18:43:08 jfitz Exp $
 #
 
 DISTNAME=	Crypt-DES-1.0
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 
 MAINTAINER=	jfitz@FreeBSD.ORG
+
+BROKEN=		perl5 upgrade
 
 USE_PERL5=	YES
 

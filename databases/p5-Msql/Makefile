@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.16 1997/09/17 13:58:52 jfitz Exp $
+#   $Id: Makefile,v 1.17 1998/04/03 02:33:06 jseger Exp $
 #
 
 DISTNAME=	Msql-modules-1.1811
@@ -25,7 +25,7 @@ MAN1=		pmsql.1 dbimon.1
 MAN3=		Msql.3 DBD::mSQL.3
 MAN3PREFIX=	${PREFIX}/lib/perl5
 
-BROKEN=		DEPENDS on databases/msql which is currently BROKEN
+BROKEN=		DEPENDS on databases/msql which is currently BROKEN, also perl5 upgrade
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
