@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/eggdrop
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../irc/eggdrop/work/eggdrop1.6.15 ${WRKSRC}
+	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../irc/eggdrop/work/eggdrop1.6.17 ${WRKSRC}
 	cd ${WRKSRC}/src/mod && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 pre-build:
