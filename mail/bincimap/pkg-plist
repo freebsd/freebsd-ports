@@ -25,4 +25,7 @@ etc/bincimap/bincimap.conf.sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/bincimap-auth-teapop.sh
+%%EXAMPLESDIR%%/checkpassword.pl
+%%EXAMPLESDIR%%/toimapdir
+%%EXAMPLESDIR%%/tomaildir++
 @dirrm %%EXAMPLESDIR%%
