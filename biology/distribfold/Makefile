@@ -8,8 +8,9 @@
 PORTNAME=	distribfold
 PORTVERSION=	0.1.${RELEASE_DATE}
 CATEGORIES=	biology net
-MASTER_SITES=	ftp://ftp.mshri.on.ca/pub/distribfold/download/
-DISTNAME=	distribfold-current-FreeBSD
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
+DISTNAME=	distribfold-current-FreeBSD-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -32,7 +33,7 @@ DNETFOLD_GROUP=dnetfold
 # default number of processors
 WITH_NCPU?=	1
 
-RELEASE_DATE=	20021015
+RELEASE_DATE=	20021105
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}/cpu0|' \
@@ -74,6 +75,10 @@ do-install:
 post-install: cook-install-plist fix-startup-scripts
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
 
 pre-everything::
 .if ${WITH_NCPU} < 1
