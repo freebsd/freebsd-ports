@@ -337,7 +337,7 @@ sub update_index() {
 	    or bsd::errx(1, "error updating the index file");
     }
     if ($packages && ! -d "$portsdir/packages") {
-	mkdir("$portsdir/packages")
+	mkdir("$portsdir/packages", 0777)
 	    or bsd::errx(1, "error creating the package directory");
     }
     cvs("update", "Mk", "Templates", "Tools")
