@@ -1,5 +1,5 @@
---- epic4-0.9.9/include/defs.h.orig	Mon Dec  4 03:44:17 2000
-+++ epic4-0.9.9/include/defs.h	Mon Dec  4 03:44:17 2000
+--- include/defs.h.orig	Mon Dec  4 03:44:17 2000
++++ include/defs.h	Mon Dec  4 03:44:17 2000
 @@ -0,0 +1,261 @@
 +/* include/defs.h.  Generated automatically by configure.  */
 +/* include/defs.h.in.  Generated automatically from configure.in by autoheader.  */

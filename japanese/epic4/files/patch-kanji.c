@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/kanji.c.orig	Mon Dec  4 03:44:17 2000
-+++ epic4-0.9.9/source/kanji.c	Mon Dec  4 03:44:17 2000
+--- source/kanji.c.orig	Mon Dec  4 03:44:17 2000
++++ source/kanji.c	Mon Dec  4 03:44:17 2000
 @@ -0,0 +1,133 @@
 +/* kanji.c */
 +#include "kanji.h"

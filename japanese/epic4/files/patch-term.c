@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/term.c.orig	Tue Aug 22 02:48:46 2000
-+++ epic4-0.9.9/source/term.c	Mon Dec  4 03:44:17 2000
+--- source/term.c.orig	Tue Aug 22 02:48:46 2000
++++ source/term.c	Mon Dec  4 03:44:17 2000
 @@ -9,6 +9,7 @@
   */
  

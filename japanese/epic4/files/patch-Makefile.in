@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/Makefile.in.orig	Thu Aug 24 04:29:55 2000
-+++ epic4-0.9.9/source/Makefile.in	Mon Dec  4 03:45:30 2000
+--- source/Makefile.in.orig	Thu Aug 24 04:29:55 2000
++++ source/Makefile.in	Mon Dec  4 03:45:30 2000
 @@ -17,7 +17,7 @@
  	ircsig.o keys.o lastlog.o list.o log.o mail.o names.o network.o \
  	newio.o notice.o notify.o numbers.o output.o parse.o queue.o reg.o \

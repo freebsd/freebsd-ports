@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/screen.c.orig	Thu Aug 10 09:28:50 2000
-+++ epic4-0.9.9/source/screen.c	Mon Dec  4 03:44:17 2000
+--- source/screen.c.orig	Thu Aug 10 09:28:50 2000
++++ source/screen.c	Mon Dec  4 03:44:17 2000
 @@ -11,6 +11,7 @@
   */
  

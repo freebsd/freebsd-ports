@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/parse.c.orig	Wed Aug 16 02:25:44 2000
-+++ epic4-0.9.9/source/parse.c	Mon Dec  4 03:44:17 2000
+--- source/parse.c.orig	Wed Aug 16 02:25:44 2000
++++ source/parse.c	Mon Dec  4 03:44:17 2000
 @@ -30,6 +30,7 @@
  #include "notify.h"
  #include "notice.h"

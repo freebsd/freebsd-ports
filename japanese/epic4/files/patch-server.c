@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/server.c.orig	Fri Sep 29 03:16:55 2000
-+++ epic4-0.9.9/source/server.c	Mon Dec  4 03:44:17 2000
+--- source/server.c.orig	Fri Sep 29 03:16:55 2000
++++ source/server.c	Mon Dec  4 03:44:17 2000
 @@ -826,6 +826,7 @@
  	char	buffer[BIG_BUFFER_SIZE * 3 + 1]; /* make this buffer *much*
  						  * bigger than needed */

@@ -1,5 +1,5 @@
---- epic4-0.9.9/source/input.c.orig	Sat Sep 23 01:07:16 2000
-+++ epic4-0.9.9/source/input.c	Mon Dec  4 03:49:56 2000
+--- source/input.c.orig	Sat Sep 23 01:07:16 2000
++++ source/input.c	Mon Dec  4 03:49:56 2000
 @@ -31,6 +31,7 @@
  #include "vars.h"
  #include "window.h"
