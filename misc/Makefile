@@ -247,6 +247,7 @@
     SUBDIR += mshell
     SUBDIR += mtx
     SUBDIR += muuz
+    SUBDIR += nserver
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
