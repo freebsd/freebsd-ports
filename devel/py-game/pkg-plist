@@ -35,6 +35,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.icns
 lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.tiff
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/sndarray.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.pyo
@@ -77,11 +78,11 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyo
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mixer_music.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mouse.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_movie.html
+%%PORTDOCS%%share/doc/py-game/ref/pygame_sndarray.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_sprite.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_surfarray.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_time.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_transform.html
-%%PORTDOCS%%share/doc/py-game/ref/pygame_version.html
 %%PORTDOCS%%share/doc/py-game/tut/ChimpLineByLine.html
 %%PORTDOCS%%share/doc/py-game/tut/DisplayModes.html
 %%PORTDOCS%%share/doc/py-game/tut/Executable.html
