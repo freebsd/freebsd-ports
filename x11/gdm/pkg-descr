@@ -11,8 +11,4 @@ gdm     auth            requisite       pam_unix.so     try_first_pass
 gdm     account         requisite       pam_unix.so     try_first_pass
 gdm     session         required        pam_permit.so
 
-- This port doesn't work with Japanese ( or some other ) environment.
-  Try to set Language to Japanese. I don't know why but think there
-  is something wrong around locale setting of libc/X/gtk/gdm.
-
 This notes is written by:  Yukihiro Nakai <nakai@FreeBSD.org>
