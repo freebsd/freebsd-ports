@@ -1,5 +1,5 @@
---- unix/setup.py.in.orig	Fri Sep 14 03:34:24 2001
-+++ unix/setup.py.in	Fri Oct  5 23:57:20 2001
+--- unix/setup.py.in.orig	Sat Oct 27 21:53:35 2001
++++ unix/setup.py.in	Sun Sep 15 00:07:50 2002
 @@ -14,8 +14,9 @@
  
  VERSION="@VERSION@"
@@ -11,22 +11,22 @@
 +PILOTXFER=os.path.join("@prefix@", "bin", "pilot-xfer")
  
  if os.environ.has_key ('HOME'):
- 	USERDIR = os.environ["HOME"]
-@@ -99,7 +100,7 @@
- 		if get_answer("Install the User's Guide, too", 'y'):
- 			guide = os.path.join(PALMDIR, "PluckerUserGuide.pdb")
+     USERDIR = os.environ["HOME"]
+@@ -117,7 +118,7 @@
+         if get_answer("Install the User's Guide, too", 'y'):
+             guide = os.path.join(PALMDIR, "PluckerUserGuide.pdb")
  
--		os.system("pilot-xfer -i %s %s %s" % (viewer, zlib, guide))
-+		os.system(PILOTXFER + " -i %s %s %s" % (viewer, zlib, guide))
+-        os.system("pilot-xfer -i %s %s %s" % (viewer, zlib, guide))
++	os.system(PILOTXFER + " -i %s %s %s" % (viewer, zlib, guide))
  
  
  #
-@@ -131,7 +132,7 @@
+@@ -149,7 +150,7 @@
  
  install_config_files()
  
 -if not os.system('pilot-xfer > /dev/null 2>&1'):
 +if not os.system(PILOTXFER + ' > /dev/null 2>&1'):
- 	install_viewer()
+     install_viewer()
  else:
- 	print "\nThe program 'pilot-xfer' is missing so the Palm applications cannot be installed. You'll find them in %s." % PALMDIR
+     print "\nThe program 'pilot-xfer' is missing so the Palm applications cannot be installed. You'll find them in %s." % PALMDIR
