@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kbirthday
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gfai.de/~jaham/download/ \
 		http://freshmeat.net/redir/kbirthday/32531/url_tgz/
@@ -19,6 +18,8 @@ USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=	13
+# may or may not solve the alpha compilation issue....
+CONFIGURE_ARGS=	--with-pic
 
 # necesary to access the second master site by getting rid of the default switch -A
 FETCH_CMD ?=/usr/bin/fetch -Rr
