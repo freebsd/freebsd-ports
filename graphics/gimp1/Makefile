@@ -1,16 +1,14 @@
 # New ports collection makefile for:    GIMP
-# Version required:     961001
+# Version required:     0.99.1
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/11/19 16:07:26 erich Exp $
+# $Id: Makefile,v 1.3 1996/11/20 11:11:35 asami Exp $
 #
 
-DISTNAME=       gimp
-PKGNAME=        gimp-devel-96.10.01
+DISTNAME=       gimp-0.99.1
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/
-DISTFILES=	gimp961001.tgz
 
 MAINTAINER=     erich@FreeBSD.org
 
@@ -21,6 +19,12 @@ LIB_DEPENDS+=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
+#CONFIGURE_ARGS= --enable-debug
+
 USE_GMAKE=	yes
 
+#post-configure:
+#	cd ${WRKSRC}/gtk+; ./configure
+
 .include <bsd.port.mk>
+
