@@ -1,29 +1,11 @@
-*******************
-* NB: The section about the settings of the environment variables
-*     has changed! - Xaa
-*******************
+Kaffe is a virtual machine used to run Java bytecode.  It includes
+its own implementation of the Java standard classes, including the
+Awt classes.
 
-This is Kaffe, a virtual machine design to execute Java bytecode.
-Kaffe comes with an own implementation of the Java standard classes,
-including the Awt classes.
+Once you have installed Kaffe, make sure that you set the appropriate
+environment variables by running "sh /usr/local/share/kaffe/ENVIRONMENT"
 
-Running Kaffe
-=============
-Before running Kaffe it is necessary to configure the environment.
-This requires the setting of CLASSPATH, KAFFEHOME and LD_LIBRARY_PATH.
-For the standard installation these would be defined as follows:
+http://www.kaffe.org
 
- CLASSPATH=.:/usr/local/share/kaffe/Klasses.jar:\
-     /usr/local/share/kaffe/pizza.jar
- KAFFEHOME=/usr/local/share/kaffe
- LD_LIBRARY_PATH=/usr/lib:/usr/local/lib
-
-You can run "sh /usr/local/share/kaffe/ENVIRONMENT" to have these set for
-you.
-
-What's in there
-===============
-
-For further info see the file README that comes with the distribution.
 ----
 * Java and Javasoft are registered trademark of Sun Microsystems, Inc.

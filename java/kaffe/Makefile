@@ -3,13 +3,12 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.34 1998/09/15 11:46:00 asami Exp $
+# $Id: Makefile,v 1.35 1998/10/10 03:40:18 steve Exp $
 #
 
 DISTNAME=	kaffe-1.0.b2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
-DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	xaa@xaa.iae.nl
 
@@ -21,5 +20,6 @@ MAN1=		kaffe.1
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ENVIRONMENT ${PREFIX}/share/kaffe
 	${INSTALL_DATA} ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
