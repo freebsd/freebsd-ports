@@ -865,6 +865,7 @@ clusterit	ports/net/clusterit
 cmail		ports/mail/cmail
 cmake		ports/devel/cmake
 cmatrix		ports/misc/cmatrix
+cmd5checkpw	ports/security/cmd5checkpw
 cmdwatch	ports/sysutils/cmdwatch
 cmios9		ports/converters/cmios9
 cmp3		ports/audio/cmp3
