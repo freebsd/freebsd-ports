@@ -34,6 +34,7 @@
     SUBDIR += cfengine2
     SUBDIR += checkservice
     SUBDIR += clockspeed
+    SUBDIR += cmdwatch
     SUBDIR += colorize
     SUBDIR += comconsole
     SUBDIR += consolehm
