@@ -9,7 +9,8 @@ PORTNAME=	pspp
 PORTVERSION=	0.2.4
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/pspp/
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for statistical analysis of sampled data

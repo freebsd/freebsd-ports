@@ -407,6 +407,13 @@ MASTER_SITE_GNUPG+= 	\
 	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
 
+MASTER_SITE_GNU_ALPHA+=	\
+	ftp://alpha.gnu.org/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/%SUBDIR%/ \
+	ftp://ftp.lublin.pl/mirror/alpha.gnu.org/gnu/%SUBDIR%/ \
+	ftp://ftp.ps.pl/mirrors/alpha.gnu.org/pub/gnu/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/gnu-alpha/%SUBDIR%/
+
 MASTER_SITE_ISC+=	\
 	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/infosys/servers/isc/%SUBDIR%/ \

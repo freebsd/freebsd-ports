@@ -8,7 +8,8 @@
 PORTNAME=	id-utils
 PORTVERSION=	3.2d
 CATEGORIES=	devel
-MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/id-utils/
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code

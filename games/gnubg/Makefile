@@ -8,7 +8,8 @@
 PORTNAME=	gnubg
 PORTVERSION=	0.13.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/gnubg/
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz	\
 		gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz	\
 		gnubg_ts0.bd.gz gnubg_os0.bd.gz

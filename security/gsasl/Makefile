@@ -10,7 +10,8 @@ PORTNAME=	gsasl
 PORTVERSION=	0.0.8
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
-		ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/
+		${MASTER_SITE_GNU_ALPHA}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
