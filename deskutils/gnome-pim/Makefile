@@ -15,7 +15,7 @@ DISTNAME=	gnome-pim-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-.if defined(WITHOUT_PILOT)
+.if !defined(WITHOUT_PILOT)
 BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 .endif
