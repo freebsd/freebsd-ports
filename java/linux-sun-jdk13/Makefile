@@ -7,9 +7,10 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
-PKGNAMEPREFIX=	linux-
+PKGNAMEPREFIX=	linux-sun-
 DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}-linux-i586
 EXTRACT_SUFX=	.bin
 
@@ -70,6 +71,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
 	@${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION} --unlink -xpf-
-	@${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk${JDK_VERSION}/bin/java # Linux-JDK${JDK_VERSION}"
+	@${LOCALBASE}/bin/registervm "${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}/bin/java # Linux-JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>

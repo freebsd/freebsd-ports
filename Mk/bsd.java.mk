@@ -47,7 +47,7 @@ _JAVA_HOME_BLACKDOWN_LINUX_1_2=	${LOCALBASE}/linux-blackdown-jdk1.2.2
 _JAVA_HOME_SUN_LINUX_1_2=		${LOCALBASE}/linux-sun-jdk1.2.2
 _JAVA_HOME_BLACKDOWN_LINUX_1_3=	${LOCALBASE}/linux-blackdown-jdk1.3.1
 _JAVA_HOME_IBM_LINUX_1_3=		${LOCALBASE}/linux-ibm-jdk1.3.1
-_JAVA_HOME_SUN_LINUX_1_3=		${LOCALBASE}/linux-jdk1.3.1
+_JAVA_HOME_SUN_LINUX_1_3=		${LOCALBASE}/linux-sun-jdk1.3.1
 _JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-jdk1.4.0.01
 
 # Set the JDK ports for all recognized JDK's
