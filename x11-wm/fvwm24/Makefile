@@ -64,7 +64,7 @@ post-install:
 			${PREFIX}/etc/system.fvwm2rc; \
 	fi
 	@${MKDIR} ${PREFIX}/share/fvwm2/pixmaps
-	${INSTALL_DATA} ${WRKDIR}/icons/*.xpm \
+	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
 		${PREFIX}/share/fvwm2/pixmaps
 
 .include <bsd.port.post.mk>
