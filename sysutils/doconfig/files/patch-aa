@@ -14,7 +14,7 @@
  
  $version = "1.1";
 -$autokernconf = "/usr/sbin/autokernconf";
-+$autokernconf = "/usr/local/sbin/autokernconf";
++$autokernconf = "%%PREFIX%%/sbin/autokernconf";
  $autokernconf_args = "";
  $autoinstall = 0;
  $autoreboot = 0;
