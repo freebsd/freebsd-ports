@@ -161,7 +161,7 @@ PLIST_FILES+=	%%DOCSDIR%%/mod/mod_snmp.html \
 		%%DOCSDIR%%/snmp_agt/rfc2594.txt \
 		%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt \
 		%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
-PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt www/buckets
+PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt %%DOCSDIR%% www/buckets
 .else
 CONFLICTS+=	apache+mod_snmp*-1.*
 .endif
