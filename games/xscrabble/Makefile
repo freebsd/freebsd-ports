@@ -9,7 +9,8 @@ PORTNAME=	xscrabble
 PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/ \
-		http://people.FreeBSD.org/~mph/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mph
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
