@@ -18,7 +18,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CXX="${CXX} -I${LOCALBASE}/include" \
+MAKE_ENV=	CXX="${CXX} -I${LOCALBASE}/include -DHAVE_DECL_GETOPT=1" \
 		CXXFLAGS="${CXXFLAGS}"
 
 post-patch:
