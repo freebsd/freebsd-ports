@@ -18,7 +18,13 @@ COMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
 MAKEFILE=	makefile
 PLIST_FILES=	bin/mpmf20
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000 && ${OSVERSION} < 502108
+BROKEN=		"ffs() clash, see i386/41930"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpmf20 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
