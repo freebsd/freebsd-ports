@@ -22,6 +22,7 @@ etc/uucp/sys2.sample
 info/uucp.info.gz
 libexec/uucp/uucico
 libexec/uucp/uuxqt
+libexec/uucpd
 sbin/uuchk
 sbin/uuconv
 @dirrm etc/uucp
