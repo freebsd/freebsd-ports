@@ -237,6 +237,7 @@
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
     SUBDIR += libdsp
+    SUBDIR += libedit
     SUBDIR += libelf
     SUBDIR += libevent
     SUBDIR += libffi
