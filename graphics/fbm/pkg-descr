@@ -1,0 +1,51 @@
+This collection provides a complete package for manipulating and
+converting color and black and whites images, including 24bit RGB, 8bit
+mapped color, 8bit grayscale, and 1bit bitmapped images.
+
+	clr2gray  Convert color to grayscale
+	fbcat	  Copy image (used for format conversion)
+	fbclean	  Flip isolated pixels (clean image)
+	fbconv	  Arbitrary convolutions
+	fbedge	  Compute derivative image (edge detection)
+	fbext	  Extract region, resize, change aspect ratio
+	fbgamma	  Gamma correct grayscale or color image for display
+	fbhalf	  Halftone grayscale image (Blue noise, Floyd-Steinberg, etc)
+	fbham	  Convert FBM 24bit RGB to Amiga HAM mode
+	fbhist	  Compute histogram
+	fbinfo	  Dump image header
+	fbm2pod	  Convert grayscale image to Diablo graphics (!)
+	fbm2tga	  Convert image to Targa format
+	fbm2tiff  Convert FBM files to 1, 2, 4, 8, or 24 bit TIFF
+	fbmask	  Set region to gray value
+	fbmedian  Median filter 3x3 regios
+	fbnorm	  Normalize image intensity / increase contrast
+	fbpalet	  Replace an imager's colormap with another, remove duplicates
+	fbps	  Convert to PostScript
+	fbquant	  Color quantization (24 bit to 8..256 colors) Mod. Heckbert
+	fbrot	  Rotate 90, 180, or 270 degrees
+	fbthin	  Thin 1bit images
+	fbsample  Sample a 1bit file to produce an 8bit file
+	fbsharp	  Sharpen (edge enhancement) by digital Laplacian
+	gray2clr  Add a "gray" colormap to a grayscale image
+	idiff	  (and udiff) convert raw byte stream into byte difference
+	pbm2ps	  Convert PBM file to PostScript
+	pbmtitle  Add a title to a PBM file
+	raw2fbm	  Convert raw file to FBM format (eg: Amiga Digiview files)
+	tga2fbm   Convert Targa file to FBM format
+	tiff2fbm  Convert tiff file to FBM format
+	uunet2fbm Convert UseNet Facesaver file to FBM format
+
+File Formats
+
+	FBM   (-F)	FBM file with 256 byte header (with title & credits)
+	Sun   (-S)	Sun rasterfile with 32 byte header
+	Tiff  (-T)	Aldus TIFF
+	PBM   (-P)	Poskanzer format for 1bit files
+	GIF   (-G)	CompuServe GIF format
+	JPG   (-J)	JPEG JFIF format (cf The Independent JPEG Group)
+	RLE   (-R)	Utah RLE format
+	IFF   (-I)	Amiga IFF files (except HAM mode files)
+	PCX   (-Z)	PC PaintBrush format for IBM
+	Face  (-B)	Bennet Yee's 1bit files, used at CMU
+___________
+From the README file
