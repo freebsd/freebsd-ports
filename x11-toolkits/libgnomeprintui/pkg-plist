@@ -9,21 +9,23 @@ lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.so
 lib/libgnomeprintui-2-2.so.1
 libdata/pkgconfig/libgnomeprintui-2.2.pc
-share/doc/libgnomeprintui/c7.html
-share/doc/libgnomeprintui/home.png
-share/doc/libgnomeprintui/index.html
-share/doc/libgnomeprintui/index.sgml
-share/doc/libgnomeprintui/left.png
-share/doc/libgnomeprintui/libgnomeprintui-gnome-font-dialog.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-copies.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-dialog.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-job-preview.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-paper-selector.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-print-preview.html
-share/doc/libgnomeprintui/libgnomeprintui-gnome-printer-selector.html
-share/doc/libgnomeprintui/libgnomeprintui.html
-share/doc/libgnomeprintui/right.png
-share/doc/libgnomeprintui/up.png
+%%DOCSDIR%%/c7.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libgnomeprintui-gnome-font-dialog.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-copies.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-dialog.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-job-preview.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-paper-selector.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-preview.html
+%%DOCSDIR%%/libgnomeprintui-gnome-printer-selector.html
+%%DOCSDIR%%/libgnomeprintui.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
+share/locale/af/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/am/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ar/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/az/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -46,6 +48,7 @@ share/locale/fi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/fr/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ga/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/gl/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/gu/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/he/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/hi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/hr/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -85,6 +88,6 @@ share/locale/vi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/wa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
-@dirrm share/doc/libgnomeprintui
+@dirrm %%DOCSDIR%%
 @dirrm include/libgnomeprintui-2.2/libgnomeprintui
 @dirrm include/libgnomeprintui-2.2
