@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ngps@post1.com
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel \
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
 		pinstall:${PORTSDIR}/devel/pinstall
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/swig
