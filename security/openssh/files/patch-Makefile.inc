@@ -1,6 +1,6 @@
---- Makefile.inc.orig	Sun Jul 29 16:00:07 2001
-+++ Makefile.inc	Wed Oct  3 13:49:31 2001
-@@ -17,10 +17,16 @@
+--- Makefile.inc.orig	Wed Mar  6 01:23:27 2002
++++ Makefile.inc	Mon Jun 24 20:28:00 2002
+@@ -17,10 +17,19 @@
  
  .include <bsd.obj.mk>
  
@@ -20,4 +20,7 @@
 +.if !defined(IGNORE_LIBSSH)
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
++.if (${SKEY} == "yes")
++LDADD+=		-lopie
++.endif
  .endif

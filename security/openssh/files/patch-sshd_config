@@ -1,23 +1,12 @@
---- sshd_config.orig	Fri Jun 21 23:07:45 2002
-+++ sshd_config	Fri Jun 21 23:08:26 2002
-@@ -30,8 +30,10 @@
- 
- # Authentication:
- 
--#LoginGraceTime 600
--#PermitRootLogin yes
-+#LoginGraceTime 300
-+LoginGraceTime 600
-+#PermitRootLogin no
-+PermitRootLogin yes
- #StrictModes yes
- 
- #RSAAuthentication yes
-@@ -74,6 +76,7 @@
+--- sshd_config 	Mon Jun 24 20:56:50 2002
++++ sshd_config.orig	Sat Jun 22 12:40:35 2002
+@@ -74,7 +76,9 @@
  #PrintLastLog yes
  #KeepAlive yes
  #UseLogin no
 +UseLogin yes
  #UsePrivilegeSeparation yes
++UsePrivilegeSeparation no
  #Compression yes
  
+ #MaxStartups 10
