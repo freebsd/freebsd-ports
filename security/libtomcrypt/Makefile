@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Comprehensive, modular and portable cryptographic toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

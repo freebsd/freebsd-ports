@@ -1,6 +1,6 @@
 # Ports collection makefile for:  amap
 # Date created:			  23 Mar  2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	4.5
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Application mapper
 
 HAS_CONFIGURE=	yes

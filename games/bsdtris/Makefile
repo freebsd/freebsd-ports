@@ -1,6 +1,6 @@
 # Ports collection makefile for:  bsdtris
 # Date created:	                  01 Apr 2003
-# Whom:                           Yonatan <Yonatan@xpert.com>
+# Whom:                           Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PORTNAME}-01092003
 
-MAINTAINER=	yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	BSD version of Text-based tetris game
 
 NO_WRKSUBDIR=	yes

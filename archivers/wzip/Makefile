@@ -1,6 +1,6 @@
 # New ports collection makefile for:    wzip
 # Date created:		06 Jan 2003
-# Whom:			Yonatan <Yonatan@xpert.com>
+# Whom:			Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/w/wzip/
 DISTNAME=	wzip_${PORTVERSION}
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	A preprocessor for lossy data compression
 
 ALL_TARGET=	wzip

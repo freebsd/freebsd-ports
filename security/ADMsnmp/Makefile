@@ -1,6 +1,6 @@
 # Ports collection makefile for:  ADMsnmp
 # Date created:                   16 Apr 2003
-# Whom:                           Yonatan@xpert.com
+# Whom:                           onatan@gmail.com
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://adm.freelsd.net/pub/ADM/ \
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	SNMP audit scanner
 
 WRKSRC=		${WRKDIR}/ADMsnmp

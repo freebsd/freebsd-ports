@@ -1,6 +1,6 @@
 # Ports collection makefile for:  finger_mysql
 # Date created:			  03 Mar 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ DISTNAME=	finger_mysql.c
 EXTRACT_SUFX=	#none
 EXTRACT_ONLY=	#none
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Threaded MySQL scanner
 
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client/

@@ -1,6 +1,6 @@
 # Ports collection makefile for:  dcetest
 # Date created:			  Jan 11 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.atstake.com/research/tools/info_gathering/
 DISTNAME=	dcetest
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	Utility to dump MSRPC endpoint information from Windows systems
 
 ALL_TARGET=	dcetest

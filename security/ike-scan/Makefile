@@ -1,6 +1,6 @@
 # Ports collection makefile for:  ike-scan
 # Date created:			  04 May 2003
-# Whom:				  Yonatan <Yonatan@xpert.com>
+# Whom:				  Yonatan <onatan@gmail.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.nta-monitor.com/ike-scan/download/ \
 		http://berlin.ccc.de/~cryx/ike-scan/
 
-MAINTAINER=	Yonatan@xpert.com
+MAINTAINER=	onatan@gmail.com
 COMMENT=	VPN scanner and identifier
 
 HAS_CONFIGURE=	yes
