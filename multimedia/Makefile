@@ -24,6 +24,7 @@
     SUBDIR += gmencoder
     SUBDIR += goggles
     SUBDIR += gopchop
+    SUBDIR += grpplaylist
     SUBDIR += gstreamer
     SUBDIR += gstreamer-editor
     SUBDIR += gstreamer-ffmpeg
