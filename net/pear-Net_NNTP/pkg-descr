@@ -1,4 +1,3 @@
-Package for communicating with NNTP/USENET servers. Includes features like 
-post, view, list, authentication, overview, etc.
+Package for communicating with NNTP/Usenet servers.
 
 WWW: http://pear.php.net/package/Net_NNTP/
