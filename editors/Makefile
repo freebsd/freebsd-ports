@@ -95,14 +95,8 @@
     SUBDIR += psgml-xemacs21-mule
     SUBDIR += sam
     SUBDIR += scite
-    SUBDIR += semi-emacs
-    SUBDIR += semi-emacs-current
     SUBDIR += semi-emacs20
-    SUBDIR += semi-emacs20-current
-    SUBDIR += semi-mule
-    SUBDIR += semi-mule-current
     SUBDIR += semi-xemacs21-mule
-    SUBDIR += semi-xemacs21-mule-current
     SUBDIR += staroffice5
     SUBDIR += staroffice52
     SUBDIR += staroffice60
