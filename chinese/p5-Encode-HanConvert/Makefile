@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Encode-HanConvert
-PORTVERSION=	0.28
+PORTVERSION=	0.31
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Encode
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@dragon2.net
 COMMENT=	Traditional and Simplified Chinese mappings
 
 PERL_CONFIGURE=	yes
