@@ -12,7 +12,7 @@
 -	@echo "*** This improves sound responsivity, but may be a security risk"
 -	@echo "*** if this is a multi-user machine. See file INSTALL."
 -	@echo "***"
-+	chown root.wheel $(bindir)/soundtracker
++	chown root:wheel $(bindir)/soundtracker
 +#	chmod +s $(bindir)/soundtracker
  	@echo ""
 +#	@echo "***"
