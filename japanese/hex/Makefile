@@ -8,7 +8,7 @@
 PORTNAME=	hex
 PORTVERSION=	2.04
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.yl.is.s.u-tokyo.ac.jp/~nayuta/S/hex/
+MASTER_SITES=	http://www.tsg.ne.jp/GANA/S/hex/
 EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
