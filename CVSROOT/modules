@@ -8331,6 +8331,7 @@ ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
 ruby-gpgme	ports/security/ruby-gpgme
+ruby-gphys	ports/science/ruby-gphys
 ruby-graph	ports/graphics/ruby-graph
 ruby-gst	ports/multimedia/ruby-gst
 ruby-gtk	ports/x11-toolkits/ruby-gtk
