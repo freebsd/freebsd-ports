@@ -276,6 +276,7 @@
     SUBDIR += pdnsd
     SUBDIR += perldap
     SUBDIR += pfinger
+    SUBDIR += pim6dd
     SUBDIR += pipsecd
     SUBDIR += pmf
     SUBDIR += poptop
