@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.25 1995/01/13 13:25:57 jkh Exp $
+# $Id: Makefile,v 1.26 1995/01/29 07:41:33 gpalmer Exp $
 #
 # Broken - irc, ircII
 
-SUBDIR= archie cern_httpd chimera dgd dgd-lpmud fspclient gn gopher imm  \
+SUBDIR= archie cern_httpd chimera dgd dgd-lpmud fspclient gated gn gopher imm  \
 	ivs lynx ncftp2 nv pcnfsd pidentd pmf sup tclDP tcp_wrapper \
 	tcpblast tkWWW tintin++ wais wu-ftpd xarchie yale-tftpd
 
