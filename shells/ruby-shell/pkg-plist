@@ -1,0 +1,11 @@
+%%RUBY_SITELIBDIR%%/shell.rb
+%%RUBY_SITELIBDIR%%/shell/builtin-command.rb
+%%RUBY_SITELIBDIR%%/shell/command-processor.rb
+%%RUBY_SITELIBDIR%%/shell/error.rb
+%%RUBY_SITELIBDIR%%/shell/filter.rb
+%%RUBY_SITELIBDIR%%/shell/process-controller.rb
+%%RUBY_SITELIBDIR%%/shell/system-command.rb
+@dirrm %%RUBY_SITELIBDIR%%/shell
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/ja/shell.doc
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/shell/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/shell
