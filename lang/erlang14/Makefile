@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	7.1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
@@ -41,6 +42,15 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
+# UPDATED_PACKAGES is the list of updated packages which documentation must
+# be pulled in from the docs tarball. "erts" lives in the erlang root
+# directory and should never be prefixed by lib/. See below for Java related
+# packages.
+
+UPDATED_PACKAGES=	erts lib/compiler lib/erl_interface \
+			lib/kernel lib/mnesia lib/sasl \
+			lib/snmp lib/stdlib
+
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
@@ -49,6 +59,9 @@ GNU_CONFIGURE=	yes
 # utilities is in the path as well. The only way to make sure that
 # this is the case (that I could think of at least) was to make sure
 # JAVABINDIR is added to the PATH, using the *_ENV macros.
+
+# The following UPDATED_PACKAGES depend on java.
+UPDATED_PACKAGES+=	lib/jinterface
 
 # Set JAVABINDIR to where you have javac, if different from below
 JAVABINDIR?=	${LOCALBASE}/jdk1.2.2/bin
@@ -72,22 +85,57 @@ PLIST_SUB+= 	WITHOUT_JAVA=""
 PLIST_SUB+= 	WITHOUT_JAVA="@comment "
 .endif
 
-# If X11 is not used, skip gs and etk applications
+# If X11 is not used, skip gs and etk applications.
 pre-build:
 .if defined(WITHOUT_X11)
 	${ECHO} "WITHOUT_X11 defined" > ${WRKSRC}/lib/gs/SKIP
 	${ECHO} "WITHOUT_X11 defined" > ${WRKSRC}/lib/etk/SKIP
 .endif
 
+# Check if javac is really in ${JAVABINDIR}.
+pre-configure:
+.if !defined(WITHOUT_JAVA)
+	if [ ! -x ${JAVABINDIR}/javac ]; then \
+		${ECHO_MSG} ">> Error: cannot find javac in JAVABINDIR."; \
+		${ECHO_MSG} ">> Please configure JAVABINDIR, or use the WITHOUT_JAVA option"; \
+		exit 1; \
+	fi
+.endif
+
 # Install documentation. (HTML docs need to be in same dir as the
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-	tar --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
+	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
 .if !defined(NOPORTDOCS)
-	tar --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
+	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_DOCS} \
 		-C ${PREFIX}/lib/erlang
+	@${RM} -rf ${PREFIX}/lib/erlang/man/cat?
+
+	@for erlang_package in ${UPDATED_PACKAGES}; do \
+		epkg_pathname=${PREFIX}/lib/erlang/$${erlang_package}; \
+		epkg_dirname=`dirname $${epkg_pathname}`; \
+		epkg_basename=`basename $${epkg_pathname}`; \
+		doc_release=`ls $${epkg_dirname}/ \
+			| ${GREP} $${epkg_basename}- | ${SED} -e "2d"`; \
+		app_release=`ls $${epkg_dirname}/ \
+			| ${GREP} $${epkg_basename}- | ${SED} -e "1d"`; \
+		if [ -z "$${doc_release}" -o -z "$${app_release}" ]; then \
+			${ECHO_MSG} ">> Error: post-install target failed to merge documentation"; \
+			exit 1; \
+		fi; \
+		( \
+		${ECHO_MSG} ">> Documentation merge: $${doc_release} -> $${app_release}"; \
+		${PERL} -pi -e "s/$${doc_release}/$${app_release}/g;" \
+			${PREFIX}/lib/erlang/doc/index.html; \
+		${CP} -R $${epkg_dirname}/$${app_release}/* \
+			$${epkg_dirname}/$${doc_release}/; \
+		${RM} -rf $${epkg_dirname}/$${app_release}; \
+		${MV} $${epkg_dirname}/$${doc_release} \
+			$${epkg_dirname}/$${app_release} \
+		); \
+	done
 .endif
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
@@ -98,11 +146,14 @@ post-install:
 # using the man format than actual system man pages. (The erl.1 and
 # epmd.1 perhaps being the exception).
 
+NOMANCOMPRESS=	yes
+
 MAN1PREFIX=	${PREFIX}/lib/erlang
-MAN_MAN1=	epmd.1 erl.1 erl_call.1 erlc.1 erlsrv.1 start_erl.1 werl.1
+MAN1=		epmd.1 erl.1 erl_call.1 erlc.1 erlsrv.1 start_erl.1 \
+		werl.1 run_erl.1 start.1
 
 MAN3PREFIX=	${PREFIX}/lib/erlang
-MAN_MAN3=	CORBA_Environment_alloc.3 CosEventChannelAdmin.3 \
+MAN3=		CORBA_Environment_alloc.3 CosEventChannelAdmin.3 \
 		CosEventChannelAdmin_ConsumerAdmin.3 \
 		CosEventChannelAdmin_EventChannel.3 \
 		CosEventChannelAdmin_ProxyPullConsumer.3 \
@@ -116,8 +167,41 @@ MAN_MAN3=	CORBA_Environment_alloc.3 CosEventChannelAdmin.3 \
 		CosTransactions_Resource.3 \
 		CosTransactions_SubtransactionAwareResource.3 \
 		CosTransactions_Terminator.3 \
+		CosNaming_NamingContextExt.3 \
+		cosTime.3 CosTime_TIO.3 CosTime_TimeService.3 CosTime_UTO.3 \
+		CosTimerEvent_TimerEventHandler.3 \
+		CosTimerEvent_TimerEventService.3 \
+		cosNotificationApp.3 \
+		CosNotifyChannelAdmin_EventChannelFactory.3 \
+		CosNotifyChannelAdmin_EventChannel.3 \
+		CosNotification_QoSAdmin.3 \
+		CosNotification_AdminPropertiesAdmin.3 \
+		CosNotifyChannelAdmin_ConsumerAdmin.3 \
+		CosNotifyChannelAdmin_SupplierAdmin.3 \
+		CosNotifyComm_NotifyPublish.3 \
+		CosNotifyComm_NotifySubscribe.3 \
+		CosNotifyFilter_FilterAdmin.3 \
+		CosNotifyFilter_FilterFactory.3 \
+		CosNotifyFilter_Filter.3 \
+		CosNotifyFilter_MappingFilter.3 \
+		CosNotifyChannelAdmin_ProxyConsumer.3 \
+		CosNotifyChannelAdmin_ProxySupplier.3 \
+		CosNotifyChannelAdmin_ProxyPullConsumer.3 \
+		CosNotifyChannelAdmin_ProxyPullSupplier.3 \
+		CosNotifyChannelAdmin_ProxyPushConsumer.3 \
+		CosNotifyChannelAdmin_ProxyPushSupplier.3 \
+		CosNotifyChannelAdmin_SequenceProxyPullConsumer.3 \
+		CosNotifyChannelAdmin_SequenceProxyPullSupplier.3 \
+		CosNotifyChannelAdmin_SequenceProxyPushConsumer.3 \
+		CosNotifyChannelAdmin_SequenceProxyPushSupplier.3 \
+		CosNotifyChannelAdmin_StructuredProxyPullConsumer.3 \
+		CosNotifyChannelAdmin_StructuredProxyPullSupplier.3 \
+		CosNotifyChannelAdmin_StructuredProxyPushConsumer.3 \
+		CosNotifyChannelAdmin_StructuredProxyPushSupplier.3 \
 		CosTransactions_TransactionFactory.3 Module_Interface.3 \
 		OrberEventChannel.3 OrberEventChannel_EventChannelFactory.3 \
+		beam_lib.3 digraph_utils.3 orddict.3 sets.3 win32reg.3 \
+		comet.3 erl_com.3 \
 		alarm_handler.3 any.3 application.3 appmon.3 asn1ct.3 \
 		asn1rt.3 auth.3 c.3 calendar.3 coast.3 code.3 compile.3 \
 		corba.3 corba_object.3 cosTransactions.3 cpu_sup.3 crypto.3 \
@@ -154,10 +238,10 @@ MAN_MAN3=	CORBA_Environment_alloc.3 CosEventChannelAdmin.3 \
 		xref.3 yecc.3
 
 MAN4PREFIX=	${PREFIX}/lib/erlang
-MAN_MAN4=	app.4 appup.4 config.4 rel.4 relup.4 script.4
+MAN4=		app.4 appup.4 config.4 rel.4 relup.4 script.4
 
 MAN6PREFIX=	${PREFIX}/lib/erlang
-MAN_MAN6=	crypto.6 eva.6 inets.6 kernel.6 mesh.6 runtime_tools.6 \
+MAN6=		crypto.6 eva.6 inets.6 kernel.6 mesh.6 runtime_tools.6 \
 		sasl.6 snmp.6 ssl.6
 
 .include <bsd.port.mk>
