@@ -1,0 +1,8 @@
+Ddate prints the date in Discordian date format.
+
+If  called  with  no arguments, ddate will get the current system date,
+convert this to the Discordian date format and print this on the  stan-
+dard  output.  Alternatively,  a Gregorian date may be specified on the
+command line, in the form of a numerical day, month and year.
+
+WWW: http://www.subgenius.com/
