@@ -1,0 +1,11 @@
+A LaTeX macro package for drawing Message Sequence Charts by Victor Bos 
+and Sjouke Mauw.
+This package should be useful to all people that prepare their texts with
+LaTeX and want to easily draw MSCs in their texts. This is not an MSC editor. 
+It simply takes a textual description of an MSC and draws the corresponding 
+MSC. 
+
+The current version of the MSC macro package supports the full MSC2000 
+language.
+
+WWW: http://www.win.tue.nl/~sjouke/mscpackage.html

@@ -114,6 +114,7 @@
     SUBDIR += latex-lineno
     SUBDIR += latex-logpap
     SUBDIR += latex-mathabx
+    SUBDIR += latex-msc
     SUBDIR += latex-pgf
     SUBDIR += latex-pict2e
     SUBDIR += latex-subfig
