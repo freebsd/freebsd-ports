@@ -18,11 +18,8 @@ DISTNAME=	mp-3.0.1
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles, etc
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} > 500000
-USE_GCC=	3.3
-.endif
 WRKSRC=		${WRKDIR}/mp
+USE_REINPLACE=	yes
 MAN1=		mp.1
 MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
 		- franklinp.1	- mailp.1	- newsp.1 \
@@ -30,10 +27,15 @@ MLINKS=		mp.1 digestp.1	- filep.1	- filofaxp.1 \
 
 PAPERSIZE?=	letter
 .if ${PAPERSIZE} == a4
-INSTALL_TARGET= install-a4
+INSTALL_TARGET=	install-a4
 .endif
 
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/<iostream\.h>/<iostream>using namespace std;/' \
+		-e 's/enum action_type/action_type/g' \
+		-e 's/enum text_type/text_type/g' \
+	    ${WRKSRC}/header.cc ${WRKSRC}/input.cc ${WRKSRC}/main.cc \
+	    ${WRKSRC}/print.cc ${WRKSRC}/print.hh
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
