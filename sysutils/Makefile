@@ -50,6 +50,7 @@
     SUBDIR += gtoaster
     SUBDIR += gtop
     SUBDIR += guitar
+    SUBDIR += gupsc
     SUBDIR += healthd
     SUBDIR += heat
     SUBDIR += idled
