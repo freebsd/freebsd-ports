@@ -1,10 +1,10 @@
---- src/acpustatus.h.orig	Wed Feb 20 20:11:52 2002
-+++ src/acpustatus.h	Wed Feb 20 20:14:16 2002
+--- src/acpustatus.h.orig	Sun Mar  9 04:37:52 2003
++++ src/acpustatus.h	Sun Apr 13 12:02:47 2003
 @@ -1,19 +1,29 @@
  #ifndef __CPUSTATUS_H
  #define __CPUSTATUS_H
  
--#if (defined(linux) || defined(HAVE_KSTAT_H))
+-#if defined(linux) || defined(HAVE_KSTAT_H)
 +#if (defined(linux) || defined(HAVE_KSTAT_H)) || defined (__FreeBSD__)
  
  #ifdef HAVE_KSTAT_H
@@ -40,5 +40,5 @@
 +    kvm_t *kd;
 +#endif
  };
- 
- #endif
+ #else
+ #undef CONFIG_APPLET_CPU_STATUS

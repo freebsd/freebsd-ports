@@ -1,47 +1,16 @@
---- src/wmtaskbar.cc.orig	Tue Oct  9 23:54:04 2001
-+++ src/wmtaskbar.cc	Wed Feb 20 20:17:52 2002
-@@ -66,7 +66,7 @@
+--- src/wmtaskbar.cc.orig	Mon Jan 20 00:43:27 2003
++++ src/wmtaskbar.cc	Wed Jan 22 03:08:53 2003
+@@ -67,10 +67,12 @@
  #endif
  
  #ifndef START_PIXMAP
 -#define START_PIXMAP "linux.xpm"
-+#define START_PIXMAP "bsd-daemon.xpm"
  /*
++#define START_PIXMAP "linux.xpm"
  #define START_PIXMAP "debian.xpm"
++*/
  #define START_PIXMAP "bsd-daemon.xpm"
-@@ -253,7 +253,7 @@
-     fAddressBar = 0;
- 
- #ifdef CONFIG_APPLET_CPU_STATUS
--#if (defined(linux) || defined(HAVE_KSTAT_H))
-+#if (defined(linux) || defined(HAVE_KSTAT_H)) || defined(__FreeBSD__)
-     if (taskBarShowCPUStatus)
-         fCPUStatus = new CPUStatus(this);
-     else
-@@ -287,7 +287,7 @@
-     } else
-         fClock = 0;
- #ifdef CONFIG_APPLET_APM
--    if (taskBarShowApm && access("/proc/apm", 0) == 0) {
-+    if (taskBarShowApm && access(APMDEV, 0) == 0) {
-         fApm = new YApm(this);
-         if (fApm->height() + ADD1 > ht) ht = fApm->height() + ADD1;
-     } else
-@@ -400,7 +400,7 @@
- 	    }
- #endif
- #ifdef CONFIG_APPLET_CPU_STATUS
--#if (defined(linux) || defined(HAVE_KSTAT_H))
-+#if (defined(linux) || defined(HAVE_KSTAT_H)) || defined(__FreeBSD__)
-         if (fCPUStatus) {
-             fCPUStatus->setPosition(rightX - fCPUStatus->width() - 1,
-                                     BASE1 + (ht - ADD1 - fCPUStatus->height()) / 2);
-@@ -497,7 +497,7 @@
-             }
- #endif
- #ifdef CONFIG_APPLET_CPU_STATUS
--#if (defined(linux) || defined(HAVE_KSTAT_H))
-+#if (defined(linux) || defined(HAVE_KSTAT_H)) || defined(__FreeBSD__)
-         if (fCPUStatus) {
-             fCPUStatus->setPosition(rightX - fCPUStatus->width() - 1,
-                                     BASE1 + (ht - ADD1 - fCPUStatus->height()) / 2);
++/*
+ #define START_PIXMAP "start.xpm"
+ #define START_PIXMAP "xfree86os2.xpm"
+ */
