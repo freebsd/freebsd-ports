@@ -6,35 +6,21 @@
 #
 
 PORTNAME=	gopher
-PORTVERSION=	2.3.1
+PORTVERSION=	3.0.2
 CATEGORIES=	net
-MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
-DISTNAME=	gopher2_3.1
+MASTER_SITES=	http://www.quux.org/give-me-gopher/
 
 MAINTAINER=	ports@FreeBSD.org
 
-FORBIDDEN=	"Remote exploits"
-
-BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/wais:build
-
-DATADIR=	$(PREFIX)/gopher-data
-WaisTop=	$(PORTSDIR)/net/wais/work/freeWAIS-0.5
-CONFIGURE_ENV=	LIBS='-lcompat -lcrypt'
-CONFIGURE_ARGS=	--enable-datadir=$(DATADIR) --disable-debug --enable-locale
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+ALL_TARGET=	all
 
 MAN1=	gopher.1 gophfilt.1
 MAN5=	gopherd.conf.5 gopherrc.5
 MAN8=	gopherd.8 gopherindex.8
 
-pre-configure:
-# This ones are for FreeWAIS-0.4 and >
-	${LN} -s ${WaisTop}/include $(WaisTop)/ir
-	${LN} -s ${WaisTop}/src/client/ui $(WaisTop)
-	${LN} -s ${WaisTop}/bin $(WRKSRC)
-# This is the new configuration method
-	${LN} -s ${WaisTop} $(WRKSRC)/wais
-pre-install:
-	$(MKDIR) $(DATADIR)
+pre-patch:
+	@${FIND} ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,'
 
 .include <bsd.port.mk>
