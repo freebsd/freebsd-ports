@@ -1,10 +1,20 @@
---- client/dhcpc_subr.c.org	Sat Jul  6 11:00:50 1996
-+++ client/dhcpc_subr.c	Sat Jul  6 11:01:28 1996
-@@ -273,7 +273,11 @@
+--- client/dhcpc_subr.c.orig	Fri Nov  3 01:39:55 1995
++++ client/dhcpc_subr.c	Mon Aug  5 01:41:27 1996
+@@ -63,6 +63,9 @@
+ #ifdef __osf__
+ #include <net/pfilt.h>
+ #endif
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#endif
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/if_ether.h>
+@@ -273,7 +276,11 @@
    tmp = 0;
    bcopy(&tmp, sarp->arp_spa, sarp->arp_pln);
    bcopy(&target->s_addr, sarp->arp_tpa, sarp->arp_pln);
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 199608
 +  sether->ether_type = ETHERTYPE_ARP;
 +#else
    sether->ether_type = htons(ETHERTYPE_ARP);
@@ -12,11 +22,11 @@
  
    if (ether_write(ifp->fd, sbuf, ETHERHL + sizeof(struct ether_arp)) < 0) {
      return(0);                               /* it is harmless to return 0 */
-@@ -341,7 +345,11 @@
+@@ -341,7 +348,11 @@
    bcopy(&ipaddr->s_addr, sarp->arp_spa, sarp->arp_pln);
    bcopy(&ipaddr->s_addr, sarp->arp_tpa, sarp->arp_pln);
  
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 199608
 +  sether->ether_type = ETHERTYPE_ARP;
 +#else
    sether->ether_type = htons(ETHERTYPE_ARP);
@@ -24,7 +34,7 @@
  
    if (ether_write(ifp->fd, sbuf, ETHERHL + sizeof(struct ether_arp)) < 0) {
      return(-1);
-@@ -1387,7 +1395,7 @@
+@@ -1387,7 +1398,7 @@
    /* get haddr of interface */
    intface.haddr.htype = ETHER;
    intface.haddr.hlen = 6;
@@ -33,7 +43,7 @@
    if (ioctl(dhcpif.fd, SIOCGIFADDR, &ifr) < 0) {
      syslog(LOG_WARNING, "ioctl(SIOCGIFADDR) error in initialize(): %m");
      return(-1);
-@@ -1535,8 +1543,8 @@
+@@ -1535,8 +1546,8 @@
      ((struct sockaddr_in *)&ridreq.ifr_addr)->sin_addr.s_addr;
  
    if (current_addr.s_addr == addr->s_addr &&
@@ -44,7 +54,7 @@
      close(sockfd);
      return(1);
    }
-@@ -1660,7 +1668,7 @@
+@@ -1660,7 +1671,7 @@
  /*
   * set routing table
   */
@@ -53,7 +63,7 @@
  void
  set_route(param)
    struct dhcp_param *param;
-@@ -1730,6 +1738,10 @@
+@@ -1730,6 +1741,10 @@
    register char *cp = m_rtmsg.m_space;
    register int l;
  
@@ -64,11 +74,11 @@
    bzero(&so_dst, sizeof(struct sockaddr));
    bzero(&so_mask, sizeof(struct sockaddr));
    bzero(&so_gate, sizeof(struct sockaddr));
-@@ -1897,7 +1909,11 @@
+@@ -1897,7 +1912,11 @@
      lsether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 199608
 +  lsether->ether_type = ETHERTYPE_IP;
 +#else
    lsether->ether_type = htons(ETHERTYPE_IP);
@@ -76,11 +86,11 @@
  
    return;
  }
-@@ -2199,7 +2215,11 @@
+@@ -2199,7 +2218,11 @@
      snd.ether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 199608
 +  snd.ether->ether_type = ETHERTYPE_IP;
 +#else
    snd.ether->ether_type = htons(ETHERTYPE_IP);
@@ -88,11 +98,11 @@
  
    return;
  }
-@@ -2372,7 +2392,11 @@
+@@ -2372,7 +2395,11 @@
      snd.ether->ether_shost[i] = intface.haddr.haddr[i];
  #endif
    }
-+#ifdef __FreeBSD__
++#if __FreeBSD_version < 199608
 +  snd.ether->ether_type = ETHERTYPE_IP;
 +#else
    snd.ether->ether_type = htons(ETHERTYPE_IP);
@@ -100,7 +110,7 @@
  
    return(0);
  }
-@@ -2391,7 +2415,7 @@
+@@ -2391,7 +2418,7 @@
    struct msghdr msg;
    struct iovec bufvec[1];
    int bufsize = DFLTDHCPLEN;
@@ -109,7 +119,7 @@
    int on;
  #endif
  
-@@ -2417,7 +2441,7 @@
+@@ -2417,7 +2444,7 @@
        return(-1);
      }
  
