@@ -32,16 +32,212 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f2d6a5e1-26b9-11d9-9289-000c41e2cdad">
+    <topic>gaim -- MSN denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>1.0.2</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gaim team discovered denial-of-service vulnerabilities in
+	  the MSN protocol handler:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=7">
+	  <p>After accepting a file transfer request, Gaim will attempt
+	    to allocate a buffer of a size equal to the entire filesize,
+	    this allocation attempt will cause Gaim to crash if the size
+	    exceeds the amount of available memory.</p>
+	</blockquote>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=8">
+	  <p>Gaim allocates a buffer for the payload of each message
+	    received based on the size field in the header of the
+	    message. A malicious peer could specify an invalid size that
+	    exceeds the amount of available memory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://gaim.sourceforge.net/security/?id=7</url>
+      <url>http://gaim.sourceforge.net/security/?id=8</url>
+    </references>
+    <dates>
+      <discovery>2004-10-19</discovery>
+      <entry>2004-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad61657d-26b9-11d9-9289-000c41e2cdad">
+    <topic>gaim -- Content-Length header denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>0.82</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sean <q>infamous42md</q> reports:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=6">
+	  <p>When a remote server provides a large "content-length"
+	    header value, Gaim will attempt to allocate a buffer to
+	    store the content, however this allocation attempt will
+	    cause Gaim to crash if the length exceeds the amount of
+	    possible memory. This happens when reading profile
+	    information on some protocols. It also happens when smiley
+	    themes are installed via drag and drop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://gaim.sourceforge.net/security/?id=6</url>
+    </references>
+    <dates>
+      <discovery>2004-08-26</discovery>
+      <entry>2004-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4260eacb-26b8-11d9-9289-000c41e2cdad">
+    <topic>gaim -- multiple buffer overflows</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>0.82</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sean <q>infamous42md</q> reports several situations in gaim
+	  that may result in exploitable buffer overflows:</p>
+	<ul>
+	  <li>Rich Text Format (RTF) messages in Novell GroupWise
+	    protocol</li>
+	  <li>Unsafe use of gethostbyname in zephyr protocol</li>
+	  <li>URLs which are over 2048 bytes long once decoded</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0785</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=3</url>
+      <url>http://gaim.sourceforge.net/security/?id=4</url>
+      <url>http://gaim.sourceforge.net/security/?id=5</url>
+    </references>
+    <dates>
+      <discovery>2004-08-26</discovery>
+      <entry>2004-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e16293f0-26b7-11d9-9289-000c41e2cdad">
+    <topic>gaim -- heap overflow exploitable by malicious GroupWise
+      server</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>0.82</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Sean <q>infamous42md</q> reports that a malicous GroupWise
+          messaging server may be able to exploit a heap buffer
+          overflow in gaim, leading to arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0754</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=2</url>
+    </references>
+    <dates>
+      <discovery>2004-08-26</discovery>
+      <entry>2004-10-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="635bf5f4-26b7-11d9-9289-000c41e2cdad">
+    <topic>gaim -- malicious smiley themes</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
+	<range><lt>0.82</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gaim Security Issues page documents a problem with
+	  installing smiley themes from an untrusted source:</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=1">
+	  <p>To install a new smiley theme, a user can drag a tarball
+	    from a graphical file manager, or a hypertext link to one
+	    from a web browser. When a tarball is dragged, Gaim executes
+	    a shell command to untar it. However, it does not escape the
+	    filename before sending it to the shell. Thus, a specially
+	    crafted filename could execute arbitrary commands if the
+	    user could be convinced to drag a file into the smiley theme
+	    selector.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0784</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=1</url>
+    </references>
+    <dates>
+      <discovery>2004-08-22</discovery>
+      <entry>2004-10-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e6c4008-245f-11d9-b584-0050fc56d258">
     <topic>gaim -- buffer overflow in MSN protocol support</topic>
     <affects>
       <package>
+	<name>gaim</name>
 	<name>ja-gaim</name>
+	<name>ru-gaim</name>
 	<range><ge>0.79</ge><le>1.0.1</le></range>
       </package>
       <package>
-        <name>gaim</name>
-	<range><ge>0.79</ge><le>1.0.1</le></range>
+	<name>gaim</name>
+	<range><gt>20030000</gt></range>
       </package>
     </affects>
     <description>
@@ -59,7 +255,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2004-10-19</discovery>
-      <entry>2004-10-24</entry>
+      <entry>2004-10-25</entry>
     </dates>
   </vuln>
 
@@ -3817,7 +4013,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>gaim</name>
 	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
 	<range><lt>0.81_1</lt></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><ge>20030000</ge></range>
       </package>
     </affects>
     <description>
@@ -3825,15 +4027,23 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <p>Sebastian Krahmer discovered several remotely exploitable
           buffer overflow vulnerabilities in the MSN component of
           gaim.</p>
+	<blockquote cite="http://gaim.sourceforge.net/security/?id=0">
+	  <p>In two places in the MSN protocol plugins (object.c and
+	    slp.c), strncpy was used incorrectly; the size of the array
+	    was not checked before copying to it. Both bugs affect MSN's
+	    MSNSLP protocol, which is peer-to-peer, so this could
+	    potentially be easy to exploit.</p>
+	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CAN-2004-0500</cvename>
+      <url>http://gaim.sourceforge.net/security/?id=0</url>
     </references>
     <dates>
       <discovery>2004-08-12</discovery>
       <entry>2004-08-12</entry>
-      <modified>2004-08-12</modified>
+      <modified>2004-10-25</modified>
     </dates>
   </vuln>
 
@@ -6212,9 +6422,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>gaim</name>
+	<name>ja-gaim</name>
+	<name>ko-gaim</name>
+	<name>ru-gaim</name>
 	<range><lt>0.75_3</lt></range>
 	<range><eq>0.75_5</eq></range>
 	<range><eq>0.76</eq></range>
+      </package>
+      <package>
+	<name>gaim</name>
+	<range><ge>20030000</ge></range>
       </package>
     </affects>
     <description>
@@ -6256,7 +6473,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-01-26</discovery>
       <entry>2004-02-12</entry>
-      <modified>2004-04-07</modified>
+      <modified>2004-10-25</modified>
     </dates>
   </vuln>
 
