@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	cos
-PORTVERSION=	19Jun2001
+PORTVERSION=	2002.11.05
+PORTEPOCH=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.servlets.com/cos/
+DISTNAME=	${PORTNAME}-05Nov2002
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
-		${LOCALBASE}/bin/servletrunner:${PORTSDIR}/java/jsdk
-
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
-JDK_VERSION=	1.1.8
+USE_JAVA=	1.1+
 NO_BUILD=	yes
 RESTRICTED=	"Special conditions apply for commercial use, see licence"
 
