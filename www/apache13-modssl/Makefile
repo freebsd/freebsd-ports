@@ -7,7 +7,6 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
-PORTREVISION=   4
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.modssl.org/source/ \
@@ -48,8 +47,8 @@ USE_OPENSSL=	YES
 
 LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
-VERSION_APACHE=	1.3.22
-VERSION_MODSSL=	2.8.5
+VERSION_APACHE=	1.3.23
+VERSION_MODSSL=	2.8.6
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
