@@ -17,7 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A roll-your-own user folder product for Zope
 
-BROKEN=		"Does not install"
 DEPRECATED=	"no longer being developed: use SimpleUserFolder or exUserFolder instead"
 
 USE_ZOPE=	yes
@@ -26,7 +25,7 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=	GenericUserFolder
 
-WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+WRKSRC=		${WRKDIR}/lib/python/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 CPIO_OPTIONS=	--quiet -pdum -R
 
 do-build:
