@@ -15,7 +15,6 @@ DISTNAME=	gnome-python-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
-LIB_DEPENDS=	gtkhtml.10:${PORTSDIR}/www/gtkhtml
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_GMAKE=	yes
