@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-DBD-Pg
-# Version required:			0.93
 # Date created:				June 17th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	DBD-Pg-0.93
-PKGNAME=	p5-DBD-Pg-0.93
+PORTNAME=	p5-DBD-Pg
+PORTVERSION=	0.93
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
+DISTNAME=	DBD-Pg-${PORTVERSION}
 
 MAINTAINER=	jfitz@FreeBSD.org
 

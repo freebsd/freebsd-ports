@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pxtools
-# Version required:			0.0.5
 # Date created:				27 November 1999
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pxtools-0.0.5
+PORTNAME=	pxtools
+PORTVERSION=	0.0.5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.kneschke.de/projekte/pxtools/download/
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-hp200lx-db
-# Version required:			0.07
 # Date created:				January 2nd 2000
 # Whom:	      				Gerhard Gonter <g.gonter@ieee.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hp200lx-db-0.07
-PKGNAME=	p5-hp200lx-db-0.07
+PORTNAME=	p5-hp200lx-db
+PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HP200LX
+DISTNAME=	hp200lx-db-${PORTVERSION}
 
 MAINTAINER=	g.gonter@ieee.org
 

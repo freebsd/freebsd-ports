@@ -1,16 +1,16 @@
 # New ports collection makefile for:	grass
-# Version required:	5.0beta5
 # Date created:		15 January 2000
 # Whom:			reg
 #
 # $FreeBSD$
 #
 
-DISTNAME=	grass5.0beta5
-PKGNAME=	grass-5.0b5
+PORTNAME=	grass
+PORTVERSION=	5.0b5
 CATEGORIES=	databases
 MASTER_SITES=	ftp://grass.baylor.edu/pub/grass/grass5.0beta/source/ \
 		http://www.geog.uni-hannover.de/grass/grass5/source/
+DISTNAME=	grass5.0beta5
 
 MAINTAINER=	reg@FreeBSD.org
 

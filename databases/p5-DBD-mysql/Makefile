@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-Mysql-modules
-# Version required:			1.2016
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Msql-Mysql-modules-1.2210
-PKGNAME=	p5-Mysql-modules-1.2210
+PORTNAME=	p5-Mysql-modules
+PORTVERSION=	1.2210
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
+DISTNAME=	Msql-Mysql-modules-1.2210
 
 MAINTAINER=	jedgar@FreeBSD.org
 

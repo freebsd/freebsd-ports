@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mysqltcl
-# Version required:			1.53
 # Date created:				August 31, 1999
 # Whom:					Mikhail Teterin <mi@aldan.algebra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mysqltcl-1.53
+PORTNAME=	mysqltcl
+PORTVERSION=	1.53
 CATEGORIES=	databases tcl80
 MASTER_SITES=	http://www.mysql.com/Contrib/
 

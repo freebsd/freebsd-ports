@@ -1,12 +1,12 @@
 # New ports collection makefile for: typhoon
-# Version required:	1.10.3
 # Date created:		Wed Dec 11 15:16:19 CST 1996
 # Whom:			erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	typhoon-1.10.3
+PORTNAME=	typhoon
+PORTVERSION=	1.10.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/db

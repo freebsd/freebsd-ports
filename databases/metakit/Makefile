@@ -1,12 +1,12 @@
 # New ports collection makefile for:	metakit
-# Version required:	2.0
 # Date created:		25 December 1999
 # Whom:			Russell L. Carter <rcarter@pinyon.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	metakit-2.0
+PORTNAME=	metakit
+PORTVERSION=	2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://download.sourceforge.net/metakit/
 

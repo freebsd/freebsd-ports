@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-MLDBM
-# Version required:                     2.00
 # Date created:                         December 3 1997
 # Whom:                                 ache@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       MLDBM-2.00
-PKGNAME=        p5-MLDBM-2.00
+PORTNAME=	p5-MLDBM
+PORTVERSION=	2.00
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     MLDBM
+DISTNAME=       MLDBM-${PORTVERSION}
 
 MAINTAINER=     ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkgnats
-# Version required:	3.0.14
 # Date created:		Sat 18 Apr 1998 10:12:20 CEST
 # Whom:			andreas
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkgnats-3.0.14
+PORTNAME=	tkgnats
+PORTVERSION=	3.0.14
 CATEGORIES=	databases tk82
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkgnats/
 
