@@ -2,10 +2,17 @@ bin/dc_hublist
 bin/dctc
 %%PORTDOCS%%share/doc/dctc/COPYING
 %%PORTDOCS%%share/doc/dctc/ChangeLog
-%%PORTDOCS%%share/doc/dctc/DCextension
+%%PORTDOCS%%share/doc/dctc/Documentation/DCextensions/p2p_capabilities
+%%PORTDOCS%%share/doc/dctc/Documentation/DCextensions/search_by_content
+%%PORTDOCS%%share/doc/dctc/Documentation/GDL
+%%PORTDOCS%%share/doc/dctc/Documentation/VAR
+%%PORTDOCS%%share/doc/dctc/Documentation/commands
+%%PORTDOCS%%share/doc/dctc/Documentation/output
+%%PORTDOCS%%share/doc/dctc/Documentation/programs
 %%PORTDOCS%%share/doc/dctc/INSTALL
+%%PORTDOCS%%share/doc/dctc/KNOWN_BUGS
 %%PORTDOCS%%share/doc/dctc/README
-%%PORTDOCS%%share/doc/dctc/commands
-%%PORTDOCS%%share/doc/dctc/output
-%%PORTDOCS%%share/doc/dctc/programs
+%%PORTDOCS%%share/doc/dctc/TODO
+%%PORTDOCS%%@dirrm share/doc/dctc/Documentation/DCextensions
+%%PORTDOCS%%@dirrm share/doc/dctc/Documentation
 %%PORTDOCS%%@dirrm share/doc/dctc
