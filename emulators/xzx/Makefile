@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	2.9.3
-PORTREVISION=	1
+PORTVERSION=	3.0.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://xzx.purespace.de/xzx/
+MASTER_SITES=	http://www.zophar.net/unix/Files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flynn@energyhq.homeip.net
 
 # xmkmf is used in configure script
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 
+USE_MOTIF=      yes
+USE_XPM=        yes
 USE_X_PREFIX=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-oss
 
