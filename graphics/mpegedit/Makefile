@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 10:50:57 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.7 1998/10/12 01:08:23 jseger Exp $
+# $Id: Makefile,v 1.8 1998/10/13 03:16:33 jseger Exp $
 #
 
 DISTNAME=	mpegedit_v2.2
@@ -15,7 +15,12 @@ MAINTAINER=	erich@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/include/pbmplus.h:${PORTSDIR}/graphics/netpbm
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} > 400002
+BROKEN=		won\'t build with egcs compiler
+.endif
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
