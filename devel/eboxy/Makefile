@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eboxy
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bluelightning.org/ebox/files/eboxy/
@@ -15,19 +15,24 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.a:${PORTSDIR}/x11-toolkits/sdl_gui
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		xml2:${PORTSDIR}/textproc/libxml2 \
-		SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		SDL_ttf:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_image:${PORTSDIR}/graphics/sdl_image
+BUILD_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.so:${PORTSDIR}/x11-toolkits/sdl_gui
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
+		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
+		xml2.5:${PORTSDIR}/textproc/libxml2
+RUN_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.so:${PORTSDIR}/x11-toolkits/sdl_gui
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgnugetopt -lstdc++"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"  LDFLAGS="${LDFLAGS}" \
+		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ARGS=	--disable-lirc
+
+CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
+LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lgnugetopt
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
