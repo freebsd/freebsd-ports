@@ -8,12 +8,11 @@
 PORTNAME=	zipcodes
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	wosch/src asami/LOCAL_PORTS
+MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/
 PKGNAMEPREFIX=	us-
 DISTFILES=	${PORTNAME}.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jharris@widomaker.com
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
