@@ -1,0 +1,13 @@
+--- configure.orig	Tue Aug 17 13:48:32 2004
++++ configure	Tue Aug 17 13:49:13 2004
+@@ -20183,8 +20183,8 @@
+ 	echo "curl found - remote install options available"
+ 	CURL_CFLAGS=`$CURL_CONFIG --cflags`
+ 	CURL_LIBS=`$CURL_CONFIG --libs`
+-	CXXFLAGS="$CXXFLAGS -DCURLAVAILABLE"
+-	CFLAGS="$CFLAGS -DCURLAVAILABLE"
++	CXXFLAGS="$CXXFLAGS -DCURLAVAILABLE $CURL_CFLAGS"
++	CFLAGS="$CFLAGS -DCURLAVAILABLE $CURL_CFLAGS"
+     fi
+ fi
+ 
