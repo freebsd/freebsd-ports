@@ -1,0 +1,8 @@
+Provides a unified interface to the various serializing modules
+currently available.  Adds the functionality of both compression and
+encryption.
+
+WWW: http://search.cpan.org/search?dist=Data-Serializer
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
