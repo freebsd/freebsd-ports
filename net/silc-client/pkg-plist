@@ -111,19 +111,19 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/scripts/silc-mime.pl
-lib/silc/perl/i386-freebsd/auto/Irssi/Irssi.so
-lib/silc/perl/i386-freebsd/auto/Irssi/Irssi.bs
-lib/silc/perl/i386-freebsd/auto/Irssi/.packlist
-lib/silc/perl/i386-freebsd/auto/Irssi/UI/UI.so
-lib/silc/perl/i386-freebsd/auto/Irssi/UI/UI.bs
-lib/silc/perl/i386-freebsd/auto/Irssi/UI/.packlist
-lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/TextUI.so
-lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/TextUI.bs
-lib/silc/perl/i386-freebsd/auto/Irssi/TextUI/.packlist
-lib/silc/perl/i386-freebsd/Irssi.pm
-lib/silc/perl/i386-freebsd/perllocal.pod
-lib/silc/perl/i386-freebsd/Irssi/UI.pm
-lib/silc/perl/i386-freebsd/Irssi/TextUI.pm
+lib/silc/perl/%%ARCH%%/auto/Irssi/Irssi.so
+lib/silc/perl/%%ARCH%%/auto/Irssi/Irssi.bs
+lib/silc/perl/%%ARCH%%/auto/Irssi/.packlist
+lib/silc/perl/%%ARCH%%/auto/Irssi/UI/UI.so
+lib/silc/perl/%%ARCH%%/auto/Irssi/UI/UI.bs
+lib/silc/perl/%%ARCH%%/auto/Irssi/UI/.packlist
+lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/TextUI.so
+lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/TextUI.bs
+lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI/.packlist
+lib/silc/perl/%%ARCH%%/Irssi.pm
+lib/silc/perl/%%ARCH%%/perllocal.pod
+lib/silc/perl/%%ARCH%%/Irssi/UI.pm
+lib/silc/perl/%%ARCH%%/Irssi/TextUI.pm
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -141,11 +141,11 @@ lib/silc/perl/i386-freebsd/Irssi/TextUI.pm
 @dirrm lib/silcsim/client
 @unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true
-@dirrm lib/silc/perl/i386-freebsd/auto/Irssi/TextUI
-@dirrm lib/silc/perl/i386-freebsd/auto/Irssi/UI
-@dirrm lib/silc/perl/i386-freebsd/auto/Irssi
-@dirrm lib/silc/perl/i386-freebsd/auto
-@dirrm lib/silc/perl/i386-freebsd/Irssi
-@dirrm lib/silc/perl/i386-freebsd
+@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/TextUI
+@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi/UI
+@dirrm lib/silc/perl/%%ARCH%%/auto/Irssi
+@dirrm lib/silc/perl/%%ARCH%%/auto
+@dirrm lib/silc/perl/%%ARCH%%/Irssi
+@dirrm lib/silc/perl/%%ARCH%%
 @dirrm lib/silc/perl
 @dirrm lib/silc
