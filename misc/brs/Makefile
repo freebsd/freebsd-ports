@@ -7,11 +7,11 @@
 
 PORTNAME=      brs
 PORTVERSION=   4.0
-DISTNAME=      brs.4.00.l1
 CATEGORIES=    misc
-MASTER_SITES=  ${MASTER_SITE_SUNSITE} \
-               http://www.unknown.nu/ports/
+MASTER_SITES=  ${MASTER_SITE_SUNSITE} 
 MASTER_SITE_SUBDIR=    apps/religion
+
+DISTNAME=      brs.4.00.l1
 
 MAINTAINER=    user@unknown.nu
 
