@@ -54,7 +54,7 @@ case $2 in
 			echo "unable to start setiathome: it seems registration or login failed."
 			exit 0
 		fi
-		${seti_rcdir}/{seti_script} start >/dev/null
+		${seti_rcdir}/${seti_script} start >/dev/null
 		echo
 		echo "****  Congratulations!  Your system now participates in the search for extra-"
 		echo "      terrestrial intelligence.  Be sure to visit the home page at"
