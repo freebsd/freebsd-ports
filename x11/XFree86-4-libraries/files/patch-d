@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Wed Sep 18 18:18:59 2002
-+++ config/cf/FreeBSD.cf	Wed Sep 18 18:19:36 2002
+--- config/cf/FreeBSD.cf.orig	Sun Oct  6 18:14:59 2002
++++ config/cf/FreeBSD.cf	Sun Oct  6 18:28:12 2002
 @@ -43,11 +43,15 @@
  #define GccUsesGas		YES
  #define UseGas			YES
@@ -116,3 +116,14 @@
  #endif
  
  #ifndef PreIncDir
+@@ -509,6 +530,10 @@
+  
+ #ifndef PamLibraries
+ #define PamLibraries		-lpam DlLibrary
++#endif
++
++#ifndef SharedLibXdmGreet
++# define SharedLibXdmGreet		NO
+ #endif
+ 
+ /*
