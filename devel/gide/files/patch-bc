@@ -1,5 +1,14 @@
 --- plugins/asciitable/Makefile.in.orig	Sun May 14 10:11:31 2000
-+++ plugins/asciitable/Makefile.in	Wed May 17 09:39:52 2000
++++ plugins/asciitable/Makefile.in	Tue Jun 13 17:35:48 2000
+@@ -147,7 +147,7 @@
+ 
+ libgide_asciitable_la_SOURCES = plugin_asciitable.c
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
 @@ -157,7 +157,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -10,7 +19,16 @@
  libgide_asciitable_la_OBJECTS =  plugin_asciitable.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- plugins/browser/Makefile.in.orig	Sun May 14 10:11:35 2000
-+++ plugins/browser/Makefile.in	Wed May 17 09:40:10 2000
++++ plugins/browser/Makefile.in	Tue Jun 13 17:35:54 2000
+@@ -150,7 +150,7 @@
+ 
+ libgide_browser_la_SOURCES = plugin_browser.c
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR) 	-I$(GIDE_SRC_DIR)/GtkEditor 	-I$(GIDE_SRC_DIR)/GtkSCText 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-DVERSION=\""$(VERSION)"\" 	-I$(includedir) 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR) 	-I$(GIDE_SRC_DIR)/GtkEditor 	-I$(GIDE_SRC_DIR)/GtkSCText 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DVERSION=\""$(VERSION)"\" 	-I$(includedir) 	$(GNOME_INCLUDEDIR)
+ 
+ 
+ libgide_browser_la_LIBADD =  	GtkSCB/libGtkSCB.la
 @@ -163,7 +163,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -21,7 +39,16 @@
  libgide_browser_la_OBJECTS =  plugin_browser.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- plugins/calculator/Makefile.in.orig	Sun May 14 10:11:33 2000
-+++ plugins/calculator/Makefile.in	Wed May 17 09:40:22 2000
++++ plugins/calculator/Makefile.in	Tue Jun 13 17:36:01 2000
+@@ -147,7 +147,7 @@
+ 
+ libgide_calculator_la_SOURCES = plugin_calculator.c
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
 @@ -157,7 +157,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -32,7 +59,16 @@
  libgide_calculator_la_OBJECTS =  plugin_calculator.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- plugins/docstat/Makefile.in.orig	Sun May 14 10:11:34 2000
-+++ plugins/docstat/Makefile.in	Wed May 17 09:40:34 2000
++++ plugins/docstat/Makefile.in	Tue Jun 13 17:36:08 2000
+@@ -147,7 +147,7 @@
+ 
+ libgide_docstat_la_SOURCES = plugin_docstat.c
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
 @@ -157,7 +157,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -43,7 +79,16 @@
  libgide_docstat_la_OBJECTS =  plugin_docstat.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- plugins/sample/Makefile.in.orig	Sun May 14 10:11:29 2000
-+++ plugins/sample/Makefile.in	Wed May 17 09:40:45 2000
++++ plugins/sample/Makefile.in	Tue Jun 13 17:36:15 2000
+@@ -153,7 +153,7 @@
+ 
+ libgide_sample_la_SOURCES = plugin-sample.c
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
 @@ -163,7 +163,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -54,7 +99,16 @@
  libgide_sample_la_OBJECTS =  plugin-sample.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 --- plugins/text/Makefile.in.orig	Sun May 14 10:11:32 2000
-+++ plugins/text/Makefile.in	Wed May 17 09:40:55 2000
++++ plugins/text/Makefile.in	Tue Jun 13 17:36:23 2000
+@@ -148,7 +148,7 @@
+ libgide_text_la_SOURCES = plugin_text.c plugin_text_insert.c 			  plugin_text_delete.c plugin_text_replace.c 			  plugin_text_insert.h plugin_text_delete.h 			  plugin_text_replace.h
+ 
+ 
+-INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(GIDE_SRC_DIR)					-I$(GIDE_SRC_DIR)/GtkEditor				-I$(GIDE_SRC_DIR)/GtkSCText				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DVERSION=\""$(VERSION)"\"             			-I$(includedir)						$(GNOME_INCLUDEDIR)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
 @@ -158,7 +158,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -64,3 +118,14 @@
  libgide_text_la_LIBADD = 
  libgide_text_la_OBJECTS =  plugin_text.lo plugin_text_insert.lo \
  plugin_text_delete.lo plugin_text_replace.lo
+--- src/dialogs/Makefile.in.orig	Sun May 14 10:11:43 2000
++++ src/dialogs/Makefile.in	Tue Jun 13 17:35:25 2000
+@@ -131,7 +131,7 @@
+ 
+ @GTKEDITOR_COMPILE_TRUE@EDITOR_INCLUDES = -I$(srcdir)/../GtkSCText/ -I$(srcdir)/../GtkEditor/
+ 
+-INCLUDES =  	$(GNOME_INCLUDEDIR) 					$(EDITOR_INCLUDES) 					$(EXTRA_GNOME_CFLAGS)					-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	        -DGIDE_GLADEDIR=\""$(gladedir)"\"           		-I$(srcdir)/..						-I$(includedir)
++INCLUDES =  	$(GNOME_INCLUDEDIR) 					$(EDITOR_INCLUDES) 					$(EXTRA_GNOME_CFLAGS)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	        -DGIDE_GLADEDIR=\""$(gladedir)"\"           		-I$(srcdir)/..						-I$(includedir)
+ 
+ 
+ noinst_LIBRARIES = libdialogs.a
