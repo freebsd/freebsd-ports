@@ -1,10 +1,10 @@
---- configure.orig	Wed Jan  1 18:58:20 2003
-+++ configure	Wed Jan  1 18:58:45 2003
-@@ -5647,6 +5647,7 @@
+--- configure.orig	Thu Jun 17 23:16:50 2004
++++ configure	Thu Jun 17 23:17:31 2004
+@@ -8440,7 +8440,6 @@
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+-CFLAGS='-g -Wall -Wunused -Wmissing-prototypes -Wmissing-declarations -Wstrict-prototypes  -Wmissing-prototypes -Wnested-externs  -Wshadow -Wpointer-arith -Wno-cast-qual -Wcast-align -Wwrite-strings'
+ 
+ # Extract the first word of "pkg-config", so it can be a program name with args.
+ set dummy pkg-config; ac_word=$2
