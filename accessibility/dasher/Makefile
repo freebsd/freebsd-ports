@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dasher
-PORTVERSION=	3.2.8
+PORTVERSION=	3.2.10
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier gconf2 libglade2
+WANT_GNOME=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,9 +30,23 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		dasher.1
 
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
+.else
+CONFIGURE_ARGS+=--without-gnome
+.endif
+
+.if ${HAVE_GNOME:Mgnomespeech}!=""
+USE_GNOME+=	gnomespeech
+.else
+CONFIGURE_ARGS+=--without-speech
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2||g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
