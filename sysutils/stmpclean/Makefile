@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stmpclean
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.internet2.edu/~shalunov/stmpclean/
 
