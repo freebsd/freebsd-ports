@@ -5,45 +5,45 @@ bin/avr-c++
 bin/avr-cpp
 bin/avr-g++
 bin/avr-gcc
-bin/avr-gcc-3.3.1
+bin/avr-gcc-3.3.2
 bin/avr-gccbug
 lib/charset.alias
-lib/gcc-lib/avr/3.3.1/avr3/libgcc.a
-lib/gcc-lib/avr/3.3.1/avr4/libgcc.a
-lib/gcc-lib/avr/3.3.1/avr5/libgcc.a
-lib/gcc-lib/avr/3.3.1/cc1
-lib/gcc-lib/avr/3.3.1/cc1plus
-lib/gcc-lib/avr/3.3.1/collect2
-lib/gcc-lib/avr/3.3.1/include/README
-lib/gcc-lib/avr/3.3.1/include/fixed
-lib/gcc-lib/avr/3.3.1/include/float.h
-lib/gcc-lib/avr/3.3.1/include/iso646.h
-lib/gcc-lib/avr/3.3.1/include/limits.h
-lib/gcc-lib/avr/3.3.1/include/stdarg.h
-lib/gcc-lib/avr/3.3.1/include/stdbool.h
-lib/gcc-lib/avr/3.3.1/include/stddef.h
-lib/gcc-lib/avr/3.3.1/include/syslimits.h
-lib/gcc-lib/avr/3.3.1/include/unwind.h
-lib/gcc-lib/avr/3.3.1/include/varargs.h
-lib/gcc-lib/avr/3.3.1/install-tools/fix-header
-lib/gcc-lib/avr/3.3.1/install-tools/fixinc.sh
-lib/gcc-lib/avr/3.3.1/install-tools/fixincl
-lib/gcc-lib/avr/3.3.1/install-tools/fixproto
-lib/gcc-lib/avr/3.3.1/install-tools/gsyslimits.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/README
-lib/gcc-lib/avr/3.3.1/install-tools/include/float.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/iso646.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/limits.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/stdarg.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/stdbool.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/stddef.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/unwind.h
-lib/gcc-lib/avr/3.3.1/install-tools/include/varargs.h
-lib/gcc-lib/avr/3.3.1/install-tools/mkheaders
-lib/gcc-lib/avr/3.3.1/install-tools/mkheaders.conf
-lib/gcc-lib/avr/3.3.1/install-tools/mkinstalldirs
-lib/gcc-lib/avr/3.3.1/libgcc.a
-lib/gcc-lib/avr/3.3.1/specs
+lib/gcc-lib/avr/3.3.2/avr3/libgcc.a
+lib/gcc-lib/avr/3.3.2/avr4/libgcc.a
+lib/gcc-lib/avr/3.3.2/avr5/libgcc.a
+lib/gcc-lib/avr/3.3.2/cc1
+lib/gcc-lib/avr/3.3.2/cc1plus
+lib/gcc-lib/avr/3.3.2/collect2
+lib/gcc-lib/avr/3.3.2/include/README
+lib/gcc-lib/avr/3.3.2/include/fixed
+lib/gcc-lib/avr/3.3.2/include/float.h
+lib/gcc-lib/avr/3.3.2/include/iso646.h
+lib/gcc-lib/avr/3.3.2/include/limits.h
+lib/gcc-lib/avr/3.3.2/include/stdarg.h
+lib/gcc-lib/avr/3.3.2/include/stdbool.h
+lib/gcc-lib/avr/3.3.2/include/stddef.h
+lib/gcc-lib/avr/3.3.2/include/syslimits.h
+lib/gcc-lib/avr/3.3.2/include/unwind.h
+lib/gcc-lib/avr/3.3.2/include/varargs.h
+lib/gcc-lib/avr/3.3.2/install-tools/fix-header
+lib/gcc-lib/avr/3.3.2/install-tools/fixinc.sh
+lib/gcc-lib/avr/3.3.2/install-tools/fixincl
+lib/gcc-lib/avr/3.3.2/install-tools/fixproto
+lib/gcc-lib/avr/3.3.2/install-tools/gsyslimits.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/README
+lib/gcc-lib/avr/3.3.2/install-tools/include/float.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/iso646.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/limits.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/stdarg.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/stdbool.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/stddef.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/unwind.h
+lib/gcc-lib/avr/3.3.2/install-tools/include/varargs.h
+lib/gcc-lib/avr/3.3.2/install-tools/mkheaders
+lib/gcc-lib/avr/3.3.2/install-tools/mkheaders.conf
+lib/gcc-lib/avr/3.3.2/install-tools/mkinstalldirs
+lib/gcc-lib/avr/3.3.2/libgcc.a
+lib/gcc-lib/avr/3.3.2/specs
 share/locale/be/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
 share/locale/de/LC_MESSAGES/gcc.mo
@@ -54,11 +54,11 @@ share/locale/ja/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
 share/locale/sv/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
-@dirrm lib/gcc-lib/avr/3.3.1/avr3
-@dirrm lib/gcc-lib/avr/3.3.1/avr4
-@dirrm lib/gcc-lib/avr/3.3.1/avr5
-@dirrm lib/gcc-lib/avr/3.3.1/include
-@dirrm lib/gcc-lib/avr/3.3.1/install-tools/include
-@dirrm lib/gcc-lib/avr/3.3.1/install-tools
-@dirrm lib/gcc-lib/avr/3.3.1
+@dirrm lib/gcc-lib/avr/3.3.2/avr3
+@dirrm lib/gcc-lib/avr/3.3.2/avr4
+@dirrm lib/gcc-lib/avr/3.3.2/avr5
+@dirrm lib/gcc-lib/avr/3.3.2/include
+@dirrm lib/gcc-lib/avr/3.3.2/install-tools/include
+@dirrm lib/gcc-lib/avr/3.3.2/install-tools
+@dirrm lib/gcc-lib/avr/3.3.2
 @dirrm lib/gcc-lib/avr
