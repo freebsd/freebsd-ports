@@ -3,13 +3,13 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.25 1998/12/09 15:40:25 sada Exp $
+# $Id: Makefile,v 1.26 1998/12/23 01:30:41 steve Exp $
 #
 
 DISTNAME=	ghostscript-5.10
 PKGNAME=	ja-vfghostscript-5.10
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
 		ftp://ftp.uu.net/graphics/png/src/ \
 		ftp://ftp.uu.net/graphics/jpeg/ \
