@@ -112,7 +112,7 @@ post-install:
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
-.for info in cpp g77 gcc
+.for info in cpp cppinternals g77 gcc gcj
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
