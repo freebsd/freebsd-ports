@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xmms-wma
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	audio
-MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/old_xmms-wma/
+MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	WMA plugin for xmms
