@@ -1,8 +1,11 @@
 lib/libmimelib.la
 lib/libmimelib.so.1.0
+lib/libmimelib.a
+lib/libQwSpriteField.la
+lib/libQwSpriteField.so.5.2
+lib/libQwSpriteField.a
 include/mimelib/address.h
 include/mimelib/addrlist.h
-include/mimelib/binhex.h
 include/mimelib/body.h
 include/mimelib/bodypart.h
 include/mimelib/boyermor.h
@@ -34,4 +37,11 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
+include/mimelib/binhex.h
+include/Pix.h
+include/QwCluster.h
+include/QwPublicList.h
+include/QwSpriteField.h
+@exec /sbin/ldconfig -m %B
 @dirrm include/mimelib
+@unexec /sbin/ldconfig -R
