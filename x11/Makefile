@@ -60,6 +60,7 @@
     SUBDIR += xfishtank
     SUBDIR += xgrab
     SUBDIR += xkeycaps
+    SUBDIR += xkeywrap
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xlogout
