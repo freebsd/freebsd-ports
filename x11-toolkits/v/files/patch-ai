@@ -1,0 +1,20 @@
+--- test/vtdialog.cpp.orig	Sun Feb 27 13:18:38 2000
++++ test/vtdialog.cpp	Sun Feb 27 13:20:32 2000
+@@ -92,7 +92,7 @@
+         {C_CheckBox, 3, 1, "Check 1",    NoList,CA_None,isSens,NoFrame, 0, 13},
+         {C_CheckBox, 301, 0, "Check 2 ", NoList,CA_None,isSens,NoFrame, 3, 13},
+ 
+-        {C_Text, 4, 0, "", "This is an example\nof a two line text. (όδ)",
++        {C_Text, 4, 0, "", (void *)"This is an example\nof a two line text. (όδ)",
+                 CA_None,isSens,NoFrame, 301, 13},
+ 
+         {C_ProgressBar, 76, 50, "", (void*)&prange[0],
+@@ -101,7 +101,7 @@
+         {C_Frame, 86, 0, "",   NoList,CA_None,isSens,NoFrame, 76,10},
+         {C_Label, 87, 0, "Slider", NoList,CA_None,isSens,86,0,0},
+         {C_Slider, 88, 50, "", (void*)&prange[0],CA_Horizontal ,isSens,86, 0, 87},
+-        {C_Text, 89, 50, "", " 50",CA_NoBorder,isSens,86, 88, 87},
++        {C_Text, 89, 50, "", (void *)" 50",CA_NoBorder,isSens,86, 88, 87},
+ 
+         {C_Slider, 85, 50, "", NoList,CA_Vertical ,isSens,0, 86, 10},
+    

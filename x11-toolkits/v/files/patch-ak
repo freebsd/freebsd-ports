@@ -1,0 +1,11 @@
+--- examp/mycmdwin.cpp.orig	Sun Feb 27 13:23:39 2000
++++ examp/mycmdwin.cpp	Sun Feb 27 13:27:34 2000
+@@ -223,7 +223,7 @@
+   {
+     // route all commands through here - menus and buttons
+ 
+-    static cmdCount = 0;
++    static int cmdCount = 0;
+ 
+     vNoticeDialog note(this);		// Used for default actions
+ 

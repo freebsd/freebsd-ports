@@ -1,0 +1,12 @@
+--- srcx/vpsdc.cxx.orig	Sun Feb 27 13:06:07 2000
++++ srcx/vpsdc.cxx	Sun Feb 27 13:06:48 2000
+@@ -270,7 +270,8 @@
+ 	note.Notice(msg);
+     }
+     
+-    char* port = (_printer.GetPortrait()) ? "Portrait\n" : "Landscape\n";
++    char* port = (_printer.GetPortrait()) ? (char *)"Portrait\n" :
++	(char *)"Landscape\n";
+     char* papername = _printer.GetPaperName();
+ 
+     *pstream 	<< "%!PS-Adobe-2.0\n"

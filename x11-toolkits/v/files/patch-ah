@@ -1,0 +1,22 @@
+--- test/vtcmdwin.cpp.orig	Sun Feb 27 13:08:01 2000
++++ test/vtcmdwin.cpp	Sun Feb 27 13:17:34 2000
+@@ -352,7 +352,7 @@
+ 		"Draw colors"},
+         {C_Slider, 888, 4, "",NoList,CA_Horizontal ,isSens,NoFrame, 0, 0, 0,
+ 		"Slider Test"},
+-        {C_Text, 889, 4, "", " 04",CA_None,isSens,NoFrame, 0, 0},
++        {C_Text, 889, 4, "", (void *)" 04",CA_None,isSens,NoFrame, 0, 0},
+         {C_Button, M_Dialog, 0, "Dialog", NoList,CA_None,isSens,NoFrame, 0, 0, 0,
+ 		"Show Dialog Test"},
+         {C_EndOfList,0,0,0,0,CA_None,0,0,0}
+@@ -409,8 +409,8 @@
+ 
+     static vFont gfont(vfDefaultFixed);
+     static long lp_lim = 0;
+-    static memdcValid = 0;
+-    static sliceOn = 0;
++    static int memdcValid = 0;
++    static int sliceOn = 0;
+ 
+ 
+ //====================>>> myTimer::TimerTick <<<====================
