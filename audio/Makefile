@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.94 1999/06/20 02:11:15 cpiazza Exp $
+# $Id: Makefile,v 1.95 1999/06/22 23:42:19 sada Exp $
 #
 
     SUBDIR += amp
@@ -77,6 +77,7 @@
     SUBDIR += xmcd
     SUBDIR += xmix
     SUBDIR += xmmix
+    SUBDIR += xmms
     SUBDIR += xmpeg3
     SUBDIR += xmradio
     SUBDIR += xtuner
