@@ -1,22 +1,23 @@
 #!/bin/sh
 
 usage () {
-  echo "usage: mkbindist <branch>"
+  echo "usage: mkbindist <arch> <branch>"
   exit 1
 }
-if [ $# != 1 ]; then
+if [ $# != 2 ]; then
   usage
 fi
 
-branch=$1
+arch=$1
+branch=$2
 if [ "x$branch" != x4 -a "x$branch" != x4-exp -a "x$branch" != x5 ]; then
   usage
 fi
 
 pb=/var/portbuild
-. ${pb}/portbuild.conf
+. ${pb}/${arch}/portbuild.conf
 
-here=${pb}/${branch}
+here=${pb}/${arch}/${branch}
 . ${here}/mkbindist.conf
 
 tmpdir=${here}/tmp
@@ -90,7 +91,7 @@ fi
 # updated during the port build process, which is
 # usually newer than the host environment and the chroot.
 
-mount localhost:${here}/src ${tmpdir}/usr/src
+mount ${master}:${here}/src ${tmpdir}/usr/src
 sleep 5 # XXX !!!
 
 # Cater to different build locations of 4.x and 5.x
