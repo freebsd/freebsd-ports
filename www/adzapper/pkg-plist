@@ -1,3 +1,4 @@
+@unexec [ -f %D/etc/adzapper.conf ] && cmp -s %D/etc/adzapper.conf %D/etc/adzapper.conf.sample && rm -f %D/etc/adzapper.conf
 etc/adzapper.conf.sample
 sbin/adzapper
 etc/rc.d/adzapper.sh
