@@ -10,7 +10,7 @@ PORTVERSION=	4300b
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5332/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Another kana-kanji conversion system
 
 USE_REINPLACE=	yes
