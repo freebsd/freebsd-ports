@@ -9,9 +9,6 @@ bin/pgpdecode
 bin/pgpsign
 etc/dot.pinerc.pgp.sample
 etc/dot.pinerc.ko.sample
-man/man1/pico.1.gz
-man/man1/pilot.1.gz
-man/man1/pine.1.gz
 share/doc/pine/tech-notes.txt
 share/doc/pine/README.patch.ko
 share/doc/pine/README.pine.ko

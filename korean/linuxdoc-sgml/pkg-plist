@@ -11,14 +11,6 @@ bin/sgml2txt
 bin/sgmlcheck
 bin/sgmls
 bin/sgmlsasp
-man/man1/sgml2html.1.gz
-man/man1/sgml2info.1.gz
-man/man1/sgml2latex.1.gz
-man/man1/sgml2lyx.1.gz
-man/man1/sgml2rtf.1.gz
-man/man1/sgml2txt.1.gz
-man/man1/sgmls.1.gz
-man/man1/sgmlsasp.1.gz
 share/linuxdoc-sgml-1.6bh2/chapt.awk
 share/linuxdoc-sgml-1.6bh2/doc/README
 share/linuxdoc-sgml-1.6bh2/doc/example-ko.sgml
