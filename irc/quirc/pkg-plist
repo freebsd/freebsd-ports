@@ -1,13 +1,13 @@
 bin/quirc
-share/doc/quirc/AUTHORS
-share/doc/quirc/ChangeLog
-share/doc/quirc/FAQ
-share/doc/quirc/NEWS
-share/doc/quirc/README
-share/doc/quirc/color.txt
-share/doc/quirc/nickcomp.txt
-share/doc/quirc/quedit.txt
-share/doc/quirc/rfc1459.txt
+%%PORTDOCS%%share/doc/quirc/AUTHORS
+%%PORTDOCS%%share/doc/quirc/ChangeLog
+%%PORTDOCS%%share/doc/quirc/FAQ
+%%PORTDOCS%%share/doc/quirc/NEWS
+%%PORTDOCS%%share/doc/quirc/README
+%%PORTDOCS%%share/doc/quirc/color.txt
+%%PORTDOCS%%share/doc/quirc/nickcomp.txt
+%%PORTDOCS%%share/doc/quirc/quedit.txt
+%%PORTDOCS%%share/doc/quirc/rfc1459.txt
 share/quirc/VERSION
 share/quirc/common/install.tcl
 share/quirc/dal.tcl
@@ -28,7 +28,7 @@ share/quirc/servers
 share/quirc/themes/default.tcl
 share/quirc/variables.tcl
 share/quirc/winpopup.tcl
-@dirrm share/doc/quirc
 @dirrm share/quirc/themes
 @dirrm share/quirc/common
 @dirrm share/quirc
+%%PORTDOCS%%@dirrm share/doc/quirc
