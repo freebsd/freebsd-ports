@@ -169,6 +169,7 @@
     SUBDIR += libecc
     SUBDIR += libfwbuilder
     SUBDIR += libgcrypt
+    SUBDIR += libgnomesu
     SUBDIR += libgpg-error
     SUBDIR += libgringotts
     SUBDIR += libidea
