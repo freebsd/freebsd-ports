@@ -1,0 +1,7 @@
+This is a PAM module for authenticating with PostgreSQL.
+
+It also supports:
+	- Checking account information (pam_acct_expired,new_authtok_reqd)
+	- Updating auth token
+
+WWW: http://www.debian.org/Packages/unstable/admin/libpam-pgsql.html

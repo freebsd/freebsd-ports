@@ -98,6 +98,7 @@
     SUBDIR += p5-PGP-Sign
     SUBDIR += pad
     SUBDIR += pam-mysql
+    SUBDIR += pam-pgsql
     SUBDIR += pam_krb5
     SUBDIR += pgp
     SUBDIR += pgp5
