@@ -153,7 +153,7 @@
 *** 260,268 ****
   
   DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev
-  DEVICE_DEVS1=
+! DEVICE_DEVS1=
 ! DEVICE_DEVS2=
   DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
 ! DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev pjxl300.dev
@@ -163,7 +163,7 @@
 --- 260,268 ----
   
   DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev
-  DEVICE_DEVS1=
+! DEVICE_DEVS1=bmp16m.dev
 ! DEVICE_DEVS2=epson.dev eps9high.dev epsonc.dev ibmpro.dev
   DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
 ! DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev hpdj.dev
