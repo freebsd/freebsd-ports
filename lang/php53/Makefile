@@ -31,8 +31,8 @@ MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://fr.php.net/distributions/:release \
 		http://es.php.net/distributions/:release \
 		http://se.php.net/distributions/:release \
-		http://www.sm.FreeBSD.org/~alex/:rc \
-		http://downloads.php.net/jani/:rc
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ale
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -45,7 +45,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.a/a/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
