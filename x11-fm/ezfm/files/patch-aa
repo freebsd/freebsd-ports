@@ -1,0 +1,54 @@
+--- Makefile	Thu Jul  2 17:27:53 1998
++++ /home/andy/tmp/wrk/Makefile	Thu Jul 30 11:11:08 1998
+@@ -1,31 +1,35 @@
++#
++# Prefix definition
++#
++PREFIX?=/usr/X11R6
+ #-------------------------------------------------------------------------------
+ #
+ # Where to install the default magic file.
+ #
+-EZFM_MAGIC=/usr/local/lib/ezfm/ezfmMagic
+-EZFM_EXTENSION=/usr/local/lib/ezfm/ezfmExtension
++EZFM_MAGIC=${PREFIX}/share/ezfm/ezfmMagic
++EZFM_EXTENSION=${PREFIX}/share/ezfm/ezfmExtension
+ #
+ # Where to install default initialization file
+ # this file is consulted if ~/.ezfmrc $EZFMRC
+ # are not found.
+ #
+-EZFM_RC=/usr/local/lib/ezfm/ezfmrc
++EZFM_RC=${PREFIX}/share/ezfm/ezfmrc
+ 
+ #
+ # Where to install the icons
+ #
+-EZFM_ICONS=/usr/local/lib/ezfm/ezfmIcons
++EZFM_ICONS=${PREFIX}/share/ezfm/ezfmIcons
+ #
+ # Where to install the binary
+ #
+-BIN=/usr/local/bin
++BIN=${PREFIX}/bin
+ #
+ #----------------------------------------------------------------------------------
+ #
+-CC= gcc  -O -DLINUX
++CC+= -I${PREFIX}/include
+ #
+ #----------------------------------------------------------------------------------
+-LIBS = libfile.a  -lEZ  ../jpeg/libjpeg.a -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
++LIBS = libfile.a  -lEZ -ljpeg -L/usr/local/lib -L${X11BASE}/lib -lX11 -lXext -lm  -lc
+ 
+ 
+ SRC= action.c folder.c atoms.c clientMessage.c main.c icons.c items.c finfo.c \
+@@ -54,7 +58,7 @@
+ 	cp ezfm $(BIN)
+ 
+ libfile.a:
+-	(cd libfile; make libfile.a CC="gcc -O"; mv libfile.a ../ )
++	(cd libfile; make libfile.a; mv libfile.a ../ )
+ 
+ ezfmMagic:
+ 	(cd libfile/Magdir; make all)

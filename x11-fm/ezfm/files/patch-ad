@@ -1,0 +1,11 @@
+--- main.c	Mon Jun 29 19:02:41 1998
++++ /home/andy/tmp/wrk/main.c	Thu Jul 30 11:22:42 1998
+@@ -65,7 +65,7 @@
+  */
+ static char *fallbackResources = 
+ /* initialization file name */
+-"ezfm*ezfmrc:    ezfmrc:~/.ezfmrc:/etc/ezfmrc:/usr/lib/ezfm/ezfmrc:/usr/local/lib/ezfm/ezfmrc
++"ezfm*ezfmrc:    ezfmrc:~/.ezfmrc:/etc/ezfmrc:/usr/X11R6/share/ezfm/ezfmrc:/usr/local/lib/ezfm/ezfmrc
+ "
+ /* fonts used in display items */
+ "

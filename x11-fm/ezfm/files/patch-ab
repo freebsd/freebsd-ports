@@ -1,0 +1,11 @@
+--- ezfm.h	Mon Jun 29 07:24:36 1998
++++ /home/andy/tmp/wrk/ezfm.h	Thu Jul 30 11:02:31 1998
+@@ -53,7 +53,7 @@
+ #endif
+ /*************************************************************/
+ EXTERN   int erron, sys_nerr;
+-EXTERN   char *sys_errlist[];
++/* EXTERN   char *sys_errlist[]; */
+ #define syserr(en) (((en) >= 0 && (en) < sys_nerr) ? sys_errlist[(en)] : "Unknown error")
+ #define SECONDS_IN_YEAR         31536000
+ #define SelectionBackground     "yellow"
