@@ -1,7 +1,7 @@
 bin/xfmail
-lib/libeditor.a
-lib/libeditor.so
-lib/libeditor.so.0
+lib/libxfeditor.a
+lib/libxfeditor.so
+lib/libxfeditor.so.0
 lib/libmail.a
 lib/libmail.so
 lib/libmail.so.0

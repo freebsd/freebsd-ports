@@ -1,0 +1,49 @@
+Index: src/editor/.cvsignore
+===================================================================
+RCS file: /cvsroot/archimedes/xfmail/src/editor/.cvsignore,v
+retrieving revision 1.1
+diff -u -r1.1 .cvsignore
+--- src/editor/.cvsignore	21 Jun 2003 05:15:34 -0000	1.1
++++ src/editor/.cvsignore	21 May 2004 03:04:43 -0000
+@@ -1,6 +1,6 @@
+ .deps
+ .libs
+ *.lo
+-libeditor.la
++libxfeditor.la
+ Makefile
+ Makefile.in
+Index: src/editor/Makefile.am
+===================================================================
+RCS file: /cvsroot/archimedes/xfmail/src/editor/Makefile.am,v
+retrieving revision 1.7
+diff -u -r1.7 Makefile.am
+--- src/editor/Makefile.am	11 Nov 2003 05:12:08 -0000	1.7
++++ src/editor/Makefile.am	21 May 2004 03:04:43 -0000
+@@ -1,8 +1,8 @@
+ # $Id: Makefile.am,v 1.7 2003/11/11 05:12:08 fesnel Exp $
+ 
+-lib_LTLIBRARIES = libeditor.la
++lib_LTLIBRARIES = libxfeditor.la
+ 
+-libeditor_la_SOURCES = \
++libxfeditor_la_SOURCES = \
+ 	fl_edit.cpp \
+ 	textbuf.cpp 
+ 
+Index: src/ui/Makefile.am
+===================================================================
+RCS file: /cvsroot/archimedes/xfmail/src/ui/Makefile.am,v
+retrieving revision 1.18
+diff -u -r1.18 Makefile.am
+--- src/ui/Makefile.am	11 Nov 2003 05:12:09 -0000	1.18
++++ src/ui/Makefile.am	21 May 2004 03:04:43 -0000
+@@ -43,7 +43,7 @@
+ 	@LDAP_LIBS@ \
+ 	@SOUND_LIBS@ \
+ 	../mail/libmail.la \
+-	../editor/libeditor.la
++	../editor/libxfeditor.la
+ 
+ INCLUDES = -I$(top_srcdir)/data -I$(top_srcdir)/src/editor -I$(top_srcdir)/src/mail
+ 
