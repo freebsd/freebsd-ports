@@ -162,8 +162,9 @@ lib/sfs-0.6/xfer
 sbin/funmount
 sbin/sfscd
 sbin/sfssd
+share/doc/sfs/WELCOME
 share/doc/sfs/README
-share/doc/sfs/README.config
+share/doc/sfs/README.packageblurb
 @dirrm share/doc/sfs
 share/sfs/sfs_config
 share/sfs/sfs_srp_parms

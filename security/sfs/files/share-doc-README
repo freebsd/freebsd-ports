@@ -1,0 +1,195 @@
+*** Notes on SFS configuration:
+
+SFS is a complex system to configure, and cannot be adequately
+described in these limited files. It is strongly suggested that you
+read the SFS documentation on <URL://www.fs.net/> before configuring
+any of the various programs. A limited roadmap is provided for
+reference here, but that is no substitute for a reading of the full
+documentation. GNU info documentation ("info sfs") and manual pages
+are installed as well.
+
+The various programs in the SFS package are configured via files
+in two directories: /usr/local/share/sfs/ (henceforth "share/sfs")
+and /usr/local/etc/sfs (henceforth "etc/sfs"). The port installs
+various configuration files into share/sfs directly from the
+compilation of the SFS package. These files should never be edited
+directly; they can be overridden by the creation of new files in
+etc/sfs, as detailed below.
+
+*** IMPORTANT SECURITY NOTE:
+
+SFS operates by interfacing with NFS processes on localhost
+(127.0.0.1). While every effort is taken to insure security, NFS
+is a large subsystem with a long history of security problems.
+Utilizing SFS thus may expose you to NFS-related problems and
+attacks. It is strongly suggested that you read and ponder the
+security considerations section of the SFS documentation before
+setting up an SFS client or server. Additionally, it is STRONGLY
+suggested that you set up a software firewall on any SFS client or
+server machine to block unauthorized traffic to NFS-related programs
+from other machines to the non-localhost IP addresses of your
+machine. Discussions of how best to do this are outside the scope
+of this document; consult your local guru, users group, mailing
+list, or search engine.
+
+*** Starting the SFS daemons (client and server):
+
+There are sample startup files for sfscd and sfssd in /usr/local/etc/rc.d,
+under the name sfscd.sh.sample and sfssd.sh.sample respectively.
+These startup files are not enabled by default. Copy the files to
+sfscd.sh or sfssd.sh to enable sfscd or sfssd (respectively) on
+system boot.
+
+sfscd and sfssd also run nicely under Daniel Bernstein's daemontools
+package (/usr/ports/sysutils/daemontools or
+<URL:http://cr.yp.to/daemontools.html>); the -d flag makes the main
+process stay in the foreground, and sends logs to stderr for easy
+processing by multilog.
+
+*** Setting up an SFS client
+
+1) Set up sfscd to start on boot, via /usr/local/etc/rc.d/sfscd.sh or
+   some other method of your preference.
+
+2) Put the following line into /etc/rc.conf:
+
+nfs_client_enable="YES"
+
+3) Set up a firewall to prevent NFS traffic from outside the machine from
+   contacting your NFS processes.
+
+4) Reboot. You should now have a working SFS client, which you can test
+   via the following command:
+
+$ cat /sfs/sfs.fs.net:eu4cvv6wcnzscer98yn4qjpjnn9iv6pi/CONGRATULATIONS
+You have set up a working SFS client.
+
+*** Setting up an SFS server
+
+(You do not need to set up an SFS host key on the server machine;
+the port installation does this for you in
+/usr/local/etc/sfs/sfs_host_key.)
+
+1) Set up sfssd to start on boot, via /usr/local/etc/rc.d/sfssd.sh or
+   some other method of your preference.
+
+2) Put the following lines into /etc/rc.conf:
+
+mountd_flags=""
+nfs_reserved_port_only="YES"
+nfs_server_enable="YES"
+portmap_enable="YES"
+
+   If the following line occurs in /etc/rc.conf, remove it:
+
+weak_mountd_authentication="YES"
+
+3) Set up a firewall to prevent NFS traffic from outside the machine from
+   contacting your NFS processes.
+
+4) Create a suitable /usr/local/etc/sfs/sfsrwsd_config file, e.g.:
+
+Export /root/sfsroot / R
+Export /usr/src /src R
+Export /usr/ports /ports R
+Export /local/baz /local/baz
+
+5) Add any local filesystems that are being exported to /etc/exports, and
+   export them to localhost, e.g.:
+
+/root/sfsroot 127.0.0.1
+/usr/src /usr/ports 127.0.0.1
+/local/baz 127.0.0.1
+
+   NOTA BENE: any directories exported via SFS must follow all NFS
+   export rules, i.e. no symlinks in the exported directory pathname,
+   the exported path must be absolute to the physical mount point. If
+   you want to export /usr/ports via SFS, and /usr/ports is really a
+   symlink to /vol/h0/ports, you have to use:
+
+Export /vol/h0/ports /ports
+
+   not:
+
+Export /usr/ports /ports
+
+   Similarly, /etc/exports must reference /vol/h0/ports rather than
+   /usr/ports.
+
+6) Make an empty directory structure mirroring your SFS namespace, e.g.:
+
+# mkdir /root/sfsroot
+# mkdir /root/sfsroot/src
+# mkdir /root/sfsroot/ports
+# mkdir /root/sfsroot/local
+# mkdir /root/sfsroot/local/baz
+
+7) Reboot. You should now have a working SFS server. sfssd will emit a
+   message into /var/log/messages like the following:
+
+sfsrwsd: serving <hostname>:<SFS key>
+
+   From a DIFFERENT machine with an SFS client already installed
+   and running, attempt to access /sfs/<hostname>:<SFS key>. Note
+   that the SFS client machine will have to be able to connect to
+   TCP port 4 on the SFS server machine. Note also that you must
+   test your SFS server from a separate SFS client machine to avoid
+   deadlock issues; see the SFS documentation for more details.
+
+   If your server setup has been successful, the client machine
+   should be able to see src, ports, and local/baz in the root
+   directory of the SFS mount.
+
+8) Consider using your machine's firewall to restrict who has access
+   to your SFS server by restricting access to TCP port 4.
+
+Advanced SFS server configurations, such as user authentication,
+is outside the scope of this document. Read the full SFS documentation
+for details.
+
+*** SFS configuration files:
+
+[ The following section is taken nearly verbatim from
+<URL:http://www.fs.net/sfs/new-york.lcs.mit.edu:85xq6pznt4mgfvj4mb23x6b8adak55ue/pub/sfswww/sfs.html#SFS%20configuration>. ]
+
+SFS comprises a number of programs, many of which have configuration
+files. All programs look for configuration files in two directories--first
+/usr/local/etc/sfs, then, if they don't find the file there, in
+/usr/local/share/sfs.
+
+This port installs reasonable defaults in /usr/local/share/sfs
+for all configuration files except sfsrwsd_config. On particular
+hosts where you wish to change the default behavior, you can override
+the default configuration file by creating a new file of the same
+name in /usr/local/etc/sfs.
+
+The sfs_config file contains system-wide configuration parameters
+for most of the programs comprising SFS. Note that
+/usr/local/share/sfs/sfs_config is always parsed, even if
+/usr/local/etc/sfs/sfs_config exists. Options in
+/usr/local/etc/sfs/sfs_config simply override the defaults in
+/usr/local/share/sfs/sfs_config. For the other configuration files,
+a file in /usr/local/etc/sfs/ entirely overrides the version in
+/usr/local/share/sfs/.
+
+If you are running a server, you will need to create an sfsrwsd_config
+file to tell SFS what directories to export, and possibly an
+sfsauthd_config if you wish to share the database of user public
+keys across several file servers.
+
+The sfssd_config file contains information about which protocols
+and services to route to which daemons on an SFS server, including
+support for backwards compatibility across several versions of SFS.
+You probably don't need to change this file.
+
+sfs_srp_params contains some cryptographic parameters for retrieving
+keys securely over the network with a passphrase (as with the sfskey
+add usr@server command).
+
+sfscd_config contains information about extensions to the SFS
+protocol and which kinds of file servers to route to which daemons.
+You almost certainly should not touch this file unless you are
+developing new versions of the SFS software.
+
+Note that configuration command names are case-insensitive in all
+configuration files (though the arguments are not).

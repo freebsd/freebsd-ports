@@ -1,5 +1,5 @@
 # Ports collection makefile for:	sfs
-# Date created:				Thu Jul  4 2002
+# Date created:				2002-07-11
 # Whom:					Michael Handler <handler@grendel.net>
 #					Matthew Dodd <winter@jurai.net>
 #
@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfs/new-york.lcs.mit.edu:85xq6pznt4mgfvj4mb23x6b8adak55ue/pub/sfswww/dist/
 
@@ -65,8 +65,9 @@ post-install:
 	${MKDIR} ${PREFIX}/etc/sfs
 	${INSTALL_DATA} ${FILESDIR}/etc-sfsrwsd_config.sample ${PREFIX}/etc/sfs/sfsrwsd_config.sample
 	${MKDIR} ${PREFIX}/share/doc/sfs
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sfs/
-	${INSTALL_DATA} ${FILESDIR}/share-doc-README.config ${PREFIX}/share/doc/sfs/README.config
+	${INSTALL_DATA} ${FILESDIR}/share-doc-WELCOME ${PREFIX}/share/doc/sfs/WELCOME
+	${INSTALL_DATA} ${FILESDIR}/share-doc-README ${PREFIX}/share/doc/sfs/README
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sfs/README.packageblurb
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
