@@ -564,6 +564,7 @@
     SUBDIR += xt
     SUBDIR += xxdiff
     SUBDIR += y2l
+    SUBDIR += yaxi
     SUBDIR += yodl
 
 .include <bsd.port.subdir.mk>
