@@ -7,10 +7,8 @@
 PORTNAME=	mod_auth_mysql
 PORTVERSION=	2.20
 CATEGORIES=	www
-MASTER_SITES=	http://download.sourceforge.net/mirrors/mysql/Downloads/Contrib/ \
-		http://mysql.he.net/Downloads/Crontrib/ \
-		http://mysql.azc.uam.mx/Downloads/Crontrib/ \
-		http://www.mysql.com/Contrib/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mod-auth-mysql
 
 MAINTAINER=	jeh@FreeBSD.org
 
