@@ -1,15 +1,15 @@
 # New ports collection makefile for:	popper
-# Version required:     2.5*
 # Date created:		1 April 1995
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=       qpopper2.53
-PKGNAME=        qpopper-2.53
+PORTNAME=	qpopper
+PORTVERSION= 	2.53
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@freebsd.org

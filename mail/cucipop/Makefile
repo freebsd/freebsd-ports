@@ -1,5 +1,4 @@
 # New ports collection makefile for:	cucipop
-# Version required:     1.31
 # Date created:		7 Jun 1997
 # Whom:			igor@zynaps.ru
 #
@@ -9,7 +8,8 @@
 #       Virtual hosts works only with Berkeley DB2.
 #       Berkeley DB2 is in conflict with libc, so commented out. :-(
 
-DISTNAME=       cucipop-1.31
+PORTNAME=	cucipop
+PORTVERSION= 	1.31
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 

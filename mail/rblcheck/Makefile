@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rblcheck
-# Version required:	1.4
 # Date created:		28 January 1998
 # Whom:			itojun@itojun.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rblcheck-1.4
+PORTNAME=	rblcheck
+PORTVERSION= 	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://download.sourceforge.net/rblcheck/ \
 		http://www.xnet.com/%7Eemarshal/rblcheck/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	spruce
-# Version required:   	0.4.9f
 # Date created:		05 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	spruce-0.4.9f
+PORTNAME=	spruce
+PORTVERSION= 	0.4.9f
 CATEGORIES=	mail
 MASTER_SITES=	http://www.xtorshun.org/spruce/ \
 		http://fundy.linuxberg.com/files/x11/network/ \

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kbiff
-# Version required:	2.3.12
 # Date created:		So  14 Jun 1998 13:09:18 CEST
 # Whom:			andreas
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kbiff-2.3.12
+PORTNAME=	kbiff
+PORTVERSION= 	2.3.12
 CATEGORIES=	mail kde
 MASTER_SITES=	http://home.sprintmail.com/~granroth/kbiff/
 

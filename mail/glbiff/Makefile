@@ -1,12 +1,12 @@
 # New ports collection makefile for:	glbiff
-# Version required:			0.2.11
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	glbiff-0.2.11
+PORTNAME=	glbiff
+PORTVERSION= 	0.2.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.eecg.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz

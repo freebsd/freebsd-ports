@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xfmail
-# Version required:     1.3.1
 # Date created:		30 June 1996
 # Whom:			gena
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xfmail-1.4.0
+PORTNAME=	xfmail
+PORTVERSION= 	1.4.0
 CATEGORIES=     mail
 MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/1.4.0/
 

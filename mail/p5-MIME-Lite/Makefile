@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-MIME-Lite
-# Version required:			1.135
 # Date created:				August 3, 1999
 # Whom:	      				Alex Perel <veers@disturbed.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MIME-Lite-1.135
-PKGNAME=	p5-MIME-Lite-1.135
+PORTNAME=	MIME-Lite
+PORTVERSION= 	1.135
+PKGNAMEPREFIX=	p5-
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME

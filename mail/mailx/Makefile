@@ -1,12 +1,12 @@
 # New ports collection makefile for:    mailx
-# Version required:     5
 # Date created:         18 Febrary 1999
 # Whom:                 Issei Suzuki <issei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mailx-0.5
+PORTNAME=	mailx
+PORTVERSION= 	0.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
 		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/

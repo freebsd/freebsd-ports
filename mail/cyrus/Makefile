@@ -1,17 +1,17 @@
 # New ports collection makefile for:		cyrus
-# Version required:				1.5.19
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cyrus-imapd-v1.5.19
-PKGNAME=	cyrus-1.5.19
+PORTNAME=	cyrus
+PORTVERSION= 	1.5.19
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+DISTNAME=	${PORTNAME}-imapd-v${PORTVERSION}
 
 MAINTAINER=	stb@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zmailer
-# Version required:	2.99.50s11
 # Date created:		4 January 1999
 # Whom:			Alex Perel <veers@disturbed.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zmailer-2.99.51
+PORTNAME=	zmailer
+PORTVERSION= 	2.99.51
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 

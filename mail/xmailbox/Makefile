@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmailbox
-# Version required:			2.5
 # Date created:				23 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		xmailbox-2.5
+PORTNAME=		xmailbox
+PORTVERSION= 		2.5
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications

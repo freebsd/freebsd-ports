@@ -1,15 +1,16 @@
 # New ports collection makefile for:	pathalias
-# Version required:	9.11
 # Date created:		03 Dec 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
+#
 
-DISTNAME=	pathalias11
-PKGNAME=	pathalias-9.11
+PORTNAME=	pathalias
+PORTVERSION= 	9.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
+DISTNAME=	${PORTNAME}11
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org

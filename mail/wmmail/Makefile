@@ -1,15 +1,15 @@
 # New ports collection makefile for:  wmmail
-# Version required:    0.63a
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WMMail.app-0.63a
-PKGNAME=	wmmail-0.63a
+PORTNAME=	wmmail
+PORTVERSION= 	0.63a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/
+DISTNAME=	WMMail.app-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 

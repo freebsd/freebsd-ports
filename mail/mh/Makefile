@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mh
-# Version required:	6.8.4
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mh-6.8.3
-PKGNAME=	mh-6.8.4
+PORTNAME=	mh
+PORTVERSION= 	6.8.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
+DISTNAME=	${PORTNAME}-6.8.3
 EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/
@@ -24,7 +24,7 @@ MAN1=	ali.1 anno.1 burst.1 comp.1 dist.1 folder.1 forw.1 inc.1 mark.1  \
 	msgchk.1 msh.1 next.1 packf.1 pick.1 prev.1 prompter.1 rcvstore.1 \
 	refile.1 repl.1 rmf.1 rmm.1 scan.1 send.1 show.1 slocal.1 sortm.1  \
 	vmh.1 whatnow.1 whom.1
-MAN5=	mh-alias.5 mh-format.5 mh-mail.5 mh-profile.5 mh-sequence.5 mh-tailor.5 
+MAN5=	mh-alias.5 mh-format.5 mh-mail.5 mh-profile.5 mh-sequence.5 mh-tailor.5
 MAN8=	ap.8 conflict.8 dp.8 install-mh.8 post.8 fmtdump.8
 
 post-install:

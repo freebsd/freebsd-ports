@@ -1,12 +1,12 @@
 # New ports collection makefile for: pgp4pine
-# Version required: 	1.74
 # Date created:		29 February 2000
 # Whom:			Holger Lamm <holger@flatline.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pgp4pine-1.74
+PORTNAME=	pgp4pine
+PORTVERSION= 	1.74
 CATEGORIES=	mail
 MASTER_SITES=	http://pgp4pine.flatline.de/
 EXTRACT_SUFX=	.tgz

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	Wanderlust (for xemacs-mule)
-# Version required:	1.0.x
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #

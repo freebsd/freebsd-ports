@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rftp
-# Version required:     	1.2
 # Date created:			13 Dec, 1997
 # Whom:				kline
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rftp-1.2
+PORTNAME=	rftp
+PORTVERSION= 	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/rftp/
 

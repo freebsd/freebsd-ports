@@ -1,12 +1,12 @@
 # New ports collection makefile for:	majordomo
-# Version required:	1.94.4
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	majordomo-1.94.4
+PORTNAME=	majordomo
+PORTVERSION= 	1.94.4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sgi.com/other/majordomo/1.94.4/ \
 		ftp://ftp-europe.sgi.com/other/majordomo/1.94.4/

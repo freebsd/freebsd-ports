@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mbx2mbox
-# Version required:	0.32
 # Date created:		23 November 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mbx2mbox-0.32
+PORTNAME=	mbx2mbox
+PORTVERSION= 	0.32
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cs.virginia.edu/~dwc3q/code/
 

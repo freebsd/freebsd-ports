@@ -1,12 +1,12 @@
 # New ports collection makefile for:	youbin
-# Version required:		2.13
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	youbin-2.13
+PORTNAME=	youbin
+PORTVERSION= 	2.13
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuie.nagoya-u.ac.jp/pub/nagoya-u/ \
 		ftp://ftp.kyoto.wide.ad.jp/pub/net/

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  hbiff
-# Version required: 0.0
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hbiff-1.2
+PORTNAME=	hbiff
+PORTVERSION= 	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://people.FreeBSD.org/~obrien/Distfiles/

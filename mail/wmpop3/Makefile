@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wmpop3
-# Version required:		0.5.6a
 # Date created:			28 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WMPop3-0.5.6a
-PKGNAME=	wmpop3-0.5.6a
+PORTNAME=	wmpop3
+PORTVERSION= 	0.5.6a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
+DISTNAME=	WMPop3-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 

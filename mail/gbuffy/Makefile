@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gbuffy
-# Version required:	0.2.1
 # Date created:		2 October 1999
 # Whom:			kaj@Raditex.se
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gbuffy-0.2.2
+PORTNAME=	gbuffy
+PORTVERSION= 	0.2.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/
 

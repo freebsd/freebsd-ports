@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bulk_mailer
-# Version required:	1.11
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bulk_mailer-1.12
+PORTNAME=	bulk_mailer
+PORTVERSION= 	1.12
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
