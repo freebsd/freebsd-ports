@@ -29,4 +29,4 @@ if [ $fileoutput != 1 ]; then
   done
 fi
 
-exec hpscat $options
+exec hpscat.bin $options
