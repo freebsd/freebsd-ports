@@ -113,7 +113,15 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-50.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-51.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-52.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-53.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-54.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-55.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-56.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-57.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-58.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-59.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-6.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-60.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-7.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-8.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-9.html
@@ -126,6 +134,7 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/calendar.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/cube.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/ctclsh.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/eval-client.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/eval-server.scm
