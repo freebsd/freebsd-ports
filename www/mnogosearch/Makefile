@@ -15,8 +15,6 @@ MAINTAINER=	ache@FreeBSD.org
 MAN1=		indexer.1
 MAN5=		indexer.conf.5
 
-NO_LATEST_LINK=	yes
-
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
