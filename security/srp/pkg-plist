@@ -7,6 +7,7 @@ bin/telnet
 include/cstr.h
 include/krypto.h
 include/srp.h
+include/srp_aux.h
 include/t_client.h
 include/t_pwd.h
 include/t_server.h
@@ -18,3 +19,25 @@ lib/pam_eps_passwd.so
 sbin/eps_chkpwd
 sbin/ftpd
 sbin/telnetd
+%%PORTDOCS%%%%DOCSDIR%%/Acknowledgements
+%%PORTDOCS%%%%DOCSDIR%%/Copyrights
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/copyright.c
+%%PORTDOCS%%%%DOCSDIR%%/draft-altman-rfc2942bis-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-altman-rfc2944bis-01.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-altman-telnet-fwdx-02.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-tls-srp-05.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-tn3270e-telnet-tls-05.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2941.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2942.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2944.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2945.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2946.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2947.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2948.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2949.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2950.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2952.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2953.txt
+%%PORTDOCS%%%%DOCSDIR%%/srp.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
