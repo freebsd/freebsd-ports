@@ -265,6 +265,7 @@
     SUBDIR += mod_traf_thief
     SUBDIR += mod_trigger
     SUBDIR += mod_tsunami
+    SUBDIR += mod_uid
     SUBDIR += mod_v2h
     SUBDIR += mod_watch
     SUBDIR += mod_webapp
