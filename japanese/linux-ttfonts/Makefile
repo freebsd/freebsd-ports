@@ -25,6 +25,7 @@ pre-install:
 	cd ${WRKSRC}/tmp; \
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
 		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d  | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+		${FIND} -d * -type d | ${GREP} ja | ${SED} -e 's:^:@dirrm :' \
+		>> ${PLIST}
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
