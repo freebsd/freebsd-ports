@@ -1,5 +1,5 @@
 --- Makefile.shared.orig	Sat Mar 27 03:17:07 2004
-+++ Makefile.shared	Fri May 14 06:48:16 2004
++++ Makefile.shared	Tue Jun 15 15:38:05 2004
 @@ -4,7 +4,7 @@
  # Makefile for Ayam (shared version)
  
@@ -96,17 +96,15 @@
  
  # Aqsis
 -AQSISDIR = /usr/local/aqsis
--AQSISINCDIR = $(AQSISDIR)/include
--AQSISLIBDIR = $(AQSISDIR)/lib
 +AQSISDIR = ${LOCALBASE}
-+AQSISINCDIR = $(AQSISDIR)/include/aqsis
-+AQSISLIBDIR = $(AQSISDIR)/lib/aqsis
+ AQSISINCDIR = $(AQSISDIR)/include
+ AQSISLIBDIR = $(AQSISDIR)/lib
  # if you do not use Aqsis libslxargs as libslcargs replacement:
 -AQSISOBJS = 
 +#AQSISOBJS = 
  # if you use Aqsis libslxargs (add -DAYUSESLXARGS to CFLAGS!):
 -#AQSISOBJS = $(AQSISLIBDIR)/rcdummy.o $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -L /usr/local/lib -llog4cpp
-+AQSISOBJS = -L${AQSISLIBDIR} $(AQSISDIR)/lib/libaqsis.so $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -llog4cpp
++AQSISOBJS = $(AQSISLIBDIR)/libaqsis.so $(AQSISLIBDIR)/libshadervm.so $(AQSISLIBDIR)/libshaderexecenv.so $(AQSISLIBDIR)/libslxargs.so $(AQSISLIBDIR)/libaqsistypes.so -llog4cpp
  
  # if you do not use Aqsis libri2rib as BMRT libribout replacement:
  #AQSISRI2RIB =
@@ -159,7 +157,7 @@
 +all: ayamsh csphere.so mfio.so metaobj.so ayslx.so
  
 -ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AFFINEOBJS)
-+ayamsh: $(AYAMOBJS) $(TOGLOBJECT) $(AQSISOBJS)
++ayamsh: $(AYAMOBJS) $(TOGLOBJECT)
  	$(LD) $(AYAMOBJS) $(TOGLOBJECT) $(EXLDFLAGS) -o ayamsh $(TKLIB) $(TCLLIB) $(GLLIBS) $(X11LIBS) $(RIBOUTLIB) $(AQSISRI2RIB) $(SLCARGSLIB) $(AFFINEOBJS) $(AQSISOBJS) $(TIFFLIB) -lm $(DL)
  
  csphere.so: $(CSPHEREOBJS)
