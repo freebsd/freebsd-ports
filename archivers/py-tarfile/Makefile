@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarfile
-PORTVERSION=	0.4
+PORTVERSION=	0.4.2
 CATEGORIES=	archivers python
 MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
@@ -17,16 +17,4 @@ MAINTAINER=	perky@fallin.lv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 200
-IGNORE=		needs Python 2.0 at least
-.else
-.if ${PYTHON_REL} < 220
-PLIST_SUB+=	UNDERPY22=""
-.else
-PLIST_SUB+=	UNDERPY22="@comment "
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
