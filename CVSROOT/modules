@@ -3611,6 +3611,7 @@ liece-dcc	ports/irc/liece-dcc
 liece-emacs20	ports/irc/liece-emacs20
 liedentd	ports/security/liedentd
 lifelines	ports/misc/lifelines
+lightning	ports/devel/lightning
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
 limits		src/usr.bin/limits
