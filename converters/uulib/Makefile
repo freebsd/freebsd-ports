@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.7 1997/03/29 22:11:59 obrien Exp $
+# $Id: Makefile,v 1.8 1997/04/01 18:03:58 obrien Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -32,8 +32,9 @@ DOCFILES+=	doc/test.txt
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.so.1.0 ${PREFIX}/lib
+	@/sbin/ldconfig -m ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/uulib/libuu.a ${PREFIX}/lib
-	/usr/bin/ranlib ${PREFIX}/lib/libuu.a
+	@/usr/bin/ranlib ${PREFIX}/lib/libuu.a
 	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include/uu.h
 	${INSTALL_MAN} ${FILESDIR}/uulib.3 ${PREFIX}/man/man3
 	perl -pi -e '$$a = '\''${PREFIX}/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man3/uulib.3
