@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	liferea
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
+BROKEN=		"Size mismatch"
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
 		gnomevfs2
