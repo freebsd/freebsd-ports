@@ -1,0 +1,33 @@
+--- client/dhcpc.8.orig	Tue Sep 12 13:54:16 1995
++++ client/dhcpc.8	Thu Mar 27 14:07:16 1997
+@@ -5,7 +5,7 @@
+ .SH SYNOPSIS
+ .B dhcpc
+ [
+-.B \-d
++.B \-drn
+ ]
+ .I interface
+ .SH DESCRIPTION
+@@ -36,6 +36,21 @@
+ option is specified,
+ .B dhcpc
+ runs in foreground and debugging mode.
++.LP
++If the
++.B \-r
++option is specified, and if your DHCP server supplies the DNS address,
++.B dhcpc
++overwrites "/etc/resolv.conf" with supplied address.
++.LP
++If the
++.B \-n
++option is specified, and if your DHCP server supplies the hostname of 
++the client,
++.B dhcpc
++call 
++.B sethostname(3)
++with supplied name.
+ .LP
+ The DHCP client can verify whether its assigned information is still
+ valid at any time.
