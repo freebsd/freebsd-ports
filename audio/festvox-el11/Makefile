@@ -18,7 +18,7 @@ DIST_SUBDIR=	festival
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Castilian Spanish male voice for Festival
 
-RUN_DEPENDS=	festival:${.CURDIR}/../festival
+RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
 WRKSRC=		${WRKDIR}/festival
 
