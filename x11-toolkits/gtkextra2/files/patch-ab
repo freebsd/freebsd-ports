@@ -1,0 +1,11 @@
+--- gtkextra-config.in	2000/08/29 08:25:13	1.1
++++ gtkextra-config.in	2000/08/29 08:26:26
+@@ -86,7 +86,7 @@
+ 
+ if test "$echo_libs" = "yes"; then
+       libdirs=-L@libdir@
+-      echo $libdirs -lgtk -lgdk -lgtkextra -lglib -lm
++      echo @GTK_LIBS@ $libdirs -lgtkextra -lm
+ fi
+ 
+ 
