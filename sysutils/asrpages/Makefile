@@ -3,7 +3,7 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.3 1998/08/17 16:27:40 obrien Exp $
+# $Id: Makefile,v 1.4 1998/08/17 20:54:47 asami Exp $
 #
 
 DISTNAME=	asrpages
@@ -18,7 +18,7 @@ EXTRACT_ARGS=	-xf
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-MAN1=		c.1 slave.1 sysadmin.1 think.1 whack.1
+MAN1=		c.1 rtfm.1 slave.1 sysadmin.1 think.1 whack.1
 MAN2=		people.2
 MAN3=		chastise.3
 MAN5=		normality.5
