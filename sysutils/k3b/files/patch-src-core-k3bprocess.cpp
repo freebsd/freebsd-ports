@@ -1,5 +1,5 @@
 --- src/core/k3bprocess.cpp.orig	Sun Feb  1 09:18:58 2004
-+++ src/core/k3bprocess.cpp	Fri Feb 13 21:03:38 2004
++++ src/core/k3bprocess.cpp	Tue May 11 22:57:03 2004
 @@ -28,6 +28,60 @@
  #include <unistd.h>
  #include <stdio.h>

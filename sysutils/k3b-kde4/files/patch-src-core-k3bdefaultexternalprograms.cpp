@@ -1,6 +1,6 @@
---- src/core/k3bdefaultexternalprograms.cpp.orig	Wed Jan 21 11:20:10 2004
-+++ src/core/k3bdefaultexternalprograms.cpp	Fri Feb 13 21:03:38 2004
-@@ -28,6 +28,7 @@
+--- src/core/k3bdefaultexternalprograms.cpp.orig	Mon Mar 22 18:13:21 2004
++++ src/core/k3bdefaultexternalprograms.cpp	Tue May 11 22:57:03 2004
+@@ -30,6 +30,7 @@
  #include <unistd.h>
  #include <sys/stat.h>
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  
  
  
-@@ -89,7 +90,7 @@
+@@ -123,7 +124,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -17,7 +17,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path << "-version";
-@@ -128,7 +129,7 @@
+@@ -162,7 +163,7 @@
  
  
    // probe features
@@ -26,7 +26,7 @@
    out.setProcess( &fp );
    fp << path << "-help";
    if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -200,7 +201,7 @@
+@@ -236,7 +237,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -35,7 +35,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path << "-version";
-@@ -229,7 +230,7 @@
+@@ -265,7 +266,7 @@
  
  
    // probe features
@@ -44,25 +44,7 @@
    out.setProcess( &fp );
    fp << path << "-help";
    if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -285,7 +286,7 @@
-   K3bExternalBin* bin = 0;
- 
-   // probe version
--  KProcess vp;
-+  MyKProcess vp;
-   vp << path << "-version";
-   K3bProcess::OutputCollector out( &vp );
-   if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -313,7 +314,7 @@
- 
- 
-   // probe features
--  KProcess fp;
-+  MyKProcess fp;
-   fp << path << "-help";
-   out.setProcess( &fp );
-   if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -374,7 +375,7 @@
+@@ -321,7 +322,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -71,7 +53,7 @@
    vp << path << "-version";
    K3bProcess::OutputCollector out( &vp );
    if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -402,7 +403,7 @@
+@@ -349,7 +350,7 @@
  
  
    // probe features
@@ -80,7 +62,25 @@
    fp << path << "-help";
    out.setProcess( &fp );
    if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -462,7 +463,7 @@
+@@ -410,7 +411,7 @@
+   K3bExternalBin* bin = 0;
+ 
+   // probe version
+-  KProcess vp;
++  MyKProcess vp;
+   vp << path << "-version";
+   K3bProcess::OutputCollector out( &vp );
+   if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
+@@ -438,7 +439,7 @@
+ 
+ 
+   // probe features
+-  KProcess fp;
++  MyKProcess fp;
+   fp << path << "-help";
+   out.setProcess( &fp );
+   if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
+@@ -498,7 +499,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -89,7 +89,7 @@
    vp << path ;
    K3bProcess::OutputCollector out( &vp );
    if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -490,7 +491,7 @@
+@@ -530,7 +531,7 @@
  
  
    // probe features
@@ -98,7 +98,7 @@
    fp << path << "write" << "-h";
    out.setProcess( &fp );
    if( fp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -556,7 +557,7 @@
+@@ -599,7 +600,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -107,7 +107,7 @@
    vp << path ;
    K3bProcess::OutputCollector out( &vp );
    if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -610,7 +611,7 @@
+@@ -653,7 +654,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -116,7 +116,7 @@
    vp << path << "-V";
    K3bProcess::OutputCollector out( &vp );
    if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
-@@ -667,7 +668,7 @@
+@@ -710,7 +711,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -125,7 +125,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path << "--version";
-@@ -726,7 +727,7 @@
+@@ -769,7 +770,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -134,7 +134,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path << "-version";
-@@ -795,7 +796,7 @@
+@@ -838,7 +839,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -143,7 +143,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path;
-@@ -868,7 +869,7 @@
+@@ -911,7 +912,7 @@
    K3bExternalBin* bin = 0;
  
    // probe version

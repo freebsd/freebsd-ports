@@ -9,26 +9,18 @@ Notes:
    Alternatively do all of the following:
 3a. set the suid flag on cdrecord and cdrdao. The 'Notes' the chapter of
     'man cdrecord' discusses this.
-3b. - install sudo (security/sudo) and add the following line or similar to
-      sudoers (usually in /usr/local/etc/sudoers):
-      ALL             ALL = NOPASSWD: /sbin/camcontrol devlist
-    - or execute 'camcontrol devlist'. For every user who should be able to use 
-      k3b. Resolve all errors e.g. by giving him/her access rights to /dev/xpt0.
-      'camcontrol devlist' must run without error for all these users!
-      Note that giving access rights to /dev/xpt* might be a security leak!
-    - or give camcontrol the suid flag, which is a security leak as well.
-3c. - For every user who should be able to use k3b and for every CD or DVD
+3b. - For every user who should be able to use k3b and for every CD or DVD
       device add a directory in the users home directory. These directories
       must be owned by the corresponding user. For each such directory add a
       line in /ect/fstab (see remark 2), like:
         /dev/cd0c  /usr/home/XXX/cdrom  cd9660  ro,noauto,nodev,nosuid  0  0
       Furthermore allow user mounts as described in topic 9.22 of the FAQ:
       http://www.freebsd.org/doc/en_US.ISO8859-1/books/faq/disks.html#USER-FLOPPYMOUNT
-    - or just give mount and umount the sudo flag, which is a security leak.
-3d. - Every user who should be able to use k3b must have read and write access
-      to all pass through devices connected with CD and DVD drives. Run
-      'camcontrol devlist' to identify those devices (seek string 'passX' at
-      the end of each line and modify the rights of /dev/passX). Note, that
+    - or just give mount and umount the suid flag, which is a security leak.
+3c. - Every user who should be able to use k3b must have read and write access
+      to all pass through devices connected with CD and DVD drives and to the /dev/xpt0 
+      device. Run 'camcontrol devlist' to identify those devices (seek string 'passX'
+      at the end of each line and modify the rights of /dev/passX). Note, that
       this is a security leak as well but that there is no alternative!
 4. Create a directory on a partition, which has enough disk space to hold a CDs
    or DVDs content (usually below /usr). Enter this directory in Settings->
@@ -40,14 +32,14 @@ Notes:
    work. See http://cdrdao.sourceforge.net/drives.html.
 6. To burn video CDs install the port multimedia/vcdimager.
 7. To rip DVDs additionally install the ports multimedia/transcode,
-   multimedia/libdvdread and multimedia/xvid. Note that multimedia/transcode 
-   requires some variables to be set. Type "make fetch" in the 
-   multimedia/transcode ports directory for details. The ripping process
-   itself is described in 
-   http://k3b.sourceforge.net/cgi-bin/index.pl/videoencoding.
+   multimedia/libdvdread and multimedia/xvid. Note that k3b does NOT work with
+   transcode 0.6.12. 0.6.10 is the last known working version. The ripping process
+   itself is described in http://k3b.sourceforge.net/cgi-bin/index.pl/videoencoding.
 8. To burn bootable video CDs, install the port multimedia/emovix.
 9. To burn DVDs, install the port sysutils/dvd+rw-tools.
 10. To normalize the volumes of audio cds, install the port audio/normalize.
 11. To rip into more audio formats, install the port audio/sox.
+
+UPGRADERS FROM 0.11.6 OR BELOW SHOULD NOTE THE CHANGED TOPIC 3C!!!
 
 To read this instructions again, type 'make showinfo' in the k3b port directory

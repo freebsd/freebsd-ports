@@ -35,6 +35,7 @@ include/k3bexternalbinmanager.h
 include/k3bfileitem.h
 include/k3bglobals.h
 include/k3binteractiondialog.h
+include/k3bintvalidator.h
 include/k3biso9660.h
 include/k3bisooptions.h
 include/k3bjob.h
