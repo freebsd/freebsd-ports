@@ -550,6 +550,7 @@ share/apps/kivio/icons/hicolor/16x16/actions/layer_novisible.png
 share/apps/kivio/icons/hicolor/16x16/actions/layer_print.png
 share/apps/kivio/icons/hicolor/16x16/actions/layer_remove.png
 share/apps/kivio/icons/hicolor/16x16/actions/layer_visible.png
+share/apps/kivio/icons/hicolor/16x16/actions/linestyle.png
 share/apps/kivio/icons/hicolor/16x16/actions/linewidth.png
 share/apps/kivio/icons/hicolor/16x16/actions/open_stencilset.png
 share/apps/kivio/icons/hicolor/16x16/actions/page_disabled.png
@@ -577,6 +578,8 @@ share/apps/kivio/icons/hicolor/22x22/actions/font_italic.png
 share/apps/kivio/icons/hicolor/22x22/actions/font_under.png
 share/apps/kivio/icons/hicolor/22x22/actions/group_stencils.png
 share/apps/kivio/icons/hicolor/22x22/actions/kivio_connector.xpm
+share/apps/kivio/icons/hicolor/22x22/actions/linestyle.png
+share/apps/kivio/icons/hicolor/22x22/actions/linewidth.png
 share/apps/kivio/icons/hicolor/22x22/actions/open_stencilset.png
 share/apps/kivio/icons/hicolor/22x22/actions/select_all.png
 share/apps/kivio/icons/hicolor/22x22/actions/send_stencil_to_back.png
@@ -1811,7 +1814,6 @@ share/apps/koffice/icons/crystalsvg/16x16/actions/tab_first.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_last.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_left.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/tab_right.png
-share/apps/koffice/icons/crystalsvg/16x16/actions/text_strike.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/text_sub.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/text_super.png
 share/apps/koffice/icons/crystalsvg/16x16/actions/textcolor.png
@@ -1879,7 +1881,6 @@ share/apps/koffice/icons/crystalsvg/22x22/actions/shadowRU.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/shadowU.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/sub.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/super.png
-share/apps/koffice/icons/crystalsvg/22x22/actions/text_strike.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/toggle_docbrowser.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/unsortedList.png
 share/apps/koffice/icons/crystalsvg/22x22/actions/view_remove.png
@@ -2209,6 +2210,7 @@ share/apps/kspread/icons/crystalsvg/16x16/actions/special_paste.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/text_bottom.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/text_top.png
 share/apps/kspread/icons/crystalsvg/16x16/actions/vertical_text.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/black_sum.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/border_all.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/border_bottom.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/border_fall.png
@@ -2222,9 +2224,17 @@ share/apps/kspread/icons/crystalsvg/22x22/actions/border_top.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/border_up.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/border_vertical.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/funct.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/mergecell.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/middle.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/money.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/multirow.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/percent.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/prec_minus.png
 share/apps/kspread/icons/crystalsvg/22x22/actions/prec_plus.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/sort_decrease.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/sort_incr.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/text_bottom.png
+share/apps/kspread/icons/crystalsvg/22x22/actions/text_top.png
 share/apps/kspread/icons/crystalsvg/32x32/actions/border_all.png
 share/apps/kspread/icons/crystalsvg/32x32/actions/border_bottom.png
 share/apps/kspread/icons/crystalsvg/32x32/actions/border_fall.png
@@ -2985,13 +2995,17 @@ share/services/karbon_svg_import.desktop
 share/services/karbon_wmf_export.desktop
 share/services/karbon_wmf_import.desktop
 share/services/karbon_xcf_export.desktop
+share/services/karbonpart.desktop
+share/services/kchartpart.desktop
 share/services/kfile_koffice.desktop
 share/services/kfile_ooo.desktop
 share/services/kformula_latex_export.desktop
 share/services/kformula_mathml_export.desktop
 share/services/kformula_mathml_import.desktop
 share/services/kformula_png_export.desktop
+share/services/kformulapart.desktop
 share/services/kivioconnectortool.desktop
+share/services/kiviopart.desktop
 share/services/kivioselecttool.desktop
 share/services/kiviotexttool.desktop
 share/services/kiviozoomtool.desktop
@@ -3000,6 +3014,7 @@ share/services/kofficethumbnail.desktop
 share/services/kounavail.desktop
 share/services/kpresenter_ooimpress_export.desktop
 share/services/kpresenter_ooimpress_import.desktop
+share/services/kpresenterpart.desktop
 share/services/kprkword.desktop
 share/services/kspelltool.desktop
 share/services/kspread_applixspread_import.desktop
@@ -3014,7 +3029,9 @@ share/services/kspread_opencalc_export.desktop
 share/services/kspread_opencalc_import.desktop
 share/services/kspread_qpro_import.desktop
 share/services/kspreadcalc.desktop
+share/services/kspreadpart.desktop
 share/services/kugar_kugar_import.desktop
+share/services/kugarpart.desktop
 share/services/kword_abiword_export.desktop
 share/services/kword_abiword_import.desktop
 share/services/kword_amipro_export.desktop
@@ -3039,6 +3056,7 @@ share/services/kword_wml_export.desktop
 share/services/kword_wml_import.desktop
 share/services/kword_wp_export.desktop
 share/services/kword_wp_import.desktop
+share/services/kwordpart.desktop
 share/services/kwserialletter_classic.desktop
 share/services/kwserialletter_qtsqldb_power.desktop
 share/services/ole_excel97_import.desktop

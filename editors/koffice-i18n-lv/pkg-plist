@@ -30,5 +30,3 @@ share/locale/lv/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/lv/LC_MESSAGES/xsltexportfilter.mo
 share/locale/lv/LC_MESSAGES/xsltfilter.mo
 share/locale/lv/LC_MESSAGES/xsltimportfilter.mo
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv
