@@ -4625,6 +4625,7 @@ p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-PerlMenu	ports/devel/p5-PerlMenu
 p5-Pg		ports/databases/p5-Pg
 p5-PlRPC	ports/net/p5-PlRPC
+p5-Prima	ports/x11-toolkits/p5-Prima
 p5-Proc-Background	ports/devel/p5-Proc-Background
 p5-Proc-Daemon	ports/devel/p5-Proc-Daemon
 p5-Proc-ProcessTable	ports/devel/p5-Proc-ProcessTable
