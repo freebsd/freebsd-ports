@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	1.2.4
+PORTVERSION=	2.0.0
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= courier
@@ -80,8 +80,10 @@ BUILD_DEPENDS+= ${VCHKPWLOC}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS+=	${VCHKPWLOC}/bin/vchkpw:${PORTSDIR}/mail/vpopmail
 
 CONFIGURE_ARGS+=	--with-authvchkpw
+PLIST_SUB+=		VPOPMAILFLAG=""
 .else
 CONFIGURE_ARGS+=	--without-authvchkpw
+PLIST_SUB+=		VPOPMAILFLAG="@comment "
 .endif
 
 .if defined(WITH_ISPELL)
