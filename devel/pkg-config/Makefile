@@ -25,8 +25,6 @@ LIBTOOLFLAGS=	--disable-ltlibs \
 CONFIGURE_ARGS=	--disable-threads
 MAKE_ENV=	PKGCONF_BUILD=yes
 
-PLIST_SUB=	LOCALBASE=${LOCALBASE}
-
 MAN1=		pkg-config.1
 
 post-install:
