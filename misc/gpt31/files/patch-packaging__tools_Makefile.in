@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- packaging_tools/Makefile.in.orig	Tue Dec  9 07:36:07 2003
++++ packaging_tools/Makefile.in	Thu Feb 26 09:49:04 2004
+@@ -847,8 +847,10 @@
+ 		$(mkinstalldirs) $(DESTDIR)man/man1; \
+ 		list='$(sbin_SCRIPTS)'; for p in $$list; do \
+ 	  		script=`echo $$p | sed 's!perl/scripts/!!'`; \
+-	  		echo "Generating $(DESTDIR)$(prefix)/man/man1/$$script.1"; \
+-	  		$(POD2MAN) $$p > $(DESTDIR)$(prefix)/man/man1/$$script.1; \
++			if /usr/bin/grep -q ^=cut $$p; then \
++	  			echo "Generating $(DESTDIR)$(prefix)/man/man1/$$script.1"; \
++	  			$(POD2MAN) $$p > $(DESTDIR)$(prefix)/man/man1/$$script.1; \
++			fi; \
+ 		done \
+ 	else \
+ 		echo "Skipping Man page installation"; \
