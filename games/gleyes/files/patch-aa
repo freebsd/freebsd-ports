@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 14 01:16:35 1998
-+++ Makefile	Wed Aug  9 04:33:59 2000
-@@ -5,8 +5,8 @@
+--- Makefile.orig	Tue Oct 13 12:16:35 1998
++++ Makefile	Mon Jun 11 10:52:15 2001
+@@ -5,21 +5,23 @@
  #--------------------------------------------------------------------------
  
  # Where you want to have it installed
@@ -11,8 +11,10 @@
  
  # Use these for Mesa
  #GL	= -lglut -lMesaGLU -lMesaGL
-@@ -15,11 +15,13 @@
- GL	= -lglut -lGLU -lGL
+ 
+ # Use these for OpenGL
+-GL	= -lglut -lGLU -lGL
++GL	= -lglut -lGLU -lGL ${PTHREAD_LIBS}
  
  # Use these for gcc on Linux (may work in other systems as well)
 -CC	= gcc
@@ -21,7 +23,7 @@
 +CC	?= gcc
 +CFLAGS	?= -pipe -O2 -fexpensive-optimizations -ffast-math -fomit-frame-pointer \
 +	  -fforce-mem -fforce-addr
-+CFLAGS	+= -I${X11BASE}/include
++CFLAGS	+= -I${X11BASE}/include ${PTHREAD_CFLAGS}
 +LD	= $(CC)
  LDFLAGS	= -o $@
 -LIBS	= -L/usr/X11/lib -L/usr/local/lib $(GL) -lX11 -lXext -lXmu -lXi -lm
