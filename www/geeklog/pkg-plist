@@ -1,61 +1,3 @@
-www/data/geeklog/INSTALL
-www/data/geeklog/config.php
-www/data/geeklog/docs/images/germany.gif
-www/data/geeklog/docs/images/newlogo.gif
-www/data/geeklog/docs/changes.html
-www/data/geeklog/docs/config.html
-www/data/geeklog/docs/docstyle.css
-www/data/geeklog/docs/history
-www/data/geeklog/docs/index.html
-www/data/geeklog/docs/install.html
-www/data/geeklog/docs/knownbugs
-www/data/geeklog/docs/license
-www/data/geeklog/docs/plugin.html
-www/data/geeklog/docs/support.html
-www/data/geeklog/docs/theme.html
-www/data/geeklog/docs/todo
-www/data/geeklog/emailgeeklogstories
-www/data/geeklog/language/incomplete/portuguese_brazil.php
-www/data/geeklog/language/incomplete/README
-www/data/geeklog/language/incomplete/russian.php
-www/data/geeklog/language/bulgarian.php
-www/data/geeklog/language/chinese_big5.php
-www/data/geeklog/language/chinese_gb2312.php
-www/data/geeklog/language/czech.php
-www/data/geeklog/language/danish.php
-www/data/geeklog/language/dutch.php
-www/data/geeklog/language/english.php
-www/data/geeklog/language/french_france.php
-www/data/geeklog/language/german.php
-www/data/geeklog/language/hellenic.php
-www/data/geeklog/language/italian.php
-www/data/geeklog/language/japanese.php
-www/data/geeklog/language/polish.php
-www/data/geeklog/language/portuguese.php
-www/data/geeklog/language/romanian.php
-www/data/geeklog/language/slovak.php
-www/data/geeklog/language/slovenian.php
-www/data/geeklog/language/spanish.php
-www/data/geeklog/language/spanish_argentina.php
-www/data/geeklog/language/swedish.php
-www/data/geeklog/language/turkish.php
-www/data/geeklog/logs/access.log
-www/data/geeklog/logs/error.log
-www/data/geeklog/plugins/staticpages/language/danish.php
-www/data/geeklog/plugins/staticpages/language/english.php
-www/data/geeklog/plugins/staticpages/language/german.php
-www/data/geeklog/plugins/staticpages/language/polish.php
-www/data/geeklog/plugins/staticpages/language/README
-www/data/geeklog/plugins/staticpages/language/spanish.php
-www/data/geeklog/plugins/staticpages/templates/admin/editor.thtml
-www/data/geeklog/plugins/staticpages/templates/admin/list.thtml
-www/data/geeklog/plugins/staticpages/templates/admin/row.thtml
-www/data/geeklog/plugins/staticpages/config.php
-www/data/geeklog/plugins/staticpages/functions.inc
-www/data/geeklog/plugins/staticpages/README
-www/data/geeklog/plugins/staticpages/TO-DO
-www/data/geeklog/plugins/developer.README
-www/data/geeklog/plugins/plugin.INSTALL
 www/data/geeklog/public_html/admin/plugins/staticpages/index.php
 www/data/geeklog/public_html/admin/plugins/staticpages/install.php
 www/data/geeklog/public_html/admin/install/addindex.php
@@ -99,6 +41,7 @@ www/data/geeklog/public_html/images/icons/story.gif
 www/data/geeklog/public_html/images/icons/themes.gif
 www/data/geeklog/public_html/images/icons/topic.gif
 www/data/geeklog/public_html/images/icons/block.gif
+www/data/geeklog/public_html/images/articles/index.html
 www/data/geeklog/public_html/images/admin/user.gif
 www/data/geeklog/public_html/images/admin/event.gif
 www/data/geeklog/public_html/images/admin/link.gif
@@ -113,6 +56,7 @@ www/data/geeklog/public_html/images/topics/topic_news.gif
 www/data/geeklog/public_html/images/buttons/geekpower2.gif
 www/data/geeklog/public_html/images/buttons/mysql.gif
 www/data/geeklog/public_html/images/buttons/php.gif
+www/data/geeklog/public_html/images/userphotos/index.html
 www/data/geeklog/public_html/images/mail.gif
 www/data/geeklog/public_html/images/print.gif
 www/data/geeklog/public_html/images/speck.gif
@@ -121,8 +65,12 @@ www/data/geeklog/public_html/images/button_help.gif
 www/data/geeklog/public_html/images/bar.gif
 www/data/geeklog/public_html/backend/geeklog.rdf
 www/data/geeklog/public_html/layout/gameserver/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/gameserver/search/resultauthdatehits.thtml
 www/data/geeklog/public_html/layout/gameserver/search/resultcolumn.thtml
 www/data/geeklog/public_html/layout/gameserver/search/resultrow.thtml
+www/data/geeklog/public_html/layout/gameserver/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/gameserver/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/gameserver/search/resulttitle.thtml
 www/data/geeklog/public_html/layout/gameserver/search/searchauthors.thtml
 www/data/geeklog/public_html/layout/gameserver/search/searchblock.thtml
 www/data/geeklog/public_html/layout/gameserver/search/searchform.thtml
@@ -130,44 +78,55 @@ www/data/geeklog/public_html/layout/gameserver/search/searchresults.thtml
 www/data/geeklog/public_html/layout/gameserver/search/searchresults_heading.thtml
 www/data/geeklog/public_html/layout/gameserver/search/searchresults_norows.thtml
 www/data/geeklog/public_html/layout/gameserver/search/headingcolumn.thtml
-www/data/geeklog/public_html/layout/gameserver/users/commentrow.thtml
+www/data/geeklog/public_html/layout/gameserver/users/newpassword.thtml
 www/data/geeklog/public_html/layout/gameserver/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/gameserver/users/loginform.thtml
+www/data/geeklog/public_html/layout/gameserver/users/commentrow.thtml
 www/data/geeklog/public_html/layout/gameserver/users/profile.thtml
 www/data/geeklog/public_html/layout/gameserver/users/registrationform.thtml
 www/data/geeklog/public_html/layout/gameserver/users/storyrow.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/moderation/ccitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/moderation/itemlist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/moderation/itemlistrows.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/database/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/event/eventeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/event/eventlist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/event/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/group/groupeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/group/grouplist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/group/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/link/linkeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/link/linklist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/link/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/mail/mailform.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/block/blockeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/block/defaultblockeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/block/listblocks.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/block/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/plugins/editor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/plugins/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/plugins/newlistitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/plugins/newpluginlist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/plugins/pluginlist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/poll/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/poll/pollansweroption.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/poll/polleditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/poll/polllist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/story/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/story/liststories.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/story/storyeditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/topic/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/topic/topiceditor.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/topic/topiclist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/user/edituser.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/user/groupedit.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/user/plainlist.thtml
+www/data/geeklog/public_html/layout/gameserver/admin/user/userslist.thtml
 www/data/geeklog/public_html/layout/gameserver/article/article.thtml
 www/data/geeklog/public_html/layout/gameserver/article/printable.thtml
-www/data/geeklog/public_html/layout/gameserver/theme-images/unreal.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-b.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-bl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-br.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-l.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-r.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-t.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-tl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-tr.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-b.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-bl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-br.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-l.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-r.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-t.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-tl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-tr.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-b.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-bl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-br.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-l.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-r.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-t.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-tl.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-tr.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver_logo2.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver_menu_tile.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/pixel.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/spacer.gif
-www/data/geeklog/public_html/layout/gameserver/theme-images/clandohli.gif
 www/data/geeklog/public_html/layout/gameserver/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/gameserver/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/gameserver/submit/submitloginrequired.thtml
@@ -224,7 +183,26 @@ www/data/geeklog/public_html/layout/gameserver/images/bar.gif
 www/data/geeklog/public_html/layout/gameserver/images/button_help.gif
 www/data/geeklog/public_html/layout/gameserver/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/gameserver/profiles/contactuserform.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/language.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/profile.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/theme.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/username.thtml
+www/data/geeklog/public_html/layout/gameserver/preferences/boxesblock.thtml
 www/data/geeklog/public_html/layout/gameserver/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/gameserver/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/dayview/dayview.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/dayview/quickaddform.thtml
@@ -243,44 +221,9 @@ www/data/geeklog/public_html/layout/gameserver/calendar/events.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/mastercalendaroption.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/personalcalendaroption.thtml
 www/data/geeklog/public_html/layout/gameserver/calendar/addremoveevent.thtml
+www/data/geeklog/public_html/layout/gameserver/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/gameserver/comment/commentform.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/moderation/ccitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/moderation/itemlist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/moderation/itemlistrows.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/moderation/moderation.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/event/eventeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/event/eventlist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/event/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/group/groupeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/group/grouplist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/group/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/link/linkeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/link/linklist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/link/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/mail/mailform.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/block/blockeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/block/defaultblockeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/block/listblocks.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/block/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/plugins/editor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/plugins/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/plugins/newlistitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/plugins/newpluginlist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/plugins/pluginlist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/poll/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/poll/pollansweroption.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/poll/polleditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/poll/polllist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/story/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/story/liststories.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/story/storyeditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/topic/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/topic/topiceditor.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/topic/topiclist.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/user/edituser.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/user/groupedit.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/user/listitem.thtml
-www/data/geeklog/public_html/layout/gameserver/admin/user/userslist.thtml
+www/data/geeklog/public_html/layout/gameserver/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/gameserver/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/gameserver/links/categorycol.thtml
 www/data/geeklog/public_html/layout/gameserver/links/categorylinks.thtml
@@ -289,33 +232,71 @@ www/data/geeklog/public_html/layout/gameserver/links/categoryrow.thtml
 www/data/geeklog/public_html/layout/gameserver/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/gameserver/links/links.thtml
 www/data/geeklog/public_html/layout/gameserver/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/gameserver/adminoption.thtml
-www/data/geeklog/public_html/layout/gameserver/footer.thtml
+www/data/geeklog/public_html/layout/gameserver/theme-images/unreal.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-b.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-bl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-br.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-l.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-r.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-t.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-tl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-block-tr.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-b.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-bl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-br.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-l.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-r.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-t.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-tl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-f-tr.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-b.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-bl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-br.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-l.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-r.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-t.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-tl.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver-main-tr.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver_logo2.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/gameserver_menu_tile.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/pixel.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/spacer.gif
+www/data/geeklog/public_html/layout/gameserver/theme-images/clandohli.gif
+www/data/geeklog/public_html/layout/gameserver/useroption_off.thtml
 www/data/geeklog/public_html/layout/gameserver/functions.php
 www/data/geeklog/public_html/layout/gameserver/header.thtml
+www/data/geeklog/public_html/layout/gameserver/featuredstorytext.thtml
 www/data/geeklog/public_html/layout/gameserver/featuredstorybodytext.thtml
-www/data/geeklog/public_html/layout/gameserver/commentheader.thtml
 www/data/geeklog/public_html/layout/gameserver/leftblocks.thtml
 www/data/geeklog/public_html/layout/gameserver/list.thtml
 www/data/geeklog/public_html/layout/gameserver/listitem.thtml
+www/data/geeklog/public_html/layout/gameserver/style.css
+www/data/geeklog/public_html/layout/gameserver/loginform.thtml
 www/data/geeklog/public_html/layout/gameserver/menuitem.thtml
 www/data/geeklog/public_html/layout/gameserver/menuitem_last.thtml
 www/data/geeklog/public_html/layout/gameserver/menuitem_none.thtml
 www/data/geeklog/public_html/layout/gameserver/blockheader.thtml
 www/data/geeklog/public_html/layout/gameserver/blockheader-right.thtml
-www/data/geeklog/public_html/layout/gameserver/rightblocks.thtml
 www/data/geeklog/public_html/layout/gameserver/blockheader-left.thtml
+www/data/geeklog/public_html/layout/gameserver/rightblocks.thtml
 www/data/geeklog/public_html/layout/gameserver/blockfooter.thtml
+www/data/geeklog/public_html/layout/gameserver/blockfooter-right.thtml
 www/data/geeklog/public_html/layout/gameserver/storybodytext.thtml
 www/data/geeklog/public_html/layout/gameserver/storytext.thtml
-www/data/geeklog/public_html/layout/gameserver/style.css
-www/data/geeklog/public_html/layout/gameserver/blockfooter-right.thtml
 www/data/geeklog/public_html/layout/gameserver/blockfooter-left.thtml
+www/data/geeklog/public_html/layout/gameserver/adminoption_off.thtml
+www/data/geeklog/public_html/layout/gameserver/topicoption.thtml
+www/data/geeklog/public_html/layout/gameserver/topicoption_off.thtml
 www/data/geeklog/public_html/layout/gameserver/useroption.thtml
-www/data/geeklog/public_html/layout/gameserver/featuredstorytext.thtml
+www/data/geeklog/public_html/layout/gameserver/footer.thtml
+www/data/geeklog/public_html/layout/gameserver/adminoption.thtml
 www/data/geeklog/public_html/layout/clean/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/clean/search/resultauthdatehits.thtml
 www/data/geeklog/public_html/layout/clean/search/resultcolumn.thtml
 www/data/geeklog/public_html/layout/clean/search/resultrow.thtml
+www/data/geeklog/public_html/layout/clean/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/clean/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/clean/search/resulttitle.thtml
 www/data/geeklog/public_html/layout/clean/search/searchauthors.thtml
 www/data/geeklog/public_html/layout/clean/search/searchblock.thtml
 www/data/geeklog/public_html/layout/clean/search/searchform.thtml
@@ -323,42 +304,55 @@ www/data/geeklog/public_html/layout/clean/search/searchresults.thtml
 www/data/geeklog/public_html/layout/clean/search/searchresults_heading.thtml
 www/data/geeklog/public_html/layout/clean/search/searchresults_norows.thtml
 www/data/geeklog/public_html/layout/clean/search/headingcolumn.thtml
-www/data/geeklog/public_html/layout/clean/users/commentrow.thtml
+www/data/geeklog/public_html/layout/clean/users/newpassword.thtml
 www/data/geeklog/public_html/layout/clean/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/clean/users/loginform.thtml
+www/data/geeklog/public_html/layout/clean/users/commentrow.thtml
 www/data/geeklog/public_html/layout/clean/users/profile.thtml
 www/data/geeklog/public_html/layout/clean/users/registrationform.thtml
 www/data/geeklog/public_html/layout/clean/users/storyrow.thtml
+www/data/geeklog/public_html/layout/clean/admin/moderation/ccitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/moderation/itemlist.thtml
+www/data/geeklog/public_html/layout/clean/admin/moderation/itemlistrows.thtml
+www/data/geeklog/public_html/layout/clean/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/clean/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/clean/admin/database/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/event/eventeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/event/eventlist.thtml
+www/data/geeklog/public_html/layout/clean/admin/event/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/group/groupeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/group/grouplist.thtml
+www/data/geeklog/public_html/layout/clean/admin/group/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/link/linkeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/link/linklist.thtml
+www/data/geeklog/public_html/layout/clean/admin/link/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/mail/mailform.thtml
+www/data/geeklog/public_html/layout/clean/admin/block/blockeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/block/defaultblockeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/block/listblocks.thtml
+www/data/geeklog/public_html/layout/clean/admin/block/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/plugins/editor.thtml
+www/data/geeklog/public_html/layout/clean/admin/plugins/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/plugins/newlistitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/plugins/newpluginlist.thtml
+www/data/geeklog/public_html/layout/clean/admin/plugins/pluginlist.thtml
+www/data/geeklog/public_html/layout/clean/admin/poll/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/poll/pollansweroption.thtml
+www/data/geeklog/public_html/layout/clean/admin/poll/polleditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/poll/polllist.thtml
+www/data/geeklog/public_html/layout/clean/admin/story/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/story/liststories.thtml
+www/data/geeklog/public_html/layout/clean/admin/story/storyeditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/topic/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/topic/topiceditor.thtml
+www/data/geeklog/public_html/layout/clean/admin/topic/topiclist.thtml
+www/data/geeklog/public_html/layout/clean/admin/user/edituser.thtml
+www/data/geeklog/public_html/layout/clean/admin/user/groupedit.thtml
+www/data/geeklog/public_html/layout/clean/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/clean/admin/user/plainlist.thtml
+www/data/geeklog/public_html/layout/clean/admin/user/userslist.thtml
 www/data/geeklog/public_html/layout/clean/article/article.thtml
 www/data/geeklog/public_html/layout/clean/article/printable.thtml
-www/data/geeklog/public_html/layout/clean/theme-images/spacer.gif
-www/data/geeklog/public_html/layout/clean/theme-images/black2.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-b.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-bl.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-br.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-l.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-r.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-t.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-tl.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-article-tr.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-b.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-bl.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-br.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-l.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-menubar-b.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-menubar-t.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-r.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-sitelogo.gif
-www/data/geeklog/public_html/layout/clean/theme-images/li.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-t.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-title-home.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-tl.gif
-www/data/geeklog/public_html/layout/clean/theme-images/clean-tr.gif
-www/data/geeklog/public_html/layout/clean/theme-images/geeklog-logo.gif
-www/data/geeklog/public_html/layout/clean/theme-images/geeklog-logo.png
-www/data/geeklog/public_html/layout/clean/theme-images/index.html
-www/data/geeklog/public_html/layout/clean/theme-images/pixel.gif
-www/data/geeklog/public_html/layout/clean/theme-images/black.gif
 www/data/geeklog/public_html/layout/clean/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/clean/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/clean/submit/submitloginrequired.thtml
@@ -404,7 +398,26 @@ www/data/geeklog/public_html/layout/clean/images/bar.gif
 www/data/geeklog/public_html/layout/clean/images/button_help.gif
 www/data/geeklog/public_html/layout/clean/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/clean/profiles/contactuserform.thtml
+www/data/geeklog/public_html/layout/clean/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/clean/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/clean/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/clean/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/clean/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/clean/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/clean/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/clean/preferences/language.thtml
+www/data/geeklog/public_html/layout/clean/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/clean/preferences/profile.thtml
+www/data/geeklog/public_html/layout/clean/preferences/theme.thtml
+www/data/geeklog/public_html/layout/clean/preferences/username.thtml
+www/data/geeklog/public_html/layout/clean/preferences/boxesblock.thtml
 www/data/geeklog/public_html/layout/clean/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/clean/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/clean/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/clean/calendar/dayview/dayview.thtml
 www/data/geeklog/public_html/layout/clean/calendar/dayview/index.htm
@@ -414,59 +427,22 @@ www/data/geeklog/public_html/layout/clean/calendar/weekview/calendar.thtml
 www/data/geeklog/public_html/layout/clean/calendar/weekview/events.thtml
 www/data/geeklog/public_html/layout/clean/calendar/weekview/index.htm
 www/data/geeklog/public_html/layout/clean/calendar/weekview/weekview.thtml
-www/data/geeklog/public_html/layout/clean/calendar/weekview/weekview.thtml_old
-www/data/geeklog/public_html/layout/clean/calendar/addremoveevent.thtml
+www/data/geeklog/public_html/layout/clean/calendar/addevent.thtml
 www/data/geeklog/public_html/layout/clean/calendar/calendar.thtml
 www/data/geeklog/public_html/layout/clean/calendar/calendarday.thtml
 www/data/geeklog/public_html/layout/clean/calendar/calendarevent.thtml
 www/data/geeklog/public_html/layout/clean/calendar/calendarweek.thtml
-www/data/geeklog/public_html/layout/clean/calendar/addevent.thtml
+www/data/geeklog/public_html/layout/clean/calendar/addeventoption.thtml
 www/data/geeklog/public_html/layout/clean/calendar/editpersonalevent.thtml
 www/data/geeklog/public_html/layout/clean/calendar/eventdetails.thtml
 www/data/geeklog/public_html/layout/clean/calendar/events.thtml
 www/data/geeklog/public_html/layout/clean/calendar/index.htm
 www/data/geeklog/public_html/layout/clean/calendar/mastercalendaroption.thtml
 www/data/geeklog/public_html/layout/clean/calendar/personalcalendaroption.thtml
-www/data/geeklog/public_html/layout/clean/calendar/dayview.thtml
-www/data/geeklog/public_html/layout/clean/calendar/addeventoption.thtml
+www/data/geeklog/public_html/layout/clean/calendar/addremoveevent.thtml
+www/data/geeklog/public_html/layout/clean/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/clean/comment/commentform.thtml
-www/data/geeklog/public_html/layout/clean/admin/moderation/ccitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/moderation/itemlist.thtml
-www/data/geeklog/public_html/layout/clean/admin/moderation/itemlistrows.thtml
-www/data/geeklog/public_html/layout/clean/admin/moderation/moderation.thtml
-www/data/geeklog/public_html/layout/clean/admin/event/eventeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/event/eventlist.thtml
-www/data/geeklog/public_html/layout/clean/admin/event/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/group/groupeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/group/grouplist.thtml
-www/data/geeklog/public_html/layout/clean/admin/group/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/link/linkeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/link/linklist.thtml
-www/data/geeklog/public_html/layout/clean/admin/link/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/mail/mailform.thtml
-www/data/geeklog/public_html/layout/clean/admin/block/blockeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/block/defaultblockeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/block/listblocks.thtml
-www/data/geeklog/public_html/layout/clean/admin/block/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/plugins/editor.thtml
-www/data/geeklog/public_html/layout/clean/admin/plugins/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/plugins/newlistitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/plugins/newpluginlist.thtml
-www/data/geeklog/public_html/layout/clean/admin/plugins/pluginlist.thtml
-www/data/geeklog/public_html/layout/clean/admin/poll/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/poll/pollansweroption.thtml
-www/data/geeklog/public_html/layout/clean/admin/poll/polleditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/poll/polllist.thtml
-www/data/geeklog/public_html/layout/clean/admin/story/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/story/liststories.thtml
-www/data/geeklog/public_html/layout/clean/admin/story/storyeditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/topic/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/topic/topiceditor.thtml
-www/data/geeklog/public_html/layout/clean/admin/topic/topiclist.thtml
-www/data/geeklog/public_html/layout/clean/admin/user/edituser.thtml
-www/data/geeklog/public_html/layout/clean/admin/user/groupedit.thtml
-www/data/geeklog/public_html/layout/clean/admin/user/listitem.thtml
-www/data/geeklog/public_html/layout/clean/admin/user/userslist.thtml
+www/data/geeklog/public_html/layout/clean/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/clean/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/clean/links/categorycol.thtml
 www/data/geeklog/public_html/layout/clean/links/categorylinks.thtml
@@ -475,30 +451,62 @@ www/data/geeklog/public_html/layout/clean/links/categoryrow.thtml
 www/data/geeklog/public_html/layout/clean/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/clean/links/links.thtml
 www/data/geeklog/public_html/layout/clean/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/clean/adminoption.thtml
-www/data/geeklog/public_html/layout/clean/footer.thtml
+www/data/geeklog/public_html/layout/clean/theme-images/spacer.gif
+www/data/geeklog/public_html/layout/clean/theme-images/black2.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-b.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-bl.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-br.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-l.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-r.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-t.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-tl.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-article-tr.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-b.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-bl.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-br.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-l.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-menubar-b.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-menubar-t.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-r.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-sitelogo.gif
+www/data/geeklog/public_html/layout/clean/theme-images/li.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-t.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-title-home.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-tl.gif
+www/data/geeklog/public_html/layout/clean/theme-images/clean-tr.gif
+www/data/geeklog/public_html/layout/clean/theme-images/geeklog-logo.gif
+www/data/geeklog/public_html/layout/clean/theme-images/geeklog-logo.png
+www/data/geeklog/public_html/layout/clean/theme-images/index.html
+www/data/geeklog/public_html/layout/clean/theme-images/pixel.gif
+www/data/geeklog/public_html/layout/clean/theme-images/black.gif
+www/data/geeklog/public_html/layout/clean/useroption_off.thtml
 www/data/geeklog/public_html/layout/clean/functions.php
 www/data/geeklog/public_html/layout/clean/header.thtml
+www/data/geeklog/public_html/layout/clean/featuredstorytext.thtml
 www/data/geeklog/public_html/layout/clean/featuredstorybodytext.thtml
-www/data/geeklog/public_html/layout/clean/commentheader.thtml
 www/data/geeklog/public_html/layout/clean/leftblocks.thtml
 www/data/geeklog/public_html/layout/clean/list.thtml
 www/data/geeklog/public_html/layout/clean/listitem.thtml
+www/data/geeklog/public_html/layout/clean/style.css
+www/data/geeklog/public_html/layout/clean/loginform.thtml
 www/data/geeklog/public_html/layout/clean/menuitem.thtml
 www/data/geeklog/public_html/layout/clean/menuitem_last.thtml
 www/data/geeklog/public_html/layout/clean/menuitem_none.thtml
 www/data/geeklog/public_html/layout/clean/blockheader.thtml
 www/data/geeklog/public_html/layout/clean/blockheader-right.thtml
-www/data/geeklog/public_html/layout/clean/rightblocks.thtml
 www/data/geeklog/public_html/layout/clean/blockheader-left.thtml
+www/data/geeklog/public_html/layout/clean/rightblocks.thtml
 www/data/geeklog/public_html/layout/clean/blockfooter.thtml
+www/data/geeklog/public_html/layout/clean/blockfooter-right.thtml
 www/data/geeklog/public_html/layout/clean/storybodytext.thtml
 www/data/geeklog/public_html/layout/clean/storytext.thtml
-www/data/geeklog/public_html/layout/clean/style.css
-www/data/geeklog/public_html/layout/clean/blockfooter-right.thtml
 www/data/geeklog/public_html/layout/clean/blockfooter-left.thtml
+www/data/geeklog/public_html/layout/clean/adminoption_off.thtml
+www/data/geeklog/public_html/layout/clean/topicoption.thtml
+www/data/geeklog/public_html/layout/clean/topicoption_off.thtml
 www/data/geeklog/public_html/layout/clean/useroption.thtml
-www/data/geeklog/public_html/layout/clean/featuredstorytext.thtml
+www/data/geeklog/public_html/layout/clean/footer.thtml
+www/data/geeklog/public_html/layout/clean/adminoption.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/dayview/dayview.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/dayview/quickaddform.thtml
@@ -521,6 +529,8 @@ www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation/ccitem.t
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation/itemlist.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation/itemlistrows.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/admin/database/listitem.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/event/eventeditor.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/event/eventlist.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/event/listitem.thtml
@@ -553,17 +563,32 @@ www/data/geeklog/public_html/layout/Digital_Monochrome/admin/topic/topiclist.tht
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user/edituser.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user/groupedit.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user/plainlist.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user/userslist.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/article/article.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/article/printable.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/submit/submitloginrequired.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/submit/submitstory.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/article/article.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/article/printable.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/stats/itemstatistics.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/stats/singlestat.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/stats/sitestatistics.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/stats/stats.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultauthdatehits.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultcolumn.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultrow.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/resulttitle.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchauthors.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchform.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_heading.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_norows.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/search/headingcolumn.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/buttons/geekpower2.gif
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/buttons/mysql.gif
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/buttons/php.gif
@@ -598,20 +623,31 @@ www/data/geeklog/public_html/layout/Digital_Monochrome/images/speck.gif
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/sysmessage.gif
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/bar.gif
 www/data/geeklog/public_html/layout/Digital_Monochrome/images/button_help.gif
+www/data/geeklog/public_html/layout/Digital_Monochrome/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/comment/commentform.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_rows.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultcolumn.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/resultrow.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchauthors.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchblock.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchform.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_heading.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/searchresults_norows.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/search/headingcolumn.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/profiles/contactuserform.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/language.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/profile.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/theme.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/username.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/preferences/boxesblock.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/categorycol.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/categorylinks.thtml
@@ -620,31 +656,36 @@ www/data/geeklog/public_html/layout/Digital_Monochrome/links/categoryrow.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/links.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/users/commentrow.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/users/newpassword.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/users/loginform.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/users/commentrow.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/users/profile.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/users/registrationform.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/users/storyrow.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/adminoption.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/functions.php
 www/data/geeklog/public_html/layout/Digital_Monochrome/leftblocks.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/footer.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/functions.php
 www/data/geeklog/public_html/layout/Digital_Monochrome/list.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/listitem.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/loginform.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/menuitem.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/menuitem_last.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/menuitem_none.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/footer.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/featuredstorytext.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/storytext.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/featuredstorybodytext.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/rightblocks.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/commentheader.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/blockheader.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/storybodytext.thtml
-www/data/geeklog/public_html/layout/Digital_Monochrome/style.css
 www/data/geeklog/public_html/layout/Digital_Monochrome/blockfooter.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/storybodytext.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/storytext.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/style.css
+www/data/geeklog/public_html/layout/Digital_Monochrome/adminoption_off.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/topicoption.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/topicoption_off.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/useroption.thtml
+www/data/geeklog/public_html/layout/Digital_Monochrome/useroption_off.thtml
 www/data/geeklog/public_html/layout/Digital_Monochrome/header.thtml
 www/data/geeklog/public_html/layout/Classic/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/Classic/calendar/dayview/dayview.thtml
@@ -668,6 +709,8 @@ www/data/geeklog/public_html/layout/Classic/admin/moderation/ccitem.thtml
 www/data/geeklog/public_html/layout/Classic/admin/moderation/itemlist.thtml
 www/data/geeklog/public_html/layout/Classic/admin/moderation/itemlistrows.thtml
 www/data/geeklog/public_html/layout/Classic/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/Classic/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/Classic/admin/database/listitem.thtml
 www/data/geeklog/public_html/layout/Classic/admin/event/eventeditor.thtml
 www/data/geeklog/public_html/layout/Classic/admin/event/eventlist.thtml
 www/data/geeklog/public_html/layout/Classic/admin/event/listitem.thtml
@@ -700,17 +743,32 @@ www/data/geeklog/public_html/layout/Classic/admin/topic/topiclist.thtml
 www/data/geeklog/public_html/layout/Classic/admin/user/edituser.thtml
 www/data/geeklog/public_html/layout/Classic/admin/user/groupedit.thtml
 www/data/geeklog/public_html/layout/Classic/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/Classic/admin/user/plainlist.thtml
 www/data/geeklog/public_html/layout/Classic/admin/user/userslist.thtml
-www/data/geeklog/public_html/layout/Classic/article/article.thtml
-www/data/geeklog/public_html/layout/Classic/article/printable.thtml
 www/data/geeklog/public_html/layout/Classic/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/Classic/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/Classic/submit/submitloginrequired.thtml
 www/data/geeklog/public_html/layout/Classic/submit/submitstory.thtml
+www/data/geeklog/public_html/layout/Classic/article/article.thtml
+www/data/geeklog/public_html/layout/Classic/article/printable.thtml
 www/data/geeklog/public_html/layout/Classic/stats/itemstatistics.thtml
 www/data/geeklog/public_html/layout/Classic/stats/singlestat.thtml
 www/data/geeklog/public_html/layout/Classic/stats/sitestatistics.thtml
 www/data/geeklog/public_html/layout/Classic/stats/stats.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/Classic/search/resultauthdatehits.thtml
+www/data/geeklog/public_html/layout/Classic/search/resultcolumn.thtml
+www/data/geeklog/public_html/layout/Classic/search/resultrow.thtml
+www/data/geeklog/public_html/layout/Classic/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/Classic/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/Classic/search/resulttitle.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchauthors.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchblock.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchform.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchresults.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchresults_heading.thtml
+www/data/geeklog/public_html/layout/Classic/search/searchresults_norows.thtml
+www/data/geeklog/public_html/layout/Classic/search/headingcolumn.thtml
 www/data/geeklog/public_html/layout/Classic/images/buttons/geekpower2.gif
 www/data/geeklog/public_html/layout/Classic/images/buttons/mysql.gif
 www/data/geeklog/public_html/layout/Classic/images/buttons/php.gif
@@ -746,20 +804,31 @@ www/data/geeklog/public_html/layout/Classic/images/speck.gif
 www/data/geeklog/public_html/layout/Classic/images/sysmessage.gif
 www/data/geeklog/public_html/layout/Classic/images/bar.gif
 www/data/geeklog/public_html/layout/Classic/images/bg.gif
+www/data/geeklog/public_html/layout/Classic/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/Classic/comment/commentform.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchresults_rows.thtml
-www/data/geeklog/public_html/layout/Classic/search/resultcolumn.thtml
-www/data/geeklog/public_html/layout/Classic/search/resultrow.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchauthors.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchblock.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchform.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchresults.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchresults_heading.thtml
-www/data/geeklog/public_html/layout/Classic/search/searchresults_norows.thtml
-www/data/geeklog/public_html/layout/Classic/search/headingcolumn.thtml
+www/data/geeklog/public_html/layout/Classic/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/Classic/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/Classic/profiles/contactuserform.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/language.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/profile.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/theme.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/username.thtml
+www/data/geeklog/public_html/layout/Classic/preferences/boxesblock.thtml
 www/data/geeklog/public_html/layout/Classic/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/Classic/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/Classic/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/Classic/links/categorycol.thtml
 www/data/geeklog/public_html/layout/Classic/links/categorylinks.thtml
@@ -768,49 +837,37 @@ www/data/geeklog/public_html/layout/Classic/links/categoryrow.thtml
 www/data/geeklog/public_html/layout/Classic/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/Classic/links/links.thtml
 www/data/geeklog/public_html/layout/Classic/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/Classic/users/commentrow.thtml
+www/data/geeklog/public_html/layout/Classic/users/newpassword.thtml
 www/data/geeklog/public_html/layout/Classic/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/Classic/users/loginform.thtml
+www/data/geeklog/public_html/layout/Classic/users/commentrow.thtml
 www/data/geeklog/public_html/layout/Classic/users/profile.thtml
 www/data/geeklog/public_html/layout/Classic/users/registrationform.thtml
 www/data/geeklog/public_html/layout/Classic/users/storyrow.thtml
 www/data/geeklog/public_html/layout/Classic/adminoption.thtml
-www/data/geeklog/public_html/layout/Classic/functions.php
 www/data/geeklog/public_html/layout/Classic/leftblocks.thtml
-www/data/geeklog/public_html/layout/Classic/footer.thtml
+www/data/geeklog/public_html/layout/Classic/functions.php
 www/data/geeklog/public_html/layout/Classic/list.thtml
 www/data/geeklog/public_html/layout/Classic/listitem.thtml
+www/data/geeklog/public_html/layout/Classic/loginform.thtml
 www/data/geeklog/public_html/layout/Classic/menuitem.thtml
 www/data/geeklog/public_html/layout/Classic/menuitem_last.thtml
 www/data/geeklog/public_html/layout/Classic/menuitem_none.thtml
+www/data/geeklog/public_html/layout/Classic/footer.thtml
 www/data/geeklog/public_html/layout/Classic/featuredstorytext.thtml
-www/data/geeklog/public_html/layout/Classic/storytext.thtml
 www/data/geeklog/public_html/layout/Classic/featuredstorybodytext.thtml
 www/data/geeklog/public_html/layout/Classic/rightblocks.thtml
-www/data/geeklog/public_html/layout/Classic/commentheader.thtml
 www/data/geeklog/public_html/layout/Classic/blockheader.thtml
-www/data/geeklog/public_html/layout/Classic/storybodytext.thtml
-www/data/geeklog/public_html/layout/Classic/style.css
 www/data/geeklog/public_html/layout/Classic/blockfooter.thtml
+www/data/geeklog/public_html/layout/Classic/storybodytext.thtml
+www/data/geeklog/public_html/layout/Classic/storytext.thtml
+www/data/geeklog/public_html/layout/Classic/style.css
+www/data/geeklog/public_html/layout/Classic/adminoption_off.thtml
+www/data/geeklog/public_html/layout/Classic/topicoption.thtml
+www/data/geeklog/public_html/layout/Classic/topicoption_off.thtml
 www/data/geeklog/public_html/layout/Classic/useroption.thtml
+www/data/geeklog/public_html/layout/Classic/useroption_off.thtml
 www/data/geeklog/public_html/layout/Classic/header.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/comment/commentform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/commentrow.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/getpasswordform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/loginform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/profile.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/registrationform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/users/storyrow.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/article/article.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/article/printable.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitevent.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitlink.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitloginrequired.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitstory.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/stats/itemstatistics.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/stats/singlestat.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/stats/sitestatistics.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/stats/stats.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/dayview/dayview.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/dayview/quickaddform.thtml
@@ -829,6 +886,58 @@ www/data/geeklog/public_html/layout/Smooth_Blue/calendar/events.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/mastercalendaroption.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/personalcalendaroption.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/calendar/addremoveevent.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/ccitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/itemlist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/itemlistrows.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/database/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/eventeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/eventlist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/groupeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/grouplist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/linkeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/linklist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/mail/mailform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/blockeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/defaultblockeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/listblocks.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/editor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/newlistitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/newpluginlist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/pluginlist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/pollansweroption.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/polleditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/polllist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/liststories.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/storyeditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/topiceditor.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/topiclist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/edituser.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/groupedit.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/plainlist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/userslist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitevent.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitlink.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitloginrequired.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/submit/submitstory.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/article/article.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/article/printable.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/stats/itemstatistics.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/stats/singlestat.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/stats/sitestatistics.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/stats/stats.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/profiles/contactauthorform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/profiles/contactuserform.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/images/buttons/geekpower2.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/images/buttons/mysql.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/images/buttons/php.gif
@@ -863,9 +972,36 @@ www/data/geeklog/public_html/layout/Smooth_Blue/images/speck.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/images/sysmessage.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/images/bar.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/images/button_help.gif
+www/data/geeklog/public_html/layout/Smooth_Blue/comment/commentbar.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/comment/commentform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/comment/startcomment.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/language.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/profile.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/theme.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/username.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/preferences/boxesblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/search/resultauthdatehits.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/resultcolumn.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/resultrow.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/search/resulttitle.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchauthors.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchblock.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchform.thtml
@@ -873,46 +1009,14 @@ www/data/geeklog/public_html/layout/Smooth_Blue/search/searchresults.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchresults_heading.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/searchresults_norows.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/search/headingcolumn.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/profiles/contactauthorform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/profiles/contactuserform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth/polllist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/ccitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/itemlist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/itemlistrows.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation/moderation.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/eventeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/eventlist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/event/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/groupeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/grouplist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/group/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/linkeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/linklist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/link/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/mail/mailform.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/blockeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/defaultblockeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/listblocks.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/block/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/editor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/newlistitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/newpluginlist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins/pluginlist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/pollansweroption.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/polleditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll/polllist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/liststories.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/story/storyeditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/topiceditor.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic/topiclist.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/edituser.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/groupedit.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/listitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/admin/user/userslist.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/pagenavigation.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/categorycol.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/categorylinks.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/categorynavigation.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/categoryrow.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/linkdetails.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/links.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/links/categoryactivecol.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/upper-right.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/col-left-curve.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/col-left-line.gif
@@ -939,33 +1043,36 @@ www/data/geeklog/public_html/layout/Smooth_Blue/interface/storyheader-back.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/upper-left.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/upper-mid.gif
 www/data/geeklog/public_html/layout/Smooth_Blue/interface/blank.gif
-www/data/geeklog/public_html/layout/Smooth_Blue/links/pagenavigation.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/categorycol.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/categorylinks.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/categorynavigation.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/categoryrow.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/linkdetails.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/links.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/links/categoryactivecol.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/newpassword.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/getpasswordform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/loginform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/commentrow.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/profile.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/registrationform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/users/storyrow.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/adminoption.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/functions.php
 www/data/geeklog/public_html/layout/Smooth_Blue/leftblocks.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/footer.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/functions.php
 www/data/geeklog/public_html/layout/Smooth_Blue/list.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/listitem.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/loginform.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/footer.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/menuitem.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/featuredstorytext.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/menuitem_last.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/style.css
 www/data/geeklog/public_html/layout/Smooth_Blue/menuitem_none.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/featuredstorytext.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/featuredstorybodytext.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/rightblocks.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/commentheader.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/blockheader.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/rightblocks.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/blockfooter.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/storybodytext.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/storytext.thtml
-www/data/geeklog/public_html/layout/Smooth_Blue/style.css
-www/data/geeklog/public_html/layout/Smooth_Blue/blockfooter.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/adminoption_off.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/topicoption.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/topicoption_off.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/useroption.thtml
+www/data/geeklog/public_html/layout/Smooth_Blue/useroption_off.thtml
 www/data/geeklog/public_html/layout/Smooth_Blue/header.thtml
 www/data/geeklog/public_html/layout/XSilver/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/XSilver/calendar/dayview/dayview.thtml
@@ -988,7 +1095,12 @@ www/data/geeklog/public_html/layout/XSilver/calendar/index.htm
 www/data/geeklog/public_html/layout/XSilver/calendar/mastercalendaroption.thtml
 www/data/geeklog/public_html/layout/XSilver/calendar/personalcalendaroption.thtml
 www/data/geeklog/public_html/layout/XSilver/calendar/addremoveevent.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/mail/mailform.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/link/index.htm
+www/data/geeklog/public_html/layout/XSilver/admin/link/linkeditor.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/link/linklist.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/link/listitem.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/database/listitem.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/event/eventeditor.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/event/eventlist.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/event/index.htm
@@ -1001,11 +1113,8 @@ www/data/geeklog/public_html/layout/XSilver/admin/user/edituser.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/user/groupedit.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/user/index.htm
 www/data/geeklog/public_html/layout/XSilver/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/user/plainlist.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/user/userslist.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/link/index.htm
-www/data/geeklog/public_html/layout/XSilver/admin/link/linkeditor.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/link/linklist.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/link/listitem.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/topic/index.htm
 www/data/geeklog/public_html/layout/XSilver/admin/topic/listitem.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/topic/topiceditor.thtml
@@ -1015,6 +1124,11 @@ www/data/geeklog/public_html/layout/XSilver/admin/block/defaultblockeditor.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/block/index.htm
 www/data/geeklog/public_html/layout/XSilver/admin/block/listblocks.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/block/listitem.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/moderation/ccitem.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/moderation/index.htm
+www/data/geeklog/public_html/layout/XSilver/admin/moderation/itemlist.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/moderation/itemlistrows.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/moderation/moderation.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/plugins/editor.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/plugins/index.htm
 www/data/geeklog/public_html/layout/XSilver/admin/plugins/listitem.thtml
@@ -1030,25 +1144,36 @@ www/data/geeklog/public_html/layout/XSilver/admin/story/index.htm
 www/data/geeklog/public_html/layout/XSilver/admin/story/listitem.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/story/liststories.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/story/storyeditor.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/moderation/ccitem.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/moderation/index.htm
-www/data/geeklog/public_html/layout/XSilver/admin/moderation/itemlist.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/moderation/itemlistrows.thtml
-www/data/geeklog/public_html/layout/XSilver/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/XSilver/admin/mail/mailform.thtml
 www/data/geeklog/public_html/layout/XSilver/admin/index.htm
-www/data/geeklog/public_html/layout/XSilver/article/article.thtml
-www/data/geeklog/public_html/layout/XSilver/article/index.htm
-www/data/geeklog/public_html/layout/XSilver/article/printable.thtml
 www/data/geeklog/public_html/layout/XSilver/submit/index.htm
 www/data/geeklog/public_html/layout/XSilver/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/XSilver/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/XSilver/submit/submitloginrequired.thtml
 www/data/geeklog/public_html/layout/XSilver/submit/submitstory.thtml
+www/data/geeklog/public_html/layout/XSilver/article/article.thtml
+www/data/geeklog/public_html/layout/XSilver/article/index.htm
+www/data/geeklog/public_html/layout/XSilver/article/printable.thtml
 www/data/geeklog/public_html/layout/XSilver/stats/index.htm
 www/data/geeklog/public_html/layout/XSilver/stats/itemstatistics.thtml
 www/data/geeklog/public_html/layout/XSilver/stats/singlestat.thtml
 www/data/geeklog/public_html/layout/XSilver/stats/sitestatistics.thtml
 www/data/geeklog/public_html/layout/XSilver/stats/stats.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/XSilver/search/index.htm
+www/data/geeklog/public_html/layout/XSilver/search/resultauthdatehits.thtml
+www/data/geeklog/public_html/layout/XSilver/search/resultcolumn.thtml
+www/data/geeklog/public_html/layout/XSilver/search/resultrow.thtml
+www/data/geeklog/public_html/layout/XSilver/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/XSilver/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/XSilver/search/resulttitle.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchauthors.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchblock.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchform.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchresults.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchresults_heading.thtml
+www/data/geeklog/public_html/layout/XSilver/search/searchresults_norows.thtml
+www/data/geeklog/public_html/layout/XSilver/search/headingcolumn.thtml
 www/data/geeklog/public_html/layout/XSilver/images/icons/user.gif
 www/data/geeklog/public_html/layout/XSilver/images/icons/delete_event.gif
 www/data/geeklog/public_html/layout/XSilver/images/icons/event.gif
@@ -1118,23 +1243,33 @@ www/data/geeklog/public_html/layout/XSilver/images/submit-2.gif
 www/data/geeklog/public_html/layout/XSilver/images/sysmessage.gif
 www/data/geeklog/public_html/layout/XSilver/images/bar.gif
 www/data/geeklog/public_html/layout/XSilver/images/bullet.gif
+www/data/geeklog/public_html/layout/XSilver/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/XSilver/comment/commentform.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchresults_rows.thtml
-www/data/geeklog/public_html/layout/XSilver/search/index.htm
-www/data/geeklog/public_html/layout/XSilver/search/resultcolumn.thtml
-www/data/geeklog/public_html/layout/XSilver/search/resultrow.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchauthors.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchblock.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchform.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchresults.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchresults_heading.thtml
-www/data/geeklog/public_html/layout/XSilver/search/searchresults_norows.thtml
-www/data/geeklog/public_html/layout/XSilver/search/headingcolumn.thtml
+www/data/geeklog/public_html/layout/XSilver/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/XSilver/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/XSilver/profiles/contactuserform.thtml
 www/data/geeklog/public_html/layout/XSilver/profiles/index.htm
-www/data/geeklog/public_html/layout/XSilver/pollbooth/index.htm
+www/data/geeklog/public_html/layout/XSilver/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/language.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/profile.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/theme.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/username.thtml
+www/data/geeklog/public_html/layout/XSilver/preferences/boxesblock.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollvotes_num.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollcomments.thtml
 www/data/geeklog/public_html/layout/XSilver/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/XSilver/pollbooth/index.htm
 www/data/geeklog/public_html/layout/XSilver/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/XSilver/links/categorycol.thtml
 www/data/geeklog/public_html/layout/XSilver/links/categorylinks.thtml
@@ -1144,33 +1279,38 @@ www/data/geeklog/public_html/layout/XSilver/links/index.htm
 www/data/geeklog/public_html/layout/XSilver/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/XSilver/links/links.thtml
 www/data/geeklog/public_html/layout/XSilver/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/XSilver/users/loginform.thtml
+www/data/geeklog/public_html/layout/XSilver/users/storyrow.thtml
 www/data/geeklog/public_html/layout/XSilver/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/XSilver/users/index.htm
-www/data/geeklog/public_html/layout/XSilver/users/commentrow.thtml
+www/data/geeklog/public_html/layout/XSilver/users/loginform.thtml
+www/data/geeklog/public_html/layout/XSilver/users/newpassword.thtml
 www/data/geeklog/public_html/layout/XSilver/users/profile.thtml
 www/data/geeklog/public_html/layout/XSilver/users/registrationform.thtml
-www/data/geeklog/public_html/layout/XSilver/users/storyrow.thtml
+www/data/geeklog/public_html/layout/XSilver/users/commentrow.thtml
 www/data/geeklog/public_html/layout/XSilver/adminoption.thtml
-www/data/geeklog/public_html/layout/XSilver/functions.php
 www/data/geeklog/public_html/layout/XSilver/leftblocks.thtml
-www/data/geeklog/public_html/layout/XSilver/footer.thtml
+www/data/geeklog/public_html/layout/XSilver/functions.php
 www/data/geeklog/public_html/layout/XSilver/list.thtml
 www/data/geeklog/public_html/layout/XSilver/listitem.thtml
+www/data/geeklog/public_html/layout/XSilver/loginform.thtml
 www/data/geeklog/public_html/layout/XSilver/menuitem.thtml
 www/data/geeklog/public_html/layout/XSilver/menuitem_last.thtml
 www/data/geeklog/public_html/layout/XSilver/menuitem_none.thtml
+www/data/geeklog/public_html/layout/XSilver/footer.thtml
 www/data/geeklog/public_html/layout/XSilver/featuredstorytext.thtml
-www/data/geeklog/public_html/layout/XSilver/README
 www/data/geeklog/public_html/layout/XSilver/featuredstorybodytext.thtml
+www/data/geeklog/public_html/layout/XSilver/README
 www/data/geeklog/public_html/layout/XSilver/rightblocks.thtml
-www/data/geeklog/public_html/layout/XSilver/commentheader.thtml
 www/data/geeklog/public_html/layout/XSilver/blockheader.thtml
+www/data/geeklog/public_html/layout/XSilver/blockfooter.thtml
 www/data/geeklog/public_html/layout/XSilver/storybodytext.thtml
 www/data/geeklog/public_html/layout/XSilver/storytext.thtml
 www/data/geeklog/public_html/layout/XSilver/style.css
-www/data/geeklog/public_html/layout/XSilver/blockfooter.thtml
+www/data/geeklog/public_html/layout/XSilver/adminoption_off.thtml
+www/data/geeklog/public_html/layout/XSilver/topicoption.thtml
+www/data/geeklog/public_html/layout/XSilver/topicoption_off.thtml
 www/data/geeklog/public_html/layout/XSilver/useroption.thtml
+www/data/geeklog/public_html/layout/XSilver/useroption_off.thtml
 www/data/geeklog/public_html/layout/XSilver/header.thtml
 www/data/geeklog/public_html/layout/Yahoo/calendar/dayview/column.thtml
 www/data/geeklog/public_html/layout/Yahoo/calendar/dayview/dayview.thtml
@@ -1194,6 +1334,8 @@ www/data/geeklog/public_html/layout/Yahoo/admin/moderation/ccitem.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/moderation/itemlist.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/moderation/itemlistrows.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/moderation/moderation.thtml
+www/data/geeklog/public_html/layout/Yahoo/admin/database/listbackups.thtml
+www/data/geeklog/public_html/layout/Yahoo/admin/database/listitem.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/event/eventeditor.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/event/eventlist.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/event/listitem.thtml
@@ -1226,17 +1368,32 @@ www/data/geeklog/public_html/layout/Yahoo/admin/topic/topiclist.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/user/edituser.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/user/groupedit.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/user/listitem.thtml
+www/data/geeklog/public_html/layout/Yahoo/admin/user/plainlist.thtml
 www/data/geeklog/public_html/layout/Yahoo/admin/user/userslist.thtml
-www/data/geeklog/public_html/layout/Yahoo/article/article.thtml
-www/data/geeklog/public_html/layout/Yahoo/article/printable.thtml
 www/data/geeklog/public_html/layout/Yahoo/submit/submitevent.thtml
 www/data/geeklog/public_html/layout/Yahoo/submit/submitlink.thtml
 www/data/geeklog/public_html/layout/Yahoo/submit/submitloginrequired.thtml
 www/data/geeklog/public_html/layout/Yahoo/submit/submitstory.thtml
+www/data/geeklog/public_html/layout/Yahoo/article/article.thtml
+www/data/geeklog/public_html/layout/Yahoo/article/printable.thtml
 www/data/geeklog/public_html/layout/Yahoo/stats/itemstatistics.thtml
 www/data/geeklog/public_html/layout/Yahoo/stats/singlestat.thtml
 www/data/geeklog/public_html/layout/Yahoo/stats/sitestatistics.thtml
 www/data/geeklog/public_html/layout/Yahoo/stats/stats.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchresults_rows.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resultauthdatehits.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resultcolumn.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resultrow.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resultrowenhanced.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resultsummary.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/resulttitle.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchauthors.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchform.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchresults.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchresults_heading.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/searchresults_norows.thtml
+www/data/geeklog/public_html/layout/Yahoo/search/headingcolumn.thtml
 www/data/geeklog/public_html/layout/Yahoo/images/buttons/geekpower2.gif
 www/data/geeklog/public_html/layout/Yahoo/images/buttons/mysql.gif
 www/data/geeklog/public_html/layout/Yahoo/images/buttons/php.gif
@@ -1271,20 +1428,31 @@ www/data/geeklog/public_html/layout/Yahoo/images/speck.gif
 www/data/geeklog/public_html/layout/Yahoo/images/sysmessage.gif
 www/data/geeklog/public_html/layout/Yahoo/images/bar.gif
 www/data/geeklog/public_html/layout/Yahoo/images/button_help.gif
+www/data/geeklog/public_html/layout/Yahoo/comment/commentbar.thtml
 www/data/geeklog/public_html/layout/Yahoo/comment/commentform.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchresults_rows.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/resultcolumn.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/resultrow.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchauthors.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchblock.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchform.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchresults.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchresults_heading.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/searchresults_norows.thtml
-www/data/geeklog/public_html/layout/Yahoo/search/headingcolumn.thtml
+www/data/geeklog/public_html/layout/Yahoo/comment/startcomment.thtml
 www/data/geeklog/public_html/layout/Yahoo/profiles/contactauthorform.thtml
 www/data/geeklog/public_html/layout/Yahoo/profiles/contactuserform.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/userphoto.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/commentblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/deleteaccount.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/digestblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/displayblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/displayprefs.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/excludeblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/language.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/privacyblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/profile.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/theme.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/username.thtml
+www/data/geeklog/public_html/layout/Yahoo/preferences/boxesblock.thtml
 www/data/geeklog/public_html/layout/Yahoo/pollbooth/polllist.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollblock.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollcomments.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollanswer.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollresult.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollvotes_bar.thtml
+www/data/geeklog/public_html/layout/Yahoo/pollbooth/pollvotes_num.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/pagenavigation.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/categorycol.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/categorylinks.thtml
@@ -1293,31 +1461,36 @@ www/data/geeklog/public_html/layout/Yahoo/links/categoryrow.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/linkdetails.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/links.thtml
 www/data/geeklog/public_html/layout/Yahoo/links/categoryactivecol.thtml
-www/data/geeklog/public_html/layout/Yahoo/users/commentrow.thtml
+www/data/geeklog/public_html/layout/Yahoo/users/newpassword.thtml
 www/data/geeklog/public_html/layout/Yahoo/users/getpasswordform.thtml
 www/data/geeklog/public_html/layout/Yahoo/users/loginform.thtml
+www/data/geeklog/public_html/layout/Yahoo/users/commentrow.thtml
 www/data/geeklog/public_html/layout/Yahoo/users/profile.thtml
 www/data/geeklog/public_html/layout/Yahoo/users/registrationform.thtml
 www/data/geeklog/public_html/layout/Yahoo/users/storyrow.thtml
 www/data/geeklog/public_html/layout/Yahoo/adminoption.thtml
-www/data/geeklog/public_html/layout/Yahoo/functions.php
 www/data/geeklog/public_html/layout/Yahoo/leftblocks.thtml
-www/data/geeklog/public_html/layout/Yahoo/footer.thtml
+www/data/geeklog/public_html/layout/Yahoo/functions.php
 www/data/geeklog/public_html/layout/Yahoo/list.thtml
 www/data/geeklog/public_html/layout/Yahoo/listitem.thtml
+www/data/geeklog/public_html/layout/Yahoo/loginform.thtml
 www/data/geeklog/public_html/layout/Yahoo/menuitem.thtml
 www/data/geeklog/public_html/layout/Yahoo/menuitem_last.thtml
 www/data/geeklog/public_html/layout/Yahoo/menuitem_none.thtml
+www/data/geeklog/public_html/layout/Yahoo/footer.thtml
 www/data/geeklog/public_html/layout/Yahoo/featuredstorytext.thtml
-www/data/geeklog/public_html/layout/Yahoo/storytext.thtml
 www/data/geeklog/public_html/layout/Yahoo/featuredstorybodytext.thtml
 www/data/geeklog/public_html/layout/Yahoo/rightblocks.thtml
-www/data/geeklog/public_html/layout/Yahoo/commentheader.thtml
 www/data/geeklog/public_html/layout/Yahoo/blockheader.thtml
-www/data/geeklog/public_html/layout/Yahoo/storybodytext.thtml
-www/data/geeklog/public_html/layout/Yahoo/style.css
 www/data/geeklog/public_html/layout/Yahoo/blockfooter.thtml
+www/data/geeklog/public_html/layout/Yahoo/storybodytext.thtml
+www/data/geeklog/public_html/layout/Yahoo/storytext.thtml
+www/data/geeklog/public_html/layout/Yahoo/style.css
+www/data/geeklog/public_html/layout/Yahoo/adminoption_off.thtml
+www/data/geeklog/public_html/layout/Yahoo/topicoption.thtml
+www/data/geeklog/public_html/layout/Yahoo/topicoption_off.thtml
 www/data/geeklog/public_html/layout/Yahoo/useroption.thtml
+www/data/geeklog/public_html/layout/Yahoo/useroption_off.thtml
 www/data/geeklog/public_html/layout/Yahoo/header.thtml
 www/data/geeklog/public_html/lib-common.php
 www/data/geeklog/public_html/links.php
@@ -1335,7 +1508,6 @@ www/data/geeklog/public_html/calendar.php
 www/data/geeklog/public_html/calendar_event.php
 www/data/geeklog/public_html/comment.php
 www/data/geeklog/public_html/index.php
-www/data/geeklog/readme
 www/data/geeklog/sql/updates/mysql_1.3_to_1.3.1.php
 www/data/geeklog/sql/updates/0.2_to_0.3.sql
 www/data/geeklog/sql/updates/0.3_to_0.4.sql
@@ -1352,260 +1524,351 @@ www/data/geeklog/sql/updates/mysql_1.3.2-1_to_1.3.3.php
 www/data/geeklog/sql/updates/mysql_1.3.3_to_1.3.4.php
 www/data/geeklog/sql/updates/mysql_1.3.4_to_1.3.5.php
 www/data/geeklog/sql/updates/mysql_1.3.5_to_1.3.6.php
+www/data/geeklog/sql/updates/mysql_1.3.7_to_1.3.8.php
 www/data/geeklog/sql/updates/0.1_to_0.2.sql
 www/data/geeklog/sql/mysql_tableanddata.php
-www/data/geeklog/system/databases/mysql.class.php
+www/data/geeklog/backups/README
+www/data/geeklog/docs/images/germany.gif
+www/data/geeklog/docs/images/newlogo.gif
+www/data/geeklog/docs/changes.html
+www/data/geeklog/docs/config.html
+www/data/geeklog/docs/docstyle.css
+www/data/geeklog/docs/history
+www/data/geeklog/docs/index.html
+www/data/geeklog/docs/install.html
+www/data/geeklog/docs/knownbugs
+www/data/geeklog/docs/license
+www/data/geeklog/docs/plugin.html
+www/data/geeklog/docs/staticpages.html
+www/data/geeklog/docs/support.html
+www/data/geeklog/docs/theme.html
+www/data/geeklog/docs/themevars.html
+www/data/geeklog/docs/changed-files
+www/data/geeklog/docs/todo
+www/data/geeklog/plugins/staticpages/language/swedish.php
+www/data/geeklog/plugins/staticpages/language/danish.php
+www/data/geeklog/plugins/staticpages/language/dutch.php
+www/data/geeklog/plugins/staticpages/language/english.php
+www/data/geeklog/plugins/staticpages/language/french_canada.php
+www/data/geeklog/plugins/staticpages/language/german.php
+www/data/geeklog/plugins/staticpages/language/german_formal.php
+www/data/geeklog/plugins/staticpages/language/italian.php
+www/data/geeklog/plugins/staticpages/language/japanese.php
+www/data/geeklog/plugins/staticpages/language/polish.php
+www/data/geeklog/plugins/staticpages/language/README
+www/data/geeklog/plugins/staticpages/language/spanish.php
+www/data/geeklog/plugins/staticpages/language/czech.php
+www/data/geeklog/plugins/staticpages/templates/admin/editor.thtml
+www/data/geeklog/plugins/staticpages/templates/admin/list.thtml
+www/data/geeklog/plugins/staticpages/templates/admin/row.thtml
+www/data/geeklog/plugins/staticpages/config.php
+www/data/geeklog/plugins/staticpages/functions.inc
+www/data/geeklog/plugins/staticpages/README
+www/data/geeklog/plugins/staticpages/TO-DO
+www/data/geeklog/plugins/developer.README
+www/data/geeklog/plugins/plugin.INSTALL
+www/data/geeklog/logs/access.log
+www/data/geeklog/logs/error.log
 www/data/geeklog/system/install_templates/databasesettings.tpl
-www/data/geeklog/system/classes/template.class.php
+www/data/geeklog/system/databases/mysql.class.php
+www/data/geeklog/system/classes/url.class.php
 www/data/geeklog/system/classes/downloader.class.php
+www/data/geeklog/system/classes/kses.class.php
 www/data/geeklog/system/classes/plugin.class.php
-www/data/geeklog/system/classes/calendar.class.php
+www/data/geeklog/system/classes/search.class.php
+www/data/geeklog/system/classes/template.class.php
 www/data/geeklog/system/classes/timer.class.php
 www/data/geeklog/system/classes/upload.class.php
-www/data/geeklog/system/classes/url.class.php
+www/data/geeklog/system/classes/calendar.class.php
 www/data/geeklog/system/lib-plugins.php
 www/data/geeklog/system/lib-security.php
 www/data/geeklog/system/lib-sessions.php
+www/data/geeklog/system/memberdetail.thtml
 www/data/geeklog/system/lib-custom.php
 www/data/geeklog/system/lib-database.php
-@dirrm www/data/geeklog/language/incomplete
-@dirrm www/data/geeklog/language
-@dirrm www/data/geeklog/system/classes
-@dirrm www/data/geeklog/system/install_templates
-@dirrm www/data/geeklog/system/databases
-@dirrm www/data/geeklog/system
-@dirrm www/data/geeklog/logs
-@dirrm www/data/geeklog/plugins/staticpages/templates/admin
-@dirrm www/data/geeklog/plugins/staticpages/templates
-@dirrm www/data/geeklog/plugins/staticpages/language
-@dirrm www/data/geeklog/plugins/staticpages
-@dirrm www/data/geeklog/plugins
-@dirrm www/data/geeklog/docs/images
-@dirrm www/data/geeklog/docs
-@dirrm www/data/geeklog/backups
-@dirrm www/data/geeklog/sql/updates
-@dirrm www/data/geeklog/sql
-@dirrm www/data/geeklog/public_html/layout/Yahoo/users
-@dirrm www/data/geeklog/public_html/layout/Yahoo/links
-@dirrm www/data/geeklog/public_html/layout/Yahoo/pollbooth
-@dirrm www/data/geeklog/public_html/layout/Yahoo/profiles
-@dirrm www/data/geeklog/public_html/layout/Yahoo/search
-@dirrm www/data/geeklog/public_html/layout/Yahoo/comment
-@dirrm www/data/geeklog/public_html/layout/Yahoo/images/admin
-@dirrm www/data/geeklog/public_html/layout/Yahoo/images/icons
-@dirrm www/data/geeklog/public_html/layout/Yahoo/images/buttons
-@dirrm www/data/geeklog/public_html/layout/Yahoo/images
-@dirrm www/data/geeklog/public_html/layout/Yahoo/stats
-@dirrm www/data/geeklog/public_html/layout/Yahoo/submit
-@dirrm www/data/geeklog/public_html/layout/Yahoo/article
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/user
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/topic
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/story
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/poll
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/block
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/mail
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/link
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/group
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/event
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/Yahoo/admin
-@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar
-@dirrm www/data/geeklog/public_html/layout/Yahoo
-@dirrm www/data/geeklog/public_html/layout/XSilver/users
-@dirrm www/data/geeklog/public_html/layout/XSilver/links
-@dirrm www/data/geeklog/public_html/layout/XSilver/pollbooth
-@dirrm www/data/geeklog/public_html/layout/XSilver/profiles
-@dirrm www/data/geeklog/public_html/layout/XSilver/search
-@dirrm www/data/geeklog/public_html/layout/XSilver/comment
-@dirrm www/data/geeklog/public_html/layout/XSilver/images/admin
-@dirrm www/data/geeklog/public_html/layout/XSilver/images/buttons
-@dirrm www/data/geeklog/public_html/layout/XSilver/images/icons
-@dirrm www/data/geeklog/public_html/layout/XSilver/images
-@dirrm www/data/geeklog/public_html/layout/XSilver/stats
-@dirrm www/data/geeklog/public_html/layout/XSilver/submit
-@dirrm www/data/geeklog/public_html/layout/XSilver/article
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/story
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/poll
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/block
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/topic
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/link
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/user
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/group
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/event
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin/mail
-@dirrm www/data/geeklog/public_html/layout/XSilver/admin
-@dirrm www/data/geeklog/public_html/layout/XSilver/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/XSilver/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/XSilver/calendar
-@dirrm www/data/geeklog/public_html/layout/XSilver
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/links
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/interface
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/user
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/story
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/block
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/mail
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/link
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/group
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/event
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/profiles
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/search
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/admin
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/icons
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/buttons
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/stats
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/submit
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/article
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/users
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/comment
-@dirrm www/data/geeklog/public_html/layout/Smooth_Blue
-@dirrm www/data/geeklog/public_html/layout/Classic/users
-@dirrm www/data/geeklog/public_html/layout/Classic/links
-@dirrm www/data/geeklog/public_html/layout/Classic/pollbooth
-@dirrm www/data/geeklog/public_html/layout/Classic/profiles
-@dirrm www/data/geeklog/public_html/layout/Classic/search
-@dirrm www/data/geeklog/public_html/layout/Classic/comment
-@dirrm www/data/geeklog/public_html/layout/Classic/images/admin
-@dirrm www/data/geeklog/public_html/layout/Classic/images/icons
-@dirrm www/data/geeklog/public_html/layout/Classic/images/buttons
-@dirrm www/data/geeklog/public_html/layout/Classic/images
-@dirrm www/data/geeklog/public_html/layout/Classic/stats
-@dirrm www/data/geeklog/public_html/layout/Classic/submit
-@dirrm www/data/geeklog/public_html/layout/Classic/article
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/user
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/topic
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/story
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/poll
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/block
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/mail
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/link
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/group
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/event
-@dirrm www/data/geeklog/public_html/layout/Classic/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/Classic/admin
-@dirrm www/data/geeklog/public_html/layout/Classic/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/Classic/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/Classic/calendar
-@dirrm www/data/geeklog/public_html/layout/Classic
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/users
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/links
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/profiles
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/search
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/comment
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/admin
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/icons
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/buttons
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/stats
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/submit
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/article
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/topic
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/story
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/poll
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/block
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/mail
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/link
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/group
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/event
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar
-@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome
-@dirrm www/data/geeklog/public_html/layout/clean/links
-@dirrm www/data/geeklog/public_html/layout/clean/admin/user
-@dirrm www/data/geeklog/public_html/layout/clean/admin/topic
-@dirrm www/data/geeklog/public_html/layout/clean/admin/story
-@dirrm www/data/geeklog/public_html/layout/clean/admin/poll
-@dirrm www/data/geeklog/public_html/layout/clean/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/clean/admin/block
-@dirrm www/data/geeklog/public_html/layout/clean/admin/mail
-@dirrm www/data/geeklog/public_html/layout/clean/admin/link
-@dirrm www/data/geeklog/public_html/layout/clean/admin/group
-@dirrm www/data/geeklog/public_html/layout/clean/admin/event
-@dirrm www/data/geeklog/public_html/layout/clean/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/clean/admin
-@dirrm www/data/geeklog/public_html/layout/clean/comment
-@dirrm www/data/geeklog/public_html/layout/clean/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/clean/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/clean/calendar
-@dirrm www/data/geeklog/public_html/layout/clean/pollbooth
-@dirrm www/data/geeklog/public_html/layout/clean/profiles
-@dirrm www/data/geeklog/public_html/layout/clean/images/admin
-@dirrm www/data/geeklog/public_html/layout/clean/images/buttons
-@dirrm www/data/geeklog/public_html/layout/clean/images/icons
-@dirrm www/data/geeklog/public_html/layout/clean/images
-@dirrm www/data/geeklog/public_html/layout/clean/stats
-@dirrm www/data/geeklog/public_html/layout/clean/submit
-@dirrm www/data/geeklog/public_html/layout/clean/theme-images
-@dirrm www/data/geeklog/public_html/layout/clean/article
-@dirrm www/data/geeklog/public_html/layout/clean/users
-@dirrm www/data/geeklog/public_html/layout/clean/search
-@dirrm www/data/geeklog/public_html/layout/clean
-@dirrm www/data/geeklog/public_html/layout/gameserver/links
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/user
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/topic
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/story
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/poll
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/plugins
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/block
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/mail
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/link
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/group
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/event
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin/moderation
-@dirrm www/data/geeklog/public_html/layout/gameserver/admin
-@dirrm www/data/geeklog/public_html/layout/gameserver/comment
-@dirrm www/data/geeklog/public_html/layout/gameserver/calendar/weekview
-@dirrm www/data/geeklog/public_html/layout/gameserver/calendar/dayview
-@dirrm www/data/geeklog/public_html/layout/gameserver/calendar
-@dirrm www/data/geeklog/public_html/layout/gameserver/pollbooth
-@dirrm www/data/geeklog/public_html/layout/gameserver/profiles
-@dirrm www/data/geeklog/public_html/layout/gameserver/images/admin
-@dirrm www/data/geeklog/public_html/layout/gameserver/images/icons
-@dirrm www/data/geeklog/public_html/layout/gameserver/images/buttons
-@dirrm www/data/geeklog/public_html/layout/gameserver/images
-@dirrm www/data/geeklog/public_html/layout/gameserver/stats
-@dirrm www/data/geeklog/public_html/layout/gameserver/submit
-@dirrm www/data/geeklog/public_html/layout/gameserver/theme-images
-@dirrm www/data/geeklog/public_html/layout/gameserver/article
-@dirrm www/data/geeklog/public_html/layout/gameserver/users
-@dirrm www/data/geeklog/public_html/layout/gameserver/search
-@dirrm www/data/geeklog/public_html/layout/gameserver
-@dirrm www/data/geeklog/public_html/layout
-@dirrm www/data/geeklog/public_html/backend
-@dirrm www/data/geeklog/public_html/images/userphotos
-@dirrm www/data/geeklog/public_html/images/buttons
-@dirrm www/data/geeklog/public_html/images/topics
-@dirrm www/data/geeklog/public_html/images/admin
-@dirrm www/data/geeklog/public_html/images/articles
-@dirrm www/data/geeklog/public_html/images/icons
-@dirrm www/data/geeklog/public_html/images
-@dirrm www/data/geeklog/public_html/help
-@dirrm www/data/geeklog/public_html/staticpages/images
-@dirrm www/data/geeklog/public_html/staticpages
-@dirrm www/data/geeklog/public_html/admin/install
+www/data/geeklog/language/incomplete/spanish_argentina.php
+www/data/geeklog/language/incomplete/chinese_gb2312.php
+www/data/geeklog/language/incomplete/czech.php
+www/data/geeklog/language/incomplete/danish.php
+www/data/geeklog/language/incomplete/french_france.php
+www/data/geeklog/language/incomplete/hellenic.php
+www/data/geeklog/language/incomplete/norwegian.php
+www/data/geeklog/language/incomplete/portuguese.php
+www/data/geeklog/language/incomplete/portuguese_brazil.php
+www/data/geeklog/language/incomplete/README
+www/data/geeklog/language/incomplete/romanian.php
+www/data/geeklog/language/incomplete/russian.php
+www/data/geeklog/language/incomplete/slovak.php
+www/data/geeklog/language/incomplete/chinese_big5.php
+www/data/geeklog/language/dutch.php
+www/data/geeklog/language/english.php
+www/data/geeklog/language/french_canada.php
+www/data/geeklog/language/german.php
+www/data/geeklog/language/german_formal.php
+www/data/geeklog/language/italian.php
+www/data/geeklog/language/japanese.php
+www/data/geeklog/language/polish.php
+www/data/geeklog/language/slovenian.php
+www/data/geeklog/language/spanish.php
+www/data/geeklog/language/swedish.php
+www/data/geeklog/language/bulgarian.php
+www/data/geeklog/language/turkish.php
+www/data/geeklog/emailgeeklogstories
+www/data/geeklog/config.php
+www/data/geeklog/readme
+www/data/geeklog/INSTALL
 @dirrm www/data/geeklog/public_html/admin/plugins/staticpages
 @dirrm www/data/geeklog/public_html/admin/plugins
+@dirrm www/data/geeklog/public_html/admin/install
 @dirrm www/data/geeklog/public_html/admin
+@dirrm www/data/geeklog/public_html/staticpages/images
+@dirrm www/data/geeklog/public_html/staticpages
+@dirrm www/data/geeklog/public_html/help
+@dirrm www/data/geeklog/public_html/images/icons
+@dirrm www/data/geeklog/public_html/images/articles
+@dirrm www/data/geeklog/public_html/images/admin
+@dirrm www/data/geeklog/public_html/images/topics
+@dirrm www/data/geeklog/public_html/images/buttons
+@dirrm www/data/geeklog/public_html/images/userphotos
+@dirrm www/data/geeklog/public_html/images
+@dirrm www/data/geeklog/public_html/backend
+@dirrm www/data/geeklog/public_html/layout/gameserver/search
+@dirrm www/data/geeklog/public_html/layout/gameserver/users
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/database
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/event
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/group
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/link
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/mail
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/block
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/poll
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/story
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/topic
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin/user
+@dirrm www/data/geeklog/public_html/layout/gameserver/admin
+@dirrm www/data/geeklog/public_html/layout/gameserver/article
+@dirrm www/data/geeklog/public_html/layout/gameserver/submit
+@dirrm www/data/geeklog/public_html/layout/gameserver/stats
+@dirrm www/data/geeklog/public_html/layout/gameserver/images/buttons
+@dirrm www/data/geeklog/public_html/layout/gameserver/images/icons
+@dirrm www/data/geeklog/public_html/layout/gameserver/images/admin
+@dirrm www/data/geeklog/public_html/layout/gameserver/images
+@dirrm www/data/geeklog/public_html/layout/gameserver/profiles
+@dirrm www/data/geeklog/public_html/layout/gameserver/preferences
+@dirrm www/data/geeklog/public_html/layout/gameserver/pollbooth
+@dirrm www/data/geeklog/public_html/layout/gameserver/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/gameserver/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/gameserver/calendar
+@dirrm www/data/geeklog/public_html/layout/gameserver/comment
+@dirrm www/data/geeklog/public_html/layout/gameserver/links
+@dirrm www/data/geeklog/public_html/layout/gameserver/theme-images
+@dirrm www/data/geeklog/public_html/layout/gameserver
+@dirrm www/data/geeklog/public_html/layout/clean/search
+@dirrm www/data/geeklog/public_html/layout/clean/users
+@dirrm www/data/geeklog/public_html/layout/clean/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/clean/admin/database
+@dirrm www/data/geeklog/public_html/layout/clean/admin/event
+@dirrm www/data/geeklog/public_html/layout/clean/admin/group
+@dirrm www/data/geeklog/public_html/layout/clean/admin/link
+@dirrm www/data/geeklog/public_html/layout/clean/admin/mail
+@dirrm www/data/geeklog/public_html/layout/clean/admin/block
+@dirrm www/data/geeklog/public_html/layout/clean/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/clean/admin/poll
+@dirrm www/data/geeklog/public_html/layout/clean/admin/story
+@dirrm www/data/geeklog/public_html/layout/clean/admin/topic
+@dirrm www/data/geeklog/public_html/layout/clean/admin/user
+@dirrm www/data/geeklog/public_html/layout/clean/admin
+@dirrm www/data/geeklog/public_html/layout/clean/article
+@dirrm www/data/geeklog/public_html/layout/clean/submit
+@dirrm www/data/geeklog/public_html/layout/clean/stats
+@dirrm www/data/geeklog/public_html/layout/clean/images/icons
+@dirrm www/data/geeklog/public_html/layout/clean/images/buttons
+@dirrm www/data/geeklog/public_html/layout/clean/images/admin
+@dirrm www/data/geeklog/public_html/layout/clean/images
+@dirrm www/data/geeklog/public_html/layout/clean/profiles
+@dirrm www/data/geeklog/public_html/layout/clean/preferences
+@dirrm www/data/geeklog/public_html/layout/clean/pollbooth
+@dirrm www/data/geeklog/public_html/layout/clean/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/clean/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/clean/calendar
+@dirrm www/data/geeklog/public_html/layout/clean/comment
+@dirrm www/data/geeklog/public_html/layout/clean/links
+@dirrm www/data/geeklog/public_html/layout/clean/theme-images
+@dirrm www/data/geeklog/public_html/layout/clean
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/calendar
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/database
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/event
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/group
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/link
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/mail
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/block
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/poll
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/story
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/topic
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin/user
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/admin
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/submit
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/article
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/stats
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/search
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/buttons
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/icons
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images/admin
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/images
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/comment
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/profiles
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/preferences
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/pollbooth
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/links
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome/users
+@dirrm www/data/geeklog/public_html/layout/Digital_Monochrome
+@dirrm www/data/geeklog/public_html/layout/Classic/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/Classic/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/Classic/calendar
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/database
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/event
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/group
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/link
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/mail
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/block
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/poll
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/story
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/topic
+@dirrm www/data/geeklog/public_html/layout/Classic/admin/user
+@dirrm www/data/geeklog/public_html/layout/Classic/admin
+@dirrm www/data/geeklog/public_html/layout/Classic/submit
+@dirrm www/data/geeklog/public_html/layout/Classic/article
+@dirrm www/data/geeklog/public_html/layout/Classic/stats
+@dirrm www/data/geeklog/public_html/layout/Classic/search
+@dirrm www/data/geeklog/public_html/layout/Classic/images/buttons
+@dirrm www/data/geeklog/public_html/layout/Classic/images/icons
+@dirrm www/data/geeklog/public_html/layout/Classic/images/admin
+@dirrm www/data/geeklog/public_html/layout/Classic/images
+@dirrm www/data/geeklog/public_html/layout/Classic/comment
+@dirrm www/data/geeklog/public_html/layout/Classic/profiles
+@dirrm www/data/geeklog/public_html/layout/Classic/preferences
+@dirrm www/data/geeklog/public_html/layout/Classic/pollbooth
+@dirrm www/data/geeklog/public_html/layout/Classic/links
+@dirrm www/data/geeklog/public_html/layout/Classic/users
+@dirrm www/data/geeklog/public_html/layout/Classic
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/calendar
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/database
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/event
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/group
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/link
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/mail
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/block
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/poll
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/story
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/topic
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin/user
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/admin
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/submit
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/article
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/stats
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/profiles
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/buttons
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/icons
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images/admin
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/images
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/comment
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/preferences
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/pollbooth
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/search
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/links
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/interface
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue/users
+@dirrm www/data/geeklog/public_html/layout/Smooth_Blue
+@dirrm www/data/geeklog/public_html/layout/XSilver/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/XSilver/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/XSilver/calendar
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/link
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/database
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/event
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/group
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/user
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/topic
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/block
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/poll
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/story
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin/mail
+@dirrm www/data/geeklog/public_html/layout/XSilver/admin
+@dirrm www/data/geeklog/public_html/layout/XSilver/submit
+@dirrm www/data/geeklog/public_html/layout/XSilver/article
+@dirrm www/data/geeklog/public_html/layout/XSilver/stats
+@dirrm www/data/geeklog/public_html/layout/XSilver/search
+@dirrm www/data/geeklog/public_html/layout/XSilver/images/icons
+@dirrm www/data/geeklog/public_html/layout/XSilver/images/buttons
+@dirrm www/data/geeklog/public_html/layout/XSilver/images/admin
+@dirrm www/data/geeklog/public_html/layout/XSilver/images
+@dirrm www/data/geeklog/public_html/layout/XSilver/comment
+@dirrm www/data/geeklog/public_html/layout/XSilver/profiles
+@dirrm www/data/geeklog/public_html/layout/XSilver/preferences
+@dirrm www/data/geeklog/public_html/layout/XSilver/pollbooth
+@dirrm www/data/geeklog/public_html/layout/XSilver/links
+@dirrm www/data/geeklog/public_html/layout/XSilver/users
+@dirrm www/data/geeklog/public_html/layout/XSilver
+@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar/dayview
+@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar/weekview
+@dirrm www/data/geeklog/public_html/layout/Yahoo/calendar
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/moderation
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/database
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/event
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/group
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/link
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/mail
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/block
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/plugins
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/poll
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/story
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/topic
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin/user
+@dirrm www/data/geeklog/public_html/layout/Yahoo/admin
+@dirrm www/data/geeklog/public_html/layout/Yahoo/submit
+@dirrm www/data/geeklog/public_html/layout/Yahoo/article
+@dirrm www/data/geeklog/public_html/layout/Yahoo/stats
+@dirrm www/data/geeklog/public_html/layout/Yahoo/search
+@dirrm www/data/geeklog/public_html/layout/Yahoo/images/buttons
+@dirrm www/data/geeklog/public_html/layout/Yahoo/images/icons
+@dirrm www/data/geeklog/public_html/layout/Yahoo/images/admin
+@dirrm www/data/geeklog/public_html/layout/Yahoo/images
+@dirrm www/data/geeklog/public_html/layout/Yahoo/comment
+@dirrm www/data/geeklog/public_html/layout/Yahoo/profiles
+@dirrm www/data/geeklog/public_html/layout/Yahoo/preferences
+@dirrm www/data/geeklog/public_html/layout/Yahoo/pollbooth
+@dirrm www/data/geeklog/public_html/layout/Yahoo/links
+@dirrm www/data/geeklog/public_html/layout/Yahoo/users
+@dirrm www/data/geeklog/public_html/layout/Yahoo
+@dirrm www/data/geeklog/public_html/layout
 @dirrm www/data/geeklog/public_html
+@dirrm www/data/geeklog/sql/updates
+@dirrm www/data/geeklog/sql
+@dirrm www/data/geeklog/backups
+@dirrm www/data/geeklog/docs/images
+@dirrm www/data/geeklog/docs
+@dirrm www/data/geeklog/plugins/staticpages/language
+@dirrm www/data/geeklog/plugins/staticpages/templates/admin
+@dirrm www/data/geeklog/plugins/staticpages/templates
+@dirrm www/data/geeklog/plugins/staticpages
+@dirrm www/data/geeklog/plugins
+@dirrm www/data/geeklog/logs
+@dirrm www/data/geeklog/system/install_templates
+@dirrm www/data/geeklog/system/databases
+@dirrm www/data/geeklog/system/classes
+@dirrm www/data/geeklog/system
+@dirrm www/data/geeklog/language/incomplete
+@dirrm www/data/geeklog/language
 @dirrm www/data/geeklog
