@@ -20,6 +20,7 @@
     SUBDIR += gdesklets
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
+    SUBDIR += gdesklets-sensor-psi_externalinterval
     SUBDIR += gdesklets-sensor-psi_iconbutton
     SUBDIR += gdesklets-sensor-psi_memo
     SUBDIR += gdesklets-sensor-psi_memoover
