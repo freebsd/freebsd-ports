@@ -13,7 +13,7 @@
 # POSTFIX_OPTIONS can be set in /etc/make.conf also.
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.0.2
+PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -105,7 +105,7 @@ READMEDIR=${PREFIX}/share/doc/postfix
 .endif
 
 do-install:
-	cd ${WRKSRC}; sh postfix-install -non-interactive install_root=/ tempdir=/tmp \
+	cd ${WRKSRC}; ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
 	 config_directory=${PREFIX}/etc/postfix \
 	 daemon_directory=${PREFIX}/libexec/postfix \
 	 command_directory=${PREFIX}/sbin \

@@ -62,6 +62,7 @@ libexec/postfix/master
 libexec/postfix/nqmgr
 libexec/postfix/pickup
 libexec/postfix/pipe
+libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
 libexec/postfix/showq
@@ -152,6 +153,7 @@ bin/mailq
 %%PORTDOCS%%share/doc/postfix/postmap.1.html
 %%PORTDOCS%%share/doc/postfix/postqueue.1.html
 %%PORTDOCS%%share/doc/postfix/postsuper.1.html
+%%PORTDOCS%%share/doc/postfix/proxymap.8.html
 %%PORTDOCS%%share/doc/postfix/qmgr.8.html
 %%PORTDOCS%%share/doc/postfix/qmqpd.8.html
 %%PORTDOCS%%share/doc/postfix/queuing.html
