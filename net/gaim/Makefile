@@ -31,13 +31,12 @@ MAN1=			gaim.1
 
 .if defined(HAVE_GNOME)
 USE_GNOME=		yes
-CONFIGURE_ARGS+=	--enable-gnome --enable-panel
+CONFIGURE_ARGS+=	--enable-panel
 .else
 CONFIGURE_ARGS+=	--disable-gnome
 .endif
 .if defined(HAVE_ESOUND)
 USE_ESOUND=		yes
-CONFIGURE_ARGS+=	--enable-esd
 .else
 CONFIGURE_ARGS+=	--disable-esd
 .endif
