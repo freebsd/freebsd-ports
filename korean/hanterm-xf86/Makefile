@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	hanterm-xf-p17
-PKGNAME=	ko-hanterm-xf-17
+DISTNAME=	hanterm-xf-p18
+PKGNAME=	ko-hanterm-xf-18
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/
 
