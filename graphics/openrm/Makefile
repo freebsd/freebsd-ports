@@ -16,7 +16,7 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			${PORTNAME}-demo-${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Development environment used to build 2D/3D/stereo graphics
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

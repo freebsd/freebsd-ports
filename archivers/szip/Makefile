@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.compressconsult.com/szip/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes

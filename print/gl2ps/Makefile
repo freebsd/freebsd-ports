@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A C library providing vector output for OpenGL application
 
 USE_GL=		yes

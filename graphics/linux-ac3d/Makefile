@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Easy to use and powerful 3D graphics modeller (trial version)
 
 .ifdef(INSTALL_DYNLINKED_VERSION)

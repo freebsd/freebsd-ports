@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	BSP node builder for OpenGL ports of the DOOM game engine
 
 .ifdef (WITH_GUI_VERSION)

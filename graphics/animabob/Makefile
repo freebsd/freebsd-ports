@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0b
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.borg.umn.edu/pub/lcse/grant/AnimaBob/
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Interactive 3D volume renderer
 
 USE_IMAKE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sdl-dc
 DISTNAME=	${PORTNAME}-1.0-2
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Apogee's Rise Of The Triad source port
 
 USE_BZIP2=	yes

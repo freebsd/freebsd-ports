@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.quesa.org/info/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	High level 3D graphics library compatible with Apple's QuickDraw(TM)
 
 USE_REINPLACE=	yes
