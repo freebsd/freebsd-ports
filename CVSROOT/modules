@@ -1066,7 +1066,6 @@ crosspad	ports/misc/crosspad
 crossword	ports/games/crossword
 crt0		-a csu
 crunch		src/usr.sbin/crunch
-crux		ports/x11-toolkits/crux
 crw		ports/graphics/crw
 cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
