@@ -68,6 +68,7 @@
     SUBDIR += gnomeuserdocs
     SUBDIR += gnomeutils
     SUBDIR += gnuls
+    SUBDIR += goldstr
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplbp
