@@ -99,6 +99,7 @@
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += mozilla-embedded
+    SUBDIR += mozilla+ipv6
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
     SUBDIR += netscape3
