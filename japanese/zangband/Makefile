@@ -9,8 +9,7 @@ PORTNAME=	zangband
 PORTVERSION=	2.4.0${JA_VERSION}
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
-		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/ \
-		http://www.geocities.co.jp/SiliconValley-SanJose/9606/zg/
+		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
 DISTFILES=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip \
 		${JA_DISTFILE}
 DIST_SUBDIR=	${PORTNAME}
@@ -41,12 +40,12 @@ ANGBANDBIN?=	bin/j${PORTNAME}
 
 E_VERSION=	${PORTVERSION:S/${JA_VERSION}//}
 
-PATCH_VERSION?=	010621
+PATCH_VERSION?=	020104
 JA_VERSION=	.j${PATCH_VERSION}
-JA_DISTFILE=	zj${E_VERSION:S/.//g}ux-${PATCH_VERSION}.tgz
+JA_DISTFILE=	z${E_VERSION:S/.//g}j104src.tgz
 
 pre-patch:
-	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/zj${E_VERSION:S/.//g}ux-${PATCH_VERSION}.tgz)
+	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${JA_DISTFILE})
 	(cd ${WRKSRC}/src ; ${PATCH} -p1 -l -s < ../zj${E_VERSION:S/.//g}.patch ; ${PATCH} -p1 -l -s < ${FILESDIR}/makefile-adjust.patch)
 
 pre-build:
