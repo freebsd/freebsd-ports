@@ -1,0 +1,11 @@
+--- ./src/configure.orig	Fri Aug  1 13:24:59 2003
++++ ./src/configure	Fri Aug  1 13:24:59 2003
+@@ -7299,7 +7299,7 @@
+       ac_prev=prefix ;;
+     -prefix=* | --prefix=* | --prefi=* | --pref=* | --pre=* | --pr=* | --p=*)
+       ;;
+-    *) ac_sub_configure_args="$ac_sub_configure_args $ac_arg" ;;
++    *) ac_sub_configure_args="$ac_arg" ;;
+     esac
+   done
+ 

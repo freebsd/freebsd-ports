@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- components/gatherer/WordPerfect/wp2x-2.3/Makefile.in.orig	Wed Dec 18 23:55:21 2002
-+++ components/gatherer/WordPerfect/wp2x-2.3/Makefile.in	Wed Dec 18 23:55:50 2002
+--- ./components/gatherer/WordPerfect/wp2x-2.3/Makefile.in.orig	Thu Feb  7 23:19:22 2002
++++ ./components/gatherer/WordPerfect/wp2x-2.3/Makefile.in	Fri Aug  1 13:24:57 2003
 @@ -29,7 +29,7 @@
  OBJS		= wp2x.o dopen.o tokens.o charsets.o
  
