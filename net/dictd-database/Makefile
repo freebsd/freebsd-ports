@@ -24,7 +24,7 @@ DISTFILES=	devils-dict-pre.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	dictd:${PORTSDIR}/net/dictd
+RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
