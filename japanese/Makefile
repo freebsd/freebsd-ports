@@ -49,6 +49,7 @@
     SUBDIR += emacs-manual
     SUBDIR += emacs20-dl-canna
     SUBDIR += emacs20-dl-wnn6
+    SUBDIR += epic4
     SUBDIR += epwutil
     SUBDIR += escpf
     SUBDIR += esecanna
