@@ -1788,9 +1788,6 @@ fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fpr		src/usr.bin/fpr
 fr-aspell       ports/french/aspell
-fr-cups		ports/french/cups
-fr-cups-base	ports/french/cups-base
-fr-cups-lpr	ports/french/cups-lpr
 fr-ispell	ports/french/ispell
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
