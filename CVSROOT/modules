@@ -6898,6 +6898,7 @@ scons		ports/devel/scons
 scotty		ports/net/scotty
 scotty3		ports/net/scotty3
 scout		ports/www/scout
+scponly		ports/shells/scponly
 scr2png		ports/graphics/scr2png
 scr2txt		ports/textproc/scr2txt
 screem		ports/www/screem
