@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Jul 17 08:39:02 2002
++++ Makefile.in	Thu Oct 10 18:14:58 2002
+@@ -93,7 +93,7 @@
+ RANLIB = @RANLIB@
+ STRIP = @STRIP@
+ 
+-SUBDIRS = . bin compiler blitz random src lib manual testsuite examples benchmarks demos
++SUBDIRS = . bin compiler blitz random src lib manual
+ VERSION = @VERSION@
+ am__include = @am__include@
+ am__quote = @am__quote@
+@@ -405,7 +405,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-demoDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
