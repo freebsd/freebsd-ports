@@ -11,27 +11,28 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus-devel
-PORTVERSION=	2.2.2a
+PORTVERSION=	2.3.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.au.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.ayamura.org/pub/nessus/nessus-${PORTVERSION}/src/
+MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.au.nessus.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.ayamura.org/pub/nessus/experimental/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
 CONFLICTS=	nessus-[0-9]* nessus-gtk-[0-9]* nessus-gtk2-[0-9]*
-LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl-devel
+LIB_DEPENDS=	nasl.5:${PORTSDIR}/security/nessus-libnasl-devel
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
-USE_LIBTOOL_VER=13
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
 WANT_GNOME=	yes
