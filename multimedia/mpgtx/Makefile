@@ -28,6 +28,12 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 	mpgtx.1 mpgjoin.1 \
 	mpgtx.1 mpgsplit.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 600000
+CFLAGS+=	-O
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
 		 s|\$$cflags \$$optimization_cflags|$$cflags|g ; \
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/mpgtx.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/tagmp3.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
