@@ -12,9 +12,13 @@ lib/eif/hap1.sh
 lib/eif/hap2.pl
 lib/eif/lev0.sh
 lib/eif/luse.sh
+lib/eif/lwith
 lib/eif/mob.sh
 lib/eif/mov
+lib/eif/nwith
 lib/eif/pop.sh
+lib/eif/pwith
+lib/eif/swith
 lib/eif/with
 @dirrm share/nls/en_US.US-ASCII
 @dirrm share/nls/POSIX
