@@ -22,6 +22,8 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 
 ONLY_FOR_ARCHS=	i386
 
+NO_PACKAGE=	"Beta software, do not distribute."
+
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
