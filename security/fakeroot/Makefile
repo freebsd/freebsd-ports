@@ -20,6 +20,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MANLANG=	"" es sv
 MAN1=		faked.1 fakeroot.1
+
+post-install:
+	${GZIP_CMD} ${MANPREFIX}/man/fr/man1/fakeroot.1
 
 .include <bsd.port.mk>

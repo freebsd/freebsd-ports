@@ -3,3 +3,4 @@ bin/fakeroot
 lib/libfakeroot.so.0
 lib/libfakeroot.so
 lib/libfakeroot.a
+man/fr/man1/fakeroot.1.gz
