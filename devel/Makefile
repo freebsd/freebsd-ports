@@ -118,6 +118,7 @@
     SUBDIR += fam
     SUBDIR += fampp
     SUBDIR += fastcrc
+    SUBDIR += fc++
     SUBDIR += ffcall
     SUBDIR += fhist
     SUBDIR += flick
