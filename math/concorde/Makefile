@@ -9,7 +9,8 @@ PORTNAME=	concorde
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	math parallel
-MASTER_SITES=	ftp://ftp.caam.rice.edu/pub/software/keck/
+MASTER_SITES=	http://www.math.princeton.edu/tsp/concorde/ \
+		ftp://ftp.caam.rice.edu/pub/software/keck/
 DISTNAME=	co991215
 EXTRACT_SUFX=	.tgz
 
