@@ -8,5 +8,5 @@ have been installed in %%PREFIX%%/etc/cups/
 To install the BSD and system V compatibility binaries look to the port
 print/cups-bin. These are no longer installed as part of the base cups port
 because they have conflicting names with the native print binaries, and with
-other ports, suck as lprNG.
+other ports, such as lprNG.
 
