@@ -1,0 +1,13 @@
+--- common/src/net_udp.c.orig	Sat Jan 11 19:51:14 2003
++++ common/src/net_udp.c	Sat Jan 11 19:51:27 2003
+@@ -43,8 +43,10 @@
+ #include "config_win32.h"
+ #include "debug.h"
+ #include "memory.h"
++#ifndef __FreeBSD__
+ #include "inet_pton.h"
+ #include "inet_ntop.h"
++#endif
+ #include "vsnprintf.h"
+ #include "net_udp.h"
+ 
