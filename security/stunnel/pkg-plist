@@ -1,6 +1,5 @@
 etc/rc.d/stunnel.sh.sample
 etc/stunnel/stunnel.conf-sample
-etc/stunnel/stunnel.pem
 lib/libstunnel.so.0
 lib/libstunnel.so
 lib/libstunnel.la
