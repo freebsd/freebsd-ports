@@ -7,7 +7,7 @@
 
 PORTNAME=       milter-sender
 PORTVERSION=    0.50
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
 DISTFILES=      libsnert-1.31.tgz milter-sender-${PORTVERSION}.tgz
@@ -28,17 +28,17 @@ MAKEFILE=       makefile
 IGNORE=         requires Sendmail 8.12
 .endif
 .if exists(${LOCALBASE}/lib/libmilter.a)
-CPPFLAGS+=     -I${LOCALBASE}/include
+CFLAGS+=       -I${LOCALBASE}/include
 LDFLAGS+=      -L${LOCALBASE}/lib
 .endif
-CPPFLAGS+=      ${PTHREAD_CFLAGS}
+CFLAGS+=        ${PTHREAD_CFLAGS}
 LDFLAGS+=       ${PTHREAD_LIBS}
 
 DOCS= CHANGES.TXT index.shtml style.css mailto.js \
       license-body.html LICENSE.TXT milter-sender.mc
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+= LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+= --with-db --localstatedir=/var/spool \
 		 --enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
