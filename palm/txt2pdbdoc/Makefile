@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	txt2pdbdoc
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	palm converters
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
