@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.36
-PORTREVISION=	3
+PORTVERSION=	1.40
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -25,18 +24,23 @@ USE_SDL=	sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
+CFLAGS+=	-I${X11BASE}/include
+
+WANT_AUTOCONF_VER=	259
+WANT_AUTOMAKE_VER=	15
+
 MAN1=		zsnes.1
 PLIST_FILES=	bin/zsnes
 
-# non-portable, for a portable version see emulators/snes9x
+# non-portable, for a portable emulator see emulators/snes9x
 ONLY_FOR_ARCHS=	i386
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}_1_40/src
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	ALL
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+pre-configure:
+	cd ${WRKSRC}; ${SH} ${ACLOCAL}; ${SH} ${AUTOCONF}
 
 .include <bsd.port.mk>
