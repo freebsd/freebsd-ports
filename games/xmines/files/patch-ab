@@ -1,0 +1,11 @@
+--- score.c	Fri Dec  3 17:18:35 1993
++++ /home/andy/tmp/wrk/score.c	Wed Aug 18 13:21:33 1999
+@@ -6,7 +6,7 @@
+ 
+ 
+ FILE *scoreFile;
+-#define SCOREfILE "/usr/X386/lib/X11/games/xbomb-scores"
++#define SCOREfILE "/usr/X11R6/share/xmines/scores"
+ #define NUMsCORES 10
+ #define NAMEsIZE 50
+ #define SCOREfORMAT "%5d %s\n"
