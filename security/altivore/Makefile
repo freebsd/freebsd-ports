@@ -15,10 +15,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	jus@security.za.net
 COMMENT=	A publically disclosed (neither GPL nor open-source) ala Carnivore src
 
-RESTRICTED=     License does not allow redistribution in any form\
+RESTRICTED=	License does not allow redistribution in any form\
 		(source, code or otherwise)
-
-BROKEN=		"Unfetchable"
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
