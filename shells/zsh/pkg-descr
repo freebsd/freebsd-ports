@@ -5,4 +5,12 @@ command-line editor, options for customising its behaviour, filename
 globbing, features to make C-shell (csh) users feel more at home and
 extra features drawn from tcsh (another `custom' shell).
 
+If you want to use zsh completion system, you should type the following
+commands:
+
+	$ autoload -U compinstall
+	$ compinstall
+
+See also zshcompsys(1) manpages. :)
+
 WWW: http://www.zsh.org/

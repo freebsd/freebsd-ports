@@ -1,21 +1,11 @@
---- Doc/Makefile.in.orig	Wed Jul 14 20:59:48 1999
-+++ Doc/Makefile.in	Fri Sep 10 22:27:01 1999
-@@ -91,7 +91,8 @@
- everything: all zsh_us.ps zsh_a4.ps zsh_toc.html
+--- Doc/Makefile.in.orig	Thu Apr 20 04:03:42 2000
++++ Doc/Makefile.in	Sat Apr 29 00:04:52 2000
+@@ -37,7 +37,7 @@
  
- zsh.info: zsh.texi
--	@$(MAKEINFO) -I$(srcdir) $(srcdir)/zsh.texi || { \
-+	@rm -f zsh.info
-+	@$(MAKEINFO) --no-split -I$(srcdir) $(srcdir)/zsh.texi || { \
- 	echo Info documentation cannot be compiled without $(MAKEINFO). ; \
- 	echo You can find precompiled info files in zsh-doc.tar.gz. ; }
+ @DEFS_MK@
  
-@@ -125,7 +126,7 @@
- # install info pages, creating install directory if necessary
- install.info: zsh.info
- 	$(top_srcdir)/mkinstalldirs $(infodir)
--	for file in zsh.info zsh.info-[1-9]*; do \
-+	for file in zsh.info*; do \
- 	  [ -f "$$file" ] && $(INSTALL_DATA) $$file $(infodir) ; \
- 	done
- 
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
+ TEXI2DVI = texi2dvi
+ DVIPS = dvips
+ TEXI2HTML = texi2html -expandinfo -split_chapter
