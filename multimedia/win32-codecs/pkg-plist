@@ -59,6 +59,11 @@ lib/win32/nsrt2432.acm
 lib/win32/pclepim1.dll
 lib/win32/qdv.dll
 lib/win32/qpeg32.dll
+lib/win32/QuickTime.qts
+lib/win32/QuickTime.qts.htcfg
+lib/win32/QuickTimeEssentials.qtx
+lib/win32/QuickTimeInternetExtras.qtx
+lib/win32/qtmlClient.dll
 lib/win32/rt32dcmp.dll
 lib/win32/sp5x_32.dll
 lib/win32/tm20dec.ax
@@ -70,7 +75,12 @@ lib/win32/vgpix32d.dll
 lib/win32/vivog723.acm
 lib/win32/voxmsdec.ax
 lib/win32/vp31vfw.dll
+lib/win32/wma9dmod.dll
+lib/win32/wmadmod.dll
+lib/win32/wmspdmod.dll
 lib/win32/wmv8ds32.ax
+lib/win32/wmv9dmod.dll
+lib/win32/wmvdmod.dll
 lib/win32/wmvds32.ax
 lib/win32/%%PKGNAME%%
 @dirrm lib/win32
