@@ -7,7 +7,7 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.14 1999/02/03 11:11:54 asami Exp $
+# $Id: Makefile,v 1.15 1999/04/03 02:02:12 ache Exp $
 #
 
 DISTNAME=       ast54unx
@@ -34,10 +34,9 @@ do-install:
 	-@${MKDIR} ${PREFIX}/lib/astrolog
 	cd ${DISTDIR}/${DIST_SUBDIR} && \
 		${INSTALL_DATA} ${EPHEM} ${PREFIX}/lib/astrolog
-	cd ${WRKSRC} && \
-		if [ -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
-			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
-		else \
+	cd ${WRKSRC}; \
+		${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog/astrolog.dat-dist; \
+		if [ ! -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
 			${INSTALL_DATA} astrolog.dat ${PREFIX}/lib/astrolog; \
 		fi
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} astrolog ${PREFIX}/bin
