@@ -1,21 +1,27 @@
---- Makefile.orig	Sat Nov 24 15:12:48 2001
-+++ Makefile	Fri Jan  4 19:36:34 2002
-@@ -7,21 +7,21 @@
+--- Makefile.orig	Sun Feb 17 23:47:21 2002
++++ Makefile	Sun Feb 17 23:51:49 2002
+@@ -7,26 +7,26 @@
  
  # Change this for local installation, 
  # e. g. /home/user or /usr/local
--prefix = /usr
-+# prefix = /usr
+-prefix = /usr/local
++#prefix = /usr/local
  
  # Change this for some distributions (current setting
  # is OK for SuSE)
--docdir = $(prefix)/share/doc/packages
+-docdir = /usr/share/doc/packages
 +docdir = ${PREFIX}/share/doc
  
  # Change this to $(prefix)/man for older distributions
  # (current setting is correct according to LSB)
 -mandir = $(prefix)/share/man
 +mandir = ${PREFIX}/man
+ 
+ #
+ # Muttprint needs GNU make. If you installed GNU make
+ # as `gmake', you have to change this
+-MAKE = make
++#MAKE = make
  
  # Change this three directories only if you're know
  # what you do
@@ -28,7 +34,7 @@
  
  #####################################################
  #####################################################
-@@ -30,23 +30,25 @@
+@@ -35,23 +35,25 @@
  INSTALLBIN = $(install) -m 0755 
  INSTALL = $(install) -m 0644 
  
@@ -47,18 +53,18 @@
 -	$(INSTALLBIN) muttprint $(bindir)/
 -	$(INSTALL) CHANGES COPYING INSTALL README* sample-muttprintrc-* \
 -		$(docdir)/muttprint/
--	$(INSTALL) pics/* $(sharedir)/muttprint/
--	$(INSTALL) translations/* $(libdir)/muttprint/
--	make -C doc/manual docdir=$(docdir) install
--	make -C doc/manpages mandir=$(mandir) install
+-	$(INSTALL) `find pics -type f -print` $(sharedir)/muttprint/
+-	$(INSTALL) `find translations -type f -print` $(libdir)/muttprint/
+-	$(MAKE) -C doc/manual docdir=$(docdir) install
+-	$(MAKE) -C doc/manpages mandir=$(mandir) install
 +	${BSD_INSTALL_SCRIPT} muttprint $(bindir)/
-+	${BSD_INSTALL_DATA} pics/* $(sharedir)/muttprint/
-+	${BSD_INSTALL_DATA} translations/* $(libdir)/muttprint/
++	${BSD_INSTALL_DATA} `find pics -type f -print` $(sharedir)/muttprint/
++	${BSD_INSTALL_DATA} `find translations -type f -print` $(libdir)/muttprint/
 +
 +install-with-doc: install
 +	mkdir -p $(docdir)/muttprint
 +	${BSD_INSTALL_DATA} CHANGES COPYING INSTALL README* \
-+	        sample-muttprintrc-* $(docdir)/muttprint/
++		sample-muttprintrc-* $(docdir)/muttprint/
 +	${MAKE} -C doc/manual docdir=$(docdir) install
 +	${MAKE} -C doc/manpages mandir=$(mandir) install
  
