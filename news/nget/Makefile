@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nget
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nget
@@ -21,10 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Fails to link"
-.endif
 
 post-extract:
 	${LN} -s nget-${PORTVERSION} ${WRKDIR}/${DISTNAME}

@@ -1,0 +1,12 @@
+*** misc.cc.org	Thu Jun 26 17:04:21 2003
+--- misc.cc	Thu Jun 26 17:04:35 2003
+***************
+*** 162,167 ****
+--- 162,168 ----
+  #endif
+  template string durationstr(ulong);
+  template string durationstr(long);
++ template string durationstr(int);
+  
+  char *text_month[13]={"Jan", "Feb", "Mar", "Apr",
+  	"May", "Jun", "Jul", "Aug",
