@@ -6,13 +6,13 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.56 1999/04/10 07:53:03 dirk Exp $
+# $Id: Makefile,v 1.57 1999/06/02 07:20:36 dirk Exp $
 
 APACHE= 	1.3.6
 APACHE-SSL=	1.35
 
 DISTNAME=       apache_${APACHE}
-PKGNAME=        apache-${APACHE}+ssl_${APACHE-SSL}
+PKGNAME=        apache+ssl-${APACHE}+${APACHE-SSL}
 CATEGORIES=	www security
 MASTER_SITES=   ftp://www.apache.org/dist/ \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
