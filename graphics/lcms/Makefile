@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.littlecms.com/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.littlecms.com/
+MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
 
@@ -21,12 +23,13 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/lcms
 	${CP} -rp ${WRKSRC}/../doc/* ${WRKSRC}/../tifficc/tifficc.c \
+		${WRKSRC}/../jpegicc/jpegicc.c ${WRKSRC}/../jpegicc/iccjpeg.c \
 		${WRKSRC}/../samples/wtpt.c ${WRKSRC}/../samples/icctrans.c \
 		${PREFIX}/share/doc/lcms/
 .endif
 
 post-build test:
 	cd ${WRKSRC}/../testbed && \
-		${SETENV} CFLAGS="${CFLAGS} -I../include" make -E CFLAGS test
+		${SETENV} CFLAGS="${CFLAGS} -I../include" ${MAKE} -E CFLAGS test
 
 .include <bsd.port.mk>
