@@ -13,7 +13,7 @@ MASTER_SITES=	http://darkbot.sourceforge.net/archive/unix/ \
 		http://www.BSDCode.org/port/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
-MAINTAINER=	backslash@BSDCode.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC talking bot with a very fast algorithm for its database
 
 PLIST=		${WRKDIR}/plist
