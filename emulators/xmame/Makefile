@@ -19,6 +19,7 @@ MAINTAINER?=	stijn@win.tue.nl
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
 
 MAN6=		x${MAMEMESS}.6
 
@@ -208,7 +209,7 @@ WITH_ESOUND=	no
 
 .if ${WITH_ESOUND:L} == "yes"
 ESOUNDCOMMENT=
-USE_ESOUND=	yes
+USE_GNOME=	esound
 .else
 ESOUNDCOMMENT=\#\ 
 .endif

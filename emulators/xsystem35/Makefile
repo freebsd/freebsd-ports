@@ -15,8 +15,9 @@ MAINTAINER=	sf@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+WANT_GNOME=	yes
 
 PKGMESSAGE=	${WRKSRC}/MESSAGE
 
@@ -50,8 +51,8 @@ CONFIGURE_ARGS=	--without-included-gettext \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-audio=oss,esd --with-default-output=esd
 .else
 CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
