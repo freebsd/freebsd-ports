@@ -1,14 +1,34 @@
---- ../../work.orig/elk-3.0/src/print.c	Thu Apr  4 08:25:04 1996
-+++ src/print.c	Mon Oct 21 15:48:05 2002
-@@ -5,6 +5,7 @@
+--- src/print.c.orig	Thu Apr  4 15:25:04 1996
++++ src/print.c	Thu Aug  7 18:42:43 2003
+@@ -5,7 +5,8 @@
  
  #include <errno.h>
  #include <ctype.h>
+-#include <varargs.h>
 +#include <string.h>
- #include <varargs.h>
++#include <stdarg.h>
  
  #ifdef FLUSH_TIOCFLUSH
-@@ -555,10 +556,6 @@
+ #  include <sys/ioctl.h>
+@@ -95,15 +96,11 @@
+ #endif
+ 
+ /*VARARGS0*/
+-Printf (va_alist) va_dcl {
++Printf (Object port, char *fmt, ...) {
+     va_list args;
+-    Object port;
+-    char *fmt;
+     char buf[1024];
+ 
+-    va_start (args);
+-    port = va_arg (args, Object);
+-    fmt = va_arg (args, char *);
++    va_start (args, fmt);
+     if (PORT(port)->flags & P_STRING) {
+ 	vsprintf (buf, fmt, args);
+ 	Print_String (port, buf, strlen (buf));
+@@ -555,10 +552,6 @@
      char *p;
      register c;
      char buf[256];
@@ -19,7 +39,7 @@
      GC_Node;
      Alloca_Begin;
  
-@@ -573,13 +570,13 @@
+@@ -573,13 +566,13 @@
  	    } else if (c == '%') {
  		Print_Char (port, '\n');
  	    } else if (c == 'e' || c == 'E') {

@@ -1,0 +1,44 @@
+--- src/error.c.orig	Thu Aug  7 18:31:32 2003
++++ src/error.c	Thu Aug  7 18:38:46 2003
+@@ -1,5 +1,5 @@
+ #include <ctype.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ #include "kernel.h"
+ 
+@@ -40,13 +40,11 @@
+ /*VARARGS1*/
+ Fatal_Error (foo) char *foo; { foo = foo; }
+ #else
+-Fatal_Error (va_alist) va_dcl {
++Fatal_Error (char *fmt, ...) {
+     va_list args;
+-    char *fmt;
+     
+     Disable_Interrupts;
+-    va_start (args);
+-    fmt = va_arg (args, char *);
++    va_start (args, fmt);
+     (void)fflush (stdout);
+     if (appname)
+ 	fprintf (stderr, "\n%s: fatal error: ", appname);
+@@ -89,15 +87,14 @@
+ /*VARARGS1*/
+ Primitive_Error (foo) char *foo; { foo = foo; }
+ #else
+-Primitive_Error (va_alist) va_dcl {
++Primitive_Error (char *fmt, ...) {
+     va_list args;
+-    register char *p, *fmt;
++    register char *p;
+     register i, n;
+     Object msg, sym, argv[10];
+     GC_Node; GCNODE gcv;
+ 
+-    va_start (args);
+-    fmt = va_arg (args, char *);
++    va_start (args, fmt);
+     for (n = 0, p = fmt; *p; p++)
+ 	if (*p == '~' && p[1] != '~' && p[1] != '%'
+ 		&& p[1] != 'E' && p[1] != 'e')

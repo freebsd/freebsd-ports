@@ -1,0 +1,31 @@
+--- include/extern.h.orig	Thu Aug  7 18:36:06 2003
++++ include/extern.h	Thu Aug  7 19:00:01 2003
+@@ -82,8 +82,8 @@
+ 
+ /* Error handling
+  */
+-extern Primitive_Error P_((ELLIPSIS));
+-extern Fatal_Error P_((ELLIPSIS));
++extern Primitive_Error P_((char*, ...));
++extern Fatal_Error P_((char*, ...));
+ extern Range_Error P_((Object));
+ extern Panic P_((const char*));
+ extern Object P_Error P_((int, Object*));
+@@ -313,7 +313,7 @@
+ extern Object P_Get_Output_String P_((Object));
+ extern Check_Output_Port P_((Object));
+ extern Discard_Output P_((Object));
+-extern Printf P_((ELLIPSIS));
++extern Printf P_((Object, char*, ...));
+ extern Print_Object P_((Object, Object, int, int, int));
+ extern General_Print_Object P_((Object, Object, int));
+ extern Format P_((Object, const char*, int, int, Object*));
+@@ -433,7 +433,7 @@
+  */
+ extern void Register_Object P_((Object, GENERIC, PFO, int));
+ extern void Deregister_Object P_((Object));
+-extern Object Find_Object P_((ELLIPSIS));
++extern Object Find_Object P_((int, GENERIC, MATCHFUN, ...));
+ extern void Terminate_Group P_((GENERIC));
+ extern void Terminate_Type P_((int));
+ 
