@@ -1,0 +1,21 @@
+$FreeBSD$
+
+--- ncl-2.0/src/Makefile.orig	Thu Mar 28 11:17:10 2002
++++ ncl-2.0/src/Makefile	Thu Mar 28 11:17:44 2002
+@@ -2,11 +2,11 @@
+ SRC_DIR		= ./
+ 
+ # compiler switches 
+-CC              = gcc
+-CXX             = g++
+-CXXFLAGS        = -O4
+-LOADLIBES       = -lm
+-CLINKER         = g++
++CC              ?= gcc
++CXX             ?= g++
++CXXFLAGS        ?= -O4
++LOADLIBES       ?= -lm
++CLINKER         ?= g++
+ 
+ # target macros
+ EXECS		= ncltest basiccmdline makedoc
