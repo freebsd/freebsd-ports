@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/08/13 10:22:52	1.1
++++ src/Makefile.in	2001/08/13 10:23:24
+@@ -1092,7 +1092,7 @@
+ 	gui-clipboard.h main.h eval.h position.h parse-util.h ranges.h \
+ 	history.h str.h cell.h gui-file.h search.h \
+ 	sheet-object-container.h sheet-object-bonobo.h \
+-	sheet-object-impl.h ../idl/Evolution-Composer.h gnumeric-util.h \
++	sheet-object-impl.h \
+ 	gutils.h widgets/gnumeric-toolbar.h \
+ 	widgets/widget-editable-label.h pixmaps/equal-sign.xpm
+ workbook-control.o: workbook-control.c ../config.h \

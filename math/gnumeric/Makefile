@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.68
+PORTVERSION=	0.69
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
-		gnomeole2.0:${PORTSDIR}/devel/libole2 \
+LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
@@ -26,8 +25,9 @@ USE_GNOME=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl -lgiconv"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -lintl -lgiconv ${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
