@@ -22,7 +22,13 @@ CONFIGURE_ARGS=		--arch arch/x86-freebsd
 
 MAN2=			coro.2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=			"Broken by changes to make(1) on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	${CP} -r ${WRKSRC}/arch/x86-linux ${WRKSRC}/arch/x86-freebsd
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
