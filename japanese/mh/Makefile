@@ -15,6 +15,8 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 
 MAINTAINER=	motoyuki@freebsd.org
 
+FORBIDDEN=	"Buffer overflow in MIME parsing code, exploitable via email. Since mh is no longer actively developed, this bug may not get fixed - consider using the nmh port in ${PORTSDIR}/mail/nmh, which is the successor to mh, although does not currently have Japanese extensions."
+
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
