@@ -80,7 +80,15 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/sysadmin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/upgrading.html
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/LDAP_SASLAUTHD
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/saslauthd/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/saslauthd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl2
 @mode ug=rwx,o=
