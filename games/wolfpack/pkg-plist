@@ -6,7 +6,6 @@ wolfpack/bin/files
 wolfpack/bin/pconfig
 wolfpack/data/auth
 wolfpack/data/econfig
-wolfpack/data/hours
 wolfpack/doc/CHANGES
 wolfpack/doc/CHANGES2.3
 wolfpack/doc/CHANGES3.0
