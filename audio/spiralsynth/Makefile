@@ -1,6 +1,6 @@
 # New ports collection makefile for:	spiralsynth
 # Date created:				2000-09-05
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

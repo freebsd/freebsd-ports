@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xdiskusage
 # Date created:				2000-09-23
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	festdoc
 # Date created:        			2000-06-16
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 # based on the NetBSD port
 #
 # $NetBSD: Makefile,v 1.7 2000/01/05 17:56:46 wiz Exp $

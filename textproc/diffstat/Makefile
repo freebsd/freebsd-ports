@@ -1,6 +1,6 @@
 # New ports collection makefile for:	diffstat
 # Date created:		Oct 23, 1999
-# Whom:			Trevor Johnson <trevor@jpj.net>
+# Whom:			Trevor Johnson
 #
 # $FreeBSD$
 #

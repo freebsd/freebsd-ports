@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sapphire
 # Date created:		26 Jan 2000
-# Whom:			trevor@jpj.net
+# Whom:			Trevor Johnson
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:   p5-GnuPG-Interface
 # Date created:                                2000-07-09
-# Whom:                                        Trevor Johnson <trevor@jpj.net>
+# Whom:                                        Trevor Johnson
 #
 # $FreeBSD$
 #

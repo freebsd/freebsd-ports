@@ -1,6 +1,6 @@
 # New ports collection makefile for:	autozen
 # Date created:				2000-09-16
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

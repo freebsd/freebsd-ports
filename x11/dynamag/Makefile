@@ -1,6 +1,6 @@
 # New ports collection makefile for:	dynamag
 # Date created:        			2000-09-22
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wrapper
 # Date created:				2000-09-18
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

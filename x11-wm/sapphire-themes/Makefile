@@ -1,6 +1,6 @@
 # New ports collection makefile for:	sapphire-themes
 # Date created:		2000-09-04
-# Whom:			trevor@jpj.net
+# Whom:			Trevor Johnson
 #
 # $FreeBSD$
 #

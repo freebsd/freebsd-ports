@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xwave
 # Date created:				11 June 2000
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 #
 # $FreeBSD$
 #

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	festvox-tll
 # Date created:        			2000-06-20
-# Whom:					Trevor Johnson <trevor@jpj.net>
+# Whom:					Trevor Johnson
 # based on the NetBSD port
 #
 # $NetBSD: Makefile,v 1.10 2000/02/15 09:26:17 agc Exp $
