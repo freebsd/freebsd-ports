@@ -1,0 +1,17 @@
+etc/bjorb.conf.sample
+etc/rc.d/bjorb.sh.sample
+sbin/bjorb
+share/doc/bjorb/COPYRIGHT
+share/doc/bjorb/README
+share/doc/bjorb/COPYRIGHT.jp
+share/doc/bjorb/INSTALL.jp
+share/doc/bjorb/README.jp
+share/doc/bjorb/bjorb.conf.5.jp.txt
+share/doc/bjorb/features.jp
+@dirrm share/doc/bjorb
+share/examples/bjorb/mail-client.conf
+share/examples/bjorb/mail-server.conf
+share/examples/bjorb/telnet-client.conf
+share/examples/bjorb/telnet-server.conf
+@dirrm share/examples/bjorb
+@exec ( [ -f %D/certs/bjorb.pem ] && exit ; echo "Making certificate files" ; cd %D/certs ; ssleay req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; ln -s bjorb.pem `ssleay x509 -noout -hash < bjorb.pem`.0 ; chmod 644 %D/certs/bjorb.pem )

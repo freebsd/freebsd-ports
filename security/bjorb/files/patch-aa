@@ -1,0 +1,41 @@
+--- ../../bjorb-0.5.3p1/src/Makefile.in	Tue May 26 19:35:33 1998
++++ src/Makefile.in	Sun Jul 19 19:32:48 1998
+@@ -27,7 +27,7 @@
+ LDFLAGS =
+ LIBS = @LIBS@
+ 
+-PREFIX = @prefix@
++PREFIX ?= @prefix@
+ exec_prefix = $(PREFIX)
+ sbindir = $(exec_prefix)/sbin
+ etcdir = $(exec_prefix)/etc
+@@ -43,10 +43,10 @@
+ 
+ ### SSL Configuration
+ 
+-SSLTOP      = /usr/local/ssl
++SSLTOP      = $(PREFIX)
+ SSL_CFLAGS  = -I$(SSLTOP)/include
+ SSL_LDFLAGS = -L$(SSLTOP)/lib
+-SSL_LIBS    = -lssl -lcrypto
++SSL_LIBS    = -lssl -lcrypto -lRSAglue -lrsaref
+ 
+ ###
+ # %EXPORT%
+@@ -132,9 +132,13 @@
+ 	autoconf
+ 
+ certificate::
+-	$(SSLTOP)/bin/req -new -x509 -out new.pem -nodes -days 365
+-	cat new.pem privkey.pem > $(etcdir)/bjorb.pem
+-	@rm new.pem privkey.pem
++	(\
++	[ -f $(PREFIX)/certs/bjorb.pem ] && exit 0; \
++	cd $(PREFIX)/certs; \
++	ssleay req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; \
++	ln -s bjorb.pem `ssleay x509 -noout -hash < bjorb.pem`.0 ;\
++	chmod 644 $(PREFIX)/certs/bjorb.pem; \
++	)
+ 
+ install-freebsd::
+ 	cp ../doc/sample/bjorb.sh /usr/local/etc/rc.d/bjorb.sh
