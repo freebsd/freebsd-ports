@@ -76,6 +76,7 @@
     SUBDIR += mtop
     SUBDIR += myodbc
     SUBDIR += mysql++
+    SUBDIR += mysql-administrator
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor
     SUBDIR += mysql-gui
