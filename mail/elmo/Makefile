@@ -37,7 +37,10 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/env perl|${PERL}|" \
+	@${REINPLACE_CMD} -e "s|/usr/bin/env perl|${PERL} -w|" \
 		${WRKSRC}/src/elmoconf.pl
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

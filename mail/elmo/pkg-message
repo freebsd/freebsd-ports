@@ -1,0 +1,6 @@
+==============
+In order to use elmo, you must run the script elmoconf.pl,
+which will interactively create your elmo configuration file.
+Additionally, you must input some basic smtp settings if you
+want to be able to send messages.
+==============
