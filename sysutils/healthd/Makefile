@@ -43,6 +43,10 @@ EXTRA_PATCHES=	files/healthd.sh-500038
 USE_RC_SUBR=	yes
 .endif
 
+.if ${OSVERSION} > 502110
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh
 	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
