@@ -1,6 +1,15 @@
+@comment $FreeBSD$
 bin/gsed
-@unexec install-info --delete %D/info/sed.info %D/info/dir
+@unexec install-info --quiet --delete %D/info/sed.info %D/info/dir
 info/sed.info
 @exec install-info %D/info/sed.info %D/info/dir
+%%PORTDOCS%%share/doc/gsed/AUTHORS
+%%PORTDOCS%%share/doc/gsed/BUGS
+%%PORTDOCS%%share/doc/gsed/COPYING
+%%PORTDOCS%%share/doc/gsed/COPYING.DOC
+%%PORTDOCS%%share/doc/gsed/NEWS
+%%PORTDOCS%%share/doc/gsed/README
+%%PORTDOCS%%share/doc/gsed/THANKS
 share/examples/gsed/dc.sed
 @dirrm share/examples/gsed
+%%PORTDOCS%%@dirrm share/doc/gsed
