@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.0.11
+PORTVERSION=	0.0.12
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-kerberos5
 INSTALLS_SHLIB=	yes
@@ -31,6 +31,9 @@ INFO=	gss
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include "Makefile.man"
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -39,5 +42,4 @@ USE_GETTEXT=		yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
