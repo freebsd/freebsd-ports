@@ -2,4 +2,4 @@ bin/nedit
 bin/nc
 man/man1/nedit.1.gz
 man/man1/nc.1.gz
-lib/X11/app-defaults/NEdit.ad
+lib/X11/app-defaults/NEdit
