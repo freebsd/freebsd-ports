@@ -1,0 +1,31 @@
+--- h2n.orig	Sun Apr  9 02:29:50 2000
++++ h2n	Sun Apr  9 02:32:19 2000
+@@ -20,6 +20,7 @@
+ $dontdodomains = 0;
+ $Bootfile = "./named.boot";
+ $Domain = "";
++$DomainAddress = "";
+ $Hostfile = "/etc/hosts";
+ $Commentfile = "";
+ $Commentfileread = 0;
+@@ -395,6 +396,10 @@
+     foreach $s (@Servers) {
+ 	print $file "  IN  NS  $s\n";
+     }
++    if ($DomainAddress ne "") {
++        print $file "  IN  A   $DomainAddress";
++    }
++
+     print $file "\n";
+ }
+ 
+@@ -628,6 +633,9 @@
+ 
+ 	} elsif ($option eq "-h"){
+ 	    $Host = $args[++$i];
++
++	} elsif ($option eq "-a"){
++	    $DomainAddress = $args[++$i];
+ 
+ 	} elsif ($option eq "-o"){
+ 	    if (   $args[++$i] !~ /^[:\d]*$/ 

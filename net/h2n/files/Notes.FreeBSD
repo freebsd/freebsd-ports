@@ -1,0 +1,5 @@
+- Added an option: -a <address> .
+ It allows you to set the address of a domain in the SOA record.
+ It will adds a "IN A <address>" line to the SOA.
+ This is needed for sites that want a default address for a partial name -
+ say just yahoo.com instead of forcing users to always type www.yahoo.com.
