@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Jan 16 07:49:52 2003
++++ Makefile	Thu May  1 18:53:05 2003
+@@ -1,15 +1,14 @@
+ all:ttt
+-CC=gcc
+ CC_GTK_FLAGS=`gtk-config --cflags`
+ LINK_GTK_FLAGS=`gtk-config --libs`
+ FLAGS=-c -Wall 
+ ttt.h:ai.h gui.h
+ main.o:main.c ttt.h 
+-	$(CC) $(FLAGS) main.c
++	$(CC) $(CFLAGS) -c main.c
+ gui.o:gui.c ttt.h gui.h
+-	$(CC) $(FLAGS) gui.c $(CC_GTK_FLAGS)
+-ai.o:ai.c ttt.h ai.h
+-	$(CC) $(FLAGS) ai.c
++	$(CC) $(CFLAGS) -c gui.c $(CC_GTK_FLAGS)
++ai.o:ai.c ttt.h ai.h 
++	$(CC) $(CFLAGS) -c ai.c
+ ttt:main.o gui.o ai.o
+ 	$(CC) $(LINK_FLAGS) $(LINK_GTK_FLAGS) $^  -o $@
+ clean:
