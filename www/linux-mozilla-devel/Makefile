@@ -22,6 +22,7 @@ PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
+FORBIDDEN=	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339 "
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
