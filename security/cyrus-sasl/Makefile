@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	1.5.21
+PORTVERSION=	1.5.24
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_LOCAL} \
