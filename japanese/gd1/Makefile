@@ -12,6 +12,9 @@ COMMENT=	A graphics library for fast image creation with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../graphics/gd1
 
+DEPRECATED=	ancient, gd2 should be API compatible
+EXPIRATION_DATE=	2004-05-01
+
 LATEST_LINK=	ja-gd1
 CPPFLAGS+=	-DJISX0208
 
