@@ -59,6 +59,7 @@
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-Set-IntSpan
     SUBDIR += p5-Statistics-ChiSquare
+    SUBDIR += p5-Statistics-Descriptive
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += physcalc
