@@ -2,6 +2,7 @@
 %%GUI:%%bin/ODBCConfig
 bin/dltest
 bin/isql
+bin/iusql
 bin/odbcinst
 %%GUI:%%bin/odbctest
 include/autotest.h
@@ -12,6 +13,8 @@ include/sqlext.h
 include/sqltypes.h
 include/sqlucode.h
 include/uodbc_stats.h
+etc/odbc.ini
+etc/odbcinst.ini
 lib/libboundparam.a
 lib/libboundparam.so
 lib/libboundparam.so.1
