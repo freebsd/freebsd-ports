@@ -13,14 +13,14 @@ diff -u psOpt.cpp.orig psOpt.cpp
 -  string fontSize = fontSizeEdit->text();
 -  string hSize = horizSize->text();
 -  string vSize = vertSize->text();
-+  string mode = string(modeList->currentText());
-+  string color = string(colorList->currentText());
-+  string dashed = string(dashedList->currentText());
-+  string enhanced = string(enhancedList->currentText());
-+  string fontName = string(fontNameEdit->text());
-+  string fontSize = string(fontSizeEdit->text());
-+  string hSize = string(horizSize->text());
-+  string vSize = string(vertSize->text());
++  string mode = modeList->currentText().ascii();
++  string color = colorList->currentText().ascii();
++  string dashed = dashedList->currentText().ascii();
++  string enhanced = enhancedList->currentText().ascii();
++  string fontName = fontNameEdit->text().ascii();
++  string fontSize = fontSizeEdit->text().ascii();
++  string hSize = horizSize->text().ascii();
++  string vSize = vertSize->text().ascii();
  
    gnuInt->setTermPSmode(mode);
    gnuInt->setTermPScolor(color);

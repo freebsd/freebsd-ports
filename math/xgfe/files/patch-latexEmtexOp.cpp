@@ -8,9 +8,9 @@ diff -u latexEmtexOp.cpp.orig latexEmtexOp.cpp
 -  string font = FontList->currentText();
 -  string size = FontSizeList->currentText();
 -  string otherSize = FontSizeOther->text();
-+  string font = string(FontList->currentText());
-+  string size = string(FontSizeList->currentText());
-+  string otherSize = string(FontSizeOther->text());
++  string font = FontList->currentText().ascii();
++  string size = FontSizeList->currentText().ascii();
++  string otherSize = FontSizeOther->text().ascii();
  
    gnuInt->setTermLateXEmtexFont(font);
      

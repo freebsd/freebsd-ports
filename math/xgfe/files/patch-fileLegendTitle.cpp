@@ -6,7 +6,7 @@ diff -u fileLegendTitle.cpp.orig fileLegendTitle.cpp
  void fileLegendTitle::setFileLegendTitleOK()
  {
 -  string title = fileLegendTitleEdit->text();
-+  string title = string(fileLegendTitleEdit->text());
++  string title = fileLegendTitleEdit->text().ascii();
    gnuInt->setFileLegendTitle(title);
  
    if (defaultCButton->isChecked() == TRUE)

@@ -6,7 +6,7 @@ diff -u boxWidthOp.cpp.orig boxWidthOp.cpp
  void boxWidthOp::setBoxWidth()
  {
 -  string width = boxWidthEdit->text();
-+  string width = string(boxWidthEdit->text());
++  string width = boxWidthEdit->text().ascii();
    
    gnuInt->setBoxWidth(width);
  
