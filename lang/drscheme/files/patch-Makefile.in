@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Mon Dec  8 07:47:49 2003
++++ Makefile.in	Sun Mar  7 14:24:13 2004
+@@ -87,9 +87,9 @@
+ 
+ copytree:
+ 	if [ ! -d $(prefix) ] ; then mkdir $(prefix) ; fi
+-	cp -p -r $(srcdir)/../collects $(prefix)/.
+-	cp -p -r $(srcdir)/../include $(prefix)/.
+-	cp -p -r $(srcdir)/../notes $(prefix)/.
+-	cp -p -r $(srcdir)/../man $(prefix)/.
+-	if [ -d $(srcdir)/../teachpack ] ; then  cp -r $(srcdir)/../teachpack $(prefix)/teachpack ; fi
++	cp -p -R $(srcdir)/../collects $(prefix)/.
++	cp -p -R $(srcdir)/../include $(prefix)/.
++	cp -p -R $(srcdir)/../notes $(prefix)/.
++	cp -p -R $(srcdir)/../man $(prefix)/.
++	if [ -d $(srcdir)/../teachpack ] ; then mkdir $(prefix)/teachpack; cp -R -p $(srcdir)/../teachpack/* $(prefix)/teachpack ; fi
+ 	if [ @MZINSTALLTARGET@ = "normal-install" ] ; then cp -p $(srcdir)/../install $(prefix)/install ; fi
