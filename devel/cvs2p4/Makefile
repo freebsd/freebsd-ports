@@ -25,6 +25,7 @@ post-patch:
 		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
 		${WRKSRC}/test/config
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
 	${MKDIR} ${PREFIX}/${PORTNAME}
