@@ -27,7 +27,7 @@ DATE=		1999121400
 
 post-patch:
 .if ${ARCH} == "alpha"
-	@(cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-alpha || ${ECHO})
+	@(cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-alpha || ${ECHO})
 .endif
 
 do-install:
