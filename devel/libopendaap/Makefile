@@ -7,6 +7,7 @@
 
 PORTNAME=	libopendaap
 PORTVERSION=	0.3.0
+PORTREIVSION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
@@ -18,6 +19,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_INC_LIBTOOL_VER=15
 USE_GCC=	3.4
+MAN3=		libopendaap.3
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"
 
