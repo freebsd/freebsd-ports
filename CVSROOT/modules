@@ -1922,6 +1922,7 @@ gd1		ports/graphics/gd1
 gdal		ports/graphics/gdal
 gdb52		ports/devel/gdb52
 gdb53		ports/devel/gdb53
+gdb53-act	ports/devel/gdb53-act
 gdbm		ports/databases/gdbm
 gdbmods		ports/devel/gdbmods
 gdcalc		ports/math/gdcalc
