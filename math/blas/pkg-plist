@@ -1,3 +1,6 @@
-lib/libcor.a
-lib/libcor.so.1.0
+lib/libblas.a
+lib/libblas.so.1.0
+share/doc/blas/blas2-paper.ps.gz
+share/doc/blas/blas3-paper.ps.gz
+share/doc/blas/blasqr.ps.gz
 @exec /sbin/ldconfig -m %B
