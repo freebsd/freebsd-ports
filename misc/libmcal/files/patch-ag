@@ -1,16 +1,17 @@
 --- icalroutines.c.orig	Tue Jan 25 04:08:10 2000
-+++ icalroutines.c	Thu May 11 21:43:23 2000
++++ icalroutines.c	Sun Jan 20 13:21:22 2002
 @@ -1,5 +1,5 @@
  /*
 - *	#$Id: icalroutines.c,v 1.1 2000/01/25 03:08:10 markie Exp $
-+ *	#$Id: icalroutines.c,v 1.2 2000/05/11 19:43:23 inan Exp $
++ *	#$Id: icalroutines.c,v 1.3 2001/12/10 03:16:41 chuck Exp $
   *
   * Libmcal - Modular Calendar Access Library 
   * Copyright (C) 1999 Mark Musone and Andrew Skalski
-@@ -594,3 +594,110 @@
+@@ -593,4 +593,111 @@
+                 }
                  putc(pad, out);
          }
- }
++}
 +
 +#define MAX(a,b) (a)>(b) ? (a) :(b) 
 +void
@@ -117,4 +118,4 @@
 +    } else {
 +        *output = RECUR_NONE;
 +    }
-+}
+ }
