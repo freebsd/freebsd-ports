@@ -3,7 +3,7 @@
 # Date created:         17 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1996/11/04 14:53:03 jmz Exp $
+# $Id: Makefile,v 1.13 1996/11/12 02:17:00 obrien Exp $
 #
 
 DISTNAME=	tkhfs
@@ -13,6 +13,6 @@ MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs wish:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs wish4.1:${PORTSDIR}/x11/tk41
 
 .include <bsd.port.mk>
