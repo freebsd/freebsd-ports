@@ -1,19 +1,18 @@
 # New ports collection makefile for:	postgres95
-# Version required:			1.06
+# Version required:			1.07
 # Date created:				Sep 14 1996
 # Whom:	      				Matthew Stein <matt@bdd.net>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/09/23 22:40:13 jfitz Exp $
 
-PKGNAME=	postgres95-1.06
+PKGNAME=	postgres95-1.07
 CATEGORIES+=	databases
-MASTER_SITES=	ftp://ftp.ki.net/pub/postgres95/oldstuff/ \
+MASTER_SITES=	ftp://ftp.ki.net/pub/postgres95/ \
 		ftp://ftp.luga.or.at/pub/postgres95/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/ \
 		ftp://cal011111.student.utwente.nl/pub/postgres95/
 
-DISTFILES=	postgres95-1.05.tar.gz \
-		postgres95-1.05-1.06.tar.gz \
+DISTFILES=	postgres95-1.07.tar.gz \
 		flex-2.5.2.tgz
 		
 MAINTAINER=	matt@bdd.net
@@ -40,6 +39,11 @@ pre-install:
 		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 
 post-install:
+.if !defined(NOMANCOMPRESS)
+		@ for file in ${PREFIX}/postgres95/man/man[135l]/*; do \
+			gzip -9nf $$file ; \
+		done
+.endif
 		@ chown -R postgres:postgres ${PREFIX}/postgres95
 		@ echo 'Initializing Postgres95 Databases - this may take a few minutes...'
 		@ su -l postgres -c ${PREFIX}/postgres95/bin/initdb
