@@ -135,6 +135,7 @@ include/wine/windows/dmusics.h
 include/wine/windows/docobj.h
 include/wine/windows/dplay.h
 include/wine/windows/dplobby.h
+include/wine/windows/dsconf.h
 include/wine/windows/dshow.h
 include/wine/windows/dsdriver.h
 include/wine/windows/dsound.h
@@ -180,8 +181,10 @@ include/wine/windows/ntddstor.h
 include/wine/windows/ntsecapi.h
 include/wine/windows/ntstatus.h
 include/wine/windows/oaidl.h
+include/wine/windows/oaidl.idl
 include/wine/windows/objbase.h
 include/wine/windows/objidl.h
+include/wine/windows/objidl.idl
 include/wine/windows/ocidl.h
 include/wine/windows/ole2.h
 include/wine/windows/ole2ver.h
@@ -222,6 +225,7 @@ include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/tlhelp32.h
 include/wine/windows/unknwn.h
+include/wine/windows/unknwn.idl
 include/wine/windows/urlmon.h
 include/wine/windows/uuids.h
 include/wine/windows/ver.h
@@ -259,6 +263,7 @@ include/wine/windows/ws2tcpip.h
 include/wine/windows/wshisotp.h
 include/wine/windows/wsipx.h
 include/wine/windows/wtypes.h
+include/wine/windows/wtypes.idl
 include/wine/windows/zmouse.h
 lib/wine/advapi32.dll.so
 lib/wine/avicap32.dll.so
@@ -527,6 +532,7 @@ lib/wine/winenas.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.dll.so
 lib/wine/wineps16.drv.so
+lib/wine/winevdm.exe.so
 lib/wine/wing.dll.so
 lib/wine/winhelp.exe.so
 lib/wine/wininet.dll.so
