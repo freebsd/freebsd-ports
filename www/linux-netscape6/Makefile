@@ -55,6 +55,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 		ftp://sunsite.cnlab-switch.ch/mirror/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://sunsite.uio.no/pub/network/web/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.curtin.edu.au/pub/internet/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.newcastle.edu.au/pub/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/
