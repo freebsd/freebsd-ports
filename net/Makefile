@@ -663,6 +663,7 @@
     SUBDIR += tridiavnc
     SUBDIR += tsclient
     SUBDIR += ttcp
+    SUBDIR += ttlscan
     SUBDIR += ttt
     SUBDIR += tund
     SUBDIR += tvark

@@ -1,0 +1,12 @@
+ttlscan is a libnet/libpcap based program that sends a TCP SYN packet to 
+each port of the host given via the command line. The answer is sniffed 
+of the wire. I use it to detect hosts that fake services by forwarding 
+packets to another host (behind a firewall). By reading header files 
+like the TTL, window size and IPID you might be able to see the OS 
+running on the host behind the firewall.
+
+WWW:	http://www.raisdorf.net/projects/ttlscan
+AUTHOR:	Hendrik Scholz <hendrik@scholz.net>
+
+	- Michael L. Hostbaek
+	mich@freebsdcluster.org
