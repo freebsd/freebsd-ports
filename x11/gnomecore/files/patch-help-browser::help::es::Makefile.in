@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- help-browser/help/es/Makefile.in	2002/01/23 07:52:18	1.1
++++ help-browser/help/es/Makefile.in	2002/01/23 07:52:30
+@@ -178,7 +178,7 @@
+ 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/help/help-browser/C
++help_browser_helpdir = $(datadir)/help/help-browser/es
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
