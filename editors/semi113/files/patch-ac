@@ -1,0 +1,11 @@
+--- SEMI-CFG.orig	Wed Sep 16 15:48:58 1998
++++ SEMI-CFG	Sun May  9 21:54:02 1999
+@@ -11,6 +11,8 @@
+ (add-to-list 'load-path
+ 	     (expand-file-name "../../site-lisp/apel" data-directory))
+ (add-to-list 'load-path
++	     (expand-file-name "../site-lisp/emu" data-directory))
++(add-to-list 'load-path
+ 	     (expand-file-name "." data-directory))
+ 
+ (when (boundp 'LISPDIR)
