@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qDecoder
-PORTVERSION= 	6.0.2
+PORTVERSION= 	6.0.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.qDecoder.org/pub/qDecoder/\
 		ftp://ftp2.qDecoder.org/pub/qDecoder/
@@ -24,7 +24,7 @@ post-install:
 .endfor
 	${MKDIR} ${PREFIX}/share/examples/qDecoder
 	-${RM} ${WRKSRC}/examples/*.o ${WRKSRC}/examples/*.cgi \
-	      ${WRKSRC}/examples/Makefile.in ${WRKSRC}/examples/maketest
+	      ${WRKSRC}/examples/Makefile.in
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/qDecoder
 
 
