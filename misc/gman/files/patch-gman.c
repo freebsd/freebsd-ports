@@ -1,5 +1,5 @@
---- gman.c.orig	Mon Mar 26 17:08:28 2001
-+++ gman.c	Fri Mar 30 23:46:22 2001
+--- gman.c.orig	Sat Mar 31 18:38:43 2001
++++ gman.c	Sat Apr 14 05:10:14 2001
 @@ -83,7 +83,7 @@
  	context = new AppContext();
  	//	context->set_default_value("v_size",(void*)400);
@@ -12,9 +12,9 @@
 @@ -91,7 +91,7 @@
  	context->set_default_value("show_warning","int",(void*)0);
  	context->set_default_value("show_mode","int",(void*)0); // 0 = xterm, 1 = ghostview
- 	context->set_default_value("xterm_command","char*",(void*)"xterm");
+ 	context->set_default_value("xterm_command","char*",(void*)"xterm"); // rxvt, Eterm also works
 -	context->set_default_value("gv_command","char*",(void*)"gv");
 +	context->set_default_value("gv_command","char*",(void*)"ghostview");
- 	context->set_default_value("print_command","char*",(void*)"lpr");
- 
- 	attach(buffer,getenv("HOME"),".gman");
+ 	context->set_default_value("browser_command","char*",(void*)"netscape"); // kfm also works
+ 	context->set_default_value("cgi_host","char*",(void*)"localhost");
+ 	context->set_default_value("cgi_location","char*",(void*)"/cgi-bin/gman/gman.pl");
