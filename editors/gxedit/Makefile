@@ -1,19 +1,19 @@
 # New ports collection makefile for:	gxedit
-# Version required:			1.22
+# Version required:			1.23
 # Date created:				01 Jul 1998
 # Whom:					Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.18 1999/02/02 17:04:09 vanilla Exp $
+# $Id: Makefile,v 1.19 1999/03/24 17:41:04 steve Exp $
 #
 
-DISTNAME=	GXedit1.22
-PKGNAME=	gxedit-1.22
+DISTNAME=	GXedit1.23
+PKGNAME=	gxedit-1.23
 CATEGORIES=	editors
 MASTER_SITES=	http://devplanet.fastethernet.net/
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-LIB_DEPENDS=	gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	gxedit
@@ -24,5 +24,16 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ftp.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ftp-ls.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/ftp-put.sh ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/gxedit/
+.for i in popmail.scr traceroute.scr userinfo.scr www.scr
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/gxedit
+.endfor
+
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/gxedit/
+.for i in COPYING charmap.txt manual.ps manual.txt quickref.ps quickref.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/$i ${PREFIX}/share/doc/gxedit/
+.endfor
+.endif
 
 .include <bsd.port.mk>

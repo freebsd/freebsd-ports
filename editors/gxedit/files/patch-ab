@@ -1,18 +1,23 @@
---- Makefile.orig	Sat Mar  6 14:05:41 1999
-+++ Makefile	Sat Mar  6 14:07:05 1999
-@@ -3,9 +3,9 @@
+--- Makefile.orig	Fri Mar 19 16:31:49 1999
++++ Makefile	Mon Apr  5 17:00:51 1999
+@@ -3,12 +3,13 @@
  INSTALL_DIR = /usr/X11R6/bin/
  DOCS = /usr/doc
  SHARE = /usr/share
--CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall -DVERSION=\"1.22\"
-+CFLAGS += `gtk11d-config --cflags` -I/usr/local/include -I. -DVERSION=\"1.22\"
- GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.6
+-CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall -DVERSION=\"1.23\"
++CFLAGS ?= -O2
++CFLAGS += `gtk12-config --cflags` -I/usr/local/include -I. -Wall -DVERSION=\"1.23\"
+ GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.6 -I../gtkeditor-0.0.6/gtkeditor
 -LIBS = `gtk-config --libs`
-+LIBS = `gtk11d-config --libs`
++LIBS = `gtk12-config --libs`
  OBJS = gxedit.o net.o utils.o
  GTKEDITOR_OBJS = ../gtkeditor-0.0.6/gtkeditor/gtkeditor.o ../gtkeditor-0.0.6/regex/regex.o -L../gtkeditor-0.0.6 -lgtkeditor -lregex -lguile -ldl -ltermcap
- CC = gcc
-@@ -23,7 +23,6 @@
+-CC = gcc
++CC ?= gcc
+ 
+ all:
+ 	@echo "Use ./setup"
+@@ -23,7 +24,6 @@
  	$(CC) $(CFLAGS) -c utils.c
  	$(CC) $(CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(LIBS)
  	@(rm -f ./.chk_config)
@@ -20,7 +25,7 @@
  	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
  
  gxe-with-gtkeditor:
-@@ -32,7 +31,6 @@
+@@ -32,7 +32,6 @@
  	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -c utils.c
  	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(GTKEDITOR_OBJS) $(LIBS)
  	@(rm -f ./.chk_config)
@@ -28,14 +33,3 @@
  	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
  
  say:
---- gtk-shell-src/Makefile.orig	Sat Mar  6 14:01:00 1999
-+++ gtk-shell-src/Makefile	Sat Mar  6 14:02:08 1999
-@@ -1,6 +1,6 @@
- BIN_DIR = 
--CFLAGS = `gtk-config --cflags` -O -I. -Wall
--LIBS = `gtk-config --libs`
-+CFLAGS += `gtk11d-config --cflags` -I.
-+LIBS = `gtk11d-config --libs`
- CC = gcc
- 
- all:
