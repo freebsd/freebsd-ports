@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	9.3.2
+PORTVERSION=	9.3.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.panchoproject.org/archives/pancho/ \
+MASTER_SITES=	http://www.pancho.org/archives/pancho/ \
 		http://ipv42.net/distfiles/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
