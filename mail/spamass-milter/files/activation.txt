@@ -1,7 +1,7 @@
 In order to activate spamass-milter, follow these steps:
 
 1. Review and customize your system-wide SpamAssassin preference, by
-   editing /etc/mail/spamassassin/local.cf.  Refer to the SpamAssassin
+   editing /usr/local/etc/mail/spamassassin/local.cf.  Refer to the SpamAssassin
    manpage Mail::SpamAssassin::Conf(3) for details on what to put in it.
 
 2. If you didn't activate spamd (the SpamAssassin daemon), do so now:
