@@ -1,0 +1,19 @@
+%%SITE_PERL%%/libwhisker/LW.pm
+%%PORTDOCS%%share/doc/libwhisker/README
+%%PORTDOCS%%share/doc/libwhisker/CHANGES
+%%PORTDOCS%%share/doc/libwhisker/KNOWNBUGS
+%%PORTDOCS%%share/doc/libwhisker/api_demo.pl
+%%PORTDOCS%%share/doc/libwhisker/simple.pl
+%%PORTDOCS%%share/doc/libwhisker/docs/OPTIMIZE
+%%PORTDOCS%%share/doc/libwhisker/docs/evil.htm
+%%PORTDOCS%%share/doc/libwhisker/docs/whisker_hash.txt
+%%PORTDOCS%%share/doc/libwhisker/imgs/logo-builton.gif
+%%PORTDOCS%%share/doc/libwhisker/imgs/logo-name.gif
+%%PORTDOCS%%share/doc/libwhisker/imgs/logo-plain.gif
+%%PORTDOCS%%share/doc/libwhisker/scripts/func2html.pl
+%%PORTDOCS%%share/doc/libwhisker/scripts/prox.pl
+%%PORTDOCS%%@dirrm share/doc/libwhisker/docs
+%%PORTDOCS%%@dirrm share/doc/libwhisker/imgs
+%%PORTDOCS%%@dirrm share/doc/libwhisker/scripts
+%%PORTDOCS%%@dirrm share/doc/libwhisker
+@dirrm %%SITE_PERL%%/libwhisker

@@ -1,0 +1,15 @@
+What is libwhisker:
+
+Libwhisker is a Perl module geared specificly for HTTP testing.
+Libwhisker has a few design principles:
+
+- Portable: runs with 0 changes on Unix, Windows, etc.
+- Flexible: designed with a 'no rules' approach
+- Contained: designed to not require external modules when possible
+- Localized: does not require installation to use
+
+WWW: http://www.wiretrip.net/rfp/lw.asp
+
+- pandzilla
+
+jan@atstake.com
