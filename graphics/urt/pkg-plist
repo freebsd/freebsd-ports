@@ -210,12 +210,13 @@ share/doc/urt/toolkit.bib
 share/doc/urt/toolkit.doc
 share/doc/urt/toolkit.mss
 share/doc/urt/toolkit.ps
-share/doc/urt/img/README
-share/doc/urt/img/christmas_ball.rle
-share/doc/urt/img/dart.rle
-share/doc/urt/img/lenna.rle
-share/doc/urt/img/mandrill.rle
-share/doc/urt/img/tack_w_shadow.rle
+share/examples/urt/img/README
+share/examples/urt/img/christmas_ball.rle
+share/examples/urt/img/dart.rle
+share/examples/urt/img/lenna.rle
+share/examples/urt/img/mandrill.rle
+share/examples/urt/img/tack_w_shadow.rle
 @dirrm share/doc/urt/pics
-@dirrm share/doc/urt/img
 @dirrm share/doc/urt
+@dirrm share/examples/urt/img
+@dirrm share/examples/urt
