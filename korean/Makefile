@@ -68,6 +68,7 @@
     SUBDIR += pgp.language
     SUBDIR += pinetreefonts
     SUBDIR += pycodec
+    SUBDIR += qt31
     SUBDIR += texinfo
     SUBDIR += uniksc
 
