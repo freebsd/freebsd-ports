@@ -28,6 +28,8 @@ PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.1 (inprogress version)
 
+BROKEN=		Broken pkg-plist
+
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
 
 NOT_FOR_ARCHS=	amd64 ia64

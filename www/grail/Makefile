@@ -18,6 +18,8 @@ COMMENT=	An extensible Internet browser written entirely in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
+BROKEN=		Broken pkg-plist
+
 USE_PYTHON=	-2.2
 GRAILSUBDIR=	share/grail
 GRAILDIR=	${PREFIX}/${GRAILSUBDIR}
