@@ -3331,9 +3331,6 @@ share/egoboo/modules/town.mod/objects/animate.obj/sound4.wav
 share/egoboo/modules/town.mod/objects/animate.obj/sound5.wav
 share/egoboo/modules/town.mod/objects/animate.obj/tris.md2
 share/egoboo/modules/town.mod/objects/animate.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/animate.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/animate.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/animate.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/unseeing.obj/data.txt
 share/egoboo/modules/town.mod/objects/unseeing.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/unseeing.obj/message.txt
@@ -3345,9 +3342,6 @@ share/egoboo/modules/town.mod/objects/unseeing.obj/script.txt
 share/egoboo/modules/town.mod/objects/unseeing.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/unseeing.obj/tris.md2
 share/egoboo/modules/town.mod/objects/unseeing.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/unseeing.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/unseeing.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/unseeing.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/unlock.obj/data.txt
 share/egoboo/modules/town.mod/objects/unlock.obj/message.txt
 share/egoboo/modules/town.mod/objects/unlock.obj/naming.txt
@@ -3357,9 +3351,6 @@ share/egoboo/modules/town.mod/objects/unlock.obj/script.txt
 share/egoboo/modules/town.mod/objects/unlock.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/unlock.obj/tris.md2
 share/egoboo/modules/town.mod/objects/unlock.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/unlock.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/unlock.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/unlock.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/storms.obj/data.txt
 share/egoboo/modules/town.mod/objects/storms.obj/message.txt
 share/egoboo/modules/town.mod/objects/storms.obj/naming.txt
@@ -3375,9 +3366,6 @@ share/egoboo/modules/town.mod/objects/storms.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/storms.obj/sound1.wav
 share/egoboo/modules/town.mod/objects/storms.obj/tris.md2
 share/egoboo/modules/town.mod/objects/storms.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/storms.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/storms.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/storms.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/sordwall.obj/copy.txt
 share/egoboo/modules/town.mod/objects/sordwall.obj/data.txt
 share/egoboo/modules/town.mod/objects/sordwall.obj/enchant.txt
@@ -3391,9 +3379,6 @@ share/egoboo/modules/town.mod/objects/sordwall.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/sordwall.obj/sound1.wav
 share/egoboo/modules/town.mod/objects/sordwall.obj/tris.md2
 share/egoboo/modules/town.mod/objects/sordwall.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/sordwall.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/sordwall.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/sordwall.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/rot.obj/copy.txt
 share/egoboo/modules/town.mod/objects/rot.obj/data.txt
 share/egoboo/modules/town.mod/objects/rot.obj/enchant.txt
@@ -3414,9 +3399,6 @@ share/egoboo/modules/town.mod/objects/rot.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/rot.obj/sound1.wav
 share/egoboo/modules/town.mod/objects/rot.obj/tris.md2
 share/egoboo/modules/town.mod/objects/rot.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/rot.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/rot.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/rot.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/protect.obj/data.txt
 share/egoboo/modules/town.mod/objects/protect.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/protect.obj/message.txt
@@ -3426,9 +3408,6 @@ share/egoboo/modules/town.mod/objects/protect.obj/script.txt
 share/egoboo/modules/town.mod/objects/protect.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/protect.obj/tris.md2
 share/egoboo/modules/town.mod/objects/protect.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/protect.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/protect.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/protect.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/morph.obj/copy.txt
 share/egoboo/modules/town.mod/objects/morph.obj/data.txt
 share/egoboo/modules/town.mod/objects/morph.obj/enchant.txt
@@ -3452,9 +3431,6 @@ share/egoboo/modules/town.mod/objects/morph.obj/sound5.wav
 share/egoboo/modules/town.mod/objects/morph.obj/sound6.wav
 share/egoboo/modules/town.mod/objects/morph.obj/tris.md2
 share/egoboo/modules/town.mod/objects/morph.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/morph.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/morph.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/morph.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/missile.obj/data.txt
 share/egoboo/modules/town.mod/objects/missile.obj/message.txt
 share/egoboo/modules/town.mod/objects/missile.obj/naming.txt
@@ -3468,9 +3444,6 @@ share/egoboo/modules/town.mod/objects/missile.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/missile.obj/sound1.wav
 share/egoboo/modules/town.mod/objects/missile.obj/tris.md2
 share/egoboo/modules/town.mod/objects/missile.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/missile.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/missile.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/missile.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/light.obj/data.txt
 share/egoboo/modules/town.mod/objects/light.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/light.obj/message.txt
@@ -3481,9 +3454,6 @@ share/egoboo/modules/town.mod/objects/light.obj/part2.txt
 share/egoboo/modules/town.mod/objects/light.obj/script.txt
 share/egoboo/modules/town.mod/objects/light.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/light.obj/tris.md2
-share/egoboo/modules/town.mod/objects/light.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/light.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/light.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/levitate.obj/data.txt
 share/egoboo/modules/town.mod/objects/levitate.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/levitate.obj/message.txt
@@ -3495,9 +3465,6 @@ share/egoboo/modules/town.mod/objects/levitate.obj/skin.txt
 share/egoboo/modules/town.mod/objects/levitate.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/levitate.obj/tris.md2
 share/egoboo/modules/town.mod/objects/levitate.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/levitate.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/levitate.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/levitate.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/fireball.obj/data.txt
 share/egoboo/modules/town.mod/objects/fireball.obj/message.txt
 share/egoboo/modules/town.mod/objects/fireball.obj/naming.txt
@@ -3514,9 +3481,6 @@ share/egoboo/modules/town.mod/objects/fireball.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/fireball.obj/sound1.wav
 share/egoboo/modules/town.mod/objects/fireball.obj/tris.md2
 share/egoboo/modules/town.mod/objects/fireball.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/fireball.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/fireball.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/fireball.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/bind.obj/data.txt
 share/egoboo/modules/town.mod/objects/bind.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/bind.obj/message.txt
@@ -3528,9 +3492,6 @@ share/egoboo/modules/town.mod/objects/bind.obj/skin.txt
 share/egoboo/modules/town.mod/objects/bind.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/bind.obj/tris.md2
 share/egoboo/modules/town.mod/objects/bind.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/bind.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/bind.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/bind.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/unseen.obj/data.txt
 share/egoboo/modules/town.mod/objects/unseen.obj/enchant.txt
 share/egoboo/modules/town.mod/objects/unseen.obj/message.txt
@@ -3541,9 +3502,6 @@ share/egoboo/modules/town.mod/objects/unseen.obj/script.txt
 share/egoboo/modules/town.mod/objects/unseen.obj/sound0.wav
 share/egoboo/modules/town.mod/objects/unseen.obj/tris.md2
 share/egoboo/modules/town.mod/objects/unseen.obj/tris0.bmp
-share/egoboo/modules/town.mod/objects/unseen.obj/CVS/Root
-share/egoboo/modules/town.mod/objects/unseen.obj/CVS/Repository
-share/egoboo/modules/town.mod/objects/unseen.obj/CVS/Entries
 share/egoboo/modules/town.mod/objects/mpotion.obj/data.txt
 share/egoboo/modules/town.mod/objects/mpotion.obj/icon0.bmp
 share/egoboo/modules/town.mod/objects/mpotion.obj/message.txt
@@ -4177,10 +4135,6 @@ share/egoboo/players/hunna.obj/1.obj/sound0.wav
 share/egoboo/players/hunna.obj/1.obj/sound1.wav
 share/egoboo/players/hunna.obj/1.obj/tris.md2
 share/egoboo/players/hunna.obj/1.obj/tris0.bmp
-share/egoboo/players/lelom.obj/1.obj/CVS/Root
-share/egoboo/players/lelom.obj/1.obj/CVS/Repository
-share/egoboo/players/lelom.obj/1.obj/CVS/Entries
-share/egoboo/players/lelom.obj/1.obj/CVS/Tag
 share/egoboo/players/lelom.obj/1.obj/data.txt
 share/egoboo/players/lelom.obj/1.obj/message.txt
 share/egoboo/players/lelom.obj/1.obj/naming.txt
@@ -4225,10 +4179,6 @@ share/egoboo/players/lelom.obj/tris0.bmp
 share/egoboo/players/lelom.obj/tris1.bmp
 share/egoboo/players/lelom.obj/tris2.bmp
 share/egoboo/players/lelom.obj/tris3.bmp
-share/egoboo/players/lelom.obj/2.obj/CVS/Root
-share/egoboo/players/lelom.obj/2.obj/CVS/Repository
-share/egoboo/players/lelom.obj/2.obj/CVS/Entries
-share/egoboo/players/lelom.obj/2.obj/CVS/Tag
 share/egoboo/players/lelom.obj/2.obj/data.txt
 share/egoboo/players/lelom.obj/2.obj/enchant.txt
 share/egoboo/players/lelom.obj/2.obj/message.txt
@@ -4239,10 +4189,6 @@ share/egoboo/players/lelom.obj/2.obj/part2.txt
 share/egoboo/players/lelom.obj/2.obj/script.txt
 share/egoboo/players/lelom.obj/2.obj/sound0.wav
 share/egoboo/players/lelom.obj/2.obj/tris.md2
-share/egoboo/players/lelom.obj/3.obj/CVS/Root
-share/egoboo/players/lelom.obj/3.obj/CVS/Repository
-share/egoboo/players/lelom.obj/3.obj/CVS/Entries
-share/egoboo/players/lelom.obj/3.obj/CVS/Tag
 share/egoboo/players/lelom.obj/3.obj/data.txt
 share/egoboo/players/lelom.obj/3.obj/message.txt
 share/egoboo/players/lelom.obj/3.obj/naming.txt
@@ -4357,14 +4303,8 @@ share/egoboo/players/loggy.obj/2.obj/sound0.wav
 share/egoboo/players/loggy.obj/2.obj/part5.txt
 share/egoboo/players/loggy.obj/2.obj/tris.md2
 share/egoboo/players/loggy.obj/2.obj/tris0.bmp
-share/egoboo/players/loggy.obj/2.obj/CVS/Root
-share/egoboo/players/loggy.obj/2.obj/CVS/Repository
-share/egoboo/players/loggy.obj/2.obj/CVS/Entries
 share/egoboo/players/loggy.obj/2.obj/bsquirrel.AQM
 share/egoboo/players/loggy.obj/2.obj/bsquirrel2.AQM
-share/egoboo/players/loggy.obj/3.obj/CVS/Root
-share/egoboo/players/loggy.obj/3.obj/CVS/Repository
-share/egoboo/players/loggy.obj/3.obj/CVS/Entries
 share/egoboo/players/loggy.obj/3.obj/message.txt
 share/egoboo/players/loggy.obj/3.obj/naming.txt
 share/egoboo/players/loggy.obj/3.obj/data.txt
@@ -4647,3 +4587,356 @@ share/egoboo/setup.txt
 @dirrm share/egoboo/modules/advent.mod/objects/spit.obj
 @dirrm share/egoboo/modules/advent.mod/objects/spkmace.obj
 @dirrm share/egoboo/modules/advent.mod/objects/sword.obj
+@dirrm share/egoboo/modules/advent.mod/objects/torch.obj
+@dirrm share/egoboo/modules/advent.mod/objects/trog.obj
+@dirrm share/egoboo/modules/advent.mod/objects/ubutton.obj
+@dirrm share/egoboo/modules/advent.mod/objects/wbutton.obj
+@dirrm share/egoboo/modules/advent.mod/objects
+@dirrm share/egoboo/modules/advent.mod
+@dirrm share/egoboo/modules/gnome.mod/gamedat
+@dirrm share/egoboo/modules/gnome.mod/music
+@dirrm share/egoboo/modules/gnome.mod/objects/beartrap.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/book.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/bosslump.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/captain.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/claw.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/crate.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/gatlin.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/gnome.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/gonne.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/stack.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/stair.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/sword.obj
+@dirrm share/egoboo/modules/gnome.mod/objects/wheel.obj
+@dirrm share/egoboo/modules/gnome.mod/objects
+@dirrm share/egoboo/modules/gnome.mod
+@dirrm share/egoboo/modules/healer.mod/gamedat
+@dirrm share/egoboo/modules/healer.mod/objects/blob.obj
+@dirrm share/egoboo/modules/healer.mod/objects/book.obj
+@dirrm share/egoboo/modules/healer.mod/objects/bossnecr.obj
+@dirrm share/egoboo/modules/healer.mod/objects/brazier.obj
+@dirrm share/egoboo/modules/healer.mod/objects/faerie.obj
+@dirrm share/egoboo/modules/healer.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/healer.mod/objects/fright.obj
+@dirrm share/egoboo/modules/healer.mod/objects/gatelite.obj
+@dirrm share/egoboo/modules/healer.mod/objects/ghoul.obj
+@dirrm share/egoboo/modules/healer.mod/objects/healer.obj
+@dirrm share/egoboo/modules/healer.mod/objects/hshield.obj
+@dirrm share/egoboo/modules/healer.mod/objects/irondoor.obj
+@dirrm share/egoboo/modules/healer.mod/objects/kurcinq.obj
+@dirrm share/egoboo/modules/healer.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/healer.mod/objects/mace.obj
+@dirrm share/egoboo/modules/healer.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/healer.mod/objects/missile.obj
+@dirrm share/egoboo/modules/healer.mod/objects/rebirth.obj
+@dirrm share/egoboo/modules/healer.mod/objects/rockhead.obj
+@dirrm share/egoboo/modules/healer.mod/objects/rockopen.obj
+@dirrm share/egoboo/modules/healer.mod/objects/spkmace.obj
+@dirrm share/egoboo/modules/healer.mod/objects/sword.obj
+@dirrm share/egoboo/modules/healer.mod/objects/torch.obj
+@dirrm share/egoboo/modules/healer.mod/objects/tranch.obj
+@dirrm share/egoboo/modules/healer.mod/objects/ulna.obj
+@dirrm share/egoboo/modules/healer.mod/objects/whip.obj
+@dirrm share/egoboo/modules/healer.mod/objects
+@dirrm share/egoboo/modules/healer.mod
+@dirrm share/egoboo/modules/palash.mod/gamedat
+@dirrm share/egoboo/modules/palash.mod/objects/animate.obj
+@dirrm share/egoboo/modules/palash.mod/objects/book.obj
+@dirrm share/egoboo/modules/palash.mod/objects/bossmuse.obj
+@dirrm share/egoboo/modules/palash.mod/objects/bossplat.obj
+@dirrm share/egoboo/modules/palash.mod/objects/bosspork.obj
+@dirrm share/egoboo/modules/palash.mod/objects/bosswatc.obj
+@dirrm share/egoboo/modules/palash.mod/objects/brazier.obj
+@dirrm share/egoboo/modules/palash.mod/objects/breaker.obj
+@dirrm share/egoboo/modules/palash.mod/objects/cinq.obj
+@dirrm share/egoboo/modules/palash.mod/objects/claw.obj
+@dirrm share/egoboo/modules/palash.mod/objects/cobol.obj
+@dirrm share/egoboo/modules/palash.mod/objects/echest.obj
+@dirrm share/egoboo/modules/palash.mod/objects/enchant.obj
+@dirrm share/egoboo/modules/palash.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/palash.mod/objects/fireball.obj
+@dirrm share/egoboo/modules/palash.mod/objects/fogb.obj
+@dirrm share/egoboo/modules/palash.mod/objects/fright.obj
+@dirrm share/egoboo/modules/palash.mod/objects/fshield.obj
+@dirrm share/egoboo/modules/palash.mod/objects/gate.obj
+@dirrm share/egoboo/modules/palash.mod/objects/gonne.obj
+@dirrm share/egoboo/modules/palash.mod/objects/halldoor.obj
+@dirrm share/egoboo/modules/palash.mod/objects/hatchet.obj
+@dirrm share/egoboo/modules/palash.mod/objects/hotdog.obj
+@dirrm share/egoboo/modules/palash.mod/objects/ichest.obj
+@dirrm share/egoboo/modules/palash.mod/objects/keya.obj
+@dirrm share/egoboo/modules/palash.mod/objects/lbow.obj
+@dirrm share/egoboo/modules/palash.mod/objects/lockdoor.obj
+@dirrm share/egoboo/modules/palash.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/palash.mod/objects/lumpkin.obj
+@dirrm share/egoboo/modules/palash.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/palash.mod/objects/missile.obj
+@dirrm share/egoboo/modules/palash.mod/objects/mpotion.obj
+@dirrm share/egoboo/modules/palash.mod/objects/rebirth.obj
+@dirrm share/egoboo/modules/palash.mod/objects/sbrace.obj
+@dirrm share/egoboo/modules/palash.mod/objects/shock.obj
+@dirrm share/egoboo/modules/palash.mod/objects/shutdoor.obj
+@dirrm share/egoboo/modules/palash.mod/objects/sordwall.obj
+@dirrm share/egoboo/modules/palash.mod/objects/spork.obj
+@dirrm share/egoboo/modules/palash.mod/objects/sword.obj
+@dirrm share/egoboo/modules/palash.mod/objects/thebait.obj
+@dirrm share/egoboo/modules/palash.mod/objects/toast.obj
+@dirrm share/egoboo/modules/palash.mod/objects/torch.obj
+@dirrm share/egoboo/modules/palash.mod/objects/tundra.obj
+@dirrm share/egoboo/modules/palash.mod/objects/unseen.obj
+@dirrm share/egoboo/modules/palash.mod/objects/warlock.obj
+@dirrm share/egoboo/modules/palash.mod/objects/whip.obj
+@dirrm share/egoboo/modules/palash.mod/objects/xbow.obj
+@dirrm share/egoboo/modules/palash.mod/objects/xchest.obj
+@dirrm share/egoboo/modules/palash.mod/objects
+@dirrm share/egoboo/modules/palash.mod
+@dirrm share/egoboo/modules/palsand.mod/gamedat
+@dirrm share/egoboo/modules/palsand.mod/objects/achest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/book.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossclaw.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossdrop.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossfall.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossmuse.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossplat.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bosspork.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bossscor.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/bosstrol.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/fbrace.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/hchest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/keya.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/keyc.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/landmine.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/lgchest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/lockdoor.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/mimic.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/puzzle.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/shock.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/shutdoor.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/spear.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/spork.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/sshoes.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/tranch.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/trigtile.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/trog.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/wandl.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/xbow.obj
+@dirrm share/egoboo/modules/palsand.mod/objects/xchest.obj
+@dirrm share/egoboo/modules/palsand.mod/objects
+@dirrm share/egoboo/modules/palsand.mod
+@dirrm share/egoboo/modules/palshad.mod/gamedat
+@dirrm share/egoboo/modules/palshad.mod/objects/blind.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/blob.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/book.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/bossdark.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/bossmuse.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/bossplat.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/bosspork.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/cinq.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/claw.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/dsword.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/gelfeet.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/ghoul.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/ichest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/keya.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/lockdoor.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/lumpkin.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/mouse.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/mpotion.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/pchest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/popper.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/ppotion.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/rchest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/repopper.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/sacripit.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/schest.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/shutdoor.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/spear.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/speedbow.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/spork.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/spotion.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/stalker.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/sword.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/trigtile.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/unseen.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/wandm.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/watcher.obj
+@dirrm share/egoboo/modules/palshad.mod/objects/xbow.obj
+@dirrm share/egoboo/modules/palshad.mod/objects
+@dirrm share/egoboo/modules/palshad.mod
+@dirrm share/egoboo/modules/palwater.mod/gamedat
+@dirrm share/egoboo/modules/palwater.mod/objects/blob.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/book.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/bossgrub.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/bossmuse.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/bossplat.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/bosspork.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/bosswier.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/brazier.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/crab.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/dbutton.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/fbutton.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/ffaerie.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/filldrop.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/grubdrop.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/hchest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/keya.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/lockdoor.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/mfaerie.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/mpotion.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/rchest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/sbrace.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/schest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/shutdoor.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/silxbow.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/spear.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/spork.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/squidgie.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/stiletto.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/sword.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/torch.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/trapdrop.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/trigdoor.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/trog.obj
+@dirrm share/egoboo/modules/palwater.mod/objects/wchest.obj
+@dirrm share/egoboo/modules/palwater.mod/objects
+@dirrm share/egoboo/modules/palwater.mod
+@dirrm share/egoboo/modules/rogue.mod/gamedat
+@dirrm share/egoboo/modules/rogue.mod/objects/beartrap.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/book.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/bossmuse.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/bullwolf.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/cinq.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/cobol.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/deadfall.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/exitarea.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/fchest.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/gate.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/gshield.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/hanxbow.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/hatchet.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/hshield.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/incisor.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/ironball.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/keya.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/knife.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/kshield.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/lbow.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/lockdoor.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/lpotion.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/lrchest.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/mchest.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/morbid.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/obutton.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/pchest.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/pick.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/prisgnom.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/prisoner.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/rogue.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/shutdoor.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/stiletto.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/tranch.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/tshield.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/whip.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/xbow.obj
+@dirrm share/egoboo/modules/rogue.mod/objects/xbow50.obj
+@dirrm share/egoboo/modules/rogue.mod/objects
+@dirrm share/egoboo/modules/rogue.mod
+@dirrm share/egoboo/modules/town.mod/objects/dropper.obj
+@dirrm share/egoboo/modules/town.mod/objects/animate.obj
+@dirrm share/egoboo/modules/town.mod/objects/unseeing.obj
+@dirrm share/egoboo/modules/town.mod/objects/unlock.obj
+@dirrm share/egoboo/modules/town.mod/objects/storms.obj
+@dirrm share/egoboo/modules/town.mod/objects/sordwall.obj
+@dirrm share/egoboo/modules/town.mod/objects/rot.obj
+@dirrm share/egoboo/modules/town.mod/objects/protect.obj
+@dirrm share/egoboo/modules/town.mod/objects/morph.obj
+@dirrm share/egoboo/modules/town.mod/objects/missile.obj
+@dirrm share/egoboo/modules/town.mod/objects/light.obj
+@dirrm share/egoboo/modules/town.mod/objects/levitate.obj
+@dirrm share/egoboo/modules/town.mod/objects/fireball.obj
+@dirrm share/egoboo/modules/town.mod/objects/bind.obj
+@dirrm share/egoboo/modules/town.mod/objects/unseen.obj
+@dirrm share/egoboo/modules/town.mod/objects/mpotion.obj
+@dirrm share/egoboo/modules/town.mod/objects/warlock.obj
+@dirrm share/egoboo/modules/town.mod/objects/healer.obj
+@dirrm share/egoboo/modules/town.mod/objects/shep.obj
+@dirrm share/egoboo/modules/town.mod/objects/guard.obj
+@dirrm share/egoboo/modules/town.mod/objects/sword.obj
+@dirrm share/egoboo/modules/town.mod/objects/sshoes.obj
+@dirrm share/egoboo/modules/town.mod/objects/spear.obj
+@dirrm share/egoboo/modules/town.mod/objects/shopmimi.obj
+@dirrm share/egoboo/modules/town.mod/objects/shopkeep.obj
+@dirrm share/egoboo/modules/town.mod/objects/sbrace.obj
+@dirrm share/egoboo/modules/town.mod/objects/samulet.obj
+@dirrm share/egoboo/modules/town.mod/objects/rshoes.obj
+@dirrm share/egoboo/modules/town.mod/objects/rebirth.obj
+@dirrm share/egoboo/modules/town.mod/objects/rcchest.obj
+@dirrm share/egoboo/modules/town.mod/objects/mallet.obj
+@dirrm share/egoboo/modules/town.mod/objects/mace.obj
+@dirrm share/egoboo/modules/town.mod/objects/lamb.obj
+@dirrm share/egoboo/modules/town.mod/objects/kshield.obj
+@dirrm share/egoboo/modules/town.mod/objects/identify.obj
+@dirrm share/egoboo/modules/town.mod/objects/ibrace.obj
+@dirrm share/egoboo/modules/town.mod/objects/hatchet.obj
+@dirrm share/egoboo/modules/town.mod/objects/hamulet.obj
+@dirrm share/egoboo/modules/town.mod/objects/freemap.obj
+@dirrm share/egoboo/modules/town.mod/objects/fbrace.obj
+@dirrm share/egoboo/modules/town.mod/objects/cinq.obj
+@dirrm share/egoboo/modules/town.mod/objects/camulet.obj
+@dirrm share/egoboo/modules/town.mod/objects/book.obj
+@dirrm share/egoboo/modules/town.mod/objects/bbrace.obj
+@dirrm share/egoboo/modules/town.mod/objects
+@dirrm share/egoboo/modules/town.mod/gamedat
+@dirrm share/egoboo/modules/town.mod
+@dirrm share/egoboo/modules
+@dirrm share/egoboo/players/alim.obj/0.obj
+@dirrm share/egoboo/players/alim.obj/1.obj
+@dirrm share/egoboo/players/alim.obj/2.obj
+@dirrm share/egoboo/players/alim.obj/3.obj
+@dirrm share/egoboo/players/alim.obj
+@dirrm share/egoboo/players/annigal.obj/0.obj
+@dirrm share/egoboo/players/annigal.obj/1.obj
+@dirrm share/egoboo/players/annigal.obj/2.obj
+@dirrm share/egoboo/players/annigal.obj
+@dirrm share/egoboo/players/dunlar.obj/0.obj
+@dirrm share/egoboo/players/dunlar.obj/1.obj
+@dirrm share/egoboo/players/dunlar.obj
+@dirrm share/egoboo/players/hunna.obj/0.obj
+@dirrm share/egoboo/players/hunna.obj/1.obj
+@dirrm share/egoboo/players/hunna.obj
+@dirrm share/egoboo/players/lelom.obj/1.obj
+@dirrm share/egoboo/players/lelom.obj/2.obj
+@dirrm share/egoboo/players/lelom.obj/3.obj
+@dirrm share/egoboo/players/lelom.obj/0.obj
+@dirrm share/egoboo/players/lelom.obj/4.obj
+@dirrm share/egoboo/players/lelom.obj
+@dirrm share/egoboo/players/loggy.obj/0.obj
+@dirrm share/egoboo/players/loggy.obj/1.obj
+@dirrm share/egoboo/players/loggy.obj/2.obj
+@dirrm share/egoboo/players/loggy.obj/3.obj
+@dirrm share/egoboo/players/loggy.obj
+@dirrm share/egoboo/players/waggle.obj/0.obj
+@dirrm share/egoboo/players/waggle.obj/1.obj
+@dirrm share/egoboo/players/waggle.obj/2.obj
+@dirrm share/egoboo/players/waggle.obj/3.obj
+@dirrm share/egoboo/players/waggle.obj
+@dirrm share/egoboo/players/zambini.obj/0.obj
+@dirrm share/egoboo/players/zambini.obj/1.obj
+@dirrm share/egoboo/players/zambini.obj/2.obj
+@dirrm share/egoboo/players/zambini.obj/3.obj
+@dirrm share/egoboo/players/zambini.obj
+@dirrm share/egoboo/players
+@dirrm share/egoboo/text
+@dirrm share/egoboo/basicdat/musica
+@dirrm share/egoboo/basicdat/musicb
+@dirrm share/egoboo/basicdat
+@dirrm share/egoboo
