@@ -6,7 +6,7 @@
 
 PORTNAME=	setiathome
 PORTVERSION?=	3.03
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	astro
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/setiathome/ \
 		ftp://alien.ssl.berkeley.edu/pub/
@@ -16,7 +16,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER?=	cyrille.lefevre@laposte.net
 COMMENT?=	Donate idle cycles to the search for space aliens
 
+.if ${PORTVERSION} == "3.03"
 FORBIDDEN=	'Exploitable buffer overflow. http://spoor12.edup.tudelft.nl/'
+.endif
 
 .include <bsd.port.pre.mk>
 
