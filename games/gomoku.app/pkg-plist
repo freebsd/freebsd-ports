@@ -1,43 +1,44 @@
-Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Gomoku
-Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
-Local/Apps/Gomoku.app/Gomoku
-Local/Apps/Gomoku.app/Resources/Computer.png
-Local/Apps/Gomoku.app/Resources/ComputerBottom.png
-Local/Apps/Gomoku.app/Resources/ComputerBottomLeft.png
-Local/Apps/Gomoku.app/Resources/ComputerBottomRight.png
-Local/Apps/Gomoku.app/Resources/ComputerLeft.png
-Local/Apps/Gomoku.app/Resources/ComputerRight.png
-Local/Apps/Gomoku.app/Resources/ComputerTop.png
-Local/Apps/Gomoku.app/Resources/ComputerTopLeft.png
-Local/Apps/Gomoku.app/Resources/ComputerTopRight.png
-Local/Apps/Gomoku.app/Resources/Empty.png
-Local/Apps/Gomoku.app/Resources/EmptyBottom.png
-Local/Apps/Gomoku.app/Resources/EmptyBottomLeft.png
-Local/Apps/Gomoku.app/Resources/EmptyBottomRight.png
-Local/Apps/Gomoku.app/Resources/EmptyLeft.png
-Local/Apps/Gomoku.app/Resources/EmptyRight.png
-Local/Apps/Gomoku.app/Resources/EmptyTop.png
-Local/Apps/Gomoku.app/Resources/EmptyTopLeft.png
-Local/Apps/Gomoku.app/Resources/EmptyTopRight.png
-Local/Apps/Gomoku.app/Resources/English.lproj/Localizable.strings
-Local/Apps/Gomoku.app/Resources/French.lproj/Localizable.strings
-Local/Apps/Gomoku.app/Resources/Gomoku.png
-Local/Apps/Gomoku.app/Resources/Human.png
-Local/Apps/Gomoku.app/Resources/HumanBottom.png
-Local/Apps/Gomoku.app/Resources/HumanBottomLeft.png
-Local/Apps/Gomoku.app/Resources/HumanBottomRight.png
-Local/Apps/Gomoku.app/Resources/HumanLeft.png
-Local/Apps/Gomoku.app/Resources/HumanRight.png
-Local/Apps/Gomoku.app/Resources/HumanTop.png
-Local/Apps/Gomoku.app/Resources/HumanTopLeft.png
-Local/Apps/Gomoku.app/Resources/HumanTopRight.png
-Local/Apps/Gomoku.app/Resources/Info-gnustep.plist
-Local/Apps/Gomoku.app/Resources/Italian.lproj/Localizable.strings
-@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm Local/Apps/Gomoku.app/%%GNU_ARCH%%
-@dirrm Local/Apps/Gomoku.app/Resources/Italian.lproj
-@dirrm Local/Apps/Gomoku.app/Resources/French.lproj
-@dirrm Local/Apps/Gomoku.app/Resources/English.lproj
-@dirrm Local/Apps/Gomoku.app/Resources
-@dirrm Local/Apps/Gomoku.app
+Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Gomoku
+Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+Local/Applications/Gomoku.app/Gomoku
+Local/Applications/Gomoku.app/Resources/Computer.png
+Local/Applications/Gomoku.app/Resources/ComputerBottom.png
+Local/Applications/Gomoku.app/Resources/ComputerBottomLeft.png
+Local/Applications/Gomoku.app/Resources/ComputerBottomRight.png
+Local/Applications/Gomoku.app/Resources/ComputerLeft.png
+Local/Applications/Gomoku.app/Resources/ComputerRight.png
+Local/Applications/Gomoku.app/Resources/ComputerTop.png
+Local/Applications/Gomoku.app/Resources/ComputerTopLeft.png
+Local/Applications/Gomoku.app/Resources/ComputerTopRight.png
+Local/Applications/Gomoku.app/Resources/Empty.png
+Local/Applications/Gomoku.app/Resources/EmptyBottom.png
+Local/Applications/Gomoku.app/Resources/EmptyBottomLeft.png
+Local/Applications/Gomoku.app/Resources/EmptyBottomRight.png
+Local/Applications/Gomoku.app/Resources/EmptyLeft.png
+Local/Applications/Gomoku.app/Resources/EmptyRight.png
+Local/Applications/Gomoku.app/Resources/EmptyTop.png
+Local/Applications/Gomoku.app/Resources/EmptyTopLeft.png
+Local/Applications/Gomoku.app/Resources/EmptyTopRight.png
+Local/Applications/Gomoku.app/Resources/English.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/French.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/Gomoku.png
+Local/Applications/Gomoku.app/Resources/Gomoku.desktop
+Local/Applications/Gomoku.app/Resources/Human.png
+Local/Applications/Gomoku.app/Resources/HumanBottom.png
+Local/Applications/Gomoku.app/Resources/HumanBottomLeft.png
+Local/Applications/Gomoku.app/Resources/HumanBottomRight.png
+Local/Applications/Gomoku.app/Resources/HumanLeft.png
+Local/Applications/Gomoku.app/Resources/HumanRight.png
+Local/Applications/Gomoku.app/Resources/HumanTop.png
+Local/Applications/Gomoku.app/Resources/HumanTopLeft.png
+Local/Applications/Gomoku.app/Resources/HumanTopRight.png
+Local/Applications/Gomoku.app/Resources/Info-gnustep.plist
+Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
+@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%
+@dirrm Local/Applications/Gomoku.app/Resources/Italian.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/French.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/English.lproj
+@dirrm Local/Applications/Gomoku.app/Resources
+@dirrm Local/Applications/Gomoku.app
