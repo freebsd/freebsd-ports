@@ -2,7 +2,7 @@ bin/qemu
 bin/qemu-mkcow
 bin/vmdk2raw
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/qemu/qemu-tech.html
+%%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 share/qemu/bios.bin
 share/qemu/linux_boot.bin
 share/qemu/vgabios.bin
