@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	Convert-UUlib
-PORTVERSION=	1.04
+PORTVERSION=	1.05.1
 PORTEPOCH=	1
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
