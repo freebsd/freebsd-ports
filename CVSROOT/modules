@@ -7828,6 +7828,7 @@ vic		ports/mbone/vic
 vice		ports/emulators/vice
 vicq		ports/net/vicq
 vid		ports/graphics/vid
+vida		ports/security/vida
 vide		ports/x11-fm/vide
 videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext
