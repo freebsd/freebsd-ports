@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/12/10 09:35:00	1.1
++++ Makefile.in	2001/12/10 09:35:18
+@@ -85,7 +85,7 @@
+ EXTRA_DIST = libelysium.spec.in 	libelysiumConf.sh.in
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = libelysiumConf.sh
+ 
+ CLEANFILES = libelysiumConf.sh

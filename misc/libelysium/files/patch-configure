@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Dec 10 11:37:09 2001
++++ configure	Mon Dec 10 11:53:37 2001
+@@ -952,7 +952,7 @@
+ 
+ ELYSIUM_LIBDIR='-L${libdir}'
+ ELYSIUM_INCLUDEDIR='-I${includedir}'
+-ELYSIUM_LIBS="-lelysium -lglib"
++ELYSIUM_LIBS="-lelysium `$GLIB_CONFIG --libs`"
+ 
+ echo $ac_n "checking whether to enable maintainer-specific portions of Makefiles""... $ac_c" 1>&6
+ echo "configure:959: checking whether to enable maintainer-specific portions of Makefiles" >&5
+@@ -5462,8 +5462,8 @@
+ 
+ 
+ 
+-CFLAGS="`glib-config --cflags`"
+-LDFLAGS="`glib-config --libs`"
++CFLAGS="`$GLIB_CONFIG --cflags`"
++LDFLAGS="`$GLIB_CONFIG --libs`"
+ 
+ 
+ 

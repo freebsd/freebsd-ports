@@ -1,0 +1,7 @@
+etc/libelysiumConf.sh
+include/libelysium/elysium-file.h
+include/libelysium/encompass-uri.h
+lib/libelysium.a
+lib/libelysium.so
+lib/libelysium.so.0
+@dirrm include/libelysium
