@@ -24,7 +24,7 @@ FDOC=		${PREFIX}/share/doc/festival
 
 post-extract:
 	${CHMOD} -R a+r ${WRKSRC}
-	${FIND} ${WRKSRC} -type d -print0 | xargs -0 ${CHMOD} 755
+	${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	${RM} ${WRKSRC}/festival/src-manual/c3750.htm~
 	${RM} ${WRKSRC}/speechtools/c16909.htm~
 	${RMDIR} ${WRKSRC}/festival/src-manual/images_gen
@@ -32,7 +32,7 @@ post-extract:
 do-install:
 	${MKDIR} ${FDOC}
 	${RM} ${WRKSRC}/festival/info/festival.info.orig
-	cd ${WRKSRC} && info=`find . -name '*.info*' -type f` && \
+	cd ${WRKSRC} && info=`${FIND} . -name '*.info*' -type f` && \
 	  ${CP} $$info ${PREFIX}/info && \
 	  ${CP} -r ${WRKSRC}/* ${FDOC} && \
 	  cd ${FDOC} && \

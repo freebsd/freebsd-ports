@@ -133,7 +133,7 @@ do-install:
 	${MKDIR} ${FHOME}/lib/voices/spanish/
 	${MKDIR} ${FHOME}/lib/dicts
 	${CHMOD} -R u+w,a+r,og-w ${FESTIVAL}/lib
-	${FIND} ${FESTIVAL}/lib -type d -print0 | xargs -0 ${CHMOD} 755
+	${FIND} ${FESTIVAL}/lib -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	cd ${FESTIVAL} && ${CP} -pPR lib examples ${FHOME}
 	${RM} -rf ${FHOME}/lib/etc/*FreeBSD*
 	${INSTALL_PROGRAM} ${FESTIVAL}/lib/etc/*FreeBSD*/audsp ${PREFIX}/libexec
