@@ -1,11 +1,29 @@
 bin/gswitchit-properties_capplet
 bin/gswitchit_applet
 etc/CORBA/servers/gswitchit_applet.gnorba
+etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/General/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/General/%gconf.xml
+etc/gconf/schemas/gswitchit_applet.schemas
 share/gnome/applets/Utility/gswitchit_applet.desktop
 share/gnome/apps/Settings/gswitchit-properties.desktop
-share/gnome/control-center/gswitchit-properties.desktop
-share/gnome/pixmaps/gswitchit.png
-share/gnome/pixmaps/ru.xpm
-share/gnome/pixmaps/us.xpm
+share/gnome/control-center/capplets/gswitchit-properties.desktop
+share/gnome/pixmaps/gswitchit/III.xpm
+share/gnome/pixmaps/gswitchit/IV.xpm
+share/gnome/pixmaps/gswitchit/bg.xpm
+share/gnome/pixmaps/gswitchit/gswitchit.png
+share/gnome/pixmaps/gswitchit/ru.xpm
+share/gnome/pixmaps/gswitchit/th.xpm
+share/gnome/pixmaps/gswitchit/us.xpm
+share/locale/bg/LC_MESSAGES/gswitchit_applet.mo
 share/locale/de/LC_MESSAGES/gswitchit_applet.mo
+share/locale/el/LC_MESSAGES/gswitchit_applet.mo
 share/locale/ru/LC_MESSAGES/gswitchit_applet.mo
+share/locale/sv/LC_MESSAGES/gswitchit_applet.mo
+@dirrm share/gnome/pixmaps/gswitchit
+@dirrm share/gnome/control-center/capplets
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet/General
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit_applet
+@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit_applet/General
+@dirrm etc/gconf/gconf.xml.defaults/apps/gswitchit_applet
