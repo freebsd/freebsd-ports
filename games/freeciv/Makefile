@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeciv
-PORTVERSION=	1.14.1
+PORTVERSION=	1.14.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -24,8 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-CONFLICTS=	freeciv-*
-
 .include <bsd.port.pre.mk>
 
 .if 	!defined(WITH_GTK) && !defined(WITH_GTK12) && !defined(WITH_GTK2) && \
@@ -39,14 +37,17 @@ WITH_GTK=	yes
 .endif
 
 .if defined(WITH_GTK2)
+CONFLICTS=	freeciv-1* freeciv-gtk-1*
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX?=	-gtk2
 CONFIGURE_ARGS+=	--enable-client=gtk2
 .elif defined(WITH_GTK) || defined(WITH_GTK12)
+CONFLICTS=	freeciv-1* freeciv-gtk2-1*
 USE_GNOME+=	imlib gtk12
 PKGNAMESUFFIX?=	-gtk
 CONFIGURE_ARGS+=	--enable-client=gtk
 .else
+CONFLICTS=	freeciv-gtk-1* freeciv-gtk2-1*
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
