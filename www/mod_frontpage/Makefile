@@ -43,6 +43,7 @@ AP_LIBEXEC?=	${PREFIX}/libexec/apache
 .endif
 
 PERL_CONFIGURE= yes
+CONFIGURE_ENV=	PREFIX=${PREFIX}
 
 pre-fetch:
 	@${ECHO}
