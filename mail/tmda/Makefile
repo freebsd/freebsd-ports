@@ -21,6 +21,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Python-based SPAM reduction system
 
+.if defined(WITH_CDB)
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cdbmodule.so:${PORTSDIR}/databases/py-cdb
+.endif
+
 USE_PYTHON=	yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
