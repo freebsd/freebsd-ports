@@ -4848,6 +4848,7 @@ mod_tidy	ports/www/mod_tidy
 mod_traf_thief	ports/www/mod_traf_thief
 mod_trigger	ports/www/mod_trigger
 mod_tsunami	ports/www/mod_tsunami
+mod_uid		ports/www/mod_uid
 mod_v2h		ports/www/mod_v2h
 mod_watch	ports/www/mod_watch
 mod_webapp	ports/www/mod_webapp
