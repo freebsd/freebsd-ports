@@ -1,10 +1,10 @@
---- xcept/script.c.orig	Sun Sep  1 18:24:46 1996
-+++ xcept/script.c	Sun Sep  1 18:32:08 1996
-@@ -809,7 +809,6 @@
-    if(a->value == b->value)
-       return error("pc: %d - variables don't differ!\n",pc);
-    len = strlen(a->value) + strlen(b->value) + 1;
--   free(a->value);
-    if(!(a->value = ralloc(a->value,len))) return errorp("realloc\n");
-    strcat(a->value,b->value);
-    
+--- ./xcept/scripts.c.org	Thu Apr 14 10:21:58 1994
++++ ./xcept/scripts.c	Wed Apr 23 19:08:32 1997
+@@ -36,6 +36,7 @@
+ #include <stdio.h>
+ #include <errno.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <dirent.h>
+ #include "scripts.h"
+ 
