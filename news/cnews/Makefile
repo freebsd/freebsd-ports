@@ -9,11 +9,9 @@ PORTNAME=	cnews
 PORTVERSION=	cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
-		ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
 		ftp://ftp.win.or.jp/pub/network/news/cnews/ \
 		ftp://ftp.redcom.ru/pub/unix/usenet/c-news/ \
-		ftp://ftp.mc.hik.se/pub/unix/news/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	c-news
 EXTRACT_SUFX=	.tar.Z
@@ -91,17 +89,16 @@ do-install:
 	${RM} -f ${PREFIX}/bin/inews
 	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${PREFIX}/lib
-	${MKDIR} ${NEWSARTS} ${NEWSBIN} ${NEWSCTL}
-	-${LN} -s ${NEWSARTS} /var/news
-	${CHOWN} news.news ${NEWSARTS} ${NEWSCTL}
-	${CHOWN} bin.bin ${NEWSBIN}
+	${MKDIR} ${NEWSARTS} ${NEWSOV} ${NEWSBIN} ${NEWSCTL}
+	${CHOWN} ${BINOWN}.${BINGRP} ${NEWSBIN}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${NEWSBIN}/pgpverify
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup
 	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
 .for f in checknews cnewsdo inews injnews postnews readnews
-	${CHOWN} bin.bin ${PREFIX}/bin/$f
+	${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/$f
 .endfor
+	${CHOWN} -R news.news ${NEWSARTS} ${NEWSOV} ${NEWSCTL} 
 	${CHOWN} news.news ${NEWSBIN}/input/newsspool
 	${CHMOD} 6755 ${NEWSBIN}/input/newsspool
 .for i in ${MAN1}
@@ -119,6 +116,8 @@ do-install:
 	@${ECHO} "	cd to ${NEWSCTL} and change the following files..."
 	@${ECHO} "mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup"
 	@${ECHO} "	to suit your local system and news topology."
+	@${ECHO} "check that you have vaild aliases in report.ctl,"
+	@${ECHO} "	so any problem can be reported."
 	@${ECHO} "!!!!!!!!"
 	@${ECHO} ""
 
