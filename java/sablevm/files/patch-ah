@@ -1,0 +1,18 @@
+diff -ur work.orig/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in work/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in
+--- work.orig/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in	Sun Aug 18 01:09:29 2002
++++ work/sablevm-native-library-1.0.3/src/gnu-java-awt-peer-gtk/Makefile.in	Mon Aug 19 09:02:43 2002
+@@ -126,11 +126,11 @@
+ INCLUDES = \
+ 	-I@top_srcdir@/src/include \
+ 	-I@top_srcdir@/src/jni-include \
+-	-I/usr/include/gtk-1.2 \
+-	-I/usr/include/glib-1.2 \
++	-I/usr/X11R6/include/gtk12 \
++	-I/usr/local/include/glib12 \
+ 	-I/usr/lib/glib/include \
+ 	-I/usr/X11R6/include \
+-	-I/usr/include/gnome-1.0 \
++	-I/usr/X11R6/include/gnome-1.0 \
+ 	-I@top_srcdir@/src/classpath
+ 
+ subdir = src/gnu-java-awt-peer-gtk
