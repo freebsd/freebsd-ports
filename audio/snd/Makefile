@@ -77,6 +77,12 @@ USE_XLIB=	yes
 .endif
 WRKSRC=		${WRKDIR}/snd-5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-configure:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
 	@${SED} -e "s: -ldl::g" < ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
@@ -136,4 +142,4 @@ do-install:
 post-build:
 	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
