@@ -17,8 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -42,11 +40,7 @@ pre-everything:
 	@${ECHO_MSG} "*** \"WITH_GIMP=yes\""
 .endif
 
-post-patch:
-	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' -e 's:%%X11BASE%%:${X11BASE}:' \
-		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${SED} 's:/usr/local:${PREFIX}:' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
