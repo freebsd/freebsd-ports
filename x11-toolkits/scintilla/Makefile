@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.59
+PORTVERSION=	1.62
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -29,13 +29,15 @@ USE_GNOME=	gtk20
 PKGNAMESUFFIX=	-gtk2
 .else
 USE_GNOME=	gtk12
-MAKE_ARGS=	GTK1=yes
+MAKE_ARGS+=	GTK1=yes
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Build fails on sparc64"
+MAKE_ARGS+=	PICFLAGS=-DPIC
+.else
+MAKE_ARGS+=	PICFLAGS="-DPIC -fpic"
 .endif
 
 do-install:
