@@ -30,12 +30,14 @@ SOURCES=	eudc-autoloads.el eudc-bob.el eudc-export.el \
 ELCS=		${SOURCES:S/.el/.elc/g}
 INFOS=		eudc.info
 
-PLIST_SUB=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
-		INFODIR=${INFODIR:S/${PREFIX}\///} \
-		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
+PLIST_SUB+=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
+		INFODIR=${INFODIR:S/${PREFIX}\///}
 
 INSTALL_TARGET=
-lispdir=	${PREFIX}/${EMACS_SITE_LISPDIR}/eudc
+lispdir=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/eudc
+
+post-build:
+	@(cd ${WRKSRC}; makeinfo --no-split eudc.texi)
 post-install:
 	${MKDIR} ${lispdir};
 .for i in ${SOURCES} ${ELCS}
