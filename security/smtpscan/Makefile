@@ -7,6 +7,7 @@
 
 PORTNAME=	smtpscan
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	security mail perl5
 MASTER_SITES=	http://www.greyhats.org/outils/smtpscan/
 
@@ -14,7 +15,7 @@ MAINTAINER=	hubert@frbsd.org
 COMMENT=	A remote SMTP server version detector
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/IO.pm:${PORTSDIR}/devel/p5-IO \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 
 USE_PERL5=	yes
