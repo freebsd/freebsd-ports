@@ -10,4 +10,5 @@ PORTNAME=	gcc
 MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	sh-rtems
+BROKEN=		"Generates an internal compiler error.  Under investigation."
 .include "${.CURDIR}/../i386-rtems-gcc/Makefile"
