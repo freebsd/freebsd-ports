@@ -2652,6 +2652,7 @@ imake		ports/devel/imake
 imake-4		ports/devel/imake-4
 imap-uw		ports/mail/imap-uw
 imapfilter	ports/mail/imapfilter
+imapproxy	ports/net/imapproxy
 imaze		ports/games/imaze
 imc		ports/graphics/imc
 imcom		ports/net/imcom
