@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmcliphist
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/
 
@@ -18,10 +18,14 @@ USE_GTK=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/.wmcliphistrc ${EXAMPLESDIR}
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif #NOPORTDOCS
+
+post-install:
+	@${SED} 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
