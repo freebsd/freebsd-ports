@@ -8,14 +8,16 @@
 
 CATEGORIES=	korean net
 
-MASTERDIR=	${.CURDIR}/../../net/gaim
+PATCH_SITES=	http://master.debian.or.kr/~alee/patch/
+PATCHFILES=	gaim-0.55-i18n.diff
+PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
-# Slightly modified from http://master.debian.or.kr/~alee/patch/
-EXTRA_PATCHES=	${.CURDIR}/files/gaim-utf.diff
+MASTERDIR=	${.CURDIR}/../../net/gaim
+MD5_FILE=	${.CURDIR}/distinfo
 
 .if !exists(/usr/include/langinfo.h)
 BROKEN=		"/usr/include/langinfo.h needed; 4-stable after Mar 13 2002 and -current"
