@@ -622,6 +622,8 @@ LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
+PHP_PORT=	${.CURDIR:S|^${PORTSDIR}||:S|^/||}
+
 pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
@@ -667,7 +669,7 @@ post-build:
 	@${ECHO_CMD} "PHP_VER=5" > ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_VERSION=${PORTVERSION}" >> ${WRKDIR}/php.conf
 	@${ECHO_CMD} "PHP_EXT_DIR=${EXT_DIR}" >> ${WRKDIR}/php.conf
-	@${ECHO_CMD} "PHP_PORT=${.CURDIR}" >> ${WRKDIR}/php.conf
+	@${ECHO_CMD} "PHP_PORT=\$${PORTSDIR}/${PHP_PORT}" >> ${WRKDIR}/php.conf
 .if !defined(WITHOUT_CLI) && !defined(WITHOUT_PEAR)
 	@${ECHO_CMD} "PHP_PEAR=yes" >> ${WRKDIR}/php.conf
 .else
