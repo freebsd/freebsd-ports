@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.13
+PORTREVISION=	0
 CATEGORIES=	net databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -23,10 +23,11 @@ USE_LIBTOOL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
+INFO=		mydns
 MAN5=		mydns.conf.5
-MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8
+MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydns-conf.8
 
-DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
+DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
 .include <bsd.port.pre.mk>
 
@@ -39,6 +40,8 @@ CONFIGURE_ARGS+=--without-pgsql
 PKGNAMESUFFIX=	-mysql
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
+LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
 .else
 LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
 .endif
@@ -53,7 +56,7 @@ post-install:
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/admin.php ${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${DOCSDIR}/contrib/
 	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
 .endif
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample

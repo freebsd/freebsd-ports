@@ -1,5 +1,5 @@
---- doc/texinfo/title.texi.orig Fri Nov 15 10:30:48 2002
-+++ doc/texinfo/title.texi      Wed Dec 18 15:18:13 2002
+--- doc/mydns.texi.orig Fri Nov 15 10:30:48 2002
++++ doc/mydns.texi      Wed Dec 18 15:18:13 2002
 @@ -1,3 +1,7 @@
 +@dircategory Miscellaneous
 +@direntry
