@@ -1,0 +1,73 @@
+--- ../funkgold-orig/dsp_mixxer.c	Mon Jun 22 20:09:39 1998
++++ dsp_mixxer.c	Sun Apr  1 17:51:50 2001
+@@ -15,15 +15,11 @@
+ ***************************************************************************/
+ #include <stdio.h>
+ #include <math.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+-#ifdef Linux
+- #include <sys/soundcard.h>
+-#elif FreeBSD
+- #include <machine/soundcard.h>
+-#endif
++#include <sys/soundcard.h>
+ #include "funktracker_defs.h"
+ #include "funktracker.h"
+ #include "funkload.h"
+--- ../funkgold-orig/funkgold.c	Sun Jun 21 22:10:54 1998
++++ funkgold.c	Sun Apr  1 17:53:18 2001
+@@ -23,7 +23,7 @@
+ ***************************************************************************/
+ #include <curses.h>
+ #include <unistd.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <signal.h>
+ #include <sys/time.h>
+--- ../funkgold-orig/funkgold_dir.c	Wed Dec  2 22:01:23 1998
++++ funkgold_dir.c	Sun Apr  1 18:05:59 2001
+@@ -18,7 +18,6 @@
+ #include <unistd.h>
+ #include <dirent.h>
+ #include <sys/stat.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include "funktracker_defs.h"
+--- ../funkgold-orig/funkgold_misc.c	Sun Jun 21 15:56:46 1998
++++ funkgold_misc.c	Sun Apr  1 17:53:30 2001
+@@ -17,7 +17,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <sys/time.h>
+-#include <malloc.h>
+ #include "funktracker_defs.h"
+ #include "dsp_mixxer.h"
+ #include "funktracker.h"
+--- ../funkgold-orig/funkgold_sm.c	Sun Jun 21 15:57:07 1998
++++ funkgold_sm.c	Sun Apr  1 17:53:44 2001
+@@ -16,7 +16,7 @@
+ ***************************************************************************/
+ #include <curses.h>
+ #include <unistd.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "funktracker_defs.h"
+ #include "dsp_mixxer.h"
+ #include "funktracker.h"
+--- ../funkgold-orig/funkload.c	Sun Jun 21 15:57:21 1998
++++ funkload.c	Sun Apr  1 17:53:51 2001
+@@ -15,7 +15,7 @@
+ ***************************************************************************/
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
++#include <stdlib.h>
+ #include "funktracker_defs.h"
+ #include "dsp_mixxer.h"
+ #include "funktracker.h"

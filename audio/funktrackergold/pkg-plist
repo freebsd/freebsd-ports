@@ -1,0 +1,3 @@
+bin/funkgold
+%%PORTDOCS%%share/doc/funktrackergold/README
+%%PORTDOCS%%@dirrm share/doc/funktrackergold
