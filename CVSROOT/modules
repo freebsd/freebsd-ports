@@ -1378,7 +1378,6 @@ de-ksteak	ports/german/ksteak
 de-linux-eagle	ports/german/linux-eagle
 de-linux-mozillafirebird	ports/german/linux-mozillafirebird
 de-manpages	ports/german/manpages
-de-netscape7	ports/german/netscape7
 de-ooodict-CH	ports/german/ooodict-de_CH
 de-ooodict-DE	ports/german/ooodict-de_DE
 de-openoffice-1.0	ports/german/openoffice-1.0
@@ -2179,7 +2178,6 @@ fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
 fr-med		ports/french/med
 fr-mozilla-flp	ports/french/mozilla-flp
-fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
 fr-openoffice-1.1	ports/french/openoffice-1.1
@@ -3818,7 +3816,6 @@ ja-navi2ch-xemacs21-mule	ports/japanese/navi2ch-xemacs21-mule
 ja-ne		ports/japanese/ne
 ja-nethack32	ports/japanese/nethack32
 ja-nethack34	ports/japanese/nethack34
-ja-netscape7	ports/japanese/netscape7
 ja-netype	ports/japanese/netype
 ja-netypesv	ports/japanese/netypesv
 ja-newosaka	ports/japanese/newosaka
@@ -8853,7 +8850,6 @@ pt-kde3-i18n-pt	ports/portuguese/kde3-i18n
 pt-kde3-i18n-pt_BR	ports/portuguese/kde3-i18n-pt_BR
 pt-koffice-i18n	ports/portuguese/koffice-i18n
 pt-koffice-i18n-pt_BR	ports/portuguese/koffice-i18n-pt_BR
-pt-netscape7	ports/portuguese/netscape7
 pt-ooodict-BR	ports/portuguese/ooodict-pt_BR
 pt-ooodict-PT	ports/portuguese/ooodict-pt_PT
 pt-openoffice-1.0	ports/portuguese/openoffice-1.0
