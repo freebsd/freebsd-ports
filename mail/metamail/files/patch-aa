@@ -1,0 +1,78 @@
+*** Makefile.orig	Wed Jan 26 18:32:33 1994
+--- Makefile	Mon Oct 17 21:38:58 1994
+***************
+*** 38,44 ****
+  
+  STATICFLAG=FOOBAR${HOST_ARCH}
+  
+! CFLAGS = -g -I.  ${$(STATICFLAG)} 
+  # The following is better if you want to make sure you run with SYSV defined
+  # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
+  # Also, for SGI Irix, compile in K&R mode
+--- 38,44 ----
+  
+  STATICFLAG=FOOBAR${HOST_ARCH}
+  
+! CFLAGS = -g -O -I.  ${$(STATICFLAG)} 
+  # The following is better if you want to make sure you run with SYSV defined
+  # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
+  # Also, for SGI Irix, compile in K&R mode
+***************
+*** 49,57 ****
+  # LDLIBS variable.
+  #
+  # For Sun and BSD systems, the following should work...
+! LDLIBS =
+  # On BSD 4.4 systems, you will need the following
+! # LDLIBS = -lcompat
+  # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
+  # LDLIBS = -lsun -lc_s
+  # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
+--- 49,57 ----
+  # LDLIBS variable.
+  #
+  # For Sun and BSD systems, the following should work...
+! # LDLIBS =
+  # On BSD 4.4 systems, you will need the following
+! LDLIBS = -lcompat
+  # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
+  # LDLIBS = -lsun -lc_s
+  # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
+***************
+*** 75,81 ****
+  INSTALL = install -c -s
+  
+  # Root of installation tree
+! INSTROOT = /usr/local
+  #
+  # This is where binaries should be copied
+  LOCALBINDIR = ${INSTROOT}/bin
+--- 75,81 ----
+  INSTALL = install -c -s
+  
+  # Root of installation tree
+! INSTROOT = ${PREFIX}
+  #
+  # This is where binaries should be copied
+  LOCALBINDIR = ${INSTROOT}/bin
+***************
+*** 96,104 ****
+  # This helps with the "for" constructs below on some platforms:
+  SHELL=/bin/sh
+  
+! install: basics
+  
+! basics::
+  	(cd metamail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
+  	-${RM} bin/metamail
+  	(cd bin; ${LN} ../metamail/metamail metamail)
+--- 96,104 ----
+  # This helps with the "for" constructs below on some platforms:
+  SHELL=/bin/sh
+  
+! install: install-all
+  
+! all basics::
+  	(cd metamail ; $(MAKE)  CONFIGDIR=../${CONFIGDIR}  CFLAGS="${CFLAGS}" CC="${CC}"  LDLIBS="${LDLIBS}")
+  	-${RM} bin/metamail
+  	(cd bin; ${LN} ../metamail/metamail metamail)
