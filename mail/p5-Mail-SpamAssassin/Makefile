@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.31
-PORTREVISION=	2
+PORTVERSION=	2.41
+PORTREVISION=	0
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -30,15 +30,14 @@ PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
-		Mail::SpamAssassin::PersistentAddrList.3 \
-		Mail::SpamAssassin::SMTP::SmartHost.3
+		Mail::SpamAssassin::PersistentAddrList.3
 MAN1PREFIX=	${PREFIX}
-MAN1=		spamd.1 spamassassin.1 spamc.1 spamproxyd.1
+MAN1=		spamd.1 spamassassin.1 spamc.1
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
-	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
 	@strip ${PREFIX}/bin/spamc
@@ -47,10 +46,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
-	${INSTALL_DATA} ${WRKSRC}/spamproxy/README ${DOCSDIR}/README.spamproxy
 	cd ${WRKSRC} ; ${INSTALL_DATA} \
-	    Changes README TODO TRADEMARK procmailrc.example sample* \
-	    spamd/README* spamproxy/README.SmartHost sql/spamassassin.sql \
+	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
+	    spamd/README* sql/spamassassin.sql \
 	    ${DOCSDIR}
 .endif
 
