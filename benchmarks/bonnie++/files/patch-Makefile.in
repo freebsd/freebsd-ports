@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jun 13 12:09:24 2002
-+++ Makefile.in	Thu Jun 13 12:09:55 2002
+--- Makefile.in.orig	Thu Jan  2 23:27:47 2003
++++ Makefile.in	Thu Jan  2 23:28:08 2003
 @@ -8,7 +8,7 @@
  eprefix=@exec_prefix@
  #MORE_WARNINGS=-Weffc++ -Wcast-align
@@ -9,12 +9,3 @@
  CXX=@CXX@ $(CFLAGS)
  
  INSTALL=@INSTALL@
-@@ -34,7 +34,7 @@
- install-bin: $(EXES)
- 	mkdir -p $(eprefix)/bin $(eprefix)/sbin
- 	@INSTALL_PROGRAM@ @stripping@ $(EXES) $(eprefix)/sbin
--	@INSTALL_PROGRAM@ $(SCRIPTS) $(eprefix)/bin
-+	@INSTALL_SCRIPT@ $(SCRIPTS) $(eprefix)/bin
- 
- install: install-bin
- 	mkdir -p @mandir@/man1 @mandir@/man8
