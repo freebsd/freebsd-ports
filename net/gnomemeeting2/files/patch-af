@@ -1,5 +1,34 @@
-*** src/endpoint.cpp.orig	Thu Jul 26 11:45:30 2001
---- src/endpoint.cpp	Thu Jul 26 11:45:42 2001
+*** src/endpoint.cpp.orig	Sun Jun 17 22:37:03 2001
+--- src/endpoint.cpp	Fri Jul 27 14:27:01 2001
+*************** GMH323EndPoint::GMH323EndPoint (GM_windo
+*** 83,88 ****
+--- 83,90 ----
+  
+    SetCurrentConnection (NULL);
+    SetCallingState (0);
++ 
++   ring_thread = NULL;
+  }
+  
+  
+*************** void GMH323EndPoint::OnConnectionEstabli
+*** 525,531 ****
+    applet_widget_set_tooltip (APPLET_WIDGET (gw->applet), NULL);
+    gdk_threads_leave ();
+  
+!   pthread_cancel (ring_thread);
+  
+    calling_state = 2;
+  
+--- 527,534 ----
+    applet_widget_set_tooltip (APPLET_WIDGET (gw->applet), NULL);
+    gdk_threads_leave ();
+  
+!   if (ring_thread != NULL)
+!     pthread_cancel (ring_thread);
+  
+    calling_state = 2;
+  
 *************** BOOL GMH323EndPoint::OpenVideoDevice (H3
 *** 700,706 ****
         codec.SetVideoDevice("/dev/video");
@@ -9,7 +38,7 @@
         codec.SetBackgroundFill(opts->tr_ub);
         codec.SetVideoFormat(opts->video_format);
   
---- 700,706 ----
+--- 703,709 ----
         codec.SetVideoDevice("/dev/video");
         codec.SetVideoInput (0);
         codec.SetTxQualityLevel (opts->tr_vq);
