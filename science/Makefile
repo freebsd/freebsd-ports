@@ -31,6 +31,7 @@
     SUBDIR += kst
     SUBDIR += libctl
     SUBDIR += libsvm
+    SUBDIR += libsvm-python
     SUBDIR += mayavi
     SUBDIR += mmtk
     SUBDIR += mpb
