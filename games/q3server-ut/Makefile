@@ -16,6 +16,8 @@ DISTNAME=	urbanterror3
 
 COMMENT=	Quake III Arena Mod: Urban Terror for Linux
 
+NO_PACKAGE=	"Distfile is >256MB; define FORCE_PACKAGE if you really want this."
+
 WRKSRC=		${WRKDIR}/q3ut3
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
