@@ -12,7 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
-		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
+		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	billf@FreeBSD.org
