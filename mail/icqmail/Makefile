@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	never@nevermind.kiev.ua
 
+IGNORE=		"Does not work with newer version of protocol"
+
 LIB_DEPENDS=	icq0.1:${PORTSDIR}/net/icqlib0 \
 		guile.10:${PORTSDIR}/lang/guile
 
