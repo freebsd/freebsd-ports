@@ -4,23 +4,6 @@
 #
 # Access control lists for CVS.  dgg@ksr.com (David G. Grubbs)
 #
-# CVS "commitinfo" for matching repository names, running the program it finds
-# on the same line.  More information is available in the CVS man pages.
-#
-# ==== INSTALLATION:
-#
-# To use this program as I intended, do the following four things:
-#
-# 0. Install PERL.  :-)
-#
-# 1. Put one line, as the *only* non-comment line, in your commitinfo file:
-#
-#	DEFAULT		/usr/local/bin/cvs_acls
-#
-# 2. Install this file as /usr/local/bin/cvs_acls and make it executable.
-#
-# 3. Create a file named $CVSROOT/CVSROOT/avail.
-#
 # ==== FORMAT OF THE avail FILE:
 #
 # The avail file determines whether you may commit files.  It contains lines
