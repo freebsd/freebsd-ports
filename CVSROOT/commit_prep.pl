@@ -146,7 +146,7 @@ sub check_version {
 		if ( /^.*(\$$HEADER.*)/ ) {
 			$rcsid = $1;
 			$found_rcsid = 1;
-		} elsif ( m/\r/ ) {
+		} elsif ( $cfg::NO_DOS_LINEBREAKS and /\r/ ) {
 			# Found a DOS linebreak
 			printf($DOSLineBreak, "$directory/$filename",
 			    $line_number);
@@ -156,7 +156,7 @@ sub check_version {
 	close FILE;
 
 	# The file must NOT contain DOS linebreaks
-	if ($cfg::NO_DOS_LINEBREAKS and $dos_line_brk_found) {
+	if ($dos_line_brk_found) {
 		print $DOSLineErr;
 		return(1);
 	}
