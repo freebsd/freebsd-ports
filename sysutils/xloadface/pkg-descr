@@ -1,0 +1,8 @@
+`xloadface' is a network load monitor for X11. This program use the rwhod
+database for display `user' and `CPU load'. 
+
+See README and man page for details. The man page and README are only in
+Japanese for now, but it is easy to use none the less..
+
+Orignal xloadface written by aito@rcais.tohoku.ac.jp.
+This port is done by furusawa@com.cs.osakafu-u.ac.jp.
