@@ -1,38 +1,36 @@
---- ltmain.sh.orig	Sun Oct  6 15:24:35 2002
-+++ ltmain.sh	Fri Oct 11 02:13:11 2002
-@@ -1249,8 +1249,17 @@
+--- ltmain.sh.orig	Sat Nov 30 21:32:08 2002
++++ ltmain.sh	Tue Dec  3 22:59:51 2002
+@@ -1037,8 +1037,16 @@
  	continue
  	;;
  
 +      -pthread)
-+      compile_command="$compile_command -pthread"
-+      finalize_command="$finalize_command -pthread"
-+      compiler_flags="$compiler_flags -pthread"
-+      continue
-+      ;;
-+
++        compile_command="$compile_command -pthread"
++	finalize_command="$finalize_command -pthread"
++	compiler_flags="$compiler_flags -pthread"
++	continue
++	;;
 +
        -module)
  	module=yes
-+        build_old_libs=no
++	build_old_libs=no
  	continue
  	;;
  
-@@ -2841,6 +2850,9 @@
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
+@@ -2405,7 +2413,7 @@
+ 	    # Rhapsody C library is in the System framework
+ 	    deplibs="$deplibs -framework System"
  	    ;;
-+          *-*-freebsd*)
-+            # FreeBSD doesn't need this...
-+            ;;
-  	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -4715,10 +4727,12 @@
+-	  *-*-netbsd*)
++	  *-*-netbsd* | *-*-freebsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
+ 	  *)
+@@ -4175,10 +4183,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
-+        if /usr/bin/false; then
++	if /usr/bin/false; then
  	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
  	instname="$dir/$name"i
  	$show "$install_prog $instname $destdir/$name"
