@@ -1,0 +1,13 @@
+XSwallow is a general-purpose plugin for Netscape for Unix
+which allows the user to configure any programs he or she
+desires to handle any MIME type data embedded in web pages.
+
+XSwallow documentation and some pages for testing your
+configuration are located at:
+
+WWW: http://www.csn.ul.ie/~caolan/docs/xswallow.html
+
+Author: Caolan.McNamara@ul.ie
+
+-- 
+conrads@home.com

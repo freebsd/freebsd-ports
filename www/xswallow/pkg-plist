@@ -1,0 +1,6 @@
+lib/netscape/plugins/xswallow.so
+share/doc/xswallow/README
+share/examples/xswallow/xswallow.conf
+@dirrm share/doc/xswallow
+@dirrm share/examples/xswallow
+

@@ -1,0 +1,15 @@
+
+XSwallow plugin was installed in /usr/local/lib/netscape/plugins.
+
+If your Netscape installation uses a different location,
+then move xswallow.so from the above location to there.
+
+You should copy the sample configuration file
+/usr/local/share/examples/xswallow/xswallow.conf
+to your ~/.netscape directory.
+
+More documentation and some pages for testing your
+configuration are available at
+
+WWW: http://skynet.csn.ul.ie/~caolan/docs/XSwallow.html
+
