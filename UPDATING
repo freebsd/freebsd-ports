@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040531:
+  AFFECTS: users of lang/perl5.8
+
+  lang/perl5.8 has been updated to 5.8.4. you should update everything
+  depending on perl, that is :
+    * first, upgrade your perl5.8 installation.
+    * run "use.perl port", so that the system knows you have 5.8.4.
+    * now, run some magic incantations to upgrade all ports depending on perl,
+      that is run something like : 
+      portupgrade -f $((pkg_info -R perl-5.8.2_2 |tail +4; \
+        find /usr/local/lib/perl5/site_perl/5.8.2 -type f -print0 \
+        | xargs -0 pkg_which -fv | sed -e '/: ?/d' -e 's/.*: //')|sort -u)
+      This is likely to fail for a few ports, you'll have to upgrade them
+      afterward.
+
 20040529:
   AFFECTS: users of mail/mailman and japanese/mailman
 
