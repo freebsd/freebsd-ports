@@ -159,6 +159,7 @@
     SUBDIR += lplayer
     SUBDIR += mad
     SUBDIR += maplay
+    SUBDIR += mbrola
     SUBDIR += mctoolame-decoder
     SUBDIR += mctoolame-encoder
     SUBDIR += mhwaveedit

@@ -1,0 +1,5 @@
+This is an i386-only binary port of the MBROLA speech synthesizer,
+which uses "a time-domain algorithm with outstanding diphone smoothing
+capabilities."
+
+WWW:  http://tcts.fpms.ac.be/synthesis
