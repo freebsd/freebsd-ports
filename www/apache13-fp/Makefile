@@ -19,7 +19,8 @@ DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Apache webserver with MS Frontpage Module
 
-BROKEN=		"Checksum mismatch"
+#BROKEN=		"Checksum mismatch"
+FORBIDDEN=	multiple vulnerabilities: http://www.apacheweek.com/features/security-13
 
 #PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
 #PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/
