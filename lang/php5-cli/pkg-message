@@ -1,11 +1,11 @@
 *****************************************************************************
 
-You have installed the php4-cli package.
+You have installed the php5-cli package.
 
-Have a look at the php4-cli port if you need additional extensions other than
-CTYPE, MYSQL, OVERLOAD, PCRE, POSIX, SESSION, TOKENIZER, XML and ZLIB.
+Have a look at the php5-cli port if you need additional extensions other than
+CTYPE, DOM, PCRE, POSIX, SESSION, SIMPLEXML, SQLITE, TOKENIZER and XML.
 
 You can find it at
-ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/lang/php4-cli.tar
+ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/lang/php5-cli.tar
 
 *****************************************************************************
