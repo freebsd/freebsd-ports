@@ -3,7 +3,7 @@
 # Date created:		3 Apr 1999
 # Whom:			Sugimoto Sadahiro <ixtl@utmc.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:04:18 steve Exp $
 #
 # Default image format is GIF.
 # If you prefer PNG to GIF, define USE_PNG (`make -DUSE_PNG`).
@@ -30,8 +30,15 @@ RUN_DEPENDS +=	${X11BASE}/bin/pnmtopng:${PORTSDIR}/graphics/pnmtopng
 WRKSRC=	${WRKDIR}/latex2html
 USE_PERL5=	yes
 NO_BUILD=	yes
+PATCHDIR=	${WRKDIR}/patches
 
 L2HDIR=	${PREFIX}/share/jlatex2html
+
+pre-patch:
+	@${MKDIR} ${PATCHDIR}
+	@for p in ${MASTERDIR}/patches/patch-*; do \
+		${SED} -e "s:@Id@:Id:" $$p > ${PATCHDIR}/$${p##*/}; \
+	done
 
 post-patch:
 	@${PATCH} ${PATCH_ARGS} -o ${WRKDIR}/jlatex2html < ${WRKDIR}/jlatex2html.dif
