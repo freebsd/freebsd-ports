@@ -1,5 +1,5 @@
---- pmlist.cpp.orig	Fri Jan  3 03:14:24 2003
-+++ pmlist.cpp	Mon Jan 20 20:38:16 2003
+--- pmlist.cpp.orig	Fri Jan  3 04:14:24 2003
++++ pmlist.cpp	Wed May 26 10:37:36 2004
 @@ -31,6 +31,8 @@
  #include <unistd.h>
  #include <iostream>
@@ -9,7 +9,7 @@
  PortMapList::PortMapList()
  {
  
-@@ -182,8 +184,13 @@
+@@ -182,8 +184,16 @@
  {
  	char command[255];
  
@@ -18,22 +18,28 @@
 +	FILE *ipnat = popen("/sbin/ipnat -f -", "w");
 +	if (ipnat == NULL)
 +		return 0;
-+	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s",
++	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s\n",
 +		ExtIf, ExtIP, ExtPort, IntIP, IntPort, Proto);
++	fprintf(ipnat, command);
++	sprintf(command, "rdr lo0 %s/32 port %d -> %s port %d %s\n",
++		ExtIP, ExtPort, IntIP, IntPort, Proto);
 +	fprintf(ipnat, command);
 +	pclose(ipnat);
  
  	return (1);
  }
-@@ -218,9 +225,14 @@
+@@ -218,8 +228,16 @@
  {
  	char command[255];
  	
 +	FILE *ipnat = popen("/sbin/ipnat -rf -", "w");
 +	if (ipnat == NULL)
 +		return 0;
-+	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s",
++	sprintf(command, "rdr %s %s/32 port %d -> %s port %d %s\n",
 +		ExtIf, ExtIP, ExtPort, IntIP, IntPort, Proto);
++	fprintf(ipnat, command);
++	sprintf(command, "rdr lo0 %s/32 port %d -> %s port %d %s\n",
++		ExtIP, ExtPort, IntIP, IntPort, Proto);
 +	fprintf(ipnat, command);
 +	pclose(ipnat);
  
@@ -41,4 +47,3 @@
 -	system(command);	
  	return (1);
  }
- 

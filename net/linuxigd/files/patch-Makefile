@@ -4,12 +4,12 @@
  CC=g++
 -INCLUDES= -I/usr/include/upnp 
 -LIBS= -lpthread  /usr/lib/libupnp.so
-+INCLUDES= -I$(PREFIX)/include 
-+LIBS= $(PTHREAD_LIBS) $(PREFIX)/lib/libupnp.so
++INCLUDES= -I$(LOCALBASE)/include 
++LIBS= $(PTHREAD_LIBS) $(LOCALBASE)/lib/libupnp.so
  
  
  ifeq ($(DEBUG),1)
-@@ -26,7 +26,7 @@
+@@ -26,6 +26,6 @@
  	rm -f *.o $(APPS)
  
  install: upnpd
@@ -19,4 +19,3 @@
 +	@install -d $(PREFIX)/etc/linuxigd
 +	@$(BSD_INSTALL_DATA) etc/* $(PREFIX)/etc/linuxigd
 +	@$(BSD_INSTALL_PROGRAM) upnpd $(PREFIX)/bin
- 
