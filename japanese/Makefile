@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.43 1996/12/03 10:54:15 asami Exp $
+# $Id: Makefile,v 1.44 1996/12/03 13:36:06 obrien Exp $
 #
 
     SUBDIR += Canna
@@ -56,6 +56,5 @@
     SUBDIR += vfxdvi
     SUBDIR += xbakuzan
     SUBDIR += xdvi
-    SUBDIR += xloadface
 
 .include <bsd.port.subdir.mk>
