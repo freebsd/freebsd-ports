@@ -1,0 +1,13 @@
+*** Makefile2	Mon Nov 30 21:31:27 1998
+--- Makefile	Mon Nov 30 21:34:18 1998
+***************
+*** 21,24 ****
+  	rm -f $(PROG)
+  
+  install::
+! 	install -c -g kmem -m 4755 -o root $(PROG) /usr/X11R6/bin
+--- 21,24 ----
+  	rm -f $(PROG)
+  
+  install::
+! 	install -c -g kmem -m 4755 -o root $(PROG) $(PREFIX)/bin

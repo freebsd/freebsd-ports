@@ -1,0 +1,17 @@
+WMMon monitors the realtime CPU load as well the average system load and gives
+you some nice additional features too...
+
+WMMon currently provides:
+
+        * Realtime CPU 'stress' meter;
+        * Average systemload, like xload & wmavgload;
+        * Average systemload graphic is autoscaling;
+        * Realtime Disk I/O 'stress' meter;
+        * Average Disk I/O load grapic (autoscaling);
+        * Realtime total Mem & Swap usage meters;
+        * System uptime display;
+        * Realtime cycling through all monitor modes;
+        * Can lauch 3 user definable commands through ~/.wmmonrc;
+        * Can be started multiple times;
+        * Commandline options for help (-h), version (-v),
+          start mode (-i & -s) and display (-d);
