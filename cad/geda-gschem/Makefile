@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gschem
-PORTVERSION=	20010304
+PORTVERSION=	20020209
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20010304/ \
-		http://geda.seul.org/devel/20010304/ \
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020209/ \
+		http://geda.seul.org/devel/20020209/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
 MAINTAINER=	bruno@tinkerbox.org
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.12:${PORTSDIR}/cad/libgeda \
+LIB_DEPENDS=	geda.15:${PORTSDIR}/cad/libgeda \
 		guile.9:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
@@ -25,7 +25,7 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/gschem
+DISTNAME=       geda-${PORTNAME}-${PORTVERSION}
 
 MAN1=		gschem.1
 
