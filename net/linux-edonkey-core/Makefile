@@ -7,6 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	0.2000.16.16.59.3
+PORTREVISION=	1
 CATEGORIES=	net linux
 MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMESUFFIX=	-core
@@ -46,7 +47,7 @@ pre-install:
 	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin/${BINARY_NAME}-real
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/sbin/${BINARY_NAME}-real
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
