@@ -14,3 +14,4 @@ bin/DeepForest.app
 @dirrm JDE/DeepForest/docs/Japanese
 @dirrm JDE/DeepForest/docs
 @dirrm JDE/DeepForest
+@unexec rmdir %D/JDE 2>/dev/null || true
