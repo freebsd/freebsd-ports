@@ -1,0 +1,20 @@
+--- servGL/hwglx/mga/mgadirect.c.orig	Mon Oct  9 21:47:35 2000
++++ servGL/hwglx/mga/mgadirect.c	Mon Oct  9 21:48:18 2000
+@@ -62,17 +62,6 @@
+ #include "glx_clients.h"
+ #include "glx_init.h"
+ 
+-#ifndef NO_MTRR
+-#define MTRR_NEED_STRINGS
+-#include <errno.h>
+-#include <asm/mtrr.h>
+-#include <fcntl.h>
+-#include <sys/ioctl.h>
+-#include <unistd.h>
+-int mtrr;
+-void mgaCloseMTRR();
+-#endif
+-
+ #include "xf86_OSproc.h"
+ 
+ 

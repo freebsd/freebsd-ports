@@ -1,0 +1,364 @@
+--- servGL/hwglx/common/hw_mtrr.c.orig	Mon Oct  9 21:42:30 2000
++++ servGL/hwglx/common/hw_mtrr.c	Mon Oct  9 21:42:55 2000
+@@ -1,4 +1,3 @@
+-
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <unistd.h>
+@@ -7,13 +6,15 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <signal.h>
++#include <sys/ioctl.h>
+ 
+ #include "glx_symbols.h"
+ #include "hwlog.h"
+ 
+-
+ #ifndef NO_MTRR
+ 
++#ifdef linux
++
+ #define MTRR_NEED_STRINGS
+ #include <errno.h>
+ #include <asm/mtrr.h>
+@@ -237,6 +238,339 @@
+ 		       sentry.base, sentry.size );
+ 	}
+ }
++
++#endif 
++
++#if defined(__FreeBSD__) || defined(__NetBSD__)
++
++#ifndef __NetBSD__
++#include <sys/memrange.h>
++#else
++#include "memrange.h"
++#endif
++#define X_MTRR_ID "XFree86"
++
++typedef struct x_RangeRec {
++	struct mem_range_desc	mrd;
++	int			wasWC;
++	struct x_RangeRec *	next;
++} RangeRec, *RangePtr;
++
++static RangePtr savedRangeList = NULL;
++static int      devMemFd = -1;
++
++/*
++ * getAllRanges returns the full list of memory ranges with attributes set.
++ */
++
++static struct mem_range_desc *
++getAllRanges(int *nmr)
++{
++	struct mem_range_desc *mrd;
++	struct mem_range_op mro;
++
++	/*
++	 * Find how many ranges there are.  If this fails, then the kernel
++	 * probably doesn't have MTRR *support.
++	 */
++	mro.mo_arg[0] = 0;
++	if (ioctl(devMemFd, MEMRANGE_GET, &mro))
++		return NULL;
++	*nmr = mro.mo_arg[0];
++	mrd = (struct mem_range_desc *)xalloc(*nmr * sizeof(struct mem_range_desc));
++	mro.mo_arg[0] = *nmr;
++	mro.mo_desc = mrd;
++	if (ioctl(devMemFd, MEMRANGE_GET, &mro)) {
++		xfree(mrd);
++		return NULL;
++	}
++	return mrd;
++}
++
++static void
++freeRangeList(RangePtr range)
++{
++	RangePtr rp;
++
++	while (range) {
++		rp = range;
++		range = rp->next;
++		xfree(rp);
++	}
++}
++
++static RangePtr
++dupRangeList(RangePtr list)
++{
++	RangePtr new = NULL, rp, p;
++
++	rp = list;
++	while (rp) {
++		p = (RangePtr)xalloc(sizeof(RangeRec));
++		*p = *rp;
++		p->next = new;
++		new = p;
++		rp = rp->next;
++	}
++	return new;
++}
++
++static RangePtr
++sortRangeList(RangePtr list)
++{
++	RangePtr rp1, rp2, copy, sorted = NULL, minp, prev, minprev;
++	unsigned long minBase;
++
++	/* Sort by base address */
++	rp1 = copy = dupRangeList(list);
++	while (rp1) {
++		minBase = rp1->mrd.mr_base;
++		minp = rp1;
++		minprev = NULL;
++		prev = rp1;
++		rp2 = rp1->next;
++		while (rp2) {
++			if (rp2->mrd.mr_base < minBase) {
++				minBase = rp2->mrd.mr_base;
++				minp = rp2;
++				minprev = prev;
++			}
++			prev = rp2;
++			rp2 = rp2->next;
++		}
++		if (minprev) {
++			minprev->next = minp->next;
++			rp1 = copy;
++		} else {
++			rp1 = minp->next;
++		}
++		minp->next = sorted;
++		sorted = minp;
++	}
++	return sorted;
++}
++
++/*
++ * findRanges returns a list of ranges that overlap the specified range.
++ */
++
++static void
++findRanges(unsigned long base, unsigned long size, RangePtr *ucp, RangePtr *wcp)
++{
++	struct mem_range_desc *mrd;
++	int nmr, i;
++	RangePtr rp, *p;
++	
++	if (!(mrd = getAllRanges(&nmr)))
++		return;
++
++	for (i = 0; i < nmr; i++) {
++		if ((mrd[i].mr_flags & MDF_ACTIVE) &&
++		    mrd[i].mr_base < base + size &&
++		    mrd[i].mr_base + mrd[i].mr_len > base) {
++			if (mrd[i].mr_flags & MDF_WRITECOMBINE)
++				p = wcp;
++			else if (mrd[i].mr_flags & MDF_UNCACHEABLE)
++				p = ucp;
++			else
++				continue;
++			rp = (RangePtr)xalloc(sizeof(RangeRec));
++			rp->mrd = mrd[i];
++			rp->next = *p;
++			*p = rp;
++		}
++	}
++	xfree(mrd);
++}
++
++/*
++ * This checks if the existing overlapping ranges fully cover the requested
++ * range.  Is this overkill?
++ */
++
++static int
++fullCoverage(unsigned long base, unsigned long size, RangePtr overlap)
++{
++	RangePtr rp1, sorted = NULL;
++	unsigned long end;
++
++	sorted = sortRangeList(overlap);
++	/* Look for gaps */
++	rp1 = sorted;
++	end = base + size;
++	while (rp1) {
++		if (rp1->mrd.mr_base > base) {
++			freeRangeList(sorted);
++			return FALSE;
++		} else {
++			base = rp1->mrd.mr_base + rp1->mrd.mr_len;
++		}
++		if (base >= end) {
++			freeRangeList(sorted);
++			return 1;
++		}
++		rp1 = rp1->next;
++	}
++	freeRangeList(sorted);
++	return 0;
++}
++
++static RangePtr
++addWC(unsigned long base, unsigned long size)
++{
++	RangePtr uc = NULL, wc = NULL, retlist = NULL;
++	struct mem_range_desc mrd;
++	struct mem_range_op mro;
++
++	findRanges(base, size, &uc, &wc);
++
++	/* See of the full range is already WC */
++	if (!uc && fullCoverage(base, size, wc)) {
++		hwMsg(1, "Write-combining range (0x%lx,0x%lx) was already set\n",
++		    base, size);
++		return NULL;
++	}
++
++	/* Otherwise, try to add the new range */
++	mrd.mr_base = base;
++	mrd.mr_len = size;
++	strcpy(mrd.mr_owner, X_MTRR_ID);
++	mrd.mr_flags = MDF_WRITECOMBINE;
++	mro.mo_desc = &mrd;
++	mro.mo_arg[0] = MEMRANGE_SET_UPDATE;
++	if (ioctl(devMemFd, MEMRANGE_SET, &mro)) {
++		hwError("Failed to set write-combining range "
++			"(0x%lx,0x%lx)\n", base, size);
++		return NULL;
++	} else {
++	  hwMsg(1, "Write-combining range (0x%lx,0x%lx)\n", base, size);
++		retlist = (RangePtr)xalloc(sizeof(RangeRec));
++		retlist->mrd = mrd;
++		retlist->wasWC = FALSE;
++		retlist->next = NULL;
++		return retlist;
++	}
++}
++
++static void
++undoWC(RangePtr  rp)
++{
++	struct mem_range_op mro;
++	int failed;
++
++	while (rp) {
++		hwMsg(1,"Undo for (0x%lx,0x%lx), %d\n",
++			(unsigned long)rp->mrd.mr_base,
++			(unsigned long)rp->mrd.mr_len, rp->wasWC);
++		failed = FALSE;
++		if (rp->wasWC) {
++			mro.mo_arg[0] = MEMRANGE_SET_UPDATE;
++			rp->mrd.mr_flags = MDF_WRITECOMBINE;
++			strcpy(rp->mrd.mr_owner, "unknown");
++		} else {
++			mro.mo_arg[0] = MEMRANGE_SET_REMOVE;
++		}
++		mro.mo_desc = &rp->mrd;
++
++		if (ioctl(devMemFd, MEMRANGE_SET, &mro)) {
++			if (!rp->wasWC) {
++				mro.mo_arg[0] = MEMRANGE_SET_UPDATE;
++				rp->mrd.mr_flags = MDF_UNCACHEABLE;
++				strcpy(rp->mrd.mr_owner, "unknown");
++				if (ioctl(devMemFd, MEMRANGE_SET, &mro))
++					failed = TRUE;
++			} else
++				failed = TRUE;
++		}
++		if (failed) {
++		        hwError("Failed to restore MTRR range (0x%lx,0x%lx)\n",
++				(unsigned long)rp->mrd.mr_base,
++				(unsigned long)rp->mrd.mr_len);
++		}
++		rp = rp->next;
++	}
++}
++
++static int
++cleanMTRR()
++{
++	struct mem_range_desc *mrd;
++	struct mem_range_op mro;
++	int nmr, i;
++
++	/* This shouldn't happen */
++	if (devMemFd < 0)
++		return FALSE;
++
++	if (!(mrd = getAllRanges(&nmr)))
++		return FALSE;
++
++	for (i = 0; i < nmr; i++) {
++		if (strcmp(mrd[i].mr_owner, X_MTRR_ID) == 0 &&
++		    (mrd[i].mr_flags & MDF_ACTIVE)) {
++			hwMsg( 1,"Clean for (0x%lx,0x%lx)\n",
++				(unsigned long)mrd[i].mr_base,
++				(unsigned long)mrd[i].mr_len);
++			if (mrd[i].mr_flags & MDF_FIXACTIVE) {
++				mro.mo_arg[0] = MEMRANGE_SET_UPDATE;
++				mrd[i].mr_flags = MDF_UNCACHEABLE;
++			} else {
++				mro.mo_arg[0] = MEMRANGE_SET_REMOVE;
++			}
++			mro.mo_desc = mrd + i;
++			ioctl(devMemFd, MEMRANGE_SET, &mro);
++		}
++	}
++	xfree(mrd);
++	return TRUE;
++}
++
++static void CloseMTRR( void ) 
++{
++        undoWC(savedRangeList);
++        close(devMemFd);
++}
++
++static void OpenMTRR( void )
++{
++	if ( ( devMemFd = open( "/dev/mem", O_RDWR, 0 ) ) == -1 )
++	{
++		hwError( "Error opening /dev/mem: %s\n", strerror( errno ) );
++		hwError( "MTRR not enabled\n" );
++		return;
++	}
++
++	if ( !cleanMTRR() ) {
++        	close(devMemFd);
++	        devMemFd = -1;
++	        return;
++	}
++
++	atexit( CloseMTRR );
++}
++
++void SetWriteCombining( long physical, int bytes ) 
++{
++        RangePtr rp;
++
++        if ( devMemFd < 0 ) {
++	  OpenMTRR();
++	}
++
++	if ( devMemFd < 0 ) {
++		return;
++	}
++
++	rp = addWC(physical, bytes);
++
++	if ( NULL != rp ) {
++	        rp->next = savedRangeList;
++        	savedRangeList = rp;
++	}
++}
++
++
++#endif /* end of BSD MTRR support */
+ 
+ /*
+  * FlushWriteCombining
