@@ -7,6 +7,7 @@
 
 PORTNAME=	eterm
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/
 

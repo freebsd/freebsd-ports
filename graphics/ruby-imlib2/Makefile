@@ -7,6 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
