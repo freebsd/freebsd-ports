@@ -8,7 +8,7 @@
 PORTNAME=	mysqltcl
 PORTVERSION=	1.53
 CATEGORIES=	databases tcl83
-MASTER_SITES=	http://download.sourceforge.net/pub/mirrors/mysql/Downloads/Contrib/
+MASTER_SITES=	http://telia.dl.sourceforge.net/mirrors/mysql/Downloads/Contrib/
 
 MAINTAINER=	mi@aldan.algebra.com
 
