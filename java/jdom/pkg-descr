@@ -1,0 +1,6 @@
+JDOM is a Java library for accessing and manipulating XML documents.
+It has a straightforward API, is a lightweight and fast, and is
+optimized for the Java programmer. It's an alternative to DOM and
+SAX, although it integrates well with both DOM and SAX.
+
+WWW: http://www.jdom.org/

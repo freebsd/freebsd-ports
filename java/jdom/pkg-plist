@@ -1,0 +1,91 @@
+%%TARGET_PREFIX%%/etc/crypt.pl
+%%TARGET_PREFIX%%/etc/replic.pl
+%%TARGET_PREFIX%%/samples/sax/XMLFilterBase.java
+%%TARGET_PREFIX%%/samples/sax/DataUnformatFilter.java
+%%TARGET_PREFIX%%/samples/sax/FilterTest.java
+%%TARGET_PREFIX%%/samples/sax/DataFormatFilter.java
+%%TARGET_PREFIX%%/samples/sax/XMLWriter.java
+%%TARGET_PREFIX%%/samples/sax/test1.xml
+%%TARGET_PREFIX%%/samples/sax/test2.xml
+%%TARGET_PREFIX%%/samples/DOMBuilderDemo.java
+%%TARGET_PREFIX%%/samples/SAXBuilderDemo.java
+%%TARGET_PREFIX%%/samples/TestXMLOutputter.java
+%%TARGET_PREFIX%%/samples/WarReader.java
+%%TARGET_PREFIX%%/samples/cdata.xml
+%%TARGET_PREFIX%%/samples/contents.xml
+%%TARGET_PREFIX%%/samples/fibo.xml
+%%TARGET_PREFIX%%/samples/inline.xml
+%%TARGET_PREFIX%%/samples/namespaces.xml
+%%TARGET_PREFIX%%/samples/testNamespaces.xml
+%%TARGET_PREFIX%%/samples/Count.java
+%%TARGET_PREFIX%%/samples/web.xml
+%%TARGET_PREFIX%%/lib/bin/antRun
+%%TARGET_PREFIX%%/lib/bin/antRun.hid
+%%TARGET_PREFIX%%/lib/ant.jar
+%%TARGET_PREFIX%%/lib/collections.jar
+%%TARGET_PREFIX%%/lib/collections.license
+%%TARGET_PREFIX%%/lib/collections.readme
+%%TARGET_PREFIX%%/lib/xerces.jar
+%%TARGET_PREFIX%%/build/jdom-jdk11.jar
+%%TARGET_PREFIX%%/build/jdom.jar
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/XercesDOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/CrimsonDOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/DOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/OracleV1DOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/OracleV2DOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/ProjectXDOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/XML4JDOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/adapters/AbstractDOMAdapter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/input/BuilderErrorHandler.java
+%%TARGET_PREFIX%%/src/java/org/jdom/input/DOMBuilder.java
+%%TARGET_PREFIX%%/src/java/org/jdom/input/SAXBuilder.java
+%%TARGET_PREFIX%%/src/java/org/jdom/input/SAXBuilder.java.orig
+%%TARGET_PREFIX%%/src/java/org/jdom/output/DOMOutputter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/output/NamespaceStack.java
+%%TARGET_PREFIX%%/src/java/org/jdom/output/SAXOutputter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/output/XMLOutputter.java
+%%TARGET_PREFIX%%/src/java/org/jdom/DataConversionException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/DocType.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Document.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Document.java.orig
+%%TARGET_PREFIX%%/src/java/org/jdom/Element.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Element.java.orig
+%%TARGET_PREFIX%%/src/java/org/jdom/Entity.java
+%%TARGET_PREFIX%%/src/java/org/jdom/IllegalAddException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Attribute.java
+%%TARGET_PREFIX%%/src/java/org/jdom/IllegalNameException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/IllegalTargetException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/JDOMException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Namespace.java
+%%TARGET_PREFIX%%/src/java/org/jdom/PartialList.java
+%%TARGET_PREFIX%%/src/java/org/jdom/ProcessingInstruction.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Verifier.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Verifier.java.orig
+%%TARGET_PREFIX%%/src/java/org/jdom/IllegalDataException.java
+%%TARGET_PREFIX%%/src/java/org/jdom/CDATA.java
+%%TARGET_PREFIX%%/src/java/org/jdom/Comment.java
+%%TARGET_PREFIX%%/build.bat
+%%TARGET_PREFIX%%/TODO.txt
+%%TARGET_PREFIX%%/README.txt
+%%TARGET_PREFIX%%/LICENSE.txt
+%%TARGET_PREFIX%%/COMMITTERS.txt
+%%TARGET_PREFIX%%/CHANGES.txt
+%%TARGET_PREFIX%%/build11.sh
+%%TARGET_PREFIX%%/build11.bat
+%%TARGET_PREFIX%%/build.xml
+%%TARGET_PREFIX%%/build.sh
+@dirrm %%TARGET_PREFIX%%/etc
+@dirrm %%TARGET_PREFIX%%/samples/sax
+@dirrm %%TARGET_PREFIX%%/samples
+@dirrm %%TARGET_PREFIX%%/lib/bin
+@dirrm %%TARGET_PREFIX%%/lib
+@dirrm %%TARGET_PREFIX%%/build
+@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/adapters
+@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/input
+@dirrm %%TARGET_PREFIX%%/src/java/org/jdom/output
+@dirrm %%TARGET_PREFIX%%/src/java/org/jdom
+@dirrm %%TARGET_PREFIX%%/src/java/org
+@dirrm %%TARGET_PREFIX%%/src/java
+@dirrm %%TARGET_PREFIX%%/src
+@dirrm %%TARGET_PREFIX%%
+@unexec rmdir %%PREFIX%%/share/java 2>/dev/null || true
