@@ -32,7 +32,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.4.2
-JDK_REVISION=	06
+JDK_REVISION=	07
 DL_JDK_VERSION=	${JDK_VERSION}_${JDK_REVISION}
 INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386 amd64
@@ -54,7 +54,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n 138760 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n 137801 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
