@@ -23,6 +23,7 @@
     SUBDIR += pgaccess
     SUBDIR += postgresql
     SUBDIR += py-PyGreSQL
+    SUBDIR += ruby-postgres
     SUBDIR += tkgnats
     SUBDIR += typhoon
     SUBDIR += xmbase-grok
