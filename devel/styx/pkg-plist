@@ -5,20 +5,30 @@ bin/stydoc
 bin/stypp
 bin/styx
 include/styx/binimg.h
+include/styx/binset.h
 include/styx/ccnv_lim.h
 include/styx/cfg_abs.h
 include/styx/cfg_dfn.h
+include/styx/charlib.h
+include/styx/cmd_int.h
+include/styx/cmd_lim.h
+include/styx/cmd_pim.h
 include/styx/com_get.h
 include/styx/ctoh_cim.h
 include/styx/ctx.h
 include/styx/ctx_app.h
 include/styx/ctx_dfn.h
+include/styx/ctx_imp.h
+include/styx/dict.h
 include/styx/dicts.h
+include/styx/glo_tab.h
 include/styx/gls.h
 include/styx/gstream.h
 include/styx/hmap.h
 include/styx/hpat.h
 include/styx/hpat_int.h
+include/styx/hpat_lim.h
+include/styx/hpat_pim.h
 include/styx/hset.h
 include/styx/lim__cim.h
 include/styx/line_scn.h
@@ -26,11 +36,16 @@ include/styx/list.h
 include/styx/literal.h
 include/styx/mem_base.h
 include/styx/memosx.h
+include/styx/olist.h
 include/styx/otab.h
 include/styx/pathes.h
+include/styx/pgm_base.h
+include/styx/pgm_popt.h
+include/styx/pgm_sopt.h
 include/styx/pim__cim.h
 include/styx/prim.h
 include/styx/prs.h
+include/styx/prs_abs.h
 include/styx/prs_dfn.h
 include/styx/prs_gen.h
 include/styx/prs_imp.h
@@ -38,6 +53,9 @@ include/styx/prs_io.h
 include/styx/ptm.h
 include/styx/ptm_gen.h
 include/styx/ptm_pp.h
+include/styx/reg_exp.h
+include/styx/rexp_lim.h
+include/styx/scn_abs.h
 include/styx/scn_base.h
 include/styx/scn_gen.h
 include/styx/scn_imp.h
@@ -50,6 +68,7 @@ include/styx/styconf0.h
 include/styx/styd_cim.h
 include/styx/styp_cim.h
 include/styx/styx_cim.h
+include/styx/styx_gen.h
 include/styx/styx_int.h
 include/styx/styx_lim.h
 include/styx/styx_pim.h
@@ -58,6 +77,9 @@ include/styx/sysbase0.h
 include/styx/sysbase1.h
 include/styx/syscbhdl.h
 @dirrm include/styx
+lib/libxstyx.a
+lib/libxstyx.so
+lib/libxstyx.so.1
 share/doc/styx/doc/STYX_ANT.HTM
 share/doc/styx/doc/STYX_CFG.HTM
 share/doc/styx/doc/STYX_CIM.HTM
@@ -105,6 +127,8 @@ share/doc/styx/doc/esty_ant.htm
 share/doc/styx/doc/esty_int.htm
 share/doc/styx/doc/esty_lim.htm
 share/doc/styx/doc/esty_pim.htm
+share/doc/styx/doc/estyx_ant.htm
+share/doc/styx/doc/estyx_int.htm
 share/doc/styx/doc/genm_cim.htm
 share/doc/styx/doc/glo_tab.htm
 share/doc/styx/doc/gls.htm
@@ -135,6 +159,7 @@ share/doc/styx/doc/nmk_cim.htm
 share/doc/styx/doc/olist.htm
 share/doc/styx/doc/otab.htm
 share/doc/styx/doc/pathes.htm
+share/doc/styx/doc/pgm_base.htm
 share/doc/styx/doc/pim__cim.htm
 share/doc/styx/doc/pl0.abs.sgml
 share/doc/styx/doc/pl0.c.sgml
@@ -144,6 +169,7 @@ share/doc/styx/doc/pre.htm
 share/doc/styx/doc/prim.htm
 share/doc/styx/doc/prjfun.htm
 share/doc/styx/doc/prs.htm
+share/doc/styx/doc/prs_abs.htm
 share/doc/styx/doc/prs_dfn.htm
 share/doc/styx/doc/prs_gen.htm
 share/doc/styx/doc/prs_imp.htm
@@ -156,6 +182,7 @@ share/doc/styx/doc/rational.htm
 share/doc/styx/doc/refo_cim.htm
 share/doc/styx/doc/reg_exp.htm
 share/doc/styx/doc/rexp_lim.htm
+share/doc/styx/doc/scn_abs.htm
 share/doc/styx/doc/scn_base.htm
 share/doc/styx/doc/scn_gen.htm
 share/doc/styx/doc/scn_imp.htm
@@ -183,6 +210,8 @@ share/doc/styx/doc/styx-9.html
 share/doc/styx/doc/styx-todo
 share/doc/styx/doc/styx.html
 share/doc/styx/doc/styx.sgml
+share/doc/styx/doc/styx_gen.htm
+share/doc/styx/doc/styx_hdl.htm
 share/doc/styx/doc/styx_int.htm
 share/doc/styx/doc/styx_lim.htm
 share/doc/styx/doc/styx_pim.htm
@@ -214,6 +243,7 @@ share/doc/styx/doc/xstdosx.htm
 share/doc/styx/readme
 share/doc/styx/tutorial01/calc.sty
 share/doc/styx/tutorial01/calctut.c
+share/doc/styx/tutorial01/explist.calc
 share/doc/styx/tutorial01/gen/calc.abs
 share/doc/styx/tutorial01/gen/calc_ant.c
 share/doc/styx/tutorial01/gen/calc_int.c
