@@ -100,6 +100,7 @@
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
+    SUBDIR += gkrellmbgchg2
     SUBDIR += gkrellmfmonitor
     SUBDIR += gkrellmfmonitor2
     SUBDIR += gkrellmlaunch
