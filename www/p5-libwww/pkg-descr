@@ -4,13 +4,13 @@
        provide classes and functions that allow you to write WWW
        clients, thus libwww-perl said to be a WWW client library.
        The library also contain modules that are of more general
-       use.                                          
+       use.
 
        The main architecture of the library is object oriented.
        The user agent, requests sent and responses received from
        the WWW server are all represented by objects.  This makes
        a simple and powerful interface to these services.  The
        interface should be easy to extend and customize for your
-       needs.                               
+       needs.
 
 WWW: http://www.linpro.no/lwp/
