@@ -26,7 +26,6 @@ bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
 bro-*			ports/security/bro	No distribution due to
 						alpha status
-bochs-*			ports/emulators/bochs	Commercial software.
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
 						Opinions differ. Commercial 
