@@ -1,0 +1,26 @@
+--- include/Makefile.orig	Fri Aug 21 07:03:26 1998
++++ include/Makefile	Fri Aug  4 21:38:02 2000
+@@ -20,14 +20,7 @@
+ 
+ LIBS = 
+ 
+-CC = gcc
+-CCC = g++
+-CPP=g++ -E
+-YACC = bison
+-LEX = flex
+-CCFLAGS = -g 
+ IFLAGS = -I$(IDIR)
+-LFLAGS = -L/usr/local/tcl/lib -L/usr/local/tk/lib -L. 
+ 
+ $(TARGET) : 
+ 	
+@@ -42,7 +35,7 @@
+ 	$(CCC) $(CCFLAGS)  $(IFLAGS) -c $<
+ 
+ .c.o:
+-	$(CC) $(CCFLAGS)  $(IFLAGS) -c $<
++	$(CC) $(CFLAGS)  $(IFLAGS) -c $<
+ 
+ scan.c: scan.l
+ 	$(LEX) -i -t scan.l > scan.c

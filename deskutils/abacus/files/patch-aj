@@ -1,5 +1,14 @@
---- calc/Makefile.orig	Tue Oct 20 06:41:42 1998
-+++ calc/Makefile	Thu Jan 20 18:36:31 2000
+--- calc/Makefile.orig	Tue Oct 20 22:41:42 1998
++++ calc/Makefile	Fri Aug  4 05:08:16 2000
+@@ -30,7 +30,7 @@
+ 	$(CCC) $(CCFLAGS)  $(IFLAGS) -c $<
+ 
+ .c.o:
+-	$(CC) $(CCFLAGS)  $(IFLAGS) -c $<
++	$(CC) $(CFLAGS)  $(IFLAGS) -c $<
+ 
+ scan.c: scan.l
+ 	$(LEX) -oscan.c -i scan.l 
 @@ -40,8 +40,8 @@
  
  gram.cc: gram.y scan.c

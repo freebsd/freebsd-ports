@@ -1,7 +1,19 @@
---- Makefile.options.orig	Tue Oct 20 13:19:08 1998
-+++ Makefile.options	Thu Jan 20 18:04:03 2000
-@@ -12,13 +12,13 @@
- CPP=g++ -E
+--- Makefile.options.orig	Wed Oct 21 05:19:08 1998
++++ Makefile.options	Fri Aug  4 04:53:59 2000
+@@ -3,22 +3,22 @@
+ #
+ 
+ # C compiler
+-CC = gcc
++CC ?= gcc
+ 
+ # C++ compiler
+-CCC = g++
++CCC = $(CXX)
+ 
+ # C++ compiler running only the pre-processing stage
+-CPP=g++ -E
++CPP = $(CXX) -E
  
  # Grammar generator - e.g. bison,yacc
 -YACC = bison
@@ -12,7 +24,7 @@
  
  # Favourite flags for favourite compiler
 -CCFLAGS = -g
-+CCFLAGS = $(CFLAGS)
++CCFLAGS = $(CXXFLAGS)
  
  # Please don't change the next three lines unless you know what you are doing..
  AROPTIONS = rc

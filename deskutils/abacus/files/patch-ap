@@ -1,0 +1,11 @@
+--- lib/Makefile.orig	Tue Oct 20 22:42:41 1998
++++ lib/Makefile	Fri Aug  4 21:34:23 2000
+@@ -23,7 +23,7 @@
+ 	$(CCC) $(CCFLAGS)  $(IFLAGS) -c $<
+ 
+ .c.o:
+-	$(CC) $(CCFLAGS)  $(IFLAGS) -c $<
++	$(CC) $(CFLAGS)  $(IFLAGS) -c $<
+ 
+ scan.c: scan.l
+ 	$(LEX) -i -t scan.l > scan.c
