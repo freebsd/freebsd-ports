@@ -42,9 +42,9 @@ post-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
 		@${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/msql
 		@for file in msqladmin msqlimport msqlexport; do\
-			/usr/bin/chgrp msql ${PREFIX}/bin/$$file; \
+			${CHGRP} msql ${PREFIX}/bin/$$file; \
 		done
-		/usr/bin/chgrp msql ${PREFIX}/sbin/msql2d
+		${CHGRP} msql ${PREFIX}/sbin/msql2d
 		@for file in RELEASE_NOTES MSQL_BOOK INSTALL; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/msql; \
 		done
