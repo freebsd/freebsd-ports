@@ -10,7 +10,7 @@ PORTVERSION=	5.1
 CATEGORIES=	japanese
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	horikawa@FreeBSD.org
 COMMENT=	Japanese online manual pages corresponding to /usr/share/man/man*
 
 PREFIX?=	/usr
