@@ -15,3 +15,4 @@ lib/alat/libattr_tcp.so.1
 %%PORTDOCS%%share/doc/audit/README
 %%PORTDOCS%%share/doc/audit/TODO
 %%PORTDOCS%%@dirrm share/doc/audit
+@unexec rmdir %D/lib/alat 2>/dev/null || true
