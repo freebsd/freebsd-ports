@@ -4,3 +4,4 @@ share/cless.hlp
 share/cless.bg5
 share/cless.gb
 share/doc/cless/README.CLESS
+@dirrm share/doc/cless
