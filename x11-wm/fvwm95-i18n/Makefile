@@ -3,10 +3,11 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1997/02/01 14:13:52 andreas Exp $
+# $Id: Makefile,v 1.8 1997/02/01 16:46:12 andreas Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
+PKGNAME=	fvwm95-2.0.43a
 CATEGORIES=	x11
 MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/
 EXTRACT_SUFX=	.tgz
