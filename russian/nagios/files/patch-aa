@@ -1,0 +1,37 @@
+--- Makefile.in.orig	Sat Oct 26 02:47:15 2002
++++ Makefile.in	Tue Nov 26 13:58:29 2002
+@@ -28,7 +28,7 @@
+ INSTALL_OPTS=@INSTALL_OPTS@
+ COMMAND_OPTS=@COMMAND_OPTS@
+ INIT_DIR=@init_dir@
+-INIT_OPTS=-o root -g root
++INIT_OPTS=-o root -g wheel
+ CGICFGDIR=$(CGIDIR)
+ PERLDIR=@PERLDIR@
+ 
+@@ -196,6 +196,8 @@
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/misccommands.cfg $(DESTDIR)$(CFGDIR)/misccommands.cfg-sample
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/services.cfg $(DESTDIR)$(CFGDIR)/services.cfg-sample
+ 	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-object/timeperiods.cfg $(DESTDIR)$(CFGDIR)/timeperiods.cfg-sample
++	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-extinfo/hostextinfo.cfg $(DESTDIR)$(CFGDIR)/hostextinfo.cfg-sample
++	$(INSTALL) -m 664 $(INSTALL_OPTS) sample-config/template-extinfo/serviceextinfo.cfg $(DESTDIR)$(CFGDIR)/serviceextinfo.cfg-sample
+ 
+ 	@echo ""
+ 	@echo "*** Sample config file installed ***"
+@@ -215,7 +217,7 @@
+ 
+ install-daemoninit:
+ 	$(INSTALL) -m 755 -d $(INIT_OPTS) $(DESTDIR)$(INIT_DIR)
+-	$(INSTALL) -m 774 $(INIT_OPTS) daemon-init $(DESTDIR)$(INIT_DIR)/nagios
++	$(INSTALL) -m 774 $(INIT_OPTS) daemon-init $(DESTDIR)$(INIT_DIR)/nagios.sh
+ 
+ 	@echo ""
+ 	@echo "*** Init script installed ***"
+@@ -238,7 +240,6 @@
+ 
+ install-commandmode:
+ 	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(LOGDIR)/rw
+-	chmod g+s $(DESTDIR)$(LOGDIR)/rw
+ 
+ 	@echo ""
+ 	@echo "*** External command directory configured ***"
