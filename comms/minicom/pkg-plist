@@ -12,9 +12,6 @@ etc/minicom/minicom.users
 %%NLS%%share/locale/pl/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/minicom.mo
-%%NLS%%@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/* 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
 @exec /usr/sbin/chown uucp %D/etc/minicom
 @unexec rmdir %D/etc/minicom 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
