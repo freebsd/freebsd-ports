@@ -1,10 +1,21 @@
 <HTML>
 <HEAD>
-    <TITLE>AVR libc function reference</TITLE>
+<TITLE>AVR libc function reference</TITLE>
+<style type="text/css">
+<!--
+.hell {  background-color: #CCCCCC}
+.dunkel {  background-color: #AAAAAA}
+table {  background-color: #666666}
+a:hover {  color: #0000FF; text-decoration: underline}
+a {  color: #000099; text-decoration: none}
+-->
+</style>
 </HEAD>
-</BODY>
+
+<BODY BGCOLOR="#FFFFFF">
+
 <center>
-    <H1>AVR libc function reference</H1> 2001/07/27
+    <H1>AVR libc function reference</H1> 2001/09/17
 </CENTER>
 <HR>
 
@@ -14,7 +25,7 @@ standard library for the Atmel AVR microcontroller family.
 </P>
 <P>
 As of the writing of this reference, the current version of avr-libc was 
-20010717.
+20010821.
 </P>
 <P>
 avr-libc is maintained by Marek Michalkiewicz &lt;marekm@linux.org.pl&gt;.
@@ -37,122 +48,101 @@ AVR architecture (like I/O ports or interrupt handlers) can be found in the
 Linux manpages.
 </P>
 
+<P>Thanks go to J&ouml;rg Wunsch for pointing me to several errors in previous 
+  versions of this reference. Also thanks to Jochen Pernsteiner for his explanation 
+  of strlwr().</P>
 <HR>
 
 <H2>Function list by Header files</H2>
-<TABLE WIDTH="100%" BORDER="0">
-    <TR>
-        <TD><A HREF="#ctype.h">ctype.h</A><BR>
-        </TD>
-        <TD>Character type test functions</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#eeprom.h">eeprom.h</A></TD>
-        <TD>EEPROM access functions</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#errno.h">errno.h</A></TD>
-        <TD>Error handling</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#ina90.h">ina90.h</A></TD>
-        <TD>Compatibility header for IAR C</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#interrupt.h">interrupt.h</A></TD>
-        <TD>Interrupt handling routines</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#inttypes.h">inttypes.h</A></TD>
-        <TD>Defines for different int data types</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#io-avr.h">io-avr.h</A></TD>
-        <TD>Includes the correct ioXXX.h header</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#io.h">io.h</A></TD>
-        <TD>Includes other I/O-Headers</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#ioXXX.h">ioXXX.h</A></TD>
-        <TD>I/O-Defines for various AVR microcontrollers</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#iomacros.h">iomacros.h</A></TD>
-        <TD>Several macros for I/O access</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#math.h">math.h</A></TD>
-        <TD>Various mathematical functions</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#pgmspace.h">pgmspace.h</A></TD>
-        <TD>Compatibility header for IAR C</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#progmem.h">progmem.h</A></TD>
-        <TD>Alias for pgmspace.h</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#setjmp.h">setjmp.h</A></TD>
-        <TD>Provides functions for long jumps</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#sig-avr.h">sig-avr.h</A></TD>
-        <TD>AVR interrupt and signal handling</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#signal.h">signal.h</A></TD>
-        <TD>Alias for sig-avr.h. Should no longer be used.</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#stdlib.h">stdlib.h</A></TD>
-        <TD>Miscellaneous routines</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#string-avr.h">string-avr.h</A></TD>
-        <TD>String manipulation functions</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#string.h">string.h</A></TD>
-        <TD>More string manipulation routines</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#timer.h">timer.h</A></TD>
-        <TD>Timer control functions</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#twi.h">twi.h</A></TD>
-        <TD>ATmega163 specific defines</TD>
-    </TR>
-
-    <TR>
-        <TD><A HREF="#wdt.h">wdt.h</A></TD>
-        <TD>Watchdog Timer control functions</TD>
-    </TR>
-
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A HREF="#ctype.h">ctype.h</A></TD>
+    <TD class="hell">Character type test functions</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#eeprom.h">eeprom.h</A></TD>
+    <TD class="dunkel">EEPROM access functions</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#errno.h">errno.h</A></TD>
+    <TD class="hell">Error handling</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#ina90.h">ina90.h</A></TD>
+    <TD class="dunkel">Compatibility header for IAR C</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#interrupt.h">interrupt.h</A></TD>
+    <TD class="hell">Interrupt handling routines</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#inttypes.h">inttypes.h</A></TD>
+    <TD class="dunkel">Defines for different int data types</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#io-avr.h">io-avr.h</A></TD>
+    <TD class="hell">Includes the correct ioXXX.h header</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#io.h">io.h</A></TD>
+    <TD class="dunkel">Includes other I/O-Headers</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#ioXXX.h">ioXXX.h</A></TD>
+    <TD class="hell">I/O-Defines for various AVR microcontrollers</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#iomacros.h">iomacros.h</A></TD>
+    <TD class="dunkel">Several macros for I/O access</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#math.h">math.h</A></TD>
+    <TD class="hell">Various mathematical functions</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#pgmspace.h">pgmspace.h</A></TD>
+    <TD class="dunkel">Compatibility header for IAR C</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#progmem.h">progmem.h</A></TD>
+    <TD class="hell">Alias for pgmspace.h</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#setjmp.h">setjmp.h</A></TD>
+    <TD class="dunkel">Provides functions for long jumps</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#sig-avr.h">sig-avr.h</A></TD>
+    <TD class="hell">AVR interrupt and signal handling</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#signal.h">signal.h</A></TD>
+    <TD class="dunkel">Alias for sig-avr.h. Should no longer be used.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#stdlib.h">stdlib.h</A></TD>
+    <TD class="hell">Miscellaneous routines</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#string-avr.h">string-avr.h</A></TD>
+    <TD class="dunkel">String manipulation functions</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#string.h">string.h</A></TD>
+    <TD class="hell">More string manipulation routines</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#timer.h">timer.h</A></TD>
+    <TD class="dunkel">Timer control functions</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A HREF="#twi.h">twi.h</A></TD>
+    <TD class="hell">ATmega163 specific defines</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A HREF="#wdt.h">wdt.h</A></TD>
+    <TD class="dunkel">Watchdog Timer control functions</TD>
+  </TR>
 </TABLE>
 
 
@@ -163,511 +153,535 @@ Linux manpages.
 <p>
 <tt>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#abort">abort();</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#acos">acos( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#asin">asin( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#atan">atan( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>long</TD>
-        <TD><A HREF="#atoi">atoi( char *p );</A></TD>
-    </TR>
-    <TR>
-        <TD>long</TD>
-        <TD><A HREF="#atol">atol( char *p );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#bit_is_clear">bit_is_clear( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#bit_is_set">bit_is_set( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#bsearch">bsearch(const void *key, const void *base, size_t nmemb,</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#BV">BV( x );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#cbi">cbi( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#ceil">ceil( doublce x );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#cli">cli();</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#cos">cos( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#cosh">cosh( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>div_t</TD>
-        <TD><A HREF="#div">div( int x, int y );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#eeprom_is_ready">eeprom_is_ready()</A></TD>
-    </TR>
-    <TR>
-        <TD>unsigned char</TD>
-        <TD><A HREF="#eeprom_rb">eeprom_rb(unsigned int addr);</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#eeprom_read_block">eeprom_read_block(void *buf, unsigned int addr, 
-        size_t n);</A></TD>
-    </TR>
-    <TR>
-        <TD>unsigned int</TD>
-        <TD><A HREF="#eeprom_rw">eeprom_rw(unsigned int addr);</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#eeprom_wb">eeprom_wb(unsigned int addr, unsigned char val);</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#enable_external_int">enable_external_int( unsigned char ints );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#errno;">errno;(</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#exp">exp( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#fabs">fabs( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#floor">floor( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#fmod">fmod( double x, double y );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#free">free( void *ptr );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#frexp">frexp( double x, int *exp );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#inp">inp( port );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#INTERRUPT">INTERRUPT( signame );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#inverse">inverse( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isalnum">isalnum(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isalpha">isalpha(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isascii">isascii(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#iscntrl">iscntrl(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isdigit">isdigit(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isgraph">isgraph(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#islower">islower(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isprint">isprint(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#ispunct">ispunct(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isspace">isspace(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isupper">isupper(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#isxdigit">isxdigit(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#itoa">itoa( int value, char *string, int radix ) {</A></TD>
-    </TR>
-    <TR>
-        <TD>long</TD>
-        <TD><A HREF="#labs">labs( long x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#ldexp">ldexp( double x, int exp );</A></TD>
-    </TR>
-    <TR>
-        <TD>ldiv_t</TD>
-        <TD><A HREF="#ldiv">ldiv( lomg x, long y );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#log">log( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#log10">log10( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#longjmp">longjmp( jmp_buf env, int val );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#loop_until_bit_is_clear">loop_until_bit_is_clear( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#loop_until_bit_ist_set">loop_until_bit_ist_set( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#malloc">malloc( size_t size );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#memchr">memchr( void *s, char c, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#memcmp">memcmp( const void *s1, const void *s2, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#memcpy">memcpy( void *to, void *from, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#memmove">memmove( void *to, void *from, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#memset">memset( void *s, int c, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#modf">modf( double x, double *iptr );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#outp">outp( value, port );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#parity_even_bit">parity_even_bit( val );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#pow">pow( double x, double y );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#qsort">qsort(void *base, size_t nmemb, size_t size, __compar_fn_t 
-        compar);</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#sbi">sbi( port, bit );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#sei">sei();</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#setjmp">setjmp( jmp_buf env );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_ADC">SIG_ADC(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_COMPARATOR">SIG_COMPARATOR(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_EEPROM">SIG_EEPROM(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_INPUT_CAPTURE1">SIG_INPUT_CAPTURE1(</A></TD>
-    </TR>
-    <TR>
-        <TD>SIG_INTERRUPT0 through</TD>
-        <TD><A HREF="#SIG_INTERRUPT7">SIG_INTERRUPT7(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OUTPUT_COMPARE0">SIG_OUTPUT_COMPARE0(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OUTPUT_COMPARE1A">SIG_OUTPUT_COMPARE1A(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OUTPUT_COMPARE2">SIG_OUTPUT_COMPARE2(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OVERFLOW0">SIG_OVERFLOW0(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OVERFLOW1">SIG_OVERFLOW1(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_OVERFLOW2">SIG_OVERFLOW2(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_SPI">SIG_SPI(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART1_DATA">SIG_UART1_DATA(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART1_RECV">SIG_UART1_RECV(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART1_TRANS">SIG_UART1_TRANS(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART_DATA">SIG_UART_DATA(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART_RECV">SIG_UART_RECV(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIG_UART_TRANS">SIG_UART_TRANS(</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#SIGNAL">SIGNAL( signame );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#sin">sin( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#sinh">sinh( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#sqrt">sqrt( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#square">square( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>extern int</TD>
-        <TD><A HREF="#strcasecmp">strcasecmp(const char *s1, const char *s2);</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strcat">strcat( char *dest, char *src );</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strchr">strchr( const char *s, int c );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#strcmp">strcmp( const char *s1, const char* s2 );</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strcpy">strcpy( char *dest, char *src );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#strdupa">strdupa( s );</A></TD>
-    </TR>
-    <TR>
-        <TD>size_t</TD>
-        <TD><A HREF="#strlen">strlen( char *s );</A></TD>
-    </TR>
-    <TR>
-        <TD>extern char</TD>
-        <TD><A HREF="#strlwr">strlwr(char *);</A></TD>
-    </TR>
-    <TR>
-        <TD>extern int</TD>
-        <TD><A HREF="#strncasecmp">strncasecmp(const char *, const char *, size_t);</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strncat">strncat( char *dest, char *src, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#strncmp">strncmp( const char *s1, const char* s2, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strncpy">strncpy( char *dest, char *src, size_t n );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#strndupy">strndupy( s, n );</A></TD>
-    </TR>
-    <TR>
-        <TD>size_t</TD>
-        <TD><A HREF="#strnlen">strnlen( const char *s, size_t maxlen );</A></TD>
-    </TR>
-    <TR>
-        <TD>char</TD>
-        <TD><A HREF="#strrchr">strrchr( const char *s, int c );</A></TD>
-    </TR>
-    <TR>
-        <TD>extern char</TD>
-        <TD><A HREF="#strrev">strrev(char *s1);</A></TD>
-    </TR>
-    <TR>
-        <TD>extern char</TD>
-        <TD><A HREF="#strstr">strstr(const char *haystack, const char *needle);</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#strtod">strtod( char *, char ** );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#strtod">strtod( const char *s, char **endptr );</A></TD>
-    </TR>
-    <TR>
-        <TD>long</TD>
-        <TD><A HREF="#strtol">strtol(const char *nptr, char **endptr, int base);</A></TD>
-    </TR>
-    <TR>
-        <TD>unsigned long</TD>
-        <TD><A HREF="#strtoul">strtoul(const char *nptr, char **endptr, int base);</A></TD>
-    </TR>
-    <TR>
-        <TD>extern char</TD>
-        <TD><A HREF="#strupr">strupr(char *);</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#tan">tan( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>double</TD>
-        <TD><A HREF="#tanh">tanh( double x );</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#timer0_source">timer0_source( unsigned int src );</A></TD>
-    </TR>
-    <TR>
-        <TD>coid</TD>
-        <TD><A HREF="#timer0_start">timer0_start();</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#timer0_stop">timer0_stop();</A></TD>
-    </TR>
-    <TR>
-        <TD>void</TD>
-        <TD><A HREF="#timer_enable_int">timer_enable_int( unsigned char ints );</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#toascii">toascii(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#tolower">tolower(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD>int</TD>
-        <TD><A HREF="#toupper">toupper(int __c);</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#wdt_disable">wdt_disable();</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#wdt_enable">wdt_enable( timeout );</A></TD>
-    </TR>
-    <TR>
-        <TD></TD>
-        <TD><A HREF="#wdt_reset">wdt_reset();</A></TD>
-    </TR>
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#abort">abort();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#acos">acos( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#asin">asin( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#atan">atan( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">long</TD>
+    <TD class="hell"><A HREF="#atoi">atoi( char *p );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">long</TD>
+    <TD class="dunkel"><A HREF="#atol">atol( char *p );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#bit_is_clear">bit_is_clear( port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#bit_is_set">bit_is_set( port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#bsearch">bsearch(const void *key, const void *base, 
+      size_t nmemb,</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#BV">BV( x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#cbi">cbi( port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#ceil">ceil( doublce x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#cli">cli();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#cos">cos( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#cosh">cosh( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">div_t</TD>
+    <TD class="dunkel"><A HREF="#div">div( int x, int y );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#eeprom_is_ready">eeprom_is_ready()</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">unsigned char</TD>
+    <TD class="dunkel"><A HREF="#eeprom_rb">eeprom_rb(unsigned int addr);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#eeprom_read_block">eeprom_read_block(void *buf, 
+      unsigned int addr, size_t n);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">unsigned int</TD>
+    <TD class="dunkel"><A HREF="#eeprom_rw">eeprom_rw(unsigned int addr);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#eeprom_wb">eeprom_wb(unsigned int addr, unsigned 
+      char val);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#enable_external_int">enable_external_int( unsigned 
+      char ints );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#errno">errno();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#exp">exp( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#fabs">fabs( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#floor">floor( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#fmod">fmod( double x, double y );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#free">free( void *ptr );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#frexp">frexp( double x, int *exp );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#inp">inp( port );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#INTERRUPT">INTERRUPT( signame );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#inverse">inverse( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#isalnum">isalnum(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#isalpha">isalpha(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#isascii">isascii(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#iscntrl">iscntrl(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#isdigit">isdigit(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#isgraph">isgraph(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#islower">islower(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#isprint">isprint(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#ispunct">ispunct(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#isspace">isspace(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#isupper">isupper(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#isxdigit">isxdigit(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">char</TD>
+    <TD class="hell"><A HREF="#itoa">itoa( int value, char *string, int radix 
+      ) {</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">long</TD>
+    <TD class="dunkel"><A HREF="#labs">labs( long x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#ldexp">ldexp( double x, int exp );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">ldiv_t</TD>
+    <TD class="dunkel"><A HREF="#ldiv">ldiv( lomg x, long y );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#log">log( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#log10">log10( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#longjmp">longjmp( jmp_buf env, int val );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#loop_until_bit_is_clear">loop_until_bit_is_clear( 
+      port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#loop_until_bit_is_set">loop_until_bit_ist_set( 
+      port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#malloc">malloc( size_t size );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#memchr">memchr( void *s, char c, size_t n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#memcmp">memcmp( const void *s1, const void *s2, 
+      size_t n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#memcpy">memcpy( void *to, void *from, size_t n 
+      );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#memmove">memmove( void *to, void *from, size_t 
+      n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#memset">memset( void *s, int c, size_t n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#modf">modf( double x, double *iptr );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#outp">outp( value, port );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#parity_even_bit">parity_even_bit( val );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#pow">pow( double x, double y );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#qsort">qsort(void *base, size_t nmemb, size_t 
+      size, __compar_fn_t compar);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#sbi">sbi( port, bit );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#sei">sei();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#setjmp">setjmp( jmp_buf env );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_ADC">SIG_ADC(</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_COMPARATOR">SIG_COMPARATOR(</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_EEPROM">SIG_EEPROM(</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_INPUT_CAPTURE1">SIG_INPUT_CAPTURE1(</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">&nbsp;</TD>
+    <TD class="dunkel"><A HREF="#SIG_INTERRUPT">SIG_INTERRUPT0 through SIG_INTERRUPT7</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_OUTPUT_COMPARE0">SIG_OUTPUT_COMPARE0</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_OUTPUT_COMPARE1A">SIG_OUTPUT_COMPARE1A</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_OUTPUT_COMPARE1B">SIG_OUTPUT_COMPARE1B</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_OUTPUT_COMPARE2">SIG_OUTPUT_COMPARE2</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_OVERFLOW0">SIG_OVERFLOW0</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_OVERFLOW1">SIG_OVERFLOW1</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_OVERFLOW2">SIG_OVERFLOW2</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_SPI">SIG_SPI</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_UART1_DATA">SIG_UART1_DATA</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_UART1_RECV">SIG_UART1_RECV</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_UART1_TRANS">SIG_UART1_TRANS</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_UART_DATA">SIG_UART_DATA</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIG_UART_RECV">SIG_UART_RECV</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#SIG_UART_TRANS">SIG_UART_TRANS</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#SIGNAL">SIGNAL( signame );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#sin">sin( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#sinh">sinh( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#sqrt">sqrt( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#square">square( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern int</TD>
+    <TD class="dunkel"><A HREF="#strcasecmp">strcasecmp(const char *s1, const 
+      char *s2);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">char</TD>
+    <TD class="hell"><A HREF="#strcat">strcat( char *dest, char *src );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">char</TD>
+    <TD class="dunkel"><A HREF="#strchr">strchr( const char *s, int c );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#strcmp">strcmp( const char *s1, const char* s2 
+      );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">char</TD>
+    <TD class="dunkel"><A HREF="#strcpy">strcpy( char *dest, char *src );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#strdupa">strdupa( s );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">size_t</TD>
+    <TD class="dunkel"><A HREF="#strlen">strlen( char *s );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern char</TD>
+    <TD class="hell"><A HREF="#strlwr">strlwr(char *);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern int</TD>
+    <TD class="dunkel"><A HREF="#strncasecmp">strncasecmp(const char *, const 
+      char *, size_t);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">char</TD>
+    <TD class="hell"><A HREF="#strncat">strncat( char *dest, char *src, size_t 
+      n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#strncmp">strncmp( const char *s1, const char* 
+      s2, size_t n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">char</TD>
+    <TD class="hell"><A HREF="#strncpy">strncpy( char *dest, char *src, size_t 
+      n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#strndupa">strndupa( s, n );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">size_t</TD>
+    <TD class="hell"><A HREF="#strnlen">strnlen( const char *s, size_t maxlen 
+      );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">char</TD>
+    <TD class="dunkel"><A HREF="#strrchr">strrchr( const char *s, int c );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern char</TD>
+    <TD class="hell"><A HREF="#strrev">strrev(char *s1);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern char</TD>
+    <TD class="dunkel"><A HREF="#strstr">strstr(const char *haystack, const char 
+      *needle);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#strtod">strtod( char *, char ** );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#strtod">strtod( const char *s, char **endptr 
+      );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">long</TD>
+    <TD class="hell"><A HREF="#strtol">strtol(const char *nptr, char **endptr, 
+      int base);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">unsigned long</TD>
+    <TD class="dunkel"><A HREF="#strtoul">strtoul(const char *nptr, char **endptr, 
+      int base);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern char</TD>
+    <TD class="hell"><A HREF="#strupr">strupr(char *);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">double</TD>
+    <TD class="dunkel"><A HREF="#tan">tan( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double</TD>
+    <TD class="hell"><A HREF="#tanh">tanh( double x );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#timer0_source">timer0_source( unsigned int src 
+      );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">coid</TD>
+    <TD class="hell"><A HREF="#timer0_start">timer0_start();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">void</TD>
+    <TD class="dunkel"><A HREF="#timer0_stop">timer0_stop();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">void</TD>
+    <TD class="hell"><A HREF="#timer_enable_int">timer_enable_int( unsigned char 
+      ints );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#toascii">toascii(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell">int</TD>
+    <TD class="hell"><A HREF="#tolower">tolower(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">int</TD>
+    <TD class="dunkel"><A HREF="#toupper">toupper(int __c);</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#wdt_disable">wdt_disable();</A></TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"></TD>
+    <TD class="dunkel"><A HREF="#wdt_enable">wdt_enable( timeout );</A></TD>
+  </TR>
+  <TR> 
+    <TD class="hell"></TD>
+    <TD class="hell"><A HREF="#wdt_reset">wdt_reset();</A></TD>
+  </TR>
 </TABLE>
 
 </tt>
-</p>
+<p></p>
 
 
 
@@ -676,131 +690,124 @@ Linux manpages.
 
 <A NAME="ctype.h"><H3>CTYPE.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-    <TR>
-        <TD><A NAME="isalnum"></A>int isalnum(int __c);</TD>
-        <TD>Returns 1 of c is alphanumeric, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isalpha"></A>int isalpha(int __c);</TD>
-        <TD>Returns 1 of c is alphabetic, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isascii"></A>int isascii(int __c);</TD>
-        <TD>Returns 1 of c is contained in the 7bit ASCII, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="iscntrl"></A>int iscntrl(int __c);</TD>
-        <TD>Returns 1 of c is a control character, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isdigit"></A>int isdigit(int __c);</TD>
-        <TD>Returns 1 of c is a digit, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isgraph"></A>int isgraph(int __c);</TD>
-        <TD>Returns 1 of c is printable (excluding space), otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="islower"></A>int islower(int __c);</TD>
-        <TD>Returns 1 of c is a lower case alphabetic character, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isprint"></A>int isprint(int __c);</TD>
-        <TD>Returns 1 of c is printable (including space), otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="ispunct"></A>int ispunct(int __c);</TD>
-        <TD>Returns 1 of c is a puntuation character, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isspace"></A>int isspace(int __c);</TD>
-        <TD>Returns 1 of c is one of space, '\n', '\f', '\r', '\t', '\v', otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isupper"></A>int isupper(int __c);</TD>
-        <TD>Returns 1 of c is an upper case alphabetic character, otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="isxdigit"></A>int isxdigit(int __c);</TD>
-        <TD>Returns 1 of c is a hexadecimal digit (0-9 or A-F), otherwise 0.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="toascii"></A>int toascii(int __c);</TD>
-        <TD>Converts c to a 7bit ASCII character.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="tolower"></A>int tolower(int __c);</TD>
-        <TD>Converts c to lower case.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="toupper"></A>int toupper(int __c);</TD>
-        <TD>Converts c to upper case.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="isalnum"></A>int isalnum(int __c);</TD>
+    <TD class="hell">Returns 1 of c is alphanumeric, otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="isalpha"></A>int isalpha(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is alphabetic, otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="isascii"></A>int isascii(int __c);</TD>
+    <TD class="hell">Returns 1 of c is contained in the 7bit ASCII, otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="iscntrl"></A>int iscntrl(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is a control character, otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="isdigit"></A>int isdigit(int __c);</TD>
+    <TD class="hell">Returns 1 of c is a digit, otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="isgraph"></A>int isgraph(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is printable (excluding space), otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="islower"></A>int islower(int __c);</TD>
+    <TD class="hell">Returns 1 of c is a lower case alphabetic character, otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="isprint"></A>int isprint(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is printable (including space), otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="ispunct"></A>int ispunct(int __c);</TD>
+    <TD class="hell">Returns 1 of c is a puntuation character, otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="isspace"></A>int isspace(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is one of space, '\n', '\f', '\r', '\t', 
+      '\v', otherwise 0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="isupper"></A>int isupper(int __c);</TD>
+    <TD class="hell">Returns 1 of c is an upper case alphabetic character, otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="isxdigit"></A>int isxdigit(int __c);</TD>
+    <TD class="dunkel">Returns 1 of c is a hexadecimal digit (0-9 or A-F), otherwise 
+      0.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="toascii"></A>int toascii(int __c);</TD>
+    <TD class="hell">Converts c to a 7bit ASCII character.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="tolower"></A>int tolower(int __c);</TD>
+    <TD class="dunkel">Converts c to lower case.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="toupper"></A>int toupper(int __c);</TD>
+    <TD class="hell">Converts c to upper case.</TD>
+  </TR>
 </TABLE>
 
 <HR>
 
 <A NAME="eeprom.h"><H3>EEPROM.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-    <TR>
-        <TD><A NAME="eeprom_is_ready"></A>int eeprom_is_ready() /* Macro */</TD>
-        <TD>Returns != 0 if the EEPROM is ready (bit EEWE in register EECR is 0).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="eeprom_rb"></A>unsigned char eeprom_rb(unsigned int addr);</TD>
-        <TD>Read one byte from EEPROM address 'addr'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="eeprom_rw"></A>unsigned int eeprom_rw(unsigned int addr);</TD>
-        <TD>Read one 16-bit word (little endian) from EEPROM address 'addr'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="eeprom_wb"></A>void eeprom_wb(unsigned int addr, unsigned char val);</TD>
-        <TD>Write a byte 'val' to EEPROM address 'addr'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="eeprom_read_block"></A>void eeprom_read_block(void *buf, unsigned 
-        int addr, size_t n);</TD>
-        <TD>Read a block of 'size' bytes from EEPROM address 'addr' to 'buf'.</TD>
-    </TR>
-
-    <TR>
-        <TD>_EEPUT(addr, val) eeprom_wb(addr, val)<BR>
-            _EEGET(var, addr) (var) = eeprom_rb(addr)</TD>
-        <TD>Compatibility macros for IAR C compatibility.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="eeprom_is_ready"></A>int eeprom_is_ready() 
+      /* Macro */</TD>
+    <TD class="hell">Returns != 0 if the EEPROM is ready (bit EEWE in register 
+      EECR is 0).</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="eeprom_rb"></A>unsigned char eeprom_rb(unsigned 
+      int addr);</TD>
+    <TD class="dunkel">Read one byte from EEPROM address 'addr'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="eeprom_rw"></A>unsigned int eeprom_rw(unsigned int 
+      addr);</TD>
+    <TD class="hell">Read one 16-bit word (little endian) from EEPROM address 
+      'addr'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="eeprom_wb"></A>void eeprom_wb(unsigned int addr, 
+      unsigned char val);</TD>
+    <TD class="dunkel">Write a byte 'val' to EEPROM address 'addr'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="eeprom_read_block"></A>void eeprom_read_block(void 
+      *buf, unsigned int addr, size_t n);</TD>
+    <TD class="hell">Read a block of 'size' bytes from EEPROM address 'addr' to 
+      'buf'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">_EEPUT(addr, val) eeprom_wb(addr, val)<BR>
+      _EEGET(var, addr) (var) = eeprom_rb(addr)</TD>
+    <TD class="dunkel">Compatibility macros for IAR C compatibility.</TD>
+  </TR>
 </TABLE>
 
 <HR>
 
 <A NAME="errno.h"><H3>ERRNO.H</H3></A>
-<TABLE WIDTH="100%" BORDER="0">
-    <TR>
-        <TD><A NAME="errno"></A>int errno;</TD>
-        <TD>Holds the system-wide error code.</TD>
-    </TR>
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="errno"></A>int errno;</TD>
+    <TD class="hell">Holds the system-wide error code.</TD>
+  </TR>
 </TABLE>
 
 <HR>
@@ -818,30 +825,26 @@ me).
 
 <A NAME="interrupt.h"><H3>INTERRUPT.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="sei"></A>sei();</TD>
-        <TD>Enable Interrupts. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="cli"></A>cli();</TD>
-        <TD>Disable Interrupts. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="enable_external_int"></A>void enable_external_int( unsigned char 
-        ints );</TD>
-        <TD>Write 'ints' to the EIMSK or GIMSK register, depending on whether EIMSK or 
-        GIMSK is defined.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="timer_enable_int"></A>void timer_enable_int( unsigned char ints );</TD>
-        <TD>Write 'ints' to the TIMSK register, if TIMSK is defined.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="sei"></A>sei();</TD>
+    <TD class="hell">Enable Interrupts. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="cli"></A>cli();</TD>
+    <TD class="dunkel">Disable Interrupts. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="enable_external_int"></A>void enable_external_int( 
+      unsigned char ints );</TD>
+    <TD class="hell">Write 'ints' to the EIMSK or GIMSK register, depending on 
+      whether EIMSK or GIMSK is defined.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="timer_enable_int"></A>void timer_enable_int( unsigned 
+      char ints );</TD>
+    <TD class="dunkel">Write 'ints' to the TIMSK register, if TIMSK is defined.</TD>
+  </TR>
 </TABLE>
 
 <HR>
@@ -906,60 +909,56 @@ description of the registers and their functions.
 <A NAME="iomacros.h"><H3>IOMACROS.H</H3></A>
 
 
-<TABLE WIDTH="100%" BORDER="0">
-    <TR>
-        <TD><A NAME="BV"></A>BV( x );</TD>
-        <TD>Returns the value of bit x (BitValue). Essentially an (1 << x). Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="inp"></A>inp( port );</TD>
-        <TD>Read byte from port 'port'. Macro. Automagically distinguishes between 
-        constant and non-constant memory I/O addresses and calls the macros __inb or 
-        __mmio, respectively.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="outp"></A>outp( value, port );</TD>
-        <TD>Write 'value' to 'port'. Macro. Similar black magic as inp( port ).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="cbi"></A>cbi( port, bit );</TD>
-        <TD>Clear bit 'bit' in port 'port'. Macro. Slowly the black magic here is 
-        getting the better of me.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="sbi"></A>sbi( port, bit );</TD>
-        <TD>Set bit 'bit' in port 'port'. Macro. Don't ask.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="bit_is_set"></A>bit_is_set( port, bit );</TD>
-        <TD>Returns something != 0, if bit 'bit' in 'port' is set, otherwise 0. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="bit_is_clear"></A>bit_is_clear( port, bit );</TD>
-        <TD>Returns something != 0, if bit 'bit' in 'port' is clear, otherwise 0. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="loop_until_bit_is_set"></A>loop_until_bit_ist_set( port, bit );</TD>
-        <TD>Loops until bit 'bit' in port 'port' is set. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="loop_until_bit_is_clear"></A>loop_until_bit_is_clear( port, bit );</TD>
-        <TD>Loops until bit 'bit' in port 'port' is clear. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="parity_even_bit"></A>parity_even_bit( val );</TD>
-        <TD>I have no idea what this macro does. Any suggestions? Marek?</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="BV"></A>BV( x );</TD>
+    <TD class="hell">Returns the value of bit x (BitValue). Essentially an (1 
+      << x). Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="inp"></A>inp( port );</TD>
+    <TD class="dunkel">Read byte from port 'port'. Macro. Automagically distinguishes 
+      between constant and non-constant memory I/O addresses and calls the macros 
+      __inb or __mmio, respectively.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="outp"></A>outp( value, port );</TD>
+    <TD class="hell">Write 'value' to 'port'. Macro. Similar black magic as inp( 
+      port ).</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="cbi"></A>cbi( port, bit );</TD>
+    <TD class="dunkel">Clear bit 'bit' in port 'port'. Macro. Slowly the black 
+      magic here is getting the better of me.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="sbi"></A>sbi( port, bit );</TD>
+    <TD class="hell">Set bit 'bit' in port 'port'. Macro. Don't ask.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="bit_is_set"></A>bit_is_set( port, bit );</TD>
+    <TD class="dunkel">Returns something != 0, if bit 'bit' in 'port' is set, 
+      otherwise 0. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="bit_is_clear"></A>bit_is_clear( port, bit );</TD>
+    <TD class="hell">Returns something != 0, if bit 'bit' in 'port' is clear, 
+      otherwise 0. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="loop_until_bit_is_set"></A>loop_until_bit_ist_set( 
+      port, bit );</TD>
+    <TD class="dunkel">Loops until bit 'bit' in port 'port' is set. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="loop_until_bit_is_clear"></A>loop_until_bit_is_clear( 
+      port, bit );</TD>
+    <TD class="hell">Loops until bit 'bit' in port 'port' is clear. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="parity_even_bit"></A>parity_even_bit( val );</TD>
+    <TD class="dunkel">I have no idea what this macro does. Any suggestions? Marek?</TD>
+  </TR>
 </TABLE>
 
 
@@ -975,129 +974,114 @@ Pi.<BR>
 <TT>M_SQRT2 = 1.4142135623730950488016887</TT><BR>
 The square root of two.<BR>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="cos"></A>double cos( double x );</TD>
-        <TD>Returns the cosine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME=""></A>double fabs( double x );</TD>
-        <TD>Returns the absolute value of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="fmod"></A>double fmod( double x, double y );</TD>
-        <TD>Returns the floating point remainder of x/y.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="modf"></A>double modf( double x, double *iptr );</TD>
-        <TD>Returns the fractional part of x and stores the integral part in *iptr.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="sin"></A>double sin( double x );</TD>
-        <TD>Returns the sine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="sqrt"></A>double sqrt( double x );</TD>
-        <TD>Returns the square root of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="tan"></A>double tan( double x );</TD>
-        <TD>Returns the tangens of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="floor"></A>double floor( double x );</TD>
-        <TD>Returns the biggest integer smaller than x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="ceil"></A>double ceil( doublce x );</TD>
-        <TD>Returns the smallest integer bigger than x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="frexp"></A>double frexp( double x, int *exp );</TD>
-        <TD>Splits x into a normalized fraction, which is returned, and an exponent, 
-        which is stored in *exp.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="ldexp"></A>double ldexp( double x, int exp );</TD>
-        <TD>Returns the result of x*2^exp.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="exp"></A>double exp( double x );</TD>
-        <TD>Returns e^x;</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="cosh"></A>double cosh( double x );</TD>
-        <TD>Returns the hyperbolic cosine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="sinh"></A>double sinh( double x );</TD>
-        <TD>Returns the hyperbolic sine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="tanh"></A>double tanh( double x );</TD>
-        <TD>Returns the hyperbolc tangens of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="acos"></A>double acos( double x );</TD>
-        <TD>Returns the arc cosine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="asin"></A>double asin( double x );</TD>
-        <TD>Returns the arc sine of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="atan"></A>double atan( double x );</TD>
-        <TD>Returns the arc tangens of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="log"></A>double log( double x );</TD>
-        <TD>Returns the natural logarithm of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="log10"></A>double log10( double x );</TD>
-        <TD>Returns the logarithm of x to the base 10.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="pow"></A>double pow( double x, double y );</TD>
-        <TD>Returns x^y.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strtod"></A>double strtod( const char *s, char **endptr );</TD>
-        <TD>Converts an ASCII string to a double.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="square"></A>double square( double x );</TD>
-        <TD>Returns x^2;</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="inverse"></A>double inverse( double x );</TD>
-        <TD>Returns 1/x;</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="cos"></A>double cos( double x );</TD>
+    <TD class="hell">Returns the cosine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="fabs"></A>double fabs( double x );</TD>
+    <TD class="dunkel">Returns the absolute value of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="fmod"></A>double fmod( double x, double y );</TD>
+    <TD class="hell">Returns the floating point remainder of x/y.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="modf"></A>double modf( double x, double *iptr 
+      );</TD>
+    <TD class="dunkel">Returns the fractional part of x and stores the integral 
+      part in *iptr.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="sin"></A>double sin( double x );</TD>
+    <TD class="hell">Returns the sine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="sqrt"></A>double sqrt( double x );</TD>
+    <TD class="dunkel">Returns the square root of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="tan"></A>double tan( double x );</TD>
+    <TD class="hell">Returns the tangens of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="floor"></A>double floor( double x );</TD>
+    <TD class="dunkel">Returns the biggest integer smaller than x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="ceil"></A>double ceil( doublce x );</TD>
+    <TD class="hell">Returns the smallest integer bigger than x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="frexp"></A>double frexp( double x, int *exp );</TD>
+    <TD class="dunkel">Splits x into a normalized fraction, which is returned, 
+      and an exponent, which is stored in *exp.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="ldexp"></A>double ldexp( double x, int exp );</TD>
+    <TD class="hell">Returns the result of x*2^exp.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="exp"></A>double exp( double x );</TD>
+    <TD class="dunkel">Returns e^x;</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="cosh"></A>double cosh( double x );</TD>
+    <TD class="hell">Returns the hyperbolic cosine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="sinh"></A>double sinh( double x );</TD>
+    <TD class="dunkel">Returns the hyperbolic sine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="tanh"></A>double tanh( double x );</TD>
+    <TD class="hell">Returns the hyperbolc tangens of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="acos"></A>double acos( double x );</TD>
+    <TD class="dunkel">Returns the arc cosine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="asin"></A>double asin( double x );</TD>
+    <TD class="hell">Returns the arc sine of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="atan"></A>double atan( double x );</TD>
+    <TD class="dunkel">Returns the arc tangens of x. Output between -PI/2 and 
+      PI/2 (inclusive).</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="atan2"></A>double atan2( double x, double y );</TD>
+    <TD class="hell">Returns the arc tangens of x/y. Also takes the signs of both 
+      arguments into account when determinig the quadrant. Output between -PI 
+      and PI (inclusive).</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="log"></A>double log( double x );</TD>
+    <TD class="dunkel">Returns the natural logarithm of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="log10"></A>double log10( double x );</TD>
+    <TD class="hell">Returns the logarithm of x to the base 10.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="pow"></A>double pow( double x, double y );</TD>
+    <TD class="dunkel">Returns x^y.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strtod"></A>double strtod( const char *s, char **endptr 
+      );</TD>
+    <TD class="hell">Converts an ASCII string to a double.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="square"></A>double square( double x );</TD>
+    <TD class="dunkel">Returns x^2;</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="inverse"></A>double inverse( double x );</TD>
+    <TD class="hell">Returns 1/x;</TD>
+  </TR>
 </TABLE>
 
 <HR>
@@ -1126,19 +1110,19 @@ Includes <A HREF="#pgmspace.h">pgmspace.h</A>.
 
 <A NAME="setjmp.h"><H3>SETJMP.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="setjmp"></A>int setjmp( jmp_buf env );</TD>
-        <TD>Declares a longjmp-Target to be jumped at with longjmp (see below.).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="longjmp"></A>void longjmp( jmp_buf env, int val );</TD>
-        <TD>Executes a long jump to the position previously defined with
-        <tt>setjmp( 'env' )</tt>, which will return 'val'.</TD>
-    </TR>
-    
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="setjmp"></A>int setjmp( jmp_buf env 
+      );</TD>
+    <TD class="hell">Declares a longjmp-Target to be jumped at with longjmp (see 
+      below.).</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="longjmp"></A>void longjmp( jmp_buf env, int val 
+      );</TD>
+    <TD class="dunkel">Executes a long jump to the position previously defined 
+      with <tt>setjmp( 'env' )</tt>, which will return 'val'.</TD>
+  </TR>
 </TABLE>
 
 <HR>
@@ -1149,121 +1133,110 @@ Includes <A HREF="#pgmspace.h">pgmspace.h</A>.
 Defines symbols for the interrupt vectors that are stored at the begining of the 
 flash memory. Defined are:
 <P>
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="SIG_INTERRUPT"></A>SIG_INTERRUPT0 through SIG_INTERRUPT7</TD>
-        <TD>Handler function name for the external interrupts 0 through 7. Interrupts > 
-        1 are only available on certain ATmega AVRs.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SUG_OUTPUT_COMPARE2"></A>SIG_OUTPUT_COMPARE2</TD>
-        <TD>Handler function name for the Compare2 interrupt (Analog Comparator).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_OVERFLOW2"></A>SIG_OVERFLOW2</TD>
-        <TD>Handler function name for the Overflow2 interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_INPUT_CAPTURE1"></A>SIG_INPUT_CAPTURE1</TD>
-        <TD>Handler function name for the Capture1 interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_OUTPUT_COMPARE1A"></A>SIG_OUTPUT_COMPARE1A</TD>
-        <TD>Handler function name for the Compare1(A) interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_OVERFLOW1"></A>SIG_OVERFLOW1</TD>
-        <TD>Handler function name for the Overflow1 interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_OUTPUT_COMPARE0"></A>SIG_OUTPUT_COMPARE0</TD>
-        <TD>Handler function name for the Compare0 interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_OVERFLOW0"></A>SIG_OVERFLOW0</TD>
-        <TD>Handler function name for the Overflow0 interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_SPI"></A>SIG_SPI</TD>
-        <TD>Handler function name for the SPI interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART_RECV"></A>SIG_UART_RECV</TD>
-        <TD>Handler function name for the UART(0) Receive Complete interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART1_RECV"></A>SIG_UART1_RECV</TD>
-        <TD>Handler function name for the UART1 Receive Complete interrupt. UART1 is 
-        only available on the ATmega161.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART_DATA"></A>SIG_UART_DATA</TD>
-        <TD>Handler function name for the UART(0) Data Register Empty interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART1_DATA"></A>SIG_UART1_DATA</TD>
-        <TD>Handler function name for the UART1 Data Register Empty interrupt. UART1 is 
-        only available on the ATmega161.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART_TRANS"></A>SIG_UART_TRANS</TD>
-        <TD>Handler function name for the UART(0) Transmit Complete interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_UART1_TRANS"></A>SIG_UART1_TRANS</TD>
-        <TD>Handler function name for the UART1 Transmit Complete interrupt. UART1 is 
-        only available on the ATmega161.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_ADC"></A>SIG_ADC</TD>
-        <TD>Handler function name for the ADC Comversion Complete interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_EEPROM"></A>SIG_EEPROM</TD>
-        <TD>Handler function name for the EEPROM Ready interrupt.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="SIG_COMPARATOR"></A>SIG_COMPARATOR</TD>
-        <TD>Handler function name for the Analog Comparator interrupt.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="SIG_INTERRUPT"></A>SIG_INTERRUPT0 through 
+      SIG_INTERRUPT7</TD>
+    <TD class="hell">Handler function name for the external interrupts 0 through 
+      7. Interrupts > 1 are only available on certain ATmega AVRs.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_OUTPUT_COMPARE2"></A>SIG_OUTPUT_COMPARE2</TD>
+    <TD class="dunkel">Handler function name for the Compare2 interrupt (Analog 
+      Comparator).</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_OVERFLOW2"></A>SIG_OVERFLOW2</TD>
+    <TD class="hell">Handler function name for the Overflow2 interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_INPUT_CAPTURE1"></A>SIG_INPUT_CAPTURE1</TD>
+    <TD class="dunkel">Handler function name for the Capture1 interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_OUTPUT_COMPARE1A"></A>SIG_OUTPUT_COMPARE1A</TD>
+    <TD class="hell">Handler function name for the Compare1(A) interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_OUTPUT_COMPARE1B"></A>SIG_OUTPUT_COMPARE1B</TD>
+    <TD class="dunkel">Handler function name for the Compare1(B) interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_OVERFLOW1"></A>SIG_OVERFLOW1</TD>
+    <TD class="hell">Handler function name for the Overflow1 interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_OUTPUT_COMPARE0"></A>SIG_OUTPUT_COMPARE0</TD>
+    <TD class="dunkel">Handler function name for the Compare0 interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_OVERFLOW0"></A>SIG_OVERFLOW0</TD>
+    <TD class="hell">Handler function name for the Overflow0 interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_SPI"></A>SIG_SPI</TD>
+    <TD class="dunkel">Handler function name for the SPI interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_UART_RECV"></A>SIG_UART_RECV</TD>
+    <TD class="hell">Handler function name for the UART(0) Receive Complete interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_UART1_RECV"></A>SIG_UART1_RECV</TD>
+    <TD class="dunkel">Handler function name for the UART1 Receive Complete interrupt. 
+      UART1 is only available on the ATmega161.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_UART_DATA"></A>SIG_UART_DATA</TD>
+    <TD class="hell">Handler function name for the UART(0) Data Register Empty 
+      interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_UART1_DATA"></A>SIG_UART1_DATA</TD>
+    <TD class="dunkel">Handler function name for the UART1 Data Register Empty 
+      interrupt. UART1 is only available on the ATmega161.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_UART_TRANS"></A>SIG_UART_TRANS</TD>
+    <TD class="hell">Handler function name for the UART(0) Transmit Complete interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_UART1_TRANS"></A>SIG_UART1_TRANS</TD>
+    <TD class="dunkel">Handler function name for the UART1 Transmit Complete interrupt. 
+      UART1 is only available on the ATmega161.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_ADC"></A>SIG_ADC</TD>
+    <TD class="hell">Handler function name for the ADC Comversion Complete interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="SIG_EEPROM"></A>SIG_EEPROM</TD>
+    <TD class="dunkel">Handler function name for the EEPROM Ready interrupt.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="SIG_COMPARATOR"></A>SIG_COMPARATOR</TD>
+    <TD class="hell">Handler function name for the Analog Comparator interrupt.</TD>
+  </TR>
 </TABLE>
 
 <P>
 Furthermore, the following functions/macros are defined:
 </P>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="SIGNAL"></A>SIGNAL( signame );</TD>
-        <TD>Used for defining an Signal/Interrupt handler for the signal 'signame'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="INTERRUPT"></A>INTERRUPT( signame );</TD>
-        <TD>Probably used for generating the interrupt signal 'signame'.</TD>
-    <TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="SIGNAL"></A>SIGNAL( signame );</TD>
+    <TD class="hell">Used for defining an Signal handler for the signal 'signame'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="INTERRUPT"></A>INTERRUPT( signame );</TD>
+    <TD class="dunkel">Used for defining an Interrupt handler for the signal 'signame'.</TD>
+  <TR> 
 </TABLE>
+<p>In a handler defined
+with SIGNAL(), additional interrupts are implicitly forbidden, whereas in an INTERRUPT()
+handler, the first (implicit) instruction is "sei", so that additional interrupts can occur.</p>
+<p>Thanks to J&ouml;rg Wunsch for correcting me there.</p>
 
 
 <HR>
@@ -1301,89 +1274,78 @@ Used for comparison functions, eg. qsort().
 Additionally, the following functions/macros are declared:
 </P>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="abort"></A>void abort();</TD>
-        <TD>Effectively aborts the execution by putting the MCU into an endless loop.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="labs"></A>long labs( long x );</TD>
-        <TD>Returns the absolute value of x.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="bsearch"></A>void *bsearch(const void *key, const void *base, 
-        size_t nmemb,<BR>
-            > size_t size, int (*compar)(const void *, const void *));</TD>
-        <TD>Performs a binary search on a sorted array.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="div"></A>div_t div( int x, int y );</TD>
-        <TD>Divides x by y and returns the result (quotient and remainder) in a div_t 
-        struct (see above).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="ldiv"></A>ldiv_t ldiv( lomg x, long y );</TD>
-        <TD>Divides x by y and returns the result (quotient and remainder) in a ldiv_t 
-        struct (see above).</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="qsort"></A>void qsort(void *base, size_t nmemb, size_t size, 
-        __compar_fn_t compar);</TD>
-        <TD>Sorts an array at 'base' with 'nmemb' elements of size 'size', using the 
-        comparison function 'compar'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strtol"></A>long strtol(const char *nptr, char **endptr, int base);</TD>
-        <TD>Converts the string at 'nptr' to a long integer according to the base 'base'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strtoul"></A>unsigned long strtoul(const char *nptr, char **endptr, 
-        int base);</TD>
-        <TD>Converts the string at 'nptr' to an unsigned long integer according to the 
-        base 'base'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="atol"></A>long atol( char *p );</TD>
-        <TD>Converts the string 'p' to a long integer.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="atoi"></A>long atoi( char *p );</TD>
-        <TD>Converts the string 'p' to an integer.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="malloc"></A>void *malloc( size_t size );</TD>
-        <TD>Allocates 'size' bytes of memory and returns a pointer to it. Implemented, 
-        but not tested.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="free"></A>void free( void *ptr );</TD>
-        <TD>Releases the memory at 'ptr', which was previously allocated with malloc(). 
-        Implemented, but not tested.</TD>
-    </TR>
-
-    <TR>
-        <TD>double strtod( char *, char ** );</TD>
-        <TD>See <A HREF="#strtod">math.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="itoa"></A>char *itoa( int value, char *string, int radix );</TD>
-        <TD>Converts an integer into a string. This is not ANSI C, but nonetheless (or 
-        maybe just because of this) very useful.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="abort"></A>void abort();</TD>
+    <TD class="hell">Effectively aborts the execution by putting the MCU into 
+      an endless loop.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="labs"></A>long labs( long x );</TD>
+    <TD class="dunkel">Returns the absolute value of x.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="bsearch"></A>void *bsearch(const void *key, const 
+      void *base, size_t nmemb,<BR>
+      > size_t size, int (*compar)(const void *, const void *));</TD>
+    <TD class="hell">Performs a binary search on a sorted array.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="div"></A>div_t div( int x, int y );</TD>
+    <TD class="dunkel">Divides x by y and returns the result (quotient and remainder) 
+      in a div_t struct (see above).</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="ldiv"></A>ldiv_t ldiv( lomg x, long y );</TD>
+    <TD class="hell">Divides x by y and returns the result (quotient and remainder) 
+      in a ldiv_t struct (see above).</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="qsort"></A>void qsort(void *base, size_t nmemb, 
+      size_t size, __compar_fn_t compar);</TD>
+    <TD class="dunkel">Sorts an array at 'base' with 'nmemb' elements of size 
+      'size', using the comparison function 'compar'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strtol"></A>long strtol(const char *nptr, char **endptr, 
+      int base);</TD>
+    <TD class="hell">Converts the string at 'nptr' to a long integer according 
+      to the base 'base'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strtoul"></A>unsigned long strtoul(const char 
+      *nptr, char **endptr, int base);</TD>
+    <TD class="dunkel">Converts the string at 'nptr' to an unsigned long integer 
+      according to the base 'base'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="atol"></A>long atol( char *p );</TD>
+    <TD class="hell">Converts the string 'p' to a long integer.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="atoi"></A>long atoi( char *p );</TD>
+    <TD class="dunkel">Converts the string 'p' to an integer.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="malloc"></A>void *malloc( size_t size );</TD>
+    <TD class="hell">Allocates 'size' bytes of memory and returns a pointer to 
+      it. Implemented, but not tested.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="free"></A>void free( void *ptr );</TD>
+    <TD class="dunkel">Releases the memory at 'ptr', which was previously allocated 
+      with malloc(). Implemented, but not tested.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">double strtod( char *, char ** );</TD>
+    <TD class="hell">See <A HREF="#strtod">math.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="itoa"></A>char *itoa( int value, char *string, 
+      int radix );</TD>
+    <TD class="dunkel">Converts an integer into a string. This is not ANSI C, 
+      but nonetheless (or maybe just because of this) very useful.</TD>
+  </TR>
 </TABLE>
 
 <P>
@@ -1398,95 +1360,90 @@ The following functions are not yet implemented:
 
 <A NAME="string-avr.h"><H3>STRING-AVR.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="memcpy"></A>void *memcpy( void *to, void *from, size_t n );</TD>
-        <TD>Copy 'n' bytes from 'from' to 'to'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="memmove"></A>void *memmove( void *to, void *from, size_t n );</TD>
-        <TD>Copy 'n' bytes of 'from' to 'to', guaranteeing correct behavior for 
-        overlapping strings.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="memset"></A>void *memset( void *s, int c, size_t n );</TD>
-        <TD>Set 'n' bytes of 's' to 'c'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="memcmp"></A>int memcmp( const void *s1, const void *s2, size_t n );</TD>
-        <TD>Compare 'n' bytes of 's1' an 's2'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="memchr"></A>void *memchr( void *s, char c, size_t n );</TD>
-        <TD>Returns a pointer to the first occurence of 'c' in the first 'n' bytes of 's'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strlen"></A>size_t strlen( char *s );</TD>
-        <TD>Returns the length of 's'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strcpy"></A>char *strcpy( char *dest, char *src );</TD>
-        <TD>Copies 'src' intro 'dest'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strncpy"></A>char *strncpy( char *dest, char *src, size_t n );</TD>
-        <TD>Copy no more than n bytes from 'src' to 'dest'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strcat"></A>char *strcat( char *dest, char *src );</TD>
-        <TD>Append 'src' onto 'dest'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strncat"></A>char *strncat( char *dest, char *src, size_t n );</TD>
-        <TD>Append no more than 'n' bytes from 'src' onto 'dest'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strcmp"></A>int strcmp( const char *s1, const char* s2 );</TD>
-        <TD>Compare 's1' and 's2'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strncmp"></A>int strncmp( const char *s1, const char* s2, size_t n 
-        );</TD>
-        <TD>Compare 'n' characters from 's1' and 's2'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strdupa"></A>strdupa( s );</TD>
-        <TD>Duplicate 's', returning an identical allocated string. Macro.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strdupa"></A>strndupa( s, n );</TD>
-        <TD>Return an allocated copy of at most 'n' bytes of 's'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strchr"></A>char *strchr( const char *s, int c );</TD>
-        <TD>Return a pointer to the first occurence of 'c' in 's'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strrchr"></A>char *strrchr( const char *s, int c );</TD>
-        <TD>Return a pointer to the last occurence of 'c' in 's'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strnlen"></A>size_t strnlen( const char *s, size_t maxlen );</TD>
-        <TD>Returns the length of 's', but at most 'maxlen'.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="memcpy"></A>void *memcpy( void *to, 
+      void *from, size_t n );</TD>
+    <TD class="hell">Copy 'n' bytes from 'from' to 'to'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="memmove"></A>void *memmove( void *to, void *from, 
+      size_t n );</TD>
+    <TD class="dunkel">Copy 'n' bytes of 'from' to 'to', guaranteeing correct 
+      behavior for overlapping strings.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="memset"></A>void *memset( void *s, int c, size_t 
+      n );</TD>
+    <TD class="hell">Set 'n' bytes of 's' to 'c'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="memcmp"></A>int memcmp( const void *s1, const 
+      void *s2, size_t n );</TD>
+    <TD class="dunkel">Compare 'n' bytes of 's1' an 's2'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="memchr"></A>void *memchr( void *s, char c, size_t 
+      n );</TD>
+    <TD class="hell">Returns a pointer to the first occurence of 'c' in the first 
+      'n' bytes of 's'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strlen"></A>size_t strlen( char *s );</TD>
+    <TD class="dunkel">Returns the length of 's'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strcpy"></A>char *strcpy( char *dest, char *src 
+      );</TD>
+    <TD class="hell">Copies 'src' intro 'dest'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strncpy"></A>char *strncpy( char *dest, char *src, 
+      size_t n );</TD>
+    <TD class="dunkel">Copy no more than n bytes from 'src' to 'dest'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strcat"></A>char *strcat( char *dest, char *src 
+      );</TD>
+    <TD class="hell">Append 'src' onto 'dest'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strncat"></A>char *strncat( char *dest, char *src, 
+      size_t n );</TD>
+    <TD class="dunkel">Append no more than 'n' bytes from 'src' onto 'dest'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strcmp"></A>int strcmp( const char *s1, const char* 
+      s2 );</TD>
+    <TD class="hell">Compare 's1' and 's2'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strncmp"></A>int strncmp( const char *s1, const 
+      char* s2, size_t n );</TD>
+    <TD class="dunkel">Compare 'n' characters from 's1' and 's2'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strdupa"></A>strdupa( s );</TD>
+    <TD class="hell">Duplicate 's', returning an identical allocated string. Macro.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strndupa"></A>strndupa( s, n );</TD>
+    <TD class="dunkel">Return an allocated copy of at most 'n' bytes of 's'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strchr"></A>char *strchr( const char *s, int c );</TD>
+    <TD class="hell">Return a pointer to the first occurence of 'c' in 's'.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strrchr"></A>char *strrchr( const char *s, int 
+      c );</TD>
+    <TD class="dunkel">Return a pointer to the last occurence of 'c' in 's'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strnlen"></A>size_t strnlen( const char *s, size_t 
+      maxlen );</TD>
+    <TD class="hell">Returns the length of 's', but at most 'maxlen'.</TD>
+  </TR>
 </TABLE>
 
 
@@ -1494,120 +1451,101 @@ The following functions are not yet implemented:
 
 <A NAME="string.h"><H3>STRING.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="memccpy"></A>extern void *memccpy(void *dest, const void *src, int 
-        c, size_t n);</TD>
-        <TD>Copy at most 'n bytes from 'src' to 'dest' until character 'c' is found.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern void *memchr(const void *, int, size_t);</TD>
-        <TD><A HREF="#memchr">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern int memcmp(const void *, const void *, size_t);</TD>
-        <TD><A HREF="#memcmp">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern void *memcpy(void *, const void *, size_t);</TD>
-        <TD><A HREF="#memcpy">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern void *memmove(void *dest, const void *src, size_t n);</TD>
-        <TD><A HREF="#memmove">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern void *memset(void *, int, size_t);</TD>
-        <TD><A HREF="#memset">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strcat(char *, const char *);</TD>
-        <TD><A HREF="#strcat">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strchr(const char *, int);</TD>
-        <TD><A HREF="#strchr">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern int strcmp(const char *, const char *);</TD>
-        <TD><A HREF="#strcmp">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strcpy(char *, const char *);</TD>
-        <TD><A HREF="#strcpy">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strcasecmp"></A>extern int strcasecmp(const char *s1, const char *s2);</TD>
-        <TD>Compare 's1' and 's2', ignoring case.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern size_t strlen(const char *);</TD>
-        <TD><A HREF="#strlen">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strlwr"></A>extern char *strlwr(char *);</TD>
-        <TD>I have no clue as to what this does.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strncat(char *, const char *, size_t);</TD>
-        <TD><A HREF="#strncat">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern int strncmp(const char *, const char *, size_t);</TD>
-        <TD><A HREF="#strncmp">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strncpy(char *, const char *, size_t);</TD>
-        <TD><A HREF="#strncpy">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strncasecmp"></A>extern int strncasecmp(const char *, const char *, 
-        size_t);</TD>
-        <TD>Compare 'n' bytes of 's1' and 's2', ignoring case.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern size_t strnlen(const char *, size_t);</TD>
-        <TD><A HREF="#strnlen">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD>extern char *strrchr(const char *, int);</TD>
-        <TD><A HREF="#strrchr">See string-avr.h</A>.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strrev"></A>extern char *strrev(char *s1);</TD>
-        <TD>Probably reverses 's1'.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strstr"></A>extern char *strstr(const char *haystack, const char *needle);</TD>
-        <TD>Locate 'needle' in 'haystack', and return a pointer to it.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="strupr"></A>extern char *strupr(char *);</TD>
-        <TD>Dunno.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="memccpy"></A>extern void *memccpy(void 
+      *dest, const void *src, int c, size_t n);</TD>
+    <TD class="hell">Copy at most 'n bytes from 'src' to 'dest' until character 
+      'c' is found.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern void *memchr(const void *, int, size_t);</TD>
+    <TD class="dunkel"><A HREF="#memchr">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern int memcmp(const void *, const void *, size_t);</TD>
+    <TD class="hell"><A HREF="#memcmp">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern void *memcpy(void *, const void *, size_t);</TD>
+    <TD class="dunkel"><A HREF="#memcpy">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern void *memmove(void *dest, const void *src, size_t 
+      n);</TD>
+    <TD class="hell"><A HREF="#memmove">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern void *memset(void *, int, size_t);</TD>
+    <TD class="dunkel"><A HREF="#memset">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern char *strcat(char *, const char *);</TD>
+    <TD class="hell"><A HREF="#strcat">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern char *strchr(const char *, int);</TD>
+    <TD class="dunkel"><A HREF="#strchr">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern int strcmp(const char *, const char *);</TD>
+    <TD class="hell"><A HREF="#strcmp">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern char *strcpy(char *, const char *);</TD>
+    <TD class="dunkel"><A HREF="#strcpy">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strcasecmp"></A>extern int strcasecmp(const char 
+      *s1, const char *s2);</TD>
+    <TD class="hell">Compare 's1' and 's2', ignoring case.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern size_t strlen(const char *);</TD>
+    <TD class="dunkel"><A HREF="#strlen">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strlwr"></A>extern char *strlwr(char *s);</TD>
+    <TD class="hell">Converts all upper case characters in 's' to lower case.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern char *strncat(char *, const char *, size_t);</TD>
+    <TD class="dunkel"><A HREF="#strncat">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern int strncmp(const char *, const char *, size_t);</TD>
+    <TD class="hell"><A HREF="#strncmp">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern char *strncpy(char *, const char *, size_t);</TD>
+    <TD class="dunkel"><A HREF="#strncpy">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strncasecmp"></A>extern int strncasecmp(const char 
+      *, const char *, size_t);</TD>
+    <TD class="hell">Compare 'n' bytes of 's1' and 's2', ignoring case.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel">extern size_t strnlen(const char *, size_t);</TD>
+    <TD class="dunkel"><A HREF="#strnlen">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell">extern char *strrchr(const char *, int);</TD>
+    <TD class="hell"><A HREF="#strrchr">See string-avr.h</A>.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strrev"></A>extern char *strrev(char *s1);</TD>
+    <TD class="dunkel">Probably reverses 's1'.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="strstr"></A>extern char *strstr(const char *haystack, 
+      const char *needle);</TD>
+    <TD class="hell">Locate 'needle' in 'haystack', and return a pointer to it.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="strupr"></A>extern char *strupr(char *s);</TD>
+    <TD class="dunkel">Converts all lower case characters in 's' to upper case.</TD>
+  </TR>
 </TABLE>
 
 
@@ -1633,23 +1571,20 @@ T0_RISING_EDGE   = 7<BR>
 
 <P>
 And there are the following functions:
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="timer0_source"></A>void timer0_source( unsigned int src );</TD>
-        <TD>Writes 'src' into the TCCR0 register.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="timer0_stop"></A>void timer0_stop();</TD>
-        <TD>Stops Timer 0 by clearing the TCNT0 register.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="timer0_start"></A>coid timer0_start();</TD>
-        <TD>Starts Timer 0 by writing a 1 into the TCNT0 register.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="timer0_source"></A>void timer0_source( 
+      unsigned int src );</TD>
+    <TD class="hell">Writes 'src' into the TCCR0 register.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="timer0_stop"></A>void timer0_stop();</TD>
+    <TD class="dunkel">Stops Timer 0 by clearing the TCNT0 register.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="timer0_start"></A>coid timer0_start();</TD>
+    <TD class="hell">Starts Timer 0 by writing a 1 into the TCNT0 register.</TD>
+  </TR>
 </TABLE>
 
 
@@ -1666,24 +1601,20 @@ Defines several constants for the ATmega163.
 
 <A NAME="wdt.h"><H3>WDT.H</H3></A>
 
-<TABLE WIDTH="100%" BORDER="0">
-
-    <TR>
-        <TD><A NAME="wdt_reset"></A>wdt_reset();</TD>
-        <TD>Resets the Watchdog Timer.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="wdt_enable"></A>wdt_enable( timeout );</TD>
-        <TD>Enables the Watchdog Timer with timeout 'timeout'. For the actual timeout 
-        value, refer to the Atmel AVR datasheets.</TD>
-    </TR>
-
-    <TR>
-        <TD><A NAME="wdt_disable"></A>wdt_disable();</TD>
-        <TD>Disables the Watchdog Timer.</TD>
-    </TR>
-
+<TABLE WIDTH="80%" ALIGN="CENTER" BORDER="0">
+  <TR> 
+    <TD WIDTH="30%" class="hell"><A NAME="wdt_reset"></A>wdt_reset();</TD>
+    <TD class="hell">Resets the Watchdog Timer.</TD>
+  </TR>
+  <TR> 
+    <TD class="dunkel"><A NAME="wdt_enable"></A>wdt_enable( timeout );</TD>
+    <TD class="dunkel">Enables the Watchdog Timer with timeout 'timeout'. For 
+      the actual timeout value, refer to the Atmel AVR datasheets.</TD>
+  </TR>
+  <TR> 
+    <TD class="hell"><A NAME="wdt_disable"></A>wdt_disable();</TD>
+    <TD class="hell">Disables the Watchdog Timer.</TD>
+  </TR>
 </TABLE>
 
 </BODY>
