@@ -9,7 +9,7 @@ PORTNAME=	lp_solve
 PORTVERSION=	4.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	# none
+MASTER_SITES=	ftp://ftp.es.ele.tue.nl/pub/lp_solve/old_versions_which_you_probably_dont_want/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -32,12 +32,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/lp_solve.1 ${PREFIX}/man/man1
 .ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
-	${CP} $(WRKSRC)/HARTMUT_DOCUMENTATION ${DOCSDIR}
-	${CP} $(WRKSRC)/MPS.description ${DOCSDIR}
-	${CP} $(WRKSRC)/*.pdf ${DOCSDIR}
+	${CP} ${WRKSRC}/HARTMUT_DOCUMENTATION ${DOCSDIR}
+	${CP} ${WRKSRC}/MPS.description ${DOCSDIR}
+	${CP} ${WRKSRC}/*.pdf ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/demo ${EXAMPLESDIR}
-	${CP} -R $(WRKSRC)/lp_examples/* ${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/lp_examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
