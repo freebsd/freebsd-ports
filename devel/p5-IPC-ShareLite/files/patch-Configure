@@ -1,0 +1,38 @@
+--- Configure.orig	Tue Apr  3 04:46:13 2001
++++ Configure	Tue Apr  3 04:50:15 2001
+@@ -3042,35 +3042,6 @@
+ : preserve RCS keywords in files with variable substitution, grrr
+ Id='$Id'
+ 
+-: Finish up by extracting the .SH files
+-case "$alldone" in
+-exit)
+-	$rm -rf UU
+-	echo "Done."
+-	exit 0
+-	;;
+-cont)
+-	;;
+-'')
+-	dflt=''
+-	nostick=true
+-	$cat <<EOM
+-
+-If you'd like to make any changes to the config.sh file before I begin
+-to configure things, do it as a shell escape now (e.g. !vi config.sh).
+-
+-EOM
+-	rp="Press return or use a shell escape to edit config.sh:"
+-	. UU/myread
+-	nostick=''
+-	case "$ans" in
+-	'') ;;
+-	*) : in case they cannot read
+-		sh 1>&4 -c "$ans";;
+-	esac
+-	;;
+-esac
+-
+ : if this fails, just run all the .SH files by hand
+ . ./config.sh
+ 
