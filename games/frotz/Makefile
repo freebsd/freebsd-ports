@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	frotz
-PORTVERSION=	2.41
+PORTVERSION=	2.42
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/frotz/ \
 		http://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/frotz/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
-MAINTAINER=	adam@blacktabby.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 MAKE_ARGS=	CC="${CC}" OPTS="${CFLAGS}" PREFIX="${PREFIX}" \
 		CONFIG_DIR="${PREFIX}/etc" INCL="" LIB=""
