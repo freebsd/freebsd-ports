@@ -99,6 +99,7 @@
     SUBDIR += freebirth
     SUBDIR += funktrackergold
     SUBDIR += gdam
+    SUBDIR += gdesklets-cornerxmms
     SUBDIR += gdrdao
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2

@@ -1,0 +1,33 @@
+share/gnome/gdesklets/Displays/CornerXMMS/cornerxmms-bottomright.display
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/bar0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/bar1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/body-br.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/bot-br0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/eject0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/eq0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/eq1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/gauge.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/ml0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/ml1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/next0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/pause0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/pause1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/pl0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/pl1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/play0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/play1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/prev0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/rep0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/rep1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/rnd0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/rnd1.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/stop0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/textmask-br0.png
+share/gnome/gdesklets/Displays/CornerXMMS/gfx/textmask-br1.png
+share/gnome/gdesklets/Sensors/CornerXMMS/__init__.py
+share/gnome/gdesklets/Sensors/CornerXMMS/__init__.pyc
+share/gnome/gdesklets/Sensors/CornerXMMS/__init__.pyo
+share/gnome/gdesklets/Sensors/CornerXMMS/README
+@dirrm share/gnome/gdesklets/Sensors/CornerXMMS
+@dirrm share/gnome/gdesklets/Displays/CornerXMMS/gfx
+@dirrm share/gnome/gdesklets/Displays/CornerXMMS
