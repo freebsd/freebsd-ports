@@ -277,6 +277,7 @@
     SUBDIR += linc
     SUBDIR += linphone
     SUBDIR += linpopup
+    SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
@@ -307,6 +308,7 @@
     SUBDIR += mpd
     SUBDIR += mpich
     SUBDIR += mrt
+    SUBDIR += mrtg-ping-probe
     SUBDIR += msend
     SUBDIR += msntp
     SUBDIR += mtr
@@ -396,6 +398,7 @@
     SUBDIR += p5-Net-AOLIM
     SUBDIR += p5-Net-Amazon
     SUBDIR += p5-Net-BGP
+    SUBDIR += p5-Net-CIDR-Lite
     SUBDIR += p5-Net-DLookup
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-Dict
@@ -432,6 +435,7 @@
     SUBDIR += p5-Net-Z3950
     SUBDIR += p5-Net-Z3950-SimpleServer
     SUBDIR += p5-Net-ext
+    SUBDIR += p5-NetAddr-IP-Count
     SUBDIR += p5-NetPacket
     SUBDIR += p5-OAI-Harvester
     SUBDIR += p5-POE-Component-RRDTool
@@ -556,6 +560,7 @@
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += scand
+    SUBDIR += scr_ipfm
     SUBDIR += sdl_net
     SUBDIR += sendfile
     SUBDIR += ser
@@ -677,6 +682,7 @@
     SUBDIR += xmule
     SUBDIR += xnap
     SUBDIR += xprobe
+    SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xwhois
     SUBDIR += yaph
@@ -686,6 +692,7 @@
     SUBDIR += yptransitd
     SUBDIR += ysm
     SUBDIR += ytalk
+    SUBDIR += zabbix-agent
     SUBDIR += zebra
     SUBDIR += zebra-devel
     SUBDIR += zebra-server
