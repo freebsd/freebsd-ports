@@ -27,3 +27,4 @@ lib/X11/app-defaults/XLoad
 lib/X11/app-defaults/Xman
 lib/X11/app-defaults/Xmessage
 lib/X11/xman.help
+@dirrm include/bitmaps
