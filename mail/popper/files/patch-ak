@@ -1,6 +1,18 @@
---- popper.h.orig	Mon Apr 17 22:33:43 2000
-+++ popper.h	Mon Apr 17 22:50:27 2000
-@@ -55,11 +55,14 @@
+--- popper.h.orig	Mon Jul 30 19:28:19 2001
++++ popper.h	Mon Jul 30 19:30:20 2001
+@@ -31,11 +31,6 @@
+ 
+ #ifdef		HAVE_SYS_PARAM_H
+ #include <sys/param.h>
+-# if (defined(BSD) && (BSD >= 199103))
+-#  define	HAVE_UNISTD_H
+-#  define	HAVE_VPRINTF
+-#  define	BIND43
+-# endif
+ #endif
+ 
+ #ifdef BSDI
+@@ -60,11 +55,14 @@
  
  #define MAXUSERNAMELEN  65
  #define MAXDROPLEN      64

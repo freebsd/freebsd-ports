@@ -1,0 +1,45 @@
+--- pop_user.c.orig	Fri Jul 10 03:44:08 1998
++++ pop_user.c	Mon Jul 30 19:30:00 2001
+@@ -40,6 +40,12 @@
+ 
+ #include "popper.h"
+ 
++#ifdef OPIE
++#include <opie.h>
++int pwok, af_pwok;
++struct opie opiestate;
++#endif /* OPIE */
++
+ /* 
+  *  user:   Prompt for the user name at the start of a POP session
+  */
+@@ -62,6 +68,9 @@
+     struct stat st;
+     datum	key, value;
+ # endif
++#ifdef OPIE
++    char prompt[OPIE_CHALLENGE_MAX + 1];
++#endif /* OPIE */
+ 
+ #ifdef KERBEROS
+     if (p->kerberos && strcmp(p->pop_parm[1], p->user)) {
+@@ -167,6 +176,19 @@
+ #endif /* APOP */
+ 
+     /*  Tell the user that the password is required */
++#ifdef OPIE
++    if (((pw = getpwnam(p->user)) == NULL) || (pw->pw_passwd == NULL) ||
++	(*pw->pw_passwd == '\0'))
++      return (pop_auth_fail(p, POP_FAILURE, pwerrmsg, p->user));
++
++    pwok = af_pwok && opiealways(pw->pw_dir);
++
++    opiechallenge(&opiestate, p->user, prompt);
++
++    return (pop_msg(p,POP_SUCCESS,"OTP response %s %s for %s.", prompt,
++	    pwok ? "requested" : "required", p->user));
++#else /* OPIE */
+     return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
++#endif /* OPIE */
+ }
+ 
