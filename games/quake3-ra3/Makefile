@@ -6,11 +6,10 @@
 #
 
 PORTNAME?=	ra3
-PORTVERSION?=	1.6
+PORTVERSION?=	1.65
 CATEGORIES=	games linux
-MASTER_SITES?=	ftp://ftp.online.no/pub/online.no/spill/servers/quake/quake3/ra3/ \
-		http://217.116.227.199/modifications/ \
-		ftp://ftp.telekabel.at/pub/games/quake3/ra3/
+MASTER_SITES?=	http://gamefiles.blueyonder.co.uk/blueyondergames/quake3arena/modifications/rocketarena/patches/linux/ \
+		http://mir2.ovh.net/ftp.planetquake3.net/modifications/rocketarena3/
 PKGNAMEPREFIX=	q3server-
 .ifndef(DISTNAME)
 DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl.zip \
