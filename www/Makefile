@@ -35,6 +35,7 @@
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += cgi-lib
+    SUBDIR += cgi-lib.pl
     SUBDIR += cgic
     SUBDIR += cgicc
     SUBDIR += cgichk
