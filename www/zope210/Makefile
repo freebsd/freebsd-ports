@@ -7,6 +7,7 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based web application platform
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.2
+PYTHON_VERSION=	python2.1
 
 DIST_SUBDIR=	zope
 
