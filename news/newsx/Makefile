@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	newsx
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.6/pl6/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.8/pl6/}
 
 MAINTAINER=	thierry@pompo.net
 
