@@ -25,6 +25,7 @@ share/locale/ja/LC_MESSAGES/uim.mo
 share/uim/PY.scm
 share/uim/anthy.scm
 share/uim/canna.scm
+share/uim/custom.scm
 share/uim/default.scm
 share/uim/generic-key.scm
 share/uim/generic.scm
@@ -41,6 +42,7 @@ share/uim/key.scm
 share/uim/latin.scm
 share/uim/loader.scm
 share/uim/m17nlib.scm
+share/uim/pinyin-big5.scm
 share/uim/prime.scm
 share/uim/pyload.scm
 share/uim/pyunihan.scm
