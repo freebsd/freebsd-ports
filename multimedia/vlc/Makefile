@@ -91,6 +91,9 @@ USE_SDL=	sdl
 USE_XLIB=	yes
 USE_ICONV=	yes
 
+PLIST=		${WRKDIR}/plist
+FAKEDIR=	${WRKDIR}/fake
+
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
@@ -216,16 +219,9 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 GNOME_SUFFIX=	-gnome
 USE_GNOME+=	gnomelibs
 CONFIGURE_ARGS+=--enable-gnome
-PLIST_FILES+=	bin/gnome-vlc \
-		lib/vlc/gui/libgnome_plugin.so \
-		lib/vlc/misc/libgnome_main_plugin.so
 .endif
 
-.if !defined(WITHOUT_GTKVLC)
-PLIST_FILES+=	bin/gvlc \
-		lib/vlc/gui/libgtk_plugin.so \
-		lib/vlc/misc/libgtk_main_plugin.so
-.else
+.if defined(WITHOUT_GTKVLC)
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
@@ -233,8 +229,6 @@ CONFIGURE_ARGS+=--disable-gtk
 LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 CONFIGURE_ARGS+=--enable-wxwindows
 CONFIGURE_ENV+=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
-PLIST_FILES+=	bin/wxvlc
-PLIST_FILES+=	lib/vlc/gui/libwxwindows_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-wxwindows
 .endif
@@ -243,7 +237,6 @@ CONFIGURE_ARGS+=--disable-wxwindows
 ESOUND_SUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
-PLIST_FILES+=	lib/vlc/audio_output/libesd_plugin.so
 .endif
 
 .if defined(WITH_FRIBIDI) && !defined(WITHOUT_FRIBIDI)
@@ -253,7 +246,6 @@ CONFIGURE_ARGS+=--enable-fribidi
 
 .if !defined(WITHOUT_LIBID3TAG)
 LIB_DEPENDS+=	id3tag.2:${PORTSDIR}/audio/libid3tag
-PLIST_FILES+=	lib/vlc/demux/libid3tag_plugin.so
 .endif
 
 .if defined(WITH_AALIB) && !defined(WITHOUT_AALIB)
@@ -271,7 +263,6 @@ CONFIGURE_ARGS+=--disable-libcddb
 .if defined(WITH_DTS) && !defined(WITHOUT_DTS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 CONFIGURE_ARGS+=--enable-dts
-PLIST_FILES+=	lib/vlc/audio_filter/libdtstofloat32_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-dts
 .endif
@@ -279,7 +270,6 @@ CONFIGURE_ARGS+=--disable-dts
 .if defined(WITH_GGI) && !defined(WITHOUT_GGI)
 LIB_DEPENDS+=	ggi.2:${PORTSDIR}/graphics/libggi
 CONFIGURE_ARGS+=--enable-ggi
-PLIST_FILES+=	lib/vlc/video_output/libggi_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-ggi
 .endif
@@ -287,22 +277,18 @@ CONFIGURE_ARGS+=--disable-ggi
 .if defined(WITH_LIBDVBPSI) && !defined(WITHOUT_LIBDVBPSI)
 LIB_DEPENDS+=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--with-dvbpsi=${LOCALBASE}
-PLIST_FILES+=	lib/vlc/demux/libts_dvbpsi_plugin.so \
-		lib/vlc/mux/libmux_ts_dvbpsi_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-dvbpsi
 .endif
 
 .if defined(WITH_LIBMATROSKA) && !defined(WITHOUT_LIBMATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
-PLIST_FILES+=	lib/vlc/libmkv.a
 .endif
 
 # After libmpeg2 release 0.3.2
 .if defined(WITH_LIBMPEG2) && !defined(WITHOUT_LIBMPEG2)
 LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=--enable-libmpeg2
-PLIST_FILES+=	lib/vlc/codec/liblibmpeg2_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
@@ -311,7 +297,6 @@ CONFIGURE_ARGS+=--disable-libmpeg2
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
 EXTRA_PATCHES+=	${PATCHDIR}/theora.c-patch
 CONFIGURE_ARGS+=--enable-theora
-PLIST_FILES+=	lib/vlc/libtheora.a
 .else
 CONFIGURE_ARGS+=--disable-theora
 .endif
@@ -320,20 +305,17 @@ CONFIGURE_ARGS+=--disable-theora
 BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 CONFIGURE_ARGS+=--enable-livedotcom \
 		--with-livedotcom-tree=${LOCALBASE}/live
-PLIST_FILES+=	lib/vlc/liblivedotcom.a
 .else
 CONFIGURE_ARGS+=--disable-livedotcom
 .endif
 
 .if defined(WITH_NCURSES) && !defined(WITHOUT_NCURSES)
 CONFIGURE_ARGS+=--enable-ncurses
-PLIST_FILES+=	lib/vlc/gui/libncurses_plugin.so
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
-PLIST_FILES+=	lib/vlc/codec/libspeex_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-speex
 .endif
@@ -341,7 +323,6 @@ CONFIGURE_ARGS+=--disable-speex
 .if defined(WITH_SVGALIB) && !defined(WITHOUT_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 CONFIGURE_ARGS+=--enable-svgalib
-PLIST_FILES+=	lib/vlc/video_output/libsvgalib_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-svgalib
 .endif
@@ -356,7 +337,6 @@ CONFIGURE_ARGS+=--disable-xosd
 .if !defined(WITHOUT_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=--enable-xvideo
-PLIST_FILES+=	lib/vlc/video_output/libxvideo_plugin.so
 .else
 CONFIGURE_ARGS+=--disable-xvideo
 .endif
@@ -373,13 +353,6 @@ CONFIGURE_ARGS+=--with-tuning=i686
 
 .if ${OSVERSION} < 500000
 CONFIGURE_ENV+=	LIBS="-L/usr/lib -lcipher"
-.endif
-
-.if ${ARCH} == "i386"
-PLIST_FILES+=	lib/vlc/libi420_rgb_mmx.a lib/vlc/libi420_ymga_mmx.a \
-		lib/vlc/libi420_yuy2_mmx.a lib/vlc/libi422_yuy2_mmx.a \
-		lib/vlc/libmemcpy3dn.a lib/vlc/libmemcpymmx.a \
-		lib/vlc/libmemcpymmxext.a
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
@@ -402,7 +375,47 @@ post-patch:
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/include/vlc_config.h
 
-post-install:
+pre-install:
+	${RM} -rf ${PLIST} ${FAKEDIR}
+	${MKDIR} ${FAKEDIR}
+	${TOUCH} -f ${PLIST}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
+	cd ${FAKEDIR}/bin && ${FIND} -s * | \
+		 ${SED} -e 's|^|bin/|' >> ${PLIST}
+	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|include/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm include/|' >> ${PLIST}
+	cd ${FAKEDIR}/lib && ${FIND} -s * -type f -o -type l| \
+		${SED} -e 's|^|lib/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm lib/|' >> ${PLIST}
+	cd ${FAKEDIR}/share/vlc && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/vlc/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm share/vlc/|' >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/doc/|' >> ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm share/doc/|' >> ${PLIST}
+.else
+	${RM} -rf ${FAKEDIR}/share/doc
+.endif
+		${ECHO_MSG} "@dirrm share/vlc" >> ${PLIST}
+	cd ${FAKEDIR}/share/locale &&  ${FIND} -s * -type f -o -type l | \
+		${SED} -e 's|^|share/locale/|' >> ${PLIST}
+
+do-install:
+	cd ${FAKEDIR}/bin && ${FIND} . | \
+		${CPIO} -pdm -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
+	cd ${FAKEDIR}/include && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include
+	cd ${FAKEDIR}/lib && ${FIND} . | \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib
+	cd ${FAKEDIR}/share && ${FIND} . | \
+		${CPIO} -pdm -L -R ${SHAREOWN} ${PREFIX}/share
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc.1 ${MANPREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/vlc-config.1 ${MANPREFIX}/man/man1/
 
