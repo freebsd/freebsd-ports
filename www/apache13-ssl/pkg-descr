@@ -1,8 +1,12 @@
-                             Apache + SSLeay
+                       Apache 1.3.3 + SSLeay 1.28 (Apache-SSL)
 
-Uses the public domain SSL implementation known as SSLeay, integrated into
-the Apache server to provide a public domain HTTPS server using Netscape
-Secure Sockets Layer (SSL), versions 2 and 3.  There are licensing
-issues in connection with use of the SSLeay code in the US, and there
-are ITAR restrictions on export, even though the SSLeay code is obtained
-from an overseas location.
+Uses the public domain SSL implementation known as SSLeay, integrated
+into the Apache server to provide a public domain HTTPS server using
+Netscape Secure Sockets Layer (SSL), versions 2 and 3 and TLS version
+1.  There are licensing issues in connection with use of the SSLeay
+code in the US, and there are ITAR restrictions on export, even though
+the SSLeay code is obtained from an overseas location.
+
+Full details can be found on the web at:
+
+        http://www.apache-ssl.org

@@ -1,59 +1,118 @@
-etc/rc.d/apacheSSL.sh
-@exec mkdir -p %D/www/cgi-bin %D/www/data
-etc/apache-SSL/httpd.conf
-etc/apache-SSL/srm.conf
-etc/apache-SSL/access.conf
-etc/apache-SSL/httpd.conf-SSL
-etc/apache-SSL/mime.types
-etc/apache-SSL/mime.types-SSL
-libexec/gcache
+bin/dbmmanage
+bin/htdigest
+bin/htpasswd
+etc/apache/access.conf.default
+etc/apache/httpd.conf.default
+etc/apache/magic.default
+etc/apache/mime.types.default
+etc/apache/srm.conf.default
+include/apache/alloc.h
+include/apache/ap.h
+include/apache/ap_compat.h
+include/apache/ap_config.h
+include/apache/ap_config_auto.h
+include/apache/ap_ctype.h
+include/apache/ap_md5.h
+include/apache/ap_mmn.h
+include/apache/buff.h
+include/apache/compat.h
+include/apache/conf.h
+include/apache/explain.h
+include/apache/fnmatch.h
+include/apache/gcache.h
+include/apache/hsregex.h
+include/apache/http_conf_globals.h
+include/apache/http_config.h
+include/apache/http_core.h
+include/apache/http_log.h
+include/apache/http_main.h
+include/apache/http_protocol.h
+include/apache/http_request.h
+include/apache/http_vhost.h
+include/apache/httpd.h
+include/apache/multithread.h
+include/apache/os.h
+include/apache/rfc1413.h
+include/apache/scoreboard.h
+include/apache/util_date.h
+include/apache/util_md5.h
+include/apache/util_script.h
+include/apache/util_uri.h
+libexec/apache/libproxy.so
+libexec/apache/mod_auth_anon.so
+libexec/apache/mod_auth_db.so
+libexec/apache/mod_cern_meta.so
+libexec/apache/mod_digest.so
+libexec/apache/mod_expires.so
+libexec/apache/mod_headers.so
+libexec/apache/mod_info.so
+libexec/apache/mod_mime_magic.so
+libexec/apache/mod_rewrite.so
+libexec/apache/mod_speling.so
+libexec/apache/mod_unique_id.so
+libexec/apache/mod_usertrack.so
+sbin/ab
+sbin/apachectl
+sbin/apxs
 sbin/httpsd
-share/doc/apache/ABOUT_APACHE
-share/doc/apache/LICENSE
-share/doc/apache/README
+sbin/gcache
+sbin/logresolve
+sbin/rotatelogs
 share/doc/apache/apache_pb.gif
+@exec mkdir -p %D/www
+@exec ln -fs %B %D/www/data.default
+@unexec rm -f %D/www/data.default
 share/doc/apache/index.html
 share/doc/apache/manual/LICENSE
-share/doc/apache/manual/TODO
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
 share/doc/apache/manual/content-negotiation.html
 share/doc/apache/manual/custom-error.html
 share/doc/apache/manual/dns-caveats.html
+share/doc/apache/manual/dso.html
+share/doc/apache/manual/ebcdic.html
 share/doc/apache/manual/env.html
 share/doc/apache/manual/footer.html
 share/doc/apache/manual/handler.html
 share/doc/apache/manual/header.html
-share/doc/apache/manual/host.html
+share/doc/apache/manual/images/custom_errordocs.gif
 share/doc/apache/manual/images/home.gif
 share/doc/apache/manual/images/index.gif
+share/doc/apache/manual/images/mod_rewrite_fig1.fig
+share/doc/apache/manual/images/mod_rewrite_fig1.gif
+share/doc/apache/manual/images/mod_rewrite_fig2.fig
+share/doc/apache/manual/images/mod_rewrite_fig2.gif
 share/doc/apache/manual/images/sub.gif
 share/doc/apache/manual/index.html
 share/doc/apache/manual/install.html
-share/doc/apache/manual/install_1_1.html
 share/doc/apache/manual/invoking.html
 share/doc/apache/manual/keepalive.html
 share/doc/apache/manual/location.html
 share/doc/apache/manual/man-template.html
 share/doc/apache/manual/misc/API.html
 share/doc/apache/manual/misc/FAQ.html
+share/doc/apache/manual/misc/HTTP_Features.tsv
 share/doc/apache/manual/misc/client_block_api.html
 share/doc/apache/manual/misc/compat_notes.html
+share/doc/apache/manual/misc/custom_errordocs.html
 share/doc/apache/manual/misc/descriptors.html
 share/doc/apache/manual/misc/fin_wait_2.html
 share/doc/apache/manual/misc/footer.html
 share/doc/apache/manual/misc/header.html
 share/doc/apache/manual/misc/howto.html
 share/doc/apache/manual/misc/index.html
-share/doc/apache/manual/misc/known_bugs.html
+share/doc/apache/manual/misc/known_client_problems.html
 share/doc/apache/manual/misc/nopgp.html
 share/doc/apache/manual/misc/perf-bsd44.html
 share/doc/apache/manual/misc/perf-dec.html
+share/doc/apache/manual/misc/perf-hp.html
+share/doc/apache/manual/misc/perf-tuning.html
 share/doc/apache/manual/misc/perf.html
 share/doc/apache/manual/misc/security_tips.html
 share/doc/apache/manual/misc/vif-info.html
 share/doc/apache/manual/misc/windoz_keepalive.html
 share/doc/apache/manual/mod/core.html
+share/doc/apache/manual/mod/directive-dict.html
 share/doc/apache/manual/mod/directives.html
 share/doc/apache/manual/mod/footer.html
 share/doc/apache/manual/mod/header.html
@@ -66,7 +125,7 @@ share/doc/apache/manual/mod/mod_auth.html
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
 share/doc/apache/manual/mod/mod_auth_dbm.html
-share/doc/apache/manual/mod/mod_auth_msql.html
+share/doc/apache/manual/mod/mod_autoindex.html
 share/doc/apache/manual/mod/mod_browser.html
 share/doc/apache/manual/mod/mod_cern_meta.html
 share/doc/apache/manual/mod/mod_cgi.html
@@ -74,6 +133,7 @@ share/doc/apache/manual/mod/mod_cookies.html
 share/doc/apache/manual/mod/mod_digest.html
 share/doc/apache/manual/mod/mod_dir.html
 share/doc/apache/manual/mod/mod_dld.html
+share/doc/apache/manual/mod/mod_dll.html
 share/doc/apache/manual/mod/mod_env.html
 share/doc/apache/manual/mod/mod_example.html
 share/doc/apache/manual/mod/mod_expires.html
@@ -81,32 +141,51 @@ share/doc/apache/manual/mod/mod_headers.html
 share/doc/apache/manual/mod/mod_imap.html
 share/doc/apache/manual/mod/mod_include.html
 share/doc/apache/manual/mod/mod_info.html
+share/doc/apache/manual/mod/mod_isapi.html
 share/doc/apache/manual/mod/mod_log_agent.html
 share/doc/apache/manual/mod/mod_log_common.html
 share/doc/apache/manual/mod/mod_log_config.html
 share/doc/apache/manual/mod/mod_log_referer.html
 share/doc/apache/manual/mod/mod_mime.html
+share/doc/apache/manual/mod/mod_mime_magic.html
+share/doc/apache/manual/mod/mod_mmap_static.html
 share/doc/apache/manual/mod/mod_negotiation.html
 share/doc/apache/manual/mod/mod_proxy.html
 share/doc/apache/manual/mod/mod_rewrite.html
+share/doc/apache/manual/mod/mod_setenvif.html
+share/doc/apache/manual/mod/mod_so.html
+share/doc/apache/manual/mod/mod_speling.html
 share/doc/apache/manual/mod/mod_status.html
+share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
 share/doc/apache/manual/new_features_1_2.html
+share/doc/apache/manual/new_features_1_3.html
 share/doc/apache/manual/process-model.html
+share/doc/apache/manual/sections.html
+share/doc/apache/manual/sourcereorg.html
 share/doc/apache/manual/stopping.html
 share/doc/apache/manual/suexec.html
 share/doc/apache/manual/unixware.html
-share/doc/apache/manual/vhosts-in-depth.html
-share/doc/apache/manual/virtual-host.html
-@dirrm share/doc/apache/manual/images
-@dirrm share/doc/apache/manual/misc
-@dirrm share/doc/apache/manual/mod
-@dirrm share/doc/apache/manual
-@dirrm share/doc/apache
+share/doc/apache/manual/upgrading_to_1_3.html
+share/doc/apache/manual/vhosts/details.html
+share/doc/apache/manual/vhosts/details_1_2.html
+share/doc/apache/manual/vhosts/examples.html
+share/doc/apache/manual/vhosts/fd-limits.html
+share/doc/apache/manual/vhosts/footer.html
+share/doc/apache/manual/vhosts/header.html
+share/doc/apache/manual/vhosts/host.html
+share/doc/apache/manual/vhosts/index.html
+share/doc/apache/manual/vhosts/ip-based.html
+share/doc/apache/manual/vhosts/name-based.html
+share/doc/apache/manual/vhosts/vhosts-in-depth.html
+share/doc/apache/manual/vhosts/virtual-host.html
+share/doc/apache/manual/windows.html
+www/cgi-bin.default/printenv
+www/cgi-bin.default/test-cgi
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
@@ -183,7 +262,18 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
-@dirrm www/cgi-bin
-@dirrm www/data
+@exec mkdir -p %D/www/proxy
+@dirrm include/apache
+@dirrm libexec/apache
+@dirrm share/doc/apache/manual/images
+@dirrm share/doc/apache/manual/misc
+@dirrm share/doc/apache/manual/mod
+@dirrm share/doc/apache/manual/vhosts
+@dirrm share/doc/apache/manual
+@dirrm share/doc/apache
+@dirrm www/cgi-bin.default
+www/cgi-bin
+www/data
 @dirrm www/icons
+@dirrm www/proxy
 @dirrm www

@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.121 1998/11/24 22:45:34 billf Exp $
+# $Id: LEGAL,v 1.122 1998/12/10 11:00:18 vanilla Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -95,6 +95,8 @@ socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh*	Crypto; export-controlled
 SSLeay-*		ports/security/SSLeay	Crypto; export-controlled
 *mod_ssl*		ports/www/apache13-modssl Crypto; export-controlled
+apache*-ssl		ports/www/apache12-ssl	
+			ports/www/apache13-ssl	Crypto; export-controlled
 stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.

@@ -1,83 +1,98 @@
-# New ports collection makefile for:    apache HTTPSD
-# Version required:     1.2.5
-# Date created:     	15th August 1997
-# Whom:			Mark Murray <mark@grondar.za>
+# New ports collection makefile for:    apache-ssl HTTPSD
+# Version required:     apache 1.3.3 and ssl 1.28
+# Date created:     	8th November, 1998
+# Whom:			Adam Laurie <adam@algroup.co.uk>
+#			based on apache port by ache@nagual.pp.ru
+#			and apache-ssl port by Mark Murray <mark@grondar.za>.
+#			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.46 1998/12/01 11:14:55 obrien Exp $
+# $Id: $
 
-DISTNAME=       apache_1.2.6
-PKGNAME=        apacheSSL-1.2.6
+APACHE= 	1.3.3
+APACHE-SSL=	1.28
+
+DISTNAME=       apache_${APACHE}
+PKGNAME=        apache-${APACHE}+ssl_${APACHE-SSL}
 CATEGORIES=	www security
 MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
-		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/
-DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} apache_1.2.6+ssl_1.15.tar.gz
+		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
+		ftp://ftp.win.or.jp/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
+		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
+		ftp://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/Apache-SSL/Apache-SSL/ \
+		ftp://ftp.funet.fi/pub/crypt/mirrors/ftp.ox.ac.uk/SSL/Apache-SSL/ \
+		ftp://apache-ssl.raver.net/pub/ftp.apache-ssl.org/Apache-SSL/ \
+		http://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
+		http://ftp.it.net.au/mirrors/crypto/SSL/Apache-SSL/ \
+		http://www.asap.cs.nott.ac.uk/SSL
 
-MAINTAINER=     markm@freebsd.org
+DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
+		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
-BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
+MAINTAINER=     Adam Laurie \<adam@algroup.co.uk\>
+
+
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
-
-BROKEN=		repository copy
 
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 RESTRICTED=     "Contains cryptography"
 
-post-extract:
-	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_1.2.6+ssl_1.15.tar.gz
+#
+# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
+#
 
-pre-patch:
-	@cd ${WRKSRC} && ${PATCH} ${PATCH_DIST_ARGS} < SSLpatch
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS= \
+		--sysconfdir=${PREFIX}/etc/apache \
+		--includedir=${PREFIX}/include/apache \
+		--logfiledir=/var/log \
+		--runtimedir=/var/run \
+		--datadir=${PREFIX}/www \
+		--proxycachedir=${PREFIX}/www/proxy \
+		--libexecdir=${PREFIX}/libexec/apache \
+		--without-confadjust \
+		--enable-shared=remain \
+		--enable-module=most \
+		--enable-module=auth_db \
+		--disable-module=auth_dbm \
 
-MAN1=		htpasswd.1
-MAN8=		httpd.8
-DOCDIR=		${PREFIX}/share/doc/apache
+OPTIM=-DHARD_SERVER_LIMIT=512 \
+-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
+-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
-# Set it for local-supplied patch, f.e.
-# VERS_ID = mods-1.0/me
-
-.if defined(VERS_ID)
-post-patch:
-	@cd ${WRKSRC}/src && \
-	${MV} Configuration Configuration.old && \
-	${SED} 's;^#*OPTIM=.*;OPTIM= -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
-	< Configuration.old > Configuration
+.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+OPTIM+= -DBUFFERED_LOGS
+CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
-post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/apacheSSL.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/apacheSSL.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apacheSSL.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/httpsd ] && ${PREFIX}/sbin/httpsd && ${ECHO} -n ' httpsd'" >> ${PREFIX}/etc/rc.d/apacheSSL.sh; \
-		chmod 751 ${PREFIX}/etc/rc.d/apacheSSL.sh; \
-	fi
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man1
-.endfor
-.for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/support/$i ${PREFIX}/man/man8
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-.for i in README LICENSE ABOUT_APACHE
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCDIR}
-.endfor
-	@cd ${WRKSRC}/htdocs; tar cf - . | (cd ${DOCDIR}; tar xf -)
-.endif
+CONFIGURE_ENV+= OPTIM='${OPTIM}'
 
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
+MAN1=   ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
+
+.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
 pre-fetch:
 	@${ECHO}
+	@${ECHO} "*** Warning!"
 	@${ECHO} You must set variable USA_RESIDENT to YES if you are USA
-	@${ECHO} resident or to NO if you aren\'t USA resident to build
-	@${ECHO} this package.
-	@false
-.elif defined(USA_RESIDENT)
-.if ${USA_RESIDENT} == YES
-pre-build:
-	cd ${WRKSRC} && ${PATCH} -p2 <${FILESDIR}/Makefile.rsa.patch
+	@${ECHO} resident and are using RSAREF otherwise package will not link
+	@${ECHO} correctly.
+	@${ECHO} 
+	@${ECHO} 
 .endif
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+CONFIGURE_ENV=LDFLAGS="${LDFLAGS} -L/usr/local/lib -lRSAglue -lrsaref"
 .endif
+
+post-extract:
+	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
+
+post-patch:
+	@cd ${WRKSRC} && ./FixPatch
 
 certificate:
 	@if [ -f ${PREFIX}/etc/ssleay.cnf ]; then \
