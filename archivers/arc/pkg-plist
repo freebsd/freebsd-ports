@@ -1,4 +1,4 @@
 bin/arc
 bin/marc
-share/doc/arc/Arc521.doc
-@dirrm share/doc/arc
+%%DOCSDIR%%/Arc521.doc
+@dirrm %%DOCSDIR%%

@@ -1,4 +1,4 @@
 bin/unrar
-share/doc/unrar/license.txt
-share/doc/unrar/readme.txt
-@dirrm share/doc/unrar
+%%DOCSDIR%%/license.txt
+%%DOCSDIR%%/readme.txt
+@dirrm %%DOCSDIR%%

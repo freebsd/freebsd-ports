@@ -12,12 +12,12 @@ bin/zgrep
 bin/zless
 bin/zmore
 bin/znew
-%%PORTDOCS%%share/doc/gzip/AUTHORS
-%%PORTDOCS%%share/doc/gzip/COPYING
-%%PORTDOCS%%share/doc/gzip/INSTALL
-%%PORTDOCS%%share/doc/gzip/NEWS
-%%PORTDOCS%%share/doc/gzip/README
-%%PORTDOCS%%share/doc/gzip/README-alpha
-%%PORTDOCS%%share/doc/gzip/THANKS
-%%PORTDOCS%%share/doc/gzip/TODO
-%%PORTDOCS%%@dirrm share/doc/gzip
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-alpha
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

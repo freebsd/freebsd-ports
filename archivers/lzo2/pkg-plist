@@ -13,8 +13,8 @@ include/lzoutil.h
 lib/liblzo.a
 lib/liblzo.so
 lib/liblzo.so.1
-%%PORTDOCS%%share/doc/lzo/LTEST.TXT
-%%PORTDOCS%%share/doc/lzo/LZO.FAQ
-%%PORTDOCS%%share/doc/lzo/LZO.TXT
-%%PORTDOCS%%share/doc/lzo/LZOAPI.TXT
-%%PORTDOCS%%@dirrm share/doc/lzo
+%%PORTDOCS%%%%DOCSDIR%%/LTEST.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LZO.FAQ
+%%PORTDOCS%%%%DOCSDIR%%/LZO.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LZOAPI.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
