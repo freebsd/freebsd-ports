@@ -6,23 +6,29 @@
 #
 
 PORTNAME=	oops
-PORTVERSION=	1.5.18
+PORTVERSION=	1.5.22
 CATEGORIES=	www
 MASTER_SITES=	http://zipper.paco.net/~igor/oops/
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-LIB_DEPENDS=	gigabase_r.2:${PORTSDIR}/databases/gigabase
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
+CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
-		--localstatedir=/var/run \
+		--localstatedir=${OOPSVAR} \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops \
-		--without-DB
+		--enable-large-files
 
 MAN8=		oops.8 oopsctl.8
+OOPSVAR=	/var/run/oops
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.oops
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -30,17 +36,23 @@ pre-install:
 .include <bsd.port.pre.mk>
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${INSTALL_MAN} ${WRKSRC}/doc/oops.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/doc/oopsctl.8 ${PREFIX}/man/man8
+.endif
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@ ${ECHO} "------------------------------------------------------------"
 	@ ${ECHO} "Sample of configuration file placed at ${PREFIX}/etc/oops !"
 	@ ${ECHO} "Copy oops.cfg.sample to oops.cfg, then run server..."
 	@ ${ECHO} "------------------------------------------------------------"
+	@${MKDIR} ${OOPSVAR}
+	@${CHMOD} 750 ${OOPSVAR}
+	@${CHOWN} oops ${OOPSVAR}
 
-	@if [ ! -f ${PREFIX}/etc/rc.d/oops.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/oops.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/oops.sh ${PREFIX}/etc/rc.d/oops.sh; \
-	fi
+	${ECHO} "Installing ${PREFIX}/etc/rc.d/oops.sh.sample startup file."
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/oops.sh ${PREFIX}/etc/rc.d/oops.sh.sample
+
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .include <bsd.port.post.mk>
