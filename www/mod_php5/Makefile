@@ -62,6 +62,8 @@ PLIST_SUB=	PHPDOCDIR=${PHPDOCDIR:S/^${PREFIX}\///} \
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
+post-extract: post-extract-jstring post-extract-ming
+
 post-install:
 .if !defined(STANDALONE)
 	@${ECHO} "Restarting Apache..."

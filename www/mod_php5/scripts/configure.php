@@ -31,6 +31,7 @@ gettext		"gettext library support" OFF \
 jstring		"jstring module" OFF \
 YP		"YP/NIS support" OFF \
 BCMath		"BCMath support" OFF \
+ming		"ming library support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -169,12 +170,13 @@ CONFIGURE_ARGS+=--enable-jstring
 BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
 BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
 
-post-extract:
+post-extract-jstring:
 	[ -d \${WRKDIR}/jstring ] && \\
 	(cd \${WRKSRC}; \\
 	 \${MV} ${WRKDIR}/jstring ext; \\
 	 \${RM} configure; \\
 	 ./buildconf)
+
 EOF
 			;;
 		\"YP\")
@@ -182,6 +184,25 @@ EOF
 			;;
 		\"BCMath\")
 			echo "CONFIGURE_ARGS+=--enable-bcmath"
+			;;
+		\"ming\")
+			${CAT} << EOF
+CONFIGURE_ARGS+=--with-ming=\${PREFIX}
+BUILD_DEPENDS+=	/nonexistent:\${PORTSDIR}/graphics/ming:extract
+BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
+BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
+LIB_DEPENDS+=	ming.2:\${PORTSDIR}/graphics/ming
+
+post-extract-ming:
+	[ -d \${PORTSDIR}/graphics/ming/work ] && \\
+	(cd \${WRKSRC}; \\
+	 \${MKDIR} \${WRKSRC}/ext/ming; \\
+	 \${CP} \`cd \${PORTSDIR}/graphics/ming && \${MAKE} -V WRKSRC\`/../php_ext/* \${WRKSRC}/ext/ming; \\
+	 \${CP} \${FILESDIR}/ming-config-m4 \${WRKSRC}/ext/ming/config.m4; \\
+	 \${RM} configure; \\
+	 ./buildconf)
+
+EOF
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
