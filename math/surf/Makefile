@@ -12,10 +12,11 @@ CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		gmp.3:${PORTSDIR}/math/libgmp3
 
 USE_GTK=	yes
 USE_NEWGCC=	yes
