@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	1.3.13
-PORTREVISION=	1
+PORTVERSION=	1.3.14
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-alpha2,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta,} \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -21,13 +20,11 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glib-1.3.13:${PORTSDIR}/devel/glib13 \
-		atk.10:${PORTSDIR}/devel/atk \
+LIB_DEPENDS=	atk.12:${PORTSDIR}/devel/atk \
 		pango.0:${PORTSDIR}/x11-toolkits/pango \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		intl.1:${PORTSDIR}/devel/gettext
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 NO_LATEST_LINK=	"Unstable, development version."
