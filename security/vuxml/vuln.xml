@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="20d16518-2477-11d9-814e-0001020eed82">
+    <topic>mpg123 -- buffer overflow in URL handling</topic>
+    <affects>
+      <package>
+	<name>mpg123</name>
+	<name>mpg123-nas</name>
+	<name>mpg123-esound</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Carlos Barros reports that mpg123 contains two buffer
+	  overflows.  These vulnerabilities can potentially lead to
+	  execution of arbitrary code.</p>
+	<p>The first buffer overflow can occur when mpg123 parses a
+	  URL with a user-name/password field that is more than 256
+	  characters long.  This problem can be triggered either
+	  locally or remotely via a specially crafted play list.  The
+	  second potential buffer overflow may be triggered locally by
+	  a specially crafted symlink to the mpg123 binary.  This
+	  problem is not as serious, since mpg123 is not installed
+	  setuid by default.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="200410200119.42801.barros@barrossecurity.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109834486312407</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-02</discovery>
+      <entry>2004-10-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7b81fc47-239f-11d9-814e-0001020eed82">
     <topic>apache2 -- SSL remote DoS</topic>
     <affects>
@@ -2579,6 +2613,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>mpg123</name>
+        <name>mpg123-nas</name>
+        <name>mpg123-esound</name>
         <range><le>0.59r</le></range>
       </package>
     </affects>
@@ -6676,6 +6712,7 @@ misc.c:
     <affects>
       <package>
 	<name>mpg123</name>
+	<name>mpg123-nas</name>
 	<name>mpg123-esound</name>
 	<range><le>0.59r_12</le></range>
       </package>
