@@ -408,7 +408,6 @@ astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
 aswedit		ports/www/aswedit
 aswiki		ports/www/aswiki
-at		ports/science/at
 at-spi		ports/x11-toolkits/at-spi
 atari800	ports/emulators/atari800
 aterm		ports/x11/aterm
@@ -6378,6 +6377,7 @@ ports_Templates	ports/Templates
 ports_Tools	ports/Tools
 ports_archivers	ports/archivers
 ports_astro	ports/astro
+ports_at	ports/science/at
 ports_audio	ports/audio
 ports_benchmarks	ports/benchmarks
 ports_biology	ports/biology
