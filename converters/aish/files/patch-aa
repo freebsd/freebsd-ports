@@ -1,0 +1,27 @@
+--- Makefile.orig	Mon Sep 18 01:47:03 1995
++++ Makefile	Mon Aug  3 10:42:13 1998
+@@ -1,7 +1,7 @@
+ # aish/koish 1993,94,95 by H.Ogasawara (COR.)
+ 
+ # install directory
+-DSTDIR	= /usr/local/bin
++DSTDIR	= ${PREFIX}/bin
+ 
+ #### *** UNIX
+ CC	= cc
+@@ -134,10 +134,11 @@
+ 	rm -f *.o $(SYSCHK) $(PROG) $(MPROG) core *~ autodecode
+ 
+ install: $(SYSCHK) $(PROG) $(MPROG) autodecode 
+-	install -c -s $(PROG) $(DSTDIR)
+-	install -c -s $(MPROG) $(DSTDIR)
+-	install -c -m 0755 ishcat $(DSTDIR)
+-	-install -c -m 0755 autodecode $(DSTDIR)
++	${BSD_INSTALL_PROGRAM} $(PROG) $(DSTDIR)
++	${BSD_INSTALL_PROGRAM} $(MPROG) $(DSTDIR)
++	${BSD_INSTALL_SCRIPT} ishcat $(DSTDIR)
++	${BSD_INSTALL_SCRIPT} autodecode $(DSTDIR)
++	${BSD_INSTALL_MAN} aish.1 autodecode.1 ${PREFIX}/man/ja/man1
+ 
+ installc: $(SYSCHK) $(PROG) $(MPROG) autodecode
+ 	cp $(PROG) $(MPROG) ishcat autodecode $(DSTDIR)
