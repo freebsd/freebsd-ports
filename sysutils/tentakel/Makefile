@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	tentakel
-PORTVERSION=	0.3.1
+PORTVERSION=	2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://unc.dl.sourceforge.net/sourceforge/tentakel/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tdondich@majiknetworks.com
-COMMENT=	sh script to execute commands on parallel hosts via ssh/rsh
+COMMENT=	A program for executing commands on many hosts in parallel
 
-NO_BUILD=	yes
+USE_PYTHON=	yes
+
 MAN1=		tentakel.1
 
 .include <bsd.port.mk>
