@@ -1,3 +1,4 @@
+etc/rc.d/000.compat22.sh
 lib/compat/aout/libalias.so.2.4
 lib/compat/aout/libc.so.3.1
 lib/compat/aout/libc_r.so.3.0
@@ -34,4 +35,6 @@ lib/compat/aout/libutil.so.2.2
 lib/compat/aout/libvgl.so.1.0
 lib/compat/aout/libxpg4.so.2.0
 lib/compat/aout/libz.so.2.0
+@dirrm lib/compat/aout
+@unexec rmdir %D/lib/compat 2>/dev/null || true
 libexec/ld.so
