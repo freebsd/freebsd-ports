@@ -7,7 +7,7 @@
 
 PORTNAME=	icc7
 PORTVERSION=	7.1.035
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -27,7 +27,6 @@ CONFLICTS=		linux_devtools* ifc*
 
 USE_LINUX=		yes
 USE_REINPLACE=		yes
-USE_SIZE=		yes
 NO_WRKSUBDIR=		yes
 NO_FILTER_SHLIBS=	yes
 
@@ -50,7 +49,11 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-OBJCOPY?=	/usr/bin/objcopy
+.if ( ${OSVERSION} < 502108 )
+PLIST_SUB+=	STDARG_H="" SYS_CDEFS_H=""
+.else
+PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
+.endif
 
 .for file in ${DISTNAME}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file}${EXTRACT_SUFX})
@@ -90,7 +93,7 @@ pre-patch:
 	@${CHMOD} a-x ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/Errormatch.txt
 # Use the Linux ABI for the binaries
 .for i in iccbin iccfilt icid icpcbin icpi mcpcom profmerge proforder xiar xild
-	@brandelf -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${BRANDELF} -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
 
 post-patch:
@@ -112,8 +115,11 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.if ${OSVERSION} >= 500039
+.if ( ${OSVERSION} >= 500039 )
 	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+.endif
+.if ( ${OSVERSION} >= 502108 )
+	@${ECHO_CMD} -e "-restrict\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
 .endfor
@@ -121,7 +127,11 @@ post-patch:
 	@${ECHO_CMD} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/icpc.cfg
 	@cd ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
 # Hack while there's no support for icc in the stdarg.h of FreeBSD.
+.if ( ${OSVERSION} < 502108 )
 	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include
+.else
+	@${RM} -rf ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include/sys
+.endif
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )

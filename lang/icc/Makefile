@@ -7,6 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	8.0.058.p060
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/\.p.+$//}
@@ -21,6 +22,7 @@ DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -52,6 +54,12 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 			--exclude flexlm64
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
+
+.if ( ${OSVERSION} < 502108 )
+PLIST_SUB+=	STDARG_H="" SYS_CDEFS_H=""
+.else
+PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
+.endif
 
 .for file in ${DISTFILES}
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
@@ -119,8 +127,11 @@ post-patch:
 # Provide a more FreeBSD'ish compile environment
 .for i in icc.cfg icpc.cfg
 	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
-.if ${OSVERSION} >= 500039
+.if ( ${OSVERSION} >= 500039 )
 	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+.endif
+.if ( ${OSVERSION} >= 502108 )
+	@${ECHO_CMD} -e "-restrict\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
@@ -130,9 +141,11 @@ post-patch:
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s icc.cfg iccbin.cfg \
 		&& ${LN} -s icpc.cfg icpcbin.cfg
 # Hack while there's no support for icc in the stdarg.h and sys/cdefs.h.
+.if ( ${OSVERSION} < 502108 )
 	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/${COMPILERDIR}/include
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 	@${CP} ${FILESDIR}/cdefs.h ${WRKSRC}/opt/${COMPILERDIR}/include/sys
+.endif
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
@@ -142,7 +155,7 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 .endif
 
 do-build:
-# Use the Linux ABI for the binaries 
+# Use the Linux ABI for the binaries
 .for i in codecov iccbin iccfilt icpcbin icpi mcpcom profmerge proforder tselect xiar xild
 	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
