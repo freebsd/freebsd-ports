@@ -7,6 +7,7 @@
 
 PORTNAME=	ngircd
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
@@ -16,6 +17,8 @@ COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .if exists(/usr/include/tcpd.h)
 WITH_TCP_WRAPPERS=	yes
@@ -23,6 +26,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 .endif
 
 .if defined(WITH_IDENT)
+LIB_DEPENDS+=		ident.0:${PORTSDIR}/security/libident
 CONFIGURE_ARGS+=	--with-ident
 .endif
 
