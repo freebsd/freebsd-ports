@@ -15,4 +15,4 @@ of the block size.  Alternatively, you may join the input files into
 one large output file, so you can do the splitting yourself (with
 another .wav editor - shntool isn't that advanced yet).
 
-WWW: http://shnutils.freeshell.org/shntool/
+WWW: http://www.etree.org/shnutils/shntool/
