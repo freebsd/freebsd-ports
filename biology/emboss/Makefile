@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
@@ -23,6 +23,7 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes
+USE_MOTIF=	yes
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -31,7 +32,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/gd" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
@@ -39,10 +40,11 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
-PHYLIP_VERSION=	3.573c
+EMNU_VERSION=	1.0.2
 MSE_VERSION=	0.0.4
 TOPO_VERSION=	0.1
-.for app in MSE PHYLIP TOPO
+PHYLIP_VERSION=	3.573c
+.for app in EMNU MSE PHYLIP TOPO
 SCRIPTS_ENV+=	${app}_VERSION="${${app}_VERSION}"
 .if defined(WITH_${app})
 APPLIST+=	${app}

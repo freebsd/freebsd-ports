@@ -1,3 +1,4 @@
+bin/abiview
 bin/acdc
 bin/antigenic
 bin/backtranseq
@@ -61,6 +62,7 @@ bin/newcpgreport
 bin/newcpgseek
 bin/newseq
 bin/noreturn
+bin/notseq
 bin/nthseq
 bin/octanol
 bin/oddcomp
@@ -90,8 +92,10 @@ bin/prophet
 bin/prosextract
 bin/pscan
 bin/rebaseextract
+bin/recode
 bin/redata
 bin/remap
+bin/restover
 bin/restrict
 bin/revseq
 bin/seealso
@@ -138,6 +142,7 @@ lib/libnucleus.so.1
 lib/libplplot.a
 lib/libplplot.so
 lib/libplplot.so.4
+share/EMBOSS/acd/abiview.acd
 share/EMBOSS/acd/ajbad.acd
 share/EMBOSS/acd/ajfeatest.acd
 share/EMBOSS/acd/ajtest.acd
@@ -215,6 +220,7 @@ share/EMBOSS/acd/newcpgreport.acd
 share/EMBOSS/acd/newcpgseek.acd
 share/EMBOSS/acd/newseq.acd
 share/EMBOSS/acd/noreturn.acd
+share/EMBOSS/acd/notseq.acd
 share/EMBOSS/acd/nthseq.acd
 share/EMBOSS/acd/octanol.acd
 share/EMBOSS/acd/oddcomp.acd
@@ -247,8 +253,10 @@ share/EMBOSS/acd/prosextract.acd
 share/EMBOSS/acd/proteinmotifsearch.acd
 share/EMBOSS/acd/pscan.acd
 share/EMBOSS/acd/rebaseextract.acd
+share/EMBOSS/acd/recode.acd
 share/EMBOSS/acd/redata.acd
 share/EMBOSS/acd/remap.acd
+share/EMBOSS/acd/restover.acd
 share/EMBOSS/acd/restrict.acd
 share/EMBOSS/acd/revseq.acd
 share/EMBOSS/acd/scope.acd
@@ -468,7 +476,11 @@ share/EMBOSS/data/EGC.12
 share/EMBOSS/data/EGC.13
 share/EMBOSS/data/EGC.14
 share/EMBOSS/data/EGC.15
+share/EMBOSS/data/EGC.16
 share/EMBOSS/data/EGC.2
+share/EMBOSS/data/EGC.21
+share/EMBOSS/data/EGC.22
+share/EMBOSS/data/EGC.23
 share/EMBOSS/data/EGC.3
 share/EMBOSS/data/EGC.4
 share/EMBOSS/data/EGC.5
@@ -660,11 +672,15 @@ share/doc/EMBOSS/manuals/admin.sty
 share/doc/EMBOSS/manuals/admin.tex
 share/doc/EMBOSS/manuals/program.ps.gz
 share/doc/EMBOSS/programs/html/SITE-DIRECTED.html
+share/doc/EMBOSS/programs/html/abi_trace_files_group.html
+share/doc/EMBOSS/programs/html/abiview.html
+share/doc/EMBOSS/programs/html/abiview0.gif
 share/doc/EMBOSS/programs/html/alignment_global_group.html
 share/doc/EMBOSS/programs/html/alignment_group.html
 share/doc/EMBOSS/programs/html/alignment_local_group.html
 share/doc/EMBOSS/programs/html/alignment_multiple_group.html
 share/doc/EMBOSS/programs/html/antigenic.html
+share/doc/EMBOSS/programs/html/assorted_group.html
 share/doc/EMBOSS/programs/html/backtranseq.html
 share/doc/EMBOSS/programs/html/banana.html
 share/doc/EMBOSS/programs/html/banana0.gif
@@ -743,6 +759,7 @@ share/doc/EMBOSS/programs/html/emboss_icon.gif
 share/doc/EMBOSS/programs/html/embossdata.html
 share/doc/EMBOSS/programs/html/emix.html
 share/doc/EMBOSS/programs/html/emma.html
+share/doc/EMBOSS/programs/html/emnu.html
 share/doc/EMBOSS/programs/html/emowse.html
 share/doc/EMBOSS/programs/html/eneighbor.html
 share/doc/EMBOSS/programs/html/entret.html
@@ -783,6 +800,7 @@ share/doc/EMBOSS/programs/html/maskfeat.html
 share/doc/EMBOSS/programs/html/maskseq.html
 share/doc/EMBOSS/programs/html/matcher.html
 share/doc/EMBOSS/programs/html/megamerger.html
+share/doc/EMBOSS/programs/html/menus_group.html
 share/doc/EMBOSS/programs/html/merger.html
 share/doc/EMBOSS/programs/html/mix.html
 share/doc/EMBOSS/programs/html/motifs_group.html
@@ -796,6 +814,7 @@ share/doc/EMBOSS/programs/html/newcpgreport.html
 share/doc/EMBOSS/programs/html/newcpgseek.html
 share/doc/EMBOSS/programs/html/newseq.html
 share/doc/EMBOSS/programs/html/noreturn.html
+share/doc/EMBOSS/programs/html/notseq.html
 share/doc/EMBOSS/programs/html/nthseq.html
 share/doc/EMBOSS/programs/html/octanol.html
 share/doc/EMBOSS/programs/html/octanol0.gif
@@ -843,14 +862,15 @@ share/doc/EMBOSS/programs/html/protein_sequence_composition_group.html
 share/doc/EMBOSS/programs/html/protein_sequence_features_group.html
 share/doc/EMBOSS/programs/html/protein_sequence_properties_group.html
 share/doc/EMBOSS/programs/html/pscan.html
+share/doc/EMBOSS/programs/html/re_group.html
 share/doc/EMBOSS/programs/html/rebaseextract.html
+share/doc/EMBOSS/programs/html/recode.html
 share/doc/EMBOSS/programs/html/redata.html
 share/doc/EMBOSS/programs/html/reformatting_group.html
 share/doc/EMBOSS/programs/html/remap.html
 share/doc/EMBOSS/programs/html/repeats_group.html
 share/doc/EMBOSS/programs/html/restml.html
 share/doc/EMBOSS/programs/html/restrict.html
-share/doc/EMBOSS/programs/html/restriction_enzymes_group.html
 share/doc/EMBOSS/programs/html/revseq.html
 share/doc/EMBOSS/programs/html/secondary_structure_group.html
 share/doc/EMBOSS/programs/html/seealso.html
@@ -864,6 +884,7 @@ share/doc/EMBOSS/programs/html/sequence_comparison_group.html
 share/doc/EMBOSS/programs/html/sequence_composition_group.html
 share/doc/EMBOSS/programs/html/sequence_display_group.html
 share/doc/EMBOSS/programs/html/sequence_editing_group.html
+share/doc/EMBOSS/programs/html/sequence_features_group.html
 share/doc/EMBOSS/programs/html/sequence_information_group.html
 share/doc/EMBOSS/programs/html/showdb.html
 share/doc/EMBOSS/programs/html/showfeat.html
@@ -904,6 +925,7 @@ share/doc/EMBOSS/programs/html/wordcount.html
 share/doc/EMBOSS/programs/html/wordmatch.html
 share/doc/EMBOSS/programs/html/wossname.html
 share/doc/EMBOSS/programs/text/SITE-DIRECTED.txt
+share/doc/EMBOSS/programs/text/abiview.txt
 share/doc/EMBOSS/programs/text/antigenic.txt
 share/doc/EMBOSS/programs/text/backtranseq.txt
 share/doc/EMBOSS/programs/text/banana.txt
@@ -967,6 +989,7 @@ share/doc/EMBOSS/programs/text/ekitsch.txt
 share/doc/EMBOSS/programs/text/embossdata.txt
 share/doc/EMBOSS/programs/text/emix.txt
 share/doc/EMBOSS/programs/text/emma.txt
+share/doc/EMBOSS/programs/text/emnu.txt
 share/doc/EMBOSS/programs/text/emowse.txt
 share/doc/EMBOSS/programs/text/eneighbor.txt
 share/doc/EMBOSS/programs/text/entret.txt
@@ -1010,6 +1033,7 @@ share/doc/EMBOSS/programs/text/newcpgreport.txt
 share/doc/EMBOSS/programs/text/newcpgseek.txt
 share/doc/EMBOSS/programs/text/newseq.txt
 share/doc/EMBOSS/programs/text/noreturn.txt
+share/doc/EMBOSS/programs/text/notseq.txt
 share/doc/EMBOSS/programs/text/nthseq.txt
 share/doc/EMBOSS/programs/text/octanol.txt
 share/doc/EMBOSS/programs/text/oddcomp.txt
@@ -1041,6 +1065,7 @@ share/doc/EMBOSS/programs/text/prosextract.txt
 share/doc/EMBOSS/programs/text/protdist.txt
 share/doc/EMBOSS/programs/text/pscan.txt
 share/doc/EMBOSS/programs/text/rebaseextract.txt
+share/doc/EMBOSS/programs/text/recode.txt
 share/doc/EMBOSS/programs/text/redata.txt
 share/doc/EMBOSS/programs/text/remap.txt
 share/doc/EMBOSS/programs/text/restml.txt
