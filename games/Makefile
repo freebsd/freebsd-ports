@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.122 1998/04/24 02:09:32 mph Exp $
+# $Id: Makefile,v 1.123 1998/04/27 03:52:09 mph Exp $
 #
 
     SUBDIR += 3dpong
@@ -57,6 +57,7 @@
     SUBDIR += xboard
     SUBDIR += xboing
     SUBDIR += xbomb
+    SUBDIR += xchain
     SUBDIR += xchomp
     SUBDIR += xcubes
     SUBDIR += xdeblock
