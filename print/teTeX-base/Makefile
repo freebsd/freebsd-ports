@@ -1,9 +1,9 @@
 # New ports collection makefile for:	teTeX
 # Version required:	0.4
 # Date created:		5 December 1996
-# Whom:			Bernd Rosauer <br@schiele-ct.de>
+# Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.26 1998/11/28 09:07:14 asami Exp $
+# $Id: Makefile,v 1.27 1998/12/24 19:11:11 jseger Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
