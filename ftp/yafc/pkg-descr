@@ -1,0 +1,8 @@
+Yafc is yet another ftp client, similar to ftp(1).  Features include
+Directory cache, remote filename completion, aliases, colored ls,
+recursive get/put/ls/rm, nohup mode transfers, and more!
+
+WWW: http://www.stacken.kth.se/~mhe/yafc/
+
+-Chris Piazza
+cpiazza@home.net
