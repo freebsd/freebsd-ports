@@ -1,0 +1,9 @@
+bin/make_dparser
+include/dparse.h
+include/dparse_tables.h
+include/dsymtab.h
+lib/libdparse.a
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
