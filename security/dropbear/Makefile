@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -21,21 +21,21 @@ USE_REINPLACE=	YES
 CONFIGURE_ENV=	LDFLAGS=-static
 .endif
 
-BIN=		dropbear dropbearkey dropbearconvert
-
+MAKE_ENV+=	INSTALL="${INSTALL}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 post-configure:
 	@${REINPLACE_CMD} -e "s,/etc/,${PREFIX}/etc/,g" ${WRKSRC}/options.h
 	@${REINPLACE_CMD} -e "s,/usr/bin/X11/,${X11BASE}/,g" ${WRKSRC}/options.h
 	@${REINPLACE_CMD} -e "s,^typedef int socklen_t,//typedef int socklen_t," \
 		${WRKSRC}/includes.h
+	${SED} -e 's:__PREFIX__:${PREFIX}:g' \
+		${FILESDIR}/dropbear.sh > ${WRKSRC}/dropbear.sh
 
-do-install:
-.for bin in ${BIN}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${bin} ${PREFIX}/bin
-.endfor
+post-install:
+	@${MKDIR} ${PREFIX}/etc/dropbear
 .if !defined(NOPORTDOC)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+	@${INSTALL_SCRIPT} ${WRKSRC}/dropbear.sh ${PREFIX}/etc/rc.d/dropbear.sh.sample
 
 .include <bsd.port.mk>

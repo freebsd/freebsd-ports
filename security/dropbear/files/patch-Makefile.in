@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sat Oct 11 10:08:19 2003
++++ Makefile.in	Sat Oct 11 14:58:58 2003
+@@ -46,14 +46,11 @@
+ 	-strip dropbearconvert
+ 
+ install: all
+-	install -d -m 755 $(DESTDIR)$(sbindir)
+-	install -d -m 755 $(DESTDIR)$(bindir)
+-	install -m 755 dropbear $(DESTDIR)$(sbindir)
+-	install -m 755 dropbearkey $(DESTDIR)$(bindir)
+-	install -m 755 dropbearconvert $(DESTDIR)$(bindir)
+-	-chown root:root $(DESTDIR)$(sbindir)/dropbear
+-	-chown root:root $(DESTDIR)$(bindir)/dropbearkey
+-	-chown root:root $(DESTDIR)$(bindir)/dropbearconvert
++	${INSTALL} -d -m 755 $(DESTDIR)$(sbindir)
++	${INSTALL} -d -m 755 $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} dropbear $(DESTDIR)$(sbindir)
++	${INSTALL_PROGRAM} dropbearkey $(DESTDIR)$(bindir)
++	${INSTALL_PROGRAM} dropbearconvert $(DESTDIR)$(bindir)
+ 
+ 
+ static: dropbear-static dropbearkey-static dropbearconvert-static
