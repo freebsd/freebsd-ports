@@ -2737,6 +2737,7 @@ java-sqlrelay	ports/databases/java-sqlrelay
 java2html	ports/textproc/java2html
 javadc		ports/net/javadc
 javamail	ports/java/javamail
+javanns		ports/math/javanns
 javavmwrapper	ports/java/javavmwrapper
 jbigkit		ports/graphics/jbigkit
 jce-aba		ports/java/jce-aba
