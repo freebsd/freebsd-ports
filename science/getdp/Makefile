@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	getdp
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A rather general finite element solver using mixed finite elements
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw	\
-		gsl.6:${PORTSDIR}/math/gsl
+		gsl.6:${PORTSDIR}/math/gsl	\
+		lapack.3:${PORTSDIR}/math/lapack
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
