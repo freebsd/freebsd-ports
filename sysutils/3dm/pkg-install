@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+#
+# The binary, "3dmd" looks for the config file in etc, which is lame.  The file
+# is placed in ${PREFIX}/etc/ (usually /usr/local/etc/) and symlinked in /etc/
+# so that the binary can find it.
+#
+	ln -s ${PKG_PREFIX}/etc/3dmd.conf /etc/3dmd.conf
+
+exit 0
