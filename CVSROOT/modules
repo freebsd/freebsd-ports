@@ -8518,6 +8518,7 @@ toppler		ports/games/toppler
 tora		ports/databases/tora
 torcs		ports/games/torcs
 tornado		ports/games/tornado
+torrentsniff	ports/net/torrentsniff
 tosha		ports/audio/tosha
 toshctl		ports/sysutils/toshctl
 tosvcd		ports/multimedia/tosvcd
