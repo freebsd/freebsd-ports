@@ -1,0 +1,10 @@
+- English and Japanese are supported.
+- Written in Ruby
+- Three interfaces are supported.
+- Local mail file. accesses files or stdin/out.
+- IMAP. accesses mails in a IMAP server.
+- POP proxy. works as a proxy between a POP server and MUA.
+- GPL
+
+Author:	nabeken
+WWW:	http://sourceforge.jp/projects/bsfilter/

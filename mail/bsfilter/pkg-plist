@@ -1,0 +1,4 @@
+bin/bsfilter
+%%PORTDOCS%%share/examples/bsfilter/bsfilter.conf.sample
+%%PORTDOCS%%share/examples/bsfilter/dot-qmail.sample
+%%PORTDOCS%%@dirrm share/examples/bsfilter
