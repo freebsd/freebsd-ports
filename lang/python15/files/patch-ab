@@ -1,0 +1,26 @@
+*** Modules/nismodule.c~	Sat Nov 25 09:31:38 1995
+--- Modules/nismodule.c	Sat Nov 25 09:31:51 1995
+***************
+*** 14,24 ****
+  #include "modsupport.h"
+  #include "ceval.h"
+  
+- #include <rpcsvc/ypclnt.h>
+  #include <sys/time.h>
+  #include <sys/types.h>
+  #include <rpc/rpc.h>
+  #include <rpcsvc/yp_prot.h>
+  
+  static object *NisError;
+  
+--- 14,24 ----
+  #include "modsupport.h"
+  #include "ceval.h"
+  
+  #include <sys/time.h>
+  #include <sys/types.h>
+  #include <rpc/rpc.h>
+  #include <rpcsvc/yp_prot.h>
++ #include <rpcsvc/ypclnt.h>
+  
+  static object *NisError;
