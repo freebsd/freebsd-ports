@@ -38,6 +38,8 @@ post-extract:
 		${TAR} -C ${WRKDIR}/ -zxf ${DISTDIR}/${DIST_SUBDIR}/$$i${EXTRACT_SUFX} ; \
 	done
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	@${MKDIR} ${MAP_DIR}
 	@for i in ${PTEX_TFM} ; do \
@@ -70,4 +72,8 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.if exists(${PREFIX}/bin/mktexlsr)
+	@${PREFIX}/bin/mktexlsr
+.endif
+
+.include <bsd.port.post.mk>
