@@ -16,8 +16,9 @@ MAINTAINER=	simuran@shaw.ca
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.2:${PORTSDIR}/${POSTGRESQL_PORT}
 
+POSTGRESQL_PORT?=	databases/postgresql7
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes

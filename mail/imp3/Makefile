@@ -212,7 +212,7 @@ pre-install:
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
-	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.2" ; then \
+	 if ! ${LDCONFIG} -r | ${GREP} -q -e "pq.3" ; then \
 	  if ! ${LDCONFIG} -r | ${GREP} -q -e "sybdb.1" ; then \
 	   if ! ${LDCONFIG} -r | ${GREP} -q -e "ct.0" ; then \
 	    ${ECHO_MSG} "" ; \

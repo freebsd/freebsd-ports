@@ -15,7 +15,9 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 INSTALLS_SHLIB=	yes
 
+POSTGRESQL_PORT?=	databases/postgresql7
+
 .include "${.CURDIR}/Makefile.common"
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
@@ -82,7 +84,7 @@ IF_MSQL=	"@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL) && ${WITH_POSTGRESQL:L} != no
-LIB_DEPENDS+=		pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
 .else

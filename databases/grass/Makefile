@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	reg@FreeBSD.org
 
+POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -23,7 +24,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		pq.2:${PORTSDIR}/databases/postgresql7 \
+		pq.3:${PORTSDIR}/${POSTGRESQL_PORT} \
 		odbc.1:${PORTSDIR}/databases/unixODBC \
 		lapack.3:${PORTSDIR}/math/lapack
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \

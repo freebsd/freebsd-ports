@@ -19,6 +19,7 @@ WITH_MYSQL=	yes
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+POSTGRESQL_PORT?=	databases/postgresql7
 
 .include <bsd.port.pre.mk>
 
@@ -30,7 +31,7 @@ LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .if defined(WITH_PGSQL) || (exists(${LOCALBASE}/lib/libpq.a) \
 	&& !defined(WITHOUT_PGSQL))
 HAVE_PGSQL=	yes
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
 pre-patch:

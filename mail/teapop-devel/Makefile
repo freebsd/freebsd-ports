@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 MAINTAINER=	ports@FreeBSD.org
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
 .if defined(WITH_MYSQL)

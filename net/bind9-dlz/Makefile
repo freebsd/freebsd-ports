@@ -17,6 +17,7 @@ DISTFILES=	bind-${ISCVERSION}.tar.gz \
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bind-dlz/:dlz
 
@@ -31,7 +32,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER)
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+= --with-dlz-postgres
 .endif
 

@@ -39,6 +39,8 @@ PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
+POSTGRESQL_PORT?=	databases/postgresql7
+
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
 # will be made a dependency.  Note that using WITH_EXIMON will cause
 # XFree86 to be installed if it is not present.
@@ -205,7 +207,7 @@ SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE}/include/pgsql,' \
 		-e 's,^\# LOOKUP_PGSQL=,LOOKUP_PGSQL=,'
