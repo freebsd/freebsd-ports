@@ -1,4 +1,5 @@
 bin/cancel
+bin/cups-config
 bin/disable
 bin/enable
 bin/lp
@@ -8,12 +9,21 @@ bin/lpq
 bin/lpr
 bin/lprm
 bin/lpstat
-etc/cups/classes.conf
-etc/cups/client.conf
-etc/cups/cupsd.conf
+etc/rc.d/cupsd.sh.sample
+@unexec if cmp -s %D/etc/cups/classes.conf %D/etc/cups/classes.conf.sample; then rm -f %D/etc/cups/classes.conf; fi
+etc/cups/classes.conf.sample
+@exec test -f %B/classes.conf || cp %B/%f %B/classes.conf
+@unexec if cmp -s %D/etc/cups/client.conf %D/etc/cups/client.conf.sample; then rm -f %D/etc/cups/client.conf; fi
+etc/cups/client.conf.sample
+@exec test -f %B/client.conf || cp %B/%f %B/client.conf
+@unexec if cmp -s %D/etc/cups/cupsd.conf %D/etc/cups/cupsd.conf.sample; then rm -f %D/etc/cups/cupsd.conf; fi
+etc/cups/cupsd.conf.sample
+@exec test -f %B/cupsd.conf || cp %B/%f %B/cupsd.conf
 etc/cups/mime.convs
 etc/cups/mime.types
-etc/cups/printers.conf
+@unexec if cmp -s %D/etc/cups/printers.conf %D/etc/cups/printers.conf.sample; then rm -f %D/etc/cups/printers.conf; fi
+etc/cups/printers.conf.sample
+@exec test -f %B/printers.conf || cp %B/%f %B/printers.conf
 include/cups/cups.h
 include/cups/http.h
 include/cups/ipp.h
@@ -50,6 +60,7 @@ libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
 libexec/cups/filter/texttops
 sbin/accept
+sbin/cupsaddsmb
 sbin/cupsd
 sbin/lpadmin
 sbin/lpc
@@ -204,6 +215,7 @@ share/cups/templates/header.tmpl
 share/cups/templates/job-cancel.tmpl
 share/cups/templates/job-hold.tmpl
 share/cups/templates/job-release.tmpl
+share/cups/templates/job-restart.tmpl
 share/cups/templates/jobs.tmpl
 share/cups/templates/modify-class.tmpl
 share/cups/templates/modify-printer.tmpl
@@ -292,23 +304,24 @@ share/doc/cups/sum.pdf
 share/doc/cups/svd.html
 share/doc/cups/svd.pdf
 share/locale/C/cups_C
+share/locale/cs/cups_cs
 share/locale/de/cups_de
 share/locale/en/cups_en
 share/locale/es/cups_es
 share/locale/fr/cups_fr
 share/locale/it/cups_it
 @exec mkdir -p /var/log/cups
-@dirrm /var/log/cups
+@unexec rmdir /var/log/cups 2>/dev/null || true
 @exec mkdir -p /var/spool/cups/tmp
-@dirrm /var/spool/cups/tmp
-@dirrm /var/spool/cups
+@unexec rmdir /var/spool/cups/tmp 2>/dev/null || true
+@unexec rmdir /var/spool/cups 2>/dev/null || true
 @exec mkdir -p %D/etc/cups/certs
 @exec mkdir -p %D/etc/cups/interfaces
 @exec mkdir -p %D/etc/cups/ppd
-@dirrm etc/cups/certs
-@dirrm etc/cups/interfaces
-@dirrm etc/cups/ppd
-@dirrm etc/cups
+@unexec rmdir %D/etc/cups/certs 2>/dev/null || true
+@unexec rmdir %D/etc/cups/interfaces 2>/dev/null || true
+@unexec rmdir %D/etc/cups/ppd 2>/dev/null || true
+@unexec rmdir %D/etc/cups 2>/dev/null || true
 @dirrm include/cups
 @dirrm libexec/cups/backend
 @dirrm libexec/cups/cgi-bin
@@ -326,6 +339,7 @@ share/locale/it/cups_it
 @dirrm share/doc/cups/images
 @dirrm share/doc/cups
 @dirrm share/locale/C
+@dirrm share/locale/cs
 @dirrm share/locale/de
 @dirrm share/locale/en
 @dirrm share/locale/es

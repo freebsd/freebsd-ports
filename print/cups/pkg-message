@@ -8,7 +8,7 @@ have been installed in %%PREFIX%%/etc/cups/
 Please note that the cups port installs tools with conflicting names to the
 freebsd printing system. At a minimum users PATH environment should have
 %%PREFIX%%/bin before /usr/bin to use the correct tools. You may also
-consider removing the freebsd printing tools and set NO_LPD=true in your
+consider removing the freebsd printing tools and set NO_LPR=true in your
 /etc/make.conf to prevent them building in future make world's. This would
 not of course prevent them from being reinstalled during a binary upgrade.
 

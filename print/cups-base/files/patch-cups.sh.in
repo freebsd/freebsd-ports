@@ -1,0 +1,42 @@
+--- cups.sh.in.orig	Fri Nov  2 15:43:10 2001
++++ cups.sh.in	Sat Nov 17 12:25:49 2001
+@@ -63,6 +63,10 @@
+         	IS_ON=:
+ 		;;
+ 
++	FreeBSD*)
++		IS_ON=/usr/bin/true
++		;;
++
+ 	*)
+ 		IS_ON=/bin/true
+ 		;;
+@@ -104,7 +108,7 @@
+ 	OSF1*)
+ 		pid=`ps -e | awk '{if (match($5, ".*/cupsd$") || $5 == "cupsd") print $1}'`
+ 		;;
+-	Linux* | NetBSD* | Darwin*)
++	Linux* | NetBSD* | Darwin* | FreeBSD*)
+ 		pid=`ps ax | awk '{if (match($5, ".*/cupsd$") || $5 == "cupsd") print $1}'`
+ 		;;
+ 	*)
+@@ -126,7 +130,8 @@
+ 				exec_prefix=@exec_prefix@
+ 				@sbindir@/cupsd
+ 			fi
+-			$ECHO "cups: scheduler ${1}ed."
++#			$ECHO "cups: scheduler ${1}ed."
++			echo -n "cupsd "
+ 		else
+ 			$ECHO "cups: scheduler stopped."
+ 		fi
+@@ -135,7 +140,8 @@
+ 	stop)
+ 		if test "$pid" != ""; then
+ 			kill $pid
+-			$ECHO "cups: scheduler stopped."
++#			$ECHO "cups: scheduler stopped."
++			echo -n "cupsd "
+ 		fi
+ 		;;
+ 

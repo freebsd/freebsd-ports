@@ -1,6 +1,15 @@
---- man/Makefile.orig	Sat Aug 18 10:31:11 2001
-+++ man/Makefile	Sat Aug 18 10:37:49 2001
-@@ -78,24 +78,24 @@
+--- man/Makefile.orig	Thu Oct 25 23:16:48 2001
++++ man/Makefile	Sat Nov 17 13:48:41 2001
+@@ -47,7 +47,7 @@
+ # Make everything...
+ #
+ 
+-all:	$(CAT1) $(CAT3) $(CAT5) $(CAT8)
++all:	#$(CAT1) $(CAT3) $(CAT5) $(CAT8)
+ 
+ 
+ #
+@@ -85,28 +85,28 @@
  	$(LN) accept.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/reject.$(MAN8EXT)
  	$(RM) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
  	$(LN) enable.$(MAN8EXT) $(AMANDIR)/man$(MAN8EXT)/disable.$(MAN8EXT)
@@ -10,6 +19,10 @@
 -	done
 -	$(RM) $(MANDIR)/cat1/cancel.$(CAT1EXT)
 -	$(LN) lp.$(CAT1EXT) $(MANDIR)/cat1/cancel.$(CAT1EXT)
+-	$(INSTALL_DIR) $(PMANDIR)/cat3
+-	for file in $(CAT3); do \
+-		$(INSTALL_MAN) $$file $(PMANDIR)/cat3; \
+-	done
 -	$(INSTALL_DIR) $(MANDIR)/cat5
 -	for file in $(CAT5); do \
 -		$(INSTALL_MAN) $$file $(MANDIR)/cat5; \
@@ -28,6 +41,10 @@
 +#	done
 +#	$(RM) $(MANDIR)/cat1/cancel.$(CAT1EXT)
 +#	$(LN) lp.$(CAT1EXT) $(MANDIR)/cat1/cancel.$(CAT1EXT)
++#	$(INSTALL_DIR) $(PMANDIR)/cat3
++#	for file in $(CAT3); do \
++#		$(INSTALL_MAN) $$file $(PMANDIR)/cat3; \
++#	done
 +#	$(INSTALL_DIR) $(MANDIR)/cat5
 +#	for file in $(CAT5); do \
 +#		$(INSTALL_MAN) $$file $(MANDIR)/cat5; \
