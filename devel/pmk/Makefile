@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmk
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmk
@@ -16,7 +16,7 @@ COMMENT=	Pre Make Kit, a sane replacement for autoconf
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-MAN1=	pmk.1 pmkscan.1 pmkinstall.1
+MAN1=	pmk.1 pmkscan.1 pmkinstall.1 pmkpc.1
 MAN5=	pmk.conf.5 pmkfile.5
 MAN8=	pmksetup.8
 
