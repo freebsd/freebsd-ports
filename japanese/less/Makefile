@@ -3,12 +3,12 @@
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.5 1995/04/07 05:48:08 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/19 11:04:34 asami Exp $
 #
 
 DISTNAME=	less-290
 PKGNAME=	jp-less-290
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/misc/less/
 
 PATCH_SITES=	ftp://ftp.aist-nara.ac.jp/pub/misc/less/

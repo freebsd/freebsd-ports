@@ -3,12 +3,12 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1996/10/05 11:24:38 max Exp $
+# $Id: Makefile,v 1.10 1996/11/02 20:23:52 max Exp $
 #
 
 DISTNAME=	nethack-3.2.1
 PKGNAME=	jp-nethack-1.0.5.3.1
-CATEGORIES+=	japanese games
+CATEGORIES=	japanese games
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/jnethack/

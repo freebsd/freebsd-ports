@@ -3,12 +3,12 @@
 # Date created:		8 Dec 1995
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/02/01 06:47:41 asami Exp $
+# $Id: Makefile,v 1.3 1996/10/19 03:18:11 max Exp $
 #
 
 DISTNAME=	tgif-2.16-p12
 PKGNAME=	jp-tgif-216-p12
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/tgif/
 
 PATCH_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X/contrib/misc/tgif/

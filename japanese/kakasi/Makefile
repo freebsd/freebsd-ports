@@ -3,12 +3,12 @@
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1996/10/27 00:20:21 max Exp $
+# $Id: Makefile,v 1.7 1996/11/02 05:28:15 max Exp $
 #
 
 DISTNAME=	kakasi-2.2.5
 PKGNAME=	jp-kakasi-2.2.5
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://sunsite.sut.ac.jp/pub/asia-info/japanese-src/packages/ \
 		ftp://etlport.etl.go.jp/pub/mule/contrib/ \
 		ftp://ftp.cs.buffalo.edu/pub/mule/contrib/ \

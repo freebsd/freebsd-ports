@@ -3,12 +3,12 @@
 # Date created:			03 May 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1996/09/18 12:36:58 max Exp $
+# $Id: Makefile,v 1.4 1996/11/05 04:14:37 max Exp $
 #
 
 DISTNAME=	qkcc100
 PKGNAME=	jp-qkc-1.0
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/oct/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/pub1/unix/Kanji/
 EXTRACT_SUFX=	.zip

@@ -3,12 +3,12 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1995/04/24 02:22:49 asami Exp $
+# $Id: Makefile,v 1.12 1996/09/19 04:37:04 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
 PKGNAME=	jp-Wnn-4.2
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://utsun.s.u-tokyo.ac.jp/fj/
 
 MAINTAINER=	asami@FreeBSD.ORG

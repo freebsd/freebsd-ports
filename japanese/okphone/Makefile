@@ -3,12 +3,12 @@
 # Date created:		7 February 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1996/02/21 00:40:31 ats Exp $
+# $Id: Makefile,v 1.4 1996/07/27 20:39:20 asami Exp $
 #
 
 DISTNAME=	okphone-1.2
 PKGNAME=	jp-okphone-1.2
-CATEGORIES+=	japanese net
+CATEGORIES=	japanese net
 MASTER_SITES=	http://www.iijnet.or.jp/IIJ-MC/odajima/okphone/src/
 
 PATCH_SITES=	${MASTER_SITES}
