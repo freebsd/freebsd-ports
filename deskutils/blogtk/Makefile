@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	blogtk
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,31 +16,27 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A client for Blogger, Movable Type, and other blogging systems
 
-USE_BZIP2=	yes
-USE_REINPLACE=	yes
-USE_PYTHON=	2.3+
-USE_GNOME=	pygtk2 pygnome2
-NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/shar,${PREFIX}/shar,' ${WRKSRC}/src/BloGTK.py
+USE_BZIP2=	yes
+USE_GNOME=	pygnomeextras
+USE_PYTHON=	2.3+
+USE_REINPLACE=	yes
+NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${FIND} ${WRKSRC}/src -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/share|${PREFIX}/share|g ; \
+		 s|gtk\.FALSE|False|g ; \
+		 s|gtk\.TRUE|True|g'
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/blogtk
-	${INSTALL_SCRIPT} ${WRKSRC}/src/* ${PYTHON_SITELIBDIR}/blogtk
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/blogtk
+	${INSTALL_SCRIPT} ${WRKSRC}/src/*.py ${PYTHONPREFIX_SITELIBDIR}/blogtk
+	@${LN} -fs ${PYTHONPREFIX_SITELIBDIR}/blogtk/BloGTK.py ${PREFIX}/bin/blogtk
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${DATADIR}
-	@${LN} -fs ${PYTHON_SITELIBDIR}/blogtk/BloGTK.py ${PREFIX}/bin/blogtk
-.for dir in ${PYTHON_SITELIBDIR}/blogtk ${PREFIX}/share/${PORTNAME}
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
-	@${ECHO_CMD} "@exec ln -fs %D/${PYTHON_SITELIBDIR:S,^${PREFIX}/,,}/blogtk/BloGTK.py %D/bin/blogtk" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rm -f %D/bin/blogtk 2>/dev/null || true" >> ${TMPPLIST}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.glade ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.gladep ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.png ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
