@@ -1,0 +1,7 @@
+Ticker.app is just like a ticker. It reads a file that is specified
+by the command line, and displays each line in a viewing area
+periodically. It rereads automatically when the file has been
+modified. If you run in a tail-mode, it ticks only the last line.
+
+WWW: http://www.sh.rim.or.jp/~ssato/ticker-e.html
+Author: Seiichi SATO <ssato@sh.rim.or.jp>
