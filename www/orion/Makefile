@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	orion
-PORTVERSION=	1.5.4
-PORTREVISION=	5
+PORTVERSION=	2.0
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
-		http://www.atlassian.com/software/orion/downloads/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
+		http://www.atlassian.com/software/orion/downloads/
 MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
