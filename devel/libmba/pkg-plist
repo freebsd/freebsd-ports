@@ -5,8 +5,11 @@ include/mba/hexdump.h
 include/mba/linkedlist.h
 include/mba/mbs.h
 include/mba/msgno.h
+include/mba/pool.h
 include/mba/profile.h
+include/mba/shellout.h
 include/mba/stack.h
+include/mba/varray.h
 lib/libmba.a
 lib/libmba.so
 lib/libmba.so.%%SHLIB_MAJOR%%
