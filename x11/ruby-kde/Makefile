@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/ruby/site_ruby/${RUBY_VER}/qt.rb:${PORTSDIR}/x11-t
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+USE_GMAKE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-x-dir=${X11BASE} \
 		--with-qt-include=${X11BASE}/include/X11/qt \
