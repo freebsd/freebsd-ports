@@ -1,0 +1,25 @@
+SEMI, Library of MIME feature for GNU Emacs.
+
+  SEMI is a library to provide MIME feature for GNU Emacs.  MIME is a
+  proposed internet standard for including content and headers other
+  than (ASCII) plain text in messages.
+
+  SEMI has the following features:
+	- MIME message viewer   (mime-view-mode) (RFC 2045 .. 2049)
+	- MIME message composer (mime-edit-mode) (RFC 2045 .. 2049)
+
+  MIME message viewer and composer also support following features:
+	- filename handling by Content-Disposition field (RFC 1806)
+	- PGP/MIME security Multiparts (RFC 2015)
+	- application/pgp (draft-kazu-pgp-mime-00.txt; obsolete)
+	- text/richtext (RFC 1521; obsolete; preview only)
+	- text/enriched (RFC 1896)
+	- External method configuration by mailcap (RFC 1524)
+
+  Notice that this package does not contain MIME extender for any
+  MUAs.  They are released as separated packages.
+
+  SEMI is installed the following directory tree:
+	${PREFIX}/share/emacs/site-lisp/semi/	--- SEMI
+
+--- Porting by shige <shige@kuis.kyoto-u.ac.jp>
