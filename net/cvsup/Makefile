@@ -3,7 +3,7 @@
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.25 1998/06/06 20:33:21 jdp Exp $
+# $Id: Makefile,v 1.26 1998/07/07 03:22:18 jdp Exp $
 #
 
 DISTNAME=	cvsup-15.4.2
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/CVSup/ \
 MAINTAINER=	jdp@FreeBSD.org
 
 BUILD_DEPENDS=	m3build-6:${PORTSDIR}/lang/modula-3
-LIB_DEPENDS=	m3\\.6\\.:${PORTSDIR}/lang/modula-3-lib
+LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
 
 MAN1=		cvsup.1
 MAN8=		cvsupd.8
