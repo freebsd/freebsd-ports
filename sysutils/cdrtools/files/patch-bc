@@ -1,0 +1,11 @@
+--- cdrecord/cdrecord.c.orig	Sat Oct 19 10:49:00 2002
++++ cdrecord/cdrecord.c	Sat Oct 19 10:49:14 2002
+@@ -354,7 +354,7 @@
+ 		 * Try to lock us im memory (will only work for root)
+ 		 * but you need access to root anyway to use /dev/scg?
+ 		 */
+-#if defined(HAVE_MLOCKALL) || defined(_POSIX_MEMLOCK)
++#if defined(HAVE_MLOCKALL)
+ 		if (mlockall(MCL_CURRENT|MCL_FUTURE) < 0) {
+ 			errmsg("WARNING: Cannot do mlockall(2).\n");
+ 			errmsgno(EX_BAD, "WARNING: This causes a high risk for buffer underruns.\n");
