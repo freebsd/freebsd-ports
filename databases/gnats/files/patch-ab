@@ -1,0 +1,19 @@
+*** gnats/edit-pr.sh.bak	Tue Dec  3 01:46:08 1996
+--- gnats/edit-pr.sh	Thu Jun 19 12:37:34 1997
+***************
+*** 20,26 ****
+  # the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  debug_print=false # or echo to get output.
+! DATE=`date`
+  GNATS_ROOT=xGNATS_ROOTx
+  LIBDIR=xLIBDIRx
+  PATH=$PATH:$GNATS_ROOT/gnats-bin
+--- 20,26 ----
+  # the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  debug_print=false # or echo to get output.
+! DATE=`LC_TIME=C date`
+  GNATS_ROOT=xGNATS_ROOTx
+  LIBDIR=xLIBDIRx
+  PATH=$PATH:$GNATS_ROOT/gnats-bin
