@@ -1,27 +1,35 @@
---- scripts/Makefile.in~	Thu May  8 07:27:37 2003
-+++ scripts/Makefile.in	Thu May  8 07:34:21 2003
-@@ -32,15 +32,15 @@
- 	$(MKDIR) $(DESTDIR)$(scriptdir)
- 
- install: installdirs
--	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
--	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
--	$(INSTALL_SCRIPT) console $(DESTDIR)$(scriptdir)/console
--	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
--	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(scriptdir)/bacula
--	$(INSTALL_SCRIPT) fd $(DESTDIR)$(scriptdir)/fd
--	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
--	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
--	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(sbindir)/btraceback.gdb
-+#	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(sysconfdir)/startmysql
-+#	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(syscondir)/stopmysql
-+#	$(INSTALL_SCRIPT) console $(DESTDIR)$(syscondir)/console
-+#	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(syscondir)/gconsole
-+	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/bacula.sh.sample
-+	$(INSTALL_SCRIPT) fd $(DESTDIR)$(sysconfdir)/rc.d/fd.sh.sample
-+#	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
-+#	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
-+#	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(sbindir)/btraceback.gdb
- 
- uninstall:
- 	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)
+*** scripts/Makefile.in.orig	Wed Mar 31 00:54:17 2004
+--- scripts/Makefile.in	Thu Apr  8 19:56:21 2004
+***************
+*** 32,46 ****
+  	$(MKDIR) $(DESTDIR)$(scriptdir)
+  
+  install: installdirs
+! 	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
+! 	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
+! 	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
+! 	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
+! 	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(scriptdir)/bacula
+! 	$(INSTALL_SCRIPT) fd $(DESTDIR)$(scriptdir)/fd
+! 	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
+! 	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(scriptdir)/btraceback.gdb
+! 	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
+  
+  uninstall:
+  	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)
+--- 32,46 ----
+  	$(MKDIR) $(DESTDIR)$(scriptdir)
+  
+  install: installdirs
+! #	$(INSTALL_SCRIPT) startmysql $(DESTDIR)$(scriptdir)/startmysql
+! #	$(INSTALL_SCRIPT) stopmysql $(DESTDIR)$(scriptdir)/stopmysql
+! #	$(INSTALL_SCRIPT) bconsole $(DESTDIR)$(scriptdir)/bconsole
+! #	$(INSTALL_SCRIPT) gconsole $(DESTDIR)$(scriptdir)/gconsole
+! 	$(INSTALL_SCRIPT) bacula $(DESTDIR)$(sysconfdir)/rc.d/bacula.sh.sample
+! 	$(INSTALL_SCRIPT) fd $(DESTDIR)$(sysconfdir)/rc.d/fd.sh.sample
+! #	$(INSTALL_SCRIPT) mtx-changer $(DESTDIR)$(scriptdir)/mtx-changer
+! #	$(INSTALL_DATA)   btraceback.gdb $(DESTDIR)$(scriptdir)/btraceback.gdb
+! #	$(INSTALL_SCRIPT) btraceback $(DESTDIR)$(sbindir)/btraceback
+  
+  uninstall:
+  	(cd $(DESTDIR)$(scriptdir); $(RMF) startmysql)

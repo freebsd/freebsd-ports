@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.32f5
+PORTVERSION=	1.34.2
 #PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
-DISTNAME=	${PORTNAME}-1.32f-5
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	The network backup solution
@@ -26,37 +25,73 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--enable-smartalloc \
 		--with-working-dir=${BACULA_DIR} \
+		--with-scriptdir=${PREFIX}/share/bacula \
 		--with-fd-user=root \
 		--with-fd-group=wheel \
 		--with-dir-user=bacula \
 		--with-dir-group=bacula \
 		--with-sd-user=bacula \
-		--with-sd-group=operator
+		--with-sd-group=operator \
+		--with-readline=yes \
+		--disable-conio
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	CLIENT_ONLY "Build bacule file daemon only" off
-OPTIONS+=	MYSQL "Build for MySQL database instead of SqLite" off
+OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
+OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
+OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
+OPTIONS+=	POSTGRESQL7 "Use PostgreSQL 7.X database instead of SqLite" off
+
+# Prepare if gnome-console is selected this must be happen before
+# include of bsd.port.pre.mk!
+WANT_GNOME=	yes
+.if defined(WITH_GNOMECONSOLE)
+USE_GNOME=	libgnome
+.endif
 
 .include <bsd.port.pre.mk>
 
-# Default is full build with sqlite
+# Build gnome-console
+.if defined(WITH_GNOMECONSOLE)
+CONFIGURE_ARGS+=	--enable-gnome
+.else
+# We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
+WITHOUT_GNOME=		yes
+PLIST_SUB+=		GNOMECONS="@comment "
+.endif
+
+# Build wx-console
+.if defined(WITH_WXCONSOLE)
+CONFIGURE_ARGS+=	--enable-wx-console
+LIB_DEPENDS+=		wx_gtk-2.4:${PORTSDIR}/x11-toolkits/wxgtk
+.else
+# We didn't need GTK (it's not possible to put WANT_GNOME in an .if statement!)
+WITHOUT_GNOME=		yes
+PLIST_SUB+=	 	WXCONS="@comment "
+.endif
+
+# Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=	--enable-client-only
 PLIST_SUB+=		SERVER="@comment "
 .else
 .if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-DBTYPE=		mysql
+CONFIGURE_ARGS+=	--with-mysql=yes
+USE_MYSQL=		yes
+DBTYPE=			mysql
+.elif defined(WITH_POSTGRESQL7)
+CONFIGURE_ARGS+=	--with-postgresql=yes
+LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
+DBTYPE=			postgresql
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
-DBTYPE=		sqlite
+LIB_DEPENDS+=		sqlite:${PORTSDIR}/databases/sqlite
+DBTYPE=			sqlite
 .endif
-PLIST_SUB+=	DBTYPE=${DBTYPE}
-PLIST_SUB+=	SERVER=""
+PLIST_SUB+=		DBTYPE=${DBTYPE}
+PLIST_SUB+=		SERVER=""
 .endif
 
 PORTDOCS=	bacula.pdf html-manual/*
@@ -64,19 +99,27 @@ PORTDOCS=	bacula.pdf html-manual/*
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "=======> ATTENTION <======="
+	@${ECHO_MSG} "######################################################"
+	@${ECHO_MSG} "===> READ the file ReleaseNotes for upgrade procedure!"
+	@${ECHO_MSG} "===> IF YOU IGNORE, it is possible to !! LOOSE DATA !!"
+	@${ECHO_MSG} "######################################################"
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
-	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in FreeBSD"
-	@${ECHO_MSG} "===> 4.9-RELEASE and 5.2-RELEASE or use the -stable or -current tree."
+	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in newer versinon of FreeBSD"
+	@${ECHO_MSG} "===> READ ${WRKDIR}/bacula-1.34.1/platforms/freebsd/pthreads-fix.txt"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes		if you only want the file daemon."
-.if !defined(WITH_MYSQL)
+	@${ECHO_MSG} "  WITH_WXCONSOLE=yes		if you only want a wxGTK based GUI console."
+	@${ECHO_MSG} "  WITH_GNOMECONSOLE=yes		if you only want a GNOME based GUI console."
+.if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL7)
 	@${ECHO_MSG} "  WITH_MYSQL=yes		if you want MySQL instead of SqLite as the database."
-.else
+	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgeSQL 7.X instead of SqLite as the database."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "===> Using MySQL as the bacula database."
+	@${ECHO_MSG} "The default DB is SQLite!"
 .endif
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
 .else
 	@${ECHO_MSG} "===> Building file daemon only."
@@ -110,8 +153,21 @@ post-install:
 	elif [ -f ${PREFIX}/etc/console.conf ]; then \
 		${ECHO_CMD} "etc/console.conf" >> ${TMPPLIST}; \
 	fi
-	# chmod of smtp program so bacula can use it with dropped down permissions
-	${CHMOD} o+x ${PREFIX}/sbin/smtp
+.if defined(WITH_WXCONSOLE)
+	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
+		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
+	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then \
+		${ECHO_CMD} "etc/wx-console.conf" >> ${TMPPLIST}; \
+	fi
+.endif
+.if defined(WITH_GNOMECONSOLE)
+	if [ -f ${PREFIX}/etc/gnome-console.conf.new ]; then \
+		${ECHO_CMD} "etc/gnome-console.conf.new" >> ${TMPPLIST}; \
+	elif [ -f ${PREFIX}/etc/gnome-console.conf ]; then \
+		${ECHO_CMD} "etc/gnome-console.conf" >> ${TMPPLIST}; \
+	fi
+.endif	# chmod of bsmtp program so bacula can use it with dropped down permissions
+	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 .endif
 	# Install leaves existing conf files untouched. Respect this here!
@@ -157,6 +213,7 @@ post-install:
 	@${ECHO_MSG} "  Hardware End of Medium = no;"
 	@${ECHO_MSG} "  Fast Forward Space File = no;"
 	@${ECHO_MSG} "  BSF at EOM = yes;"
+	@${ECHO_MSG} "  TWOEOF = yes;"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "It is also important that all the scripts accessed"
 	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob could be executed by"
