@@ -44,7 +44,6 @@ post-install:
 .endfor # mime.convs mime.types
 	cd ${CUPS_RCDIR}; ${MV} cups cups.sh.sample
 	${FIND} ${PREFIX}/man/cat* -type l -name '*.0' -delete
-	${FIND} ${PREFIX}/man/fr/cat* -type l -name '*.0' -delete
 	${MKDIR} ${CUPS_SPOOLDIR} ${CUPS_SPOOLDIR}/tmp
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}
