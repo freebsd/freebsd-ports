@@ -1,4 +1,4 @@
-bin/qcc
+%%WITH_QICO_MORDA%%bin/qcc
 etc/qico.conf.sample
 libexec/qico
 %%PORTDOCS%%share/doc/qico/FAQ.ru
