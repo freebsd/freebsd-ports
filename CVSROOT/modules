@@ -849,6 +849,7 @@ cd2mp3		ports/audio/cd2mp3
 cd9660_unicode	ports/sysutils/cd9660_unicode
 cdb		ports/databases/cdb
 cdbakeoven	ports/sysutils/cdbakeoven
+cdbkup		ports/sysutils/cdbkup
 cdcl		ports/science/cdcl
 cdcl-gtk	ports/science/cdcl-gtk
 cdecl		ports/devel/cdecl
