@@ -1,0 +1,24 @@
+w3-4.0 package is WWW browser package for emacs.
+
+Info path and elisp load path would be set as follows :
+
+    Info path - ${PREFIX}/info
+    load path - ${PREFIX}/share/emacs/site-lisp/w3
+
+You may be happy by adding following lines to your .emacs file:
+
+	(setq url-keep-history t)
+	(setq url-be-asynchronous t)
+	(setq w3-default-homepage
+		"file://localhost/usr/share/doc/handbook/handbook.html")
+
+and copying .mosaic-hotlist-default file from ${PREFIX}/share/examples/w3
+directory to your home directory.
+
+Setting above user environment would be only executed by
+${PREFIX}/share/examples/w3/user-install on your home directory. 
+
+If you have installed correctly, type "M-x w3". Enjoy!
+
+- Kiriyama Kazuhiko
+kiri@kiri.toba-cmt.ac.jp
