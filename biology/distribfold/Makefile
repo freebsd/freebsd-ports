@@ -16,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	distributedfolding.org distributed protein folding project
 
 ONLY_FOR_ARCHS=	i386
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 NO_BUILD=	yes
@@ -35,7 +36,7 @@ DNETFOLD_GROUP=dnetfold
 # default number of processors
 WITH_NCPU?=	1
 
-RELEASE_DATE=	20030425
+RELEASE_DATE=	20040226
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}/cpu0|' \
