@@ -1,6 +1,7 @@
 bin/sunclock
 share/sunclock/Sunclockrc
 share/sunclock/earthmaps/vmf/standard.vmf
+share/sunclock/earthmaps/vmf/timezones.vmf
 share/sunclock/i18n/Sunclock.de
 share/sunclock/i18n/Sunclock.en
 share/sunclock/i18n/Sunclock.es

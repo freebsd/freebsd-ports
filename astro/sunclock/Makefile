@@ -7,19 +7,19 @@
 #
 
 PORTNAME=	sunclock
-PORTVERSION=	3.45
+PORTVERSION=	3.50.p1
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	torstenb@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${DISTNAME}v2
+MAINTAINER=	pat@databits.net
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_XPM=	YES
-USE_IMAKE=	YES
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_IMAKE=	yes
 
 MAN1=		sunclock.1
 

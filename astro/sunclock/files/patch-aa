@@ -1,5 +1,5 @@
---- Imakefile.orig	Sun Apr 22 22:27:53 2001
-+++ Imakefile	Sun Apr 22 22:30:04 2001
+--- Imakefile.orig	Tue Aug 14 09:30:24 2001
++++ Imakefile	Fri Aug 24 07:48:14 2001
 @@ -1,15 +1,17 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -21,25 +21,32 @@
  XCOMM
  XCOMM Compile options:
  XCOMM
-@@ -38,17 +40,17 @@
- # Solaris, Linux
- #XPMLIB=-L/usr/X11R6/lib
- #XPMINC=-I/usr/X11R6/include/X11
--#JLIB=-L/usr/lib
--#JINC=-I/usr/include
-+JLIB=-L${LOCALBASE}/lib
-+JINC=-I${LOCALBASE}/include
+@@ -38,13 +40,12 @@
+ #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
--CCOPTIONS=-O -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
-+CCOPTIONS=-O -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"  -DNEW_CTIME -I${LOCALBASE}/include
+ # Solaris, Linux
+-#XPMLIBDIR=-L/usr/X11R6/lib
+-#XPMINC=-I/usr/X11R6/include/X11
+-#JLIBDIR=-L/usr/lib
+-#ZLIBDIR=-L/usr/lib
+-#JINC=-I/usr/include
+-
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++XPMLIBDIR=-L${X11BASE}/lib
++XPMINC=-I${X11BASE}/include/X11
++JLIBDIR=-L${LOCALBASE}/lib
++ZLIBDIR=-L${LOCALBASE}/lib
++JINC=-I${LOCALBASE}/include
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-      readvmf.c readxpm.c readjpeg.c
+@@ -52,7 +53,7 @@
  OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
       readvmf.o readxpm.o readjpeg.o
--LOCAL_LIBRARIES=$(XLIB) $(XPMLIB) -lXpm $(JLIB) -ljpeg -lm
-+LOCAL_LIBRARIES=$(XLIB) $(XPMLIB) -lXpm $(JLIB) -ljpeg -lm -lcompat
+ LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
+-     $(JLIBDIR) -ljpeg -lm
++     $(JLIBDIR) -ljpeg -lm -lcompat
  DEPLIBS=		# I don't know what I'm doing, and I hate imake!
  
  ComplexProgramTarget(sunclock)
