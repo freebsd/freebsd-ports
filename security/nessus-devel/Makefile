@@ -1,4 +1,6 @@
 # New ports collection makefile for: 	nessus-devel
+# Date created:		27 Oct 2001
+# Whom:			Udo Schweigert <udo.schweigert@siemens.com>
 #
 # $FreeBSD$
 #
@@ -9,8 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus-devel
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -57,8 +58,8 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/nessusd.sh > ${LOCALBASE}/etc/rc.d/nessusd.sh
-	@${CHMOD} +x ${LOCALBASE}/etc/rc.d/nessusd.sh
+		${FILESDIR}/nessusd.sh > ${PREFIX}/etc/rc.d/nessusd.sh
+	@${CHMOD} +x ${PREFIX}/etc/rc.d/nessusd.sh
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 .if ! defined(BATCH)
