@@ -1,0 +1,6 @@
+eboxy is an application for building user interfaces for set-top boxes,
+suitable for use on a TV. It reads an XML file describing a simple GUI
+consisting of pages, images, labels and buttons, and creates the GUI on the
+screen.
+
+WWW: http://www.bluelightning.org/ebox/eboxy/
