@@ -1,0 +1,56 @@
+*** ../netatalk-1.4b2/sys/freebsd/Makefile	Tue Oct 22 23:31:01 1996
+--- ./sys/freebsd/Makefile	Thu Jul 24 02:32:58 1997
+***************
+*** 21,27 ****
+  FRC:
+  
+  install :
+! 	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
+  	for i in ${ALL}; \
+  	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+  		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+--- 21,28 ----
+  FRC:
+  
+  install :
+! 	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR} \
+! 		${ETCDIR}/rc.d ${RESDIR}/examples/netatalk
+  	for i in ${ALL}; \
+  	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+  		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+***************
+*** 30,46 ****
+  		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
+  		INSTALL="${INSTALL}" $@); \
+  	done
+- 	rm -f ${ETCDIR}/rc.atalk
+  	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+  		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+  		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+  		-e s@:INCDIR:@${INCDIR}@ \
+! 	    < ../../rc.atalk.bsd > ${ETCDIR}/rc.atalk
+! 	@echo
+! 	@echo "Install is done.  Don't forget to add lines from"
+! 	@echo "services.atalk to /etc/services and to call rc.atalk"
+! 	@echo "in /etc/rc.  See README and README.FREEBSD for more"
+! 	@echo "information."
+  
+  clean :
+  	for i in ${ALL}; \
+--- 31,46 ----
+  		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" \
+  		INSTALL="${INSTALL}" $@); \
+  	done
+  	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+  		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+  		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+  		-e s@:INCDIR:@${INCDIR}@ \
+! 	    < ../../rc.atalk.freebsd > ${ETCDIR}/rc.d/netatalk.sh
+! 	chmod +x ${ETCDIR}/rc.d/netatalk.sh
+! 	cp ../../config/AppleVolumes.default ${ETCDIR}/AppleVolumes.default.dist
+! 	cp ../../config/AppleVolumes.system ${ETCDIR}/AppleVolumes.system.dist
+! 	cp ../../config/atalkd.conf ../../config/papd.conf \
+! 		${RESDIR}/examples/netatalk
+  
+  clean :
+  	for i in ${ALL}; \
