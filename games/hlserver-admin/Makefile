@@ -6,20 +6,14 @@
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50.07
+PORTVERSION=	2.50.09
 PORTEPOCH=	1
-MASTER_SITES=	http://www.adminmod.org/downloads/ \
-		http://metamod.org/files/other/
-DISTFILES=	halflife-${PORTNAME}-${PORTVERSION}.tgz \
-		metamod_i386.so
+MASTER_SITES=	http://www.adminmod.org/downloads/
+DISTNAME=	halflife-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
-EXTRACT_ONLY=	halflife-${PORTNAME}-${PORTVERSION}.tgz
 WRKSRC=		${WRKDIR}/Admin
-
-post-patch:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/metamod_i386.so \
-		${WRKSRC}/dlls
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
