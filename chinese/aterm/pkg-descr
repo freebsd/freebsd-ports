@@ -1,0 +1,9 @@
+aterm is a color vt102 terminal emulator, based on rxvt 2.4.8 with
+additions for fast transparency.
+
+It was created with AfterStep users in mind, but is not tied to any
+libraries, and can be used anywhere.
+
+WWW:	http://aterm.sourceforge.net/
+
+- Jim <jim@FreeBSD.org>

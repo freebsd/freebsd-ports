@@ -1,0 +1,1064 @@
+diff -cNr aterm-0.4.2.orig/autoconf/acconfig.h aterm-0.4.2/autoconf/acconfig.h
+*** aterm-0.4.2.orig/autoconf/acconfig.h	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/autoconf/acconfig.h	Sun Sep 30 15:13:21 2001
+***************
+*** 38,44 ****
+--- 38,49 ----
+  /* Define if Xlocale support doesn't work */
+  #undef NO_XLOCALE
+  
++ #undef USE_XIM
++ 
+  /* Define is setlocale (defined to Xsetlocale) doesn't work */
++ #undef NO_XSETLOCALE
++ 
++ /* Define is plain setlocale doesn't work */
+  #undef NO_SETLOCALE
+  
+  /* Define if you want Menubar support */
+diff -cNr aterm-0.4.2.orig/autoconf/config.h.in aterm-0.4.2/autoconf/config.h.in
+*** aterm-0.4.2.orig/autoconf/config.h.in	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/autoconf/config.h.in	Sun Sep 30 15:14:08 2001
+***************
+*** 88,94 ****
+--- 88,99 ----
+  /* Define if Xlocale support doesn't work */
+  #undef NO_XLOCALE
+  
++ #undef USE_XIM
++ 
+  /* Define is setlocale (defined to Xsetlocale) doesn't work */
++ #undef NO_XSETLOCALE
++ 
++ /* Define is plain setlocale doesn't work */
+  #undef NO_SETLOCALE
+  
+  /* Define if you want Menubar support */
+diff -cNr aterm-0.4.2.orig/autoconf/configure.in aterm-0.4.2/autoconf/configure.in
+*** aterm-0.4.2.orig/autoconf/configure.in	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/autoconf/configure.in	Sun Sep 30 15:18:11 2001
+***************
+*** 106,111 ****
+--- 106,117 ----
+      AC_DEFINE(ZH)
+    fi])
+  
++ AC_ARG_ENABLE(xim,
++   [  --enable-xim           enable xim support],
++   [if test x$enableval = xyes; then
++     AC_DEFINE(USE_XIM)
++   fi])
++ 
+  AC_ARG_ENABLE(greek,
+    [  --enable-greek          enable greek keyboard support],
+    [if test x$enableval = xyes; then
+***************
+*** 642,647 ****
+--- 648,654 ----
+  dnl# this is a really hack test for some basic Xlocale stuff
+  SAVETHELIBS=$LIBS
+  LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
++ CFLAGS="$CFLAGS $X_CFLAGS"
+  AC_CACHE_CHECK(for working Xlocale, rxvt_cv_func_xlocale,
+  [AC_TRY_RUN(
+  [#define X_LOCALE 1
+***************
+*** 667,672 ****
+--- 674,687 ----
+    [setlocale(LC_CTYPE, "");],
+    rxvt_cv_func_xsetlocale=yes, rxvt_cv_func_xsetlocale=no)])
+  if test "${rxvt_cv_func_xsetlocale}" = no; then
++   AC_DEFINE(NO_XSETLOCALE)
++ fi
++ 
++ AC_CACHE_CHECK(for working plain setlocale, rxvt_cv_func_setlocale,
++ [AC_TRY_LINK([#include <locale.h>],
++   [setlocale(LC_CTYPE, "");],
++   rxvt_cv_func_setlocale=yes, rxvt_cv_func_setlocale=no)])
++ if test x${rxvt_cv_func_setlocale} = xno; then
+    AC_DEFINE(NO_SETLOCALE)
+  fi
+  
+diff -cNr aterm-0.4.2.orig/configure aterm-0.4.2/configure
+*** aterm-0.4.2.orig/configure	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/configure	Sun Sep 30 17:00:35 2001
+***************
+*** 36,41 ****
+--- 36,43 ----
+  ac_help="$ac_help
+    --enable-big5           enable big5 support"
+  ac_help="$ac_help
++   --enable-xim           enable xim support"
++ ac_help="$ac_help
+    --enable-greek          enable greek keyboard support"
+  ac_help="$ac_help
+    --enable-thai           enable thai support"
+***************
+*** 786,791 ****
+--- 788,804 ----
+    fi
+  fi
+  
++ # Check whether --enable-xim or --disable-xim was given.
++ if test "${enable_xim+set}" = set; then
++   enableval="$enable_xim"
++   if test x$enableval = xyes; then
++     cat >> confdefs.h <<\EOF
++ #define USE_XIM 1
++ EOF
++ 
++   fi
++ fi
++ 
+  
+  # Check whether --enable-greek or --disable-greek was given.
+  if test "${enable_greek+set}" = set; then
+***************
+*** 4649,4654 ****
+--- 4662,4668 ----
+  
+  SAVETHELIBS=$LIBS
+  LIBS="$LIBS $X_LIBS $X_PRE_LIBS $X_EXTRA_LIBS -lX11"
++ CFLAGS="$CFLAGS $X_CFLAGS"
+  echo $ac_n "checking for working Xlocale""... $ac_c" 1>&6
+  echo "configure:4654: checking for working Xlocale" >&5
+  if eval "test \"`echo '$''{'rxvt_cv_func_xlocale'+set}'`\" = set"; then
+***************
+*** 4724,4730 ****
+  echo "$ac_t""$rxvt_cv_func_xsetlocale" 1>&6
+  if test "${rxvt_cv_func_xsetlocale}" = no; then
+    cat >> confdefs.h <<\EOF
+! #define NO_SETLOCALE 1
+  EOF
+  
+  fi
+--- 4738,4777 ----
+  echo "$ac_t""$rxvt_cv_func_xsetlocale" 1>&6
+  if test "${rxvt_cv_func_xsetlocale}" = no; then
+    cat >> confdefs.h <<\EOF
+! #define NO_XSETLOCALE 1
+! EOF
+! 
+! fi
+! 
+! echo $ac_n "checking for working plain setlocale""... $ac_c" 1>&6
+! echo "configure:4659: checking for working plain setlocale" >&5
+! if eval "test \"`echo '$''{'rxvt_cv_func_setlocale'+set}'`\" = set"; then
+!   echo $ac_n "(cached) $ac_c" 1>&6
+! else
+!   cat > conftest.$ac_ext <<EOF
+! #line 4664 "configure"
+! #include "confdefs.h"
+! #include <locale.h>
+! int main() {
+! setlocale(LC_CTYPE, "");
+! ; return 0; }
+! EOF
+! if { (eval echo configure:4671: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+!   rm -rf conftest*
+!   rxvt_cv_func_setlocale=yes
+! else
+!   echo "configure: failed program was:" >&5
+!   cat conftest.$ac_ext >&5
+!   rm -rf conftest*
+!   rxvt_cv_func_setlocale=no
+! fi
+! rm -f conftest*
+! fi
+! 
+! echo "$ac_t""$rxvt_cv_func_setlocale" 1>&6
+! if test x${rxvt_cv_func_setlocale} = xno; then
+! cat >> confdefs.h <<\EOF
+! efine NO_SETLOCALE 1
+  EOF
+  
+  fi
+diff -cNr aterm-0.4.2.orig/scripts/random_colors aterm-0.4.2/scripts/random_colors
+*** aterm-0.4.2.orig/scripts/random_colors	Thu Jan  1 08:00:00 1970
+--- aterm-0.4.2/scripts/random_colors	Sun Sep 30 17:01:24 2001
+***************
+*** 0 ****
+--- 1,18 ----
++ #!/bin/bash
++ 
++ # This script will launch aterm with different tinting color 
++ # every time you start it
++ # I don't really know how that can be of any use at all, but some
++ # folks like it - so here it is
++ 
++ CLRCODE=`expr $RANDOM % 6`
++ ATRMPATH=$DESTDIR/usr/local/bin
++ 
++ { [ "$CLRCODE" -eq "0" ] && CLRNAME="-tint blue -fg yellow -bg black"; } || 
++ { [ "$CLRCODE" -eq "1" ] && CLRNAME="-tint red -fg white -bg black"; } || 
++ { [ "$CLRCODE" -eq "2" ] && CLRNAME="-tint green -fg white -bg white"; } ||
++ { [ "$CLRCODE" -eq "3" ] && CLRNAME="-tint cyan -fg white -bg white"; } || 
++ { [ "$CLRCODE" -eq "4" ] && CLRNAME="-tint magenta -fg white -bg black"; } || 
++ { [ "$CLRCODE" -eq "5" ] && CLRNAME="-tint yellow -fg blue -bg white"; } 
++ 
++ exec $ATRMPATH/aterm -fg white -tr $CLRNAME $@
+diff -cNr aterm-0.4.2.orig/src/command.c aterm-0.4.2/src/command.c
+*** aterm-0.4.2.orig/src/command.c	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/command.c	Sun Sep 30 14:36:49 2001
+***************
+*** 69,80 ****
+  #ifndef NO_XLOCALE
+  # if (XtSpecificationRelease < 6)
+  #  define NO_XLOCALE
+- # else
+- #  define X_LOCALE
+- #  include <X11/Xlocale.h>
+  # endif
+  #endif				/* NO_XLOCALE */
+  
+  #ifdef TTY_GID_SUPPORT
+  # include <grp.h>
+  #endif
+--- 69,87 ----
+  #ifndef NO_XLOCALE
+  # if (XtSpecificationRelease < 6)
+  #  define NO_XLOCALE
+  # endif
+  #endif				/* NO_XLOCALE */
+  
++ #ifndef NO_XSETLOCALE
++ # define X_LOCALE
++ # include <X11/Xlocale.h>
++ #else
++ # ifndef NO_SETLOCALE
++ #  include <locale.h>
++ # endif
++ #endif                          /* NO_XLOCALE */
++ 
++ 
+  #ifdef TTY_GID_SUPPORT
+  # include <grp.h>
+  #endif
+***************
+*** 182,190 ****
+  
+  /*{{{ defines: */
+  
+! #define KBUFSZ		8	/* size of keyboard mapping buffer */
+! #define STRING_MAX	512	/* max string size for process_xterm_seq() */
+! #define ESC_ARGS	32	/* max # of args for esc sequences */
+  
+  /* a large REFRESH_PERIOD causes problems with `cat' */
+  #define REFRESH_PERIOD		1
+--- 189,201 ----
+  
+  /*{{{ defines: */
+  
+! #ifdef USE_XIM
+! #  define KBUFSZ      64      /* size of keyboard mapping buffer */
+! #else
+! #  define KBUFSZ      8       /* size of keyboard mapping buffer */
+! #endif
+! #define STRING_MAX    512     /* max string size for process_xterm_seq() */
+! #define ESC_ARGS      32      /* max # of args for esc sequences */
+  
+  /* a large REFRESH_PERIOD causes problems with `cat' */
+  #define REFRESH_PERIOD		1
+***************
+*** 308,318 ****
+--- 319,333 ----
+  static Atom     DndProtocol, DndSelection;
+  #endif				/* OFFIX_DND */
+  
++ #ifdef USE_XIM
++ static XIC      Input_Context;        /* input context */
++ #else
+  #ifndef NO_XLOCALE
+  static char    *rs_inputMethod = "";	/* XtNinputMethod */
+  static char    *rs_preeditType = NULL;	/* XtNpreeditType */
+  static XIC      Input_Context;	/* input context */
+  #endif				/* NO_XLOCALE */
++ #endif                                /* USE_XIM */
+  
+  /* command input buffering */
+  #ifndef BUFSIZ
+***************
+*** 534,540 ****
+      ttydev = tty_name;
+  
+  # define PTYCHAR1	"pqrstuvwxyz"
+! # define PTYCHAR2	"0123456789abcdef"
+      for (c1 = PTYCHAR1; *c1; c1++) {
+  	ptydev[len - 2] = ttydev[len - 2] = *c1;
+  	for (c2 = PTYCHAR2; *c2; c2++) {
+--- 549,555 ----
+      ttydev = tty_name;
+  
+  # define PTYCHAR1	"pqrstuvwxyz"
+! # define PTYCHAR2     "0123456789abcdefghijklmnopqrstuvwxyz"
+      for (c1 = PTYCHAR1; *c1; c1++) {
+  	ptydev[len - 2] = ttydev[len - 2] = *c1;
+  	for (c2 = PTYCHAR2; *c2; c2++) {
+***************
+*** 1137,1143 ****
+--- 1152,1167 ----
+      DndSelection = XInternAtom(Xdisplay, "DndSelection", False);
+  #endif				/* OFFIX_DND */
+  
++ #ifndef NO_XLOCALE
+      init_xlocale();
++ #else
++     setlocale(LC_CTYPE, "");
++ #endif
++ 
++ #ifdef USE_XIM
++     setTermFontSet();
++     XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL, IMInstantiateCallback, NULL);
++ #endif
+  
+  /* get number of available file descriptors */
+  #ifdef _POSIX_VERSION
+***************
+*** 1204,1209 ****
+--- 1228,1234 ----
+  init_xlocale(void)
+  {
+  #ifndef NO_XLOCALE
++ #ifndef USE_XIM
+      char           *p, *s, buf[32], tmp[1024];
+      XIM             xim = NULL;
+      XIMStyle        input_style = 0;
+***************
+*** 1212,1218 ****
+  
+      Input_Context = NULL;
+  
+! # ifndef NO_SETLOCALE
+     /* setlocale(LC_CTYPE, "");	/* XXX: should we do this? */
+  # endif
+      if (rs_inputMethod == NULL || !*rs_inputMethod) {
+--- 1237,1243 ----
+  
+      Input_Context = NULL;
+  
+! # if !defined(NO_SETLOCALE) || !defined(NO_XSETLOCALE)
+     /* setlocale(LC_CTYPE, "");	/* XXX: should we do this? */
+  # endif
+      if (rs_inputMethod == NULL || !*rs_inputMethod) {
+***************
+*** 1311,1316 ****
+--- 1336,1342 ----
+  	print_error("Failed to create input context");
+  	XCloseIM(xim);
+      }
++ #endif                                /* USE_XIM */    
+  #endif				/* NO_XLOCALE */
+  }
+  /*}}} */
+***************
+*** 1379,1400 ****
+   	numlock_state = (ev->xkey.state & ModNumLockMask);	/* numlock toggle */
+  	PrivMode((!numlock_state), PrivMode_aplKP);
+      }
+! #ifndef NO_XLOCALE
+!     if (!XFilterEvent(ev, *(&ev->xkey.window))) {
+! 	if (Input_Context != NULL) {
+! 	    Status          status_return;
+! 
+! 	    len = XmbLookupString(Input_Context, &ev->xkey, kbuf,
+! 				  sizeof(kbuf), &keysym,
+! 				  &status_return);
+! 	} else {
+! 	    len = XLookupString(&ev->xkey, kbuf,
+! 				sizeof(kbuf), &keysym,
+! 				&compose);
+! 	}
+!     } else
+! 	len = 0;
+! #else				/* NO_XLOCALE */
+      len = XLookupString(&ev->xkey, (char *) kbuf, sizeof(kbuf), &keysym, &compose);
+  /*
+   * have unmapped Latin[2-4] entries -> Latin1
+--- 1405,1425 ----
+   	numlock_state = (ev->xkey.state & ModNumLockMask);	/* numlock toggle */
+  	PrivMode((!numlock_state), PrivMode_aplKP);
+      }
+! #ifdef USE_XIM
+!     len = 0;
+!     if (Input_Context != NULL) {
+!       Status          status_return;
+! 
+!       kbuf[0] = '\0';
+!       len = XmbLookupString(Input_Context, &ev->xkey, kbuf,
+!                           sizeof(kbuf), &keysym,
+!                           &status_return);
+!     } else {
+!       len = XLookupString(&ev->xkey, kbuf,
+!                         sizeof(kbuf), &keysym,
+!                         &compose);
+!     }
+! #else                         /* USE_XIM */    
+      len = XLookupString(&ev->xkey, (char *) kbuf, sizeof(kbuf), &keysym, &compose);
+  /*
+   * have unmapped Latin[2-4] entries -> Latin1
+***************
+*** 1404,1410 ****
+  	len = 1;
+  	kbuf[0] = (keysym & 0xFF);
+      }
+! #endif				/* NO_XLOCALE */
+  
+      if (len && (Options & Opt_scrollKeypress))
+  	TermWin.view_start = 0;
+--- 1429,1435 ----
+  	len = 1;
+  	kbuf[0] = (keysym & 0xFF);
+      }
+! #endif                                /* USE_XIM */
+  
+      if (len && (Options & Opt_scrollKeypress))
+  	TermWin.view_start = 0;
+***************
+*** 1977,1984 ****
+--- 2002,2013 ----
+  	    XEvent          ev;
+  
+  	    refreshed = 0;
++ #ifdef USE_XIM
++             XProcessEvent(Xdisplay);
++ #else
+  	    XNextEvent(Xdisplay, &ev);
+  	    process_x_event(&ev);
++ #endif
+  
+  	/* in case button actions pushed chars to cmdbuf */
+  	    if (cmdbuf_ptr < cmdbuf_endp)
+***************
+*** 2050,2055 ****
+--- 2079,2087 ----
+  		refreshed = 1;
+  		scr_refresh(refresh_type);
+  		scrollbar_show(1);
++ #ifdef USE_XIM
++                 IMSendSpot();
++ #endif
+  	    }
+  	}
+      }
+***************
+*** 2225,2231 ****
+  		on_colors_changed(Color_bg);
+  	    }
+  #endif
+! #ifndef NO_XLOCALE
+  	    if (Input_Context != NULL)
+  		XSetICFocus(Input_Context);
+  #endif
+--- 2257,2263 ----
+  		on_colors_changed(Color_bg);
+  	    }
+  #endif
+! #ifndef USE_XIM
+  	    if (Input_Context != NULL)
+  		XSetICFocus(Input_Context);
+  #endif
+***************
+*** 2242,2248 ****
+  		on_colors_changed(Color_bg);
+  	    }
+  #endif
+! #ifndef NO_XLOCALE
+  	    if (Input_Context != NULL)
+  		XUnsetICFocus(Input_Context);
+  #endif
+--- 2274,2280 ----
+  		on_colors_changed(Color_bg);
+  	    }
+  #endif
+! #ifndef USE_XIM
+  	    if (Input_Context != NULL)
+  		XUnsetICFocus(Input_Context);
+  #endif
+***************
+*** 2720,2725 ****
+--- 2752,2760 ----
+  	    scr_refresh(refresh_type);
+  	    refresh_count = refresh_limit = 0;
+  	    scrollbar_show(1);
++ #ifdef USE_XIM
++             IMSendSpot();
++ #endif
+  	}
+  	break;
+      }
+***************
+*** 3444,3449 ****
+--- 3479,3487 ----
+  	}
+      }
+      Gr_do_graphics(cmd, nargs, args, text);
++ #ifdef USE_XIM
++     IMSendSpot();
++ #endif
+  #endif
+  }
+  /*}}} */
+***************
+*** 3611,3617 ****
+--- 3649,4013 ----
+      }
+  }
+  
++ #ifdef USE_XIM
++ /* PROTO */
++ void
++ setSize( XRectangle *size )
++ {
++   size->x = TermWin_internalBorder;
++   size->y = TermWin_internalBorder;
++   size->width  = Width2Pixel (TermWin.ncol);
++   size->height = Height2Pixel(TermWin.nrow);
++   return;
++ }
++ 
++ /* PROTO */
++ void
++ setColor( unsigned long *fg, unsigned long *bg )
++ {
++   *fg = PixColors[Color_fg];
++   *bg = PixColors[Color_bg];
++   return;
++ }
+  
++ /* PROTO */
++ void
++ IMSendSpot( void )
++ {
++   XPoint              spot;
++   XVaNestedList       preedit_attr;
++   XIMStyle            input_style;
++ 
++   if( Input_Context == NULL )
++     return;
++   else {
++     XGetICValues(Input_Context,XNInputStyle,&input_style,NULL);
++     if (!(input_style & XIMPreeditPosition))
++       return;
++   }
++   setPosition( &spot );
++ 
++   preedit_attr = XVaCreateNestedList( 0, XNSpotLocation, &spot, NULL );
++   XSetICValues( Input_Context, XNPreeditAttributes, preedit_attr, NULL );
++   XFree( preedit_attr );
++   return;
++ }
++ 
++ /* PROTO */
++ void
++ setTermFontSet( void )
++ {
++   char *string;
++   long length, i;
++ 
++   if( TermWin.fontset != NULL ){
++     XFreeFontSet( Xdisplay, TermWin.fontset );
++     TermWin.fontset = NULL;
++   }
++ 
++   length  = 0;
++   for( i = 0 ; i < NFONTS ; i ++){
++     if( rs_font[ i ] )
++       length += strlen( rs_font[ i ] ) + 1;
++ # ifdef MULTICHAR_SET
++     if( rs_mfont[ i ] )
++       length += strlen( rs_mfont[ i ] ) + 1;
++ # endif
++   }
++   if( ( string = malloc( length ) ) != NULL ){
++     char **missing_charsetlist, *def_string;
++     int missing_charsetcount;
++ 
++     string[ 0 ] = '\0';
++     for( i = 0 ; i < NFONTS ; i ++){
++       if( rs_font[ i ] ){
++         strcat( string, rs_font[ i ] );
++         strcat( string, "," );
++       }
++ # ifdef MULTICHAR_SET
++       if( rs_mfont[ i ] ){
++         strcat( string, rs_mfont[ i ] );
++         strcat( string, "," );
++       }
++ # endif
++     }
++     length = strlen( string );
++     if( length > 0 && string[ length - 1 ] == ',' ){
++       string[ length - 1 ] = '\0';
++       length --;
++     }
++     if( length > 0 ){
++       TermWin.fontset = XCreateFontSet
++       ( Xdisplay, string,
++         &missing_charsetlist, &missing_charsetcount, &def_string );
++     }
++     free( string );
++   } else {
++     TermWin.fontset = NULL;
++   }
++   return;
++ }
++ 
++ /* PROTO */
++ void
++ setPreeditArea(XRectangle *preedit_rect, XRectangle *status_rect, XRectangle *needed_rect)
++ {
++     preedit_rect->x = needed_rect->width
++                     + (scrollbar_visible() && !(Options & Opt_scrollBar_right)
++                        ? (SB_WIDTH + sb_shadow * 2) : 0);
++     preedit_rect->y = Height2Pixel(TermWin.nrow - 1)
++                     + ((menuBar.state == 1) ? menuBar_TotalHeight() : 0);
++ 
++     preedit_rect->width = Width2Pixel(TermWin.ncol + 1) - needed_rect->width
++                         + (!(Options & Opt_scrollBar_right)
++                            ? (SB_WIDTH + sb_shadow * 2) : 0);
++     preedit_rect->height = Height2Pixel(1);
++ 
++     status_rect->x = (scrollbar_visible() && !(Options & Opt_scrollBar_right))
++                    ? (SB_WIDTH + sb_shadow * 2) : 0;
++     status_rect->y = Height2Pixel(TermWin.nrow - 1)
++                    + ((menuBar.state == 1) ? menuBar_TotalHeight() : 0);
++ 
++     status_rect->width = needed_rect->width ? needed_rect->width
++                                           : Width2Pixel(TermWin.ncol + 1);
++     status_rect->height = Height2Pixel(1);
++ }
++ 
++ /* PROTO */
++ void
++ IMDestroyCallback(XIM xim, XPointer client_data, XPointer call_data)
++ {
++   Input_Context = NULL;
++   XRegisterIMInstantiateCallback(Xdisplay, NULL, NULL, NULL, IMInstantiateCallback, NULL);
++ }
++ 
++ 
++ /* PROTO */
++ void
++ IMInstantiateCallback(Display *display, XPointer client_data, XPointer call_data)
++ {
++     char           *p, *s, buf[64], tmp[1024];
++     char           *end, *next_s;
++     XIM             xim = NULL;
++     XIMStyle        input_style = 0;
++     XIMStyles      *xim_styles = NULL;
++     int             found;
++     XPoint          spot;
++     XRectangle      rect, status_rect, needed_rect;
++     unsigned long   fg, bg;
++     XVaNestedList   preedit_attr = NULL;
++     XVaNestedList   status_attr = NULL;
++     XIMCallback     ximcallback;
++ 
++     Input_Context = NULL;
++ 
++     if (Input_Context)
++       return;
++ 
++     ximcallback.callback = IMDestroyCallback;
++     ximcallback.client_data = NULL;
++ 
++     if (rs_inputMethod && *rs_inputMethod) {
++       STRNCPY(tmp, rs_inputMethod, sizeof(tmp) - 1);
++       for (s = tmp; *s; s = next_s + 1) {
++           for (; *s && isspace(*s); s++);
++           if (!*s)
++               break;
++           for (end = s; (*end && (*end != ',')); end++);
++           for (next_s = end--; ((end >= s) && isspace(*end)); end--);
++           *(end + 1) = '\0';
++ 
++           if (*s) {
++               STRCPY(buf, "@im=");
++               strncat(buf, s, sizeof(buf) - 4 - 1);
++               if ((p = XSetLocaleModifiers(buf)) != NULL && *p
++                   && (xim = XOpenIM(Xdisplay, NULL, NULL, NULL)) != NULL)
++                   break;
++           }
++           if (!*next_s)
++               break;
++       }
++     }
++ 
++     /* try with XMODIFIERS env. var. */
++     if (xim == NULL && (p = XSetLocaleModifiers("")) != NULL && *p)
++       xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
++ 
++     /* try with no modifiers base */
++     if (xim == NULL && (p = XSetLocaleModifiers("@im=none")) != NULL && *p)
++       xim = XOpenIM(Xdisplay, NULL, NULL, NULL);
++ 
++     if (xim == NULL)
++       return;
++     XSetIMValues(xim, XNDestroyCallback, &ximcallback, NULL);
++ 
++     if (XGetIMValues(xim, XNQueryInputStyle, &xim_styles, NULL)
++       || !xim_styles) {
++       print_error("input method doesn't support any style");
++       XCloseIM(xim);
++       return;
++     }
++     STRNCPY(tmp, (rs_preeditType ? rs_preeditType
++                                    : "OverTheSpot,OffTheSpot,Root"),
++           sizeof(tmp) - 1);
++     for (found = 0, s = tmp; *s && !found; s = next_s + 1) {
++       unsigned short  i;
++ 
++       for (; *s && isspace(*s); s++);
++       if (!*s)
++           break;
++       for (end = s; (*end && (*end != ',')); end++);
++       for (next_s = end--; ((end >= s) && isspace(*end)); end--);
++       *(end + 1) = '\0';
++ 
++       if (!strcmp(s, "OverTheSpot"))
++           input_style = (XIMPreeditPosition | XIMStatusNothing);
++       else if (!strcmp(s, "OffTheSpot"))
++           input_style = (XIMPreeditArea | XIMStatusArea);
++       else if (!strcmp(s, "Root"))
++           input_style = (XIMPreeditNothing | XIMStatusNothing);
++ 
++       for (i = 0; i < xim_styles->count_styles; i++)
++           if (input_style == xim_styles->supported_styles[i]) {
++               found = 1;
++               break;
++           }
++     }
++     XFree(xim_styles);
++ 
++     if (found == 0) {
++       print_error("input method doesn't support my preedit type");
++       XCloseIM(xim);
++       return;
++     }
++     if ((input_style != (XIMPreeditNothing | XIMStatusNothing))
++       && (input_style != (XIMPreeditArea | XIMStatusArea))
++       && (input_style != (XIMPreeditPosition | XIMStatusNothing))) {
++       print_error("This program does not support the preedit type");
++       XCloseIM(xim);
++       return;
++     }
++     if (input_style & XIMPreeditPosition) {
++       setSize(&rect);
++       setPosition(&spot);
++       setColor(&fg, &bg);
++ 
++       preedit_attr = XVaCreateNestedList(0, XNArea, &rect,
++                                          XNSpotLocation, &spot,
++                                          XNForeground, fg,
++                                          XNBackground, bg,
++                                          XNFontSet, TermWin.fontset,
++                                          NULL);
++     } else if (input_style & XIMPreeditArea) {
++       setColor(&fg, &bg);
++ 
++       /*
++        * The necessary width of preedit area is unknown
++        * until create input context.
++        */
++       needed_rect.width = 0;
++ 
++       setPreeditArea(&rect, &status_rect, &needed_rect);
++ 
++       preedit_attr = XVaCreateNestedList(0, XNArea, &rect,
++                                          XNForeground, fg,
++                                          XNBackground, bg,
++                                          XNFontSet, TermWin.fontset,
++                                          NULL);
++       status_attr = XVaCreateNestedList(0, XNArea, &status_rect,
++                                         XNForeground, fg,
++                                         XNBackground, bg,
++                                         XNFontSet, TermWin.fontset,
++                                         NULL);
++     }
++     Input_Context = XCreateIC(xim, XNInputStyle, input_style,
++                             XNClientWindow, TermWin.parent,
++                             XNFocusWindow, TermWin.parent,
++                             XNDestroyCallback, &ximcallback,
++                             preedit_attr ? XNPreeditAttributes : NULL,
++                             preedit_attr,
++                             status_attr ? XNStatusAttributes : NULL,
++                             status_attr,
++                             NULL);
++     XFree(preedit_attr);
++     XFree(status_attr);
++     if (Input_Context == NULL) {
++       print_error("Failed to create input context");
++       XCloseIM(xim);
++     }
++     if (input_style & XIMPreeditArea)
++       IMSetStatusPosition();
++ }
++ 
++ /* PROTO */
++ void
++ IMSetStatusPosition(void)
++ {
++   XIMStyle input_style;
++   XRectangle rect, status_rect, *needed_rect;
++   XVaNestedList preedit_attr, status_attr;
++ 
++   if (Input_Context == NULL)
++     return;
++ 
++   XGetICValues(Input_Context, XNInputStyle, &input_style, NULL);
++ 
++   if (input_style & XIMPreeditArea) {
++     status_attr = XVaCreateNestedList(0, XNAreaNeeded, &needed_rect, NULL);
++     XGetICValues(Input_Context, XNStatusAttributes, status_attr, NULL);
++     XFree(status_attr);
++ 
++     rect.x = needed_rect->width;
++     if (menuBar.state == 1) {
++       rect.y = Height2Pixel(TermWin.nrow - 1) - menuBar_TotalHeight();
++     } else {
++       rect.y = Height2Pixel(TermWin.nrow - 1);
++     }
++     if (Options & Opt_scrollBar_right) {
++       rect.width = Width2Pixel(TermWin.ncol + 1) - needed_rect->width;
++     } else {
++       rect.width = Width2Pixel(TermWin.ncol + 1) + SB_WIDTH + SHADOW * 2 - needed_rect->width;
++     }
++     rect.height = needed_rect->height;
++     preedit_attr = XVaCreateNestedList(0, XNArea, &rect, NULL);
++ 
++     if (scrollbar_visible()) {
++       if (Options & Opt_scrollBar_right) {
++       status_rect.x = 0;
++       } else {
++       status_rect.x = SB_WIDTH + SHADOW * 2;
++       }
++     } else {
++       status_rect.x = 0;
++     }
++     if (menuBar.state == 1) {
++       status_rect.y = Height2Pixel(TermWin.nrow - 1) + menuBar_TotalHeight();
++     } else {
++       status_rect.y = Height2Pixel(TermWin.nrow - 1);
++     }
++     status_rect.width = needed_rect->width;
++     status_rect.height = needed_rect->height;
++     status_attr = XVaCreateNestedList(0, XNArea, &status_rect, NULL);
++     XSetICValues(Input_Context,
++                XNPreeditAttributes, preedit_attr,
++                XNStatusAttributes, status_attr, NULL);
++     XFree(preedit_attr);
++     XFree(status_attr);
++   }
++ }
++ 
++ /* PROTO */
++ void
++ XProcessEvent( Display *display )
++ {
++   XEvent xev;
++   XNextEvent( display, &xev );
++   if( !XFilterEvent( &xev, xev.xany.window ) )
++     process_x_event( &xev );
++   return;
++ }
++ 
++ #endif
+  
+  /*}}} */
+  /*----------------------- end-of-file (C source) -----------------------*/
+diff -cNr aterm-0.4.2.orig/src/feature.h aterm-0.4.2/src/feature.h
+*** aterm-0.4.2.orig/src/feature.h	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/feature.h	Sun Sep 30 14:38:03 2001
+***************
+*** 306,311 ****
+--- 306,317 ----
+   */
+  #define SAVELINES	64
+  
++ /*
++  * Default line space
++  */
++ #define LINESPACE 0
++ 
++ 
+  /* (Hops) Set to choose a number of lines of context between pages 
+   *      (rather than a proportion (1/5) of savedlines buffer) 
+   *      when paging the savedlines with SHIFT-{Prior,Next} keys.
+diff -cNr aterm-0.4.2.orig/src/main.c aterm-0.4.2/src/main.c
+*** aterm-0.4.2.orig/src/main.c	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/main.c	Sun Sep 30 14:56:48 2001
+***************
+*** 901,906 ****
+--- 901,909 ----
+  
+  	XResizeWindow(Xdisplay, TermWin.parent, width, height);
+  	resize_window1(width, height);
++ #ifdef USE_XIM
++         IMSetStatusPosition();
++ #endif
+  	scr_clear();
+      }
+  }
+***************
+*** 1357,1363 ****
+  	fw = TermWin.font->min_bounds.width; /* can be error !!!! */
+  	if( fw > 1000 ) fw = 0 ;  /* added by suggestion from <suchness>*/
+  
+! 	fh = TermWin.font->ascent + TermWin.font->descent;
+  
+  	if (TermWin.font->min_bounds.width == TermWin.font->max_bounds.width)
+  	    TermWin.fprop = 0;	/* Mono-spaced (fixed width) font */
+--- 1360,1370 ----
+  	fw = TermWin.font->min_bounds.width; /* can be error !!!! */
+  	if( fw > 1000 ) fw = 0 ;  /* added by suggestion from <suchness>*/
+  
+! #ifdef USE_LINESPACE
+!       fh = TermWin.font->ascent + TermWin.font->descent + TermWin.lineSpace;
+! #else
+!       fh = TermWin.font->ascent + TermWin.font->descent;
+! #endif
+  
+  	if (TermWin.font->min_bounds.width == TermWin.font->max_bounds.width)
+  	    TermWin.fprop = 0;	/* Mono-spaced (fixed width) font */
+***************
+*** 1624,1629 ****
+--- 1631,1639 ----
+      rs_geometry = NULL;		/* window geometry */
+      rs_minBufferWidth = NULL;
+      rs_saveLines = NULL;	/* scrollback buffer [lines] */
++ #ifdef USE_LINESPACE
++     rs_lineSpace = NULL;
++ #endif
+      rs_borderWidth = NULL;
+      rs_modifier = NULL;	/* modifier */
+  #if defined (HOTKEY_CTRL) || defined (HOTKEY_META)
+***************
+*** 1750,1755 ****
+--- 1760,1769 ----
+  	TermWin.min_bcol = 1;
+      if (!rs_saveLines || (TermWin.saveLines = atoi(rs_saveLines)) < 0)
+  	TermWin.saveLines = SAVELINES;
++ #ifdef USE_LINESPACE
++     if (!rs_lineSpace || (TermWin.lineSpace = atoi(rs_lineSpace)) < 0)
++         TermWin.lineSpace = LINESPACE;
++ #endif
+      if (!rs_borderWidth || (TermWin.borderWidth = atoi(rs_borderWidth)) < 0)
+          TermWin.borderWidth = BORDERWIDTH;
+  
+***************
+*** 1797,1802 ****
+--- 1811,1819 ----
+  	    rs_mfont[i] = def_mfontName[i];
+  #endif
+      }
++ #ifdef USE_XIM
++     TermWin.fontset = NULL;
++ #endif
+  
+  #ifdef XTERM_REVERSE_VIDEO
+  /* this is how xterm implements reverseVideo */
+diff -cNr aterm-0.4.2.orig/src/rxvt.h aterm-0.4.2/src/rxvt.h
+*** aterm-0.4.2.orig/src/rxvt.h	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/rxvt.h	Sun Sep 30 15:01:00 2001
+***************
+*** 266,271 ****
+--- 266,274 ----
+  		    ncol, nrow,	/* window size [characters]                 */
+  		    bcol,	/* current number of columns in the buffer  */
+  		    min_bcol,	/* minimum horizontal columns in the buffer */
++ #ifdef USE_LINESPACE
++                     lineSpace,  /* linespace                                */
++ #endif
+  		    focus,	/* window has focus                         */
+  		    saveLines,	/* number of lines that fit in scrollback   */
+  		    borderWidth,/* number of pixels in window border        */
+***************
+*** 280,285 ****
+--- 283,291 ----
+  #ifdef MULTICHAR_SET
+      XFontStruct    *mfont;	/* Multichar font structure                 */
+  #endif
++ #ifdef USE_XIM
++     XFontSet fontset;
++ #endif
+  #if defined(BACKGROUND_IMAGE) || defined(TRANSPARENT) || defined(_MYSTYLE_)
+      BackgroundInfo background;
+  #endif
+***************
+*** 928,933 ****
+--- 934,942 ----
+  EXTERN const char      *rs_geometry;	/* window geometry */
+  EXTERN const char      *rs_minBufferWidth; /* minimum buffer width - so we can scroll horizontally */
+  EXTERN const char      *rs_saveLines;	/* scrollback buffer [lines] */
++ #ifdef USE_LINESPACE
++ EXTERN const char      *rs_lineSpace; /* line space [pixels] */
++ #endif
+  EXTERN const char      *rs_borderWidth; /* border width [pixels] */
+  EXTERN const char      *rs_cutchars;	/* chars for selection boundaries */
+  #ifdef META8_OPTION
+***************
+*** 948,953 ****
+--- 957,966 ----
+  #endif
+  #ifdef PRINTPIPE
+  EXTERN const char      *rs_print_pipe;
++ #endif
++ #ifdef USE_XIM
++ EXTERN const char      *rs_preeditType;
++ EXTERN const char      *rs_inputMethod;
+  #endif
+  #ifndef NO_BRIGHTCOLOR
+  EXTERN unsigned int	colorfgbg;
+diff -cNr aterm-0.4.2.orig/src/screen.c aterm-0.4.2/src/screen.c
+*** aterm-0.4.2.orig/src/screen.c	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/screen.c	Sun Sep 30 15:03:36 2001
+***************
+*** 3439,3441 ****
+--- 3439,3455 ----
+  #endif
+      fprintf(stderr, "%s\n", name[color]);
+  }
++ 
++ #ifdef USE_XIM
++ /* PROTO */
++ void
++ setPosition(XPoint *pos)
++ {
++   XWindowAttributes xwa ;
++ 
++   XGetWindowAttributes( Xdisplay, TermWin.vt, &xwa ) ;
++   pos->x = Col2Pixel   ( screen.cur.col ) + xwa.x;
++   pos->y = Height2Pixel((screen.cur.row + 1)) + xwa.y;
++   return ;
++ }
++ #endif
+diff -cNr aterm-0.4.2.orig/src/xdefaults.c aterm-0.4.2/src/xdefaults.c
+*** aterm-0.4.2.orig/src/xdefaults.c	Fri Sep  7 00:38:07 2001
+--- aterm-0.4.2/src/xdefaults.c	Sun Sep 30 15:06:21 2001
+***************
+*** 276,281 ****
+--- 276,286 ----
+      STRG(rs_multichar_encoding, "multichar_encoding", "km", "mode",
+           "multiple-character font encoding; mode = eucj | sjis | big5"),
+  #endif				/* MULTICHAR_SET */
++ #ifdef USE_XIM
++     STRG(rs_preeditType, "preeditType", "pt", "style",
++         "input style of input method; style = OverTheSpot | OffTheSpot | Root"),
++     STRG(rs_inputMethod, "inputMethod", "im", "name", "name of input method"),
++ #endif                         /* USE_XIM */
+  #ifdef GREEK_SUPPORT
+      STRG(rs_greek_keyboard, "greek_keyboard", "grk", "mode",
+           "greek keyboard mapping; mode = iso | ibm"),
+***************
+*** 313,318 ****
+--- 318,327 ----
+           "minimum number of columns stored in buffer"),
+      STRG(rs_saveLines, "saveLines", "sl", "number",
+           "number of scrolled lines to save"),
++ #ifdef USE_LINESPACE
++     STRG(rs_lineSpace, "lineSpace", "lsp", "number",
++          "line space"),
++ #endif
+      BOOL(rs_utmpInhibit, "utmpInhibit", "ut", Opt_utmpInhibit,
+           "utmp inhibit"),
+      BOOL(rs_visualBell, "visualBell", "vb", Opt_visualBell, "visual bell"),
