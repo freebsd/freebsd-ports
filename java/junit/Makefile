@@ -9,8 +9,7 @@ PORTNAME=	junit
 PORTVERSION=	3.7
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://metaverse.euronet.nl/~ernst/ \
-		http://znerd.org/
+		http://www.metaverse.nl/~ernst/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
