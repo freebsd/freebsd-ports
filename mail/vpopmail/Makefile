@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.28
+PORTVERSION=	5.3.29
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -61,6 +61,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 #
 # HARDQUOTA     - size of hard quota, or 'n' for no hard quota
 # RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
+# SPAM_THRESHOLD - minimum score required to delete spam messages (requires spamassassin)
 # DEFAULT_DOMAIN - default domain for non-vhost lookups
 # WITH_SINGLE_DOMAIN - optimize for a site with many users in a single domain
 # LOGLEVEL	- n - no logging, y - log all,
@@ -115,6 +116,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 
 HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
+SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
 
 .if defined(WITH_MYSQL)
@@ -243,7 +245,8 @@ CONFIGURE_ARGS+=	--enable-domainquotas=y
 
 .if defined(WITH_SPAMASSASSIN)
 BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
-CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc
+CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc \
+			--enable-spam-threshold=${SPAM_THRESHOLD}
 .endif
 
 # autoconf and automake can remove our patches to the configure scripts.

@@ -1,15 +1,17 @@
 --- configure.orig	Fri Oct 17 01:12:22 2003
-+++ configure	Sat Oct 25 01:18:27 2003
-@@ -20,6 +20,8 @@
++++ configure	Sat Nov  1 14:01:27 2003
+@@ -20,6 +20,10 @@
  ac_help="$ac_help
    --enable-qmail-newmrh=path Full path to qmail-newmrh program"
  ac_help="$ac_help
 +  --enable-spamassassin=path Enable SpamAssassin. Full path to spamc program. default /usr/local/bin/spamc"
 +ac_help="$ac_help
++  --enable-spam-threshold=# or n Automatically delete messages that score more than # spam hits"
++ac_help="$ac_help
    --enable-vpopuser=vpopmail   user vchkpw was installed as."
  ac_help="$ac_help
    --enable-vpopgroup=vchkpw   group vchkpw was installed as."
-@@ -1317,7 +1319,7 @@
+@@ -1317,7 +1321,7 @@
    ;;
  esac
  
@@ -18,7 +20,7 @@
  then
      echo "configure: warning: === vpopmail must be configured as root. ===" 1>&2
      echo "configure: warning: === please switch to the root user and  ===" 1>&2
-@@ -1446,6 +1448,27 @@
+@@ -1446,6 +1450,49 @@
  EOF
  
  
@@ -41,12 +43,34 @@
 +  cat >> confdefs.h <<EOF
 +#define SPAMC "$spamc"
 +EOF
++
++# Check whether --enable-spam-threshold or --disable-spam-threshold was given.
++if test "${enable_spam_threshold+set}" = set; then
++  enableval="$enable_spam_threshold"
++  ENABLE_SPAM_THRESHOLD=$enableval
++else
++
++                        ENABLE_SPAM_THRESHOLD=0
++
++fi
++
++
++case $ENABLE_SPAM_THRESHOLD in
++0*|n*|N*)
++      ;;
++*)
++          cat >> confdefs.h <<EOF
++#define SPAM_THRESHOLD $ENABLE_SPAM_THRESHOLD
++EOF
++
++          ;;
++esac
 +fi
 +
  
  vpopuser="vpopmail"
  # Check whether --enable-vpopuser or --disable-vpopuser was given.
-@@ -1601,15 +1624,6 @@
+@@ -1601,15 +1648,6 @@
  EOF
  
  
@@ -62,7 +86,7 @@
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
  if test "${enable_roaming_users+set}" = set; then
    enableval="$enable_roaming_users"
-@@ -1671,17 +1685,7 @@
+@@ -1671,17 +1709,7 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
