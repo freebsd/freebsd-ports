@@ -1,11 +1,10 @@
---- configure.orig	Sat Jul 17 16:26:48 2004
-+++ configure	Sun Jul 25 19:48:05 2004
-@@ -38,7 +38,7 @@
- GCIN_VERSION=`cat VERSION.gcin`
- sed -e "s/__gcin_version__/$GCIN_VERSION/" < gcin.spec.in > gcin.spec
+--- configure.orig	Mon Aug  2 13:32:06 2004
++++ configure	Mon Aug  2 23:01:34 2004
+@@ -1,6 +1,6 @@
  
--OPTFLAGS="-g"
-+OPTFLAGS=$CFLAGS
- if [ $prefix = /usr ]; then
-   OPTFLAGS="-O"
+ MAKE=make
+-which gmake >& /dev/null
++which gmake > /dev/null
+ if [ $? = 0 ]; then
+   MAKE=gmake
  fi
