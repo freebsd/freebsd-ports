@@ -7,6 +7,7 @@
 
 PORTNAME=	postgis
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/
 DISTNAME=	postgis-${PORTVERSION}
@@ -24,7 +25,7 @@ MAKE_ARGS=	PGSQL_SRC=${PGSQL_SRC}
 
 PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql7
 WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}
-PGSQL_SRC=	${WRKDIRPREFIX}${PGSQL_PORTDIR}/work/postgresql-7.4.2
+PGSQL_SRC=	${WRKDIRPREFIX}${PGSQL_PORTDIR}/work/postgresql-7.4.3
 INSTALL_TARGET=	install
 
 .if defined(WITH_GEOS)
