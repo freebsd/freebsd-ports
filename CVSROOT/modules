@@ -5054,6 +5054,7 @@ ogle-gui	ports/multimedia/ogle-gui
 ogmtools	ports/multimedia/ogmtools
 ohphone		ports/net/ohphone
 oidentd		ports/security/oidentd
+oinkmaster	ports/security/oinkmaster
 okle		ports/multimedia/okle
 oleo		ports/math/oleo
 olirc		ports/irc/olirc
