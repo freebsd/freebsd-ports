@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.170
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,7 +26,8 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	sshd-1.170-1.wbm.gz \
+WEBMIN_MODULES=	bandwidth-1.170-1.wbm.gz \
+		sshd-1.170-1.wbm.gz \
 		status-1.170-1.wbm.gz
 WEBMIN_THEMES=
 
