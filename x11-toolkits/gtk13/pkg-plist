@@ -123,13 +123,21 @@ include/gtk11d/gtk/gtkwindow.h
 lib/libgdk11d.a
 lib/libgdk11d.la
 lib/libgdk11d.so
-lib/libgdk11d.so.1.1
+lib/libgdk11d.so.1.2
 lib/libgtk11d.a
 lib/libgtk11d.la
 lib/libgtk11d.so
-lib/libgtk11d.so.1.1
+lib/libgtk11d.so.1.2
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/locale/de/LC_MESSAGES/gtk+.mo
+share/locale/fr/LC_MESSAGES/gtk+.mo
+share/locale/ja/LC_MESSAGES/gtk+.mo
+share/locale/nl/LC_MESSAGES/gtk+.mo
+share/locale/no/LC_MESSAGES/gtk+.mo
+share/locale/pl/LC_MESSAGES/gtk+.mo
+share/locale/pt/LC_MESSAGES/gtk+.mo
+share/locale/sv/LC_MESSAGES/gtk+.mo
 share/themes/Default/gtk/gtkrc
 @dirrm share/themes/Default/gtk
 @dirrm share/themes/Default

@@ -1,17 +1,6 @@
---- gtk/gtkrc.c.orig	Wed Dec 16 09:42:10 1998
-+++ gtk/gtkrc.c	Sun Dec 27 01:04:11 1998
-@@ -26,6 +26,10 @@
- #include <stdio.h>
- #include <stdlib.h>
- 
-+#ifdef X_LOCALE
-+#include <locale.h>
-+#endif
-+
- #include "gtkrc.h"
- #include "gtkbindings.h"
- #include "gtkthemes.h"
-@@ -228,13 +232,13 @@
+--- gtk/gtkrc.c.orig	Fri Dec 18 10:47:54 1998
++++ gtk/gtkrc.c	Fri Jan  1 02:30:53 1999
+@@ -229,13 +229,13 @@
    var = getenv("GTK_EXE_PREFIX");
    if (var)
      {
@@ -29,7 +18,7 @@
      }
    return path;
  }
-@@ -248,13 +252,13 @@
+@@ -249,13 +249,13 @@
    var = getenv("GTK_DATA_PREFIX");
    if (var)
      {
@@ -47,7 +36,7 @@
      }
    
    for (n = 0; pixmap_path[n]; n++) ;
-@@ -290,13 +294,13 @@
+@@ -291,13 +291,13 @@
    var = getenv("GTK_EXE_PREFIX");
    if (var)
      {
