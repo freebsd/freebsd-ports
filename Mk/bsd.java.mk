@@ -130,6 +130,10 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 JAVASHAREDIR?=	${PREFIX}/share/java
 JAVAJARDIR?=	${JAVASHAREDIR}/classes
 
+# Add appropriate substitutions to PLIST_SUB
+PLIST_SUB+=		JAVASHAREDIR="${JAVASHAREDIR:S,^${PREFIX}/,,}" \
+			JAVAJARDIR="${JAVAJARDIR:S,^${PREFIX}/,,}"
+
 # The complete list of Java versions, os and vendors supported.
 __JAVA_VERSION_LIST=	1.1 1.2 1.3 1.4
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
@@ -418,7 +422,7 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 # First test if jikes is needed (and if USE_JIKES has a correct value)
 .		if defined(USE_JIKES)
 .			if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
-JAVAC=		${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
+JAVAC?=		${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
 BUILD_DEPENDS+=	${DEPEND_JIKES}
 .			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
 .BEGIN:
@@ -431,32 +435,32 @@ BUILD_DEPENDS+=	${DEPEND_JIKES}
 .			if (${JAVA_BUILD} == "jdk" || ${JAVA_BUILD} == "JDK") && !defined(JAVAC)
 # Use jikes if available and not explicitly forbidden
 .				if exists(${_JIKES_PATH}) && !defined(USE_JIKES)
-JAVAC=			${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
+JAVAC?=			${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
 BUILD_DEPENDS+=	${DEPEND_JIKES}
 # Otherwise use 'javac'
 .				else
-JAVAC=			${JAVA_HOME}/bin/javac
+JAVAC?=			${JAVA_HOME}/bin/javac
 .				endif
 .			endif
 .		endif
 
 # Define the location of some more executables.
-APPLETVIEWER=	${JAVA_HOME}/bin/appletviewer
-JAR=			${JAVA_HOME}/bin/jar
-JAVA=			${JAVA_HOME}/bin/java
-JAVADOC=		${JAVA_HOME}/bin/javadoc
-JAVAH=			${JAVA_HOME}/bin/javah
-JAVAP=			${JAVA_HOME}/bin/javap
-JAVA_N2A=		${JAVA_HOME}/bin/native2ascii
-JAVA_SERIALVER=	${JAVA_HOME}/bin/serialver
-RMIC=			${JAVA_HOME}/bin/rmic
-RMIREGISTRY=	${JAVA_HOME}/bin/rmiregistry
+APPLETVIEWER?=	${JAVA_HOME}/bin/appletviewer
+JAR?=			${JAVA_HOME}/bin/jar
+JAVA?=			${JAVA_HOME}/bin/java
+JAVADOC?=		${JAVA_HOME}/bin/javadoc
+JAVAH?=			${JAVA_HOME}/bin/javah
+JAVAP?=			${JAVA_HOME}/bin/javap
+JAVA_N2A?=		${JAVA_HOME}/bin/native2ascii
+JAVA_SERIALVER?=${JAVA_HOME}/bin/serialver
+RMIC?=			${JAVA_HOME}/bin/rmic
+RMIREGISTRY?=	${JAVA_HOME}/bin/rmiregistry
 
 # Some executables only exists in JDK 1.2 and up
 .		if ${_JAVA_PORT} != "JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1"
-JAVA_KEYTOOL=		${JAVA_HOME}/bin/keytool
-JAVA_POLICYTOOL=	${JAVA_HOME}/bin/policytool
-RMID=				${JAVA_HOME}/bin/rmid
+JAVA_KEYTOOL?=		${JAVA_HOME}/bin/keytool
+JAVA_POLICYTOOL?=	${JAVA_HOME}/bin/policytool
+RMID?=				${JAVA_HOME}/bin/rmid
 .		endif
 
 # Set the location of the ZIP or JAR file with all standard Java classes.
