@@ -6686,6 +6686,7 @@ p5-Apache-DebugInfo	ports/www/p5-Apache-DebugInfo
 p5-Apache-DumpHeaders	ports/www/p5-Apache-DumpHeaders
 p5-Apache-Filter	ports/www/p5-Apache-Filter
 p5-Apache-Gallery	ports/www/p5-Apache-Gallery
+p5-Apache-GopherHandler	ports/www/p5-Apache-GopherHandler
 p5-Apache-Icon	ports/www/p5-Apache-Icon
 p5-Apache-Language	ports/www/p5-Apache-Language
 p5-Apache-MP3	ports/www/p5-Apache-MP3
