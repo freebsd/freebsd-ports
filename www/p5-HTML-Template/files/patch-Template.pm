@@ -1,5 +1,5 @@
 --- Template.pm.orig	Sat Feb  2 08:01:37 2002
-+++ Template.pm	Tue Mar 12 11:24:20 2002
++++ Template.pm	Thu May 30 12:33:34 2002
 @@ -863,7 +863,9 @@
  use strict; # and no funny business, either.
  
@@ -10,7 +10,7 @@
  
  # define accessor constants used to improve readability of array
  # accesses into "objects".  I used to use 'use constant' but that
-@@ -2011,7 +2013,7 @@
+@@ -2011,10 +2013,10 @@
  	push(@ifstack, $cond);
  	
        } elsif ($which eq '/TMPL_IF' or $which eq '/TMPL_UNLESS') {
@@ -18,4 +18,8 @@
 +	$options->{debug} and print STDERR "### HTML::Template Debug ### $fname : line $fcounter : $which end\n";
  	
  	my $cond = pop(@ifstack);
- 	die "HTML::Template->new() : found </${which}> with no matching <TMPL_IF> at $fname : line $fcounter." unless defined $cond;
+-	die "HTML::Template->new() : found </${which}> with no matching <TMPL_IF> at $fname : line $fcounter." unless defined $cond;
++	die "HTML::Template->new() : found <${which}> with no matching <TMPL_IF> at $fname : line $fcounter." unless defined $cond;
+ 	if ($which eq '/TMPL_IF') {
+ 	  die "HTML::Template->new() : found </TMPL_IF> incorrectly terminating a <TMPL_UNLESS> (use </TMPL_UNLESS>) at $fname : line $fcounter.\n" 
+ 	    if ($cond->[HTML::Template::COND::WHICH] == HTML::Template::COND::WHICH_UNLESS);
