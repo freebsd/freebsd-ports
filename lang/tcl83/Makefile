@@ -423,7 +423,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	tcltest.n Tcltest.n
 
 post-configure:
-	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}/=$${WRKDIRPREFIX}/=' \
 		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>

@@ -371,7 +371,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	safe.n Safe\Base.n
 
 post-configure:
-	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}/=$${WRKDIRPREFIX}/=' \
 		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>
