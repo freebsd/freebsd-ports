@@ -1,4 +1,5 @@
 bin/ftdump
+bin/fterror
 bin/ftlint
 bin/ftmetric
 bin/ftsbit
