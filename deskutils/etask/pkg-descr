@@ -1,0 +1,22 @@
+If you want Emacs to support you in your efforts to define and manage
+your projects or tasks this Emacs extension is for you.
+
+Some of the features you might find useful within the Emacs environment:
+
+    * Keep track of tasks in multiple projects
+    * Manage your todos
+    * Display Gantt bars for all tasks and todos
+    * Change the zoom factor of the Gantt chart
+    * Classify each project task according to its criticality:
+          o Normal tasks
+          o High risk tasks
+          o Tasks lying on the critical path 
+    * Make task and todo notes
+    * Set task-specific progress goals: linear, moderate s-shaped, or
+      s-shaped with tougher requirements for the middle phase and
+      therefore more flexibility towards the planned end
+    * Multilingual (German and English)
+    * Print detailed project status reports
+    * Generate LaTeX output for high-quality Gantt charts 
+
+WWW: http://members.chello.at/rene.weichselbaum/etask.html

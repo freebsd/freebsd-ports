@@ -1,0 +1,19 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-cat.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-cat.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-db.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-db.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-event.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-event.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-lang.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-lang.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-port.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-port.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-proj.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-proj.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-tex.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-tex.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-todo.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask-todo.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask.el
+%%EMACS_VERSION_SITE_LISPDIR%%/etask/etask.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/etask
