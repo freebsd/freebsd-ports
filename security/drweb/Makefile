@@ -14,6 +14,7 @@ DISTFILES=      ${MAIN_NAME}.tgz
 
 MAINTAINER=	anton@chelcom.ru
 
+ONLY_FOR_ARCHS=	i386
 NO_BUILD=       yes
 
 WRKSRC=         ${WRKDIR}/${MAIN_NAME}/install
@@ -64,6 +65,6 @@ do-install:
 	fi
 
 post-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
