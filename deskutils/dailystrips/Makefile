@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dailystrips
-PORTVERSION=	1.0.20
+PORTVERSION=	1.0.22
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,7 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dailystrips ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/dailystrips-clean ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/strips.def ${DATADIR}
 .if !defined(NOPORTDOCS)
