@@ -1,0 +1,42 @@
+bin/ghex
+share/gnome/apps/Applications/ghex.desktop
+share/gnome/help/ghex/C/index.html
+share/gnome/help/ghex/C/topic.dat
+share/gnome/help/ghex/es/index.html
+share/gnome/help/ghex/es/topic.dat
+share/gnome/help/ghex/sv/index.html
+share/gnome/help/ghex/sv/topic.dat
+share/gnome/pixmaps/gnome-ghex.png
+share/locale/ca/LC_MESSAGES/ghex.mo
+share/locale/cs/LC_MESSAGES/ghex.mo
+share/locale/da/LC_MESSAGES/ghex.mo
+share/locale/de/LC_MESSAGES/ghex.mo
+share/locale/el/LC_MESSAGES/ghex.mo
+share/locale/en_GB/LC_MESSAGES/ghex.mo
+share/locale/es/LC_MESSAGES/ghex.mo
+share/locale/et/LC_MESSAGES/ghex.mo
+share/locale/fi/LC_MESSAGES/ghex.mo
+share/locale/fr/LC_MESSAGES/ghex.mo
+share/locale/ga/LC_MESSAGES/ghex.mo
+share/locale/gl/LC_MESSAGES/ghex.mo
+share/locale/hu/LC_MESSAGES/ghex.mo
+share/locale/it/LC_MESSAGES/ghex.mo
+share/locale/ja/LC_MESSAGES/ghex.mo
+share/locale/ko/LC_MESSAGES/ghex.mo
+share/locale/nl/LC_MESSAGES/ghex.mo
+share/locale/no/LC_MESSAGES/ghex.mo
+share/locale/pl/LC_MESSAGES/ghex.mo
+share/locale/pt/LC_MESSAGES/ghex.mo
+share/locale/pt_BR/LC_MESSAGES/ghex.mo
+share/locale/ro/LC_MESSAGES/ghex.mo
+share/locale/ru/LC_MESSAGES/ghex.mo
+share/locale/sl/LC_MESSAGES/ghex.mo
+share/locale/sv/LC_MESSAGES/ghex.mo
+share/locale/uk/LC_MESSAGES/ghex.mo
+share/locale/wa/LC_MESSAGES/ghex.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ghex.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ghex.mo
+@dirrm share/gnome/help/ghex/sv
+@dirrm share/gnome/help/ghex/es
+@dirrm share/gnome/help/ghex/C
+@dirrm share/gnome/help/ghex
