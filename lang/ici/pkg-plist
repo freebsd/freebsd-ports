@@ -39,5 +39,5 @@ share/doc/ici/ici.txt
 share/doc/ici/ici.pdf
 @dirrm include/ici/pcre
 @dirrm include/ici
-@unexec rmdir share/doc/ici 2>/dev/null || true
-@unexec rmdir lib/ici 2>/dev/null || true
+@unexec rmdir %D/share/doc/ici 2>/dev/null || true
+@unexec rmdir %D/lib/ici 2>/dev/null || true
