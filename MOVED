@@ -334,3 +334,6 @@ editors/xemacs-wp-packages||2003-05-12|obsolete xemacs package category
 devel/p5-Time||2003-05-13|Use devel/p5-Time-modules port instead
 www/sqmgrlog|www/sarg|2003-05-15|Renamed into sarg
 devel/adabroker||2003-05-19|no longer maintained, does not compile with latest compiler
+chinese/rxvt||2003-05-20|no longer needed
+chinese/rxvt-big5||2003-05-20|no longer needed
+chinese/rxvt-gb||2003-05-20|no longer needed
