@@ -42,7 +42,7 @@ WRKSRC=		${WRKDIR}/Pike-v${PORTVERSION}/src/
 WANT_MESA=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS=${PTHREAD_LIBS} CPPFLAGS+=${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LDFLAGS+=${PTHREAD_LIBS} CPPFLAGS+=${PTHREAD_CFLAGS}
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-double-precision \
 		 --with-long-double-precision \
