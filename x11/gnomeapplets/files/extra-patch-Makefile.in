@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Tue May 21 19:05:53 2002
++++ Makefile.in	Tue May 21 19:06:00 2002
+@@ -228,7 +228,6 @@
+ always_built_SUBDIRS = \
+ 	another_clock	\
+ 	asclock		\
+-	battery		\
+ 	charpick	\
+ 	clockmail	\
+ 	drivemount	\
