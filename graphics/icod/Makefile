@@ -8,10 +8,11 @@
 PORTNAME=	icod
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://linux.tucows.com/files/x11/graphics/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= jedgar
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/icod
 ALL_TARGET=	icod
