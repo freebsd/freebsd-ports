@@ -18,7 +18,8 @@ MAKE_ARGS+=	PREFIX="${PREFIX}"
 MAKEFILE=	makefile
 
 post-patch:
-	${REINPLACE_CMD} -e "s@gcc -g -Wall@${CC} ${CFLAGS} -Wall@g" ${WRKSRC}/makefile
+	${REINPLACE_CMD} "s/gcc -g -Wall/${CC} ${CFLAGS} -Wall/g; \
+		s/mp gmp/mp/g" ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp ${PREFIX}/bin
