@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rfilter
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.lickey.com/rubyfilter/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
