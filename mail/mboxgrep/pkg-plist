@@ -1,0 +1,9 @@
+bin/mboxgrep
+@unexec install-info --delete %D/info/mboxgrep.info %D/info/dir
+info/mboxgrep.info
+@exec install-info %D/info/mboxgrep.info %D/info/dir
+%%PORTDOCS%%share/doc/mboxgrep/ChangeLog
+%%PORTDOCS%%share/doc/mboxgrep/NEWS
+%%PORTDOCS%%share/doc/mboxgrep/README
+%%PORTDOCS%%share/doc/mboxgrep/TODO
+%%PORTDOCS%%@dirrm share/doc/mboxgrep

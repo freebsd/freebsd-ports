@@ -1,0 +1,37 @@
+# New ports collection makefile for:	mboxgrep
+# Date created:				28 October 2001
+# Whom:					Anders Nordby <anders@fix.no>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mboxgrep
+PORTVERSION=	0.7.0
+CATEGORIES=	mail
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	anders@fix.no
+
+.if defined(WITH_PCRE)
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+.endif
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=	mboxgrep.1
+
+DOCS=	ChangeLog NEWS README TODO
+
+post-install:
+	install-info ${PREFIX}/info/mboxgrep.info ${PREFIX}/info/dir
+.if !defined(NOPORTDOCS)
+	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
+.endif
+
+.include <bsd.port.mk>
