@@ -1,0 +1,10 @@
+--- configure.orig	Sat May  1 14:14:13 2004
++++ configure	Sat May  1 14:14:20 2004
+@@ -157,6 +157,7 @@
+ 
+ 
+ 
++unset tagnames
+ tagnames=${tagnames+${tagnames},}CXX
+ 
+ tagnames=${tagnames+${tagnames},}F77
