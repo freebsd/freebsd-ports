@@ -1,6 +1,0 @@
-include/X11/extensions/Xrender.h
-lib/libXrender.a
-lib/libXrender.la
-lib/libXrender.so
-lib/libXrender.so.1
-libdata/pkgconfig/xrender.pc
