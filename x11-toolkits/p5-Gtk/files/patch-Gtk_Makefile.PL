@@ -11,6 +11,11 @@
  $libs =~ s/\s+/ /g;
  $inc =~ s/\s+/ /g;
  
+@@ -160,3 +160,3 @@
+ 	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
+-	'OPTIMIZE' => '-O2 -g',
++	'CCFLAGS' => '${CFLAGS}',
+ 	'MAN3PODS' => {
 @@ -207,14 +207,14 @@
  sub gtk_version {
  	my($result);
