@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri May 30 20:27:25 2003
++++ Makefile	Mon Jul 28 12:01:48 2003
+@@ -1,14 +1,14 @@
+-CC = gcc
++CC = %%CC%%
+ 
+ #CCOPT = -O
+ #CCOPT = -O3
+ #CCOPT = -O3 -g3
+ #CCOPT = -ansi -pedantic -g3
+-CCOPT = -ansi -pedantic -O -Wall -Wstrict-prototypes -g3
++CCOPT = %%CFLAGS%% -I%%LOCALBASE%%/include -I%%X11BASE%%/include
+ 
+ HEADERS = defines.h typedefs.h
+ 
+-LIBPATH = -L/usr/X11R6/lib
++LIBPATH = -L%%X11BASE%%/lib
+ 
+ LINKOPT = -lX11 -lm
+ 
