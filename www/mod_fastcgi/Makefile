@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_fastcgi
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.12
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 DISTNAME=	mod_fastcgi_${PORTVERSION}
