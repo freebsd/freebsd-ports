@@ -1,0 +1,125 @@
+Patches to reflect file locations in man pages.
+--- man/aarpd.8.orig	Sun Mar  8 22:46:26 1992
++++ man/aarpd.8	Sun Nov 10 08:01:47 1996
+@@ -32,7 +32,7 @@
+ At startup,
+ .I aarpd
+ probes for a node number, determines the network number and
+-maintains a copy of the network information in /etc/etalk.local which it
++maintains a copy of the network information in /usr/local/etc/cap/etalk.local which it
+ updates as necessary.
+ .PP
+ The options
+@@ -57,10 +57,10 @@
+ .BI <interface> " <zoneName>"
+ defines the network interface (as listed by netstat(8)) such as ie0, le0,
+ ln0 or pf0.  The zoneName argument is a valid zonename for the EtherTalk
+-connected to the interface.  These values may be seeded in /etc/etalk.local
++connected to the interface.  These values may be seeded in /usr/local/etc/cap/etalk.local
+ but it is recommended that both arguments be supplied.
+ .SH FILES
+-/etc/etalk.local - refer man/etalk.local.5
++/usr/local/etc/cap/etalk.local - refer man/etalk.local.5
+ .SH NOTES
+ .I aarpd
+ be run as "root" (uid 0) and should be started before any other CAP
+--- man/atalk.local.5.orig	Wed Mar 13 19:47:13 1991
++++ man/atalk.local.5	Sun Nov 10 08:05:49 1996
+@@ -129,7 +129,7 @@
+ underlying IP network structure is of importance here.  Unfortunately,
+ the details of this issue are beyond the scope of this document.
+ .SH FILES
+-atalk.local usually resides in /etc
++atalk.local resides in /usr/local/etc/cap
+ .SH BUGS
+ The node numbers should be automatically determined since they are
+ fixed.  In addition, it would be nice if the zone name were picked up
+--- man/atis.8.orig	Sat Nov  9 16:42:31 1996
++++ man/atis.8	Sun Nov 10 08:13:31 1996
+@@ -91,7 +91,7 @@
+ .I atis
+ automatically disassociates itself from the controlling terminal
+ unless debug options are set.  To allow some control over the
+-disassocated process, the pid is recorded in /etc/atis.pid and the
++disassocated process, the pid is recorded in /usr/local/etc/cap/atis.pid and the
+ following commands options have been added.
+ .TP
+ .B dump
+@@ -131,9 +131,9 @@
+ to dump the database and exit.
+ .PP
+ .SH FILES
+-/etc/atis.pid records the pid of the currently running server.
++/usr/local/etc/cap/atis.pid records the pid of the currently running server.
+ .br
+-/etc/atalk.local is used to find the closest Ethernet/Appletalk bridge
++/usr/local/etc/cap/atalk.local is used to find the closest Ethernet/Appletalk bridge
+ (directory location alterable at compile time).
+ .br
+ /usr/tmp/nis.db is used to hold the name data base when dumped
+--- man/atprint.1.orig	Sun Mar  8 22:44:36 1992
++++ man/atprint.1	Sun Nov 10 08:23:43 1996
+@@ -49,7 +49,7 @@
+ PostScript device.
+ You can specify the device in one of three ways (-a is the default).
+ "tlw -u <short-printer-name>" maps a Unix short printer name to an Appletalk
+-entity name via the cap.printers file (often found in /etc).
++entity name via the cap.printers file (found in /usr/local/etc/cap).
+ "tlw -a <object-name>" specifies a device of type "LaserWriter" in the current
+ zone "*".
+ "tlw -a <appletalk-entity>" lets you choose an arbitrary object, type and zone,
+@@ -96,7 +96,7 @@
+ .SH BUGS
+ There are bound to be several.
+ .SH FILES
+-/etc/cap.printers \- papif configuation file to associate UNIX printer 
++/usr/local/etc/cap/cap.printers \- papif configuration file to associate UNIX printer 
+ queues with LaserWriter names.  Location may vary according to local option.
+ .SH AUTHOR
+ lwpr, iwpr, tlw and isrv were written by Charlie C. Kim of
+--- man/etalk.local.5.orig	Thu Mar 14 23:50:17 1991
++++ man/etalk.local.5	Sun Nov 10 08:04:48 1996
+@@ -42,6 +42,6 @@
+ An underscore in the zone name is
+ no longer treated as a space as in previous versions of atalk.local.
+ .SH FILES
+-etalk.local usually resides in /etc
++etalk.local resides in /usr/local/etc/cap
+ .SH SEE ALSO
+ CAP(3), CAP(8), atalkatab(5), atalkad(8), atis(8)
+--- man/lwrename.8.orig	Sun Nov 10 08:37:05 1996
++++ man/lwrename.8	Sun Nov 10 08:40:05 1996
+@@ -141,7 +141,7 @@
+ .I start\-cap\-servers
+ file.
+ .SH FILES
+-/etc/lwrename.list	default location for list of monitored printers
++/usr/local/lib/cap/lwrename.list	location for list of monitored printers
+ .SH SEE ALSO
+ CAP(8), atlook(1), lwsrv(8)
+ .SH AUTHOR
+--- man/papif.8.orig	Sun Nov 10 08:16:47 1996
++++ man/papif.8	Sun Nov 10 08:26:38 1996
+@@ -414,9 +414,9 @@
+ may no longer work properly.
+ .SH FILES
+ .nf
+-.ta \w'/etc/cap.printers     'u
++.ta \w'/usr/local/etc/cap/cap.printers     'u
+ /etc/printcap
+-/etc/cap.printers	(location is settable)
++/usr/local/etc/cap/cap.printers	(location is settable)
+ \&.status	lpd status file
+ newstatus	papif status temporary file
+ \&.banner	lpd banner file
+--- man/snitch.1.orig	Thu Feb 28 21:42:51 1991
++++ man/snitch.1	Sun Nov 10 08:41:46 1996
+@@ -103,7 +103,7 @@
+ .I snitch
+ in the background).
+ .SH FILES
+-Uses the cap file "atalk.local", usually in /etc.
++Uses the cap file "atalk.local", in //usr/local/etc/cap.
+ .SH "SEE ALSO"
+ CAP(8), atis(8), cap(3)
+ .SH EXAMPLE
