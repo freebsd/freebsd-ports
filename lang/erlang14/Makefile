@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	9.1
-PORTREVISION=	1
+PORTVERSION=	r9c0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R9B-1
+DISTNAME=	otp_src_R9C-0
 DIST_SUBDIR=	erlang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -29,9 +28,9 @@ COMMENT=	A functional programming language from Ericsson
 JAVABINDIR?=	${LOCALBASE}/jdk1.4.1/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
-ERLANG_MAN=     otp_man_R9B-1.tar.gz
+ERLANG_MAN=     otp_man_R9C-0.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_html_R9B-1.tar.gz
+ERLANG_DOCS=	otp_html_R9C-0.tar.gz
 .endif
 
 USE_GMAKE=	yes
@@ -115,8 +114,6 @@ post-install:
 .endif
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang
 	@${CHMOD} -R o+rX-w,g+rX-w ${PREFIX}/lib/erlang
-	@sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
-		cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
 
 # All non-library files.
 
