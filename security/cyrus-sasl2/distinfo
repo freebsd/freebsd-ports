@@ -1,2 +1,4 @@
 MD5 (cyrus-sasl-2.1.18.tar.gz) = 1eafae95f0289c10f187d8b2bc4032cf
 SIZE (cyrus-sasl-2.1.18.tar.gz) = 1522578
+MD5 (cyrus-sasl2-sqlite.20040529.diff) = 2e16532da510130e10efbbadc85966b5
+SIZE (cyrus-sasl2-sqlite.20040529.diff) = 6042

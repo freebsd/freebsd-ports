@@ -98,7 +98,17 @@ CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 CONFIGURE_ARGS+=--without-pgsql
 .endif
 
-.if defined(WITH_MYSQL) || defined(WITH_PGSQL)
+.if defined(WITH_SQLITE)
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	nork
+PATCHFILES=	cyrus-sasl2-sqlite.20040529.diff
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-sqlite
+.endif
+
+.if defined(WITH_MYSQL) || defined(WITH_PGSQL) || defined(WITH_SQLITE)
 CONFIGURE_ARGS+=--enable-sql
 .else
 SQL=	"@comment "
@@ -239,14 +249,14 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
-.for file in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.for f in ${DOC2}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
-.for file in ${HTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
+.for f in ${HTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${DOCSDIR}/html
 .endfor
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
