@@ -11,4 +11,5 @@ include/dvdnav/nav_read.h
 include/dvdnav/nav_types.h
 lib/libdvdnav.so
 lib/libdvdnav.so.3
+share/aclocal/dvdnav.m4
 @dirrm include/dvdnav
