@@ -1,7 +1,7 @@
---- man/emacs.texi.orig	Fri Jun 25 02:53:58 1999
-+++ man/emacs.texi	Sat Jul 24 01:09:24 1999
+--- man/emacs.texi.orig	Tue Jun 13 04:12:20 2000
++++ man/emacs.texi	Sat Jul  1 21:02:39 2000
 @@ -11,9 +11,9 @@
- updated for Emacs version 20.4
+ updated for Emacs version 20.7.
  @c Please REMEMBER to update edition number in *three* places in this file.
  
 -@dircategory Editors
