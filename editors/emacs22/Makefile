@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1996/09/04 00:55:41 asami Exp $
+# $Id: Makefile,v 1.21 1996/10/18 08:56:31 max Exp $
 #
 
 DISTNAME=	emacs-19.34
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS+=	i386--freebsd --with-x-toolkit
+CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit
 STRIP=
 
 post-install:
