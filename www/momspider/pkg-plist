@@ -1,3 +1,4 @@
+bin/momspider
 momspider/libwww-perl-0.40/LWP_Changes.pl
 momspider/libwww-perl-0.40/wwwdates.pl
 momspider/libwww-perl-0.40/wwwerror.pl
