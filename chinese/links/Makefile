@@ -23,6 +23,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-codepage.inc \
 pre-configure:
 	cd ${WRKSRC}/intl && ./synclang
 
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../Makefile.inc"
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 
+.include "${MASTERDIR}/Makefile"
