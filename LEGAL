@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.51 1996/12/01 12:17:19 max Exp $
+# $Id: LEGAL,v 1.52 1996/12/07 09:35:54 max Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -48,6 +48,7 @@ mutt-0.49.tar.gz	ports/mail/mutt.with_pgp ITAR export-controlled
 netscape-*		ports/net/netscape	Commercial product
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 pgp262s.zip		ports/misc/pgp*		Various locality restrictions
+quake101.zip		ports/games/quakeserver	Shareware
 radius-2.4.21		ports/net/radius	Restrictive copyright in
 						src/rlmadmin.c
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
