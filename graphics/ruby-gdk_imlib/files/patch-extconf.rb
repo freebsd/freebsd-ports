@@ -1,11 +1,10 @@
---- extconf.rb.orig	Sat Jun  3 23:56:38 2000
-+++ extconf.rb	Wed Feb 28 20:53:13 2001
-@@ -1,27 +1,26 @@
+--- extconf.rb.orig	Thu Oct  4 11:13:45 2001
++++ extconf.rb	Wed Mar 20 20:59:11 2002
+@@ -1,27 +1,25 @@
  require 'mkmf'
  
 -rubygtk_dir = "../gtk"
 -rubygtk_dir = ARGV[0] if ARGV[0]
-+glib_config = with_config("glib-config", "glib-config")
 +imlib_config = with_config("imlib-config", "imlib-config")
 +
 +while /^--/ =~ ARGV[0]
@@ -26,8 +25,8 @@
  
 -$CFLAGS = "-g -I#{rubygtk_dir}/src " + `imlib-config --cflags-gdk`.chomp
 -$LDFLAGS = `imlib-config --libs-gdk`.chomp
-+$CFLAGS += "-g -I#{rubygtk_dir}/src " + `#{glib_config} --cflags`.chomp + ' ' + `#{imlib_config} --cflags-gdk`.chomp
-+$LDFLAGS += `#{glib_config} --libs`.chomp + ' ' +  `#{imlib_config} --libs-gdk`.chomp
++$CFLAGS += "-g -I#{rubygtk_dir}/src " + `#{imlib_config} --cflags-gdk`.chomp
++$LDFLAGS +=  `#{imlib_config} --libs-gdk`.chomp
  
  have_library("X11", "XOpenDisplay") &&
  have_library("Xi", "XOpenDevice") &&
