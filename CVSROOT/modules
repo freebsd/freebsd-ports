@@ -2983,6 +2983,7 @@ ja-mnews-gnspool	ports/japanese/mnews-gnspool
 ja-mnews-im	ports/japanese/mnews-im
 ja-monafonts	ports/japanese/monafonts
 ja-mozilla-jlp	ports/japanese/mozilla-jlp
+ja-mozilla-jlp-devel	ports/japanese/mozilla-jlp-devel
 ja-msdosfs	ports/japanese/msdosfs
 ja-mtools	ports/japanese/mtools
 ja-muggy	ports/japanese/muggy
