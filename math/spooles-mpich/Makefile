@@ -8,6 +8,6 @@
 MASTERDIR=      ${.CURDIR}/../spooles/
 USE_MPI=	YES
 
-.include "${MASTERDIR}/spooles/Makefile"
+.include "${MASTERDIR}/Makefile"
 
 PKGNAMESUFFIX=  -mpich
