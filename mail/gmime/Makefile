@@ -6,17 +6,22 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	mail
 MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmime/ \
-		http://www.xtorshun.org/gmime/sources/
+		http://spruce.sourceforge.net/gmime/sources/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
 USE_X_PREFIX=	YES
+GNU_CONFIGURE=  YES
 USE_GMAKE=	YES
 USE_GTK=	YES
 USE_LIBTOOL=	YES
+CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/libs"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 INSTALLS_SHLIB=	YES
 
