@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sip
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
+MASTER_SITES=	ftp://ftp.rygannon.com/pub/sip/
 
 MAINTAINER=	adsharma@sharmas.dhs.org
 

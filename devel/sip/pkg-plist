@@ -1,7 +1,7 @@
 bin/sip
 include/sip/sip.h
 include/sip/sipQt.h
-lib/libsip.so.5
+lib/libsip.so.6
 lib/libsip.so
 lib/libsip.la
 lib/libsip.a
