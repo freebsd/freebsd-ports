@@ -7864,6 +7864,7 @@ v6eval		ports/net/v6eval
 vMac		ports/emulators/vMac
 vamos		ports/games/vamos
 varconf		ports/devel/varconf
+varkon		ports/cad/varkon
 vat		ports/mbone/vat
 vb2c		ports/devel/vb2c
 vbidecode	ports/misc/vbidecode
