@@ -15,6 +15,8 @@ DISTNAME=	ttf-alee_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
