@@ -5705,6 +5705,7 @@ munin-main	ports/sysutils/munin-main
 munin-node	ports/sysutils/munin-node
 mup		ports/print/mup
 mupad		ports/math/mupad
+mupen64-base	ports/emulators/mupen64-base
 muse		ports/sysutils/muse
 musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
