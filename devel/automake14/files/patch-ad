@@ -1,5 +1,8 @@
---- aclocal.in.orig	Mon Jan 11 11:35:27 1999
-+++ aclocal.in	Wed Jul 19 19:13:05 2000
+
+$FreeBSD$
+
+--- aclocal.in.orig	Sun Jul 15 13:52:18 2001
++++ aclocal.in	Sat Aug 11 12:28:32 2001
 @@ -34,6 +34,8 @@
  # Note that this isn't pkgdatadir, but a separate directory.
  $acdir = "@datadir@/aclocal";
@@ -9,7 +12,7 @@
  # Some globals.
  
  # Exit status.
-@@ -103,6 +105,9 @@
+@@ -106,6 +108,9 @@
  
  
  local (@dirlist) = &parse_arguments (@ARGV);
@@ -19,7 +22,7 @@
  &scan_m4_files ($acdir, @dirlist);
  &scan_configure;
  if (! $exit_status)
-@@ -266,12 +271,13 @@
+@@ -279,12 +284,13 @@
  	$file_contents{'acinclude.m4'} = &scan_file ('acinclude.m4');
      }
  
@@ -34,7 +37,7 @@
  	foreach $file (sort grep (! /^\./, readdir (DIR)))
  	{
  	    # Only examine .m4 files.
-@@ -281,6 +287,12 @@
+@@ -294,6 +300,12 @@
  	    next if $file eq 'aclocal.m4';
  
  	    $fullfile = $m4dir . '/' . $file;
@@ -47,3 +50,12 @@
  	    $file_contents{$fullfile} = &scan_file ($fullfile);
  	}
  	closedir (DIR);
+@@ -400,7 +412,7 @@
+ 	    elsif ($map{$1} ne 'acinclude.m4' || $file eq 'acinclude.m4')
+ 	    {
+ 		warn "aclocal: $file: $.: duplicated macro \`$1'\n";
+-		$exit_status = 1;
++		# $exit_status = 1;
+ 	    }
+ 	    print STDERR "Found macro $1 in $file: $.\n" if $verbosity;
+ 	}
