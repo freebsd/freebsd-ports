@@ -1,0 +1,31 @@
+# New ports collection makefile for:	BitchX ircII client patched for korean
+# Version required:	kr-75p1
+# Date created:		3 Jun 1999
+# Whom:			hollywar
+#
+# $Id$
+#
+
+DISTNAME=	bitchx-kr-75p1
+PKGNAME=        ko-bitchx-75p1
+CATEGORIES=	korean net
+MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+
+MAINTAINER=	hollywar@mail.holywar.net
+
+GNU_CONFIGURE=	yes
+
+post-patch:
+	${SED} -e s,__PREFIX__,$(PREFIX), $(WRKSRC)/include/config.h > $(WRKSRC)/include/config.h.new
+	${MV} $(WRKSRC)/include/config.h.new $(WRKSRC)/include/config.h
+
+do-install:
+	${MKDIR} ${PREFIX}/lib/bx
+	${INSTALL_PROGRAM} ${WRKSRC}/source/BitchX ${PREFIX}/bin
+	@(ln -sf ${PREFIX}/bin/BitchX ${PREFIX}/bin/bx)
+	${INSTALL_PROGRAM} ${WRKSRC}/source/scr-bx ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/source/wserv ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/BitchX.help ${PREFIX}/lib/bx
+
+.include <bsd.port.mk>
