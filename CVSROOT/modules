@@ -3905,6 +3905,7 @@ librsvg2	ports/graphics/librsvg2
 librsync	ports/net/librsync
 libsamplerate	ports/audio/libsamplerate
 libsdb		ports/databases/libsdb
+libsectok	ports/security/libsectok
 libshbuf	ports/devel/libshbuf
 libshhcards	ports/games/libshhcards
 libshhmsg	ports/devel/libshhmsg
