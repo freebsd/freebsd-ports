@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.monkeymental.com/mmfiles/ \
 		${MASTER_SITE_LOCAL}
