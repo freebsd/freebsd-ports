@@ -1,0 +1,11 @@
+DParser is a simple but powerful tool for parsing. You can specify the form of
+the text to be parsed using a combination of regular expressions and grammar
+productions. Because of the parsing technique (technically a scannerless GLR
+parser based on the Tomita algorithm) there are no restrictions. The grammar
+can be ambiguous, right or left recursive, have any number of null productions,
+and because there is no seperate tokenizer, can include whitespace in terminals
+and have terminals which are prefixes of other terminals. DParser handles not
+just well formed computer languages and data files, but just about any wacky
+situation that occurs in the real world.
+
+WWW: http://dparser.sourceforge.net/

@@ -178,6 +178,7 @@
     SUBDIR += doctorj
     SUBDIR += dotconf
     SUBDIR += doxygen
+    SUBDIR += dparser
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
