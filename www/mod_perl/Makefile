@@ -40,6 +40,10 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
 
+.if defined(WITH_APACHE_IPV6) && ${APACHE_PORT:Mipv6}
+CFLAGS+=	-DAPACHE6
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-install:
