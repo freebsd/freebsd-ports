@@ -1,0 +1,13 @@
+--- Makefile~	Tue Mar 21 20:24:39 2000
++++ Makefile	Tue Mar 21 20:25:07 2000
+@@ -8,8 +8,8 @@
+ # operate it, and destroy other tanks to survive!
+ ###############################################################################
+ 
+-PREFIX  = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX  = /usr/X11R6
++#X11BASE = /usr/X11R6
+ BINDIR = ${PREFIX}/bin
+ MANDIR = ${PREFIX}/man/man1
+ PKGNAME = nadar-b05
