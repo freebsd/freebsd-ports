@@ -1,29 +1,29 @@
---- doc/Makefile.SH.orig	Fri Dec 29 20:56:43 2000
-+++ doc/Makefile.SH	Sun Jan  7 04:39:50 2001
+--- doc/Makefile.SH.orig	Tue Feb  6 19:48:15 2001
++++ doc/Makefile.SH	Wed Feb 14 19:56:04 2001
 @@ -145,6 +145,8 @@
  	$(SED) 's"#LIB#"$(LIB)"g;' < elmterminal.1 > elmterminal.1.subs
  frm.1.subs: frm.1
  	$(SED) 's"#LIB#"$(LIB)"g;' < frm.1 > frm.1.subs
-+newmail.1.subs: newmail.1
-+	$(SED) 's"#LIB#"$(LIB)"g;' < newmail.1 > newmail.1.subs
++newalias.1.subs: newalias.1
++	$(SED) 's"#LIB#"$(LIB)"g;' < newalias.1 > newalias.1.subs
  
  formatted_pages: catman $(FORMATTED_PAGES_LIST)
  
-@@ -224,7 +226,7 @@
+@@ -220,7 +222,7 @@
  				$(CP) $? $@
  				$(CHMOD) u=rw,go=r $@
  
--$(MAN)/newmail$(MANEXT):	newmail.1
-+$(MAN)/newmail$(MANEXT):	newmail.1.subs
- 				$(RM) $@
+-$(MAN)/newalias$(MANEXT):	newalias.1
++$(MAN)/newalias$(MANEXT):	newalias.1.subs
  				$(CP) $? $@
  				$(CHMOD) u=rw,go=r $@
-@@ -425,7 +427,7 @@
+ 
+@@ -416,7 +418,7 @@
  		true ; \
  	fi
  
--catman/newmail$(CATMANEXT)$(SUFFIX):		newmail.1
-+catman/newmail$(CATMANEXT)$(SUFFIX):		newmail.1.subs
- 	$(MANROFF) $(MANROFF_OPTS) -man $? > catman/newmail$(CATMANEXT)
+-catman/newalias$(CATMANEXT)$(SUFFIX):		newalias.1
++catman/newalias$(CATMANEXT)$(SUFFIX):		newalias.1.subs
+ 	$(MANROFF) $(MANROFF_OPTS) -man $? > catman/newalias$(CATMANEXT)
  	@if $(TEST) "$(PACKED)" = y ; then \
  		$(RM) $@ ; \
