@@ -97,6 +97,7 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,release,release thread,' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${RM} ${WRKSRC}/mkspecs/freebsd-g++/qmake.conf.bak
 
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
