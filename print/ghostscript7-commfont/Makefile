@@ -63,7 +63,7 @@ CJKEXM=		all_ac1.ps gscjk_ac.ps all_ag1.ps gscjk_ag.ps all_aj1.ps \
 # Other printer drivers are for those sold in Japan.
 # Addition for Chinese, Korean printers are welcome.
 #
-# gimp-print - very high quality driver for Epson, HPs,...
+# Gimp-print - very high quality driver for Epson, HPs,...
 GPRINT=		gimp-print
 GPRINT_VERS=	4.2.0
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
@@ -72,7 +72,7 @@ GPRINT_SITE=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,gimp-print,}
 
 # HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
 HPIJS=		hpijs
-HPIJS_VERS=	1.0.1
+HPIJS_VERS=	1.0.2
 HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
 HPIJS_SRC=	${HPIJS_NAME}.tar.gz
 HPIJS_SITE=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,hpinkjet,}
@@ -205,8 +205,8 @@ post-patch:
 		${WRKDIR}/${GS_CJK}/examples_${i}.patch
 .endfor
 # for HPinkjet driver
-	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
-		's|#include <malloc.h>||g'
+	${PERL} -pi -e 's|#include <malloc.h>||g' \
+		${WRKSRC}/${HPIJS_NAME}/platform.h
 
 pre-configure:
 	${ECHO_MSG} ">>> in pre-configure ..."
