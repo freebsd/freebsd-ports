@@ -19,13 +19,14 @@ USE_GMAKE=	yes
 USE_QT_VER=	2
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|\$$\(prefix\)/doc|\$$\(prefix\)/share/doc|' \
+	@${REINPLACE_CMD} -e 's|[$$](prefix)/doc|\$$\(prefix\)/share/doc|' \
 		${WRKSRC}/tuxcards/docs/en/Makefile.in
-	@${PERL} -pi -e 's|-O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 .ifdef(NOPORTDOCS)
-	@${PERL} -pi -e 's|install-data-am\: install-data-local||' \
+	@${REINPLACE_CMD} -e 's|install-data-am\: install-data-local||' \
 		${WRKSRC}/tuxcards/docs/en/Makefile.in
 .endif #NOPORTDOCS
 
