@@ -1554,4 +1554,4 @@ share/apache2/build/special.mk
 @dirrm libexec/apache2
 @dirrm lib/apache2
 @dirrm include/apache2
-@dirrm etc/apache2
+@unexec rmdir %D/etc/apache2 2> /dev/null || echo "===> If you plan to do not reinstall apache2, you can safely remove %D/etc/apache2."

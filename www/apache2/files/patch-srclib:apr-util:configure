@@ -1,0 +1,79 @@
+--- srclib/apr-util/configure.orig	Thu Nov  6 13:05:46 2003
++++ srclib/apr-util/configure	Thu Nov  6 13:05:30 2003
+@@ -7586,8 +7586,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0
+@@ -11281,8 +11281,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db_185.h"
+-  bdb_default_search_lib_names="db"
++  bdb_default_search_headers="db.h"
++  bdb_default_search_lib_names="c"
+ 
+ 
+   apu_have_db=0
+@@ -13401,8 +13401,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0
+@@ -13934,8 +13934,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0
+@@ -17113,8 +17113,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0
+@@ -22928,8 +22928,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0
+@@ -23461,8 +23461,8 @@
+     fi
+   fi
+   bdb_places="$places"
+-  bdb_default_search_headers="db4/db.h db.h"
+-  bdb_default_search_lib_names="db-4.1 db4 db"
++  bdb_default_search_headers="db41/db.h db4/db.h db.h"
++  bdb_default_search_lib_names="db41 db-4.1 db4 db"
+ 
+ 
+   apu_have_db=0

@@ -35,10 +35,43 @@ PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
 PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
 .endif
 
+# Documentation section
+.if defined(NO_CGI)
+MAKE_ENV+=	NO_CGI=yes
+PLIST_SUB+=	CGI="@comment "
+.else
+PLIST_SUB+=	CGI=""
+.endif
+
+.if defined(NO_ICONS)
+MAKE_ENV+=	NO_ICONS=yes
+PLIST_SUB+=	ICONS="@comment "
+.else
+PLIST_SUB+=	ICONS=""
+.endif
+
+.if defined(NO_WWWDATA)
+MAKE_ENV+=	NO_WWWDATA=yes
+PLIST_SUB+=	WWWDATA="@comment "
+.else
+PLIST_SUB+=	WWWDATA=""
+.endif
+
+.if defined(NO_ERROR)
+MAKE_ENV+=	NO_ERROR=yes
+PLIST_SUB+=	ERROR="@comment "
+.else
+PLIST_SUB+=	ERROR=""
+.endif
+
+
 # xDBM section
 #
 .if !defined(WITH_DBM) && defined(WITH_BERKELEYDB)
 WITH_DBM=db
+.endif
+.if defined(WITH_DBM) && !defined(WITH_BERKELEYDB)
+WITH_BERKELEYDB=	FreeBSD
 .endif
 
 .if defined(WITH_DBM)
@@ -47,22 +80,28 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 .   elif ${WITH_DBM:L} == "gdbm"
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
-.   elif ${WITH_DBM:L} == "db" || defined(WITH_BERKELEYDB)
-.       if !defined(WITH_BERKELEYDB)
-LIB_DEPENDS=		db4:${PORTSDIR}/databases/db4
-CONFIGURE_ARGS+=	--with-dbm=db4 \
-			--with-berkeley-db=${LOCALBASE}
+.   elif ${WITH_DBM:L} == "db" 
+.       if ${WITH_BERKELEYDB} == "FreeBSD"
+CONFIGURE_ARGS+=	--with-dbm=db185 \
+			--with-berkeley-db=/usr
 .       elif ${WITH_BERKELEYDB} == "db2"
-LIB_DEPENDS=		db2:${PORTSDIR}/databases/db2
+LIB_DEPENDS+=		db2:${PORTSDIR}/databases/db2
 CONFIGURE_ARGS+=	--with-dbm=db2 \
 			--with-berkeley-db=${LOCALBASE}
 .       elif ${WITH_BERKELEYDB} == "db3"
-LIB_DEPENDS=		db2:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=		db3:${PORTSDIR}/databases/db3
 CONFIGURE_ARGS+=	--with-dbm=db3 \
 			--with-berkeley-db=${LOCALBASE}
 .       elif ${WITH_BERKELEYDB} == "db4"
-LIB_DEPENDS=		db4:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=		db4:${PORTSDIR}/databases/db4
 CONFIGURE_ARGS+=	--with-dbm=db4 \
+			--with-berkeley-db=${LOCALBASE}
+.           if exists(${LOCALBASE}/lib/libdb41.so)
+BROKEN=		"It seems you have db41 installed. Current configuration process will choose it. Please use WITH_BERKELEYDB=db41"
+.           endif
+.       elif ${WITH_BERKELEYDB} == "db41"
+LIB_DEPENDS+=		db41:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=	--with-dbm=db41 \
 			--with-berkeley-db=${LOCALBASE}
 .       else
 BROKEN=		"Unknown Berkeley DB version"
@@ -78,13 +117,13 @@ CONFIGURE_ARGS+=	--with-dbm=sdbm
 # How does it works ?
 # << TO BE WRITTEN >>
 # All supported modules
-AUTH_MODULES=		auth auth_anon auth_dbm auth_digest
+AUTH_MODULES=		access auth auth_anon auth_dbm auth_digest
 DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
 			optional_hook_export optional_hook_import \
 			optional_fn_import optional_fn_export
 LDAP_MODULES=		ldap auth_ldap
-MISC_MODULES=		access actions alias asis autoindex cache cern_meta \
+MISC_MODULES=		actions alias asis autoindex cache cern_meta \
 			cgi cgid charset_lite  deflate dir disk_cache env expires \
 			file_cache headers imap include info log_config logio mime \
 			mime_magic negotiation rewrite setenvif speling status \
