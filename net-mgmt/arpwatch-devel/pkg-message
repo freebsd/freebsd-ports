@@ -1,0 +1,12 @@
+
+*** ATTENTION ***
+
+To run arpwatch from startup, add
+arpwatch_enable="YES" to /etc/rc.conf
+
+Available variables you add/set to /etc/rc.conf.
+- arpwatch_enable (bool):      Set to "NO" by default.
+                               Set it to "YES" to enable arpwatch.
+- arpwatch_flags (str):        Set to "-N" by default.
+                               Extra flags passed to start command.
+

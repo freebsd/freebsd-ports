@@ -1,60 +1,31 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-if [ -r /etc/defaults/rc.conf ]; then
-	. /etc/defaults/rc.conf
-	source_rc_confs
-elif [ -r /etc/rc.conf ]; then
-	. /etc/rc.conf
-fi
+# PROVIDE: arpwatch
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-prog=$(realpath $0) || exit 1
-dir=${prog%/*}
-PREFIX=${dir%/etc/rc.d}
+#
+# Add the following lines to /etc/rc.conf to enable arpwatch:
+# arpwatch_enable (bool):     Set to "NO" by default.
+#                             Set it to "YES" to enable arpwatch
+# arpwatch_flags (str):       Set to "-N" by default.
+#                             Extra flags passed to start command
+#
+. %%RC_SUBR%%
 
-if [ ."$dir" = ."$prog" -o ."$PREFIX" = ."$dir" ]
-then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 1
-fi
+name="arpwatch"
+rcvar=`set_rcvar`
 
-case $1 in
-start)
-	if [ ! -e "$PREFIX"/arpwatch/arp.dat ]; then
-		if [ -e "$PREFIX"/arpwatch/arp.dat- ]; then
-			cp "$PREFIX"/arpwatch/arp.dat- "$PREFIX"/arpwatch/arp.dat
-		else
-			touch "$PREFIX"/arpwatch/arp.dat
-		fi
-	fi
+command="%%PREFIX%%/sbin/arpwatch"
 
-	if [ ! -e "$PREFIX"/arpwatch/ether.dat ]; then
-		if [ -e "$PREFIX"/arpwatch/ether.dat- ]; then
-			cp "$PREFIX"/arpwatch/ether.dat- "$PREFIX"/arpwatch/ether.dat
-		else
-			touch "$PREFIX"/arpwatch/ether.dat
-		fi
-	fi
+[ -z "$arpwatch_enable" ]       && arpwatch_enable="NO"
+[ -z "$arpwatch_flags" ]        && arpwatch_flags="-N"
 
-	case ${arpwatch_interfaces} in
-	'')
-		if [ -x "$PREFIX"/sbin/arpwatch -a -d "$PREFIX"/arpwatch ]; then
-			"$PREFIX"/sbin/arpwatch ${arpwatch_flags} && echo -n ' arpwatch'
-		fi
-		;;
-	*)
-		for interface in ${arpwatch_interfaces}; do
-			"$PREFIX"/sbin/arpwatch -i "${interface}" && echo -n " arpwatch(${interface})"
-		done
-		;;
-	esac
-	;;
-stop)
-	killall arpwatch && echo -n ' arpwatch'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+load_rc_config $name
 
-exit 0
+run_rc_command "$1"
+
