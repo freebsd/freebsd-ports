@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sort-ArbBiLex
-PORTVERSION=	3.32
+PORTVERSION=	3.4
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Sort
@@ -16,7 +16,7 @@ MAINTAINER=	tobez@tobez.org
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Sort::ArbBiLex.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Sort::ArbBiLex.3
 
 .include <bsd.port.mk>

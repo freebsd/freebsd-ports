@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3.pm
+lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Resample.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Playlist.pm
 lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3/Sorted.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/MP3/.packlist
@@ -11,4 +12,7 @@ share/Apache-MP3/playlist.gif
 share/Apache-MP3/right_arrow.gif
 share/Apache-MP3/sound.gif
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/MP3
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/MP3
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
 @dirrm share/Apache-MP3
