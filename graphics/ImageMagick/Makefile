@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.0.5
+PORTVERSION=	5.4.1.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -111,12 +111,12 @@ PLIST_SUB+=	X11=''
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
-		s|LIBLTDL=.*\n|LIBLTDL="-lltdl"\n|g ; \
-		s|INCLTDL=.*\n|INCLTDL=\n|g ; \
+		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
+		s|INCLTDL=.*$$|INCLTDL=|g ; \
 		s|lcms/lcms.h|lcms.h|g ; \
 		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(top_builddir\)/ltdl/libltdlc.la|\$$\(LIBLTDL\)|g'
+		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g'
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 
