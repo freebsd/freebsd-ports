@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.102 1998/12/01 21:04:58 billf Exp $
+# $Id: Makefile,v 1.103 1998/12/05 16:32:32 flathill Exp $
 #
 
     SUBDIR += 4va
@@ -77,6 +77,7 @@
     SUBDIR += rayshade
     SUBDIR += sane
     SUBDIR += sced
+    SUBDIR += sketch
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += stamp
