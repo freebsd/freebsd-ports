@@ -33,10 +33,10 @@ PLIST=		${WRKDIR}/.PLIST.more
 USE_OPENSSL=	yes
 .endif
 .if defined(SENDMAIL_WITH_SASL)
-BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
+LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
 .endif
 .if defined(SENDMAIL_WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
