@@ -1,8 +1,10 @@
 --- Makefile.orig	Thu Sep 17 01:42:06 1998
-+++ Makefile	Sun Sep 20 20:12:26 1998
-@@ -1,20 +1,23 @@
++++ Makefile	Mon Sep 21 07:45:06 1998
+@@ -1,20 +1,25 @@
 +LIBS=	-L${X11BASE}/lib -lm -lX11 -lXt -lXmu -lXaw -lXpm
++.if ${PORTOBJFORMAT} == "elf"
 +LDFLAGS=-Wl,-rpath,${X11BASE}/lib
++.endif
 +CFLAGS+=-I${X11BASE}/include
 +
  eyeclock :	eyegraph.o eyeinit.o eyemain.o eyequit.o eyestr.o eyetime.o
@@ -32,7 +34,7 @@
  clean :
  		rm *.o eyeclock
  backup :
-@@ -36,19 +39,19 @@
+@@ -36,19 +41,19 @@
  		cp sample2 sample2.bak
  		cp sample2.xpm sample2.xpm.bak
  install :
