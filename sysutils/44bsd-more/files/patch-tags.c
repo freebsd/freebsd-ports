@@ -1,12 +1,6 @@
-diff -U8 -r ../work.orig/tags.c ./tags.c
---- ../work.orig/tags.c	Fri Jan  5 22:17:02 2001
-+++ ./tags.c	Fri Jan  5 22:36:53 2001
-@@ -37,17 +37,17 @@
- #endif /* not lint */
- 
- #ifndef lint
- static const char rcsid[] =
-   "$FreeBSD$";
+--- tags.c.orig	Fri Jan 12 15:52:49 2001
++++ tags.c	Fri Jan 12 15:55:10 2001
+@@ -42,7 +42,7 @@
  #endif /* not lint */
  
  #include <sys/types.h>
@@ -15,7 +9,3 @@ diff -U8 -r ../work.orig/tags.c ./tags.c
  
  #include <ctype.h>
  #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
- 
- #include "less.h"
