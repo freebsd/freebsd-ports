@@ -1,0 +1,37 @@
+--- lib/viewcvs.py.orig	2004-10-20 15:03:41.000000000 +0200
++++ lib/viewcvs.py	2004-10-20 16:37:35.000000000 +0200
+@@ -2455,10 +2455,17 @@ def generate_tarball_header(out, name, s
+ def generate_tarball(out, relative, directory, tag, stack=[]):
+   subdirs = [ ]
+   rcs_files = [ ]
++  if relative == 'CVSROOT' and cfg.options.hide_cvsroot:
++    return
++
+   for file, pathname, isdir in get_file_data(directory):
+     if pathname == _UNREADABLE_MARKER:
+       continue
+     if isdir:
++      if file == 'CVSROOT' and relative.find('/') == -1 and cfg.options.hide_cvsroot:
++        continue
++      if relative.find('/') == -1 and cfg.is_forbidden(file):
++        continue
+       subdirs.append(file)
+     else:
+       rcs_files.append(file)
+@@ -2583,6 +2590,16 @@ def main():
+            '</body></html>\n')
+     return
+ 
++  if where == 'CVSROOT' and cfg.options.hide_cvsroot:
++    print "Status: 400"
++    http_header()
++    print ('<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">\n'
++           '<html><head>\n<title>400 Bad Request</title>\n'
++           '</head><body>\n'
++           '<H1>Bad Request</H1>\n Listing of CVSROOT is disallowed.<p>\n'
++           '</body></html>\n')
++    return
++
+   ### look for GZIP binary
+ 
+   # if we have a directory and the request didn't end in "/", then redirect
