@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTVERSION=	1.1.9
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/devel/ \
@@ -28,7 +27,7 @@ CONFLICTS=	gnutls-[0-9]*
 
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
