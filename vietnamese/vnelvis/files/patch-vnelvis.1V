@@ -1,0 +1,138 @@
+--- vnelvis.1V.orig	Mon Apr 12 14:48:10 1993
++++ vnelvis.1V	Wed Aug 22 11:53:06 2001
+@@ -12,12 +12,12 @@
+ .PP
+-.PN Vnelvis
++.B Vnelvis
+ is an adaptation of Steve Kirkendall's
+ public domain
+-.PN vi
++.B vi
+ clone,
+-.PN elvis
++.B elvis
+ command.  It is preferable to
+-.PN vi
++.B vi
+ because most current
+-.PN vi
++.B vi
+ implementations allow only 7-bit text editing
+@@ -27,13 +27,13 @@
+ those features specific to
+-.PN vnelvis ;
++.B vnelvis ;
+ please consult the documentation for
+-.PN elvis
++.B elvis
+ and
+-.PN vi
++.B vi
+ for the rest of the story.  If you are already
+ familiar with
+-.PN vi ,
++.B vi ,
+ no special training is necessary.
+ .PP
+-.PN Vnelvis
++.B Vnelvis
+ allows user to edit 
+@@ -48,8 +48,8 @@
+ In order to use
+-.PN vnelvis,
++.B vnelvis,
+ you must have a terminal capable of
+ displaying Vietnamese, e.g.,
+-.MS vnterm 1V
++.B vnterm 1V
+ or
+-.MS vietterm 1V
++.B vietterm 1V
+ .PP
+@@ -57,6 +57,6 @@
+ with
+-.PN vnelvis:
++.B vnelvis:
+ .I vnkeys .
+ It is handled as regular
+-.PN vi
++.B vi
+ variables and can be set with your .exrc or
+@@ -80,7 +80,7 @@
+ be performed; when it is off,
+-.PN vnelvis
++.B vnelvis
+ behaves as a regular
+-.PN elvis
++.B elvis
+ or
+-.PN vi ,
++.B vi ,
+ except that 8-bit data is supported.
+@@ -94,7 +94,7 @@
+ start
+-.PN vnelvis
++.B vnelvis
+ from within a
+-.PN vnterm
++.B vnterm
+ or
+-.PN vietterm
++.B vietterm
+ window, which is already doing its Vietnamese keyboard filtering.
+@@ -115,10 +115,10 @@
+ When using
+-.PN vnelvis
++.B vnelvis
+ in conjunction with
+-.MS vnterm 1V ,
++.B vnterm 1V ,
+ remember to turn off keyboard processing by
+ either
+-.PN vnelvis
++.B vnelvis
+ or
+-.PN vnterm ,
++.B vnterm ,
+ otherwise the results of your keypresses going
+@@ -127,3 +127,3 @@
+ .IP o
+-.PN vnelvis
++.B vnelvis
+ is currently the only alternative that
+@@ -133,10 +133,10 @@
+ using
+-.PN vnelvis
++.B vnelvis
+ and
+-.PN vnterm ,
++.B vnterm ,
+ it is recommended that you turn on
+-.PN vnelvis 's
++.B vnelvis 's
+ keyboard filter (:set vnkeys)
+ and turn off
+-.PN vnterm 's
++.B vnterm 's
+ keyboard filtering.  This will ensure that
+@@ -147,7 +147,7 @@
+ if you prefer leaving
+-.PN vnterm 's
++.B vnterm 's
+ or
+-.PN vietterm 's
++.B vietterm 's
+ keyboard filtering on and turn off
+-.PN vnelvis 's
++.B vnelvis 's
+ keyboard filter, you may find commands such as
+@@ -156,3 +156,3 @@
+ character "d-bar" before it is sent to
+-.PN vnelvis.
++.B vnelvis.
+ Therefore you must either type "d\\d"
+@@ -161,3 +161,3 @@
+ implemented in
+-.PN vnelvis
++.B vnelvis
+ as a substitute for "dd".

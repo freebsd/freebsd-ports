@@ -13,18 +13,18 @@ vnterm \- X-terminal with Vietnamese
 [\fIregular_xterm_options\fP]
 .SH DESCRIPTION
 .NXR "vnterm command"
-Version 3.3 of
-.PN vnterm
-is an adaptation of the X11R5
-.MS xterm 1X
+Version 3.4 of
+.B vnterm
+is an adaptation of the X11R6.5.1
+.B xterm 1X
 command.  This manual page describes only
 those features specific to
-.PN vnterm ;
+.B vnterm ;
 please consult the manual page for
-.MS xterm 1X
+.B xterm 1X
 for the rest of the story.
 .PP
-.PN Vnterm
+.B Vnterm
 allows the X-environment user to type and
 display Vietnamese text.  The keyboard input
 scheme follows the
@@ -34,7 +34,7 @@ Vietnamese networking convention of placing Vietnamese
 diacritical marks after the vowel, for example: "Vie^.t Nam".
 .PP
 With the appropriate font setting,
-.PN vnterm
+.B vnterm
 can display both 7-bit and 8-bit
 Vietnamese text.  The 7-bit text is assumed
 to follow the
@@ -47,7 +47,7 @@ both published by the Viet-Std working group
 (Viet-Std@Haydn.Stanford.EDU).
 .PP
 On start-up,
-.PN vnterm
+.B vnterm
 attempts to set the tty line to 8-bit mode,
 with canonical echoing of control characters turned off
 (because the Vietnamese characters "A(? A(~ A^~ Y? Y~ Y."
@@ -64,7 +64,7 @@ can also be found and set
 in the
 "VT\ Options"
 menu of
-.PN vnterm ,
+.B vnterm ,
 which you may access by clicking the CTRL-middle-mouse-button
 combination.
 The corresponding X resources are:
@@ -87,7 +87,7 @@ Vietnamese composition takes place.
 The erase character (which is needed to backspace
 over the Vietnamese letter being composed)
 is figured from the terminal settings at the time
-.PN vnterm
+.B vnterm
 is invoked.  In those cases where it is necessary
 to specify another erase character,
 .I vnEraseCharacter
@@ -164,17 +164,19 @@ in which almost all keys are passed literally.
 .IP o 
 If your shell is tcsh, you may find that it's unfriendly
 to 8-bit data; this means Vietnamese characters cannot
-be used.  Use csh in the
-.PN vnterm
+be used.  Use
+.I sh
+in the
+.B vnterm
 window instead.
 .PP
 .IP o
 In some cases
-.PN vnterm
+.B vnterm
 may fail to set the terminal mode correctly for 8-bits.
 This will happen when your shell is "smart" and undoes the
 settings performed by
-.PN vnterm
+.B vnterm
 on start-up.
 In this case issue the command:
 .EX
@@ -188,7 +190,7 @@ with 7-bit Vietnamese that is conformant to the VIQR
 standard.
 With the Viet-Net style text alone, there are potential
 ambiguities which
-.PN vnterm
+.B vnterm
 will not interpret correctly, e.g., in displaying
 the question "La`m chi?", where the question mark
 will be taken to be a hook-above (da^'u ho?i),
@@ -203,9 +205,9 @@ causing it not to display Vietnamese properly afterwards.
 When this happens, simply turn the screen filter
 off and on again, by using the CTRL-middle-mouse-button
 menu of
-.PN vnterm.
+.B vnterm.
 .SH AUTHOR
-4.4BSD porting by David O'Brien <obrien@cs.ucdavis.edu>
+4.4BSD porting and X11R6 updating by David O'Brien <obrien@cs.ucdavis.edu>
 .PP
 Adapted from X11R5's xterm by
 Tin Le <tin@saigon.com>
