@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	platex-jsclasses
-PORTVERSION=	1.0.20040429
+PORTVERSION=	1.0.20040808
 CATEGORIES=	japanese print
 MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0 \
 		http://oku.edu.mie-u.ac.jp/~okumura/texfaq/:1
@@ -17,7 +17,8 @@ DISTFILES=	${PORTNAME:S/^platex-//}-${PORTVERSION:S/^1.0.20//}${EXTRACT_SUFX}:0 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
+		ptex:${PORTSDIR}/japanese/ptex-tetex \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 
 USE_ZIP=	YES
