@@ -1,5 +1,5 @@
---- config.c.orig	Sat Feb  2 11:57:44 2002
-+++ config.c	Sun Mar  3 16:28:41 2002
+--- config.c.orig	Sat Feb  2 10:57:44 2002
++++ config.c	Sun Mar 17 11:19:00 2002
 @@ -2050,6 +2050,7 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
@@ -8,3 +8,13 @@
              else if (strstr(ln, "Pentium III")) mach = IntPIII;
              else if (strstr(ln, "Pentium II ")) mach = IntPII;
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
+@@ -3018,6 +3019,9 @@
+    }
+    if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
+ 
++   fpout = fopen("ARCHNAME", "w");
++   fprintf(fpout, "%s", ARCH);
++   fclose(fpout);
+    ATL_mprintf(2, fplog, stdout,"\nCreating make include file Make.%s\n", ARCH);
+    sprintf(ln, "Make.%s", ARCH);
+    fpout = fopen(ln, "w");
