@@ -7,7 +7,7 @@
 
 PORTNAME=	flashplugin-firefox
 PORTVERSION=	0.4.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.swift-tools.net/Flash/
 DISTNAME=	flash-${PORTVERSION}
