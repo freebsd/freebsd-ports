@@ -95,6 +95,8 @@ include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/windows/accctrl.h
 include/wine/windows/audevcod.h
+include/wine/windows/axcore.idl
+include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/cderr.h
 include/wine/windows/cguid.h
@@ -109,15 +111,20 @@ include/wine/windows/d3d.h
 include/wine/windows/d3d8.h
 include/wine/windows/d3d8caps.h
 include/wine/windows/d3d8types.h
+include/wine/windows/d3d9.h
+include/wine/windows/d3d9caps.h
+include/wine/windows/d3d9types.h
 include/wine/windows/d3dcaps.h
 include/wine/windows/d3dhal.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx8core.h
+include/wine/windows/dbghelp.h
 include/wine/windows/dde.h
 include/wine/windows/ddeml.h
 include/wine/windows/ddraw.h
 include/wine/windows/ddrawi.h
+include/wine/windows/devenum.idl
 include/wine/windows/digitalv.h
 include/wine/windows/dinput.h
 include/wine/windows/dispdib.h
@@ -135,12 +142,15 @@ include/wine/windows/dmusicf.h
 include/wine/windows/dmusici.h
 include/wine/windows/dmusics.h
 include/wine/windows/docobj.h
+include/wine/windows/dpaddr.h
 include/wine/windows/dplay.h
+include/wine/windows/dplay8.h
 include/wine/windows/dplobby.h
 include/wine/windows/dsconf.h
 include/wine/windows/dshow.h
 include/wine/windows/dsdriver.h
 include/wine/windows/dsound.h
+include/wine/windows/dyngraph.idl
 include/wine/windows/excpt.h
 include/wine/windows/fci.h
 include/wine/windows/fdi.h
@@ -228,6 +238,7 @@ include/wine/windows/sqlext.h
 include/wine/windows/sqltypes.h
 include/wine/windows/storage.h
 include/wine/windows/strmif.h
+include/wine/windows/strmif.idl
 include/wine/windows/tapi.h
 include/wine/windows/tchar.h
 include/wine/windows/tlhelp32.h
@@ -294,6 +305,7 @@ lib/wine/ctl3d.dll.so
 lib/wine/ctl3d32.dll.so
 lib/wine/ctl3dv2.dll.so
 lib/wine/d3d8.dll.so
+lib/wine/d3d9.dll.so
 lib/wine/d3dim.dll.so
 lib/wine/d3dx8.dll.so
 lib/wine/dciman32.dll.so
@@ -342,6 +354,7 @@ lib/wine/libcrtdll.def
 lib/wine/libcrypt32.def
 lib/wine/libctl3d32.def
 lib/wine/libd3d8.def
+lib/wine/libd3d9.def
 lib/wine/libd3dim.def
 lib/wine/libd3dx8.def
 lib/wine/libdciman32.def
@@ -386,6 +399,7 @@ lib/wine/libntdll.def
 lib/wine/libntdll.dll.so
 lib/wine/libodbc32.def
 lib/wine/libole32.def
+lib/wine/liboleacc.def
 lib/wine/liboleaut32.def
 lib/wine/libolecli32.def
 lib/wine/liboledlg.def
@@ -470,6 +484,7 @@ lib/wine/ole2nls.dll.so
 lib/wine/ole2prox.dll.so
 lib/wine/ole2thk.dll.so
 lib/wine/ole32.dll.so
+lib/wine/oleacc.dll.so
 lib/wine/oleaut32.dll.so
 lib/wine/olecli.dll.so
 lib/wine/olecli32.dll.so
