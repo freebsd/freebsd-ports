@@ -1,0 +1,32 @@
+--- configure.orig	Fri Jan 14 14:09:13 2000
++++ configure	Fri Jan 14 14:13:12 2000
+@@ -1047,7 +1047,10 @@
+ 
+ #
+ #  Is $SYBASE defined?
+-#
++#  -- it should have some defaults...
++
++SYBASE=/usr/local/
++
+ echo $ac_n "checking Open Client installation""... $ac_c" 1>&6
+ echo "configure:1053: checking Open Client installation" >&5
+ 
+@@ -1095,7 +1098,7 @@
+ 	# The basic client libraries that are always needed
+ 	# on all platforms.
+ 	#
+-	SYBASE_LIBS="-lblk -lcs -lct -lcomn -ltcl -lintl"
++	SYBASE_LIBS="-lct -lintl"
+ 
+ 	MAJOR_VERSION=`echo $SYBASE_VERSION | cut -d '.' -f 1`
+ 
+@@ -1128,6 +1131,8 @@
+ 	case "${host_os}" in
+ 		linux*)
+ 			SYBASE_OS="-ldl -lm";;
++		freebsd*)
++			SYBASE_OS="-lm";;
+ 		irix*)
+ 			SYBASE_OS="-lnsl -lm";;
+ 		ncr*)

@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Jan  6 04:38:41 1999
++++ Makefile.in	Fri Jan 14 14:44:07 2000
+@@ -190,6 +190,8 @@
+ $(TARGET) : $(OBJS) sqsh_main.o
+ 	$(CC) $(LDFLAGS) $(OBJS) sqsh_main.o $(LIBS) -o $@
+ 
++all : $(TARGET)
++
+ sqsh_test : $(OBJS) sqsh_test.o
+ 	$(CC) $(LDFLAGS) $(OBJS) sqsh_test.o $(LIBS) -o $@
+ 
+@@ -206,7 +208,7 @@
+ distclean : realclean
+ 	rm -f configure Makefile config.h
+ 
+-install : $(TARGET)
++install : $(TARGET) install.man
+ 	$(INSTALL_DIR) $(bin_dir)
+ 	$(INSTALL_PROG) $(TARGET) $(bin_dir)/$(TARGET)
+ 
