@@ -20,6 +20,7 @@ DOCDIR=		share/doc/${PORTNAME}
 MAN1=		swm.1 swmbg.1
 MAKEFILE=	Makefile-xpm
 PLIST=		${WRKDIR}/pkg-plist
+PLIST_DIRS=	share/swm/pixmaps share/swm
 SCRIPTS=	startswm
 USE_GMAKE=	yes
 USE_XPM=	yes
