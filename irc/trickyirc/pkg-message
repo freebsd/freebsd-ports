@@ -1,0 +1,10 @@
+*********************************************************************
+You need to do the following to be able to actually use TrickyIRC:
+
+mkdir ~/.trickyirc/; mkdir ~/.trickyirc/logs/
+
+Edit the /usr/local/share/examples/TrickyIRC/config.sample file 
+and save it as ~/.trickyirc/config.
+
+Please read /usr/local/share/doc/TrickyIRC/README before using!
+*********************************************************************
