@@ -438,6 +438,7 @@
     SUBDIR += perl2html
     SUBDIR += php4-ctype
     SUBDIR += php4-domxml
+    SUBDIR += php4-pspell
     SUBDIR += php4-xml
     SUBDIR += php5-xml
     SUBDIR += pocketreader
