@@ -3,20 +3,21 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.54 1999/06/08 10:11:02 dirk Exp $
+# $Id: Makefile,v 1.55 1999/06/22 00:44:50 billf Exp $
 #
 
-DISTNAME=	mysql-3.22.23b
+DISTNAME=	mysql-3.22.23b-client
+DISTFILES=	mysql-3.22.23b${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/mysql-3.22.23b
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.digex.net/pub/database/mysql/Downloads/MySQL-3.22/ \
+		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.bse.bg/pub/Unix/database/MySQL/ \
 		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
 MAINTAINER=	dan@trinsec.com
 
-BROKEN=		'Awaiting update after a repository copy'
 Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
 
 MAN1=		mysql.1
@@ -27,7 +28,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-perl \
 		--without-debug \
 		--without-readline \
-		--without-bench
+		--without-bench \
+		--without-server
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -72,19 +74,6 @@ pre-install:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
-.if !defined(PACKAGE_BUILDING)
-	${PREFIX}/bin/mysql_install_db
-.endif
-	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "${LDCONFIG} -m ${PREFIX}/lib/mysql" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "if [ -x ${PREFIX}/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "	${PREFIX}/bin/safe_mysqld > /dev/null & && ${ECHO} -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ /bin/chmod 750 ${PREFIX}/etc/rc.d/mysql.sh
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mysql
