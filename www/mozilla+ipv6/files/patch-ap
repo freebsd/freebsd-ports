@@ -1,0 +1,58 @@
+--- security/coreconf/config.mk.orig	Thu Jan 18 21:58:30 2001
++++ security/coreconf/config.mk	Thu Jan 18 21:58:41 2001
+@@ -56,7 +56,7 @@
+ #       each OS release.                                              #
+ #######################################################################
+ 
+-ifeq (,$(filter-out NetBSD,$(OS_TARGET)))
++ifeq (,$(filter-out FreeBSD,$(OS_TARGET)))
+ include $(CORE_DEPTH)/coreconf/$(OS_TARGET).mk
+ else
+ include $(CORE_DEPTH)/coreconf/$(OS_CONFIG).mk
+--- security/psm/Makefile.in.orig	Thu Jan 18 22:00:05 2001
++++ security/psm/Makefile.in	Thu Jan 18 22:00:19 2001
+@@ -28,7 +28,7 @@
+ CORE_DEPTH=$(topsrcdir)/security
+ 
+ include $(CORE_DEPTH)/coreconf/arch.mk
+-ifeq (,$(filter-out NetBSD,$(OS_TARGET)))
++ifeq (,$(filter-out FreeBSD,$(OS_TARGET)))
+ include $(CORE_DEPTH)/coreconf/$(OS_TARGET).mk
+ else
+ include $(CORE_DEPTH)/coreconf/$(OS_CONFIG).mk
+--- security/psm/server/Makefile.orig	Tue Dec 19 17:24:58 2000
++++ security/psm/server/Makefile	Fri Jan 19 03:49:36 2001
+@@ -37,7 +37,7 @@
+ endif
+ 
+ ifneq ($(OS_ARCH), WINNT)
+-ifeq ($(OS_ARCH), Linux)
++ifeq ($(OS_ARCH), FreeBSD)
+ # On linux, we link with libstdc++ (we're always using egcs on linux, right?)
+ CPLUSPLUSRUNTIME = -L /usr/lib -lstdc++ -lm
+ else
+@@ -57,11 +57,11 @@
+ endif
+ endif
+ 
+-ifeq ($(OS_ARCH), Linux)
++ifeq ($(OS_ARCH), FreeBSD)
+ ifdef USE_PTHREADS
+ # Replace OS_LIBS, because the order of libpthread, libdl, and libc are
+ # very important. Otherwise you get horrible crashes.
+-OS_LIBS = -lpthread -ldl -lc
++OS_LIBS = -pthread
+ endif
+ endif
+ 
+@@ -158,8 +158,8 @@
+ XPCOM_LINK_LIBS = -lxpcom
+ XPCOM_LIBS += $(DIST)/lib/libz.$(DLL_SUFFIX)
+ else
+-NSPR_LINK_LIBS = $(NSPR_LIBS)
+-XPCOM_LINK_LIBS	= $(XPCOM_LIBS)
++NSPR_LINK_LIBS = -L$(DIST)/lib -lnspr4 -lplc4 -lplds4
++XPCOM_LINK_LIBS = -lxpcom
+ endif
+ 
+ ifndef MOZ_DIST
