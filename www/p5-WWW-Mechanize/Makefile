@@ -23,7 +23,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
-		WWW::Mechanize::Link.3
+		WWW::Mechanize::Link.3 WWW::Mechanize::Image.3
 MAN1=		mech-dump.1
 
 .include <bsd.port.pre.mk>

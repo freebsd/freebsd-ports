@@ -3,6 +3,7 @@ bin/mech-dump
 %%SITE_PERL%%/WWW/Mechanize/Cookbook.pod
 %%SITE_PERL%%/WWW/Mechanize/Examples.pod
 %%SITE_PERL%%/WWW/Mechanize/FAQ.pod
+%%SITE_PERL%%/WWW/Mechanize/Image.pm
 %%SITE_PERL%%/WWW/Mechanize/Link.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
