@@ -7,6 +7,7 @@
 
 PORTNAME=	smarty
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
