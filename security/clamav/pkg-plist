@@ -15,6 +15,7 @@ lib/libclamav.a
 etc/clamav.conf.default
 @exec [ -f %B/clamav.conf ] || cp %B/%f %B/clamav.conf
 etc/rc.d/clamav-clamd%%RC_SUFX%%
+etc/rc.d/clamav-freshclam%%RC_SUFX%%
 @owner clamav
 @group clamav
 %%DATADIR%%/daily.cvd
