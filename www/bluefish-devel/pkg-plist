@@ -20,53 +20,55 @@ share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
 share/gnome/apps/Applications/bluefish.desktop
 share/gnome/pixmaps/bluefish-icon.png
+share/locale/cs/LC_MESSAGES/bluefish.mo
 share/locale/da/LC_MESSAGES/bluefish.mo
 share/locale/de/LC_MESSAGES/bluefish.mo
+share/locale/el/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
 share/locale/hu/LC_MESSAGES/bluefish.mo
 share/locale/it/LC_MESSAGES/bluefish.mo
 share/locale/ja/LC_MESSAGES/bluefish.mo
+share/locale/nl/LC_MESSAGES/bluefish.mo
 share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
 share/locale/pt_BR/LC_MESSAGES/bluefish.mo
+share/locale/ro/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
-@unexec rmdir share/nls/POSIX 2>/dev/null || true
-@unexec rmdir share/nls/en_US.US-ASCII 2> /dev/null || true
-@unexec rmdir share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/zh_CN 2>/dev/null || true
-@unexec rmdir share/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/sv 2>/dev/null || true
-@unexec rmdir share/locale/ru/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/ru 2>/dev/null || true
-@unexec rmdir share/locale/pl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/pl 2>/dev/null || true
-@unexec rmdir share/locale/no_nb/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/no_nb 2>/dev/null || true
-@unexec rmdir share/locale/no/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/no 2>/dev/null || true
-@unexec rmdir share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/nl_NL 2>/dev/null || true
-@unexec rmdir share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/it 2>/dev/null || true
-@unexec rmdir share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/hu 2>/dev/null || true
-@unexec rmdir share/locale/gr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/gr 2>/dev/null || true
-@unexec rmdir share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/fr 2>/dev/null || true
-@unexec rmdir share/locale/fi/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/fi 2>/dev/null || true
-@unexec rmdir share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/es 2>/dev/null || true
-@unexec rmdir share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/de 2>/dev/null || true
-@unexec rmdir share/locale/da_DK/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/da_DK 2>/dev/null || true
-@unexec rmdir share/locale/da/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/da 2>/dev/null || true
-@unexec rmdir share/locale/ar/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir share/locale/ar 2>/dev/null || true
-@unexec rmdir share/locale 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/no_nb/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no_nb 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl_NL 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/gr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/da_DK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da_DK 2>/dev/null || true
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/bluefish
