@@ -12,6 +12,9 @@ MASTER_SITES=	http://xchat.org/files/source/1.4/ \
 		http://xchat.linuxpower.org/files/source/1.4/
 
 MAINTAINER=	jim@FreeBSD.org
+# This port has a slave port japanese/xchat.  Do not carelessly overwrite
+# the variables or the targets defined in it.  When you need to, please
+# contact its maintainer.
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
@@ -20,11 +23,13 @@ USE_PERL5=	yes
 USE_IMLIB=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-python
+# Assign with `+=' for slave ports
+CONFIGURE_ARGS+=--disable-python
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SOCKS)
+# Assign with `+=' for slave ports
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=--enable-socks
 .endif
@@ -36,7 +41,7 @@ CONFIGURE_ARGS+=--enable-gnome --enable-panel --enable-gdk-pixbuf
 CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
 .endif
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
