@@ -8,7 +8,7 @@
 PORTNAME=	tclX
 PORTVERSION=	8.0.4
 CATEGORIES=	lang tcl80 tk80
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
+MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/tclx-distrib/
 DISTNAME=	tclX8.0.4
 
 MAINTAINER=	ports@FreeBSD.org
