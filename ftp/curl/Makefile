@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.12.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -67,12 +67,21 @@ PLIST_SUB+=	SSL="@comment "
 CONFIGURE_ARGS += --with-krb4=/usr
 .endif
 
-CONFIGURE_ARGS += --without-libidn
+.if !defined(WITHOUT_LIBIDN) && (defined(WITH_LIBIDN) || exists(${LOCALBASE}/lib/libidn.so))
+LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
+CONFIGURE_ARGS+= --with-libidn=${LOCALBASE}
+.else
+CONFIGURE_ARGS+= --without-libidn
+.endif
 
-# Setting LANG=C is a kludge; maybe curl/libcurl shouldn't actually use
+.if defined(WITH_CURL_DEBUG)
+CONFIGURE_ARGS+= --enable-debug
+.endif
+
+# Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
 # the user's locale when dates are sent to the server.
 test:	build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LANG=C ${MAKE} test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} LC_ALL=C ${MAKE} test
 
 .if !defined(NOPORTDOCS)
 post-install:
