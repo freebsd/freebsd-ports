@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/I18N/LangTags.pm
-lib/perl5/site_perl/%%PERL_VER%%/I18N/LangTags/List.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/LangTags/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N/LangTags
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/I18N
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/I18N/LangTags
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/I18N
+%%SITE_PERL%%/I18N/LangTags.pm
+%%SITE_PERL%%/I18N/LangTags/List.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/LangTags/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/LangTags
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N 2>/dev/null || true
+@dirrm %%SITE_PERL%%/I18N/LangTags
+@unexec rmdir %D/%%SITE_PERL%%/I18N 2>/dev/null || true
