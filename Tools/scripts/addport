@@ -307,15 +307,22 @@ foreach my $thisdir (@dirs) {
 
 	# now let's insert it
 	my $cmd;
-	if ($port eq "") {
+	if (scalar @ports == 0) {
 		# there were no previous SUBDIR += lines, so we're going to
 		# put ourselves after the last comment (we can't be after a
 		# .include <bsd.port.subdir.mk> for example).
 		my $lastcommentnum = &lastcomment;
 		$cmd = "$lastcommentnum\n+\ni\n";
 	} else {
-		# OK, append ourselves in the right place, so things *stay* sorted.
-		$cmd = "/^    SUBDIR += $port/\ni\n";
+		if ($port eq "") {
+			# there were previous SUBDIR lines, but none was greater than we are,
+			# means, we're the last port, so, add ourselves after the last port
+			$port = $ports[$#ports];
+			$cmd = "/^    SUBDIR += $port/\na\n";
+		} else {
+			# OK, append ourselves in the right place, so things *stay* sorted.
+			$cmd = "/^    SUBDIR += $port/\ni\n";
+		}
 	}
 	print "Inserting new port into $category/Makefile...\n";
 	open(ED, "|ed Makefile") || die "Cannot start ed to actually insert module\n";
