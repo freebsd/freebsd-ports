@@ -25,8 +25,8 @@ PLIST_FILES=	bin/gfaim bin/imprec lib/gfaim/cuisine.dat \
 		lib/gfaim/cuisine.idx
 PLIST_DIRS=	lib/gfaim
 PORTDOCS=	legal.txt lisezmoi.txt
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/gfaim
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
 
 .include <bsd.port.mk>
