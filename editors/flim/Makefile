@@ -1,4 +1,4 @@
-# New ports collection makefile for:	flim-current for emacs
+# New ports collection makefile for:	flim-1.14.x for emacs20
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -8,28 +8,28 @@
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.13/ \
-		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.13/ \
-		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.13/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.13/
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.14/ \
+		ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.14/ \
+		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.14/ \
+		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.14/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.14/
 MAINTAINER?=	shige@FreeBSD.org
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	1.13.2
+FLIM_VER=	1.14.3
+FLIM_TRUNK=	1.14
 # setupel filename
 FLIM_SETUPEL=	flim-setupel.el
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
-FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_VER}.FreeBSD-packages
+FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 
 .if (${PORTCLASS} == "master")
-# for emacs
-EMACS_PORT_NAME=	emacs
-# whether emacs requires *-setupel.el
-REQUIRE_SETUPEL= YES
+# for emacs20
+EMACS_PORT_NAME=	emacs20
 .endif
 
 # target name for make build
