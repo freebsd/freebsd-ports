@@ -506,7 +506,10 @@ System/Libraries/Resources/PrinterTypes/Italian.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/Printers
 System/Libraries/Resources/PrinterTypes/Spanish.lproj/Linotronic_300.ppd
 System/Libraries/Resources/PrinterTypes/Swedish.lproj/Linotronic_300.ppd
+System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so
+System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgmodel.so.%%VERSION%%
+System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%MAJORVERSION%%
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-gui.so.%%VERSION%%
 System/Library/Model/ColorPanel.gmodel
