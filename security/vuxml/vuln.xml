@@ -32,6 +32,56 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b6cad7f3-fb59-11d8-9837-000c41e2cdad">
+    <topic>ImageMagick -- BMP decoder buffer overflow</topic>
+    <affects>
+      <package>
+	<name>ImageMagick</name>
+	<range><lt>6.0.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marcus Meissner discovered that ImageMagick's BMP decoder would
+	  crash when loading the test BMP file created by Chris Evans
+	  for testing the previous Qt vulnerability.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.imagemagick.org/www/Changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-25</discovery>
+      <entry>2004-08-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="00644f03-fb58-11d8-9837-000c41e2cdad">
+    <topic>imlib -- BMP decoder heap buffer overflow</topic>
+    <affects>
+      <package>
+	<name>imlib</name>
+	<range><lt>1.9.14_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Marcus Meissner discovered that imlib's BMP decoder would
+	  crash when loading the test BMP file created by Chris Evans
+	  for testing the previous Qt vulnerability.  It is believed
+	  that this bug could be exploited for arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0817</cvename>
+      <url>http://bugzilla.gnome.org/show_bug.cgi?id=151034</url>
+    </references>
+    <dates>
+      <discovery>2004-08-25</discovery>
+      <entry>2004-08-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="207f8ff3-f697-11d8-81b0-000347a4fa7d">
     <topic>nss -- exploitable buffer overflow in SSLv2 protocol handler</topic>
     <affects>
