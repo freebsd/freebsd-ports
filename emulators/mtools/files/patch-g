@@ -1,0 +1,11 @@
+--- llong.c~	Wed Mar 17 23:43:14 1999
++++ llong.c	Mon Oct  9 18:21:24 2000
+@@ -51,7 +51,7 @@
+ 	else
+ 		return -1;		
+ #else
+-	return lseek(fd, (off_t) where, whence);
++	return lseek(fd, (off_t) where, whence) == (off_t) -1 ? -1 : 0;
+ #endif
+ }
+ 
