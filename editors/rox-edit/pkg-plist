@@ -20,6 +20,10 @@ apps/Edit/Messages/tips.py
 apps/Edit/Messages/tips.pyc
 apps/Edit/Messages/tips.pyo
 apps/Edit/Messages/update-po
+apps/Edit/Messages/zh_CN.gmo
+apps/Edit/Messages/zh_CN.po
+apps/Edit/Messages/zh_TW.gmo
+apps/Edit/Messages/zh_TW.po
 apps/Edit/Options.xml
 apps/Edit/buffer.py
 apps/Edit/buffer.pyc
@@ -38,6 +42,13 @@ apps/Edit/images/rox-word-wrap.png
 apps/Edit/search.py
 apps/Edit/search.pyc
 apps/Edit/search.pyo
+apps/Edit/setup.py
+apps/Edit/setup.pyc
+apps/Edit/setup.pyo
+apps/Edit/tests/testreplace.py
+apps/Edit/tests/testreplace.pyc
+apps/Edit/tests/testreplace.pyo
+@dirrm apps/Edit/tests
 @dirrm apps/Edit/images
 @dirrm apps/Edit/Messages
 @dirrm apps/Edit/Help
