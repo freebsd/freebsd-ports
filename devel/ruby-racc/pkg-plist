@@ -1,34 +1,34 @@
 bin/racc
 bin/racc2y
 bin/y2racc
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/facade.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/format.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/grammer.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/info.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/iset.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/libracc.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccp.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccs.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/state.rb
-share/examples/ruby/racc/calc-ja.y
-share/examples/ruby/racc/calc.y
-share/examples/ruby/racc/conflict.y
-share/examples/ruby/racc/lalr.y
-share/examples/ruby/racc/syntax.y
-share/examples/ruby/racc/yyerr.y
-share/doc/ruby/racc/ja/changes.html
-share/doc/ruby/racc/ja/command.html
-share/doc/ruby/racc/ja/debug.html
-share/doc/ruby/racc/ja/grammer.html
-share/doc/ruby/racc/ja/index.html
-share/doc/ruby/racc/ja/parser.html
-share/doc/ruby/racc/ja/usage.html
-share/doc/ruby/racc/changes.html
-share/doc/ruby/racc/command.html
-share/doc/ruby/racc/debug.html
-share/doc/ruby/racc/grammer.html
-share/doc/ruby/racc/index.html
-share/doc/ruby/racc/usage.html
-@dirrm share/examples/ruby/racc
-@dirrm share/doc/ruby/racc/ja
-@dirrm share/doc/ruby/racc
+%%RUBY_SITELIBDIR%%/racc/facade.rb
+%%RUBY_SITELIBDIR%%/racc/format.rb
+%%RUBY_SITELIBDIR%%/racc/grammer.rb
+%%RUBY_SITELIBDIR%%/racc/info.rb
+%%RUBY_SITELIBDIR%%/racc/iset.rb
+%%RUBY_SITELIBDIR%%/racc/libracc.rb
+%%RUBY_SITELIBDIR%%/racc/raccp.rb
+%%RUBY_SITELIBDIR%%/racc/raccs.rb
+%%RUBY_SITELIBDIR%%/racc/state.rb
+%%RUBY_EXAMPLESDIR%%/racc/calc-ja.y
+%%RUBY_EXAMPLESDIR%%/racc/calc.y
+%%RUBY_EXAMPLESDIR%%/racc/conflict.y
+%%RUBY_EXAMPLESDIR%%/racc/lalr.y
+%%RUBY_EXAMPLESDIR%%/racc/syntax.y
+%%RUBY_EXAMPLESDIR%%/racc/yyerr.y
+%%RUBY_DOCDIR%%/racc/ja/changes.html
+%%RUBY_DOCDIR%%/racc/ja/command.html
+%%RUBY_DOCDIR%%/racc/ja/debug.html
+%%RUBY_DOCDIR%%/racc/ja/grammer.html
+%%RUBY_DOCDIR%%/racc/ja/index.html
+%%RUBY_DOCDIR%%/racc/ja/parser.html
+%%RUBY_DOCDIR%%/racc/ja/usage.html
+%%RUBY_DOCDIR%%/racc/changes.html
+%%RUBY_DOCDIR%%/racc/command.html
+%%RUBY_DOCDIR%%/racc/debug.html
+%%RUBY_DOCDIR%%/racc/grammer.html
+%%RUBY_DOCDIR%%/racc/index.html
+%%RUBY_DOCDIR%%/racc/usage.html
+@dirrm %%RUBY_EXAMPLESDIR%%/racc
+@dirrm %%RUBY_DOCDIR%%/racc/ja
+@dirrm %%RUBY_DOCDIR%%/racc

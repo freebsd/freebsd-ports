@@ -1,13 +1,13 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/strscan.so
-lib/ruby/site_ruby/%%RUBY_VER%%/scanner.rb
-share/doc/ruby/strscan/README.en
-share/doc/ruby/strscan/changes.html
-share/doc/ruby/strscan/index.html
-share/doc/ruby/strscan/reference.html
-share/doc/ruby/strscan/usage.html
-share/doc/ruby/strscan/ja/changes.html
-share/doc/ruby/strscan/ja/index.html
-share/doc/ruby/strscan/ja/reference.html
-share/doc/ruby/strscan/ja/usage.html
-@dirrm share/doc/ruby/strscan/ja
-@dirrm share/doc/ruby/strscan
+%%RUBY_SITEARCHLIBDIR%%/strscan.so
+%%RUBY_SITELIBDIR%%/scanner.rb
+%%RUBY_DOCDIR%%/strscan/README.en
+%%RUBY_DOCDIR%%/strscan/changes.html
+%%RUBY_DOCDIR%%/strscan/index.html
+%%RUBY_DOCDIR%%/strscan/reference.html
+%%RUBY_DOCDIR%%/strscan/usage.html
+%%RUBY_DOCDIR%%/strscan/ja/changes.html
+%%RUBY_DOCDIR%%/strscan/ja/index.html
+%%RUBY_DOCDIR%%/strscan/ja/reference.html
+%%RUBY_DOCDIR%%/strscan/ja/usage.html
+@dirrm %%RUBY_DOCDIR%%/strscan/ja
+@dirrm %%RUBY_DOCDIR%%/strscan
