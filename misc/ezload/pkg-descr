@@ -1,0 +1,15 @@
+The utility allows you to download firmware into and upload firmware from the
+memory of a EZ-USB chip.
+
+The chip is a generic 8051 based programmeble device. To function in a specific
+device, e.g. a USB to Parallel port convertor, the 8051 needs application
+specific 8051 firmware code.
+
+The input file or the produced output file is in Intel Hex format.
+
+An example program for the ActiveWire board is included, including the
+Hex file with firmware for it. The board is available from
+
+   http://www.ActiveWireInc.com/
+
+- Nick Hibma (n_hibma@freebsd.org) and Dirk van Gulik (dirkx@webweaving.org)
