@@ -10,13 +10,9 @@ PORTVERSION=	4.0.14
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
-#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
-MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
+MASTER_SITES=	http://downloads.sleepycat.com/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
-#PATCH_SITES=	${MASTER_SITES}
-#PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
-#PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4
@@ -39,7 +35,6 @@ PORTDOCS=	*
 
 # the db install_docs target installs an empty directory, kill it
 # (it's not packaged and it's not needed):
-
 .if !defined(NOPORTDOCS)
 post-install:
 	@${RMDIR} ${PREFIX}/share/doc/db4/ref/splash
