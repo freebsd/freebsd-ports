@@ -256,6 +256,7 @@
     SUBDIR += libunpipc
     SUBDIR += licq
     SUBDIR += licq-console
+    SUBDIR += licq-jons-gtk-gui
     SUBDIR += licq-qt-gui
     SUBDIR += limewire
     SUBDIR += linc
