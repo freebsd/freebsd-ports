@@ -8,14 +8,14 @@
 
 PORTNAME=	rsync
 PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/  \
 		ftp://ftp.sunet.se/pub/unix/admin/rsync/  \
 		ftp://ftp.fu-berlin.de/pub/unix/network/rsync/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eik@FreeBSD.org
 COMMENT=	A network file distribution/synchronization utility
 
 .if defined(WITH_POPT_PORT)
@@ -25,6 +25,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITH_POPT_PORT)
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
@@ -33,15 +34,26 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS+=	--with-included-popt
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400016
-USE_SSH?=	yes
-.else
-USE_SSH?=	no
+.if !defined(NOPORTDOCS)
+PORTDOCS=	NEWS README csprotocol.txt tech_report.tex
 .endif
 
-.if ${USE_SSH:U} == YES
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	/etc/rc.subr
+.else
+USE_RC_SUBR=	yes
+.endif
+
+SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
+.if ${OSVERSION} < 400016
+WITHOUT_SSH?=	yes
+.endif
+
+.if !defined(WITHOUT_SSH)
 CONFIGURE_ARGS+=	--with-rsh=ssh
 .endif
 
@@ -71,18 +83,23 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/rsync.h ${WRKSRC}/zlib/zutil.h
 
+post-build:
+	@${SED} ${SED_SCRIPT} <${FILESDIR}/rsyncd.sh >${WRKDIR}/rsyncd.sh
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/rsync
-	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
-	${INSTALL_SCRIPT} ${FILESDIR}/rsyncd.sh.sample ${PREFIX}/etc/rc.d/
+	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${PREFIX}/etc/
+	@[ -f ${PREFIX}/etc/rsyncd.conf ] || cp ${PREFIX}/etc/rsyncd.conf.sample ${PREFIX}/etc/rsyncd.conf
+	@${INSTALL_SCRIPT} ${WRKDIR}/rsyncd.sh ${PREFIX}/etc/rc.d/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README          ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING         ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
-.if ${USE_SSH:U} == YES
+.if !defined(WITHOUT_SSH)
 	@${CAT} ${PKGMESSAGE}
 .endif
+
+test: build
+	@cd ${WRKSRC}; ${SH} -c 'umask 0; ./test.sh'
 
 .include <bsd.port.post.mk>
