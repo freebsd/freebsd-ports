@@ -3,8 +3,6 @@ develop Linux support for most Hewlett-Packard OfficeJet,
 PSC, LaserJet, and PhotoSmart printer multi-function
 peripherals (MFPs), which depending on the model can print,
 scan, copy, fax, and/or access digital camera memory cards.
-Only the parallel port and JetDirect (no USB!) are supported
-under FreeBSD.
 
 Includes a xsane plugin.
 
