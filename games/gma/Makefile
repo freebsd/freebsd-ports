@@ -13,13 +13,6 @@ MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-USE_GCC=	2.95
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
