@@ -7,6 +7,7 @@
 
 PORTNAME=	Sablot
 PORTVERSION=	0.81
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk+licq
 PORTVERSION=	0.51
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gtk.licq.org/download/
 

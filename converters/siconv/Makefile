@@ -8,6 +8,7 @@
 
 PORTNAME=	siconv
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.technocage.com/~caskey/siconv/download/
 

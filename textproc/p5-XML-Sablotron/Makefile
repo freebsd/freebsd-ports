@@ -7,6 +7,7 @@
 
 PORTNAME=	XML-Sablotron
 PORTVERSION=	0.80
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://download-2.gingerall.cz/download/sablot/

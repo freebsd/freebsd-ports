@@ -7,6 +7,7 @@
 
 PORTNAME=	libjconv
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.rpmlinux.com/kondara/%SUBDIR%/ \
 		ftp://ftp.jp.psi.net/pub/Linux/kondara/%SUBDIR%/ \

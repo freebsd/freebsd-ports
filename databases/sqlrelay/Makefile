@@ -7,6 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.firstworks.com/downloads/sqlrelay/
 

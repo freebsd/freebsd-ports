@@ -7,7 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/ \

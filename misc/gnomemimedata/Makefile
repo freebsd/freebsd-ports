@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemimedata
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-mime-data
