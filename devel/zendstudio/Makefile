@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	ZendStudio
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
-
+MASTER_SITES=	http://www.zend.com/store/products/zend-studio.php
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A PHP IDE
 
+USE_LINUX=	yes
 NO_BUILD=	yes
 RESTRICTED=	"Redistribution is not permitted"
-
-USE_LINUX=	yes
+NO_PACKAGES=	${RESTRICTED}
+NO_CDROM=	${RESTRICTED}
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTFILES})
-ECHO_MSG=	/usr/bin/printf
-IGNORE=		:\nBecause of licensing restrictions, you must fetch the source distribution\nmanually. Please access http://www.zend.com/store/products/zend-studio.php\nwith a web browser and follow the \"Free Evaluation\" link.\nYou have to register for using ZendStudio.\nAfter download the file, place it into ${DISTDIR}\n
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
+ECHO_MSG=/usr/bin/printf
+IGNORE= :\n\
+Because of licensing restrictions, you must fetch the distribution manually.\n\
+Please visit ${MASTER_SITES}\n\
+and follow the \"Free Evaluation\" link.\n\
+You have to register for using ZendStudio.\n\
+After downloading the Client-package \"Linux glibc2.1\", place it into ${DISTDIR}.\n
 .endif
-
-dd:
-		@${ECHO} ${DISTNAME}
 
 pre-install:
 	@if [ "`/sbin/mount | ${GREP} ^linprocfs`" = "" ]; \
