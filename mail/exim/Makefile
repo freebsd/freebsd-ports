@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
@@ -121,11 +122,13 @@ DB_LIB_VERSION?=1
 # be called during string expansion.
 #WITHOUT_PERL=	yes
 #
-# Disable built-in Exim support for the PAM, RFC 2195 and RFC 2595
-# authentication mechanisms, used for SMTP AUTH.
+# Disable built-in Exim support for the PAM, RFC 2195, RFC 2595 and
+# Microsoft "Secure Password Authentication" authentication mechanisms,
+# used for SMTP AUTH.
 #WITHOUT_PAM=			yes
 #WITHOUT_AUTH_CRAM_MD5=		yes
 #WITHOUT_AUTH_PLAINTEXT=	yes
+#WITHOUT_AUTH_SPA=		yes
 #
 # Disable built-in Exim support for additional mailbox formats.
 #WITHOUT_MAILDIR=	yes
@@ -276,6 +279,10 @@ SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5=,AUTH_CRAM_MD5=,'
 
 .if !defined(WITHOUT_AUTH_PLAINTEXT)
 SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
+.endif
+
+.if !defined(WITHOUT_AUTH_SPA)
+SEDLIST+=	-e 's,^\# AUTH_SPA=,AUTH_SPA=,'
 .endif
 
 .if defined(WITH_PGSQL)
