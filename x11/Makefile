@@ -89,6 +89,7 @@
     SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
+    SUBDIR += vdesk
     SUBDIR += wdm
     SUBDIR += wmappl
     SUBDIR += wmbutton

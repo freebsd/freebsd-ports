@@ -7256,7 +7256,7 @@ vcdtools	ports/graphics/vcdtools
 vcg		ports/graphics/vcg
 vchat		ports/net/vchat
 vcheck		ports/ftp/vcheck
-vdesk		ports/x11-wm/vdesk
+vdesk		ports/x11/vdesk
 vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
 vecfem		ports/math/vecfem
