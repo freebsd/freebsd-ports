@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.8.0.p2
+PORTVERSION=	1.8.0.p2.2003.04.19
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	shim-ruby16_18-${PORTVERSION:S/.p/-preview/}
+DISTNAME=	shim-ruby16_18-1.8.0-preview2-2003.04.19
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -44,7 +44,7 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 
 pre-install:
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	# Make reinstall work
+# Make make reinstall work
 	${RM} -f ${WRKSRC}/InstalledFiles
 
 post-install:

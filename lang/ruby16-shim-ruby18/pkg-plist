@@ -33,6 +33,9 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/features/ruby18/time.rb
 @dirrm %%RUBY_SITELIBDIR%%/features/ruby18
 @dirrm %%RUBY_SITELIBDIR%%/features
+@comment bigdecimal
+%%RUBY_SITEARCHLIBDIR%%/bigdecimal.so
+%%RUBY_SITELIBDIR%%/bigdecimal-rational.rb
 @comment dl
 %%RUBY_SITEARCHLIBDIR%%/dl.so
 %%RUBY_SITELIBDIR%%/dl/import.rb
@@ -91,6 +94,8 @@ bin/h2rb%%_RUBY_SUFFIX%%
 @dirrm %%RUBY_SITELIBDIR%%/test
 @dirrm %%RUBY_SITELIBDIR%%/runit/cui
 @dirrm %%RUBY_SITELIBDIR%%/runit
+@comment zlib
+%%RUBY_SITEARCHLIBDIR%%/zlib.so
 @comment others
 %%RUBY_SITELIBDIR%%/benchmark.rb
 %%RUBY_SITELIBDIR%%/erb.rb

@@ -12,6 +12,7 @@ die () {
 
 delete_modules () {
     modules="
+	bigfloat
 	dl
 	erb
 	fileutils
@@ -20,6 +21,7 @@ delete_modules () {
 	racc-runtime
 	strscan
 	testunit
+	zlib
     "
 
     echo "Deinstalling modules being replaced by $PKGNAME..."
