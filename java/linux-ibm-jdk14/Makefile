@@ -17,7 +17,6 @@ COMMENT=	IBM Java Development Kit 1.4 for Linux
 
 FORBIDDEN=	Vulnerabilities in the browser plugin
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-SDK//}
