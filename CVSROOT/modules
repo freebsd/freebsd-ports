@@ -2600,6 +2600,7 @@ httrack		ports/www/httrack
 hu-ispell	ports/hungarian/ispell
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hu-phone	ports/hungarian/hu-phone
+hu-zipcodes	ports/hungarian/hu-zipcodes
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
 hx		ports/net/hx
