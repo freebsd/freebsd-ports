@@ -6,7 +6,7 @@
 #
 # k3 means pico hangul patch
 #
-# $Id: Makefile,v 1.6 1998/07/27 00:28:22 steve Exp $
+# $Id: Makefile,v 1.7 1998/08/09 00:18:21 steve Exp $
 #
 
 DISTNAME=       pine3.96
@@ -21,6 +21,8 @@ PATCH_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/misc/
 PATCHFILES=	pico-3.96-hangul.patch
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN_ELF=	yes
 
 MAN1= 		pine.1 pico.1 pilot.1
 
