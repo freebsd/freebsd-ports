@@ -36,6 +36,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		GETTEXT         "gettext library support" off \
 		GMP             "GNU MP support" off \
 		ICONV           "iconv support" on \
+		IMAGICK         "ImageMagick support" off \
 		IMAP            "IMAP support" off \
 		INTERBASE       "Interbase 6 database support (Firebird)" off \
 		LDAP            "OpenLDAP support" off \
@@ -94,7 +95,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 
 ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE DBX DIO \
 		DOM EXIF FILEPRO FRIBIDI FTP GD GETTEXT \
-		GMP HYPERWAVE ICONV IMAP INTERBASE LDAP MBSTRING MCRYPT \
+		GMP ICONV IMAGICK IMAP INTERBASE LDAP MBSTRING MCRYPT \
 		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL MYSQLI \
 		NCURSES ODBC OPENSSL ORACLE PANDA PCNTL PCRE PDF PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \

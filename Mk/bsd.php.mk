@@ -236,8 +236,8 @@ php-ini:
 .if ${USE_PHP:L} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	bcmath bz2 calendar crack ctype curl dba dbase dbx dio \
-		dom domxml exif filepro fribidi ftp gd gettext gmp \
-		iconv imap interbase ldap mbstring mcal mcrypt mcve mhash \
+		dom domxml exif filepro fribidi ftp gd gettext gmp iconv \
+		imagick imap interbase ldap mbstring mcal mcrypt mcve mhash \
 		ming mnogosearch mssql mysql mysqli ncurses odbc \
 		openssl oracle overload panda pcntl pcre pdf pgsql posix \
 		pspell readline recode session shmop simplexml snmp soap \
@@ -264,6 +264,7 @@ gd_DEPENDS=	graphics/php${PHP_VER}-gd
 gettext_DEPENDS=devel/php${PHP_VER}-gettext
 gmp_DEPENDS=	math/php${PHP_VER}-gmp
 iconv_DEPENDS=	converters/php${PHP_VER}-iconv
+imagick_DEPENDS=graphics/pecl-imagick
 imap_DEPENDS=	mail/php${PHP_VER}-imap
 interbase_DEPENDS=	databases/php${PHP_VER}-interbase
 ldap_DEPENDS=	net/php${PHP_VER}-ldap
