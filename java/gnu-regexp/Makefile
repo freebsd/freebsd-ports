@@ -8,7 +8,7 @@
 PORTNAME=	gnu-regexp
 PORTVERSION=	1.0.8
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.cacas.org/pub/java/
+MASTER_SITES=	ftp://ftp.tralfamadore.com/pub/java/
 DISTNAME=	gnu.regexp-${PORTVERSION}
 
 MAINTAINER=	freebsd-ports@FreeBSD.org
