@@ -3,7 +3,7 @@
 # Date created:				21 Feb 1998
 # Whom:					giffunip@asme.org
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/12/01 23:11:12 billf Exp $
 #
 
 DISTNAME=       lzo-1.04
