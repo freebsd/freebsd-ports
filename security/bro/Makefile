@@ -4,7 +4,7 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1998/09/14 00:20:20 obrien Exp $
+# $Id: Makefile,v 1.6 1998/11/04 18:45:38 obrien Exp $
 #
 
 DISTNAME=	vp-bro-0.4-alpha
@@ -16,21 +16,14 @@ MAINTAINER=     obrien@FreeBSD.org
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 
+.if !exists(${DISTDIR}/vp-bro-0.4-alpha${EXTRACT_SUFX})
+IGNORE='Please contact Vern Paxson <vern@ee.lbl.gov> to obtain the obtain the Bro source.  Put it in ${DISTDIR} as vp-bro-0.4-alpha${EXTRACT_SUFX} and run make again'
+.endif
+
 IS_INTERACTIVE=	"manual fetch"
 WRKSRC=		${WRKDIR}/bro-0.4
 CONFIGURE_ARGS= --libdir=${PREFIX}/share
 GNU_CONFIGURE=	yes
-
-do-fetch:
-	@if [ ! -f ${DISTDIR}/vp-bro-0.4-alpha${EXTRACT_SUFX} ]; then \
-	  echo ""; \
-	  echo "Please contact Vern Paxson <vern@ee.lbl.gov>"; \
-	  echo "to obtain the obtain the Bro source.  Put it in"; \
-	  echo "${DISTDIR} as vp-bro-0.4-alpha${EXTRACT_SUFX}"; \
-	  echo "and run make again"; \
-	  echo ""; \
-	  exit 1;\
-	fi
 
 post-patch:
 	@${MV} ${WRKSRC}/util.cc ${WRKSRC}/util.cc.in
