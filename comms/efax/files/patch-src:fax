@@ -1,0 +1,73 @@
+--- fax.orig	Sat May 11 12:39:37 2002
++++ fax	Sat May 11 13:42:33 2002
+@@ -24,7 +24,7 @@
+ #  - do not put spaces before or after the equal (=) signs.
+ #
+ #  - variables can also be set on the command line, for example:
+-#       fax DEV=cua0 send file.ps
++#       fax DEV=cuaa0 send file.ps
+ #    or in a configuration file (see CONFIGFILES below)
+ #
+ 
+@@ -36,16 +36,16 @@
+ EFIX=efix
+ 
+ # The device to which the fax modem is connected (e.g. ttya for
+-# /dev/ttya).  Use a dial-out (cua) device if available.  If
++# /dev/ttya).  Use a dial-out (cuaa) device if available.  If
+ # there are links to this device then all programs must use same
+ # name or the UUCP locking mechanism will fail.  For example, if
+-# /dev/modem is a link to /dev/cua1, then getty, uucp, kermit,
+-# pppd, dip, etc. must *all* use either /dev/modem or /dev/cua1.
++# /dev/modem is a link to /dev/cuaa1, then getty, uucp, kermit,
++# pppd, dip, etc. must *all* use either /dev/modem or /dev/cuaa1.
+ 
+ # 19 Aug 2001 changed by Masaki Shinomiya, 
+ # because 'man efax' sais the default is /dev/modem.
+ DEV=modem
+-#DEV=cua1
++#DEV=cuaa1
+ 
+ # Your fax number in international format, 20 characters maximum.
+ # Use only digits, spaces, and the "+" character.
+@@ -98,7 +98,8 @@
+ # conventions. Protect with single quotes for delayed evaluation.
+ # Add a leading '#' to the file name to use binary format.
+ 
+-LOCK='-x /var/lock/LCK..$DEV' 			# modern systems
++LOCK='-x /var/spool/lock/LCK..$DEV'		# FreeBSD
++# LOCK='-x /var/lock/LCK..$DEV' 		# modern systems
+ # LOCK='-x /usr/spool/uucp/LCK..$DEV'		# older systems
+ # LOCK='-x /var/lock/LCK..$DEV -x /var/spool/uucp/LCK..$DEV' # both
+ # LOCK='-x #/usr/spool/uucp/LCK..$DEV'		# binary format
+@@ -124,7 +125,7 @@
+ # out if you don't need to use config files. Warning: any type of
+ # shell command in these files will be executed.
+ 
+-CONFIGFILES="/etc/efax.rc ${HOME:-~}/.efaxrc ./.efaxrc"
++CONFIGFILES="%%PREFIX%%/etc/efax.rc ${HOME:-~}/.efaxrc ./.efaxrc"
+ 
+ # A command that will generate unique names for logs and received
+ # files.  'date +%m%d%H%M%S' works on most systems.  Protect with
+@@ -421,9 +422,9 @@
+ # efax even if a previous process (e.g. login) has changed it.
+ # Comment out if you don't need to reset device ownership.
+ 
+-OWNER=root.tty		# typical
+-MODE=666		# anybody
+-# MODE=660		# only owner & group
++OWNER=uucp.dialer		# typical
++#MODE=666		# anybody
++MODE=660		# only owner & group
+ 
+ # Regular expression for efax exit codes in log files that will
+ # *not* be saved.  For example, use [145] to ignore exits due to
+@@ -1101,7 +1102,7 @@
+ 
+  if given no arguments, answers the phone and receives a fax.
+ 
+- use VAR=value to set variables (e.g. "fax DEV=cua2 receive")
++ use VAR=value to set variables (e.g. "fax DEV=cuaa2 receive")
+ 
+  session logs are written to a file with the date/time as the
+  file name and extension of .log (except for automatic reception).

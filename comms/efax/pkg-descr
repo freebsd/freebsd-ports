@@ -1,0 +1,2 @@
+Efax can send and receive FAX via FAX modem.  Enhanced from mgetty+sendfax
+program, this program can handle `CLASS1' modems.
