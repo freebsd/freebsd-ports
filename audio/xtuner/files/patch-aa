@@ -1,5 +1,5 @@
---- xtuner.h.orig	Thu Dec 19 20:33:57 1996
-+++ xtuner.h	Wed Jul 19 13:35:42 2000
+--- xtuner.h.orig	Thu Dec 19 14:33:57 1996
++++ xtuner.h	Thu Jul  4 05:52:14 2002
 @@ -9,15 +9,14 @@
  #if (defined(BSD) && (BSD >= 199306))
  #  include <osreldate.h>
@@ -13,21 +13,21 @@
  #  include <linux/soundcard.h>
  #endif
   
-+#include "forms.h"
++#include "X11/forms.h"
  #include <X11/xpm.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -48,6 +47,13 @@
-   int fpiopl;
- #endif
+@@ -46,6 +45,13 @@
  
+ #if (defined(BSD) && (BSD >= 199306))
+   int fpiopl;
++#endif
++
 +#ifndef TRUE
 +#define TRUE	    1
 +#endif
 +#ifndef FALSE
 +#define FALSE	    0
-+#endif
-+
+ #endif
+ 
  #define ON          1
- #define OFF         0
- #define AUTOON      2
