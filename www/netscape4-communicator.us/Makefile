@@ -33,7 +33,7 @@ BINDIR=		${PREFIX}/bin
 .if !defined(USA_RESIDENT) || (${USA_RESIDENT} != YES && ${USA_RESIDENT} != yes && ${USA_RESIDENT} != NO && ${USA_RESIDENT} != no)
 pre-fetch:
 	@${ECHO}
-	@${ECHO} You must set variable USA_RESIDENT to YES, if you are USA or 
+	@${ECHO} You must set variable USA_RESIDENT to YES, if you are USA or
 	@${ECHO} Canadian resident, in order to build this package.
 	@${ECHO} There is no version of this port for NON-USA and NON-Canadian users.
 	@${ECHO}
