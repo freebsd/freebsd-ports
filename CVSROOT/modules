@@ -8805,6 +8805,7 @@ xmms-infinity	ports/graphics/xmms-infinity
 xmms-iris	ports/graphics/xmms-iris
 xmms-jess	ports/graphics/xmms-jess
 xmms-kde	ports/audio/xmms-kde
+xmms-kj		ports/audio/xmms-kj
 xmms-ladspa	ports/audio/xmms-ladspa
 xmms-liveice	ports/audio/xmms-liveice
 xmms-mad	ports/audio/xmms-mad
