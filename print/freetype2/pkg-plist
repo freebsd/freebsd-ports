@@ -1,0 +1,3 @@
+bin/ttf2bdf
+lib/libttf.a
+@exec ldconfig -m %B
