@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.9 1996/02/23 01:45:05 ache Exp $
+#	$Id: pre-configure,v 1.10 1996/02/26 00:57:32 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -307,8 +307,9 @@ CONFIG=true
 EOF
 
 cd ${WrkSrc}
-yes "" | ./Configure -d
-cd ${CurDir}
+# old way:
+# yes "" | ./Configure -d
+./Configure -S
 
 exit 0
 # END
