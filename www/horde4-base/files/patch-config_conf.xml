@@ -1,0 +1,20 @@
+--- config/conf.xml.orig	Fri Nov  5 10:54:09 2004
++++ config/conf.xml	Sat Nov 27 23:20:31 2004
+@@ -276,7 +276,7 @@
+ 
+     <case name="login" desc="Login (su) authentication">
+      <configsection name="params">
+-      <configstring name="location" desc="Location of the su binary">/bin/su</configstring>
++      <configstring name="location" desc="Location of the su binary">/usr/bin/su</configstring>
+      </configsection>
+     </case>
+ 
+@@ -932,7 +932,7 @@
+      <configsection name="params">
+       <configstring name="sendmail_path" required="false" desc="The location
+       of the sendmail binary on the filesystem
+-      [/usr/sbin/sendmail]">/usr/lib/sendmail</configstring>
++      [/usr/sbin/sendmail]">/usr/sbin/sendmail</configstring>
+       <configstring name="sendmail_args" required="false" desc="Any extra
+       parameters to pass to the sendmail or sendmail wrapper
+       binary">-oi</configstring>

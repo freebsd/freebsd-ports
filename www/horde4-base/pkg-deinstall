@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Try to restore httpd.conf when deinstalling Horde
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+if [ -d ${PKG_PREFIX}/etc/apache ] ; then
+APACHEDIR=${PKG_PREFIX}/etc/apache
+elif [ -d ${PKG_PREFIX}/etc/apache2 ] ; then
+APACHEDIR=${PKG_PREFIX}/etc/apache2
+fi
+
+if [ -f ${APACHEDIR}/httpd.conf.beforeHorde ] ; then
+	echo "Restoring httpd.conf..."
+	cp ${APACHEDIR}/httpd.conf ${APACHEDIR}/httpd.conf.deinstHorde
+	sed -i.tmp -e "s:Include ${PKG_PREFIX}/etc/horde:# Include ${PKG_PREFIX}/etc/horde:g" \
+		${APACHEDIR}/httpd.conf
+	rm ${APACHEDIR}/httpd.conf.tmp
+fi
+
+# Backup Horde config files, if needed.
+
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  for cf in `ls ${PKG_PREFIX}/www/horde/config/*php`; do
+    diff -bBqw $cf $cf.dist >/dev/null 2>&1
+    case $? in
+      0)  # original config file, will be deleted by pkg-plist
+          ;;
+      1)  # config file has been updated, must be backuped
+          cp -p $cf $cf.previous
+          echo "===> Backing-up..."
+          echo "--->   $cf has been saved ***"
+          echo "--->      as $cf.previous ***"
+          ;;
+      *)  # not found?
+          ;;
+    esac
+  done
+fi

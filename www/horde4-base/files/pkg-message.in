@@ -1,0 +1,36 @@
+************************************************************************
+Horde has been installed in %%HORDEDIR%% with your blank
+configuration files.
+
+If you want Horde to access a database, you have to run the
+appropriate scripts located in %%HORDEDIR%%/scripts/sql.
+It is recommended that you change the password of the 'hordemgr'
+user used to connect to the horde database.
+Horde is setup by default to access MySQL.
+
+WARNING! if you are upgrading from Horde v. 2.2.x, you have to alter your
+******** database schemas. Please read the doc UPGRADING.
+
+You can now access Horde without a password at <http://localhost/horde/>,
+and you will be logged in as an administrator. You should first configure
+a real authentication backend.  Click on "Setup" in the "Administration"
+menu and configure Horde. Start in the "Authentication" tab.
+See the doc in %%DOCSDIR%% for details.
+(tip: if you plan to install IMP, just keep "Automatic authentication as
+a certain user", add your login to be treated as administrator, and once
+IMP will be installed, switch to "Let a Horde application handle auth").
+Select a log driver; if you keep 'file', do not forget to add a line
+in /etc/newsyslog.conf.
+Then select and configure a preferences driver.
+
+Your %%APACHE_CONF%% has been updated,
+you have to restart Apache.
+
+When everything is OK, you should be able to access Horde from
+<http://localhost/horde/>.
+(If <http://localhost/horde/> does not run, but
+ <http://localhost/horde/index.php> is OK, then you have
+ to define index.php as a DirectoryIndex in %%APACHE_CONF%%.)
+
+There is a testing script at <http://localhost/horde/test.php>.
+************************************************************************
