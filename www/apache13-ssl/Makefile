@@ -44,7 +44,6 @@ MAINTAINER=	ports@freebsd.org
 APACHE_VERSION=		1.3.27
 APACHE_SSL_VERSION=	1.48
 
-USE_OPENSSL=	YES
 USE_PERL5=	YES
 
 .include <bsd.port.pre.mk>
@@ -52,6 +51,7 @@ USE_PERL5=	YES
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 
 CFLAGS+=	-I${OPENSSLINC}/openssl
 
