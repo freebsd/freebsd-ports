@@ -110,6 +110,7 @@
     SUBDIR += py-bsddb3
     SUBDIR += py-cdb
     SUBDIR += py-gdbm
+    SUBDIR += py-oops
     SUBDIR += py-psycopg
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
