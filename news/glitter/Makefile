@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-1.0beta1
 MAINTAINER=	greg@gregnet.net
 COMMENT=	A free GTK based binary downloader
 
+BROKEN=		"Bad pkg-plist"
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gtk12
 GNU_CONFIGURE=	yes
