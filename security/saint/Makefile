@@ -1,19 +1,22 @@
 # New ports collection makefile for:	SAINT
-# Version required:	1.5
+# Version required:	2.0.beta2
 # Date created:		27 Jan 2000
 # Whom:			Carl Johan Madestrand <calle.madestrand@norrgarden.se>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	saint-1.5
+DISTNAME=	saint-2.0.beta2
+PKGNAME=	saint-2.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.wwdsi.com/saint/downloads/
+MASTER_SITES=	http://www.wwdsi.com/saint/downloads/	\
+		ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
+		ftp://ftp.wwdsi.com/pub/saint/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/saint-1.5
+WRKSRC=		${WRKDIR}/saint-2.0
 MAKE_ENV=	XFLAGS="DAUTH_GID_T=int -DSYS_ERRLIST_DECLARED -DFDSETSIZE=2048"
 ALL_TARGET=	freebsd
 INSTALL_TARGET=	all
@@ -22,8 +25,8 @@ pre-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${PERL5} ${WRKSRC}/reconfig
 
 pre-install:
-		${MKDIR} ${PREFIX}/saint-1.5
+		${MKDIR} ${PREFIX}/saint-2.0
 		${TAR} --directory ${WRKSRC} -cf - . --exclude src --exclude Makefile | \
-			${TAR} --directory ${PREFIX}/saint-1.5 -xf -
+			${TAR} --directory ${PREFIX}/saint-2.0 -xf -
 
 .include <bsd.port.mk>
