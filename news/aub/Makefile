@@ -7,32 +7,25 @@
 #
 
 PORTNAME=	aub
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.2
 CATEGORIES=	news
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../../scripts/news/nntpstuff/aub
-DISTFILES=	aub aub.1 BUG_FIXES
+MASTER_SITES=	http://yukidoke.org/~mako/projects/aub/download/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-DIST_SUBDIR=	aub
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAN1=		aub.1
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-
-pre-patch:
-	@${SED} -e '1,1s:/usr/local/bin/perl:!${PERL5}:' \
-		-e 's:$SUM = "/bin/sum":$SUM = "/usr/bin/sum":' \
-		-e 's:/usr/tmp:/var/tmp:' \
-		${DISTDIR}/${DIST_SUBDIR}/aub > ${WRKDIR}/aub
+DOC_FILES=	COPYING README aubconf.example Introducing_AUB USAGE
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/aub ${PREFIX}/bin
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/aub.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/aub ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/aub.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/aub
-	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/BUG_FIXES ${PREFIX}/share/doc/aub
+.for doc in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/${doc} ${PREFIX}/share/doc/aub
+.endfor
+.endif
 
 .include <bsd.port.mk>
