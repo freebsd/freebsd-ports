@@ -40,21 +40,10 @@ if [ -d ${PREFIX}/share/faces ]; then
   fi
 fi
 
-if [ -f ${PREFIX}/bin/gpg ]; then
-  GPG=${PREFIX}/bin			#bindir
-fi
-
-if [ -f ${PREFIX}/bin/pgp ]; then
-  PGP=${PREFIX}/bin			#bindir
-fi
-
-if [ -f ${PREFIX}/bin/pgp5 ]; then
-  PGP5=${PREFIX}/bin			#bindir
-fi
-
-if [ -f ${PREFIX}/bin/pgp ]; then
-  PGP6=${PREFIX}/bin			#bindir
-fi
+GPG=${PREFIX}/bin			#bindir
+PGP=${PREFIX}/bin			#bindir
+PGP5=${PREFIX}/bin			#bindir
+PGP6=${PREFIX}/bin			#bindir
 
 if [ -f ${PREFIX}/bin/glimpse ]; then
   GLIMPSE=${PREFIX}/bin			#bindir
