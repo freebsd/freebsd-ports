@@ -28,12 +28,11 @@ USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the WITH_LDAP, WITH_MYSQL, WITH_PAM and WITH_PGSQL definitions
-# to link against libmysqlclient, libpam and libpq respectively.
+# Uncomment the WITH_LDAP, WITH_MYSQL, and WITH_PGSQL definitions
+# to link against libmysqlclient and libpq respectively.
 # The libpam linkage is required for SMTP AUTH support.
 #WITH_LDAP=	yes
 #WITH_MYSQL=	yes
-#WITH_PAM=	yes
 #WITH_PGSQL=	yes
 
 # Link against OpenSSL in the base system for STARTTLS support.
@@ -43,10 +42,12 @@ WITH_TLS?=	yes
 # called during string expansion.
 WITH_PERL?=	yes
 
-# If WITH_PAM is defined then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
-# must be left uncommented.
-PAM_CRAM_MD5=	yes
-PAM_PLAINTEXT=	yes
+# The following options control whether Exim is built with support for
+# PAM, RFC 2195 and RFC 2595 authentication mechanisms for SMTP AUTH.
+#
+WITH_PAM?=		yes
+WITH_AUTH_CRAM_MD5?=	yes
+WITH_AUTH_PLAINTEXT?=	yes
 
 # If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
 # NETSCAPE or SOLARIS7.
@@ -97,19 +98,19 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
-.if defined(WITH_PAM)
-SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,'
+.if defined(WITH_PAM) && ${WITH_PAM} == "yes"
+SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,' \
+		-e 's,^\# SUPPORT_PAM,SUPPORT_PAM,'
 .else
-SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,' \
-		-e 's,^SUPPORT_PAM,\#SUPPORT_PAM,' 
+SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,'
 .endif
 
-.if !defined(WITH_PAM) || !defined(PAM_CRAM_MD5)
-SEDLIST+=	-e 's,^AUTH_CRAM_MD5,\#AUTH_CRAM_MD5,'
+.if defined(WITH_AUTH_CRAM_MD5) && ${WITH_AUTH_CRAM_MD5} == "yes"
+SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5,AUTH_CRAM_MD5,'
 .endif
 
-.if !defined(WITH_PAM) || !defined(PAM_PLAINTEXT)
-SEDLIST+=	-e 's,^AUTH_PLAINTEXT,\#AUTH_PLAINTEXT,'
+.if defined(WITH_AUTH_PLAINTEXT) && ${WITH_AUTH_PLAINTEXT} == "yes"
+SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT,AUTH_PLAINTEXT,'
 .endif
 
 .if defined(WITH_PGSQL)
