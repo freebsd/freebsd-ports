@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cnet
-PORTVERSION=	1.7.4
+PORTVERSION=	1.7.5
 CATEGORIES=	net tk83
 MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
 EXTRACT_SUFX=	.tgz

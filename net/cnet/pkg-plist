@@ -50,7 +50,7 @@ share/cnet/zap.gif
 %%PORTDOCS%%share/examples/cnet/FLOODING2
 %%PORTDOCS%%share/examples/cnet/FLOODING3
 %%PORTDOCS%%share/examples/cnet/KEYBOARD
-%%PORTDOCS%%share/examples/cnet/LINKSTATE
+%%PORTDOCS%%share/examples/cnet/LINKCRASH
 %%PORTDOCS%%share/examples/cnet/Makefile
 %%PORTDOCS%%share/examples/cnet/README.flooding
 %%PORTDOCS%%share/examples/cnet/STOPANDWAIT
@@ -64,11 +64,15 @@ share/cnet/zap.gif
 %%PORTDOCS%%share/examples/cnet/click.c
 %%PORTDOCS%%share/examples/cnet/flooding.gp
 %%PORTDOCS%%share/examples/cnet/flooding1.c
+%%PORTDOCS%%share/examples/cnet/flooding1.dat
 %%PORTDOCS%%share/examples/cnet/flooding2.c
+%%PORTDOCS%%share/examples/cnet/flooding2.dat
 %%PORTDOCS%%share/examples/cnet/flooding3.c
+%%PORTDOCS%%share/examples/cnet/flooding3.dat
 %%PORTDOCS%%share/examples/cnet/keyboard.c
-%%PORTDOCS%%share/examples/cnet/linkstate.c
+%%PORTDOCS%%share/examples/cnet/linkcrash.c
 %%PORTDOCS%%share/examples/cnet/protocol.c
+%%PORTDOCS%%share/examples/cnet/result.file
 %%PORTDOCS%%share/examples/cnet/stopandwait.c
 %%PORTDOCS%%share/examples/cnet/ticktock.c
 %%PORTDOCS%%@dirrm share/examples/cnet
