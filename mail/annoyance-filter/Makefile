@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	annoyance-filter
-PORTVERSION=	1.0b
+PORTVERSION=	1.0d
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.fourmilab.ch/annoyance-filter/
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	barner@gmx.de
 COMMENT=	Adaptive Bayesian Junk Mail Filter
 
 #USE_GPG=		yes
