@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTVERSION=	0.8.9
+PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	http://irssi.org/files/
 
@@ -63,11 +63,6 @@ WITH_BOT=	no
 
 .if ${WITH_GLIB} == "2"
 USE_GNOME=	glib20
-.if ${WITH_BOEHM_GC:L} == "yes"
-LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
-CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
-CONFIGURE_ARGS+=	--with-gc
-.endif
 .elif ${WITH_GLIB} == "1"
 CONFIGURE_ARGS+=	--with-glib1
 USE_GNOME=	glib12
@@ -108,6 +103,12 @@ CATEGORIES+=	ipv6
 USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
+.endif
+
+.if ${WITH_BOEHM_GC:L} == "yes"
+LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
+CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
+CONFIGURE_ARGS+=	--with-gc
 .endif
 
 .if ${WITH_BOT:L} == "yes"
