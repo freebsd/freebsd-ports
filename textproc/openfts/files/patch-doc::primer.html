@@ -1,0 +1,33 @@
+--- doc/primer.html.orig	Mon Jun 14 12:22:40 2004
++++ doc/primer.html	Thu Jun 17 21:50:29 2004
+@@ -640,7 +640,7 @@
+ Change to the directory where <b>tsearch2</b> is. This is 
+ a PostgreSQL module available under the <b>contrib</b> directory. 
+ <code><pre>
+-$ cd PGSQL_SRC_HOME/contrib/tsearch2
++$ cd /usr/local/share/postgresql/contrib
+ </pre></code>
+ </li>
+ <li> 
+@@ -650,7 +650,7 @@
+ </li>
+ <li>
+ <code><pre>
+-$ cd /usr/local/src/Search-OpenFTS-0.37/examples
++$ cd /usr/local/share/examples/Search-OpenFTS/
+ </pre></code>
+ </li>
+ <li>
+@@ -660,7 +660,11 @@
+ </li>
+ <li>
+ <code><pre>
+-$ ./index.pl testfts file1 [file2 [...] ]
++$ ./index.pl testfts
++file1
++[file2
++ [...] ]
++
+ </pre></code>
+ </li>
+ <li>
