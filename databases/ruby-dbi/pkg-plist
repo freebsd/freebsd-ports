@@ -1,4 +1,5 @@
 %%RUBY_SITELIBDIR%%/dbi.rb
+%%RUBY_SITELIBDIR%%/dbi/columninfo.rb
 %%RUBY_SITELIBDIR%%/dbi/dbi.rb
 %%RUBY_SITELIBDIR%%/dbi/row.rb
 %%RUBY_SITELIBDIR%%/dbi/sql.rb
