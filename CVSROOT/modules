@@ -9905,6 +9905,7 @@ ruby-snmp	ports/net-mgmt/ruby-snmp
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
+ruby-sqlite3	ports/databases/ruby-sqlite3
 ruby-sqlrelay	ports/databases/ruby-sqlrelay
 ruby-strongtyping	ports/devel/ruby-strongtyping
 ruby-svg	ports/graphics/ruby-svg
