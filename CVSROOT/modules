@@ -6267,6 +6267,7 @@ prboom		ports/games/prboom
 prc-tools	ports/palm/prc-tools
 prcs		ports/devel/prcs
 preferences.app	ports/deskutils/preferences.app
+prelude-lml	ports/security/prelude-lml
 premail		ports/mail/premail
 preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
