@@ -1,7 +1,16 @@
---- configure.h.orig	Fri Dec  5 20:31:15 1997
-+++ configure.h	Fri Dec  5 20:31:26 1997
-@@ -69,7 +69,7 @@
- XCOMM #endif
+--- configure.h.orig	Fri Feb  6 07:16:26 1998
++++ configure.h	Wed Mar 11 15:25:30 1998
+@@ -33,7 +33,7 @@
+ #ifdef MlvwmLibDir
+     MLVWMLIBDIR = MlvwmLibDir
+ #else
+-    MLVWMLIBDIR = $(USRLIBDIR)/mlvwm
++    MLVWMLIBDIR = $(USRLIBDIR)/X11/mlvwm
+ #endif
+ 
+ #ifndef HasLocale
+@@ -69,12 +69,12 @@
+ #endif
  
  XCOMM 
 -      CDEBUGFLAGS = -g -Wall -Wshadow
@@ -9,3 +18,9 @@
  XCOMM            CDEBUGFLAGS = -O2 -Wall
  XCOMM            CDEBUGFLAGS = -g -Wall
  XCOMM            CDEBUGFLAGS = -g
+ 
+-ICONPATH = /usr/X11R6/include/pixmaps
++ICONPATH = /usr/X11R6/include/X11/pixmaps
+ 
+ MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
+ MLVWMLIBRARIES = $(Locale_LIBRARIES)
