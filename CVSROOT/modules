@@ -5766,6 +5766,7 @@ p5-XPC		ports/net/p5-XPC
 p5-Xmms		ports/audio/p5-Xmms
 p5-YAML		ports/textproc/p5-YAML
 p5-YAPE-HTML	ports/textproc/p5-YAPE-HTML
+p5-YAPE-Regex	ports/textproc/p5-YAPE-Regex
 p5-bioperl	ports/biology/p5-bioperl
 p5-bioperl-devel	ports/biology/p5-bioperl-devel
 p5-chart	ports/graphics/p5-chart
