@@ -101,6 +101,7 @@
     SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome
+    SUBDIR += libgnome-java
     SUBDIR += libgnomemm
     SUBDIR += libsx
     SUBDIR += libxfce4mcs
