@@ -1,0 +1,13 @@
+--- Makefile.PL.orig	Wed Apr 18 13:29:39 2001
++++ Makefile.PL	Wed Apr 18 13:31:05 2001
+@@ -4,8 +4,8 @@
+ WriteMakefile(
+     'NAME'	=> 'Shout',
+     'VERSION_FROM' => 'Shout.pm', # finds $VERSION
+-    'LIBS'	=> ['-lshout'],   # e.g., '-lm' 
++    'LIBS'	=> ['-L/usr/local/lib -lshout'],   # e.g., '-lm' 
+     'DEFINE'	=> '',     # e.g., '-DHAVE_SOMETHING' 
+-    'INC'	=> '',     # e.g., '-I/usr/include/other' 
++    'INC'	=> '-I/usr/local/include',     # e.g., '-I/usr/include/other' 
+     'MYEXTLIB'  => ''
+ );

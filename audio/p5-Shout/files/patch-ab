@@ -1,0 +1,10 @@
+--- MANIFEST.orig	Wed Apr 18 13:58:36 2001
++++ MANIFEST	Wed Apr 18 13:58:43 2001
+@@ -3,7 +3,5 @@
+ Makefile.PL
+ Shout.pm
+ Shout.xs
+-example.pl
+-example2.pl
+ test.pl
+ typemap
