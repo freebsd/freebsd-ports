@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxglade
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dotz@irc.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/wx.py:${PORTSDIR}/x11-toolkits/py-wxPython

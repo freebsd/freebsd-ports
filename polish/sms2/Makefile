@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	polish
 MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 
-MAINTAINER=	dotz@irc.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send SMS to cellular phones in Poland (Idea, ERA, Plus)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
