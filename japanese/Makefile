@@ -356,7 +356,6 @@
     SUBDIR += t2ps
     SUBDIR += tcl76
     SUBDIR += tcl80
-    SUBDIR += tcsh
     SUBDIR += tcsh-nls-asuka
     SUBDIR += tcsh-nls-ayanami
     SUBDIR += tcsh-nls-generic
