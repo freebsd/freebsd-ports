@@ -86,6 +86,7 @@
     SUBDIR += gkrellm-reminder
     SUBDIR += gkrellmaflag
     SUBDIR += gkrellmbgchg
+    SUBDIR += gkrellmfmonitor
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
