@@ -85,7 +85,7 @@ post-install:
 
 # MySQL-Client part
 .else
-MAN1=		isamchk.1 isamlog.1 mysql.1.gz mysql_zap.1 mysqlaccess.1  \
+MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
 		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqldump.1 mysqlshow.1 \
 		perror.1 replace.1 safe_mysqld.1
 
