@@ -1,0 +1,14 @@
+SXM (a.k.a. CXEMA) is a portable implementation of the Scheme
+Programming language. It conforms to IEEE/ANSI standard of Scheme
+and supports all features of the R5RS Report on Scheme. In addition,
+SXM supports numerous features of Chez Scheme v6.0 and SRFIs 0, 6, 8,
+11, and 16. SXM is derived from David Michael Betz's XScheme. Due to
+the loss of compatibility with the original (object system has been
+dropped) and significant amount of modifications and additions (SXM
+is 4 times bigger), I decided to treat it as a separate project with
+its own name.
+
+WWW: http://www.malgil.com/sxm/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org
