@@ -14,9 +14,10 @@ MAINTAINER=	leeym@FreeBSD.org
 
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
+USE_REINPLACE=	yes
 
 pre-build:
-	${PERL} -pi -e 's,gcc,${CC} ${CFLAGS},g' ${WRKSRC}/makefile
+	${REINPLACE_CMD} -e 's,gcc,${CC} ${CFLAGS},g' ${WRKSRC}/makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

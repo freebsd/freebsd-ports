@@ -14,6 +14,7 @@ MAINTAINER=	joseph@randomnetworks.com
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_PERL5=	yes
 
 MAN1=		sendip.1
 

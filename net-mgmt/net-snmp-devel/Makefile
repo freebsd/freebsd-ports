@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_AUTOCONF_VER=213
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -89,7 +90,8 @@ SHLIB_VERSION=	5
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/aclocal.m4
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKSRC}/aclocal.m4
 
 pre-install:
 	-@[ -f ${STARTUP_FILE} ] && \

@@ -14,6 +14,7 @@ DISTFILES=	# none
 MAINTAINER=	leeym@FreeBSD.org
 
 SRCDIR=		/usr/src/usr.bin/telnet
+USE_REINPLACE=	yes
 
 MAN1=		zh-telnet.1
 
@@ -28,7 +29,7 @@ BROKEN=	"You need to build this port with ${SRCDIR}"
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's,/../..,,g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,/../..,,g' ${WRKSRC}/Makefile
 
 pre-build:
 	@cd ${WRKSRC}/lib/libtelnet && ${MAKE}

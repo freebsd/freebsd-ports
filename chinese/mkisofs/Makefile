@@ -16,11 +16,12 @@ PATCHFILES=	mkisofs-1.12b5.big5patch.gz
 MAINTAINER=	keith@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	World
 MAN8=		mkisofs.8 isoinfo.8
 
 pre-configure:
-	${PERL} -pi.orig -e 's:prefix = /usr/local:prefix = ${PREFIX}:' \
+	${REINPLACE_CMD} -e 's:prefix = /usr/local:prefix = ${PREFIX}:' \
 		${WRKSRC}/diag/Makefile.in
 
 post-build:

@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	leeym@FreeBSD.org
 
 ALL_TARGET=	generic
+USE_REINPLACE=	yes
 
 pre-build:
-	${PERL} -pi.orig -e "s@gcc@${CC}@g; s@-Wall@-Wall ${CFLAGS}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@gcc@${CC}@g; s@-Wall@-Wall ${CFLAGS}@g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

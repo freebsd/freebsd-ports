@@ -23,6 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff \
 		jless:${PORTSDIR}/japanese/less
 
 MAKE_ENV=	GZCAT=${GZCAT} GZIP_CMD="${GZIP_CMD}"
+USE_REINPLACE=	yes
 
 MANLANG=	"" ja
 MAN1=		jman.1 jmanpath.1 japropos.1 \
@@ -36,7 +37,7 @@ post-patch:
 		makewhatis/jmakewhatis.local.man.eng \
 		makewhatis/makewhatis.local.sh \
 		man/locale.c manpath/manpath.config
-	${PERL} -pi -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" ${WRKSRC}/${file}
 .endfor
 
 pre-install:

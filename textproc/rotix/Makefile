@@ -18,12 +18,13 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${PREFIX}/man --i18n=1
 
 MAN1=		rotix.1
 
 post-patch:
-	@${PERL} -pi -e 's,%%CFLAGS%%,${CFLAGS},; s,%%LOCALBASE%%,${LOCALBASE},;' \
+	@${REINPLACE_CMD} -e 's,%%CFLAGS%%,${CFLAGS},; s,%%LOCALBASE%%,${LOCALBASE},;' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -15,10 +15,12 @@ MAINTAINER=	jedgar@FreeBSD.org
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
+
 MAN1=		rfc.1
 
 do-configure:
-	@${PERL} -pi.orig -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \
 		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap|' \
 		${WRKSRC}/${PORTNAME}-${PORTVERSION}
 

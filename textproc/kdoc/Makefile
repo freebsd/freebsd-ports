@@ -17,13 +17,14 @@ MAINTAINER=	kde@FreeBSD.org
 USE_BZIP2=	yes
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
 MAN1=		kdoc.1 qt2kdoc.1 makekdedoc.1
 
 pre-configure:
-	${PERL} -pi -e "s#share/kdoc#lib/perl5/site_perl/${PERL_VER}#" \
+	${REINPLACE_CMD} -e "s#share/kdoc#lib/perl5/site_perl/${PERL_VER}#" \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

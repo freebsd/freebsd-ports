@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/frames/navbar.htm:${P
 		jade:${PORTSDIR}/textproc/jade
 
 NO_BUILD=	yes
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/stylesheets
 SCRIPTS_ENV=	DB_DATA="${DB_SCRIPTS} cygnus-both.dsl"
 

@@ -13,10 +13,12 @@ MASTER_SITES=	ftp://gwdu111.gwdg.de/pub/FreeBSD/misc/ \
 
 MAINTAINER=	kheuer@gwdu60.gwdg.de
 
+USE_REINPLACE=	yes
+
 MAN1=		rprint.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${PERL} -pi -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
