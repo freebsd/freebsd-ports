@@ -1,16 +1,6 @@
 diff -ur work.orig/sablevm-1.0.3/configure work/sablevm-1.0.3/configure
 --- work.orig/sablevm-1.0.3/configure	Wed Aug 14 22:34:00 2002
 +++ work/sablevm-1.0.3/configure	Sat Aug 17 21:14:52 2002
-@@ -7747,6 +7747,9 @@
- 
- 
- 
-+test "x$prefix" = xNONE && prefix=$ac_default_prefix
-+CFLAGS="${CFLAGS} -D_P1003_1B_VISIBLE -pthread -I${prefix}/include -L${prefix}/lib"
-+
- echo "$as_me:$LINENO: checking for ffi_prep_cif in -lffi" >&5
- echo $ECHO_N "checking for ffi_prep_cif in -lffi... $ECHO_C" >&6
- if test "${ac_cv_lib_ffi_ffi_prep_cif+set}" = set; then
 @@ -7989,67 +7992,6 @@
    echo -n
  else
