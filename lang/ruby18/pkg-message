@@ -1,11 +1,10 @@
 ====
-When you are to build a ruby related port for Ruby 1.7, please define
-RUBY_VER=1.7 in the make command line, or put it in your
-/etc/make.conf.  If you want to always use Ruby 1.7 instead of 1.6,
-set RUBY_DEFAULT_VER=1.7.
+To build a ruby related port for Ruby 1.8, define RUBY_VER=1.8 on the
+make command line or in /etc/make.conf.  If you want to use Ruby 1.8
+as the default instead of 1.6, define RUBY_DEFAULT_VER=1.8 also.
 
-Note that some stuff that comes with the standard Ruby distribution is
-provided as separate ports:
+Note that some of the standard libraries are provided as separate
+ports since they require extra dependencies:
 
 	converters/ruby-iconv	iconv module
 
@@ -18,7 +17,7 @@ provided as separate ports:
 	japanese/ruby-tk:	Tk modules for Japanized Tcl/Tk
 
 	lang/ruby-mode.el:	Emacs lisp modules
-			
-Please install them as occasion demands. (Don't forget to define
-RUBY_VER=1.7 when you build them)
+
+Install them as occasion demands. (Make sure to define RUBY_VER=1.8
+when you build and install them)
 ====
