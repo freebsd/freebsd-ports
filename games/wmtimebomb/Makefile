@@ -16,7 +16,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		PropList.2:${PORTSDIR}/devel/libPropList \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.3:${PORTSDIR}/graphics/png
 BUILD_DEPENDS=	${X11BASE}/lib/libWMaker.a:${PORTSDIR}/x11-wm/windowmaker
 
