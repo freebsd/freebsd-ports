@@ -1,5 +1,5 @@
 etc/rc.d/apache_ssl.sh
-@exec mkdir %D/www/cgi-bin %D/www/data
+@exec mkdir -p %D/www/cgi-bin %D/www/data
 @unexec rm %D/etc/rc.d/apache_ssl.sh
 etc/apache/httpd.conf
 etc/apache/httpd.conf-SSL
