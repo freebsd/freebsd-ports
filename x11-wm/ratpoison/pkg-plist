@@ -1,7 +1,11 @@
 @comment $FreeBSD$
 bin/ratpoison
+share/ratpoison/allwindows.sh
+share/ratpoison/clickframe.pl
 share/ratpoison/genrpbindings
 share/ratpoison/ratpoison.el
+share/ratpoison/rpshowall.sh
+share/ratpoison/rpws
 share/ratpoison/split.sh
 %%PORTDOCS%%@unexec install-info --delete %D/info/ratpoison %D/info/dir
 %%PORTDOCS%%info/ratpoison.info
