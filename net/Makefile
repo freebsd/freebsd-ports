@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.147 1998/03/15 20:09:35 steve Exp $
+# $Id: Makefile,v 1.148 1998/03/16 22:46:35 jseger Exp $
 #
 
     SUBDIR += archie
@@ -109,5 +109,6 @@
     SUBDIR += ytalk
     SUBDIR += zephyr
     SUBDIR += zircon
+    SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>
