@@ -10,7 +10,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.thc.org/releases/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Local network discovery tool
 
 GNU_CONFIGURE=	yes
