@@ -13,7 +13,7 @@
 +'DESTBIN=${PREFIX}/bin'
 +'DESTSBIN=${PREFIX}/sbin'
 +'DESTEXEC=${PREFIX}/libexec'
-+'DESTMAN=${PREFIX}/man'
++'DESTMAN=${MANPREFIX}/man'
 +'DESTHELP=${PREFIX}/share/misc'
 +'DESTETC=${PREFIX}/etc'
  'DESTRUN=/var/run'

@@ -33,8 +33,8 @@ MAN7=		hostname.7 mailaddr.7
 MAN8=		named-bootconf.8 named-xfer.8 named.8 ndc.8 nslookup.8 \
 		nsupdate.8
 
-PATCH_ARGS=	-d ${WRKDIR}
-PATCH_DIST_ARGS=	-d ${WRKDIR}
+PATCH_ARGS=	-s -d ${WRKDIR}
+PATCH_DIST_ARGS=	-s -d ${WRKDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
