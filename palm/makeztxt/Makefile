@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gutenpalm
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Command line utility to create GutenPalm's zTXT format databases
 
 PLIST_FILES=	bin/makeztxt
