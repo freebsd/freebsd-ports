@@ -1,7 +1,7 @@
---- Makefile.PL.orig	Fri Jul  4 14:04:35 2003
-+++ Makefile.PL	Fri Jul  4 14:07:13 2003
-@@ -2,27 +2,7 @@ use ExtUtils::MakeMaker qw( WriteMakefil
- use strict;
+--- Makefile.PL.orig	Mon Aug 18 03:35:42 2003
++++ Makefile.PL	Fri Oct  3 11:47:30 2003
+@@ -5,28 +5,7 @@
+ use constant FLAG_SKIPMECHDUMP => "t/SKIP-MECH-FORMS";
  
  # Much logic stolen fromm libwww-perl's Makefile.PL
 -my $skiplive = 0;
@@ -16,8 +16,9 @@
 -} else {
 -    print <<EOT;
 -
--It seems that you are not directly connected to the Internet.  Many of 
--the WWW::Mechanize tests interact with websites such as Google.
+-It seems that you are not directly connected to the Internet.  Some
+-of the WWW::Mechanize tests interact with websites such as Google,
+-in addition to its own internal tests.
 -
 -EOT
 -
@@ -27,14 +28,29 @@
 -} # failed connect
 +my $skiplive = 1;
  
- my $filename = "t/SKIPLIVE";
- if ( $skiplive ) {
-@@ -55,8 +35,6 @@ my $parms = {
- 			},
+ my $tests = 't/*.t';
+ $tests .= ' t/live/*.t' unless $skiplive;
+@@ -53,17 +32,17 @@
+     'test' => { TESTS => $tests },
  };
  
--if ( prompt( "Do you want to install the mech-forms utility?", "y" ) =~ /^y/i ) {
-     $parms->{EXE_FILES} = [ 'script/mech-forms' ];
--}
+-if ( prompt( "Do you want to install the mech-dump utility?", "y" ) =~ /^y/i ) {
++#if ( prompt( "Do you want to install the mech-dump utility?", "y" ) =~ /^y/i ) {
+     $parms->{EXE_FILES} = [ 'script/mech-dump' ];
+     $parms->{PREREQ_PM}->{'Getopt::Long'} = 0;
+     $parms->{PREREQ_PM}->{'Pod::Usage'} = 0;
  
- WriteMakefile( %$parms );
+-    local @ARGV = FLAG_SKIPMECHDUMP;
++    local @ARGV = (@ARGV, FLAG_SKIPMECHDUMP);
+     rm_f();
+-} else {
+-    local @ARGV = FLAG_SKIPMECHDUMP;
+-    touch();
+-}
++#} else {
++#    local @ARGV = FLAG_SKIPMECHDUMP;
++#    touch();
++#}
+ 
+ 
+ eval { require IO::Socket::SSL };
