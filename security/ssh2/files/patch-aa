@@ -1,6 +1,6 @@
---- lib/Makefile.in.old	Tue Nov 24 18:18:33 1998
-+++ lib/Makefile.in	Tue Nov 24 18:20:13 1998
-@@ -97,14 +97,14 @@
+--- lib/Makefile.in.orig	Fri Jan 29 14:30:20 1999
++++ lib/Makefile.in	Fri Feb  5 08:38:26 1999
+@@ -98,14 +98,14 @@
  
  AUTOMAKE_OPTIONS = 1.0 foreign dist-zip no-dependencies
  
@@ -10,14 +10,14 @@
  # sshtest testsuite
  
  lib_LIBRARIES = libssh.a
- # libsshcrypt.kpure.a 
+ # libsshcrypt.kpure.a
  
 -SUBLIBRARIES = sshmath/libsshmath.a zlib/libz.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
 +SUBLIBRARIES = sshmath/libsshmath.a sshutil/libsshutil.a sshapputil/libsshapputil.a sshcrypt/libsshcrypt.a sshproto/libsshproto.a sshsession/libsshsession.a sshreadline/libsshreadline.a
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../sshconf.h
  CONFIG_CLEAN_FILES = 
-@@ -367,11 +367,6 @@
+@@ -368,11 +368,6 @@
  all-local: includes
  includes:
  	-if test '!' -d ../include; then mkdir ../include; fi

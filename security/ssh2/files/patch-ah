@@ -1,0 +1,23 @@
+--- apps/ssh/sshchsession.c.bak	Mon Jan 18 13:32:24 1999
++++ apps/ssh/sshchsession.c	Fri Feb  5 08:49:14 1999
+@@ -628,12 +628,20 @@
+   char buff[100], *time_string;
+   
+   /* Check /etc/nologin. */
++#ifdef __FreeBSD__
++  f = fopen("/var/run/nologin", "r");
++#else
+   f = fopen("/etc/nologin", "r");
++#endif
+   if (f)
+     { /* /etc/nologin exists.  Print its contents and exit. */
+       /* Print a message about /etc/nologin existing; I am getting
+          questions because of this every week. */
++#ifdef __FreeBSD__
++      ssh_warning("Logins are currently denied by /var/run/nologin:");
++#else
+       ssh_warning("Logins are currently denied by /etc/nologin:");
++#endif
+       while (fgets(buf, sizeof(buf), f))
+         fputs(buf, stderr);
+       fclose(f);
