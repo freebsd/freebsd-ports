@@ -1,0 +1,3 @@
+The ccxstream port will not start when enabled unless the configuration
+variable ccxstream_flags is also initialized. See ccxstream.sh in
+your ports startup directory for details.

@@ -51,6 +51,7 @@
     SUBDIR += callgen
     SUBDIR += cap
     SUBDIR += ccmsn
+    SUBDIR += ccxstream
     SUBDIR += cdonkey
     SUBDIR += centericq
     SUBDIR += cicquin
