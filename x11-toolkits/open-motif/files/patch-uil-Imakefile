@@ -1,0 +1,13 @@
+--- clients/uil/Imakefile.orig	Sun Sep 17 23:19:36 2000
++++ clients/uil/Imakefile	Sun Sep 17 23:19:50 2000
+@@ -40,8 +40,10 @@
+ 
+ #define DoNormalLib	NormalLibUil
+ #define DoSharedLib	SharedLibUil
++#if 0
+ #define DoDebugLib	DebugLibUil
+ #define DoProfileLib	ProfileLibUil
++#endif
+ #define LibName		Uil
+ #define	SoRev		SOUILREV
+ #define HasSharedData	NO

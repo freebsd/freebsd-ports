@@ -319,15 +319,12 @@ lib/X11/uid/xmanimate.uid
 lib/libMrm.a
 lib/libMrm.so
 lib/libMrm.so.2
-lib/libMrm_d.a
 lib/libUil.a
 lib/libUil.so
 lib/libUil.so.2
-lib/libUil_d.a
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.2
-lib/libXm_d.a
 share/doc/openmotif/BUGREPORT
 share/doc/openmotif/CLOSEDBUGS.gz
 share/doc/openmotif/COPYRIGHT.MOTIF

@@ -1,0 +1,13 @@
+--- lib/Mrm/Imakefile.orig	Sun Sep 17 23:11:27 2000
++++ lib/Mrm/Imakefile	Sun Sep 17 23:12:05 2000
+@@ -36,8 +36,10 @@
+ 
+ #define DoNormalLib	NormalLibMrm
+ #define DoSharedLib	SharedLibMrm
++#if 0
+ #define DoDebugLib	DebugLibMrm
+ #define DoProfileLib	ProfileLibMrm
++#endif
+ #define LibName		Mrm
+ #define SoRev		SOMRMREV
+ #define HasSharedData	NO
