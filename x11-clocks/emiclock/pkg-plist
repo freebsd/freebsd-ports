@@ -4,3 +4,5 @@ lib/X11/ja_JP.EUC/app-defaults/EmiClock
 lib/X11/EmiClock/myu.au
 lib/X11/EmiClock/COPYRIGHT
 lib/X11/EmiClock/COPYRIGHT.en
+@dirrm lib/X11/ja_JP.EUC/app-defaults
+@dirrm lib/X11/EmiClock
