@@ -216,10 +216,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/chm_generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/html_generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/chm/chm.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/css2.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/hefss.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/kilmer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/old_html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/rdf.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/xml.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/xml_generator.rb
