@@ -1,11 +1,8 @@
---- Makefile.in.orig	Sun Oct  6 17:20:05 2002
-+++ Makefile.in	Sun Oct  6 17:24:38 2002
-@@ -60,11 +60,10 @@
- # programs
- BINDIR=$(bindir)
+--- Makefile.in.orig	Sun Oct  6 23:14:27 2002
++++ Makefile.in	Sun Oct  6 23:16:21 2002
+@@ -62,9 +62,8 @@
  # include files
--INCLUDEDIR=$(includedir)/X11/Xft
-+INCLUDEDIR=$(includedir)/X11/Xft2
+ INCLUDEDIR=$(includedir)/X11/Xft
  
 -LIBBASE=libXft.so
 -LIBFILE=$(LIBBASE).@PACKAGE_MAJOR@.@PACKAGE_MINOR@
@@ -52,17 +49,31 @@
  	$(INSTALL_PROGRAM) $< $(DESTDIR)$(LIBDIR)
  
 -$(DESTDIR)$(LIBDIR)/$(LIBMAJOR): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
--	rm -f  $@
++$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
+ 	rm -f  $@
 -	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
 -
 -$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBMAJOR)
-+$(DESTDIR)$(LIBDIR)/$(LIBBASE): $(DESTDIR)$(LIBDIR)/$(LIBFILE)
- 	rm -f  $@
+-	rm -f  $@
 -	$(LN_S) $(LIBMAJOR) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
 +	$(LN_S) $(LIBFILE) $(DESTDIR)$(LIBDIR)/$(LIBBASE)
  
  #
  # install xft-config script
+@@ -188,10 +179,10 @@
+ # install header files
+ #
+ 
+-install::$(DESTDIR)$(INCLUDEDIR)/Xft.h $(DESTDIR)$(INCLUDEDIR)/XftCompat.h
++install::$(DESTDIR)$(INCLUDEDIR)/Xft2.h $(DESTDIR)$(INCLUDEDIR)/XftCompat.h
+ 
+-$(DESTDIR)$(INCLUDEDIR)/Xft.h: Xft.h
+-	$(INSTALL_DATA) $< $(DESTDIR)$(INCLUDEDIR)
++$(DESTDIR)$(INCLUDEDIR)/Xft2.h: Xft.h
++	$(INSTALL_DATA) $< $(DESTDIR)$(INCLUDEDIR)/Xft2.h
+ 
+ $(DESTDIR)$(INCLUDEDIR)/XftCompat.h: XftCompat.h
+ 	$(INSTALL_DATA) $< $(DESTDIR)$(INCLUDEDIR)
 @@ -200,4 +191,4 @@
  # delete generated files
  #

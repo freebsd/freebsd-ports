@@ -1,5 +1,14 @@
---- xft.pc.in.orig	Sun Oct  6 17:17:59 2002
-+++ xft.pc.in	Sun Oct  6 17:18:10 2002
+--- xft.pc.in.orig	Thu May 23 19:01:56 2002
++++ xft.pc.in	Mon Oct  7 00:54:46 2002
+@@ -2,7 +2,7 @@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+-freetypelibs=@FREETYPE_LIBS@
++freetypelibs=@FREETYPE_LIBS@ -lXext
+ freetypecflags=@FREETYPE_CFLAGS@
+ xrenderlibs=@XRENDER_LIBS@
+ xrendercflags=@XRENDER_CFLAGS@
 @@ -11,5 +11,5 @@
  Description: X FreeType library
  Version: @PACKAGE_VERSION@
