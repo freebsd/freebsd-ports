@@ -1469,6 +1469,7 @@ ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
 f2c		src/usr.bin/f2c
+f2py		ports/lang/f2py
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
 faces		ports/mail/faces
