@@ -19,8 +19,14 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_REINPLACE=	yes
 
-.if !exists(/usr/lib/libmilter.a)
-IGNORE=		requires Sendmail 8.12; upgrade the base system
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/lib/libmilter.a) && !exists(${LOCALBASE}/lib/libmilter.a)
+IGNORE=         requires Sendmail 8.12
+.endif
+.if exists(${LOCALBASE}/lib/libmilter.a)
+CFLAGS+=       -I${LOCALBASE}/include
+LDFLAGS+=      -L${LOCALBASE}/lib
 .endif
 
 post-patch:
@@ -47,4 +53,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
