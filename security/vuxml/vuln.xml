@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="de16b056-132e-11d9-bc4a-000c41e2cdad">
+    <topic>samba -- remote file disclosure</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<range><lt>2.2.12</lt></range>
+	<range><ge>3</ge><lt>3.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to a Samba Team security notice:</p>
+	<blockquote cite="http://www.samba.org/samba/news/#security_2.2.12">
+          <p>A security vulnerability has been located in Samba
+            2.2.x &lt;= 2.2.11 and Samba 3.0.x &lt;= 3.0.5. A remote
+            attacker may be able to gain access to files which exist
+            outside of the share's defined path. Such files must still
+            be readable by the account used for the connection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0815</cvename>
+      <url>http://www.samba.org/samba/news/#security_2.2.12</url>
+    </references>
+    <dates>
+      <discovery>2004-09-30</discovery>
+      <entry>2004-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab9c559e-115a-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- BMP decoder vulnerabilities</topic>
     <affects>
