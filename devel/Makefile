@@ -16,6 +16,7 @@
     SUBDIR += arm-aout-gcc295
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
+    SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl
     SUBDIR += astyle

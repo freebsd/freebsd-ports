@@ -1,0 +1,5 @@
+bin/as80
+bin/asm80
+share/doc/as80/Manual.txt
+share/doc/as80/README
+@dirrm share/doc/as80

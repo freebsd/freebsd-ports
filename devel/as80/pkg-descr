@@ -1,0 +1,17 @@
+As80 is a lightweight 8080/8085 assembler for UN*X systems. It was
+developed on a Debian GNU/Linux System and should well work on other
+UN*Xes. As80 is not invoked directly but through a wrapper shell
+script (asm) that handles some basic conversion (upper to lower etc.). So
+be sure to use this instead of directly running as80 and getting lots of
+(if you are lucky, meaningful) error messages.
+
+Although As80 is still in a somewhat early phase of development, it
+won't take much to come to one level with professional assemblers. The
+use of the C preprocessor instead of implementing some of the
+functionality (.EQU comes to mind) makes it easy to write assembler
+source programs in a more flexible way. At least, that's what I think.
+You are of course welcome to improve and/or add as you like, but be
+sure to always obey the license terms.
+
+- George Reid
+greid@ukug.uk.freebsd.org

@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Feb 15 10:54:44 2001
++++ Makefile	Thu Feb 15 10:55:00 2001
+@@ -1,6 +1,5 @@
+-CC = gcc
+-CFLAGS = -Wall -pedantic -ansi -O3 -fomit-frame-pointer
+-PREFIX = /usr/local
++CC? = gcc
++CFLAGS += -Wall -pedantic -ansi
+ 
+ all:	asm80 Manual.txt
+ 
