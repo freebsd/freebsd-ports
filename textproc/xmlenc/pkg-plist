@@ -1,11 +1,11 @@
-share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLOutputter.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLOutputter.State.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLOutputterStates.html
 share/doc/xmlenc/org/znerd/xmlenc/package-use.html
 share/doc/xmlenc/org/znerd/xmlenc/package-summary.html
 share/doc/xmlenc/org/znerd/xmlenc/package-tree.html
 share/doc/xmlenc/org/znerd/xmlenc/package-frame.html
-share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/XMLOutputterStates.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLOutputter.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLOutputter.State.html
 share/doc/xmlenc/serialized-form.html
