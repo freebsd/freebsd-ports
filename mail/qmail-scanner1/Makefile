@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qmail-scanner
-PORTVERSION=	1.22
-PORTREVISION=	1
+PORTVERSION=	1.24
 CATEGORIES=	mail security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,6 @@ COMMENT=	Content/Anti-virus Scanner for qmail
 BUILD_DEPENDS=	${QMAIL_QUEUE}:${PORTSDIR}/mail/qmail \
 		reformime:${PORTSDIR}/mail/maildrop \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 # A normal qmail installation puts everything into /var/qmail/.
 # Must match your qmail installation
@@ -43,16 +41,27 @@ CONFIGURE_ARGS+=	--admin-realname "${QMAILSCAN_ADMINREALNAME}"
 .if defined(QMAILSCAN_ARCHIVE)
 CONFIGURE_ARGS+=	--archive yes
 .endif
-QMAILSCAN_NOTIFY?=	psender,recips
-.if defined(QMAILSCAN_LOCALDOMAINS)
+QMAILSCAN_NOTIFY?=	psender,precips
+.if defined(QMAILSCAN_LANG)
+CONFIGURE_ARGS+=	--lang "${QMAILSCAN_LANG}"
+.endif
+.if defined(QMAILSCAN_LOCALDOMAINS) && !empty(QMAILSCAN_LOCALDOMAINS)
 CONFIGURE_ARGS+=	--local-domains "${QMAILSCAN_LOCALDOMAINS}"
 .endif
 .if defined(QMAILSCAN_LOGCRYPTO)
 CONFIGURE_ARGS+=	--log-crypto yes
 .endif
+.if defined(QMAILSCAN_NOTUNZIP)
+CONFIGURE_ARGS+=	--unzip no
+.else
+CONFIGURE_ARGS+=	--unzip yes
+.if defined(QMAILSCAN_MAXZIPSIZE)
+CONFIGURE_ARGS+=	--max-zip-size "${QMAILSCAN_MAXZIPSIZE}"
+.endif
 .if !defined(QMAILSCAN_NOTBLKZIPPW)
 BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
-CONFIGURE_ARGS+=	--block-password-protected
+CONFIGURE_ARGS+=	--block-password-protected yes
+.endif
 .endif
 .if defined(QMAILSCAN_SCANNERS)
 CONFIGURE_ARGS+=	--scanners "${QMAILSCAN_SCANNERS}"
@@ -67,16 +76,18 @@ CONFIGURE_ARGS+=	--spams-redirect "${QMAILSCAN_SPAMSREDIRECT}"
 CONFIGURE_ARGS+=	--spams-tosuffix "${QMAILSCAN_SPAMSTOSUFFIX}"
 .endif
 
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 SPOOLDIR=	${PREFIX}/qmailscan
 PLIST_SUB=	SPOOLDIR="${SPOOLDIR:S,${PREFIX}/,,}"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
-		--qmaildir ${QMAIL_DIR} --spooldir ${SPOOLDIR} \
-		--bindir ${PREFIX}/bin --qmail-queue-binary ${QMAIL_QUEUE} \
+		--qmaildir "${QMAIL_DIR}" --spooldir "${SPOOLDIR}" \
+		--bindir "${PREFIX}/bin" --qmail-queue-binary "${QMAIL_QUEUE}" \
 		--admin "${QMAILSCAN_ADMIN}" --notify "${QMAILSCAN_NOTIFY}" \
 		--silent-viruses "${QMAILSCAN_SILENTVIRUSES}" \
-		--redundant yes --unzip yes \
+		--redundant yes \
 		--add-dscr-hdrs yes \
 		--log-details syslog --debug no \
 		--batch
@@ -88,17 +99,26 @@ pre-configure:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "QMAILSCAN_ADMIN          email adress of qmail-scanner admin for alerts"
 	@${ECHO_MSG} "QMAILSCAN_ADMINREALNAME* name to use when sending alerts"
-	@${ECHO_MSG} "                         (do not use spaces but underscores here)"
+	@${ECHO_MSG} "QMAILSCAN_LANG           specify languages for QS mails (notify, etc..)"
+	@${ECHO_MSG} "                         supported languages are: af_ZA, cs_CZ, da_DK, de_DE,"
+	@${ECHO_MSG} "                         en_GB, en_PL, enlt_LT, enlt_LT_short, es_ES, fr_FR,"
+	@${ECHO_MSG} "                         it_IT, ja_JP.EUC, nl_NL, no_NO, pl_PL, pt_BR, pt_PT,"
+	@${ECHO_MSG} "                         sk_SK, sv_SE, tr_TR, tr_TR_ascii and tw_BIG5"
+	@${ECHO_MSG} "                         default depends on your LANG variable"
+	@${ECHO_MSG} "                         (en_GB if LANG is not set)"
 	@${ECHO_MSG} "QMAILSCAN_LOCALDOMAINS   domains classified as local domains preventing alerts"
 	@${ECHO_MSG} "                         of externals users (and mailing-lists...)"
 	@${ECHO_MSG} "QMAILSCAN_LOGCRYPTO      simply notes in the log record if the message"
 	@${ECHO_MSG} "                         contained any form of digital signing or encryption"
 	@${ECHO_MSG} "                         (S/MIME, PGP and password protected files)"
 	@${ECHO_MSG} "                         default is disabled"
+	@${ECHO_MSG} "QMAILSCAN_MAXZIPSIZE     zip that would have unpacked into more diskspace"
+	@${ECHO_MSG} "                         than this value will be blocked (prevent DoS)"
+	@${ECHO_MSG} "                         default is 1000000000"
 	@${ECHO_MSG} "QMAILSCAN_NOTBLKZIPPW    zip password protected are blocked by default"
 	@${ECHO_MSG} "                         setting this variable to disable this function"
 	@${ECHO_MSG} "QMAILSCAN_NOTIFY         who has to be notify of viruses/spams"
-	@${ECHO_MSG} "                         defaults to 'psender,recips'"
+	@${ECHO_MSG} "                         defaults to 'psender,precips'"
 	@${ECHO_MSG} "QMAILSCAN_SCANNERS       list of installed content scanner"
 	@${ECHO_MSG} "                         default is automatic, so you do not need to set this"
 	@${ECHO_MSG} "QMAILSCAN_SILENTVIRUSES  viruses that qs shoud not notify about"
