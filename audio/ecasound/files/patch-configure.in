@@ -1,0 +1,14 @@
+--- configure.in.orig	Thu Nov 21 21:39:56 2002
++++ configure.in	Thu Nov 21 21:40:12 2002
+@@ -374,9 +374,9 @@
+ AC_LANG_CPLUSPLUS
+ AC_HEADER_TIME
+ AC_CHECK_HEADERS(fcntl.h dlfcn.h sys/ioctl.h sys/time.h sys/resource.h sys/stat.h sys/wait.h signal.h sys/types.h sys/mman.h errno.h sched.h unistd.h inttypes.h asm/atomic.h ladspa.h)
+-AC_CHECK_HEADER(map.h,nostlmap=0,nostlmap=1)
++AC_CHECK_HEADER(map,nostlmap=0,nostlmap=1)
+ if test "x$nostlmap" = "x1" ; then
+-	AC_MSG_ERROR([C++ header files not found! Searched for 'map.h' (STL).])
++	AC_MSG_ERROR([C++ header files not found! Searched for 'map' (STL).])
+ fi
+ 
+ dnl ------------------------------------------------------------------
