@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
-MAINTAINER?=	knu@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
