@@ -1,0 +1,70 @@
+*** yc.el.orig	Sun Dec  5 15:50:23 1999
+--- yc.el	Sun Dec  5 16:08:09 1999
+***************
+*** 251,257 ****
+  
+  (require 'cl)
+  
+! (defconst yc-canna-lib-path "/usr/lib/canna/dic/";"/usr/local/canna/lib/dic/"
+    "かんなの辞書パスを設定する")
+  (defconst yc-select-count 2		; 一覧モードになる繰り返し数
+    "一覧モードになる繰返し数を設定する。デフォルトは3回。
+--- 251,257 ----
+  
+  (require 'cl)
+  
+! (defconst yc-canna-lib-path "/usr/local/lib/canna/dic/"
+    "かんなの辞書パスを設定する")
+  (defconst yc-select-count 2		; 一覧モードになる繰り返し数
+    "一覧モードになる繰返し数を設定する。デフォルトは3回。
+***************
+*** 655,661 ****
+  (defvar yc-user-dic-list nil)
+  (defvar yc-default-bushu-dic-list '("bushu"))
+  (defvar yc-bushu-dic-list nil)
+! (defvar yc-rH-conv-dic "/usr/local/canna/lib/dic/default.cbp")
+  (defvar yc-default-rH-table
+    '(("~" "￣" "") ("}" "』" "") ("|" "｜" "") ("{" "『" "") ("zz" "っ" "z")
+      ("zyu" "じゅ" "") ("zyo" "じょ" "") ("zyi" "じぃ" "") ("zye" "じぇ" "")
+--- 655,661 ----
+  (defvar yc-user-dic-list nil)
+  (defvar yc-default-bushu-dic-list '("bushu"))
+  (defvar yc-bushu-dic-list nil)
+! (defvar yc-rH-conv-dic (concat (file-name-as-directory yc-canna-lib-path) "default.kp"))
+  (defvar yc-default-rH-table
+    '(("~" "￣" "") ("}" "』" "") ("|" "｜" "") ("{" "『" "") ("zz" "っ" "z")
+      ("zyu" "じゅ" "") ("zyo" "じょ" "") ("zyi" "じぃ" "") ("zye" "じぇ" "")
+***************
+*** 1603,1609 ****
+  (defun yc-read-string-from-file (file)
+    (let* (;; emacs-20.x
+  	 (auto-coding-alist
+! 	  (cons '("\\.cbp" . japanese-iso-8bit)
+  		(and (boundp 'auto-coding-alist)
+  		     auto-coding-alist)))
+  	 (auto-coding-alist
+--- 1603,1609 ----
+  (defun yc-read-string-from-file (file)
+    (let* (;; emacs-20.x
+  	 (auto-coding-alist
+! 	  (cons '("\\.kp" . japanese-iso-8bit)
+  		(and (boundp 'auto-coding-alist)
+  		     auto-coding-alist)))
+  	 (auto-coding-alist
+***************
+*** 1613,1619 ****
+  
+  	 ;; XEmacs-20.x
+  	 (file-coding-system-alist
+! 	  (cons '("\\.cbp" . euc-jp)
+  		(and (boundp 'file-coding-system-alist)
+  		     file-coding-system-alist)))
+  	 (file-coding-system-alist
+--- 1613,1619 ----
+  
+  	 ;; XEmacs-20.x
+  	 (file-coding-system-alist
+! 	  (cons '("\\.kp" . euc-jp)
+  		(and (boundp 'file-coding-system-alist)
+  		     file-coding-system-alist)))
+  	 (file-coding-system-alist
