@@ -1,9 +1,14 @@
 bin/solfege
 bin/solfege%%VERSION%%
-etc/solfege2.0
+etc/solfege2.1
 share/gnome/apps/Applications/solfege.desktop
 share/gnome/pixmaps/solfege.png
 share/gnome/solfege/%%VERSION%%/default.config
+share/gnome/solfege/%%VERSION%%/example-lesson-files/chord-satb
+share/gnome/solfege/%%VERSION%%/example-lesson-files/harmonic-progression-dictation
+share/gnome/solfege/%%VERSION%%/example-lesson-files/id-by-name-1
+share/gnome/solfege/%%VERSION%%/example-lesson-files/id-by-name-2
+share/gnome/solfege/%%VERSION%%/example-lesson-files/sing-chord
 share/gnome/solfege/%%VERSION%%/feta/feta20-accidentals--1.xpm
 share/gnome/solfege/%%VERSION%%/feta/feta20-accidentals--2.xpm
 share/gnome/solfege/%%VERSION%%/feta/feta20-accidentals-0.xpm
@@ -96,9 +101,19 @@ share/gnome/solfege/%%VERSION%%/lesson-files/altered-2
 share/gnome/solfege/%%VERSION%%/lesson-files/atonal-1
 share/gnome/solfege/%%VERSION%%/lesson-files/barnesanger
 share/gnome/solfege/%%VERSION%%/lesson-files/besifring
+share/gnome/solfege/%%VERSION%%/lesson-files/bin/csound-play-harmonic-interval.sh
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-7b9-maj79
+share/gnome/solfege/%%VERSION%%/lesson-files/chord-all
+share/gnome/solfege/%%VERSION%%/lesson-files/chord-all-inv
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-dim-aug
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-dim-aug-min-major
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.97
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.98
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.99
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.995
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.996
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.997
+share/gnome/solfege/%%VERSION%%/lesson-files/csound-fifth-0.998
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-m7-7
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-m7-7-inv
 share/gnome/solfege/%%VERSION%%/lesson-files/chord-m7-7-inv-not
@@ -114,6 +129,7 @@ share/gnome/solfege/%%VERSION%%/lesson-files/chord-min-major-inv-not
 share/gnome/solfege/%%VERSION%%/lesson-files/diatonic-1
 share/gnome/solfege/%%VERSION%%/lesson-files/diatonic-2
 share/gnome/solfege/%%VERSION%%/lesson-files/durmoll
+share/gnome/solfege/%%VERSION%%/lesson-files/fifth-small-pure-0.99
 share/gnome/solfege/%%VERSION%%/lesson-files/harmonic-intervals
 share/gnome/solfege/%%VERSION%%/lesson-files/jsb-inventions
 share/gnome/solfege/%%VERSION%%/lesson-files/progression-1
@@ -121,6 +137,15 @@ share/gnome/solfege/%%VERSION%%/lesson-files/progression-2
 share/gnome/solfege/%%VERSION%%/lesson-files/progression-atte
 share/gnome/solfege/%%VERSION%%/lesson-files/progression-x
 share/gnome/solfege/%%VERSION%%/lesson-files/scales
+share/gnome/solfege/%%VERSION%%/lesson-files/scales-thirds
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-pure-220.00.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-pure-247.5.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-pure-293.33.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-small-220.00.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-small-247.5.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fifth-small-293.33.wav
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fil1.orc
+share/gnome/solfege/%%VERSION%%/lesson-files/share/fil1.sco
 share/gnome/solfege/%%VERSION%%/lesson-files/singchord-1
 share/gnome/solfege/%%VERSION%%/lesson-files/singchord-2
 share/gnome/solfege/%%VERSION%%/lesson-files/singchord-3
@@ -352,9 +377,6 @@ share/gnome/solfege/%%VERSION%%/src/idbyname.pyo
 share/gnome/solfege/%%VERSION%%/src/identifybpm.py
 share/gnome/solfege/%%VERSION%%/src/identifybpm.pyc
 share/gnome/solfege/%%VERSION%%/src/identifybpm.pyo
-share/gnome/solfege/%%VERSION%%/src/identifyscale.py
-share/gnome/solfege/%%VERSION%%/src/identifyscale.pyc
-share/gnome/solfege/%%VERSION%%/src/identifyscale.pyo
 share/gnome/solfege/%%VERSION%%/src/idtone.py
 share/gnome/solfege/%%VERSION%%/src/idtone.pyc
 share/gnome/solfege/%%VERSION%%/src/idtone.pyo
@@ -388,9 +410,6 @@ share/gnome/solfege/%%VERSION%%/src/polyrhythm.pyo
 share/gnome/solfege/%%VERSION%%/src/pyscript.py
 share/gnome/solfege/%%VERSION%%/src/pyscript.pyc
 share/gnome/solfege/%%VERSION%%/src/pyscript.pyo
-share/gnome/solfege/%%VERSION%%/src/rcfile.py
-share/gnome/solfege/%%VERSION%%/src/rcfile.pyc
-share/gnome/solfege/%%VERSION%%/src/rcfile.pyo
 share/gnome/solfege/%%VERSION%%/src/rhythm.py
 share/gnome/solfege/%%VERSION%%/src/rhythm.pyc
 share/gnome/solfege/%%VERSION%%/src/rhythm.pyo
@@ -448,8 +467,11 @@ share/locale/ru/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/%%VERSION%%/online-docs/C
 @dirrm share/gnome/solfege/%%VERSION%%/online-docs
 @dirrm share/gnome/solfege/%%VERSION%%/mpd
+@dirrm share/gnome/solfege/%%VERSION%%/lesson-files/bin
+@dirrm share/gnome/solfege/%%VERSION%%/lesson-files/share
 @dirrm share/gnome/solfege/%%VERSION%%/lesson-files
 @dirrm share/gnome/solfege/%%VERSION%%/graphics
 @dirrm share/gnome/solfege/%%VERSION%%/feta
+@dirrm share/gnome/solfege/%%VERSION%%/example-lesson-files
 @dirrm share/gnome/solfege/%%VERSION%%
 @dirrm share/gnome/solfege

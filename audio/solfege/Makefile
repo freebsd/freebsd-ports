@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	solfege
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-nosound
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free eartraining software
@@ -42,5 +43,7 @@ post-patch:
 		${WRKSRC}/run-solfege.py.in
 	@${REINPLACE_CMD} -e 's|(datadir)/locale|(prefix)/share/locale|g' \
 		${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} -e 's|type=sequencer-device|type=fake-synth|' \
+		${WRKSRC}/default.config
 
 .include <bsd.port.mk>
