@@ -13,6 +13,7 @@
     SUBDIR += aalib
     SUBDIR += acidwarp
     SUBDIR += aoi
+    SUBDIR += aqsis
     SUBDIR += autotrace
     SUBDIR += avidemux
     SUBDIR += aview

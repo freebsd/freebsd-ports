@@ -1,0 +1,11 @@
+--- shaders/Makefile.in.orig	Fri Sep 13 14:27:12 2002
++++ shaders/Makefile.in	Fri Sep 13 14:27:29 2002
+@@ -80,7 +80,7 @@
+ 
+ EXTRA_DIST = DPProctext.h ambientlight.sl borg_metal.sl bumpy.sl constant.sl debug.sl dented.sl depthcue.sl distantlight.sl dpbluemarble.sl fog.sl matte.sl metal.sl noises.h paintedplastic.sl patterns.h plastic.sl pointlight.sl randgrid.sl shaders.dsp shadowspot.sl shinymetal.sl spotlight.sl wavy.sl uvtest.sl spacetest.sl show_st.sl cellnoisetest.sl brickbump.sl
+ 
+-shaderdir = $(prefix)/shaders
++shaderdir = $(prefix)/share/aqsis/shaders
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ DIST_COMMON =  Makefile.am Makefile.in
