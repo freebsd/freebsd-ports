@@ -2,7 +2,7 @@
 #
 # This file does not have any designated maintainer, so feel free to
 # commit to it yourself.  However, it is generally a good idea to
-# notify the principle maintainer in case you have a change to one of
+# notify the principal maintainer in case you have a change to one of
 # the software environments (KDE, GNOME, etc.).
 #
 # Also, this file is included from bsd.port.mk for all invocations, so
