@@ -1,0 +1,6 @@
+This is a port of ruby-tmpl, an online and offline templating system written
+for ruby.  See the URL below for more details and features.
+
+WWW: http://ruby-tmpl.sourceforge.net/
+
+- Sean Chittenden <sean@chittenden.org>
