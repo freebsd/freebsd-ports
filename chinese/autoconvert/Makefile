@@ -13,9 +13,17 @@ MASTER_SITES=	http://people.debian.org/~ygh/
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Intelligent Chinese encoding converter
 
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
+CFLAGS+=	"${CPPFLAGS}"
+MAKE_ENV=	CFLAG="${CPPFLAGS}" LIBS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
+
+post-patch:
+.for dir in hzconvert contrib/xchat-plugins
+	@${REINPLACE_CMD} -e "s|^CFLAGS|#CLFAGS|" ${WRKSRC}/${dir}/Makefile
+.endfor
 
 pre-install:
 	@${MKDIR} ${DATADIR}
