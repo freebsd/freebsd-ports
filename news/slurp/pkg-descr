@@ -12,4 +12,4 @@ facility, create a file ${PREFIX}/news/lib/excludesites and list the
 sites in it, eg
 
 fritter.spam.com
-lusers.org
+hackers.org
