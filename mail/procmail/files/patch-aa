@@ -9,6 +9,18 @@
  # For display in the man pages
  VISIBLE_BASENAME= $(BASENAME)
  
+@@ -53,7 +53,11 @@
+ 
+ # Makefile.0 - mark, don't (re)move this, a sed script needs it
+ 
++.if defined(PACKAGE_BUILDING)
++LOCKINGTEST=/tmp .
++.else
+ LOCKINGTEST=__defaults__
++.endif
+ 
+ #LOCKINGTEST=/tmp .	# Uncomment and add any directories you see fit.
+ #			If LOCKINGTEST is defined, autoconf will NOT
 @@ -86,7 +86,7 @@
   -Waggregate-return #-Wuninitialized
  
