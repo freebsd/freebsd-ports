@@ -7,15 +7,36 @@ info/dvips.info-2
 info/dvips.info-3
 info/dvips.info-4
 @exec install-info %D/info/dvips.info %D/info/dir
-@exec for i in base/asex.enc base/psfonts.map config/config.ps ; do if [ -f %D/share/texmf/dvips/$i ] ; then mv %D/share/texmf/dvips/$i %D/share/texmf/dvips/$i.bak ; fi ; done
+share/texmf/dvips/base/color.pro
+share/texmf/dvips/base/crop.pro
+share/texmf/dvips/base/finclude.pro
+share/texmf/dvips/base/hps.pro
+share/texmf/dvips/base/special.pro
+share/texmf/dvips/base/tex.pro
+share/texmf/dvips/base/texc.pro
+share/texmf/dvips/base/texps.pro
+share/texmf/dvips/base/8a.enc
+share/texmf/dvips/base/8r.enc
+share/texmf/dvips/base/EC.enc
+share/texmf/dvips/base/ad.enc
 share/texmf/dvips/base/asex.enc
+share/texmf/dvips/base/asexp.enc
+share/texmf/dvips/base/cork.enc
+share/texmf/dvips/base/dc.enc
+share/texmf/dvips/base/dvips.enc
+share/texmf/dvips/base/extex.enc
+share/texmf/dvips/base/funky.enc
+share/texmf/dvips/base/texmext.enc
+share/texmf/dvips/base/texmital.enc
+share/texmf/dvips/base/texmsym.enc
+share/texmf/dvips/base/xl2.enc
+share/texmf/dvips/base/xt2.enc
 share/texmf/dvips/base/cmfonts.map
 share/texmf/dvips/base/cyrfonts.map
 share/texmf/dvips/base/eufonts.map
 share/texmf/dvips/base/lafonts.map
 share/texmf/dvips/base/psfonts.map
-share/texmf/dvips/config/config.ps
-@unexec for i in base/asex.enc base/psfonts.map config/config.ps ; do if [ -f %D/share/texmf/dvips/$i.bak ] ; then mv %D/share/texmf/dvips/$i.bak %D/share/texmf/dvips/$i ; fi ; done
+share/texmf/dvips/base/config.ps
 share/texmf/dvips/contrib/MakeTeXPK.pl
 share/texmf/dvips/contrib/PSTricks
 share/texmf/dvips/contrib/colorsep.pro
@@ -86,12 +107,15 @@ share/doc/dvips/dvips.texi
 share/doc/dvips/dvips.help
 @exec ln -fs %D/share/texmf/dvips/contrib %D/share/doc/dvips/contrib
 @unexec rm %D/share/doc/dvips/contrib
+@dirrm share/texmf/dvips/base
 @dirrm share/texmf/dvips/contrib/afm-extra
 @dirrm share/texmf/dvips/contrib/bbfig
 @dirrm share/texmf/dvips/contrib/configs
 @dirrm share/texmf/dvips/contrib/psfig
 @dirrm share/texmf/dvips/contrib/volker
 @dirrm share/texmf/dvips/contrib
+@dirrm share/texmf/dvips
 @dirrm share/texmf/tex/latex209/dvips
+@dirrm share/texmf/tex/latex209
 @dirrm share/doc/dvips
 @unexec if [ -f %D/share/texmf/web2c/texmf.cnf.bak ] ; then rm -f %D/share/texmf/web2c/texmf.cnf ; mv %D/share/texmf/web2c/texmf.cnf.bak %D/share/texmf/web2c/texmf.cnf ; fi

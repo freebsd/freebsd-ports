@@ -8,10 +8,10 @@
 -rmlv     Ryumin-Light-V
 -gbm      GothicBBB-Medium-H
 -gbmv     GothicBBB-Medium-V
-+rml	 Ryumin-Light-H			<`r-watanabe-mincho
-+gbm	 GothicBBB-Medium-H		<`r-watanabe-mincho
-+rmlv	 Ryumin-Light-V			<`r-watanabe-mincho
-+gbmv	 GothicBBB-Medium-V		<`r-watanabe-mincho
++rml	 Ryumin-Light-H			<`min
++gbm	 GothicBBB-Medium-H		<`goth
++rmlv	 Ryumin-Light-V			<`min
++gbmv	 GothicBBB-Medium-V		<`goth
  
  % 	
  % Local variables:
