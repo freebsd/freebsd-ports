@@ -5,6 +5,7 @@
     SUBDIR += bytebench
     SUBDIR += dbs
     SUBDIR += iozone
+    SUBDIR += iozone21
     SUBDIR += lmbench
     SUBDIR += nbench
     SUBDIR += netperf
