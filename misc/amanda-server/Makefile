@@ -119,6 +119,9 @@ pre-fetch:
 	@${ECHO} "        The default is `uname -n`"
 	@${ECHO} "    AMANDA_CONFIG=config to specify the default configuation"
 	@${ECHO} "        The default is user"
+	@${ECHO} "    AMANDA_GNUTAR_LISTDIR=dir to specify the directory that"
+	@${ECHO} "        the gnutar index files should live in"
+	@${ECHO} "        The default is /var/amanda/gnutar-lists"
 	@${ECHO} ""
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
@@ -150,6 +153,10 @@ CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 
 .if defined (AMANDA_CONFIG)
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
+.endif
+
+.if defined (AMANDA_GNUTAR_LISTDIR)
+CONFIGURE_ARGS+=	--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
 .endif
 
 .endif
