@@ -1,15 +1,18 @@
-diff -ur jikes.orig/src/Makefile.in work/jikes/src/Makefile.in
---- jikes.orig/src/Makefile.in	Mon Jan 25 12:00:32 1999
-+++ work/jikes/src/Makefile.in	Sun Feb 28 15:34:52 1999
-@@ -36,9 +36,13 @@
+diff -ur --unidirectional-new-file jikes.orig/src/Makefile.in work/jikes/src/Makefile.in
+--- jikes.orig/src/Makefile.in	Tue Sep 14 11:32:51 1999
++++ work/jikes/src/Makefile.in	Wed Sep 15 10:33:19 1999
+@@ -35,12 +35,13 @@
  	$(ERASE) config.cache config.log config.status
  	$(ERASE) Makefile
  
 -install: all
--	mkdir -p $(exec_prefix)/bin
--	cp $(EXECUTABLE) $(exec_prefix)/bin
+-	mkdir -p $(prefix)/bin
+-	strip $(EXECUTABLE)
+-	cp $(EXECUTABLE) $(prefix)/bin
+-	mkdir -p $(prefix)/man/man1
+-	cp ../jikes.1 $(prefix)/man/man1
 +install:
-+	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
++	${INSTALL} -c ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 +	  ${EXECUTABLE} ${PREFIX}/bin/jikes
 +	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
 +	  ${FILESDIR}/jikes.1 ${PREFIX}/man/man1

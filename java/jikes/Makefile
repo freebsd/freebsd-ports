@@ -6,11 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	jikes-0.47
+DISTNAME=	jikes-1.06
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
 
-MAINTAINER=	dillon@backplane.com
+MAINTAINER=	archie@whistle.com
 
 WRKSRC=		${WRKDIR}/jikes/src
 MAN1=		jikes.1
