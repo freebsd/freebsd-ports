@@ -9,7 +9,7 @@ PORTNAME=	python
 PORTVERSION=	2.3.2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${MASTER_SITE_PYTHON}
-MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PYTHON_SITE_SUBDIR}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -50,6 +50,10 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITH_UCS2)
 CONFIGURE_ARGS+=	--enable-unicode=ucs4
+.endif
+
+.if defined(WITHOUT_PYMALLOC)
+CONFIGURE_ARGS+=	--without-pymalloc
 .endif
 
 .if defined(BUILD_SHARED)
