@@ -112,6 +112,7 @@
     SUBDIR += pips780
     SUBDIR += pips780cs
     SUBDIR += pips800
+    SUBDIR += pips820
     SUBDIR += pips820_3300
     SUBDIR += pips820ug
     SUBDIR += pips880
