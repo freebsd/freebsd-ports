@@ -18,6 +18,7 @@
     SUBDIR += balsa
     SUBDIR += bible_names-fpw
     SUBDIR += binder
+    SUBDIR += bjfilter360
     SUBDIR += bjfilter850
     SUBDIR += bookview
     SUBDIR += cannadic
