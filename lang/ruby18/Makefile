@@ -96,6 +96,7 @@ OBSOLETED_MODULES=	dl \
 			shell \
 			strscan \
 			syslog \
+			testunit \
 			timex \
 			urb \
 			uri
