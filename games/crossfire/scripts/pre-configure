@@ -1,0 +1,19 @@
+#! /bin/sh
+
+#	$Id$
+
+#
+# patch hacks !!LOCALBASE!! and !!X11BASE!! hooks into the config file
+# here we resolve finally our - via /etc/make.conf - variable include
+# and destination directories
+# -andreas
+#
+
+echo "adjusting paths in ${WRKSRC}/config/crosssite.def"
+
+perl -pi -e "s=!!LOCALBASE!!=$LOCALBASE=" ${WRKSRC}/config/crosssite.def \
+	|| exit 1
+perl -pi -e "s=!!X11BASE!!=$X11BASE="     ${WRKSRC}/config/crosssite.def \
+	|| exit 1
+
+exit 0
