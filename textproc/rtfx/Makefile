@@ -28,5 +28,9 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::domhelpers.h-gcc295
 post-patch:
 	@${REINPLACE_CMD} -e "s///g" ${WRKSRC}/src/xmlcomposer.cpp
 .endif
+.if ${OSVERSION} >= 502124
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src::reference.h-gcc342 \
+		${FILESDIR}/extra-patch-src::sablo.h-gcc342
+.endif
 
 .include <bsd.port.post.mk>
