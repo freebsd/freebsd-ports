@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Oct 19 07:01:35 2001
-+++ Makefile	Thu Dec 12 02:44:56 2002
+--- Makefile.orig	Sun Jun  8 22:21:55 2003
++++ Makefile	Sun Jun  8 22:33:37 2003
 @@ -6,7 +6,7 @@
  #DEBUG = -O
  #DEBUG = -g -DHEXDUMP
@@ -9,60 +9,60 @@
    
  # Installation 
  
-@@ -43,13 +43,13 @@
+@@ -50,13 +50,13 @@
  #    of the available flags which follows these declarations.
  #
  #CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN
--CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
+-CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER -DHAVE_DEV_RANDOM
 -CC = gcc -Wall # for GNU's gcc compiler
-+#CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
++#CCFLAGS =  -DAUDIO_BLOCKING -DLINUX -DHALF_DUPLEX -DM_LITTLE_ENDIAN -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER -DHAVE_DEV_RANDOM
 +#CC = gcc -Wall # for GNU's gcc compiler
- #   CELPFLAGS below are tweaked for GCC 2.96 on Intel Pentium
+ #   CELPFLAGS below are tweaked for GCC 2.96 on Intel Pentium.
  #   Comment out if you are using a compiler which doesn't
  #   understand these options.
 -CELPFLAGS = -fomit-frame-pointer -ffast-math -funroll-loops
 -LFLAGS = -lncurses -lm
 +#CELPFLAGS = -fomit-frame-pointer -ffast-math -funroll-loops
 +#LFLAGS = -lncurses -lm
- #
- # If the above LFLAGS doesn't work, try the one below.
- #LFLAGS = -lcurses -lm
-@@ -237,8 +237,8 @@
+ 
+ 
+ # If you want to use ALSA instead of OSS, uncomment the following
+@@ -269,8 +269,8 @@
  #    Depending on how your driver handles non-blocking I/O,
  #    you may also have to add -DAUDIO_BLOCKING to the
  #    CCFLAGS line.
 -#CCFLAGS = -DM_LITTLE_ENDIAN
 -#LFLAGS = -lcurses -ltermcap -lcompat -lm
-+CCFLAGS = -DM_LITTLE_ENDIAN -DHALF_DUPLEX -DAUDIO_BLOCKING -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
++CCFLAGS = -DM_LITTLE_ENDIAN -DAUDIO_BLOCKING -DNEEDED_LINEAR -DLINUX_DSP_SMALL_BUFFER
 +LFLAGS = -lcurses -ltermcap -lcompat -lm
  
  #			   Hewlett-Packard
  #		      (courtesy of Marc Kilian)
-@@ -286,7 +286,7 @@
+@@ -318,7 +318,7 @@
  
  #   Compiler flags
  
--CFLAGS = $(DEBUG) -Iadpcm -Icelp -Ilpc -Igsm/inc -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
-+CFLAGS = $(OPTFLAGS) $(DEBUG) -Iadpcm -Icelp -Ilpc -I$(LOCALBASE)/include -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
+-CFLAGS = $(DEBUG) $(PKOPTS) -Iadpcm -Iaes -Icelp -Ilpc -Igsm/inc -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
++CFLAGS = $(OPTFLAGS) $(DEBUG) $(PKOPTS) -Iadpcm -Iaes -Icelp -Ilpc -I$(LOCALBASE)/include -Igsm/inc -Ilpc10 -Imd5 -Ides -Iidea -Ilibdes -Iblowfish $(CARGS) $(DUPLEX) $(CCFLAGS) $(DOMAIN)
  
  BINARIES = sfspeaker sfmike sflaunch sflwld sflwl sfecho sfreflect
  
-@@ -301,12 +301,12 @@
- SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o audio_hp.o audio_sgi.o common.o
+@@ -333,12 +333,12 @@
+ SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o tempfile.o ulaw.o usleep.o vatpkt.o vox.o audio_hp.o audio_sgi.o audio_alsa.o common.o
  
- sfspeaker: $(SPKROBJS) adpcmlib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
--	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a celp/celp.o des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
-+	$(CC) $(SPKROBJS) adpcm/adpcm-u.o blowfish/libblowfish.a celp/celp.o des/des.a -lmd idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) -o sfspeaker
+ sfspeaker: $(SPKROBJS) adpcmlib.o aeslib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o xdsub.o 
+-	$(CC) $(SPKROBJS) adpcm/adpcm-u.o aes/aes.a blowfish/libblowfish.a celp/celp.o des/des.a md5/md5.o idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) $(SOUNDLIB) -o sfspeaker
++	$(CC) $(SPKROBJS) adpcm/adpcm-u.o aes/aes.a blowfish/libblowfish.a celp/celp.o des/des.a -lmd idea/idea.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o xdsub.o libdes/libdes.a $(LFLAGS) $(SOUNDLIB) -o sfspeaker
  
- MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o xdsub.o audio_hp.o audio_sgi.o
+ MIKEOBJS = mike.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o tempfile.o ulaw.o usleep.o vatpkt.o xdsub.o audio_hp.o audio_sgi.o audio_alsa.o
  
- sfmike: $(MIKEOBJS) adpcmlib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
--	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o celp/celp.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
-+	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o celp/celp.o des/des.a -lmd idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) -o sfmike
+ sfmike: $(MIKEOBJS) adpcmlib.o aeslib.o celplib.o libblowfish.o lpclib.o lpc10lib.o gsmlib.o deslib.o md5lib.o idealib.o libdes.o
+-	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o aes/aes.a celp/celp.o des/des.a md5/md5.o idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) $(SOUNDLIB) -o sfmike
++	$(CC) $(MIKEOBJS) adpcm/adpcm-u.o aes/aes.a celp/celp.o des/des.a -lmd idea/idea.a -lm blowfish/libblowfish.a lpc10/liblpc10.a gsm/lib/libgsm.a lpc/lpc.o libdes/libdes.a $(LFLAGS) $(SOUNDLIB) -o sfmike
  
  LAUNCHOBJS = launch.o soundbyte.o usleep.o g711.o
  
-@@ -326,12 +326,12 @@
+@@ -358,12 +358,12 @@
  ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
  
  sfecho: $(ECHOOBJS) md5lib.o
@@ -77,7 +77,7 @@
  
  #	Configure the voice on demand server for the platform's
  #	location of Perl and network constant definitions.
-@@ -376,11 +376,11 @@
+@@ -412,11 +412,11 @@
  	echo "BLOWFISH" >libblowfish.o
  
  libdes.o:
