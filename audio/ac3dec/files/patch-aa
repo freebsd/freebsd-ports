@@ -1,0 +1,10 @@
+--- libac3/bitstream.c.orig	Mon Jun  3 02:30:29 2002
++++ libac3/bitstream.c	Mon Jun  3 02:30:48 2002
+@@ -23,6 +23,7 @@
+ 
+ #include <stdlib.h>
+ #include <stdio.h>
++#include <string.h>
+ 
+ #include "ac3.h"
+ #include "ac3_internal.h"
