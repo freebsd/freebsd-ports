@@ -26,6 +26,12 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/sj3.sh
 #
 # NOTE : You must not use 'xmkmf -a', because the running 'make depend' caused a error.
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Coredump during build on amd64 and ia64"
+.endif
+
 do-configure:
 	( cd $(WRKSRC) ; xmkmf ; make Makefiles )
 
@@ -37,4 +43,4 @@ post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
