@@ -21,8 +21,7 @@ MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		cups.2:${PORTSDIR}/print/cups-base
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -54,7 +53,12 @@ PKGNAMESUFFIX=	-xinerama
 XINERAMA=	-no-xinerama
 .endif # defined(WITH_XINERAMA)
 
+.if !defined(WITHOUT_CUPS)
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
+.else
+CUPS=
+.endif
 
 CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} \
