@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	Wed May 10 02:34:28 2000
-+++ client/dhclient.c	Wed May 10 02:34:49 2000
+--- client/dhclient.c.orig	Wed Jul 19 23:13:11 2000
++++ client/dhclient.c	Sun Aug  6 20:43:14 2000
 @@ -64,6 +64,7 @@
  int log_priority;
  int no_daemon;
@@ -26,7 +26,7 @@
  		   "[-s server]");
  	log_error ("                [-lf lease-file] [-pf pid-file]%s",
  		   "[-cf config-file] [interface]");
-@@ -1232,6 +1235,10 @@
+@@ -1239,6 +1242,10 @@
  	/* No leases were available, or what was available didn't work, so
  	   tell the shell script that we failed to allocate an address,
  	   and try again later. */
@@ -37,3 +37,12 @@
  	log_info ("No working leases in persistent database - sleeping.\n");
  	script_init (client, "FAIL", (struct string_list *)0);
  	if (client -> alias)
+@@ -2157,7 +2164,7 @@
+ 
+ int dhcp_option_ev_name (buf, buflen, option)
+ 	char *buf;
+-	unsigned buflen;
++	size_t buflen;
+ 	struct option *option;
+ {
+ 	int i;
