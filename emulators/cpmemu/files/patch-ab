@@ -1,0 +1,52 @@
+--- Makefile.orig	Mon Nov 15 06:49:52 1999
++++ Makefile	Mon Nov 15 06:54:21 1999
+@@ -2,26 +2,26 @@
+ 
+ 
+ # basic prefix for installation
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ # where to install `cpm' executable.
+ BINDIR = $(PREFIX)/bin
+ 
+ # where `cpm' looks for its files (cpm.sys and .com files).
+-CPMLIBDIR = $(PREFIX)/lib/cpm
++CPMLIBDIR = $(PREFIX)/share/cpm
+ 
+ 
+ # You shouldn't need to edit below this line.
+ 
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -O2 -pipe -ansi -Wall \
++CFLAGS += -ansi -Wall \
+ 	-Wshadow -Wpointer-arith -Wcast-qual -Wcast-align \
+ 	-Waggregate-return -Wstrict-prototypes -Wmissing-prototypes \
+ 	-Wnested-externs -Wwrite-strings \
+ 	-DCPMLIBDIR=\"$(CPMLIBDIR)\"
+ 
+-LDFLAGS = -s
++LDFLAGS += -s
+ 
+ OBJS = single.o z80emu.o em.o io.o bios.o \
+ 	commands.o running.o main.o disneu.o disz80.o low.o
+@@ -42,11 +42,14 @@
+ cpm: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o cpm $(OBJS)
+ 
++format: format.o
++	$(CC) $(LDFLAGS) -o format format.o
++
+ clean:
+ 	rm -f *~ loads.s makeloads *.o $(TARGETS)
+ 
+ install: all
+-	install -m 511 cpm $(BINDIR)
++	${BSD_INSTALL_PROGRAM} cpm $(BINDIR)/cpmemu
++	${BSD_INSTALL_PROGRAM} format $(BINDIR)/cpmformat
+ 	-mkdir $(CPMLIBDIR)
+-	chmod 755 $(CPMLIBDIR)
+-	install -m 444 z80-binaries/* $(CPMLIBDIR)
++	${BSD_INSTALL_DATA} z80-binaries/* $(CPMLIBDIR)
