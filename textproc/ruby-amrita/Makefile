@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amrita
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.brain-tokyo.jp/research/amrita/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
