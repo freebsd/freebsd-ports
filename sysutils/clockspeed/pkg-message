@@ -43,3 +43,8 @@ within milliseconds.
 Do not forget to add a cron(8) job with step 4 to periodically
 adjust clockspeed's drift rate. Once a week should be more than
 adequate.
+
+A port to non-i386 platforms was done using the clock_gettime(2)
+function. Since this is somewhat experimental, there might be some
+tiny precision differences from the i386 platform versions. You
+have been warned!
