@@ -13,11 +13,13 @@ bin/tv_grep
 bin/tv_sort
 bin/tv_split
 bin/tv_to_latex
+bin/tv_to_text
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ask.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Clumps.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Memoize.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Summarize.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/TZ.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/UK_TZ.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Usage.pm

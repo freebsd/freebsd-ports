@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.8
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -40,11 +40,15 @@ USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
+# override bsd.port.mk setting for perl ports
+MAN3PREFIX=	${MANPREFIX}
+
 MAN1=	tv_cat.1 tv_extractinfo_en.1 tv_grab_de.1 tv_grab_na.1 \
 	tv_grab_sn.1 tv_grab_uk.1 tv_grab_uk_rt.1 tv_grep.1 tv_sort.1 \
 	tv_grab_fi.1 tv_grab_nz.1 tv_split.1 \
+	tv_check.1 tv_to_text.1 \
 	tv_to_latex.1
-MAN3=	XMLTV.3
+MAN3=	Summarize.3 XMLTV.3
 
 # idea taken from devel/cvsweb port
 # Specify these directories in relative paths to ${PREFIX}.
