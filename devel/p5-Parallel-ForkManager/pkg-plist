@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Parallel/ForkManager.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/ForkManager/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/ForkManager 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/            2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parallel                                2>/dev/null || true
-%%PORTDOCS%%share/examples/perl5/Parallel-ForkManager/parallel_get.pl
-%%PORTDOCS%%share/examples/perl5/Parallel-ForkManager/callback.pl
-%%PORTDOCS%%@dirrm share/examples/perl5/Parallel-ForkManager
+%%SITE_PERL%%/Parallel/ForkManager.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/ForkManager
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Parallel 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/callback.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/parallel_get.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
