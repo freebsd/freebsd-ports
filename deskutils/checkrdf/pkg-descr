@@ -1,0 +1,8 @@
+CheckRDF is a tool, consisting of a shell script and a Haskell program, for
+downloading RDF site summaries and showing news in a text file and in an HTML
+file. It is highly configurable.
+
+WWW: http://checkrdf.sourceforge.net/
+
+- Oliver Braun
+obraun@FreeBSD.org
