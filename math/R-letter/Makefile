@@ -7,6 +7,7 @@
 
 PORTNAME=	R
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
@@ -25,6 +26,9 @@ DISTNAME=	R-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maurice@serc.rmit.edu.au
+
+LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
+		tk84:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
