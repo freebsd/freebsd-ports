@@ -473,20 +473,17 @@ do-install:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-        @cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	@SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
-		./install --prefix=${PREFIX}
+	@cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-        @cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	@SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
-		./install --prefix=${PREFIX}
+	@cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
 .endif
 
 install-user:
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	@SAL_IGNOREXERRORS=1 ${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
