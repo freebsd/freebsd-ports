@@ -1,5 +1,5 @@
---- .bochsrc.orig      Thu Jul  8 09:57:11 1999
-+++ .bochsrc   Mon Jul 12 18:42:12 1999
+--- .bochsrc.orig	Tue Sep  7 11:15:14 1999
++++ .bochsrc	Sat Sep 18 20:24:15 1999
 @@ -3,7 +3,7 @@
  megs: 16
  #megs: 8
@@ -13,8 +13,8 @@
  #romimage: file=bios/rombios.bin, address=0xf0000
  #romimage: file=../cbios961203
  #romimage: file=../r980820.rom, address=0xe0000
--romimage: file=bios/BIOS-bochs-990623a, address=0xf0000
-+romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990623a, address=0xf0000
+-romimage: file=bios/BIOS-bochs-990907a, address=0xf0000
++romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990907a, address=0xf0000
  
  #romimage: file=bios/BIOS-bochs-990218a, address=0xf0000
  #romimage: file=../dttest.bin, address=0xf0000

@@ -1,6 +1,6 @@
 bin/bochs
 lib/bochs/bios/VGABIOS-elpin-2.20
-lib/bochs/bios/BIOS-bochs-990623a
+lib/bochs/bios/BIOS-bochs-990907a
 lib/bochs/bochsrc.sample
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/DOS.html
