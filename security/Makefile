@@ -146,6 +146,7 @@
     SUBDIR += p5-Crypt-TripleDES
     SUBDIR += p5-Crypt-Twofish
     SUBDIR += p5-Crypt-UnixCrypt
+    SUBDIR += p5-Digest-BubbleBabble
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD5
