@@ -1,8 +1,27 @@
 *** slocal.c.orig	Tue Nov 30 20:01:38 1993
---- uip/slocal.c	Fri Jul  1 13:09:36 1994
+--- uip/slocal.c	Thu Feb 22 10:41:46 1996
+***************
+*** 44,49 ****
+--- 44,59 ----
+  
+  #ifdef	MSGID
+  
++ #ifdef	BSD44
++ #define	MSGID_PAGFILE ".maildelivery.db"
++ #define	MSGID_PAGFNO	dbm_dirfno
++ #else
++ #define	MSGID_PAGFILE ".maildelivery.pag"
++ #define	MSGID_PAGFNO	dbm_pagfno
++ #endif
++ 
++ static int check_msgid (int, char *);
++ 
+  #undef	DBM		/* used by ndbm.h */
+  #include <ndbm.h>
+  #include <stdio.h>
 ***************
 *** 173,178 ****
---- 173,180 ----
+--- 183,190 ----
       NULL
   };
   
@@ -13,7 +32,7 @@
   extern char **environ;
 ***************
 *** 299,304 ****
---- 301,308 ----
+--- 311,318 ----
   
   /*  */
   
@@ -23,8 +42,25 @@
   	addr = getusr ();
       if (user == NULL)
 ***************
+*** 379,385 ****
+  #ifdef	MSGID
+      struct stat st;
+  
+!     if (stat (".maildelivery.pag", &st) != NOTOK
+  	    && check_msgid (fd, ".maildelivery") == DONE)
+  	return OK;
+  #endif
+--- 393,399 ----
+  #ifdef	MSGID
+      struct stat st;
+  
+!     if (stat (MSGID_PAGFILE, &st) != NOTOK
+  	    && check_msgid (fd, ".maildelivery") == DONE)
+  	return OK;
+  #endif
+***************
 *** 543,549 ****
---- 547,569 ----
+--- 557,579 ----
   		status = usr_pipe (fd, tmpbuf, "/bin/sh", vec + 2);
   		break;
   
@@ -48,3 +84,96 @@
   		if (!uleq (action, "file"))
   		    continue;	/* else fall */
   	    case '>': 
+***************
+*** 1312,1330 ****
+  		    fl.l_whence = 0;
+  		    fl.l_start = 0;
+  		    fl.l_len = 0;
+! 		    if (fcntl (dbm_pagfno (db), F_SETLK, &fl) == -1) {
+  			advise (file, "unable to perform flock on");
+  			goto out;
+  		    }
+  		}
+  #else
+  #ifdef LOCKF
+! 		if (lockf (dbm_pagfno (db), F_LOCK) == NOTOK) {
+  		    advise (file, "unable to perform lockf on");
+  		    goto out;
+  		}
+  #else
+! 		if (flock (dbm_pagfno (db), LOCK_EX) == NOTOK) {
+  		    advise (file, "unable to perform flock on");
+  		    goto out;
+  		}
+--- 1342,1360 ----
+  		    fl.l_whence = 0;
+  		    fl.l_start = 0;
+  		    fl.l_len = 0;
+! 		    if (fcntl (MSGID_PAGFNO (db), F_SETLK, &fl) == -1) {
+  			advise (file, "unable to perform flock on");
+  			goto out;
+  		    }
+  		}
+  #else
+  #ifdef LOCKF
+! 		if (lockf (MSGID_PAGFNO (db), F_LOCK) == NOTOK) {
+  		    advise (file, "unable to perform lockf on");
+  		    goto out;
+  		}
+  #else
+! 		if (flock (MSGID_PAGFNO (db), LOCK_EX) == NOTOK) {
+  		    advise (file, "unable to perform flock on");
+  		    goto out;
+  		}
+*** popauth.c.orig	Tue Nov 30 20:01:34 1993
+--- support/pop/popauth.c	Thu Feb 22 13:00:20 1996
+***************
+*** 18,23 ****
+--- 18,28 ----
+  #include "../zotnet/bboards.h"
+  #include "../zotnet/mts.h"
+  
++ #ifdef	dbm_pagfno
++ #undef	dbm_pagfno
++ #define	dbm_pagfno	dbm_dirfno
++ #endif
++ 
+  /*  */
+  
+  static struct swit switches[] = {
+***************
+*** 130,137 ****
+  	if ((db = dbm_open (APOP, O_RDWR | O_CREAT, 0600)) == NULL)
+  	    adios (APOP, "unable to create POP authorization DB");
+  	if (fchown (dbm_dirfno (db), pw -> pw_uid, pw -> pw_gid) == NOTOK
+! 	        || fchown (dbm_pagfno (db), pw -> pw_uid, pw -> pw_gid)
+! 	    		== NOTOK)
+  	    advise (" ", "error setting ownership of POP authorization DB");
+  
+  	done (0);
+--- 135,144 ----
+  	if ((db = dbm_open (APOP, O_RDWR | O_CREAT, 0600)) == NULL)
+  	    adios (APOP, "unable to create POP authorization DB");
+  	if (fchown (dbm_dirfno (db), pw -> pw_uid, pw -> pw_gid) == NOTOK
+! #ifndef	BSD44
+! 	    || fchown (dbm_pagfno (db), pw -> pw_uid, pw -> pw_gid) == NOTOK
+! #endif
+! 	    )
+  	    advise (" ", "error setting ownership of POP authorization DB");
+  
+  	done (0);
+*** popser.c.orig	Tue Nov 30 20:01:34 1993
+--- support/pop/popser.c	Thu Feb 22 12:58:31 1996
+***************
+*** 666,671 ****
+--- 665,674 ----
+  #include <fcntl.h>
+  #endif
+  
++ #ifdef	dbm_pagfno
++ #undef	dbm_pagfno
++ #define	dbm_pagfno	dbm_dirfno
++ #endif
+  
+  static int apop (vec)
+  register char  **vec;

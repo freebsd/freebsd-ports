@@ -1,9 +1,9 @@
-*** /dev/null	Tue Oct  4 16:00:58 1994
---- conf/FreeBSD	Tue Oct  4 15:18:03 1994
+*** /dev/null	Thu Feb 22 04:05:03 1996
+--- conf/FreeBSD	Thu Feb 22 10:22:22 1996
 ***************
 *** 0 ****
 --- 1,26 ----
-+ # @(#)$Id: patch-aa,v 1.1.1.1 1994/10/04 23:32:54 pst Exp $
++ # @(#)$Id: patch-aa,v 1.2 1995/08/15 20:08:02 gpalmer Exp $
 + # FreeBSD running sendmail
 + 
 + bin	/usr/local/bin
@@ -20,12 +20,12 @@
 + 
 + # FreeBSD specific options (for FreeBSD-1.x, remove BSD44)
 + options	BSD42 BSD43 BSD44 WAITINT UNISTD VSPRINTF MORE='"/usr/bin/more"'
-+ options	NORUSERPASS DBMPWD POSIX NTOHLSWAP SYS5DIR OVERHEAD
++ options	NORUSERPASS DBMPWD POSIX NTOHLSWAP SYS5DIR OVERHEAD MSGID FCNTL
 + options	BIND MIME SENDMTS SMTP WHATNOW ZONEINFO
 + 
 + # If you want POP support, this will help you get started,  but feel
 + # free to customize it.
-+ #pop		on
-+ #popdir		/usr/local/libexec
-+ #options	MPOP RPOP
-+ #ldoptlibs	-lcrypt
++ pop		on
++ popdir		/usr/local/libexec
++ options		RPOP APOP='"/usr/local/etc/pop.auth"' POPSERVICE='"pop3"'
++ ldoptlibs	-lcrypt
