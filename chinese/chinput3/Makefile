@@ -15,6 +15,7 @@ COMMENT=	Chinese GB2312,BIG5 code input server
 
 USE_XLIB=	yes
 USE_IMLIB=	yes
+USE_GNOME=	gtk12
 
 port-install:
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
