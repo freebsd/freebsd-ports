@@ -3866,7 +3866,6 @@ libz		src/lib/libz
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net/licq
 licq-console	ports/net/licq-console
-licq-devel	ports/net/licq-devel
 licq-qt-gui	ports/net/licq-qt-gui
 liece		ports/irc/liece
 liece-dcc	ports/irc/liece-dcc
@@ -6784,7 +6783,6 @@ rxvt-devel	ports/x11/rxvt-devel
 s10sh		ports/graphics/s10sh
 s3mod		ports/audio/s3mod
 sa		src/usr.sbin/sa
-sablepath	ports/java/sablepath
 sablevm		ports/java/sablevm
 sablotron	ports/textproc/sablotron
 safecat		ports/sysutils/safecat
