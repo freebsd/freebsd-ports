@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba-vscan
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	security
 MASTER_SITES=	http://heanet.dl.sourceforge.net/sourceforge/openantivirus/ \
 		http://easynews.dl.sourceforge.net/sourceforge/openantivirus/ \
@@ -15,15 +15,22 @@ MASTER_SITES=	http://heanet.dl.sourceforge.net/sourceforge/openantivirus/ \
 MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	On-access virus scanning with Samba
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/samba:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:build
 
 USE_BZIP2=	yes
-SAMBA_WRKSRC=	`cd ${PORTSDIR}/net/samba; make -V WRKSRC`
+SAMBA_WRKSRC=	`cd ${PORTSDIR}/net/${VSCAN_SAMBA_PORT}; make -V WRKSRC`
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-samba-source=${SAMBA_WRKSRC}
 ETCDIR=		${PREFIX}/etc/samba-vscan
 PKGMESSAGE=	${WRKDIR}/pkg-message
+VSCAN_SAMBA_PORT?=samba
+
+.if ${VSCAN_SAMBA_PORT} == "samba3"
+PLIST_SUB=	VFSDIR=lib/samba/vfs
+.else
+PLIST_SUB=	VFSDIR=lib/samba
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/samba-vscan
