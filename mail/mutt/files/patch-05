@@ -1,0 +1,28 @@
+--- curs_lib.c.bak	Thu Jan 14 14:29:17 1999
++++ curs_lib.c	Sat Feb 13 20:14:02 1999
+@@ -132,8 +132,8 @@
+ int mutt_yesorno (const char *msg, int def)
+ {
+   event_t ch;
+-  char *yes = _("yes");
+-  char *no = _("no");
++  unsigned char *yes = _("yes");
++  unsigned char *no = _("no");
+   
+   CLEARLINE(LINES-1);
+   printw("%s ([%c]/%c): ", msg, def ? *yes : *no,
+@@ -145,12 +145,12 @@
+     if (ch.ch == -1) return(-1);
+     if (CI_is_return (ch.ch))
+       break;
+-    else if (tolower(ch.ch) == tolower(*yes))
++    else if (tolower(ch.ch) == tolower(*yes) || tolower(ch.ch) == 'y')
+     {
+       def = 1;
+       break;
+     }
+-    else if (tolower(ch.ch) == tolower(*no))
++    else if (tolower(ch.ch) == tolower(*no) || tolower(ch.ch) == 'n')
+     {
+       def = 0;
+       break;
