@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	findlib
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
@@ -21,8 +21,15 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+PLIST_FILES=	bin/ocamlfind etc/findlib.conf
+
 MAN1=	ocamlfind.1
-MAN3=	Findlib.3 Topfind.3
 MAN5=	META.5 findlib.conf.5 site-lib.5
+
+post-install:
+	@${FIND} ${PREFIX}/lib/ocaml -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/lib/ocaml -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
