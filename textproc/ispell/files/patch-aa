@@ -1,0 +1,14 @@
+*** config.X.bak	Mon Jan 23 21:28:24 1995
+--- config.X	Tue Dec 16 18:49:29 1997
+***************
+*** 107,115 ****
+  
+  #include <sys/param.h>
+  #include <sys/types.h>
+- #ifndef USG
+- #include <sys/dir.h>
+- #endif /* USG */
+  
+  /*
+  ** Things that normally go in a Makefile.  Define these just like you
+--- 107,112 ----
