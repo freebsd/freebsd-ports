@@ -7,7 +7,7 @@
 
 PORTNAME=	NestServer
 PORTVERSION=	4.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -25,11 +25,11 @@ EXTRACT_ONLY=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 nested X server
 
-MAN1=			Xnest.1 Xserver.1
+MAN1=			Xnest.1
 XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		programs/Xserver
-XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
+XINSTALL_MAN_DIRS=	programs/Xserver/hw/xnest
 
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \

@@ -7,7 +7,7 @@
 
 PORTNAME=	VirtualFramebufferServer
 PORTVERSION=	4.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -29,11 +29,11 @@ RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
 FONT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 
-MAN1=			Xserver.1 Xvfb.1
+MAN1=			Xvfb.1
 XBUILD_DIRS=		lib/font lib/lbxutil/ lib/Xdmcp lib/Xau programs/Xserver
 XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		programs/Xserver
-XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
+XINSTALL_MAN_DIRS=	programs/Xserver/hw/vfb
 
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
