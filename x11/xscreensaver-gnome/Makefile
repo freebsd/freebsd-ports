@@ -71,6 +71,11 @@ post-patch:
 	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
 		${WRKSRC}/hacks/glx/extrusion.c
 
+.if !defined(PACKAGE_BUILDING)
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/utils/images/logo-50.xpm \
 		${PREFIX}/share/gnome/pixmaps/xscreensaver.xpm
