@@ -3,12 +3,12 @@
 # Date created:		2 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1995/04/04 09:38:27 asami Exp $
+# $Id: Makefile,v 1.2 1995/04/07 05:48:05 asami Exp $
 #
 
 DISTNAME=	grep-2.0
 PKGNAME=	jp-grep-2.0
-CATEGORY+=	japanese
+CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.uu.net/systems/gnu/
 
 MAINTAINER=	asami@FreeBSD.ORG
