@@ -1,14 +1,5 @@
 --- siconv.c.orig	Tue Mar 27 00:55:22 2001
 +++ siconv.c	Tue Mar 27 01:02:20 2001
-@@ -27,7 +27,7 @@
- *****************************************************************************/
- 
- 
--#include <iconv.h>
-+#include <giconv.h>
- #include <errno.h>
- #include <stdio.h>     /* printf() */
- #include <unistd.h>    /* read() & write() */
 @@ -139,7 +139,7 @@
  void usage(void) {
    printf("usage:\n");
