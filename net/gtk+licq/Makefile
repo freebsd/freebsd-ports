@@ -7,11 +7,11 @@
 
 PORTNAME=	gtk+licq
 PORTVERSION=	0.50.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://gtk.licq.org/download/
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	roman@xpert.com
 
 BUILD_DEPENDS=	${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
 LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
