@@ -20,6 +20,7 @@ MAINTAINER=	holger@flatline.de
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-docdir=${PREFIX}/share/doc
+USE_REINPLACE=	yes
 
 MAN1=		pgp4pine.1
 
@@ -35,15 +36,15 @@ SCRIPTDIR=	${SAMPLEDIR}
 # Post-patch
 #
 
-post-patch: patch-path patch-message
+post-patch: patch-path patch-pkgmessage
 
 patch-path:
-	@${PERL} -pi.fbsd -e \
+	@${REINPLACE_CMD} \
 		's|/usr/local|${PREFIX}|g;s|/doc/|/share/examples/|g' \
 		${WRKSRC}/INSTALL \
 		${WRKSRC}/insert_entries.pl ${WRKSRC}/remove_entries.pl
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Post-configure
@@ -52,7 +53,7 @@ patch-message:
 post-configure: patch-man
 
 patch-man:
-	@${PERL} -pi.fbsd -e 's|/doc/|/examples/|g' \
+	@${REINPLACE_CMD} -e 's|/doc/|/examples/|g' \
 		${WRKSRC}/pgp4pine/docs/en/pgp4pine.1
 
 # Post-install
