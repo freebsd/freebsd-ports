@@ -78,7 +78,15 @@ while [ "$1" ]; do
 			SUB_RADIUS=""
 			;;
 		\"MySQL\")
-			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
+			echo ".if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)"
+			echo "LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client"
+			echo ".else"
+			echo ".if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)"
+			echo "LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client"
+			echo ".else"
+			echo "LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client"
+			echo ".endif"
+			echo ".endif"
 			echo "CONFIGURE_ARGS+=	--with-mysql=\${LOCALBASE}"
 			SUB_MYSQL=""
 			;;
