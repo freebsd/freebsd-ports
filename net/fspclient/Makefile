@@ -3,12 +3,12 @@
 # Date created:         7 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/04/15 05:41:26 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/18 20:13:11 ache Exp $
 #
 
 DISTNAME=       fspclient.0.0-h+
 PKGNAME=        fspclient.0.0.h
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=   ftp://ftp.germany.eu.net/pub/networking/tcpip/fsp/
 EXTRACT_SUFX=   .tar.z
 

@@ -3,11 +3,11 @@
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/10/12 07:43:00 asami Exp $
 #
 
 DISTNAME=	rmsg-1.64
-CATEGORIES=	networking
+CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/tcpip/ \
 		ftp://proton.elka.pw.edu.pl/pub/unix/network/
 

@@ -3,11 +3,11 @@
 # Date created:		25 Aug 1995
 # Whom:			Alain Kalker <A.C.P.M.Kalker@student.utwente.nl>
 #
-# $Id: Makefile,v 1.3 1995/08/26 07:47:36 asami Exp $
+# $Id: Makefile,v 1.4 1995/10/06 05:18:34 asami Exp $
 #
 
 DISTNAME=	slirp-0.95f
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://blitzen.canberra.edu.au/pub/slirp/ \
 		ftp://freedom.wit.com/misc4/danjo/SLiRP/
 

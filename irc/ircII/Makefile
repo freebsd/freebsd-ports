@@ -3,11 +3,11 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1995/04/17 00:01:31 asami Exp $
+# $Id: Makefile,v 1.7 1995/05/06 00:32:12 torstenb Exp $
 #
 
 DISTNAME=	ircii-2.8.2
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/
 DISTFILES=	ircii-2.8.2.tar.gz ircii-2.8help.tar.gz
 

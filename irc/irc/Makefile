@@ -3,12 +3,12 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.7 1995/05/18 09:14:06 asami Exp $
+# $Id: Makefile,v 1.8 1995/06/27 00:12:28 torstenb Exp $
 #
 
 DISTNAME=	irc2.8.21
 PKGNAME=	irc-2.8.21
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/servers/
 
 MAINTAINER=	torstenb@FreeBSD.ORG

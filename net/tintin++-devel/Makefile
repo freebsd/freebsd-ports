@@ -3,12 +3,12 @@
 # Date created:         15 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/04/15 05:41:59 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/13 12:59:50 ache Exp $
 #
 
 DISTNAME=       tintin++v1.5pl6
 PKGNAME=	tintin-1.5.6
-CATEGORIES+=    networking games
+CATEGORIES+=    net games
 MASTER_SITES=   ftp://princeton.edu/pub/tintin++/dist/
 EXTRACT_SUFX=   .tar.Z
 

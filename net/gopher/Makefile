@@ -3,12 +3,12 @@
 # Date created:		11 Dec 1994
 # Whom:			ats
 #
-# $Id: Makefile,v 1.4 1995/04/16 15:37:13 ache Exp $
+# $Id: Makefile,v 1.5 1995/04/24 07:53:09 asami Exp $
 #
 
 DISTNAME=	gopher2_1_3
 PKGNAME=	gopher-2.1.3
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
 EXTRACT_SUFX=	.tar.Z
 

@@ -6,7 +6,7 @@
 
 DISTNAME=	pcnfsd.93.02.16
 PKGNAME=	pcnfsd-93.02.16
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://bcm.tmc.edu/pcnfs/
 EXTRACT_SUFX=	.tar.Z
 

@@ -3,12 +3,12 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1995/04/15 05:41:18 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/06 00:27:35 torstenb Exp $
 #
 
 DISTNAME=	c-archie-1.4.1-FIXED
 PKGNAME=	archie-1.4.1
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://nic.sura.net/pub/archie/clients/
 EXTRACT_SUFX=	.tar.Z
 
