@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	privoxy
-PORTVERSION=	3.0.0
-PORTREVISION=	1
+PORTVERSION=	3.0.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
-DISTNAME=	privoxy-3.0.0-stable-src
+DISTNAME=	privoxy-${PORTVERSION}-stable-src
 
 MAINTAINER=	john@essenz.com
 COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
-WRKSRC=		${WRKDIR}/privoxy-3.0.0-stable
+WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
