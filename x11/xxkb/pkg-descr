@@ -1,0 +1,10 @@
+Xxkb is a simple XKB keyboard mapping switcher. It maintains
+the active keyboard mapping on a per-window basis. An optional
+small icon is added to each window to indicate the current 
+keyboard mapping for that window. In addition to using a key 
+combination specified in XKB configuration you can also
+click on this icon to switch between mappings.
+
+Xxkb works with basically any window manager.
+
+WWW: http://www.tsu.ru/~pascal/other/xxkb/

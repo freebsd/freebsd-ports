@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xxkb
 
     SUBDIR += X.language
     SUBDIR += apache13
