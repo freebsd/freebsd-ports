@@ -3,10 +3,10 @@ $FreeBSD$
 
 --- docs/reference/Makefile.in.orig
 +++ docs/reference/Makefile.in
-@@ -104,7 +104,7 @@
- GTK_DOC_USE_LIBTOOL_TRUE = @GTK_DOC_USE_LIBTOOL_TRUE@
- GTK_SHARP_CFLAGS = @GTK_SHARP_CFLAGS@
+@@ -107,7 +107,7 @@
  GTK_SHARP_LIBS = @GTK_SHARP_LIBS@
+ HAVE_REGEX_FALSE = @HAVE_REGEX_FALSE@
+ HAVE_REGEX_TRUE = @HAVE_REGEX_TRUE@
 -HTML_DIR = $(datadir)/gtk-doc/html
 +HTML_DIR = @HTML_DIR@
  INSTALL_DATA = @INSTALL_DATA@
