@@ -1,5 +1,5 @@
-*** readline.c.bak	Tue Dec  6 01:47:48 1994
---- lib/readline/readline.c	Mon Dec 12 04:29:49 1994
+*** readline.c.orig	Wed May 24 18:43:28 1995
+--- lib/readline/readline.c	Wed Jul 19 20:26:53 1995
 ***************
 *** 958,964 ****
   static void
@@ -18,11 +18,12 @@
     /* Find out if we are running in Emacs. */
     running_in_emacs = getenv ("EMACS") != (char *)0;
 ***************
-*** 993,999 ****
+*** 993,1000 ****
     /* Check for LC_CTYPE and use its value to decide the defaults for
        8-bit character input and output. */
     t = getenv ("LC_CTYPE");
-!   if (t && (strcmp (t, "iso-8859-1") == 0 || strcmp (t, "iso_8859_1") == 0))
+!   if (t && (strcmp (t, "iso-8859-1") == 0 || strcmp (t, "iso_8859_1") == 0 ||
+!   	    strcmp (t, "ISO-8859-1") == 0))
       {
         _rl_meta_flag = 1;
         _rl_convert_meta_chars_to_ascii = 0;
@@ -32,9 +33,9 @@
     t = getenv ("LC_CTYPE");
 !   t1 = getenv ("LANG");
 !   if (t && (strstr (t, "8859-1") != NULL || strstr (t, "8859_1") != NULL ||
-! 	    strstr (t, "KOI8-R") != NULL || strstr (t, "koi8-r") != NULL) ||
+! 	  strstr (t, "KOI8-R") != NULL || strstr (t, "koi8-r") != NULL) ||
 !       t1 && (strstr (t1, "8859-1") != NULL || strstr (t1, "8859_1") != NULL ||
-! 	     strstr (t1, "KOI8-R") != NULL || strstr (t1, "koi8-r") != NULL))
+! 	   strstr (t1, "KOI8-R") != NULL || strstr (t1, "koi8-r") != NULL))
       {
         _rl_meta_flag = 1;
         _rl_convert_meta_chars_to_ascii = 0;

@@ -1,8 +1,8 @@
-*** cpp-Makefile.orig	Tue Jan 31 00:48:36 1995
---- cpp-Makefile	Fri Mar 17 03:24:29 1995
+*** cpp-Makefile.orig	Sun Jun 11 22:44:05 1995
+--- cpp-Makefile	Wed Jul 19 20:17:18 1995
 ***************
-*** 138,144 ****
---- 138,148 ----
+*** 133,139 ****
+--- 133,143 ----
      /usr/include.  Then it will break.) */
   CC = gcc -traditional -I/usr/include $(GCC_EXTRAS)
   #  else /* HAVE_FIXED_INCLUDES */
@@ -15,14 +15,14 @@
   #else /* !HAVE_GCC */
   CC = CPP_CC
 ***************
-*** 155,162 ****
---- 159,171 ----
-  RM = rm -f
+*** 151,158 ****
+--- 155,167 ----
   AR = ar
   
+  INSTALL = $(SUPPORT_SRC)install.sh
 + #ifndef __FreeBSD__
-  INSTALL_PROGRAM = install -c
-  INSTALL_DATA = install -c -m 644
+  INSTALL_PROGRAM = $(INSTALL) -c
+  INSTALL_DATA = $(INSTALL) -c -m 644
 + #else
 + INSTALL_PROGRAM = install -c -o bin -g bin -m 555
 + INSTALL_DATA = install -c -o bin -g bin -m 644
@@ -31,8 +31,8 @@
   COMPRESS = gzip
   COMPRESS_EXT = .gz
 ***************
-*** 304,310 ****
---- 313,321 ----
+*** 300,306 ****
+--- 309,317 ----
   /**/# The GNU coding standards don't recognize the possibility that
   /**/# other information besides optimization and debugging might be
   /**/# passed to cc.  A different name should have been used.
@@ -43,8 +43,8 @@
   SYSTEM_FLAGS = $(LINEBUF) $(VPRINTF) $(UNISTD) $(STDLIB) $(LIMITSH) \
          $(GROUPS) $(RESOURCE) $(PARAM) $(SIGHANDLER) $(SYSDEP) $(WAITH) \
 ***************
-*** 312,317 ****
---- 323,331 ----
+*** 308,313 ****
+--- 319,327 ----
          $(VARARGSH) $(STRCHR) $(STRCASE) $(DEVFD) \
          -D$(Machine) -D$(OS)
   LDFLAGS	= $(NOSHARE) $(SYSDEP_LD) $(EXTRA_LD_PATH) $(PROFILE_FLAGS) $(CFLAGS)

@@ -1,21 +1,29 @@
-*** documentation/Makefile.bak	Fri Jan  6 23:48:35 1995
---- documentation/Makefile	Fri Jan  6 23:50:06 1995
+*** documentation/Makefile.orig	Sun Jun 11 22:45:55 1995
+--- documentation/Makefile	Wed Jul 19 20:35:38 1995
 ***************
-*** 109,116 ****
+*** 90,101 ****
+  
+  installdirs:
   	-[ -d $(mandir) ] || mkdir $(mandir)
-  	$(INSTALL_DATA) bash.1 $(mandir)
-  	sed 's:so bash.1:so man1/bash.1:' < builtins.1 > $(mandir)/bash_builtins.1
 ! 	-[ -d $(man3dir) ] || mkdir $(man3dir)
-! 	$(INSTALL_DATA) readline.3 $(man3dir)
   	-[ -d $(infodir) ] || mkdir $(infodir)
-  	$(INSTALL_DATA) features.info $(infodir)/bash.info
   
---- 109,116 ----
-  	-[ -d $(mandir) ] || mkdir $(mandir)
+  install: all installdirs
   	$(INSTALL_DATA) bash.1 $(mandir)
-  	sed 's:so bash.1:so man1/bash.1:' < builtins.1 > $(mandir)/bash_builtins.1
-! #       -[ -d $(man3dir) ] || mkdir $(man3dir)
-! #       $(INSTALL_DATA) readline.3 $(man3dir)
-  	-[ -d $(infodir) ] || mkdir $(infodir)
+! 	$(INSTALL_DATA) readline.3 $(man3dir)
   	$(INSTALL_DATA) features.info $(infodir)/bash.info
   
+  uninstall:
+--- 90,101 ----
+  
+  installdirs:
+  	-[ -d $(mandir) ] || mkdir $(mandir)
+! #       -[ -d $(man3dir) ] || mkdir $(man3dir)
+  	-[ -d $(infodir) ] || mkdir $(infodir)
+  
+  install: all installdirs
+  	$(INSTALL_DATA) bash.1 $(mandir)
+! #       $(INSTALL_DATA) readline.3 $(man3dir)
+  	$(INSTALL_DATA) features.info $(infodir)/bash.info
+  
+  uninstall:
