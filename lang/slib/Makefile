@@ -7,6 +7,7 @@
 
 PORTNAME=	slib
 PORTVERSION=	2c9
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 
@@ -24,6 +25,7 @@ INSTALL_TARGET=	install48
 
 post-install:
 	# 	moved here from author's makefile
+	${MKDIR} ${PREFIX}/lib/scheme48
 	${TOUCH} -r ${WRKSRC}/slibcat ${PREFIX}/lib/scheme48/slibcat
 	${MKDIR} ${PREFIX}/share/slib
 	${INSTALL_DATA} ${WRKSRC}/*.scm ${PREFIX}/share/slib
