@@ -9,7 +9,8 @@ PORTNAME=	emboss
 PORTVERSION=	1.8.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
-		ftp://ftp.no.embnet.org/pub/EMBOSS/
+		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
+		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
