@@ -529,7 +529,9 @@ CONFIGURE_ARGS+=--with-zlib=yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-APXS?=		${LOCALBASE}/sbin/apxs
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+WITH_APACHE2=	yes
+.endif
 .if defined(WITH_APACHE2)
 APACHE_PORT?=	${PORTSDIR}/www/apache2
 CONFIGURE_ARGS+=--with-apxs2=${APXS}
