@@ -9,8 +9,8 @@
 PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
 CATEGORIES=	net games
-MASTER_SITES=	http://tadpol.org/unxware/
-DISTNAME=	gkrellm_qst-${PORTVERSION:S/.p/pre_/}
+MASTER_SITES=	http://tadpol.org/projects/binaries/
+DISTNAME=	gkrellm_qst-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Plugin for Gkrellm that displays updated info on several game servers
