@@ -1,0 +1,7 @@
+The librsvg library is a lightweight library for parsing and rendering
+vector-graphic files in SVG format (like the ones made by sodipodi). It also
+includes functions that render anti-aliased fonts using freetype, including
+caching of glyphs. It's used by Nautilus for drawing vector icons and
+anti-aliased type.
+
+WWW: http://www.gnome.org/
