@@ -3,7 +3,7 @@
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
-# $Id: Makefile,v 1.20 1998/07/25 22:16:37 jseger Exp $
+# $Id: Makefile,v 1.21 1999/01/13 03:37:28 scrappy Exp $
 #
 
 DISTNAME=       dhcp-2.0b1pl6
@@ -12,6 +12,8 @@ CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
 
 MAINTAINER=	jseger@FreeBSD.org
+
+BROKEN='port installs two files into /etc (dhclient.conf & dhclient-script) rather than PREFIX/etc.  The port does not install required dhclient-script at all.'
 
 Y2K=		http://www.isc.org/y2k.html
 
