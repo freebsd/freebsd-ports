@@ -1,14 +1,14 @@
-This is a simple hack to the 2.0R /bin/ls to use ANSI sequences to
+This is a simple hack to the FreeBSD /bin/ls to use ANSI sequences to
 display file attributes in color.  There is a -G flag (somewhat
 similar to the -F flag).  Take a look at the man page for details.
 
 The program is called "colorls" and installs itself in /usr/local/bin.
-The file patches/patch-aa is the diffs with the 2.0-Release /usr/src/bin/ls
-directory.
+The file patches/patch-aa is the diffs from the 3.0-current (as of
+1997/01/01) /usr/src/bin/ls directory.
 
 Standard xterm prior to XFree86 3.1.2B doesn't know about colors, so
-you should use color_xterm or kterm (available from the ports
-collection) if you are using older versions of XFree86.
+you should use update your XFree86 or use kterm (available from the ports
+collection).
 
 Satoshi Asami
 asami@cs.berkeley.edu

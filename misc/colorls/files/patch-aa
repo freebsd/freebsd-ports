@@ -5,18 +5,21 @@
  int f_timesort;			/* sort by time vice name */
  int f_type;			/* add type character for non-regular files */
 +int f_color;			/* add type in color for non-regular files */
- 
- int
- main(argc, argv)
-@@ -122,7 +123,7 @@
- 		f_listdot = 1;
+ #ifndef BSD4_4_LITE
+ int f_whiteout;			/* show whiteout entries */
+ #endif
+@@ -135,9 +136,9 @@
  
  	fts_options = FTS_PHYSICAL;
+ #ifdef BSD4_4_LITE
 -	while ((ch = getopt(argc, argv, "1ACFLRTacdfgikloqrstu")) != EOF) {
 +	while ((ch = getopt(argc, argv, "1ACFGLRTacdfgikloqrstu")) != EOF) {
+ #else
+-	while ((ch = getopt(argc, argv, "1ACFLRTWacdfgikloqrstu")) != EOF) {
++	while ((ch = getopt(argc, argv, "1ACFGLRTWacdfgikloqrstu")) != EOF) {
+ #endif
  		switch (ch) {
  		/*
- 		 * The -1, -C and -l options all override each other so shell
 @@ -152,6 +153,9 @@
  		case 'F':
  			f_type = 1;
@@ -50,7 +53,7 @@
 +	if (!f_longform && !f_listdir && !f_type && !f_color)
  		fts_options |= FTS_COMFOLLOW;
  
- 	/* If -l or -s, figure out block size. */
+ #ifndef BSD4_4_LITE
 --- ./ls.h.org	Wed Mar  8 02:14:11 1995
 +++ ./ls.h	Wed Mar  8 02:17:11 1995
 @@ -49,6 +49,7 @@
@@ -234,7 +237,7 @@
 @@ -36,16 +36,24 @@
  .\"	ls.1,v 1.3 1994/09/24 02:55:53 davidg Exp
  .\"
- .Dd April 18, 1994
+ .Dd July 29, 1994
 -.Dt LS 1
 +.Dt COLORLS 1
  .Os
@@ -245,9 +248,9 @@
 +.Nd list directory contents in color
  .Sh SYNOPSIS
 -.Nm ls
--.Op Fl ACFLRTacdfiloqrstu1
+-.Op Fl ACFLRTWacdfiloqrstu1
 +.Nm colorls
-+.Op Fl ACFGLRTacdfiloqrstu1
++.Op Fl ACFGLRTWacdfiloqrstu1
  .Op Ar file ...
  .Sh DESCRIPTION
 +(Note: This man page describes the color version of the program.  To
@@ -261,10 +264,10 @@
  For each operand that names a
  .Ar file
  of a type other than
-@@ -85,6 +93,12 @@
- an equals sign (=) after each socket,
+@@ -87,6 +95,12 @@
+ a percent sign (%) after each whiteout,
  and a vertical bar (|) after each that is a
- .Tn FIFO . 
+ .Tn FIFO .
 +.It Fl G
 +Use ANSI color sequences to distinguish file types.  (See
 +.Ev LSCOLORS
