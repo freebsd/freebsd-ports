@@ -187,6 +187,7 @@
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
+    SUBDIR += screamer
     SUBDIR += scriba
     SUBDIR += scsh
     SUBDIR += siod
