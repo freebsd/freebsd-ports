@@ -17,4 +17,3 @@
 +CFLAGS += -I. -DUNIX $(LOCAL_ZIP)
  LFLAGS1 =
  LFLAGS2 = -s
- 
