@@ -1,0 +1,6 @@
+include/X11/extensions/Xdamage.h
+lib/libXdamage.a
+lib/libXdamage.la
+lib/libXdamage.so
+lib/libXdamage.so.1
+libdata/pkgconfig/xdamage.pc
