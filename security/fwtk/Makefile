@@ -13,7 +13,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+.if defined(WITH_JUMBO_PATCH)
+PATCHFILES=	trg-jumbo-20001114.diff
+PATCH_SITES=	http://www.fwtk.org/fwtk/patches/
+PATCH_DIST_STRIP=	-p1
+.endif
+
+MAINTAINER=	a.go@wish.net
 
 RESTRICTED=	"No form of redistribution is allowed"
 
@@ -40,7 +46,15 @@ MAN8+=		x-gw.8
 
 .if !exists(${DISTDIR}/fwtk2.1${EXTRACT_SUFX}) \
 	&& !exists(${DISTDIR}/fwtk-doc-only${EXTRACT_SUFX})
-IGNORE='Please read http://www.tis.com/research/software/fwtk_readme.html for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again.'
+IGNORE='Please read ftp://ftp.tislabs.com/pub/firewalls/toolkit/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again'
+.endif
+
+pre-patch:
+.if !defined(WITH_JUMBO_PATCH)
+	@${ECHO} "*****************************************************************************"
+	@${ECHO} "****  To enable the \"Jumbo\" patch kit, run 'make -DWITH_JUMBO_PATCH'"
+	@${ECHO} "****  For information about patches, read http://www.fwtk.org/fwtk/patches/"
+	@${ECHO} "*****************************************************************************"
 .endif
 
 pre-configure:
@@ -56,10 +70,15 @@ pre-configure:
 post-install:
 	cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS}
 	cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin
+	${INSTALL_DATA} ${WRKSRC}/config/netperm-table \
+		${PREFIX}/etc/netperm-table.sample
 	if [ ! -f ${PREFIX}/etc/netperm-table ]; then \
 		${INSTALL_DATA} ${WRKSRC}/config/netperm-table \
 		${PREFIX}/etc/netperm-table;\
 	fi
+.for file in ${LIBEXEC_BINS}
+	@${RM} -f ${PREFIX}/libexec/${file}.old
+.endfor
 .for man in ${MAN3}
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${PREFIX}/man/man3
 .endfor

@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/etc/netperm-table %D/etc/netperm-table.sample; then rm -f %D/etc/netperm-table; fi
 etc/netperm-table.sample
 libexec/authsrv
 libexec/ftp-gw
