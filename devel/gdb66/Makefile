@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2004-05-04
+SNAPDATE=	2004-05-11
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
@@ -17,17 +17,20 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/snapshots/current
 DISTNAME=	gdb+dejagnu-weekly-${SNAPVER}
 
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	obrien
+#PATCHFILES=	gdb60_xfree-loadmod.diff
+
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	GNU GDB 6
 
-LATEST_LINK=	gdb6
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-suffix=6
-CFLAGS+=	-DRL_NO_COMPAT
+CFLAGS+=	-DRL_NO_COMPAT -DKGDB
 
 .include <bsd.port.pre.mk>
 
@@ -47,22 +50,23 @@ PLIST_SUB+=	NO_NATIVE_GDB="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/$$/ [FreeBSD]/' ${WRKSRC}/gdb/version.in
+	@${REINPLACE_CMD} -e 's/$$/ [GDB v6.x for FreeBSD]/' \
+		${WRKSRC}/gdb/version.in
 	@${REINPLACE_CMD} -e 's/^READLINE/#READLINE/' \
 		-e 's/^readline/#readline/' \
 		${WRKSRC}/gdb/Makefile.in
 	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
 
-do-patch: post-patch
-	@${ECHO} 'FreeBSD-specific patches disabled for now, until upgraded.'
-
 pre-configure:
 	cd ${WRKSRC} ; ${RM} -rf dejagnu expect readline sim tcl texinfo
+.for f in freebsd-uthread.c kvm-fbsd.c
+	${LN} -sf ${FILESDIR}/${f} ${WRKSRC}/gdb
+.endfor
+	${LN} -sf ${FILESDIR}/nm-fbsd.h ${WRKSRC}/gdb/config
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
 		${PREFIX}/bin/${PORTNAME}${PORTVERSION:S/.//g}
-
 cklatest:
 	ncftpls \
 	    ftp://sources.redhat.com/pub/${MASTER_SITE_SUBDIR}/  \

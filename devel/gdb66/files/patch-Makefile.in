@@ -1,0 +1,11 @@
+--- gdb/Makefile.in.orig	Fri Oct 17 14:44:26 2003
++++ gdb/Makefile.in	Thu Jan 15 11:41:06 2004
+@@ -119,4 +119,4 @@
+-READLINE_DIR = ../readline
+-READLINE = $(READLINE_DIR)/libreadline.a
+-READLINE_SRC = $(srcdir)/$(READLINE_DIR)
+-READLINE_CFLAGS = -I$(READLINE_SRC)/..
++#READLINE_DIR = ../readline
++READLINE = -lreadline
++#READLINE_SRC = $(srcdir)/$(READLINE_DIR)
++#READLINE_CFLAGS = -I$(READLINE_SRC)/..

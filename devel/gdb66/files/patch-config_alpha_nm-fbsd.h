@@ -1,11 +1,10 @@
---- gdb/config/alpha/nm-fbsd.h	Tue Mar  6 00:21:21 2001
-+++ gdb/config/alpha/nm-fbsd.h	Sun Oct 13 12:23:51 2002
-@@ -22,6 +22,8 @@
- #ifndef NM_FBSD_H
- #define NM_FBSD_H
+--- gdb/config/alpha/nm-fbsd.h.orig	Sat Mar 13 05:07:19 2004
++++ gdb/config/alpha/nm-fbsd.h	Sat Apr 10 00:49:21 2004
+@@ -25,6 +25,7 @@
  
+ /* Get generic BSD native definitions.  */
+ #include "config/nm-bsd.h"
 +#include "config/nm-fbsd.h"
-+
- /* Type of the third argument to the `ptrace' system call.  */
- #define PTRACE_ARG3_TYPE caddr_t
  
+ /* The Alpha does not step over a breakpoint.  */
+ #define CANNOT_STEP_BREAKPOINT 1
