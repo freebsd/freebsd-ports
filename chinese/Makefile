@@ -18,6 +18,7 @@
     SUBDIR += bind8
     SUBDIR += bitchx
     SUBDIR += c2t
+    SUBDIR += cce
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += chinput2

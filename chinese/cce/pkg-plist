@@ -1,0 +1,26 @@
+bin/cce
+lib/cce/8x16.bin
+lib/cce/bdf2bin
+lib/cce/cce.cfg
+lib/cce/cin2tab
+lib/cce/gb16fs.bin
+lib/cce/pinyin.map
+lib/cce/pinyin.tab
+lib/cce/pinyin.tab.lx
+lib/cce/pinyin.tab.phr
+lib/cce/sharefont
+lib/cce/shuangpin.tab
+lib/cce/shuangpin.tab.lx
+lib/cce/shuangpin.tab.phr
+lib/cce/sysphrase.tab
+lib/cce/tab2cin
+lib/cce/tab2txt
+lib/cce/txt2tab
+lib/cce/usrphrase.tab
+lib/cce/wubi.tab
+lib/cce/wubi.tab.lx
+lib/cce/wubi.tab.phr
+lib/cce/ziranma.tab
+lib/cce/ziranma.tab.lx
+lib/cce/ziranma.tab.phr
+@dirrm lib/cce
