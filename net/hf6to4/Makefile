@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	hf6to4
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://cvsweb.netbsd.org/bsdweb.cgi/~checkout~/pkgsrc/net/hf6to4/files/
-DISTFILES=	hf6to4\?rev=1.2\&content-type=text%2fplain \
+DISTFILES=	hf6to4\?rev=1.3\&content-type=text%2fplain \
 		hf6to4.8\?rev=1.2\&content-type=text%2fplain \
 		hf6to4.conf\?rev=1.2\&content-type=text%2fplain
 DIST_SUBDIR=	${PORTNAME}
