@@ -153,7 +153,6 @@
     SUBDIR += qtk
     SUBDIR += re2c
     SUBDIR += rinfo
-    SUBDIR += sawt
     SUBDIR += scogdb
     SUBDIR += sdl
     SUBDIR += sfio
