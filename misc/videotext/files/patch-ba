@@ -1,5 +1,5 @@
-*** Makefile.orig	Thu Oct 23 00:55:44 1997
---- Makefile	Thu Jun 10 02:51:02 1999
+*** Makefile.orig	Wed Oct 22 18:55:44 1997
+--- Makefile	Thu Feb 17 16:07:45 2000
 ***************
 *** 22,35 ****
   
@@ -38,8 +38,14 @@
   
   DIRPERM = 755
   SPOOLDIRPERM = 777
-*************** GIF_SUPPORT = -DGIF_SUPPORT
-*** 79,88 ****
+***************
+*** 73,88 ****
+  # useful if you want to distribute VideoteXt and want to avoid trouble with
+  # Unisys' stupid licensing conditions.
+  
+! GIF_SUPPORT = -DGIF_SUPPORT
+  
+  
   # Uncomment the next lines if you want PNG support and have libpng and libz
   # installed.
   
@@ -50,7 +56,13 @@
   
   
   # Uncomment the following line if you want to get coredumps when an
---- 86,95 ----
+--- 80,95 ----
+  # useful if you want to distribute VideoteXt and want to avoid trouble with
+  # Unisys' stupid licensing conditions.
+  
+! #GIF_SUPPORT = -DGIF_SUPPORT
+  
+  
   # Uncomment the next lines if you want PNG support and have libpng and libz
   # installed.
   
