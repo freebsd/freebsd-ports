@@ -7,7 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi/
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--with-included-gettext=no
 .if defined(WITH_LDAP21)
 LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21
 .else
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
 
 post-extract:

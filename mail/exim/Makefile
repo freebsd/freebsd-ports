@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM} \
 		http://duncanthrax.net/%SUBDIR%/:exiscan_acl
@@ -185,10 +185,10 @@ WITH_OPENLDAP2=	yes
 
 .if defined(WITH_OPENLDAP21)
 LDAP_LIB_TYPE=	OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap21-client
 .elif defined(WITH_OPENLDAP2) || defined(WITH_OPENLDAP20)
 LDAP_LIB_TYPE=	OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
 .elif defined(WITH_OPENLDAP1)
 LDAP_LIB_TYPE=	OPENLDAP1
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12

@@ -7,6 +7,7 @@
 
 PORTNAME=	opensc
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc.org/files/
 
@@ -14,7 +15,7 @@ MAINTAINER=	bms@spc.org
 COMMENT=	ISO 7816 Smartcard API Library (OpenSSH Compatible)
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite	\
-		ldap.2:${PORTSDIR}/net/openldap20
+		ldap.2:${PORTSDIR}/net/openldap20-client
 
 INSTALLS_SHLIB= yes
 USE_OPENSSL=	yes
