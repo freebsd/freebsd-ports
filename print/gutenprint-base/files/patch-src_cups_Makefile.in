@@ -14,3 +14,14 @@ $FreeBSD$
  LIBPRINTUT = $(top_builddir)/lib/libprintut.la
  LIBS = $(INTLLIBS) @LIBS@
  
+--- src/cups/Makefile.in.orig	Fri Sep  5 02:16:48 2003
++++ src/cups/Makefile.in	Fri Sep  5 02:17:15 2003
+@@ -765,7 +765,7 @@
+ 	for language in $(LINGUAS) ; do \
+ 	  mkdir ppd/$$language ; \
+ 	  echo "$$language:" ; \
+-	  LANGUAGE=$$language ./genppd --prefix=ppd/$$language --catalog=`pwd`/catalog/share/locale ; \
++	  LANG=$$language ./genppd --prefix=ppd/$$language --catalog=`pwd`/catalog/share/locale ; \
+ 	done
+ 	$(RM) -r catalog
+ 
