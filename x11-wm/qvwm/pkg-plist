@@ -2,6 +2,7 @@ bin/qvwm
 share/qvwm/clouds.qvwm-theme
 share/qvwm/default.qvwm-theme
 share/qvwm/french.qvwmrc
+share/qvwm/german.qvwmrc
 share/qvwm/images/clouds.xpm
 share/qvwm/images/clouds2.xpm
 share/qvwm/images/def16.ani
@@ -32,9 +33,11 @@ share/qvwm/images/xterm16.xpm
 share/qvwm/images/xterm32.ani
 share/qvwm/images/xv16.xpm
 share/qvwm/images/xv32.xpm
+share/qvwm/italian.qvwmrc
 share/qvwm/kanji.qvwmrc
 share/qvwm/korean.qvwmrc
 share/qvwm/light.qvwmrc
+share/qvwm/portuguese.qvwmrc
 share/qvwm/sounds/chimes.wav
 share/qvwm/space.qvwm-theme
 share/qvwm/system.qvwmrc
