@@ -7,6 +7,7 @@
 
 PORTNAME=	bugbuddy2
 PORTVERSION=	2.2.102
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bug-buddy/2.2
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
