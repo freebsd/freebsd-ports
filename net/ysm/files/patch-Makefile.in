@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Fri Nov  1 16:26:19 2002
++++ src/Makefile.in	Fri Nov  1 16:26:30 2002
+@@ -6,8 +6,8 @@
+ 
+ CC=		@CC@
+ CFLAGS=		@CFLAGS@
+-CPPFLAGS=	-I. -Irijndael
+-LIBS=		@LIBS@
++CPPFLAGS=	-I. -Irijndael @CPPFLAGS@
++LIBS=		@LIBS@ @LDFLAGS@
+ 
+ INSTALL=	@INSTALL@
+ prefix=		@prefix@
