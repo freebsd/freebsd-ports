@@ -3,5 +3,4 @@ specified) or URLs and plays them on the audio device (default) or
 outputs them to stdout.  file/URL is assumed to be an MPEG-1/2 audio
 bit stream.
 
-WWW: http://mpg.123.org	 
-http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123.html
+WWW: http://www.mpg123.de/
