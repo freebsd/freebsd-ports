@@ -363,6 +363,7 @@
     SUBDIR += makedepend
     SUBDIR += makeplus
     SUBDIR += memcheck
+    SUBDIR += meta-cvs
     SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mingw

@@ -1,0 +1,7 @@
+bin/mcvs
+lib/clisp/meta-cvs/lispinit.mem
+lib/clisp/meta-cvs/lisp.run
+@dirrm lib/clisp/meta-cvs
+%%PORTDOCS%%%%DOCSDIR%%/Meta-CVS-PAPER
+%%PORTDOCS%%%%DOCSDIR%%/QUICK-GUIDE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
