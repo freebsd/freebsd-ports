@@ -137,6 +137,7 @@ gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-1.*		ports/graphics/graphviz	Needs license before fetching
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
+HyperSpec-*		ports/devel/clisp-hyperspec	Commercial redistribution prohibited
 homard-*		ports/french/homard	Only free for use in conjunction with
 						french/aster. For any other purpose,
 						you have to acquire a license
