@@ -6,7 +6,7 @@
  
 +# This requires special handling to get the correct versions of include files:
 +#     ../../include/fnmatch.h instead of /usr/include/fnmatch.h
-+#     /usr/include/opssl/*.h instead of /usr/local/include/openssl.h
++#     /usr/include/openssl/*.h instead of /usr/local/include/openssl.h
 +MY_CFLAGS= $(INCLUDES0) $(SSL_CFLAGS) $(INCLUDES1) $(EXTRA_INCLUDES) $(CFLAGS)
 +
  all: lib
