@@ -36,6 +36,10 @@ pre-everything::
 #BROKEN=		"Does not compile on alpha 5.x"
 #.endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Install fails on !i386"
+.endif
+
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
