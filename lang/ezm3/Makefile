@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ezm3
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
 MASTER_SITE_SUBDIR=development/CVSup/ezm3
@@ -59,8 +58,8 @@ BOOTSTRAP=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 
 post-patch:
-.if ${ARCH} == "sparc64" && ${OSVERSION} >= 502107
-	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int32_t;|\1int64_t;|' \
+.if ${ARCH} == "sparc64" && ${OSVERSION} < 502107
+	@${REINPLACE_CMD} -E -e 's|(^.*time_t.*=.*)int64_t;|\1int32_t;|' \
 		${WRKSRC}/libs/m3core/src/unix/freebsd-4.sparc64/Utypes.i3
 .endif
 
