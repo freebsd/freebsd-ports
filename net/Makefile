@@ -254,6 +254,7 @@
     SUBDIR += javadc
     SUBDIR += jffnms
     SUBDIR += jit
+    SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
