@@ -16,8 +16,6 @@
     SUBDIR += ines
     SUBDIR += ksnes9x
     SUBDIR += linux_base
-    SUBDIR += linux_glide
-    SUBDIR += linux_mesa
     SUBDIR += kmamerun
     SUBDIR += macutils
     SUBDIR += mastergear
