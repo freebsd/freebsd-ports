@@ -1,3 +1,7 @@
-BitchX is an enhanced ircII client.  It includes many built-in features
-normally found only in scripts. Including, full ANSI color, userlists,
-flood protection, and built CDCC (XDCC) file offering.
+BitchX is an IRC (Internet Relay Chat) client by Colten Edwards aka
+panasync@efnet, it is based on it's predecessors ircII and EPIC.
+BitchX was originally started as a script by Trench and HappyCrappy
+for the popular UNIX IRC client ircII. Around Christmas of 1994 the
+script was patched directly into the client by panasync.
+
+WWW: http://www.bitchx.com
