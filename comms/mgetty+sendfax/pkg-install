@@ -71,7 +71,7 @@ system ("mv -f /tmp/mgetty.config.$$ $prefix/etc/mgetty+sendfax/mgetty.config");
 system ("mv -f /tmp/sendfax.config.$$ $prefix/etc/mgetty+sendfax/sendfax.config");
 
 open (F, ">$prefix/etc/mgetty+sendfax/faxheader");
-print F "\n      FAX  FROM:  **not configured** $def{fax-id}     TO: @T@    PAGE: @P@ OF @M@ \n";
+print F "\n      FAX  FROM:  **not configured** $def{fax-id}     TO: \@T\@    PAGE: \@P\@ OF \@M\@ \n";
 close (F);
 
 
