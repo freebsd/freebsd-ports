@@ -1,12 +1,13 @@
-lib/libamanda-2.4.4.so
+lib/libamanda-2.4.4p2.so
 lib/libamanda.so
 lib/libamanda.la
 lib/libamanda.a
-lib/libamclient-2.4.4.so
+lib/libamclient-2.4.4p2.so
 lib/libamclient.so
 lib/libamclient.la
 lib/libamclient.a
 libexec/amanda/amandad
+libexec/amanda/amqde
 libexec/amanda/calcsize
 libexec/amanda/killpgrp
 libexec/amanda/patch-system
@@ -23,7 +24,9 @@ share/amanda/COPYRIGHT-REGEX
 share/amanda/DUMPER-API
 share/amanda/EXCLUDE
 share/amanda/FAQ
+share/amanda/HOWTO-AFS
 share/amanda/HOWTO-CYGWIN.html
+share/amanda/HOWTO-FILE-DRIVER
 share/amanda/INDEXING
 share/amanda/INSTALL
 share/amanda/INTERNALS
@@ -44,10 +47,14 @@ share/amanda/WHATS.NEW
 share/amanda/WISHLIST
 share/amanda/YEAR2000
 share/amanda/ZFTAPE
+share/amanda/chg-scsi.notes
 share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
 share/examples/amanda/chg-scsi.conf
 share/examples/amanda/disklist
+@dirrm var/amanda/gnutar-lists
+@dirrm var/amanda
+@dirrm var
 @dirrm share/examples/amanda
 @dirrm share/amanda
 @dirrm libexec/amanda
