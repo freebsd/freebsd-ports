@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.28
-PORTREVISION=	2
+PORTVERSION=	2.5.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,6 +21,8 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
@@ -72,10 +73,6 @@ pre-everything::
 	@${ECHO_MSG} "		WITH_THREADS=yes	Turns on multi-threading support"
 	@${ECHO_MSG} "		WITH_THREAD_ALLOC=yes	Turns on per-thread memory"
 	@${ECHO_MSG} ""
-
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
