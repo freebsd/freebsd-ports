@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc
 USE_XLIB=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+USE_REINPLACE=	YES
 MAN1=		wgoto.1 win.1 wreplace.1 Tag.1 mktags.1 Man.1
 
 PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
@@ -32,6 +33,10 @@ PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
 		Credits fonts mouse
 TUTEDOCS=	hello.c start typescript
 TUTESHS=	findword script send_to_gary
+
+post-patch:
+	cd  ${WRKSRC}/tools/win; ${REINPLACE_CMD} -e 's," in " __FUNCTION__ "()",,' \
+		win.c wgoto.c wreplace.c
 
 # Run the configure script in the tools directory.
 post-configure:
