@@ -20,6 +20,9 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 MAN1=		scr2png.1
 MANCOMPRESSED=	yes
 
+post-extract:
+	@${PERL} -pi -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
+
 do-install:	
 	@cd ${WRKSRC}; ${MAKE} BINDIR=${LOCALBASE}/bin SHAREDIR=${LOCALBASE} install
 
