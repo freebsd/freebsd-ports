@@ -168,3 +168,5 @@ textproc/ruby-erb||2003-02-09|ERb 1.x is obsolete: use the one included in ruby 
 audio/lame-devel||2003-02-09|obsolete
 x11-fm/gnomemc||2003-02-10|obsolete
 x11/wmshutdown|sysutils/wmshutdown|2003-02-13|fix category
+security/kgpgapplet||2003-02-19|merged into kgpg
+net/ip-tun||2003-02-19|obsoleted by gif interfaces
