@@ -7,13 +7,13 @@
 #
 
 DISTNAME=	dotfile-2.2
-CATEGORIES=	misc tk80
+CATEGORIES=	misc tk82
 MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
 
 MAINTAINER=	oly@world.std.com
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
 MAN1=		dotfile.1
