@@ -1,0 +1,12 @@
+diff -ur ./namazu-1.3.0.8/src/configure ./configure
+--- ./namazu-1.3.0.8/src/configure.orig	Mon Jun 14 22:51:48 1999
++++ ./configure	Wed Dec  1 01:06:29 1999
+@@ -1702,6 +1702,8 @@
+     fi
+     if test "$CHASEN" != "not_found"; then
+ 	WAKATI_DEFAULT=CHASEN
++    else
++	CHASEN=/usr/local/bin/chasen
+     fi
+     
+ fi
