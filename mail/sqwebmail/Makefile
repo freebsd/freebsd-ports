@@ -48,7 +48,7 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_TIMEOUTSOFT to something other than 1200 seconds (20m)
 # set WITHOUT_SENTRENAME to turn off periodic renaming of the Sent folder
 # set WITHOUT_IMAP if you don't use the Courier IMAP server
-# set VCHKPW to the home of the vpopmail user, if necessary
+# set VCHKPWLOC to the home of the vpopmail user, if necessary
 #
 # The following settings are in bytes:
 # set WITH_MAXMSGSIZE to max size of messages (including attachments)
