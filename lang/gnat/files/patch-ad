@@ -1,36 +1,19 @@
-*** gcc-2.7.2.1/ada/make.adb.orig	Thu Aug 14 00:02:45 1997
---- gcc-2.7.2.1/ada/make.adb	Sun Nov 16 09:18:18 1997
+*** ./ada/make.adb.orig	Wed Jul 29 21:01:09 1998
+--- ./ada/make.adb	Tue Sep  1 00:24:06 1998
 ***************
-*** 201,207 ****
+*** 202,208 ****
      -- Compiler, Binder & Linker Data and Subprograms --
      ----------------------------------------------------
   
-!    Gcc       : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gcc");
-     Gnatbind  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatbind");
-     Gnatlink  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatlink");
-  
---- 201,207 ----
+!    Gcc             : String_Access := Program_Name ("gcc");
+     Gnatbind        : String_Access := Program_Name ("gnatbind");
+     Gnatlink        : String_Access := Program_Name ("gnatlink");
+     --  Default compiler, binder, linker programs
+--- 202,208 ----
      -- Compiler, Binder & Linker Data and Subprograms --
      ----------------------------------------------------
   
-!    Gcc       : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("adagcc");
-     Gnatbind  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatbind");
-     Gnatlink  : String_Access := GNAT.OS_Lib.Locate_Exec_On_Path ("gnatlink");
-  
-***************
-*** 941,947 ****
-           Comp_Last := Comp_Last + 1;
-           Comp_Args (Comp_Last) := new String'(Name_Buffer (1 .. Name_Len));
-  
-!          Display ("gcc", Comp_Args (Args'First .. Comp_Last));
-  
-           return
-             GNAT.OS_Lib.Non_Blocking_Spawn
---- 941,947 ----
-           Comp_Last := Comp_Last + 1;
-           Comp_Args (Comp_Last) := new String'(Name_Buffer (1 .. Name_Len));
-  
-!          Display ("adagcc", Comp_Args (Args'First .. Comp_Last));
-  
-           return
-             GNAT.OS_Lib.Non_Blocking_Spawn
+!    Gcc             : String_Access := Program_Name ("adagcc");
+     Gnatbind        : String_Access := Program_Name ("gnatbind");
+     Gnatlink        : String_Access := Program_Name ("gnatlink");
+     --  Default compiler, binder, linker programs

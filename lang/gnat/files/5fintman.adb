@@ -7,7 +7,7 @@
 --                                  B o d y                                 --
 --                         (Version for new GNARL)                          --
 --                                                                          --
---                             $Revision: 1.1 $                            --
+--                             $Revision: 1.3 $                            --
 --                                                                          --
 --   Copyright (C) 1991,1992,1993,1994,1995,1996 Florida State University   --
 --                                                                          --
@@ -44,7 +44,7 @@
 --  This file performs the system-dependent translation between machine
 --  exceptions and the Ada exceptions, if any, that should be raised when
 --  they occur.  This version works for FreeBSD.  Contributed by
---  Daniel M. Eischen (deischen@iworks.InterWorks.org).
+--  Daniel M. Eischen (eischen@vigrid.com).
 
 --  PLEASE DO NOT add any dependences on other packages.
 --  This package is designed to work with or without tasking support.
@@ -61,16 +61,12 @@
 with Interfaces.C;
 --  used for int and other types
 
-with System.Error_Reporting;
---  used for Shutdown
-
 with System.OS_Interface;
 --  used for various Constants, Signal and types
 
 package body System.Interrupt_Management is
 
    use Interfaces.C;
-   use System.Error_Reporting;
    use System.OS_Interface;
 
    type Interrupt_List is array (Interrupt_ID range <>) of Interrupt_ID;
@@ -137,7 +133,7 @@ package body System.Interrupt_Management is
          when SIGBUS =>
             raise Storage_Error;
          when others =>
-            pragma Assert (Shutdown ("Unexpected signal"));
+            pragma Assert (False);
             null;
       end case;
    end Notify_Exception;
@@ -151,6 +147,10 @@ package body System.Interrupt_Management is
       old_act : aliased struct_sigaction;
       mask    : aliased sigset_t;
       Result  : Interfaces.C.int;
+
+      Unreserve_All_Interrupts : Interfaces.C.int;
+      pragma Import
+        (C, Unreserve_All_Interrupts, "__gl_unreserve_all_interrupts");
 
    begin
 
@@ -170,14 +170,17 @@ package body System.Interrupt_Management is
       --  In that case, this field should be changed back to 0. ??? (Dong-Ik)
 
       Result := sigemptyset (mask'Access);
-      pragma Assert (Result = 0
-        or else Shutdown ("GNULLI failure---sigemptyset"));
+      pragma Assert (Result = 0);
 
-      for I in Exception_Interrupts'Range loop
-         Result := sigaddset (mask'Access, Signal (Exception_Interrupts (I)));
-         pragma Assert (Result = 0
-           or else Shutdown ("GNULLI failure---sigaddset"));
-      end loop;
+      --  ??? For the same reason explained above, we can't mask these
+      --  signals because otherwise we won't be able to catch more than
+      --  one signal.
+
+      --  for I in Exception_Interrupts'Range loop
+      --     Result :=
+      --       sigaddset (mask'Access, Signal (Exception_Interrupts (I)));
+      --     pragma Assert (Result = 0);
+      --  end loop;
 
       act.sa_mask := mask;
 
@@ -185,28 +188,26 @@ package body System.Interrupt_Management is
          Keep_Unmasked (Exception_Interrupts (I)) := True;
          Result :=
            sigaction
-             (Signal (Exception_Interrupts (I)), act'Access,
+             (Signal (Exception_Interrupts (I)), act'Unchecked_Access,
               old_act'Unchecked_Access);
-         pragma Assert (Result = 0
-           or else Shutdown ("GNULLI failure---sigaction"));
+         pragma Assert (Result = 0);
       end loop;
 
-      Keep_Unmasked (Abort_Task_Interrupt) := true;
---      Keep_Unmasked (SIGBUS)  := true;
+      Keep_Unmasked (Abort_Task_Interrupt) := True;
+      Keep_Unmasked (SIGSTOP) := True;
+      Keep_Unmasked (SIGKILL) := True;
 
-      Keep_Unmasked (SIGSTOP) := true;
-      Keep_Unmasked (SIGKILL) := true;
-      Keep_Unmasked (SIGINT)  := true;
+      --  By keeping SIGINT unmasked, allow the user to do a Ctrl-C, but in the
+      --  same time, disable the ability of handling this signal
+      --  via Ada.Interrupts.
+      --  The pragma Unreserve_All_Interrupts let the user the ability to
+      --  change this behavior.
 
-      --  Keep_Unmasked (SIGEMT) := true;
-      --  Keep_Unmasked (SIGCHLD) := true;
-      --  Keep_Unmasked (SIGALRM) := true;
-      --  ???? The above signals have been found to need to be
-      --  kept unmasked on some systems, per Dong-Ik Oh.
-      --  I don't know whether the MIT/Provenzano threads
-      --  need these or any other signals unmasked at the thread level.
-      --  I hope somebody will take
-      --  the time to look it up. -- Ted Baker
+      if Unreserve_All_Interrupts = 0 then
+         Keep_Unmasked (SIGINT) := True;
+      else
+         Keep_Unmasked (SIGINT)  := False;
+      end if;
 
       --  FreeBSD uses SIGINFO to dump thread status to stdout.  If
       --  the user really wants to attach his own handler, let him.
@@ -216,9 +217,9 @@ package body System.Interrupt_Management is
       --  in order to handle the setitimer/getitimer operations.  We
       --  could probably allow SIGALARM, but we'll leave it as unmasked
       --  for now.  FreeBSD pthreads also needs SIGCHLD.
-      Keep_Unmasked (SIGCHLD) := true;
-      Keep_Unmasked (SIGALRM) := true;
-      Keep_Unmasked (SIGVTALRM) := true;
+      Keep_Unmasked (SIGCHLD) := True;
+      Keep_Unmasked (SIGALRM) := True;
+      Keep_Unmasked (SIGVTALRM) := True;
 
       Reserve := Reserve or Keep_Unmasked or Keep_Masked;
 

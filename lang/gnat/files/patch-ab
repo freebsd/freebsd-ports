@@ -1,36 +1,62 @@
-diff -c orig/gcc.c gcc/gcc.c
-*** orig/gcc.c	Thu Apr  3 08:37:06 1997
---- gcc-2.7.2.1/gcc.c	Fri Apr  4 23:21:00 1997
+*** ./config/i386/freebsd.h.orig	Fri Sep  4 23:57:29 1998
+--- ./config/i386/freebsd.h	Fri Sep  4 23:58:54 1998
 ***************
-*** 1354,1362 ****
-  #undef MD_STARTFILE_PREFIX_1
-  #endif
+*** 49,55 ****
+  #define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
   
-! #ifndef STANDARD_EXEC_PREFIX
-! #define STANDARD_EXEC_PREFIX "/usr/local/lib/gcc-lib/"
-! #endif /* !defined STANDARD_EXEC_PREFIX */
+  /* Like the default, except no -lg.  */
+! #define LIB_SPEC "%{!shared:%{!pg:-lc}%{pg:-lc_p}}"
   
-  static char *standard_exec_prefix = STANDARD_EXEC_PREFIX;
-  static char *standard_exec_prefix_1 = "/usr/lib/gcc/";
---- 1354,1360 ----
-  #undef MD_STARTFILE_PREFIX_1
-  #endif
+  #undef SIZE_TYPE
+  #define SIZE_TYPE "unsigned int"
+--- 49,55 ----
+  #define CPP_SPEC "%{posix:-D_POSIX_SOURCE}"
   
-! #define STANDARD_EXEC_PREFIX FREEBSD_PREFIX "/libexec/"
+  /* Like the default, except no -lg.  */
+! #define LIB_SPEC "%{!shared:%{!pg:%{!pthread:%{!kthread:-lc}%{kthread:-lpthread -lc}}%{pthread:-lc_r}}%{pg:%{!pthread:%{!kthread:-lc_p}%{kthread:-lpthread_p -lc_p}}%{pthread:-lc_r_p}}}"
   
-  static char *standard_exec_prefix = STANDARD_EXEC_PREFIX;
-  static char *standard_exec_prefix_1 = "/usr/lib/gcc/";
+  #undef SIZE_TYPE
+  #define SIZE_TYPE "unsigned int"
+*** ./config/i386/freebsd-elf.h.orig	Fri Dec  5 07:15:34 1997
+--- ./config/i386/freebsd-elf.h	Fri Feb 12 21:35:52 1999
 ***************
-*** 2708,2715 ****
---- 2706,2716 ----
-    /* Use 2 as fourth arg meaning try just the machine as a suffix,
-       as well as trying the machine and the version.  */
-  #ifdef FREEBSD_NATIVE
-+   add_prefix (&exec_prefixes, FREEBSD_PREFIX "/libexec/ada/", 0, 0, NULL_PTR);
-+   add_prefix (&exec_prefixes, FREEBSD_PREFIX "/libexec/", 0, 0, NULL_PTR);
-    add_prefix (&exec_prefixes, "/usr/libexec/", 0, 0, NULL_PTR);
-    add_prefix (&exec_prefixes, "/usr/bin/", 0, 0, NULL_PTR);
-+   add_prefix (&startfile_prefixes, FREEBSD_PREFIX "/lib/", 0, 0, NULL_PTR);
-    add_prefix (&startfile_prefixes, "/usr/libdata/gcc/", 0, 0, NULL_PTR);
-  #else /* not FREEBSD_NATIVE */
-  #ifndef OS2
+*** 140,146 ****
+  #define WCHAR_TYPE_SIZE BITS_PER_WORD
+      
+  #undef CPP_PREDEFINES
+! #define CPP_PREDEFINES "-Dunix -D__ELF__ -D__FreeBSD__=2 -Asystem(FreeBSD)"
+  
+  #undef CPP_SPEC
+  #define CPP_SPEC "%(cpp_cpu) %[cpp_cpu] %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
+--- 140,146 ----
+  #define WCHAR_TYPE_SIZE BITS_PER_WORD
+      
+  #undef CPP_PREDEFINES
+! #define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__=3 -Asystem(FreeBSD) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
+  
+  #undef CPP_SPEC
+  #define CPP_SPEC "%(cpp_cpu) %[cpp_cpu] %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
+***************
+*** 152,159 ****
+   * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
+   */
+  #define LIB_SPEC \
+!   "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
+!      %{!ggdb:-lc} %{ggdb:-lg}}"
+  #else
+  #define LIB_SPEC \
+    "%{!shared: \
+--- 152,164 ----
+   * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
+   */
+  #define LIB_SPEC \
+!   "%{!shared: \
+!      %{!pg: \
+!        %{!pthread: %{!kthread:-lc} %{kthread:-lpthread -lc}} \
+!        %{pthread:-lc_r}} \
+!      %{pg: \
+!        %{!pthread: %{!kthread:-lc_p} %{kthread:-lpthread_p -lc_p}} \
+!        %{pthread:-lc_r_p}}}"
+  #else
+  #define LIB_SPEC \
+    "%{!shared: \

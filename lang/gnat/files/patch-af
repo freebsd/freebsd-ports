@@ -1,37 +1,19 @@
-*** gcc-2.7.2.1/ada/gnatlink.adb.orig	Sun Nov 16 09:24:27 1997
---- gcc-2.7.2.1/ada/gnatlink.adb	Sun Nov 16 09:25:18 1997
+*** ./ada/gnatlink.adb.orig	Wed Jul 29 21:01:08 1998
+--- ./ada/gnatlink.adb	Tue Sep  1 00:26:17 1998
 ***************
-*** 63,69 ****
+*** 73,79 ****
        Table_Increment      => 100,
        Table_Name           => "Gnatlink.Binder_Options");
   
-!    Gcc        : constant String := "gcc";
+!    Gcc : String_Access := Program_Name ("gcc");
   
      Read_Mode  : constant String := "r" & Ascii.Nul;
-     Write_Mode : constant String := "w" & Ascii.Nul;
---- 63,69 ----
+  
+--- 73,79 ----
        Table_Increment      => 100,
        Table_Name           => "Gnatlink.Binder_Options");
   
-!    Gcc        : constant String := "adagcc";
+!    Gcc : String_Access := Program_Name ("adagcc");
   
      Read_Mode  : constant String := "r" & Ascii.Nul;
-     Write_Mode : constant String := "w" & Ascii.Nul;
-***************
-*** 424,430 ****
-        Write_Eol;
-        Write_Str ("      [-v]               -- verbose mode");
-        Write_Eol;
-!       Write_Str ("      [-gnatlink name]   -- full name for the linker (gcc)");
-        Write_Eol;
-        Write_Str ("      [list of objects]  -- non Ada binaries");
-        Write_Eol;
---- 424,431 ----
-        Write_Eol;
-        Write_Str ("      [-v]               -- verbose mode");
-        Write_Eol;
-!       Write_Str ("      [-gnatlink name]   -- full name for the linker " &
-!         "(adagcc)");
-        Write_Eol;
-        Write_Str ("      [list of objects]  -- non Ada binaries");
-        Write_Eol;
+  
