@@ -109,7 +109,6 @@
     SUBDIR += simplicity
     SUBDIR += trove4j
     SUBDIR += tya
-    SUBDIR += xalan-j
     SUBDIR += xdoclet
 
 .include <bsd.port.subdir.mk>
