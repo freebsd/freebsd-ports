@@ -10,6 +10,8 @@ INCLUDES=	-I${PREFIX}/include/apache \
 CC!=		${PREFIX}/sbin/apxs -q CC
 CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
 CFLAGS+=	${INCLUDES} -DGDTCL
+CFLAGS+=	-DDEFAULT_XFERLOG=\"/var/log/httpd-access.log\"
+
 # Ridiculous!
 #CFLAGS+=	-Dneo_log_module=log_neo_module \
 #		-Dtcl_auth_module=auth_tcl_module
