@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --msgbox "This port requires an up to date cclient library.  Your best chance of success is to pkg_delete cclient, then do: make clean && make install in this directory. Include whatever compile options you desire in the make install step, such as -DWITH_SSL. The important factor is that the cclient library and this program be compiled with the same options." 12 70 || /usr/bin/false
