@@ -9,7 +9,8 @@
 PORTNAME=	planets
 PORTVERSION=	0.1.12
 CATEGORIES=	astro
-MASTER_SITES=	http://planets.homedns.org/dist/
+MASTER_SITES=	http://planets.homedns.org/dist/ \
+		http://sheepkiller.nerim.net/ports/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
