@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	wxpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Python bindings for the wxWindows/GTK GUI toolkit
 
 LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
