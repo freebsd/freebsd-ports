@@ -60,7 +60,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/msdos_ja.ko ${PREFIX}/lib/ja-msdosfs
 	${INSTALL_SCRIPT} ${WRKDIR}/ja-msdosfs.sh ${PREFIX}/etc/rc.d
 
-post-install:
-	/sbin/kldload ${PREFIX}/lib/ja-msdosfs/msdos_ja.ko
-
 .include <bsd.port.post.mk>

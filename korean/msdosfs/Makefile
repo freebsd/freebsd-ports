@@ -63,7 +63,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/msdos_ko.ko ${PREFIX}/lib/ko-msdosfs
 	${INSTALL_SCRIPT} ${WRKDIR}/ko-msdosfs.sh ${PREFIX}/etc/rc.d
 
-post-install:
-	/sbin/kldload ${PREFIX}/lib/ko-msdosfs/msdos_ko.ko
-
 .include <bsd.port.post.mk>
