@@ -1,9 +1,13 @@
 Some brief notes:
 
-1) This package is intended to run on FreeBSD 5.0-current or
-FreeBSD 4.X i386 processors only.
+1) This package is intended to run on FreeBSD 5.0-current or FreeBSD 4.X, i386
+processors only.
 
-Compile your applications that use LinuxThreads with the following
+Do not use libc_r with the linuxthreads port, and do not compile/link with the
+-pthread option (which pulls in libc_r).  Rather, link with libc (which you will
+get by default).
+
+Compile your applications that use the linuxthreads port with the following
 command line options:
 
   -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread -llgcc_r
@@ -11,7 +15,7 @@ command line options:
 Note that the include (-I<path>) directive shown here should appear before any
 other include directive that would cause the compiler to find the FreeBSD file
 /usr/include/pthread.h.  Using the FreeBSD pthread.h instead of the linuxthreads
-pthread.h will result in an app fails fails in many odd and maybe spectacular
+pthread.h will result in an app that fails in many odd and maybe spectacular
 ways.
 
 In order to facilitate porting applications which expect a libpthread, you can
@@ -20,35 +24,35 @@ create the following symlinks if you want:
   ln -s /usr/local/lib/liblthread.a /usr/lib/libpthread.a
   ln -s /usr/local/lib/liblthread_p.a /usr/lib/libpthread_p.a
   ln -s /usr/local/lib/liblthread.so.2 /usr/lib/libpthread.so.2
-  ln -s /usr/local/lib/liblthread.so.0 /usr/lib/libpthread.so
+  ln -s /usr/local/lib/liblthread.so.2 /usr/lib/libpthread.so
   /sbin/ldconfig -m /usr/lib
 
 If you do this, you can instead use:
 
   -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread -llgcc_r
-or      
-  -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -kthread -llgcc_r
 
-Do not use libc_r with LinuxThreads, and do not compile/link with the -pthread
-option (which pulls in libc_r).  Rather, link with libc (which you will get by
-default).
+Another option is to create a custom gcc specs file that tells the linker which
+version of libgcc to use.  To do this, create a file with the following in it:
 
-2) You should consider enabling the posix priority extensions in your kernel.
-Adding the following to your kernel config file before you execute config and
-before you re-make the kernel should suffice.
+--- (/foo/specs) cut here ---
+*libgcc:
+/usr/local/lib/liblgcc_r.a
+--- (/foo/specs) cut here ---
 
-options		"P1003_1B"
-options		"_KPOSIX_PRIORITY_SCHEDULING"
-options		"_KPOSIX_VERSION=199309L"
+Then use the following command line options:
 
-These options are not mandatory.
+  -B/foo/ -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -llthread
 
-3) If you plan on having lots of threads, check the sysctl value of
+or if you created symlinks:
+
+  -B/foo/ -D_THREAD_SAFE -I/usr/local/include/pthread/linuxthreads -lpthread
+
+2) If you plan on having lots of threads, check the sysctl value of
 kern.maxproc.  Each kernel thread counts against maxproc.  You can increase
 maxproc by changing the MAXUSERS value in your kernel config file.  maxproc is
 set at 20 + 16 * MAXUSERS.
 
-4) Be aware of the following libc issues:
+3) Be aware of the following libc issues:
 
   a) Not all libc calls are thread safe.  In particular gmtime, localtime, etc
   are not thread safe.  In general, where the pthreads spec calls for "_r"
@@ -61,19 +65,3 @@ set at 20 + 16 * MAXUSERS.
   implemented as such.  While linux threads has the cancel functions
   implemented, deferred cancellation will not work as required by POSIX
   1003.1c-1995, since the co-operation needed from libc is not complete.
-
-5) Known problems and issues:
-
-  It is possible that the instructions given above for including liblgcc_r
-  are not sufficent.  liblgcc_r is a version of libgcc_r linked against this
-  linuxthreads package.  It is intended that applications link against this,
-  rather than libgcc_r (which is linked against libc_r) or libgcc (which is not
-  thread safe).
-
-  The normal gcc link options cause libgcc to be included twice in the link line
-  (and libgcc_r twice when linking with the -pthread option). It is therefore
-  possible that a custom link line needs to be generated that specifically
-  excludes the default libgcc and which includes liblgcc_r twice.  There are no
-  known problems resulting from the link procedure suggested above.  However,
-  compiling/linking with the "-v" option will illustrate the issue, where libgcc
-  is included twice in addition to liblgcc_r.
