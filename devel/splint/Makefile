@@ -3,12 +3,15 @@
 # Date created: 	9 September 1996
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.4 1999/06/25 04:02:23 billf Exp $
+# $Id: Makefile,v 1.5 1999/07/09 14:45:35 billf Exp $
 #
 
 DISTNAME=	lclint-2.4b
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.sds.lcs.mit.edu/pub/lclint/
+MASTER_SITES= 	http://www.sds.lcs.mit.edu/lclint/ftp/lclint/ \
+		ftp://ftp.deva.net/pub/sources/programming/linting/ \
+		ftp://ftp.netsw.org/netsw/SoftEng/Lang/C/Tools/lclint/ \
+		ftp://ftp.uni-bielefeld.de/pub/programming/tools/lclint/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	s.moeding@ndh.net
