@@ -18,6 +18,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/person.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/marshallable/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/perf_async.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/raa/raa_tk.rb
