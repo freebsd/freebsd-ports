@@ -8,9 +8,7 @@
 PORTNAME=	xperfmon++
 PORTVERSION=	3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
-		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/		 \
-		ftp://ftp.ibank.ru/pub/unix_src/benchmarks/
+MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTNAME=	xperfmon++
 EXTRACT_SUFX=	v1.1.tar.Z
 
@@ -25,7 +23,7 @@ MAN1=		xperfmon++.1
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 .include <bsd.port.post.mk>
