@@ -3,13 +3,14 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/17 10:26:10 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 09:53:07 asami Exp $
 #
 
 DISTNAME=	xblackjack-2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@FreeBSD.org
 
