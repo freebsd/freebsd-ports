@@ -5,28 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gaim
-PORTVERSION=	0.10.1
-CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.marko.net/pub/gaim/
+PORTNAME=		gaim
+PORTVERSION=		0.10.1
+PORTREVISION=		1
+CATEGORIES=		net
+MASTER_SITES=		ftp://ftp.marko.net/pub/gaim/ \
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=		jim@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+.if defined(WITH_GNOME)
+LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
+.endif
 
-GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-CONFIGURE_ARGS=	--disable-esd
+GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}"
+GNU_CONFIGURE=		yes
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+USE_X_PREFIX=		yes
+CONFIGURE_ARGS=		--disable-esd
+
+.if defined(WITH_GNOME)
+CONFIGURE_ARGS+=	--enable-gnome
+.else
+CONFIGURE_ARGS+=	--disable-gnome
+.endif
+
+CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}" \
+			GLIB_CONFIG="${GLIB_CONFIG}"
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/gaim ${PREFIX}/bin
