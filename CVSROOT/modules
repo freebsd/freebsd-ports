@@ -1890,7 +1890,6 @@ gerbv		ports/cad/gerbv
 geta		ports/net/geta
 getbdf		ports/x11-fonts/getbdf
 getmail		ports/mail/getmail
-getopt		ports/misc/getopt
 gettext		ports/devel/gettext
 getxml		ports/devel/getxml
 gevas		ports/x11-toolkits/gevas
@@ -6134,6 +6133,7 @@ ports_french	ports/french
 ports_ftp	ports/ftp
 ports_games	ports/games
 ports_german	ports/german
+ports_getopt	ports/misc/getopt
 ports_gperf	ports/devel/gperf
 ports_graphics	ports/graphics
 ports_gzip	ports/archivers/gzip
