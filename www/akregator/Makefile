@@ -6,6 +6,7 @@
 
 PORTNAME=	akregator
 PORTVERSION=	1.0.b4f
+PORTREVISION=	1
 CATEGORIES=	www kde
 #SF has some problem. This is a temporary mirror.
 MASTER_SITES=	http://berk.upnet.ru/projects/kde/akregator/download/
@@ -16,8 +17,10 @@ DISTNAME=	akregator-1.0_beta4fixed
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS aggregator for KDE
 
+LIB_DEPENDS=	kdepim.1:${PORTSDIR}/deskutils/kdepim3
+
 USE_BZIP2=		yes
-USE_KDELIBS_VER=	3
+USE_KDEBASE_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}"
