@@ -40,7 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${subdir}/*.pat ${DATADIR}/${subdir}
 .endfor
 	${MKDIR} ${TIMIDITY_DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${DOCSDIR}
