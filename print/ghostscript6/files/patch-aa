@@ -1,6 +1,52 @@
---- unix-gcc.mak.original	Thu Oct 17 07:48:54 1996
-+++ unix-gcc.mak	Thu Oct 17 07:49:07 1996
-@@ -165,7 +165,7 @@
+--- unix-gcc.mak.orig	Sat Jun  7 03:40:37 1997
++++ unix-gcc.mak	Sat Jun 14 10:50:37 1997
+@@ -1,3 +1,9 @@
++# FreeBSD ports collection - Porters note:
++#	the device(s) we include are now completely controlled
++#	be the two scripts configure and configure.batch.
++# A detailled list of supported devices see: devs.mak
++#	Andreas ///
++
+ #    Copyright (C) 1997 Aladdin Enterprises.  All rights reserved.
+ # 
+ # This file is part of Aladdin Ghostscript.
+@@ -126,7 +132,7 @@
+ # You may need to change this if the IJG library version changes.
+ # See jpeg.mak for more information.
+ 
+-JSRCDIR=jpeg-6a
++JSRCDIR=${PORTSDIR}/graphics/jpeg/work/jpeg-6a
+ JVERSION=6
+ 
+ # Define the directory where the PNG library sources are stored,
+@@ -134,7 +140,7 @@
+ # You may need to change this if the libpng version changes.
+ # See libpng.mak for more information.
+ 
+-PSRCDIR=libpng
++PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.89c
+ PVERSION=89
+ 
+ # Choose whether to use a shared version of the PNG library, and if so,
+@@ -147,7 +153,7 @@
+ # Define the directory where the zlib sources are stored.
+ # See zlib.mak for more information.
+ 
+-ZSRCDIR=zlib
++ZSRCDIR=.
+ 
+ # Choose whether to use a shared version of the zlib library, and if so,
+ # what its name is (usually libz, but sometimes libgz).
+@@ -172,7 +178,7 @@
+ 
+ # Define the name of the C compiler.
+ 
+-CC=gcc
++CC=cc
+ 
+ # Define the name of the linker for the final link step.
+ # Normally this is the same as the C compiler.
+@@ -214,7 +220,7 @@
  # SVR4 may need -lnsl.
  # (Libraries required by individual drivers are handled automatically.)
  
@@ -9,16 +55,87 @@
  
  # Define the include switch(es) for the X11 header files.
  # This can be null if handled in some other way (e.g., the files are
-@@ -3352,7 +3352,7 @@
- zlibe_1.dev: $(ZLIB_MAK) $(ECHOGS_XE)
- 	$(SETMOD) zlibe_1 -lib gz
+@@ -224,7 +230,7 @@
+ # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
+ # not in $(XINCLUDE).
+ 
+-XINCLUDE=-I/usr/local/X/include
++XINCLUDE=-I/usr/X11R6/include
+ 
+ # Define the directory/ies and library names for the X11 library files.
+ # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
+@@ -236,7 +242,7 @@
+ #XLIBS=Xt SM ICE Xext X11
+ 
+ #XLIBDIRS=-L/usr/local/X/lib
+-XLIBDIRS=-L/usr/X11/lib
++XLIBDIRS=-L/usr/X11R6/lib
+ XLIBDIR=
+ XLIBS=Xt Xext X11
+ 
+@@ -278,25 +284,6 @@
+ 
+ FILE_IMPLEMENTATION=stdio
+ 
+-# Choose the device(s) to include.  See devs.mak for details.
+-
+-DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev
+-DEVICE_DEVS1=
+-DEVICE_DEVS2=
+-DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
+-DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev pjxl300.dev
+-DEVICE_DEVS5=
+-DEVICE_DEVS6=bj10e.dev bj200.dev bjc600.dev bjc800.dev
+-DEVICE_DEVS7=faxg3.dev faxg32d.dev faxg4.dev
+-DEVICE_DEVS8=pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev pcxcmyk.dev
+-DEVICE_DEVS9=pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev
+-DEVICE_DEVS10=tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev tifflzw.dev tiffpack.dev
+-DEVICE_DEVS11=tiff12nc.dev tiff24nc.dev
+-DEVICE_DEVS12=psmono.dev psgray.dev bit.dev bitrgb.dev bitcmyk.dev
+-DEVICE_DEVS13=pngmono.dev pnggray.dev png16.dev png256.dev png16m.dev
+-DEVICE_DEVS14=jpeg.dev jpeggray.dev
+-DEVICE_DEVS15=pdfwrite.dev pswrite.dev epswrite.dev pxlmono.dev pxlcolor.dev
+-
+ # ---------------------------- End of options --------------------------- #
+ 
+ # Define the name of the partial makefile that specifies options --
+@@ -3204,7 +3191,7 @@
+ 
+ # JSRCDIR is defined in the platform-specific makefile, not here,
+ # as the directory where the IJG library sources are stored.
+-#JSRCDIR=jpeg-6a
++#JSRCDIR=${PORTSDIR}/graphics/jpeg/work/jpeg-6a
+ # JVERSION is defined in the platform-specific makefile, not here,
+ # as the IJG library major version number (currently "5" or "6").
+ #JVERSION=6
+@@ -3551,7 +3538,7 @@
+ 
+ # PSRCDIR is defined in the platform-specific makefile, not here,
+ # as the directory where the PNG library sources are stored.
+-#PSRCDIR=libpng
++#PSRCDIR=${PORTSDIR}/graphics/png/work/libpng-0.89c
+ # PVERSION is defined in the platform-specific makefile, not here,
+ # as the libpng version number ("88", "89", "90", or "95").
+ #PVERSION=95
+@@ -3655,7 +3642,7 @@
+ 
+ # ZSRCDIR is defined in the platform-specific makefile, not here,
+ # as the directory where the zlib sources are stored.
+-#ZSRCDIR=zlib
++#ZSRCDIR=.
+ ZSRC=$(ZSRCDIR)$(D)
+ # We would like to define
+ #CCCZ=$(CCC) -I$(ZSRCDIR) -Dverbose=-1
+@@ -3704,7 +3691,7 @@
+ zlibe_1.dev: $(MAKEFILE) $(ZLIB_MAK) $(ECHOGS_XE)
+ 	$(SETMOD) zlibe_1 -lib $(ZLIB_NAME)
  
 -zlibe_=adler32.$(OBJ) deflate.$(OBJ) trees.$(OBJ)
 +zlibe_=
  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
  	$(SETMOD) zlibe_0 $(zlibe_)
  	$(ADDMOD) zlibe_0 -include zlibc
-@@ -3376,11 +3376,11 @@
+@@ -3751,11 +3738,11 @@
  
  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
@@ -33,5 +150,19 @@
 +	$(ADDMOD) zlibd_0
 +	$(ADDMOD) zlibd_0
  
- infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP)
- 	$(CCCZ) $(ZSRC)infblock.c
+ infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP) zutil.h
+ 	$(CP_) $(ZSRC)infblock.c .
+@@ -4522,8 +4509,13 @@
+ 
+ cdeskjet_=gdevcdj.$(OBJ) $(HPPCL)
+ 
++cdeskjet8_=gdevcd8.$(OBJ) $(HPPCL)
++
+ cdeskjet.dev: $(cdeskjet_) page.dev
+ 	$(SETPDEV) cdeskjet $(cdeskjet_)
++
++cdj850.dev: $(cdeskjet8_) page.dev
++	$(SETPDEV) cdj850 $(cdeskjet8_)
+ 
+ cdjcolor.dev: $(cdeskjet_) page.dev
+ 	$(SETPDEV) cdjcolor $(cdeskjet_)
