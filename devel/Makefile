@@ -644,6 +644,7 @@
     SUBDIR += t1lib
     SUBDIR += tcl-memchan
     SUBDIR += tcl-neo
+    SUBDIR += tcl-trf
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts

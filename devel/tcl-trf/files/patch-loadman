@@ -1,0 +1,53 @@
+--- generic/loadman.h	Tue Mar 27 08:08:31 2001
++++ generic/loadman.h	Fri Feb  8 11:31:51 2002
+@@ -48,8 +48,7 @@
+ 
+ #ifdef HAVE_MD2_H
+-#   ifdef OPENSSL_SUB
+-#       include <openssl/md2.h>
+-#   else
+-#       include <md2.h>
++#   include <md2.h>
++#   ifndef MD2_DIGEST_LENGTH
++#	define MD2_DIGEST_LENGTH       16
+ #   endif
+ #else
+@@ -58,15 +57,10 @@
+ 
+ #ifdef HAVE_SHA_H
+-#   ifdef OPENSSL_SUB
+-#       include <openssl/sha.h>
+-#   else
+-#       include <sha.h>
+-#   endif
++#   include <sha.h>
+ #else
+ #   include "../compat/sha.h"
+ #endif
+ 
+-#include "../md5-crypt/md5.h"
+-
++#include <md5.h>
+ 
+ #ifdef TCL_STORAGE_CLASS
+@@ -87,4 +81,5 @@
+  */
+ 
++#if 0
+ typedef struct Md2Functions {
+   long loaded;
+@@ -114,7 +109,4 @@
+ } sha1Functions;
+ 
+-
+-
+-
+ /* Global variables containing the vectors declared above. 99% of the time they
+  * are read, but during load a write is required, which has to be protected by
+@@ -125,4 +117,6 @@
+ EXTERN md5Functions  md5f;  /* THREADING: serialize initialization */
+ EXTERN sha1Functions sha1f; /* THREADING: serialize initialization */
++
++#endif
+ 
+ 

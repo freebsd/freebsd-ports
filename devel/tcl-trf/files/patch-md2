@@ -1,0 +1,128 @@
+--- generic/md2.c	Wed Aug  9 15:13:17 2000
++++ generic/md2.c	Fri Feb  8 10:43:36 2002
+@@ -30,11 +30,6 @@
+ #include "loadman.h"
+ 
+-/*
+- * Generator description
+- * ---------------------
+- *
+- * The MD2 alogrithm is used to compute a cryptographically strong
+- * message digest.
+- */
++#include <sys/types.h>
++#include <md2.h>
+ 
+ #define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
+@@ -59,9 +54,9 @@
+   sizeof (CTX_TYPE),
+   DIGEST_SIZE,
+-  MDmd2_Start,
++  MD2Init,
+   MDmd2_Update,
+-  MDmd2_UpdateBuf,
++  MD2Update,
+   MDmd2_Final,
+-  MDmd2_Check
++  NULL
+ };
+ 
+@@ -94,30 +89,4 @@
+  *------------------------------------------------------*
+  *
+- *	MDmd2_Start --
+- *
+- *	------------------------------------------------*
+- *	Initialize the internal state of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_Start (context)
+-VOID* context;
+-{
+-  md2f.init ((MD2_CTX*) context);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+  *	MDmd2_Update --
+  *
+@@ -143,33 +112,5 @@
+   unsigned char buf = character;
+ 
+-  md2f.update ((MD2_CTX*) context, &buf, 1);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_UpdateBuf --
+- *
+- *	------------------------------------------------*
+- *	Update the internal state of the message digest
+- *	generator for a character buffer.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		As of the called procedure.
+- *
+- *	Result:
+- *		None.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static void
+-MDmd2_UpdateBuf (context, buffer, bufLen)
+-VOID* context;
+-unsigned char* buffer;
+-int   bufLen;
+-{
+-  md2f.update ((MD2_CTX*) context, (unsigned char*) buffer, bufLen);
++  MD2Update ((MD2_CTX*) context, &buf, 1);
+ }
+ 
+@@ -198,31 +139,4 @@
+ VOID* digest;
+ {
+-  md2f.final ((unsigned char*) digest, (MD2_CTX*) context);
+-}
+-
+-/*
+- *------------------------------------------------------*
+- *
+- *	MDmd2_Check --
+- *
+- *	------------------------------------------------*
+- *	Do global one-time initializations of the message
+- *	digest generator.
+- *	------------------------------------------------*
+- *
+- *	Sideeffects:
+- *		Loads the shared library containing the
+- *		MD2 functionality
+- *
+- *	Result:
+- *		A standard Tcl error code.
+- *
+- *------------------------------------------------------*
+- */
+-
+-static int
+-MDmd2_Check (interp)
+-Tcl_Interp* interp;
+-{
+-  return TrfLoadMD2 (interp);
++  MD2Final ((unsigned char*) digest, (MD2_CTX*) context);
+ }
