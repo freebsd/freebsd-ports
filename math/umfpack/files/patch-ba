@@ -1,0 +1,84 @@
+Note: Although the Harwell routines are available in Netlib, they are a
+commercial product. This patch disables their use.
+
+*** umc2fb.f.orig	Fri Nov  7 11:32:20 1997
+--- umc2fb.f	Fri Nov  7 11:43:14 1997
+***************
+*** 168,173 ****
+--- 168,177 ----
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+  
++ 	RETURN
++ C=======================================================================
++ C	The rest will be ignored !!!!!!!! (We are not using Harwell)	
++ C=======================================================================
+          NZDIA = NZ
+          NZOFF = 0
+  
+*** umd2fb.f.orig	Fri Nov  7 11:32:30 1997
+--- umd2fb.f	Fri Nov  7 11:44:14 1997
+***************
+*** 167,173 ****
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 
+          NZDIA = NZ
+          NZOFF = 0
+  
+--- 167,176 ----
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 	RETURN
+! C=======================================================================
+! C	The rest will be ignored !!!!!!!! (We are not using Harwell)	
+! C=======================================================================
+          NZDIA = NZ
+          NZOFF = 0
+  
+*** ums2fb.f.orig	Fri Nov  7 11:32:44 1997
+--- ums2fb.f	Fri Nov  7 11:44:54 1997
+***************
+*** 167,173 ****
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 
+          NZDIA = NZ
+          NZOFF = 0
+  
+--- 167,176 ----
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 	RETURN
+! C=======================================================================
+! C	The rest will be ignored !!!!!!!! (We are not using Harwell)	
+! C=======================================================================
+          NZDIA = NZ
+          NZOFF = 0
+  
+*** umz2fb.f.orig	Fri Nov  7 11:32:57 1997
+--- umz2fb.f	Fri Nov  7 11:45:42 1997
+***************
+*** 167,173 ****
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 
+          NZDIA = NZ
+          NZOFF = 0
+  
+--- 167,176 ----
+  C  EXECUTABLE STATEMENTS:
+  C       if (MC21B and MC13E not available during installation) return
+  C=======================================================================
+! 	RETURN
+! C=======================================================================
+! C	The rest will be ignored !!!!!!!! (We are not using Harwell)	
+! C=======================================================================
+          NZDIA = NZ
+          NZOFF = 0
+  

@@ -1,0 +1,36 @@
+UMFPACK Version 2.2 is a package for solving systems of sparse linear systems,
+Ax=b, where A is sparse and can be unsymmetric.  It is written in ANSI Fortran
+77.  There are options for choosing a good pivot order, factorizing a
+subsequent matrix with the same pivot order and nonzero pattern as a
+previously factorized matrix, and solving systems of linear equations with
+the factors (with A, L, or U; or with their transposes in the single/double
+precision versions).  Iterative refinement, with sparse backward error
+estimates, can be performed.  Single and double precision, complex, and
+complex double precision (complex*16) routines are available.  (Note that
+complex*16 is not ANSI Fortran-77, but is a common extension to it).
+
+For more information
+--------------------
+
+For more information, see T. A. Davis and I. S. Duff, "An
+unsymmetric-pattern multifrontal method for sparse LU factorization",
+SIAM J. Matrix Analysis and Applications (to appear), also
+technical report TR-94-038, CISE Dept., Univ. of Florida,
+P.O. Box 116120, Gainesville, FL 32611-6120, USA.  The method used
+here is a modification of that method, described in T. A. Davis,
+"A combined unifrontal/multifrontal method for unsymmetric sparse
+matrices," TR-94-005, and in T. A. Davis and I. S. Duff, (same title),
+TR-95-020.  (Technical reports are available via WWW at
+http://www.cis.ufl.edu/).  The (unsymmetric) approximate degree update
+algorithm used here has been incorporated into a symmetric approximate
+minimum degree ordering algorithm, described in P. Amestoy, T. A. Davis,
+and I. S. Duff, "An approximate minimum degree ordering algorithm",
+SIAM Journal on Matrix Analysis and Applications (to appear, also TR-94-039).
+The approximate minimum degree ordering algorithm is implemented as MC47
+in the Harwell Subroutine Library (MC47 is not used in UMFPACK).
+Also take a look at our World Wide Web home pages:
+        Tim Davis:  http://www.cis.ufl.edu/~davis
+                    (also email: davis@cis.ufl.edu).
+        Iain Duff:  http://www.cis.rl.ac.uk/people/isd/contact.html
+______________
+	Timothy A. Davis and Iain S. Duff.  Copyright (C) 1997.

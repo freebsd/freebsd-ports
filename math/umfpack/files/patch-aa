@@ -1,0 +1,19 @@
+*** Makefile.orig	Mon Jul  7 12:03:46 1997
+--- Makefile	Sun Dec 14 15:18:13 1997
+***************
+*** 19,25 ****
+  	  umz2er.o umz2p1.o umz2p2.o \
+  	  umz2rf.o umz2ra.o umz2r0.o umz2r2.o umz2rg.o umz21i.o
+  
+! HARWELL	= mc21b.o mc13e.o
+  
+  BLASLIB	= libblas.a
+  UMFPACKLIB = libumfpack.a
+--- 19,25 ----
+  	  umz2er.o umz2p1.o umz2p2.o \
+  	  umz2rf.o umz2ra.o umz2r0.o umz2r2.o umz2rg.o umz21i.o
+  
+! #HARWELL	= mc21b.o mc13e.o
+  
+  BLASLIB	= libblas.a
+  UMFPACKLIB = libumfpack.a
