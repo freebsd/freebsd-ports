@@ -1066,3 +1066,16 @@ graphics/gd1|graphics/gd|2004-05-01|removed (obsolete)
 lang/pike75|lang/pike76|2004-05-06|finished repocopy
 net/coda_doc||2004-05-07|finished removing coda 4.x
 net/coda_intro||2004-05-07|finished removing coda 4.x
+devel/as80||2004-05-07|Abandoned software; consider an alternative like devel/asl
+devel/qt-designer||2004-05-07|Removed broken port
+devel/uisp|devel/avrdude|2004-05-07|Abandoned software
+dns/weedns_sc||2004-05-07|Incompatible with current server protocol
+lang/cel||2004-05-07|Abandoned software
+lang/crossgo32-f77||2004-05-07|Abandoned software
+mail/gmail||2004-05-07|Removed broken port
+misc/libh||2004-05-07|Removed broken port
+net/openreg||2004-05-07|Removed broken port
+net/hawk||2004-05-07|Removed broken port
+
+
+
