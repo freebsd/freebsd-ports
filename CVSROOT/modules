@@ -1511,6 +1511,7 @@ fkiss		ports/games/fkiss
 fl_editor	ports/x11-toolkits/fl_editor
 flac		ports/audio/flac
 flash		ports/shells/flash
+flasher		ports/sysutils/flasher
 flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
