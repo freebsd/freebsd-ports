@@ -10,6 +10,9 @@ lib/libseahorse-internal.so.0
 libdata/bonobo/servers/Seahorse_PGP_File_Listener.server
 share/gnome/applications/seahorse.desktop
 share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
+share/gnome/applications/seahorse-pgp-encrypted.desktop
+share/gnome/applications/seahorse-pgp-signature.desktop
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/help/seahorse/C/figures/export.png
 share/gnome/help/seahorse/C/figures/file-manager.png
 share/gnome/help/seahorse/C/figures/generate.png
@@ -26,6 +29,8 @@ share/gnome/help/seahorse/C/seahorse.xml
 share/gnome/mime-info/seahorse.keys
 share/gnome/mime-info/seahorse.mime
 share/gnome/omf/seahorse/seahorse-C.omf
+share/gnome/pixmaps/seahorse-key.png
+share/gnome/pixmaps/seahorse-secret.png
 share/gnome/pixmaps/seahorse.png
 share/gnome/seahorse/glade/seahorse-add-subkey.glade
 share/gnome/seahorse/glade/seahorse-add-uid.glade
@@ -36,19 +41,20 @@ share/gnome/seahorse/glade/seahorse-generate-druid.glade
 share/gnome/seahorse/glade/seahorse-generate-select.glade
 share/gnome/seahorse/glade/seahorse-key-manager.glade
 share/gnome/seahorse/glade/seahorse-key-properties.glade
+share/gnome/seahorse/glade/seahorse-keyserver-results.glade
+share/gnome/seahorse/glade/seahorse-keyserver-search.glade
 share/gnome/seahorse/glade/seahorse-multi-encrypt.glade
 share/gnome/seahorse/glade/seahorse-passphrase.glade
-share/gnome/seahorse/glade/seahorse-pgp-preferences.glade
+share/gnome/seahorse/glade/seahorse-prefs.glade
 share/gnome/seahorse/glade/seahorse-preferences.glade
 share/gnome/seahorse/glade/seahorse-recipients.glade
 share/gnome/seahorse/glade/seahorse-revoke.glade
 share/gnome/seahorse/glade/seahorse-sign.glade
 share/gnome/seahorse/glade/seahorse-signatures.glade
-share/mime/application/pgp-encrypted.xml
-share/mime/application/pgp-keys.xml
-share/mime/application/pgp-signature.xml
+share/gnome/seahorse/glade/seahorse-signer.glade
 share/mime/packages/seahorse.xml
 share/locale/az/LC_MESSAGES/seahorse.mo
+share/locale/bg/LC_MESSAGES/seahorse.mo
 share/locale/ca/LC_MESSAGES/seahorse.mo
 share/locale/cs/LC_MESSAGES/seahorse.mo
 share/locale/da/LC_MESSAGES/seahorse.mo
@@ -65,6 +71,7 @@ share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/ml/LC_MESSAGES/seahorse.mo
 share/locale/ms/LC_MESSAGES/seahorse.mo
+share/locale/nb/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
 share/locale/no/LC_MESSAGES/seahorse.mo
 share/locale/pa/LC_MESSAGES/seahorse.mo
@@ -89,3 +96,4 @@ share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/seahorse
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime
+@unexec update-desktop-database > /dev/null || /usr/bin/true
