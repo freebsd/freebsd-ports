@@ -1,11 +1,7 @@
---- Makefile.orig	Sat Dec 16 07:44:10 2000
-+++ Makefile	Fri Jan  5 21:24:27 2001
-@@ -5,10 +5,10 @@
- SOLARIS_TYPECASTED_X11_HEADERS=-I/var/tmp/src
- endif
- ifndef CXXFLAGS
--CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
-+#CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
+--- Makefile.orig	Sun Dec 17 00:44:10 2000
++++ Makefile	Wed Jan 10 03:45:22 2001
+@@ -8,7 +8,7 @@
+ CXXFLAGS=-Wall -O2 $(SOLARIS_TYPECASTED_X11_HEADERS)
  endif
  
 -CXXFLAGS+=-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS $(SOLARIS_TYPECASTED_X11_HEADERS) -DDEBUG_ALL
@@ -13,30 +9,23 @@
  # -ggdb
  
  export CXXFLAGS LOCALEDIR
-@@ -33,11 +33,13 @@
+@@ -39,8 +39,8 @@
  MAKE=gmake
  endif
  
--ifeq ($(OSTYPE),FreeBSD)
-+#	fsck'ing gmake won't recongize us as FreeBSD...
-+#ifeq ($(OSTYPE),FreeBSD)
- PTHREAD=-pthread
- GTKCONFIG=gtk12-config
-+GLIBCONFIG=glib12-config
- MAKE=gmake
--endif
-+#endif
+-GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
+-GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
++GTKLIBS=$(shell $(GTKCONFIG) --libs) #$(shell $(GLIBCONFIG) --libs)
++GTKFLAGS=$(shell $(GTKCONFIG) --cflags) #$(shell $(GLIBCONFIG) --cflags)
  
- GTKLIBS=$(shell $(GTKCONFIG) --libs) $(shell $(GLIBCONFIG) --libs)
- GTKFLAGS=$(shell $(GTKCONFIG) --cflags) $(shell $(GLIBCONFIG) --cflags)
-@@ -81,8 +83,8 @@
+ ifeq ($(OSTYPE),Irix)
+ CTKFLIBS += lintl
+@@ -81,7 +81,7 @@
  
  
  install: all
 -	install -c -m755 nt $(DEST)/bin
--	[ -z "$(NLS)" ] || $(MAKE) install -C po
-+	$(BSD_INSTALL_PROGRAM) nt $(DEST)/bin
-+	[ -z "$(NLS)" ] || cd po && LOCALEDIR=$(LOCALEDIR) $(MAKE) install
++	${BSD_INSTALL_PROGRAM} nt $(DEST)/bin
+ 	[ -z "$(NLS)" ] || $(MAKE) install -C po
  
  clean: 
- 	-rm -f *.o nt TAGS *~
