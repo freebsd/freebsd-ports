@@ -1,0 +1,11 @@
+--- ../../SSLtelnet-0.11/lib/libbsd/getpass.c	Sat Jun 15 18:28:30 1996
++++ ./lib/libbsd/getpass.c	Sun Mar 29 14:30:01 1998
+@@ -6,7 +6,7 @@
+ 
+ #define	TTY	"/dev/tty"
+ 
+-#if !defined(HPUX) && !defined(__bsdi__)
++#if !defined(HPUX) && !defined(__bsdi__) && !defined(__FreeBSD__)
+ 
+ /* under HPUX use the "system" supplied routine as I cannot
+  * be bothered to "port" this code at the moment --tjh 

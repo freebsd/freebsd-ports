@@ -1,0 +1,11 @@
+--- ../../SSLtelnet-0.11/lib/libbsd/inet_addr.c	Sat Jun 15 18:28:34 1996
++++ ./lib/libbsd/inet_addr.c	Sun Mar 29 14:33:07 1998
+@@ -37,7 +37,7 @@
+ 
+ #if defined(__GNUC__)
+ 
+-#if defined(__bsdi__) || defined(SUNOS)  && !defined(SOLARIS2) 
++#if defined(__bsdi__) || defined(SUNOS)  && !defined(SOLARIS2) || defined(__FreeBSD__)
+ 
+ /* nothing required for SunOS 4.1.x */
+ 

@@ -1,0 +1,9 @@
+--- ../../SSLtelnet-0.11/lib/libbsd/Makefile	Fri Jun 30 09:05:37 1995
++++ ./lib/libbsd/Makefile	Sun Mar 29 14:31:30 1998
+@@ -1,5 +1,5 @@
+ LIB=	bsd
+-CFLAGS= -DLIBC_SCCS  -I../../include
++CFLAGS+= -DLIBC_SCCS  -I$(PREFIX)/include
+ OBJS=	getenv.o herror.o setenv.o strerror.o getpass.o inet_addr.o
+ 
+ lib${LIB}.a: ${OBJS}
