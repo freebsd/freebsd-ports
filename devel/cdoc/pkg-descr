@@ -1,6 +1,7 @@
-Cdoc extracts documentation from C source code comments. It is used by
-c2lib. pthrlib, and other code by the same author.
+cdoc is perldoc-like documentation tool for C programs and libraries.  
+It takes inline embedded comments and turns them into manual pages. 
 
-WWW: http://www.annexia.org/freeware/
+Author:	Richard W.M. Jones <rich@annexia.org>
+WWW:	http://www.annexia.org/freeware/cdoc/
 
 -- AlanE
