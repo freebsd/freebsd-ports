@@ -1,0 +1,7 @@
+libdata/mgmt.o
+bin/modem_run
+bin/pppoa2
+etc/rc.d/adsl.sh.sample
+share/speedtouch/ppp.conf.sample
+share/speedtouch/INSTALL
+@dirrm share/speedtouch
