@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
