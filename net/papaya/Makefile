@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.gtk-papaya.org/downloads/source/
 DISTNAME=	papaya-src-${PORTVERSION}
 
-MAINTAINER=	adam+ports@blacktabby.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
