@@ -5,12 +5,12 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1997/05/24 13:17:11 jfitz Exp $
+# $Id: Makefile,v 1.7 1998/02/26 10:14:39 ache Exp $
 #
 
 DISTNAME=       premail-0.45
 CATEGORIES=     security mail
-MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/remailer/
+MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/remailer/premail/
 
 BUILD_DEPENDS+= pgp:${PORTSDIR}/security/pgp
 
