@@ -13,5 +13,6 @@ MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/distributions/slackware/source/xap
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
+MAN1=		xspread.1
 
 .include <bsd.port.mk>
