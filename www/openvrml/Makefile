@@ -46,7 +46,9 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g ; \
+		s|mozilla-js|firefox-js|g" \
+		${WRKSRC}/configure
 
 post-install:
 	@${FIND} ${PREFIX}/include/openvrml -type f | \
