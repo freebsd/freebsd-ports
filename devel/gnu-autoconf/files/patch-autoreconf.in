@@ -1,0 +1,7 @@
+--- bin/autoreconf.in.orig	Fri Oct  3 07:31:23 2003
++++ bin/autoreconf.in	Wed Jun 30 20:15:18 2004
+@@ -488,3 +488,3 @@
+       verb "$configure_ac: creating directory $aux_dir";
+-      mkdir $aux_dir
++      mkdir $aux_dir, 0777
+ 	or error "cannot create $aux_dir: $!";
