@@ -23,6 +23,7 @@ USE_GNOME=	pygnome2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
+GCONF_SCHEMAS=	revelation.schemas
 
 post-patch:
 	@${REINPLACE_CMD} 's#share/#share/gnome/#g' \
