@@ -1,7 +1,8 @@
 %%SITE_PERL%%/SVN/Simple/Edit.pm
 %%SITE_PERL%%/SVN/Simple/Editor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Simple/Edit/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Simple/Edit
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Simple
 @dirrm %%SITE_PERL%%/SVN/Simple
 @unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Simple/Edit 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Simple 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN 2>/dev/null || true
