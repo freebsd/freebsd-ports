@@ -270,7 +270,6 @@
     SUBDIR += moonlander
     SUBDIR += moria
     SUBDIR += mvdsv
-    SUBDIR += myth2_demo
     SUBDIR += mythserver
     SUBDIR += nInvaders
     SUBDIR += nadar
