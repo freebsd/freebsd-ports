@@ -1,6 +1,8 @@
 %%APACHE_CONFDIR%%/apache.conf.Zope-Changes
-etc/rc.d/zope.sh
-%%ZOPEBASEDIR%%/var/Data.fs
+@unexec if cmp -s %D/etc/rc.d/zope.sh.sample %D/etc/rc.d/zope.sh; then rm -f %D/etc/rc.d/zope.sh; fi
+etc/rc.d/zope.sh.sample
+@exec if [ ! -f %B/zope.sh ]; then cp %B/%f %B/zope.sh; fi
+@unexec if cmp -s %D/%%ZOPEBASEDIR%%/var/Data.fs %D/%%ZOPEBASEDIR%%/var/Data.fs; then rm -f %D/%%ZOPEBASEDIR%%/var/Data.fs; fi
 %%ZOPEBASEDIR%%/var/Data.fs.in
 @exec if [ ! -f %B/Data.fs ]; then cp %B/%f %B/Data.fs; fi
 %%ZOPEBASEDIR%%/Extensions/README.txt
