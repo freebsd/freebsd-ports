@@ -3,7 +3,7 @@ lightweight network intrusion detection system. It features rules based logging
 and can perform content searching/matching in addition to being used to detect 
 a variety of other attacks and probes, such as buffer overflows, stealth port
 scans, CGI attacks, SMB probes, and much more. Snort has a real-time alerting 
-capabilty, with alerts being sent to syslog, a seperate "alert" file, or even
+capability, with alerts being sent to syslog, a separate "alert" file, or even
 to a Windows computer via Samba.
 
 Packets are logged in their decoded form to directories which are generated
