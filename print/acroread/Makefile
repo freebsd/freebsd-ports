@@ -12,7 +12,6 @@ MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
 DISTNAME=	linux-5010
-CONFLICTS=	acroread-3*
 DIST_SUBDIR=	acroread
 
 MAINTAINER=	trevor@FreeBSD.org
