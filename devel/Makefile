@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.74 1997/08/29 09:21:07 obrien Exp $
+# $Id: Makefile,v 1.75 1997/09/01 16:06:49 andreas Exp $
 #
 
     SUBDIR += SWIG
@@ -32,6 +32,7 @@
     SUBDIR += linux_devel
     SUBDIR += linuxgdb
     SUBDIR += m4
+    SUBDIR += makedepend
     SUBDIR += mkmf
     SUBDIR += mprof
     SUBDIR += noweb
