@@ -7,10 +7,10 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	1999-07-18
+SNAPDATE=	1999-09-20
 SNAPVER=	${SNAPDATE:S/-//g}
 
-DISTNAME=	gcc-${SNAPVER}
+DISTNAME=	gcc-2.96
 PKGNAME=	gcc-devel-${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/ \
@@ -19,22 +19,21 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/snapshots/$
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
  		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/ \
 		ftp://cambridge.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
-DISTFILES=	gcc-chill-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+DISTFILES=	egcs-core-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-g++-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-g77-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-java-${SNAPVER}${EXTRACT_SUFX} \
+		egcs-objc-${SNAPVER}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN='Cygnus has yet to release a "HEAD" snapshot, post 2.95 release'
 NO_CDROM=	'dated material'
 
 .include <bsd.port.pre.mk>
 
 EGCS_REV=	${DISTNAME:S/gcc-//g}
 LIBSTDCPP_REV=	4
+WRKSRC=		${WRKDIR}/egcs-${SNAPVER}
 
 .if ${PORTOBJFORMAT} == "elf"
 .if ${MACHINE_ARCH} == "i386"
@@ -63,6 +62,7 @@ MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	@${CP} ${WRKSRC}/gcc/config/t-openbsd-thread ${WRKSRC}/gcc/config/t-freebsd-thread
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \

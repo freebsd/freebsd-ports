@@ -1,6 +1,6 @@
---- gcc/configure.orig	Tue Jun  8 02:19:23 1999
-+++ gcc/configure	Mon Jun 14 23:54:18 1999
-@@ -3058,6 +3058,15 @@
+--- gcc/configure.orig	Mon Sep 20 02:59:34 1999
++++ gcc/configure	Sat Sep 25 10:51:55 1999
+@@ -3167,6 +3167,15 @@
   			thread_file='posix'
   		fi
  		;;
@@ -16,14 +16,14 @@
  	alpha*-*-netbsd*)
  		tm_file="${tm_file} alpha/elf.h alpha/netbsd.h alpha/netbsd-elf.h"
  		target_cpu_default="MASK_GAS"
-@@ -3536,17 +3545,17 @@
+@@ -3772,8 +3781,12 @@
  # Next line turned off because both 386BSD and BSD/386 use GNU ld.
  #		use_collect2=yes
  		;;
 -	i[34567]86-*-freebsdelf*)
 -		tm_file="i386/i386.h i386/att.h svr4.h i386/freebsd-elf.h i386/perform.h"
-+	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout*)
-+		tm_file=i386/freebsd.h
++	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout* | i[34567]86-*-freebsd-aout)
++		tm_file=i386/freebsd-aout.h
 +		tmake_file=t-freebsd
 +		;;
 +	i[34567]86-*-freebsd[3-9].* | i[34567]86-*-freebsd[3-9] | i[34567]86-*-freebsd* | i[34567]86-*-freebsdelf*)
@@ -31,8 +31,14 @@
  		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
  		tmake_file=t-freebsd
  		gas=yes
- 		gnu_ld=yes
- 		stabs=yes
+@@ -3782,13 +3795,9 @@
+ 		case x${enable_threads} in
+ 		xyes | xpthreads | xposix)
+ 			thread_file='posix'
+-			tmake_file="${tmake_file} t-openbsd-thread"
++			tmake_file="${tmake_file} t-freebsd-thread"
+ 			;;
+ 		esac
 -		;;
 -	i[34567]86-*-freebsd*)
 -		tm_file=i386/freebsd.h
