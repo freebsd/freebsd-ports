@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	bash
 # Date created:		21 August 1994
 # Whom:			jkh

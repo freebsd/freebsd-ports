@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	pccts
 # Date created:				22 June 1997
 # Whom:					Andrey Zakhvatov

@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	hexedit
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov

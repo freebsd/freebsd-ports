@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	sted
 # Date created:				19 May 1998
 # Whom:					Andrey Zakhvatov

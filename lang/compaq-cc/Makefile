@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:  compaq-cc
 # Date created:			  Thur Dec 07, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)

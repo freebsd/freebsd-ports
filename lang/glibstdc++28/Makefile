@@ -1,3 +1,4 @@
+# ex:ts=8
 # Ports collection makefile for:	GNU libstdc++
 # Date created:				03 Mar 1998
 # Whom:					David O'Brien <obrien@NUXI.com>

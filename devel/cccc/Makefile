@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	cccc
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
