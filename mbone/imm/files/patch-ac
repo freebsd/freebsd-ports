@@ -1,0 +1,11 @@
+--- src/immserv.c.orig	Tue Nov 19 12:36:41 1996
++++ src/immserv.c	Tue Nov 19 12:37:32 1996
+@@ -1407,7 +1407,7 @@
+ /******************************************************************************/
+ void setackalarm(int nop) {}
+ /******************************************************************************/
+-#ifndef __NetBSD__
++#if !defined(__NetBSD__) && !defined(__FreeBSD__)	/* XXX */
+ /* routine to put process to sleep */
+ int usleep( wait)
+ u_int wait;
