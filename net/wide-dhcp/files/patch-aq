@@ -1,23 +1,19 @@
---- tools/Makefile.FreeBSD.orig	Wed Sep 10 17:08:04 1997
-+++ tools/Makefile.FreeBSD	Sat Dec  5 03:09:52 1998
-@@ -1,8 +1,9 @@
- CC = gcc
- CFLAGS = -O -I. -I../server
--SBIN =		/usr/local/sbin
--LIBEXEC =	/usr/local/libexec
--MAN =		/usr/local/man
+--- tools/Makefile.FreeBSD.orig	Fri Jan  1 02:31:45 1999
++++ tools/Makefile.FreeBSD	Sun Feb  7 11:00:20 1999
+@@ -1,14 +1,14 @@
+ CC = cc
+ CFLAGS = -O2 -I. -I../server
+ 
+-PREFIX =	/usr/local
 +#PREFIX =	/usr/local
-+SBIN =		${PREFIX}/sbin
-+LIBEXEC =	${PREFIX}/libexec
-+MAN =		${PREFIX}/man
+ SBIN =		${PREFIX}/sbin
+ LIBEXEC =	${PREFIX}/libexec
+ MAN =		${PREFIX}/man
+ 
+ CP =		/bin/cp
+ RM =		/bin/rm
+-GZIP =		/usr/bin/gzip
++GZIP =		/usr/bin/touch		# don't `gzip' anything for FreeBSD
  
  dhcpm: dhcpm.c ../server/dhcp.h
  	$(CC) $(CFLAGS) dhcpm.c -o dhcpm
-@@ -10,7 +11,6 @@
- install: dhcpm
- 	${INSTALL} -m 755 -s dhcpm ${SBIN}/dhcpm
- 	cp dhcpm.8 ${MAN}/man8/dhcpm.8
--	gzip ${MAN}/man8/dhcpm.8
- 
- clean:
- 	rm -rf *~ *.o *core* dhcpm

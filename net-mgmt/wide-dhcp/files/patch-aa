@@ -1,21 +1,18 @@
---- client/Makefile.FreeBSD.orig	Wed Sep  9 17:08:15 1998
-+++ client/Makefile.FreeBSD	Sat Dec  5 13:47:04 1998
-@@ -2,15 +2,16 @@
+--- client/Makefile.FreeBSD.orig	Fri Jan  1 06:21:32 1999
++++ client/Makefile.FreeBSD	Sun Feb  7 10:38:40 1999
+@@ -2,16 +2,16 @@
  OBJ = dhcpc_subr.o flushroute.o getmac.o common_subr.o dhcpc.o
  
  CC = cc
--CFLAGS += -O -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
--LDFLAGS = -lkvm
+-CFLAGS = -O2 -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
 +CFLAGS += -O2 -I. -I../server -DRETRY_FOREVER #-DMOBILE_IP -DDEBUG
-+#LDFLAGS = -lkvm
+ LDFLAGS =
  
--SBIN = 		/usr/local/sbin
--LIBEXEC =	/usr/local/libexec
--MAN =		/usr/local/man
+-PREFIX =	/usr/local
 +#PREFIX =	/usr/local
-+SBIN = 		$(PREFIX)/sbin
-+LIBEXEC =	$(PREFIX)/libexec
-+MAN =		$(PREFIX)/man
+ SBIN = 		$(PREFIX)/sbin
+ LIBEXEC =	$(PREFIX)/libexec
+ MAN =		$(PREFIX)/man
  CP =		/bin/cp
  RM =		/bin/rm
 -GZIP =		/usr/bin/gzip

@@ -1,5 +1,5 @@
---- client/dhcpc.8.orig	Mon Sep 11 21:54:16 1995
-+++ client/dhcpc.8	Sun Oct  5 21:59:07 1997
+--- client/dhcpc.8.orig	Sat Jan  9 20:54:01 1999
++++ client/dhcpc.8	Sun Feb  7 11:27:29 1999
 @@ -5,7 +5,7 @@
  .SH SYNOPSIS
  .B dhcpc
@@ -13,12 +13,12 @@
  requests server to assign the same address as before.
  To get the same address,
  .B dhcpc
--creates file named "/etc/dhcp_cache".  This file name could be
-+creates file named "/var/db/dhcp_cache".  This file name could be
- configured when it is compiled.  But it is required that the file must
- remains after the host reboot.  For example, the /tmp directory is not
- appropriate for this purpose.
-@@ -37,6 +37,21 @@
+-creates file named /etc/dhcpc_cache.interface
++creates file named /var/db/dhcpc_cache.interface
+ (or /var/db/dhcpc_cache.interface for BSD/OS and FreeBSD).  This
+ file name could be configured when it is compiled.  But it is required
+ that the file must remains after the host reboot.  For example, the
+@@ -38,6 +38,21 @@
  .B dhcpc
  runs in foreground and debugging mode.
  .LP
@@ -40,16 +40,14 @@
  The DHCP client can verify whether its assigned information is still
  valid at any time.
  .B dhcpc
-@@ -64,8 +79,11 @@
- .SH FILES
- .PD 0
- .TP 20
--.B /etc/dhcp_cache
-+.B /var/db/dhcp_cache
- The file to record previously assigned informations
+@@ -70,6 +85,10 @@
+ .TP
+ .B /etc/dhcpc_cache.interface
+ The file to record previously assigned informations (for others)
 +.TP
 +.B /var/run/dhcpc.[interface name].pid
 +File which includes process ID
++.PD
  .PD
  .SH SEE ALSO
  R. Droms,
