@@ -30,10 +30,7 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 CONFIGURE_ARGS= --disable-indent
 
 post-install:
-.if !exists(${PREFIX}/etc/orbitrc)
-	@${ECHO} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc
-	@${ECHO} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbitrc
-	@${ECHO} etc/orbitrc >> ${TMPPLIST}
-.endif
+	@${ECHO} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbitrc.default
+	@${ECHO} "ORBIIOPIPv6=0" >> ${PREFIX}/etc/orbitrc.default
 
 .include <bsd.port.mk>

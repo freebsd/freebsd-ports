@@ -7,6 +7,9 @@ bin/orbit-idl
 bin/orbit-ird
 bin/orbit-name-server
 etc/libIDLConf.sh
+@unexec if cmp -s %D/etc/orbitrc.default %D/etc/orbitrc; then rm -f %D/etc/orbitrc; fi
+etc/orbitrc.default
+@exec if [ ! -f %D/etc/orbitrc ] ; then cp -p %D/%F %B/orbitrc; fi
 include/IIOP/IIOP-config.h
 include/IIOP/IIOP-types.h
 include/IIOP/IIOP.h
