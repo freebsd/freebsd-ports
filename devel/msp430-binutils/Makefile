@@ -37,22 +37,26 @@ MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
 		${PKGNAMEPREFIX}ld.1 ${PKGNAMEPREFIX}dlltool.1 \
 		${PKGNAMEPREFIX}readelf.1 ${PKGNAMEPREFIX}windres.1
 
+INFO=		bfd binutils as ld standards configure
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
+
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip
 
-INFO_NOAUTO=	bfd.info binutils.info as.info ld.info \
-		standards.info configure.info
-
 post-install:
+# Register these too
+	install-info ${PREFIX}/${INFO_PATH}/configure.info ${PREFIX}/${INFO_PATH}/dir
+	install-info ${PREFIX}/${INFO_PATH}/standards.info ${PREFIX}/${INFO_PATH}/dir
+# This should go after all *.info stuff
+	${ECHO} "@unexec rm %D/${PKGNAMEPREFIX:S/-$//}/info/dir" >> ${TMPPLIST}
+	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
+	${ECHO} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
 	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
-.endfor
-.for F in ${INFO_NOAUTO}
-	install-info ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info/${F} ${PREFIX}/info/dir
 .endfor
 
 .include <bsd.port.mk>
