@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 MAINTAINER=	suz@FreeBSD.org
 COMMENT=	PIM for IPv6 sparse mode daemon
 
-NO_CDROM=	"Cannot be sold for profit"
-
 USE_REINPLACE=	yes
 
 MAN5=		pim6sd.conf.5
