@@ -1,14 +1,15 @@
---- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/sshd.c	Sun Nov 28 16:50:26 1999
-+++ sshd.c	Mon Dec  6 00:54:51 1999
-@@ -24,6 +24,7 @@
+--- sshd.c.orig	Tue Dec  7 22:56:55 1999
++++ sshd.c	Tue Dec  7 22:58:36 1999
+@@ -24,6 +24,8 @@
  #include "servconf.h"
  #include "uidswap.h"
  #include "compat.h"
++#include <poll.h>
 +#include <time.h>
  
  #ifdef LIBWRAP
  #include <tcpd.h>
-@@ -32,6 +33,16 @@
+@@ -32,6 +34,16 @@
  int deny_severity = LOG_WARNING;
  #endif /* LIBWRAP */
  
@@ -25,7 +26,7 @@
  #ifndef O_NOCTTY
  #define O_NOCTTY	0
  #endif
-@@ -118,6 +129,32 @@
+@@ -118,6 +130,32 @@
     the private key. */
  RSA *public_key;
  
@@ -58,15 +59,15 @@
  /* Prototypes for various functions defined later in this file. */
  void do_connection();
  void do_authentication(char *user);
-@@ -278,6 +315,7 @@
+@@ -278,6 +316,7 @@
  	extern char *optarg;
  	extern int optind;
  	int opt, aux, sock_in, sock_out, newsock, i, pid, on = 1;
 +	int connections_per_period_exceeded = 0;
  	int remote_major, remote_minor;
  	int silentrsa = 0;
- 	struct sockaddr_in sin;
-@@ -542,6 +580,12 @@
+ 	struct pollfd fds;
+@@ -543,6 +582,12 @@
  		/* Arrange SIGCHLD to be caught. */
  		signal(SIGCHLD, main_sigchld_handler);
  
@@ -79,7 +80,7 @@
  		/*
  		 * Stay listening for connections until the system crashes or
  		 * the daemon is killed with a signal.
-@@ -560,9 +604,31 @@
+@@ -572,9 +617,31 @@
  				error("accept: %.100s", strerror(errno));
  				continue;
  			}
@@ -113,7 +114,7 @@
  			 */
  			if (debug_flag) {
  				/*
-@@ -576,6 +642,12 @@
+@@ -588,6 +655,12 @@
  				sock_out = newsock;
  				pid = getpid();
  				break;
@@ -126,7 +127,7 @@
  			} else {
  				/*
  				 * Normal production daemon.  Fork, and have
-@@ -1048,6 +1120,14 @@
+@@ -1065,6 +1138,14 @@
  				return 0;
  		}
  	}
@@ -141,7 +142,7 @@
  	/* We found no reason not to let this user try to log on... */
  	return 1;
  }
-@@ -1083,6 +1163,9 @@
+@@ -1100,6 +1181,9 @@
  	pwcopy.pw_gid = pw->pw_gid;
  	pwcopy.pw_dir = xstrdup(pw->pw_dir);
  	pwcopy.pw_shell = xstrdup(pw->pw_shell);
@@ -151,7 +152,7 @@
  	pw = &pwcopy;
  
  	/*
-@@ -1871,6 +1954,10 @@
+@@ -1889,6 +1973,10 @@
  	struct sockaddr_in from;
  	int fromlen;
  	struct pty_cleanup_context cleanup_context;
@@ -162,7 +163,7 @@
  
  	/* Get remote host name. */
  	hostname = get_canonical_hostname();
-@@ -1935,6 +2022,12 @@
+@@ -1953,6 +2041,12 @@
  		/* Check if .hushlogin exists. */
  		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
  		quiet_login = stat(line, &st) >= 0;
@@ -175,7 +176,7 @@
  
  		/*
  		 * If the user has logged in before, display the time of last
-@@ -1958,6 +2051,20 @@
+@@ -1976,6 +2070,20 @@
  			else
  				printf("Last login: %s from %s\r\n", time_string, buf);
  		}
@@ -196,7 +197,7 @@
  		/*
  		 * Print /etc/motd unless a command was specified or printing
  		 * it was disabled in server options or login(1) will be
-@@ -1966,14 +2073,22 @@
+@@ -1984,14 +2092,22 @@
  		 */
  		if (command == NULL && options.print_motd && !quiet_login &&
  		    !options.use_login) {
@@ -220,7 +221,7 @@
  		/* Do common processing for the child, such as execing the command. */
  		do_child(command, pw, term, display, auth_proto, auth_data, ttyname);
  		/* NOTREACHED */
-@@ -2109,7 +2224,8 @@
+@@ -2127,7 +2243,8 @@
  	 const char *display, const char *auth_proto,
  	 const char *auth_data, const char *ttyname)
  {
@@ -230,7 +231,7 @@
  	char buf[256];
  	FILE *f;
  	unsigned int envsize, i;
-@@ -2117,15 +2233,34 @@
+@@ -2135,15 +2252,34 @@
  	extern char **environ;
  	struct stat st;
  	char *argv[10];
@@ -270,7 +271,7 @@
  	}
  	/* Set login name in the kernel. */
  	if (setlogin(pw->pw_name) < 0)
-@@ -2135,6 +2270,13 @@
+@@ -2153,6 +2289,13 @@
  	/* Login(1) does this as well, and it needs uid 0 for the "-h"
  	   switch, so we let login(1) to this for us. */
  	if (!options.use_login) {
@@ -284,7 +285,7 @@
  		if (getuid() == 0 || geteuid() == 0) {
  			if (setgid(pw->pw_gid) < 0) {
  				perror("setgid");
-@@ -2157,7 +2299,14 @@
+@@ -2175,7 +2318,14 @@
  	 * Get the shell from the password data.  An empty shell field is
  	 * legal, and means /bin/sh.
  	 */
@@ -299,7 +300,7 @@
  
  #ifdef AFS
  	/* Try to get AFS tokens for the local cell. */
-@@ -2181,7 +2330,12 @@
+@@ -2199,7 +2349,12 @@
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
@@ -312,7 +313,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -2271,6 +2425,9 @@
+@@ -2289,6 +2444,9 @@
  	 */
  	endpwent();
  	endhostent();
@@ -322,7 +323,7 @@
  
  	/*
  	 * Close any extra open file descriptors so that we don\'t have them
-@@ -2278,7 +2435,7 @@
+@@ -2296,7 +2454,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -331,7 +332,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -2297,6 +2454,26 @@
+@@ -2315,6 +2473,26 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {

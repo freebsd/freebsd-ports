@@ -15,7 +15,7 @@
 +TCP_WRAPPERS?=	yes
 +.if !defined(MAKEFILE_INC_FIRST_PASS)
 +MAKEFILE_INC_FIRST_PASS=	0
-+CFLAGS+=	-DHAVE_OPENPTY -I${PREFIX}/include
++CFLAGS+=	-I${PREFIX}/include
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
  .endif
