@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Jul  5 16:46:20 2001
++++ Makefile	Thu Jul  5 16:49:08 2001
+@@ -1,16 +1,17 @@
+-INCDIR	=	`gtk-config --cflags`
+-LIBS	=	`gtk-config --libs gthread`
++CC	=	gcc
++INCDIR	=	`${GTK_CONFIG} --cflags`
++LIBS	=	`${GTK_CONFIG} --libs gthread`
+ TARGET	=	SambaSentinel
+ FILES	=	SambaSentinel.c gtk_common.cpp
+ OBJECTS =	SambaSentinel.o gtk_common.o
+ SambaSentinel:  $(OBJECTS)
+-		gcc $(INCDIR) $(LIBS) -o $(TARGET) $(OBJECTS)
++		$(CC) $(INCDIR) $(LIBS) -o $(TARGET) $(OBJECTS)
+ 
+ SambaSentinel.o:SambaSentinel.c
+-		gcc $(INCDIR) -c -o SambaSentinel.o SambaSentinel.c
++		$(CC) $(INCDIR) -c -o SambaSentinel.o SambaSentinel.c
+ 
+ gtk_common.o:	gtk_common.c
+-		gcc $(INCDIR) -c -o gtk_common.o gtk_common.c
++		$(CC) $(INCDIR) -c -o gtk_common.o gtk_common.c
+ 
+ clean:		
+ 		rm -f *.o SambaSentinel *~ core
