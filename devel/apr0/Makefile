@@ -123,10 +123,9 @@ pre-extract:
 .endif
 	@${ECHO_MSG} ""
 
-post-extract:
-	cd ${WRKDIR}; \
-	${LN} -s apr-APR_0_9_BRANCH apr-${PORTVERSION}; \
-	${LN} -s apr-util-APU_0_9_BRANCH apr-util-${PORTVERSION}
+post-patch:
+	sed -i .orig1 's/OSVERSION/'${OSVERSION}'/g' \
+		${WRKDIR}/apr-${PORTVERSION}/build/apr_hints.m4
 
 pre-configure:
 .for d in apr apr-util
