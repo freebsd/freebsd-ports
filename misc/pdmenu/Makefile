@@ -5,8 +5,8 @@
 #
 # $FreeBSD$
 
-DISTNAME=       pdmenu
-PKGNAME=	pdmenu-1.2.48
+DISTNAME=       pdmenu_1.2.50
+PKGNAME=	pdmenu-1.2.50
 CATEGORIES=	misc
 MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 
@@ -16,6 +16,7 @@ LIB_DEPENDS=    slang.1:${PORTSDIR}/devel/libslang
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/pdmenu
 
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
