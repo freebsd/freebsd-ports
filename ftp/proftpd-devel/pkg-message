@@ -1,5 +1,5 @@
 ###
-As of release 1.2.0p5 and later, you need to edit /etc/pam.conf to add
+As of proftpd 1.2.0p5 and later, you need to edit /etc/pam.conf to add
 support for ftp.  To do so, add the following two lines to this file:
 
 ftp auth    required    pam_unix.so         try_first_pass
