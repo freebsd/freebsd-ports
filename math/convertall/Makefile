@@ -7,6 +7,7 @@
 
 PORTNAME=	convertall
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bellz.org/convertall/
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 WRKSRC=		${WRKDIR}/ConvertAll
 USE_REINPLACE=	yes
-USE_PYTHON=	2.3
+USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 PORTDOCS=	README.html INSTALL LICENSE
