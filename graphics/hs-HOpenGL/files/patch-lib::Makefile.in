@@ -1,0 +1,21 @@
+*** lib/Makefile.in.orig	Mon Jul 29 20:09:56 2002
+--- lib/Makefile.in	Thu Jan 16 01:53:28 2003
+***************
+*** 49,56 ****
+  	cp *.hi "$(IMPORT_DIR)"
+  	if test x$(CONFIG_FILE) = x ; then \
+  	   $(GHC_PKG) --remove-package=HOpenGL || true ; \
+! 	   $(GHC_PKG) --add-package < HOpenGL.conf ; \
+  	else \
+  	   $(GHC_PKG) --config-file=$(CONFIG_FILE) --remove-package=HOpenGL || true ; \
+! 	   $(GHC_PKG) --config-file=$(CONFIG_FILE) --force --add-package < HOpenGL.conf ; \
+  	fi
+--- 49,56 ----
+  	cp *.hi "$(IMPORT_DIR)"
+  	if test x$(CONFIG_FILE) = x ; then \
+  	   $(GHC_PKG) --remove-package=HOpenGL || true ; \
+! 	   $(GHC_PKG) --add-package --auto-ghci-libs < HOpenGL.conf ; \
+  	else \
+  	   $(GHC_PKG) --config-file=$(CONFIG_FILE) --remove-package=HOpenGL || true ; \
+! 	   $(GHC_PKG) --config-file=$(CONFIG_FILE) --force --add-package --auto-ghci-libs < HOpenGL.conf ; \
+  	fi

@@ -135,6 +135,7 @@
     SUBDIR += hdf5
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
+    SUBDIR += hs-HOpenGL
     SUBDIR += hs-hgl
     SUBDIR += icod
     SUBDIR += icontact
