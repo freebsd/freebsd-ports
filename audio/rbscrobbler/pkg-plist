@@ -1,0 +1,18 @@
+%%DATADIR%%/Audioscrobbler.py
+%%DATADIR%%/Debug.py
+%%DATADIR%%/MyQueue.py
+%%DATADIR%%/Rhythmbox_Bonobo.py
+%%DATADIR%%/RLInput.py
+%%DATADIR%%/singletonmixin.py
+%%DATADIR%%/rbscrobbler.py
+%%DATADIR%%/images/icon-offline.png
+%%DATADIR%%/images/icon-online.png
+%%DATADIR%%/images/notsubmitted.png
+%%DATADIR%%/images/offline.png
+%%DATADIR%%/images/online.png
+%%DATADIR%%/images/submitted.png
+%%DATADIR%%/trayicon/__init__.py
+%%DATADIR%%/t.so
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/trayicon
+@dirrm %%DATADIR%%
