@@ -1,13 +1,13 @@
---- mkfls/unix/Makefile.in.orig	Wed Nov  5 02:57:41 1997
-+++ mkfls/unix/Makefile.in	Wed Mar  8 21:03:18 2000
-@@ -5,8 +5,8 @@
+--- mkfls/unix/Makefile.in.orig	Tue Sep 21 12:17:18 1999
++++ mkfls/unix/Makefile.in	Thu Mar 30 10:54:46 2000
+@@ -12,8 +12,8 @@
  OBJS=${SRCS:.c=.o} 
  AUTODEFS=@DEFS@
  AUTOLIBS=@LIBS@
--DEFINES=$(AUTODEFS) -DHAVE_FORK -DUNIX -DOS="\"UNIX\""
+-DEFINES=$(AUTODEFS) -DHAVE_FORK -DHAVE_SNPRINTF -DUNIX -DOS="\"UNIX\""
 -CFLAGS=$(DEFINES) -Wall
-+DEFINES+=$(AUTODEFS) -DHAVE_FORK -DUNIX -DOS="\"UNIX\""
++DEFINES+=$(AUTODEFS) -DHAVE_FORK -DHAVE_SNPRINTF -DUNIX -DOS="\"UNIX\""
 +CFLAGS+=$(DEFINES) -Wall
  LIBS=$(AUTOLIBS)
  
- all: binkd
+ all: compile banner
