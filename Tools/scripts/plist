@@ -42,35 +42,42 @@ class Mtree
 		@paths = []
 		@curlevel = []
 		@strip = strip.to_i
+		@cont = false
 		self
 	end
 	def parse_line(line)
-		line.gsub!(/^[[:space:]]*(.*?)[[:space:]]*$/, '\1')
 		line.chomp!
-		case line
-		when ''
+		spline = line.split
+		oldcont = @cont
+		@cont = line[-1, 1] == "\\"
+		case spline[0]
+		when nil
 		when /^[\/#]/
 			# ignore "command" lines and comments
 		when '..'
+			if oldcont
+				raise 'continued line has a .. directive?!'
+			end
 			if @curlevel.pop.nil?
 				raise '".." with no previous directory'
 			end
 		else
-			line = line.split
-			@curlevel.push(line[0])
-			@paths.push(@curlevel.dup)
+			if !oldcont
+				@curlevel.push(spline[0])
+				@paths.push(@curlevel.dup)
+			end
 		end
 		self
 	end
 	def Mtree.read(filename)
 		m = Mtree.new
 		open(filename, 'r') {|file|
-				file.each_line {|line| m.parse_line(line)}
+			file.each_line {|line| m.parse_line(line)}
 		}
 		m
 	end
-	def paths
-		@paths.collect {|path| path[@strip..-1].join('/')}
+	def paths(strip = @strip)
+		@paths.collect {|path| path[strip..-1].join('/')}
 	end
 end
 
