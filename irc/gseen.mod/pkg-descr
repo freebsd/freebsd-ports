@@ -1,0 +1,12 @@
+gseen.mod
+
+gseen works similar to countless seen scripts. It logs for each user
+when he or she was last seen in the channel and makes this information
+publically available. It takes switching nick names into consideration
+and supports wildcards in search-requests.
+
+The advantage of gseen in contrast to most other seen scripts is it's speed.
+gseen can handle databases of several thousand nicks without a lag in seen
+requests. It also supports several languages. 
+
+WWW: http://www.visions-of-fantasy.de/gseen.mod/
