@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-Memcached
-PORTVERSION=	1.0.12
+PORTVERSION=	1.14
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.danga.com/memcached/dist/
@@ -29,10 +29,6 @@ BUILD_DEPENDS+=	\
 	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS+=	\
 	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-.endif
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"Perl 5.6 or newer required."
 .endif
 
 .include <bsd.port.post.mk>
