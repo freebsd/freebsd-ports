@@ -1,9 +1,8 @@
-diff -uNr ../ztelnet/Makefile ./Makefile
---- ../ztelnet/Makefile	Tue Sep 19 20:02:01 1995
-+++ ./Makefile	Wed Dec  3 05:42:19 1997
+--- ../ztelnet/Makefile	Tue Sep 19 13:02:01 1995
++++ ./Makefile	Thu Jun  6 23:22:18 2002
 @@ -1,10 +1,11 @@
 -CC=cc
-+CC=gcc
++CC?=gcc
  all:
 -	cd zmodem; make CC="${CC}"
  	cd libtelnet; make CC="${CC}"

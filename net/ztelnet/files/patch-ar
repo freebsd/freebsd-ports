@@ -1,6 +1,5 @@
-diff -uNr --exclude=*.orig work.old/ztelnet/zmodem/Makefile work/ztelnet/zmodem/Makefile
---- work.old/ztelnet/zmodem/Makefile	Wed Sep 20 09:20:41 1995
-+++ work/ztelnet/zmodem/Makefile	Tue Jun 20 22:58:32 2000
+--- work.old/ztelnet/zmodem/Makefile.orig	Tue Sep 19 17:20:41 1995
++++ work/ztelnet/zmodem/Makefile	Thu Jun  6 23:23:16 2002
 @@ -1,142 +1,19 @@
 -# Makefile for Unix/Xenix rz and sz programs
 -# the makefile is not too well tested yet
@@ -42,7 +41,7 @@ diff -uNr --exclude=*.orig work.old/ztelnet/zmodem/Makefile work/ztelnet/zmodem/
 -	shar -c -a -n rzsz -o /tmp/rzsz -l64 \
 -	  README Makefile zmodem.h zm.c rz.c rbsb.c \
 -	 crc.c crctab.c minirb.c mailer.rz zmr.c *.doc gz sz.c *.t 
-+CFLAGS= -O2 ${DEFINES} ${INCLUDES}
++CFLAGS+= ${DEFINES} ${INCLUDES}
  
 -shar:doc
 -	shar -c README Makefile zmodem.h zm.c \
