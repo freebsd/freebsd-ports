@@ -1,24 +1,24 @@
 # New ports collection makefile for:	bnetd
-# Version required:	0.4.19
+# Version required:	0.4.21
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bnetd-0.4.19
+DISTNAME=	bnetd-0.4.21
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
 MAN1=		bnchat.1 bnetd.1 bnftp.1 bnpass.1
-MAN4=		bnetd.conf.4 bntext.4
-MLINKS=		bntext.4 bnmotd.txt.4 bntext.4 bnnews.txt.4
+MAN5=		bnetd.conf.5 bntext.5
+MLINKS=		bntext.5 bnmotd.txt.5 bntext.5 bnnews.txt.5
 
 do-configure:
 	@(cd ${WRKSRC}/src; ${SETENV} CFLAGS="${CFLAGS}" \
-	    ./configure --prefix=${PREFIX} ${CONFIGURE_TARGET})
+	    ./configure --with-warn --with-bits --prefix=${PREFIX} ${CONFIGURE_TARGET})
 
 do-build:
 	@(cd ${WRKSRC}/src; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
@@ -26,7 +26,7 @@ do-build:
 do-install:
 	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} * ${PREFIX}/bin
 	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} * ${PREFIX}/sbin
-	cd ${WRKSRC}/man; ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1; ${INSTALL_MAN} ${MAN4} ${MAN4PREFIX}/man/man4
+	cd ${WRKSRC}/man; ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1; ${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5
 	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${WRKSRC}/reports ${PREFIX}/bnetd
 
 post-install:
