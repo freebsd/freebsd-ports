@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	irssi-0.7.22
-CATEGORIES=	irc
+CATEGORIES=	irc ipv6
 MASTER_SITES=	http://xlife.dhs.org/irssi/files/
 
 MAINTAINER=	jim@FreeBSD.org
@@ -33,6 +33,14 @@ CONFIGURE_ARGS=	--without-pthreads --without-socks --with-textui \
 		--with-proplist=${LOCALBASE} --without-servertest \
 		--disable-nls
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+.else
+CONFIGURE_ARGS+= --disable-ipv6
+.endif
+
 .if defined(USE_GNOME)
 CONFIGURE_ARGS+= --with-gnome
 .if defined(USE_PANEL)
@@ -47,4 +55,4 @@ CONFIGURE_ARGS+= --without-gnome
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
