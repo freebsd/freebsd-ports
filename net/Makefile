@@ -307,7 +307,6 @@
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += lmd
-    SUBDIR += lmule
     SUBDIR += loadd
     SUBDIR += loudmouth
     SUBDIR += luasocket
