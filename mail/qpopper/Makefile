@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.1
-PORTREVISION=	1
+PORTVERSION=	4.0.2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
@@ -18,7 +17,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .if ${OSVERSION} >= 400014
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0.1-ipv6-20010504.diff.gz
+PATCHFILES=	qpopper4.0.2-ipv6-20010504.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -73,8 +72,7 @@ CONFIGURE_ARGS+=	--enable-debugging
 # with poppassd support.
 .if defined(WITH_POPPASSD)
 CONFIGURE_ARGS+=	--enable-poppassd
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::Makefile.in \
-		${FILESDIR}/extra-patch-password::poppassd.c
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c
 EPOPPASSD=	""
 .else
 EPOPPASSD=	"@comment "
