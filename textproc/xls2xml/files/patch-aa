@@ -1,0 +1,12 @@
+--- rec/p.h.orig	Sun Mar 28 01:07:00 1999
++++ rec/p.h	Thu Nov  4 14:45:37 1999
+@@ -20,6 +20,9 @@
+    Roberto Arturo Tena Sanchez <arturo@directmail.org>
+  */
+ 
++#include <stdlib.h>
++#include "../pcommon.h"
++
+ int p06 (void);
+ int p09 (void);
+ int p0A (void);
