@@ -124,6 +124,7 @@
     SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += noattach
+    SUBDIR += nocc
     SUBDIR += nullmailer
     SUBDIR += openwebmail
     SUBDIR += p5-Email-Find
