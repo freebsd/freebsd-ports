@@ -20,7 +20,7 @@ LIB_DEPENDS=	${TK_DEPENDS}
 DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fpectl
+CONFIGURE_ARGS=	--with-fpectl --with-libs='-lxpg4'
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 PLIST=		${WRKDIR}/PLIST
