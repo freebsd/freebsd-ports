@@ -21,6 +21,7 @@ lib/gaim/libzephyr.so
 lib/gaim/notify.so
 %%PERL:%%lib/gaim/perl.so
 lib/gaim/spellchk.so
+lib/gaim/relnot.so
 lib/gaim/ssl-gnutls.so
 lib/gaim/ssl-nss.so
 %%OPENSSL:%%lib/gaim/ssl-openssl.so
