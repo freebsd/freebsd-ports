@@ -582,6 +582,16 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	pkgMkIndex.n pkg_mkIndex.n \
 	safe.n SafeBase.n
 
+.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+PKGNAMESUFFIX?=		-threads
+USE_REINPLACE=	YES
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-install:
