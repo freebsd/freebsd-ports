@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-client-libs
 PORTVERSION=	0.0.10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -37,6 +38,7 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBGGZ_INCLUDES=.*$$|LIBGGZ_INCLUDES=|g ; \
-		 s|LIBGGZ_LDFLAGS=.*$$|LIBGGZ_LDFLAGS=|g' ${WRKSRC}/configure
+		 s|LIBGGZ_LDFLAGS=.*$$|LIBGGZ_LDFLAGS=|g ; \
+		 s|libggz.la|libggz.so|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
