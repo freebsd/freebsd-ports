@@ -17,6 +17,7 @@ COMMENT=	General rules-based sorting of lists
 
 PERL_CONFIGURE=	yes
 
+DEPRECATED=	"no longer on CPAN"
 MAN3=		Sort::PolySort.3
 
 pre-patch:
