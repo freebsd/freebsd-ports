@@ -80,9 +80,9 @@ do-extract:
 	${CP} -RPp $$extdir ${WRKSRC}/ext/
 .endfor
 .if defined(STATIC)
-	${ECHO} "option nodynamic" > ${WRKSRC}/ext/Setup
+	${ECHO_CMD} "option nodynamic" > ${WRKSRC}/ext/Setup
 .else
-	${ECHO} "#option nodynamic" > ${WRKSRC}/ext/Setup
+	${ECHO_CMD} "#option nodynamic" > ${WRKSRC}/ext/Setup
 .endif
 	(cd ${WRKSRC}/ext && \
 	for x in *; do [ -d $$x ] && echo $$x >> Setup; done)
