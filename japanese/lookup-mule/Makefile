@@ -57,7 +57,9 @@ do-install:
 	${RM} ${ELISPDIR}/lookup-compile.el
 	${SED} -e 's,@VERSION@,1.0,' -e 's,@pkgemacsdir@,${ELISPDIR},' \
 		${WRKSRC}/lisp/lookup-vars.el.in > ${ELISPDIR}/lookup-vars.el
+.if (${EMACS} != "xemacs")
 	install-info ${PORTINFODIR}/lookup.info ${PORTINFODIR}/dir
+.endif
 	${SED} -e 's,%%ELISPDIR%%,${ELISPDIR},' ${FILESDIR}/lookup-startup.el.tmpl > ${ELISPDIR}/../lookup-startup.el
 
 .if (${EMACS} == "xemacs")
