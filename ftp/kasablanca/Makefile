@@ -6,6 +6,7 @@
 
 PORTNAME=	kasablanca
 PORTVERSION=	0.4.0.1
+PORTREVISION=	1
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://download.berlios.de/kasablanca/
 

@@ -6,12 +6,14 @@
 
 PORTNAME=		kimdaba
 PORTVERSION=		1.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
+
+EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes

@@ -7,12 +7,15 @@
 
 PORTNAME=	potracegui
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	GUI for potrace, a program for tracing bitmap images
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 RUN_DEPENDS=	potrace:${PORTSDIR}/graphics/potrace
 

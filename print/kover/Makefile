@@ -6,11 +6,14 @@
 
 PORTNAME=		kover
 PORTVERSION=		2.9.5
+PORTREVISION=		1
 CATEGORIES=		print kde
 MASTER_SITES=		http://lisas.de/kover/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		WYSIWYG CD cover printer
+
+EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

@@ -6,12 +6,14 @@
 
 PORTNAME=	karamba
 PORTVERSION=	0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.efd.lth.se/~d98hk/karamba/src/
 
 MAINTAINER=	smoberly@karamazov.org
 COMMENT=	Display various information right on your desktop
+
+EXTRA_PATCHES=	${.CURDIR}/../../comms/kallers/files/patch-configure
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
