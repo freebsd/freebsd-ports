@@ -1,0 +1,9 @@
+SciMark 2.0 is a Java benchmark for scientific and numerical computing.
+
+It measures several computational kernels and reports a composite score
+in approximate Mflops (Millions of floating point operations per second).
+
+Results of this benchmark can be sent to pozo@nist.gov and are listed at
+<http://math.nist.gov/cgi-bin/ScimarkSummary>;.
+
+WWW: http://math.nist.gov/scimark2/index.html

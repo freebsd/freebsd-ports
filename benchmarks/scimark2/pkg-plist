@@ -1,0 +1,36 @@
+bin/scimark2-java
+%%SMDIR%%/jnt/Bench/Applet.java
+%%SMDIR%%/jnt/Bench/Bench.java
+%%SMDIR%%/jnt/Bench/Formatter.java
+%%SMDIR%%/jnt/Bench/HTTPPost.java
+%%SMDIR%%/jnt/Bench/Plotter.java
+%%SMDIR%%/jnt/Bench/SendMail.java
+%%SMDIR%%/jnt/Bench/Stopwatch.java
+%%SMDIR%%/jnt/Bench/SubmitDialog.java
+%%SMDIR%%/jnt/Bench/Target.java
+%%SMDIR%%/jnt/scimark2/Constants.class
+%%SMDIR%%/jnt/scimark2/Constants.java
+%%SMDIR%%/jnt/scimark2/FFT.class
+%%SMDIR%%/jnt/scimark2/FFT.java
+%%SMDIR%%/jnt/scimark2/Jacobi.java
+%%SMDIR%%/jnt/scimark2/LU.class
+%%SMDIR%%/jnt/scimark2/LU.java
+%%SMDIR%%/jnt/scimark2/MonteCarlo.class
+%%SMDIR%%/jnt/scimark2/MonteCarlo.java
+%%SMDIR%%/jnt/scimark2/Random.class
+%%SMDIR%%/jnt/scimark2/Random.java
+%%SMDIR%%/jnt/scimark2/SOR.class
+%%SMDIR%%/jnt/scimark2/SOR.java
+%%SMDIR%%/jnt/scimark2/SparseCompRow.class
+%%SMDIR%%/jnt/scimark2/SparseCompRow.java
+%%SMDIR%%/jnt/scimark2/Stopwatch.class
+%%SMDIR%%/jnt/scimark2/Stopwatch.java
+%%SMDIR%%/jnt/scimark2/applet.java
+%%SMDIR%%/jnt/scimark2/commandline.class
+%%SMDIR%%/jnt/scimark2/commandline.java
+%%SMDIR%%/jnt/scimark2/kernel.class
+%%SMDIR%%/jnt/scimark2/kernel.java
+@dirrm %%SMDIR%%/jnt/scimark2
+@dirrm %%SMDIR%%/jnt/Bench
+@dirrm %%SMDIR%%/jnt
+@dirrm %%SMDIR%%
