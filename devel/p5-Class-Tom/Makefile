@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/${PERL_ARCH}/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
-SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/
+SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 USE_PERL5=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
