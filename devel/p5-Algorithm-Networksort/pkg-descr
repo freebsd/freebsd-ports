@@ -1,0 +1,17 @@
+This module will create sorting networks, a sequence of comparisons
+that do not depend upon the results of prior comparisons.
+
+There are several algorithms to generate sorting networks.  This
+module has three of them:  Bose and Nelson's, Hibbard's, and
+Batcher's Merge Exchange.  It also has networks that were found
+to be superior in comparison count to those generated automatically
+by these algorithms.
+
+There is a flexible formatting function that will allow you to
+print out your network in many ways (see documentation).  There
+is also a graphical output function that will return the network
+in an encapsulated postscript, SVG, or text form.
+
+WWW:	http://search.cpan.org/dist/Algorithm-Networksort/
+
+Author:	John M. Gamble <jgamble@ripco.com>
