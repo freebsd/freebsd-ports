@@ -22,8 +22,12 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.if defined(WITH_CUPS)
+RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
+		espgs:${PORTSDIR}/print/cups-pstoraster
+.endif
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
@@ -33,9 +37,21 @@ ALL_TARGET=	nothing
 MAN1=		muttprint.1
 MANCOMPRESSED=	yes
 
+.if defined(WITH_CUPS)
+PRINT_COMMAND=CUPS
+.else
+PRINT_COMMAND=lpr -P$$PRINTER
+.endif
+
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=install-with-doc
 .endif
+
+pre-everything::
+	@${ECHO}
+	@${ECHO} Set PAPERSIZE=A4 if you need that paper size.
+	@${ECHO} Set WITH_CUPS=yes if you want to use CUPS.
+	@${ECHO}
 
 post-patch:
 	@${RM} -f ${WRKSRC}/pics/*.orig
@@ -47,6 +63,19 @@ post-patch:
 		s|/usr/lib|${PREFIX}/lib|g' \
 			${WRKSRC}/doc/manpages/*/muttprint.1 \
 			${WRKSRC}/doc/manual/*/manual-*/*.html
+.if ${PAPERSIZE}==a4
+	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE:U}|' \
+		${WRKSRC}/muttprint
+.else
+	@${REINPLACE_CMD} 's|%%PAPERSIZE%%|${PAPERSIZE}|' \
+		${WRKSRC}/muttprint
+.endif
+	@${REINPLACE_CMD} 's|%%PRINT_COMMAND%%|${PRINT_COMMAND}| ; \
+		s|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/muttprint
+.if defined(WITH_CUPS)
+	@${REINPLACE_CMD} 's|lpr $$CUPS_OPTIONS|${PREFIX}/bin/lpr $$CUPS_OPTIONS|' ${WRKSRC}/muttprint
+.endif
 	@${GZIP_CMD} ${WRKSRC}/doc/manpages/*/muttprint.1
 
 .include <bsd.port.mk>
