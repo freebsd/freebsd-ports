@@ -7,7 +7,7 @@
 
 PORTNAME=	distel
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,6 +22,8 @@ COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
 BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS+=	${LOCALBASE}/lib/erlang/lib/syntax_tools/ebin/erl_syntax.beam:${PORTSDIR}/devel/syntax_tools
 
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	base
@@ -31,6 +33,7 @@ DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz \
 		distel-user-3.3.pdf distel-user-3.3.ps.gz \
 		distel-3.1.pdf
 DISTEL_DOCS=	config/emacs-init-snippet.el AUTHORS ChangeLog NEWS README README.ie-session
+DISTEL_ROOT=	${PREFIX}/lib/erlang/lib/${PORTNAME}-${PORTVERSION}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/c/dec32 ${PREFIX}/bin
@@ -45,8 +48,11 @@ do-install:
 	@for FILE in ${DISTEL_MANUALS}; do \
 		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${DOCSDIR}; \
 	done
-	@${MKDIR} ${DATADIR}/ebin ${DATADIR}/src
-	@${INSTALL_DATA} ${WRKSRC}/erl/*.erl ${DATADIR}/src
-	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${DATADIR}/ebin
+	@${MKDIR} ${DISTEL_ROOT}
+	@${MKDIR} ${DISTEL_ROOT}/src
+	@${MKDIR} ${DISTEL_ROOT}/ebin
+	@${INSTALL_DATA} ${WRKSRC}/erl/*.erl ${DISTEL_ROOT}/src
+	@${INSTALL_DATA} ${WRKSRC}/ebin/*.beam ${DISTEL_ROOT}/ebin
+	@${LN} -sf ${DISTEL_ROOT} ${PREFIX}/lib/erlang/lib/distel
 
 .include <bsd.port.mk>

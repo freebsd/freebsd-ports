@@ -13,16 +13,16 @@ bin/dec32
 %%EMACS_SITE_LISPDIR%%/distel/ewoc.el
 %%EMACS_SITE_LISPDIR%%/distel/distel.el
 %%EMACS_SITE_LISPDIR%%/distel/md5.el
-share/distel/ebin/dilber.beam
-share/distel/ebin/dilber_servant.beam
-share/distel/ebin/distel.beam
-share/distel/ebin/distel_ie.beam
-share/distel/ebin/fdoc.beam
-share/distel/src/dilber.erl
-share/distel/src/dilber_servant.erl
-share/distel/src/distel.erl
-share/distel/src/distel_ie.erl
-share/distel/src/fdoc.erl
+lib/erlang/lib/distel-%%VERSION%%/ebin/dilber.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/dilber_servant.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/distel_ie.beam
+lib/erlang/lib/distel-%%VERSION%%/ebin/fdoc.beam
+lib/erlang/lib/distel-%%VERSION%%/src/dilber.erl
+lib/erlang/lib/distel-%%VERSION%%/src/dilber_servant.erl
+lib/erlang/lib/distel-%%VERSION%%/src/distel.erl
+lib/erlang/lib/distel-%%VERSION%%/src/distel_ie.erl
+lib/erlang/lib/distel-%%VERSION%%/src/fdoc.erl
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/NEWS
@@ -35,6 +35,8 @@ share/distel/src/fdoc.erl
 %%DOCSDIR%%/distel-user-3.3.ps.gz
 %%DOCSDIR%%/emacs-init-snippet.el
 @dirrm %%DOCSDIR%%
-@dirrm share/distel/src
-@dirrm share/distel/ebin
-@dirrm share/distel
+@dirrm lib/erlang/lib/distel-%%VERSION%%/src
+@dirrm lib/erlang/lib/distel-%%VERSION%%/ebin
+@dirrm lib/erlang/lib/distel-%%VERSION%%
+@exec ln -sf distel-%%VERSION%% %D/lib/erlang/lib/distel
+@unexec rm -f %D/lib/erlang/lib/distel
