@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tik
-PORTVERSION=	0.87
+PORTVERSION=	0.89
 CATEGORIES=	net tk82
-MASTER_SITES=	http://download.sourceforge.net/tik/ \
-		http://anti-aol.org/dionysos/l33t_filez/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	tik
 
-MAINTAINER=	astralblue@usa.net
+MAINTAINER=	dionysos@anti-aol.org
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
@@ -22,43 +22,14 @@ PLIST=		${WRKDIR}/PLIST
 
 SORT?=		sort
 
-SRCDIRS= 	share/tik share/tik/media share/tik/packages share/tik/strs
-SRCFILES=	media/AOL.gif media/Admin.gif media/Away.gif media/DT.gif  \
-		media/DoorSlam.wav media/Icon.gif media/Idle.gif           \
-		media/Pounce.wav media/Login.gif media/add.gif             \
-		media/angel.gif media/back.gif media/bigsmile.gif          \
-		media/block.gif media/bold.gif media/bsmile.gif            \
-		media/burp.gif media/chat.gif media/close.gif              \
-		media/color.gif media/crossedlips.gif media/cry.gif        \
-		media/delete.gif media/dooropen.wav media/embarrassed.gif  \
-		media/font.gif media/ignore.gif media/im.gif               \
-		media/imrcv.wav media/imsend.wav media/info.gif            \
-		media/invite.gif media/italic.gif media/kiss.gif           \
-		media/moneymouth.gif media/ok.gif media/ring.wav           \
-		media/sad.gif media/scream.gif media/send.gif              \
-		media/smile.gif media/smile8.gif media/strike.gif          \
-		media/think.gif media/tongue.gif media/underline.gif       \
-		media/warn.gif media/whisper.gif media/wink.gif            \
-		media/Logo.gif media/Logout.gif media/Oscar.gif            \
-		media/downarrow.gif media/uparrow.gif media/BuddyArrive.au \
-		media/BuddyLeave.au media/Receive.au media/yell.gif        \
-		media/Send.au						   \
-		packages/HTTPProxy.tcl packages/away.tcl packages/beat.tcl \
-		packages/bcast.tcl packages/boxinfo.tcl			   \
-		packages/buddylog.tcl packages/chatcapture.tcl		   \
-		packages/control.tcl packages/dir.tcl packages/getaway.tcl \
-		packages/filetrans.tcl packages/imcapture.tcl		   \
-		packages/mynews.tcl packages/pounce.tcl                    \
-		packages/quickchat.tcl packages/search.tcl                 \
-		packages/remoteadmin.tcl packages/remotegui.tcl  	   \
-		packages/socksproxy.tcl packages/sslproxy.tcl              \
-		packages/ticker.tcl strs/English.strs sflap.tcl            \
-		buddylist.tcl buddymgmt.tcl callbacks.tcl chat.tcl	   \
-		configandpkg.tcl im.tcl info.tcl popup.tcl preproc.tcl	   \
-		protocol.tcl proxy.tcl ui.tcl util.tcl version.tcl	   \
-		configTool.tcl toc.tcl tik.tcl sag.tcl
+SRCDIRS= 	share/tik share/tik/components share/tik/media \
+		share/tik/packages share/tik/strs
+
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/srcfiles"
+
 EGDIR=		share/examples/tik
-EGFILES=	example.tikstrs example.tikpre example.tikrc
+EGFILES=	example.tikstrs example.pkgrc
 DOCDIR=		share/doc/tik
 DOCFILES=	CHANGES CONTRIBUTORS COPYING LICENSE README-LANG	   \
 		NEW-FEATURES TODO
@@ -93,4 +64,4 @@ do-install:
 .endif
 	@${SORT} -r ${PLIST}.dirrm >> ${PLIST} && ${RM} ${PLIST}.dirrm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
