@@ -6546,6 +6546,7 @@ sftp		src/secure/usr.bin/sftp
 sftp-server	src/secure/libexec/sftp-server
 sftp_port	ports/ftp/sftp
 sgf2tex		ports/print/sgf2tex
+sgifonts	ports/x11-fonts/sgifonts
 sgml		src/share/sgml
 sgmlfmt		src/usr.bin/sgmlfmt
 sgmlformat	ports/textproc/sgmlformat
