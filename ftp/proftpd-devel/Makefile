@@ -16,6 +16,12 @@ DISTNAME=	${PORTNAME}-1.2.0rc2
 
 MAINTAINER=	mharo@FreeBSD.org
 
+.if defined(WITH_LDAP)
+MASTER_SITES+=	http://www.horde.net/~jwm/software/proftpd-ldap/
+MOD_LDAP=	mod_ldap-2.6.1.tar.gz
+DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} ${MOD_LDAP}
+.endif
+
 MAN1=	ftpcount.1 ftpwho.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8
@@ -29,8 +35,20 @@ CONFIGURE_ARGS=	--localstatedir=/var/run \
 #allow user to override
 MODULES?=	mod_ratio:mod_readme:mod_tar
 
+.if defined(WITH_LDAP)
+MODULES:=$(MODULES):mod_ldap
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
+CONFIGURE_ENV+=	CFLAGS="-I/usr/local/include -g" LDFLAGS=-L/usr/local/lib
+.endif
+
 .if !empty(MODULES)
 CONFIGURE_ARGS+= --with-modules=${MODULES}
+.endif
+
+.if defined(WITH_LDAP)
+post-extract:
+	rm -rf ${WRKSRC}/contrib/mod_ldap.c
+	tar --to-stdout -xvz -f ${DISTDIR}/${MOD_LDAP} */mod_ldap.c > ${WRKSRC}/contrib/mod_ldap.c
 .endif
 
 pre-configure:
