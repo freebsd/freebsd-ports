@@ -1,0 +1,10 @@
+Lingua::EN::Numbers converts arbitrary numbers into human-oriented
+English text. Limited support is included for parsing standardly
+formatted numbers (i.e. '3,213.23'). But no attempt has been made
+to handle any complex formats. Support for multiple variants of
+English are supported. Currently only "American" formatting is
+supported.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-Numbers
+
+Seamus Venasse <svenasse@polaris.ca>
