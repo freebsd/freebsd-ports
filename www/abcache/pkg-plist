@@ -1,1 +1,2 @@
 lib/php/20010901/bware_cache.so
+@unexec rmdir %D/lib/php/20010901

@@ -27,15 +27,16 @@ LIBTOOLFILES=	aclocal.m4
 WRKSRC=		${WRKDIR}/bware_cache-${PORTVERSION}
 
 CONFIGURE_ARGS+=--enable-bware_cache=shared \
-		--with-php-config=${PREFIX}/bin/php-config
+		--with-php-config=${LOCALBASE}/bin/php-config
 
 post-extract:
 	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
 
 do-install:
-	@${INSTALL} ${WRKSRC}/modules/bware_cache.so \
-		${LOCALBASE}/lib/php/20010901
+	@${MKDIR} ${PREFIX}/lib/php/20010901
+	@${INSTALL_DATA} ${WRKSRC}/modules/bware_cache.so \
+		${PREFIX}/lib/php/20010901
 
 post-install:
 	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
