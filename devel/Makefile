@@ -86,9 +86,9 @@
     SUBDIR += libtool
     SUBDIR += libxalloc
     SUBDIR += lincvs
-    SUBDIR += linuxthreads
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
+    SUBDIR += linuxthreads
     SUBDIR += m4
     SUBDIR += m68kbinutils
     SUBDIR += m68kgcc
@@ -125,9 +125,9 @@
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-IO-stringy
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
-    SUBDIR += p5-IO-stringy
     SUBDIR += p5-PV
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Penguin
@@ -143,8 +143,8 @@
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
-    SUBDIR += p5-TimeDate
     SUBDIR += p5-Time-HiRes
+    SUBDIR += p5-TimeDate
     SUBDIR += p5-TraceFuncs
     SUBDIR += patch
     SUBDIR += pccts
@@ -186,6 +186,7 @@
     SUBDIR += tkcvs
     SUBDIR += tkref
     SUBDIR += tvision
+    SUBDIR += uclmmbase
     SUBDIR += ups-debug
     SUBDIR += vtcl
     SUBDIR += xmake
