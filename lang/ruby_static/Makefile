@@ -15,7 +15,7 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binary with some modules compiled in (in case of emergency)
 
-BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch
+EXTRACT_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch
 
 USE_RUBY=	yes
 
