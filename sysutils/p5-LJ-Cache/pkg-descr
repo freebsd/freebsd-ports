@@ -1,0 +1,9 @@
+This class implements an LRU dictionary cache. The two operations on it are 
+get() and set(), both of which promote the key being referenced to the ``top'' 
+of the cache, so it will stay alive longest. When the cache is full and and a 
+new item needs to be added, the oldest one is thrown away. You should be able 
+to regenerate the data at any time, if get() returns undef. This class is 
+useful for caching information from a slower data source while also keeping 
+a bound on memory usage. 
+
+WWW: http://livejournal.com/code/cache/
