@@ -1,0 +1,11 @@
+This port provides a Big5 localized Netscape, including menus,
+toolbars, error messages and many others. It also contains a
+libX11 fix, which allows Netscape to show Big5 buttons in html
+documents.
+
+The patches are mainly contributed by thhsieh@linux.org.tw &
+hcchu@r350.ee.ntu.edu.tw. The localized Netscape.Big5 is
+translated by Antony Shen <u8618806@cc.nctu.edu.tw>, with some
+modifications.
+
+Jing-Tang Keith Jang <keith@freebsd.sinica.edu.tw>
