@@ -5,6 +5,7 @@ etc/rc.d/mimedefang.sh
 %%PORTDOCS%%share/doc/mimedefang/README
 %%PORTDOCS%%share/doc/mimedefang/README.ANOMY
 %%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
+%%PORTDOCS%%share/doc/mimedefang/README.NONROOT
 %%PORTDOCS%%share/examples/mimedefang/suggested-minimum-filter-for-windows-clients
 %%PORTDOCS%%share/examples/mimedefang/README
 %%PORTDOCS%%share/examples/mimedefang/redhat-logrotate-file
