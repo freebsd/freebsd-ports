@@ -1,0 +1,10 @@
+Term::Screen is a very simple screen positioning module that should work
+wherever `Term::Cap' does. It is set up for Unix using stty's but these
+dependences are isolated by evals in the `new' constructor. Thus you may
+create a child module implementing Screen with MS-DOS, ioctl, or other
+means to get raw and unblocked input. This is not a replacement for
+Curses -- it has no memory.  This was written so that it could be easily
+changed to fit nasty systems, and to be available first thing.
+
+-- Ying-Chieh Liao
+ijliao@csie.nctu.edu.tw
