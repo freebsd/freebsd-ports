@@ -1,0 +1,7 @@
+The osf1_base port contains a minimal selection of shared libraries from a
+Compaq Tru64 5.0 installation.  These libraries and support files, in
+conjunction with the osf1 module, form the basis of the osf1 compatibility
+environment.
+
+-- David
+obrien@FreeBSD.org
