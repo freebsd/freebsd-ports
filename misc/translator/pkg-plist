@@ -1,0 +1,4 @@
+bin/translator
+share/gnome/pixmaps/translator.png
+%%DATADIR%%/translator.glade
+@dirrm %%DATADIR%%
