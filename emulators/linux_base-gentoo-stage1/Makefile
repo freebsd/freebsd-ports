@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	experimental/alpha/stages
 DISTNAME=	stage1-alpha-20030721
 .endif
 .if (${PORTARCH} == "amd")
+BROKEN=		"Linux emulation is not available on x86-64"
+IGNORE=		${BROKEN}
 MASTER_SITE_SUBDIR=	experimental/amd64/stages
 DISTNAME=	stage1-amd64-20040124
 .endif
