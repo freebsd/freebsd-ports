@@ -4826,6 +4826,7 @@ linalg		ports/math/linalg
 linc		ports/net/linc
 lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
+lindele		ports/audio/lindele
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
 linkcheck	ports/www/linkcheck
