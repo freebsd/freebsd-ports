@@ -1,0 +1,10 @@
+--- kmplayer/kmplayer.desktop.orig	Mon Mar  3 09:33:01 2003
++++ kmplayer/kmplayer.desktop	Mon Mar  3 09:40:25 2003
+@@ -10,6 +10,6 @@
+ Terminal=0
+ Name=KMPlayer
+ Name[nl]=KMultiMediaSpeler
+-MimeType=audio/x-mp3;audio/x-vorbis;application/x-mplayer2;application/x-ogg;audio/x-mp2;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;video/x-avi;video/x-ms-asf;video/x-ms-wmv;video/x-msvideo;video/quicktime;video/x-flic;
++MimeType=audio/x-mp3;application/x-ogg;video/mpeg;audio/x-mpegurl;audio/x-wav;audio/x-mod;application/vnd.ms-asf;video/x-msvideo;video/quicktime;video/x-flic;
+ Terminal=0
+ InitialPreference=7

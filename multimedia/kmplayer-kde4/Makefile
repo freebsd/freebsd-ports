@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	kmplayer
-PORTVERSION=	0.6.5a
-CATEGORIES=	multimedia audio
+PORTVERSION=	0.7.3
+CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 
 MAINTAINER=	will@FreeBSD.org
@@ -19,9 +19,20 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/kmplayer
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
+
+post-patch:
+# remove optimizations
+	@${REINPLACE_CMD} -e \
+		's|-O2||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# do not try to roll our own mimetypes
+	@${REINPLACE_CMD} -E -e \
+		's|^(SUBDIRS.*)mimetypes|\1|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
