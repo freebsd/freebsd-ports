@@ -1,9 +1,8 @@
 @comment $FreeBSD$
-bin/t1mapper
 bin/xdvi
-bin/xdvi-xaw.bin
-bin/xdvi.bin
+bin/xdvi-motif.bin
 bin/xdvizilla
+%%TEXMF%%/xdvi/XDvi.xdvik-tetex
 %%TEXMF%%/xdvi/xdvi.cfg
 %%TEXMF%%/xdvi/pixmaps/toolbar.xpm
 %%TEXMF%%/xdvi/pixmaps/toolbar2.xpm

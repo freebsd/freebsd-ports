@@ -1,20 +1,36 @@
 #!/bin/sh
 # $FreeBSD$
 
-GREP=/usr/bin/grep
-SED=/usr/bin/sed
-MODE=default
-
+PAPERSIZE=%%PAPERSIZE%%
+XDVIDIR=%%XDVIDIR%%
+XDVIVARDIR=%%XDVIVARDIR%%
 MKTEXLSR=%%MKTEXLSR%%
-TETEX_MODESW=%%TETEX_MODESW%%
+TEXCONFIG=%%TEXCONFIG%%
+PATH=${PATH}:%%LOCALBASE%%/bin
 
 case $2 in
 POST-INSTALL)
-	${TETEX_MODESW} ${MODE} XDvi forceinstall
-	${MKTEXLSR}
+	cp -v ${XDVIDIR}/XDvi.xdvik-tetex ${XDVIDIR}/XDvi
+	if [ -f ${XDVIVARDIR}/XDvi ]; then
+		echo "======"
+		echo "NOTICE: you have to merge "\
+			"${XDVIVARDIR}/XDvi from ${XDVIDIR}/XDvi."
+		echo "======"
+	fi
+	case ${PAPERSIZE} in
+	letter)
+		${TEXCONFIG} xdvi us
 	;;
+	*)
+		${TEXCONFIG} xdvi a4
+	;;
+	esac
+	${MKTEXLSR}
+;;
 DEINSTALL)
-	${TETEX_MODESW} uninstall XDvi
+	rm -f ${XDVIVARDIR}/XDvi
+	cp -v ${XDVIDIR}/XDvi.tetex ${XDVIDIR}/XDvi
 	${MKTEXLSR}
-	;;
+;;
 esac
+

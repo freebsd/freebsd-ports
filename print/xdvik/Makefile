@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xdvik
-PORTVERSION=	22.78
-PORTREVISION=	2
+PORTVERSION=	22.84.8
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
@@ -16,42 +16,57 @@ PKGNAMESUFFIX=	-tetex
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
-RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
-		--with-t1lib-include=${LIBT1_PREFIX}/include
+CONFIGURE_ARGS= --with-system-t1lib \
+		--with-t1lib-libdir=${LIBT1_PREFIX}/lib \
+		--with-t1lib-include=${LIBT1_PREFIX}/include \
+		--disable-multiplatform
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
+PLIST_SUB=	TEXMF=${TEXMF}
 CONFLICTS=	xdvi-* *-xdvi*
 
-MAN1=		xdvi.1 t1mapper.1 xdvizilla.1
+MAN1=		xdvi.1 xdvizilla.1
 
 TEXMF?=		share/texmf
+TEXMFLOCAL?=	share/texmf-local
+TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXCONFIG?=	${LOCALBASE}/bin/texconfig
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBT1_PREFIX?=	${LOCALBASE}
 DOC_FILES=	BUGS CHANGES INSTALL \
 		README README.CVS README_maintainer TODO
 
-TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+.if defined(WITH_LETTERSIZE)
+FLAVOR+=        letter
+PAPERSIZE=      letter
+.else
+PAPERSIZE=      a4
+.endif
+
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
-PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
-		MKTEXLSR=${MKTEXLSR}
+PKGINSTALL_SUB=	MKTEXLSR=${MKTEXLSR} \
+		XDVIDIR=${PREFIX}/${TEXMF}/xdvi \
+		XDVIVARDIR=${PREFIX}/${TEXMF}-var/xdvi \
+		PAPERSIZE=${PAPERSIZE} \
+		TEXCONFIG=${TEXCONFIG} \
+		LOCALBASE=${LOCALBASE}
 
 pre-build:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -59,7 +74,6 @@ pre-build:
 	${CHMOD} 0755 ${PKGINSTALL}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/texk/xdvik/t1mapper ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
