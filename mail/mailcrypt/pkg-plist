@@ -19,3 +19,4 @@ info/mailcrypt.info-2
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-setversion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-toplev.el
 %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt/mc-toplev.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/mailcrypt
