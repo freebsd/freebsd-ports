@@ -1,0 +1,16 @@
+--- comment.c.orig	Tue Nov 16 20:11:38 1999
++++ comment.c	Tue Jan 14 16:17:17 2003
+@@ -158,8 +158,11 @@
+ 
+  if(comment)
+    {
+-    malloc_comment=Realloc(malloc_comment,strlen(comment)+1);
+-    strcpy(malloc_comment,comment);
++    if(malloc_comment != comment)
++      {
++       malloc_comment=Realloc(malloc_comment,strlen(comment)+1);
++       strcpy(malloc_comment,comment);
++      }
+     current_comment=malloc_comment;
+    }
+  else
