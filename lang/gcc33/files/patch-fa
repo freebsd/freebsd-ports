@@ -1,6 +1,6 @@
---- gcc/c-common.c.orig	Thu Nov 16 22:05:12 2000
-+++ gcc/c-common.c	Mon Nov 27 02:25:55 2000
-@@ -193,7 +193,7 @@
+--- gcc/c-common.c.orig	Sat Dec  2 19:46:03 2000
++++ gcc/c-common.c	Mon Dec 11 12:11:16 2000
+@@ -232,7 +232,7 @@
  						 int, int, int));
  static void init_attributes		PARAMS ((void));
  static void record_function_format	PARAMS ((tree, tree, enum format_type,
@@ -9,7 +9,7 @@
  static void record_international_format	PARAMS ((tree, tree, int));
  static int default_valid_lang_attribute PARAMS ((tree, tree, tree, tree));
  
-@@ -888,6 +888,7 @@
+@@ -927,6 +927,7 @@
  	    enum format_type format_type;
  	    tree argument;
  	    unsigned int arg_num;
@@ -17,7 +17,7 @@
  
  	    if (TREE_CODE (decl) != FUNCTION_DECL)
  	      {
-@@ -898,7 +899,7 @@
+@@ -937,7 +938,7 @@
  
  	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
  	      {
@@ -26,7 +26,7 @@
  		continue;
  	      }
  	    else
-@@ -906,12 +907,26 @@
+@@ -945,12 +946,26 @@
  		const char *p = IDENTIFIER_POINTER (format_type_id);
  
  		if (!strcmp (p, "printf") || !strcmp (p, "__printf__"))
@@ -53,7 +53,7 @@
  		else
  		  {
  		    warning ("`%s' is an unrecognized format function type", p);
-@@ -990,7 +1005,8 @@
+@@ -1029,7 +1044,8 @@
  
  	    record_function_format (DECL_NAME (decl),
  				    DECL_ASSEMBLER_NAME (decl),
@@ -63,21 +63,28 @@
  	    break;
  	  }
  
-@@ -1654,6 +1670,13 @@
+@@ -1693,6 +1709,20 @@
  
  static const format_char_info print_char_table[] =
  {
-+#ifdef XXX_NEED_TO_UPDATE_THIS_FOR_GCC297_CHANGES
-+/* FreeBSD kernel extensions.  */
-+  { "D",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
-+  { "b",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
-+  { "rz",	0,	NULL,	T_I,	T_I,	T_L,	NULL,	NULL,	NULL,	"-wp0 +#"	},
++#warning The FreeBSD kernel extensions in print_char_table might not be done correctly.
++/* FreeBSD kernel extensions (src/sys/kern/subr_prf.c).  */
++/* The format %b is supported to decode error registers.
++   Its usage is:	printf("reg=%b\n", regval, "<base><arg>*");
++   which produces:	reg=3<BITTWO,BITONE>
++   The format %D provides a hexdump given a pointer and separator string:
++   ("%6D", ptr, ":")		-> XX:XX:XX:XX:XX:XX
++   ("%*D", len, ptr, " ")	-> XX XX XX XX ...
++   */
++  { "D",   1, STD_EXT, { T89_C,   T89_C,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp"       "c" },
++  { "b",   1, STD_EXT, { T89_C,   T89_C,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp"       "" },
++  { "rz",  0, STD_EXT, { BADLEN,  T89_I,   T89_I,   T89_L,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp0 +#"   "i" },
 +#define unextended_print_char_table	(print_char_table + 3)
-+#endif
++#warning The FreeBSD kernel extensions in print_char_table might not be done correctly.
    /* C89 conversion specifiers.  */
    { "di",  0, STD_C89, { T89_I,   T99_SC,  T89_S,   T89_L,   T99_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i" },
    { "oxX", 0, STD_C89, { T89_UI,  T99_UC,  T89_US,  T89_UL,  T99_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i" },
-@@ -1752,6 +1775,7 @@
+@@ -1791,6 +1821,7 @@
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
@@ -85,7 +92,7 @@
  } function_format_info;
  
  static function_format_info *function_format_list = NULL;
-@@ -1837,42 +1861,42 @@
+@@ -1876,42 +1907,42 @@
      {
        /* Functions from ISO/IEC 9899:1990.  */
        record_function_format (get_identifier ("printf"), NULL_TREE,
@@ -144,7 +151,7 @@
      }
  
    if (flag_hosted && flag_noniso_default_format_attributes)
-@@ -1895,12 +1919,13 @@
+@@ -1934,12 +1965,13 @@
  
  static void
  record_function_format (name, assembler_name, format_type,
@@ -159,7 +166,7 @@
  {
    function_format_info *info;
  
-@@ -1924,6 +1949,7 @@
+@@ -1963,6 +1995,7 @@
    info->format_type = format_type;
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
@@ -167,7 +174,7 @@
  }
  
  /* Record information for the names of function that modify the format
-@@ -2415,7 +2441,7 @@
+@@ -2454,7 +2487,7 @@
  	 specially if info == NULL and add a res->number_null entry for
  	 that case, or maybe add a function pointer to be called at
  	 the end instead of hardcoding check_format_info_main.  */
@@ -176,7 +183,7 @@
  
        /* Skip to first argument to check, so we can see if this format
  	 has any arguments (it shouldn't).  */
-@@ -2611,6 +2637,54 @@
+@@ -2650,6 +2683,54 @@
  	      main_arg_num = opnum + info->first_arg_num - 1;
  	    }
  	}
@@ -231,12 +238,12 @@
  
        /* Read any format flags, but do not yet validate them beyond removing
  	 duplicates, since in general validation depends on the rest of
-@@ -2984,7 +3058,7 @@
- 	else if (strchr (fci->flags2, '2') != 0)
- 	  y2k_level = 2;
- 	if (y2k_level == 3)
--	  status_warning (status, "`%%%c' yields only last 2 digits of year in some locales",
-+	  status_warning (status, "`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
- 			  format_char);
- 	else if (y2k_level == 2)
- 	  status_warning (status, "`%%%c' yields only last 2 digits of year", format_char);
+@@ -3024,7 +3105,7 @@
+ 	  else if (strchr (fci->flags2, '2') != 0)
+ 	    y2k_level = 2;
+ 	  if (y2k_level == 3)
+-	    status_warning (status, "`%%%c' yields only last 2 digits of year in some locales",
++	    status_warning (status, "`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
+ 			    format_char);
+ 	  else if (y2k_level == 2)
+ 	    status_warning (status, "`%%%c' yields only last 2 digits of year", format_char);

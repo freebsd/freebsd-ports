@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-11-20
+SNAPDATE=	2000-12-11
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
