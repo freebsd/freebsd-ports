@@ -4,7 +4,7 @@
 # Date created: 13 Sep 1997
 # Whom:         ache@FreeBSD.org
 #
-# $Id: Makefile,v 1.17 1998/07/31 14:46:18 ache Exp $
+# $Id: Makefile,v 1.18 1998/09/15 17:23:26 ache Exp $
 #
 
 DISTNAME=       adcomplain-4.42
@@ -20,6 +20,11 @@ EXTRACT_CMD=    /usr/bin/uudecode
 EXTRACT_BEFORE_ARGS=    <
 NO_WRKSUBDIR=	YES
 NO_BUILD=       YES
+
+post-patch:
+	cd ${WRKSRC}; \
+	cp adcomplain.pl adcomplain.pl.old; \
+	sed 's=%PERL5%=${PERL5}=' < adcomplain.pl.old > adcomplain.pl
 
 do-install:
 	cd ${WRKSRC}; \
