@@ -1,0 +1,16 @@
+share/gnome/gdesklets/Displays/Countdown/Countdown.display
+share/gnome/gdesklets/Displays/Countdown/README
+share/gnome/gdesklets/Displays/Countdown/gfx/frame.png
+share/gnome/gdesklets/Displays/Countdown/gfx/safari1.png
+share/gnome/gdesklets/Displays/Countdown/gfx/safari2.png
+share/gnome/gdesklets/Displays/Countdown/gfx/safari3.png
+share/gnome/gdesklets/Sensors/Countdown/__init__.py
+share/gnome/gdesklets/Sensors/Countdown/__init__.pyc
+share/gnome/gdesklets/Sensors/Countdown/__init__.pyo
+share/gnome/gdesklets/Sensors/LTVFontSelector/__init__.py
+share/gnome/gdesklets/Sensors/LTVFontSelector/__init__.pyc
+share/gnome/gdesklets/Sensors/LTVFontSelector/__init__.pyo
+@dirrm share/gnome/gdesklets/Sensors/LTVFontSelector
+@dirrm share/gnome/gdesklets/Sensors/Countdown
+@dirrm share/gnome/gdesklets/Displays/Countdown/gfx
+@dirrm share/gnome/gdesklets/Displays/Countdown
