@@ -6,8 +6,43 @@
 # $FreeBSD$
 #
 
+# There are several knobs which are used to define additions to the core
+# mutt functionality. The two most important are:
+#
+#  WITH_MUTT_IMAP, which should be defined if you are accessing an IMAP server
+#    (here you also can say WITH_MUTT_SSL, if your IMAP server is SSL capable)
+#  WITH_MUTT_POP, which should be defined if you are accessing a POP server 
+#    (here you also can say WITH_MUTT_SSL, if your POP server is SSL capable)
+#
+# In general you can choose between using the SLANG port (which is really 
+# recommended and is now the default) and ncurses (WITH_MUTT_NCURSES). If you
+# don't want to use SLANG define WITHOUT_MUTT_SLANG.
+# 
+# If you want to install the mutt documentation in html format define:
+#  WITH_MUTT_HTML
+#
+# If you want to read news with mutt define:
+#  WITH_MUTT_NNTP
+#    (note that this implies building of the inn port to be able to post new
+#     articles)
+#
+# If you want to use the SASL authentication features with your email server
+# define
+#  WITH_MUTT_CYRUS_SASL
+#
+# If you want to access compressed email folders define:
+#  WITH_MUTT_COMPRESSED_FOLDERS
+#
+# If you want to enable extended quoting functions define:
+#  WITH_MUTT_QUOTE_PATCH
+#
+# If you want to enable extended functions for the ru locale define:
+#  WITH_MUTT_RU_PATCH
+ 
+
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.25
+PORTREVISION=	1
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -25,6 +60,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	udo.schweigert@siemens.com
 
 DIST_SUBDIR=    mutt
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
@@ -56,6 +92,7 @@ PATCH_VERSION=	${PORTVERSION}
 .endif
 
 .if defined(PACKAGE_BUILDING)
+WITH_MUTT_SSL=		yes
 WITH_MUTT_SLANG=	yes
 WITH_MUTT_IMAP=		yes
 WITH_MUTT_POP=		yes
@@ -67,6 +104,20 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 WITH_MUTT_HTML=	yes
 .endif
 .endif
+
+.if defined(WITH_MUTT_SLANG)
+USE_SLANG=	yes
+.endif
+.if defined(WITH_MUTT_NCURSES_PORT)
+WITH_MUTT_NCURSES=	yes
+.endif
+.if defined(WITH_MUTT_NCURSES) && !defined(USE_SLANG)
+USE_NCURSES=	yes
+.endif
+.if !defined(USE_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(USE_NCURSES)
+USE_SLANG=	yes
+.endif
+
 .if defined(WITH_MUTT_SSL) && !defined(WITH_MUTT_IMAP) && \
 	!defined(WITH_MUTT_POP)
 WITH_MUTT_IMAP=	yes
@@ -75,9 +126,9 @@ WITH_MUTT_IMAP=	yes
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
-.if defined(WITH_MUTT_SLANG)
+.if defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
-.elif defined(WITH_MUTT_NCURSES_PORT)
+.elif defined(USE_NCURSES) && ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
@@ -99,9 +150,9 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .if defined(WITH_MUTT_LOCALES_FIX)
 CONFIGURE_ARGS+=	--enable-locales-fix
 .endif
-.if defined(WITH_MUTT_SLANG)
+.if defined(USE_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
-.elif defined(WITH_MUTT_NCURSES_PORT)
+.elif defined(USE_NCURSES) && ${OSVERSION} < 400000
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .endif
 .if defined(WITH_MUTT_SSL)
@@ -157,6 +208,11 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
+.if defined(WITH_MUTT_NNTP)
+PLIST_SUB+=	SUB_NNTP=""
+.else
+PLIST_SUB+=	SUB_NNTP="@comment "
+.endif
 .if defined(WITH_MUTT_HTML)
 PLIST_SUB+=	SUB_HTML=""
 .if defined(WITH_MUTT_IMAP) || defined(WITH_MUTT_POP)
@@ -775,6 +831,7 @@ PLIST_SUB+=	SUB_ADD_O="@comment "
 .endif
 .else 	# NOPORTDOCS
 PLIST_SUB+=	SUB_HTML="@comment "
+PLIST_SUB+=	SUB_NNTP="@comment "
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -802,7 +859,12 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
+		../ABOUT-NLS ../contrib/language* \
 		${PREFIX}/share/doc/mutt
+.if defined(WITH_MUTT_NNTP)
+	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp \
+		${PREFIX}/share/doc/mutt
+.endif
 .if defined(WITH_MUTT_HTML)
 	@${MKDIR} ${PREFIX}/share/doc/mutt/html && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt/html
