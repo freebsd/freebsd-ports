@@ -54,4 +54,10 @@ pre-everything::
 post-patch:
 	${TOUCH} -t 200401230000 ${WRKSRC}/Makefile.am.in
 
+.if ${ARCH} == "amd64"
+post-configure:
+	${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -fPIC," \
+		${WRKSRC}/bdb/build_unix/Makefile ${WRKSRC}/bdb/Makefile
+.endif
+
 .include <bsd.port.post.mk>
