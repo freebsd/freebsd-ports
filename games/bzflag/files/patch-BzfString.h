@@ -1,18 +1,11 @@
---- include/BzfString.h.orig	Sat Nov 23 15:04:54 2002
-+++ include/BzfString.h	Sat Nov 23 15:05:16 2002
-@@ -39,12 +39,14 @@
- 
+--- include/BzfString.h.orig	Thu Oct 17 04:29:38 2002
++++ include/BzfString.h	Mon Dec  9 22:08:01 2002
+@@ -40,6 +40,8 @@
  #include "common.h"
- 
--#if defined(sun) || defined(__MWERKS__)
-+#if 1
- // solaris compiler doesn't like declaration of ostream
  #include "bzfio.h"
- #else
- class ostream;
- #endif
-+
-+using std::ostream;
  
++using std::ostream;
++
  class BzfString {
    public:
+ 			BzfString();
