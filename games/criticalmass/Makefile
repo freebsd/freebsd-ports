@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	criticalmass
-PORTVERSION=	0.97
-PORTREVISION=	1
+PORTVERSION=	0.98
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	criticalmass
 DISTNAME=	CriticalMass-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
-COMMENT=	An SDL/OpenGL space shoot'em up game
+COMMENT=	An SDL/OpenGL space shoot\'em up game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
@@ -28,14 +28,10 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
 
 MAN6=		critter.6
 
-SDLINCPFILES=	utilities/GLBitmapCollection.cpp utilities/GLExtension.hpp \
-		utilities/GLTexture.hpp utilities/PNG.hpp
+SDLINCPFILES=	utilssdl/PNG.hpp utilsgl/GLTexture.hpp \
+		utilsgl/GLBitmapCollection.cpp utilsgl/GLExtension.hpp
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's#sdl-config#sdl11-config#; s#-lSDL # #;' ${WRKSRC}/configure
