@@ -129,6 +129,7 @@
     SUBDIR += mod_csacek
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
+    SUBDIR += mod_extract_forwarded
     SUBDIR += mod_fastcgi
     SUBDIR += mod_gzip
     SUBDIR += mod_hosts_access
