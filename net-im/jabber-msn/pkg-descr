@@ -1,6 +1,8 @@
 The Jabber server (jabberd) is a daemon for Jabber clients to connect
 and communicate with.  The MSN-Transport allows clients to chat with MSN
-users.
+users. This package contain a pre-release version supporting MSN protocol 8.
+After 15 october 2003 all MSN clients are required to support this version of
+the protocol or higher by the MSN servers.
 
 You can learn more about Jabber at:
 WWW: http://server.jabber.org/
