@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	stuphead
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://stuphead.antex.ru/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}-${PORTVERSION}.patch
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
@@ -34,6 +34,7 @@ CONFIGURE_ARGS+=	--disable-gdk-pixbuf \
 
 .if defined (WITH_GNOME)
 USE_GNOME=	yes
+PLIST=		${PKGDIR}/pkg-plist.gnome
 CONFIGURE_ARGS+=	--enable-gnome
 .else
 CONFIGURE_ARGS+=	--disable-imlib \
@@ -41,6 +42,7 @@ CONFIGURE_ARGS+=	--disable-imlib \
 .endif
 
 .if defined (WITH_MOZILLA)
+PLIST=		${PKGDIR}/pkg-plist.mozilla
 CONFIGURE_ARGS+=	--enable-mozilla
 BUILD_DEPENDS+=	${PREFIX}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers
 RUN_DEPENDS+=	${PREFIX}/bin/mozilla:${PORTSDIR}/www/mozilla
@@ -55,5 +57,19 @@ pre-patch:
 		${WRKSRC}/configure
 	@${PERL} -pi -e 's#/usr/bin/gnome-config#$(PREFIX)/bin/gnome-config#g' \
 		${WRKSRC}/configure
+
+do-install:
+.if defined (WITH_MOZILLA)
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}bin ${PREFIX}/bin
+.else
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}bin ${PREFIX}/bin/${PORTNAME}
+.endif
+	@ ${INSTALL_DATA} ${WRKSRC}/src/pixmaps/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
+	@ ${INSTALL_DATA} ${WRKSRC}/po/fr.gmo ${PREFIX}/share/locale/fr/LC_MESSAGES/${PORTNAME}.mo
+	@ ${INSTALL_DATA} ${WRKSRC}/po/ru.gmo ${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
+.if defined (WITH_GNOME)
+	@ ${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/gnome/apps/Internet
+.endif
 
 .include <bsd.port.mk>
