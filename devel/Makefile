@@ -441,6 +441,7 @@
     SUBDIR += p5-Alias
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
+    SUBDIR += p5-Array-Window
     SUBDIR += p5-AtExit
     SUBDIR += p5-Attribute-Handlers
     SUBDIR += p5-B-Graph

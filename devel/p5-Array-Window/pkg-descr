@@ -1,0 +1,10 @@
+Many applications require that a large set of results be broken down
+into a smaller set of 'windows', or 'pages' in web language.
+Array::Window implements an algorithm specifically for dealing with
+these windows.  It is very flexible and permissive, making adjustments
+to the window as needed.
+
+WWW: http://search.cpan.org/dist/Array-Window/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
