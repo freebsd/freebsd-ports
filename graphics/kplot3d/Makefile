@@ -25,4 +25,4 @@ USE_GMAKE=	yes
 BROKEN=		"Obsolete compiler"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

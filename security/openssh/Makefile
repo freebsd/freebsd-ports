@@ -152,4 +152,4 @@ post-install:
 	@${ECHO_MSG} ">> need to update it to work with OpenSSH."
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

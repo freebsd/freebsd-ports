@@ -34,4 +34,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/wmpop3 && ${CHMOD} a+rx ${PREFIX}/share/doc/wmpop3
 	@${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -27,4 +27,4 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 BROKEN=		"Requires NEWGCC-compiled KDE libs"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

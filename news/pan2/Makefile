@@ -37,4 +37,4 @@ pre-fetch:
 	@${ECHO}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

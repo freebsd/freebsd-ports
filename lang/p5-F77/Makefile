@@ -33,4 +33,4 @@ post-patch:
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

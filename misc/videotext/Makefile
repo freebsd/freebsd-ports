@@ -31,4 +31,4 @@ pre-install:
 	@${ECHO} "*********************************************************"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
