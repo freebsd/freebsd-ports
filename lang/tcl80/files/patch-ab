@@ -1,6 +1,6 @@
---- configure	Wed Nov 18 14:54:26 1998
-+++ configure	Mon Nov 30 15:05:10 1998
-@@ -4065,15 +4065,23 @@
+--- configure.orig	Mon Mar  8 22:51:26 1999
++++ configure	Thu Apr 29 11:13:56 1999
+@@ -4097,15 +4097,23 @@
    echo "$ac_t""yes" 1>&6
    
  	    SHLIB_CFLAGS="-fpic"
@@ -21,7 +21,7 @@
 +	    if [ "$PORTOBJFORMAT" = "elf" ]; then
 +		TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
 +	    else
-+		TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.4'
++		TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.5'
 +	    fi
 +
  else
