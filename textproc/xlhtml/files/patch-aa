@@ -1,0 +1,28 @@
+--- xlHtml/Makefile.in.orig	Mon Mar 27 21:36:41 2000
++++ xlHtml/Makefile.in	Mon Mar 27 21:39:25 2000
+@@ -84,8 +84,8 @@
+ 
+ EXTRA_DIST = README ChangeLog TODO THANKS Test.xls Test.html xlHtml.ide
+ 
+-INCLUDES = -I$(top_srcdir)
+-LDADD = $(top_builddir)/libcole.la
++INCLUDES = -I$(LOCALBASE)/include
++LDADD = -L$(LOCALBASE)/lib -lcole
+ 
+ noinst_PROGRAMS = dump 
+ bin_SCRIPTS = nsopen nsxlview
+@@ -103,12 +103,12 @@
+ xlHtml_SOURCES = xlHtml.c
+ xlHtml_OBJECTS =  xlHtml.o
+ xlHtml_LDADD = $(LDADD)
+-xlHtml_DEPENDENCIES =  $(top_builddir)/libcole.la
++xlHtml_DEPENDENCIES =  
+ xlHtml_LDFLAGS = 
+ dump_SOURCES = dump.c
+ dump_OBJECTS =  dump.o
+ dump_LDADD = $(LDADD)
+-dump_DEPENDENCIES =  $(top_builddir)/libcole.la
++dump_DEPENDENCIES =  
+ dump_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS)
+ 

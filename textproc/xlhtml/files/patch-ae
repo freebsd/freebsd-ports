@@ -1,0 +1,23 @@
+ --- xlHtml/nsxlview.orig	Tue Mar 28 13:49:06 2000
+ +++ xlHtml/nsxlview	Tue Mar 28 14:34:35 2000
+ @@ -1,4 +1,4 @@
+ -#!/bin/tcsh
+ +#!/bin/csh
+  
+  if ($#argv != 1) then
+      echo "Usage: $0 file.xls"
+ @@ -9,12 +9,12 @@
+  
+  #Generate a unique html filename (/tmp/scriptname.pidnum.html)
+  set com = $0
+ -set tmp = /tmp/$com:t.$$
+ +set tmp = `mktemp -t $0:t` || exit 1
+  set html = $tmp.html
+  
+  xlHtml -a $source > $html
+ -if ((!(-s $html)) | ($status)) then
+ -    echo "$0: failed to generate HTML file"
+ +if ((!(-r $html)) | ($status)) then
+ +    echo "$0"": failed to generate HTML file"
+      exit 1
+  endif

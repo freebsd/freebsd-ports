@@ -1,0 +1,17 @@
+--- xlHtml/xlHtml.c.orig	Tue Mar 28 09:56:24 2000
++++ xlHtml/xlHtml.c	Mon Mar 27 23:06:47 2000
+@@ -645,8 +645,13 @@
+ 					ws_array[i]->ws_title.str, ws_array[i]->biggest_row, ws_array[i]->biggest_col);
+ 			}
+ 		}
+-		else if (Xtract)
++		else if (Xtract) {
++			if(xr2 == MAX_ROWS)
++				xr2 = ws_array[xp]->biggest_row;
++			if(xc2 == MAX_COLS)
++				xc2 = ws_array[xp]->biggest_col;
+ 			OutputTableGnuPlot();
++		}
+ 	}
+ 	else
+ 	{
