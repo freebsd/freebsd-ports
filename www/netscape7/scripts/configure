@@ -1,6 +1,7 @@
 #!/bin/sh
 #
-# $FreeBSD$
+# $FreeBSD: ports/www/netscape7/scripts/configure,v 1.3 2002/05/23 13:00:10 tre
+vor Exp $
 
 echo ${WRKSRC}/components.conf
 if [ -f ${WRKSRC}/components.conf ]; then
@@ -11,20 +12,18 @@ tempfile=`/usr/bin/mktemp -t checklist`
 
 if [ -z "${BATCH}" ]; then
 
-/usr/bin/dialog --title "Netscape 6 component selection" --clear \
+/usr/bin/dialog --title "Netscape 7 component selection" --clear \
 	--checklist "\n\
-Choose components of Netscape 6 to download and install. \n\
+Choose components of Netscape 7 to download and install. \n\
 Press the space bar to toggle selections." -1 -1 12 \
-"browser"	"Web browser (6576 kB)"				ON \
+"browser"	"Web browser (8208 kB)"				ON \
 "deflenus"	"American English profile defaults (26 kB)"	ON \
 "flash"		"Flash plugin (576 kB)"				ON \
-"jre"		"Java plugin (13808 kB)"			ON \
-"langenus"	"American English language pack (608 kB)"	ON \
-"mail"		"e-mail and news (1824 kB)"			ON \
-"regca"		"regional settings for Canada (56 kB)"		ON \
-"reges"		"regional settings for Latin America (54 kB)"	ON \
-"reggb"		"regional settings for the UK (58 kB)"		ON \
-"regus"		"regional settings for the USA (56 kB)"		ON \
+"jre"		"Java plugin (28592 kB) DOES NOT WORK"		OFF \
+"langenus"	"American English language pack (800 kB)"	ON \
+"mail"		"e-mail and news (2176 kB)"			ON \
+"regca"		"regional settings for Canada (58 kB)"		ON \
+"regus"		"regional settings for the USA (58 kB)"		ON \
 "spellchecker"	"spell-checker (544 kB)"			ON \
 "talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
 2> /tmp/checklist.tmp.$$

@@ -3,13 +3,18 @@ editor, mail user agent and news reader). Using the Linux version
 on FreeBSD is necessary if you want to use Linux versions of plugins.
 Many plugins are distributed only as Linux binaries.  The Sun Java
 and Macromedia Flash plugins are included.  AOL Instant Messenger
-is omitted (see ports/net/aim).  The Canadian, Latin American and
-British region packs, spell-checker, and talkback are enabled.
+is omitted (see ports/net/aim).  The Canadian and United States
+region packs, spell-checker, and talkback are available.
 
-The Java plugin does not work with linux_base-7, only linux_base-61
-or linux_base-62.
+The Java plugin does not work.
 
-WWW: http://browsers.netscape.com/browsers/6/
+This port installs a preview release of the Netscape browser.
+Historically, such versions have contained a "time bomb" which will
+cause the program to stop working after a predetermined date, usually
+a few months after Netscape first offers the program.  If this is
+unsuitable for you, use a regular release instead.
+
+WWW:  http://channels.netscape.com/ns/browsers/7/default.jsp
 
 Trevor Johnson
 trevor@FreeBSD.org
