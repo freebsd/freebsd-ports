@@ -20,7 +20,9 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-PLIST_SUB=	C2HS_VERSION=${PORTVERSION}
+GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
+			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+PLIST_SUB+=	C2HS_VERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-add-package
 
@@ -42,5 +44,6 @@ post-build:
 post-install:
 	@(cd ${WRKSRC}/doc/c2hs/man1 && \
 		 ${INSTALL_MAN} c2hs-config.1 c2hs.1 ${MANPREFIX}/man/man1)
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.mk>

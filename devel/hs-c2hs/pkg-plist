@@ -13,4 +13,6 @@ lib/c2hs-%%C2HS_VERSION%%/ghc5/c2hs.o
 @dirrm lib/c2hs-%%C2HS_VERSION%%/ghc5
 @dirrm lib/c2hs-%%C2HS_VERSION%%
 @exec %D/bin/c2hs-config --package-conf | %D/bin/ghc-pkg -u -g
+@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 @unexec %D/bin/ghc-pkg -r c2hs
+@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
