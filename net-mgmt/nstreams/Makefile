@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nstreams
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nstreams/
 
