@@ -13,5 +13,8 @@ will be a label. However, the child widget can also be a pixmap, image
 or any combination possible the programmer desires. This flexibility is
 adhered to throughout the library.
 
+Warning: this library is unstable development version, incompatible with
+version 1.2, so it could not be used as a replacement for the older one.
+
 - Vanilla
 vanilla@MinJe.com.TW

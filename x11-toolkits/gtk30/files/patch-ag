@@ -1,26 +1,26 @@
---- gtk/Makefile.in.orig	Thu May 25 04:11:04 2000
-+++ gtk/Makefile.in	Thu May 25 13:49:05 2000
-@@ -125,7 +125,7 @@
+--- gtk/Makefile.in.orig	Sat Jul 15 03:51:11 2000
++++ gtk/Makefile.in	Tue Jul 18 13:38:00 2000
+@@ -156,7 +156,7 @@
  x_libs = @x_libs@
  xinput_progs = @xinput_progs@
  
--INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@					@STRIP_END@
-+INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(gtkconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-I$(top_srcdir)						@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@GLIB_CFLAGS@						@x_cflags@					@STRIP_END@
+-INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
++INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_DISABLE_COMPAT_H					-DGTK_EXE_PREFIX=\"$(exec_prefix)\"			-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(gtkconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_XIM_FLAGS@						@GTK_LOCALE_FLAGS@					@PANGO_CFLAGS@						@GLIB_CFLAGS@						@more_cflags@					@STRIP_END@
  
  
- #
-@@ -190,7 +190,7 @@
+ gtarget = @gdktarget@
+@@ -253,7 +253,7 @@
  gen_sources = xgen-gdef xgen-gtbh xgen-gtbvc xgen-gtbic xgen-gtbec xgen-gmh xgen-gmc
  CLEANFILES =  $(gen_sources)
  
--gtkconfdir = $(sysconfdir)/gtk
-+gtkconfdir = $(datadir)/themes/Default/gtk
- gtkconf_DATA = gtkrc.bg gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii gtkrc.cp1255
+-gtkconfdir = $(sysconfdir)/gtk-2.0
++gtkconfdir = $(datadir)/themes/Default/gtk-2.0
+ gtkconf_DATA = gtkrc.el gtkrc.eo gtkrc.he gtkrc.hy gtkrc.ja 	gtkrc.ko gtkrc.ru gtkrc.tr gtkrc.th gtkrc.uk gtkrc.iso-8859-2 	gtkrc.iso-8859-5 gtkrc.iso-8859-13 gtkrc.iso-8859-14 	gtkrc.iso-8859-15 gtkrc.zh_CN gtkrc.zh_TW.Big5 	gtkrc.ka_GE.georgianacademy gtkrc.ka_GE.georgianps 	gtkrc.vi_VN.tcvn gtkrc.vi_VN.viscii 	gtkrc.cp1251
  
  
-@@ -503,7 +503,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-gtkconfDATA \
- 		uninstall-libgtkincludeHEADERS uninstall-local
+@@ -2900,7 +2900,7 @@
+ 		uninstall-libgtk_nanox_includeHEADERS \
+ 		uninstall-libgtk_x11_includeHEADERS uninstall-local
  uninstall: uninstall-am
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(DATA) $(HEADERS)
 +all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)

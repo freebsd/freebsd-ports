@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in.orig	Tue Jul 18 18:03:38 2000
++++ docs/reference/Makefile.in	Tue Jul 18 18:03:52 2000
+@@ -156,7 +156,7 @@
+ x_libs = @x_libs@
+ xinput_progs = @xinput_progs@
+ 
+-SUBDIRS = gdk-pixbuf
++SUBDIRS = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
