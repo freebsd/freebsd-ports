@@ -11,7 +11,7 @@ CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.javasoft.com/docs/
 DISTNAME=	tutorial
 
-MAINTAINER=	martti.kuparinen@ericsson.com
+MAINTAINER=	martti.kuparinen@iki.fi
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
