@@ -1,6 +1,15 @@
---- src/Makefile.in.orig	Mon Mar 19 00:32:47 2001
-+++ src/Makefile.in	Mon Mar 19 00:36:54 2001
-@@ -53,51 +53,15 @@
+--- src/Makefile.in.orig	Fri Mar 21 19:42:58 2003
++++ src/Makefile.in	Fri Mar 21 19:43:33 2003
+@@ -45,7 +45,7 @@
+ 	cd modules; $(MAKE)
+ 
+ oops:	${OBJS}
+-	${CC} ${CFLAGS} ${OBJS} ${EXTLDFLAGS} ${LDFLAGS} ${LIBGB_PATH} ${LIBGB_NAME} ${OOPS_LIBS} ${LIBZ_NAME} ${OOPS_RPATH} -o oops
++	${CXX} ${CFLAGS} ${OBJS} ${EXTLDFLAGS} ${LDFLAGS} ${LIBGB_PATH} ${LIBGB_NAME} ${OOPS_LIBS} ${LIBZ_NAME} ${OOPS_RPATH} -o oops
+ 
+ mkinstalldirs:
+ 	../mkinstalldirs ${OOPSPATH} \
+@@ -62,51 +62,15 @@
  
  install: all mkinstalldirs
  	$(INSTALL) oops ${OOPS_SBINDIR}
