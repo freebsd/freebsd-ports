@@ -1,9 +1,9 @@
 # New ports collection makefile for:	esound
 # Version required:	0.2.4
-# Date created:		19 Jily 1998
+# Date created:		19 July 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $ID:$
+# $Id$
 #
 
 DISTNAME=	esound-0.2.4
