@@ -4992,6 +4992,7 @@ p5-dTemplate	ports/textproc/p5-dTemplate
 p5-ePerl	ports/lang/p5-ePerl
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
 p5-libapreq	ports/www/p5-libapreq
+p5-libnet	ports/net/p5-libnet
 p5-libservlet	ports/www/p5-libservlet
 p5-libwww	ports/www/p5-libwww
 p5-libxml	ports/textproc/p5-libxml
