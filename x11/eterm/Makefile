@@ -1,21 +1,21 @@
 # New ports collection makefile for:	eterm
-# Version required:    .6apl2
+# Version required:    0.6apl2
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/01 14:58:46 jseger Exp $
+# $Id: Makefile,v 1.2 1997/11/02 19:09:30 max Exp $
 #
 
-DISTNAME=	Eterm-DR-0.6a
-PKGNAME=	eterm-0.6a
+DISTNAME=	Eterm-DR-0.6aPL2
+PKGNAME=	eterm-0.6a2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.tcserv.com/archive/E/ \
-		http://www.spd.louisville.edu/~mejenn01/archive/E/
+MASTER_SITES=	ftp://cthulhu.mandrake.net/pub/Eterm/
 
 MAINTAINER=	murray@cdrom.com
 
 LIB_DEPENDS=	Im\\.3\\.:${PORTSDIR}/graphics/imlib
 
+WRKSRC=		$(WRKDIR)/Eterm-DR-0.6a
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		Eterm.1
