@@ -5,17 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=       seti
-PORTVERSION=    0.7.0
-CATEGORIES=     astro
-MASTER_SITES=   http://xavier.serpaggi.free.fr/seti/
+PORTNAME=	seti
+PORTVERSION=	0.7.0
+CATEGORIES=	astro
+MASTER_SITES=	http://xavier.serpaggi.free.fr/seti/
 PKGNAMEPREFIX=	gkrellm
 DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
-MAINTAINER=     hmendes@brturbo.com
+MAINTAINER=	hmendes@brturbo.com
 COMMENT=	A SETI@home plugin for GKrellM
 
-BUILD_DEPENDS=  ${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 USE_BZIP2=	yes
