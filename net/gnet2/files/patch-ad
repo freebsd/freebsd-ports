@@ -1,0 +1,13 @@
+--- configure.orig	Tue Apr 11 15:56:56 2000
++++ configure	Thu Jun 15 13:51:43 2000
+@@ -2238,8 +2238,8 @@
+   rm -f conf.glibtest
+ 
+ 
+-glib_cflags=`glib-config --cflags glib`
+-glib_libs=`glib-config --libs glib`
++glib_cflags=`$GLIB_CONFIG --cflags glib`
++glib_libs=`$GLIB_CONFIG --libs glib`
+ 
+ 
+ 
