@@ -18,7 +18,7 @@ COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 USE_IMAKE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN6=           mxico.6
+MAN6=		mxico.6
 
 pre-build:
 	@cd ${WRKSRC} && ${MV} Makefile Makefile~  && ${SED} \

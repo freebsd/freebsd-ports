@@ -7,7 +7,7 @@
 
 PORTNAME=	sdpa
 PORTVERSION=	6.00
-PORTREVISION=   2
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.is.titech.ac.jp/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
@@ -16,7 +16,7 @@ DISTFILES+=	${PORTNAME}.${PORTVERSION}.manual.ps.gz \
 		${PORTNAME}.${PORTVERSION}.manual.pdf \
 		${PORTNAME}.${PORTVERSION}.install.txt
 .endif
-DIST_SUBDIR=    sdpa
+DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 
 MAINTAINER=	maho@FreeBSD.org
@@ -34,11 +34,11 @@ LAPACK=		-lalapack
 CBLAS=		-lcblas -lf77blas -latlas -lg2c
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-CXXFLAGS+=      -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CXXFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double  -Wno-multichar
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
-CXXFLAGS+=      -mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+CFLAGS+=-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
+CXXFLAGS+=-mcpu=i686 -march=i686 -mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
 

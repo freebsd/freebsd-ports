@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/libemf/g}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Enhanced Metafile Library
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 

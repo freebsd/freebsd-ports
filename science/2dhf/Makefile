@@ -32,7 +32,7 @@ pre-everything::
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}

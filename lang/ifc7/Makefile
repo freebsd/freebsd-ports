@@ -110,7 +110,7 @@ post-patch:
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
-OBJCOPY_OPS=    --redefine-sym stdin=__stdinp \
+OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp
 .endif

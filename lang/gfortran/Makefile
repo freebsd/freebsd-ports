@@ -32,7 +32,7 @@ SNAPDATE=	20040317
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "amd64" && ${ARCH} != "i386"
-BROKEN=         "Does not compile on !i386 and !amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
 .endif
 
 .if ${ARCH} == "amd64"

@@ -35,9 +35,9 @@ BROWSER?=	mozilla
 PSVIEWER?=	gv
 
 .if !defined(WITH_EXAMPLES)
-PLIST_SUB=      WITH_EXAMPLES="@comment "
+PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
-PLIST_SUB=      WITH_EXAMPLES=""
+PLIST_SUB=	WITH_EXAMPLES=""
 .endif
 
 .ifndef (WITH_EXAMPLES)

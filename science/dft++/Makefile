@@ -14,13 +14,13 @@ DISTFILES=	${PORTNAME}.v${PORTVERSION}.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	dft.in:example si_psp.tar:example output:example
 .endif
-DIST_SUBDIR=    dft++
-EXTRACT_ONLY=   ${PORTNAME}.v${PORTVERSION}.tar.gz
+DIST_SUBDIR=	dft++
+EXTRACT_ONLY=	${PORTNAME}.v${PORTVERSION}.tar.gz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	DFT++, A density functional software
 
-LIB_DEPENDS=    atlas:${PORTSDIR}/math/atlas\
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas\
 		fftw.2:${PORTSDIR}/math/fftw
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

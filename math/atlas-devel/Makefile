@@ -13,16 +13,16 @@ PORTVERSION=	3.7.3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
-PKGNAMESUFFIX=  -devel
+PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
-COMMENT=        Development version of math/atlas
+COMMENT=	Development version of math/atlas
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/ATLAS
-INSTALLS_SHLIB= yes
-USE_REINPLACE=  yes
+INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 NO_PACKAGE=	runtime performance heavily depends on building environment
 
 .include <bsd.port.pre.mk>
@@ -33,9 +33,9 @@ USE_GCC=3.3
 
 # only affects for lapack sub project
 .if defined(WITH_OPTIMIZED_FLAGS)
-FFLAGS+= -pipe -O3 -ffast-math -finline-functions -fstrength-reduce -funroll-loops -fexpensive-optimizations
+FFLAGS+=-pipe -O3 -ffast-math -finline-functions -fstrength-reduce -funroll-loops -fexpensive-optimizations
 .if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH} == "amd64" )
-FFLAGS+= -mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
+FFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
 .endif
 
@@ -50,7 +50,7 @@ post-patch:
 	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/alpha-patch)
 .endif
 
-PICFLAG!= ${MAKE} -f bsd.lib.mk -V PICFLAG
+PICFLAG!=	${MAKE} -f bsd.lib.mk -V PICFLAG
 
 ANSWER_i386?=	${PRINTF} "\n\n\n\n\n\n\n\n\n\n"
 ANSWER_ia64?=	${PRINTF} "\n\n\n2\n\n\n\n\nf77\n-O2 -static\n\n"

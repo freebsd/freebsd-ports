@@ -10,9 +10,9 @@ PORTVERSION=	2.2.1
 PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
-DISTFILES=      mpqc-${PORTVERSION}.tar.gz mpqc-val-2.2.0.tar.gz
+DISTFILES=	mpqc-${PORTVERSION}.tar.gz mpqc-val-2.2.0.tar.gz
 .if !defined(NOPORTDOCS)
-DISTFILES+= mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
+DISTFILES+=	mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 .endif
 
 MAINTAINER=	maho@FreeBSD.org
@@ -43,11 +43,11 @@ MPQC_COMMAND=	${PREFIX}/bin/mpqc
 .include "${FILESDIR}/manpages"
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=        -O2 -ffast-math
-CXXFLAGS+=      -O2 -ffast-math
+CFLAGS+=	-O2 -ffast-math
+CXXFLAGS+=	-O2 -ffast-math
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mfancy-math-387
-CXXFLAGS+=      -mfancy-math-387
+CFLAGS+=	-mfancy-math-387
+CXXFLAGS+=	-mfancy-math-387
 .endif # i386
 .endif
 
