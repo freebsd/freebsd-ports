@@ -6841,6 +6841,7 @@ samba-devel	ports/net/samba-devel
 samba-tng	ports/net/samba-tng
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
+samhain		ports/security/samhain
 samplicator	ports/net/samplicator
 sanduhr		ports/x11-clocks/sanduhr
 sane-backends	ports/graphics/sane-backends
