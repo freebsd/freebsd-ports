@@ -30,7 +30,7 @@ ALL_TARGET=	# empty
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile ${WRKSRC}/package.conf
-	@${REINPLACE_CMD} -e 's|PKCS#5|PKCS 5|' \
+	@${REINPLACE_CMD} -e 's|PKCS#5|PKCS\\#5|' \
 		${WRKSRC}/Codec/Encryption/Padding.hs
 
 do-configure:
