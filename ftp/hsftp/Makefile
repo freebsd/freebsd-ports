@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	hsftp
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	ftp
-MASTER_SITES=	http://la-samhna.de/hsftp/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/network/file-transfer
+MASTER_SITES=	http://la-samhna.de/hsftp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP emulator that uses ssh to transport commands/data
