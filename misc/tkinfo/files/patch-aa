@@ -4,10 +4,10 @@
 *** 4,7 ****
   # a Bourne script: there is no way to get proper quoting and pass through ``~''
   # in the csh.
-  # RCS: $Header: /vol/tukey/tukey1/kennard/src/tkgraph/lib/RCS/tkinfo,v 1.1 93/03/11 17:32:17 kennard Exp $
+  # RCS: $Header: /home/ncvs/ports/misc/tkinfo/patches/patch-aa,v 1.1.1.1 1995/02/24 12:54:57 jmz Exp $
 ! exec wish -f $0.tcl "$@"
 --- 4,7 ----
   # a Bourne script: there is no way to get proper quoting and pass through ``~''
   # in the csh.
-  # RCS: $Header: /vol/tukey/tukey1/kennard/src/tkgraph/lib/RCS/tkinfo,v 1.1 93/03/11 17:32:17 kennard Exp $
-! exec wish -f /usr/local/lib/tk/tkinfo/`basename $0.tcl` "$@"
+  # RCS: $Header: /home/ncvs/ports/misc/tkinfo/patches/patch-aa,v 1.1.1.1 1995/02/24 12:54:57 jmz Exp $
+! exec wish4.1 -f /usr/local/lib/tk/tkinfo/`basename $0.tcl` "$@"
