@@ -57,6 +57,10 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 IGNORE=	"core dumps at runtime"
 .endif # ${ARCH} == "alpha" && ${OSVERSION} < 500035
 
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
+.endif # ${PERL_LEVEL} < 500600
+
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
