@@ -23,6 +23,7 @@
     SUBDIR += cam
     SUBDIR += ccaudio
     SUBDIR += cd-console
+    SUBDIR += cd-discid
     SUBDIR += cd2mp3
     SUBDIR += cdindex
     SUBDIR += cdplay
