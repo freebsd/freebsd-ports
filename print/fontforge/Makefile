@@ -46,9 +46,9 @@ post-extract:
 	${RM} ${WRKDIR}/html/cidmaps.tgz
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKDIR}/html/* ${DOCSDIR}
 .endif
 
