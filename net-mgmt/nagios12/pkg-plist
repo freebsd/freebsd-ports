@@ -3,16 +3,23 @@
 @exec mkdir -p /var/spool/nagios/rw
 @exec chmod 775 /var/spool/nagios /var/spool/nagios/archives /var/spool/nagios/rw
 @exec chown nagios:nagios /var/spool/nagios /var/spool/nagios/archives
-@exec chown nagios:www /var/spool/nagios/rw
+@exec chown nagios:nogroup /var/spool/nagios/rw
 bin/nagios
-bin/nagiostats
-etc/nagios/bigger.cfg-sample
 etc/nagios/cgi.cfg-sample
 etc/nagios/checkcommands.cfg-sample
-etc/nagios/minimal.cfg-sample
+etc/nagios/contactgroups.cfg-sample
+etc/nagios/contacts.cfg-sample
+etc/nagios/dependencies.cfg-sample
+etc/nagios/escalations.cfg-sample
+etc/nagios/hostextinfo.cfg-sample
+etc/nagios/hostgroups.cfg-sample
+etc/nagios/hosts.cfg-sample
 etc/nagios/misccommands.cfg-sample
 etc/nagios/nagios.cfg-sample
 etc/nagios/resource.cfg-sample
+etc/nagios/serviceextinfo.cfg-sample
+etc/nagios/services.cfg-sample
+etc/nagios/timeperiods.cfg-sample
 etc/rc.d/nagios.sh
 share/nagios/cgi-bin/avail.cgi
 share/nagios/cgi-bin/cmd.cgi
@@ -64,7 +71,6 @@ share/nagios/contexthelp/I5.html
 share/nagios/contexthelp/I6.html
 share/nagios/contexthelp/I7.html
 share/nagios/contexthelp/I8.html
-share/nagios/contexthelp/I9.html
 share/nagios/contexthelp/J1.html
 share/nagios/contexthelp/K1.html
 share/nagios/contexthelp/L1.html
@@ -127,7 +133,6 @@ share/nagios/docs/images/interleaved1.png
 share/nagios/docs/images/interleaved2.png
 share/nagios/docs/images/interleaved3.png
 share/nagios/docs/images/logofullsize.png
-share/nagios/docs/images/mrtgstats.png
 share/nagios/docs/images/network-heirarchy.png
 share/nagios/docs/images/network-outage1.png
 share/nagios/docs/images/network-outage2.png
@@ -142,7 +147,6 @@ share/nagios/docs/images/statetransitions.png
 share/nagios/docs/images/statetransitions2.png
 share/nagios/docs/about.html
 share/nagios/docs/addons.html
-share/nagios/docs/adaptive.html
 share/nagios/docs/beginners.html
 share/nagios/docs/cgiauth.html
 share/nagios/docs/cgiincludes.html
@@ -162,6 +166,7 @@ share/nagios/docs/embeddedperl.html
 share/nagios/docs/escalations.html
 share/nagios/docs/eventhandlers.html
 share/nagios/docs/extcommands.html
+share/nagios/docs/faqs.html
 share/nagios/docs/flapping.html
 share/nagios/docs/freshness.html
 share/nagios/docs/funstuff.html
@@ -169,10 +174,10 @@ share/nagios/docs/index.html
 share/nagios/docs/indirectchecks.html
 share/nagios/docs/installing.html
 share/nagios/docs/installweb.html
+share/nagios/docs/int-portsentry.html
 share/nagios/docs/int-snmptrap.html
 share/nagios/docs/int-tcpwrappers.html
 share/nagios/docs/macros.html
-share/nagios/docs/nagiostats.html
 share/nagios/docs/networkoutages.html
 share/nagios/docs/networkreachability.html
 share/nagios/docs/notifications.html
@@ -196,9 +201,14 @@ share/nagios/docs/tuning.html
 share/nagios/docs/verifyconfig.html
 share/nagios/docs/volatileservices.html
 share/nagios/docs/whatsnew.html
+share/nagios/docs/xdata-db.html
+share/nagios/docs/xeddefault.html
+share/nagios/docs/xedtemplate.html
+share/nagios/docs/xoddefault.html
 share/nagios/docs/xodtemplate.html
+share/nagios/docs/xpddefault.html
+share/nagios/docs/xpdfile.html
 share/nagios/images/ack.gif
-share/nagios/images/action.gif
 share/nagios/images/command.png
 share/nagios/images/comment.gif
 share/nagios/images/contexthelp1.gif
@@ -206,7 +216,6 @@ share/nagios/images/contexthelp2.gif
 share/nagios/images/critical.png
 share/nagios/images/delay.gif
 share/nagios/images/delete.gif
-share/nagios/images/detail.gif
 share/nagios/images/disabled.gif
 share/nagios/images/down.gif
 share/nagios/images/downtime.gif
@@ -238,7 +247,11 @@ share/nagios/images/redudancy.png
 share/nagios/images/redundancy.png
 share/nagios/images/restart.gif
 share/nagios/images/right.gif
+share/nagios/images/sbconfig.png
+share/nagios/images/sbgeneral.png
 share/nagios/images/sblogo.jpg
+share/nagios/images/sbmonitor.png
+share/nagios/images/sbreport.png
 share/nagios/images/serviceevent.gif
 share/nagios/images/start.gif
 share/nagios/images/status.gif
@@ -272,7 +285,6 @@ share/nagios/side.html
 share/nagios/stylesheets/avail.css
 share/nagios/stylesheets/checksanity.css
 share/nagios/stylesheets/cmd.css
-share/nagios/stylesheets/common.css
 share/nagios/stylesheets/config.css
 share/nagios/stylesheets/extinfo.css
 share/nagios/stylesheets/histogram.css
@@ -296,7 +308,6 @@ share/nagios/stylesheets/trends.css
 @dirrm share/nagios/media
 @dirrm share/nagios/ssi
 @dirrm share/nagios/stylesheets
-@unexec rmdir %D/share/nagios 2>/dev/null || true
 @unexec rmdir /var/spool/nagios/archives 2>/dev/null || true
 @unexec rmdir /var/spool/nagios/rw 2>/dev/null || true
 @unexec rmdir /var/spool/nagios 2>/dev/null || true
