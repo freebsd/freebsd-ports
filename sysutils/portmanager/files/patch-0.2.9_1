@@ -1,0 +1,68 @@
+diff -ruN --exclude=Makefile.in --exclude=externVars.h.in --exclude=config.h.in --exclude=config.h.in~ ./NEWS ../../0.2.9_1/portmanager/NEWS
+--- ./NEWS	Sun Feb 27 13:51:55 2005
++++ ../../0.2.9_1/portmanager/NEWS	Wed Mar  2 15:31:42 2005
+@@ -2,6 +2,10 @@
+ 
+ NOTE to self: Monitor from 0.2.1 to 0.2.2 item 3.
+ 
++from 0.2.9 to 0.2.9_1	(March 2005)
++
++	1) Added warnings if portmanager is not run as root
++
+ from 0.2.8 to 0.2.9	(February 2005)
+ 
+ 	1) Fixed %done reporting in xterm title bar
+diff -ruN --exclude=Makefile.in --exclude=externVars.h.in --exclude=config.h.in --exclude=config.h.in~ ./libMG/src/MGdbCreate.c ../../0.2.9_1/portmanager/libMG/src/MGdbCreate.c
+--- ./libMG/src/MGdbCreate.c	Thu Feb 17 21:55:04 2005
++++ ../../0.2.9_1/portmanager/libMG/src/MGdbCreate.c	Wed Mar  2 15:34:11 2005
+@@ -68,7 +68,7 @@
+ 	{
+ 		fprintf(stderr, "%s ERROR: unable to open %s\n", id, db->parent.path);
+ 		perror("error");
+-		assert(0);
++		return( NULL );
+ 	}
+ 
+ 	/*zzzzzzzzzzzzzz*/
+diff -ruN --exclude=Makefile.in --exclude=externVars.h.in --exclude=config.h.in --exclude=config.h.in~ ./libPMGR/src/PMGRrDbCreate.c ../../0.2.9_1/portmanager/libPMGR/src/PMGRrDbCreate.c
+--- ./libPMGR/src/PMGRrDbCreate.c	Thu Feb 17 09:39:55 2005
++++ ../../0.2.9_1/portmanager/libPMGR/src/PMGRrDbCreate.c	Wed Mar  2 15:38:33 2005
+@@ -78,6 +78,12 @@
+ 						NULL);
+ 	/*zzzzzzzzzzzzzz*/
+ 
++	if( !property->installedPortsDb )
++	{
++		fprintf( stderr, "%s %s error: portmanager must be run as root\n", id, VERSION );
++		exit(1);
++	}
++
+ 	/*zzzzzzzzzzzzzz*/
+ 	property->objIdx++;
+ 	property->dependencyPortsDb	= MGdbCreate( 
+diff -ruN --exclude=Makefile.in --exclude=externVars.h.in --exclude=config.h.in --exclude=config.h.in~ ./libPMGR/src/PMGRrInitialize.c ../../0.2.9_1/portmanager/libPMGR/src/PMGRrInitialize.c
+--- ./libPMGR/src/PMGRrInitialize.c	Thu Feb 17 22:55:53 2005
++++ ../../0.2.9_1/portmanager/libPMGR/src/PMGRrInitialize.c	Wed Mar  2 15:55:57 2005
+@@ -38,6 +38,7 @@
+ 
+ int	PMGRrInitialize( structProperty* property, int argc, char** argv )
+ {
++	char	id[]		= "PMGRrInitialize";
+ 	char*	commandLineKey	= NULL;
+ 	int	errorCode	= 0;
+ 	int	idx		= 0;	
+@@ -164,6 +165,14 @@
+ 	*/
+ 	property->commandLineDb	= MGdbCreate( property->commandLineDbFileName, property->fieldCommandLineKey, 
+ 					property->fieldCommandLineValue, NULL ); 
++
++	if( !property->commandLineDb )
++	{
++		fprintf( stderr, "%s %s error: portmanager must be run as root\n", id, VERSION );
++		exit(1);
++	}
++
++
+ 	idx	= 1;
+ 	while( idx < argc )
+ 	{
