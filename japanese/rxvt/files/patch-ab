@@ -1,5 +1,5 @@
-*** doc/Makefile.in.orig	Tue Jun  8 18:53:55 1999
---- doc/Makefile.in	Tue Jun  8 21:57:59 1999
+*** doc/Makefile.in.orig	Tue Aug 17 17:16:14 1999
+--- doc/Makefile.in	Sat Aug 21 00:50:02 1999
 ***************
 *** 39,45 ****
   
@@ -24,7 +24,7 @@
   
 ! alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
   
-  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
+  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
   	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
 --- 55,61 ----
   
@@ -32,7 +32,7 @@
   
 ! alldoc:	rxvt.1
   
-  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../autoconf/Make.common.in
+  yodl/versioninfo.yo: yodl/versioninfo.yo.in ../src/version.h
   	$(SED) $(SEDREPLACE) < $(srcdir)/yodl/versioninfo.yo.in > $@
 ***************
 *** 66,82 ****
@@ -72,7 +72,7 @@
   
   distclean:
   
-! install: rxvt.1
+! install:
 ! 	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
   
   uninstall:

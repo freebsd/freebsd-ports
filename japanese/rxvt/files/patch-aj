@@ -1,5 +1,5 @@
-*** src/feature.h.orig	Fri Jun  4 00:01:38 1999
---- src/feature.h	Tue Jun  8 22:09:08 1999
+*** src/feature.h.orig	Tue Aug 17 16:02:45 1999
+--- src/feature.h	Sat Aug 21 00:52:08 1999
 ***************
 *** 153,159 ****
    * This has been superceded and is only for you older users
@@ -18,7 +18,7 @@
   /*
    * To use
 ***************
-*** 365,372 ****
+*** 370,377 ****
   #ifdef KANJI
   # define NFONTS		5
   # define FONT0_IDX	2
@@ -27,7 +27,7 @@
   #endif
   #ifdef ZH
   # define NFONTS		5
---- 365,372 ----
+--- 370,377 ----
   #ifdef KANJI
   # define NFONTS		5
   # define FONT0_IDX	2
