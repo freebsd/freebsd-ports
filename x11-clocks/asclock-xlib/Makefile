@@ -12,10 +12,17 @@ MASTER_SITES=	http://www.asclock.org/tar/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-HAS_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/asclock-xlib
-USE_X_PREFIX=	YES
 USE_XPM=	YES
+
+.include <bsd.port.pre.mk>
+
+.if defined(BATCH)
+USE_IMAKE=	YES
+.else
+USE_X_PREFIX=	YES
+HAS_CONFIGURE=	YES
+.endif
 
 post-patch:
 	@(cd ${WRKSRC}; \
@@ -23,11 +30,10 @@ post-patch:
 	  ${SED} -e s@/usr/local/@${X11BASE}/@ -e s@/usr/share/asclock@${LOCALBASE}/share/asclock@ < config.c.tmp > config.c )
 
 .if defined(BATCH)
-do-configure:
+pre-configure:
 	@(cd ${WRKSRC}; \
 	  ${RM} -rf default_theme; \
-	  ${LN} -s themes/Orb default_theme; \
-	  ${XMKMF} )
+	  ${LN} -s themes/Orb default_theme)
 .endif
 
 post-install:
@@ -37,4 +43,4 @@ post-install:
 	  ${INSTALL_DATA} *.xpm config ${PREFIX}/share/asclock/${i}/ )
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
