@@ -9,5 +9,6 @@ share/jpilot/AddressDB.pdb
 share/jpilot/ToDoDB.pdb
 share/jpilot/MemoDB.pdb
 share/doc/jpilot/plugin.html
+lib/libplugin.a
 @dirrm share/jpilot
 @dirrm share/doc/jpilot
