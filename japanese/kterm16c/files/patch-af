@@ -1,0 +1,11 @@
+--- charproc.c.orig	Tue Sep 24 01:22:52 2002
++++ charproc.c	Tue Sep 24 01:23:10 2002
+@@ -102,8 +102,6 @@
+ extern XtAppContext app_con;
+ extern Widget toplevel;
+ extern void exit();
+-extern char *malloc();
+-extern char *realloc();
+ extern fd_set Select_mask;
+ extern fd_set X_mask;
+ extern fd_set pty_mask;
