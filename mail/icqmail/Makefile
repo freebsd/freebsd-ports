@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	never@nevermind.kiev.ua
 
 LIB_DEPENDS=	icq0.1:${PORTSDIR}/net/icqlib0 \
-		guile.9:${PORTSDIR}/lang/guile \
-		mimelib.3:${PORTSDIR}/converters/kdesupport2
+		guile.9:${PORTSDIR}/lang/guile
 
 USE_NEWGCC=	yes
 USE_AUTOCONF=	yes
@@ -25,5 +24,9 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		LIBS="-L${LOCALBASE}/lib -lguile -lqthreads"
 
 MAN1=		icqmail.1
+
+post-patch:
+	@${PERL} -pi -e 's,Template ,Template ${PREFIX}/share/icqmail/,g' \
+		${WRKSRC}/sample.cfg
 
 .include <bsd.port.mk>
