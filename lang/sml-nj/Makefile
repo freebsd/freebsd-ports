@@ -10,8 +10,8 @@ PORTVERSION=	110.0.7
 PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/ \
-		ftp://rodin.stanford.edu/pub/smlnj/release/110.0.7/ \
-		ftp://ftp.ntua.gr//pub/lang/smlnj/release/110.0.7/ \
+		http://smlnj.cs.uchicago.edu/dist/release/110.0.7/ \
+		ftp://flint.cs.yale.edu/pub/smlnj/release/110.0.7/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	bin.x86-unix.tar.Z cm.tar.Z cml.tar.Z \
@@ -76,6 +76,11 @@ do-install:
 		${SED} -e "s,${WRKDIR},${SML_BASE}," < $$file > \
 			${SML_LIBDIR}/`${BASENAME} $$file`; \
 	done
+	# do a minimal re-"install" to fix autoloading problems
+	# as reported in PR ports/40866
+	${CP} -pr ${WRKDIR}/config ${SML_BASE}
+	cd ${SML_BASE} && config/install.sh
+	${RM} -rf ${SML_BASE}/config
 	@${CHOWN} -R ${BINOWN}:${BINGRP} ${SML_BINDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${SML_SRCDIR}
 .for file in ${SML_EXES}

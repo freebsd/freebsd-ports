@@ -1,9 +1,17 @@
---- config/install.sh.orig	Fri Oct 20 16:02:25 2000
-+++ config/install.sh	Tue Mar 11 22:30:59 2003
-@@ -155,6 +155,26 @@
+--- config/install.sh.orig	Fri Oct 20 18:02:25 2000
++++ config/install.sh	Tue Dec 21 06:22:34 2004
+@@ -151,11 +151,34 @@
+ #
+ # build the run-time system
+ #
++if [ -x $RUNDIR/run.$ARCH-$OPSYS ]; then
++  echo "$RUNDIR/run.$ARCH-$OPSYS already exists"
++else
+ $CONFIGDIR/unpack.sh "run-time" $SRCDIR runtime $ROOT/runtime.tar
  if [ "$?" != "0" ]; then
    exit $?
  fi
+-if [ ! -x $RUNDIR/run.$ARCH-$OPSYS ]; then
 +# we need to patch just before build
 +echo "applying source patches"
 +patch_file="${FILESDIR}/extra-patch-cpp"
@@ -24,6 +32,7 @@
 +		$PATCH $PATCH_ARGS < $patch_file
 +	fi
 +fi
- if [ ! -x $RUNDIR/run.$ARCH-$OPSYS ]; then
++#if [ ! -x $RUNDIR/run.$ARCH-$OPSYS ]; then
    cd $SRCDIR/runtime/objs
    echo "compiling the run-time system"
+   $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
