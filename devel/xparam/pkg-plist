@@ -9,6 +9,7 @@ include/xparam/xp_paramset.h
 include/xparam/xp_paramset_manip.h
 include/xparam/xp_parsed_types.h
 include/xparam/xp_parser.h
+include/xparam/xp_raw_bytes.h
 include/xparam/xp_saver.h
 include/xparam/xp_singleton.h
 include/xparam/xp_type_compare.h
