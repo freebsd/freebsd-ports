@@ -1,0 +1,75 @@
+bin/gerbv
+share/gerbv/scheme/gerb-debug.scm
+share/gerbv/scheme/gerb-ps.scm
+@dirrm share/gerbv/scheme
+@dirrm share/gerbv
+%%PORTDOCS%%share/doc/gerbv/aperturemacro.txt
+%%PORTDOCS%%share/doc/gerbv/sources.txt
+%%PORTDOCS%%@dirrm share/doc/gerbv
+%%PORTDOCS%%share/examples/gerbv/Mentor-BoardStation/README.txt
+%%PORTDOCS%%share/examples/gerbv/Mentor-BoardStation/artwork_1.grb
+%%PORTDOCS%%share/examples/gerbv/am-test/am-test.gbx
+%%PORTDOCS%%share/examples/gerbv/cslk/README.txt
+%%PORTDOCS%%share/examples/gerbv/cslk/cslk.gbx
+%%PORTDOCS%%share/examples/gerbv/cslk/cslk.ps
+%%PORTDOCS%%share/examples/gerbv/dan/README.txt
+%%PORTDOCS%%share/examples/gerbv/dan/top.gbx
+%%PORTDOCS%%share/examples/gerbv/eaglecad1/top-cop.gbx
+%%PORTDOCS%%share/examples/gerbv/eaglecad1/top-cop.pdf
+%%PORTDOCS%%share/examples/gerbv/ekf/ekf_08.apt
+%%PORTDOCS%%share/examples/gerbv/ekf/README
+%%PORTDOCS%%share/examples/gerbv/ekf/ekf.gap
+%%PORTDOCS%%share/examples/gerbv/ekf/l1.off
+%%PORTDOCS%%share/examples/gerbv/ekf2/README.txt
+%%PORTDOCS%%share/examples/gerbv/ekf2/d1.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/drill0.exc
+%%PORTDOCS%%share/examples/gerbv/ekf2/drill1.exc
+%%PORTDOCS%%share/examples/gerbv/ekf2/drill20.exc
+%%PORTDOCS%%share/examples/gerbv/ekf2/drill30.exc
+%%PORTDOCS%%share/examples/gerbv/ekf2/gnd.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l0.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l1.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l2.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l3.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l4.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/l5.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/pow.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/pow3.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/resplan.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/sieb0.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/sieb1.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/stp0.grb
+%%PORTDOCS%%share/examples/gerbv/ekf2/stp1.grb
+%%PORTDOCS%%share/examples/gerbv/nollezappare/AssemblyTop.gdo
+%%PORTDOCS%%share/examples/gerbv/nollezappare/EtchLayer2Bottom.gdo
+%%PORTDOCS%%share/examples/gerbv/nollezappare/ThruHolePlated.ncd
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_componentmask.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_componentsilk.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_group1.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_group2.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_plated-drill.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_soldermask.grb
+%%PORTDOCS%%share/examples/gerbv/numpres/numpres.pcb.output_unplated-drill.grb
+%%PORTDOCS%%share/examples/gerbv/orcad/README.txt
+%%PORTDOCS%%share/examples/gerbv/orcad/ast.ps
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.asb
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.ast
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.bot
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.drd
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.smb
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.smt
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.ssb
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.sst
+%%PORTDOCS%%share/examples/gerbv/orcad/rs232_cm.top
+%%PORTDOCS%%share/examples/gerbv/orcad/thruhole.tap
+%%PORTDOCS%%@dirrm share/examples/gerbv/Mentor-BoardStation
+%%PORTDOCS%%@dirrm share/examples/gerbv/am-test
+%%PORTDOCS%%@dirrm share/examples/gerbv/cslk
+%%PORTDOCS%%@dirrm share/examples/gerbv/dan
+%%PORTDOCS%%@dirrm share/examples/gerbv/eaglecad1
+%%PORTDOCS%%@dirrm share/examples/gerbv/ekf
+%%PORTDOCS%%@dirrm share/examples/gerbv/ekf2
+%%PORTDOCS%%@dirrm share/examples/gerbv/nollezappare
+%%PORTDOCS%%@dirrm share/examples/gerbv/numpres
+%%PORTDOCS%%@dirrm share/examples/gerbv/orcad
