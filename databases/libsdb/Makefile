@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsdb
-PORTVERSION=	0.2.2
+PORTVERSION=	0.4.0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/
@@ -17,5 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+MAN3=		sdb.3 sdb_init.3 sdb_open.3 sdb_close.3 sdb_query.3
+MAN8=		sdbd.8
 
 .include <bsd.port.mk>
