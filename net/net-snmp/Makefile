@@ -15,7 +15,7 @@ MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 MAINTAINER=	billf@FreeBSD.org
 
 USE_AUTOCONF=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS+= --enable-shared
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where

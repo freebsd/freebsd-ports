@@ -17,7 +17,7 @@ Y2K=            http://www.scriptics.com/Y2K.html
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}

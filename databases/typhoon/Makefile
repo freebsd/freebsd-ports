@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN3=d_close.3 d_crget.3 d_crread.3 d_crset.3 d_dbdpath.3 d_dbfpath.3 \
      d_dbget.3 d_dbset.3 d_delete.3 d_fillnew.3 d_getsequence.3 d_keyfind.3 \

@@ -40,7 +40,7 @@ MAN5=		quantize.5
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 USE_AUTOCONF=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 CONFIGURE_ARGS= --prefix=${PREFIX} --enable-shared --with-perl=${PERL5} \
 		--enable-16bit-pixel

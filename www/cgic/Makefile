@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 ALL_TARGET=	libcgic.so.1
 

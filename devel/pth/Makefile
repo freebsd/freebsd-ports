@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	pth
 
 MAINTAINER=	rse@engelschall.com
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \

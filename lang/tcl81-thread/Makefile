@@ -18,7 +18,7 @@ Y2K=            http://www.scriptics.com/Y2K.html
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
 
 NO_LATEST_LINK=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads

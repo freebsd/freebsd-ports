@@ -26,7 +26,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 IS_INTERACTIVE=	yes	# configure script asks questions
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
 .endif

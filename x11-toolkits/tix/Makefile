@@ -18,7 +18,7 @@ MAINTAINER=	jmz@FreeBSD.org
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
 		--with-tcl="${PREFIX}/include/tcl8.2" \

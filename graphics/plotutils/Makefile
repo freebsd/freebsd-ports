@@ -15,7 +15,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi

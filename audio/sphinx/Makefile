@@ -15,7 +15,7 @@ DISTNAME=	sphinx2-0.2
 MAINTAINER=	trevor@jpj.net
 
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 
 # contains i386 sound code

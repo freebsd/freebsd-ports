@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
 		--with-DIR_BIN=${PREFIX}/bin \

@@ -15,7 +15,7 @@ MAINTAINER=	giffunip@asme.org
 
 WRKSRC=		$(WRKDIR)/twin
 USE_XLIB=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	depend world

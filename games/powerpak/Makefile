@@ -18,7 +18,7 @@ LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
 
 MAKEFILE=	Makefile.FreeBSD
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 post-extract:
 	@ /usr/bin/find ${WRKSRC} -type f | xargs ${PERL} -pi -e 's/\r//g'

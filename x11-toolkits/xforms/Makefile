@@ -11,7 +11,7 @@ CATEGORIES=	graphics x11-toolkits
 EXTRACT_SUFX=	.tgz
 
 USE_X_PREFIX=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 .include <bsd.port.pre.mk>
 

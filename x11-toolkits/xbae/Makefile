@@ -19,7 +19,7 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
 REQUIRES_MOTIF= yes
 USE_IMAKE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN3=		XbaeCaption.3 XbaeMatrix.3
 
