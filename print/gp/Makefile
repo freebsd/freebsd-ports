@@ -3,20 +3,22 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/02/18 06:59:36 asami Exp $
+# $Id: Makefile,v 1.4 1998/02/21 22:37:57 fenner Exp $
 #
 
 DISTNAME=	GP-2.5
-PKGNAME=	gp-2.5
+PKGNAME?=	gp-2.5
 CATEGORIES=	print tk42
 MASTER_SITES=	http://www.kamome.or.jp/hueda/GP/ \
 		ftp://www.neosoft.com/pub/tcl/sorted/print/GP-2.5/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils \
-		gv:${PORTSDIR}/print/gv \
-		${WITH_DEPENDS}
+LIB_DEPENDS=	${WITH_LIB}
+RUN_DEPENDS=	${PREFIX}/bin/psbook:${PORTSDIR}/print/psutils \
+		${X11BASE}/bin/gv:${PORTSDIR}/print/gv \
+		${PREFIX}/bin/convert:${PORTSDIR}/graphics/ImageMagick \
+		${WITH_RUN}
 
 PATCHDIR=	${.CURDIR}/../../print/gp/patches
 FILESDIR=	${.CURDIR}/../../print/gp/files
@@ -36,17 +38,19 @@ PORTDOCDIR=	${PREFIX}/share/doc/GP
 .if (${LANGUAGE} == "Japanese")
 DOCDIRNAME=	Doc.ja
 DOCEXT=		.euc
-WITH_DEPENDS=	wish4.2jp:${PORTSDIR}/japanese/tk42 \
-		a2ps-j:${PORTSDIR}/japanese/a2ps \
-		xdvi:${PORTSDIR}/japanese/vfxdvi \
-		nup:${PORTSDIR}/japanese/dvi2ps
+WITH_LIB=	tcl76jp\\.1\\.:${PORTSDIR}/japanese/tcl76
+WITH_RUN=	${PREFIX}/bin/wish4.2jp:${PORTSDIR}/japanese/tk42 \
+		${PREFIX}/bin/a2ps-j:${PORTSDIR}/japanese/a2ps \
+		${X11BASE}/bin/xdvi:${PORTSDIR}/japanese/vfxdvi \
+		${PREFIX}/bin/dvi2ps:${PORTSDIR}/japanese/dvi2ps
 .else
 DOCDIRNAME=	Doc
 DOCEXT=
-WITH_DEPENDS?=	wish4.2:${PORTSDIR}/x11/tk42 \
-		a2ps:${PORTSDIR}/print/a2ps \
-		xdvi:${PORTSDIR}/print/xdvi \
-		dvips:${PORTSDIR}/print/dvips
+WITH_LIB=	tcl76\\.1\\.:${PORTSDIR}/lang/tcl76
+WITH_RUN=	${PREFIX}/bin/wish4.2:${PORTSDIR}/x11/tk42 \
+		${PREFIX}/bin/a2ps:${PORTSDIR}/print/a2ps \
+		${X11BASE}/bin/xdvi:${PORTSDIR}/print/xdvi \
+		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips
 .endif
 
 post-install:
