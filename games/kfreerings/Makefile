@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kfreerings
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small puzzle game
 
 LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
