@@ -11,6 +11,7 @@
     SUBDIR += libtlen
     SUBDIR += ooodict_PL
     SUBDIR += openoffice-1.0
+    SUBDIR += openoffice-1.1
     SUBDIR += sms
 
 .include <bsd.port.subdir.mk>
