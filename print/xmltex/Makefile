@@ -7,7 +7,7 @@
 
 PORTNAME=		xmltex
 PORTVERSION=		1.9
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		print
 MASTER_SITES=		ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 			${MASTER_SITE_TEX_CTAN}
@@ -19,11 +19,11 @@ MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A non-validating XML parser, written in TeX
 
 BUILD_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-			${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 			latex:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-			${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+			${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 			latex:${PORTSDIR}/print/teTeX-base
 
 .include <bsd.port.pre.mk>
@@ -34,14 +34,15 @@ WRKSRC=		${WRKDIR}/base
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${LOCALBASE}/${TEXMFWEB2C}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEXMF=		share/texmf
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 TEXMFWEB2C=	share/texmf/web2c
 
 DOC_FILES=	manual.html manual.tex manual.xml manual.xsl readme.txt
 
-CLASSDIR=	${TEXMFLOCAL}/tex/xmltex
+CLASSDIR=	${TEXMFLOCALDIR}/tex/xmltex
 CLASS_FILES=	testascii.cfg testascii.tex testascii.xml \
 		testsec.tex testsec.xml \
 		xmltex.cfg xmltex.ini xmltex.tex pdfxmltex.ini \
@@ -51,7 +52,7 @@ CLASS_FILES=	testascii.cfg testascii.tex testascii.xml \
 		russiankoi8.xml russianutf8.xml portugeselatin1.xml \
 		englishutf16.xml englishutf8.xml
 
-WEB2CDIR=	${TEXMFLOCAL}/web2c
+WEB2CDIR=	${TEXMFLOCALDIR}/web2c
 WEB2C_FILES=	xmltex.fmt pdfxmltex.fmt
 
 do-extract:
