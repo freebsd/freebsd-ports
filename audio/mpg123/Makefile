@@ -7,7 +7,7 @@
 
 PORTNAME=	mpg123
 PORTVERSION=	0.59r
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/
