@@ -105,8 +105,12 @@ USAGE_EOF
 			else
 				plnotdirrm.push(ent)
 			end
-			pl = plnotdirrm + pldirrm
+			plnotdirrm.sort!
+			pldirrm.sort!
+			pl = plnotdirrm + pldirrm.reverse
 		}
+	else
+	  	pl.sort!
 	end
 	puts(pl.join("\n"))
 end
