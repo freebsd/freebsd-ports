@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.109 1998/02/23 19:57:46 steve Exp $
+# $Id: Makefile,v 1.110 1998/03/13 09:35:18 tg Exp $
 #
 
     SUBDIR += acm
@@ -106,6 +106,7 @@
     SUBDIR += xtic
     SUBDIR += xtriangles
     SUBDIR += xtris
+    SUBDIR += xtruco
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
     SUBDIR += ztrack
