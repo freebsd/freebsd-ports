@@ -1,0 +1,18 @@
+Development version of the FreeBSD 5.x pkg_install suite of tools
+
+This version fixes some bugs of the -CURRENT tools. You should
+only install it it you have problems with the current version
+or want to test the new features.
+
+*** CAUTION ***: This packages replaces your base system tools.
+If you do not want this, install the port with
+  make install PREFIX=/usr/local
+
+You can revert to the tools from the base system by doing
+  cd /usr/src/usr.sbin/pkg_install; make install
+if you have the sources installed.
+
+WWW: http://cvs.sf.net/viewcvs.py/portaudit/pkg_install/
+
+-- Oliver Eikemeier
+eik@FreeBSD.org

@@ -262,6 +262,7 @@
     SUBDIR += pipemeter
     SUBDIR += pkg_cutleaves
     SUBDIR += pkg_install
+    SUBDIR += pkg_install-devel
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree
     SUBDIR += pkill
