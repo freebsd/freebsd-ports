@@ -4,7 +4,7 @@
 # Date created:			  Sun Jan 31, 1997
 # Whom:               		  shipley@dis.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 02:49:34 steve Exp $
 #
 
 DISTNAME=	tdetect-0.2
@@ -26,10 +26,13 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/tdetect.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} "ethernetdev=ed0" > ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ethernetdev && echo -n ' tdetect'" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} "ETHERNETDEV=ed0" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect \$ETHERNETDEV && echo -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
 		chmod 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} "IMPORTANT ${PREFIX}/etc/rc.d/tdetect.sh and set ethernetdev to the name of the ethernetdev you wish to monitor"; \
+		${ECHO} ''; \
+		${ECHO} 'IMPORTANT edit ${PREFIX}/etc/rc.d/tdetect.sh and set "ETHERNETDEV" to'; \
+		${ECHO} "the name of the ethernetdev you wish to monitor"; \
+		${ECHO} ''; \
 	fi
 
 .include <bsd.port.mk>
