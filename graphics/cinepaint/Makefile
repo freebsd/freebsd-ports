@@ -7,7 +7,7 @@
 
 PORTNAME=	cinepaint
 PORTVERSION=	0.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,12 +32,6 @@ MAN1=		cinepaint.1 cinepainttool.1
 
 PLIST_SUB=	VER=${PORTVERSION}-1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-WITHOUT_OPENEXR=	yes
-.endif
-
 .if !defined(WITHOUT_OPENEXR)
 LIB_DEPENDS+=	IlmImf.0:${PORTSDIR}/graphics/OpenEXR
 CONFIGURE_ARGS+=	--with-openexr-prefix=${LOCALBASE}
@@ -55,4 +49,4 @@ post-patch:
 		's|-LINUX.+$$||' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
