@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	st
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://oss.sgi.com/projects/state-threads/download/ \
-		ftp://oss.sgi.com/www/projects/state-threads/download/ \
+MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/state-threads/ \
 		http://www.tobez.org/download/port-mirrors/devel/st/
 
 MAINTAINER=	tobez@FreeBSD.org
@@ -18,7 +17,7 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
+post-patch:
 	@${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/examples/Makefile
 	@${CP} ${FILESDIR}/Makefile.main ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/Makefile.examples ${WRKSRC}/examples/Makefile
