@@ -6059,6 +6059,7 @@ nunnimcax	ports/textproc/nunnimcax
 nuppelvideo	ports/multimedia/nuppelvideo
 nurbs++		ports/graphics/nurbs++
 nut		ports/sysutils/nut
+nux		ports/textproc/nux
 nvclock		ports/sysutils/nvclock
 nvi-devel	ports/editors/nvi-devel
 nvi-m17n	ports/editors/nvi-m17n
