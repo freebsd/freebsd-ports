@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://net.doit.wisc.edu/~plonka/FlowScan/
 DISTFILES=	FlowScan-${PORTVERSION}.tar.gz
 
-MAINTAINER=	andreas@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh \
 		rrdtool:${PORTSDIR}/net/rrdtool \
