@@ -1,0 +1,4 @@
+bin/gtkpasman
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/gpasman4.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
