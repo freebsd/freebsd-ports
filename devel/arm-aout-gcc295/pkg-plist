@@ -59,10 +59,8 @@ lib/gcc-lib/arm-aout/2.95.2/le/libgcc.a
 lib/gcc-lib/arm-aout/2.95.2/libgcc.a
 lib/gcc-lib/arm-aout/2.95.2/specs
 lib/gcc-lib/arm-aout/2.95.2/libbfd.a
-lib/gcc-lib/arm-aout/2.95.2/libbfd.la
 lib/gcc-lib/arm-aout/2.95.2/libiberty.a
 lib/gcc-lib/arm-aout/2.95.2/libopcodes.a
-lib/gcc-lib/arm-aout/2.95.2/libopcodes.la
 @dirrm arm-aout/bin
 @dirrm arm-aout
 @dirrm lib/gcc-lib/arm-aout/2.95.2/include
