@@ -1,0 +1,14 @@
+This is an image of a PI (Public ITS) filesystem that can be booted on
+the KLH10 PDP-10 emulator.
+
+The emulator image is about 45MB compressed and 170MB uncompressed.
+The installation needs to have a minimum of 45MB in ports/disfiles
+plus 45MB in the installation directory which defaults to
+/usr/local/share/klh10-ks-its.  That's about 90MB total but "make
+distclean" will delete 45MB leaving you with only 45MB.  After "make
+install" you must run the "its-user-install" script as a regular user
+to install an uncompressed 170MB RP06 filesystem image and setup
+emulator support files.  Additional 170MB RP06 filesystem images
+may also be installed.
+
+For more information about ITS see WWW: http://www.its.os.org/

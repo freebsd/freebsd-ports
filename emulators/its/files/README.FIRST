@@ -1,0 +1,190 @@
+Consider adding firewall protection for the KLH-10 emulator before
+ever running it.  See @PREFIX@/share/doc/its/pubits/adm directory for
+samples.
+
+To setup the emulator you must run the its-user-install(1) command.
+It takes no arguments.  It is best to run it as a regular (non-root)
+user.  Once that has been done to start ITS run the its(1) command.
+It also takes no arguments.
+
+The first time the ITS boots it will not know the time of day.  ITS
+will display this message:
+
+The time could not be set because:
+No host responded.
+It will be necessary for someone to set the time
+manually by logging in and running :PDSET.
+
+Tell ITS to activate the apex procedure, DDT, by typing a Ctrl-Z.
+When you type that you will see:
+
+KN ITS.1647. DDT.1545.
+TTY 0
+You're all alone, Fair share = 0%
+
+(ITS does not know the date, so messages cannot be reviewed right now.)
+
+Then run PDSET by typing (colon and all)
+
+:pdset
+
+ITS will suggest that you log in but you don't have to.
+
+(Please Log In)
+___002 PDSET  IOTLSR  
+
+Now enter the time and save it.  First the century:
+
+20C
+
+Next the YYMMDD:
+
+020219D
+
+Then the HHMMSS (try to time it so you have some lead time because it
+will become active when you save it.)
+
+235115T
+
+Now save the time:
+
+!.
+
+Now exit PDSET
+
+X
+
+You will have no feedback from the exit operation except that new
+commands will be echoed in lower case.  Now bring down ITS so you can
+start it without being root:
+
+:lock
+(Please Log In)
+ LOCK.154  
+_
+
+the _ is a prompt, do not type it.  Type
+
+5down
+
+LOCK is very picky about typos so be careful.  It does not need the
+Enter key so don't use it.
+
+DO YOU REALLY WANT THE SYSTEM TO GO DOWN?
+
+Type "y"
+
+y
+___004 
+       PLEASE ENTER A BRIEF MESSAGE TO USERS, ENDED BY ^C
+LOCK   SYS    DOWN   MAIL   WRITE  21:13:17
+
+Just type Ctrl-C for the message unless you have a burning desire to
+talk to yourself via ITS.
+
+KN ITS going down in 5:00
+CULPRIT =  ___004 LOCK   21:13:38
+
+
+_
+KN ITS 1647 NOT IN OPERATION 21:13:38
+PFTHMG DRAGON CHANNA _DRGN_ TIMES  WRITE  21:13:38
+PFTHMG DRAGON CHANNA LOGOUT TIMES  DELRNM 21:13:38
+
+After the "NOT IN OPERATION" message only very special programs like
+the accounting dragon, PFTHMG DRAGON, may run.  Be patient and it will
+finish with:
+
+SHUTDOWN COMPLETE  
+PI LEVEL 7 BUGDDT.  TYPE <ALTMODE>P TO CONTINUE.
+YOU ARE NOW IN DDT.
+BUGPC/   CAIA COFFI4+1   $Q-2/   JRST COFFI7   
+
+If ITS gets stuck shutting down for more than five minutes just
+continue from here:
+
+At this point type Ctrl-\ to abort KLH10 back to the monitor.
+
+[HALTED: FE interrupt]
+KLH10> 
+
+and quit KLH10
+
+KLH10> quit
+Are you sure you want to quit? [Confirm]y
+Shutting down...Bye!
+$ 
+
+ITS uses DEL for erasing characters.  ITS defaults to dumb hardcopy
+terminal settings.  This is a pain so you want to configure ITS to
+use something nicer.  ITS knows about VT52.  If you are using xterm
+from XFree86 you can get into VT52 mode by running a script like this:
+
+#! /bin/sh
+
+awk 'END {printf "%c[?2l", 27}' </dev/null
+
+From ITS run
+:tctyp vt52
+
+On your VT52 mode terminal emulator.
+
+An alternative is that you can use vt100 mode via the CRTSTY program
+which is a bit like window(1) in that you end up on something like a
+pty but only one full screen window is available and it does terminal
+emulation on it.  You will be automatically logged in a second time on
+the same terminal as a crufty side-effect.
+
+:crtsty vt100 speed 9600
+
+Run :info and look at the introductory information about the
+filesystem.  I did not find that it covers directory operations very
+well so here is what I have found out.  ITS does have a process tree
+(try the PEEK command) but does not have a directory tree.  There is a
+Master File Directory MFD (try DSKUSE * or DIRED and then MFD.  Use
+"Q" to quit after either of those.) and User File Directories UFDs one
+level deep only.  The only way to remove a directory is to delete its
+contents and run the salvager. The salvager is the ITS equivalent of
+fsck and will automatically be run at boot time.  To create a new
+directory provide certain options to the open UUO (ITS equivalent of
+system call; try the DOC UUO command.)  Since the PRINT command calls
+the open UUO you can create a directory using print:
+
+:print ..new. (udir) dirnam;
+
+Where dirnam; is the name of the directory to be created.  Directory
+names are limited to six characters.
+
+Missing from this ITS distribution is the INQUIR database.  It
+contains user information.  There were too many personal details in it
+and no one has been able to scrub it so it was left out.  This means
+you cannot have a complete user account yet.  The best you can do is
+to pick a user name and make yourself a directory with that name and
+put a login script in it.  In this example the user "user" is created:
+
+:login user
+:print ..new. (udir) user;
+:emacs login user
+[add startup code like ":tctyp vt52" and ^X^S to save ^X^C to exit]
+
+You log out with <ALTMODE><ALTMODE>u which is [Esc][Esc]u and
+represented in the documentation as $$u
+
+The ITS equivalent of $PATH is implemented by scanning all
+directories for files for files with TS as the first name and
+the second name set to the command you issued.  By convention
+most commands are in the SYS; SYS1; ... SYSN; directories.
+ITS supports symlinks via the LINK command and TS name is often
+a symlink.
+
+ITS equivalent of job control works by typing ^Z to interrupt the
+current program.  To get back to the DDT prompt "*" use $^K
+
+Don't like DDT as the shell?  Try MONMOD to use monitor mode where the
+colon is printed for you.  DDTMOD gets you back.  Or try SHELL to
+bring up a UNIX-like shell.
+
+Zork was developed in MDL (muddle) on an ITS system but apparently it
+suffered from being too popular.  Try the ZORK command to see what
+happened.  A scrap of MDL source code is left (:find @muddle) but I
+don't know how to MIDAS it.

@@ -1,0 +1,31 @@
+; KLH10 emulator configuration for KN ITS system from FreeBSD ports collection..
+
+; Define basic KS10 device config - two RH11s each on its own Unibus
+
+devdef rh0  ub1   rh11   addr=776700 br=6 vec=254
+devdef rh1  ub3   rh11   addr=772440 br=6 vec=224
+
+; Provide one disk, one tape in config ITS expects
+
+devdef dsk0 rh0.0 rp     type=rp06 format=dbd9 path=@KLH-HOME@/PI-ITS-RP06.0-dbd9 iodly=0
+devdef mta0 rh1.0 tm02   fmtr=tm03 type=tu45
+
+; ITS wants a 60Hz clock, allow it.  Need this until defaults OK.
+set clk_ithzfix=60
+
+; Define IMP for KN
+devdef imp ub3 lhdh addr=767600 br=6 vec=250 ipaddr=@IPADDR@ gwaddr=@GWADDR@
+
+; Dummy definitions.  Only one DZ is still (apparently) needed.
+devdef dz0  ub3   dz11   addr=760010 br=5 vec=340
+;devdef dz1  ub3   dz11   addr=760020 br=5 vec=350
+;devdef chaos ub3  ch11   addr=764140 br=5 vec=270
+
+; Define new HOST device hackery
+devdef idler ub3 host addr=777000
+
+; Preload ITS for convenience
+load @.its-647kn-u
+
+; Use "GO 774000" to start DDT, else just "GO" to start ITS
+

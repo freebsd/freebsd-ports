@@ -1,0 +1,6 @@
+bin/its
+bin/its-user-install
+%%PORTDOCS%%share/doc/klh10-ks-its/MIT-ITS-papers
+%%PORTDOCS%%share/doc/klh10-ks-its/README.FIRST
+share/klh10-ks-its/klh10-kn-freebsd.ini.in
+@unexec rm -f %%IMAGE_HOME%%/PI-ITS-RP06.0-dbd9.bz2
