@@ -6,7 +6,7 @@
  *
  * $FreeBSD$
  *
- * Upstream: $Id: fsck_ext2fs.c,v 1.3 2004/03/09 01:10:22 emma Exp $
+ * Upstream: $Id: fsck_ext2fs.c,v 1.4 2004/03/20 15:51:01 emma Exp $
  *
  * format: gindent -kr
  */
@@ -19,6 +19,7 @@
 #include <sys/wait.h>
 #include <sys/time.h>
 #include <sys/resource.h>
+#include <errno.h>
 
 __attribute__ ((noreturn))
 static int die(const char *tag)
@@ -94,11 +95,21 @@ int main(int argc, char **argv)
 		cmd[i++] = b;
 	}
 
+	/* silently limit verbose to 15 so we don't overflow the cmd array */
+	if (verbose > 15)
+	    verbose = 15;
+
 	for (t = verbose; t > 1; t--)
 	    cmd[i++] = "-v";
 
-	while (optind < argc)
+	while (optind < argc) {
 		cmd[i++] = argv[optind++];
+		/* sanity check so we don't overflow the cmd buffer */
+		if (i+1 == sizeof(cmd)/sizeof(cmd[0])) {
+		    errno = E2BIG;
+		    die(argv[0]);
+		}
+	}
 
 	cmd[i++] = 0;
 

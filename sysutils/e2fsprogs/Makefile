@@ -7,7 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.35
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -65,6 +65,8 @@ post-extract:
 	${CHMOD} u+w ${WRKSRC}/po/*.po ${WRKSRC}/po/*.pot \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-DRESOURCE_TRACK||' ${WRKSRC}/e2fsck/Makefile.in
 	${GUNZIP_CMD} ${WRKSRC}/tests/m_*/expect*.gz
@@ -73,7 +75,7 @@ post-patch:
 	-e 's|group root|group wheel|' \
 	-e '/Exit status is 0/ N;s/Exit status is 0\n/Exit status is 0/' \
 	${WRKSRC}/tests/m_*/expect.1
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
+.if ${ARCH} == "alpha" || ${ARCH} == "sparc64"
 	${RM} -rf ${WRKSRC}/tests/m_large_file
 .endif
 
@@ -93,4 +95,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
