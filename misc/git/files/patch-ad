@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Nov 15 19:23:15 1999
++++ doc/Makefile.in	Mon Nov 15 19:23:32 1999
+@@ -82,7 +82,7 @@
+ 
+ info_TEXINFOS = git.texinfo
+ man_MANS = git.1 gitaction.1 gitkeys.1 gitmount.1 gitrgrep.1 gitunpack.1
+-htmldir = $(prefix)/doc/git-$(VERSION)
++htmldir = $(prefix)/share/git
+ html_DATA = git.html
+ EXTRA_DIST = git.1 gitaction.1 gitkeys.1 gitmount.1 gitrgrep.1 gitunpack.1 	     git.html
+ 
