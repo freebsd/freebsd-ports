@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.27 1999/05/23 18:35:50 andreas Exp $
+# $Id: Makefile,v 1.28 1999/05/24 06:41:27 asami Exp $
 #
 
 DISTNAME=	apsfilter-5.1.0
@@ -25,9 +25,7 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/apsfilter
 
 # make a2ps port happy in this early stage
-.if defined(BATCH)
 PAPERSIZE?=	letter
-.endif
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
 	@${ECHO}
