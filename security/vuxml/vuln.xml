@@ -42,7 +42,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>gtk</name>
-	<range><ge>2.0</ge></range>
+	<range><ge>2.0</ge><lt>2.4.9_1</lt></range>
       </package>
     </affects>
     <description>
@@ -65,6 +65,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
+      <modified>2004-09-16</modified>
     </dates>
   </vuln>
 
