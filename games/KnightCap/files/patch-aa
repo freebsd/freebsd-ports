@@ -1,37 +1,43 @@
---- Makefile.orig	Wed Mar 11 15:51:57 1998
-+++ Makefile	Sun Sep 27 11:09:04 1998
-@@ -2,11 +2,11 @@
- 
- # what C compiler? It better be Ansi-C. Use gcc if you have it.
- # you may find that KnightCap is very slow if you don't use gcc
--CC = gcc
-+#CC = gcc
+--- Makefile.orig	Tue Jun 20 21:19:26 2000
++++ Makefile	Tue Jun 20 21:19:30 2000
+@@ -5,8 +5,8 @@
+ CC = gcc
  
  # What compiler switches do you want? These ones work well with gcc
- #OPT = -O2 -fshort-enums -Wall
+-#OPT = -O2 -fshort-enums -Wall
 -OPT = -g -fshort-enums -Wall
-+OPT = -O2 -fshort-enums -Wall -DPI=M_PI
++#OPT = -O3 -fomit-frame-pointer -fshort-enums -Wall -DCPU=686
++# OPT = -g -fshort-enums -Wall
  
  # If you don't have gcc then perhaps try this instead. You only need
  # the null definition for inline if your C compiler doesn't know about
-@@ -21,13 +21,13 @@
- # display (or you don't have OpenGL and Glut libraries)
- # If you do have these libs then make sure the first three
- # lines point at the right places
--MESA = /usr/local/Mesa-2.1
--GLUT = /usr/local/Mesa-2.1/glut-3.2
--X11 = /usr/X11R6
--GLUT_LIBS = -L$(GLUT)/lib/glut -lglut
--MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
--XLIBS = -L$(X11)/lib -lXmu -lXt -lXext -lX11 -lXi
+@@ -27,25 +27,22 @@
+ GLUT_LIBS = -L$(GLUT)/lib/glut -lglut
+ MESA_LIBS = -L$(MESA)/lib -lMesaGLU -lMesaGL -lm
+ XLIBS = -L$(X11)/lib -lXmu -lXt -lXext -lX11 -lXi
 -DISPLAYFLAGS = -I$(MESA)/include -I$(GLUT) -DRENDERED_DISPLAY=1
-+GLUT_LIBS = -L$(X11BASE)/lib -lglut
-+MESA_LIBS = -L$(X11BASE)/lib -lMesaGLU -lMesaGL -lm
-+XLIBS = -L$(X11BASE)/lib -lXmu -lXt -lXext -lX11 -lXi
-+.if $(PORTOBJFORMAT) == "elf"
-+XLIBS+=	-Wl,-rpath,$(X11BASE)/lib
-+.endif
-+DISPLAYFLAGS = -I$(X11BASE)/include -DRENDERED_DISPLAY=1
++DISPLAYFLAGS = -I/usr/X11R6/include -I$(MESA)/include -I$(GLUT) -DRENDERED_DISPLAY=1
  
- # comment out the following line if you don't want KnightCap's
- # evaluation function learning turned on. 
+-# comment out the following line if you don't want KnightCap's
+-# evaluation function learning turned on. 
+-LEARNFLAGS = -DLEARN_EVAL=1
+ 
+ # you shouldn't need to edit anything below this line. Unless
+ # something goes wrong.
+ 
+ INCLUDE = $(DISPLAYFLAGS)
+-CFLAGS = $(OPT) $(INCLUDE) $(LEARNFLAGS)
++CFLAGS = $(OPT) $(INCLUDE) #-DLEARN_EVAL=1
+ 
+-LIBS = $(GLUT_LIBS) $(MESA_LIBS) $(XLIBS) 
++LIBS = $(GLUT_LIBS) $(MESA_LIBS) $(XLIBS) -lm
+ 
+ TARGET = KnightCap
+ 
+ OBJS = knightcap.o trackball.o move.o util.o generate.o eval.o movement.o \
+ 	ordering.o hash.o board.o log.o prog.o timer.o ics.o display.o \
+-	testsuite.o brain.o td.o tactics.o 
++	testsuite.o brain.o td.o tactics.o epd.o epdglue.o 
+ 
+ $(TARGET):  $(OBJS) 
+ 	-mv $@ $@.old
