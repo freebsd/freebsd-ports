@@ -534,3 +534,4 @@ textproc/pl-aspell|polish/pl-aspell|2003-08-19|moved to new polish category
 www/bmsync||2003-08-19|obsolete
 shells/tcsh||2003-08-21|removed, already in base system, not really maintained
 x11/ruby-panel-applet||2003-08-22|GNOME 1.4 desktop is gone
+emulators/truereality||2003-08-25|Lack of developement in recent years

@@ -66,7 +66,6 @@
     SUBDIR += stonx
     SUBDIR += svr4_base
     SUBDIR += tkhfs
-    SUBDIR += truereality
     SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += uae
