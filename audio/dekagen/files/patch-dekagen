@@ -1,0 +1,12 @@
+--- dekagen.orig	Sat Jul 19 13:00:19 2003
++++ dekagen	Tue Aug 12 23:02:30 2003
+@@ -42,7 +42,8 @@
+ BITRATE='128'			# MP3/Ogg nominal encoding bitrate (KBits)
+ METHOD='manual'			# 'manual' or 'cddb'
+ XMCDLIB=''			# $XMCD_LIBDIR
+-DEVICE='/dev/cdrom'		# device used for ripping
++# Adapted DEVICE to a reasonabe FreeBSD default. Martin Kraft.
++DEVICE='/dev/acd0c'		# device used for ripping
+ NCONVENT='artist-name_of_song.mp3'
+ SELEC='1'			# MP3/Ogg naming convention
+ WHOLE='no'			# rip whole CD ('yes' or 'no')

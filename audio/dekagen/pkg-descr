@@ -1,0 +1,21 @@
+dekagen is a front-end to several tools for the ripping, converting, and
+naming of MP3 and Ogg-Vorbis files. It automates the whole process of ripping
+data from music compact discs (CD), the naming of the files, their converting
+into MP3 or Ogg-Vorbis format and the labelling of the MP3 files with an ID3
+tag. dekagen uses dialog for a user interface that is intended to be
+"intuitive".
+
+Music data is read from CDs using cdda2wav, cdparanoia, dagrab, or tosha, and
+stored on your harddisk in wav-format. Note that this will have an excessive
+need of disk space. After this, the wav-data is converted into MP3 format
+using 8hz-mp3, bladeenc, l3enc, lame, mp3enc, or notlame, or into Ogg-Vorbis
+format using oggenc. This will take a while. To avoid manual naming and
+tagging for all the files, cda is used for CDDB lookups. To label the MP3
+files with ID3 tags, id3ed, id3tag, id3tool, or mp3info, or the built-in
+capabilities of some encoders (lame, notlame) are used. Ogg-Vorbis files can
+be labelled with oggenc.
+
+WWW: http://userpage.fu-berlin.de/~mbayer/tools/dekagen.html
+
+- Martin Kraft
+martin.kraft@fal.de
