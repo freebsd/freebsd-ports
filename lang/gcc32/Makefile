@@ -35,11 +35,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
-.else
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-.endif
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
 # libgcj is built on all platforms except sparc64 and ia64 and amd64
@@ -52,7 +47,11 @@ BROKEN=	gcj does not build.
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .else
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
 .endif
 
 GCC_REV=	${PORTVERSION:C/\.0$//}
