@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	1.90
+PORTVERSION=	20000724A
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -17,10 +17,7 @@ MAINTAINER=	will@FreeBSD.org
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2 \
 		search.3:${PORTSDIR}/net/kdenetwork2
 RUN_DEPENDS=	konqueror:${PORTSDIR}/x11/kdebase2 \
-		kdf:${PORTSDIR}/misc/kdeutils2 \
 		kjumpingcube:${PORTSDIR}/games/kdegames2
-
-BROKEN=		"Does not compile/run properly"
 
 NO_BUILD=	yes
 
