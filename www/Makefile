@@ -41,6 +41,7 @@
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += caudium10
+    SUBDIR += caudium12
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgic
