@@ -1,5 +1,5 @@
 # New ports collection makefile for:	NetRexx
-# Version required:     1.151
+# Version required:     1.160
 # Date created:		Feb 8, 1999
 # Whom:			Pedro Giffuni
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	NetRexx
-PKGNAME=	netrexx-1.151
+PKGNAME=	netrexx-1.160
 CATEGORIES=	java lang
 MASTER_SITES=	http://www.ibm.com/technology/NetRexx/
 EXTRACT_SUFX=	.tar.Z
