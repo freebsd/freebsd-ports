@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	${APACHE_VERSION}.${RA_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${APACHE_VERSION}+${RA_VERSION}
 CATEGORIES=	russian www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	${PORTNAME}_${APACHE_VERSION}
@@ -19,7 +18,7 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	lev@serebryakov.spb.ru
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
-RA_VERSION=	30.16
+RA_VERSION=	30.17
 APACHE_VERSION=	1.3.27
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
