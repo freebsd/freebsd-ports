@@ -1,13 +1,13 @@
 # New ports collection makefile for:	mailagent
-# Version required:		3.0pl61
+# Version required:		3.0pl63
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.22 1998/01/08 18:52:09 fenner Exp $
+# $Id: Makefile,v 1.23 1998/04/04 09:08:00 max Exp $
 #
 
-DISTNAME=		mailagent-3.0@61
-PKGNAME=		mailagent-3.0.61
+DISTNAME=		mailagent-3.0@63
+PKGNAME=		mailagent-3.0.63
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/RAM
