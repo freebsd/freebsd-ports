@@ -6,15 +6,30 @@
 #
 
 PORTNAME=	suck
-PORTVERSION=	4.2.3
+PORTVERSION=	4.2.5
 CATEGORIES=	news
-MASTER_SITES=	http://home.att.net/~bobyetman/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=     system/news/transport
 
 MAINTAINER=	jseger@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
+
+.if defined(NEWSBIN)
+EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
+.else
+EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/news/inn:configure
+.endif
+
+post-patch:
+	@${PERL5} -pi -e "s=/usr/local/=${LOCALBASE}/=" ${WRKSRC}/Makefile.in
+	@${PERL5} -pi -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
+		${WRKSRC}/suck_config.h
+	@${PERL5} -pi -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
+		${WRKSRC}/suck_config.h
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/suck
