@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.83
+PORTVERSION=	0.84
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -19,19 +19,12 @@ BUILD_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/Email/FolderType.pm:${PORTSDIR}/mail/p5-Email-FolderType
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Email::Folder.3 \
+		Email::Folder::MH.3 \
 		Email::Folder::Maildir.3 \
 		Email::Folder::Mbox.3 \
 		Email::Folder::Reader.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-# make PREFIX-clean under perl 5.005_03
-post-configure:
-	@${PERL} -pi -e 's,/usr/local/,\$${PREFIX}/,g' ${WRKSRC}/Makefile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
