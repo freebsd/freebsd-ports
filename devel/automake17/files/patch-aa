@@ -1,5 +1,5 @@
---- automake.texi.orig	Sun May 26 01:43:17 1996
-+++ automake.texi	Fri Jun 13 16:15:48 1997
+--- automake.texi.orig	Fri Sep 19 06:13:10 1997
++++ automake.texi	Fri Sep 19 06:17:06 1997
 @@ -1,6 +1,7 @@
  \input texinfo   @c -*-texinfo-*-
  @c %**start of header
@@ -8,12 +8,18 @@
  @settitle automake
  @setchapternewpage off
  @c %**end of header
-@@ -18,7 +19,7 @@
- @ifinfo
- @format
- START-INFO-DIR-ENTRY
+@@ -9,12 +10,12 @@
+ 
+ @dircategory GNU admin
+ @direntry
 -* automake: (automake).		Making Makefile.in's
-+* Automake: (automake).		Making Makefile.in's.
- END-INFO-DIR-ENTRY
- @end format
- @end ifinfo
++* Automake: (automake).		Making Makefile.in's
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* aclocal: (automake)Invoking aclocal           Generating aclocal.m4
++* Aclocal: (automake)Invoking aclocal           Generating aclocal.m4
+ @end direntry
+ 
+ @ifinfo
