@@ -28,20 +28,4 @@ bin/kantiword
 %%DATADIR%%/koi8-r.txt
 %%DATADIR%%/koi8-u.txt
 %%DATADIR%%/roman.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/Emacs
-%%PORTDOCS%%%%DOCSDIR%%/Exmh
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/History
-%%PORTDOCS%%%%DOCSDIR%%/Mozilla
-%%PORTDOCS%%%%DOCSDIR%%/Mutt
-%%PORTDOCS%%%%DOCSDIR%%/Netscape
-%%PORTDOCS%%%%DOCSDIR%%/QandA
-%%PORTDOCS%%%%DOCSDIR%%/ReadMe
-%%PORTDOCS%%%%DOCSDIR%%/antiword.1
-%%PORTDOCS%%%%DOCSDIR%%/antiword.man
-%%PORTDOCS%%%%DOCSDIR%%/antiword.php
-%%PORTDOCS%%%%DOCSDIR%%/testdoc.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
