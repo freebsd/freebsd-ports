@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	2.1.17
-PORTREVISION=	1
+PORTVERSION=	2.1.18
+#PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -184,10 +184,10 @@ CYRUS_GROUP?=	cyrus
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 DOC2=	ONEWS TODO draft-burdis-cat-srp-sasl-08.txt \
-	draft-ietf-cat-sasl-gssapi-05.txt draft-ietf-sasl-anon-02.txt \
-	draft-ietf-sasl-crammd5-00.txt draft-ietf-sasl-plain-02.txt \
-	draft-ietf-sasl-rfc2222bis-02.txt draft-ietf-sasl-rfc2831bis-02.txt \
-	draft-ietf-sasl-saslprep-03.txt draft-murchison-sasl-login-00.txt \
+	draft-ietf-sasl-anon-02.txt draft-ietf-sasl-crammd5-01.txt \
+	draft-ietf-sasl-gssapi-00.txt draft-ietf-sasl-plain-03.txt \
+	draft-ietf-sasl-rfc2222bis-03.txt draft-ietf-sasl-rfc2831bis-02.txt \
+	draft-ietf-sasl-saslprep-04.txt draft-murchison-sasl-login-00.txt \
 	draft-newman-sasl-c-api-01.txt rfc1321.txt rfc1939.txt rfc2104.txt \
 	rfc2195.txt rfc2222.txt rfc2243.txt rfc2245.txt rfc2289.txt \
 	rfc2444.txt rfc2595.txt rfc2831.txt rfc2945.txt rfc3174.txt \
@@ -230,10 +230,6 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/utils/saslpasswd2.8 \
-		${MAN8PREFIX}/man/man8/saslpasswd2.8
-	${INSTALL_MAN} ${WRKSRC}/utils/sasldblistusers2.8 \
-		${MAN8PREFIX}/man/man8/sasldblistusers2.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
