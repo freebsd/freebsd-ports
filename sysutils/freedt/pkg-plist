@@ -1,0 +1,16 @@
+bin/anonidentd
+bin/argv0
+bin/dumblog
+bin/envdir
+bin/envuidgid
+bin/mkservice
+bin/ratelimit
+bin/recordio
+bin/setlock
+bin/setuidgid
+bin/softlimit
+bin/supervise
+bin/svc
+bin/svok
+bin/svscan
+bin/svstat
