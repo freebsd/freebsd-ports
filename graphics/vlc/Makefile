@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 
 MAINTAINER=	brian@FreeBSD.org
 
-LIB_DEPENDS=	dvdcss.1:${PORTSDIR}/graphics/libdvdcss
+LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss
 
 
 GNU_CONFIGURE=	yes
