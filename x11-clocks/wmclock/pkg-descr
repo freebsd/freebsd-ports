@@ -1,0 +1,11 @@
+Wmclock is an applet which displays the date and time in a dockable
+tile in the same style as the clock from the NEXTSTEP(tm) operating
+system.  Wmclock is specially designed for the Window Maker window
+manager and features multiple language support, twenty-four-hour
+and twelve-hour (am/pm) time display, and, optionally, can run a
+user-specified program on a mouse click.
+
+WWW: http://www.ntrnet.net/~jmknoble/WindowMaker/wmclock/
+
+- Pelle
+pelle@fukt.bth.se
