@@ -3355,6 +3355,7 @@ koog		ports/audio/koog
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
+kprof		ports/devel/kprof
 kprop		src/eBones/kprop
 kpropd		src/eBones/kpropd
 kpuzzle		ports/games/kpuzzle
