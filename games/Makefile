@@ -167,6 +167,7 @@
     SUBDIR += starlanes
     SUBDIR += sxsame
     SUBDIR += tank
+    SUBDIR += teg
     SUBDIR += tetrinet-x
     SUBDIR += tinymux
     SUBDIR += tkmoo
