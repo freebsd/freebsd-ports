@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	sunclock
-PORTVERSION=	1.5
-CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	applications
+PORTVERSION=	3.27
+CATEGORIES=	astro x11-clocks
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	torstenb@FreeBSD.org
 
 USE_IMAKE=	YES
 
 MAN1=		sunclock.1
+
+post-patch:
+	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

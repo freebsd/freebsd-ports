@@ -1,1 +1,9 @@
 bin/sunclock
+lib/X11/app-defaults/Sunclock
+share/sunclock/i18n/Sunclock.de
+share/sunclock/i18n/Sunclock.en
+share/sunclock/i18n/Sunclock.es
+share/sunclock/i18n/Sunclock.fr
+share/sunclock/i18n/Sunclock.it
+share/sunclock/i18n/Sunclock.se
+@dirrm share/sunclock/i18n
