@@ -94,6 +94,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv-replace.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/resolv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/set.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sha1.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shell.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shellwords.rb

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.7.2.2002.07.31
+PORTVERSION=	1.7.3.2002.09.12
 CATEGORIES=	lang devel ruby
-MASTER_SITES=	http://www.ruby-lang.org/~knu/
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	shim
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	shim-ruby16_18-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -20,7 +21,7 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 
 CONFIGURE_ARGS=	RUBY=${RUBY}
-#CONFIGURE_ARGS+= CONFIGURE_ARGS="-- --config-opt=--with-opt-dir=/usr/local"
+#CONFIGURE_ARGS+= CONFIGURE_ARGS="-- --config-opt=--with-opt-dir=${LOCALBASE}"
 WRKSRC=		${WRKDIR}/shim/ruby16
 
 .include <bsd.port.pre.mk>
@@ -28,10 +29,6 @@ WRKSRC=		${WRKDIR}/shim/ruby16
 .if ${RUBY_VER} >= 1.7
 IGNORE=		is only for ruby 1.6, ruby ${RUBY_VER} does not need it
 .endif
-
-post-extract:
-	${MKDIR} ${WRKSRC}/ext-ra
-	${MV} ${WRKSRC}/ext/iconv ${WRKDIR}/
 
 pre-install:
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
