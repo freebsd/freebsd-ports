@@ -3,11 +3,11 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.6 1995/04/22 12:30:11 asami Exp $
+# $Id: Makefile,v 1.7 1995/05/13 09:13:51 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.x.org/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 

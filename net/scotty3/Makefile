@@ -3,11 +3,11 @@
 # Date created:		18 Februar 1995
 # Whom:			Gennady Sorokopud <gena@netvision.net.il>
 #
-# $Id: Makefile,v 1.6 1995/04/24 08:26:50 asami Exp $
+# $Id: Makefile,v 1.7 1995/09/15 10:41:29 asami Exp $
 #
 
 DISTNAME=	scotty-1.2.0
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/tkined/
 
 PATCHFILES=	scotty-1.2.0-1.2.1.diff.gz scotty-1.2.1-1.2.2.diff.gz

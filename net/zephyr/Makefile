@@ -3,11 +3,11 @@
 # Date created:		1-Aug-1995
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/08/02 05:20:33 pst Exp $
 #
 
 DISTNAME=	zephyr-2.0.2
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/dist/
 HAS_CONFIGURE=	yes
 

@@ -3,11 +3,11 @@
 # Date created:		15 May 1995
 # Whom:			torstenb
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1995/05/19 07:23:13 asami Exp $
 #
 
 DISTNAME=	mirror-2.3
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/computing/archiving/mirror/
 
 MAINTAINER=	torstenb@FreeBSD.ORG

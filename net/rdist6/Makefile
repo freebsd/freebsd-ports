@@ -4,11 +4,11 @@
 # Whom:			peter
 # Based on patches by:  Deborah Bennett <deborah@microunity.com>
 #
-# $Id: Makefile,v 1.3 1995/08/21 02:41:46 asami Exp $
+# $Id: Makefile,v 1.4 1995/10/06 07:00:40 asami Exp $
 #
 
 DISTNAME=	rdist-6.1.0
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://usc.edu/pub/rdist/
 
 MAINTAINER=	peter@FreeBSD.org

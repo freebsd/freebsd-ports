@@ -3,11 +3,11 @@
 # Date created:		24 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1995/04/15 05:42:07 asami Exp $
+# $Id: Makefile,v 1.8 1995/10/04 01:55:58 asami Exp $
 #
 
 DISTNAME=	xarchie-2.0.10
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/applications/ \
 		ftp://ftp.funet.fi/pub/X11/contrib/applications/
 

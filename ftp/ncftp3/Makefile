@@ -3,11 +3,11 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.29 1995/10/16 11:30:02 ache Exp $
+# $Id: Makefile,v 1.30 1995/11/23 20:37:59 ache Exp $
 #
 
 DISTNAME=       ncftp-2.2.2
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=   ftp://ftp.cs.unl.edu/pub/ncftp/
 EXTRACT_SUFX=   .tgz
 

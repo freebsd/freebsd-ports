@@ -3,11 +3,11 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.5 1995/04/15 05:42:04 asami Exp $
+# $Id: Makefile,v 1.6 1995/05/04 23:25:53 adam Exp $
 #
 
 DISTNAME=       freeWAIS-0.3
-CATEGORIES+=	networking
+CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/freewais/
 
 GMAKE=		yes
