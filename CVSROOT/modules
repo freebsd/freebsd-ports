@@ -1955,6 +1955,7 @@ gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomespell	ports/textproc/gnomespell
 gnometelnet	ports/net/gnometelnet
+gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs	ports/misc/gnomeuserdocs
 gnomeutils	ports/misc/gnomeutils
 gnomevfs	ports/devel/gnomevfs
