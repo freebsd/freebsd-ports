@@ -4,11 +4,11 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/11 03:31:30 obrien Exp $
+# $Id: Makefile,v 1.2 1998/02/14 23:35:48 obrien Exp $
 #
 
-DISTNAME=	communicator-v404-us.x86-unknown-linux2.0
-PKGNAME=	netscape-communicator-4.04.us
+DISTNAME=	communicator_pro-v405-us.x86-unknown-linux2.0
+PKGNAME=	netscape-communicator-4.05.us
 CATEGORIES=	www
 
 MAINTAINER=	obrien@FreeBSD.ORG
@@ -16,9 +16,9 @@ MAINTAINER=	obrien@FreeBSD.ORG
 RESTRICTED=	"Commerial & USA ITAR export restrictions"
 
 NO_FETCH=	yes
-NO_WRKSUBDIR=	Yes
 NO_BUILD=	Yes
 
+WRKSRC=		${WRKDIR}/communicator-v405.x86-unknown-linux2.0
 NDIR=		${PREFIX}/lib/netscape.us
 BINDIR=		${PREFIX}/bin
 
@@ -36,8 +36,11 @@ pre-fetch:
 .if ${USA_RESIDENT} == YES || ${USA_RESIDENT} == yes
 #
 pre-fetch:
-	@${ECHO} You must manually obtain ${DISTNAME}${EXTRACT_SUFX}
-	@${ECHO} distribution and placed it in ${DISTDIR}.
+	@(if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
+	${ECHO} You must manually obtain ${DISTNAME}${EXTRACT_SUFX} ; \
+	${ECHO} distribution and placed it in ${DISTDIR}. ; \
+	false ; \
+	fi )
 .else
 pre-fetch:
 	@${ECHO}
@@ -50,13 +53,15 @@ pre-fetch:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.04.us.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.04.us
-	ln -sf communicator-4.04 ${BINDIR}/communicator-4.us
-	ln -sf communicator-4 ${BINDIR}/netscape.us
+	mv -f ${NDIR}/netscape ${NDIR}/communicator-pro-4.05.us.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-pro-4.05.us
+	ln -sf communicator-pro-4.05.us ${BINDIR}/communicator-4.us
+	ln -sf communicator-pro-4.05.us ${BINDIR}/netscape.us
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
+	rm -rf ${NDIR}/netscape-dynMotif
+	rm -rf ${NDIR}/libnullplugin-dynMotif.so
 	rm -rf ${NDIR}/movemail-src
 	chown -R bin.bin ${NDIR}
 
