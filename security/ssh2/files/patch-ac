@@ -1,23 +1,184 @@
-*** gmp-2.0.2/Makefile.in.bak	Mon Sep 30 02:29:39 1996
---- gmp-2.0.2/Makefile.in	Wed Oct 16 07:33:48 1996
+*** Makefile.in.old	Tue Oct 22 02:26:19 1996
+--- Makefile.in	Tue Oct 22 02:30:18 1996
 ***************
-*** 27,35 ****
-  infodir = $(prefix)/info
-  includedir = $(prefix)/include
+*** 159,170 ****
+  SHELL = /bin/sh
   
-! CC = gcc
-  LOCAL_CC = $(CC)
-! CFLAGS = -g -O
-  XCFLAGS = 
-  AR = ar
-  AR_FLAGS = rc
---- 27,35 ----
-  infodir = $(prefix)/info
-  includedir = $(prefix)/include
+  GMPDIR 		= gmp-2.0.2
+! GMPLIBS 	= -L$(GMPDIR) -lgmp
+! GMPDEP 		= $(GMPDIR)/gmp.h $(GMPDIR)/libgmp.a
   
-! #CC = gcc
-  LOCAL_CC = $(CC)
-! #CFLAGS = -g -O
-  XCFLAGS = 
-  AR = ar
-  AR_FLAGS = rc
+  ZLIBDIR		= zlib-1.0.3
+! ZLIBDEP		= $(ZLIBDIR)/libz.a
+! ZLIBLIBS	= -L$(ZLIBDIR) -lz
+  
+  RSAREFDIR	= rsaref2
+  RSAREFSRCDIR 	= $(RSAREFDIR)/source
+--- 159,176 ----
+  SHELL = /bin/sh
+  
+  GMPDIR 		= gmp-2.0.2
+! # We have the same libgmp in the system, so use it instead
+! GMPINCDIR       = /usr/include
+! GMPLIBDIR       = /usr/lib
+! GMPDEP		= $(GMPINCDIR)/gmp.h $(GMPLIBDIR)/libgmp.a
+! GMPLIBS		= -L$(GMPLIBDIR) -lgmp
+  
+  ZLIBDIR		= zlib-1.0.3
+! # We have newer libz in the system, so use it instead
+! ZLIBINCDIR	= /usr/include
+! ZLIBLIBDIR	= /usr/lib
+! ZLIBDEP		= $(ZLIBINCDIR)/zlib.h $(ZLIBLIBDIR)/libz.a
+! ZLIBLIBS	= -L$(ZLIBLIBDIR) -lz
+  
+  RSAREFDIR	= rsaref2
+  RSAREFSRCDIR 	= $(RSAREFDIR)/source
+***************
+*** 248,254 ****
+  	$(CC) -o rfc-pg rfc-pg.c
+  
+  .c.o:
+! 	$(CC) -c -I. -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+  
+  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
+  	-rm -f sshd
+--- 254,260 ----
+  	$(CC) -o rfc-pg rfc-pg.c
+  
+  .c.o:
+! 	$(CC) -c -I. -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $(X_CFLAGS) $<
+  
+  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
+  	-rm -f sshd
+***************
+*** 292,310 ****
+  	./gen_minfd $(USER_SHELLS) > minfd.h~
+  	mv -f minfd.h~ minfd.h
+  
+! GMP_COPY_SOURCES = mpz_gcd.c mpz_powm.c mpz_pow_ui.c mpz_add.c mpz_sub.c \
+! 		mpz_mul.c mpz_cmp.c mpz_sqrtrem.c
+! $(GMPDIR)/libgmp.a:
+! 	cd $(GMPDIR); $(MAKE)
+! 
+! $(ZLIBDEP):
+! 	-if test '!' -d $(ZLIBDIR); then \
+! 	  mkdir $(ZLIBDIR); \
+! 	  cp $(srcdir)/$(ZLIBDIR)/Makefile $(ZLIBDIR); \
+! 	fi
+! 	cd $(ZLIBDIR); $(MAKE) VPATH=$(srcdir)/$(ZLIBDIR):../$(srcdir)/$(ZLIBDIR) \
+! 	  CC="$(CC)" CFLAGS="$(CFLAGS) -I. -I$(srcdir)/$(ZLIBDIR) \
+! 	    -I../$(srcdir)/$(GMPDIR)" RANLIB="$(RANLIB)" libz.a
+  
+  $(RSAREFSRCDIR)/librsaref.a:
+  	-if test '!' -d $(RSAREFDIR); then \
+--- 298,316 ----
+  	./gen_minfd $(USER_SHELLS) > minfd.h~
+  	mv -f minfd.h~ minfd.h
+  
+! #GMP_COPY_SOURCES = mpz_gcd.c mpz_powm.c mpz_pow_ui.c mpz_add.c mpz_sub.c \
+! #		mpz_mul.c mpz_cmp.c mpz_sqrtrem.c
+! #$(GMPDIR)/libgmp.a:
+! #	cd $(GMPDIR); $(MAKE)
+! 
+! #$(ZLIBDIR)/libz.a:
+! #        -if test '!' -d $(ZLIBDIR); then \
+! #          mkdir $(ZLIBDIR); \
+! #          cp $(srcdir)/$(ZLIBDIR)/Makefile $(ZLIBDIR); \
+! #        fi
+! #        cd $(ZLIBDIR); $(MAKE) VPATH=$(srcdir)/$(ZLIBDIR):../$(srcdir)/$(ZLIBDIR) \
+! #          CC="$(CC)" CFLAGS="$(CFLAGS) -I. -I$(srcdir)/$(ZLIBDIR) \
+! #            -I../$(srcdir)/$(GMPDIR)" RANLIB="$(RANLIB)" libz.a
+  
+  $(RSAREFSRCDIR)/librsaref.a:
+  	-if test '!' -d $(RSAREFDIR); then \
+***************
+*** 361,367 ****
+  # (otherwise it can only log in as the user it runs as, and must be
+  # bound to a non-privileged port).  Also, password authentication may
+  # not be available if non-root and using shadow passwords.
+! install: $(PROGRAMS) make-dirs generate-host-key install-configs
+  	$(INSTALL_PROGRAM) -o root -m 04711 ssh $(install_prefix)$(bindir)/ssh
+  	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
+  	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
+--- 367,373 ----
+  # (otherwise it can only log in as the user it runs as, and must be
+  # bound to a non-privileged port).  Also, password authentication may
+  # not be available if non-root and using shadow passwords.
+! install: $(PROGRAMS) make-dirs install-configs
+  	$(INSTALL_PROGRAM) -o root -m 04711 ssh $(install_prefix)$(bindir)/ssh
+  	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
+  	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
+***************
+*** 462,488 ****
+  
+  clean:
+  	-rm -f *.o minfd.h gmon.out *core $(PROGRAMS) gen_minfd rfc-pg
+! 	cd $(GMPDIR); $(MAKE) clean
+  #	cd $(RSAREFSRCDIR); rm -f *.o *.a
+! 	cd $(ZLIBDIR); $(MAKE) clean
+  
+  distclean: clean
+  	-rm -f Makefile config.status config.cache config.log config.h
+  	-rm -f ssh.1 sshd.8 make-ssh-known-hosts.1
+! 	cd $(GMPDIR); $(MAKE) distclean
+! 	cd $(ZLIBDIR); $(MAKE) distclean
+  
+  dist:
+  	-rm -rf $(DISTNAME)
+  	-mkdir $(DISTNAME)
+  	cp $(DISTFILES) $(DISTNAME)
+  	-rm $(DISTNAME)/config.h
+! 	tar cf - $(GMPDIR) | (cd $(DISTNAME); tar xf -)
+! 	cd $(DISTNAME)/$(GMPDIR); $(MAKE) clean
+  #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
+  #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
+! 	tar cf - $(ZLIBDIR) | (cd $(DISTNAME); tar xf -)
+! 	cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
+  	tar cf $(DISTNAME).tar $(DISTNAME)
+  	-rm -f $(DISTNAME).tar.gz
+  	gzip $(DISTNAME).tar
+--- 468,494 ----
+  
+  clean:
+  	-rm -f *.o minfd.h gmon.out *core $(PROGRAMS) gen_minfd rfc-pg
+! #	cd $(GMPDIR); $(MAKE) clean
+  #	cd $(RSAREFSRCDIR); rm -f *.o *.a
+! #       cd $(ZLIBDIR); $(MAKE) clean
+  
+  distclean: clean
+  	-rm -f Makefile config.status config.cache config.log config.h
+  	-rm -f ssh.1 sshd.8 make-ssh-known-hosts.1
+! #	cd $(GMPDIR); $(MAKE) distclean
+! #       cd $(ZLIBDIR); $(MAKE) distclean
+  
+  dist:
+  	-rm -rf $(DISTNAME)
+  	-mkdir $(DISTNAME)
+  	cp $(DISTFILES) $(DISTNAME)
+  	-rm $(DISTNAME)/config.h
+! #       tar cf - $(GMPDIR) | (cd $(DISTNAME); tar xf -)
+! #	cd $(DISTNAME)/$(GMPDIR); $(MAKE) clean
+  #	tar cf - $(RSAREFDIR) | (cd $(DISTNAME); tar xf -)
+  #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
+! #       tar cf - $(ZLIBDIR) | (cd $(DISTNAME); tar xf -)
+! #       cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
+  	tar cf $(DISTNAME).tar $(DISTNAME)
+  	-rm -f $(DISTNAME).tar.gz
+  	gzip $(DISTNAME).tar
+***************
+*** 494,500 ****
+  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
+  
+  depend:
+! 	$(MAKEDEP) -I$(srcdir) -I. -I$(GMPDIR) -I$(ZLIBDIR) $(DEFS) $(SRCS)
+  
+  tags:
+  	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a
+--- 500,506 ----
+  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
+  
+  depend:
+! 	$(MAKEDEP) -I$(srcdir) -I. $(DEFS) $(SRCS)
+  
+  tags:
+  	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a

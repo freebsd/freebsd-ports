@@ -1,5 +1,20 @@
-*** configure.orig	Fri Oct  4 17:00:44 1996
---- configure	Wed Oct 16 06:32:03 1996
+*** configure.old	Tue Oct 22 02:36:46 1996
+--- configure	Tue Oct 22 02:40:51 1996
+***************
+*** 1302,1313 ****
+      ;;
+  esac
+  
+- # Socket pairs appear to be broken on several systems.  I don't know exactly
+- # where, so I'll use pipes everywhere for now.
+- cat >> confdefs.h <<\EOF
+- #define USE_PIPES 1
+- EOF
+- 
+  
+  echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
+  if test "$cross_compiling" = yes; then
+--- 1302,1307 ----
 ***************
 *** 5092,5098 ****
   EOF
@@ -9,11 +24,22 @@
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 5092,5098 ----
+--- 5086,5092 ----
   EOF
   cat >> $CONFIG_STATUS <<EOF
   
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl zlib-1.0.3/Makefile"}
+! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl"}
   EOF
   cat >> $CONFIG_STATUS <<\EOF
   for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
+***************
+*** 5284,5289 ****
+--- 5278,5285 ----
+    done
+  
+    for ac_config_dir in gmp-2.0.2; do
++ 
++ continue # XXX don't configure gmp
+  
+      # Do not complain, so a configure script can configure whichever
+      # parts of a large source tree are present.
