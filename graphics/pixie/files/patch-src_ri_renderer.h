@@ -13,8 +13,8 @@
  	CEnvironment		*environmentLoad(const char *,TSearchpath *,float *);	// Load a new environment map
  
  																				// Delayed object junk
--	void				processDelayedObject(CDelayedObject *,void	(*subdivisionFunction)(char *,float),char *,float,CRay *ray = NULL);
-+	void				processDelayedObject(CDelayedObject *,void	(*subdivisionFunction)(char *,float),char *,float,CRay *ray = (CRay *)NULL);
+-	void				processDelayedObject(CDelayedObject *,void	(*subdivisionFunction)(char *,float),char *,const float *,const float *,CRay *ray = NULL);
++	void				processDelayedObject(CDelayedObject *,void	(*subdivisionFunction)(char *,float),char *,const float *,const float *,CRay *ray = (CRay*)NULL);
  
  	void				addObject(CObject *);									// Add an object into the scene
  	void				addInstance(void *);									// Add an instance into the scene
