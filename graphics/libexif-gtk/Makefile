@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libexif-gtk
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libexif
@@ -15,18 +14,14 @@ MASTER_SITE_SUBDIR=	libexif
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ widgets to display/edit EXIF tags
 
-LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif
 
 USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gtk20
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
