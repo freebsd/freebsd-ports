@@ -1,0 +1,11 @@
+--- ./js/Makefile.in.org	Tue Sep  7 08:24:51 1999
++++ ./js/Makefile.in	Wed Feb 23 18:14:54 2000
+@@ -196,7 +196,7 @@
+ libjs_la_SOURCES = bc.c heap.c object.c debug.c compiler.c js.c vm.c 		vmswitch.c vmjumps.c alloc.c utils.c mrgsort.c 		regex.c crc32.c 		b_array.c b_bool.c b_func.c b_core.c b_number.c 		b_object.c b_string.c b_date.c b_file.c b_math.c 		b_regexp.c b_system.c b_vm.c
+ 
+ 
+-libjs_la_LDFLAGS = -version-info 2:0:2 
++libjs_la_LDFLAGS = -version-info 3:0:2 
+ 
+ noinst_HEADERS = c1swt0.h eswt0.h c1switch.h c2switch.h eswitch.h 	c1jumps.h c2jumps.h ejumps.h rentrant.h 	mrgsort.h regex.h md5.h
+ 

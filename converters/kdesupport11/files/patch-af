@@ -1,0 +1,11 @@
+--- ./rdb/Makefile.in.org	Tue Sep  7 08:24:51 1999
++++ ./rdb/Makefile.in	Wed Feb 23 18:13:12 2000
+@@ -162,7 +162,7 @@
+ x_libraries = @x_libraries@
+ 
+ lib_LTLIBRARIES = librdb.la
+-librdb_la_LDFLAGS = -version-info 55:0:55
++librdb_la_LDFLAGS = -version-info 56:0:55
+ 
+ librdb_la_SOURCES = cdb_hash.c cdb_seek.c  hash.c rdb.c
+ 
