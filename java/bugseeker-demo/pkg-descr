@@ -1,0 +1,11 @@
+BugSeeker is a fully portable Java debugger application based on JPDA. While
+it only runs on JDK 1.2 or higher, it supports debugging JDK 1.1 and 1.0
+applications too. The BugSeeker application is a Swing-based application that
+allows you to step through your program while watching threads, variables,
+field values, etc.
+
+To use this program you will need to have a license installed. You can obtain
+a license from the http://www.karmira.com/products/bugseeker2/demo.html. If
+you already have a license key, you don't have to reregister there.
+
+WWW: http://www.karmira.com/products/bugseeker2/

@@ -3,6 +3,7 @@
     SUBDIR += xalan-j
 
     SUBDIR += bugseeker
+    SUBDIR += bugseeker-demo
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
