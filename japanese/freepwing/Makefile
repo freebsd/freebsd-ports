@@ -7,8 +7,8 @@
 #
 
 DISTNAME=	freepwing-1.1a
-#PKGNAME=	ja-freepwing-1.1a
-CATEGORIES=	textproc
+PKGNAME=	ja-freepwing-1.1a
+CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/freepwing/
 
 MAINTAINER=	taoka@FreeBSD.org
