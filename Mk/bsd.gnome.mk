@@ -477,7 +477,8 @@ USE_GNOME+=	gtk12
 # Hack USE_GNOME to the modular infrastructure for port maintainers that
 # didn't do so themselves.  New ports should NOT set USE_GNOME=yes.
 . if ${USE_GNOME}=="yes"
-USE_GNOME+=gnomeprefix gnomehack gtkhtml libpanel
+USE_GNOME:=	${USE_GNOME:S/yes//}
+USE_GNOME+=	gnomeprefix gnomehack gtkhtml libpanel
 . endif
 
 # First of all expand all USE_GNOME_IMPL recursively
