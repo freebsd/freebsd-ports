@@ -1,0 +1,3 @@
+bin/proxychains
+etc/proxychains.conf
+lib/libproxychains.so.9

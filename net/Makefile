@@ -523,6 +523,7 @@
     SUBDIR += pptpclient
     SUBDIR += ppxp
     SUBDIR += proxy-suite
+    SUBDIR += proxychains
     SUBDIR += prtunnel
     SUBDIR += psi
     SUBDIR += pvm
