@@ -1,8 +1,6 @@
 bin/nmapfe
 bin/xnmap
 @cwd %%X11BASE%%
-share/gnome/apps/Utilities/nmapfe.desktop
-@unexec rmdir %D/share/gnome/apps/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
+share/applications/nmapfe.desktop
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @cwd %%REALPREFIX%%

@@ -4,8 +4,8 @@
  mandir = @mandir@
  srcdir = @srcdir@
  nmapdatadir = @datadir@/nmap
--deskdir = $(prefix)/share/gnome/apps/Utilities
-+deskdir = $(X11BASE)/share/gnome/apps/Utilities
+-deskdir = $(prefix)/share/applications
++deskdir = $(X11BASE)/share/applications
  
  NBASEDIR=@NBASEDIR@
  NSOCKDIR=@NSOCKDIR@
