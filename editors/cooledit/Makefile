@@ -1,12 +1,12 @@
 # New ports collection makefile for:	 cooledit
-# Version required:	3.11.2
+# Version required:	3.11.3
 # Date created:		18 November 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.13 1999/06/05 19:00:07 mharo Exp $
+# $Id: Makefile,v 1.14 1999/06/09 00:04:55 steve Exp $
 #
 
-DISTNAME=	cooledit-3.11.2
+DISTNAME=	cooledit-3.11.3
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/

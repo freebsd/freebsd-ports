@@ -1,6 +1,6 @@
---- widget/syntax.c.orig	Sun May 30 07:47:04 1999
-+++ widget/syntax.c	Mon Jun  7 15:55:34 1999
-@@ -728,7 +728,7 @@
+--- widget/syntax.c.orig	Fri Jun 11 16:24:41 1999
++++ widget/syntax.c	Sat Jun 12 08:30:33 1999
+@@ -729,7 +729,7 @@
      f = fopen (p, "r");
      if (f)
  	return f;
