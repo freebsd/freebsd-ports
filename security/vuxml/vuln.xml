@@ -32,6 +32,68 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5fe7e27a-64cb-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- denial of service with forged WCCP messages</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth">
+	  <p>WCCP_I_SEE_YOU messages contain a 'number of caches'
+	    field which should be between 1 and 32. Values outside
+	    that range may crash Squid if WCCP is enabled, and if an
+	    attacker can spoof UDP packets with the WCCP router's IP
+	    address.</p>
+	</blockquote>
+	<p>Note: the WCCP protocol is not enabled by default in
+	  squid's FreeBSD port.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-fakeauth_auth</url>
+    </references>
+    <dates>
+      <discovery>2005-01-07</discovery>
+      <entry>2005-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="184ab9e0-64cd-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- buffer overflow vulnerability in gopherToHTML</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.7_6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid patches page notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing">
+	  <p>A malicious gopher server may return a response with very
+	    long lines that cause a buffer overflow in Squid.</p>
+	  <p>Workaround: Since gopher is very obscure these days, do
+	    not allow Squid to any gopher servers. Use an ACL rule
+	    like:</p>
+	  <pre>acl Gopher proto gopher
+http_access deny Gopher</pre>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing</url>
+    </references>
+    <dates>
+      <discovery>2005-01-11</discovery>
+      <entry>2005-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="131bd7c4-64a3-11d9-829a-000a95bc6fae">
     <topic>libxine -- DVD subpicture decoder heap overflow</topic>
     <affects>
