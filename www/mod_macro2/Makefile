@@ -20,6 +20,7 @@ PORTDOCS=	${PORTNAME}.html
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
