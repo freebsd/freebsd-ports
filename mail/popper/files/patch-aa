@@ -1,5 +1,5 @@
 *** Makefile.in.orig	Fri Jul 10 03:44:06 1998
---- Makefile.in	Sat Jul 18 20:04:20 1998
+--- Makefile.in	Wed Aug  5 01:26:01 1998
 ***************
 *** 1,20 ****
 ! CSRCS		=	flock.c pop_dele.c pop_dropcopy.c \
@@ -30,7 +30,7 @@
   			pop_rset.c pop_send.c pop_stat.c pop_updt.c \
   			pop_user.c pop_xtnd.c pop_xmit.c popper.c \
 ! 			pop_bull.c xtnd_xlst.c pop_uidl.c \
-! 			pop_rpop.c pop_apop.c pop_auth.c
+! 			pop_rpop.c pop_apop.c pop_auth.c sendto.c
   
 ! OBJS            =       pop_dele.o pop_dropcopy.o \
   			pop_get_command.o pop_get_subcommand.o pop_init.o \
@@ -39,7 +39,7 @@
   			pop_rset.o pop_send.o pop_stat.o pop_updt.o \
   			pop_user.o pop_xtnd.o pop_xmit.o popper.o \
 ! 			pop_bull.o xtnd_xlst.o pop_uidl.o \
-! 			pop_rpop.o pop_apop.o pop_auth.o
+! 			pop_rpop.o pop_apop.o pop_auth.o sendto.o
   
   DOCS		=	README pop3.rfc1081 pop3e.rfc1082 popper.8
   

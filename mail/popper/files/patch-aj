@@ -1,0 +1,62 @@
+*** pop_updt.c.orig	Fri Jul 10 03:44:08 1998
+--- pop_updt.c	Wed Aug  5 01:14:24 1998
+***************
+*** 126,131 ****
+--- 126,134 ----
+  	    mailunlock();
+  #endif
+  	}
++ #ifdef YOUBIN
++ 	sendto_youbin(p->user);
++ #endif
+          return (POP_SUCCESS);
+      }
+  
+***************
+*** 328,333 ****
+--- 331,339 ----
+  	    mailunlock();
+  #endif
+  	    (void)fclose(p->drop) ;
++ #ifdef YOUBIN
++ 	    sendto_youbin(p->user);
++ #endif
+  #ifdef EDQUOT
+  	    if (save_errno == EDQUOT)
+  		return pop_msg(p, POP_FAILURE,
+***************
+*** 348,353 ****
+--- 354,362 ----
+  	    mailunlock();
+  #endif
+  	    (void)fclose(p->drop);
++ #ifdef YOUBIN
++ 	    sendto_youbin(p->user);
++ #endif
+  #ifdef EDQUOT
+  	    if (save_errno == EDQUOT)
+  		return pop_msg(p, POP_FAILURE,
+***************
+*** 452,457 ****
+--- 461,469 ----
+  	    mailunlock();
+  #endif
+  	    (void)fclose(p->drop) ;
++ #ifdef YOUBIN
++ 	    sendto_youbin(p->user);
++ #endif
+  #ifdef EDQUOT
+  	    if (save_errno == EDQUOT)
+  		return pop_msg(p, POP_FAILURE,
+***************
+*** 475,480 ****
+--- 487,495 ----
+  #endif
+  	(void)fclose(p->drop);
+      }
++ #ifdef YOUBIN
++     sendto_youbin(p->user);
++ #endif
+  
+      return(pop_quit(p));
+  }
