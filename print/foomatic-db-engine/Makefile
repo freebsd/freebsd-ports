@@ -20,6 +20,7 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS
 USE_REINPLACE=	yes
