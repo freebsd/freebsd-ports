@@ -1,0 +1,8 @@
+The subcalc utility is used for subnet calculation and IPv6 DNS PTR
+record generation.  subcalc takes command line arguments in a similar
+format to ifconfig(8) so the synopsis should be familiar to the user.
+Given an address family, address and a netmask/prefix length, subcalc
+will calculate the number of hosts and address ranges of the specific
+network.
+
+WWW: http://www.seccuris.com
