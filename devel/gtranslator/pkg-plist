@@ -1,5 +1,5 @@
 bin/gtranslator
-bin/gtranslatord
+bin/pozilla.sh
 etc/gconf/gconf.xml.defaults/apps/gtranslator/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gtranslator/history/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gtranslator/informations/%gconf.xml
@@ -11,33 +11,19 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/informations/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator/%gconf.xml
 etc/gconf/schemas/gtranslator.schemas
-etc/gtranslatorConf.sh
-include/libgtranslator/gtkled.h
-include/libgtranslator/gtranslatord.h
-include/libgtranslator/libgtranslator.h
-include/libgtranslator/messages.h
-include/libgtranslator/preferences.h
-include/libgtranslator/stylistics.h
-lib/libgtranslator.a
-lib/libgtranslator.so
-lib/libgtranslator.so.0
 share/gnome/apps/Development/gtranslator.desktop
 share/gnome/gtranslator/scripts/my-update.sh
-share/gnome/gtranslator/teams.xml
-share/gnome/help/gtranslator/C/basicinfos.html
+share/gnome/help/gtranslator/C/authors.html
+share/gnome/help/gtranslator/C/commandlinearguments.html
+share/gnome/help/gtranslator/C/docbook.css
+share/gnome/help/gtranslator/C/features.html
 share/gnome/help/gtranslator/C/index.html
-share/gnome/help/gtranslator/C/newreleases.html
-share/gnome/help/gtranslator/C/todo.html
+share/gnome/help/gtranslator/C/thanks-to-contributors.html
+share/gnome/help/gtranslator/C/thanks-to-packagers.html
 share/gnome/help/gtranslator/C/topic.dat
-share/gnome/help/gtranslator/tr/basicinfos.html
-share/gnome/help/gtranslator/tr/index.html
-share/gnome/help/gtranslator/tr/newreleases.html
-share/gnome/help/gtranslator/tr/todo.html
-share/gnome/help/gtranslator/tr/topic.dat
-share/gnome/idl/gtranslator/gtranslatord.idl
+share/gnome/help/gtranslator/C/use-of-gtranslator.html
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
-share/gnome/oaf/Gtranslator_Gtranslatord.oaf
 share/gnome/pixmaps/gtranslator.png
 share/gnome/pixmaps/mc/application-x-gmo.png
 share/gnome/pixmaps/mc/application-x-po.png
@@ -61,13 +47,10 @@ share/locale/ru/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
-@dirrm share/gnome/idl/gtranslator
-@dirrm share/gnome/help/gtranslator/tr
 @dirrm share/gnome/help/gtranslator/C
 @dirrm share/gnome/help/gtranslator
 @dirrm share/gnome/gtranslator/scripts
 @dirrm share/gnome/gtranslator
-@dirrm include/libgtranslator
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/translator
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/language
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtranslator/informations
