@@ -34,7 +34,7 @@ MAN1=		ruby${_RUBY_SUFFIX}.1
 MLINKS=		ruby${_RUBY_SUFFIX}.1 ruby.1
 
 .if !defined(WITH_LIBC_R)
-CONFIGURE_ARGS+=	--with_libc_r=no
+CONFIGURE_ARGS+=	--with-libc_r=no
 .endif
 
 .include <bsd.port.pre.mk>
