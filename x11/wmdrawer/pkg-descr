@@ -1,0 +1,13 @@
+wmDrawer is a dock application (dockapp) which provides a drawer (retractable
+button bar) to launch applications.
+   * The drawer is retractable and animated.
+   * Several columns of buttons can be defined in the drawer.
+   * The configuration file is automaticaly reloaded if it changes.
+   * Multiple instances of the program can run at the same time.
+   * Button's highlight under mouse cursor.
+   * Drawer's transparency (need SHAPE extension).
+   * Ability to launch several apps at once from the drawer. By holding down
+     the key Shift or by using mouse buttons middle or right instead of left,
+     you can keep the drawer opened.
+
+WWW: http://people.easter-eggs.org/~valos/wmdrawer/

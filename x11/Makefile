@@ -112,6 +112,7 @@
     SUBDIR += wmappl
     SUBDIR += wmbutton
     SUBDIR += wmcliphist
+    SUBDIR += wmdrawer
     SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
