@@ -63,6 +63,7 @@
     SUBDIR += generic-nqs
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gnet
     SUBDIR += gnomba
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
