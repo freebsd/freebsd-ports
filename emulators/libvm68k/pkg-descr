@@ -1,0 +1,8 @@
+Libvm68k - M68000 virtual machine library
+
+Features :
+   - Written in C++,
+   - Fairly portable, and
+   - Possibly much more! :)
+
+WWW: http://www.vx68k.org/libvm68k/

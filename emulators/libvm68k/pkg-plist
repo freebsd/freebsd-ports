@@ -1,0 +1,18 @@
+include/vm68k/addressing.h
+include/vm68k/conditional.h
+include/vm68k/iterator.h
+include/vm68k/memory.h
+include/vm68k/misc.h
+include/vm68k/mutex.h
+include/vm68k/processor.h
+include/vm68k/size.h
+include/vm68k/types.h
+@dirrm include/vm68k
+lib/libvm68k-1.0.so
+lib/libvm68k-1.0.so.4
+lib/libvm68k.a
+lib/libvm68k.la
+lib/libvm68k.so
+@unexec install-info --delete %D/info/libvm68k.info %D/info/dir
+info/libvm68k.info
+@exec install-info %D/info/libvm68k.info %D/info/dir
