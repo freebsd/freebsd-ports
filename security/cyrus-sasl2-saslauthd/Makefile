@@ -19,6 +19,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	SASL authentication server for cyrus-sasl2
 
+BROKEN=		Does not install, will be removed after Feb 2
+
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 CYRUS_SASL2_DIR=${MASTERDIR}/../cyrus-sasl2

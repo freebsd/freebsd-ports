@@ -15,6 +15,8 @@ COMMENT=	A server-side bayesian spam filter
 
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-userdir=${PREFIX}/etc/dspam \
 		--with-db4-includes=${LOCALBASE}/include/db41

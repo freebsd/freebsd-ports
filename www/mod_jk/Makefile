@@ -16,6 +16,8 @@ DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	Apache JK module for connecting to Tomcat using AJP1X
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/apache2/apr.h)

@@ -23,6 +23,8 @@ BROKEN=		undefined references in hdf5, please deinstall hdf5 package \
 		before continue
 .endif
 
+BROKEN=		"Does not configure; will be removed after Feb 2"
+
 .if defined(WITH_JAVA)
 USE_JAVA=	1.3+
 .endif

@@ -17,6 +17,8 @@ COMMENT=	Perform consistency checks on DNS zone files
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
+BROKEN=		"Broken dependency; will be removed after Feb 2"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_RUBY=	yes

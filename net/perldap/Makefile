@@ -17,6 +17,8 @@ COMMENT=	Perl interface to LDAP
 
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk
 
+BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
+
 WRKSRC=		${WRKDIR}/$(PORTNAME)-$(PORTVERSION)
 MAN3=		Mozilla::LDAP::Conn.3 \
 			Mozilla::LDAP::LDIF.3 \

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	cgoban1
 MAINTAINER=	simonm@dcs.gla.ac.uk
 COMMENT=	Internet Go Server client and game editor
 
+BROKEN=		Does not compile, will be removed after Feb 2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

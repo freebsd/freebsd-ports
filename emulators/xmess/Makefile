@@ -16,4 +16,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess
 
+BROKEN=		"Missing from distinfo; will be removed after Feb 2"
+
 .include "${MASTERDIR}/Makefile"

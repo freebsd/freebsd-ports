@@ -19,6 +19,8 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/LockFile/Simple.pm:${PORTSDIR}/devel/p5-LockFile-Simple
 
+BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
+
 USE_PERL5=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_GMAKE=	yes

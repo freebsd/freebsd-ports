@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	GNU Backgammon
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 MAN6=	gnubg.6
 
 GNU_CONFIGURE=	yes

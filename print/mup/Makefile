@@ -15,6 +15,8 @@ DISTFILES=	mup45src.tar.gz mup45doc.tar.gz
 MAINTAINER=	darius@dons.net.au
 COMMENT=	A shareware program for typesetting music
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 BUILD_WRKSRC=	${WRKSRC}
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

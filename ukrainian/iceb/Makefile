@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
 MAINTAINER=	vchekan@softline.kiev.ua
 COMMENT=	Ukrainian accounting system
 
+BROKEN=		"Does not fetch; will be removed after Feb 2"
+
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	323
 USE_GMAKE=	yes

@@ -16,6 +16,8 @@ COMMENT=	MIDI-capable synthesizer for X
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		"Does not patch on 4.x, does not compile on 5.x (bad C++ code); will be removed after Feb 2"
+
 GNU_CONFIGURE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
@@ -25,12 +27,6 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
-.endif
 
 post-patch:
 .for ii in Makefile.in PluginLink.sh
@@ -78,4 +74,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

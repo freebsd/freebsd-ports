@@ -18,6 +18,8 @@ COMMENT=	A text mode menu- and window-driven IM interface
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
+BROKEN=		Does not fetch, will be removed after Feb 2
+
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
