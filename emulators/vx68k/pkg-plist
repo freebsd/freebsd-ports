@@ -5,9 +5,6 @@ include/vx68k/iocs.h
 include/vx68k/machine.h
 include/vx68k/memory.h
 include/vx68k/version.h
-@unexec install-info --delete %D/info/vx68k.info %D/info/dir
-info/vx68k.info
-@exec install-info %D/info/vx68k.info %D/info/dir
 lib/libvx68k.a
 lib/libvx68kdos.a
 @dirrm include/vx68k
