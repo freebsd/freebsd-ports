@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -25,7 +25,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/apps/ROX-Filer
-	cd ${WRKSRC}/ROX-Filer && ${CP} -r Options.xml AppIcon.xpm FreeBSD-ix86 Messages AppRun Help pixmaps ${PREFIX}/apps/ROX-Filer
+	cd ${WRKSRC}/ROX-Filer && ${CP} -r Options.xml AppIcon.xpm FreeBSD-ix86 Messages AppRun Help pixmaps Styles ${PREFIX}/apps/ROX-Filer
 	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
 	${CHMOD} 775 ${PREFIX}/bin/rox
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
