@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/
 
 MAINTAINER=	keith@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_FREETYPE=	yes
 
 FONTSDIR=	${PREFIX}/share/fonts/TrueType/
@@ -37,4 +42,4 @@ do-install:
 
 MAN1=	ttfm.sh.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
