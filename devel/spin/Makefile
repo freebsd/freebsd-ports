@@ -6,23 +6,31 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	devel
-MASTER_SITES=	http://spinroot.com/spin/Src/ \
-		ftp://netlib.bell-labs.com/netlib/spin/ \
-		ftp://www.netlib.org/spin/
+MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTFILES=	spin${PORTVERSION:S/.//g}.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
-BROKEN=		Checksum mismatch
+.if !defined(WITHOUT_XSPIN)
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+PLIST_SUB+=	XSPIN=""
+.else
+PLIST_SUB+=	XSPIN="@comment "
+.endif
 
 DIST_SUBDIR=	spin
 WRKSRC=		${WRKDIR}/Src${PORTVERSION}
 MAKEFILE=	make_unix
 ALL_TARGET=	spin
 USE_REINPLACE=	yes
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Use WITHOUT_XSPIN=yes to suppress xspin (and TCL/Tk dependency)."
+	@${ECHO_MSG} ""
 
 post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
@@ -32,24 +40,25 @@ post-patch:
 	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
 	${REINPLACE_CMD} \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
-		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.0/xspin402.tcl
+		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin4.0/xspin407.tcl
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
+.if !defined(WITHOUT_XSPIN)
 	${RM} -f ${PREFIX}/bin/xspin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.0/xspin402.tcl ${PREFIX}/bin/xspin
-
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin4.0/xspin407.tcl ${PREFIX}/bin/xspin
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/spin/Doc
-	${MKDIR} ${PREFIX}/share/doc/spin/Examples
-	${MKDIR} ${PREFIX}/share/doc/spin/HTML
-	${MKDIR} ${PREFIX}/share/doc/spin/Test
-	${INSTALL_DATA} ${WRKDIR}/Doc/* ${PREFIX}/share/doc/spin/Doc
-	${INSTALL_DATA} ${WRKDIR}/Test/ex.* ${PREFIX}/share/doc/spin/Examples
-	${INSTALL_DATA} ${WRKDIR}/HTML/* ${PREFIX}/share/doc/spin/HTML
-.for i in README.tests abp erathostenes hello leader leader.ltl leader2 \
+	${MKDIR} ${DOCSDIR}/Doc
+	${MKDIR} ${DOCSDIR}/Examples
+	${MKDIR} ${DOCSDIR}/HTML
+	${MKDIR} ${DOCSDIR}/Test
+	${INSTALL_DATA} ${WRKDIR}/Doc/* ${DOCSDIR}/Doc
+	${INSTALL_DATA} ${WRKDIR}/Test/ex.* ${DOCSDIR}/Examples
+	${INSTALL_DATA} ${WRKDIR}/HTML/* ${DOCSDIR}/HTML
+.for i in README.tests abp eratosthenes hello leader leader.ltl leader2 \
 	loops mobile1 mobile1.ltl mobile2 mobile2.ltl pathfinder peterson petersonN pftp priorities snoopy sort wordcount
-	${INSTALL_DATA} ${WRKDIR}/Test/$i ${PREFIX}/share/doc/spin/Test
+	${INSTALL_DATA} ${WRKDIR}/Test/$i ${DOCSDIR}/Test
 .endfor
 .endif
 
