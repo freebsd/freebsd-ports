@@ -5,8 +5,7 @@ button-bar can be used to provide convenient access to frequently used
 functions or programs.
 
 This package uses fvwm-users-jp-kits also, to add internationalized
-feature (based on X itself) to fvwm and its modules, and to
-enhance/modifies the behavior of fvwm.
+feature (based on X itself) to fvwm and its modules.
 
 With this package, you may use fonts of your own language, display
 characters in everywhere in fvwm, and have fun ;-)
