@@ -70,6 +70,7 @@
     SUBDIR += eawpats
     SUBDIR += ecasound
     SUBDIR += ecawave
+    SUBDIR += enscribe
     SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += etktab
