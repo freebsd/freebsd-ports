@@ -3,10 +3,9 @@
 # Whom:                 wosch
 #
 # $FreeBSD$
-#
 
 PORTNAME=	uk-postcodes
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/uk-postcodes/ \
 		http://people.FreeBSD.org/~brian/uk-postcodes/
