@@ -10,22 +10,20 @@ PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/ \
 		http://public.www.planetmirror.com/pub/hpux/X11/Demos/stars-1.0/
-DISTFILES=	stars-1.0-ss-11.00.tar.gz
+DISTNAME=	stars-1.0-ss-11.00
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star field demo
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 
-CC?=		cc
-CFLAGS?=	-O2
-
 do-build:
-	$(CC) -I$(PREFIX)/include $(CFLAGS) -c $(WRKSRC)/xwin.c -o $(WRKSRC)/xwin.o
-	$(CC) -I$(PREFIX)/include $(CFLAGS) -c $(WRKSRC)/main.c -o $(WRKSRC)/main.o
-	$(CC) $(WRKSRC)/main.o $(WRKSRC)/xwin.o -L$(PREFIX)/lib -lX11 -lm -o $(WRKSRC)/stars
+	${CC} -I${PREFIX}/include ${CFLAGS} -c ${WRKSRC}/xwin.c -o ${WRKSRC}/xwin.o
+	${CC} -I${PREFIX}/include ${CFLAGS} -c ${WRKSRC}/main.c -o ${WRKSRC}/main.o
+	${CC} ${WRKSRC}/main.o ${WRKSRC}/xwin.o -L${PREFIX}/lib -lX11 -lm -o ${WRKSRC}/stars
 
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/stars $(PREFIX)/bin/stars
+	${INSTALL_PROGRAM} ${WRKSRC}/stars ${PREFIX}/bin/stars
 
 .include <bsd.port.mk>
