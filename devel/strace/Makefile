@@ -24,7 +24,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/strace ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/strace-graph ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/strace.1 ${PREFIX}/man/man1
-	-${MKDIR} ${PREFIX}/share/strace
+	${MKDIR} ${PREFIX}/share/strace
 	${INSTALL_DATA} ${WRKSRC}/xlate.el ${PREFIX}/share/strace
 
 .include <bsd.port.mk>
