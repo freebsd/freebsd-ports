@@ -1,51 +1,15 @@
---- Make-config.orig	Sun Aug 30 05:27:56 1998
-+++ Make-config	Wed Sep 30 14:50:03 1998
-@@ -1,8 +1,12 @@
- # Make-config
+--- configure	Tue Dec 14 14:20:48 1999
++++ configure.new	Sat Feb 26 00:34:51 2000
+@@ -815,9 +815,9 @@
  
--MAJOR=3
-+MAJOR=14
- MINOR=0
-+.if ${PORTOBJFORMAT} == "elf"
-+VERSION=$(MAJOR)
-+.else
- VERSION=$(MAJOR).$(MINOR)
-+.endif
  
- # Mesa 3-D graphics library
- # Copyright (C) 1995-1998  Brian Paul
-@@ -281,6 +285,16 @@
- 	"MAKELIB = ../mklib.freebsd" \
- 	"XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lXi -lX11"
+ # CURRENT:REVISION:AGE
+-LIBGL_VERSION=3:0:2
+-LIBGLU_VERSION=3:0:2
+-LIBGLUT_VERSION=10:0:7
++LIBGL_VERSION=${GLVER}:0
++LIBGLU_VERSION=${GLVER}:0
++LIBGLUT_VERSION=${GLUTVER}:0
  
-+freebsd-elf:
-+	$(MAKE) $(MFLAGS) targets \
-+	"GL_LIB = libMesaGL.a" \
-+	"GLU_LIB = libMesaGLU.a" \
-+	"GLUT_LIB = libglut.a" \
-+	"CC = gcc" \
-+	"CFLAGS = -O2 -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100" \
-+	"MAKELIB = ../mklib.freebsd" \
-+	"XLIBS = -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib -lXext -lXmu -lXi -lX11"
-+
- freebsd-386:
- 	$(MAKE) $(MFLAGS) targets \
- 	"GL_LIB = libMesaGL.a" \
-@@ -291,6 +305,17 @@
- 	"MAKELIB = ../mklib.freebsd" \
- 	"XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lXi -lX11" \
- 	"ASM_SOURCES = asm_386.S"
-+
-+freebsd-386-elf:
-+	$(MAKE) $(MFLAGS) targets \
-+	"GL_LIB = libMesaGL.a" \
-+	"GLU_LIB = libMesaGLU.a" \
-+	"GLUT_LIB = libglut.a" \
-+	"CC = gcc" \
-+	"CFLAGS = -O3 -ffast-math -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100 -DUSE_X86_ASM" \
-+	"MAKELIB = ../mklib.freebsd" \
-+	"XLIBS = -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib -lXext -lXmu -lXi -lX11" \
-+	"ASM_SOURCES = asm_386.S"
  
- gcc:
- 	$(MAKE) $(MFLAGS) targets \
+ 

@@ -1,53 +1,39 @@
 # New ports collection makefile for:    Mesa
-# Version required:     3.0
+# Version required:     3.1
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       MesaLib-3.0
-PKGNAME=	Mesa-3.0
+DISTNAME=	MesaLib-${VERSION}
+PKGNAME=	Mesa-${VERSION}
 CATEGORIES=	graphics
-MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
+MASTER_SITES= 	http://download.sourceforge.net/mesa3d/ \
+		ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-${VERSION}.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/Mesa-3.0
-
-USE_X_PREFIX=	yes
-LIBS=		libMesaGL libMesaGLU
-
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-ALL_TARGET=	freebsd-elf
-SHLIB_VERSION=	14
-GLUT_VERSION=	3
-.else
-ALL_TARGET=	freebsd
-SHLIB_VERSION=	14.0
-GLUT_VERSION=	3.7
+.if defined(WANT_GGI)
+LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
+CONFIGURE_ARGS+=--with-ggi=${LOCALBASE}
 .endif
 
-do-install:
-.for file in ${LIBS}
-	${INSTALL_DATA} ${WRKSRC}/lib/${file}.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/${file}.so.${SHLIB_VERSION} ${PREFIX}/lib
-	${LN} -fs ${file}.so.${SHLIB_VERSION} ${PREFIX}/lib/${file}.so
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/lib/libglut.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/libglut.so.${GLUT_VERSION} ${PREFIX}/lib
-	${LN} -fs libglut.so.${GLUT_VERSION} ${PREFIX}/lib/libglut.so
-.for file in GL GLU
-	@${LN} -fs libMesa${file}.a ${PREFIX}/lib/lib${file}.a
-	@${LN} -fs libMesa${file}.so.${SHLIB_VERSION} ${PREFIX}/lib/lib${file}.so.${SHLIB_VERSION}
-	@${LN} -fs libMesa${file}.so ${PREFIX}/lib/lib${file}.so
-.endfor
-	@${MKDIR} ${PREFIX}/include/GL
-	${INSTALL_DATA} ${WRKSRC}/include/GL/* ${PREFIX}/include/GL
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+VERSION=	3.1
+GLVER=		14
+GLUTVER=	3
+WRKSRC=		${WRKDIR}/${PKGNAME}
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV+=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
+PLIST_SUB=	GLVER="${GLVER}" GLUTVER="${GLUTVER}"
 
-.include <bsd.port.post.mk>
+post-install:
+.for lib in GL GLU
+	@${LN} -sf ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/libMesa${lib}.so
+.endfor
+
+.include <bsd.port.mk>
