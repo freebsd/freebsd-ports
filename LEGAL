@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.126 1999/01/28 08:28:08 fenner Exp $
+# $Id: LEGAL,v 1.127 1999/02/12 15:40:36 kuriyama Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -63,6 +63,12 @@ glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-*		ports/graphics/graphviz	Needs license before fetching
+inn2-*			ports/news/inn2		Copyright file in package
+						Need to name Rich Salz (done
+						in DESCR). Need to name changes
+						done in inn2 sources, which are
+						now maintained by ISC. Otherwise
+						no usage restriction.
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 john-*			ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
