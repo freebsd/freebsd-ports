@@ -1,0 +1,12 @@
+libGenome is a freely available toolkit for developing bioinformatic related
+software in C++. It is intended to take the hassle out of performing common
+tasks on genetic sequence and annotation data.
+
+Among other things, libGenome can help you:
+   - Read and write Multi-FastA format files
+   - Read and write GenBank flat file database entries
+   - Append, chop, truncate, reverse, complement, translate, and otherwise
+     mangle sequence data
+   - Access annotation in GenBank flat files
+
+WWW: http://www.libgenome.org/
