@@ -1,0 +1,24 @@
+x2x allows the keyboard and mouse on one ("from") X display to be used
+to control another ("to") X display.  Since x2x uses the XTEST
+extension, the "to" X display must support XTEST.
+
+In the default interface, x2x puts a window on the "from" display.
+This window is labeled with the name of the "to" display.  Keystrokes
+typed into this window go to the window on the "to" display that has
+the input focus.  Clicking on the x2x window causes the mouse on the
+"from" display to control the cursor on the "to" display.  Perform-
+ing a subsequent multiple button click on the "to" display returns
+control to the "from" display.
+
+If the -east or -west options are specified on the command line, x2x
+starts up with a different interface.  When the mouse moves to the
+(east or west) side of the default screen on the "from" display, the
+cursor slides over to the "to" display.  When the mouse returns to to
+side of the "to" display that it entered, it slides back onto the
+"from" display.
+
+Unless the -nosel option is specified, x2x relays X selections from
+one display to the other.
+
+Greg Lehey
+grog@FreeBSD.org
