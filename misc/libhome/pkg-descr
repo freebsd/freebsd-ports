@@ -1,0 +1,9 @@
+bhome is a library providing a getpwnam() emulation.
+It support MySQL (3.23), Open LDAP 2 or system /etc/passwd
+frontend.
+
+It's intended to replace getpwnam within a system daemons who needs
+user authentification or identification when the users are listed on
+foreign servers.
+
+WWW: http://pll.sourceforge.net/
