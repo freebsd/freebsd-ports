@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynote
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
 
