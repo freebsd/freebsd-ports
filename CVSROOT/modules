@@ -1191,6 +1191,7 @@ de-kheisereg	ports/german/kheisereg
 de-koffice-i18n	ports/german/koffice-i18n
 de-ksteak	ports/german/ksteak
 de-linux-eagle	ports/german/linux-eagle
+de-linux-mozillafirebird	ports/german/linux-mozillafirebird
 de-manpages	ports/german/manpages
 de-netscape7	ports/german/netscape7
 de-ooodict-CH	ports/german/ooodict-de_CH
