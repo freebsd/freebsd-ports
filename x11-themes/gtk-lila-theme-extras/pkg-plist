@@ -1,0 +1,34 @@
+share/themes/Kuala/gtk-2.0/iconrc
+share/themes/Kuala/gtk-2.0/gtkrc
+share/themes/Lila-Industrial/gtk/gtkrc
+share/themes/Lila-Industrial/gtk-2.0/iconrc
+share/themes/Lila-Industrial/gtk-2.0/gtkrc
+share/themes/Lila-Simple/gtk-2.0/iconrc
+share/themes/Lila-Simple/gtk-2.0/gtkrc
+share/themes/Lila-Smooth/gtk-2.0/iconrc
+share/themes/Lila-Smooth/gtk-2.0/gtkrc
+share/themes/Lila-Xfce/gtk-2.0/iconrc
+share/themes/Lila-Xfce/gtk-2.0/gtkrc
+share/themes/Lilacurve/gtk-2.0/iconrc
+share/themes/Lilacurve/gtk-2.0/gtkrc
+share/themes/Plush/gtk-2.0/iconrc
+share/themes/Plush/gtk-2.0/gtkrc
+share/themes/Quasi/gtk-2.0/iconrc
+share/themes/Quasi/gtk-2.0/gtkrc
+@dirrm share/themes/Kuala/gtk-2.0
+@dirrm share/themes/Kuala
+@dirrm share/themes/Lila-Industrial/gtk
+@dirrm share/themes/Lila-Industrial/gtk-2.0
+@dirrm share/themes/Lila-Industrial
+@dirrm share/themes/Lila-Simple/gtk-2.0
+@dirrm share/themes/Lila-Simple
+@dirrm share/themes/Lila-Smooth/gtk-2.0
+@dirrm share/themes/Lila-Smooth
+@dirrm share/themes/Lila-Xfce/gtk-2.0
+@dirrm share/themes/Lila-Xfce
+@dirrm share/themes/Lilacurve/gtk-2.0
+@dirrm share/themes/Lilacurve
+@dirrm share/themes/Plush/gtk-2.0
+@dirrm share/themes/Plush
+@dirrm share/themes/Quasi/gtk-2.0
+@dirrm share/themes/Quasi
