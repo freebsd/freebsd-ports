@@ -73,6 +73,9 @@ MAN5=		muttrc.5
 pre-patch:
 	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
 
+post-patch:
+	cd ${WRKSRC}/charmaps/maps; rm -f *.orig
+
 .if !defined(NOPORTDOCS)
 post-build:
 	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
