@@ -1,0 +1,17 @@
+bk_edit is an easy to use bookmark manager and editor. The program can read,
+write, edit, create, manage and convert the bookmarks of the most popular
+browsers. There is also a simple Drag & Drop interface for adding new
+bookmarks from a running browser in a very comfortable way. At the moment
+there are plugins for the following browsers and tools:
+    * SiteBar
+    * Links 2.1
+    * XBEL 1.0
+    * Opera 6, 7
+    * Galeon 1.2.5
+    * WikiLinks Export
+    * Netscape Navigator 3, 4. 6
+    * Mozilla 1.0, 1.1, 1.2, 1.3, 1.4
+    * Phoenix 0.5+ (Drag & Drop only)
+    * Konqueror 3+ (Drag & Drop only)
+
+WWW: http://www2.fht-esslingen.de/~clfuit00/sasnt/bk_edit/

@@ -1,0 +1,21 @@
+--- configure.orig	Fri Dec 26 14:03:40 2003
++++ configure	Fri Dec 26 14:04:19 2003
+@@ -51,7 +51,7 @@
+ 
+ 	exit 1
+ fi
+-echo "install path: $INSTALL_DIR/bin/ & $INSTALL_DIR/share/bkedit/"
++echo "install path: $INSTALL_DIR/bin/ & $INSTALL_DIR/lib/bkedit/"
+ 
+ 
+ 
+@@ -64,9 +64,6 @@
+ 	;;
+ 	SunOS)
+ 		LIB='-ldl'
+-	;;
+-	FreeBSD)
+-		LIB='-lgnugetopt'
+ 	;;
+ esac
+ echo "$OS"

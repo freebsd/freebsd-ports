@@ -1,0 +1,13 @@
+bin/bkedit
+lib/bkedit/all_edit.so
+lib/bkedit/galeon.so
+lib/bkedit/html.so
+lib/bkedit/links2.so
+lib/bkedit/moz.so
+lib/bkedit/nn4.so
+lib/bkedit/opera.so
+lib/bkedit/opera7.so
+lib/bkedit/sitebar.so
+lib/bkedit/wikilinks.so
+lib/bkedit/xbel.so
+@dirrm lib/bkedit
