@@ -1,11 +1,11 @@
 # New ports collection makefile for:	curl
-# Version required:     6.1
+# Version required:     6.3
 # Date created:		12 December 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
 
-DISTNAME=	curl-6.1
+DISTNAME=	curl-6.3
 CATEGORIES=	ftp www
 MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
@@ -15,13 +15,18 @@ MASTER_SITES=	http://www.fts.frontec.se/~dast/stuff/ \
 MAINTAINER=	kris@FreeBSD.org
 
 .if defined(USE_SSL)
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
+USE_OPENSSL=   RSA
+.endif
+ 
+.include <bsd.port.pre.mk>
+
+.if defined(USE_OPENSSL)
+CONFIGURE_ENV+=	CPPFLAGS='-I${OPENSSLINC} -I${OPENSSLINC}/openssl' \
+		LDFLAGS='-L${OPENSSLLIB}'
 .endif
 
-.if defined(USE_SSL)
-CONFIGURE_ENV+=	CPPFLAGS='-I${PREFIX}/include -I${PREFIX}/include/openssl' \
-		LDFLAGS='-L${PREFIX}/lib'
+.if defined(OPENSSL_RSAREF)
+CONFIGURE_ENV+= LIBS="-L${OPENSSLLIB} -lcrypto -lRSAglue -L${LOCALBASE}/lib -lrsaref"
 .endif
 
 GNU_CONFIGURE=	yes
@@ -35,4 +40,4 @@ post-configure:
 	${WRKSRC}/${x}.pre_sed > ${WRKSRC}/${x}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
