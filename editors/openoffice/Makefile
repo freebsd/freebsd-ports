@@ -55,7 +55,8 @@ JAVAVM=         ${JDK13DIR}/bin/java
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
-LD_PATH=	${WRKSRC}/../vos/unxfbsd.pro/lib:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib
+LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
