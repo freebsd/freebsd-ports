@@ -122,7 +122,7 @@ do-install:
 	fi
 
 post-install:
-	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
 	@echo
 	@${CAT} pkg-message
 	@echo

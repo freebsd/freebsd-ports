@@ -115,7 +115,7 @@ certificate:
 	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

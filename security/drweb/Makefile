@@ -55,6 +55,6 @@ do-install:
 		${PATCH} -s < ${FILESDIR}/update-patch && ${RM} update.pl.orig
 
 post-install:
-	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} POST-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
