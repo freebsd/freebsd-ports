@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	0.6.3
-PORTREVISION=	2
+PORTVERSION=	0.7.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/
+MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
+		http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Extensible Multimedia Container Format
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libebml.a:${PORTSDIR}/textproc/libebml
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 
@@ -45,10 +45,6 @@ do-configure:
 		${WRKSRC}/make/linux/Makefile
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502105
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 # gcc 3.2 was available on 5.x before this OSVERSION
 # do not build gcc 3.3 unless necessary
