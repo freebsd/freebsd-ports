@@ -1,0 +1,36 @@
+bin/datastudio.sh
+%%DATADIR%%/License.txt
+%%DATADIR%%/PAD_FILE.XML
+%%DATADIR%%/changelog.txt
+%%DATADIR%%/datastudio.gif
+%%DATADIR%%/datastudio.ico
+%%DATADIR%%/lib/activation.jar
+%%DATADIR%%/lib/datastudio.jar
+%%DATADIR%%/lib/db2java.jar
+%%DATADIR%%/lib/db2jcc.jar
+%%DATADIR%%/lib/db2jcc_license_cu.jar
+%%DATADIR%%/lib/ifxjdbc.jar
+%%DATADIR%%/lib/jconnect45.jar
+%%DATADIR%%/lib/jconnect55.jar
+%%DATADIR%%/lib/jtds.jar
+%%DATADIR%%/lib/mail.jar
+%%DATADIR%%/lib/mysql-jdbc.zip
+%%DATADIR%%/lib/mysql.jar
+%%DATADIR%%/lib/nlscharset12.jar
+%%DATADIR%%/lib/oracle.jar
+%%DATADIR%%/lib/postgresql.jar
+%%DATADIR%%/lib/xdb.jar
+%%DATADIR%%/lib/xmlparserv2.jar
+%%DATADIR%%/license/DB2-JDBC-LICENSE.txt
+%%DATADIR%%/license/JGoodies-LICENSE.txt
+%%DATADIR%%/license/JGraph-LICENSE.txt
+%%DATADIR%%/license/L2FProd-LICENSE.txt
+%%DATADIR%%/license/MySQL-JDBC-LICENSE.txt
+%%DATADIR%%/license/Oracle-JDBC-LICENSE.txt
+%%DATADIR%%/license/Postgresql-JDBC-LICENSE.txt
+%%DATADIR%%/license/SUN-SPL-LICENSE.txt
+%%DATADIR%%/license/jConnect-LICENSE.txt
+%%DATADIR%%/license/jTDS-LICENSE.txt
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/license
+@dirrm %%DATADIR%%
