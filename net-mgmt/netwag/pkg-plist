@@ -1,0 +1,17 @@
+bin/netwag%%SHORTPORTVERSION%%
+bin/netwag
+%%PORTDOCS%%%%DOCSDIR%%/html/lessons.html
+%%PORTDOCS%%%%DOCSDIR%%/images/banner_netwag.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/txt/installbin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/installsrcunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/presentation.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/probleminstallbin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/probleminstallunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemreport.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemusagebin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemusageunix.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
