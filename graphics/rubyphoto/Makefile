@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	graphics ruby www
 MASTER_SITES=	http://plig.net/~ture/rubyphoto/files/
 
-MAINTAINER=	chopra@soulwax.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for creating web image galleries
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
