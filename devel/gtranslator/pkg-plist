@@ -43,7 +43,6 @@ share/gnome/help/gtranslator/C/topic.dat
 share/gnome/help/gtranslator/C/usage.html
 share/gnome/help/gtranslator/ja/authors.html
 share/gnome/help/gtranslator/ja/commandlinearguments.html
-share/gnome/help/gtranslator/ja/docbook.css
 share/gnome/help/gtranslator/ja/features.html
 share/gnome/help/gtranslator/ja/index.html
 share/gnome/help/gtranslator/ja/thanks.html
@@ -60,6 +59,7 @@ share/gnome/pixmaps/gtranslator/fuzzy_small.png
 share/gnome/pixmaps/gtranslator/untranslated.png
 share/gnome/pixmaps/gtranslator/untranslated_small.png
 share/locale/az/LC_MESSAGES/gtranslator.mo
+share/locale/ca/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
 share/locale/el/LC_MESSAGES/gtranslator.mo
@@ -75,11 +75,13 @@ share/locale/ja/LC_MESSAGES/gtranslator.mo
 share/locale/ko/LC_MESSAGES/gtranslator.mo
 share/locale/lt/LC_MESSAGES/gtranslator.mo
 share/locale/nl/LC_MESSAGES/gtranslator.mo
+share/locale/nn/LC_MESSAGES/gtranslator.mo
 share/locale/no/LC_MESSAGES/gtranslator.mo
 share/locale/pl/LC_MESSAGES/gtranslator.mo
 share/locale/pt_BR/LC_MESSAGES/gtranslator.mo
 share/locale/ru/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
+share/locale/ta/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
 share/locale/wa/LC_MESSAGES/gtranslator.mo

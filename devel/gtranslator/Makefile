@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION=	0.39
+PORTVERSION=	0.39.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgiconv" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgiconv -lgnuregex" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new
 
