@@ -53,6 +53,7 @@
     SUBDIR += gridpix
     SUBDIR += gtkdps
     SUBDIR += gtkfig
+    SUBDIR += gtkgraph
     SUBDIR += gtksee
     SUBDIR += gview
     SUBDIR += gxanim
