@@ -7748,3 +7748,4 @@ flasm		ports/graphics/flasm
 dtdparse	ports/textproc/dtdparse
 xmlcharent	ports/textproc/xmlcharent
 jrefentry	ports/textproc/jrefentry
+dtd2relax	ports/textproc/dtd2relax
