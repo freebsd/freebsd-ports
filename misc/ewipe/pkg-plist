@@ -5,8 +5,16 @@ lib/ewipe/viewer.tcl
 lib/ewipe/tclIndex
 share/doc/ewipe/Changes
 share/doc/ewipe/README
-share/doc/ewipe/blue1.gif
 share/doc/ewipe/dot.ewipe
-share/doc/ewipe/sample.ewp
+share/doc/ewipe/sample/a1.gif
+share/doc/ewipe/sample/a2.gif
+share/doc/ewipe/sample/a3.gif
+share/doc/ewipe/sample/a4.gif
+share/doc/ewipe/sample/blue1.gif
+share/doc/ewipe/sample/sample.ewp
+share/doc/ewipe/sample/sample2.ewp
+share/doc/ewipe/sample/sample3.ewp
+share/doc/ewipe/sample/tutorial.ewp
 @dirrm lib/ewipe
+@dirrm share/doc/ewipe/sample
 @dirrm share/doc/ewipe
