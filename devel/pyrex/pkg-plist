@@ -57,6 +57,12 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Distutils/build_ext.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyo
@@ -104,7 +110,6 @@ bin/pyrexc
 %%PORTDOCS%%share/doc/pyrex/FAQ.html
 %%PORTDOCS%%share/doc/pyrex/extension_types.html
 %%PORTDOCS%%share/doc/pyrex/index.html
-%%PORTDOCS%%share/doc/pyrex/old_news.html
 %%PORTDOCS%%share/doc/pyrex/overview.html
 %%PORTDOCS%%share/doc/pyrex/primes.c
 %%PORTDOCS%%share/doc/pyrex/sharing.html
@@ -124,10 +129,8 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc.static
 %%PORTDOCS%%share/examples/pyrex/embed/Makefile.unix
 %%PORTDOCS%%share/examples/pyrex/embed/README
-%%PORTDOCS%%share/examples/pyrex/embed/embedded.pxi
 %%PORTDOCS%%share/examples/pyrex/embed/embedded.pyx
 %%PORTDOCS%%share/examples/pyrex/embed/main.c
-%%PORTDOCS%%share/examples/pyrex/numeric.pyx
 %%PORTDOCS%%share/examples/pyrex/numeric_demo.pyx
 %%PORTDOCS%%share/examples/pyrex/primes.pyx
 %%PORTDOCS%%share/examples/pyrex/pyprimes.py
