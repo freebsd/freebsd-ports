@@ -314,6 +314,7 @@
     SUBDIR += oproute
     SUBDIR += p0f
     SUBDIR += p5-Archie
+    SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-Cflow
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
