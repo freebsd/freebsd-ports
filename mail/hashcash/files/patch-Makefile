@@ -1,7 +1,9 @@
---- Makefile.orig	Wed Aug 11 19:01:24 2004
-+++ Makefile	Wed Sep  8 10:01:54 2004
-@@ -1,7 +1,7 @@
- HC_VERS = 1.02
+--- Makefile.orig	Wed Mar 30 06:27:47 2005
++++ Makefile	Fri Apr  1 15:54:54 2005
+@@ -2,9 +2,9 @@
+ CHANGEME1 = 1 # put PACKAGER = EBUILD|RPM etc here
+ CHANGEME2 = 2
+ CHANGEME3 = 3
 -INSTALL_PATH = /usr/bin
 -MAN_INSTALL_PATH = /usr/share/man/man1
 -DOC_INSTALL_PATH = /usr/share/doc/hashcash-$(HC_VERS)
@@ -9,25 +11,5 @@
 +MAN_INSTALL_PATH = ${PREFIX}/man/man1
 +DOC_INSTALL_PATH = ${PREFIX}/share/doc/hashcash
  MAKEDEPEND = makedepend
- # add -DCHROMATIX for libfastmint integration
- EXTRA_COPT = -O3 -funroll-loops
-@@ -12,8 +12,8 @@
- # if no POSIX or BSD, disable, still have builtin basic wildcard support
- # OPT = -O
- LDFLAGS = $(CARCH)
--CFLAGS = $(COPT) $(OPT) $(CWARN) $(CARCH)
--EXES = hashcash sha1 sha1test fastmint_benchtest
-+CFLAGS += $(COPT) $(OPT) $(CWARN) $(CARCH)
-+EXES = hashcash sha1 sha1test
- INSTALL = /usr/bin/install
- POD2MAN = pod2man
- POD2HTML = pod2html
-@@ -31,7 +31,7 @@
- 
- DIST = ../dist.csh
- 
--build:	hashcash sha1 #fastmint_benchtest
-+build:	hashcash sha1
- 
- hashcash:	$(OBJS)
- 	$(CC) $(LDFLAGS) $(OBJS) -o $@
+ MSLIB = mslib 
+ # here you can choose the regexp style your system has
