@@ -51,6 +51,7 @@
     SUBDIR += cuecat
     SUBDIR += cwish
     SUBDIR += datedif
+    SUBDIR += ddate
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += delay
