@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME= 	templ
+PORTNAME=	templ
 PORTVERSION=	0.3
-CATEGORIES= 	devel
+CATEGORIES=	devel
 MASTER_SITES= 	ftp://ftp.holywar.net/pub/templ/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER= 	hollywar@mail.holywar.net
+MAINTAINER=	hollywar@mail.holywar.net
 
 post-install:
 .if !defined(NOPORTDOCS)

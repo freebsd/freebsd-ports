@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtranslator
-PORTVERSION= 	0.30
+PORTVERSION=	0.30
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://gtranslator.sourceforge.net/${PORTVERSION}/tarbz2/ \
 		${MASTER_SITE_SOURCEFORGE}

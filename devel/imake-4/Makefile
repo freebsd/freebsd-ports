@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME= 	imake
-PORTVERSION= 	4.0.1
+PORTNAME=	imake
+PORTVERSION=	4.0.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
 		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \

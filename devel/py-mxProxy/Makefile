@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mxProxy
-PORTVERSION= 	0.2.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.lemburg.com/files/python/
 PKGNAMEPREFIX=	py-
