@@ -18,7 +18,9 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
+BUILD_DEPENDS+=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+RUN_DEPENDS+=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
 
 BREAKS_IF_PEDANTIC=	yes
 
