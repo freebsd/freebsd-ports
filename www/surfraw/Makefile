@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	surfraw
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	surfraw
+MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/proff/ \
+		ftp://ftp.funet.fi/pub/NetBSD/misc/proff/
 
 MAINTAINER=	naddy@FreeBSD.org
 

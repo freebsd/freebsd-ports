@@ -1,23 +1,26 @@
---- Makefile.in.orig	Wed Jul 18 01:09:52 2001
-+++ Makefile.in	Wed Jul 18 01:12:28 2001
-@@ -70,7 +70,6 @@
- SUBDIRS		= elvi
+
+$FreeBSD$
+
+--- Makefile.in.orig	Sat Oct 27 23:03:37 2001
++++ Makefile.in	Sat Oct 27 23:04:04 2001
+@@ -71,7 +71,6 @@
+ SUBDIRS = elvi
  
- bin_SCRIPTS	= surfraw surfraw-netscape-remote
--sysconf_DATA	= surfraw.conf
- devel_extra	= banner prebuild
- EXTRA_DIST	= surfraw.lsm.in surfraw.in surfraw.spec.in \
-                   aclocal.m4 HACKING \
-@@ -81,8 +80,6 @@
- surfraw-netscape-remote
+ bin_SCRIPTS = surfraw
+-sysconf_DATA = surfraw.conf
+ devel_extra = banner prebuild
+ EXTRA_DIST = surfraw.lsm.in surfraw.in surfraw.spec.in                   aclocal.m4 HACKING 		  $(devel_extra)
+ 
+@@ -80,8 +79,6 @@
+ CONFIG_CLEAN_FILES =  surfraw.conf surfraw.lsm surfraw surfraw.spec
  SCRIPTS =  $(bin_SCRIPTS)
  
 -DATA =  $(sysconf_DATA)
 -
  DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
  Makefile.in NEWS TODO aclocal.m4 config.guess config.sub configure \
- configure.in install-sh missing mkinstalldirs \
-@@ -141,25 +138,6 @@
+ configure.in install-sh missing mkinstalldirs surfraw.conf.in \
+@@ -136,25 +133,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -43,29 +46,49 @@
  # This directory's subdirectories are mostly independent; you can cd
  # into them and run `make' without going through this Makefile.
  # To change the values of `make' variables: instead of editing Makefiles,
-@@ -280,11 +258,11 @@
- check: all-am
- 	$(MAKE) check-recursive
+@@ -310,7 +288,7 @@
+ check: check-recursive
+ installcheck-am:
  installcheck: installcheck-recursive
--all-am: Makefile $(SCRIPTS) $(DATA)
-+all-am: Makefile $(SCRIPTS)
- 
 -install-exec-am: install-binSCRIPTS install-sysconfDATA
 +install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-recursive
  
+ install-data-am:
+@@ -319,15 +297,15 @@
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+ install: install-recursive
 -uninstall-am: uninstall-binSCRIPTS uninstall-sysconfDATA
 +uninstall-am: uninstall-binSCRIPTS
+ uninstall: uninstall-recursive
+-all-am: Makefile $(SCRIPTS) $(DATA)
++all-am: Makefile $(SCRIPTS)
+ all-redirect: all-recursive
+ install-strip:
+ 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(sysconfdir)
++	$(mkinstalldirs)  $(DESTDIR)$(bindir)
  
- install-exec: install-exec-recursive install-exec-am
- 	@$(NORMAL_INSTALL)
-@@ -338,8 +316,8 @@
- 	@echo "it deletes files that may require special tools to rebuild."
+ 
+ mostlyclean-generic:
+@@ -360,12 +338,11 @@
+ maintainer-clean: maintainer-clean-recursive
  	-rm -f config.status
  
 -.PHONY: uninstall-binSCRIPTS install-binSCRIPTS uninstall-sysconfDATA \
 -install-sysconfDATA install-data-recursive uninstall-data-recursive \
-+.PHONY: uninstall-binSCRIPTS install-binSCRIPTS \
-+install-data-recursive uninstall-data-recursive \
- install-exec-recursive uninstall-exec-recursive installdirs-recursive \
- uninstalldirs-recursive all-recursive check-recursive \
- installcheck-recursive info-recursive dvi-recursive \
+-install-exec-recursive uninstall-exec-recursive installdirs-recursive \
+-uninstalldirs-recursive all-recursive check-recursive \
+-installcheck-recursive info-recursive dvi-recursive \
+-mostlyclean-recursive distclean-recursive clean-recursive \
++.PHONY: uninstall-binSCRIPTS install-binSCRIPTS install-data-recursive \
++uninstall-data-recursive install-exec-recursive \
++uninstall-exec-recursive installdirs-recursive uninstalldirs-recursive \
++all-recursive check-recursive installcheck-recursive info-recursive \
++dvi-recursive mostlyclean-recursive distclean-recursive clean-recursive \
+ maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
+ distclean-tags clean-tags maintainer-clean-tags distdir info-am info \
+ dvi-am dvi check check-am installcheck-am installcheck install-exec-am \
