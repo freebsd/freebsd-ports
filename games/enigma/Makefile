@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	enigma
-PORTVERSION=	0.81
-PORTREVISION=	5
+PORTVERSION=	0.90
 CATEGORIES=	games
-MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/ \
-		${MASTER_SITE_SAVANNAH}	# savannah is locked temporarely
+MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	enigma-${PORTVERSION}-beta
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
-
-BUILD_DEPENDS=	lua:${PORTSDIR}/lang/lua
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
@@ -28,13 +25,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 MAN6=		enigma.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
