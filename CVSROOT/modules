@@ -7401,6 +7401,7 @@ ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
 ruby-jabber4r	ports/net/ruby-jabber4r
+ruby-js		ports/lang/ruby-js
 ruby-jttui	ports/devel/ruby-jttui
 ruby-ldap	ports/net/ruby-ldap
 ruby-libart	ports/graphics/ruby-libart
