@@ -197,6 +197,7 @@
     SUBDIR += micro_httpd
     SUBDIR += middleman
     SUBDIR += mini_httpd
+    SUBDIR += mknmz-wwwoffle
     SUBDIR += mmosaic
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
