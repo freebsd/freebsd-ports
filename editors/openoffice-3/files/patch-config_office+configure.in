@@ -1,0 +1,50 @@
+#i27028 and #i27028
+http://qa.openoffice.org/issues/show_bug.cgi?id=27021  (Xaw)
+http://qa.openoffice.org/issues/show_bug.cgi?id=27028  (ant)
+
+--- ../config_office/configure.in.org	Sat Mar 27 17:54:16 2004
++++ ../config_office/configure.in	Sun Mar 28 22:17:37 2004
+@@ -1478,7 +1478,7 @@
+ elif test "$_os" != "WINNT" ; then
+    AC_PATH_X
+    AC_PATH_XTRA
+-   AC_CHECK_HEADERS(X11/Xaw/Label.h,[AC_MSG_RESULT([Ok])],[AC_MSG_ERROR([Xaw include headers not found])])
++dnl   AC_CHECK_HEADERS(X11/Xaw/Label.h,[AC_MSG_RESULT([Ok])],[AC_MSG_ERROR([Xaw include headers not found])])
+ 
+    if test "x$x_includes" = "x"; then
+      x_includes="/usr/include"
+@@ -1830,10 +1830,12 @@
+ 
+ if test "$enable_java" != "no"; then
+ ANT_HOME=; export ANT_HOME
++WITH_ANT_HOME=; export WITH_ANT_HOME
+ if test -z "$with_ant_home"; then
+    AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat])
+ else
+-   AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat],,$with_ant_home/bin)
++   AC_PATH_PROGS(ANT, [jakarta-ant ant ant.sh ant.bat],,$with_ant_home/bin:$PATH)
++   WITH_ANT_HOME=$with_ant_home
+ fi
+ 
+ 
+@@ -1873,7 +1875,11 @@
+   AC_TRY_EVAL(ant_cmd)
+   if test $? = 0 && test -f ./conftest.class ; then
+     AC_MSG_RESULT([Ant works]) 
+-    ANT_HOME=`echo $ANT | $SED -n "s/\/bin\/ant.*\$//p"`
++    if test -z "$WITH_ANT_HOME"; then
++       ANT_HOME=`echo $ANT | $SED -n "s/\/bin\/ant.*\$//p"`
++    else
++       ANT_HOME="$WITH_ANT_HOME"
++    fi
+   else
+     echo "configure: Ant test failed" >&5
+     cat conftest.java >&5
+@@ -1885,6 +1891,7 @@
+ 
+   rm -f conftest* core core.* *.core
+ fi
++
+ if test -z "$ANT_HOME"; then
+    ANT_HOME="NO_ANT_HOME"
+ fi
