@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.4.a0.20031022
-PORTREVISION=	1
+PORTVERSION=	2.4.a0.20040106
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -83,6 +82,9 @@ PLIST_SUB+=     32BIT_ONLY="@comment "
 .else
 PLIST_SUB+=     32BIT_ONLY=""
 .endif
+.if ${ARCH} == sparc64
+CFLAGS+=        -DPYTHON_DEFAULT_RECURSION_LIMIT=900
+.endif
 
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
@@ -122,6 +124,7 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's,\(PY_VERSION.*\)2\.4a0,\1${PORTVERSION},g' \
 		${WRKSRC}/Include/patchlevel.h
+	${REINPLACE_CMD} -e 's,^.*freenet.*$$,,' ${WRKSRC}/Lib/base64.py
 
 pre-install:
 .for platform in ${PLATFORMS}
