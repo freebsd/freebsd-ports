@@ -8,7 +8,7 @@
 # BEFORE: LOGIN
 # KEYWORD: FreeBSD shutdown
 #
-# Add the following lines to /etc/rc.conf to enable rotorouter:
+# Add the following line to /etc/rc.conf to enable rotorouter:
 #
 #   rotorouter_enable="YES"
 #
