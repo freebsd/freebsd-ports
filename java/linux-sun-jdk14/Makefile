@@ -10,7 +10,7 @@ PORTVERSION=	${INSTALL_JDK_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTNAME=	j2sdk-${DL_JDK_VERSION:S/./_/g}-linux-i386
+DISTNAME=	j2sdk-${DL_JDK_VERSION:S/./_/g}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -29,16 +29,16 @@ EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
-WRKSRC=		${WRKDIR}/j2sdk1.4.0
+WRKSRC=		${WRKDIR}/j2sdk1.4.0_01
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.0
-INSTALL_JDK_VERSION=	1.4.0
+DL_JDK_VERSION=	1.4.0_01
+INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-DOWNLOAD_URL?=	http://java.sun.com/Download6?url=/Download6&config-file=j2sdk-1_4_0.config&platform=linux-i386
+DOWNLOAD_URL?=	http://java.sun.com/Download6?url=/Download6&config-file=j2sdk-${DL_JDK_VERSION:S/./_/g}.config&platform=linux-i586
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 
 .include <bsd.port.pre.mk>
