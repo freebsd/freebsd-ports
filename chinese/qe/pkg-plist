@@ -1,3 +1,5 @@
 bin/qe
-etc/qe.hlp
-etc/qe.pro
+bin/pe2
+share/qe/qe.hlp
+share/qe/qe.pro
+@dirrm share/qe/
