@@ -35,6 +35,10 @@ CONFIGURE_ARGS=	--enable-fsstd
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile (missing dependency)"
+.endif
+
 .if ${ARCH} == "i386"
 APM_PROGS=	E-Power.epplet
 PLIST_SUB+=	APM_PROGS=""
