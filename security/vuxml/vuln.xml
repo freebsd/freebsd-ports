@@ -32,6 +32,38 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="ce46b93a-80f2-11d8-9645-0020ed76ef5a">
+    <topic>Buffer overflows and format string bugs in Emil</topic>
+    <affects>
+      <package>
+	<name>emil</name>
+	<range><le>2.1b9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar reports multiple buffer overflows in
+	  Emil, some of which are triggered during the parsing
+	  of attachment filenames.  In addition, some format string bugs
+	  are present in the error reporting code.</p>
+        <p>Depending upon local configuration, these vulnerabilities
+	  may be exploited using specially crafted messages in order
+	  to execute arbitrary code running with the privileges of
+	  the user invoking Emil.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-March/019325.html</url>
+      <url>http://www.debian.org/security/2004/dsa-468</url>
+      <cvename>CAN-2004-0152</cvename>
+      <cvename>CAN-2004-0153</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-24</discovery>
+      <entry>2004-03-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="290d81b9-80f1-11d8-9645-0020ed76ef5a">
     <topic>oftpd denial-of-service vulnerability (PORT command)</topic>
     <affects>
