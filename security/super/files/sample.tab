@@ -1,0 +1,73 @@
+# This file lists commands that super(1) will execute for you as root.
+
+# See the super.5 man page for information.
+
+# Global options =========================================================
+#
+# Shell patterns are usually much more convenient to deal with in
+# a super.tab file.
+:global patterns=shell
+
+# Log super actions to a file, under uid=root.  (Note that loguid has to
+# be part of same :global_options entry as logfile.)
+:global logfile=/var/log/super.log loguid=root
+
+# Also mail msgs on super errors...
+:global	mail="/usr/bin/Mail -s '*** super ***' joeblow" 
+
+# Also log via syslog (just for demonstration :-).
+:global	syslog=y
+
+# This says the user doesn't need to re-enter password if super cmds are
+# issued frequently (so that we "know" they are coming from one person).
+:global	renewtime=y
+
+# =======================================================================
+# Give access to line printer commands to some users outside office hours.
+# (During office hours, the regular system manager keeps these functions.)
+#
+:define OfficeHours {8:00-12:00,13:00-17:00}/{mon,tue,wed,thu,fri}
+
+# Some line printer commands that we want to give away to certain users.
+# (The asterisk in the FullPath is replaced by the command; thus
+# typing   super enable   executes /usr/bin/enable.)
+:define LPR_commands	{lprm,lpc}::/usr/bin/* \
+			{lprm,lpc}::/usr/lib/*
+
+# The users who can use the line printer commands, and the hosts
+# from which they can use the commands:
+#
+:define LPR_users	jack@bucket jill@hill
+
+# During non-office hours, the following people can use the
+# line printer commands.
+$LPR_commands	$LPR_users	!time~$OfficeHours
+
+
+
+# =======================================================================
+# The people who can use timeout/restart are:
+#
+:define TimeoutUsers  :operator :wheel gv phillips srk
+
+# timeout and restart
+
+timeout		/usr/local/bin/timeout	$TimeoutUsers \
+		info="Temporarily stop any processes of any user." \
+		password=y
+
+restart		/usr/local/bin/restart	$TimeoutUsers \
+		info="Restart a timeout'd process before the scheduled time."
+
+
+# =======================================================================
+# Restrictions on CD-ROM mounting:
+#	tas is the only user who may mount cd's on elgar; anybody in
+#	group xyz may mount cd's on alpha or delta; and anybody on a
+#	host in the netgroup "india" may mount a CD on the "india" machines.
+
+cdmount		/usr/local/bin/cdmount			\
+		info="Mounts a CD-ROM on /cdrom"	\
+				tas@elgar		\
+				:xyz@{alpha,delta}	\
+				@+india
