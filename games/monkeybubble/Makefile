@@ -21,7 +21,7 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix librsvg2
+USE_GNOME=	gnomehack gnomeprefix librsvg2 libgnomeui
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
