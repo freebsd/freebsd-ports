@@ -1,3 +1,5 @@
 bin/gcursor
+share/gnome/capplets/gcursor.desktop
 share/gnome/gcursor/gcursor.glade
+share/locale/de/LC_MESSAGES/gcursor.mo
 @dirrm share/gnome/gcursor
