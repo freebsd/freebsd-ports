@@ -7,7 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
