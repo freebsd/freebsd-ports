@@ -14,7 +14,7 @@ if [ "${BATCH}" ]; then
 	elif [ "${WITH_MYSQL}" ]; then
 		OPTIONS="${OPTIONS} \"MySQL\""
 	fi
-	if [ "${WITH_POSTGRES}" ]; then
+	if [ "${WITH_POSTGRESQL}" ]; then
 		OPTIONS="${OPTIONS} \"PgSQL\""
 	fi
 	if [ "${WITH_HASH}" ]; then
@@ -36,7 +36,7 @@ else
 		SET_MYSQL="ON"
 	fi
 	SET_POSTGRES="OFF"
-	if [ "${WITH_POSTGRES}" -o -f ${PREFIX}/lib/pq.3 ] ; then
+	if [ "${WITH_POSTGRESQL}" -o -f ${PREFIX}/lib/pq.3 ] ; then
 		SET_POSTGRES="ON"
 	fi
 	SET_HASH="OFF"
