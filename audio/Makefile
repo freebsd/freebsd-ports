@@ -52,6 +52,7 @@
     SUBDIR += festvox-tll
     SUBDIR += freeamp
     SUBDIR += gdcd
+    SUBDIR += gdrdao
     SUBDIR += gkrellmms
     SUBDIR += gkrellmvolume
     SUBDIR += glame

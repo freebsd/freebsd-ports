@@ -1,0 +1,12 @@
+GdrDAO is a GTK-based GUI frontend for cdrdao, the disk-at-once audio CD
+recorder. Features:
+
+* Contains a simple TOC Editor, which allows you to create (very) simple TOC
+files for CDRDAO .
+* It can save those TOC files (now to a selectable file).
+* GdrDAO supports Pregaps (including "hidden tracks"), and lets you decide
+where to start in a file, so it also supports CD burned from one huge file.
+* Disk Cataloge Number and ISRC can be changed.
+* CD Text is supported.
+
+WWW: http://gdrdao.sourceforge.net/
