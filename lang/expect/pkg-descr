@@ -1,0 +1,415 @@
+--------------------
+Introduction
+--------------------
+
+This is the README file for Expect, a program that performs programmed
+dialogue with other interactive programs.  It is briefly described by
+its man page, expect(1).  This directory contains the source and man
+page for Expect.
+
+This is Expect 5 for Tcl 7.0 thru 7.4.  Tk 3.3 thru 4.0 are also
+supported.  If you have Expect 4 scripts, read the CHANGES.4to5 file.
+
+--------------------
+Getting Started - The Preferable Way
+--------------------
+
+A book on Expect is available from O'Reilly with the title "Exploring
+Expect: A Tcl-Based Toolkit for Automating Interactive Applications",
+ISBN 1-56592-090-2.
+
+The book is filled with detailed examples and explanations, and is a
+comprehensive tutorial to Expect.  The book also includes a tutorial
+on Tcl written specifically for Expect users (so you don't have to
+read the Expect papers, the debugger paper, Ousterhout's book, or the
+man pages).  Exploring Expect is 602 pages.
+
+If you have access to World Wide Web, here are some related URLs:
+
+one-paragraph description (from O'Reilly catalog):
+	http://www.ora.com/gnn/bus/ora/item/expect.html
+one-page description (from back cover of book):
+	http://www.ora.com/gnn/bus/ora/item/expect.desc.html
+front cover - picture and description:
+	http://www.ora.com/gnn/bus/ora/item/expect.cover.html
+
+To order:
+	Via email: order@ora.com
+	Via the web: http://www.ora.com/gnn/bus/ora/ordering/index.html
+	Via phone (Weekdays 6am-6pm PST): 800-889-9938 or 707-829-0515
+
+Publisher's address: O'Reilly & Associates, Inc.
+	             103A Morris Street
+	             Sebastopol, CA  95472
+
+
+O'Reilly also has available very pretty t-shirts with a blown-up
+picture of the artwork from the front cover.
+
+--------------------
+Getting Started - The Hacker Way
+--------------------
+
+While the book is the best way to learn about Expect, it is not
+absolutely necessary.  There are man pages after all, plus I have
+published numerous papers on Expect.  All of these papers are in the
+public domain and can be received free.  If you are a hacker on a
+tight budget, this may appeal to you.  Nonetheless, I think you will
+find the book pays for itself very quickly.  It is much more readable
+than the man pages, it includes well-written and explained examples,
+and it describes everything in the papers as a coherent whole.  The
+concepts in the papers actually only make up a small fraction of the
+book.
+
+The 1990 USENIX paper (see "Readings" below) is probably the best one
+for understanding Expect conceptually.  The 1991 Computing Systems and
+the LISA IV papers provide a nice mix of examples.  The only downside
+is, the examples in these papers don't actually work anymore - some
+aspects (e.g., syntax) of both Expect and Tcl have changed.  The
+papers still make interesting reading - just don't study the examples
+too closely!  Fortunately, most of the examples from the papers also
+accompany this distribution - and all of these are up to date.
+
+For all the details, read the man page.  It is long but you can get
+started just by skimming the sections on the following commands:
+
+	spawn		(starts a process)
+	send		(sends to a process)
+	expect		(waits for output from a process)
+	interact	(lets you interact with a process)
+
+To print out the Expect man page, invoke your local troff using the
+-man macros, such as either of:
+
+		ptroff -man expect.man
+		ditroff -man expect.man
+
+If Expect is installed, you can read the man pages using the "usual"
+man commands, such as "man expect".  If not installed, view the man
+page on your screen by saying something like:
+
+		nroff -man expect.man | more
+
+Expect uses Tcl as the underlying language for expressing things such
+as procedures, loops, file I/O, and arithmetic expressions.  For many
+simple scripts, it is not necessary to learn about Tcl.  Just by
+studying the examples, you will learn enough Tcl to get by.  But if
+you would like to learn more about Tcl or use it in your own
+applications, read the Tcl README file which provides pointers to the
+extensive Tcl documentation.  Or read Exploring Expect.  Chapter 2 of
+Exploring Expect is a Tcl tutorial specifically designed for Expect
+users.
+
+An interactive debugger is bundled with Expect.  The debugger has its
+own documentation that comes separately.  It is listed in the Readings
+below.  Again, it is slightly out of date.  An up-to-date description
+of the debugger appears in Chapter 18 of Exploring Expect.  This
+chapter also contains additional advice and tips for debugging.
+
+You may get the feeling that the Expect documentation is somewhat
+scattered and disorganized.  This was true prior to publication of
+Exploring Expect.  The book contains everything you need to know, all
+up-to-date, and with examples of every concept.  (The book contains no
+references to any of the Expect papers because none are necessary.)
+
+----------------------
+Examples
+----------------------
+
+This distribution contains many example scripts.  (All of the
+substantive examples in the book are included.)  They can be found in
+the example directory of this distribution.  The README file in that
+directory briefly describes all of the example scripts.  Many of the
+more sophisticated examples have man pages of their own.
+
+Other interesting scripts are available separately in the directory
+pub/expect/scripts at ftp.cme.nist.gov.  (See below for how to
+retrieve these.)  You are welcome to send me scripts to add to this
+directory.  A number of Expect scripts are also available in the Tcl
+archive, available via anonymous ftp at ftp.aud.alcatel.com.
+
+--------------------
+Readings on Expect
+--------------------
+
+The implementation, philosophy, and design are discussed in "expect:
+Curing Those Uncontrollable Fits of Interaction", Proceedings of the
+Summer 1990 USENIX Conference, Anaheim, CA, June 11-15, 1990.
+
+Examples and discussion, specifically aimed at system administrators,
+are in "Using expect to Automate System Administration Tasks",
+Proceedings of the 1990 USENIX Large Systems Administration Conference
+(LISA) IV, Colorado Springs, CO, October 17-19, 1990.
+
+A comprehensive paper of example scripts is "expect: Scripts for
+Controlling Interactive Programs", Computing Systems, Vol. 4, No. 2,
+University of California Press Journals, 1991.
+
+Regression and conformance testing is discussed in "Regression Testing
+and Conformance Testing Interactive Programs", Proceedings of the
+Summer 1992 USENIX Conference, San Antonio, TX, June 8-12, 1992.
+
+An explanation of some of the more interesting source code to an early
+version of Expect is in Chapter 36 ("Expect") of "Obfuscated C and
+Other Mysteries", John Wiley & Sons, ISBN 0-471-57805-3, January 1993.
+
+A paper on connecting multiple interactive programs together using
+Expect is "Kibitz - Connecting Multiple Interactive Programs
+Together", Software - Practice & Experience, Vol. 23, No. 5, May 1993.
+
+The debugger is discussed in "A Debugger for Tcl Applications",
+Proceedings of the 1993 Tcl/Tk Workshop, Berkeley, CA, June 10-11,
+1993.
+
+Using Expect with Tk is described in the paper "X Wrappers for
+Non-Graphic Interactive Programs", Proceedings of Xhibition '94, San
+Jose, CA, June 20-24, 1994.
+
+Simple techniques to allow secure handling of passwords in background
+processes are covered in "Handling Passwords with Security and
+Reliability in Background Processes", Proceedings of the 1994 USENIX
+LISA VIII Conference, San Diego, CA, September 19-23, 1994.
+
+--------------------
+How to Get the Latest Version of Expect or the Readings
+--------------------
+
+Expect may be ftp'd as pub/expect/expect.tar.Z from ftp.cme.nist.gov.
+Request email delivery by mailing to "library@cme.nist.gov".  The
+contents of the message should be (no subject line) "send
+pub/expect/expect.tar.Z".  (Development versions of Expect may
+occasionally be made available as alpha.tar.Z in the same directory.)
+
+Once you have retrieved the system, read the INSTALL file.  The papers
+mentioned above can be retrieved separately as:
+
+  pub/expect/seminal.ps.Z            (USENIX '90 - Intro and Implementation)
+  pub/expect/sysadm.ps.Z               (LISA '90 - System Administration)
+  pub/expect/scripts.ps.Z (Computing Systems '91 - Overview of Scripts)
+  pub/expect/regress.ps.Z            (USENIX '92 - Testing)
+  pub/expect/kibitz.ps.Z               (SP&E '93 - Automating Multiple
+					Interactive Programs Simultaneously)
+  pub/expect/tcl-debug.ps.Z          (Tcl/Tk '93 - Tcl/Tk Debugger)
+  pub/expect/expectk.ps.Z         (Xhibition '94 - Using Expect with Tk)
+  pub/expect/bgpasswd.ps.Z             (LISA '94 - Passwds in Background Procs)
+
+The book "Exploring Expect" is described in more detail earlier in
+this file.
+
+The book "Obfuscated C and Other Mysteries" is not on-line but is
+available in bookstores or directly from the publisher (Wiley).
+
+Overhead transparencies I've used at conferences are also available in
+the same way as the papers themselves.  The transparencies are sketchy
+and not meant for personal education - however if you are familiar
+with Expect and just want to give a short talk on it to your
+colleagues, you may find the transparencies useful.  They vary in
+length from 15 to 20 minutes in length.  These are:
+
+  pub/expect/seminal-talk.ps.Z    (USENIX '90 - Intro and Implementation)
+  pub/expect/sysadm-talk.ps.Z       (LISA '90 - System Administration)
+  pub/expect/regress-talk.ps.Z    (USENIX '92 - Testing)
+  pub/expect/tcl-debug-talk.ps.Z  (Tcl/Tk '93 - Tcl/Tk Debugger)
+  pub/expect/expectk-talk.ps.Z (Xhibition '94 - Expect + Tk = Expectk)
+  pub/expect/bgpasswd-talk.ps.Z     (LISA '94 - Passwords in the Background)
+
+All of the documents are compressed PostScript files and should be
+uncompressed and sent to a PostScript printer.  The documents are
+intended for printing at 8.5"x11" and may fail on some ISO A4
+printers.  According to Hans Mayer <Hans.Mayer@gmd.de>, you can make
+them A4-able by searching for "FMVERSION" and changing the next line
+from:
+
+	1 1 0 0 612 792 0 1 13 FMDOCUMENT
+to:
+	1 1 0 0 594 841 0 1 13 FMDOCUMENT
+
+
+--------------------
+Using Expect with and without Tcl and/or Tk.
+--------------------
+
+The usual way of using Expect is as a standalone program with Tcl as
+the control language.  Since you may already have Tcl, it is available
+separately.  Tcl may be retrieved as pub/expect/tcl.tar.Z in the same
+way as described above for Expect.  When new releases of Tcl appear, I
+will try to check them out for Expect as soon as possible.  If you
+would like to get the newest Tcl release without waiting, ftp it from
+ftp.smli.com (directory pub/tcl).
+
+Expect may also be built using the Tk library, a Tcl interface to the
+X Window System.  Tk is available in the same way as Tcl.
+
+It is possible to embed the Expect/Tcl core and optionally Tk in your
+own C programs.  This is described in libexpect(3).
+
+Expect can also be used from a C or C++ program without Tcl.  This is
+described in libexpect(3).  While I consider this library to be easy
+to use, the standalone Expect program is much, much easier to use than
+working with the C compiler and its usual edit, compile, debug cycle.
+Unlike typical programming, most of the debugging isn't getting the C
+compiler to accept your programs - rather, it is getting the dialogue
+correct.  Also, translating scripts from Expect to C is usually not
+necessary.  For example, the speed of interactive dialogues is
+virtually never an issue.  So please try 'expect' first.  It is a more
+appropriate tool than the library for most people.
+
+--------------------
+Systems Supported
+--------------------
+
+I do not know of any UNIX systems on which Expect will not run.
+Systems which do not support select or poll can use Expect, but
+without the ability to run multiple processes simultaneously.  I am
+willing to work with you to complete a port.
+
+Before sending me changes, please download or verify that you have the
+latest version of Expect (see above).  Then send me a "diff -c" along
+with a suitable English explanation.  If your diff involves something
+specific to a machine, give me diffs for configure.in as well or give
+me a hint about when the diffs should be done so I can write the
+configure support myself.  Also please include the version of the OS
+and whether it is beta, current, recent, or totally out-of-date and
+unsupported.
+
+--------------------
+Installing Expect
+--------------------
+
+Expect comes with a configure script that provides for an automated
+installation.  I believe you will find that Expect is very easy to
+install.  (Tcl and Tk, too.)
+
+For more information, read the INSTALL file.
+
+--------------------
+History
+--------------------
+
+Expect was conceived of in September, 1987.  The bulk of version 2 was
+designed and written between January and April, 1990.  Minor evolution
+occurred after that until Tcl 6.0 was released.  At that time
+(October, 1991) approximately half of Expect was rewritten for version
+3.  See the HISTORY file for more information.  The HISTORY file may
+be retrieved separately as pub/expect/HISTORY.
+
+Around January 1993, an alpha version of Expect 4 was introduced.
+This included Tk support as well as a large number of enhancements.  A
+few changes were made to the user interface itself, which is why the
+major version number was changed.  A production version of Expect 4
+was released in August 1993.
+
+In October 1993, an alpha version of Expect 5 was released to match
+Tcl 7.0.  A large number of enhancements were made, including some
+changes to the user interface itself, which is why the major version
+number was changed (again).  This documentation and software
+distribution is the production version of Expect 5 - initially
+released in March '94.  
+
+Some of the papers listed above correspond to earlier versions
+although they are still good ways to learn about Expect.  There are
+important differences between Expect 3, 4, and 5.  See the CHANGES.*
+files if you want to read about them.  Expect 4 has ceased further
+development and is not supported.  However, if for some reason you
+want the old code, it is available from pub/expect/old as described
+above.
+
+The book became available around January '95.  It describes Expect 5
+as it is today, rather than how Expect 5 was when it was originally
+released.  Thus, if you have not upgraded Expect since before getting
+the book, you should upgrade now.
+
+--------------------
+Support from Don Libes or NIST
+--------------------
+
+Although I can't promise anything in the way of support, I'd be
+interested to hear about your experiences using it (good or bad).  I'm
+also interested in hearing bug reports and suggestions for improvement
+even though I can't promise to implement them.
+
+If you send me a bug, fix, or question, include the version of Expect
+(as reported by expect -d), version of Tcl, and name and version of
+the OS that you are using.  Before sending mail, it may be helpful to
+verify that your problem still exists in the latest version.  You can
+check on the current release and whether it addresses your problems by
+retrieving the latest HISTORY file (see "History" above).
+
+
+Awards, love letters, and bug reports may be sent to:
+
+Don Libes
+National Institute of Standards and Technology
+Bldg 220, Rm A-127
+Gaithersburg, MD  20899
+(301) 975-3535
+libes@nist.gov
+
+I hereby place this software in the public domain.  NIST and I would
+appreciate credit if this program or parts of it are used.
+
+Design and implementation of this program was funded primarily by
+myself.  Funding contributors include the NIST Automated Manufacturing
+Research Facility (funded by the Navy Manufacturing Technology
+Program), the NIST Scientific and Technical Research Services, the
+ARPA Persistent Object Bases project and the Computer-aided
+Acquisition and the Logistic Support (CALS) program of the Office of
+the Secretary of Defense.
+
+Especially signicant contributions were made by John Ousterhout, Henry
+Spencer, and Rob Savoye.  See the HISTORY file for others.
+
+--------------------
+Support for Don Libes or NIST
+--------------------
+
+NIST accepts external funding and other resources (hardware, software,
+and personnel).  This can be a fine way to work more closely with NIST
+and encourage particular areas of research.
+
+Funding can be earmarked for specific purposes or for less-specific
+purposes.  For example, if you simply like the work I do, you can
+contribute directly to my funding which will reduce the amount of time
+I have to spend writing proposals and submitting them to other people
+for funding on my own.
+
+I can also participate in the NIST Fellows program allowing me to
+spend several months to a year working directly with your company and
+potentially even at your location.  I am also interested in returning
+to an academic program.  I presently have an MS and am hunting for
+Ph.D. topics and advisors.  Let me know if you have ideas or are
+interested in being my advisor.
+
+--------------------
+Commercial Support 
+--------------------
+
+Several companies provide commercial support for Expect.  If your
+company has a financial investment in Expect or you wish to be assured
+of continuing support for Expect, you can buy a support contract this
+way.  These companies currently include:
+
+Cygnus Support
+1937 Landings Drive
+Mountain View, CA  94043
++1 (415) 903-1400
+info@cygnus.com
+
+Computerized Processes Unlimited
+4200 S. I-10 Service Rd., Suite 205
+Metairie, LA  70006
++1 (504) 889-2784
+info@cpu.com
+
+Neither NIST nor I have any commercial relationship with these
+companies.  Cygnus is in the process of signing an agreement with NIST
+that describes its non-exclusive position to support Expect.  Other
+companies are welcome to apply for such an agreement or other kinds of
+agreements such as permission-to-use.  Strictly speaking, such
+agreements are not necessary, however they make us look good to our
+funding source, the U.S. Congress.
+
+Note that Cygnus does not sell support for Expect explicitly.  But
+they will support Expect if you buy support for their DejaGnu product
+which is a testing framework built on top of Expect.
+
