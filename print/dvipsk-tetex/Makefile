@@ -5,47 +5,55 @@
 # $FreeBSD$
 
 PORTNAME=	dvipsk-tetex
-PORTVERSION=	5.92b
-PORTREVISION=	2
+PORTVERSION=	5.95a
+PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
+MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
 		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
-DISTNAME=	tetex-src-${TETEX_VER}
+MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
+DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert a TeX DVI file to PostScript
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
-PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
+		TEXMFDISTDIR=${TEXMFDISTDIR} \
+		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
+		MKTEXLSR=${MKTEXLSR}
 
-BUILD_WRKSRC_A=	${WRKDIR}/${DISTNAME}/texk/dvipsk
-INSTALL_WRKSRC_A=	${WRKDIR}/${DISTNAME}/texk/dvipsk
-BUILD_WRKSRC_B=	${WRKDIR}/${DISTNAME}/texk/odvipsk
-INSTALL_WRKSRC_B=	${WRKDIR}/${DISTNAME}/texk/odvipsk
+PATCH_WRKSRC=	${WRKDIR}/${TETEX_SRC}
+BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
+INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipsk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--disable-multiplatform \
-		--without-texinfo --without-dialog \
+CONFIGURE_ARGS=	--disable-multiplatform \
+		--without-texinfo \
+		--without-texi2html \
+		--without-dialog \
 		--with-system-ncurses --with-system-zlib \
 		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
 		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
 		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
-		--with-t1lib-include=${LIBT1_PREFIX}/include
-CONFLICTS=	*-teTeX-[0-9]* ja-ptex-base-[0-9]* *-*dvips* *dvips-*
+		--with-t1lib-include=${LIBT1_PREFIX}/include \
+		--without-xdvik --without-oxdvik
+CONFLICTS=	*-teTeX-[0-9]* \
+		ja-ptex-*-[0-9]* \
+		dvips-[0-9]* \
+		*-dvips-[0-9]* \
+		*-dvipsk-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1
 INFO=		dvips
@@ -57,43 +65,36 @@ PAPERSIZE=	letter
 PAPERSIZE=	a4
 .endif
 
-TETEX_VER=	2.0.2
+TETEX_SRC=	tetex-src-2.99.13.20050204-beta
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMF?=		share/texmf
-TEXMFLOCAL?=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
-TEXCONFIG?=	${LOCALBASE}/bin/texconfig
-DVIPSDIR=	${LOCALBASE}/${TEXMF}/dvips/config
-DVIPSVARDIR=	${LOCALBASE}/${TEXMF}-var/dvips/config
+TEXMFDIR=	share/texmf
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFDIST_LSR=	${TEXMFDISTDIR}/ls-R
+TEXMFCONFIGDIR=	share/texmf-config
+TEXMFCONFIG_LSR=${TEXMFCONFIGDIR}/ls-R
+TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
+DVIPSDIR=	${LOCALBASE}/${TEXMFDIR}/dvips/config
+DVIPSCONFDIR=	${LOCALBASE}/${TEXMFCONFIGDIR}/dvips/config
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
+LIBGD_PREFIX?=	${LOCALBASE}
 
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PKGINSTALL_SUB=	PAPERSIZE=${PAPERSIZE} \
 		MKTEXLSR=${MKTEXLSR} \
 		DVIPSDIR=${DVIPSDIR} \
-		DVIPSVARDIR=${DVIPSVARDIR} \
-		TEXCONFIG=${TEXCONFIG} \
+		DVIPSCONFDIR=${DVIPSCONFDIR} \
+		TEXCONFIGBIN=${TEXCONFIGBIN} \
 		LOCALBASE=${LOCALBASE}
 
 pre-build:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
-
-do-build:
-.for W in A B
-	@(cd ${BUILD_WRKSRC_${W}} &&\
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-.endfor
-
-do-install:
-.for W in A B
-	@(cd ${INSTALL_WRKSRC_${W}} &&\
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-.endfor
 
 post-install:
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL

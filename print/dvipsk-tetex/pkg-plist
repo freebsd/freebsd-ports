@@ -1,12 +1,12 @@
 @comment $FreeBSD$
 bin/afm2tfm
 bin/dvips
-bin/odvips
-%%TEXMF%%/dvips/base/color.pro
-%%TEXMF%%/dvips/base/crop.pro
-%%TEXMF%%/dvips/base/finclude.pro
-%%TEXMF%%/dvips/base/hps.pro
-%%TEXMF%%/dvips/base/special.pro
-%%TEXMF%%/dvips/base/tex.pro
-%%TEXMF%%/dvips/base/texc.pro
-%%TEXMF%%/dvips/base/texps.pro
+%%TEXMFDIR%%/dvips/base/color.pro
+%%TEXMFDIR%%/dvips/base/crop.pro
+%%TEXMFDIR%%/dvips/base/finclude.pro
+%%TEXMFDIR%%/dvips/base/hps.pro
+%%TEXMFDIR%%/dvips/base/special.pro
+%%TEXMFDIR%%/dvips/base/tex.pro
+%%TEXMFDIR%%/dvips/base/texc.pro
+%%TEXMFDIR%%/dvips/base/texps.pro
+%%TEXMFCONFIGDIR%%/dvips/config/config.ps
