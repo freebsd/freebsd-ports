@@ -106,6 +106,8 @@
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
+    SUBDUR += uvscan
+    SUBDIR += uvscan-dat
     SUBDIR += vscan
     SUBDIR += whisker
     SUBDIR += xinetd
