@@ -112,7 +112,6 @@
     SUBDIR += jetty
     SUBDIR += junkbuster
     SUBDIR += kannel
-    SUBDIR += kdreamsite
     SUBDIR += knowledgekit
     SUBDIR += kwebsearch
     SUBDIR += kwebwatch
