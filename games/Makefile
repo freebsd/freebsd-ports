@@ -131,6 +131,7 @@
     SUBDIR += hlserver-oz
     SUBDIR += hlserver-pvk
     SUBDIR += hlserver-si
+    SUBDIR += hlserver-snow
     SUBDIR += hlserver-svencoop
     SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
