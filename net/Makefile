@@ -137,6 +137,7 @@
     SUBDIR += netatalk-asun
     SUBDIR += netcat
     SUBDIR += netpipes
+    SUBDIR += netsaint
     SUBDIR += nettest
     SUBDIR += ngrep
     SUBDIR += nocol

@@ -1,0 +1,24 @@
+--- daemon-init.in	Fri Apr  7 11:11:34 2000
++++ daemon-init.in.new	Mon Jun  5 16:11:44 2000
+@@ -27,10 +27,11 @@
+   
+ # Source function library
+ # Solaris doesn't have an rc.d directory, so do a test first
+-if [ -f /etc/rc.d/init.d/functions ]; then
+-. /etc/rc.d/init.d/functions
+-elif [ -f /etc/init.d/functions ]; then
+-. /etc/init.d/functions
++if [ -f /usr/local/etc/netsaint/functions ]; then
++. /usr/local/etc/netsaint/functions
++else
++   echo "/usr/local/etc/netsaint/functions missing"
++   exit 1
+ fi
+ 
+ prefix=@prefix@
+@@ -85,4 +86,4 @@
+         exit 1
+ esac
+   
+-# End of this script
++# End of this script

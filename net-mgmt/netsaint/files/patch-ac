@@ -1,0 +1,29 @@
+--- common/locations.sub	Wed Apr 26 21:10:13 2000
++++ common/locations.sub.new	Mon Jun 12 21:29:23 2000
+@@ -19,16 +19,16 @@
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  ************************************************************************/
+ 
+-#define DEFAULT_TEMP_FILE			"${prefix}/var/netsaint.tmp"
+-#define DEFAULT_STATUS_FILE			"${prefix}/var/status.log"
+-#define DEFAULT_LOG_FILE			"${prefix}/var/netsaint.log"
+-#define DEFAULT_LOG_ARCHIVE_PATH		"${prefix}/var/archives/"
+-#define DEFAULT_COMMENT_FILE			"${prefix}/var/comment.log"
+-#define DEFAULT_COMMAND_FILE			"${prefix}/var/rw/netsaint.cmd"
+-#define DEFAULT_PHYSICAL_HTML_PATH		"${prefix}/share"
++#define DEFAULT_TEMP_FILE			"${prefix}/var/netsaint/netsaint.tmp"
++#define DEFAULT_STATUS_FILE			"${prefix}/var/netsaint/status.log"
++#define DEFAULT_LOG_FILE			"${prefix}/var/netsaint/netsaint.log"
++#define DEFAULT_LOG_ARCHIVE_PATH		"${prefix}/var/netsaint/archives/"
++#define DEFAULT_COMMENT_FILE			"${prefix}/var/netsaint/comment.log"
++#define DEFAULT_COMMAND_FILE			"${prefix}/var/netsaint/rw/netsaint.cmd"
++#define DEFAULT_PHYSICAL_HTML_PATH		"${prefix}/share/netsaint"
+ #define DEFAULT_URL_HTML_PATH			"/netsaint"
+-#define DEFAULT_PHYSICAL_CGIBIN_PATH		"${exec_prefix}/sbin"
++#define DEFAULT_PHYSICAL_CGIBIN_PATH		"${exec_prefix}/share/netsaint/sbin"
+ #define DEFAULT_URL_CGIBIN_PATH			"/cgi-bin/netsaint"
+-#define DEFAULT_CGI_CONFIG_FILE			"${exec_prefix}/sbin/nscgi.cfg"
++#define DEFAULT_CGI_CONFIG_FILE			"${exec_prefix}/share/netsaint/sbin/nscgi.cfg"
+ 
+-#define LOCKFILE				"${prefix}/var/netsaint.lock"
++#define LOCKFILE				"${prefix}/var/netsaint/netsaint.lock"

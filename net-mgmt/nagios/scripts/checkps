@@ -1,0 +1,10 @@
+#!/bin/sh
+/bin/ps 999999 2>&1 >/dev/null
+if [ $? = 0 ]; then
+	echo "You need to upgrade to RELENG_3, RELENG_4, or HEAD sometime"
+	echo "after July 8, 2000 around 5:15AM UTC, so that ps(1) will"
+	echo "return an error code if a PID does not exist.  Netsaint needs this!"
+	exit
+else
+	echo "Great, you have a working ps(1)!  Netsaint can build."
+fi

@@ -1,0 +1,8 @@
+--- base/Makefile.in	Fri Apr  7 11:11:32 2000
++++ base/Makefile.in.new	Sat Jun 10 21:45:15 2000
+@@ -52,5 +52,4 @@
+ 	rm -f *~
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(BINDIR)
+ 	$(INSTALL) -m 774 $(INSTALL_OPTS) netsaint $(BINDIR)

@@ -1,0 +1,60 @@
+--- configure	Fri Apr  7 11:11:34 2000
++++ configure.new	Sat Jun 10 21:21:25 2000
+@@ -11,7 +11,7 @@
+ ac_help=
+ ac_default_prefix=/usr/local
+ # Any additions from configure.in:
+-ac_default_prefix=/usr/local/netsaint
++#ac_default_prefix=/usr/local/netsaint
+ ac_help="$ac_help
+ --with-netsaint-user=<user> sets user name to run netsaint"
+ ac_help="$ac_help
+@@ -61,12 +61,12 @@
+ x_includes=NONE
+ x_libraries=NONE
+ bindir='${exec_prefix}/bin'
+-sbindir='${exec_prefix}/sbin'
+-libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
+-sysconfdir='${prefix}/etc'
++sbindir='${exec_prefix}/share/netsaint/sbin'
++libexecdir='${exec_prefix}/libexec/netsaint'
++datadir='${prefix}/share/netsaint'
++sysconfdir='${prefix}/etc/netsaint'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='${prefix}/var/netsaint'
+ libdir='${exec_prefix}/lib'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+@@ -505,9 +505,9 @@
+ # Prefer explicitly selected file to automatically selected ones.
+ if test -z "$CONFIG_SITE"; then
+   if test "x$prefix" != xNONE; then
+-    CONFIG_SITE="$prefix/share/config.site $prefix/etc/config.site"
++    CONFIG_SITE="$prefix/share/netsaint/config.site $prefix/etc/netsaint/config.site"
+   else
+-    CONFIG_SITE="$ac_default_prefix/share/config.site $ac_default_prefix/etc/config.site"
++    CONFIG_SITE="$ac_default_prefix/share/netsaint/config.site $ac_default_prefix/etc/netsaint/config.site"
+   fi
+ fi
+ for ac_site_file in $CONFIG_SITE; do
+@@ -679,6 +679,9 @@
+ 	LDFLAGS="${LDFLAGS} -L${withval}"
+ 	LD_RUN_PATH="${withval}${LD_RUN_PATH:+:}${LD_RUN_PATH}"
+ 	
++else
++	LDFLAGS="${LDFLAGS} -L/usr/local/lib"
++	LD_RUN_PATH="/usr/local/ib${LD_RUN_PATH:+:}${LD_RUN_PATH}"
+ fi
+ 
+ # Check whether --with-gd-inc or --without-gd-inc was given.
+@@ -686,6 +689,8 @@
+   withval="$with_gd_inc"
+   
+ 	CFLAGS="${CFLAGS} -I${withval}"
++else
++	CFLAGS="${CFLAGS} -I/usr/local/include/gd"
+ 	
+ fi
+ 

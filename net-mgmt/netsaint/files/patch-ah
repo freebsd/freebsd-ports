@@ -1,0 +1,71 @@
+--- hosts.cfg.in	Fri Apr  7 11:11:34 2000
++++ hosts.cfg.in.new	Thu Jun 15 10:19:42 2000
+@@ -151,10 +151,10 @@
+ 
+ hostgroup[novell-servers]=All Novell Servers;novell-admins;es-gra,es-esp
+ hostgroup[nt-servers]=All NT Servers;nt-admins;rosie,dev,liatris
+-hostgroup[linux-boxes]=All Linux Servers;linux-admins;real
++hostgroup[freebsd-boxes]=All FreeBSD Servers;freebsd-admins;real
+ hostgroup[switches]=Switches;switch-admins;switch-4hlan,switch-esplan,switch-gralan,switch-cetslan,switch-hrdlan
+ hostgroup[routers]=Routers;router-admins;ageng-router
+-hostgroup[printers]=Printers;printer-admins,linux-admins;cofh-475-lj4m,cofh-415-lj4,cofh-405-lj4000
++hostgroup[printers]=Printers;printer-admins,freebsd-admins;cofh-475-lj4m,cofh-415-lj4,cofh-405-lj4000
+ 
+ 
+ ################################################################################
+@@ -183,19 +183,19 @@
+ 
+ # Service notification command - send email with problem summary
+ 
+-command[notify-by-email]=/bin/echo -e $SUMMARY$ | /bin/mail -s '** $SERVICESTATE$ alert for $HOSTALIAS$/$SERVICEDESC$ **' $CONTACTEMAIL$
++command[notify-by-email]=/usr/bin/printf $SUMMARY$ | /usr/bin/mail -s '** $SERVICESTATE$ alert for $HOSTALIAS$/$SERVICEDESC$ **' $CONTACTEMAIL$
+ 
+ # Service notification command - send email to alphanumeric pager gateway
+ #       The notify-by-epager command assumes that each contact has a pager email gateway, and
+ #       that the address has been entered into the appropriate contact field instead of an
+ #       actual pager number. (i.e. 'pagejoe@nowhere.com' routes mail to Joe's alphanumeric pager)
+ 
+-command[notify-by-epager]=/bin/echo -e 'Service: $SERVICEDESC$\nHost: $HOSTNAME$\nAddress: $HOSTADDRESS$\nInfo: $OUTPUT$' | /bin/mail -s '$SERVICESTATE$ alert for $HOSTALIAS$/$SERVICEDESC$' $CONTACTPAGER$
++command[notify-by-epager]=/usr/bin/printf 'Service: $SERVICEDESC$\nHost: $HOSTNAME$\nAddress: $HOSTADDRESS$\nInfo: $OUTPUT$' | /usr/bin/mail -s '$SERVICESTATE$ alert for $HOSTALIAS$/$SERVICEDESC$' $CONTACTPAGER$
+ 
+ # Host notification commands (one for email, one for alphanumeric pager with email gateway)
+ 
+-command[host-notify-by-email]=/bin/echo -e '***** NetSaint 0.0.5 *****\n\nHost "$HOSTALIAS$" is $HOSTSTATE$!\n\nDate/Time: $DATETIME$\n' | /bin/mail -s 'Host $HOSTNAME$ is $HOSTSTATE$!' $CONTACTEMAIL$
+-command[host-notify-by-epager]=/bin/echo -e 'Host "$HOSTALIAS$" is $HOSTSTATE$!' | /bin/mail -s 'Host $HOSTNAME$ is $HOSTSTATE$!' $CONTACTPAGER$
++command[host-notify-by-email]=/usr/bin/printf '***** NetSaint 0.0.5 *****\n\nHost "$HOSTALIAS$" is $HOSTSTATE$!\n\nDate/Time: $DATETIME$\n' | /usr/bin/mail -s 'Host $HOSTNAME$ is $HOSTSTATE$!' $CONTACTEMAIL$
++command[host-notify-by-epager]=/usr/bin/printf 'Host "$HOSTALIAS$" is $HOSTSTATE$!' | /usr/bin/mail -s 'Host $HOSTNAME$ is $HOSTSTATE$!' $CONTACTPAGER$
+ 
+ # These are some example service check commands.  See the HTML documentation on the plugins for
+ # examples of how to configure command definitions.
+@@ -316,7 +316,7 @@
+ 
+ contactgroup[novell-admins]=Novell Administrators;@netsaint_user@
+ contactgroup[nt-admins]=NT Administrators;@netsaint_user@,jdoe
+-contactgroup[linux-admins]=Linux Administrators;@netsaint_user@
++contactgroup[freebsd-admins]=FreeBSD Administrators;@netsaint_user@
+ contactgroup[switch-admins]=Etherswitch Administrators;@netsaint_user@
+ contactgroup[router-admins]=Router Technicians;@netsaint_user@
+ contactgroup[printer-admins]=Etherswitch Administrators;@netsaint_user@,jdoe
+@@ -428,14 +428,14 @@
+ service[liatris]=PING;24x7;3;5;1;maes-admins;240;workhours;1;1;0;;check_ping
+ service[liatris]=MAES Publications;24x7;3;2;1;maes-admins;240;workhours;1;1;1;;check_http2!192.168.2.2!/publications
+ 
+-# Linux Box
+-service[real]=PING;24x7;3;5;1;linux-admins;240;24x7;1;1;0;;check_ping
+-service[real]=HTTP;24x7;3;2;1;linux-admins;240;24x7;1;1;1;;check_http
+-service[real]=Current Users;24x7;3;5;2;linux-admins;240;24x7;1;1;1;;check_users!75!150
+-service[real]=Zombie Processes;24x7;3;5;2;linux-admins;240;24x7;1;1;1;;check_procs!5!10!Z
+-service[real]=Total Processes;24x7;3;5;2;linux-admins;240;24x7;1;1;1;;check_procs!150!200
+-service[real]=Drive 1 Free Space;24x7;3;5;1;linux-admins;120;24x7;1;1;1;;check_disk!/dev/hda1
+-service[real]=Drive 2 Free Space;24x7;3;5;1;linux-admins;120;24x7;1;1;1;;check_disk!/dev/hdb2
++# FreeBSD Box
++service[real]=PING;24x7;3;5;1;freebsd-admins;240;24x7;1;1;0;;check_ping
++service[real]=HTTP;24x7;3;2;1;freebsd-admins;240;24x7;1;1;1;;check_http
++service[real]=Current Users;24x7;3;5;2;freebsd-admins;240;24x7;1;1;1;;check_users!75!150
++service[real]=Zombie Processes;24x7;3;5;2;freebsd-admins;240;24x7;1;1;1;;check_procs!5!10!Z
++service[real]=Total Processes;24x7;3;5;2;freebsd-admins;240;24x7;1;1;1;;check_procs!150!200
++service[real]=Drive 1 Free Space;24x7;3;5;1;freebsd-admins;120;24x7;1;1;1;;check_disk!/dev/hda1
++service[real]=Drive 2 Free Space;24x7;3;5;1;freebsd-admins;120;24x7;1;1;1;;check_disk!/dev/hdb2
+ 
+ # Switches
+ service[switch-esplan]=Traffic Rate;24x7;1;5;6;switch-admins;60;24x7;0;0;0;;traffic_average!/home/httpd/html/mrtg/esp-lan.log!600000!800000!600000!800000
