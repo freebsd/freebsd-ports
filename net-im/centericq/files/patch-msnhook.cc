@@ -1,5 +1,5 @@
 --- src/hooks/msnhook.cc	Fri Dec 13 00:17:12 2002
-+++ src/hooks/msnhook.cc	Wed Dec 18 14:57:02 2002
++++ src/hooks/msnhook.cc	Sun Jan  5 02:02:44 2003
 @@ -29,6 +29,7 @@
  #include "accountmanager.h"
  #include "eventmanager.h"
@@ -18,6 +18,20 @@
  
      if(c)
      if(c->getstatus() != offline || !c->inlist()) {
+@@ -352,11 +354,11 @@
+ 
+ void msnhook::checkfriendly(icqcontact *c, const string friendlynick, bool forcefetch) {
+     string oldnick = c->getnick();
+-    string newnick = unmime(friendlynick);
++    string newnick = Utf8ToStr(unmime(friendlynick));
+ 
+     c->setnick(newnick);
+ 
+-    if(forcefetch || (oldnick != newnick && c->getdispnick() == oldnick) || oldnick.empty()) {
++    if(forcefetch || (oldnick != newnick && c->getdispnick() != newnick) || oldnick.empty()) {
+ 	c->setdispnick(newnick);
+ 	face.relaxedupdate();
+     }
 @@ -556,7 +558,8 @@
  
      mhook.checkinlist(ic);
