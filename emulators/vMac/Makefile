@@ -3,7 +3,7 @@
 # Date created:				Jul 11th 1999
 # Whom:					troll
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/29 05:51:17 dburr Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		vMac-0.1.9.3-src
