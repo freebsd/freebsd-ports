@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ggiterm
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggiterm
@@ -20,10 +19,11 @@ LIB_DEPENDS=	ggi.2:${PORTSDIR}/graphics/libggi
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ggi=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ggi-prefix=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -35,7 +35,14 @@ OPTIONS=	FREETYPE "Build with Freetype support" on
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-ft-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--without-freetype
 .endif
+
+MAN1=		ggiterm.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lggi|-lggi ${PTHREAD_LIBS}|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
