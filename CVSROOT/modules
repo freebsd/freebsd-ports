@@ -2284,6 +2284,7 @@ gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemimedata	ports/misc/gnomemimedata
 gnomemm		ports/x11-toolkits/gnomemm
 gnomepanel	ports/x11/gnomepanel
+gnomephotoprinter	ports/print/gnomephotoprinter
 gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
 gnomepim	ports/deskutils/gnomepim
