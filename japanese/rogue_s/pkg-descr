@@ -1,0 +1,24 @@
+This is a port of Rogue-clone: Version II, but it is enhanced to display 
+messages with Japanese, colored and messages are separated from program
+(you can make another message version of rogue).
+
+This port provide you 4 message files:
+- Original English message [mesg_E]
+  (but it was broken, please recompile without -DJAPAN, sorry).
+- Japanised message [mesg]
+- UTMC (University of Tokyo Microcomputer Club) message [mesg_utmc]
+- fj.* message [mesg_fj]
+
+In this version, high score will be sorted to record by score only,
+and you can record your own score more than one time.
+
+
+You have to specify a message file to play this version of rogue like this:
+	% rogue_s mesg
+or without argument, rogue_s will list available messages.
+
+
+Welcome to the Dungeons of Doom...
+
+- Yoshihiko
+mistral@imasy.or.jp

@@ -1,0 +1,15 @@
+--- machdep.c.orig	Mon Sep 14 14:40:12 1992
++++ machdep.c	Fri Dec  4 00:22:26 1998
+@@ -397,9 +397,9 @@
+ md_heed_signals()
+ {
+ #ifdef UNIX
+-	signal(SIGINT, onintr);
+-	signal(SIGQUIT, byebye);
+-	signal(SIGHUP, error_save);
++	signal(SIGINT, (void *)onintr);
++	signal(SIGQUIT, (void *)byebye);
++	signal(SIGHUP, (void *)error_save);
+ #endif /* UNIX */
+ 
+ #ifdef HUMAN
