@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-texmf-dir=${PREFIX}/${TEXMFLOCAL} \
 		--disable-8bit-test
 USE_GHOSTSCRIPT=	yes
+USE_PERL5_BUILD=	yes
 PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
 
 INFO=	preview-latex
