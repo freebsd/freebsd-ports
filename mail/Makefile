@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.22 1996/02/26 01:01:06 ache Exp $
+# $Id: Makefile,v 1.23 1996/07/06 13:20:20 markm Exp $
 #
 
     SUBDIR += elm
     SUBDIR += exim
+    SUBDIR += majordomo
     SUBDIR += metamail
     SUBDIR += mh
     SUBDIR += mpack
