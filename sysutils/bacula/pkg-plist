@@ -5,6 +5,7 @@ etc/rc.d/bacula.sh.sample
 sbin/bacula-fd
 %%SERVER%%sbin/bacula-sd
 %%SERVER%%sbin/bextract
+%%SERVER%%sbin/bcopy
 %%SERVER%%sbin/bls
 %%SERVER%%sbin/bscan
 %%SERVER%%sbin/btape
@@ -29,4 +30,6 @@ sbin/bconsole
 %%SERVER%%share/bacula/delete_catalog_backup
 %%SERVER%%share/bacula/make_catalog_backup
 %%SERVER%%@dirrm share/bacula
+@unexec /usr/bin/killall badula-sd > /dev/null 2>&1 || true
+@unexec /usr/bin/killall bacula-dir > /dev/null 2>&1 || true
 @exec mkdir -p %%BACULA_DIR%%

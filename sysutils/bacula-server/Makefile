@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.34.6
-PORTREVISION=	2
+PORTVERSION=	1.36.1
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -105,7 +105,7 @@ PLIST_SUB+=		SERVER=""
 RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
 
-PORTDOCS=	bacula.pdf ReleaseNotes html-manual/*
+PORTDOCS=	bacula.pdf ReleaseNotes html-manual
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
@@ -251,5 +251,7 @@ post-install:
 	@${ECHO_MSG} "the user bacula."
 .endif
 	@${ECHO_MSG} "*********************************************************************"
+
+	@$(CAT) pkg-message
 
 .include <bsd.port.post.mk>
