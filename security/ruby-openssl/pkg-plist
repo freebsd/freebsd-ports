@@ -1,0 +1,25 @@
+%%RUBY_SITEARCHLIBDIR%%/OpenSSL.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01cert.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01crl.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01key.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01pub.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01req.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/02cert.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/02key.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/02req.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/cacert.pem
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/config.cnf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/key_hash.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_config.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_digest.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_rsa.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509crl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509req.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509store.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c/hash.c
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c/key.c
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl/c
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
+%%PORTDOCS%%%%RUBY_DOCDIR%%/openssl/README.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/openssl
