@@ -3212,6 +3212,7 @@ kgmon		src/usr.sbin/kgmon
 kgzip		src/usr.sbin/kgzip
 kgzldr		src/sys/boot/i386/kgzldr
 khordpro	ports/audio/khordpro
+kile		ports/editors/kile
 kill		src/bin/kill
 killall		src/usr.bin/killall
 kiltdown	ports/mail/kiltdown
