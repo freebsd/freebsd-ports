@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		kover
-PORTVERSION=		2.9.3
-PORTREVISION=	2
+PORTVERSION=		2.9.5
 CATEGORIES=		print kde
 MASTER_SITES=		http://lisas.de/kover/
 
@@ -18,9 +17,11 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 
+post-extract:
+	@${TOUCH} -t 200404270000 ${WRKSRC}/Makefile.am.in
+	@${TOUCH} -t 200404270001 ${WRKSRC}/subdirs
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
