@@ -1,0 +1,56 @@
+*** ./maint/makefile	Tue Sep 20 21:56:32 1994
+--- ../cnews/maint/makefile	Thu Sep 29 09:40:58 1994
+***************
+*** 77,83 ****
+  	echo 'Message-ID: <legal>' >>arts/bar/ugh/12
+  	echo '<bar.ugh/13@trash>	0~0	bar.ugh/13' >>history.good
+  	echo 'Message-ID: illegal' >arts/bar/ugh/13
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good
+  
+  r:	$(PROGS) rclean rsetup
+  	: "mkhistory"
+--- 77,84 ----
+  	echo 'Message-ID: <legal>' >>arts/bar/ugh/12
+  	echo '<bar.ugh/13@trash>	0~0	bar.ugh/13' >>history.good
+  	echo 'Message-ID: illegal' >arts/bar/ugh/13
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good2
+! 	mv history.good2 history.good
+  
+  r:	$(PROGS) rclean rsetup
+  	: "mkhistory"
+***************
+*** 93,99 ****
+  	: "addmissing"
+  	echo '<missing>	9999~-	bar.ugh/14' >>history.good
+  	echo 'Message-ID: <missing>' >arts/bar/ugh/14
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good
+  	sleep 2		# ensure article looks older than addmissing startup
+  	$(HERE) ./addmissing -v >addm.out 2>addm.diag
+  	sed $(FIXMIDFIELD) history | sort >history.fixed
+--- 94,101 ----
+  	: "addmissing"
+  	echo '<missing>	9999~-	bar.ugh/14' >>history.good
+  	echo 'Message-ID: <missing>' >arts/bar/ugh/14
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good2
+! 	mv history.good2 history.good
+  	sleep 2		# ensure article looks older than addmissing startup
+  	$(HERE) ./addmissing -v >addm.out 2>addm.diag
+  	sed $(FIXMIDFIELD) history | sort >history.fixed
+***************
+*** 106,112 ****
+  	: "cnewsdo, using addmissing as test command"
+  	echo '<missing2>	9999~-	bar.ugh/15' >>history.good
+  	echo 'Message-ID: <missing2>' >arts/bar/ugh/15
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good
+  	sleep 2		# ensure article looks older than addmissing startup
+  	touch active
+  	$(HERE) ./cnewsdo addmissing >addm.out 2>addm.diag
+--- 108,115 ----
+  	: "cnewsdo, using addmissing as test command"
+  	echo '<missing2>	9999~-	bar.ugh/15' >>history.good
+  	echo 'Message-ID: <missing2>' >arts/bar/ugh/15
+! 	sed $(FIXMIDFIELD) history.good | sort -o history.good2
+! 	mv history.good2 history.good
+  	sleep 2		# ensure article looks older than addmissing startup
+  	touch active
+  	$(HERE) ./cnewsdo addmissing >addm.out 2>addm.diag
