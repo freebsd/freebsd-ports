@@ -1,0 +1,14 @@
+--- platforms/unix/plugins/PseudoTTYPlugin/openpty.h.orig	Tue Sep 10 13:38:07 2002
++++ platforms/unix/plugins/PseudoTTYPlugin/openpty.h	Tue Sep 10 13:38:52 2002
+@@ -43,7 +43,10 @@
+ # elif defined(HAVE_UTIL_H)
+ #   include <util.h>		/* openpty() */
+ # else
+-#   error: cannot find headers for openpty()
++#   include <sys/types.h>
++#   include <sys/ioctl.h>
++#   include <termios.h>
++#   include <libutil.h>
+ # endif
+ 
+ #else /* !HAVE_OPENPTY */

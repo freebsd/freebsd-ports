@@ -1,14 +1,13 @@
 bin/squeak
 bin/inisqueak
-share/squeak/3.0/Profiler.la
-share/squeak/3.0/Profiler.so
-share/squeak/3.0/System.la
-share/squeak/3.0/System.so
-share/squeak/3.0/inisqueak
-share/squeak/3.0/squeak
-share/squeak/3.0/squeak.map
-share/squeak/Squeak3.0.changes
-share/squeak/Squeak3.0.image
+share/squeak/3.2-4/squeak
+share/squeak/3.2-4/B3DAcceleratorPlugin.la
+share/squeak/3.2-4/UnixOSProcessPlugin.la
+share/squeak/3.2-4/libB3DAcceleratorPlugin.a
+share/squeak/3.2-4/libUnixOSProcessPlugin.a
+share/squeak/ReadMe.txt
+share/squeak/Squeak3.2-4956.changes.gz
+share/squeak/Squeak3.2-4956.image.gz
 share/squeak/SqueakV3.sources
-@dirrm share/squeak/3.0
+@dirrm share/squeak/3.2-4
 @dirrm share/squeak
