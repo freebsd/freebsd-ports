@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Configure pcnfsd for FreeBSD use
+#
+cd $WRKSRC
+rm -f rpc.pcnfsd
+mv -f Makefile Makefile.DIST
+mv -f Makefile.44bsd Makefile
+mv -f pcnfsd.8c pcnfsd.8
