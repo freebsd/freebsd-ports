@@ -1,0 +1,62 @@
+--- Makefile.orig	Tue Dec  5 23:40:45 2000
++++ Makefile	Tue Dec  5 23:40:32 2000
+@@ -34,10 +34,10 @@
+ 
+ # Places to install things, used to relocate things for Ultrix kits.
+ # 	ROOT normally is the empty string...
+-#ROOT=
+-LOCATION=/usr
++ROOT=${PREFIX}
++#LOCATION=
+ DESTDIR=${ROOT}${LOCATION}/sbin
+-MANDIR=${ROOT}${LOCATION}/share/man/man8
++MANDIR=${PREFIX}/man/man8
+ ETCDIR=${ROOT}/etc
+ SSMTPCONFDIR=${ETCDIR}/ssmtp
+ # (End of relocation section)
+@@ -62,41 +62,15 @@
+ #FLAGS= -Wall -O6 -DDEBUG ${BASEFLAGS}
+ #FLAGS= -Wall -g ${BASEFLAGS}
+ 
+-CFLAGS= ${FLAGS} ${BASEFLAGS}
++CFLAGS+= ${FLAGS} ${BASEFLAGS}
+ 
+ all: ssmtp
+ 
+ install: ssmtp
+ 	test `whoami` = root
+-	install -d -m 755 ${DESTDIR}
+-	install -s -m 755 ssmtp ${DESTDIR}/ssmtp
+-	install -d -m 755 ${MANDIR}
+-	install -m 644 ssmtp.8 ${MANDIR}/ssmtp.8
+-	install -d -m 755 ${SSMTPCONFDIR}
+-	install -m 644 revaliases ${INSTALLED_REVALIASES_FILE}
+-	$(GEN_CONFIG) ${INSTALLED_CONFIGURATION_FILE}
+-
+-
+-install-sendmail: ssmtp install
+-	rm -f ${DESTDIR}/sendmail
+-	ln -s ssmtp ${DESTDIR}/sendmail
+-	install -d -m 755 ${DESTDIR}/../lib
+-	rm -f ${DESTDIR}/../lib/sendmail
+-	ln -s ../sbin/sendmail ${DESTDIR}/../lib
+-	rm -f ${MANDIR}/sendmail.8
+-	ln -s ssmtp.8 ${MANDIR}/sendmail.8
+-
+-uninstall:
+-	test `whoami` = root
+-	rm -f ${DESTDIR}/ssmtp
+-	rm -f ${MANDIR}/ssmtp.8
+-	rm -f ${CONFIGURATION_FILE} ${REVALIASES_FILE}
+-	rmdir ${SSMTPCONFDIR}
+-
+-uninstall-sendmail: uninstall
+-	rm -f ${DESTDIR}/sendmail ${DESTDIR}/../lib/sendmail
+-	rm -f ${MANDIR}/sendmail.8
+-
++	${BSD_INSTALL_PROGRAM} ssmtp ${DESTDIR}
++	${BSD_INSTALL_MAN} ssmtp.8 ${MANDIR}/ssmtp.8
++	${BSD_INSTALL_DATA} revaliases ${INSTALLED_REVALIASES_FILE}
+ clean:
+ 	rm -f ssmtp *.o core
+ 

@@ -1,0 +1,29 @@
+#!/bin/sh -e
+
+#
+# Generate configuration file
+#
+
+
+if [ -s ${PREFIX}/etc/ssmtp/ssmtp.conf ]; then
+    echo Configuration file $1 already exists.
+    exit
+fi
+
+umask 022
+
+cat >>${PREFIX}/etc/ssmtp/ssmtp.conf <<EOF
+#
+# ${PREFIX}/ssmtp/ssmtp.conf -- a config file for sSMTP sendmail.
+#
+# The person who gets all mail for userids < 10
+root=postmaster
+# The place where the mail goes. The actual machine name is required
+# no MX records are consulted. Commonly mailhosts are named mail.domain.com
+# The example will fit if you are in domain.com and you mailhub is so named.
+mailhub=mail
+# Where will the mail seem to come from?
+#rewriteDomain=`echo -n $mailname`
+# The full hostname
+hostname=`hostname`
+EOF
