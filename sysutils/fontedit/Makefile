@@ -1,0 +1,19 @@
+# New ports collection makefile for:	fontedit
+# Date created:		21 Jun 2000
+# Whom:			Ben Smithurst <ben@scientia.demon.co.uk>
+#
+# $FreeBSD$
+
+PORTNAME=	fontedit
+PORTVERSION=	1.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.scientia.demon.co.uk/users/ben/tarballs/ \
+		ftp://ukug.uk.freebsd.org/pub/mark/fontmake/
+
+MAINTAINER=	ben@scientia.demon.co.uk
+
+do-install:
+	@cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} fontdump fontmake ${PREFIX}/bin
+
+.include <bsd.port.mk>
