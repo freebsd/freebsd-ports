@@ -8,6 +8,7 @@
 
 PORTNAME=	agrep
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
