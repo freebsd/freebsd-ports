@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.2.83
+PORTVERSION=	4.2.86
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/4.2
@@ -22,12 +22,12 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>
