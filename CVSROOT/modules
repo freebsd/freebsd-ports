@@ -1717,6 +1717,7 @@ gkermit		ports/comms/gkermit
 gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
 gkrellm		ports/sysutils/gkrellm
+gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
 gkrellmearth	ports/astro/gkrellmearth
