@@ -22,6 +22,14 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 USE_REINPLACE=	yes
+CONFIGURE_ARGS= --with-cc=${CC} \
+		--with-cxx=${CXX}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501000
+USE_GCC=3.3
+.endif
 
 GNU_HOST=       ${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=      OCTAVE_VERSION="`${LOCALBASE}/bin/octave-config -v`" GNU_HOST=${GNU_HOST}
@@ -32,4 +40,4 @@ post-configure:
 	 @${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/main/sparse/buildtests.sh
 	 @${REINPLACE_CMD} -e 's+#! /bin/sh+#! ${LOCALBASE}/bin/bash+g;' ${WRKSRC}/octinst.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
