@@ -7,7 +7,7 @@
 
 PORTNAME=	gnats
 PORTVERSION=	3.113.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	databases elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \
 		--with-full-gnats \
 		--with-release-based
+CFLAGS+=	-DUSE_WIDE_RESPONSIBLE
 
 USE_GMAKE=	yes
 MAN1=		edit-pr.1 query-pr.1 send-pr.1
