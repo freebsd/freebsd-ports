@@ -16,13 +16,19 @@ USE_GMAKE=	yes
 
 INSTALLS_SHLIB=	yes
 
+HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/libecgi.so ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/html2h/html2h ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/libecgi.so ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/html2h/html2h ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/include/ecgi
+.for file in ${HEADER_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/ecgi
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ecgi
-	${INSTALL_DATA} ${WRKSRC}/doc/ecgitut.txt ${PREFIX}/share/doc/ecgi
+	@${MKDIR} ${PREFIX}/share/doc/ecgi
+	@${INSTALL_DATA} ${WRKSRC}/doc/ecgitut.txt ${PREFIX}/share/doc/ecgi
 .endif
 
 .include <bsd.port.mk>
