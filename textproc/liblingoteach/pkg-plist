@@ -2,9 +2,8 @@ include/lingoteach/lingdefs.h
 include/lingoteach/lingoteach.h
 lib/liblingoteach.a
 lib/liblingoteach.so
-lib/liblingoteach.so.0
+lib/liblingoteach.so.3
 libdata/pkgconfig/liblingoteach.pc
-share/doc/liblingoteach/html/a00009.html
 share/doc/liblingoteach/html/a00010.html
 share/doc/liblingoteach/html/a00011.html
 share/doc/liblingoteach/html/a00012.html
@@ -13,6 +12,7 @@ share/doc/liblingoteach/html/a00014.html
 share/doc/liblingoteach/html/a00015.html
 share/doc/liblingoteach/html/a00016.html
 share/doc/liblingoteach/html/a00017.html
+share/doc/liblingoteach/html/a00018.html
 share/doc/liblingoteach/html/annotated.html
 share/doc/liblingoteach/html/classes.html
 share/doc/liblingoteach/html/doxygen.css
