@@ -32,7 +32,7 @@ MAN1=	ncpasswd.1 ncprint.1 ncpsend.1 ncpurge.1
 MAN8=	ipxping.8
 
 .if ${OSVERSION} >= 400000
-PLIST=	${PKGDIR}/PLIST.4
+PLIST=	${PKGDIR}/pkg-plist.4
 .else
 MAN1+=	ncplist.1 ncplogin.1 ncplogout.1
 MAN8+=	mount_nwfs.8
