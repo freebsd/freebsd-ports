@@ -20,11 +20,10 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.humblesoft.com/pub/ \
 		http://www6.vc-net.ne.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.50/ \
 		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/
 # first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
 # third for ${MASTER_SITE_PORTS_JP}
-MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS .
+MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS taoka .
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${GS_DRIVERS}
 EXTRACT_ONLY=	${GS_SOURCES}
