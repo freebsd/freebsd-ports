@@ -173,7 +173,6 @@
     SUBDIR += sloth
     SUBDIR += socket
     SUBDIR += ssync
-    SUBDIR += star
     SUBDIR += stat
     SUBDIR += stmpclean
     SUBDIR += stow

@@ -8,7 +8,7 @@
 
 PORTNAME=		star
 PORTVERSION=		1.3
-CATEGORIES=		sysutils archivers
+CATEGORIES=		archivers
 MASTER_SITES=		ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
