@@ -1,0 +1,11 @@
+--- xmemory.C.orig	Sun Jun 20 19:09:21 1999
++++ xmemory.C	Sun Jun 20 19:10:06 1999
+@@ -199,7 +199,7 @@
+ main( int argc, char **argv )
+ {
+ int i;
+-long	timefield;
++time_t	timefield;
+ char	main_display[30];
+ char	*main_p;
+ char *filename;
