@@ -1,0 +1,5 @@
+--- modules/gpgsqlbackend/OBJECTLIBS.orig	Tue Dec 17 08:35:41 2002
++++ modules/gpgsqlbackend/OBJECTLIBS	Tue Dec 17 08:35:50 2002
+@@ -1 +1 @@
+--lpq++ -lpq -lssl -lcrypt -lcrypto
++-lpq++ -lpq -lssl -lcrypto

@@ -1,0 +1,26 @@
+#!/bin/sh
+# $OpenBSD$
+#
+# powerdns de-installation
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+CONFIG_DIR=${SYSCONFDIR}
+CONFIG_FILE=$CONFIG_DIR/pdns.conf
+
+if [ -f ${CONFIG_FILE} ]; then
+    echo
+    echo "+---------------"
+    echo "| To completely deinstall the $1 package you need"
+    echo "| to perform these steps as root:"
+    echo "|"
+    echo "|           rm -rf $CONFIG_FILE"
+    echo "|"
+    echo "| Do not do this if you plan on re-installing $1"
+    echo "| at some future time."
+    echo "+---------------"
+    echo
+fi
+
+exit 0

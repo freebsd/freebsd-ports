@@ -1,0 +1,10 @@
+bin/pdns_control
+bin/zone2sql
+sbin/pdns_server
+@unexec if cmp -s %D/etc/pdns.conf %D/etc/pdns.conf-dist; then rm -f %D/etc/pdns.conf; fi
+etc/pdns.conf-dist
+@exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
+%%PORTDOCS%%share/examples/powerdns/pdns.conf
+%%PORTDOCS%%share/examples/powerdns/pdns_mysql.sql
+%%PORTDOCS%%share/examples/powerdns/pdns_postgresql.sql
+%%PORTDOCS%%@dirrm share/examples/powerdns

@@ -454,6 +454,7 @@
     SUBDIR += poink
     SUBDIR += poptop
     SUBDIR += portfwd
+    SUBDIR += powerdns
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += ppptraf

@@ -1,0 +1,11 @@
+--- configure.orig	Mon Dec 16 22:45:46 2002
++++ configure	Mon Dec 16 22:45:59 2002
+@@ -10385,7 +10385,7 @@
+ 	echo "$as_me:$LINENO: result: $PGSQL_incdir" >&5
+ echo "${ECHO_T}$PGSQL_incdir" >&6
+ 
+-#	LIBS="$LIBS -lpq++ -lpq -lssl -lcrypt -lcrypto"
++#	LIBS="$LIBS -lpq++ -lpq -lssl -lcrypto"
+ fi
+ 
+ 

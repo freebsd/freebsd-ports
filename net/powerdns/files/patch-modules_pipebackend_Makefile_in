@@ -1,0 +1,11 @@
+--- modules/pipebackend/Makefile.in.orig	Tue Dec 17 09:39:14 2002
++++ modules/pipebackend/Makefile.in	Tue Dec 17 09:39:39 2002
+@@ -181,7 +181,7 @@
+ clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+ libpipebackend.la: $(libpipebackend_la_OBJECTS) $(libpipebackend_la_DEPENDENCIES) 
+-	$(CXXLINK) -rpath $(libdir) $(libpipebackend_la_LDFLAGS) $(libpipebackend_la_OBJECTS) $(libpipebackend_la_LIBADD) $(LIBS)
++#	$(CXXLINK) -rpath $(libdir) $(libpipebackend_la_LDFLAGS) $(libpipebackend_la_OBJECTS) $(libpipebackend_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core
