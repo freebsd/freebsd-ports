@@ -1,0 +1,10 @@
+Flux is intended to be a general-use high-level
+C library (with includes) that supports various
+purposes, from CGI to IRC to sockets, and so on.
+It's sort of an addendum to the standard C
+libraries.
+
+WWW: http://projects.simplemente.net/flux/
+Author: Hans Petter K. Jansson <hpj@styx.net>
+
+--Will <andrews@technologist.com>
