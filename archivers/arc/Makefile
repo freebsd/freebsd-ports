@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	arc
-PORTVERSION=	5.21e.8
-PORTREVISION=	1
+PORTVERSION=    5.21j
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
-DISTNAME=	arc521e.pl8
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Create & extract files from DOS .ARC files
 
-NO_WRKSUBDIR=	yes
 MAN1=		arc.1
 
 do-install:
