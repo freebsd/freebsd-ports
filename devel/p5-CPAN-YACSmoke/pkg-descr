@@ -1,0 +1,15 @@
+This module uses the backend of CPANPLUS to run tests on modules recently
+uploaded to CPAN and post results to the CPAN Testers list.
+
+It will create a database file in the .cpanplus directory, which it uses
+to track tested distributions. This information will be used to keep from
+posting multiple reports for the same module, and to keep from testing
+modules that use non-passing modules as prerequisites.
+
+If it is given multiple versions of the same distribution to test, it will
+test the most recent version only. If that version fails, then it will test
+a previous version.
+
+By default it uses CPANPLUS configuration settings.
+
+WWW: http://search.cpan.org/dist/CPAN-YACSmoke/

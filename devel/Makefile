@@ -648,6 +648,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CPAN-DistnameInfo
     SUBDIR += p5-CPAN-Mini
+    SUBDIR += p5-CPAN-YACSmoke
     SUBDIR += p5-CPANPLUS
     SUBDIR += p5-Cache
     SUBDIR += p5-Cache-Cache
