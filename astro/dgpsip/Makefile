@@ -10,7 +10,7 @@ PORTVERSION=	1.32
 CATEGORIES=	astro
 MASTER_SITES=	http://www.wsrcc.com/wolfgang/ftp/
 
-MAINTAINER=	dbaker@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Differential GPS over IP communication device
 
 GNU_CONFIGURE=	yes

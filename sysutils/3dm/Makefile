@@ -14,13 +14,13 @@ MASTER_SITES=	ftp://ftp.procplace.com/pub/contrib/3ware/3dm/ \
 		http://people.freebsd.org/~msmith/RAID/3ware/
 DISTNAME=	3dm-bsd-${PORTVERSION}
 
-MAINTAINER=	dbaker@FreeBSD.org
-COMMENT=	3ware ATA RAID monitoring daemon and web server 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	3ware ATA RAID monitoring daemon and web server
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 450000
-BROKEN=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4.5-RELEASE"
+IGNORE=		"3ware 3ware ATA RAID (twe) is not supported in versions earlier than 4.5-RELEASE"
 .endif
 
 ONLY_FOR_ARCHS=	i386
@@ -53,15 +53,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/3dmd ${PREFIX}/sbin
 
 .if !exists(${PREFIX}/etc/3dmd.conf)
-	@echo ""
-	@echo ""
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "           Don't forget to edit '${PREFIX}/etc/3dmd.conf'		"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "             Visit http://`hostname`:1080/		"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo ""
-	@echo ""
+	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "           Don't forget to edit '${PREFIX}/etc/3dmd.conf'		"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "             Visit http://`hostname`:1080/		"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} ""
+	@${ECHO} ""
 
 	${INSTALL_DATA} ${FILESDIR}/3dmd.conf ${PREFIX}/etc/
 #

@@ -13,24 +13,15 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
 		http://http.distributed.net/pub/dcti/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION:S/^/v/:R}
-.include <bsd.port.pre.mk>
-
 DISTFILES=	dnetc${PORTVERSION:E}-freebsd-x86-elf.tar.gz
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Distributed.net distributed computing project client
+
+WRKSRC=		${WRKDIR}/dnetc484-freebsd-x86-elf
 
 ONLY_FOR_ARCHS=	i386
 
-.if ${OSVERSION} < 300000
-IGNORE=		"This port requires FreeBSD 3.X or greater."
-.endif
-
-.if exists(${PREFIX}/distributed.net/rc5des)
-BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
-.endif
-
-MAINTAINER=	dbaker@FreeBSD.org
-COMMENT=	Distributed.net distributed computing project client (modules: rc5-72/ogr)
-
-WRKSRC=		${WRKDIR}/dnetc484-freebsd-x86-elf
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net
@@ -43,6 +34,16 @@ SBINMODE=	700
 BINMODE=	700
 
 MAN1=		dnetc.1
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 300000
+IGNORE=		"This port requires FreeBSD 3.X or greater."
+.endif
+
+.if exists(${PREFIX}/distributed.net/rc5des)
+BROKEN=		"rc5des/dnetc conflict: Please deinstall all rc5des ports/packages first."
+.endif
 
 do-configure:
 	@if [ ! -f ${PREFIX}/dnetc.ini ]; then \
@@ -75,20 +76,20 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}/dnetc.ini.default
 .if !exists(${BINDIR}/dnetc.ini)
-	@echo ""
-	@echo ""
-	@echo ""
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "! REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER !"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "           Don't forget to run '${BINDIR}/dnetc -config'                  "
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-	@echo ""
-	@echo ""
-	@echo ""
+	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "! REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER REMEMBER !"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "           Don't forget to run '${BINDIR}/dnetc -config'                  "
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} ""
 	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc.ini ${BINDIR}
 .endif
 
