@@ -8,9 +8,7 @@
 PORTNAME=	mupad
 PORTVERSION=	2.5.3
 CATEGORIES=	math linux
-MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/ \
-		ftp://archives.cs.ehime-u.ac.jp/pub/MuPAD/distrib/unix/ \
-		ftp://ftp.uni-paderborn.de/pub/MuPAD/distrib/unix/
+MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/
 DISTNAME=	mupad_linux_scilab_253
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mupad
