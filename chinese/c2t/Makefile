@@ -4,10 +4,10 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/08 00:02:27 obrien Exp $
+# $Id: Makefile,v 1.2 1997/02/11 04:40:10 obrien Exp $
 #
 
-PKGNAME=	cn-c2t-1.0
+PKGNAME=	zh-c2t-1.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \

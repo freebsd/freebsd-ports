@@ -3,13 +3,13 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1997/02/17 20:33:32 obrien Exp $
+# $Id: Makefile,v 1.3 1997/07/21 19:21:01 max Exp $
 #
 # This port is adapted from japanese/kon
 #
 
 DISTNAME=	kon
-PKGNAME=	cn-big5con-0.1
+PKGNAME=	zh-big5con-0.1
 CATEGORIES=	chinese
 # note kon is only in first directory and
 # fonts are only in the other two directories
