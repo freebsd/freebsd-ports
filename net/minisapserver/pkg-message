@@ -1,0 +1,7 @@
+*******************************************************************************
+A sample configuration file, sap.cfg-dist has been installed in /usr/local/etc/
+  Please 'cp sap.cfg-dist sap.cfg' and edit sap.cfg.
+
+To start sapserver at boot time:
+  echo "sapserver_enable=yes" >> /etc/rc.conf
+*******************************************************************************
