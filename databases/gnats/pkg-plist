@@ -18,12 +18,16 @@ info/send-pr.info
 @exec install-info %D/info/gnats.info %D/info/dir
 @exec install-info %D/info/send-pr.info %D/info/dir
 libexec/gnats/at-pr
+libexec/gnats/check-db
+libexec/gnats/delete-pr
 libexec/gnats/file-pr
 libexec/gnats/gen-index
+libexec/gnats/gnats-edit-pr
 libexec/gnats/gnatsd
 libexec/gnats/mail-query
 libexec/gnats/mkcat
 libexec/gnats/mkdist
+libexec/gnats/npr-addr
 libexec/gnats/npr-edit
 libexec/gnats/pr-addr
 libexec/gnats/pr-age
