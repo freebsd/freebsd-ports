@@ -252,6 +252,7 @@ include/liba2ps.h
 lib/liba2ps.so.1
 lib/liba2ps.so
 lib/liba2ps.a
+lib/liba2ps.la
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/a2ps/ps
