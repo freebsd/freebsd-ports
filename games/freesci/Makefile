@@ -7,7 +7,7 @@
 
 PORTNAME=	freesci
 PORTVERSION=	0.3.4c
-CATEGORIES=	emulators games
+CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://teksolv.de/~jameson/
 MASTER_SITE_SUBDIR=${PORTNAME}/stable.pkg/${PORTVERSION}
