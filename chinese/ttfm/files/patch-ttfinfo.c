@@ -1,5 +1,5 @@
---- ttfinfo.c.orig	Fri Apr 19 18:30:44 2002
-+++ ttfinfo.c	Fri Apr 19 18:31:02 2002
+--- ttfinfo.c.orig	Sun Dec 17 02:56:41 2000
++++ ttfinfo.c	Tue Jul 30 10:48:21 2002
 @@ -112,6 +112,7 @@
  static void  usage             (const char *name);
  static const char *get_foundry (const TT_Char orig_code[4]);
@@ -41,7 +41,7 @@
      */
      for (k = 0; k < 2; k++) {
  
-@@ -1276,6 +1280,97 @@
+@@ -1276,6 +1280,99 @@
  		    }
  	    }
  	}
@@ -120,6 +120,7 @@
 +			TT_UShort string_len;
 +			static char  name_buffer[513];
 +			int   name_len;
++			int   english=1;
 +
 +			TT_Get_Name_String (face, i, &string, &string_len);
 +			string_len =  string_len < 512 ? string_len : 512;
@@ -129,11 +130,12 @@
 +			  /* drop the NULL part, dont't use j+=2 to avoid
 +			     endian problem. */
 +			  if (string[j] != '\0'){
++			    if ((string[j] & 0xff) > 0x7f) english=0;
 +			    name_buffer[name_len++] = string[j];
 +			  }
 +			}
 +			name_buffer[name_len] = '\0';
-+			return name_buffer;
++			if (english) return name_buffer;
 +		    }
 +	    }
      }
