@@ -8,7 +8,6 @@ bin/i386-rtems-addr2line
 bin/i386-rtems-readelf
 bin/i386-rtems-nm
 bin/i386-rtems-strip
-bin/i386-rtems-c++filt
 bin/i386-rtems-as
 bin/i386-rtems-gasp
 bin/i386-rtems-ld

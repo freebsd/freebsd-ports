@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.9.5.0.24
+PORTVERSION=	2.10
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
-PATCHFILES=	${BINNAME}-rtems-20000207.diff.gz
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
+MASTER_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
+DISTFILES=	${BINNAME}.tar.gz
+PATCHFILES=	${BINNAME}-rtems-20000726.diff.gz
+PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
 
 MAINTAINER=	jim@thehousleys.net
 
@@ -20,7 +22,7 @@ DIST_SUBDIR=	rtems
 
 LCLTARGET?=	i386-rtems
 
-BINNAME=	binutils-2.9.5.0.24
+BINNAME=	binutils-2.10
 MASTERDIR=	${.CURDIR}/../i386-rtems-binutils
 PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
 
@@ -38,8 +40,7 @@ MAN1=		${LCLTARGET}-ar.1 ${LCLTARGET}-nm.1 ${LCLTARGET}-objdump.1 \
 		${LCLTARGET}-ranlib.1 ${LCLTARGET}-size.1 \
 		${LCLTARGET}-strings.1 ${LCLTARGET}-strip.1 \
 		${LCLTARGET}-objcopy.1 ${LCLTARGET}-addr2line.1 \
-		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-c++filt.1 \
-		${LCLTARGET}-as.1 ${LCLTARGET}-ld.1
+		${LCLTARGET}-nlmconv.1 ${LCLTARGET}-as.1 ${LCLTARGET}-ld.1
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=   -d ${WRKDIR} -E ${PATCH_DIST_STRIP}

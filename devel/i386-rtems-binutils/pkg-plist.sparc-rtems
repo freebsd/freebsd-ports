@@ -8,7 +8,6 @@ bin/sparc-rtems-addr2line
 bin/sparc-rtems-readelf
 bin/sparc-rtems-nm
 bin/sparc-rtems-strip
-bin/sparc-rtems-c++filt
 bin/sparc-rtems-as
 bin/sparc-rtems-gasp
 bin/sparc-rtems-ld
