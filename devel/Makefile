@@ -14,6 +14,7 @@
     SUBDIR += amulet
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-aout-gcc295
+    SUBDIR += arm-elf-binutils
     SUBDIR += asis
     SUBDIR += asl
     SUBDIR += astyle

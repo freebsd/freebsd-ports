@@ -1,0 +1,46 @@
+@comment $FreeBSD$
+arm-elf/bin/addr2line
+arm-elf/bin/ar
+arm-elf/bin/as
+arm-elf/bin/c++filt
+arm-elf/bin/gasp
+arm-elf/bin/ld
+arm-elf/bin/nm
+arm-elf/bin/objcopy
+arm-elf/bin/objdump
+arm-elf/bin/ranlib
+arm-elf/bin/readelf
+arm-elf/bin/size
+arm-elf/bin/strings
+arm-elf/bin/strip
+arm-elf/include/ansidecl.h
+arm-elf/include/bfd.h
+arm-elf/include/bfdlink.h
+arm-elf/lib/ldscripts/armelf.x
+arm-elf/lib/ldscripts/armelf.xbn
+arm-elf/lib/ldscripts/armelf.xn
+arm-elf/lib/ldscripts/armelf.xr
+arm-elf/lib/ldscripts/armelf.xs
+arm-elf/lib/ldscripts/armelf.xu
+arm-elf/lib/libbfd.a
+arm-elf/lib/libiberty.a
+arm-elf/lib/libopcodes.a
+bin/arm-elf-addr2line
+bin/arm-elf-ar
+bin/arm-elf-as
+bin/arm-elf-c++filt
+bin/arm-elf-gasp
+bin/arm-elf-ld
+bin/arm-elf-nm
+bin/arm-elf-objcopy
+bin/arm-elf-objdump
+bin/arm-elf-ranlib
+bin/arm-elf-readelf
+bin/arm-elf-size
+bin/arm-elf-strings
+bin/arm-elf-strip
+@dirrm arm-elf/bin
+@dirrm arm-elf/include
+@dirrm arm-elf/lib/ldscripts
+@dirrm arm-elf/lib
+@dirrm arm-elf
