@@ -1,0 +1,19 @@
+--- Source-Tree/qmgr/all-systems/mgr_main.c.orig	Mon Sep  9 08:24:58 1996
++++ Source-Tree/qmgr/all-systems/mgr_main.c	Sat May  2 11:09:26 1998
+@@ -502,14 +502,14 @@
+ 	 *  On systems with named pipes, we get a pipe to the local
+ 	 *  daemon automatically the first time we call inter().
+ 	 */
+-#if	IS_POSIX_1 | IS_SYSVr4 | IS_BSD4_4
+-#else
+ #if	IS_BSD
+ 	if (interconn () < 0) {
+ 		fprintf (stderr, "%s(FATAL): Unable to get ", Nqsmgr_prefix);
+ 		fprintf (stderr, "a pipe to the local daemon.\n");
+ 		exit (16);
+ 	}
++#else
++#if	IS_POSIX_1 | IS_SYSVr4 | IS_BSD4_4
+ #else
+ BAD SYSTEM TYPE
+ #endif

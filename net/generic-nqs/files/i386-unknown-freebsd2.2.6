@@ -1,0 +1,18 @@
+# -*- sh -*-
+#
+# PLATFORM DESCRIPTION FILE
+
+C_COMPILER                      "cc"
+C_COMPILER_FLAGS_OPTIMISE       "${CFLAGS}"
+C_COMPILER_FLAGS_DEBUG          ""
+C_COMPILER_FLAGS_COMMON         ""
+C_COMPILER_FLAGS_INCLUDE        ""
+
+CONFIG_MACHINE                  "i386-unknown-freebsd2.2.6"
+PREFERED_API                    "BSD"
+PLATFORM_FLAGS "-DBSD4_4 -DHAS_BSD_LIMITS -DHAS_BSD_ZOMBIES -DIS_BSD -DIS_BSD4_4 -DHAS_RLIM_T -DHAS_BSD_PIPE"
+
+LINKER                          "cc -s"
+AR                              "ar cr"
+RANLIB                          "ranlib"
+MKDIR                           "bin/mkdir -p"

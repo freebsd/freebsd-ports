@@ -1,0 +1,24 @@
+--- SETUPDir/Scripts/SETUP.orig	Sat May  2 14:46:05 1998
++++ SETUPDir/Scripts/SETUP	Sat May  2 14:53:14 1998
+@@ -911,6 +911,21 @@
+       StepFour
+       StepFive
+       ;;
++    --fbconfig)
++      LoadMachineDesc
++      Introduction
++      StepOne
++      StepTwo
++      StepThree
++      ;;
++    --fbcompile)
++      LoadMachineDesc
++      StepFour
++      ;;
++    -fbinstall)
++      LoadMachineDesc
++      StepFive
++      ;;
+     *)
+       LoadMachineDesc
+       Introduction
