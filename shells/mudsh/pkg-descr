@@ -1,0 +1,10 @@
+Is there any reason why a shell (or command line) cannot be as
+tolerant or as intelligent as a text adventure game like Zork, or a
+MUD [Multi User Dungeon]? Is there any reason why a shell cannot work
+like such a game? ("Go North", etc.) Actually, no and we have the
+implementation to prove it. Have fun, and don't get eaten by a Grue!
+
+WWW: http://www.xirium.com/tech/mud-shell/index.html
+
+- George Reid
+greid@ukug.uk.freebsd.org

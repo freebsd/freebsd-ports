@@ -8,6 +8,7 @@
     SUBDIR += esh
     SUBDIR += flash
     SUBDIR += ksh93
+    SUBDIR += mudsh
     SUBDIR += osh
     SUBDIR += pash
     SUBDIR += pdksh
