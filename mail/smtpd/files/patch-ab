@@ -1,5 +1,5 @@
 --- smtpfwdd.c.org	Wed Jun 17 21:21:10 1998
-+++ smtpfwdd.c	Wed Jun 17 21:21:22 1998
++++ smtpfwdd.c	Sun Dec 30 00:09:19 2001
 @@ -43,12 +43,12 @@
  "Copyright 1996 - Obtuse Systems Corporation - All rights reserved.";
  char *obtuse_rcsid = "$Id: smtpfwdd.c,v 1.35 1997/12/12 04:07:49 beck Exp $";
@@ -14,3 +14,23 @@
  #include <sys/stat.h>
  #include <sys/wait.h>
  #include <sys/stat.h>
+@@ -636,6 +636,19 @@
+ 	exit(EX_OSERR);
+       }
+ 
++      /*
++       * Open /dev/null as stdout and as stderr so sendmail 8.12.1 (and
++       * above ?) won't complain about missing file descriptors.
++       */
++      if (open ("/dev/null", O_WRONLY | O_APPEND) < 0) {
++	syslog(LOG_ERR, "Couldn't open /dev/null as stdout (%m)");
++	exit (EX_OSERR);
++      }
++      if (open ("/dev/null", O_RDWR | O_APPEND) < 0) {
++	syslog(LOG_ERR, "Couldn't open /dev/null as stderr (%m)");
++	exit (EX_OSERR);
++      } 
++
+       fclose(f);
+       closelog();
+       if (lseek(0, body, SEEK_SET) < 0) {
