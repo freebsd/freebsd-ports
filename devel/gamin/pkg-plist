@@ -1,0 +1,10 @@
+include/fam.h
+lib/libfam.a
+lib/libfam.so
+lib/libfam.so.0
+lib/libgamin-1.a
+lib/libgamin-1.so
+lib/libgamin-1.so.0
+lib/libgamin_shared.a
+libdata/pkgconfig/gamin.pc
+libexec/gam_server

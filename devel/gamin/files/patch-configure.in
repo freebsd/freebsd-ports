@@ -1,0 +1,31 @@
+--- configure.in.orig	Wed Mar 30 15:19:06 2005
++++ configure.in	Wed Mar 30 15:38:58 2005
+@@ -230,6 +230,28 @@
+ 	backends="${backends}, inotify"
+ fi
+ 
++if test x$os != xBogusOS; then
++    	AC_CHECK_FUNC(kevent,[have_kevent=1],)
++	if test x$have_kevent = x1 ; then
++	    AC_ARG_ENABLE(kqueue,
++            [ --disable-kqueue Disable the KQueue backend],
++	    [case "${enableval}" in
++	      yes) kqueue=true ;;
++	      no) kqueue=false ;;
++	      *) AC_MSG_ERROR(bad value ${enableval} for --disable-kqueue) ;;
++	    esac],[kqueue=true])
++	fi
++fi
++
++dnl check if kqueue backend is enabled
++AM_CONDITIONAL(ENABLE_KQUEUE, test x$kqueue = xtrue)
++
++if test x$kqueue = xtrue; then
++    	AC_CHECK_HEADERS(sys/event.h)
++	AC_DEFINE(ENABLE_KQUEUE,1,[Use kqueue as backend])
++	backends="${backends}, kqueue"
++fi
++
+ dnl check for flavours of varargs macros (test from GLib)
+ AC_MSG_CHECKING(for ISO C99 varargs macros in C)
+ AC_TRY_COMPILE([],[
