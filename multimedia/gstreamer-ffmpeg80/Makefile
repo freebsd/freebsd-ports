@@ -36,10 +36,6 @@ GST_VERSION=${PORTVERSION:C/..$//}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
-EXTRA_PATCHES+=	${FILESDIR}/ia64-patch-ffmpeg::configure
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|make|${GMAKE}|' \
