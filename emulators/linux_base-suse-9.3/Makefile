@@ -127,6 +127,7 @@ do-install:
 	@${CHMOD} 666 ${PREFIX}/dev/null
 .if defined(NEEDLOADLINK)
 	@${MKDIR} ${PREFIX}/compat
+	@${RM} -f ${PREFIX}/compat/linux
 	@${LN} -s / ${PREFIX}/compat/linux
 .endif
 #
