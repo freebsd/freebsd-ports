@@ -1909,7 +1909,7 @@ gimp-manual-ps		ports/graphics/gimp-manual-ps
 gimp-print	ports/print/gimp-print
 gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
-gini		ports/multimedia/gini
+gini		ports/net/gini
 giram		ports/graphics/giram
 git		ports/misc/git
 gkermit		ports/comms/gkermit
