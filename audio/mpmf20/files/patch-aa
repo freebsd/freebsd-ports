@@ -1,0 +1,15 @@
+--- app.cpp.orig	Wed Sep 22 22:55:41 1999
++++ app.cpp	Wed Sep 22 22:27:06 1999
+@@ -22,6 +22,12 @@
+ 	#define		SIZE_MAXPATH			_MAX_PATH
+ 	#define		DELETEARRAY				delete[]
+ 
++#elif defined(__FreeBSD__)
++	// FreeBSD g++
++	#include	<unistd.h>
++	#include	<sys/syslimits.h>
++	#define		SIZE_MAXPATH				PATH_MAX
++
+ #elif defined(__linux__)
+ 	// linux g++
+ 	#include	<unistd.h>

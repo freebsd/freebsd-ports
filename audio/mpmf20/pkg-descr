@@ -1,0 +1,10 @@
+This software is a command line utility used used for transfering audio files
+in the MP3 format to and from the portable MP3 player MPMan MP-F20.
+It enables you to upload (specifying the files with wildcards or from a
+textfile), download, delete, reorder already uploaded files and more on your
+MPMan MP-F20.
+
+WWW: http://www.world.co.uk/sba/
+
+- Markus Holmberg
+saska@acc.umu.se
