@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-BINDIR?=	/usr/sbin
+BINDIR?=	/usr/local/sbin
 
 PROG=	diskcheckd
 MAN8=	diskcheckd.8
