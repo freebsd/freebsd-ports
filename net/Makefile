@@ -553,6 +553,7 @@
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
     SUBDIR += radvd
+    SUBDIR += raggle
     SUBDIR += rancid
     SUBDIR += rate
     SUBDIR += rboot

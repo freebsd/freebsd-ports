@@ -1,0 +1,21 @@
+bin/raggle
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/BUGS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/README
+%@dirrm %DOCSDIR%%
+%%DATADIR%%/extras/feed_dump.rb
+%%DATADIR%%/extras/feed_sizes.rb
+%%DATADIR%%/extras/rss_dir_list.rb
+%%DATADIR%%/extras/rss_grab.rb
+%%DATADIR%%/extras/test_html_renderer.rb
+%%DATADIR%%/themes/cyan.yaml
+%%DATADIR%%/themes/default.yaml
+%%DATADIR%%/themes/minidesc.yaml
+%%DATADIR%%/themes/mono.yaml
+%%DATADIR%%/themes/pane.yaml
+%%DATADIR%%/themes/vert.yaml
+@dirrm %%DATADIR%%/extras
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
