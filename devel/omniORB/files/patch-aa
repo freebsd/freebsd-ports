@@ -1,10 +1,9 @@
---- ../config/config.mk.orig	Wed Sep 22 15:21:11 1999
-+++ ../config/config.mk	Mon Sep 27 09:59:18 1999
-@@ -64,7 +64,7 @@
- #platform = x86_ets
- #platform = x86_sco5
- #platform = x86_uw7
--#platform = i386_freebsd_3.2
+--- ../config/config.mk.orig	Fri Aug 18 16:09:38 2000
++++ ../config/config.mk	Mon Sep 11 17:26:22 2000
+@@ -77,6 +77,7 @@
+ #platform = x86_freebsd_3.2
+ #platform = x86_freebsd_4.0
+ #platform = pc486_rtems_4.5.0
 +platform = __PLATFORM__
  
  # On Win32 platforms, uncomment the following line to build all the binaries
