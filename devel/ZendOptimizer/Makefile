@@ -13,51 +13,48 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD4.0-i386
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An optimizer for PHP code
 
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
-
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
+BROKEN_WITH_PHP=5
 
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
-EXT_DIR=	20020429
-PLIST_SUB=	EXT_DIR=${EXT_DIR}
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 # Check for FreeBSD version
 .if ${OSVERSION} < 400000 || ${OSVERSION} > 499999
-BROKEN=         "This port is for FreeBSD 4 only."
-.endif
-
+BROKEN=		"This port is for FreeBSD 4 only"
+.else
 # Check for ZendOptimizer sources
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
+IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
 manually.\n\
 Please access http://www.zend.com/store/getfreefile.php?pid=13&zbid=547\n\
 with a web browser, read the license and click the \"I ACCEPT\" button.\n\
-Download the source file, ${DISTFILES},\n\
+Download the source file, ${DISTNAME}${EXTRACT_SUFX},\n\
 and place it in ${DISTDIR}.\n
+.endif
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${EXT_DIR}
+	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/data/4_3_x_comp/ZendOptimizer.so \
-		${PREFIX}/lib/php/${EXT_DIR}/ZendOptimizer.so
+		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer.so
 	${INSTALL_DATA} ${WRKSRC}/data/4_3_x_comp/TS/ZendOptimizer.so \
-		${PREFIX}/lib/php/${EXT_DIR}/ZendOptimizer_TS.so
+		${PREFIX}/lib/php/${PHP_EXT_DIR}/ZendOptimizer_TS.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/data/doc/* ${DOCSDIR}
 .endif
 
 post-install:
-	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%PHP_EXT_DIR%%|${PHP_EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
