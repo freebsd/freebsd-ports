@@ -1,4 +1,4 @@
 sbin/arpwatch
 sbin/arpsnmp
-man/man8/arpwatch.8
-man/man8/arpsnmp.8
+man/man8/arpwatch.8.gz
+man/man8/arpsnmp.8.gz
