@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.Linux.Mesa.orig	Sun Feb  2 19:59:42 1997
-+++ Makefile.Linux.Mesa	Wed Mar 14 13:02:41 2001
+--- Makefile.Linux.Mesa.orig	Sun Feb  2 18:59:42 1997
++++ Makefile.Linux.Mesa	Sun Nov 16 19:16:50 2003
 @@ -3,23 +3,23 @@
  
  .SUFFIXES: .cc .o
@@ -16,8 +13,9 @@ $FreeBSD$
 +INCLUDE = -I$(X11BASE)/include -I$(X11BASE)/include/GL
  
 -CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
+-	-pedantic -funroll-loops -mieee-fp
 +CFLAGS += $(INCLUDE) $(ARCH) -DSOUND -Wall -pipe ${PTHREAD_CFLAGS} \
- 	-pedantic -funroll-loops -mieee-fp
++	-pedantic -funroll-loops
  
 -LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
 +LDFLAGS = -L$(X11BASE)/lib
