@@ -15,7 +15,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Many additional features to math/octave
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/qhull:${PORTSDIR}/math/qhull \
-		${LOCALBASE}/bin/gcsplit:${PORTSDIR}/sysutil/coreutils
+		${LOCALBASE}/bin/gcsplit:${PORTSDIR}/sysutils/coreutils
 #		${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
 
 RUN_DEPENDS=	${LOCALBASE}/bin/octave:${PORTSDIR}/math/octave \
@@ -25,7 +25,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	# empty
 USE_REINPLACE=	yes
-CONFIGURE_ARGS= --with-cc=${CC} \
+CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX}
 
 .include <bsd.port.pre.mk>
@@ -34,8 +34,8 @@ CONFIGURE_ARGS= --with-cc=${CC} \
 BROKEN=		"texinfo problem"
 .endif
 
-GNU_HOST=       ${ARCH}-portbld-freebsd${OSREL}
-PLIST_SUB=      OCTAVE_VERSION="`${LOCALBASE}/bin/octave-config -v`" GNU_HOST=${GNU_HOST}
+GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
+PLIST_SUB=	OCTAVE_VERSION="`${LOCALBASE}/bin/octave-config -v`" GNU_HOST=${GNU_HOST}
 
 MAN1=		mex.1
 
