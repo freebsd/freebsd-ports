@@ -1,0 +1,27 @@
+bin/netwox520
+bin/netwox
+%%PORTDOCS%%%%DOCSDIR%%/html/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/html/routerandfw.html
+%%PORTDOCS%%%%DOCSDIR%%/html/sendip6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tutorials.html
+%%PORTDOCS%%%%DOCSDIR%%/html/um.html
+%%PORTDOCS%%%%DOCSDIR%%/images/banner_netwox.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/txt/addonetoolunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/addonetoolwindows.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/installbin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/installsrcunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/installsrcwindows.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/presentation.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/probleminstallbin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/probleminstallunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/probleminstallwindows.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemreport.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemusagebin.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemusageunix.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/problemusagewindows.txt
+%%PORTDOCS%%%%DOCSDIR%%/txt/unimplemented.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
