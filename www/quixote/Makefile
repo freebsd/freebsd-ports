@@ -7,7 +7,7 @@
 
 PORTNAME=	quixote
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
