@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030625
+PORTVERSION=	20030705
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/snapshot/ \
 		http://clamav.essentkabel.com/snapshot/ \
