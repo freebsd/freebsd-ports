@@ -1,0 +1,38 @@
+--- .depend.orig	Sun Apr 25 23:37:14 1999
++++ .depend	Sun Apr 25 23:37:47 1999
+@@ -6,7 +6,7 @@
+   /usr/include/errno.h /usr/include/limits.h /usr/include/machine/limits.h \
+   /usr/include/sys/syslimits.h /usr/include/signal.h \
+   /usr/include/sys/signal.h /usr/include/machine/signal.h \
+-  /usr/include/machine/trap.h /usr/include/stdlib.h /usr/include/string.h \
++  /usr/include/stdlib.h /usr/include/string.h \
+   /usr/include/unistd.h /usr/include/sys/unistd.h ../include/extern.h \
+   /usr/include/sys/ioctl.h /usr/include/sys/ttycom.h \
+   /usr/include/sys/ioccom.h /usr/include/sys/filio.h \
+@@ -19,7 +19,7 @@
+   /usr/include/limits.h /usr/include/machine/limits.h \
+   /usr/include/sys/syslimits.h /usr/include/signal.h \
+   /usr/include/sys/signal.h /usr/include/machine/signal.h \
+-  /usr/include/machine/trap.h /usr/include/stdlib.h /usr/include/string.h \
++  /usr/include/stdlib.h /usr/include/string.h \
+   /usr/include/unistd.h /usr/include/sys/unistd.h ../include/extern.h \
+   /usr/include/sys/ioctl.h /usr/include/sys/ttycom.h \
+   /usr/include/sys/ioccom.h /usr/include/sys/filio.h \
+@@ -32,7 +32,7 @@
+   /usr/include/errno.h /usr/include/limits.h /usr/include/machine/limits.h \
+   /usr/include/sys/syslimits.h /usr/include/signal.h \
+   /usr/include/sys/signal.h /usr/include/machine/signal.h \
+-  /usr/include/machine/trap.h /usr/include/stdlib.h /usr/include/string.h \
++  /usr/include/stdlib.h /usr/include/string.h \
+   /usr/include/unistd.h /usr/include/sys/unistd.h ../include/extern.h \
+   /usr/include/termios.h /usr/include/sys/ttycom.h /usr/include/sys/ioccom.h \
+   /usr/include/sys/ttydefaults.h 
+@@ -44,7 +44,7 @@
+   /usr/include/limits.h /usr/include/machine/limits.h \
+   /usr/include/sys/syslimits.h /usr/include/signal.h \
+   /usr/include/sys/signal.h /usr/include/machine/signal.h \
+-  /usr/include/machine/trap.h /usr/include/stdlib.h /usr/include/string.h \
++  /usr/include/stdlib.h /usr/include/string.h \
+   /usr/include/unistd.h /usr/include/sys/unistd.h ../include/extern.h 
+ uucplock.o : ../src/uucplock.c config.h /usr/include/sys/file.h \
+   /usr/include/sys/fcntl.h /usr/include/sys/types.h \
