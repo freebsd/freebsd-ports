@@ -6,45 +6,31 @@
 #
 
 PORTNAME=	xsystem35
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	1.7.2
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
+MASTER_SITES=	http://8ne.sakura.ne.jp:20008/chika/unitbase/xsys35/down/
 
 MAINTAINER=	sf@FreeBSD.org
-COMMENT=	AliceSoft System 3.5 on X Window System
+COMMENT=	AliceSoft System 3.5/3.6/3.8/3.9 on X Window System
 
-USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	213
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
+
+USE_AUTOCONF_VER=	259
+USE_LIBTOOL_VER=	15
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKSRC}/MESSAGE
-
-DOC_FILES=	BUGS ChangeLog ChangeLog.1 FAQ GAMES.TXT GRFMT.TXT \
-		INSTALL MISCGAME.TXT \
-		README README.color README.joystick README.music \
-		TECH.TXT THANKS TODO
-
-EXAMPLES=	README.TXT \
-		456atlach.inf 456ningen.inf 456zero.inf \
-		ambi.inf atlach_new.inf dalk.inf darcrows.inf diabo.inf \
-		drstop.inf hushaby.inf kakurezuki.inf katsumi.inf \
-		kichiku.inf mamatoto.inf mamori.inf miko.inf mugen.inf \
-		oudou.inf panyo.inf panyo_new.inf pascha.inf persiom.inf \
-		progood.inf rance1.inf rance2.inf rance3.inf rance4.inf \
-		seeinao.inf toushin.inf toushin2.inf
 
 PATCHES=	pastel.diff
 
 .include <bsd.port.pre.mk>
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-FREETYPE_CONFIG?=    ${LOCALBASE}/bin/freetype-config
-
 CONFIGURE_ARGS=	--without-included-gettext \
+		--program-prefix="" \
 		--with-cachesize=20 \
 		--enable-midi=seq,extp,raw \
 		--enable-cdrom=bsd,mp3
@@ -58,20 +44,14 @@ CONFIGURE_ARGS+=	--enable-audio=oss,esd --with-default-output=esd
 CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
 .endif
 
-.if defined(WITH_SDL)
-LIB_DEPENDS+=   	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-CONFIGURE_ARGS+=	--enable-sdl
-CONFIGURE_ENV+=		SDL_CONFIG="${SDL_CONFIG}"
-.else
-CONFIGURE_ARGS+= 	--disable-sdl
-.endif
-
-.if defined(WITH_FREETYPE)
-CONFIGURE_ARGS+=	 --enable-ttf
-.else
-CONFIGURE_ARGS+=	--disable-ttf
-.endif
-
+#.if defined(WITH_SDL)
+#USE_SDL=	sdl
+#CONFIGURE_ARGS+=	--enable-sdl
+#CONFIGURE_ENV+=		"CPPFLAGS=`$(SDL_CONFIG) --cflags`" \
+#			"LIBS=`$(SDL_CONFIG) --libs`"
+#.else
+CONFIGURE_ARGS+=	--disable-sdl
+#.endif
 .if ${ARCH} == "i386"
 .if defined(WITHOUT_MMX)
 CONFIGURE_ARGS+=	--disable-mmx
@@ -82,12 +62,9 @@ BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
 .endif
 
 pre-everything::
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} '===> Define WITH_SDL to enable SDL support'
-.endif
-.if !defined(WITH_FREETYPE)
-	@${ECHO_MSG} '===> Define WITH_FREETYPE to enable FreeType support'
-.endif
+#.if !defined(WITH_SDL)
+#	@${ECHO_MSG} '===> Define WITH_SDL to enable SDL support'
+#.endif
 .if ${ARCH} == "i386"
 .if !defined(WITHOUT_MMX)
 	@${ECHO_MSG} '===> Define WITHOUT_MMX to disable MMX routines'
@@ -104,26 +81,21 @@ post-patch:
 	done
 
 pre-configure:
-	@${TOUCH} ${WRKSRC}/aclocal.m4 \
-		  ${WRKSRC}/Makefile.in \
-		  ${WRKSRC}/src/Makefile.in
+	(cd ${WRKSRC}/libltdl; ${AUTOCONF})
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xsystem35 ${PREFIX}/bin
+post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/locale/ja/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/ja.mo ${PREFIX}/share/locale/ja/LC_MESSAGES/xsystem35.mo
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
 	(cd ${WRKSRC}/doc;\
-		${INSTALL_MAN} ${DOC_FILES} ${PREFIX}/share/doc/ja/xsystem35)
+		${INSTALL_MAN} * ${PREFIX}/share/doc/ja/xsystem35)
 .endif
-	@${MKDIR} ${PREFIX}/share/examples/xsystem35
-	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/contrib; \
-		${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/xsystem35)
+		${INSTALL_DATA} *.* ${EXAMPLESDIR})
 	@(cd ${WRKSRC}/patch; \
-		${INSTALL_DATA} ${PATCHES} ${PREFIX}/share/examples/xsystem35)
+		${INSTALL_DATA} ${PATCHES} ${EXAMPLESDIR})
 	@${SED} -e s,PREFIX,${PREFIX}, ${PKGDIR}/pkg-message > ${WRKSRC}/MESSAGE
 	@${CAT} ${WRKSRC}/MESSAGE
 
