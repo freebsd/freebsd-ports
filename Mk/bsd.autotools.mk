@@ -86,8 +86,6 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #		USE_AUTOCONF		-> USE_AUTOCONF_VER=213
 #		USE_AUTOHEADER		-> USE_AUTOHEADER_VER=213
 #		USE_LIBTOOL			-> USE_LIBTOOL_VER=13
-#	Currently, an error message is kicked out, and make(1) will stop
-#	if any of these deprecated variables are used.
 #
 # - additional variables WANT_{AUTOMAKE,AUTOCONF,AUTOHEADER,LIBTOOL}_RUN
 #	have been added to include a run-time dependency on the appropriate
@@ -105,7 +103,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #	It is now the port Makefile responsibility to specifically bring
 #	in the "appropriate" version of autoconf if automake is specified.
 #	The mappings are as follows (automake,autoconf pairs):
-#		(14,213) (15,253) (17,257) (18,259)
+#		(14,213) (15,253) (18,259)
 #
 # - Only set GNU_CONFIGURE automatically if USE_<x>_VER is specified,
 #	since WANT_<x>_VER implies that we want the environment, but not
@@ -132,10 +130,10 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 
 .for i in AUTOMAKE AUTOCONF AUTOHEADER LIBTOOL
 . if defined(USE_${i})
-. error USE_${i} deprecated: replace with USE_${i}_VER=...
+BROKEN=	"USE_${i} deprecated: replace with USE_${i}_VER=..."
 . endif
 . if defined(WANT_${i})
-. error WANT_${i} deprecated: replace with WANT_${i}_VER=...
+BROKEN=	"WANT_${i} deprecated: replace with WANT_${i}_VER=..."
 . endif
 .endfor
 
@@ -162,7 +160,7 @@ AUTOMAKE_SUFFIX=	${WANT_AUTOMAKE_VER}
 # Make sure we specified a legal version of automake
 #
 . if !exists(${PORTSDIR}/devel/automake${AUTOMAKE_SUFFIX}/Makefile)
-. error Unknown AUTOMAKE version: ${WANT_AUTOMAKE_VER}
+BROKEN=	"Unknown AUTOMAKE version: ${WANT_AUTOMAKE_VER}"
 . endif
 
 # Set up the automake environment
@@ -207,12 +205,12 @@ GNU_CONFIGURE?=		yes
 #
 .if defined(USE_AUTOHEADER_VER) && defined(USE_AUTOCONF_VER) && \
     ${USE_AUTOHEADER_VER} != ${USE_AUTOCONF_VER}
-.error Incompatible autoheader ${USE_AUTOHEADER_VER} and autoconf ${USE_AUTOCONF_VER}
+BROKEN=	"Incompatible autoheader ${USE_AUTOHEADER_VER} and autoconf ${USE_AUTOCONF_VER}"
 .endif
 
 .if defined(WANT_AUTOHEADER_VER) && defined(WANT_AUTOCONF_VER) && \
 	${WANT_AUTOHEADER_VER} != ${WANT_AUTOCONF_VER}
-.error Incompatible autoheader ${WANT_AUTOHEADER_VER} and autoconf ${WANT_AUTOCONF_VER}
+BROKEN=	"Incompatible autoheader ${WANT_AUTOHEADER_VER} and autoconf ${WANT_AUTOCONF_VER}"
 .endif
 
 .if defined(WANT_AUTOCONF_VER)
@@ -229,7 +227,7 @@ AUTOCONF_SUFFIX=	${WANT_AUTOCONF_VER}
 # Make sure we specified a legal version of autoconf
 #
 . if !exists(${PORTSDIR}/devel/autoconf${AUTOCONF_SUFFIX}/Makefile)
-. error Unknown AUTOCONF version: ${WANT_AUTOCONF_VER}
+BROKEN=	"Unknown AUTOCONF version: ${WANT_AUTOCONF_VER}"
 . endif
 
 # Set up the autoconf/autoheader environment
@@ -279,7 +277,7 @@ LIBTOOL_SUFFIX=	${WANT_LIBTOOL_VER}
 # Make sure we specified a legal version of libtool
 # 
 . if !exists(${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}/Makefile)
-. error Unknown LIBTOOL version: ${WANT_LIBTOOL_VER}
+BROKEN=	"Unknown LIBTOOL version: ${WANT_LIBTOOL_VER}"
 . endif
 
 # Set up the libtool environment
