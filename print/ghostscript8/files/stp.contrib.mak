@@ -4,14 +4,11 @@
 
 stp_=$(GLOBJ)gdevstp.$(OBJ)
 
-STPINCDIR=-I$(GLSRC)
-STPLIBDIR=-L$(GLOBJ)
 STPLIB=gimpprint
 
 $(DD)stp.dev:	$(stp_) $(DD)page.dev
 	$(SETPDEV) $(DD)stp $(stp_)
-	$(ADDMOD) $(DD)stp -link $(STPLIBDIR)
 	$(ADDMOD) $(DD)stp -lib $(STPLIB)
 
 $(GLOBJ)gdevstp.$(OBJ) : $(GLSRC)gdevstp.c $(PDEVH)
-	$(GLCC) $(GLO_)gdevstp.$(OBJ) $(C_) $(STPINCDIR) $(GLSRC)gdevstp.c
+	$(GLCC) $(GLO_)gdevstp.$(OBJ) $(C_) $(GLSRC)gdevstp.c

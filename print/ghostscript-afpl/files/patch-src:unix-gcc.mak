@@ -1,5 +1,5 @@
---- src/unix-gcc.mak.orig	Sat Sep 15 17:55:32 2001
-+++ src/unix-gcc.mak	Sat Dec 15 04:19:08 2001
+--- src/unix-gcc.mak.orig	Fri Feb  1 15:27:58 2002
++++ src/unix-gcc.mak	Sat Feb  9 04:34:53 2002
 @@ -26,14 +26,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -54,7 +54,7 @@
  
 -PSRCDIR=libpng
 +PSRCDIR=${LOCALBASE}/include
- PVERSION=10012
+ PVERSION=10201
  
  # Choose whether to use a shared version of the PNG library, and if so,
  # what its name is.
@@ -74,7 +74,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -196,7 +196,7 @@
+@@ -203,7 +203,7 @@
  
  # Define the name of the C compiler.
  
@@ -83,28 +83,38 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -229,9 +229,9 @@
+@@ -220,9 +220,9 @@
+ # Define the added flags for standard, debugging, profiling 
+ # and shared object builds.
+ 
+-CFLAGS_STANDARD=-O2
+-CFLAGS_DEBUG=-g -O
+-CFLAGS_PROFILE=-pg -O2
++CFLAGS_STANDARD?=-O2
++CFLAGS_DEBUG=-g
++CFLAGS_PROFILE=-pg
+ CFLAGS_SO=-fPIC
+ 
+ # Define the other compilation flags.  Add at most one of the following:
+@@ -236,7 +236,7 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+#XCFLAGS=
++XCFLAGS+=-I${.CURDIR}/gimp-print
  
--CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
-+CFLAGS+=$(XCFLAGS)
+ CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
- # Define platform flags for ld.
- # SunOS 4.n may need -Bstatic.
-@@ -240,7 +240,7 @@
+@@ -247,7 +247,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
 -XLDFLAGS=
-+XLDFLAGS=-L${LOCALBASE}/lib
++XLDFLAGS=-L${.CURDIR}/gimp-print -L${LOCALBASE}/lib
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -273,7 +273,7 @@
+@@ -280,7 +280,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -113,7 +123,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -285,12 +285,12 @@
+@@ -292,12 +292,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
