@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.20.p
+PORTVERSION=	1.20
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	nt-1.20pre
+DISTNAME=	nt-1.20
 
-MAINTAINER=	andrew@chg.ru
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-MSGFMT_CMD=	${LOCALBASE}/bin/msgfmt
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/main
-
 USE_GTK=	yes
-MAKE_ENV=	MSGFMT_CMD="${MSGFMT_CMD}"
-
+USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/main
+MAKE_ENV=	MSGFMT_CMD="${LOCALBASE}/bin/msgfmt"
 MAN1=		nt.1
 
 D4X_DOC=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
