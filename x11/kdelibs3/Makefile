@@ -16,6 +16,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	This is the base set of libraries needed by KDE programs
 
+CONFLICTS=	kdebase-3.1.*
+
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
