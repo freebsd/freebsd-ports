@@ -7,6 +7,7 @@
 
 PORTNAME=	libxfce4gui
 PORTVERSION=	3.99.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
@@ -25,6 +26,7 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-xinerama
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 
