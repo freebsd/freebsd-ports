@@ -1,0 +1,21 @@
+--- src/Makefile.am.orig	Tue Jan  1 20:43:01 2002
++++ src/Makefile.am	Thu Jun 26 08:27:48 2003
+@@ -1,11 +1,9 @@
+ ## Process this file with automake to produce Makefile.in
+-localedir = @datadir@/locale
+-datadir = @datadir@/@PACKAGE@
+-
+ INCLUDES = \
+ 	-I$(top_srcdir)/intl \
+ 	-I$(top_srcdir) \
+ 	$(GNOME_INCLUDEDIR) \
++	$(GTK_CFLAGS) \
+ 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" -D_REENTRANT
+ 
+ bin_PROGRAMS = truevision
+@@ -58,4 +56,4 @@
+ 	undo.h undo.cc
+ 
+ truevision_LDFLAGS = -s
+-truevision_LDADD =  $(GNOME_LIBDIR) $(GNOMEUI_LIBS) -lgthread -lpthread $(INTLLIBS) @LIBS@
++truevision_LDADD =  $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(GTK_LIBS) $(INTLLIBS) @LIBS@
