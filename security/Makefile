@@ -6,6 +6,7 @@
     SUBDIR += aescrypt
     SUBDIR += aide
     SUBDIR += amavis-perl
+    SUBDIR += apg
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs

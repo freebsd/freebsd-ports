@@ -1,0 +1,32 @@
+--- Makefile	2000/09/30 14:55:17	1.1.1.1
++++ Makefile	2001/01/17 14:12:15	1.3
+@@ -1,12 +1,13 @@
+ # You can modify CC variable if you have compiler other than GCC
+ # But the code was designed and tested with GCC
+-CC = gcc
++CC ?= gcc
+ 
+ # compilation flags
+-FLAGS = -Wall
++CFLAGS ?= -Wall
+ 
+ # Install dirs
+-INSTALL_PREFIX = /usr/local
++PREFIX ?= /usr/local
++INSTALL_PREFIX = ${PREFIX}
+ APG_BIN_DIR = /bin
+ APG_MAN_DIR = /man/man1
+ APGD_BIN_DIR = /sbin
+@@ -41,10 +42,10 @@
+ cygwin: standalone
+ 
+ cliserv: ${SOURCES} ${HEADERS}
+-	${CC} ${FLAGS} ${CS_LIBS} -DCLISERV -o ${CS_PROGNAME} ${SOURCES}
++	${CC} ${CFLAGS} ${CS_LIBS} -DCLISERV -o ${CS_PROGNAME} ${SOURCES}
+ 
+ standalone: ${SOURCES} ${HEADERS}
+-	${CC} ${FLAGS} -o ${PROGNAME} ${SOURCES}
++	${CC} ${CFLAGS} -o ${PROGNAME} ${SOURCES}
+ 
+ strip:
+ 	strip ${PROGNAME}
