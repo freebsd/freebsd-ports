@@ -63,5 +63,11 @@ share/emacs/site-lisp/po-mode.el
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
+@exec mkdir -p %%LOCALBASE%%/share/locale
+@unexec rmdir %%LOCALBASE%%/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %%LOCALBASE%%/share/locale/* 2>/dev/null || true
+@unexec rmdir %%LOCALBASE%%/share/locale 2>/dev/null || true
 @exec mkdir -p %%X11BASE%%/share/locale
+@unexec rmdir %%X11BASE%%/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %%X11BASE%%/share/locale/* 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/share/locale 2>/dev/null || true
