@@ -1,0 +1,5 @@
+vICQ is a simple text-mode ICQ client written with look and feel of
+micq in mind. Its features: PERL source code suitable for hacking
+and scripting, text-only look & feel, and ICQ v7 protocol support.
+
+WWW: http://gonzo.kiev.ua/projects/vicq/
