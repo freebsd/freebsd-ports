@@ -3048,6 +3048,7 @@ krbman		src/eBones/man
 krio		ports/audio/krio
 krn		ports/news/krn
 krogue		ports/games/krogue
+kronolith	ports/deskutils/kronolith
 krubik		ports/games/krubik
 ksamba		ports/net/ksamba
 kseg		ports/math/kseg
