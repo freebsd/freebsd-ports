@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.15 1998/08/05 09:31:35 asami Exp $
+# $Id: Makefile,v 1.16 1998/08/07 23:56:43 asami Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -15,6 +15,7 @@ HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 STRIP=
 MAN1=		${PROGRAM_NAME}.1
+PLIST_SUB=	PROGRAM_NAME=${PROGRAM_NAME} RESOURCE_NAME=${RESOURCE_NAME}
 
 # CONFIGURE_ARGS set to :
 #	motif - for motif version, (not tested!!!)
@@ -34,22 +35,8 @@ RESOURCE_NAME=Xftp
 
 #LIB_DEPENDS=	Xaw3d\\.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
-.if !defined (NOMANCOMPRESS)
-  GZIP_EXT=.gz
-.else
-  GZIP_EXT=
-.endif
-
-pre-install:
-	sed -e 's,@PROGRAM_NAME@,${PROGRAM_NAME},' \
-	    -e 's,@RESOURCE_NAME@,${RESOURCE_NAME},' \
-	    -e 's,@GZIP_EXT@,${GZIP_EXT},' pkg/PLIST.in >pkg/PLIST
-
 post-install:
 	@strip ${PREFIX}/bin/${PROGRAM_NAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PROGRAM_NAME}.man ${PREFIX}/man/man1/${PROGRAM_NAME}.1
-
-pre-clean:
-	@${RM} -f pkg/PLIST
 
 .include <bsd.port.mk>
