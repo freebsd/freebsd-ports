@@ -1,0 +1,4 @@
+sbin/eject
+%%DOCDIR%%/README
+%%DOCDIR%%/README-J
+@dirrm %%DOCDIR%%
