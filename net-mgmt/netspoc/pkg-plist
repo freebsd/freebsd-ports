@@ -1,6 +1,0 @@
-bin/netspoc
-%%PORTDOCS%%%%DOCSDIR%%/CSPM.html
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/language.html
-%%PORTDOCS%%%%DOCSDIR%%/netspoc.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

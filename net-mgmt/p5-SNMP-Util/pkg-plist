@@ -1,5 +1,0 @@
-%%SITE_PERL%%/SNMP/Util.pm
-%%SITE_PERL%%/SNMP/Util_env.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Util/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Util
-@dirrm %%SITE_PERL%%/SNMP

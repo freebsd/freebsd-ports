@@ -1,7 +1,0 @@
-bin/xft-config
-include/X11/Xft/Xft.h
-include/X11/Xft/XftCompat.h
-lib/libXft.a
-lib/libXft.so
-lib/libXft.so.2
-libdata/pkgconfig/xft.pc

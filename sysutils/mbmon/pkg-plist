@@ -1,7 +1,0 @@
-bin/mbmon
-%%X11_ONLY%%bin/xmbmon
-%%PORTDOCS%%%%DOCSDIR%%/00README.txt
-%%PORTDOCS%%%%DOCSDIR%%/00READMEj.txt
-%%PORTDOCS%%%%DOCSDIR%%/00READMEtech.txt
-%%X11_ONLY%%%%PORTDOCS%%%%DOCSDIR%%/xmbmon.resources
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

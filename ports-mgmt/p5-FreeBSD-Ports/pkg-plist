@@ -1,7 +1,0 @@
-%%SITE_PERL%%/FreeBSD/Ports/Port.pm
-%%SITE_PERL%%/FreeBSD/Ports.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/.packlist
-@dirrm %%SITE_PERL%%/FreeBSD/Ports
-@dirrm %%SITE_PERL%%/FreeBSD
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD

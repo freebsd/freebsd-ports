@@ -1,8 +1,0 @@
-[ from developer's site ]
-libicq2000 is an opensource C++ library being developed to support
-the icq2000/2001 protocol. It is easy for developers to use as the
-backbone for their clients' connection to the ICQ network - all the
-protocol work is abstracted away in one nice object-orientated
-interface.
-
-WWW: http://libicq2000.sourceforge.net/

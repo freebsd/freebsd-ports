@@ -1,6 +1,0 @@
-%%SITE_PERL%%/Mon/SNMP.pm
-%%SITE_PERL%%/Mon/Client.pm
-%%SITE_PERL%%/Mon/Protocol.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mon/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mon
-@dirrm %%SITE_PERL%%/Mon

@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/dillo
-bin/bm_srv12
-etc/dillorc.sample

@@ -1,3 +1,0 @@
-%%PEARDIR%%/Net/URL.php
-%%PKGREGDIR%%/package.xml
-@unexec rmdir %%PKGREGDIR%% 2>/dev/null || true

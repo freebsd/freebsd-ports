@@ -1,3 +1,0 @@
-bin/scummvm
-%%PORTDOCS%%share/doc/scummvm/README
-%%PORTDOCS%%@dirrm share/doc/scummvm
