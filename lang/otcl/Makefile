@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	otcl
-PORTVERSION=	1.0a5
+PORTVERSION=	1.0a6
 CATEGORIES=	lang
-MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
+MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
