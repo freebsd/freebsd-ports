@@ -13,7 +13,7 @@
  
  # Location of the PostgreSQL includes
 -PGINC=/usr/local/pgsql/include
-+PGINC=${PREFIX}/include/pgsql
++PGINC=${PREFIX}/include
  
  # Location of the AOLserver files (normally the ~nsadmin directory):
  #NSHOME=/opt/aolserver
