@@ -16,8 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of writing tools in Chinese
 
 USE_GNOME=	gtk20
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
