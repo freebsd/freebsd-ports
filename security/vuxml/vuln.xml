@@ -30,6 +30,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0792e7a7-8e37-11d8-90d1-0020ed76ef5a">
+    <topic>CVS path validation errors</topic>
+    <affects>
+      <package>
+	<name>cvs+ipv6</name>
+	<range><le>1.11.5_1</le></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two programming errors were discovered in which path names
+          handled by CVS were not properly validated.  In one case,
+          the CVS client accepts absolute path names from the server
+          when determining which files to update.  In another case,
+          the CVS server accepts relative path names from the client
+          when determining which files to transmit, including those
+          containing references to parent directories (`../').</p>
+        <p>These programming errors generally only have a security
+	  impact when dealing with remote CVS repositories.</p>
+        <p>A malicious CVS server may cause a CVS client to overwrite
+	  arbitrary files on the client's system.</p>
+        <p>A CVS client may request RCS files from a remote system
+          other than those in the repository specified by $CVSROOT.
+          These RCS files need not be part of any CVS repository
+          themselves.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0180</cvename>
+      <url>http://ccvs.cvshome.org/servlets/NewsItemView?newsID=102</url>
+      <freebsdsa>SA-04:07.cvs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-04-14</discovery>
+      <entry>2004-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ccd698df-8e20-11d8-90d1-0020ed76ef5a">
     <topic>racoon remote denial of service vulnerability
       (ISAKMP header length field)</topic>
