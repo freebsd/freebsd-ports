@@ -38,7 +38,6 @@ include/ftxpost.h
 include/ftxsbit.h
 include/ftxwidth.h
 lib/libttf.a
-lib/libttf.la
 lib/libttf.so
 lib/libttf.so.4
 @dirrm include/freetype
