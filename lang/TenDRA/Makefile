@@ -12,8 +12,8 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tendra.org/pub/snapshot/
 DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/4.//}
 
-MAINTAINER=	stefan@fafoe.dyndns.org
-COMMENT=	A portable but mostly-unsupported C/C++ compiler
+MAINTAINER=	stefan@fafoe.narf.at
+COMMENT=	A portable BSD-licensed compiler suite
 
 ONLY_FOR_ARCHS=	i386
 
@@ -38,6 +38,6 @@ do-configure:
 
 # Remove empty directory that is ugly to handle with pkg-plist
 post-install:
-	rmdir ${PREFIX}/lib/TenDRA/${TENDRA_PATH}/lib/machines/tokens
+	${RMDIR} ${PREFIX}/lib/TenDRA/${TENDRA_PATH}/lib/machines/tokens
 
 .include <bsd.port.mk>
