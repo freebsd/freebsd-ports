@@ -3,7 +3,7 @@
 # Date created:		3 June 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.6 1997/07/17 15:12:40 max Exp $
+# $Id: Makefile,v 1.7 1998/06/27 05:18:48 asami Exp $
 #
 
 DISTNAME=	dlmalloc
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://gee.cs.oswego.edu/pub/misc/
 DISTFILES=	malloc-2.6.4.c
 
 MAINTAINER=	roberto@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 NO_WRKSUBDIR=   yes
 
