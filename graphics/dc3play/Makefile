@@ -27,7 +27,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/dc3play
-.for file in PROTOCOL README.english README.japanese 
+.for file in PROTOCOL README.english README.japanese
 	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/dc3play
 .endfor
 .endif

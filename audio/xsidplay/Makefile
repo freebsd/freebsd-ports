@@ -32,7 +32,7 @@ CFLAGS+=	-O0
 .endif
 
 pre-patch:
-.for file in configure src/Makefile.in	
+.for file in configure src/Makefile.in
 	@${PERL} -pi -e 's|moc|${MOC:T}|g ; \
 		 s|qt-mt|${QTNAME}-mt|g' ${WRKSRC}/${file}
 .endfor

@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_XLIB=	yes
-MAKE_ARGS=	Y_HOME="${PREFIX}/lib/${PORTNAME}" Y_SITE="${DATADIR}" 
+MAKE_ARGS=	Y_HOME="${PREFIX}/lib/${PORTNAME}" Y_SITE="${DATADIR}"
 MAN1=		yorick.1 gist.1
 
 PORTDOCS=	FILE_FORMATS README drat.doc drat.tex graph.doc hex.doc \
@@ -33,7 +33,7 @@ do-configure:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ysite config)
 
 post-install:
-.for file in gist yorick 
+.for file in gist yorick
 	${INSTALL_MAN} ${WRKSRC}/doc/${file}.1 ${PREFIX}/man/man1
 	@strip ${PREFIX}/lib/${PORTNAME}/bin/${file}
 	@${LN} -sf ${PREFIX}/lib/${PORTNAME}/bin/${file} ${PREFIX}/bin/${file}
