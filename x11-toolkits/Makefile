@@ -61,6 +61,7 @@
     SUBDIR += libjtree
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif
+    SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += notif2
     SUBDIR += open-motif

@@ -1,0 +1,23 @@
+This is the Mowitz ("More widgets") library. 
+
+The project's goal is to create  a library of widgets for X applications
+to use. The  widgets have been snarfed from various  sources and are all
+open source (GPL or MIT licenses).
+
+Available widgets
+
+	o Canvas			    o Ruler
+	o Check				    o Slider
+	o Combo				    o Spinner
+	o Frame				    o Tabs
+	o Handle			    o TextField
+	o Image				    o Tooltip
+	o ListTree			    o VSlider
+	o Notebook
+	o Rudegrid			    o And a complete menu kit.
+
+The original reason for creating this  library is that the Athena widget
+set  lacks a  lot of  widgets  that would  be  useful, and  many of  the
+existing widgets leave a lot to be desired in appearance and behaviour.
+
+WWW: http://siag.nu/mowitz/

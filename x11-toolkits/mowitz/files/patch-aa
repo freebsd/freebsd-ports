@@ -1,0 +1,10 @@
+--- examples/Makefile.in	Mon Jan  7 10:43:48 2002
++++ examples/Makefile.in	Mon Jan  7 17:21:53 2002
+@@ -84,5 +84,5 @@
+ 
+-INCLUDES = -I.. -DNARROWPROTO -DNeedFunctionPrototypes -DUSE_XPM
++INCLUDES = -I.. -DNARROWPROTO -DNeedFunctionPrototypes -DUSE_XPM @X_CFLAGS@
+ 
+-LDADD = ../Mowitz/.libs/libMowitz.a -L/usr/X11R6/lib -lXawM -lXpm -lXmu -lXext -lXt -lX11
++LDADD = ../Mowitz/.libs/libMowitz.a -L/usr/X11R6/lib -lXaw3d -lXpm -lXmu -lXext -lXt -lX11
+ 
