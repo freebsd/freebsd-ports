@@ -1,0 +1,11 @@
+bin/minimalist.pl
+etc/minimalist.conf-sample
+minimalist/README
+minimalist/lists.lst
+minimalist/minimalist.conf-sample
+minimalist/sample/config
+minimalist/sample/footer
+minimalist/sample/info
+minimalist/virtual-domains.txt
+@dirrm minimalist/sample
+@dirrm minimalist

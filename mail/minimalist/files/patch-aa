@@ -1,0 +1,11 @@
+--- minimalist.conf-sample.orig	Tue Aug 10 14:58:15 1999
++++ minimalist.conf-sample	Sun Oct 31 12:51:16 1999
+@@ -7,7 +7,7 @@
+ 
+ # The directory for minimalist's files - default to /var/spool/minimalist
+ #
+-#directory = /var/spool/minimalist
++directory = /usr/local/minimalist
+ 
+ # The Minimalist administrator's e-mail address.
+ #
