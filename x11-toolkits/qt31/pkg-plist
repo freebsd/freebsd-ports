@@ -1,4 +1,4 @@
-lib/libqt.so.1.1
+lib/libqt.so.1.2
 @exec /sbin/ldconfig -m %B
 man/man1/moc.1.gz
 man/man3/qaccel.3qt.gz
@@ -95,6 +95,7 @@ man/man3/qshared.3qt.gz
 man/man3/qsignal.3qt.gz
 man/man3/qsize.3qt.gz
 man/man3/qsocketnotifier.3qt.gz
+man/man3/qslider.3qt.gz
 man/man3/qstack.3qt.gz
 man/man3/qstrilist.3qt.gz
 man/man3/qstring.3qt.gz
@@ -202,6 +203,7 @@ man/man3/QShared.3qt.gz
 man/man3/QSignal.3qt.gz
 man/man3/QSize.3qt.gz
 man/man3/QSocketNotifier.3qt.gz
+man/man3/QSlider.3qt.gz
 man/man3/QStack.3qt.gz
 man/man3/QStrIList.3qt.gz
 man/man3/QString.3qt.gz
