@@ -7,6 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,22 +23,20 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-USE_LIBLTDL=	yes
 USE_X_LIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=253
+USE_AUTOCONF_VER=259
 
-#CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${X11BASE}/include/gtk12 -I${X11BASE}/include/gdk-pixbuf-1.0 \
 		-I${LOCALBASE}/include/glib12" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--enable-static=no
 
 .if exists(/usr/include/dev/bktr/ioctl_bt848.h)
 post-patch:
-	${REINPLACE_CMD} -e 's#machine/\(ioctl_bt848.h\)#dev/bktr/\1#' \
+	@${REINPLACE_CMD} -e 's#machine/\(ioctl_bt848.h\)#dev/bktr/\1#' \
 		${WRKSRC}/camserv/video_fbsd_bttv.c \
 		${WRKSRC}/configure.in
 .endif
