@@ -9,9 +9,7 @@
 PORTNAME=	clog
 PORTVERSION=	1.6
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.saturn.net/pub/users/brian/clog/  \
-		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/clog/  \
-		ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/  \
+MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.saturn.net/clog/  \
 		ftp://ftp.ox.ac.uk/pub/comp/security/COAST/mirrors/ftp.saturn.net/clog/  \
 		ftp://ftp.rediris.es/mirror/coast/tools/unix/clog/
 
