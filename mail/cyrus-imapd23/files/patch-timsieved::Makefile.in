@@ -1,0 +1,13 @@
+Index: timsieved/Makefile.in
+diff -u timsieved/Makefile.in.orig timsieved/Makefile.in
+--- timsieved/Makefile.in.orig	Wed Nov 12 13:02:14 2003
++++ timsieved/Makefile.in	Fri Feb 13 18:51:17 2004
+@@ -79,7 +79,7 @@
+ all: timsieved
+ 
+ install:
+-	$(INSTALL) -m 755 timsieved $(DESTDIR)$(service_path)
++	$(INSTALL) -s -m 755 timsieved $(DESTDIR)$(service_path)
+ 
+ OBJS= actions.o lex.o mystring.o scripttest.o timsieved.o parser.o \
+ 	../imap/tls.o
