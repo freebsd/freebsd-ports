@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	cflowd
-PORTVERSION=	2-1-b1
+PORTVERSION=	2.1.b1
 PORTREVISION=	7
+PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 .if defined(CFLOWD_FLOWSCAN_PATCH)
 PATCH_SITES=	http://net.doit.wisc.edu/~plonka/cflowd/
