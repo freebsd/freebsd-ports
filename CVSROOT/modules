@@ -6366,6 +6366,7 @@ primer3		ports/biology/primer3
 prips		ports/sysutils/prips
 privman		ports/devel/privman
 privoxy		ports/www/privoxy
+privoxy+ipv6	ports/www/privoxy+ipv6
 procmail	ports/mail/procmail
 procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
