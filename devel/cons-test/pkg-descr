@@ -1,0 +1,12 @@
+This is the cons-test regression test suite for the Cons software
+construction utility.
+
+Cons is a Perl-based make replacement.  It is not compatible with make,
+but has a number of powerful capabilities not found in other software
+construction systems, including make.
+
+This package contains only the tests, not Cons itself.  You should
+look for the "cons" package that corresponds to the version number of
+this package.  See that package for all the details about Cons.
+
+WWW: http://www.dsmit.com/cons/

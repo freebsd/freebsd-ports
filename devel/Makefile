@@ -37,6 +37,7 @@
     SUBDIR += codecrusader
     SUBDIR += commoncpp
     SUBDIR += cons
+    SUBDIR += cons-test
     SUBDIR += cook
     SUBDIR += cproto
     SUBDIR += crossgo32
