@@ -1,0 +1,27 @@
+#!/bin/sh
+
+dist_bin=`dirname $0`
+
+MOZILLA_HOME=%%X11BASE%%/lib/%%MOZILLA%%
+
+if [ -z "$MOZ_PLUGIN_PATH" ]; then
+    MOZ_PLUGIN_PATH=%%PREFIX%%/lib/browser_plugins
+    export MOZ_PLUGIN_PATH
+fi
+
+if [ -n "$LD_LIBRARY_PATH" ]; then
+  LD_LIBRARY_PATH=$MOZILLA_HOME:$LD_LIBRARY_PATH
+else
+  LD_LIBRARY_PATH=$MOZILLA_HOME
+fi
+export LD_LIBRARY_PATH
+
+MOZILLA_FIVE_HOME=$MOZILLA_HOME
+export MOZILLA_FIVE_HOME
+
+if [ -f %%LOCALBASE%%/lib/libflashplayer.so.1 ]; then
+    LD_PRELOAD=%%LOCALBASE%%/lib/libflashplayer.so.1
+    export LD_PRELOAD
+fi
+
+exec "%%PREFIX%%/bin/kazehakase-bin" "$@"
