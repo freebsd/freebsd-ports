@@ -1,0 +1,37 @@
+--- makefile--	Fri Feb 20 18:22:04 1998
++++ makefile	Wed Apr 28 13:02:03 1999
+@@ -19,10 +19,10 @@
+ #
+ # 
+ MANSEC=1
+-MANDIR=$(IROOT)/usr/local/man/man$(MANSEC)
+-BINDIR=$(IROOT)/usr/local/bin
+-INCDIR=$(IROOT)/usr/local/include
+-LIBDIR=$(IROOT)/usr/local/lib
++MANDIR=$(PREFIX)/man/man$(MANSEC)
++BINDIR=$(PREFIX)/bin
++INCDIR=$(PREFIX)/include
++LIBDIR=$(PREFIX)/lib
+ LIBSIODDIR=$(LIBDIR)/siod
+ CP_F=cp -f
+ # -Wmissing-prototypes
+@@ -270,6 +270,19 @@
+ 	CFLAGS="$(CDEBUG)" \
+ 	LD_EXE_LIBS="-lm -ldl" \
+ 	build_driver
++
++## FreeBSD, possibly other BSDs
++freebsd:
++	$(MAKE) \
++	PROGS="siod tar.so parser_pratt.so ss.so \
++	       regex.so" \
++	CFLAGS="$(CDEBUG) $(GCCW) -DHAVE_SYS_PARAM_H $(CFLAGS)" \
++	LD_LIB_LIBS="-lcrypt -lm" \
++	LD_LIB_FLAGS="-shared" \
++	LD_EXE_FLAGS="-rdynamic -Xlinker -rpath -Xlinker $(LIBDIR) -Xlinker -rpath -Xlinker $(LIBSIODDIR)" \
++	SO="so" \
++	build_driver
++
+ 
+ unknown:
+ 	-ln -s ssiod siod

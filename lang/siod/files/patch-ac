@@ -1,0 +1,66 @@
+--- slibu.c--	Tue Dec  2 00:46:38 1997
++++ slibu.c	Wed Apr 28 14:07:05 1999
+@@ -20,6 +20,10 @@
+ #include <errno.h>
+ #include <stdarg.h>
+ 
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
++
+ #if defined(unix)
+ #include <unistd.h>
+ #include <dirent.h>
+@@ -50,7 +54,7 @@
+ #include <dl.h>
+ #endif
+ 
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+ #include <dlfcn.h>
+ #endif
+ 
+@@ -288,6 +292,7 @@
+  return(NIL);}
+ #endif
+ 
++#if !defined(BSD)
+ LISP lputpwent(LISP alist,LISP file)
+ {int iflag = no_interrupt(1);
+  int status;
+@@ -296,6 +301,7 @@
+  status = putpwent(&p,get_c_file(file,NULL));
+  no_interrupt(iflag);
+  return(NIL);}
++#endif
+ 
+ LISP laccess_problem(LISP lfname,LISP lacc)
+ {char *fname = get_c_string(lfname);
+@@ -1554,7 +1560,7 @@
+      /* note: error cases can leak memory in this procedure. */
+ {LISP init_name;
+  void (*fcn)(void) = NULL;
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+  void *handle;
+ #endif
+ #if defined(hpux)
+@@ -1575,7 +1581,7 @@
+    {put_st("so-loading ");
+     put_st(get_c_string(fname));
+     put_st("\n");}
+-#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi)
++#if defined(__osf__) || defined(sun) || defined(linux) || defined(sgi) || defined(BSD)
+ #if !defined(__osf__)
+  /* Observed bug: values of LD_LIBRARY_PATH established with putenv
+     -after- a process has started are ignored. Work around follows. */
+@@ -2197,7 +2203,9 @@
+ #if defined(__osf__)
+  init_subr_1("setpwfile",lsetpwfile);
+ #endif
++#if !defined(BSD)
+  init_subr_2("putpwent",lputpwent);
++#endif
+  init_subr_2("access-problem?",laccess_problem);
+  init_subr_3("utime",lutime);
+  init_subr_2("fchmod",lfchmod);

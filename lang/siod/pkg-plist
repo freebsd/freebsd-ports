@@ -1,0 +1,44 @@
+bin/csiod
+bin/snapshot-dir
+bin/snapshot-compare
+bin/http-get
+bin/cp-build
+bin/ftp-cp
+bin/ftp-put
+bin/ftp-test
+bin/ftp-get
+bin/http-stress
+bin/proxy-server
+bin/siod
+lib/siod/fork-test.scm
+lib/siod/http-server.scm
+lib/siod/http-stress.scm
+lib/siod/http.scm
+lib/siod/maze-support.scm
+lib/siod/pratt.scm
+lib/siod/siod.scm
+lib/siod/smtp.scm
+lib/siod/sql_oracle.scm
+lib/siod/sql_rdb.scm
+lib/siod/sql_sybase.scm
+lib/siod/cgi-echo.scm
+lib/siod/find-files.scm
+lib/siod/hello.scm
+lib/siod/parser_pratt.scm
+lib/siod/pop3.scm
+lib/siod/selfdoc.scm
+lib/siod/sample.c
+lib/siod/siod.html
+lib/siod/piechart.scm
+lib/siod/cgi.scm
+lib/siod/ftp.scm
+lib/siod/sql_msql.scm
+lib/siod/tar.so
+lib/siod/ss.so
+lib/siod/regex.so
+lib/siod/parser_pratt.so
+lib/libsiod.so
+include/siod.h
+@dirrm lib/siod
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
