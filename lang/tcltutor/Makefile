@@ -7,16 +7,21 @@
 
 PORTNAME=	tcltutor
 PORTVERSION=	2.b.4
-CATEGORIES=	lang tk83 tcl83
+CATEGORIES=	lang tk84 tcl84
 MASTER_SITES=	http://www.msen.com/~clif/
 DISTNAME=	Tutor2b4
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	A Tcl/Tk based tutorial for Tcl
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/TclTutor
 NO_BUILD=	yes
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/tcltutor/TclTutor/}
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/help.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/about.html ${DOCSDIR}
 
 .include <bsd.port.mk>
