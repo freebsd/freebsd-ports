@@ -7,7 +7,7 @@
 
 PORTNAME=	gdick
 PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	korean python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gdick
@@ -15,19 +15,13 @@ MASTER_SITE_SUBDIR=	gdick
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	English-Korean Dictionary Client for GNOME2
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/atk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs \
-		${PYTHONPREFIX_SITELIBDIR}/gtk-2.0/gconfmodule.so:${PORTSDIR}/x11-toolkits/py-gnome2
-
-BROKEN=		"Broken dependencies"
+RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-PLIST_SUB=	${OPTPLIST_SUB}
-
-USE_GNOME=	gnomehier
+USE_GNOME=	gnomehier pygnome2
 
 .include <bsd.port.pre.mk>
 
@@ -35,6 +29,9 @@ post-patch:
 	${REINPLACE_CMD} -e \
 		's,/usr/share/gdick/gdick.glade,${PREFIX}/share/gdick/gdick.glade,g' \
 		${WRKSRC}/lib/gdick/gdick.py
+	${REINPLACE_CMD} \
+		-e 's,lib/bonobo,${X11BASE}/libdata/bonobo,g' \
+		${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e 's,/usr/bin/gdick,${PREFIX}/bin/gdick,g' \
 		${WRKSRC}/GNOME_GDick.server
 
