@@ -11,6 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -33,8 +34,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--docdir=${PREFIX}/share/doc/vigra
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB= yes
+INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
