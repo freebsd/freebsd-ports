@@ -42,7 +42,7 @@ ERLANG_DOCS=	otp_html_R9B-0.tar.gz
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
 USE_GMAKE=	yes
