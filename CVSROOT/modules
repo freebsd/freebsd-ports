@@ -154,7 +154,6 @@ XFree86-contrib	ports/x11/XFree86-contrib
 Xaw3d		ports/x11-toolkits/Xaw3d
 XawPlus		ports/x11-toolkits/XawPlus
 Xfstt		ports/x11-servers/Xfstt
-Xft		ports/x11-fonts/Xft
 Xg		ports/x11-fonts/Xg
 XttXF86srv-3DLabs	ports/x11-servers/XttXF86srv-3DLabs
 XttXF86srv-8514		ports/x11-servers/XttXF86srv-8514
@@ -4247,6 +4246,7 @@ libXdmcp	ports/x11/libXdmcp
 libXext		ports/x11/libXext
 libXfixes	ports/x11/libXfixes
 libXfont	ports/x11/libXfont
+libXft		ports/x11-fonts/libXft
 libXi		ports/x11/libXi
 libXmu		ports/x11-toolkits/libXmu
 libXpm		ports/x11/libXpm
