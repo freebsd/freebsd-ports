@@ -11,7 +11,6 @@
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
     SUBDIR += gkrellsun
-    SUBDIR += glunarclock
     SUBDIR += gpsdrive
     SUBDIR += gpsman
     SUBDIR += jday
@@ -43,7 +42,6 @@
     SUBDIR += roadmap
     SUBDIR += saoimage
     SUBDIR += sattrack
-    SUBDIR += seti_applet
     SUBDIR += setiathome
     SUBDIR += spacechart
     SUBDIR += sscalc
