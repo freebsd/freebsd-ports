@@ -29,7 +29,7 @@ LIB_DEPENDS+=	SDL_net.0:${PORTSDIR}/net/sdl_net
 .endif
 
 .if !defined(WITHOUT_SDL_GFX)
-LIB_DEPENDS+=	SDL_gfx.7:${PORTSDIR}/graphics/sdl_gfx
+LIB_DEPENDS+=	SDL_gfx.8:${PORTSDIR}/graphics/sdl_gfx
 .endif
 
 .if !defined(WITHOUT_SDL_IMAGE)
