@@ -5,7 +5,7 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=2004-01-12
+SNAPDATE=	2004-01-12
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -52,16 +52,15 @@ BROKEN=	"libgcj is not supported/packaging is broken on this platform"
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
-GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_VER}
-PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${PORTVERSION}
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls \
-		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
+		--with-gxx-include-dir=${TARGLIB}/include/c++/
 #CONFIGURE_ARGS+=	--program-suffix=33
 #	Java
 CONFIGURE_ARGS+=	--with-system-zlib
@@ -134,11 +133,6 @@ post-install:
 	# gij and jv-convert, for example, are not built on all platforms.
 	if [ -e ${PREFIX}/bin/${f} ]; then \
 	  ${STRIP_CMD} ${PREFIX}/bin/${f}; \
-	else \
-	  ${ECHO_CMD} '#!/bin/sh' > ${PREFIX}/bin/${f}; \
-	  ${ECHO_CMD} 'echo "Not supported by GCC on this platform."' \
-		>> ${PREFIX}/bin/${f} ; \
-	  ${CHMOD} a+x ${PREFIX}/bin/${f}; \
 	fi
 	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
 	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
@@ -151,9 +145,9 @@ post-install:
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
 		${PREFIX}/man/man1/${f}-33.1 )
 .endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
-	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
-	# 	with the stock compiler.
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug33
+	# These libraries are moved from PREFIX/lib to avoid conflicts with
+	# the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
@@ -164,9 +158,9 @@ post-install:
 	${RM} -f ${TARGLIB}/*.la
 # I am sick and tired of the anonyance that man pages can only be generated if
 # perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
-	for mp in ${_MANPAGES} ; do \
-	    ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp} ;\
-	    done
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} || ${TOUCH} ${TOUCH_FLAGS} ${mp} )
+.endfor
 	# Handle target libraries and GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
