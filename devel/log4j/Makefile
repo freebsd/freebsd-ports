@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-log4j
 PORTVERSION=	1.2.7
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://jakarta.apache.org/log4j/
 DIST_SUBDIR=	jakarta
@@ -28,7 +29,7 @@ INSTALL_JAR=		${INSTALL_DATA}
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR file..."
 	@${MKDIR} ${JAVA_LIBDIR}
-	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}
+	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}/${PORTNAME}.jar
 	@${ECHO_CMD} " [DONE]"
 
 .if !defined(NOPORTDOCS)
