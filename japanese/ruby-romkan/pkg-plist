@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/romkan.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romkan/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/romkan/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/romkan
+%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/romkan-en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/ja/romkan-ja.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/romkan/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/romkan

@@ -1,0 +1,10 @@
+Ruby/Romkan: a Romaji <-> Kana conversion library for Ruby
+
+What's Ruby/Romkan?
+
+Ruby/Romkan is a Romaji <-> Kana conversion library for Ruby.  It can
+convert a Japanese Romaji string to a Japanese Kana string or vice
+versa.
+
+WWW:	http://namazu.org/~satoru/ruby-romkan/index.html.en
+Author:	Satoru Takabayashi <satoru@namazu.org>
