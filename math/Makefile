@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1997/06/10 08:50:47 asami Exp $
+# $Id: Makefile,v 1.30 1997/06/18 12:16:03 tg Exp $
 #
 
     SUBDIR += Scilab
@@ -19,6 +19,7 @@
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
+    SUBDIR += pari
     SUBDIR += simpack
     SUBDIR += ss
     SUBDIR += umatrix
