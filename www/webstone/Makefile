@@ -8,8 +8,7 @@
 PORTNAME=	webstone
 PORTVERSION=	2.5
 CATEGORIES=	www benchmarks
-MASTER_SITES=	http://www.mindcraft.com/webstone/ \
-		ftp://ftp.mindcraft.com/webstone/
+MASTER_SITES=	http://www.mindcraft.com/webstone/
 DISTNAME=	ws25_src
 EXTRACT_SUFX=	.tgz 
 
