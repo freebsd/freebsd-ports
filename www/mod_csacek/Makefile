@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_csacek
-PORTVERSION=	2.1.8
+PORTVERSION=	2.1.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.csacek.cz/distrib/
 DISTNAME=	${PORTNAME:S/mod_//g}-${PORTVERSION}
