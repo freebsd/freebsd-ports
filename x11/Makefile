@@ -57,6 +57,7 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
+    SUBDIR += portoseguro
     SUBDIR += powershell
     SUBDIR += props
     SUBDIR += qrash

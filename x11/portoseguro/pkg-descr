@@ -1,0 +1,15 @@
+from the README:
+
+Porto Seguro is a simple dock, built for the Sapphire window manager, but may
+fit any other window manager.
+
+The applications are run with a single click. The dock is configured in a GUI
+run from the button on the screen edge.
+
+You may configure items to hold instance, that is, run only one instance of the
+app and keep the button highlighted while the application is running or not to
+hold, which is useful for xterms and other things you'll want to have many at
+once.
+
+Trevor Johnson
+trevor@FreeBSD.org
