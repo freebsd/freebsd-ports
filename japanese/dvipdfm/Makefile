@@ -33,6 +33,9 @@ CONFIGURE_ENV+=		CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 			LDFLAGS=-L${PREFIX}/lib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+
 post-install:
 	strip ${PREFIX}/bin/dvipdfm
 	strip ${PREFIX}/bin/ebb

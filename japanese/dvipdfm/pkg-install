@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$2" in
+	[Pp][Rr][Ee]-[Ii][Nn][Ss][Tt][Aa][Ll][Ll])
+	echo ""
+	echo "You may wish to compile ja-ptex-base with -DWITH_DVIPSK in order"
+	echo "to use dvipdfm to shrink PDF files with \\usepackage{times}."
+	echo ""
+	;;
+
+esac
+
+exit
