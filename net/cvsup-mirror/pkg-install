@@ -1,0 +1,213 @@
+#! /bin/sh
+
+base=${PREFIX}/etc/cvsup
+prefixes=${base}/prefixes
+
+chmods_done=" "
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+install_links() {
+    local link dir subdir path
+
+    while [ $# -ge 3 ]; do
+	link=$1
+	dir=$2
+	subdir=$3
+	echo "  Linking ${link} -> ${dir}"
+	ln -sf ${dir} ${prefixes}/${link} || exit
+	if [ "x${dir}" != "xSKIP" -a "x${dir}" != "x.." ]; then
+	    if [ "x${subdir}" = "x." ]; then
+		path=${dir}
+	    else
+		path=${dir}/${subdir}
+	    fi
+	    ( cd ${prefixes} || exit
+	      test -d ${path} || mkdir -p ${path} || exit )
+	    if ! expr "${chmods_done}" : ".* ${path} " >/dev/null 2>&1; then
+		echo -n "  Making the ${path} tree world-readable ..."
+		( chdir ${prefixes} || exit
+		  chmod -R a+rX ${path} || exit )
+		echo " done."
+		chmods_done="${chmods_done}${path} "
+	    fi
+	fi
+	shift 3
+    done
+}
+
+case $2 in
+
+POST-INSTALL)
+    . ${base}/config.sh || exit
+
+    if which -s pw && which -s lockf; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "lockf" and/or "pw" utilities.  I need these utilities.
+Please get them and install them, and try again.  You can get the
+sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.bin/lockf.tar.gz
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+
+    echo ""
+    if grep -q "^${group}:" /etc/group; then
+	echo "You already have a group \"${group}\", so I will use it."
+    else
+	echo "You need a group \"${group}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${group} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${user}:" /etc/passwd; then
+		echo "While you're at it, please create a user \"${user}\" too,"
+		echo "with a default group of \"${group}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+    
+    if grep -q "^${user}:" /etc/passwd; then
+	echo "You already have a user \"${user}\", so I will use it."
+    else
+	echo "You need a user \"${user}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${user} -g ${group} -h - -d /nonexistent \
+		-s /nonexistent -c "CVSup Daemon" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    echo "Fixing ownerships and modes in \"${base}\"."
+    chown -R root.${group} ${base}
+    chmod -R g=u,o=u-w ${base}
+
+    echo "Setting up links and directories for distributions."
+    test -d ${prefixes} || mkdir ${prefixes} || exit
+    install_links ${distribs}
+
+    echo ""
+    if grep -q "^[^#]*${facility}.*/var/log/cvsupd.log" /etc/syslog.conf; then
+	echo -n "It looks like you already have some logging set up, so I "
+	echo "will use it."
+    else
+	if yesno "Would you like me to set up the syslog logging" y; then
+	    echo "Setting up server logging in \"/etc/syslog.conf\"."
+	    cat <<EOF >>/etc/syslog.conf
+!cvsupd
+${facility}.info					/var/log/cvsupd.log
+EOF
+
+	    if [ ! -f /var/log/cvsupd.log ]; then
+		echo "Creating \"/var/log/cvsupd.log\"."
+		cp /dev/null /var/log/cvsupd.log
+	    fi
+
+	    if [ -f /var/run/syslog.pid ]; then
+		echo "Giving syslogd a kick in the pants."
+		kill -HUP $(cat /var/run/syslog.pid)
+	    fi
+
+	    echo "Adding cvsupd log entry to \"/etc/newsyslog.conf\"."
+	    cat <<EOF >>/etc/newsyslog.conf
+/var/log/cvsupd.log			664  7    *    24    Z
+EOF
+	    echo "Done."
+	else
+	    cat <<EOF
+OK, please remember to do it yourself.  You should log "${facility}.info"
+to "/var/log/cvsupd.log".  Don't forget to add an entry to
+"/etc/newsyslog.conf".
+EOF
+	fi
+    fi
+
+    echo ""
+    if grep -q "^[^#]*${base}/update\.sh" /etc/crontab; then
+	echo "It looks like your crontab is already set up, so I'll use that."
+    else
+	if [ ${interval} -eq 1 ]; then
+	    updstr="hourly updates"
+	else
+	    updstr="updates every ${interval} hours"
+	fi
+	if yesno "Would you like me to set up your crontab for ${updstr}" y
+	then
+	    echo "Scheduling ${updstr} in \"/etc/crontab\"."
+	    delay=5
+	    now=$(date "+%s")
+	    start=$((${now} + ${delay}*60))
+	    hh=$(date -r ${start} "+%H")
+	    mm=$(date -r ${start} "+%M")
+	    h=$((${hh}))
+	    m=$((${mm}))
+	    if [ ${interval} -eq 1 ]; then
+		hstr="*"
+	    else
+		h0=$((${h} % ${interval}))
+		if [ ${interval} -eq 24 ]; then
+		    hstr=${h0}
+		else
+		    h1=$((${h0} + 24 - ${interval}))
+		    hstr=${h0}-${h1}/${interval}
+		fi
+	    fi
+	    cat <<EOF >>/etc/crontab
+${m}	${hstr}	*	*	*	root	${base}/update.sh
+EOF
+	    cat <<EOF
+Done.  The first update will be ${delay} minutes from now, at ${hh}:${mm}.
+The cvsupd server will be started automatically after the first update,
+and whenever you reboot.
+EOF
+	else
+	    cat <<EOF
+OK, please remember to do it yourself.  The crontab entry should run
+"${base}/update.sh" as root.
+EOF
+	fi
+    fi
+
+    echo ""
+    echo "You are now a FreeBSD mirror site."
+    ;;
+esac

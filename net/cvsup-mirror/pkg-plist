@@ -1,0 +1,6 @@
+etc/cvsup/config.sh
+etc/cvsup/supfile
+etc/cvsup/supfile.crypto
+etc/cvsup/supfile.non-crypto
+etc/cvsup/update.sh
+etc/rc.d/cvsupd.sh
