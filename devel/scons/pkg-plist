@@ -1,4 +1,5 @@
 bin/scons
+bin/sconsign
 lib/scons/SCons/Action.py
 lib/scons/SCons/Action.pyc
 lib/scons/SCons/Action.pyo
@@ -260,6 +261,9 @@ lib/scons/SCons/Tool/pdflatex.pyo
 lib/scons/SCons/Tool/pdftex.py
 lib/scons/SCons/Tool/pdftex.pyc
 lib/scons/SCons/Tool/pdftex.pyo
+lib/scons/SCons/Tool/qt.py
+lib/scons/SCons/Tool/qt.pyc
+lib/scons/SCons/Tool/qt.pyo
 lib/scons/SCons/Tool/rmic.py
 lib/scons/SCons/Tool/rmic.pyc
 lib/scons/SCons/Tool/rmic.pyo
@@ -281,6 +285,9 @@ lib/scons/SCons/Tool/suncc.pyo
 lib/scons/SCons/Tool/sunlink.py
 lib/scons/SCons/Tool/sunlink.pyc
 lib/scons/SCons/Tool/sunlink.pyo
+lib/scons/SCons/Tool/swig.py
+lib/scons/SCons/Tool/swig.pyc
+lib/scons/SCons/Tool/swig.pyo
 lib/scons/SCons/Tool/tar.py
 lib/scons/SCons/Tool/tar.pyc
 lib/scons/SCons/Tool/tar.pyo
