@@ -1,0 +1,9 @@
+MSWordView is a program that can understand the microsofts word 8
+binary file format (office97), it currently converts word into html,
+which can then be read with a browser.
+It is also capable of converting Japanese MS Word document
+
+MSWordView HomePage is
+http://www.csn.ul.ie/~caolan/docs/MSWordView.html
+
+port made by: sumikawa@kame.net
