@@ -1,0 +1,103 @@
+bin/callpass
+bin/xastir
+lib/xastir/Coordinate.pm
+lib/xastir/coord-convert.pl
+lib/xastir/fcc-get
+lib/xastir/icontable.pl
+lib/xastir/inf2geo.pl
+lib/xastir/mapblast2geo.pl
+lib/xastir/mapfgd.pl
+lib/xastir/overlay.pl
+lib/xastir/ozi2geo.pl
+lib/xastir/permutations.pl
+lib/xastir/split_gnis.bash
+lib/xastir/split_gnis.pl
+lib/xastir/test_coord.pl
+lib/xastir/track-get.pl
+lib/xastir/update_langfile.pl
+lib/xastir/waypoint-get.pl
+lib/xastir/xastir-fixcfg.sh
+lib/xastir/xastir-migrate.sh
+share/xastir/Counties/placeholder
+share/xastir/GNIS/placeholder
+share/xastir/config/language-Dutch.sys
+share/xastir/config/language-English.sys
+share/xastir/config/language-French.sys
+share/xastir/config/language-German.sys
+share/xastir/config/language-Italian.sys
+share/xastir/config/language-Portuguese.sys
+share/xastir/config/language-Spanish.sys
+share/xastir/config/nwsc_ddmmyy.dbfawk
+share/xastir/config/nwsfz_ddmmyy.dbfawk
+share/xastir/config/nwsmzddmmyy.dbfawk
+share/xastir/config/nwsozddmmyy.dbfawk
+share/xastir/config/nwsw_ddmmyy.dbfawk
+share/xastir/config/nwsz_ddmmyy.dbfawk
+share/xastir/config/tgr2shp.dbfawk
+share/xastir/config/tgrcty.dbfawk
+share/xastir/config/tgrkgl.dbfawk
+share/xastir/config/tgrlk.dbfawk
+share/xastir/config/tgrlpt.dbfawk
+share/xastir/config/tgrlpy.dbfawk
+share/xastir/config/tgrplc00.dbfawk
+share/xastir/config/tgrwat.dbfawk
+share/xastir/config/tnc-startup.aea
+share/xastir/config/tnc-startup.kam
+share/xastir/config/tnc-startup.kpc3
+share/xastir/config/tnc-startup.pico
+share/xastir/config/tnc-startup.sys
+share/xastir/config/tnc-startup.thd7
+share/xastir/config/tnc-stop.sys
+share/xastir/config/xastir.rgb
+share/xastir/doc/AUTHORS
+share/xastir/doc/COPYING
+share/xastir/doc/ChangeLog
+share/xastir/doc/FAQ
+share/xastir/doc/INSTALL
+share/xastir/doc/LICENSE
+share/xastir/doc/README
+share/xastir/doc/README.CVS
+share/xastir/doc/README.MAPS
+share/xastir/doc/README.win32
+share/xastir/doc/UPGRADE
+share/xastir/fcc/placeholder
+share/xastir/help/help-Dutch.dat
+share/xastir/help/help-English.dat
+share/xastir/help/help-French.dat
+share/xastir/help/help-German.dat
+share/xastir/help/help-Italian.dat
+share/xastir/help/help-Portuguese.dat
+share/xastir/help/help-Spanish.dat
+share/xastir/maps/GPS/placeholder
+share/xastir/maps/Online/CanadaTopo250k.geo
+share/xastir/maps/Online/CanadaTopo50k.geo
+share/xastir/maps/Online/USRadar.geo
+share/xastir/maps/Online/terraserver.geo
+share/xastir/maps/Online/tigermap.geo
+share/xastir/maps/Online/toposerver.geo
+share/xastir/sounds/placeholder
+share/xastir/symbols/13pct.xbm
+share/xastir/symbols/25pct.xbm
+share/xastir/symbols/2x2.xbm
+share/xastir/symbols/alert.xbm
+share/xastir/symbols/flood.xbm
+share/xastir/symbols/red_flag.xbm
+share/xastir/symbols/snow.xbm
+share/xastir/symbols/symbols.dat
+share/xastir/symbols/tornado.xbm
+share/xastir/symbols/wind.xbm
+share/xastir/symbols/winter_wx.xbm
+share/xastir/symbols/wntr_strm.xbm
+@dirrm share/xastir/symbols
+@dirrm share/xastir/sounds
+@dirrm share/xastir/maps/Online
+@dirrm share/xastir/maps/GPS
+@dirrm share/xastir/maps
+@dirrm share/xastir/help
+@dirrm share/xastir/fcc
+@dirrm share/xastir/doc
+@dirrm share/xastir/config
+@dirrm share/xastir/GNIS
+@dirrm share/xastir/Counties
+@dirrm share/xastir
+@dirrm lib/xastir

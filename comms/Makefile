@@ -83,6 +83,7 @@
     SUBDIR += vpb2
     SUBDIR += vrflash
     SUBDIR += wy60
+    SUBDIR += xastir
     SUBDIR += xcept
     SUBDIR += xdx
     SUBDIR += xlog
