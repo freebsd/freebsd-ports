@@ -17,8 +17,6 @@ DISTFILES=	X400src-1.tgz X400src-2.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-FORBIDDEN=	"Root hole in X server, XFree86 developers seem to be ignoring us"
-
 WRKSRC=		${WRKDIR}/${DIST_SUBDIR}
 .if (${MACHINE} != "alpha")
 #NO_PACKAGE=	package available from XFree86
@@ -66,9 +64,15 @@ MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 EXTRACT_ONLY=	X400src-1.tgz X400src-2.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} ${PKGDIR}/INSTALL
+.endif
 .endif
 .if ${USA_RESIDENT} == YES
 pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} ${PKGDIR}/INSTALL
+.endif
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
 .endif
