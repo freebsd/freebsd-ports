@@ -17,8 +17,6 @@ EOF
 my $port_perl = '%%PREFIX%%/bin/perl';
 $port_perl =~ tr|/|/|s;
 
-my $ident = `/usr/bin/ident -q /usr/bin/perl5`;
-
 @ARGV == 1 or usage();
 if ($ARGV[0] eq 'port') {
 	switch_to_port();
@@ -43,6 +41,7 @@ sub switch_to_system
 		link '/usr/bin/perl5', '/usr/bin/perl';
 		link '/usr/bin/perl5', '/usr/bin/perl%%PERL_VERSION%%';
 
+		my $ident = `/usr/bin/ident -q /usr/bin/perl5`;
 		if ($ident =~ m#src/usr.bin/perl/perl.c#) {
 			link '/usr/bin/perl5', '/usr/bin/suidperl';
 		} else {
@@ -81,10 +80,18 @@ sub switch_to_port
 {
 	# protect against cases where people use PREFIX=/usr
 	if ($port_perl ne '/usr/bin/perl') {
-		if ($ident =~ m#src/usr.bin/perl/perl.c#) {
-			rename '/usr/bin/perl', '/usr/bin/perl-wrapper';
+
+		my $need_perl5_link;
+		if (-e "/usr/bin/perl5" && !-l "/usr/bin/perl5") {
+			my $ident = `/usr/bin/ident -q /usr/bin/perl5`;
+			if ($ident =~ m#src/usr.bin/perl/perl.c#) {
+				rename '/usr/bin/perl', '/usr/bin/perl-wrapper';
+			} else {
+				unlink '/usr/bin/perl';
+			}
 		} else {
-			unlink '/usr/bin/perl';
+			unlink "/usr/bin/perl5";
+			$need_perl5_link = 1;
 		}
 
 		unlink '/usr/bin/suidperl', '/usr/bin/perl%%PERL_VERSION%%';
@@ -92,6 +99,7 @@ sub switch_to_port
 		symlink '%%PREFIX%%/bin/perl', '/usr/bin/perl';
 		symlink '%%PREFIX%%/bin/suidperl', '/usr/bin/suidperl';
 		symlink '%%PREFIX%%/bin/perl', '/usr/bin/perl%%PERL_VERSION%%';
+		symlink '%%PREFIX%%/bin/perl', '/usr/bin/perl5' if $need_perl5_link;
 	}
 
 	open MK, ">> /etc/make.conf" or die "/etc/make.conf: $!";

@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -55,6 +55,10 @@ INCLUDEDIR=	/usr/include
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500043
+PKGMESSAGE=	${PKGDIR}/.not-here
+.endif
 
 MAN1=	a2p.1 c2ph.1 dprofpp.1 find2perl.1 h2ph.1 h2xs.1 perl.1 \
 	perl5004delta.1 perl5005delta.1 perlaix.1 perlamiga.1 \
@@ -161,6 +165,10 @@ post-install:
 		${BSDPAN_WRKSRC}/${file} ${BSDPAN_DEST}/${file}
 .endfor
 	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
+.if ${OSVERSION} < 500043
 	@fmt ${PKGMESSAGE}
+.else
+	@${PREFIX}/bin/use.perl port
+.endif
 
 .include <bsd.port.post.mk>
