@@ -43,6 +43,12 @@ post-install:
 	@${CAT} ${FILESDIR}/iplog.sh.tmpl | \
 		${SED} -e 's;PREFIX;${PREFIX};' \
 		> ${PREFIX}/etc/rc.d/iplog.sh.sample
+	@${CHMOD} 555 ${PREFIX}/etc/rc.d/iplog.sh.sample
+	@${ECHO_MSG} "----------------------------------------------------------------------------"
+	@${ECHO_MSG} "If you want iplog to be run as a daemon then do:"
+	@${ECHO_MSG} "cp -p ${PREFIX}/etc/rc.d/iplog.sh.sample ${PREFIX}/etc/rc.d/iplog.sh"
+	@${ECHO_MSG} "----------------------------------------------------------------------------"
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
