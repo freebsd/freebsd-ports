@@ -5,9 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=		portmanager
-PORTVERSION=		0.2.1
+PORTNAME=	portmanager
+PORTVERSION=	0.2.2
+PORTREVISION=	0
+#-----------------------------------------
+#for local use, remove before submitting PR
 CATEGORIES=		sysutils
+#CATEGORIES=		local/sysutils
+#VALID_CATEGORIES+=	${CATEGORIES}	# for FreeBSD to accept our local category
+#-----------------------------------------
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
 
@@ -22,12 +28,23 @@ BUILD_DEPENDS=	autoheader259:${PORTSDIR}/devel/autoconf259	\
 
 MAN1=			portmanager.1
 
+USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 # Need INSTALL_TARGET to install /usr/local/etc/portmanager/pm-020.conf.SAMPLE
 INSTALL_TARGET=         install info
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
+	s|0.2.2|${PORTVERSION}_${PORTREVISION}|g ;	\
+	s|%%PORTSDIR%%|${PORTSDIR}|g ;	\
+	s|%%PKG_DBDIR%%|${PKG_DBDIR}|g' ${WRKSRC}/libPMGR/src/libPMGR.h
+
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
+	s|%%PORTSDIR%%|${PORTSDIR}|g ;	\
+	s|%%PKG_DBDIR%%|${PKG_DBDIR}|g' ${WRKSRC}/libPMGR/src/PMGRrMakeDescribe.c
 
 # Only way to get WITH_DEBUG build dependencies handled prior to reconfiguring
 # is to use post-configure <sigh>

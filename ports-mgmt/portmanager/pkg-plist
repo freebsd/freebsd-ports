@@ -10,7 +10,6 @@ bin/pmupgrade
 bin/portmanager
 etc/portmanager/pm-020.conf.SAMPLE
 include/libMG.h
-include/libPMGR.h
 lib/libMG
 lib/libMG.0
 lib/libPMGR
