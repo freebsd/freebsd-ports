@@ -1,2 +1,5 @@
 bin/nget
 bin/ngetlite
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

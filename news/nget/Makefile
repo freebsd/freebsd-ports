@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	nget
-PORTVERSION=	0.23
+PORTVERSION=	0.24.2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nget
 DISTNAME=	nget-${PORTVERSION}+uulib
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Auto-resuming command line nntp file grabber
 
 MAN1=		nget.1 ngetlite.1
@@ -34,5 +34,11 @@ do-install:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/nget
 	${STRIP_CMD} ${PREFIX}/bin/ngetlite
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in README FAQ
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
