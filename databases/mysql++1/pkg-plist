@@ -26,6 +26,7 @@ include/mysql/fields1.hh
 include/mysql/datetime1.hh
 include/mysql/datetime2.hh
 include/mysql/datetime3.hh
+include/mysql/exceptions.hh
 include/mysql/field_names1.hh
 include/mysql/field_names2.hh
 include/mysql/field_names3.hh
@@ -104,6 +105,7 @@ share/examples/mysql++/custom3.cc
 share/examples/mysql++/custom4.cc
 share/examples/mysql++/fieldinf1.cc
 share/examples/mysql++/load_file.cc
+share/examples/mysql++/populate.cc
 share/examples/mysql++/resetdb.cc
 share/examples/mysql++/simple1.cc
 share/examples/mysql++/sinisa_ex.cc

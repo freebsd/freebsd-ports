@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.7.8
 CATEGORIES=	databases devel
-MASTER_SITES=	http://gd.tuwien.ac.at/db/mysql/mysql++/ \
-		http://www.mysql.com/Downloads/mysql++/
+MASTER_SITES=	ftp://mysql.omnipotent.net/mysql++/ \
+		ftp://mysql.valueclick.com/mysql/mysql++/ \
+		ftp://ftp.u-aizu.ac.jp/ftp/pub/dbms/mysql/mysql.com/mysql++/ \
+		ftp://mirror.aarnet.edu.au/pub/mysql/mysql++
 
 MAINTAINER=	mico@bsd.hu
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ "
 INSTALL_SHLIB=	yes
