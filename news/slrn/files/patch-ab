@@ -1,0 +1,26 @@
+--- doc/slrn.rc.orig	Wed Apr 25 18:30:50 2001
++++ doc/slrn.rc	Wed Apr 25 18:38:35 2001
+@@ -547,9 +547,11 @@
+ setkey group	page_down	"\e[6~"
+ setkey group	page_down	"^D"   %  next page of groups
+ setkey group	page_down	"^V"
++setkey group	page_down	"\e[G"
+ setkey group	page_up		"\eV"  %  previous page of groups
+ setkey group	page_up		"\e[5~"
+ setkey group	page_up		"^U"
++setkey group	page_up		"\e[I"
+ setkey group	post		"P"
+ setkey group	post_postponed	"\eP"
+ setkey group	quit		"Q"
+@@ -608,9 +610,11 @@
+ setkey article	header_page_down	"\e[6~"
+ setkey article	header_page_down	"^D"
+ setkey article	header_page_down	"^V"
++setkey article	header_page_down	"\e[G"
+ setkey article	header_page_up		"\eV"
+ setkey article	header_page_up		"\e[5~"
+ setkey article	header_page_up		"^U"
++setkey article	header_page_up		"\e[I"
+ setkey article	help		"?"	% Show help screen
+ setkey article	hide_article	"H"	% Hide the article window.
+ setkey article	mark_spot	";"	% Set mark at current article
