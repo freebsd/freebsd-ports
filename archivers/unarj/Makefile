@@ -16,7 +16,7 @@ MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Allows files to be extracted from ARJ archives
 
 do-install:
-	${INSTALL} -d -m 755 -o $(SHAREOWN) -g ${SHAREGRP} \
+	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
 		${PREFIX}/share/doc/unarj
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} unarj ${PREFIX}/bin
 	cd ${WRKSRC}; ${INSTALL_DATA} unarj.doc technote.doc \
