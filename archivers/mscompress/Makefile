@@ -8,7 +8,8 @@
 PORTNAME=	mscompress
 PORTVERSION=	0.3
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/mscompress/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= utils/compress
 
 MAINTAINER=	patseal@hyperhost.net
 
