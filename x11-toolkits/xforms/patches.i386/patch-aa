@@ -1,0 +1,53 @@
+--- Makefile.orig	Mon Aug  2 01:17:35 1999
++++ Makefile	Fri Jul 14 14:05:58 2000
+@@ -15,14 +15,17 @@
+ SYSLIB=-lX11 -lm
+ SHELL=/bin/sh
+ 
+-FORMHEADER=forms.h
+-FORMLIB=libforms.a
+-
+ .include "mkconfig.h"
+ 
+ 
+ ##### don't change anything after this line ####
+ 
++all:  link
++
++link:
++	@mv FORMS/libforms.a FORMS/$(FORMLIB);
++	@mv FORMS/$(SHARED_LIB) FORMS/$(SHARED_NAME)
++
+ demo: 
+ 	@(cd DEMOS; make) 
+ 
+@@ -34,11 +37,11 @@
+ 	cp FORMS/$(FORMLIB) $(LIB_DIR);chmod $(LIBMODE) $(LIB_DIR)/$(FORMLIB)
+ 	cp DESIGN/fdesign $(BIN_DIR); chmod $(BINMODE) $(BIN_DIR)/fdesign
+ 	cp fd2ps/fd2ps $(BIN_DIR); chmod $(BINMODE) $(BIN_DIR)/fd2ps
+-	-@if [ "$(SHARED_LIB)" != "" ]; then\
+-           cp FORMS/$(SHARED_LIB) $(LIB_DIR); \
+-           chmod $(LIBMODE) $(LIB_DIR)/$(SHARED_LIB);\
+-           if [ "$(SHARED_NAME)" != "" ]; then\
+-              $(LN) $(LIB_DIR)/$(SHARED_LIB) $(LIB_DIR)/$(SHARED_NAME);\
++	-@if [ "$(SHARED_NAME)" != "" ]; then\
++           cp FORMS/$(SHARED_NAME) $(LIB_DIR); \
++           chmod $(LIBMODE) $(LIB_DIR)/$(SHARED_NAME);\
++           if [ "$(SHARED_SO)" != "" ]; then\
++              $(LN) $(LIB_DIR)/$(SHARED_NAME) $(LIB_DIR)/$(SHARED_SO);\
+            fi \
+         fi
+ 	cp FORMS/$(FORMHEADER) $(HEADER_DIR);\
+@@ -47,9 +50,9 @@
+ 	cp DESIGN/fdesign.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fdesign.1
+ 	cp fd2ps/fd2ps.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fd2ps.1
+ 	cp DEMOS/iconvert.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/iconvert.1
+-	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
+-          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
+-        fi
++#	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
++#          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
++#        fi
+ clean:
+ 	(cd  DEMOS; make $@)
+ empty:
