@@ -411,6 +411,7 @@
     SUBDIR += vamos
     SUBDIR += vectoroids
     SUBDIR += virt
+    SUBDIR += wesnoth
     SUBDIR += wmeyes
     SUBDIR += wmfortune
     SUBDIR += wmminichess
