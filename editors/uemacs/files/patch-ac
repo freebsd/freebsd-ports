@@ -16,7 +16,7 @@
  #else
 -	path = getenv("PATH");
 +	strncpy(patha, getenv("PATH"), NFILEN - 25);
-+        strcat(patha, ":/usr/local/share/uemacs");
++        strcat(patha, ":%%PREFIX%%/share/uemacs");
  #endif
  #endif
 +        path = patha;

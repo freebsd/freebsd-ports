@@ -9,15 +9,15 @@
 DISTNAME=	ue400dev
 PKGNAME=	uemacs-4.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/ \
-		ftp://informatik.hu-berlin.de/pub/pc/msdos/editors/ \
-		ftp://ftp.biomath.jussieu.fr/pub/editors/memacs400/disk2/
+MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-Laq
-FETCH_BEFORE_ARGS=	-NP
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>
