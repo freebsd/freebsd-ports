@@ -1,10 +1,19 @@
---- tkabber.tcl.orig	Mon Jun  9 13:00:36 2003
-+++ tkabber.tcl	Fri Oct 17 15:45:06 2003
+--- tkabber.tcl.orig	Tue Jul 27 17:37:59 2004
++++ tkabber.tcl	Tue Aug  3 14:34:43 2004
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using the correct interpreter \
 -exec wish "$0" -name tkabber "$@"
 +exec wish8.4 "$0" -name tkabber "$@"
  
- # $Id: tkabber.tcl,v 1.159 2003/05/30 18:05:27 aleksey Exp $
+ # $Id: tkabber.tcl,v 1.219 2004/07/10 20:05:04 aleksey Exp $
  
+@@ -118,7 +118,7 @@
+             debugmsg tkabber "closed $chan '$res'"
+         }
+     }
+-    exit $status
++    quit $status
+ }
+ 
+ namespace eval ssj {}

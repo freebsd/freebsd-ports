@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.6b
+PORTVERSION=	0.9.7
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/tkabber/
-DISTNAME=	tkabber-0.9.6beta
 
 MAINTAINER=	gonzo@univ.kiev.ua
 COMMENT=	Tcl/Tk based jabber client
@@ -23,15 +22,15 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
-SUBDIRS = emoticons-tkabber plugins jabberlib-tclxml pixmaps \
-		sounds textundo aniemoteicons msgs mclistbox-1.02
+SUBDIRS=	aniemoteicons emoticons-tkabber ifaceck ifacetk plugins \
+		jabberlib-tclxml pixmaps sounds textundo msgs mclistbox-1.02
 
 do-install:
 	${ECHO} -e "#!/bin/sh\nexec wish8.4 ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${PREFIX}/bin/tkabber
 	${CHMOD} +x ${PREFIX}/bin/tkabber
 	${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/*.tcl ${WRKSRC}/*.xrdb ${DATADIR}
+	${CP} ${WRKSRC}/*.tcl ${DATADIR}
 .for i in ${SUBDIRS}
 	${CP} -R ${WRKSRC}/${i} ${DATADIR}
 .endfor
