@@ -1,6 +1,6 @@
 # New ports collection makefile for:   drweb
 # Date created:        14 August 2001
-# Whom:                Anton Voronin <anton@urc.ac.ru>
+# Whom:                Anton Voronin <anton@chelcom.ru>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTFILES=      ${MAIN_NAME}.tgz
 
-MAINTAINER=	anton@urc.ac.ru
+MAINTAINER=	anton@chelcom.ru
 
 NO_BUILD=       yes
 
