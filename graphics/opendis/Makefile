@@ -7,24 +7,25 @@
 
 PORTNAME=	opendis
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://ods.sourceforge.net/dl/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://ods.sourceforge.net/dl/
+MASTER_SITE_SUBDIR=	ods
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
-DOCS=	NEWS AUTHORS doc/ERRATA doc/PHILOSOPHY doc/THUMB
+post-patch:
+	@${PERL} -pi -e 's|-pedantic -W|-pedantic|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's| -g| \@CFLAGS\@|g' ${WRKSRC}/src/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${INSTALL} -d -o root -g wheel -m 0755 ${PREFIX}/share/doc/${PORTNAME}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in NEWS AUTHORS doc/ERRATA doc/PHILOSOPHY doc/THUMB
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
