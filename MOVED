@@ -163,7 +163,7 @@ biology/gaussian||2003-01-31|deleted maintain is hard and gray in license
 graphics/xine_dvdnav_plugin||2003-02-01|integrated into graphics/libxine
 devel/ossp-mm||2003-02-01|accidental dupe of devel/mm
 archivers/linux_rar||2003-02-03|FreeBSD/i386 binary is available
-security/krb5-beta||2003-08-07|deleted: no longer in beta, MIT KRB5 1.3 released
+security/krb5-beta||2004-01-25|resurrected: brand new MIT KRB5 1.3.2 beta
 security/pam_krb5||2003-02-12|resurrected: required when MIT KRB5 used in place of base system KRB5
 deskutils/gnucash|finance/gnucash|2003-02-05|new category
 x11-toolkits/crux||2003-02-07|deleted: added to GNOME 2.2 desktop

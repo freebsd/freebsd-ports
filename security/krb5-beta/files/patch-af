@@ -1,0 +1,13 @@
+--- ../doc/krb425.texinfo	Fri Feb  6 21:40:57 1998
++++ krb425.texinfo	Fri Jun 19 15:13:45 1998
+@@ -5,6 +5,10 @@
+ @c guide
+ @setfilename krb425.info
+ @settitle Upgrading to Kerberos V5 from Kerberos V4
++@dircategory Kerberos V5
++@direntry
++* Upgrading from V4 to V5: (krb425).     Upgrading from Kerberos V4 to V5
++@end direntry
+ @c @setchapternewpage odd                  @c chapter begins on next odd page
+ @c @setchapternewpage on                   @c chapter begins on next page
+ @c @smallbook                              @c Format for 7" X 9.25" paper

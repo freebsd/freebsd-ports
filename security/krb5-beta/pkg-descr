@@ -1,0 +1,24 @@
+Kerberos V5 is an authentication system developed at MIT.  
+WWW: http://web.mit.edu/kerberos/www/
+
+Abridged from the User Guide:
+       Under Kerberos, a client sends a request for a ticket to the 
+   Key Distribution Center (KDC). The KDC creates a ticket-granting 
+   ticket (TGT) for the client, encrypts it using the client's 
+   password as the key, and sends the encrypted TGT back to the 
+   client. The client then attempts to decrypt the TGT, using
+   its password. If the client successfully decrypts the TGT, it 
+   keeps the decrypted TGT, which indicates proof of the client's 
+   identity. The TGT permits the client to obtain additional tickets, 
+   which give permission for specific services.
+       Since Kerberos negotiates authenticated, and optionally encrypted,   
+   communications between two points anywhere on the internet, it
+   provides a layer of security that is not dependent on which side of a
+   firewall either client is on.
+       The Kerberos V5 package is designed to be easy to use. Most of the  
+   commands are nearly identical to UNIX network programs you are already
+   used to. Kerberos V5 is a single-sign-on system, which means that you 
+   have to type your password only once per session, and Kerberos does   
+   the authenticating and encrypting transparently.  
+
+Jacques Vidrine <n@nectar.com>
