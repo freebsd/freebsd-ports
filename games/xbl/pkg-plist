@@ -1,0 +1,11 @@
+bin/xbl
+lib/X11/app-defaults/Xbl
+lib/X11/xbl/COPYING
+lib/X11/xbl/Xbl
+lib/X11/xbl/xbl-game.gif
+lib/X11/xbl/xbl-man.html
+lib/X11/xbl/xbl-menu.gif
+lib/X11/xbl/xbl-score.gif
+lib/X11/xbl/xbl-zoo.gif
+lib/X11/xbl/xbl.html
+man/mann/xbl.n.gz
