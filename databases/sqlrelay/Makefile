@@ -45,6 +45,7 @@ WITH_POSTGRESQL?=	yes
 WITH_ODBC?=		yes
 WITH_FREETDS?=		yes
 WITH_GTK?=		yes
+WITH_INTERBASE?=	yes
 .else
 WITH_SQLITE?=		no
 WITH_MYSQL?=		yes
@@ -53,6 +54,7 @@ WITH_POSTGRESQL?=	yes
 WITH_ODBC?=		no
 WITH_FREETDS?=		no
 WITH_GTK?=		yes
+WITH_INTERBASE?=	no
 .endif
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
@@ -74,6 +76,15 @@ IF_MYSQL=	""
 .else
 CONFIGURE_ARGS+=	--without-mysql-prefix
 IF_MYSQL=	"@comment "
+.endif
+
+.if defined(WITH_INTERBASE) && ${WITH_INTERBASE:L} != no
+LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
+CONFIGURE_ARGS+=	--with-interbase-prefix="${LOCALBASE}/firebird"
+IF_INTERBASE=	""
+.else
+CONFIGURE_ARGS+=	--without-interbase-prefix
+IF_INTERBASE=	"@comment "
 .endif
 
 .if defined(WITH_MSQL) && ${WITH_MSQL:L} != no
@@ -128,6 +139,7 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 		IF_POSTGRESQL=${IF_POSTGRESQL} \
 		IF_ODBC=${IF_ODBC} \
 		IF_FREETDS=${IF_FREETDS} \
+		IF_INTERBASE=${IF_INTERBASE} \
 		IF_GTK=${IF_GTK}
 
 #  --with-sybase-prefix          Location of Sybase
