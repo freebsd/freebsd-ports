@@ -1,0 +1,16 @@
+These are DSSSL stylesheets for the DocBook DTD by Norm Walsh. Use them
+in conjunction with a DSSSL processor (such as jade) to convert documents
+marked up as DocBook to other formats.
+
+For example (assume $DBPATH = /usr/local/share/sgml/docbook/dsssl/modular)
+
+   jade -t sgml -d $DBPATH/html/docbook.dsl  filename.sgml  (DocBook -> HTML)
+   jade -t rtf  -d $DBPATH/print/docbook.dsl filename.sgml  (DocBook -> RTF )
+   jade -t tex  -d $DBPATH/print/docbook.dsl filename.sgml  (DocBook -> TeX )
+
+To further parse the output of the 'tex' transformation you will need the
+'jadetex' macros, which may not yet have been ported.
+
+More documentation (in HTML format) is available in
+
+   /usr/local/share/sgml/docbook/dsssl/modular/doc/
