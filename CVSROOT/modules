@@ -6376,6 +6376,7 @@ quakeserver	ports/games/quakeserver
 quanta		ports/www/quanta
 quantlib	ports/misc/quantlib
 quasi88		ports/emulators/quasi88
+quat		ports/graphics/quat
 quelcom		ports/audio/quelcom
 queso		ports/net/queso
 quickpics	ports/graphics/quickpics
