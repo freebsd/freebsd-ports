@@ -1,21 +1,18 @@
---- source/Makefile.in.orig	Wed Jul 24 22:44:02 2002
-+++ source/Makefile.in	Fri Oct 25 18:00:54 2002
-@@ -132,7 +132,8 @@
- 	$(INSTALL_DATA) @platform_make_fragment@ $(DESTDIR)$(pkgdatadir)/config/@platform_make_fragment_name@
- 	$(INSTALL_SCRIPT) $(top_srcdir)/mkinstalldirs $(DESTDIR)$(pkgdatadir)/mkinstalldirs
- 	$(INSTALL_DATA) README $(DESTDIR)$(pkgdatadir)/README
--	$(INSTALL_PROGRAM) $(top_builddir)/config/icu-config $(DESTDIR)$(bindir)/icu-config
-+	cp $(top_builddir)/config/icu-config $(DESTDIR)$(bindir)/icu-config
-+	chmod 0555 $(DESTDIR)$(bindir)/icu-config
- 
- ifeq ($(DOXYGEN),)
- install-doc:
-@@ -180,7 +181,7 @@
+--- source/Makefile.in.orig	Mon Jun  9 04:38:48 2003
++++ source/Makefile.in	Sat Jun 14 23:07:14 2003
+@@ -180,12 +180,14 @@
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
 -	$(INSTALL_DATA) $(top_srcdir)/config/icu-config-top $@
-+	cp $(top_srcdir)/config/icu-config-top $@
++	$(INSTALL_SCRIPT) $(top_srcdir)/config/icu-config-top $@
++	@chmod u+w $@
  	@echo "# Following from @platform_make_fragment@" >> $@
  	sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
  	sed -f $(top_srcdir)/config/make2sh.sed < @platform_make_fragment@ | grep -v '#M#' | uniq >> $@
+ 	cat $(top_srcdir)/config/icu-config-bottom >> $@
+ 	echo "# Rebuilt on "`date` >> $@
++	@chmod u-w $@
+ 
+ config.status: $(srcdir)/configure $(srcdir)/common/unicode/uversion.h
+ 	@echo
