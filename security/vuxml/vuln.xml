@@ -61,11 +61,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0782</cvename>
       <cvename>CAN-2004-0783</cvename>
       <cvename>CAN-2004-0788</cvename>
+      <url>http://scary.beasts.org/security/CESA-2004-005.txt</url>
     </references>
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-09-16</modified>
+      <modified>2004-09-18</modified>
     </dates>
   </vuln>
 
@@ -126,13 +127,22 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>agenda-snow-libs</name>
-	<name>libXpm</name>
 	<name>mupad</name>
-	<name>XFree86-libraries</name>
-	<name>xorg-libraries</name>
 	<name>xpm</name>
 	<name>zh-cle_base</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>libXpm</name>
+	<range><lt>3.5.1_1</lt></range>
+      </package>
+      <package>
+	<name>XFree86-libraries</name>
+	<range><lt>4.4.0_1</lt></range>
+      </package>
+      <package>
+	<name>xorg-libraries</name>
+	<range><lt>6.7.0_2</lt></range>
       </package>
     </affects>
     <description>
@@ -160,10 +170,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-0687</cvename>
       <cvename>CAN-2004-0688</cvename>
       <url>http://freedesktop.org/pipermail/xorg/2004-September/003172.html</url>
+      <url>http://scary.beasts.org/security/CESA-2004-003.txt</url>
     </references>
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
+      <modified>2004-09-18</modified>
     </dates>
   </vuln>
 
