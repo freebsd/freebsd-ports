@@ -1,0 +1,11 @@
+--- ghost.h.orig	Sun Jan  9 01:49:42 2000
++++ ghost.h	Sun Jan  9 01:50:05 2000
+@@ -31,7 +31,7 @@
+ Ghost(COLOURTYPE,int,int);		//constructor with coordinates
+ ~Ghost();				//destructor
+ void draw(void);			//draw the ghost
+-go(Pacman*);				//go for pacman: do ghost code
++int go(Pacman*);			//go for pacman: do ghost code
+ typ is_a(void) {return classGhost;}    
+ void eat(void);				//when pacman eats ghost
+ void getxy(int*,int*);
