@@ -1,15 +1,14 @@
 --- main.c.orig	Mon Jan  3 21:58:29 2005
 +++ main.c	Wed Feb  2 21:56:11 2005
-@@ -38,8 +38,8 @@
+@@ -38,7 +38,7 @@
  {
      fprintf(stderr, "Oops! TunesBrowser has crashed. Sorry about that!\n");
      fprintf(stderr, "This probably won't be of any use unless you feel like debugging,\n");
 -    fprintf(stderr, "but the crash occured because of %p being bad.\n", siginfo->si_ptr);
++    fprintf(stderr, "but the crash occured because of %p being bad.\n", siginfo->si_value.sigval_ptr);
  #if 0
-+    fprintf(stderr, "but the crash occured because of %p being bad.\n", siginfo->si_ptr);
      fprintf(stderr, "\n\nRaised SIGSTOP. You can now attach a debugger.\n");
      fprintf(stderr, "Attach to PID %i\n", getpid());
-     raise(SIGSTOP);
 @@ -66,11 +66,11 @@
      int ret;
  
