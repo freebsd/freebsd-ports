@@ -8,7 +8,9 @@
 PORTNAME=	libicq
 PORTVERSION=	0.33
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp.korsoft.com/pub/gicq/
+MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
 
