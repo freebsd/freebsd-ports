@@ -10,7 +10,6 @@ PORTVERSION=	1.0.7
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
-		http://ftp.oav.net/pkg_freebsd/distfiles/ \
 		http://grendel.firewall.com/caudium-pkg/ \
 		http://www.mirar.org/mird/
 DISTNAME=	Mird-${PORTVERSION}
