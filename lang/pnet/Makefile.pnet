@@ -22,10 +22,10 @@ PNET_BIN_WRKDIR?=	${WRKDIR}/PNET_STRAP/bin
 PNET_SBIN_WRKDIR?=	${WRKDIR}/PNET_STRAP/sbin
 
 .for strap in ${PNET_STRAP_BIN}
-PLIST_FILES+=	bin/${strap}
+PLIST_FILES+=	bin/${strap} bin/${strap}${PNET_STRAP_SUFX}
 .endfor
 .for strap in ${PNET_STRAP_SBIN}
-PLIST_FILES+=	sbin/${strap}
+PLIST_FILES+=	sbin/${strap} sbin/${strap}${PNET_STRAP_SUFX}
 .endfor
 
 pre-patch: pnet-strap
