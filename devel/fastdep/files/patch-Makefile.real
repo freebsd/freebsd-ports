@@ -1,11 +1,16 @@
---- Makefile.real.orig	Wed Oct 30 20:46:26 2002
-+++ Makefile.real	Wed Oct 30 20:46:46 2002
-@@ -8,7 +8,7 @@
+--- Makefile.real.orig	Thu Jun 20 06:19:59 2002
++++ Makefile.real	Sat Nov  9 12:13:07 2002
+@@ -8,11 +8,11 @@
  	g++ $(CXXFLAGS) -o $(BINARY) @linkfiles
  	-rm -f linkfiles
  else
 -	g++ $(CXXFLAGS) -o $(BINARY) $(OBJECTS)
-+	g++ $(CXXFLAGS) -o $(BINARY) $(OBJECTS) -L${LOCALBASE}/lib -lgnugetopt
++	$(CXX) $(CXXFLAGS) -o $(BINARY) $(OBJECTS) -L${LOCALBASE}/lib -lgnugetopt
  endif
  
  .cc.o: $(ALLMAKEFILES)
+-	g++ $(CXXFLAGS) -c $< -o $@
++	$(CXX) $(CXXFLAGS) -I${LOCALBASE}/include -c $< -o $@
+ 
+ $(DEPENDS): $(SOURCES) $(MAKEFILE)
+ ifeq ($(HOST_SYSTEM),cygwin)
