@@ -5,6 +5,8 @@ PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
 CLAMAVUSER=%%CLAMAVUSER%%
 CLAMAVGROUP=%%CLAMAVGROUP%%
+UID=106
+GID=$UID
 
 CLAMRUN=/var/run/clamav
 CLAMLOG=/var/log/clamav
@@ -13,7 +15,7 @@ DATADIR=%%DATADIR%%
 if [ "$2" = "PRE-INSTALL" ]; then
 
 	if ! pw groupshow "$CLAMAVGROUP" 2>/dev/null 1>&2; then
-		if pw groupadd $CLAMAVGROUP; then
+		if pw groupadd $CLAMAVGROUP -g $GID; then
 			echo "=> Added group \"$CLAMAVGROUP\"."
 		else
 			echo "=> Adding group \"$CLAMAVGROUP\" failed..."
@@ -22,7 +24,7 @@ if [ "$2" = "PRE-INSTALL" ]; then
 	fi
 
 	if ! pw usershow "$CLAMAVUSER" 2>/dev/null 1>&2; then
-		if pw useradd $CLAMAVUSER -g $CLAMAVGROUP -h - \
+		if pw useradd $CLAMAVUSER -u $UID -g $CLAMAVGROUP -h - \
 			-s "/sbin/nologin" -d "/nonexistent" \
 			-c "Clam Antivirus"; \
 		then
