@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	mail tk83
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/ \
@@ -25,7 +25,6 @@ CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.3 \
 		--with-tcl-include=${PREFIX}/include/tcl8.3 \
 		--with-tk-include=${PREFIX}/include/tk8.3
 MAKE_ARGS+=	-j2 -B
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude '*/imap/*'
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
 		doc/userproc.example

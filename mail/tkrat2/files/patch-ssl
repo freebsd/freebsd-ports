@@ -1,0 +1,11 @@
+--- imap/src/osdep/unix/Makefile.orig	Wed Sep 11 22:01:08 2002
++++ imap/src/osdep/unix/Makefile	Wed Sep 11 22:02:49 2002
+@@ -30,7 +30,7 @@
+ 
+ SSLDIR=/usr/local/ssl
+ SSLCERTS=$(SSLDIR)/certs
+-SSLINCLUDE=$(SSLDIR)/include
++SSLINCLUDE=/usr/include/openssl
+ SSLLIB=$(SSLDIR)/lib
+ 
+ SSLCRYPTO=-lcrypto
