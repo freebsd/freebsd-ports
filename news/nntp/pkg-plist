@@ -1,5 +1,7 @@
 sbin/nntpd
+news/cnewsbin/acttimes
 news/cnewsbin/nntpxmit
 news/cnewsbin/nntpxfer
 @comment     just in case anyone wants it
 news/cnewsbin/shlock
+news/lib/overview.fmt
