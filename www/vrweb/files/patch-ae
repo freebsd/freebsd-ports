@@ -1,0 +1,13 @@
+--- src/harmony/scene/mesacontext.C.orig	Thu Apr 23 16:08:17 1998
++++ src/harmony/scene/mesacontext.C	Thu Apr 23 16:08:47 1998
+@@ -95,8 +95,8 @@
+ 
+ #include <IV-X11/Xdefs.h>      /* Display, Font of X11 */
+ /* include <mesa/GL/xmesa.h> */
+-#include <mesa/GL/glx.h>
+-#include <mesa/GL/glu.h>
++#include <GL/glx.h>
++#include <GL/glu.h>
+ #include <IV-X11/Xundefs.h>  /* get back to IV's names */
+ 
+ #include <iostream.h>
