@@ -32,7 +32,7 @@ else
 fi
 
 echo "Modifying permissions on ${PKG_PREFIX}/libexec/amanda"
-/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda
+/usr/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda
 /bin/chmod 510 ${PKG_PREFIX}/libexec/amanda
-/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda/*
+/usr/sbin/chown root:amanda ${PKG_PREFIX}/libexec/amanda/*
 /bin/chmod 4550 ${PKG_PREFIX}/libexec/amanda/*
