@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.11.3
+PORTVERSION=	0.12.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
@@ -23,7 +23,8 @@ OPTIONS=	PEAR_DATE "PEAR::Date support" off \
 USE_PHP=	yes
 
 CATEGORY=	DB/DataObject
-FILES=		FormBuilder.php FormBuilder/QuickForm.php FormBuilder/QuickForm/ElementTable.php
+FILES=		FormBuilder.php FormBuilder/QuickForm.php FormBuilder/QuickForm/ElementTable.php \
+		FormBuilder/QuickForm/PopupSelect.php
 
 .if defined(WITH_PEAR_DATE)
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date
