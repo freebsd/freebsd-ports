@@ -31,6 +31,6 @@ post-patch:
 		${WRKSRC}/conserver/conserver.rc
 
 post-install:
-	${LN} -s ../conserver.rc ${PREFIX}/etc/rc.d/conserver.sh-
+	${LN} -sf ../conserver.rc ${PREFIX}/etc/rc.d/conserver.sh-
 
 .include <bsd.port.mk>
