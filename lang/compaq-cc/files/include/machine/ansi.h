@@ -1,6 +1,3 @@
-/* $FreeBSD: /tmp/pcvs/ports/lang/compaq-cc/files/include/machine/Attic/ansi.h,v 1.1 2001-01-11 02:55:55 obrien Exp $ */
-/* From: NetBSD: ansi.h,v 1.9 1997/11/23 20:20:53 kleink Exp */
-
 /*-
  * Copyright (c) 1990, 1993
  *	The Regents of the University of California.  All rights reserved.
@@ -34,6 +31,9 @@
  * SUCH DAMAGE.
  *
  *	@(#)ansi.h	8.2 (Berkeley) 1/4/94
+ *	From: NetBSD: ansi.h,v 1.9 1997/11/23 20:20:53 kleink Exp
+ *  From FreeBSD: src/sys/alpha/include/ansi.h,v 1.5.2.5 2001/03/05 13:08:49 obrien
+ * $FreeBSD: /tmp/pcvs/ports/lang/compaq-cc/files/include/machine/Attic/ansi.h,v 1.2 2001-03-21 00:39:55 obrien Exp $
  */
 
 #ifndef	_ANSI_H_
@@ -49,20 +49,19 @@
  *	#endif
  */
 #define	_BSD_CLOCK_T_		int		/* clock() */
+#define	_BSD_CLOCKID_T_		int		/* clockid_t */
 #define	_BSD_PTRDIFF_T_		long		/* ptr1 - ptr2 */
 #define	_BSD_SIZE_T_		unsigned long	/* sizeof() */
+#define	_BSD_SOCKLEN_T_		__uint32_t
 #define	_BSD_SSIZE_T_		long		/* byte count or error */
 #define	_BSD_TIME_T_		int		/* time() */
+#define	_BSD_TIMER_T_		int		/* timer_t */
 typedef struct {
 	char *__base;
 	int __offset;
 	int __pad;
 } __va_list;
 #define	_BSD_VA_LIST_		__va_list	/* va_list */
-#define	_BSD_CLOCKID_T_		int		/* clockid_t */
-#define	_BSD_TIMER_T_		int		/* timer_t */
-#define	_BSD_SUSECONDS_T_	int		/* suseconds_t */
-#define	_BSD_USECONDS_T_	unsigned int	/* useconds_t */
 
 /*
  * Types which are fundamental to the implementation and must be used
