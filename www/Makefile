@@ -557,6 +557,7 @@
     SUBDIR += pear-HTTP
     SUBDIR += pear-HTTP_Header
     SUBDIR += pear-HTTP_Request
+    SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pgdriver
