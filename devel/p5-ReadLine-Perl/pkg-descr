@@ -1,0 +1,2 @@
+This module allows Term::ReadLine (which ships with Perl 5) to
+provide satisfactory editing without using GNU readline.
