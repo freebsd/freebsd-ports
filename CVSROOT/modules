@@ -7570,6 +7570,7 @@ xmms-gforce	ports/graphics/xmms-gforce
 xmms-goom	ports/graphics/xmms-goom
 xmms-kde	ports/audio/xmms-kde
 xmms-liveice	ports/audio/xmms-liveice
+xmms-musepack	ports/audio/xmms-musepack
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-shn	ports/audio/xmms-shn
 xmms-sndfile	ports/audio/xmms-sndfile
