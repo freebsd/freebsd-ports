@@ -27,6 +27,8 @@ CFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 
+BROKEN=	"Does not build with gtk+-2.4"
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64

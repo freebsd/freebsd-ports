@@ -20,4 +20,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+BROKEN=	"Does not build with gtk+-2.4"
+
 .include <bsd.port.mk>
