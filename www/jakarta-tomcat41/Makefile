@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	4.1.29
-PORTREVISION=	1
+PORTVERSION=	4.1.30
+PORTREVISION=	0
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-4/v${PORTVERSION}/bin/ \
 		${MASTER_SITE_LOCAL}
