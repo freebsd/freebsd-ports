@@ -1,0 +1,10 @@
+--- src/ui-menubar.h.orig	Mon Jan 24 17:16:08 2000
++++ src/ui-menubar.h	Tue Jan 25 08:35:02 2000
+@@ -20,6 +20,7 @@
+ #ifndef UI_MENUBAR_H
+ #define UI_MENUBAR_H
+ 
++#include <sys/types.h>
+ #include "ui-types.h"
+ 
+ struct _UI_Menubar
