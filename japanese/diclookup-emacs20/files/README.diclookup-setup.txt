@@ -14,29 +14,32 @@ One of mule (ja-*mule-2.3 or mule-2.3) is necessary for this program.
 
     dserver:  Dictionary server.  NDTP has been a protocol for dserver.
 	      It supports EB/EBG/EBXA/EPWING CDROM dictionaries.
-	      FreeBSD port is ready for installation: ja-dserver-2.2.2
+	      FreeBSD port is ready for installation: ja-dserver-2.2.2_1
 	      Dserver packages includes `dictionary file compression tool'
 
     ndtpd:    Dserver-compatible Network Dictionary server.  
 	      It also supports EB/EBG/EBXA/EPWING CDROM dictionaries.
+	      FreeBSD port is redy for installation: ja-ndtpd-2.3.8
+	      Also includes `dictionary file compression tool'
+
     Also refer documents to each packages for setup of server.
 
 1. Add startup code to site-start.el
     Typing
-	% /usr/local/lib/dserver/setup-diclookup.sh
+	% /usr/local/share/doc/diclookup-emacs20/setup-diclookup.sh
     displays you `ja-diclookup setup dialog':
      ------------------------ja-diclookup setup --------------------------
      |                                                                   |
      | You have to install appropreate startup code for diclookup-mule.  |
      | This setup script automatically it to:                            |
-     | /usr/local/share/mule/19.34/site-lisp/site-start.el.              |
+     | /usr/local/share/emacs/20.7/site-lisp/site-start.el.              |
      |                                                                   |
      | Are you sure?                                                     |
      |-------------------------------------------------------------------|
      |                       [ Yes ]         No                          |
      |-------------------------------------------------------------------|
 	By answering [ Yes ], startup code is automatically added to
-	/usr/local/share/mule/19.34/site-lisp/site-start.el
+	/usr/local/share/emacs/20.7/site-lisp/site-start.el
 	(Deinstallation is possible by deinstall-diclookup.sh)
 
 2. Usage.
@@ -73,29 +76,30 @@ diclookup-mule は, mule の上で, 電子辞書を引けるようにするための
     しておくことが必須です.
     NDTP サーバとしては, 老舗の dserver や, SRA の笠原さんが開発なさっている 
     ndtpd などが知られています. 
-    dserver は, ja-dserver-2.2.2 というパッケージになっています.
-    ndtp も近日 FreeBSD ports colleciton に取り込まれることでしょう.
+    dserver は, ja-dserver-2.2.2_1 というパッケージになっています.
+    ndtp も というパッケージになっています.
     
     dserver または, ndtp の設定は, それぞれのパッケージに附属の
     文書を参照してください.
     
 I. 起動の準備.
 
-    ~/.emacs もしくは ${PREFIX}/share/mule/19.34/site-lisp/site-start.el などの,
-    初期設定ファイルに, diclookup-mule 起動のためのエントリを追加します.
-    [${PREFIX}/lib/dserver/setup-diclookup.sh] を起動すると, 自動的に
-   設定をsite-start.el に追加してくれます．
+    ~/.emacs もしくは ${PREFIX}/share/emacs/20.7/site-lisp/site-start.el
+    などの初期設定ファイルに, diclookup-mule 起動のためのエントリを追加します.
+    [${PREFIX}/share/doc/diclookup-emacs20/setup-diclookup.sh] を起動すると, 
+    自動的に設定をsite-start.el に追加してくれます．
 
   ※ ${PREFIX}
      ここで ${PREFIX} とは ports をコンパイル時の環境変数 PREFIX を
      示します. packages では, [/usr/local] となります.  上記の場合,
-     [/usr/local/lib/dserver/setup-diclookup.sh] と適時読みかえてください. 
+     [/usr/local/share/doc/diclookup-emacs20/setup-diclookup.sh] と適時
+     読みかえてください. 
 
 II. site-start.el の再編集.
 
    setup-diclookup.sh を起動すれば, 自動的に設定を追加してくれるのですが,
    一点だけ修正するところがあります.
-   ${PREFIX}/share/mule/19.34/site-lisp/site-start.el の次の行です.
+   ${PREFIX}/share/emacs/20.7/site-lisp/site-start.el の次の行です.
 
 --------
 (setq od-dictfile-list '("od-chujiten" "od-kojien" "od-readers" "od-crown")) ; diclookup-mule
@@ -132,7 +136,8 @@ II. site-start.el の再編集.
 III. 削除(uninstall)
 
     削除は，インストールの逆を行えばよいわけですが，自動的に削除を
-  行うためのシェルスクリプト，[${PREFIX}/lib/dserver/deinstall.sh] を
+  行うためのシェルスクリプト，
+  [${PREFIX}/share/doc/diclookup-emacs20/deinstall.sh] を
   用意しておきました．
 
     その後で，pkg_deleteを行えばOKのはずです．
