@@ -25,6 +25,7 @@ PostgreSQL	"PHP:    PostgreSQL database support" OFF \
 mSQL		"PHP:    mSQL database support" OFF \
 dBase		"PHP:    dBase database support" OFF \
 OpenLDAP	"PHP:    OpenLDAP support" OFF \
+SNMP		"PHP:    SNMP support" OFF \
 XML		"PHP:    XML support" OFF \
 2> /tmp/checklist.tmp.$$
 
@@ -115,6 +116,10 @@ while [ "$1" ]; do
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/liblber.a:\${PORTSDIR}/net/openldap"
 			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
+			;;
+		\"SNMP\")
+			echo "LIB_DEPENDS+=     snmp.3:\${PORTSDIR}/net/ucd-snmp"
+			echo "PHP_CONF_ARGS+=   --with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
 			echo "BUILD_DEPENDS+=	\${PREFIX}/lib/libexpat.a:\${PORTSDIR}/textproc/expat"
