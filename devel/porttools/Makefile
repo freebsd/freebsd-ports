@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.26
+PORTVERSION=	0.50
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,20 +17,12 @@ COMMENT=	Tools for testing and submitting port updates and new ports
 RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
 		sudo:${PORTSDIR}/security/sudo
 
-NO_BUILD=	yes
-
-SCRIPTS=	pr-update testport
-MAN1=		pr-change.1 pr-new.1 pr-update.1 testport.1
-DOCS=		LICENSE NEWS README THANKS TODO
-
-do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
-	${LN} ${PREFIX}/bin/pr-update ${PREFIX}/bin/pr-change
-	${LN} ${PREFIX}/bin/pr-update ${PREFIX}/bin/pr-new
-	cd ${WRKSRC} && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+INSTALL_TARGET=	install install-docs
 .endif
+
+MAKE_ENV=	PREFIX="${PREFIX}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
+MAN1=		port.1
+MAN5=		porttools.5
 
 .include <bsd.port.mk>
