@@ -1,5 +1,5 @@
---- admin/ltmain.sh.orig	Sun Mar 10 00:03:33 2002
-+++ admin/ltmain.sh	Tue Jan  7 21:37:22 2003
+--- admin/ltmain.sh.orig	Mon Jun  7 02:20:19 2004
++++ admin/ltmain.sh	Mon Jun  7 02:24:08 2004
 @@ -1123,6 +1123,7 @@
  	;;
  
@@ -8,28 +8,25 @@
  	avoid_version=yes
  	continue
  	;;
-@@ -1206,6 +1207,10 @@
+@@ -1202,7 +1203,7 @@
+       -l*)
+ 	if test "$arg" = "-lc"; then
+ 	  case $host in
+-	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
++	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos* | *-*-freebsd*)
  	    # These systems don't actually have c library (as such)
  	    continue
  	    ;;
-+	  *-*-freebsd*)
-+	    # FreeBSD doesn't need this...
-+	    continue
-+	    ;;
- 	  *-*-rhapsody* | *-*-darwin1.[012])
- 	    # Rhapsody C library is in the System framework
- 	    deplibs="$deplibs -framework System"
-@@ -2747,6 +2752,9 @@
- 	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
+@@ -2744,7 +2745,7 @@
+       if test "$build_libtool_libs" = yes; then
+ 	if test -n "$rpath"; then
+ 	  case $host in
+-	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos*)
++	  *-*-cygwin* | *-*-mingw* | *-*-pw32* | *-*-os2* | *-*-beos* | *-*-freebsd*)
  	    # these systems don't actually have a c library (as such)!
  	    ;;
-+	  *-*-freebsd*)
-+	    # FreeBSD doesn't need this...
-+	    ;;
  	  *-*-rhapsody* | *-*-darwin1.[012])
- 	    # Rhapsody C library is in the System framework
- 	    deplibs="$deplibs -framework System"
-@@ -4622,10 +4630,12 @@
+@@ -4622,10 +4623,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.

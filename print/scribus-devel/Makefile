@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	scribus
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	print editors
-MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
+MASTER_SITES=	http://ahnews.music.salford.ac.uk/scribus/downloads/ \
+		http://web2.altmuehlnet.de/fschmid/ \
 		http://scribus.planetmirror.com/ \
-		http://mirrors.ntua.gr/Scribus/ \
-		http://ftp.ntua.gr/pub/gnu/scribus/ \
-		ftp://ftp.ntua.gr/pub/gnu/scribus/
+		http://mirrors.ntua.gr/Scribus/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
@@ -28,6 +27,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_GHOSTSCRIPT_RUN=	yes
 
+USE_BZIP2=	yes
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
