@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# need to fixup ${PREFIX}/etc/postfix/postfix-files to indicate compressed
+# man pages, since the ports software compresses them later, and if we
+# run post-install it will complain about missing files
+# (script from Simon J. Mudd)
+
+ed ${PREFIX}/etc/postfix/postfix-files <<EOF || exit 1
+%s/\(\/man[158]\/.*\.[158]\):/\1.gz:/
+w
+q
+EOF

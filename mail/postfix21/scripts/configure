@@ -2,24 +2,7 @@
 #
 # $FreeBSD$
 
-cd ${WRKSRC}/man
-
-for f in ${MAN1} ; do
-	mv man1/$f man1/$f.bak && \
-		soelim man1/$f.bak | sed s+!!PREFIX!!+$PREFIX+g >man1/$f
-done
-	
-for f in ${MAN5} ; do
-	mv man5/$f man5/$f.bak && \
-		soelim man5/$f.bak | sed s+!!PREFIX!!+$PREFIX+g >man5/$f
-done
-	
-for f in ${MAN8} ; do
-	mv man8/$f man8/$f.bak && \
-		soelim man8/$f.bak | sed s+!!PREFIX!!+$PREFIX+g >man8/$f
-done
-
-for f in `find ${WRKSRC} | xargs grep -l '\!\!PREFIX\!\!' ` ; do \
+for f in `find ${WRKSRC} -type f | xargs grep -l '\!\!PREFIX\!\!' ` ; do \
 	mv $f $f.orig && sed s+!!PREFIX!!+$PREFIX+g < $f.orig > $f && \
 		rm $f.orig
 done

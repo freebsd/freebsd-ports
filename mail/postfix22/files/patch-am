@@ -6,18 +6,18 @@
 ! # to use.  If you use this feature, run "postmap /etc/postfix/transport"
   # after change, then "postfix reload".
   # 
-! # transport_maps = dbm:/etc/postfix/transport
-! # transport_maps = hash:/etc/postfix/transport
-! # transport_maps = hash:/etc/postfix/transport, nis:transport
-! # transport_maps = hash:/etc/postfix/transport, netinfo:/transport
+! #transport_maps = dbm:/etc/postfix/transport
+! #transport_maps = hash:/etc/postfix/transport
+! #transport_maps = hash:/etc/postfix/transport, nis:transport
+! #transport_maps = hash:/etc/postfix/transport, netinfo:/transport
   transport_maps = 
 --- 10,18 ----
   # By default, this feature is disabled. Specify the types of databases
 ! # to use.  If you use this feature, run "postmap !!PREFIX!!/etc/postfix/transport"
   # after change, then "postfix reload".
   # 
-! # transport_maps = dbm:!!PREFIX!!/etc/postfix/transport
-! # transport_maps = hash:!!PREFIX!!/etc/postfix/transport
-! # transport_maps = hash:!!PREFIX!!/etc/postfix/transport, nis:transport
-! # transport_maps = hash:!!PREFIX!!/etc/postfix/transport, netinfo:/transport
+! #transport_maps = dbm:!!PREFIX!!/etc/postfix/transport
+! #transport_maps = hash:!!PREFIX!!/etc/postfix/transport
+! #transport_maps = hash:!!PREFIX!!/etc/postfix/transport, nis:transport
+! #transport_maps = hash:!!PREFIX!!/etc/postfix/transport, netinfo:/transport
   transport_maps = 

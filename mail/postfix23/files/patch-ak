@@ -12,15 +12,15 @@
 ***************
 *** 16,21 ****
   #
-! # relocated_maps = dbm:/etc/postfix/relocated
-! # relocated_maps = hash:/etc/postfix/relocated
-! # relocated_maps = hash:/etc/postfix/relocated, nis:virtual
-! # relocated_maps = hash:/etc/postfix/relocated, netinfo:/relocated
+! #relocated_maps = dbm:/etc/postfix/relocated
+! #relocated_maps = hash:/etc/postfix/relocated
+! #relocated_maps = hash:/etc/postfix/relocated, nis:virtual
+! #relocated_maps = hash:/etc/postfix/relocated, netinfo:/relocated
   relocated_maps = 
 --- 16,21 ----
   #
-! # relocated_maps = dbm:!!PREFIX!!/etc/postfix/relocated
-! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated
-! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, nis:virtual
-! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, netinfo:/relocated
+! #relocated_maps = dbm:!!PREFIX!!/etc/postfix/relocated
+! #relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated
+! #relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, nis:virtual
+! #relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, netinfo:/relocated
   relocated_maps = 

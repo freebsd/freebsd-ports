@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.14 2001-11-15 16:31:09 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.15 2002-01-30 19:59:40 dwcjr Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -11,8 +11,8 @@ if [ "${BATCH}" = "yes" ]; then
 	set \"PCRE\"
 else
 	/usr/bin/dialog --title "Postfix configuration options" --clear \
-			--checklist "\n\
-Please select desired options:" -1 -1 8 \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
@@ -46,40 +46,41 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 echo "PREFIX=	${PREFIX}"
 
-SUB_PCRE="@comment "
-SUB_SASL="@comment "
 SUB_TLS="@comment "
-SUB_LDAP="@comment "
 SUB_TEST="@comment "
 
 while [ "$1" ]; do
 	case $1 in
 		\"PCRE\")
-			echo "CONF1+=		pcre_table"
-			echo "CONF2+=		sample-pcre.cf"
-			echo "MAN5+=		pcre_table.5"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
 			SUB_PCRE=""
 			;;
 		\"SASL\")
-			echo "CONF2+=		sample-auth.cf"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
+			if [ -f ${PREFIX}/lib/libsasl.a ]; then 
+				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+				fi
+			else
+				echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
+				echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
+			fi
 			echo ".if exists(/usr/lib/libkrb.a)"
 			echo "POSTFIX_AUXLIBS+=	-lkrb -ldes -lcom_err"
 			echo ".endif"
 			SUB_SASL=""
 			;;
 		\"TLS\")
-			echo "CONF2+=		sample-tls.cf"
-			echo "BIN1+=		tlsmgr"
+			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.13-20010228-pl08-0.9.6b.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.13-20010228-pl08-0.9.6b/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.1-1.1.1-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.1-1.1.1-0.9.6c/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
@@ -94,21 +95,22 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			;;
 		\"OpenLDAP\")
-			echo "CONF2+=		sample-ldap.cf"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
-			SUB_LDAP=""
 			;;
 		\"Test\")
-			echo "BIN3=		smtp-sink smtp-source"
+			echo "BIN1=		smtp-sink smtp-source"
 			SUB_TEST=""
 			;;
 		\"IPv6\")
+			/usr/bin/dialog --msgbox "IPv6 is currently broken until kame updates patches" 5 60 > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
 			if [ `uname -m` != "i386" ]; then
 				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-				exit 1
+			exit 1
 			fi
 			if [ X$SUB_TLS = "X" ]; then
 				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
@@ -117,7 +119,7 @@ while [ "$1" ]; do
 			fi
 			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010228pl04-v6-20010913a.diff.gz"
+			echo "PATCHFILES+=	postfix-20010225snap-v6-20010228a.diff.gz"
 			echo "PATCH_DIST_STRIP= -p1"
 			echo ""
 			;;
@@ -130,8 +132,5 @@ while [ "$1" ]; do
 	shift
 done
 
-echo "PLIST_SUB+=	SUB_PCRE=\"${SUB_PCRE}\""
-echo "PLIST_SUB+=	SUB_SASL=\"${SUB_SASL}\""
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
-echo "PLIST_SUB+=	SUB_LDAP=\"${SUB_LDAP}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
