@@ -1,0 +1,516 @@
+--- util/Timer.h	2004/08/22 17:39:10	1.1
++++ util/Timer.h	2004/08/22 17:39:44
+@@ -68,6 +68,7 @@
+ 
+ #include "global.h"
+ #include <list>
++#include <iostream>
+ 
+ bool operator < ( const timeval& lhs, const timeval& rhs);
+ void addMs ( timeval* lhs, int timeMs);
+--- util/mstring.hxx	2004/08/22 17:40:25	1.1
++++ util/mstring.hxx	2004/08/22 17:45:07
+@@ -206,6 +206,7 @@
+         ///Compare two strings ignoring case. The function is provided just for convinience and uniformity
+         int comparei(const string &str, size_type len = npos) const;
+ 
++#if 0
+         ///Compare two strings. The function is provided just for convinience and uniformity
+         friend int compare(const mstring &str1, const mstring &str2, size_type len = npos)
+         {
+@@ -217,6 +218,7 @@
+         {
+             return str1.comparei(str2, len);
+         }
++#endif
+ 
+         ///Insert pair-symb into the string
+         mstring & ins_pair(const string &chrset, char pair_symb);
+--- util/Fifo.cc	2004/08/22 17:47:54	1.1
++++ util/Fifo.cc	2004/08/22 17:49:21
+@@ -87,7 +87,7 @@
+     // This will unlock the object's mutex, wait for a condition's signal,
+     // and relock.
+     //
+-    int error = myCondition.wait(&myMutex, relativeTimeout);
++    int error = myCondition.wait(&this->myMutex, relativeTimeout);
+ 
+     if ( error != 0 )
+     {
+@@ -107,5 +107,5 @@
+         }
+     }
+ 
+-    return ( myFifoSize );
++    return ( this->myFifoSize );
+ }
+--- util/PollFifo.cc	2004/08/22 17:50:02	1.1
++++ util/PollFifo.cc	2004/08/22 17:50:54
+@@ -140,7 +140,7 @@
+     // The mutex is locked coming into this method. Unlock it while we
+     // block so others can use the Fifo.
+     //
+-    myMutex.unlock();
++    this->myMutex.unlock();
+     
+     // Block, waiting for io activity. This may throw a transport
+     // exception. If so, let it pass through.
+@@ -151,7 +151,7 @@
+ 
+     // Lock the Fifo back up.
+     //
+-    myMutex.lock();
++    this->myMutex.lock();
+ 
+     VDEBUG(log) << fn << ": poll returned. fds active = " << numberFdsActive
+ 	    	<< VDEBUG_END(log);
+--- sip/sipstack/BaseUrl.hxx	2004/08/22 17:58:41	1.1
++++ sip/sipstack/BaseUrl.hxx	2004/08/22 18:02:58
+@@ -143,7 +143,7 @@
+ namespace std
+ #endif
+ {
+-    struct hash< Sptr < Vocal::BaseUrl > >
++    template <> struct hash< Sptr < Vocal::BaseUrl > >
+     {
+         size_t operator() ( const Sptr < Vocal::BaseUrl >& src ) const
+         {
+--- sip/sipstack/SipAcceptEncoding.cxx	2004/08/22 18:07:01	1.1
++++ sip/sipstack/SipAcceptEncoding.cxx	2004/08/22 18:08:13
+@@ -103,7 +103,7 @@
+ 
+         scanAcceptEncoding(vdata);
+     }
+-    catch (SipAcceptEncodingParserException exception)
++    catch (SipAcceptEncodingParserException&)
+     {
+ 
+         if (SipParserMode::sipParserMode())
+--- sip/sipstack/SipAllow.cxx	2004/08/22 18:10:09	1.1
++++ sip/sipstack/SipAllow.cxx	2004/08/22 18:10:22
+@@ -109,7 +109,7 @@
+ 
+         scanSipAllow(vdata);
+     }
+-    catch (SipAllowParserException exception)
++    catch (SipAllowParserException&)
+     {
+ 
+         if (SipParserMode::sipParserMode())
+--- sip/sipstack/SipAcceptLanguage.cxx	2004/08/22 18:09:08	1.1
++++ sip/sipstack/SipAcceptLanguage.cxx	2004/08/22 18:09:20
+@@ -99,7 +99,7 @@
+ 
+         scanAcceptLanguage(vdata);
+     }
+-    catch (SipAcceptLanguageParserException exception)
++    catch (SipAcceptLanguageParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipAlso.cxx	2004/08/22 18:11:02	1.1
++++ sip/sipstack/SipAlso.cxx	2004/08/22 18:11:24
+@@ -257,7 +257,7 @@
+ 
+         scanSipAlso(data);
+     }
+-    catch (SipAlsoParserException exception)
++    catch (SipAlsoParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+@@ -283,7 +283,7 @@
+     {
+         parse(alsostr);
+     }
+-    catch (SipAlsoParserException exception)
++    catch (SipAlsoParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipAuthorization.cxx	2004/08/22 18:12:06	1.1
++++ sip/sipstack/SipAuthorization.cxx	2004/08/22 18:13:29
+@@ -135,7 +135,7 @@
+     {
+         scanSipAuthorization(nData);
+     }
+-    catch (SipAuthorizationParserException exception)
++    catch (SipAuthorizationParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipCSeq.cxx	2004/08/22 18:14:16	1.1
++++ sip/sipstack/SipCSeq.cxx	2004/08/22 18:14:37
+@@ -173,7 +173,7 @@
+     {
+         parse(cseqstr);
+     }
+-    catch (SipCSeqParserException exception)
++    catch (SipCSeqParserException&)
+     {
+ 
+         if (SipParserMode::sipParserMode())
+@@ -237,7 +237,7 @@
+     {
+         scanSipCSeq(data);
+     }
+-    catch (SipCSeqParserException exception)
++    catch (SipCSeqParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipCallId.cxx	2004/08/22 18:16:07	1.1
++++ sip/sipstack/SipCallId.cxx	2004/08/22 18:16:25
+@@ -163,7 +163,7 @@
+ 
+         scanSipCallId(data);
+     }
+-    catch (SipCallIdParserException exception)
++    catch (SipCallIdParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+@@ -189,7 +189,7 @@
+     {
+         parse(callidstr);
+     }
+-    catch (SipCallIdParserException exception)
++    catch (SipCallIdParserException&)
+     {
+ 
+         if (SipParserMode::sipParserMode())
+--- sip/sipstack/SipContact.cxx	2004/08/22 18:17:25	1.1
++++ sip/sipstack/SipContact.cxx	2004/08/22 18:17:39
+@@ -138,7 +138,7 @@
+     {
+         parse(contactstr);
+     }
+-    catch (SipContactParserException exception)
++    catch (SipContactParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipContentLength.cxx	2004/08/22 18:21:48	1.1
++++ sip/sipstack/SipContentLength.cxx	2004/08/22 18:22:00
+@@ -113,7 +113,7 @@
+     {
+         parse(clstr);
+     }
+-    catch (SipContentLengthParserException exception)
++    catch (SipContentLengthParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipContentDisposition.cxx	2004/08/22 18:18:37	1.1
++++ sip/sipstack/SipContentDisposition.cxx	2004/08/22 18:18:53
+@@ -115,7 +115,7 @@
+ 
+         scanSipContentDisposition(nData);
+     }
+-    catch (SipContentDispositionParserException exception)
++    catch (SipContentDispositionParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipContentEncoding.cxx	2004/08/22 18:19:32	1.1
++++ sip/sipstack/SipContentEncoding.cxx	2004/08/22 18:19:46
+@@ -112,7 +112,7 @@
+     {
+         scanSipContentEncoding(nData);
+     }
+-    catch (SipContentEncodingParserException exception)
++    catch (SipContentEncodingParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipContentLanguage.cxx	2004/08/22 18:20:43	1.1
++++ sip/sipstack/SipContentLanguage.cxx	2004/08/22 18:20:57
+@@ -123,7 +123,7 @@
+ 
+         scanSipContentLanguage(nData);
+     }
+-    catch (SipContentLanguageParserException exception)
++    catch (SipContentLanguageParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipDate.cxx	2004/08/22 18:22:49	1.1
++++ sip/sipstack/SipDate.cxx	2004/08/22 18:23:03
+@@ -110,7 +110,7 @@
+ 
+         scanSipDate(nData);
+     }
+-    catch (SipDateParserException exception)
++    catch (SipDateParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipDiversion.cxx	2004/08/22 18:23:50	1.1
++++ sip/sipstack/SipDiversion.cxx	2004/08/22 18:24:07
+@@ -262,7 +262,7 @@
+     {
+         parse(rdata);
+     }
+-    catch (SipDiversionParserException exception)
++    catch (SipDiversionParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+@@ -394,7 +394,7 @@
+ 
+         scanSipDiversion(data);
+     }
+-    catch (SipDiversionParserException exception)
++    catch (SipDiversionParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipEncryption.cxx	2004/08/22 18:24:48	1.1
++++ sip/sipstack/SipEncryption.cxx	2004/08/22 18:24:59
+@@ -97,7 +97,7 @@
+     {
+         scanEncryption(data1);
+     }
+-    catch (SipEncryptionParserException exception)
++    catch (SipEncryptionParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipExpires.cxx	2004/08/22 18:25:40	1.1
++++ sip/sipstack/SipExpires.cxx	2004/08/22 18:26:02
+@@ -105,7 +105,7 @@
+ 
+         scanSipExpires(nData);
+     }
+-    catch (SipExpiresParserException exception)
++    catch (SipExpiresParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipHide.cxx	2004/08/22 18:27:00	1.1
++++ sip/sipstack/SipHide.cxx	2004/08/22 18:27:15
+@@ -116,7 +116,7 @@
+ 
+         scanHide(data1);
+     }
+-    catch (SipHideParserException exception)
++    catch (SipHideParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipInReplyTo.cxx	2004/08/22 18:27:59	1.1
++++ sip/sipstack/SipInReplyTo.cxx	2004/08/22 18:28:26
+@@ -123,7 +123,7 @@
+ 
+         scanSipInReplyTo(nData);
+     }
+-    catch (SipInReplyToParserException exception)
++    catch (SipInReplyToParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipMaxForwards.cxx	2004/08/22 18:29:14	1.1
++++ sip/sipstack/SipMaxForwards.cxx	2004/08/22 18:29:33
+@@ -118,7 +118,7 @@
+ 
+         scanSipMaxForwards(nData);
+     }
+-    catch (SipMaxForwardsParserException exception)
++    catch (SipMaxForwardsParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipMimeVersion.cxx	2004/08/22 18:30:23	1.1
++++ sip/sipstack/SipMimeVersion.cxx	2004/08/22 18:30:39
+@@ -113,7 +113,7 @@
+ 
+         scanSipMimeVersion(nData);
+     }
+-    catch (SipMimeVersionParserException exception)
++    catch (SipMimeVersionParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipMinSE.cxx	2004/08/22 18:31:20	1.1
++++ sip/sipstack/SipMinSE.cxx	2004/08/22 18:31:35
+@@ -101,7 +101,7 @@
+     {
+         scanSipMinSE(nData);
+     }
+-    catch (SipMinSEParserException exception)
++    catch (SipMinSEParserException&)
+     {
+         parseError("Failed to Decode SipMinSE in decode() " );
+     }
+--- sip/sipstack/SipOrganization.cxx	2004/08/22 18:32:44	1.1
++++ sip/sipstack/SipOrganization.cxx	2004/08/22 18:33:01
+@@ -123,7 +123,7 @@
+     {
+         scanSipOrganization(nData);
+     }
+-    catch (SipOrganizationParserException exception)
++    catch (SipOrganizationParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipPriority.cxx	2004/08/22 18:33:59	1.1
++++ sip/sipstack/SipPriority.cxx	2004/08/22 18:34:15
+@@ -136,7 +136,7 @@
+     {
+         scanPriority(data1);
+     }
+-    catch (SipPriorityParserException exception)
++    catch (SipPriorityParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipRecordRoute.cxx	2004/08/22 18:38:29	1.1
++++ sip/sipstack/SipRecordRoute.cxx	2004/08/22 18:38:44
+@@ -115,7 +115,7 @@
+     {
+         parse(rrstr);
+     }
+-    catch (SipRecordRouteParserException exception)
++    catch (SipRecordRouteParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipProxyAuthenticate.cxx	2004/08/22 18:35:29	1.1
++++ sip/sipstack/SipProxyAuthenticate.cxx	2004/08/22 18:35:52
+@@ -135,7 +135,7 @@
+     {
+         scanSipProxyauthorization(nData);
+     }
+-    catch (SipProxyAuthenticateParserException exception)
++    catch (SipProxyAuthenticateParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipProxyAuthorization.cxx	2004/08/22 18:37:23	1.1
++++ sip/sipstack/SipProxyAuthorization.cxx	2004/08/22 18:37:37
+@@ -136,7 +136,7 @@
+     {
+         scanSipProxyauthorization(nData);
+     }
+-    catch (SipProxyAuthorizationParserException exception)
++    catch (SipProxyAuthorizationParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipReferredBy.cxx	2004/08/22 18:39:40	1.1
++++ sip/sipstack/SipReferredBy.cxx	2004/08/22 18:40:00
+@@ -325,7 +325,7 @@
+         }
+ 
+     }
+-    catch (SipReferredByParserException exception)
++    catch (SipReferredByParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+@@ -414,7 +414,7 @@
+ 	// AmyS - 05/16/02. Parse w/o Referred-By in the str.
+         parse(alsostr);
+     }
+-    catch (SipReferredByParserException exception)
++    catch (SipReferredByParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipReplaces.cxx	2004/08/22 18:42:21	1.1
++++ sip/sipstack/SipReplaces.cxx	2004/08/22 18:42:34
+@@ -148,7 +148,7 @@
+         pdata += data;
+         parse(pdata);
+     }
+-    catch (SipReplacesParserException exception)
++    catch (SipReplacesParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipRequestLine.cxx	2004/08/22 18:43:23	1.1
++++ sip/sipstack/SipRequestLine.cxx	2004/08/22 18:43:40
+@@ -146,7 +146,7 @@
+     {
+         scanSipRequestLine(nData);
+     }
+-    catch (SipRequestLineParserException exception)
++    catch (SipRequestLineParserException&)
+     {
+         cpLog(LOG_ERR, "Failed to Decode in Constructor of Requestline :( ");
+         throw SipRequestLineParserException(
+--- sip/sipstack/SipRequire.cxx	2004/08/22 18:44:25	1.1
++++ sip/sipstack/SipRequire.cxx	2004/08/22 18:44:38
+@@ -121,7 +121,7 @@
+ 
+         scanSipRequire(nData);
+     }
+-    catch (SipRequireParserException exception)
++    catch (SipRequireParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipSessionExpires.cxx	2004/08/22 18:46:01	1.1
++++ sip/sipstack/SipSessionExpires.cxx	2004/08/22 18:46:13
+@@ -105,7 +105,7 @@
+     {
+         scanSipSessionExpires(nData);
+     }
+-    catch (SipSessionExpiresParserException exception)
++    catch (SipSessionExpiresParserException&)
+     {
+         parseError("Failed to Decode SipSessionExpires in decode() " );
+     }
+--- sip/sipstack/SipStatusLine.cxx	2004/08/22 18:47:02	1.1
++++ sip/sipstack/SipStatusLine.cxx	2004/08/22 18:47:23
+@@ -166,7 +166,7 @@
+ 
+         scanSipStatusLine(nData);
+     }
+-    catch (SipStatusLineParserException exception)
++    catch (SipStatusLineParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipSupported.cxx	2004/08/22 18:48:10	1.1
++++ sip/sipstack/SipSupported.cxx	2004/08/22 18:48:21
+@@ -117,7 +117,7 @@
+ 
+         scanSipSupported(nData);
+     }
+-    catch (SipSupportedParserException exception)
++    catch (SipSupportedParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipTransferTo.cxx	2004/08/22 18:50:24	1.1
++++ sip/sipstack/SipTransferTo.cxx	2004/08/22 18:50:39
+@@ -263,7 +263,7 @@
+ 
+         scanSipTransferTo(data);
+     }
+-    catch (SipTransferToParserException exception)
++    catch (SipTransferToParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+@@ -285,7 +285,7 @@
+     {
+         parse(tostr);
+     }
+-    catch (SipTransferToParserException exception)
++    catch (SipTransferToParserException&)
+     {
+         if (SipParserMode::sipParserMode())
+         {
+--- sip/sipstack/SipWwwAuthenticate.cxx	2004/08/22 18:52:20	1.1
++++ sip/sipstack/SipWwwAuthenticate.cxx	2004/08/22 18:52:33
+@@ -137,7 +137,7 @@
+     {
+         scanSipWwwauthorization(nData);
+     }
+-    catch (SipWwwAuthenticateParserException exception)
++    catch (SipWwwAuthenticateParserException& exception)
+     {
+         if (SipParserMode::sipParserMode())
+         {
