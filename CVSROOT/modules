@@ -9351,6 +9351,7 @@ pyfind		ports/sysutils/pyfind
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
 pykawari	ports/games/pykawari
+pyla		ports/comms/pyla
 pylint		ports/devel/pylint
 pylize		ports/misc/pylize
 pymol		ports/biology/pymol
