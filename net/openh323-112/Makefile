@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.11.2
-PORTREVISION=	1
+PORTVERSION=	1.12.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
-		http://www.gnomemeeting.org/downloads/0.96.1/sources/
-DISTFILES=	openh323_1.11.2.tar.gz \
-		pwlib_1.4.7.tar.gz
+		http://www.gnomemeeting.org/downloads/0.98.0/sources/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	roger@freebsd.org
-COMMENT=	A H323 Video Conferencing library, used with OhPhone
+COMMENT=	A H323 Video Conferencing library
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
@@ -37,8 +35,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BISON=	yes
 
 USE_GMAKE=	yes
+USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER=	253
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
+		OPENH323DIR=${WRKDIR}/openh323
 ALL_TARGET=	optnoshared
-MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
+MAKE_ENV=	PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
 		OPENH323DIR=${WRKDIR}/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
