@@ -36,13 +36,15 @@ CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
+pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|-lpthread|-pthread|g'
+
+post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/src/galeon

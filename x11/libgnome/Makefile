@@ -39,7 +39,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gnome.1 gnome-config.1
 MAN5=		gnome-mime.5
 
-post-extract:
+pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \

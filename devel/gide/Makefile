@@ -33,7 +33,7 @@ MAN1=		gide.1 gdbio.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
-post-extract:
+pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
