@@ -1,0 +1,11 @@
+include/ScriptKit/Guile.h
+include/ScriptKit/GuileInterpreter.h
+include/ScriptKit/GuileSCM.h
+include/ScriptKit/GuileScript.h
+include/ScriptKit/SKInterpreter.h
+include/ScriptKit/SKScript.h
+include/ScriptKit/ScriptKit.h
+lib/libsk.a
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+@dirrm include/ScriptKit
