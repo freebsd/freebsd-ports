@@ -7,6 +7,7 @@
 
 PORTNAME=	postnuke
 PORTVERSION=	0.714
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	post-nuke
@@ -48,7 +49,7 @@ do-install:
 	@${CP} -Rp ${WRKSRC}/html ${WRKSRC}/sql ${PREFIX}/${NUKEDIR}
 
 post-install:
-	@${CHMOD} 666 ${PREFIX}/${NUKEDIR}/html/config*.php
+	@${CHMOD} 644 ${PREFIX}/${NUKEDIR}/html/config*.php
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC} && ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR}
