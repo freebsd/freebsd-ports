@@ -9,7 +9,7 @@
 DISTNAME=	qclock
 PKGNAME=	qclock-1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://peloton.runet.edu/pub/distfiles/
+MASTER_SITES=	http://peloton.runet.edu/distfiles/
 
 MAINTAINER=	brett@peloton.runet.edu
 
