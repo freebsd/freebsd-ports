@@ -9,9 +9,9 @@ PORTNAME=	exim
 PORTVERSION=	3.33
 PORTREVISION=	4
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
-		http://www.exim.org/ftp/ \
-		ftp://ftp.is.co.za/networking/mail/transport/exim/
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
+		http://www.exim.org/ftp/exim3/ \
+		ftp://ftp.is.co.za/networking/mail/transport/exim/exim3/
 DISTFILES=	exim-3.33.tar.bz2 exim-texinfo-3.30.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
