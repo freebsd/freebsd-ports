@@ -12,15 +12,21 @@ KDE_MAINTAINER=		will@FreeBSD.org
 # This section contains the USE_ definitions.
 # XXX: Write HAVE_ definitions sometime.
 
-# USE_QT_VER		- Says that the port uses the Qt toolkit.  A number, currently
-#					  1 or 2, specifies which major version of Qt to use.  This
-#					  implies USE_NEWGCC.
-# USE_KDELIBS_VER	- Says that the port uses KDE libraries.  A number, currently 1
-#					  or 2, specifies which major version of KDE to use.  This
-#					  implies USE_QT of the appropriate version.
-# USE_KDEBASE_VER	- Says that the port uses the KDE base system.  A number,
-#					  currently 1 or 2, specifies which major version of KDE to
-#					  use.  This implies USE_KDELIBS of the appropriate version.
+# USE_QT_VER		- Says that the port uses the Qt toolkit.  Possible values:
+#					  1, 2, or 3; each specify the major version of Qt to use.
+#					  This implies USE_NEWGCC.
+# USE_KDELIBS_VER	- Says that the port uses KDE libraries.  Possible values:
+#					  1, 2, or 3; each specify the major version of KDE to use.
+#					  This implies USE_QT of the appropriate version.
+# USE_KDEBASE_VER	- Says that the port uses the KDE base.  Possible values:
+#					  1, 2, or 3; each specify the major version of KDE to use.
+#					  This implies USE_KDELIBS of the appropriate version.
+
+#
+# WARNING!  ACHTUNG!  DANGER WILL ROBINSON!
+# DO NOT USE USE_[QT,KDELIBS,KDEBASE}_VER=3 UNLESS YOU ARE INVOLVED IN THE
+# KDE/FREEBSD PROJECT AND/OR YOU KNOW WHAT YOU ARE DOING!
+#
 
 # Compat shims.
 .if defined(USE_QT)
@@ -42,6 +48,12 @@ pre-everything::
 RUN_DEPENDS+=	kcontrol:${PORTSDIR}/x11/kdebase11
 USE_KDELIBS_VER=1
 
+.elif ${USE_KDEBASE_VER} == 3
+
+# kdebase 3.x common stuff
+LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase
+USE_KDELIBS_VER=3
+
 .else
 
 # kdebase 2.x common stuff -- DEFAULT
@@ -59,6 +71,12 @@ USE_KDELIBS_VER=2
 .if ${USE_KDELIBS_VER} == 1
 LIB_DEPENDS+=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 USE_QT_VER=		1
+
+.elif ${USE_KDELIBS_VER} == 3
+
+# kdelibs 3.x common stuff
+LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs
+USE_QT_VER=		3
 
 .else
 
@@ -84,6 +102,26 @@ QTDIR=			${PREFIX}
 QTDIR=			${X11BASE}
 .endif
 CONFIGURE_ENV+=	MOC="${MOC}" QTDIR="${QTDIR}"
+
+.elif ${USE_QT_VER} == 3
+
+QTCPPFLAGS?=
+QTCGFLIBS?=
+
+# Qt 3.x common stuff
+MOC?=			${X11BASE}/bin/moc
+LIB_DEPENDS+=	qt:${PORTSDIR}/x11-toolkits/qt
+USE_NEWGCC=		yes
+QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
+				-I${X11BASE}/include/qt
+QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg
+				-lqt
+.if !defined(QT_NONSTANDARD)
+CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt \
+				--with-qt-libraries=${X11BASE}/lib \
+				--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
+.endif
 
 .else
 
