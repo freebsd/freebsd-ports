@@ -32,6 +32,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 
 USE_GL=		yes
 PERL_CONFIGURE=	yes
+PLIST_DIRS=	${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline
 PLIST_FILES=	bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/Pdlpp.pm \
 		${SITE_PERL:S,^${PREFIX}/,,}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
