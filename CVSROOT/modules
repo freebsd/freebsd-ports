@@ -1805,6 +1805,7 @@ fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
 fpr		src/usr.bin/fpr
+fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-daCode	ports/french/daCode
 fr-ispell	ports/french/ispell
