@@ -212,6 +212,7 @@
     SUBDIR += numchar
     SUBDIR += nwrite
     SUBDIR += orville-write
+    SUBDIR += opencyc
     SUBDIR += p5-Array-Compare
     SUBDIR += p5-Array-IntSpan
     SUBDIR += p5-Array-PrintCols
