@@ -41,7 +41,7 @@ upgrades.
 
       	portupgrade -a
 
-  3.) Reinstall the KDE ports you deleted in step 2.
+  3.) Reinstall the KDE ports you deleted in step 1.
 
       	portinstall -O kdebase kdeartwork kdewebdev
 
