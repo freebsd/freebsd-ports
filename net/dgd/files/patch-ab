@@ -15,19 +15,17 @@
 --- ../README.sites	Sun Aug 28 06:27:25 1994
 ***************
 *** 0 ****
---- 1,15 ----
-+ DGD MUDs known to be open as of August 1994 are:
+--- 1,13 ----
++ DGD MUDs known to be open as of October 1995 are:
 + 
 + [LPmud]
-+ The Pattern: [129.16.50.30]   epsilon.me.chalmers.se 6047 (DGD development site)
-+ IgorMUD:     [129.16.60.9]    ny.mtek.chalmers.se    1701 (good typical LPmud)
++ IgorMUD:     [193.12.207.11]  igor.algonet.se        1701 (good typical LPmud)
 + Albion MUD:  [193.4.230.1]    mud.veda.is            4000 (play and development)
-+ PaderMUD:    [131.234.2.42]   mud.uni-paderborn.de   3000 (enchanting realism)
-+ GodsHome:    [193.10.118.131] godshome.solace.mh.se  3000 (roleplaying)
++ PaderMUD:    [131.234.12.13]  mud.uni-paderborn.de   3000 (enchanting realism)
 + 
-+ All 5 have a more or less medieval theme.
++ All 3 have a more or less medieval theme.
 + 
 + [moo]
-+ MirrorMOO:   [129.10.112.76]  mirror.ccs.neu.edu     8889 (Alice's Wonderland)
++ MirrorMOO:   [129.10.114.196] mirror.ccs.neu.edu     8889 (Alice's Wonderland)
 + 
 + Other sites are also developing their own special mudlibs with DGD.
