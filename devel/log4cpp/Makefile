@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	log4cpp
-PORTVERSION=	0.2.7
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--with-pthreads
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's, endl, std::endl,g' ${WRKSRC}/tests/Clock.cpp \
-		${WRKSRC}/tests/testbench.cpp
 
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
 bin/log4cpp-config
 include/log4cpp/Appender.hh
 include/log4cpp/AppenderSkeleton.hh
+include/log4cpp/BasicConfigurator.hh
 include/log4cpp/BasicLayout.hh
 include/log4cpp/Category.hh
 include/log4cpp/CategoryStream.hh
+include/log4cpp/Configurator.hh
 include/log4cpp/Export.hh
 include/log4cpp/FileAppender.hh
 include/log4cpp/Filter.hh
@@ -15,21 +17,33 @@ include/log4cpp/LayoutAppender.hh
 include/log4cpp/Log4cppCleanup.hh
 include/log4cpp/LoggingEvent.hh
 include/log4cpp/NDC.hh
+include/log4cpp/NTEventLogAppender.hh
 include/log4cpp/OstreamAppender.hh
 include/log4cpp/OstringStream.hh
 include/log4cpp/PatternLayout.hh
 include/log4cpp/Portability.hh
 include/log4cpp/Priority.hh
+include/log4cpp/PropertyConfigurator.hh
 include/log4cpp/RemoteSyslogAppender.hh
+include/log4cpp/RollingFileAppender.hh
 include/log4cpp/SimpleConfigurator.hh
 include/log4cpp/SimpleLayout.hh
 include/log4cpp/StringQueueAppender.hh
 include/log4cpp/SyslogAppender.hh
 include/log4cpp/TimeStamp.hh
+include/log4cpp/Win32DebugAppender.hh
 include/log4cpp/config-openvms.h
 include/log4cpp/config-win32.h
 include/log4cpp/config.h
+include/log4cpp/threading/BoostThreads.hh
+include/log4cpp/threading/DummyThreads.hh
+include/log4cpp/threading/MSThreads.hh
+include/log4cpp/threading/OmniThreads.hh
+include/log4cpp/threading/PThreads.hh
+include/log4cpp/threading/Threading.hh
 lib/liblog4cpp.a
 lib/liblog4cpp.so
-lib/liblog4cpp.so.3
+lib/liblog4cpp.so.4
+share/aclocal/log4cpp.m4
+@dirrm include/log4cpp/threading
 @dirrm include/log4cpp
