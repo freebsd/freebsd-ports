@@ -6,28 +6,33 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	net
 MASTER_SITES=	http://members.optushome.com.au/emikulic/net/darkstat/ \
 		http://yallara.cs.rmit.edu.au/~emikulic/_/
 
 MAINTAINER=	emikulic@optushome.com.au
-COMMENT=	Network statistics gatherer, similar to but smaller than ntop
-
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+COMMENT=	Network statistics gatherer, similar to ntop
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.else
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB=	NLS=""
+.endif
 
 MAN1=	darkstat.1
-DOCS=	AUTHORS ChangeLog INSTALL ISSUES README TODO
+DOCS=	AUTHORS ChangeLog INSTALL ISSUES README
 
-post-install:
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
