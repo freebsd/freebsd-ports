@@ -3,7 +3,7 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/08 04:45:57 pst Exp $
 #
 
 #PKGNAME=	tkgoodstuff-4.1
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pst@FreeBSD.org
 
 RUN_DEPENDS=	fvwm:${PORTSDIR}/x11/fvwm2
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	TCLCONFIGSH=/usr/libdata/tcl/tclConfig.sh TCLSH=/usr/bin/tclsh \
