@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.8.5
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -49,4 +48,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MAN1=		gnc-prices.1 gnucash.1
 INFO=		gnucash-design
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/db41/db_185.h)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db41
+post-patch:
+	@${REINPLACE_CMD} -e "s|db4/db_185.h|db41/db_185.h|g" \
+		${WRKSRC}/configure
+.else
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.endif
+
+.include <bsd.port.post.mk>

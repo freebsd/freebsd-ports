@@ -103,6 +103,8 @@ include/gnucash/i18n.h
 include/gnucash/import-match-map.h
 include/gnucash/kvp-scm.h
 include/gnucash/kvp_frame.h
+include/gnucash/gnc-date-format.h
+include/gnucash/gnc-query-list.h
 include/gnucash/messages.h
 include/gnucash/numcell.h
 include/gnucash/option-util.h
@@ -168,6 +170,8 @@ lib/gnucash/libgncmod-ledger-core.so.0
 lib/gnucash/libgncmod-locale-reports-us.la
 lib/gnucash/libgncmod-locale-reports-us.so
 lib/gnucash/libgncmod-locale-reports-us.so.0
+lib/gnucash/libgncmod-log-replay.la
+lib/gnucash/libgncmod-log-replay.so.0
 lib/gnucash/libgncmod-network-utils.la
 lib/gnucash/libgncmod-network-utils.so
 lib/gnucash/libgncmod-network-utils.so.0
@@ -327,6 +331,19 @@ share/gnome/gnucash/accounts/fr_FR/acctchrt_renter.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_retiremt.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_spouseinc.gnucash-xea
 share/gnome/gnucash/accounts/fr_FR/acctchrt_spouseretire.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_brokerage.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_carloan.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_checkbook.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_childcare.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_common.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_fixedassets.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_homeloan.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_homeown.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_otherloan.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_renter.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_retiremt.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_spouseinc.gnucash-xea
+share/gnome/gnucash/accounts/it/acctchrt_spouseretire.gnucash-xea
 share/gnome/gnucash/accounts/pt_BR/acctchrt_brokerage.gnucash-xea
 share/gnome/gnucash/accounts/pt_BR/acctchrt_carloan.gnucash-xea
 share/gnome/gnucash/accounts/pt_BR/acctchrt_cdmoneymkt.gnucash-xea
@@ -419,6 +436,8 @@ share/gnome/gnucash/doc/html/doxygen.gif
 share/gnome/gnucash/doc/html/files.html
 share/gnome/gnucash/doc/html/functions.html
 share/gnome/gnucash/doc/html/globals.html
+share/gnome/gnucash/doc/html/gnc-hbci-trans-templ_8h.html
+share/gnome/gnucash/doc/html/gnc-log-replay_8h.html
 share/gnome/gnucash/doc/html/gnc-ofx-import_8h.html
 share/gnome/gnucash/doc/html/gnc-pricedb_8h.html
 share/gnome/gnucash/doc/html/gnc-ui-util_8h.html
@@ -461,6 +480,7 @@ share/gnome/gnucash/glade/employee.glade
 share/gnome/gnucash/glade/exchange-dialog.glade
 share/gnome/gnucash/glade/fincalc.glade
 share/gnome/gnucash/glade/generic-import.glade
+share/gnome/gnucash/glade/gnc-date-format.glade
 share/gnome/gnucash/glade/help.glade
 share/gnome/gnucash/glade/invoice.glade
 share/gnome/gnucash/glade/job.glade
@@ -537,6 +557,7 @@ share/gnome/gnucash/guile-modules/gnucash/report/business-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/cash-flow.scm
 share/gnome/gnucash/guile-modules/gnucash/report/category-barchart.scm
 share/gnome/gnucash/guile-modules/gnucash/report/daily-reports.scm
+share/gnome/gnucash/guile-modules/gnucash/report/fancy-invoice.scm
 share/gnome/gnucash/guile-modules/gnucash/report/hello-world.scm
 share/gnome/gnucash/guile-modules/gnucash/report/iframe-url.scm
 share/gnome/gnucash/guile-modules/gnucash/report/invoice.scm
@@ -596,6 +617,7 @@ share/gnome/gnucash/scm/html-table.scm
 share/gnome/gnucash/scm/html-text.scm
 share/gnome/gnucash/scm/html-utilities.scm
 share/gnome/gnucash/scm/kvp-option-registry.scm
+share/gnome/gnucash/scm/log-replay/log-replay.scm
 share/gnome/gnucash/scm/main-window.scm
 share/gnome/gnucash/scm/ofx/ofx-import.scm
 share/gnome/gnucash/scm/options-utilities.scm
@@ -654,6 +676,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/scm/qif-import
 @dirrm share/gnome/gnucash/scm/printing
 @dirrm share/gnome/gnucash/scm/ofx
+@dirrm share/gnome/gnucash/scm/log-replay
 @dirrm share/gnome/gnucash/scm/gnumeric
 @dirrm share/gnome/gnucash/scm/generic-import
 @dirrm share/gnome/gnucash/scm
@@ -674,6 +697,7 @@ share/locale/zh_TW/LC_MESSAGES/gnucash.mo
 @dirrm share/gnome/gnucash/accounts/sk
 @dirrm share/gnome/gnucash/accounts/pt_PT
 @dirrm share/gnome/gnucash/accounts/pt_BR
+@dirrm share/gnome/gnucash/accounts/it
 @dirrm share/gnome/gnucash/accounts/fr_FR
 @dirrm share/gnome/gnucash/accounts/es_ES
 @dirrm share/gnome/gnucash/accounts/el_GR
