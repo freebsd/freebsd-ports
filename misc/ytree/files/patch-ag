@@ -1,11 +1,11 @@
---- filewin.c.orig	Sat Mar 21 22:42:17 1998
-+++ filewin.c	Sat Mar 21 22:53:03 1998
+--- filewin.c.orig	Wed Dec  9 15:36:15 1998
++++ filewin.c	Wed Dec  9 15:36:28 1998
 @@ -535,7 +535,7 @@
                      }
  		    else
  		    {
--		      (void) sprintf( format, "%%c %%%c%ds %%10s %%3d %%7d %%12s", 
-+		      (void) sprintf( format, "%%c %%%c%ds %%10s %%3d %%7qd %%12s", 
+-		      (void) sprintf( format, "%%c%%%c%ds %%10s %%3d %%7d %%12s", 
++		      (void) sprintf( format, "%%c%%%c%ds %%10s %%3d %%7qd %%12s", 
                                        justify,
  				      max_filename_len 
  				    );
