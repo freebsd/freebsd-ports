@@ -117,6 +117,7 @@
     SUBDIR += smtpfeed
     SUBDIR += smunge
     SUBDIR += solidpop3d
+    SUBDIR += sonicmail
     SUBDIR += spruce
     SUBDIR += sylpheed
     SUBDIR += teapop
