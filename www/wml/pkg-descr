@@ -6,8 +6,6 @@
                          
   WML -- Website META Language
 
-  Version 1.4.8 (23-12-1997)
-
   WML is a free HTML generation toolkit consisting of 9 independent languages.
   The main idea of WML is a sequential filtering scheme where each language
   provides one of 9 processing passes. So WML reads an input file, applies

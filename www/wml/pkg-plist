@@ -85,6 +85,7 @@ lib/wml/perl/lib/site_perl/auto/Image/Size/xpmsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/pngsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/jpegsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/ppmsize.al
+lib/wml/perl/lib/site_perl/auto/Image/Size/tiffsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/autosplit.ix
 lib/wml/perl/lib/site_perl/auto/GD/autosplit.ix
 lib/wml/perl/lib/site_perl/GD.pm
