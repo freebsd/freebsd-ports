@@ -18,8 +18,8 @@
 -LDCC=		@echo "	==> LINKING \"$@\""; gcc
 -DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
 -RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
-+LDCC=		$(CC)
-+DYNLD=		$(CC)
++LDCC=		$(CCOM)
++DYNLD=		$(CCOM)
 +RANLIB=		ranlib
  ARFLAGS=	cr
  LORDER=		lorder
@@ -27,5 +27,5 @@
  
  RMDEP=		:
 -MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		$(CC) -M
++MKDEP=		$(CCOM) -M
  MKDEP_OUT=
