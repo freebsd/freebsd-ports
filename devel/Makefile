@@ -416,6 +416,7 @@
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-Symdump
+    SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Dialog
     SUBDIR += p5-Errno
     SUBDIR += p5-Event
