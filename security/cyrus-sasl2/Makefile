@@ -72,15 +72,13 @@ SASLDB_NAME=	sasldb2.db
 .endif
 
 .if defined(WITH_MYSQL_VER)
-.if ${WITH_MYSQL_VER} == 41
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.elif ${WITH_MYSQL_VER} == 40
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.elif ${WITH_MYSQL_VER} == 3
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.else
-BROKEN=		"WITH_MYSQL_VER must be 3, 40 or 41"
+.if ${WITH_MYSQL_VER} == 3
+WITH_MYSQL=	YES
+WANT_MYSQL_VER=	323
 .endif
+.endif
+.if defined(WITH_MYSQL)
+USE_MYSQL=	YES
 CONFIGURE_ARGS+=--with-mysql=${PREFIX}
 .else
 MYSQL=	"@comment "
