@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Sep 18 01:33:17 1997
-+++ Makefile	Thu Sep 18 08:54:12 1997
-@@ -39,13 +39,13 @@
+--- Makefile.orig	Tue Nov  4 22:22:25 1997
++++ Makefile	Thu Nov  6 08:54:39 1997
+@@ -43,13 +43,13 @@
  ### you need to localize the paths on these lines
  
  #WISH = /usr/sww/tcl-8.0/bin/wish
@@ -18,7 +18,7 @@
  
  
  # OPTIONAL
-@@ -55,9 +55,9 @@
+@@ -59,9 +59,9 @@
  # This directory should not have any Texinfo source itself.
  # More information is given in tkman-help.html
  # if you don't have Texinfo files, leave this variable empty
@@ -30,7 +30,7 @@
  
  
  # OPTIONAL
-@@ -81,10 +81,12 @@
+@@ -85,10 +85,12 @@
  # will examine for matches if a search in the usual locations fails while searching
  # for a man pages and displaying its associated binaries (if any).
  # Use this feature carefully as a large number of directories can slow down startup.
@@ -38,30 +38,28 @@
 +#mastermen = "/usr/man /usr/local/man"
  #mastermen = "/usr/man /usr/local/man /usr/sww/man /usr/share/man /usr/kerberos/man"
 -masterbin = "/usr/bin /usr/local/bin"
-+mastermen = "${PREFIX}/man usr/share/man ${X11BASE}/man"
++mastermen = "${PREFIX}/man /usr/share/man ${X11BASE}/man"
 +#masterbin = "/usr/bin /usr/local/bin"
  #masterbin = "/usr/bin /usr/local/bin /usr/sww/bin /usr/sww/share/bin /usr/sww/share/X11R5/bin"
 +masterbin = "/usr/bin ${PREFIX}/bin ${X11BASE}/bin"
  
  
  # names of common printers, in addition to default printer (PRINTER or LPDEST)
-@@ -101,13 +103,13 @@
- # but seems to kill international characters, such as u-with-umlaut
- #manformat = {tbl | neqn | nroff -man | col }
- # ALTERNATIVES
--#manformat = {groff -Tascii -te -mandoc}
-+manformat = {groff -Tascii -te -mandoc}
- # Marco Melgazzi (marco@techie.com) prefers LONGER MAN PAGE LINES.
- # The following line adds an entry in Preferences/See to set the length.
- # You must use groff and the "/tmp/ll" path for this feature to take effect.
+@@ -118,11 +120,11 @@
  # lines are cached in .../man/cat<n>@<line-length>; 
  #   that is, the line length is appended to the usual cache directory names
--manformat = {groff -te -Tascii -man /tmp/ll - 2>/dev/null}
-+#manformat = {groff -te -Tascii -man /tmp/ll - 2>/dev/null}
+ #manformat = {groff -te -Tascii -man /tmp/ll - 2>/dev/null}
+-manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
++#manformat = {groff -te -Tlatin1 -man /tmp/ll - 2>/dev/null}
  # Ultrix users should uncomment the following line (you don't have eqn)
  #manformat = {tbl | nroff -man }
+ # BSD macros (.Sh, .Ss, .PP, ...) call for -mandoc
+-#manformat = {groff -Tascii -te -mandoc}
++manformat = {groff -Tascii -te -mandoc}
  # BSDI
-@@ -153,7 +155,7 @@
+ #manformat = {tbl | eqn -Tascii | nroff -man }
+ 
+@@ -156,7 +158,7 @@
  
  
  # pick a printing pipeline for which your platform has all the constituants
@@ -70,8 +68,8 @@
  # alternatives
  #manprint = {tbl | eqn | troff -man -t | lpr -t}
  #manprint = {tbl | eqn | psroff -man}
-@@ -177,7 +179,7 @@
- # so how can you lose?
+@@ -192,7 +194,7 @@
+ # Check contrib/glimpse4-fix.txt for a bug fix patch for glimpseindex.
  
  # BY DEFAULT ON (Boolean scope set to entire file)
 -glimpse = "glimpse -W"
@@ -79,7 +77,7 @@
  # IF YOU DON'T WANT TO BOTHER WITH GLIMPSE, you can disable it here
  #glimpse = ""
  # give the full path, if you'd like
-@@ -185,6 +187,7 @@
+@@ -200,6 +202,7 @@
  # variations (refer to the Glimpse manual page)
  # no characters treated as meta characters:
  #glimpse = "glimpse -Wk"
@@ -87,7 +85,7 @@
  
  # glimpseindex indexes the manual pages, for each component of one's MANPATH,
  # and places the results in a set of files named .glimpse_* in that MANPATH
-@@ -226,7 +229,7 @@
+@@ -241,7 +244,7 @@
  # default MANPATH to use if user doesn't have a MANPATH environment variable set.
  # Leave this empty to have TkMan calculate a MANPATH based on a users PATH
  # (like Perl man does).
@@ -96,7 +94,7 @@
  #manpathdef = /usr/man:/usr/local/man
  #manpathdef = /usr/man:/usr/local/man:/usr/sww/man:/usr/sww/X11/man
  # for SGI
-@@ -397,8 +400,8 @@
+@@ -440,8 +443,8 @@
  	chmod +rx $(BINDIR)/tkman
  	$(CP) retkman $(BINDIR)
  	chmod +rx $(BINDIR)/retkman
