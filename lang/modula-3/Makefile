@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.13 1997/06/29 20:43:17 jdp Exp $
+# $Id: Makefile,v 1.14 1997/07/04 17:31:31 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -21,8 +21,8 @@ NO_BUILD=	yes
 
 # Keep these in sync with the PLIST and with the library version numbers
 # in the modula-3-lib port.
-major=		4
-minor=		3
+major=		5
+minor=		0
 
 # The Modula-3 build process insists on installing each individual
 # component immediately after that component is built.  To avoid having
