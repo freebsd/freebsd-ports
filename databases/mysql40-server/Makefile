@@ -111,7 +111,7 @@ CONFLICTS=	mysql-server-3.* mysql-server-4.[1-9].* mysql-server-5.*
 PLIST_SUB=	DB_DIR=${DB_DIR} \
 		MYSQL_VERSION=${PORTVERSION}
 
-MAN1=		isamchk.1 isamlog.1 mysqlaccess.1 mysqld.1 \
+MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
 
 DOCS=		manual.html manual.txt manual_toc.html
