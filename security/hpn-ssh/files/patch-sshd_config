@@ -1,0 +1,10 @@
+--- sshd_config.orig	Fri Jun 21 03:11:36 2002
++++ sshd_config	Fri Jun 28 06:55:46 2002
+@@ -58,6 +58,7 @@
+ 
+ # Change to no to disable s/key passwords
+ #ChallengeResponseAuthentication yes
++ChallengeResponseAuthentication no
+ 
+ # Kerberos options
+ #KerberosAuthentication no

@@ -1,6 +1,14 @@
---- auth2.c.orig	Tue Feb 26 19:09:43 2002
-+++ auth2.c	Sun Mar 17 20:53:15 2002
-@@ -168,6 +168,15 @@
+--- auth2.c.orig	Fri Jun 21 08:21:11 2002
++++ auth2.c	Fri Jun 28 06:57:56 2002
+@@ -35,6 +35,7 @@
+ #include "dispatch.h"
+ #include "pathnames.h"
+ #include "monitor_wrap.h"
++#include "canohost.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -137,6 +138,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -16,7 +24,7 @@
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -208,6 +217,41 @@
+@@ -178,6 +188,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}

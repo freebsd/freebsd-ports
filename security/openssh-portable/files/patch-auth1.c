@@ -1,6 +1,14 @@
---- auth1.c.orig	Thu Feb 14 10:39:50 2002
-+++ auth1.c	Sun Mar 17 20:53:15 2002
-@@ -75,6 +75,18 @@
+--- auth1.c.orig	Fri Jun 21 08:21:11 2002
++++ auth1.c	Fri Jun 28 06:57:42 2002
+@@ -26,6 +26,7 @@
+ #include "session.h"
+ #include "uidswap.h"
+ #include "monitor_wrap.h"
++#include "canohost.h"
+ 
+ /* import */
+ extern ServerOptions options;
+@@ -75,6 +76,18 @@
  	u_int ulen;
  	int type = 0;
  	struct passwd *pw = authctxt->pw;
@@ -19,7 +27,7 @@
  
  	debug("Attempting authentication for %s%.100s.",
  	    authctxt->valid ? "" : "illegal user ", authctxt->user);
-@@ -297,6 +309,34 @@
+@@ -282,6 +295,34 @@
  			log("Unknown message during authentication: type %d", type);
  			break;
  		}
