@@ -8,9 +8,7 @@
 PORTNAME=	zebedee
 PORTVERSION=	2.5.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.winton.org.uk/zebedee/ \
-		http://www.hewgill.com/zebedee/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greg@hewgill.com
