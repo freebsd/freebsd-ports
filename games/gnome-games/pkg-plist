@@ -225,6 +225,8 @@ share/gnome/metatris/default-theme/metatris-piece-ff-yellow.png
 share/gnome/metatris/default-theme/metatris-piece-ff.png
 share/gnome/metatris/default-theme/metatris.png
 share/gnome/metatris/default-theme/metatris.theme
+share/gnome/mime-info/gnome-stones.keys
+share/gnome/mime-info/gnome-stones.mime
 share/gnome/pixmaps/cards/backs/beige.png
 share/gnome/pixmaps/cards/backs/face.png
 share/gnome/pixmaps/cards/backs/grey.png
@@ -257,7 +259,7 @@ share/gnome/pixmaps/cards/suits_small/knuth-09x10.png
 share/gnome/pixmaps/cards/suits_small/xpat-11x11.png
 share/gnome/pixmaps/cards/suits_small/xpat-15x15.png
 share/gnome/pixmaps/gnibbles/gnibbles.png
-share/gnome/pixmaps/gnibbles/gnibbles_logo.png
+share/gnome/pixmaps/gnibbles/gnibbles-logo.png
 share/gnome/pixmaps/gnobots/aieee.png
 share/gnome/pixmaps/gnobots/cows.png
 share/gnome/pixmaps/gnobots/eggs.png
@@ -283,6 +285,7 @@ share/gnome/pixmaps/gnome-gtetris.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-metatris.png
 share/gnome/pixmaps/gnome-stones.png
+share/gnome/pixmaps/gnome-stones-file.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png
@@ -336,16 +339,21 @@ share/gnome/sol-games/fortunes.scm
 share/gnome/sol-games/fourteen.scm
 share/gnome/sol-games/freecell.scm
 share/gnome/sol-games/hopscotch.scm
+share/gnome/sol-games/kansas.scm
 share/gnome/sol-games/klondike.scm
 share/gnome/sol-games/neighbor.scm
 share/gnome/sol-games/odessa.scm
 share/gnome/sol-games/osmosis.scm
 share/gnome/sol-games/pileon.scm
-share/gnome/sol-games/plait.scm
+share/gnome/sol-games/royal_east.scm
+share/gnome/sol-games/scorpion.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
 share/gnome/sol-games/thieves.scm
 share/gnome/sol-games/thirteen.scm
+share/gnome/sol-games/thumb_and_pouch.scm
+share/gnome/sol-games/union_square.scm
+share/gnome/sol-games/westhaven.scm
 share/gnome/sol-games/yukon.scm
 share/gnome/sounds/gnibbles/appear.wav
 share/gnome/sounds/gnibbles/bonus.wav
@@ -355,7 +363,6 @@ share/gnome/sounds/gnibbles/laughter.wav
 share/gnome/sounds/gnibbles/life.wav
 share/gnome/sounds/gnibbles/pop.wav
 share/gnome/sounds/gnibbles/reverse.wav
-share/gnome/sounds/gnibbles/start.wav
 share/gnome/sounds/gnibbles/teleport.wav
 share/gnome/sounds/gnobots2/bad.wav
 share/gnome/sounds/gnobots2/die.wav
