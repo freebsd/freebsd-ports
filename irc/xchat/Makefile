@@ -58,7 +58,8 @@ CONFIGURE_ARGS+=	--enable-gdk-pixbuf
 USE_GNOME=		yes
 CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf \
 			--enable-zvt
-MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps"
+MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps" \
+			utildir="${PREFIX}/share/gnome/apps/Internet"
 .else
 CONFIGURE_ARGS+=	--disable-gnome --disable-zvt
 .endif
