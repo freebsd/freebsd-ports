@@ -52,7 +52,8 @@ SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefil
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86fbman.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86drmCompat.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xkbout.c \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-xorgconfig.c
 
 .if !target(do-configure)
 do-configure:
