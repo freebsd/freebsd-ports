@@ -7,6 +7,7 @@
 
 PORTNAME=	robocode
 PORTVERSION=	0.98.3
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	ftp://dragon.adtech.internet.ibm.com/pub/robocode/
 DISTNAME=	robocode-setup
@@ -27,7 +28,7 @@ RESTRICTED=	"Redistribution isn't permitted - see license for details"
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-INSTFILES=	battles compilers javadoc license.html robocode.ico \
+INSTFILES=	battles javadoc license.html robocode.ico \
 		robocode.jar robots templates versions.txt
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)

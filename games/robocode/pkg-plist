@@ -1,9 +1,5 @@
 bin/robocode
 share/java/robocode/battles/sample.battle
-share/java/robocode/compilers/CompilerTest.java
-share/java/robocode/compilers/buildJikes.sh
-share/java/robocode/compilers/jikes-1.15.src.jar
-share/java/robocode/compilers/jikes-1.15.win.jar
 share/java/robocode/javadoc/allclasses-frame.html
 share/java/robocode/javadoc/allclasses-noframe.html
 share/java/robocode/javadoc/constant-values.html
@@ -94,6 +90,5 @@ share/java/robocode/versions.txt
 @dirrm share/java/robocode/robots
 @dirrm share/java/robocode/javadoc/robocode
 @dirrm share/java/robocode/javadoc
-@dirrm share/java/robocode/compilers
 @dirrm share/java/robocode/battles
 @dirrm share/java/robocode
