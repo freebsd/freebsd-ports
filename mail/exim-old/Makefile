@@ -20,11 +20,10 @@ USE_PERL5=	yes
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# If WITHOUT_X11 is not defined, the eximon monitor, which requires X,
-# will be built.  If you do not have XFree86 installed and you do not
-# want to install it, define WITHOUT_X11 during the build.  This will
-# disable eximon, the Exim monitor.
-#WITHOUT_X11=	yes
+# If WITH_EXIMON is defined, the eximon monitor, which requires X,
+# will be made a dependency.  Note that using WITH_EXIMON will cause
+# XFree86 to be installed if it is not present.
+#WITH_EXIMON=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
 # link against libwrap, an LDAP library (see below), liblibmysqlclient
@@ -72,8 +71,8 @@ LDAP_LIB_TYPE?=OPENLDAP1
 
 # You should not need to fiddle with anything below this point.
 
-.if !defined(WITHOUT_X11)
-USE_XLIB=	yes
+.if defined(WITH_EXIMON)
+RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 .endif
 
 .include <bsd.port.pre.mk>
@@ -82,16 +81,12 @@ USE_XLIB=	yes
 WITHOUT_IPV6=	yes
 .endif
 
-SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
-		-e 's,XX_BINOWN_XX,${BINOWN},'
-.if !defined(USE_XLIB)
-SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
-.endif
+SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},'
 
 .if !defined(WITHOUT_TLS)
 SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
 .else
-SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
+SEDLIST+=	-e 's,^TLS_LIBS=,\#TLS_LIBS=,'
 .endif
 
 .if !defined(WITHOUT_PERL)
@@ -113,19 +108,19 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 .else
 .error LDAP_LIB_TYPE must be either OPENLDAP1 or OPENLDAP2
 .endif
-SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
-		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
+SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
+		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
 		-e 's,^\# LOOKUP_LDAP=,LOOKUP_LDAP=,'
 .else
 SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
-		-e 's,^LDAP_LIB_TYPE,\#LDAP_LIB_TYPE,'
+		-e 's,^LDAP_LIB_TYPE=,\#LDAP_LIB_TYPE=,'
 .endif
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
-		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,' \
+SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
+		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE}/include/mysql,' \
 		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
@@ -148,8 +143,8 @@ SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
-SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/lib -lpq,' \
-		-e 's,XX_PGSQL_INCLUDE_XX,-I${PREFIX}/include/pgsql,' \
+SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
+		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE}/include/pgsql,' \
 		-e 's,^\# LOOKUP_PGSQL=,LOOKUP_PGSQL=,'
 .else
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
@@ -160,8 +155,8 @@ SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
 .endif
 
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(WITH_LDAP)
-SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
-		-e 's,^LOOKUP_INCLUDE,\#LOOKUP_INCLUDE,'
+SEDLIST+=	-e 's,^LOOKUP_LIBS=,\#LOOKUP_LIBS=,' \
+		-e 's,^LOOKUP_INCLUDE=,\#LOOKUP_INCLUDE=,'
 .endif
 
 .if !defined(WITHOUT_MAILDIR)
@@ -183,15 +178,10 @@ SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
 	cd ${WRKSRC}/doc && \
 	for i in ../../exim-texinfo-3.30/doc/* ; do \
 		${LN} -sf $$i ; \
 	done
-
-post-build:
-	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon.bin
-	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
