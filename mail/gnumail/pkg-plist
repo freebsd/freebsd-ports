@@ -1,7 +1,4 @@
 Local/Applications/GNUMail.app/GNUMail
-%%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Entries
-%%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Repository
-%%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Root
 Local/Applications/GNUMail.app/Resources/Address_bcc.tiff
 Local/Applications/GNUMail.app/Resources/Address_cc.tiff
 Local/Applications/GNUMail.app/Resources/AddressBook_32.tiff
@@ -172,7 +169,6 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Applications/GNUMail.app/Resources/French.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/English.lproj
 @dirrm Local/Applications/GNUMail.app/Resources/Czech.lproj
-%%GNUSTEP_DEVEL%%@dirrm Local/Applications/GNUMail.app/Resources/CVS
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
 @dirrm Local/Applications
