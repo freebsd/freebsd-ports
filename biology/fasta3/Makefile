@@ -41,7 +41,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${FASTA3_DOCDIR}
 .for docfile in ${FASTA3_DOCS}
-	@ ${INSTALL_MAN} ${WRKSRC}/${docfile} ${FASTA3_DOCDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${FASTA3_DOCDIR}
 .endfor
 .endif
 .if !defined(BATCH)
