@@ -82,6 +82,7 @@
     SUBDIR += libXcursor
     SUBDIR += libXdmcp
     SUBDIR += libXext
+    SUBDIR += libXfixes
     SUBDIR += libXfont
     SUBDIR += libXi
     SUBDIR += libXrandr
