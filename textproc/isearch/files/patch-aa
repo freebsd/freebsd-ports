@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Dec  5 22:35:46 1996
++++ Makefile	Mon Feb 17 10:42:51 1997
+@@ -153,7 +153,7 @@
+ 	cp $(BIN_DIR)/Iindex $(INSTALL)/.
+ 	cp $(BIN_DIR)/Isearch $(INSTALL)/.
+ 	cp $(BIN_DIR)/Iutil $(INSTALL)/.
+-	cd $(CGI_DIR); make install
++#	cd $(CGI_DIR); make install
+ 
+ srcdist:
+ 	make -i distclean;cd ..;tar cvf $(DIST).tar $(DIST);gzip $(DIST).tar

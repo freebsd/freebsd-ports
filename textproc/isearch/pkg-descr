@@ -1,0 +1,8 @@
+Isearch is a software system for searching though large amounts of text. 
+The system allows a user to very quickly find out what documents are 
+available that contain certain words. Unlike older search systems, Isearch 
+does not use a list of keywords or an abstract; every word of every 
+document can be checked. This allows greatly improved chances of 
+discovering new information in old collections.
+
+Nassib Nassar
