@@ -3,6 +3,7 @@
 
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
+    SUBDIR += 6to4
     SUBDIR += NeTraMet
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
