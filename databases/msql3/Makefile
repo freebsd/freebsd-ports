@@ -1,13 +1,13 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0
+# Version required:	2.0.1
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id$
+# $Id: Makefile,v 1.21 1997/07/14 12:47:05 jfitz Exp $
 #
 
-DISTNAME=	msql-2.0-rel
-PKGNAME=	msql-2.0
+DISTNAME=	msql-2.0.1
+PKGNAME=	msql-2.0.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www2.nerosworld.com/msql/ \
 		http://hughes.com.au/software/msql2/

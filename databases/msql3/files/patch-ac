@@ -1,15 +1,15 @@
---- src/conf/site.mm.in.orig	Sat Jul  5 21:28:52 1997
-+++ src/conf/site.mm.in	Thu Jul 10 13:44:15 1997
+--- src/conf/site.mm.in.orig	Mon Aug 25 21:56:13 1997
++++ src/conf/site.mm.in	Mon Aug 25 21:56:30 1997
 @@ -4,7 +4,7 @@
  
  
- CC= @CC@
+ COMPILER= @CC@
 -INST_DIR= /usr/local/Hughes
 +INST_DIR= /usr/local
  HAVE_DYNAMIC= -DHAVE_DYNAMIC
- 
- 
-@@ -31,7 +31,7 @@
+ CC_ONLY_FLAGS=
+ LINK_ONLY_FLAGS=
+@@ -34,7 +34,7 @@
  EXTRA_LIB= @LIBS@
  
  # Any other CFlags required
