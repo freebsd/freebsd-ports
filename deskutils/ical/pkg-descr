@@ -1,4 +1,4 @@
-Copyright (c) 1993 by Sanjay Ghemawat
+Copyright (c) 1993-1996 by Sanjay Ghemawat
 
 Ical
 ====
@@ -11,11 +11,9 @@ Ical is a calendar application.  Some of the important features are ---
     * Ical can print and list item occurrences.
     * Ical calendars can be shared by different users.
 
-This release of ical is designed to work with Tcl7.0/Tk3.3 or later.
+This release of ical is designed to work with Tcl7.5/Tk4.1 or later.
 If you are using older versions of Tcl/Tk, you will need to upgrade if
 you want to use the new version of ical.
-
-See also: http://clef.lcs.mit.edu/~sanjay/ical.html
 
 Copyrights
 ==========
