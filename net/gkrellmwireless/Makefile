@@ -17,6 +17,8 @@ COMMENT=	GKrellM wireless plugin
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+NO_LATEST_LINK=	yes
+
 USE_X_PREFIX=	yes
 USE_GNOME=	imlib
 
