@@ -1,0 +1,10 @@
+The spreadsheet calculator slsc is based on rectangular tables much like
+a financial spreadsheet.  When invoked it presents you with a table
+organized as rows and columns of cells.  If invoked without a file
+argument, the table is initially empty.  Each cell may have associated
+with it a numeric value, a label string, and/or an expression (formula)
+which evaluates to a numeric value or label string, often based on other
+cell values.
+
+- Jonathan
+noodles@earth.li

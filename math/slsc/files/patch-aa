@@ -1,0 +1,11 @@
+--- src/sc.c.orig	Mon Aug 26 16:17:19 1996
++++ src/sc.c	Fri Dec 31 11:34:54 1999
+@@ -870,7 +870,7 @@
+    sc_init_keymaps ();
+    
+    init_slcmd_table ();
+-   SLang_Error_Routine = slang_sc_error;
++   /* SLang_Error_Routine = slang_sc_error; */
+    
+    for (i = 0; i < SC_REGION_COLOR; i++)
+      SLtt_set_mono (i, NULL, 0);
