@@ -40,6 +40,7 @@
     SUBDIR += p5-SETI-Stats
     SUBDIR += phoon
     SUBDIR += planets
+    SUBDIR += pp3
     SUBDIR += py-metar
     SUBDIR += pyweather
     SUBDIR += rmap
