@@ -1,5 +1,5 @@
 etc/rc.d/big5fs.sh
 modules/cd9660.ko
 modules/%%MSDOSFSKO%%
-modules/ntfs.ko
+%%NTFSKMOD%%modules/ntfs.ko
 @unexec rmdir %D/modules 2>/dev/null || true
