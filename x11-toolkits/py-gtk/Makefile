@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	py-gtk
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.6
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
 		ftp://infosoc.uni-koeln.de/pub/ftp.gimp.org/pub/gtk/python/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/python/ \
 		ftp://stef.u-picardie.fr/mirror/ftp.gimp.org/gtk/python/
-DISTNAME=	gnome-python-1.0.50
+DISTNAME=	gnome-python-1.0.53
 
 MAINTAINER=	nectar@FreeBSD.org
 
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
 CONFIGURE_ARGS=	--with-python=python1.5
+USE_LIBTOOL=	yes
 PLIST_COMPLETE= ${PKGDIR}/PLIST
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
