@@ -8,9 +8,7 @@
 PORTNAME=	upsd
 PORTVERSION=	2.0.1.6
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://www.ww.net/pub/wildwind/upsd/ \
-		http://www.cre8tivegroup.com/ \
-		ftp://ftp.sw.ru/pub/unix/upsd/
+MASTER_SITES=	ftp://ftp.rge.com/pub/admin/upsd/
 
 MAINTAINER=	ports@FreeBSD.org
 
