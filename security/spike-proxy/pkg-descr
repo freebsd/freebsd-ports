@@ -1,0 +1,9 @@
+Not all web applications are built in the same ways, and hence, many
+must be analyzed individually. SPIKE Proxy is a professional-grade
+tool for looking for application-level vulnerabilities in web
+applications. SPIKE Proxy covers the basics, such as SQL Injection and
+cross-site-scripting, but it's completely open Python infrastructure
+allows advanced users to customize it for web applications that other
+tools fall apart on.
+
+WWW: http://www.immunitysec.com
