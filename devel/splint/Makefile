@@ -3,17 +3,16 @@
 # Date created: 	9 September 1996
 # Whom:			moeding
 #
-# $Id: porting.sgml,v 1.2.4.5 1996/06/19 20:28:08 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/11 22:51:21 obrien Exp $
 #
 
-DISTNAME=	lclint-2.2a.src
-PKGNAME=	lclint-2.2a
+DISTNAME=	lclint-2.2a
 CATEGORIES=	devel
 MASTER_SITES=	ftp://larch.lcs.mit.edu/pub/Larch/lclint/
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	moeding@bn.DeTeMobil.de
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
