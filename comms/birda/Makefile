@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	birda
-PORTVERSION=	0.8
+PORTVERSION=	1.00
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
 		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
 MAINTAINER=	allbery@ece.cmu.edu
 
 MAN1=		ircomm.1 irobex.1 irs.1 \
-		mkobexdate.1 mkobexmemo.1 mkobextel.1 mkobextodo.1
+		mkobexcard.1 mkobexdate.1 mkobexmemo.1 mkobexpdb.1 \
+		mkobextel.1 mkobextodo.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
