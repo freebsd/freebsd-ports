@@ -1,9 +1,9 @@
---- docs/conf/httpd-std.conf.in.orig	Sat Nov 20 21:16:24 2004
-+++ docs/conf/httpd-std.conf.in	Sat Dec 11 16:49:35 2004
+--- docs/conf/httpd-std.conf.in.orig	Tue Feb  8 23:31:56 2005
++++ docs/conf/httpd-std.conf.in	Wed Feb 23 11:06:23 2005
 @@ -68,7 +68,7 @@
  #
- #<IfModule !mpm_netware.c>
- #<IfModule !perchild.c>
+ #<IfModule !mpm_netware_module>
+ #<IfModule !mpm_perchild_module>
 -#ScoreBoardFile @rel_logfiledir@/apache_runtime_status
 +#ScoreBoardFile @rel_runtimedir@/apache_runtime_status
  #</IfModule>
@@ -30,7 +30,7 @@
      Deny from all
 @@ -369,6 +368,23 @@
  #
- <IfModule mod_userdir.c>
+ <IfModule userdir_module>
      UserDir public_html
 +    UserDir disabled %%FTPUSERS%%
 +#
@@ -86,7 +86,7 @@
  </IfModule>
  
  #
-@@ -1082,3 +1098,5 @@
+@@ -1071,3 +1087,5 @@
  #    ErrorLog @rel_logfiledir@/dummy-host.example.com-error_log
  #    CustomLog @rel_logfiledir@/dummy-host.example.com-access_log common
  #</VirtualHost>

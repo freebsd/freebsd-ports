@@ -5,7 +5,7 @@
 #      - make options output
 #      - apache2 man/docs routines
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.3 2004-12-27 20:38:37 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.4 2005-02-23 10:59:45 clement Exp $
 #
 
 ## Available knobs:
@@ -150,4 +150,4 @@ PLIST_SUB+=	ERROR="@comment "
 PLIST_SUB+=	ERROR=""
 .endif
 
-PORTDOCS=	#don't blame me ;-)
+PORTDOCS=	*#don't blame me ;-)
