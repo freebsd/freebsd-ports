@@ -1,0 +1,10 @@
+This module will download the latest Dilbert of the Day cartoon strip
+from the Dilbert website and return an object which can be either
+stored in a database or output to a browser, disk or whatever. It
+allows importing of Dilbert strips from disk or alternate URLs, and
+has a random strip interface to return strips from the database.
+
+WWW: http://search.cpan.org/dist/WWW-Dilbert
+
+-- Cheng-Lung Sung
+clsung at dragon2.net
