@@ -1,5 +1,0 @@
-
-The spambounce procmail rules have been installed in %%PREFIX%%/share/spambnc/.
-Please read the section entitled "Configuring the Spam Bouncer" in the file
-%%PREFIX%%/share/doc/spambnc/documentation.html for information on how to set
-up your mailbox.
