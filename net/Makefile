@@ -510,6 +510,8 @@
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
+    SUBDIR += py-shadow-bittorrent
+    SUBDIR += py-shadow-bittorrent-core
     SUBDIR += py-smb
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
