@@ -28,17 +28,6 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
 
-.if defined(WITH_QUOTAS)
-CONFIGURE_ARGS+=	--with-quotas
-.endif
-
-.if defined(WITH_UTMP)
-CONFIGURE_ARGS+=	--with-utmp
-.endif
-
-.if defined(WITH_MSDFS)
-CONFIGURE_ARGS+=	--with-msdfs
-.endif
 
 # directories
 VARDIR=		/var
@@ -60,6 +49,26 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--exec-prefix=${PREFIX} --with-pam --without-manpages-langs
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_QUOTAS)
+CONFIGURE_ARGS+=	--with-quotas
+.endif
+
+.if defined(WITH_UTMP)
+CONFIGURE_ARGS+=	--with-utmp
+.endif
+
+.if defined(WITH_MSDFS)
+CONFIGURE_ARGS+=	--with-msdfs
+.endif
+
+.if defined(WITH_WINBIND)
+CONFIGURE_ARGS+=	--with-winbind
+.endif
+
+.if defined(WITH_WINBIND_AUTH_CHALLENGE)
+CONFIGURE_ARGS+=	--with-winbind-auth-challenge
+.endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}

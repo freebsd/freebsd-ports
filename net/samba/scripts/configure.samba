@@ -13,7 +13,7 @@ if [ "${BATCH}" ]; then
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 		--checklist "\n\
-Please select desired options:" -1 -1 10 \
+Please select desired options:" -1 -1 12 \
 syslog		"With syslog support" OFF \
 ssl		"With ssl support" OFF \
 ldap		"With LDAP2 support" OFF \
@@ -24,6 +24,8 @@ msdfs		"With MSDFS support" OFF \
 quota		"With Quota support" OFF \
 recycle		"With Recycle Bin" OFF \
 audit		"With Audit" OFF \
+winbind		"With Winbind" OFF \
+wbauth		"With Winbind Auth Challenge" OFF \
 2> $tempfile
 
 	retval=$?
@@ -78,6 +80,12 @@ while [ "$1" ]; do
 			;;
 		\"audit\")
 			echo "WITH_AUDIT=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"winbind\")
+			echo "WITH_WINBIND=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"wbauth\")
+			echo "WITH_WINBIND_AUTH_CHALLENGE=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 			;;
 		*)
 			echo "Invalid option: $1"
