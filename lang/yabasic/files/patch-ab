@@ -1,0 +1,11 @@
+--- yabasic.bison.orig	Sun Nov  7 15:22:19 1999
++++ yabasic.bison	Fri Dec 24 13:48:57 1999
+@@ -24,7 +24,7 @@
+ #include "yabasic.h"     /* definitions of yabasic */
+ #endif
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ #if HAVE_ALLOCA_H
+ #include <alloca.h>
