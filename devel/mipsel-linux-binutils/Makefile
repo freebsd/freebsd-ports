@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.8.1
+PORTVERSION=	2.10.91
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
 MASTER_SITE_SUBDIR=	binutils
 PKGNAMEPREFIX=	mipsel-linux-
+DISTNAME=	binutils-CVS
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
-PATCH_STRIP=	-p1
+WRKSRC=		${WRKDIR}/binutils-CVS/src
+
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
 USE_LIBTOOL=	yes
@@ -31,7 +33,7 @@ MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
 BINARIES=	addr2line ar as c++filt gasp ld nm objcopy objdump ranlib \
-		size strings strip
+		readelf size strings strip
 
 post-install:
 .for F in ${BINARIES}
@@ -39,20 +41,7 @@ post-install:
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
-	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
-	@cd ${PREFIX}/lib ; ${MV} libiberty.a \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib
-	@cd ${PREFIX}/lib ; ${MV} lib${PKGNAMEPREFIX}bfd.a \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib/libbfd.a
-	@cd ${PREFIX}/lib ; ${MV} lib${PKGNAMEPREFIX}opcodes.a \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/lib/libopcodes.a
-	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
-	@cd ${PREFIX}/include ; ${MV} ansidecl.h bfd.h bfdlink.h  \
-		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include
-	@for F in ${PREFIX}/info/as.info* ${PREFIX}/info/bfd.info* \
-		${PREFIX}/info/binutils.info* ${PREFIX}/info/ld.info* \
-		${PREFIX}/info/gasp.info*; do \
-		${MV} $${F} `echo $${F} | ${SED} 's|info/|info/mipsel-linux-|'`; \
-	done
+	@cd ${PREFIX}/lib ; ${MV} libbfd.a lib${PKGNAMEPREFIX}bfd.a
+	@cd ${PREFIX}/lib ; ${MV} libopcodes.a lib${PKGNAMEPREFIX}opcodes.a
 
 .include <bsd.port.mk>
