@@ -14,12 +14,13 @@ MASTER_SITES=	ftp://ftp.stanford.edu/dept/networking/pub/fping/  \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"
 MAN8=		fping.8
 
 post-patch:
-	${PERL} -pi.fbsd -e 's/fping@/${MAINTAINER:S/@/\\@/g} or fping@/g' \
+	@${REINPLACE_CMD} -e 's/fping@/${MAINTAINER:S/@/\\@/g} or fping@/g' \
 	    ${WRKSRC}/fping.c
 
 post-install:

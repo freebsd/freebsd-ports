@@ -17,12 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
+USE_REINPLACE=	yes
 USE_KDELIBS_VER=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|-lqt|-l${QTNAME}|g ; \
+	@${REINPLACE_CMD} -e 's|-lqt|-l${QTNAME}|g ; \
 		 s|qt_libdir=NONE|qt_libdir=|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -13,11 +13,12 @@ MASTER_SITES=	http://linuxberg.ii.net/files/gnome/network/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/*.c
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/*.c
 
 .include <bsd.port.mk>

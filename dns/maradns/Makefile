@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.maradns.org/download/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_BZIP2=	yes
 MAKE_ENV=	FLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
@@ -22,9 +24,9 @@ MAN5=	mararc.5
 MAN8=	maradns.8 zoneserver.8
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/mara|${PREFIX}/etc/mara|g'
-	@${FIND} ${WRKSRC} -name '*Makefile*' | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*Makefile*' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make|\$$\{MAKE\}|g ; \
 		 s|^FLAGS =|#FLAGS =|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'

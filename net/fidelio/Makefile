@@ -19,6 +19,7 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
@@ -32,14 +33,14 @@ CONFIGURE_ARGS=	--without-included-gettext
 CFLAGS+=	-DHAVE_STRCASESTR
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@${PERL} -pi -e 's|-lxml|-lxml2|g' \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
+		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
+	@${REINPLACE_CMD} -e 's|-lxml|-lxml2|g' \
 		${WRKSRC}/configure
-	@${PERL} -pi -e 's|extern int strcasestr|//extern int strcasestr|' \
+	@${REINPLACE_CMD} -e 's|extern int strcasestr|//extern int strcasestr|' \
 		${WRKSRC}/src/trackers.c
 
 .include <bsd.port.mk>

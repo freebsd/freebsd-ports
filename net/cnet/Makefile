@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
@@ -22,9 +23,9 @@ ALL_TARGET=	# empty
 MAN1=		cnet.1
 
 post-patch:
-	@${PERL} -pi -e 's|8.2|8.3|g ; \
+	@${REINPLACE_CMD} -e 's|8.2|8.3|g ; \
 		 s|82|83|g' ${WRKSRC}/src/Makefile.freebsd
-	@${PERL} -pi -e 's|%%CC%%|${CC}|g ; \
+	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/config.h
 
 do-install:

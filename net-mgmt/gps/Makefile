@@ -15,12 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-Wall -O3,${CFLAGS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-Wall -O3,${CFLAGS},g" ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:

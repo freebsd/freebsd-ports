@@ -13,6 +13,7 @@ MASTER_SITES=	http://thalassocracy.org/libfreenet/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -20,6 +21,6 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-g -Wall|\@CFLAGS\@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-g -Wall|\@CFLAGS\@|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

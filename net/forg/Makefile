@@ -16,12 +16,13 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS= 	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 post-patch:
 .for file in forg.py mini-forg.py
-	@${PERL} -pi -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD},g" ${WRKSRC}/${file}
 .endfor
 
 do-install:

@@ -18,10 +18,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
+USE_REINPLACE=	yes
+
 MAN8=	angst.8
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,^CFLAGS,#CFLAGS,g ; \
 		s,libnet-config,${LIBNET_CONFIG},g" ${WRKSRC}/Makefile
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-os-dir=no
@@ -40,7 +41,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC}/src -name '*.[ch]' | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC}/src -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 post-install:
