@@ -13,15 +13,9 @@ MASTER_SITE_SUBDIR=	loserjabber
 
 MAINTAINER=	ryan@manunkind.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
+GNU_CONFIGURE=	yes
+USE_GTK=	yes
 MAN1=		loserjabber.1
-MANCOMPRESSED= no
-
-GNU_CONFIGURE= yes
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ENV= GTK_CONFIG="${GTK_CONFIG}"
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
