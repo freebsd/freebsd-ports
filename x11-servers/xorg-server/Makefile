@@ -54,7 +54,6 @@ MAN4=		citron.4 \
 		void.4 \
 		wacom.4
 MAN5=		xorg.conf.5
-PKGMESSAGE=	${WRKDIR}/.pkg-message
 
 XBUILD_DIRS=	lib/font programs/Xserver
 XINCLUDE_DIRS=	lib/xtrans
@@ -125,9 +124,5 @@ SCRIPTS_ENV+=	SUID_XSERVER=YES
 .else
 SCRIPTS_ENV+=	SUID_XSERVER=NO
 .endif
-
-post-build:
-	@${RM} -f ${PKGMESSAGE}
-	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
