@@ -1,0 +1,8 @@
+suPHP is a combination of an Apache module (mod_suphp) and an executable 
+which provides a wrapper for PHP. With both together, it is possible to 
+execute PHP scripts with the permissions of their owner without having 
+to place a PHP binary in each user's cgi-bin directory. suPHP doesn't 
+need Apache's suExec, provides a logging function and support for 
+different php.ini's. 
+
+WWW: http://www.suphp.org
