@@ -19,7 +19,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (shared libraries need to be compiled with -fPIC)"
+.endif
+
 do-configure:
 	@(cd ${WRKSRC} ; ${PERL} ./${CONFIGURE_SCRIPT})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
