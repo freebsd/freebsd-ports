@@ -13,6 +13,7 @@
     SUBDIR += arirang
     SUBDIR += audit
     SUBDIR += authforce
+    SUBDIR += avcheck
     SUBDIR += bcwipe
     SUBDIR += beecrypt
     SUBDIR += bfbtester
