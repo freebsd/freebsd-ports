@@ -1,0 +1,28 @@
+--- ../elisp.org/xemacs21/wnn7egg.el	Sat Jul  7 00:00:00 2001
++++ xemacs21/wnn7egg.el	Sat Jul 14 01:56:09 2001
+@@ -2464,7 +2464,7 @@
+ ;; #### Should hide bindings like this, too?  However, `convert-region'
+ ;;      probably isn't going to be a LEIM feature, it's really pretty
+ ;;      Japanese and Korean specific.
+-(define-key global-map "\C-x " 'henkan-region)
++(define-key global-map "\C-x " 'wnn7-henkan-region)
+ 
+ ;; 92.3.16 by K.Handa
+ ;; global-map => mule-keymap
+@@ -2961,14 +2961,14 @@
+       "Display fence mode help"
+       (interactive "_")
+       (let ((w (selected-window)))
+-	(describe-function 'egg-mode)
++	(describe-function 'wnn7-egg-mode)
+ 	(ding)
+ 	(select-window w)))
+   (defun fence-mode-help-command ()
+     "Display fence mode help"
+     (interactive)
+     (let ((w (selected-window)))
+-      (describe-function 'egg-mode)
++      (describe-function 'wnn7-egg-mode)
+       (ding)
+       (select-window w))))
+ 
