@@ -22,6 +22,7 @@ include/wv2/utilities.h
 include/wv2/word95_generated.h
 include/wv2/word97_generated.h
 include/wv2/word_helper.h
+include/wv2/wvlog.h
 lib/libwv2.a
 lib/libwv2.la
 lib/libwv2.so
