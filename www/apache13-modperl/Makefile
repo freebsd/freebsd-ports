@@ -14,7 +14,7 @@ DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	apache_${VERSION_APACHE}${EXTRACT_SUFX}:apache \
 		mod_perl-${VERSION_MODPERL}${EXTRACT_SUFX}:modperl
 
-MAINTAINER=	ports@rbt.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with a statically embedded perl interpreter
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
