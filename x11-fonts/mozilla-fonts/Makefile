@@ -7,13 +7,12 @@
 
 PORTNAME=	mozilla-fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
+
 CATEGORIES=	x11-fonts www
 MASTER_SITES=	http://fox.mit.edu/skunk/xwin/
-DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dom@myrddin.demon.co.uk
-
-ALL_TARGET=	pcf
+MAINTAINER=	dom@happygiraffe.net
 
 USE_X_PREFIX=	true
 
