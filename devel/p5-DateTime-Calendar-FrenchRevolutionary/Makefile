@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Calendar-FrenchRevolutionary
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 
 PERL_MODBUILD=	yes
 
-MAN3=		DateTime::Calendar::FrenchRevolutionary.3
+MAN3=		DateTime::Calendar::FrenchRevolutionary.3 \
+		DateTime::Calendar::FrenchRevolutionary::Locale::en.3
 
 .include <bsd.port.mk>
