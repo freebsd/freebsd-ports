@@ -28,15 +28,14 @@ do-install:
 	@${ECHO} "===>   Installing wmqmon.rcfile.example in ${PREFIX}/share/examples/${PORTNAME}"
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 	@${INSTALL_DATA} ${WRKSRC}/wmqmon.rcfile.example ${PREFIX}/share/examples/${PORTNAME}
-	@${ECHO} "===>   Modify to your config and copy to ~/.wmqmon"
 .ifndef(NOPORTDOCS)
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/${PORTNAME}"
-	@${ECHO} "===>   Please read it for usage instructions"
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
 		${PREFIX}/share/doc/${PORTNAME}
 .for file in BUGS README
 	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 .endif # !NOPORTDOCS
+	@${SED} -e "s|/usr/X11R6/|${PREFIX}/|" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
