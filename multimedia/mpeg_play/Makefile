@@ -3,13 +3,13 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.10 1998/05/25 08:05:14 tg Exp $
+# $Id: Makefile,v 1.11 1998/10/05 03:13:32 steve Exp $
 #
 
 DISTNAME=	mpeg_play-2.4
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
-EXTRACT_SUFX=	-src.tar.gz
+EXTRACT_SUFX=	-patched-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
