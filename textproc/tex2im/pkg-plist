@@ -1,6 +1,11 @@
 bin/tex2im
-%%PORTDOCS%%share/examples/tex2im/example1.png
-%%PORTDOCS%%share/examples/tex2im/example1.tex
-%%PORTDOCS%%share/examples/tex2im/example2.png
-%%PORTDOCS%%share/examples/tex2im/example2.tex
-%%PORTDOCS%%@dirrm share/examples/tex2im
+%%PORTDOCS%%%%EXAMPLESDIR%%/example1.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/example1.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/example2.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/example2.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/example3.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/example3.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/example4.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/example4.tex
+%%PORTDOCS%%%%EXAMPLESDIR%%/fig_1.eps
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

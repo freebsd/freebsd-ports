@@ -7,20 +7,19 @@
 #
 
 PORTNAME=	tex2im
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nought.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts LaTeX formulas into high resolution pixmap graphics
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		latex:${PORTSDIR}/print/teTeX \
-		convert:${PORTSDIR}/graphics/ImageMagick
-
-USE_REINPLACE=	yes
+		bash:${PORTSDIR}/shells/bash2
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im
