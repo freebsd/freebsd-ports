@@ -6,18 +6,30 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.3
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
-		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
-		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
+MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
 		http://the.wiretapped.net/mirrors/lftp/ \
 		http://the.wiretapped.net/mirrors/lftp/old/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
-		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
 		ftp://ftp.ayamura.org/pub/lftp/ \
-		ftp://ftp.ayamura.org/pub/lftp/old/
+		ftp://ftp.ayamura.org/pub/lftp/old/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/old/ \
+		ftp://the.ausmac.net/pub/mirrors/lftp/ \
+		ftp://the.ausmac.net/pub/mirrors/lftp/old/ \
+		ftp://ftp.bme.hu/packages/lftp/ \
+		ftp://ftp.bme.hu/packages/lftp/old/ \
+		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/ \
+		ftp://ftp.tuwien.ac.at/infosys/browsers/ftp/lftp/old/ \
+		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/ \
+		ftp://ftp.cs.tu-berlin.de/pub/net/ftp/lftp/old/ \
+		ftp://mirror.widexs.nl/pub/lftp/ \
+		ftp://mirror.widexs.nl/pub/lftp/old/ \
+		ftp://ftp.130th.net/pub/mirror/lftp/ \
+		ftp://ftp.130th.net/pub/mirror/lftp/old/ \
+		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
+		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/
 
 MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
 
@@ -51,7 +63,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/lftp.conf ${PREFIX}/etc/lftp.conf.sample
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in COPYING FAQ NEWS README THANKS TODO
+.for file in COPYING FAQ NEWS README README.debug-levels README.modules THANKS TODO FEATURES
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
