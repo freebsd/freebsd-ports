@@ -1,36 +1,39 @@
-diff -ru ../../work/release/Makefile ./Makefile
---- ../../work/release/Makefile	Wed Sep 22 18:46:14 1999
-+++ ./Makefile	Wed Dec 29 01:54:04 1999
-@@ -3,9 +3,9 @@
- #SPC700ASM=1
- NETPLAY=1
- UNZIP=1
--GLIDE=1
-+#GLIDE=1
- #GUI=1
--THREAD_SOUND=1
-+#THREAD_SOUND=1
- 
- ifdef ZSNESFX
- FXOBJ=i386/fxemu2b.o i386/fxemu2.o i386/fxemu2c.o i386/fxtable.o i386/sfxproc.o i386/zsnes.o
-@@ -73,13 +73,13 @@
+--- Makefile.orig	Mon Jan 24 16:15:50 2000
++++ Makefile	Wed Mar  8 23:24:45 2000
+@@ -50,11 +50,6 @@
+ UNZIPDEFINES=-DUNZIP_SUPPORT
  endif
  
- MOC = $(QTDIR)/bin/moc
--CCC = g++ -fno-rtti
+-ifdef THREAD_SOUND
+-CPUDEFINES += -DUSE_THREADS
+-EXTRALIBS += -lpthread
+-endif
+-
+ ifdef GLIDE
+ GLIDEOBJS = unix/glide.o
+ GLIDEDEFINES = -DUSE_GLIDE -I/usr/include/glide
+@@ -66,24 +61,30 @@
+ GLIDENO_DEPENDS=use_glide
+ endif
+ 
+-CCC = gcc
 -CC = gcc
-+CCC = ${CXX} -fno-rtti
++CCC = $(CXX) -fno-rtti
 +CC ?= gcc
  NASM = nasm
  
++ifdef THREAD_SOUND
++CPUDEFINES += -DUSE_THREADS
++CC += -pthread
++CCC += -pthread
++endif
++
  INCLUDES=-I/usr/X11R6/include -I/usr/local/include
  
 -OPTIMISE=-O6 -mpentium -fomit-frame-pointer -fno-exceptions
-+OPTIMISE= ${CXXFLAGS} -fomit-frame-pointer
- #OPTIMISE=-g -fno-exceptions 
- #-DMITSHM 
++OPTIMISE= $(CXXFLAGS) -O6 -mpentium -fomit-frame-pointer -fno-exceptions
  
-@@ -87,7 +87,6 @@
+ CCFLAGS = $(OPTIMISE) -DMITSHM \
  -Ii386 \
  -I. \
  -Iunzip \
@@ -38,23 +41,24 @@ diff -ru ../../work/release/Makefile ./Makefile
  -DZLIB \
  -DNO_INLINE_SET_GET \
  -DVAR_CYCLES \
-@@ -100,7 +99,8 @@
- $(NETPLAYDEFINES) \
- $(UNZIPDEFINES) \
- $(GLIDEDEFINES) \
--$(GUIDEFINES)
-+$(GUIDEFINES) \
-+-DSOUND
+ -DCPU_SHUTDOWN \
+ -DSPC700_SHUTDOWN \
++-DSOUND \
+ $(LINUXDEFINES) \
+ $(FXDEFINES) \
+ $(CPUDEFINES) \
+@@ -108,7 +109,7 @@
+ # system using the egcs compiler get an undefined __register_frame_info
+ # symbol error when run on a Redhat box.
  
- #-DSOUND
- #-DDEBUGGER
-@@ -112,12 +112,12 @@
- CFLAGS=$(CCFLAGS)
- 
- .SUFFIXES: .o .cpp .c .cc .h .m .i .S .asm
 -LDLIBS = -L/usr/X11R6/lib frame.o
 +LDLIBS = -L/usr/X11R6/lib
  
+ ifdef GLIDE
+ ifdef NETPLAY
+@@ -118,9 +119,9 @@
+ endif
+ else
  ifdef NETPLAY
 -all: offsets snes9x ssnes9x s9xserver
 +all: offsets snes9x s9xserver
@@ -62,11 +66,5 @@ diff -ru ../../work/release/Makefile ./Makefile
 -all: offsets snes9x ssnes9x
 +all: offsets snes9x
  endif
+ endif
  
- #ggisnes9x
-@@ -236,5 +236,4 @@
- snaporig.o: cpuexec.h
- unix/x11.o: snes9x.h port.h
- unix/glide.o: snes9x.h port.h 3d.h
--unix/x11.o: unix/snes9x_gui.h
- unix/snes9x_gui.o: unix/snes9x_gui.h
