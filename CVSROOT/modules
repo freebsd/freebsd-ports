@@ -2738,6 +2738,7 @@ imap-uw		ports/mail/imap-uw
 imapfilter	ports/mail/imapfilter
 imaze		ports/games/imaze
 imc		ports/graphics/imc
+imcom		ports/net/imcom
 imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
