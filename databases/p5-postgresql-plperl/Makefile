@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-plperl
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A module for using Perl5 to write SQL functions
 
-POSTGRESQL_PORT?=	databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql-client
 POSTGRESQL_SUBPORT=YES
 .include "../../${POSTGRESQL_PORT}/Makefile"
 
