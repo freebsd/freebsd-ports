@@ -1,0 +1,11 @@
+HappyDoc is a tool for extracting documentation from Python source code.
+It differs from other such applications by the fact that it uses the
+parse tree for a module to derive the information used in its output,
+rather that importing the module directly. This allows the user to
+generate documentation for modules which need special context to be
+imported.
+
+WWW: http://happydoc.sourceforge.net/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org

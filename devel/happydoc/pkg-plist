@@ -1,0 +1,47 @@
+bin/happydoc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc.pth
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/CommandLineApp.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/CommandLineApp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/MML.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/MML.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/StructuredText.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/StructuredText.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/cvsversion.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/cvsversion.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/emptytest.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/emptytest.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/parseinfo.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/parseinfo.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/pluginloader.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/pluginloader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/prettyast.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/prettyast.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/test_happydoc.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/test_happydoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/ts_regex.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/ts_regex.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_multiplefile.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_multiplefile.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_singlefile.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_singlefile.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_stdout.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_stdout.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_htmlfile.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_htmlfile.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_textfile.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_textfile.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/happydoc
