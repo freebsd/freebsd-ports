@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.qsl.net/pg4i/download/
 MAINTAINER=	patrick@FreeBSD.org
 COMMENT=	An Amateur Radio station logging application
 
+BROKEN=		"Does not compile"
+
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 

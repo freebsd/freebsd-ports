@@ -17,6 +17,8 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	ld@FreeBSD.org.cn
 COMMENT=	A cross-platform and international dictionary written in Gtk2
 
+BROKEN=		"Does not compile"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
