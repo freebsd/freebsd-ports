@@ -16,9 +16,11 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	bms@spc.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+USE_PERL5_BUILD=	yes
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PERL5="${PERL5}"
 ALL_TARGET=
 
 EXAMPLE_FILES=	example.asm morse.asm morse.i pic16f84.i picmac.i
