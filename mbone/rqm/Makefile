@@ -30,4 +30,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rqm
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
