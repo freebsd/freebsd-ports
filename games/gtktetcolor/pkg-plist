@@ -6,6 +6,7 @@ share/gnome/pixmaps/gtktetcolor.xpm
 share/gnome/sounds/gtktetcolor/bonus.wav
 share/gnome/sounds/gtktetcolor/gameover.wav
 share/gnome/sounds/gtktetcolor/linerem.wav
+share/locale/de/LC_MESSAGES/gtktetcolor.mo
 share/locale/fr/LC_MESSAGES/gtktetcolor.mo
 share/locale/ru/LC_MESSAGES/gtktetcolor.mo
 @dirrm share/gnome/sounds/gtktetcolor
