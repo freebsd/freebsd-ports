@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       xrisk
+PORTNAME=	xrisk
 PORTVERSION=	2.13
 CATEGORIES=	games
-MASTER_SITES=   ftp://geocub.greco-prog.fr/pub/Games/
-EXTRACT_SUFX=   .tar.Z
+MASTER_SITES=	http://people.freebsd.org/~steve/distfiles/ \
+		ftp://geocub.greco-prog.fr/pub/Games/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
