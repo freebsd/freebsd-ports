@@ -1,0 +1,9 @@
+  LOCAL_LIBRARIES = -lm $(XLIB)
+
+  MANSUFFIX=6
+
+  OBJS = xast.o
+
+  SRCS = xast.c
+
+  ComplexProgramTarget(xasteroids)

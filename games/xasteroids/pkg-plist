@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xasteroids
+man/man6/xasteroids.6.gz
