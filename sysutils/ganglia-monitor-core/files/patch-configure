@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Oct 27 16:51:34 2003
++++ configure	Mon Oct 27 16:52:23 2003
+@@ -11458,7 +11458,7 @@
+ 
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define BSD 1
++#define FREEBSD 1
+ _ACEOF
+ ;;
+ *cygwin*)      	metric_source="cygwin.c"
