@@ -9,24 +9,16 @@ PORTNAME=	oregano
 PORTVERSION=	0.23
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
+MASTER_SITES=	http://people.imendio.com/richard/oregano/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomeprint libglade
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\(\$$(datadir)/\)gnome/|\1|g ; \
-		s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
