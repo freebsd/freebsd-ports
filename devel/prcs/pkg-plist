@@ -4,3 +4,7 @@ info/prcs.info
 info/prcs.info-1
 info/prcs.info-2
 info/prcs.info-3
+share/emacs/site-lisp/prcs.el
+share/emacs/site-lisp/prcs.elc
+share/emacs/site-lisp/prcs-ediff.el
+share/emacs/site-lisp/prcs-ediff.elc
