@@ -8,45 +8,40 @@
 PORTNAME=	wsmake
 PORTVERSION=	0.6.4
 CATEGORIES=	www
-MASTER_SITES=	${WSMAKE_MASTER_SITE}/dwnlds/stable/ \
-		${WSMAKE_MASTER_SITE}/docs/
+MASTER_SITES=	http://www.wsmake.org/dwnlds/stable/ \
+		http://www.wsmake.org/docs/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} examples.tar.gz
-.ifndef NOPORTDOCS
-DISTFILES+=	user-manual-html.tar.gz
-.endif
-DIST_SUBDIR=	wsmake
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	jkoshy@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for production and maintenance of web sites
 
-USE_BZIP2=	YES
-GNU_CONFIGURE=	YES
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-WSMAKE_MASTER_SITE=	http://www.wsmake.org
-WSMAKE_DOCDIR=	${PREFIX}/share/doc/wsmake
-WSMAKE_EXDIR=	${PREFIX}/share/examples/wsmake
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+.if !defined(NOPORTDOCS)
+DISTFILES+=	user-manual-html.tar.gz
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,void\*,char\*,g' ${WRKSRC}/libwsmake/wsUtil.cpp
 
 # Install examples and optional documentation.
 post-install:
-	${MKDIR} ${WSMAKE_EXDIR}
-	cd ${WSMAKE_EXDIR} && \
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${EXAMPLESDIR} && \
 		 ${TAR} -xzf ${_DISTDIR}/examples.tar.gz --exclude '*/CVS/*'
 .for ex in 1 2 3 4 5 6 7 8 9 10 11 12 13
-	${MV} ${WSMAKE_EXDIR}/examples/ex${ex} ${WSMAKE_EXDIR}
+	@${MV} ${EXAMPLESDIR}/examples/ex${ex} ${EXAMPLESDIR}
 .endfor
-	${RM} -rf ${WSMAKE_EXDIR}/examples
-.ifndef NOPORTDOCS
-	${MKDIR} ${WSMAKE_DOCDIR}
-	cd ${WSMAKE_DOCDIR} && \
+	@${RM} -rf ${EXAMPLESDIR}/examples
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${DOCSDIR} && \
 		${TAR} -xzf ${_DISTDIR}/user-manual-html.tar.gz
-	${LN} ${WSMAKE_DOCDIR}/user-manual/book1.html ${WSMAKE_DOCDIR}/user-manual/index.html
+	${LN} ${DOCSDIR}/user-manual/book1.html ${DOCSDIR}/user-manual/index.html
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
