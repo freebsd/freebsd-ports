@@ -3995,6 +3995,7 @@ linuxigd	ports/net/linuxigd
 linuxthreads	ports/devel/linuxthreads
 lire		ports/sysutils/lire
 listmanager	ports/mail/listmanager
+liveMedia	ports/net/liveMedia
 livecd		ports/sysutils/livecd
 lkm		src/lkm
 lkm_atapi	src/lkm/atapi
