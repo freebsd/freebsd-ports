@@ -42,8 +42,9 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PORTDOCS=	NEWS ChangeLog html
 
 DBDIR=		/var/db/clamav
+LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
-PLIST_SUB+=	DBDIR=${DBDIR} RUNDIR=${RUNDIR}
+PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
@@ -72,6 +73,7 @@ CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DBDIR%%|${DBDIR}|g' \
+		-e 's|%%LOGDIR%%|${LOGDIR}|g' \
 		-e 's|%%RUNDIR%%|${RUNDIR}|g' \
 		-e 's|%%CLAMAVUSER%%|${CLAMAVUSER}|g' \
 		-e 's|%%CLAMAVGROUP%%|${CLAMAVGROUP}|g' \
@@ -79,7 +81,7 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%CLAMAV_MILTER_SOCKET%%|${CLAMAV_MILTER_SOCKET}|g'
 
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
-		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 /var/log/clamav/\3|' \
+		-e 's|^\#?((Update)?LogFile) .*/([a-z]+\.log)$$|\1 ${LOGDIR}/\3|' \
 		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 ${RUNDIR}/\2|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
@@ -89,7 +91,7 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|' \
+		-e 's|^\#?(UpdateLogFile) .*$$|\1 ${LOGDIR}/freshclam.log|' \
 		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
