@@ -802,3 +802,4 @@ x11/kgama|graphics/kdegraphics3|2004-02-05|Kgamma is now a part of kdegraphics
 devel/libgtop||2004-02-06|Obsolete and no longer maintained
 devel/ruby-libgtop||2004-02-06|Obsolete and no longer maintained
 devel/p5-GTop||2004-02-06|Obsolete and no longer maintained
+www/p5-Apache-VMonitor||2004-02-06|Depends on obsolete libgtop
