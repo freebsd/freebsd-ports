@@ -6,18 +6,23 @@ bin/x64
 bin/xcbm2
 bin/xpet
 bin/xvic
+include/resid/envelope.h
+include/resid/extfilt.h
+include/resid/filter.h
+include/resid/pot.h
+include/resid/sid.h
+include/resid/siddefs.h
+include/resid/spline.h
+include/resid/voice.h
+include/resid/wave.h
 @unexec install-info --delete %D/info/vice.info %D/info/dir
 info/vice.info
-info/vice.info-1
-info/vice.info-2
-info/vice.info-3
-info/vice.info-4
-info/vice.info-5
-info/vice.info-6
 @exec install-info %D/info/vice.info %D/info/dir
 lib/vice/C128/basic
+lib/vice/C128/basic64
 lib/vice/C128/c64s.vpl
 lib/vice/C128/ccs64.vpl
+lib/vice/C128/charg64
 lib/vice/C128/chargen
 lib/vice/C128/default.vkm
 lib/vice/C128/default.vpl
@@ -25,10 +30,12 @@ lib/vice/C128/default.vrs
 lib/vice/C128/frodo.vpl
 lib/vice/C128/godot.vpl
 lib/vice/C128/kernal
+lib/vice/C128/kernal64
 lib/vice/C128/os2.vkm
 lib/vice/C128/pc64.vpl
 lib/vice/C128/position.vkm
 lib/vice/C128/vdc_deft.vpl
+lib/vice/C128/vice.vpl
 lib/vice/C128/z80bios
 lib/vice/C64/basic
 lib/vice/C64/c64s.vpl
@@ -44,19 +51,30 @@ lib/vice/C64/os2.vkm
 lib/vice/C64/os2_sym.vkm
 lib/vice/C64/pc64.vpl
 lib/vice/C64/position.vkm
+lib/vice/C64/vice.vpl
 lib/vice/CBM-II/amber.vpl
 lib/vice/CBM-II/basic.128
 lib/vice/CBM-II/basic.256
+lib/vice/CBM-II/basic.500
 lib/vice/CBM-II/busi_uk.vkm
+lib/vice/CBM-II/c64s.vpl
+lib/vice/CBM-II/ccs64.vpl
+lib/vice/CBM-II/chargen.500
 lib/vice/CBM-II/chargen.600
 lib/vice/CBM-II/chargen.700
 lib/vice/CBM-II/default.vpl
+lib/vice/CBM-II/frodo.vpl
+lib/vice/CBM-II/godot.vpl
+lib/vice/CBM-II/green.vpl
 lib/vice/CBM-II/kernal
+lib/vice/CBM-II/kernal.500
 lib/vice/CBM-II/os2.vkm
+lib/vice/CBM-II/pc64.vpl
 lib/vice/CBM-II/rom128h.vrs
 lib/vice/CBM-II/rom128l.vrs
 lib/vice/CBM-II/rom256h.vrs
 lib/vice/CBM-II/rom256l.vrs
+lib/vice/CBM-II/rom500.vrs
 lib/vice/CBM-II/white.vpl
 lib/vice/DRIVES/d1541II
 lib/vice/DRIVES/dos1001
@@ -75,7 +93,6 @@ lib/vice/PET/busi_de.vkm
 lib/vice/PET/busi_uk.vkm
 lib/vice/PET/chargen
 lib/vice/PET/chargen.de
-lib/vice/PET/default.vpl
 lib/vice/PET/edit1g
 lib/vice/PET/edit2b
 lib/vice/PET/edit2g
@@ -83,6 +100,7 @@ lib/vice/PET/edit4b40
 lib/vice/PET/edit4b80
 lib/vice/PET/edit4g40
 lib/vice/PET/graphics.vkm
+lib/vice/PET/green.vpl
 lib/vice/PET/kernal1
 lib/vice/PET/kernal2
 lib/vice/PET/kernal4
@@ -96,6 +114,9 @@ lib/vice/PET/rom4b40.vrs
 lib/vice/PET/rom4b80.vrs
 lib/vice/PET/rom4g40.vrs
 lib/vice/PET/white.vpl
+lib/vice/PRINTER/cbm1526
+lib/vice/PRINTER/mps801
+lib/vice/PRINTER/mps803
 lib/vice/VIC20/basic
 lib/vice/VIC20/chargen
 lib/vice/VIC20/default.vkm
@@ -134,12 +155,14 @@ share/doc/vice/vice_7.html
 share/doc/vice/vice_8.html
 share/doc/vice/vice_9.html
 share/doc/vice/vice_toc.html
-@dirrm lib/vice/C128
-@dirrm lib/vice/C64
-@dirrm lib/vice/CBM-II
-@dirrm lib/vice/DRIVES
-@dirrm lib/vice/PET
+@dirrm share/doc/vice
 @dirrm lib/vice/VIC20
+@dirrm lib/vice/PRINTER
+@dirrm lib/vice/PET
+@dirrm lib/vice/DRIVES
+@dirrm lib/vice/CBM-II
+@dirrm lib/vice/C64
+@dirrm lib/vice/C128
 @dirrm lib/vice/fonts
 @dirrm lib/vice
-@dirrm share/doc/vice
+@dirrm include/resid
