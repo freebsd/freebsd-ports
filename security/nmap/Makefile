@@ -15,11 +15,7 @@ DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	Port scanning utility for large networks
 
-.if !defined(WITH_PRERELEASE)
-DISTVERSION=	3.55
-.else
-DISTVERSION=	3.59ALPHA5
-.endif
+DISTVERSION=	3.70
 
 USE_BZIP2=	yes
 
