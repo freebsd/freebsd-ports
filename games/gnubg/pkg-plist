@@ -1,0 +1,32 @@
+bin/gnubg
+bin/makebearoff
+share/gnubg/gnubg.gtkrc
+share/gnubg/gnubg.wd
+share/gnubg/gnubg_os0.bd
+share/gnubg/gnubg_ts0.bd
+share/gnubg/boards.xml
+share/gnubg/met/catalog
+share/gnubg/met/jacobs.xml
+share/gnubg/met/met.dtd
+share/gnubg/met/met.xsl
+share/gnubg/met/snowie.xml
+share/gnubg/met/woolsey.xml
+share/gnubg/met/zadeh.xml
+share/gnubg/sounds/chequer.wav
+share/gnubg/sounds/dance.wav
+share/gnubg/sounds/double.wav
+share/gnubg/sounds/drop.wav
+share/gnubg/sounds/fanfare.wav
+share/gnubg/sounds/gameover.wav
+share/gnubg/sounds/haere-ra.wav
+share/gnubg/sounds/matchover.wav
+share/gnubg/sounds/move.wav
+share/gnubg/sounds/resign.wav
+share/gnubg/sounds/roll.wav
+share/gnubg/sounds/take.wav
+@dirrm share/gnubg/met
+@dirrm share/gnubg/sounds
+@dirrm share/gnubg
+share/locale/da/LC_MESSAGES/gnubg.mo
+share/locale/de/LC_MESSAGES/gnubg.mo
+share/locale/ja/LC_MESSAGES/gnubg.mo

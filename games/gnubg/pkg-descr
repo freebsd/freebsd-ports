@@ -1,0 +1,7 @@
+GNU Backgammon (gnubg) is for playing and analysing backgammon
+positions, games and matches. It's based on a neural
+network. Though it already plays on a very high level, it's still
+work in progress. You may play GNU Backgammon using the command
+line or a graphical interface (based on GTK+).
+
+WWW: http://www.gnu.org/software/gnubg/gnubg.html
