@@ -1,0 +1,29 @@
+*** xeyes.man.orig	Tue Oct 14 11:44:06 1997
+--- xeyes.man	Tue Oct 14 11:45:09 1997
+***************
+*** 1,12 ****
+! .TH XEYES 1 "Release 5" "X Version 11"
+  .SH NAME
+! xeyes \- a follow the mouse X demo
+  .SH SYNOPSIS
+! .B xeyes
+  [-option ...]
+  .SH DESCRIPTION
+! .I Xeyes
+! watches what you do and reports to the Boss.
+  .SH OPTIONS
+  .TP 8
+  .B \-fg \fIforeground color\fB
+--- 1,12 ----
+! .TH XGOLGO 1 "Release 5" "X Version 11"
+  .SH NAME
+! xgolgo \- a follow the mouse X demo
+  .SH SYNOPSIS
+! .B xgolgo
+  [-option ...]
+  .SH DESCRIPTION
+! .I Xgolgo
+! watches what you do and whether you are hostile or not.
+  .SH OPTIONS
+  .TP 8
+  .B \-fg \fIforeground color\fB
