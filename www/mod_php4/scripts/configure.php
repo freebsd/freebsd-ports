@@ -259,7 +259,7 @@ EOF
 			echo "CONFIGURE_ARGS+=--with-hyperwave=yes"
 			;;
 		\"ming\")
-			echo "LIB_DEPENDS+=	ming.2:\${PORTSDIR}/graphics/ming"
+			echo "LIB_DEPENDS+=	ming.3:\${PORTSDIR}/graphics/ming"
 			echo "CONFIGURE_ARGS+=--with-ming=\${PREFIX}"
 			;;
 		\"sockets\")
