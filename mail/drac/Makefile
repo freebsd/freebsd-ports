@@ -21,8 +21,14 @@ NO_WRKSUBDIR=	yes
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
+.if ${OSVERSION} >= 500018
+	@${PERL} -pi -e "s|^RPCGENFLAGS.*|RPCGENFLAGS = -C -b|g" \
+		${WRKSRC}/Makefile
+.endif
 	@${ECHO} "================================================================================"
 	@${ECHO} "Use make -DWITH_POSTFIX or -DWITH_EXIM with this port for databases compatible"
 	@${ECHO} "with those MTAs."
@@ -37,4 +43,4 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
