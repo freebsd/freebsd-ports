@@ -42,6 +42,7 @@
     SUBDIR += mp3info
     SUBDIR += mpegaudio
     SUBDIR += mpg123
+    SUBDIR += mpg123.el
     SUBDIR += mpmf20
     SUBDIR += mxv
     SUBDIR += nas
