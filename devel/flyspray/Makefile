@@ -8,7 +8,7 @@
 PORTNAME=	flyspray
 PORTVERSION=	0.9.4
 CATEGORIES=	devel
-MASTER_SITES=	http://flyspray.rocks.cc/
+MASTER_SITES=	http://flyspray.rocks.cc/files/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A simple, easy-to-use web based bug tracking system
@@ -20,12 +20,8 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
 NO_BUILD=       yes
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 
 DOC_FILES=	AUTHORS BUGS CHANGELOG COPYING INSTALL README TODO UPGRADING flyspray-${PORTVERSION}.sql
-
-do-fetch: ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES}/?file=${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/${PORTNAME}
