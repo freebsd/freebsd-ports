@@ -1,0 +1,8 @@
+--- scripts/anjuta_import.sh.in.orig	Wed May 14 16:09:42 2003
++++ scripts/anjuta_import.sh.in	Wed May 14 16:11:15 2003
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Shell script to automatically create an Anjuta 1.x project file
+ # Copyright: Biswapesh Chattopadhyay (biswapesh_chatterjee@tcscal.co.in) 2001-2002

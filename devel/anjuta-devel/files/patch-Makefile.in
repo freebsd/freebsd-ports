@@ -1,23 +1,31 @@
---- Makefile.in.orig	Fri Mar 28 09:16:24 2003
-+++ Makefile.in	Fri Mar 28 09:17:36 2003
-@@ -176,9 +176,9 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
+--- Makefile.in.orig	Wed May 14 13:01:45 2003
++++ Makefile.in	Wed May 14 13:02:02 2003
+@@ -281,17 +281,17 @@
+ 	done
  
--SUBDIRS = intl po macros tagmanager global-tags scintilla \
-+SUBDIRS = intl po macros tagmanager global-tags \
- 	widgets printing manuals omf-install pixmaps scripts data \
--	doc launcher plugins src macros2
-+	launcher plugins src macros2
+ install-anjutadocDATA: $(anjutadoc_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(anjutadocdir)
+-	@list='$(anjutadoc_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p; \
+-	  fi; fi; \
+-	done
++#	@$(NORMAL_INSTALL)
++#	$(mkinstalldirs) $(DESTDIR)$(anjutadocdir)
++#	@list='$(anjutadoc_DATA)'; for p in $$list; do \
++#	  if test -f $(srcdir)/$$p; then \
++#	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p"; \
++#	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjutadocdir)/$$p; \
++#	  else if test -f $$p; then \
++#	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p"; \
++#	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjutadocdir)/$$p; \
++#	  fi; fi; \
++#	done
  
- 
- anjutadocdir = ${prefix}/@NO_PREFIX_PACKAGE_DOC_DIR@
-@@ -592,7 +592,7 @@
- 
- info-am:
- 
--install-data-am: install-anjuta_dataDATA install-anjutadocDATA \
-+install-data-am: install-anjuta_dataDATA \
- 	install-gnomemenuDATA
- 
- install-exec-am:
+ uninstall-anjutadocDATA:
+ 	@$(NORMAL_UNINSTALL)

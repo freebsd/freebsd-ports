@@ -1,0 +1,31 @@
+--- doc/Makefile.in.orig	Wed May 14 13:04:06 2003
++++ doc/Makefile.in	Wed May 14 13:04:39 2003
+@@ -239,17 +239,17 @@
+ 	$(MAKE) $(AM_MAKEFLAGS) uninstall-man1
+ 
+ install-anjuta_docDATA: $(anjuta_doc_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(anjuta_docdir)
+-	@list='$(anjuta_doc_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjuta_docdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjuta_docdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjuta_docdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjuta_docdir)/$$p; \
+-	  fi; fi; \
+-	done
++#	@$(NORMAL_INSTALL)
++#	$(mkinstalldirs) $(DESTDIR)$(anjuta_docdir)
++#	@list='$(anjuta_doc_DATA)'; for p in $$list; do \
++#	  if test -f $(srcdir)/$$p; then \
++#	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjuta_docdir)/$$p"; \
++#	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(anjuta_docdir)/$$p; \
++#	  else if test -f $$p; then \
++#	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(anjuta_docdir)/$$p"; \
++#	    $(INSTALL_DATA) $$p $(DESTDIR)$(anjuta_docdir)/$$p; \
++#	  fi; fi; \
++#	done
+ 
+ uninstall-anjuta_docDATA:
+ 	@$(NORMAL_UNINSTALL)

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	anjuta
-# Date created:				31 March 2001
-# Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
+# Date created:				13 May 2003
+# Whom:					Sergey Akifyev <asa@gascom.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	anjuta
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -14,21 +14,28 @@ MASTER_SITE_SUBDIR=	anjuta
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
-LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla \
-		pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint gdkpixbuf libglade
+USE_GNOME=	gnomeprefix gnomehack libgnomeprint libgnomeui vte libzvt
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#-lpthread#${PTHREAD_LIBS}#g ; \
-		 s#DATADIRNAME=lib#DATADIRNAME=share#g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-		${WRKSRC}/src/Makefile.in
+MAN1=		anjuta.1 anjuta_launcher.1
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \
+		${PREFIX}/share/gnome/anjuta/glade
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for f in AUTHORS COPYING ChangeLog FUTURE INSTALL NEWS README \
+	doc/ScintillaDoc.html TODO
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
