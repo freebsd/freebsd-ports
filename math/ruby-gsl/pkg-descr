@@ -1,0 +1,6 @@
+Ruby/GSL is a Ruby extension library for GSL (GNU Scientific Library),
+which provides a number of functions and methods for numerical
+computing in Ruby.
+
+Author:	Yoshiki Tsunesada <yoshiki@cr.phys.titech.ac.jp>
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=ruby-gsl
