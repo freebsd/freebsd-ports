@@ -5,7 +5,7 @@
          
  libbugreport_la_METASOURCES = USE_AUTOMOC
 -libdir = $(prefix)/qtez/plugins
-+libdir = $(QTEZ)/plugins
++libdir = $(prefix)/lib/qtez/plugins
  
  #noinst_PROGRAMS = bug
  #bug_SOURCES  = main.cpp

@@ -1,15 +1,30 @@
 bin/qtez
 lib/libPluginManager.a
+lib/libPluginManager.so
+lib/libPluginManager.so.0
 lib/libQt2Dialogs.a
+lib/libQt2Dialogs.so
+lib/libQt2Dialogs.so.0
 lib/libQt2Geometry.a
+lib/libQt2Geometry.so
+lib/libQt2Geometry.so.0
 lib/libQt2Misc.a
+lib/libQt2Misc.so
+lib/libQt2Misc.so.0
 lib/libQt2Network.a
+lib/libQt2Network.so
+lib/libQt2Network.so.0
 lib/libQt2Widgets.a
-share/qtez/.configs
+lib/libQt2Widgets.so
+lib/libQt2Widgets.so.0
+lib/libcomponents.so
+lib/libcomponents.so.1
+lib/qtez/plugins/libbugreport.so
+lib/qtez/plugins/sourceditor/libSyntaxEditor.so
 share/qtez/acinclude.m4
-share/qtez/am_edit
 share/qtez/autogen.sh
 share/qtez/automoc
+share/qtez/doc/changes.html
 share/qtez/doc/compcret.html
 share/qtez/doc/index-1.html
 share/qtez/doc/index-2.html
@@ -37,48 +52,20 @@ share/qtez/doc/tutorial/projview.html
 share/qtez/doc/tutorial/sigslot.html
 share/qtez/doc/tutorial/srcedit.html
 share/qtez/doc_Makefile.am
-share/qtez/fine/.editor
-share/qtez/fine/C++.template
-share/qtez/fine/C++.template.blue
-share/qtez/fine/C++.template.white
-share/qtez/fine/LaTeX.template
-share/qtez/fine/am.template
-share/qtez/fine/blue/C++.template
-share/qtez/fine/blue/am.template
-share/qtez/fine/blue/h.template
-share/qtez/fine/blue/html.template
-share/qtez/fine/blue/lsm.template
-share/qtez/fine/blue/po.template
-share/qtez/fine/blue/qtz.template
-share/qtez/fine/html.template
-share/qtez/fine/lsm.template
-share/qtez/fine/po.template
-share/qtez/fine/qtz.template
-share/qtez/fine/white/C++.template
-share/qtez/fine/white/am.template
-share/qtez/fine/white/h.template
-share/qtez/fine/white/html.template
-share/qtez/fine/white/lsm.template
-share/qtez/fine/white/po.template
-share/qtez/fine/white/qtz.template
 share/qtez/icons/qtez-project.png
 share/qtez/icons/qtez.png
 share/qtez/icons/qtez48x48.png
-share/qtez/img/about.gif
 share/qtez/img/bwiz.png
-share/qtez/img/tm.png
 share/qtez/img/unstable.gif
-share/qtez/po_KDE_Makefile.am
 share/qtez/po_Makefile.am
 share/qtez/prepare.sh
-@exec mkdir -p %D/share/qtez/plugins
-@unexec rmdir %D/share/qtez/plugins
+share/qtez/qtez.udb
 @dirrm share/qtez/img
 @dirrm share/qtez/icons
-@dirrm share/qtez/fine/white
-@dirrm share/qtez/fine/blue
-@dirrm share/qtez/fine
 @dirrm share/qtez/doc/tutorial/images
 @dirrm share/qtez/doc/tutorial
 @dirrm share/qtez/doc
 @dirrm share/qtez
+@dirrm lib/qtez/plugins/sourceditor
+@dirrm lib/qtez/plugins
+@dirrm lib/qtez
