@@ -18,6 +18,7 @@ share/doc/gengetopt/THANKS
 share/doc/gengetopt/INSTALL
 share/doc/gengetopt/README
 share/doc/gengetopt/LICENSE
+share/gengetopt/alloca.c
 share/gengetopt/getopt.h
 share/gengetopt/getopt.c
 share/gengetopt/getopt1.c
