@@ -1,4 +1,4 @@
 ;;;###autoload
 (package-provide 'wl
-                 :version 1.11
+                 :version 2.10
                  :type 'regular)

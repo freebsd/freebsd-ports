@@ -32,6 +32,7 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-beta-xmas-logo.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-insert-signature-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-kill-up.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-save-and-exit-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-send-from-toolbar-down.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-send-from-toolbar-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-draft-up.xpm
@@ -39,6 +40,7 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-exit-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-check-current-entity-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-empty-trash-up.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-goto-draft-folder-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-jump-to-current-entity-no-sync-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-jump-to-current-entity-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-folder-next-entity-up.xpm
@@ -70,6 +72,7 @@
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-reply-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-reply-with-citation-up.xpm
 %%EMACS_PACKAGESDIR%%/etc/wl/wl-summary-sync-force-update-up.xpm
+%%EMACS_PACKAGESDIR%%/etc/wl/wl-write-current-folder-up.xpm
 %%EMACS_PACKAGESDIR%%/lisp/wl/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/acap.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/acap.elc
@@ -125,6 +128,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-sendlog.elc
 %%SHIMBUN%%%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.el
 %%SHIMBUN%%%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-shimbun.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-split.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/elmo-split.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-util.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-util.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/elmo-vars.el
