@@ -1,0 +1,20 @@
+--- src/m4.c	Mon Oct 22 04:25:47 2001
++++ src/m4.c	Mon Oct 22 04:26:03 2001
+@@ -369,7 +369,7 @@
+ 
+       case 'o':
+ 	if (!debug_set_output (optarg))
+-	  error (0, errno, optarg);
++	  error (0, errno, "%s", optarg);
+ 	break;
+ 
+       case 's':
+@@ -466,7 +466,7 @@
+ 	    fp = path_search (argv[optind]);
+ 	    if (fp == NULL)
+ 	      {
+-		error (0, errno, argv[optind]);
++		error (0, errno, "%s", argv[optind]);
+ 		continue;
+ 	      }
+ 	    else
