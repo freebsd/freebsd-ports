@@ -22,8 +22,8 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.if ${OSVERSION} >= 501000 || ${ARCH} != "i386"
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION} or on !i386"
 .endif
 
 post-patch:
