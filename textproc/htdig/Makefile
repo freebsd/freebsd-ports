@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \
 		--with-config-dir=${PREFIX}/etc/htdig \
 		--with-default-config-file=${PREFIX}/etc/htdig/htdig.conf
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500037
+CONFIGURE_ENV+=	CXXFLAGS=-Wno-deprecated CPPFLAGS=-Wno-deprecated
+.endif
+
 BUILD_TARGET=	depends all
 
 post-patch:
@@ -43,4 +49,4 @@ post-patch:
 post-install:
 	@ ${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
