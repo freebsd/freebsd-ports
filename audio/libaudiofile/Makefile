@@ -21,4 +21,6 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
+CONFLICTS=	osalp-0.7.*
+
 .include <bsd.port.mk>
