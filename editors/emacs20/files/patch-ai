@@ -1,0 +1,17 @@
+--- src/unexelf.c.orig	Mon Aug 10 11:33:12 1998
++++ src/unexelf.c	Sun Jan  3 20:54:08 1999
+@@ -512,6 +512,14 @@
+ # include <link.h>	/* get ElfW etc */
+ #endif
+ 
++#ifdef __FreeBSD__
++# ifdef __STDC__
++#  define ElfW(type)	Elf_##type
++# else
++#  define ElfW(type)	Elf_/**/type
++# endif
++#endif
++
+ #ifndef ElfW
+ # ifdef __STDC__
+ #  define ElfW(type)	Elf32_##type

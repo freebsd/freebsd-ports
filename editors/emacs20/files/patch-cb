@@ -1,5 +1,5 @@
---- src/s/freebsd.h.orig	Wed Nov 11 21:22:03 1998
-+++ src/s/freebsd.h	Wed Nov 11 21:52:19 1998
+--- src/s/freebsd.h.orig	Wed Aug 19 16:25:36 1998
++++ src/s/freebsd.h	Sun Jan  3 20:56:02 1999
 @@ -45,6 +45,13 @@
  #define LIBS_SYSTEM -lutil
  #define LIBS_TERMCAP -ltermcap
@@ -14,3 +14,21 @@
  #define SYSV_SYSTEM_DIR
  
  /* freebsd has POSIX-style pgrp behavior. */
+@@ -54,9 +61,16 @@
+ #ifdef __ELF__
+ 
+ #define LD_SWITCH_SYSTEM
++
++#ifdef __alpha__
++#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crtbegin.o
++#define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o
++#else
+ #define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o
+-#define UNEXEC unexelf.o
+ #define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o /usr/lib/crtn.o
++#endif
++
++#define UNEXEC unexelf.o
+ #undef LIB_GCC
+ #define LIB_GCC
+ 

@@ -1,0 +1,13 @@
+--- configure.orig	Tue Aug 20 13:11:26 1996
++++ configure	Sat Jan 16 23:18:54 1999
+@@ -756,6 +756,10 @@
+     machine=alpha opsys=gnu-linux
+   ;;
+ 
++  alpha-*-freebsd* )
++    machine=alpha opsys=freebsd
++  ;;
++
+   ## Altos 3068
+   m68*-altos-sysv* )
+     machine=altos opsys=usg5-2

@@ -153,18 +153,18 @@ info/terminology
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).			Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 @comment
 @exec [ -f %D/share/mule/%%EMACS_VERSION%%/info/dir ] || mkdir -p %D/share/mule/%%EMACS_VERSION%%/info; sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/share/mule/%%EMACS_VERSION%%/info/dir
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/cvtmail
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/digest-doc
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/emacsserver
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/fakemail
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/hexl
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/movemail
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/profile
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/rcs2log
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/sorted-doc
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/vcdiff
-libexec/mule/%%EMACS_VERSION%%/i386--freebsd/yow
-@dirrm libexec/mule/%%EMACS_VERSION%%/i386--freebsd
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/cvtmail
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/digest-doc
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/emacsserver
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/fakemail
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/hexl
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/movemail
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/profile
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/rcs2log
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/sorted-doc
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/vcdiff
+libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/yow
+@dirrm libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%
 @dirrm libexec/mule/%%EMACS_VERSION%%
 @dirrm libexec/mule
 share/mule/%%EMACS_VERSION%%/etc/3B-MAXMEM

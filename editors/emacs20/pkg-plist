@@ -51,17 +51,17 @@ info/widget
 @exec install-info %D/info/vip %D/info/dir
 @exec install-info %D/info/viper %D/info/dir
 @exec install-info %D/info/widget %D/info/dir
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/cvtmail
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/digest-doc
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/emacsserver
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/fakemail
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/hexl
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/movemail
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/profile
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/rcs2log
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/sorted-doc
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/vcdiff
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/yow
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/cvtmail
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/digest-doc
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/emacsserver
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/fakemail
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/hexl
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/movemail
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/profile
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/rcs2log
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/sorted-doc
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/yow
 share/emacs/%%EMACS_VER%%/etc/3B-MAXMEM
 share/emacs/%%EMACS_VER%%/etc/AIX.DUMP
 share/emacs/%%EMACS_VER%%/etc/BABYL
@@ -1287,7 +1287,7 @@ share/emacs/%%EMACS_VER%%/lisp/zone-mode.el
 share/emacs/%%EMACS_VER%%/lisp/zone-mode.elc
 share/emacs/%%EMACS_VER%%/site-lisp/subdirs.el
 share/emacs/site-lisp/subdirs.el
-@dirrm libexec/emacs/%%EMACS_VER%%/i386--freebsd
+@dirrm libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VER%%
 @dirrm libexec/emacs
 @dirrm share/emacs/%%EMACS_VER%%/etc/e

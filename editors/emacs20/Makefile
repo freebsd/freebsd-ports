@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.34 1998/12/13 11:54:49 kuriyama Exp $
+# $Id: Makefile,v 1.35 1999/01/16 22:58:59 asami Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -15,10 +15,12 @@ MAINTAINER=	jseger@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit --with-pop
+EMACS_ARCH=	${MACHINE_ARCH}--freebsd
+CONFIGURE_ARGS=	${EMACS_ARCH} --with-x-toolkit --with-pop
+
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		emacs.1 etags.1 ctags.1
-PLIST_SUB=	EMACS_VER=20.3
+PLIST_SUB=	EMACS_VER=20.3 EMACS_ARCH=${EMACS_ARCH}
 
 .if defined(USE_XPGLIB)
 .if (${USE_XPGLIB} == "YES")
