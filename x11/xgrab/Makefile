@@ -3,7 +3,7 @@
 # Date created:         27 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/07/31 01:01:36 jmz Exp $
+# $Id: Makefile,v 1.8 1996/11/18 09:56:24 asami Exp $
 #
 
 DISTNAME=	xgrabsc.2_41
@@ -18,7 +18,7 @@ USE_IMAKE=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
 # Needs to actually *run* xrdb
-IS_INTERACTIVE=	yes
+#IS_INTERACTIVE=	yes
 # "make depend" blows up
 XMKMF=		xmkmf
 
