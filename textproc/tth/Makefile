@@ -3,7 +3,7 @@
 # Date created:         19 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/03/03 10:58:02 tg Exp $
+# $Id: Makefile,v 1.3 1998/03/03 13:19:10 tg Exp $
 #
 
 DISTNAME=       tth_C
@@ -18,7 +18,6 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		latex:${PORTSDIR}/print/teTeX
 
-NO_CDROM=	"Don't sell for profit until we have an OK from the author"
 NO_WRKSUBDIR=	yes
 MAN1=		tth.1
 
