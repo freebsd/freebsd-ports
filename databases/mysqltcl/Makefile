@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	2.14
+PORTVERSION=	2.40
 CATEGORIES=	databases tcl83
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
@@ -16,16 +16,16 @@ COMMENT=	TCL module for accessing MySQL databases based on msqltcl
 LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client \
 		${TCL_NODOT}:${PORTSDIR}/lang/${TCL_NODOT}
 
-TCL_VERSION?=	tcl8.3
+TCL_VERSION?=	tcl8.4
 TCL_NODOT=	${TCL_VERSION:S/.//}
 SQL_DIR=	${PREFIX}/lib/${TCL_VERSION}/mysqltcl
 PLIST_SUB+=	TCL_VERSION=${TCL_VERSION} LIB_NAME=${LIB_NAME}
 MANN=		mysqltcl.n
-
-do-build:
-	cd ${WRKSRC} && ${MAKE} PREFIX="${PREFIX}" \
-		TCL_VERSION=${TCL_VERSION} TCL_NODOT=${TCL_NODOT} \
-		-f ${FILESDIR}/Makefile.bsd ${LIB_NAME}
+MAKE_ENV+=	PORTVERSION="${PORTVERSION}" \
+		TCL_VERSION="${TCL_VERSION}" \
+		TCL_NODOT="${TCL_NODOT}"
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+ALL_TARGET=	shlib
 
 do-install:
 	${MKDIR} ${SQL_DIR}
@@ -36,4 +36,4 @@ do-install:
 
 .include <bsd.port.mk>
 
-LIB_NAME!=	${MAKE} -f ${FILESDIR}/Makefile.bsd -V SHLIB_NAME
+LIB_NAME!=	${MAKE_ENV} ${MAKE} -f ${FILESDIR}/Makefile.bsd -V SHLIB_NAME
