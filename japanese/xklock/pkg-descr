@@ -1,0 +1,3 @@
+X key lock in the Japanese language.
+It needs file:/usr/X11/lib/jnames. If this file is not exist
+yet, please touch this file to create it.
