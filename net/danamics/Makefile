@@ -24,20 +24,20 @@ PLIST=		${WRKDIR}/plist
 
 SORT?=		/usr/bin/sort
 
+pre-install:
+	cd ${WRKSRC}; ${FIND} . -type f \
+		| ${SORT} | ${SED} -e 's|^\.|danamics|' >${PLIST}
+	cd ${WRKSRC};  ${FIND} . -type d \
+		| ${SORT} -r | ${SED} -e 's|^\.|@dirrm danamics|' >>${PLIST}
+	${ECHO} bin/danamics >>${PLIST}
+
 do-install:
 	${MKDIR} ${PREFIX}/danamics
 	${CP} -R ${WRKSRC}/* ${PREFIX}/danamics
-
-	cd ${PREFIX}; ${FIND} danamics -type f \
-		| ${SORT} >${PLIST}
-	cd ${PREFIX}; ${FIND} danamics -type d \
-		| ${SORT} -r | ${SED} -e 's|^|@dirrm |' >>${PLIST}
 
 	${SED} \
 		-e s,%%PREFIX%%,${PREFIX},g \
 		< ${FILESDIR}/danamics.sh > ${PREFIX}/bin/danamics; \
 	${CHMOD} a+x ${PREFIX}/bin/danamics
-
-	${ECHO} bin/danamics >>${PLIST}
 
 .include <bsd.port.post.mk>

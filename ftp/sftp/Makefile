@@ -26,21 +26,25 @@ MAN1=		secftp.1
 
 PLIST=		${WRKDIR}/.PLIST
 
+pre-install:
+	@${CP} ${PKGDIR}/pkg-plist.in ${PLIST}.unsorted
+	@if [ ! -f ${PREFIX}/bin/sftp ]; then \
+		${ECHO_CMD} bin/sftp >> ${PLIST}.unsorted; \
+		${ECHO_CMD} man/man1/sftp.1.gz >> ${PLIST}.unsorted; \
+	fi
+	@sort -u ${PLIST}.unsorted > ${PLIST}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sftp ${PREFIX}/bin/secftp
 	${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/rsftp
 	${INSTALL_PROGRAM} ${WRKSRC}/sftpserv ${PREFIX}/bin/sftpserv
 	${INSTALL_MAN} ${WRKSRC}/sftp.1 ${PREFIX}/man/man1/secftp.1
-	${CP} ${PKGDIR}/pkg-plist.in ${PLIST}.unsorted
 	@if [ ! -f ${PREFIX}/bin/sftp ]; then \
 		${ECHO} "No other sftp found, linking sftp to secftp"; \
 		${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/sftp; \
 		${LN} -s ${PREFIX}/man/man1/secftp.1.gz ${PREFIX}/man/man1/sftp.1.gz; \
-		${ECHO_CMD} bin/sftp >> ${PLIST}.unsorted; \
-		${ECHO_CMD} man/man1/sftp.1.gz >> ${PLIST}.unsorted; \
 	else \
 		${ECHO} "Other sftp found, not linking sftp to secftp"; \
 	fi
-	@sort -u ${PLIST}.unsorted > ${PLIST}
 
 .include <bsd.port.post.mk>

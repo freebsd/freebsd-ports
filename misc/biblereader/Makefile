@@ -63,12 +63,14 @@ pre-fetch:
 	@${ECHO_MSG}
 .endif
 
+pre-install:
+	@${CAT} ${PLISTS} > ${PLIST}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/biblereader ${PREFIX}/bin/biblereader
 	${MKDIR} ${PREFIX}/share/biblereader
 	for file in ${DATAFILES}; do \
 		${INSTALL_DATA} $${file} ${PREFIX}/share/biblereader; \
 	done
-	@${CAT} ${PLISTS} > ${PLIST}
 
 .include <bsd.port.mk>

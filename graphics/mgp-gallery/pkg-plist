@@ -1,0 +1,65 @@
+lib/X11/mgp/backgrounds/bg-black-brilliant.jpg
+lib/X11/mgp/backgrounds/bg-black-brilliant.mgp
+lib/X11/mgp/backgrounds/bg-blue-flares-stripe.jpg
+lib/X11/mgp/backgrounds/bg-blue-flares-stripe.mgp
+lib/X11/mgp/backgrounds/bg-blue-flares.jpg
+lib/X11/mgp/backgrounds/bg-blue-flares.mgp
+lib/X11/mgp/backgrounds/bg-blue-tubes.jpg
+lib/X11/mgp/backgrounds/bg-blue-tubes.mgp
+lib/X11/mgp/backgrounds/bg-fourstripes-deepblue.jpg
+lib/X11/mgp/backgrounds/bg-fourstripes-deepblue.mgp
+lib/X11/mgp/backgrounds/bg-green-blue.jpg
+lib/X11/mgp/backgrounds/bg-green-blue.mgp
+lib/X11/mgp/backgrounds/bg-parallel.jpg
+lib/X11/mgp/backgrounds/bg-parallel.mgp
+lib/X11/mgp/backgrounds/bg-somber.jpg
+lib/X11/mgp/backgrounds/bg-somber.mgp
+lib/X11/mgp/backgrounds/linux-logo.gif
+lib/X11/mgp/backgrounds/linux-logo.jpg
+lib/X11/mgp/gradients/gr-00.mgp
+lib/X11/mgp/gradients/gr-01.mgp
+lib/X11/mgp/gradients/gr-02.mgp
+lib/X11/mgp/gradients/gr-03.mgp
+lib/X11/mgp/gradients/gr-04.mgp
+lib/X11/mgp/gradients/gr-05.mgp
+lib/X11/mgp/gradients/gr-06.mgp
+lib/X11/mgp/gradients/gr-07.mgp
+lib/X11/mgp/gradients/gr-08.mgp
+lib/X11/mgp/gradients/gr-09.mgp
+lib/X11/mgp/gradients/gr-10.mgp
+lib/X11/mgp/gradients/gr-11.mgp
+lib/X11/mgp/gradients/gr-12.mgp
+lib/X11/mgp/gradients/gr-13.mgp
+lib/X11/mgp/gradients/gr-14.mgp
+lib/X11/mgp/gradients/gr-15.mgp
+lib/X11/mgp/gradients/gr-16.mgp
+lib/X11/mgp/gradients/gr-17.mgp
+lib/X11/mgp/gradients/gr-18.mgp
+lib/X11/mgp/gradients/gr-black-purple.mgp
+lib/X11/mgp/gradients/gr-white-purple.mgp
+lib/X11/mgp/gradients/linux-logo.gif
+lib/X11/mgp/midgard/linux-logo.gif
+lib/X11/mgp/midgard/midgard-1999-black.mgp
+lib/X11/mgp/midgard/midgard-1999-white.mgp
+lib/X11/mgp/midgard/midgard-black-bg.jpg
+lib/X11/mgp/midgard/midgard-white-bg.jpg
+lib/X11/mgp/solid/bar-danger-white.jpg
+lib/X11/mgp/solid/bar-plasma-white.jpg
+lib/X11/mgp/solid/bar-squares-white.jpg
+lib/X11/mgp/solid/bar-yellow-white.jpg
+lib/X11/mgp/solid/black-yellow-white.mgp
+lib/X11/mgp/solid/brush-lemonchiffon.jpg
+lib/X11/mgp/solid/brush-white.jpg
+lib/X11/mgp/solid/linux-logo.gif
+lib/X11/mgp/solid/plain-bw.mgp
+lib/X11/mgp/solid/tan-darkblue.mgp
+lib/X11/mgp/solid/white-brush.mgp
+lib/X11/mgp/solid/white-danger-bar.mgp
+lib/X11/mgp/solid/white-plasma-bar.mgp
+lib/X11/mgp/solid/white-squares-bar.mgp
+lib/X11/mgp/solid/white-yellow-bar.mgp
+@dirrm lib/X11/mgp/solid
+@dirrm lib/X11/mgp/midgard
+@dirrm lib/X11/mgp/gradients
+@dirrm lib/X11/mgp/backgrounds
+@dirrm lib/X11/mgp
