@@ -8,6 +8,7 @@
 
 PORTNAME=	open-motif
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.ics.com/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	Products/Motif/om${PORTVERSION}/src
