@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strscan
-PORTVERSION=	0.5.9
+PORTVERSION=	0.6.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www1.u-netsurf.ne.jp/~brew/mine/soft/
