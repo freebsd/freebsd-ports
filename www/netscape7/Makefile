@@ -60,7 +60,6 @@ NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License for Java plugin allows internal use only.  Also see license for Netscape itself"
-NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 USE_LINUX=	yes
 USE_XLIB=	yes
@@ -162,6 +161,11 @@ pre-install:
 		${ECHO_CMD} @dirrm lib/linux-netscape6/$${i} >> ${PLIST}; \
 	done
 	${ECHO_CMD} @dirrm lib/linux-netscape6 >> ${PLIST}
+
+pre-package:
+	@${ECHO_MSG} "*** WARNING ***"
+	@${ECHO_MSG} "* Do not distribute packages outside your organization."
+	@${ECHO_MSG} "* It is prohibited by the licensing."
 
 do-install:
 	${MKDIR} ${INSTALL_DIR}
