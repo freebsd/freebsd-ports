@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	treecc
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
