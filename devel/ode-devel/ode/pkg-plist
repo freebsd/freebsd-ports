@@ -4,10 +4,11 @@ include/ode/collision.h
 include/ode/collision_space.h
 include/ode/collision_trimesh.h
 include/ode/common.h
+include/ode/compatibility.h
 include/ode/config.h
 include/ode/contact.h
 include/ode/error.h
-include/ode/geom.h
+include/ode/export-dif.h     
 include/ode/mass.h
 include/ode/matrix.h
 include/ode/memory.h
@@ -17,9 +18,7 @@ include/ode/ode.h
 include/ode/odecpp.h
 include/ode/odecpp_collision.h
 include/ode/odecpp_old.h
-include/ode/odecpp_old_collision.h
 include/ode/odemath.h
 include/ode/rotation.h
-include/ode/space.h
 include/ode/timer.h
 @dirrm include/ode

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	0.039
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opende
@@ -32,19 +32,14 @@ post-patch:
 		${WRKSRC}/configurator.c
 
 	@${REINPLACE_CMD} -e \
-		's|gcc|${CC}|; \
-		s|-fno-rtti||' \
-		${WRKSRC}/OPCODE/Makefile
-
-	@${REINPLACE_CMD} -E -e \
-		's|^CC.+$$|CC=${CC}|; \
+		's|^CC.+$$|CC=${CXX}|; \
 		s|-Wall||g; \
 		s|-L/usr/X11/lib|-lXext|; \
 		s|-L/usr/lib/X11R6||; \
 		s|-L/usr/lib/X11||; \
 		s|-L/usr/X11R6/lib|-L${X11BASE}/lib|; \
 		s|-fno-rtti||; \
-		s|-ffast-math|${CFLAGS} -I${X11BASE}/include|' \
+		s|-ffast-math|${CXXFLAGS} -I${X11BASE}/include|' \
 		${WRKSRC}/config/makefile.unix-gcc
 
 do-install:
