@@ -1,0 +1,7 @@
+sbin/lmd
+etc/lmd.conf.sample
+lib/ldd_http_module.so
+%%PORTDOCS%%share/doc/lmd/README
+%%PORTDOCS%%share/doc/lmd/INSTALL
+%%PORTDOCS%%share/doc/lmd/LICENSE
+%%PORTDOCS%%@dirrm share/doc/lmd

@@ -1,0 +1,23 @@
+loadd is a daemon that communicate with ipfw Firewall via the DIVERT
+sockets. You can easily configure a divert rule on your firewall and
+redirect packets you want into the loadd system. Loadd check the
+destination service and do a NAT on packets if the service must be
+load balance. For choosing a host, loadd apply an algorithm that you
+can configure.
+
+For this first release, two algorithms are available
+and you can found this features:
+
+* Round-Robbin Algorithm (Very simple)
+* Intelligence Load Sharing (Balancing with realtime load, work with
+  lmd client on real servers)
+* TCP supported (not UDP yet)
+* Support multiples IP services (except SSL for the moment)
+* Choose of IP aliasing
+* Choose of port number to Load Balance
+* Multiple daemons support on the same host without conflict
+
+WWW: http://www.bsdshell.net/hut_loadd.html
+
+- Alex Dupre
+sysadmin@alexdupre.com
