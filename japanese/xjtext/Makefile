@@ -14,8 +14,7 @@ DISTNAME=	XJTEXT-${PORTVERSION}
 
 MAINTAINER=	sada@FreeBSD.org
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
+USE_BISON=	yes
 USE_IMLIB=	yes
 EXAMPLEDIR=	${PREFIX}/share/examples/xjtext
 DOCDIR=		${PREFIX}/share/doc/xjtext
