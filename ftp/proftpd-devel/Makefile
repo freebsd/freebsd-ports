@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.0rc3
+PORTVERSION=	1.2.1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/ \
-		ftp://ftp.stikman.com/pub/proftpd/ \
-		ftp://ftp.linux.co.uk/pub/packages/proftpd/ \
-		ftp://ftp.drenik.net/linux/ftp/proftpd/
-DISTNAME=	${PORTNAME}-1.2.0rc3
+MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
+		ftp://ftp.stikman.com/pub/proftpd/source/ \
+		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
+		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
 
 MAINTAINER=	mharo@FreeBSD.org
 
 .if defined(WITH_LDAP)
 MASTER_SITES+=	http://www.horde.net/~jwm/software/proftpd-ldap/
-MOD_LDAP=	mod_ldap-2.7.4.tar.gz
+MOD_LDAP=	mod_ldap-2.7.4.tar.bz2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${MOD_LDAP}
 .endif
 
@@ -28,12 +27,17 @@ MAN8=	proftpd.8 ftpshut.8
 
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
+USE_BZIP2=	YES
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
 
+.if defined(WITHOUT_PAM)
+CONFIGURE_ARGS+=	--disable-pam
+.endif
+
 #allow user to override
-MODULES?=	mod_ratio:mod_readme
+MODULES?=	mod_ratio:mod_readme:mod_quota:mod_wrap
 
 .if defined(WITH_LDAP)
 MODULES:=$(MODULES):mod_ldap
@@ -41,15 +45,10 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
 CONFIGURE_ENV+=	CFLAGS="-I/usr/local/include -g" LDFLAGS=-L/usr/local/lib
 .endif
 
-# Currently not supported by the ProFTPd project, but it's patched in with
-# bugfixes as well. For myself (anders@fix.no):
-# patch-bc: bugid 330 (cached passwords not cleared properly)
-# patch-bd: bugid 405 (sqlauthorative broken)
-# patch-be: bugid 457 (speed improvement)
 .if defined(WITH_MYSQL)
-MODULES:=$(MODULES):mod_sqlpw:mod_mysql
+MODULES:=$(MODULES):mod_sql:mod_sql_mysql
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-CONFIGURE_ENV+=	CFLAGS="-I${PREFIX}/include/mysql" LDFLAGS="-L${PREFIX}/lib/mysql"
+CONFIGURE_ENV+=	CFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib/mysql"
 .endif
 
 .if !empty(MODULES)
@@ -105,6 +104,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ-config.html ${PREFIX}/share/doc/proftpd
 .endif
 
+.if !defined(WITHOUT_PAM)
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
