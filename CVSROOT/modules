@@ -4198,6 +4198,7 @@ linux-mbrola	ports/audio/linux-mbrola
 linux-mozilla	ports/www/linux-mozilla
 linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-mozillafirebird	ports/www/linux-mozillafirebird
+linux-mozillafirebird-el	ports/www/linux-mozillafirebird-el
 linux-nwserver	ports/games/linux-nwserver
 linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
