@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	bookmarkbridge
-PORTVERSION=	0.70
-PORTREVISION=	1
+PORTVERSION=	0.72
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	/bookmarkbridge
+MASTER_SITE_SUBDIR=	bookmarkbridge
 
 MAINTAINER=	molter@gufi.org
 COMMENT=	Synchronize bookmarks between multiple browsers
@@ -22,6 +21,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt --program-prefix=""
+CONFIGURE_ARGS=	--enable-mt --program-prefix="" \
+		--with-libxml2-include="${LOCALBASE}/include/libxml2"
 
 .include <bsd.port.mk>
