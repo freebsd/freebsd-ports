@@ -7,17 +7,20 @@
 
 PORTNAME=	snowflake
 PORTVERSION=	0.01a
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.infomatch.com/~donaldj/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A snowflake image generator
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/snowflake ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/snowflake ${PREFIX}/bin
 
 .include <bsd.port.mk>
