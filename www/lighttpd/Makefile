@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	www
 MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/
 
-MAINTAINER=	k@123.org
+MAINTAINER=	hendrik@scholz.net
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 USE_LIBTOOL_VER=	15
@@ -31,5 +32,6 @@ post-install:
 		${FILESDIR}/lighttpd.sh.tmpl > ${STARTUP_FILE}
 	@${CHMOD} 755 ${STARTUP_FILE}
 	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/
+	@${LIBTOOL} --finish ${PREFIX}/lib
 
 .include <bsd.port.mk>

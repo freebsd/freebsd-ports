@@ -1,3 +1,4 @@
+bin/spawn-fcgi
 etc/lighttpd.conf.sample
 etc/rc.d/lighttpd.sh
 lib/lighttpd/mod_access.so

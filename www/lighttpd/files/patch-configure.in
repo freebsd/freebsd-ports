@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Nov  2 17:11:09 2004
++++ configure.in	Fri Nov 26 10:57:33 2004
+@@ -230,7 +230,7 @@
+     AC_CHECK_HEADERS([openssl/ssl.h])
+     OLDLIBS="$LIBS"
+     AC_CHECK_LIB(crypto, BIO_f_base64, [ 
+-      AC_CHECK_LIB(ssl, SSL_new, [ SSL_LIB="-lcrypto -lssl" ], [], [ -lcrypto ])
++      AC_CHECK_LIB(ssl, SSL_new, [ SSL_LIB="-lcrypto -lssl" AC_DEFINE(HAVE_LIBSSL, [], [Have libssl]) ], [], [ -lcrypto ])
+     ], [], [])
+     LIBS="$OLDLIBS"
+     AC_SUBST(SSL_LIB)
