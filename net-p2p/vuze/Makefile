@@ -7,7 +7,7 @@
 
 PORTNAME=	azureus
 PORTVERSION=	2.2.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,9 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_OS=	native
 USE_ANT=	yes
+USE_JIKES=	no
 
+USE_REINPLACE=	yes
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 
@@ -68,5 +70,9 @@ post-patch:
 	@${SED} -E \
 		-e 's|%%CLASSPATH%%|${CLASSPATH}|' \
 		${FILESDIR}/build.xml > ${WRKSRC}/build.xml
+# bash -> sh
+	@${REINPLACE_CMD} -E \
+		-e 's|/bin/bash|${SH}|' \
+		${WRKSRC}/com/aelitis/azureus/core/update/impl/AzureusRestarterImpl.java
 
 .include <bsd.port.post.mk>
