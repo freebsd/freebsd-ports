@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flowdesigner
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,17 +16,16 @@ DISTNAME=	FlowDesigner-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free (GPL) "data flow oriented" development environment
 
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
-USE_GNOME=	pkgconfig libxml2 libgnomeui
 USE_GCC=	3.3
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-		CFLAGS="${PTHREAD_FLAGS}" \
-		LDFLAGS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-vflow
+USE_GNOME=	gnomehack gnometarget libgnomeui libxml2
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-fftw-includes=${LOCALBASE}/include \
+		--with-fftw-libraries=${LOCALBASE}/lib
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -34,12 +33,20 @@ USE_GMAKE=	yes
 BROKEN=		"Does not compile on amd64"
 .endif
 
+.if ${OSVERSION} < 500035
+CFLAGS+=	-O0
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|tools examples|tools|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|src pixmaps|src|g' ${WRKSRC}/vflow/Makefile.in
+
 post-install:
-.for dir in ${PREFIX}/include/${PORTNAME} ${PREFIX}/share/${PORTNAME}
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.n ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.wav ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
