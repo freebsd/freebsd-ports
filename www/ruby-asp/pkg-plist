@@ -1,0 +1,41 @@
+%%RUBY_SITELIBDIR%%/apache/aspruby-run.rb
+%%RUBY_SITELIBDIR%%/asp/application.rb
+%%RUBY_SITELIBDIR%%/asp/common.rb
+%%RUBY_SITELIBDIR%%/asp/compile.rb
+%%RUBY_SITELIBDIR%%/asp/globalasa.rb
+%%RUBY_SITELIBDIR%%/asp/goto.rb
+%%RUBY_SITELIBDIR%%/asp/request.rb
+%%RUBY_SITELIBDIR%%/asp/response.rb
+%%RUBY_SITELIBDIR%%/asp/server.rb
+%%RUBY_SITELIBDIR%%/asp/session.rb
+%%RUBY_SITELIBDIR%%/asp/subsmatch.rb
+@dirrm %%RUBY_SITELIBDIR%%/asp
+@dirrm %%RUBY_SITELIBDIR%%/apache
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/_htaccess
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cookie.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/end.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/error.html
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/global-asa/global.asa
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/global-asa/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/load.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sess.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/session.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/subsmatch.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.inc
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/trans.asp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xslt.asp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/global-asa
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes.en.rd
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/classes.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/install.en.rd
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/install.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/subsmatch.en.rd
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/subsmatch.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.en.rd
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/index.en.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

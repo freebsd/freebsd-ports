@@ -436,6 +436,7 @@
     SUBDIR += rt3
     SUBDIR += rt3-elixus
     SUBDIR += ruboard
+    SUBDIR += ruby-asp
     SUBDIR += ruby-borges
     SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
