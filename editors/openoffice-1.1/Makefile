@@ -8,16 +8,20 @@
 PORTNAME=	openoffice
 PORTVERSION=	1.1.1
 CATEGORIES+=	editors
-MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice.org/stable/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,} \
-		http://www.binarycode.org/openoffice/stable/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/stable/%SUBDIR%/ \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
+		ftp://ftp.kddlabs.co.jp/office/openoffice/%SUBDIR%/ \
+		ftp://ftp.tu-chemnitz.de/pub/openoffice/%SUBDIR%/ \
+		http://ftp.stardiv.de/pub/OpenOffice.org/%SUBDIR%/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
+		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
+MASTER_SITE_SUBDIR=	contrib/rc/${PORTVERSION}rc
+DISTFILES+=	OOo_${PORTVERSION}rc_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
