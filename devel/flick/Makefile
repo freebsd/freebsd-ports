@@ -3,13 +3,13 @@
 # Date created:		21 Mar 1998
 # Whom:			giffunip@asme.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/11 05:17:43 steve Exp $
 #
 
 DISTNAME=	flick-src-1.1
 PKGNAME=	flick-1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/
+MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/1.1/
 
 MAINTAINER=     ports@FreeBSD.ORG
 
