@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
@@ -42,7 +42,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/gst-base.info*
 	@${RM} -f ${WRKSRC}/doc/gst-libs.info*
 
-pre-patch:
+post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-release [\$$][(]VERSION[)]|-avoid-version|g'
 	@${REINPLACE_CMD} -e \
