@@ -1,0 +1,10 @@
+libexec/sccmilter
+etc/sccmilter/sccmilter.conf.sample
+etc/sccmilter/scchosts.sample
+etc/sccmilter/sccusers.sample
+etc/rc.d/sccmilter.sh.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/sccmilter

@@ -278,6 +278,7 @@
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
     SUBDIR += scmail
+    SUBDIR += sccmilter
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-old
