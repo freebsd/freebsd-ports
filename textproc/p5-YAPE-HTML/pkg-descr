@@ -1,0 +1,6 @@
+This module is yet another parser and tree-builder for HTML documents. It is
+designed to make extraction and modification of HTML documents simplistic. The
+API allows for easy custom additions to the document being parsed, and allows
+very specific tag, text, and comment extraction.
+
+WWW: http://search.cpan.org/dist/YAPE-HTML/
