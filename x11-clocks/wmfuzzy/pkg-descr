@@ -1,10 +1,10 @@
-wmfuzzy is yet another clock for Windowmaker (so as with ASClock
-and however many others). The difference between it and all of those
-(that I know of) is that the it only gives you the approximate time
-and displays it textually.
+wmfuzzy is a fuzzy clock Windowmaker dock applet (but also runs well
+under *box many other windowmanagers).
 
-Why? because it seemed a fun idea and let's face it when was the
-last time you cared it was 22:58 rather than "Five to Eleven?"
+A fuzzy clock gives an approximate time, under the supposition that
+it's more useful to know that it's about Half Past Three than that
+it's 3:27.  The granularity of the approximation can be set via
+commandline switches.
 
 WWW: http://www.manicai.net/comp/wmfuzzy
 
