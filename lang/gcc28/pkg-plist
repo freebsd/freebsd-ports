@@ -1,8 +1,10 @@
 bin/g++
+bin/g++28
 bin/protoize
 bin/unprotoize
 bin/gcov
 bin/gcc
+bin/gcc28
 bin/i386-unknown-freebsd-gcc
 @unexec install-info --delete
 info/cpp.info
@@ -67,7 +69,7 @@ lib/gcc-lib/i386-unknown-freebsd/2.8.0/SYSCALLS.c.X
 lib/gcc-lib/i386-unknown-freebsd/2.8.0/cpp
 lib/gcc-lib/i386-unknown-freebsd/2.8.0/libgcc.a
 lib/gcc-lib/i386-unknown-freebsd/2.8.0/libobjc.a
-man/man1/cccp.1.gz
-man/man1/g++.1.gz
-man/man1/gcc.1.gz
+man/man1/cccp28.1.gz
+man/man1/g++28.1.gz
+man/man1/gcc28.1.gz
 i386-unknown-freebsd/include/assert.h
