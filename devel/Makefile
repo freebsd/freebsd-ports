@@ -194,6 +194,7 @@
     SUBDIR += fhist
     SUBDIR += fib
     SUBDIR += flick
+    SUBDIR += florist
     SUBDIR += flyspray
     SUBDIR += fnccheck
     SUBDIR += fnorb

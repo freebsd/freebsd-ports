@@ -1,0 +1,23 @@
+--- configure.in.orig	Tue Jun  3 03:55:13 2003
++++ configure.in	Tue Jun  3 03:58:10 2003
+@@ -104,6 +104,10 @@
+     echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
+     cp ./configs/pconfig.LynxOS ./pconfig.h.in;
+     ;;
++ FreeBSD)
++    echo "Using Configuration for" ${UNAME_SYSTEM} ${UNAME_RELEASE};
++    cp ./configs/pconfig.FreeBSD ./pconfig.h.in;
++    ;;
+  *)
+    echo "No Configuration for ${UNAME_SYSTEM}. Using default.";
+    cp ./configs/pconfig.Default ./pconfig.h.in;
+@@ -177,7 +181,8 @@
+   AC_POSIX_LIB(pthreads, pthread_self,,
+   AC_POSIX_LIB(cma, pthread_self,,
+   AC_POSIX_LIB(:libcma.a, pthread_self,,
+-  AC_POSIX_LIB(thread, pthread_self))))))
++  AC_POSIX_LIB(thread, pthread_self,,
++  AC_POSIX_LIB(c_r, pthread_self)))))))
+ fi
+ 
+ AC_POSIX_LIB(aio, aio_read)

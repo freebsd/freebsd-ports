@@ -1,0 +1,7 @@
+all:
+	@${GMAKE} GNATMAKEFLAGS1B="-O2 -fPIC"
+	@${LOCALBASE}/bin/adagcc -shared -Wl,-soname,libflorist-${PORTVERSION}.so.1 \
+	 	-o libflorist-${PORTVERSION}.so.1 *.o
+	@${LN} -sf libflorist-${PORTVERSION}.so.1 \
+		libflorist-${PORTVERSION}.so
+	@${RM} -f floristlib/deps* floristlib/gnatprep*
