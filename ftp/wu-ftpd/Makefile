@@ -3,12 +3,13 @@
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.11 1997/02/01 22:17:11 ache Exp $
+# $Id: Makefile,v 1.12 1997/04/27 21:48:45 ache Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
 DISTNAME=       wu-ftpd-2.4.2-beta-13
+PKGNAME=	wu-ftpd-2.4.2b13
 CATEGORIES=	net
 # AUSCERT recommendation
 MASTER_SITES=   ftp://ftp.academ.com/pub/wu-ftpd/private/
