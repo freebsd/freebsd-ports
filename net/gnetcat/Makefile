@@ -7,6 +7,7 @@
 
 PORTNAME=	gnetcat
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netcat
@@ -15,6 +16,9 @@ DISTNAME=	netcat-0.7.1
 MAINTAINER=	liamfoy@sepulcrum.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
 
+USE_ICONV=	yes
+USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
