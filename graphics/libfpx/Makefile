@@ -10,7 +10,6 @@ PORTVERSION=	1.2.0.4
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/delegates/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
