@@ -67,37 +67,6 @@ include/hat/TimeBuiltinTypes.hx
 %%NHC98%%include/nhc98/hat/TTimeBuiltinTypes.hi
 lib/ix86-FreeBSD/config
 lib/ix86-FreeBSD/hat-trans
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/libHShat.a
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/Hat.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TTimeBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TTime.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TSystemBuiltinTypes.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TSystemBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TSystem.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TRatio.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TRandomBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TRandom.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TPreludeBuiltinTypes.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TPreludeBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TPreludeBasic.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TPrelude.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TNumeric.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TMonad.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TMaybe.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TLocale.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TList.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TIx.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TIOBuiltinTypes.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TIOBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TIO.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TDirectoryBuiltinTypes.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TDirectoryBuiltin.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TDirectory.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TComplex.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TChar.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TCPUTime.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TArray.hi
-%%NHC98%%lib/ix86-FreeBSD/hatlib/nhc98/TTimeBuiltinTypes.hi
 %%GHC%%lib/ix86-FreeBSD/hatlib/ghc/Hat.hi
 %%GHC%%lib/ix86-FreeBSD/hatlib/ghc/TArray.hi
 %%GHC%%lib/ix86-FreeBSD/hatlib/ghc/TCPUTime.hi
@@ -217,9 +186,9 @@ lib/ix86-FreeBSD/hat-observe
 %%PORTDOCS%%share/doc/hat/tutorial1.tex
 @dirrm include/hat
 %%NHC98%%@dirrm include/nhc98/hat
-%%NHC98%%@dirrm lib/ix86-FreeBSD/hatlib/nhc98
 %%GHC%%@dirrm lib/ix86-FreeBSD/hatlib/ghc
-@dirrm lib/ix86-FreeBSD/hatlib
+%%GHC%%@dirrm lib/ix86-FreeBSD/hatlib
+@dirrm lib/ix86-FreeBSD
 %%PORTDOCS%%@dirrm share/doc/hat
 %%GHC%%@dirrm lib/ghc-5.02.2/imports/hat
 %%GHC%%@exec /usr/local/bin/ghc-pkg -a < %D/lib/ix86-FreeBSD/hatlib/ghc/hat-package.conf
