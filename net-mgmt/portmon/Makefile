@@ -16,13 +16,14 @@ COMMENT=	Daemon that monitor network services
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 MAN8=		portmon.8
 
+PORTDOCS=	README
+PLIST_FILES=	bin/portmon etc/portmon.hosts.sample
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-	 's|/etc|${PREFIX}/etc|g' \
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		 ${WRKSRC}/extras/${PORTNAME}.8
 
 do-install:
