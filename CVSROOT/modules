@@ -7931,6 +7931,7 @@ sys_dev_kbd	src/sys/dev/kbd
 sys_dev_lnc	src/sys/dev/lnc
 sys_dev_mii	src/sys/dev/mii
 sys_dev_pdq	src/sys/dev/pdq
+sys_dev_random	src/sys/dev/random
 sys_dev_sound	src/sys/dev/sound
 sys_dev_syscons	src/sys/dev/syscons
 sys_dev_usb	src/sys/dev/usb
