@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	squeuer
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	astro net
 MASTER_SITES=	http://www.eyesbeyond.com/squeuer/
 
@@ -16,6 +16,9 @@ COMMENT=	A queueing proxy for Seti@Home
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
+
+MAN8=		squeuer.8
+MAN5=		squeuer.conf.5
 
 # These must be writeable by the user "squeuer"
 SPOOLDIR?=	/var/spool/squeuer
@@ -34,6 +37,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/squeuer.pl ${PREFIX}/sbin/squeuer
 	${INSTALL_DATA} ${WRKSRC}/etc/squeuer.conf.unix ${PREFIX}/etc/squeuer.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/S71squeuer.sh ${PREFIX}/etc/rc.d/squeuer.sh.sample
+	${INSTALL_MAN} ${WRKSRC}/man/squeuer.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/man/squeuer.conf.5 ${MAN5PREFIX}/man/man5/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/TODO ${DOCSDIR}
