@@ -115,6 +115,7 @@ share/sketch/Pax/X.py
 share/sketch/Pax/X.pyc
 share/sketch/Pax/paxmodule.so
 share/sketch/Pax/paxtkinter.so
+share/sketch/Plugins/ChangeLog
 share/sketch/Plugins/Filters/Lib/drawfile.py
 share/sketch/Plugins/Filters/Lib/drawfile.pyc
 share/sketch/Plugins/Filters/Lib/spritefile.py
@@ -125,10 +126,18 @@ share/sketch/Plugins/Filters/aisaver.py
 share/sketch/Plugins/Filters/aisaver.pyc
 share/sketch/Plugins/Filters/bziploader.py
 share/sketch/Plugins/Filters/bziploader.pyc
+share/sketch/Plugins/Filters/cgmloader.py
+share/sketch/Plugins/Filters/cgmloader.pyc
+share/sketch/Plugins/Filters/cgmsaver.py
+share/sketch/Plugins/Filters/cgmsaver.pyc
 share/sketch/Plugins/Filters/cmxloader.py
 share/sketch/Plugins/Filters/cmxloader.pyc
 share/sketch/Plugins/Filters/drawinput.py
 share/sketch/Plugins/Filters/drawinput.pyc
+share/sketch/Plugins/Filters/garbage/cgmloader.py
+share/sketch/Plugins/Filters/garbage/cgmloader.pyc
+share/sketch/Plugins/Filters/garbage/cgmsaver.py
+share/sketch/Plugins/Filters/garbage/cgmsaver.pyc
 share/sketch/Plugins/Filters/gziploader.py
 share/sketch/Plugins/Filters/gziploader.pyc
 share/sketch/Plugins/Filters/pdfgensaver.py
@@ -204,11 +213,14 @@ share/sketch/Resources/Fontmetrics/putri.afm
 share/sketch/Resources/Fontmetrics/pzcmi.afm
 share/sketch/Resources/Fontmetrics/pzdr.afm
 share/sketch/Resources/Fontmetrics/std.sfd
+share/sketch/Resources/Messages/da/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Messages/de/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Messages/es/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Messages/fr/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Messages/it/LC_MESSAGES/sketch.mo
+share/sketch/Resources/Messages/pt_BR/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Messages/ru/LC_MESSAGES/sketch.mo
+share/sketch/Resources/Messages/sv/LC_MESSAGES/sketch.mo
 share/sketch/Resources/Misc/gamma.spl
 share/sketch/Resources/Misc/mini.spl
 share/sketch/Resources/Misc/pattern.ppm
@@ -227,6 +239,7 @@ share/sketch/Script/create_star.py
 share/sketch/Script/create_star_outline.py
 share/sketch/Script/create_text.py
 share/sketch/Script/export_raster.py
+share/sketch/Script/footprints.py
 share/sketch/Script/save_selection.py
 share/sketch/Script/select_same_fill_color.py
 share/sketch/Script/select_same_line_color.py
@@ -582,8 +595,12 @@ share/sketch/skshow.py
 @dirrm share/sketch/Sketch
 @dirrm share/sketch/Script
 @dirrm share/sketch/Resources/Misc
+@dirrm share/sketch/Resources/Messages/sv/LC_MESSAGES
+@dirrm share/sketch/Resources/Messages/sv
 @dirrm share/sketch/Resources/Messages/ru/LC_MESSAGES
 @dirrm share/sketch/Resources/Messages/ru
+@dirrm share/sketch/Resources/Messages/pt_BR/LC_MESSAGES
+@dirrm share/sketch/Resources/Messages/pt_BR
 @dirrm share/sketch/Resources/Messages/it/LC_MESSAGES
 @dirrm share/sketch/Resources/Messages/it
 @dirrm share/sketch/Resources/Messages/fr/LC_MESSAGES
@@ -592,12 +609,15 @@ share/sketch/skshow.py
 @dirrm share/sketch/Resources/Messages/es
 @dirrm share/sketch/Resources/Messages/de/LC_MESSAGES
 @dirrm share/sketch/Resources/Messages/de
+@dirrm share/sketch/Resources/Messages/da/LC_MESSAGES
+@dirrm share/sketch/Resources/Messages/da
 @dirrm share/sketch/Resources/Messages
 @dirrm share/sketch/Resources/Fontmetrics
 @dirrm share/sketch/Resources
 @dirrm share/sketch/Plugins/Objects/Lib/multilinetext
 @dirrm share/sketch/Plugins/Objects/Lib
 @dirrm share/sketch/Plugins/Objects
+@dirrm share/sketch/Plugins/Filters/garbage
 @dirrm share/sketch/Plugins/Filters/Lib
 @dirrm share/sketch/Plugins/Filters
 @dirrm share/sketch/Plugins
