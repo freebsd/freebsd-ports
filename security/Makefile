@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1999/06/09 01:26:22 steve Exp $
+# $Id: Makefile,v 1.60 1999/06/09 01:56:06 steve Exp $
 #
 
     SUBDIR += bjorb
@@ -22,6 +22,7 @@
     SUBDIR += l0pht-watch
     SUBDIR += libident
     SUBDIR += libparanoia
+    SUBDIR += mhash
     SUBDIR += nbaudit
     SUBDIR += nessus
     SUBDIR += nmap
