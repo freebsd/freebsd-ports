@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20050110
+PORTVERSION=	20050119
 PORTREVISION=	0
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
@@ -20,6 +20,7 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .if		!defined(WITHOUT_PLUGINS)
 RUN_DEPENDS=	${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
+RUN_DEPENDS+=	${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so:${PORTSDIR}/multimedia/linux-realplayer
 .if		${OSVERSION} >= 500000
 RUN_DEPENDS+=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread
 .else
@@ -99,6 +100,10 @@ pre-install:
 	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/flashplayer.xpt \
 		${X11BASE}/lib/browser_plugins/
 	@${LN} -sf ${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so \
+		${X11BASE}/lib/browser_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.so \
+		${X11BASE}/lib/browser_plugins/
+	@${LN} -sf ${LOCALBASE}/lib/linux-mozilla/plugins/nphelix.xpt \
 		${X11BASE}/lib/browser_plugins/
 .endif
 
