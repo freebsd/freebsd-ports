@@ -7,13 +7,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	ddd-3.1.6
+DISTNAME=	ddd-3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
-		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
-		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
-		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
-		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR= ddd
 
 MAINTAINER=     obrien@FreeBSD.org
 
@@ -21,7 +18,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}"
+CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
+		--with-readline-libraries=/usr/lib
 USE_GMAKE=	yes
 REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
