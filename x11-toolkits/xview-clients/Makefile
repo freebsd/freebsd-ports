@@ -22,6 +22,8 @@ COMMENT=	OpenLook applications and man pages
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:build
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
