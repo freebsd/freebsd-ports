@@ -109,6 +109,7 @@
     SUBDIR += ngraph
     SUBDIR += nsc2ke
     SUBDIR += ntl
+    SUBDIR += ocaml-ocamlgraph
     SUBDIR += octave
     SUBDIR += octave-forge
     SUBDIR += oleo
