@@ -1,0 +1,9 @@
+Bubblemon displays something that looks like a vial containing water. The water
+level indicates how much memory is in use. The color of the liquid indicates 
+how much swap space is used (watery blue means none and angry red means all). 
+The system CPU load is indicated by bubbles floating up through the liquid; 
+lots of bubbles means high CPU load.
+
+WWW: http://www.nongnu.org/bubblemon/
+
+d92-jwa@nada.kth.se

@@ -32,6 +32,7 @@
     SUBDIR += blimitd
     SUBDIR += bsdsar
     SUBDIR += bubblemon-dockapp
+    SUBDIR += bubblemon2
     SUBDIR += ccze
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
