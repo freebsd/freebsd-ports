@@ -28,6 +28,7 @@ lib/zircon/help/Zircon/Windows/Channel
 lib/zircon/help/Zircon/Windows/Control
 lib/zircon/help/Zircon/Windows/Info
 lib/zircon/help/Zircon/Windows/Message
+lib/zircon/installed
 lib/zircon/lang/bulgar.tcl
 lib/zircon/lang/deutsch.tcl
 lib/zircon/lang/english.tcl
@@ -118,7 +119,6 @@ lib/zircon/plugins/Sed/libSed.so
 lib/zircon/plugins/Sed/pkgIndex.tcl
 lib/zircon/rc
 lib/zircon/zircon.ad
-lib/zircon/installed
 @exec mkdir %D/lib/zircon/help/Channels
 @exec mkdir %D/lib/zircon/help/Servers
 @exec mkdir %D/lib/zircon/help/Services
