@@ -1,14 +1,14 @@
 # New ports collection makefile for:	wmtictactoe
-# Version required:		0.4
+# Version required:		1.0
 # Date created:			28 Apr 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:31:13 steve Exp $
 #
 
-DISTNAME=	wmtictactoe-0.4
+DISTNAME=	wmtictactoe-1.0
 CATEGORIES=	games windowmaker afterstep
-MASTER_SITES=	http://atlas.ucpel.tche.br/~acamargo/
+MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 
 MAINTAINER=	jim@phrantic.phear.net
 
