@@ -3,6 +3,9 @@ include/gal/e-paned/e-hpaned.h
 include/gal/e-paned/e-paned.h
 include/gal/e-paned/e-vpaned.h
 include/gal/e-table/e-cell-checkbox.h
+include/gal/e-table/e-cell-date.h
+include/gal/e-table/e-cell-number.h
+include/gal/e-table/e-cell-size.h
 include/gal/e-table/e-cell-text.h
 include/gal/e-table/e-cell-toggle.h
 include/gal/e-table/e-cell-tree.h
@@ -11,7 +14,6 @@ include/gal/e-table/e-table-click-to-add.h
 include/gal/e-table/e-table-col-dnd.h
 include/gal/e-table/e-table-col.h
 include/gal/e-table/e-table-column-specification.h
-include/gal/e-table/e-table-config-field.h
 include/gal/e-table/e-table-config.h
 include/gal/e-table/e-table-defines.h
 include/gal/e-table/e-table-extras.h
@@ -47,6 +49,7 @@ include/gal/e-text/e-entry.h
 include/gal/e-text/e-text-event-processor-emacs-like.h
 include/gal/e-text/e-text-event-processor-types.h
 include/gal/e-text/e-text-event-processor.h
+include/gal/e-text/e-text-model-uri.h
 include/gal/e-text/e-text-model.h
 include/gal/e-text/e-text.h
 include/gal/menus/gal-define-views-dialog.h
@@ -57,7 +60,14 @@ include/gal/menus/gal-view-factory-etable.h
 include/gal/menus/gal-view-factory.h
 include/gal/menus/gal-view-new-dialog.h
 include/gal/menus/gal-view.h
+include/gal/shortcut-bar/e-group-bar.h
+include/gal/shortcut-bar/e-icon-bar-bg-item.h
+include/gal/shortcut-bar/e-icon-bar.h
+include/gal/shortcut-bar/e-shortcut-bar.h
+include/gal/shortcut-bar/e-shortcut-model.h
+include/gal/shortcut-bar/e-vscrolled-bar.h
 include/gal/util/e-cache.h
+include/gal/util/e-i18n.h
 include/gal/util/e-util.h
 include/gal/util/e-xml-utils.h
 include/gal/widgets/color-group.h
@@ -65,6 +75,7 @@ include/gal/widgets/color-palette.h
 include/gal/widgets/e-canvas-utils.h
 include/gal/widgets/e-canvas-vbox.h
 include/gal/widgets/e-canvas.h
+include/gal/widgets/e-categories.h
 include/gal/widgets/e-colors.h
 include/gal/widgets/e-cursors.h
 include/gal/widgets/e-font.h
@@ -84,19 +95,22 @@ include/gal/widgets/widget-color-combo.h
 include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
-lib/libgal.so.3
+lib/libgal.so.4
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-group.glade
+share/gnome/gal/%%VERSION%%/glade/gal-categories.glade
 share/gnome/gal/%%VERSION%%/glade/gal-define-views.glade
 share/gnome/gal/%%VERSION%%/glade/gal-view-new-dialog.glade
-share/gnome/bonobo/html/gal-api.sgml
-share/gnome/bonobo/html/gal-decl.txt
-share/gnome/bonobo/html/gal-sections.txt
-share/gnome/bonobo/html/gal.hierarchy
-share/gnome/bonobo/html/gal.signals
-share/gnome/bonobo/html/gal.types
+share/gnome/gal/html/gal-api.sgml
+share/gnome/gal/html/gal-decl.txt
+share/gnome/gal/html/gal-sections.txt
+share/gnome/gal/html/gal.hierarchy
+share/gnome/gal/html/gal.signals
+share/gnome/gal/html/gal.types
+share/locale/ca/LC_MESSAGES/gal.mo
 share/locale/da/LC_MESSAGES/gal.mo
+share/locale/de/LC_MESSAGES/gal.mo
 share/locale/en_GB/LC_MESSAGES/gal.mo
 share/locale/es/LC_MESSAGES/gal.mo
 share/locale/fi/LC_MESSAGES/gal.mo
@@ -106,18 +120,26 @@ share/locale/hu/LC_MESSAGES/gal.mo
 share/locale/it/LC_MESSAGES/gal.mo
 share/locale/ja/LC_MESSAGES/gal.mo
 share/locale/ko/LC_MESSAGES/gal.mo
+share/locale/lt/LC_MESSAGES/gal.mo
 share/locale/no/LC_MESSAGES/gal.mo
 share/locale/pl/LC_MESSAGES/gal.mo
+share/locale/pt_BR/LC_MESSAGES/gal.mo
+share/locale/ru/LC_MESSAGES/gal.mo
+share/locale/sk/LC_MESSAGES/gal.mo
 share/locale/sv/LC_MESSAGES/gal.mo
+share/locale/tr/LC_MESSAGES/gal.mo
+share/locale/uk/LC_MESSAGES/gal.mo
 @dirrm share/gnome/gal/%%VERSION%%/glade
 @dirrm share/gnome/gal/%%VERSION%%
+@dirrm share/gnome/gal/html/gal
+@dirrm share/gnome/gal/html
 @dirrm share/gnome/gal
 @dirrm share/gnome/etable/%%VERSION%%/glade
 @dirrm share/gnome/etable/%%VERSION%%
 @dirrm share/gnome/etable
-@dirrm share/gnome/bonobo/html/gal
 @dirrm include/gal/widgets
 @dirrm include/gal/util
+@dirrm include/gal/shortcut-bar
 @dirrm include/gal/menus
 @dirrm include/gal/e-text
 @dirrm include/gal/e-table
