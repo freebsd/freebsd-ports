@@ -1,6 +1,6 @@
-# New ports collection makefile for: HOpenGL
-# Date created:                      15 January 2003
-# Whom:                              Janni <jan.rochel@epost.de>
+# New ports collection makefile for:	HOpenGL
+# Date created:				15 January 2003
+# Whom:					Janni <janni@hacker7.net>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.cs.yale.edu/HOpenGL/releases/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	jan.rochel@epost.de
+MAINTAINER=	janni@hacker7.net
 COMMENT=	Binding for OpenGL and GLUT for the lazy functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 
-GHC_VERSION?=	5.04.2
+GHC_VERSION?=	5.04.3
 LIB_DIR_REL=	lib/ghc-${GHC_VERSION}
 LIB_DIR=	${PREFIX}/${LIB_DIR_REL}
 IMPORT_DIR=	${LIB_DIR}/imports/HOpenGL
