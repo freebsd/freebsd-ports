@@ -1,0 +1,6 @@
+HTML::Pager is a perl module designed to handle CGI HTML paging of
+arbitrary data.  It provides an interface to pages of data similar
+to many well-known sites like Altavista or Google.  It uses the
+module HTML::Template to do all the HTML generation.
+
+--will

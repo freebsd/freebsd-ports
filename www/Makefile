@@ -156,6 +156,7 @@
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Navigation
+    SUBDIR += p5-HTML-Pager
     SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Stream
