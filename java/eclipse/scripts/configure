@@ -1,0 +1,74 @@
+#!/bin/sh
+# $FreeBSD$
+
+copy_dir()
+{
+	srcdir=$1
+	dstdir=$2
+
+
+	rm -rf "$dstdir"
+	cp -r "$srcdir" "$dstdir" || exit 1
+
+	if [ -d "$dstdir" ]
+	then
+	    find "$dstdir" -name \*.so -delete
+	    find "$dstdir" -name \*.so.\* -delete
+	    find "$dstdir" -type f -print0 | \
+		xargs -0 sed -i '.bak'  's/linux/freebsd/g; s/Linux/FreeBSD/g'
+	    find "$dstdir" -name \*.bak -delete
+	fi
+}
+
+configure()
+{
+	# Copy the files and rename/change them appropriately
+	for src in $COPY_LIST
+	do
+		dst=`echo $src | sed 's/linux/freebsd/g; s/Linux/FreeBSD/g'`
+		echo Copying $src into $dst
+		copy_dir ${WRKSRC}/$src ${WRKSRC}/$dst
+	done
+
+	# Use our owm makefile to drive the build
+	cp ${FILESDIR}/Makefile ${WRKSRC} || exit 1
+
+	# Copy a schell script template
+	cp ${FILESDIR}/eclipse.in ${WRKSRC} || exit 1
+
+	# Makefile has problems with spaces in file names
+	# Implement an ugly workaround
+	# Also link common swt sources into gtk directory
+	ln -sf "${SWTSOURCE}" ${SWTSHORT}   || exit 1
+	ln -sf "${SWTCOMMON}"/* ${SWTSHORT} || exit 1
+
+	find ${WRKSRC} -type dir -name \*linux\* -print0 | xargs -0 rm -rf
+	find ${WRKSRC} -name \*.so -delete
+	find ${WRKSRC} -name \*.so.\* -delete
+}
+
+COPY_LIST="
+	features/org.eclipse.platform.linux.gtk-feature \
+	features/org.eclipse.platform.linux.gtk.source-feature \
+	features/org.eclipse.platform.linux.motif-feature \
+	features/org.eclipse.platform.linux.motif.source-feature \
+	features/org.eclipse.sdk.linux.gtk-feature \
+	features/org.eclipse.sdk.linux.motif-feature \
+
+	plugins/org.eclipse.platform.linux.gtk
+	plugins/org.eclipse.platform.linux.gtk.source
+	plugins/org.eclipse.sdk.linux.gtk
+	plugins/org.eclipse.update.core.linux
+	plugins/org.eclipse.sdk.linux.motif
+	plugins/org.eclipse.core.resources.linux
+	plugins/org.eclipse.platform.linux.motif
+	plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux_gtk.properties
+	plugins/org.eclipse.jface/src/org/eclipse/jface/resource/jfacefonts_linux.properties
+"
+
+SWTSOURCE="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library"
+SWTCOMMON="${WRKSRC}/plugins/org.eclipse.swt/Eclipse SWT/common/library"
+SWTSHORT="${WRKSRC}/plugins/org.eclipse.swt/Eclipse_SWT"
+
+configure
+exit 0

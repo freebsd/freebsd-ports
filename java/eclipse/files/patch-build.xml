@@ -1,0 +1,23 @@
+--- build.xml.orig	Thu Nov  7 15:18:47 2002
++++ build.xml	Thu Feb 13 19:32:36 2003
+@@ -181,7 +187,19 @@
+ 				<equals arg1="${ws}" arg2="photon" />
+ 			</and>
+ 		</condition>
+-		
++		<condition property="launcherBin" value="${install}/plugins/platform-launcher/bin/freebsd/motif">
++			<and>
++				<equals arg1="${os}" arg2="freebsd" />
++				<equals arg1="${ws}" arg2="motif" />
++			</and>
++		</condition>
++		<condition property="launcherBin" value="${install}/plugins/platform-launcher/bin/freebsd/gtk">
++			<and>
++				<equals arg1="${os}" arg2="freebsd" />
++				<equals arg1="${ws}" arg2="gtk" />
++			</and>
++		</condition>
++
+ 		<condition property="win">
+ 			<and>
+ 			     <os family="windows" />
