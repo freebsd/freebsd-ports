@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	darkbot
-PORTVERSION=	6f6_r6
+PORTVERSION=	6f6.r6
+PORTEPOCH=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://darkbot.sourceforge.net/archive/unix/ \
 		http://www.BSDCode.org/port/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
 MAINTAINER=	backslash@BSDCode.org
 COMMENT=	IRC talking bot with a very fast algorithm for its database
