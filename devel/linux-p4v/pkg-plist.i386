@@ -1,0 +1,81 @@
+usr/bin/p4v
+usr/share/doc/p4v-2003.1/About_Perforce_products.html
+usr/share/doc/p4v-2003.1/About_file_icons.html
+usr/share/doc/p4v-2003.1/Adding_files_to_the_depot.html
+usr/share/doc/p4v-2003.1/Changing_a_file_s_type.html
+usr/share/doc/p4v-2003.1/Configuring_display_preferences.html
+usr/share/doc/p4v-2003.1/Connecting_to_the_Perforce_server.html
+usr/share/doc/p4v-2003.1/Defining_a_client_view.html
+usr/share/doc/p4v-2003.1/Deleting_files.html
+usr/share/doc/p4v-2003.1/Displaying_a_file_s_revision_history.html
+usr/share/doc/p4v-2003.1/Displaying_client_specifications.html
+usr/share/doc/p4v-2003.1/Editing_files.html
+usr/share/doc/p4v-2003.1/Getting_more_information.html
+usr/share/doc/p4v-2003.1/Getting_started_with_Perforce.html
+usr/share/doc/p4v-2003.1/Integrating_files_into_codelines.html
+usr/share/doc/p4v-2003.1/Managing_branch_specifications.html
+usr/share/doc/p4v-2003.1/Managing_jobs.html
+usr/share/doc/p4v-2003.1/Managing_labels.html
+usr/share/doc/p4v-2003.1/Managing_users.html
+usr/share/doc/p4v-2003.1/P4V_shortcuts.html
+usr/share/doc/p4v-2003.1/Renaming_files.html
+usr/share/doc/p4v-2003.1/Resolving_files.html
+usr/share/doc/p4v-2003.1/Retrieving_files_from_the_depot.html
+usr/share/doc/p4v-2003.1/The_P4V_windows.html
+usr/share/doc/p4v-2003.1/Working_with_changelists.html
+usr/share/doc/p4v-2003.1/ancillary_p4v_files.html
+usr/share/doc/p4v-2003.1/diffing_files.html
+usr/share/doc/p4v-2003.1/merging_files.html
+usr/share/doc/p4v-2003.1/p4images/p4v_diff_screenshot.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_add.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_add_other.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_delete.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_delete_notsync.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_delete_other.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_delete_resolve.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_deleted.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_head.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_notsync.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_other.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_other_notsyn.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_other_notsync.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_resolve.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_edit_resolve_other_delete.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_lock.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_lock_other.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_needs_resolve.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_notmapped.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_notsync.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_add.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_branch.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_delete.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_edit.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_have_add.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_have_branch.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_rev_have_edit.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_revision_integrated.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_revsynced.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_sync.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_txt.png
+usr/share/doc/p4v-2003.1/p4images/p4v_file_ws.png
+usr/share/doc/p4v-2003.1/p4images/p4v_filter.png
+usr/share/doc/p4v-2003.1/p4images/p4v_merge_screenshot.png
+usr/share/doc/p4v-2003.1/p4images/p4v_pin.png
+@dirrm usr/share/doc/p4v-2003.1/p4images
+usr/share/doc/p4v-2003.1/p4vindex.html
+@dirrm usr/share/doc/p4v-2003.1
+usr/share/icons/hicolor/32x32/apps/p4v.png
+@dirrm usr/share/icons/hicolor/32x32/apps
+@dirrm usr/share/icons/hicolor/32x32
+usr/share/icons/hicolor/48x48/apps/p4v.png
+@dirrm usr/share/icons/hicolor/48x48/apps
+@dirrm usr/share/icons/hicolor/48x48
+@dirrm usr/share/icons/hicolor
+usr/share/icons/locolor/16x16/apps/p4v.png
+@dirrm usr/share/icons/locolor/16x16/apps
+@dirrm usr/share/icons/locolor/16x16
+usr/share/icons/locolor/32x32/apps/p4v.png
+@dirrm usr/share/icons/locolor/32x32/apps
+@dirrm usr/share/icons/locolor/32x32
+@dirrm usr/share/icons/locolor
+@dirrm usr/share/icons
