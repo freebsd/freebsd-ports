@@ -48,5 +48,9 @@ DO_NOT_COMPILE+=klaptopdaemon
 PLIST_APPEND+=	plist.klaptop
 .endif
 
+post-configure:
+	@${REINPLACE_CMD} -e 's|#define HAVE_L_FUNCS 1||g' \
+		${WRKSRC}/config.h
+
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.mk>
