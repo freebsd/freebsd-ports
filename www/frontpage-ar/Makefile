@@ -8,8 +8,8 @@
 PORTNAME=	frontpage
 PORTVERSION=	5.0.2.2623
 CATEGORIES?=	www
-MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/FPSE02LangFiles/ \
-		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/FPSE02LangFiles/
+MASTER_SITES=	http://download.microsoft.com/download/FrontPage2002/Utility/2002/UNIX/EN-US/ \
+		ftp://ftp.microsoft.com/products/frontpage/FPSE02LangFiles/
 PKGNAMEPREFIX?=	ar-
 DISTFILES=
 EXTRACT_ONLY=
