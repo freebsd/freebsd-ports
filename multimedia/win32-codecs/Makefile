@@ -58,7 +58,7 @@ post-extract:
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/win32
-	@${CHMOD} 0555 ${PREFIX}/lib/win32
+	@${CHMOD} 0755 ${PREFIX}/lib/win32
 	@${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/lib/win32
 # marker file
 	@${CP} /dev/null ${PREFIX}/lib/win32/${PKGNAME}
