@@ -231,6 +231,7 @@
     SUBDIR += stowES
     SUBDIR += su2
     SUBDIR += symlinks
+    SUBDIR += synergy
     SUBDIR += syslog-ng
     SUBDIR += task
     SUBDIR += tcplist
