@@ -5990,6 +5990,7 @@ punkbuster-data	ports/net/punkbuster-data
 pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
+pure-xemacs-devel-mule	ports/irc/pure-xemacs-devel-mule
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
