@@ -1,5 +1,5 @@
 --- ../dist/Makefile.in.orig	Mon Dec  7 21:05:59 1998
-+++ ../dist/Makefile.in	Tue Jun  6 17:44:50 2000
++++ ../dist/Makefile.in	Tue May  4 17:14:55 2004
 @@ -1,13 +1,16 @@
  # @(#)Makefile.in	10.62 (Sleepycat) 12/7/98
  
@@ -7,7 +7,7 @@
 +
  srcdir=	@srcdir@/..
  CPPFLAGS=-I. -I$(srcdir)/include @CPPFLAGS@
-+SHAREDFLAGS= -fpic -DPIC
++SHAREDFLAGS= -fPIC -DPIC
  CFLAGS=	-c @CFLAGS@ $(CPPFLAGS)
  CC=	@CC@
  CXXFLAGS=-c @CXXFLAGS@ $(CPPFLAGS)
@@ -183,7 +183,16 @@
  	@echo "Installing DB utilities: $(bindir) ..."
  	@test -d $(bindir) || \
  	    ($(mkdir) -p $(bindir) && $(chmod) $(dmode) $(bindir))
-@@ -506,3 +518,320 @@
+@@ -177,6 +189,8 @@
+ 	@$(cp) -p $(PROGS) $(bindir)
+ 	@cd $(bindir) && (test ! -f $(strip) || $(strip) $(PROGS))
+ 	@cd $(bindir) && $(chmod) $(emode) $(PROGS)
++
++install_docs:
+ 	@echo "Installing documentation: $(mandir) ..."
+ 	@test -d $(mandir) || \
+ 	    ($(mkdir) -p $(mandir) && $(chmod) $(dmode) $(mandir))
+@@ -506,3 +520,320 @@
  	$(CC) $(CFLAGS) $?
  vsnprintf.o: $(srcdir)/clib/vsnprintf.c
  	$(CC) $(CFLAGS) $?
