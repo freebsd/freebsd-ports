@@ -3,7 +3,7 @@
 # Date created:		Sat Oct  4 20:03:46 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1998/06/13 13:25:02 andreas Exp $
+# $Id: Makefile,v 1.13 1998/11/23 14:11:02 andreas Exp $
 #
 
 DISTNAME=	pgaccess-0.91
@@ -11,6 +11,8 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.flex.ro/pgaccess/
 
 MAINTAINER=	andreas@FreeBSD.ORG
+
+WWW_SITE=	http://www.flex.ro/pgaccess
 
 RUN_DEPENDS=	${PREFIX}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql
 
