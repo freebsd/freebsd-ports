@@ -146,7 +146,7 @@ post-patch:
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SE.patch 2>/dev/null
 .endif
 .if defined(ISPELL_NO)
-	cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
+	@cd ${WRKDIR}/norsk && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
 .endif
 .if defined(ISPELL_NL)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NL.patch 2>/dev/null
