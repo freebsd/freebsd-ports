@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	0.157
+PORTVERSION=	0.169
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
-DISTNAME=	${PORTNAME}.${PORTVERSION:S/^0.//}
+MASTER_SITES=	http://ipcheck.sourceforge.net/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. release
+DISTNAME=	ipcheck.py
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
@@ -19,6 +20,15 @@ MAINTAINER=	lioux@FreeBSD.org
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+
+.ifdef(WITH_SNMP)
+RUN_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/pysnmp/v2c.py:${PORTSDIR}/net/py-snmp
+.endif
+
+pre-everything::
+.ifndef(WITH_SNMP)
+	@${ECHO_MSG} '===> Enable SNMP support by defining WITH_SNMP'
+.endif
 
 do-patch:
 	@${SED} -e "s!/usr/bin/python!${LOCALBASE}/bin/python!" \
