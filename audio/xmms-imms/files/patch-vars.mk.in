@@ -1,19 +1,21 @@
---- vars.mk.in.orig	Sun Jan 25 16:55:21 2004
-+++ vars.mk.in	Wed Feb 11 18:40:43 2004
-@@ -4,14 +4,13 @@
+--- vars.mk.in.orig	Thu Apr 15 16:15:24 2004
++++ vars.mk.in	Sat Aug 14 12:51:25 2004
+@@ -4,15 +4,14 @@
  INSTALL_PROGRAM = @INSTALL@
  DESTDIR = @prefix@
  
 -SHELL = bash
- XMMS_OBJ = plugin.o interface.o libimmscore.a 
- CORE_OBJ = imms.o immsdb.o fetcher.o picker.o spectrum.o sqldb.o \
- 	   songinfo.o regexx.o strmanip.o levenshtein.o xidle.o md5.o
+ XMMS_OBJ = @PLUGIN_OBJ@ interface.o player.o libimmscore.a 
+ CORE_OBJ = imms.o immsdb.o basicdb.o correlate.o playlist.o sqldb.o \
+ 	   fetcher.o picker.o spectrum.o songinfo.o comm.o server.o \
+ 	   regexx.o utils.o strmanip.o levenshtein.o xidle.o md5.o
  
--CFLAGS = `xmms-config --cflags` @DEBUG_CFLAGS@ -Wall -fPIC -D_REENTRANT
-+CFLAGS = `xmms-config --cflags` @DEBUG_CFLAGS@ @CFLAGS@ -Wall -fPIC -D_REENTRANT
- CXXFLAGS = ${CFLAGS} -pedantic -fno-rtti
+-CPPFLAGS = `xmms-config --cflags` @XCPPFLAGS@ -Wall -fPIC -D_REENTRANT
+-CXXFLAGS = ${CPPFLAGS} -fno-rtti
 -LDFLAGS = `xmms-config --libs` @LIBS@
-+LDFLAGS = `xmms-config --libs` -lc @LIBS@
++CPPFLAGS = `xmms-config --cflags` @XCPPFLAGS@ @CPPFLAGS@ @CFLAGS@ -Wall -fPIC -D_REENTRANT
++CXXFLAGS = ${CPPFLAGS}
++LDFLAGS = @LDFLAGS@ `xmms-config --libs` -lc -lm @LIBS@
  ARFLAGS = rs
  
  default: all
