@@ -1,2 +1,4 @@
-MD5 (sarg-2.0.3.tar.gz) = 573642c4777ce3ceb2e73798eef3bccf
-SIZE (sarg-2.0.3.tar.gz) = 325202
+MD5 (sarg-2.0.4.tar.gz) = 68a5ed4ae66ba87054104dd1cc2a5609
+SIZE (sarg-2.0.4.tar.gz) = 325125
+MD5 (sarg-2.0.4-segmentation-fault.patch) = d2c9b136c8a85e6e1960eb73cfb496cf
+SIZE (sarg-2.0.4-segmentation-fault.patch) = 985

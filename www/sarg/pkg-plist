@@ -37,6 +37,8 @@ etc/sarg/sarg-php/LANGUAGES
 etc/sarg/sarg-php/language.php
 etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
 etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
+etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.mo
+etc/sarg/sarg-php/locale/fr/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
 etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
@@ -50,6 +52,8 @@ etc/sarg/sarg-php/translate.this
 @dirrm etc/sarg/sarg-php/locale/ru
 @dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
 @dirrm etc/sarg/sarg-php/locale/pt_BR
+@dirrm etc/sarg/sarg-php/locale/fr/LC_MESSAGES
+@dirrm etc/sarg/sarg-php/locale/fr
 @dirrm etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES
 @dirrm etc/sarg/sarg-php/locale/en_EN
 @dirrm etc/sarg/sarg-php/locale
