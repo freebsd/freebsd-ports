@@ -7,6 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
+POSTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -52,6 +53,9 @@ post-patch:
 post-configure:
 # sync the multiple libtool copies
 	@${CP} ${WRKSRC}/libtool ${WRKSRC}/common/mp4v2/
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/common/mp4v2/systems.h ${PREFIX}/include
 
 .include <bsd.port.pre.mk>
 
