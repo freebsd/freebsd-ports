@@ -1,0 +1,15 @@
+hanmiscutils is a collection of various Hangul-related sources.  Especially,
+it contains libhanconv, general purpose Hangul code conversion library, so
+that you can use it with your own program.
+
+hanmiscutils is free software; basically you can do almost anything with 
+it, unless you claim you wrote it (i. e. removing the existing copyright 
+notice and attaching your own copyright is prohibited).  See the sources
+for more details.
+
+--
+Bang Jun-Young <bangjy@i.am>
+
+--
+Ports by CHOI Junho <cjh@FreeBSD.ORG>
+WWW: http://kldp.org/~bangjy/hangul/index.html
