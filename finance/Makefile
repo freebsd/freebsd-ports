@@ -43,6 +43,7 @@
     SUBDIR += p5-Business-OnlinePayment-iAuthorizer
     SUBDIR += p5-Business-WorldPay-Junior
     SUBDIR += p5-Finance-Currency-Convert
+    SUBDIR += p5-Finance-Currency-Convert-XE
     SUBDIR += p5-Finance-Quote
     SUBDIR += p5-Finance-QuoteHist
     SUBDIR += p5-Math-Financial
