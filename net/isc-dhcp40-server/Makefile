@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -42,6 +42,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--subsys ${SUBSYS}
 ALL_TARGET=	all.${SUBSYS}
 INSTALL_TARGET=	install.${SUBSYS}
+SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
 
 .if ${SUBSYS} == client
 MAN5=		dhclient.conf.5 dhclient.leases.5
@@ -209,10 +210,14 @@ patch-pkgmessage:
 # Post-install
 #
 
-post-install: strip-binary-files install-startup-files \
-	      install-doc-files install-sample-files \
-	      create-conf-files create-data-files \
-	      display-message
+POST-INSTALL=	parallel-post-install configure-package display-message
+.ORDER: ${POST-INSTALL}
+post-install: ${POST-INSTALL}
+
+parallel-post-install: \
+	strip-binary-files install-startup-files \
+	install-doc-files install-sample-files \
+	create-conf-files create-data-files
 
 strip-binary-files:
 .for f in ${BIN_FILES}
@@ -255,6 +260,9 @@ create-data-files:
 	@${TOUCH} ${DATADIR}/${f}
 .endif
 .endfor
+
+configure-package:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 display-message:
 .if ${SUBSYS} != devel

@@ -44,7 +44,10 @@ safe_run ()	# rc command [args...]
 	shift
 
 	if [ "${_rc}" -eq 0 ]; then
+		debug safe_run: "$@"
 		"$@" || _rc=1
+	else
+		warn safe_run: "$@"
 	fi
 	return ${_rc}
 }
@@ -53,11 +56,30 @@ precious ()	# entry...
 {
 	local _entry _rc
 
-	_rc=1
+	_rc=0
 	for _entry; do
 		# do nothing if /var/run or /var/db
-		echo ${_entry} | egrep -q '^//*(var//*(run|db)/*)?$' && _rc=0
+		echo ${_entry} | egrep -q '^//*(var//*(run|db)/*)?$' || _rc=1
 	done
+	debug precious: "$@" rc=${_rc}
+	return ${_rc}
+}
+
+lsmod ()	# user group file...
+{
+	local _entry _user _group _rc
+
+	_user=$1 _group=$2
+	shift 2
+
+	_rc=0
+	for _entry; do
+		ls -ld ${_entry} 2> /dev/null |
+		awk -v u=${_user} -v g=${_group} '{
+		    exit ((u && $3 != u) || (g && $4 != g))
+		}' || _rc=1
+	done
+	debug lsmod: "$@" rc=${_rc}
 	return ${_rc}
 }
 
@@ -72,12 +94,12 @@ safe_chmog ()	# entry...
 	if [ -n "${_user}" -o -n "${_group}" ]; then
 		_usergroup=${_user}${_group:+:${_group}}
 		for _entry; do
+			if [ -d ${_entry} ] && mounted ${_entry}; then
+				continue
+			fi
 			if [ -e ${_entry} ] &&
 			   ! precious ${_entry} &&
-			   ! ls -ld ${_entry} 2> /dev/null |
-			     awk -v u=${_user} -v g=${_group} '{
-				exit ((u && $3 != u) || (g && $4 != g))
-			     }' &&
+			   ! lsmod ${_user} ${_group} ${_entry} &&
 			   ! safe_run ${_rc} chown ${_usergroup} ${_entry}; then
 				warn "unable to change permissions of ${_entry}"
 				_rc=1
@@ -111,7 +133,8 @@ safe_rmdir ()	# dir...
 	_rc=0
 	for _dir; do
 		if [ -d ${_dir} ] &&
-		   ! precious ${_dir}; then
+		   ! precious ${_dir} &&
+		   ! mounted ${_dir}; then
 			if safe_run ${_rc} rmdir ${_dir}; then
 				safe_run ${_rc} safe_rmdir ${_dir%/*} || _rc=1
 			else
@@ -179,6 +202,7 @@ mounted ()	# dir...
 	    BEGIN { n = ARGC; ARGC = 2 }
 	    { for (i = 2; i != n; i++) if ($3 == ARGV[i]) exit 1 }
 	' - "$@" || _rc=0
+	debug mounted: "$@" rc=${_rc}
 	return ${_rc}
 }
 
@@ -250,7 +274,7 @@ check_chuser ()
 {
 	if checkyesno paranoia; then
 		if checkyesno dhcpd_chuser_enable &&
-		   [ -z ${dhcpd_withuser} -a -z ${dhcpd_withgroup} ]; then
+		   [ -z "${dhcpd_withuser}" -a -z "${dhcpd_withgroup}" ]; then
 			err 1 "one of dhcpd_withuser and dhcpd_withgroup" \
 			      "must be set if dhcpd_chuser_enable is enabled"
 		fi
@@ -303,8 +327,8 @@ check_chroot ()
 rcvar_chuser ()
 {
 	if checkyesno paranoia && checkyesno dhcpd_chuser_enable; then
-		dhcpd_piddir=${_dhcpd_piddir}/${name}
-		dhcpd_leasesdir=${_dhcpd_leasesdir}/${name}
+		dhcpd_piddir=${__dhcpd_piddir}/${name}
+		dhcpd_leasesdir=${__dhcpd_leasesdir}/${name}
 	else
 		dhcpd_withuser= dhcpd_withgroup=
 	fi
@@ -328,8 +352,8 @@ rcvar_chroot ()
 rcvar_pidnleases ()
 {
 	if ! checkyesno dhcpd_chuser_enable; then
-		dhcpd_piddir=${_dhcpd_piddir}
-		dhcpd_leasesdir=${_dhcpd_leasesdir}
+		dhcpd_piddir=${__dhcpd_piddir}
+		dhcpd_leasesdir=${__dhcpd_leasesdir}
 	fi
 	dhcpd_pidfile=${dhcpd_piddir}/${name}.pid
 	dhcpd_leasesfile=${dhcpd_leasesdir}/${name}.leases
@@ -372,8 +396,8 @@ setup_compat ()
 
 setup_umask ()
 {
-	if [ -n "${dhcpd_umask}" ]; then
-		umask ${dhcpd_umask}
+	if [ -n "${dhcpd_withumask}" ]; then
+		umask ${dhcpd_withumask}
 	fi
 }
 
@@ -435,8 +459,8 @@ cleanup_chroot ()
 
 dhcpd_stop ()
 {
-	if $0 status; then
-		$0 stop
+	if sh $0 forcestatus; then
+		sh $0 forcestop
 	fi
 }
 
@@ -515,21 +539,71 @@ dhcpd_install ()
 	fi
 }
 
+_dhcpd_uninstall ()	# user group root
+{
+	local _user _group _root
+
+	_user=$1 _group=$2 _root=$3
+
+	if [ -n "${_user}" -o -n "${_group}" ]; then
+		dhcpd_chuser_enable=YES
+		dhcpd_withuser=${_user}
+		dhcpd_withgroup=${_group}
+	else
+		dhcpd_chuser_enable=NO
+	fi
+	if [ -n "${_root}" ]; then
+		dhcpd_chroot_enable=YES
+		dhcpd_rootdir=${_root}
+	else
+		dhcpd_chroot_enable=NO
+	fi
+	dhcpd_check
+	dhcpd_rcvar
+	dhcpd_uninstall
+}
+
 dhcpd_uninstall ()
 {
-	dhcpd_stop
-	remove_pid
-	remove_leases
-	remove_chuser
-	remove_chroot
+	if checkyesno __dhcpd_uninstall; then
+		dhcpd_stop
+		remove_pid
+		remove_leases
+		remove_chuser
+		remove_chroot
+	else
+		local _user _group _root
+
+		__dhcpd_uninstall=YES
+
+		_user=${dhcpd_withuser}
+		_group=${dhcpd_withgroup}
+		_root=${dhcpd_rootdir}
+
+		_dhcpd_uninstall "" "" ""
+
+		if checkyesno paranoia; then
+			if [ -n "${_user}" -o -n "${_group}" ]; then
+				_dhcpd_uninstall "${_user}" "${_group}" ""
+			fi
+			if [ -n "${_root}" ]; then
+				_dhcpd_uninstall "" "" "${_root}"
+			fi
+			if [ -n "${_user}" -o -n "${_group}" ] &&
+			   [ -n "${_root}" ]; then
+				_dhcpd_uninstall "${_user}" "${_group}" "${_root}"
+			fi
+		fi
+	fi
 }
 
 rcvar=$(set_rcvar)
 load_rc_config ${name}
 
-_dhcpd_piddir=/var/run			# pid file directory
-_dhcpd_leasesdir=/var/db			# leases file directory
-#_dhcpd_rootdir=/var/db/${name}		# root directory
+__dhcpd_uninstall="NO"			# internal use only
+__dhcpd_piddir=/var/run			# pid file directory
+__dhcpd_leasesdir=/var/db		# leases file directory
+#__dhcpd_rootdir=/var/db/${name}	# root directory
 
 dhcpd_check
 dhcpd_rcvar
