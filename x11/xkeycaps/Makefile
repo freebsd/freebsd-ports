@@ -3,7 +3,7 @@
 # Date created:         12 February 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1997/09/11 22:09:20 jmz Exp $
+# $Id: Makefile,v 1.9 1998/04/08 21:30:38 jmz Exp $
 #
 
 DISTNAME=	xkeycaps-2.42
@@ -15,5 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN1=		xkeycaps.1
 
 .include <bsd.port.mk>

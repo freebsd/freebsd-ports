@@ -32,7 +32,6 @@ lib/X11/XFCE/sample.fvwm2rc
 lib/X11/XFCE/sample.fvwmrc
 lib/X11/XFCE/sample.xfcerc
 lib/X11/XFCE/sample.xinitrc
-man/man1/XFCE.1.gz
 @dirrm lib/X11/XFCE/doc
 @dirrm lib/X11/XFCE/palettes
 @dirrm lib/X11/XFCE

@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:38 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:59 asami Exp $
 #
 
 DISTNAME=	bricons
@@ -18,6 +18,7 @@ MAINTAINER=     shanee@augusta.de
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+MAN1=		bricons.1
 
 post-install:
 	${INSTALL_DATA} $(WRKDIR)/bricons/Xbricons $(PREFIX)/lib/X11/app-defaults/

@@ -1,5 +1,4 @@
 bin/bricons
-man/man1/bricons.1.gz
 lib/X11/app-defaults/Xbricons
 include/X11/bitmaps/calander.xbm
 include/X11/bitmaps/help.xbm
