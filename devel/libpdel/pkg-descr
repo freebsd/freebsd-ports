@@ -1,0 +1,24 @@
+The Packet Design Embedded Library (PDEL) is a C library containing an
+assorted collection of code useful for developing embedded applications:
+
+-   C data structure run-time introspection library: structs(3)
+-   Threaded HTTP client/server library: http_server(3)
+-   Application configuration framework: app_config(3)
+-   Heap memory accounting and sanity checking: typed_mem(3)
+-   File template library: tmpl(3)
+-   Routines to configure networking interfaces, ARP table, and routing
+    table (FreeBSD only): if_util(3), route_msg(3), uroute(3)
+-   Logging library: alog(3)
+-   Generic TCP server: tcp_server(3)
+-   Generic hash table implementation: ghash(3)
+-   Generic balanced tree implementation: gtree(3)
+-   FILE * enhancements:
+-   Base-64 encoding/decoding: base64(3)
+-   Events and actions with automated locking: paction(3), pevent(3)
+-   Generalized per-thread variables: tinfo(3)
+-   Message ports: mesg_port(3)
+-   Digital signature creation/verification: rsa_util_sign(3)
+-   Filesystem mounting/unmounting (FreeBSD only): fs_mount(3)
+-   String quoting/parsing: string_enquote(3)
+
+For more details, see the individual man pages referenced above.
