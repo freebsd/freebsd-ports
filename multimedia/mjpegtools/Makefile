@@ -18,6 +18,7 @@ COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
+CONFLICTS=	mplex-*
 USE_GNOME=	glib12
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
