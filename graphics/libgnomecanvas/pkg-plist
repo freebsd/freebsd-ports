@@ -118,7 +118,5 @@ share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
 @unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/ang 2> /dev/null || true
 @dirrm %%DOCSDIR%%
-@dirrm lib/libglade/2.0
-@dirrm lib/libglade
 @dirrm include/libgnomecanvas-2.0/libgnomecanvas
 @dirrm include/libgnomecanvas-2.0
