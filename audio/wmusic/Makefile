@@ -1,26 +1,23 @@
 # New ports collection makefile for:	wmusic
 # Date created:				16 September 2000
-# Whom:					Eric Melville <eric@osd.bsdi.com>
+# Whom:					eric
 #
 # $FreeBSD$
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.2.6
+PORTVERSION=	1.4.4
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://hadess.net/files/
 
-MAINTAINER=	eric@osd.bsdi.com
+MAINTAINER=	eric@FreeBSD.org
 
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE} \
-		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ARGS=	--prefix=${X11BASE}
+CONFIGURE_ENV=	PATH_GTKCONFIG=${X11BASE}/bin/gtk12-config
 
 USE_GLIB=	yes
 USE_GTK=	yes
