@@ -11,4 +11,4 @@ Rewrite of getopt(1) with the following features:
 * It compiles cleanly with both libc-5 and glibc-2.
 
 Author:	Frodo Looijaard <frodol@dds.nl>
-WWW:	http://huizen.dds.nl/~frodol/getopt.html
+WWW:	http://www.frodol.dds.nl/getopt.html
