@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drm-kmod
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
 
