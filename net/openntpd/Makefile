@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	20040718p
+PORTVERSION=	20040719p
 CATEGORIES=	net
 MASTER_SITES=	http://www.zip.com.au/~dtucker/openntpd/ \
 		http://dtucker.freeshell.org/openntpd/
