@@ -1,4 +1,5 @@
 bin/fc-solve
+bin/freecell-solver-config
 bin/freecell-solver-range-parallel-solve
 bin/make-aisleriot-freecell-board
 bin/make-gnome-freecell-board
