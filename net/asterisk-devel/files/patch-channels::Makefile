@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- channels/Makefile.orig	Wed Dec 10 04:19:22 2003
-+++ channels/Makefile	Fri Jan 30 01:47:34 2004
+--- channels/Makefile.orig	Fri Jan 23 22:57:48 2004
++++ channels/Makefile	Thu Feb 19 01:48:41 2004
 @@ -26,12 +26,10 @@
  #
  #CHANNEL_LIBS+=chan_vofr
@@ -29,14 +29,14 @@ $FreeBSD$
  
  chan_iax2.so: chan_iax2.o iax2-parser.o
  ifeq ($(USE_MYSQL_FRIENDS),1)
-@@ -139,15 +135,17 @@
+@@ -146,15 +142,17 @@
  chan_vpb.so: chan_vpb.o
  	 $(CXX) $(SOLINK) -o $@ $< -lvpb -lpthread -lm -ldl
  
 -chan_h323.so: chan_h323.o h323/libchanh323.a
 -	$(CC) $(SOLINK) -o $@ $< h323/libchanh323.a -L$(PWLIBDIR)/lib  -lpt_linux_x86_r -L$(OPENH323DIR)/lib -lh323_linux_x86_r -L/usr/lib -lpthread -ldl -lcrypto -lssl -lexpat
 +chan_h323.so: chan_h323.o h323/ast_h323.o
-+	$(CC) $(SOLINK) -o $@ $< h323/ast_h323.o -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -lcrypto -lssl -L$(LOCALBASE)/lib -lexpat -llber -lldap -lldap_r
++	$(CXX) $(SOLINK) -o $@ $< h323/ast_h323.o -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -lcrypto -lssl -L$(LOCALBASE)/lib -lexpat -llber -lldap -lldap_r
  
 +h323/ast_h323.o:
 +	$(MAKE) -C h323 ast_h323.o

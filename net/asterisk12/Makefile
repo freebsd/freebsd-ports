@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
-
-BROKEN=		"Does not compile"
 
 ONLY_FOR_ARCHS=	i386
 
