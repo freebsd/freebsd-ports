@@ -11,7 +11,8 @@ CATEGORIES=	editors
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=	alex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The OpenLook textedit application
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
