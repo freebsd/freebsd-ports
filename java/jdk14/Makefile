@@ -95,16 +95,16 @@ IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DI
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
-		${CHMOD} -R u+w * &amp;&amp; \
+		${CHMOD} -R u+w * && \
 		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
 		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
 		${MKDIR} -p j2sdk1.3.1/src/bsd/doc/man && \
-		${MKDIR} -p hotspot1.3.1/build/bsd &amp;&amp; \
-		${MKDIR} -p hotspot1.3.1/build/bsd/makefiles &amp;&amp; \
-		${MKDIR} -p hotspot1.3.1/build/bsd/package &amp;&amp; \
-		${MKDIR} -p hotspot1.3.1/src/os/bsd/launcher &amp;&amp; \
-		${MKDIR} -p hotspot1.3.1/src/os/bsd/vm &amp;&amp; \
-		${MKDIR} -p hotspot1.3.1/src/os_cpu/bsd_i486/vm &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/build/bsd && \
+		${MKDIR} -p hotspot1.3.1/build/bsd/makefiles && \
+		${MKDIR} -p hotspot1.3.1/build/bsd/package && \
+		${MKDIR} -p hotspot1.3.1/src/os/bsd/launcher && \
+		${MKDIR} -p hotspot1.3.1/src/os/bsd/vm && \
+		${MKDIR} -p hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
 			${PATCH} < ${WRKDIR}/jdk131.patches
 
 .if !defined(NODEBUG)
