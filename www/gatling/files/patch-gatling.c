@@ -1,4 +1,5 @@
 ! Fix a filedescriptor leak. This change requires libowfat-0.18
+! Correct return code for FTP CWD
 ! Obtained from gatling cvs
 --- gatling.c.orig	Fri Feb 27 16:09:53 2004
 +++ gatling.c	Fri Feb 27 16:13:28 2004
@@ -20,3 +21,11 @@
      if (logging) {
        buffer_putulonglong(buffer_1,range_last-range_first);
        buffer_putspace(buffer_1);
+@@ -1428,7 +1428,7 @@
+   }
+   y[fmt_str(y,x)]=0;
+   h->ftppath=y;
+-  h->hdrbuf="200 ok.\r\n";
++  h->hdrbuf="250 ok.\r\n";
+   return 0;
+ }

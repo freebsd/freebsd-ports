@@ -7,7 +7,7 @@
 
 PORTNAME=	gatling
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://dl.fefe.de/
 
