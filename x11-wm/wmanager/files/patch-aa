@@ -19,7 +19,7 @@ $FreeBSD$
 -CXXFLAGS  = -I$(incdir) -O2 -Wall -pedantic #-DDEBUG=1 -g3
 -
 +CXX      ?= g++
-+CXXFLAGS+= -I$(fltkinc) -I$(incdir) -Wall -pedantic $(PTHREAD_CFLAGS) #-DDEBUG=1 -g3
++CXXFLAGS+= -I$(fltkinc) -I$(incdir) $(PTHREAD_CFLAGS) #-DDEBUG=1 -g3
  
  # linker settings
 -LD        = g++

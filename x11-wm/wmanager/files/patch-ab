@@ -1,11 +1,21 @@
---- src/WManager.cc	Wed Sep 29 13:23:17 1999
-+++ src/WManager.cc.new	Fri Nov 19 23:07:25 1999
-@@ -9,6 +9,8 @@
+--- src/WManager.cc.orig	Mon Nov 15 00:28:36 1999
++++ src/WManager.cc	Sun Nov  2 02:45:05 2003
+@@ -25,7 +25,10 @@
+ #include <string>                                 // standard string class
  #include <fstream>                                // file streams
  #include <cstring>                                // only for 'strtok'
++#include <iostream>
  #include <pwd.h>                                  // for home directory
 +#include <unistd.h>
 +#include <sys/types.h>
  
  
  // PROJECT INCLUDES ////////////////////////////////
+@@ -36,6 +39,7 @@
+ // LOCAL INCLUDES //////////////////////////////////
+ #include <FL/fl_message.H>                        // message window
+ 
++using namespace std;
+ 
+ // constructor
+ WManager::WManager()
