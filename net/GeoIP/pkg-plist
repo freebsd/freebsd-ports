@@ -1,11 +1,22 @@
+bin/geoipexport
 bin/geoiplookup
 bin/geoipupdate
 etc/GeoIP.conf.default
 include/GeoIP.h
+include/GeoIPBitReader.h
+include/GeoIPCity.h
 include/GeoIPUpdate.h
 lib/libGeoIP.a
 lib/libGeoIP.la
 lib/libGeoIP.so
 lib/libGeoIP.so.2
+lib/libGeoIPBitReader.a
+lib/libGeoIPBitReader.la
+lib/libGeoIPBitReader.so
+lib/libGeoIPBitReader.so.0
+lib/libGeoIPUpdate.a
+lib/libGeoIPUpdate.la
+lib/libGeoIPUpdate.so
+lib/libGeoIPUpdate.so.0
 share/GeoIP/GeoIP.dat
 @unexec rmdir %D/share/GeoIP 2>/dev/null || true
