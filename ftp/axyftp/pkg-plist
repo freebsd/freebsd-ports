@@ -1,17 +1,19 @@
 bin/wxftp
+share/wxftp/help/artistic.txt
 share/wxftp/help/doc.gif
 share/wxftp/help/folder.gif
 share/wxftp/help/glossary.html
 share/wxftp/help/help.html
 share/wxftp/help/index.html
 share/wxftp/help/intro.html
+share/wxftp/help/lgpl.txt
 share/wxftp/help/link.gif
+share/wxftp/help/main.html
 share/wxftp/help/options.html
 share/wxftp/help/panels.html
 share/wxftp/help/problems.html
 share/wxftp/help/session.html
 share/wxftp/help/up.gif
 share/wxftp/help/wxftp.html
-share/wxftp/help/main.html
 @dirrm share/wxftp/help
 @dirrm share/wxftp
