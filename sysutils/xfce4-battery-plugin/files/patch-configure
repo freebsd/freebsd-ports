@@ -1,5 +1,5 @@
---- configure.orig	Wed Jul 23 22:20:56 2003
-+++ configure	Fri Aug  1 12:56:48 2003
+--- configure.orig	Sat Aug  9 04:05:09 2003
++++ configure	Fri Sep 12 23:28:29 2003
 @@ -19273,7 +19273,8 @@
  
  
@@ -10,7 +10,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -19567,7 +19568,7 @@
+@@ -19651,7 +19652,7 @@
  
      echo "$as_me:$LINENO: checking where to install panel plugins" >&5
  echo $ECHO_N "checking where to install panel plugins... $ECHO_C" >&6
