@@ -12,5 +12,6 @@ lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/UPCA.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode/UPCE.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Barcode/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Barcode
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Barcode 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GD/Barcode
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
