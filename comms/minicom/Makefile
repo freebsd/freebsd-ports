@@ -24,7 +24,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--enable-dfl-port=/dev/modem \
-			--sysconfdir=${PREFIX}/etc/minicom
+			--sysconfdir=${PREFIX}/etc/minicom \
+			--enable-lock-dir=/var/spool/lock
+
 USE_AUTOCONF=	yes
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1
