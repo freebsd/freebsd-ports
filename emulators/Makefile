@@ -12,6 +12,7 @@
     SUBDIR += dlx
     SUBDIR += fmsx
     SUBDIR += frodo
+    SUBDIR += gsnes9x/
     SUBDIR += hfs
     SUBDIR += hfsutils
     SUBDIR += ines
