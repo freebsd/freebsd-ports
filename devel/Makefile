@@ -912,6 +912,7 @@
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
     SUBDIR += pear-XML_Parser
+    SUBDIR += pear-XML_RPC
     SUBDIR += pear-XML_RSS
     SUBDIR += pear-XML_Serializer
     SUBDIR += pear-XML_Tree
