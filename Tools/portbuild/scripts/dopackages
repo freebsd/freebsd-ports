@@ -8,8 +8,8 @@ pb=/var/portbuild
 # packages for dependencies only
 dummyports="x11/XFree86"
 
-# packages with very long dependency lists -- try to start building these first
-quickports="x11/kde2 x11/gnome"
+# packages that take very long to build -- try to start building these first
+quickports="lang/ghc games/civ2demo games/rt2-demo x11/XFree86-4 editors/openoffice"
 
 status=${pb}/status
 
@@ -248,15 +248,15 @@ fi
 
 cd ${pb}/usr/ports
 if [ "$nocvsup" = 0 ]; then
-  echo "================================================"
-  echo "running cvsup"
-  echo "================================================"
-  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
-  date > ${pb}/cvsdone
+#  echo "================================================"
+#  echo "running cvsup"
+#  echo "================================================"
+#  su ${user} -c 'cvsup -g -L 0 /etc/supfile.cvsup'
   echo "================================================"
   echo "running cvs update on /usr/ports"
   echo "================================================"
-  su ${user} -c 'cvs -q update -d -P'
+  su ${user} -c 'cvs -qR update -d -P'
+  date > ${pb}/cvsdone
   echo "================================================"
   echo "running make checksubdirs"
   echo "================================================"
@@ -265,7 +265,7 @@ if [ "$nocvsup" = 0 ]; then
   echo "running cvs update on /usr/opt/doc"
   echo "================================================"
   cd ${pb}/usr/opt/doc
-  su ${user} -c 'cvs -q update -d -P'
+  su ${user} -c 'cvs -qR update -d -P'
 fi
 
 if [ "$nocvs" = 0 ]; then
@@ -273,7 +273,7 @@ if [ "$nocvs" = 0 ]; then
   echo "running cvs update on /${branch}/src"
   echo "================================================"
   cd ${pb}/${branch}/src
-  su ${user} -c 'cvs -q update -d -P'
+  su ${user} -c 'cvs -qR update -d -P'
 fi
 
 # this one not in background to check return status
@@ -322,10 +322,14 @@ if [ "$nodummy" = 0 ]; then
   done
 fi
 
-quickpkgs=""
+# hack to extend length of dependency chain to build quickports first
 for i in ${quickports}; do
   if [ -d $i ]; then
-    quickpkgs="${quickpkgs} $(cd $i; make package-name).tgz"
+    quickpkg="$(cd $i; make package-name).tgz"
+    echo "all: dummy1-$quickpkg" >> ../../${branch}/Makefile
+    echo "dummy1-$quickpkg: dummy2-$quickpkg" >> ../../${branch}/Makefile
+    echo "dummy2-$quickpkg: dummy3-$quickpkg" >> ../../${branch}/Makefile
+    echo "dummy3-$quickpkg: $quickpkg" >> ../../${branch}/Makefile
   else
     echo "quick port directory \"$i\" does not exist -- skipping"
   fi
@@ -355,6 +359,7 @@ if [ "$nobuild" = 0 ]; then
   mkdir -p ${pb}/archive/errorlogs/e.${branch}.${date}
   ln -sf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/${branch}/errors
   ln -sf e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
+  mkdir -p ${pb}/${branch}/errors/old-errors
   rm -rf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
   mkdir -p ${pb}/archive/errorlogs/a.${branch}.${date}
   ln -sf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/${branch}/logs
@@ -381,7 +386,7 @@ if [ "$nobuild" = 0 ]; then
   echo "================================================"
   echo "started at $(date)"
   phase1start=$(date +%s)
-  make -k -j$count ${quickpkgs} all > ../../make.0 2>&1 </dev/null
+  make -k -j$count all > ../../make.0 2>&1 </dev/null
   echo "ended at $(date)"
   phase1end=$(date +%s)
   echo "phase 1 took $(date -u -j -r $(($phase1end - $phase1start)) | awk '{print $4}')"
@@ -393,6 +398,7 @@ if [ "$nobuild" = 0 ]; then
     echo "The following port(s) timed out:"
     grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/' 
   fi
+  ls -asFlrt ${pb}/${branch}/packages/All > ${pb}/${branch}/logs/ls-lrt-1
   cp -rp errors old-errors
   cd ${pb}/${branch}/old-errors
   ${pb}/scripts/processlogs
@@ -417,7 +423,7 @@ if [ "$nobuild" = 0 ]; then
   echo "================================================"
   echo "started at $(date)"
   phase2start=$(date +%s)
-  make -k -j$count ${quickpkgs} all > ../../make.1 2>&1 </dev/null
+  make -k -j$count all > ../../make.1 2>&1 </dev/null
   echo "ended at $(date)"
   phase2end=$(date +%s)
   echo "phase 2 took $(date -u -j -r $(($phase2end - $phase2start)) | awk '{print $4}')"
@@ -462,6 +468,7 @@ if [ "$nobuild" = 0 ]; then
   for i in *.log; do
     if [ ! -f ../errors/$i ]; then
       new="$new $(basename $i .log)"
+      cp -p ${i} ${pb}/${branch}/errors/old-errors
     fi
   done
   if [ "x$new" != "x" ]; then
@@ -469,6 +476,7 @@ if [ "$nobuild" = 0 ]; then
   fi
   archiveports ${pb} ${branch} &
   generatemd5 ${pb} ${branch} &
+  sleep 5
   echo "================================================"
   echo "new failures"
   echo "================================================"
