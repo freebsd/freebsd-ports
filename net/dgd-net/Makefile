@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.15 1996/12/26 05:46:15 adam Exp $
+# $Id: Makefile,v 1.16 1997/01/01 05:19:06 adam Exp $
 #
 
 DISTNAME=	dgd-net-1.0.97
@@ -36,7 +36,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 pre-patch:
-	@ln -s dgd ${WRKSRC}/dgd+net
+	@ln -s dgd ${WRKDIR}/dgd+net
 
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
