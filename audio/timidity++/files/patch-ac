@@ -1,11 +1,40 @@
---- timidity/timidity.h.orig	Thu Nov  4 21:14:15 1999
-+++ timidity/timidity.h	Wed Nov 24 17:15:31 1999
-@@ -441,7 +441,7 @@
- #ifdef LITTLE_ENDIAN
+
+	This patch-ac should be replaced with this patch:
+
+--- timidity/timidity.h.orig	Fri Dec 22 17:55:40 2000
++++ timidity/timidity.h	Fri Dec 22 17:57:41 2000
+@@ -447,8 +447,14 @@
  #define LE_SHORT(x) (x)
  #define LE_LONG(x) (x)
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) && !defined(__alpha__)
- #define BE_SHORT(x) __byte_swap_word(x)
- #define BE_LONG(x) __byte_swap_long(x)
+ #ifdef __FreeBSD__
+-#define BE_SHORT(x) __byte_swap_word(x)
+-#define BE_LONG(x) __byte_swap_long(x)
++#  include <osreldate.h>
++#  if __FreeBSD_version <= 500000
++#    define BE_SHORT(x) __byte_swap_word(x)
++#    define BE_LONG(x) __byte_swap_long(x)
++#  else
++#    define BE_SHORT(x) __uint8_swap_uint16(x)
++#    define BE_LONG(x) __uint8_swap_uint32(x)
++#  endif
  #else
+ #define BE_SHORT(x) XCHG_SHORT(x)
+ #define BE_LONG(x) XCHG_LONG(x)
+@@ -457,8 +463,14 @@
+ #define BE_SHORT(x) (x)
+ #define BE_LONG(x) (x)
+ #ifdef __FreeBSD__
+-#define LE_SHORT(x) __byte_swap_word(x)
+-#define LE_LONG(x) __byte_swap_long(x)
++#  include <osreldate.h>
++#  if __FreeBSD_version <= 500000
++#    define LE_SHORT(x) __byte_swap_word(x)
++#    define LE_LONG(x) __byte_swap_long(x)
++#  else
++#    define LE_SHORT(x) __uint8_swap_uint16(x)
++#    define LE_LONG(x) __uint8_swap_uint32(x)
++#  endif
+ #else
+ #define LE_SHORT(x) XCHG_SHORT(x)
+ #define LE_LONG(x) XCHG_LONG(x)
+
