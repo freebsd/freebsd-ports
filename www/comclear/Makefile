@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	comclear
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.neuro-tech.net/files/
 
