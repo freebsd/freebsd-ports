@@ -1,0 +1,27 @@
+--- sdd/sdd.c.orig	Wed May  5 17:54:07 1999
++++ sdd/sdd.c	Wed May  5 17:56:34 1999
+@@ -1378,11 +1378,13 @@
+ usage(ex)
+ 	int ex;
+ {
+-	error("\
++	FILE *fp = ex ? stderr : stdout;
++
++	fprintf(fp, "\
+ Usage:	sdd [option=value] [-flag]\n\
+ Options:\n\
+ ");
+-	error ("\
++	fprintf(fp, "\
+ 	if=name		  Read  input from name instead of stdin\n\
+ 	of=name		  Write output to name instead of stdout\n\
+ 	-inull		  Do not read input from file (use null char's)\n\
+@@ -1396,7 +1398,7 @@
+ 	seek=#,skip=#	  Seek/skip # bytes on input/output before starting\n\
+ 	ivseek=#,ovseek=# Seek # bytes on input/output volumes before starting\n\
+ ");
+-	error("\
++	fprintf(fp, "\
+ 	-notrunc	  Do not trunctate existing output file\n\
+ 	-pg		  Print a dot on each write to indicate progress\n\
+ 	-noerror	  Do not stop on error\n\

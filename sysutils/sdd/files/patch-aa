@@ -1,0 +1,39 @@
+--- RULES/i386-freebsd-cc.rul.orig	Sun Apr 27 01:46:00 1997
++++ RULES/i386-freebsd-cc.rul	Thu May  6 02:12:08 1999
+@@ -24,7 +24,7 @@
+ ###########################################################################
+ 
+ CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
++CFLAGS+=	$(COPTS) $(CWARNOPTS) $(COPTX)
+ 
+ CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
+ COPTS=
+@@ -47,7 +47,7 @@
+ 
+ LIBS_PATH=	-L$(OLIBSDIR)
+ 
+-LDFLAGS=	$(LDOPTS) $(LDOPTX)
++LDFLAGS+=	$(LDOPTS) $(LDOPTX)
+ LDLIBS=		$(LIBS) $(LIBX)
+ 
+ #LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH)
+@@ -57,14 +57,14 @@
+ 
+ FLOAT_OPTIONS=	
+ 
+-CC=		@echo "	==> COMPILING \"$@\""; gcc
+-LDCC=		@echo "	==> LINKING \"$@\""; gcc
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
++CC=		@echo "	==> COMPILING \"$@\""; ${CCOM}
++LDCC=		@echo "	==> LINKING \"$@\""; ${CCOM}
++DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; ${CCOM}
+ RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
+ ARFLAGS=	cr
+ LORDER=		lorder
+ TSORT=		tsort
+ 
+ RMDEP=		:
+-MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
++MKDEP=		@echo "	==> MAKE DEPENDENCIES \"$@\""; $(RMDEP); ${CCOM} -M
+ MKDEP_OUT=
