@@ -8,8 +8,11 @@
 PORTNAME=	bluefish
 PORTVERSION=	0.6
 CATEGORIES=	www editors
-MASTER_SITES=	http://bluefish.openoffice.nl/download/ \
-		http://student.wau.nl/~olivier/bluefish/download/
+MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
+		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \
+		http://bluefish.mrball.net/downloads/ \
+		ftp://ftp.ratisbona.com/pub/bluefish/downloads/ \
+		http://bluefish.shellhung.org/downloads/
 
 MAINTAINER=	jim@FreeBSD.org
 
