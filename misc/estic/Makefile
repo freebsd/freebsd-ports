@@ -32,12 +32,6 @@ PBX_DOC=${DOCSDIR}
 ESTIC=${WRKSRC}/estic
 MAKE_E=	make X11BASE=${X11BASE} -f make/freebsd${X_OR_NOT}.mak
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile (bad C++ code)"
-.endif
-
 do-configure:
 	@cd ${WRKSRC}/spunk ; ${MAKE_E} dep
 	@cd ${ESTIC} ; ${MAKE_E} dep
@@ -86,4 +80,4 @@ demo:
 # CDROMs, # (despite the original German phraseology) as I (<jhs@freebsd.org>)
 # have obtained a waiver.  See ${FILESDIR}/README for explanation.
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
