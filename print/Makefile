@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1998/11/20 04:14:17 asami Exp $
+# $Id: Makefile,v 1.74 1998/12/08 21:11:51 nik Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -64,6 +64,7 @@
     SUBDIR += teTeX-beta
     SUBDIR += tex
     SUBDIR += texinfo
+    SUBDIR += tgif2tex
     SUBDIR += tr2latex
     SUBDIR += transfig
     SUBDIR += virtualpaper
