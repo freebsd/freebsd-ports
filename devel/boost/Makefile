@@ -38,6 +38,10 @@ BOOST_SHARED_LIB_VER=	2
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.if !defined(WITH_PYTHON) && defined(WITH_PYSTE)
+WITH_PYTHON=	IMPLIED_BY_PYSTE
+.endif
+
 #
 # Unfortunately, it is not possible to use OPTIONS to control the
 # optional Python support
@@ -54,9 +58,14 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
+.if defined(WITH_PYSTE)
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml \
 		${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
+PLIST_SUB+=	BOOST_PYSTE=""
+.else
+PLIST_SUB+=	BOOST_PYSTE="@comment "
+.endif
 .else
 PLIST_SUB+=	BOOST_PYTHON="@comment "
 .endif
@@ -150,9 +159,24 @@ pre-everything::
 	@${ECHO_CMD}
 	@sleep 2
 .else
+.if ${WITH_PYTHON} == IMPLIED_BY_PYSTE
+	@${ECHO_CMD}
+	@${ECHO_CMD} WITH_PYSTE implies WITH_PYTHON! Enabling Python bindings!
+	@${ECHO_CMD}
+.else
 	@${ECHO_CMD}
 	@${ECHO_CMD} Python bindings enabled!
 	@${ECHO_CMD}
+.endif
+.if !defined(WITH_PYSTE)
+	@${ECHO_CMD} To build Pyste, Boost.Python\'s interface generator,  hit CTRL+C now and
+	@${ECHO_CMD} run \`\`make -DWITH_PYTHON -DWITH_PYSTE[...]\'\'.
+	@${ECHO_CMD}
+	@sleep 2
+.else
+	@${ECHO_CMD} Pyste will be installed!
+	@${ECHO_CMD}
+.endif
 .endif
 
 do-extract:
@@ -190,7 +214,7 @@ post-patch:
 
 post-configure:
 # Configure pyste, the Boost.Python code generator
-.if defined(WITH_PYTHON)
+.if defined(WITH_PYSTE)
 	@cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
 		config ${PYDISTUTILS_CONFIGUREARGS}
@@ -207,7 +231,7 @@ do-build:
 		${BOOST_STL_OPTS}
 
 # Build pyste, the Boost.Python code generator
-.if defined(WITH_PYTHON)
+.if defined(WITH_PYSTE)
 	cd ${BUILD_WRKSRC}/libs/python/pyste/install && \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
 		build ${PYDISTUTILS_BUILDARGS}
@@ -240,11 +264,13 @@ do-install:
 		-exec ${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 
 # Install pyste, the Boost.Python code generator
-.if defined(WITH_PYTHON)
+.if defined(WITH_PYSTE)
 	cd ${WRKSRC}/libs/python/pyste/install && \
 	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
 		install ${PYDISTUTILS_INSTALLARGS}
-
+.else
+# Delete pyste folder in order not to install the documentation
+	${RM} -rf ${WRKSRC}/libs/python/pyste
 .endif
 
 # Documentation & examples
@@ -293,5 +319,13 @@ post-install:
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
 
-	@${CAT} ${PKGMESSAGE}
+	@if [ -s ${PKGMESSAGE} ]; then \
+	${ECHO_CMD} ; \
+	${ECHO_CMD} "===============================================================================" ; \
+	${ECHO_CMD} ; \
+	${CAT} ${PKGMESSAGE}; \
+	${ECHO_CMD} "===============================================================================" ; \
+	${ECHO_CMD} ; \
+	fi
+
 .include <bsd.port.post.mk>
