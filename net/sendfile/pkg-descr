@@ -9,3 +9,6 @@ client (which sends messages), a receive client (which copies files from
 the local sendfile spool to the recipient's current directory) and a
 sendfiled server (which receives files and messages and stores them in the
 local sendfile spool).
+
+NOTE: If you wish to use fetchfile (which is an optional extension to
+	  sendfile,) you need to have pgp installed, too.
