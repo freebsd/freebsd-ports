@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -41,7 +42,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		galeon:${PORTSDIR}/www/galeon2 \
 		gswitchit-properties-capplet:${PORTSDIR}/x11/gswitchit \
 		seahorse:${PORTSDIR}/security/seahorse \
-		workrave:${PORTSDIR}/x11/workrave
+		workrave:${PORTSDIR}/x11/workrave \
+		gnotime:${PORTSDIR}/deskutils/gnotime
 
 .if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
 RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
