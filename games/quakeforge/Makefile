@@ -35,7 +35,7 @@ CONFIGURE_ARGS= "--with-sdl=${LOCALBASE}"
 CONFIGURE_ENV=	"SDL_LIBS=`sdl-config --libs`" \
 		"SDL_CFLAGS=`sdl-config --cflags`"
 
-.if defined(USE_GLX)
+.if defined(WITH_GLX)
 GL_DEPENDS=	GL.1:${PORTSDIR}/graphics/utah-glx
 BINARIES+=      quake-gl qw-client-gl
 .else
@@ -50,14 +50,14 @@ BINDIR=		${PREFIX}/bin
 .endif
 
 pre-configure:
-.if !defined(USE_GLX)
-	@${ECHO_MSG} "Define USE_GLX to use GLX (otherwise it is explicitly disabled!)"
+.if !defined(WITH_GLX)
+	@${ECHO_MSG} "Define WITH_GLX to use GLX (otherwise it is explicitly disabled!)"
 .endif
 
 do-install:
 	@${CP} ${PKGDIR}/PLIST ${PLIST}
 
-.if defined(USE_GLX)
+.if defined(WITH_GLX)
 	@${CAT} ${PKGDIR}/PLIST.glx >>${PLIST}
 .endif
 
