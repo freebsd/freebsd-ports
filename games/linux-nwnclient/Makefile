@@ -18,8 +18,8 @@ MAINTAINER=	des@FreeBSD.org
 COMMENT=	Neverwinter Nights Linux (x86) Client
 
 RUN_DEPENDS=	${LOCALBASE}/share/nwndata/NWNv129.txt:${PORTSDIR}/games/nwndata \
-		/compat/linux/usr/X11R6/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux_dri \
-		/compat/linux/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
+		${LINUXBASE}/usr/X11R6/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux_dri \
+		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 
 USE_LINUX=	yes
 NO_BUILD=	yes
