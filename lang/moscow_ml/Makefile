@@ -7,6 +7,7 @@
 
 PORTNAME=	moscow_ml
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 		ftp://ftp.csd.uu.se/pub/mirror/mosml/
