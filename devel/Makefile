@@ -932,6 +932,7 @@
     SUBDIR += p5-Module-Load-Conditional
     SUBDIR += p5-Module-Pluggable
     SUBDIR += p5-Module-Pluggable-Ordered
+    SUBDIR += p5-Module-Refresh
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Versions-Report
