@@ -32,6 +32,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm/active.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/validator/validator1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/webrick/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.conf
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv/srv.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/chat
@@ -41,6 +43,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/sandstorm
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/tcptunnel
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/validator
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc/wwwsrv
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlrpc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmlrpc/ChangeLog
