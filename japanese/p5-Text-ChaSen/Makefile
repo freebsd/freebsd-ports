@@ -7,7 +7,7 @@
 
 PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese textproc perl5
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
 DISTNAME=	chasen-${CHASEN_VERSION}

@@ -5,5 +5,5 @@
  	      'NAME' => 'Text::ChaSen',
  	      'VERSION_FROM' => 'ChaSen.pm',
 -	      'LIBS' => ['-lchasen']
-+	      'LIBS' => ["-L$ENV{PREFIX}/lib -lchasen"]
++	      'LIBS' => ["-lstdc++ -L$ENV{PREFIX}/lib -lchasen"]
  );
