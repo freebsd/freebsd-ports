@@ -1,13 +1,13 @@
-# New ports collection makefile for:   magicpoint
-# Version required:    1.02a
-# Date created:        24 December 1997
-# Whom:                itojun@itojun.org
+# New ports collection makefile for:	magicpoint
+# Version required:	1.02a
+# Date created:		24 December 1997
+# Whom:			itojun@itojun.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/17 15:09:15 itojun Exp $
 #
 
 DISTNAME=	mgp-1.02a
-PKGNAME=        magicpoint-1.02a
+PKGNAME?=	magicpoint-1.02a
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 

@@ -3,7 +3,7 @@
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/17 15:10:42 itojun Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -14,9 +14,10 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	VFlib:${PORTSDIR}/japanese/vflib
 
+PKGNAME=	ja-magicpoint-1.02a
+
 .include <${.CURDIR}/../../misc/magicpoint/Makefile>
 
-PKGNAME=	ja-magicpoint-1.02a
 CATEGORIES=	japanese misc
 
 MAINTAINER=	itojun@itojun.org
