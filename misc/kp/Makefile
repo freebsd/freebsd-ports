@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/kp
 
-MAINTAINER=	asami@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Keyboard Practicer, touch-type training program
 
 USE_MOTIF=	yes
