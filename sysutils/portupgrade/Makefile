@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010827
-PORTREVISION=	1
+PORTVERSION=	20010827a
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -56,7 +55,6 @@ post-patch:
 .for f in pkgdb.rb pkgtools.rb
 	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/${f}
 .endfor
-	${RUBY} -i~ -pe 'sub %r:chdir_do \{:, "chdir_do(dir) {"' ${WRKSRC}/pkgtools.rb
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
