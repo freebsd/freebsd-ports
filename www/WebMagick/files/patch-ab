@@ -1,5 +1,5 @@
---- webmagickrc.in.bak	Sun Oct 17 18:43:44 1999
-+++ webmagickrc.in	Sun Nov 21 05:41:33 1999
+--- webmagickrc.in.orig	Sun Oct 17 18:43:44 1999
++++ webmagickrc.in	Thu Nov 25 23:48:03 1999
 @@ -41,6 +41,7 @@
  # $opt_pageindexname	= '.index';	# Base name of secondary index files
  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
@@ -16,3 +16,11 @@
  # $opt_help		= 0;	# Display usage message
  # $opt_version		= 0;	# Display version info
  # $opt_htmlext            = '.html'; # Use .shtml for SSI
+@@ -93,6 +95,7 @@
+ # $opt_title		= '';	# Page title (blank provides default title)
+ # $opt_address		= '';	# Additonal address info for bottom of
+                                 #    imagemap page
++# $opt_nodate           = 0;    # Don't show updates date
+ # $opt_pichtml            = 0;    # Write separate HTML for each picture
+ # $opt_pichtmlext         = '.html'; # Use .shtml for SSI
+ # $opt_pichtmltarget      = '';
