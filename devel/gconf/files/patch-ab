@@ -1,11 +1,13 @@
---- Makefile.in.orig	Thu Mar  9 14:41:56 2000
-+++ Makefile.in	Wed Jul  5 14:45:58 2000
-@@ -131,7 +131,7 @@
+--- Makefile.in.orig	Wed Aug  2 13:25:19 2000
++++ Makefile.in	Wed Aug  2 13:26:26 2000
+@@ -435,8 +435,8 @@
+ 	echo "**************"
  
- bin_SCRIPTS = gconf-config
- 
--m4datadir = $(datadir)/aclocal
-+m4datadir = $(prefix)/share/aclocal
- m4data_DATA = gconf.m4
- 
- EXTRA_DIST = gconf-config.in gconf.m4
+ install-data-local:
+-	-mkdir -p $(datadir)/aclocal
+-	$(INSTALL_DATA) gconf.m4 $(datadir)/aclocal/gconf-$(MAJOR_VERSION).m4
++	-mkdir -p $(prefix)/share/aclocal
++	$(INSTALL_DATA) gconf.m4 $(prefix)/share/aclocal/gconf-$(MAJOR_VERSION).m4
+ 	echo "**** NOTE ****" && \
+ 	echo $(WARNING_MESSAGE) && \
+ 	echo "**************"

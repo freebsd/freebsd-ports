@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gconf
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/GConf
@@ -17,7 +17,7 @@ MAINTAINER=	ade@FreeBSD.org
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		xml.5:${PORTSDIR}/textproc/libxml \
 		popt.0:${PORTSDIR}/devel/popt \
-		guile.6:${PORTSDIR}/lang/guile \
+		guile.9:${PORTSDIR}/lang/guile \
 		oaf.0:${PORTSDIR}/devel/oaf
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
@@ -34,5 +34,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
