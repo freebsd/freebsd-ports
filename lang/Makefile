@@ -223,6 +223,7 @@
     SUBDIR += rscheme
     SUBDIR += ruby-js
     SUBDIR += ruby-lua
+    SUBDIR += ruby-lua4
     SUBDIR += ruby-man
     SUBDIR += ruby-mode.el
     SUBDIR += ruby-perl

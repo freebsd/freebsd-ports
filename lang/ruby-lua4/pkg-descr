@@ -1,0 +1,7 @@
+Ruby-Lua -- an embebed scripting language for ruby programs
+
+This is a first attempt to make Lua script language as a class for
+ruby, it's very basic right now.
+
+Author:	Domingo Alvarez <domingo@dad-it.com>
+WWW:	http://ruby-lua.unolotiene.com/
