@@ -1,5 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += 
+    SUBDIR += aspell
 
 .include <bsd.port.subdir.mk>

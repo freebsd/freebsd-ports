@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pt-aspell
+PORTNAME=	aspell
+CATEGORIES=	portuguese
 
 MAINTAINER=	ports@FreeBSD.org
 
-MASTERDIR=	${.CURDIR}/../aspell
+MASTERDIR=	${.CURDIR}/../../textproc/aspell
 
 ASPELL_PT=	sim
 
