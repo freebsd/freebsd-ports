@@ -3,9 +3,10 @@
 %%PORTDOCS%%share/doc/twisted/ERRATA
 %%PORTDOCS%%share/doc/twisted/README
 %%PORTDOCS%%share/doc/twisted/TODO
+%%PORTDOCS%%share/doc/twisted/TwistedEnterprise.html
+%%PORTDOCS%%share/doc/twisted/TwistedPlugins.html
+%%PORTDOCS%%share/doc/twisted/WritingServers.html
 %%PORTDOCS%%share/doc/twisted/img/TwistedLogo.bmp
-%%PORTDOCS%%share/doc/twisted/twistedEnterprise.html
-%%PORTDOCS%%share/doc/twisted/writing-serves.html
 %%PORTDOCS%%share/examples/twisted/echoserv-ssl.py
 %%PORTDOCS%%share/examples/twisted/echoserv.py
 %%PORTDOCS%%share/examples/twisted/echoserv_threaded.py
@@ -134,12 +135,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/dirdbm.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/styles.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/styles.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/styles.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/__init__.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/todo.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/todo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/pim/todo.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/__init__.pyo
@@ -188,9 +183,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols/wire.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/__init__.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.pyo
@@ -212,6 +204,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/python/mutablestring.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/observable.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/observable.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/observable.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/otp.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/otp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/otp.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/ouroboros.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/ouroboros.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/ouroboros.pyo
@@ -405,9 +400,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_rebuild.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_reflect.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_reflect.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_reflect.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_sexpy.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_sexpy.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_sexpy.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_smtp.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_smtp.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_smtp.pyo
@@ -417,6 +409,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_toc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_todo.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_todo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_todo.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_web.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_web.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_web.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_words.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_words.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_words.pyo
@@ -432,6 +427,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/web/distrib.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/error.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/error.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/error.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/guard.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/guard.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/web/guard.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/html.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/html.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/html.pyo
@@ -528,7 +526,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/python
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols
-@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/pim
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole
