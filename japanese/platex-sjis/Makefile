@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/05 19:36:03 max Exp $
+# $Id: Makefile,v 1.2 1997/10/05 21:20:42 max Exp $
 #
 
 DISTNAME=	pl970702s
@@ -17,6 +17,8 @@ MAINTAINER=	max@FreeBSD.ORG
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-sjis \
 		platex-common:${PORTSDIR}/japanese/platex-common \
 		nkf:${PORTSDIR}/japanese/nkf
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-sjis \
+		platex-common:${PORTSDIR}/japanese/platex-common
 
 WRKSRC=		${WRKDIR}/970702
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

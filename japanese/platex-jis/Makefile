@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/05 19:34:51 max Exp $
+# $Id: Makefile,v 1.2 1997/10/05 21:20:40 max Exp $
 #
 
 DISTNAME=	pl970702j
@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} jclasses.dtx.gz plpatch.ltx
 MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
+		platex-common:${PORTSDIR}/japanese/platex-common
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
 		platex-common:${PORTSDIR}/japanese/platex-common
 
 WRKSRC=		${WRKDIR}/970702
