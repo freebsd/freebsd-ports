@@ -28,4 +28,6 @@ APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
   APEL is installed the following directory tree:
 	${LOCALBASE}/lib/xemacs/site-packages/lisp/apel/	--- apel & emu
 
+WWW: http://cvs.m17n.org/elisp/APEL/index.en.html
+
 --- Porting by shige <shige@FreeBSD.ORG>.

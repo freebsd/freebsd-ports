@@ -34,4 +34,6 @@ To use apel, put the following setup into your ~/.emacs:
 
 	(require 'apel-setupel)
 
+WWW: http://cvs.m17n.org/elisp/APEL/index.en.html
+
 --- Porting by shige <shige@FreeBSD.ORG>.
