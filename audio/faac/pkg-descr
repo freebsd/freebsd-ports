@@ -1,5 +1,7 @@
-FAAC is an AAC audio encoder. FAAC currently supports MPEG-4 LTP, 
-MAIN and LOW COMPLEXITY object types and MAIN and LOW MPEG-2 object types.
-It also supports multichannel and gapless encoding. 
+FAAC (Freeware Advanced Audio Coder) is an MPEG-2 and MPEG-4 AAC Audio encoder.
+
+FAAC currently supports MPEG-4 LTP, MAIN and LOW COMPLEXITY object types and 
+MAIN and LOW MPEG-2 object types. It also supports multichannel and
+gapless encoding. 
 
 WWW: http://www.audiocoding.com/

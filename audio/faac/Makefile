@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
 
 MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	FAAC is an AAC audio encoder
+COMMENT=	MPEG-2 and MPEG-4 AAC audio encoder
 
 NO_PACKAGE=	Distribution in binary form is prohibited
 
