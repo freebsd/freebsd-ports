@@ -31,6 +31,7 @@
     SUBDIR += cryptopp
     SUBDIR += cyrus-sasl
     SUBDIR += ddos_scan
+    SUBDIR += didentd
     SUBDIR += digest
     SUBDIR += donkey
     SUBDIR += drweb
