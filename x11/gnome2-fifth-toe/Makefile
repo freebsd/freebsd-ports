@@ -23,7 +23,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		gthumb:${PORTSDIR}/graphics/gthumb2 \
 		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net/gaim \
 		tsclient:${PORTSDIR}/net/tsclient \
-		galeon:${PORTSDIR}/www/galeon2 \
+		galeon:${PORTSDIR}/www/galeon \
 		seahorse:${PORTSDIR}/security/seahorse \
 		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish-devel \
