@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	0.6.3
+PORTVERSION=	0.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ocamlsdl
@@ -17,16 +17,17 @@ DISTNAME=	ocamlsdl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml interface to the SDL
 
-BROKEN=		Does not build
-
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 
-USE_BZIP2=	yes
 USE_SDL=	sdl ttf image mixer
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-findlib
 USE_GMAKE=	yes
+
+PKGDEINSTALL=	${PKGINSTALL}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -36,19 +37,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
 post-install:
-	@${FIND} ${PREFIX}/lib/ocaml/sdl ! -type d | \
+	@${FIND} ${PREFIX}/lib/ocaml/site-lib/sdl ! -type d | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/ocaml/sdl" >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/ocaml/stublibs -name "dllsdl*.so" | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/${PORTNAME}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ocamlfind remove ${PORTNAME} 2>/dev/null || true" >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/html/ ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
