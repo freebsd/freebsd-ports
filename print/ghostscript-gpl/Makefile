@@ -29,6 +29,7 @@ EXTRACT_ONLY=	${GS_SOURCES}
 WRKSRC=		${WRKDIR}/gs${GS_VERSION}
 USE_GMAKE=	yes
 MAKEFILE=	src/unix-gcc.mak
+CFLAGS+=	-I${PREFIX}/include
 # Note: the order that the manpages are listed here matters because
 # some of them are symbolic links
 MAN1=		gs.1 dvipdf.1 font2c.1 eps2eps.1 gsbj.1 gsdj.1 gsdj500.1 \
