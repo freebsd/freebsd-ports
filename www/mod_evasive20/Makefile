@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mod_dosevasive20
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	www security
 MASTER_SITES=	http://www.nuclearelephant.com/projects/dosevasive/
-DISTNAME=	mod_dosevasive.${PORTVERSION}
+DISTNAME=	mod_dosevasive_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	kiwi@oav.net
