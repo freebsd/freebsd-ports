@@ -1,0 +1,9 @@
+A dockapp for WindowMaker that provides a popup menu of icons that launch
+applications, like in AfterStep.  The program can be run more than once at
+the same time, which allows many different menus, each one described in a
+seperate file.
+
+WWW: http://www.fcoutant.freesurf.fr/wmmenu.html
+
+Jeremy
+karlj000@unbc.ca

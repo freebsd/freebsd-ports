@@ -1,0 +1,6 @@
+bin/wmmenu
+share/doc/wmmenu/example/apps
+share/doc/wmmenu/example/defaults
+share/doc/wmmenu/README
+@dirrm share/doc/wmmenu/example
+@dirrm share/doc/wmmenu

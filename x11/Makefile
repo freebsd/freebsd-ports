@@ -68,6 +68,7 @@
     SUBDIR += wdm
     SUBDIR += wmbutton
     SUBDIR += wmmatrix
+    SUBDIR += wmmenu
     SUBDIR += wrapper
     SUBDIR += wterm
     SUBDIR += x3270
