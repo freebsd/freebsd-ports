@@ -8779,6 +8779,7 @@ poink		ports/net/poink
 pointless	ports/misc/pointless
 policyd		ports/mail/policyd
 polipo		ports/www/polipo
+poly1305aes	ports/security/poly1305aes
 polygraph	ports/benchmarks/polygraph
 polymake	ports/math/polymake
 polypaudio	ports/audio/polypaudio
