@@ -46,4 +46,5 @@ post-install:
 	@${ECHO} "*  information on installing listmanager without using a    "
 	@${ECHO} "*  set-user-id root binary.                                 "
 	@${ECHO} "************************************************************"
+
 .include <bsd.port.mk>
