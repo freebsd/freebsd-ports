@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
+CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* sendmail-8.11.* sendmail-*-8.11.* \
+		smail-3.* zmailer-2.*
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 SITE=		${FILESDIR}/site.config.m4.pre4
@@ -52,20 +55,24 @@ SENDMAIL_WITH_TLS=yes
 
 .if defined(SENDMAIL_WITH_LDAP)
 PKGNAMESUFFIX?=	-ldap
+CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
 .endif
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 PKGNAMESUFFIX?=	-sasl
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 PKGNAMESUFFIX?=	-sasl2
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 PKGNAMESUFFIX?=	-tls
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.*
 .endif
 
 # Build site.config.m4
