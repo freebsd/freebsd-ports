@@ -3,7 +3,7 @@
 # Date created:			17 January 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/08/14 11:04:53 jim Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmpinboard-0.9.1

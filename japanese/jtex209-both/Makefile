@@ -3,7 +3,7 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1999/05/04 10:29:05 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME?=	ja-jlatex209-a17-n152

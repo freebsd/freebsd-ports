@@ -3,7 +3,7 @@
 # Date created:				1 April 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	libutf-8-1.0

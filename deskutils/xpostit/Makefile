@@ -3,7 +3,7 @@
 # Date created:        6 May 1996
 # Whom:                joerg
 #
-# $Id: Makefile,v 1.6 1998/09/27 03:44:38 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      xpostit3.3.1

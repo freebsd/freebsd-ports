@@ -4,7 +4,7 @@
 # Date created:         Fri Dec 01, 1995
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.21 1999/07/10 00:09:40 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	${PKGNAME}.src

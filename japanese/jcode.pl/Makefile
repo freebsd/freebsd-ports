@@ -3,7 +3,7 @@
 # Date created:		20 February 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/29 19:42:15 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jcode.pl-2.10

@@ -3,7 +3,7 @@
 # Date created:			03 Feb 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/03 16:31:52 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	euc

@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.8 1998/11/07 18:29:09 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kproject-0.1

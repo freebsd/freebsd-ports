@@ -3,7 +3,7 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.13 1998/08/07 23:56:14 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	zorro-1.1p8

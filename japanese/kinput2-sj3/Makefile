@@ -3,7 +3,7 @@
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/05/01 04:01:33 taoka Exp $
+# $FreeBSD$
 #
 
 SJ3=		yes

@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/12/01 03:06:21 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-w3-2.2.26

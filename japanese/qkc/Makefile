@@ -3,7 +3,7 @@
 # Date created:			03 May 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/02/03 11:11:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	qkcc100

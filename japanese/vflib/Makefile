@@ -3,7 +3,7 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.19 1998/12/23 01:25:40 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	VFlib2-2.24.1

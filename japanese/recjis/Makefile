@@ -3,7 +3,7 @@
 # Date created:        05 February 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/09/14 21:35:52 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	recjis-1.0

@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.24 1999/05/01 04:00:17 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Wnn4.2

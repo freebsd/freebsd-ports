@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.24 1999/08/09 06:22:14 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	OMRONWnn6

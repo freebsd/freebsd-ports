@@ -3,7 +3,7 @@
 # Date created:				19 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/20 05:28:38 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtksql-0.3

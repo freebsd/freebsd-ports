@@ -3,7 +3,7 @@
 # Date created:         18 November 1998
 # Whom:                 Kawaguti Ginga <ginga@athena.club.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       ng-1.3L

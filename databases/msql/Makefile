@@ -3,7 +3,7 @@
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.31 1999/08/21 19:28:11 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	msql-2.0.4.1

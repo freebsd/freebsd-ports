@@ -3,7 +3,7 @@
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/05/01 04:01:21 taoka Exp $
+# $FreeBSD$
 #
 
 CANNA=		yes

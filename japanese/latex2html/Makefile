@@ -3,7 +3,7 @@
 # Date created:		3 Apr 1999
 # Whom:			Sugimoto Sadahiro <ixtl@utmc.or.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 04:04:18 steve Exp $
+# $FreeBSD$
 #
 # Default image format is GIF.
 # If you prefer PNG to GIF, define USE_PNG (`make -DUSE_PNG`).

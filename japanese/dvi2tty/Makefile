@@ -3,7 +3,7 @@
 # Date created:			30 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.12 1998/02/23 06:19:55 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dvi2tty5.0

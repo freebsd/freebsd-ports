@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.14 1999/04/14 00:02:40 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       db-2.7.5

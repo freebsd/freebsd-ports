@@ -3,7 +3,7 @@
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.7 1998/04/05 04:46:02 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	uudx_299

@@ -3,7 +3,7 @@
 # Date created:         Sep 1, 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.7 1998/08/30 00:54:30 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xcept-2.1.2

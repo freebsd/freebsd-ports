@@ -3,7 +3,7 @@
 # Date created:		1 February 1999
 # Whom:			obonilla@fisicc-ufm.edu
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	unix2dos-1.0

@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.14 1998/10/10 04:01:45 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	less-332

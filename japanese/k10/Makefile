@@ -3,7 +3,7 @@
 # Date created:		25 Feb 1998
 # Whom: Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id: Makefile,v 1.4 1998/08/07 22:43:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	knj10-1.00

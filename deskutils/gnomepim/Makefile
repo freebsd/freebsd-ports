@@ -3,7 +3,7 @@
 # Date created:				17 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/05/30 03:53:49 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-pim-1.0.9

@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.25 1999/01/27 07:41:17 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nethack-3.2.2

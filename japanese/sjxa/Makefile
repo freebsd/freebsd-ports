@@ -3,7 +3,7 @@
 # Date created:		10 Aug 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/11/11 10:12:45 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sjxa-1.5.11

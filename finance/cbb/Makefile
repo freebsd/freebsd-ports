@@ -3,7 +3,7 @@
 # Date created:			24 September, 1998
 # Whom:				kline
 #
-# $Id: Makefile,v 1.11 1999/03/15 02:15:00 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cbb-0.78

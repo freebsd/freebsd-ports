@@ -3,7 +3,7 @@
 # Date created:		22 April 1999
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
-# $Id: Makefile,v 1.4 1999/05/01 03:28:05 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slang1.2.2_j055

@@ -3,7 +3,7 @@
 # Date created:		6 October 1997
 # Whom:			WATANABE junya <junya-w@remus.dti.ne.jp>
 #
-# $Id: Makefile,v 1.2 1999/03/08 07:28:27 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mtools-3.6

@@ -3,7 +3,7 @@
 # Date created:		99/08/18
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	csrd-1.0

@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.6 1997/09/19 11:57:50 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	td210bs

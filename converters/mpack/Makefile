@@ -3,7 +3,7 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1997/04/26 23:55:23 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       mpack-1.5-src

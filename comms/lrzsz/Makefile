@@ -4,7 +4,7 @@
 # Date created:         29 Sept 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.9 1999/02/12 08:05:04 flathill Exp $
+# $FreeBSD$
 
 DISTNAME=	lrzsz-0.12.19
 CATEGORIES=	comms

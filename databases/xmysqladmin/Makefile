@@ -3,7 +3,7 @@
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.21 1999/07/01 09:11:16 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmysqladmin-1.0

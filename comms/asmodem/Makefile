@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.2 1999/03/19 22:18:39 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       asmodem-0.6

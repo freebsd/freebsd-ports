@@ -3,7 +3,7 @@
 # Date created:		Sun Nov 15 22:07:12 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.13 1999/07/01 09:06:27 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gmysql-0.3.3

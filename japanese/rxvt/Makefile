@@ -3,7 +3,7 @@
 # Date created:         11 May 1999
 # Whom:                 HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
-# $Id: Makefile,v 1.10 1999/06/08 22:18:52 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rxvt-2.6.1

@@ -5,7 +5,7 @@
 #			japanese/man-doc
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/05/09 16:49:38 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xjman-0.3

@@ -3,7 +3,7 @@
 # Date created:         1 Dec 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/07/20 03:13:48 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mendexk2.4c

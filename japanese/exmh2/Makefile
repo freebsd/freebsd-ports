@@ -3,7 +3,7 @@
 # Date created:		15 Mar 1999
 # Whom:		Takeshi WATANABE <watanabe@komadori.planet.sci.kobe-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/11 06:30:03 taoka Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-${DISTNAME}

@@ -3,7 +3,7 @@
 # Date created:         6 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1997/05/05 16:53:57 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       trans120

@@ -3,7 +3,7 @@
 # Date created:				1998-nov-01
 # Whom:					Berend de Boer <berend@pobox.com>
 #
-# $Id: Makefile,v 1.3 1999/06/22 16:42:42 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	IB_4.0_FreeBSD

@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.7 1999/02/03 11:11:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vftool-1.2

@@ -3,7 +3,7 @@
 # Date created:			9 April 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1997/09/14 21:34:55 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mimekit1.7

@@ -3,7 +3,7 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.8 1999/01/20 10:52:01 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcl8.0.5

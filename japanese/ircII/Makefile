@@ -3,7 +3,7 @@
 # Date created:		02 May 1996
 # Whom:			Masafumi
 #
-# $Id: Makefile,v 1.8 1997/09/14 21:34:41 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ircii-2.8.2

@@ -3,7 +3,7 @@
 # Date created:		8 Oct 1998
 # Whom: Kawaguti Ginga <ginga@athena.club.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	Kappa20-0.3

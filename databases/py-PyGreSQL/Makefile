@@ -3,7 +3,7 @@
 # Date created:				2/22/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1999/05/28 20:56:27 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		PyGreSQL-2.4

@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.25 1999/02/03 11:11:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	web2c-7.2

@@ -3,7 +3,7 @@
 # Date created:		Sa  18 Apr 1998 10:12:20 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.9 1999/04/14 00:03:17 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkgnats-3.0.10

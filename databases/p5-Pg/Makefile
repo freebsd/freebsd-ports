@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.15 1998/10/20 01:29:07 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pgsql_perl5-1.6.1

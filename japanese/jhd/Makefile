@@ -3,7 +3,7 @@
 # Date created:		Feb 5, 1998
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/22 03:55:03 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	jhd-2.3

@@ -3,7 +3,7 @@
 # Date created:			4 Aug 1998
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.8 1999/06/05 22:30:04 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ndtpd-2.3.2

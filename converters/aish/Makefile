@@ -3,7 +3,7 @@
 # Date created:		01 Aug 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	aish112

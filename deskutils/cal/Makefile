@@ -3,7 +3,7 @@
 # Date created:				2 April 1997
 # Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
-# $Id: Makefile,v 1.7 1999/03/31 15:31:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		cal-3.5

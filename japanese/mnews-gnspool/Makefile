@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/24 01:33:16 steve Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-mnews-gnspool-1.21

@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			SADA Kenji <sada@e-mail.ne.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:18:58 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	perl5.000man-j

@@ -3,7 +3,7 @@
 # Date created:                      4 Apr 1996
 # Whom:                              Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.5 1997/04/26 23:55:23 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=          btoa-5.2

@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1999/01/27 07:41:18 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ghostscript2.6.2

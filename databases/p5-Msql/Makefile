@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.19 1998/09/15 21:31:32 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Msql-modules-1.1811

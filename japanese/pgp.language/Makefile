@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.6 1999/05/01 12:34:27 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}

@@ -3,7 +3,7 @@
 # Date created:         Di  29 Sep 1998 15:51:27 CEST
 # Whom:                 se
 #
-# $Id: Makefile,v 1.3 1998/10/16 02:16:01 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       yaps-0.96

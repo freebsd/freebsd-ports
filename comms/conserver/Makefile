@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.8 1999/08/18 19:56:41 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	conserver-5.21-Beta

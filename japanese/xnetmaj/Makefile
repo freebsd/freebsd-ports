@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/11/29 12:43:13 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	netmaj

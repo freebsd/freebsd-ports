@@ -3,7 +3,7 @@
 # Date created:		14 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1997/04/26 23:55:23 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	recode-3.4

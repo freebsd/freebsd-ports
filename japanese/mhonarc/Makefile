@@ -3,7 +3,7 @@
 # Date created:			17 March 1999
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/31 11:48:28 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MHonArc2.3.3

@@ -3,7 +3,7 @@
 # Date created:				7 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		dbview-1.0.3

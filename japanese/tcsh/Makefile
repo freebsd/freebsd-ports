@@ -3,7 +3,7 @@
 # Date created:		29 November 1997
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/12/04 16:17:52 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcsh-6.08.05

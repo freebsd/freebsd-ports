@@ -3,7 +3,7 @@
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/03/06 13:15:10 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	canuum-1.0

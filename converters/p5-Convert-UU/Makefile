@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.18 1999/02/16 13:43:03 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Convert-UU-0.40

@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id: Makefile,v 1.4 1998/12/22 05:43:37 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xklock-2.7

@@ -3,7 +3,7 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.13 1999/04/06 02:37:41 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tk8.0.5

@@ -3,7 +3,7 @@
 # Date created:		28 Jan 1998
 # Whom:			Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/06/06 03:45:10 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	skkinput-2.03

@@ -3,7 +3,7 @@
 # Date created:        11 January 1999
 # Whom:                Sakai Hiroaki <sakai@miya.ee.kagu.sut.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/18 03:32:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xshodou-1.11

@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/08/23 16:20:06 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	weblint-97-0.12

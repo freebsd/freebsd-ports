@@ -3,7 +3,7 @@
 # Date created:			26 Mar. 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1997/12/28 17:51:07 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kakasi-2.2.5

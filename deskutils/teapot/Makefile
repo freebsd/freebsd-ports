@@ -3,7 +3,7 @@
 # Date created:				7 January 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/07 22:17:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	teapot-1.03

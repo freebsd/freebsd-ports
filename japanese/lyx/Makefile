@@ -3,7 +3,7 @@
 # Date created:		27 April 1999
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/31 11:44:24 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lyx-1.0.0

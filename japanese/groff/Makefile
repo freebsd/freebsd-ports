@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.14 1997/10/27 11:03:21 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	groff-1.10

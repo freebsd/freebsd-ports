@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/12/01 03:05:53 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	ja-jvim-canna-2.0r

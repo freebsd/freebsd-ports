@@ -3,7 +3,7 @@
 # Date created:		28 March 1995
 # Whom:			Akito FUJITA <fujita@zoo.ncl.omron.co.jp>
 #
-# $Id: Makefile,v 1.12 1998/10/09 18:38:09 motoyuki Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mh-6.8.4-JP-3.02

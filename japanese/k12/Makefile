@@ -3,7 +3,7 @@
 # Date created:		24 June 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/11/20 20:17:14 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kaname_k12_bdf

@@ -3,7 +3,7 @@
 # Date created:		26 Sep 1997
 # Whom:			mi
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:17:55 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XPostitPlus-2.3

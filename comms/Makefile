@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1999/04/02 00:48:02 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += asmodem

@@ -3,7 +3,7 @@
 # Date created:				14 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.15 1999/06/19 09:28:47 cpiazza Exp $
+# $FreeBSD$
 #
 
 #Also update	ports/japanese/plan/ (ja-plan) when this port is updated

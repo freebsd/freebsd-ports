@@ -3,7 +3,7 @@
 # Date created:        25 February 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/05/29 03:55:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtimer-1.1.4

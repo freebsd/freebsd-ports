@@ -3,7 +3,7 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.7 1998/09/28 09:59:02 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tk4.2p2

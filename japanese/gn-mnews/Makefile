@@ -3,7 +3,7 @@
 # Date created:			7 Feb 1997
 # Whom:				Kiroh HARADA <kiroh@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.3 1999/02/05 22:45:56 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mnews120

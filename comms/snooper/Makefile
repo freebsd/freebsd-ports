@@ -3,7 +3,7 @@
 # Date created:		4 May 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1998/08/13 09:20:41 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	snooper.980813

@@ -3,7 +3,7 @@
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1996/09/26 07:46:43 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bpl+

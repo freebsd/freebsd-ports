@@ -3,7 +3,7 @@
 # Date created:		19 Jun 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/03/07 01:15:58 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	prn

@@ -3,7 +3,7 @@
 # Date created:         14 Jan 1998
 # Whom:			Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/02/20 07:14:26 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	ja-Wine-990131
 PKGNAME=	ja-wine-99.01.31

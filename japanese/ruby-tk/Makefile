@@ -3,7 +3,7 @@
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 PKGNAME=	ja-rubytk-${VERSION}

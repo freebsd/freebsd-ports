@@ -3,7 +3,7 @@
 # Date created:			2 Oct 1997
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.5 1999/06/08 23:31:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bookview-2.4.4

@@ -3,7 +3,7 @@
 # Date created:				31 Oct 1998
 # Whom:					flathill
 #
-# $Id: Makefile,v 1.2 1999/01/12 05:22:53 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	micq-0.4.0

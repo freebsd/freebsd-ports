@@ -3,7 +3,7 @@
 # Date created:		27 February 1999
 # Whom:			sada
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	libxpg4-3.1r

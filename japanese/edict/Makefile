@@ -3,7 +3,7 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.7 1999/08/22 23:32:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	edict-19990714

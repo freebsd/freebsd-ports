@@ -3,7 +3,7 @@
 # Date created:		11 January 1999
 # Whom:				HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ng13Lcanna1.0.2

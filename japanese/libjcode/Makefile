@@ -3,7 +3,7 @@
 # Date created:		8 MAY 1999
 # Whom:			Shuichi Tanaka
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	libjcode

@@ -3,7 +3,7 @@
 # Date created:         16 sept 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1998/08/07 22:00:00 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       viewfax-2.3

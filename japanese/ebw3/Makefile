@@ -3,7 +3,7 @@
 # Date created:         23 Jun 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/23 20:06:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ebw3-0.2-b4

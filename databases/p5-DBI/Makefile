@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.21 1999/02/20 10:59:16 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	DBI-1.12

@@ -3,7 +3,7 @@
 # Date created:         Sat Jan 31, 1998
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1998/08/08 00:20:20 asami Exp $
+# $FreeBSD$
 #
 
 #BROKEN=		"need JIS libraries in print.c that I do not have"

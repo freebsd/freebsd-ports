@@ -3,7 +3,7 @@
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.3 1999/06/05 22:29:54 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	eb-2.3.2

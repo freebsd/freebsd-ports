@@ -3,7 +3,7 @@
 # Date created:		29 Jun 1998
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/05/01 04:03:00 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mkres.pl-1.4

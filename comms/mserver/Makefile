@@ -3,7 +3,7 @@
 # Date created:		21 May 1999
 # Whom:		Maxim Sobolev <sobomax@altavista.net>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mserver-0.23a

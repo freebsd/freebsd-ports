@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.13 1998/12/01 03:05:51 asami Exp $
+# $FreeBSD$
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/ewipe

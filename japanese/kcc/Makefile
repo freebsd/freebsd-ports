@@ -3,7 +3,7 @@
 # Date created:		26 May 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1999/03/07 01:06:47 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kcc

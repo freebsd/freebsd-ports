@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1999/05/29 04:59:52 steve Exp $
+# $FreeBSD$
 #
 
     SUBDIR += aish

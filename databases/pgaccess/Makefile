@@ -3,7 +3,7 @@
 # Date created:		Sat Oct  4 20:03:46 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.17 1999/04/11 12:41:13 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pgaccess-0.96

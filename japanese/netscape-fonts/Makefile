@@ -3,7 +3,7 @@
 # Date created:		22 Jun 1998
 # Whom:                 sada
 #
-# $Id: Makefile,v 1.5 1998/11/23 08:16:09 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ja-netscape-fonts-1.0

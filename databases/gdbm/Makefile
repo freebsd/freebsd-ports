@@ -3,7 +3,7 @@
 # Date created:		8 Apr 1996
 # Whom:			Brent J. Nordquist <bjn@visi.com>
 #
-# $Id: Makefile,v 1.7 1999/06/05 22:28:14 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gdbm-1.8.0

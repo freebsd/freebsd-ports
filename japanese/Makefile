@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.211 1999/08/20 18:04:03 shige Exp $
+# $FreeBSD$
 #
 
     SUBDIR += Canna

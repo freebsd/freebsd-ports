@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.18 1999/02/12 11:57:57 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Msql-Mysql-modules-1.2016
