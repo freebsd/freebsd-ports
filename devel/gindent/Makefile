@@ -8,7 +8,7 @@
 
 PORTNAME=	gindent
 PORTVERSION=	2.2.8a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://home.hccnet.nl/d.ingamells/ \
 		${MASTER_SITE_GNU}

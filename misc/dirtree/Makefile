@@ -8,7 +8,7 @@
 
 PORTNAME=	dirtree
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 

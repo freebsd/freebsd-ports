@@ -7,7 +7,7 @@
 
 PORTNAME=	pavuk
 PORTVERSION=	0.9.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/

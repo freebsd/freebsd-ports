@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-gui
 PORTVERSION=	1.7.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
  		ftp://mysql.nixc.net/pub/mysql/Downloads/%SUBDIR%/ \

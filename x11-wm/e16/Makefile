@@ -7,7 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://freebsd.sinica.edu.tw/pub/clive/

@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.6/ \
 		ftp://mirrors.rcn.net/pub/news/tin/v1.6/ \

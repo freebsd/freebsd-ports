@@ -7,6 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \

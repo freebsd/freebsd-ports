@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-win32-plugin
 PORTVERSION=	0.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\

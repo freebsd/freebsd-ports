@@ -7,6 +7,7 @@
 
 PORTNAME=	cook
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/
 

@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.4.b1
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
 		http://people.freebsd.org/~seanc/ports/

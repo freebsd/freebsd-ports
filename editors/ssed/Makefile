@@ -7,6 +7,7 @@
 
 PORTNAME=	ssed
 PORTVERSION=	3.58
+PORTREVISION=	1
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://queen.rett.polimi.it/~paolob/seders/ssed/
 DISTNAME=	sed-${PORTVERSION}

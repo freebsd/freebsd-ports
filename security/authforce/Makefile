@@ -7,7 +7,7 @@
 
 PORTNAME=	authforce
 PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security www
 MASTER_SITES=	http://kapheine.hypa.net/authforce/
 

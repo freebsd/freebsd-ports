@@ -7,6 +7,7 @@
 
 PORTNAME=	steghide
 PORTVERSION=	0.4.6.b
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}

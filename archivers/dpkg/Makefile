@@ -6,6 +6,7 @@
 
 PORTNAME=	dpkg
 PORTVERSION=	1.9.21
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/d/dpkg/
 DISTNAME=	dpkg_${PORTVERSION}

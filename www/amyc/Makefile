@@ -7,7 +7,7 @@
 
 PORTNAME=	amyc
 PORTVERSION=	0.9.159
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.crevola.com/about/current/
 

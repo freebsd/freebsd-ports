@@ -9,6 +9,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \

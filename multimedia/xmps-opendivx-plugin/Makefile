@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-opendivx-plugin
 PORTVERSION=	0.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 

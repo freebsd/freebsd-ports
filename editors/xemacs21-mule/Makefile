@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
+PORTREVISION=	1
 .if defined(WNN6)
 .endif
 CATEGORIES+=	editors

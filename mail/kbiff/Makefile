@@ -7,7 +7,7 @@
 
 PORTNAME=	kbiff
 PORTVERSION=	3.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 

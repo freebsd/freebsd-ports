@@ -7,6 +7,7 @@
 
 PORTNAME=	cooledit
 PORTVERSION=	3.17.7
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://cooledit.sourceforge.net/
 
