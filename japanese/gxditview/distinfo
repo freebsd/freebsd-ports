@@ -1,2 +1,4 @@
 MD5 (groff_1.18.1.orig.tar.gz) = 4c7a1b478d230696f14743772f31639f
-MD5 (groff_1.18.1-11.diff.gz) = 7c2564b4ee84eb5daade3a71f1a7a683
+SIZE (groff_1.18.1.orig.tar.gz) = 2250463
+MD5 (groff_1.18.1-15.diff.gz) = bb318ec68be02c8b0d8a834f9f296195
+SIZE (groff_1.18.1-15.diff.gz) = 117862
