@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Astro/FITS/Header.pm
+%%SITE_PERL%%/Astro/FITS/Header/CFITSIO.pm
+%%SITE_PERL%%/Astro/FITS/Header/GSD.pm
+%%SITE_PERL%%/Astro/FITS/Header/Item.pm
+%%SITE_PERL%%/Astro/FITS/Header/NDF.pm
+@dirrm %%SITE_PERL%%/Astro/FITS/Header
+@unexec rmdir %D/%%SITE_PERL%%/Astro/FITS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Astro 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/Header/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS/Header
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro/FITS 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Astro 2>/dev/null || true
