@@ -5,3 +5,4 @@ share/doc/rblcheck/CREDITS
 share/doc/rblcheck/INSTALL
 share/doc/rblcheck/PLATFORMS
 share/doc/rblcheck/TODO
+@dirrm share/doc/rblcheck
