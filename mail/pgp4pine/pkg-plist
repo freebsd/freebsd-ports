@@ -1,0 +1,7 @@
+bin/pgp4pine
+share/doc/pgp4pine/FAQ
+share/doc/pgp4pine/INSTALL.TXT
+share/doc/pgp4pine/PGP_MIME
+share/doc/pgp4pine/README.TXT
+share/doc/pgp4pine/example.pgp4pinerc
+@dirrm share/doc/pgp4pine

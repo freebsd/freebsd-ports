@@ -1,0 +1,88 @@
+--- ./pgp4pine/docs/Makefile.am.org	Sat Jan 15 00:09:31 2000
++++ ./pgp4pine/docs/Makefile.am		Sat Jan 15 23:12:06 2000
+@@ -1,7 +1,7 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ 
+ SUBDIRS = en 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ 
+ EXTRA_DIST = INSTALL.TXT README.TXT 
+ 
+--- ./pgp4pine/docs/Makefile.in.org	Sat Jan 15 06:36:46 2000
++++ ./pgp4pine/docs/Makefile.in		Sat Jan 15 23:12:26 2000
+@@ -66,7 +66,7 @@
+ VERSION = @VERSION@
+ 
+ SUBDIRS = en 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ 
+ EXTRA_DIST = INSTALL.TXT README.TXT 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+--- ./pgp4pine/docs/en/Makefile.am.org	Sat Jan 15 00:10:15 2000
++++ ./pgp4pine/docs/en/Makefile.am	Sat Jan 15 23:14:00 2000
+@@ -1,6 +1,6 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ GZIP   = gzip
+ EXTRA_DIST = FAQ LICENSE PGP_MIME pgp4pine.1.gz pgp4pinerc 
+ 
+@@ -8,8 +8,6 @@
+ 	$(mkinstalldirs) $(docdir)/pgp4pine/
+ 	$(INSTALL_DATA) FAQ $(docdir)/pgp4pine/FAQ
+ 	$(mkinstalldirs) $(docdir)/pgp4pine/
+-	$(INSTALL_DATA) LICENSE $(docdir)/pgp4pine/LICENSE
+-	$(mkinstalldirs) $(docdir)/pgp4pine/
+ 	$(INSTALL_DATA) PGP_MIME $(docdir)/pgp4pine/PGP_MIME
+ 	$(mkinstalldirs) $(mandir)/man1/
+ 	$(INSTALL_DATA) pgp4pine.1 $(mandir)/man1/pgp4pine.1
+@@ -19,7 +17,6 @@
+ 
+ uninstall-local:
+ 	-rm -f $(docdir)/pgp4pine/FAQ
+-	-rm -f $(docdir)/pgp4pine/LICENSE
+ 	-rm -f $(docdir)/pgp4pine/PGP_MIME
+ 	-rm -f $(mandir)/man1/pgp4pine.1.gz
+ 	-rm -f $(docdir)/pgp4pine/example.pgp4pinerc
+--- ./pgp4pine/docs/en/Makefile.in.org	Sat Jan 15 06:36:54 2000
++++ ./pgp4pine/docs/en/Makefile.in	Sat Jan 15 23:14:11 2000
+@@ -65,7 +65,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-docdir = $(prefix)/doc
++docdir = $(prefix)/share/doc
+ GZIP = gzip
+ EXTRA_DIST = FAQ LICENSE PGP_MIME pgp4pine.1.gz pgp4pinerc 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -173,8 +173,6 @@
+ 	$(mkinstalldirs) $(docdir)/pgp4pine/
+ 	$(INSTALL_DATA) FAQ $(docdir)/pgp4pine/FAQ
+ 	$(mkinstalldirs) $(docdir)/pgp4pine/
+-	$(INSTALL_DATA) LICENSE $(docdir)/pgp4pine/LICENSE
+-	$(mkinstalldirs) $(docdir)/pgp4pine/
+ 	$(INSTALL_DATA) PGP_MIME $(docdir)/pgp4pine/PGP_MIME
+ 	$(mkinstalldirs) $(mandir)/man1/
+ 	$(INSTALL_DATA) pgp4pine.1 $(mandir)/man1/pgp4pine.1
+@@ -184,7 +182,6 @@
+ 
+ uninstall-local:
+ 	-rm -f $(docdir)/pgp4pine/FAQ
+-	-rm -f $(docdir)/pgp4pine/LICENSE
+ 	-rm -f $(docdir)/pgp4pine/PGP_MIME
+ 	-rm -f $(mandir)/man1/pgp4pine.1.gz
+ 	-rm -f $(docdir)/pgp4pine/example.pgp4pinerc
+--- ./pgp4pine/docs/en/pgp4pine.1.in.org	Sat Jan 15 03:54:18 2000
++++ ./pgp4pine/docs/en/pgp4pine.1.in		Sat Jan 15 23:15:33 2000
+@@ -25,7 +25,7 @@
+ 
+ .TP 3
+ 0. 
+-Open your ~/.pgp4pinerc (if you don't have one, run "cp @prefix@/doc/pgp4pinerc ~/.pgp4pinerc") and edit it. 
++Open your ~/.pgp4pinerc (if you don't have one, run "cp @prefix@/share/doc/pgp4pinerc ~/.pgp4pinerc") and edit it. 
+ .TP
+ 1. 
+ In pine, go into Setup, then Configuration.
