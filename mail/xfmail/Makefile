@@ -10,7 +10,7 @@ PORTVERSION=	1.5.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/	       \
 		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/ \
-		ftp://cfreeze.ufies.org/pub/xfmail/release/%SUBDIR%/
+		ftp://ftp.cfreeze.com/pub/xfmail/release/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
 MAINTAINER=	mikeh@FreeBSD.org
