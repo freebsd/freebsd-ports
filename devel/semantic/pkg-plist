@@ -18,6 +18,8 @@ info/semantic.info-3
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-bnf.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-c.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-c.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-cb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-cb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-chart.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-chart.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ctxt.el
@@ -25,6 +27,8 @@ info/semantic.info-3
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-example.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia-sb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia-sb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-imenu.el
