@@ -66,6 +66,8 @@ lib/%%PYTHON_VERSION%%/site-packages/distutils/filelist.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/filelist.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/msvccompiler.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/msvccompiler.pyc
+lib/%%PYTHON_VERSION%%/site-packages/distutils/mwerkscompiler.py
+lib/%%PYTHON_VERSION%%/site-packages/distutils/mwerkscompiler.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/spawn.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/spawn.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/sysconfig.py
