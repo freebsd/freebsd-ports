@@ -8,7 +8,7 @@
 PORTNAME=	ion
 PORTVERSION=	20020207
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.students.tut.fi/~tuomov/dl/
+MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 
 MAINTAINER=	ricci@cs.utah.edu
 
