@@ -9156,6 +9156,7 @@ sxm		ports/lang/sxm
 sxpc		ports/x11/sxpc
 sxsame		ports/games/sxsame
 sybase-ocsd	ports/databases/sybase-ocsd
+sybtcl		ports/databases/sybtcl
 sylpheed	ports/mail/sylpheed
 sylpheed-claws	ports/mail/sylpheed-claws
 sylpheed-gtk2	ports/mail/sylpheed-gtk2
