@@ -1,8 +1,7 @@
 PWM is a rather lightweight window manager for X11. It has the unique
 feature that multiple client windows can be attached to the same
 frame. This feature helps keeping windows, especially the numerous
-xterms, organized. A look at the screenshots below might clarify the
-idea.
+xterms, organized.
 
 Being a lightweight window manager with emphasis on usability, PWM does
 not have all the features that one might expect from a window
