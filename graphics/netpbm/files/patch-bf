@@ -1,25 +1,42 @@
---- pnm/Makefile.orig	Tue May 16 10:29:36 2000
-+++ pnm/Makefile	Sat May 20 00:00:00 2000
+--- pnm/Makefile.orig	Sat May 27 04:14:52 2000
++++ pnm/Makefile	Sat Jun  3 00:00:00 2000
 @@ -3,8 +3,7 @@
  
  LIBROOT = pnm
  LIBPNM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
--MIN = 0
+-MIN = 3
 +SOVER = 1
  
  PPMDIR = $(SRCDIR)/ppm
  LIBPPM = libppm.$(NETPBMLIBSUFFIX)
-@@ -102,6 +101,8 @@
+@@ -61,14 +60,14 @@
+ 		pnmsmooth pnmtile pnmtoddif pnmtofits \
+ 		pnmtoplainpnm pnmtops pnmtorast \
+ 		pnmtosgi pnmtosir pnmtoxwd \
+-		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
++		rasttopnm sgitopnm sirtopnm zeisstopnm
+ MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
+ 
+ # We don't include programs that have special library dependencies in the
+ # merge scheme, because we don't want those dependencies to prevent us
+ # from building all the other programs.
+ 
+-NOMERGEBINARIES = 
++NOMERGEBINARIES = xwdtopnm
+ ifneq ($(PNGHDR_DIR),NONE)
+   ifneq ($(PNGLIB_DIR),NONE)
+     NOMERGEBINARIES += pnmtopng pngtopnm
+@@ -105,6 +104,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
-+LIBSOBJECTS = libpnm1.so libpnm2.so libpnm3.so libpnm4.so
++LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
 +LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -113,10 +114,8 @@
+@@ -116,10 +117,12 @@
  
  .PHONY: all
  all:      $(BINARIES)
@@ -27,10 +44,14 @@
  PHONY: merge
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
 -	$(MAKE) -C jbig all
++
++xwdtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
++	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
++	  $(LIBSHHOPT) $(CDEBUG)
  
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
-@@ -127,18 +126,18 @@
+@@ -130,18 +133,18 @@
  endif
  
  # The Tiff library references math functions.
@@ -52,9 +73,9 @@
 -	   $(CDEBUG)
 +	  $(LIBSHHOPT) $(CDEBUG)
  
- rletopnm pnmtorle: %: %.o $(NETPBMLIBS) $(LIBOPT)
- 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
-@@ -165,22 +164,20 @@
+ ifeq ($(URTLIB_DIR),$(URTDIR))
+ # We're using the internal URT library, so make sure it's built
+@@ -178,22 +181,20 @@
  # backward compatibility: program used to be gemtopbm
  	rm -f $(INSTALLBINARIES)/gemtopbm
  	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm

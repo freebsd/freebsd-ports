@@ -1,30 +1,30 @@
---- ppm/Makefile.orig	Tue May 16 10:30:30 2000
-+++ ppm/Makefile	Sat May 20 00:00:00 2000
+--- ppm/Makefile.orig	Fri Jun  2 01:22:16 2000
++++ ppm/Makefile	Sat Jun  3 00:00:00 2000
 @@ -3,8 +3,7 @@
  
  LIBROOT = ppm
  LIBPPM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
--MIN = 1
+-MIN = 3
 +SOVER = 1
  
  PGMDIR = $(SRCDIR)/pgm
  LIBPGM = libpgm.$(NETPBMLIBSUFFIX)
 @@ -24,7 +23,7 @@
  PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm hpcdtoppm ilbmtoppm imgtoppm \
- 		mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
+ 		leaftoppm mtvtoppm pcxtoppm pgmtoppm pi1toppm picttoppm \
  		pjtoppm \
 -		ppm3d ppmbrighten ppmchange ppmcolormask \
 +		ppm3d ppmbrighten ppmchange \
  		ppmdim ppmdist ppmdither \
  		ppmflash ppmhist ppmmake ppmmix ppmnorm \
  		ppmquant ppmrelief ppmshift ppmspread ppmtoacad \
-@@ -34,12 +33,13 @@
- 		ppmtotga ppmtouil ppmtoxpm ppmtoyuv \
+@@ -35,12 +34,13 @@
+ 		ppmtotga ppmtouil ppmtowinicon ppmtoxpm ppmtoyuv \
  		ppmtoyuvsplit ppmtv \
  		qrttoppm rawtoppm rgb3toppm sldtoppm spctoppm \
--		sputoppm tgatoppm ximtoppm xpmtoppm xvminitoppm \
-+		sputoppm xpmtoppm xvminitoppm \
+-		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
++		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
  
  # We don't build vidtoppm by default, because it requires special libraries
@@ -34,7 +34,7 @@
  ifneq ($(JPEGLIB_DIR), NONE)
    ifneq ($(JPEGHDR_DIR), NONE)
        NOMERGEBINARIES += ppmtojpeg
-@@ -48,7 +48,7 @@
+@@ -49,7 +49,7 @@
  
  MERGEBINARIES = $(PORTBINARIES) $(MATHBINARIES)
  
@@ -43,16 +43,16 @@
  BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES) 
  SCRIPTS = ppmquantall ppmshadow ppmfade
  
-@@ -57,6 +57,8 @@
+@@ -58,6 +58,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
-+LIBSOBJECTS = libppm1.so libppm2.so libppm3.so libppm4.so libppm5.so bitio.so
++LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
 +LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -64,18 +66,24 @@
+@@ -65,18 +67,24 @@
  
  MERGENAME= ppmmerge
  
@@ -82,7 +82,7 @@
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -88,19 +96,19 @@
+@@ -89,19 +97,19 @@
  
  .PHONY: install.merge
  install.merge: install.merge.common

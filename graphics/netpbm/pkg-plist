@@ -19,6 +19,7 @@ bin/icontopbm
 bin/ilbmtoppm
 bin/imgtoppm
 bin/jpegtopnm
+bin/leaftoppm
 bin/lispmtopgm
 bin/macptopbm
 bin/mdatopbm
@@ -73,6 +74,7 @@ bin/pgmnoise
 bin/pgmnorm
 bin/pgmoil
 bin/pgmramp
+bin/pgmslice
 bin/pgmtexture
 bin/pgmtofs
 bin/pgmtolispm
@@ -83,6 +85,7 @@ bin/pi3topbm
 bin/picttoppm
 bin/pjtoppm
 bin/pktopbm
+bin/pngtopnm
 bin/pnmalias
 bin/pnmarith
 bin/pnmcat
@@ -115,6 +118,7 @@ bin/pnmtile
 bin/pnmtoddif
 bin/pnmtofits
 bin/pnmtoplainpnm
+bin/pnmtopng
 bin/pnmtops
 bin/pnmtorast
 bin/pnmtosgi
@@ -155,6 +159,7 @@ bin/ppmtogif
 bin/ppmtoicr
 bin/ppmtoilbm
 bin/ppmtojpeg
+bin/ppmtoleaf
 bin/ppmtomap
 bin/ppmtomitsu
 bin/ppmtopcx
@@ -168,6 +173,7 @@ bin/ppmtorgb3
 bin/ppmtosixel
 bin/ppmtotga
 bin/ppmtouil
+bin/ppmtowinicon
 bin/ppmtoxpm
 bin/ppmtoyuv
 bin/ppmtoyuvsplit
@@ -188,6 +194,7 @@ bin/spottopgm
 bin/sputoppm
 bin/tgatoppm
 bin/tifftopnm
+bin/winicontoppm
 bin/xbmtopbm
 bin/ximtoppm
 bin/xpmtoppm

@@ -1,16 +1,16 @@
---- pbmplus.h.orig	Mon May  8 05:00:47 2000
-+++ pbmplus.h	Sat May 20 00:00:00 2000
-@@ -25,6 +25,9 @@
+--- pbmplus.h.orig	Sat May 27 03:50:50 2000
++++ pbmplus.h	Sat Jun  3 00:00:00 2000
+@@ -18,6 +18,9 @@
+ #include <stdio.h>
  #include <errno.h>
- #endif
- #endif
+ #include <sys/stat.h>
 +#if (defined(__unix__) || defined(unix)) && !defined(USG)
 +#include <sys/param.h>
 +#endif
  
- #if defined(USG) || defined(SVR4) || defined(VMS) || defined(__SVR4)
- #define SYSV
-@@ -35,7 +38,7 @@
+ #ifdef VMS
+ #include <perror.h>
+@@ -32,7 +35,7 @@
  ** and if you run on an Amiga, set AMIGA. If your compiler is ANSI C, you're
  ** probably better off setting SYSV - all it affects is string handling.
  */
@@ -19,7 +19,7 @@
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -54,7 +57,7 @@
+@@ -51,7 +54,7 @@
  #define RGB_DB1 "PBMplus_Dir:RGB.TXT"
  #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
  #else
@@ -28,10 +28,10 @@
  #define RGB_DB2 "/usr/openwin/lib/rgb.txt"
  #endif
  
-@@ -285,37 +288,6 @@
- int pm_writelittleshort ARGS(( FILE* out, short s ));
- int pm_readlittlelong ARGS(( FILE* in, long* lP ));
- int pm_writelittlelong ARGS(( FILE* out, long l ));
+@@ -299,37 +302,6 @@
+     PM_CHECK_BASIC
+ };
+ 
 -
 -/* By making this <> instead of "", we avoid making shhopt.h a dependency
 -   of every program in the package when we do make dep.
