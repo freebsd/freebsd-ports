@@ -6,16 +6,10 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.40
+PORTVERSION=	4.43
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
-
-.if defined(WITH_MAILDIR)
-PATCH_SITES+=	http://www.qmail.org/
-PATCHFILES+=	pine-maildir-4.33
-PATCH_DIST_STRIP=-p1
-.endif
 
 MAINTAINER=	DougB@FreeBSD.org
 
@@ -38,12 +32,6 @@ EXTRA_OPTS=	SSL_LINK="-L${OPENSSLLIB} -lssl -lcrypto"
 MAN1=		pine.1 pico.1 pilot.1
 
 pre-fetch:
-.if !defined(WITH_MAILDIR)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_MAILDIR=yes enables support of Maildir"
-	@${ECHO_MSG} ""
-.endif
-
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
 	${SH} pkg-libwarning

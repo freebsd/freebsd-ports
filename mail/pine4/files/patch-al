@@ -1,27 +1,7 @@
-*** build.orig	Wed Aug  1 18:35:02 2001
---- build	Thu Sep 27 23:55:58 2001
+*** build.orig	Wed Oct 31 16:01:04 2001
+--- build	Sun Dec  2 23:17:05 2001
 ***************
-*** 103,110 ****
-   pine   The Pine mailer. Once compiled this should work just fine on
-          your system with no other files than this binary, and no
-          modifications to your system. Optionally you may create two
-!         configuration files, /usr/local/lib/pine.conf and 
-!         /usr/local/lib/pine.info. See the documentation for details.
-   
-   pico   The standalone editor similar to the Pine message composer.
-          This is a very simple straight forward text editor.
---- 103,111 ----
-   pine   The Pine mailer. Once compiled this should work just fine on
-          your system with no other files than this binary, and no
-          modifications to your system. Optionally you may create two
-!         configuration files, /usr/local/etc/pine.conf and 
-!         /usr/local/etc/pine.info. See the documentation for details.
-! 
-   
-   pico   The standalone editor similar to the Pine message composer.
-          This is a very simple straight forward text editor.
-***************
-*** 345,363 ****
+*** 332,351 ****
   	  echo "Including SSL functionality"
   	fi
   
@@ -33,15 +13,16 @@
 !         ln -s imap/imapd imapd
 !         if [ -s ipopd    ] ; then rm -f ipopd    ; fi
 !         ln -s imap/ipopd ipopd
-!         echo "Making c-client library, mtest and imapd"
-!         eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+!         echo "Making c-client library, imapd, and ipopd"
+! 	echo $S1 $S2 $S3 $S4 $K1 > imap/SPECIALS
 !         cd $PHOME/imap
-!         eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+!         eval echo eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
+!         eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
 !         echo ''
   
           echo "Making Pico and Pilot"
           cd $PHOME/pico
---- 346,364 ----
+--- 332,351 ----
   	  echo "Including SSL functionality"
   	fi
   
@@ -53,16 +34,17 @@
 ! #        ln -s imap/imapd imapd
 ! #        if [ -s ipopd    ] ; then rm -f ipopd    ; fi
 ! #        ln -s imap/ipopd ipopd
-! #        echo "Making c-client library, mtest and imapd"
-! #        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+! #        echo "Making c-client library, imapd, and ipopd"
+! #	echo $S1 $S2 $S3 $S4 $K1 > imap/SPECIALS
 ! #        cd $PHOME/imap
-! #        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+! #        eval echo eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
+! #        eval make "$makeargs" "$SSL" "SPECIALS=`cat SPECIALS`" "$K2" $ccltarg
 ! #        echo ''
   
           echo "Making Pico and Pilot"
           cd $PHOME/pico
 ***************
-*** 374,391 ****
+*** 362,379 ****
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot rpload rpdump ipop2d ipop3d
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -81,7 +63,7 @@
   	case $maketarg in
   	    mnt)    echo "Fixing stacksizes ..."
   		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
---- 375,392 ----
+--- 362,379 ----
           cd $PHOME/bin
           rm -f pine mtest imapd pico pilot rpload rpdump ipop2d ipop3d
           if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -101,10 +83,10 @@
   	    mnt)    echo "Fixing stacksizes ..."
   		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
 ***************
-*** 421,435 ****
-  
+*** 410,424 ****
   
       clean) # This only sort of works 
+          rm -f c-client mtest imapd ipopd
 !         echo "Cleaning c-client and imapd"
 ! 	cd $PHOME/imap
 ! 	make clean
@@ -117,10 +99,10 @@
           echo "Done"
           cd $PHOME
           ;;
---- 422,436 ----
-  
+--- 410,424 ----
   
       clean) # This only sort of works 
+          rm -f c-client mtest imapd ipopd
 ! #        echo "Cleaning c-client and imapd"
 ! #	cd $PHOME/imap
 ! #	make clean
