@@ -375,6 +375,7 @@ ar-kacst_fonts	ports/arabic/kacst_fonts
 ar-kde3-i18n	ports/arabic/kde3-i18n
 ar-khotot	ports/arabic/khotot
 ar-koffice-i18n	ports/arabic/koffice-i18n
+ar-libitl	ports/arabic/libitl
 ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
 ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
