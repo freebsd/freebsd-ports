@@ -1,0 +1,8 @@
+This is a port of Kernigan and Bentley's grap program for typsetting
+graphs.  It is a pic preprocessor that can be used with groff or TeX.
+
+You can learn more about grap as specified by Kernigan and Bentley at 
+http://www.kohala.com/~rstevens/troff/troff.html
+
+-- Ted Faber
+faber@lunabase.org

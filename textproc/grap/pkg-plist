@@ -1,0 +1,19 @@
+bin/grap
+share/grap/README
+share/grap/grap.defines
+share/grap/examples/400mpairs.d
+share/grap/examples/400mtimes.d
+share/grap/examples/400wpairs.d
+share/grap/examples/Makefile
+share/grap/examples/army.d
+share/grap/examples/boyhts.d
+share/grap/examples/color_example.ms
+share/grap/examples/example.ms
+share/grap/examples/internet.d
+share/grap/examples/prof2.d
+share/grap/examples/states.d
+share/grap/examples/states2.d
+share/grap/examples/states3.d
+share/grap/examples/usapop.d
+@dirrm share/grap/examples
+@dirrm share/grap
