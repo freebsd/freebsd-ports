@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.48
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -19,5 +19,9 @@ PERL_CONFIGURE=	yes
 
 MAN1=		scandeps.pl.1
 MAN3=		Module::ScanDeps.3 Module::ScanDeps::DataFeed.3
+
+pre-install:
+	@${REINPLACE_CMD} -e \
+		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl
 
 .include <bsd.port.mk>
