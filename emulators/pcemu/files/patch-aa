@@ -57,5 +57,5 @@
 + 	bdftopcf vga.bdf | compress > ${LOCALPREFIX}/lib/pcemu/font/vga.pcf.Z
 + 	mkfontdir ${LOCALPREFIX}/lib/pcemu/font
 + 	install -c -m 644 programs/vga50.com programs/config.sys \
-+ 		programs/dumpdisk.exe programs/lredir.exe \
++ 		programs/dumpdisk.exe programs/lredir.exe programs/emufs.sys \
 + 		${LOCALPREFIX}/lib/pcemu/C
