@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/03/17 05:18:22 asami Exp $
+# $Id: Makefile,v 1.6 1998/04/15 22:18:06 jseger Exp $
 #
 
 DISTNAME=	kdemultimedia-Beta3-1
@@ -25,6 +25,8 @@ LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11/qt \
 		khtmlw\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		kfm\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.0\\.[6-9]:${PORTSDIR}/x11/kdelibs
+
+BROKEN=		upgrade
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
