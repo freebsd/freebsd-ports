@@ -1,11 +1,15 @@
---- configure.in.orig	Tue Jun 23 19:56:28 1998
-+++ configure.in	Fri Sep 25 15:11:46 1998
-@@ -13,7 +13,7 @@
- ./ltconfig ltmain.sh
+--- tools/Imakefile.in.orig	Tue Oct 27 17:02:45 1998
++++ tools/Imakefile.in	Wed Dec 16 23:41:05 1998
+@@ -19,7 +19,11 @@
+  * copies. 
+  */
  
- AC_SUBST(freetype_objs)
--freetype_objs='$(FREETYPE_DIR)/*.lo'
-+freetype_objs=''
- AC_ARG_DISABLE(freetype,[  --disable-freetype     Disable FreeType], freetype_objs="", AC_DEFINE(WITH_FREETYPE))
+-       LIBTOOL = ../libtool
++  PREFIX         ?= /usr/local
++  FREETYPELIBDIR ?= ${PREFIX}/lib
++  FREETYPEINCDIR ?= ${PREFIX}/include
++
++  LIBTOOL = ${PREFIX}/bin/libtool
+   VFLIB_INCDIR = ../src
+   VFLIB_LIBDIR = ../src
  
- AC_SUBST(sony_fslib)

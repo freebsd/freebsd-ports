@@ -1,39 +1,42 @@
 # New ports collection makefile for:	vflib + FreeType
-# Version required:	2.22 Patchlevel 10
+# Version required:	2.24 Patchlevel 1
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 1998/10/04 14:47:13 kuriyama Exp $
+# $Id: Makefile,v 1.18 1998/12/12 21:03:35 jseger Exp $
 #
 
-DISTNAME=	VFlib-2.23-PL1
-PKGNAME=	ja-vflib-2.23.1
+DISTNAME=	VFlib2-2.24.1
+PKGNAME=	ja-vflib-2.24.1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
-DISTFILES=	TypeHack-19980625.tar.gz watanabe-vf.tar.Z
+MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/ \
+		ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
+DISTFILES=	VFlib2-2.24.1.tar.gz watanabe-vf.tar.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
 
-EXTRACT_ONLY=	TypeHack-19980625.tar.gz
-WRKSRC=		${WRKDIR}/TypeHack-19980625/VFlib2-2.23.1
+VFLIB_VERSION=	2.24.1
+PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
+
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 
-post-install:
+pre-install:
 	@(cd ${WRKSRC}/tools; \
 	    ${INSTALL_SCRIPT} fmtest disol kban vfperf vftest ${PREFIX}/bin)
-	${MKDIR} ${PREFIX}/share/doc/VFlib2-2.23.1
 	@(cd ${WRKSRC}; \
-	  ${CP} -R doc COPYING COPYING.LIB README.txt.JP_EUC \
-	    ${PREFIX}/share/doc/VFlib2-2.23.1)
-	@(cd ${WRKSRC}; \
-	  ${CP} -R jTeX ${PREFIX}/share/VFlib/2.23.1)
+	  ${MKDIR} ${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
+	  ${CP} COPYING COPYING.LIB README.txt.JP_EUC \
+		${PREFIX}/share/VFlib/${VFLIB_VERSION} ;\
+	  ${CP} -R jTeX ${PREFIX}/share/VFlib/${VFLIB_VERSION})
 	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
 	tar -C ${PREFIX}/share/fonts/watanabe_font \
 	  -xzf ${DISTDIR}/watanabe-vf.tar.Z
+post-install:
+	${MV} ${PREFIX}/share/VFlib/${VFLIB_VERSION}/VF.h ${PREFIX}/include
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
