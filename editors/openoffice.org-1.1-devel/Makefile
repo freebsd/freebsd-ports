@@ -77,8 +77,10 @@ CC=	gcc32
 CXX=	g++32
 .endif
 
-BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14 \
-		zip:${PORTSDIR}/archivers/zip \
+.if !defined(WITHOUT_JAVA)
+BUILD_DEPENDS+=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk14
+.endif
+BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		${ANT}:${PORTSDIR}/devel/apache-ant \
@@ -108,7 +110,12 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-jdk-home=${JDKDIR}
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp
+.if defined(WITHOUT_JAVA)
+CONFIGURE_ARGS+=	--disable-java
+.else
+CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR}
+.endif
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
