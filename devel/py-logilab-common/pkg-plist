@@ -14,9 +14,15 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/builder.py
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/builder.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/builder.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/inspector.py
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/inspector.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/inspector.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/manager.py
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/manager.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/manager.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/raw_building.py
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/raw_building.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/astng/raw_building.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/utils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/utils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/astng/utils.pyo
@@ -32,6 +38,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/cli.py
 %%PYTHON_SITELIBDIR%%/logilab/common/cli.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/cli.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/compat.py
+%%PYTHON_SITELIBDIR%%/logilab/common/compat.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/compat.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.py
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/configuration.pyo
@@ -56,6 +65,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/logger.py
 %%PYTHON_SITELIBDIR%%/logilab/common/logger.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/logger.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/logservice.py
+%%PYTHON_SITELIBDIR%%/logilab/common/logservice.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/logservice.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/modutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/modutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/modutils.pyo
@@ -74,6 +86,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/table.py
 %%PYTHON_SITELIBDIR%%/logilab/common/table.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/table.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/__init__.pyo
@@ -84,17 +99,47 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/module2.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/module2.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/newlines.txt
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/noendingnewline.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/noendingnewline.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/noendingnewline.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data/nonregr.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub/doc.txt
 %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub/momo.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/clientmodule_test.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/clientmodule_test.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/clientmodule_test.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/suppliermodule_test.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/suppliermodule_test.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/data2/suppliermodule_test.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/foomod.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/runtests.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/runtests.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/runtests.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_inspector.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_inspector.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_inspector.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_manager.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_manager.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_astng_manager.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_bind.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_cache.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_cache.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_cache.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_configuration.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_db.pyo
@@ -113,6 +158,9 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_table.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_table.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_table.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_testlib.py
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_testlib.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_testlib.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/test/unittest_textutils.pyo
@@ -162,6 +210,7 @@
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlrpcutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlrpcutils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/ureports
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data2
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test
