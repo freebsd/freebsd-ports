@@ -54,7 +54,7 @@ pre-everything::
 	@${ECHO_MSG} "MP3Blaster has the following tunable option(s):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_LIRC=yes		Turns on LIRC support"
-	@${ECHO_MSG} "	WITHOUT_SIDPLAY=yes	Turns on Sidplayer support"
+	@${ECHO_MSG} "	WITHOUT_SIDPLAY=yes	Turns off Sidplayer support"
 	@${ECHO_MSG} "	WITHOUT_VORBIS=yes	Turns off Ogg Vorbis support"
 	@${ECHO_MSG} ""
 
