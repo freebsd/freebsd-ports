@@ -3,12 +3,12 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.7 1998/03/11 19:49:38 alex Exp $
+# $Id: Makefile,v 1.8 1998/04/03 02:38:44 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.00A
 BIOS=		BIOS-bochs-980331a
-DATE= 		980331
+DATE= 		980513
 
 DISTNAME=	bochs-${DATE}a
 CATEGORIES= 	emulators
