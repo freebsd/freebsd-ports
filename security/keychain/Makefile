@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	keychain
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	security
 MASTER_SITES=	http://www.ibiblio.org/gentoo/distfiles/
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	pidof:${PORTSDIR}/sysutils/psmisc
 
