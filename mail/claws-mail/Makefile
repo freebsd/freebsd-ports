@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.12b
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -20,7 +19,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-THEMEVERSION=	20040525
+THEMEVERSION=	20040929
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
@@ -88,15 +87,6 @@ CONFIGURE_ARGS+=	--disable-imlib
 USE_GNOME+=		imlib
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
-#.if defined(WITH_GPGME) || defined(WITH_ALL)
-PLIST_SUB+=		GPGME=""
-LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme03
-RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
-CONFIGURE_ARGS+=	--enable-gpgme
-#.else
-#PLIST_SUB+=		GPGME="@comment "
-#CONFIGURE_ARGS+=	--disable-gpgme
-#.endif
 .if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=	--enable-compface
@@ -130,6 +120,14 @@ PLIST_SUB+=		SA_PLUG=""
 .else
 PLIST_SUB+=		SA_PLUG="@comment "
 .endif
+.if defined(WITH_GPGME) || defined(WITH_ALL)
+PLIST_SUB+=            GPGME=""
+LIB_DEPENDS+=          gpgme.9:${PORTSDIR}/security/gpgme03
+RUN_DEPENDS+=          gpg:${PORTSDIR}/security/gnupg
+.else
+PLIST_SUB+=           GPGME="@comment "
+CONFIGURE_ARGS+=      --disable-pgpmime-plugin
+.endif
 .if defined(WITHOUT_THEMES)
 PLIST_SUB+=	THEMES="@comment "
 .else
@@ -149,8 +147,8 @@ pre-everything::
 	@${ECHO} "      WITH_ALL       Enable all options below"
 	@${ECHO} ""
 	@${ECHO} "      WITH_PIXBUF    Enable GDK Pixbuf support"
-	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME (temporary enabled unconditionally)"
 	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
+	@${ECHO} "      WITH_GPGME     Build the pgpmime plugin"
 	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
 	@${ECHO} "      WITH_ASPELL    Enable spell-checking support"
 	@${ECHO} "      WITH_JPILOT    Enable JPilot support"
@@ -176,7 +174,7 @@ post-patch:
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's:%%OPENSSL_LIBS%%:"-lssl -lcrypto":g' ${WRKSRC}/configure
-	@for f in ${WRKSRC}/tools/*; do \
+	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 #	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
 .if defined(NOPORTDOCS)
@@ -186,7 +184,7 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-.for i in NEWS README README.jp README.claws RELEASE_NOTES.claws TODO TODO.jp tools/README.sylprint
+.for i in NEWS README README.claws RELEASE_NOTES.claws TODO tools/README.sylprint
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
@@ -198,8 +196,8 @@ post-install:
 		gif2xface.pl google_msgid.pl google_search.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
 		maildir2sylpheed.pl multiwebsearch.conf multiwebsearch.pl \
-		nautilus2sylpheed.sh newscache_clean.pl outlook2sylpheed.pl \
-		tb2sylpheed update-po uudec vcard2xml.py ${DATADIR}
+		nautilus2sylpheed.sh outlook2sylpheed.pl tb2sylpheed\
+		textviewer.sh update-po uudec vcard2xml.py ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
 	@cd ${WRKDIR}/${THEMEFILE:C/.tar.gz//} && ${FIND} . -print | \
