@@ -175,6 +175,7 @@
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-sasl
     SUBDIR += serialmail
+    SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += smail
     SUBDIR += smapi
