@@ -1,34 +1,30 @@
-*** ../../../xtuner.h	Wed Oct 29 22:56:20 1997
---- ./xtuner.h	Wed Oct 29 22:59:41 1997
-***************
-*** 9,23 ****
-  #if (defined(BSD) && (BSD >= 199306))
-  #  include <osreldate.h>
-  #  include <stdlib.h>
-- #  include "/usr/X11/include/X11/forms.h"
-  #  include <machine/cpufunc.h>
-  #  include <machine/soundcard.h>
-  #else
-  #  include <asm/io.h>
-- #  include "forms.h"
-  #  include <linux/soundcard.h>
-  #endif
-   
-  #include <X11/xpm.h>
-  #include <X11/Xlib.h>
-  #include <X11/Xutil.h>
---- 9,22 ----
-  #if (defined(BSD) && (BSD >= 199306))
-  #  include <osreldate.h>
-  #  include <stdlib.h>
-  #  include <machine/cpufunc.h>
-  #  include <machine/soundcard.h>
-  #else
-  #  include <asm/io.h>
-  #  include <linux/soundcard.h>
-  #endif
+--- xtuner.h.orig	Thu Dec 19 20:33:57 1996
++++ xtuner.h	Wed Jul 19 13:35:42 2000
+@@ -9,15 +9,14 @@
+ #if (defined(BSD) && (BSD >= 199306))
+ #  include <osreldate.h>
+ #  include <stdlib.h>
+-#  include "/usr/X11/include/X11/forms.h"
+ #  include <machine/cpufunc.h>
+ #  include <machine/soundcard.h>
+ #else
+ #  include <asm/io.h>
+-#  include "forms.h"
+ #  include <linux/soundcard.h>
+ #endif
   
-+ #include "forms.h"
-  #include <X11/xpm.h>
-  #include <X11/Xlib.h>
-  #include <X11/Xutil.h>
++#include "forms.h"
+ #include <X11/xpm.h>
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+@@ -48,6 +47,10 @@
+   int fpiopl;
+ #endif
+ 
++#ifndef TRUE
++#define TRUE	    1
++#endif
++
+ #define ON          1
+ #define OFF         0
+ #define AUTOON      2
