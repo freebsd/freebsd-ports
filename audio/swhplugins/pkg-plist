@@ -92,6 +92,7 @@ lib/ladspa/vynil_1905.so
 lib/ladspa/wave_terrain_1412.so
 lib/ladspa/xfade_1915.so
 lib/ladspa/zm1_1428.so
+share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
 share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
