@@ -1,0 +1,8 @@
+UNIX driver for Towitoko smartcard readers
+
+Provide API's for: 
+   	CT-API 1.1 and CT-BCS 0.9. See ctapi (3) and ctbcs (3) man pages 
+	provided with this package,
+   	PCSC Lite. See http://www.linuxnet.com.
+
+WWW: http://www.geocities.com/cprados/
