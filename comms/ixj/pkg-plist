@@ -1,4 +1,4 @@
-@unexec kldunload ixj || true
+@unexec kldunload ixj 2> /dev/null || true
 modules/ixj.ko
 include/sys/telephony.h
 include/sys/ixjuser.h
