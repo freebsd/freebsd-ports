@@ -18,29 +18,6 @@
  
  # The setting below causes Exim to do a reverse DNS lookup on all incoming
  # IP calls, in order to get the true host name. If you feel this is too
-@@ -162,16 +166,16 @@
- # sender_verify
- 
- 
--# Exim contains support for the Realtime Blocking List (RBL) that is being
--# maintained as part of the DNS. See http://maps.vix.com/rbl/ for background.
-+# Exim contains support for the Realtime Blackhole List (RBL) that is being
-+# maintained as part of the DNS. See http://mail-abuse.org/rbl/ for background.
- # Uncommenting the first line below will make Exim reject mail from any
--# host whose IP address is blacklisted in the RBL at maps.vix.com. Some
--# others have followed the RBL lead and have produced other lists: DUL is
-+# host whose IP address is blacklisted in the RBL at blackholes.mail-abuse.org.
-+# Some others have followed the RBL lead and have produced other lists: DUL is
- # a list of dial-up addresses, and there are also a number of other lists
- # of various kinds at orbs.org.
- 
--# rbl_domains = rbl.maps.vix.com
--# rbl_domains = rbl.maps.vix.com:dul.maps.vix.com
-+# rbl_domains = blackholes.mail-abuse.org
-+# rbl_domains = blackholes.mail-abuse.org:dialups.mail-abuse.org
- 
- 
- # If you want Exim to support the "percent hack" for all your local domains,
 @@ -230,8 +234,8 @@
    delivery_date_add
    envelope_to_add
