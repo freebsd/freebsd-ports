@@ -8,7 +8,7 @@
 DISTNAME=	ttmkfdir
 PKGNAME=	ttmkfdir-0.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.darmstadt.gmd.de/~pommnitz/
+MASTER_SITES=	http://www.darmstadt.gmd.de/~pommnitz/TrueType/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,8 +18,8 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 do-build:
-	cd ${WRKSRC}; \
-	${CC} ${CFLAGS} -I${LOCALBASE}/include ttmkfdir.c -o ttmkfdir -L${LOCALBASE}/lib -lttf
+	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/freetype \
+		ttmkfdir.c -o ttmkfdir -L${LOCALBASE}/lib -lttf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttmkfdir ${PREFIX}/bin
