@@ -8,6 +8,7 @@
 
 PORTNAME=	kisomandel
 PORTVERSION=	0.66
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -19,21 +20,17 @@ LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lqt,-lqt2,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS},g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${REINPLACE_CMD} -e "s,-lqt,-lqt2,g"
+		${REINPLACE_CMD} -e "s,-lqt,-lqt-mt ${PTHREAD_LIBS},g"
 	@${REINPLACE_CMD} -e "s,malloc.h,stdlib.h,g" ${WRKSRC}/kisomandel/fractal.cpp
 
 .include <bsd.port.post.mk>
