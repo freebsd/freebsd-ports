@@ -1,7 +1,9 @@
 bin/seahorse
 etc/gconf/gconf.xml.defaults/apps/seahorse/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/seahorse/listing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/seahorse/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/preferences/%gconf.xml
 etc/gconf/schemas/seahorse.schemas
 share/gnome/applications/seahorse.desktop
@@ -30,10 +32,16 @@ share/gnome/seahorse/glade/seahorse-recipients.glade2
 share/gnome/seahorse/glade/seahorse-add-uid.glade2
 share/gnome/seahorse/glade/seahorse-add-subkey.glade2
 share/gnome/seahorse/glade/seahorse-revoke.glade2
+share/gnome/seahorse/glade/seahorse-sign.glade2
+share/gnome/seahorse/glade/seahorse-encrypt-file.glade2
+share/gnome/seahorse/glade/seahorse-decrypt-file.glade2
+share/gnome/seahorse/glade/seahorse-sign-file.glade2
+share/gnome/seahorse/glade/seahorse-verify-file.glade2
+share/gnome/seahorse/glade/seahorse-encrypt-sign-file.glade2
+share/gnome/seahorse/glade/seahorse-decrypt-verify-file.glade2
 share/gnome/seahorse/glade/seahorse-key-manager.glade2
 share/gnome/seahorse/glade/seahorse-text-editor.glade2
 share/gnome/seahorse/glade/seahorse-key-properties.glade2
-share/gnome/seahorse/glade/seahorse-file-manager.glade2
 share/locale/cs/LC_MESSAGES/seahorse.mo
 share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
@@ -44,6 +52,7 @@ share/locale/hu/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
 share/locale/no/LC_MESSAGES/seahorse.mo
+share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
@@ -57,7 +66,9 @@ share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/seahorse/glade
 @dirrm share/gnome/seahorse
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/preferences
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse/listing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/seahorse
 @dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/preferences
+@dirrm etc/gconf/gconf.xml.defaults/apps/seahorse/listing
 @dirrm etc/gconf/gconf.xml.defaults/apps/seahorse
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true
