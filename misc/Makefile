@@ -37,7 +37,6 @@
     SUBDIR += c-hey
     SUBDIR += callid
     SUBDIR += cave
-    SUBDIR += cheatah
     SUBDIR += chef
     SUBDIR += chmlib
     SUBDIR += chord
