@@ -41,6 +41,7 @@ share/doc/pari/doc/appa.tex
 share/doc/pari/doc/appb.tex
 share/doc/pari/doc/appc.tex
 share/doc/pari/doc/paricfg.tex.in
+share/doc/pari/doc/paricfg.tex
 share/doc/pari/doc/parimacro.tex
 share/doc/pari/doc/pdfmacs.tex
 share/doc/pari/doc/refcard.tex
