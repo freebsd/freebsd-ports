@@ -20,6 +20,7 @@ MASTER_SITES+=	ftp://ftp.lip6.fr/pub/unix/mail/elm-me/ \
 		ftp://ftp.ntua.gr/pub/net/mail/elm-me/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/network/mail/elm-2.4ME+/ \
 		ftp://ftp.win.ne.jp/pub/network/mail/elm-2.4ME+/
+
 # the following repositories maybe conform to the main repository.
 # MASTER_SITES+=	ftp://ftp.unina.it/pub/Unix/pkgs/network/mail/elm-me+/ \
 # 		ftp://ftp.rge.com/pub/mail/elm/elm-2.4ME+/ \
@@ -46,13 +47,16 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
+USE_OPENSSL=	yes
 
 CONFIGURE_SCRIPT=	Configure
 SCRIPTS_ENV=	CONFIG_PATH="${CONFIG_PATH}" CFLAGS="${CFLAGS}" \
 		PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
 		MAN1PREFIX="${MAN1PREFIX}" CONF_DIR="${CONF_DIR}" \
 		LIB_DIR="${LIB_DIR}" SHLIB_DIR="${SHLIB_DIR}" \
-		STAGE_DIR="${STAGE_DIR}" ELM_SHLIBS="${ELM_SHLIBS}"
+		STAGE_DIR="${STAGE_DIR}" ELM_SHLIBS="${ELM_SHLIBS}" \
+		OPENSSLLIB="${OPENSSLLIB}" OPENSSLINC="${OPENSSLINC}" \
+		OPENSSLBASE="${OPENSSLBASE}"
 CONFIGURE_ARGS=	-b -S -P ${PREFIX} -c ../${CONFIG_PATH:T}
 
 MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
@@ -82,7 +86,9 @@ MLINKS=		frm.1 nfrm.1	newmail.1 wnewmail.1
 .if !defined(ELM_USER_SHLIBS)
 OPTIONS=	ELM_ICONV "libiconv support" on \
 		ELM_SMTP "SMTP submission protocol (RFC2746) support" on \
-		ELM_TLS "POP STLS and IMAP STARTTLS support" on
+		ELM_TLS "POP STLS and IMAP STARTTLS support" on \
+		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
+		OPENSSL_PORT "use OpenSSL from ports (requires by TLS)" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -91,7 +97,7 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 #
 
 ELM_VERSION=	2.4
-ELM_REVISION=	116
+ELM_REVISION=	119
 ELM_PATCHLEVEL=	_	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false

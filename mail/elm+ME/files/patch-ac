@@ -27,24 +27,6 @@
  		    shift
  		    case "$config" in
  			"")
-@@ -122,7 +122,7 @@
- case "$error" in
- true)
-     cat >&2 << EOM
--Usage: Configure [-dS]
-+Usage: Configure [-dbhSMN] [-P'prefix'] [-s'suffix'] [-c'config'] [-DDEBUG]
-   -d : use defaults for all answers.
-   -b : batchmode -- do not prompt user (implies -d)
-   -h : print this help message and exit (with an error status).
-@@ -2296,7 +2296,7 @@
- 	echo "Found shlib directory"
-     fi
- 
--    $echo "Trying create chared library"
-+    $echo "Trying create shared library"
- 
-     LibLoc=`cd ..; pwd`/shlib
-     
 @@ -2589,7 +2589,10 @@
  
  : see if crypt exists
