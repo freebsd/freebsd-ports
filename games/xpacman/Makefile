@@ -3,7 +3,7 @@
 # Date created:         19 Aug 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/19 20:42:45 joerg Exp $
+# $Id: Makefile,v 1.2 1995/08/21 09:52:09 asami Exp $
 #
 
 DISTNAME=       pacman10
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	joerg@FreeBSD.org
 
-EXEC_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_WRKSUBDIR=	Does not unpack into subdir.
 EXTRACT_CMD=	unzip
