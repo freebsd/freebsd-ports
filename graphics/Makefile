@@ -11,6 +11,7 @@
     SUBDIR += aalib
     SUBDIR += aero
     SUBDIR += aview
+    SUBDIR += backfract
     SUBDIR += camediaplay
     SUBDIR += chbg
     SUBDIR += cqcam
