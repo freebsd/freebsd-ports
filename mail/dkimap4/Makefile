@@ -10,7 +10,7 @@ PORTVERSION=	2.36
 PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbox.handshake.de/download/ \
-		http://www.cs.cmu.edu/~kroening/dbox/
+		http://www-2.cs.cmu.edu/~kroening/dbox/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
