@@ -1,23 +1,23 @@
-bugs-1.8.1/bcrypt
-bugs-1.8.1/bhide
-bugs-1.8.1/bkey
-bugs-1.8.1/blogin
-bugs-1.8.1/bpass
-bugs-1.8.1/bpassdel
-bugs-1.8.1/libcrypt.a
-bugs-1.8.1/doc/HOWTO
-bugs-1.8.1/doc/README
-bugs-1.8.1/doc/html/README
-bugs-1.8.1/doc/txt/english/explanations.english
-bugs-1.8.1/doc/txt/english/functions.english
-bugs-1.8.1/doc/txt/french/EXPLICATIONS.french
-bugs-1.8.1/doc/txt/french/bugs_fonctions.french
-bugs-1.8.1/include/extra.h
-bugs-1.8.1/include/libcrypt.h
-@dirrm bugs-1.8.1/doc/txt/english
-@dirrm bugs-1.8.1/doc/txt/french
-@dirrm bugs-1.8.1/doc/html
-@dirrm bugs-1.8.1/doc/txt
-@dirrm bugs-1.8.1/doc
-@dirrm bugs-1.8.1/include
-@dirrm bugs-1.8.1
+bugs-2.0.1/bcrypt
+bugs-2.0.1/bhide
+bugs-2.0.1/bkey
+bugs-2.0.1/blogin
+bugs-2.0.1/bpass
+bugs-2.0.1/bpassdel
+bugs-2.0.1/libcrypt.a
+bugs-2.0.1/doc/HOWTO
+bugs-2.0.1/doc/README
+bugs-2.0.1/doc/html/README
+bugs-2.0.1/doc/txt/english/explanations.english
+bugs-2.0.1/doc/txt/english/functions.english
+bugs-2.0.1/doc/txt/french/EXPLICATIONS.french
+bugs-2.0.1/doc/txt/french/bugs_fonctions.french
+bugs-2.0.1/include/extra.h
+bugs-2.0.1/include/libcrypt.h
+@dirrm bugs-2.0.1/doc/txt/english
+@dirrm bugs-2.0.1/doc/txt/french
+@dirrm bugs-2.0.1/doc/html
+@dirrm bugs-2.0.1/doc/txt
+@dirrm bugs-2.0.1/doc
+@dirrm bugs-2.0.1/include
+@dirrm bugs-2.0.1
