@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.8 1998/10/14 18:01:49 jseger Exp $
+# $Id: Makefile,v 1.9 1998/11/21 07:27:41 steve Exp $
 #
 
 DISTNAME=	xosview-1.6.1.a
@@ -18,6 +18,8 @@ USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 MAN1=		xosview.1
 
-BROKEN_ELF=	DK_NDRIVE undefined
+.if ${OSVERSION} >= 300006
+BROKEN=	"DK_NDRIVE undefined"
+.endif
 
 .include <bsd.port.mk>
