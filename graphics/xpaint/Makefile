@@ -3,12 +3,12 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.31 1998/11/25 09:01:21 asami Exp $
+# $Id: Makefile,v 1.32 1998/12/11 09:01:40 tg Exp $
 #
 
 DISTNAME=       xpaint-2.5.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/ \
+MASTER_SITES=	http://www.image.dk/~torsten/xpaint/ \
 		ftp://ftp.win.or.jp/pub/graphics/
 
 MAINTAINER=	jseger@FreeBSD.org
