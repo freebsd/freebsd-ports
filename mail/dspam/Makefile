@@ -7,6 +7,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.2.3${SNAP_DATE}
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
 DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
@@ -342,7 +343,7 @@ DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 
 .if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE)
 WITH_SQLITE=	on
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 	--with-sqlite-includes=${LOCALBASE}/include \
 	--with-sqlite-libraries=${LOCALBASE}/lib
