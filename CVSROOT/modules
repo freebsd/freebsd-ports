@@ -7284,6 +7284,7 @@ p5-Graphics-ColorNames	ports/graphics/p5-Graphics-ColorNames
 p5-Gtk		ports/x11-toolkits/p5-Gtk
 p5-Gtk2		ports/x11-toolkits/p5-Gtk2
 p5-Gtk2-Html2	ports/x11-toolkits/p5-Gtk2-Html2
+p5-Gtk2-PodViewer	ports/x11-toolkits/p5-Gtk2-PodViewer
 p5-Gtk2-TrayIcon	ports/x11-toolkits/p5-Gtk2-TrayIcon
 p5-GtkHTML	ports/www/p5-GtkHTML
 p5-GtkXmHTML	ports/x11-toolkits/p5-GtkXmHTML
