@@ -7,5 +7,10 @@
 #
 
 MASTERDIR=      ${.CURDIR}/../gcc40/
+PKGNAMESUFFIX=          -withfortran
 WITH_FORTRAN=	yes
+
+DESCR=	${.CURDIR}/pkg-descr
+PKGMESSAGE=	${.CURDIR}/pkg-message
+
 .include "${MASTERDIR}/Makefile"
