@@ -15,6 +15,13 @@ DISTNAME=       hanyang-font-pcf
 MAINTAINER=	cjh@FreeBSD.org
 
 USE_X_PREFIX=        yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 NO_WRKSUBDIR=   yes
 
 FONTS=		hgm10 hgm12 hgm14 hgm16 hgm18 hgm20 \
@@ -35,4 +42,4 @@ do-install:
 	done; \
 	mkfontdir ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

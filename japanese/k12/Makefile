@@ -18,6 +18,12 @@ MAINTAINER=	mita@jp.FreeBSD.org
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 WRKSRC=		${WRKDIR}/fonts
 EXTRACT_ONLY=	knm_new_linux.tar.gz
 
@@ -41,4 +47,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc.orig/*        ${PREFIX}/share/doc/k12
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,6 +23,12 @@ FONTSDIR=	lib/X11/fonts/local
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
@@ -68,4 +74,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
