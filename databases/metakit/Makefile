@@ -14,10 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if !defined(METAKIT_WITHOUT_PYTHON)
-BUILD_DEPENDS=	python2.1:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python2.1:${PORTSDIR}/lang/python
-.endif
 .if defined(METAKIT_WITH_TCL)
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif
@@ -34,6 +30,7 @@ INSTALLS_SHLIB=	yes
 MAKE_ARGS=	CXXFLAGS="-Dq4_INLINE ${CFLAGS} -fpermissive"
 
 .if !defined(METAKIT_WITHOUT_PYTHON)
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-python
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
@@ -68,8 +65,7 @@ pre-patch:
 
 post-install:
 .if !defined(METAKIT_WITHOUT_PYTHON)
-	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so \
-		${PREFIX}/lib/python1.5/site-packages
+	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so ${PYTHON_SITELIBDIR}/
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/metakit
