@@ -1,5 +1,5 @@
 *** ../Ipe-5.0/Ipe.app-defaults	Tue May  9 04:38:01 1995
---- Ipe.app-defaults	Wed Nov  1 11:21:40 2000
+--- Ipe.app-defaults	Sun Nov  5 15:31:31 2000
 ***************
 *** 6,13 ****
   !
@@ -57,7 +57,7 @@
   ! INSTALL: Command to start help system
   !
   *helpCommand:		\
-! 	netscape file://localhost/usr/X11R6/lib/ipe/doc/Ipe.html &
+! 	netscape file://localhost/usr/local/lib/ipe/doc/Ipe.html &
 ! 
   !
   ! INSTALL: Directories where Ipe can find Ipe User Macros (IUMs)

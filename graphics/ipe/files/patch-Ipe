@@ -1,6 +1,6 @@
 diff -cr ../Ipe-5.0/Ipe/Makefile Ipe/Makefile
 *** ../Ipe-5.0/Ipe/Makefile	Thu Nov 27 16:09:18 1997
---- Ipe/Makefile	Thu Oct 26 14:57:59 2000
+--- Ipe/Makefile	Sun Nov  5 14:51:33 2000
 ***************
 *** 26,42 ****
   
@@ -24,7 +24,7 @@ diff -cr ../Ipe-5.0/Ipe/Makefile Ipe/Makefile
   
   # define GFLAGS if you use g++
   #GFLAGS  =
-! GFLAGS	= -fno-for-scope  -g
+! GFLAGS	= -fno-for-scope  
   
   # Need to find X and Motif
 ! INCLUDE_DIRS	= -I../Plageo -I/usr/X11R6/include
@@ -111,7 +111,7 @@ diff -cr ../Ipe-5.0/Ipe/advertise.h Ipe/advertise.h
   				  IpeCallback callback DefaultsTo(NIL));
 diff -cr ../Ipe-5.0/Ipe/colors.C Ipe/colors.C
 *** ../Ipe-5.0/Ipe/colors.C	Tue May  9 04:36:03 1995
---- Ipe/colors.C	Wed Oct 25 15:19:03 2000
+--- Ipe/colors.C	Thu Nov  2 15:31:19 2000
 ***************
 *** 123,129 ****
   // COLOR I/O
@@ -129,6 +129,21 @@ diff -cr ../Ipe-5.0/Ipe/colors.C Ipe/colors.C
   // save color in file
   {
     if (!col)
+***************
+*** 409,414 ****
+--- 409,420 ----
+    
+    // if less than 6 bits, give up and use b&w
+    
++   if (!bestv[PseudoColor]){
++     cerr << "No PseudoColor visuals found\n";
++     monochrome=true;
++     return;
++   }
++ 
+    if (bestv[PseudoColor]->depth < 6) {
+      monochrome = TRUE;
+      return;
 diff -cr ../Ipe-5.0/Ipe/configuration.C Ipe/configuration.C
 *** ../Ipe-5.0/Ipe/configuration.C	Tue May  9 04:36:04 1995
 --- Ipe/configuration.C	Wed Oct 25 15:24:38 2000
@@ -213,8 +228,6 @@ diff -cr ../Ipe-5.0/Ipe/interface.C Ipe/interface.C
   // popup an (error) message window with one or two lines of text
   // window stays, and is removed by its OK button
   {
-Only in ../Ipe-5.0/Ipe: ipe
-Only in Ipe: ipe.core
 diff -cr ../Ipe-5.0/Ipe/itypes.h Ipe/itypes.h
 *** ../Ipe-5.0/Ipe/itypes.h	Tue May  9 04:36:00 1995
 --- Ipe/itypes.h	Wed Oct 25 11:32:14 2000

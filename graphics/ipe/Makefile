@@ -18,6 +18,6 @@ RUN_DEPENDS= 	gs:${PORTSDIR}/print/ghostscript6 \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_XLIB=	yes
-REQUIRES_MOTIF= yes
+USE_MOTIF= 	yes
 
 .include <bsd.port.mk>
