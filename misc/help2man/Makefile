@@ -34,8 +34,5 @@ USE_PERL5=	yes
 MAN1=		help2man.1
 
 INFO=		help2man
-PLIST_FILES=	bin/help2man %%NLS%%lib/hacklocaledir.so \
-		%%NLS%%share/locale/fr/LC_MESSAGES/help2man.mo \
-		%%NLS%%share/locale/pl/LC_MESSAGES/help2man.mo
 
 .include <bsd.port.mk>
