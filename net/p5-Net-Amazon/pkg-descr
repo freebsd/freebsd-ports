@@ -1,0 +1,8 @@
+Net::Amazon provides an object-oriented interface to amazon.com's
+SOAP and XML/HTTP interfaces. This way it's possible to create applications
+using Amazon's vast amount of data via a functional interface, without
+having to worry about the underlying communication mechanism.
+
+WWW: http://search.cpan.org/dist/Net-Amazon/
+
+Author: Mike Schilli <net-amazon-devel@lists.sourceforge.net>

@@ -1,0 +1,35 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
+%%SITE_PERL%%/Net/Amazon/Response/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Property.pm
+%%SITE_PERL%%/Net/Amazon/Request/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Attribute/Review.pm
+%%SITE_PERL%%/Net/Amazon/Request/Wishlist.pm
+%%SITE_PERL%%/Net/Amazon/Request/Keyword.pm
+%%SITE_PERL%%/Net/Amazon/Response/Artist.pm
+%%SITE_PERL%%/Net/Amazon/Property/DVD.pm
+%%SITE_PERL%%/Net/Amazon/Response/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Response/Power.pm
+%%SITE_PERL%%/Net/Amazon/Response/Keyword.pm
+%%SITE_PERL%%/Net/Amazon/Request/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Property/Music.pm
+%%SITE_PERL%%/Net/Amazon/Request.pm
+%%SITE_PERL%%/Net/Amazon/Response/ASIN.pm
+%%SITE_PERL%%/Net/Amazon/Attribute/ReviewSet.pm
+%%SITE_PERL%%/Net/Amazon.pm
+%%SITE_PERL%%/Net/Amazon/Request/UPC.pm
+%%SITE_PERL%%/Net/Amazon/Response/Similar.pm
+%%SITE_PERL%%/Net/Amazon/Request/Similar.pm
+%%SITE_PERL%%/Net/Amazon/Request/ASIN.pm
+%%SITE_PERL%%/Net/Amazon/Response/Wishlist.pm
+%%SITE_PERL%%/Net/Amazon/Property/Book.pm
+%%SITE_PERL%%/Net/Amazon/Request/Power.pm
+%%SITE_PERL%%/Net/Amazon/Response.pm
+@dirrm %%SITE_PERL%%/Net/Amazon/Attribute
+@dirrm %%SITE_PERL%%/Net/Amazon/Property
+@dirrm %%SITE_PERL%%/Net/Amazon/Response
+@dirrm %%SITE_PERL%%/Net/Amazon/Request
+@dirrm %%SITE_PERL%%/Net/Amazon
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
+@unexec rmdir %D/%%SITE_PERL%%/Net/Amazon 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
