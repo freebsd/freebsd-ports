@@ -3,11 +3,11 @@
 # Date created:		4 April 1996
 # Whom:			jdli
 #
-# $Id: Makefile,v 1.2 1996/05/27 02:21:12 asami Exp $
+# $Id: Makefile,v 1.3 1996/10/30 14:05:20 jfitz Exp $
 #
 
 DISTNAME=	xsysinfo-1.3
-CATEGORIES+=	sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/jdli/source/
 
 MAINTAINER=	jdli@csie.nctu.edu.tw

@@ -3,18 +3,15 @@
 # Date created:         14 August 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/24 20:37:44 wosch Exp $
+# $Id: Makefile,v 1.2 1996/08/25 01:00:25 asami Exp $
 #
 
 DISTNAME=       socket-1.1
-CATEGORIES+=	sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=     wosch@FreeBSD.org
 
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/socket.1
-.endif
+MAN1=		socket.1
 
 .include <bsd.port.mk>
