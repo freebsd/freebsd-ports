@@ -108,6 +108,61 @@ in /tmp and passes it to some external program; you'll see it actually
 creates a file in /compat/linux/tmp when the external program searches
 /tmp literally.
 
+- There is a bug you may wish to work around. It is unclear (at least to
+me) if this is a bug in VMware, the Linuxulator or the FreeBSD VM
+system.
+
+Some background first: When you mmap a file, the syncer will attempt to
+periodically synchronize the on-disk version of the file with the
+changes being made in the mmap'd region. If you unlink an mmap'd file,
+however, this no longer is necessary because if the machine were to
+reboot fsck would throw the file away. The hint is given to the syncer
+in the form of the MAP_NOSYNC flag to the mmap() syscall.
+
+The problem is that VMware somehow performs the operations differently
+when resuming from a save-to-disk session than it does when booting. The
+result is that the MAP_NOSYNC flag doesn't get set, which causes the
+performance of a resumed session to be terrible compared to a new
+session.
+
+I suspect that the problem is that when an open file is unlinked, the
+unlink() call does not know to check to see if the file is mmap'ed and
+if so to add the MAP_NOSYNC flag. This means that open(), unlink(),
+mmap() sequences work, but open(), mmap(), unlink() sequences do not.
+VMware probably does not unlink the save-to-disk file right away in case
+the resume fails, which causes the difference in behavior compared to a
+clean boot.
+
+The only workaround at present is to force all Linuxulator mmap() calls
+to get MAP_NOSYNC. A patch against -current to do just this is available
+at http://home.jp.FreeBSD.ORG/cgi-bin/showmail/FreeBSD-users-jp/55885
+(ignore the Japanese text if you can't read it. -stable users may need
+to apply part of the patch to /sys/compat/linux/linux_mib.c).
+
+- If you configure vmware to use bridging, you must still specify the
+"Host only" mode to the VMware configurator. It will still work just
+like a bridged interface. If your bridged VMware guest is a DHCP client,
+you may wish to fix its Ethernet address so as not to generate a new
+lease every time you start VMware. To do so, add this line to your
+guest's .cfg file:
+
+ethernet0.address = "00:50:56:1e:ad:bf"
+
+You can only change the last 5 hex digits, which MUST be unique (at least
+within your LAN).
+
+Note that bridging only works on (real) Interfaces where both the 'set
+promisc 1' and 'set autosrc 0' steps function. This means that the
+interface must be capable of transmitting frames with other than its own
+Ethernet address and receiving promiscuously. Most interfaces can, but
+notably wi interfaces are among those that cannot. Note that promiscuous
+mode is entered when the vmware.sh startup script is run, which may
+cause increased interrupt loads on your machine if it's plugged into a
+busy network. If you only run vmware infrequently, it may be better to
+only manually run the vmware startup script (as root) just before you
+start vmware and again (with the stop argument this time) when you're
+finished.
+
 - Don't miss the VMware FAQ available on the official site.
 
 	http://www.vmware.com/products/productfaq.html
