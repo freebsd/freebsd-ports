@@ -127,8 +127,9 @@ lib/perl5/site_perl/%%PERL_VER%%/Radius/StatsLogSQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/Radius/TLS.pm
 lib/perl5/site_perl/%%PERL_VER%%/Radius/User.pm
 lib/perl5/site_perl/%%PERL_VER%%/Radius/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Radius/Win32Service.pm
 lib/perl5/site_perl/%%PERL_VER%%/radhostname.pl
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Radius/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Radius/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Radius/Nas
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Radius
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Radius
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Radius
