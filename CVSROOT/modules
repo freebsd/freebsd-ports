@@ -6044,6 +6044,7 @@ pccardc		src/usr.sbin/pccard/pccardc
 pccardd		src/usr.sbin/pccard/pccardd
 pccts		ports/devel/pccts
 pcemu		ports/emulators/pcemu
+pcf2bdf		ports/x11-fonts/pcf2bdf
 pchar		ports/net/pchar
 pciconf		src/usr.sbin/pciconf
 pciid		src/tools/tools/pciid
