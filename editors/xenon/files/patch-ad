@@ -1,17 +1,5 @@
 --- XeApp.C.orig	Tue Nov 23 00:36:49 1999
 +++ XeApp.C	Mon Jan  3 18:25:45 2000
-@@ -33,6 +33,11 @@
- #include <netinet/in.h>
- #include <arpa/inet.h>
- 
-+#include <osreldate.h>
-+#if __FreeBSD_version < 400010
-+typedef int socklen_t;
-+#endif
-+
- #ifdef _SGI_SOURCE
- #include <alloca.h>
- #include <bstring.h>
 @@ -169,7 +174,7 @@
  
      gLocalIPAddr = 0;
