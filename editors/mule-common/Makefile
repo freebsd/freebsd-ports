@@ -23,6 +23,10 @@ EMACS_VERSION=	19.34
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 WRKDIRBASE=	${WRKDIRPREFIX}${.CURDIR:S,/editors/mule-common$,,}
 
 .for dir in 	chinese/mule-freewnn \
