@@ -38,7 +38,7 @@ RPM_MIRRORS=		\
 	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
 	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
 
-STDDIR=			redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
+STDDIR=			old-releases/redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
 UPDDIR=			updates/6.1/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
