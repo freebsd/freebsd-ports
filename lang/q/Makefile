@@ -23,6 +23,8 @@ LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 		ggi.2:${PORTSDIR}/graphics/libggi \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
+BROKEN=		Does not compile
+
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget
