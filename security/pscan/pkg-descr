@@ -1,0 +1,12 @@
+PScan is a C source code security scanner, which looks for misuse of
+libc functions which use varargs and printf-style formatting
+operators. In many situations these can cause security vulnerabilities
+in the application if it runs with privileges (setugid, or listening
+to a network socket, etc).
+
+An example of the kind of situation pscan looks for is the following:
+
+  variable = "%s";                   /* or malicious user input */
+  sprintf(buffer, variable);         /* BAD! */
+
+WWW: http://www.striker.ottawa.on.ca/~aland/pscan/
