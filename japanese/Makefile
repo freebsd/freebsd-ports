@@ -23,6 +23,7 @@
     SUBDIR += canuum
     SUBDIR += cdrom2
     SUBDIR += chasen
+    SUBDIR += chasen-base
     SUBDIR += chimera
     SUBDIR += csrd
     SUBDIR += dbskkd-cdb
@@ -85,6 +86,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ical
+    SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += iv
     SUBDIR += japaneseAFM
