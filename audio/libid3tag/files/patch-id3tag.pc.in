@@ -1,0 +1,13 @@
+--- id3tag.pc.in.orig	1970-01-01 09:00:00.000000000 +0900
++++ id3tag.pc.in	2003-11-11 08:42:38.000000000 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: ID3TAG
++Description: libid3tag - ID3 tag manipulation library
++Version: @VERSION@
++Libs: -L${libdir} -lid3tag -lz
++Cflags:
