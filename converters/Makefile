@@ -37,6 +37,7 @@
     SUBDIR += recode
     SUBDIR += ruby-iconv
     SUBDIR += ruby-sha1
+    SUBDIR += siconv
     SUBDIR += tcs
     SUBDIR += tnef
     SUBDIR += trans
