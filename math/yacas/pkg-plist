@@ -36,12 +36,12 @@ share/yacas/documentation/codingchapter4.html
 share/yacas/documentation/codingchapter5.html
 share/yacas/documentation/codingchapters.html
 share/yacas/documentation/codingmanual.html
-share/yacas/documentation/essays.html
 share/yacas/documentation/essayschapter1.html
 share/yacas/documentation/essayschapter2.html
+share/yacas/documentation/essayschapter3.html
+share/yacas/documentation/essayschapter4.html
 share/yacas/documentation/essayschapters.html
 share/yacas/documentation/essaysmanual.html
-share/yacas/documentation/intro.html
 share/yacas/documentation/introchapter1.html
 share/yacas/documentation/introchapter2.html
 share/yacas/documentation/introchapter3.html
@@ -56,6 +56,7 @@ share/yacas/documentation/refchapter12.html
 share/yacas/documentation/refchapter13.html
 share/yacas/documentation/refchapter14.html
 share/yacas/documentation/refchapter15.html
+share/yacas/documentation/refchapter16.html
 share/yacas/documentation/refchapter2.html
 share/yacas/documentation/refchapter3.html
 share/yacas/documentation/refchapter4.html
@@ -86,6 +87,7 @@ share/yacas/examples/pi.ys
 share/yacas/examples/queens.ys
 share/yacas/examples/series.ys
 share/yacas/examples/tests.ys
+share/yacas/examples/wordproblems.ys
 share/yacas/factors.rep/code.ys
 share/yacas/factors.rep/code.ys.def
 share/yacas/fakedb.rep/code.ys
@@ -207,6 +209,8 @@ share/yacas/simplify.rep/code.ys
 share/yacas/simplify.rep/code.ys.def
 share/yacas/solve.rep/code.ys
 share/yacas/solve.rep/code.ys.def
+share/yacas/specfunc.rep/code.ys
+share/yacas/specfunc.rep/code.ys.def
 share/yacas/standard.ys
 share/yacas/stats.rep/code.ys
 share/yacas/stats.rep/code.ys.def
@@ -272,6 +276,7 @@ share/yacas/yacasinit.ys
 @dirrm share/yacas/random.rep
 @dirrm share/yacas/simplify.rep
 @dirrm share/yacas/solve.rep
+@dirrm share/yacas/specfunc.rep
 @dirrm share/yacas/stats.rep
 @dirrm share/yacas/stdfuncs.rep
 @dirrm share/yacas/stubs.rep
