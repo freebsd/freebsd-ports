@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 # Necessary for $PREFIX to work:
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 
