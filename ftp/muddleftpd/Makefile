@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	muddleftpd
-PORTVERSION=	1.3.12.1
-PORTREVISION=	1
+PORTVERSION=	1.3.13.1
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,15 +19,22 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-authsmb
 
 MAN1=		ftpwho.1 muddleftpd.1 mudpasswd.1
+INFO=		muddleftpd
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^NEWMALLOC|#NEWMALLOC|g' ${WRKSRC}/Makefile.defs
-	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' ${WRKSRC}/defaults.h
+	@${REINPLACE_CMD} -e 's|"/etc|"${PREFIX}/etc|g' ${WRKSRC}/defaults.h.in
 	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' ${WRKSRC}/src/ftpd.h
 
-post-install:
+do-install:
+.for file in ftpwho muddleftpd mudlogd mudpasswd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/info/muddleftpd.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/muddleftpd.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

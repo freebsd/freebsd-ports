@@ -11,18 +11,3 @@
  
  ifdef NEWMALLOC
  SRC += malloc.c
-@@ -108,10 +108,10 @@
- install: all
- 	mkdir -p $(BINDIR)
- 
--	install $(MUDOUTPROG) -m 755 $(BINDIR)
--	install $(WHOPROG) -m 755 $(BINDIR)
--	install $(MUDPASSWDPROG) -m 755 $(BINDIR)
--	install $(MUDLOGD) -m 755 $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} $(MUDOUTPROG) $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} $(WHOPROG) $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} $(MUDPASSWDPROG) $(BINDIR)
-+	${BSD_INSTALL_PROGRAM} $(MUDLOGD) $(BINDIR)
- 
- clean:
- 	rm -f $(MUDOUTPROG) $(WHOPROG) *.o *~ core DEADJOE util/*.o
