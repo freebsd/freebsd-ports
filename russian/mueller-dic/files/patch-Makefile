@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Jan 16 11:22:34 2004
++++ Makefile	Fri Jan 16 11:27:47 2004
+@@ -13,7 +13,7 @@
+ SOURCE_SUFFIX = c
+ 
+ # C compiler
+-CC = gcc
++CC ?= gcc
+ 
+ # source files directory
+ srcdir = .
+@@ -28,7 +28,7 @@
+ LNK_LIBS = -lm
+ 
+ # other compilation options (no value if unsure)
+-COMPILE_OPTS =
++COMPILE_OPTS = ${CFLAGS}
+ 
+ # basic compiler warning options (for GOAL_EXE)
+ BWARN_OPTS = -Wall -Wno-uninitialized -ansi -pedantic

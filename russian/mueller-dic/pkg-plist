@@ -1,0 +1,7 @@
+bin/mueller
+bin/muellerfind
+%%DATADIR%%/Mueller7accentGPL.koi
+%%DATADIR%%/Mueller7accentGPL.koi.h
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Mueller7.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

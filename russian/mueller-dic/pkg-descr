@@ -1,0 +1,11 @@
+This is the GPL'd 7th edition of the very well known English-Russian
+dictionary by V.K.Mueller. It is arranged as single text file with
+cyrillic letters KOI8-R encoded. Transcription symbols correspond to the
+IPA (International Phonetic Alphabet) standard. There is also a simple
+dictionary search utility is included in this port. Look at specified
+URL for other available tools.
+
+WWW:	http://mueller-dic.chat.ru/
+
+- Igor Pokrovsky
+tiamat@comset.net

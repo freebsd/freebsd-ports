@@ -19,6 +19,7 @@
     SUBDIR += linux-mozillafirebird
     SUBDIR += messarge
     SUBDIR += mtc
+    SUBDIR += mueller-dic
     SUBDIR += muttprint
     SUBDIR += ooodict-ru_RU
     SUBDIR += openoffice-1.0
