@@ -9,7 +9,6 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1b.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P2.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P2-1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/Richard.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/aaRT.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/aaa-adp.edp
@@ -34,17 +33,26 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/BeamEigenValueperio.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/LapEigenValue.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/LapnosymEigenValue.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/eigen/Stokes-eigen.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/all.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/eigen/neuman.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/funct.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/include.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/lap_mat.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/lapacienprecon.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/load.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/load.link
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/essai.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-b.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz-c.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/mpi/schwarz.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/parareal.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1P2h.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1bis.edp
@@ -90,11 +98,12 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-no-overlap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-overlap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/truncmesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/bug
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/eigen
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/load
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mpi
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tutorial
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
