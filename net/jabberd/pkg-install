@@ -31,4 +31,8 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 		exit 1
 	fi
 fi
+
+mkdir -p /var/jabberd/db /var/jabberd/pid /var/jabberd/log
+chown jabber:jabber /var/jabberd /var/jabberd/db /var/jabberd/pid /var/jabberd/log
+
 exit 0
