@@ -77,8 +77,6 @@ lib/libodbcpsqlS.so
 lib/libodbcpsqlS.so.1
 lib/libodbctxt.a
 lib/libodbctxt.la
-lib/libodbctxt.so
-lib/libodbctxt.so.1
 lib/libodbctxtS.a
 lib/libodbctxtS.la
 lib/libodbctxtS.so
