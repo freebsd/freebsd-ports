@@ -3,12 +3,12 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.5 1997/02/14 22:17:03 jdp Exp $
+# $Id: Makefile,v 1.6 1997/03/28 04:38:43 jdp Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
 CATEGORIES=	lang
-MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	m3-fbsd-src-3.6.tar.gz m3-fbsd-m3cc-3.6.tar.gz
 # Note: Depending on what is already installed on the system, the code
 # below may add some more DISTFILES.

@@ -3,13 +3,13 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/15 16:42:50 erich Exp $
+# $Id: Makefile,v 1.2 1996/12/05 11:04:42 asami Exp $
 #
 
 DISTNAME=	SMS
 PKGNAME=        mastergear-0.8
 CATEGORIES=     emulators
-MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	MG.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

@@ -3,12 +3,12 @@
 # Date created:			26 November 1996
 # Whom:				Sandro Sigala
 #
-# $Id: Makefile,v 1.3 1996/12/11 12:04:23 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/24 11:11:43 max Exp $
 #
 
 DISTNAME=	cutils-1.3.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	ssigala@globalnet.it
 

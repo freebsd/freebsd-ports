@@ -3,14 +3,14 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.13 1997/02/09 00:40:35 max Exp $
+# $Id: Makefile,v 1.14 1997/02/11 18:06:02 max Exp $
 #
 
 DISTNAME=	platex2e
 PKGNAME=	jp-platex2e-97.02.01
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1997-02-01/ \
-		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+		${MASTER_SITE_LOCAL}
 DISTFILES=	base-9612.tar.gz ecfonts-1.0.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG

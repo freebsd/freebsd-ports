@@ -3,7 +3,7 @@
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/19 03:36:13 max Exp $
 #
 
 DISTNAME=	lipsf113
@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
 
 PATCHFILES=	lipsf113c.patch.gz
-PATCH_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 

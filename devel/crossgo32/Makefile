@@ -3,13 +3,13 @@
 # Date created:         6 Mar 97
 # Whom:                 Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/27 20:53:42 erich Exp $
+# $Id: Makefile,v 1.2 1997/03/28 02:35:44 obrien Exp $
 #
 
 DISTNAME=	crosstree-1.3
 PKGNAME=	crossgo32-1.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://freefall.FreeBSD.ORG/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 

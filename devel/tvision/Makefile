@@ -3,12 +3,12 @@
 # Date created:				16 February 1997
 # Whom:					Sandro Sigala
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/25 04:19:46 jkh Exp $
+# $Id: Makefile,v 1.2 1997/04/25 11:54:08 jkh Exp $
 #
 
 DISTNAME=	tvision-0.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.FreeBSD.ORG/pub/FreeBSD/distfiles/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	ssigala@globalnet.it
 

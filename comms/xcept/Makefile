@@ -3,12 +3,12 @@
 # Date created:         Sep 1, 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1996/11/06 13:34:05 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/17 03:01:21 obrien Exp $
 #
 
 DISTNAME=       xcept-2.1.2
 CATEGORIES=	comms
-MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
 
 MAINTAINER=     joerg@FreeBSD.ORG
 

@@ -3,12 +3,12 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.14 1996/12/11 17:46:11 erich Exp $
+# $Id: Makefile,v 1.15 1997/04/14 19:03:08 erich Exp $
 #
 
 DISTNAME=	linux_lib-2.4
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
 MAINTAINER=	erich@FreeBSD.org
 

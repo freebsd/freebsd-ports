@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1997/03/03 06:37:52 asami Exp $
+# $Id: Makefile,v 1.6 1997/03/05 09:20:07 asami Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/ \
-		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/ \
+		${MASTER_SITE_LOCAL} \
 		http://www.jp.FreeBSD.org/~mita/LOCAL_PORTS/
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
