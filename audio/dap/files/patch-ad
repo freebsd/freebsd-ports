@@ -1,6 +1,6 @@
---- spkit/spkit/Makefile.linux.orig	Sun Jul  1 13:36:58 2001
-+++ spkit/spkit/Makefile.linux	Sun Jul  1 13:38:17 2001
-@@ -1,16 +1,16 @@
+--- spkit/spkit/Makefile.linux.orig	Wed Aug  9 18:27:20 2000
++++ spkit/spkit/Makefile.linux	Tue Jul  2 02:11:41 2002
+@@ -1,16 +1,19 @@
 -CC      = gcc
 -CXX     = g++
 +CC      ?= gcc
@@ -12,9 +12,13 @@
  MAINDIR = ../../main
  HOMEDIR = $(HOME)
 -X11DIR  = /usr/X11R6
-+X11DIR  = ${X11BASE}
- INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include
+-INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++X11DIR  = ${X11BASE}
++.if exists(${X11BASE}/include/X11/forms.h)
++XFORMSINC = -I${X11BASE}/include/X11
++.endif
++INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include ${XFORMSINC}
 +CCFLAGS += $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O2

@@ -1,0 +1,57 @@
+--- src/main.C.orig	Tue Jul  2 00:11:14 2002
++++ src/main.C	Tue Jul  2 00:11:52 2002
+@@ -21,16 +21,6 @@
+ static char vcid[] = "$Id: main.C,v 1.2 1998/06/22 05:50:57 arrae Exp $";
+ #endif /* lint */
+ 
+-// I keep these here so that it will be processed as early in
+-// the compilation process as possible.
+-#if !defined(FL_REVISION) || (FL_REVISION != 81 && FL_REVISION != 86 &&\
+-			      FL_REVISION != 87 && FL_REVISION != 88) \
+-			  || FL_VERSION != 0
+-#error LyX will not compile with this version of XForms.\
+-       Please get version 0.88 (0.81 and 0.86 also work).\
+-       If you want to try to compile anyway, delete this test in src/main.C.
+-#endif
+-
+ 
+ int main(int argc, char *argv[])
+ {
+--- src/lyx_gui_misc.h.orig	Tue Jul  2 00:23:13 2002
++++ src/lyx_gui_misc.h	Tue Jul  2 00:23:32 2002
+@@ -64,7 +64,7 @@
+ inline
+ void LyXBell() {
+ 	// if (audio()) ON/OFF switch yet to be implemented
+-#if FL_REVISION > 85
++#if FL_VERSION > 0 || FL_REVISION > 85
+ 	fl_ringbell(20);
+ #else
+ 	ringbell();
+--- src/lyx_gui_misc.C.orig	Tue Jul  2 00:27:17 2002
++++ src/lyx_gui_misc.C	Tue Jul  2 00:30:10 2002
+@@ -379,7 +379,7 @@
+ {
+ 	fl_set_resource("flQuestion.yes.label", idex(_("Yes|Yy#y")));
+ 	fl_set_resource("flQuestion.no.label", idex(_("No|Nn#n")));
+-#if FL_REVISION > 85
++#if FL_VERSION > 0 || FL_REVISION > 85
+ 	return fl_show_question((s1 + "\n" + s2 + "\n" + s3).c_str(), 0);
+ #else
+ 	return fl_show_question(s1.c_str(), s2.c_str(), s3.c_str());
+@@ -392,13 +392,12 @@
+ 	fl_set_choices_shortcut(scex(_("Yes|Yy#y")),
+ 				scex(_("No|Nn#n")),
+ 				scex(_("Cancel|^[")));
+-#if FL_REVISION < 86
++#if FL_VERSION == 0 && FL_REVISION < 86
+         return fl_show_choice(s1.c_str(), s2.c_str(), s3.c_str(), 
+ 			      3, idex(_("Yes|Yy#y")),
+ 			      idex(_("No|Nn#n")),
+ 			      idex(_("Cancel|^[")));
+-#endif
+-#if FL_REVISION > 85
++#else
+         return fl_show_choice(s1.c_str(), s2.c_str(), s3.c_str(), 
+ 			      3, idex(_("Yes|Yy#y")),
+ 			      idex(_("No|Nn#n")),

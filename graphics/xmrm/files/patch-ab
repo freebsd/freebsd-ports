@@ -1,6 +1,6 @@
---- const.h.orig	Mon Mar  9 17:00:00 1998
-+++ const.h	Tue Mar 28 15:23:34 2000
-@@ -3,7 +3,7 @@
+--- const.h.orig	Mon Mar  9 18:00:00 1998
++++ const.h	Mon Jul  1 03:46:45 2002
+@@ -3,12 +3,14 @@
  //   Programming: Gerhard Waldhör, Andreas Artmann
  
  #include <stdio.h>
@@ -8,4 +8,11 @@
 +#include <stdlib.h>
  #include <errno.h>
  #include <math.h>
+ 
++#ifndef TRUE
+ #define TRUE 1
+ #define FALSE 0
++#endif
+ 
+ #define MAX_PIC_NUM 999
  
