@@ -6,6 +6,15 @@ share/gl-117/models/cannon2.3ds
 share/gl-117/models/chaff1.3ds
 share/gl-117/models/container1.3ds
 share/gl-117/models/egg.3ds
+share/gl-117/models/fig1.3ds
+share/gl-117/models/fig2.3ds
+share/gl-117/models/fig3.3ds
+share/gl-117/models/fig4.3ds
+share/gl-117/models/fig5.3ds
+share/gl-117/models/fig6.3ds
+share/gl-117/models/fig7.3ds
+share/gl-117/models/fig8.3ds
+share/gl-117/models/fig9.3ds
 share/gl-117/models/flak2.3ds
 share/gl-117/models/flarak1.3ds
 share/gl-117/models/flare1.3ds
@@ -43,6 +52,7 @@ share/gl-117/models/tent1.3ds
 share/gl-117/models/tent4.3ds
 share/gl-117/models/transp1.3ds
 share/gl-117/models/truck1.3ds
+share/gl-117/music/ambient.s3m
 share/gl-117/music/dark.s3m
 share/gl-117/music/electro.s3m
 share/gl-117/music/loser.s3m
@@ -60,6 +70,7 @@ share/gl-117/sounds/hit1.wav
 share/gl-117/sounds/missile1.wav
 share/gl-117/sounds/plane1.wav
 share/gl-117/sounds/thunder1.wav
+share/gl-117/textures/arrow.tga
 share/gl-117/textures/aster1_n.tga
 share/gl-117/textures/base1_no.tga
 share/gl-117/textures/cactus1.tga
@@ -79,7 +90,6 @@ share/gl-117/textures/flare4.tga
 share/gl-117/textures/flare_ch.tga
 share/gl-117/textures/font1.tga
 share/gl-117/textures/font2.tga
-share/gl-117/textures/gl-117_c.tga
 share/gl-117/textures/gl-14_ch.tga
 share/gl-117/textures/gl-14b_c.tga
 share/gl-117/textures/gl-14c_c.tga
@@ -97,6 +107,7 @@ share/gl-117/textures/hall2_ch.tga
 share/gl-117/textures/medals.tga
 share/gl-117/textures/moon1.tga
 share/gl-117/textures/oilrig_c.tga
+share/gl-117/textures/oilrig_c2.tga
 share/gl-117/textures/panzer1_.tga
 share/gl-117/textures/panzer2_.tga
 share/gl-117/textures/radar1.tga
@@ -123,9 +134,7 @@ share/gl-117/textures/treeu1.tga
 share/gl-117/textures/treeu2.tga
 share/gl-117/textures/treeu3.tga
 share/gl-117/textures/treeu4.tga
-share/gl-117/textures/walls_co.tga
 share/gl-117/textures/water1.tga
-share/gl-117/textures/water2.tga
 @dirrm share/gl-117/textures
 @dirrm share/gl-117/sounds
 @dirrm share/gl-117/music
