@@ -7,11 +7,12 @@
 
 PORTNAME=	tar
 PORTVERSION=	1.13.23
-PKGNAMEPREFIX=	g
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/alpha.gnu.org/gnu/tar/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/tar/
+PKGNAMEPREFIX=	g
 
 MAINTAINER=	naddy@FreeBSD.org
 
