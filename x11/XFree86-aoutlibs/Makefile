@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XFree86-aoutlibs
-PORTVERSION= 	3.3.3
+PORTVERSION=	3.3.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/binaries/FreeBSD-2.2.x/
 DISTNAME=	Xbin
