@@ -21,7 +21,7 @@ MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
-		${PKG_DBDIR}/ja-bdf-fonts-1.0_1:${PORTSDIR}/japanese/bdf-fonts
+		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
 WRKSRC=		${WRKDIR}/bin
 
