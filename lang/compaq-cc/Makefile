@@ -17,8 +17,6 @@ DISTFILES+=	cpml_ev6-5.1.0-2.alpha.rpm
 DISTFILES+=	cpml_ev5-5.1.0-2.alpha.rpm
 .endif
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6.1:${PORTSDIR}/emulators/linux_base
-
 MAINTAINER=	obrien@FreeBSD.org
 
 RESTRICTED=     "Distribution not allowed"
@@ -55,8 +53,22 @@ do-install:
     /usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin/lnxcc_driver
 	brandelf -t Linux ${PREFIX}$F
 .endfor
-	cd ${PREFIX}/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin \
-	    ; ${MV} cpp cpp.Linux-bad ; ${LN} -s /usr/bin/cpp . \
+	cd ${PREFIX}/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin	\
+	    ; ${MV} cpp cpp.Linux-bad ; ${LN} -s /usr/bin/cpp .		\
 	    ; ${MV} ld ld.Linux-bad ; ${LN} -s /usr/bin/ld .
+# "-g" is totally ignored by GNU ld, so we can use it for a benign space holder
+	cd ${PREFIX}/usr/lib/compaq/ccc-6.2.9.504-2/alpha-linux/bin	\
+	    ; ${MV} lnxcc_driver lnxcc_driver.Linux			\
+	    ; ${SED} -e 's/-dynamic-linker/-g             /g'		\
+		     -e 's|/lib/ld-linux.so.2|-g                |g'	\
+		lnxcc_driver.Linux >lnxcc_driver			\
+		; ${CHMOD} 555 lnxcc_driver
+# the shared libs gives us trouble right now, so only offer .a's
+	${RM} ${PREFIX}/usr/lib/libots.so
+	${RM} ${PREFIX}/usr/lib/libcpml.so
+# fix unresolved references in the DECpaq libs
+	cd ${WRKSRC}							\
+	    ; ccc -c ${FILESDIR}/*.c					\
+	    ; ar vq /usr/lib/compaq/cpml-5.1.0/libcpml_ev5.a *.o
 
 .include <bsd.port.mk>
