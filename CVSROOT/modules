@@ -613,6 +613,7 @@ boclient	ports/net/boclient
 boehm-gc	ports/devel/boehm-gc
 bogged		ports/games/bogged
 bogofilter	ports/mail/bogofilter
+bogofilter-tdb	ports/mail/bogofilter-tdb
 bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
 bomb		ports/games/bomb
