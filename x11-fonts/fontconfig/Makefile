@@ -7,6 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1.94
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/release/ \
 		http://nexp.cs.pdx.edu/fontconfig/release/
