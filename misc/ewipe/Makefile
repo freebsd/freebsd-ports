@@ -11,7 +11,7 @@ CATEGORIES+=	misc tk42
 MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
 		http://freefall.freebsd.org/~itojun/distfiles/
 
-MAINTAINER?=	itojun@itojun.org
+MAINTAINER?=	ports@freebsd.org
 
 #RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11-toolkits/tk42
 
