@@ -17,6 +17,8 @@ PKGNAMEPREFIX=	arm-aout-
 MAINTAINER=	pbecke@javagear.com
 COMMENT=	FSF Binutils for embedded ARM cross-development
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=arm-aout
