@@ -7,6 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/fontconfig/release/
 DISTNAME=	fcpackage.${PORTVERSION:S/./_/}
@@ -31,5 +32,10 @@ WRKSRC=	${WRKDIR}/${DISTNAME}/fontconfig
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(PACKAGE_BUILDING)
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 .include <bsd.port.mk>
