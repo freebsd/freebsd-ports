@@ -1,0 +1,7 @@
+Westhawk SNMP is a lightweight SNMP stack in Java, with Java applet,
+application, and servlet examples. The stack provides manager
+functionality for SNMPv1, SNMPv2c and SNMPv3 (authentication and
+privacy). It is capable of sending and receiving traps, but has no other
+agent functionality.
+
+WWW: http://snmp.westhawk.co.uk/
