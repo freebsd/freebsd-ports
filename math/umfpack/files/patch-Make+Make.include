@@ -1,0 +1,31 @@
+--- Make/Make.include.orig	Wed Apr 23 14:08:18 2003
++++ Make/Make.include	Thu Jun 19 14:01:42 2003
+@@ -10,15 +10,15 @@
+ # AMD, or both AMD and UMFPACK, you only need to edit this one file (and
+ # optionaly, one of the ../Make/Make.<arch> files below).
+ 
+-CFLAGS = -O
++CFLAGS ?= -O
+ RANLIB = ranlib
+ LIB = -lm
+ RM = rm -f
+ MV = mv -f
+-F77 = f77
+-F77FLAGS = -O
+-F77LIB =
+-AR = ar
++F77 ?= f77
++F77FLAGS = ${FFLAGS}
++#F77LIB =
++AR ?= ar
+ 
+ #-------------------------------------------------------------------------------
+ # for the AMD and UMFPACK mexFunctions (-DNBLAS and -DNUTIL for UMFPACK only)
+@@ -49,6 +49,7 @@
+ # CC = ... to redefine the name of your C compiler, for example.  Without
+ # any specific changes, this Makefile should work on nearly all systems.
+ 
++include ../Make/Make.freebsd
+ # include ../Make/Make.linux
+ # include ../Make/Make.sgi
+ # include ../Make/Make.solaris
