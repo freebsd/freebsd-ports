@@ -1,7 +1,0 @@
-#! /bin/sh
-
-for i; do
-    if [ -f $i ]; then
-	strip $i
-    fi
-done
