@@ -6,13 +6,12 @@
 
 PORTNAME=	ptex-tetex
 PORTVERSION=	3.1.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
-		${MASTER_SITE_TEX_CTAN} \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/:1 \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/:2
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
 PKGNAMEPREFIX=	ja-
 DISTFILES=	ptex-src-${VER_PTEX}${EXTRACT_SUFX}:1 \
 		ptex-texmf-${VER_PTEXTEXMF}${EXTRACT_SUFX}:1 \
@@ -59,7 +58,7 @@ WRKSRC=		${WRKDIR}/${TETEX_SRC}
 WRKSRC_TETEX=	${WRKDIR}/${TETEX_SRC}
 WRKSRC_PTEX=	${WRKDIR}/ptex-src-${VER_PTEX}
 
-TETEX_SRC=	tetex-src-2.99.13.20050204-beta
+TETEX_SRC=	tetex-src-3.0
 VER_PTEX=	${PORTVERSION}
 VER_PTEXTEXMF=	2.3
 KANJICODE?=	euc
