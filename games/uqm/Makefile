@@ -26,12 +26,11 @@ COMMENT=	A port of the original Star Control 2 for 3DO consoles
 
 ONLY_FOR_ARCHS=	i386
 
-LIB_DEPENDS=	SDL_image:${PORTSDIR}/graphics/sdl_image \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_SDL=	yes
+USE_SDL=	image sdl
 USE_REINPLACE=	yes
 NO_INSTALL_MANPAGES=	yes
 

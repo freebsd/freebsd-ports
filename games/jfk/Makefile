@@ -13,11 +13,9 @@ MASTER_SITES=	http://relax.ath.cx/jfk/
 MAINTAINER=	stefan@fafoe.narf.at
 COMMENT=	A multiplayer 2D shoot'em up game
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
-USE_SDL=	yes
+USE_SDL=	image sdl
 
 .include <bsd.port.pre.mk>
 

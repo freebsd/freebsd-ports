@@ -13,13 +13,11 @@ MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A puzzle game similar to PipeMania
 
-LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 USE_REINPLACE=	yes
 
 MAN6=		pipenightdreams.6
