@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Upload
-PORTVERSION=	1.05
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI class for handling browser file uploads
 
 BUILD_DEPENDS=	${SITE_PERL}/HTTP/BrowserDetect.pm:${PORTSDIR}/www/p5-HTTP-BrowserDetect \
-		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
+		${SITE_PERL}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \
+		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
 PERL_CONFIGURE=	yes
 
