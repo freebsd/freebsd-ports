@@ -1,5 +1,14 @@
---- configure	Sun Aug  2 09:48:40 1998
-+++ configure.new	Fri Jun 16 19:59:15 2000
+--- configure.orig	Sun Aug  2 23:48:40 1998
++++ configure	Thu Nov 21 21:20:23 2002
+@@ -571,7 +571,7 @@
+ if test "${with_perl+set}" = set; then
+   withval="$with_perl"
+   perlprog=$with_perl
+-perlvers=`$perlprog -v | grep version | sed -e 's/.* version //' -e 's/ built.*//' -e 's/ with.*//'`
++perlvers=`$perlprog -e 'print $]'`
+ 
+ else
+   TMPFILE=/tmp/x.$$
 @@ -901,7 +901,6 @@
    GCC=yes
    ac_test_CFLAGS="${CFLAGS+set}"
