@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.a/a/}-src
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
-		nkf:${PORTSDIR}/japanese/nkf \
+BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
+		${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
@@ -24,10 +24,25 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/otojiro-fpw${PORTVERSION:S/.a/a/}
 DICT_PATH?=	/cdrom
 SRCFILE?=	otojiro.txt
-MAKE_ENV=	OTOJIRO_FILE=${DICT_PATH}/${SRCFILE}
 
-pre-extract::
-	@if [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
+# For eijiro included in a book sold by ALC Inc.
+# (http://www.alc.co.jp/alcshop/eng/eijiro/)
+.if exists(${DICT_PATH}/eijiro-original)
+BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+
+CDROM_PATH:=	${DICT_PATH}
+DICT_PATH:=	${WRKDIR}
+.else
+CDROM_PATH=	${NONEXISTENT}
+.endif
+
+MAKE_ENV:=	OTOJIRO_FILE=${DICT_PATH}/${SRCFILE}
+
+post-extract:
+	@if [ -f ${CDROM_PATH}/eijiro-original/*.exe ]; then \
+	  ${MKDIR} ${WRKDIR}; \
+	  lha xiw=${WRKDIR} ${CDROM_PATH}/eijiro-original/*.exe '*/${SRCFILE}'; \
+	elif [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
 	  ${ECHO} "###################################################"; \
 	  ${ECHO} "I cannot find a file ${DICT_PATH}/${SRCFILE}"; \
 	  ${ECHO} "Specify the Otojiro Dictionary file with the full path"; \
@@ -39,14 +54,9 @@ pre-extract::
 	  ${FALSE}; \
 	fi
 
-post-build:
-## To delete CR after NL
-	cd ${WRKSRC}; ${MV} catalogs.txt catalogs.txt.org; \
-	nkf -sSd catalogs.txt.org > catalogs.txt; \
-	fpwmake catalogs
-
 do-build:
-	cd ${WRKSRC}; ${ENV} ${MAKE_ENV} fpwmake
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} fpwmake; \
+	fpwmake catalogs
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/otojiro-fpw/otojiro/data
