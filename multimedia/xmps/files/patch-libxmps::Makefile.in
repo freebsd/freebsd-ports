@@ -9,6 +9,6 @@ $FreeBSD$
  
 -libxmps_la_LDFLAGS = -module -avoid-version
 +libxmps_la_LDFLAGS = -module
- libxmps_la_LIBADD = -pthread
+ libxmps_la_LIBADD = -lpthread
  
  libxmps_la_SOURCES =  libxmps_config.h libxmps_config.c libxmps_graph.c libxmps_events.c libxmps_video_conversion.c libxmps_xml.c libxmps.h libxmps.c
