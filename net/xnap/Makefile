@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	XNap
-PORTVERSION=	2.5.p1
-PORTREVISION=	1
+PORTVERSION=	2.5.r2
 CATEGORIES=	net audio java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
-DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
+#DISTNAME=	${PORTNAME:L}-${PORTVERSION:S/.p/-pre/:S/.b/-beta/}
+DISTNAME=	xnap-2.5r2
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
 
 USE_JAVA=	1.3+
-USE_SIZE=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR}
