@@ -3,17 +3,16 @@
 %%RUBY_SITELIBDIR%%/simpletuple.rb
 %%RUBY_SITELIBDIR%%/timerholder.rb
 %%RUBY_SITELIBDIR%%/tuplespace.rb
-%%RUBY_SITELIBDIR%%/drb/cgi_drb.rb
 %%RUBY_SITELIBDIR%%/drb/drb.rb
 %%RUBY_SITELIBDIR%%/drb/eq.rb
 %%RUBY_SITELIBDIR%%/drb/extserv.rb
 %%RUBY_SITELIBDIR%%/drb/extservm.rb
-%%RUBY_SITELIBDIR%%/drb/http.rb
 %%RUBY_SITELIBDIR%%/drb/observer.rb
 %%RUBY_SITELIBDIR%%/drb/rinda.rb
 %%RUBY_SITELIBDIR%%/drb/timeridconv.rb
 @dirrm %%RUBY_SITELIBDIR%%/drb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/cgi_drb.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dbiff.rb
@@ -35,6 +34,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holderc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holders.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/http.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/name.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/namec.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindac.rb
