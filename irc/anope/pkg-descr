@@ -1,0 +1,17 @@
+Anope is a set of Services for IRC networks that allows users to
+manage their nicks and channels in a secure and efficient way, and
+administrators to manage their network with powerful tools.
+
+Anope currently works with:
+  - DreamForge 4.6.7
+  - Bahamut 1.4.27 or later
+  - UnrealIRCd 3.1.1 or later (including 3.2)
+  - UltimateIRCd 2.8.2 or later (including 3.0.0)
+  - ViagraIRCd 1.3 or later
+  - Hybrid 7 or later
+  - PTlink 6.15 or later
+
+Anope could also work with some of the deamons derivated by the ones listed
+above.
+
+WWW: http://www.anope.org/
