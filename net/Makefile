@@ -485,6 +485,7 @@
     SUBDIR += poptop
     SUBDIR += pork
     SUBDIR += portfwd
+    SUBDIR += posadis
     SUBDIR += powerdns
     SUBDIR += pppload
     SUBDIR += pppoa

@@ -1,0 +1,27 @@
+Posadis is a DNS server project with the goal to create a free,
+reliable, portable, fast, lightweight, easy to use, standards compliant,
+and functionally complete, Domain Name System server implementation.
+
+The Top-10 of most important Posadis features:
+- Support for the standard DNS master file format. Posadis supports 
+  some BIND extensions as well. 
+- Support for zone transfers. Posadis is able to answer both AXFR and IXFR
+  queries (though it always sends the complete zone), and it is able to act as
+  a secondary using AXFR and IXFR as well. 
+- Support for DNS NOTIFY to ensure fast zone change propagation. 
+- Support for most standard RR types: A, NS, MD, MF, CNAME, SOA, NULL, WKS,
+  PTR, HINFO, MX, TXT, RP, AFSDB, PX, AAAA, SRV, NAPTR, A6 and DNAME. Posadis
+  can also tunnel RR types it doesn't recognize. 
+- Support for many platforms: both Windows and Unix-like platforms such as
+  Linux, FreeBSD and Mac OS X. 
+- Support for IPv6: listning on IPv6 sockets for both Windows and Unix, and
+  support for AAAA and A6 resource records and bitstring labels. 
+- "Tunnel zones": forward queries to other nameservers. 
+- "Hint zones": hint to other nameservers. Posadis can automatically update the
+  nameserver list for hint zones. 
+- Support for both UDP and TCP: you can specify on which IP addresses and ports
+  you want Posadis to listen. 
+- A concise and up-to-date user manual describing all of Posadis' features in
+  detail. 
+
+WWW:	http://posadis.sourceforge.net/
