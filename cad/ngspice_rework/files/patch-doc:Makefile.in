@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Dec 10 20:26:23 2001
++++ doc/Makefile.in	Mon Jan  7 16:54:16 2002
+@@ -69,7 +69,7 @@
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ OBJDUMP = @OBJDUMP@
+ OBJEXT = @OBJEXT@
+ PACKAGE = @PACKAGE@
