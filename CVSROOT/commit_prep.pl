@@ -85,11 +85,12 @@ sub write_line {
 }
 
 sub check_version {
-    local($i, $id, $rname, $version, $bareid);
+    local($id, $rname, $version, $bareid);
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
-    for ($i = 1; $i < 70; $i++) {
+    # requiring the header within the first 'n' lines isn't useful.
+    while (1) {
 	$pos = -1;
 	last if eof(FILE);
 	$line = <FILE>;
