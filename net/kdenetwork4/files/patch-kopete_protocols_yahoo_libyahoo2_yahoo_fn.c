@@ -1,19 +1,11 @@
---- kopete/protocols/yahoo/libyahoo2/libyahoo2.c	14 Jan 2004 02:07:29 -0000	1.18
-+++ kopete/protocols/yahoo/libyahoo2/libyahoo2.c	26 Jun 2004 00:37:08 -0000	1.18.2.3
-@@ -1816,6 +1816,8 @@ static void yahoo_process_auth_0x0b(stru
- 	 * challenge. */
- 
- 	shaUpdate(&ctx1, pass_hash_xor1, 64);
-+	if (j >= 3 )
-+		ctx1.sizeLo = 0x1ff;
- 	shaUpdate(&ctx1, magic_key_char, 4);
- 	shaFinal(&ctx1, digest1);
- 
-@@ -1905,6 +1907,8 @@ static void yahoo_process_auth_0x0b(stru
- 	 * challenge. */
- 
- 	shaUpdate(&ctx1, crypt_hash_xor1, 64);
-+	if (j >= 3 )
-+		ctx1.sizeLo = 0x1ff;
- 	shaUpdate(&ctx1, magic_key_char, 4);
- 	shaFinal(&ctx1, digest1);
+--- kopete/protocols/yahoo/libyahoo2/yahoo_fn.c	18 Jan 2004 20:03:39 -0000	1.1.2.1
++++ kopete/protocols/yahoo/libyahoo2/yahoo_fn.c	26 Jun 2004 00:37:08 -0000	1.1.2.3
+@@ -4386,7 +4386,7 @@ struct yahoo_fn yahoo_fntable[5][96] = 
+      { XOR, 0x77D64B90, 0 },
+      { BITFLD, (long)table_103, 0 },
+      { LOOKUP, (long)table_104, 0 },
+-     { MULADD, 0x7D1428CB, 0x89F6853D },
++     { MULADD, 0x7D1428CB, 0x3D },
+      { XOR, 0x6F872C49, 0 },
+      { XOR, 0x2E484655, 0 },
+      { MULADD, 0x1E3349F7, 0x41F5 },
