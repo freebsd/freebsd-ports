@@ -40,8 +40,6 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/richtext.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/static.elc
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/tinycustom.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/tinycustom.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%APEL_SETUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/apel
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu
