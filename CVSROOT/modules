@@ -3935,6 +3935,7 @@ nettoe		ports/games/nettoe
 newfs		src/sbin/newfs
 newfs_msdos	src/sbin/newfs_msdos
 newkey		src/usr.bin/newkey
+newkind		ports/games/newkind
 newlfs		src/sbin/newlfs
 newlib-m68k	ports/devel/newlib-m68k
 newmail		ports/mail/newmail
