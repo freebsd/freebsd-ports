@@ -9,9 +9,20 @@ PORTNAME=	proftpd
 PORTVERSION=	1.2.9
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
-		ftp://ftp.stikman.com/pub/proftpd/source/ \
-		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
-		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
+		ftp://ftp.stikman.com/pub/proftpd/ \
+		ftp://ftp.empora.de/pub/mirrors/ftp.proftpd.org/ \
+		ftp://ftp.fastorama.com/ \
+		ftp://ftp.middle-earth.it/proftpd/ \
+		ftp://ftp.dataguard.no/pub/proftpd/ \
+		ftp://spirit.bentel.sk/mirrors/Proftpd/ \
+		ftp://ftp.task.gda.pl/pub/proftpd/ \
+		ftp://mirror1.dataphone.se/pub/ProFTPD/ \
+		ftp://ftp.oss.eznetsols.org/proftpd/ \
+		ftp://ftp.ccp14.ac.uk/ccp14/ftp-mirror/programming/proftpd/ \
+		ftp://proftpd.networkedsystems.co.uk/ \
+		ftp://www.linuxceptional.com/proftpd/ \
+		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/ \
+		ftp://mirror.cybercomm.nl/ \
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon
@@ -84,17 +95,17 @@ PROFTPD_LIBS+=	-lssl -lcrypto
 
 # Keep this here below, in case similar constructs need to be made
 CONFIGURE_ENV+=	"LIBS=${PROFTPD_LIBS}"
- 
+
 .if !empty(MODULES)
-CONFIGURE_ARGS+= --with-modules=${MODULES}
+CONFIGURE_ARGS+=	--with-modules=${MODULES}
 .endif
 
 .if !empty(INCLUDEDIRS)
-CONFIGURE_ARGS+= --with-includes=${INCLUDEDIRS}
+CONFIGURE_ARGS+=	--with-includes=${INCLUDEDIRS}
 .endif
 
 .if !empty(LIBDIRS)
-CONFIGURE_ARGS+= --with-libraries=${LIBDIRS}
+CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 .endif
 
 pre-configure:
@@ -123,7 +134,6 @@ post-configure:
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/proftpd.sh > ${WRKSRC}/proftpd.sh
-
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
