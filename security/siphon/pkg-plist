@@ -1,0 +1,4 @@
+bin/siphon
+bin/siphon-report
+share/siphon/osprints.conf
+@dirrm share/siphon

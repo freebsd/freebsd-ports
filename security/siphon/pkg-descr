@@ -1,0 +1,8 @@
+Siphon is a passive OS fingerprinter which sniffs network traffic passing
+the local machine and uses characteristics of the TCP stream to identify
+the operating system running on the endpoints.
+
+In contrast to active fingerprinters like nmap and queso, no additional
+connections need to be made to the target system in order to fingerprint it.
+
+WWW: http://www.subterrain.net/projects/siphon/

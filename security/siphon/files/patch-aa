@@ -1,0 +1,11 @@
+--- log.c.orig	Thu May  4 12:00:00 2000
++++ log.c	Sat May  6 15:32:36 2000
+@@ -137,7 +137,7 @@
+   FILE *osprints;
+   static char line[80], *oswin, *osttl, *osdf, *os, hexed[10];
+   static int check = 0;
+-  osprints = fopen("osprints.conf","r");
++  osprints = fopen(OSPRINTSCONF,"r");
+ 
+   if(!osprints) {
+     perror("Unable to find osprints.conf\n");
