@@ -43,6 +43,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCAL_PFCTL%%|${LOCAL_PFCTL}|;	\
 	    s|%%LOCAL_SPAMD_CONF%%|${PREFIX}/etc/spamd.conf|'		\
 	    ${WRKSRC}/spamd-setup/spamd-setup.c
+	@${REINPLACE_CMD} -e 's|/etc/spamd.conf|${PREFIX}/etc/spamd.conf|' \
+	    ${WRKSRC}/spamd/spamd.8 ${WRKSRC}/spamd-setup/spamd-setup.8
 
 pre-su-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
