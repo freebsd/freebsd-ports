@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Jun 24 18:32:38 2004
++++ Makefile.in	Thu Jun 24 18:37:09 2004
+@@ -242,7 +242,7 @@
+ man_MANS = dspam.1 dspam_stats.1 dspam_corpus.1 dspam_clean.1 dspam_dump.1 \
+   dspam_merge.1
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = dspam.pc
+ EXTRA_DIST = autogen.sh RELEASE.NOTES CHANGELOG LICENSE example.c \
+   dspam-button.gif dspam.1 dspam_stats.1 dspam_corpus.1 dspam_clean.1 \
