@@ -19,6 +19,9 @@ include/KoMainWindowIface.h
 include/KoViewIface.h
 include/handler.h
 include/kcoloractions.h
+include/kformulacontainer.h
+include/kformuladocument.h
+include/kformulaview.h
 include/koApplication.h
 include/koChart.h
 include/koChild.h
@@ -81,6 +84,10 @@ lib/kde2/libcsvimport.la
 lib/kde2/libcsvimport.so
 lib/kde2/libdocbookexport.la
 lib/kde2/libdocbookexport.so
+lib/kde2/libgnumericexport.la
+lib/kde2/libgnumericexport.so
+lib/kde2/libgnumericimport.la
+lib/kde2/libgnumericimport.so
 lib/kde2/libhtmlexport.la
 lib/kde2/libhtmlexport.so
 lib/kde2/libhtmlimport.la
@@ -119,6 +126,10 @@ lib/kde2/libqproimport.la
 lib/kde2/libqproimport.so
 lib/kde2/librtfexport.la
 lib/kde2/librtfexport.so
+lib/kde2/libsvgexport.la
+lib/kde2/libsvgexport.so
+lib/kde2/libsvgimport.la
+lib/kde2/libsvgimport.so
 lib/kde2/libwmfimport.la
 lib/kde2/libwmfimport.so
 lib/kde2/libxfigimport.la
@@ -137,10 +148,6 @@ lib/kspread.la
 lib/kspread.so
 lib/kword.la
 lib/kword.so
-lib/libgnumericexport.la
-lib/libgnumericexport.so
-lib/libgnumericimport.la
-lib/libgnumericimport.so
 lib/libkdchart.la
 lib/libkdchart.so
 lib/libkdchart.so.0
@@ -298,7 +305,6 @@ share/apps/kformula/pics/rootindex.png
 share/apps/kformula/pics/split.png
 share/apps/kformula/pics/underl.png
 share/apps/kformula/pics/upalign.png
-share/apps/killustrator/kpartplugins/scan-killustrator.rc
 share/apps/kivio/autoloadStencils/Text.sml
 share/apps/kivio/autoloadStencils/Text.xpm
 share/apps/kivio/autoloadStencils/straight_connector.ksp
@@ -574,6 +580,7 @@ share/apps/kontour/icons/hicolor/16x16/actions/vmirror.png
 share/apps/kontour/icons/hicolor/16x16/apps/kontour.png
 share/apps/kontour/icons/hicolor/32x32/apps/kontour.png
 share/apps/kontour/icons/hicolor/48x48/apps/kontour.png
+share/apps/kontour/kpartplugins/scan-kontour.rc
 share/apps/kontour/templates/Simple/.directory
 share/apps/kontour/templates/Simple/.icon/Plain.png
 share/apps/kontour/templates/Simple/.source/Plain.kil
@@ -1025,48 +1032,88 @@ share/apps/kword/templates/Publishing/.directory
 share/apps/kword/templates/Publishing/.icon/SimpleLayout.png
 share/apps/kword/templates/Publishing/.source/SimpleLayout.kwt
 share/apps/kword/templates/Publishing/SimpleLayout.desktop
-share/doc/HTML/en/killustrator/align.png
-share/doc/HTML/en/killustrator/align2.png
-share/doc/HTML/en/killustrator/bezier.png
-share/doc/HTML/en/killustrator/blend_dialog.png
-share/doc/HTML/en/killustrator/colour.png
-share/doc/HTML/en/killustrator/common
-share/doc/HTML/en/killustrator/ellipse.png
-share/doc/HTML/en/killustrator/export.png
-share/doc/HTML/en/killustrator/freehand.png
-share/doc/HTML/en/killustrator/index.cache.bz2
-share/doc/HTML/en/killustrator/index.docbook
-share/doc/HTML/en/killustrator/line.png
-share/doc/HTML/en/killustrator/logo.png
-share/doc/HTML/en/killustrator/movepoint.png
-share/doc/HTML/en/killustrator/newpoint.png
-share/doc/HTML/en/killustrator/open_dialog.png
-share/doc/HTML/en/killustrator/pfeil.png
-share/doc/HTML/en/killustrator/point.png
-share/doc/HTML/en/killustrator/polygon-setup.png
-share/doc/HTML/en/killustrator/polygon.png
-share/doc/HTML/en/killustrator/rect.png
-share/doc/HTML/en/killustrator/rmpoint.png
-share/doc/HTML/en/killustrator/save_dialog.png
-share/doc/HTML/en/killustrator/schichten.png
-share/doc/HTML/en/killustrator/text.png
-share/doc/HTML/en/killustrator/verteilen.png
-share/doc/HTML/en/killustrator/zoom.png
 share/doc/HTML/en/koffice/README.documentation
 share/doc/HTML/en/koffice/common
 share/doc/HTML/en/koffice/index.cache.bz2
 share/doc/HTML/en/koffice/index.docbook
+share/doc/HTML/en/kontour/align.png
+share/doc/HTML/en/kontour/align2.png
+share/doc/HTML/en/kontour/bezier.png
+share/doc/HTML/en/kontour/blend_dialog.png
+share/doc/HTML/en/kontour/colour.png
+share/doc/HTML/en/kontour/common
+share/doc/HTML/en/kontour/ellipse.png
+share/doc/HTML/en/kontour/export.png
+share/doc/HTML/en/kontour/freehand.png
+share/doc/HTML/en/kontour/index.cache.bz2
+share/doc/HTML/en/kontour/index.docbook
+share/doc/HTML/en/kontour/line.png
+share/doc/HTML/en/kontour/logo.png
+share/doc/HTML/en/kontour/movepoint.png
+share/doc/HTML/en/kontour/newpoint.png
+share/doc/HTML/en/kontour/open_dialog.png
+share/doc/HTML/en/kontour/pfeil.png
+share/doc/HTML/en/kontour/point.png
+share/doc/HTML/en/kontour/polygon-setup.png
+share/doc/HTML/en/kontour/polygon.png
+share/doc/HTML/en/kontour/rect.png
+share/doc/HTML/en/kontour/rmpoint.png
+share/doc/HTML/en/kontour/save_dialog.png
+share/doc/HTML/en/kontour/schichten.png
+share/doc/HTML/en/kontour/text.png
+share/doc/HTML/en/kontour/verteilen.png
+share/doc/HTML/en/kontour/zoom.png
 share/doc/HTML/en/koshell/common
 share/doc/HTML/en/koshell/index.cache.bz2
 share/doc/HTML/en/koshell/index.docbook
+share/doc/HTML/en/kpresenter/barmenus.png
+share/doc/HTML/en/kpresenter/barstyle1.png
+share/doc/HTML/en/kpresenter/barstyle2.png
+share/doc/HTML/en/kpresenter/barstyle3.png
+share/doc/HTML/en/kpresenter/barstyle4.png
+share/doc/HTML/en/kpresenter/barstyle5.png
+share/doc/HTML/en/kpresenter/barstyle6.png
+share/doc/HTML/en/kpresenter/barstyle7.png
 share/doc/HTML/en/kpresenter/common
 share/doc/HTML/en/kpresenter/faq.docbook
 share/doc/HTML/en/kpresenter/guides.docbook
 share/doc/HTML/en/kpresenter/index.cache.bz2
 share/doc/HTML/en/kpresenter/index.docbook
+share/doc/HTML/en/kpresenter/menuedit.png
+share/doc/HTML/en/kpresenter/menuextra.png
+share/doc/HTML/en/kpresenter/menufile.png
+share/doc/HTML/en/kpresenter/menuhelp.png
+share/doc/HTML/en/kpresenter/menuinsert.png
 share/doc/HTML/en/kpresenter/menus.docbook
+share/doc/HTML/en/kpresenter/menuscreen.png
+share/doc/HTML/en/kpresenter/menutext.png
+share/doc/HTML/en/kpresenter/menutools.png
+share/doc/HTML/en/kpresenter/menuview.png
 share/doc/HTML/en/kpresenter/options.docbook
 share/doc/HTML/en/kpresenter/screen.docbook
+share/doc/HTML/en/kpresenter/tut01.png
+share/doc/HTML/en/kpresenter/tut02.png
+share/doc/HTML/en/kpresenter/tut03.png
+share/doc/HTML/en/kpresenter/tut04.png
+share/doc/HTML/en/kpresenter/tut05.png
+share/doc/HTML/en/kpresenter/tut06.png
+share/doc/HTML/en/kpresenter/tut07.png
+share/doc/HTML/en/kpresenter/tut08.png
+share/doc/HTML/en/kpresenter/tut09.png
+share/doc/HTML/en/kpresenter/tut10.png
+share/doc/HTML/en/kpresenter/tut11.png
+share/doc/HTML/en/kpresenter/tut12.png
+share/doc/HTML/en/kpresenter/tut13.png
+share/doc/HTML/en/kpresenter/tut14.png
+share/doc/HTML/en/kpresenter/tut15.png
+share/doc/HTML/en/kpresenter/tut16.png
+share/doc/HTML/en/kpresenter/tut17.png
+share/doc/HTML/en/kpresenter/tut18.png
+share/doc/HTML/en/kpresenter/tut19.png
+share/doc/HTML/en/kpresenter/tut20.png
+share/doc/HTML/en/kpresenter/tut21.png
+share/doc/HTML/en/kpresenter/tut22.png
+share/doc/HTML/en/kpresenter/tut23.png
 share/doc/HTML/en/kpresenter/tutorial.docbook
 share/doc/HTML/en/krayon/airbrush.png
 share/doc/HTML/en/krayon/colorpicker.png
@@ -1275,6 +1322,8 @@ share/doc/HTML/en/kword/ok.png
 share/doc/HTML/en/kword/opendlg.png
 share/doc/HTML/en/kword/opt1.png
 share/doc/HTML/en/kword/opt2.png
+share/doc/HTML/en/kword/optkb.png
+share/doc/HTML/en/kword/opttb.png
 share/doc/HTML/en/kword/paratb.png
 share/doc/HTML/en/kword/part-kchart.png
 share/doc/HTML/en/kword/part-kformula.png
@@ -1432,6 +1481,7 @@ share/mimelnk/application/x-kugar.desktop
 share/mimelnk/application/x-kword.desktop
 share/mimelnk/application/x-quattropro.desktop
 share/mimelnk/image/x-msod.desktop
+share/mimelnk/image/x-svg.desktop
 share/mimelnk/image/x-wmf.desktop
 share/mimelnk/image/x-xfig.desktop
 share/mimelnk/text/x-csv.desktop
@@ -1439,6 +1489,8 @@ share/mimelnk/text/x-gnumeric.desktop
 share/services/ki_rtf_export.desktop
 share/services/killustrator_applixgraphic_import.desktop
 share/services/killustrator_msod_import.desktop
+share/services/killustrator_svg_export.desktop
+share/services/killustrator_svg_import.desktop
 share/services/killustrator_wmf_import.desktop
 share/services/killustrator_xfig_import.desktop
 share/services/kivioconnectortool.desktop
@@ -1464,7 +1516,6 @@ share/services/kword_ascii_export.desktop
 share/services/kword_ascii_import.desktop
 share/services/kword_docbook_export.desktop
 share/services/kword_html_export.desktop
-share/services/kword_html_export_dia.desktop
 share/services/kword_html_import.desktop
 share/services/kword_latex_export.desktop
 share/services/kword_rtf_export.desktop
@@ -1474,7 +1525,6 @@ share/services/ole_winword97_import.desktop
 share/servicetypes/kochart.desktop
 share/servicetypes/kofficepart.desktop
 share/servicetypes/kofilter.desktop
-share/servicetypes/kofilterdialog.desktop
 share/servicetypes/koplugin.desktop
 share/servicetypes/kotool.desktop
 share/templates/.source/Illustration.kil
@@ -1508,8 +1558,8 @@ share/templates/TextDocument.desktop
 @dirrm share/doc/HTML/en/krayon
 @dirrm share/doc/HTML/en/kpresenter
 @dirrm share/doc/HTML/en/koshell
+@dirrm share/doc/HTML/en/kontour
 @dirrm share/doc/HTML/en/koffice
-@dirrm share/doc/HTML/en/killustrator
 @dirrm share/apps/kword/templates/Publishing/.source
 @dirrm share/apps/kword/templates/Publishing/.icon
 @dirrm share/apps/kword/templates/Publishing
@@ -1577,6 +1627,7 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kontour/templates/Simple/.icon
 @dirrm share/apps/kontour/templates/Simple
 @dirrm share/apps/kontour/templates
+@dirrm share/apps/kontour/kpartplugins
 @dirrm share/apps/kontour/icons/hicolor/48x48/apps
 @dirrm share/apps/kontour/icons/hicolor/48x48
 @dirrm share/apps/kontour/icons/hicolor/32x32/apps
@@ -1617,8 +1668,6 @@ share/templates/TextDocument.desktop
 @dirrm share/apps/kivio/icons
 @dirrm share/apps/kivio/autoloadStencils
 @dirrm share/apps/kivio
-@dirrm share/apps/killustrator/kpartplugins
-@dirrm share/apps/killustrator
 @dirrm share/apps/kformula/pics
 @dirrm share/apps/kformula
 @dirrm share/apps/kchart/pics
