@@ -35,7 +35,7 @@ MAN1=	gnp.1
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(use_gtkhtml=\)yes|\1no|g' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|\(use_gtkhtml=\)yes|\1no|g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-extract:
