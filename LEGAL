@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.9 1995/05/03 12:29:56 asami Exp $
+# $Id: LEGAL,v 1.10 1995/05/04 21:36:36 torstenb Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -16,7 +16,7 @@ Such ports are listed below:
 Dist			Port			Why
 ------------------------------------------------------------------------------
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
-ivs3.4-src.tar.gz	ports/utils/ivs		Crypto; export-controlled
+ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 maxima-5.0-beta		ports/math/maxima	License required
 pgp262s.zip		ports/utils/pgp*	Various locality restrictions
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
