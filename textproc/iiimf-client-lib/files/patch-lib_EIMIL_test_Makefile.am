@@ -1,0 +1,23 @@
+--- lib/EIMIL/test/Makefile.am.orig	Wed Sep  8 22:08:11 2004
++++ lib/EIMIL/test/Makefile.am	Wed Sep  8 22:09:19 2004
+@@ -1,14 +1,14 @@
+ TEST_CFLAGS = -ggdb -DDEBUG 
+ EIMILLIB = -L.. -lEIMIL
+-parsertest_CFLAGS = $(TEST_CFLAGS)
++parsertest_CFLAGS = $(TEST_CFLAGS) $(THREAD_CXX_CFLAGS)
+ parsertest_SOURCES = parsertest.c
+-parsertest_LDADD = $(EIMILLIB)
+-arithtest_CFLAGS = $(TEST_CFLAGS)
++parsertest_LDADD = $(EIMILLIB) $(THREAD_LIBS)
++arithtest_CFLAGS = $(TEST_CFLAGS) $(THREAD_CXX_CFLAGS)
+ arithtest_SOURCES = arithtest.c
+-arithtest_LDADD = $(EIMILLIB)
+-flowtest_CFLAGS = $(TEST_CFLAGS)
++arithtest_LDADD = $(EIMILLIB) $(THREAD_LIBS)
++flowtest_CFLAGS = $(TEST_CFLAGS) $(THREAD_CXX_CFLAGS)
+ flowtest_SOURCES = flowtest.c
+-flowtest_LDADD = $(EIMILLIB)
++flowtest_LDADD = $(EIMILLIB) $(THREAD_LIBS)
+ bin_PROGRAMS = parsertest arithtest flowtest
+ 
+ test: parsertest arithtest flowtest

@@ -1,0 +1,20 @@
+--- lib/iiimcf/test/check/Makefile.am.orig	Wed Mar 26 02:24:03 2003
++++ lib/iiimcf/test/check/Makefile.am	Wed Sep  8 17:16:00 2004
+@@ -1,13 +1,13 @@
+ IIIMCF_DIR = ../..
+ TEST_LIBS = -L$(IIIMCF_DIR) -liiimcf \
+-            -L$(IIIMCF_DIR)/../iiimp -liiimp
++            -L$(LOCALBASE)/lib -liiimp
+ TEST_LIBPATH = $(IIIMCF_DIR)/.libs:$(IIIMCF_DIR)/../EIMIL/.libs:$(IIIMCF_DIR)/../iiimp/.libs
+ basic_SOURCES = basic.c common.c
+-basic_LDADD = $(TEST_LIBS)
++basic_LDADD = $(TEST_LIBS) $(THREAD_LIBS)
+ sendkey1_SOURCES = sendkey1.c common.c
+-sendkey1_LDADD = $(TEST_LIBS)
++sendkey1_LDADD = $(TEST_LIBS) $(THREAD_LIBS)
+ sendkey2_SOURCES = sendkey2.c common.c
+-sendkey2_LDADD = $(TEST_LIBS)
++sendkey2_LDADD = $(TEST_LIBS) $(THREAD_LIBS)
+ noinst_PROGRAMS = basic sendkey1 sendkey2
+ 
+ TEST_SETLDPATH = env LD_LIBRARY_PATH=$(TEST_LIBPATH):$$LD_LIBRARY_PATH
