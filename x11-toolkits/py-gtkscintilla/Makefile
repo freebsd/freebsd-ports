@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	py-gtkscintilla
-PORTVERSION=	0.1.1
+PORTVERSION=	0.3
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.moleskine.f2s.com/
+MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	PyGtkScintilla-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
