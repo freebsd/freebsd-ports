@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	toolame
-PORTVERSION=	0.2k
+PORTVERSION=	0.2l
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
-DOC_FILES=	CHANGES COPYING FUTURE GPL HISTORY README README.VBR
+DOC_FILES=	FUTURE HISTORY LGPL.txt README
 
 pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)
@@ -46,10 +46,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -E -e \
 		's@\$$\((ARCH|OPTIM|WARNINGS)\)@@g' \
-		${WRKSRC}/Makefile
-# we can't rely on existence of _sincos in gcc
-	@${REINPLACE_CMD} -E \
-		-e 's|-DSINCOS||' \
 		${WRKSRC}/Makefile
 
 post-configure:
