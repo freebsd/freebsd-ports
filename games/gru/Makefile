@@ -16,14 +16,12 @@ MAINTAINER=	hym@cocoa.freemail.ne.jp
 USE_IMAKE=	yes
 
 MAN1=		gru.1
-MANCOMPRESSED=	no
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gru ${PREFIX}/bin
-	@cp ${WRKSRC}/gru.man ${WRKSRC}/gru.1
-	@${INSTALL_MAN} ${WRKSRC}/gru.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/gru.1.html ${PREFIX}/lib/X11/doc/html
-	@install -d ${PREFIX}/share/doc/gru_8087
-	@install -c -m 444 ${WRKSRC}/README.jp ${PREFIX}/share/doc/gru_8087
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/ja/gru
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.jp ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
