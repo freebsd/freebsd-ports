@@ -53,10 +53,6 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_90_unix.tgz
 .endif
 
-.if ${OSVERSION} > 502010
-BROKEN=		"Does not compile on 5-current"
-.endif
-
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_NR=		645
