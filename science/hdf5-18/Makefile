@@ -1,37 +1,30 @@
-# New ports collection makefile for:	HDF_lib
-# Date created:		17 November 1996
-# Whom:			mi
+# ex:ts=8
+# New ports collection makefile for:	HDF5
+# Date created:			Jul 7, 2002
+# Whom:				ijliao
 #
 # $FreeBSD$
 #
 
-PORTNAME=	hdf
-PORTVERSION=	4.1r5
+PORTNAME=	hdf5
+PORTVERSION=	1.4.4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/tar/
-DISTNAME=	HDF${PORTVERSION}
+MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/HDF5/hdf5-${PORTVERSION}/src/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
-
-MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
-MAN3=		gr_chunk.3
-MANCOMPRESSED=	maybe
-
-MAKE_ARGS=	PREFIX="${PREFIX}" -j 2
+USE_REINPLACE=	yes
+USE_PERL5=	yes
+USE_OPENSSL=	yes
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-cxx --enable-production \
+		--enable-threadsafe --disable-debug \
+		--with-ssl --with-pthread
+INSTALLS_SHLIB=	yes
 
 post-patch:
-	${RM} -rf ${WRKSRC}/hdf/jpeg
-	${RM} -rf ${WRKSRC}/hdf/zlib
-
-do-configure:
-	${CP} -rp ${FILESDIR}/Makefile ${FILESDIR}/hdf \
-		${FILESDIR}/mfhdf ${FILESDIR}/man ${WRKSRC}
-	${LN} -s config/netcdf-fbsd.h ${WRKSRC}/mfhdf/libsrc/netcdf.h
-	${LN} -s netcdf-fbsd.inc ${WRKSRC}/mfhdf/fortran/config/netcdf.inc
-
-test: build
-	cd ${WRKSRC}; ${MAKE} test
+	@${REINPLACE_CMD} -e "s/-lpthread/${PTHREAD_LIBS}/g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
