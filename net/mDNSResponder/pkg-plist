@@ -3,7 +3,6 @@ bin/mDNSIdentify
 bin/mDNSNetMonitor
 bin/mDNSProxyResponderPosix
 bin/mDNSResponderPosix
-etc/rc.d/mdns.sh
 include/dns_sd.h
 lib/libdns_sd.so
 lib/libdns_sd.so.1
