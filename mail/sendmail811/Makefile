@@ -21,6 +21,7 @@ NO_PACKAGE=	"sendmail included in base system"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 PLIST=		${WRKDIR}/.PLIST.more
+DOCS=		KNOWNBUGS LICENSE PGPKEYS README RELEASE_NOTES
 
 # Options to define Features:
 #
@@ -104,6 +105,11 @@ pre-install:
 	@cd ${WRKSRC} && find -d cf -type d | \
 	${AWK} '{print "@dirrm share/sendmail/" $$1}' >>${PLIST}
 	@${ECHO} "@dirrm share/sendmail" >>${PLIST}
+.for i in ${DOCS}
+	@${ECHO} ${i} | \
+	${AWK} '{print "share/doc/sendmail/" $$1}' >>${PLIST}
+.endfor
+	@${ECHO} "@dirrm share/doc/sendmail" >>${PLIST}
 .endif
 
 .if defined(SENDMAIL_WITH_MILTER)
@@ -143,9 +149,14 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/*/${i} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/sendmail
+	${MKDIR} ${PREFIX}/share/sendmail ${PREFIX}/share/doc/sendmail
 	@cd ${WRKSRC}; ${TAR} cf - cf |\
 		(cd ${PREFIX}/share/sendmail; ${TAR} xf -)
+	@cd ${WRKSRC}; ${CP} ${DOCS} ${PREFIX}/share/doc/sendmail/
+.if defined(SENDMAIL_WITH_MILTER)
+	${INSTALL_DATA} ${WRKSRC}/libmilter/README \
+		${PREFIX}/share/doc/sendmail/MILTER
+.endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
@@ -157,7 +168,8 @@ mailer.conf:
 	-e "s=^mailq[ 	]*/.*$$=mailq		${SENDMAIL}=" \
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
 	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
-	${MV} ${DESTDIR}/etc/mail/mailer.conf.new ${DESTDIR}/etc/mail/mailer.conf
+	${MV} ${DESTDIR}/etc/mail/mailer.conf.new \
+		${DESTDIR}/etc/mail/mailer.conf
 .endif
 
 .include <bsd.port.mk>
