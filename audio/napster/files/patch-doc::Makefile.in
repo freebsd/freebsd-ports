@@ -1,0 +1,27 @@
+--- doc/Makefile.in.orig	Wed Jun 23 11:20:36 2004
++++ doc/Makefile.in	Wed Jun 23 11:22:22 2004
+@@ -124,7 +124,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ EXTRA_DIST = nap.1.in userguide.html napster.txt
+-htmldir = $(prefix)/doc/nap
++htmldir = $(prefix)/share/doc/nap
+ man_MANS = nap.1
+ html_DATA = userguide.html
+ all: all-am
+@@ -208,6 +208,7 @@
+ 	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
+ 	done
+ install-htmlDATA: $(html_DATA)
++.ifndef(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkdir_p) $(DESTDIR)$(htmldir)
+ 	@list='$(html_DATA)'; for p in $$list; do \
+@@ -216,6 +217,7 @@
+ 	  echo " $(htmlDATA_INSTALL) $$d$$p $(DESTDIR)$(htmldir)/$$f"; \
+ 	  $(htmlDATA_INSTALL) $$d$$p $(DESTDIR)$(htmldir)/$$f; \
+ 	done
++.endif
+ 
+ uninstall-htmlDATA:
+ 	@$(NORMAL_UNINSTALL)
