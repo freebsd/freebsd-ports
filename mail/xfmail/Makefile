@@ -18,6 +18,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-dead-keys --with-xkb-dead-keys
 MAN1=		xfmail.1
 
 .include <bsd.port.mk>
