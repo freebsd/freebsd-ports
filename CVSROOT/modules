@@ -1827,6 +1827,7 @@ gnomepm		ports/misc/gnomepm
 gnomeprint	ports/print/gnomeprint
 gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
+gnomespell	ports/textproc/gnomespell
 gnometelnet	ports/net/gnometelnet
 gnomeuserdocs	ports/misc/gnomeuserdocs
 gnomeutils	ports/misc/gnomeutils
