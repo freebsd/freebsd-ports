@@ -114,7 +114,7 @@ post-patch:
 # use libgnugetopt
 .if ${OSVERSION} < 500041
 	@${REINPLACE_CMD} -E -e \
-		s'|(-lm)|\1 -lgnugetopt|' \
+		's|(-lm)|\1 -lgnugetopt|' \
 		${WRKSRC}/util/iptv/Makefile.in
 .endif
 # do not install manm man pages
