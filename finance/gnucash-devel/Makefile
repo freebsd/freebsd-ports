@@ -7,6 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.6.8
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
