@@ -9,7 +9,7 @@ PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
 PORTREVISION=	0
 CATEGORIES=	www security
-MASTER_SITES=	http://www.apache.org/dist/ \
+MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.modssl.org/source/ \
 		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
