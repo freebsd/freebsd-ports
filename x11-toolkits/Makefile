@@ -129,6 +129,7 @@
     SUBDIR += ruby-qt2table
     SUBDIR += ruby-tk
     SUBDIR += scintilla
+    SUBDIR += sdl_gui
     SUBDIR += slingshot
     SUBDIR += thinice
     SUBDIR += tix
