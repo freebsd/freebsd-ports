@@ -1,0 +1,13 @@
+XParam is a general-purpose tool for parameter handling in C++. 
+
+It allows object serialization and deserialization in a format that is
+human-readable and -writeable, and is unaffected by issues of word-size
+and endianity. The XParam format is also not confused by objects containing
+pointers: it saves the objects in such a manner that their conceptual
+contents can be restored perfectly.
+
+For this reason, XParam provides an excellent tool for cross-program and
+cross-platform communication. In future, XParam may also be extended to
+allow cross-language communication, but for now it is only available in C++.
+
+WWW: http://xparam.sourceforge.net/
