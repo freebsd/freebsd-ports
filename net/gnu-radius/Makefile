@@ -5,14 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-radius
-PORTVERSION=	0.96.3
+PORTVERSION=	0.96.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	radius
 
 MAINTAINER=	lance@evitel.net
-
-BROKEN=		"Does not compile"
 
 #MAKEFILE=	Makefile
 
