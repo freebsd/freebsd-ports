@@ -6,7 +6,6 @@ man/cat1/transtab.1
 man/cat1/transiso.1
 man/cat1/checkiso.1
 man/cat1/transce8.1
-lib/trans/iso10646
 lib/trans/tables/adobeiso
 lib/trans/tables/adobestd
 lib/trans/tables/adobesym
@@ -60,7 +59,6 @@ lib/trans/tables/hp48
 lib/trans/tables/hproman8
 lib/trans/tables/hproman8.net
 lib/trans/tables/iso646.ca
-lib/trans/tables/koi8-r
 lib/trans/tables/iso646.ch
 lib/trans/tables/iso646.de
 lib/trans/tables/iso646.es
@@ -83,6 +81,7 @@ lib/trans/tables/iso8859.6
 lib/trans/tables/iso8859.7
 lib/trans/tables/iso8859.8
 lib/trans/tables/iso8859.9
+lib/trans/tables/koi8-r
 lib/trans/tables/koi8-r.net
 lib/trans/tables/mslinedr
 lib/trans/tables/nextstep.enc
@@ -146,7 +145,6 @@ lib/trans/xlt/hp48
 lib/trans/xlt/hproman8
 lib/trans/xlt/hproman8.net
 lib/trans/xlt/iso646.ca
-lib/trans/xlt/koi8-r
 lib/trans/xlt/iso646.ch
 lib/trans/xlt/iso646.de
 lib/trans/xlt/iso646.es
@@ -169,6 +167,7 @@ lib/trans/xlt/iso8859.6
 lib/trans/xlt/iso8859.7
 lib/trans/xlt/iso8859.8
 lib/trans/xlt/iso8859.9
+lib/trans/xlt/koi8-r
 lib/trans/xlt/koi8-r.net
 lib/trans/xlt/mslinedr
 lib/trans/xlt/nextstep.enc
@@ -199,10 +198,13 @@ lib/trans/doc/other.inf
 lib/trans/doc/sources
 lib/trans/doc/todo
 lib/trans/doc/winother.inf
+lib/trans/one
+lib/trans/iso
 lib/trans/checkall
 lib/trans/mkbintab
 lib/trans/mklist
 lib/trans/encoding.lis
+lib/trans/iso10646
 lib/trans/trans.c
 lib/trans/trans.h
 lib/trans/trans.man
