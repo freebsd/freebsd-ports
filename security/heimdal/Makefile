@@ -45,6 +45,8 @@ CONFIGURE_ARGS+=	--without-x
 
 .if defined(HEIMDAL_HOME)
 PREFIX=				${HEIMDAL_HOME}
+.else
+CONFLICTS=			wu-ftpd-[0-9]* wu-ftpd+ipv6-[0-9]*
 .endif
 
 INFO=				heimdal

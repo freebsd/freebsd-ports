@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A replacement ftp server for Un*x systems
 
+CONFLICTS=	wu-ftpd-[0-9]* heimdal-[0-9]*
+
 USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-noop --disable-numericuid  --enable-nlst-dirs \
