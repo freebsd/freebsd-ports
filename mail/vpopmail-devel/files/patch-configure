@@ -1,34 +1,33 @@
---- configure.orig	Fri Oct 17 01:12:22 2003
-+++ configure	Sat Nov  1 14:01:27 2003
-@@ -20,6 +20,10 @@
- ac_help="$ac_help
-   --enable-qmail-newmrh=path Full path to qmail-newmrh program"
- ac_help="$ac_help
-+  --enable-spamassassin=path Enable SpamAssassin. Full path to spamc program. default /usr/local/bin/spamc"
-+ac_help="$ac_help
+--- configure.orig	Mon Feb  2 06:24:19 2004
++++ configure	Mon Feb  2 10:10:12 2004
+@@ -846,6 +846,8 @@
+   --enable-qmail-newu=PATH   Full path to qmail-newu program.
+   --enable-qmail-inject=PATH Full path to qmail-inject program.
+   --enable-qmail-newmrh=PATH Full path to qmail-newmrh program.
++  --enable-spamassassin=PATH Enable SpamAssassin. Full path to spamc program. default /usr/local/bin/spamc"
 +  --enable-spam-threshold=# or n Automatically delete messages that score more than # spam hits"
-+ac_help="$ac_help
-   --enable-vpopuser=vpopmail   user vchkpw was installed as."
- ac_help="$ac_help
-   --enable-vpopgroup=vchkpw   group vchkpw was installed as."
-@@ -1317,7 +1321,7 @@
-   ;;
- esac
+   --enable-vpopuser=USER     User name allocated to vpopmail vpopmail.
+   --enable-vpopgroup=GROUP   Group name allocated to vpopmail vchkpw.
+   --enable-roaming-users     Enable POP-before-SMTP functionality.
+@@ -5097,7 +5099,7 @@
+ 
+ #----------------------------------------------------------------------
  
 -if test `$idcommand` != "0"
 +if false && test `$idcommand` != "0"
  then
-     echo "configure: warning: === vpopmail must be configured as root. ===" 1>&2
-     echo "configure: warning: === please switch to the root user and  ===" 1>&2
-@@ -1446,6 +1450,49 @@
- EOF
- 
+   { echo "$as_me:$LINENO: WARNING: === vpopmail must be configured as root. ===" >&5
+ echo "$as_me: WARNING: === vpopmail must be configured as root. ===" >&2;}
+@@ -5227,19 +5229,50 @@
+     ;;
+ esac
  
 +# Check whether --enable-spamassassin or --disable-spamassassin was given.
 +if test "${enable_spamassassin+set}" = set; then
 +  enableval="$enable_spamassassin"
 +  spamc="$enableval"
-+
+ 
+-#----------------------------------------------------------------------
 +  case $spamc in
 +  1*|y*|Y*)
 +      spamc="/usr/local/bin/spamc"
@@ -51,9 +50,17 @@
 +else
 +
 +                        ENABLE_SPAM_THRESHOLD=0
-+
-+fi
-+
+ 
+-if test ! -d $vpopmaildir/etc
+-then
+-  mkdir $vpopmaildir/etc
+-  chown $vpopmailuid "$vpopmaildir"/etc
+-  chgrp $vpopmailgid "$vpopmaildir"/etc
+-  chmod 755 "$vpopmaildir"/etc
+-  { echo "$as_me:$LINENO: WARNING: making a vpopmail etc directory " >&5
+-echo "$as_me: WARNING: making a vpopmail etc directory " >&2;}
+ fi
+ 
 +
 +case $ENABLE_SPAM_THRESHOLD in
 +0*|n*|N*)
@@ -67,41 +74,29 @@
 +esac
 +fi
 +
++
+ #----------------------------------------------------------------------
  
- vpopuser="vpopmail"
- # Check whether --enable-vpopuser or --disable-vpopuser was given.
-@@ -1601,15 +1648,6 @@
- EOF
- 
- 
--if test ! -d $vpopmaildir/etc
--then 
--	mkdir $vpopmaildir/etc
--	chown $vpopmailuid "$vpopmaildir"/etc 
--	chgrp $vpopmailgid "$vpopmaildir"/etc 
--        chmod 755 "$vpopmaildir"/etc
--        echo "configure: warning: making a vpopmail etc directory " 1>&2
--fi
--
- # Check whether --enable-roaming-users or --disable-roaming-users was given.
- if test "${enable_roaming_users+set}" = set; then
-   enableval="$enable_roaming_users"
-@@ -1671,17 +1709,7 @@
+ echo "$as_me:$LINENO: checking whether we can locate the qmail directory" >&5
+@@ -5705,20 +5738,7 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
 -else
--  
--        if test "$tcpserver_file" = ""
--        then
--	    echo "127.:allow,RELAYCLIENT=\"\"" > "$vpopmaildir"/etc/tcp.smtp
--    	    tcpserver_file="$vpopmaildir"/etc/tcp.smtp
--	
--            echo "configure: warning: Unable to find your tcpserver relay file." 1>&2
--            echo "configure: warning: Creating tcp.smtp in "$vpopmaildir"/etc/tcp.smtp." 1>&2
--        fi
--     
+-
+-            if test "$tcpserver_file" = ""
+-            then
+-                { echo "$as_me:$LINENO: WARNING: Unable to find your tcpserver relay file." >&5
+-echo "$as_me: WARNING: Unable to find your tcpserver relay file." >&2;}
+-                { echo "$as_me:$LINENO: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&5
+-echo "$as_me: WARNING: Creating tcp.smtp in \"$vpopmaildir\"/etc/tcp.smtp." >&2;}
+-
+-                echo "127.:allow,RELAYCLIENT=\"\"" > "$vpopmaildir"/etc/tcp.smtp
+-                tcpserver_file="$vpopmaildir"/etc/tcp.smtp
+-            fi
+-
+-
 +  echo "127.:allow,RELAYCLIENT=\"\"" > ${VCFGDIR}/tcp.smtp
- fi
+ fi;
  
- cat >> confdefs.h <<EOF
+     if test ! -f "$tcpserver_file"

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	5.3.30
-PORTREVISION=	1
+PORTVERSION=	5.4.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -61,7 +60,6 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 #
 # Set these to the values you'd prefer
 #
-# HARDQUOTA     - size of hard quota, or 'n' for no hard quota
 # RELAYCLEAR    - time in minutes before clearing relay hole (requires roaming)
 # SPAM_THRESHOLD - minimum score required to delete spam messages (requires spamassassin)
 # DEFAULT_DOMAIN - default domain for non-vhost lookups
@@ -122,24 +120,23 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITH_SYBASE_DB  - the name of the Sybase database to connect to (vpopmail)
 #
 
-HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
 SPAM_THRESHOLD?=15
 LOGLEVEL?=	y
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-mysql=y \
+CONFIGURE_ARGS+=	--enable-auth-module=mysql \
 			--enable-incdir=${LOCALBASE}/include/mysql \
 			--enable-libdir=${LOCALBASE}/lib/mysql
 .if defined(WITH_MYSQL_REPLICATION)
-CONFIGURE_ARGS+=	--enable-mysql-replication=y
+CONFIGURE_ARGS+=	--enable-mysql-replication
 .endif
 .if defined(WITH_MYSQL_LOG)
-CONFIGURE_ARGS+=	--enable-mysql-logging=y
+CONFIGURE_ARGS+=	--enable-mysql-logging
 .endif
 .if defined(WITH_MYSQL_LIMITS)
-CONFIGURE_ARGS+=	--enable-mysql-limits=y
+CONFIGURE_ARGS+=	--enable-mysql-limits
 .endif
 
 WITH_MYSQL_SERVER?=		localhost
@@ -161,10 +158,10 @@ WITH_PGSQL=	yes
 .if defined(WITH_PGSQL)
 POSTGRESQL_PORT?=	databases/postgresql-client
 LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=	--enable-postgres=y
+CONFIGURE_ARGS+=	--enable-auth-module=pgsql
 
 .if defined(WITH_PGSQL_LOG)
-CONFIGURE_ARGS+=	--enable-pgsql-logging=y
+CONFIGURE_ARGS+=	--enable-pgsql-logging
 .endif
 .endif
 
@@ -188,15 +185,14 @@ QMAIL_DIR?=	/var/qmail
 # Some suggestions from Gabriel Ambuehl <gabriel_ambuehl@buz.ch>
 #
 
-CONFIGURE_ARGS+=	--enable-defaultquota=${HARDQUOTA} \
-			--enable-logging=${LOGLEVEL}
+CONFIGURE_ARGS+=	--enable-logging=${LOGLEVEL}
 
 .if defined(WITH_PASSWD)
-CONFIGURE_ARGS+=	--enable-passwd=y
+CONFIGURE_ARGS+=	--enable-passwd
 .endif
 
 .if defined(WITHOUT_MD5_PASSWORDS)
-CONFIGURE_ARGS+=	--enable-md5-passwords=n
+CONFIGURE_ARGS+=	--disable-md5-passwords
 .endif
 
 .if defined(WITH_APOP)
@@ -204,65 +200,65 @@ BROKEN=		"The WITH_APOP option is deprecated; set WITH_CLEAR_PASSWD instead, APO
 .endif
 
 .if defined(WITH_VALIAS)
-CONFIGURE_ARGS+=	--enable-valias=y
+CONFIGURE_ARGS+=	--enable-valias
 .endif
 
 .if !defined(WITHOUT_ROAMING)
-CONFIGURE_ARGS+=	--enable-roaming-users=y \
+CONFIGURE_ARGS+=	--enable-roaming-users \
 			--enable-relay-clear-minutes=${RELAYCLEAR}
 .endif
 
 .if !defined(WITH_CLEAR_PASSWD)
-CONFIGURE_ARGS+=	--enable-clear-passwd=n
+CONFIGURE_ARGS+=	--disable-clear-passwd
 .endif
 
 .if defined(WITH_LEARN_PASSWORDS)
-CONFIGURE_ARGS+=	--enable-learn-passwords=y
+CONFIGURE_ARGS+=	--enable-learn-passwords
 .endif
 
 .if defined(WITH_SYBASE)
-CONFIGURE_ARGS+=	--enable-sybase=y
+CONFIGURE_ARGS+=	--enable-auth-module=sybase
 .endif
 
 .if defined(WITH_ORACLE)
 WITH_ORACLE_PROC?=	proc
-CONFIGURE_ARGS+=	--enable-oracle=y
+CONFIGURE_ARGS+=	--enable-auth-module=oracle
 .endif
 
 .if defined(WITH_SINGLE_DOMAIN)
-CONFIGURE_ARGS+=	--enable-many-domains=n
+CONFIGURE_ARGS+=	--disable-many-domains
 .endif
 
 .if defined(WITH_IP_ALIAS)
-CONFIGURE_ARGS+=	--enable-ip-alias-domains=y
+CONFIGURE_ARGS+=	--enable-ip-alias-domains
 .endif
 
 .if defined(WITH_QMAIL_EXT)
-CONFIGURE_ARGS+=	--enable-qmail-ext=y
+CONFIGURE_ARGS+=	--enable-qmail-ext
 .endif
 
 .if defined(WITHOUT_FILE_LOCKING)
-CONFIGURE_ARGS+=	--enable-file-locking=n
+CONFIGURE_ARGS+=	--disable-file-locking
 .endif
 
 .if defined(WITH_FILE_SYNC)
-CONFIGURE_ARGS+=	--enable-file-sync=y
+CONFIGURE_ARGS+=	--enable-file-sync
 .endif
 
 .if defined(WITHOUT_AUTH_LOG)
-CONFIGURE_ARGS+=	--enable-auth-logging=n
+CONFIGURE_ARGS+=	--disable-auth-logging
 .endif
 
 .if defined(WITHOUT_USERS_BIG_DIR)
-CONFIGURE_ARGS+=	--enable-users-big-dir=n
+CONFIGURE_ARGS+=	--disable-users-big-dir
 .endif
 
 .if defined(WITHOUT_SEEKABLE)
-CONFIGURE_ARGS+=	--enable-make-seekable=n
+CONFIGURE_ARGS+=	--disable-make-seekable
 .endif
 
 .if defined(WITH_DOMAIN_QUOTAS)
-CONFIGURE_ARGS+=	--enable-domainquotas=y
+CONFIGURE_ARGS+=	--enable-domainquotas
 .endif
 
 .if defined(WITH_SPAMASSASSIN)

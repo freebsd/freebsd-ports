@@ -1,15 +1,15 @@
---- config.h.in.orig	Tue Oct  7 03:25:53 2003
-+++ config.h.in	Sat Nov  1 10:59:26 2003
-@@ -89,6 +89,12 @@
- #undef QMAILNEWU
+--- config.h.in.orig	Mon Feb  2 06:24:19 2004
++++ config.h.in	Mon Feb  2 09:33:51 2004
+@@ -238,6 +238,12 @@
+ #undef QMAILDIR
  
- /*  */
+ /* "" */
 +#undef SPAMC
 +
-+/*  */
++/* "" */
 +#undef SPAM_THRESHOLD
 +
-+/*  */
++/* "" */
  #undef QMAILINJECT
  
- /*  */
+ /* "" */
