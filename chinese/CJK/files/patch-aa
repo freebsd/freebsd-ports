@@ -1,21 +1,26 @@
---- Makefile.orig	Fri Oct  2 17:33:23 1998
-+++ Makefile	Fri Oct  2 17:33:23 1998
-@@ -0,0 +1,18 @@
+--- Makefile.orig	Thu Jan  1 08:00:00 1970
++++ Makefile	Sat Feb 20 08:10:54 1999
+@@ -0,0 +1,23 @@
 +#
 +# Makefile for CJK to apply on Unix systems more smoothly.
 +#
-+# keith@email.gcn.net.tw
-+#
++
++CP = /bin/cp
++CHOWN = /usr/sbin/chown
++
++LATEX_DIR = $(PREFIX)/share/texmf/tex/latex
++CJK_DIR = $(LATEX_DIR)/CJK
 +
 +all:
-+	$(MAKE) -C 4_1.3 $@
++	$(MAKE) -C utils $@
 +
-+install: all
-+	$(MAKE) -C 4_1.3 $@
++install: install-texinput
++	$(MAKE) -C utils $@
 +
-+test-teTeX-patch:
-+	$(MAKE) -C 4_1.3 test-teTeX-patch
++install-texinput:
++	(mkdir -p $(CJK_DIR)); && \
++	($(CP) -R texinput/* $(CJK_DIR)); && \
++	($(CHOWN) -R $(SHAREOWN).$(SHAREGRP) $(CJK_DIR))
 +
 +clean:
-+	$(MAKE) -C 4_1.3 $@
-+
++	$(MAKE) -C utils $@

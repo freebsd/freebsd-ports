@@ -1,9 +1,10 @@
-Welcome to the CJK version 4.1.3 (20-Jun-1997), a LaTeX2e macro package
+Welcome to the CJK version 4.2.0 (13-Dec-1998), a LaTeX2e macro package
 which enables the use of CJK scripts (Chinese/Japanese/Korean) in various
 encodings.
 
 =====
-This port only adds Chinese support. To support other Asian languages, see
-CJK documents for details.
+This port installs full Chinese BIG5 support, including TTF fonts. For
+other Asian languages, you have to supply those TTF fonts, then manually
+modify relative settings.
 
-J.T. Jang <keith@email.gcn.net.tw>
+J.T. Jang <jtjang@gcn.net.tw>
