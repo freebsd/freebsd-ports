@@ -8,8 +8,6 @@ EXENAME = $(EXEDIR)/chmview
 CFLAGS += -g
 LFLAGS += -g
 
-CC = gcc
-
 all: $(EXENAME)
 
 OBJS = $(OBJDIR)/chmview.o \
