@@ -1,6 +1,6 @@
---- configure.orig	Sun Feb 10 09:30:14 2002
-+++ configure	Thu May  9 01:40:00 2002
-@@ -1249,10 +1249,10 @@
+--- configure.orig	Sun Jan 12 21:40:08 2003
++++ configure	Tue Jan 14 00:17:38 2003
+@@ -1479,10 +1479,10 @@
  
  # The aliases save the names the user supplied, while $host etc.
  # will get canonicalized.
@@ -13,9 +13,9 @@
 +#    NONENONEs,x,x, &&
 +#  program_prefix=${target_alias}-
  
- LIBGTOP_MAJOR_VERSION=1
- LIBGTOP_MINOR_VERSION=90
-@@ -1526,9 +1526,9 @@
+ LIBGTOP_MAJOR_VERSION=2
+ LIBGTOP_MINOR_VERSION=0
+@@ -1777,9 +1777,9 @@
  
  # libtool versioning
  LT_RELEASE=$LIBGTOP_MAJOR_VERSION.$LIBGTOP_MINOR_VERSION
@@ -27,30 +27,13 @@
 +LT_AGE=0
  LT_VERSION_INFO='-version-info ${LT_CURRENT}:${LT_REVISION}:${LT_AGE}'
  
- ACLOCAL_FLAGS="$ACLOCAL_FLAGS -I ."
-@@ -7491,6 +7491,7 @@
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+@@ -18514,7 +18514,7 @@
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -15639,7 +15640,7 @@
- LIBGTOP_GUILE_LIBS="$LIBGTOP_LIBS"
- LIBGTOP_GUILE_INCS="$LIBGTOP_INCS"
- LIBGTOP_BINDIR='$(bindir)'
--LIBGTOP_SERVER='$(bindir)/libgtop_server'
-+LIBGTOP_SERVER='$(bindir)/libgtop_server2'
- 
- sysdeps_dir="$libgtop_sysdeps_dir"
- 
-@@ -15688,7 +15689,7 @@
  
  if test x$libgtop_need_server = xyes ; then
-    sysdeps_suid_lib="\$(top_builddir)/sysdeps/\$(sysdeps_dir)/libgtop_sysdeps_suid-2.0.la"
--   server_programs='libgtop_server'
-+   server_programs='libgtop_server2'
+-   sysdeps_suid_lib="\$(top_builddir)/sysdeps/\$(sysdeps_dir)/libgtop_sysdeps_suid-2.0.la"
++   sysdeps_suid_lib="\$(top_builddir)/sysdeps/\$(sysdeps_dir)/libgtop_sysdeps_suid-2.0.la \$(top_builddir)/sysdeps/common/libgtop_suid_common-2.0.la"
+    server_programs='libgtop_server2'
  else
     sysdeps_suid_lib=
-    server_programs=
