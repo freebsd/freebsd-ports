@@ -1,0 +1,90 @@
+--- pine/osdep/print.orig	Tue Sep 22 21:22:23 1998
++++ pine/osdep/print	Tue Sep 22 21:26:09 1998
+@@ -39,12 +39,12 @@
+     HelpType help;
+     char   **list;
+     static ESCKEY_S ekey[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No"},
+-	{ctrl('P'), 10, "^P", "Prev Printer"},
+-	{ctrl('N'), 11, "^N", "Next Printer"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
++	{ctrl('P'), 10, "^P", "前一印表機"},
++	{ctrl('N'), 11, "^N", "下一印表機"},
+ 	{-2,   0,   NULL, NULL},
+-	{'c', 'c', "C", "CustomPrint"},
++	{'c', 'c', "C", "自定印表機"},
+ 	{KEY_UP,    10, "", ""},
+ 	{KEY_DOWN,  11, "", ""},
+ 	{-1, 0, NULL, NULL}};
+@@ -61,7 +61,7 @@
+ 
+     if(ps_global->VAR_PRINTER == NULL){
+         q_status_message(SM_ORDER | SM_DING, 3, 5,
+-	"No printer has been chosen.  Use SETUP on main menu to make choice.");
++	"尚未選擇印表機。請用主選單中的設定來選擇。");
+ 	return(-1);
+     }
+ 
+@@ -138,7 +138,7 @@
+ 	switch(cmd){
+ 	  case 'y':
+ 	    q_status_message1(SM_ORDER, 0, 9,
+-		"Printing with command \"%s\"", command);
++		"正以 \"%s\" 命令列印中", command);
+ 	    done++;
+ 	    break;
+ 
+@@ -175,7 +175,7 @@
+ 	if(trailer)
+ 	  fs_give((void **)&trailer);
+ 
+-	sprintf(prompt, "Enter custom command : ");
++	sprintf(prompt, "輸入自定的命令：");
+ 	command[0] = '\0';
+ 	rc = 1;
+ 	help = NO_HELP;
+@@ -195,13 +195,13 @@
+ 		removing_trailing_white_space(command);
+ 		removing_leading_white_space(command);
+ 		q_status_message1(SM_ORDER, 0, 9,
+-		    "Printing with command \"%s\"", command);
++		    "正以 \"%s\" 命令列印中", command);
+ 	    }
+ 	}
+     }
+ 
+     if(cmd == 'x' || cmd == 'n'){
+-	q_status_message(SM_ORDER, 0, 2, "Print cancelled");
++	q_status_message(SM_ORDER, 0, 2, "取消列印");
+ 	if(init)
+ 	  fs_give((void **)&init);
+ 
+@@ -221,7 +221,7 @@
+        || strucmp(command, aname) == 0){
+         /*----------- Printer attached to ansi device ---------*/
+         q_status_message(SM_ORDER, 0, 9,
+-	    "Printing to attached desktop printer...");
++	    "正列印至桌上印表機...");
+         display_message('x');
+ 	xonxoff_proc(1);			/* make sure XON/XOFF used */
+ 	crlf_proc(1);				/* AND LF->CR xlation */
+@@ -252,7 +252,7 @@
+ 	else{
+ 	    fs_give((void **)&ps_global->print->result);
+             q_status_message1(SM_ORDER | SM_DING, 3, 4,
+-			      "Error opening printer: %s",
++			      "印表機開啟錯誤：%s",
+                               error_description(errno));
+             dprint(2, (debugfile, "Error popening printer \"%s\"\n",
+                       error_description(errno)));
+@@ -311,7 +311,7 @@
+ 
+     fs_give((void **)&ps_global->print);
+ 
+-    q_status_message(SM_ASYNC, 0, 3, "Print command completed");
++    q_status_message(SM_ASYNC, 0, 3, "列印指令完成");
+     display_message('x');
+ }
+ 

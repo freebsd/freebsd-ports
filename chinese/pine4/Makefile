@@ -1,35 +1,46 @@
 # New ports collection makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     4.02A
+# Version required:     4.05
 # Date created:		15 July 1998
 # Whom:			Liang Tai-hwa <avatar@www.mmlab.cse.yzu.edu.tw>
 #
 # $Id: Makefile,v 1.7 1998/08/24 01:24:38 steve Exp $
 #
 
-DISTNAME=       pine4.02
-PKGNAME=        zh-pine-4.02a
-CATEGORIES=     chinese mail news
+DISTNAME=	pine4.05
+PKGNAME=	zh-pine-4.05
+CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}A.patch
-PATCH_DIST_STRIP= -p1
-
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
-
-BROKEN_ELF=	does not build ELF libs
 
 NO_LATEST_LINK= yes
 
 MAN1= 		pine.1 pico.1 pilot.1
 
+post-patch:
+	for i in ${WRKSRC}/doc/pine.1 \
+		${WRKSRC}/pine/init.c \
+		${WRKSRC}/pine/pine.hlp \
+		${WRKSRC}/pine/mailcap.c \
+		${WRKSRC}/pine/osdep/os-bsf.h ; do \
+		${MV} $$i $$i.sed ; \
+		${SED} -e "s:@@PREFIX@@:${PREFIX}:g" \
+			$$i.sed >$$i ; \
+		${RM} $$i.sed ; \
+	done
+	for i in ${WRKSRC}/doc/tech-notes.txt \
+		${WRKSRC}/doc/tech-notes/*.html ; do \
+		${MV} $$i $$i.sed ; \
+		${SED} -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
+			$$i.sed >$$i ; \
+		${RM} $$i.sed ; \
+	done
+
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf)
 
 do-install:
-	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		${WRKSRC}/bin/libpico.so.2.0 ${PREFIX}/lib/libpico.so.2.0
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
@@ -44,7 +55,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1/pine.1
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} -d ${PREFIX}/share/doc/pine
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
 			${PREFIX}/share/doc/pine \
 			${PREFIX}/share/doc/pine/tech-notes
@@ -55,6 +65,11 @@ do-install:
 .endif
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib/
+	${PREFIX}/bin/pine -P ${PREFIX}/etc/pine.conf -conf >${WRKSRC}/pine.conf
+	${INSTALL_DATA} ${WRKSRC}/pine.conf ${PREFIX}/etc/pine.conf
+	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
+	@${ECHO} "	If Pine exits with \"Received abort signal\" try"
+	@${ECHO} "	disabling the \"quell-folder-internal-msg\" feature"
+	@${ECHO} "	- - - - - - - - - - - - - - - - - - - - - - - - -"
 
 .include <bsd.port.mk>

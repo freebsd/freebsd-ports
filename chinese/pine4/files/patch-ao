@@ -1,5 +1,26 @@
---- pico/file.c.orig	Fri Jul 17 08:11:52 1998
-+++ pico/file.c	Tue Aug  4 12:42:14 1998
+--- pico/file.c.orig	Fri Aug 28 07:02:07 1998
++++ pico/file.c	Tue Sep 22 18:45:49 1998
+@@ -63,17 +63,17 @@
+                 return(s);
+ 
+ 	if(gmode&MDSCUR){
+-	    emlwrite("File reading disabled in secure mode",NULL);
++	    emlwrite("安全模式中已關閉讀取檔案的功\能",NULL);
+ 	    return(0);
+ 	}
+ 
+ 	if (strlen(fname) == 0) {
+-	  emlwrite("No file name entered",NULL);
++	  emlwrite("尚未輸入檔案名",NULL);
+ 	  return(0);
+ 	}
+ 
+ 	if((gmode&MDTREE) && !in_oper_tree(fname)){
+-	  emlwrite("Can't read file from outside of %s", opertree);
++	  emlwrite("無法讀取 %s 以外的檔案", opertree);
+ 	  return(0);
+ 	}
+ 
 @@ -137,13 +137,13 @@
  
  	    menu_ins[last_menu].name  = "^T";
@@ -16,7 +37,7 @@
  		KS_OSDATASET(&menu_ins[last_menu], KS_NONE);
  	    }
  
-@@ -159,26 +159,25 @@
+@@ -159,43 +159,42 @@
  	    if(gmode & MDCMPLT){
  		menu_ins[++last_menu].name = msg ? "" : "TAB";
  		menu_ins[last_menu].key    = (CTRL|'I');
@@ -38,7 +59,7 @@
 -		msg ? "folder" : "directory");
 +							   : "家",
 +		msg ? "檔案匣" : "目錄", msg ? "信件編號" : "檔案");
- 	s = mlreplyd(prompt, fname, NFILEN, QDEFLT, msg ? NULL : menu_ins);
+ 	s = mlreplyd(prompt, fname, NLINE, QDEFLT, msg ? NULL : menu_ins);
  	/* something to read and it was edited or the default accepted */
          if(fname[0] && (s == TRUE || s == FALSE)){
  	    bye++;
@@ -49,3 +70,198 @@
  	    }
  	    else{
  		bye++;
+ 		if(gmode&MDSCUR){
+-		    emlwrite("Can't insert file in restricted mode",NULL);
++		    emlwrite("在限制模式中無法插入檔案",NULL);
+ 		}
+ 		else{
+ 		    if(gmode&MDTREE && !compresspath(opertree, fname, NLINE)){
+ 			emlwrite(
+-			"Can't insert file from outside of %s: too many ..'s",
++			"無法在 %s 以外的地方插入檔案：太多 .. 了",
+ 			opertree);
+ 		    }
+ 		    else{
+ 			fixpath(fname, NLINE);
+ 
+ 			if((gmode&MDTREE) && !in_oper_tree(fname))
+-			  emlwrite("Can't insert file from outside of %s",
++			  emlwrite("無法在 %s 以外的地方插入檔案",
+ 				    opertree);
+ 			else
+ 			  retval = ifile(fname);
+@@ -250,7 +249,7 @@
+ 		break;
+ 	      case (CTRL|'T'):
+ 		if(msg){
+-		    emlwrite("Can't select messages yet!", NULL);
++		    emlwrite("還無法選擇信件！", NULL);
+ 		}
+ 		else{
+ 		    if(*fname && isdir(fname, NULL, NULL))
+@@ -264,7 +263,7 @@
+ 		    if((s = FileBrowse(dir, NLINE, fname, NLINE, 
+ 				       NULL, FB_READ)) == 1){
+ 			if(gmode&MDSCUR){
+-			    emlwrite("Can't insert in restricted mode",
++			    emlwrite("在限制模式中無法插入",
+ 				     NULL);
+ 			    sleep(2);
+ 			}
+@@ -305,7 +304,7 @@
+ 
+ 		    if(gmode&MDSCUR){
+ 			emlwrite(
+-			      "\007Restricted mode disallows uploaded command",
++			      "\007限制模式中不允許\上載",
+ 			      NULL);
+ 			return(0);
+ 		    }
+@@ -403,17 +402,17 @@
+ 
+ 	strcpy(curbp->b_fname, fname);
+ 	if ((gmode&MDTREE) && !in_oper_tree(fname)) {
+-	    emlwrite("Can't read file from outside of %s", opertree);
++	    emlwrite("無法讀取 %s 以外的檔案", opertree);
+ 	    s = FIOERR;
+ 	}
+ 	else if ((s=ffropen(fname)) != FIOSUC){	/* Hard file open.      */
+ 	    if(s == FIOFNF)                     /* File not found.      */
+-	      emlwrite("New file", NULL);
++	      emlwrite("新檔", NULL);
+ 	    else
+ 	      fioperr(s, fname);
+ 	}
+ 	else{
+-	    emlwrite("Reading file", NULL);
++	    emlwrite("讀取檔案", NULL);
+ 	    nline = 0L;
+ 	    done  = newline = 0;
+ 	    while(!done)
+@@ -479,14 +478,14 @@
+ 	  fname[0] = '\0';
+ 
+ 	menu_write[0].name  = "^T";
+-	menu_write[0].label = "To Files";
++	menu_write[0].label = "檔案列表";
+ 	menu_write[0].key   = (CTRL|'T');
+ 	menu_write[1].name  = "TAB";
+-	menu_write[1].label = "Complete";
++	menu_write[1].label = "完成";
+ 	menu_write[1].key   = (CTRL|'I');
+ 	menu_write[2].name  = NULL;
+ 	for(;!(gmode & MDTOOL);){
+-	    s = mlreplyd("File Name to write : ", fname, NFILEN,
++	    s = mlreplyd("欲寫入的檔名：", fname, NFILEN,
+ 			 QDEFLT|QFFILE, menu_write);
+ 
+ 	    switch(s){
+@@ -497,7 +496,7 @@
+ 		}
+ 	      case TRUE:
+ 		if(gmode&MDTREE && !compresspath(opertree, fname, NFILEN)){
+-		    emlwrite("Can't write outside of %s: too many ..'s",
++		    emlwrite("無法寫入 %s 以外的檔案：太多 .. 了",
+ 			     opertree);
+ 		    sleep(2);
+ 		    continue;
+@@ -505,7 +504,7 @@
+ 		else{
+ 		    fixpath(fname, NFILEN);	/*  fixup ~ in file name  */
+ 		    if((gmode&MDTREE) && !in_oper_tree(fname)){
+-			emlwrite("Can't write outside of %s", opertree);
++			emlwrite("無法寫入 %s 以外的檔案", opertree);
+ 			sleep(2);
+ 			continue;
+ 		    }
+@@ -586,12 +585,12 @@
+ 		    strcpy(fname, shows);
+ 		  }
+ 		  else {
+-		    emlwrite("Cannot write. File name too long!!",NULL);
++		    emlwrite("無法寫入。檔名過長！",NULL);
+ 		    sleep(3);
+ 		  }
+ 		}
+ 		else if (s == -1){
+-		  emlwrite("Cannot write. File name too long!!",NULL);
++		  emlwrite("無法寫入。檔名過長！",NULL);
+ 		  sleep(3);
+ 		}
+ 		refresh(FALSE, 1);
+@@ -629,7 +628,7 @@
+ 		return(ABORT);
+ 	    }
+ 	}
+-	emlwrite("Writing...", NULL);
++	emlwrite("正在寫入...", NULL);
+ 
+         if ((s=writeout(fname, 0)) != -1) {
+ 	        if(!(gmode&MDTOOL)){
+@@ -646,9 +645,9 @@
+ 		}
+ 
+ 		if(s > 1)
+-		  emlwrite("Wrote %d lines", (void *)s);
++		  emlwrite("寫入 %d 行", (void *)s);
+ 		else
+-		  emlwrite("Wrote 1 line", NULL);
++		  emlwrite("寫入 1 行", NULL);
+         }
+         return ((s == -1) ? FALSE : TRUE);
+ }
+@@ -674,12 +673,12 @@
+         if ((curbp->b_flag&BFCHG) == 0)         /* Return, no changes.  */
+                 return (TRUE);
+         if (curbp->b_fname[0] == 0) {           /* Must have a name.    */
+-                emlwrite("No file name", NULL);
++                emlwrite("沒有檔名", NULL);
+ 		sleep(2);
+                 return (FALSE);
+         }
+ 
+-	emlwrite("Writing...", NULL);
++	emlwrite("正在寫入...", NULL);
+         if ((s=writeout(curbp->b_fname, 0)) != -1) {
+                 curbp->b_flag &= ~BFCHG;
+                 wp = wheadp;                    /* Update mode lines.   */
+@@ -690,10 +689,10 @@
+                         wp = wp->w_wndp;
+                 }
+ 		if(s > 1){
+-		    emlwrite("Wrote %d lines", (void *)s);
++		    emlwrite("寫入 %d 行", (void *)s);
+ 		}
+ 		else
+-		  emlwrite("Wrote 1 line", NULL);
++		  emlwrite("寫入 1 行", NULL);
+         }
+         return (s);
+ }
+@@ -812,7 +811,7 @@
+ 	curbp->b_flag &= ~BFTEMP;		/* and are not temporary*/
+ 	curbp->b_linecnt = -1;			/* must be recalculated */
+ 
+-        emlwrite("Inserting %s.", fname);
++        emlwrite("正在插入 %s。", fname);
+ 	done = newline = 0;
+ 	nline = 0L;
+ 	while(!done)
+@@ -822,7 +821,7 @@
+ 	      else
+ 		forwchar(FALSE, 1);
+ 
+-	      sprintf(line,"Inserted %d line%s", nline, (nline>1) ? "s" : "");
++	      sprintf(line,"已插入 %d 行", nline);
+ 	      emlwrite(line, NULL);
+ 	      break;
+ 	  }
+@@ -910,7 +909,7 @@
+ 	      strcat(fn, S_FILESEP);
+ 	  }
+ 	  else{
+-	    emlwrite("File name too BIG!!",0);
++	    emlwrite("檔名太大了！！",0);
+ 	    sleep(3);
+ 	    *fn = '\0';
+ 	  }

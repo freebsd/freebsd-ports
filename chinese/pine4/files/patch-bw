@@ -1,0 +1,61 @@
+--- pine/osdep/termin.gen.orig	Wed Aug 19 08:35:10 1998
++++ pine/osdep/termin.gen	Tue Sep 22 21:47:15 1998
+@@ -32,21 +32,19 @@
+      * we're in again...
+      */
+     if(ps_global->expunge_count){
+-	q_status_message3(SM_ORDER, 3, 3,
+-			  "%s message%s expunged from folder \"%s\"",
+-			  long2string(ps_global->expunge_count),
+-			  plural(ps_global->expunge_count),
+-			  pretty_fn(ps_global->cur_folder));
++	q_status_message2(SM_ORDER, 3, 3,
++			  "自資料匣 \"%s\" 中刪除 %s 封信件",
++			  pretty_fn(ps_global->cur_folder),
++			  long2string(ps_global->expunge_count));
+ 	ps_global->expunge_count = 0L;
+ 	display_message('x');
+     }
+ 
+     if(ps_global->inbox_expunge_count){
+-	q_status_message3(SM_ORDER, 3, 3,
+-			  "%s message%s expunged from folder \"%s\"",
+-			  long2string(ps_global->inbox_expunge_count),
+-			  plural(ps_global->inbox_expunge_count),
+-			  pretty_fn(ps_global->inbox_name));
++	q_status_message2(SM_ORDER, 3, 3,
++			  "自資料匣 \"%s\" 中刪除 %s 封信件",
++			  pretty_fn(ps_global->inbox_name),
++			  long2string(ps_global->inbox_expunge_count));
+ 	ps_global->inbox_expunge_count = 0L;
+ 	display_message('x');
+     }
+@@ -71,7 +69,7 @@
+ 	int   winner = 0;
+ 
+ 	if(ps_global->post->status < 0){
+-	    q_status_message(SM_ORDER | SM_DING, 3, 3, "Abysmal failure!");
++	    q_status_message(SM_ORDER | SM_DING, 3, 3, "徹底失敗！");
+ 	}
+ 	else{
+ 	    (void) pine_send_status(ps_global->post->status,
+@@ -84,7 +82,7 @@
+ 
+ 	if(!winner)
+ 	  q_status_message(SM_ORDER, 0, 3,
+-	  "Re-send via \"Compose\" then \"Yes\" to \"Continue INTERRUPTED?\"");
++	  "由 \"編修\" 再回答 \"是\" 來繼續重送 \"上次中斷的信件？\"");
+ 
+ 	if(ps_global->post->fcc)
+ 	  fs_give((void **) &ps_global->post->fcc);
+@@ -115,8 +113,8 @@
+ 
+ 
+ static struct key oe_keys[] =
+-       {{"^G","Help",KS_SCREENHELP},	{"^C","Cancel",KS_NONE},
+-	{"^T","xxx",KS_NONE},		{"Ret","Accept",KS_NONE},
++       {{"^G","輔助說明",KS_SCREENHELP},	{"^C","取消",KS_NONE},
++	{"^T","xxx",KS_NONE},		{"Ret","同意",KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
+ 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},

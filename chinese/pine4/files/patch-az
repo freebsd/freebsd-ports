@@ -1,12 +1,21 @@
---- pine/init.c.orig	Fri Jul 17 02:22:22 1998
-+++ pine/init.c	Tue Aug  4 12:42:17 1998
-@@ -579,6 +579,9 @@
+--- pine/init.c.orig	Thu Sep  3 01:39:42 1998
++++ pine/init.c	Tue Sep 22 13:50:07 1998
+@@ -319,7 +319,7 @@
+ 
+ /*----------------------------------------------------------------------
+ These are the variables that control a number of pine functions.  They
+-come out of the .pinerc and the /usr/local/lib/pine.conf files.  Some can
++come out of the .pinerc and the @@PREFIX@@/etc/pine.conf files.  Some can
+ be set by the user while in Pine.  Eventually all the local ones should
+ be so and maybe the global ones too.
+ 
+@@ -578,6 +578,9 @@
+ #ifdef	DF_SMTP_SERVER
      GLO_SMTP_SERVER		= parse_list(DF_SMTP_SERVER, 1, NULL);
  #endif
- 
++
 +    F_TURN_ON(F_TCAP_WINS,ps);
 +    F_TURN_ON(F_QUELL_INTERNAL_MSG,ps);
-+
+ 
      /* Set the default mail directory */
      build_path(buf, GLO_MAIL_DIRECTORY, "[]");
-     GLO_FOLDER_SPEC		= parse_list(buf, 1, NULL);

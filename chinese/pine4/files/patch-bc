@@ -1,6 +1,6 @@
---- pine/mailpart.c.orig	Wed Aug 19 10:37:25 1998
-+++ pine/mailpart.c	Wed Aug 19 10:45:24 1998
-@@ -134,18 +134,18 @@
+--- pine/mailpart.c.orig	Wed Sep 16 04:00:39 1998
++++ pine/mailpart.c	Tue Sep 22 20:29:13 1998
+@@ -142,18 +142,18 @@
         {HELP_MENU,
  	OTHER_MENU,
  	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
@@ -23,7 +23,7 @@
  	{NULL, NULL, {MC_EXPORT, 1, {'e'}}, KS_EXPORT},
  
  	HELP_MENU,
-@@ -154,9 +154,9 @@
+@@ -162,9 +162,9 @@
  	QUIT_MENU,
  	PIPE_MENU,
  	BOUNCE_MENU,
@@ -35,13 +35,11 @@
  	INDEX_MENU,
  	REPLY_MENU,
  	FORWARD_MENU};
-@@ -173,11 +173,11 @@
- static struct key att_view_keys[] =
+@@ -182,10 +182,10 @@
         {HELP_MENU,
  	OTHER_MENU,
--	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
+ 	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
 -	{"Ret","[View Hilite]",{MC_VIEW_HANDLE,3,
-+	{"<",NULL,{MC_EXIT,3,{'<',',',KEY_LEFT}},KS_EXITMODE},
 +	{"Ret","[檢視 Hilite]",{MC_VIEW_HANDLE,3,
  				{ctrl('m'),ctrl('j'),KEY_RIGHT}},KS_NONE},
 -	{"^B","Prev URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
@@ -51,7 +49,7 @@
  	PREVPAGE_MENU,
  	NEXTPAGE_MENU,
  	DELETE_MENU,
-@@ -193,7 +193,7 @@
+@@ -201,7 +201,7 @@
  	BOUNCE_MENU,
  	NULL_MENU,
  	WHEREIS_MENU,
@@ -60,7 +58,7 @@
  	NULL_MENU,
  	REPLY_MENU,
  	FORWARD_MENU};
-@@ -323,12 +323,12 @@
+@@ -337,12 +337,12 @@
  
      if(mn_total_cur(ps->msgmap) > 1L){
  	q_status_message(SM_ORDER | SM_DING, 0, 3,
@@ -68,15 +66,14 @@
 +			 "同一時間僅能檢視一封信的附件！");
  	return;
      }
--    else if(ps->atmts && ps->atmts->description && !(ps->atmts + 1)->description)
-+    else if(ps->atmts && !(ps->atmts + 1)->description)
+     else if(ps->atmts && ps->atmts->description && !(ps->atmts + 1)->description)
        q_status_message1(SM_ASYNC, 0, 3,
 -	"Message %s has only one part (the message body), and no attachments.",
 +	"信件 %s 僅有一部分(信件本體)，沒有附件。",
  	long2string(mn_get_cur(ps->msgmap)));
  
      /*
-@@ -471,7 +471,7 @@
+@@ -485,7 +485,7 @@
  	  break;
  
  	if(ps->mangled_header){
@@ -85,7 +82,16 @@
  			 ps->context_current, ps->cur_folder, ps->msgmap, 1,
  			 MessageNumber, 0, 0);
  	    ps->mangled_header = 0;
-@@ -535,7 +535,7 @@
+@@ -523,7 +523,7 @@
+ 	    last_type	       = current->attp->body->type;
+ 	    last_subtype       = current->attp->body->subtype;
+ 
+-	    sprintf(backtag, "Msg #%ld", mn_get_cur(ps->msgmap));
++	    sprintf(backtag, "信件 #%ld", mn_get_cur(ps->msgmap));
+ 	    km->keys[ATT_PARENT_KEY].label = backtag;
+ 
+ 	    if(F_OFF(F_ENABLE_PIPE, ps))
+@@ -549,7 +549,7 @@
  		  clrbitn(ATT_PRINT_KEY, bitmap);
  
  		km->keys[ATT_EXPORT_KEY].name  = "E";
@@ -94,7 +100,16 @@
  	    }
  
  	    if(km_popped){
-@@ -630,7 +630,7 @@
+@@ -615,7 +615,7 @@
+ 		break;
+ 	    }
+ 
+-	    helper(h_attachment_screen, "HELP FOR ATTACHMENT INDEX", 0);
++	    helper(h_attachment_screen, "附件索引的輔助說明", 0);
+ 	    ps->mangled_screen = 1;
+ 	    break;
+ 
+@@ -644,7 +644,7 @@
  	    if(ctmp = next_attline(current))
  	      current = ctmp;
  	    else
@@ -103,7 +118,7 @@
  
  	    break;
  
-@@ -638,7 +638,7 @@
+@@ -652,7 +652,7 @@
  	    if(ctmp = prev_attline(current))
  	      current = ctmp;
  	    else
@@ -112,7 +127,7 @@
  
  	    break;
  
-@@ -652,7 +652,7 @@
+@@ -666,7 +666,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 1,
@@ -121,7 +136,7 @@
  	    
  
  	    break;
-@@ -673,7 +673,7 @@
+@@ -687,7 +687,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 1,
@@ -130,7 +145,7 @@
  
  	    break;
  
-@@ -1041,7 +1041,7 @@
+@@ -1149,7 +1149,7 @@
  {
      bitmap_t	 bitmap;
  
@@ -139,7 +154,7 @@
  		 ps_global->context_current, ps_global->cur_folder,
  		 ps_global->msgmap, 1, FolderName,0,0);
  
-@@ -1210,7 +1210,7 @@
+@@ -1318,7 +1318,7 @@
      gf_io_t     pc;
      STORE_S    *store;
      static ESCKEY_S att_save_opts[] = {
@@ -148,7 +163,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
-@@ -1243,7 +1243,7 @@
+@@ -1351,7 +1351,7 @@
  	att_save_opts[++r].ch  = ctrl('V');
  	att_save_opts[r].rval  = 12;
  	att_save_opts[r].name  = "^V";
@@ -157,7 +172,7 @@
      }
  #endif	/* !(DOS || MAC) */
  
-@@ -1251,7 +1251,7 @@
+@@ -1359,7 +1359,7 @@
  	att_save_opts[++r].ch  =  ctrl('I');
  	att_save_opts[r].rval  = 11;
  	att_save_opts[r].name  = "TAB";
@@ -166,7 +181,94 @@
      }
  
      att_save_opts[++r].ch = -1;
-@@ -1470,7 +1470,7 @@
+@@ -1393,7 +1393,7 @@
+ 
+ 	if(ps_global->restricted){
+ 	    q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			     "Download disallowed in restricted mode");
++			     "限制模式中不允許\下載");
+ 	    return;
+ 	}
+ 
+@@ -1401,7 +1401,7 @@
+ 	tfp = temp_nam(NULL, "pd");
+ 	dprint(1, (debugfile, "Download attachment called!\n"));
+ 	if(store = so_get(FileStar, tfp, WRITE_ACCESS|OWNER_ONLY)){
+-	    sprintf(prompt_buf, "Saving to \"%.50s\"", tfp);
++	    sprintf(prompt_buf, "正在存入 \"%.50s\"", tfp);
+ 	    we_cancel = init_att_progress(prompt_buf,
+ 					  ps_global->mail_stream,
+ 					  a->body);
+@@ -1410,7 +1410,7 @@
+ 	    if(err = detach(ps_global->mail_stream, msgno,
+ 			    a->number, &len, pc, NULL))
+ 	      q_status_message2(SM_ORDER | SM_DING, 3, 5,
+-				"%s: Error writing attachment to \"%s\"",
++				"%s: \\寫入附件至 \"%s\" 時發生錯誤",
+ 				err, tfp);
+ 
+ 	    /* cancel regardless, so it doesn't get in way of xfer */
+@@ -1427,18 +1427,18 @@
+ 		  (void)close_system_pipe(&syspipe);
+ 		else
+ 		  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-				   err = "Error running download command");
++				   err = "執行下載命令時發生錯誤");
+ 	    }
+ 
+ 	    unlink(tfp);
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			   err = "Error building temp file for download");
++			   err = "建立暫存檔時發生錯誤");
+ 
+ 	fs_give((void **)&tfp);
+ 	if(!err)
+-	  q_status_message1(SM_ORDER, 0, 4, "Part %s downloaded",
++	  q_status_message1(SM_ORDER, 0, 4, "已下載第 %s 部份",
+ 			    a->number);
+ 			    
+ 	return;
+@@ -1450,12 +1450,12 @@
+ 
+     if((store = so_get(FileStar, full_filename, WRITE_ACCESS)) == NULL){
+ 	q_status_message2(SM_ORDER | SM_DING, 3, 5,
+-			  "Error opening destination %s: %s",
++			  "開啟目地檔 %s 時發生錯誤：%s",
+ 			  full_filename, error_description(errno));
+ 	return;
+     }
+ 
+-    sprintf(prompt_buf, "Saving to \"%.50s\"", full_filename);
++    sprintf(prompt_buf, "正在存入 \"%.50s\"", full_filename);
+     we_cancel = init_att_progress(prompt_buf, ps_global->mail_stream, a->body);
+ 
+     gf_set_so_writec(&pc, store);
+@@ -1474,7 +1474,7 @@
+ 	  truncate(full_filename, (over == -1) ? orig_size : 0);
+ 
+ 	q_status_message2(SM_ORDER | SM_DING, 3, 5,
+-			  "%s: Error writing attachment to \"%s\"",
++			  "%s：寫入附件至 \"%s\" 時發生錯誤",
+ 			  err, full_filename);
+     }
+     else{
+@@ -1552,7 +1552,7 @@
+     MESSAGECACHE *mc;
+     STORE_S      *so;
+ 
+-    sprintf(nmsgs, "Attached Msg (part %s) ", a->number);
++    sprintf(nmsgs, "附加的信件 (第 %s 部份) ", a->number);
+     if(save_prompt(ps_global, &cntxt, newfolder, nmsgs,
+ 		   a->body->nested.msg->env, msgno, a->number)){
+ 	save_folder = (strucmp(newfolder, ps_global->inbox_name) == 0)
+@@ -1574,11 +1574,11 @@
+ 				   a->body->size.bytes, flags, date, so);
+ 	    if(rv == 1)
+ 	      q_status_message2(SM_ORDER, 0, 4,
+-				"Attached message (part %s) saved to \"%s\"",
++				"附加的 digest(第 %s 部份) 存為 \"%s\"",
  				a->number, 
  				save_folder);
  	    else if(rv == -1)
@@ -175,7 +277,16 @@
  	    /* else whatever broke in save_fetch_append shoulda bitched */
  
  	    so_give(&so);
-@@ -1546,11 +1546,11 @@
+@@ -1620,7 +1620,7 @@
+       if(MIME_MSG(part->body.type, part->body.subtype))
+ 	cnt++;
+     
+-    sprintf(nmsgs, "%d Msg Digest (part %s) ", cnt, a->number);
++    sprintf(nmsgs, "%d 信件 Digest (第 %s 部份) ", cnt, a->number);
+ 
+     if(save_prompt(ps_global, &cntxt, newfolder, nmsgs, NULL, 0, NULL)){
+ 	save_folder = (strucmp(newfolder, ps_global->inbox_name) == 0)
+@@ -1654,11 +1654,11 @@
  
  	if(rv == 1)
  	  q_status_message2(SM_ORDER, 0, 4,
@@ -189,7 +300,7 @@
  	/* else whatever broke in save_fetch_append shoulda bitched */
  
  	if(our_stream)
-@@ -1604,7 +1604,7 @@
+@@ -1712,7 +1712,7 @@
      ATTACH_S *ap = a;
      STORE_S  *store;
      static ESCKEY_S opts[] = {
@@ -198,7 +309,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -1612,7 +1612,7 @@
+@@ -1720,7 +1720,7 @@
  	opts[i].ch    =  ctrl('I');
  	opts[i].rval  = 11;
  	opts[i].name  = "TAB";
@@ -207,7 +318,7 @@
      }
  
      filename[0] = full_filename[0] = '\0';
-@@ -1625,7 +1625,7 @@
+@@ -1733,12 +1733,12 @@
      if(rv < 0){
  	switch(rv){
  	  case -1:
@@ -216,7 +327,35 @@
  	    break;
  
  	  case -2:
-@@ -1677,7 +1677,7 @@
+ 	    q_status_message1(SM_ORDER, 0, 2,
+-			      "Can't export to file outside of %s",
++			      "無法將檔案匯出至 %s 以外的地方",
+ 			      ps_global->VAR_OPER_DIR);
+ 	    break;
+ 	}
+@@ -1752,17 +1752,17 @@
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 4, err);
+ 	else
+           q_status_message3(SM_ORDER, 0, 4,
+-			    "Attached message (part %s) %s to \"%s\"",
++			    "附件(第 %s 部份)%s至 \"%s\"",
+ 			    a->number, 
+-			    over==0 ? "written"
+-				    : over==1 ? "overwritten" : "appended",
++			    over==0 ? "寫入"
++				    : over==1 ? "覆蓋\" : "附加",
+ 			    full_filename);
+ 
+ 	so_give(&store);
+     }
+     else
+       q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-			"Error opening file \"%s\" to export message: %s",
++			"無法開啟檔案 \"%s\" 以供匯出信件：%s",
+ 			full_filename, error_description(errno));
+ }
+ 
+@@ -1785,7 +1785,7 @@
      ATTACH_S *ap;
      STORE_S  *store;
      static ESCKEY_S opts[] = {
@@ -225,7 +364,7 @@
  	{-1, 0, NULL, NULL},
  	{-1, 0, NULL, NULL}};
  
-@@ -1685,7 +1685,7 @@
+@@ -1793,7 +1793,7 @@
  	opts[i].ch    =  ctrl('I');
  	opts[i].rval  = 11;
  	opts[i].name  = "TAB";
@@ -234,7 +373,7 @@
      }
  
      filename[0] = full_filename[0] = '\0';
-@@ -1698,7 +1698,7 @@
+@@ -1806,12 +1806,12 @@
      if(rv < 0){
  	switch(rv){
  	  case -1:
@@ -243,7 +382,68 @@
  	    break;
  
  	  case -2:
-@@ -1906,14 +1906,14 @@
+ 	    q_status_message1(SM_ORDER, 0, 2,
+-			      "Can't export to file outside of %s",
++			      "無法將檔案匯出至 %s 以外的地方",
+ 			      ps_global->VAR_OPER_DIR);
+ 	    break;
+ 	}
+@@ -1833,7 +1833,7 @@
+ 		    sprintf(tmp_20k_buf, "  [Unknown Message subtype: %s ]\n",
+ 			    ap->body->subtype);
+ 		    if(!so_puts(store, tmp_20k_buf))
+-		      err = "Can't write export file";
++		      err = "無法寫入匯出檔";
+ 		}
+ 		else{
+ 		    count++;
+@@ -1842,29 +1842,29 @@
+ 		}
+ 	    }
+ 	    else if(!so_puts(store, "Unknown type in Digest"))
+-	      err = "Can't write export file";
++	      err = "無法寫入匯出檔";
+ 	}
+ 
+ 	so_give(&store);
+ 
+ 	if(err){
+ 	    q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-			      "Error exporting: %s", err);
++			      "匯出檔案時發生錯誤：%s", err);
+ 	    q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-			    "%s messages exported before error occurred", err);
++			    "%s 封信件在錯誤產生之前被匯出", err);
+ 	}
+ 	else
+           q_status_message4(SM_ORDER, 0, 4,
+-			"%s messages in digest (part %s) %s to \"%s\"",
++			"共 %s 封信件(第 %s 部份)%s至 \"%s\"",
+ 			    long2string(count),
+ 			    a->number, 
+-			    over==0 ? "written"
+-				    : over==1 ? "overwritten" : "appended",
++			    over==0 ? "被寫入"
++				    : over==1 ? "被覆蓋\" : "被附加",
+ 			    full_filename);
+     }
+     else
+       q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-			"Error opening file \"%s\" to export digest: %s",
++			"無法開啟檔案 \"%s\" 以供匯出 digest：%s",
+ 			full_filename, error_description(errno));
+ }
+ 
+@@ -1933,7 +1933,7 @@
+ 
+ 
+     q_status_message2(SM_ORDER | SM_DING, 3, 3,
+-		      "Error printing message %s, part %s",
++		      "無法列印第 %s 封信件的第 %s 部份",
+ 		      long2string(msgno), a->number);
+     return(0);
+ }
+@@ -2014,14 +2014,14 @@
          /*----- Can't display this type ------*/
  	if(a->body->encoding < ENCOTHER)
  	  q_status_message4(SM_ORDER | SM_DING, 3, 5,
@@ -261,16 +461,16 @@
  			    body_encodings[(a->body->encoding <= ENCMAX)
  					     ? a->body->encoding : ENCOTHER]);
  
-@@ -2102,7 +2102,7 @@
- 	gf_set_so_writec(&pc, store);
- 	(void) decode_text(a, msgno, pc, QStatus, FM_DISPLAY | FM_HANDLES);
- 	gf_clear_so_writec(store);
--	scroll_attachment("ATTACHED TEXT", store, src, handles, a, flags);
-+	scroll_attachment("附件文字", store, src, handles, a, flags);
+@@ -2243,7 +2243,7 @@
+     clear_index_cache_ent(msgno);
+ 
+     if(store = format_text_att(msgno, a, &handles)){
+-	scroll_attachment("ATTACHED TEXT", store, CharStar, handles, a, flags);
++	scroll_attachment("附件文字", store, CharStar, handles, a, flags);
  	free_handles(&handles);
  	so_give(&store);	/* free resources associated with store */
      }
-@@ -2277,22 +2277,22 @@
+@@ -2411,22 +2411,22 @@
      memset(&sargs, 0, sizeof(SCROLL_S));
      sargs.text.text    = so_text(store);
      sargs.text.src     = src;
@@ -297,21 +497,19 @@
      }
  
      if(!handles){
-@@ -2706,10 +2706,10 @@
-     memset(&sargs, 0, sizeof(SCROLL_S));
+@@ -2858,9 +2858,9 @@
      sargs.text.text  = so_text(store);
      sargs.text.src   = CharStar;
--    sargs.text.desc  = "attachment info";
+     sargs.text.desc  = "attachment info";
 -    sargs.bar.title  = "ABOUT ATTACHMENT";
-+    sargs.text.desc  = "附件資訊";
-+    sargs.bar.title  = "關於附件";
++    sargs.bar.title  = "附件資訊";
      sargs.help.text  = h_simple_text_view;
 -    sargs.help.title = "HELP FOR \"ABOUT ATTACHMENT\"";
 +    sargs.help.title = "\"關於附件\"的輔助說明";
  
      scrolltool(&sargs);
  
-@@ -2771,7 +2771,7 @@
+@@ -2922,7 +2922,7 @@
  		else		/* partially formatted outgoing message */
  		  pine_send(outgoing, &body,
  			    ps_global->nr_mode
@@ -320,7 +518,22 @@
  			    NULL, NULL, NULL, NULL, NULL, FALSE);
  
  		ps_global->mangled_screen = 1;
-@@ -2857,7 +2857,7 @@
+@@ -2938,12 +2938,12 @@
+ 		mail_free_body(&body);
+ 		so_give((STORE_S **) &msgtext);
+ 		q_status_message(SM_ORDER | SM_DING, 4, 5,
+-		   "Error fetching message contents.  Can't forward message.");
++		   "取得信件內容時發生錯誤。無法轉寄信件。");
+ 	    }
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 4,
+-			   "Error allocating message text");
++			   "無法配置信件文字");
+ 
+ 	mail_free_envelope(&outgoing);
+     }
+@@ -3008,7 +3008,7 @@
  		  pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
  		else		/* partially formatted outgoing message */
  		  pine_send(outgoing, &body,
@@ -329,7 +542,27 @@
  			    NULL, NULL, NULL, NULL, NULL, FALSE);
  
  		ps_global->mangled_screen = 1;
-@@ -2954,7 +2954,7 @@
+@@ -3023,16 +3023,16 @@
+ 	    else{
+ 		so_give((STORE_S **) &msgtext);
+ 		q_status_message(SM_ORDER | SM_DING, 4, 5,
+-		   "Error fetching message contents.  Can't forward message.");
++		   "取得信件內容時發生錯誤。無法轉寄信件。");
+ 	    }
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 4,
+-			   "Error allocating message text");
++			   "無法配置信件文字");
+     }
+     else
+       q_status_message1(SM_ORDER,3,4,
+-			"Error fetching message %s. Can't forward it.",
++			"取得信件 %s 的內容時發生錯誤。無法轉寄它。",
+ 			long2string(msgno));
+ 
+     mail_free_envelope(&outgoing);
+@@ -3105,7 +3105,7 @@
  				 tp = body_partno(stream, msgno, a->body),
  				 msgtext, prefix, include_text)){
  		/* partially formatted outgoing message */
@@ -338,7 +571,23 @@
  			  fcc.tptr, NULL, NULL, NULL, NULL, 0);
  
  		pine_free_body(&body);
-@@ -3035,7 +3035,7 @@
+@@ -3113,13 +3113,13 @@
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER | SM_DING, 3, 4,
+-			       "Error building message body");
++			       "無法建立信件本體");
+ 
+ 	    fs_give((void **) &tp);
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 4,
+-			   "Error allocating message text");
++			   "無法配置信件文字");
+     }
+ 
+ seeyalater:
+@@ -3186,7 +3186,7 @@
  
  	sprintf(prompt, "Pipe %sattachment %s to %s: ", raw ? "RAW " : "",
  		a->number, capture ? "" : "(Free Output) ");
@@ -347,7 +596,7 @@
  	pipe_opt[2].label = capture ? "Free Output" : "Capture Output";
  	flags = OE_APPEND_CURRENT | OE_SEQ_SENSITIVE;
  	rc = optionally_enter(pipe_command, -FOOTER_ROWS(ps_global), 0,
-@@ -3053,7 +3053,7 @@
+@@ -3204,7 +3204,7 @@
  	}
  	else if(rc == 0){
  	    if(pipe_command[0] == '\0'){
@@ -356,7 +605,7 @@
  		break;
  	    }
  
-@@ -3127,7 +3127,7 @@
+@@ -3278,7 +3278,7 @@
  	    break;
  	}
  	else if(rc == 1){

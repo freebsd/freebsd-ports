@@ -1,0 +1,21 @@
+--- pine/osdep/execview.orig	Tue Sep 22 21:21:12 1998
++++ pine/osdep/execview	Tue Sep 22 21:22:10 1998
+@@ -45,14 +45,14 @@
+     if(syspipe = open_system_pipe(command, r_file_h, NULL, mode)){
+ 	close_system_pipe(&syspipe);
+ 	if(needsterminal == 1)
+-	  q_status_message(SM_ORDER, 0, 4, "VIEWER command completed");
++	  q_status_message(SM_ORDER, 0, 4, "VIEWER 命令完成");
+ 	else if(needsterminal == 2)
+-	  display_output_file(result_file, "VIEWER", " command result", 1);
++	  display_output_file(result_file, "VIEWER", " 命令結果", 1);
+ 	else
+-	  display_output_file(result_file, "VIEWER", " command launched", 1);
++	  display_output_file(result_file, "VIEWER", " 命令已啟動", 1);
+     }
+     else
+-      q_status_message1(SM_ORDER, 3, 4, "Cannot spawn command : %s", cmd);
++      q_status_message1(SM_ORDER, 3, 4, "無法起始命令：%s", cmd);
+ 
+     fs_give((void **)&command);
+     if(result_file)

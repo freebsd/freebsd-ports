@@ -5,13 +5,13 @@
  /etc/mime.types	System-wide file ext. to MIME type mapping
  .br
 -/usr/local/lib/pine.info	Local pointer to system administrator.
-+/usr/local/etc/pine.info	Local pointer to system administrator.
++@@PREFIX@@/etc/pine.info	Local pointer to system administrator.
  .br
 -/usr/local/lib/pine.conf	System-wide configuration file.
-+/usr/local/etc/pine.conf	System-wide configuration file.
++@@PREFIX@@/etc/pine.conf	System-wide configuration file.
  .br
 -/usr/local/lib/pine.conf.fixed	 Non-overridable configuration file.
-+/usr/local/etc/pine.conf.fixed	 Non-overridable configuration file.
++@@PREFIX@@/etc/pine.conf.fixed	 Non-overridable configuration file.
  .br
  /tmp/.\\usr\\spool\\mail\\xxxx	Per-folder mailbox lock files.
  .br

@@ -1,5 +1,5 @@
---- pine/folder.c.orig	Wed Jul 22 06:01:07 1998
-+++ pine/folder.c	Tue Aug  4 12:42:16 1998
+--- pine/folder.c.orig	Thu Sep 17 01:12:27 1998
++++ pine/folder.c	Tue Sep 22 19:05:59 1998
 @@ -62,13 +62,13 @@
  			  ((X)->dir->status&CNTXT_PARTFIND) == 0)
  #define	FLDR_NAME(X)	((X) ? ((X)->nickname ? (X)->nickname : (X)->name) :"")
@@ -20,7 +20,7 @@
  
  #define	mail_list(S, R, N)	mail_list_internal(S, R, N)
  
-@@ -269,18 +269,18 @@
+@@ -281,18 +281,18 @@
  /*
   * Various screen keymenu/command binding s.
   */
@@ -47,7 +47,7 @@
  	 {MC_CHOICE,5,{'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -312,15 +312,15 @@
+@@ -324,15 +324,15 @@
  static struct key context_cfg_keys[] = 
         {HELP_MENU,
  	OTHER_MENU,
@@ -67,7 +67,7 @@
  	WHEREIS_MENU,
  
  	HELP_MENU,
-@@ -339,9 +339,9 @@
+@@ -351,9 +351,9 @@
  
  static struct key context_select_keys[] = 
         {HELP_MENU,
@@ -79,7 +79,7 @@
  	 {MC_CHOICE, 5, {'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -355,9 +355,9 @@
+@@ -367,9 +367,9 @@
  
  static struct key context_fcc_keys[] = 
         {HELP_MENU,
@@ -91,7 +91,7 @@
  	 {MC_CHOICE, 5, {'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
  	PREVC_MENU,
  	NEXTC_MENU,
-@@ -372,16 +372,16 @@
+@@ -384,16 +384,16 @@
  static struct key folder_keys[] =
         {HELP_MENU,
    	OTHER_MENU,
@@ -112,7 +112,7 @@
  	WHEREIS_MENU,
  
  	HELP_MENU,
-@@ -393,9 +393,9 @@
+@@ -405,9 +405,9 @@
  	CIND_MENU,
  	COMPOSE_MENU,
  	PRYNTTXT_MENU,
@@ -125,7 +125,7 @@
  INST_KEY_MENU(folder_km, folder_keys);
  #define	KM_COL_KEY	2
  #define	KM_SEL_KEY	3
-@@ -407,9 +407,9 @@
+@@ -419,9 +419,9 @@
  
  static struct key folder_sel_keys[] =
         {HELP_MENU,
@@ -138,7 +138,7 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -423,9 +423,9 @@
+@@ -435,9 +435,9 @@
  
  static struct key folder_sub_sel_keys[] =
         {HELP_MENU,
@@ -150,7 +150,7 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -439,9 +439,9 @@
+@@ -451,9 +451,9 @@
  
  static struct key folder_fcc_keys[] =
         {HELP_MENU,
@@ -163,7 +163,7 @@
  	 KS_NONE},
  	PREVF_MENU,
  	NEXTF_MENU,
-@@ -457,9 +457,9 @@
+@@ -469,9 +469,9 @@
  
  static struct key folder_sub_keys[] =
         {HELP_MENU,
@@ -176,7 +176,7 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -476,8 +476,8 @@
+@@ -488,8 +488,8 @@
  static struct key folder_post_keys[] =
         {HELP_MENU,
   	NULL_MENU,
@@ -187,7 +187,7 @@
  	PREVF_MENU,
  	NEXTF_MENU,
  	PREVPAGE_MENU,
-@@ -572,12 +572,12 @@
+@@ -610,12 +610,12 @@
      mailcap_free(); /* free resources we won't be using for a while */
  
      memset(&css, 0, sizeof(CONT_SCR_S));
@@ -202,7 +202,7 @@
      css.keymenu	     = &c_cfg_km;
      css.edit	     = 1;
  
-@@ -866,7 +866,7 @@
+@@ -904,7 +904,7 @@
  	/* leave (*new_dir)->ref == NULL */
      }
  
@@ -211,7 +211,7 @@
      (*new_dir)->desc = cpystr(tmp_20k_buf);
  }
  
-@@ -965,12 +965,12 @@
+@@ -1003,12 +1003,12 @@
  	CONT_SCR_S css;
  
  	memset(&css, 0, sizeof(CONT_SCR_S));
@@ -226,7 +226,7 @@
  	css.keymenu	 = km;
  	css.edit	 = edit_config;
  
-@@ -1041,7 +1041,7 @@
+@@ -1079,7 +1079,7 @@
      pbuf.browse_help   = h_composer_browse;
      pbuf.attach_help   = h_composer_ctrl_j;
      pbuf.composer_help = h_composer;
@@ -235,7 +235,7 @@
      pbuf.pine_anchor   = set_titlebar(tmp, ps_global->mail_stream,
  				      ps_global->context_current,
  				      ps_global->cur_folder,ps_global->msgmap, 
-@@ -1277,10 +1277,10 @@
+@@ -1322,10 +1322,10 @@
  	else
  	  exists = (i & FEX_ISDIR);
  
@@ -249,7 +249,7 @@
  	if(want_to(prompt, 'y', 0, NO_HELP, WT_NORM) == 'y'){
  	    if(!exists && !mail_create(NULL, tmp)){
  		flush_status_messages(1);	/* mail_create gripes */
-@@ -1312,7 +1312,7 @@
+@@ -1357,7 +1357,7 @@
      char *rstr = NULL;
      void (*redraw)() = ps_global->redrawer;
  #define	CCA_PROMPT	\
@@ -258,7 +258,7 @@
  
      ps_global->redrawer = redraw_pico;
      fix_windsize(ps_global);
-@@ -1429,7 +1429,7 @@
+@@ -1474,7 +1474,7 @@
  /*BUG: test writing with NNTP to misc.test via mark's code. reasonable err msg?*/
      if(NEWS_TEST(fs->context)) {
  	q_status_message(SM_ORDER | SM_DING, 3, 4,
@@ -267,7 +267,7 @@
  	return(0);
      }
  #endif
-@@ -1444,7 +1444,7 @@
+@@ -1489,7 +1489,7 @@
      FSTATE_S *fs;
  {
      if(!strncmp(f->prefix, "SUB", 3)){
@@ -276,7 +276,7 @@
  			  FLDR_NAME(f));
  	return(0);
      }
-@@ -1457,7 +1457,7 @@
+@@ -1502,7 +1502,7 @@
  fl_hdr_gen(ps)
      struct pine *ps;
  {
@@ -285,16 +285,16 @@
  		 ps->cur_folder, ps->msgmap, 1, FolderName, 0, 0);
  }
  
-@@ -1572,7 +1572,7 @@
+@@ -1617,7 +1617,7 @@
  {
      int		     ch, cmd, mangled_footer, mangled_header,
  		     n, rc, cur_row, cur_col, km_size, was_dir = -1,
--		     km_popped = 0, listmode = 0, done = 0;
-+		     km_popped = 0, listmode = 0, done = 0, exit_to_main = 0;
+-		     km_popped = 0, listmode = 0, done = 0, save_sel = 0;
++		     km_popped = 0, listmode = 0, done = 0, save_sel = 0, exit_to_main = 0;
      unsigned short   new_col;
      FOLDER_S        *cur_f = NULL;
-     STRINGLIST	    *sl = NULL;
-@@ -1682,7 +1682,7 @@
+     STRLIST_S	    *sl = NULL;
+@@ -1748,7 +1748,7 @@
  		    km.keys[KM_MAIN_KEY].bind.cmd = MC_NONE;
  		    km.keys[KM_MAIN_KEY].bind.nch = 0;
  
@@ -303,7 +303,7 @@
  		    km.keys[KM_COL_KEY].bind.cmd = MC_MAIN;
  		    km.keys[KM_COL_KEY].bind.ch[0] = 'm';
  		}
-@@ -1702,14 +1702,14 @@
+@@ -1768,14 +1768,14 @@
  		if(listmode){
  		    clrbitn(SB_LIST_KEY, bitmap);
  		    km.keys[SB_SEL_KEY].name = "X";
@@ -320,7 +320,7 @@
  		    km.keys[SB_SEL_KEY].bind.cmd = MC_CHOICE;
  		    km.keys[SB_SEL_KEY].bind.ch[0] = 's';
  		}
-@@ -1723,7 +1723,7 @@
+@@ -1789,7 +1789,7 @@
  	    }
  
  	    if(cur_f && cur_f->isdir){
@@ -329,7 +329,7 @@
  					     {MC_CHOICE,5,
  					      {'s','>','.',
  					       ctrl('M'),ctrl('J')}},
-@@ -1849,8 +1849,15 @@
+@@ -1915,8 +1915,15 @@
              /*---------------------- Key left --------------*/
  	  case MC_CHARLEFT :
  	  case MC_PREVITEM :
@@ -345,7 +345,7 @@
  
  	    break;
   
-@@ -1858,6 +1865,7 @@
+@@ -1924,6 +1931,7 @@
              /*--------------------- Key right -------------------*/
  	  case MC_CHARRIGHT :
  	  case MC_NEXTITEM :
@@ -353,7 +353,7 @@
  	    if(n = folder_lister_next(fs))
  	      fs->folder_index = n;
  
-@@ -1879,7 +1887,7 @@
+@@ -1945,7 +1953,7 @@
  	      rc--;
  
  	    if(rc < 0){
@@ -362,7 +362,7 @@
  		if(fs->top_row != 0){		/* make sure! */
  		    fs->top_row    = 0;
  		    fs->prev_index = -1;
-@@ -1925,7 +1933,7 @@
+@@ -1991,7 +1999,7 @@
  				   FOLDERS(fs->context))->d_line + 1;
  
  	    if(rc > fs->last_row){
@@ -371,7 +371,7 @@
  		break;
  	    }
  
-@@ -2044,7 +2052,7 @@
+@@ -2156,7 +2164,7 @@
  		  rc++;
  	    }
  	    else
@@ -380,7 +380,7 @@
  
              break;
  
-@@ -2057,7 +2065,7 @@
+@@ -2169,7 +2177,7 @@
  	    if((rc = fs->top_row + fs->display_rows) > fs->last_row){
  		if((int)folder_entry(fs->folder_index,
  				FOLDERS(fs->context))->d_line >= fs->last_row){
@@ -389,7 +389,7 @@
  		    break;
  		}
  		else
-@@ -2098,7 +2106,7 @@
+@@ -2210,7 +2218,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER | SM_DING, 3, 3, 
@@ -398,7 +398,7 @@
  
  	    break;
  
-@@ -2107,7 +2115,7 @@
+@@ -2219,7 +2227,7 @@
  	  case MC_CHOICE :
  	    if(!folder_total(FOLDERS(fs->context))){
  		q_status_message(SM_ORDER | SM_DING, 3, 3, 
@@ -407,7 +407,7 @@
  	    }
  	    else if(folder_lister_select(cur_f, fs, listmode)){
  		mangled_footer++;
-@@ -2169,7 +2177,7 @@
+@@ -2279,7 +2287,7 @@
  		mangled_footer++;
  	    }
  	    else
@@ -416,7 +416,7 @@
  
  	    break;
  
-@@ -2302,8 +2310,8 @@
+@@ -2415,8 +2423,8 @@
  	  case MC_DELETE :
  	    if(!ALL_FOUND(fs->context) || (fs->context->use & CNTXT_PSEUDO)){
  		q_status_message1(SM_ORDER | SM_DING, 0, 3,
@@ -427,7 +427,7 @@
  		break;
  	    }
  
-@@ -2381,13 +2389,13 @@
+@@ -2494,13 +2502,13 @@
  		if(fs->zoomed = !fs->zoomed){	/* clear all the prefixes */
  		    (void) folder_lister_nearest_selected(fs);
  		    q_status_message1(SM_ORDER, 0, 3,
@@ -443,7 +443,7 @@
  		}
  
  		create_folder_display(fs, ps->ttyo->screen_cols);
-@@ -2395,7 +2403,7 @@
+@@ -2508,7 +2516,7 @@
  	    }
  	    else
  	      q_status_message(SM_ORDER, 0, 3,
@@ -452,7 +452,7 @@
  
  
  	    break;
-@@ -2405,16 +2413,16 @@
+@@ -2518,16 +2526,16 @@
  	  case MC_WHEREIS :
  	    switch(search_folders(fs, -FOOTER_ROWS(ps))){
  	      case -1 :
@@ -472,7 +472,7 @@
  		break;
  	    }
  
-@@ -2475,8 +2483,8 @@
+@@ -2594,8 +2602,8 @@
  	    && ALL_FOUND(fs->context))
        return(fs->folder_index + 1);
  
@@ -483,7 +483,7 @@
      return(0);
  }
  
-@@ -2497,8 +2505,8 @@
+@@ -2616,8 +2624,8 @@
      else if(fs->folder_index > 0 && ALL_FOUND(fs->context))
        return(fs->folder_index - 1);
  
@@ -494,7 +494,7 @@
      return(-1);
  }
  
-@@ -2513,7 +2521,7 @@
+@@ -2632,7 +2640,7 @@
      if(listmode){
  	if(NEWS_TEST(fs->context) && !strncmp(f->prefix, "SUB", 3)){
  	    q_status_message1(SM_ORDER, 0, 3,
@@ -503,7 +503,7 @@
  			      FLDR_NAME(f));
  	}
  	else{
-@@ -2523,7 +2531,7 @@
+@@ -2642,7 +2650,7 @@
      }
      else{
  	if(f->isdir){
@@ -512,7 +512,7 @@
  	}
  	else
  	  folder_select_toggle(fs, f);
-@@ -2580,13 +2588,13 @@
+@@ -2699,13 +2707,13 @@
      extern     char *sel_pmt2;
  
      if((f = folder_entry(fs->folder_index, FOLDERS(fs->context)))->isdir){
@@ -528,7 +528,7 @@
  	sel_opts += 2;			/* disable extra options */
  	switch(q = radio_buttons(SEL_ALTER_PMT, -FOOTER_ROWS(ps_global),
  				 sel_opts1, 'c', 'x', help, RB_NORM)){
-@@ -2611,7 +2619,7 @@
+@@ -2730,7 +2738,7 @@
  
  	  default :
  	    q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -537,7 +537,7 @@
  	    return(0);
  	}
      }
-@@ -2625,7 +2633,7 @@
+@@ -2744,7 +2752,7 @@
       */
      switch(q){
        case 'x':				/* cancel */
@@ -546,7 +546,7 @@
  	return(0);
  
        case 'c' :			/* toggle current's selected state */
-@@ -2647,10 +2655,10 @@
+@@ -2766,10 +2774,10 @@
  	      create_folder_display(fs, ps_global->ttyo->screen_cols);
  	}
  
@@ -560,7 +560,7 @@
  	return(1);
  
        case 't' :			/* Text */
-@@ -2667,7 +2675,7 @@
+@@ -2786,7 +2794,7 @@
  
        default :
  	q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -569,7 +569,7 @@
  	return(0);
      }
  
-@@ -2696,35 +2704,30 @@
+@@ -2815,35 +2823,30 @@
  
      if(!(diff = (total = selected_folders(fs)) - old_tot)){
  	if(narrow)
@@ -616,16 +616,7 @@
  
  	    if(F_OFF(F_SELECTED_SHOWN_BOLD, ps_global)){
  		folder_prefixes(fs, "    ");
-@@ -2839,7 +2842,7 @@
- 	fp   = next_folder_dir(fs->context, tmpf->name);
- 
- 	/* Provide context in new collection header */
--	sprintf(tmp_20k_buf, "Dir: %s",
-+	sprintf(tmp_20k_buf, "目錄：%s",
- 		((p = strstr(fs->context->context, "%s")) && !*(p+2)
- 		 && !strncmp(fp->ref, fs->context->context,
- 			     p - fs->context->context))
-@@ -2860,9 +2863,9 @@
+@@ -3031,9 +3034,9 @@
  
  	fs->prev_index = -1;		  /* redraw display */
  
@@ -637,7 +628,16 @@
  	rv++;
      }
      else
-@@ -2908,12 +2911,12 @@
+@@ -3052,7 +3055,7 @@
+     char *p;
+ 
+     /* Provide context in new collection header */
+-    sprintf(tmp_20k_buf, "Dir: %s",
++    sprintf(tmp_20k_buf, "目錄：%s",
+ 	    ((p = strstr(cntxt->context, "%s")) && !*(p+2)
+ 	     && !strncmp(fdp->ref, cntxt->context, p - cntxt->context))
+ 	      ? fdp->ref + (p - cntxt->context) : fdp->ref);
+@@ -3097,12 +3100,12 @@
  	fs->prev_index = -1;		  /* redraw display */
  
  	if(fp->status & CNTXT_SUBDIR)
@@ -652,7 +652,7 @@
  
  	rv++;
      }
-@@ -3479,12 +3482,12 @@
+@@ -3673,12 +3676,12 @@
      if(fs->context->use & CNTXT_INCMNG){
  	char inbox_host[MAXPATH], *beg, *end = NULL;
  	ESCKEY_S *special_key;
@@ -667,7 +667,7 @@
  	    return(FALSE);
  	}
  
-@@ -3506,7 +3509,7 @@
+@@ -3700,7 +3703,7 @@
  	else
  	  special_key = NULL;
  
@@ -676,7 +676,7 @@
  	help = NO_HELP;
  	while(1){
  	    int flags = OE_APPEND_CURRENT;
-@@ -3524,7 +3527,7 @@
+@@ -3718,7 +3721,7 @@
  	    }
  	    else if(rc == 1){
  		q_status_message(SM_ORDER,0,2,
@@ -685,7 +685,7 @@
  		return(FALSE);
  	    }
  	    else if(rc == 0)
-@@ -3534,7 +3537,7 @@
+@@ -3728,7 +3731,7 @@
  
      if(offset = strlen(add_folder)){		/* must be host for incoming */
  	int i;
@@ -694,7 +694,7 @@
  	for(i = offset;i >= 0; i--)
  	  add_folder[i+1] = add_folder[i];
  
-@@ -3543,7 +3546,7 @@
+@@ -3737,7 +3740,7 @@
  	add_folder[++offset] = '\0';		/* +2, total */
      }
      else
@@ -703,7 +703,7 @@
  
      help = NO_HELP;
      while(1){
-@@ -3551,14 +3554,14 @@
+@@ -3745,14 +3748,14 @@
  
  	p = NULL;
  	if(isdir){
@@ -722,7 +722,7 @@
  	}
  
  	flags = OE_APPEND_CURRENT;
-@@ -3572,7 +3575,7 @@
+@@ -3766,7 +3769,7 @@
  	    if(!ps_global->show_dot_names && add_folder[offset] == '.'){
  		if(cnt++ <= 0)
                    q_status_message(SM_ORDER,3,3,
@@ -731,7 +731,7 @@
  		else{
  		    NAMEVAL_S *feat;
  		    int i;
-@@ -3582,7 +3585,7 @@
+@@ -3776,7 +3779,7 @@
  		      ;/* do nothing */
  
  		    q_status_message1(SM_ORDER,3,3,
@@ -740,7 +740,7 @@
  		      feat && feat->name ? feat->name : "");
  		}
  
-@@ -3602,7 +3605,7 @@
+@@ -3796,7 +3799,7 @@
  	    }
  	    else if(*p == fs->context->dir->delim){
  		q_status_message(SM_ORDER|SM_DING, 3, 3,
@@ -749,7 +749,7 @@
  		display_message('X');
  		continue;
  	    }
-@@ -3624,7 +3627,7 @@
+@@ -3818,7 +3821,7 @@
  			: NO_HELP;
  	}
  	else if(rc == 1 || add_folder[0] == '\0') {
@@ -758,7 +758,7 @@
  	    return(FALSE);
  	}
      }
-@@ -3643,7 +3646,7 @@
+@@ -3837,7 +3840,7 @@
  
      help = NO_HELP;
      if(fs->context->use & CNTXT_INCMNG){
@@ -767,7 +767,7 @@
  	while(1){
  	    int flags = OE_APPEND_CURRENT;
  
-@@ -3664,7 +3667,7 @@
+@@ -3858,7 +3861,7 @@
  	    }
  	    else if(rc == 1 || (rc != 3 && !*nickname)){
  		q_status_message(SM_ORDER,0,2,
@@ -776,7 +776,7 @@
  		return(FALSE);
  	    }
  	}
-@@ -3679,7 +3682,7 @@
+@@ -3873,7 +3876,7 @@
  	    f = folder_entry(offset, FOLDERS(fs->context));
  	    if(!strucmp(FLDR_NAME(f), nickname[0] ? nickname : add_folder)){
  		q_status_message1(SM_ORDER | SM_DING, 0, 3,
@@ -785,7 +785,7 @@
  				  nickname[0] ? nickname : add_folder);
  		return(FALSE);
  	    }
-@@ -3732,7 +3735,7 @@
+@@ -3927,7 +3930,7 @@
  	if(nickname[0])
  	  strcpy(add_folder, nickname);		/* known by new name */
  
@@ -794,7 +794,7 @@
  	return_val = add_folder;
      }
      else if(context_isambig(add_folder)){
-@@ -3748,15 +3751,15 @@
+@@ -3943,15 +3946,15 @@
  	     */
  	    refresh_folder_list(fs, TRUE);
  
@@ -813,7 +813,7 @@
  			add_folder);
  
      return(return_val != NULL);
-@@ -3795,13 +3798,13 @@
+@@ -3990,13 +3993,13 @@
      subscribe_keys[i = 0].ch  = ctrl('T');
      subscribe_keys[i].rval    = 12;
      subscribe_keys[i].name    = "^T";
@@ -829,7 +829,7 @@
      }
  
      subscribe_keys[i].ch = -1;
-@@ -3861,7 +3864,7 @@
+@@ -4057,7 +4060,7 @@
  	    }
  	    else{
  		q_status_message(SM_ORDER, 0, 2,
@@ -838,7 +838,7 @@
  		continue;
  	    }
  
-@@ -3914,10 +3917,10 @@
+@@ -4110,10 +4113,10 @@
  	    else{
  		if(rc == 12)
  		  q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -849,9 +849,9 @@
 -			  "News group \"%s\" didn't match any existing groups",
 +			  "新聞組群 \"%s\" 不符合任何現存的組群",
  			  folder);
+ 		free_folder_list(&subscribe_cntxt);
  
- 		continue;
-@@ -3965,7 +3968,7 @@
+@@ -4162,7 +4165,7 @@
  
      if(rc < 0){
  	if(rc == -1)
@@ -860,16 +860,16 @@
      }
      else{
  	if(folders){		/*------ Actually do the subscription -----*/
-@@ -3987,7 +3990,7 @@
+@@ -4184,7 +4187,7 @@
  		     */
  		    q_status_message1(errors ?SM_INFO : SM_ORDER,
  				      errors ? 0 : 3, 3,
 -				      "Error subscribing to \"%s\"",
 +				      "訂閱\至 \"%s\" 時發生錯誤",
- 				      (char *) flp->text.data);
+ 				      (char *) flp->name);
  		    errors++;
  		}
-@@ -4011,13 +4014,13 @@
+@@ -4208,13 +4211,13 @@
  
  	    if(n == 0)
  	      q_status_message(SM_ORDER | SM_DING, 3, 5,
@@ -885,8 +885,8 @@
 +				errors ? "，發生錯誤於 " : "",
  				errors ? comatose((long)errors) : "");
  
- 	    mail_free_stringlist(&folders);
-@@ -4026,7 +4029,7 @@
+ 	    free_strlist(&folders);
+@@ -4223,7 +4226,7 @@
  	    (void) context_apply(tmp_20k_buf, &subscribe_cntxt, folder);
  	    if(mail_subscribe(NULL, tmp_20k_buf) == 0L){
  		q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -895,7 +895,7 @@
  	    }
  	    else if(ALL_FOUND(cntxt)){
  		/*---- Update the screen display data structures -----*/
-@@ -4040,7 +4043,7 @@
+@@ -4237,7 +4240,7 @@
  	}
  
  	if(folder[0])
@@ -904,7 +904,7 @@
      }
  
      free_fdir(&subscribe_cntxt.dir, 1);
-@@ -4080,19 +4083,19 @@
+@@ -4277,19 +4280,19 @@
  
      if(NEWS_TEST(fs->context)){
  	q_status_message(SM_ORDER | SM_DING, 3, 3,
@@ -927,7 +927,7 @@
  			  new_f->parent
  			    ? new_f->nickname
  			    : ps_global->inbox_name);
-@@ -4108,11 +4111,11 @@
+@@ -4305,11 +4308,11 @@
  
      ren_cur = strcmp(folder, ps_global->cur_folder) == 0;
  
@@ -942,7 +942,7 @@
      help   = NO_HELP;
      strcpy(new_name, folder);
      while(1) {
-@@ -4133,7 +4136,7 @@
+@@ -4330,7 +4333,7 @@
  	    if(!ps_global->show_dot_names && *new_name == '.'){
  		if(cnt++ <= 0)
                    q_status_message(SM_ORDER,3,3,
@@ -951,7 +951,7 @@
  		else{
  		    NAMEVAL_S *feat;
  		    int i;
-@@ -4143,7 +4146,7 @@
+@@ -4340,7 +4343,7 @@
  		      ;/* do nothing */
  
  		    q_status_message1(SM_ORDER,3,3,
@@ -960,7 +960,7 @@
  		      feat && feat->name ? feat->name : "");
  		}
  
-@@ -4153,13 +4156,13 @@
+@@ -4350,13 +4353,13 @@
  
  	    if(folder_index(new_name, fs->context, FI_ANY) >= 0){
                  q_status_message1(SM_ORDER, 3, 3,
@@ -976,7 +976,7 @@
  				  ps_global->inbox_name);
                  display_message(NO_OP_COMMAND);
                  continue;
-@@ -4182,7 +4185,7 @@
+@@ -4379,7 +4382,7 @@
      if(rc == 1
         || !(*new_name || (fs->context->use & CNTXT_INCMNG))
         || !strcmp(new_name, folder)){
@@ -985,7 +985,7 @@
          return(0);
      }
  
-@@ -4264,7 +4267,7 @@
+@@ -4461,7 +4464,7 @@
  	    /* renaming sent-mail or saved-messages */
  	    if(context_create(fs->context, NULL, folder)){
  		q_status_message3(SM_ORDER,0,3,
@@ -994,7 +994,7 @@
  				  folder, new_name,
  				  pretty_fn(
  				    (strcmp(ps_global->VAR_DEFAULT_SAVE_FOLDER,
-@@ -4275,7 +4278,7 @@
+@@ -4472,7 +4475,7 @@
  	    }
  	    else{
  		q_status_message1(SM_ORDER | SM_DING, 3, 4,
@@ -1003,7 +1003,7 @@
  
  		dprint(2, (debugfile, "Error creating \"%s\" in %s context\n",
  			   folder, fs->context->context));
-@@ -4283,7 +4286,7 @@
+@@ -4480,7 +4483,7 @@
  	}
  	else
  	  q_status_message2(SM_ORDER, 0, 3,
@@ -1012,8 +1012,14 @@
  			    pretty_fn(folder), pretty_fn(new_name));
  
  	/* Rebuild folder list */
-@@ -4332,7 +4335,7 @@
-     int         ret, close_opened = 0, blast_folder = 1;
+@@ -4530,12 +4533,12 @@
+ 
+     if(!folder_total(FOLDERS(fs->context))){        
+       q_status_message(SM_ORDER | SM_DING, 0, 4,
+-		       "Empty folder collection.  No folder to delete!");
++		       "空的資料匣褻陛C沒有東西可供刪除！");
+       return(0);
+     }
  
      if(NEWS_TEST(fs->context)){
 -	static char fmt[] = "Really unsubscribe from \"%.*s\"";
@@ -1021,7 +1027,7 @@
           
          folder = folder_entry(fs->folder_index, FOLDERS(fs->context))->name;
  	/* 4 is strlen("%.*s") */
-@@ -4354,7 +4357,7 @@
+@@ -4557,7 +4560,7 @@
  	(void) context_apply(tmp_20k_buf, fs->context, folder);
  	if(!mail_unsubscribe(NULL, tmp_20k_buf)){
              q_status_message1(SM_ORDER | SM_DING, 3, 3,
@@ -1030,16 +1036,7 @@
              return(0);
          }
  
-@@ -4372,7 +4375,7 @@
- 
-     if(!folder_total(FOLDERS(fs->context))){
- 	q_status_message(SM_ORDER | SM_DING, 0, 4,
--			 "Empty folder collection.  No folder to delete!");
-+			 "空的資料匣總集。沒有東西可供刪除！");
- 	return(0);
-     }
- 
-@@ -4382,12 +4385,12 @@
+@@ -4579,12 +4582,12 @@
  
      if(ps_global->readonly_pinerc && (fs->context->use & CNTXT_INCMNG)){
  	q_status_message(SM_ORDER,3,5,
@@ -1054,7 +1051,7 @@
  	return(0);
      }
      else if(fs->context == ps_global->context_current
-@@ -4402,7 +4405,7 @@
+@@ -4599,7 +4602,7 @@
  
  	if(ret){
  	    q_status_message1(SM_ORDER | SM_DING, 3, 4,
@@ -1063,7 +1060,7 @@
  			      folder);
  	    return(0);
  	}
-@@ -4413,19 +4416,19 @@
+@@ -4610,19 +4613,19 @@
  	 */
  	if(folder_index(folder, fs->context, FI_FOLDER) >= 0
  	   && (ret = want_to(DIR_FOLD_PMT,'n','x',NO_HELP,WT_NORM)) != 'y'){
@@ -1088,7 +1085,7 @@
  
  	switch(radio_buttons(DELF_PROMPT, -FOOTER_ROWS(ps_global),
  			     delf_opts,'n','x',NO_HELP,RB_NORM)){
-@@ -4434,7 +4437,7 @@
+@@ -4631,7 +4634,7 @@
  	    break;
  
  	  case 'x' :
@@ -1097,7 +1094,7 @@
  	    return(0);
  
  	  default :
-@@ -4442,13 +4445,13 @@
+@@ -4639,13 +4642,13 @@
  	}
      }
      else{
@@ -1116,7 +1113,7 @@
  	    return(0);
  	}
      }
-@@ -4491,13 +4494,13 @@
+@@ -4688,13 +4691,13 @@
  /*
   * BUG: what if sent-mail or saved-messages????
   */
@@ -1133,7 +1130,7 @@
  
  
      if(fs->context->use & CNTXT_INCMNG){
-@@ -4642,7 +4645,7 @@
+@@ -4839,7 +4842,7 @@
      int  flags;
  
      pat[0] = '\0';
@@ -1142,7 +1139,7 @@
  
      while(1){
  	flags = OE_APPEND_CURRENT | OE_DISALLOW_HELP;
-@@ -4658,7 +4661,7 @@
+@@ -4855,7 +4858,7 @@
  	      return(1);
  
  	  case 1 :
@@ -1151,7 +1148,7 @@
  
  	  default :
  	    return(0);
-@@ -4734,7 +4737,7 @@
+@@ -4931,7 +4934,7 @@
  	  return(1);
      }
  
@@ -1160,7 +1157,7 @@
      return(0);
  }
  
-@@ -4767,7 +4770,7 @@
+@@ -4964,7 +4967,7 @@
      if(!strucmp(folder = f->name, ps_global->inbox_name))
        return(FEX_ISFILE);
  
@@ -1169,7 +1166,7 @@
      we_cancel = busy_alarm(1, tmp, NULL, 0);
  
      mm_list_info	      = &ldata;		/* tie down global reference */
-@@ -4910,7 +4913,7 @@
+@@ -5107,7 +5110,7 @@
  	  return(1);
      }
  
@@ -1178,7 +1175,7 @@
      return(0);
  }
  
-@@ -4932,7 +4935,7 @@
+@@ -5129,7 +5132,7 @@
      while(1){
  	flags = OE_APPEND_CURRENT | OE_DISALLOW_HELP;
  	sprintf(number, "%ld", *count);
@@ -1187,7 +1184,7 @@
  	r = optionally_enter(number, -FOOTER_ROWS(ps_global), 0, 31,
  			     prompt, sel_num_opt, NO_HELP, &flags);
  	switch (r){
-@@ -4941,7 +4944,7 @@
+@@ -5138,7 +5141,7 @@
  	      break;
  	    else if((*count = atol(number)) < 0L)
  	      q_status_message(SM_ORDER, 3, 3,
@@ -1196,7 +1193,7 @@
  	    else
  	      return(1);	/* success */
  
-@@ -5102,7 +5105,7 @@
+@@ -5299,7 +5302,7 @@
  	    for(; i >= 0; i--)
  	      folder_entry(i, FOLDERS(fs->context))->scanned = 0;
  
@@ -1205,7 +1202,7 @@
  	    rv = 0;
  	    break;
  	}
-@@ -5147,14 +5150,14 @@
+@@ -5344,14 +5347,14 @@
      int             rc, t_index, done = 0;
      static char     search_string[MAX_SEARCH+1];
      static ESCKEY_S search_keys[] = {{0, 0, NULL, NULL},
@@ -1223,7 +1220,7 @@
  	return(0);
      }
      else{
-@@ -5162,7 +5165,7 @@
+@@ -5359,7 +5362,7 @@
  	    search_keys[0].ch    = ctrl('X');
  	    search_keys[0].rval  = 9;
  	    search_keys[0].name  = "^X";
@@ -1232,7 +1229,7 @@
  	}
  	else{
  	    search_keys[0].ch    = 0;
-@@ -5173,7 +5176,7 @@
+@@ -5370,7 +5373,7 @@
      }
  
      t_index = fd->folder_index;
@@ -1241,7 +1238,7 @@
  	    (*search_string == '\0') ? "" : "[", 
  	    search_string,
  	    (*search_string == '\0') ? "" : "] ");
-@@ -5184,7 +5187,7 @@
+@@ -5381,7 +5384,7 @@
  	switch(optionally_enter(nsearch_string, ask_line, 0, MAX_SEARCH,
  				prompt, search_keys, help, &flags)){
  	  case -1 :
@@ -1250,7 +1247,7 @@
  	    return(0);
  
  	  case 0 :			/*----- Search away ------*/
-@@ -5241,9 +5244,9 @@
+@@ -5438,9 +5441,9 @@
  		}
  
  		if(rc){
@@ -1263,7 +1260,7 @@
  		    fd->prev_index = -1;	/* repaint! */
  		}
  
-@@ -5257,14 +5260,14 @@
+@@ -5454,14 +5457,14 @@
  	    while((t_index = folder_lister_prev(fd)) >= 0)
  	      fd->folder_index = t_index;
  
@@ -1280,7 +1277,7 @@
  	    return(3);
  
  	  default :
-@@ -6273,7 +6276,7 @@
+@@ -6500,7 +6503,7 @@
  
      if(p = context_digest(c_string, dcontext, host, rcontext, view)){
  	q_status_message2(SM_ORDER | SM_DING, 3, 4,
@@ -1289,7 +1286,7 @@
  	fs_give((void **) &c_string);
  	if(nickname)
  	  fs_give((void **)&nickname);
-@@ -6314,14 +6317,14 @@
+@@ -6541,14 +6544,14 @@
  
      /* fix up label */
      if(NEWS_TEST(c)){
@@ -1308,7 +1305,7 @@
  		(*host) ? host : "", p ? p - rcontext : 0,
  		rcontext, (p && (p - rcontext) > 0) ? "" : "home directory");
      }
-@@ -7503,7 +7506,7 @@
+@@ -7745,7 +7748,7 @@
      if(error && num_in_error){
  	cnt_errs = num_in_error;
  	memset((void *)ng_error, 0, (size_t)90);
