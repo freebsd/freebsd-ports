@@ -7,6 +7,7 @@
 
 PORTNAME=	crystality
 PORTVERSION=	0.92
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://fanthom.math.put.poznan.pl/~gyver/crystality/
 PKGNAMEPREFIX=	xmms-
@@ -23,15 +24,9 @@ INSTALLS_SHLIB=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/crystality-stdio ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/libcrystality.so \
 		${PREFIX}/lib/xmms/Effect
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
