@@ -15,4 +15,5 @@ lib/modules/drivers/tdfx_drv.o
 lib/modules/extensions/libGLcore.a
 lib/modules/extensions/libdri.a
 lib/modules/extensions/libglx.a
+lib/modules/extensions/libxaa.a
 lib/modules/freebsd/libdrm.a

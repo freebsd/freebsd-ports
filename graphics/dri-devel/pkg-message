@@ -1,3 +1,9 @@
+***********************************************************************
+You have installed dri-devel, unstable DRI drivers.  If you just wanted
+hardware 3d support, XFree86 comes with support for most people and
+you should reinstall XFree86-4-Server.  Use this at your own risk.
+***********************************************************************
+
 For R200 (8500) support you will require an updated DRM. Radeon 1
 users will need an updated DRM if they want TCL (Transform & Lighting)
 support.
