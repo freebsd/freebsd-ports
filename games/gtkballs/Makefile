@@ -8,8 +8,7 @@
 PORTNAME=	gtkballs
 PORTVERSION=	1.04
 CATEGORIES=	games
-MASTER_SITES=	ftp://lucifer.dorms.spbu.ru/pub/Linux/games/ \
-		http://lucifer.dorms.spbu.ru/gtkballs/ \
+MASTER_SITES=	http://gtkballs.antex.ru/dist/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
