@@ -1,0 +1,116 @@
+bin/mirrorMappings
+bin/mkmapfile
+bin/map
+bin/mkCSGB2312
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ADOBE/STDENC.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ADOBE/SYMBOL.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ADOBE/ZDINGBAT.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/ARABIC.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/CENTEURO.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/CHINSIMP.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/CHINTRAD.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/CROATIAN.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/CYRILLIC.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/DEVANAGA.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/DINGBATS.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/GREEK.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/GUJARATI.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/GURMUKHI.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/HEBREW.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/ICELAND.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/JAPANESE.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/KOREAN.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/ROMAN.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/ROMANIAN.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/SYMBOL.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/THAI.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE/TURKISH.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/BIG5.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/CNS-11643-1986.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/EUC-JP.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/EUC-KR.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/GB12345-80.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/GB2312-80.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/GB2312.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/JIS-X-0201.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/JIS-X-0208.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/JIS-X-0212.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/JOHAB.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/KSC1001.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/KSC5601-1992.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA/SHIFTJIS.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/IBM/IBM038.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-1.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-10.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-13.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-14.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-15.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-2.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-3.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-4.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-5.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-6.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-7.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-8.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/8859-9.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO/ISO646-US.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP437.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP737.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP775.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP850.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP852.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP855.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP857.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP860.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP861.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP862.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP863.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP864.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP865.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP866.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP869.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS/CP874.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC/CP037.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC/CP1026.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC/CP500.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC/CP875.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/CYRILLIC.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/GREEK.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/ICELAND.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/LATIN2.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/ROMAN.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC/TURKISH.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1250.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1251.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1252.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1253.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1254.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1255.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1256.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1257.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP1258.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP932.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP936.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP949.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN/CP950.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/NEXT/NEXTSTEP.map
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/REGISTRY
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map/Map.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ADOBE
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/APPLE
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/EASTASIA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/IBM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/ISO
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/DOS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/EBCDIC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/MAC
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS/WIN
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/MS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map/NEXT
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/Map
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/Map
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
