@@ -7,6 +7,7 @@
 
 PORTNAME=	strscan
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.xdsl.ne.jp/Cd/aamine/soft/
@@ -26,6 +27,9 @@ DOCS_EN=	README.en \
 DOCS_JA=	README.ja \
 		doc.ja/changes.html doc.ja/index.html \
 		doc.ja/reference.html doc.ja/usage.html
+
+post-patch:
+	${RUBY} -i -pe "gsub /'ARCH'/, %q/'arch'/" ${WRKSRC}/setup.rb
 
 do-install:
 .if !defined(NOPORTDOCS)
