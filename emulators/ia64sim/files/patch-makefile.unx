@@ -1,5 +1,8 @@
---- makefile.unx.orig	Wed Mar  8 04:58:52 2000
-+++ makefile.unx	Sat Mar 10 16:42:01 2001
+--- makefile.unx.orig	Sat Feb 12 22:25:47 2000
++++ makefile.unx	Sun May  6 11:48:13 2001
 @@ -21 +21 @@
 -CFLAGS = -O3 -m486 -fomit-frame-pointer -s -I$(INCDIR)
-+CFLAGS += -fomit-frame-pointer -s -I$(INCDIR)
++CFLAGS += -s -I$(INCDIR)
+@@ -25 +25 @@
+-EXECSRCS = execute.c utils.c f_unit.c b_unit.c x_unit.c  \
++EXECSRCS = elf.c execute.c utils.c f_unit.c b_unit.c x_unit.c  \
