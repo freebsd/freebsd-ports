@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
 MAN3=		gsl.3
 
 GSLREF=		gsl-ref.ps.gz
-GSLREFHTML =    gsl-ref-html.tar.gz
+GSLREFHTML=	gsl-ref-html.tar.gz
 IGNOREFILES=	${GSLREF} ${GSLREFHTML}
 
 post-install:
