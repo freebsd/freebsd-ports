@@ -21,7 +21,7 @@ COMMENT?=	FLIM, message representation or encoding elisp library for emacs21
 PORTCLASS?=	master
 
 # distfile version
-FLIM_VER=	${FLIM_TRUNK}.5
+FLIM_VER=	${FLIM_TRUNK}.6
 FLIM_TRUNK=	1.14
 # document install directory by install-doc target
 FLIMDOCDIR?=	share/doc/flim
