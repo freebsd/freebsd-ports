@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udmsearch
-PORTVERSION= 	3.0.21
+PORTVERSION= 	3.0.23
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
@@ -26,17 +26,17 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=	--with-pgsql
+CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
 
 .elif defined(WITH_MSQL)
 BUILD_DEPENDS=		${PREFIX}/lib/libmsql.a:${PORTSDIR}/databases/msql
-CONFIGURE_ARGS+=	--with-msql
+CONFIGURE_ARGS+=	--with-msql=${LOCALBASE}
 
 .else
 # default to mysql
 
 LIB_DEPENDS=		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
-CONFIGURE_ARGS+=	--with-mysql
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .if !defined(WITH_MYSQL)
 pre-fetch:
@@ -45,7 +45,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You may alternately build udmsearch with either msql or"
 	@${ECHO} "postgresql support by invoking make with WITH_MSQL=yes or"
-	@${ECHO} "WITH_POSTGRESQL=yes respectively."
+	@${ECHO} "WITH_PGSQL=yes respectively."
 	@${ECHO}
 .endif
 

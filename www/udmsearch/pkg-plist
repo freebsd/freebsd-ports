@@ -16,6 +16,7 @@ share/udmsearch/create/stopwords/stop.es.txt
 share/udmsearch/create/stopwords/stop.pl.txt
 share/udmsearch/create/stopwords/stop.en.txt
 share/udmsearch/create/stopwords/stop.de.txt
+share/udmsearch/create/stopwords/stop.dk.txt
 share/udmsearch/create/stopwords/stop.it.txt
 share/udmsearch/create/stopwords/stop.ua.txt
 share/udmsearch/create/stopwords/stop.cz.txt
