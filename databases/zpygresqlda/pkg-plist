@@ -1,0 +1,34 @@
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/DA.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/_pgmodule.so
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/data/team.sql
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/db.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Announce
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/ChangeLog
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Makefile
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Makefile.pre
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Makefile.pre.in
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/README
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/README.linux
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Setup
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/Setup.in
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/_pgmodule.so
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/config.c
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/mkdefines
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/pg.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/pgmodule.c
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/pgmodule.o
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/pgsqldb.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/sedscript
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial/advanced.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial/basics.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial/func.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial/pgtools.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial/syscat.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/version.txt
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/data
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src/tutorial
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA/src
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZPyGreSQLDA
