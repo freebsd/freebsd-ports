@@ -21,7 +21,16 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.else
+ONLY_FOR_ARCHS=	alpha i386 ia64
+.endif
+
+#
 #post-install:
 #              ${STRIP_CMD} ${PREFIX}/bin/xmradio
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
