@@ -630,6 +630,7 @@
     SUBDIR += stardict2
     SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
+    SUBDIR += stardict2-rptts
     SUBDIR += sv-aspell
     SUBDIR += sw-aspell
     SUBDIR += syck
