@@ -233,6 +233,7 @@
     SUBDIR += macipgw
     SUBDIR += maradns
     SUBDIR += mars_nwe
+    SUBDIR += mbrowse
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mmucl
