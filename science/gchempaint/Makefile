@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchempaint
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,11 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeprintui libgnomeui lthack
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(datadir)/mime/|${PREFIX}/share/mime/|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(datadir)/mime$$|${PREFIX}/share/mime|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
