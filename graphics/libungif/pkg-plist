@@ -32,6 +32,8 @@ include/giflib/gif_hash.h
 include/giflib/gif_lib.h
 lib/libgif.a
 lib/libgif.so.3.0
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 share/doc/giflib/gif2bgi.html
 share/doc/giflib/gif2epsn.html
 share/doc/giflib/gif2herc.html
