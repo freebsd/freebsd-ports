@@ -16,11 +16,10 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
-etc/gconf/gconf.xml.defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/freecell/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/freecell/option/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/freecell/score/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnect/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnometris/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnometris/options/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnomine/%gconf.xml
@@ -29,12 +28,11 @@ etc/gconf/gconf.xml.defaults/apps/gtali/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/iagno/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/mahjongg/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/same-gnome/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/freecell/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gataxx/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnect/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/%gconf.xml
@@ -802,6 +800,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnect
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gataxx
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/score
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/freecell/option
@@ -814,6 +813,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnomine
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnometris/options
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnometris
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnect
 @dirrm etc/gconf/gconf.xml.defaults/apps/freecell/score
 @dirrm etc/gconf/gconf.xml.defaults/apps/freecell/option
 @dirrm etc/gconf/gconf.xml.defaults/apps/freecell
