@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
