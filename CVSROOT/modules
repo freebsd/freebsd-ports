@@ -1689,6 +1689,7 @@ fr-ispell	ports/french/ispell
 fr-jdictionary-fre-hun	ports/french/jdictionary-fre-hun
 fr-kde3-i18n	ports/french/kde3-i18n
 fr-koffice-i18n	ports/french/koffice-i18n
+fr-med		ports/french/med
 fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice	ports/french/openoffice
