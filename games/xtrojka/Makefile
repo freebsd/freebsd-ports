@@ -19,7 +19,7 @@ MANCOMPRESSED=	yes
 USE_XLIB=	yes
 
 pre-install:
-	@exec mkdirhier ${PREFIX}/share/xtrojka
+	${MKDIR} ${PREFIX}/share/xtrojka
 
 post-install:
 	strip ${PREFIX}/bin/xtrojka
