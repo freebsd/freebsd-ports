@@ -6,86 +6,74 @@
 #
 
 PORTNAME=	dvipsk
-PORTVERSION=	5.78a
-PORTREVISION=	3
+PORTVERSION=	5.92b
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/ \
-		ftp://ftp.center.osaka-u.ac.jp/CTAN/dviware/dvipsk/ \
-		ftp://ftp.riken.go.jp/pub/CTAN/dviware/dvipsk/ \
-		ftp://ftp.u-aizu.ac.jp/pub/tex/CTAN/dviware/dvipsk/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTNAME}-jpatch-p1.4d.tar.gz
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
+		${MASTER_SITE_TEX_CTAN} \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
+PKGNAMEPREFIX=	ja-
+PKGNAMESUFFIX=	-tetex
+DISTFILES=	tetex-src-${VER_TETEX}${EXTRACT_SUFX} \
+		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}:1
+DIST_SUBDIR=	teTeX
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
 
-RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-base
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		wwwcore.1:${PORTSDIR}/www/libwww \
+		t1.5:${PORTSDIR}/devel/t1lib
+RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
-
-DIST_SUBDIR=	ptex
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/tetex-src-${VER_TETEX}
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_install="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"
-SCRIPTS_ENV=	MV=${MV} SED=${SED}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--disable-multiplatform \
+		--without-texinfo --without-dialog \
+		--with-system-ncurses --with-system-zlib \
+		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
+		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
+		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
+		--with-pnglib-include=${LIBPNG_PREFIX}/include \
+		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
+		--with-t1lib-include=${LIBT1_PREFIX}/include
+PKGINSTALL=	${WRKDIR}/pkg-install.sh
+PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+CONFLICTS=	ja-ptex-base* dvips* ja-dvipsk-vflib-*
+
 MAN1=		dvips.1 afm2tfm.1
+INFO=		dvips
 
-TEXMF=		${PREFIX}/share/texmf
-DVIPSDIR=	${TEXMF}/dvips
-TEXDIR=		${TEXMF}/tex
-BINARIES=	dvips afm2tfm
-BASE_FILES=	config.ps cmfonts.map cyrfonts.map eufonts.map lafonts.map
-CONTRIB_DIRS=	afm-extra bbfig configs psfig volker
-CONTRIB_FILES=	MakeTeXPK.pl PSTricks colorsep.pro config.proto crop.lpr \
-		timesmat.sty whichinpath afm-extra/*.ed bbfig/bb* \
-		configs/*[^g] psfig/README psfig/lprep* volker/*
-PLAIN_MACROS=	psfig/psfig.tex psfntmac/ps_plain.tex
-LATEX209_MACROS=latex209/*.sty psfntmac/ps_lfonts.tex pspic/*
-DOCS=		../README.jpatch dvipsk/README \
-		dvipsk/dvips.texi dvipsk/dvips.help
+VER_TETEX=	2.0.2
+VER_JPATCH=	1.6
+MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
+TEXMFDIR?=	share/texmf
+LIBPNG_PREFIX?=	${LOCALBASE}
+LIBWWW_PREFIX?=	${LOCALBASE}
+LIBT1_PREFIX?=	${LOCALBASE}
+DVIPSKCNF=	${PREFIX}/${TEXMFDIR}/dvips/config/config.ps
 
-pre-patch:
-	@${PATCH} -p -s -d ${WRKSRC} < ${WRKDIR}/dvipsk.patch
+do-patch:
+	cd ${WRKSRC}/texk &&\
+		${PATCH} -p0 < ${WRKDIR}/dvipsk-${PORTVERSION}-p${VER_JPATCH}.patch
+	${SED} -e 's,%%TEXMFCNF%%,${TEXMFCNF},g;s,%%DVIPSKCNF%%,${DVIPSKCNF},g;s,%%MKTEXLSR%%,${MKTEXLSR},g' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${CHMOD} 0755 ${PKGINSTALL}
 
-post-build:
-	@(\
-	  cd ${WRKSRC}/dvipsk/contrib ; \
-	  ../squeeze < colorsep.lpro > colorsep.pro \
-	)
+do-build:
+	cd ${WRKSRC}/texk/dvipsk &&\
+		${MAKE_ENV} ${MAKE} ${ALL_TARGET}
+
+do-install:
+	cd ${WRKSRC}/texk/dvipsk &&\
+		${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+	${INSTALL_DATA} ${FILESDIR}/kanji.map ${PREFIX}/${TEXMFDIR}/dvips/config
+	${INSTALL_DATA} ${FILESDIR}/config.ps ${PREFIX}/${TEXMFDIR}/dvips/config/config.ps.ptex-tetex
 
 post-install:
-	@for i in ${BINARIES} ; do \
-	    strip ${PREFIX}/bin/$$i ; \
-	done
-	@for i in ${CONTRIB_DIRS} ; do \
-	  ${MKDIR} ${DVIPSDIR}/contrib/$$i ; \
-	done
-	@${MKDIR} ${TEXDIR}/latex209/dvips
-	@(\
-	  cd ${WRKSRC}/dvipsk ; \
-	  for i in ${BASE_FILES} ; do \
-	    ${INSTALL_DATA} $$i ${DVIPSDIR}/base ; \
-	  done ; \
-	  cd ${WRKSRC}/dvipsk/contrib ; \
-	  for i in ${CONTRIB_FILES} ; do \
-	    ${INSTALL_DATA} $$i ${DVIPSDIR}/contrib/$$i ; \
-	  done ; \
-	  for i in ${PLAIN_MACROS} ; do \
-	    ${INSTALL_DATA} $$i ${TEXDIR}/plain/dvips ; \
-	  done ; \
-	  for i in ${LATEX209_MACROS} ; do \
-	    ${INSTALL_DATA} $$i ${TEXDIR}/latex209/dvips ; \
-	  done \
-	)
-# rebuild tex ls-R file
-	mktexlsr
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dvips
-	@for i in ${DOCS} ; do \
-	  ${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/dvips ; \
-	done
-	@${LN} -fs ${DVIPSDIR}/contrib ${PREFIX}/share/doc/dvips/contrib
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
