@@ -21,15 +21,12 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 
-MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
-		install-hinote.1 install-memo.1 install-user.1 \
-		pilot-addresses.1 pilot-xfer.1 read-ical.1
-MAN7=		pilot-link.7
-
-CFLAGS+=		-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 MAKE_ARGS+=	LIBTOOL=libtool
+
+.include "${.CURDIR}/manpages.mk"
 
 .include <bsd.port.mk>
