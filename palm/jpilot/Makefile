@@ -9,7 +9,7 @@
 PORTNAME=	jpilot
 PORTVERSION=	0.99.6
 CATEGORIES+=	palm comms
-MASTER_SITES=	http://jpilot.org/
+MASTER_SITES=	http://downloads.jpilot.org/
 
 MAINTAINER?=	varju@webct.com
 COMMENT?=	Desktop Organizer Software for the Palm Pilot
