@@ -8005,6 +8005,7 @@ qbrew		ports/misc/qbrew
 qc--		ports/lang/qc--
 qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
+qcad-partslib	ports/cad/qcad-partslib
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
