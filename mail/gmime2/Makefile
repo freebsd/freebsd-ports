@@ -15,7 +15,7 @@ COMMENT=	Library (written in C) for parsing and creating messages using MIME
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-CONFLICTS=	gmime-0.*
+CONFLICTS=	gmime-1.0.*
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
