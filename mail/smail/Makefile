@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.17 1996/11/30 01:03:24 torstenb Exp $
+# $Id: Makefile,v 1.18 1997/10/15 09:16:03 torstenb Exp $
 #
 
 DISTNAME=	smail-3.2.0.97
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident \			${REPFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrapper
+BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident \			${PREFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrapper
 
 INSTALL_TARGET=	install installman
 
