@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	DBD-Pg
-PORTVERSION=	1.22
-PORTREVISION=	3
+PORTVERSION=	1.32
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fjoe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
@@ -22,7 +21,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DBD::Pg.3 DBD::dbd-pg.3
+MAN3=		DBD::Pg.3
 
 .include <bsd.port.pre.mk>
 
