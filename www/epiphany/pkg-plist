@@ -87,12 +87,20 @@ share/gnome/help/epiphany/C/figures/ephy-bookmarkbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/C/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/C/figures/ephy-screenshot.png
 share/gnome/help/epiphany/C/legal.xml
+share/gnome/help/epiphany/es/epiphany.xml
+share/gnome/help/epiphany/es/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/es/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/es/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/es/figures/ephy-screenshot.png
+share/gnome/help/epiphany/es/legal.xml
 share/gnome/help/epiphany/eu/epiphany.xml
 share/gnome/help/epiphany/eu/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/eu/figures/ephy-screenshot.png
 share/gnome/help/epiphany/eu/legal.xml
 share/gnome/omf/epiphany/epiphany-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/epiphany/epiphany-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/epiphany/epiphany-eu.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
@@ -148,6 +156,8 @@ share/locale/sr/LC_MESSAGES/epiphany.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
 share/locale/ta/LC_MESSAGES/epiphany.mo
+share/locale/th/LC_MESSAGES/epiphany.mo
+share/locale/tk/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
 share/locale/uk/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
@@ -180,3 +190,4 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-eu.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-es.omf 2>/dev/null || /usr/bin/true
