@@ -1,24 +1,23 @@
 # New ports collection makefile for:	vnc
-# Version required:     3.3.2r3
+# Version required:     3.3.3r1
 # Date created:		24 February 1998
 # Whom:			msmith
 #
 # $FreeBSD$
 #
 
-DISTNAME=       	vnc-3.3.3_unixsrc
-PKGNAME=        	vnc-3.3.3
+DISTNAME=       	vnc-3.3.3r1_unixsrc
+PKGNAME=        	vnc-3.3.3r1
 CATEGORIES=		net
 MASTER_SITES=   	http://www.uk.research.att.com/vnc/dist/
-DISTFILES=		vnc-3.3.3_unixsrc.tgz \
+DISTFILES=		vnc-3.3.3r1_unixsrc.tgz \
 			vnc-latest_doc.tgz
 
 MAINTAINER=	 	bmah@ca.sandia.gov
 
 USE_PERL5=		YES
 
-EXTRACT_ONLY=		vnc-3.3.3_unixsrc.tgz
-IGNOREFILES=		${DISTFILES}
+EXTRACT_ONLY=		vnc-3.3.3r1_unixsrc.tgz
 
 WRKSRC=			${WRKDIR}/vnc_unixsrc
 
