@@ -17,10 +17,9 @@ COMMENT=	Module for translating Wiki formatted text into other formats
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Text::WikiFormat.3
 PLIST_FILES=	%%SITE_PERL%%/Text/WikiFormat.pm
