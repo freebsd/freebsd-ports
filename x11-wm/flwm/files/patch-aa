@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Apr 14 18:50:44 1999
++++ Makefile	Wed Apr 14 18:50:51 1999
+@@ -5,7 +5,7 @@
+ 
+ CXXFILES = main.C Frame.C Rotated.C Menu.C FrameWindow.C Desktop.C Hotkeys.C
+ 
+-LIBS = -lfltk
++LIBS = -lfltk -lGL
+ 
+ MANPAGE = 1
+ 
