@@ -63,6 +63,7 @@
     SUBDIR += koffice-i18n-zh_TW
     SUBDIR += kon2
     SUBDIR += libtabe
+    SUBDIR += libchewing
     SUBDIR += links
     SUBDIR += linux-gtk
     SUBDIR += linux-mozillafirebird-zh_CN
