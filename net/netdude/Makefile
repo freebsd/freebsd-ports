@@ -32,10 +32,6 @@ MAN1=	netdude.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${FILESDIR}/protocols-fddi::nd_fddi.h.patch
 .endif
