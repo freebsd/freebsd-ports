@@ -75,7 +75,6 @@
     SUBDIR += exim-ldap2
     SUBDIR += exim-monitor
     SUBDIR += exim-mysql
-    SUBDIR += exim-old
     SUBDIR += exim-postgresql
     SUBDIR += exmh2
     SUBDIR += ezmlm

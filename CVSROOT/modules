@@ -1722,7 +1722,6 @@ exim-doc-postscript	ports/mail/exim-doc-postscript
 exim-ldap2	ports/mail/exim-ldap2
 exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
-exim-old	ports/mail/exim-old
 exim-postgresql	ports/mail/exim-postgresql
 exmh2		ports/mail/exmh2
 expat2		ports/textproc/expat2
