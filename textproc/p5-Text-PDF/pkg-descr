@@ -1,0 +1,8 @@
+In summary, this module provides a strong (IMO) base for working with PDF
+files but lacks some finesse. Users should know their way around the PDF
+specification.
+
+FEATURES
+   - Works with more than one PDF file open at once
+   - Supports TrueType fonts as well as the base 14 (requires Font::TTF module)
+     including Type0 glyph based fonts (for Unicode), and subsetting
