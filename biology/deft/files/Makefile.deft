@@ -2,7 +2,11 @@
 # Makefile for DeFT
 #
 TARGET = DeFT.exec
+.if ${MACHINE_ARCH} != "i386"
+FFLAGS = -O2
+.else
 FFLAGS = -O2 -malign-double -Nn802
+.endif
 LFLAGS = 
 SRCS:sh = ls *.f
 OBJS = $(SRCS:.f=.o)
