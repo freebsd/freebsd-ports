@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ishmael27x@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 

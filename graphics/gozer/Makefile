@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ishmael27x@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
