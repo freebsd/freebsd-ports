@@ -4845,6 +4845,7 @@ p5-Crypt-Twofish	ports/security/p5-Crypt-Twofish
 p5-Crypt-Twofish2	ports/security/p5-Crypt-Twofish2
 p5-Crypt-UnixCrypt	ports/security/p5-Crypt-UnixCrypt
 p5-Curses	ports/devel/p5-Curses
+p5-Curses-Application	ports/devel/p5-Curses-Application
 p5-Curses-Forms	ports/devel/p5-Curses-Forms
 p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
