@@ -1,10 +1,17 @@
---- libgale/wcwidth.c.orig	Fri Oct 12 13:45:37 2001
-+++ libgale/wcwidth.c	Fri Oct 12 13:45:52 2001
-@@ -8,8 +8,9 @@
+--- /tmp/wcwidth.c.orig	Fri Oct 25 21:05:46 2002
++++ libgale/wcwidth.c	Fri Oct 25 21:05:51 2002
+@@ -6,10 +6,16 @@
+  * Markus Kuhn -- 2000-02-08 -- public domain
+  */
  
- #ifdef __FreeBSD__ /* peterh@sapros.com */
+-#ifdef __FreeBSD__ /* peterh@sapros.com */
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#if __FreeBSD_version >= 500000
++#include <wchar.h>
++#else
  #include <rune.h>
--#endif
+ #endif
 +#else
  #include <wchar.h>
 +#endif
