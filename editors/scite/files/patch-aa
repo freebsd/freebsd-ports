@@ -1,0 +1,70 @@
+--- makefile	2000/11/27 12:56:18	1.1
++++ makefile	2000/11/27 13:21:13
+@@ -10,24 +10,24 @@
+ 
+ # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
+ # "h@h@" is printed here when gnome-config unavailable. Seems harmless.
+-gnomeprefix:=$(shell gnome-config --prefix 2>/dev/null)
++gnomeprefix=$(PREFIX)
+ ifdef gnomeprefix
+   prefix=$(gnomeprefix)
+-  datadir=$(gnomeprefix)/share
++  datadir=$(gnomeprefix)/share/gnome
+   pixmapdir=$(datadir)/pixmaps
+ else
+   prefix=/usr/local
+ endif
+ bindir=$(prefix)/bin
+-SYSCONF_PATH=$(prefix)/share/scite
++SYSCONF_PATH=$(prefix)/share/gnome/scite
+ 
+ PROG	= ../bin/SciTE
+ 
+-vpath %.h ../src ../../scintilla/include
++vpath %.h ../src $(X11BASE)/include/scintilla
+ vpath %.cxx ../src
+ 
+ #CXXFLAGS= -g -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -Wwrite-strings 
+-INCLUDEDIRS=-I ../../scintilla/include -I ../src 
++INCLUDEDIRS=-I $(X11BASE)/include/scintilla -I ../src 
+ CXXBASEFLAGS= -DGTK -DSCI_LEXER -DSYSCONF_PATH=\"$(SYSCONF_PATH)\" -W -Wall
+ 
+ ifdef DEBUG
+@@ -37,7 +37,7 @@
+ endif
+ 
+ .cxx.o:
+-	$(CC) `gtk-config --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
++	$(CC) `$(GTK_CONFIG) --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
+ 
+ all: $(PROG)
+ 
+@@ -52,8 +52,8 @@
+ 	../../scintilla/gtk/LexConf.o \
+ 	../../scintilla/gtk/LexPerl.o
+ 
+-$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o SciTEProps.o ../../scintilla/bin/scintilla.a $(LEXEROBJS)
+-	$(CC) `gtk-config --libs` -DGTK $^ -o $@
++$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o SciTEProps.o # ../../scintilla/bin/scintilla.a $(LEXEROBJS)
++	$(CC) `$(GTK_CONFIG) --libs` -DGTK $^ -o $@ -L${X11BASE}/lib -lscintilla -lscintilla_lexers
+ 
+ # SciTE-static no longer builds. Kept here in case of later need.
+ SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o SciTEProps.o \
+@@ -78,12 +78,12 @@
+ # This is OK - just means no SciTE in the Gnome Applications menu
+ # Dead:	install -D SciTEGTK.properties $(SYSCONF_PATH)/SciTEGlobal.properties
+ install:
+-	install -s $(PROG) $(bindir)
+-	install -d $(SYSCONF_PATH)
+-	install -D ../src/*.properties $(SYSCONF_PATH)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(bindir)
++	$(MKDIR) $(SYSCONF_PATH)
++	$(BSD_INSTALL_DATA) ../src/*.properties $(SYSCONF_PATH)
+ ifdef gnomeprefix
+-	install SciTE.desktop $(datadir)/gnome/apps/Applications
+-	install Sci48M.png $(pixmapdir)
++	$(BSD_INSTALL_DATA) SciTE.desktop $(datadir)/apps/Applications
++	$(BSD_INSTALL_DATA) Sci48M.png $(pixmapdir)
+ endif
+ 
+ uninstall:

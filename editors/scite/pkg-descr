@@ -1,0 +1,7 @@
+SciTE is a SCIntilla based Text Editor. Originally built to demonstrate
+Scintilla, it has grown to be a generally useful editor with facilities for
+building and running programs. It is best used for jobs with simple
+configurations - I use it for building test and demonstration programs as well
+as SciTE and Scintilla, themselves.
+
+WWW: http://www.scintilla.org/SciTE.html
