@@ -1,0 +1,33 @@
+bin/bygfoot
+share/bygfoot/support_files/bygfoot_icon.png
+share/bygfoot/support_files/bygfoot_team_editor_icon.png
+share/bygfoot/support_files/fin_stad.png
+share/bygfoot/support_files/flag_br.png
+share/bygfoot/support_files/flag_de.png
+share/bygfoot/support_files/flag_eng.png
+share/bygfoot/support_files/flag_es.png
+share/bygfoot/support_files/flag_fr.png
+share/bygfoot/support_files/flag_it.png
+share/bygfoot/support_files/flag_pl.png
+share/bygfoot/support_files/flag_ro.png
+share/bygfoot/support_files/get_loan.png
+share/bygfoot/support_files/inc_cap.png
+share/bygfoot/support_files/inc_saf.png
+share/bygfoot/support_files/new_week.png
+share/bygfoot/support_files/pay_loan.png
+share/bygfoot/support_files/preview.png
+share/bygfoot/support_files/text_files/country_br
+share/bygfoot/support_files/text_files/country_de
+share/bygfoot/support_files/text_files/country_eng
+share/bygfoot/support_files/text_files/country_es
+share/bygfoot/support_files/text_files/country_fr
+share/bygfoot/support_files/text_files/country_it
+share/bygfoot/support_files/text_files/country_pl
+share/bygfoot/support_files/text_files/country_ro
+share/bygfoot/support_files/text_files/help
+share/bygfoot/support_files/text_files/player_names
+share/bygfoot/support_files/text_files/teams
+share/bygfoot/support_files/transfers.png
+@dirrm share/bygfoot/support_files/text_files
+@dirrm share/bygfoot/support_files
+@dirrm share/bygfoot
