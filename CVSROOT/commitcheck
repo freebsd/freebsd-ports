@@ -27,17 +27,6 @@ if (@cfg::COMMIT_HOSTS && !grep(/^\Q$hostname\E$/i, @cfg::COMMIT_HOSTS)) {
 }
 
 
-# Sanity check to make sure we've been run through the wrapper and are
-# now primary group 'ncvs'.
-#
-my $GRP=`/usr/bin/id -gn`;
-chomp $GRP;
-unless ( $GRP =~ /^ncvs$/ ) {
-	print "You do not have group ncvs (commitcheck)!\n";
-	exit 1;
-}
-
-
 # Run locally defined extra commitchecks.
 if (defined($cfg::COMMITCHECK_EXTRA) && $cfg::COMMITCHECK_EXTRA) {
 	die 'commitcheck: $cfg::COMMITCHECK_EXTRA isn\'t a sub!'

@@ -30,6 +30,18 @@ $MAILCMD = "/usr/local/bin/mailsend -H";
 $MAIL_BRANCH_HDR  = "X-FreeBSD-CVS-Branch";
 $ADD_TO_LINE = 0;
 
+# Sanity check to make sure we've been run through the wrapper and are
+# now primary group 'ncvs'.
+#
+$COMMITCHECK_EXTRA = sub {
+	my $GRP=`/usr/bin/id -gn`;
+	chomp $GRP;
+	unless ( $GRP =~ /^ncvs$/ ) {
+		print "You do not have group ncvs (commitcheck)!\n";
+		#exit 1;
+	}
+	return 1;
+};
 
 # Wrap this in a hostname check to prevent mail to the FreeBSD
 # list if someone borrows this file and forgets to change it.
