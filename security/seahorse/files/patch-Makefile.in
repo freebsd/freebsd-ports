@@ -1,0 +1,16 @@
+--- src/Makefile.in.orig	Sat Mar 15 13:18:02 2003
++++ src/Makefile.in	Sat Mar 15 13:18:35 2003
+@@ -586,11 +586,11 @@
+ 
+ 
+ seahorse-marshal.h: seahorse-marshal.list $(GLIB_GENMARSHAL)
+-	$(GLIB_GENMARSHAL) $< --header --prefix=seahorse-marshal > $@
++	$(GLIB_GENMARSHAL) $< --header --prefix=seahorse_marshal > $@
+ 
+ seahorse-marshal.c: seahorse-marshal.list $(GLIB_GENMARSHAL)
+ 	echo "#include \"seahorse-marshal.h\"" > $@ && \
+-	$(GLIB_GENMARSHAL) $< --body --prefix=seahorse-marshal >> $@
++	$(GLIB_GENMARSHAL) $< --body --prefix=seahorse_marshal >> $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
