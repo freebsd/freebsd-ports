@@ -10,7 +10,7 @@ CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	http://expect.nist.gov/
 DISTNAME=	expect
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@coastalgeology.org
 
 LIB_DEPENDS?=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
