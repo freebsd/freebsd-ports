@@ -87,14 +87,13 @@ LANG_SORTED=	`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 #
 # OO build is broken with the system gcc on STABLE.
 #
-USE_GCC=3.1
-.else
+BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+CC=		gcc32
+CXX=		g++32
+USE_GCC=3.2
 .endif
 
 .if ${OSVERSION} > 500000
-#
-# OO is still broken with the system gcc on CURRENT.
-#
 .if defined(USE_GCC) && ${USE_GCC} == 3.2
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 CC=		gcc32
