@@ -1,0 +1,5 @@
+This module is responsible for parsing email content type headers
+according to section 5.1 of RFC 2045. It returns a hash with entries
+for the discrete type, the composite type, and a hash of attributes.
+
+WWW: http://search.cpan.org/dist/Email-MIME-ContentType/
