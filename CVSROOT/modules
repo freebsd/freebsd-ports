@@ -5735,6 +5735,8 @@ mod_fastcgi	ports/www/mod_fastcgi
 mod_fcgid	ports/www/mod_fcgid
 mod_filter	ports/www/mod_filter
 mod_frontpage	ports/www/mod_frontpage
+mod_frontpage-rtr	ports/www/mod_frontpage-rtr
+mod_frontpage2-rtr	ports/www/mod_frontpage2-rtr
 mod_geoip	ports/www/mod_geoip
 mod_gzip	ports/www/mod_gzip
 mod_hosts_access	ports/www/mod_hosts_access
