@@ -66,7 +66,7 @@
     SUBDIR += splaytk
     SUBDIR += tclmidi
     SUBDIR += timidity
-    sUBDIR += timidity++
+    SUBDIR += timidity++
     SUBDIR += timidity++-emacs
     SUBDIR += timidity++-gtk
     SUBDIR += timidity++-slang
