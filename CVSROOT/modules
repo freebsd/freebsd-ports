@@ -315,6 +315,7 @@ anjuta		ports/devel/anjuta
 annextools	ports/net-mgmt/annextools
 annoyance-filter	ports/mail/annoyance-filter
 anomy-sanitizer	ports/mail/anomy-sanitizer
+anope		ports/irc/anope
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
 antipolix	ports/games/antipolix
