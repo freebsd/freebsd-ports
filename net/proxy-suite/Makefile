@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proxy-suite
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	1.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.crc.ca/pub/systems/linux/suse/projects/proxy-suite/src/ \
@@ -23,10 +22,16 @@ USE_GMAKE=	yes
 # basic configure args
 #
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libwrap=/usr/lib --with-regex \
-		--sysconfdir=${PREFIX}/etc/proxy-suite \
 		--localstatedir=/var/run \
-		--enable-warnings --enable-so-linger --enable-rfc1579 \
+		--enable-warnings --enable-so-linger \
 		--disable-proc-mods
+
+#
+# OPTIONAL: RFC1579 support -- not complete yet.
+#
+.if defined(WITH_RFC1579)
+CONFIGURE_ARGS+= --enable-rfc1579
+.endif
 
 #
 # OPTIONAL: include ldap-support - currently ldap.2 needs minor fixes...
@@ -52,5 +57,8 @@ MAN5=		ftp-proxy.conf.5
 
 pre-install:
 	@strip ${WRKSRC}/ftp-proxy/ftp-proxy
+
+post-install:
+	@${SED} 's|PREFIX|${PREFIX}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

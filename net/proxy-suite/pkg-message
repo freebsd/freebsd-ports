@@ -1,4 +1,7 @@
-   This port provides a sample configuration file as
-     PREFIX/etc/proxy-suite/ftp-proxy.conf.sample
-   Please copy this file to ftp-proxy.conf and edit
-   to fit your needs. Default PREFIX is /usr/local.
+
+This port provides a configuration file at
+
+PREFIX/etc/proxy-suite/ftp-proxy.conf
+
+Edit to fit your needs.
+

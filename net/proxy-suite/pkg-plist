@@ -1,3 +1,3 @@
 sbin/ftp-proxy
-etc/proxy-suite/ftp-proxy.conf.sample
+etc/proxy-suite/ftp-proxy.conf
 @dirrm etc/proxy-suite
