@@ -1,0 +1,12 @@
+--- Makefile.common.orig	Fri Jan 16 23:19:17 2004
++++ Makefile.common	Wed Dec 29 00:06:37 2004
+@@ -44,7 +44,8 @@
+ 	rm -f .*.sw*
+ 
+ install: all
+-	@./xvnkb_install
++#	@./xvnkb_install
++	sh xvnkb_install
+ 
+ uninstall:
+ 	@./xvnkb_uninstall

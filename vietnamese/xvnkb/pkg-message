@@ -1,0 +1,12 @@
+To use xvnkb in X-Windows environment, you should add these lines to your
+.xinitrc:
+
+# use xim module of gtk
+export GTK_IM_MODULE=xim
+# change locale to UTF-8, for example en_US.UTF-8
+export LANG=en_US.UTF-8 
+# preload xvnkb core module 
+export LD_PRELOAD=/usr/local/lib/xvnkb.so.0.2.8
+
+-- Nguyen Tam Chinh
+chinhngt@sectorb.msk.ru
