@@ -215,6 +215,7 @@
     SUBDIR += koffice-i18n-se
     SUBDIR += koffice-i18n-sk
     SUBDIR += koffice-i18n-sl
+    SUBDIR += koffice-i18n-sr
     SUBDIR += koffice-i18n-sv
     SUBDIR += koffice-i18n-th
     SUBDIR += koffice-i18n-tr
