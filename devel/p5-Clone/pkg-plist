@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Clone/Clone.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Clone/Clone.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Clone/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Clone/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Clone.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Clone
