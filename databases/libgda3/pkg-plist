@@ -65,6 +65,13 @@ lib/libgda/providers/libgda-default.so
 %%POSTGRES%%lib/libgda/providers/libgda-postgres.so
 libdata/pkgconfig/libgda.pc
 share/doc/libgda/architecture.html
+share/doc/libgda/c680.html
+share/doc/libgda/c685.html
+share/doc/libgda/c687.html
+share/doc/libgda/compiling.html
+share/doc/libgda/connecting.html
+share/doc/libgda/connections.html
+share/doc/libgda/data-model.html
 share/doc/libgda/fdl-section1.html
 share/doc/libgda/fdl-section10.html
 share/doc/libgda/fdl-section2.html
@@ -77,6 +84,7 @@ share/doc/libgda/fdl-section8.html
 share/doc/libgda/fdl-section9.html
 share/doc/libgda/fdl-using.html
 share/doc/libgda/fdl.html
+share/doc/libgda/gdavalue.html
 share/doc/libgda/index.html
 share/doc/libgda/index.sgml
 share/doc/libgda/installation-configuring.html
@@ -138,8 +146,21 @@ share/doc/libgda/libgda-provider-recordset.html
 share/doc/libgda/libgda-providers.html
 share/doc/libgda/libgda-reports.html
 share/doc/libgda/libgda-xql.html
+share/doc/libgda/main_example.html
+share/doc/libgda/managing-errors.html
+share/doc/libgda/migration-configuration.html
+share/doc/libgda/migration-executing-commands.html
+share/doc/libgda/migration.html
+share/doc/libgda/processing-queries.html
+share/doc/libgda/x849.html
+share/doc/libgda/x851.html
+share/doc/libgda/x878.html
+share/doc/libgda/x880.html
+share/doc/libgda/x883.html
+share/doc/libgda/x885.html
 share/gnome/idl/libgda/GNOME_Database.idl
 share/gnome/libgda/dtd/gda-report.dtd
+share/gnome/omf/libgda/libgda-C.omf
 share/locale/az/LC_MESSAGES/libgda-2.mo
 share/locale/ca/LC_MESSAGES/libgda-2.mo
 share/locale/da/LC_MESSAGES/libgda-2.mo
@@ -167,6 +188,7 @@ share/locale/tr/LC_MESSAGES/libgda-2.mo
 share/locale/uk/LC_MESSAGES/libgda-2.mo
 share/locale/vi/LC_MESSAGES/libgda-2.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-2.mo
+@dirrm share/gnome/omf/libgda
 @dirrm share/gnome/libgda/dtd
 @dirrm share/gnome/libgda
 @dirrm lib/libgda/providers
