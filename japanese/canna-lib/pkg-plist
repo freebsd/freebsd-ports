@@ -111,15 +111,15 @@ sbin/cannaserver
 sbin/cannakill
 @exec mkdir /var/run/canna
 @exec chown bin.bin /var/run/canna
-@exec chown bin.bin %D/lib/canna/dic/canna
-@exec chmod 775 %D/lib/canna/dic/canna
-@exec chown bin.bin %D/lib/canna/dic
-@exec chmod 775 %D/lib/canna/dic
-@exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user
-@exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user
+@exec mkdir -p %D/lib/canna/dic/user/user %D/lib/canna/dic/group
+@exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user %D/lib/canna/dic/group
+@exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user %D/lib/canna/dic/group
 @unexec /bin/rmdir /var/run/canna
 @dirrm lib/canna/sample/src
 @dirrm lib/canna/sample
+@dirrm lib/canna/dic/user/user
+@dirrm lib/canna/dic/user
+@dirrm lib/canna/dic/group
 @dirrm lib/canna/dic/canna
 @dirrm lib/canna/dic
 @dirrm lib/canna

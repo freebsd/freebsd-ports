@@ -48,13 +48,16 @@ MLINKS=		uilibs.3 XKanjiControl.3  uilibs.3 XLookupKanjiString.3 \
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
-pre-install:
+post-install:
 	${MKDIR} /var/run/canna
 	${CHOWN} bin:bin /var/run/canna
+.for f in user user/user group
+	${MKDIR} ${PREFIX}/lib/canna/dic/$f
+	${CHOWN} bin:bin ${PREFIX}/lib/canna/dic/$f
+	${CHMOD} 775 ${PREFIX}/lib/canna/dic/$f
+.endfor
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/canna.sh.in \
 		>${WRKDIR}/canna.sh
-
-post-install:
 	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\
