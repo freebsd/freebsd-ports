@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
