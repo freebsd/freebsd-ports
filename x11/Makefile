@@ -44,6 +44,7 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
+    SUBDIR += powershell
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += rxvt
