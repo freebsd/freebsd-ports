@@ -100,7 +100,6 @@
     SUBDIR += libxslt
     SUBDIR += linux-libxml
     SUBDIR += linuxdoc
-    SUBDIR += lotusxsl
     SUBDIR += ltxml
     SUBDIR += makepatch
     SUBDIR += man2html
