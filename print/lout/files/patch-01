@@ -1,0 +1,90 @@
+--- makefile.orig	Wed May  8 03:33:44 1996
++++ makefile	Fri Nov  8 02:10:41 1996
+@@ -203,15 +203,15 @@
+ 
+ USESTAT = 1
+ 
+-BINDIR	= /u12/staff/jeff/bin
+-LIBDIR	= /u12/staff/jeff/lout.lib
+-DOCDIR	= /u12/staff/jeff/lout.doc
+-MANDIR	= /u12/staff/jeff/lout.man
++BINDIR	= $(PREFIX)/bin
++LIBDIR	= $(PREFIX)/share/lout
++DOCDIR	= $(PREFIX)/share/doc/lout
++MANDIR	= $(PREFIX)/man/man1
+ 
+ CHARIN	= 1
+ CHAROUT	= 0
+ 
+-USELOC	= 1
++USELOC	= 0
+ LOC_FR	= fr
+ LOC_DE	= de
+ 
+@@ -263,35 +263,35 @@
+ 	chmod 755 $(BINDIR)/c2lout
+ 	@echo ""
+ 	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
+-	mkdir $(LIBDIR)
++	-mkdir $(LIBDIR)
+ 	chmod 755 $(LIBDIR)
+ 	@echo ""
+-	mkdir $(LIBDIR)/include
++	-mkdir $(LIBDIR)/include
+ 	chmod 755 $(LIBDIR)/include
+ 	cp include/* $(LIBDIR)/include
+ 	chmod 644 $(LIBDIR)/include/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/data
++	-mkdir $(LIBDIR)/data
+ 	chmod 755 $(LIBDIR)/data
+ 	cp data/* $(LIBDIR)/data
+ 	chmod 644 $(LIBDIR)/data/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/hyph
++	-mkdir $(LIBDIR)/hyph
+ 	chmod 755 $(LIBDIR)/hyph
+ 	cp hyph/* $(LIBDIR)/hyph
+ 	chmod 644 $(LIBDIR)/hyph/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/font
++	-mkdir $(LIBDIR)/font
+ 	chmod 755 $(LIBDIR)/font
+ 	cp font/* $(LIBDIR)/font
+ 	chmod 644 $(LIBDIR)/font/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/maps
++	-mkdir $(LIBDIR)/maps
+ 	chmod 755 $(LIBDIR)/maps
+ 	cp maps/* $(LIBDIR)/maps
+ 	chmod 644 $(LIBDIR)/maps/*
+ 	@echo ""
+-	mkdir $(LIBDIR)/locale
++	-mkdir $(LIBDIR)/locale
+ 	chmod 755 $(LIBDIR)/locale
+ 	@echo ""
+ 	@echo "(c) Initializing run (should be silent, no errors expected)"
+@@ -322,9 +322,9 @@
+ installfr:
+ 	@echo ""
+ 	@echo "Installing French error messages into $(LIBDIR)/locale/$(LOC_FR)"
+-	mkdir $(LIBDIR)/locale/$(LOC_FR)
++	-mkdir $(LIBDIR)/locale/$(LOC_FR)
+ 	chmod 755 $(LIBDIR)/locale/$(LOC_FR)
+-	mkdir $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES
++	-mkdir $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES
+ 	chmod 755 $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES
+ 	cp locale/msgs.fr $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
+ 	gencat $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
+@@ -334,9 +334,9 @@
+ installde:
+ 	@echo ""
+ 	@echo "Installing German error messages into $(LIBDIR)/locale/$(LOC_DE)"
+-	mkdir $(LIBDIR)/locale/$(LOC_DE)
++	-mkdir $(LIBDIR)/locale/$(LOC_DE)
+ 	chmod 755 $(LIBDIR)/locale/$(LOC_DE)
+-	mkdir $(LIBDIR)/locale/$(LOC_DE)/LC_MESSAGES
++	-mkdir $(LIBDIR)/locale/$(LOC_DE)/LC_MESSAGES
+ 	chmod 755 $(LIBDIR)/locale/$(LOC_DE)/LC_MESSAGES
+ 	cp locale/msgs.de $(LIBDIR)/locale/$(LOC_DE)/LC_MESSAGES/msgs.$(LOC_DE)
+ 	gencat $(LIBDIR)/locale/$(LOC_DE)/LC_MESSAGES/errors.$(LOC_DE)	\
