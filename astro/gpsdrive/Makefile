@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	1.26.r4
+PORTVERSION=	1.28
 CATEGORIES=	astro
-MASTER_SITES=	http://gpsdrive.kraftvoll.at/ \
-		http://gpsdrive.teachlinux.com/ \
-		http://gpsdrive.flugfunk.de/ \
-		http://gpsdrive.alumnosfdi.org/
+MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
+		http://gpsdrive.dotdeguy.de/      \
+		http://gpsdrive.spoiledmeat.net/  \
+		http://gpsdrive.flugfunk.de/      \
+		http://gpsdrive.alumnosfdi.org/   \
+		http://gpsdrive.teachlinux.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/pre/}
 
 MAINTAINER=	molter@gufi.org
@@ -32,6 +34,6 @@ MAN1=		gpsdrive.1
 MANLANG=	"" de es
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
