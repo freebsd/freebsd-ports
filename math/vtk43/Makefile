@@ -43,6 +43,7 @@ PLIST_SUB+=	LIBVER=${LIBVER} PKGNAME=${PKGNAME}
 
 .if defined(WRAP) || !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX}=="-headers"
 
+PATCH_WRKSRC=	${WRKDIR}/VTK
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-build
 
 BUILD_DEPENDS+=	${CMAKE}:${PORTSDIR}/devel/cmake
@@ -131,7 +132,7 @@ pre-everything::
 	@${ECHO_MSG} "-------------------------------------------------------------"
 .endif
 
-do-patch: patch-common
+post-patch: patch-common
 
 do-install: install-cnotice install-binaries install-libs
 
