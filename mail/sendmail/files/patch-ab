@@ -1,0 +1,11 @@
+--- sendmail/daemon.c.orig	Fri Apr 27 14:27:51 2001
++++ sendmail/daemon.c	Fri Apr 27 14:28:14 2001
+@@ -2012,7 +2012,7 @@
+ 		}
+ 		else
+ 		{
+-			s = socket(addr.sa.sa_family, SOCK_STREAM, 0);
++			s = socket(clt_addr.sa.sa_family, SOCK_STREAM, 0);
+ 		}
+ 		if (s < 0)
+ 		{
