@@ -314,7 +314,6 @@
     SUBDIR += py-kanjilib
     SUBDIR += pycodec
     SUBDIR += qkc
-    SUBDIR += qt23
     SUBDIR += quit
     SUBDIR += rbnamazu
     SUBDIR += recjis
