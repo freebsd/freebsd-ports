@@ -7,14 +7,18 @@
 
 PORTNAME=	wmstock
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker finance
 MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cool WindowMaker Dockapp that shows stock ticker(s)
 
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_PERL5_RUN=	yes
 
 WRKSRC=		${WRKDIR}/wmstock/src
 USE_GMAKE=	yes
