@@ -287,6 +287,7 @@
     SUBDIR += popper
     SUBDIR += poppwd
     SUBDIR += poppy
+    SUBDIR += postfinger
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix1
