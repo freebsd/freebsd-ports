@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	games
 MASTER_SITES=	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/ \
 		ftp://asc-hq.sourceforge.net/pub/asc-hq/ \
