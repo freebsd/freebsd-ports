@@ -6,15 +6,15 @@ lib/libImlib2.so.1
 lib/loaders/filter/bump_map.so
 lib/loaders/filter/colormod.so
 lib/loaders/filter/testfilter.so
-lib/loaders/image/argb.a
-lib/loaders/image/bmp.a
-lib/loaders/image/gif.a
-lib/loaders/image/jpeg.a
-lib/loaders/image/png.a
-lib/loaders/image/pnm.a
-lib/loaders/image/tga.a
-lib/loaders/image/tiff.a
-lib/loaders/image/xpm.a
-@dirrm lib/loaders/filter
+lib/loaders/image/argb.so
+lib/loaders/image/bmp.so
+lib/loaders/image/gif.so
+lib/loaders/image/jpeg.so
+lib/loaders/image/png.so
+lib/loaders/image/pnm.so
+lib/loaders/image/tga.so
+lib/loaders/image/tiff.so
+lib/loaders/image/xpm.so
 @dirrm lib/loaders/image
+@dirrm lib/loaders/filter
 @dirrm lib/loaders

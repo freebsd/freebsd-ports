@@ -1,0 +1,51 @@
+--- loaders/Makefile.in.orig	Fri Apr 26 08:45:29 2002
++++ loaders/Makefile.in	Fri Sep 20 04:20:42 2002
+@@ -108,39 +108,39 @@
+ 
+ jpeg_la_SOURCES = loader_jpeg.c
+ jpeg_la_LDFLAGS = -no-undefined -module -avoid-version
+-jpeg_la_LIBADD = @JPEGLIBS@ -L$(top_builddir)/src -lImlib2
++jpeg_la_LIBADD = @JPEGLIBS@ $(top_builddir)/src/libImlib2.la
+ 
+ png_la_SOURCES = loader_png.c
+ png_la_LDFLAGS = -no-undefined -module -avoid-version
+-png_la_LIBADD = @PNGLIBS@ -L$(top_builddir)/src -lImlib2
++png_la_LIBADD = @PNGLIBS@ $(top_builddir)/src/libImlib2.la
+ 
+ tiff_la_SOURCES = loader_tiff.c
+ tiff_la_LDFLAGS = -no-undefined -module -avoid-version
+-tiff_la_LIBADD = @TIFFLIBS@ -L$(top_builddir)/src -lImlib2
++tiff_la_LIBADD = @TIFFLIBS@ $(top_builddir)/src/libImlib2.la
+ 
+ gif_la_SOURCES = loader_gif.c
+ gif_la_LDFLAGS = -no-undefined -module -avoid-version
+-gif_la_LIBADD = @GIFLIBS@ -L$(top_builddir)/src -lImlib2
++gif_la_LIBADD = @GIFLIBS@ $(top_builddir)/src/libImlib2.la
+ 
+ pnm_la_SOURCES = loader_pnm.c
+ pnm_la_LDFLAGS = -no-undefined -module -avoid-version
+-pnm_la_LIBADD = -L$(top_builddir)/src -lImlib2
++pnm_la_LIBADD = $(top_builddir)/src/libImlib2.la
+ 
+ argb_la_SOURCES = loader_argb.c
+ argb_la_LDFLAGS = -no-undefined -module -avoid-version
+-argb_la_LIBADD = -L$(top_builddir)/src -lImlib2
++argb_la_LIBADD = $(top_builddir)/src/libImlib2.la
+ 
+ bmp_la_SOURCES = loader_bmp.c
+ bmp_la_LDFLAGS = -no-undefined -module -avoid-version
+-bmp_la_LIBADD = -L$(top_builddir)/src -lImlib2
++bmp_la_LIBADD = $(top_builddir)/src/libImlib2.la
+ 
+ xpm_la_SOURCES = loader_xpm.c
+ xpm_la_LDFLAGS = -no-undefined -module -avoid-version
+-xpm_la_LIBADD = -L$(top_builddir)/src -lImlib2
++xpm_la_LIBADD = $(top_builddir)/src/libImlib2.la
+ 
+ tga_la_SOURCES = loader_tga.c
+ tga_la_LDFLAGS = -no-undefined -module -avoid-version
+-tga_la_LIBADD = -L$(top_builddir)/src -lImlib2
++tga_la_LIBADD = $(top_builddir)/src/libImlib2.la
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
