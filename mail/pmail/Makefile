@@ -7,7 +7,7 @@
 
 PORTNAME=	pmail
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python gnome
 MASTER_SITES=	http://www.toad.net/~sbender/pmail/
 
