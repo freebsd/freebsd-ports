@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../ext/plugin/build/solaris/GNUmakefile	7 Feb 2003 23:09:29 -0000	1.11
++++ ../ext/plugin/build/solaris/GNUmakefile	10 Jul 2003 17:04:51 -0000
+@@ -361,7 +361,7 @@
+ 	-I$(CCLASSHEADERS) \
+ 	-I$(MOZ_HDRS)/solaris/navig4/oji -I$(MOZ_HDRS)/solaris/navig4/plugin \
+ 	-I$(COMMONSRCDIR) -I$(NAVIG4SRCDIR) \
+-	-I$(MOTIF_INCLUDE) -I$(BADAPTER) \
++	-I$(BADAPTER) -I$(MOTIF_INCLUDE) \
+ 	-I$(SHARE_INCLUDE) -I$(SOLARIS_INCLUDE) \
+ 	-I$(X11_INCLUDE) -I$(INTL_INCLUDE)
+ 
