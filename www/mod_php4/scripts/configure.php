@@ -6,7 +6,7 @@ fi
 
 /usr/bin/dialog --title "configuration options" --clear \
 	--checklist "\n\
-Please select desired options:" -1 -1 10 \
+Please select desired options:" -1 -1 11 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
 GD		"PHP3:   GD library support" ON \
@@ -103,7 +103,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.1.8
+VERSION_MODSSL=	2.2.0
 
 RESTRICTED=	"Contains cryptography"
 
