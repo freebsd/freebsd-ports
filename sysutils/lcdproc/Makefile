@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		lcdproc.1
 MAN8=		LCDd.8

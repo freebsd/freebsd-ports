@@ -2,7 +2,7 @@
 
 case "$1" in
 	start)		
-		/usr/local/bin/LCDd -c /usr/local/etc/LCDd.conf
+		%%PREFIX%%/bin/LCDd -c %%PREFIX%%/etc/LCDd.conf
 		echo -n " drm-kmod"
 		;;
 	stop)
