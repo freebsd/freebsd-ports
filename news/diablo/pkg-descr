@@ -1,24 +1,6 @@
-DIABLO is a backbone news transit system, designed to replace INND on
-backbone machines. DIABLO UNDERSTANDS NEWSFEEDS ONLY, IT DOES NOT UNDERSTAND
-NEWSREADER CLIENTS!. You cannot run diablo on a machine which needs to
-accept nntp post commands or newsreading-related nntp commands. You cannot
-point your NNTPSERVER at a host running Diablo.
+Diablo is a comprehensive newsfeeding and newsreading software package
+that was originally developed by Matthew Dillon and is now run as an open
+source project.  Diablo is significantly faster and more robust than INN,
+and scales well to multi-server installations.
 
-Diablo is strictly a backbone news transit system. It will accept newsfeeds
-using the ihave or the streaming check/takethis protocols, and it can
-generate newsfeeds using ihave or streaming check/takethis protocols. Diablo
-maintains a news spool and dhistory file, but the spool and history file is
-arranged very differently from INN.
-
-Diablo is also between 10 and 20 times as fast as INN in regards to incoming
-feeds, and extremely efficient for outgoing feeds. I have been running
-Diablo on BEST Internet's backbone news machine for several weeks now, and
-it has run flawlessly.
-
-If you have a dedicated newsfeeds machine which does feeds, feeds, and
-nothing but feeds, Diablo may be for you.
-
-Diablo was written and is currently being maintained by Matthew Dillon,
-you can mail me at: dillon@backplane.com
-
-WWW: http://www.backplane.com/
+WWW: http://www.openusenet.org/diablo/

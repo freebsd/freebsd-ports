@@ -1,0 +1,9 @@
+
+Post-install notes for Diablo
+-----------------------------
+
+This port installs a very basic Diablo system.  You will certainly
+want to change paths and partitions before you start using diablo in a
+production environment.  Please refer to the documentation located at
+http://www.openusenet.org/diablo/ for further information.
+
