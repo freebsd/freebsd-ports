@@ -55,6 +55,7 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # WITHOUT_USERS_BIG_DIR - disables using big directories for users
 # WITHOUT_SEEKABLE - disables vdelivermail's attempt to make its input seekable
 # WITH_DOMAIN_QUOTAS	- enable domain quotas
+# WITH_SPAMASSASSIN	- enable SpamAssassin checks before Maildir delivery
 #
 # Set these to the values you'd prefer
 #
@@ -116,6 +117,33 @@ HARDQUOTA?=	10000000
 RELAYCLEAR?=	30
 LOGLEVEL?=	y
 
+.if defined(WITH_MYSQL)
+USE_MYSQL=		yes
+CONFIGURE_ARGS+=	--enable-mysql=y \
+			--enable-incdir=${LOCALBASE}/include/mysql \
+			--enable-libdir=${LOCALBASE}/lib/mysql
+.if defined(WITH_MYSQL_REPLICATION)
+CONFIGURE_ARGS+=	--enable-mysql-replication=y
+.endif
+.if defined(WITH_MYSQL_LOG)
+CONFIGURE_ARGS+=	--enable-mysql-logging=y
+.endif
+.if defined(WITH_MYSQL_LIMITS)
+CONFIGURE_ARGS+=	--enable-mysql-limits=y
+.endif
+
+WITH_MYSQL_SERVER?=		localhost
+WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
+WITH_MYSQL_UPDATE_SERVER?=	${WITH_MYSQL_SERVER}
+WITH_MYSQL_USER?=		vpopmail
+WITH_MYSQL_READ_USER?=		${WITH_MYSQL_USER}
+WITH_MYSQL_UPDATE_USER?=	${WITH_MYSQL_USER}
+WITH_MYSQL_PASSWD?=		secret
+WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
+WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
+WITH_MYSQL_DB?=			vpopmail
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-send)
@@ -168,33 +196,6 @@ CONFIGURE_ARGS+=	--enable-clear-passwd=n
 CONFIGURE_ARGS+=	--enable-learn-passwords=y
 .endif
 
-.if defined(WITH_MYSQL)
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-mysql=y \
-			--enable-incdir=${LOCALBASE}/include/mysql \
-			--enable-libdir=${LOCALBASE}/lib/mysql
-.if defined(WITH_MYSQL_REPLICATION)
-CONFIGURE_ARGS+=	--enable-mysql-replication=y
-.endif
-.if defined(WITH_MYSQL_LOG)
-CONFIGURE_ARGS+=	--enable-mysql-logging=y
-.endif
-.if defined(WITH_MYSQL_LIMITS)
-CONFIGURE_ARGS+=	--enable-mysql-limits=y
-.endif
-
-WITH_MYSQL_SERVER?=		localhost
-WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
-WITH_MYSQL_UPDATE_SERVER?=	${WITH_MYSQL_SERVER}
-WITH_MYSQL_USER?=	vpopmail
-WITH_MYSQL_READ_USER?=	${WITH_MYSQL_USER}
-WITH_MYSQL_UPDATE_USER?=	${WITH_MYSQL_USER}
-WITH_MYSQL_PASSWD?=	secret
-WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
-WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
-WITH_MYSQL_DB?=		vpopmail
-.endif
-
 .if defined(WITH_SYBASE)
 CONFIGURE_ARGS+=	--enable-sybase=y
 .endif
@@ -238,6 +239,11 @@ CONFIGURE_ARGS+=	--enable-make-seekable=n
 
 .if defined(WITH_DOMAIN_QUOTAS)
 CONFIGURE_ARGS+=	--enable-domainquotas=y
+.endif
+
+.if defined(WITH_SPAMASSASSIN)
+BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+CONFIGURE_ARGS+=	--enable-spamassassin=${LOCALBASE}/bin/spamc
 .endif
 
 # autoconf and automake can remove our patches to the configure scripts.
@@ -309,5 +315,11 @@ post-install:
 		>> ${PREFIX}/vpopmail/etc/vpopmail.mysql
 .endif
 	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail/bin/ ${PREFIX}/vpopmail/etc/
+.if defined(WITH_SPAMASSASSIN)
+	${ECHO_CMD} "***********************************************************************"
+	${ECHO_CMD} "Now you should add the following options to your spamd.sh startup file:"
+	${ECHO_CMD} "-v -u vpopmail"
+	${ECHO_CMD} "***********************************************************************"
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,15 @@
---- configure.orig	Thu Aug 28 21:09:47 2003
-+++ configure	Fri Sep  5 00:13:14 2003
-@@ -1317,7 +1317,7 @@
+--- configure.orig	Fri Oct 17 01:12:22 2003
++++ configure	Sat Oct 25 01:18:27 2003
+@@ -20,6 +20,8 @@
+ ac_help="$ac_help
+   --enable-qmail-newmrh=path Full path to qmail-newmrh program"
+ ac_help="$ac_help
++  --enable-spamassassin=path Enable SpamAssassin. Full path to spamc program. default /usr/local/bin/spamc"
++ac_help="$ac_help
+   --enable-vpopuser=vpopmail   user vchkpw was installed as."
+ ac_help="$ac_help
+   --enable-vpopgroup=vchkpw   group vchkpw was installed as."
+@@ -1317,7 +1319,7 @@
    ;;
  esac
  
@@ -9,7 +18,35 @@
  then
      echo "configure: warning: === vpopmail must be configured as root. ===" 1>&2
      echo "configure: warning: === please switch to the root user and  ===" 1>&2
-@@ -1601,15 +1601,6 @@
+@@ -1446,6 +1448,27 @@
+ EOF
+ 
+ 
++# Check whether --enable-spamassassin or --disable-spamassassin was given.
++if test "${enable_spamassassin+set}" = set; then
++  enableval="$enable_spamassassin"
++  spamc="$enableval"
++
++  case $spamc in
++  1*|y*|Y*)
++      spamc="/usr/local/bin/spamc"
++      ;;
++  esac
++
++  if test ! -f "$spamc"
++  then
++      { echo "configure: error: Unable to find your spamc file, specify --enable-spamassassin=/full/path/to/spamc" 1>&2; exit 1; }
++  fi
++
++  cat >> confdefs.h <<EOF
++#define SPAMC "$spamc"
++EOF
++fi
++
+ 
+ vpopuser="vpopmail"
+ # Check whether --enable-vpopuser or --disable-vpopuser was given.
+@@ -1601,15 +1624,6 @@
  EOF
  
  
@@ -25,7 +62,7 @@
  # Check whether --enable-roaming-users or --disable-roaming-users was given.
  if test "${enable_roaming_users+set}" = set; then
    enableval="$enable_roaming_users"
-@@ -1671,17 +1662,7 @@
+@@ -1671,17 +1685,7 @@
  if test "${enable_tcpserver_file+set}" = set; then
    enableval="$enable_tcpserver_file"
    tcpserver_file="$enableval"
