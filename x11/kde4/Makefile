@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1998/09/30 02:07:26 jseger Exp $
+# $Id: Makefile,v 1.15 1998/10/01 19:49:10 brian Exp $
 #
 
 DISTNAME=	kde-1.0
@@ -12,6 +12,8 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	se@freebsd.org
+
+BROKEN=		upgrade
 
 LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \

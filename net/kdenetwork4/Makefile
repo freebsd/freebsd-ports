@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.21 1998/09/30 02:07:27 jseger Exp $
+# $Id: Makefile,v 1.22 1998/10/01 18:35:37 brian Exp $
 #
 
 DISTNAME=	kdenetwork-1.0
@@ -12,6 +12,8 @@ MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
+
+BROKEN=		upgrade
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
