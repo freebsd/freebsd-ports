@@ -7,6 +7,7 @@
 
 PORTNAME=	dctc
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
@@ -31,7 +32,14 @@ CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}
 
+ADDITIONAL_SRCS=	sig_chld.c
+#
 DOC_FILES= COPYING ChangeLog README TODO
+
+post-extract:
+.for file in ${ADDITIONAL_SRCS}
+	@${CP} ${FILESDIR}/${file} ${WRKSRC}/src
+.endfor
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${REINPLACE_CMD} -E -e \
@@ -52,6 +60,13 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f \
 		-name "*.bak" \
 		| ${XARGS} -n 10 -x ${RM}
+# add sigchld handler
+.for file in ${ADDITIONAL_SRCS}
+	@${REINPLACE_CMD} -E -e \
+		's|^(dc_gui_SOURCES.+)$$|\1 ${file}|; \
+		s|^(dc_gui_OBJECTS[^\\]+)(\\*)$$|\1 ${file:S/.c$/.o/} \2|' \
+		${WRKSRC}/src/Makefile.in
+.endfor
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
