@@ -12,6 +12,6 @@ Results obtained from CalculiX are in no way connected to ABAQUS.
 
 WWW: http://www.calculix.de/
 
-note: By default, the single-threaded solver is used this can be changed by
-setting the CCX_NPROC environment variable with the number of processors
-you want to use.
+note: By default the single-threaded solver is used, this can be changed 
+by setting the CCX_NPROC environment variable with the number of 
+processors you want to use.

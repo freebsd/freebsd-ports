@@ -1,38 +1,29 @@
---- cgx_1.2/src/Makefile.orig	Sat Jul 17 17:16:50 2004
-+++ cgx_1.2/src/Makefile	Thu Dec 23 15:20:11 2004
-@@ -1,17 +1,16 @@
--CFLAGS = -O2 -Wall \
--  -I./ \
--  -I/usr/include \
+--- cgx_1.3/src/Makefile.orig	Fri Feb 25 22:06:01 2005
++++ cgx_1.3/src/Makefile	Sat Feb 26 20:40:28 2005
+@@ -1,13 +1,13 @@
+ CFLAGS = -O2 -Wall \
+   -I./ \
+   -I/usr/include \
 -  -I/usr/include/GL \
--  -I/usr/local/CalculiX/libSNL/src \
--  -I/usr/X11/include 
-+CFLAGS += -I./ \
-+  -I%%X11BASE%%/include \
 +  -I%%X11BASE%%/include/GL \
-+  -I../../libSNL/src \
+   -I../../libSNL/src \
+-  -I/usr/X11/include 
 +  -I%%X11BASE%%/include 
  
  LFLAGS = \
--  -L/usr/local/CalculiX/libSNL/src -lSNL \
 -  -L/usr/lib -lGL -lGLU -lglut \
--  -L/usr/X11/lib -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
-+  -L../../libSNL/src -lSNL \
+-  -L/usr/X11/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
 +  -L%%X11BASE%%/lib -lGL -lGLU -lglut \
 +  -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
    -lm 
  
--# -lpthread is needed if mesaGL is using threading, otherwhise it is not needed
-+# -lpthread is needed if mesaGL is using threading, otherwise it reduces performance
- 
- SLIB = \
-    AsplitA.c \
-@@ -110,7 +109,7 @@
+ # -L/usr/X11/lib64 -lpthread -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
+@@ -121,7 +121,7 @@
  OLIB = $(SLIB:.c=.o)
  
- cgx:  $(OLIB)
+ cgx: $(OLIB)
 -	g++   $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
 +	$(CXX)   $(OLIB)  $(CFLAGS) $(LFLAGS) -o  $@
  
- # flags for the sgi compiler
- #  use them with the CC compiler instead of g++
+ 
+ 

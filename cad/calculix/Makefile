@@ -6,28 +6,49 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
-DISTFILES=	ccx_${PORTVERSION}.src.tar.gz cgx_${PORTVERSION}.tar.gz
+DISTFILES=	${DIST_SOURCES}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	ccx_${PORTVERSION}.ps.tar.gz cgx_${PORTVERSION}.ps.tar.gz \
-		ccx_${PORTVERSION}.htm.tar.gz cgx_${PORTVERSION}.htm.tar.gz
+DISTFILES+=	${DIST_HTM} ${DIST_PS}
 .endif
 .ifdef WITH_EXAMPLES
-DISTFILES+=	ccx_${PORTVERSION}.test.tar.gz
+DISTFILES+=	${DIST_EXAMPLES}
 .endif
 DIST_SUBDIR=	calculix
+EXTRACT_ONLY=	${DIST_SOURCES}
+.if !defined(NOPORTDOCS)
+EXTRACT_ONLY+=	${DIST_HTM} ccx_${PORTVERSION}.ps${EXTRACT_SUFX}
+.endif
+.ifdef WITH_EXAMPLES
+EXTRACT_ONLY+=	${DIST_EXAMPLES}
+.endif
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles \
-		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack
+BUILD_DEPENDS=	${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack	\
+		${LOCALBASE}/lib/liblapack.a:${PORTSDIR}/math/lapack	\
+		${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles	\
+		${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis	\
+		${LOCALBASE}/lib/libtaucs.a:${PORTSDIR}/math/taucs
 LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas \
 		glut.3:${PORTSDIR}/graphics/libglut
 
+USE_BZIP2=	yes
+
+DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}	\
+		cgx_${PORTVERSION}.all${EXTRACT_SUFX}
+DIST_HTM=	ccx_${PORTVERSION}.htm${EXTRACT_SUFX}	\
+		cgx_${PORTVERSION}.htm${EXTRACT_SUFX}
+DIST_PS=	ccx_${PORTVERSION}.ps${EXTRACT_SUFX}	\
+		cgx_${PORTVERSION}.ps.bz2
+DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}	\
+		cgx_${PORTVERSION}.exa${EXTRACT_SUFX}
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_GMAKE=	yes
 USE_GL=	yes
 USE_REINPLACE=	yes
 BLAS_LIBS=	-lf77blas -latlas
@@ -48,7 +69,7 @@ pre-everything::
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
-	s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS} -DUSE_MT+g; \
+	s+%%PTHREAD_CFLAGS%%+-DUSE_MT ${PTHREAD_CFLAGS}+g; \
 	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
@@ -64,7 +85,7 @@ pre-build:
 
 do-build:
 	@(cd ${WRKSRC}/ccx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
-	@(cd ${WRKSRC}/libSNL/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
+	@(cd ${WRKSRC}/libSNL/src; ${SETENV} ${MAKE_ENV} $(GMAKE) )
 	@(cd ${WRKSRC}/cgx_${PORTVERSION}/src; ${SETENV} ${MAKE_ENV} $(MAKE) )
 
 do-install:
@@ -81,7 +102,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/cgx_${PORTVERSION}/doc/cgx/* \
 	  ${DOCSDIR}/cgx
 	@${INSTALL_DATA} ${WRKSRC}/ccx_${PORTVERSION}/doc/*.ps ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/cgx.ps ${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cgx_${PORTVERSION}.ps.bz2	\
+	  ${DOCSDIR}
+	bunzip2 ${DOCSDIR}/cgx_${PORTVERSION}.ps.bz2
 	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
 .ifdef WITH_EXAMPLES
