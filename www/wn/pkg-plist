@@ -3,6 +3,8 @@ etc/wn_mime.types
 libexec/wn
 sbin/swn
 bin/wndex
+wn/bin/mkpasswd
+wn/bin/authwn
 wn/docs
 wn/index
 wn/wnlogs
