@@ -2459,6 +2459,7 @@ gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 googolplex	ports/net/googolplex
+goose		ports/www/goose
 gopchop		ports/multimedia/gopchop
 gopher		ports/net/gopher
 gorm		ports/devel/gorm
