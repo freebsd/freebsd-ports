@@ -1,0 +1,60 @@
+*** Makefile.orig	Mon Oct  9 12:34:13 1995
+--- Makefile	Mon Oct  9 12:49:45 1995
+***************
+*** 7,13 ****
+  RM=rm -f
+  RANLIB=ranlib
+  
+! INSTROOT=/usr/local
+  
+  LIBDIR=$(INSTROOT)/lib
+  INCDIR=$(INSTROOT)/include
+--- 7,13 ----
+  RM=rm -f
+  RANLIB=ranlib
+  
+! INSTROOT=${PREFIX}
+  
+  LIBDIR=$(INSTROOT)/lib
+  INCDIR=$(INSTROOT)/include
+***************
+*** 19,25 ****
+  # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
+  # needed for our purposes (stdlib, string, unistd).
+  #
+! CFLAGS = -O
+  LDLIBS =
+  LIBIDENT = libident.a
+  
+--- 19,25 ----
+  # Add -DHAVE_ANSIHEADERS if your system have the ANSI C header files
+  # needed for our purposes (stdlib, string, unistd).
+  #
+! #CFLAGS = -O
+  LDLIBS =
+  LIBIDENT = libident.a
+  
+***************
+*** 31,36 ****
+--- 31,37 ----
+  	@echo ""
+  	@echo aix
+  	@echo bsd
++ 	@echo freebsd (FreeBSD 2.x)
+  	@echo dynix
+  	@echo hpux
+  	@echo irix
+***************
+*** 119,124 ****
+--- 120,130 ----
+  #
+  bsd:
+  	@$(MAKE) all CC="$(CC)" CFLAGS="-O -DSIGRETURNTYPE=int"
++ 
++ #
++ # FreeBSD 2.x
++ freebsd:
++ 	@$(MAKE) all CC="$(CC)" CFLAGS="${CFLAGS} -Wall -DHAVE_ANSIHEADERS"
+  
+  #
+  #
