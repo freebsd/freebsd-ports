@@ -12,6 +12,8 @@ MASTER_SITES=	http://people.FreeBSD.org/~3d/distfiles/glx/linux/
 
 MAINTAINER=	3d@freebsd.org
 
+BUILD_DEPENDS= 	/compat/linux/sbin/ldconfig:${PORTSDIR}/emulators/linux_base	
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
