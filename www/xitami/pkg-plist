@@ -1,8 +1,13 @@
-etc/rc.d/xitami.sh
-share/doc/xitami/html/horizon.gif
-share/doc/xitami/html/im0096c.gif
+etc/rc.d/xitami.sh.sample
 share/doc/xitami/html/index.htm
 share/doc/xitami/html/index1.htm
+share/doc/xitami/html/index10.htm
+share/doc/xitami/html/index11.htm
+share/doc/xitami/html/index12.htm
+share/doc/xitami/html/index13.htm
+share/doc/xitami/html/index14.htm
+share/doc/xitami/html/index15.htm
+share/doc/xitami/html/index16.htm
 share/doc/xitami/html/index2.htm
 share/doc/xitami/html/index3.htm
 share/doc/xitami/html/index4.htm
@@ -11,22 +16,13 @@ share/doc/xitami/html/index6.htm
 share/doc/xitami/html/index7.htm
 share/doc/xitami/html/index8.htm
 share/doc/xitami/html/index9.htm
-share/doc/xitami/html/index10.htm
-share/doc/xitami/html/index11.htm
-share/doc/xitami/html/index12.htm
-share/doc/xitami/html/index13.htm
-share/doc/xitami/html/index14.htm
-share/doc/xitami/html/index15.htm
-share/doc/xitami/html/index16.htm
 share/doc/xitami/html/license.htm
-share/doc/xitami/html/newstone.gif
-share/doc/xitami/html/xitami1.gif
-xitami/defaults.cfg
+xitami/cgi-bin/testcgi
+xitami/defaults.cfg.sample
+xitami/webpages/default.html.sample
 xitami/xitami
 xitami/xitami.aut
 xitami/xitami.cfg
-xitami/cgi-bin/testcgi
-xitami/webpages/default.html
 @dirrm share/doc/xitami/html
 @dirrm share/doc/xitami
 @unexec rmdir %D/xitami/webpages 2>/dev/null || true
