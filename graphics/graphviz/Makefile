@@ -3,7 +3,7 @@
 # Date created:         03 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/04 08:37:50 tg Exp $
 #
 
 DISTNAME=       graphviz_1_21
@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.src.unix.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
+LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
+
 RESTRICTED=	"Can't be fetched without license"
 NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
@@ -22,13 +24,6 @@ MAKEFILE=	makefile
 MAN1=		dot.1 dotty.1 lefty.1 neato.1 tcldot.1
 
 SELFILEDIR=	${WRKSRC}/cmd/lefty/ws/x11/libfilereq
-
-post-extract:
-	@${MV} ${SELFILEDIR}/dir.c ${SELFILEDIR}/Dir.c
-	@${MV} ${SELFILEDIR}/draw.c ${SELFILEDIR}/Draw.c
-	@${MV} ${SELFILEDIR}/path.c ${SELFILEDIR}/Path.c
-	@${MV} ${SELFILEDIR}/selfile.c ${SELFILEDIR}/SelFile.c
-	@${MV} ${SELFILEDIR}/sfinternal.h ${SELFILEDIR}/SFinternal.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.ps ${PREFIX}/share/doc/graphviz
