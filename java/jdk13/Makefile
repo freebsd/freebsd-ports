@@ -196,12 +196,10 @@ post-patch:
 .if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
 # Some checks for bootstrapping with a Linux JDK
 pre-build:
-	@if [ "$${WRKDIRPREFIX}" -a \
-	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
-	     x`ls -ld "/compat/linux/$${WRKDIRPREFIX}" 2>/dev/null | awk '/->/{print $$NF;exit 0}END{exit 1}'` = x"$${WRKDIRPREFIX}" ]; \
+	@if [ `${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check_wrkdir_links.sh "${WRKDIRPREFIX}" "${LINUXBASE}" 2>/dev/null` ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
-		${ECHO_MSG} "have a matching symbolic link in /compat/linux."; \
+		${ECHO_MSG} "have a matching symbolic link in ${LINUXBASE}."; \
 		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
