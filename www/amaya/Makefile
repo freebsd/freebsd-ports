@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	6.4
+PORTVERSION=	7.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
@@ -24,9 +24,9 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gtk --without-graphic-libs
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LIBS} -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-graphic-libs
 
 DICT?=		none
 
@@ -52,15 +52,6 @@ pre-everything::
 
 post-extract:
 	${MKDIR} ${WRKSRC}
-
-post-patch:
-	${REINPLACE_CMD} -e 's|\"1.0\\.|\"1\\.|g ; \
-		 s|gtk-config --cflags|imlib-config --cflags-gdk|g ; \
-		 s|gtk-config --libs|imlib-config --libs-gdk|g ; \
-		 s| -lgdk_imlib||g' ${WRKSRC}/../configure
-
-post-configure:
-	${LN} -sf ${WRKSRC}/Options.orig ${WRKSRC}/Options
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya
