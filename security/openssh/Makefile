@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	OpenSSH
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp1.se.openbsd.org/pub/OpenBSD/OpenSSH/
-DISTNAME=	openssh-2.1.0
+DISTNAME=	openssh-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	green@FreeBSD.org
