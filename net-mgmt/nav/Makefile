@@ -73,8 +73,10 @@ PYCRONPATH=	subsystem/logger/bin/logengine.py \
 IGNORE=		This port requires perl 5.6 or newer
 .endif
 
+.if !defined(BATCH)
 pre-everything::
 	@${DIALOG} --title "NAV" --msgbox "Remember to switch Apache2 on for the PHP port." 5 60
+.endif
 
 post-extract:
 	${INSTALL} -d -m 0755 ${WRKSRC}/src/SimpleSnmp/build
