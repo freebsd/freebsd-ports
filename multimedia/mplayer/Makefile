@@ -127,6 +127,9 @@
 # WITH_XVID
 # default: autodetect
 #
+# WITH_FAAD
+# default: autodetect
+#
 # WITHOUT_WIN32_CODECS
 # default: undefined
 # By default, mplayer depends on and uses the win32-codecs collection.
@@ -145,8 +148,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.104
-PORTREVISION=	2
+PORTVERSION=	0.90.0.105
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -156,7 +158,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90rc4
+DISTNAME=	MPlayer-0.90rc5
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
@@ -192,6 +194,10 @@ DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
 		encoding.html formats.html sound.html \
 		users_against_developers.html \
 		video.html
+TOOLFILES=	calcbpp.pl countquant.pl \
+		dvd2divxscript.pl menc2pass \
+		mencvcd mp.pl sws-test w32codec_dl.pl \
+		x2mpsub.sh
 
 .include <bsd.port.pre.mk>
 
@@ -249,6 +255,10 @@ WITH_LIVEMEDIA=	yes
 
 .if exists(${LOCALBASE}/lib/libxvidcore.so)
 WITH_XVID=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libfaad.so)
+WITH_FAAD=	yes
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -367,6 +377,11 @@ CONFIGURE_ARGS+=	--enable-xvid \
 LIB_DEPENDS+=		xvidcore.0:${PORTSDIR}/graphics/xvid
 .endif
 
+.if defined(WITH_FAAD)
+CONFIGURE_ARGS+=	--enable-faad
+LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
+.endif
+
 .if defined(WITH_FREETYPE)
 CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 			--enable-freetype
@@ -445,8 +460,13 @@ pre-configure:
 post-install:
 	@${MKDIR} ${DATADIR}
 	@${CHMOD} 755 ${DATADIR}
+	@${MKDIR} ${DATADIR}/tools
+	@${CHMOD} 755 ${DATADIR}/tools
 .for conf in ${CONFFILES}
 	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}
+.endfor
+.for tool in ${TOOLFILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/TOOLS/${tool} ${DATADIR}/tools
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
