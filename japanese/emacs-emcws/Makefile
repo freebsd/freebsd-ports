@@ -7,7 +7,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -17,6 +17,11 @@ PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
 PATCHFILES=	emcws-${EMACS_VER}-20031213.gz
 PATCH_DIST_STRIP=	-p1
+.if defined(WITH_MENUBAR_FONTSET)
+PATCH_SITES+=		http://www.nijino.com/ari/emacs/
+PATCHFILES+=		emacs-21.1-fontset.patch emacs-21.2-menu-encode.patch
+PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER=	nakaji@jp.freebsd.org
 COMMENT=	Emacs + Canna + Wnn + Sj3
@@ -152,8 +157,13 @@ EMACS_BASE=${PREFIX}
 EMACS_BASE=${LOCALBASE}
 .endif
 
-pre-fetch:
+pre-everything::
 	@${CAT} ${FILESDIR}/emcws-message
+.if !defined(WITH_MENUBAR_FONTSET)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To enable menubar fontset support, define WITH_MENUBAR_FONTSET"
+	@${ECHO_MSG} "====>"
+.endif
 
 pre-build:
 	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
@@ -205,5 +215,12 @@ do-install:
 	   ${ECHO_CMD} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ; \
 	fi
+
+post-install:
+.if defined(WITH_MENUBAR_FONTSET)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To use Japanese menu, you need menu-tree.el which is available from http://www.is.titech.ac.jp/~yagi/emacs/menu-tree.el"
+	@${ECHO_MSG} "====>"
+.endif
 
 .include <bsd.port.mk>
