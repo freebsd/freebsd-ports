@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/clockspeed-conf
+bin/taiclockd-conf
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
