@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.13
+PORTVERSION=	0.6.14
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
