@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnomecanvas
-PORTVERSION=	1.116.0
+PORTVERSION=	1.117.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
 DIST_SUBDIR=	gnome2
 
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \

@@ -1,5 +1,6 @@
 bin/gnome-about
 include/gnome-desktop-2.0/libgnome/gnome-desktop-item.h
+include/gnome-desktop-2.0/libgnome/gnome-icon-loader.h
 include/gnome-desktop-2.0/libgnomeui/gnome-ditem-edit.h
 include/gnome-desktop-2.0/libgnomeui/gnome-hint.h
 lib/libgnome-desktop-2.a

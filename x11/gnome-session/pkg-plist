@@ -1,14 +1,12 @@
 bin/gnome-libice-check
 bin/gnome-login-check
 bin/gnome-session
+bin/gnome-session-properties
+bin/gnome-session-save
 bin/gnome-smproxy
 bin/gnome-wm
-bin/save-session
-bin/session-properties
-bin/session-properties-capplet
+etc/gconf/schemas/gnome-session.schemas
 share/gnome/control-center-2.0/capplets/session-properties.desktop
-share/gnome/control-center-2.0/capplets/session.desktop
-share/gnome/control-center/Session/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
 share/gnome/pixmaps/splash/gnome-splash-1.4.0.png
@@ -57,5 +55,3 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-2.0.mo
 @dirrm share/gnome/pixmaps/splash
 @dirrm share/gnome/omf/gnome-core
-@dirrm share/gnome/control-center/Session
-@dirrm share/gnome/control-center

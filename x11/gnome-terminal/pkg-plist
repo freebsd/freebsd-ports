@@ -9,7 +9,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/global/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default/%gconf.xml
-etc/gconf/schemas/profterm.schemas
+etc/gconf/schemas/gnome-terminal.schemas
 libdata/bonobo/servers/gnome-terminal.server
 share/gnome/applications/gnome-terminal.desktop
 share/gnome/gnome-terminal/glade/gnome-terminal.glade2
