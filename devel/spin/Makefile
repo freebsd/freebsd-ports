@@ -15,7 +15,6 @@ DISTNAME=	spin${PORTVERSION:S/.//g}
 MAINTAINER=	jhanna@shaw.ca
 COMMENT=	An on-the-fly verification system for asynchronous concurrent systems
 
-BROKEN=		checksum mismatch
 .if !defined(WITHOUT_XSPIN)
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 PLIST_SUB+=	XSPIN=""
@@ -39,6 +38,12 @@ pre-everything::
 
 post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
+
+pre-patch:
+	${TR} -d '\015' < ${WRKDIR}/Xspin4.1/xspin412.tcl \
+		> ${WRKDIR}/Xspin4.1/xspin412.tcl.tmp
+	${MV} -f ${WRKDIR}/Xspin4.1/xspin412.tcl.tmp \
+		${WRKDIR}/Xspin4.1/xspin412.tcl
 
 post-patch:
 	@WISH=`(cd ${LOCALBASE}/bin ; ${LS} wish8* ) | tail -1` ; \
