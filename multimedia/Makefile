@@ -37,6 +37,7 @@
     SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
     SUBDIR += nautilus-media
+    SUBDIR += nuppelvideo
     SUBDIR += ogle
     SUBDIR += ogle-gui
     SUBDIR += ogmtools
