@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.8
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
