@@ -3,7 +3,6 @@
 LIBDIR =	${PREFIX}/lib
 
 SHLIB_MAJOR=	2
-SHLIB_MINOR=	4
 LIB=		cgraph
 
 SRCS=		bgdash.c bginit.c bgshow.c bgstart.c\

@@ -2,9 +2,9 @@ include/cgraph.h
 lib/libcgraph.a
 lib/libcgraph_p.a
 lib/libcgraph.so
-lib/libcgraph.so.2.4
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/libcgraph.so.2
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/cgraph/cgraph.ps
 share/examples/cgraph/CGminimal.c
 share/examples/cgraph/dashlist.c
