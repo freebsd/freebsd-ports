@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsmi
-PORTVERSION=	0.1.8
+PORTVERSION=	0.2.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
@@ -21,8 +21,7 @@ INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 MIBDIR=		${PREFIX}/share/smi/mibs
 CONFIGURE_ARGS+=--with-data-dir=${PREFIX}/share/smi \
-		--with-mibdir=${MIBDIR} \
-		--with-smipath=${MIBDIR}/ietf:${MIBDIR}/iana:${MIBDIR}/irtf:${MIBDIR}/site
+		--with-mibdir=${MIBDIR}
 
 MAN1=	smiquery.1 smilint.1 smidump.1 smistrip.1
 MAN3=	libsmi.3 smi_config.3 smi_module.3 smi_macro.3 smi_node.3 smi_type.3

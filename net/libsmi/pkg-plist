@@ -6,14 +6,16 @@ include/smi.h
 lib/libsmi.a
 lib/libsmi.la
 lib/libsmi.so
-lib/libsmi.so.1
+lib/libsmi.so.2
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB
 share/smi/mibs/iana/IANA-LANGUAGE-MIB
+share/smi/mibs/iana/IANA-RTPROTO-MIB
 share/smi/mibs/iana/IANATn3270eTC-MIB
 share/smi/mibs/iana/IANAifType-MIB
 share/smi/mibs/ietf/ACCOUNTING-CONTROL-MIB
 share/smi/mibs/ietf/ADSL-LINE-MIB
 share/smi/mibs/ietf/ADSL-TC-MIB
+share/smi/mibs/ietf/AGENTX-MIB
 share/smi/mibs/ietf/APPC-MIB
 share/smi/mibs/ietf/APPLETALK-MIB
 share/smi/mibs/ietf/APPLICATION-MIB
@@ -30,8 +32,11 @@ share/smi/mibs/ietf/CLNS-MIB
 share/smi/mibs/ietf/DECNET-PHIV-MIB
 share/smi/mibs/ietf/DIAL-CONTROL-MIB
 share/smi/mibs/ietf/DIRECTORY-SERVER-MIB
+share/smi/mibs/ietf/DISMAN-NSLOOKUP-MIB
+share/smi/mibs/ietf/DISMAN-PING-MIB
 share/smi/mibs/ietf/DISMAN-SCHEDULE-MIB
 share/smi/mibs/ietf/DISMAN-SCRIPT-MIB
+share/smi/mibs/ietf/DISMAN-TRACEROUTE-MIB
 share/smi/mibs/ietf/DLSW-MIB
 share/smi/mibs/ietf/DNS-RESOLVER-MIB
 share/smi/mibs/ietf/DNS-SERVER-MIB
@@ -46,15 +51,21 @@ share/smi/mibs/ietf/DS3-MIB
 share/smi/mibs/ietf/DSA-MIB
 share/smi/mibs/ietf/EBN-MIB
 share/smi/mibs/ietf/ENTITY-MIB
+share/smi/mibs/ietf/ETHER-CHIPSET-MIB
 share/smi/mibs/ietf/EtherLike-MIB
 share/smi/mibs/ietf/FDDI-SMT73-MIB
+share/smi/mibs/ietf/FIBRE-CHANNEL-FE-MIB
 share/smi/mibs/ietf/FLOW-METER-MIB
 share/smi/mibs/ietf/FRAME-RELAY-DTE-MIB
 share/smi/mibs/ietf/FRNETSERV-MIB
+share/smi/mibs/ietf/HCNUM-TC
 share/smi/mibs/ietf/HOST-RESOURCES-MIB
+share/smi/mibs/ietf/HOST-RESOURCES-TYPES
 share/smi/mibs/ietf/HPR-IP-MIB
 share/smi/mibs/ietf/HPR-MIB
+share/smi/mibs/ietf/IF-INVERTED-STACK-MIB
 share/smi/mibs/ietf/IF-MIB
+share/smi/mibs/ietf/INET-ADDRESS-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-GUARANTEED-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-MIB
 share/smi/mibs/ietf/IP-FORWARD-MIB
@@ -83,6 +94,7 @@ share/smi/mibs/ietf/PPP-BRIDGE-NCP-MIB
 share/smi/mibs/ietf/PPP-IP-NCP-MIB
 share/smi/mibs/ietf/PPP-LCP-MIB
 share/smi/mibs/ietf/PPP-SEC-MIB
+share/smi/mibs/ietf/PTOPO-MIB
 share/smi/mibs/ietf/PerfHist-TC-MIB
 share/smi/mibs/ietf/Printer-MIB
 share/smi/mibs/ietf/Q-BRIDGE-MIB
@@ -92,11 +104,11 @@ share/smi/mibs/ietf/RADIUS-AUTH-CLIENT-MIB
 share/smi/mibs/ietf/RADIUS-AUTH-SERVER-MIB
 share/smi/mibs/ietf/RDBMS-MIB
 share/smi/mibs/ietf/RFC-1212
-share/smi/mibs/ietf/RFC-1213
 share/smi/mibs/ietf/RFC-1215
 share/smi/mibs/ietf/RFC1155-SMI
 share/smi/mibs/ietf/RFC1158-MIB
 share/smi/mibs/ietf/RFC1213-MIB
+share/smi/mibs/ietf/RFC1269-MIB
 share/smi/mibs/ietf/RFC1271-MIB
 share/smi/mibs/ietf/RFC1285-MIB
 share/smi/mibs/ietf/RFC1316-MIB
@@ -109,9 +121,11 @@ share/smi/mibs/ietf/RMON2-MIB
 share/smi/mibs/ietf/RS-232-MIB
 share/smi/mibs/ietf/RSVP-MIB
 share/smi/mibs/ietf/SIP-MIB
+share/smi/mibs/ietf/SLAPM-MIB
 share/smi/mibs/ietf/SMON-MIB
 share/smi/mibs/ietf/SNA-NAU-MIB
 share/smi/mibs/ietf/SNA-SDLC-MIB
+share/smi/mibs/ietf/SNMP-COMMUNITY-MIB
 share/smi/mibs/ietf/SNMP-FRAMEWORK-MIB
 share/smi/mibs/ietf/SNMP-MPD-MIB
 share/smi/mibs/ietf/SNMP-NOTIFICATION-MIB
@@ -119,11 +133,14 @@ share/smi/mibs/ietf/SNMP-PROXY-MIB
 share/smi/mibs/ietf/SNMP-REPEATER-MIB
 share/smi/mibs/ietf/SNMP-TARGET-MIB
 share/smi/mibs/ietf/SNMP-USER-BASED-SM-MIB
+share/smi/mibs/ietf/SNMP-USM-DH-OBJECTS-MIB
 share/smi/mibs/ietf/SNMP-VIEW-BASED-ACM-MIB
 share/smi/mibs/ietf/SNMPv2-CONF
 share/smi/mibs/ietf/SNMPv2-MIB
 share/smi/mibs/ietf/SNMPv2-SMI
 share/smi/mibs/ietf/SNMPv2-TC
+share/smi/mibs/ietf/SNMPv2-TM
+share/smi/mibs/ietf/SNMPv2-USEC-MIB
 share/smi/mibs/ietf/SONET-MIB
 share/smi/mibs/ietf/SOURCE-ROUTING-MIB
 share/smi/mibs/ietf/SYSAPPL-MIB
@@ -137,23 +154,23 @@ share/smi/mibs/ietf/TOKENRING-STATION-SR-MIB
 share/smi/mibs/ietf/TUNNEL-MIB
 share/smi/mibs/ietf/UDP-MIB
 share/smi/mibs/ietf/UPS-MIB
+share/smi/mibs/ietf/VRRP-MIB
 share/smi/mibs/ietf/WWW-MIB
-share/smi/mibs/irtf/IRTF-NMRG-SMING-EXTENSIONS.sming
-share/smi/mibs/irtf/IRTF-NMRG-SMING-TYPES.sming
-share/smi/mibs/irtf/IRTF-NMRG-SMING.sming
-share/smi/mibs/site/DISMAN-NSLOOKUP-MIB
-share/smi/mibs/site/DISMAN-PING-MIB
-share/smi/mibs/site/DISMAN-TRACEROUTE-MIB
-share/smi/mibs/site/TUBS-IBR-LINUX-MIB
-share/smi/mibs/site/TUBS-IBR-NFS-MIB
-share/smi/mibs/site/TUBS-IBR-PROC-MIB
-share/smi/mibs/site/TUBS-IBR-TEST-MIB
-share/smi/mibs/site/TUBS-IBR-TNM-COMPAT
-share/smi/mibs/site/TUBS-IBR-TNM-MIB
-share/smi/mibs/site/TUBS-REGISTRATION
+share/smi/mibs/irtf/IRTF-NMRG-SMING
+share/smi/mibs/irtf/IRTF-NMRG-SMING-EXTENSIONS
+share/smi/mibs/irtf/IRTF-NMRG-SMING-TYPES
+share/smi/mibs/tubs/TUBS-IBR-AGENT-CAPABILITIES
+share/smi/mibs/tubs/TUBS-IBR-LINUX-MIB
+share/smi/mibs/tubs/TUBS-IBR-NFS-MIB
+share/smi/mibs/tubs/TUBS-IBR-PING-MIB
+share/smi/mibs/tubs/TUBS-IBR-PROC-MIB
+share/smi/mibs/tubs/TUBS-IBR-TEST-MIB
+share/smi/mibs/tubs/TUBS-IBR-TNM-MIB
+share/smi/mibs/tubs/TUBS-SMI
 @dirrm share/smi/mibs/iana
 @dirrm share/smi/mibs/ietf
 @dirrm share/smi/mibs/irtf
 @dirrm share/smi/mibs/site
+@dirrm share/smi/mibs/tubs
 @dirrm share/smi/mibs
 @dirrm share/smi
