@@ -1,7 +1,7 @@
---- src/Makefile.orig	Sun Mar 23 13:57:02 2003
-+++ src/Makefile	Sun May 11 09:24:47 2003
-@@ -2,15 +2,21 @@
- # Please read docs/Readme.html, or http://www.analog.cx/
+--- src/Makefile.orig	Sun Mar 23 05:57:02 2003
++++ src/Makefile	Thu Aug 21 10:26:26 2003
+@@ -2,15 +2,22 @@
+ # Please read docs/Readme.html, or <A HREF="http://www.analog.cx/">http://www.analog.cx/</A>
  # This is a general Unix-like Makefile: Makefiles for other OS's can be found
  #   in the "build" directory.
 -CC = gcc           # which compiler to use: eg cc, acc, gcc. NB Different
@@ -20,12 +20,13 @@
 +       -DIMAGEDIR=\"/images/\" \
 +       -DDEFAULTCONFIGFILE=\"$(PREFIX)/etc/analog.cfg\" \
 +       -DLANGDIR=\"${PREFIX}/share/analog/lang/\" \
-+       -DCONFIGDIR=\"$(PREFIX)/share/analog/\"
++       -DCONFIGDIR=\"$(PREFIX)/share/analog/\" \
++       -DHAVE_ZLIB
 +#DEFS =          # any combination of -DNOPIPES -DNODNS -DNODIRENT -DNOGLOB ...
  #                 ... -DNOOPEN -DNOFOLLOW -DNOALARM -DNOGRAPHICS -DNOGMTIME ...
  #                 ... -DEBCDIC -DUSE_PLAIN_SETJMP ...
  #                 ... -DHAVE_GD -DHAVE_ZLIB -DHAVE_PCRE ...
-@@ -30,6 +36,12 @@
+@@ -30,6 +37,12 @@
  OS = UNIX         # Operating system: UNIX, DOS, WIN32, MAC, OS2, OSX, VMS
  #                   RISCOS, BEOS, NEXTSTEP, MPEIX, BS2000, AS400, OS390
  LIBS = -lm  # extra libraries needed; most platforms (but not OS X or BeOS)

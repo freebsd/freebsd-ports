@@ -49,8 +49,8 @@ do-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg-dist
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/analog
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
 
