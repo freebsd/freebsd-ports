@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	2.5.a5
+PORTVERSION=	2.5.r1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.baumfamily.org/nqc/beta/
+MASTER_SITES=	http://www.baumfamily.org/nqc/release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jhay@FreeBSD.org
