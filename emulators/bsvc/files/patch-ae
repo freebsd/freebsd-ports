@@ -1,0 +1,11 @@
+--- Makefile.ULTRIX.orig	Sun Nov  8 22:39:28 1998
++++ Makefile.ULTRIX	Mon Sep  6 19:12:20 1999
+@@ -10,7 +10,7 @@
+ CXX = g++
+ 
+ ## C and C++ compiler flags
+-CCFLAGS = -O
++CCFLAGS ?= -O
+ CXXFLAGS = -O -ansi -D_G_NO_EXTERN_TEMPLATES
+ 
+ ## System Includes

@@ -2,7 +2,10 @@ bin/68kasm
 bin/xtermpipe
 bin/bsvc
 bin/sim68000
+bin/sim68360
 lib/bsvc/bitmaps/Down.xbm
+lib/bsvc/bitmaps/bsvc.gif
+lib/bsvc/bitmaps/bspin.gif
 lib/bsvc/bitmaps/wait2.xbm
 lib/bsvc/bitmaps/wait1.xbm
 lib/bsvc/bitmaps/wait0.xbm
@@ -10,8 +13,6 @@ lib/bsvc/bitmaps/wait.xbm
 lib/bsvc/bitmaps/memicon.xbm
 lib/bsvc/bitmaps/listicon.xbm
 lib/bsvc/bitmaps/bsvcicon.xbm
-lib/bsvc/bitmaps/bsvc.xbm
-lib/bsvc/bitmaps/b-logo.gif
 lib/bsvc/bitmaps/Up.xbm
 lib/bsvc/bitmaps/PageUp.xbm
 lib/bsvc/bitmaps/PageDown.xbm

@@ -1,0 +1,11 @@
+--- sim68360/cpu/Makefile.orig	Mon Sep  6 21:47:20 1999
++++ sim68360/cpu/Makefile	Mon Sep  6 21:47:39 1999
+@@ -31,7 +31,7 @@
+ 	$(CC) $(INCLUDES) -o instruction instruction.c
+ 
+ cpu32DecodeTable.hxx: instruction instruction.list
+-	$(PROJECT_BASE)/src/sim68360/cpu/instruction  
++	$(WRKSRC)/sim68360/cpu/instruction  
+ 
+ clean:
+ 	rm -f *.o $(LIBRARY) instruction
