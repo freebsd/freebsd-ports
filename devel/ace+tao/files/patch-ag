@@ -1,0 +1,10 @@
+--- TAO/orbsvcs/tests/Security/GNUmakefile.orig	Tue Dec  7 12:10:52 2004
++++ TAO/orbsvcs/tests/Security/GNUmakefile	Tue Dec  7 12:11:04 2004
+@@ -24,7 +24,6 @@
+ 	$(KEEP_GOING)@cd Big_Request && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd Callback && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd Crash_Test && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd MT_IIOP_SSL && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd MT_SSLIOP && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd Secure_Invocation && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd SecurityLevel1 && $(MAKE) -f $(MAKEFILE) $(@)

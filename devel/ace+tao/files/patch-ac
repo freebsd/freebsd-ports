@@ -1,16 +1,10 @@
---- TAO/orbsvcs/Makefile.orig	Thu Jan 15 22:51:35 2004
-+++ TAO/orbsvcs/Makefile	Thu Jan 15 22:52:27 2004
-@@ -43,10 +43,9 @@
- 	Trading_Service \
- 	LoadBalancer \
- 	TAO_Service \
--	PSS \
--        tests \
--	performance-tests \
--        examples
-+	PSS
-+
-+DIRS += tests
+--- TAO/orbsvcs/GNUmakefile.orig	Mon Dec  6 02:28:37 2004
++++ TAO/orbsvcs/GNUmakefile	Mon Dec  6 02:30:00 2004
+@@ -42,7 +42,5 @@
+ 	$(KEEP_GOING)@cd Dump_Schedule && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd CosEvent_Service && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd Concurrency_Service && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd performance-tests && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd tests && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd examples && $(MAKE) -f $(MAKEFILE) $(@)
  
- ifeq ($(minimum_corba),0)
-     ifneq (Compilers 4.2,$(findstring Compilers 4.2,$(CC_VERSION)))

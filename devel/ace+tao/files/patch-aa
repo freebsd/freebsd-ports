@@ -1,11 +1,12 @@
---- Makefile.orig	Tue Dec  2 10:18:36 2003
-+++ Makefile	Tue Dec  2 10:18:52 2003
-@@ -20,8 +20,6 @@
-           netsvcs \
-           tests \
-           apps \
--          examples \
--          performance-tests \
-           websvcs \
- 	  Kokyu
+--- GNUmakefile.orig	Mon Dec  6 02:23:28 2004
++++ GNUmakefile	Mon Dec  6 02:24:35 2004
+@@ -26,9 +26,7 @@
+ 	$(KEEP_GOING)@cd ASNMP && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd ACEXML && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd apps && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd examples && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd netsvcs && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd performance-tests && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd tests && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd websvcs && $(MAKE) -f $(MAKEFILE) $(@)
  

@@ -18,8 +18,8 @@ COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
 CONFLICTS?=	ace-*
 
-ACE_VERSION=	5.4.1
-TAO_VERSION=	1.4.1
+ACE_VERSION=	5.4.2
+TAO_VERSION=	1.4.2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -44,21 +44,12 @@ TAO_ROOT=	${ACE_ROOT}/TAO
 PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS} \
 		ACE_VERSION=${ACE_VERSION} TAO_VERSION=${TAO_VERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502125
-WITHOUT_TAO=	yes
-pre-extract:
-	@${ECHO_MSG} "****************************************************"; \
-	 ${ECHO_MSG} "*        TAO is not build with gcc 3.4             *"; \
-	 ${ECHO_MSG} "*     so only ACE will build  and install          *"; \
-	 ${ECHO_MSG} "****************************************************"
-.endif
-
 .if defined(WITHOUT_TAO)
 TAO=	"@comment "
 PKGNAMESUFFIX?=	-notao
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${SED} -e "s#%%CFLAGS%%#${CFLAGS}#;s#%%PREFIX%%#${PREFIX}#; \
@@ -71,13 +62,12 @@ post-patch:
 	${CHMOD} a-x Logging_Service/Event_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/Notify_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/RTEvent_Logging_Service/*; \
-	${CHMOD} a-x orbsvcs/*.mpb; \
 	${CHMOD} a-x orbsvcs/FaultTolerance/*; \
 	${CHMOD} a-x FT_ReplicationManager/*
 .if !defined(WITH_TESTS)
-	@${REINPLACE_CMD} -e "21d" ${ACE_ROOT}/Makefile
-	@${REINPLACE_CMD} -e "24d" ${TAO_ROOT}/Makefile
-	@${REINPLACE_CMD} -e "48d" ${TAO_ROOT}/orbsvcs/Makefile
+	@${REINPLACE_CMD} -e "30d" ${ACE_ROOT}/GNUmakefile
+	@${REINPLACE_CMD} -e "27d" ${TAO_ROOT}/GNUmakefile
+	@${REINPLACE_CMD} -e "45d" ${TAO_ROOT}/orbsvcs/GNUmakefile
 .endif
 
 pre-build:
@@ -95,6 +85,8 @@ do-build:
 .endif
 .if !defined(WITHOUT_TAO)
 	@${ECHO_MSG} "===> Building TAO"; \
+	${GMAKE} -C ${TAO_ROOT}/TAO_IDL ACE_ROOT=${ACE_ROOT} TAO_ROOT=${TAO_ROOT}; \
+	${LDCONFIG} -m ${TAO_ROOT}/TAO_IDL; \
 	${GMAKE} -C ${TAO_ROOT} ACE_ROOT=${ACE_ROOT} TAO_ROOT=${TAO_ROOT}
 .if defined(WITH_TESTS)
 	@${TOUCH} ${TOUCH_FLAGS} ${TAO_TESTS_COOKIE}
@@ -115,7 +107,7 @@ test:
 	@if [ -f ${ACE_TESTS_COOKIE} ]; then \
 		${ECHO_MSG} "===> Running tests."; \
 		${ECHO_MSG} "===> ACE tests:"; \
-		cd ${ACE_ROOT}/tests; ./run_test.pl; \
+		cd ${ACE_ROOT}/tests; env ACE_ROOT=${ACE_ROOT} ./run_test.pl; \
 		if [ -f ${TAO_TESTS_COOKIE} ]; then \
 			${ECHO_MSG} "===> TAO tests:"; \
 			${ECHO_MSG} "    NOT IMPLEMENTED YET. Run them with:"; \
@@ -165,7 +157,7 @@ do-install:
 .endif
 
 	@${ECHO_MSG} "Installing libraries into ${PREFIX}/lib"; \
-	cd ${ACE_ROOT}/ace; \
+	cd ${ACE_ROOT}/lib; \
 	for f in `${FIND} . -maxdepth 1 -name "lib*.so.${ACE_VERSION}" -o \
 		-name "lib*.so.${TAO_VERSION}" -not -name "*Test*"`; do \
 			${INSTALL_DATA} $${f} ${PREFIX}/lib; \
@@ -183,7 +175,7 @@ do-install:
 			${GREP} -v test | ${GREP} -v FTRT_Event_Service`; do \
 		${INSTALL_PROGRAM} $${f} ${PREFIX}/bin; \
 	done; \
-	for f in `find utils  -type f -perm +a+x`; do \
+	for f in `find utils  -type f -perm +a+x -not -name "*test*"`; do \
 		${INSTALL_PROGRAM} $${f} ${PREFIX}/bin; \
 	done; \
 	for f in `${FIND} orbsvcs/FTRT_Event_Service -type f -perm +a+x`; do \

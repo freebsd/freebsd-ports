@@ -1,15 +1,12 @@
---- TAO/Makefile.orig	Mon Jan  5 10:18:45 1970
-+++ TAO/Makefile	Fri Jan 16 02:08:11 2004
-@@ -23,11 +23,7 @@
-           TAO_IDL \
-           tests \
-           orbsvcs \
--          examples \
--          performance-tests \
--          utils \
--	  docs/tutorials/Quoter \
--          CIAO
-+          utils
+--- TAO/GNUmakefile.orig	Mon Dec  6 02:26:28 2004
++++ TAO/GNUmakefile	Mon Dec  6 02:27:44 2004
+@@ -24,9 +24,6 @@
+ 	$(KEEP_GOING)@cd TAO_IDL && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd tao && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd orbsvcs && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd examples && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd docs && $(MAKE) -f $(MAKEFILE) $(@)
+-	$(KEEP_GOING)@cd performance-tests && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd tests && $(MAKE) -f $(MAKEFILE) $(@)
+ 	$(KEEP_GOING)@cd utils && $(MAKE) -f $(MAKEFILE) $(@)
  
- CLONE   = Makefile \
-           tao \
