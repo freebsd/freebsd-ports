@@ -166,6 +166,8 @@ System/Applications/Gorm.app/library_paths.openapp
 System/Applications/Gorm.app/stamp.make
 System/Applications/GormTest.app/GormTest
 System/Applications/GormTest.app/Resources/GormTest.desktop
+System/Applications/GormTest.app/Resources/GormTest.gorm/data.classes
+System/Applications/GormTest.app/Resources/GormTest.gorm/objects.gorm
 System/Applications/GormTest.app/Resources/Info-gnustep.plist
 System/Applications/GormTest.app/library_paths.openapp
 System/Applications/GormTest.app/stamp.make
@@ -184,6 +186,7 @@ System/Library/Libraries/libGorm.so
 System/Library/Libraries/libGorm.so.1
 System/Library/Libraries/libGorm.so.1.0.0
 @dirrm System/Library/Headers/InterfaceBuilder
+@dirrm System/Applications/GormTest.app/Resources/GormTest.gorm
 @dirrm System/Applications/GormTest.app/Resources
 @dirrm System/Applications/GormTest.app
 @dirrm System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm
