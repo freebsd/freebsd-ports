@@ -82,33 +82,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="6fd9a1e9-efd3-11d8-9837-000c41e2cdad">
-    <topic>xonix -- failure to drop privileges</topic>
-    <affects>
-      <package>
-        <name>xonix</name>
-	<range><lt>1.4_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A Debian security advisory reports:</p>
-	<blockquote cite="http://www.debian.org/security/2004/dsa-484">
-	  <p>Steve Kemp discovered a vulnerability in xonix, a game,
-	    where an external program was invoked while retaining setgid
-	    privileges.  A local attacker could exploit this vulnerability
-	    to gain gid "games".</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CAN-2004-0157</cvename>
-      <url>http://www.debian.org/security/2004/dsa-484</url>
-      <bid>10149</bid>
-    </references>
-    <dates>
-      <discovery>2004-04-14</discovery>
-      <entry>2004-08-16</entry>
-    </dates>
+    <cancelled/>
   </vuln>
 
   <vuln vid="65a17a3f-ed6e-11d8-aff1-00061bc2ad93">
