@@ -16,6 +16,7 @@ LETTERDJ	"LETTERDJ printing"		ON	\
 A4		"A4 printing"			OFF	\
 PS		"Postscript and PDF files"	ON	\
 SAMBA		"Windows Remote-Print Support"	ON	\
+ATALK		"AppleTalk Remote-Print Support"OFF	\
 ENCRYPTED_PDF	"Encrypted PDF files"		ON	\
 ASCII		"ASCII/English Text/Scripts"	ON	\
 MAIL		"Mail/News articles"		ON	\
@@ -68,6 +69,9 @@ while [ "$1" ]; do
 		;;
 	\"SAMBA\")
 		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/net/samba
+		;;
+	\"ATALK\")
+		echo RUN_DEPENDS+=pap:${PORTSDIR}/net/netatalk
 		;;
 	\"ENCRYPTED_PDF\")
 		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
