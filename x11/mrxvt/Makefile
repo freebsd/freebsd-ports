@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	multi-aterm
-PORTVERSION=	0.0.4
+PORTVERSION=	0.1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.materm.tuxfamily.org/
+MASTER_SITES=	http://www.nongnu.org/materm/
 
 MAINTAINER=	esn@x123.info
 COMMENT=	A multi terminal based on aterm
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS ChangeLog INSTALL TODO
+MAN1=		multi-aterm.1
 
 .if defined(WITH_UTMP)
 CONFIGURE_ARGS+=	--enable-utmp
