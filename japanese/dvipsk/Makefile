@@ -1,5 +1,5 @@
 # New ports collection makefile for:    dvipsk + jpatch
-# Version required:     5.78a + p1.4
+# Version required:     5.78a + p1.4c
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
@@ -13,27 +13,27 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/ \
 		ftp://ftp.center.osaka-u.ac.jp/CTAN/dviware/dvipsk/ \
 		ftp://ftp.riken.go.jp/pub/CTAN/dviware/dvipsk/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/CTAN/dviware/dvipsk/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dvipsk-jpatch-p1.4.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dvipsk-jpatch-p1.4c.tar.gz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common \
-		${PREFIX}/share/fonts/vf-a2bk:${PORTSDIR}/japanese/vftool
+		${LOCALBASE}/share/fonts/vf-a2bk:${PORTSDIR}/japanese/vftool
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_install="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"
+SCRIPTS_ENV=	MV=${MV} SED=${SED}
 MAN1=		dvips.1 afm2tfm.1
+IS_INTERACTIVE=	yes
 
 TEXMF=		${PREFIX}/share/texmf
 DVIPSDIR=	${TEXMF}/dvips
 TEXDIR=		${TEXMF}/tex
 BINARIES=	dvips afm2tfm
-BACKUP_FILES=	base/asex.enc base/psfonts.map config/config.ps
-BASE_FILES=	cmfonts.map cyrfonts.map eufonts.map lafonts.map \
-		reencode/asex.enc
+BASE_FILES=	config.ps cmfonts.map cyrfonts.map eufonts.map lafonts.map
 CONTRIB_DIRS=	afm-extra bbfig configs psfig volker
 CONTRIB_FILES=	MakeTeXPK.pl PSTricks colorsep.pro config.proto crop.lpr \
 		timesmat.sty whichinpath afm-extra/*.ed bbfig/bb* \
@@ -52,18 +52,10 @@ post-build:
 	  ../squeeze < colorsep.lpro > colorsep.pro \
 	)
 
-pre-install:
-	@for i in ${BACKUP_FILES} ; do \
-	  if [ -f ${DVIPSDIR}/$$i ] ; then \
-	    ${MV} ${DVIPSDIR}/$$i ${DVIPSDIR}/$$i.bak ; \
-	  fi ; \
-	done
-
 post-install:
 	@for i in ${BINARIES} ; do \
 	    strip ${PREFIX}/bin/$$i ; \
 	done
-	@${MKDIR} ${DVIPSDIR}/config
 	@for i in ${CONTRIB_DIRS} ; do \
 	  ${MKDIR} ${DVIPSDIR}/contrib/$$i ; \
 	done
@@ -73,7 +65,6 @@ post-install:
 	  for i in ${BASE_FILES} ; do \
 	    ${INSTALL_DATA} $$i ${DVIPSDIR}/base ; \
 	  done ; \
-	  ${INSTALL_DATA} config.ps ${DVIPSDIR}/config ; \
 	  cd ${WRKSRC}/dvipsk/contrib ; \
 	  for i in ${CONTRIB_FILES} ; do \
 	    ${INSTALL_DATA} $$i ${DVIPSDIR}/contrib/$$i ; \

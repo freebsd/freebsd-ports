@@ -11,19 +11,6 @@
  # Other standard targets for everything.
 --- dvipsk/Makefile.in.orig	Sat Jul  4 15:27:03 1998
 +++ dvipsk/Makefile.in	Sat Jul  4 15:29:46 1998
-@@ -81,9 +81,9 @@
- install-data: $(program).info
- 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) $(infodir) $(psheaderdir)/base $(dvips_plain_macrodir)
- # PostScript prologues and encodings.
--	for h in $(prologues); do $(INSTALL_DATA) $$h $(psheaderdir)/base/$$h; done
--	cd $(srcdir)/reencode && \
--	  for e in *.enc; do $(INSTALL_DATA) $$e $(psheaderdir)/base/$$e; done
-+#	for h in $(prologues); do $(INSTALL_DATA) $$h $(psheaderdir)/base/$$h; done
-+#	cd $(srcdir)/reencode && \
-+#	  for e in *.enc; do $(INSTALL_DATA) $$e $(psheaderdir)/base/$$e; done
- # config.ps. Any one config.ps will be wrong for most people, so don't
- # install anything by default.
- #	if test ! -r $(psheaderdir)/base/config.ps				\
 @@ -104,8 +104,8 @@
  	$(INSTALL_DATA) $(srcdir)/dvips.1 $(mandir)/dvips.$(manext)
  	$(INSTALL_DATA) $(srcdir)/afm2tfm.1 $(mandir)/afm2tfm.$(manext)
