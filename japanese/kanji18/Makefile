@@ -1,7 +1,7 @@
 # New ports collection makefile for:	kanji18
 # Version required:	1.0
 # Date created:		23 November 1999
-# Whom:			Yoshiro MIHIRA <sanpei@jp.FreeBSD.org>
+# Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
 DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 
-MAINTAINER=     sanpei@jp.FreeBSD.org
+MAINTAINER=     sanpei@sanpei.org
 
 BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar \
 		bdftopcf:${PORTSDIR}/x11/XFree86
