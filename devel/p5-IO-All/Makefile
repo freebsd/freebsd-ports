@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IO::All combines all of the best Perl IO modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Spiffy.pm:${PORTSDIR}/devel/p5-Spiffy
@@ -33,7 +33,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Tie/File.pm:${PORTSDIR}/devel/p5-Tie-File
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 .if ${PERL_LEVEL} < 500601
-IGNORE=	This port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+IGNORE=	This port requires perl 5.6.1 or later. Install lang/perl then try again
 .endif
 
 .include <bsd.port.post.mk>
