@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Dec  8 21:23:23 1998
-+++ Makefile.in	Tue Dec  8 21:23:37 1998
+--- Makefile.in.orig	Wed Nov 18 15:21:15 1998
++++ Makefile.in	Sun Jan 17 14:57:55 1999
 @@ -8,7 +8,7 @@
  first_rule: all
  dummy:
@@ -10,7 +10,7 @@
  DIST =	INSTALL README.configure configure Makefile Makefile.in
  
 --- doc/Makefile.in.orig	Wed Nov 18 15:20:14 1998
-+++ doc/Makefile.in	Tue Dec  8 23:42:24 1998
++++ doc/Makefile.in	Sun Jan 17 15:09:17 1999
 @@ -55,7 +55,7 @@
  
  tags allbin:
@@ -27,7 +27,7 @@
 -install: rxvt.1
 -	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
 +install: 
-+	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt2.$(manext)
++	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt.$(manext)
  
  uninstall:
  	-cd $(mandir); $(RMF) $(manprefix)rxvt.$(manext)

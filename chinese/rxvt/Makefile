@@ -3,7 +3,7 @@
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.7 1998/10/10 01:04:31 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/12/09 05:05:32 vanilla Exp $
 #
 
 DISTNAME=	rxvt-2.4.11
@@ -19,7 +19,6 @@ RUN_DEPENDS=	${X11BASE}/bin/xcin:${PORTSDIR}/chinese/xcin
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-big5=yes --enable-xcin=yes
-MAN1=		crxvt2.1
+MAN1=		crxvt.1
 
-.include <bsd.port.pre.mk>
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
