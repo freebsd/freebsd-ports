@@ -1,5 +1,5 @@
---- Imakefile.orig	Wed Dec 23 23:17:56 1998
-+++ Imakefile	Wed Dec 23 23:18:22 1998
+--- Imakefile.orig	Sat Jun 19 02:08:06 1999
++++ Imakefile	Sat Jun 19 23:19:31 1999
 @@ -1,10 +1,10 @@
  #define IHaveSubdirs
  #define PassCDebugFlags CDEBUGFLAGS="$(CDEBUGFLAGS)"
@@ -8,8 +8,8 @@
 +XCOMM PREFIX = /usr/X11R6
  
  XCOMM CDEBUGFLAGS = -Wall -ggdb -DDEBUG
--CDEBUGFLAGS = -O6 -m486 
-+XCOMM CDEBUGFLAGS = -O6 -m486 
+-CDEBUGFLAGS ?= -O6 -m486 
++XCOMM CDEBUGFLAGS ?= -O6 -m486 
  
  SUBDIRS = src
  
