@@ -4,4 +4,13 @@
 +#include <sys/types.h>
  #include <sys/timeb.h>
  #include<qinputdialog.h>
- #include "TulipPlugin.h"
+ #include <tulip/TulipPlugin.h>
+@@ -9,7 +10,7 @@
+ };
+ 
+ namespace std {
+-  struct less<edgeS>
++  template <> struct less<edgeS>
+   {
+     bool operator()(const edgeS &c,const edgeS &d) const
+     {
