@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmemmon
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMMemMon-${PORTVERSION}
