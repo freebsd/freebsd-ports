@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Czech (Czech Republic) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	cs 
 LANGSUFFIX=	CZ

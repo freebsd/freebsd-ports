@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	editors
-
 LANG_PKGNAME=	dk
 LANG_EXT=	45
 LANG_CONFIGURE_ARG=	DAN

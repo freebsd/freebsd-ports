@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Spanish (Spain) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	es
 LANGSUFFIX=	ES

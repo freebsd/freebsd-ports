@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Slovak MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	sk
 LANGSUFFIX=	SK

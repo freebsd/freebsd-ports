@@ -8,7 +8,6 @@
 #
 
 COMMENT=	Italian (Italy) MySpell dictionary for OpenOffice.org
-CATEGORIES=	editors
 
 LANGPREFIX=	it
 LANGSUFFIX=	IT
