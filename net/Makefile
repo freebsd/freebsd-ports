@@ -73,6 +73,7 @@
     SUBDIR += dante
     SUBDIR += darkstat
     SUBDIR += datapipe
+    SUBDIR += dcgui
     SUBDIR += dclib
     SUBDIR += dctc
     SUBDIR += dctc-gui
