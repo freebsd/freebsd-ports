@@ -1,0 +1,8 @@
+AVRPROG drives a simple ppi(4) parallel port programmer that allows
+one to program Atmel AVR microcontrollers.  In the simplest case, the
+hardware consists just of a cable connecting the respective AVR signal
+lines to the parallel port (only 6 wires including power and ground).
+See the website for more information on the parallel port pin
+connections.
+
+WWW: http://www.bsdhome.com/avrprog

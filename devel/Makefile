@@ -26,6 +26,7 @@
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
     SUBDIR += avr-libc
+    SUBDIR += avrprog
     SUBDIR += bcc
     SUBDIR += bin86
     SUBDIR += binutils-m68k
