@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -29,11 +29,11 @@ RUN_DEPEND=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 .endif
 
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=257
-USE_LIBTOOL_VER=13
+USE_AUTOCONF_VER=259
+USE_LIBTOOL_VER=15
 USE_RC_SUBR=	yes
 INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+LIBTOOLFLAGS=	#empty
 NO_LATEST_LINK=	yes
 .if !defined(WITHOUT_PERL)
 USE_PERL5=	yes
@@ -82,8 +82,6 @@ PLIST_SUB+=	WITH_IPV6="@comment "
 
 SHLIB_VERSION=	6
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
-LIBTOOL_SUB=	LTCONFIG=${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION} \
-		LTMAIN=${LIBTOOL_SHAREDIR}/ltmain.sh
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
@@ -187,7 +185,7 @@ pre-everything::
 	@${ECHO_MSG} "WITH_TKMIB=yes		Install a graphical Perl/Tk/SNMP based mib browser"
 	@${ECHO_MSG} "WITHOUT_DUMMY_VALUES=yes	Provide 'placeholder' dummy values where"
 	@${ECHO_MSG} "				the necessary information is not available."
-	@${ECHO_MSG} "WITHOUT_PERL=yes		Install the perl modules along with the rest"
+	@${ECHO_MSG} "WITHOUT_PERL=yes		Do not install the perl modules along with the rest"
 	@${ECHO_MSG} "				of the net-snmp toolkit."
 	@${ECHO_MSG} "WITHOUT_IPV6=yes		Disable IPv6."
 	@${ECHO_MSG}
@@ -208,8 +206,10 @@ pre-everything::
 post-patch: patch-autoconf patch-script-files patch-startup-files
 
 patch-autoconf:
-	@${REINPLACE_CMD} ${LIBTOOL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${WRKSRC}/aclocal.m4
+	@${AWK} '/@synopsis/,/taken from libtool.m4/' ${WRKSRC}/aclocal.m4 > ${WRKSRC}/aclocal.m4.tmp
+	@${CAT} ${LOCALBASE}/share/aclocal/libtool15.m4 >> ${WRKSRC}/aclocal.m4.tmp
+	@${CP} ${LOCALBASE}/share/libtool15/ltmain.sh ${WRKSRC}
+	@${MV} ${WRKSRC}/aclocal.m4.tmp ${WRKSRC}/aclocal.m4
 
 patch-script-files:
 .for file in ${SCRIPT_FILES}

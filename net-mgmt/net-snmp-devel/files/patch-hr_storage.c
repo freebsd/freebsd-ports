@@ -1,5 +1,5 @@
 --- agent/mibgroup/host/hr_storage.c.orig	Thu Jan 29 22:53:59 2004
-+++ agent/mibgroup/host/hr_storage.c	Wed May  5 16:08:06 2004
++++ agent/mibgroup/host/hr_storage.c	Wed Jun 23 11:50:55 2004
 @@ -148,7 +148,7 @@
  #define HRFS_mount	mnt_mountp
  #define HRFS_statfs	statvfs
@@ -142,7 +142,19 @@
              default:
  #if NO_DUMMY_VALUES
                  goto try_next;
-@@ -853,3 +908,78 @@
+@@ -742,7 +797,11 @@
+                 break;
+ #if !defined(linux) && !defined(solaris2) && !defined(hpux10) && !defined(hpux11)  && defined(MBSTAT_SYMBOL)
+             case HRS_TYPE_MBUF:
++#if defined(__FreeBSD__) && __FreeBSD_version >= 502113
++                long_return = mbstat.m_mcfail + mbstat.m_mpfail;
++#else
+                 long_return = mbstat.m_drops;
++#endif
+                 break;
+ #endif                          /* !linux && !solaris2 && !hpux10 && !hpux11 && MBSTAT_SYMBOL */
+             default:
+@@ -853,3 +912,97 @@
      *usedP = ainfo.ani_resv;
  }
  #endif                          /* solaris2 */
@@ -151,6 +163,24 @@
 +void
 +collect_mbuf(long *long_mbuf, long *long_mbufc)
 +{
++#if __FreeBSD_version >= 502113
++  size_t mlen;
++  struct mbstat mbstat;
++
++  mlen = sizeof mbstat;
++  if (sysctlbyname("kern.ipc.mbstat", &mbstat, &mlen, NULL, 0) < 0) {
++    warn("sysctl: retrieving mbstat");
++    return;
++  }
++  if (mbstat.m_mbufs < 0) mbstat.m_mbufs = 0;		/* XXX */
++  if (mbstat.m_mclusts < 0) mbstat.m_mclusts = 0;	/* XXX */
++  if (long_mbuf) {
++    *long_mbuf = mbstat.m_mbufs;
++  }
++  if (long_mbufc) {
++    *long_mbufc = mbstat.m_mclusts;
++  }
++#else
 +  int i, j, num_objs;
 +  size_t mlen;
 +  u_long totused[2];
@@ -219,5 +249,6 @@
 +      free(mbpstat[0]);
 +    free(mbpstat);
 +  }
++#endif
 +}
 +#endif
