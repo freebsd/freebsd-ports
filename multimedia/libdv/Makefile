@@ -34,6 +34,12 @@ PORTDOCS=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 
 .include <bsd.port.pre.mk>
 
+# XXX - work around compiler bug
+# Optimizations -O{1,s,2,3} work
+# However, lack of -O{1,s,2,3} or -O0 BREAK the build
+# Therefore, make sure we have AT LEAST -O and avoid -O0
+CONFIGURE_ENV+=	CFLAGS="-O ${CFLAGS:N-O0}"
+
 .ifndef(WITHOUT_SDL)
 USE_SDL=	sdl
 CONFIGURE_ARGS+= --enable-sdl
