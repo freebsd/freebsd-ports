@@ -1,6 +1,6 @@
 bin/mutt
 man/man1/mutt.1.gz
-share/misc/Muttrc
-share/misc/mime.types
+share/Muttrc
+share/mime.types
 @unexec /bin/rm -rf %D/share/doc/mutt
 share/doc/mutt
