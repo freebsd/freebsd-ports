@@ -1,0 +1,260 @@
+diff -u -r mm2.7.org/src/bin/showaudio mm2.7/src/bin/showaudio
+--- bin/showaudio	Wed Feb  2 16:21:26 1994
++++ bin/showaudio	Wed May 21 21:34:08 1997
+@@ -15,9 +15,35 @@
+ # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+ #
+ 
+-
++# Set a sensible value for the temporary directory, if its not
++# already set.  If TMPDIR is set previously, then we will
++# assume it is adequately protected.
+ if (! $?METAMAIL_TMPDIR) then
+-    set METAMAIL_TMPDIR=/tmp
++    if ($?TMPDIR) then
++        set METAMAIL_TMPDIR="$TMPDIR"
++    else
++        set METAMAIL_TMPDIR=~/metamail_tmp
++    endif
++endif
++
++# Set a sensible umask value
++umask 077
++
++# Make sure that the temporary directory is available
++if (! -d "$METAMAIL_TMPDIR") then
++
++    if (! -e "$METAMAIL_TMPDIR") then
++        mkdir "$METAMAIL_TMPDIR"
++    else
++        echo "$METAMAIL_TMPDIR exists, but is not a directory"
++        exit 2
++    endif
++
++    if ( $status != 0 || ! -d "$METAMAIL_TMPDIR" ) then
++        echo "Error creating $METAMAIL_TMPDIR"
++        exit 2
++    endif
++
+ endif
+ 
+ # First, figure out which machine to play it on!
+@@ -33,7 +59,7 @@
+ set ORG="Bellcore"
+ set STDINPUT=0
+ if ("$1" == "-p") then
+-    set AUDIOPHONE=$2
++    set AUDIOPHONE="$2"
+     shift
+     shift
+ endif
+@@ -173,7 +199,7 @@
+ 	    set AUDIOPHONE=$<
+ 	endif
+ 	if ($thishost == $AUDIOPHONEHOST || $thishost == $AUDIOPHONEHOSTLONG) then
+-	    echo Calling Phone number $AUDIOPHONE
++	    echo Calling Phone number "$AUDIOPHONE"
+ 	    echo "You MUST SAY HELLO when you answer the phone, or you will not hear the message."
+ 	    mail -s "showaudio: `whoami` called $AUDIOPHONE" $AUDIOLOGMAIL < /dev/null
+ 	    if ($STDINPUT) then
+@@ -206,7 +232,7 @@
+     echo -n "File name:"
+     set fname=$<
+ endif
+-cp $1 $fname
++cp "$1" $fname
+ if ($status == 0) echo Wrote raw audio file: $fname
+ exit 0
+ 
+Only in mm2.7/src/bin: showaudio~
+diff -u -r mm2.7.org/src/bin/showexternal mm2.7/src/bin/showexternal
+--- bin/showexternal	Tue Feb  8 09:39:05 1994
++++ bin/showexternal	Wed May 21 21:41:39 1997
+@@ -15,9 +15,45 @@
+ # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+ # 
+ 
++# Check argument integrity. Don't trust mail headers
++switch ("$1$2$3$4$5$6$7")
++case "*[\t ]*":
++  echo "Illegal white space in arguments\!"
++  echo "Command was:"
++  echo "'$0' '$1' '$2' '$3' '$4' '$5' '$6' '$7'"
++  exit 2
++endsw
++
+ onintr cleanup
++# Set a sensible value for the temporary directory, if its not
++# already set.  If TMPDIR is set previously, then we will
++# assume it is adequately protected.
+ if (! $?METAMAIL_TMPDIR) then
+-    set METAMAIL_TMPDIR=/tmp
++    if ($?TMPDIR) then
++        set METAMAIL_TMPDIR="$TMPDIR"
++    else
++        set METAMAIL_TMPDIR=~/metamail_tmp
++    endif
++endif
++
++# Set a sensible umask value
++umask 077
++
++# Make sure that the temporary directory is available
++if (! -d "$METAMAIL_TMPDIR") then
++
++    if (! -e "$METAMAIL_TMPDIR") then
++        mkdir "$METAMAIL_TMPDIR"
++    else
++        echo "$METAMAIL_TMPDIR exists, but is not a directory"
++        exit 2
++    endif
++
++    if ( $status != 0 || ! -d "$METAMAIL_TMPDIR" ) then
++        echo "Error creating $METAMAIL_TMPDIR"
++        exit 2
++    endif
++
+ endif
+ if (! $?FTP) then
+     set FTP=ftp
+Only in mm2.7/src/bin: showexternal~
+diff -u -r mm2.7.org/src/bin/showpartial mm2.7/src/bin/showpartial
+--- bin/showpartial	Wed Feb  2 16:21:29 1994
++++ bin/showpartial	Wed May 21 21:39:49 1997
+@@ -2,8 +2,44 @@
+ # (The "-fb" might need to be changed to "-f" on some systems)
+ #
+ 
++# Check argument integrity. Don't trust mail headers
++switch ("$1$2$3$4")
++case "*[\t ]*":
++  echo "Illegal white space in arguments\!"
++  echo "Command was:"
++  echo "'$0' '$1' '$2' '$3' '$4'"
++  exit 2
++endsw
++
++# Set a sensible value for the temporary directory, if its not
++# already set.  If TMPDIR is set previously, then we will
++# assume it is adequately protected.
+ if (! $?METAMAIL_TMPDIR) then
+-    set METAMAIL_TMPDIR=/tmp
++    if ($?TMPDIR) then
++        set METAMAIL_TMPDIR="$TMPDIR"
++    else
++        set METAMAIL_TMPDIR=~/metamail_tmp
++    endif
++endif
++
++# Set a sensible umask value
++umask 077
++
++# Make sure that the temporary directory is available
++if (! -d "$METAMAIL_TMPDIR") then
++
++    if (! -e "$METAMAIL_TMPDIR") then
++        mkdir "$METAMAIL_TMPDIR"
++    else
++        echo "$METAMAIL_TMPDIR exists, but is not a directory"
++        exit 2
++    endif
++
++    if ( $status != 0 || ! -d "$METAMAIL_TMPDIR" ) then
++        echo "Error creating $METAMAIL_TMPDIR"
++        exit 2
++    endif
++
+ endif
+ 
+ set TREEROOT=${METAMAIL_TMPDIR}/m-prts-`whoami`
+@@ -11,14 +47,14 @@
+     echo "Usage:  showpartial file id partnum totalnum"
+     exit -1
+ endif
+-set file=$1
++set file="$1"
+ # This next line is because message-id can contain weird chars
+-set id=`echo $2 | tr -d  \!\$\&\*\(\)\|\'\"\;\/\<\>\\` 
+-@ partnum = $3
+-if ($#argv == 3 || $4 == "") then
++set id=`echo "$2" | tr -d  \!\$\&\*\(\)\|\'\"\;\/\<\>\\` 
++@ partnum = "$3"
++if ($#argv == 3 || "$4" == "") then
+     set totalnum=-1
+ else
+-    @ totalnum = $4
++    @ totalnum = "$4"
+ endif
+ 
+ if (! -d  $TREEROOT)  then
+@@ -35,9 +71,9 @@
+         exit -1
+     endif
+ endif
+-cp $file ${TREEROOT}/$id/$partnum
++cp "$file" ${TREEROOT}/$id/$partnum
+ if ($status) then 
+-    echo cp $file ${TREEROOT}/$id/$partnum failed
++    echo cp "$file" ${TREEROOT}/$id/$partnum failed
+     exit -1
+ endif
+ if ($totalnum == -1) then
+Only in mm2.7/src/bin: showpartial~
+diff -u -r mm2.7.org/src/bin/showpicture mm2.7/src/bin/showpicture
+--- bin/showpicture	Mon Feb  7 10:59:54 1994
++++ bin/showpicture	Wed May 21 21:34:59 1997
+@@ -15,15 +15,42 @@
+ # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
+ #
+ 
++# Set a sensible value for the temporary directory, if its not
++# already set.  If TMPDIR is set previously, then we will
++# assume it is adequately protected.
+ if (! $?METAMAIL_TMPDIR) then
+-    set METAMAIL_TMPDIR=/tmp
++    if ($?TMPDIR) then
++        set METAMAIL_TMPDIR="$TMPDIR"
++    else
++        set METAMAIL_TMPDIR=~/metamail_tmp
++    endif
++endif
++
++# Set a sensible umask value
++umask 077
++
++# Make sure that the temporary directory is available
++if (! -d "$METAMAIL_TMPDIR") then
++
++    if (! -e "$METAMAIL_TMPDIR") then
++        mkdir "$METAMAIL_TMPDIR"
++    else
++        echo "$METAMAIL_TMPDIR exists, but is not a directory"
++        exit 2
++    endif
++
++    if ( $status != 0 || ! -d "$METAMAIL_TMPDIR" ) then
++        echo "Error creating $METAMAIL_TMPDIR"
++        exit 2
++    endif
++
+ endif
+ 
+ if (! $?X_VIEWER) then
+-set X_VIEWER="xloadimage -view -quiet -geometry +1+1"
++  set X_VIEWER="xloadimage -view -quiet -geometry +1+1"
+ # set X_VIEWER="xv -geometry +1+1"
+ endif
+-if ($1 == "-viewer" && $#argv > 1) then
++if ("$1" == "-viewer" && $#argv > 1) then
+     set X_VIEWER = "$2"
+     shift
+     shift
+@@ -57,7 +84,7 @@
+             endif
+         end
+     endif
+-    cp $1 $fname
++    cp "$1" $fname
+     if ($status == 0) echo Wrote file $fname
+     exit 0
+ endif
