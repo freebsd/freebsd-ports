@@ -3,7 +3,7 @@
 # Date created:		23 April 1999
 # Whom:			obonilla
 #
-# $Id: Makefile,v 1.2 1999/05/09 16:41:29 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/12 09:53:18 asami Exp $
 #
 
 DISTNAME=	otcl-1.0a4
@@ -14,8 +14,7 @@ MAINTAINER=	obonilla@fisicc-ufm.edu
 
 LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
-USE_XLIB=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/tcl8.0/generic
+
 .include <bsd.port.mk>
