@@ -4,7 +4,8 @@ include/ogg/ogg.h
 include/ogg/os_types.h
 lib/libogg.a
 lib/libogg.so
-lib/libogg.so.4
+lib/libogg.so.5
+libdata/pkgconfig/ogg.pc
 share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/framing.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
@@ -33,9 +34,11 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_init.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_packetin.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_packetout.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_packetpeek.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_pagein.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_pageout.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_reset.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_reset_serialno.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_stream_state.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_sync_buffer.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/ogg_sync_clear.html
@@ -59,15 +62,21 @@ share/aclocal/ogg.m4
 %%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_readinit.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_reset.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_write.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_writealign.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_writeclear.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_writecopy.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_writeinit.html
+%%PORTDOCS%%%%DOCSDIR%%/ogg/oggpack_writetrunc.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/style.css
 %%PORTDOCS%%%%DOCSDIR%%/ogg/vorbis_comment.html
 %%PORTDOCS%%%%DOCSDIR%%/ogg/vorbis_info.html
 %%PORTDOCS%%%%DOCSDIR%%/oggstream.html
+%%PORTDOCS%%%%DOCSDIR%%/rfc3533.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc3534.txt
 %%PORTDOCS%%%%DOCSDIR%%/stream.png
+%%PORTDOCS%%%%DOCSDIR%%/vorbisword2.png
 %%PORTDOCS%%%%DOCSDIR%%/white-ogg.png
 %%PORTDOCS%%%%DOCSDIR%%/white-xifish.png
 @dirrm include/ogg

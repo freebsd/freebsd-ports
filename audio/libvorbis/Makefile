@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 PORTEPOCH=	3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
-		ftp://ftp.wiles.org/pub/mirrors/Vorbis/unix/ \
-		http://www.casterclub.com/vorbis/unix/ \
-		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
+MASTER_SITES=	http://www.vorbis.com/files/1.0.1/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Audio compression codec library
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
