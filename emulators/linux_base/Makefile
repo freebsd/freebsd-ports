@@ -18,7 +18,7 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		marcel@FreeBSD.org
 
-RUN_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=		rpm:${PORTSDIR}/misc/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
