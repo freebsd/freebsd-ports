@@ -7,6 +7,7 @@
 
 PORTNAME=	ndtpd
 PORTVERSION=	3.1.4
+PORTREVISON=	1
 CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
@@ -16,7 +17,7 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	takamune@avrl.mei.co.jp
 COMMENT=	Server for accessing CD-ROM books with NDTP
 
-LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
+LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
