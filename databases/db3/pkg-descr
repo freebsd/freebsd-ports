@@ -1,5 +1,5 @@
-Revision 3 of the Berkeley DB library. This version uses an incompatible
-underlying database format than revision 1 and a different standard API.
+Version 3 of the Berkeley DB library. This version uses an underlying
+database format incompatible with revision 1 and a different standard API.
 Utilities are included in the distribution to convert v1.85 databases to v3
 databases, and a backwards compatible API is provided to maintain
 compatibility with programs using the v1.85 interface.
@@ -9,5 +9,5 @@ applications be modified and recompiled. For a complete discussion of
 interface changes, see:
 
 http://www.sleepycat.com/update/
-  
+
 WWW: http://www.sleepycat.com/
