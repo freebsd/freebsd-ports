@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scintilla
-PORTVERSION=	1.55
-PORTREVISION=	1
+PORTVERSION=	1.56
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.scintilla.org/
@@ -32,13 +31,6 @@ PKGNAMESUFFIX=	-gtk2
 USE_GNOME=	gtk12
 MAKE_ARGS=	GTK1=yes
 .endif
-
-post-extract:
-.for i in PlatGTK.cxx ScintillaGTK.cxx
-	@cd ${WRKSRC} \
-		&& ${MV} ${i} ${i}.pre_tr \
-		&& ${TR} -d '\r' < ${i}.pre_tr > ${i}
-.endfor
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
