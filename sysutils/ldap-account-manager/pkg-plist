@@ -18,7 +18,6 @@
 %%WWWROOT%%/graphics/printLogo.jpg
 %%WWWROOT%%/graphics/select.png
 %%WWWROOT%%/graphics/warn.png
-%%WWWROOT%%/help/help_numbers.assign
 %%WWWROOT%%/help/help.inc
 %%WWWROOT%%/index.html
 %%WWWROOT%%/lib/.htaccess
@@ -46,6 +45,8 @@
 %%WWWROOT%%/lib/status.inc
 %%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.mo
 %%WWWROOT%%/locale/de_DE/LC_MESSAGES/messages.po
+%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.mo
+%%WWWROOT%%/locale/fr_FR/LC_MESSAGES/messages.po
 %%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.mo
 %%WWWROOT%%/locale/hu_HU/LC_MESSAGES/messages.po
 %%WWWROOT%%/locale/ja_JP/LC_MESSAGES/messages.mo
@@ -91,15 +92,7 @@
 %%WWWROOT%%/templates/profedit/profilehost.php
 %%WWWROOT%%/templates/profedit/profilemain.php
 %%WWWROOT%%/templates/profedit/profileuser.php
-%%PORTDOCS%%%%DOCSDIR%%/HISTORY
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.fpdf.htm
-%%PORTDOCS%%%%DOCSDIR%%/README.hosts.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.lamdaemon.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.openldap.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.security.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%WWWROOT%%/tmp/.htaccess
 @dirrm %%WWWROOT%%/config/pdf
 @dirrm %%WWWROOT%%/config/profiles/groups
 @dirrm %%WWWROOT%%/config/profiles/hosts
@@ -112,6 +105,8 @@
 @dirrm %%WWWROOT%%/lib
 @dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES
 @dirrm %%WWWROOT%%/locale/de_DE
+@dirrm %%WWWROOT%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%WWWROOT%%/locale/fr_FR
 @dirrm %%WWWROOT%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%WWWROOT%%/locale/hu_HU
 @dirrm %%WWWROOT%%/locale/ja_JP/LC_MESSAGES
