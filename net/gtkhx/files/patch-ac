@@ -1,0 +1,10 @@
+--- src/plugin.c.orig	Sun Feb 10 01:16:45 2002
++++ src/plugin.c	Sun Feb 10 01:17:00 2002
+@@ -24,6 +24,7 @@
+ 
+ #define PLUGIN_C
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <gtk/gtk.h>

@@ -1,0 +1,14 @@
+bin/gtkhx
+share/locale/fr/LC_MESSAGES/gtkhx.mo
+share/gtkhx/sounds/chatinvite.aiff
+share/gtkhx/sounds/chatpost.aiff
+share/gtkhx/sounds/error.aiff
+share/gtkhx/sounds/filedone.aiff
+share/gtkhx/sounds/join.aiff
+share/gtkhx/sounds/logged-in.aiff
+share/gtkhx/sounds/message.aiff
+share/gtkhx/sounds/newspost.aiff
+share/gtkhx/sounds/part.aiff
+share/gtkhx/icons.rsrc
+@dirrm share/gtkhx/sounds
+@dirrm share/gtkhx
