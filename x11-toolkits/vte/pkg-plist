@@ -5,14 +5,17 @@ include/vte/vte.h
 include/vte/vteaccess.h
 lib/libvte.a
 lib/libvte.so
-lib/libvte.so.3
-lib/vte/gnome-pty-helper
+lib/libvte.so.4
+lib/vte/decset
 lib/vte/interpret
 lib/vte/iso8859mode
+lib/vte/osc
 lib/vte/slowcat
 lib/vte/utf8echo
 lib/vte/utf8mode
+lib/vte/window
 libdata/pkgconfig/vte.pc
+libexec/gnome-pty-helper
 share/doc/vte/c4.html
 share/doc/vte/index.html
 share/doc/vte/index.sgml
@@ -21,6 +24,7 @@ share/doc/vte/vtereaper.html
 share/doc/vte/vteterminal.html
 share/doc/vte/vteterminalaccessible.html
 share/gnome/vte/termcap/xterm
+share/locale/cs/LC_MESSAGES/vte.mo
 share/locale/da/LC_MESSAGES/vte.mo
 share/locale/de/LC_MESSAGES/vte.mo
 share/locale/fr/LC_MESSAGES/vte.mo
