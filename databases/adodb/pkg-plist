@@ -1,37 +1,37 @@
-share/doc/adodb/license.txt
+%%ADODB_DIR%%/adodb-access.inc.php
+%%ADODB_DIR%%/adodb-ado.inc.php
+%%ADODB_DIR%%/adodb-ado_access.inc.php
+%%ADODB_DIR%%/adodb-ado_mssql.inc.php
+%%ADODB_DIR%%/adodb-csv.inc.php
+%%ADODB_DIR%%/adodb-db2.inc.php
+%%ADODB_DIR%%/adodb-fbsql.inc.php
+%%ADODB_DIR%%/adodb-ibase.inc.php
+%%ADODB_DIR%%/adodb-mssql.inc.php
+%%ADODB_DIR%%/adodb-mysql.inc.php
+%%ADODB_DIR%%/adodb-mysqlt.inc.php
+%%ADODB_DIR%%/adodb-oci8.inc.php
+%%ADODB_DIR%%/adodb-odbc.inc.php
+%%ADODB_DIR%%/adodb-odbc_mssql.inc.php
+%%ADODB_DIR%%/adodb-oracle.inc.php
+%%ADODB_DIR%%/adodb-postgres.inc.php
+%%ADODB_DIR%%/adodb-postgres7.inc.php
+%%ADODB_DIR%%/adodb-session.php.sample
+%%ADODB_DIR%%/adodb-sybase.inc.php
+%%ADODB_DIR%%/adodb-vfp.inc.php
+%%ADODB_DIR%%/adodb.inc.php
+%%ADODB_DIR%%/server.php.sample
+%%ADODB_DIR%%/tohtml.inc.php
+%%ADODB_TEST%%/benchmark.php
+%%ADODB_TEST%%/client.php
+%%ADODB_TEST%%/test.php
+%%ADODB_TEST%%/test2.php
+%%ADODB_TEST%%/test3.php
+%%ADODB_TEST%%/testcache.php
+%%ADODB_TEST%%/testdatabases.inc.php
+share/doc/adodb/readme.htm
 share/doc/adodb/readme.txt
-share/doc/apache/php/adodb/adodb-access.inc.php
-share/doc/apache/php/adodb/adodb-ado.inc.php
-share/doc/apache/php/adodb/adodb-ado_access.inc.php
-share/doc/apache/php/adodb/adodb-ado_mssql.inc.php
-share/doc/apache/php/adodb/adodb-csv.inc.php
-share/doc/apache/php/adodb/adodb-db2.inc.php
-share/doc/apache/php/adodb/adodb-fbsql.inc.php
-share/doc/apache/php/adodb/adodb-ibase.inc.php
-share/doc/apache/php/adodb/adodb-mssql.inc.php
-share/doc/apache/php/adodb/adodb-mysql.inc.php
-share/doc/apache/php/adodb/adodb-mysqlt.inc.php
-share/doc/apache/php/adodb/adodb-oci8.inc.php
-share/doc/apache/php/adodb/adodb-odbc.inc.php
-share/doc/apache/php/adodb/adodb-odbc_mssql.inc.php
-share/doc/apache/php/adodb/adodb-oracle.inc.php
-share/doc/apache/php/adodb/adodb-postgres.inc.php
-share/doc/apache/php/adodb/adodb-postgres7.inc.php
-share/doc/apache/php/adodb/adodb-session.php
-share/doc/apache/php/adodb/adodb-sybase.inc.php
-share/doc/apache/php/adodb/adodb-vfp.inc.php
-share/doc/apache/php/adodb/adodb.inc.php
-share/doc/apache/php/adodb/benchmark.php
-share/doc/apache/php/adodb/client.php
-share/doc/apache/php/adodb/readme.htm
-share/doc/apache/php/adodb/server.php
-share/doc/apache/php/adodb/test.php
-share/doc/apache/php/adodb/test2.php
-share/doc/apache/php/adodb/test3.php
-share/doc/apache/php/adodb/testcache.php
-share/doc/apache/php/adodb/testdatabases.inc.php
-share/doc/apache/php/adodb/tohtml.inc.php
-share/doc/apache/php/adodb/tute.htm
-@dirrm share/doc/apache/php/adodb
-@dirrm share/doc/apache/php
+share/doc/adodb/tute.htm
 @dirrm share/doc/adodb
+@dirrm %%ADODB_DIR%%
+@dirrm share/doc/apache/php
+@dirrm %%ADODB_TEST%%
