@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A major mode for editing SGML and XML documents for emacs19
 
 # This is a slave port.

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEMI, Library of MIME feature for GNU Emacs for emacs20
 
 # This is a slave port.

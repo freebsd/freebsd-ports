@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://tats.haun.org/im/ \
 		${MASTER_SITE_PORTS_JP}
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes

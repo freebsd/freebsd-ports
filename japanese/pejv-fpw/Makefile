@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/pejv/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Esperanto-Japanese dictionary (EPWING V1 format)
 
 USE_ZIP=	yes

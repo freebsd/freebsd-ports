@@ -37,7 +37,7 @@ PATCH_SITES=	ftp://ftp.cpan.org/CPAN/authors/id/WATANABE/ \
 PATCHFILES=	j${DISTNAME}-20000401.pat.gz
 PATCH_DIST_STRIP= -p1
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pattern Extraction and Recognition Language + Japanese patches
 
 .include <bsd.port.pre.mk>

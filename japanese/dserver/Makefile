@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		kenjiro-dictlist.diff
 EXTRACT_ONLY=	${DISTFILES:Nkenjiro-*}
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDROM dictionary server & clients
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less

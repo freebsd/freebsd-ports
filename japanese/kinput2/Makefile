@@ -13,7 +13,7 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
 DISTNAME=	kinput2-v3.1
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Input server of Japanese text (FreeWnn)
 
 LIB_DEPENDS=	${LIB_INPUT_METHOD}

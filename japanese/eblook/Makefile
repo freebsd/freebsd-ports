@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive EB interface command for seraching words in electoric dictionaries
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb

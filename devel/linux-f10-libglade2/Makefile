@@ -10,7 +10,7 @@ PORTVERSION=	0.14
 PORTREVISION=	1
 CATEGORIES=	devel linux
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of libglade
 
 RPM_SET=	libglade-${PORTVERSION}-3.${MACHINE_ARCH}.rpm

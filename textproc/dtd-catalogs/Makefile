@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML DTDs catalogs
 
 RUN_DEPENDS=	${ISO8879_CAT}:${PORTSDIR}/textproc/iso8879 \

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/web1913/
 DISTNAME=	${PORTNAME}${WEBFPW_VER}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Webster's Revised Unabridged Dictionary (1913) (EPWING V1 format)
 
 USE_ZIP=	yes

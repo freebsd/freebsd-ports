@@ -11,7 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 DISTNAME=	NeXFontSel-${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A neXtaw based replacement for xfontsel
 
 LIB_DEPENDS=	neXtaw.${XAWVER}:${PORTSDIR}/x11-toolkits/neXtaw

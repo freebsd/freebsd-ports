@@ -11,7 +11,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	http://www.hiei.kit.ac.jp/~hitomi/lyx/
 DISTNAME=	ja_LyX_Doc.${PORTVERSION}
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Lyx documents translated from original ones
 
 NO_BUILD=	yes

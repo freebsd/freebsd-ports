@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create resources for tgif, vfontcap, .., for Japanese TrueType fonts
 
 RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib

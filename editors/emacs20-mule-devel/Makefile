@@ -23,7 +23,7 @@ PATCHFILES=	emacs-${EMACS_VER}-mule-${MULE_VER}.patch \
 		emacs-20.4-dl3.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU editing macros with dl module function and mule 4.1(binary only)
 
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20

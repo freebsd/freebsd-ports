@@ -11,7 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 DISTNAME=	Wnn6-SDK
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Include files and a library of Wnn6
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}

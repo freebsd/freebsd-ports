@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/apel/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs21
 
 # distfile version

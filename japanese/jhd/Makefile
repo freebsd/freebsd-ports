@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iamas.ac.jp/UNIX/File/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Hexdecimal Dump
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf

@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/ports/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Capture an X server screen with a mouse pointer
 
 ALL_TARGET=	xdgagrab

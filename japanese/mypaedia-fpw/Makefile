@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 DISTNAME=	mypaedia-fpw${PORTVERSION}-src
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An encyclopedia  "Mypaedia" (EPWING V1 format)
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \

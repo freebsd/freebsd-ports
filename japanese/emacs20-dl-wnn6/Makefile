@@ -12,7 +12,7 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	http://tokuda-www.cs.titech.ac.jp/~katsuya/emacs/
 DISTNAME=	dl-wnn-${PORTVERSION}
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic loading module input method `Wnn' on Emacs
 
 LIB_DEPENDS=	wnn6.2:${.CURDIR}/../../japanese/Wnn6-lib

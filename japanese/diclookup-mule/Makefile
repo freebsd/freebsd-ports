@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	diclookup-mule-${PORTVERSION}-wave-patch.gz
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CDROM dictionary client for mule
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts

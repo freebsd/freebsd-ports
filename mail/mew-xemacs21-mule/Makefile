@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message interface to Emacs Window for xemacs21-mule
 
 # This is a slave port.

@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/jargon/
 DISTNAME=	jargon-fpw${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The famous jargon file (EPWING V1 format)
 
 

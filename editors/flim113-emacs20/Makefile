@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FLIM, message representation or encoding emacs lisp library for emacs20
 
 # This is a slave port.

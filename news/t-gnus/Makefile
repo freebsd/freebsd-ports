@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.16/snapshots/ \
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${TGNUSVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	I18N Gnus using SEMI, which provides MIME capabilities
 
 BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}

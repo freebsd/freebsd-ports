@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bitmap-mule, Package to use bitmap in Emacs20
 
 # This is a slave port.

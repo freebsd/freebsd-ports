@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 DISTNAME=	srd-fpw${PORTVERSION}-src
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A English - Japanese Dictionary "Random House" (EPWING V1 format)
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \

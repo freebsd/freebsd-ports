@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/vera/
 DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual Entity of Relevant Aconyms (EPWING V1 format)
 
 USE_ZIP=	yes

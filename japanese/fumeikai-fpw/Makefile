@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Fumeikai/
 DISTNAME=	Fumeikai-${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An abbreviation (alphabet-->Japanese) dictionary (EPWING V1 format)
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A yet another converter from text file to postscript (with Japanese support)
 
 RUN_DEPENDS=	kcc:${PORTSDIR}/japanese/kcc

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/Eterm/ \
 		ftp://ftp.sogang.ac.kr/.c/tools/X11/Enlightenment/Eterm/
 DISTNAME=	Eterm-bg-${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image files for background of Eterm
 
 NO_WRKSUBDIR=	yes

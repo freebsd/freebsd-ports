@@ -13,7 +13,7 @@ MASTER_SITES=	http://topo.math.u-psud.fr/~bousch/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera downloading tool for Fujifilm digital cameras
 
 NO_WRKSUBDIR=	yes

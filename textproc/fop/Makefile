@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.apache.org/dist/xml/fop/ \
 		http://nagoya.apache.org/mirror/xml/fop/recent/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}

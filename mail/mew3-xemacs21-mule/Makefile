@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message interface to Emacs Window (version 3) for xemacs21-mule
 
 # Mew major version

@@ -122,7 +122,7 @@ DISTFILES=	\
 		zenirc-1.14-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic XEmacs elisp packages(xemacs-packages)
 
 NO_BUILD=	yes

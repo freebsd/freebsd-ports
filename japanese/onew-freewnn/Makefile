@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 DISTNAME=	jvim2.0r+${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	A library for a Japanese Input Method: FreeWnn
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -17,7 +17,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 PATCH_SITES=	http://dist.bsdlab.org/
 PATCHFILES=	psgml-symbol-conflict-041015.gz
 
-MAINTAINER?=	shige@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A major mode for editing SGML and XML documents for emacs21
 
 # distfile version

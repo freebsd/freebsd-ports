@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/docbook-tools/docware/SOURCES/
 DISTNAME=	stylesheets
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook DSSSL stylesheets of Cygnus Slution
 
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/frames/navbar.htm:${PORTSDIR}/textproc/dsssl-docbook-modular \

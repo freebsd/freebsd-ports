@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	. kiri
 DISTNAME=	Muggy-${PORTVERSION}
 EXTRACT_ONLY=	# extracted directly in install target
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple text editor for the X on TkStep
 
 RUN_DEPENDS=	${RUN_DEP_LIST}

@@ -10,7 +10,7 @@ PORTVERSION=	1.8.10
 PORTREVISION=	1
 CATEGORIES=	textproc linux
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of libxml
 
 RPM_SET=	libxml-${PORTVERSION}-1.${MACHINE_ARCH}.rpm

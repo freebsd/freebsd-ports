@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/srd/
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A supplement file for lookup to use "Random House"
 
 RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick

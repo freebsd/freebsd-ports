@@ -16,7 +16,7 @@ PATCHFILES=	${PORTNAME}${VERSION}${MINOR_VERSION}a.patch.gz \
 
 PATCH_SITES=	http://lynx.isc.org/current/
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}

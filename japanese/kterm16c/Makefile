@@ -24,7 +24,7 @@ PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
 		${DISTNAME}-wpr1.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese with 16 colors like on a VGA
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \

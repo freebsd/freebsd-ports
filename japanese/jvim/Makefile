@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 DISTNAME=	${PORTNAME}${PORTVERSION}+onew2.2.10
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Japanized Vim
 
 PATCHDIR=	${.CURDIR}/../jvim/files

@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/ \
 		http://www.aaa-int.or.jp/~jfactory/Factory/TkStep/dist/
 PATCHFILES=	tk${PORTVERSION}jp1.6.patch.gz 2Step-${PORTVERSION}pl1-patch.gz
 
-MAINTAINER=	kiri@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Tk toolkit with a NeXTSTEP look and more
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
