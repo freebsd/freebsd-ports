@@ -35,17 +35,20 @@ CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		CONFIGURE_ARGS="${CONFIGURE_ARGS}"
+
+.include <bsd.port.pre.mk>
 # without including these flags mysqld may crash under heavy load
 # and multiple connections at the same time
-CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
+CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
+.if ${OSVERSION} >= 400002
+CXXFLAGS+=	-fno-exceptions
+.endif
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql322-client
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 320000
 .if defined(MIT_PTHREADS)
@@ -138,8 +141,6 @@ post-install:
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 .endif
 
-.include <bsd.port.post.mk>
-
 # MySQL-Client part
 .else
 MAN1=		mysql.1
@@ -154,5 +155,6 @@ post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/mysql-client.sh > ${PREFIX}/etc/rc.d/mysql-client.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-client.sh
 
-.include <bsd.port.mk>
 .endif
+
+.include <bsd.port.post.mk>
