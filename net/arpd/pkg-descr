@@ -1,0 +1,5 @@
+Arpd can be used to direct all Arp queries for an interface into a
+single IP address or network.
+
+WWW: http://www.citi.umich.edu/u/provos/
+- Dominic <dominic_marks@btinternet.com>

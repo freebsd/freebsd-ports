@@ -22,6 +22,7 @@
     SUBDIR += argus
     SUBDIR += ari-yahoo
     SUBDIR += arla
+    SUBDIR += arpd
     SUBDIR += arping
     SUBDIR += arprelease
     SUBDIR += arpwatch
