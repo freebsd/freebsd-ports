@@ -7,6 +7,7 @@ share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/el/LC_MESSAGES/wget.mo
+share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
 share/locale/fr/LC_MESSAGES/wget.mo
 share/locale/gl/LC_MESSAGES/wget.mo
@@ -21,4 +22,5 @@ share/locale/ru/LC_MESSAGES/wget.mo
 share/locale/sk/LC_MESSAGES/wget.mo
 share/locale/sl/LC_MESSAGES/wget.mo
 share/locale/sv/LC_MESSAGES/wget.mo
-share/locale/zh/LC_MESSAGES/wget.mo
+share/locale/tr/LC_MESSAGES/wget.mo
+share/locale/zh_TW/LC_MESSAGES/wget.mo
