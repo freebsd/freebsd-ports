@@ -1,0 +1,6 @@
+sbin/pdtpd
+sbin/pdtpss
+%%DOCSDIR%%/protocol.txt
+%%DOCSDIR%%/transactions.txt
+%%DOCSDIR%%/transfer_specification.txt
+@dirrm %%DOCSDIR%%
