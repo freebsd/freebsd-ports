@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for visually creating and documenting classes
 
+BROKEN=		Unfetchable
+
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 USE_REINPLACE=	yes
