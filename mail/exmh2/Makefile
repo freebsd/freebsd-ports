@@ -8,8 +8,8 @@
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
 PORTVERSION=	2.6.3
-PORTREVISION=	2
-CATEGORIES+=	mail tk83
+PORTREVISION=	3
+CATEGORIES+=	mail tk84
 MASTER_SITES=	ftp://ftp.tcl.tk/pub/tcl/%SUBDIR%/
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,10 +23,10 @@ BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
-WISH=		wish8.3
-TCLSH=		tclsh8.3
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
+WISH=		wish8.4
+TCLSH=		tclsh8.4
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
