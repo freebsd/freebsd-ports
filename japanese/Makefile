@@ -165,6 +165,7 @@
     SUBDIR += makejvf
     SUBDIR += man
     SUBDIR += man-doc
+    SUBDIR += marumoji-fonts
     SUBDIR += mendexk-euc
     SUBDIR += mendexk-sjis
     SUBDIR += mh
