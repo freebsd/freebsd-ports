@@ -4,12 +4,13 @@
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/05 11:38:43 obrien Exp $
+# $Id: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
 #
 
-DISTNAME=	tcpshow-1.0
+DISTNAME=	tcpshow-1.74
 CATEGORIES=	net security
-MASTER_SITES=	http://www.cs.berkeley.edu/~daw/mike/
+MASTER_SITES=	http://www.freebsd.org/~obrien/
+#		http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
 
 MAINTAINER=     obrien@FreeBSD.org
