@@ -1,6 +1,7 @@
 bin/slrn
 bin/slrnpull
 share/examples/slrn/slrn.rc
+share/examples/slrn/slrnpull/FAQ
 share/examples/slrn/slrnpull/README
 share/examples/slrn/slrnpull/SETUP
 share/examples/slrn/slrnpull/score
