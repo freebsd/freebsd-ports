@@ -26,7 +26,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "alpha"
+.if ${ARCH} == "i386"
 RUN_DEPENDS+=	AbiWord-2.0:${PORTSDIR}/editors/AbiWord2
 .endif
 
