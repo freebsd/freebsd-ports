@@ -8,8 +8,7 @@
 PORTNAME=	fmio
 PORTVERSION=	2.0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/ \
-		http://www.tele2.chel.ru/~pva/src/fmio/
+MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 MAINTAINER=	kunia@istc.kiev.ua
