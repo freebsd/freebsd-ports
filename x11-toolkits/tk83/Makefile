@@ -47,8 +47,8 @@ MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	SetClass.3 SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 \
 	TextLayout.3 Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
-	chooseColor.n chooseDirectory.n clipboard.n destroy.n dialog.n entry.n\
-	event.n focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n\
+	chooseColor.n chooseDirectory.n clipboard.n colors.n cursors.n destroy.n dialog.n entry.n\
+	event.n focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n keysyms.n \
 	image.n label.n listbox.n loadTk.n lower.n menu.n menubar.n \
 	menubutton.n message.n messageBox.n option.n optionMenu.n options.n \
 	pack-old.n pack.n palette.n photo.n place.n popup.n radiobutton.n \
