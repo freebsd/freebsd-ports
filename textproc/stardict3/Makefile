@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	stardict
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	stardict-${PORTVERSION}.tar.bz2
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	ld@FreeBSD.org.cn
+MAINTAINER=	delphij@FreeBSD.org.cn
 COMMENT=	A cross-platform and international dictionary written in Gtk2
-
-BROKEN=		"Does not compile"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
