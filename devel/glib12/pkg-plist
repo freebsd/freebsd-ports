@@ -1,3 +1,4 @@
+bin/glib-config
 bin/glib12-config
 include/glib12/glib.h
 include/glib12/glibconfig.h

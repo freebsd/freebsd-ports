@@ -1,3 +1,4 @@
+bin/gtk-config
 bin/gtk12-config
 include/gtk12/gdk/gdk.h
 include/gtk12/gdk/gdkcursors.h

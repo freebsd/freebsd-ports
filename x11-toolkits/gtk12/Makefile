@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk+/1.2
@@ -30,12 +30,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		X_CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		gtk12-config.1
+MAN1=		gtk-config.1
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines
+	@${LN} -sf ${PREFIX}/bin/gtk-config ${PREFIX}/bin/gtk12-config
 
 .include <bsd.port.mk>
