@@ -31,6 +31,7 @@
     SUBDIR += gramofile
     SUBDIR += grip
     SUBDIR += gsm
+    SUBDIR += holyshout
     SUBDIR += icecast
     SUBDIR += id3ed
     SUBDIR += id3ren
