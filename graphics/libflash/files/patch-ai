@@ -1,15 +1,23 @@
---- sound.cc.orig	Thu Sep  2 00:10:03 1999
-+++ sound.cc	Wed Jul 24 06:04:56 2002
-@@ -26,7 +26,12 @@
- #include <fcntl.h>
- #include <sys/ioctl.h>
+--- sound.cc.orig	Sat Oct 16 03:16:19 2004
++++ sound.cc	Sat Oct 23 17:44:05 2004
+@@ -20,7 +20,7 @@
+ //  Author : Olivier Debon  <odebon@club-internet.fr>
+ //
+ 
+-#if ! defined(__linux__)
++#if ! defined(__linux__) && ! defined(__FreeBSD__)
+ #warning no sound support for your OS in lib/sound.cc
+ #define NOSOUND
+ #endif
+@@ -33,6 +33,11 @@
  #ifndef NOSOUND
+ #ifdef __linux__
+ #include <linux/soundcard.h>
++#else
 +#ifdef __FreeBSD__
 +#include <sys/param.h>
 +#include <sys/soundcard.h>
-+#else
- #include <linux/soundcard.h>
 +#endif
  #endif
+ #endif
  
- #ifdef RCSID
