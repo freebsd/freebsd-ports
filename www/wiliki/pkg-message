@@ -1,0 +1,8 @@
+************************************************************
+Quickstart:
+	cd ${PREFIX}/www/cgi-bin
+	cp wiliki.cgi.dist wiliki.cgi
+	chmod +x wiliki.cgi
+
+and modify wiliki.cgi to customize the WiLiKi's behavior.
+************************************************************
