@@ -17,6 +17,8 @@
 @dirrm %%TEXMFLOCAL%%/fonts/source
 @dirrm %%TEXMFLOCAL%%/fonts/vf
 @dirrm %%TEXMFLOCAL%%/fonts
+@dirrm %%TEXMFLOCAL%%/metafont
+@dirrm %%TEXMFLOCAL%%/metapost
 @dirrm %%TEXMFLOCAL%%/jbibtex/bib
 @dirrm %%TEXMFLOCAL%%/jbibtex/bst
 @dirrm %%TEXMFLOCAL%%/jbibtex
