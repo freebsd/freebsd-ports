@@ -6,7 +6,7 @@
  
 +
 +# FreeBSD 1.x / 2.x / 3.x
-+CFLAGS		= -O -DLINUXSOUND -D_HAVE_PARAM_H
++CFLAGS		+= -DLINUXSOUND -D_HAVE_PARAM_H
 +CC		= cc
 +AR		= ar r
 +RANLIB		= ranlib
