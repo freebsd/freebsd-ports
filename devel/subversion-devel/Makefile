@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r2927	# 0.14.1
-PORTREVISION=	1
+PORTVERSION=	r3033	# 0.14.2
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/690/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/718/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		neon.21:${PORTSDIR}/www/neon \
+		neon.22:${PORTSDIR}/www/neon \
 		expat.4:${PORTSDIR}/textproc/expat2 \
 		apr:${PORTSDIR}/devel/apr
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
