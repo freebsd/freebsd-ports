@@ -8,7 +8,6 @@ bin/fvwm2
 bin/fvwm24_convert
 bin/fvwmbug
 bin/xpmroot
-bin/xselection
 lib/X11/fvwm2/pixmaps/Jlock.xpm
 lib/X11/fvwm2/pixmaps/Jnews.xpm
 lib/X11/fvwm2/pixmaps/Jrecycle.xpm
