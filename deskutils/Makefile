@@ -99,6 +99,7 @@
     SUBDIR += multisync-syncml
     SUBDIR += nag
     SUBDIR += narval
+    SUBDIR += nautilus-sendto
     SUBDIR += notebook
     SUBDIR += offix-trash
     SUBDIR += pal

@@ -1,0 +1,11 @@
+This application provide integration between nautilus , evolution , and gaim.
+
+- Nautilus context menu component ("Send To...") .
+- A dialog for insert the email acount or IM account which you want to 
+   send the file/files .
+   o Contact with evolution-data-server and get the email accounts .
+   o Contact with gaim (nautilus gaim plugin) and get the IM acccounts
+   o You can send files packaged in varios formats
+- Plugin Support for gaim
+
+WWW:	http://www.es.gnome.org/~telemaco/
