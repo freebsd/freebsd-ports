@@ -10,7 +10,7 @@
 -	-I$(SSLTOP)/include
 +CFLAGS+= -DTERMCAP -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
 +	-DDIAGNOSTICS -DFILIO_H -I../lib -I../lib/libbsd/include \
-+	-I$(OPENSSLINC)/openssl
++	-I$(OPENSSLINC)/openssl -I$(OPENSSLINC)
  
 -LIBS= 	../lib/libtelnet/libtelnet.a \
 -	../lib/libbsd/libbsd.a \
