@@ -27,7 +27,7 @@ COMMENT=	Allow others to run commands as root
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc \
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--disable-log-wrap \
 		--with-ignore-dot \
 		--with-tty-tickets \
