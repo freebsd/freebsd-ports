@@ -66,20 +66,21 @@ include/glib-2.0/gutils.h
 include/glib-2.0/gwin32.h
 lib/libglib-1.3.a
 lib/libglib-1.3.so
-lib/libglib-1.3.so.5
+lib/libglib-1.3.so.6
 lib/libgmodule-1.3.a
 lib/libgmodule-1.3.so
-lib/libgmodule-1.3.so.5
+lib/libgmodule-1.3.so.6
 lib/libgobject-1.3.a
 lib/libgobject-1.3.so
-lib/libgobject-1.3.so.5
+lib/libgobject-1.3.so.6
 lib/libgthread-1.3.a
 lib/libgthread-1.3.so
-lib/libgthread-1.3.so.5
+lib/libgthread-1.3.so.6
 libdata/pkgconfig/glib-2.0.pc
 libdata/pkgconfig/gmodule-2.0.pc
 libdata/pkgconfig/gobject-2.0.pc
 libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
+share/aclocal/glib-gettext.m4
 @dirrm include/glib-2.0/gobject
 @dirrm include/glib-2.0
