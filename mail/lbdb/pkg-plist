@@ -11,8 +11,11 @@ libexec/m_fido
 libexec/m_finger
 libexec/m_inmail
 libexec/m_muttalias
+libexec/m_palm
 libexec/m_passwd
 libexec/m_pine
 libexec/m_yppasswd
+libexec/palm_lsaddr
+libexec/qpto8bit
 libexec/tac
 etc/lbdb.rc
