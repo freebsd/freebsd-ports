@@ -8,10 +8,9 @@
 PORTNAME=	qcread
 PORTVERSION=	0.3
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://mars.illtel.denver.co.us/pub/qcread/ \
-		http://mars.illtel.denver.co.us/pub/qcread/
+MASTER_SITES=	http://www.fhttpd.org/pub/qcread/
 
-MAINTAINER=	billf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
 ONLY_FOR_ARCHS=	i386
