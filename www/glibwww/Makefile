@@ -19,7 +19,6 @@ LIB_DEPENDS=	wwwzip.1:${PORTSDIR}/www/libwww
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

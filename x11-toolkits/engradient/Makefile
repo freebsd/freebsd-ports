@@ -18,7 +18,6 @@ COMMENT=	A GTK+ engine-gradient theme based off of the IceGradient theme
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

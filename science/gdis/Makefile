@@ -18,7 +18,6 @@ COMMENT=	Display and manipulation of isolated molecules and periodic systems
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_MESA=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

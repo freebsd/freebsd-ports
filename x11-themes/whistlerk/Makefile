@@ -18,7 +18,6 @@ COMMENT=	A GTK theme engine inspired by the Windows Whistler
 WRKSRC=		${WRKDIR}/gtk-theme-WhistlerK
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

@@ -17,7 +17,6 @@ COMMENT=	CRyptANalysis toolKit
 
 LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 GUILE_CONFIG=	${LOCALBASE}/bin/guile-config

@@ -19,7 +19,6 @@ COMMENT=	An OpenGL widget for the GTK+2 GUI toolkit
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_BZIP2=	yes
 USE_MESA=	yes

@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-tool
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gnomehack gnomeprefix
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

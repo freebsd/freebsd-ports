@@ -33,7 +33,6 @@ PLIST_SUB+=	GUI=""
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 .endif
 

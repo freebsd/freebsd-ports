@@ -39,7 +39,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomehier
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \

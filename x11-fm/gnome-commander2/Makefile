@@ -21,7 +21,6 @@ LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomelibs gdkpixbuf
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

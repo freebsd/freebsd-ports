@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An easy to use gtk program for configuring Xbindkeys
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"

@@ -21,7 +21,6 @@ LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

@@ -16,7 +16,6 @@ COMMENT=	Matches Motif/Athena/Tk widgets with the current GTK theme
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_GMAKE=	yes

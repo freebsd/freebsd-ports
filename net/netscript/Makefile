@@ -19,7 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight tcp socket scripting
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

@@ -20,7 +20,6 @@ LIB_DEPENDS=	autotrace.3:${PORTSDIR}/graphics/autotrace \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

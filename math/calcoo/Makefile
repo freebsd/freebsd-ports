@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	calcoo
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Gtk-based scientific calculator
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

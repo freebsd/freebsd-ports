@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_MESA=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

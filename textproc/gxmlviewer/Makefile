@@ -20,7 +20,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs bonobo gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}"

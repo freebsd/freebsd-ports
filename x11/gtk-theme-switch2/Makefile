@@ -15,7 +15,6 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A command line tool for switching GTK+ themes
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

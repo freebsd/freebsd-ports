@@ -15,7 +15,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Windows 95/98/NT like window manager for X11
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound imlib
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

@@ -18,7 +18,6 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 

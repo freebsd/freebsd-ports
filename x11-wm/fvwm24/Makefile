@@ -27,7 +27,6 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>

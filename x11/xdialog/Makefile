@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -24,7 +24,6 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc

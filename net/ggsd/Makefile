@@ -23,7 +23,6 @@ EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/GGSD
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 do-install:

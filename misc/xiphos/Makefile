@@ -18,7 +18,6 @@ COMMENT=		A bible interface utilizing the sword framework
 LIB_DEPENDS=		sword.1:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=		aspell:${PORTSDIR}/textproc/aspell
 
-USE_GNOMENG=		yes
 USE_GNOME=		gal gnomehack gnomeprefix gtkhtml
 USE_X_PREFIX=   	yes
 USE_GMAKE=      	yes

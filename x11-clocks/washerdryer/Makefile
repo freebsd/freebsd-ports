@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/washerDryer
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes
 

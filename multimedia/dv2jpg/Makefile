@@ -17,7 +17,6 @@ COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
 
 MAKEFILE=	makefile
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gtk12 gdkpixbuf
 
 DOCS=	README.avilib	README.dv2jpg.html

@@ -15,7 +15,6 @@ MASTER_SITES=	http://elysium-project.sourceforge.net/
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A library of utility functions used by several Elysium projects
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

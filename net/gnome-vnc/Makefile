@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/gnome/
 MAINTAINER=	domi@saargate.de
 COMMENT=	A GNOME/gtk viewer for VNC servers
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

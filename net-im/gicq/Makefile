@@ -19,7 +19,6 @@ LIB_DEPENDS=	icq.0:${PORTSDIR}/net/libicq
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehack
 WANT_GNOME=	yes
 USE_REINPLACE=	yes

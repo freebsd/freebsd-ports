@@ -24,7 +24,6 @@ LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg \
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	INC='-I${LOCALBASE}/include' LIBS='-L${LOCALBASE}/lib'
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 
 MAN3=		XML::LibRSVG.3

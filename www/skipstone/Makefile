@@ -21,7 +21,6 @@ RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded-vendor/libgtkembedmoz.so:${PORTSDIR
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes=${X11BASE}/include/mozilla-vendor --with-mozilla-libs=${X11BASE}/lib/mozilla-embedded-vendor
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -17,7 +17,6 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound imlib
 USE_GMAKE=	yes
 USE_XPM=	yes

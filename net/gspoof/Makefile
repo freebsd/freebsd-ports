@@ -18,7 +18,6 @@ COMMENT=	Console/GTK+ TCP/IP Packets Forger
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	gtk

@@ -23,7 +23,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 WANT_GNOME=	yes
 

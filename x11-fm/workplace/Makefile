@@ -19,7 +19,6 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	File manager and launcher
 
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/glib12 \

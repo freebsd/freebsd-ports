@@ -22,7 +22,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 .include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"

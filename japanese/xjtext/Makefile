@@ -16,7 +16,6 @@ MAINTAINER=	sada@FreeBSD.org
 COMMENT=	A text viewer for Japanese virtical writings
 
 USE_BISON=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 EXAMPLEDIR=	${PREFIX}/share/examples/xjtext
 DOCDIR=		${PREFIX}/share/doc/xjtext

@@ -26,7 +26,6 @@ LATEST_LINK=	gtk--2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome \

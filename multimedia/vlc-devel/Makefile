@@ -25,7 +25,6 @@ CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
 		--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 

@@ -20,7 +20,6 @@ LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

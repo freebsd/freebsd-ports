@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes

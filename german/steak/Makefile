@@ -21,7 +21,6 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .if defined(WITHOUT_XSTEAK)
 USE_XLIB=	yes
 .else
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 MAKE_ARGS=	-D xsteak
 .endif

@@ -19,7 +19,6 @@ COMMENT=	A simple and easy to use TCP only port scanner (GTK+ version)
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_XPM=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 MAN1=		gtk-knocker.1

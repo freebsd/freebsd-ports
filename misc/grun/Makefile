@@ -14,7 +14,6 @@ MAINTAINER=	domi@saargate.de
 COMMENT=	Gtk-launcher similar to the Windows(tm) "Run..." dialog
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

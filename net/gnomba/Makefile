@@ -15,7 +15,6 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	GNOME compliant browser of SMB shares
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

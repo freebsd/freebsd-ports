@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
 

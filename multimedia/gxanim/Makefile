@@ -21,7 +21,6 @@ WRKSRC=	${WRKDIR}/gxanim-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

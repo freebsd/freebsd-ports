@@ -22,7 +22,6 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 NO_BUILD=	yes
 

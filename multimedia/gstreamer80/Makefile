@@ -25,7 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix
 GNU_CONFIGURE=	yes

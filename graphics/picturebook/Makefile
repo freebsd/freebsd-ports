@@ -17,7 +17,6 @@ MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 post-build:

@@ -17,7 +17,6 @@ COMMENT=	A GTK client for the StaticCling dynamic DNS service
 BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
 WRKSRC=		${WRKDIR}/staticcharge
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

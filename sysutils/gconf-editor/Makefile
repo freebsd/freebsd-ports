@@ -20,7 +20,6 @@ LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

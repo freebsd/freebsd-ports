@@ -15,7 +15,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	Another gtk-based graphic file viewer
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

@@ -29,7 +29,6 @@ LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix

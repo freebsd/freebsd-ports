@@ -18,7 +18,6 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	APM monitor for the Blackbox slit
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

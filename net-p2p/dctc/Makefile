@@ -19,7 +19,6 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_GETOPT_LONG=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes

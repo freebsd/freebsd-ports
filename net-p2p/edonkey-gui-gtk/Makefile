@@ -19,7 +19,6 @@ COMMENT=	GTK GUI to eDonkey2000 'core' command line client
 LIB_DEPENDS=	gnet.1:${PORTSDIR}/net/gnet
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

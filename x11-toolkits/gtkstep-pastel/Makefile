@@ -18,7 +18,6 @@ COMMENT=	Theme engine based on GtkStep to make GTK+ look nicier
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 

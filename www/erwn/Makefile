@@ -16,7 +16,6 @@ COMMENT=	Simple (at the moment) html editor based on GTK+
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 post-install:

@@ -17,7 +17,6 @@ COMMENT=	A program computes with real and complex numbers and matrices
 
 WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 MAKEFILE=	makefile

@@ -22,7 +22,6 @@ LIB_DEPENDS=	xine.6:${PORTSDIR}/multimedia/libxine \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

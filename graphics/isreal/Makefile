@@ -16,7 +16,6 @@ MAINTAINER=	markp@FreeBSD.org
 COMMENT=	An image classification utility
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 do-install:

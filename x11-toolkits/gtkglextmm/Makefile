@@ -19,7 +19,6 @@ LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

@@ -18,7 +18,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_GMAKE=	yes
 ALL_TARGET=	#empty

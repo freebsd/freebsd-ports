@@ -20,7 +20,6 @@ RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk+/eazel-engine
 
-USE_GNOMENG=	yes
 USE_GNOME=	libcapplet
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

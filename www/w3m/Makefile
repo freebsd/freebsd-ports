@@ -79,7 +79,6 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 .endif
 
 .if defined(INLINE_IMAGE)
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 
 DOCS+=		README.img

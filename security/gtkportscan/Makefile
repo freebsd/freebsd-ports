@@ -16,7 +16,6 @@ COMMENT=	A simple port scanner that prints out open ports
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

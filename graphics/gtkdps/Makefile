@@ -17,7 +17,6 @@ COMMENT=	Gtk bindings for the Display GhostScript System
 BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 RUN_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

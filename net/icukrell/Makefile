@@ -21,7 +21,6 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		gnomeicu:${PORTSDIR}/net/gnomeicu
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 
 post-patch:

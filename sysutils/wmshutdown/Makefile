@@ -13,7 +13,6 @@ MASTER_SITES=	http://grad.icmc.usp.br/~rva/pkgs/
 MAINTAINER=	kaname@vamp.jpn.ph
 COMMENT=	Window Maker dock application to shutdown or reboot
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.p
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gtkhtml
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}

@@ -17,7 +17,6 @@ LIB_DEPENDS=	vdk.3:${PORTSDIR}/x11-toolkits/vdk
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes

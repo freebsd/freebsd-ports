@@ -16,7 +16,6 @@ MAINTAINER=	domi@saargate.de
 COMMENT=	Visualise multiple 2D-functions of one variable
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	-a -i

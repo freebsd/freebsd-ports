@@ -16,7 +16,6 @@ COMMENT?=	A modular IRC client with many features
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports

@@ -15,7 +15,6 @@ MAINTAINER=	dirk@FreeBSD.org
 COMMENT=	Figure-drawing tool
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

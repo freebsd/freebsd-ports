@@ -35,7 +35,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 # CONFIGURE_ARGS+=	--enable-motif
 EXTRA_PATCHES=	${.CURDIR}/../../audio/timidity++/files/*

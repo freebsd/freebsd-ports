@@ -17,7 +17,6 @@ COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 WANT_IPV6=	yes
 

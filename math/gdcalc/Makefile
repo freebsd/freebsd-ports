@@ -15,7 +15,6 @@ COMMENT=	Gnome-based scientific calculator
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gunits:${PORTSDIR}/math/units
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 GNU_CONFIGURE=	yes
 

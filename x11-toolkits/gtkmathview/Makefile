@@ -22,7 +22,6 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-D__GNU_LIBRARY__ -I${LOCALBASE}/include" \

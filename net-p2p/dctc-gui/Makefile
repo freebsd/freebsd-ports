@@ -21,7 +21,6 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_XLIB=	yes
 USE_REINPLACE=	yes

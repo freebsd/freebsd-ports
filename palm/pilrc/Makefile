@@ -16,7 +16,6 @@ COMMENT=	Resource compiler for Pilot applications
 
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

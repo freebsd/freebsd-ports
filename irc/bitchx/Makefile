@@ -49,7 +49,6 @@ MAN1=		BitchX.1
 
 .if defined(WITH_GNOME)
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS+=--with-gtk
 CFLAGS+=	-I${X11BASE}/include/gnome-1.0/
@@ -59,7 +58,6 @@ CONFIGURE_ARGS+=--without-gtk
 PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 .endif
 .if (defined(WITH_ESOUND) && defined(WITH_GNOME))
-USE_GNOMENG=	yes
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 .endif

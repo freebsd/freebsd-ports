@@ -19,7 +19,6 @@ COMMENT=	A useful widget set complementary to GTK+
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

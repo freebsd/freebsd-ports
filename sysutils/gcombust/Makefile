@@ -19,7 +19,6 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share

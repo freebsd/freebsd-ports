@@ -30,7 +30,6 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes

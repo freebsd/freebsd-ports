@@ -23,7 +23,6 @@ LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_GMAKE=		yes
 USE_LIBTOOL=	yes

@@ -19,7 +19,6 @@ COMMENT=	Yahoo! Messenger - Instant messaging client
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 NO_BUILD=	yes

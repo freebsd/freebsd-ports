@@ -24,7 +24,6 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 gdkpixbuf orbit gnomelibs gnomeprint
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

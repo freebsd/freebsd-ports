@@ -19,7 +19,6 @@ COMMENT=	Standalone menu and keybinding editors for enlightment 0.16
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 SUB_STUBS=	e16menuedit-0.1 e16keyedit-0.2

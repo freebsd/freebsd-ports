@@ -26,7 +26,6 @@ KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound
 GNU_CONFIGURE=	yes
 

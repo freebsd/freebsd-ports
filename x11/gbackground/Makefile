@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome Panel applet to change the background on the desktop
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	libpanel
 GNU_CONFIGURE=	yes
 

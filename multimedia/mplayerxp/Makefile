@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fon
 
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_XLIB=	yes
 USE_GMAKE=	yes

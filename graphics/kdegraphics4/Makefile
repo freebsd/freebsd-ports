@@ -28,7 +28,6 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .if defined(WITH_IMLIB) || defined(KDE_WITH_IMLIB)
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 PLIST_APPEND+=	plist.imlib
 CONFIGURE_ARGS+=--with-imlib-config=${X11BASE}/bin

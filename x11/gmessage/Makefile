@@ -14,7 +14,6 @@ MAINTAINER=	domi@saargate.de
 COMMENT=	Gtk+ clone of xmessage. displays a given text in a X11 window
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.mk>

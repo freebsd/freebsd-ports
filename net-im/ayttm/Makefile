@@ -17,7 +17,6 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes

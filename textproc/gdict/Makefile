@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 MAINTAINER=	domi@saargate.de
 COMMENT=	Small program that finds definitions of arbitrary (english) words
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 do-install:

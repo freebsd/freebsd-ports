@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

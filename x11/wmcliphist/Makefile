@@ -16,7 +16,6 @@ COMMENT=	Clipboard history management dockapp for Window Maker
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 do-install:

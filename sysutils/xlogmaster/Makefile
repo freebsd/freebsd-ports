@@ -16,7 +16,6 @@ COMMENT=	Quick & easy monitoring of logfiles and devices
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

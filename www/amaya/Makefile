@@ -19,7 +19,6 @@ COMMENT=	The W3C's testbed web editor/browser
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

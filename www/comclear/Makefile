@@ -14,7 +14,6 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A history cleaner for Netscape Navigator and Communicator"
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes

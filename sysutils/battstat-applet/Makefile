@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A laptop battery monitor utility for the GNOME panel
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix libpanel
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	Fluxconf is a configuration program for the fluxbox window manager
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=  yes
 

@@ -18,7 +18,6 @@ COMMENT=	X11 Application Launch Feedback
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack libcapplet
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

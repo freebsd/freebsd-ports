@@ -44,7 +44,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	default
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 MAN1=		d2c.1 dybug.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1 \

@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	c9710216@atlas.newcastle.edu.au
 COMMENT=	A diff/patch utility for binary files
 
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

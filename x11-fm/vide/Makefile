@@ -17,7 +17,6 @@ RUN_DEPENDS=    vim:${PORTSDIR}/editors/vim5
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomelibs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

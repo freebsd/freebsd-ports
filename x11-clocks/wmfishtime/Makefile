@@ -16,7 +16,6 @@ COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 

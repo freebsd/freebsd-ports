@@ -16,7 +16,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for gtk+ toolkits
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 

@@ -17,7 +17,6 @@ COMMENT=	Electronic Book Viewer
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -15,7 +15,6 @@ MAINTAINER=	anders@andersa.net
 COMMENT=	Yahoo Messenger Client using GTK
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_BISON=	yes
 GNU_CONFIGURE=	yes

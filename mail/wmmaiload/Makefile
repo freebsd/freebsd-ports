@@ -15,7 +15,6 @@ COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomevfs
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

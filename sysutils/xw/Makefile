@@ -15,7 +15,6 @@ COMMENT=	X app to list current users logged into the system
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_X_PREFIX=	yes
 

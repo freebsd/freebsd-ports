@@ -17,7 +17,6 @@ MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Netscape cache browser
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_AUTOMAKE=	yes
 AUTOMAKE_ARGS=	--include-deps

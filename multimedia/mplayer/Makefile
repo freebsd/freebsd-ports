@@ -188,7 +188,6 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-libfame \
 		--disable-tv-v4l
 
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no

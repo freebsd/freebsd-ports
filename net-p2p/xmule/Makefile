@@ -20,7 +20,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
 		gnomeprefix \

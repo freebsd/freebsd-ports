@@ -24,7 +24,6 @@ LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		ksba.7:${PORTSDIR}/security/libksba
 
 USE_AUTOMAKE_VER=	15
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

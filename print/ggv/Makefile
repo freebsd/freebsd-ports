@@ -19,7 +19,6 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bonobo

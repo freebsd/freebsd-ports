@@ -19,7 +19,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 COMMENT=	Network Type Trainer client program
 
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 

@@ -14,7 +14,6 @@ COMMENT=	A graphics library for GNOME
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf gnomelibs
 
 BUILD_CANVAS=	yes

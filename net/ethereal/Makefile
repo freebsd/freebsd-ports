@@ -22,7 +22,6 @@ COMMENT=	An X11/GTK network analyzer/capture tool
 LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
 .endif
 
-USE_GNOMENG=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if !defined(WITHOUT_X11)

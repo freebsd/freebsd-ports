@@ -25,7 +25,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes

@@ -17,7 +17,6 @@ COMMENT=	Obj-C wrapper for gtk, a x11 graphics library
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 

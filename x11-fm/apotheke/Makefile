@@ -17,7 +17,6 @@ COMMENT=	A CVS view for Nautilus
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

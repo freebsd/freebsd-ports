@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use many scaled down images to try to duplicate another image
 
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12 imlib
 IMLIB_CONFIG=	${X11BASE}/bin/imlib-config
 

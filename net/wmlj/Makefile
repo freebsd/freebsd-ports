@@ -17,7 +17,6 @@ COMMENT=	A dockapp that monitors your friends list at LiveJournal.com
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 MAN1=		wmlj.1
