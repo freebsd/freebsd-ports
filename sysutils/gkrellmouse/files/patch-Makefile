@@ -1,0 +1,19 @@
+--- Makefile.orig	Wed Aug  1 22:12:08 2001
++++ Makefile	Tue Aug 28 21:12:58 2001
+@@ -13,12 +13,11 @@
+ DESTDIR =
+ 
+ # This should point to your gkrellm headers
+-GKRELLM_HDRS := /usr/include/gkrellm
++GKRELLM_HDRS := ${X11BASE}/include/gkrellm
+ 
+-CC := gcc
+-GTKFLAGS := $(shell gtk-config --cflags)
+-IMLIBFLAGS := $(shell imlib-config --cflags-gdk)
+-CFLAGS := $(CFLAGS) -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I$(GKRELLM_HDRS)
++GTKFLAGS = `${GTK_CONFIG} --cflags`
++IMLIBFLAGS = `${IMLIB_CONFIG} --cflags-gdk`
++CFLAGS += -fPIC -Wall $(GTKFLAGS) $(IMLIBFLAGS) -I$(GKRELLM_HDRS)
+ LDFLAGS := -shared -Wl
+ INST_DIR := $(DESTDIR)/usr/lib/gkrellm/plugins
+ USER_INST_DIR := $(DESTDIR)$(HOME)/.gkrellm/plugins

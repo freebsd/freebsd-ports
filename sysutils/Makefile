@@ -58,6 +58,7 @@
     SUBDIR += gcombust
     SUBDIR += gkrellflynn
     SUBDIR += gkrellm
+    SUBDIR += gkrellmouse
     SUBDIR += glload
     SUBDIR += gnomecontrolcenter
     SUBDIR += gnomefind
