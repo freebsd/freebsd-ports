@@ -23,4 +23,10 @@ MAKE_ARGS+=	os=freebsd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000 || ( ${ARCH} != "i386" && ${ARCH} != "ia64" )
+BROKEN=		"Does not compile on 4.x or on !i386 and !ia64"
+.endif
+
+.include <bsd.port.post.mk>
