@@ -1,0 +1,43 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -1,30 +1,28 @@
+ LIBS    = -lm
+ BINDIR  = ./bin
+-CFLAGS  = -O2 -funroll-loops 
+-CC        = gcc $(CFLAGS)
+ 
+ fluctuate : fluctuate.o fluc_modellike.o getdata.o plot.o wrap.o \
+     coal_modellike.o
+-	$(CC) fluctuate.o fluc_modellike.o getdata.o plot.o wrap.o \
++	$(CC) $(CFLAGS) fluctuate.o fluc_modellike.o getdata.o plot.o wrap.o \
+     coal_modellike.o $(LIBS) -o fluctuate
+ 
+ clean :
+ 	rm fluctuate.o fluc_modellike.o coal_modellike.o getdata.o plot.o wrap.o
+ 
+ fluctuate.o : fluctuate.c
+-	$(CC) -c fluctuate.c
++	$(CC) $(CFLAGS) -c fluctuate.c
+ 
+ fluc_modellike.o : fluc_modellike.c
+-	$(CC) -c fluc_modellike.c
++	$(CC) $(CFLAGS) -c fluc_modellike.c
+ 
+ coal_modellike.o : coal_modellike.c
+-	$(CC) -c coal_modellike.c
++	$(CC) $(CFLAGS) -c coal_modellike.c
+ 
+ getdata.o : getdata.c
+-	$(CC) -c getdata.c
++	$(CC) $(CFLAGS) -c getdata.c
+ 
+ plot.o : plot.c
+-	$(CC) -c plot.c
++	$(CC) $(CFLAGS) -c plot.c
+ 
+ wrap.o : wrap.c
+-	$(CC) -c wrap.c
++	$(CC) $(CFLAGS) -c wrap.c
