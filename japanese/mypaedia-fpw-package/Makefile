@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mypaedia-fpw-package
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	japanese elisp
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/mypaedia-fpw/dist/
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 
 MAINTAINER=	taoka@FreeBSD.org
 
