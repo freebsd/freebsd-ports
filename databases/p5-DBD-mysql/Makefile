@@ -24,7 +24,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .else
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
+LIB_DEPENDS=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
+.else
 LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+.endif
 .endif
 
 PERL_CONFIGURE=	yes
