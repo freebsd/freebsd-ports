@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	multimedia audio gnome
-MASTER_SITES=	http://gstreamer.net/releases/0.4.0/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-player
 DISTNAME=	gst-player-${PORTVERSION}
 
@@ -17,32 +17,41 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Simple yet functional mediaplayer written with GStreamer
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
+		gconf-2.5:${PORTSDIR}/devel/gconf2 \
+		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gstreamer.0:${PORTSDIR}/multimedia/gstreamer \
+		gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
+		gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins \
 		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
+		pango-1.0.200:${PORTSDIR}/x11-toolkits/pango \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	gst-visualise:${PORTSDIR}/multimedia/gstreamer-plugins
-
-IGNORE=		Incompatible with latest gstreamer libraries
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack \
+		gnomehier \
+		gnomeprefix
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} \
-		--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG}
+PLIST_SUB=	\
+	VERSION="${PORTVERSION}" \
+	SHLIB_VERSION="${SHLIB_VERSION}"
 INSTALLS_SHLIB=	yes
+
+MAN1=		gst-player.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 
-post-patch:
-# remove version number from include dir name
-	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -E \
-		's|^(lib[[:alpha:]]+includedir.+)-@VERSION@|\1|'
+# library minor number
+SHLIB_VERSION=	0
+
+pre-install:
+# required for PREFIX safeness, the dir might not exist under PREFIX
+	@${MKDIR} ${PREFIX}/etc/gconf/
 
 .include <bsd.port.mk>
