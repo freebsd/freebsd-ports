@@ -1,7 +1,12 @@
 --- Makefile.orig	Sat Sep 23 14:14:43 2000
-+++ Makefile	Sat Nov 11 01:42:49 2000
-@@ -4,9 +4,9 @@
- CFLAGS = -O2 -Wall
++++ Makefile	Sun Oct 19 02:22:03 2003
+@@ -1,12 +1,12 @@
+ # pentix make file
+ 
+-CC = cc
+-CFLAGS = -O2 -Wall
++CC ?= cc
++CFLAGS ?= -O -pipe
  LFLAGS = -lncurses 
  
 -BINDIR = /usr/local/bin
