@@ -12,9 +12,8 @@
 # pgreplicate_enable="YES"
 #
 
-pgreplicate_enable="NO"
-pgreplicate_data="%%PREFIX%%/pgsql/data"
-pgreplicate_flags=""
+pgreplicate_enable=${pgreplicate_enable-"NO"}
+pgreplicate_data=${pgreplicate_data-"%%PREFIX%%/pgsql/data"}
 
 . %%RC_SUBR%%
 

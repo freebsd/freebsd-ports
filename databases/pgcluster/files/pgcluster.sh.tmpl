@@ -15,9 +15,9 @@
 # pgcluster_flags="-w -s"
 #
 
-pgcluster_enable="NO"
-pgcluster_data="%%PREFIX%%/pgsql/data"
-pgcluster_flags="-w -s"
+pgcluster_enable=${pgcluster_enable-"NO"}
+pgcluster_data=${pgcluster_data-"%%PREFIX%%/pgsql/data"}
+pgcluster_flags=${pgcluster_flags-"-w -s"}
 
 . %%RC_SUBR%%
 
