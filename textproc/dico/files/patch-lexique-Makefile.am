@@ -1,5 +1,5 @@
---- old/lexique/Makefile.am	Thu Jan  1 01:00:00 1970
-+++ new/lexique/Makefile.am	Wed Oct 11 04:40:58 2000
+--- /dev/null	Thu Jan  1 01:00:00 1970
++++ lexique/Makefile.am	Wed Oct 11 04:40:58 2000
 @@ -0,0 +1,4 @@
 +pkgdata_DATA =	a.dic b.dic c.dic d.dic e.dic f.dic g.dic h.dic \
 +		i.dic j.dic k.dic l.dic m.dic n.dic o.dic p.dic \

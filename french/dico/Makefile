@@ -7,25 +7,37 @@
 
 PORTNAME=	dico
 PORTVERSION= 	1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.montefiore.ulg.ac.be/~geuzaine/BRONNE/WWW/ftp/
-#		ftp://ftp.supelec.fr/lsi/pub/security/
-#		have dico.tar.gz which fail because of EXTRACT_SUFX
-DISTNAME=	le_dico
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://homepages.starnet.fr/dtrystram/
+#	http://www.montefiore.ulg.ac.be/~geuzaine/BRONNE/WWW/ftp/ le_dico.tgz
+#	ftp://ftp.supelec.fr/lsi/pub/security/			  le_dico.tar.gz
+#	http://homepages.starnet.fr/dtrystram/			   ledico.zip
+#	http://hpux.cict.fr/ftp/hpux/Text/     dico-1.1/dico-1.1-ss-11.00.tar.gz
+DISTNAME=	ledico
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
-NO_WRKSUBDIR=	true
-PATCH_STRIP=	-p1
+# Global variables
+#
+
+USE_REINPLACE=	true
+USE_ZIP=	true
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_AUTOMAKE=	true
 USE_GMAKE=	true
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		dico.1
 
+# Post-patch
+#
+
 post-patch:
-	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/sources/dico.c
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/sources/dico.c
+
+# Pre-configure
+#
 
 pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL}
