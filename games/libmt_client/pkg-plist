@@ -1,0 +1,4 @@
+include/mt_client.h
+lib/libmt_client.a
+lib/libmt_client.so
+lib/libmt_client.so.0
