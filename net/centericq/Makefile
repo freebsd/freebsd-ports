@@ -17,13 +17,20 @@ COMMENT=	A text mode menu- and window-driven IM interface
 
 USE_ICONV=	yes
 USE_OPENSSL=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib -lstdc++
 CONFIGURE_ARGS=	--with-openssl --disable-konst
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-locales-fix
@@ -63,6 +70,10 @@ CONFIGURE_ARGS+=	--disable-rss
 
 .if !defined(WITH_LJ)
 CONFIGURE_ARGS+=	--disable-lj
+.endif
+
+.if !defined(WITH_GG)
+CONFIGURE_ARGS+=	--disable-gg
 .endif
 
 MAN1=	cicqconv.1 cicqsync.1
