@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	http://sarg.sourceforge.net/
-PATCHFILES=	sarg-2.0.1-largeurl.patch.gz
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
