@@ -24,6 +24,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Unfetchable
+
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
 USE_REINPLACE=	yes

@@ -16,6 +16,8 @@ COMMENT=	A plugin for GKrellM, which changes the desktop's background image
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
