@@ -1,4 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/Proc/test-T.pl
-lib/perl5/site_perl/%%PERL_VER%%/Proc/simple.pl
-lib/perl5/site_perl/%%PERL_VER%%/Proc/PID_File.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Proc
+%%SITE_PERL%%/Proc/PID_File.pm
+%%SITE_PERL%%/Proc/simple.pl
+%%SITE_PERL%%/Proc/test-T.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PID_File/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PID_File
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Proc 2>/dev/null || true

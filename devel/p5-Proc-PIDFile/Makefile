@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Proc-PIDFile
-PORTVERSION=	0.03
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
@@ -18,7 +18,6 @@ COMMENT=	Perl5 module to prevent multiple instances of a process from running
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Proc::PID_File.3
 
 .include <bsd.port.mk>

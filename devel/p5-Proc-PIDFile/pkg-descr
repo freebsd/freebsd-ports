@@ -5,3 +5,5 @@ it.  Pids are written down to files so that:
     * other processes can know the pid of a running program
 
 This module can be used so that your script can do the former.
+
+WWW: http://search.cpan.org/dist/Proc-PID_File/
