@@ -1,1 +1,9 @@
 bin/ipex
+%%PORTDOCS%%share/doc/ipex/ipex-HOWTO.pdf
+%%PORTDOCS%%share/doc/ipex/ipex-HOWTO.txt
+%%PORTDOCS%%share/doc/ipex/pcap_exprs.txt
+%%PORTDOCS%%share/doc/ipex/regexps.txt
+%%PORTDOCS%%share/doc/ipex/rfc0768.txt
+%%PORTDOCS%%share/doc/ipex/rfc0792.txt
+%%PORTDOCS%%share/doc/ipex/rfc0793.txt
+%%PORTDOCS%%@dirrm share/doc/ipex
