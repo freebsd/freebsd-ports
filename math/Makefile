@@ -107,6 +107,7 @@
     SUBDIR += nsc2ke
     SUBDIR += ntl
     SUBDIR += octave
+    SUBDIR += octave-forge
     SUBDIR += oleo
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-NeuralNet-BackProp
