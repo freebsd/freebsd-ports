@@ -2,39 +2,18 @@
 
 GREP=/usr/bin/grep
 SED=/usr/bin/sed
-SUFFIX=ptex-tetex
+MODE=ptex-tetex
+
+MKTEXLSR=%%MKTEXLSR%%
+TETEX_MODESW=%%TETEX_MODESW%%
 
 case $2 in
 POST-INSTALL)
-	if [ ! -f %%DVIPSKCNF%% ]; then
-		cp %%DVIPSKCNF%%.${SUFFIX} %%DVIPSKCNF%%
-		echo "Notice: installing %%DVIPSKCNF%%.${SUFFIX} -> %%DVIPSKCNF%%."
-		%%MKTEXLSR%%
-	elif ${SED} q < %%DVIPSKCNF%% | ${GREP} "public domain" > /dev/null 2>&1; then
-		cp %%DVIPSKCNF%%.${SUFFIX} %%DVIPSKCNF%%
-		echo "Notice: installing %%DVIPSKCNF%%.${SUFFIX} -> %%DVIPSKCNF%%."
-		%%MKTEXLSR%%
-	else
-		echo "Notice: %%DVIPSKCNF%% is not installed."
-		echo "        Merge from %%DVIPSKCNF%%.${SUFFIX} manually."
-	fi
-;;
+	%%TETEX_MODESW%% ${MODE} dvips forceinstall
+	%%MKTEXLSR%%
+	;;
 DEINSTALL)
-	if [ -f %%DVIPSKCNF%% ]; then
-		if ${SED} q < %%DVIPSKCNF%% | ${GREP} "public domain" > /dev/null 2>&1; then
-			if [ -f %%DVIPSKCNF%%.tetex ]; then
-				cp %%DVIPSKCNF%%.tetex %%DVIPSKCNF%%
-				echo "Notice: installing %%DVIPSKCNF%%.tetex -> %%DVIPSKCNF%%."
-				%%MKTEXLSR%%
-			else
-				rm -f %%DVIPSKCNF%%
-				echo "Notice: %%DVIPSKCNF%% is removed."
-				%%MKTEXLSR%%
-			fi
-		else
-			echo "Notice: %%DVIPSKCNF%% is NOT removed."
-			echo "        Remove manually."
-		fi
-	fi
-;;
+	%%TETEX_MODESW%% default dvips forceinstall
+	%%MKTEXLSR%%
+	;;
 esac

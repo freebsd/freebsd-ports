@@ -7,6 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.92b
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN} \
@@ -21,14 +22,25 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 
-WRKSRC=		${WRKDIR}/tetex-src-${VER_TETEX}
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
+PATCH_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk
+EXTRA_PATCHES=	${WRKDIR}/dvipsk-${PORTVERSION}-p${VER_JPATCH}.patch
+CONFIGURE_WRKSRC=${WRKDIR}/tetex-src-${VER_TETEX}
+BUILD_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
+INSTALL_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
+
+PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-multiplatform \
@@ -50,30 +62,27 @@ INFO=		dvips
 VER_TETEX=	2.0.2
 VER_JPATCH=	1.6
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMFDIR?=	share/texmf
+TEXMF?=		share/texmf
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
-DVIPSKCNF=	${PREFIX}/${TEXMFDIR}/dvips/config/config.ps
 
-do-patch:
-	cd ${WRKSRC}/texk &&\
-		${PATCH} -p0 < ${WRKDIR}/dvipsk-${PORTVERSION}-p${VER_JPATCH}.patch
-	${SED} -e 's,%%TEXMFCNF%%,${TEXMFCNF},g;s,%%DVIPSKCNF%%,${DVIPSKCNF},g;s,%%MKTEXLSR%%,${MKTEXLSR},g' \
+TETEX_MODESW=	${PREFIX}/bin/tetex-modesw
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MKTEXLSR=${MKTEXLSR}
+
+post-configure:
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
 
-do-build:
-	cd ${WRKSRC}/texk/dvipsk &&\
-		${MAKE_ENV} ${MAKE} ${ALL_TARGET}
-
-do-install:
-	cd ${WRKSRC}/texk/dvipsk &&\
-		${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
-	${INSTALL_DATA} ${FILESDIR}/kanji.map ${PREFIX}/${TEXMFDIR}/dvips/config
-	${INSTALL_DATA} ${FILESDIR}/config.ps ${PREFIX}/${TEXMFDIR}/dvips/config/config.ps.ptex-tetex
-
 post-install:
+	${INSTALL_DATA} \
+		${FILESDIR}/ptex-kanji.map \
+		${PREFIX}/${TEXMF}/dvips/ptex/ptex-kanji.map
+	${INSTALL_DATA} \
+		${FILESDIR}/config.ps.ptex-tetex \
+		${PREFIX}/${TEXMF}/dvips/config/config.ps.ptex-tetex
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
