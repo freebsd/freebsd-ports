@@ -13,7 +13,8 @@ PORTNAME=	gcc
 PORTVERSION=	3.2.2
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	${MASTER_SITE_GCC}
+MASTER_SITES=	${MASTER_SITE_GCC} \
+		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	releases/gcc-${PORTVERSION}
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
@@ -27,6 +28,14 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.2.2
+
+.if defined (WITH_BOUNDSCHECKING)
+# Fetch another file, but don't extract it.  Also add another patchfile.
+BCPATCH=	bounds-checking-gcc-3.2.2-1.00.patch.bz2
+DISTFILES+=	${BCPATCH}:bc
+EXTRACT_ONLY=	${DISTFILES:S/${BCPATCH}:bc//}
+EXTRA_PATCHES=	${FILESDIR}/opt.patch-bc
+.endif
 
 LATEST_LINK=	gcc32
 
@@ -78,6 +87,11 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
+.if !defined(WITH_BOUNDSCHECKING)
+	@${ECHO_MSG} "You can enable fine-grained bounds-checking support for compiled C programs"
+	@${ECHO_MSG} "by defining WITH_BOUNDSCHECKING.  Compile and link with \"-fbounds-checking\""
+	@${ECHO_MSG} "to use."
+.endif
 
 .if defined(CVS_DATE)
 DIST_SUBDIR=	${PKGNAME}
@@ -109,6 +123,16 @@ do-extract:
 	${MKDIR} ${SRCDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
 .endif	# CVS_DATE
+
+.if defined(WITH_BOUNDSCHECKING)
+# Extract bounds-checking patch, removing the ada parts of the patch with sed.
+pre-patch:
+	(	cd ${_DISTDIR} && \
+		${BZCAT} ${BCPATCH} | \
+			${SED} -e '/^--- .*ada/,/^diff/d' | \
+			${PATCH} -d ${PATCH_WRKSRC} -E -p1 --quiet \
+	)
+.endif
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
