@@ -32,6 +32,7 @@
     SUBDIR += colortail
     SUBDIR += crosspad
     SUBDIR += cstream
+    SUBDIR += cuecat
     SUBDIR += cwish
     SUBDIR += deco
     SUBDIR += dejagnu
