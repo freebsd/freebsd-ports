@@ -1,5 +1,5 @@
 --- webalizer.c.orig	Sun Apr  9 05:18:56 2000
-+++ webalizer.c	Thu Apr 20 05:46:49 2000
++++ webalizer.c	Fri Apr 21 23:11:15 2000
 @@ -61,6 +61,7 @@
  #endif
  
@@ -17,3 +17,12 @@
        }
     }
  #endif  /* USE_DNS */
+@@ -1785,7 +1786,7 @@
+          if (*cp1=='+') *cp1=' ';                      /* change + to space  */
+          if (sp_flg && *cp1==' ') { cp1++; continue; } /* compress spaces    */
+          if (*cp1==' ') sp_flg=1; else sp_flg=0;       /* (flag spaces here) */
+-         *cp2++=tolower(*cp1++);                       /* normal character   */
++	 *cp2++= *cp1++;                       /* normal character   */
+       }
+    }
+    *cp2=0; cp2=tmpbuf;
