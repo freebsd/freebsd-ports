@@ -1,0 +1,29 @@
+*** Configure.orig	Sat Feb 10 04:41:40 1996
+--- Configure	Thu Aug  1 02:16:34 1996
+***************
+*** 159,167 ****
+--- 159,170 ----
+  PROG = netris
+  HEADERS = netris.h
+  
++ PREFIX?=/usr/local
+  SRCS = -SRCS-
+  OBJS = -OBJS-
+  DISTFILES = -DISTFILES-
++ DESTDIR= $(PREFIX)/bin
++ MANDIR=     $(PREFIX)/man
+  
+  all: Makefile config.h proto.h $(PROG) sr
+  
+***************
+*** 217,222 ****
+--- 220,228 ----
+  
+  cleandir: clean
+  	rm -f .depend Makefile config.h
++ 
++ install:
++ 	install -o bin -g bin -s -m 755 $(PROG) $(DESTDIR)
+  
+  ##### DO NOT EDIT OR DELETE THIS LINE, it's needed by make depend #####
+  END

@@ -1,0 +1,117 @@
+.TH NETRIS 1 "1 August 1996"
+.SH "NAME"
+netris - a network version of t*tris
+.SH "SYNOPSIS"
+.B netris
+[-DHRSh] [-w] [-c host] [-p port] [-k keys]
+.SH "DESCRIPTION"
+.I Netris 
+is a networked version of t*tris.  It allows either single player or head to head play via a network.  To play it single user, start
+.I netris 
+with no flags.  To play head to head, you can either host or connect.  To be the host, start 
+.I netris
+with the 
+.B -w
+flag.  To connect to a host, use the 
+.B -c <hostname> 
+flag with the hostname of the computer you wish to connect to. 
+
+Unlike standard T*tris, 
+.I Netris
+gives you a little extra time after dropping a piece before it solidifies.  This allows you to slide the
+piece into a notch without waiting for it to fall the whole way down.
+In fact, if you can even slide it off a cliff and it'll start falling
+again.  If you think it should automatically drop again in this case,
+use the 
+.B -D
+option.
+
+The keys are:
+.TP
+.B j
+left
+.TP
+.B k
+rotate
+.TP
+.B l
+right
+.TP
+.B Space
+drop
+.TP
+.B m
+down faster
+.TP
+.B s
+toggle spying on the other player
+.TP
+.B p
+pause
+.TP
+.B f
+make game faster (irreversable)
+.TP
+.B Ctrl-L
+redraw the screen
+.LP
+To see usage information, type "
+.I netris 
+.B  -h
+".
+To see distribution/warranty information, type "
+.I netris
+.B -H
+".
+To see the rules, type "
+.I netris
+.B -R
+".
+To use a port number other than the default, use the 
+.B -p
+option.
+.LP
+You can remap the keys with "
+.B -k <keys>
+", where 
+.B <keys>
+is a string
+containing the keys in the order listed above.
+.LP
+The default is:
+.I netris
+.B -k jkl mspf^l
+.LP
+You needn't specify all of the keys, for example
+.B -k asd
+will only
+change the main three keys.
+.B ^x
+notation can be used for control
+characters.
+.LP
+The
+.B m
+key moves the falling piece down one block, in addition to the
+usual step-down timer.  Use this in repetition when "drop" would go
+too far but you don't want to wait for the piece of fall.
+.SH AUTHOR
+.TP
+Mark H. Weaver <mhw@netris.org>
+.SH BUGS
+.TP
+One-player mode is a tad boring at the moment, because it never gets any faster, and there's no scoring.  This will be rectified at some point.  For now, use the
+.B f
+key (by default) to make the
+game go faster.  Speedups cannot be reversed for the remainder of
+the game.
+.SH COPYRIGHT
+.TP
+Copyright (C) 1994,1995,1996  Mark H. Weaver <mhw@netris.org>
+.LP
+netris is free software; you  can  redistribute  it  and/or
+modify  it  under  the  terms  of  the  GNU General Public
+License as published  by  the  Free  Software  Foundation;
+either version 2, or (at your option) any later version.
+
+
