@@ -347,6 +347,7 @@
     SUBDIR += kimwitu++
     SUBDIR += korelib
     SUBDIR += kprof
+    SUBDIR += kscope
     SUBDIR += kyra
     SUBDIR += lbpp
     SUBDIR += leaktracer

@@ -1,0 +1,11 @@
+From the documentation:
+
+KScope is a source-editing environment for KDE. Primarily, it is a
+front-end to the veteran Cscope, a source-code browser originally
+developed at Bell XLabs. Cscope works by parsing a set of source files,
+creating a cross- reference database, and allowing the user to query
+this database. KScope, however, extends the feature-set of Cscope with
+a contemporary user Xinterface, editor integration, project management
+capabilities, and multiple query result windows.
+
+WWW:	http://kscope.sourceforge.net/
