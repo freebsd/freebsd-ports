@@ -6403,6 +6403,7 @@ sendmail-sasl	ports/mail/sendmail-sasl
 senso		ports/games/senso
 seqio		ports/biology/seqio
 serialmail	ports/mail/serialmail
+serveez		ports/net/serveez
 service-config	ports/sysutils/service-config
 setcdboot	ports/sysutils/setcdboot
 setextattr	src/usr.sbin/setextattr
