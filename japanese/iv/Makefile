@@ -3,15 +3,14 @@
 # Date created:		23.Feb.1996
 # Whom:			sanpei@yy.cs.keio.ac.jp
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/02 14:55:58 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/14 21:34:42 max Exp $
 #
 
 DISTNAME=	iv-3.1
 PKGNAME=	ja-iv-3.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://interviews.stanford.edu/pub/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
-		ftp://ftp.phys.keio.ac.jp/pub/FreeBSD/local-distfiles/
+		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTFILES=	3.1.tar.Z iv3_1j_gamma.tar.gz
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
