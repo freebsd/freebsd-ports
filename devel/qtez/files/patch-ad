@@ -1,22 +1,22 @@
---- configure.in.orig	Tue Jul 18 16:43:22 2000
-+++ configure.in	Tue Sep 26 00:47:45 2000
+--- configure.in.orig	Wed Nov 22 16:55:07 2000
++++ configure.in	Fri Feb  2 22:45:34 2001
 @@ -48,15 +48,15 @@
  if test "$enableval" = "yes"; then \
    DEBUG="-g -DDEBUG -W -Wall"; \
  else
 -  DEBUG="-O2 -DNO_DEBUG -DNO_CHECK"; \
-+  DEBUG="-DNO_DEBUG -DNO_CHECK"; \
++  DEBUG="$CXXFLAGS -DNO_DEBUG -DNO_CHECK"; \
  fi,
  enableval=no
 -DEBUG="-O2 -DNO_DEBUG -DNO_CHECK")
-+DEBUG="-DNO_DEBUG -DNO_CHECK")
++DEBUG="$CXXFLAGS -DNO_DEBUG -DNO_CHECK")
  AC_MSG_RESULT($enableval)
  AC_SUBST(DEBUG)
  
- AC_MSG_CHECKING(for Qt >= 2.1.0)
--if ! test -r $QTDIR/include/qinputdialog.h; then
-+if ! test -r $QTDIR/include/qt2/qinputdialog.h; then
-   AC_MSG_ERROR([  Sorry, but you need Qt version 2.1.0 or higher to compile $PACKAGE])
+ AC_MSG_CHECKING(for Qt >= 2.2.0)
+-if ! test -r $QTDIR/include/qaction.h; then
++if ! test -r $QTDIR/include/qt2/qaction.h; then
+   AC_MSG_ERROR([  Sorry, but you need Qt version 2.2.0 or higher to compile $PACKAGE])
   else
    AC_MSG_RESULT(yes)
 @@ -64,12 +64,12 @@

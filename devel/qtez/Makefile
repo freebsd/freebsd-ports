@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtez
-PORTVERSION=	0.93.2
+PORTVERSION=	0.93.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qtez.ibl.sk/qtez/download/
@@ -21,19 +21,15 @@ USE_AUTOMAKE=	yes
 AUTOMAKE=	automake -a -i && ${PERL} automoc
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2" \
-		QTEZ="${X11BASE}/share/qtez"
-CONFIGURE_ARGS=	--disable-shared
-MAKE_ENV=	QTEZ="${X11BASE}/share/qtez"
+		QTEZ="${PREFIX}/share/qtez"
+MAKE_ENV=	QTEZ="${PREFIX}/share/qtez"
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
-
-post-patch:
-	@find ${WRKSRC} -name "Makefile.am" | xargs ${PERL} -pi -e \
-		's|\@DEBUG\@|\@CXXFLAGS\@ \@DEBUG\@|g'
 
 pre-configure:
 	@cd ${WRKSRC}/src && ${SH} ./autolinks.sh
