@@ -311,13 +311,13 @@ share/doc/hugs/index.html
 share/doc/hugs/hugs.man
 share/doc/hugs/hugs.hlp
 share/doc/hugs/Makefile
-@unexec rmdir %D/share/doc/hugs/haskore-html 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs/library 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs/libs-html 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs/manual-html 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs/report 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs/tutorial 2> /dev/null || true
-@unexec rmdir %D/share/doc/hugs 2> /dev/null || true
-@unexec rmdir %D/share/hugs/demos 2> /dev/null || true
-@unexec rmdir %D/share/hugs/lib 2> /dev/null || true
-@unexec rmdir %D/share/hugs 2> /dev/null || true
+@dirrm share/doc/hugs/haskore-html
+@dirrm share/doc/hugs/library
+@dirrm share/doc/hugs/libs-html
+@dirrm share/doc/hugs/manual-html
+@dirrm share/doc/hugs/report
+@dirrm share/doc/hugs/tutorial
+@dirrm share/doc/hugs
+@dirrm share/hugs/demos
+@dirrm share/hugs/lib
+@dirrm share/hugs
