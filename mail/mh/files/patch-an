@@ -1,0 +1,23 @@
+--- support/pop/mmdfII/pop/lock.c.orig	Wed Dec  1 13:01:30 1993
++++ support/pop/mmdfII/pop/lock.c	Sat Jan 16 20:57:44 1999
+@@ -47,6 +47,11 @@
+ #include <sys/file.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <fcntl.h>
++#endif
++#include <time.h>
++
+ #ifdef	SYS5
+ #define	u_short	ushort
+ #define u_long  ulong
+@@ -71,8 +76,6 @@
+ 
+ static int	b_lkopen(), lockit(), f_lkopen();
+ static		lockname(), timerON(), timerOFF();
+-
+-long	time ();
+ 
+ /*  */
+ 

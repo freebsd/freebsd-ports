@@ -1,0 +1,18 @@
+--- uip/sendsbr.c.orig	Wed Dec  1 13:01:38 1993
++++ uip/sendsbr.c	Sat Jan 16 20:42:58 1999
+@@ -9,6 +9,7 @@
+ #include <signal.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <time.h>
+ 
+ static		alert(), anno(), annoaux();
+ static int	tmp_fd();
+@@ -39,7 +40,6 @@
+ 
+ char   *getusr ();
+ off_t	lseek ();
+-long	time ();
+ 
+ /*  */
+ 

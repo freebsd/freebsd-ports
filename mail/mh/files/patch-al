@@ -1,0 +1,21 @@
+--- zotnet/tws/phoon/dtime.c.orig	Wed Dec  1 13:01:44 1993
++++ zotnet/tws/phoon/dtime.c	Sat Jan 16 20:56:24 1999
+@@ -26,6 +26,8 @@
+ extern char *tzname[];
+ #endif	SYS5
+ 
++#include<time.h>
++
+ /*  */
+ 
+ #define	abs(a) ( a >= 0 ? a : -a )
+@@ -86,9 +88,6 @@
+ 	NULL };
+ 
+ #define CENTURY 19
+-
+-long time( );
+-struct tm *localtime( );
+ 
+ /*  */
+ 

@@ -1,0 +1,18 @@
+--- uip/forw.c.orig	Sat Jan 16 21:06:24 1999
++++ uip/forw.c	Sat Jan 16 21:07:07 1999
+@@ -12,6 +12,7 @@
+ #ifdef LOCALE
+ #include	<locale.h>
+ #endif
++#include <time.h>
+ 
+ #ifndef	MIME
+ #define	MIMEminc(a)	(a)
+@@ -133,7 +134,6 @@
+ static struct msgs *mp = NULL;		/* used a lot */
+ 
+ 
+-long	time ();
+ off_t	lseek();
+ 
+ /*  */
