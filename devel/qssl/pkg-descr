@@ -1,0 +1,4 @@
+QSSL is a Qt plugin that helps applications use OpenSSL.  It was
+originally written to be used with the Psi Jabber client (see net/psi).
+
+WWW: http://psi.sourceforge.net/
