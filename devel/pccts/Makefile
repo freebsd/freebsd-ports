@@ -7,10 +7,10 @@
 #
 
 PORTNAME=		pccts
-PORTVERSION=		1.33.29
+PORTVERSION=		1.33.31
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
-DISTNAME=		pccts133mr
+DISTNAME=		pccts${PORTVERSION:R:S/.//}mr${PORTVERSION:E}
 
 MAINTAINER=		ports@FreeBSD.org
 
