@@ -22,7 +22,6 @@ lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp1/libgcc.a
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp2/libgcc.a
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/tradcpp0
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/specs
-lib/libiberty.a
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp1
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/msp2
