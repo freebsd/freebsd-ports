@@ -2,6 +2,7 @@
 www/data-dist/phpgroupware/about.php
 www/data-dist/phpgroupware/addressbook/admin.php
 www/data-dist/phpgroupware/addressbook/csv_import.php
+www/data-dist/phpgroupware/addressbook/help/DE/addressbook.php
 www/data-dist/phpgroupware/addressbook/help/EN/addressbook.php
 www/data-dist/phpgroupware/addressbook/help/FI/addressbook.php
 www/data-dist/phpgroupware/addressbook/help/JA/addressbook.php
@@ -95,6 +96,10 @@ www/data-dist/phpgroupware/admin/doc/adminconfig.ps
 www/data-dist/phpgroupware/admin/doc/adminconfig.sgml
 www/data-dist/phpgroupware/admin/doc/adminconfig.txt
 www/data-dist/phpgroupware/admin/doc/copyright.gpl
+www/data-dist/phpgroupware/admin/help/DE/account.php
+www/data-dist/phpgroupware/admin/help/DE/admin.php
+www/data-dist/phpgroupware/admin/help/DE/other.php
+www/data-dist/phpgroupware/admin/help/DE/session.php
 www/data-dist/phpgroupware/admin/help/EN/account.php
 www/data-dist/phpgroupware/admin/help/EN/admin.php
 www/data-dist/phpgroupware/admin/help/EN/other.php
@@ -563,6 +568,10 @@ www/data-dist/phpgroupware/brewer/view.php
 www/data-dist/phpgroupware/brewer/view_recipe.php
 www/data-dist/phpgroupware/brewer/yeasts.php
 www/data-dist/phpgroupware/calendar/doc/rfc2445.txt
+www/data-dist/phpgroupware/calendar/help/DE/add.php
+www/data-dist/phpgroupware/calendar/help/DE/calendar.php
+www/data-dist/phpgroupware/calendar/help/DE/edit_delete.php
+www/data-dist/phpgroupware/calendar/help/DE/view.php
 www/data-dist/phpgroupware/calendar/help/EN/add.php
 www/data-dist/phpgroupware/calendar/help/EN/calendar.php
 www/data-dist/phpgroupware/calendar/help/EN/edit_delete.php
@@ -612,6 +621,65 @@ www/data-dist/phpgroupware/calendar/inc/hook_manual.inc.php
 www/data-dist/phpgroupware/calendar/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/calendar/index.php
 www/data-dist/phpgroupware/calendar/phpgroupware.org/accept_holiday.php
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.AT.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.AU.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.BE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.BR.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.BW.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CA.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CH.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CL.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CO.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CS.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.CZ.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.DE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.EC.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.EE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.ES.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.FI.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.FR.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.GE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.HK.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.HU.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.ID.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.IE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.IN.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.IT.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.JA.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.JM.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.JP.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.KO.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.KR.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.LT.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.MS.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.MT.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.MU.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.MX.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.MY.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.NL.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.NO.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.NZ.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.PH.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.PL.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.PT.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.RE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.RF.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.RJ.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.RU.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.SA.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.SE.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.SG.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.SK.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.SP.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.TH.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.TR.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.TW.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.UK.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.US.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.XC.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.ZA.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/holidays.ZH.txt
+www/data-dist/phpgroupware/calendar/phpgroupware.org/secure-holidays.sh
 www/data-dist/phpgroupware/calendar/preferences.php
 www/data-dist/phpgroupware/calendar/setup/holidays.CA
 www/data-dist/phpgroupware/calendar/setup/holidays.DE
@@ -2434,6 +2502,7 @@ www/data-dist/phpgroupware/manual/email_notes.php
 www/data-dist/phpgroupware/manual/email_other.php
 www/data-dist/phpgroupware/manual/email_reply.php
 www/data-dist/phpgroupware/manual/email_viewing.php
+www/data-dist/phpgroupware/manual/help/DE/overview.php
 www/data-dist/phpgroupware/manual/help/EN/overview.php
 www/data-dist/phpgroupware/manual/home.php
 www/data-dist/phpgroupware/manual/hr.php
@@ -4163,6 +4232,9 @@ www/data-dist/phpgroupware/polls/vote.php
 www/data-dist/phpgroupware/preferences/changepassword.php
 www/data-dist/phpgroupware/preferences/changeprofile.php
 www/data-dist/phpgroupware/preferences/doc/copyright.gpl
+www/data-dist/phpgroupware/preferences/help/DE/other.php
+www/data-dist/phpgroupware/preferences/help/DE/preferences.php
+www/data-dist/phpgroupware/preferences/help/DE/settings.php
 www/data-dist/phpgroupware/preferences/help/EN/other.php
 www/data-dist/phpgroupware/preferences/help/EN/preferences.php
 www/data-dist/phpgroupware/preferences/help/EN/settings.php
@@ -5164,6 +5236,9 @@ www/data-dist/phpgroupware/timetrack/viewjob.php
 www/data-dist/phpgroupware/timetrack/viewprofile.php
 www/data-dist/phpgroupware/todo/doc/CHANGELOG
 www/data-dist/phpgroupware/todo/doc/copyright.gpl
+www/data-dist/phpgroupware/todo/help/DE/add.php
+www/data-dist/phpgroupware/todo/help/DE/other.php
+www/data-dist/phpgroupware/todo/help/DE/todo.php
 www/data-dist/phpgroupware/todo/help/EN/add.php
 www/data-dist/phpgroupware/todo/help/EN/other.php
 www/data-dist/phpgroupware/todo/help/EN/todo.php
@@ -5297,6 +5372,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/todo/setup
 @dirrm www/data-dist/phpgroupware/todo/inc
 @dirrm www/data-dist/phpgroupware/todo/help/EN
+@dirrm www/data-dist/phpgroupware/todo/help/DE
 @dirrm www/data-dist/phpgroupware/todo/help
 @dirrm www/data-dist/phpgroupware/todo/doc
 @dirrm www/data-dist/phpgroupware/todo
@@ -5437,6 +5513,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/preferences/setup
 @dirrm www/data-dist/phpgroupware/preferences/inc
 @dirrm www/data-dist/phpgroupware/preferences/help/EN
+@dirrm www/data-dist/phpgroupware/preferences/help/DE
 @dirrm www/data-dist/phpgroupware/preferences/help
 @dirrm www/data-dist/phpgroupware/preferences/doc
 @dirrm www/data-dist/phpgroupware/preferences
@@ -5576,6 +5653,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/manual/setup
 @dirrm www/data-dist/phpgroupware/manual/inc
 @dirrm www/data-dist/phpgroupware/manual/help/EN
+@dirrm www/data-dist/phpgroupware/manual/help/DE
 @dirrm www/data-dist/phpgroupware/manual/help
 @dirrm www/data-dist/phpgroupware/manual
 @dirrm www/data-dist/phpgroupware/inv/templates/idsociety/images
@@ -5770,6 +5848,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/calendar/help/JA
 @dirrm www/data-dist/phpgroupware/calendar/help/FI
 @dirrm www/data-dist/phpgroupware/calendar/help/EN
+@dirrm www/data-dist/phpgroupware/calendar/help/DE
 @dirrm www/data-dist/phpgroupware/calendar/help
 @dirrm www/data-dist/phpgroupware/calendar/doc
 @dirrm www/data-dist/phpgroupware/calendar
@@ -5812,6 +5891,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/admin/help/JA
 @dirrm www/data-dist/phpgroupware/admin/help/FI
 @dirrm www/data-dist/phpgroupware/admin/help/EN
+@dirrm www/data-dist/phpgroupware/admin/help/DE
 @dirrm www/data-dist/phpgroupware/admin/help
 @dirrm www/data-dist/phpgroupware/admin/doc
 @dirrm www/data-dist/phpgroupware/admin
@@ -5827,6 +5907,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/addressbook/help/JA
 @dirrm www/data-dist/phpgroupware/addressbook/help/FI
 @dirrm www/data-dist/phpgroupware/addressbook/help/EN
+@dirrm www/data-dist/phpgroupware/addressbook/help/DE
 @dirrm www/data-dist/phpgroupware/addressbook/help
 @dirrm www/data-dist/phpgroupware/addressbook
-@dirrm www/data-dist/phpgroupware
+@unexec rmdir %D/www/data-dist/phpgroupware 2>/dev/null || true
