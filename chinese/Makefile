@@ -60,6 +60,7 @@
     SUBDIR += libtabe
     SUBDIR += links
     SUBDIR += linux-gtk
+    SUBDIR += linux-mozillafirebird-zh_TW
     SUBDIR += lunar
     SUBDIR += metalist
     SUBDIR += miniChinput
