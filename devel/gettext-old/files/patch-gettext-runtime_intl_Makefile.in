@@ -1,0 +1,58 @@
+$FreeBSD$
+
+--- gettext-runtime/intl/Makefile.in.orig	Wed May 21 06:55:18 2003
++++ gettext-runtime/intl/Makefile.in	Wed Jun 11 14:28:58 2003
+@@ -52,7 +52,7 @@
+ YFLAGS = --name-prefix=__gettext
+ 
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
+--DLIBDIR=\"$(libdir)\" -DIN_LIBINTL \
++-DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL \
+ -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
+ -Dset_relocation_prefix=libintl_set_relocation_prefix \
+ -Drelocate=libintl_relocate \
+@@ -145,7 +145,7 @@
+ libintl.la libgnuintl.la: $(OBJECTS)
+ 	$(LIBTOOL) --mode=link \
+ 	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
+-	  $(OBJECTS) @LTLIBICONV@ $(LIBS) -lc \
++	  $(OBJECTS) @LTLIBICONV@ $(LIBS) \
+ 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
+ 	  -rpath $(libdir) \
+ 	  -no-undefined
+@@ -270,22 +270,6 @@
+ 	  : ; \
+ 	fi
+ 	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
+-	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(libdir); \
+-	  temp=$(DESTDIR)$(libdir)/t-charset.alias; \
+-	  dest=$(DESTDIR)$(libdir)/charset.alias; \
+-	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
+-	    orig=$(DESTDIR)$(libdir)/charset.alias; \
+-	    sed -f ref-add.sed $$orig > $$temp; \
+-	    $(INSTALL_DATA) $$temp $$dest; \
+-	    rm -f $$temp; \
+-	  else \
+-	    if test @GLIBC21@ = no; then \
+-	      orig=charset.alias; \
+-	      sed -f ref-add.sed $$orig > $$temp; \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	      rm -f $$temp; \
+-	    fi; \
+-	  fi; \
+ 	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
+ 	  test -f $(DESTDIR)$(localedir)/locale.alias \
+ 	    && orig=$(DESTDIR)$(localedir)/locale.alias \
+@@ -369,9 +353,9 @@
+ 	  : ; \
+ 	fi
+ 	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
+-	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
+-	    temp=$(DESTDIR)$(libdir)/t-charset.alias; \
+-	    dest=$(DESTDIR)$(libdir)/charset.alias; \
++	  if test -f $(DESTDIR)$(prefix)/libdata/charset.alias; then \
++	    temp=$(DESTDIR)$(prefix)/libdata/t-charset.alias; \
++	    dest=$(DESTDIR)$(prefix)/libdata/charset.alias; \
+ 	    sed -f ref-del.sed $$dest > $$temp; \
+ 	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
+ 	      rm -f $$dest; \

@@ -249,6 +249,7 @@
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
+    SUBDIR += gettext-old
     SUBDIR += getxml
     SUBDIR += gindent
     SUBDIR += glade2

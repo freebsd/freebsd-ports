@@ -1,0 +1,31 @@
+$FreeBSD$
+
+--- gettext-tools/lib/Makefile.in.orig	Thu May 22 09:41:20 2003
++++ gettext-tools/lib/Makefile.in	Wed Jun 11 14:05:44 2003
+@@ -67,7 +67,7 @@
+ CYGPATH_W = @CYGPATH_W@
+ DATADIRNAME = @DATADIRNAME@
+ 
+-DEFS = -DEXEEXT=\"$(EXEEXT)\" -DDEPENDS_ON_LIBINTL=1 -DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(libdir)\"
++DEFS = -DEXEEXT=\"$(EXEEXT)\" -DDEPENDS_ON_LIBINTL=1 -DDEPENDS_ON_LIBICONV=1 @DEFS@ -DLIBDIR=\"$(prefix)/libdata\"
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DVIPS = @DVIPS@
+@@ -317,7 +317,7 @@
+ # Need @LTLIBICONV@ because linebreak.c uses iconv().
+ libgettextlib_la_LDFLAGS = \
+   -release @VERSION@ \
+-  @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  @LTLIBINTL@ @LTLIBICONV@ -no-undefined
+ 
+ 
+ 
+@@ -599,7 +599,7 @@
+ 
+ install-data-am: install-gettextsrcDATA
+ 
+-install-exec-am: install-exec-local install-libLTLIBRARIES
++install-exec-am: install-libLTLIBRARIES
+ 
+ install-info: install-info-am
+ 

@@ -1,0 +1,15 @@
+$FreeBSD$
+
+--- gettext-tools/misc/Makefile.in.orig	Thu May 22 09:41:22 2003
++++ gettext-tools/misc/Makefile.in	Wed Jun 11 14:00:52 2003
+@@ -332,10 +332,8 @@
+ 	    if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+ 	    echo " $(lispLISP_INSTALL) $$d$$p $(DESTDIR)$(lispdir)/$$f"; \
+-	    $(lispLISP_INSTALL) $$d$$p $(DESTDIR)$(lispdir)/$$f; \
+ 	    if test -f $${p}c; then \
+ 	      echo " $(lispLISP_INSTALL) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
+-	      $(lispLISP_INSTALL) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
+ 	    else : ; fi; \
+ 	  done; \
+ 	else : ; fi
