@@ -7,24 +7,22 @@
 #
 
 PORTNAME=	libsigcx
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	libsigcx
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	libSigC++ Extras
+COMMENT=	An extension of libSigC++
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_REINPLACE=	yes
-USE_GNOME=	gtk20 gnomehack
-USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-static --enable-shared
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
