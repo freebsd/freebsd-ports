@@ -22,6 +22,12 @@ share/gnome/themes/BlueSphere/metacity-1/titlebar-left-iconbg-shaded.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-left-iconbg.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-left-title.png
 share/gnome/themes/BlueSphere/metacity-1/titlebar-right-bumper.png
+share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Gorilla/metacity-1/wm-close.svg
+share/gnome/themes/Gorilla/metacity-1/wm-max.svg
+share/gnome/themes/Gorilla/metacity-1/wm-menu.svg
+share/gnome/themes/Gorilla/metacity-1/wm-min.svg
+share/gnome/themes/Gorilla/metacity-1/wm-restore.svg
 share/gnome/themes/Lush/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Nuvola/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Nuvola/metacity-1/wm-close.png
@@ -100,6 +106,198 @@ share/icons/BlueSphere/scalable/stock/text_under.svg
 share/icons/BlueSphere/scalable/stock/undo-3.2.svg
 share/icons/BlueSphere/scalable/stock/viewmag-_2.svg
 share/icons/BlueSphere/scalable/stock/viewmagfit.svg
+share/icons/Gorilla/index.theme
+share/icons/Gorilla/scalable/apps/gnome-gimp.svg
+share/icons/Gorilla/scalable/apps/gnome-terminal.svg
+share/icons/Gorilla/scalable/apps/my-computer.svg
+share/icons/Gorilla/scalable/apps/web-browser.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-cdrom-audio.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-cdrom.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-dvd.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-harddisk.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-network.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-rw.svg
+share/icons/Gorilla/scalable/devices/gnome-dev-symlink.svg
+share/icons/Gorilla/scalable/emblems/emblem-audio.svg
+share/icons/Gorilla/scalable/emblems/emblem-camera.svg
+share/icons/Gorilla/scalable/emblems/emblem-cool.svg
+share/icons/Gorilla/scalable/emblems/emblem-danger.svg
+share/icons/Gorilla/scalable/emblems/emblem-distinguished.svg
+share/icons/Gorilla/scalable/emblems/emblem-documents.svg
+share/icons/Gorilla/scalable/emblems/emblem-fun.svg
+share/icons/Gorilla/scalable/emblems/emblem-generic.svg
+share/icons/Gorilla/scalable/emblems/emblem-important.svg
+share/icons/Gorilla/scalable/emblems/emblem-multimedia.svg
+share/icons/Gorilla/scalable/emblems/emblem-noread.svg
+share/icons/Gorilla/scalable/emblems/emblem-nowrite.svg
+share/icons/Gorilla/scalable/emblems/emblem-ohno.svg
+share/icons/Gorilla/scalable/emblems/emblem-package.svg
+share/icons/Gorilla/scalable/emblems/emblem-pictures.svg
+share/icons/Gorilla/scalable/emblems/emblem-relax.svg
+share/icons/Gorilla/scalable/emblems/emblem-symbolic-link.svg
+share/icons/Gorilla/scalable/emblems/emblem-urgent.svg
+share/icons/Gorilla/scalable/emblems/emblem-web.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-blockdev.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-bookmark-missing.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-bookmark.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-chardev.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-directory-accept.icon
+share/icons/Gorilla/scalable/filesystems/gnome-fs-directory-accept.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-directory.icon
+share/icons/Gorilla/scalable/filesystems/gnome-fs-directory.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-executable.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-ftp.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-home.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-loading-icon.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-network.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-nfs.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-regular.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-server.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-smb.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-ssh.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-trash-empty.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-trash-full.svg
+share/icons/Gorilla/scalable/filesystems/gnome-fs-web.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-compressed.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-msword.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-pdf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-pgp.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-postscript.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.ms-excel.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.ms-powerpoint.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.rn-realmedia.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.calc.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.draw.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.impress.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-vnd.sun.xml.writer.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-abiword.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-backup.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-deb.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-dvi.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-afm.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-bdf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-linux-psf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-pcf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-ttf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-font-type1.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-gnome-app-info.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-gnucash.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-gnumeric.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-killustrator.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-kpresenter.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-kspread.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-kword.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-ogg.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-php.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-rpm.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-shared-library.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-application-x-stuffit.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-audio-x-midi.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-audio.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-image-x-xcf.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-image.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-css.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-html.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-authors.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-copying.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-install.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-java.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-lyx.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-makefile.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-patch.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-readme.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-sh.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-sql.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text-x-troff-man.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-text.svg
+share/icons/Gorilla/scalable/mimetypes/gnome-mime-video.svg
+share/icons/Gorilla/scalable/stock/stock_about.svg
+share/icons/Gorilla/scalable/stock/stock_add.svg
+share/icons/Gorilla/scalable/stock/stock_attach.svg
+share/icons/Gorilla/scalable/stock/stock_balance.svg
+share/icons/Gorilla/scalable/stock/stock_bold.svg
+share/icons/Gorilla/scalable/stock/stock_book-open.svg
+share/icons/Gorilla/scalable/stock/stock_book.svg
+share/icons/Gorilla/scalable/stock/stock_cancel.svg
+share/icons/Gorilla/scalable/stock/stock_cdrom.svg
+share/icons/Gorilla/scalable/stock/stock_clear.svg
+share/icons/Gorilla/scalable/stock/stock_close.svg
+share/icons/Gorilla/scalable/stock/stock_connect.svg
+share/icons/Gorilla/scalable/stock/stock_convert.svg
+share/icons/Gorilla/scalable/stock/stock_copy.svg
+share/icons/Gorilla/scalable/stock/stock_cut.svg
+share/icons/Gorilla/scalable/stock/stock_delete.svg
+share/icons/Gorilla/scalable/stock/stock_dialog_error.svg
+share/icons/Gorilla/scalable/stock/stock_dialog_info.svg
+share/icons/Gorilla/scalable/stock/stock_dialog_question.svg
+share/icons/Gorilla/scalable/stock/stock_dialog_warning.svg
+share/icons/Gorilla/scalable/stock/stock_disconnect.svg
+share/icons/Gorilla/scalable/stock/stock_dnd.svg
+share/icons/Gorilla/scalable/stock/stock_dnd_multiple.svg
+share/icons/Gorilla/scalable/stock/stock_edit.svg
+share/icons/Gorilla/scalable/stock/stock_execute.svg
+share/icons/Gorilla/scalable/stock/stock_export.svg
+share/icons/Gorilla/scalable/stock/stock_find-and-replace.svg
+share/icons/Gorilla/scalable/stock/stock_find.svg
+share/icons/Gorilla/scalable/stock/stock_floppy.svg
+share/icons/Gorilla/scalable/stock/stock_go-back.svg
+share/icons/Gorilla/scalable/stock/stock_go-down.svg
+share/icons/Gorilla/scalable/stock/stock_go-forward.svg
+share/icons/Gorilla/scalable/stock/stock_go-up.svg
+share/icons/Gorilla/scalable/stock/stock_goto-bottom.svg
+share/icons/Gorilla/scalable/stock/stock_goto-first.svg
+share/icons/Gorilla/scalable/stock/stock_goto-last.svg
+share/icons/Gorilla/scalable/stock/stock_goto-top.svg
+share/icons/Gorilla/scalable/stock/stock_help.svg
+share/icons/Gorilla/scalable/stock/stock_home.svg
+share/icons/Gorilla/scalable/stock/stock_import.svg
+share/icons/Gorilla/scalable/stock/stock_index.svg
+share/icons/Gorilla/scalable/stock/stock_insert-image.svg
+share/icons/Gorilla/scalable/stock/stock_insert-object.svg
+share/icons/Gorilla/scalable/stock/stock_insert-table.svg
+share/icons/Gorilla/scalable/stock/stock_italic.svg
+share/icons/Gorilla/scalable/stock/stock_jump-to.svg
+share/icons/Gorilla/scalable/stock/stock_justify-center.svg
+share/icons/Gorilla/scalable/stock/stock_justify-fill.svg
+share/icons/Gorilla/scalable/stock/stock_justify-left.svg
+share/icons/Gorilla/scalable/stock/stock_justify-right.svg
+share/icons/Gorilla/scalable/stock/stock_line-in.svg
+share/icons/Gorilla/scalable/stock/stock_mic.svg
+share/icons/Gorilla/scalable/stock/stock_missing-image.svg
+share/icons/Gorilla/scalable/stock/stock_new.svg
+share/icons/Gorilla/scalable/stock/stock_no.svg
+share/icons/Gorilla/scalable/stock/stock_ok.svg
+share/icons/Gorilla/scalable/stock/stock_open.svg
+share/icons/Gorilla/scalable/stock/stock_paste.svg
+share/icons/Gorilla/scalable/stock/stock_preferences.svg
+share/icons/Gorilla/scalable/stock/stock_print-preview.svg
+share/icons/Gorilla/scalable/stock/stock_print.svg
+share/icons/Gorilla/scalable/stock/stock_properties.svg
+share/icons/Gorilla/scalable/stock/stock_quit.svg
+share/icons/Gorilla/scalable/stock/stock_redo.svg
+share/icons/Gorilla/scalable/stock/stock_refresh.svg
+share/icons/Gorilla/scalable/stock/stock_remove.svg
+share/icons/Gorilla/scalable/stock/stock_reset.svg
+share/icons/Gorilla/scalable/stock/stock_revert-to-saved.svg
+share/icons/Gorilla/scalable/stock/stock_save-as.svg
+share/icons/Gorilla/scalable/stock/stock_save.svg
+share/icons/Gorilla/scalable/stock/stock_select-color.svg
+share/icons/Gorilla/scalable/stock/stock_select-font.svg
+share/icons/Gorilla/scalable/stock/stock_sort-ascending.svg
+share/icons/Gorilla/scalable/stock/stock_sort-descending.svg
+share/icons/Gorilla/scalable/stock/stock_spell-check.svg
+share/icons/Gorilla/scalable/stock/stock_stop.svg
+share/icons/Gorilla/scalable/stock/stock_strikethrough.svg
+share/icons/Gorilla/scalable/stock/stock_undelete.svg
+share/icons/Gorilla/scalable/stock/stock_underline.svg
+share/icons/Gorilla/scalable/stock/stock_undo.svg
+share/icons/Gorilla/scalable/stock/stock_volume.svg
+share/icons/Gorilla/scalable/stock/stock_yes.svg
+share/icons/Gorilla/scalable/stock/stock_zoom-100.svg
+share/icons/Gorilla/scalable/stock/stock_zoom-fit.svg
+share/icons/Gorilla/scalable/stock/stock_zoom-in.svg
+share/icons/Gorilla/scalable/stock/stock_zoom-out.svg
 share/icons/Lush/index.theme
 share/icons/Lush/scalable/apps/gnome-gimp.svg
 share/icons/Lush/scalable/apps/gnome-palette.svg
@@ -604,6 +802,10 @@ share/themes/BlueSphere/gtk-2.0/vertical_line.png
 share/themes/BlueSphere/gtk-2.0/vertical_ruler.png
 share/themes/BlueSphere/gtk-2.0/vertical_trough.png
 share/themes/BlueSphere/gtk-2.0/window_background.png
+share/themes/Gorilla/gtk-2.0/gtkrc
+share/themes/Gorilla/gtk-2.0/iconrc
+share/themes/Gorilla/gtk/gtkrc
+share/themes/Gorilla/index.theme
 share/themes/Lush/gtk-2.0/gtkrc
 share/themes/Lush/gtk-2.0/iconrc
 share/themes/Lush/index.theme
@@ -619,6 +821,9 @@ share/themes/Wasp/index.theme
 @dirrm share/themes/Nuvola
 @dirrm share/themes/Lush/gtk-2.0
 @dirrm share/themes/Lush
+@dirrm share/themes/Gorilla/gtk-2.0
+@dirrm share/themes/Gorilla/gtk
+@dirrm share/themes/Gorilla
 @dirrm share/themes/BlueSphere/gtk-2.0
 @dirrm share/themes/BlueSphere
 @dirrm share/icons/Wasp/scalable/stock
@@ -645,6 +850,14 @@ share/themes/Wasp/index.theme
 @dirrm share/icons/Lush/scalable/apps
 @dirrm share/icons/Lush/scalable
 @dirrm share/icons/Lush
+@dirrm share/icons/Gorilla/scalable/stock
+@dirrm share/icons/Gorilla/scalable/mimetypes
+@dirrm share/icons/Gorilla/scalable/filesystems
+@dirrm share/icons/Gorilla/scalable/emblems
+@dirrm share/icons/Gorilla/scalable/devices
+@dirrm share/icons/Gorilla/scalable/apps
+@dirrm share/icons/Gorilla/scalable
+@dirrm share/icons/Gorilla
 @dirrm share/icons/BlueSphere/scalable/stock
 @dirrm share/icons/BlueSphere/scalable
 @dirrm share/icons/BlueSphere
@@ -654,5 +867,7 @@ share/themes/Wasp/index.theme
 @dirrm share/gnome/themes/Nuvola
 @dirrm share/gnome/themes/Lush/metacity-1
 @dirrm share/gnome/themes/Lush
+@dirrm share/gnome/themes/Gorilla/metacity-1
+@dirrm share/gnome/themes/Gorilla
 @dirrm share/gnome/themes/BlueSphere/metacity-1
 @dirrm share/gnome/themes/BlueSphere
