@@ -7,22 +7,23 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete rewrite of the NASM assembler
 
-BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
-
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install-man
+MAN1=		yasm.1
+MAN7=		yasm_arch.7
+.endif
 
 .include <bsd.port.mk>
