@@ -261,7 +261,6 @@
     SUBDIR += kopete
     SUBDIR += kpopup
     SUBDIR += krdesktop
-    SUBDIR += kxicq-devel
     SUBDIR += l2tpd
     SUBDIR += lam
     SUBDIR += lambdamoo
