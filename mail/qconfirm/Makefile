@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.13.1
+PORTVERSION=	0.14.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
@@ -27,7 +27,7 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && package/compile && package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
