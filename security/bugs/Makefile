@@ -5,28 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=		bugs
-PORTVERSION=		4.1.0
-CATEGORIES=		security
-MASTER_SITES=		http://www.encryptsolutions.com/english/download/ \
-			http://www.bcrypt.com/english/download/
-EXTRACT_SUFX=		.tgz
+PORTNAME=	bugs
+PORTVERSION=	4.1.1
+CATEGORIES=	security
+MASTER_SITES=	http://www.encryptsolutions.com/english/download/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		stephane@freebsd-fr.org
+MAINTAINER=	stephane@freebsd-fr.org
 COMMENT=	Great cryptography library and sample programs
 
-PLIST_SUB+=		PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-USE_GMAKE=		yes
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 # No Manual page
 
 post-configure:
-	(cd ${WRKSRC}; ${MAKE} bsd)
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
-	${SED} -e 's:^INSTALL_PATH = "/usr/local/bugs-.*":INSTALL_PATH = "${PREFIX}/${DISTNAME}":' \
-		-e 's/^install: instchoice all/install: instchoice/' \
-		< ${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
+	(cd ${WRKSRC}; ${MAKE} bsd);
+	${REINPLACE_CMD} -e 's:^INSTALL_PATH = "/usr/local/bugs-.*":INSTALL_PATH = "${PREFIX}/${DISTNAME}":' ${WRKSRC}/Makefile;
+	${REINPLACE_CMD} -e 's/^install: instchoice all/install: instchoice/' ${WRKSRC}/Makefile;
+	# Comment the docs installation
+	${REINPLACE_CMD} -e 's+\(@echo "Copying docs.*\)+# \1+' ${WRKSRC}/Makefile;
+	${REINPLACE_CMD} -e 's+\(@cp -rf ./doc/.*\)+# \1+' ${WRKSRC}/Makefile;
 
 post-build:
 	${CP} ${WRKSRC}/lib/unix/*.a ${WRKSRC}/lib/
