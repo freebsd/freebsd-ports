@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	3.0.3.p2
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
@@ -26,6 +26,7 @@ VARDIR=		${DESTDIR}/var
 SAMBA_SPOOL?=	${VARDIR}/spool/samba
 SAMBA_LOGDIR=	${VARDIR}/log/samba
 SAMBA_RUNDIR=	${VARDIR}/run
+SAMBA_LOCKDIR=	${SAMBA_RUNDIR}/samba
 SAMBA_PRIVATE?=	${PREFIX}/private
 SAMBA_CONFDIR?=	${PREFIX}/etc
 SAMBA_SWATDIR=	${PREFIX}/share/swat
@@ -41,7 +42,7 @@ CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 		--with-configdir=${SAMBA_CONFDIR} \
 		--with-libdir=${SAMBA_LIBDIR}/samba \
 		--with-swatdir=${SAMBA_SWATDIR} \
-		--with-lockdir=${SAMBA_SPOOL} --with-piddir=${SAMBA_RUNDIR} \
+		--with-piddir=${SAMBA_RUNDIR} --with-lockdir=${SAMBA_LOCKDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-manpages-langs=en
@@ -271,21 +272,26 @@ WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
 .endif
 
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
-			SAMBA_SPOOL=${SAMBA_SPOOL} \
-			SAMBA_LOGDIR=${SAMBA_LOGDIR}
+			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
+			SAMBA_LOCKDIR=${SAMBA_LOCKDIR}
 
 RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
-			RC_SUBR=${RC_SUBR} \
-			RC_DIR=${RC_DIR} \
 			CUPS=${CUPS} \
+			RC_SUBR=${RC_SUBR} \
+			SAMBA_CONFDIR=${SAMBA_CONFDIR} \
 			SAMBA_CONFIG=${SAMBA_CONFIG} \
-			SAMBA_SPOOL=${SAMBA_SPOOL} \
-			SAMBA_RUNDIR=${SAMBA_RUNDIR}
+			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
+			SAMBA_RUNDIR=${SAMBA_RUNDIR} \
+			SAMBA_LOCKDIR=${SAMBA_LOCKDIR} \
+			SAMBA_SPOOL=${SAMBA_SPOOL}
 
 pre-fetch:
 	@${ECHO_MSG} "===>  -------------------------------------------"
 	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
 	@${ECHO_MSG} "===>  -------------------------------------------"
+
+post-patch:
+	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 
 post-install:
 .for sect in 1 5 7 8
@@ -306,29 +312,46 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/python
 	@${CP} -Rp ${WRKSRC}/python/examples/* ${EXAMPLESDIR}/python
 .endif
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
 	    ${FILESDIR}/samba.sh.sample | ${WINBIND_FILTER} > ${WRKDIR}/samba.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/samba.sh ${RC_DIR}/samba.sh
-	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 0755 ${SAMBA_SPOOL}
-	@test -d ${SAMBA_LOGDIR} || ${MKDIR} ${SAMBA_LOGDIR}
-	${SED}  -e 's!%%SAMBA_SPOOL%%!${SAMBA_SPOOL}!'			\
-		-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'		\
-		-e 's!%%SAMBA_CONFDIR%%!${SAMBA_CONFDIR}!'		\
-		${FILESDIR}/smb.conf.default				\
-		> ${SAMBA_CONFIG}.default ;					\
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} 	\
+		${FILESDIR}/smb.conf.default > ${WRKDIR}/smb.conf.default
+	${INSTALL_DATA} ${WRKDIR}/smb.conf.default ${SAMBA_CONFIG}.default
 	${INSTALL_SCRIPT} ${WRKSRC}/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
-	if [ ! -d ${SAMBA_PRIVATE} ] ; then				\
-		${MKDIR} ${SAMBA_PRIVATE} ;				\
-		${CHOWN} root:wheel ${SAMBA_PRIVATE} ;			\
-	fi
-	${CHMOD} 700 ${SAMBA_PRIVATE}
-.if defined(PACKAGE_BUILDING)
+	# Spool
+	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} &&		\
+	    ${CHMOD} 1777 ${SAMBA_SPOOL} && ${CHOWN} root:wheel ${SAMBA_SPOOL}
+	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_SPOOL} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 1777 ${SAMBA_SPOOL}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_SPOOL}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_SPOOL}" >> ${TMPPLIST}
+	# Logdir
+	@test -d ${SAMBA_LOGDIR} || ${MKDIR} ${SAMBA_LOGDIR} &&		\
+	    ${CHMOD} 0755 ${SAMBA_LOGDIR} && ${CHOWN} root:wheel ${SAMBA_LOGDIR}
+	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_LOGDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 0755 ${SAMBA_LOGDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_LOGDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_LOGDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_LOGDIR}/* manually.\"" >> ${TMPPLIST}
+	# Lockdir
+	@test -d ${SAMBA_LOCKDIR} || ${MKDIR} ${SAMBA_LOCKDIR} &&	\
+	    ${CHMOD} 0755 ${SAMBA_LOCKDIR} && ${CHOWN} root:wheel ${SAMBA_LOCKDIR}
+	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 0755 ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_LOCKDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_LOCKDIR}/printing" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec for file in `${LS} ${SAMBA_LOCKDIR} | ${GREP} -v '^winbindd_'`; do ${RM} -rf ${SAMBA_LOCKDIR}/${file}; done" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_LOCKDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_LOCKDIR}/* manually.\"" >> ${TMPPLIST}
+	# Private
+	@test -d ${SAMBA_PRIVATE} || ${MKDIR} ${SAMBA_PRIVATE} &&	\
+	    ${CHMOD} 700 ${SAMBA_PRIVATE} && ${CHOWN} root:wheel ${SAMBA_PRIVATE}
 	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_PRIVATE} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${CHMOD} 700 ${SAMBA_PRIVATE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_PRIVATE}" >> ${TMPPLIST}
-.else
-	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/* manually.\"" >> ${TMPPLIST}
-.endif
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove ${SAMBA_PRIVATE}/* manually.\"" >> ${TMPPLIST}
 .if !defined(WITHOUT_WINBIND)
 .if defined(WITH_WINBIND_NSS)
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
