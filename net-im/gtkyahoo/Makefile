@@ -8,7 +8,7 @@
 PORTNAME=	gtkyahoo
 PORTVERSION=	0.16
 CATEGORIES=	net
-MASTER_SITES=	http://www.unixtools.org/gtkyahoo/dist/tars/
+MASTER_SITES=	http://download.sourceforge.net/gtkyahoo/
 
 MAINTAINER=	dannyman@dannyland.org
 
