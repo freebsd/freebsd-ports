@@ -19,6 +19,8 @@ COMMENT=	Provides Rss support for Gaim
 BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 
+IGNORE=	Requires update to work with Gaim 0.82.1
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libxml2

@@ -16,6 +16,8 @@ MAINTAINER=	freebsd@next-generation.org
 MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
+IGNORE=	Requires update to work with Gaim 0.82.1
+
 CONFLICTS=	gaim-*
 
 .include "${MASTERDIR}/Makefile"
