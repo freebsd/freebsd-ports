@@ -1,6 +1,6 @@
-# New ports collection makefile for:	p5-Crypt-DES
-# Date created:				October 20th 1996
-# Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
+# New ports collection makefile for:	p5-Net-SSLeay
+# Date created:				April 17th 2000
+# Whom:	      				Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
