@@ -81,9 +81,7 @@ share/gnome/help/rhythmbox/ja/user-guide.xml
 share/gnome/idl/Rhythmbox.idl
 share/gnome/mime-info/rhythmbox.keys
 share/gnome/omf/rhythmbox/rhythmbox-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/rhythmbox/rhythmbox-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/rhythmbox/rhythmbox-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/rhythmbox.png
 share/gnome/rhythmbox/art/about-logo.png
 share/gnome/rhythmbox/art/rhythmbox-album.png
@@ -184,5 +182,3 @@ share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
 @dirrm share/gnome/help/rhythmbox/C/figures
 @dirrm share/gnome/help/rhythmbox/C
 @dirrm share/gnome/help/rhythmbox
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/rhythmbox/rhythmbox-ja.omf 2>/dev/null || /usr/bin/true

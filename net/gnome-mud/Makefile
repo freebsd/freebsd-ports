@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_PYTHON=	yes
 USE_GNOME=	gnomehack gnometarget gnomeprefix intlhack libgnomeui \
 		pygtk2 vte

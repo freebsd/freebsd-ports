@@ -26,21 +26,13 @@ share/gnome/help/gpl/eu/gpl.xml
 share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/eu/lgpl.xml
 share/gnome/omf/gnome-desktop/fdl-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/fdl-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/fdl-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/fdl-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/gnome-feedback-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/gnome-feedback-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/gnome-feedback-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/gnome-feedback-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/gpl-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/gpl-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/gpl-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/gpl-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/lgpl-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/lgpl-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-desktop/lgpl-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-desktop/lgpl-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/advanced-directory.png
 share/gnome/pixmaps/apple-green.png
 share/gnome/pixmaps/apple-red.png
@@ -229,11 +221,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
 @dirrm include/gnome-desktop-2.0
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/fdl-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/fdl-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/gnome-feedback-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/gnome-feedback-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/gpl-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/gpl-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/lgpl-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-desktop/lgpl-eu.omf 2>/dev/null || /usr/bin/true

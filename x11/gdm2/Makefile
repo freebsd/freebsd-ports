@@ -18,6 +18,7 @@ COMMENT=	GNOME 2 version of xdm display manager
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui librsvg2
 USE_LIBTOOL_VER=15

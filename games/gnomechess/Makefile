@@ -22,6 +22,7 @@ RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomecanvas gnomehack gnomeprefix libglade
 USE_GMAKE=	yes
+INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

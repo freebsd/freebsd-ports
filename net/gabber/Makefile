@@ -21,6 +21,7 @@ BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libglade gal
 USE_LIBTOOL_VER=13

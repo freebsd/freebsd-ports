@@ -92,7 +92,6 @@ share/gnome/gnome-db/ui/db-shell.xml
 share/gnome/mime-info/libgnomedb.keys
 share/gnome/mime-info/libgnomedb.mime
 share/gnome/omf/libgnomedb/libgnomedb-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/libgnomedb/libgnomedb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-commit_24x24.png
@@ -169,4 +168,3 @@ share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/gnome/gnome-db
 @dirrm %%DOCSDIR%%
 @dirrm include/libgnomedb
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/libgnomedb/libgnomedb-C.omf 2>/dev/null || /usr/bin/true

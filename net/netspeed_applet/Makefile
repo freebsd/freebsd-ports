@@ -17,6 +17,7 @@ COMMENT=	Applet that shows how much network traffic occurs on an interface
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier intlhack gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL_VER=15

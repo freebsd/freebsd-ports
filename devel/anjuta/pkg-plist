@@ -311,19 +311,12 @@ share/gnome/help/anjuta/ja/preferences.xml
 share/gnome/help/anjuta/ja/projects.xml
 share/gnome/mime-info/anjuta.mime
 share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-faqs-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-manual-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-tutorial-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/anjuta/anjuta-tutorial-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-tutorial-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/anjuta/anjuta_icon.png
 share/gnome/pixmaps/anjuta/anjuta_logo.png
 share/gnome/pixmaps/anjuta/anjuta_logo1.png
@@ -500,10 +493,3 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/anjuta
 %%PORTDOCS%%@dirrm share/doc/anjuta
 @dirrm lib/anjuta
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-advanced-tutorial-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-tutorial-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true

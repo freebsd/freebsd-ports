@@ -10,7 +10,6 @@ share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
 share/gnome/omf/gconf-editor/gconf-editor-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gconf-editor/gconf-editor-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gconf-editor.png
 share/gnome/pixmaps/gconf-editor/entry-blank.png
 share/gnome/pixmaps/gconf-editor/entry-bool.png
@@ -90,4 +89,3 @@ share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 @dirrm share/gnome/help/gconf-editor/C/figures
 @dirrm share/gnome/help/gconf-editor/C
 @dirrm share/gnome/help/gconf-editor
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gconf-editor/gconf-editor-C.omf 2>/dev/null || /usr/bin/true

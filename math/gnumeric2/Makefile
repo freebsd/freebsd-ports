@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui libgnomedb \
 		libgsf_gnome
 USE_PYTHON=	yes
+INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--without-guile --with-bonobo --with-gnome-db

@@ -99,27 +99,16 @@ share/gnome/help/gdm/zh_TW/figures/gdm_window.png
 share/gnome/help/gdm/zh_TW/gdm.xml
 share/gnome/help/gdm/zh_TW/legal.xml
 share/gnome/omf/gdm/gdm-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gdm/gdm-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gdm/gdm-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gdm-foot-logo.png
 share/gnome/pixmaps/gdm-setup.png
 share/gnome/pixmaps/gdm-xnest.png
@@ -239,14 +228,3 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 @unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log/gdm 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-zh_TW.omf 2>/dev/null || /usr/bin/true

@@ -92,27 +92,16 @@ share/gnome/help/quick-lounge/zh_TW/figures/quick-lounge_window.png
 share/gnome/help/quick-lounge/zh_TW/legal.xml
 share/gnome/help/quick-lounge/zh_TW/quick-lounge.xml
 share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/quick-lounge-applet.png
 share/gnome/quick-lounge/glade/quick-lounge.glade
 share/locale/az/LC_MESSAGES/quick-lounge-applet.mo
@@ -168,14 +157,3 @@ share/locale/zh_CN/LC_MESSAGES/quick-lounge-applet.mo
 @dirrm share/gnome/help/quick-lounge/C/figures
 @dirrm share/gnome/help/quick-lounge/C
 @dirrm share/gnome/help/quick-lounge
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/quick-lounge-applet/quick-lounge-zh_TW.omf 2>/dev/null || /usr/bin/true

@@ -23,6 +23,7 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \

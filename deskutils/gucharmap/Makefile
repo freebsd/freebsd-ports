@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gtk20
 WANT_GNOME=	yes
 USE_INC_LIBTOOL_VER=13
+INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"

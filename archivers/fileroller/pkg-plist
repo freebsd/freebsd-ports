@@ -65,31 +65,18 @@ share/gnome/help/file-roller/zh_TW/legal.xml
 share/gnome/mime-info/file-roller.keys
 share/gnome/mime-info/file-roller.mime
 share/gnome/omf/file-roller/file-roller-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-ru.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/file-roller.png
 share/locale/am/LC_MESSAGES/file-roller.mo
 share/locale/ar/LC_MESSAGES/file-roller.mo
@@ -187,17 +174,4 @@ share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-uk.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

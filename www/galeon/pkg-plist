@@ -163,9 +163,7 @@ share/gnome/help/galeon/es/plugins.xml
 share/gnome/help/galeon/es/preface.xml
 share/gnome/help/galeon/es/preferences.xml
 share/gnome/omf/galeon/galeon-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/galeon/galeon-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/galeon/galeon-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/galeon/galeon-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/galeon.png
 share/gnome/sounds/galeon/clicked.wav
 share/locale/am/LC_MESSAGES/galeon-2.0.mo
@@ -231,6 +229,4 @@ share/locale/zh_TW/LC_MESSAGES/galeon-2.0.mo
 @dirrm share/gnome/galeon
 @dirrm lib/galeon/components
 @dirrm lib/galeon
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/galeon/galeon-es.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

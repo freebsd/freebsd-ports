@@ -58,5 +58,3 @@ share/locale/zh_CN/LC_MESSAGES/drivel.mo
 @dirrm share/gnome/drivel/languages
 @dirrm share/gnome/drivel/glade
 @dirrm share/gnome/drivel
-@exec scrollkeeper-install -q %D/share/gnome/omf/drivel/drivel-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/drivel/drivel-C.omf 2>/dev/null || /usr/bin/true

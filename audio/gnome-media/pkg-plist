@@ -298,49 +298,27 @@ share/gnome/help/gstreamer-properties/C/gstreamer-properties.xml
 share/gnome/help/gstreamer-properties/C/legal.xml
 share/gnome/idl/GNOME_Media_CDDBSlave2.idl
 share/gnome/omf/gnome-media/gnome-cd-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gnome-volume-control-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gnome-volume-control-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/grecord-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/grecord-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-media/gstreamer-properties-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-media/gstreamer-properties-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-cd.png
 share/gnome/pixmaps/gnome-cd/cd.png
 share/gnome/pixmaps/gnome-cd/disc.png
@@ -549,25 +527,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm include/gnome-media/profiles
 @dirrm include/gnome-media
 @dirrm include/cddb-slave2
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-cd-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gnome-volume-control-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/grecord-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-media/gstreamer-properties-C.omf 2>/dev/null || /usr/bin/true

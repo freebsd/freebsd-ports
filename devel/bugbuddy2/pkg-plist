@@ -19,7 +19,6 @@ share/gnome/help/bug-buddy/C/bug-buddy.xml
 share/gnome/help/bug-buddy/C/legal.xml
 share/gnome/mime-info/bug-buddy.keys
 share/gnome/omf/bug-buddy/bug-buddy-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/bug-buddy/bug-buddy-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/bug-buddy.png
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo
@@ -92,4 +91,3 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/bug-buddy/bug-buddy-C.omf 2>/dev/null || /usr/bin/true

@@ -20,11 +20,8 @@ share/gnome/help/gpdf/es/gpdf.xml
 share/gnome/help/gpdf/es/legal.xml
 share/gnome/mime-info/gpdf.keys
 share/gnome/omf/gpdf/gpdf-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gpdf/gpdf-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gpdf/gpdf-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-pdf.png
 share/gnome/pixmaps/gpdf/fitwidth.png
 share/gnome/pixmaps/gpdf/stock_book-closed-mark.png
@@ -108,7 +105,4 @@ share/locale/zh_TW/LC_MESSAGES/gpdf.mo
 @dirrm share/gnome/help/gpdf
 @dirrm share/gnome/gpdf/glade
 @dirrm share/gnome/gpdf
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-es.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

@@ -83,7 +83,6 @@ share/gnome/help/planner/C/planner.xml
 share/gnome/mime-info/planner.keys
 share/gnome/mime-info/planner.mime
 share/gnome/omf/planner/planner-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/planner/planner-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-application-x-planner.png
 share/gnome/pixmaps/gnome-planner.png
 share/gnome/pixmaps/planner/24_edit_resource.png
@@ -198,6 +197,5 @@ share/mime/packages/planner.xml
 @dirrm lib/planner
 @dirrm include/planner-1.0/libplanner
 @dirrm include/planner-1.0
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/planner/planner-C.omf 2>/dev/null || /usr/bin/true
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime

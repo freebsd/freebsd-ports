@@ -20,6 +20,7 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes

@@ -419,11 +419,8 @@ share/gnome/help/gnucash/de_DE/gnucash-help/usage.html
 share/gnome/help/gnucash/de_DE/legal.xml
 share/gnome/help/gnucash/de_DE/txf-categories.xml
 share/gnome/omf/gnucash-docs/gnucash-guide-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnucash-docs/gnucash-help-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnucash-docs/gnucash-help-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnucash-docs/gnucash-help-de_DE.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnucash-docs/gnucash-help-de_DE.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/omf/gnucash-docs
 @dirrm share/gnome/help/gnucash/de_DE/gnucash-help/stylesheet
 @dirrm share/gnome/help/gnucash/de_DE/gnucash-help/figures
@@ -439,6 +436,3 @@ share/gnome/omf/gnucash-docs/gnucash-help-de_DE.omf
 @dirrm share/gnome/help/gnucash/C/figures
 @dirrm share/gnome/help/gnucash/C
 @dirrm share/gnome/help/gnucash
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnucash-docs/gnucash-help-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnucash-docs/gnucash-help-de_DE.omf 2>/dev/null || /usr/bin/true

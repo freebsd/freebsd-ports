@@ -38,27 +38,16 @@ share/gnome/help/eog/zh_TW/eog.xml
 share/gnome/help/eog/zh_TW/figures/eog_start_window.png
 share/gnome/help/eog/zh_TW/legal.xml
 share/gnome/omf/eog/eog-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/eog/eog-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/eog/eog-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/eog/down-right.png
 share/gnome/pixmaps/eog/loading.png
 share/gnome/pixmaps/eog/orient-horizontal.png
@@ -163,15 +152,4 @@ share/locale/zh_TW/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog/C
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/eog/eog-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

@@ -533,7 +533,6 @@ share/gnome/help/gok/C/keyboards.xml
 share/gnome/help/gok/C/legal.xml
 share/gnome/help/gok/C/prefs.xml
 share/gnome/omf/gok/gok-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gok/gok-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gok.png
 share/locale/am/LC_MESSAGES/gok.mo
 share/locale/ar/LC_MESSAGES/gok.mo
@@ -636,4 +635,3 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/ar
 @dirrm share/gnome/gok/am
 @dirrm share/gnome/gok
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gok/gok-C.omf 2>/dev/null || /usr/bin/true

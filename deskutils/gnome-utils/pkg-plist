@@ -79,49 +79,27 @@ share/gnome/help/gnome-system-log/zh_TW/figures/syslog_window.png
 share/gnome/help/gnome-system-log/zh_TW/gnome-system-log.xml
 share/gnome/help/gnome-system-log/zh_TW/legal.xml
 share/gnome/omf/gnome-utils/gnome-dictionary-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/locale/am/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-utils-2.0.mo
@@ -234,25 +212,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
 @dirrm share/gnome/gnome-system-log
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-zh_TW.omf 2>/dev/null || /usr/bin/true

@@ -20,6 +20,7 @@ LIB_DEPENDS=	gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+INSTALLS_OMF=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui atspi libwnck
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

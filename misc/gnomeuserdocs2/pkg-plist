@@ -140,11 +140,8 @@ share/gnome/help/user-guide/C/wgosoverview.xml
 share/gnome/help/user-guide/C/wgospanel.xml
 share/gnome/help/user-guide/C/wgosstartsession.xml
 share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/user-guide/user-guide-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/user-guide/user-guide-C.omf 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/omf/user-guide
 @dirrm share/gnome/omf/gnome2-user-docs
 @dirrm share/gnome/help/user-guide/C/figures
@@ -155,6 +152,3 @@ share/gnome/omf/user-guide/user-guide-C.omf
 @dirrm share/gnome/help/gnome-access-guide/C/figures
 @dirrm share/gnome/help/gnome-access-guide/C
 @dirrm share/gnome/help/gnome-access-guide
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/gnome-access-guide-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome2-user-docs/system-admin-guide-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/user-guide/user-guide-C.omf 2>/dev/null || /usr/bin/true

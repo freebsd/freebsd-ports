@@ -52,25 +52,15 @@ share/gnome/help/ghex2/zh_TW/figures/ghex_window_open.png
 share/gnome/help/ghex2/zh_TW/ghex2.xml
 share/gnome/help/ghex2/zh_TW/legal.xml
 share/gnome/omf/ghex/ghex-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ghex/ghex2-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ghex/ghex2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-ghex.png
 share/locale/am/LC_MESSAGES/ghex-2.0.mo
 share/locale/az/LC_MESSAGES/ghex-2.0.mo
@@ -141,13 +131,3 @@ share/locale/zh_TW/LC_MESSAGES/ghex-2.0.mo
 @dirrm share/gnome/help/ghex2/C
 @dirrm share/gnome/help/ghex2
 @dirrm include/gtkhex
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ghex/ghex2-zh_TW.omf 2>/dev/null || /usr/bin/true

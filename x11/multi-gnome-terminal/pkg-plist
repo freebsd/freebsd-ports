@@ -144,7 +144,6 @@ share/gnome/mgt/glade/search.glade
 share/gnome/mgt/glade/win_keys.glade
 share/gnome/mgt/glade/win_prefs.glade
 share/gnome/omf/mgt/multi-gnome-terminal-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/mgt/multi-gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/mgt/MGT_bb_back.png
 share/gnome/pixmaps/mgt/MGT_bb_forward.png
 share/gnome/pixmaps/mgt/MGT_bb_newshell.png
@@ -186,4 +185,3 @@ share/gnome/pixmaps/multignometerm.png
 @dirrm share/gnome/help/multi-gnome-terminal/C/figures
 @dirrm share/gnome/help/multi-gnome-terminal/C
 @dirrm share/gnome/help/multi-gnome-terminal
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mgt/multi-gnome-terminal-C.omf 2>/dev/null || /usr/bin/true

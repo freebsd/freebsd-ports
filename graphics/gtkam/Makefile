@@ -44,6 +44,7 @@ PLIST_SUB+=	GIMP="@comment "
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix libgnomeui
+INSTALLS_OMF=	yes
 MAKE_ENV+=	GNOME_SUBDIRS="help omf-install"
 DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else

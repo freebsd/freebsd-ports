@@ -58,7 +58,6 @@ share/gnome/marlin/ui/marlin.xml
 share/gnome/marlin/ui/toolbars.xml
 share/gnome/marlin/ui/toolbar-popup-ui.xml
 share/gnome/omf/marlin/marlin-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/marlin/marlin-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/marlin/hand-open.png
 share/gnome/pixmaps/marlin/marlin-cdda-extract.png
 share/gnome/pixmaps/marlin/marlin-ffwd.png
@@ -112,4 +111,3 @@ share/locale/zh_CN/LC_MESSAGES/marlin.mo
 @dirrm share/gnome/help/marlin/C
 @dirrm share/gnome/help/marlin
 @dirrm include/libmarlin
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/marlin/marlin-C.omf 2>/dev/null || /usr/bin/true

@@ -100,7 +100,6 @@ share/gnome/help/gabber/C/topic.dat
 share/gnome/help/gabber/C/userinfo.xml
 share/gnome/help/gabber/C/users.xml
 share/gnome/omf/gabber/gabber-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gabber/gabber-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gabber.png
 share/gnome/pixmaps/gabber/away.xpm
 share/gnome/pixmaps/gabber/chat.xpm
@@ -162,4 +161,3 @@ share/locale/zh_TW/LC_MESSAGES/gabber.mo
 @dirrm share/gnome/help/gabber/C
 @dirrm share/gnome/help/gabber
 @dirrm share/gnome/gabber
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gabber/gabber-C.omf 2>/dev/null || /usr/bin/true

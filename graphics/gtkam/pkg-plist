@@ -13,9 +13,7 @@ share/gnome/applications/gtkam.desktop
 %%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_start_window.png
 %%GNOME:%%share/gnome/help/gtkam/C/gtkam.xml
 %%GNOME:%%share/gnome/help/gtkam/C/legal.xml
-%%GNOME:%%@exec scrollkeeper-install -q %D/share/gnome/omf/gtkam/gtkam-C.omf 2>/dev/null || true
 %%GNOME:%%share/gnome/omf/gtkam/gtkam-C.omf
-%%GNOME:%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gtkam/gtkam-C.omf 2>/dev/null || true
 share/gnome/pixmaps/gtkam.png
 %%DATADIR%%/images/gtkam-audio.png
 %%DATADIR%%/images/gtkam-camera.png

@@ -16,6 +16,7 @@ COMMENT=	Yellow post-it note applet for GNOME 2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libgnomeprintui gnomepanel libglade2 gnomeprefix gnomehack
+INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

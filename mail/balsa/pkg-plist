@@ -30,7 +30,6 @@ share/gnome/help/balsa/C/figures/preferences-window.png
 share/gnome/help/balsa/C/figures/spell-check.png
 share/gnome/idl/Balsa.idl
 share/gnome/omf/balsa/balsa-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/balsa/balsa-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-balsa2.png
 share/gnome/sounds/balsa/newmail.wav
 share/gnome/sounds/balsa/startup.wav
@@ -87,4 +86,3 @@ share/locale/zh_TW/LC_MESSAGES/balsa.mo
 @dirrm share/gnome/help/balsa
 @dirrm share/gnome/balsa/pixmaps
 @dirrm share/gnome/balsa
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/balsa/balsa-C.omf 2>/dev/null || /usr/bin/true

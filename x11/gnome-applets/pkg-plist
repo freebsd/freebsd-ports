@@ -1131,351 +1131,178 @@ share/gnome/help/wireless/zh_TW/figures/wireless_applet_no_conn.png
 share/gnome/help/wireless/zh_TW/legal.xml
 share/gnome/help/wireless/zh_TW/wireless.xml
 share/gnome/omf/gnome-applets/accessx-status-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/accessx-status-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/accessx-status-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/accessx-status-eu.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-de.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-de.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-es.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-es.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-eu.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-eu.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-fr.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-fr.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-it.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-it.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-ja.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-ko.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-ko.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-sv.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-sv.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-zh_CN.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-zh_CN.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-zh_HK.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-zh_HK.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-zh_TW.omf
-%%BATTERY%%@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/battstat-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/drivemount-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gswitchit-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gswitchit-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mailcheck-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/modemlights-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/modemlights-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/modemlights-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/modemlights-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/multiload-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/multiload-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/stickynotes_applet-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/wireless-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/wireless-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/accessx-status-applet/ax-applet.png
 share/gnome/pixmaps/accessx-status-applet/ax-bouncekeys.png
 share/gnome/pixmaps/accessx-status-applet/ax-key-base.png
@@ -2158,176 +1985,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 %%BATTERY%%@dirrm share/gnome/battstat_applet
 @dirrm libexec/gnome-applets
 @dirrm include/libgswitchit
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/accessx-status-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/accessx-status-eu.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-de.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-es.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-eu.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-fr.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-it.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-ja.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-ko.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-sv.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-zh_CN.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-zh_HK.omf 2>/dev/null || /usr/bin/true
-%%BATTERY%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/battstat-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gswitchit-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mailcheck-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/modemlights-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/modemlights-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/multiload-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/stickynotes_applet-zh_TW.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/wireless-zh_TW.omf 2>/dev/null || /usr/bin/true

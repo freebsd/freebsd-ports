@@ -19,6 +19,7 @@ COMMENT=	A GNOME application for creating GNU gettext translation files
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
 USE_GMAKE=	yes
+INSTALLS_OMF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex"

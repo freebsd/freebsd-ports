@@ -42,25 +42,15 @@ share/gnome/help/ggv/zh_TW/ggv.xml
 share/gnome/help/ggv/zh_TW/legal.xml
 share/gnome/idl/Ggv.idl
 share/gnome/omf/ggv/ggv-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/ggv/ggv-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/ggv/ggv-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/ggv/clearall.xpm
 share/gnome/pixmaps/ggv/fitwidth.png
 share/gnome/pixmaps/ggv/ggv-splash.png
@@ -156,14 +146,4 @@ share/locale/zh_TW/LC_MESSAGES/ggv.mo
 @dirrm share/gnome/help/ggv/C/figures
 @dirrm share/gnome/help/ggv/C
 @dirrm share/gnome/help/ggv
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/ggv/ggv-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

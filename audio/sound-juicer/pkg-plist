@@ -6,7 +6,6 @@ share/gnome/help/sound-juicer/C/figures/startup.png
 share/gnome/help/sound-juicer/C/legal.xml
 share/gnome/help/sound-juicer/C/sound-juicer.xml
 share/gnome/omf/sound-juicer/sound-juicer-manual-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/sound-juicer/sound-juicer-manual-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/sound-juicer.png
 share/gnome/sound-juicer/orange-slice.png
 share/gnome/sound-juicer/sound-juicer.glade
@@ -15,4 +14,3 @@ share/gnome/sound-juicer/sound-juicer.glade
 @dirrm share/gnome/help/sound-juicer/C/figures
 @dirrm share/gnome/help/sound-juicer/C
 @dirrm share/gnome/help/sound-juicer
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/sound-juicer/sound-juicer-manual-C.omf 2>/dev/null || /usr/bin/true

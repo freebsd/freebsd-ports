@@ -18,6 +18,7 @@ COMMENT=	GNOME vocabulary builder
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget pygnome2
 USE_PYTHON=	yes
+INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

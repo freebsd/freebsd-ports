@@ -91,27 +91,16 @@ share/gnome/help/gnome-netstatus/zh_TW/figures/gnome-netstatus-txrx.png
 share/gnome/help/gnome-netstatus/zh_TW/gnome-netstatus.xml
 share/gnome/help/gnome-netstatus/zh_TW/legal.xml
 share/gnome/omf/gnome-netstatus/gnome-netstatus-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-netstatus-tx.png
 share/icons/hicolor/48x48/apps/gnome-netstatus-0-24.png
 share/icons/hicolor/48x48/apps/gnome-netstatus-25-49.png
@@ -200,14 +189,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-netstatus.mo
 @dirrm share/gnome/help/gnome-netstatus/C
 @dirrm share/gnome/help/gnome-netstatus
 @dirrm share/gnome/gnome-netstatus
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-netstatus/gnome-netstatus-zh_TW.omf 2>/dev/null || /usr/bin/true

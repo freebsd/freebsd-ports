@@ -37,7 +37,6 @@ share/gnome/help/glabels/C/legal.xml
 share/gnome/mime-info/glabels.keys
 share/gnome/mime-info/glabels.mime
 share/gnome/omf/glabels/glabels-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/glabels/glabels-C.omf 2>/dev/null || true
 share/gnome/pixmaps/glabels/ex-1layout.png
 share/gnome/pixmaps/glabels/ex-2layouts.png
 share/gnome/pixmaps/glabels/ex-cd-size.png
@@ -70,7 +69,6 @@ share/mime/packages/glabels.xml
 @dirrm share/gnome/glabels/dtd
 @dirrm share/gnome/glabels
 @dirrm include/libglabels
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glabels/glabels-C.omf 2>/dev/null || true
 @exec update-mime-database %D/share/mime
 @unexec update-mime-database %D/share/mime
 @unexec update-desktop-database > /dev/null || /usr/bin/true
