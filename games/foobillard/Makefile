@@ -6,34 +6,58 @@
 #
 
 PORTNAME=	foobillard
-PORTVERSION=	2.6
-PORTREVISION=	1
+PORTVERSION=	2.9
 CATEGORIES=	games
 MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
 MAINTAINER=	thomas.vogt@bsdunix.ch
 COMMENT=	A free OpenGL-billard game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
+
 USE_GETOPT_LONG=yes
-USE_MESA=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS=	-I${X11BASE}/include
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+.if defined(WITH_SDL)
+USE_SDL=	yes
+CONFIGURE_ARGS+=	--enable-SDL
+.else
+LIB_DEPENDS+=	glut.3:${PORTSDIR}/graphics/libglut
+CONFIGURE_ARGS+=	--enable-glut
+.endif
 
 .if !defined(WITH_NVIDIA_BUMPREF)
-CONFIGURE_ARGS+=	--disable-bumpref
+CONFIGURE_ARGS+=	--disable-nvidia
 .endif
 
 MAN6=		foobillard.6
-MANCOMPRESSED=	no
+
+pre-everything::
+.if !defined(WITH_SDL) || !defined(WITH_NVIDIA_BUMPREF)
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} ""
+.endif
+
+.if !defined(WITH_SDL)
+	@${ECHO_MSG} "WITH_SDL=yes to use SDL-lib instead of glut"
+.endif
+
+.if !defined(WITH_NVIDIA_BUMPREF)
+	@${ECHO_MSG} "WITH_NVIDIA_BUMPREF=yes to enable NV-extensions"
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/foobillard.6 ${PREFIX}/man/man6/foobillard.6
