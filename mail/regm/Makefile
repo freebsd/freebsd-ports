@@ -12,11 +12,12 @@ MASTER_SITES=	http://perso.linuxfr.org/jdumont/regm/
 
 MAINTAINER=	petef@FreeBSD.org
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PYTHON=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|^#!/usr/bin/env python|#!${PYTHON_CMD}|' \
+	@${REINPLACE_CMD} -e 's|^#!/usr/bin/env python|#!${PYTHON_CMD}|' \
 		${WRKSRC}/regm.py
 
 do-install:

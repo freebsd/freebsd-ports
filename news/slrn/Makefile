@@ -25,6 +25,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ipv6 --disable-inews --with-slrnpull \
@@ -41,7 +42,7 @@ ALL_TARGET=	all
 MAN1=		slrn.1 slrnpull.1
 
 post-patch:
-	@${PERL} -pi -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
+	@${REINPLACE_CMD} -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
 		${WRKSRC}/src/slrnfeat.h
 
 do-install:

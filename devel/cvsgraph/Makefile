@@ -27,6 +27,7 @@ DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 PLIST=		${WRKDIR}/pkg-plist
+USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
@@ -46,11 +47,11 @@ CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
 		--with-z
 
 pre-patch:
-	${PERL} -pi -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
+	${REINPLACE_CMD} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
 		${WRKSRC}/cvsgraph.conf
 
 post-configure:
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e \
 		"s|CFLAGS	=|CFLAGS += -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/gd|g" \
 		${WRKSRC}/Makefile

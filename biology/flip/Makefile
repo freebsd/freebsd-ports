@@ -12,12 +12,14 @@ MASTER_SITES=	ftp://megasun.bch.umontreal.ca/pub/flip/
 
 MAINTAINER=	tonym@biolateral.com.au
 
+USE_REINPLACE=	yes
+
 MAN1=		flip.1
 
 # make it respect CFLAGS
 
 post-configure:
-	@${PERL} -pi.orig -e 's/CFLAGS=//' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's/CFLAGS=//' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flip ${PREFIX}/bin

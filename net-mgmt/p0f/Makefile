@@ -14,12 +14,13 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		trevor@FreeBSD.org
 
+USE_REINPLACE=		yes
 DOCFILES=		COPYING CREDITS ChangeLog README
 MAN1=			p0f.1
 PLIST=			${WRKDIR}/pkg-plist
 
 post-patch:
-	${PERL} -pi -e "s=/etc=${PREFIX}/etc=g" \
+	${REINPLACE_CMD} -e "s=/etc=${PREFIX}/etc=g" \
 		${WRKSRC}/README \
 		${WRKSRC}/p0f.c
 

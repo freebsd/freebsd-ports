@@ -13,13 +13,14 @@ MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 
 MAN1=	pgen.1
 
 post-patch:
-	@${PERL} -pi -e 's!\{INSTALL_PROGRAM\}!\{INSTALL_SCRIPT\}!g' \
+	@${REINPLACE_CMD} -e 's!\{INSTALL_PROGRAM\}!\{INSTALL_SCRIPT\}!g' \
 		${WRKSRC}/configure ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

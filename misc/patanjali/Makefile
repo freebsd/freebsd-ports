@@ -13,10 +13,12 @@ EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 PLIST=		${WRKDIR}/pkg-plist
 
 do-patch:
-	@${PERL} -pi -e 's:internet:Internet:g' \
+	@${REINPLACE_CMD} -e 's:internet:Internet:g' \
 		${WRKSRC}/patanjali-sutras-english.txt
 
 pre-build:

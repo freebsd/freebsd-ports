@@ -14,13 +14,14 @@ DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=		oryx@ungulate.net
 
+USE_REINPLACE=	yes
 OLDWRKSRC=		${WRKDIR}/${PORTNAME}-3.1
 
 MAN8=			dhid.8
 
 post-patch:
 	@${ECHO} "===>   Patching dhid.h"
-	${PERL} -i -p -e "s^__PREFIX__^${PREFIX}^g" ${WRKSRC}/dhid.h
+	${REINPLACE_CMD} -e "s^__PREFIX__^${PREFIX}^g" ${WRKSRC}/dhid.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dhid ${PREFIX}/sbin

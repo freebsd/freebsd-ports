@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +32,7 @@ LFLAGS+=	-L/usr/local/mpich/lib -lmpich
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g"\
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g"\
 		${WRKDIR}/${DISTNAME}/examples/DeFT
 .if !defined(USEMPICH)
 	@echo "******************************"

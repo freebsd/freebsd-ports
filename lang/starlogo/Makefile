@@ -15,10 +15,12 @@ MAINTAINER=	noway@nohow.demon.co.uk
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 do-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
+	@${REINPLACE_CMD} -e \
+		"s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
 		${WRKSRC}/starlogo-unix
 
 do-install:

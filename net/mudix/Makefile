@@ -13,10 +13,11 @@ MASTER_SITES=	http://dw.nl.eu.org/mudix/
 MAINTAINER=	scorpio@drkshdw.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 ALL_TARGET=	# none
 
 pre-patch:
-	@${PERL} -pi -e 's|-O -g|\@CFLAGS\@|g ; \
+	@${REINPLACE_CMD} -e 's|-O -g|\@CFLAGS\@|g ; \
 		 s|mudix.h conf.h||g' ${WRKSRC}/src/Makefile.in
 
 do-install:

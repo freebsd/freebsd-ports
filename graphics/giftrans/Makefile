@@ -15,6 +15,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 DIST_SUBDIR=	giftrans
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 
 MAN1=		giftrans.1
 
@@ -25,7 +26,7 @@ do-extract:
 	done
 
 post-patch:
-	@${PERL} -pi -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/giftrans.c
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/giftrans.c
 
 do-build:
 	(cd ${WRKSRC}; ${CC} ${CFLAGS} giftrans.c -o giftrans)

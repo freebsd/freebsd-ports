@@ -18,6 +18,7 @@ MAINTAINER=	seanc@FreeBSD.org
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_PERL5=	yes
 
 CONFIGURE_ARGS+=	--enable-ssl
 

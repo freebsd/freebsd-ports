@@ -13,6 +13,7 @@ MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
 MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 # Note: without this define util/regex.c doesn't compile due to redeclaration
 # of malloc and realloc functions. Adding this define was the simplest
@@ -25,7 +26,7 @@ MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdr.1 \
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${PERL} -pi -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}

@@ -31,6 +31,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 .endif
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -48,8 +49,8 @@ post-patch:
 	${MV} po/zh_TW.po po/zh_TW.po.utf-8; \
 	${LOCALBASE}/bin/iconv -f UTF-8 -t BIG5 po/zh_TW.po.utf-8 |\
 		${SED} -e 's/utf-8/big5/' |\
-		${PERL} -p -e 's{([\x81-\xfe])\\}{$$1\\\\}g' |\
-		${PERL} -p -e 's,\\\\([nt\"]),\\$$1,g' \
+		${REINPLACE_CMD} -e 's{([\x81-\xfe])\\}{$$1\\\\}g' |\
+		${REINPLACE_CMD} -e 's,\\\\([nt\"]),\\$$1,g' \
 		> po/zh_TW.po)
 
 pre-build:

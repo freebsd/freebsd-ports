@@ -13,11 +13,12 @@ MASTER_SITES=	http://redbrick.dcu.ie/~colmmacc/mdw/
 MAINTAINER=	petef@FreeBSD.org
 
 USE_AUTOCONF=	yes
+USE_REINPLACE=	yes
 
 MAN1=	mdw.1
 
 post-patch:
-	@${PERL} -pi -e 's!quite!quiet!ig; s!.BR md5sum \(1\),\n!!' \
+	@${REINPLACE_CMD} -e 's!quite!quiet!ig; s!.BR md5sum \(1\),\n!!' \
 		${WRKSRC}/doc/mdw.1
 
 post-install:

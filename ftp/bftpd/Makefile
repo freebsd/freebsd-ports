@@ -15,15 +15,16 @@ MAINTAINER=	petef@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-pam
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN8=		bftpd.8
 
 post-patch:
-	@${PERL} -pi -e "s@chmod 644 /var@#chmod 644 /var@g; \
+	@${REINPLACE_CMD} -e "s@chmod 644 /var@#chmod 644 /var@g; \
 			s@touch /var@#touch /var@g; \
 			s@DESTDIR\)/etc@prefix\)/etc@g; \
 			s@bftpd.conf @bftpd.conf.sample @g" ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e "s@-ldl@@" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s@-ldl@@" ${WRKSRC}/configure
 	@${CP} ${WRKSRC}/bftpd.conf ${WRKSRC}/bftpd.conf.sample
 
 post-install:

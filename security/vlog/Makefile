@@ -18,11 +18,12 @@ ALL_TARGET=	it
 MAKE_ARGS=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS} -lcurses"
 WRKSRC=		${WRKDIR}/vlog
+USE_REINPLACE=	yes
 
 MAN1=		vlog.1
 MANCOMPRESSED=	no
 
 post-patch:
-	${PERL} -pi -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

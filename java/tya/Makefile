@@ -20,6 +20,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 
 ONLY_FOR_ARCHS=	i386
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 
@@ -27,7 +28,7 @@ JAVADIR?=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
 post-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
 
 do-install:
 	@${MKDIR} ${JAVALIBDIR}

@@ -14,14 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pat@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		${PORTNAME}.1 ${PORTNAME}.gameserver.1 \
 		${PORTNAME}.filter.1 ${PORTNAME}.list.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-O2||' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} \
-		-pi.orig -e 's|CXXFLAGS = -O2 -Wall||'
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} -e 's|CXXFLAGS = -O2 -Wall||'
 
 post-install:
 .if !defined(NOPORTDOCS)

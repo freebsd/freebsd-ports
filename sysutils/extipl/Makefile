@@ -18,13 +18,14 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_REINPLACE=	yes
 
 MAN8=		extipl.8
 MANCOMPRESSED=	yes
 
 post-patch:
 	cd ${WRKSRC}; \
-	${PERL} -pi -e 's/^(CC)\t=/$$1?=/;' \
+	${REINPLACE_CMD} -e 's/^(CC)\t=/$$1?=/;' \
 		-e 's/(DIR)[\t]*[?]=/$$1=/;' Makefile
 
 .include <bsd.port.mk>

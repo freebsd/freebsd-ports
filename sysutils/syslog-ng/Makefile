@@ -18,11 +18,12 @@ MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 post-patch:
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
+	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
 
 post-build:
 	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}

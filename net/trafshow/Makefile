@@ -20,6 +20,7 @@ MAINTAINER=	ryan@sasknow.com
 LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
@@ -28,7 +29,7 @@ ALL_TARGET=	trafshow
 MAN1=		trafshow.1
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	nbm@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
@@ -130,7 +131,8 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@perl -i.nbm -pe 'm#^\timapd.cnf pop3d.cnf# && s@[ip][mo][ap][p3]d.cnf@@g;' \
+	@${REINPLACE_CMD} -e \
+		'm#^\timapd.cnf pop3d.cnf# && s@[ip][mo][ap][p3]d.cnf@@g;' \
 		${WRKSRC}/Makefile.in
 
 post-install:

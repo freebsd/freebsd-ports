@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 
 ONLY_FOR_ARCHS=	i386
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
@@ -28,7 +29,7 @@ JAVALIBDIR=	${PREFIX}/lib/OpenJIT
 DOCDIR=		${PREFIX}/share/OpenJIT
 
 post-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
 
 do-install:
 	@${MKDIR} ${JAVALIBDIR}

@@ -16,13 +16,14 @@ DISTFILES=	hc-30.tar.gz  hc-supp.tab
 
 MAINTAINER=	obrien@FreeBSD.org
 
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/hc3
 EXTRACT_ONLY=	hc-30.tar.gz
 ALL_TARGET=	hc b2g g2b
 MAN1=		hc.1
 
 pre-patch:
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/hclib.c
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/chinese

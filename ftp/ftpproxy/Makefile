@@ -17,13 +17,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	philippe@le-berre.com
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_REINPLACE=	yes
 
 MAN1=		ftp.proxy.1
 MANCOMPRESSED=	no
 
 pre-patch:
 	@${RM} -Rf ${WRKSRC}/*.o ${WRKSRC}/src/ftp.proxy
-	@${PERL} -pi.orig -e 's|SOL_TCP|SOL_SOCKET|' ${WRKSRC}/ftp.c
+	@${REINPLACE_CMD} -e 's|SOL_TCP|SOL_SOCKET|' ${WRKSRC}/ftp.c
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftp.proxy ${PREFIX}/sbin

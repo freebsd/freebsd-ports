@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	znerd@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 
 MAN1=	javel.1
@@ -26,7 +27,7 @@ BROKEN=		"Does not compile on 5.0"
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" ${WRKSRC}/${MAKEFILE}
 
 do-install:

@@ -14,12 +14,14 @@ MASTER_SITES=	http://sb.123.org/ \
 
 MAINTAINER=	shipley@dis.org
 
+USE_REINPLACE=	yes
+
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	${PERL} -pi.dist -e 's/trdetect/tdetect/g' ${WRKSRC}/config.h
+	${REINPLACE_CMD} -e 's/trdetect/tdetect/g' ${WRKSRC}/config.h
 .if ${OSVERSION} > 330002
-	${PERL} -pi.orig -e 's/LOG_AUTHPRIV/LOG_SECURITY/g' ${WRKSRC}/config.h
+	${REINPLACE_CMD} -e 's/LOG_AUTHPRIV/LOG_SECURITY/g' ${WRKSRC}/config.h
 .endif
 
 do-install:

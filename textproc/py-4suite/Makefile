@@ -18,6 +18,7 @@ MAINTAINER=	wjv@FreeBSD.org
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${PYXML}
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
@@ -31,12 +32,12 @@ PLIST_SUB+=	PACKAGE_DIR=_xmlplus PYTHON2_ONLY=""
 .endif
 
 post-patch:
-	@ ${PERL} -pi -e \
+	@ ${REINPLACE_CMD} -e \
 	  's#(copy_to=.)docs#$$1doc/${PORTNAME}#; \
 	   s#(copy_to=.)(test_suite|demo)#$$1examples/${PORTNAME}/$$2#' \
 	  ${WRKSRC}/setup.py
 .if defined(NOPORTDOCS)
-	@ ${PERL} -pi -e 's/(data_files=)data_files/$$1/' \
+	@ ${REINPLACE_CMD} -e 's/(data_files=)data_files/$$1/' \
 	  ${WRKSRC}/setup.py
 .endif
 
