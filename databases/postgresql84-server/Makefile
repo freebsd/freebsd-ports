@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.26 1998/09/25 10:07:42 asami Exp $
+# $Id: Makefile,v 1.27 1998/10/12 04:12:35 jseger Exp $
 #
 
 DISTNAME=	postgresql-6.3.2
@@ -19,8 +19,6 @@ MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 WITH_TCL=	--with-tcl
 .endif
-
-BROKEN_ELF=	yes
 
 NO_PACKAGE=	"Requires pgsql uid"
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
@@ -101,7 +99,7 @@ post-install:
 	fi
 	@ chown -R pgsql:pgsql ${PREFIX}/pgsql
 	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
-	@ ${LDCONFIG} -m ${PREFIX}/pgsql/lib
+	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
 	@ su -l pgsql -c '${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
 	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/pgsql.sh
