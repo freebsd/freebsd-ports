@@ -1,25 +1,22 @@
---- Makefile.orig	Sat Sep 13 23:27:50 1997
-+++ Makefile	Mon Sep 15 09:23:19 1997
-@@ -2,13 +2,13 @@
+--- Makefile.orig	Mon Aug 17 02:54:11 1998
++++ Makefile	Wed May 19 12:47:35 1999
+@@ -2,11 +2,12 @@
  # See file COPYRIGHT for more information.
  #
  # Adjust these two lines for your ANSI C compiler
--CC=gcc
+-CC=gcc -ansi -pedantic
 -CFLAGS=
-+#CC=gcc
++#CC=gcc -ansi -pedantic
 +#CFLAGS=
  # If you have Icon, you should use the Icon versions of the noweb pipeline.
--# Set LIBSRC=icon
+ # Set LIBSRC=icon
 -LIBSRC=awk
 +LIBSRC=icon
 +#LIBSRC=awk
  # If you have no Icon compiler, but do have icont, make ICONC=icont
--ICONC=iconc
-+ICONC=icont
+ ICONC=iconc
  ICONT=icont
- 
- # BIN is where the commands (notangle, noweave, nountangle, noroots) land
-@@ -18,13 +18,13 @@
+@@ -18,13 +19,13 @@
  # MAN7EXT is the extension for the nowebstyle man page (usually 7)
  # TEXINPUTS is the directory for TeX macro files
  # ELISP is the directory for emacs lisp files, or /dev/null not to install
@@ -38,13 +35,14 @@
  
  # change WEAVE if you want a different version of noweave to be installed
  WEAVE=noweave		
-@@ -114,11 +114,11 @@
+@@ -135,12 +136,11 @@
  	rm -f $(CATDIR)/nountangle.$(MANEXT).gz
  	(cd $(CATDIR); ln notangle.$(MANEXT).gz nountangle.$(MANEXT).gz)
  install-tex:
 -	-mkdir $(TEXINPUTS) 2>/dev/null
 +	-mkdir -p $(TEXINPUTS) 2>/dev/null
  	cp tex/nwmac.tex tex/noweb.sty $(TEXINPUTS)
+-	-texhash
  
  install-elisp:
 -	-mkdir $(ELISP) 2>/dev/null
