@@ -53,6 +53,8 @@ lib/luma/base/utils/backend/CryptPwGenerator.py
 lib/luma/base/utils/backend/CryptPwGenerator.pyc
 lib/luma/base/utils/backend/DateHelper.py
 lib/luma/base/utils/backend/DateHelper.pyc
+lib/luma/base/utils/backend/LogObject.py
+lib/luma/base/utils/backend/LogObject.pyc
 lib/luma/base/utils/backend/__init__.py
 lib/luma/base/utils/backend/__init__.pyc
 lib/luma/base/utils/backend/mkpasswd.py
@@ -89,6 +91,11 @@ lib/luma/base/utils/gui/FilterWizard.pyc
 lib/luma/base/utils/gui/FilterWizardDesign.py
 lib/luma/base/utils/gui/FilterWizardDesign.pyc
 lib/luma/base/utils/gui/FilterWizardDesign.ui
+lib/luma/base/utils/gui/LoggerWidget.py
+lib/luma/base/utils/gui/LoggerWidget.pyc
+lib/luma/base/utils/gui/LoggerWidgetDesign.py
+lib/luma/base/utils/gui/LoggerWidgetDesign.pyc
+lib/luma/base/utils/gui/LoggerWidgetDesign.ui
 lib/luma/base/utils/gui/LumaEntryBrowser.py
 lib/luma/base/utils/gui/LumaEntryBrowser.pyc
 lib/luma/base/utils/gui/LumaEntryBrowserDesign.py
@@ -313,6 +320,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/AdvancedObjectWidget/single.png
 %%DATADIR%%/icons/addattribute.png
 %%DATADIR%%/icons/binary.png
+%%DATADIR%%/icons/bomb.png
 %%DATADIR%%/icons/binary_big.png
 %%DATADIR%%/icons/clear.png
 %%DATADIR%%/icons/config.png
@@ -323,6 +331,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/edit.png
 %%DATADIR%%/icons/editdelete.png
 %%DATADIR%%/icons/editor.png
+%%DATADIR%%/icons/eraser.png
 %%DATADIR%%/icons/email.png
 %%DATADIR%%/icons/error.png
 %%DATADIR%%/icons/exportBinary.png
@@ -332,12 +341,20 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/folder.png
 %%DATADIR%%/icons/help.png
 %%DATADIR%%/icons/language.png
+%%DATADIR%%/icons/luma-128.png
+%%DATADIR%%/icons/luma-16.png
+%%DATADIR%%/icons/luma-22.png
+%%DATADIR%%/icons/luma-32.png
+%%DATADIR%%/icons/luma-48.png
+%%DATADIR%%/icons/luma-64.png
+%%DATADIR%%/icons/luma-blau.eps
 %%DATADIR%%/icons/mainwin/bookmark.png
 %%DATADIR%%/icons/mainwin/configure.png
 %%DATADIR%%/icons/mainwin/domtreeviewer.png
 %%DATADIR%%/icons/mainwin/exit.png
 %%DATADIR%%/icons/mainwin/fileclose.png
 %%DATADIR%%/icons/mainwin/gear.png
+%%DATADIR%%/icons/mainwin/logger.png
 %%DATADIR%%/icons/mainwin/reload.png
 %%DATADIR%%/icons/manage.png
 %%DATADIR%%/icons/new.png
