@@ -18,7 +18,7 @@ COMMENT=	A GNOME applet that shows network status
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix libgnome
+USE_GNOME=	gnomehack intlhack gnomeprefix libgnome gnomepanel libglade2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include" \
