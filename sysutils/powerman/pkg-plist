@@ -1,7 +1,5 @@
-bin/powerman
-bin/off
-bin/on
 bin/pm
+bin/powerman
 etc/powerman/apc.dev
 etc/powerman/apcnew.dev
 etc/powerman/baytech-rpc28-nc.dev
