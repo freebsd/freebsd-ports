@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	evas.0:${PORTSDIR}/graphics/evas
+LIB_DEPENDS=	evas.5:${PORTSDIR}/graphics/evas
 
 USE_GTK=	yes
 USE_LIBTOOL=	yes
