@@ -88,6 +88,7 @@
     SUBDIR += mcatalog
     SUBDIR += mdh
     SUBDIR += mencal
+    SUBDIR += metabar
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule
