@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Apr 29 13:36:00 2002
-+++ configure	Mon Apr 29 13:36:41 2002
+--- configure.orig	Mon Jun 10 15:26:35 2002
++++ configure	Mon Jun 10 15:27:34 2002
 @@ -5723,6 +5723,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -15,8 +15,17 @@ $FreeBSD$
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-lXinerama $PANEL_LIBS $LIBS"
-+LIBS="-lXinerama -lXext $PANEL_LIBS $LIBS"
+-LIBS="-lXinerama $GTK_LIBS $LIBS"
++LIBS="-lXinerama -lXext $GTK_LIBS $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 9305 "configure"
  #include "confdefs.h"
+@@ -9332,7 +9333,7 @@
+ #define HAVE_LIBXINERAMA 1
+ EOF
+ 
+-		     	XINERAMA_LIBS="-lXinerama"
++		     	XINERAMA_LIBS="-lXinerama -lXext"
+ 		     	XINERAMA_SUPPORT=yes
+ else
+   echo "$ac_t""no" 1>&6

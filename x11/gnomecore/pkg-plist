@@ -452,7 +452,9 @@ share/gnome/help/lgpl/C/GPL-LEGALNOTICE.html
 share/gnome/help/lgpl/C/lgpl.html
 share/gnome/help/lgpl/C/lgpl.sgml
 share/gnome/help/lgpl/C/ln7.html
+share/gnome/help/lgpl/C/t1.html
 share/gnome/help/lgpl/C/terms.html
+share/gnome/help/lgpl/C/x35.html
 share/gnome/help/mailcheck_applet/C/figures/mailcheck-applet.png
 share/gnome/help/mailcheck_applet/C/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck_applet/C/figures/mailcheck-properties-mailcheck.png
@@ -1129,6 +1131,7 @@ share/locale/sv/LC_MESSAGES/gnome-core.mo
 share/locale/ta/LC_MESSAGES/gnome-core.mo
 share/locale/tr/LC_MESSAGES/gnome-core.mo
 share/locale/uk/LC_MESSAGES/gnome-core.mo
+share/locale/vi/LC_MESSAGES/gnome-core.mo
 share/locale/wa/LC_MESSAGES/gnome-core.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-core.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-core.mo
