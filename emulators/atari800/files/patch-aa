@@ -1,0 +1,94 @@
+*** Makefile.orig	Sat Apr 19 07:41:29 1997
+--- Makefile	Tue Apr 22 22:02:13 1997
+***************
+*** 3,8 ****
+--- 3,11 ----
+  #       -lnsl which is required for the Sun versions. Remove them
+  #       if they cause a problem on your system.
+  #
++ # Patched by Joel Sutton Tue Apr 22, 1997
++ #	Fixed install target. Added hooks for config file paths.
++ #       Disabled configure.
+  
+  CC		= gcc
+  CPPFLAGS	= $(OTHER)
+***************
+*** 16,21 ****
+--- 19,31 ----
+  LIB_PATH	= ${PREFIX}/lib
+  MAN_PATH	= ${PREFIX}/man
+  
++ INSTALL		= install -c -o bin -g bin
++ INSTALL_DATA	= ${INSTALL} -m 644
++ INSTALL_PROGRAM	= ${INSTALL} -m 555
++ INSTALL_MAN	= ${INSTALL} -m 444
++ 
++ CONFIG		=${PREFIX}/lib/atari/atari800.cfg
++ 
+  default :
+  	@echo "To build the Atari 800 Emulator, type:"
+  	@echo "make <version>"
+***************
+*** 248,254 ****
+  			platform.h
+  
+  config config.h	:	configure
+! 	./configure
+  
+  configure	:	configure.o prompts.o
+  	$(LD) $(LDFLAGS) configure.o prompts.o $(LDLIBS) -o configure
+--- 258,264 ----
+  			platform.h
+  
+  config config.h	:	configure
+! #	./configure
+  
+  configure	:	configure.o prompts.o
+  	$(LD) $(LDFLAGS) configure.o prompts.o $(LDLIBS) -o configure
+***************
+*** 331,337 ****
+  	$(CC) $(CPPFLAGS) $(CFLAGS) prompts.c
+  
+  rt-config.o	:	rt-config.c $(INCLUDES)
+! 	$(CC) $(CPPFLAGS) $(CFLAGS) rt-config.c
+  
+  sound.o		:	sound.c $(INCLUDES)
+  	$(CC) $(CPPFLAGS) $(CFLAGS) sound.c
+--- 341,347 ----
+  	$(CC) $(CPPFLAGS) $(CFLAGS) prompts.c
+  
+  rt-config.o	:	rt-config.c $(INCLUDES)
+! 	$(CC) $(CPPFLAGS) $(CFLAGS) -DATARI_CONFIG=\"${CONFIG}\" rt-config.c
+  
+  sound.o		:	sound.c $(INCLUDES)
+  	$(CC) $(CPPFLAGS) $(CFLAGS) sound.c
+***************
+*** 341,347 ****
+  
+  clean	:
+  	rm -f configure
+! 	rm -f config.h
+  	rm -f core
+  	rm -f *.o
+  
+--- 351,357 ----
+  
+  clean	:
+  	rm -f configure
+! #	rm -f config.h
+  	rm -f core
+  	rm -f *.o
+  
+***************
+*** 350,354 ****
+  	chmod 4755 ${BIN_PATH}/atari800
+  
+  install :
+! 	cp atari800 ${BIN_PATH}/atari800
+! 	cp atari800.man ${MAN_PATH}/man1/atari800.1
+--- 360,364 ----
+  	chmod 4755 ${BIN_PATH}/atari800
+  
+  install :
+! 	${INSTALL_PROGRAM} atari800 ${BIN_PATH}/atari800
+! 	${INSTALL_MAN} atari800.man ${MAN_PATH}/man1/atari800.1

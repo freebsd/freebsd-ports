@@ -1,0 +1,19 @@
+*** sound.c.orig	Sun Apr 20 23:19:13 1997
+--- sound.c	Sun Apr 20 23:19:28 1997
+***************
+*** 3,9 ****
+  #ifdef VOXWARE
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <sys/soundcard.h>
+  
+  #include "pokey11.h"
+  
+--- 3,9 ----
+  #ifdef VOXWARE
+  #include <fcntl.h>
+  #include <sys/ioctl.h>
+! #include <machine/soundcard.h>
+  
+  #include "pokey11.h"
+  

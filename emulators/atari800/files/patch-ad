@@ -1,0 +1,19 @@
+*** rt-config.c.orig	Sun Apr 20 23:38:04 1997
+--- rt-config.c	Sun Apr 20 23:39:04 1997
+***************
+*** 32,38 ****
+  int enable_xcolpf1;
+  
+  static char *rtconfig_filename1 = "atari800.cfg";
+! static char *rtconfig_filename2 = "/etc/atari800.cfg";
+  
+  int RtConfigLoad (char *rtconfig_filename)
+  {
+--- 32,38 ----
+  int enable_xcolpf1;
+  
+  static char *rtconfig_filename1 = "atari800.cfg";
+! static char *rtconfig_filename2 = ATARI_CONFIG ;
+  
+  int RtConfigLoad (char *rtconfig_filename)
+  {
