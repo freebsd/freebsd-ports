@@ -5,7 +5,12 @@
 # Start or stop SETI@home, or set up working directory and register.
 #
 
+case $0 in
+/*) rc_dir=${0%/*} ;;
+ *) rc_dir=${PWD:-$(pwd)} ;;
+esac
 rc_file=${0##*/}
+rc_path=${rc_dir}/${rc_file}
 rc_arg=$1
 
 # override these variables in ${PREFIX}/etc/rc.setiathome.conf
@@ -13,11 +18,13 @@ seti_wrkdir=/var/db/${rc_file%.sh}	# primary working directory
 seti_std_args=-email			# command arguments for standard mode
 seti_reg_args=-login			# command arguments for register mode
 seti_proxy_args=			# proxy arguments
-seti_user=nobody			# user id to run as
+seti_user=setiathome			# user id to run as
+seti_group=${seti_user}			# group id to run as
 seti_nice=15				# nice level to run at
 seti_maxprocs=$(sysctl -n hw.ncpu)	# max. number of processes to start
+seti_sleep=21600			# time to sleep between restarts
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
+if ! PREFIX=$(expr ${rc_path} : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
 	echo "${rc_file}: Cannot determine PREFIX." >&2
 	echo "Please use the complete pathname." >&2
 	exit 64
@@ -68,19 +75,28 @@ start)
 	done
 	for i in ${seti_wrksuff}; do
 		su -fm ${seti_user} -c "\
-			(cd ${seti_wrkdir}/${i} && exec ${program_path} \
-				 ${seti_std_args} ${seti_proxy_args} \
-				 ${seti_nice:+-nice} ${seti_nice} >/dev/null &)"
+			cd ${seti_wrkdir}/${i} || exit; \
+			echo \$\$ > shpid.sah; \
+			trap 'kill \$pid;exit' 15; \
+			while :; do \
+				${program_path} \
+					${seti_std_args} ${seti_proxy_args} \
+					${seti_nice:+-nice} ${seti_nice} & \
+				pid=\$!; wait \$pid; \
+				sleep ${seti_sleep}; \
+			done > /dev/null" &
 	done
 	echo -n " SETI@home"
 	;;
 
 stop)
 	for i in ${seti_wrksuff}; do
-		pid_path=${seti_wrkdir}/${i}/pid.sah
-		if [ -f ${pid_path} ]; then
-			kill $(cat ${pid_path}) 2> /dev/null
-		fi
+		for pid_path in ${seti_wrkdir}/${i}/pid.sah \
+				${seti_wrkdir}/${i}/shpid.sah; do
+			if [ -f ${pid_path} ]; then
+				kill $(cat ${pid_path}) 2> /dev/null
+			fi
+		done
 	done
 	if [ ! -f ${seti_wrkdir}/pid.sah ]; then
 		killall ${program_file} 2> /dev/null
@@ -102,10 +118,39 @@ register)
 			"unable to register: ${program_path} is missing." >&2
 		exit 72
 	fi
+	if pw group show "${seti_group}" 2>/dev/null; then
+		echo "You already have a group \"${seti_group}\"," \
+		     "so I will use it."
+	elif pw groupadd ${seti_group} -h -; then
+		echo "Added group \"${seti_group}\"."
+	else
+		echo "Adding group \"${seti_group}\" failed..."
+		echo "Please create it, and try again."
+		exit 1
+	fi
+	if pw user show "${seti_user}" 2>/dev/null; then
+		echo "You already have a user \"${seti_user}\"," \
+		     "so I will use it."
+		if pw usermod ${seti_user} -d ${seti_wrkdir}; then
+			echo "Changed home directory of \"${seti_user}\"" \
+			     "to \"${seti_wrkdir}\""
+		else
+			echo "Changing home directory of \"${seti_user}\"" \
+			     "to \"${setu_wrkdir}\" failed..."
+			exit 1
+		fi
+	elif pw useradd ${seti_user} -g ${seti_group} -h - \
+		-d ${seti_wrkdir} -s /sbin/nologin -c "SETI at home Daemon"; then
+		echo "Added user \"${seti_user}\"."
+	else
+		echo "Adding user \"${seti_user}\" failed..."
+		echo "Please create it, and try again."
+		exit 1
+	fi
 	# Create or update primary working directory (in case the uid changed)
-	mkdir -p ${seti_wrkdir}
-	chown ${seti_user} ${seti_wrkdir}
-	chmod u=Xrw,g=Xr,o=Xr ${seti_wrkdir}
+	mkdir -p ${seti_wrkdir} || exit
+	chown -Rh ${seti_user}:${seti_group} ${seti_wrkdir} || exit
+	chmod u=Xrw,g=Xr,o=Xr ${seti_wrkdir} || exit
 	seti_dontlogin=no
 	if [ -f ${seti_wrkdir}/user_info.sah ]; then
 		echo    "      It seems you have already registered with" \
