@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://absolutbsd.org/~petef/
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/flash/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin
 
