@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gqlplus
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	SQL*PLUS with commandline editing, history, and name completion
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
+USE_GMAKE=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${OPSYS}/${PORTNAME} ${PREFIX}/bin
 
 .include <bsd.port.mk>
