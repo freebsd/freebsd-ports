@@ -1,52 +1,7 @@
 bin/jpilot
 bin/jpilot-dump
 bin/jpilot-sync
-lib/jpilot/plugins/libexpense.la
-lib/jpilot/plugins/libexpense.so
-lib/jpilot/plugins/libexpense.so.0
-lib/jpilot/plugins/libkeyring.la
-lib/jpilot/plugins/libkeyring.so
-lib/jpilot/plugins/libkeyring.so.0
-lib/jpilot/plugins/libsynctime.la
-lib/jpilot/plugins/libsynctime.so
-lib/jpilot/plugins/libsynctime.so.0
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.icons
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-address.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-datebook.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-expense.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-install.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-memo.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-prefs.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-print.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-search.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-todo.png
-%%PORTDOCS%%%%DOCSDIR%%/jpilot-toplogo.jpg
-%%PORTDOCS%%%%DOCSDIR%%/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/plugin.html
 share/gnome/apps/Applications/jpilot.desktop
-share/jpilot/AddressDB.pdb
-share/jpilot/DatebookDB.pdb
-share/jpilot/ExpenseDB.pdb
-share/jpilot/Memo32DB.pdb
-share/jpilot/MemoDB.pdb
-share/jpilot/ToDoDB.pdb
-share/jpilot/jpilotrc.blue
-share/jpilot/jpilotrc.default
-share/jpilot/jpilotrc.green
-share/jpilot/jpilotrc.purple
-share/jpilot/jpilotrc.steel
-share/jpilot/icons/jpilot-icon1.xpm
-share/jpilot/icons/jpilot-icon2.xpm
-share/jpilot/icons/jpilot-icon3.xpm
-share/jpilot/icons/jpilot-icon4.xpm
 %%NLS%%share/locale/ca/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/da/LC_MESSAGES/jpilot.mo
@@ -63,44 +18,3 @@ share/jpilot/icons/jpilot-icon4.xpm
 %%NLS%%share/locale/vi/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/jpilot.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/jpilot.mo
-@dirrm share/jpilot/icons
-@dirrm share/jpilot
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/jpilot/plugins
-@dirrm lib/jpilot
-%%NLS%%@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ca 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/da 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/es 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/it 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ja 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/nl 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/no 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ru 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/sv 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/tr 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/vi/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/vi 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps/Applications 2>/dev/null || true
-@unexec rmdir %D/share/gnome/apps 2>/dev/null || true
-@unexec rmdir %D/share/gnome 2>/dev/null || true
