@@ -7,11 +7,12 @@ if [ "${LINGUAS}" ]; then
 	set `echo $LINGUAS`
 else
 if [ "${BATCH}" ]; then
-	set \"az\" \"bg\" \"cs\" \"da\" \"el\" \"en_GB\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"lt\" \"lv\" \"mt\" \"nl\" \"no_NY\" \"pl\" \"pt\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"ta\" \"tr\"
+	set \"af\" \"az\" \"bg\" \"cs\" \"da\" \"el\" \"en_GB\" \"eo\" \"es\" \"et\" \"fi\" \"he\" \"hu\" \"is\" \"it\" \"lt\" \"lv\" \"mt\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"sk\" \"sl\" \"sr\" \"sv\" \"ta\" \"th\" \"tr\" \"xh\" \"zh_TW.Big5\"
 else
 	/usr/bin/dialog --title "Select languages" --clear \
 		--checklist "\n\
 Please select desired languages:" -1 -1 16 \
+af		"Afrikaans" OFF \
 az		"Azerbaijani Turkish" OFF \
 bg		"Bulgarisch" OFF \
 cs		"Czech" OFF \
@@ -28,12 +29,15 @@ hu		"Hungarian" OFF \
 is		"Icelandic" OFF \
 it		"Italian" OFF \
 ja		"Japanese" ON \
+ko		"Korean" ON \
 lt		"Lithuanian" ON \
 lv		"Latvian" ON \
 mt		"Maltese" ON \
+no		"Norwegian" OFF \
 no_NY		"Norwegian (Nynorsk)" OFF \
 pl		"Polish" OFF \
 pt		"Portuguese" OFF \
+pt_BR		"Portuguese (Brazil)" OFF \
 ro		"Romanian" OFF \
 ru		"Russian" ON \
 sr		"Serbian" OFF \
@@ -42,9 +46,13 @@ sk		"Slovak" OFF \
 sl		"Slovenian" OFF \
 es		"Spanish" OFF \
 sv		"Swedish" OFF \
+ta		"Tamil" OFF \
+th		"Thai" OFF \
+zh_TW.Big5	"Traditional Chinese" ON \
 tr		"Turkish" OFF \
 en_GB		"UK English" OFF \
-uk		"Ukrainian" OFF \
+uk		"Ukrainian" ON \
+xh		"Xhosa" OFF \
 2> /tmp/chklist.tmp.$$
 
 	retval=$?
@@ -76,7 +84,15 @@ while [ "$1" ]; do
 	/usr/bin/grep "^[^@].*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}
 	/usr/bin/grep "^[^@].*-$a\$" ${CURDIR}/pkg-plist >> ${PLIST}
 	/usr/bin/grep "^@.*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	/usr/bin/grep "^@.*/$a$" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	if [ x$a = xzh_TW.Big5 ]; then
+	    /usr/bin/grep "^[^@].*/zh_TW/.*" ${CURDIR}/pkg-plist >> ${PLIST}
+	    /usr/bin/grep "^[^@].*-zh_TW\$" ${CURDIR}/pkg-plist >> ${PLIST}
+	    /usr/bin/grep "^@.*/zh_TW/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	    /usr/bin/grep "^@.*/zh_TW$" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	fi
 	shift
 done
 
 /bin/cat ${PLIST}.dirs >> ${PLIST}
+/bin/cat ${FILESDIR}/pkg-plist.sub >> ${PLIST}

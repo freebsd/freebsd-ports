@@ -66,6 +66,7 @@ share/apps/amor/b/sa2c.xpm
 share/apps/amor/b/salut.xpm
 share/apps/amor/b/salut1.xpm
 share/apps/amor/billyrc
+share/apps/amor/blob/blob.xpm
 share/apps/amor/blob/blob_BeamDown1.xpm
 share/apps/amor/blob/blob_BeamDown2.xpm
 share/apps/amor/blob/blob_BeamDown3.xpm
@@ -524,7 +525,10 @@ share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/ktux.png
 share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/16x16/apps
@@ -544,7 +548,9 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/kmoon/pics
 @dirrm share/apps/kmoon
 @dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/kdesktop/programs
+@dirrm share/apps/kdesktop
 @dirrm share/apps/amor/worm
 @dirrm share/apps/amor/tao
 @dirrm share/apps/amor/static
@@ -555,9 +561,6 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/amor/blob
 @dirrm share/apps/amor/b
 @dirrm share/apps/amor
-@dirrm share/apps
 @dirrm share/applnk/Toys
 @dirrm share/applnk/System/ScreenSavers
-@dirrm lib
-@dirrm include
-@dirrm bin
+@dirrm share/applnk/System

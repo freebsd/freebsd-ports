@@ -3,8 +3,6 @@ bin/ical2vcal
 bin/kandy
 bin/kandy_client
 bin/korganizer
-include/ical.h
-include/icalss.h
 include/kgantt/KGantt.h
 include/kgantt/KGanttBarConfig.h
 include/kgantt/KGanttItem.h
@@ -13,11 +11,6 @@ include/kgantt/xQGanttBarView.h
 include/kgantt/xQGanttBarViewPort.h
 include/kgantt/xQGanttListView.h
 include/kgantt/xQGanttListViewPort.h
-include/libicalvcal/icalvcal.h
-include/libicalvcal/port.h
-include/libicalvcal/vcaltmp.h
-include/libicalvcal/vcc.h
-include/libicalvcal/vobject.h
 include/rmm/Address.h
 include/rmm/AddressList.h
 include/rmm/AddressList_generated.h
@@ -61,18 +54,6 @@ include/rmm/Text.h
 include/rmm/Text_generated.h
 include/rmm/Token.h
 include/rmm/Utilities.h
-lib/libical.a
-lib/libical.la
-lib/libical.so
-lib/libical.so.0
-lib/libicalss.a
-lib/libicalss.la
-lib/libicalss.so
-lib/libicalss.so.0
-lib/libicalvcal.a
-lib/libicalvcal.la
-lib/libicalvcal.so
-lib/libicalvcal.so.0
 lib/libkcal.la
 lib/libkcal.so
 lib/libkcal.so.1
@@ -287,15 +268,23 @@ share/icons/hicolor/48x48/apps/korganizer.png
 @dirrm share/apps/korganizer/icons/hicolor/22x22/actions/emptybox
 @dirrm share/apps/korganizer/icons/hicolor/22x22/actions/checkedbox
 @dirrm share/apps/korganizer/icons/hicolor/22x22/actions
+@dirrm share/apps/korganizer/icons/hicolor/22x22
 @dirrm share/apps/korganizer/icons/hicolor/16x16/actions
+@dirrm share/apps/korganizer/icons/hicolor/16x16
 @dirrm share/apps/korganizer/icons/hicolor
+@dirrm share/apps/korganizer/icons
 @dirrm share/apps/korganizer
 @dirrm share/apps/kgantt/icons/hicolor/32x32/actions
+@dirrm share/apps/kgantt/icons/hicolor/32x32
 @dirrm share/apps/kgantt/icons/hicolor/22x22/actions
+@dirrm share/apps/kgantt/icons/hicolor/22x22
 @dirrm share/apps/kgantt/icons/hicolor/16x16/actions
+@dirrm share/apps/kgantt/icons/hicolor/16x16
+@dirrm share/apps/kgantt/icons/hicolor
+@dirrm share/apps/kgantt/icons
+@dirrm share/apps/kgantt
 @dirrm share/apps/kandy
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Applications
 @dirrm include/rmm
-@dirrm include/libicalvcal
 @dirrm include/kgantt

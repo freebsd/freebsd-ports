@@ -245,7 +245,10 @@ share/icons/locolor/16x16/apps/klprfax.png
 share/icons/locolor/32x32/apps/klprfax.png
 share/services/arkpart.desktop
 @dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/16x16/apps
@@ -280,11 +283,16 @@ share/services/arkpart.desktop
 @dirrm share/apps/kjots/pics
 @dirrm share/apps/kjots
 @dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/khexedit/toolbar
 @dirrm share/apps/khexedit
 @dirrm share/apps/kfloppy/pics
 @dirrm share/apps/kfloppy
 @dirrm share/apps/kfind/icons/locolor/22x22/actions
+@dirrm share/apps/kfind/icons/locolor/22x22
+@dirrm share/apps/kfind/icons/locolor
+@dirrm share/apps/kfind/icons
+@dirrm share/apps/kfind
 @dirrm share/apps/kedit
 @dirrm share/apps/kdf/pics
 @dirrm share/apps/kdf
@@ -305,6 +313,7 @@ share/services/arkpart.desktop
 @dirrm share/applnk/System
 @dirrm share/applnk/Settings/PowerControl
 @dirrm share/applnk/Settings/Information
+@dirrm share/applnk/Settings
 @dirrm share/applnk/Editors
 @dirrm share/applnk
 @dirrm lib/kde2

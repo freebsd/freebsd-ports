@@ -222,6 +222,8 @@ share/icons/locolor/32x32/apps/kless.png
 share/icons/locolor/32x32/mimetypes/gettext.png
 share/mimelnk/application/x-gettext.desktop
 share/services/pothumbnail.desktop
+@dirrm share/icons/locolor/32x32/mimetypes
+@dirrm share/icons/locolor/16x16/mimetypes
 @dirrm share/doc/HTML/en/markup
 @dirrm share/doc/HTML/en/kbabel
 @dirrm share/apps/kbabeldict/modules
