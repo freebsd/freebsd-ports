@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	latex2slides
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,21 +16,24 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produces a set of HTML/JPEG slides from a TeX or LaTeX source
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/teTeX \
-		convert:${PORTSDIR}/graphics/ImageMagick
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
+PLIST_SUB=	PORTNAME="${PORTNAME}" PORTVERSION="${PORTVERSION}"
 
 MANCOMPRESSED=	yes
-MAN1=	latex2slides.1
+MAN1=		latex2slides.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,/usr,${PREFIX},g ; \
-		s,share/man,man,g" ${WRKSRC}/install
-	@${REINPLACE_CMD} -e "s,/usr/share,${PREFIX}/share,g" ${WRKSRC}/latex2slides
+.for file in install latex2slides
+	@${REINPLACE_CMD} -e "s,'/usr/bin/,'${PREFIX}/bin/,g ; \
+		 s,'/usr/share/latex2slides/,'${DATADIR}/,g ; \
+		 s,'/usr/share/man/,'${MANPREFIX}/man/,g" ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	@(cd ${WRKSRC} ; ${PYTHON_CMD} ./install)
