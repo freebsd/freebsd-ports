@@ -3,12 +3,12 @@
 # Date created:		31 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/16 15:37:32 vanilla Exp $
 #
 
 DISTNAME=	fkiss028
 PKGNAME=	fkiss-0.28
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 
 MAINTAINER=	flathill@flathill.gr.jp

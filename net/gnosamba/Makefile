@@ -3,11 +3,11 @@
 # Date created:				4 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/16 16:05:54 vanilla Exp $
 #
 
 DISTNAME=	gtksamba-0.1.1
-CATEGORIES=	net x11
+CATEGORIES=	net
 MASTER_SITES=	http://www.open-systems.com/gtksamba/
 
 MAINTAINER=	andy@icc.surw.chel.su
