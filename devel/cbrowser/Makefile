@@ -9,7 +9,8 @@ PORTNAME=	cbrowser
 PORTVERSION=	0.6
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.ziplink.net/~felaco/cbrowser/ \
-		http://people.freebsd.org/~jkoshy/PORTS/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=jkoshy
 
 MAINTAINER=	jkoshy@freebsd.org
 
