@@ -1,0 +1,4 @@
+--- /dev/null	Wed Aug  5 18:00:59 1998
++++ src/qmetaobject.h	Wed Aug  5 18:03:45 1998
+@@ -0,0 +1 @@
++#include <qmetaobj.h>

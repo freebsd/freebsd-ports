@@ -1,0 +1,13 @@
+--- src/socket.cpp	Mon Jul 13 20:53:45 1998
++++ src/socket.cpp	Wed Aug  5 18:02:18 1998
+@@ -69,8 +69,8 @@
+    // find local connection
+    hostent *localHost;
+    char hn[128];
+-   gethostname(hn, 128);
+-   localHost = gethostbyname(hn);
++   //gethostname(hn, 128);
++   localHost = gethostbyname("127.0.0.1");
+    localIPVal = *((unsigned long *)localHost->h_addr);
+ 
+    // set up remote connection

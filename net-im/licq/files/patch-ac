@@ -1,0 +1,17 @@
+--- src/icq.cpp	Mon Jul 13 20:53:45 1998
++++ src/icq.cpp	Wed Aug  5 18:02:39 1998
+@@ -338,7 +338,13 @@
+    case ICQ_CMD_PING: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
+    case ICQ_CMD_ADDUSER: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
+    case ICQ_CMD_AUTHORIZE: emit doneOwnerFcn(false, cmd); break;
+-   case ICQ_CMD_LOGON: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
++   case ICQ_CMD_LOGON: 
++      if (!gotAck) 
++      {
++         emit doneOwnerFcn(false, cmd);
++         logoff(false); 
++      }
++      break;
+    case ICQ_CMD_USERLIST: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
+    case ICQ_CMD_REQ_SYSMESG: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
+    case ICQ_CMD_END_SM_ACK: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
