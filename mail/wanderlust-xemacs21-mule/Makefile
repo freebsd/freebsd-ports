@@ -12,8 +12,8 @@ MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
 EMACS_NAME=		xemacs
 EMACS_PORT=		xemacs21-mule
-EMACS_VER=		21.1.8
-MULE_VER=		21.1.8
+EMACS_VER=		21.1.9
+MULE_VER=		21.1.9
 EMACS_LIBDIR=		lib/xemacs
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 MANIFEST=		MANIFEST.wl
