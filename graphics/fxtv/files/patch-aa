@@ -1,0 +1,19 @@
+--- Makefile.orig	Sat Oct 11 02:42:57 1997
++++ Makefile	Thu Nov 27 10:42:46 1997
+@@ -5,13 +5,14 @@
+ X11BASE                    = /usr/X11R6
+ 
+ override CF_VERS           = -DVERS_STR=\"0.45\"
+-override INC               = -I$(X11BASE)/include -I/usr/local/include
++override INC               = -I$(X11BASE)/include -I/usr/local/include \
++				-I/usr/local/include/tiff34
+ override LD_INC            = -L$(X11BASE)/lib -L/usr/local/lib
+ override CFLAGS            = -m486 $(INC) $(CF_VERS)
+ #override CFLAGS            = -g $(INC) $(CF_VERS)
+ override LDFLAGS           = $(LD_INC) 
+ #override LDFLAGS           = -g $(LD_INC) 
+-override LIBS              = -ltiff -lXaw3d -lXmu -lXt -lXpm -lXxf86dga \
++override LIBS              = -ltiff34 -lXaw3d -lXmu -lXt -lXpm -lXxf86dga \
+ 	                     -lXxf86vm -lSM -lICE -lXext -lX11 
+ 
+ override FXTV_LIBDIR       = $(X11BASE)/lib/X11/fxtv
