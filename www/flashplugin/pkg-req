@@ -17,13 +17,13 @@ fi
 if file $check | grep -qw ELF ; then
     cat <<EOF
 ****
-You seem to be using Netscape for Linux, but the binary 
+It seems you are using Netscape for Linux, but the binary
 that you are going to install is a FreeBSD's a.out.
 
-Go get the Linux binary to:
+Go get the Linux binary at:
    http://www.geocities.com/TimesSquare/Labyrinth/5084/flash.html
 
-or use Netscape for FreeBSD.
+or use Netscape for FreeBSD with this port.
 ****
 EOF
     exit 1
