@@ -335,6 +335,7 @@
     SUBDIR += sitecopy
     SUBDIR += skipstone
     SUBDIR += slash
+    SUBDIR += smarty
     SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
