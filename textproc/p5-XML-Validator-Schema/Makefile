@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Validator-Schema
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -38,6 +38,15 @@ MAN3=		XML::Validator::Schema.3 \
 		XML::Validator::Schema::SimpleTypeNode.3 \
 		XML::Validator::Schema::TypeLibrary.3 \
 		XML::Validator::Schema::Util.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	ANNOUNCE Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
