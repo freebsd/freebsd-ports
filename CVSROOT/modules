@@ -3064,6 +3064,7 @@ ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
 ja-qkc		ports/japanese/qkc
 ja-qt23		ports/japanese/qt23
+ja-quit		ports/japanese/quit
 ja-rbnamazu	ports/japanese/rbnamazu
 ja-recjis	ports/japanese/recjis
 ja-roget-fpw	ports/japanese/roget-fpw
