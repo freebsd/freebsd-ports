@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Automated Program Generator
 
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config

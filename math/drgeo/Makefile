@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnome Interactive Geometry Sofware
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

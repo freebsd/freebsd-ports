@@ -8,7 +8,7 @@
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
 		http://people.freebsd.org/~sobomax/
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A tool for exporting C libraries into Scheme interpreters
 
 BUILD_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
-LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 RUN_DEPENDS=	${LOCALBASE}/share/slib/require.scm:${PORTSDIR}/lang/slib
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas \
 		atlas.1:${PORTSDIR}/math/atlas \
 		fftw.2:${PORTSDIR}/math/fftw \
 		hdf5.0:${PORTSDIR}/graphics/hdf5 \
-		guile.10:${PORTSDIR}/lang/guile
+		guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

@@ -17,7 +17,7 @@ MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA electronic schematic capture tools, netlister
 
 LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
-		guile.10:${PORTSDIR}/lang/guile
+		guile.15:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 
 USE_LIBTOOL=	yes

@@ -41,7 +41,7 @@ CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
 MAKE_ARGS=	"-j 2"
 
 .if defined(WITH_GUILE) || defined(GUILE)
-LIB_DEPENDS+=	guile.10:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
 .endif
 
 USE_X_PREFIX=	yes

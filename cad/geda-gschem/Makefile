@@ -18,7 +18,7 @@ COMMENT=	gEDA electronic schematic capture tools
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
 LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
-		guile.10:${PORTSDIR}/lang/guile
+		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
 #USE_AUTOCONF=	yes
