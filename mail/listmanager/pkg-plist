@@ -1,3 +1,4 @@
+etc/listmanager.cf
 sbin/listmanager
 share/listmanager/help/ACLs
 share/listmanager/help/Addresses
