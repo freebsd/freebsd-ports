@@ -1,3 +1,4 @@
+%%CAPINFO%%
 bin/dftest
 %%EDITCAP%%
 %%ETHEREAL%%
@@ -18,6 +19,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/irda.so
 lib/ethereal/plugins/%%PORTVERSION%%/lwres.so
 lib/ethereal/plugins/%%PORTVERSION%%/megaco.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
+lib/ethereal/plugins/%%PORTVERSION%%/opsi.so
 lib/ethereal/plugins/%%PORTVERSION%%/pcli.so
 lib/ethereal/plugins/%%PORTVERSION%%/rdm.so
 lib/ethereal/plugins/%%PORTVERSION%%/rlm.so
@@ -31,6 +33,7 @@ lib/libwiretap.a
 lib/libwiretap.so
 lib/libwiretap.so.0
 share/ethereal/AUTHORS-SHORT
+share/ethereal/capinfo.html
 share/ethereal/diameter/dictionary.dtd
 share/ethereal/diameter/dictionary.xml
 share/ethereal/diameter/mobileipv4.xml

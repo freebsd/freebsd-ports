@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.10.5
-PORTREVISION=	1
+PORTVERSION=	0.10.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/all-versions/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/all-versions/ \
@@ -24,7 +23,7 @@ WANT_GNOME=	yes
 CONFIGURE_ARGS+=	--program-transform-name=""
 INSTALLS_SHLIB=	yes
 
-.for x in editcap idl2eth mergecap text2pcap
+.for x in capinfo editcap idl2eth mergecap text2pcap
 .if defined(LITE)
 PLIST_SUB+=		${x:U}="@comment $x not installed"
 CONFIGURE_ARGS+=	--enable-$x=no
@@ -59,8 +58,7 @@ CONFIGURE_ARGS+=	--enable-ethereal=no \
 .endif
 
 USE_LIBTOOL_VER=15
-LIBTOOLFILES=	configure wiretap/configure doc/configure \
-	      	plugins/gryphon/configure
+LIBTOOLFILES=	configure wiretap/configure
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
