@@ -7,8 +7,8 @@ for more information.
 
 --
 
-I believe from recent discussions on the lists that this port will not
-work on FreeBSD 2.0, nor will it work on earlier snapshots. This (if my
-memory serves me) is due to a bug in the C library (possibly vprintf).
+This port will not work on FreeBSD 2.0, nor will it work on earlier snapshots.
+This is due to a bug in vprintf in the C library. On FreeBSD earlier than
+2.0.5, setuid scrips may be insecure or may not work.
 
 - MarkM
