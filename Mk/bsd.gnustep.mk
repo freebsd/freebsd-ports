@@ -154,6 +154,9 @@ MAKE_FLAGS+=	GUI_BACKEND_LIB=art
 # source GNUstep.sh
 #
 .if defined(USE_GNUSTEP_CONFIGURE)
+run-autotools:
+	@${DO_NADA}
+
 do-configure:
 	@(cd ${CONFIGURE_WRKSRC}; . ${SYSMAKEDIR}/GNUstep.sh; \
 	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \

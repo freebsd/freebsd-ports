@@ -327,6 +327,20 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (value: perl5)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #					This value is added to PLIST_SUB.
+#
+# USE_GHOSTSCRIPT	- Says that the port needs ghostscript to both
+#					build and run.  Default: not set.
+# USE_GHOSTSCRIPT_BUILD	- Says that the port needs ghostscript to build.
+#					Default: not set.
+# USE_GHOSTSCRIPT_RUN	- Says that the port needs ghostscript to run.
+#					Default: not set.
+# GHOSTSCRIPT_PORT	- The port that provides postscript functionality.
+#					Some installations may wish to override the default
+#					to specify a version without X11 and/or localized
+#					versions for their nationality.
+# WITH_GHOSTSCRIPT_AFPL - If set to Yes, says to use the AFPL
+#					version of the ghostscript software instead
+#					of the GNU version, which is used otherwise.
 ##
 # USE_BISON		- Says that the port uses bison for building.
 ##
@@ -639,8 +653,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # makesum		- Generate distinfo (only do this for your own ports!).
 # clean		    - Remove ${WRKDIR} and other temporary files used for building.
 # clean-depends	- Do a "make clean" for all dependencies.
+# config	- Configure options for this port (using ${DIALOG}).
+#			Automatically run prior to extract, patch, configure, build,
+#			install, and package.
+# showconfig	- Display options config for this port
+# rmconfig	- Remove the options config for this port
 #
-# Default sequence for "all" is:  fetch checksum extract patch configure build
+# Default sequence for "all" is:
+#
+#     sanity-check fetch checksum extract patch configure build
 #
 # Please read the comments in the targets section below; you
 # should be able to use the pre-* or post-* targets/scripts
@@ -660,6 +681,19 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NO_INSTALL	- Use a dummy (do-nothing) install target.
 #
 # Here are some variables used in various stages.
+#
+# For options:
+#	OPTIONS		- List of what WITH_<option> options this port accept.  The
+#			  format is <option> "<description>" [on|off]
+#			  Example:
+#				FLEXRESP "Flexible response to events" off
+#			 which tell that an option WITH_FLEXRESP exists for this port,
+#			 that by default it is not defined, and that the description to
+#			 show to a user in the config dialog is "Flexible response to
+#			 events".  If you have more than one option, just chain them
+#			 into a single variable.  NOTE: To make options work, you need
+#			 to include bsd.port.pre.mk before you start testing the
+#			 WITH_xyz variables.
 #
 # For fetch:
 #
@@ -726,6 +760,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${HAS_CONFIGURE} is set.
 # CONFIGURE_LOG - The name of configure log file (default: config.log).
 #				  It will be printed to the screen if configure fails.
+# CONFIGURE_FAIL_MESSAGE - A message displayed to users when configure
+# 				           fails (note: this assumes the do-configure
+# 				           target has not been overwritten).  This message
+# 				           will be passed through /usr/bin/fmt before
+# 				           being shown to the user.
 #
 # For build and install:
 #
@@ -747,6 +786,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MTREE_FILE	- The name of the mtree file (default: /etc/mtree/BSD.x11.dist
 #				  if USE_X_PREFIX is set, /etc/mtree/BSD.local.dist
 #				  otherwise.)
+# PLIST_DIRS		- Directories to be added to packing list
+# PLIST_FILES		- Files and symbolic links to be added to packing list
+#
 # PLIST			- Name of the `packing list' file (default: ${PKGDIR}/pkg-plist).
 #				  Change this to ${WRKDIR}/PLIST or something if you
 #				  need to write to it.  (It is not a good idea for a port
@@ -802,7 +844,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  to turn them off (default: ${ECHO_CMD}).
 # PATCH_DEBUG	- If set, print out more information about the patches as
 #				  it attempts to apply them.
-# PKG_DBDIR		- Where package installation is recorded (default: /var/db/pkg)
+# PKG_DBDIR		- Where package installation is recorded; this directory
+#				must not contain anything else (default: /var/db/pkg).
+# PORT_DBDIR		- Where port configuration options are recorded
+#				(default: /var/db/ports)
 # NO_PKG_REGISTER - Don't register a port installation as a package.
 # FORCE_PKG_REGISTER - If set, it will overwrite any existing package
 #				  registration information in ${PKG_DBDIR}/${PKGNAME}.
@@ -824,8 +869,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 .if !defined(AFTERPORTMK)
 
 .if defined(_PREMKINCLUDED)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: You cannot include bsd.port[.pre].mk twice"
+check-makefile::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: you cannot include bsd.port[.pre].mk twice"
 	@${FALSE}
 .endif
 
@@ -833,6 +878,7 @@ _PREMKINCLUDED=	yes
 
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
+BRANDELF?=	/usr/bin/brandelf
 .if exists(/usr/bin/bzip2)
 BZCAT?=		/usr/bin/bzcat
 BZIP2_CMD?=	/usr/bin/bzip2
@@ -847,8 +893,10 @@ CHMOD?=		/bin/chmod
 CHOWN?=		/usr/sbin/chown
 COMM?=		/usr/bin/comm
 CP?=		/bin/cp
+CPIO?=		/usr/bin/cpio
 CUT?=		/usr/bin/cut
 DC?=		/usr/bin/dc
+DIALOG?=	/usr/bin/dialog
 EGREP?=		/usr/bin/egrep
 EXPR?=		/bin/expr
 FALSE?=		false				# Shell builtin
@@ -867,12 +915,17 @@ LN?=		/bin/ln
 LS?=		/bin/ls
 MKDIR?=		/bin/mkdir -p
 MV?=		/bin/mv
+OBJCOPY?=	/usr/bin/objcopy
+PASTE?=		/usr/bin/paste
+PAX?=		/bin/pax
+PRINTF?=	/usr/bin/printf
 REALPATH?=	/bin/realpath
 RM?=		/bin/rm
 RMDIR?=		/bin/rmdir
 SED?=		/usr/bin/sed
 SETENV?=	/usr/bin/env
 SH?=		/bin/sh
+SORT?=		/usr/bin/sort
 STRIP_CMD?=	/usr/bin/strip
 SU_CMD?=	/usr/bin/su root -c
 TAIL?=		/usr/bin/tail
@@ -880,6 +933,12 @@ TEST?=		test				# Shell builtin
 TR?=		/usr/bin/tr
 TRUE?=		true				# Shell builtin
 UNAME?=		/usr/bin/uname
+.if exists(/usr/bin/unzip)
+UNZIP_CMD?=	/usr/bin/unzip
+.else
+UNZIP_CMD?=	${LOCALBASE}/bin/unzip
+ZIPDEPENDS=	yes
+.endif
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 YACC?=		/usr/bin/yacc
@@ -921,7 +980,7 @@ OSVERSION!=	/usr/sbin/sysctl -n kern.osreldate
 
 # Get the object format.
 .if !defined(PORTOBJFORMAT)
-PORTOBJFORMAT!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
+PORTOBJFORMAT!=		${TEST} -x /usr/bin/objformat && /usr/bin/objformat || ${ECHO_CMD} aout
 .endif
 
 MASTERDIR?=	${.CURDIR}
@@ -955,16 +1014,30 @@ USE_SUBMAKE=	yes
 USE_SUBMAKE=	yes
 .endif
 
+# where 'make config' records user configuration options
+PORT_DBDIR?=	/var/db/ports
+
+OPTIONSFILE?=${PORT_DBDIR}/${PORTNAME}/options
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+.if exists(${OPTIONSFILE}.local)
+.include "${OPTIONSFILE}.local"
+.endif
+
+# check for old, crufty, makefile types, part 1:
 .if !defined(PORTNAME) || !defined(PORTVERSION) || defined(PKGNAME)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+check-makefile::
+	@${ECHO_CMD} "Makefile error: you need to define PORTNAME and PORTVERSION instead of PKGNAME."
 	@${ECHO_CMD} "(This port is too old for your bsd.port.mk, please update it to match"
 	@${ECHO_CMD} " your bsd.port.mk.)"
 	@${FALSE}
 .endif
 
+.if defined(PORTVERSION)
 .if ${PORTVERSION:M*[-_,]*}x != x
 BROKEN=			"PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','"
+.endif
 .endif
 
 PORTREVISION?=	0
@@ -977,7 +1050,11 @@ PORTEPOCH?=		0
 _SUF2=	,${PORTEPOCH}
 .endif
 
+# check for old, crufty, makefile types, part 2.  The "else" case
+# should have been handled in part 1, above.
+.if !defined(PKGNAME)
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
+.endif
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
 
 # These need to be absolute since we don't know how deep in the ports
@@ -1010,8 +1087,8 @@ TEMPLATES?=		${PORTSDIR}/Templates
 
 .if (!defined(PKGDIR) && exists(${MASTERDIR}/pkg/DESCR)) || \
 	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
-pre-everything::
-	@${ECHO_CMD} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
+check-makefile::
+	@${ECHO_CMD} "Makefile error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
 	@${FALSE}
 .endif
 PATCHDIR?=		${MASTERDIR}/files
@@ -1158,8 +1235,8 @@ WWWGRP?=	www
 .if !defined(BEFOREPORTMK)
 
 .if defined(_POSTMKINCLUDED)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: You cannot include bsd.port[.post].mk twice"
+check-makefile::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: you cannot include bsd.port[.post].mk twice"
 	@${FALSE}
 .endif
 
@@ -1179,6 +1256,10 @@ INSTALL_WRKSRC?=${WRKSRC}
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
+.if defined(WITHOUT_CPU_CFLAGS)
+CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
+.endif
+
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	        PORTDOCS="@comment "
 .else
@@ -1196,8 +1277,8 @@ PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 .if defined(MANCOMPRESSED)
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
 	${MANCOMPRESSED} != maybe
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: Value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: value of MANCOMPRESSED (is \"${MANCOMPRESSED}\") can only be \"yes\", \"no\" or \"maybe\"".
 	@${FALSE}
 .endif
 .endif
@@ -1212,7 +1293,7 @@ MANCOMPRESSED?=	no
 .if ${PATCHFILES:M*.bz2}x != x && defined(BZIP2DEPENDS)
 PATCH_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
 .endif
-.if ${PATCHFILES:M*.zip}x != x
+.if ${PATCHFILES:M*.zip}x != x && defined(ZIPDEPENDS)
 PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 .endif
@@ -1220,7 +1301,7 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .if defined(USE_BZIP2) && defined(BZIP2DEPENDS)
 EXTRACT_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
-.if defined(USE_ZIP)
+.if defined(USE_ZIP) && defined(ZIPDEPENDS)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if defined(USE_GMAKE)
@@ -1539,10 +1620,7 @@ RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 .endif
 
 .if defined(USE_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
-MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
+.include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
 .if defined(USE_MOTIF)
@@ -1608,8 +1686,8 @@ USE_REINPLACE=yes
 .if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
 .if !exists(/usr/bin/perl${PERL_VERSION}) && ( defined(USE_PERL5) || \
 	defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) )
-pre-everything::
-	@${ECHO_CMD} "Error: you don't have the right version of perl in /usr/bin."
+check-depends::
+	@${ECHO_CMD} "Dependency error: you don't have the right version of perl in /usr/bin."
 	@${FALSE}
 .endif
 .else
@@ -1685,6 +1763,38 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 USE_SUBMAKE=	yes
 .endif
 
+# Set the default for the installation of Postscript(TM)-
+# compatible functionality.
+.if !defined(WITHOUT_X11)
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+.if ${WITH_GHOSTSCRIPT_AFPL} == yes
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
+.endif
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
+.endif
+.else
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+.if ${WITH_GHOSTSCRIPT_AFPL} == yes
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+.endif
+.else
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+.endif
+.endif
+
+# Set up the ghostscript dependencies.
+.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_BUILD)
+BUILD_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+.endif
+.if defined(USE_GHOSTSCRIPT) || defined(USE_GHOSTSCRIPT_RUN)
+RUN_DEPENDS+=	gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
+.endif
+
 # Special macro for doing in-place file editing using regexps
 .if defined(USE_REINPLACE)
 REINPLACE_ARGS?=	-i.bak
@@ -1746,7 +1856,7 @@ FETCH_CMD?=		/usr/bin/fetch
 FETCH_CMD?=		/usr/bin/fetch -ARr
 FETCH_REGET?=	1
 .endif
-#FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
+FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .else
 FETCH_CMD?=		/usr/bin/ftp
 FETCH_REGET?=	0
@@ -1756,12 +1866,7 @@ FETCH_REGET?=	0
 .if exists(/usr/games/random)
 RANDOM_CMD?=	/usr/games/random
 RANDOM_ARGS?=	"-w -f -"
-.if ${OSVERSION} > 500100
-_RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
-.else
-_RANDOMIZE_SITES=	''
-.endif
-.if ${OSVERSION} > 480000 && ${OSVERSION} < 500000
+.if ( ${OSVERSION} > 480000 && ${OSVERSION} < 500000 ) || ${OSVERSION} > 500100
 _RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
 .else
 _RANDOMIZE_SITES=	''
@@ -1808,7 +1913,7 @@ TAR?=	/usr/bin/tar
 
 # EXTRACT_SUFX is defined in .pre.mk section
 .if defined(USE_ZIP)
-EXTRACT_CMD?=			unzip
+EXTRACT_CMD?=		${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
 .else
@@ -1917,7 +2022,7 @@ PKG_INFO?=		/usr/sbin/pkg_info
 # Does the pkg_create tool support conflict checking?
 PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
 .if ${PKGINSTALLVER} < 20030417
-DISABLE_CONFLICTS=     YES
+DISABLE_CONFLICTS=	YES
 .endif
 .if !defined(PKG_ARGS)
 PKG_ARGS=		-v -c -${COMMENT:Q} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`cd ${.CURDIR} && ${MAKE} package-depends | ${GREP} -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS} $${_LATE_PKG_ARGS}
@@ -1928,7 +2033,7 @@ PKG_ARGS+=		-m ${MTREE_FILE}
 PKG_ARGS+=		-o ${PKGORIGIN}
 .endif
 .if defined(CONFLICTS) && !defined(DISABLE_CONFLICTS)
-PKG_ARGS+=      -C "${CONFLICTS}"
+PKG_ARGS+=		-C "${CONFLICTS}"
 .endif
 .endif
 .if defined(PKG_NOCOMPRESS)
@@ -1952,14 +2057,14 @@ INSTALL_TARGET?=	install
 # phased out.
 # The final simpler patch will come afterwards
 .if !defined(COMMENT)
-.BEGIN:
-		@${ECHO_CMD} 'There is no COMMENT variable defined'
+check-makevars::
+		@${ECHO_CMD} 'Makefile error: there is no COMMENT variable defined'
 		@${ECHO_CMD} 'for this port. Please, rectify this.'
 		@${FALSE}
 .else
 .if exists(${COMMENTFILE})
-.BEGIN:
-		@${ECHO_CMD} 'There is a COMMENTFILE in this port.'
+check-makevars::
+		@${ECHO_CMD} 'Makefile error: There is a COMMENTFILE in this port.'
 		@${ECHO_CMD} 'COMMENTFILEs have been deprecated in'
 		@${ECHO_CMD} 'favor of COMMENT variables.'
 		@${ECHO_CMD} 'Please, rectify this.'
@@ -1986,8 +2091,8 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-.BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+check-makevars::
+				@${ECHO_CMD} "Makefile error: the words all, ALL and default are reserved and cannot be"
 				@${ECHO_CMD} "used in group definitions. Please fix your MASTER_SITES"
 				@${FALSE}
 .			endif
@@ -2003,7 +2108,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-.BEGIN:
+check-makevars::
 				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
 				@${ECHO_CMD} "used in group definitions. Please fix your PATCH_SITES"
 				@${FALSE}
@@ -2025,8 +2130,8 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-.BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+check-makevars::
+				@${ECHO_CMD} "Makefile error: the words all, ALL and default are reserved and cannot be"
 				@${ECHO_CMD} "used in group definitions. Please fix your MASTER_SITE_SUBDIR"
 				@${FALSE}
 .			endif
@@ -2046,8 +2151,8 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//:S/^://}
 .		for _group in ${_S_TEMP:S/,/ /g}
 _G_TEMP=	${_group}
 .			if ${_G_TEMP} == all || ${_G_TEMP} == ALL || ${_G_TEMP} == default
-.BEGIN:
-				@${ECHO_CMD} "The words all, ALL and default are reserved and cannot be"
+check-makevars::
+				@${ECHO_CMD} "Makefile error: the words all, ALL and default are reserved and cannot be"
 				@${ECHO_CMD} "used in group definitions. Please fix your PATCH_SITE_SUBDIR"
 				@${FALSE}
 .			endif
@@ -2266,7 +2371,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .			if !target(master-sites-${_group})
 SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-${_group}
 master-sites-${_group}:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
 .		endfor
 .	endif
@@ -2278,7 +2383,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .			if !target(patch-sites-${_group})
 SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-${_group}
 patch-sites-${_group}:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
 .		endfor
 .	endif
@@ -2311,14 +2416,14 @@ _PATCH_SITES_ENV+=	_PATCH_SITES_${_group}="${_PATCH_SITES_${_group}}"
 .endfor
 
 master-sites-ALL:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 patch-sites-ALL:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 # has similar effect to old targets, i.e., access only {MASTER,PATCH}_SITES, not working with the new _n variables
 master-sites-DEFAULT:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 patch-sites-DEFAULT:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
+	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 
 # synonyms, mnemonics
 master-sites-all: master-sites-ALL
@@ -2341,7 +2446,7 @@ CKSUMFILES!=	\
 			fi; \
 		done; \
 		if [ "$$ignore" = 0 ]; then \
-			echo "$$file"; \
+			${ECHO_CMD} "$$file"; \
 		fi; \
 	done
 .endif
@@ -2370,9 +2475,14 @@ maintainer:
 	@${ECHO_CMD} "${MAINTAINER}"
 .endif
 
+.if !target(check-makefile)
+check-makefile:
+	@${DO_NADA}
+.endif
+
 .if !defined(CATEGORIES)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: CATEGORIES is mandatory."
+check-categories:
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: CATEGORIES is mandatory."
 	@${FALSE}
 .else
 
@@ -2388,18 +2498,28 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	tcl76 tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
 	tk42 tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
-	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm xfce \
-	zope
+	x11 x11-clocks x11-fm x11-fonts x11-servers x11-themes x11-toolkits \
+	x11-wm xfce zope
 
 check-categories:
 .for cat in ${CATEGORIES}
 	@if ${ECHO_CMD} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
 		${TRUE}; \
 	else \
-		${ECHO_CMD} "${PKGNAME}: category ${cat} not in list of valid categories."; \
+		${ECHO_CMD} "${PKGNAME}: Makefile error: category ${cat} not in list of valid categories."; \
 		${FALSE}; \
 	fi
 .endfor
+.endif
+
+.if !target(check-makevars)
+check-makevars:
+	@${DO_NADA}
+.endif
+
+.if !target(check-depends)
+check-depends:
+	@${DO_NADA}
 .endif
 
 PKGREPOSITORYSUBDIR?=	All
@@ -2428,8 +2548,15 @@ CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
 
+# A default message to print if do-configure fails.
+CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer] and attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including the output of the failure of your make command. Also, it might be a good idea to provide an overview of all packages installed on your system (e.g. an \`ls ${PKG_DBDIR}\`)."
+
+# Maximum command line length
+CONFIGURE_MAX_CMD_LEN?=16384
+
 .if defined(GNU_CONFIGURE)
 CONFIGURE_ARGS+=	--prefix=${PREFIX} ${CONFIGURE_TARGET}
+CONFIGURE_ENV+=		lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 HAS_CONFIGURE=		yes
 .endif
 
@@ -2473,14 +2600,19 @@ __pmlinks!=	${ECHO_CMD} '${MLINKS:S/	/ /}' | ${AWK} \
 		else \
 			{ print "broken"; exit; } \
 	} \
-  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
+  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/$$$$$$$${__lang}/man\2/\1${MANEXT}g' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: Unable to parse MLINKS."
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: unable to parse MLINKS."
 	@${FALSE}
 .endif
 _MLINKS=	${_MLINKS_PREPEND}
-.for lang in ${MANLANG}
+# XXX 20040119 This next line should read:
+# .for lang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
+# but there is currently a bug in make(1) that prevents the double-quote
+# substitution from working correctly.  Once that problem is addressed,
+# and has had a enough time to mature, this hack should be removed.
+.for lang in ${MANLANG:S%^%man/%:S%^man/""$%man%:S%^man/"$%man%}
 .for ___pmlinks in ${__pmlinks}
 .for __lang in ${lang}
 _MLINKS+=	${___pmlinks:S// /g}
@@ -2498,21 +2630,18 @@ _COUNT=1
 .endif
 .endfor
 
-.for lang in ${MANLANG}
+# XXX 20040119 This next line should read:
+# .for manlang in ${MANLANG:S%^%man/%:S%^man/""$%man%}
+# but there is currently a bug in make(1) that prevents the double-quote
+# substitution from working correctly.  Once that problem is addressed,
+# and has had a enough time to mature, this hack should be removed.
+.for manlang in ${MANLANG:S%^%man/%:S%^man/""$%man%:S%^man/"$%man%}
 
-.for sect in 1 2 3 4 5 6 7 8 9
+.for sect in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${sect})
-_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/man/${lang}/man${sect}/%}
+_MANPAGES+=	${MAN${sect}:S%^%${MAN${sect}PREFIX}/${manlang}/man${sect:L}/%}
 .endif
 .endfor
-
-.if defined(MANL)
-_MANPAGES+=	${MANL:S%^%${MANLPREFIX}/man/${lang}/manl/%}
-.endif
-
-.if defined(MANN)
-_MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
-.endif
 
 .endfor
 
@@ -2520,14 +2649,18 @@ _MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
 _TMLINKS=
 .endif
 
-.if defined(_MANPAGES) && defined(NOMANCOMPRESS)
-__MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g}
-.elif defined(_MANPAGES)
-__MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g:S/$/.gz/}
+.if defined(_MANPAGES)
+
+.if defined(NOMANCOMPRESS)
+__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%}
+.else
+__MANPAGES:=	${_MANPAGES:S%^${PREFIX}/%%:S%$%.gz%}
 .endif
 
-.if defined(_MANPAGES) && ${MANCOMPRESSED} == "yes"
-_MANPAGES:=	${_MANPAGES:S/$/.gz/}
+.if ${MANCOMPRESSED} == "yes"
+_MANPAGES:=	${_MANPAGES:S%$%.gz%}
+.endif
+
 .endif
 
 .if ${XFREE86_VERSION} == 3
@@ -2663,7 +2796,7 @@ IGNORECMD=	${DO_NADA}
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
 .endif
 
-.for target in fetch checksum extract patch configure all build install reinstall package
+.for target in sanity-check fetch checksum extract patch configure all build install reinstall package
 ${target}:
 	@${IGNORECMD}
 .if defined(INSTALLS_DEPENDS)
@@ -2739,6 +2872,18 @@ DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
+#
+# Do preliminary work to detect if we need to run the config
+# target or not.
+#
+################################################################
+.if (!defined(OPTIONS) || defined(CONFIG_DONE) || \
+	defined(PACKAGE_BUILDING) || defined(BATCH) || \
+	exists(${OPTIONSFILE}) || exists(${OPTIONSFILE}.local))
+_OPTIONS_OK=yes
+.endif
+
+################################################################
 # The following are used to create easy dummy targets for
 # disabling some bit of default target behavior you don't want.
 # They still check to see if the target exists, and if so don't
@@ -2748,25 +2893,25 @@ DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 ################################################################
 
 # Disable checksum
-.if defined(NO_CHECKSUM) && !target(checksum)
+.if defined(NO_CHECKSUM) && !target(checksum) && defined(_OPTIONS_OK)
 checksum: fetch
 	@${DO_NADA}
 .endif
 
 # Disable build
-.if defined(NO_BUILD) && !target(build)
+.if defined(NO_BUILD) && !target(build) && defined(_OPTIONS_OK)
 build: configure
 	@${TOUCH} ${TOUCH_FLAGS} ${BUILD_COOKIE}
 .endif
 
 # Disable install
-.if defined(NO_INSTALL) && !target(install)
+.if defined(NO_INSTALL) && !target(install) && defined(_OPTIONS_OK)
 install: build
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 .endif
 
 # Disable package
-.if defined(NO_PACKAGE) && !target(package)
+.if defined(NO_PACKAGE) && !target(package) && defined(_OPTIONS_OK)
 package:
 .if defined(IGNORE_SILENT)
 	@${DO_NADA}
@@ -2791,18 +2936,43 @@ describe:
 
 # Pre-everything
 
+# XXX MCL suggests deprecating this in favor of something
+# less likely to be abused by overloading
 pre-everything::
+	@${DO_NADA}
+
+buildanyway-message:
 .if defined(TRYBROKEN)
 	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
 .else
 	@${DO_NADA}
 .endif
+
+options-message:
 .if defined(GNOME_OPTION_MSG) && (!defined(PACKAGE_BUILDING) || !defined(BATCH))
 	@for m in ${GNOME_OPTION_MSG}; do \
 		${ECHO_MSG} $$m; \
 	done
 .else
 	@${DO_NADA}
+.endif
+
+# Warn user about deprecated packages.  Advisory only.
+
+.if !target(check-deprecated)
+check-deprecated:
+.if defined(DEPRECATED)
+	@${ECHO_MSG} "===>   NOTICE:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "This port is deprecated; you may wish to reconsider installing it:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "${DEPRECATED}."
+	@${ECHO_MSG}
+.if defined(EXPIRATION_DATE)
+	@${ECHO_MSG} "It is scheduled to be removed ${EXPIRATION_DATE}."
+	@${ECHO_MSG}
+.endif
+.endif
 .endif
 
 # Fetch
@@ -2813,8 +2983,8 @@ do-fetch:
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
-		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		force_fetch=false; \
 		filebasename=`${BASENAME} $$file`; \
 		for afile in ${FORCE_FETCH}; do \
@@ -2824,6 +2994,8 @@ do-fetch:
 			fi; \
 		done; \
 		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
+			DIR=${DIST_SUBDIR}; \
+			pattern="$${DIR:+$$DIR/}`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
 			if [ -L $$file -o -L $$filebasename ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
@@ -2831,10 +3003,10 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			if [ -f ${MD5_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
-				if ! ${GREP} -q "^MD5 (.*$$file)" ${MD5_FILE}; then \
-					${ECHO_MSG} ">> $$file is not in ${MD5_FILE}."; \
+				if ! ${GREP} -q "^MD5 ($$pattern)" ${MD5_FILE}; then \
+					${ECHO_MSG} ">> $${DIR:+$$DIR/}$$file is not in ${MD5_FILE}."; \
 					${ECHO_MSG} ">> Either ${MD5_FILE} is out of date, or"; \
-					${ECHO_MSG} ">> $$file is spelled incorrectly."; \
+					${ECHO_MSG} ">> $${DIR:+$$DIR/}$$file is spelled incorrectly."; \
 					exit 1; \
 				fi; \
 			fi; \
@@ -2852,7 +3024,7 @@ do-fetch:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2878,8 +3050,8 @@ do-fetch:
 	@(cd ${_DISTDIR}; \
 	 ${_PATCH_SITES_ENV} ; \
 	 for _file in ${PATCHFILES}; do \
-		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		force_fetch=false; \
 		filebasename=`${BASENAME} $$file`; \
 		for afile in ${FORCE_FETCH}; do \
@@ -2905,14 +3077,15 @@ do-fetch:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				pattern="$${DIR:+$$DIR/}`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
+				CKSIZE=`${GREP} "^SIZE ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	${MKDIR} $${file%/*}; \
 						args="-o $${file} $${site}$${file}";; \
@@ -2981,7 +3154,7 @@ do-patch:
 	done
 .endif
 	@if [ -d ${PATCHDIR} ]; then \
-		if [ "`echo ${PATCHDIR}/patch-*`" != "${PATCHDIR}/patch-*" ]; then \
+		if [ "`${ECHO_CMD} ${PATCHDIR}/patch-*`" != "${PATCHDIR}/patch-*" ]; then \
 			${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
 			PATCHES_APPLIED="" ; \
 			for i in ${PATCHDIR}/patch-*; do \
@@ -3011,8 +3184,8 @@ do-patch:
 
 # Configure
 
-.if !target(do-configure)
-do-configure:
+.if !target(run-autotools)
+run-autotools:
 .if defined(USE_AUTOMAKE)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
@@ -3025,6 +3198,10 @@ do-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOHEADER_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
 .endif
+.endif
+
+.if !target(do-configure)
+do-configure:
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
@@ -3049,11 +3226,7 @@ do-configure:
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
 			 ${ECHO_CMD} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
-			(${ECHO_CMD} "      Please report the problem to ${MAINTAINER} [maintainer] and"; \
-			 ${ECHO_CMD} "      attach the \"${CONFIGURE_WRKSRC}/${CONFIGURE_LOG}\" including"; \
-			 ${ECHO_CMD} "      the output of the failure of your make command. Also, it might"; \
-			 ${ECHO_CMD} "      be a good idea to provide an overview of all packages installed"; \
-			 ${ECHO_CMD} "      on your system (e.g. an \`ls ${PKG_DBDIR}\`).") | /usr/bin/fmt 75 79 ; \
+			 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | /usr/bin/fmt 75 79 ; \
 			 ${FALSE}; \
 		fi)
 .endif
@@ -3089,20 +3262,30 @@ check-conflicts:
 .for conflict in ${CONFLICTS}
 	@found="`${LS} -d ${PKG_DBDIR}/${conflict} 2>/dev/null || ${TRUE}`"; \
 	if [ X"$$found" != X"" ]; then \
-		${ECHO} "$$found" >> ${WRKDIR}/.CONFLICTS; \
+		${ECHO_CMD} "$$found" >> ${WRKDIR}/.CONFLICTS; \
 	fi
 .endfor
 	@if [ -s ${WRKDIR}/.CONFLICTS ]; then \
-		found=`cat ${WRKDIR}/.CONFLICTS | ${SED} -e s'|${PKG_DBDIR}/||g' | tr '\012' ' '`; \
-		${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
-		for entry in $$found; do \
-			${ECHO_MSG} "      $$entry"; \
+		found=`${CAT} ${WRKDIR}/.CONFLICTS | ${SED} -e s'|${PKG_DBDIR}/||g' | ${TR} '\012' ' '`; \
+		conflicting=0; \
+		for entry in $${found}; do \
+			prfx=`${PKG_INFO} -q -p $${entry} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
+			if [ "x${PREFIX}" = "x$${prfx}" ]; then \
+				conflicting=1;\
+				conflicts_with="$${conflicts_with} $${entry}";\
+			fi;\
 		done; \
 		${ECHO_MSG}; \
-		${ECHO_MSG} "      They install files into the same place."; \
-		${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
-		${RM} -f ${WRKDIR}/.CONFLICTS; \
-		exit 1; \
+		if [ "x$${conflicting}" = "x1" ] ; then \
+			${ECHO_MSG} "===>  ${PKGNAME} conflicts with installed package(s): "; \
+			for entry in $${conflicts_with} ; do \
+				${ECHO_MSG} "      $${entry}";\
+			done;\
+			${ECHO_MSG} "      They install files into the same place."; \
+			${ECHO_MSG} "      Please remove them first with pkg_delete(1)."; \
+			${RM} -f ${WRKDIR}/.CONFLICTS; \
+			exit 1; \
+		fi ;\
 	fi
 .endif  # CONFLICTS
 .endif
@@ -3158,10 +3341,10 @@ do-package: ${TMPPLIST}
 	fi; \
 	if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
-			eval ${MAKE} $${__softMAKEFLAGS} package-links; \
+			cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} package-links; \
 		fi; \
 	else \
-		eval ${MAKE} $${__softMAKEFLAGS} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} delete-package; \
 		exit 1; \
 	fi
 .endif
@@ -3302,14 +3485,58 @@ install-mtree:
 .if !target(run-ldconfig)
 run-ldconfig:
 .if defined(INSTALLS_SHLIB)
+.if !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${LDCONFIG_RUNLIST}
+.else
+	@${ECHO_MSG} "===>   Running ldconfig (errors are ignored)"
+	-${LDCONFIG} -m ${LDCONFIG_RUNLIST}
+.endif
 .else
 	@${DO_NADA}
 .endif
 .endif
 
 .if !target(security-check)
+.if !defined(OLD_SECURITY_CHECK)
+
+security-check:
+# Scan PLIST for:
+#   1.  setugid files
+#   2.  accept()/recvfrom() which indicates network listening capability
+#   3.  insecure functions (gets/mktemp/tempnam/[XXX])
+#   4.  startup scripts, in conjunction with 2.
+#   5.  world-writable files/dirs
+#
+	-@${RM} -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable ${WRKDIR}/.PLIST.objdump; \
+	${AWK} -v prefix='${PREFIX}' ' \
+		match($$0, /^@cwd /) { prefix = substr($$0, RSTART + RLENGTH); next; } \
+		/^@/ { next; } \
+		/^\// { print; next; } \
+		{ print prefix "/" $$0; } \
+	' ${TMPPLIST} > ${WRKDIR}/.PLIST.flattened; \
+	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
+	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2> /dev/null > ${WRKDIR}/.PLIST.setuid; \
+	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
+	| ${XARGS} -0 -J % ${FIND} % -prune -perm -0002 2> /dev/null > ${WRKDIR}/.PLIST.writable; \
+	${TR} '\n' '\0' < ${WRKDIR}/.PLIST.flattened \
+	| ${XARGS} -0 -J % ${FIND} % -prune ! -type l -type f -print0 2> /dev/null \
+	| ${XARGS} -0 -n 1 /usr/bin/objdump -R 2> /dev/null > ${WRKDIR}/.PLIST.objdump; \
+	if \
+		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
+		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
+	then \
+	    if [ ! -z "`make www-site`" ]; then \
+			${ECHO_MSG}; \
+			${ECHO_MSG} "      For more information, and contact details about the security"; \
+			${ECHO_MSG} "      status of this software, see the following webpage: "; \
+			${MAKE} www-site; \
+		fi; \
+	fi
+
+
+.else # i.e. defined(OLD_SECURITY_CHECK)
+
 security-check:
 # Scan PLIST for:
 #   1.  setugid files
@@ -3331,75 +3558,76 @@ security-check:
 				${WRKDIR}/.PLIST.objdump 2> /dev/null; \
 			if [ -s ${WRKDIR}/.PLIST.objdump ] ; then \
 				${EGREP} " $$stupid_functions_regexp" \
-					${WRKDIR}/.PLIST.objdump | awk '{print " " $$3}' | tr -d '\n' \
+					${WRKDIR}/.PLIST.objdump | ${AWK} '{print " " $$3}' | ${TR} -d '\n' \
 					> ${WRKDIR}/.PLIST.stupid; \
 				if [ -n "`${EGREP} ' (accept|recvfrom)$$' ${WRKDIR}/.PLIST.objdump`" ] ; then \
 					if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
-						echo -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.network; \
-						cat ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.network; \
-						echo ")" >> ${WRKDIR}/.PLIST.network; \
+						${ECHO_CMD} -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.network; \
+						${CAT} ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.network; \
+						${ECHO_CMD} ")" >> ${WRKDIR}/.PLIST.network; \
 					else \
-						echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.network; \
+						${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.network; \
 					fi; \
 				fi; \
 			fi; \
-			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
+			if [ -n "`${FIND} ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
 				if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
-					echo -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.setuid; \
-					cat ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.setuid; \
-					echo ")" >> ${WRKDIR}/.PLIST.setuid; \
+					${ECHO_CMD} -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.setuid; \
+					${CAT} ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.setuid; \
+					${ECHO_CMD} ")" >> ${WRKDIR}/.PLIST.setuid; \
 				else \
-					echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.setuid; \
+					${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.setuid; \
 				fi; \
 			fi; \
 		fi; \
 		if [ ! -L "${PREFIX}/$$i" ]; then \
-			if [ -n "`/usr/bin/find ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
-				 echo ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
+			if [ -n "`${FIND} ${PREFIX}/$$i -prune -perm -0002 2>/dev/null`" ]; then \
+				 ${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
 			fi; \
 		fi; \
 	done; \
 	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
 	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network -o -s ${WRKDIR}/.PLIST.writable ]; then \
 		if [ -n "$$PORTS_AUDIT" ]; then \
-			echo "===>  SECURITY REPORT (PARANOID MODE): "; \
+			${ECHO_MSG} "===>  SECURITY REPORT (PARANOID MODE): "; \
 		else \
-			echo "===>  SECURITY REPORT: "; \
+			${ECHO_MSG} "===>  SECURITY REPORT: "; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.setuid ] ; then \
-			echo "      This port has installed the following binaries which execute with"; \
-			echo "      increased privileges."; \
+			${ECHO_MSG} "      This port has installed the following binaries which execute with"; \
+			${ECHO_MSG} "      increased privileges."; \
 			${CAT} ${WRKDIR}/.PLIST.setuid; \
-			echo; \
+			${ECHO_MSG}; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.network ] ; then \
-			echo "      This port has installed the following files which may act as network"; \
-			echo "      servers and may therefore pose a remote security risk to the system."; \
+			${ECHO_MSG} "      This port has installed the following files which may act as network"; \
+			${ECHO_MSG} "      servers and may therefore pose a remote security risk to the system."; \
 			${CAT} ${WRKDIR}/.PLIST.network; \
-			echo; \
+			${ECHO_MSG}; \
 			if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
-				echo "      This port has installed the following startup scripts which may cause"; \
-				echo "      these network services to be started at boot time."; \
+				${ECHO_MSG} "      This port has installed the following startup scripts which may cause"; \
+				${ECHO_MSG} "      these network services to be started at boot time."; \
 				${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
-				echo; \
+				${ECHO_MSG}; \
 			fi; \
 		fi; \
 		if [ -s ${WRKDIR}/.PLIST.writable ] ; then \
-			echo "      This port has installed the following world-writable files/directories."; \
+			${ECHO_MSG} "      This port has installed the following world-writable files/directories."; \
 			${CAT} ${WRKDIR}/.PLIST.writable; \
-			echo; \
+			${ECHO_MSG}; \
 		fi; \
-		echo "      If there are vulnerabilities in these programs there may be a security"; \
-		echo "      risk to the system. FreeBSD makes no guarantee about the security of"; \
-		echo "      ports included in the Ports Collection. Please type 'make deinstall'"; \
-		echo "      to deinstall the port if this is a concern."; \
+		${ECHO_MSG} "      If there are vulnerabilities in these programs there may be a security"; \
+		${ECHO_MSG} "      risk to the system. FreeBSD makes no guarantee about the security of"; \
+		${ECHO_MSG} "      ports included in the Ports Collection. Please type 'make deinstall'"; \
+		${ECHO_MSG} "      to deinstall the port if this is a concern."; \
 	    if [ ! -z "`make www-site`" ]; then \
-			echo; \
-			echo "      For more information, and contact details about the security"; \
-			echo "      status of this software, see the following webpage: "; \
+			${ECHO_MSG}; \
+			${ECHO_MSG} "      For more information, and contact details about the security"; \
+			${ECHO_MSG} "      status of this software, see the following webpage: "; \
 			${MAKE} www-site; \
 		fi; \
 	fi
+.endif # !defined(OLD_SECURITY_CHECK)
 .endif
 
 ################################################################
@@ -3414,7 +3642,11 @@ security-check:
 # Please note that the order of the following targets is important, and
 # should not be modified.
 
-_FETCH_SEQ=		pre-everything fetch-depends pre-fetch pre-fetch-script \
+_SANITY_SEQ=		pre-everything check-makefile check-categories \
+			check-makevars check-depends check-deprecated \
+			buildanyway-message options-message
+_FETCH_DEP=		check-sanity
+_FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
 _EXTRACT_DEP=	fetch
 _EXTRACT_SEQ=	extract-message checksum extract-depends pre-extract \
@@ -3425,13 +3657,13 @@ _PATCH_SEQ=		patch-message patch-depends pre-patch pre-patch-script \
 				do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends misc-depends configure-message \
-				patch-libtool pre-configure pre-configure-script \
-				do-configure post-configure post-configure-script
+		pre-configure pre-configure-script patch-libtool \
+		run-autotools do-configure post-configure post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
 _INSTALL_DEP=	build
-_INSTALL_SEQ=	install-message check-categories check-conflicts \
+_INSTALL_SEQ=	install-message check-conflicts \
 			    run-depends lib-depends pre-install pre-install-script \
 				generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
@@ -3442,8 +3674,13 @@ _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
 
+.if !target(check-sanity)
+check-sanity: ${_SANITY_SEQ}
+.endif
+
+# XXX MCL might need to move in loop below?
 .if !target(fetch)
-fetch: ${_FETCH_SEQ}
+fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 .endif
 
 # Main logic. The loop generates 6 main targets and using cookies
@@ -3451,8 +3688,12 @@ fetch: ${_FETCH_SEQ}
 
 .for target in extract patch configure build install package
 
-.if !target(${target})
+.if !target(${target}) && defined(_OPTIONS_OK)
 ${target}: ${${target:U}_COOKIE}
+.elif !target(${target})
+${target}: config
+	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
+.elif target(${target}) && defined(IGNORE)
 .endif
 
 .if !exists(${${target:U}_COOKIE})
@@ -3464,10 +3705,10 @@ ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ}
 .endif
-	@echo "===>  Switching to root credentials for '${target}' target"
+	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
-	@echo "===>  Returning to user credentials"
+	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .elif defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
@@ -3492,7 +3733,8 @@ ${${target:U}_COOKIE}::
 
 # Enforce order for -jN builds
 
-.ORDER: ${_FETCH_SEQ}
+.ORDER: ${_SANITY_SEQ}
+.ORDER: ${_FETCH_DEP} ${_FETCH_SEQ}
 .ORDER: ${_EXTRACT_DEP} ${_EXTRACT_SEQ}
 .ORDER: ${_PATCH_DEP} ${_PATCH_SEQ}
 .ORDER: ${_CONFIGURE_DEP} ${_CONFIGURE_SEQ}
@@ -3516,7 +3758,7 @@ package-message:
 # Empty pre-* and post-* targets
 
 .for stage in pre post
-.for name in fetch extract patch configure build install package
+.for name in sanity-check fetch extract patch configure build install package
 
 .if !target(${stage}-${name})
 ${stage}-${name}:
@@ -3586,9 +3828,9 @@ patch-libtool:
 pretty-print-www-site:
 	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
 	if [ -n "$${www_site}" ]; then \
-		${ECHO} -n " and/or visit the "; \
-		${ECHO} -n "<a href=\"$${www_site}\">web site</a>"; \
-		${ECHO} " for futher informations"; \
+		${ECHO_CMD} -n " and/or visit the "; \
+		${ECHO_CMD} -n "<a href=\"$${www_site}\">web site</a>"; \
+		${ECHO_CMD} " for futher informations"; \
 	fi
 .endif
 
@@ -3622,15 +3864,15 @@ reinstall:
 .if !target(deinstall)
 deinstall:
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@echo "===>  Switching to root credentials for '${.TARGET}' target"
+	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
-	@echo "===>  Returning to user credentials"
+	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
 	@found_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 	for p in $${found_names}; do \
-			check_name=`${ECHO} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
+			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
 					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
 					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
@@ -3655,10 +3897,10 @@ deinstall:
 .if !target(deinstall-all)
 deinstall-all:
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
-	@echo "===>  Switching to root credentials for '${.TARGET}' target"
+	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
 		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
-	@echo "===>  Returning to user credentials"
+	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
 	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
@@ -3755,8 +3997,8 @@ fetch-list:
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
-		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
@@ -3767,7 +4009,7 @@ fetch-list:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -3780,15 +4022,15 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "echo $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
 		fi \
 	done)
 .if defined(PATCHFILES)
 	@(cd ${_DISTDIR}; \
 	 ${_PATCH_SITES_ENV} ; \
 	 for _file in ${PATCHFILES}; do \
-		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
@@ -3799,7 +4041,7 @@ fetch-list:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -3812,7 +4054,7 @@ fetch-list:
 				esac; \
 				${ECHO_CMD} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
-			${ECHO_CMD} "echo $${file} not fetched" ; \
+			${ECHO_CMD} "${ECHO_CMD} $${file} not fetched" ; \
 		fi \
 	 done)
 .endif
@@ -3828,7 +4070,7 @@ update-patches:
 		DISTORIG=${DISTORIG} \
 		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
 	case $$toedit in "");; \
-	*) ${ECHO} -n 'edit patches: '; read i; \
+	*) ${ECHO_CMD} -n 'edit patches: '; read i; \
 	cd ${PATCHDIR} && $${VISUAL:-$${EDIT:-/usr/bin/vi}} $$toedit;; esac
 
 # Checksumming utilities
@@ -3840,41 +4082,42 @@ makesum:
 	@(cd ${DISTDIR}; \
 	 for file in ${_CKSUMFILES}; do \
 		${MD5} $$file >> ${MD5_FILE}; \
+		if [ -n "${USE_SIZE}" ]; then \
+			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${MD5_FILE}; \
+		fi; \
 	 done)
 	@for file in ${_IGNOREFILES}; do \
 		${ECHO_CMD} "MD5 ($$file) = IGNORE" >> ${MD5_FILE}; \
 	done
 .endif
-# this line goes after the ${MD5} above
-#		echo "SIZE ($$file) = "`wc -c < $$file` >> ${MD5_FILE}; \
 
 
 .if !target(checksum)
 checksum: fetch
-	@if [ ! -f ${MD5_FILE} ]; then \
-		${ECHO_MSG} ">> No MD5 checksum file."; \
-	else \
+	@if [ -f ${MD5_FILE} ]; then \
 		(cd ${DISTDIR}; OK="true"; \
 		  for file in ${_CKSUMFILES}; do \
+			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
 			CKSUM=`${MD5} < $$file`; \
-			CKSUM2=`${GREP} "^MD5 ($$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-			if [ "$$CKSUM2" = "" ]; then \
+			CKSUM2=`${GREP} "^MD5 ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+			if [ -z "$$CKSUM2" ]; then \
 				${ECHO_MSG} ">> No checksum recorded for $$file."; \
 				OK="false"; \
 			elif [ "$$CKSUM2" = "IGNORE" ]; then \
 				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in distinfo file even though"; \
 				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
-			elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
+			elif [ "$$CKSUM2" = "$$CKSUM" ]; then \
 				${ECHO_MSG} ">> Checksum OK for $$file."; \
 			else \
 				${ECHO_MSG} ">> Checksum mismatch for $$file."; \
 				refetchlist="$$refetchlist$$file "; \
-				OK="false"; \
+				OK="retry"; \
 			fi; \
 		  done; \
 		  for file in ${_IGNOREFILES}; do \
-			CKSUM2=`${GREP} "($$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
+			CKSUM2=`${GREP} "($$pattern)" ${MD5_FILE} | ${AWK} '{if(NR<2)print $$4}'`; \
 			if [ "$$CKSUM2" = "" ]; then \
 				${ECHO_MSG} ">> No checksum recorded for $$file, file is in "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
@@ -3884,7 +4127,7 @@ checksum: fetch
 				OK="false"; \
 			fi; \
 		  done; \
-		  if [ "$$OK" != "true" ] && [ ${FETCH_REGET} -gt 0 ]; then \
+		  if [ "$$OK" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
 			  ${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
 			  if ( cd ${.CURDIR} && \
 			    ${MAKE} ${.MAKEFLAGS} FORCE_FETCH="$$refetchlist" FETCH_REGET="`expr ${FETCH_REGET} - 1`" fetch); then \
@@ -3904,6 +4147,8 @@ checksum: fetch
 		  if [ "$$OK" != "true" ]; then \
 			  exit 1; \
 		  fi); \
+	elif [ -n "${_CKSUMFILES:M*}" ]; then \
+		${ECHO_MSG} ">> No checksum file (${MD5_FILE})."; \
 	fi
 .endif
 
@@ -4410,7 +4655,7 @@ pretty-print-build-depends-list:
 	defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || \
 	defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO_CMD} -n 'This port requires package(s) "'
-	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | awk -F\| '{print $$8;}'`
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | ${AWK} -F\| '{print $$8;}'`
 	@${ECHO_CMD} '" to build.'
 .endif
 .endif
@@ -4419,7 +4664,7 @@ pretty-print-build-depends-list:
 pretty-print-run-depends-list:
 .if defined(RUN_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${ECHO_CMD} -n 'This port requires package(s) "'
-	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | awk -F\| '{print $$9;}'`
+	@${ECHO_CMD} -n `${GREP} '^${PKGNAME}|' ${PORTSDIR}/${INDEXFILE} | ${AWK} -F\| '{print $$9;}'`
 	@${ECHO_CMD} '" to run.'
 .endif
 .endif
@@ -4431,31 +4676,34 @@ pretty-print-run-depends-list:
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
 	@${MKDIR} `dirname ${TMPPLIST}`
-	@if [ ! -f ${PLIST} -o ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing package files for ${PKGNAME}."; exit 1; fi
+	@if [ ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
+	@for file in ${PLIST_FILES}; do \
+		${ECHO_CMD} $${file} >> ${TMPPLIST}; \
+	done
 	@for man in ${__MANPAGES}; do \
 		${ECHO_CMD} $${man} >> ${TMPPLIST}; \
 	done
 .for _PREFIX in ${PREFIX}
 .if ${_TMLINKS:M${_PREFIX}*}x != x
-	@for i in ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||:S,//,/,g}; do \
+	@for i in ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||}; do \
 		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
 .endif
 .if ${_TMLINKS:N${_PREFIX}*}x != x
 	@${ECHO_CMD} @cwd / >> ${TMPPLIST}
-	@for i in ${_TMLINKS:N${_PREFIX}*:S,^/,,}; do \
+	@for i in ${_TMLINKS:N${_PREFIX}*:S|^/||}; do \
 		${ECHO_CMD} "$$i" >> ${TMPPLIST}; \
 	done
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
-	@for i in $$(${ECHO} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||:S,//,/,g} ' ' | ${SED} -E -e 's,man([1-9ln])/([^/ ]+) ,cat\1/\2 ,g'); do \
-		${ECHO} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
+	@for i in $$(${ECHO_CMD} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||} ' ' | ${SED} -E -e 's|man([1-9ln])/([^/ ]+) |cat\1/\2 |g'); do \
+		${ECHO_CMD} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
 	done
 .if ${XFREE86_HTML_MAN:L} == "yes"
 .for mansect in 1 2 3 4 5 6 7 8 9 L N
 .for man in ${MAN${mansect}}
-	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
+	@${ECHO_CMD} lib/X11/doc/html/${man}.html >> ${TMPPLIST}
 .endfor
 .endfor
 	@${ECHO_CMD} "@unexec %D/bin/mkhtmlindex %D/lib/X11/doc/html" >> ${TMPPLIST}
@@ -4468,13 +4716,21 @@ generate-plist:
 .endif
 .endif
 .endfor
-	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
+	@if [ -f ${PLIST} ]; then \
+		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
+	fi
+.for dir in ${PLIST_DIRS}
+	@${ECHO_CMD} ${dir} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
+.endfor
 .if !defined(NO_MTREE)
 	@${ECHO_CMD} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
 .endif
-.if defined(INSTALLS_SHLIB)
+.if defined(INSTALLS_SHLIB) && !defined(INSTALL_AS_USER)
 	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+.elif defined(INSTALLS_SHLIB)
+	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .if !defined(NO_FILTER_SHLIBS)
 .if (${PORTOBJFORMAT} == "aout")
@@ -4492,14 +4748,17 @@ ${TMPPLIST}:
 .if !target(add-plist-docs)
 add-plist-docs:
 .if defined(PORTDOCS)
-	@if [ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | tail -n 1`" != "${PREFIX}" ]; then \
+	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
+		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
 		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
 	fi
 	@${FIND} -P ${PORTDOCS:S/^/${DOCSDIR}\//} -not -type d 2>/dev/null | \
 		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
 	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
+	@if [ -d "${DOCSDIR}" ]; then \
+		${ECHO_CMD} "@unexec rmdir %D/${DOCSDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}; \
+	fi
 .else
 	@${DO_NADA}
 .endif
@@ -4527,7 +4786,7 @@ compress-man:
 	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif
 .if defined(_MLINKS)
-	@set ${_MLINKS:S,"",,g:S,//,/,g}; \
+	@set ${_MLINKS}; \
 	while :; do \
 		[ $$# -eq 0 ] && break || ${TRUE}; \
 		${RM} -f $${2%.gz}; ${RM} -f $$2.gz; \
@@ -4627,6 +4886,88 @@ __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	SYSTEMVERSION="${SYSTEMVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+.endif
+
+.if !target(config)
+config:
+	@${MKDIR} ${WRKDIR}
+.if !defined(OPTIONS)
+	@${ECHO_MSG} "===> No options to configure"
+.else
+	@(${MKDIR} ${PORT_DBDIR}/${PORTNAME} 2> /dev/null) || \
+		(${ECHO_MSG} "===> Cannot create ${PORT_DBDIR}/${PORTNAME}, check permissions"; exit 1)
+	-@if [ -e ${OPTIONSFILE} ]; then \
+		. ${OPTIONSFILE}; \
+	fi; \
+	set ${OPTIONS} XXX; \
+	while [ $$# -gt 3 ]; do \
+		OPTIONSLIST="$${OPTIONSLIST} $$1"; \
+		defaultval=$$3; \
+		withvar=WITH_$$1; \
+		withoutvar=WITHOUT_$$1; \
+		withval=$$(eval ${ECHO_CMD} $$\{$${withvar}\}); \
+		withoutval=$$(eval ${ECHO_CMD} $$\{$${withoutvar}\}); \
+		${ECHO_CMD} $${withval}; \
+		if [ ! -z "$${withval}" ]; then \
+			val=on; \
+		elif [ ! -z "$${withoutval}" ]; then \
+			val=off; \
+		else \
+			val=$$3; \
+		fi; \
+		DEFOPTIONS="$${DEFOPTIONS} $$1 \"$$2\" $${val}"; \
+		shift 3; \
+	done > /dev/null; \
+	TMPOPTIONSFILE=$$(mktemp -t portoptions); \
+	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
+	${SH} -c "${DIALOG} --checklist \"Options for ${PORTNAME} ${PORTVERSION}\" 21 70 15 $${DEFOPTIONS} 2> $${TMPOPTIONSFILE}"; \
+	status=$$?; \
+	if [ $${status} -ne 0 ] ; then \
+		${RM} -f $${TMPOPTIONSFILE}; \
+		${ECHO_MSG} "===> Options unchanged"; \
+		exit 0; \
+	fi; \
+	if [ ! -e ${TMPOPTIONSFILE} ]; then \
+		${ECHO_MSG} "===> No user-specified options to save for ${PORTNAME}"; \
+		exit 0; \
+	fi; \
+	SELOPTIONS=$$(${CAT} $${TMPOPTIONSFILE}); \
+	${RM} -f $${TMPOPTIONSFILE}; \
+	${ECHO_MSG} "# This file is auto-generated by 'make config'.  No user-servicable parts" > ${OPTIONSFILE}; \
+	${ECHO_MSG} "# inside!" >> ${OPTIONSFILE}; \
+	for i in $${OPTIONSLIST}; do \
+		${ECHO_CMD} $${SELOPTIONS} | ${GREP} -qw $${i}; \
+		if [ $$? -eq 0 ]; then \
+			${ECHO_CMD} WITH_$${i}=true >> ${OPTIONSFILE}; \
+		else \
+			${ECHO_CMD} WITHOUT_$${i}=true >> ${OPTIONSFILE}; \
+		fi; \
+	done
+.endif
+.endif
+
+.if !target(showconfig)
+showconfig:
+.if exists(${OPTIONSFILE})
+	@${ECHO_MSG} "===> The following configuration options are set for ${PORTNAME}"; \
+	${GREP} -v ^# ${OPTIONSFILE}
+.else
+	@${ECHO_MSG} "===> No configuration options are set for this port"
+.if defined(OPTIONS)
+	@${ECHO_MSG} "	Use 'make config' to set default values"
+.endif
+.endif
+.endif
+
+.if !target(rmconfig)
+rmconfig:
+.if exists(${OPTIONSFILE})
+	-@${ECHO_MSG} "===> Removing user-configured options for ${PORTNAME}"; \
+	${RM} -f ${OPTIONSFILE}; \
+	${RMDIR} ${PORT_DBDIR}/${PORTNAME}
+.else
+	@${ECHO_MSG} "===> No user-specified options configured for ${PORTNAME}"
+.endif
 .endif
 
 .endif

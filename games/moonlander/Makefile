@@ -22,6 +22,10 @@ USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/moon-lander
 
+OPTIONS=	SOUND "Sound support" on
+
+.include <bsd.port.pre.mk>
+
 install_dirs=	fonts images
 .if defined(WITHOUT_SOUND)
 CFLAGS+=	-DNOSOUND
@@ -46,4 +50,4 @@ post-install:
 	@${FIND} ${PREFIX}/share/moonlander -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 444
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -431,8 +431,8 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_4}
 # Port wants something that we do not understand.  Stop here.
 #
 .		else
-.BEGIN:
-	@${ECHO} "${PKGNAME}: \"${USE_JAVA}\" is not a valid value for USE_JAVA. It should be one of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
+check-makevers::
+	@${ECHO} "${PKGNAME}: Makefile error: \"${USE_JAVA}\" is not a valid value for USE_JAVA. It should be one of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
 	@${FALSE}
 .		endif
 
@@ -463,8 +463,8 @@ NEED_JAVAC=	NO
 JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
 .				elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
-.BEGIN:
-	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+check-makevers::
+	@${ECHO} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .				endif
 .			elif exists(${_JIKES_PATH}) && !defined(NO_BUILD)
@@ -518,8 +518,8 @@ RUN_DEPENDS+=		${_DEPEND_JIKES}
 
 # Add the JDK port to the dependencies
 .		if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
-.BEGIN:
-	@${ECHO} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+check-makevers::
+	@${ECHO} "${PKGNAME}: Makefile error: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
 	@${FALSE}
 .		endif
 _DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
