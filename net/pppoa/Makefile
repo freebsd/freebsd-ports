@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pppoa
-PORTVERSION=		1.2b2
+PORTVERSION=		1.2b3
 PORTEPOCH=		1
 CATEGORIES=		net
 MASTER_SITES=		http://download.ethomson.com/download/:mngt \
@@ -15,11 +15,11 @@ MASTER_SITE_SUBDIR=	speedtouch/:src
 DISTFILES=		${SPEEDTOUCH}.tar.bz2:src ${ALCATELDRIVER}:mngt
 EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		tom@FreeBSD.org
 COMMENT=	Run PPP over Alcatel's USB Speedtouch device
 
 HAS_CONFIGURE=		yes
-SPEEDTOUCH=		speedtouch-1.2-beta2
+SPEEDTOUCH=		speedtouch-1.2-beta3
 ALCATELDRIVER=		speedmgmt.tar.gz
 RESTRICTED=		"http://www.speedtouchdsl.com/disclaimer_lx.htm"
 RESTRICTED_FILES=	${ALCATELDRIVER}
