@@ -29,8 +29,7 @@ include/log4cpp/TimeStamp.hh
 include/log4cpp/config-openvms.h
 include/log4cpp/config-win32.h
 include/log4cpp/config.h
-@dirrm include/log4cpp
 lib/liblog4cpp.a
-lib/liblog4cpp.la
 lib/liblog4cpp.so
 lib/liblog4cpp.so.3
+@dirrm include/log4cpp
