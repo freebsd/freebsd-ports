@@ -1,6 +1,5 @@
-diff -ur ../cdplay-0.92.orig/Makefile ./Makefile
---- ../cdplay-0.92.orig/Makefile	Fri Nov  7 19:32:07 1997
-+++ ./Makefile	Sat Jun 27 00:36:45 1998
+--- Makefile.orig	Fri Nov  7 16:32:07 1997
++++ Makefile	Fri Aug 21 22:57:43 1998
 @@ -26,11 +26,11 @@
  BIN=cdplay
  CDDEVICE=\"/dev/rcd0c\"
@@ -16,3 +15,12 @@ diff -ur ../cdplay-0.92.orig/Makefile ./Makefile
  
  all: main term cd sound link
  
+@@ -56,6 +56,6 @@
+ 	@rm cdplay
+ install:
+ 	@echo Installing binary
+-	@install -c -o root -g wheel -m 755 cdplay $(BINPATH)
++	@$(BSD_INSTALL_PROGRAM) cdplay $(BINPATH)
+ 	@echo Installing manpage
+-	@install -c -o root -g wheel -m 755 cdplay.1.gz $(MANPATH)
++	@$(BSD_INSTALL_MAN) cdplay.1 $(MANPATH)
