@@ -375,6 +375,7 @@
     SUBDIR += paintlib
     SUBDIR += panorama
     SUBDIR += passepartout
+    SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Color
     SUBDIR += pear-Image_Graph
     SUBDIR += pecl-imagick

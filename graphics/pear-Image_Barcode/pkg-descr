@@ -1,0 +1,7 @@
+With PEAR::Image_Barcode class you can create a barcode representation of a
+given string.
+
+This class uses GD function because this the generated graphic can be any of
+GD supported supported image types.
+
+WWW: http://pear.php.net/package/Image_Barcode/
