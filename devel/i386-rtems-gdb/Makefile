@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -54,7 +54,7 @@ PATCH_SITES+=	http://rtems.thehousleys.net/:THN
 .endif
 
 .if ${LCLTARGET} == sparc-rtems
-.if (${OSVERSION} >= 502000)
+.if ${OSVERSION} >= 502000
 CONFIGURE_ARGS+=	--verbose --disable-sim
 PLIST_SUB+=		SPARC_NOSIM='@comment '
 .else
