@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-gnomevfs
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9.0
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -19,7 +18,8 @@ LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 USE_GNOME=	gnomeprefix gnometarget gnomevfs2
 USE_X_PREFIX=	yes
 USE_INC_LIBTOOL_VER=13
-CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
+			--with-libsynce=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes
 

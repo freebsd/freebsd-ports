@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-dccm
-PORTVERSION=	0.8.9
+PORTVERSION=	0.9.0
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -22,8 +22,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 USE_ICONV=	yes
-
-INSTALLS_SHLIB=	yes
 
 post-install:
 	@${ECHO_CMD} "*******************************************************************************"
