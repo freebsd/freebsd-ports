@@ -23,7 +23,7 @@
  
  #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(DEFS) 
 -CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
-+CFLAGS = -c ${CXXFLAGS} $(DEFS) $(TFLAGS)
++CFLAGS = -c ${CXXFLAGS} $(DEFS) $(TFLAGS) -fPIC
  #CFLAGS = -c -Wall -O0 -DFASTDB_DEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
 -SHFLAGS=-shared
 +SHFLAGS = -shared -Wl,-soname,$@
