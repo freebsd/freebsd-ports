@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xfig
-# Version required:	3.1.4
+# Version required:	3.2
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.14 1996/11/19 04:18:46 asami Exp $
+# $Id: Makefile,v 1.15 1997/05/02 04:12:10 asami Exp $
 #
 
-DISTNAME=	xfig.3.1.4
-PKGNAME=	xfig-3.1.4
+DISTNAME=	xfig.3.2
+PKGNAME=	xfig-3.2
 CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
 MAINTAINER=	asami@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
+		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
+		Xaw3d\\.6\\.:${PORTSDIR}/x11/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 USE_IMAKE=	yes
