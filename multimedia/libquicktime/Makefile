@@ -7,24 +7,26 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	0.9.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@ahze.net
 COMMENT=	A library for reading and writing quicktime files
 
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
+		mp3lame.0:${PORTSDIR}/audio/lame \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		dv.4:${PORTSDIR}/multimedia/libdv
 
+INSTALLS_SHLIB=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk12
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-firewire

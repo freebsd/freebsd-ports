@@ -1,6 +1,6 @@
---- configure.orig	Sun Sep  7 02:15:25 2003
-+++ configure	Thu Nov 13 00:07:40 2003
-@@ -7674,6 +7674,7 @@
+--- configure.orig	Mon Jul 19 14:57:49 2004
++++ configure	Wed Jul 21 22:56:59 2004
+@@ -18443,6 +18443,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8985,7 +8986,7 @@
+@@ -20113,7 +20114,7 @@
  fi
  
  case $compile_mode in
@@ -17,3 +17,56 @@
  #define NDEBUG 1
  _ACEOF
  ;;
+@@ -24392,7 +24393,6 @@
+ 
+ have_libavcodec=false
+ 
+-AVCODEC_REQUIRED="0.4.8acl"
+ 
+ 
+   succeeded=no
+@@ -24446,42 +24446,13 @@
+      echo "*** to the full path to pkg-config."
+      echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
+   else
+-     PKG_CONFIG_MIN_VERSION=0.9.0
+-     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        echo "$as_me:$LINENO: checking for avcodec_acl = $AVCODEC_REQUIRED" >&5
+-echo $ECHO_N "checking for avcodec_acl = $AVCODEC_REQUIRED... $ECHO_C" >&6
+-
+-        if $PKG_CONFIG --exists "avcodec_acl = $AVCODEC_REQUIRED" ; then
+-            echo "$as_me:$LINENO: result: yes" >&5
+-echo "${ECHO_T}yes" >&6
+-            succeeded=yes
+-
+-            echo "$as_me:$LINENO: checking AVCODEC_CFLAGS" >&5
+-echo $ECHO_N "checking AVCODEC_CFLAGS... $ECHO_C" >&6
+-            AVCODEC_CFLAGS=`$PKG_CONFIG --cflags "avcodec_acl = $AVCODEC_REQUIRED"`
+-            echo "$as_me:$LINENO: result: $AVCODEC_CFLAGS" >&5
+-echo "${ECHO_T}$AVCODEC_CFLAGS" >&6
+-
+-            echo "$as_me:$LINENO: checking AVCODEC_LIBS" >&5
+-echo $ECHO_N "checking AVCODEC_LIBS... $ECHO_C" >&6
+-            AVCODEC_LIBS=`$PKG_CONFIG --libs "avcodec_acl = $AVCODEC_REQUIRED"`
+-            echo "$as_me:$LINENO: result: $AVCODEC_LIBS" >&5
+-echo "${ECHO_T}$AVCODEC_LIBS" >&6
+-        else
+             AVCODEC_CFLAGS=""
+-            AVCODEC_LIBS=""
++            AVCODEC_LIBS="-lavcodec"
++            succeeded="yes"
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+             AVCODEC_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "avcodec_acl = $AVCODEC_REQUIRED"`
+ 
+-        fi
+-
+-
+-
+-     else
+-        echo "*** Your version of pkg-config is too old. You need version $PKG_CONFIG_MIN_VERSION or newer."
+-        echo "*** See http://www.freedesktop.org/software/pkgconfig"
+-     fi
+   fi
+ 
+   if test $succeeded = yes; then
