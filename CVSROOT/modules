@@ -2480,6 +2480,7 @@ i4b		src/usr.sbin/i4b
 i960-rtems-binutils	ports/devel/i960-rtems-binutils
 i960-rtems-gcc	ports/devel/i960-rtems-gcc
 i960-rtems-gdb	ports/devel/i960-rtems-gdb
+iSiloXC		ports/palm/iSiloXC
 ia64sim		ports/emulators/ia64sim
 ical		ports/deskutils/ical
 icb		ports/net/icb
