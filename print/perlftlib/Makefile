@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	taoka@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/p5-jcode.pl
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 USE_FREETYPE=	yes
 USE_PERL5=	yes
