@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.night-light.net/pub/unix/ircproxy/
 DISTNAME=	ircproxy-1.2.41d.pl2
 
-MAINTAINER=	jonas@jonas.night-light.net
+MAINTAINER=	jonaski@night-light.net
 COMMENT=	An IRC proxy server
 
 GNU_CONFIGURE=	yes
