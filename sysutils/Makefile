@@ -60,6 +60,7 @@
     SUBDIR += ipa
     SUBDIR += ipsc
     SUBDIR += kdeadmin
+    SUBDIR += koncd
     SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon
