@@ -5208,6 +5208,7 @@ p5-XML-Dumper	ports/textproc/p5-XML-Dumper
 p5-XML-Encoding	ports/textproc/p5-XML-Encoding
 p5-XML-Filter-Base	ports/textproc/p5-XML-Filter-Base
 p5-XML-Filter-BufferText	ports/textproc/p5-XML-Filter-BufferText
+p5-XML-Filter-DetectWS	ports/textproc/p5-XML-Filter-DetectWS
 p5-XML-Filter-XSLT	ports/textproc/p5-XML-Filter-XSLT
 p5-XML-Generator-DBI	ports/textproc/p5-XML-Generator-DBI
 p5-XML-Handler-Trees	ports/textproc/p5-XML-Handler-Trees
