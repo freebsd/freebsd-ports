@@ -67,6 +67,7 @@
     SUBDIR += pavuk
     SUBDIR += pftpd
     SUBDIR += php4-curl
+    SUBDIR += php4-ftp
     SUBDIR += proftpd
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
