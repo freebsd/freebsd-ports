@@ -7,12 +7,12 @@ lib/%%PYTHON_VERSION%%/site-packages/FFT/FFT.pyc
 lib/%%PYTHON_VERSION%%/site-packages/FFT/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/FFT/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/FFT/fftpack.so
+lib/%%PYTHON_VERSION%%/site-packages/MA/MA.py
+lib/%%PYTHON_VERSION%%/site-packages/MA/MA.pyc
 lib/%%PYTHON_VERSION%%/site-packages/MA/MA_version.py
 lib/%%PYTHON_VERSION%%/site-packages/MA/MA_version.pyc
 lib/%%PYTHON_VERSION%%/site-packages/MA/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/MA/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/MA/activeattr.py
-lib/%%PYTHON_VERSION%%/site-packages/MA/activeattr.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Numeric.pth
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/ArrayPrinter.py
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/ArrayPrinter.pyc
@@ -38,11 +38,24 @@ lib/%%PYTHON_VERSION%%/site-packages/Numeric/ranlib.so
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/umath.so
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/numeric_version.py
 lib/%%PYTHON_VERSION%%/site-packages/Numeric/numeric_version.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties.py
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties_version.py
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/Properties_version.pyc
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/RNG/RNG.so
 lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.py
 lib/%%PYTHON_VERSION%%/site-packages/RNG/Statistics.pyc
 lib/%%PYTHON_VERSION%%/site-packages/RNG/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/RNG/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/kinds/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/kinds/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/kinds/_kinds.so
+lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds.py
+lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds.pyc
+lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds_version.py
+lib/%%PYTHON_VERSION%%/site-packages/kinds/kinds_version.pyc
 @comment share/doc/py-numeric/numpy.pdf
 share/examples/py-numeric/NumTut/__init__.py
 share/examples/py-numeric/NumTut/greece.pik
@@ -55,7 +68,9 @@ share/examples/py-numeric/sieve.py
 @dirrm share/examples/py-numeric/NumTut
 @dirrm share/examples/py-numeric
 @comment @dirrm share/doc/py-numeric
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/kinds
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/RNG
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/PropertiedClasses
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Numeric
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/MA
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/FFT

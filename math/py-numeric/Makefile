@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	19.0.0
+PORTVERSION=	20.2.1
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -24,12 +24,13 @@ DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build)
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build
 
 do-install:
-	@(cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py install)
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py install
 
+post-install:
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
 	@${MKDIR} ${EXAMPLEDIR}/NumTut
