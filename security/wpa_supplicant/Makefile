@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
+PATCH_ARGS=	-p0
 
 post-extract:
 	@${CP} ${FILESDIR}/config.bsd ${WRKSRC}/.config
