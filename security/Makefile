@@ -23,6 +23,7 @@
     SUBDIR += gpasman
     SUBDIR += gtkportscan
     SUBDIR += heimdal
+    SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += its4
     SUBDIR += john

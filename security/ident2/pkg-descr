@@ -1,0 +1,7 @@
+This ident daemon runs as either a standalong daemon or as a child of inetd.
+Replies of your choice can be generated through a .ident file in the users
+home directory.   A .noident will make it do an ident will not be conducted
+if the file is found in the users home directory.
+
+The server can also send random replies to all requests.  This simplifies
+the problem of using IRC through a NATD network.  
