@@ -1,11 +1,11 @@
---- programs/xdm/config/xdm-conf.cpp.orig	Wed Sep  6 17:05:53 2000
-+++ programs/xdm/config/xdm-conf.cpp	Wed Sep  6 17:06:03 2000
-@@ -5,7 +5,7 @@
- DisplayManager.keyFile:		XDMDIR/xdm-keys
- DisplayManager.servers:		XDMDIR/Xservers
- DisplayManager.accessFile:	XDMDIR/Xaccess
--DisplayManager.willing:		su nobody -c XDMDIR/Xwilling
-+DisplayManager.willing:		su -fm nobody -c XDMDIR/Xwilling
- ! All displays should use authorization, but we cannot be sure
- ! X terminals will be configured that way, so by default
- ! use authorization only for local displays :0, :1, etc.
+--- programs/xdm/config/Imakefile~	Sun Nov 25 13:49:19 2001
++++ programs/xdm/config/Imakefile	Fri Jan 18 23:15:10 2002
+@@ -28,7 +28,7 @@
+ XDMPIDDIR = $(XDMDIR)
+ #endif
+ 
+-#if defined(OpenBSDArchitecture) || defined(NetBSDArchitecture)
++#if defined(OpenBSDArchitecture) || defined(NetBSDArchitecture) || defined(FreeBSDArchitecture)
+ SU = "su -m"
+ #else
+ SU = su
