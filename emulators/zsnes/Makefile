@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.40
+PORTVERSION=	1.42
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -20,27 +20,40 @@ COMMENT=	Intel x86 only Super Nintendo Entertainment System (SNES) Emulator
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_SDL=	sdl
+# non-portable, for a portable emulator see emulators/snes9x
+ONLY_FOR_ARCHS=	i386
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/}/src
+
 USE_X_PREFIX=	yes
+USE_SDL=	sdl
+USE_GL=		yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-
-CFLAGS+=	-I${X11BASE}/include
-
-WANT_AUTOCONF_VER=	259
-WANT_AUTOMAKE_VER=	15
+GNU_CONFIGURE=	yyes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+ALL_TARGET=	ALL
 
 MAN1=		zsnes.1
 PLIST_FILES=	bin/zsnes
 
-# non-portable, for a portable emulator see emulators/snes9x
-ONLY_FOR_ARCHS=	i386
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_1_40/src
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's| -pipe||g ; \
+		 s| -I/usr/local/include||g ; \
+		 s| -I/usr/include||g ; \
+		 s| -O3 .* -s||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|@CXX@ @CFLAGS@ -o|@CXX@ @CXXFLAGS@ @CPPFLAGS@ -o|g ; \
+		 s|@CC@ @CFLAGS@ -o|@CC@ @CFLAGS@ @CPPFLAGS@ -o|g' \
+			${WRKSRC}/Makefile.in
 
-GNU_CONFIGURE=	yes
-ALL_TARGET=	ALL
-
-pre-configure:
-	cd ${WRKSRC}; ${SH} ${ACLOCAL}; ${SH} ${AUTOCONF}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/zsnes ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/linux/zsnes.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
