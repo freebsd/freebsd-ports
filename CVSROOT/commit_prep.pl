@@ -39,11 +39,6 @@ use CVSROOT::cfg;
 #
 $check_id = 0;
 
-#
-# Record the directory for later use by the log_accumulate stript.
-#
-$record_directory = 1;
-
 ############################################################
 #
 # Constants
@@ -252,7 +247,6 @@ if ($check_id != 0) {
 # by the log_accumulate script to determine when it is processing
 # the final directory of a multi-directory commit.
 #
-if ($record_directory != 0) {
-    &write_line($cfg::LAST_FILE, $directory);
-}
+&write_line($cfg::LAST_FILE, $directory);
+
 exit(0);
