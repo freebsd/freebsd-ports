@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/files/Attic/vbsfilter.sh,v 1.3 2002-03-17 18:00:07 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/files/Attic/vbsfilter.sh,v 1.4 2003-12-04 03:24:09 dinoex Exp $
 # 
 if ! test -x %%PREFIX%%/libexec/vbsfilter
 then
@@ -17,7 +17,7 @@ stop)
 	rm -f /var/run/vbsfilter
 	;;
 *)
-	echo "Usage: ${0##*/}: { start | stop }" 2>&1
-	exit 65
+	echo "Usage: ${0##*/}: { start | stop }" >&2
+	exit 64
 	;;
 esac

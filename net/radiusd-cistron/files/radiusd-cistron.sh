@@ -16,8 +16,7 @@ stop)
 	fi
 	;;
 *)
-	echo ""
-	echo "Usage: $0 { start | stop }"
-	echo ""
+	echo "Usage: ${0##*/} { start | stop }" >&2
+	exit 64
 	;;
 esac

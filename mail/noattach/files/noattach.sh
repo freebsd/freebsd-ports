@@ -30,7 +30,7 @@ reload)
 	fi
 	;;
 *)
-	echo "Usage: ${0##*/}: { start | stop | reload }" 2>&1
-	exit 65
+	echo "Usage: ${0##*/}: { start | stop | reload }" >&2
+	exit 64
 	;;
 esac

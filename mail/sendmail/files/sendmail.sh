@@ -52,7 +52,7 @@ restart)
 	fi
 	;;
 *)
-	echo "Usage: ${0##*/}: { start | stop | restart }" 2>&1
-	exit 65
+	echo "Usage: ${0##*/}: { start | stop | restart }" >&2
+	exit 64
 	;;
 esac
