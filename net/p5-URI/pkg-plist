@@ -7,6 +7,7 @@
 %%SITE_PERL%%/URI/WithBase.pm
 %%SITE_PERL%%/URI/_foreign.pm
 %%SITE_PERL%%/URI/_generic.pm
+%%SITE_PERL%%/URI/_ldap.pm
 %%SITE_PERL%%/URI/_login.pm
 %%SITE_PERL%%/URI/_query.pm
 %%SITE_PERL%%/URI/_segment.pm
@@ -26,7 +27,10 @@
 %%SITE_PERL%%/URI/http.pm
 %%SITE_PERL%%/URI/https.pm
 %%SITE_PERL%%/URI/ldap.pm
+%%SITE_PERL%%/URI/ldapi.pm
+%%SITE_PERL%%/URI/ldaps.pm
 %%SITE_PERL%%/URI/mailto.pm
+%%SITE_PERL%%/URI/mms.pm
 %%SITE_PERL%%/URI/news.pm
 %%SITE_PERL%%/URI/nntp.pm
 %%SITE_PERL%%/URI/pop.pm
