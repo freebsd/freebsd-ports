@@ -3,13 +3,15 @@
 # Date created:				1 Jan 1999
 # Whom:					Alexandre Snarskii <snar@paranoia.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/10 13:12:12 jseger Exp $
 
 DISTNAME=	libparanoia-1.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 
 MAINTAINER=	snar@paranoia.ru
+
+ONLY_FOR_ARCHS=	i386
 
 # this library depends on system-defined headers "SYS.h" and "DEFS.h"
 # which may differ from release to release.
