@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gspoof
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,19 +17,23 @@ COMMENT=	Console/GTK+ TCP/IP Packets Forger
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-USE_GETOPT_LONG=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk20
 USE_REINPLACE=	yes
-MAKE_ARGS=	CC="${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS}"
-ALL_TARGET=	gtk
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gtk-config|\$${GTK_CONFIG}|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local/lib|${LOCALBASE}/lib|g ; \
+		 s|/usr/local/include|${LOCALBASE}/include|g ; \
+		 s|-Wall -O2|$${CFLAGS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-Wall -O2|@CFLAGS@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share|g ; \
+		 s|/usr/share|${X11BASE}/share|g' ${WRKSRC}/gtk.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gspoof ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}/pixmap
+	${INSTALL_DATA} ${WRKSRC}/pixmap/icon.png ${DATADIR}/pixmap
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

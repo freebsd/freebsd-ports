@@ -1,3 +1,6 @@
-Gspoof is a GTK+ program written in C language which makes easier and accurate
-the building and the sending of TCP packet with a data-payload or not. It's
-possible to modify TCP/IP fields also Ethernet header working to Link Level.
+Gspoof is a GTK+ program written in C language which makes easier
+and accurate the building and the sending of TCP packet with a
+data-payload or not. It's possible to modify TCP/IP fields also
+Ethernet header working to Link Level.
+
+WWW: http://gspoof.sourceforge.net/
