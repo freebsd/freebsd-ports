@@ -102,6 +102,8 @@ bin/pgmedge
 bin/pgmenhance
 bin/pgmhist
 bin/pgmkernel
+bin/pgmminkowski
+bin/pgmmorphconv
 bin/pgmnoise
 bin/pgmnorm
 bin/pgmoil
