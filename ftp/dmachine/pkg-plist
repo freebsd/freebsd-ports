@@ -1,3 +1,4 @@
+bin/dmachine
 %%DATADIR%%/FSPInputStream.class
 %%DATADIR%%/FSPStreamHandler.class
 %%DATADIR%%/FSPURLConnection.class
