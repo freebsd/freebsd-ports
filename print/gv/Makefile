@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gv
-# Version required:	gv-3.2.4
+# Version required:	gv-3.4.3
 # Date created:		16 Apr 1996
 # Whom:			tg@freebsd.org
 #
-# $Id: Makefile,v 1.9 1997/04/18 06:36:11 tg Exp $
+# $Id: Makefile,v 1.10 1997/04/18 10:09:56 asami Exp $
 #
 
-DISTNAME=	gv-3.2.4
+DISTNAME=	gv-3.4.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://thep.physik.uni-mainz.de/pub/gv/unix/
 
