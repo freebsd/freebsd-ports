@@ -153,6 +153,7 @@ pre-fetch:
 	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf.diff
 	@${ECHO}
 .endif
+.if ${OSVERSION} < 500000 
 	@${ECHO}
 	@${ECHO} OO.org build and also OO.org itself
 	@${ECHO} can deadlock. You can work around
@@ -161,6 +162,7 @@ pre-fetch:
 	@${ECHO} http://people.freebsd.org/~mbr/patches/rtld-elf-patch2.diff
 	@${ECHO}
 	@${ECHO}
+.endif
 .if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} OPTIONS:
