@@ -1,13 +1,13 @@
 # New ports collection makefile for:	samba
-# Version required:			2.0.0
+# Version required:			2.0.2
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.30 1999/01/18 09:28:29 foxfair Exp $
+# $Id: Makefile,v 1.31 1999/02/09 14:00:25 hosokawa Exp $
 #
 
 DISTNAME=	samba-2.0.2
-#PKGNAME=	samba-2.0.0
+#PKGNAME=	samba-2.0.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitcon.no/.7/unix/networking/samba/   \
 		ftp://samba.anu.edu.au/pub/samba/
