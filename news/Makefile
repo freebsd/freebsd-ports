@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1996/11/25 10:14:22 tg Exp $
+# $Id: Makefile,v 1.19 1996/11/26 08:55:20 asami Exp $
 #
 
     SUBDIR += cnews
@@ -9,6 +9,7 @@
     SUBDIR += nn-current
     SUBDIR += nntp
     SUBDIR += nntpbtr
+    SUBDIR += nntpcache
     SUBDIR += rkive
     SUBDIR += slnr
     SUBDIR += slurp
