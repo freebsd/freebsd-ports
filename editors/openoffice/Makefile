@@ -37,7 +37,7 @@ TCSH?=	/bin/tcsh
 
 PROCFS!=		${MOUNT} | ${GREP} ^procfs | ${AWK} '{print $1}'
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
-DIST_SUBDIR=		openoffice
+DIST_SUBDIR=		stable/1.0.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
 #
