@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cvsd
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	devel
 MASTER_SITES=	http://tiefighter.et.tudelft.nl/~arthur/cvsd/
 
