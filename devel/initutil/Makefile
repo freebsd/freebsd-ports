@@ -7,17 +7,13 @@
 #
 
 PORTNAME=	initutil
-PORTVERSION=	2.1.a
+PORTVERSION=	2.1.b
 CATEGORIES=	devel
 MASTER_SITES=	http://www.bdsoft.com/dist/
 DISTNAME=	${PORTNAME}2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An STL Container Initialization Library
-
-BROKEN=		"Does not fetch (size mismatch)"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 USE_ZIP=	yes
 USE_REINPLACE=	yes
