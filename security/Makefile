@@ -304,6 +304,7 @@
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc
+    SUBDIR += portaudit
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen
