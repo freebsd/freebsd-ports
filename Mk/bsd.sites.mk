@@ -177,7 +177,6 @@ MASTER_SITE_EXIM+=	\
 	ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
-	ftp://nagoya.linux.or.jp/mirror/exim/%SUBDIR%/ \
 	ftp://exim.stupendous.net/mirror/exim/%SUBDIR%/ \
 	http://washitake.com/mail/exim/mirror/%SUBDIR%/ \
 	http://exim.psshee.com/ftp/%SUBDIR%/ \
