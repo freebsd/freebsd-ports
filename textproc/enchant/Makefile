@@ -7,7 +7,7 @@
 
 PORTNAME=	enchant
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -25,21 +25,17 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		enchant.1
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libpspell.so)
-WITH_ASPELL=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/hspell)
-WITH_HSPELL=	yes
-.endif
-
-.if defined(WITH_ASPELL)
+.ifndef(WITHOUT_ASPELL)
 LIB_DEPENDS+=	pspell.15:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL=""
 .else
 PLIST_SUB+=	ASPELL="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/hspell)
+WITH_HSPELL=	yes
 .endif
 
 .if defined(WITH_HSPELL)
@@ -50,11 +46,11 @@ PLIST_SUB+=	HSPELL="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_ASPELL) || !defined(WITH_HSPELL)
+.if !defined(WITHOUT_ASPELL) || !defined(WITH_HSPELL)
 	@${ECHO_CMD} '===> The following options are available for this port:'
-.if !defined(WITH_ASPELL)
+.if !defined(WITHOUT_ASPELL)
 	@${ECHO_CMD} '===>'
-	@${ECHO_CMD} '===> Define WITH_ASPELL to enable aspell support'
+	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to disable aspell support'
 .endif
 .if !defined(WITH_HSPELL)
 	@${ECHO_CMD} '===>'
