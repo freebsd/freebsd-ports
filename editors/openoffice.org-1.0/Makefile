@@ -9,10 +9,11 @@ PORTNAME=	openoffice
 PORTVERSION=	1.0.1
 PORTREVISION=	3
 CATEGORIES+=	editors
-MASTER_SITES+=	http://sf1.mirror.openoffice.org/%SUBDIR%/ \
+MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://sf1.mirror.openoffice.org/miscellaneous/helpcontent/:help
+		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
 		gpc231.tar.Z:gpc
