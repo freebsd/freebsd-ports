@@ -343,7 +343,8 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.roedu.net/pub/mirrors/ftp.kde.org/%SUBDIR%/ \
 	ftp://ftp.rediris.es/mirror/kde/%SUBDIR%/ \
 	ftp://ftp.du.se/pub/mirrors/kde/%SUBDIR%/ \
-	ftp://download.tw.kde.org/pub/kde/%SUBDIR%/
+	ftp://download.tw.kde.org/pub/kde/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 
 MASTER_SITE_MOZILLA+= \
 	http://download.mozilla.org/pub/%SUBDIR%/ \
