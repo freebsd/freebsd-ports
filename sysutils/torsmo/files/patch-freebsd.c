@@ -1,5 +1,5 @@
---- freebsd.c.orig	Wed Dec 22 20:52:33 2004
-+++ freebsd.c	Wed Dec 22 21:34:40 2004
+--- freebsd.c.orig	Wed Aug 25 20:24:24 2004
++++ freebsd.c	Wed Dec 29 22:11:31 2004
 @@ -4,14 +4,12 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -17,7 +17,7 @@
  #include <sys/vmmeter.h>
  #include <sys/dkstat.h>
  #include <unistd.h>
-@@ -19,11 +17,48 @@
+@@ -19,11 +17,50 @@
  #include <sys/socket.h>
  #include <net/if.h>
  #include <net/if_mib.h>
@@ -27,6 +27,7 @@
  #define GETSYSCTL(name, var) getsysctl(name, &(var), sizeof(var))
  #define KELVTOC(x)      ((x - 2732) / 10.0)
  
++#if defined(i386) || defined(__i386__)
 +static unsigned int get_timer();
 +static unsigned int get_cpu_speed(void);
 +static inline unsigned long long int rdtsc( void );
@@ -61,12 +62,22 @@
 +
 +    	return((tscstop-tscstart)/((stop-start)/1000.0));
 +} 
++#endif
 +
 +
  static int getsysctl(char *name, void *ptr, size_t len)
  {   
  	size_t nlen = len;
-@@ -344,4 +379,34 @@
+@@ -91,7 +128,7 @@
+ 	int mib[2] = {CTL_KERN, KERN_BOOTTIME};
+       	struct timeval boottime;
+         time_t now;
+-	int size = sizeof(boottime);
++	size_t size = sizeof(boottime);
+ 
+ 	if((sysctl(mib, 2, &boottime, &size, NULL, 0) != -1) && (boottime.tv_sec != 0)) {
+ 		time(&now);
+@@ -344,4 +381,38 @@
  
  char* get_acpi_fan() {
  	return "";
@@ -81,6 +92,7 @@
 +}
 +
 +char* get_freq() {
++#if defined(i386) || defined(__i386__)
 +	int i;
 +	char *cpuspeed;
 +
@@ -100,4 +112,7 @@
 +	}
 +
 +	return cpuspeed;
++#else
++	return "";
++#endif
  }
