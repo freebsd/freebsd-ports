@@ -1,0 +1,18 @@
+%%ZOPEBASEDIR%%/import/ZWikiWebs.zexp
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Changelog
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Tests.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Tests.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage_icon.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/doctest.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/doctest.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/refresh.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wwml.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wwml.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/zwikipageAdd.dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki

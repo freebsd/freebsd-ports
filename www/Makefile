@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += zope-zwiki
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
