@@ -1,14 +1,21 @@
 bin/charmap
+@unexec if test -L %D/bin/gnome-character-map; then rm -f %D/bin/gnome-character-map; fi
 bin/gucharmap
 include/gucharmap/charmap.h
 include/gucharmap/chartable.h
+include/gucharmap/gucharmap-charmap.h
+include/gucharmap/gucharmap-mini-fontsel.h
+include/gucharmap/gucharmap-table.h
+include/gucharmap/gucharmap-unicode-info.h
+include/gucharmap/gucharmap-window.h
+include/gucharmap/gucharmap.h
 include/gucharmap/gucharmap_window.h
 include/gucharmap/mini_fontsel.h
 include/gucharmap/unicode_info.h
 lib/gtk-2.0/2.2.0/immodules/im-gucharmap.so
 lib/libgucharmap.a
 lib/libgucharmap.so
-lib/libgucharmap.so.2
+lib/libgucharmap.so.3
 libdata/pkgconfig/gucharmap.pc
 share/gnome/applications/gucharmap.desktop
 share/gnome/pixmaps/gucharmap.png
@@ -27,10 +34,12 @@ share/locale/ga/LC_MESSAGES/gucharmap.mo
 share/locale/it/LC_MESSAGES/gucharmap.mo
 share/locale/ja/LC_MESSAGES/gucharmap.mo
 share/locale/ko/LC_MESSAGES/gucharmap.mo
+share/locale/ms/LC_MESSAGES/gucharmap.mo
 share/locale/nl/LC_MESSAGES/gucharmap.mo
 share/locale/pl/LC_MESSAGES/gucharmap.mo
 share/locale/pt/LC_MESSAGES/gucharmap.mo
 share/locale/pt_BR/LC_MESSAGES/gucharmap.mo
+share/locale/ru/LC_MESSAGES/gucharmap.mo
 share/locale/sv/LC_MESSAGES/gucharmap.mo
 share/locale/uk/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
