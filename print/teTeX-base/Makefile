@@ -3,7 +3,7 @@
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@schiele-ct.de>
 #
-# $Id: Makefile,v 1.25 1998/11/26 06:24:38 asami Exp $
+# $Id: Makefile,v 1.26 1998/11/28 09:07:14 asami Exp $
 #
 
 DISTNAME=	teTeX-src-0.4
@@ -48,6 +48,7 @@ pre-install:
 	@${INSTALL_DATA} ${WRKLIB}/texmf.cnf ${PREFIX}/share/texmf/web2c
 
 post-install:
+	${RM} ${PREFIX}/bin/install-info
 	${INSTALL_INFO} ${PREFIX}/info/latex ${PREFIX}/info/dir
 	${INSTALL_INFO} ${PREFIX}/info/kpathsea.info ${PREFIX}/info/dir
 	${INSTALL_INFO} ${PREFIX}/info/dvips.info ${PREFIX}/info/dir
