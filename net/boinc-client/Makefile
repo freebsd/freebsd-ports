@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	4.13
-PORTREVISION=	2
+PORTVERSION=	4.19
 CATEGORIES=	net
 MASTER_SITES=	http://boinc.berkeley.edu/source/nightly/
-DISTNAME=	boinc_public-cvs-2004-10-14
+DISTNAME=	boinc_public-cvs-2005-01-26
 
 MAINTAINER=	fbsd@opal.com
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
