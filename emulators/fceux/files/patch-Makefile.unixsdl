@@ -1,18 +1,18 @@
---- Makefile.unixsdl.orig	Fri Jun 20 12:50:03 2003
-+++ Makefile.unixsdl	Mon Jul 21 07:53:48 2003
+--- Makefile.unixsdl.orig	Mon Nov 10 12:33:14 2003
++++ Makefile.unixsdl	Tue Dec  9 01:13:35 2003
 @@ -1,5 +1,5 @@
  CC	= gcc 
--TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `sdl-config --cflags` -mcpu=i686 -O2 -Izlib -fomit-frame-pointer -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB
-+TFLAGS  = -DFRAMESKIP -DSTDIOIFACE -DUNIXDSP -DNETWORK -DFPS `%%LOCALBASE%%/bin/sdl11-config --cflags` -Izlib -fomit-frame-pointer -DC80x86 -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB
+-TFLAGS  = -DOPENGL -DFRAMESKIP -DUNIXDSP -DNETWORK -DFPS `sdl-config --cflags` -mcpu=i686 -O2 -Izlib -fomit-frame-pointer -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB -DC80x86
++TFLAGS  = -DOPENGL -DFRAMESKIP -DUNIXDSP -DNETWORK -DFPS `${SDL_CONFIG} --cflags` -I/usr/X11R6/include -Izlib -DLSB_FIRST -DSDL -DUNIX -DPSS_STYLE=1 -DZLIB -DC80x86
  
  RM	= rm -f
  B	= drivers/cli/
 @@ -9,7 +9,7 @@
  include zlib/Makefile
  
- OBJDRIVER	= ${B}sdl.o ${B}interface.o ${B}main.o ${B}sdl-throttle.o ${B}unix-netplay.o ${B}sdl-sound.o ${B}sdl-video.o ${B}sdl-joystick.o drivers/common/cheat.o drivers/common/config.o drivers/common/args.o drivers/common/vidblit.o drivers/common/unixdsp.o ${UNZIPOBJS}
--LDRIVER		= -lm `sdl-config --libs` -lz
-+LDRIVER		= -lm `%%LOCALBASE%%/bin/sdl11-config --libs` -lz
+ OBJDRIVER	= ${B}sdl.o ${B}sdl-opengl.o ${B}main.o ${B}sdl-throttle.o ${B}unix-netplay.o ${B}sdl-sound.o ${B}sdl-video.o ${B}sdl-joystick.o drivers/common/cheat.o drivers/common/config.o drivers/common/args.o drivers/common/vidblit.o drivers/common/unixdsp.o drivers/common/sfifo.o ${UNZIPOBJS}
+-LDRIVER		= -lm `sdl-config --libs` -lz -lGL
++LDRIVER		= -lm `${SDL_CONFIG} --libs` -lz -lGL -L/usr/X11R6/lib
  
  include Makefile.base
  

@@ -5,10 +5,11 @@ bin/fceu
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/cheat.txt
+%%PORTDOCS%%%%DOCSDIR%%/cheat.html
+%%PORTDOCS%%%%DOCSDIR%%/fceultra.html
 %%PORTDOCS%%%%DOCSDIR%%/fcs.txt
 %%PORTDOCS%%%%DOCSDIR%%/porting.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme-linux.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/README.now
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/README.sound
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/UNIF_current.txt
@@ -18,11 +19,15 @@ bin/fceu
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/cpu/NESSOUND-4th.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/cpu/NESSOUND.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/cpu/dmc.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/SMB2j.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/mmc5-e.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/mmc5_bank_switch.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/tengen.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/vrcvi.txt
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/exp/vrcvii.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/loopy1.txt
 %%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/loopy2.txt
-%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/2C02 technical operation.TXT
+%%PORTDOCS%%%%TECHDOCS%%%%DOCSDIR%%/tech/ppu/2C02_technical_operation.TXT
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/ppu
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/exp
 %%PORTDOCS%%%%TECHDOCS%%@dirrm %%DOCSDIR%%/tech/cpu

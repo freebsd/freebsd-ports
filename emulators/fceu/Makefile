@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	fceu
-PORTVERSION=	0.96
-PORTREVISION=	1
+PORTVERSION=	0.97.5
 CATEGORIES=	emulators
-MASTER_SITES=	http://fceultra.sourceforge.net/files/
-DISTNAME=	fceu${PORTVERSION:S/.//}src
+MASTER_SITES=	http://xodnizel.net/fceultra/downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	yes
 MAN6=		fceu.6
 WRKSRC=		${WRKDIR}/fceu
 USE_X_PREFIX=	yes
@@ -25,16 +23,17 @@ MAKEFILE=	Makefile.unixsdl
 USE_REINPLACE=	yes
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ README TODO \
-		cheat.txt fcs.txt porting.txt rel/readme-linux.txt
+		cheat.html fceultra.html fcs.txt porting.txt protocol.txt
 TECHDOCS=	README.now README.sound UNIF_current.txt nsfspec.txt
 TECHCPUDOC=	4017.txt 6502_cpu.txt NESSOUND-4th.txt NESSOUND.txt dmc.txt
-TECHEXPDOCS=	mmc5-e.txt mmc5_bank_switch.txt
-TECHPPUDOCS=	"2C02\technical\operation.TXT" loopy1.txt loopy2.txt
+TECHEXPDOCS=	SMB2j.txt mmc5-e.txt mmc5_bank_switch.txt tengen.txt \
+		vrcvi.txt vrcvii.txt
+TECHPPUDOCS=	"2C02_technical_operation.TXT" loopy1.txt loopy2.txt
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=	-mfancy-math-387
+CFLAGS+=	-ffast-math -mfancy-math-387
 .endif # i386
 .endif
 
@@ -56,7 +55,6 @@ PLIST_SUB=	TECHDOCS="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/Makefile.unixsdl
 .if (${MACHINE_ARCH} != "i386")
 # do I have to do this for ia64 and amd64 too?
 	@${REINPLACE_CMD} -e 's|-DC80x86||g;' ${WRKSRC}/Makefile.unixsdl
@@ -70,6 +68,7 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fceu ${PREFIX}/bin
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .if !defined(NOPORTDOCS)
@@ -77,6 +76,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/${docs} ${DOCSDIR}
 .endfor
 .endif
+
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/Documentation/fceu.6 ${PREFIX}/man/man6
 .if defined(TECH_DOC_INSTALL)
@@ -96,8 +96,8 @@ do-install:
 .endfor
 	@${MKDIR} ${DOCSDIR}/tech/ppu
 .for docs in ${TECHPPUDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs:S/\\/ /g} \
-			${DOCSDIR}/tech/ppu
+	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs:S|_| |g} \
+			${DOCSDIR}/tech/ppu/${docs}
 .endfor
 .endif
 .endif
