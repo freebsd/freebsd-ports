@@ -9,9 +9,9 @@ PORTNAME=	rar
 PORTVERSION=    3.20
 PORTEPOCH=      1
 CATEGORIES=	archivers
-MASTER_SITES=   http://files0.rarlab.com/rar/ \
-		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
+MASTER_SITES=   http://www.rarlab.com/rar/
 DISTNAME=       rarbsd-3.2.0
+FETCH_CMD=      /usr/bin/fetch
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	File archiver (binary port)
