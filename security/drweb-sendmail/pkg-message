@@ -11,3 +11,6 @@ cd /usr/src/usr.sbin/sendmail
 make clean
 make
 make install
+
+WARNING: viruses in mail not detected with evaluation key!
+
