@@ -8,6 +8,7 @@
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += clearlooks
+    SUBDIR += clearlooks-metacity
     SUBDIR += colorstep
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
