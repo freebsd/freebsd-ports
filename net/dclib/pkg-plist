@@ -9,7 +9,6 @@ include/dclib/cencrypt.h
 include/dclib/cfilemanager.h
 include/dclib/chttp.h
 include/dclib/chublistmanager.h
-include/dclib/chubsearch.h
 include/dclib/clistenmanager.h
 include/dclib/cmessagehandler.h
 include/dclib/core/casyncdns.h
@@ -52,15 +51,15 @@ include/dclib/cutils.h
 include/dclib/dclib.h
 include/dclib/dcobject.h
 include/dclib/dcos.h
-include/dclib/hash/libdefs.h
-include/dclib/hash/mhash_tiger.h
+include/dclib/hash/tiger.h
+include/dclib/hash/tigertree.h
 lib/libdc.a
 lib/libdc.la
 lib/libdc.so
 lib/libdc.so.0
 libdata/pkgconfig/dclib.pc
-@dirrm share/dcgui/plugin
-@dirrm share/dcgui
+@dirrm share/dclib/plugin
+@dirrm share/dclib
 @dirrm include/dclib/hash
 @dirrm include/dclib/core
 @dirrm include/dclib
