@@ -7,20 +7,21 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
+MAINTAINER?=	kde@FreeBSD.org
+COMMENT=	Utilities for the KDE integrated X11 desktop
+
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 CONFLICTS=	kgpg-*
 
-MAINTAINER?=	kde@FreeBSD.org
-COMMENT=	Utilities for the KDE integrated X11 desktop
-
 USE_KDELIBS_VER=3
+USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
 KDE_BUILD_PLIST=yes
 
@@ -28,15 +29,15 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-DO_NOT_COMPILE+=kmilo kdepasswd
-CONFIGURE_ENV+= DO_NOT_COMPILE="${DO_NOT_COMPILE}"
+DO_NOT_COMPILE+=kmilo
+CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 CONFLICTS=	kgpg-*
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-#klaptop needs APM, which is i386 only 
+#klaptop needs APM, which is i386 only
 .if ${MACHINE_ARCH} != "i386"
 WITHOUT_KLAPTOP	=yes
 .endif # ${MACHINE_ARCH} == "alpha"
