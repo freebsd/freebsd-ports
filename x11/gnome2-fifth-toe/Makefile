@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2-fifth-toe
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -27,6 +26,9 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		${X11BASE}/lib/gtk-2.0/2.0.0/engines/libcrux-engine.so:${PORTSDIR}/x11-toolkits/crux \
 		mergeant:${PORTSDIR}/databases/mergeant \
 		ghex2:${PORTSDIR}/editors/ghex2 \
+		glade-2:${PORTSDIR}/devel/glade2 \
+		metacity:${PORTSDIR}/x11-wm/metacity \
+		metacity-setup:${PORTSDIR}/x11-wm/metacity-setup \
 		galeon:${PORTSDIR}/www/galeon2
 
 NO_BUILD=	yes
