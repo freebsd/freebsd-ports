@@ -1,0 +1,16 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL/RSA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/DESTROY.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_public_key.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_private_key.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_padding_mode.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_public_key_string.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_private_key_string.al
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL 2>/dev/null || true
