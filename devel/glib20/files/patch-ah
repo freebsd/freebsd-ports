@@ -1,0 +1,11 @@
+--- docs/reference/Makefile.in	2000/11/20 09:49:25	1.1
++++ docs/reference/Makefile.in	2000/11/20 09:50:55
+@@ -106,7 +106,7 @@
+ STRIP_END = @STRIP_END@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = glib gobject
++SUBDIRS = #glib gobject
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
