@@ -3,11 +3,11 @@
 # Date created:         3 Dec 1996
 # Whom:                 paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.12 1996/12/05 12:21:43 jkh Exp $
+# $Id: Makefile,v 1.13 1996/12/06 23:28:02 asami Exp $
 #
 
 DISTNAME=       Mesa-2.0
-PKGNAME=	mesa-2.0
+PKGNAME=	Mesa-2.0
 CATEGORIES=	graphics
 MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
 
