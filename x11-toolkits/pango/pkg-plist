@@ -65,6 +65,7 @@ libdata/pkgconfig/pangoxft.pc
 share/doc/pango/home.png
 share/doc/pango/index.html
 share/doc/pango/index.sgml
+share/doc/pango/ix01.html
 share/doc/pango/layout.gif
 share/doc/pango/left.png
 share/doc/pango/lowlevel.html
