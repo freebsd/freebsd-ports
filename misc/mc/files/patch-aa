@@ -1,6 +1,6 @@
---- configure.orig	Mon May 25 18:16:04 1998
-+++ configure	Tue Jun  2 06:43:28 1998
-@@ -10462,7 +10462,7 @@
+--- configure.orig	Sun Dec  6 11:57:21 1998
++++ configure	Sun Dec  6 11:59:02 1998
+@@ -10840,7 +10840,7 @@
          if test -f /usr/include/ncurses.h
  	then
  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
@@ -9,18 +9,18 @@
  	    CPPFLAGS="$CPPFLAGS "
  	    search_ncurses=false
  	    screen_manager="ncurses on /usr/include"
-@@ -11268,7 +11268,7 @@
- vfs/extfs/ftplist vfs/extfs/zip vfs/extfs/zoo vfs/extfs/lslR
- vfs/extfs/lha vfs/extfs/cpio vfs/extfs/deb vfs/extfs/rar
+@@ -11648,7 +11648,7 @@
+ vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
+ vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
 +doc/mc.1 doc/mcserv.8
  
  intl/Makefile po/Makefile.in
   config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-@@ -11466,7 +11466,7 @@
- vfs/extfs/ftplist vfs/extfs/zip vfs/extfs/zoo vfs/extfs/lslR
- vfs/extfs/lha vfs/extfs/cpio vfs/extfs/deb vfs/extfs/rar
+@@ -11851,7 +11851,7 @@
+ vfs/extfs/ftplist vfs/extfs/uzip vfs/extfs/uzoo vfs/extfs/lslR
+ vfs/extfs/ulha vfs/extfs/ucpio vfs/extfs/deb vfs/extfs/urar vfs/extfs/uar
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
 +doc/mc.1 doc/mcserv.8

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sun Apr 12 04:41:57 1998
-+++ Makefile.in	Sat May  2 13:10:05 1998
-@@ -40,7 +40,7 @@
+--- Makefile.in.orig	Sun Dec  6 12:08:01 1998
++++ Makefile.in	Sun Dec  6 12:08:51 1998
+@@ -45,7 +45,7 @@
  install: installdirs @vcs@
  	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
  	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
@@ -9,7 +9,7 @@
  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
  	@echo "Please verify that the configuration values are correctly"
  	@echo "set in the mc.ext file in $(libdir)"
-@@ -52,7 +52,7 @@
+@@ -57,7 +57,7 @@
  installdirs:
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(bindir) $(DESTDIR)$(libdir)
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
@@ -18,19 +18,19 @@
  	$(mcsrcdir)/xmkdir $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
  
  mcfninstall:
---- src/Makefile.in.orig	Sun Nov 30 01:51:42 1997
-+++ src/Makefile.in	Sun Nov 30 01:51:56 1997
-@@ -125,7 +125,7 @@
+--- src/Makefile.in.orig	Sun Dec  6 12:08:54 1998
++++ src/Makefile.in	Sun Dec  6 12:09:24 1998
+@@ -130,7 +130,7 @@
  	-$(RMF) $(srcdir)/Makefile
  
- install: mc mfmt @saver@
+ install: mc mcmfmt @saver@
 -	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
 +	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)midc
  	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
  	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(libdir)/$(libprefix)mc.hlp 
  
---- doc/Makefile.in.orig	Mon Mar 30 05:26:09 1998
-+++ doc/Makefile.in	Sun Apr 12 03:23:15 1998
+--- doc/Makefile.in.orig	Sun Dec  6 12:09:48 1998
++++ doc/Makefile.in	Sun Dec  6 12:10:08 1998
 @@ -15,7 +15,7 @@
  all:
  
