@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for i in ${TARGETS}; do
+    if [ -f ${WRKDIR}/${i}.in ]; then
+	cat ${WRKDIR}/${i}.in | \
+	    sed \
+		-e "s;%%LOCALBASE%%;${LOCALBASE};g" \
+		-e "s;%%EMACS_LIBDIR%%;${EMACS_LIBDIR};g" \
+		-e "s;%%EMACS_SETUPEL%%;${EMACS_SETUPEL};g" \
+	    > ${WRKDIR}/${i}
+    fi
+done

@@ -1,6 +1,6 @@
---- info/Makefile.orig	Wed Oct 20 20:20:56 1999
-+++ info/Makefile	Fri Dec 10 22:45:46 1999
-@@ -32,6 +32,7 @@
+--- info/Makefile~	Wed Oct 27 08:55:12 1999
++++ info/Makefile	Tue Jul 10 01:25:05 2001
+@@ -33,6 +33,7 @@
  
  INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
  JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2
@@ -8,28 +8,39 @@
  
  info::
  	sed -e 's/@setfilename mew.jis.info/@setfilename mew.info/' \
-@@ -55,8 +56,8 @@
- 	-@if [ ! -d $(INFODIR) ]; then \
+@@ -57,22 +58,32 @@
  		$(MKDIR) $(INFODIR); \
  	fi; \
--	cp $(INFO) $(INFODIR)
+ 	cp $(INFO) $(INFODIR)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
+-		$(INSTALLINFO) mew.info $(INFODIR)/dir; \
+-	else \
+-		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
 +	${BSD_INSTALL_DATA} $(INFO) $(INFODIR)
-+	-@if [ -x "$(INSTALLINFO)" -a -z "${XEMACS_VER_OVER20}" ]; then \
- 		$(INSTALLINFO) mew.info $(INFODIR)/dir; \
- 	else \
- 		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
-@@ -66,12 +67,17 @@
++	-@if [ -z "${XEMACS_VER_OVER20}" ]; then \
++		if [ -x "$(INSTALLINFO)" ]; then \
++			$(INSTALLINFO) mew.info $(INFODIR)/dir; \
++		else \
++			echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
++		fi; \
+ 	fi
+ 
+ install-jinfo:
  	-@if [ ! -d $(INFODIR) ]; then \
  		$(MKDIR) $(INFODIR); \
  	fi; \
 -	cp $(JINFO) $(INFODIR)
 -	-@if [ -x "$(INSTALLINFO)" ]; then \
+-		$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
+-	else \
+-		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
 +	${BSD_INSTALL_DATA} $(JINFO) $(INFODIR)
-+	-@if [ -x "$(INSTALLINFO)" -a -z "${XEMACS_VER_OVER20}" ]; then \
- 		$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
- 	else \
- 		echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
++	-@if [ -z "${XEMACS_VER_OVER20}" ]; then \
++		if [ -x "$(INSTALLINFO)" ]; then \
++			$(INSTALLINFO) mew.jis.info $(INFODIR)/dir; \
++		else \
++			echo "Don't forget to edit $(INFODIR)/dir for Mew."; \
++		fi; \
  	fi
 +
 +install-man:

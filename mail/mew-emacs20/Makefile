@@ -5,6 +5,19 @@
 # $FreeBSD$
 #
 
-EMACS_PORT_NAME=	emacs20
+MAINTAINER=	kiri@FreeBSD.org
 
-.include "${.CURDIR}/../mew/Makefile"
+# This is a slave port.
+MASTERDIR=	${.CURDIR}/../mew
+
+# set emacs port
+EMACS_PORT_NAME=emacs20
+
+# target name for make build and install
+ALL_TARGET=	all jinfo #info
+INSTALL_TARGET=	install install-info install-jinfo install-etc
+
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
+
+.include "${MASTERDIR}/Makefile"

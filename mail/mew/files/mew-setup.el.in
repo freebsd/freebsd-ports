@@ -1,0 +1,4 @@
+(setq load-path (append '(
+	"%%LOCALBASE%%/%%EMACS_LIBDIR%%/site-lisp/mew"
+ ) load-path))
+(provide '%%EMACS_SETUPEL%%)
