@@ -352,4 +352,5 @@ share/doc/open-motif/RELNOTES
 %%MOTIF_DEMOS%%@dirrm lib/X11/help
 @dirrm lib/X11/bindings
 @dirrm include/uil
+@dirrm include/Mrm
 @dirrm include/Xm
