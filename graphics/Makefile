@@ -119,6 +119,7 @@
     SUBDIR += gview
     SUBDIR += gxanim
     SUBDIR += hdf
+    SUBDIR += hdf5
     SUBDIR += hgl
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
