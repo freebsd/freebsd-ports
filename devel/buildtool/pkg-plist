@@ -16,6 +16,7 @@ share/buildtool-0/mk/bt.lib.mk
 share/buildtool-0/mk/bt.man.mk
 share/buildtool-0/mk/bt.prog.mk
 share/buildtool-0/mk/bt.subdir.mk
+share/buildtool-0/mk/qt.moc.mk
 share/buildtool-0/mk/sys.mk
 share/buildtool-0/templates/sa.README.bt
 share/buildtool-0/templates/sa.defs
