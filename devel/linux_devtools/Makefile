@@ -3,10 +3,10 @@
 # Date created:         Nov 26 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/26 23:15:07 erich Exp $
+# $Id: Makefile,v 1.2 1996/11/27 12:02:28 asami Exp $
 #
 
-DISTNAME=	linux_devel-0.1
+DISTNAME=	linux_devel-0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
