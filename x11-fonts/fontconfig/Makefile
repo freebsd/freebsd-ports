@@ -23,14 +23,13 @@ PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat_includes=${LOCALBASE}/include \
 		--with-expat_lib=${LOCALBASE}/lib \
 		--with-default_fonts=${X11BASE}/lib/X11/fonts
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAKE_ENV=	LC_ALL=C
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 MAN3=		FcAtomicCreate.3  \
 		FcAtomicDeleteNew.3  \
