@@ -1,7 +1,7 @@
 Note for inetd users:
 
 Add following line to /etc/inetd.conf
-   skkserv stream tcp nowait root ${PREFIX}/libexec/dbskkd-cdb dbskkd-cdb
+   skkserv stream tcp nowait root /usr/local/libexec/dbskkd-cdb dbskkd-cdb
 
 If dbskkd-cdb 1.01 was running, please update your /etc/inetd.conf line.
 
