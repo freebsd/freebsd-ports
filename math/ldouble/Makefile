@@ -8,8 +8,7 @@
 PORTNAME=	ldouble
 PORTVERSION=	0.1
 CATEGORIES=	math
-MASTER_SITES=	http://vtel.rgv.net/~ahze/dist/ \
-		http://www.moshier.net/
+MASTER_SITES=	http://www.moshier.net/
 DISTNAME=	ldouble
 
 MAINTAINER=	ports@FreeBSD.org

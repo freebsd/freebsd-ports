@@ -9,8 +9,7 @@
 PORTNAME=	flyway
 PORTVERSION=	0.3.3
 CATEGORIES=	misc python
-MASTER_SITES=	http://www.bellz.org/flyway/ \
-		http://vtel.rgv.net/~ahze/dist/
+MASTER_SITES=	http://www.bellz.org/flyway/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VFR/IFR Route Planner for Pilots
