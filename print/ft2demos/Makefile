@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTVERSION=	2.1.7
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
