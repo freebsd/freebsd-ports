@@ -61,13 +61,14 @@ libexec/postfix/virtual
 sbin/postalias
 sbin/postcat
 sbin/postconf
+sbin/postdrop
 sbin/postfix
 sbin/postkick
 sbin/postlock
 sbin/postlog
 sbin/postmap
+sbin/postqueue
 sbin/postsuper
-sbin/postdrop
 sbin/sendmail
 %%SUB_TEST%%sbin/smtp-sink
 %%SUB_TEST%%sbin/smtp-source
@@ -85,6 +86,7 @@ sbin/sendmail
 %%SUB_DOCS%%share/doc/postfix/LMTP_README
 %%SUB_DOCS%%share/doc/postfix/MACOSX_README
 %%SUB_DOCS%%share/doc/postfix/MYSQL_README
+%%SUB_DOCS%%share/doc/postfix/NFS_README
 %%SUB_DOCS%%share/doc/postfix/PCRE_README
 %%SUB_DOCS%%share/doc/postfix/PORTING
 %%SUB_DOCS%%share/doc/postfix/QMQP_README
@@ -134,6 +136,7 @@ sbin/sendmail
 %%SUB_DOCS%%share/doc/postfix/postlock.1.html
 %%SUB_DOCS%%share/doc/postfix/postlog.1.html
 %%SUB_DOCS%%share/doc/postfix/postmap.1.html
+%%SUB_DOCS%%share/doc/postfix/postqueue.1.html
 %%SUB_DOCS%%share/doc/postfix/postsuper.1.html
 %%SUB_DOCS%%share/doc/postfix/qmgr.8.html
 %%SUB_DOCS%%share/doc/postfix/qmqpd.8.html
