@@ -381,6 +381,7 @@
     SUBDIR += totem
     SUBDIR += transcode
     SUBDIR += truevision
+    SUBDIR += tulip
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += utah-glx
