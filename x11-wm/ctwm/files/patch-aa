@@ -1,0 +1,19 @@
+*** Imakefile.orig	Sun Nov 13 23:04:28 1994
+--- Imakefile	Sun Nov 13 23:04:41 1994
+***************
+*** 10,16 ****
+  #undef  IMCONV
+  #undef  USE_SOUND
+  #define XPM
+! #define USEM4
+  
+           YFLAGS = -d
+          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
+--- 10,16 ----
+  #undef  IMCONV
+  #undef  USE_SOUND
+  #define XPM
+! #undef  USEM4
+  
+           YFLAGS = -d
+          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
