@@ -2947,6 +2947,7 @@ irc		ports/irc/irc
 ircII		ports/irc/ircII
 ircatlite	ports/irc/ircatlite
 ircd-hybrid	ports/irc/ircd-hybrid
+ircd-hybrid-ru	ports/irc/ircd-hybrid-ru
 ircd-ru		ports/irc/ircd-ru
 irchat-pj-emacs20	ports/irc/irchat-pj-emacs20
 irchat-pj-emacs21	ports/irc/irchat-pj-emacs21
