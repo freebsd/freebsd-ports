@@ -1,0 +1,12 @@
+#
+# $FreeBSD$
+#
+
+LINPHONE_PORTNAME=	linphone
+LINPHONE_PORTVERSION=	0.12.2
+LINPHONE_PORTREVISION=	0
+LINPHONE_PORTEPOCH=	1
+LINPHONE_MASTER_SITES=	http://simon.morlat.free.fr/download/${LINPHONE_PORTVERSION}/source/
+
+PATCHDIR=	${.CURDIR}/../../net/linphone-base/files
+MD5_FILE=	${.CURDIR}/../../net/linphone-base/distinfo
