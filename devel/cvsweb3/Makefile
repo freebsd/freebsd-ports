@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
-
-FORBIDDEN=	"due to cross-site scripting vulnerabilities"
 
 NO_BUILD=	yes
 
