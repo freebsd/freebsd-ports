@@ -8486,6 +8486,7 @@ pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-PHPUnit2	ports/devel/pear-PHPUnit2
 pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
 pear-PHP_Compat	ports/devel/pear-PHP_Compat
+pear-PHP_CompatInfo	ports/devel/pear-PHP_CompatInfo
 pear-Pager	ports/devel/pear-Pager
 pear-SOAP	ports/net/pear-SOAP
 pear-Services_Weather	ports/misc/pear-Services_Weather
