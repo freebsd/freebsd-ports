@@ -13,6 +13,7 @@
     SUBDIR += openoffice-1.0
     SUBDIR += openoffice-1.1
     SUBDIR += sms
+    SUBDIR += tleenx2
     SUBDIR += trf
     SUBDIR += webalizer2
 
