@@ -134,10 +134,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0915</cvename>
+      <bid>11819</bid>
     </references>
     <dates>
       <discovery>2004-11-25</discovery>
       <entry>2004-12-08</entry>
+      <modified>2004-12-12</modified>
     </dates>
   </vuln>
 
@@ -228,12 +230,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>11791</bid>
+      <bid>11792</bid>
       <freebsdpr>ports/74633</freebsdpr>
       <mlist msgid="20041202135143.GA7105@xc.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110202047507273</mlist>
     </references>
     <dates>
       <discovery>2004-11-28</discovery>
       <entry>2004-12-02</entry>
+      <modified>2004-12-12</modified>
     </dates>
   </vuln>
 
@@ -290,11 +295,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-1010</cvename>
+      <bid>11603</bid>
       <url>http://www.hexview.com/docs/20041103-1.txt</url>
     </references>
     <dates>
       <discovery>2004-10-03</discovery>
       <entry>2004-12-01</entry>
+      <modified>2004-12-12</modified>
     </dates>
   </vuln>
 
@@ -726,11 +733,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0882</cvename>
-      <mlist msgid="4198AE84.7020509@samba.org>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110055646329581</mlist>
+      <bid>11678</bid>
+      <mlist msgid="4198AE84.7020509@samba.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110055646329581</mlist>
     </references>
     <dates>
       <discovery>2004-11-15</discovery>
       <entry>2004-11-17</entry>
+      <modified>2004-12-12</modified>
     </dates>
   </vuln>
 
@@ -1060,6 +1069,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <bid>11548</bid>
       <cvename>CAN-2004-0981</cvename>
       <url>http://secunia.com/advisories/12995/</url>
       <url>http://www.imagemagick.org/www/Changelog.html</url>
@@ -1067,6 +1077,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-10-25</discovery>
       <entry>2004-11-11</entry>
+      <modified>2004-12-12</modified>
     </dates>
   </vuln>
 
