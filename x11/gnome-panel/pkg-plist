@@ -117,6 +117,7 @@ share/doc/panel-applet/panel-signals.html
 share/doc/panel-applet/right.png
 share/doc/panel-applet/server-files.html
 share/doc/panel-applet/session-saving.html
+share/doc/panel-applet/style.css
 share/doc/panel-applet/up.png
 share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
 share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
@@ -429,6 +430,7 @@ share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/li/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mi/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
