@@ -26,6 +26,7 @@ BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 # Configuration sparc64-unknown-freebsdelf not supported
 #	compilation stops with intermal compiler errors.
 ONLY_FOR_ARCHS=	i386
+MANUAL_PACKAGE_BUILD=	Path problem to autoheader on bento
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
