@@ -104,6 +104,7 @@
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += lfm
+    SUBDIR += libchk
     SUBDIR += libretto-config
     SUBDIR += linux-acu
     SUBDIR += lire
