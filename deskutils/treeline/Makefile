@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
