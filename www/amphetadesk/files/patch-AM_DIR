@@ -1,0 +1,21 @@
+--- lib/AmphetaDesk.pm.DIST	Tue Nov  5 06:06:05 2002
++++ lib/AmphetaDesk.pm	Thu Apr  8 23:17:19 2004
+@@ -71,7 +71,8 @@
+ 
+    # delete the logfile if it's over 250k,
+    # then reopen it and try to redir STDERR.
+-   my $logfile = catfile($Bin, "AmphetaDesk.log");
++   my $envtmp = $ENV{AM_DIR};
++   my $logfile = catfile($envtmp, "AmphetaDesk.log");
+    if (-e $logfile) { unlink $logfile if -s $logfile > 250000; }
+    open (LOG, ">>$logfile") or die "AmphetaDesk couldn't open the logfile for logging: $!";
+    open(STDERR,">&LOG") or die "AmphetaDesk couldn't redirect errors to the logfile: $!";
+@@ -81,7 +82,7 @@
+    # load our settings. this routine is located in Settings.pm
+    # and takes care of determining the OS, finding all the paths
+    # to the relevant files, as well as making sure everything exists.
+-   load_my_settings( catfile($Bin, "data", "mySettings.xml") );
++   load_my_settings( catfile($envtmp, "data", "mySettings.xml") );
+ 
+    # load our os specific libraries. if we don't know, use the Linux
+    # libraries, which currently default to STDOUT for all gui processing.

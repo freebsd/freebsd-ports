@@ -1,0 +1,86 @@
+bin/AmphetaDesk
+share/doc/AmphetaDesk/CHANGELOG
+share/doc/AmphetaDesk/LICENSE
+share/doc/AmphetaDesk/README.txt
+share/doc/AmphetaDesk/TODO
+share/doc/AmphetaDesk/build.html
+share/doc/AmphetaDesk/files_and_dirs.html
+share/doc/AmphetaDesk/finding_more.html
+share/doc/AmphetaDesk/give_thanks.html
+share/doc/AmphetaDesk/history.html
+share/doc/AmphetaDesk/index.html
+share/doc/AmphetaDesk/kudos.html
+share/doc/AmphetaDesk/naming.html
+share/doc/AmphetaDesk/news.html
+share/doc/AmphetaDesk/news.xml
+share/doc/AmphetaDesk/screenshots.html
+share/doc/AmphetaDesk/skinning.html
+share/doc/AmphetaDesk/version.txt
+share/doc/AmphetaDesk/website_integration.html
+share/doc/AmphetaDesk/whats_new.html
+share/doc/AmphetaDesk/xml_my_services.html
+share/doc/AmphetaDesk/xml_my_settings.html
+share/doc/AmphetaDesk/xml_services_lists.html
+share/doc/AmphetaDesk/images/bkgrnd.gif
+share/doc/AmphetaDesk/images/fyuze.gif
+share/doc/AmphetaDesk/images/globe.gif
+share/doc/AmphetaDesk/images/livejournal.jpg
+share/doc/AmphetaDesk/images/logo-88x31.gif
+share/doc/AmphetaDesk/images/logo.gif
+share/doc/AmphetaDesk/images/mailarchive.gif
+share/doc/AmphetaDesk/images/meerkat.jpg
+share/doc/AmphetaDesk/images/moreover.gif
+share/doc/AmphetaDesk/images/network54.gif
+share/doc/AmphetaDesk/images/newsisfree.gif
+share/doc/AmphetaDesk/images/nwfusion.gif
+share/doc/AmphetaDesk/images/quicktopic.gif
+share/doc/AmphetaDesk/images/racingnews.jpg
+share/doc/AmphetaDesk/images/sherch.jpg
+share/doc/AmphetaDesk/images/snewp.jpg
+share/doc/AmphetaDesk/images/syndic8.gif
+share/doc/AmphetaDesk/images/xml.gif
+share/doc/AmphetaDesk/images/xml_pill.gif
+share/doc/AmphetaDesk/images/xml_radio.gif
+share/doc/AmphetaDesk/images/yahoogroups.gif
+%%SITE_PERL%%/AmphetaDesk.pm
+%%SITE_PERL%%/AmphetaDesk/AmphetaDesk.pl
+%%SITE_PERL%%/AmphetaDesk/README.txt
+%%SITE_PERL%%/AmphetaDesk/OS/Linux.pm
+%%SITE_PERL%%/AmphetaDesk/Channels.pm
+%%SITE_PERL%%/AmphetaDesk/ChannelsList.pm
+%%SITE_PERL%%/AmphetaDesk/MyChannels.pm
+%%SITE_PERL%%/AmphetaDesk/Settings.pm
+%%SITE_PERL%%/AmphetaDesk/Templates.pm
+%%SITE_PERL%%/AmphetaDesk/Utilities.pm
+%%SITE_PERL%%/AmphetaDesk/Versioning.pm
+%%SITE_PERL%%/AmphetaDesk/WWW.pm
+%%SITE_PERL%%/AmphetaDesk/WebServer.pm
+%%SITE_PERL%%/AmphetaDesk/data/README.txt
+%%SITE_PERL%%/AmphetaDesk/data/lists/services-channels-recent.xml
+%%SITE_PERL%%/AmphetaDesk/templates/README.txt
+%%SITE_PERL%%/AmphetaDesk/templates/default/add_a_channel.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/index.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/my_channels.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/my_settings.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/popup.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/tpl_footer.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/tpl_header.html
+%%SITE_PERL%%/AmphetaDesk/templates/default/gui/linux_icon.png
+%%SITE_PERL%%/AmphetaDesk/templates/default/gui/linux_logo.png
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/bkgrnd.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/delete.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/email.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/globe.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/logo.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/xml.gif
+%%SITE_PERL%%/AmphetaDesk/templates/default/images/xml_radio.gif
+@dirrm share/doc/AmphetaDesk/images
+@dirrm share/doc/AmphetaDesk
+@dirrm %%SITE_PERL%%/AmphetaDesk/OS
+@dirrm %%SITE_PERL%%/AmphetaDesk/templates/default/images
+@dirrm %%SITE_PERL%%/AmphetaDesk/templates/default/gui
+@dirrm %%SITE_PERL%%/AmphetaDesk/templates/default
+@dirrm %%SITE_PERL%%/AmphetaDesk/templates
+@dirrm %%SITE_PERL%%/AmphetaDesk/data/lists
+@dirrm %%SITE_PERL%%/AmphetaDesk/data
+@dirrm %%SITE_PERL%%/AmphetaDesk
