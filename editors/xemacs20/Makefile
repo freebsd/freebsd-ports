@@ -55,7 +55,7 @@ pre-configure:
 .if defined(WITH_MULE)
 WITH_MULE=	--with-mule
 MULEDISTFILE=	${DISTNAME}-mule.tar.gz
-PLIST=		${PKGDIR}/PLIST.mule
+PLIST=		${PKGDIR}/pkg-plist.mule
 .endif
 
 # hack to avoid shipping binaries linked with Motif
