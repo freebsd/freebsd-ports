@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	quanta
-PORTVERSION= 	2.0p1
-PORTREVISION=	1
+PORTVERSION= 	2.0.1
+PORTEPOCH=	1
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-2.0-pr1
+
 .if !defined(NOPORTDOCS)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		css.tar.bz2 \
@@ -23,8 +23,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	jeremy@external.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
-
-WRKSRC=         ${WRKDIR}/${PORTNAME}
 
 USE_KDELIBS_VER=2
 USE_XPM=	yes
@@ -41,7 +39,13 @@ DOCS=		css html javascript php
 
 pre-configure:
 	@${PERL} -pi -e "s#lqt #lqt2 #g" ${WRKSRC}/quanta/Makefile.in
+	@${PERL} -pi -e "s@automake@automake14@g" ${WRKSRC}/configure
 
+	
+post-configure:
+	@${PERL} -pi -e "s@autoconf@autoconf213@g" ${WRKSRC}/Makefile
+	@${PERL} -pi -e "s@moc@moc2@g" ${WRKSRC}/configure
+	
 post-install:
 .if !defined(NOPORTDOCS)
 .for doc in ${DOCS}

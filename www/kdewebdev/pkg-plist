@@ -1,11 +1,3 @@
-share/locale/fr/LC_MESSAGES/quanta.mo
-share/locale/de/LC_MESSAGES/quanta.mo
-share/locale/da/LC_MESSAGES/quanta.mo
-share/icons/hicolor/48x48/apps/quanta.png
-share/icons/hicolor/32x32/apps/quanta.png
-share/icons/hicolor/22x22/apps/quanta.png
-share/icons/hicolor/16x16/apps/quanta.png
-share/apps/quanta/toolbars.rc
 share/apps/quanta/toolbar/wiznewprjweb.png
 share/apps/quanta/toolbar/wiznewprjloc.png
 share/apps/quanta/toolbar/wiznewprjglb.png
@@ -112,6 +104,8 @@ share/apps/quanta/toolbar/check.png
 share/apps/quanta/toolbar/bookmark.png
 share/apps/quanta/toolbar/ball.png
 share/apps/quanta/toolbar/back.png
+share/apps/quanta/toolbar/ftab.png
+share/apps/quanta/toolbar/ptab.png
 share/apps/quanta/tags/ul.tag
 share/apps/quanta/tags/tr.tag
 share/apps/quanta/tags/thead.tag
@@ -164,7 +158,7 @@ share/apps/quanta/doc/head_bg.gif
 share/apps/quanta/doc/documentation.html
 share/applnk/Development/quanta.desktop
 lib/quanta/plugins/weblint
-lib/quanta/plugins/libftpclient.so.0
+lib/quanta/plugins/libftpclient.so.1
 lib/quanta/plugins/libftpclient.so
 lib/quanta/plugins/libftpclient.la
 bin/quanta
@@ -1765,6 +1759,53 @@ bin/quanta
 %%PORTDOCS%%share/apps/quanta/doc/css/all-properties.html
 %%PORTDOCS%%share/apps/quanta/doc/css/LICENSE
 %%PORTDOCS%%share/apps/quanta/doc/css.docrc
+%%PORTDOCS%%share/apps/quanta/doc/aniquanta.gif
+%%PORTDOCS%%share/apps/quanta/doc/background.png
+%%PORTDOCS%%share/apps/quanta/doc/bgtable.png
+%%PORTDOCS%%share/apps/quanta/doc/developer.html
+%%PORTDOCS%%share/apps/quanta/doc/focus.html
+%%PORTDOCS%%share/apps/quanta/doc/intro.html
+%%PORTDOCS%%share/apps/quanta/doc/kdelogo2.png
+%%PORTDOCS%%share/apps/quanta/doc/konq.css
+%%PORTDOCS%%share/apps/quanta/doc/lines.png
+%%PORTDOCS%%share/apps/quanta/doc/lines2.png
+%%PORTDOCS%%share/apps/quanta/doc/maindoc.html
+%%PORTDOCS%%share/apps/quanta/doc/minilogo.png
+%%PORTDOCS%%share/apps/quanta/doc/more.png
+%%PORTDOCS%%share/apps/quanta/doc/qcenter2.png
+%%PORTDOCS%%share/apps/quanta/doc/quanta.css
+%%PORTDOCS%%share/apps/quanta/doc/quantahdr.png
+%%PORTDOCS%%share/apps/quanta/doc/shadow1.png
+%%PORTDOCS%%share/apps/quanta/doc/template.html
+%%PORTDOCS%%share/apps/quanta/doc/tips.html
+%%PORTDOCS%%share/apps/quanta/doc/webdev.png
+share/doc/HTML/en/quanta/developer.docbook
+share/doc/HTML/en/quanta/quantahdr.png
+share/doc/HTML/en/quanta/documentation.docbook
+share/doc/HTML/en/quanta/tips.docbook
+share/doc/HTML/en/quanta/introduction.docbook
+share/doc/HTML/en/quanta/webdev.png
+share/doc/HTML/en/quanta/minilogo.png
+share/doc/HTML/en/quanta/focus.docbook
+share/doc/HTML/en/quanta/index.docbook
+share/doc/HTML/en/quanta/index.cache.bz2
+share/doc/HTML/en/quanta/common
+share/locale/af/LC_MESSAGES/quanta.mo
+share/locale/az/LC_MESSAGES/quanta.mo
+share/locale/de/LC_MESSAGES/quanta.mo
+share/locale/da/LC_MESSAGES/quanta.mo
+share/locale/es/LC_MESSAGES/quanta.mo
+share/locale/eu/LC_MESSAGES/quanta.mo
+share/locale/fr/LC_MESSAGES/quanta.mo
+share/locale/hu/LC_MESSAGES/quanta.mo
+share/locale/nl/LC_MESSAGES/quanta.mo
+share/locale/ru/LC_MESSAGES/quanta.mo
+share/locale/sk/LC_MESSAGES/quanta.mo
+share/icons/hicolor/16x16/apps/quanta.png
+share/icons/hicolor/22x22/apps/quanta.png
+share/icons/hicolor/32x32/apps/quanta.png
+share/icons/hicolor/48x48/apps/quanta.png
+@dirrm share/doc/HTML/en/quanta
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/php
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/javascript/.pics/med
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/javascript/.pics
@@ -1787,17 +1828,12 @@ bin/quanta
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/css/classification
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/css/box
 %%PORTDOCS%%@dirrm share/apps/quanta/doc/css
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/16x16/apps
+%%PORTDOCS%%share/apps/quanta/actions.rc
+%%PORTDOCS%%share/apps/quanta/quantaui.rc
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
 @dirrm share/apps/quanta/toolbar
 @dirrm share/apps/quanta/tags
 @dirrm share/apps/quanta/doc
 @dirrm share/apps/quanta
-@dirrm share/applnk/Development
 @dirrm lib/quanta/plugins
 @dirrm lib/quanta
