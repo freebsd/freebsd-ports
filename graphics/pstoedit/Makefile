@@ -9,7 +9,7 @@ PORTNAME=	pstoedit
 PORTVERSION=	3.21
 CATEGORIES=	graphics print
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
-DISTNAME=	${PORTNAME}_3_21
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	jseger@FreeBSD.org
 
