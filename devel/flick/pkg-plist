@@ -31,6 +31,7 @@ include/flick/link/trapeze.h
 include/flick/pres/all.h
 include/flick/pres/corba.h
 include/flick/pres/corbaxx.h
+include/flick/pres/flick_defs.scml
 include/flick/pres/mig.h
 include/flick/pres/mom.h
 include/flick/pres/std_defines.scml
@@ -42,6 +43,7 @@ include/flick/pres/tao_exception.scml
 include/flick/pres/tao_interface.scml
 include/flick/pres/tao_sequence.scml
 include/flick/pres/tao_struct.scml
+include/flick/pres/tao_stubs.scml
 include/flick/pres/tao_union.scml
 lib/libflick-iiop.a
 lib/libflick-suntcp.a
