@@ -3,7 +3,7 @@
 # Date created:         04 September 1997
 # Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/11 09:45:56 tg Exp $
 #
 
 DISTNAME=	ruby-1.0-970903
@@ -11,7 +11,7 @@ PKGNAME=	ruby-1.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/
 
-MAINTAINER=	ematsu@pfu.co.jp
+MAINTAINER=	usagi@ruby.club.or.jp
 
 HAS_CONFIGURE=	yes
 
