@@ -1,0 +1,4 @@
+cdiff is a readability enhancer for context diffs
+and unified diffs on color terminals.
+
+It uses less(1) as a backend.
