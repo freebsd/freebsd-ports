@@ -190,6 +190,7 @@
     SUBDIR += xdialog
     SUBDIR += xdtm
     SUBDIR += xextensions
+    SUBDIR += xf86ext
     SUBDIR += xfce4-clipman-plugin
     SUBDIR += xfedor
     SUBDIR += xfishtank
