@@ -34,6 +34,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 #LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 USE_REINPLACE=	yes
+# XXX: remove PERL5 in next release, already fixed in modlogan-CVS.
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include
 .if defined(WITH_MYSQL)
