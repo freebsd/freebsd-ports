@@ -93,11 +93,13 @@
     SUBDIR += p5-Apache-ASP
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Radius
+    SUBDIR += p5-Apache-Session
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-FastCGI
     SUBDIR += p5-HTML
+    SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Stream
@@ -107,6 +109,7 @@
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-WWW-Search
+    SUBDIR += p5-libapreq
     SUBDIR += p5-libwww
     SUBDIR += plugger
     SUBDIR += publicfile
