@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Business-ISBN
-PORTVERSION=		1.67
+PORTVERSION=		1.70
 CATEGORIES=		misc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Business
@@ -16,7 +16,8 @@ MAINTAINER=		svenasse@polaris.ca
 
 PERL_CONFIGURE=		yes
 
-MAN3=			Business::ISBN.3
+MAN3=			Business::ISBN.3 \
+			Business::Data.3
 MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
