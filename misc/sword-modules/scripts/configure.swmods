@@ -15,10 +15,11 @@ dialog_main() {
 	while [ $choosedone != 1 ]; do
 		/usr/bin/dialog --title "SWORD Modules" --clear \
 			--menu "\n\
-Please select desired modules in each section:" -1 -1 5 \
+Please select desired modules in each section:" -1 -1 6 \
 Bibles		"Select biblical texts" \
 Lexicons	"Select lexicons / dictionaries" \
 Comments	"Select commentaries" \
+Devotionals	"Select daily devotionals" \
 Cults		"Select cults / unorthodox / questionnable modules" \
 Done		"Done" \
 2> $tmpfile
@@ -40,6 +41,10 @@ Done		"Done" \
 
 			"Comments")
 				dialog_select ${SCRIPTDIR}/comments.list selcomments "$selcomments"
+				;;
+
+			"Devotionals")
+				dialog_select ${SCRIPTDIR}/devotionals.list seldevotionals "$seldevotionals"
 				;;
 
 			"Cults")
@@ -117,6 +122,7 @@ else
 	selbibles="ASV KJV WEB"
 	sellexicons="StrongsGreek StrongsHebrew"
 	selcomments="Personal TSK"
+	seldevotionals=""
 	selcults=""
 fi
 
@@ -128,9 +134,8 @@ if [ ! -d ${SETDIR} ]; then
 	mkdir ${SETDIR}
 fi
 
-rm -f ${MODFILE} ${MODFILE_WITHDIR}
-for module in $selbibles $sellexicons $selcomments $selcults; do
-	echo -n "${module}.zip " >>${MODFILE}
-	echo -n "${DIST_SUBDIR}/${module}.zip " >>${MODFILE_WITHDIR}
+echo "# Automatically generated file - manual changes may be lost" >${MODFILE}
+for module in $selbibles $sellexicons $selcomments $selcults $seldevotionals; do
+	echo "MODULE_FILES  = ${module}.zip " >>${MODFILE}
 done
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sword-modules
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/modules/raw/ \
 		http://www.crosswire.org/sword/download/ftpmirror/pub/sword/modules/raw/
@@ -25,9 +25,9 @@ USE_ZIP=	yes
 # it's best not to use checksum. Besides, there is no version number on modules.
 NO_CHECKSUM=	yes
 
+MODULE_FILES=
 SETDIR=	${WRKDIRPREFIX}${.CURDIR}
-MODFILE=	${SETDIR}/selected.mods
-MODFILE_WITHDIR=${SETDIR}/selected.mods.withdir
+MODFILE=	${SETDIR}/Makefile.sel
 SCRIPTS_ENV=	SETDIR="${SETDIR}" \
 	TOUCH="${TOUCH}" \
 	MKDIR="${MKDIR}" \
@@ -40,27 +40,27 @@ SCRIPTS_ENV=	SETDIR="${SETDIR}" \
 	BUILD="${PACKAGE_BUILDING}" \
 	DIST_SUBDIR="${DIST_SUBDIR}" \
 	MODFILE="${MODFILE}" \
-	MODFILE_WITHDIR="${MODFILE_WITHDIR}" \
 	BATCH="${BATCH}"
-MODULE_FILES=	`${CAT} ${MODFILE}`
-# XXX The regex for _CKSUMFILES in bsd.port.mk can't handle the backquotes
-#     in MODULE_FILES. It substitutes the command instead of it's result.
-_CKSUMFILES=	`${CAT} ${MODFILE_WITHDIR}`
 
 DIRNAME?=	${BASENAME:S/basename/dirname/}
 SORT?=		sort
 
 .if !exists(${MODFILE})
 pre-fetch:	select
+.else
+.include <${MODFILE}>
+pre-fetch:
 .endif
+	@${MAKE} do-fetch		# XXX Not sure if this is needed
 
 select:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.swmods
 
 post-clean:
-	@${RM} -f ${MODFILE} ${MODFILE_WITHDIR}
+	@${RM} -f ${MODFILE}
 
 do-install:
+	@${MKDIR} -p ${PREFIX}/share/sword
 	@for i in ${MODULE_FILES}; do \
 		${EXTRACT_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/$${i} -d ${PREFIX}/share/sword; \
 	 done
