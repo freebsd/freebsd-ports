@@ -19,7 +19,7 @@ MASTER_SITES=   ftp://ftp.freepascal.org/pub/fpc/dist/Freebsd/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.freebsd4
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm

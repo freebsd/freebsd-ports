@@ -1,6 +1,6 @@
 # New ports collection makefile for:    gnat-doc
 # Date created:         4 Sept 2001
-# Whom:                 John Merryweather Cooper <jmcoopr@webmail.bmi.net>
+# Whom:                 John Merryweather Cooper <coop9211@uidaho.edu>
 #
 # $FreeBSD$
 #
@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMESUFFIX=	-${DOCFORMAT}
 DISTNAME=	gnat-${PORTVERSION}-docs
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 WRKSRC=		${WRKDIR}/gnat-${PORTVERSION}-docs
 NO_BUILD=	yes
