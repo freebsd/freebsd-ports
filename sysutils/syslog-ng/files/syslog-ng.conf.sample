@@ -60,13 +60,13 @@ filter f_local7 { facility(local7); };
 # log level filters
 #
 filter f_emerg { level(emerg); };
-filter f_alert { level(alert); };
-filter f_crit { level(crit); };
-filter f_err { level(err); };
-filter f_warning { level(warning); };
-filter f_notice { level(notice); };
-filter f_info { level(info); };
-filter f_debug { level(debug); };
+filter f_alert { level(alert..emerg); };
+filter f_crit { level(crit..emerg); };
+filter f_err { level(err..emerg); };
+filter f_warning { level(warning..emerg); };
+filter f_notice { level(notice..emerg); };
+filter f_info { level(info..emerg); };
+filter f_debug { level(debug..emerg); };
 
 #
 # program filters
