@@ -1,35 +1,28 @@
-# New ports collection makefile for:	gkrellmlaunch
-# Date Created:				Tue Nov  6 19:15:45 EST 2001
-# Whom:					Patrick Li <pat@databits.net>
+# New ports collection makefile for:	gkrellmlaunch2
+# Date Created:				23 Aug 2004
+# Whom:					Zach Thompson <hideo@lastamericanempire.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gkrellmlaunch
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	2
 
-MAINTAINER=	pat@FreeBSD.org
-COMMENT=	An application launcher plugin for GKrellM
+MAINTAINER= 	hideo@lastamericanempire.com
+COMMENT=	An application launcher plugin for GKrellM2
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-PLIST_FILES=	libexec/gkrellm/plugins/gkrellmlaunch.so
+PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmlaunch.so
 USE_X_PREFIX=	yes
-USE_GNOME=	imlib
 ALL_TARGET=	${PORTNAME}.so
 
-.include <bsd.port.pre.mk>
-.if ${ARCH} == "amd64"
-CFLAGS=	-fPIC
-.endif
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so \
-		${PREFIX}/libexec/gkrellm/plugins
+	${INSTALL_DATA} ${WRKSRC}/gkrellmlaunch.so ${PREFIX}/libexec/gkrellm2/plugins
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
