@@ -7,6 +7,7 @@
 
 PORTNAME=	sgb
 PORTVERSION=	20030623
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://labrea.stanford.edu/pub/sgb/
 DISTNAME=	sgb-2003-06-23
@@ -20,4 +21,9 @@ USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	lib tests
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-extract:
+	${CP} ${WRKSRC}/PROTOTYPES/* ${WRKSRC}
+
+.include <bsd.port.post.mk>
