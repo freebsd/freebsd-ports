@@ -5,7 +5,7 @@
  lib_LTLIBRARIES = libxml.la
  
 -libxml_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
-+libxml_la_LDFLAGS = -version-info 4:0:0
++libxml_la_LDFLAGS = -version-info 5:0:0
  
  libxml_la_SOURCES =  		SAX.c 		entities.c 		encoding.c 		error.c 		parser.c 		HTMLparser.c 		HTMLtree.c 		debugXML.c 		tree.c 		xpath.c 		valid.c
  

@@ -5,16 +5,18 @@ include/gnome-xml/HTMLtree.h
 include/gnome-xml/debugXML.h
 include/gnome-xml/encoding.h
 include/gnome-xml/entities.h
+include/gnome-xml/nanohttp.h
 include/gnome-xml/parser.h
 include/gnome-xml/parserInternals.h
 include/gnome-xml/tree.h
 include/gnome-xml/valid.h
 include/gnome-xml/xml-error.h
 include/gnome-xml/xmlIO.h
+include/gnome-xml/xmlmemory.h
 include/gnome-xml/xpath.h
 lib/libxml.a
 lib/libxml.so
-lib/libxml.so.4
+lib/libxml.so.5
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome-xml/DOM.gif
@@ -23,11 +25,13 @@ share/gnome-xml/gnome-xml-entities.html
 share/gnome-xml/gnome-xml-error.html
 share/gnome-xml/gnome-xml-htmlparser.html
 share/gnome-xml/gnome-xml-htmltree.html
+share/gnome-xml/gnome-xml-nanohttp.html
 share/gnome-xml/gnome-xml-parser.html
 share/gnome-xml/gnome-xml-parserinternals.html
 share/gnome-xml/gnome-xml-tree.html
 share/gnome-xml/gnome-xml-valid.html
 share/gnome-xml/gnome-xml-xml-error.html
+share/gnome-xml/gnome-xml-xmlmemory.html
 share/gnome-xml/gnome-xml-xpath.html
 share/gnome-xml/index.sgml
 share/gnome-xml/libxml.html
