@@ -8748,7 +8748,7 @@ scrollz-doc	ports/irc/scrollz-doc
 scrot		ports/graphics/scrot
 scsh		ports/lang/scsh
 scud		ports/comms/scud
-scummvm		ports/emulators/scummvm
+scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
 scwm-icons	ports/graphics/scwm-icons
 sdd		ports/sysutils/sdd

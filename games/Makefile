@@ -384,6 +384,7 @@
     SUBDIR += rubix
     SUBDIR += scid
     SUBDIR += scorched3d-devel
+    SUBDIR += scummvm
     SUBDIR += scummvm-tools
     SUBDIR += sdlroids
     SUBDIR += seabattle
