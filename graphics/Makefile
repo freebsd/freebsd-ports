@@ -116,6 +116,7 @@
     SUBDIR += linux-bmrt
     SUBDIR += linux-jpeg
     SUBDIR += linux-png
+    SUBDIR += linux-tiff
     SUBDIR += linux_glide
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
