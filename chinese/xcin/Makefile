@@ -17,6 +17,8 @@ MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
+BROKEN=		"Non-I18N-aware old-fashioned application no more supported"
+
 NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
