@@ -42,7 +42,7 @@
   # 1) libVFlib.a and VF.h are installed in the standard directory
   #VFLIB = -lVFlib
   # 2) libVFlib.a and VF.h are installed in the non-standard directory
-! VFLIB = -L${PREFIX}/lib -lVFlib
+! VFLIB = -L${PREFIX}/lib -lVFlib2 -lttf
 ! VFLIBINC = -I${PREFIX}/include
   # 3) use VFlib.a and VF.h in the source directory of VFlib
 ! #VFLIBSRCDIR = ../VFlib-2.22/src
