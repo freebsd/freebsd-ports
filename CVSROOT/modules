@@ -6457,6 +6457,7 @@ t1lib		ports/devel/t1lib
 t1utils		ports/print/t1utils
 t3d		ports/x11-clocks/t3d
 t3x		ports/lang/t3x
+t_coffee	ports/biology/t_coffee
 tac_plus4	ports/net/tac_plus4
 tail		src/usr.bin/tail
 talk		src/usr.bin/talk
