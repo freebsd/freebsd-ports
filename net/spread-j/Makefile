@@ -16,7 +16,7 @@ COMMENT=	Java client library for the Spread Group Communication System
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
-USE_JAVA=	1.2+
+USE_JAVA=	1.4+
 USE_JIKES=	yes
 JAVALIBDIR=	${PREFIX}/share/java/classes
 PKGMESSAGE=	${WRKSRC}/../license.txt
@@ -36,7 +36,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/java
 PLIST_SUB+=	JAVALIBDIR=share/java/classes
 
 do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET} ${ANT_PARAMS}
+	@cd ${WRKSRC} && \
+		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ${ANT_PARAMS}
 
 do-install:
 	@cd ${WRKSRC} && ${ANT} install ${ANT_PARAMS}
