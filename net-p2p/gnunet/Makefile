@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnunet
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.1c
 CATEGORIES=	net
 MASTER_SITES=	http://www.ovmj.org/GNUnet/download/ \
 		${MASTER_SITE_GNU}
@@ -97,9 +96,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@{FIND} ${WRKSRC} -name configure | ${XARGS} \
-	@${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} \
+	${REINPLACE_CMD} -e \
 		's|-pthread [\$$]CFLAGS|${PTHREAD_CFLAGS} \$$CFLAGS|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'
+	${REINPLACE_CMD} -e \
+		's|^#include <values.h>|#include <limits.h>|g' \
+		${WRKSRC}/src/applications/afs/module/manager.c
 
 .include <bsd.port.mk>
