@@ -35,7 +35,7 @@ _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 libglade2 libxml2 \
 		libgnome libbonoboui libgnomeui atspi libgailgnome \
 		libgtkhtml gnomedesktop libwnck vte libzvt librsvg2 eel2 \
 		gnomepanel nautilus2 metacity gal2 gnomecontrolcenter2 libgda2 \
-		libgnomedb gtksourceview
+		libgnomedb gtksourceview pkgconfig libgsf
 
 SCROLLKEEPER_DIR=	/var/db/scrollkeeper
 gnomehack_PRE_PATCH=	${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -84,6 +84,7 @@ glib12_LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
 glib12_CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_MAKE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 glib12_DETECT=		${GLIB_CONFIG}
+glib12_USE_GNOME_IMPL=	pkgconfig
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 gtk12_LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
@@ -97,14 +98,14 @@ libxml_LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 libxml_CONFIGURE_ENV=	XML_CONFIG="${XML_CONFIG}"
 libxml_MAKE_ENV=	XML_CONFIG="${XML_CONFIG}"
 libxml_DETECT=		${XML_CONFIG}
-libxml_USE_GNOME_IMPL=	glib12
+libxml_USE_GNOME_IMPL=	glib12 pkgconfig
 
 ORBIT_CONFIG?=		${LOCALBASE}/bin/orbit-config
 orbit_LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 orbit_CONFIGURE_ENV=	ORBIT_CONFIG="${ORBIT_CONFIG}"
 orbit_MAKE_ENV=		ORBIT_CONFIG="${ORBIT_CONFIG}"
 orbit_DETECT=		${ORBIT_CONFIG}
-orbit_USE_GNOME_IMPL=	glib12
+orbit_USE_GNOME_IMPL=	glib12 pkgconfig
 
 GDK_PIXBUF_CONFIG?=	${X11BASE}/bin/gdk-pixbuf-config
 gdkpixbuf_LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
@@ -141,7 +142,7 @@ oaf_USE_GNOME_IMPL=	glib12 orbit libxml
 gnomemimedata_BUILD_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_RUN_DEPENDS=${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:${PORTSDIR}/misc/gnomemimedata
 gnomemimedata_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc
-gnomemimedata_USE_GNOME_IMPL=gnomehier
+gnomemimedata_USE_GNOME_IMPL=gnomehier pkgconfig
 
 GCONF_CONFIG?=		${X11BASE}/bin/gconf-config
 gconf_LIB_DEPENDS=	gconf-1.1:${PORTSDIR}/devel/gconf
@@ -209,7 +210,7 @@ libpanel_GNOME_DESKTOP_VERSION=1
 
 glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
-glib20_USE_GNOME_IMPL=gnometarget
+glib20_USE_GNOME_IMPL=gnometarget pkgconfig
 
 atk_LIB_DEPENDS=	atk-1.0.200:${PORTSDIR}/devel/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
@@ -241,6 +242,7 @@ libglade2_USE_GNOME_IMPL=libxml2 gtk20
 
 libxml2_LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 libxml2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc
+libxml2_USE_GNOME_IMPL=	pkgconfig
 
 libxslt_LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt
 libxslt_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxslt.pc
@@ -272,6 +274,7 @@ libgnomecanvas_USE_GNOME_IMPL=	libglade2 libartlgpl2
 
 libartlgpl2_LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
 libartlgpl2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libart-2.0.pc
+libartlpl2_USE_GNOME_IMPL=	pkgconfig
 
 libgnomeprint_LIB_DEPENDS=	gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint
 libgnomeprint_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeprint-2.0.pc
@@ -324,7 +327,7 @@ libzvt_USE_GNOME_IMPL=	gtk20
 
 librsvg2_LIB_DEPENDS=	rsvg-2.4:${PORTSDIR}/graphics/librsvg2
 librsvg2_DETECT=	${X11BASE}/libdata/pkgconfig/librsvg-2.0.pc
-librsvg2_USE_GNOME_IMPL=libartlgpl2 libxml2 gtk20
+librsvg2_USE_GNOME_IMPL=libartlgpl2 libxml2 gtk20 libgsf
 
 eel2_LIB_DEPENDS=	eel-2.4:${PORTSDIR}/x11-toolkits/eel2
 eel2_DETECT=		${X11BASE}/libdata/pkgconfig/eel-2.0.pc
@@ -363,6 +366,14 @@ libgnomedb_USE_GNOME_IMPL=libgnomeui libgda2
 gtksourceview_LIB_DEPENDS=	gtksourceview-1.0.0:${PORTSDIR}/x11-toolkits/gtksourceview
 gtksourceview_DETECT=	${X11BASE}/libdata/pkgconfig/gtksourceview-1.0.pc
 gtksourceview_USE_GNOME_IMPL=libgnome
+
+pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
+pkgconfig_RUN_DEPENDS=		pkg_config:${PORTSDIR}/devel/pkgconfig
+
+libgsf_LIB_DEPENDS=			gsf-1.9:${PORTSDIR}/devel/libgsf
+libgsf_DETECT=				${LOCALBASE}/libdata/pkgconfig/libgsf-gnome-1.pc
+libgsf_USE_GNOME_IMPL=		gnomevfs2 libbonobo
 
 # End component definition section
 
