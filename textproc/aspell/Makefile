@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	aspell
-PORTVERSION=	0.33.7.1
-PORTREVISION=	1
+PORTVERSION=	0.50.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://savannah.gnu.org/download/${PORTNAME}/rel/	\
+		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0//}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	thierry@pompo.net
 
-LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
 		--enable-doc-dir=${DOCSDIR}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
