@@ -1,5 +1,5 @@
---- we_fl_unix.c.orig	Wed May  6 11:03:13 1998
-+++ we_fl_unix.c	Fri May  8 10:25:34 1998
+--- we_fl_unix.c.orig	Fri May  7 22:34:29 1999
++++ we_fl_unix.c	Fri May  7 22:38:00 1999
 @@ -14,6 +14,10 @@
  #include <sys/stat.h>
  #include <errno.h>
@@ -8,21 +8,21 @@
 +#include <sys/param.h>
 +#endif
 +
- struct dirfile *e_make_win_list(FENSTER *f);
- int e_s_sys_ini(void);
- int e_s_sys_end(void);
-@@ -1929,7 +1933,13 @@
-  dout->name = NULL;
-  manpath[0] = '\0';
-  if (getenv("MANPATH")) strcpy(manpath, getenv("MANPATH"));
-- if (manpath[0] == '\0') strcpy(manpath, "/usr/man:/usr/local/man");
-+ if (manpath[0] == '\0') strcpy(manpath, 
+ struct dirfile *e_make_win_list(FENSTER * f);
+ extern char    *e_tmp_dir;
+ extern int      (*e_u_system) (char *exe);
+@@ -3549,7 +3553,13 @@
+   if(getenv("MANPATH"))
+     strcpy(manpath, getenv("MANPATH"));
+   if(manpath[0] == '\0')
+-    strcpy(manpath, "/usr/man:/usr/local/man");
++    strcpy(manpath,
 +#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
 +		 "/usr/share/man:/usr/local/man");
 +#else
 +		 "/usr/man:/usr/local/man");
 +#endif
 +
-  while (manpath[i])
-  {
-   for (n = 0; (subpath[n] = manpath[i]) && manpath[i] != PTHD; i++, n++);
+   while(manpath[i])
+   {
+     for(n = 0; (subpath[n] = manpath[i]) && manpath[i] != PTHD; i++, n++);
