@@ -24,8 +24,8 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 TLS		"SSL and TLS (BROKEN)" "$status_TLS" \
-IPv6		"IPv6 support" "$status_IPv6" \
-IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
+IPv6		"IPv6 support (BROKEN)" "$status_IPv6" \
+IPv6TLS		"IPv6 support with SSL and TLS (BROKEN)" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
