@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jun 24 16:22:59 2000
++++ Makefile.in	Mon Oct 16 20:30:48 2000
+@@ -76,7 +76,7 @@
+ man_MANS = feh.1
+ 
+ docs_DATA = README AUTHORS ChangeLog TODO
+-docsdir = $(prefix)/doc/feh
++docsdir = $(datadir)/doc/feh
+ 
+ EXTRA_DIST =  feh.spec feh.1 $(docs_DATA)
+ 
