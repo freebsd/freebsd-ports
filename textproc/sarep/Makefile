@@ -1,7 +1,7 @@
 # Ports collection makefile for:  sar
 # Version required:               0.2
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/25 03:42:42 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1999/02/18 17:49:15 ache Exp $
 #
 
 DISTNAME=       sar
@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=   http://tarp.linuxos.org/software/
 EXTRACT_SUFX=
 
-MAINTAINER=     ache@nagual.pp.ru
+MAINTAINER=     ache@freebsd.org
 
 EXTRACT_ONLY=
 NO_BUILD=       YES
