@@ -106,11 +106,13 @@ The following patch adds shared library support for FreeBSD to MH
   
   #define	NOTOK	(-1)
   
---- 32,38 ----
+--- 32,40 ----
   #define	MHRELEASE	"6.8.3"		/* for version: "Maj.min.pat" */
   #define	MHCENTERFOOT	"MH.6.8"	/* for nroff page footers */
   #define	MHLEFTFOOT	"[mh.6]"	/* [mh.6]    MH.6.6   page# */
+! #ifndef MHSLIBVER
 ! #define	MHSLIBVER	"3.2"		/* Shared library version */
+! #endif
   
   #define	NOTOK	(-1)
   
@@ -194,3 +196,32 @@ diff -cdr ../mh-6.8.3.orig/zotnet/mts/lock.c ./zotnet/mts/lock.c
   #ifdef	SYS5
   #define	u_short	ushort
   #define u_long  ulong
+--- conf/makefiles/sbr.orig	Tue Sep 22 16:38:28 1998
++++ conf/makefiles/sbr	Tue Sep 22 16:51:48 1998
+@@ -157,6 +157,7 @@
+ inst-lib:	libmh.so $(LIBSA)
+ 		-rm -f $(SLIBDIR)/libmh.so.$(SLIBVER)
+ 		cp libmh.so.$(SLIBVER) $(SLIBDIR)/libmh.so.$(SLIBVER)
++		ln -s libmh.so.$(SLIBVER) $(SLIBDIR)/libmh.so
+ 		-@chmod $(PGMPROT) $(SLIBDIR)/libmh.so.$(SLIBVER)
+ 		-@ls -l $(SLIBDIR)/libmh.so.*
+ 		-@echo "Shared library installed normally"
+--- conf/Makefile.orig	Wed Sep 23 10:27:39 1998
++++ conf/Makefile	Wed Sep 23 10:27:25 1998
+@@ -6,10 +6,15 @@
+ SHELL	=	/bin/sh
+ 
+ CC      =   	cc
+-CFLAGS  =   	-O
+ LFLAGS  =   	-bhu
+ LDFLAGS =
+ LIBES   =
++
++.if ${PORTOBJFORMAT} == "elf"
++CFLAGS  =   	-O -DMHSLIBVER=\"3\"
++.else
++CFLAGS  =   	-O -DMHSLIBVER=\"3.2\"
++.endif
+ 
+ 
+ ######################################################################
