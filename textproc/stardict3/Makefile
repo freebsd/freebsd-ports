@@ -33,4 +33,7 @@ post-patch:
 		${WRKSRC}/src/docklet.cpp ${WRKSRC}/src/floatwin.cpp \
 		${WRKSRC}/src/selection.cpp
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
