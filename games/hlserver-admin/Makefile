@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50.51
+PORTVERSION=	2.50.52
 PORTEPOCH=	1
 MASTER_SITES=	http://www.adminmod.org/downloads/update/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	halflifeadmin
-DISTFILES=	halflife-admin-2.50.50.tgz \
-		halflifeadmin-update-2_50_51.tgz
+DISTNAME=	halflife-admin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -21,10 +20,6 @@ COMMENT=	Popular Half-Life mod server administration tool for Linux
 WRKSRC=		${WRKDIR}/Adminmod
 
 slaveport-post-extract:
-	@${CP} ${WRKSRC}/../metamod_i386.so \
-		${WRKSRC}/dlls
-	@${CP} ${WRKSRC}/../admin_MM_i386.so \
-		${WRKSRC}/dlls
 	@${PERL} -pi.orig -e \
 		's|/usr/local/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
 		${WRKSRC}/install_admin
