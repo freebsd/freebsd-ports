@@ -57,6 +57,7 @@ share/examples/ns2/simple-heap.tcl
 share/examples/ns2/simple-plm.tcl
 share/examples/ns2/simple-rtg.tcl
 share/examples/ns2/simple-rtp.tcl
+share/examples/ns2/simple-tcp.tcl
 share/examples/ns2/simple-webcache-comp.tcl
 share/examples/ns2/simple-webcache-trace.tcl
 share/examples/ns2/simple-webcache.tcl

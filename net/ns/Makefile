@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ns
-PORTVERSION=	2.1.b9
+PORTVERSION=	2.26
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
-DISTNAME=	ns-src-2.1b9
+DISTNAME=	ns-src-2.26
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The UCB/LBNL Network Simulator Version 2
@@ -20,22 +20,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 MAN1=		ns.1
 MANCOMPRESSED=	no
 
-WRKSRC=		${WRKDIR}/ns-2.1b9
+WRKSRC=		${WRKDIR}/ns-2.26
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
 
 ALL_TARGET=
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ns.1 ${PREFIX}/man/man1
 	${MKDIR} ${PREFIX}/share/examples/ns2
 	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${PREFIX}/share/examples/ns2
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>
