@@ -14,7 +14,8 @@ MASTER_SITES=	http://namazu.org/%7esatoru/quickml/
 MAINTAINER=	yaizawa@mdbl.sfc.keio.ac.jp
 COMMENT=	An easy-to-use mailing list system
 
-OPTIONS+=	ANALOG "Enable quickml-analog" on
+OPTIONS+=	ANALOG "Enable quickml-analog" on \
+		LIMIT  "Enable Creators and Members Limitation Patch" off
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -38,13 +39,25 @@ CONFIGURE_ARGS+=	--with-rubydir="${RUBY_LIBDIR}"
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_LIMIT)
+PATCH_DIST_STRIP=	-p1
+.endif
+
 .if !defined(WITHOUT_ANALOG)
 USE_GHOSTSCRIPT_RUN=	yes
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
+post-fetch:
+.if !defined(WITHOUT_LIMIT)
+	@ ( cd ${DISTDIR} && ${FETCH_CMD} -o ${PORTNAME}-${PORTVERSION}-limited.patch "http://linux.matchy.net/view.xcg?c=plugin;plugin=attach_download;p=QuickMLLimited;file_name=${PORTNAME}-${PORTVERSION}-limited.patch" )
+.endif
+
 post-patch:
+.if !defined(WITHOUT_LIMIT)
+	${PATCH} ${PATCH_DIST_ARGS} < ${DISTDIR}/${PORTNAME}-${PORTVERSION}-limited.patch
+.endif
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/quickml.sh > ${WRKDIR}/quickml.sh
 .if defined(WITHOUT_ANALOG)
