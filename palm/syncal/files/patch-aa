@@ -1,5 +1,5 @@
-*** Makefile.org	Fri Dec 22 14:08:08 2000
---- Makefile	Fri Dec 22 14:10:01 2000
+*** Makefile.org	Mon Jan 20 21:06:28 2003
+--- Makefile	Mon Jan 20 21:07:55 2003
 ***************
 *** 14,20 ****
   #
@@ -40,8 +40,8 @@
   # Unless you're smarter than me, which is entirely possible. [JTL]
   #
 ! LIBDIR = -L$(top_builddir)
-! INCDIR = -I$(top_builddir)
-  CFLAGS = -Wall -g $(INCDIR) $(DEFINES)
+! INCDIR = -I$(top_builddir) -I/usr/include/libpisock
+  CFLAGS =  -Wall -w -O -g $(INCDIR) $(DEFINES)
   SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
   	syncal_reconcile.o syncal_gmt.o
 --- 65,72 ----
@@ -50,7 +50,7 @@
   #
 ! LIBDIR = -L$(top_builddir)/lib
 ! INCDIR = -I$(top_builddir)/include
-  CFLAGS = -Wall -g $(INCDIR) $(DEFINES)
+  CFLAGS =  -Wall -w -O -g $(INCDIR) $(DEFINES)
   SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
   	syncal_reconcile.o syncal_gmt.o
 ***************

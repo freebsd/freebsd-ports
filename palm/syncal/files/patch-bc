@@ -1,0 +1,12 @@
+*** syncal_cat.c.org	Mon Jan 20 21:49:52 2003
+--- syncal_cat.c	Mon Jan 20 21:50:06 2003
+***************
+*** 11,16 ****
+--- 11,17 ----
+  #include <stdio.h>
+  #include <stdlib.h>
+  #include <string.h>
++ #include <errno.h>
+  #include <sys/stat.h>
+  #include <time.h>
+  #include <ctype.h>
