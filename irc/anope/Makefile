@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	anope
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,12 +49,8 @@ ANOPEUMASK?=	077
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not build on ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on ${ARCH} (shared libraries must be compiled with -fPIC)"
 .endif
 
 .if defined(WITH_MYSQL)
