@@ -158,10 +158,6 @@ post-clean:
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN= "Problems with unaligned access"
-.endif
-
 replace:
 .if ${OSVERSION} >= 400014
 	@${ECHO_MSG} "===>  Activating postfix in /etc/mail/mailer.conf"
