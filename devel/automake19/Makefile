@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU automake generates input files for GNU autoconf
 
 BROKEN=		Needs at least autoconf 254 to build.

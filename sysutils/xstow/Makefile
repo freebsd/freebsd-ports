@@ -15,7 +15,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	alane@geeksrus.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced replacement for GNU stow written in C++
 
 USE_GMAKE=	yes

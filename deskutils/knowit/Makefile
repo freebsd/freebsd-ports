@@ -14,7 +14,7 @@ PORTREVISION=	0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://knowit.sourceforge.net/files/
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A note manager with tree organization that uses RTF for storage
 
 USE_KDELIBS_VER=3

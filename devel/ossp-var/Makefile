@@ -15,7 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/var/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible, full-featured and fast variable expansion library
 
 USE_GMAKE=	yes

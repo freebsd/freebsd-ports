@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 
 GNU_CONFIGURE=	yes

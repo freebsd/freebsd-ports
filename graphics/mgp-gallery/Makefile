@@ -19,7 +19,7 @@ DISTFILES=	mgp-midgard-${PORTVERSION}.tgz \
 		mgp-gradients-${PORTVERSION}.tgz
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of various templates for magicpoint
 
 NO_BUILD=	yes

@@ -15,7 +15,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line, ncurses, and Qt-GUI OSS audio mixer
 
 USE_QT_VER=	3

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://dickey.his.com/cdk/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses Development Kit for speedy development of full screen programs
 
 USE_GMAKE=	yes

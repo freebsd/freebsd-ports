@@ -15,7 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/val/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OSSP val is a flexible name to value mapping library for C variables
 
 USE_GMAKE=	yes

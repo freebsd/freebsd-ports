@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and mp3 encoders
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \

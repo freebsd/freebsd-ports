@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/doc/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/doc/${PORTVERSION}/
 DISTNAME=	${DOCFORMAT}-${PORTVERSION}
 
-MAINTAINER=	alane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation for the Python programming language
 
 DIST_SUBDIR=	python

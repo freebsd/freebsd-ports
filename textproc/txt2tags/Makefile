@@ -15,7 +15,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://txt2tags.sourceforge.net/src/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alane@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to turn simply formatted text into markup (e.g., HTML)
 
 NO_BUILD=	yes
