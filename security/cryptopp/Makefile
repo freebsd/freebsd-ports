@@ -7,6 +7,7 @@
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.1
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://www.eskimo.com/~weidai/ \
@@ -57,7 +58,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cryptopp
-	${CP} ${WRKSRC}/README.txt ${PREFIX}/share/doc/cryptopp/README
+	${CP} ${WRKSRC}/Readme.txt ${PREFIX}/share/doc/cryptopp/README
 	${CP} ${WRKSRC}/License.txt ${PREFIX}/share/doc/cryptopp/License
 .endif
 
