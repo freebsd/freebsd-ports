@@ -1,6 +1,6 @@
 A flexible digital photo gallery tool. Features include:
 
- o Index, detail, slide, and frame views
+ o Index (table), detail, slide, and frame views
  o Simple, uncluttered output
  o Static HTML output for ease of copying/archiving
  o Uses captions from comments embedded in the image files
