@@ -1,0 +1,4 @@
+lib/xfce4/panel-plugins/libtriggerlauncher.so
+lib/xfce4/panel-plugins/libtriggerlauncher.la
+lib/xfce4/panel-plugins/libtriggerlauncher.a
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
