@@ -10,4 +10,15 @@ lib/X11/tgif/tgificon.xbm
 lib/X11/tgif/tgificon.xpm
 lib/X11/tgif/tangram.sym
 lib/X11/tgif/keys.obj
+share/doc/tgif/Copyright
+share/doc/tgif/HISTORY
+share/doc/tgif/README
+share/doc/tgif/an-sr-flip-flop.obj
+share/doc/tgif/example.tex
+share/doc/tgif/fonts.obj
+share/doc/tgif/launch-demo-1.obj
+share/doc/tgif/launch-demo.obj
+share/doc/tgif/keys.obj
+share/doc/tgif/slide-demo.obj
+@dirrm share/doc/tgif
 @dirrm lib/X11/tgif
