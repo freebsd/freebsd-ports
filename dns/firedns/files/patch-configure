@@ -1,6 +1,11 @@
---- configure.orig	Sun Sep  1 05:15:24 2002
-+++ configure	Tue Oct 15 16:39:59 2002
-@@ -538,29 +538,29 @@
+--- configure.orig	Thu Oct 31 09:47:26 2002
++++ configure	Thu Oct 31 10:30:36 2002
+@@ -534,33 +534,33 @@
+ 
+ $ECHO -n "	adding rule to install binaries..."
+ $ECHO "install-binaries: $BINARIES" >> Makefile
+-$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(BINDIR)" >> Makefile
++$ECHO "	install -d -m 0755 -o \$(INSTALL_USER) \$(PREFIX)/bin" >> Makefile
  $ECHO "done"
  for BINARY in $BINARIES; do
  	$ECHO -n "	adding rule to install binary $BINARY..."
