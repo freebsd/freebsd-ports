@@ -17,6 +17,7 @@ COMMENT=	A shareware program for typesetting music
 
 BUILD_WRKSRC=	${WRKSRC}
 NO_WRKSUBDIR=	yes
+USE_XLIB=	yes
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile ${BUILD_WRKSRC}/Makefile
