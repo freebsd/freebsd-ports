@@ -173,6 +173,7 @@
     SUBDIR += licq-console
     SUBDIR += licq-qt-gui
     SUBDIR += linpopup
+    SUBDIR += lla
     SUBDIR += macipgw
     SUBDIR += mars_nwe
     SUBDIR += merlinmon
