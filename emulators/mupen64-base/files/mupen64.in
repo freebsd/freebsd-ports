@@ -1,0 +1,64 @@
+#!/bin/sh
+# mupen64 - Mupen64 wrapper script
+#
+# 2004 Travis Poppe
+
+USERDIR=$HOME/.mupen64
+
+if [ ! -x $USERDIR/mupen64 ]; then
+	echo "$USERDIR/mupen64 not found or not executable."
+	echo "Setting up Mupen64 for you..."
+	rm -rf $USERDIR
+	mkdir $USERDIR
+	mkdir $USERDIR/lang
+	mkdir $USERDIR/save
+	mkdir $USERDIR/roms
+	mkdir $USERDIR/plugins
+	cd $USERDIR
+	ln -s %%PREFIX%%/libexec/mupen64 ./mupen64
+	cp %%PREFIX%%/share/mupen64/mupen64.ini ./mupen64.ini
+	chmod +w ./mupen64.ini
+	ln -s %%PREFIX%%/share/mupen64/lang/* lang/
+
+for source in %%PREFIX%%/share/mupen64/*.conf
+do
+	# source must exist as a plain file
+	if test ! -f "${source}"
+	then
+	continue
+	fi
+	target="${USERDIR}/${source##*/}"
+	cp "${source}" "${target}"
+	chmod +w "${target}"
+done
+
+for source in %%PREFIX%%/share/mupen64/plugins/*.so
+do
+	# source must exist as a plain file
+	if test ! -f "${source}"
+	then
+	continue
+	fi
+	target="${USERDIR}/plugins/${source##*/}"
+	ln -s "${source}" "${target}"
+done
+
+for source in %%PREFIX%%/share/mupen64/plugins/*.ini
+do
+	# source must exist as a plain file
+	if test ! -f "${source}"
+	then
+	continue
+	fi
+	target="${USERDIR}/plugins/${source##*/}"
+	cp "${source}" "${target}"
+	chmod +w "${target}"
+done
+
+	echo "Done!"
+	echo ""
+	echo "Remember to configure your plugins!"
+	echo ""
+fi
+
+cd $USERDIR && exec ./mupen64

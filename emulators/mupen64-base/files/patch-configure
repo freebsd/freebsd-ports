@@ -1,0 +1,128 @@
+--- configure.orig	Mon Jul  5 22:37:11 2004
++++ configure	Wed Aug 11 05:57:43 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ -z "$CC" ]; then
+   CC=gcc
+@@ -8,7 +8,7 @@
+ fi
+ 
+ # check for a C compiler
+-function check_cc()
++check_cc()
+ {
+   if [ ! -z "$CC" ]; then
+     if [ ! -x "`which "$CC"`" ]; then
+@@ -23,8 +23,8 @@
+     fi
+   fi
+ 
+-  FILE="`tempfile`"
+-  OUTFILE="`tempfile`"
++  FILE="/tmp/mupen64.configure.1"
++  OUTFILE="/tmp/mupen64.configure.2"
+   echo "int main(void) { return 0; }" > "$FILE"
+   $CC -x "c" -o "$OUTFILE" "$FILE" 2>&1 | cat >>config.log
+ 
+@@ -51,7 +51,7 @@
+ }
+ 
+ # check for a C++ compiler
+-function check_cxx()
++check_cxx()
+ {
+   if [ ! -z "$CXX" ]; then
+     if [ ! -x "`which "$CXX"`" ]; then
+@@ -66,8 +66,8 @@
+     fi
+   fi
+ 
+-  FILE="`tempfile`"
+-  OUTFILE="`tempfile`"
++  FILE="/tmp/mupen64.configure.1"
++  OUTFILE="/tmp/mupen64.configure.2"
+   echo "int main(void) { return 0; }" > "$FILE"
+   $CXX -x "c++" -o "$OUTFILE" "$FILE" 2>&1 | cat >>config.log
+ 
+@@ -94,7 +94,7 @@
+ }
+ 
+ # check for libavifile
+-function check_libavifile()
++check_libavifile()
+ {
+   echo "Checking avifile..."
+ 
+@@ -103,8 +103,8 @@
+     exit 1
+   fi
+ 
+-  FILE="`tempfile`"
+-  OUTFILE="`tempfile`"
++  FILE="/tmp/mupen64.configure.1"
++  OUTFILE="/tmp/mupen64.configure.2"
+   echo "#include <avifile.h>" > "$FILE"
+   echo "int main(void) { return 0; }" >> "$FILE"
+   $CXX -x "c++" -o "$OUTFILE" "$FILE" `avifile-config --libs` `avifile-config --cflags` 2>&1 | cat >>config.log
+@@ -132,7 +132,7 @@
+ }
+ 
+ # check for libsdl
+-function check_libsdl()
++check_libsdl()
+ {
+   echo "Checking SDL..."
+ 
+@@ -141,8 +141,8 @@
+     exit 1
+   fi
+ 
+-  FILE="`tempfile`"
+-  OUTFILE="`tempfile`"
++  FILE="/tmp/mupen64.configure.1"
++  OUTFILE="/tmp/mupen64.configure.2"
+   echo "#include \"SDL.h\"" > "$FILE"
+   echo "#include <stdio.h>" >> "$FILE"
+   echo "int main(void) { if (SDL_Init( 0 ) < 0) { printf( \"SDL_Init(): %s\\n\", SDL_GetError() ); return 1; } return 0; }" >> "$FILE"
+@@ -189,7 +189,8 @@
+ echo "Do you want to configure mupen64 to run in a user directory? (Answering no"
+ echo "will configure it for multi-users usage with the configuration stored in the"
+ echo "HOME directory)"
+-read -p "(Y)es or (N)o [Default is: Yes]: " answer
++#read -p "(Y)es or (N)o [Default is: Yes]: " answer
++answer="No"
+ 
+ if [ -n "$answer" ]
+ then
+@@ -197,7 +198,8 @@
+   then
+ 
+     echo "In which prefix do u want to install mupen64 ? [Default: /usr/local/] "
+-    read answer
++#    read answer
++    answer="$PREFIX"
+ 
+     if [ -z $answer ]
+     then
+@@ -211,7 +213,8 @@
+ # ---- VCR
+ echo
+ echo "Do you want to enable VCR support (requires avifile and a C++ compiler)?"
+-read -p "(Y)es or (N)o [Default is: No]: " answer
++# read -p "(Y)es or (N)o [Default is: No]: " answer
++answer="No"
+ 
+ if [ -n "$answer" ]
+ then
+@@ -273,7 +276,8 @@
+ if [ "$CONFIG_CHANGED" -eq "0" ]; then
+   echo "Note: The configuration has not been changed since the last time it was written."
+ fi
+-read -p "(Y)es or (N)o [Default is: No]: " answer
++#read -p "(Y)es or (N)o [Default is: No]: " answer
++answer="No"
+ 
+ if [ -n "$answer" ]
+ then

@@ -1,0 +1,16 @@
+--- Makefile.orig	Mon Jul  5 22:37:09 2004
++++ Makefile	Tue Aug 10 23:03:37 2004
+@@ -1,10 +1,10 @@
+ #Makefile MUPEN64 for Linux
+ 
+-CC		=gcc
+-CXX		=g++
++CC		?=gcc
++CXX		?=g++
+ 
+ #CFLAGS		=-DX86 -O3 -mpentium -Wall -DEMU64_DEBUG
+-CFLAGS		=-DX86 -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall -pipe
++#CFLAGS		=-DX86 -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall -pipe
+ #CFLAGS		=-DX86 -O3 -mcpu=pentium -Wall -g -pg
+ #CFLAGS		=-DX86 -Wall -pipe -g3 -DEMU64_DEBUG
+ #CFLAGS		=-DX86 -Wall -pipe -g -DEMU64_DEBUG -DCOMPARE_CORE
