@@ -33,5 +33,7 @@ lib/libiodbcinst.a
 lib/libiodbcinst.la
 lib/libiodbcinst.so
 lib/libiodbcinst.so.3
+lib/libodbc.a
+lib/libodbc.so
 %%PORTDOCS%%@dirrm share/doc/libiodbc
 @dirrm etc/libiodbc
