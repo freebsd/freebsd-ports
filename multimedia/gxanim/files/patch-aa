@@ -1,0 +1,22 @@
+--- Makefile.orig	Tue Aug 31 14:57:46 1999
++++ Makefile	Mon Sep 20 11:32:09 1999
+@@ -1,8 +1,8 @@
+-CC = gcc
+-CFLAGS = -O2 `gtk-config --cflags`
+-INSTALLDIR = /usr/local/bin
++# CC = gcc
++CFLAGS += `${GTK_CONFIG} --cflags`
++INSTALLDIR = ${PREFIX}/bin
+ 
+-LIBS =  `gtk-config --libs`
++LIBS =  `${GTK_CONFIG} --libs`
+ OBJS = runxanim.o gxanim.o memory.o filesel.o util.o valxanim.o control.o windows.o config.o prefs.o
+ 
+ FINAL = gxanim
+@@ -29,5 +29,5 @@
+ 	rm -f ${FINAL}
+ 
+ install :
+-	mv ${FINAL} ${INSTALLDIR}
++	${BSD_INSTALL_PROGRAM} ${FINAL} ${INSTALLDIR}
+ 
