@@ -47,7 +47,6 @@ libexec/smail/unfreezemail
 libexec/smail/unfreezemail.O
 libexec/smail/unsharmap
 sbin/sendmail
-@dirrm include/snprintfv
 @dirrm libexec/smail
 @dirrm etc/smail/maps
 @dirrm etc/smail/methods
