@@ -40,7 +40,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--libdir=${PREFIX_RELDEST}/lib/apache2 \
 		--includedir=${PREFIX_RELDEST}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" EXPAT_PATHS="${EXPAT_PATHS}"
+		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
 SHARED_MODULES= all cgid ext_filter bucketeer
 PREFIX_RELDEST=	${PREFIX:S,${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
@@ -133,7 +133,7 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif" \
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
-	@${REINPLACE_CMD} -e 's,/usr .*/xml/expat,\$${EXPAT_PATHS},g' \
+	@${REINPLACE_CMD} -e 's,/usr .*/xml/expat,${EXPAT_PATHS},g' \
 		${WRKSRC}/srclib/apr-util/configure
 	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -exec ${RM} -f {} \;
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
