@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd %%DECURS_DIR%%
-exec %%PREFIX%%/bin/decurs-real
+cd %%PREFIX%%/share/decurs
+exec %%PREFIX%%/bin/decurs.bin "$@"
