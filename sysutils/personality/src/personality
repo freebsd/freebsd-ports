@@ -1,0 +1,536 @@
+#! /bin/sh
+##############################################################################
+#
+# Copyright (c) 1997 Michael Smith
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+##############################################################################
+#
+# This script provides functionality for manipulating collections of 
+# configuration files which can be organised so as to alter the
+# personality of a system.
+#
+# Initially, the "base" personality is established.  This personality
+# contains the "reference" copies of configuration files, and is used
+# when creating new personalities.  The files which are currently
+# considered part of the system's personality are those contained in
+# the base personality.
+#
+# A new personality is established by making a copy of the base 
+# personality under a new name.  Each personality maintains a
+# separate copy of all configuration files under /etc/personality.
+#
+# To install a new personality, the files currently in place are 
+# saved back to the current personality as indicated in 
+# /etc/personality/current, and the files for the new personality
+# copied into place.  The 'select' and 'menu' commands which perform
+# these installations are implemented in such a fashion as to only
+# require the tools available on the root filesystem, so that they
+# may be invoked at the earliest stage during system startup.
+#
+# If the current personality has become damaged, it can be restored
+# from the saved copy.
+#
+# Files can be added to and removed from the personality set.  When
+# a new file is added, it is copied from the current system into all
+# personalities and added to the list file.  When a file is removed
+# the current version is kept in place, but all copies are removed 
+# from saved personalities and the file is removed from the list.
+#
+# XXX To Do :
+# Files can be inherited by one personality from another.  This is
+# simply achieved by copying the relevant files under /etc/personality,
+# and into the current system if required.
+#
+##############################################################################
+
+# Establish some global constants
+P_ROOT=/etc/personality
+#P_ROOT=/tmp/personality
+P_BASE="${P_ROOT}/_base"
+P_CURRENT="${P_ROOT}/current"
+P_FILES="${P_ROOT}/files"
+P_LIST="${P_ROOT}/list"
+scriptname="$0"
+
+##############################################################################
+# pers_main
+#
+# Execution begins here after the file has been read.
+#
+pers_main()
+{
+    case "$1" in
+    menu)
+	pers_menu $2 $3
+	;;
+    select)
+	pers_select $2
+	;;
+    restore)
+	pers_restore
+	;;
+    save)
+	pers_save
+	;;
+    saveas)
+	pers_saveas $2
+	pers_reindex
+	;;
+    create)
+	pers_create $2
+	pers_reindex
+	;;
+    delete)
+	pers_delete $2
+	pers_reindex
+	;;
+    add)
+	pers_add $2
+	pers_reindex
+	;;
+    list)
+	pers_list
+	;;
+    remove)
+	pers_remove $2
+	pers_reindex
+	;;
+    init)
+	pers_init
+	pers_reindex
+	;;
+    *)
+	usage
+	;;
+    esac
+}
+
+##############################################################################
+# pers_menu
+#
+# Present a menu of currently-selectable personalities, assign hotkeys,
+# describe the default and optionally go with the default after a timeout
+#
+pers_menu()
+{
+    # Look and see if there's actually anything to work with
+    if [ ! -d "${P_ROOT}" ]; then
+	return
+    fi
+
+    # Pick up a timeout if specified, default to 10 seconds
+    timeout=10
+    if [ ! -z "$1" ]; then
+	timeout="$1"
+    fi
+
+    # Assign a default, if suitable
+    defpers=""
+    defname="<none>"
+    if [ -f "${P_CURRENT}" ]; then
+	defpers=`cat "${P_CURRENT}"`
+	defname="${defpers}"
+    fi
+
+    # Loop prompting/reading input until we get a result
+    while :; do
+
+	# Print menu
+	echo "";
+	echo "Select System Personality"
+	echo "========================="
+	hkey=0
+	for pers in `cat "${P_LIST}"`; do
+	    echo "    ${hkey})  ${pers}"
+	    eval index_${hkey}="${pers}"
+	    hkey=`expr ${hkey} + 1`
+	done
+	echo "";
+
+	echo "  Default   : ${defname}"
+	read -t "${timeout}" -p "  Selection : " input
+	eval selvar=\$index_"${input}"
+	selpers=""
+	if [ -z "${input}" ]; then
+	    selpers="${defpers}"
+	    break
+	elif [ -n "${selvar}" ]; then
+	    selpers="${selvar}"
+	    break
+	elif [ -d "${P_ROOT}/_${input}" ]; then
+	    selpers="${input}"
+	    break
+	fi
+    done
+    
+    # $selpers now contains the personality we wish to select,
+    # or is empty if we selected the default when there was none
+    if [ -z "${selpers}" ]; then
+	return
+    fi
+
+    # select the personality nominated
+    pers_select "${selpers}"
+}
+
+##############################################################################
+# pers_select
+#
+# Copy the files from the nominated personality out of the repository
+# into the real system.  Note that this must be able to run with
+# nothing other than the contents of /bin available.
+#
+pers_select()
+{
+    src="${P_ROOT}/_$1";
+    if [ ! -d "${src}" ]; then
+	fail "no such personality '$1'"
+    fi
+
+    # Iterate over the file listing, copy them all out
+    for file in `cat "${P_FILES}"`; do
+	cp -p "${src}/${file}" "${file}"
+    done
+
+    # Register this personality as being current
+    echo "$1" > "${P_CURRENT}"
+}
+
+##############################################################################
+# pers_restore
+#
+# Reload the configuration files for the current personality, eliminating
+# any changes that may have been made.
+#
+pers_restore()
+{
+    if [ ! -e "${P_CURRENT}" ]; then
+	fail "no personality currently active"
+    fi
+
+    # Check that the current personality exists
+    pers=`cat "${P_CURRENT}"`
+    src="${P_ROOT}/_${pers}"
+    if [ ! -d "${src}" ]; then
+	fail "current personality '${pers}' not in the repository!"
+    fi
+
+    # Iterate over the file listing, copy them all out
+    for file in `cat "${P_FILES}"`; do
+	cp -p "${src}/${file}" "${file}"
+    done
+}
+
+##############################################################################
+# pers_save
+#
+# If a personality is current, save the current set of files to that
+# personality.
+#
+pers_save()
+{
+    if [ ! -e "${P_CURRENT}" ]; then
+	fail "no personality currently active"
+    fi
+
+    # Check that the current personality exists
+    pers=`cat "${P_CURRENT}"`
+    dest="${P_ROOT}/_${pers}"
+    if [ ! -d "${dest}" ]; then
+	fail "current personality '${pers}' not in the repository!"
+    fi
+
+    # OK, go ahead and save stuff.  If this fails, we're
+    # moderately stuffed, so don't worry about it.
+    for file in `cat "${P_FILES}"`; do
+	stub=`dirname "${file}"`
+	mkdir -p "${dest}/${stub}"
+	cp -p "${file}" "${dest}/${file}"
+    done
+}
+
+##############################################################################
+# pers_saveas
+#
+# Take the currently-active set of configuration files, and save them as
+# a new personality, set the new personality as current.
+#
+pers_saveas()
+{
+    dest="${P_ROOT}/_$1"
+    if [ -e "${dest}" ]; then
+	fail "cannot create new personality '$1', name already in use"
+    fi
+
+    # Create the personality directory
+    mkdir -p "${dest}" || pers_saveas_fail "$1"
+
+    # iterate over files to save, copy them in
+    for file in `cat "${P_FILES}"`; do
+	stub=`dirname "${file}"`
+	mkdir -p "${dest}/${stub}"
+	cp -p "${file}" "${dest}/${file}" || pers_saveas_fail $1
+    done
+
+    # new personality is current
+    echo "$1" > "${P_CURRENT}"
+}
+
+########################################
+# pers_saveas_fail
+#
+# The 'save as' operation failed.  Clean
+# up and emit a failure message.
+#
+pers_saveas_fail()
+{
+    rm -Rf "${P_ROOT}/_$1"
+    fail "could not save current personality as '$1'"
+}
+
+##############################################################################
+# pers_create
+#
+# Create a new personality, duplicated from the current base personality
+#
+pers_create()
+{
+    if [ -e "${P_ROOT}/_$1" ]; then
+	fail "cannot create new personality '$1', name already in use"
+    fi
+
+    # Ok, duplicate it
+    cp -Rp "${P_BASE}" "${P_ROOT}/_$1" || pers_create_fail "$1"
+}
+
+########################################
+# pers_create_fail
+#
+# An attempt to create a personality failed.
+# Clean up and exit with an error message.
+#
+pers_create_fail() 
+{
+    rm -Rf "${P_ROOT}/_$1"
+    fail "'$1' could not be created"
+}
+
+##############################################################################
+# pers_delete
+#
+# Remove a personality from the system.  It is legitimate to remove
+# the current personality.
+#
+pers_delete()
+{
+    if [ ! -e "${P_ROOT}/_$1" ]; then
+	fail "no such personality '$1' to remove"
+    fi
+    if [ "$1" = _base ]; then
+	fail "cannot remove base personality"
+    fi
+
+    # If the requested personality is current, remove the
+    # reference.
+    if [ -e "${P_CURRENT}" ]; then 
+	if [ `cat "${P_CURRENT}"` = "$1" ]; then
+	    rm -f "${P_CURRENT}"
+	fi
+    fi
+
+    # Remove the repository entry
+    rm -Rf "${P_ROOT}/_$1";
+
+    # Make sure it's gone
+    if [ -e "${P_ROOT}/_$1" ]; then
+	fail "failed to completely remove personality '$1'";
+    fi
+}
+
+##############################################################################
+# pers_add
+#
+# Add a new file to the system; copy it from the 'real' path into 
+# each personality directory.  Check first to make sure it's not already 
+# part of the system, and check that the path supplied is absolute.
+#
+# The file is stored with its full path relative to the repository
+# directory.
+#
+pers_add()
+{
+    if [ ! -r "/$1" ]; then
+	fail "cannot read '$1' to add to the Personality System"
+    fi
+    if [ -e "${P_BASE}/$1" ]; then
+	fail "file '$1' already part of the Personality System"
+    fi
+    if [ ! -f "$1" ]; then
+	fail "only files can be added to the Personality System"
+    fi
+
+    # looks OK, copy it in
+    stub=`dirname "$1"`
+    for targ in ${P_ROOT}/_*; do
+	mkdir -p "${targ}/${stub}"
+	cp -p "$1" "${targ}/${stub}" || pers_add_fail "$1";
+    done
+}
+
+########################################
+# pers_add_fail
+#
+# A failure occurred while adding a file to
+# the repository; back out any copies that 
+# made it in and abort with an error.
+#
+pers_add_fail()
+{
+    for cand in ${P_ROOT}/_*; do
+	if [ -f "${cand}/$1" ]; then
+	    rm -f "${cand}/$1";
+	fi
+    done
+    fail "'$1' could not be added";
+}
+	
+##############################################################################
+# pers_remove
+#
+# Remove a file from all personalities in the repository.
+#
+pers_remove()
+{
+    if [ ! -f "${P_BASE}/$1" ]; then
+	fail "'$1' is not part of the Personality System";
+    fi
+
+    # OK, it should be there; nuke whatever we can find
+    for cand in ${P_ROOT}/_*; do
+	if [ -f "${cand}/$1" ]; then
+	    rm -f "${cand}/$1";
+	fi
+    done
+}
+
+##############################################################################
+# pers_list
+#
+# List all of the files that comprise the system personality.
+#
+pers_list() 
+{
+    echo "Current personalities:"
+    for pers in `cat "${P_LIST}"`; do
+	echo "  ${pers}";
+    done
+    echo "Files in system personality:"
+    for file in `cat "${P_FILES}"`; do
+	echo "  ${file}"
+    done
+}
+
+##############################################################################
+# pers_init
+#
+# Initialise the personality collection; refuse to do so if there is 
+# already one in place, or something else occupying the root path.
+#
+pers_init()
+{
+    if [ -e "${P_ROOT}" ]; then
+	fail "cannot initialise, '${P_ROOT}' already exists"
+    fi
+
+    # Create the repository with no files, and no current personality
+    mkdir -p "${P_ROOT}"
+    mkdir -p "${P_BASE}"
+}
+
+##############################################################################
+# pers_reindex
+#
+# Clean out any empty directories in the repository.  This is achieved 
+# by silently trying to rmdir everything that looks like a directory
+# under any personality.
+#
+# Then rebuild the list of files that comprise the system personality,
+# so that the select and menu functions work.
+#
+pers_reindex()
+{
+    # Remove empty directories
+    for cand in ${P_ROOT}/_*; do
+	find -dX "${cand}/." -type d | xargs rmdir >/dev/null 2>&1
+    done
+    
+    # Regenerate the files list
+    find -X "${P_BASE}" -type f | sed "s%${P_BASE}%%" > "${P_FILES}"
+    # regenerate the personalities list
+    ls -d "${P_ROOT}/_"* | sed "s%${P_ROOT}/_%%" > "${P_LIST}"
+}
+
+##############################################################################
+# usage
+#
+# Emit a (hopefully) helpful diagnostic and exit
+#
+usage() 
+{
+    echo "${scriptname}: incorrect argument(s)"
+    echo ""
+    echo " Usage is ${scriptname} <command>, where valid commands are :"
+    echo "  menu [<timeout>]      Invoke the menu-driven personality selector"
+    echo "  select <personality>  Select a specific personality"
+    echo "  restore               Restore the current personality from the saved version"
+    echo "  save                  Save the current personality"
+    echo "  saveas <personality>  Save the current personality under a new name"
+    echo "  create <personality>  Create a new personality from the base"
+    echo "  delete <personality>  Delete a personality"
+    echo "  add <full path>       Add a new file"
+    echo "  remove <full path>    Remove a file"
+    echo "  list                  List all files"
+    echo "  init                  Initialise the Personality System"
+    echo ""
+    exit 2;
+}
+
+##############################################################################
+# fail
+#
+# Emit an error message to stderr and exit
+#
+fail () 
+{
+    echo "${scriptname}: $1";
+    exit 1;
+}
+
+##############################################################################
+# Now we have parsed everything, start.
+pers_main $1 $2 $3 $4;
+exit 0;
