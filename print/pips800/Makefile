@@ -74,6 +74,8 @@ DESCR=		${.CURDIR}/pkg-descr
 LANGS=		ja
 RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
 PLIST=		${MASTERDIR}/pkg-plist20
+.elif ${PORTVERSION} == 1.3
+PLIST=		${MASTERDIR}/pkg-plist13
 .elif ${PORTVERSION} == 1.3.1
 LANGS=		de es fr it ja ko nl pt zh zh_TW
 RUN_DEPENDS+=	${LINUXBASE}/usr/share/locale/ja_JP/LC_COLLATE:${PORTSDIR}/japanese/linux_locale
@@ -142,14 +144,17 @@ $${GSCONF} < $$TMP | $${PIPS} -ui C,' \
 		${WRKDIR}/filter${PRTYPE} > ${WRKDIR}/filter${PRTYPE}.rev
 .if ! defined(WITH_EKPD)
 # Remake filter${PRTYPE}.rev
-	${SED}	-e 's,$${GSCONF} | $${PIPS} -ui C,TMP=/tmp/pips.$$$$;\
-trap "rm -rf $$TMP; exit" 0 2 3 4 6 7 8 10 11 12 13 15;\
-psselect -r > $$TMP;\
-$${GSCONF} < $$TMP | $${PIPS} -ui C,' \
-		-e 's,^GSCONF.*$$,GSCONF=${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
+.if ${PORTVERSION} == 1.3
+	${SED}	-e 's,^GSCONF.*$$,GSCONF=${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
+		-e 's,^PIPS.*$$,PIPS=${PREFIX}/bin/pips${PRTYPE},' \
+		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
+		${FILESDIR}/filter13.rev > ${WRKDIR}/filter${PRTYPE}.rev
+.else
+	${SED}	-e 's,^GSCONF.*$$,GSCONF=${PREFIX}/libexec/pips${PRTYPE}/gsconfig${PRTYPE},' \
 		-e 's,^PIPS.*$$,PIPS=${PREFIX}/bin/pips${PRTYPE},' \
 		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
 		${FILESDIR}/filter.rev > ${WRKDIR}/filter${PRTYPE}.rev
+.endif
 .endif #defined(WITH_EKPD)
 .if ${PORTVERSION} == 2.0 || ${PORTVERSION} == 2.1
 	${MV} ${WRKDIR}/ekpdrc ${WRKDIR}/ekpdrc.org
