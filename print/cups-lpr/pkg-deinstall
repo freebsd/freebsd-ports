@@ -1,0 +1,17 @@
+#!/bin/sh
+
+REPLACES_BINARIES="/bin/lpr
+					/bin/lp
+					/bin/lpq
+					/bin/lprm
+					/bin/lpstat
+					/sbin/lpc"
+
+case $2 in
+POST-DEINSTALL)
+	for FILE in ${REPLACES_BINARIES}; do
+		[ -e "${FILE}.bak" ] && mv "${FILE}.bak" "${FILE}"
+	done
+;;
+esac
+exit 0
