@@ -11,6 +11,7 @@
     SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += c2t
+    SUBDIR += cdict
     SUBDIR += celvis
     SUBDIR += cless
     SUBDIR += cxterm
