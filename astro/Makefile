@@ -4,13 +4,13 @@
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += luna
+    SUBDIR += openuniverse
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += seti_applet
     SUBDIR += setiathome
-    SUBDIR += ssystem
     SUBDIR += stars
     SUBDIR += sunclock
     SUBDIR += tkseti

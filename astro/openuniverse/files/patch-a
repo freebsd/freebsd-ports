@@ -1,0 +1,12 @@
+diff -ruN src/ou.cpp.orig src/ou.cpp
+--- src/ou.cpp.orig	Sun Jun  4 21:29:29 2000
++++ src/ou.cpp	Sat Jun 10 07:37:23 2000
+@@ -22,7 +22,7 @@
+ #include <string.h>
+ #include <math.h>
+ #include <time.h>
+-#include <sys/timeb.h>
++#include "timeb.h"
+ #include <setjmp.h>
+ #include "ou.h"
+ #include "gui.h"
