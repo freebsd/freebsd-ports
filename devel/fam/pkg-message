@@ -1,0 +1,8 @@
+************************************************************************
+
+In order to run this port, please add the following line to /etc/rpc if
+it is not already there:
+
+sgi_fam		391002
+
+************************************************************************

@@ -1,0 +1,4 @@
+FAM, the File Alteration Monitor, provides an API which applications can use
+to be notified when specific files or directories are changed.
+
+WWW: http://oss.sgi.com/projects/fam/
