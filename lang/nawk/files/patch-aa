@@ -1,5 +1,5 @@
 *** makefile.orig	Tue Oct 20 08:48:03 1998
---- makefile	Sun Nov  1 16:32:49 1998
+--- makefile	Wed Jan 13 19:10:37 1999
 ***************
 *** 22,34 ****
   # THIS SOFTWARE.
@@ -19,11 +19,11 @@
   # THIS SOFTWARE.
   # ****************************************************************/
   
-! CFLAGS ?= ${CFLAGS}
-! #CFLAGS = -O
+! #CFLAGS = -g
+! CFLAGS ?= -O
 ! #CC = gcc -Wall -g
 ! #CC = purify cc
-! CC ?= ${CC}
+! CC ?= cc
   
 ! #YACC = bison -y
   YACC = yacc
