@@ -1,0 +1,27 @@
+bin/log4cpp-config
+include/log4cpp/Appender.hh
+include/log4cpp/AppenderSkeleton.hh
+include/log4cpp/BasicLayout.hh
+include/log4cpp/Category.hh
+include/log4cpp/Config.hh
+include/log4cpp/FileAppender.hh
+include/log4cpp/Filter.hh
+include/log4cpp/FixedContextCategory.hh
+include/log4cpp/HierarchyMaintainer.hh
+include/log4cpp/IdsaAppender.hh
+include/log4cpp/Layout.hh
+include/log4cpp/LayoutAppender.hh
+include/log4cpp/Log4cppCleanup.hh
+include/log4cpp/LoggingEvent.hh
+include/log4cpp/NDC.hh
+include/log4cpp/OstreamAppender.hh
+include/log4cpp/OstringStream.hh
+include/log4cpp/Priority.hh
+include/log4cpp/SimpleLayout.hh
+include/log4cpp/StringQueueAppender.hh
+include/log4cpp/SyslogAppender.hh
+@dirrm include/log4cpp
+lib/liblog4cpp.a
+lib/liblog4cpp.la
+lib/liblog4cpp.so
+lib/liblog4cpp.so.0

@@ -1,0 +1,5 @@
+A library of C++ classes for flexible logging to files, syslog, IDSA and
+other destinations. It is modeled after the Log for Java library
+(http://www.log4j.org), staying as close to their API as is reasonable.
+
+WWW: http://log4cpp.sourceforge.net/

@@ -212,6 +212,7 @@
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
+    SUBDIR += log4cpp
     SUBDIR += lwp
     SUBDIR += m4
     SUBDIR += m68k-rtems-binutils
