@@ -1,0 +1,22 @@
+This program has three modes of operation:
+- First, is ** EXPLOSION **, or the expanding of a .LIT file into an
+  OEBPS compliant package.
+- Second, is the DOWNCONVERTING of a .LIT file down to "Sealed",
+  or DRM1 format for reading on handheld devices.
+- Third, is the INSCRIBING of a .LIT file which allows you to label
+  your ebooks.
+
+DRM5 is supported if you have a "keys.txt" file that contains
+the private key(s) for your passport(s) in either the CLIT program
+directory or the current directory.
+
+This is a tool for **YOUR OWN FAIR USE** and not for stealing
+other people's ebooks.
+
+Please do not use this program to distrbute illegal copies of ebooks.
+        ... that would make Baby Jesus sad.
+
+WWW: http://www.convertlit.com/download.php
+
+- IOnut
+<itetcu@people.tecnik93.com>
