@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	libtool
 
 MAINTAINER=	reg@FreeBSD.org
 
+# This port has not been upgraded to 1.3.5 because it makes no changes to
+# FreeBSD support, and would require that all Ports users upgrade for no
+# reason.
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install
 CONFIGURE_ENV=	PREFIX=${PREFIX}
