@@ -30,7 +30,7 @@ USE_XPM=	yes
 .endif
 
 XEMACS_REL=	21.4
-XEMACS_VER=	21.4.14
+XEMACS_VER=	21.4.15
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 STRIP=
@@ -65,10 +65,10 @@ HAVE_MOTIF=	yes
 .endif
 
 pre-fetch:
-.if !defined(WANT_GTK)
-	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
-	@${ECHO_MSG} "and recompile."
-.endif
+#.if !defined(WANT_GTK)
+#	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
+#	@${ECHO_MSG} "and recompile."
+#.endif
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
 	@${ECHO_MSG} ""
@@ -96,12 +96,13 @@ WITH_DIALOGS=	--with-dialogs=athena
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
-.if defined(WANT_GTK)
-WITH_GTK=	--with-gtk=yes \
-		--with-xpm=no
-USE_GNOME=	gtk12
-USE_XPM=	no
-.endif
+#.if defined(WANT_GTK)
+#USE_GNOME=	gtk20
+#MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
+#WITH_GTK=	--with-gtk=yes \
+#		--with-xpm=no
+#USE_XPM=	no
+#.endif
 
 # Drop faces (libcompface) and offix (libDnd) if building package,
 # autodetect otherwise
@@ -127,11 +128,11 @@ post-install::
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
 	${CHMOD} 755 ${PREFIX}/lib/xemacs/site-lisp
 	${RM} -f ${PREFIX}/bin/send-pr
-.if defined(WANT_GTK)
-	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
-	@${ECHO_MSG} "the maintainer."
-	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
-	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
-.endif
+#.if defined(WANT_GTK)
+#	@${ECHO_MSG} "Please be aware that GTK support is buggy. Do not report bugs to"
+#	@${ECHO_MSG} "the maintainer."
+#	@${ECHO_MSG} "Please also be aware that the package's name was automagically changed"
+#	@${ECHO_MSG} "to ${PORTNAME}${PKGNAMESUFFIX}-${XEMACS_VER}."
+#.endif
 
 .include <bsd.port.post.mk>
