@@ -7,8 +7,8 @@
 # $Id: Makefile,v 1.57 1997/09/05 15:12:49 ache Exp $
 #
 
-DISTNAME=       lynx2.7.1ac-0.63
-PKGNAME=        lynx-2.7.1ac-0.63
+DISTNAME=       lynx2.7.1ac-0.65
+PKGNAME=        lynx-2.7.1ac-0.65
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
