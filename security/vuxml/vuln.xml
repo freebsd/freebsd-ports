@@ -32,6 +32,49 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="48a59c96-9c6e-11d9-a040-000a95bc6fae">
+    <topic>wine -- information disclosure due to insecure temporary
+      file handling</topic>
+    <affects>
+      <package>
+	<name>wine</name>
+	<range><lt>20050310</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Due to insecure temporary file creation in the Wine Windows
+	  emulator, it is possible for any user to read potentially
+	  sensitive information from temporary registry files.</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111082537009842">
+	  <p>When a Win32 application is launched by wine, wine makes
+	    a dump of the Windows registry in /tmp with name
+	    regxxxxyyyy.tmp , where xxxxxx is the pid in hexadecimal
+	    value of the current wine process and yyyy is an integer
+	    value usually equal to zero.</p>
+	  <p>regxxxxyyyy.tmp is created with 0644 (-rw-r--r--)
+	    permissions.  This could represent a security problem in a
+	    multi-user environment.  Indeed, any local user could
+	    access to windows regstry's dump and get sensitive
+	    information, like passwords and other private data.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0787</cvename>
+      <mlist msgid="20050314135701.30231.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=111082537009842</mlist>
+      <url>http://bugs.winehq.org/show_bug.cgi?id=2715</url>
+      <url>http://www.securitytracker.com/alerts/2005/Mar/1013428.html</url>
+      <url>http://www.zone-h.org/advisories/read/id=7300</url>
+      <url>http://www.securityfocus.com/bid/12791</url>
+      <url>http://xforce.iss.net/xforce/xfdb/19697</url>
+    </references>
+    <dates>
+      <discovery>2005-03-13</discovery>
+      <entry>2005-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="741f8841-9c6b-11d9-9dbe-000a95bc6fae">
     <topic>firefox -- arbitrary code execution from sidebar panel</topic>
     <affects>
