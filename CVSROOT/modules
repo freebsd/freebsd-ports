@@ -5915,6 +5915,7 @@ naturaldocs	ports/devel/naturaldocs
 naturalmath	ports/math/naturalmath
 nautilus-cd-burner	ports/sysutils/nautilus-cd-burner
 nautilus-media	ports/multimedia/nautilus-media
+nautilus-sendto	ports/deskutils/nautilus-sendto
 nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
 nav		ports/net-mgmt/nav
