@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- Makefile.orig	Tue Sep  2 03:33:42 2003
-+++ Makefile	Fri Oct 17 13:33:58 2003
++++ Makefile	Sun Oct 19 10:02:05 2003
 @@ -39,10 +39,10 @@
  #K6OPT  = -DK6OPT
  
@@ -246,10 +246,11 @@ $FreeBSD$
  
  samples: all datafiles adsi
 -	mkdir -p $(ASTETCDIR)
-+	$(MKDIR) $(ASTETCDIR)
- 	for x in configs/*.sample; do \
+-	for x in configs/*.sample; do \
 -		if [ -f $(ASTETCDIR)/`basename $$x .sample` ]; then \
 -			mv -f $(ASTETCDIR)/`basename $$x .sample` $(ASTETCDIR)/`basename $$x .sample`.old ; \
++	$(MKDIR) $(ASTETCDIR)
++	for x in configs/*.sample channels/h323/*.sample; do \
 +		$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x .sample`-dist ;\
 +		if ! [ -f $(ASTETCDIR)/`basename $$x .sample` ]; then \
 +			$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x .sample` ;\
