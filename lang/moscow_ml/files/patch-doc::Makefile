@@ -1,0 +1,15 @@
+--- doc/Makefile.orig	Fri Feb  6 14:26:12 2004
++++ doc/Makefile	Fri Feb  6 14:28:53 2004
+@@ -48,10 +48,12 @@
+ 	psnup -pa4 -2 mosmllib.ps mosmllib2up.ps
+ 
+ install:
++.if !defined(NOPORTDOCS)
+ 	cp mosmlref.pdf $(DOCDIR)
+ 	cp manual.pdf $(DOCDIR)
+ 	cp mosmllib.pdf $(DOCDIR)
+ 	cp mosmllib2up.pdf $(DOCDIR)
++.endif
+ 	cd helpsigs; make install
+ 
+ clean:
