@@ -13,14 +13,22 @@ diff -ru ../../work/linuxthreads-2.2.3/Examples/Makefile ./Examples/Makefile
 diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 --- ../../work/linuxthreads-2.2.3/Makefile	Wed Apr 25 21:50:59 2001
 +++ ./Makefile	Thu Jun  7 23:13:52 2001
-@@ -1,128 +1,91 @@
+@@ -1,128 +1,104 @@
 -# Copyright (C) 1996,1997,1998,1999,2000,2001 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
 +LIB=lthread
++.if defined(LINUXTHREADS_WRAP_API)
++.if defined(USING_GCC3)
++SHLIB_MAJOR= 5
++.else
++SHLIB_MAJOR= 4
++.endif
++.else
 +.if defined(USING_GCC3)
 +SHLIB_MAJOR= 3
 +.else
 +SHLIB_MAJOR= 2
++.endif
 +.endif
 +SHLIB_MINOR= 2
 +
@@ -59,6 +67,11 @@ diff -ru ../../work/linuxthreads-2.2.3/Makefile ./Makefile
 +CFLAGS += -D__USE_XOPEN2K -D_STACK_GROWS_DOWN -DNEWLIBC -D_THREAD_SAFE
 +.if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
 +CFLAGS += -DLINUXTHREADS_DETECT_UNSAFE_EXIT
++.endif
++
++.if defined(LINUXTHREADS_WRAP_API)
++CFLAGS += -DLINUXTHREADS_WRAP_API
++LD=${LINUXTHREADS_WRAP_LD}
 +.endif
 +
 +AINC = -I${LIBSRC_BASE}/libc/${MACHINE_ARCH} -I${.CURDIR}/sysdeps/${MACHINE_ARCH}
@@ -262,14 +275,26 @@ diff -ru ../../work/linuxthreads-2.2.3/attr.c ./attr.c
 diff -ru ../../work/linuxthreads-2.2.3/cancel.c ./cancel.c
 --- ../../work/linuxthreads-2.2.3/cancel.c	Thu Apr 12 23:10:53 2001
 +++ ./cancel.c	Thu Jun  7 22:59:29 2001
-@@ -20,7 +20,6 @@
+@@ -20,8 +20,10 @@
  #include "internals.h"
  #include "spinlock.h"
  #include "restart.h"
 -#include <stackinfo.h>
  
++#if 1
++#define FRAME_LEFT(frame, other) 0
++#else
  #ifdef _STACK_GROWS_DOWN
  # define FRAME_LEFT(frame, other) ((char *) frame >= (char *) other)
+ #elif _STACK_GROWS_UP
+@@ -29,6 +31,7 @@
+ #else
+ # error "Define either _STACK_GROWS_DOWN or _STACK_GROWS_UP"
+ #endif
++#endif
+ 
+ 
+ int pthread_setcancelstate(int state, int * oldstate)
 @@ -202,9 +201,11 @@
  	break;
      }

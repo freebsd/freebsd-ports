@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -15,6 +15,10 @@ DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
 MAINTAINER=	tegge@freebsd.org
 COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
+
+.if defined(LINUXTHREADS_WRAP_API)
+USE_PERL5_BUILD=true
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +37,10 @@ MAKE_ENV+=	INSTALL_LIBLTHREAD_PIC_ARCHIVE=yes
 .endif
 .if defined(LINUXTHREADS_DETECT_UNSAFE_EXIT)
 MAKE_ENV+=	LINUXTHREADS_DETECT_UNSAFE_EXIT=yes
+.endif
+.if defined(LINUXTHREADS_WRAP_API)
+MAKE_ENV+=	LINUXTHREADS_WRAP_API=yes
+MAKE_ENV+=	LINUXTHREADS_WRAP_LD="sh ${FILESDIR}/ldwrap"
 .endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
@@ -56,6 +64,13 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "Some unsafe calls to exit() can be detected by defining"
 	@${ECHO} "LINUXTHREADS_DETECT_UNSAFE_EXIT, see files/README.FreeBSD"
+	@${ECHO} "for more info."
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_WRAP_API)
+	@${ECHO}
+	@${ECHO} "Some conflicts with native threads can be avoided by defining"
+	@${ECHO} "LINUXTHREADS_WRAP_API, see files/README.FreeBSD"
 	@${ECHO} "for more info."
 	@${ECHO}
 .endif
@@ -122,8 +137,9 @@ post-extract:
 	   ${WRKSRC}/libsupc++/Makefile.inc
 .endif
 
-.if defined(WITH_CONDWAIT_PATCH)
+.if defined(WITH_CONDWAIT_PATCH) || defined(LINUXTHREADS_WRAP_API)
 post-patch:
+.if defined(WITH_CONDWAIT_PATCH)
 	@${ECHO_MSG} "===>  Applying experimental patch condwait-patch"
 	@if ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/condwait-patch; then \
 	  ${ECHO_MSG} "===>  Patch condwait-patch applied successfully"; \
@@ -131,6 +147,10 @@ post-patch:
 	  ${ECHO_MSG} ">>Patch condwait-patch failed to apply cleanly"; \
 	  ${FALSE}; \
 	fi
+.endif
+.if defined(LINUXTHREADS_WRAP_API)
+	perl -pi -e '$$func=$$1 if m/^extern\s+\S+\s+\*?(\S+)\s+\(/; $$alias="#ifdef COMPILING_WRAPUTHREAD\n\t__attribute__((weak, alias(\"_$$func\")))\n#endif\n"; $$wrap="#ifndef COMPILING_LINUXTHREADS\n\t__asm__(\"linuxthreads_$$func\")\n#endif\n"; $$alias="" if ( $$func =~ m/^(pthread_spin|_pthread_cleanup|pthread_rwlockattr_[gs]etkind_np|pthread_kill_other_threads_np)/ ); s=__THROW=\n$$wrap$$alias\t__THROW= unless m/^#/;' ${WRKSRC}/sysdeps/pthread/pthread.h  ${WRKSRC}/sysdeps/unix/sysv/linux/bits/sigthread.h
+.endif
 .endif
 
 pre-build:
@@ -182,10 +202,18 @@ PLIST_SUB+=	LIBLTHREADPICARCHIVE:="@comment "
 .endif
 .if defined(USING_GCC3)
 PLIST_SUB+=	GCC3ONLY:=""
+.if defined(LINUXTHREADS_WRAP_API)
+PLIST_SUB+=	LTHREADSHMAJOR:="5"
+.else
 PLIST_SUB+=	LTHREADSHMAJOR:="3"
+.endif
 .else
 PLIST_SUB+=	GCC3ONLY:="@comment "
+.if defined(LINUXTHREADS_WRAP_API)
+PLIST_SUB+=	LTHREADSHMAJOR:="4"
+.else
 PLIST_SUB+=	LTHREADSHMAJOR:="2"
+.endif
 .endif
 
 .include <bsd.port.post.mk>
