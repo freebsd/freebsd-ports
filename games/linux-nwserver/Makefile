@@ -18,6 +18,7 @@ COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 USE_LINUX=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
+WRKSRC=		${WRKDIR}
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.

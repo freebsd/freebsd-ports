@@ -1,0 +1,49 @@
+--- fixinstall-old	Mon Jun 23 18:34:30 2003
++++ fixinstall	Mon Aug 18 15:10:14 2003
+@@ -1,13 +1,13 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+-aRequiredDirs=(data override)
+-aRequiredFiles=(chitin.key patch.key dialog.tlk nwserver)
+-aLCDirs=(ambient data dmvault hak localvault music override portraits)
+-aProblemFiles=()
++aRequiredDirs="data override"
++aRequiredFiles="chitin.key patch.key dialog.tlk nwserver"
++aLCDirs="ambient data dmvault hak localvault music override portraits"
++aProblemFiles=""
+ 
+ printf "Checking for required files\n\n"
+ 
+-for d in ${aRequiredDirs[@]}
++for d in ${aRequiredDirs}
+ do
+     if [ -d $d ]
+     then
+@@ -18,7 +18,7 @@
+     fi
+ done
+ 
+-for f in ${aRequiredFiles[@]}
++for f in ${aRequiredFiles}
+ do
+     if [ -f $f ]
+     then
+@@ -41,7 +41,7 @@
+     mv dialogF.TLK dialogf.tlk
+ fi
+ 
+-for d in ${aLCDirs[@]}
++for d in ${aLCDirs}
+ do
+     if [ -d $d ]
+     then
+@@ -70,7 +70,7 @@
+ 
+ printf "\nChecking for problem files\n\n"
+ 
+-for f in ${aProblemFiles[@]}
++for f in ${aProblemFiles}
+ do
+     if [ -f $f ]
+     then
