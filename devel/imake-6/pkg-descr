@@ -1,0 +1,7 @@
+This package contains X.Org's imake, imake config files, and other build-related
+tools.
+
+WWW: http://www.x.org/
+
+- Eric Anholt
+anholt@FreeBSD.org

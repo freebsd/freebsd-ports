@@ -1,0 +1,11 @@
+--- cf/Library.tmpl.orig	Thu Jan 18 01:22:30 2001
++++ cf/Library.tmpl	Mon Jun  4 19:30:34 2001
+@@ -67,7 +67,7 @@
+ STD_DEFINES = LibraryDefines $(PROJECT_DEFINES)
+ CDEBUGFLAGS = LibraryCDebugFlags
+ CLIBDEBUGFLAGS = LibraryDebugOpt
+-     CFLAGS = $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
++     CFLAGS += $(CDEBUGFLAGS) $(CLIBDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)
+ # if defined(LargePICTable) && LargePICTable && defined(LargePositionIndependentCFlags)
+    PICFLAGS = LargePositionIndependentCFlags
+ # endif

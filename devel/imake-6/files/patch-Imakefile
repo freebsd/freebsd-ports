@@ -1,0 +1,12 @@
+--- ../Imakefile	Wed Mar 24 19:16:46 2004
++++ ../Imakefile	Wed Mar 24 19:17:07 2004
+@@ -30,8 +30,7 @@
+ #endif
+ #endif
+ 
+-        SUBDIRS = include config lib $(NLSSUBDIR) \
+-                  programs $(FONTSDIR) $(DOCSDIR)
++        SUBDIRS = include config
+   LNINSTALLDIRS = lib
+ 
+ #if HasParallelMake
