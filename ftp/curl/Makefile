@@ -26,8 +26,6 @@ SHLIB_VER=	0
 MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
 PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
 CONFIGURE_ENV+=	CPPFLAGS='-I${OPENSSLINC} -I${OPENSSLINC}/openssl' \
@@ -46,4 +44,4 @@ post-configure:
 	${WRKSRC}/${x}.pre_sed > ${WRKSRC}/${x}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
