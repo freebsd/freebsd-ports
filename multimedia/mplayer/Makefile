@@ -233,6 +233,10 @@ TOOLFILES=	calcbpp.pl countquant.pl \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 .if exists(${LOCALBASE}/lib/libartsc.so.0)
 WITH_ARTS=	yes
 .endif
