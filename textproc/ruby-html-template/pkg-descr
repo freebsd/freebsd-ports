@@ -1,0 +1,5 @@
+HTML/Template is a Ruby library to use HTML as a template file from
+CGI scripts.
+
+Author:	IKEBE Tomohiro <ikebe@shebang.jp>
+WWW:	http://shebang.jp/src/ruby/
