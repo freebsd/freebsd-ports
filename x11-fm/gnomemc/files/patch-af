@@ -1,0 +1,54 @@
+--- Makefile.in.orig	Tue Jan 26 19:51:29 1999
++++ Makefile.in	Tue Jan 26 19:54:31 1999
+@@ -5,7 +5,7 @@
+ @MCFGR@@MCF@
+ 
+ foreigndirs=pc
+-codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl
++codedirs=vfs lib gtkedit gnome new_icons icons idl
+ unixdirs=intl $(codedirs) @POSUB@
+ alldirs=$(unixdirs) $(foreigndirs) 
+ subdirs=$(alldirs)
+@@ -46,8 +46,6 @@
+ install: installdirs @vcs@
+ 	@for I in $(unixdirs); do cd $$I; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1; cd ..; done
+ 	$(INSTALL_DATA) $(srcdir)/FAQ $(DESTDIR)$(libdir)/FAQ
+-	$(INSTALL_PROGRAM) mcfn_install $(DESTDIR)$(suppbindir)/mcfn_install
+-	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
+ 	@echo "Please verify that the configuration values are correctly"
+ 	@echo "set in the mc.ext file in $(libdir)"
+ 
+@@ -58,12 +56,9 @@
+ installdirs:
+ 	$(mcsrcdir)/xmkdir $(DESTDIR)$(bindir) $(DESTDIR)$(libdir)
+ 	$(mcsrcdir)/xmkdir $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
+-	$(mcsrcdir)/xmkdir $(DESTDIR)$(icondir) $(DESTDIR)$(suppbindir)
+-	$(mcsrcdir)/xmkdir $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
++	$(mcsrcdir)/xmkdir $(DESTDIR)$(icondir)
++	$(mcsrcdir)/xmkdir $(DESTDIR)$(extfsdir)
+ 	$(mcsrcdir)/xmkdir $(DESTDIR)$(idldir)
+-
+-mcfninstall:
+-	-/bin/sh ./mcfn_install
+ 
+ uninstall:
+ 	@for I in $(unixdirs); do cd $$I; $(MAKE) $@ || exit 1; cd ..; done
+--- lib/Makefile.in.orig	Tue Jan 19 00:44:08 1999
++++ lib/Makefile.in	Thu Jan 28 15:45:04 1999
+@@ -15,7 +15,6 @@
+ LIBFILES_IN = mc.ext.in mc-gnome.ext.in
+ LIBFILES_OUT = mc.ext mc-gnome.ext
+ LIBFILES_CONST = mc.hint mc.lib mc.menu
+-TIFILES = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
+ DISTLIB = $(LIBFILES_IN) $(LIBFILES_CONST) $(TIFILES) \
+ 	Makefile.in tdiff xnc.hlp ncurses.h mc.sh mc.csh mcserv.init \
+ 	mcserv.pamd tkmc.wmconfig mc.ext.in.qnx.diff mc.menu.qnx.diff
+@@ -42,8 +41,6 @@
+ 	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(libdir)/$$I; done
+ 	for I in $(LIBFILES_OUT); \
+ 	do $(INSTALL_DATA) $(builddir)/lib/$$I $(DESTDIR)$(libdir)/$$I; done
+-	for I in $(TIFILES); \
+-	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
+ 
+ uninstall:
+ 	for I in $(LIBFILES_OUT) $(LIBFILES_CONST); \

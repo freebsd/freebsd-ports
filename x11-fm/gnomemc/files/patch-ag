@@ -1,0 +1,177 @@
+--- lib/mc.ext.in.orig	Thu Jan 28 14:19:18 1999
++++ lib/mc.ext.in	Thu Jan 28 14:21:05 1999
+@@ -367,57 +367,58 @@
+ 	Icon=core.xpm
+ 
+ type/PostScript
+-	Open=gv %f
++	Open=ggv %f
+ 	Icon=postscript.xpm
++	View=ggv %f
+ 	View with GhostView=gv %f
+ 
+ type/GIF\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 	
+ type/GIF\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 	
+ type/JPEG\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=jpeg.xpm
+ 	Include=image-options
+ 
+ type/PC\ bitmap
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=bitmap.xpm
+ 	Include=image-options
+ 
+ type/PNG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=gif.xpm
+ 	Include=image-options
+ 
+ type/JPEG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=jpeg.xpm
+ 	Include=image-options
+ 	
+ type/TIFF\ file
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=tiff.xpm
+ 	Include=image-options
+ 	
+ type/PBM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=pbm.xpm
+ 	Include=image-options
+ 	
+ type/PGM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=pgm.xpm
+ 	Include=image-options
+ 	
+ type/PPM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Icon=ppm.xpm
+ 	Include=image-options
+ 
+@@ -426,14 +427,14 @@
+ 	Icon=xbm.xpm
+ 
+ shell/.xpm
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	View=sxpm %f
+ 	Include=image-options
+ 	Icon=xpm.xpm
+ 
+ include/image-options
+ 	Set root window to this image=background-properties --setwallpaper %f &
+-	Display this file=ee %f &
++	Display this file=ElectricEyes %f &
+ 
+ # Sound files
+ shell/.mod
+--- lib/mc-gnome.ext.in.orig	Thu Jan 28 14:21:23 1999
++++ lib/mc-gnome.ext.in	Thu Jan 28 14:21:59 1999
+@@ -271,60 +271,60 @@
+ 	View=%view{ascii,nroff} gunzip -dc %f | nroff @TROFFASCII@ @MANDOC@
+ 
+ type/PostScript
+-	Open=gv %f
+-	View with GhostView=gv %f
++	Open=ggv %f
++	View with GhostView=ggv %f
+ 
+ type/GIF\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/GIF\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/JPEG\ picture
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 
+ type/PC\ bitmap
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 
+ type/PNG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 
+ type/JPEG\ image
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/TIFF\ file
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/PBM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/PGM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 	
+ type/PPM
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	Include=image-options
+ 
+ shell/.xbm
+ 	Open=bitmap %f
+ 
+ shell/.xpm
+-	Open=ee %f
++	Open=ElectricEyes %f
+ 	View=sxpm %f
+ 	Include=image-options
+ 
+ include/image-options
+ 	Set root window to this image=background-properties --setwallpaper %f &
+-	Display this file=ee %f &
++	Display this file=ElectricEyes %f &
+ 
+ # Sound files
+ shell/.mod
+--- gnome/mc.keys.in.in.orig	Tue Jan 19 00:44:12 1999
++++ gnome/mc.keys.in.in	Thu Jan 28 11:54:32 1999
+@@ -86,7 +86,7 @@
+ 	icon-filename=@icondir@/tex.xpm
+ 
+ application/postscript:
+-	open=gv %f
++	open=ggv %f
+ 	icon-filename=@icondir@/postscript.xpm
+ 
+ application/x-object-file:
