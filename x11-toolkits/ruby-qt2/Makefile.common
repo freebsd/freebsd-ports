@@ -3,7 +3,7 @@
 # Don't forget to clear PORTREVISION's on update
 RUBY_QT2_VERSION=	0.14
 RUBY_QT2_PORTVERSION=	${RUBY_QT2_VERSION}
-RUBY_QT2_MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
+RUBY_QT2_MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/-ruby-qt/
 RUBY_QT2_DISTNAME=	ruby-qt2-${RUBY_QT2_VERSION}
 
 RUBY_QT2_PORTDIR=	${PORTSDIR}/x11-toolkits/ruby-qt2
