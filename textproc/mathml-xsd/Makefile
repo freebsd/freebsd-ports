@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The MathML XML Schema
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 
 post-extract:
