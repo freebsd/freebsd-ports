@@ -23,6 +23,7 @@ LIB_DEPENDS=	xine.1:${PORTSDIR}/graphics/libxine \
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -45,14 +46,17 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 
 post-patch:
-	@${PERL} -pi -e \
+	@${REINPLACE_CMD} -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
-		 s|-malign-loops|-falign-loops|g ; \
-		 s|-malign-jumps|-falign-jumps|g ; \
-		 s|-malign-functions|-falign-functions|g ; \
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g' ${WRKSRC}/configure
+.if ${OSVERSION} >= 500035
+	@${REINPLACE_CMD} -e \
+		 's|-malign-loops|-falign-loops|g ; \
+		  s|-malign-jumps|-falign-jumps|g ; \
+		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
+.endif
 	@${RM} ${WRKSRC}/src/xitk/xine-remote.c
 
 post-install:
