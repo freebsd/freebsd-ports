@@ -334,6 +334,7 @@
     SUBDIR += rayshade
     SUBDIR += reallyslick
     SUBDIR += renderpark
+    SUBDIR += robot
     SUBDIR += ruby-evas
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdchart

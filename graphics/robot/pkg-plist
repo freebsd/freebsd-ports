@@ -1,0 +1,22 @@
+bin/robot
+lib/help/robot.info
+%%PORTDOCS%%%%DOCSDIR%%/RobotManual.ps.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/3d_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/anime_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/axes_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/color_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/fit1_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/fit1b_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/fit2_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/fit3_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/font_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/insert_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/japan_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/logplot_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/mix_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/sinplot_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/style_demo.rob
+%%PORTDOCS%%%%EXAMPLESDIR%%/title_demo.rob
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

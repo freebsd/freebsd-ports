@@ -1,0 +1,126 @@
+--- Robot/Makefile.orig	Wed Apr 23 17:04:37 2003
++++ Robot/Makefile	Sat Oct 11 15:31:37 2003
+@@ -7,7 +7,7 @@
+ 
+ ARRAYSIZE = 64000
+ 
+-# Where will Robot try and look for help about itself with (e.g.) netscape?
++# Where will Robot try and look for help about itself with (e.g.) mozilla?
+ WEB_HELP = http://www.robotx.cx/
+ 
+ # and give option to use a different browser if really wanted
+@@ -15,28 +15,28 @@
+ 
+ 
+ # define system utilities - i.e. mail and print
+-MAILER = /bin/mail
++MAILER = /usr/bin/mail
+ # Either lpr, lp, or enscript/genscript may be used to print
+-#LPR = /usr/ucb/lpr
++#LPR = /usr/bin/lpr
+ #LPR = /bin/lp
+ LPR = lpr
+ 
+ # installation directory - this is used both if a "make install" is
+ # done and also used to add path to robot at top of log files
+-INSTDIR = $(HOME)/bin/
++INSTDIR = ${PREFIX}/bin/
+ #INSTDIR = /usr/local/bin
+ 
+ 
+ # define compilers
+ #CC = cc
+-CC = gcc
++CC ?= cc
+ #FC = g77
+-FC = f77
++FC ?= f77
+ # define compile options here if required, 
+ # e.g. debug 
+ # CFLAGS = -g
+ # or optimize (if you have enough swap space)
+- CFLAGS = -O
++CFLAGS += -O
+ # or nothing at all
+ # CFLAGS =
+ 
+@@ -45,7 +45,6 @@
+ # Check array boundaries
+ # FFLAGS = -C
+ 
+-
+ # specify here the directory where the openwindow include
+ # files are kept
+ # INCLUDE = /usr/local/openwin/include
+@@ -63,15 +62,15 @@
+ #F77LIB = -lF77
+ 
+ #X library - may need to edit if location different
+-XLIB = -L/usr/X11R6/lib -lX11
++XLIB = -L${X11BASE}/lib -lX11
+ 
+ # location of the FITS library
+ FITSDIR = ../Fitsio/
+ FITSLIB = $(FITSDIR)libfits.a
+ 
+ # if USA is defined we make some attempt to use USA spellings
+-LANGUAGE = -DUSA
+-#LANGUAGE = -DUK
++#LANGUAGE = -DUSA
++LANGUAGE = -DUK		#UK is more international
+ 
+ 
+ # This specifies the location of the graphics routines in
+@@ -79,7 +78,7 @@
+ ARKDIR = ../ARK/
+ ARKLIB = $(ARKDIR)libark.a
+ # place to put the robot.info file
+-HELPDIR = /home/heasfs/corbet/help
++HELPDIR = ${PREFIX}/lib/X11/help
+ 
+ OBJS = robot.o subroutines.o subroutines2.o subroutines3.o \
+ user.o main.o rfitsf.o rfitsc.o fits3d.o york.o classify.o \
+@@ -109,11 +108,11 @@
+ 	"OLLIBS=$(OPENWINHOME)/lib/libxview.so $(OPENWINHOME)/lib/libolgx.so" 
+ 
+ FITSLIB: 
+-	(cd $(FITSDIR); make libfits.a)
++	(cd $(FITSDIR); ${MAKE} libfits.a)
+ ARKLIB:
+-	(cd $(ARKDIR); make libark.a "OS=$(OS)" "LPR=$(LPR)")
++	(cd $(ARKDIR); ${MAKE} libark.a "OS=$(OS)" "LPR=$(LPR)")
+ robot.o: robot.f robcom msizcom fitcom
+-	$(FC)  -c -Nx300 $(CFLAGS) $(FFLAGS) robot.f
++	$(FC)  -c $(CFLAGS) $(FFLAGS) robot.f
+ subroutines.o: subroutines.f robcom fitcom
+ 	$(FC)  -c $(CFLAGS) $(FFLAGS) subroutines.f
+ subroutines2.o: subroutines2.f robcom msizcom fitcom
+@@ -121,7 +120,7 @@
+ subroutines3.o: subroutines3.f robcom msizcom
+ 	$(FC)  -c $(CFLAGS) $(FFLAGS) subroutines3.f
+ nr.o: nr.f robcom
+-	$(FC)  -c $(CFLAGS) nr.f
++	$(FC)  -c $(FFLAGS) nr.f
+ main.o: main.c robot.h patchlevel.h
+ 	$(CC) -c $(CFLAGS) main.c -I$(INCLUDE) $(LANGUAGE) $(OS) -DARRAYSIZE=$(ARRAYSIZE) -DINSTDIR=\"$(INSTDIR)\"  -DWEB_HELP=\"$(WEB_HELP)\"
+ colors.o: colors.c
+@@ -155,15 +154,15 @@
+ math.o: math.c
+ 	$(CC) -c $(CFLAGS) math.c
+ user.o: user.f
+-	$(FC) -c $(CFLAGS) user.f
++	$(FC) -c $(FFLAGS) user.f
+ york.o: york.f robcom
+-	$(FC) -c $(CFLAGS) york.f
++	$(FC) -c $(FFLAGS) york.f
+ rfitsf.o: rfitsf.f robcom
+-	$(FC) -c $(CFLAGS) rfitsf.f
++	$(FC) -c $(FFLAGS) rfitsf.f
+ rfitsc.o: rfitsc.c
+ 	$(CC) -c $(CFLAGS) rfitsc.c
+ fits3d.o: fits3d.f robcom
+-	$(FC) -c $(CFLAGS) fits3d.f
++	$(FC) -c $(FFLAGS) fits3d.f
+ classify.o: classify.c
+ 	$(CC) -c $(CFLAGS) classify.c
+ backup:
