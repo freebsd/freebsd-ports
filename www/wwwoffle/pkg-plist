@@ -1,0 +1,20 @@
+bin/wwwoffle
+bin/wwwoffle-tools
+bin/wwwoffle-ls
+bin/wwwoffle-mv
+bin/wwwoffle-rm
+sbin/wwwoffled
+man/man1/wwwoffle.1.gz
+man/man5/wwwoffle.conf.5.gz
+man/man8/wwwoffled.8.gz
+@cwd /var/spool
+wwwoffle/wwwoffle.conf
+wwwoffle/outgoing/Owwwoffle-browser
+wwwoffle/outgoing/Owwwoffle-user
+wwwoffle/outgoing/Uwwwoffle-browser
+wwwoffle/outgoing/Uwwwoffle-user
+@dirrm wwwoffle/http
+@dirrm wwwoffle/lasttime
+@dirrm wwwoffle/monitor
+@dirrm wwwoffle/outgoing
+@dirrm wwwoffle
