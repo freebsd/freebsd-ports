@@ -26,8 +26,10 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 .elif ${WITH_BDB_VER} == 41
 LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+.elif ${WITH_BDB_VER} == 42
+LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 .else
-.error WITH_BDB_VER must be one between 2, 3, 4 and 41
+.error WITH_BDB_VER must be one between 2, 3, 4, 41 and 42
 .endif
 
 PERL_CONFIGURE=	yes
@@ -36,7 +38,7 @@ MAN3=		BerkeleyDB.3
 
 pre-everything::
 	@${ECHO} "This port defaults to use Berkeley DB 3, but you can change it"
-	@${ECHO} "by setting WITH_BDB_VER to either 2, 3, 4 or 41"
+	@${ECHO} "by setting WITH_BDB_VER to either 2, 3, 4, 41 or 42"
 
 post-patch:
 	@${ECHO} "INCLUDE = ${LOCALBASE}/include/db${WITH_BDB_VER}" > ${WRKSRC}/config.in
