@@ -2,7 +2,7 @@
 # Date created:		31 Oct 2000
 # Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/XFree86-aoutlibs/Attic/Makefile,v 1.2 2000-11-06 18:14:23 keith Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/XFree86-aoutlibs/Attic/Makefile,v 1.3 2001-02-05 14:29:33 olgeni Exp $
 #
 
 # The file is identical to
@@ -10,7 +10,7 @@
 # Renamed to avoid distfiles conflict with x11/XFree86-aoutlibs.
 
 PORTNAME=	XFree86-aoutlibs
-PORTVERSION= 	3.3.6
+PORTVERSION=	3.3.6
 CATEGORIES=	x11
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTNAME=	Xbin336aout

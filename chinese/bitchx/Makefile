@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../../irc/bitchx
+MASTERDIR=	${.CURDIR}/../../irc/bitchx
 EXTRA_PATCHES=	${.CURDIR}/files/patch-source::input.c \
 		${.CURDIR}/files/patch-include::config.h \
 		${.CURDIR}/files/patch-source::screen.c
@@ -23,4 +23,3 @@ PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 CATEGORIES=	chinese irc
 
 MAINTAINER=	clive@FreeBSD.org
-
