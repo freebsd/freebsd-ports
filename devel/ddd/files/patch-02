@@ -1,0 +1,11 @@
+--- ddd/InitImage.C.orig	Sun Mar 14 07:58:12 1999
++++ ddd/InitImage.C	Sat May  8 17:09:05 1999
+@@ -221,7 +221,7 @@
+     // arguements.  If I simply change the three calls to
+     // XmInstallImage to Xm21InstallImage, the problem is solved.
+ 
+-#if XmVersion >= 2001
++#if XmVersion >= 2001 && defined(sun)
+     return Xm21InstallImage(image, image_name);
+ #else
+     return XmInstallImage(image, image_name);
