@@ -1,25 +1,36 @@
---- doc/Makefile.in.orig	Wed Aug 29 03:23:41 2001
-+++ doc/Makefile.in	Fri Sep  7 01:40:20 2001
-@@ -267,15 +267,15 @@
+--- doc/Makefile.in.orig	Thu Feb 13 20:03:45 2003
++++ doc/Makefile.in	Thu Feb 13 20:04:52 2003
+@@ -215,7 +215,6 @@
+ 
+ install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-data: install-data-am
+ 
+ install-am: all-am
+@@ -267,24 +266,10 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-all: Makefile Eterm.1.html
++all: Makefile
+ 
+ Eterm.1: $(top_srcdir)/doc/Eterm.1.in
  	$(SED) -e 's%@''VERSION''@%$(VERSION)%g' -e 's%@''DATE''@%$(DATE)%g' -e 's%@THEMEDIR@%$(pkgdatadir)/themes%g' $(top_srcdir)/doc/$@.in > $@
- 
- Eterm.1.html: Eterm.1
+-
+-Eterm.1.html: Eterm.1
 -	(nroff -man $< | man2html -title Eterm > $@) || :
-+	(nroff -man Eterm.1 | man2html -title Eterm > $@) || :
- 
- install-data-hook:
+-
+-install-data-hook:
 -	$(TIC) Eterm.ti || (mkinstalldirs $(HOME)/.terminfo && $(TIC) -o$(HOME)/.terminfo Eterm.ti) || :
--	-infocmp -C -sc Eterm | sed -e '/Reconstructed/d' -e '/\.\.sa=/d' > Eterm.tcap.new && mv Eterm.tcap.new Eterm.tcap || rm -f Eterm.tcap.new
+-	-(infocmp -C -sc Eterm | sed -e '/Reconstructed/d' -e '/\.\.sa=/d' \
+-	  -e 's!^\([[:space:]]:co#.*\):\\$$!\1:pa#64:Co#8:AF=\\E[3%dm:AB=\\E[4%dm:op=\\E[39m\\E[49m:\\!' \
+-	  -e 's!:$$!:\\!' ; echo '	:ac=``aaffggiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz{{||}}~~:' \
+-	  ) > Eterm.tcap.new && mv Eterm.tcap.new Eterm.tcap || rm -f Eterm.tcap.new
 -	-if test -f /usr/share/misc/termcap && test -f Eterm.tcap ; then \
--	    grep 'Eterm-color' /usr/share/misc/termcap || cat Eterm.tcap >> /usr/share/misc/termcap ; \
+-	    grep -i 'Eterm Terminal Emulator' /usr/share/misc/termcap || cat Eterm.tcap >> /usr/share/misc/termcap ; \
 -	    cap_mkdb termcap ; \
 -	fi || :
-+#	$(TIC) Eterm.ti || (mkinstalldirs $(HOME)/.terminfo && $(TIC) -o$(HOME)/.terminfo Eterm.ti) || :
-+#	-infocmp -C -sc Eterm | sed -e '/Reconstructed/d' -e '/\.\.sa=/d' > Eterm.tcap.new && mv Eterm.tcap.new Eterm.tcap || rm -f Eterm.tcap.new
-+#	-if test -f /usr/share/misc/termcap && test -f Eterm.tcap ; then \
-+#	    grep 'Eterm-color' /usr/share/misc/termcap || cat Eterm.tcap >> /usr/share/misc/termcap ; \
-+#	    cap_mkdb termcap ; \
-+#	fi || :
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
