@@ -6,7 +6,8 @@ CFLAGS+=-ggdb $(INCLUDES) -DFREEBSD -DPROTOTYPES -DHAVE_NO_VALUES_H -DHAVE_LIMIT
 # for search.h
 CFLAGS+=-I../src
 
-OBJS+=hsearch.o
+hsearch.o:	../src/hsearch.c
+	${CC} -I${WRKSRC}/src ${CFLAGS} -c -o $@ ../src/hsearch.c
 
 install:	all
-	install -c -s -m 755 -o bin -g bin nt ${PREFIX}/bin
+	install -c -s -m 755 -o bin -g bin nte ${PREFIX}/bin
