@@ -1,12 +1,12 @@
-# New ports collection makefile for:   sawmill
+# New ports collection makefile for:   sawfish
 # Date created:        13 September 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sawmill
-PORTVERSION= 	0.26
+PORTNAME=	sawfish
+PORTVERSION= 	0.27.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
 
@@ -50,7 +50,7 @@ post-install:
 	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	install-info --section="X11 window manager" \
-	--entry="* sawmill: (sawmill).           sawmill programming manual" \
-	${PREFIX}/info/sawmill.info ${PREFIX}/info/dir
+	--entry="* sawfish: (sawfish).           sawfish programming manual" \
+	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
