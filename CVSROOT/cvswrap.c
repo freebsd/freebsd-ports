@@ -60,6 +60,7 @@ main(int ac, char **av)
 	if (getgid() == getegid())
 		errx(1, "fatal: not installed setgid correctly!");
 #endif
+	umask(002);
 
 	fp = fopen(ACCESS, "r");
 	if (fp == NULL)
