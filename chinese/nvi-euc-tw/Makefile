@@ -1,9 +1,9 @@
 # New ports collection makefile for:	nvi-1.79 + multilingual patch(euc-tw)
 # Version required:	1.79
 # Date created:		5 Apr 1997
-# Whom:			Jun-ichiro itojun Itoh &lt;itojun@itojun.org&gt;
+# Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/09 07:05:26 asami Exp $
+# $Id: Makefile,v 1.2 1997/04/09 07:34:41 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -12,7 +12,7 @@ PATCHDIR=	${.CURDIR}/../../editors/nvi/patches
 PKGDIR=		${.CURDIR}/../../editors/nvi/pkg
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-.include &lt;${.CURDIR}/../../editors/nvi/Makefile&gt;
+.include <${.CURDIR}/../../editors/nvi/Makefile>
 
 PKGNAME=	cn-nvi-euctw-1.79-970408
 CATEGORIES=	chinese editors
