@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgtkhtml libgnomeui
+USE_GNOME=	gnomehack intlhack gnomeprefix libgtkhtml libgnomeui
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
