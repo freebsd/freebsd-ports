@@ -651,7 +651,6 @@ share/eagle/ulp/ulpmessage.ulp
 share/eagle/ulp/unidat.ulp
 share/eagle/ulp/useful-routines.ulp
 share/eagle/ulp/warning.bmp
-share/eagle/uninstall
 @unexec rm -f %D/share/eagle/bin/eagle.key || true
 @dirrm share/eagle/ulp
 @dirrm share/eagle/scr
