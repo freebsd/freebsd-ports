@@ -10,7 +10,7 @@ PORTVERSION=	0.95
 PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.csse.monash.edu.au/~timf/
-DISTFILES=	kint_xmms-${PORTVERSION}.tar.gz
+DISTNAME=	kint_xmms-${PORTVERSION}
 
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	This is a plugin that adds K-Joefol-Skinsupport to xmms
@@ -28,9 +28,11 @@ USE_REINPLACE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	${REINPLACE_CMD} -e 's/PTHREAD_LIBS/ ${PTHREAD_LIBS}/g' \
-			${PATCHDIR}/patch-aa
 	${RM} -f ${PATCHDIR}/*.bak
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/makefile
 
 do-build:
 	cd ${WRKSRC} && $(MAKE)
