@@ -9,8 +9,7 @@ PORTNAME=	balsa
 PORTVERSION=	1.4.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://balsa.gnome.org/ \
-		http://www.theochem.kth.se/~pawsa/balsa/ \
-		ftp://ftp.newton.cx/pub/balsa/
+		http://www.theochem.kth.se/~pawsa/balsa/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME desktop
