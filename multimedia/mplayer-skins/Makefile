@@ -63,7 +63,7 @@ post-clean:
 #
 # Build and install all skins (rather expensive)
 #
-. if defined(WITH_SKIN_ALL)
+.if defined(WITH_SKIN_ALL)
 WITH_SKIN_DEFAULT=yes
 WITH_SKIN_AVIFILE=yes
 WITH_SKIN_BLUEHEART=yes
