@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mudix
-PORTVERSION=	4.1
+PORTVERSION=	4.3
 CATEGORIES=	net
-MASTER_SITES=	http://dwizardry.dhs.org/mudix/
+MASTER_SITES=	http://dw.nl.eu.org/mudix/
 
 MAINTAINER=	scorpio@drkshdw.org
 
