@@ -7,25 +7,27 @@
 #
 
 DISTNAME=	tkfont-1.1
-CATEGORIES=     x11-fonts tk80
+CATEGORIES=	x11-fonts tk82
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/ \
 		http://www.FreeBSD.org/~billf/
 
-MAINTAINER=     brett@peloton.runet.edu
+MAINTAINER=	brett@peloton.runet.edu
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 
 post-patch:
-	${SED} -e "s,#!/usr/X11/bin/wish,#!$(LOCALBASE)/bin/wish8.0," < ${WRKSRC}/tkfont > ${WRKSRC}/tkfont.new
+	${SED} -e "s,/usr/local,${LOCALBASE}," \
+		-e "s,#!/usr/X11/bin/wish,#!$(LOCALBASE)/bin/wish8.2," \
+		 < ${WRKSRC}/tkfont > ${WRKSRC}/tkfont.new
 	${MV} ${WRKSRC}/tkfont.new ${WRKSRC}/tkfont
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/tkfont ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/tkfont
-	@${INSTALL_SCRIPT} ${WRKSRC}/GetFontDirs ${PREFIX}/lib/tkfont
 	@for file in COPYING Bugs.txt FileMenu.txt FindFont FontDirs.txt FontTypes.txt HelpText.txt README WhatsNew.txt; do \
 		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/lib/tkfont; \
 	done
+
 .include <bsd.port.mk>
