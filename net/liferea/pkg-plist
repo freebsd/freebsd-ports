@@ -11,6 +11,7 @@ share/gnome/liferea/pixmaps/read.xpm
 share/gnome/liferea/pixmaps/unavailable.png
 share/gnome/liferea/pixmaps/unread.png
 share/gnome/liferea/pixmaps/vfolder.png
+share/locale/bg/LC_MESSAGES/liferea.mo
 share/locale/de/LC_MESSAGES/liferea.mo
 share/locale/es_ES/LC_MESSAGES/liferea.mo
 share/locale/fr/LC_MESSAGES/liferea.mo
