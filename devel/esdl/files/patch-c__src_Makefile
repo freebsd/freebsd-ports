@@ -5,7 +5,7 @@
  #
  
 -OGLDIR  = /usr
-+OGLDIR  = /usr/X11R6
++OGLDIR  = ${X11BASE}
  
  # Uncomment these if your opengl header is located in another directory than
  # the usual $(OGLDIR)/include/GL/gl.h
@@ -14,14 +14,14 @@
  GL_INCS		= -I$(OGLDIR)/include/$(GL_INCLUDE_DIR)
  
 -SDL_LIBS	= $(shell sdl-config --libs)
-+SDL_LIBS	= $(shell sdl11-config --libs)
++SDL_LIBS	= $(shell $(SDL_CONFIG) --libs)
  LIBS		= $(GL_LIBS) $(SDL_LIBS) -lm 
  
 -SDLINCS		= $(shell sdl-config --cflags)
-+SDLINCS		= $(shell sdl11-config --cflags)
++SDLINCS		= $(shell $(SDL_CONFIG) --cflags)
  
 -CFLAGS	= -g -O2 -funroll-loops -Wall -ffast-math -fpic -fomit-frame-pointer \
-+CFLAGS	+= -g -funroll-loops -Wall -ffast-math -fpic -fomit-frame-pointer \
++CFLAGS	+= -funroll-loops -Wall -ffast-math -fpic -fomit-frame-pointer \
              $(USE_GL_INCLUDE_DIR) -DSHM -DPTHREADS $(GL_INCS) $(SDLINCS)
  
  TARGETDIR = ../priv
