@@ -16,6 +16,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache module for integrating Python
 
+FORBIDDEN=	denial of service vulnerability
+
 USE_APACHE=	yes
 NO_PACKAGE=	"Requires Python without threads support"
 USE_PYTHON=	yes
