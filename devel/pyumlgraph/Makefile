@@ -9,7 +9,7 @@
 PORTNAME=	pyumlgraph
 PORTVERSION=	0.1.10
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zipcon.net/~adamf/software/PyUmlGraph/
+MASTER_SITES=	http://adamfeuer.com/~adamf/software/PyUMLGraph/
 DISTNAME=	PyUMLGraph-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
