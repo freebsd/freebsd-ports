@@ -14,6 +14,7 @@
     SUBDIR += dnews
     SUBDIR += fidogate
     SUBDIR += gnus-emacs20
+    SUBDIR += golded+
     SUBDIR += grn
     SUBDIR += gup
     SUBDIR += husky-base
