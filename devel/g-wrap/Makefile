@@ -9,7 +9,7 @@
 PORTNAME=	g-wrap
 PORTVERSION=	1.3.4
 PORTREVISION=	4
-CATEGORIES=	devel
+CATEGORIES=	devel scheme
 MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
 		http://people.freebsd.org/~sobomax/
 

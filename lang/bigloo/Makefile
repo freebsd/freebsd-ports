@@ -7,7 +7,7 @@
 
 PORTNAME=	bigloo
 PORTVERSION=	2.5a
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
 DISTNAME=	${PORTNAME}${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	qscheme
 PORTVERSION=	0.5.1
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.sof.ch/dan/qscheme/files/
 
 MAINTAINER=	erik@smluc.org
