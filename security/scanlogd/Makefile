@@ -13,7 +13,7 @@ MASTER_SITES=	http://openwall.com/scanlogd/ \
 		ftp://ftp.openwall.com/pub/projects/scanlogd/ \
 		ftp://rt.fm/pub/scanlogd/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	TCP port scan detection tool
 
 USE_RC_SUBR=	yes

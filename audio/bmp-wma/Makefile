@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.nixp.ru/pub/files/ \
 		http://bmpwma.younggods.net/download/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	WMA input plugin for beep-media-player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.fluxbox.org/download/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox window manager
 
 USE_X_PREFIX=	yes

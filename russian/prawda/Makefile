@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	http://www.prawda.newmail.ru/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	English-Russian translator
 
 USE_BZIP2=	yes

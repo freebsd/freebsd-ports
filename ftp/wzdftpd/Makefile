@@ -11,7 +11,7 @@ CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 
 USE_RC_SUBR=	yes

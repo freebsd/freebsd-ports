@@ -11,7 +11,7 @@ CATEGORIES=	russian x11-fonts
 MASTER_SITES=	http://dev.gentoo.org/~sergey/
 DISTNAME=	artwiz_ru
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Russian Artwiz fonts
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig

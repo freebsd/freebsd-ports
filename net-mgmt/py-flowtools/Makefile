@@ -12,7 +12,7 @@ MASTER_SITES=	http://mail.net.informatik.tu-muenchen.de/~robin/flowtools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflowtools-${PORTVERSION}
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python extension module for reading flow-tools' data
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ftlib.h:${PORTSDIR}/net-mgmt/flow-tools

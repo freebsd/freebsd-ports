@@ -10,7 +10,7 @@ PORTVERSION=	1.2f
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/files/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Console frontend for mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \

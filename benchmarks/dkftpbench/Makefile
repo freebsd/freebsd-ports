@@ -10,7 +10,7 @@ PORTVERSION=	0.45
 CATEGORIES=	benchmarks ftp
 MASTER_SITES=	http://www.kegel.com/dkftpbench/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A FTP benchmark program
 
 PLIST_FILES=	bin/dkftpbench

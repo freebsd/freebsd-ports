@@ -11,7 +11,7 @@ PORTVERSION=	1.0.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://gtk.no/archive/genmenu/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Generating menus for Bbox, Fbox, Obox, WM and E
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

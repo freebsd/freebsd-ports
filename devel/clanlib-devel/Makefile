@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \

@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bmp-plugins.berlios.de/misc/cdf/
 
-MAINTAINER=	bogorodskiy@inbox.ru
+MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A colorized df
 
 PLIST_FILES=	bin/cdf
