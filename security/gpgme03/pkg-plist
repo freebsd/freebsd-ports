@@ -1,5 +1,10 @@
 bin/gpgme-config
 include/gpgme.h
+info/gpgme.info
+info/gpgme.info-1
+info/gpgme.info-2
+info/gpgme.info-3
+info/gpgme.info-4
 lib/libgpgme.a
 lib/libgpgme.la
 lib/libgpgme.so
