@@ -3,4 +3,6 @@ bin/help2man
 %%NLS%%share/locale/fr/LC_MESSAGES/help2man.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/help2man.mo
 %%NLS%%@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/man/fr 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/man/pl/man1 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/man/pl 2>/dev/null || true
