@@ -4,13 +4,12 @@ man/man1/acm.1.gz
 @mode 555
 bin/acms
 bin/acm
-@cd /usr/games
 @mode 444
-lib/acm/aim-9
-lib/acm/bullet
-lib/acm/f16
-lib/acm/mig23
-lib/acm/mtn
-lib/acm/rwy
-lib/acm/rwy2
-lib/acm/tower   
+lib/X11/acm/aim-9
+lib/X11/acm/bullet
+lib/X11/acm/f16
+lib/X11/acm/mig23
+lib/X11/acm/mtn
+lib/X11/acm/rwy
+lib/X11/acm/rwy2
+lib/X11/acm/tower   
