@@ -1,0 +1,8 @@
+This software interprets Infocom text-adventure games.  It requires the
+X Window System.  This port does not install any games; you can install
+them yourself if you own the games, or you can legally obtain the Zork
+series from:
+	http://www.csd.uwo.ca/~pete/Infocom/download.html
+Information on other methods of obtaining the games, including CD-ROM
+vendors, is available from:
+	http://www.cfug.org/infocom/

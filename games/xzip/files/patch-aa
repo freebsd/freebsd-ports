@@ -1,0 +1,40 @@
+--- Makefile.orig	Sat Jan  3 13:42:44 1998
++++ Makefile	Sat Jun 27 23:59:49 1998
+@@ -62,19 +62,21 @@
+ # definitions for some arbitrary little-endian system
+ #SYSTEMFLAGS = -DLITTLE_END_MODE
+ 
++SYSTEMFLAGS = -DAUTO_END_MODE
++
+ # --------------------
+ 
+ # definitions for where the X lib and include directories are
+-XDIR = /usr
+-XINCLUDE = $(XDIR)/include/X11
+-XLIB = $(XDIR)/lib/X11
++XDIR = ${X11BASE}
++XINCLUDE = $(XDIR)/include
++XLIB = $(XDIR)/lib
+ 
+ # definition for where to install xzip executable and man page
+-DESTDIR = /usr/local
++DESTDIR = ${PREFIX}
+ 
+ # --------------------
+ 
+-CFLAGS = -O $(SYSTEMFLAGS) -I$(XINCLUDE)
++CFLAGS += $(SYSTEMFLAGS) -I$(XINCLUDE)
+ LDFLAGS =
+ LIBS = -L$(XLIB) -lX11 $(SYSTEMLIBS)
+ 
+@@ -132,8 +134,8 @@
+ 	$(CC) $(CFLAGS) $(FONTDEFAULTLIST) -c xinit.c
+ 
+ install: $(PROGRAM)
+-	install -s $(PROGRAM) $(DESTDIR)/bin
+-	install $(PROGRAM).1 $(DESTDIR)/man/man1
++	${BSD_INSTALL_PROGRAM} $(PROGRAM) $(DESTDIR)/bin
++	${BSD_INSTALL_DATA} $(PROGRAM).1 $(DESTDIR)/man/man1
+ 
+ clean :
+ 	-rm -f *~ *.o $(PROGRAM) test
