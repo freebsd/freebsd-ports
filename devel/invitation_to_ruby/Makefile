@@ -28,8 +28,6 @@ NO_BUILD=	yes
 
 PLIST=		${WRKDIR}/plist
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 pre-install:

@@ -22,8 +22,6 @@ NO_BUILD=	yes
 #NO_WRKSUBDIR=	yes
 #DOWNLOAD_URL?=	https://javacc.dev.java.net/servlets/ProjectDocumentList?folderID=212
 
-CPIO?=		/usr/bin/cpio
-
 do-configure:
 	for f in "${WRKSRC}/bin/j*"; do \
 		${REINPLACE_CMD} -e 's:`dirname \$$0`/lib:${JAVAJARDIR}:' $$f; \

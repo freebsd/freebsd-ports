@@ -39,8 +39,6 @@ CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 			--with-openssl-libs=${OPENSSLLIB}
 .endif
 
-CPIO?=	/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6

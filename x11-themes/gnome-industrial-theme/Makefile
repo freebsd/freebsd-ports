@@ -69,7 +69,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@if ! (cd ${WRKDIR} && rpm2cpio.pl ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}\
-		| cpio -i ximian-artwork-${PORTVERSION}.tar.gz 2>/dev/null \
+		| ${CPIO} -i ximian-artwork-${PORTVERSION}.tar.gz 2>/dev/null \
 		&& ${GZIP_CMD} -dc ximian-artwork-${PORTVERSION}.tar.gz \
 		| ${TAR} -xf - && ${RM} ximian-artwork-${PORTVERSION}.tar.gz);\
 		then \

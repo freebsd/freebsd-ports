@@ -72,8 +72,8 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/lib/linux-beonex
 	${CHMOD} 755 ${PREFIX}/lib/linux-beonex
-	cd ${WRKSRC} && ${FIND} * | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/linux-beonex
+	cd ${WRKSRC} && ${FIND} * | ${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} \
+		${PREFIX}/lib/linux-beonex
 	${LN} -s ${PREFIX}/lib/linux-beonex/beonex-comm \
 		${PREFIX}/bin/linux-beonex
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm ${PREFIX}/lib/linux-beonex

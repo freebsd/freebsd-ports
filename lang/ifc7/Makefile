@@ -45,7 +45,6 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 
 IFCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})

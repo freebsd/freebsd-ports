@@ -39,7 +39,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -26,6 +26,6 @@ DATAVERSION=	0.8.6
 
 post-install:
 	@cd ${WRKDIR}/amph && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/amph
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/amph
 
 .include <bsd.port.mk>

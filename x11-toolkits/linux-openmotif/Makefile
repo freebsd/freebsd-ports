@@ -35,7 +35,7 @@ EXTRACT_FILES=	usr/X11R6/lib/libMrm.so.2.1 \
 do-install:
 	cd ${PREFIX}; \
 	    rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} | \
-	    cpio -idum -R ${LIBOWN}:${LIBGRP} ${EXTRACT_FILES}
+	    ${CPIO} -idum -R ${LIBOWN}:${LIBGRP} ${EXTRACT_FILES}
 	chroot ${PREFIX} /sbin/ldconfig
 
 .include <bsd.port.mk>

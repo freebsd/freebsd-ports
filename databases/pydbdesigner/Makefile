@@ -31,8 +31,6 @@ MY_SITELIBSUBDIR=	${PYTHON_SITELIBSUBDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-CPIO?=	/usr/bin/cpio
-
 PYVERSION=	${PYTHON_VERSION:S/^python//}
 .if defined(PYTHON_VERSION) && ${PYVERSION:S/.//} < 22
 .undef		NO_IGNORE

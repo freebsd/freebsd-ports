@@ -28,7 +28,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/docs && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

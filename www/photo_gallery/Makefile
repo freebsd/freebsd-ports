@@ -31,5 +31,5 @@ USE_GZIP=	no
 do-install:
 		${MKDIR} ${INSTALLDIR}
 		cd ${WRKSRC}; ${FIND} . \
-			| cpio -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
+			| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
 .include <bsd.port.mk>

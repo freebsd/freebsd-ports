@@ -35,8 +35,6 @@ NO_BUILD=	YES
 APP_HOME?=	${PREFIX}/linux-blackdown-jre${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
-CPIO?=		/usr/bin/cpio
-
 post-patch:
 	${FIND} ${WRKSRC} \( -name '*.orig' -o -name '.*.orig' \) -delete
 	${CP} ${FILESDIR}/arch ${WRKSRC}/bin/

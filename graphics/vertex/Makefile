@@ -53,7 +53,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/vertex/vertex.xpm ${DATADIR}/icons
 	cd ${WRKSRC}/vertex/data && ${FIND} . -type f | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+x
 
 .include <bsd.port.mk>

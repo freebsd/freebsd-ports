@@ -38,7 +38,7 @@ do-install:
 .for d in ${DATA_DIRS}
 		@${MKDIR} ${PREFIX}/share/gnome/gdeskcal/skins/${d}
 		@cd ${WRKSRC}/${d} && ${FIND} . | \
-	    		cpio --quiet -pdm -L -R ${LIBOWN}:${LIBGRP}  \
+	    		${CPIO} --quiet -pdm -L -R ${LIBOWN}:${LIBGRP}  \
 			${PREFIX}/share/gnome/gdeskcal/skins/${d}
 .endfor
 

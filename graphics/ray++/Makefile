@@ -28,7 +28,7 @@ post-patch:
 do-install:
 	@(cd ${WRKSRC} ; \
 	  ${INSTALL_DATA} ray++.so ${PREFIX}/lib ; \
-	  ${FIND} * -name "*.h" | cpio -pdum ${PREFIX}/include/${PORTNAME} ; \
+	  ${FIND} * -name "*.h" | ${CPIO} -pdum ${PREFIX}/include/${PORTNAME}; \
 	  ${CHMOD} -R 755 ${PREFIX}/include/${PORTNAME} )
 
 .include <bsd.port.post.mk>

@@ -67,7 +67,7 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${FIND} * | cpio -dlmp ${DATADIR}
+	@cd ${WRKSRC} && ${FIND} * | ${CPIO} -dlmp ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 
 .include <bsd.port.post.mk>

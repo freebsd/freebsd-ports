@@ -48,11 +48,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pl ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/../prefabs && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/../pltestsuite && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

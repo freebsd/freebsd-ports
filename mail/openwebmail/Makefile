@@ -143,8 +143,10 @@ pre-install:
 
 do-install:
 	@${MKDIR} ${OWCGIDIR} ${OWDATADIR}
-	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . | cpio -dpum -R ${BINOWN}:mail ${OWCGIDIR}
-	@cd ${WRKSRC}/data/openwebmail && ${FIND} . | cpio -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
+	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . \
+		| ${CPIO} -dpum -R ${BINOWN}:mail ${OWCGIDIR}
+	@cd ${WRKSRC}/data/openwebmail && ${FIND} . \
+		| ${CPIO} -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
 .if !exists(${OWCGIDIR}/etc/openwebmail.conf)
 	@${CP} ${OWCGIDIR}/etc/openwebmail.conf-dist ${OWCGIDIR}/etc/openwebmail.conf
 .endif

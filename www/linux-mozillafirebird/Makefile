@@ -66,7 +66,7 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/${FIREBIRD_NAME}
 	${CHMOD} 755 ${PREFIX}/lib/${FIREBIRD_NAME}
 	cd ${WRKSRC} && ${FIND} * | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} \
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} \
 		${PREFIX}/lib/${FIREBIRD_NAME}
 	${LN} -sf ${PREFIX}/lib/${FIREBIRD_NAME}/MozillaFirebird \
 		${PREFIX}/bin/${FIREBIRD_NAME}

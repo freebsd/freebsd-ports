@@ -36,7 +36,7 @@ BIN_FILES=	bjcmd  bjfilter  bjprn  lgmon  printui  stsmon
 
 EXTRACT_CMD=	rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| cpio -id --quiet
+EXTRACT_AFTER_ARGS=	| ${CPIO} -id --quiet
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}${_SUF1}${_SUF2}
 DIST_SUBDIR=	bjfilter

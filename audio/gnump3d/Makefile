@@ -52,10 +52,10 @@ do-install:
 .endfor
 	${MKDIR} ${PERL_SITELIBDIR}
 	cd ${WRKSRC}/lib && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PERL_SITELIBDIR}
+		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PERL_SITELIBDIR}
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/templates && ${FIND} . | \
-		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 	${MKDIR} ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/mime.types ${CONFDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/gnump3d.conf \

@@ -36,7 +36,7 @@ CCC_ROOT=	${PREFIX}/${CCC_DIR}
 PLIST_SUB=	CCC_REV=${CCC_REV} CPML_REV=${CPML_REV} LIBOTS_REV=${LIBOTS_REV}
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|cpio -idum
+EXTRACT_AFTER_ARGS=	|${CPIO} -idum
 EXTRACT_ONLY=
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
@@ -56,7 +56,7 @@ do-install:
 		};\
 	fi
 .for F in ${DISTFILES}
-	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |cpio -idum -R root:wheel
+	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |${CPIO} -idum -R root:wheel
 .endfor
 .for F in ${CCC_ROOT}/alpha-linux/bin/lnxcc \
 	${CCC_ROOT}/alpha-linux/bin/lnxcc_driver
@@ -101,7 +101,7 @@ do-install:
 	${MKDIR} ${CCC_ROOT}/alpha-freebsd/lib
 	cd ${FILESDIR}/include ; \
 		${FIND} . -print0 \
-		| cpio -dump0 -R root:wheel ${CCC_ROOT}/alpha-freebsd/include
+		| ${CPIO} -dump0 -R root:wheel ${CCC_ROOT}/alpha-freebsd/include
 	cd ${CCC_ROOT}/alpha-freebsd/include ; ${LN} -sf machine/stdarg.h .
 
 post-install:

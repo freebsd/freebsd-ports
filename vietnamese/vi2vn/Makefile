@@ -22,7 +22,7 @@ BUILD_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 EXTRACT_CMD=		rpm2cpio.pl
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|cpio -idum
+EXTRACT_AFTER_ARGS=	|${CPIO} -idum
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 NO_BUILD=	yes

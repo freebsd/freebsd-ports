@@ -35,8 +35,6 @@ ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-${JDK_VERSION}_${JDK_REVISION}-oth-JPR&SiteId=JSC&TransactionId=noreg
 
-CPIO?=		/usr/bin/cpio
-
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)

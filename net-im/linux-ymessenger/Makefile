@@ -39,7 +39,7 @@ do-extract:
 	@for rpm in ${EXTRACT_ONLY}; do\
 	    (cd ${WRKDIR} &&\
 	    rpm2cpio ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE}/$$rpm |\
-	    cpio --quiet -id);\
+	    ${CPIO} --quiet -id);\
 	done
 
 post-patch:
