@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20001121
+PORTVERSION=	20001212
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.merit.edu/postfix/experimental/ \
-		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/ \
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
+		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
 		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
 		ftp://ftp.utoronto.ca/mirror/packages/postfix/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/ \
-		ftp://ftp.nl.uu.net/pub/unix/mail/postfix/experimental/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/mail/postfix/experimental/ \
-		ftp://ftp.mira.net/pub/unix/mail/postfix/experimental/ \
-		ftp://coda.nctu.edu.tw/network/mail/postfix/experimental/
+MASTER_SITE_SUBDIR= . old
 DISTNAME=	snapshot-${PORTVERSION}
 
 MAINTAINER=	dwcjr@inethouston.net
@@ -110,8 +107,8 @@ CONF2+=			sample-tls.cf
 BIN1+=			tlsmgr
 POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl
 POSTFIX_AUXLIBS+=	-lssl -lcrypto
-DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.24-snap20001121-0.9.6.tar.gz
-EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.24-snap20001121-0.9.6/pfixtls.diff
+DISTFILES+=		${DISTNAME}.tar.gz pfixtls-0.6.29-snap20001212-0.9.6.tar.gz
+EXTRA_PATCHES+=		${WRKDIR}/pfixtls-0.6.29-snap20001212-0.9.6/pfixtls.diff
 PATCH_STRIP=		-p1
 PLIST_SUB+=		WITH_TLS=""
 .else
