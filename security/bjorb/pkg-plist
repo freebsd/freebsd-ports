@@ -14,4 +14,4 @@ share/doc/bjorb/features.jp
 @dirrm share/doc/bjorb
 share/examples/bjorb/bjorb.conf.doc
 @dirrm share/examples/bjorb
-@exec ( [ -f %D/certs/bjorb.pem ] && exit ; echo "Making certificate files" ; cd %D/certs ; ssleay req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; ln -s bjorb.pem `ssleay x509 -noout -hash < bjorb.pem`.0 ; chmod 644 %D/certs/bjorb.pem )
+@exec ( [ -f %D/certs/bjorb.pem ] && exit ; echo "Making certificate files" ; cd %D/certs ; openssl req -new -x509 -nodes -days 365 -out bjorb.pem -keyout bjorb.pem; ln -s bjorb.pem `openssl x509 -noout -hash < bjorb.pem`.0 ; chmod 644 %D/certs/bjorb.pem )
