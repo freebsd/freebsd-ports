@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://absolutbsd.org/~petef/
 MASTER_SITE_SUBDIR=	petef
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	brandon@dvalentine.com
 COMMENT=	A wrapper allowing use of linux-flashplugin with native mozilla
 DEPRECATED=	"Please use www/linuxpluginwrapper.  This port should be obsoleted.  But, I know many people which cannot upgrade by any reason.  So I won't remove this."
 
