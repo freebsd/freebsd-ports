@@ -1,5 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/Image/Grab.pod
 lib/perl5/site_perl/%%PERL_VER%%/Image/Grab/RequestAgent.pm
 lib/perl5/site_perl/%%PERL_VER%%/Image/Grab.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Grab/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Image/Grab
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Image
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Image 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Grab
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
