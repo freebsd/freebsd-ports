@@ -1,0 +1,21 @@
+HPL is a software package that solves a (random) dense linear system in double
+precision (64 bits) arithmetic on distributed-memory computers. It can thus be
+regarded as aportable as well as freely available implementation of the High
+Performance Computing Linpack Benchmark.
+
+The algorithm used by HPL can be summarized by the following keywords:
+Two-dimensional block-cyclic data distribution - Right-looking variant of the
+LU factorization with row partial pivoting featuring multiple look-ahead
+depths - Recursive panel factorization with pivot search and column broadcast
+combined - Various virtual panel broadcast topologies - bandwidth reducing
+swap-broadcast algorithm - backward substitution with look-ahead of depth 1.
+
+The HPL package provides a testing and timing program to quantify the accuracy
+of the obtained solution as well as the time it took to compute it. The best
+performance achievable by this software on your system depends on a large
+variety of factors. Nonetheless, with some restrictive assumptions on the
+interconnection network, the algorithm described here and its attached
+implementation are scalable in the sense that their parallel efficiency is
+maintained constant with respect to the per processor memory usage.
+
+WWW: http://www.netlib.org/benchmark/hpl/
