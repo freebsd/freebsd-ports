@@ -52,6 +52,12 @@ PLIST_SUB=	WITH_MOTIF=""
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 .ifndef (WITH_MOTIF)
 pre-everything::
 	@${ECHO_CMD} ""
@@ -93,4 +99,4 @@ post-install:
 	@(${SED} -e 's|%%DATADIR%%|${DATADIR}|' \
 		<pkg-message >${PKGMESSAGE} && ${CAT} ${PKGMESSAGE})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
