@@ -1,0 +1,32 @@
+--- configure.orig	Sun May 30 23:55:02 2004
++++ configure	Sun May 30 23:57:33 2004
+@@ -5733,12 +5733,15 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ 
+-# Prevent multiple expansion
++# We have pkg-config in /usr/local, while gtk stuff is /usr/X11R6
++PKG_CONFIG=%%LOCALBASE%%/bin/pkg-config
+ 
++# Prevent multiple expansion
+ 
+ 
+ 
+@@ -5790,7 +5793,11 @@
+      echo "*** Or see http://www.freedesktop.org/software/pkgconfig to get pkg-config."
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+-     if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++     # This seems to just decide that 0.9.0 > 0.15.0 which is not helpful
++     #if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
++     VER=`$PKG_CONFIG --version | sed s/"\."//g`
++     MINVER=090
++     if [ $VER -ge $MINVER ]; then
+         echo $ac_n "checking for gtk+-2.0 >= 2.0.0""... $ac_c" 1>&6
+ echo "configure:5796: checking for gtk+-2.0 >= 2.0.0" >&5
+ 
