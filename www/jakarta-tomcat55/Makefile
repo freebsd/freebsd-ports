@@ -7,9 +7,10 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	5.0.12
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}-beta/bin/ \
-		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v{PORTVERSION}-beta/bin \
+		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v{PORTVERSION}-beta/bin/ \
 		http://distfiles.coredump.cn/
 
 MAINTAINER=	liukang@bjpu.edu.cn
@@ -22,7 +23,6 @@ MAJOR_VER=	${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/logs
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Jakarta Tomcat
 APP_SHORTNAME=	tomcat${MAJOR_VER:S/.//}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
@@ -49,7 +49,7 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-
+PLIST_SUB+=     T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
 .include <bsd.port.pre.mk>
 
 pre-patch:
