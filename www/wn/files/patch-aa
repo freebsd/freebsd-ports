@@ -54,23 +54,21 @@
      Pick one of the following Operating System types which describes
      your system and replace the SUN_OS4 value above
 ***************
-*** 30,38 ****
+*** 30,37 ****
    * Enter the complete path of your root data directory here.
    */
   
 ! #define WN_LOGFILE  "/usr/local/wnlogs/wn.log"
 ! #define WN_ERRLOGFILE  "/usr/local/wnlogs/wn.log.err"
-! #define AUTH_ERRLOGFILE  "/usrlocal/wnlogs/wn.log.err"
   
   /*
    * Full path of the file you want to use for a log file and the
---- 30,38 ----
+--- 30,37 ----
    * Enter the complete path of your root data directory here.
    */
   
 ! #define WN_LOGFILE	"/usr/local/wnlogs/wn.log"
 ! #define WN_ERRLOGFILE	"/usr/local/wnlogs/wn-err.log"
-! #define AUTH_ERRLOGFILE	"/usr/local/wnlogs/wn-err.log"
   
   /*
    * Full path of the file you want to use for a log file and the
