@@ -18,6 +18,8 @@ LIB_DEPENDS=	SDL.0:${PORTSDIR}/devel/sdl \
 
 MAKEFILE=	Makefile.FreeBSD
 
+BROKEN=		'Files in distribution are spammed with DOS-style CRLFs which prevents any patches from applying'
+
 pre-build:
 	@ ${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
 
