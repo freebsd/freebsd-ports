@@ -1,0 +1,159 @@
+diff -ur src/gkrellm-private.h src/gkrellm-private.h
+--- src/gkrellm-private.h	Tue Jan 20 08:46:29 2004
++++ src/gkrellm-private.h	Tue Apr 13 01:24:00 2004
+@@ -480,6 +484,8 @@
+ void	gkrellm_winop_place_gkrellm(gchar *);
+ void	gkrellm_winop_flush_motion_events(void);
+ gboolean gkrellm_winop_updated_background(void);
++void	gkrellm_winop_update_struts(void);
++void	gkrellm_winop_withdrawn(void);
+ gboolean gkrellm_winop_draw_rootpixmap_onto_transparent_panel(GkrellmPanel *);
+ gboolean gkrellm_winop_draw_rootpixmap_onto_transparent_chart(GkrellmChart *);
+ void	gkrellm_winop_apply_rootpixmap_transparency(void);
+diff -ur src/main.c src/main.c
+--- src/main.c	Sat Jan 17 07:51:37 2004
++++ src/main.c	Mon Apr 12 23:29:12 2004
+@@ -1664,6 +1664,9 @@
+ 	else if (_GK.debug_level & DEBUG_POSITION)
+ 			printf("locked configure-event: x=%d y=%d\n", x, y);
+ 
++	if (size_change || position_change)
++		gkrellm_winop_update_struts();
++
+ 	if (do_intro)
+ 		{
+ 		do_intro = FALSE;
+@@ -2216,6 +2219,7 @@
+ 		gtk_window_stick(GTK_WINDOW(top_window));
+ 	gkrellm_winop_options(argc, argv);
+ 	gtk_widget_show(gtree.window);
++	gkrellm_winop_withdrawn();
+ 
+ 	if (geometry || _GK.save_position)
+ 		configure_position_lock = TRUE;		/* see cb_configure_notify */
+diff -ur src/winops-x11.c src/winops-x11.c
+--- src/winops-x11.c	Wed Jan  7 12:04:24 2004
++++ src/winops-x11.c	Tue Apr 13 01:11:15 2004
+@@ -270,6 +270,76 @@
+ 	return TRUE;
+ 	}
+ 
++enum
++	{
++	STRUT_LEFT = 0,
++	STRUT_RIGHT = 1,
++	STRUT_TOP = 2,
++	STRUT_BOTTOM = 3,
++	STRUT_LEFT_START = 4,
++	STRUT_LEFT_END = 5,
++	STRUT_RIGHT_START = 6,
++	STRUT_RIGHT_END = 7,
++	STRUT_TOP_START = 8,
++	STRUT_TOP_END = 9,
++	STRUT_BOTTOM_START = 10,
++	STRUT_BOTTOM_END = 11
++	};
++
++static Atom net_wm_strut_partial = None;
++static Atom net_wm_strut = None;
++
++void
++gkrellm_winop_update_struts(void)
++	{
++	gulong	struts[12] = { 0, };
++	Display	*display;
++	Window	window;
++	gint	width; 
++	gint	height;
++
++	if (!_GK.is_dock_type)
++		return;
++
++	display = GDK_WINDOW_XDISPLAY(gkrellm_get_top_window()->window);
++	window  = GDK_WINDOW_XWINDOW(gkrellm_get_top_window()->window);
++
++	if (net_wm_strut_partial == None)
++		{
++		net_wm_strut_partial
++				= XInternAtom(display, "_NET_WM_STRUT_PARTIAL", False);
++		}
++	if (net_wm_strut == None)
++		{
++		net_wm_strut = XInternAtom(display, "_NET_WM_STRUT", False);
++		}
++
++	width = _GK.chart_width + _GK.frame_left_width + _GK.frame_right_width;
++	height = _GK.monitor_height +  _GK.total_frame_height;
++
++	if (_GK.x_position == 0)
++		{
++		struts[STRUT_LEFT] = width;
++		struts[STRUT_LEFT_START] = _GK.y_position;
++		struts[STRUT_LEFT_END] = _GK.y_position + height;
++		}
++	else if (_GK.x_position == _GK.w_display - width)
++		{
++		struts[STRUT_RIGHT] = width;
++		struts[STRUT_RIGHT_START] = _GK.y_position;
++		struts[STRUT_RIGHT_END] = _GK.y_position + height;
++		}
++
++	gdk_error_trap_push();
++	XChangeProperty (display, window, net_wm_strut,
++					XA_CARDINAL, 32, PropModeReplace,
++					(guchar *) &struts, 4);
++	XChangeProperty (display, window, net_wm_strut_partial,
++					XA_CARDINAL, 32, PropModeReplace,
++					(guchar *) &struts, 12);
++	gdk_error_trap_pop();
++	}
++
+ void
+ gkrellm_winop_options(gint argc, gchar **argv)
+ 	{
+@@ -332,22 +402,32 @@
+ 		XChangeProperty(display, window,
+ 					XInternAtom(display, "_NET_WM_STATE", False),
+ 					XA_ATOM, 32, PropModeReplace, (guchar *) atoms, n);
++	} 
++
++void
++gkrellm_winop_withdrawn(void)
++    {
++	Display		*display;
++	Window		window;
+ 
+-	if (_GK.withdrawn)
++
++	if (!_GK.withdrawn)
++		return;
++	display = GDK_WINDOW_XDISPLAY(gkrellm_get_top_window()->window);
++	window  = GDK_WINDOW_XWINDOW(gkrellm_get_top_window()->window);
++
++	if (!_GK.is_dock_type)
+ 		{
+-		if (!_GK.is_dock_type)
+-			{
+-			XWMHints mywmhints; 
+-			mywmhints.initial_state = WithdrawnState; 
+-			mywmhints.flags=StateHint;
+-
+-			XSetWMHints(display, window, &mywmhints); 
+-			}
+-		else
+-			gkrellm_message_dialog(NULL,
+-			_("Warning: -w flag is ignored when the window dock type is set"));
++		XWMHints mywmhints; 
++		mywmhints.initial_state = WithdrawnState; 
++		mywmhints.flags=StateHint;
++
++		XSetWMHints(display, window, &mywmhints); 
+ 		}
+-	} 
++	else
++		gkrellm_message_dialog(NULL,
++			_("Warning: -w flag is ignored when the window dock type is set"));
++	}
+ 
+   /* Use XParseGeometry, but width and height are ignored.
+   |  If GKrellM is moved, update _GK.y_position.
