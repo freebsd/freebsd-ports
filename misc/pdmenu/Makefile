@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.65
+PORTVERSION=	1.2.81
 CATEGORIES=	misc
-# http://kitenet.net is unreachable for a long time now, asked the
-# author and maintaier for a known replacement - edwin 20021227
-MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
+MASTER_SITES=	http://kitenet.net/programs/pdmenu/
 DISTNAME=	pdmenu_${PORTVERSION}
+#BROKEN=		"can't find required slang library or library is obsolete"
 
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A simple console menu program
@@ -24,10 +23,13 @@ WRKSRC=		${WRKDIR}/pdmenu
 MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
 
+CC+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
 CONFIGURE_ENV=	SLANG_LIB_LOC='${PREFIX}/lib' \
 		SLANG_H_LOC='${PREFIX}/include/slang.h'
 
 pre-install:
 	${MKDIR} ${PREFIX}/lib/pdmenu
+	${MKDIR} ${PREFIX}/share/pdmenu
 
 .include <bsd.port.mk>
