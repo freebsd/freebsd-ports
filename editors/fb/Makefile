@@ -18,8 +18,7 @@ NO_WRKSUBDIR=	Yes
 
 MAN1=		fb.1
 MANCOMPRESSED=	maybe
-
-do-configure:
-	${SED} 's|UL|${PREFIX}|' < ${FILESDIR}/Makefile.in > ${WRKSRC}/Makefile
+MAKEFILE=	${FILESDIR}/Makefile.in
+MAKE_ARGS+=	PREFIX="${PREFIX}"
 
 .include <bsd.port.mk>
