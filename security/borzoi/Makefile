@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	borzoi
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	security
 MASTER_SITES=	http://dragongate-technologies.com/borzoi/
 DISTNAME=	borZoi-${PORTVERSION}
@@ -19,8 +19,5 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
