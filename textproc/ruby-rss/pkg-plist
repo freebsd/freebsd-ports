@@ -1,0 +1,13 @@
+sbin/rssdrb
+sbin/rssdrb.rb
+%%RUBY_SITELIBDIR%%/rss.rb
+%%RUBY_SITELIBDIR%%/rsscache.rb
+%%RUBY_SITELIBDIR%%/rssdrb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/create.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/fromfile.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/raa-rss-1.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rss/rsstest.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rss
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rss/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rss/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rss
