@@ -22,6 +22,8 @@ USE_REINPLACE=	yes
 USE_GNOME=	glib12
 
 BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-19
 
 .include <bsd.port.pre.mk>
 
