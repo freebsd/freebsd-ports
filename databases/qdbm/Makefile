@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.16
+PORTVERSION=	1.8.18
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		http://qdbm.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-zlib
+USE_ICONV=	yes
+CONFIGURE_ARGS=	--enable-zlib \
+		--enable-iconv
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LDFLAGS="${PTHREAD_LIBS}"
 MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
 		MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}"
 INSTALLS_SHLIB=	yes
@@ -28,9 +32,14 @@ MAN3=		cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=		curia.3 cropen.3 depot.3 dpopen.3 \
 		odeum.3 odopen.3 villa.3 vlopen.3 villa.3 vista.3
 
-OPTIONS=	PTHREAD "Enable pthread support !! USE IT WITH CARE !!" off
+OPTIONS=	PTHREAD "Enable pthread support !! USE IT WITH CARE !!" Off \
+		DEBUG "Enable debug" Off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
 
 .if defined(WITH_PTHREAD)
 USE_REINPLACE=	yes
@@ -43,7 +52,6 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/lab; ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" fmtcnv031127
-	cd ${WRKSRC}; ${SETENV} QDBMDBGFD=1 ${MAKE} check
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin
