@@ -41,6 +41,10 @@ MAN3=			beast-gxk.3 bse-procs.3 bse-structs.3 bse.3 sfi.3
 IGNORE=	does not compile on FreeBSD 4.x, missing library function isfinite
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(bseladspapath=)\$${libdir}/ladspa|\1"${LOCALBASE}/lib/ladspa"|' \
