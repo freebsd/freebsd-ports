@@ -29,7 +29,7 @@ do-install:
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmpop3"
 	@${ECHO} "===>   Please read it for usage instructions"
 	@${MKDIR} ${PREFIX}/share/doc/wmpop3
-	${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
+	@${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
 .endif
 
 .include <bsd.port.mk>
