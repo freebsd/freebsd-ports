@@ -4,13 +4,14 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1995/05/15 20:45:14 ache Exp $
+# $Id: Makefile,v 1.1 1995/07/07 23:50:10 ache Exp $
 #
 
 CATEGORIES+=	utilities
 MAINTAINER=	ache@FreeBSD.ORG
 WRKSRC=         ${WRKDIR}/src
 MAKEFILE=       makefile
+NO_PACKAGE=     YES
 ALL_TARGET=     freebsd
 PGPLIB=         ${PREFIX}/lib/pgp
 # Need to define USA_RESIDENT to YES or NO
