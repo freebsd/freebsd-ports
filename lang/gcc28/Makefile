@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.6 1998/03/10 06:23:31 obrien Exp $
+# $Id: Makefile,v 1.7 1998/03/11 11:49:09 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -24,7 +24,7 @@ ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
 
 pre-fetch:
-	@${ECHO} "GCC 2.8 for ${OSNAME} ${GNUOSREL}"
+	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OSNAME} ${GNUOSREL}"
 
 post-patch:
 	@(cd ${WRKSRC}/config/i386/ ; \
