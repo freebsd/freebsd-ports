@@ -1,0 +1,12 @@
+xfce4-windowlist-plugin is a windowlist plugin for the xfce4-panel. 
+
+The menubutton shows the icon of the active window.
+
+Leftclick on the menubutton pops up a configurable window
+list (windows on the current workspace or all windows).
+Leftclick on the window list activates the selected window,
+rightclick pops up a window action menu.
+
+Author: Andre Lerche <a.lerche@gmx.net>
+
+WWW: http://xfce-goodies.berlios.de/
