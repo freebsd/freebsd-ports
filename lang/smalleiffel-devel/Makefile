@@ -8,7 +8,8 @@
 PORTNAME=	smalleiffel
 PORTVERSION=	0.76.b4
 CATEGORIES=	lang
-MASTER_SITES=	http://people.FreeBSD.org/~sada/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	berend@pobox.com
 
