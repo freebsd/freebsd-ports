@@ -1,0 +1,22 @@
+--- cmp3main.c.orig	Fri Mar 17 08:40:00 2000
++++ cmp3main.c	Fri Jan 12 02:16:41 2001
+@@ -33,13 +33,18 @@
+     int         lastleftline = 0;
+     int         lastrightline = 0;
+     char       *init_dir = NULL;
++    char       *home_dir = NULL;
++    char       cmp3_config[4096];
+ 
+     if (argc > 1)
+         docmdline(argc, argv);
+     shm_init();
+ 
+     cmp3rc = ini_create();
+-    if (ini_load(cmp3rc, CMP3_CONFIG) == INI_FAIL)
++    home_dir = getenv("HOME");
++    strcpy (cmp3_config, home_dir);
++    strcat (cmp3_config, "/.cmp3rc");
++    if (ini_load(cmp3rc, cmp3_config) == INI_FAIL)
+     {
+         ini_destroy(cmp3rc);
+         cmp3rc = NULL;
