@@ -6602,6 +6602,7 @@ p5-Math-Round		ports/math/p5-Math-Round
 p5-Math-SimpleVariable	ports/math/p5-Math-SimpleVariable
 p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
 p5-MatrixReal	ports/math/p5-MatrixReal
+p5-Maypole	ports/www/p5-Maypole
 p5-Memoize	ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU	ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata	ports/databases/p5-Metadata
