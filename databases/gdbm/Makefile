@@ -15,6 +15,9 @@ MAINTAINER=	clefevre@citeweb.net
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
+# PREFIX isn't honored. force it w/ prefix.
+MAKE_ARGS=	prefix=${PREFIX}
 
 MAN3=		gdbm.3
 
