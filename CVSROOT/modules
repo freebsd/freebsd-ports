@@ -6423,6 +6423,7 @@ qlogtools	ports/sysutils/qlogtools
 qlwm		ports/x11-wm/qlwm
 qmHandle	ports/mail/qmHandle
 qmail		ports/mail/qmail
+qmail-autoresponder	ports/mail/qmail-autoresponder
 qmail-conf	ports/mail/qmail-conf
 qmail-contrib	ports/mail/qmail-contrib
 qmail-ldap	ports/mail/qmail-ldap
