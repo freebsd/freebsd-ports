@@ -1,0 +1,13 @@
+            __                _       __
+ _ __   ___| /_ ___  ___ _ __(_)_ __ | /_  (portable/multi-platform) lightwei-
+| '_ \./ _ \ __/ __)/ __| '__| | '_ \| __) ght tcp socket scripting.  intende-
+| | | |  ._/ |_(__ \ (__| |  | | |_) ) |_  d for (non-)experienced persons to
+|_| |_|\___|\__|___/\___|_|  |_| .__/ \__) be able to use to automate situati-
+[TCP socket scripting program] |_| [1.6.0] ons, built on a word-to-word rules-
+                                           et response system.  includes wild-
+card support, character replacement, random replacement, argument inclusion,
+server timeout, initial send, display altering, multiple character dump forma-
+ts, telnet protocol support, logging, program to socket dumping, executable
+ruleset support, reverse binding, and module support among other things.
+
+WWW: http://netscript.sourceforge.net/
