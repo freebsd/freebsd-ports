@@ -14,9 +14,15 @@ MASTER_SITES=	http://ta.twi.tudelft.nl/ftp/dv/lemmens/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DXF to FIG converter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/dxf2fig
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|g ; \
+		 s|-O -s||g ; \
+		 s|-I|#-I|g ; \
+		 s|-L|#-L|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
