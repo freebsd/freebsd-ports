@@ -22,8 +22,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gtk12
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
@@ -34,9 +34,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 BUILD_CANVAS?=	no
-
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/aclocal|(prefix)/share/aclocal|g'
 
 .include <bsd.port.mk>

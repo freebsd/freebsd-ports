@@ -20,7 +20,8 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure popt/configure libIDL/configure
