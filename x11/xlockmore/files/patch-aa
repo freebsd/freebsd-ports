@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Nov 14 19:52:37 1996
-+++ Imakefile	Sat Nov 30 12:34:41 1996
+--- Imakefile.orig	Wed Dec 11 18:36:32 1996
++++ Imakefile	Wed Jan  8 20:07:52 1997
 @@ -17,13 +17,13 @@
  
  XCOMM If you get an error "Cannot find xpm.h" while compiling, set
@@ -16,25 +16,7 @@
  
  #endif
  
-@@ -35,7 +35,7 @@
- XCOMM You must copy it out of the hackers directory.
- XCOMM It is there because it is experimental. 
- XCOMM If your system has libXm, remove the 'XCOMM ' from the next line.
--#define XmLibrary
-+XCOMM #define XmLibrary
-  
- #ifdef XmLibrary
- XCOMM If its not with your X11 stuff you should set the following
-@@ -148,7 +148,7 @@
- 
- XCOMM Uncomment to use hackers modes.  It may make xlock unstable.
- XCOMM Please do not uncomment for precompiled distributions.
--#define Hackers
-+XCOMM #define Hackers
- 
- #ifdef Hackers
- XCOMM If you only want some of these you must remove the ones you do
-@@ -322,9 +322,9 @@
+@@ -329,9 +329,9 @@
  XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
@@ -46,7 +28,7 @@
  XCOMM        OPTDEF += -DMULTIPLE_ROOT
  XCOMM        OPTDEF += -DOLD_EVENT_LOOP
  XCOMM        0PTDEF += -DUSE_XLOCKRC
-@@ -350,8 +350,8 @@
+@@ -357,8 +357,8 @@
      IMAGEBITMAP = $(MEDIUMBITMAP)
  XCOMM    IMAGEBITMAP = l-bob
  XCOMM    IMAGEBITMAP = m-xlock
