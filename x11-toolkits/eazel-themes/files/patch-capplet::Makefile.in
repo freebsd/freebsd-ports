@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- capplet/Makefile.in	2001/02/07 13:12:52	1.1
++++ capplet/Makefile.in	2001/02/07 13:13:04
+@@ -91,7 +91,7 @@
+ 
+ EXTRA_DIST = eazel-engine-properties.desktop
+ 
+-sysdir = $(datadir)/control-center/Desktop
++sysdir = $(datadir)/gnome/control-center/Desktop
+ sys_DATA = eazel-engine-properties.desktop
+ 
+ menudir = $(datadir)/gnome/apps/Settings/Desktop/
