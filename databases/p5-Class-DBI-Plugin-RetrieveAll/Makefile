@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Class-DBI-Plugin-RetrieveAll
-PORTVERSION=	1
+PORTVERSION=	1.01
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -28,9 +28,6 @@ post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
 		    -e '$$_="" if /use warnings/;' \
 		${WRKSRC}/lib/Class/DBI/Plugin/RetrieveAll.pm
-
-post-configure:
-	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>
