@@ -1,0 +1,93 @@
+--- Makefile.tmpl.orig	Sun Apr 11 10:49:30 1999
++++ Makefile.tmpl	Sun Apr 11 10:54:15 1999
+@@ -113,13 +113,14 @@
+ sysconfdir      = @sysconfdir@
+ datadir         = @datadir@
+ iconsdir        = $(datadir)/icons
+-htdocsdir       = $(datadir)/htdocs
++htdocsdir       = $(datadir)/data
+ cgidir          = $(datadir)/cgi-bin
+ includedir      = @includedir@
+ localstatedir   = @localstatedir@
+ runtimedir      = @runtimedir@
+ logfiledir      = @logfiledir@
+ proxycachedir   = @proxycachedir@
++doc_prefix      = $(prefix)/share/doc/apache
+ 
+ libexecdir_relative   = @libexecdir_relative@
+ 
+@@ -250,9 +251,9 @@
+ 	$(MKDIR) $(root)$(mandir)/man8
+ 	$(MKDIR) $(root)$(sysconfdir)
+ 	$(MKDIR) $(root)$(sysconfdir)/tables
+-	$(MKDIR) $(root)$(htdocsdir)
++	$(MKDIR) $(root)$(doc_prefix)
+ 	$(MKDIR) $(root)$(iconsdir)
+-	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir).default
+ 	$(MKDIR) $(root)$(includedir)
+ 	$(MKDIR) $(root)$(runtimedir)
+ 	$(MKDIR) $(root)$(logfiledir)
+@@ -380,26 +381,34 @@
+ #   icons and distributed CGI scripts.
+ install-data:
+ 	@echo "===> [data: Installing initial data files]"
+-	-@if [ -f $(root)$(htdocsdir)/index.html ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
+-	else \
+-		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
++#       -@if [ -f $(root)$(htdocsdir)/index.html ]; then \
++#               echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
++#       else \
++		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(doc_prefix)/"; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - *) |\
+-		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
+-		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -exec chmod a+r {} \; ; \
++		(cd $(root)$(doc_prefix)/ && $(TAR) -xf -); \
++		find $(root)$(doc_prefix)/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(doc_prefix)/ -type f -exec chmod a+r {} \; ; \
++#       fi
++	if [ ! -d $(root)$(htdocsdir) ]; then \
++	       $(LN) -sf $(root)$(doc_prefix) $(root)$(htdocsdir); \
+ 	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
++	$(RM) $(root)$(htdocsdir).default
++	$(LN) -s $(root)$(doc_prefix) $(root)$(htdocsdir).default
++#       -@if [ -f $(root)$(cgidir)/printenv ]; then \
++#               echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(cgidir)/]"; \
++#       else \
+ 		for script in printenv test-cgi; do \
+ 			cat $(TOP)/cgi-bin/$${script} |\
+ 			sed -e 's;^#!/.*perl;#!$(PERL);' \
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp; \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir).default/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir).default/$${script}; \
+ 		done; \
+-	fi
++#       fi
++	if [ ! -d $(root)$(cgidir) ]; then \
++		$(LN) -sf $(root)$(cgidir).default $(root)$(cgidir); \
++  	fi
+ 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
+ 	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
+ 	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
+@@ -439,10 +448,10 @@
+ 			-e 's;logs/accept.lock;$(runtimedir)/$(TARGET).lock;' \
+ 			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
+ 			-e 's;logs/httpd.pid;$(runtimedir)/$(TARGET).pid;' \
+-			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}access_log;" \
+-			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}error_log;" \
+-			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}referer_log;" \
+-			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}agent_log;" \
++			-e "s;logs/access_log;$(logfiledir)/httpd-access.log;" \
++			-e "s;logs/error_log;$(logfiledir)/httpd-error.log;" \
++			-e "s;logs/referer_log;$(logfiledir)/httpd-referer.log;" \
++			-e "s;logs/agent_log;$(logfiledir)/httpd-agent.log;" \
+ 			-e 's;conf/tables/;$(sysconfdir)/tables/;' \
+ 			-e 's;conf/magic;$(sysconfdir)/magic;' \
+ 			-e 's;conf/mime.types;$(sysconfdir)/mime.types;' \
