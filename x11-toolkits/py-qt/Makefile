@@ -4,33 +4,41 @@
 #
 # $FreeBSD$
 
-PORTNAME=	py-qt
-PORTVERSION=	2.5
+PORTNAME=	qt
+PORTVERSION=	3.4
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	ftp://ftp.rygannon.com/pub/PyQt/
-DISTNAME=	PyQt-${PORTVERSION}
+MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	adsharma@sharmas.dhs.org
+MAINTAINER=	nbm@FreeBSD.org
 
-LIB_DEPENDS=	sip.6:${PORTSDIR}/devel/sip
+LIB_DEPENDS=	sip.9:${PORTSDIR}/devel/sip
 
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
-USE_GMAKE=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --disable-static
-CONFIGURE_ENV=	LDFLAGS=-lgcc \
-		SIP_MOC="${X11BASE}/bin/moc2"
+USE_REINPLACE=	yes
 
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | \
-		xargs ${PERL} -pi -e 's|-lqt[^2]|-lqt2 |g'
+ALL_TARGET=	all install install-eric
 
-post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+NO_FILTER_SHLIBS=	yes
+
+do-configure:
+	@${MKDIR} ${WRKDIR}/binaries
+	@${MKDIR} ${WRKDIR}/modules
+	@(cd ${WRKSRC} && ${PYTHON_CMD} build.py -c -e ${LOCALBASE}/include/sip \
+		-s ${LOCALBASE}/lib -q ${X11BASE} -b ${WRKDIR}/binaries \
+		-d ${WRKDIR}/modules )
+
+pre-build:
+	@${REINPLACE_CMD} -e 's#LIBS *= $$(SUBLIBS)#LIBS = $$(SUBLIBS) -L${WRKDIR}/modules -Wl,-rpath,${PYTHONPREFIX_SITELIBDIR}#' ${WRKSRC}/*/Makefile
+
+do-install:
+	@${CP} ${WRKDIR}/binaries/* ${PREFIX}/bin/
+	@( cd ${WRKDIR}/modules/ && ${TAR} -cf - . ) | \
+		( cd ${PYTHONPREFIX_SITELIBDIR} && ${TAR} xf - )
 
 post-install:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHON_SITELIBDIR}/eric
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PYTHONPREFIX_SITELIBDIR}/eric
 
 .include <bsd.port.mk>
