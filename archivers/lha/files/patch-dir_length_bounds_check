@@ -4,14 +4,14 @@
  	}
  
  	if (dir_length) {
-+		if ((dir_length + name_length) > sizeof(dirname)) {
++		if ((dir_length + name_length) >= sizeof(dirname)) {
 +			fprintf(stderr, "Insufficient buffer size\n");
 +			exit(112);
 +		}
  		strcat(dirname, hdr->name);
 -		strcpy(hdr->name, dirname);
 +
-+		if ((dir_length + name_length) > sizeof(hdr->name)) {
++		if ((dir_length + name_length) >= sizeof(hdr->name)) {
 +			fprintf(stderr, "Insufficient buffer size\n");
 +			exit(112);
 +		}
