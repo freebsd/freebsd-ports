@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yotta@dougdidit.com
 COMMENT=	A free Prolog compiler developed by Daniel Diaz
 
+BROKEN=		"Does not build"
+
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--disable-linedit
