@@ -21,8 +21,8 @@ OBJS = $(SRCS:.c=.o)
 YAMSDIR = $(LIBDIR)/yamsweeper
 LOGFILE = $(YAMSDIR)/yams.log
 SCRFILE = $(YAMSDIR)/yams.hi
-OWNER   = games
-GROUP = bin
+OWNER   = root
+GROUP = games
 
 DEFINES = '-DLOGFILE="$(LOGFILE)"' -DLOG_USER=cppLogUser \ @@\
 	-DHAS_RANDOM=1 -DNO_FD_SET=0 \ @@\
@@ -47,7 +47,7 @@ InstallManPage(yamsweeper,$(MANDIR))
 
 install::
 	chown $(OWNER).$(GROUP) $(BINDIR)/yamsweeper
-	chmod 4755 $(BINDIR)/yamsweeper
+	chmod 2755 $(BINDIR)/yamsweeper
 
 
 #if cppLogUser
@@ -56,7 +56,7 @@ install::
 	chown $(OWNER).$(GROUP) $(YAMSDIR)
 	touch $(LOGFILE)
 	chown $(OWNER).$(GROUP) $(LOGFILE)
-	chmod 644 $(LOGFILE)
+	chmod 664 $(LOGFILE)
 #endif	/* cppLogUser */
 
 #if cppHighScore
@@ -65,7 +65,7 @@ install::
 	chown $(OWNER).$(GROUP) $(YAMSDIR)
 	touch $(SCRFILE)
 	chown $(OWNER).$(GROUP) $(SCRFILE)
-	chmod 644 $(SCRFILE)
+	chmod 664 $(SCRFILE)
 #endif
 
 #else	/* cppLogUser || cppHighScore */
