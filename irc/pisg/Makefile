@@ -23,7 +23,7 @@ OPTIONS=	LOGCHARSET "Character set for logfiles" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LOGCHARSET)
-RUN_DEPENDS+=	${SITE_PERL}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
 .endif
 
 do-build:
