@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.53.4
+PORTVERSION=	0.53.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
