@@ -1,6 +1,6 @@
 TransFig is a set of tools for creating TeX documents with graphics
 which are portable, in the sense that they can be printed in a wide
-variety of environments.  This is version 3.0.
+variety of environments.  This is version 3.1.
 
 Drivers currently exist for the following graphics langauges: (E)EPIC
 macros, LaTeX picture environment, PIC, PiCTeX, PostScript, and
