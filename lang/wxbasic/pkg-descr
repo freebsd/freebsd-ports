@@ -1,0 +1,12 @@
+wxBasic is an Basic interpreter that is:
+   - Free 
+   - Open Source (LGPL) 
+   - Cross-platform (currently Windows and Linux) 
+
+wxBasic can create stand-alone executables by binding together source code
+with the interpreter.
+
+wxBasic is written primarily in C, with some C++ linking it to the wxWindows
+library. wxWindows supplies the cross-platform features.
+
+WWW: http://wxbasic.sourceforge.net/
