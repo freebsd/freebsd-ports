@@ -10,7 +10,7 @@ PORTVERSION=	0.19.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	rooneg@electricjellyfish.net
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
