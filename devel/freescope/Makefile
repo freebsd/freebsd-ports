@@ -7,18 +7,23 @@
 #
 
 PORTNAME=	freescope
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.src
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 MAN1=	freescope.1
+
+pre-patch:
+	@${PERL} -pi -e 's|CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
+		 s|CXXFLAGS=.*$$|CXXFLAGS="\$$CXXFLAGS"|g ; \
+		 s|bindir="/usr/local/bin"||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
