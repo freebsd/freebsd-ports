@@ -64,7 +64,6 @@ dnews3			ports/news/dnews	Only free for schools and
 						free trial for everybody.
 						We currently ask for permission
 						to put a package on the CD-ROM.
-elsa*			ports/net/elsa		Crypto; export-controlled
 fmsx-*			ports/emulators/fmsx	Unclear legal status of
 						distributed ROMs.
 fwtk-*			ports/security/fwtk	No redistribution allowed
@@ -145,6 +144,8 @@ stonx-*			ports/emulators/stonx	Contains ROM (C) by Atari
 su2-1.3.tar.gz		ports/sysutils/su2	Don't sell for profit.
 swing11.tar.Z		ports/devel/jfc		Don't distribute without
 						value-added application.
+tcserver*		ports/net/tcserver	Crypto; export-controlled.
+						Non-commercial use only.
 timidity-*		ports/audio/timidity	Uses copyrighted patches.
 tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.{0,1b?}		ports/misc/tkman	Don't sell for profit.
