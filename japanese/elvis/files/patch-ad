@@ -1,0 +1,28 @@
+--- prsvunix.c.org	Mon Oct 21 21:15:25 1996
++++ prsvunix.c	Mon Oct 21 21:17:15 1996
+@@ -105,6 +105,17 @@
+ 	fprintf(m, "was preserved when %s.\n", when);
+ 	fprintf(m, "To recover this file, do the following:\n");
+ 	fprintf(m, "\n");
++
++#ifdef __FreeBSD__
++	if (tmp)
++	{
++		fprintf(m, "     elvprsv %s/%s\n", file, tmp);
++	}
++	else
++	{
++		fprintf(m, "     elvrec %s/%s\n", file, base);
++	}
++#else
+ #if OSK
+ 	fprintf(m, "     chd %s\n", file);
+ #else /* ANY_UNIX */
+@@ -118,6 +129,7 @@
+ 	{
+ 		fprintf(m, "     elvrec %s\n", base);
+ 	}
++#endif
+ 	fprintf(m, "\n");
+ 	fprintf(m, "With fond wishes for a speedy recovery,\n");
+ 	fprintf(m, "                                    Elvis\n");
