@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.bytesex.org/misc/
+MASTER_SITES=	http://bytesex.org/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
