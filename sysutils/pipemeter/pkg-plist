@@ -1,5 +1,0 @@
-@comment $FreeBSD$
-bin/pipemeter
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
