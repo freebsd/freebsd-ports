@@ -8,10 +8,10 @@
 PORTNAME=	QDraw
 PORTVERSION=	0.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://qdn.qubesoft.com/QDraw/download/
+MASTER_SITES=	http://www.qubesoft.com/QDraw/download/
 DISTNAME=	${PKGNAME}
 
-MAINTAINER=	n_hibma@FreeBSD.org
+MAINTAINER=	dfr@qubesoft.com
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		GL:${PORTSDIR}/graphics/Mesa3
