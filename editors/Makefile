@@ -99,6 +99,7 @@
     SUBDIR += lpe
     SUBDIR += manedit
     SUBDIR += mg
+    SUBDIR += mined
     SUBDIR += mlview
     SUBDIR += mode-info
     SUBDIR += mp

@@ -1,0 +1,7 @@
+bin/mined
+%%PORTDOCS%%%%DOCSDIR%%/help/mined.hlp
+%%PORTDOCS%%%%EXAMPLESDIR%%/configure-xterm
+%%PORTDOCS%%%%EXAMPLESDIR%%/mterm
+%%PORTDOCS%%%%EXAMPLESDIR%%/uterm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/help
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
