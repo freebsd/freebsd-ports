@@ -3,13 +3,14 @@
 # Date created:         20 June 1996
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/10 22:33:13 asami Exp $
 #
 
 DISTNAME=       finger-1.37
 PKGNAME=        gnu-finger-1.37
 CATEGORIES=     net
-MASTER_SITES=   ftp://ftp.cc.keio.ac.jp/pub/mirror/GNU/
+MASTER_SITES=   ftp://gatekeeper.dec.com/pub/GNU/ \
+		ftp://ftp.cc.keio.ac.jp/pub/mirror/GNU/
 
 MAINTAINE=      sanpei@yy.cs.keio.ac.jp
 
