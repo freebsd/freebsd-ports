@@ -1,0 +1,69 @@
+--- install.sh.orig	Thu Jan 18 20:45:40 1996
++++ install.sh	Sat Jan 27 02:07:26 1996
+@@ -48,7 +48,7 @@
+ 	cp minicom $2/minicom
+ 	chmod 755 $2/minicom
+ 	chown root $2/minicom
+-	chgrp root $2/minicom
++	chgrp bin $2/minicom
+ fi
+ 
+ for i in runscript xminicom
+@@ -59,7 +59,7 @@
+ 	cp $i $2/$i
+ 	chmod 755 $2/$i
+ 	chown root $2/$i
+-	chgrp root $2/$i
++	chgrp bin $2/$i
+   fi
+ done
+ 
+@@ -69,7 +69,7 @@
+ 	cp keyserv $1/keyserv
+ 	chmod 755 $1/keyserv
+ 	chown root $1/keyserv
+-	chgrp root $1/keyserv
++	chgrp bin $1/keyserv
+ fi
+ 
+ echo "Installing manpages in $3"
+@@ -78,7 +78,7 @@
+ 	cp ../man/$i $3
+ 	chmod 644 $3/$i
+ 	chown root $3/$i
+-	chgrp root $3/$i
++	chgrp bin $3/$i
+ done
+ 
+ if [ ! -f $1/minicom.users ]
+@@ -86,7 +86,7 @@
+ 	echo "Installing sample config file minicom.users in $1"
+ 	cp minicom.users $1
+ 	chown root $1/minicom.users
+-	chgrp root $1/minicom.users
++	chgrp bin $1/minicom.users
+ 	chmod 644 $1/minicom.users
+ fi
+ 
+@@ -98,15 +98,18 @@
+ 		cp ../demos/$i $4/$i
+ 		chmod 644 $4/$i
+ 		chown root $4/$i
+-		chgrp root $4/$i
++		chgrp bin $4/$i
+ 	done
+ else
+ 	echo "You don't have a $4 directory - script examples not installed."
+ fi
+ 	
+-echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
++#echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
+ echo
+-echo "chmod +s $2/minicom"
++#echo "chmod +s $2/minicom"
++echo "chmod 4511 $2/minicom"
+ echo
++
++	chmod 4511 $2/minicom
+ 
+ exit 0

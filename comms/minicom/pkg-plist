@@ -1,0 +1,10 @@
+bin/minicom
+bin/xminicom
+bin/runscript
+etc/minicom/minicom.users
+etc/minicom/htsalogin
+etc/minicom/saralogin
+etc/minicom/scriptdemo
+etc/minicom/unixlogin     
+man/man1/minicom.1.gz
+man/man1/runscript.1.gz
