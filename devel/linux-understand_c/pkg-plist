@@ -435,5 +435,5 @@ usr/lib/libudb_api.a
 usr/lib/libudb_api.so
 @exec %%LINUXBASE%%/sbin/ldconfig
 @unexec %%LINUXBASE%%/sbin/ldconfig
-@exec %%ECHO%% "If you are installing Understand_c for the first time, you should place your license file at ``%D/share/understand_c/license''. Do backup your license file to prevent accidents." | %%FMT%%
-@unexec %%ECHO%% "If you are permanently removing Understand_c, you should also ``rm -Rf %D/share/understand_c/license''. This dir holds your license files if you installed any." | %%FMT%%
+@exec %%ECHO%% "If you are installing Understand_c for the first time, you should place your license file at \`\`%D/share/understand_c/license''. Do backup your license file to prevent accidents." | %%FMT%%
+@unexec %%ECHO%% "If you are permanently removing Understand_c, you should also \`\`rm -Rf %D/share/understand_c/license''. This dir holds your license files if you installed any." | %%FMT%%
