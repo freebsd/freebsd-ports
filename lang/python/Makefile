@@ -146,7 +146,7 @@ post-build:
 	${LN} -f lib${PYTHON_VERSION}.so lib${PYTHON_VERSION}.so.1; \
 	${LN} -f python ${PYTHON_VERSION:S/thon/thon-shared/}
 
-pre-install:
+pre-su-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen

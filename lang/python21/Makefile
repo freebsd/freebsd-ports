@@ -72,7 +72,7 @@ post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
 		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.1
 
-pre-install:
+pre-su-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in FCNTL.py IN.py regen

@@ -88,7 +88,7 @@ post-patch:
 		's,/usr/doc/python-docs-,${PREFIX}/share/doc/python,g' \
 		${WRKSRC}/Lib/pydoc.py
 
-pre-install:
+pre-su-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen
