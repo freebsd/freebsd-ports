@@ -8,8 +8,9 @@
 PORTNAME=	firefox
 PORTVERSION=	20040513
 CATEGORIES=	www
-MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}/
+MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	klammer@webonaut.com
