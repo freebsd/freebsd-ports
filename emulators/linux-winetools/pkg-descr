@@ -1,0 +1,18 @@
+WineTools is a collection of tools for WINE. You can do the following
+things with it:
+
+- Install an application: You can choose a setup program which will
+be run with Wine. There is also an option to install DCOM95, this
+is needed to make some Installshield installers (as used by
+Dreamweaver, Flash, etc) work.
+
+- Uninstall an application: Every application that creates a registry
+entry and has an uninstall function can be uninstalled (does not
+work for uninstallers which use rundll32.exe).
+
+- Create a Windows directory structure with registry and configuration
+file in $HOME/.wine
+
+- Create and edit a WINE config file.
+
+WWW: http://www.franksworld.net/wine/winetools/
