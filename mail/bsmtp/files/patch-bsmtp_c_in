@@ -1,14 +1,10 @@
---- bsmtp.c.in.orig	Sun May 16 11:24:08 1999
-+++ bsmtp.c.in	Thu Oct  5 21:41:25 2000
-@@ -167,7 +167,10 @@
-     }
- #endif
-     fseek (file, 0, SEEK_END);
--    fprintf (file, "MAIL FROM:<%s>\n", from);
-+    if (*from == '<')
-+      fprintf (file, "MAIL FROM:%s\n", from);
-+    else
-+      fprintf (file, "MAIL FROM:<%s>\n", from);
-     while (argc) {
-       fprintf (file, "RCPT TO:<%s>\n", argv[0]);
-       argv++; argc--;
+--- bsmtp.c.in.orig	Wed Feb  7 20:36:42 2001
++++ bsmtp.c.in	Wed Feb  7 20:36:58 2001
+@@ -36,6 +36,7 @@
+ #include <grp.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ /* From .../sendmail/src/sysexits.h */

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/_bqueue
 bin/bqueue
 bin/bsmtp

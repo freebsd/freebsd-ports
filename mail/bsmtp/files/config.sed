@@ -1,3 +1,4 @@
+# $FreeBSD$
 s,@CC@,%%CC%%,
 s,@INSTALL@,/usr/bin/install,
 s,@SH@,/bin/sh,
@@ -10,6 +11,8 @@ s,@CFLAGS@,%%CFLAGS%%,
 s,@PRIVBINDIR@,%%PREFIX%%/libexec,
 s,@PUBBINDIR@,%%PREFIX%%/bin,
 s,@MAILERDIR@,%%PREFIX%%/share/sendmail,
+s,@BINUSR@,root,
+s,@BINGRP@,wheel,
 s,@QUEUEDIR@,/var/spool/bsmtp,
 s,@DAEMONUSER@,uucp,
 s,@DAEMONGID@,66,
