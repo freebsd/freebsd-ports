@@ -156,31 +156,41 @@ if ($opt_listonly) {
 	ROUND: while($again eq "y") {
 		# Get list of leaf packages and put them into a hash
 		my %leaves = get_leaves($dbdir, $exclpattern);
+		# Ignore all leaves the user already told us to keep
+		foreach my $leaf (keys %leavestokeep) {
+			if ($leaves{$leaf}) {
+				delete $leaves{$leaf};
+			}
+		}
+		# Any leaves left?
+		if (keys(%leaves) == 0) {
+			# If not, don't go on, there's nothing left to do.
+			print "Didn't find any new leaves, exiting.\n";
+			last ROUND;
+		}
 		# Always start with an empty list of leaves to cut
 		%leavestocut = ();
 
 		LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
-			if (!$leavestokeep{$leaf}) {
-				print "$leaf - $leaves{$leaf}\n";
-				print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
-				my $answer = substr(lc(<STDIN>), 0, 1);
-
-				if ($answer eq "d") {
-					print "** Marking $leaf for removal.\n\n";
-					$leavestocut{$leaf} = 1;
-				}
-				elsif ($answer eq "f") {
-					print "\n";
-					last LEAVESLOOP;
-				}
-				elsif ($answer eq "a") {
-					print "\n";
-					last ROUND;
-				}
-				else {
-					print "** Keeping $leaf.\n\n";
-					$leavestokeep{$leaf} = 1;
-				}
+			print "$leaf - $leaves{$leaf}\n";
+			print "$leaf - [keep]/(d)elete/(f)lush marked pkgs/(a)bort? ";
+			# Get first character of input, without leading whitespace
+			my ($answer) = (lc(<STDIN>) =~ m/(\S)/);
+			if ($answer eq "d") {
+				print "** Marking $leaf for removal.\n\n";
+				$leavestocut{$leaf} = 1;
+			}
+			elsif ($answer eq "f") {
+				print "\n";
+				last LEAVESLOOP;
+			}
+			elsif ($answer eq "a") {
+				print "\n";
+				last ROUND;
+			}
+			else {
+				print "** Keeping $leaf.\n\n";
+				$leavestokeep{$leaf} = 1;
 			}
 		} # LEAVESLOOP
 
@@ -190,7 +200,7 @@ if ($opt_listonly) {
 		# loop through packages marked for removal and pkg_deinstall them
 		foreach my $leaf (sort keys %leavestocut) {
 			$noff++;
-			print "Deleting $leaf, package $noff of $ncuts.\n";
+			print "Deleting $leaf (package $noff of $ncuts).\n";
 			my @deinstall_args;
 			if ($opt_recursive) {
 				@deinstall_args = ($pkgdeinstall, '-R', $leaf);
@@ -198,7 +208,7 @@ if ($opt_listonly) {
 				@deinstall_args = ($pkgdeinstall, $leaf);
 			}
 			if ((my $status = system(@deinstall_args) >> 8) != 0) {
-				print "\npkg_cutleaves: pkg_deinstall returned $status - exiting, fix this first.\n\n";
+				print STDERR "\n\n$0: pkg_deinstall returned $status - exiting, fix this first.\n\n";
 				last ROUND;
 			}
 			@cutleaves = (@cutleaves, $leaf);
@@ -208,13 +218,14 @@ if ($opt_listonly) {
 		if ($opt_pkgdb) {
 			print "Running 'pkgdb -F'.\n";
 			if ((my $status = system(@pkgdb_args) >> 8) != 0) {
-				print "\npkg_cutleaves: pkgdb returned $status - exiting, fix this first.\n\n";
+				print STDERR "\n\n$0: pkgdb returned $status - exiting, fix this first.\n\n";
 				last ROUND;
 			}
 		}
 
 		print "Go on with new leaf packages ((y)es/[no])? ";
-		$again = substr(lc(<STDIN>), 0, 1);
+		# Get first character of input, without leading whitespace
+		($again) = (lc(<STDIN>) =~ m/(\S)/);
 		print "\n";
 	} # ROUND
 
