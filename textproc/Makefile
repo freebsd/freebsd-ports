@@ -195,6 +195,7 @@
     SUBDIR += latte
     SUBDIR += libcroco
     SUBDIR += libebml
+    SUBDIR += libhtmlparse
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libparsifal
