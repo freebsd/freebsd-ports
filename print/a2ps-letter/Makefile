@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	chuckr@FreeBSD.org
 
+BROKEN=		"Installs files in /"
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
