@@ -33,7 +33,7 @@
 +	$AT{'parseJobList'} = 
 +	  sub {
 +	    my @a = split(/\s+/, $_[0]);
-+	    if (/^\d\d/) {
++	    if ($_[0] =~ /^\d\d/) {
 +	      return ($a[4], "$a[0] $a[1]");
 +	    } elsif (defined $a[8]) {
 +	      return ($a[8], "$a[0] $a[1] $a[2] $a[3] $a[4] $a[5]");
