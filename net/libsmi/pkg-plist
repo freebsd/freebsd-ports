@@ -1,11 +1,14 @@
-bin/smidump
-bin/smilint
 bin/smiquery
+bin/smilint
+bin/smidump
+bin/smidiff
 bin/smistrip
+bin/smicache
 include/smi.h
-lib/libsmi.a
-lib/libsmi.so
 lib/libsmi.so.2
+lib/libsmi.so
+lib/libsmi.la
+lib/libsmi.a
 share/aclocal/libsmi.m4
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB
 share/smi/mibs/iana/IANA-LANGUAGE-MIB
@@ -28,7 +31,9 @@ share/smi/mibs/ietf/ATM-TC-MIB
 share/smi/mibs/ietf/BGP4-MIB
 share/smi/mibs/ietf/BRIDGE-MIB
 share/smi/mibs/ietf/CHARACTER-MIB
+share/smi/mibs/ietf/CIRCUIT-IF-MIB
 share/smi/mibs/ietf/CLNS-MIB
+share/smi/mibs/ietf/COFFEE-POT-MIB
 share/smi/mibs/ietf/COPS-CLIENT-MIB
 share/smi/mibs/ietf/DECNET-PHIV-MIB
 share/smi/mibs/ietf/DIAL-CONTROL-MIB
@@ -43,6 +48,7 @@ share/smi/mibs/ietf/DISMAN-TRACEROUTE-MIB
 share/smi/mibs/ietf/DLSW-MIB
 share/smi/mibs/ietf/DNS-RESOLVER-MIB
 share/smi/mibs/ietf/DNS-SERVER-MIB
+share/smi/mibs/ietf/DOCS-BPI-MIB
 share/smi/mibs/ietf/DOCS-CABLE-DEVICE-MIB
 share/smi/mibs/ietf/DOCS-IF-MIB
 share/smi/mibs/ietf/DOT12-IF-MIB
@@ -63,6 +69,7 @@ share/smi/mibs/ietf/FR-ATM-PVC-SERVICE-IWF-MIB
 share/smi/mibs/ietf/FR-MFR-MIB
 share/smi/mibs/ietf/FRAME-RELAY-DTE-MIB
 share/smi/mibs/ietf/FRNETSERV-MIB
+share/smi/mibs/ietf/FRSLD-MIB
 share/smi/mibs/ietf/HCNUM-TC
 share/smi/mibs/ietf/HOST-RESOURCES-MIB
 share/smi/mibs/ietf/HOST-RESOURCES-TYPES
@@ -70,12 +77,13 @@ share/smi/mibs/ietf/HPR-IP-MIB
 share/smi/mibs/ietf/HPR-MIB
 share/smi/mibs/ietf/IF-INVERTED-STACK-MIB
 share/smi/mibs/ietf/IF-MIB
+share/smi/mibs/ietf/IP-MIB
 share/smi/mibs/ietf/IGMP-STD-MIB
 share/smi/mibs/ietf/INET-ADDRESS-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-GUARANTEED-MIB
 share/smi/mibs/ietf/INTEGRATED-SERVICES-MIB
+share/smi/mibs/ietf/INTERFACETOPN-MIB
 share/smi/mibs/ietf/IP-FORWARD-MIB
-share/smi/mibs/ietf/IP-MIB
 share/smi/mibs/ietf/IPATM-IPMC-MIB
 share/smi/mibs/ietf/IPMROUTE-STD-MIB
 share/smi/mibs/ietf/IPOA-MIB
@@ -116,6 +124,7 @@ share/smi/mibs/ietf/RADIUS-AUTH-SERVER-MIB
 share/smi/mibs/ietf/RDBMS-MIB
 share/smi/mibs/ietf/RFC-1212
 share/smi/mibs/ietf/RFC-1215
+share/smi/mibs/ietf/RFC1065-SMI
 share/smi/mibs/ietf/RFC1155-SMI
 share/smi/mibs/ietf/RFC1158-MIB
 share/smi/mibs/ietf/RFC1213-MIB
@@ -182,8 +191,7 @@ share/smi/mibs/tubs/TUBS-SMI
 @dirrm share/smi/mibs/iana
 @dirrm share/smi/mibs/ietf
 @dirrm share/smi/mibs/irtf
-@dirrm share/smi/mibs/site
 @dirrm share/smi/mibs/tubs
+@dirrm share/smi/mibs/site
 @dirrm share/smi/mibs
 @dirrm share/smi
-@exec mkdir %D/share/smi/mibs/site
