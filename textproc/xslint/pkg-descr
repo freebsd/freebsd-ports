@@ -1,0 +1,18 @@
+XSLint is an XSL lint checker. It reads an XSL stylesheet and looks
+for semantic errors.
+
+XSLint looks for:
+* an incorrect XSLT URI;
+* failure to provide a version;
+* duplicate match patterns;
+* modes that are used but never defined;
+* modes that are defined but never used;
+* named templates that are used but never defined;
+* named templates that are defined but never used;
+* templates that use name= where match= was probably intended;
+* xsl:call-template elements that contain anything other than xsl:with-param;
+* variable/parameter references that are not defined at the point of use;
+* fo: elements that aren't part of the XSL 1.0 PR;
+* fo: element properties that aren't part of the XSL 1.0 PR.
+
+WWW: http://nwalsh.com/xsl/xslint/
