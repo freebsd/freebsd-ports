@@ -4,15 +4,20 @@
 %%RUBY_EXAMPLESDIR%%/gd/gdtestttf.rb
 %%RUBY_EXAMPLESDIR%%/gd/webpng.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/gd
+%%RUBY_DOCDIR%%/gd/Changes
 %%RUBY_DOCDIR%%/gd/INSTALL.en
+%%RUBY_DOCDIR%%/gd/TODO
+%%RUBY_DOCDIR%%/gd/manual.css
 %%RUBY_DOCDIR%%/gd/manual.html
 %%RUBY_DOCDIR%%/gd/manual.rd
+%%RUBY_DOCDIR%%/gd/manual_index.html
 %%RUBY_DOCDIR%%/gd/readme.en
 %%RUBY_DOCDIR%%/gd/ja/INSTALL.ja
 %%RUBY_DOCDIR%%/gd/ja/gd_intro-ja.html
 %%RUBY_DOCDIR%%/gd/ja/readme.ja
 %%RUBY_DOCDIR%%/gd/ja/imgs/0.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/1.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/256.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/arc.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/brush1.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/brush2.png
@@ -24,6 +29,7 @@
 %%RUBY_DOCDIR%%/gd/ja/imgs/poly.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/poly_setPt.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/rectangle.png
+%%RUBY_DOCDIR%%/gd/ja/imgs/resolve.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/string.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/string2.png
 %%RUBY_DOCDIR%%/gd/ja/imgs/stringttf1.png
