@@ -4388,6 +4388,7 @@ p5-Crypt-DSA	ports/security/p5-Crypt-DSA
 p5-Crypt-ECB	ports/security/p5-Crypt-ECB
 p5-Crypt-HCE_SHA	ports/security/p5-Crypt-HCE_SHA
 p5-Crypt-IDEA	ports/security/p5-Crypt-IDEA
+p5-Crypt-OTP	ports/security/p5-Crypt-OTP
 p5-Crypt-OpenPGP	ports/security/p5-Crypt-OpenPGP
 p5-Crypt-OpenSSL-RSA	ports/security/p5-Crypt-OpenSSL-RSA
 p5-Crypt-OpenSSL-Random	ports/security/p5-Crypt-OpenSSL-Random
