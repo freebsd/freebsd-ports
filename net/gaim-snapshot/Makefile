@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		gaim
-PORTVERSION=		0.11.0pre11
+PORTVERSION=		0.11.0pre14
 CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.marko.net/pub/gaim/ \
 			${MASTER_SITE_SOURCEFORGE}
@@ -48,6 +48,7 @@ pre-patch:
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
+		 s|\@LIBTOOL\@|\${LOCALBASE}/bin/libtool|g'
 
 .include <bsd.port.post.mk>

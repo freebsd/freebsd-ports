@@ -1,8 +1,8 @@
---- src/Makefile.in.orig	Mon Apr 16 12:38:54 2001
-+++ src/Makefile.in	Mon Apr 16 12:40:38 2001
-@@ -125,16 +125,16 @@
- l = @l@
+--- src/Makefile.in.orig	Mon Jun 18 09:50:28 2001
++++ src/Makefile.in	Mon Jun 18 09:52:24 2001
+@@ -136,16 +136,16 @@
  perlpath = @perlpath@
+ pixbufcfg = @pixbufcfg@
  sedpath = @sedpath@
 -@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet
 +@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet gaim
@@ -26,34 +26,54 @@
  
  # any other stuff
  CFLAGS = @CFLAGS@ -I$(top_srcdir)/libfaim $(PERL_CFLAGS) -DLOCALEDIR=\"$(datadir)/locale\" -DLIBDIR=\"$(libdir)/gaim/\" $(DEBUG_CFLAGS)
-@@ -151,18 +151,18 @@
+@@ -163,28 +163,28 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
--@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
--@GNOMEAPPLET_TRUE@browser.o buddy.o buddy_chat.o conversation.o \
--@GNOMEAPPLET_TRUE@dialogs.o gaimrc.o gtkimhtml.o gtkspell.o gtkticker.o \
--@GNOMEAPPLET_TRUE@html.o idle.o multi.o oscar.o perl.o plugins.o \
--@GNOMEAPPLET_TRUE@prefs.o proxy.o prpl.o server.o sound.o ticker.o \
--@GNOMEAPPLET_TRUE@toc.o util.o
--@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.o aim.o applet.o away.o \
--@GNOMEAPPLET_FALSE@browser.o buddy.o buddy_chat.o conversation.o \
--@GNOMEAPPLET_FALSE@dialogs.o gaimrc.o gtkimhtml.o gtkspell.o \
--@GNOMEAPPLET_FALSE@gtkticker.o html.o idle.o multi.o oscar.o perl.o \
--@GNOMEAPPLET_FALSE@plugins.o prefs.o proxy.o prpl.o server.o sound.o \
--@GNOMEAPPLET_FALSE@ticker.o toc.o util.o
-+gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
-+browser.o buddy.o buddy_chat.o conversation.o \
-+dialogs.o gaimrc.o gtkimhtml.o gtkspell.o gtkticker.o \
-+html.o idle.o multi.o oscar.o perl.o plugins.o \
-+prefs.o proxy.o prpl.o server.o sound.o ticker.o \
-+toc.o util.o
-+gaim_OBJECTS =  about.o aim.o applet.o away.o \
-+browser.o buddy.o buddy_chat.o conversation.o \
-+dialogs.o gaimrc.o gtkimhtml.o gtkspell.o \
-+gtkticker.o html.o idle.o multi.o oscar.o perl.o \
-+plugins.o prefs.o proxy.o prpl.o server.o sound.o \
-+ticker.o toc.o util.o
+-@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@conversation.$(OBJEXT) dialogs.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) html.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@idle.$(OBJEXT) multi.$(OBJEXT) oscar.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@perl.$(OBJEXT) plugins.$(OBJEXT) prefs.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@proxy.$(OBJEXT) prpl.$(OBJEXT) server.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@sound.$(OBJEXT) ticker.$(OBJEXT) toc.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@util.$(OBJEXT)
+-@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@conversation.$(OBJEXT) dialogs.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@html.$(OBJEXT) idle.$(OBJEXT) multi.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@oscar.$(OBJEXT) perl.$(OBJEXT) plugins.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@prefs.$(OBJEXT) proxy.$(OBJEXT) prpl.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@server.$(OBJEXT) sound.$(OBJEXT) ticker.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@toc.$(OBJEXT) util.$(OBJEXT)
++gaim_applet_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
++applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
++buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
++conversation.$(OBJEXT) dialogs.$(OBJEXT) \
++gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
++gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) html.$(OBJEXT) \
++idle.$(OBJEXT) multi.$(OBJEXT) oscar.$(OBJEXT) \
++perl.$(OBJEXT) plugins.$(OBJEXT) prefs.$(OBJEXT) \
++proxy.$(OBJEXT) prpl.$(OBJEXT) server.$(OBJEXT) \
++sound.$(OBJEXT) ticker.$(OBJEXT) toc.$(OBJEXT) \
++util.$(OBJEXT)
++gaim_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
++applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
++buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
++conversation.$(OBJEXT) dialogs.$(OBJEXT) \
++gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
++gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
++html.$(OBJEXT) idle.$(OBJEXT) multi.$(OBJEXT) \
++oscar.$(OBJEXT) perl.$(OBJEXT) plugins.$(OBJEXT) \
++prefs.$(OBJEXT) proxy.$(OBJEXT) prpl.$(OBJEXT) \
++server.$(OBJEXT) sound.$(OBJEXT) ticker.$(OBJEXT) \
++toc.$(OBJEXT) util.$(OBJEXT)
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)
