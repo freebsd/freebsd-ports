@@ -18,10 +18,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
-USE_AUTOCONF_VER=	253
+USE_AUTOCONF_VER=	257
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	aclocal.m4 test/aclocal.m4
 CONFIGURE_ARGS+=	--enable-static --enable-shared --enable-production
 CONFIGURE_ARGS+=	--disable-build-Xlt --disable-build-Xbae
