@@ -9,7 +9,7 @@ The package is covered under the GNU license.
 
 The author has also written patches to the popular newsreaders `nn'
 and `elm' to allow them to make use of this library.  They are
-available from the website mentioned in this library's 
-associated manpage.
+available from the website mentioned in this library's associated
+manpage.
 
-Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
+Tim Vanderhoek <hoek@FreeBSD.org>
