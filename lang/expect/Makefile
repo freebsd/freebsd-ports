@@ -1,13 +1,13 @@
 # New ports collection makefile for:	expect
-# Version required:	5.21.7
 # Date created:		20 November 1994
 # Whom:			pst
+# Version required:	5.22.0
 #
-# $Id: Makefile,v 1.16 1997/01/06 10:56:02 max Exp $
+# $Id: Makefile,v 1.17 1997/01/19 14:13:26 asami Exp $
 #
 
-DISTNAME=	expect-5.21
-PKGNAME=	expect-5.21.7
+DISTNAME=	expect-5.22
+PKGNAME=	expect-5.22.0
 CATEGORIES=	lang
 MASTER_SITES=	http://expect.nist.gov/ \
 		ftp://expect.nist.gov/mel/div826/subject/expect/
@@ -28,6 +28,6 @@ test:
 	@(cd ${WRKSRC}; make test)
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
