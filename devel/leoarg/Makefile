@@ -15,6 +15,7 @@ DISTNAME=	LeoArg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A class for parsing command lines
 
+RESTRICTED=	licence may be invalid
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
