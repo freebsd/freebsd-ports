@@ -12,9 +12,15 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/
 EXTRACT_SUFX=   .tgz
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 
 MAINTAINER=	anders@fix.no
+
+.if defined(WITH_SHA1_COOKIES)
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+.else
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+.endif
+USE_PERL5=	yes
 
 # Needs to create a user and group
 IS_INTERACTIVE= yes
@@ -24,19 +30,24 @@ INSTALL_TARGET=	install install-wrapper
 MAN1=		approve.1 bounce-remind.1 digest.1
 MAN8=		majordomo.8
 
-.if defined(WITH_POSTFIX_APPROVE_PATCH)
 post-patch:
+.if defined(WITH_POSTFIX_APPROVE_PATCH)
 	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/postfix-approve-patch 2>/dev/null
+.endif
+.if defined(WITH_SHA1_COOKIES)
+	${SED} <${WRKSRC}/majordomo >${WRKSRC}/majordomo.temp \
+		"{s/md5_hex/sha1_hex/g;s/Digest::MD5/Digest::SHA1/g;}"
+	${MV} ${WRKSRC}/majordomo.temp ${WRKSRC}/majordomo
 .endif
 
 pre-configure:
-		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
+		@ ${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
 		@ ${CP} ${FILESDIR}/aliases.majordomo ${WRKSRC}
 
 pre-install:
 		@ if test -f ${WRKSRC}/majordomo.cf; then :; else \
 			${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf; \
-			/usr/bin/perl ${SCRIPTDIR}/makeseed ${WRKSRC}/majordomo.cf; \
+			${PERL} ${SCRIPTDIR}/makeseed ${WRKSRC}/majordomo.cf; \
 		fi
 post-install:
 .for file in ${MAN1}
