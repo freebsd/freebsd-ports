@@ -1,0 +1,18 @@
+--- Makefile.orig	Mon Feb 15 10:14:46 1999
++++ Makefile	Mon Feb 15 10:14:24 1999
+@@ -1,5 +1,5 @@
+ # Where is your Plugin Source Development Kit from Netscape?
+-SDK=/home/hubbe/src/PluginSDK30b5
++SDK=../PluginSDK30b5
+ 
+ # Where is your Xwindows located?
+ X11=/usr/X11/
+@@ -40,6 +40,8 @@
+ 
+ DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\"  # -DDEBUG # -DPLUGIN_TRACE
+ CFLAGS=-O -I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES) 
++
++all: $(BIN_FILES)
+ 
+ plugger.so: plugger.o common.o
+ 	$(LD) -o plugger.so plugger.o common.o
