@@ -7,7 +7,7 @@ Once the package is installed, please do the following (as root):
 
 	cd /var/spool
 	mkdir -p cups/tmp
-	chown -R daemon:wheel cups
+	chown -R root:daemon cups
 
 Thanks. 
 

@@ -1,3 +1,6 @@
+@exec /bin/echo "===>" Stopping cupsd ...
+@exec /usr/bin/killall cupsd || true
+@exec /bin/rm -fr %D/etc/cups/certs/* 2>/dev/null || true
 bin/cups-config
 etc/cups/classes.conf.N
 etc/cups/client.conf.N
