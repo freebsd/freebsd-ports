@@ -143,6 +143,11 @@ post-install:
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
+		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d -empty \
+		    	| ${SED} -e 's#^#@exec mkdir %D/#g'; \
+	done | ${SORT} >> ${WRKDIR}/PLIST.lib-erlang
+
+	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 		    	| ${SED} -e 's/^/@dirrm /g'; \
 	done | ${SORT} -r >> ${WRKDIR}/PLIST.lib-erlang
