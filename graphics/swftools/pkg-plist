@@ -1,4 +1,5 @@
 bin/font2swf
+bin/gif2swf
 bin/jpeg2swf
 bin/pdf2swf
 bin/png2swf
