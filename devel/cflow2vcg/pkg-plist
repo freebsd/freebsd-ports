@@ -1,3 +1,4 @@
+bin/cflow2dot
 bin/cflow2vcg
 %%PORTDOCS%%%%DOCSDIR%%/cflow2dot.refentry.sgm
 %%PORTDOCS%%%%DOCSDIR%%/cflow2dot_man.sgm
