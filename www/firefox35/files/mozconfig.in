@@ -11,8 +11,11 @@ ac_add_options --disable-mailnews
 ac_add_options --disable-composer
 ######################################################################
 # FBSD specific
+export CPPFLAGS="-I@X11BASE@/include -I@LOCALBASE@/include"
 export CFLAGS="@CFLAGS@"
 export LIBS="@LIBS@"
+export LDFLAGS="-L@X11BASE@/lib -L@LOCALBASE@/lib"
+export DSOFLAGS="${LDFLAGS}"
 export CONFIG_SH=/bin/sh
 export XP_UNIX=1
 test -x /usr/bin/perl && export PERL=/usr/bin/perl \
@@ -34,18 +37,16 @@ ac_add_options --with-system-mng=@LOCALBASE@
 # enable features
 ac_add_options --with-pthreads
 ac_add_options --enable-xft
-ac_add_options --enable-crypto
 ac_add_options --enable-xinerama
 ac_add_options --enable-reorder
 ac_add_options --enable-strip
 #ac_add_options --enable-crash-on-assert
 ######################################################################
-# disable unneeded to speed up build/runtime
-ac_add_options --disable-tests
+# disable unneeded to speed up and/or save space
 ac_add_options --disable-ldap
 ac_add_options --disable-logging
 ac_add_options --disable-dtd-debug
 ac_add_options --disable-auto-deps
 ac_add_options --disable-pedantic
+ac_add_options --disable-jsd
 ######################################################################
-
