@@ -1,0 +1,905 @@
+diablo-jdk%%JDK_VERSION%%/COPYRIGHT
+diablo-jdk%%JDK_VERSION%%/LICENSE
+diablo-jdk%%JDK_VERSION%%/LICENSE.fr
+diablo-jdk%%JDK_VERSION%%/README
+diablo-jdk%%JDK_VERSION%%/README.html
+diablo-jdk%%JDK_VERSION%%/bin/.java_wrapper
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/bin/ControlPanel
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/bin/HtmlConverter
+diablo-jdk%%JDK_VERSION%%/bin/appletviewer
+diablo-jdk%%JDK_VERSION%%/bin/awt_robot
+diablo-jdk%%JDK_VERSION%%/bin/extcheck
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/appletviewer
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/extcheck
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/idlj
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/jar
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/jarsigner
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/java
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/java_vm
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/javac
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/javadoc
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/javah
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/javap
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/jdb
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/keytool
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/native2ascii
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/oldjava
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/oldjavac
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/oldjdb
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/policytool
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/rmic
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/rmid
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/rmiregistry
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/serialver
+diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads/tnameserv
+diablo-jdk%%JDK_VERSION%%/bin/idlj
+diablo-jdk%%JDK_VERSION%%/bin/jar
+diablo-jdk%%JDK_VERSION%%/bin/jarsigner
+diablo-jdk%%JDK_VERSION%%/bin/java
+diablo-jdk%%JDK_VERSION%%/bin/java-rmi.cgi
+diablo-jdk%%JDK_VERSION%%/bin/javac
+diablo-jdk%%JDK_VERSION%%/bin/javadoc
+diablo-jdk%%JDK_VERSION%%/bin/javah
+diablo-jdk%%JDK_VERSION%%/bin/javap
+diablo-jdk%%JDK_VERSION%%/bin/jdb
+diablo-jdk%%JDK_VERSION%%/bin/keytool
+diablo-jdk%%JDK_VERSION%%/bin/native2ascii
+diablo-jdk%%JDK_VERSION%%/bin/oldjava
+diablo-jdk%%JDK_VERSION%%/bin/oldjavac
+diablo-jdk%%JDK_VERSION%%/bin/oldjdb
+diablo-jdk%%JDK_VERSION%%/bin/policytool
+diablo-jdk%%JDK_VERSION%%/bin/rmic
+diablo-jdk%%JDK_VERSION%%/bin/rmid
+diablo-jdk%%JDK_VERSION%%/bin/rmiregistry
+diablo-jdk%%JDK_VERSION%%/bin/serialver
+diablo-jdk%%JDK_VERSION%%/bin/tnameserv
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/Animation.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/AnimationFrame.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/Animator.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/DescriptionFrame.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/ParseException.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/0.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/1.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/2.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/3.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/4.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/5.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/6.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/7.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/8.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/9.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio/spacemusic.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/example2.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/example3.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/example4.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T1.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T10.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T2.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T3.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T4.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T5.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T6.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T7.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T8.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans/T9.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T1.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation/T2.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/loading-msg.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcCanvas.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcControls.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest/ArcTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/BarChart/Chart.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/BarChart/Chart.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/BarChart/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink$1.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Blink/Blink.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/Blink/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardPanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/CardTest/CardTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/CardTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Clock/Clock2.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Clock/Clock2.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/Clock/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherCanvas.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherControls.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest/DitherTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawControls.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawPanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest/DrawTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSFractal.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSRule.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/CLSTurtle.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/ContextLSystem.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Edge.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Graph.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/GraphPanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/Node.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/computer.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/drip.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio/gong.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example2.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example3.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/example4.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/AppletFrame.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcCard.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcDegreePanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ArcPanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ColorUtils.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsCards.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsPanel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/GraphicsTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/OvalShape.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/PolygonShape.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RectShape.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/RoundRectShape.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/Shape.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/ShapeTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/AniArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ButtonFilter.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ClickArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/DelayedSoundArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HighlightFilter.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/HrefButtonArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMap.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/ImageMapArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/LinkArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/NameArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundButtonFilter.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/RoundHrefButtonArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/SoundArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/TickerArea.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/chirp1.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio/hi.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/imagemapcheat.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/images/jim.graham.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/sources.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/MouseTrack.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/MouseTrack.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/adapt-or-die.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/cannot.be.completed.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/ip.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/that.hurts.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/thin.bell.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds/tiptoe.thru.the.tulips.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Atom.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/Matrix3D.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZApp.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/XYZChemModel.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example2.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/example3.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/HyaluronicAcid.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/benzene.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/buckminsterfullerine.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/cyclohexane.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/ethane.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models/water.xyz
+diablo-jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/NervousText/NervousText.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/NervousText/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/GraphApplet.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BidirBubbleSortAlgorithm.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/BubbleSortAlgorithm.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/QSortAlgorithm.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortAlgorithm.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/SortItem.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Cell.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/CellUpdater.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/InputField.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/Node.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheet.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/SpreadSheetInput.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolCanvas.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest$MyAdapter.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/SymbolTest.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/TicTacToe.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/beep.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/ding.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/return.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo1.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio/yahoo2.au
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/cross.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images/not.gif
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/FileFormatException.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Matrix3D.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/Model3D.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.class
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/ThreeD.java
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example1.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example2.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example3.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/example4.html
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/cube.obj
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/dinasaur.obj
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/hughes_500.obj
+diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models/knoxS.obj
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/private.fls
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/Font2DTest.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/TextResources.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/TextResources_de.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/TextResources_en.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/TextResources_en_GB.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/TextResources_ko.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources/resource.data
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src/Font2DTest.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/Java2Demo.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/AnimatingControlsSurface.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/AnimatingSurface.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/CloningFeature.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/ControlsSurface.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/CustomControls.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/CustomControlsContext.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/DemoFonts.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/DemoGroup.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/DemoImages.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/DemoPanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/GlobalControls.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/GlobalPanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/Intro.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/Java2Demo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/Java2DemoApplet.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/MemoryMonitor.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/PerformanceMonitor.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/RunWindow.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/Surface.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/TextureChooser.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/Tools.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Clipping/Areas.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Clipping/Text.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Composite/ACimages.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Composite/ACrules.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts/Outline.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts/Tree.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Images/ImageOps.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Images/WarpImage.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Lines/Caps.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Lines/Dash.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Lines/Joins.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Mix/Balls.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paint/Gradient.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paint/Texture.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paths/Append.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/back.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/credits.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/duke.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metal.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/swing.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles/toc.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/Metalworks.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/MyTheme.theme
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_crop.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_draw.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_hand.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_select.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_text.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images/palette_zoom.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/Metalworks.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksFrame.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksHelp.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksInBox.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src/UISwitchListener.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/Notepad.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_fr.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_sv.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/copy.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/cut.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/new.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/open.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/paste.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources/save.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/ElementTreePanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/src/Notepad.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/SampleTree.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/collapsed.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images/expanded.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleData.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTree.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src/SampleTreeModel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SimpleExample/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SimpleExample/SimpleExample.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SimpleExample/src/SimpleExample.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/Stylepad.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Notepad_zh_CN.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/alice.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bold.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/bullets.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/caterpillar.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/center.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/copy.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/cut.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/fg.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/hatter.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/italic.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/left.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/new.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/open.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/paste.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/rabbit2.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/right.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/save.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources/underline.gif
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/ElementTreePanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/HelloWorld.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Notepad.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Stylepad.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src/Wonderland.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/SwingApplet.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src/SwingApplet.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/AquaTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ButtonDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CharcoalTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/CodeViewer.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ColorChooserDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ComboBoxDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ContrastTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DemoModule.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/DirectionPanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ExampleFileView.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/HtmlDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/InternalFrameDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/LayoutControlPanel.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ListDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/OptionPaneDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/Permuter.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ProgressBarDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/RubyTheme.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ScrollPaneDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SliderDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SplitPaneDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/SwingSet2Applet.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TableDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src/TreeDemo.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/TableExample.jar
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/JDBCAdapter.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/OldJTable.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample2.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample3.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableExample4.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableMap.java
+diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src/TableSorter.java
+diablo-jdk%%JDK_VERSION%%/demo/jpda/examples.jar
+diablo-jdk%%JDK_VERSION%%/demo/sound/JavaSound.html
+diablo-jdk%%JDK_VERSION%%/demo/sound/JavaSound.jar
+diablo-jdk%%JDK_VERSION%%/demo/sound/README.txt
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/ambient.rmf
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/bark.aiff
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/bong.wav
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/classical.rmf
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/modern-rock.rmf
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/sfx-medley.rmf
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/spacemusic.au
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/trance.rmf
+diablo-jdk%%JDK_VERSION%%/demo/sound/media/trippygaia1.mid
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/CapturePlayback.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/ControlContext.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/Groove.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/JavaSound.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/JavaSoundApplet.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/Juke.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/MidiSynth.java
+diablo-jdk%%JDK_VERSION%%/demo/sound/src/TempoDial.java
+diablo-jdk%%JDK_VERSION%%/include-old/StubPreamble.h
+diablo-jdk%%JDK_VERSION%%/include-old/alloc_cache.h
+diablo-jdk%%JDK_VERSION%%/include-old/bag.h
+diablo-jdk%%JDK_VERSION%%/include-old/bool.h
+diablo-jdk%%JDK_VERSION%%/include-old/breakpoints.h
+diablo-jdk%%JDK_VERSION%%/include-old/byteorder.h
+diablo-jdk%%JDK_VERSION%%/include-old/common_exceptions.h
+diablo-jdk%%JDK_VERSION%%/include-old/debug.h
+diablo-jdk%%JDK_VERSION%%/include-old/dll.h
+diablo-jdk%%JDK_VERSION%%/include-old/exceptions.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/byteorder_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/gc_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/hpi_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/io_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/jawt_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/jmath_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/jvm_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/miscdefs_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/path_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/sysmacros_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/timeval_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/freebsd/typedefs_md.h
+diablo-jdk%%JDK_VERSION%%/include-old/gc.h
+diablo-jdk%%JDK_VERSION%%/include-old/hpi.h
+diablo-jdk%%JDK_VERSION%%/include-old/interpreter.h
+diablo-jdk%%JDK_VERSION%%/include-old/javaString.h
+diablo-jdk%%JDK_VERSION%%/include-old/java_lang_ClassLoader.h
+diablo-jdk%%JDK_VERSION%%/include-old/java_lang_String.h
+diablo-jdk%%JDK_VERSION%%/include-old/java_lang_Thread.h
+diablo-jdk%%JDK_VERSION%%/include-old/java_lang_ThreadGroup.h
+diablo-jdk%%JDK_VERSION%%/include-old/jawt.h
+diablo-jdk%%JDK_VERSION%%/include-old/jit.h
+diablo-jdk%%JDK_VERSION%%/include-old/jmath.h
+diablo-jdk%%JDK_VERSION%%/include-old/jvm.h
+diablo-jdk%%JDK_VERSION%%/include-old/jvmdi.h
+diablo-jdk%%JDK_VERSION%%/include-old/jvmpi.h
+diablo-jdk%%JDK_VERSION%%/include-old/log.h
+diablo-jdk%%JDK_VERSION%%/include-old/monitor.h
+diablo-jdk%%JDK_VERSION%%/include-old/monitor_cache.h
+diablo-jdk%%JDK_VERSION%%/include-old/native.h
+diablo-jdk%%JDK_VERSION%%/include-old/oldnmi.h
+diablo-jdk%%JDK_VERSION%%/include-old/oobj.h
+diablo-jdk%%JDK_VERSION%%/include-old/opcodes.h
+diablo-jdk%%JDK_VERSION%%/include-old/path.h
+diablo-jdk%%JDK_VERSION%%/include-old/reflect.h
+diablo-jdk%%JDK_VERSION%%/include-old/signature.h
+diablo-jdk%%JDK_VERSION%%/include-old/sys_api.h
+diablo-jdk%%JDK_VERSION%%/include-old/threads.h
+diablo-jdk%%JDK_VERSION%%/include-old/tree.h
+diablo-jdk%%JDK_VERSION%%/include-old/typecodes.h
+diablo-jdk%%JDK_VERSION%%/include-old/typedefs.h
+diablo-jdk%%JDK_VERSION%%/include-old/utf.h
+diablo-jdk%%JDK_VERSION%%/include-old/util.h
+diablo-jdk%%JDK_VERSION%%/include-old/vmprofiler.h
+diablo-jdk%%JDK_VERSION%%/include-old/wrap.h
+diablo-jdk%%JDK_VERSION%%/include/freebsd/jawt_md.h
+diablo-jdk%%JDK_VERSION%%/include/freebsd/jni_md.h
+diablo-jdk%%JDK_VERSION%%/include/jawt.h
+diablo-jdk%%JDK_VERSION%%/include/jni.h
+diablo-jdk%%JDK_VERSION%%/include/jvmdi.h
+diablo-jdk%%JDK_VERSION%%/include/jvmpi.h
+diablo-jdk%%JDK_VERSION%%/jre/CHANGES
+diablo-jdk%%JDK_VERSION%%/jre/COPYRIGHT
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/ControlPanel.html
+diablo-jdk%%JDK_VERSION%%/jre/LICENSE
+diablo-jdk%%JDK_VERSION%%/jre/LICENSE.fr
+diablo-jdk%%JDK_VERSION%%/jre/README
+diablo-jdk%%JDK_VERSION%%/jre/Welcome.html
+diablo-jdk%%JDK_VERSION%%/jre/bin/.java_wrapper
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/bin/ControlPanel
+diablo-jdk%%JDK_VERSION%%/jre/bin/awt_robot
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/appletviewer
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/extcheck
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/idlj
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jar
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jarsigner
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/java_vm
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javac
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javadoc
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javah
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/javap
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/jdb
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/keytool
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/native2ascii
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjava
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjavac
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/oldjdb
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/policytool
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmic
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmid
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/rmiregistry
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/serialver
+diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads/tnameserv
+diablo-jdk%%JDK_VERSION%%/jre/bin/java
+diablo-jdk%%JDK_VERSION%%/jre/bin/keytool
+diablo-jdk%%JDK_VERSION%%/jre/bin/policytool
+diablo-jdk%%JDK_VERSION%%/jre/bin/rmid
+diablo-jdk%%JDK_VERSION%%/jre/bin/rmiregistry
+diablo-jdk%%JDK_VERSION%%/jre/bin/tnameserv
+diablo-jdk%%JDK_VERSION%%/jre/lib/audio/soundbank.gm
+diablo-jdk%%JDK_VERSION%%/jre/lib/cmm/CIEXYZ.pf
+diablo-jdk%%JDK_VERSION%%/jre/lib/cmm/GRAY.pf
+diablo-jdk%%JDK_VERSION%%/jre/lib/cmm/LINEAR_RGB.pf
+diablo-jdk%%JDK_VERSION%%/jre/lib/cmm/PYCC.pf
+diablo-jdk%%JDK_VERSION%%/jre/lib/cmm/sRGB.pf
+diablo-jdk%%JDK_VERSION%%/jre/lib/content-types.properties
+diablo-jdk%%JDK_VERSION%%/jre/lib/flavormap.properties
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.ja
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.ru
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.uk
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.zh
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.zh_CN
+diablo-jdk%%JDK_VERSION%%/jre/lib/font.properties.zh_TW
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightDemiBold.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightDemiItalic.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightItalic.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaBrightRegular.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansDemiBold.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansDemiOblique.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansOblique.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaSansRegular.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterBold.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterBoldOblique.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterOblique.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/LucidaTypewriterRegular.ttf
+diablo-jdk%%JDK_VERSION%%/jre/lib/fonts/fonts.dir
+diablo-jdk%%JDK_VERSION%%/jre/lib/i18n.jar
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/classic/Xusage.txt
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/classic/libjvm.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/green_threads/libhpi.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libJdbcOdbc.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libagent.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libawt.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libcmm.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libdcpr.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libfontmanager.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libhprof.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libioser12.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjava.so
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjavaplugin_jni.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjawt.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjcov.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjpeg.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libjsound.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libmlib_image.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libnet.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libverify.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/i386/libzip.so
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/cursors.properties
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/invalid32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_CopyDrop32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_CopyNoDrop32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkDrop32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_LinkNoDrop32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveDrop32x32.gif
+diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors/motif_MoveNoDrop32x32.gif
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/javaplugin.jar
+diablo-jdk%%JDK_VERSION%%/jre/lib/jvm.cfg
+diablo-jdk%%JDK_VERSION%%/jre/lib/jvm.hprof.txt
+diablo-jdk%%JDK_VERSION%%/jre/lib/jvm.jcov.txt
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES/sunw_java_plugin.mo
+diablo-jdk%%JDK_VERSION%%/jre/lib/psfont.properties.ja
+diablo-jdk%%JDK_VERSION%%/jre/lib/psfontj2d.properties
+diablo-jdk%%JDK_VERSION%%/jre/lib/rt.jar
+diablo-jdk%%JDK_VERSION%%/jre/lib/security/cacerts
+diablo-jdk%%JDK_VERSION%%/jre/lib/security/java.policy
+diablo-jdk%%JDK_VERSION%%/jre/lib/security/java.security
+diablo-jdk%%JDK_VERSION%%/jre/lib/sunrsasign.jar
+diablo-jdk%%JDK_VERSION%%/jre/lib/tzmappings
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin.so
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns4/javaplugin_g.so
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
+%%PLUGIN:%%diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns600/libjavaplugin_oji_g.so
+diablo-jdk%%JDK_VERSION%%/lib/dt.jar
+diablo-jdk%%JDK_VERSION%%/lib/htmlconverter.jar
+diablo-jdk%%JDK_VERSION%%/lib/i386/libdt_socket.so
+diablo-jdk%%JDK_VERSION%%/lib/i386/libjdwp.so
+diablo-jdk%%JDK_VERSION%%/lib/ir.idl
+diablo-jdk%%JDK_VERSION%%/lib/orb.idl
+diablo-jdk%%JDK_VERSION%%/lib/tools.jar
+diablo-jdk%%JDK_VERSION%%/man/man1/appletviewer.1
+diablo-jdk%%JDK_VERSION%%/man/man1/extcheck.1
+diablo-jdk%%JDK_VERSION%%/man/man1/jar.1
+diablo-jdk%%JDK_VERSION%%/man/man1/jarsigner.1
+diablo-jdk%%JDK_VERSION%%/man/man1/java.1
+diablo-jdk%%JDK_VERSION%%/man/man1/javac.1
+diablo-jdk%%JDK_VERSION%%/man/man1/javadoc.1
+diablo-jdk%%JDK_VERSION%%/man/man1/javah.1
+diablo-jdk%%JDK_VERSION%%/man/man1/javap.1
+diablo-jdk%%JDK_VERSION%%/man/man1/jdb.1
+diablo-jdk%%JDK_VERSION%%/man/man1/keytool.1
+diablo-jdk%%JDK_VERSION%%/man/man1/native2ascii.1
+diablo-jdk%%JDK_VERSION%%/man/man1/rmic.1
+diablo-jdk%%JDK_VERSION%%/man/man1/rmid.1
+diablo-jdk%%JDK_VERSION%%/man/man1/rmiregistry.1
+diablo-jdk%%JDK_VERSION%%/man/man1/serialver.1
+diablo-jdk%%JDK_VERSION%%/man/man1/tnameserv.1
+diablo-jdk%%JDK_VERSION%%/src.jar
+@exec   mkdir -p %D/diablo-jdk%%JDK_VERSION%%/jre/lib/ext/
+@unexec rmdir %D/diablo-jdk%%JDK_VERSION%%/jre/lib/ext 2>/dev/null || true
+@exec   mkdir -p %D/share/doc/java
+@unexec rmdir %D/share/doc/java 2>/dev/null || true
+@exec   %D/bin/registervm "%D/diablo-jdk%%JDK_VERSION%%/bin/java # DiabloCaffe%%JDK_VERSION%%"
+@unexec %D/bin/unregistervm "DiabloCaffe%%JDK_VERSION%%"
+@dirrm diablo-jdk%%JDK_VERSION%%/man/man1
+@dirrm diablo-jdk%%JDK_VERSION%%/man
+@dirrm diablo-jdk%%JDK_VERSION%%/lib/i386
+@dirrm diablo-jdk%%JDK_VERSION%%/lib
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns600
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin/i386
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/plugin
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/security
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/zh
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/sv
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ko
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/ja
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/it
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/fr
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/es
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale/de
+%%PLUGIN:%%@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/locale
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/images/cursors
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/images
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/i386/green_threads
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/i386/classic
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/i386
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/fonts
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/cmm
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/audio
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/bin/i386/green_threads
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/bin/i386
+@dirrm diablo-jdk%%JDK_VERSION%%/jre/bin
+@dirrm diablo-jdk%%JDK_VERSION%%/jre
+@dirrm diablo-jdk%%JDK_VERSION%%/include/freebsd
+@dirrm diablo-jdk%%JDK_VERSION%%/include-old/freebsd
+@dirrm diablo-jdk%%JDK_VERSION%%/include-old
+@dirrm diablo-jdk%%JDK_VERSION%%/include
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/sound/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/sound/media
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/sound
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jpda
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/TableExample
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingSet2
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SwingApplet
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad/resources
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Stylepad
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SimpleExample/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SimpleExample
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/SampleTree
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad/resources
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Notepad
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks/HelpFiles
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Metalworks
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Transforms
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paths
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Paint
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Mix
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Lines
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Fonts
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Composite
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Colors
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Clipping
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos/Arcs_Curves
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src/demos
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Java2D
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest/resources
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/Font2DTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/src
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/FileChooserDemo
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/JavaDB
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/Sybase
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertSuppliers
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/Sybase
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/InsertCoffees
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/Sybase
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateSuppliers
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/Sybase
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees/MSAccess
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos/CreateCoffees
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc/DBDemos
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/jfc
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame/models
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/WireFrame
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe/audio
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/TicTacToe
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/SymbolTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/SpreadSheet
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/SortDemo
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/SimpleGraph
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/NervousText
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer/models
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/MoleculeViewer
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox/sounds
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/JumpingBox
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap/audio
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/ImageMap
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/GraphicsTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout/audio
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/GraphLayout
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Fractal
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/DrawTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/DitherTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Clock
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/CardTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Blink
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/BarChart
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/ArcTest
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/SimpleAnimation
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images/Beans
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/images
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Animator/audio
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets/Animator
+@dirrm diablo-jdk%%JDK_VERSION%%/demo/applets
+@dirrm diablo-jdk%%JDK_VERSION%%/demo
+@dirrm diablo-jdk%%JDK_VERSION%%/bin/i386/green_threads
+@dirrm diablo-jdk%%JDK_VERSION%%/bin/i386
+@dirrm diablo-jdk%%JDK_VERSION%%/bin
+@dirrm diablo-jdk%%JDK_VERSION%%
