@@ -82,12 +82,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\"
 
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
-CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
-		-fexpensive-optimizations -ffast-math
-.endif
-
 CONFIGURE_ENV=	OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
