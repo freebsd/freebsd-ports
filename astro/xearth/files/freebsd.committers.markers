@@ -1,9 +1,4 @@
 #
-# BSDi, our good friends.
-#
-37.91,		-122.06,	"BSDi/OSD"			# BSDi Open Source Division
-
-#
 # FreeBSD Project Committers
 #
 # Style (sorted from east to west):
@@ -81,8 +76,8 @@
  43.37,		-79.79,		"hoek"				# Burlington, ON, Canada
 #37.23,		-80.41,		"jhb"				# Blacksburg, VA, USA
  29.16,		-82.18,		"jedgar"			# Ocala, FL, USA
+ 42.933928,	-83.243644,	"will"				# Metamora, MI, USA
  34.8,		-86.7,		"steve"				# Harvest, AL, USA
- 40.425098,	-86.928511,	"will"				# West Lafayette, IN, USA
  43.19,		-89.38,		"jlemon"			# Madison, WI, USA
  44.99,		-93.25,		"mpp,mks"			# Minneapolis, MN, USA
  44.59556,	-93.15372,	"       ,nectar"		# Minneapolis, MN, USA
