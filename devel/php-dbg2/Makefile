@@ -7,6 +7,7 @@
 
 PORTNAME=	dbg
 PORTVERSION=	2.11.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
@@ -24,6 +25,7 @@ USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/dbg
 CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler \
 		--with-php-config=${PREFIX}/bin/php-config
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 
