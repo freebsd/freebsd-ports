@@ -1,16 +1,16 @@
 # New ports collection makefile for:	X98server for PWLB with X True Type
 # Version required:	1.2.1
 # Date created:		25 October 1998
-# Whom:			NAKAJI Hiroyuki <nakaji@zeisei.dpri.kyoto-u.ac.jp>
+# Whom:			NAKAJI Hiroyuki <nakaji@tutrp.tut.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/04/02 08:28:47 taoka Exp $
+# $Id: Makefile,v 1.5 1999/04/13 03:16:04 simokawa Exp $
 #
 
 DISTNAME=	xc
 PKGNAME=	xtt-98PWLB-${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11
 
-MAINTAINER=	nakaji@zeisei.dpri.kyoto-u.ac.jp
+MAINTAINER=	nakaji@tutrp.tut.ac.jp
 
 LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
 
