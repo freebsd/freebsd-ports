@@ -1,8 +1,9 @@
 bin/xchat
 bin/xchat-text
-share/doc/xchat/xchat.sgml
-share/doc/xchat/xchat.html
+share/doc/xchat/ChangeLog
+share/doc/xchat/README
 share/doc/xchat/xchat-1.html
+share/doc/xchat/xchat-10.html
 share/doc/xchat/xchat-2.html
 share/doc/xchat/xchat-3.html
 share/doc/xchat/xchat-4.html
@@ -11,9 +12,8 @@ share/doc/xchat/xchat-6.html
 share/doc/xchat/xchat-7.html
 share/doc/xchat/xchat-8.html
 share/doc/xchat/xchat-9.html
-share/doc/xchat/xchat-10.html
-share/doc/xchat/README
-share/doc/xchat/ChangeLog
+share/doc/xchat/xchat.html
+share/doc/xchat/xchat.sgml
 %%GNOME:%%share/gnome/apps/Internet/xchat.desktop
 %%GNOME:%%share/gnome/pixmaps/xchat.png
 %%GNOME:%%share/gnome/pixmaps/xchat_wm.png
