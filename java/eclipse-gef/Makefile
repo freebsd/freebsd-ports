@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gef
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-3.0-200406251257/
+MASTER_SITES=	http://download.eclipse.org/tools/gef/downloads/drops/R-3.0.1-200408311615/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	GEF-SDK-${PORTVERSION}
 DIST_SUBDIR=	eclipse
@@ -21,6 +21,10 @@ RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_OS=	native
+PLIST_SUB=	RELEASEVERSION=${PORTVERSION}
 
 do-install:
 		@${MKDIR} ${PREFIX}/eclipse
