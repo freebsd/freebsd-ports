@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.52 1998/09/01 18:38:05 andreas Exp $
+# $Id: Makefile,v 1.53 1998/09/01 21:04:57 andreas Exp $
 #
 
 DISTNAME=	apache_${APACHE_VER}
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.php.net/distributions/
 DISTFILES=	apache_${APACHE_VER}.tar.gz php-${PHP3_VER}.tar.gz
 
-MAINTAINER=	ibex@physik.TU-Berlin.DE
+MAINTAINER=	Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 
 APACHE_VER=	1.3.1
 PHP3_VER=	3.0.3
