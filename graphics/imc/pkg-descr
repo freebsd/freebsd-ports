@@ -1,0 +1,22 @@
+imc, the Image Compiler
+
+General features
+
+Generally, the most important features are the following:
+   - Does not need a display to run.
+   - Can be run from the command line or as CGI script. In the latter case,
+     the image is output to the browser (in PNG or JPEG format).
+   - The size of the output image is automatically determined, no size has to
+     be specified (although you can give a fixed size)
+   - Coordinates are in pixels, only positive coordinates are visible. Angles
+     are in integer degrees, no limitations (except the maximum integer limit).
+     Colors can be specified in one of three formats, including X11 color
+     (rgb) strings
+   - A pre-processor can be applied on the input file first; simple arithmetic
+     can be performed.
+   - Supports commands for drawing lines, circles (filled or not), rectangles
+     (filled or not), ellipses (filled or not), arcs and text. Images can also
+     be imported. For text and images an alignment parameter is available, and
+     text and images can be rotated over any angle and can also be mirrored.
+
+WWW: http://users.skynet.be/Peter.Verthez/projects/imc/
