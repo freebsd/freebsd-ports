@@ -30,11 +30,11 @@ do-install:
 	${MKDIR} ${PREFIX}/include/nss
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/include/nss -xf -
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL}_OPT.OBJ/lib/*.so.1 \
+	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
 		${PREFIX}/lib
-	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL}_OPT.OBJ/bin/* \
+	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/* \
 		${PREFIX}/bin
-	cd ${DIST}/FreeBSD${OSREL}_OPT.OBJ/lib && \
+	cd ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib && \
 		${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib -xf -
 
 .include <bsd.port.mk>
