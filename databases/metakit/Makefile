@@ -21,6 +21,10 @@ RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 .if defined(METAKIT_WITH_TCL)
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 .endif
+.if defined(METAKIT_WITH_TCLKIT)
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
+BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 USE_LIBTOOL=	yes
@@ -38,36 +42,64 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .if defined(METAKIT_WITH_TCL)
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.3
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
 CATEGORIES+=	tcl83
+TCL_V=		8.3
+TCL_SHORT_V=	83
 PLIST_SUB+=	WITH_TCL=""
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
 .endif
 
+.if defined(METAKIT_WITH_TCLKIT)
+CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_V}
+TCL_V=		8.4
+TCL_SHORT_V=	84
+MAKE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
+VFIX=		tcl/kit/kitsh.vfs/lib/vfs/vfs.tcl \
+		tcl/kit/kit-unix.vfs/lib/tk8.4/pkgIndex.tcl
+PLIST_SUB+=	WITH_TCLKIT=""
+.else
+PLIST_SUB+=	WITH_TCLKIT="@comment "
+.endif
+
 pre-patch:
 	@${PERL5} -pi -e "s=\@TCL_BIN_DIR\@=${LOCALBASE}/lib=" \
 		${WRKSRC}/../unix/Makefile.in
-	@${PERL5} -pi -e "s=-ltclstub8.4=-ltclstub83=" \
+	@${PERL5} -pi -e "s=-ltclstub8.4=-ltclstub${TCL_SHORT_V}=" \
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e "s= -Ds = -s =" \
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e "s= -D = =" \
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e \
-		"s=-I..TCL_BIN_DIR.=-I${LOCALBASE}/include/tcl8.3/unix=" \
+		"s=-I..TCL_BIN_DIR.=-I${LOCALBASE}/include/tcl${TCL_V}/unix=" \
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e "s=doc/==" ${WRKSRC}/../MetaKit.html
+
+.if defined(METAKIT_WITH_TCLKIT)
+post-patch:
+.for i in ${VFIX}
+	@${PERL5} -pi -e "s=libtk8[.]4=libtk${TCL_SHORT_V}=" ${WRKSRC}/../${i}
+.endfor
+
+post-build:
+	@(cd ${WRKSRC}/../tcl/kit && ${SETENV} ${MAKE_ENV} \
+	${MAKE} ${MAKE_FLAGS} ${FILESDIR}/Makefile.kit ${MAKE_ARGS})
+.endif
 
 post-install:
 .if !defined(METAKIT_WITHOUT_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so \
 		${PREFIX}/lib/python1.5/site-packages
 .endif
+.if defined(METAKIT_WITH_TCLKIT)
+	@${INSTALL_PROGRAM} ${WRKSRC}/../tcl/kit/tclkit ${PREFIX}/bin
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/metakit
-	(cd ${WRKSRC}/../doc && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/share/doc/metakit && ${TAR} --unlink -x -f -)
+	(${TAR} -C ${WRKSRC}/../doc -cf - . | \
+		${TAR} -C ${PREFIX}/share/doc/metakit --unlink -xf -)
 	${INSTALL_DATA} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../CHANGES \
 		${WRKSRC}/../README ${WRKSRC}/../WHATSNEW \
 		${PREFIX}/share/doc/metakit
@@ -76,7 +108,7 @@ post-install:
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-.if defined(METAKIT_WITH_TCL)
+.if defined(METAKIT_WITH_TCL) || defined(METAKIT_WITH_TCLKIT)
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
