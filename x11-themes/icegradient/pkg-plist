@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libicegradient.so
+share/themes/IceGradient/ICON.png
+share/themes/IceGradient/README.html
+share/themes/IceGradient/gtk/gtkrc
+@dirrm share/themes/IceGradient/gtk
+@dirrm share/themes/IceGradient

@@ -1,0 +1,5 @@
+GTK+ gradient theme based on ThinIce. It's not a pixmap theme, and thus it
+should be faster than other themes with gradients. In fact it is a theme engine
+so it's possible to use it to create other themes.
+
+WWW: http://gtk.themes.org/themes.phtml?themeid=965346332

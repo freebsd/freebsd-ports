@@ -28,6 +28,7 @@
     SUBDIR += gtkstep-pastel
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
+    SUBDIR += icegradient
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += iv
