@@ -17,6 +17,4 @@ MAINTAINER=	vanilla@FreeBSD.org
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-MAKE_ARGS=	"-E CFLAGS"
-
 .include <bsd.port.mk>
