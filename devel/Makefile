@@ -49,6 +49,7 @@
     SUBDIR += avr-libc
     SUBDIR += avrprog
     SUBDIR += bcc
+    SUBDIR += bcpp
     SUBDIR += bin86
     SUBDIR += bison
     SUBDIR += boaconstructor

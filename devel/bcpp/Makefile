@@ -1,0 +1,36 @@
+# New ports collection makefile for:	bcpp
+# Date created:			07 November 2001
+# Whom:				Mike Buchanon <buchanon@msu.edu>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	bcpp
+PORTVERSION=	1.8
+CATEGORIES=	devel
+MASTER_SITES=	ftp://invisible-island.net/bcpp/
+DISTNAME=	bcpp-990810
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	buchanon@msu.edu
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/code
+MAKEFILE=	makefile
+ALL_TARGET=	${PORTNAME}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg \
+		${PREFIX}/etc/${PORTNAME}.cfg.sample
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/txtdocs/hirachy.txt ${DOCSDIR}
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/txtdocs/manual.txt ${DOCSDIR}
+.endif
+
+post-install:
+	@${ECHO} "************************************************************"
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO} "************************************************************"
+
+.include <bsd.port.mk>
