@@ -1,0 +1,10 @@
+--- src/debug.c.orig	Fri Feb 18 06:59:19 2000
++++ src/debug.c	Mon Apr 10 03:00:00 2000
+@@ -31,7 +31,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+-#include <malloc.h>
+ 
+ #include "utility.h"
+ #include "buffer.h"

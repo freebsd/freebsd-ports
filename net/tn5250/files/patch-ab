@@ -1,0 +1,10 @@
+--- src/tn5250-private.h.orig	Sun Feb 13 11:32:48 2000
++++ src/tn5250-private.h	Mon Apr 10 03:00:00 2000
+@@ -29,7 +29,6 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <ctype.h>
+ #include <errno.h>
+ #include <signal.h>
