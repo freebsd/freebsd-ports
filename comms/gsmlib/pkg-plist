@@ -29,5 +29,5 @@ lib/libgsmext.so.1
 lib/libgsmme.a
 lib/libgsmme.so
 lib/libgsmme.so.1
-share/locale/de/LC_MESSAGES/gsmlib.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gsmlib.mo
 @dirrm include/gsmlib

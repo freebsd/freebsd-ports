@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access GSM mobile phones through GSM modems
 
 USE_GETOPT_LONG=	yes
-USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=	13
@@ -31,6 +30,14 @@ MAN8=	gsmsmsd.8
 CPPFLAGS=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT \
 			${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
