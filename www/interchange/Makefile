@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	interchange
-PORTVERSION=	4.8.6
-PORTREVISION=	2
+PORTVERSION=	4.8.7
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/4.8/tar/
 
@@ -21,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statemen
 	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
 	${ARCH_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 	${ARCH_PERL}/MIME/Base64.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
 	${SITE_PERL}/URI/URL.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl \
 	${ARCH_PERL}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey

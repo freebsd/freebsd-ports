@@ -715,8 +715,6 @@ interchange/lib/Business/UPS.pm
 @dirrm interchange/lib/Business
 interchange/lib/File/CounterFile.pm
 @dirrm interchange/lib/File
-interchange/lib/HTML/Entities.pm
-@dirrm interchange/lib/HTML
 interchange/lib/IniConf.pm
 interchange/lib/Tie/ShadowHash.pm
 @dirrm interchange/lib/Tie
@@ -781,7 +779,6 @@ interchange/lib/auto/Vend/Tags/autosplit.ix
 interchange/lib/hints.pl
 @dirrm interchange/lib
 interchange/locale.error
-interchange/perllocal.pod
 interchange/share/interchange/da_DK/A1.gif
 interchange/share/interchange/da_DK/A1_b.gif
 interchange/share/interchange/da_DK/A2.gif
@@ -816,6 +813,7 @@ interchange/share/interchange/da_DK/down.gif
 interchange/share/interchange/da_DK/folder.gif
 interchange/share/interchange/da_DK/folder.open.gif
 interchange/share/interchange/da_DK/generic.gif
+interchange/share/interchange/da_DK/iclogo.gif
 interchange/share/interchange/da_DK/icon_config.gif
 interchange/share/interchange/da_DK/icon_design.gif
 interchange/share/interchange/da_DK/icon_error.gif
@@ -831,7 +829,6 @@ interchange/share/interchange/da_DK/layout.gif
 interchange/share/interchange/da_DK/left.gif
 interchange/share/interchange/da_DK/plus.gif
 interchange/share/interchange/da_DK/poweredby.gif
-interchange/share/interchange/da_DK/redhat_logo.gif
 interchange/share/interchange/da_DK/right.gif
 interchange/share/interchange/da_DK/smindex.gif
 interchange/share/interchange/da_DK/spacer1.gif
@@ -878,6 +875,7 @@ interchange/share/interchange/de_DE/down.gif
 interchange/share/interchange/de_DE/folder.gif
 interchange/share/interchange/de_DE/folder.open.gif
 interchange/share/interchange/de_DE/generic.gif
+interchange/share/interchange/de_DE/iclogo.gif
 interchange/share/interchange/de_DE/icon_config.gif
 interchange/share/interchange/de_DE/icon_design.gif
 interchange/share/interchange/de_DE/icon_error.gif
@@ -893,7 +891,6 @@ interchange/share/interchange/de_DE/layout.gif
 interchange/share/interchange/de_DE/left.gif
 interchange/share/interchange/de_DE/plus.gif
 interchange/share/interchange/de_DE/poweredby.gif
-interchange/share/interchange/de_DE/redhat_logo.gif
 interchange/share/interchange/de_DE/right.gif
 interchange/share/interchange/de_DE/smindex.gif
 interchange/share/interchange/de_DE/spacer1.gif
@@ -940,6 +937,7 @@ interchange/share/interchange/en_US/down.gif
 interchange/share/interchange/en_US/folder.gif
 interchange/share/interchange/en_US/folder.open.gif
 interchange/share/interchange/en_US/generic.gif
+interchange/share/interchange/en_US/iclogo.gif
 interchange/share/interchange/en_US/icon_config.gif
 interchange/share/interchange/en_US/icon_design.gif
 interchange/share/interchange/en_US/icon_error.gif
@@ -955,7 +953,6 @@ interchange/share/interchange/en_US/layout.gif
 interchange/share/interchange/en_US/left.gif
 interchange/share/interchange/en_US/plus.gif
 interchange/share/interchange/en_US/poweredby.gif
-interchange/share/interchange/en_US/redhat_logo.gif
 interchange/share/interchange/en_US/right.gif
 interchange/share/interchange/en_US/smindex.gif
 interchange/share/interchange/en_US/spacer1.gif
@@ -1002,6 +999,7 @@ interchange/share/interchange/es_ES/down.gif
 interchange/share/interchange/es_ES/folder.gif
 interchange/share/interchange/es_ES/folder.open.gif
 interchange/share/interchange/es_ES/generic.gif
+interchange/share/interchange/es_ES/iclogo.gif
 interchange/share/interchange/es_ES/icon_config.gif
 interchange/share/interchange/es_ES/icon_design.gif
 interchange/share/interchange/es_ES/icon_error.gif
@@ -1017,7 +1015,6 @@ interchange/share/interchange/es_ES/layout.gif
 interchange/share/interchange/es_ES/left.gif
 interchange/share/interchange/es_ES/plus.gif
 interchange/share/interchange/es_ES/poweredby.gif
-interchange/share/interchange/es_ES/redhat_logo.gif
 interchange/share/interchange/es_ES/right.gif
 interchange/share/interchange/es_ES/smindex.gif
 interchange/share/interchange/es_ES/spacer1.gif
@@ -1064,6 +1061,7 @@ interchange/share/interchange/he_IL/down.gif
 interchange/share/interchange/he_IL/folder.gif
 interchange/share/interchange/he_IL/folder.open.gif
 interchange/share/interchange/he_IL/generic.gif
+interchange/share/interchange/he_IL/iclogo.gif
 interchange/share/interchange/he_IL/icon_config.gif
 interchange/share/interchange/he_IL/icon_design.gif
 interchange/share/interchange/he_IL/icon_error.gif
@@ -1079,7 +1077,6 @@ interchange/share/interchange/he_IL/layout.gif
 interchange/share/interchange/he_IL/left.gif
 interchange/share/interchange/he_IL/plus.gif
 interchange/share/interchange/he_IL/poweredby.gif
-interchange/share/interchange/he_IL/redhat_logo.gif
 interchange/share/interchange/he_IL/right.gif
 interchange/share/interchange/he_IL/smindex.gif
 interchange/share/interchange/he_IL/spacer1.gif
@@ -1126,6 +1123,7 @@ interchange/share/interchange/ja_JP/down.gif
 interchange/share/interchange/ja_JP/folder.gif
 interchange/share/interchange/ja_JP/folder.open.gif
 interchange/share/interchange/ja_JP/generic.gif
+interchange/share/interchange/ja_JP/iclogo.gif
 interchange/share/interchange/ja_JP/icon_config.gif
 interchange/share/interchange/ja_JP/icon_design.gif
 interchange/share/interchange/ja_JP/icon_error.gif
@@ -1141,7 +1139,6 @@ interchange/share/interchange/ja_JP/layout.gif
 interchange/share/interchange/ja_JP/left.gif
 interchange/share/interchange/ja_JP/plus.gif
 interchange/share/interchange/ja_JP/poweredby.gif
-interchange/share/interchange/ja_JP/redhat_logo.gif
 interchange/share/interchange/ja_JP/right.gif
 interchange/share/interchange/ja_JP/smindex.gif
 interchange/share/interchange/ja_JP/spacer1.gif
@@ -1188,6 +1185,7 @@ interchange/share/interchange/nl_NL/down.gif
 interchange/share/interchange/nl_NL/folder.gif
 interchange/share/interchange/nl_NL/folder.open.gif
 interchange/share/interchange/nl_NL/generic.gif
+interchange/share/interchange/nl_NL/iclogo.gif
 interchange/share/interchange/nl_NL/icon_config.gif
 interchange/share/interchange/nl_NL/icon_design.gif
 interchange/share/interchange/nl_NL/icon_error.gif
@@ -1203,7 +1201,6 @@ interchange/share/interchange/nl_NL/layout.gif
 interchange/share/interchange/nl_NL/left.gif
 interchange/share/interchange/nl_NL/plus.gif
 interchange/share/interchange/nl_NL/poweredby.gif
-interchange/share/interchange/nl_NL/redhat_logo.gif
 interchange/share/interchange/nl_NL/right.gif
 interchange/share/interchange/nl_NL/smindex.gif
 interchange/share/interchange/nl_NL/spacer1.gif
@@ -1250,6 +1247,7 @@ interchange/share/interchange/pt_BR/down.gif
 interchange/share/interchange/pt_BR/folder.gif
 interchange/share/interchange/pt_BR/folder.open.gif
 interchange/share/interchange/pt_BR/generic.gif
+interchange/share/interchange/pt_BR/iclogo.gif
 interchange/share/interchange/pt_BR/icon_config.gif
 interchange/share/interchange/pt_BR/icon_design.gif
 interchange/share/interchange/pt_BR/icon_error.gif
@@ -1265,7 +1263,6 @@ interchange/share/interchange/pt_BR/layout.gif
 interchange/share/interchange/pt_BR/left.gif
 interchange/share/interchange/pt_BR/plus.gif
 interchange/share/interchange/pt_BR/poweredby.gif
-interchange/share/interchange/pt_BR/redhat_logo.gif
 interchange/share/interchange/pt_BR/right.gif
 interchange/share/interchange/pt_BR/smindex.gif
 interchange/share/interchange/pt_BR/spacer1.gif
@@ -1312,6 +1309,7 @@ interchange/share/interchange/sv_SE/down.gif
 interchange/share/interchange/sv_SE/folder.gif
 interchange/share/interchange/sv_SE/folder.open.gif
 interchange/share/interchange/sv_SE/generic.gif
+interchange/share/interchange/sv_SE/iclogo.gif
 interchange/share/interchange/sv_SE/icon_config.gif
 interchange/share/interchange/sv_SE/icon_design.gif
 interchange/share/interchange/sv_SE/icon_error.gif
@@ -1327,7 +1325,6 @@ interchange/share/interchange/sv_SE/layout.gif
 interchange/share/interchange/sv_SE/left.gif
 interchange/share/interchange/sv_SE/plus.gif
 interchange/share/interchange/sv_SE/poweredby.gif
-interchange/share/interchange/sv_SE/redhat_logo.gif
 interchange/share/interchange/sv_SE/right.gif
 interchange/share/interchange/sv_SE/smindex.gif
 interchange/share/interchange/sv_SE/spacer1.gif
