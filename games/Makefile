@@ -28,6 +28,7 @@
     SUBDIR += antipolix
     SUBDIR += asc
     SUBDIR += atomix
+    SUBDIR += atr3d
     SUBDIR += awele
     SUBDIR += baduki
     SUBDIR += barrage
