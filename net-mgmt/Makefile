@@ -81,6 +81,7 @@
     SUBDIR += net-snmp4
     SUBDIR += netams
     SUBDIR += netmask
+    SUBDIR += netmond
     SUBDIR += netqc
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins

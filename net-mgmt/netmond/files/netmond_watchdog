@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+prefix=/usr/local
+exec_prefix=${prefix}
+PATH=/bin:/usr/bin
+export PATH
+pidfile=/var/run/netmond.pid
+#config=/usr/home/netmon/netmon.conf
+config=/usr/local/etc/netmon.conf
+
+while : ; do
+    if [ -r $pidfile ]  && kill -0 `cat $pidfile` >/dev/null 2>&1 ; then
+	# echo "Netmond Running"
+    else
+        # echo "Netmond failed"
+	logger -p daemon.err -t nemond_watchdog "Netmond failed. Restarting..." 
+	rm -f ${pidfile}
+	${exec_prefix}/sbin/netmond -c ${config}
+    fi
+    sleep 10
+done 
