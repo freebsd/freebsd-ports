@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 #EXTRA_PATCHES=	${PORTSDIR}/x11/kde3/files/extrapatch-old_configure
 
 post-patch:
