@@ -21,5 +21,6 @@ USE_IMAKE=	yes
 USE_XPM=	yes
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
+MAN1=		knews.1
 
 .include <bsd.port.mk>
