@@ -3,10 +3,12 @@
 # Date created:		06 Nov 1998
 # Whom:			Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1998/11/08 09:36:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/01 03:06:37 asami Exp $
 #
 
 RESOLUTION=	240
 MASTERDIR=	${.CURDIR}/../pkfonts300
+
+BROKEN= 'fetch'
 
 .include	"${MASTERDIR}/Makefile"
