@@ -20,13 +20,11 @@ COMMENT=	The massively parallel quantum computing library and program
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
-.include <bsd.port.pre.mk>
-
 USE_BISON=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
-		--with-f77=${F77} \
+		--with-f77=${FC} \
 		--with-libdirs=-L${LOCALBASE}/lib \
 		--with-blas="-lf77blas -latlas" \
 		--with-lapack="-lalapack -lcblas" \
@@ -39,7 +37,8 @@ ALL_TARGET=	# empty
 PLIST_SUB+=	VERSION=${PORTVERSION}
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
-.include "${MASTERDIR}/files/manpages"
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
@@ -59,7 +58,7 @@ do-install:
 	@cd ${WRKDIR}/${PORTNAME}-man-${PORTVERSION}/man3/ ; ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/man/man3/
 	@${MKDIR} ${PREFIX}/share/mpqc/ref
-	@cd ${WRKDIR}/ref/ && ${TAR} -chf - . | \
+	@cd ${WRKDIR}/ref/ ; ${TAR} -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/share/mpqc/ref
 
 post-install:
