@@ -9,11 +9,11 @@ In addition to the above, Sylpheed-claws has the following extra features:
 * allow colour labeling of emails based on filtering rules
 * automatic mailing list reply, allow ignoring of mail threads
 * selectable fonts, compface support, spell checking, SMTP AUTH
-* Revision of the quotation format and forwarding format
 * encryption/decryption of GPG/PGP ascii-armored messages is supported
-* dynamic signatures are enabled
 * folder properties: associate certain options per folder,
 	'Request Return Receipt', 'Default To', and 'Default account'
+* subject simplification for changing the display of subject lines via RegExp
+* Undo/Redo
 and more...
 
 WWW: http://sylpheed-claws.sourceforge.net/

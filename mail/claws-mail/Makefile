@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sylpheed
-PORTVERSION=	0.6.6
+PORTNAME=	sylpheed-claws
+PORTVERSION=	0.7.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
-PKGNAMESUFFIX=	-claws
 DISTNAME=	sylpheed-${PORTVERSION}claws
 
 MAINTAINER=	corecode@corecode.ath.cx
@@ -23,27 +22,31 @@ USE_GTK=	yes
 CONFIGURE_ARGS=	--program-suffix="-claws" --with-included-gettext \
 		--enable-ipv6
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-.if defined(WITH_PIXBUF)
+.if defined(WITH_PIXBUF) || defined(WITH_ALL)
 LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 CONFIGURE_ARGS+=	--disable-imlib
 .else
 USE_IMLIB=		yes
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
-.if defined(WITH_GPGME)
+.if defined(WITH_GPGME) || defined(WITH_ALL)
 LIB_DEPENDS+=		gpgme.4:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
-.if defined(WITH_COMPFACE)
+.if defined(WITH_COMPFACE) || defined(WITH_ALL)
 LIB_DEPENDS+=		compface.1:${PORTSDIR}/mail/faces
-CONFIGURE_ENV+=		LIBS="-L${X11BASE}/lib"
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
-.if defined(WITH_PSPELL)
+.if defined(WITH_JCONV) || defined(WITH_ALL)
+LIB_DEPENDS+=		jconv.0:${PORTSDIR}/japanese/libjconv
+.else
+CONFIGURE_ARGS+=	--disable-jconv
+.endif
+.if defined(WITH_PSPELL) || defined(WITH_ALL)
 LIB_DEPENDS+=		pspell.4:${PORTSDIR}/textproc/pspell
 CONFIGURE_ARGS+=	--enable-pspell
 .endif
@@ -53,42 +56,43 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 pre-everything::
-.if !defined(WITH_PIXBUF)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable GDK Pixbuf support by defining WITH_PIXBUF."
+	@${ECHO} ""
+	@${ECHO} "You may define the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_ALL       Enable all options below"
+	@${ECHO} "      WITH_PIXBUF    Enable GDK Pixbuf support"
+	@${ECHO} "      WITH_GPGME     Enable GnuPG support using GPGME"
+	@${ECHO} "      WITH_COMPFACE  Enable compface (X-Face) support"
+	@${ECHO} "      WITH_JCONV     Enable enhanced charset conversion"
+	@${ECHO} "      WITH_PSPELL    Enable spell-checking support"
+	@${ECHO} ""
+	@${ECHO} "      WITHOUT_SSL    Disable OpenSSL support"
+	@${ECHO} ""
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
+.if defined(NOPORTDOCS)
+	@${PERL} -pi -e 's|^(SUBDIRS = .*)manual (.*)|\1\2|' ${WRKSRC}/Makefile.in
 .endif
-.if defined(WITH_GPGME)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WARNING: GnuPG support using GPGME is still experimental."
-.else
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable GnuPG support using GPGME by defining WITH_GPGME."
-	@${ECHO_MSG} "WARNING: GnuPG support is still experimental."
-.endif
-.if !defined(WITH_COMPFACE)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable compface (X-Face) support by defining WITH_COMPFACE."
-.endif
-.if !defined(WITH_PSPELL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable pspell support by defining WITH_PSPELL."
-.endif
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable OpenSSL support by defining WITHOUT_SSL."
-.endif
-	@${ECHO_MSG}
 
 pre-build:
-	${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
+	@${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/sylpheed-claws
-.for i in NEWS README README.claws README.jp RELEASE_NOTES.claws TODO TODO.jp
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/sylpheed-claws
+.for i in README README.jp README.claws RELEASE_NOTES.claws TODO TODO.jp tools/README.sylprint
+	@${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+	@${INSTALL_MAN} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 .endif
+	@${MKDIR} ${DATADIR}
+.for i in eud2gc.py filter_conv.pl gif2xface.pl ldif-to-xml.py newscache_clean.pl
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${i} ${DATADIR}
+.endfor
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylpheed-switcher ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/sylprint.pl ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
 

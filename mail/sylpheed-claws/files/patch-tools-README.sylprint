@@ -1,0 +1,18 @@
+--- tools/README.sylprint.orig	Sun Jan  6 17:05:30 2002
++++ tools/README.sylprint	Tue Jan 15 00:19:12 2002
+@@ -144,11 +144,12 @@
+ 	sylprint.pl
+ 		The script itself.
+ 
+-	sylprint.rc
++	%%PREFIX%%/etc/sylprint.rc
++	~/.sylpheed/sylprint.rc
+ 		Stores user default preferred configuration for the
+ 		script. Settings in this file may be overriden by
+-		command line options. Must be stored in the same
+-		directory of the script and/or in the ~/.sylpheed
++		command line options. Must be stored in the local
++		configuration directory and/or in the ~/.sylpheed
+ 		one (Sylpheed user's configuration directory).
+ 	
+ 	/tmp/sylprint.username.number

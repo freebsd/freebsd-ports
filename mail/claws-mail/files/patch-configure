@@ -1,5 +1,5 @@
---- ./configure.orig	Sat Dec 15 14:28:30 2001
-+++ ./configure	Fri Dec 21 01:02:01 2001
+--- configure.orig	Mon Jan 14 16:15:33 2002
++++ configure	Tue Jan 15 15:53:11 2002
 @@ -756,7 +756,7 @@
  fi
  
@@ -8,4 +8,22 @@
 +PACKAGE=sylpheed-claws
  
  MAJOR_VERSION=0
- MINOR_VERSION=6
+ MINOR_VERSION=7
+@@ -1056,7 +1056,7 @@
+ fi
+ 
+ 
+-if test -d "$gnomedir"; then
++if false; then
+   SYLPHEED_GNOME_TRUE=
+   SYLPHEED_GNOME_FALSE='#'
+ else
+@@ -7419,7 +7419,7 @@
+ localedir='${prefix}/${DATADIRNAME}/locale'
+ 
+ 
+-manualdir='${prefix}/${DATADIRNAME}/${PACKAGE}/manual'
++manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
+ 
+ 
+ # Check whether --with-glib-prefix or --without-glib-prefix was given.
