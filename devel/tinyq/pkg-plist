@@ -1,0 +1,466 @@
+tinyq/bin/qmake
+tinyq/doc/annotated.html
+tinyq/doc/classes.html
+tinyq/doc/groups.html
+tinyq/doc/index.html
+tinyq/doc/logo32.png
+tinyq/doc/mainclasses.html
+tinyq/doc/qasciicache-h.html
+tinyq/doc/qasciicache-members.html
+tinyq/doc/qasciicache.html
+tinyq/doc/qasciicacheiterator-members.html
+tinyq/doc/qasciicacheiterator.html
+tinyq/doc/qasciidict-h.html
+tinyq/doc/qasciidict-members.html
+tinyq/doc/qasciidict.html
+tinyq/doc/qasciidictiterator-members.html
+tinyq/doc/qasciidictiterator.html
+tinyq/doc/qbitarray-h.html
+tinyq/doc/qbitarray-members.html
+tinyq/doc/qbitarray.html
+tinyq/doc/qbuffer-h.html
+tinyq/doc/qbuffer-members.html
+tinyq/doc/qbuffer.html
+tinyq/doc/qcache-h.html
+tinyq/doc/qcache-members.html
+tinyq/doc/qcache.html
+tinyq/doc/qcacheiterator-members.html
+tinyq/doc/qcacheiterator.html
+tinyq/doc/qcstring-h.html
+tinyq/doc/qcstring-members.html
+tinyq/doc/qcstring.html
+tinyq/doc/qdatastream-h.html
+tinyq/doc/qdatastream-members.html
+tinyq/doc/qdatastream.html
+tinyq/doc/qdatetime-h.html
+tinyq/doc/qdatetime-members.html
+tinyq/doc/qdatetime.html
+tinyq/doc/qdatetimeedit-h.html
+tinyq/doc/qdatetimeedit-members.html
+tinyq/doc/qdatetimeedit.html
+tinyq/doc/qdict-h.html
+tinyq/doc/qdict-members.html
+tinyq/doc/qdict.html
+tinyq/doc/qdictiterator-members.html
+tinyq/doc/qdictiterator.html
+tinyq/doc/qdir-example.html
+tinyq/doc/qdir-h.html
+tinyq/doc/qdir-members.html
+tinyq/doc/qdir.html
+tinyq/doc/qdirectpainter-members.html
+tinyq/doc/qdirectpainter.html
+tinyq/doc/qdirectpainter_qws-h.html
+tinyq/doc/qdom-h.html
+tinyq/doc/qdomattr-members.html
+tinyq/doc/qdomattr.html
+tinyq/doc/qdomcdatasection-members.html
+tinyq/doc/qdomcdatasection.html
+tinyq/doc/qdomcharacterdata-members.html
+tinyq/doc/qdomcharacterdata.html
+tinyq/doc/qdomcomment-members.html
+tinyq/doc/qdomcomment.html
+tinyq/doc/qdomdocument-members.html
+tinyq/doc/qdomdocument.html
+tinyq/doc/qdomdocumentfragment-members.html
+tinyq/doc/qdomdocumentfragment.html
+tinyq/doc/qdomdocumenttype-members.html
+tinyq/doc/qdomdocumenttype.html
+tinyq/doc/qdomelement-members.html
+tinyq/doc/qdomelement.html
+tinyq/doc/qdomentity-members.html
+tinyq/doc/qdomentity.html
+tinyq/doc/qdomentityreference-members.html
+tinyq/doc/qdomentityreference.html
+tinyq/doc/qdomimplementation-members.html
+tinyq/doc/qdomimplementation.html
+tinyq/doc/qdomnamednodemap-members.html
+tinyq/doc/qdomnamednodemap.html
+tinyq/doc/qdomnode-members.html
+tinyq/doc/qdomnode.html
+tinyq/doc/qdomnodelist-members.html
+tinyq/doc/qdomnodelist.html
+tinyq/doc/qdomnotation-members.html
+tinyq/doc/qdomnotation.html
+tinyq/doc/qdomprocessinginstruction-members.html
+tinyq/doc/qdomprocessinginstruction.html
+tinyq/doc/qdomtext-members.html
+tinyq/doc/qdomtext.html
+tinyq/doc/qfile-h.html
+tinyq/doc/qfile-members.html
+tinyq/doc/qfile.html
+tinyq/doc/qfiledialog-h.html
+tinyq/doc/qfiledialog-members.html
+tinyq/doc/qfiledialog.html
+tinyq/doc/qfiledlg-m.png
+tinyq/doc/qfiledlg-w.png
+tinyq/doc/qfileiconprovider-members.html
+tinyq/doc/qfileiconprovider.html
+tinyq/doc/qfileinfo-h.html
+tinyq/doc/qfileinfo-members.html
+tinyq/doc/qfileinfo.html
+tinyq/doc/qfilepreview-members.html
+tinyq/doc/qfilepreview.html
+tinyq/doc/qglobal-h.html
+tinyq/doc/qintcache-h.html
+tinyq/doc/qintcache-members.html
+tinyq/doc/qintcache.html
+tinyq/doc/qintcacheiterator-members.html
+tinyq/doc/qintcacheiterator.html
+tinyq/doc/qintdict-h.html
+tinyq/doc/qintdict-members.html
+tinyq/doc/qintdict.html
+tinyq/doc/qintdictiterator-members.html
+tinyq/doc/qintdictiterator.html
+tinyq/doc/qiodevice-h.html
+tinyq/doc/qiodevice-members.html
+tinyq/doc/qiodevice.html
+tinyq/doc/qiodevicesource-members.html
+tinyq/doc/qiodevicesource.html
+tinyq/doc/qlibrary-h.html
+tinyq/doc/qlibrary-members.html
+tinyq/doc/qlibrary.html
+tinyq/doc/qmap-h.html
+tinyq/doc/qmap-members.html
+tinyq/doc/qmap.html
+tinyq/doc/qmapconstiterator-members.html
+tinyq/doc/qmapconstiterator.html
+tinyq/doc/qmapiterator-members.html
+tinyq/doc/qmapiterator.html
+tinyq/doc/qmemarray-h.html
+tinyq/doc/qmemarray-members.html
+tinyq/doc/qmemarray.html
+tinyq/doc/qmutex-h.html
+tinyq/doc/qmutex-members.html
+tinyq/doc/qmutex.html
+tinyq/doc/qnamespace-h.html
+tinyq/doc/qpair-h.html
+tinyq/doc/qpair-members.html
+tinyq/doc/qpair.html
+tinyq/doc/qptrcollection-h.html
+tinyq/doc/qptrcollection-members.html
+tinyq/doc/qptrcollection.html
+tinyq/doc/qptrdict-h.html
+tinyq/doc/qptrdict-members.html
+tinyq/doc/qptrdict.html
+tinyq/doc/qptrdictiterator-members.html
+tinyq/doc/qptrdictiterator.html
+tinyq/doc/qptrlist-h.html
+tinyq/doc/qptrlist-members.html
+tinyq/doc/qptrlist.html
+tinyq/doc/qptrlistiterator-members.html
+tinyq/doc/qptrlistiterator.html
+tinyq/doc/qptrqueue-h.html
+tinyq/doc/qptrqueue-members.html
+tinyq/doc/qptrqueue.html
+tinyq/doc/qptrstack-h.html
+tinyq/doc/qptrstack-members.html
+tinyq/doc/qptrstack.html
+tinyq/doc/qptrvector-h.html
+tinyq/doc/qptrvector-members.html
+tinyq/doc/qptrvector.html
+tinyq/doc/qregexp-h.html
+tinyq/doc/qregexp-members.html
+tinyq/doc/qregexp.html
+tinyq/doc/qregexpvalidator-members.html
+tinyq/doc/qregexpvalidator.html
+tinyq/doc/qsemaphore-h.html
+tinyq/doc/qsemaphore-members.html
+tinyq/doc/qsemaphore.html
+tinyq/doc/qsettings-h.html
+tinyq/doc/qsettings-members.html
+tinyq/doc/qsettings.html
+tinyq/doc/qsortedlist-h.html
+tinyq/doc/qsortedlist-members.html
+tinyq/doc/qsortedlist.html
+tinyq/doc/qstring-h.html
+tinyq/doc/qstring-members.html
+tinyq/doc/qstring.html
+tinyq/doc/qstringlist-h.html
+tinyq/doc/qstringlist-members.html
+tinyq/doc/qstringlist.html
+tinyq/doc/qstrlist-h.html
+tinyq/doc/qstrlist-members.html
+tinyq/doc/qstrlist.html
+tinyq/doc/qstrlistiterator-members.html
+tinyq/doc/qstrlistiterator.html
+tinyq/doc/qtextcodec-h.html
+tinyq/doc/qtextcodec-members.html
+tinyq/doc/qtextcodec.html
+tinyq/doc/qtextcodecplugin-h.html
+tinyq/doc/qtextcodecplugin-members.html
+tinyq/doc/qtextcodecplugin.html
+tinyq/doc/qtextstream-h.html
+tinyq/doc/qtextstream-members.html
+tinyq/doc/qtextstream.html
+tinyq/doc/qthread-h.html
+tinyq/doc/qthread-members.html
+tinyq/doc/qthread.html
+tinyq/doc/qtl-qvaluelist-example.html
+tinyq/doc/qtl.html
+tinyq/doc/qtlogo.png
+tinyq/doc/qtsciicodec-h.html
+tinyq/doc/qtsciicodec-members.html
+tinyq/doc/qtsciicodec.html
+tinyq/doc/qurl-h.html
+tinyq/doc/qurl-members.html
+tinyq/doc/qurl.html
+tinyq/doc/qurlinfo-h.html
+tinyq/doc/qurlinfo-members.html
+tinyq/doc/qurlinfo.html
+tinyq/doc/qurloperator-h.html
+tinyq/doc/qurloperator-members.html
+tinyq/doc/qurloperator.html
+tinyq/doc/qvaluelist-h.html
+tinyq/doc/qvaluelist-members.html
+tinyq/doc/qvaluelist.html
+tinyq/doc/qvaluelistconstiterator-members.html
+tinyq/doc/qvaluelistconstiterator.html
+tinyq/doc/qvaluelistiterator-members.html
+tinyq/doc/qvaluelistiterator.html
+tinyq/doc/qvaluestack-h.html
+tinyq/doc/qvaluestack-members.html
+tinyq/doc/qvaluestack.html
+tinyq/doc/qvaluevector-h.html
+tinyq/doc/qvaluevector-members.html
+tinyq/doc/qvaluevector.html
+tinyq/doc/qwaitcondition-h.html
+tinyq/doc/qwaitcondition-members.html
+tinyq/doc/qwaitcondition.html
+tinyq/doc/qxml-h.html
+tinyq/doc/qxmlattributes-members.html
+tinyq/doc/qxmlattributes.html
+tinyq/doc/qxmlcontenthandler-members.html
+tinyq/doc/qxmlcontenthandler.html
+tinyq/doc/qxmldeclhandler-members.html
+tinyq/doc/qxmldeclhandler.html
+tinyq/doc/qxmldefaulthandler-members.html
+tinyq/doc/qxmldefaulthandler.html
+tinyq/doc/qxmldtdhandler-members.html
+tinyq/doc/qxmldtdhandler.html
+tinyq/doc/qxmlentityresolver-members.html
+tinyq/doc/qxmlentityresolver.html
+tinyq/doc/qxmlerrorhandler-members.html
+tinyq/doc/qxmlerrorhandler.html
+tinyq/doc/qxmlinputsource-members.html
+tinyq/doc/qxmlinputsource.html
+tinyq/doc/qxmllexicalhandler-members.html
+tinyq/doc/qxmllexicalhandler.html
+tinyq/doc/qxmllocator-members.html
+tinyq/doc/qxmllocator.html
+tinyq/doc/qxmlnamespacesupport-members.html
+tinyq/doc/qxmlnamespacesupport.html
+tinyq/doc/qxmlparseexception-members.html
+tinyq/doc/qxmlparseexception.html
+tinyq/doc/qxmlreader-members.html
+tinyq/doc/qxmlreader.html
+tinyq/doc/qxmlsimplereader-members.html
+tinyq/doc/qxmlsimplereader.html
+tinyq/include/private/qdir_p.h
+tinyq/include/private/qfiledefs_p.h
+tinyq/include/private/qlibrary_p.h
+tinyq/include/private/qmutex_p.h
+tinyq/include/qasciicache.h
+tinyq/include/qasciidict.h
+tinyq/include/qbitarray.h
+tinyq/include/qbuffer.h
+tinyq/include/qcache.h
+tinyq/include/qcleanuphandler.h
+tinyq/include/qconfig-dist.h
+tinyq/include/qconfig-large.h
+tinyq/include/qconfig-medium.h
+tinyq/include/qconfig-minimal.h
+tinyq/include/qconfig-small.h
+tinyq/include/qconfig-tinyq.h
+tinyq/include/qconfig.h
+tinyq/include/qcstring.h
+tinyq/include/qdatastream.h
+tinyq/include/qdatetime.h
+tinyq/include/qdict.h
+tinyq/include/qdir.h
+tinyq/include/qdom.h
+tinyq/include/qfeatures.h
+tinyq/include/qfile.h
+tinyq/include/qfileinfo.h
+tinyq/include/qgarray.h
+tinyq/include/qgcache.h
+tinyq/include/qgdict.h
+tinyq/include/qgeneric.h
+tinyq/include/qglist.h
+tinyq/include/qglobal.h
+tinyq/include/qgvector.h
+tinyq/include/qintcache.h
+tinyq/include/qintdict.h
+tinyq/include/qiodevice.h
+tinyq/include/qlibrary.h
+tinyq/include/qmap.h
+tinyq/include/qmemarray.h
+tinyq/include/qmodules.h
+tinyq/include/qmutex.h
+tinyq/include/qnamespace.h
+tinyq/include/qpair.h
+tinyq/include/qptrcollection.h
+tinyq/include/qptrdict.h
+tinyq/include/qptrlist.h
+tinyq/include/qptrqueue.h
+tinyq/include/qptrstack.h
+tinyq/include/qptrvector.h
+tinyq/include/qregexp.h
+tinyq/include/qsemaphore.h
+tinyq/include/qsettings.h
+tinyq/include/qshared.h
+tinyq/include/qsortedlist.h
+tinyq/include/qstring.h
+tinyq/include/qstringlist.h
+tinyq/include/qstrlist.h
+tinyq/include/qstrvec.h
+tinyq/include/qtextcodec.h
+tinyq/include/qtextstream.h
+tinyq/include/qthread.h
+tinyq/include/qtl.h
+tinyq/include/qtsciicodec.h
+tinyq/include/qurl.h
+tinyq/include/qurlinfo.h
+tinyq/include/qutfcodec.h
+tinyq/include/qvaluelist.h
+tinyq/include/qvaluestack.h
+tinyq/include/qvaluevector.h
+tinyq/include/qwaitcondition.h
+tinyq/include/qxml.h
+tinyq/lib/libtinyq-mt.prl
+tinyq/lib/libtinyq-mt.so
+tinyq/lib/libtinyq-mt.so.3
+tinyq/lib/libtinyq-mt.so.3.0
+tinyq/lib/libtinyq-mt.so.3.0.6
+tinyq/mkspecs/aix-64/qmake.conf
+tinyq/mkspecs/aix-64/qplatformdefs.h
+tinyq/mkspecs/aix-g++/qmake.conf
+tinyq/mkspecs/aix-g++/qplatformdefs.h
+tinyq/mkspecs/aix-xlc/qmake.conf
+tinyq/mkspecs/aix-xlc/qplatformdefs.h
+tinyq/mkspecs/bsdi-g++/qmake.conf
+tinyq/mkspecs/bsdi-g++/qplatformdefs.h
+tinyq/mkspecs/default/qmake.conf
+tinyq/mkspecs/default/qplatformdefs.h
+tinyq/mkspecs/dgux-g++/qmake.conf
+tinyq/mkspecs/dgux-g++/qplatformdefs.h
+tinyq/mkspecs/freebsd-g++/qmake.conf
+tinyq/mkspecs/freebsd-g++/qplatformdefs.h
+tinyq/mkspecs/hpux-acc/qmake.conf
+tinyq/mkspecs/hpux-acc/qplatformdefs.h
+tinyq/mkspecs/hpux-cc/qmake.conf
+tinyq/mkspecs/hpux-cc/qplatformdefs.h
+tinyq/mkspecs/hpux-g++/qmake.conf
+tinyq/mkspecs/hpux-g++/qplatformdefs.h
+tinyq/mkspecs/hpux-n64/qmake.conf
+tinyq/mkspecs/hpux-n64/qplatformdefs.h
+tinyq/mkspecs/hpux-o64/qmake.conf
+tinyq/mkspecs/hpux-o64/qplatformdefs.h
+tinyq/mkspecs/hurd-g++/qmake.conf
+tinyq/mkspecs/hurd-g++/qplatformdefs.h
+tinyq/mkspecs/irix-64/qmake.conf
+tinyq/mkspecs/irix-64/qplatformdefs.h
+tinyq/mkspecs/irix-g++/qmake.conf
+tinyq/mkspecs/irix-g++/qplatformdefs.h
+tinyq/mkspecs/irix-n32/qmake.conf
+tinyq/mkspecs/irix-n32/qplatformdefs.h
+tinyq/mkspecs/irix-o32/qmake.conf
+tinyq/mkspecs/irix-o32/qplatformdefs.h
+tinyq/mkspecs/linux-cxx/qmake.conf
+tinyq/mkspecs/linux-cxx/qplatformdefs.h
+tinyq/mkspecs/linux-g++/qmake.conf
+tinyq/mkspecs/linux-g++/qplatformdefs.h
+tinyq/mkspecs/linux-icc/qmake.conf
+tinyq/mkspecs/linux-icc/qplatformdefs.h
+tinyq/mkspecs/linux-kcc/qmake.conf
+tinyq/mkspecs/linux-kcc/qplatformdefs.h
+tinyq/mkspecs/linux-pgcc/qmake.conf
+tinyq/mkspecs/linux-pgcc/qplatformdefs.h
+tinyq/mkspecs/netbsd-g++/qmake.conf
+tinyq/mkspecs/netbsd-g++/qplatformdefs.h
+tinyq/mkspecs/openbsd-g++/qmake.conf
+tinyq/mkspecs/openbsd-g++/qplatformdefs.h
+tinyq/mkspecs/openunix-cc/qmake.conf
+tinyq/mkspecs/openunix-cc/qplatformdefs.h
+tinyq/mkspecs/openunix-g++/qmake.conf
+tinyq/mkspecs/openunix-g++/qplatformdefs.h
+tinyq/mkspecs/qnx-g++/qmake.conf
+tinyq/mkspecs/qnx-g++/qplatformdefs.h
+tinyq/mkspecs/reliant-64/qmake.conf
+tinyq/mkspecs/reliant-64/qplatformdefs.h
+tinyq/mkspecs/reliant-cds/qmake.conf
+tinyq/mkspecs/reliant-cds/qplatformdefs.h
+tinyq/mkspecs/sco-cc/qmake.conf
+tinyq/mkspecs/sco-cc/qplatformdefs.h
+tinyq/mkspecs/sco-g++/qmake.conf
+tinyq/mkspecs/sco-g++/qplatformdefs.h
+tinyq/mkspecs/solaris-64/qmake.conf
+tinyq/mkspecs/solaris-64/qplatformdefs.h
+tinyq/mkspecs/solaris-cc/qmake.conf
+tinyq/mkspecs/solaris-cc/qplatformdefs.h
+tinyq/mkspecs/solaris-g++-64/qmake.conf
+tinyq/mkspecs/solaris-g++-64/qplatformdefs.h
+tinyq/mkspecs/solaris-g++/qmake.conf
+tinyq/mkspecs/solaris-g++/qplatformdefs.h
+tinyq/mkspecs/solaris-kcc/qmake.conf
+tinyq/mkspecs/solaris-kcc/qplatformdefs.h
+tinyq/mkspecs/sunos-g++/qmake.conf
+tinyq/mkspecs/tru64-cxx/qmake.conf
+tinyq/mkspecs/tru64-cxx/qplatformdefs.h
+tinyq/mkspecs/tru64-g++/qmake.conf
+tinyq/mkspecs/tru64-g++/qplatformdefs.h
+tinyq/mkspecs/ultrix-g++/qmake.conf
+tinyq/mkspecs/unixware-g++/qmake.conf
+tinyq/mkspecs/unixware7-cc/qmake.conf
+tinyq/mkspecs/unixware7-cc/qplatformdefs.h
+tinyq/mkspecs/unixware7-g++/qmake.conf
+tinyq/mkspecs/unixware7-g++/qplatformdefs.h
+@dirrm tinyq/mkspecs/unixware7-g++
+@dirrm tinyq/mkspecs/unixware7-cc
+@dirrm tinyq/mkspecs/unixware-g++
+@dirrm tinyq/mkspecs/ultrix-g++
+@dirrm tinyq/mkspecs/tru64-g++
+@dirrm tinyq/mkspecs/tru64-cxx
+@dirrm tinyq/mkspecs/sunos-g++
+@dirrm tinyq/mkspecs/solaris-kcc
+@dirrm tinyq/mkspecs/solaris-g++-64
+@dirrm tinyq/mkspecs/solaris-g++
+@dirrm tinyq/mkspecs/solaris-cc
+@dirrm tinyq/mkspecs/solaris-64
+@dirrm tinyq/mkspecs/sco-g++
+@dirrm tinyq/mkspecs/sco-cc
+@dirrm tinyq/mkspecs/reliant-cds
+@dirrm tinyq/mkspecs/reliant-64
+@dirrm tinyq/mkspecs/qnx-g++
+@dirrm tinyq/mkspecs/openunix-g++
+@dirrm tinyq/mkspecs/openunix-cc
+@dirrm tinyq/mkspecs/openbsd-g++
+@dirrm tinyq/mkspecs/netbsd-g++
+@dirrm tinyq/mkspecs/linux-pgcc
+@dirrm tinyq/mkspecs/linux-kcc
+@dirrm tinyq/mkspecs/linux-icc
+@dirrm tinyq/mkspecs/linux-g++
+@dirrm tinyq/mkspecs/linux-cxx
+@dirrm tinyq/mkspecs/irix-o32
+@dirrm tinyq/mkspecs/irix-n32
+@dirrm tinyq/mkspecs/irix-g++
+@dirrm tinyq/mkspecs/irix-64
+@dirrm tinyq/mkspecs/hurd-g++
+@dirrm tinyq/mkspecs/hpux-o64
+@dirrm tinyq/mkspecs/hpux-n64
+@dirrm tinyq/mkspecs/hpux-g++
+@dirrm tinyq/mkspecs/hpux-cc
+@dirrm tinyq/mkspecs/hpux-acc
+@dirrm tinyq/mkspecs/freebsd-g++
+@dirrm tinyq/mkspecs/dgux-g++
+@dirrm tinyq/mkspecs/default
+@dirrm tinyq/mkspecs/bsdi-g++
+@dirrm tinyq/mkspecs/aix-xlc
+@dirrm tinyq/mkspecs/aix-g++
+@dirrm tinyq/mkspecs/aix-64
+@dirrm tinyq/mkspecs
+@dirrm tinyq/lib
+@dirrm tinyq/include/private
+@dirrm tinyq/include
+@dirrm tinyq/doc
+@dirrm tinyq/bin
+@dirrm tinyq

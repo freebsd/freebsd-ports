@@ -1,0 +1,11 @@
+TinyQ is a stripped down version of Qt 3 that has been put together to use
+as a backend library. It provides all the necessary library classes to
+comfortably develop in a C++ environment. This includes UTF8 and ASCII
+strings, type optimized collections (dictionary, map, cache, vector, list),
+regular expressions, filesystem access, URL processing, threads, shared
+library handling, user settings, date and time handling, DOM & SAX XML
+parsers, optimized data and text streams and abstract IO devices.
+ 
+WWW: http://www.uwyn.com/projects/tinyq/index.html
+
+-- AlanE, KDE/FreeBSD Team
