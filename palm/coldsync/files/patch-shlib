@@ -1,0 +1,29 @@
+--- libpconn/Makefile	Mon Nov 19 12:07:15 2001
++++ libpconn/Makefile	Fri Dec 27 16:40:20 2002
+@@ -43,3 +43,7 @@
+ 
+-all::	${LIBRARY}
++all::	${LIBRARY} ${SHLIB}
++
++install:: ${LIBRARY} ${SHLIB}
++	${INSTALL_DATA} ${LIBRARY} ${SHLIBVER} ${PREFIX}/lib
++	ln -sf ${SHLIBVER} ${PREFIX}/lib/${SHLIB}
+ 
+--- libpdb/Makefile	Sun Nov 11 23:31:25 2001
++++ libpdb/Makefile	Fri Dec 27 16:41:06 2002
+@@ -27,3 +27,7 @@
+ 
+-all::	${LIBRARY}
++all::	${LIBRARY} ${SHLIB}
++
++install:: ${LIBRARY} ${SHLIB}
++	${INSTALL_DATA} ${LIBRARY} ${SHLIBVER} ${PREFIX}/lib
++	ln -sf ${SHLIBVER} ${PREFIX}/lib/${SHLIB}
+ 
+--- Make.rules.in	Mon Nov 19 12:05:33 2001
++++ Make.rules.in	Fri Dec 27 16:58:41 2002
+@@ -142,3 +142,3 @@
+ SHLIB =		lib${LIBNAME}.so
+-SHLIBVER =	lib${LIBNAME}.so.${SHLIB_MAJOR}.${SHLIB_MINOR}
++SHLIBVER =	lib${LIBNAME}.so.${SHLIB_MAJOR}
+ 
