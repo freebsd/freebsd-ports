@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure	2002/04/26 10:15:23	1.1
-+++ configure	2002/04/26 10:15:59
+--- configure.orig	Mon May 13 13:03:40 2002
++++ configure	Sun May 26 03:43:23 2002
 @@ -7186,6 +7186,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -11,3 +8,12 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7471,7 +7472,7 @@
+ LIBGNOME_AGE=0
+ 
+   case $host in
+-  *-linux-gnu | *-irix6*)
++  *-linux-gnu | *-irix6* | *-freebsd*)
+ cat >>confdefs.h <<\EOF
+ #define HAVE_MAN_WHEREIS 1
+ EOF
