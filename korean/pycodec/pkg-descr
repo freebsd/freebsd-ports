@@ -1,6 +1,0 @@
-This package provides Unicode codecs that make Python aware of
-Korean character encoding 'EUC-KR'. By using this package, 
-Korean characters can be treated as a character string
-instead of a byte sequence.
-
-WWW: http://sourceforge.net/projects/koco
