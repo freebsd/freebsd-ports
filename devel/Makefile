@@ -1033,6 +1033,7 @@
     SUBDIR += php4-pcre
     SUBDIR += php4-pear
     SUBDIR += php5-pcre
+    SUBDIR += php5-pear
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm
