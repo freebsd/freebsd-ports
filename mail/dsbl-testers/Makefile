@@ -18,7 +18,7 @@ MAINTAINER=	dean@odyssey.apana.org.au
 COMMENT=	Testing software configured to work with DSBL/DSBL-compliant services
 
 BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
-		${LOCALBASE}/include/firedns.h:${PORTSDIR}/net/firedns
+		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.ofb.net/liboop/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low-level event loop management library for POSIX-based OS
 
-LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
+LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_BZIP2=	yes

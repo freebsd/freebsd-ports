@@ -15,10 +15,10 @@ MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Domain Registry software
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/stunnel:${PORTSDIR}/security/stunnel \
-		${LOCALBASE}/sbin/named:${PORTSDIR}/net/bind9 \
+		${LOCALBASE}/sbin/named:${PORTSDIR}/dns/bind9 \
 		${LOCALBASE}/bin/postgres:${PORTSDIR}/${POSTGRESQL_PORT} \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-BUILD_DEPENDS=	${LOCALBASE}/include/isc/buffer.h:${PORTSDIR}/net/bind9
+BUILD_DEPENDS=	${LOCALBASE}/include/isc/buffer.h:${PORTSDIR}/dns/bind9
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 POSTGRESQL_PORT?=	databases/postgresql7

@@ -21,7 +21,7 @@ COMMENT=	Configure various qmail services to run under daemontools
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-NO_PACKAGE=	"borrows code from djbdns, thus falls under the same restrictions as net/djbdns"
+NO_PACKAGE=	"borrows code from djbdns, thus falls under the same restrictions as dns/djbdns"
 
 # Note: this MUST be the same as the directory qmail is installed in!
 QMAIL_DIR?=	/var/qmail

@@ -16,7 +16,7 @@ MAINTAINER=	opr@bsdaemon.be
 COMMENT=	Free SMTP PROXY with filtering
 
 BUILD_DEPENDS=  ${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
-		${LOCALBASE}/include/firedns.h:${PORTSDIR}/net/firedns
+		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 
 MAN1=		messagewall.1 messagewallctl.1 messagewallstats.1
 MAN5=		messagewall.conf.5 messagewall_profiles.5

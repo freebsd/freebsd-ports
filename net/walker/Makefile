@@ -14,7 +14,7 @@ MASTER_SITES=	http://josefsson.org/walker/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/net/bind9
+RUN_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind9
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
