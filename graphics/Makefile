@@ -49,6 +49,7 @@
     SUBDIR += feh
     SUBDIR += ffmpeg
     SUBDIR += flashplayer
+    SUBDIR += flasm
     SUBDIR += fli2gif
     SUBDIR += fly
     SUBDIR += fnlib
