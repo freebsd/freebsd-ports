@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rwhois
-PORTVERSION=	1.5.7.1
+PORTVERSION=	1.5.7.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.rwhois.net/ftp/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
