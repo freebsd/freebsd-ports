@@ -194,6 +194,9 @@ README=	${TEMPLATES}/README.category
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
+package-name:
+	@echo ${.CURDIR} | sed -e 's^.*/^^'
+
 README.html:
 	@echo "===>  Creating README.html"
 	@> $@.tmp

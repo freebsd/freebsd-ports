@@ -138,6 +138,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # PERL_VER		- Short version of perl5 (see below for current value).
 # PERL_ARCH		- Directory name of architecture dependent libraries
 #				  (value: ${ARCH}-freebsd).
+# USE_BISON		- Says that the port uses bison for building.
 # USE_IMAKE		- Says that the port uses imake.  Implies USE_X_PREFIX.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH (default: xmkmf -a ).
 # NO_INSTALL_MANPAGES - For imake ports that don't like the install.man
@@ -661,6 +662,12 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 
 PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.6|Motif-2\.1\.10)'
 
+.if defined(USE_BISON)
+.if ${OSVERSION} >= 400014
+BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
+.endif
+.endif
+
 .if ${OSVERSION} >= 300000
 PERL_VERSION=	5.00503
 .else
@@ -1116,8 +1123,6 @@ check-categories:
 .endfor
 .endif
 
-# Note this has to start with a capital letter (or more accurately, it
-#  shouldn't match "[a-z]*"), see the target "delete-package-links" below.
 PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 .if exists(${PACKAGES})
@@ -1715,7 +1720,7 @@ package-links:
 				exit 1; \
 			fi; \
 		fi; \
-		${LN} -s ../${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
+		${LN} -sf `${ECHO} $$cat | ${SED} -e 'sa[^/]*a..ag'`/${PKGREPOSITORYSUBDIR}/${PKGNAME}${PKG_SUFX} ${PACKAGES}/$$cat; \
 	done
 .if !defined(NO_LATEST_LINK)
 	@if [ ! -d ${PKGLATESTREPOSITORY} ]; then \
@@ -1730,7 +1735,9 @@ package-links:
 
 .if !target(delete-package-links)
 delete-package-links:
-	@${RM} -f ${PACKAGES}/[a-z]*/${PKGNAME}${PKG_SUFX}
+	@for cat in ${CATEGORIES}; do \
+		${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
+	done
 .if !defined(NO_LATEST_LINK)
 	@${RM} -f ${PKGLATESTFILE}
 .endif
@@ -1744,7 +1751,9 @@ delete-package:
 
 .if !target(delete-package-links-list)
 delete-package-links-list:
-	@${ECHO} ${RM} -f ${PACKAGES}/[a-z]*/${PKGNAME}${PKG_SUFX}
+	@for cat in ${CATEGORIES}; do \
+		${ECHO} ${RM} -f ${PACKAGES}/$$cat/${PKGNAME}${PKG_SUFX}; \
+	done
 .if !defined(NO_LATEST_LINK)
 	@${ECHO} ${RM} -f ${PKGLATESTFILE}
 .endif
@@ -2540,6 +2549,7 @@ README.html:
 			-e '/%%COMMENT%%/d' \
 			-e 's%%BUILD_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
 			-e 's%%RUN_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
+			-e 's%%TOP%%'"`${ECHO} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
 		>> $@
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}

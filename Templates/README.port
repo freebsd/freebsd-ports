@@ -14,7 +14,7 @@
 <p>Please read the file "<a href="pkg/DESCR">pkg/DESCR</a>" for a
 longer description.
 
-<p>Go to the <a href="../../README.html">top of the ports tree</a> for
+<p>Go to the <a href="%%TOP%%/README.html">top of the ports tree</a> for
 a summary on how to use the ports collection.
 
 <p>
@@ -25,6 +25,6 @@ a summary on how to use the ports collection.
 <p><hr><p>
 <a href="../README.html"> Go up one level</a>
 |
-<a href="../../README.html"> Go to top of ports tree</a>
+<a href="%%TOP%%/README.html"> Go to top of ports tree</a>
 </body>
 </html>
