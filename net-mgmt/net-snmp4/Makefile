@@ -7,6 +7,7 @@
 
 PORTNAME=	ucd-snmp
 PORTVERSION=	4.2.5
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
@@ -73,8 +74,8 @@ post-patch:
 post-install:
 	@( cd ${PREFIX}/bin && strip ${BIN} )
 	@( cd ${PREFIX}/sbin && strip ${SBIN} )
-	@( cd ${PREFIX}/include/ucd-snmp && ${CHMOD} 644 * )
-	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
+	@${FIND} ${PREFIX}/include/ucd-snmp ${PREFIX}/share/snmp/mibs -type f \
+		| ${XARGS} ${CHMOD} 644
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/EXAMPLE.conf  ${WRKSRC}/agent/mibgroup/examples/ucdDemoPublic.conf; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done
