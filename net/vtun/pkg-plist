@@ -1,4 +1,10 @@
 etc/vtund.conf.example
 man/man8/vtun.8
 sbin/vtund
+share/doc/vtund/FAQ
+share/doc/vtund/README
+share/doc/vtund/README.Setup
+share/doc/vtund/README.Shaper
+@dirrm share/doc/vtund
 @exec rm -rf /var/log/vtund
+@exec rm -rf /var/lock/vtund
