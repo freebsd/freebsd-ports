@@ -9,7 +9,8 @@ PORTNAME=	jdk-tutorial
 PORTVERSION=	1.1.8
 PORTREVISION=	6
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.javasoft.com/docs/
+MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
+		http://java.sun.com/docs/books/tutorial/download/
 DISTNAME=	tutorial
 
 MAINTAINER=	znerd@FreeBSD.org
