@@ -13,6 +13,8 @@ DISTNAME=	KeLP1.3
 MAINTAINER=	keichii@freebsd.org
 COMMENT=	KeLP is a software infrastructure for parallel computing
 
+BROKEN=		"Does not patch"
+
 BUILD_DEPENDS=	${LOCALBASE}/mpich/bin/mpirun:${PORTSDIR}/net/mpich
 
 MAN3=		kelp.3
