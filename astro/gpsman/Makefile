@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.2
+PORTVERSION=	6.2.1
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
 		http://voodoo.oberon.net/download/ \

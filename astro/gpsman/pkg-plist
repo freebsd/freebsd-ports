@@ -334,6 +334,14 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/GPSMandoc.pdf
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_9.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_11.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_12.html
@@ -344,7 +352,6 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_17.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_18.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_19.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_20.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_21.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_22.html
@@ -355,7 +362,6 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_27.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_28.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_29.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_30.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_31.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_32.html
@@ -366,7 +372,6 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_37.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_38.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_39.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_4.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_40.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_41.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_42.html
@@ -377,7 +382,6 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_47.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_48.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_49.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_5.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_50.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_51.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_52.html
@@ -388,15 +392,13 @@ share/gpsman/util/shape2quadr.tcl
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_57.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_58.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_59.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_6.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_60.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_61.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_62.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_63.html
 %%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_64.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_7.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_8.html
-%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_65.html
+%%PORTDOCS%%%%DOCSDIR%%/html/GPSMandoc_66.html
 %%PORTDOCS%%%%DOCSDIR%%/html/backgr.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/gpsman-logo-small.gif
