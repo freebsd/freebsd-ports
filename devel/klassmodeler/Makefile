@@ -32,6 +32,12 @@ PLIST_FILES=	bin/klassmodeler
 PORTDOCS=	*
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000                
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,\`wx-config,\`${WX_CONFIG}," ${WRKSRC}/../configure
 
@@ -42,4 +48,4 @@ do-install:
 	${CP} ${WRKSRC}/../klassmodeler/docs/en/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
