@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-This file is in the public domain.
+Copyright (c) 2004 Oliver Eikemeier
+
+Redistribution and use in source (XML) and 'compiled' forms (SGML,
+HTML, PDF, PostScript, RTF and so forth) with or without modification,
+are permitted provided that the following conditions are met:
+
+- Redistributions of source code (XML) must retain the above copyright
+  notice, this list of conditions and the following disclaimer as
+  the first lines of this file unmodified.
+
+- Redistributions in compiled form (transformed to other DTDs,
+  converted to PDF, PostScript, RTF and other formats) must reproduce
+  the above copyright notice, this list of conditions and the
+  following disclaimer in the documentation and/or other materials
+  provided with the distribution.
+
+THIS DOCUMENTATION IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS DOCUMENTATION,
+EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
   $FreeBSD$
+
 -->
 <!DOCTYPE vuxml PUBLIC "-//vuxml.org//DTD VuXML 1.1//EN" "http://www.vuxml.org/dtd/vuxml-1/vuxml-11.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
@@ -359,6 +387,7 @@ This file is in the public domain.
       <url>http://secunia.com/advisories/11505</url>
       <url>http://www.osvdb.org/5726</url>
       <bid>10244</bid>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html#mozilla1.7</url>
     </references>
     <dates>
       <discovery>2004-04-29</discovery>
@@ -391,6 +420,10 @@ This file is in the public domain.
       <url>http://www.osvdb.org/7475</url>
       <url>http://www.osvdb.org/7476</url>
       <mlist msgid="Pine.LNX.4.44.0407080940550.9602-200000@pineapple.shacknet.nu">http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0003.html</mlist>
+      <cvename>CAN-2004-0627</cvename>
+      <cvename>CAN-2004-0628</cvename>
+      <certvu>184030</certvu>
+      <certvu>645326</certvu>
     </references>
     <dates>
       <discovery>2004-07-01</discovery>
@@ -639,6 +672,7 @@ This file is in the public domain.
       <url>http://secunia.com/advisories/12219</url>
       <url>http://secunia.com/advisories/12232</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html#mozilla1.7.2</url>
       <uscertta>TA04-217A</uscertta>
       <url>http://dl.sourceforge.net/sourceforge/libpng/ADVISORY.txt</url>
     </references>
@@ -685,6 +719,7 @@ This file is in the public domain.
       <url>http://www.cipher.org.uk/index.php?p=advisories/Certificate_Spoofing_Mozilla_FireFox_25-07-2004.advisory</url>
       <url>http://secunia.com/advisories/12160</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253121</url>
+      <url>http://www.mozilla.org/projects/security/known-vulnerabilities.html#mozilla1.7.2</url>
       <url>http://www.osvdb.org/8238</url>
       <bid>10796</bid>
       <cvename>CAN-2004-0763</cvename>
@@ -697,17 +732,19 @@ This file is in the public domain.
   </vuln>
 
   <vuln vid="a713c0f9-ec54-11d8-9440-000347a4fa7d">
-    <topic>ImageMagick png vulnerability fix</topic>
+    <topic>ImageMagick png and bmp vulnerabilities</topic>
     <affects>
       <package>
         <name>ImageMagick{,-nox11}</name>
-        <range><lt>6.0.4.2</lt></range>
+        <range><lt>6.0.6</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
         <p>Glenn Randers-Pehrson has contributed a fix for the png
           vulnerabilities discovered by Chris Evans.</p>
+        <p>Furthermore, Marcus Meissner has discovered and patched a buffer
+          overrun associated with decoding runlength-encoded BMP images.</p>
       </body>
     </description>
     <references>
@@ -715,11 +752,12 @@ This file is in the public domain.
       <url>http://freshmeat.net/releases/169228</url>
       <url>http://secunia.com/advisories/12236</url>
       <url>http://www.freebsd.org/ports/portaudit/f9e3e60b-e650-11d8-9b0a-000347a4fa7d.html</url>
+      <url>http://studio.imagemagick.org/pipermail/magick-developers/2004-August/002011.html</url>
     </references>
     <dates>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-04</entry>
-      <modified>2004-08-12</modified>
+      <modified>2004-09-03</modified>
     </dates>
   </vuln>
 
@@ -738,13 +776,13 @@ This file is in the public domain.
       </body>
     </description>
     <references>
-      <mlist>http://www.securityfocus.com/archive/1/370955</mlist>
+      <mlist msgid="20040805175709.6995.qmail@web50508.mail.yahoo.com">http://www.securityfocus.com/archive/1/370955</mlist>
       <url>http://secunia.com/advisories/12090</url>
       <url>http://www.osvdb.org/8373</url>
       <url>http://www.cvstrac.org/cvstrac/chngview?cn=316</url>
     </references>
     <dates>
-      <discovery>2000-00-00</discovery>
+      <discovery>2004-08-05</discovery>
       <entry>2004-08-13</entry>
     </dates>
   </vuln>
@@ -869,7 +907,7 @@ This file is in the public domain.
       <url>http://xforce.iss.net/xforce/xfdb/17042</url>
     </references>
     <dates>
-      <discovery>2000-08-18</discovery>
+      <discovery>2004-08-18</discovery>
       <entry>2004-08-20</entry>
     </dates>
   </vuln>
@@ -895,10 +933,101 @@ This file is in the public domain.
     <references>
       <url>http://secunia.com/advisories/12255</url>
       <mlist msgid="20040805034902.6DF465900BB@radish.jmason.org>">http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767&amp;w=2</mlist>
+      <cvename>CAN-2004-0796</cvename>
+      <bid>10957</bid>
     </references>
     <dates>
       <discovery>2004-08-05</discovery>
       <entry>2004-08-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="77cc070b-fdbe-11d8-81b0-000347a4fa7d">
+    <topic>vpopmail multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>vpopmail</name>
+        <range><lt>5.4.6</lt></range>
+      </package>
+      <package>
+        <name>vpopmail-devel</name>
+        <range><lt>5.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Inter7 vpopmail (vchkpw) versions 5.4.2 and earlier contain
+          buffer overflows and format string vulnerabilities in the file vsybase.c</p>
+        <p>The buffer overflows are not fixed in versions 5.4.6/5.5.0, but are
+          believed to be very hard to exploit, and only by administrators able to add users.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.osvdb.org/9146</url>
+      <url>http://www.osvdb.org/9147</url>
+      <url>http://www.osvdb.org/9148</url>
+      <bid>10962</bid>
+      <url>http://secunia.com/advisories/12441</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/vpopmail/vpopmail/vsybase.c?r1=1.9.2.1&amp;r2=1.9.2.2</url>
+      <url>http://www.kupchino.org.ru/unl0ck/advisories/vpopmail.txt</url>
+      <mlist msgid="200408181347.12199.bugtraq@beyondsecurity.com">http://www.securityfocus.com/archive/1/372257</mlist>
+      <mlist msgid="58114.66.79.185.80.1092936304.squirrel@mail.xyxx.com">http://www.securityfocus.com/archive/1/372468</mlist>
+      <url>http://xforce.iss.net/xforce/xfdb/17016</url>
+      <url>http://xforce.iss.net/xforce/xfdb/17017</url>
+      <url>http://security.gentoo.org/glsa/glsa-200409-01.xml</url>
+    </references>
+    <dates>
+      <discovery>2004-08-17</discovery>
+      <entry>2004-09-03</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d2102505-f03d-11d8-81b0-000347a4fa7d">
+    <topic>multiple vulnerabilities in the cvs server code</topic>
+    <affects>
+      <package>
+	<name>cvs+ipv6</name>
+	<range><lt>1.11.17</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><le>491101</le></range>
+	<range><ge>500000</ge><lt>502114</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports multiple remote exploitable vulnerabilites
+          in the cvs code base.</p>
+        <p>Additionaly there exists an undocumented switch to the history
+          command allows an attacker to determine whether arbitrary files
+          exist and whether the CVS process can access them.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0414</cvename>
+      <cvename>CAN-2004-0416</cvename>
+      <cvename>CAN-2004-0417</cvename>
+      <cvename>CAN-2004-0418</cvename>
+      <cvename>CAN-2004-0778</cvename>
+      <url>http://secunia.com/advisories/11817</url>
+      <url>http://secunia.com/advisories/12309</url>
+      <url>http://security.e-matters.de/advisories/092004.html</url>
+      <url>http://www.idefense.com/application/poi/display?id=130&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <url>https://ccvs.cvshome.org/source/browse/ccvs/NEWS?rev=1.116.2.104</url>
+      <url>http://www.osvdb.org/6830</url>
+      <url>http://www.osvdb.org/6831</url>
+      <url>http://www.osvdb.org/6832</url>
+      <url>http://www.osvdb.org/6833</url>
+      <url>http://www.osvdb.org/6834</url>
+      <url>http://www.osvdb.org/6835</url>
+      <url>http://www.osvdb.org/6836</url>
+      <url>http://www.packetstormsecurity.org/0405-exploits/cvs_linux_freebsd_HEAP.c</url>
+      <bid>10499</bid>
+    </references>
+    <dates>
+      <discovery>2004-05-20</discovery>
+      <entry>2004-08-17</entry>
     </dates>
   </vuln>
 </vuxml>
