@@ -1,15 +1,14 @@
 # New ports collection makefile for:   giftool
-# Version required:    0.9
+# Version required:    1.0
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/18 11:27:51 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/07 09:28:43 max Exp $
 #
 
-DISTNAME=	giftool
-PKGNAME=        giftool-0.9
+DISTNAME=	giftool-1.0
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.huie.hokudai.ac.jp/pub/tool/graphics/
+MASTER_SITES=   ftp://ftp.sbs.de/pub/www/tools/giftool/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
@@ -18,17 +17,30 @@ NO_CDROM=	"Shareware"
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	giftool
 
+pre-clean:
+	@${RM} -f ${PATCHDIR}/patch-a[bc]
+
+pre-patch:
+.if defined(RETVALUE)
+	@${ECHO_MSG} "Return value patch enabled....."
+	@${CP} ${FILESDIR}/patch-aa ${PATCHDIR}
+.endif
+.if defined(MALLOCSIZE)
+	@${ECHO_MSG} "Malloc size improve parch enabled....."
+	@${CP} ${FILESDIR}/patch-ab ${PATCHDIR}
+.endif
+
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
-	@ ${MKDIR} -p ${PREFIX}/share/doc/giftool
-	@ for file in COPYRIGHT README; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/giftool; \
-	done
-	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/giftool
+	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/doc/giftool
+.for file in COPYRIGHT README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/giftool
+.endfor
+	${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/giftool
 
 post-install:
 .if !defined(BATCH)
-	@ more -e ${FILESDIR}/post-install-notes
+	@ /usr/bin/more -e ${FILESDIR}/post-install-notes
 .endif
 
 .include <bsd.port.mk>

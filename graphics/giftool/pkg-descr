@@ -19,3 +19,24 @@ to interlaced GIF files in one easy step.
 
 giftool version 1.0 is Copyright 1994 Home Pages, Inc and is shareware.
 Please, use the -info option to read the licensing information.
+
+PORT BUILD OPTION
+=================
+
+There are two useful options are suggested and available for this port of
+giftool. You can specify it following "make clean".
+
+make RETVALUE=yes
+-----------
+Giftool does not return value from main(), so it is impossible to use this
+tools in programs like make(1) or pipes.
+This option is suggested by Sergei Chechetkin <csl@whale.sunbay.crimea.ua>.
+
+make MALLOCSIZE=yes
+---------------
+Giftool 1.0 or some earlier version cause segmentation fault about some
+images. Something about pre-read seems to be bad, so make malloc size 
+bigger to improve that.
+This option is suggested by Hidetoshi Shimokawa <simokawa@sat.t.u-tokyo.ac.jp>.
+
+You can specify all options such as 'make RETVALUE=yes MALLOCSIZE=yes'.
