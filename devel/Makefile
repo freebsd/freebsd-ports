@@ -465,6 +465,7 @@
     SUBDIR += p5-POE
     SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-POE-Component-Client-HTTP
+    SUBDIR += p5-POE-Component-Client-POP3
     SUBDIR += p5-POE-Component-Client-Ping
     SUBDIR += p5-POE-Component-Client-UserAgent
     SUBDIR += p5-POE-Component-DBIAgent

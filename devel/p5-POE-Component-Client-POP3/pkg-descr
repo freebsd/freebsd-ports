@@ -1,0 +1,9 @@
+POE::Component::Client::POP3 is a POE component for interacting with a
+POP3 server.  This means it is an event driven way to communicate with a
+server that impliments Post Office Protocol Version 3 see rfc 1939 for
+details on the protocol.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-Client-POP3
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
