@@ -36,13 +36,14 @@
  * level too.
  *
  */
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "pthread.h"
 #include "internals.h"
+#include "spinlock.h"
 #include "restart.h"
-#include "libc_spinlock.h"
 
 /*
  * Weak symbols for externally visible functions in this file:
