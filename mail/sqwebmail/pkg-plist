@@ -12,6 +12,7 @@ libexec/sqwebmail/authlib/authcustom
 libexec/sqwebmail/authlib/authpam
 libexec/sqwebmail/authlib/authsystem.passwd
 libexec/sqwebmail/authlib/authuserdb
+libexec/sqwebmail/sqwebmail/authenumerate
 libexec/sqwebmail/sqwebmail/deliverquota
 libexec/sqwebmail/sqwebmail/maildirmake
 libexec/sqwebmail/sqwebmail/makedatprog
@@ -33,6 +34,7 @@ share/sqwebmail/html/en-us/LANGUAGE_PREF
 share/sqwebmail/html/en-us/LOCALE
 share/sqwebmail/html/en-us/TIMEZONELIST
 share/sqwebmail/html/en-us/abooklist.html
+share/sqwebmail/html/en-us/acl.html
 share/sqwebmail/html/en-us/attachments.html
 share/sqwebmail/html/en-us/autoresponder.html
 share/sqwebmail/html/en-us/calendarlogin.inc.html
@@ -78,6 +80,8 @@ share/sqwebmail/ldapsearch
 share/sqwebmail/nodsn
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
+share/sqwebmail/sbin/sharedindexinstall
+share/sqwebmail/sbin/sharedindexsplit
 share/sqwebmail/sbin/userdb
 share/sqwebmail/sbin/userdbpw
 share/sqwebmail/sbin/vchkpw2userdb
@@ -122,6 +126,7 @@ share/sqwebmail/webgpg
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/graybottomright.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopleft.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/graytopright.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/key.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/last.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/left.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/left2.png
