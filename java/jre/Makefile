@@ -37,6 +37,8 @@ STRIPFILES=	bin/i386/green_threads/jre \
 		lib/i386/green_threads/libsysresource.so \
 		lib/i386/green_threads/libzip.so
 
+CPIO?=		/usr/bin/cpio
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -55,8 +57,8 @@ do-install:
 	${MKDIR} ${PREFIX}/jre${JRE_VERSION}
 	${MKDIR} ${PREFIX}/share/java/classes
 	${MKDIR} ${PREFIX}/share/doc/java
-	(cd ${WRKSRC} && ${TAR} -c -f - .) \
-		| (cd ${PREFIX}/jre${JRE_VERSION} && ${TAR} --unlink -x -f -)
+	cd ${WRKSRC} && ${FIND} . \
+		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jre${JRE_VERSION}
 	cd ${PREFIX}/jre${JRE_VERSION}/bin && \
 		${LN} -sf .java_wrapper java && \
 		cd i386/green_threads && \
