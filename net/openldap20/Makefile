@@ -1,12 +1,12 @@
 # New ports collection makefile for:    openldap
-# Version required:     1.2.7
+# Version required:     1.2.8
 # Date created:         20 Sep 1998
 # Whom:                 Lachlan O'Dea
 #
 # $FreeBSD$
 #
 
-DISTNAME=	openldap-1.2.7
+DISTNAME=	openldap-1.2.8
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 		ftp://ftp.net.lut.ac.uk/openldap/openldap-release/ \
@@ -21,8 +21,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ulmo@earthling.net
 
-WRKSRC=		${WRKDIR}/ldap
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=${PREFIX} --localstatedir=/var/run
 
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages"
