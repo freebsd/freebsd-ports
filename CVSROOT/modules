@@ -2917,6 +2917,7 @@ gnustep-gui	ports/x11-toolkits/gnustep-gui
 gnustep-guile	ports/lang/gnustep-guile
 gnustep-make	ports/devel/gnustep-make
 gnustep-objc	ports/lang/gnustep-objc
+gnustep-slideshow	ports/graphics/gnustep-slideshow
 gnustep-slideshowkit	ports/graphics/gnustep-slideshowkit
 gnustep-xdps	ports/x11-toolkits/gnustep-xdps
 gnutls		ports/security/gnutls
