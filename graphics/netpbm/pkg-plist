@@ -9,6 +9,7 @@ bin/eyuvtoppm
 bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
+bin/gemtopbm
 bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
