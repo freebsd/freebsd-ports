@@ -3,7 +3,7 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1997/05/30 02:59:09 asami Exp $
+# $Id: Makefile,v 1.5 1997/08/17 10:36:44 andreas Exp $
 #
 
 DISTNAME=	dnews
@@ -18,8 +18,8 @@ NO_CDROM=	"have to ask the company, if we are allowed to put it on CDROM"
 RESTRICTED=	"only free for non-profit organis. like schools + universities"
 NO_PACKAGE=	"we are not allowed, sorry"
 
-# dnewsweb is a cgi program that allows you to read and post news through 
-# your WWW Navigator of your choice, so that you don't need a special 
+# dnewsweb is a cgi program that allows you to read and post news through
+# your WWW Navigator of your choice, so that you don't need a special
 # news reader. Default is, not to install dnewsweb.
 
 pre-fetch:

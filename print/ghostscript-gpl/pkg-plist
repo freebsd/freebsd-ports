@@ -13,7 +13,7 @@ bin/printafm
 bin/ps2ascii
 bin/ps2epsi
 bin/ps2pdf
-bin/wftopfa 
+bin/wftopfa
 man/man1/gs.1.gz
 man/man1/pdf2dsc.1.gz
 man/man1/pdf2ps.1.gz

@@ -1,9 +1,9 @@
-# New ports collection Makefile for:    tkhylafax-3.0
-# Version required:		3.0b2
-# Date released:		Sun Jun  8 11:51:21 CEST 1997
-# Whom:				Andreas Klemm <andreas@klemm.gtn.com>
+# New ports collection Makefile for:	tkhylafax-3.0
+# Version required:	3.0b2
+# Date created:		Sun Jun  8 11:51:21 CEST 1997
+# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/08 11:23:35 andreas Exp $
+# $Id: Makefile,v 1.2 1997/06/08 11:56:50 asami Exp $
 #
 
 DISTNAME=	tkhylafax-3.0b2

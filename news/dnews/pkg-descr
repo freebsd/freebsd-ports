@@ -1,82 +1,17 @@
-Copyright note
-==============
+Feature list (trimmed):
+- Dynamic sucking feed.
+- Flexible expire settings 
+- Flexible access restrictions
+- Binarys available for common platforms
+- Email confirmation of posts
+- Items stored in a database
+- Compiling and porting relatively easy
+- Installation easy, totally configurable without recompiling
+- Documentated
+- Supported
+- Speed
+- XOVER implemented in software
+- Streaming support
+- Strictly limited machine impact due to single threaded nature
 
-	==> four week free trial period
-	==> free for approved non-profit organisations like schools or 
-	    universities. But you still need to *register* your free copy
-	    of DNEWS News Server to get the free license key.
-	==> *payware* for other people and organisations
-
-More Infos
-==========
-
-	http://netwinsite.com/
-
-DNEWS Feature list
-==================
-
-	Dynamic sucking feed.
-		A sucking feed may use as little as 10% of the normal
-		disk space and network bandwidth.
-		By only getting news items that people usually read 
-		very large savings are possible particularly for small
-		sites & workgroups.  A hundred users can be supported
-		on 100 MB depending on their reading habbits!
-		I run a single user server on my NT as a background
-		service, it's using less than 5MB.
-	Flexible expire settings 
-		By allowing expiration by 'number of items' low volume groups
-		become much more useful.  Also by allowing settings 
-		which change with disk space the system is much more
-		stable to large influxes of news.
-	Flexible access restrictions
-		Reading and Posting access can be given separately to
-		to different users and selections of news groups.
-	Binarys available for common platforms
-		On many platforms you do not need to build the binary
-		yourself, e.g. VMS, (VAX & ALPHA), Solaris, Linux, Windows NT
-	Email confirmation of posts
-		DNEWS can be configured to send email confirmations as it
-		sends items up to a main news server.  This gives users 
-		a clear record of a posted item and it's successful 
-		transfer into the 'net'.
-	Items stored in a database
-		Items are stored in a database which puts items together
-		in blocks of 100.  This saves directory entries, inodes,
-		and the empty space usually wasted due to blocking factors.
-		Also file open and closes are minimized, this is essential
-		on systems where this is a 'costly' operation, e.g. VMS.
-	Compiling and porting relatively easy
-		DNEWS was designed to be portable from the ground up, it 
-		does not rely on obscure UNIX features.
-	Installation easy, totally configurable without recompiling
-		DNEWS can be configured without recompiling and all
-		the configuration scripts have been simplified where 
-		possible.
-	Documentated
-		A user manual is available.
-	Supported
-		EMAIL support is available for help with installation
-		and management.
-	Speed
-		On comparable systems DNEWS typically out performs other
-		news software, (even the likes of CNEWS and INN in some
-		instances), other VMS news servers don't even come close.  
-		This is partly because DNEWS uses a more advanced database
-		to store the news items.  The difference is also very 
-		noteable on smaller systems (e.g. Linux)
-	XOVER implemented in software
-		No xover database is created, the normal DNEWS database
-		is fast enough to create this information 'on the fly'
-	Streaming support
-		Streaming NNTP extensions are built in.
-	Strictly limited machine impact due to single threaded nature.
-		DNEWS runs on a single process, this speeds up connect
-		time as a process does not need to be created, and it
-		self-limits the impact on the system.
-Limitations
-===========
-
-	DNEWS does not store items in the same file structure as used by
-	INN and CNEWS, so old software which accesses these files directly
-	will not work.  	
+Copyright and more infos:	http://netwinsite.com/
