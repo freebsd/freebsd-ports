@@ -7,9 +7,13 @@
 
 PORTNAME=	readline
 PORTVERSION=	4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cwru.edu/pub/bash/
+
+PATCHFILES=     readline43-001 readline43-002 readline43-003 readline43-004 readline43-005
+PATCH_SITES=    ${MASTER_SITE_GNU}/${PORTNAME}
+PATCH_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}-patches
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A library for editing command lines as they are typed
