@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	www
-MASTER_SITES=	http://jan.kneschke.de/projects/lighttpd/download/ \
+MASTER_SITES=	http://www.lighttpd.net/download/ \
 				http://dl.fkb.wormulon.net/lighttpd/ \
 				http://dl.kel.wormulon.net/lighttpd/
 
@@ -39,6 +39,9 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can disable SSL support by defining WITHOUT_OPENSSL"
 .endif
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want MySQL virtual host support install"
+	@${ECHO_MSG} "databases/mysql*-client/ prior to building lighttpd!"
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
