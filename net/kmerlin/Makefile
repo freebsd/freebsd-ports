@@ -19,8 +19,10 @@ COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
 CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
-_NO_KDE_FIXPTHREAD=	yes
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:
 .for i in replacepage identityeditdialog identitysetting \
@@ -28,7 +30,7 @@ post-patch:
 	@${RM} ${WRKSRC}/src/setting/${i}.h ${WRKSRC}/src/setting/${i}.cpp
 .endfor
 	@${RM} ${WRKSRC}/src/login.h ${WRKSRC}/src/login.cpp
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
