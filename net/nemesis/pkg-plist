@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+sbin/nemesis-arp
+sbin/nemesis-dns
+sbin/nemesis-icmp
+sbin/nemesis-igmp
+sbin/nemesis-ospf
+sbin/nemesis-rip
+sbin/nemesis-tcp
+sbin/nemesis-udp

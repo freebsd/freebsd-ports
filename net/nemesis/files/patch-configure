@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jun 23 19:38:00 2000
++++ configure	Fri Jul  7 11:46:04 2000
+@@ -639,7 +639,7 @@
+ 
+ if test -z "${CFLAGS}"; then
+ 	if test -z "${CCOPTS}"; then
+-        	CCOPTS='-O3 -funroll-loops -fomit-frame-pointer -pipe'
++        	CCOPTS='-O -funroll-loops -fomit-frame-pointer -pipe'
+     	fi
+   	CFLAGS="$CCOPTS"
+ fi
