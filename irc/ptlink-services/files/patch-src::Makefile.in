@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Oct 26 13:35:46 2004
++++ src/Makefile.in	Tue Oct 26 13:36:21 2004
+@@ -139,7 +139,7 @@
+ 		cd $(bindir) ; \
+ 		$(LN) -s services listchans; \
+ 		fi
+-	$(INSTALL_DATA) ../data/example.conf $(sysconfdir)
++	#$(INSTALL_DATA) ../data/example.conf $(sysconfdir)
+ 	$(INSTALL_DATA) ../data/domain.def $(sysconfdir)
+ 	$(INSTALL_DATA) ../data/create_tables.sql $(sysconfdir)
+ 	@if test -f $(sysconfdir)/services.pid ; then \
