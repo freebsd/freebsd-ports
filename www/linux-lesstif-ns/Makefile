@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lesstif
-PORTVERSION=	0.91.0
+PORTVERSION=	0.92.6
 CATEGORIES=	www x11-toolkits linux
 MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/srcdist/  \
 		ftp://ftp.hungry.com/pub/hungry/lesstif/srcdist/ \
@@ -23,13 +23,20 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/cc:${PORTSDIR}/devel/linux_devtools
 
+USE_BZIP2=	yes
 USE_LINUX_PREFIX=	yes
 PREFIX=		${LINUXBASE}${X11BASE}
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--host=${MACHINE_ARCH}--linux-gnu --enable-shared --enable-production \
-		--disable-build-20 --disable-debug --no-recursion \
+CONFIGURE_ARGS=	--host=${MACHINE_ARCH}--linux-gnu \
+		--enable-shared --enable-production \
+		--enable-build-12 --enable-default-12 --disable-build-20 \
+		--disable-debug --no-recursion \
 		--without-motif --disable-build-Xlt --disable-build-Xbae
 GMAKE=		${LINUXBASE}/usr/bin/make
+
+pre-configure:
+	@${ECHO_MSG} "*** Loading the Linux loadable kernel module (Error will be ignored) ***"
+	-@linux
 
 do-build:
 	cd ${WRKSRC}/lib/Xm && ${GMAKE}
