@@ -12,13 +12,13 @@ include/cc++/socket.h
 include/cc++/thread.h
 lib/libccio.a
 lib/libccio.so
-lib/libccio.so.0
+lib/libccio-1.2.so.0
 lib/libccstd.a
 lib/libccstd.so
-lib/libccstd.so.0
+lib/libccstd-1.2.so.0
 lib/libccxx.a
 lib/libccxx.so
-lib/libccxx.so.0
+lib/libccxx-1.2.so.0
 share/doc/commoncpp/AtomicCounter.html
 share/doc/commoncpp/BaseObject.html
 share/doc/commoncpp/Body.html
