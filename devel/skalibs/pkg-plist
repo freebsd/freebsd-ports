@@ -50,13 +50,14 @@ include/skalibs/uint64alloc.h
 include/skalibs/uintalloc.h
 include/skalibs/webipc.h
 @dirrm include/skalibs
-lib/libbiguint.a
-lib/libdns.a
-lib/librandom.a
-lib/libstdcrypto.a
-lib/libstddjb.a
-lib/libttymodes.a
-lib/libwebipc.a
+lib/skalibs/libbiguint.a
+lib/skalibs/libdns.a
+lib/skalibs/librandom.a
+lib/skalibs/libstdcrypto.a
+lib/skalibs/libstddjb.a
+lib/skalibs/libttymodes.a
+lib/skalibs/libwebipc.a
+@dirrm lib/skalibs
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
