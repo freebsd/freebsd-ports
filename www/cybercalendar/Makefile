@@ -18,6 +18,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD
 		${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 
+BROKEN=		"Unfetchable"
+
 WRKSRC=		${WRKDIR}/CyberCalendar
 
 USE_PERL5=	yes
