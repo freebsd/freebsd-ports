@@ -7,6 +7,7 @@
     SUBDIR += Tee
     SUBDIR += abck
     SUBDIR += acidlaunch
+    SUBDIR += afbinit
     SUBDIR += afio
     SUBDIR += ah-tty
     SUBDIR += and

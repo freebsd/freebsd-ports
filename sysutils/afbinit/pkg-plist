@@ -1,0 +1,4 @@
+etc/rc.d/afbinit.sh
+sbin/afbinit
+@exec install -d %D/%%DATADIR%%
+@unexec rmdir %D/%%DATADIR%% 2> /dev/null || echo "If permanently deleting this package, %D/%%DATADIR%% and its contents must be removed manually."

@@ -1,0 +1,6 @@
+This port provides a program that loads the microcode firmware onto Sun
+Microsystems AFB Graphics Accelerators aka Sun Microsystems Elite 3D
+found in many UltraSPARC systems. The microcode is necessary if you want
+to run XFree86 with acceleration on these cards.
+The microcode in itself has to be obtained from an existing SunOS/Solaris
+installation.

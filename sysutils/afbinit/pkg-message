@@ -1,0 +1,6 @@
+===========================================================================
+
+In order to use afbinit(8) you have to manually copy /usr/lib/afb.ucode
+from a SunOS/Solaris installation over to %%DATADIR%%.
+
+===========================================================================
