@@ -16,9 +16,6 @@ lib/%%PYTHON_VERSION%%/site-packages/medusa/default_handler.pyo
 lib/%%PYTHON_VERSION%%/site-packages/medusa/event_loop.py
 lib/%%PYTHON_VERSION%%/site-packages/medusa/event_loop.pyc
 lib/%%PYTHON_VERSION%%/site-packages/medusa/event_loop.pyo
-lib/%%PYTHON_VERSION%%/site-packages/medusa/fifo.py
-lib/%%PYTHON_VERSION%%/site-packages/medusa/fifo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/medusa/fifo.pyo
 lib/%%PYTHON_VERSION%%/site-packages/medusa/filesys.py
 lib/%%PYTHON_VERSION%%/site-packages/medusa/filesys.pyc
 lib/%%PYTHON_VERSION%%/site-packages/medusa/filesys.pyo
@@ -83,11 +80,9 @@ lib/%%PYTHON_VERSION%%/site-packages/medusa/xmlrpc_handler.py
 lib/%%PYTHON_VERSION%%/site-packages/medusa/xmlrpc_handler.pyc
 lib/%%PYTHON_VERSION%%/site-packages/medusa/xmlrpc_handler.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/medusa
-%%PORTDOCS%%share/examples/py-medusa/demo/dual_server.py
 %%PORTDOCS%%share/examples/py-medusa/demo/publish.py
 %%PORTDOCS%%share/examples/py-medusa/demo/script_server.py
 %%PORTDOCS%%share/examples/py-medusa/demo/simple_anon_ftpd.py
-%%PORTDOCS%%share/examples/py-medusa/demo/simple_httpd.py
 %%PORTDOCS%%share/examples/py-medusa/demo/start_medusa.py
 %%PORTDOCS%%share/examples/py-medusa/test/asyn_http_bench.py
 %%PORTDOCS%%share/examples/py-medusa/test/bench.py

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	medusa
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	net devel python
 MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
