@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.9.0
-CATEGORIES=	math
+PORTVERSION=	1.9.1
+CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
 		http://cran.at.r-project.org/src/base/ \
@@ -55,7 +55,7 @@ CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
 		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 CONFIGURE_ARGS+=--enable-R-shlib --with-bzlib --with-pcre --with-zlib
 
-# NB: R 1.9.0 requires zlib 1.2.1, but the system zlib is currently
+# NB: R requires zlib 1.2.1, but the system zlib is currently
 # only 1.1.4.  Thus, R compiles its own bundled version of zlib
 # despite configuring with --with-zlib.
 

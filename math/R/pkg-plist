@@ -293,6 +293,7 @@ lib/R/library/MASS/R-ex/parcoord.R
 lib/R/library/MASS/R-ex/petrol.R
 lib/R/library/MASS/R-ex/plot.mca.R
 lib/R/library/MASS/R-ex/polr.R
+lib/R/library/MASS/R-ex/predict.glmmPQL.R
 lib/R/library/MASS/R-ex/predict.lda.R
 lib/R/library/MASS/R-ex/predict.lqs.R
 lib/R/library/MASS/R-ex/predict.qda.R
@@ -528,6 +529,7 @@ lib/R/library/MASS/help/phones
 lib/R/library/MASS/help/plot.lda
 lib/R/library/MASS/help/plot.mca
 lib/R/library/MASS/help/polr
+lib/R/library/MASS/help/predict.glmmPQL
 lib/R/library/MASS/help/predict.lda
 lib/R/library/MASS/help/predict.lqs
 lib/R/library/MASS/help/predict.mca
@@ -688,6 +690,7 @@ lib/R/library/MASS/html/phones.html
 lib/R/library/MASS/html/plot.lda.html
 lib/R/library/MASS/html/plot.mca.html
 lib/R/library/MASS/html/polr.html
+lib/R/library/MASS/html/predict.glmmPQL.html
 lib/R/library/MASS/html/predict.lda.html
 lib/R/library/MASS/html/predict.lqs.html
 lib/R/library/MASS/html/predict.mca.html
@@ -847,6 +850,7 @@ lib/R/library/MASS/latex/phones.tex
 lib/R/library/MASS/latex/plot.lda.tex
 lib/R/library/MASS/latex/plot.mca.tex
 lib/R/library/MASS/latex/polr.tex
+lib/R/library/MASS/latex/predict.glmmPQL.tex
 lib/R/library/MASS/latex/predict.lda.tex
 lib/R/library/MASS/latex/predict.lqs.tex
 lib/R/library/MASS/latex/predict.mca.tex
@@ -7720,6 +7724,7 @@ lib/R/library/utils/help/RweaveLatex
 lib/R/library/utils/help/SHLIB
 lib/R/library/utils/help/Sweave
 lib/R/library/utils/help/SweaveSyntConv
+lib/R/library/utils/help/SweaveUtils
 lib/R/library/utils/help/apropos
 lib/R/library/utils/help/browseEnv
 lib/R/library/utils/help/browseURL
@@ -7763,7 +7768,6 @@ lib/R/library/utils/help/summaryRprof
 lib/R/library/utils/help/update.packages
 lib/R/library/utils/help/url.show
 lib/R/library/utils/help/utils-deprecated
-lib/R/library/utils/help/utils-internal
 lib/R/library/utils/help/vignette
 lib/R/library/utils/html/00Index.html
 lib/R/library/utils/html/BATCH.html
@@ -7779,6 +7783,7 @@ lib/R/library/utils/html/RweaveLatex.html
 lib/R/library/utils/html/SHLIB.html
 lib/R/library/utils/html/Sweave.html
 lib/R/library/utils/html/SweaveSyntConv.html
+lib/R/library/utils/html/SweaveUtils.html
 lib/R/library/utils/html/apropos.html
 lib/R/library/utils/html/browseEnv.html
 lib/R/library/utils/html/browseURL.html
@@ -7822,7 +7827,6 @@ lib/R/library/utils/html/summaryRprof.html
 lib/R/library/utils/html/update.packages.html
 lib/R/library/utils/html/url.show.html
 lib/R/library/utils/html/utils-deprecated.html
-lib/R/library/utils/html/utils-internal.html
 lib/R/library/utils/html/vignette.html
 lib/R/library/utils/latex/BATCH.tex
 lib/R/library/utils/latex/COMPILE.tex
@@ -7837,6 +7841,7 @@ lib/R/library/utils/latex/RweaveLatex.tex
 lib/R/library/utils/latex/SHLIB.tex
 lib/R/library/utils/latex/Sweave.tex
 lib/R/library/utils/latex/SweaveSyntConv.tex
+lib/R/library/utils/latex/SweaveUtils.tex
 lib/R/library/utils/latex/apropos.tex
 lib/R/library/utils/latex/browseEnv.tex
 lib/R/library/utils/latex/browseURL.tex
@@ -7880,7 +7885,6 @@ lib/R/library/utils/latex/summaryRprof.tex
 lib/R/library/utils/latex/update.packages.tex
 lib/R/library/utils/latex/url.show.tex
 lib/R/library/utils/latex/utils-deprecated.tex
-lib/R/library/utils/latex/utils-internal.tex
 lib/R/library/utils/latex/vignette.tex
 lib/R/library/utils/man/utils.Rd
 lib/R/modules/R_X11.so
