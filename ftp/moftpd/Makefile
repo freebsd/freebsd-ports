@@ -16,6 +16,7 @@ COMMENT=	A powerful FTP server supporting IPv6, TLS, and much more
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=yes
 
 MAN8=		moftpd.8
 
