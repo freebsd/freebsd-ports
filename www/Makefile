@@ -579,6 +579,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-albatross
     SUBDIR += py-clientform
+    SUBDIR += py-cssutils
     SUBDIR += py-fcgi
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
