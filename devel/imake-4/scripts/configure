@@ -24,6 +24,9 @@ fi
 if [ X${BuildXIE} != "X" ]; then
     echo "#define BuildXIE ${BuildXIE}" >> $F
 fi
+if [ X${BuildAoutLibraries} != "X" ]; then
+    echo "#define BuildAoutLibraries ${BuildAoutLibraries}" >> $F
+fi
 
 cat >> $F <<EOF
 #ifndef XF86CardDrivers
