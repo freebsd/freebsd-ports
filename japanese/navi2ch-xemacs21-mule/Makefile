@@ -9,6 +9,6 @@ MASTERDIR=	${.CURDIR}/../navi2ch-emacs20
 
 EMACS_PORT_NAME=	xemacs21-mule
 
-RUN_DEPENDS=		${X11BASE}/lib/X11/fonts/local/mona12aB.pcf.gz:${PORTSDIR}/japanese/monafonts
+RUN_DEPENDS=		${X11BASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 
 .include <${MASTERDIR}/Makefile>
