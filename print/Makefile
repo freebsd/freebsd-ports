@@ -77,6 +77,7 @@
     SUBDIR += p5-GnomePrint
     SUBDIR += p5-Text-PDF
     SUBDIR += pnm2ppa
+    SUBDIR += panda
     SUBDIR += pclprint
     SUBDIR += pdflib
     SUBDIR += pdflib3

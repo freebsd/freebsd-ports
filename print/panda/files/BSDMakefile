@@ -1,0 +1,34 @@
+# $FreeBSD$
+
+LIB=		panda
+SHLIB_MAJOR?=	0
+SHLIB_MINOR?=	0
+CFLAGS+=	%%DEFS%% %%INCLUDES%% %%AM_CPPFLAGS%% %%CPPFLAGS%% %%AM_CFLAGS%%
+LDADD=		%%LDFLAGS%% %%LIBS%%
+SRCS=		%%libpanda_a_SOURCES%%
+INCS=		${LIB}/*.h
+NOMAN=		YES
+LIBDIR=		${LOCALBASE}/lib
+INCDIR=		${LOCALBASE}/include/${LIB}
+
+.include <bsd.lib.mk>
+
+# For FreeBSD 3.x or older
+.if !target(_includeinstall)
+_includeinstall:
+.if defined(INCS)
+.for header in ${INCS}
+        cd ${.CURDIR} && \
+        ${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
+                ${header} ${DESTDIR}${INCDIR}
+
+.endfor
+.endif
+
+beforeinstall: _includeinstall
+.endif
+
+_includeinstall: pre-_includeinstall
+
+pre-_includeinstall:
+	mkdir -p ${DESTDIR}${INCDIR}

@@ -1,0 +1,26 @@
+include/panda/constants.h
+include/panda/functions.h
+include/panda/objects.h
+include/panda/legacy.h
+@dirrm include/panda
+lib/libpanda.a
+%%PORTDOCS%%share/doc/panda/AUTHORS
+%%PORTDOCS%%share/doc/panda/BUGS
+%%PORTDOCS%%share/doc/panda/CONTRIBUTORS
+%%PORTDOCS%%share/doc/panda/ChangeLog
+%%PORTDOCS%%share/doc/panda/DEV-HINTS
+%%PORTDOCS%%share/doc/panda/README
+%%PORTDOCS%%share/doc/panda/TODO
+%%PORTDOCS%%share/doc/panda/UNDERWAY
+%%PORTDOCS%%@dirrm share/doc/panda
+%%PORTDOCS%%share/examples/panda/IMAGES
+%%PORTDOCS%%share/examples/panda/brave-gnu.png
+%%PORTDOCS%%share/examples/panda/gnu-head.jpg
+%%PORTDOCS%%share/examples/panda/gnu-head.png
+%%PORTDOCS%%share/examples/panda/gnu_box.jpg
+%%PORTDOCS%%share/examples/panda/input-ms.tif
+%%PORTDOCS%%share/examples/panda/input.tif
+%%PORTDOCS%%share/examples/panda/input2.tif
+%%PORTDOCS%%share/examples/panda/legacymain.c
+%%PORTDOCS%%share/examples/panda/main.c
+%%PORTDOCS%%@dirrm share/examples/panda
