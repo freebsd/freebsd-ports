@@ -25,7 +25,7 @@ XMKMF=		xmkmf
 MAN1=		xcircuit.1
 
 post-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g'
 
 post-install:

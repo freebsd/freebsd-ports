@@ -30,7 +30,7 @@ do-install:
 	${MKDIR} ${PREFIX}/games/smacx/data/${SUBDIR}
 	${INSTALL_DATA} ${WRKSRC}/data/${SUBDIR}/* ${PREFIX}/games/smacx/data/${SUBDIR}
 .endfor
-	cd ${WRKSRC} && find data -maxdepth 1 -type f > datafiles
+	cd ${WRKSRC} && ${FIND} data -maxdepth 1 -type f > datafiles
 	cd ${WRKSRC} && ${INSTALL_DATA} `cat datafiles` ${PREFIX}/games/smacx/data/
 .for FILE in QuickStart.txt README icon.xpm
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/games/smacx

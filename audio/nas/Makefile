@@ -25,7 +25,7 @@ INSTALLS_SHLIB=	yes
 .include "${.CURDIR}/Makefile.man"
 
 post-patch:
-	@find ${WRKSRC} -name '*.[ch]' | xargs \
+	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|g"
 
 post-install:

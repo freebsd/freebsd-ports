@@ -29,7 +29,7 @@ ALL_TARGET=	dep tcl_interf/nxlc
 MAN1=		abacus.1
 
 post-extract:
-	@(cd ${WRKSRC}; find -d . -name RCS -exec ${RM} -rf {} \;)
+	@(cd ${WRKSRC}; ${FIND} -d . -name RCS -exec ${RM} -rf {} \;)
 	@(cd ${WRKSRC}; ${RM} canvas; ${LN} -sf canvas-tcl8.2.2 canvas)
 
 post-patch:

@@ -64,14 +64,14 @@ post-install:
 	cd ${PREFIX}/share/doc/urt; \
 	${TAR} xf $(DISTDIR)/urt-doc.tar; \
 	cd doc; \
-	find -d . | cpio -dump ..; \
+	${FIND} -d . | cpio -dump ..; \
 	cd ..; \
 	${RM} -rf doc; \
 	cd ${PREFIX}/share/examples/urt; \
 	${TAR} xf $(DISTDIR)/urt-img.tar; \
 	${CHOWN} -R root:wheel . ; \
-	find . -type d -exec ${CHMOD} 755 '{}' \; ; \
-	find . -type f -exec ${CHMOD} 644 '{}' \;
+	${FIND} . -type d -exec ${CHMOD} 755 '{}' \; ; \
+	${FIND} . -type f -exec ${CHMOD} 644 '{}' \;
 .endif
 
 .include <bsd.port.mk>

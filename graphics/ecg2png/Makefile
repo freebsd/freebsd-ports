@@ -25,7 +25,7 @@ QTCPPFLAGS+=	-I${LOCALBASE}/include/gd
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lqt$$|-l${QTNAME}|g' ${WRKSRC}/ecg2png/Makefile.in
-	@find ${WRKSRC} -name '*.cpp' | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|#include <qimageio.h>||g'
 	@${CHMOD} ${BINMODE} ${WRKSRC}/missing
 

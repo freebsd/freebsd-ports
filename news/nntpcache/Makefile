@@ -82,7 +82,7 @@ post-install:
 	@ ${CHOWN} -R news:news ${NNTPSPOOLDIR}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && find ${DOCS} \
+	@ cd ${WRKSRC} && ${FIND} ${DOCS} \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 

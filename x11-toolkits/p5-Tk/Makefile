@@ -130,6 +130,6 @@ post-configure:
 	@${PERL} -i -p \
 		-e 's/^(CC = ).*/$$1 ${CC}/;' \
 		-e 's/^(CCFLAGS = ).*/$$1 ${CFLAGS}/' \
-		`find ${WRKSRC} -name Makefile`
+		`${FIND} ${WRKSRC} -name Makefile`
 
 .include <bsd.port.mk>

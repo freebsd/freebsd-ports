@@ -20,7 +20,7 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|\$$(datadir)/|g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/gnome/|$$(datadir)/|g'
 
 .include <bsd.port.mk>

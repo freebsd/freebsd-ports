@@ -19,7 +19,6 @@ WRKSRC=			${WRKDIR}/HTMLgen
 PLIST=			${WRKDIR}/PLIST
 
 DOCDIR=			${PREFIX}/share/doc/HTMLgen
-FIND?=			find
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}

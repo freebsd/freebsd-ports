@@ -18,7 +18,7 @@ LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 USE_X_PREFIX=	yes
 
 post-extract:
-	@find ${WRKSRC} -name '.depend' | xargs ${RM} -f
+	@${FIND} ${WRKSRC} -name '.depend' | ${XARGS} ${RM} -f
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg_edit ${PREFIX}/bin
