@@ -9,18 +9,14 @@ PORTNAME=	libao
 PORTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://home.student.utwente.nl/t.vanklaveren/distfiles/ \
-		http://www.vorbis.com/files/beta4/unix/
+MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
+		http://home.student.utwente.nl/t.vanklaveren/distfiles/
 
-MAINTAINER=	t.vanklaveren@student.utwente.nl
+MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
 
 WANT_ESOUND=	yes
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>

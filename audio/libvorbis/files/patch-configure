@@ -1,0 +1,56 @@
+$FreeBSD$
+--- configure.orig	Mon Feb 26 14:34:27 2001
++++ configure	Wed Mar 21 15:45:36 2001
+@@ -1617,9 +1617,9 @@
+ 		CFLAGS="-xO4 -fast -w -fsimple -native -xcg92"
+ 		PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
+ 	*)
+-		DEBUG="-g"
+-		CFLAGS="-O"
+-		PROFILE="-g -p" ;;
++		DEBUG="$CFLAGS -g"
++		CFLAGS="$CFLAGS"
++		PROFILE="$CFLAGS -g -p" ;;
+         esac
+ else
+ 
+@@ -1709,9 +1709,9 @@
+ 		CFLAGS="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -O4 -ffast-math -fsigned-char"
+ 		PROFILE="-DDARWIN -fno-common -force_cpusubtype_ALL -Wall -g -pg -O4 -ffast-math -fsigned-char";;
+ 	*)
+-		DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-		CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-		PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++		DEBUG="$CFLAGS -g -Wall -D__NO_MATH_INLINES -fsigned-char"
++		CFLAGS="$CFLAGS -fsigned-char"
++		PROFILE="$CFLAGS -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+         esac
+ fi
+ 
+@@ -1795,14 +1795,14 @@
+ LIBS=""
+ fi
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:1800: checking for pthread_create in -lpthread" >&5
++echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
++echo "configure:1800: checking for pthread_create in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1808 "configure"
+ #include "confdefs.h"
+@@ -1830,7 +1830,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  pthread_lib="-lpthread"
++  pthread_lib="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ :

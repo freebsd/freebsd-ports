@@ -4,9 +4,4 @@ supports:
    * Open Sound System (Linux, *BSD)
    * ESounD
    * Advanced Linux Sound Architecture
-   * Solaris (untested)
-   * IRIX (untested)
    * WAV files
-
-- Theo van Klaveren
-t.vanklaveren@student.utwente.nl

@@ -1,0 +1,12 @@
+$FreeBSD$
+--- doc/vorbisenc/Makefile.in.orig	Wed Mar 21 15:54:02 2001
++++ doc/vorbisenc/Makefile.in	Wed Mar 21 15:54:16 2001
+@@ -87,7 +87,7 @@ pthread_lib = @pthread_lib@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/vorbisenc
++docdir = $(datadir)/doc/$(PACKAGE)/vorbisenc
+ 
+ doc_DATA = index.html overview.html reference.html style.css 	 vorbis_encode_ctl.html vorbis_encode_init.html vorbis_info.html
+ 

@@ -13,10 +13,8 @@ MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
 		http://home.student.utwente.nl/t.vanklaveren/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
-MAINTAINER=	t.vanklaveren@student.utwente.nl
+MAINTAINER=	Christian Weisgerber <naddy@mips.inka.de>
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
