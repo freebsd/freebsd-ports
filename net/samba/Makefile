@@ -105,6 +105,14 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 WITH_CUPS=	yes
 .endif
 
+.if defined(WITH_WINBIND)
+CONFIGURE_ARGS+=	--with-winbind
+.endif
+
+.if defined(WITH_WINBIND_AUTH_CHALLENGE)
+CONFIGURE_ARGS+=	--with-winbind-auth-challenge
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
 
