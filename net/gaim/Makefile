@@ -7,6 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
-USE_PERL5=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
@@ -34,11 +34,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 
 MAN1=		gaim.1 gaim-remote.1
 
-.include <bsd.port.pre.mk>
+OPTIONS=	SILC "Secure Internet Live Conferencing support" off \
+		GTKSPELL "spell checking support" on \
+		AUDIO "audio support" on \
+		GNUTLS "GNUTLS encryption support" on \
+		NSS "Mozilla NSS encryption support" on \
+		PERL "Perl scripting" off \
+		TCLTK "Tcl/Tk scripting" off
 
-.if exists(${LOCALBASE}/lib/libgnutls.so) && !defined(WITHOUT_GNUTLS)
-WITH_GNUTLS=	yes
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mevolutiondataserver}!=""
 USE_GNOME+=	evolutiondataserver
@@ -62,46 +66,47 @@ PLIST_SUB+=		SILC=""
 PLIST_SUB+=		SILC="@comment "
 .endif
 
-.if !defined(WITHOUT_NSS)
+.if defined(WITH_NSS)
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-nspr-libs=${LOCALBASE}/lib \
 			--with-nss-includes=${LOCALBASE}/include/nss/nss \
 			--with-nss-libs=${LOCALBASE}/lib
 .else
-CONFIGURE_ARGS+=	--enable-nss=no
+CONFIGURE_ARGS+=	--disable-nss
 .endif
 
-.if ${PERL_LEVEL} < 500800
-CONFIGURE_ARGS+=	--disable-perl
-PLIST_SUB+=		PERL:="@comment "
-.else
+.if defined(WITH_PERL) && ${PERL_LEVEL} >= 500800
+USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
+.else
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=		PERL:="@comment "
 .endif
 
-.ifndef(WITHOUT_GTKSPELL)
+.if defined(WITH_GTKSPELL)
 LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
-.if defined(TCL_VER)
-_TCL_DVER=	${TCL_VER:S/.//}
-_TCL_VER=	${_TCL_DVER:C/(.)/\1./}
-.if ${_TCL_VER} != 8.3 && ${_TCL_VER} != 8.4
+.if defined(WITH_TCLTK)
+TCLTK_VER?=		8.4	# user can override it
+TCLTK_VER_NODOT=	${TCLTK_VER:S/.//}
+.if ${TCLTK_VER} != 8.3 && ${TCLTK_VER} != 8.4
 .	error Currently GAIM can only use Tcl/Tk 8.3 or 8.4
 .endif
-LIB_DEPENDS+=	tk${_TCL_DVER}:${PORTSDIR}/x11-toolkits/tk${_TCL_DVER}
-CONFIGURE_ARGS+=--with-tclconfig=${LOCALBASE}/lib/tcl${_TCL_VER} \
-		--with-tkconfig=${LOCALBASE}/lib/tk${_TCL_VER}
-CFLAGS+=	-I${LOCALBASE}/include/tk${_TCL_VER} -I${LOCALBASE}/include/tcl${_TCL_VER}
+LIB_DEPENDS+=	tk${TCLTK_VER_NODOT}:${PORTSDIR}/x11-toolkits/tk${TCLTK_VER_NODOT}
+CONFIGURE_ARGS+=--with-tclconfig=${LOCALBASE}/lib/tcl${TCLTK_VER} \
+		--with-tkconfig=${LOCALBASE}/lib/tk${TCLTK_VER}
+CFLAGS+=	-I${LOCALBASE}/include/tk${TCLTK_VER} -I${LOCALBASE}/include/tcl${TCLTK_VER}
 PLIST_SUB+=	TCL:=""
 .else
 PLIST_SUB+=	TCL:="@comment "
 .endif
 
-.ifndef(WITHOUT_AUDIO)
+.if defined(WITH_AUDIO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
@@ -109,19 +114,11 @@ CONFIGURE_ARGS+=	--disable-audio
 .endif
 
 pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Gaim has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_SILC		Build with Secure Internet Live Conferencing (SILC)"
-	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
-	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
-	@${ECHO_MSG} "	WITH_GNUTLS		Enable GNUTLS encryption support"
-	@${ECHO_MSG} "	WITHOUT_GNUTLS		Disable GNUTLS encryption support"
-	@${ECHO_MSG} "	WITHOUT_NSS		Disable Mozilla NSS encryption support"
-	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
-	@${ECHO_MSG} ""
-.if !defined(WITH_GNUTLS) && defined(WITHOUT_NSS)
-	@${ECHO_MSG} "WARNING: In order to use MSN, you must define WITH_GNUTLS and/or WITH_NSS."
-	@${ECHO_MSG} ""
+.if defined(WITH_PERL) && ${PERL_LEVEL} < 500800
+	@${ECHO_MSG} "WARNING: Perl scripting disabled (Perl 5.8 requirement not met)."
+.endif
+.if defined(WITHOUT_GNUTLS) && defined(WITHOUT_NSS)
+	@${ECHO_MSG} "WARNING: In order to use MSN, you must enable the GNUTLS and/or NSS options."
 .endif
 
 post-patch:
@@ -129,8 +126,8 @@ post-patch:
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
 		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} -ldl|-lsilc -lsilcclient ${PTHREAD_LIBS} -liconv|' \
-		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${_TCL_VER} required|g' \
-		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${_TCL_VER:E}|' \
+		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
+		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
