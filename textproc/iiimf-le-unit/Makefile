@@ -38,6 +38,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 IGNORE=		does not build on FreBSD 4.x because of missing fputwc() function in libc
 .endif
 
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on amd64 and ia64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/../acfiles/im_common.m4 \
