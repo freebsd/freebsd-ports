@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -34,7 +34,7 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::NIMLOC.3 Net::DNS::RR::NSAP.3 \
 		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3 \
 		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
-		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3
+		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3
 
 post-install:
 .if !defined(NOPORTDOCS)

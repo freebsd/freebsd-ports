@@ -9,6 +9,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/AAAA.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/AFSDB.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/CERT.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/CNAME.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/DNAME.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/EID.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/HINFO.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/ISDN.pm
