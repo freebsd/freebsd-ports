@@ -1,0 +1,31 @@
+lib/python1.5/site-packages/TextTools/Constants/Sets.py
+lib/python1.5/site-packages/TextTools/Constants/Sets.pyc
+lib/python1.5/site-packages/TextTools/Constants/Sets.pyo
+lib/python1.5/site-packages/TextTools/Constants/TagTables.py
+lib/python1.5/site-packages/TextTools/Constants/TagTables.pyc
+lib/python1.5/site-packages/TextTools/Constants/TagTables.pyo
+lib/python1.5/site-packages/TextTools/Constants/__init__.py
+lib/python1.5/site-packages/TextTools/Constants/__init__.pyc
+lib/python1.5/site-packages/TextTools/Constants/__init__.pyo
+@dirrm lib/python1.5/site-packages/TextTools/Constants
+lib/python1.5/site-packages/TextTools/TextTools.py
+lib/python1.5/site-packages/TextTools/TextTools.pyc
+lib/python1.5/site-packages/TextTools/TextTools.pyo
+lib/python1.5/site-packages/TextTools/__init__.py
+lib/python1.5/site-packages/TextTools/__init__.pyc
+lib/python1.5/site-packages/TextTools/__init__.pyo
+lib/python1.5/site-packages/mxTextTools.so
+@dirrm lib/python1.5/site-packages/TextTools
+share/doc/py-mxTextTools/mxTextTools.html
+@dirrm share/doc/py-mxTextTools
+share/examples/py-mxTextTools/HTML.py
+share/examples/py-mxTextTools/Loop.py
+share/examples/py-mxTextTools/Python.py
+share/examples/py-mxTextTools/RTF.py
+share/examples/py-mxTextTools/RegExp.py
+share/examples/py-mxTextTools/Tim.py
+share/examples/py-mxTextTools/Words.py
+share/examples/py-mxTextTools/__init__.py
+share/examples/py-mxTextTools/altRTF.py
+share/examples/py-mxTextTools/pytag.py
+@dirrm share/examples/py-mxTextTools

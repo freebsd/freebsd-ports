@@ -1,0 +1,6 @@
+# Build extensions shared:
+*shared*
+#
+
+# Text processing tools
+mxTextTools mxTextTools.c mxte.c mxbmse.c

@@ -1,0 +1,7 @@
+This package provides several different functions and mechanisms
+to do fast text text processing. Amongst these are character set
+operations, parsing & tagging tools (using a finite state machine
+executing byte code) and common things such as Boyer-Moore search
+objects. For full documentation see the home page.
+
+WWW: http://starship.skyport.net/~lemburg/mxTextTools.html
