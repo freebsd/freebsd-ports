@@ -1,4 +1,4 @@
-@cd /usr/local
+@cd /usr/X11R6
 @owner bin
 @mode 755
 bin/chimera
