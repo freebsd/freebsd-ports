@@ -6658,6 +6658,7 @@ py-tkinter	ports/x11-toolkits/py-tkinter
 py-trex		ports/textproc/py-trex
 py-twisted	ports/devel/py-twisted
 py-twofish	ports/security/py-twofish
+py-ui		ports/devel/py-ui
 py-unit		ports/devel/py-unit
 py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
