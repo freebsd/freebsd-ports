@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Test/Pod/Coverage.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod/Coverage/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod/Coverage
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Pod 2>/dev/null | true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test 2>/dev/null | true
+@unexec rmdir %D/%%SITE_PERL%%/Test/Pod 2>/dev/null | true
+@unexec rmdir %D/%%SITE_PERL%%/Test 2>/dev/null | true
