@@ -1,16 +1,17 @@
-# ports collection makefile for:	Berkeley DB
-# Date created:				26 Jan 1998
-# Whom:					Josh Tiefenbach <josh@ican.net>
+# ports collection makefile for:	Berkeley DB v3
+# Date created:				16 August 2000
+# Whom:					Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db
-PORTVERSION=	2.7.7
+PORTNAME=	db3
+PORTVERSION=	3.1.14
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
+DISTNAME=	db-${PORTVERSION}
 
-MAINTAINER=	josh@ican.net
+MAINTAINER=	ozz@FreeBSD.org.ru
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
 
@@ -21,21 +22,10 @@ INSTALLS_SHLIB=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--enable-compat185 \
-			--enable-dump185 --enable-cxx
-
-post-install:
-	${MKDIR} ${PREFIX}/share/examples/db2
-	cd ${WRKSRC}/..; \
-	    tar -cf - --exclude tags examples/ examples_cxx/ examples_java/ | \
-	    ( cd ${PREFIX}/share/examples/db2; tar xf - )
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Java support for ${PKGNAME} is *not* built by default, and requires that you"
-	@${ECHO_MSG} "have a working copy of the JDK (v1.1) installed."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "To build java support, please read:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${WRKDIR}/${DISTNAME}/java/README"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "and follow the directions therein."
+			--enable-dump185 --enable-cxx \
+			--enable-dynamic \
+			--prefix=${PREFIX} \
+			--includedir=${PREFIX}/include/db3
+CONFIGURE_TARGET=	$(ARCH)-unknown-freebsd$(OSREL)
 
 .include <bsd.port.mk>
