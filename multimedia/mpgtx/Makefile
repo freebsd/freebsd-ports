@@ -31,7 +31,7 @@ MLINKS=	mpgtx.1 mpgcat.1 \
 pre-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS\+=|g ; \
 		 s|\$$cflags \$$optimization_cflags|$$cflags|g ; \
-		 s|g++|${CXX}|g' ${WRKSRC}/configure
+		 s|g++|${CXX}|g; s|-pedantic||' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpgtx ${PREFIX}/bin
