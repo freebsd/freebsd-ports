@@ -22,8 +22,6 @@ INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	'Downloading and redistribution terms are unclear'
-NO_CDROM=	'Downloading and redistribution terms are unclear'
-NO_PACKAGE=	'Downloading and redistribution terms are unclear'
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/udbcsdk/examples/udbctest ${PREFIX}/bin
