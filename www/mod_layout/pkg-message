@@ -1,0 +1,12 @@
+
+-----------------------------------------------------------------
+You have installed mod_layout, a module that can automatically
+prepend/append HTML pages served.  To enable this module, edit
+${PREFIX}/etc/apache/httpd.conf and look for the line:
+
+#LoadModule layout_module      libexec/apache/mod_layout.so
+
+Remove the hash mark from the beginning of the line and run
+${PREFIX}/sbin/apachectl restart to enable this module.  Please
+see ${PREFIX}/share/doc/mod_layout for more details.
+-----------------------------------------------------------------
