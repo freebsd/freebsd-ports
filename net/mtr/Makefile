@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-BROKEN=		'this port does wierd things and rarely works'
-
 HAS_CONFIGURE=	yes
 
 MAN8=	mtr.8
