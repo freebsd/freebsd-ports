@@ -38,7 +38,7 @@ IMAGEURL?=	${WEBDATASUBDIR}
 # set WITH_LDAP for LDAP authentication and addressbook support
 # set WITH_VCHKPW for vpopmail authentication
 # set WITH_ISPELL to provide spell-checking
-# set WITH_FCGI to enable fastcgi support
+# set WITH_MIMETYPES to enable the search for a mime.types file
 # set VCHKPW to the home of the vpopmail user, if necessary
 #
 
@@ -89,6 +89,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=	--without-ispell
+.endif
+
+.if !defined(WITH_MIMETYPES)
+CONFIGURE_ARGS+=	--disable-mimetypes
 .endif
 
 MANPREFIX=	${PREFIX}/share/sqwebmail
