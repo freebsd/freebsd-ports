@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1997/04/26 20:20:16 jfieber Exp $
+# $Id: Makefile,v 1.32 1997/04/26 20:38:05 asami Exp $
 #
 
 SUBDIR += archivers
@@ -8,6 +8,7 @@ SUBDIR += benchmarks
 SUBDIR += cad
 SUBDIR += chinese
 SUBDIR += comms
+SUBDIR += converters
 SUBDIR += databases
 SUBDIR += devel
 SUBDIR += editors
@@ -29,6 +30,7 @@ SUBDIR += russian
 SUBDIR += shells
 SUBDIR += security
 SUBDIR += sysutils
+SUBDIR += textproc
 SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
