@@ -50,9 +50,9 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO} "******************************************************************************"
-	@${ECHO} "* Original Ultima VII data is required to run Exult"
-	@${ECHO} "* Please, read ${DOCSDIR}/README for additional information"
-	@${ECHO} "******************************************************************************"
+	@${ECHO_MSG} "******************************************************************************"
+	@${ECHO_MSG} "* Original Ultima VII data is required to run Exult"
+	@${ECHO_MSG} "* Please, read ${DOCSDIR}/README for additional information"
+	@${ECHO_MSG} "******************************************************************************"
 
 .include <bsd.port.mk>

@@ -19,17 +19,17 @@ DOCFORMAT=HTML
 .else
 .if ${DOCFORMAT} != "HTML" && ${DOCFORMAT} != "PDF"
 .BEGIN:
-	@${ECHO} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
-	@${ECHO} "Possible values are:  HTML, PDF."
+	@${ECHO_MSG} "ERROR: invalid value for DOCFORMAT: \"${DOCFORMAT}\""
+	@${ECHO_MSG} "Possible values are:  HTML, PDF."
 	@${FALSE}
 .endif
 .endif
 
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
-pre-fetch:
-	@${ECHO} "This manual is available in two formats: HTML and PDF."
-	@${ECHO} "Note that the manual is pretty darn big."
+pre-everything::
+	@${ECHO_MSG} "This manual is available in two formats: HTML and PDF."
+	@${ECHO_MSG} "Note that the manual is pretty darn big."
 
 PREFIX?=	${X11BASE}	# This port itself does not require Xlib
 EXTRACT_ONLY=	#empty

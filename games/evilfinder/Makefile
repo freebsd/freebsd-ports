@@ -30,11 +30,11 @@ USE_REINPLACE=	yes
 
 pre-everything::
 .if !defined(WITHOUT_WRAPPER)
-	@${ECHO} "********************************************"
-	@${ECHO} "Define WITHOUT_WRAPPER to build without the"
-	@${ECHO} "\"evilfinder\" wrapper, which makes the port"
-	@${ECHO} "a web-oriented application."
-	@${ECHO} "********************************************"
+	@${ECHO_MSG} "********************************************"
+	@${ECHO_MSG} "Define WITHOUT_WRAPPER to build without the"
+	@${ECHO_MSG} "\"evilfinder\" wrapper, which makes the port"
+	@${ECHO_MSG} "a web-oriented application."
+	@${ECHO_MSG} "********************************************"
 .endif
 
 post-patch:

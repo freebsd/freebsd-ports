@@ -38,7 +38,7 @@ USE_GCC=2.95
 
 .ifndef (WITH_EXAMPLES)
 pre-everything::
-	@${ECHO} "You can define WITH_EXAMPLES=yes to install example VRML files"
+	@${ECHO_MSG} "You can define WITH_EXAMPLES=yes to install example VRML files"
 .endif
 
 pre-patch:

@@ -26,12 +26,12 @@ MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CDEBUG="${CFLAGS}" LINK="${CC}" EPSLIB=""
 ALL_TARGET=	${PORTNAME}
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
 .endif
 
 post-extract:

@@ -45,10 +45,10 @@ PLIST_SUB=	WITH_SCENES=""
 
 pre-everything::
 .ifndef (WITH_XRML)
-	@${ECHO} "Defining WITH_XRML=yes will allow you to read XRML input files"
+	@${ECHO_MSG} "Defining WITH_XRML=yes will allow you to read XRML input files"
 .endif
 .ifndef (WITH_SCENES)
-	@${ECHO} "Define WITH_SCENES=yes to install additional scenes package"
+	@${ECHO_MSG} "Define WITH_SCENES=yes to install additional scenes package"
 .endif
 
 pre-patch:
