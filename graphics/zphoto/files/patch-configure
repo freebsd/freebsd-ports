@@ -1,6 +1,6 @@
---- configure.orig	Thu Feb 26 19:09:36 2004
-+++ configure	Tue Mar  2 10:21:20 2004
-@@ -3725,7 +3725,7 @@
+--- configure.orig	Wed May  5 16:27:51 2004
++++ configure	Wed May  5 16:44:18 2004
+@@ -4131,7 +4131,7 @@
      SWFMovie_save(movie, "foo"); /* 0.2a API */
  }
  EOF
