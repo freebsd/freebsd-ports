@@ -5,8 +5,8 @@
 # Created by: hetzels@westbend.net
 
 PKG_BATCH=${BATCH:=NO}
-PKG_USER=${PKG_USER:=apache}
-PKG_GROUP=${PKG_GROUP:=apache}
+PKG_USER=${PKG_USER:=www}
+PKG_GROUP=${PKG_GROUP:=www}
 
 PKG_PREFIX=${PKG_PREFIX}
 HOST_NAME=`/bin/hostname`
@@ -16,11 +16,10 @@ AP_CONF=${PKG_PREFIX}/etc/apache
 AP_DATA=${PKG_PREFIX}/www/data
 AP_SHARE=${PKG_PREFIX}/share/doc/apache
 
-FPINSTALL=${PKG_PREFIX}/frontpage/version4.0/fp_install.sh
-CHANGESERVER=${PKG_PREFIX}/frontpage/version4.0/change_server.sh
-FPDOCDIR=${AP_SHARE}/manual/frontpage
+FPINSTALL=${PKG_PREFIX}/frontpage/version5.0/fp_install.sh
+FPCNF=${PKG_PREFIX}/frontpage/version5.0/frontpage.cnf
 IMAGES_DIR=${AP_SHARE}/manual/images
-IMAGES_VTI=${PKG_PREFIX}/www/data/images/_vti_cnf
+IMAGES_VTI=${AP_DATA}/images/_vti_cnf
 
 create_user()
 {
@@ -29,11 +28,17 @@ create_user()
 		exit 69
 	fi
 
+	oldgid=0
+	if pw show group apache -q > /dev/null ; then
+		oldgid=`pw show group apache 2> /dev/null | cut -d: -f3`
+		if [ ${oldgid} -eq 80 ] ; then
+			echo "*** Group changed from apache to ${PKG_GROUP}"
+			pw groupdel apache
+		fi
+	fi
+
 	if ! pw show group ${PKG_GROUP} -q > /dev/null; then
 		gid=80
-		while pw show group -g ${gid} -q > /dev/null; do
-			gid=`expr ${gid} + 1`
-		done
 		if ! pw add group ${PKG_GROUP} -g ${gid}; then
 			e=$?
 			echo "*** Failed to add group \`${PKG_GROUP}'.  Please add it manually."
@@ -50,14 +55,19 @@ create_user()
 		shell="/nonexistent"
 	fi
 
+	if pw show user apache -q > /dev/null ; then
+		olduid=`pw show user apache 2> /dev/null | cut -d: -f3`
+		if [ ${olduid} -eq 80 ]; then
+			echo "*** User name changed from apache to ${PKG_USER}"
+			pw del user apache
+		fi
+	fi
+
 	if ! pw show user ${PKG_USER} -q > /dev/null; then
 		uid=80
-		while pw show user -u ${uid} -q > /dev/null; do
-			uid=`expr ${uid} + 1`
-		done
 		if ! pw add user ${PKG_USER} -u ${uid} -g ${gid} \
-				-d "${PKG_PREFIX}/www/data" \
-				-c "The Apache Web Server" \
+				-d "/nonexistent" \
+				-c "World Wide Web Owner" \
 				-s "${shell}" -p "*" ; then
 			e=$?
 			echo "*** Failed to add user \`${PKG_USER}'. Please add it manually."
@@ -83,19 +93,6 @@ create_apache_doc_root ()
     fi
 }
 
-fix_frontpage_scripts ()
-{
-    /bin/cat ${FPINSTALL}-dist | \
-	/usr/bin/sed	-e 's;PREFIX;'${PKG_PREFIX}';' \
-			-e 's;MOD_FPDOCDIR;'${FPDOCDIR}';' \
-	> ${FPINSTALL}
-    /bin/cat ${CHANGESERVER}-dist | \
-	/usr/bin/sed	-e 's;PREFIX;'${PKG_PREFIX}';' \
-	> ${CHANGESERVER}
-    /bin/chmod 555 ${CHANGESERVER} ${FPINSTALL}
-    /usr/sbin/chown bin ${CHANGESERVER} ${FPINSTALL}
-}
-
 fix_httpd_conf ()
 {
     if [ ! -f ${AP_CONF}/httpd.conf ] ; then
@@ -103,26 +100,27 @@ fix_httpd_conf ()
 	    /usr/bin/sed -e 's;@@HOSTNAME@@;'${HOST_NAME}';' \
 	    > ${AP_CONF}/httpd.conf
     fi
+}
 
-    for file in mime.types magic srm.conf access.conf
-    {
-	if [ ! -f ${AP_CONF}/${file} ]; then
-	    cp -rp ${AP_CONF}/${file}.default ${AP_CONF}/${file}
-	fi
-    }
+# Add SendMailCommand to frontpage.cnf
+fix_frontpage_cnf ()
+{
+    if [ ! "`grep SendMailCommand ${FPCNF}`" ] ; then
+	echo "SendMailCommand:/usr/sbin/sendmail" >> ${FPCNF}
+    fi
 }
 
 #Add the appropriate comment to the images/_vti_cnf file.
 comment_files ()
 {
-    if [ -d ${IMAGES_VTI} ]; then 
+    if [ -d ${IMAGES_VTI} ]; then
 	if [ -f ${IMAGES_VTI}/apache_pb.gif ] && \
 	   [ ! "`grep description ${IMAGES_VTI}/apache_pb.gif`" ] ; then
-	    /bin/echo "vti_description:SW|Apache Webserver" >> ${IMAGES_VTI}/apache_pb.gif 
+	    /bin/echo "vti_description:SW|Apache Webserver" >> ${IMAGES_VTI}/apache_pb.gif
 	fi
 	if [ -f ${IMAGES_VTI}/fplogo.gif ] && \
 	   [ ! "`grep description ${IMAGES_VTI}/fplogo.gif`" ] ; then
-	    /bin/echo "vti_description:SW|Created with Microsoft FrontPage 2000" >> ${IMAGES_VTI}/fplogo.gif 
+	    /bin/echo "vti_description:SW|Created with Microsoft FrontPage" >> ${IMAGES_VTI}/fplogo.gif
 	fi
 	if [ -f ${IMAGES_VTI}/powerlogo.gif ] && \
 	   [ ! "`grep description ${IMAGES_VTI}/powerlogo.gif`" ] ; then
@@ -136,12 +134,12 @@ case $2 in
 	create_user
 	;;
     POST-INSTALL)
-	# If we are not in batch mode then run the FP install script.
+	# If we are not in batch mode
         if [ "${PKG_BATCH}" = "NO" ]; then
 	    create_apache_doc_root
-	    fix_frontpage_scripts
 	    fix_httpd_conf
 	    ${FPINSTALL}
+	    fix_frontpage_cnf
 	    comment_files
 	fi
 	;;

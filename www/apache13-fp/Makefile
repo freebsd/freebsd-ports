@@ -8,11 +8,9 @@
 PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
 PORTVERSION=	1.3.22
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		ftp://ftp.microsoft.com/products/frontpage/ \
-		ftp://www.westbend.net/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		http://www.freebsd.org/gifs/ \
 		http://officeupdate.microsoft.com/frontpage/wpp/serk/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -30,7 +28,7 @@ MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-DISTFILES=	${APACHE} ${FRONTPAGE} powerlogo.gif fplogo.gif
+DISTFILES=	${APACHE} powerlogo.gif fplogo.gif
 
 MAINTAINER=	hetzels@westbend.net
 
@@ -39,56 +37,31 @@ MAINTAINER=	hetzels@westbend.net
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 
+RUN_DEPENDS=	${LOCALBASE}/frontpage/bin/owsadm.exe:${PORTSDIR}/www/frontpage5
+
+.ifndef WITHOUT_LIBEXPAT
+LIB_DEPENDS+=	expat.2:${PORTSDIR}/textproc/expat2
+.endif
+
 .include <bsd.port.pre.mk>
 
 ONLY_FOR_ARCHS=	i386 alpha
 
-.if ${ARCH} == i386
-.ifdef WANT_BSDI_EXT
-FRONTPAGE=	fp40.bsdi.tar.Z
-EXTRA_PATCHES=	${FILESDIR}/change_server.bsdi ${FILESDIR}/fp_install.bsdi
-.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-PKGMESSAGE=	pkg-message.bsdi
-.endif
-.else
-.if (defined(BATCH) && ${BATCH} == YES ) || !exists(/usr/lib/compat/libc.so.3)
-LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
-.endif
-FRONTPAGE=	fp40.freebsd.tar.Z
-.if ${OSVERSION} < 4300001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-PKGMESSAGE=	pkg-message.freebsd
-.endif
-.endif
-.elif ${ARCH} == alpha
-FRONTPAGE=	fp40.alpha.tar.Z
-EXTRA_PATCHES=	${FILESDIR}/change_server.alpha ${FILESDIR}/fp_install.alpha
-.endif
+FP_VER=		5.0
 
 EXTRACT_ONLY=	${APACHE}
 
 BATCH?=		NO
 CHMOD?=		/bin/chmod
-FP_REV=		version4.0
-FPINSTALL=	frontpage/${FP_REV}/fp_install.sh
-CHANGESERVER=	frontpage/${FP_REV}/change_server.sh
-FPSETPERM=	frontpage/${FP_REV}/set_default_perms.sh
-README=		frontpage/${FP_REV}/readme.htm
-SERK=		frontpage/${FP_REV}/serk
-FPHTTPD=	${PREFIX}/frontpage/${FP_REV}/apache-fp
-MOD_FPDOCDIR=	${DOCSDIR}/manual/frontpage
+
 MOD_FP=		${FILESDIR}/mod_frontpage.c
 IMAGES_DIR=	${DOCSDIR}/manual/images
-
-INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
-
-PLIST=		${WRKDIR}/PLIST
-PLIST_SUB=	FP_REV=${FP_REV}
 
 #
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
-HTTPD_USER?=	apache
-HTTPD_GROUP?=	apache
+HTTPD_USER?=	www
+HTTPD_GROUP?=	www
 USER_WEB_DIR?=	public_html
 
 HAS_CONFIGURE=	yes
@@ -111,7 +84,9 @@ CONFIGURE_ARGS=	 \
 # Currently perl version doesn't matter
 USE_PERL5=	YES
 
-OPTIM=		-DHARD_SERVER_LIMIT=512 \
+OPTIM=		-D_LARGEFILE_SOURCE \
+		-D_FILE_OFFSET_BITS=64 \
+		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
@@ -130,6 +105,11 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		OPTIM='${OPTIM}' \
 		PATH="${PREFIX}/bin:${PATH}"
 
+.ifndef WITHOUT_LIBEXPAT
+CONFIGURE_ENV+=	INCLUDES="${INCLUDES} -I ${LOCALBASE}/includes" \
+		LDFLAGS="${LDFLAGS} -L ${LOCALBASE}/lib"
+.endif
+
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
@@ -141,45 +121,16 @@ CONFIGURE_ARGS+=	--enable-suexec \
 			--suexec-userdir=${USER_WEB_DIR} \
 			--suexec-safepath='/bin:/usr/bin:${PREFIX}/bin'
 MAN8+=	suexec.8
+PLIST_SUB+=	SUEXEC=""
+.else
+PLIST_SUB+=	SUEXEC="@comment "
 .endif
 
-.if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-pre-extract:
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "-ldescrypt"; then \
-	   ${ECHO} ; \
-	   ${ECHO} "WARNING: MS FrontPage Extentions require the DES Library"; \
-	   ${ECHO} "  Install the DES Library, then build apache-fp"; \
-	   ${ECHO} ; \
-	   ${ECHO} "  FreeBSD Handbook - Security (chapter 6)"; \
-	   ${ECHO} "    http://www.freebsd.org/handbook/security.html#CRYPT"; \
-	   ${ECHO} "  FAQ - I live outside the US. Can I use DES encryption?"; \
-	   ${ECHO} "    http://www.freebsd.org/FAQ/install.html#AEN629"; \
-	   ${ECHO} ; \
-	   ${FALSE} ; \
-	fi
-.endif
-
-post-extract:
-	@${ECHO} "===>  Extracting FrontPage install scripts"
-	cd ${WRKSRC} && \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} \
-		${EXTRACT_AFTER_ARGS} ${FPINSTALL} ${CHANGESERVER} \
-		${README} ${FPSETPERM}
-
-.if !defined(PATCH_DEBUG)
 post-patch:
+.if !defined(PATCH_DEBUG)
 	@ cd ${WRKSRC} \
 		&& find . -type f -name "*.orig" -print | xargs ${RM} -f
 .endif
-
-post-configure:
-.ifndef NO_SUEXEC
-	${CP} ${PKGDIR}/pkg-plist ${PLIST}
-.else
-	${CAT} ${PKGDIR}/pkg-plist | ${GREP} -v sbin/suexec > ${PLIST}
-.endif
-
-IMAGES=		apache_pb.gif fplogo.gif powerlogo.gif
 
 # Create apache user and group
 pre-install:
@@ -191,6 +142,7 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh file."; \
 		${SED}	-e 's;PREFIX;${PREFIX};' \
 			-e 's;PERL5;${PERL};' \
+			-e 's;FP_VER;${FP_VER};' \
 		< ${FILESDIR}/apache.sh.tmpl > ${PREFIX}/etc/rc.d/apache.sh; \
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
@@ -198,20 +150,6 @@ post-install:
 	@${INSTALL} -c -m 644 ${DISTDIR}/fplogo.gif ${IMAGES_DIR}
 	@${INSTALL} -c -m 644 ${DOCSDIR}/apache_pb.gif ${IMAGES_DIR}
 	@( cd ${DOCSDIR} ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
-	# Untar frontpage extentions
-	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
-	@${RM} ${FPHTTPD}/httpd ${FPHTTPD}/httpd.Compat
-	@${MKDIR} ${MOD_FPDOCDIR}
-	@${CP} ${PREFIX}/${README} ${MOD_FPDOCDIR}/index.html
-	@${LN} -fs ${PREFIX}/${SERK} ${MOD_FPDOCDIR}/serk
-	@${INSTALL_FILE} ${WRKSRC}/${FPINSTALL} ${PREFIX}/${FPINSTALL}-dist
-	@${INSTALL_FILE} ${WRKSRC}/${CHANGESERVER} ${PREFIX}/${CHANGESERVER}-dist
-	@${INSTALL_FILE} ${WRKSRC}/${FPSETPERM} ${PREFIX}/${FPSETPERM}
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if ${OSVERSION} < 430001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500014 )
-.if ${ARCH} == i386
-	@${CAT} ${PKGMESSAGE}
-.endif
-.endif
 
 .include <bsd.port.post.mk>

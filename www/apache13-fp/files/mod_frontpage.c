@@ -2,7 +2,7 @@
  *
  * Apache FrontPage module.
  *
- * Copyright (c) 1996-1997 Microsoft Corporation -- All Rights Reserved.
+ * Copyright (c) 1996-2001 Microsoft Corporation -- All Rights Reserved.
  *
  * NO WARRANTIES. Microsoft expressly disclaims any warranty for this code and
  * information. This code and information and any related documentation is
@@ -20,10 +20,6 @@
  * of the possibility of such damages. Because some states/jurisdictions do not
  * allow the exclusion or limitation of liability for consequential or
  * incidental damages, the above limitation may not apply to you.
- *
- * $Revision: 5 $
- * $Date: 6/19/98 5:25p $
- *
  */
 
 
@@ -61,15 +57,6 @@
 #include <stdio.h>
 #include <sys/time.h>
 
-#if defined(UWARE7) || UW==700
-#define Vstat stat32
-#define Vlstat lstat32
-#else
-#define Vstat stat
-#define Vlstat lstat
-#endif 
-
-
 #ifndef TRUE
 #define TRUE 1
 #endif
@@ -93,33 +80,53 @@ static int  gfdKeyPipe[2];          /* Pipe to fpexe stub CGI */
 static int  gbKeyPipeActive = FALSE;/* Pipe to fpexe stub CGI is active */
 static int  gbEnabled = FALSE;      /* TRUE when SUID scheme is enabled */
 #if !defined(SHARED_MODULE)
-static int  giInitializeCount =0    /* FrontPageInit called previously */
+static int  giInitializeCount = 0;  /* FrontPageInit called previously */
 #endif
 
-static const char* FP         =
-          "/usr/local/frontpage/version4.0";
-static const char* FPKEYDIR   =
-          "/usr/local/frontpage/version4.0/apache-fp";
-static const char* KEYFILEXOR =
-          "/usr/local/frontpage/version4.0/apache-fp/suidkey";
-static const char* KEYFILE    =
-          "/usr/local/frontpage/version4.0/apache-fp/suidkey.%d";
-static const char* FPSTUBDIR  =
-          "/usr/local/frontpage/version4.0/apache-fp/_vti_bin";
-static const char* FPSTUB     =
-          "/usr/local/frontpage/version4.0/apache-fp/_vti_bin/fpexe";
-static const char* SHTML      =
+static const char FP[]         =
+          "/usr/local/frontpage/version5.0";
+static const char FPKEYDIR[]   =
+          "/usr/local/frontpage/version5.0/apache-fp";
+static const char KEYFILEXOR[] =
+          "/usr/local/frontpage/version5.0/apache-fp/suidkey";
+static const char KEYFILE[]    =
+          "/usr/local/frontpage/version5.0/apache-fp/suidkey.%d";
+static const char FPSTUBDIR[]  =
+          "/usr/local/frontpage/version5.0/apache-fp/_vti_bin";
+static const char FPSTUB[]     =
+          "/usr/local/frontpage/version5.0/apache-fp/_vti_bin/fpexe";
+static const char GLOBALADMINDIR[] =
+          "/usr/local/frontpage/version5.0/admin-exes";
+static const char IMAGESDIR[]  =
+          "/exes/_vti_bin/_vti_adm/images" ;
+static const char SHTML[]      =
           "/_vti_bin/shtml.exe";
-static const char* SHTML2     =
+static const char SHTML2[]     =
           "/_vti_bin/shtml.dll";
-static const char* VTI_BIN    =
+static const char VTI_BIN[]    =
           "/_vti_bin";
-static const char* FPCOUNT    =
+static const char FPCOUNT[]    =
           "/_vti_bin/fpcount.exe";
-static const char* AUTHOR     =
+static const char AUTHOR[]     =
           "/_vti_bin/_vti_aut/author.exe" ;
-static const char* ADMIN      =
+static const char ADMIN[]      =
           "/_vti_bin/_vti_adm/admin.exe" ;
+static const char ADMINCGI[]   =
+          "/_vti_bin/_vti_adm/fpadmcgi.exe" ;
+static const char PASSWD[]     =
+          "/passwd.htm" ;
+static const char VTIHELP[]    =
+          "/_vti_bin/_vti_adm/help/" ;
+static const char VTI_ADM[]    =
+          "/_vti_bin/_vti_adm/" ;
+static const char HELPDIR[]    =
+          "/help" ;
+static const char ADMINDIR[]   =
+          "/admin" ;
+
+const int iVTI_LEN = sizeof(VTI_ADM)/sizeof(VTI_ADM[0]) - 1;
+const int iHELP    = sizeof(VTIHELP)/sizeof(VTIHELP[0]) - 1;
+
 
 MODULE_VAR_EXPORT module frontpage_module;
 
@@ -235,7 +242,7 @@ static int FrontPageCheckup(server_rec *s)
         return (FALSE);
     }
 
-    if (Vlstat(FPKEYDIR, &fs) == -1          || /* We can't stat the key dir */
+    if (lstat(FPKEYDIR, &fs) == -1          || /* We can't stat the key dir */
         fs.st_uid                           || /* key dir not owned by root */
         (fs.st_mode & (S_IRGRP | S_IROTH))  || /* key dir is readable */
         (fs.st_mode & (S_IWGRP | S_IWOTH))  || /* key dir is writable */
@@ -253,7 +260,7 @@ static int FrontPageCheckup(server_rec *s)
         return (FALSE);
     }
 
-    if (Vlstat(FPSTUBDIR, &fs) == -1         || /* We can't stat the stub dir */
+    if (lstat(FPSTUBDIR, &fs) == -1         || /* We can't stat the stub dir */
         fs.st_uid                           || /* stub dir not owned by root */
         (fs.st_mode & (S_IWGRP | S_IWOTH))  || /* stub dir is writable */
         (!S_ISDIR(fs.st_mode)))
@@ -267,7 +274,7 @@ static int FrontPageCheckup(server_rec *s)
         return (FALSE);
     }
 
-    if (Vstat(FPSTUB, &fs) == -1             || /* We can't stat the stub */
+    if (stat(FPSTUB, &fs) == -1             || /* We can't stat the stub */
         fs.st_uid                           || /* stub not owned by root */
         !(fs.st_mode & S_ISUID)             || /* stub is not set-uid */
         (fs.st_mode & S_ISGID)              || /* stub is set-gid */
@@ -446,7 +453,7 @@ static void FrontPageInit(server_rec *s, pool *p)
     /*
      * See if there is an 'suidkey' file to merge into our key.
      */
-    if (Vstat(KEYFILEXOR, &fs) == -1)
+    if (stat(KEYFILEXOR, &fs) == -1)
     {
         /*
          * It's a security violation if the key file is not present.  User
@@ -470,7 +477,7 @@ static void FrontPageInit(server_rec *s, pool *p)
              * sure the key file is properly protected (owned by root,
              * permissions r**------).
              */
-            LogFrontPageError(s, "The key file \"%-.1024s\" must be owned by root and have permissions r**------",
+            LogFrontPageError(s, "The key file \"%-.1024s\" must not be accessible except by root and with permissions r**------",
                               KEYFILEXOR, "FrontPageInit()", TRUE);
             return;
         }
@@ -566,42 +573,19 @@ static void FrontPageInit(server_rec *s, pool *p)
     /*
      * Thanks to Scot Hetzel (hetzels@westbend.net)
      */
-    ap_add_version_component("FrontPage/4.0.4.3");
+    ap_add_version_component("FrontPage/5.0.2.2510");
 }
 
-
-/*
- * Look for a valid FrontPage extensions scenario and fake a scriptalias if
- * appropriate.  If there are any problems, we silently decline.
- */
-static int FrontPageAlias(
+static int FrontPageCheckWebRoot(
     request_rec* r,
     char* szCgi,
-    const char* szFpexe)
+    struct stat *pWebroot)
 {
     int iLen;
-    struct stat webroot;
     struct stat vti_pvt;
-    struct stat stub;
     char szBuf[MAXPATHLEN];
     char chSave;
     char szFormat[MAXPATHLEN * 2];
-
-    /*
-     * Decline if we cannot run the stub, or it is writable.
-     */
-    if (Vstat(FPSTUB, &stub) == -1 || !(stub.st_mode & S_IXOTH) ||
-        stub.st_mode & (S_IWGRP | S_IWOTH))
-    {
-        /*
-         * The stub used to be correctly permissioned; what happened?  User
-         * recovery: set stub to be owned by by root with permissions
-         * r*s*-x*-x.
-         */
-        LogFrontPageError(r->server, "Incorrect permissions on stub \"%-.1024s\", must be owned by root with permissions r*s*-x*-x",
-                          FPSTUB, "FrontPageAlias()", FALSE);
-        return DECLINED;
-    }
 
     chSave = szCgi[1];
     szCgi[1] = '\0';
@@ -622,25 +606,72 @@ static int FrontPageAlias(
      * Decline if webroot and webroot/_vti_pvt don't have the same
      * user and group or uid < LOWEST_VALID_UID or gid < LOWEST_VALID_GID.
      */
-    if (Vstat(szBuf, &vti_pvt) == -1       ||
-        vti_pvt.st_uid < LOWEST_VALID_UID ||
-        vti_pvt.st_gid < LOWEST_VALID_GID ||
-        Vstat(r->filename, &webroot) != 0  ||
-        webroot.st_uid != vti_pvt.st_uid  || 
-        webroot.st_gid != vti_pvt.st_gid)
+    if (stat(szBuf, &vti_pvt)       != 0 ||
+        stat(r->filename, pWebroot) != 0 ||
+        pWebroot->st_uid != vti_pvt.st_uid  || 
+        pWebroot->st_gid != vti_pvt.st_gid)
     {
         /*
          * The webroot and webroot/_vti_pvt don't match.  User recovery: fix
          * the owners and groups of both directories to match, and have both a
          * uid and gid in the allowable range.
          */
-        sprintf(szFormat, "Incorrect permissions on webroot \"%%-.1024s\" and webroot's _vti_pvt directory, the owners and groups must match and have a uid >= %d and gid >= %d", LOWEST_VALID_UID, LOWEST_VALID_GID);
-
-        LogFrontPageError(r->server, szFormat,
+	sprintf(szFormat, "Incorrect permissions on webroot \"%%-.0124s\" and webroot's _vti_pvt directory, the owners and groups must match and have a uid >= %d and gid >= %d", LOWEST_VALID_UID, LOWEST_VALID_GID);
+	LogFrontPageError(r->server, szFormat,
                           szBuf, "FrontPageAlias()", FALSE);
         return DECLINED;
     }
- 
+
+    if ((!strcmp(r->filename,GLOBALADMINDIR)) ? vti_pvt.st_uid > 0
+        : (vti_pvt.st_uid < LOWEST_VALID_UID ||
+           vti_pvt.st_gid < LOWEST_VALID_GID))
+    {
+        /*
+         * User recovery: fix the owners and groups of both directories to
+         * match, and have both a uid and gid in the allowable range.
+         */
+	sprintf(szFormat, "Incorrect permissions on webroot \"%%-.0124s\" and webroot's _vti_pvt directory, the owners and groups must match and have a uid >= %d and gid >= %d", LOWEST_VALID_UID, LOWEST_VALID_GID);
+	LogFrontPageError(r->server, szFormat,
+                          szBuf, "FrontPageAlias()", FALSE);
+        return DECLINED;
+    }
+    
+    return OK;
+}
+
+
+/*
+ * Look for a valid FrontPage extensions scenario and fake a scriptalias if
+ * appropriate.  If there are any problems, we silently decline.
+ */
+static int FrontPageAlias(
+    request_rec* r,
+    char* szCgi,
+    const char* szFpexe)
+{
+    struct stat webroot;
+    struct stat stub;
+    char szBuf[MAXPATHLEN];
+
+    /*
+     * Decline if we cannot run the stub, or it is writable.
+     */
+    if (stat(FPSTUB, &stub) == -1 || !(stub.st_mode & S_IXOTH) ||
+        stub.st_mode & (S_IWGRP | S_IWOTH))
+    {
+        /*
+         * The stub used to be correctly permissioned; what happened?  User
+         * recovery: set stub to be owned by by root with permissions
+         * r*s*-x*-x.
+         */
+        LogFrontPageError(r->server, "Incorrect permissions on stub \"%-.1024s\", must be owned by root with permissions r*s*-x*-x",
+                          FPSTUB, "FrontPageAlias()", FALSE);
+        return DECLINED;
+    }
+
+    if (OK != FrontPageCheckWebRoot(r, szCgi, &webroot))
+        return DECLINED;
+
     /*
      * If the pipe is active, it was because we previously executed a CGI.
      * That CGI must have finished by now (otherwise we wouldn't be processing
@@ -705,6 +736,46 @@ static int FrontPageAlias(
     return OK;
 }
 
+static int FrontPageGetLcid(const char* szDir)
+{
+    int iLcid;
+    iLcid = atoi(szDir);
+    if (iLcid < 1 || iLcid > 9999)
+        iLcid = 1033;
+    return iLcid;
+}
+
+/*
+ * Look for a valid FrontPage extensions scenario and fake an alias if
+ * appropriate.  If there are any problems, we silently decline.
+ */
+static int FrontPageStaticAlias(
+    request_rec* r,
+    char* szCgi,
+    const char* szDir,
+    int iLcid)
+{
+    struct stat webroot;
+    char szBuf[8];
+    char* szBase;
+
+    if (OK != FrontPageCheckWebRoot(r, szCgi, &webroot))
+        return DECLINED;
+
+    szBase = strrchr(r->uri, '/');
+    if (!szBase)
+        return DECLINED;
+
+    szBuf[0] = 0;
+    if (iLcid > 0 && iLcid < 10000)
+        sprintf(szBuf, "/%04d", iLcid);
+
+    r->execfilename = ap_pstrcat(r->pool, FP, szDir, szBuf, szBase, NULL);
+    r->filename = ap_pstrcat(r->pool, r->filename, szCgi, NULL);
+
+    return OK;
+}
+
 
 /*
  * This routine looks for shtml.exe, fpcount.exe, author.exe and admin.exe
@@ -727,7 +798,7 @@ static int FrontPageXlate(
 
     /*
      * Check once for anything with _vti_bin.  This is much faster than
-     * checking all four paths, because anything without this is definitely
+     * checking all our paths, because anything without this is definitely
      * not a FrontPage scenario.
      */
     if (!(szVti = strstr(r->uri, VTI_BIN)))
@@ -740,6 +811,7 @@ static int FrontPageXlate(
      * .../_vti_bin/fpcount.exe...
      * .../_vti_bin/_vti_aut/author.exe...
      * .../_vti_bin/_vti_adm/admin.exe...
+     * .../_vti_bin/_vti_adm/owsadm.exe...
      */
     if (szCgi = strstr(szVti, AUTHOR ))
         return FrontPageAlias(r, szCgi, AUTHOR);
@@ -756,9 +828,25 @@ static int FrontPageXlate(
         return FrontPageAlias(r, szCgi, SHTML);
     if (szCgi = strstr(szVti, ADMIN  ))
         return FrontPageAlias(r, szCgi, ADMIN);
+    if (szCgi = strstr(szVti, ADMINCGI  ))
+        return FrontPageAlias(r, szCgi, ADMINCGI);
     if (szCgi = strstr(szVti, FPCOUNT))
         return FrontPageAlias(r, szCgi, FPCOUNT);
 
+    if (szCgi = strstr(szVti, VTIHELP))
+        return FrontPageStaticAlias(r, szVti, HELPDIR,
+                                    FrontPageGetLcid(szVti + iHELP));
+    if ((szCgi = strrchr(szVti,'/')) && !strcmp(szCgi, PASSWD) &&
+        (iVTI_LEN < strlen(szVti)))
+        return FrontPageStaticAlias(r, szVti, ADMINDIR,
+                                    FrontPageGetLcid(szVti + iVTI_LEN));
+    if ((szCgi = strrchr(szVti,'.')) && !strcmp(szCgi, ".gif"))
+        return FrontPageStaticAlias(r, szVti, IMAGESDIR, 0);
+    if ((szCgi = strrchr(szVti,'.')) && !strcmp(szCgi, ".css") &&
+        (iVTI_LEN < strlen(szVti)))
+        return FrontPageStaticAlias(r, szVti, ADMINDIR,
+                                    FrontPageGetLcid(szVti + iVTI_LEN));
+    
     return DECLINED;    
 }
 
@@ -776,7 +864,7 @@ module MODULE_VAR_EXPORT frontpage_module =
     NULL,                      /* server config merger */
     NULL,                      /* command table */
     NULL,                      /* [6] list of handlers */
-    FrontPageXlate,            /* [1] filename-to-URI translation */
+    FrontPageXlate,            /* [1] URI-to-filename translation */
     NULL,                      /* [4] check/validate HTTP user_id */
     NULL,                      /* [5] check HTTP user_id is valid *here* */
     NULL,                      /* [3] check access by host address, etc. */
