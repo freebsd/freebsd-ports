@@ -1,0 +1,10 @@
+--- tkspline/Makefile.am.orig	Sat May 27 03:07:57 2000
++++ tkspline/Makefile.am	Fri Nov  3 03:22:50 2000
+@@ -10,6 +10,7 @@
+ man_MANS = tkspline.n
+ 
+ INCLUDES = \
++	@X_CFLAGS@ \
+ 	@TCL_CFLAGS@ \
+ 	@TK_CFLAGS@ \
+ 	-I@TK_EXEC_PREFIX@/include \

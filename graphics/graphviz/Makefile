@@ -6,31 +6,38 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	1.6
+PORTVERSION=	1.7a
 CATEGORIES=	graphics tk83
-MASTER_SITES=	http://www.graphviz.org/pub/graphviz/
+MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/
+DISTNAME=	gviz17a
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
-		ttf.4:${PORTSDIR}/print/freetype \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-# do not use USE_AUTOMAKE -- it only works if the configure script
-# finds automake by itself
-USE_AUTOCONF=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_FREETYPE=	yes
+USE_XPM=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
+AUTOMAKE=	libtoolize --force && autoheader && automake --add-missing
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -DHAVE_TERMIOS" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -DHAVE_TERMIOS" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		TCLCONFIG=${LOCALBASE}/lib/tcl8.3/tclConfig.sh \
 		TKCONFIG=${LOCALBASE}/lib/tk8.3/tkConfig.sh
-USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	${PREFIX}/lib/graphviz
 
 MAN1=	dot.1 dotty.1 lefty.1 neato.1
 MAN3=	agraph.3 cdt.3 graph.3 pathplan.3
 MANN=	gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
+
+post-patch:
+	@cd ${WRKSRC} && aclocal
 
 .include <bsd.port.mk>
