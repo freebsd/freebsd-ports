@@ -3,6 +3,8 @@
 # Date created:         Mar 26 1995
 # Whom:                 jmacd@FreeBSD.ORG
 #
+# $Id$
+#
 
 DISTNAME=       mit-scheme
 PKGNAME=	mit-scheme-7.3
