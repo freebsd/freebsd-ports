@@ -55,6 +55,12 @@ SPF_DEBUG_FILE=	/dev/null
 SPF_CFLAGS+=	-DDEBUG_LOG_FILE=\\\"${SPF_DEBUG_FILE}\\\" \
 		-DOUTPUT_LOG_FILE=\\\"${SPF_LOG_FILE}\\\"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 # This is all a bit messy, but given the inconvenient original Makefile,
 # this seems to be the best way to make this port work in this version.
 # The author of libspf is working on autotools support, so this ugliness
@@ -100,4 +106,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/spfquery-${PORTNAME} ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
