@@ -7617,7 +7617,6 @@ py-rlcompleter2	ports/devel/py-rlcompleter2
 py-ro		ports/devel/py-ro
 py-roxlib	ports/devel/py-roxlib
 py-rrdpipe	ports/net/py-rrdpipe
-py-rrdtool	ports/net/py-rrdtool
 py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
 py-rt		ports/net/py-rt
 py-rxp		ports/textproc/py-rxp
