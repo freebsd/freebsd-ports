@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sane-frontends
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
@@ -18,7 +18,6 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,6 +30,14 @@ LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
 CONFIGURE_ARGS+=	--enable-gimp
 .else
 CONFIGURE_ARGS+=	--disable-gimp
+.endif
+
+.if defined(WITH_GTK2)
+.undef WITH_GIMP
+USE_GNOME=	gtk20
+.else
+USE_GNOME=	gtk12
+CONFIGURE_ARGS=	--disable-gtk2
 .endif
 
 pre-everything::
