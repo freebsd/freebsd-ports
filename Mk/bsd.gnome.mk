@@ -240,7 +240,7 @@ libxml2_LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 libxml2_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxml-2.0.pc
 libxml2_USE_GNOME_IMPL=	pkgconfig
 
-libxslt_LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt
+libxslt_LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 libxslt_DETECT=		${LOCALBASE}/libdata/pkgconfig/libxslt.pc
 libxslt_USE_GNOME_IMPL=	libxml2
 
