@@ -4,31 +4,23 @@
 #
 # $FreeBSD$
 #
-POSTGRESQL_PORT?=	databases/postgresql7
 
-PORTNAME=	postgresql
-PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
-PORTREVISION?=	0
-CATEGORIES=	databases tcl83
-MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
+PORTREVISION=	0
+CATEGORIES=	databases tcl${TCLVERSION:S/.//}
 PKGNAMESUFFIX=	-pltcl
-DISTFILES!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V DISTFILES
-DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A module for using Tcl to write SQL functions
 
+POSTGRESQL_PORT?=	databases/postgresql7
+POSTGRESQL_SUBPORT=YES
+.include "../../${POSTGRESQL_PORT}/Makefile"
+
 LIB_DEPENDS=	tcl${TCLVERSION:S/.//}:${PORTSDIR}/lang/tcl${TCLVERSION:S/.//}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
-MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
-
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
-TCLVERSION?=	8.3
+TCLVERSION?=	8.4
 CONFIGURE_ARGS=	--with-tcl --without-tk \
 		--with-tclconfig="${TCLCONFIG}" \
 		--with-includes="${TCL_INCDIR}"

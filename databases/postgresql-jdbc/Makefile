@@ -4,27 +4,20 @@
 #
 # $FreeBSD$
 #
-POSTGRESQL_PORT?=	databases/postgresql7
 
-PORTNAME=	postgresql
-PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
-PORTREVISION?=	0
+PORTREVISION=	0
 CATEGORIES=	databases java
-MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
 PKGNAMESUFFIX=	-jdbc
-DISTFILES!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V DISTFILES
-DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
-MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
+POSTGRESQL_PORT?=	databases/postgresql7
+POSTGRESQL_SUBPORT=YES
+.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
 
-USE_GMAKE=	YES
-GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-java
 
 USE_JAVA=	1.1+

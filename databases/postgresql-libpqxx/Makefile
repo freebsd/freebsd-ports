@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	1.5.1
+PORTVERSION=	2.1.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqxx/stable/
 PKGNAMEPREFIX=	postgresql-

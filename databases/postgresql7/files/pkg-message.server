@@ -13,5 +13,9 @@ You can then start PostgreSQL by running:
   /usr/local/etc/rc.d/010.pgsql.sh start
 
 For postmaster settings, see ~pgsql/data/postgresql.conf
+
+NB. FreeBSD's PostgreSQL port now by default logs to syslog
+    See ~pgsql/data/postgresql.conf for more info
+
 For more tips, read ~pgsql/post-install-notes
 ======================================================================

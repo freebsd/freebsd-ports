@@ -9,30 +9,32 @@
 
 PREFIX=%%PREFIX%%
 PGBIN=${PREFIX}/bin
-logfile=/var/log/pgsql
 
 case $1 in
 start)
-    touch ${logfile}
-    chmod 600 ${logfile}
-    chown pgsql:pgsql ${logfile}
     [ -x ${PGBIN}/pg_ctl ] && {
-	su -l pgsql -c \
-	    "[ -d \${PGDATA} ] && exec ${PREFIX}/bin/pg_ctl start -s -w -l ${logfile}"
 	echo -n ' pgsql'
+	su -l pgsql -c \
+	    "[ -d \${PGDATA} ] && exec ${PREFIX}/bin/pg_ctl start -s -w"
     }
     ;;
 
 stop)
     [ -x ${PGBIN}/pg_ctl ] && {
-	su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl stop -s -m fast"
 	echo -n ' pgsql'
+	su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl stop -s -m fast"
     }
     ;;
 
 restart)
     [ -x ${PGBIN}/pg_ctl ] && {
-	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast -l ${logfile}"
+	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl restart -s -m fast"
+    }
+    ;;
+
+reload)
+    [ -x ${PGBIN}/pg_ctl ] && {
+	exec su -l pgsql -c "exec ${PREFIX}/bin/pg_ctl reload"
     }
     ;;
 
@@ -43,7 +45,7 @@ status)
     ;;
 
 *)
-    echo "usage: `basename $0` {start|stop|restart|status}" >&2
+    echo "usage: `basename $0` {start|stop|restart|reload|status}" >&2
     exit 64
     ;;
 esac

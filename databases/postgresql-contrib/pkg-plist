@@ -16,13 +16,13 @@ bin/fti.pl
 bin/ipc_check
 bin/make_oidjoins_check
 bin/oid2name
+bin/pg_autovacuum
 bin/pg_dumplo
 bin/pg_logger
 bin/pgbench
 bin/reindexdb
 bin/vacuumlo
 lib/postgresql/_int.so
-lib/postgresql/array_iterator.so
 lib/postgresql/autoinc.so
 lib/postgresql/btree_gist.so
 lib/postgresql/chkpass.so
@@ -51,10 +51,10 @@ lib/postgresql/string_io.so
 lib/postgresql/tablefunc.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch.so
+lib/postgresql/tsearch2.so
 lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/README.apachelog
-%%DOCSDIR%%/contrib/README.array_iterator
 %%DOCSDIR%%/contrib/README.btree_gist
 %%DOCSDIR%%/contrib/README.chkpass
 %%DOCSDIR%%/contrib/README.cube
@@ -75,6 +75,7 @@ lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/README.misc_utils
 %%DOCSDIR%%/contrib/README.noup
 %%DOCSDIR%%/contrib/README.oid2name
+%%DOCSDIR%%/contrib/README.pg_autovacuum
 %%DOCSDIR%%/contrib/README.pg_dumplo
 %%DOCSDIR%%/contrib/README.pg_logger
 %%DOCSDIR%%/contrib/README.pgbench
@@ -91,6 +92,7 @@ lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/README.string_io
 %%DOCSDIR%%/contrib/README.tablefunc
 %%DOCSDIR%%/contrib/README.tsearch
+%%DOCSDIR%%/contrib/README.tsearch2
 %%DOCSDIR%%/contrib/README.user_locks
 %%DOCSDIR%%/contrib/README.vacuumlo
 %%DOCSDIR%%/contrib/autoinc.example
@@ -100,7 +102,6 @@ lib/postgresql/user_locks.so
 %%DOCSDIR%%/contrib/timetravel.example
 share/postgresql/contrib/RServ.pm
 share/postgresql/contrib/_int.sql
-share/postgresql/contrib/array_iterator.sql
 share/postgresql/contrib/autoinc.sql
 share/postgresql/contrib/btree_gist.sql
 share/postgresql/contrib/chkpass.sql
@@ -108,6 +109,7 @@ share/postgresql/contrib/cube.sql
 share/postgresql/contrib/dblink.sql
 share/postgresql/contrib/dbsize.sql
 share/postgresql/contrib/earthdistance.sql
+share/postgresql/contrib/english.stop
 share/postgresql/contrib/fti.sql
 share/postgresql/contrib/fuzzystrmatch.sql
 share/postgresql/contrib/insert_username.sql
@@ -125,12 +127,15 @@ share/postgresql/contrib/pgcrypto.sql
 share/postgresql/contrib/pgstattuple.sql
 share/postgresql/contrib/refint.sql
 share/postgresql/contrib/rtree_gist.sql
+share/postgresql/contrib/russian.stop
 share/postgresql/contrib/seg.sql
 share/postgresql/contrib/slave.sql
 share/postgresql/contrib/string_io.sql
 share/postgresql/contrib/tablefunc.sql
 share/postgresql/contrib/timetravel.sql
 share/postgresql/contrib/tsearch.sql
+share/postgresql/contrib/tsearch2.sql
+share/postgresql/contrib/untsearch2.sql
 share/postgresql/contrib/user_locks.sql
 @unexec rmdir %D/share/postgresql/contrib >&2 2> /dev/null || true
 @unexec rmdir %D/share/postgresql >&2 2> /dev/null || true
