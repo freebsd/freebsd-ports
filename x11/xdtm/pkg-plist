@@ -1,0 +1,10 @@
+@cwd /usr/X11R6
+bin/xdtm
+bin/xdtm.sh
+lib/X11/xdtm/help
+lib/X11/xdtm/perm.help
+lib/X11/xdtm/xdtmrc
+lib/X11/xdtm/new_xdtm.xbm
+lib/X11/app-defaults/Xdtm
+lib/X11/xdtm/icons
+man/man1/xdtm.1.gz

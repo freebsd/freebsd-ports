@@ -1,0 +1,26 @@
+*** Imakefile.orig	Thu Dec 29 01:41:09 1994
+--- Imakefile	Wed Apr 26 04:44:56 1995
+***************
+*** 240,249 ****
+  	sed -e 's^\"{icon dir}\"^\"$(XDTMDIR)/icons\"^' \
+  	   xdtmrc.orig > xdtmrc
+  	sed -e 's^iconfile^$(XDTMDIR)/new_xdtm.xbm^' Xdtm.ad.tmpl > Xdtm.ad
+  
+  XCOMM Install the xdtm execute script file, used to prevent xterms closing
+  XCOMM when the inferier process dies.
+! InstallProgram(xdtm.sh, $(BINDIR))
+  
+  XCOMM Install the helpfile, system xdtmrc, icon bitmaps and the default
+  XCOMM application defaults.
+--- 240,250 ----
+  	sed -e 's^\"{icon dir}\"^\"$(XDTMDIR)/icons\"^' \
+  	   xdtmrc.orig > xdtmrc
+  	sed -e 's^iconfile^$(XDTMDIR)/new_xdtm.xbm^' Xdtm.ad.tmpl > Xdtm.ad
++ 	mv xdtm.sh xdtm.sh.script
+  
+  XCOMM Install the xdtm execute script file, used to prevent xterms closing
+  XCOMM when the inferier process dies.
+! InstallScript(xdtm.sh, $(BINDIR))
+  
+  XCOMM Install the helpfile, system xdtmrc, icon bitmaps and the default
+  XCOMM application defaults.
