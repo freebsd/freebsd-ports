@@ -1,17 +1,17 @@
---- cvsweb.cgi.orig	Fri Sep 27 05:56:05 2002
-+++ cvsweb.cgi	Tue Feb 24 23:12:51 2004
+--- cvsweb.cgi.orig	Sat May  8 23:13:40 2004
++++ cvsweb.cgi	Wed May 12 15:27:34 2004
 @@ -1,4 +1,4 @@
--#!/usr/bin/perl -wT
-+#!!!PERL!! -w
+-#!/usr/bin/perl -T
++#!!!PERL!! -wT
  #
  # cvsweb - a CGI interface to CVS trees.
  #
-@@ -157,7 +157,7 @@
+@@ -214,7 +214,7 @@
  
  # == EDIT this ==
  # Locations to search for user configuration, in order:
--for ("$mydir/cvsweb.conf", '/usr/local/etc/cvsweb/cvsweb.conf') {
-+for ("$mydir/cvsweb.conf", '!!PREFIX!!/etc/cvsweb/cvsweb.conf') {
- 	if (defined($_) && -r $_) {
- 		$config = $_;
- 		last;
+-for (catfile($mydir, 'cvsweb.conf'), '/usr/local/etc/cvsweb/cvsweb.conf') {
++for (catfile($mydir, 'cvsweb.conf'), '!!PREFIX!!/etc/cvsweb/cvsweb.conf') {
+   if (-r $_) {
+     $config = $_;
+     last;
