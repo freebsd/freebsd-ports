@@ -92,6 +92,7 @@
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgresql-jdbc
+    SUBDIR += postgresql-odbc
     SUBDIR += postgresql-plruby
     SUBDIR += postgresql7
     SUBDIR += pxtools

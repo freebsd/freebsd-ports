@@ -1,0 +1,9 @@
+Support connecting to a postgresql database from a unix client
+application using ODBC.
+
+Note: You do not need this port installed on unix if you want to use
+ODBC to connect a Windows machine with PostgreSQL.
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/
