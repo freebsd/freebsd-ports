@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.3.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Embeddable stack-based threaded interpreted language
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit \
