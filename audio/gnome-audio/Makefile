@@ -3,14 +3,14 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1999/03/09 01:08:47 nectar Exp $
+# $Id: Makefile,v 1.7 1999/03/27 10:35:54 vanilla Exp $
 #
 
 DISTNAME=	gnome-audio-1.0.0
 PKGNAME=	gnomeaudio-1.0.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-audio
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -24,6 +24,6 @@ NO_BUILD=	yes
 INSTALL_TARGET=	INSTALL_DATA="${INSTALL_DATA}" install
 
 post-extract:
-	@${RM} -r ${WRKSRC}/sounds/sounds
+	@${RM} -fr ${WRKSRC}/sounds/sounds
 
 .include <bsd.port.mk>
