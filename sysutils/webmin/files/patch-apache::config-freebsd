@@ -1,0 +1,21 @@
+--- apache/config-freebsd.orig	Sat Mar 16 06:33:19 2002
++++ apache/config-freebsd	Sat Mar 16 06:33:52 2002
+@@ -1,11 +1,11 @@
+ show_list=0
+-httpd_dir=/usr/local/etc/apache
+-httpd_path=/usr/local/sbin/httpd
+-apachectl_path=/usr/local/sbin/apachectl
+-httpd_conf=/usr/local/etc/apache/httpd.conf
+-mime_types=/usr/local/etc/apache/mime.types
+-srm_conf=/usr/local/etc/apache/srm.conf
+-access_conf=/usr/local/etc/apache/access.conf
++httpd_dir=%%PREFIX%%/etc/apache
++httpd_path=%%PREFIX%%/sbin/httpd
++apachectl_path=%%PREFIX%%/sbin/apachectl
++httpd_conf=%%PREFIX%%/etc/apache/httpd.conf
++mime_types=%%PREFIX%%/etc/apache/mime.types
++srm_conf=%%PREFIX%%/etc/apache/srm.conf
++access_conf=%%PREFIX%%/etc/apache/access.conf
+ show_order=0
+ max_servers=100
+ test_config=1

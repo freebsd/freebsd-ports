@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.94
+PORTVERSION=	0.950
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -23,7 +23,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	status-0.950-1.wbm.gz sendmail-0.950-1.wbm.gz \
+		cluster-software-0.950-1.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
@@ -44,19 +45,14 @@ post-patch:
 		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.3
 	@${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
 		${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
-	@${CP} ${WRKSRC}/postfix/config ${WRKSRC}/postfix/config.sed
-	@${SED}	-e "s@/usr/sbin/postfix@${LOCALBASE}/sbin/postfix@" \
-		-e "s@/usr/sbin/postconf@${LOCALBASE}/sbin/postconf@" \
-		-e "s@/etc/postfix/main.cf@${LOCALBASE}/etc/postfix/main.cf@" \
-		-e "s@/usr/sbin/postalias@${LOCALBASE}/sbin/postalias@" \
-		-e "s@/usr/sbin/postmap@${LOCALBASE}/sbin/postmap@" \
-		${WRKSRC}/postfix/config.sed > ${WRKSRC}/postfix/config
-	@${RM} ${WRKSRC}/postfix/config.sed
-
-	@${CP} ${WRKSRC}/dhcpd/config-freebsd ${WRKSRC}/dhcpd/config-freebsd.sed
-	@${SED}	-e "s@^dhcpd_conf=.*@dhcpd_conf=${LOCALBASE}/etc/dhcpd.conf@" \
-		${WRKSRC}/dhcpd/config-freebsd.sed > ${WRKSRC}/dhcpd/config-freebsd
-	@${RM} ${WRKSRC}/dhcpd/config-freebsd.sed
+.for file in	config-freebsd apache/config-freebsd bind8/config-freebsd-2.1 \
+		bind8/config-freebsd-2.2 dhcpd/config-freebsd majordomo/config \
+		mysql/config-freebsd postfix/config-freebsd \
+		postgresql/config-freebsd proftpd/config-freebsd \
+		samba/config-freebsd squid/config-freebsd stunnel/config \
+		wuftpd/config-freebsd xinetd/config-freebsd
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin

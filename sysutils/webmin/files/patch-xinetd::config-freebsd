@@ -1,0 +1,8 @@
+--- xinetd/config-freebsd.orig	Sat Mar 16 07:51:04 2002
++++ xinetd/config-freebsd	Sat Mar 16 07:51:18 2002
+@@ -1,4 +1,4 @@
+ xinetd_conf=/etc/xinetd.conf
+ protocols_file=/etc/protocols
+ pid_file=/var/run/xinetd.pid
+-start_cmd=/usr/local/sbin/xinetd
++start_cmd=%%PREFIX%%/sbin/xinetd

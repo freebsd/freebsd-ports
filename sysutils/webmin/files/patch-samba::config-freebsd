@@ -1,0 +1,24 @@
+--- samba/config-freebsd.orig	Sat Mar 16 06:27:11 2002
++++ samba/config-freebsd	Sat Mar 16 06:28:18 2002
+@@ -1,13 +1,13 @@
+-alt_smb_conf=/usr/local/etc/smb.conf.default
++alt_smb_conf=%%PREFIX%%/etc/smb.conf.default
+ dont_convert=root toor daemon operator bin tty sys kmem adm lp smtp uucp nuucp listen nobody noaccess nobody4 pop lp mail postmaster news man ftp games smmsp mailnull bind xten gnats www pgsql mysql
+ list_printers_command=lpc status | grep "[A-z0-9]:" | sed -e 's/://g'
+-name_server=/usr/local/sbin/nmbd
++name_server=%%PREFIX%%/sbin/nmbd
+ run_from_inetd=0
+-samba_password_program=/usr/local/bin/smbpasswd
+-samba_server=/usr/local/sbin/smbd
+-samba_status_program=/usr/local/bin/smbstatus
+-smb_conf=/usr/local/etc/smb.conf
+-smb_passwd=/usr/local/private/smbpasswd
++samba_password_program=%%PREFIX%%/bin/smbpasswd
++samba_server=%%PREFIX%%/sbin/smbd
++samba_status_program=%%PREFIX%%/bin/smbstatus
++smb_conf=%%PREFIX%%/etc/smb.conf
++smb_passwd=%%PREFIX%%/private/smbpasswd
+ text_lists=0
+-swat_path=/usr/local/sbin/swat
++swat_path=%%PREFIX%%/sbin/swat
+ sort_mode=0

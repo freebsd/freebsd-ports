@@ -1,0 +1,5 @@
+--- stunnel/config.orig	Sat Mar 16 07:48:25 2002
++++ stunnel/config	Sat Mar 16 07:48:41 2002
+@@ -1 +1 @@
+-stunnel_path=/usr/local/sbin/stunnel
++stunnel_path=%%PREFIX%%/sbin/stunnel

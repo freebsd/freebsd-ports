@@ -1,0 +1,18 @@
+--- squid/config-freebsd.orig	Sat Mar 16 06:35:56 2002
++++ squid/config-freebsd	Sat Mar 16 06:37:56 2002
+@@ -1,9 +1,9 @@
+-log_dir=/usr/local/squid/logs
+-squid_path=/usr/local/sbin/squid
+-cache_dir=/usr/local/squid/cache
+-squid_conf=/usr/local/etc/squid/squid.conf
+-pid_file=/usr/local/squid/logs/squid.pid
+-cachemgr_path=/usr/local/sbin/cachemgr.cgi
++log_dir=%%PREFIX%%/squid/logs
++squid_path=%%PREFIX%%/sbin/squid
++cache_dir=%%PREFIX%%/squid/cache
++squid_conf=%%PREFIX%%/etc/squid/squid.conf
++pid_file=%%PREFIX%%/squid/logs/squid.pid
++cachemgr_path=%%PREFIX%%/libexec/cachemgr.cgi
+ calamaris=calamaris
+ cal_max=50000
+ cal_args=-aw

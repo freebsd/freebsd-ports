@@ -1,0 +1,9 @@
+--- wuftpd/config-freebsd.orig	Sat Mar 16 06:42:57 2002
++++ wuftpd/config-freebsd	Sat Mar 16 06:43:10 2002
+@@ -1,5 +1,5 @@
+ ftpgroups=/etc/ftpgroups
+-ftpd_path=/usr/local/libexec/ftpd
++ftpd_path=%%PREFIX%%/libexec/ftpd
+ ftphosts=/etc/ftphosts
+ ftpconversions=/etc/ftpconversions
+ pid_file=/var/run/ftpd.pid

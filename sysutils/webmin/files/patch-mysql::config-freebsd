@@ -1,0 +1,22 @@
+--- mysql/config-freebsd.orig	Sat Mar 16 06:56:20 2002
++++ mysql/config-freebsd	Sat Mar 16 06:56:35 2002
+@@ -1,12 +1,12 @@
+-start_cmd=/usr/local/bin/safe_mysqld &
++start_cmd=%%PREFIX%%/bin/safe_mysqld &
+ perpage=25
+-mysql=/usr/local/bin/mysql
+-mysqldump=/usr/local/bin/mysqldump
+-mysqlimport=/usr/local/bin/mysqlimport
+-mysqlshow=/usr/local/bin/mysqlshow
++mysql=%%PREFIX%%/bin/mysql
++mysqldump=%%PREFIX%%/bin/mysqldump
++mysqlimport=%%PREFIX%%/bin/mysqlimport
++mysqlshow=%%PREFIX%%/bin/mysqlshow
+ login=root
+-mysql_libs=/usr/local/lib/mysql
+-mysqladmin=/usr/local/bin/mysqladmin
++mysql_libs=%%PREFIX%%/lib/mysql
++mysqladmin=%%PREFIX%%/bin/mysqladmin
+ style=0
+ add_mode=0
+ nodbi=0
