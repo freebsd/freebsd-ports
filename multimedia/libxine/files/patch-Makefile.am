@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Thu May 16 23:50:02 2002
++++ Makefile.am	Thu May 16 23:50:14 2002
+@@ -4,7 +4,7 @@
+ 
+ AUTOMAKE_OPTIONS = 1.3
+ 
+-SUBDIRS = doc m4 intl po misc include src
++SUBDIRS = doc intl po misc include src
+ 
+ EXTRA_DIST = cvscompile.sh automake.diff \
+              debian/README.Debian debian/changelog debian/control \

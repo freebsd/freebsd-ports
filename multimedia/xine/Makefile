@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	0.9.8
-PORTREVISION=	2
+PORTVERSION=	0.9.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -31,8 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
 
-MANLANG=	"" es fr pl
-MAN1=		aaxine.1 xine.1
+MANLANG=	"" de es fr pl
+MAN1=		aaxine.1 xine.1 xine-bugreport.1 xine-check.1 xine-remote.1
 
 .include <bsd.port.pre.mk>
 
@@ -53,8 +52,18 @@ post-patch:
 		 s|-I/usr/local/include||g' ${WRKSRC}/configure
 
 post-install:
-	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/fr/man1/aaxine.1
-	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/es/man1/aaxine.1
+.for l in es fr
+	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/${l}/man1/aaxine.1
+.endfor
+.for l in es fr pl
+	@${CP} ${PREFIX}/man/man1/xine-bugreport.1 ${PREFIX}/man/${l}/man1/xine-bugreport.1
+.endfor
+.for l in es fr pl
+	@${CP} ${PREFIX}/man/man1/xine-check.1 ${PREFIX}/man/${l}/man1/xine-check.1
+.endfor
+.for l in de es fr pl
+	@${CP} ${PREFIX}/man/man1/xine-remote.1 ${PREFIX}/man/${l}/man1/xine-remote.1
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -5,7 +5,6 @@ include/xine/audio_out.h
 include/xine/buffer.h
 include/xine/configfile.h
 include/xine/demux.h
-include/xine/dxr3_video_out.h
 include/xine/events.h
 include/xine/input_plugin.h
 include/xine/lrb.h
@@ -32,7 +31,6 @@ lib/xine/plugins/xineplug_ao_out_oss.so
 lib/xine/plugins/xineplug_decode_a52.so
 lib/xine/plugins/xineplug_decode_divx4.so
 lib/xine/plugins/xineplug_decode_dts.so
-lib/xine/plugins/xineplug_decode_vfill.so
 lib/xine/plugins/xineplug_decode_ff.so
 lib/xine/plugins/xineplug_decode_lpcm.so
 lib/xine/plugins/xineplug_decode_mad.so
@@ -56,6 +54,7 @@ lib/xine/plugins/xineplug_dmx_qt.so
 lib/xine/plugins/xineplug_inp_dvd.so
 lib/xine/plugins/xineplug_inp_file.so
 lib/xine/plugins/xineplug_inp_http.so
+lib/xine/plugins/xineplug_inp_mms.so
 lib/xine/plugins/xineplug_inp_net.so
 lib/xine/plugins/xineplug_inp_rtp.so
 lib/xine/plugins/xineplug_inp_stdin_fifo.so
@@ -109,7 +108,13 @@ share/doc/xine/xine-lib-API/html/structxine__t.html
 share/doc/xine/xine-lib-API/html/xine_8h-source.html
 share/doc/xine/xine-lib-API/html/xine_8h.html
 share/doc/xine/xine-lib-API/html/xine_logo.png
+share/locale/cs/LC_MESSAGES/xine-lib.mo
+share/locale/de/LC_MESSAGES/xine-lib.mo
+share/locale/es/LC_MESSAGES/xine-lib.mo
 share/locale/fr/LC_MESSAGES/xine-lib.mo
+share/locale/pl_PL/LC_MESSAGES/xine-lib.mo
+share/locale/pt_BR/LC_MESSAGES/xine-lib.mo
+share/locale/sk/LC_MESSAGES/xine-lib.mo
 share/xine/fonts/cc-16.xinefont.gz
 share/xine/fonts/cc-20.xinefont.gz
 share/xine/fonts/cc-24.xinefont.gz
@@ -135,6 +140,7 @@ share/xine/fonts/serif-20.xinefont.gz
 share/xine/fonts/serif-24.xinefont.gz
 share/xine/fonts/serif-32.xinefont.gz
 share/xine/skins/xine_logo.png
+share/xine/skins/xine_logo.zyuy2
 @dirrm include/xine
 @dirrm lib/xine/plugins
 @dirrm lib/xine
