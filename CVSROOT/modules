@@ -9200,7 +9200,6 @@ quagga		ports/net/quagga
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
 quakeforge	ports/games/quakeforge
-quakeserver	ports/games/quakeserver
 quantlib	ports/finance/quantlib
 quark		ports/multimedia/quark
 quasi88		ports/emulators/quasi88
