@@ -1,6 +1,6 @@
 diff --minimal -c orig/gnuchess-4.0.pl77/src/dspcom.c gnuchess-4.0.pl77/src/dspcom.c
 *** orig/gnuchess-4.0.pl77/src/dspcom.c	Sun May 19 23:38:47 1996
---- src/dspcom.c	Sat Feb 15 00:29:12 1997
+--- dspcom.c	Sat Feb 15 00:29:12 1997
 ***************
 *** 1099,1105 ****
   #ifdef NONDSP
@@ -20,7 +20,7 @@ diff --minimal -c orig/gnuchess-4.0.pl77/src/dspcom.c gnuchess-4.0.pl77/src/dspc
   #ifdef MSDOS
 diff --minimal -c orig/gnuchess-4.0.pl77/src/gnuan.c gnuchess-4.0.pl77/src/gnuan.c
 *** orig/gnuchess-4.0.pl77/src/gnuan.c	Sun May 19 23:39:56 1996
---- src/gnuan.c	Sat Feb 15 00:28:24 1997
+--- gnuan.c	Sat Feb 15 00:28:24 1997
 ***************
 *** 1347,1358 ****
       fpout = stderr;
@@ -101,7 +101,7 @@ diff --minimal -c orig/gnuchess-4.0.pl77/src/gnuan.c gnuchess-4.0.pl77/src/gnuan
   		    while (true)
 diff --minimal -c orig/gnuchess-4.0.pl77/src/nondsp.c gnuchess-4.0.pl77/src/nondsp.c
 *** orig/gnuchess-4.0.pl77/src/nondsp.c	Sun May 19 23:40:31 1996
---- src/nondsp.c	Sat Feb 15 00:25:49 1997
+--- nondsp.c	Sat Feb 15 00:25:49 1997
 ***************
 *** 264,273 ****
   
