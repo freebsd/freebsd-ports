@@ -1,0 +1,12 @@
+--- testsrc/makefile	Fri Mar 14 22:50:16 1997
++++ /home/andy/tmp/wrk/testsrc/makefile	Wed Dec  2 23:05:06 1998
+@@ -43,6 +43,9 @@
+ 	  testrow.c testtb.c testte.c testtabs.c
+ TESTPROGS = ${TESTCSRC:.c=}
+ 
++CFLAGS  = -I/usr/X11R6/include/xg -I/usr/X11R6/include
++LDFLAGS = -L/usr/X11R6/lib -lXm -lXt -lXmu -lX11 -lxg
++
+ # ------------------------------------------------------------------------
+ # miscellaneous macros
+ #

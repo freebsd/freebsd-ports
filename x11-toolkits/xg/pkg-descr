@@ -1,0 +1,10 @@
+In the many years that I have been developing GUIs for UNIX, I have
+always envied the controls that are commonly available for MS Windows
+applications. In attempt to rectify this situation I designed the 
+"Xg Widget Set". This widget set is an extension of the Motif widget
+set and provides many of the controls found in MS Windows applications.
+
+The widget set is self contained, as such it requires no additional
+libraries other than X, Xt, and Motif (1.1, 1.2.x or 2.0).
+
+http://www.messners.com/xgwidgets/xgwidgets.html

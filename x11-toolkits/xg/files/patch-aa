@@ -1,0 +1,13 @@
+--- makefile	Sat Mar 15 00:36:20 1997
++++ /home/andy/tmp/wrk/makefile	Wed Dec  2 22:28:41 1998
+@@ -51,8 +51,8 @@
+ #      most systems don't need to do this, ie:. -I/usr/dt/include for
+ #      Solaris
+ #
+-MOTIF_INC =
+-CFLAGS    = "-DUSE_XM_MWMUTIL_H -DUSE_XGPM -I../include ${MOTIF_INC}"
++MOTIF_INC = -I${X11BASE}/include -I${X11BASE}/include/X11
++CFLAGS    = "-DUSE_XM_MWMUTIL_H -DUSE_XGPM -DV_USE_TM_ZONE -I../include ${MOTIF_INC}"
+ 
+ #
+ # If your OS doesn't use ranlib set RANLIB to true
