@@ -39,14 +39,14 @@ MAN3=		firestring_chomp.3 firestring_estr_munch.3 \
 		firestring_estr_astrcat.3 firestring_estr_vsprintf.3 \
 		firestring_estr_astrcpy.3 \
 		firestring_estr_xml_decode.3 \
-		firestring_estr_base64_decode.3 \ 
+		firestring_estr_base64_decode.3 \
 		firestring_estr_xml_encode.3 \
 		firestring_estr_base64_encode.3 firestring_fprintf.3 \
 		firestring_estr_chomp.3 firestring_hextoi.3 \
 		firestring_estr_chug.3 firestring_malloc.3 \
 		firestring_estr_ends.3 firestring_printf.3 \
 		firestring_estr_estrcasecmp.3 firestring_realloc.3 \
-		firestring_estr_estrcat.3 \ 
+		firestring_estr_estrcat.3 \
 		firestring_set_error_handler.3 \
 		firestring_estr_estrcmp.3 firestring_snprintf.3 \
 		firestring_estr_estrcpy.3 firestring_strcasecmp.3 \
