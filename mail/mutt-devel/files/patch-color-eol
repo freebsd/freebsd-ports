@@ -1,0 +1,62 @@
+--- mutt.h.orig	Fri Jun  4 13:35:59 2004
++++ mutt.h	Fri Jun  4 13:49:26 2004
+@@ -350,6 +350,7 @@
+   OPTBEEPNEW,
+   OPTBOUNCEDELIVERED,
+   OPTCHECKNEW,
++  OPTCOLORAFTEREOL,
+   OPTCOLLAPSEUNREAD,
+   OPTCONFIRMAPPEND,
+   OPTCONFIRMCREATE,
+--- init.h.orig	Fri Jun  4 13:35:56 2004
++++ init.h	Fri Jun  4 13:45:43 2004
+@@ -315,6 +315,12 @@
+   ** \fIcheck_new\fP is \fIunset\fP, no check for new mail is performed
+   ** while the mailbox is open.
+   */
++  { "color_after_eol",	DT_BOOL, R_NONE, OPTCOLORAFTEREOL, 1 },
++  /*
++  ** .pp
++  ** When \fIset\fP, Mutt will color a line after the last character extending
++  ** to the end of the window.
++  */
+   { "collapse_unread",	DT_BOOL, R_NONE, OPTCOLLAPSEUNREAD, 1 },
+   /*
+   ** .pp
+--- pager.c.orig	Sat Jun  5 09:13:33 2004
++++ pager.c	Sat Jun  5 09:12:31 2004
+@@ -1392,7 +1392,7 @@
+    * ncurses does an implicit clrtoeol() when you do addch('\n') so we have
+    * to make sure to reset the color *after* that
+    */
+-  if (flags & M_SHOWCOLOR)
++  if (option (OPTCOLORAFTEREOL) && (flags & M_SHOWCOLOR))
+   {
+     m = ((*lineInfo)[n].continuation) ? ((*lineInfo)[n].syntax)[0].first : n;
+     if ((*lineInfo)[m].type == MT_COLOR_HEADER)
+@@ -1406,6 +1406,16 @@
+ #endif
+   }
+ 
++  /*
++   * reset the color back to normal.  This *must* come before the
++   * addch('\n') for the color not to be filled to the right margin.
++   */
++  if (!option (OPTCOLORAFTEREOL) && (flags & M_SHOWCOLOR))
++  {
++    SETCOLOR(MT_COLOR_NORMAL);
++    BKGDSET(MT_COLOR_NORMAL);
++  }
++
+   /* ncurses always wraps lines when you get to the right side of the
+    * screen, but S-Lang seems to only wrap if the next character is *not*
+    * a newline (grr!).
+@@ -1420,7 +1430,7 @@
+    * addch('\n'), otherwise the color for this line will not be
+    * filled to the right margin.
+    */
+-  if (flags & M_SHOWCOLOR)
++  if (option (OPTCOLORAFTEREOL) && (flags & M_SHOWCOLOR))
+   {
+     SETCOLOR(MT_COLOR_NORMAL);
+     BKGDSET(MT_COLOR_NORMAL);
