@@ -42,7 +42,6 @@ include/postgresql/server/access/hio.h
 include/postgresql/server/access/htup.h
 include/postgresql/server/access/ibit.h
 include/postgresql/server/access/iqual.h
-include/postgresql/server/access/istrat.h
 include/postgresql/server/access/itup.h
 include/postgresql/server/access/nbtree.h
 include/postgresql/server/access/printtup.h
@@ -53,7 +52,6 @@ include/postgresql/server/access/rtscan.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
 include/postgresql/server/access/slru.h
-include/postgresql/server/access/strat.h
 include/postgresql/server/access/transam.h
 include/postgresql/server/access/tupdesc.h
 include/postgresql/server/access/tupmacs.h
@@ -439,6 +437,7 @@ lib/libecpg_compat.so
 %%SERVER%%lib/postgresql/utf8_and_win874.so
 @unexec rmdir %D/lib/postgresql 2>/dev/null || true
 %%SERVER%%share/postgresql/information_schema.sql
+%%SERVER%%share/postgresql/system_views.sql
 %%SERVER%%share/postgresql/sql_features.txt
 %%SERVER%%share/postgresql/pg_service.conf.sample
 %%SERVER%%share/postgresql/502.pgsql
