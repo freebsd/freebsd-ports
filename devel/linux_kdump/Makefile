@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux_kdump
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel linux
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcel
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	marcel
 MAINTAINER=	marcel@FreeBSD.org
 COMMENT=	Linux-compatability ktrace.out processor
 
-BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
+BUILD_DEPENDS=	/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-7
 
 ONLY_FOR_ARCHS=	i386
 MAN1=		linux_kdump.1
@@ -22,11 +22,18 @@ PLIST_FILES=	bin/linux_kdump
 
 .include <bsd.port.pre.mk>
 
-.if !exists(/sys/i386/linux/syscalls.master)
-IGNORE=		"requires kernel source present in /sys"
+.ifndef(SRCDIR)
+SRCDIR=		/usr/src
+pre-everything::
+	@${ECHO_MSG} '===> Using the FreeBSD source tree under /usr/src'
+	@${ECHO_MSG} '===> Set SRCDIR to use an alternate source tree'
 .endif
-.if !exists(/usr/src/usr.bin/ktrace/subr.c)
-IGNORE=		"requires ktrace source present in /usr/src/usr.bin/ktrace"
+
+.if !exists(${SRCDIR}/sys/i386/linux/syscalls.master)
+IGNORE=		"requires kernel source present in ${SRCDIR}/sys"
+.endif
+.if !exists(${SRCDIR}/usr.bin/ktrace/subr.c)
+IGNORE=		"requires ktrace source present in ${SRCDIR}/usr.bin/ktrace"
 .endif
 
 .include <bsd.port.post.mk>
