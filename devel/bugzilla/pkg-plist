@@ -53,6 +53,21 @@
 %%PORTDOCS%%share/doc/bugzilla/images/warning.gif
 %%PORTDOCS%%share/doc/bugzilla/rel_notes.txt
 %%PORTDOCS%%share/doc/bugzilla/txt/Bugzilla-Guide.txt
+%%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/README
+%%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/README.Mailif
+%%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/bugmail_help.html
+%%PORTDOCS%%%%CONTRIB%%share/doc/bugzilla/contrib/bugzilla.procmailrc
+%%CONTRIB%%www/data.default/bugzilla/contrib/BugzillaEmail.pm
+%%CONTRIB%%www/data.default/bugzilla/contrib/bug_email.pl
+%%CONTRIB%%www/data.default/bugzilla/contrib/bugzilla_email_append.pl
+%%CONTRIB%%www/data.default/bugzilla/contrib/cvs-update.sh
+%%CONTRIB%%www/data.default/bugzilla/contrib/gnats2bz.pl
+%%CONTRIB%%www/data.default/bugzilla/contrib/jb2bz.py
+%%CONTRIB%%www/data.default/bugzilla/contrib/mysqld-watcher.pl
+%%CONTRIB%%www/data.default/bugzilla/contrib/yp_nomail.sh
+%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/buglist
+%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/bugs
+%%CONTRIB%%www/data.default/bugzilla/contrib/cmdline/query.conf
 www/data.default/bugzilla/buglist.cgi
 www/data.default/bugzilla/1x1.gif
 www/data.default/bugzilla/ant.jpg
@@ -204,6 +219,8 @@ www/data.default/bugzilla/template/en/default/search/search.html.tmpl
 www/data.default/bugzilla/template/en/default/sidebar.xul.tmpl
 www/data.default/bugzilla/css/buglist.css
 www/data.default/bugzilla/css/panel.css
+%%CONTRIB%%@dirrm www/data.default/bugzilla/contrib/cmdline
+%%CONTRIB%%@dirrm www/data.default/bugzilla/contrib
 @dirrm www/data.default/bugzilla/template/en/default/account/email
 @dirrm www/data.default/bugzilla/template/en/default/account/password
 @dirrm www/data.default/bugzilla/template/en/default/account/prefs
@@ -227,6 +244,7 @@ www/data.default/bugzilla/css/panel.css
 @dirrm www/data.default/bugzilla
 @unexec rmdir %D/www/data.default || true
 @unexec rmdir %D/www || true
+%%PORTDOCS%%%%CONTRIB%%@dirrm share/doc/bugzilla/contrib
 %%PORTDOCS%%@dirrm share/doc/bugzilla/txt
 %%PORTDOCS%%@dirrm share/doc/bugzilla/images
 %%PORTDOCS%%@dirrm share/doc/bugzilla/html

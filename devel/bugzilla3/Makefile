@@ -35,6 +35,12 @@ RUN_DEPENDS+=	${PERL_SITEDIR}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS+=	${PERL_SITEDIR}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
 
+.if defined(WITH_CONTRIB)
+PLIST_SUB+=	CONTRIB=""
+.else
+PLIST_SUB+=	CONTRIB="@comment "
+.endif
+
 USE_REINPLACE=	yes
 
 NO_BUILD=	yes
@@ -61,6 +67,10 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_BUG_EXPORT_AND_IMPORT   install perl modules required for bug"
 	@${ECHO_MSG} "                               export/import feature to move bugs to or from"
 	@${ECHO_MSG} "                               other bugzilla installations"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  WITH_CONTRIB                 to install various user-contributed scripts,"
+	@${ECHO_MSG} "                               e.g. to import bugs from other databases, to
+	@${ECHO_MSG} "                               allow follow-ups/submissions by e-mail etc."
 	@${ECHO_MSG} ""
 
 post-patch:
@@ -92,6 +102,19 @@ do-install:
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} --unlink -C ${DOCSDIR} -xf -
+.endif
+.if defined(WITH_CONTRIB)
+	${MKDIR} ${BUGZILLADIR}/contrib ${BUGZILLADIR}/contrib/cmdline
+	cd ${WRKSRC}/contrib; ${INSTALL_SCRIPT} BugzillaEmail.pm bug_email.pl \
+		bugzilla_email_append.pl cvs-update.sh gnats2bz.pl jb2bz.py \
+		mysqld-watcher.pl yp_nomail.sh ${BUGZILLADIR}/contrib
+	cd ${WRKSRC}/contrib/cmdline; ${INSTALL_SCRIPT} buglist bugs \
+		query.conf ${BUGZILLADIR}/contrib/cmdline
+.if !defined(NOPORTSDOCS)
+	${MKDIR} ${DOCSDIR}/contrib
+	cd ${WRKSRC}/contrib; ${INSTALL_DATA} README README.Mailif \
+		bugmail_help.html bugzilla.procmailrc ${DOCSDIR}/contrib
+.endif
 .endif
 
 post-install:
