@@ -1,6 +1,6 @@
---- src/md.h.orig	Fri Nov  5 07:11:00 1999
-+++ src/md.h	Mon Nov  8 11:24:55 1999
-@@ -46,13 +46,13 @@
+--- src/md.h.orig	Tue Sep  5 09:42:44 2000
++++ src/md.h	Thu Dec 14 19:48:34 2000
+@@ -50,7 +50,7 @@
  #define	ENDDIR		"/"
  #define PATHSEP		':'
  #define SYSTEMSTARTFILE	"acs.rc"
@@ -9,10 +9,3 @@
  #define USERSTARTFILE	".acsrc"
  #define	USERSTARTPATH	OS::getenv("HOME")
  #define STEPFILE   	"/tmp/SXXXXXX"
- #define PLOTFILE    	"acs.plot"
- #define HELPFILE    	"acs.hlp"
--#define HELPPATH	OS::getenv("PATH")
-+#define HELPPATH	"@PREFIX@/share/acs"
- /* constants related to memory size, word size, etc */
- enum {
-   BUFLEN = 256,
