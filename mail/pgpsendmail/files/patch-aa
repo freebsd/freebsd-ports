@@ -103,14 +103,14 @@
   
   
 + all_install:
-+ 	$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpsendmail $(PREFIX)/lib
-+ 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpsendmail.8 $(PREFIX)/man/man8
-+ 	$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpdaemon $(PREFIX)/bin
-+ 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpdaemon.8 $(PREFIX)/man/man8
-+ 	$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgppipe $(PREFIX)/bin
-+ 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgppipe.1 $(PREFIX)/man/man1
-+ 	$(INSTALL) $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) sendpgppass $(PREFIX)/bin
-+ 	$(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/sendpgppass.1 $(PREFIX)/man/man1
++ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpsendmail $(PREFIX)/lib
++ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpsendmail.8 $(PREFIX)/man/man8
++ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgpdaemon $(PREFIX)/bin
++ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgpdaemon.8 $(PREFIX)/man/man8
++ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) pgppipe $(PREFIX)/bin
++ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/pgppipe.1 $(PREFIX)/man/man1
++ 	/usr/bin/install $(COPY) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) sendpgppass $(PREFIX)/bin
++ 	/usr/bin/install -c -o $(BINOWN) -g $(BINGRP) -m 644 doc/sendpgppass.1 $(PREFIX)/man/man1
 + 
   clean:
   	rm -f *.BAK *.log *.sed .#* *~ *.bak */*.bak */tmp* .*defaults */*~
