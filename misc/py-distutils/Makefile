@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	distutils
-PORTVERSION=	0.9.1
+PORTVERSION=	1.0
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.python.org/sigs/distutils-sig/download/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Distutils-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org

@@ -70,8 +70,6 @@ lib/%%PYTHON_VERSION%%/site-packages/distutils/spawn.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/spawn.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/sysconfig.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/sysconfig.pyc
-lib/%%PYTHON_VERSION%%/site-packages/distutils/test.py
-lib/%%PYTHON_VERSION%%/site-packages/distutils/test.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/text_file.py
 lib/%%PYTHON_VERSION%%/site-packages/distutils/text_file.pyc
 lib/%%PYTHON_VERSION%%/site-packages/distutils/unixccompiler.py
