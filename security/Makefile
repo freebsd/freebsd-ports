@@ -337,7 +337,6 @@
     SUBDIR += ruby-gpgme
     SUBDIR += ruby-hmac
     SUBDIR += ruby-mcrypt
-    SUBDIR += ruby-openssl
     SUBDIR += ruby-pam
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap

@@ -593,8 +593,6 @@
     SUBDIR += rshell
     SUBDIR += rsync
     SUBDIR += ruby-dict
-    SUBDIR += ruby-drb
-    SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
     SUBDIR += ruby-jabber4r
     SUBDIR += ruby-ldap
@@ -603,11 +601,9 @@
     SUBDIR += ruby-pcap
     SUBDIR += ruby-radius
     SUBDIR += ruby-snmp
-    SUBDIR += ruby-soap
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
-    SUBDIR += ruby-xmlrpc
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel

@@ -630,3 +630,12 @@ net/silc-doc||2003-10-25|Documentation is installed by silc-client now
 astro/x3arth||2003-10-26|FTP layout changed, port no longer works
 graphics/xmms-gforce||2003-10-27|Project disappeared, sources no longer available
 mail/smapi|news/husky-smapi|2003-10-29|Superseded by news/husky-smapi
+devel/ruby-yaml||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+net/ruby-drb||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+net/ruby-gserver||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+net/ruby-soap||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+net/ruby-xmlrpc||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+security/ruby-openssl||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+sysutils/ruby-devel-logger||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+textproc/ruby-rexml||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+www/ruby-webrick||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
