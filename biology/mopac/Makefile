@@ -24,6 +24,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not install on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} >= 400005
 BUILD_DEPENDS=	ftn77:${PORTSDIR}/lang/f77
 MAKE_ARGS+=	FC=ftn77
