@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://home.i1.net/~naken/vb2c/
 DISTNAME=	vb2c-March-1999
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Visual Basic forms to GTK C code
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
