@@ -20,6 +20,8 @@ COMMENT=	LaTeX package to use Hangul(UHC/KSX1001)
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
+BROKEN=		Does not build
+
 TEXMF=		${PREFIX}/share/texmf
 
 # default fonts.
