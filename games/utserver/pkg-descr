@@ -5,6 +5,8 @@ emulation).
 Dedicated server of the very popular first person shooter game.
 - default install points to '/compat/linux/usr/games/ut-server/'
 
+netgames patch ver 0.8.2 by Abfackeln included
+
 WWW: http://ut.abfackeln.com/installer.html?page=dedicated
 
 For more information about UT visit:

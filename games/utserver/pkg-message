@@ -4,8 +4,13 @@
 It is highly recommended to run the UT server in a non-root 
 environment. There is a zombie-process bug if running UT as 
 user root.
+------------------------------------------------------------
+
+netgames patch ver 0.8.2 included (http://ut.abfackeln.com)
 
 If you want to use ngStats and/or ngWorldStats 
 install linux-jdk-1.2.2 from /usr/ports/java/linux-jdk
-------------------------------------------------------------
+
+Install the ASU port from /usr/ports/games/utserver-asu
+for easy installation, customization and management.
 

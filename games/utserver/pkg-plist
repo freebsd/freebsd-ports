@@ -182,6 +182,7 @@
 %%UTDIR%%NetGamesUSA.com/ngStats/ngusa.jar
 %%UTDIR%%NetGamesUSA.com/ngStats/processedLogs/_tmp
 %%UTDIR%%NetGamesUSA.com/ngStats/spawnBrowser.exe
+%%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/bgWorldStats
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWS.ver
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWorldStats
 %%UTDIR%%NetGamesUSA.com/ngWorldStats/bin/ngWorldStats End User License Agreement (EULA).txt
