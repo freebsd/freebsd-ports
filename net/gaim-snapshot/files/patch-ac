@@ -1,79 +1,20 @@
---- src/Makefile.in.orig	Wed Aug 28 00:51:08 2002
-+++ src/Makefile.in	Wed Aug 28 01:10:39 2002
-@@ -156,74 +156,91 @@
+--- src/Makefile.in.orig	Fri Mar 15 06:13:34 2002
++++ src/Makefile.in	Fri Mar 15 06:22:03 2002
+@@ -146,16 +146,74 @@
+ sedpath = @sedpath@
  
  SUBDIRS = protocols
- 
 -@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet
 +@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet gaim
  @GNOMEAPPLET_FALSE@bin_PROGRAMS = gaim
--@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c \
--@GNOMEAPPLET_TRUE@			aim.c \
--@GNOMEAPPLET_TRUE@			applet.c \
--@GNOMEAPPLET_TRUE@			away.c \
--@GNOMEAPPLET_TRUE@			browser.c \
--@GNOMEAPPLET_TRUE@			buddy.c \
--@GNOMEAPPLET_TRUE@			buddy_chat.c \
--@GNOMEAPPLET_TRUE@			conversation.c \
--@GNOMEAPPLET_TRUE@			core.c \
--@GNOMEAPPLET_TRUE@			dialogs.c \
--@GNOMEAPPLET_TRUE@			gaimrc.c \
--@GNOMEAPPLET_TRUE@			gtkimhtml.c \
--@GNOMEAPPLET_TRUE@			gtkspell.c \
--@GNOMEAPPLET_TRUE@			gtkticker.c \
--@GNOMEAPPLET_TRUE@			html.c \
--@GNOMEAPPLET_TRUE@			idle.c \
--@GNOMEAPPLET_TRUE@			list.c \
--@GNOMEAPPLET_TRUE@			md5.c \
--@GNOMEAPPLET_TRUE@			module.c \
--@GNOMEAPPLET_TRUE@			multi.c \
--@GNOMEAPPLET_TRUE@			perl.c \
--@GNOMEAPPLET_TRUE@			plugins.c \
--@GNOMEAPPLET_TRUE@			prefs.c \
--@GNOMEAPPLET_TRUE@			proxy.c \
--@GNOMEAPPLET_TRUE@			prpl.c \
--@GNOMEAPPLET_TRUE@			server.c \
--@GNOMEAPPLET_TRUE@			sound.c \
--@GNOMEAPPLET_TRUE@			ticker.c \
--@GNOMEAPPLET_TRUE@			util.c
--
+-@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c 			aim.c 			applet.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			core.c 			dialogs.c 			gaimrc.c 			gtkimhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			list.c 			md5.c 			module.c 			multi.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			server.c 			sound.c 			ticker.c 			util.c
 -@GNOMEAPPLET_TRUE@gaim_applet_DEPENDENCIES = @LIBOBJS@ $(STATIC_LINK_LIBS)
 -@GNOMEAPPLET_TRUE@gaim_applet_LDFLAGS = -export-dynamic
 -@GNOMEAPPLET_TRUE@gaim_applet_LDADD = @LDADD@ @LIBOBJS@
--@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c \
--@GNOMEAPPLET_FALSE@		aim.c \
--@GNOMEAPPLET_FALSE@		applet.c \
--@GNOMEAPPLET_FALSE@		away.c \
--@GNOMEAPPLET_FALSE@		browser.c \
--@GNOMEAPPLET_FALSE@		buddy.c \
--@GNOMEAPPLET_FALSE@		buddy_chat.c \
--@GNOMEAPPLET_FALSE@		conversation.c \
--@GNOMEAPPLET_FALSE@		core.c \
--@GNOMEAPPLET_FALSE@		dialogs.c \
--@GNOMEAPPLET_FALSE@		gaimrc.c \
--@GNOMEAPPLET_FALSE@		gtkimhtml.c \
--@GNOMEAPPLET_FALSE@		gtkspell.c \
--@GNOMEAPPLET_FALSE@		gtkticker.c \
--@GNOMEAPPLET_FALSE@		html.c \
--@GNOMEAPPLET_FALSE@		idle.c \
--@GNOMEAPPLET_FALSE@		list.c \
--@GNOMEAPPLET_FALSE@		md5.c \
--@GNOMEAPPLET_FALSE@		module.c \
--@GNOMEAPPLET_FALSE@		multi.c \
--@GNOMEAPPLET_FALSE@		perl.c \
--@GNOMEAPPLET_FALSE@		plugins.c \
--@GNOMEAPPLET_FALSE@		prefs.c \
--@GNOMEAPPLET_FALSE@		proxy.c \
--@GNOMEAPPLET_FALSE@		prpl.c \
--@GNOMEAPPLET_FALSE@		server.c \
--@GNOMEAPPLET_FALSE@		sound.c \
--@GNOMEAPPLET_FALSE@		ticker.c \
--@GNOMEAPPLET_FALSE@		util.c
--
+-@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c 		aim.c 		applet.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		core.c 		dialogs.c 		gaimrc.c 		gtkimhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		list.c 		md5.c 		module.c 		multi.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		server.c 		sound.c 		ticker.c 		util.c
 -@GNOMEAPPLET_FALSE@gaim_DEPENDENCIES = @LIBOBJS@ $(STATIC_LINK_LIBS)
 -@GNOMEAPPLET_FALSE@gaim_LDFLAGS = -export-dynamic
 -@GNOMEAPPLET_FALSE@gaim_LDADD = @LDADD@ @LIBOBJS@
-+
 +gaim_applet_SOURCES = about.c \
 +           aim.c \
 +           applet.c \
@@ -135,101 +76,78 @@
 +       server.c \
 +       sound.c \
 +       ticker.c \
-+       util.c \
-+       dialogs.c \
-+       gaimrc.c \
-+       gtkimhtml.c \
-+       gtkspell.c \
-+       gtkticker.c \
-+       html.c \
-+       idle.c \
-+       list.c \
-+       md5.c \
-+       module.c \
-+       multi.c \
-+       perl.c \
-+       plugins.c \
-+       prefs.c \
-+       proxy.c \
-+       prpl.c \
-+       server.c \
-+       sound.c \
-+       ticker.c \
 +       util.c
- 
- EXTRA_DIST = applet.h \
- 		convo.h \
-@@ -245,44 +262,40 @@
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
- CONFIG_CLEAN_FILES =
--@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet$(EXEEXT)
- @GNOMEAPPLET_FALSE@bin_PROGRAMS = gaim$(EXEEXT)
- PROGRAMS = $(bin_PROGRAMS)
- 
--@GNOMEAPPLET_TRUE@am_gaim_OBJECTS =
--@GNOMEAPPLET_FALSE@am_gaim_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	applet.$(OBJEXT) away.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	browser.$(OBJEXT) buddy.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	core.$(OBJEXT) dialogs.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	md5.$(OBJEXT) module.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	multi.$(OBJEXT) perl.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	plugins.$(OBJEXT) prefs.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	proxy.$(OBJEXT) prpl.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	server.$(OBJEXT) sound.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	ticker.$(OBJEXT) util.$(OBJEXT)
- gaim_OBJECTS = $(am_gaim_OBJECTS)
--@GNOMEAPPLET_TRUE@gaim_DEPENDENCIES =
--@GNOMEAPPLET_TRUE@am_gaim_applet_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	applet.$(OBJEXT) away.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	browser.$(OBJEXT) buddy.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	core.$(OBJEXT) dialogs.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	md5.$(OBJEXT) module.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	multi.$(OBJEXT) perl.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	plugins.$(OBJEXT) prefs.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	proxy.$(OBJEXT) prpl.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	server.$(OBJEXT) sound.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	ticker.$(OBJEXT) util.$(OBJEXT)
--@GNOMEAPPLET_FALSE@am_gaim_applet_OBJECTS =
-+am_gaim_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
-+   applet.$(OBJEXT) away.$(OBJEXT) \
-+   browser.$(OBJEXT) buddy.$(OBJEXT) \
-+   buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
-+   core.$(OBJEXT) dialogs.$(OBJEXT) \
-+   gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
-+   gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
-+   html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
-+   md5.$(OBJEXT) module.$(OBJEXT) \
-+   multi.$(OBJEXT) perl.$(OBJEXT) \
-+   plugins.$(OBJEXT) prefs.$(OBJEXT) \
-+   proxy.$(OBJEXT) prpl.$(OBJEXT) \
-+   server.$(OBJEXT) sound.$(OBJEXT) \
-+   ticker.$(OBJEXT) util.$(OBJEXT)
-+am_gaim_applet_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
-+   applet.$(OBJEXT) away.$(OBJEXT) \
-+   browser.$(OBJEXT) buddy.$(OBJEXT) \
-+   buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
-+   core.$(OBJEXT) dialogs.$(OBJEXT) \
-+   gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
-+   gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
-+   html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
-+   md5.$(OBJEXT) module.$(OBJEXT) \
-+   multi.$(OBJEXT) perl.$(OBJEXT) \
-+   plugins.$(OBJEXT) prefs.$(OBJEXT) \
-+   proxy.$(OBJEXT) prpl.$(OBJEXT) \
-+   server.$(OBJEXT) sound.$(OBJEXT) \
-+   ticker.$(OBJEXT) util.$(OBJEXT)
 +
- gaim_applet_OBJECTS = $(am_gaim_applet_OBJECTS)
--@GNOMEAPPLET_FALSE@gaim_applet_DEPENDENCIES =
++gaim_DEPENDENCIES = @LIBOBJS@ $(STATIC_LINK_LIBS)
++gaim_LDFLAGS = -export-dynamic
++gaim_LDADD = @LDADD@ @LIBOBJS@
+ CFLAGS = @CFLAGS@ $(PERL_CFLAGS) -DLOCALEDIR=\"$(prefix)/share/locale\" -DLIBDIR=\"$(libdir)/gaim/\" $(DEBUG_CFLAGS)
  
- DEFS = @DEFS@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+ LIBS = @LIBS@ $(UI_LIBS) $(SOUND_LIBS) $(STATIC_LINK_LIBS) $(PERL_LIBS) $(XSS_LIBS) $(INTLLIBS) $(DEBUG_LIBS)
+@@ -165,6 +223,7 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
++@GNOMEAPPLET_TRUE@bin_PROGRAMS = gaim_applet$(EXEEXT) gaim$(EXEEXT)
+ @GNOMEAPPLET_FALSE@bin_PROGRAMS =  gaim$(EXEEXT)
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+@@ -172,30 +231,34 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-@GNOMEAPPLET_TRUE@gaim_applet_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@conversation.$(OBJEXT) core.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@dialogs.$(OBJEXT) gaimrc.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@gtkimhtml.$(OBJEXT) gtkspell.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@gtkticker.$(OBJEXT) html.$(OBJEXT) idle.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@list.$(OBJEXT) md5.$(OBJEXT) module.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@multi.$(OBJEXT) perl.$(OBJEXT) plugins.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@prefs.$(OBJEXT) proxy.$(OBJEXT) prpl.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@server.$(OBJEXT) sound.$(OBJEXT) ticker.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@util.$(OBJEXT)
+-@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.$(OBJEXT) aim.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@applet.$(OBJEXT) away.$(OBJEXT) browser.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@buddy.$(OBJEXT) buddy_chat.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@conversation.$(OBJEXT) core.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@dialogs.$(OBJEXT) gaimrc.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@gtkimhtml.$(OBJEXT) gtkspell.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@gtkticker.$(OBJEXT) html.$(OBJEXT) idle.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@list.$(OBJEXT) md5.$(OBJEXT) module.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@multi.$(OBJEXT) perl.$(OBJEXT) plugins.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@prefs.$(OBJEXT) proxy.$(OBJEXT) prpl.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@server.$(OBJEXT) sound.$(OBJEXT) ticker.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@util.$(OBJEXT)
++gaim_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
++   applet.$(OBJEXT) away.$(OBJEXT) \
++   browser.$(OBJEXT) buddy.$(OBJEXT) \
++   buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
++   core.$(OBJEXT) dialogs.$(OBJEXT) \
++   gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
++   gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
++   html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
++   md5.$(OBJEXT) module.$(OBJEXT) \
++   multi.$(OBJEXT) perl.$(OBJEXT) \
++   plugins.$(OBJEXT) prefs.$(OBJEXT) \
++   proxy.$(OBJEXT) prpl.$(OBJEXT) \
++   server.$(OBJEXT) sound.$(OBJEXT) \
++   ticker.$(OBJEXT) util.$(OBJEXT)
++gaim_applet_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
++   applet.$(OBJEXT) away.$(OBJEXT) \
++   browser.$(OBJEXT) buddy.$(OBJEXT) \
++   buddy_chat.$(OBJEXT) conversation.$(OBJEXT) \
++   core.$(OBJEXT) dialogs.$(OBJEXT) \
++   gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
++   gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
++   html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
++   md5.$(OBJEXT) module.$(OBJEXT) \
++   multi.$(OBJEXT) perl.$(OBJEXT) \
++   plugins.$(OBJEXT) prefs.$(OBJEXT) \
++   proxy.$(OBJEXT) prpl.$(OBJEXT) \
++   server.$(OBJEXT) sound.$(OBJEXT) \
++   ticker.$(OBJEXT) util.$(OBJEXT)
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
