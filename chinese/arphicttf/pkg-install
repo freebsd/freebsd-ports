@@ -24,17 +24,17 @@ if [ "X$WANT_CJK" != "X" ]; then
     # There's no CJK module now.
 fi
 
-if [ "X$WANT_GS6" != "X" ]; then
+if [ "X$WANT_GS" != "X" ]; then
     for f in $FONTS; do
-        $TTFM --add ghostscript6 $FONTDIR/$f
+        $TTFM --add gscjk $FONTDIR/$f
     done
     for f in $DEFAULTMING; do
-        $TTFM --setdefault ghostscript6 $FONTDIR/$f
+        $TTFM --setdefault gscjk $FONTDIR/$f
     done
     for f in $DEFAULTKAI; do
-        $TTFM --setdefault_kai ghostscript6 $FONTDIR/$f
+        $TTFM --setdefault_kai gscjk $FONTDIR/$f
     done
-    echo "ghostscript6" >> $FONTDIR/$PKGNAME
+    echo "gscjk" >> $FONTDIR/$PKGNAME
 fi
 
 if [ "X$WITHOUT_X" = "X" ]; then

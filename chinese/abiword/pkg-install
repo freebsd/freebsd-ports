@@ -17,7 +17,7 @@ if [ ! -x $TTFM ]; then
 fi
 
 for f in $FONTS; do
-    $TTFM --add ghostscript6 $FONTDIR/$f
+    $TTFM --add gscjk $FONTDIR/$f
 done
 
 for f in $FONTS; do

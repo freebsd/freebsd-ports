@@ -3,7 +3,6 @@ Edit the file "${HOME}/.mozilla/${USER}/*.slt/user.js" (per user)
      or "/usr/X11R6/lib/mozilla/defaults/pref/unix.js" (for all)
      to change XIM settings (if not working),
      Anti-Alias settings, and Printing settings.
-If need printing, go /usr/ports/chinese/arphicttf to make WANT_GS6=yes
-     then go /usr/ports/chinese/ghostscript6 to make all install
+If need printing, go /usr/ports/chinese/arphicttf to make WANT_GS=yes
 For detail: http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html
 ***********************************************************************
