@@ -70,6 +70,7 @@ bin/pbmtoxbm
 bin/pbmtoybm
 bin/pbmtozinc
 bin/pbmupc
+bin/pcdindex
 bin/pcxtoppm
 bin/pgmbentley
 bin/pgmcrater
@@ -118,6 +119,7 @@ bin/pnmnlfilt
 bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
+bin/pnmpsnr
 bin/pnmrotate
 bin/pnmscale
 bin/pnmscalefixed
@@ -132,7 +134,6 @@ bin/pnmtojbig
 bin/pnmtoplainpnm
 bin/pnmtopng
 bin/pnmtops
-bin/pnmtopsnr
 bin/pnmtorast
 bin/pnmtosgi
 bin/pnmtosir

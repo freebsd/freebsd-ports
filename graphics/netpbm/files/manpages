@@ -68,6 +68,7 @@ MAN1+=	pbmtoxbm.1
 MAN1+=	pbmtoybm.1
 MAN1+=	pbmtozinc.1
 MAN1+=	pbmupc.1
+MAN1+=	pcdindex.1
 MAN1+=	pcxtoppm.1
 MAN1+=	pgmbentley.1
 MAN1+=	pgmcrater.1
