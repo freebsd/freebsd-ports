@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libghthash
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.student.lu.se/~etn97ksi/sim_home/filer/
 
