@@ -1,0 +1,11 @@
+--- configure.in~	Fri Aug 20 13:10:00 1999
++++ configure.in	Mon Aug 30 16:57:34 1999
+@@ -96,7 +96,7 @@
+ esac
+ 
+ AC_MSG_CHECKING([domain for mail-address])
+-im_hostname=`hostname`
++im_hostname="_domain_of_your_mail_address_"
+ AC_MSG_RESULT([$im_hostname])
+ 
+ AC_OUTPUT(imali:imali.in imcat:imcat.in imcd:imcd.in imclean:imclean.in \
