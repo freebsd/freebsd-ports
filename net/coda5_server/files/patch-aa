@@ -1,0 +1,16 @@
+Some bug inside gcc version 2.95.2 19991024 (release) because
+resolver.cc will not compile without -pedantic. Go figure.
+Adding -pedantic to CXXFLAGS just breaks the other src files.
+
+--- Makefile.in.ORIG	Thu Apr 13 14:36:15 2000
++++ coda-src/asr/Makefile.in	Thu Apr 13 14:37:56 2000
+@@ -44,6 +44,9 @@
+ 
+ YFLAGS= -d
+ 
++resolver.o: resolver.cc
++	$(CXX) $(CXXFLAGS) -pedantic -c $<
++
+ resolver_parser.c: resolver_parser.h
+ resolver_parser.h: resolver_parser.y
+ 	$(YACC) $(YFLAGS) $< && mv y.tab.c $*.c && mv y.tab.h $*.h

@@ -1,12 +1,13 @@
-bin/filcon
 bin/norton
 bin/norton-reinit
 bin/reinit
+sbin/au
 sbin/auth2
 sbin/backup
 sbin/backup.sh
 sbin/bldvldb.sh
 sbin/codasrv
+sbin/codastart
 sbin/createvol_rep
 sbin/initpw
 sbin/inoder
@@ -19,10 +20,8 @@ sbin/printvrdb
 sbin/purgevol
 sbin/purgevol_rep
 sbin/pwdtopdbtool.py
-sbin/rdsinit
 sbin/readdump
 sbin/rpc2portmap
-sbin/rvmutl
 sbin/startserver
 sbin/tape.pl
 sbin/updateclnt
