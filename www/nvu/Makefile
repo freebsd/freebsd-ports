@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvu
-PORTVERSION=	0.60
+PORTVERSION=	0.70
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://cvs.nvu.com/download/
@@ -30,12 +30,14 @@ USE_PERL5=	yes
 USE_GNOME=	gtk20 libidl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 OPTIONS=	XFT "Enable Xft font anti-aliasing" on \
 		DEBUG "Enable debugging (i.e. gdb) support" off \
 		OPTIMIZED_CFLAGS "Enable -O2 optimizations" off
 
-NVU=		Nvu-0.60
+NVU=		nvu-0.70
 FAKEDIR=	${WRKDIR}/FAKE
 WRKSRC=		${WRKDIR}/mozilla
 PLIST=		${WRKDIR}/plist
@@ -43,10 +45,14 @@ PLIST=		${WRKDIR}/plist
 MAKEFILE=	client.mk
 ALL_TARGET=	build_all
 
-PKG_CONFIGS=	Nvu-gtkmozembed.pc Nvu-js.pc Nvu-nspr.pc \
-		Nvu-nss.pc Nvu-plugin.pc Nvu-xpcom.pc
+PKG_CONFIGS=	nvu-gtkmozembed.pc nvu-js.pc nvu-nspr.pc \
+		nvu-nss.pc nvu-plugin.pc nvu-xpcom.pc
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
+.endif
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
@@ -55,6 +61,12 @@ LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 post-patch:
 # Remove so we can actaully find programs that are not in /usr/bin
 	@${RM} -f ${WRKSRC}/config.status ${WRKSRC}/config.cache
+	@${SED} -e 's|%%NVUDIR%%|${PREFIX}/lib/${NVU}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%NVUDIR%%|${PREFIX}/lib/${NVU}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 	@${SED} -e 's|%%CC%%|${CC}|; s|%%CXX%%|${CXX}|; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|; \
 		s|%%CFLAGS%%|${CFLAGS}|; \
@@ -93,7 +105,7 @@ pre-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		 ${MAKEFILE} ${MAKE_ARGS} install
 	${ECHO_CMD} bin/nvu >> ${PLIST}
-	${ECHO_CMD} bin/Nvu-config >> ${PLIST}
+	${ECHO_CMD} bin/nvu-config >> ${PLIST}
 	cd ${FAKEDIR}/lib/${NVU} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|lib/${NVU}/|' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
@@ -126,5 +138,10 @@ do-install:
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${NVU}
 	cd ${FAKEDIR}/include/${NVU} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${NVU}
+
+post-install:
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INST.endif
+.endif
 
 .include <bsd.port.post.mk>
