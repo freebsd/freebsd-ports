@@ -7,10 +7,11 @@
 
 PORTNAME=	op
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/security/cerias/tools/%SUBDIR%/ \
-	ftp://ftp.hacktic.nl/pub/security/coast.cs.purdue.edu/%SUBDIR%/ \
+		ftp://ftp.hacktic.nl/pub/security/coast.cs.purdue.edu/%SUBDIR%/ \
 		ftp://ftp.nask.pl/pub/mirror/coast.cs.purdue.edu/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
 
@@ -28,6 +29,8 @@ MAKE_ARGS=	BASE="${PREFIX}" \
 		BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE} \
 		MANOWN=${MANOWN} MANGRP=${MANGRP} MANMODE=${MANMODE}
 ALL_TARGET=	${PORTNAME}
+
+PLIST_SUB=	CONF_DIR="${CONF_DIR:S,^${PREFIX}/,,}"
 
 MAN8=		op.8
 
@@ -82,10 +85,10 @@ install-conf-file:
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 install-doc-files:
-.if !defined(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
+.for f in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/op
-etc/op.access.sample
-%%PORTDOCS%%share/doc/op/README
-%%PORTDOCS%%share/doc/op/op.paper
-%%PORTDOCS%%@dirrm share/doc/op
+%%CONF_DIR%%/op.access.sample
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/op.paper
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
