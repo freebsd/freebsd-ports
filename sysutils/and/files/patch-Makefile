@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jun 22 03:39:00 2002
-+++ Makefile	Sat Jun 22 03:39:19 2002
+--- Makefile.orig	Mon Jan 28 01:02:51 2002
++++ Makefile	Tue Dec 17 21:15:05 2002
 @@ -16,7 +16,7 @@
  # (and.init.debian for Debian GNU/Linux or and.init for others;
  # leave empty for BSD!)
@@ -24,3 +24,14 @@
  
  # typical Debian or SuSE 7.x configuration
  #PREFIX=/usr
+@@ -110,8 +110,8 @@
+   LIBS = -lkvm
+ else
+ ifeq (${ARCH},FreeBSD)
+-  CC = gcc -Wall
+-  LD = gcc
++  CC ?= gcc -Wall
++  LD = $(CC)
+   LIBS = -lkvm
+ else
+ ifeq (${ARCH},SunOS)
