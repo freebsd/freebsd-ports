@@ -25,5 +25,6 @@ pre-fetch:
 
 pre-install:
 	${PERL} ${SCRIPTDIR}/createuser
+	${PERL} -pi -e "s@/bin/echo@echo@g" ${WRKSRC}/hosts.cfg.in
 
 .include <bsd.port.mk>
