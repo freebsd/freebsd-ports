@@ -1,0 +1,47 @@
+--- configure.orig	Fri Dec 11 18:36:14 1998
++++ configure	Tue Jan  5 14:03:32 1999
+@@ -756,7 +756,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LDFLAGS="-pthread $LDFLAGS"
+ cat > conftest.$ac_ext <<EOF
+ #line 762 "configure"
+ #include "confdefs.h"
+@@ -784,12 +784,11 @@
+   tcl_ok=yes
+ else
+   echo "$ac_t""no" 1>&6
+-tcl_ok=no
++tcl_ok=yes
+ fi
+ 
+   if test "$tcl_ok" = "yes"; then
+      # The space is needed
+-     THREADS_LIBS=" -lpthread"
+   else
+      echo "configure: warning: "Don t know how to find pthread lib on your system - you must disable thread support or edit the LIBS in the Makefile..."" 1>&2
+   fi
+@@ -4330,14 +4329,19 @@
+   echo "$ac_t""yes" 1>&6
+   
+ 	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_LD="ld -Bshareable -x"
+ 	    SHLIB_LD_LIBS=""
+ 	    SHLIB_SUFFIX=".so"
+ 	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""
+ 	    LD_FLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+-	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++        if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
++            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
++            SHLIB_LD="ld -shared -x -soname \$@"
++        else
++            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++            SHLIB_LD="ld -Bshareable -x"
++        fi
+ 	
+ else
+   echo "$ac_t""no" 1>&6

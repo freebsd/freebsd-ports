@@ -1,0 +1,11 @@
+    4. Threads.  If configured with the --enable-threads flag, Tcl can
+    now be compiled for use in a multi-threaded application.
+    Individual threads are allowed to use one or more interpreters as
+    long as each interpreter (and any slave interpreters) is only
+    accessed by one thread.  Each thread runs its own event loop, and
+    you can post events to other threads. There are new C APIs for
+    mutexes, condition variables, and thread local storage.  See the
+    doc/Thread.3 manual entry for more details.  Tk 8.1 is not yet
+    multi-thread safe.  There is not yet support for tcl level use of
+    threading except for a test command. (Compile tcltest and try
+    testthread.)

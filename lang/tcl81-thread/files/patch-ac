@@ -1,0 +1,11 @@
+--- tclUnixThrd.c.orig	Tue Jan  5 14:17:19 1999
++++ tclUnixThrd.c	Tue Jan  5 14:19:05 1999
+@@ -109,7 +109,7 @@
+     pthread_attr_t attr;
+ 
+     pthread_attr_init(&attr);
+-    pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM);
++    /* pthread_attr_setscope(&attr, PTHREAD_SCOPE_SYSTEM); */
+     if (pthread_create((pthread_t *)idPtr, &attr, (void * (*)())proc, (void *)clientData) < 0) {
+ 	return TCL_ERROR;
+     } else {
