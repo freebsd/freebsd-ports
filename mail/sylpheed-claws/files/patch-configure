@@ -1,6 +1,6 @@
---- configure.orig	Thu Dec 26 12:42:31 2002
-+++ configure	Fri Dec 27 22:36:31 2002
-@@ -1501,7 +1501,7 @@
+--- configure.orig	Fri Jan 24 13:41:56 2003
++++ configure	Thu Jan 30 03:24:00 2003
+@@ -1502,7 +1502,7 @@
  ac_configure="$SHELL $ac_aux_dir/configure" # This should be Cygnus configure.
  
  
@@ -9,7 +9,7 @@
  
  MAJOR_VERSION=0
  MINOR_VERSION=8
-@@ -1999,7 +1999,7 @@
+@@ -2000,7 +2000,7 @@
  fi
  
  
@@ -18,7 +18,15 @@
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -12093,9 +12093,9 @@
+@@ -8472,6 +8472,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -12094,9 +12095,9 @@
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  
