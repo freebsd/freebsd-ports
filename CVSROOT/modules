@@ -6482,7 +6482,7 @@ scrollkeeper	ports/textproc/scrollkeeper
 scrollz		ports/irc/scrollz
 scrollz-doc	ports/irc/scrollz-doc
 scrot		ports/graphics/scrot
-scsh		ports/shells/scsh
+scsh		ports/lang/scsh
 scsi		src/sbin/scsi
 scsi_base	-d sys/scsi src/sys/scsi
 scsi_dev	-d sys/dev/aic7xxx src/sys/dev/aic7xxx
