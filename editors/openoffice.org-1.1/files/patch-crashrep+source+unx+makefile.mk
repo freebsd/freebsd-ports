@@ -5,7 +5,7 @@
  .ENDIF
  .IF "$(OS)" == "FREEBSD"
 -APP2STDLIBS=$(STATIC) `pkg-config --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff $(DYNAMIC) -lXext -lX11
-+APP2STDLIBS=$(STATIC) `pkg-config --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff -lintl -lfreetype -lexpat $(DYNAMIC) -lXext -lX11
++APP2STDLIBS=`pkg-config --libs gtk+-2.0` -lpng -lzlib -ljpeg -ltiff -lintl -lfreetype -lexpat $(DYNAMIC) -lXext -lX11
  .ENDIF
  
  .ENDIF
