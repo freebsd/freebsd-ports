@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	BBBike
-PORTVERSION=	3.03
+PORTVERSION=	3.11
 CATEGORIES=	german
 MASTER_SITES=	http://prdownloads.sourceforge.net/bbbike/
 
-MAINTAINER=	eserte@onlineoffice.de
+MAINTAINER=	slaven.rezic@berlin.de
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 

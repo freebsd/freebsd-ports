@@ -1,32 +1,61 @@
 BBBike/Ampelschaltung.pm
 BBBike/BBBikeAdvanced.pm
 BBBike/BBBikeAlarm.pm
-BBBike/BBBikeExp.pm
 BBBike/BBBikeCalc.pm
+BBBike/BBBikeDebug.pm
 BBBike/BBBikeDraw.pm
-BBBike/BBBikeDraw/PDF.pm
 BBBike/BBBikeDraw/GD.pm
+BBBike/BBBikeDraw/ImageMagick.pm
+BBBike/BBBikeDraw/PDF.pm
+BBBike/BBBikeDraw/SVG.pm
 BBBike/BBBikeEdit.pm
+BBBike/BBBikeEditUtil.pm
+BBBike/BBBikeExp.pm
 BBBike/BBBikeMail.pm
 BBBike/BBBikeMenubar.pm
 BBBike/BBBikePalm.pm
+BBBike/BBBikePersonal.pm
+BBBike/BBBikePlugin.pm
 BBBike/BBBikePrint.pm
 BBBike/BBBikeProfil.pm
+BBBike/BBBikeRouting.pm
+BBBike/BBBikeRouting.pod
+BBBike/BBBikeRuler.pm
+BBBike/BBBikeSalesman.pm
 BBBike/BBBikeServer.pm
+BBBike/BBBikeThunder.pm
 BBBike/BBBikeTrans.pm
 BBBike/BBBikeUtil.pm
 BBBike/BBBikeVar.pm
 BBBike/Bundle/BBBike.pm
 BBBike/Bundle/BBBike_small.pm
 BBBike/COPYING
-BBBike/Fahrinfo.pm
+BBBike/ESRI/Makefile.PL
+BBBike/ESRI/Shapefile.pm
+BBBike/ESRI/Shapefile/DBase.pm
+BBBike/ESRI/Shapefile/Index.pm
+BBBike/ESRI/Shapefile/Main.pm
+BBBike/ESRI/esri2bbd.pl
+BBBike/ESRI/t/shapefile.t
 BBBike/FURadar.pm
-BBBike/Geography.pm
-BBBike/Geography/Berlin_DE.pm
-BBBike/GfxConvert.pm
+BBBike/Fahrinfo.pm
 BBBike/GIS/Globe.pm
 BBBike/GIS/NSD.pm
 BBBike/GIS/globe_to_bbd.pl
+BBBike/GPS.pm
+BBBike/GPS/DirectGarmin.pm
+BBBike/GPS/G7toWin_ASCII.pm
+BBBike/GPS/GpsmanConn.pm
+BBBike/GPS/GpsmanData.pm
+BBBike/GPS/SerialStty.pm
+BBBike/GPS/Unknown1.pm
+BBBike/GPS/Unknown2.pm
+BBBike/GPS/t/gpsmandata.t
+BBBike/Geography.pm
+BBBike/Geography/Berlin_DE.pm
+BBBike/Geography/Brandenburg_DE.pm
+BBBike/Geography/Muenchen_DE.pm
+BBBike/GfxConvert.pm
 BBBike/Hooks.pm
 BBBike/Karte.pm
 BBBike/Karte/Berlinmap1996.pm
@@ -34,31 +63,61 @@ BBBike/Karte/Berlinmap1997.pm
 BBBike/Karte/Berlinmap1998.pm
 BBBike/Karte/Berlinmap1999.pm
 BBBike/Karte/Berlinmap2000.pm
+BBBike/Karte/Berlinmap2001.pm
+BBBike/Karte/Cityinfo.pm
 BBBike/Karte/FURadar.pm
 BBBike/Karte/FURadar2.pm
+BBBike/Karte/FURadar3.pm
 BBBike/Karte/GDF.pm
 BBBike/Karte/GIS.pm
 BBBike/Karte/GISmap.pm
 BBBike/Karte/GPS.pm
+BBBike/Karte/PilotPl.pm
+BBBike/Karte/PilotPl12.pm
 BBBike/Karte/Polar.pm
 BBBike/Karte/Satmap.pm
 BBBike/Karte/SatmapGIF.pm
+BBBike/Karte/Soldner_alt.pm
 BBBike/Karte/Standard.pm
+BBBike/Karte/T2001.pm
 BBBike/Karte/T99.pm
+BBBike/Karte/UTM.pm
 BBBike/MANIFEST
+BBBike/Makefile.PL
 BBBike/MasterPunkte.pm
 BBBike/MasterStrassen.pm
 BBBike/PLZ.pm
 BBBike/PointEdit.pm
-BBBike/Radwege.pm
 BBBike/README
 BBBike/README.english
+BBBike/README.english.html
 BBBike/README.html
-BBBike/README.en.html
+BBBike/RELEASE
+BBBike/Radwege.pm
 BBBike/Route.pm
+BBBike/Route/Heavy.pm
 BBBike/Salesman.pm
 BBBike/Strassen.pm
+BBBike/Strassen/Build.pm
+BBBike/Strassen/CDB.pm
+BBBike/Strassen/Core.pm
+BBBike/Strassen/CoreHeavy.pm
+BBBike/Strassen/ESRI.pm
+BBBike/Strassen/Ext.pm
+BBBike/Strassen/Fast.pm
+BBBike/Strassen/Generated.pm
+BBBike/Strassen/Generated_src.pm
+BBBike/Strassen/Heavy.pm
+BBBike/Strassen/Kreuzungen.pm
+BBBike/Strassen/MultiBezStr.pm
+BBBike/Strassen/MultiStrassen.pm
+BBBike/Strassen/Storable.pm
+BBBike/Strassen/Strasse.pm
+BBBike/Strassen/StrassenNetz.pm
+BBBike/Strassen/StrassenNetzHeavy.pm
+BBBike/Strassen/Util.pm
 BBBike/Telefonbuch.pm
+BBBike/Telefonbuch2001.pm
 BBBike/Telefonbuch98.pm
 BBBike/Telefonbuch99.pm
 BBBike/Update.pm
@@ -70,26 +129,32 @@ BBBike/bbbike
 @unexec rm -f %D/bin/bbbike
 BBBike/bbbike-fast.bat
 BBBike/bbbike.bat
-BBBike/bbbike.pod
 BBBike/bbbike.html
+BBBike/bbbike.pod
 BBBike/bbbikeapplet
 BBBike/bbbikeclient
 @exec ln -fs %D/%F %D/bin/bbbikeclient
 @unexec rm -f %D/bin/bbbikeclient
+BBBike/bbd.html
+BBBike/bbd.pod
 BBBike/cbbbike
 @exec ln -fs %D/%F %D/bin/cbbbike
 @unexec rm -f %D/bin/cbbbike
 BBBike/cbbbike.bat
-BBBike/cmdbbbike
+BBBike/cgi/README
 BBBike/cgi/bbbike.cgi
 BBBike/cgi/berlinmap.cgi
-BBBike/cgi/wapbbbike.cgi
-BBBike/cgi/README
-BBBike/cgi/runbbbikecgi
+BBBike/cgi/configure-bbbike.cgi
 BBBike/cgi/httpi
+BBBike/cgi/mksymlinks
+BBBike/cgi/runbbbikecgi
 BBBike/cgi/tinyhttpd
+BBBike/cgi/tinyhttpd.config
+BBBike/cgi/wapbbbike.cgi
+BBBike/cmdbbbike
 BBBike/data/.modified
 BBBike/data/Berlin.coords.data
+BBBike/data/README
 BBBike/data/ampeln
 BBBike/data/ampelschaltung
 BBBike/data/berlin
@@ -97,22 +162,27 @@ BBBike/data/comments
 BBBike/data/faehren
 BBBike/data/flaechen
 BBBike/data/gesperrt
+BBBike/data/gesperrt_car
+BBBike/data/handicap_l
+BBBike/data/handicap_s
 BBBike/data/hoehe
 BBBike/data/kinos
 BBBike/data/kneipen
 BBBike/data/kneipen-info
 BBBike/data/label
 BBBike/data/landstrassen
+BBBike/data/landstrassen.desc
 BBBike/data/landstrassen2
 BBBike/data/multi_bez_str
+BBBike/data/nolighting
 BBBike/data/obst
 BBBike/data/orte
 BBBike/data/orte2
 BBBike/data/orte_city
 BBBike/data/plaetze
 BBBike/data/plz
-BBBike/data/qualitaet_s
 BBBike/data/qualitaet_l
+BBBike/data/qualitaet_s
 BBBike/data/radwege
 BBBike/data/radwege_exact
 BBBike/data/rbahn
@@ -121,20 +191,37 @@ BBBike/data/restaurants
 BBBike/data/sbahn
 BBBike/data/sbahnhof
 BBBike/data/sehenswuerdigkeit
+BBBike/data/sehenswuerdigkeit.desc
+BBBike/data/sehenswuerdigkeit_img/brandenburger_tor.gif
 BBBike/data/strassen
+BBBike/data/strassen.desc
 BBBike/data/ubahn
 BBBike/data/ubahnhof
 BBBike/data/umsteigebhf
+BBBike/data/vorfahrt
 BBBike/data/wasserstrassen
 BBBike/data/wasserumland
 BBBike/data/wasserumland2
-BBBike/data/vorfahrt
 BBBike/ext/BBBikeXS/BBBikeXS.pm
 BBBike/ext/BBBikeXS/BBBikeXS.xs
 BBBike/ext/BBBikeXS/MANIFEST
 BBBike/ext/BBBikeXS/Makefile.PL
 BBBike/ext/BBBikeXS/test.pl
 BBBike/ext/BBBikeXS/typemap
+BBBike/ext/Strassen-CNetFile/CNetFile.pm
+BBBike/ext/Strassen-CNetFile/CNetFileDist.pm
+BBBike/ext/Strassen-CNetFile/CNetFilePerl.pm
+BBBike/ext/Strassen-CNetFile/Makefile.PL
+BBBike/ext/Strassen-Inline/Inline.pm
+BBBike/ext/Strassen-Inline/InlineDist.pm
+BBBike/ext/Strassen-Inline/Makefile.PL
+BBBike/ext/Strassen-Inline/t/db_impl.t
+BBBike/ext/Strassen-Inline/t/hv_impl.t
+BBBike/ext/Strassen-Inline2/Inline2.pm
+BBBike/ext/Strassen-Inline2/Inline2Dist.pm
+BBBike/ext/Strassen-Inline2/Makefile.PL
+BBBike/ext/Strassen-Inline2/t/db_impl.t
+BBBike/ext/Strassen-Inline2/t/hv_impl.t
 BBBike/ext/VirtArray/Changes
 BBBike/ext/VirtArray/MANIFEST
 BBBike/ext/VirtArray/Makefile.PL
@@ -143,181 +230,232 @@ BBBike/ext/VirtArray/VirtArray.pm
 BBBike/ext/VirtArray/VirtArray.xs
 BBBike/ext/VirtArray/test.pl
 BBBike/ext/VirtArray/typemap
+BBBike/ext/inline2dist.pl
 BBBike/gnome/BBBikeDoc.tmpl
 BBBike/gnome/BBBikeWWW
 BBBike/gnome/bbbike.keys
 BBBike/gnome/bbbike.mime
 BBBike/html/allstreet.html
+BBBike/html/bbbike.css
+BBBike/html/bbbike_sidebar.en.html
+BBBike/html/bbbike_sidebar.html
+BBBike/html/bbbike_small.en.html
+BBBike/html/bbbike_small.html
+BBBike/html/bbbike_start.js
+BBBike/html/bbbikepod.css
 BBBike/html/empty.html
 BBBike/html/legende.html
 BBBike/html/pleasewait.html
 BBBike/html/presse.html
-BBBike/html/bbbike_start.js
+BBBike/images/PoweredByPerl.gif
 BBBike/images/abc.gif
+BBBike/images/abc.xpm
 BBBike/images/abc_hi.gif
-BBBike/images/add_ptr.xbm
+BBBike/images/abc_hi.xpm
+BBBike/images/addnet_ptr.xbm
+BBBike/images/addnet_ptr_mask.xbm
 BBBike/images/ampel.gif
+BBBike/images/ampel.xpm
 BBBike/images/ampel_klein.gif
-BBBike/images/ampel_klein2.gif
-BBBike/images/ampel_klein_grey.xpm
+BBBike/images/ampel_klein.jpg
 BBBike/images/ampel_klein.png
+BBBike/images/ampel_klein.xpm
+BBBike/images/ampel_klein2.gif
+BBBike/images/ampel_klein2.jpg
 BBBike/images/ampel_klein2.png
+BBBike/images/ampel_klein2.xpm
+BBBike/images/ampel_klein_grey.xpm
 BBBike/images/andreaskr.gif
+BBBike/images/andreaskr.xpm
 BBBike/images/andreaskr_klein.gif
-BBBike/images/andreaskr_klein2.gif
+BBBike/images/andreaskr_klein.jpg
 BBBike/images/andreaskr_klein.png
+BBBike/images/andreaskr_klein.xpm
+BBBike/images/andreaskr_klein2.gif
+BBBike/images/andreaskr_klein2.jpg
 BBBike/images/andreaskr_klein2.png
+BBBike/images/andreaskr_klein2.xpm
 BBBike/images/apfel.gif
+BBBike/images/apfel.xpm
 BBBike/images/bbbike_splash.gif
+BBBike/images/bbbike_splash.xpm
 BBBike/images/bbbike_splash_oo.gif
 BBBike/images/berlin_overview_small.gif
+BBBike/images/berlin_overview_small.xpm
 BBBike/images/berlin_small.gif
+BBBike/images/berlin_small.xpm
 BBBike/images/berlin_small_hi.gif
+BBBike/images/berlin_small_hi.xpm
+BBBike/images/bg.gif
+BBBike/images/bg.jpg
 BBBike/images/bicycle.gif
+BBBike/images/bicycle.xpm
 BBBike/images/birne.gif
+BBBike/images/birne.xpm
 BBBike/images/bw_hleft.wbmp
 BBBike/images/bw_hright.wbmp
 BBBike/images/bw_left.wbmp
 BBBike/images/bw_right.wbmp
 BBBike/images/bw_straight.wbmp
 BBBike/images/cgi_legende.gif
+BBBike/images/cgi_legende.xpm
 BBBike/images/click.gif
+BBBike/images/click.xpm
 BBBike/images/cross.gif
+BBBike/images/cross.xpm
+BBBike/images/delete_ovl.gif
 BBBike/images/delnet_ptr.xbm
 BBBike/images/delnet_ptr_mask.xbm
+BBBike/images/dest_ptr.xbm
+BBBike/images/dest_ptr_mask.xbm
 BBBike/images/essen.gif
 BBBike/images/essen.xpm
 BBBike/images/essen_klein.gif
 BBBike/images/essen_klein.xpm
 BBBike/images/exit.gif
+BBBike/images/exit.xpm
+BBBike/images/favicon.ico
 BBBike/images/flaechen.gif
+BBBike/images/flaechen.xpm
 BBBike/images/flag2_bl.gif
+BBBike/images/flag2_bl.jpg
 BBBike/images/flag2_bl.png
+BBBike/images/flag2_bl.xpm
 BBBike/images/flag_ziel.gif
+BBBike/images/flag_ziel.jpg
 BBBike/images/flag_ziel.png
+BBBike/images/flag_ziel.xpm
+BBBike/images/gefaelle.gif
+BBBike/images/gefaelle.xpm
 BBBike/images/glas.gif
 BBBike/images/glas.xpm
 BBBike/images/glas_klein.gif
 BBBike/images/glas_klein.xpm
 BBBike/images/haltestelle.gif
+BBBike/images/haltestelle.xpm
 BBBike/images/help.gif
+BBBike/images/help.xpm
 BBBike/images/info.gif
+BBBike/images/info.xpm
 BBBike/images/info_ptr.xbm
 BBBike/images/info_ptr_mask.xbm
+BBBike/images/inwork.gif
+BBBike/images/inwork.xpm
 BBBike/images/kino_klein.gif
 BBBike/images/kino_klein.xpm
 BBBike/images/kirsche.gif
+BBBike/images/kirsche.xpm
 BBBike/images/koord.gif
+BBBike/images/koord.xpm
 BBBike/images/landstrasse.gif
+BBBike/images/landstrasse.xpm
+BBBike/images/legend_blocked.gif
+BBBike/images/legend_carry.gif
+BBBike/images/legend_narrowpassage.gif
+BBBike/images/legend_oneway.gif
+BBBike/images/lightning.gif
+BBBike/images/lightning_cursor.xbm
 BBBike/images/map.gif
+BBBike/images/map.xpm
 BBBike/images/menupfeil.gif
+BBBike/images/menupfeil.xpm
+BBBike/images/moon.xpm
+BBBike/images/movehand.gif
+BBBike/images/movehand.xpm
+BBBike/images/movehand_ptr.xbm
+BBBike/images/movehand_ptr_mask.xbm
 BBBike/images/open.gif
+BBBike/images/open.xpm
+BBBike/images/open_ovl.gif
 BBBike/images/opt.gif
+BBBike/images/opt.xpm
 BBBike/images/ort.gif
+BBBike/images/ort.xpm
 BBBike/images/pflaume.gif
+BBBike/images/pflaume.xpm
 BBBike/images/printer.gif
+BBBike/images/printer.xpm
+BBBike/images/px_1t.gif
+BBBike/images/radrouten.gif
 BBBike/images/rbahn.gif
+BBBike/images/rbahn.xpm
+BBBike/images/reddot.gif
 BBBike/images/rueckweg.gif
+BBBike/images/rueckweg.xpm
 BBBike/images/salesman.gif
 BBBike/images/salesman.xpm
 BBBike/images/salesman_ptr.xbm
 BBBike/images/salesman_ptr_mask.xbm
 BBBike/images/save.gif
+BBBike/images/save.xpm
 BBBike/images/sbahn.gif
+BBBike/images/sbahn.xpm
 BBBike/images/search.gif
+BBBike/images/search.xpm
 BBBike/images/srtbike.gif
-BBBike/images/srtbike.xpm
-BBBike/images/srtbike.xbm
 BBBike/images/srtbike.ico
+BBBike/images/srtbike.jpg
+BBBike/images/srtbike.png
+BBBike/images/srtbike.xbm
+BBBike/images/srtbike.xpm
+BBBike/images/srtbike16.gif
+BBBike/images/srtbike16.xpm
+BBBike/images/srtbike32.gif
+BBBike/images/srtbike32.xpm
 BBBike/images/srtbike_mini.xpm
 BBBike/images/srtbike_solid.gif
-BBBike/images/srtbike_www.xpm
+BBBike/images/srtbike_solid.xpm
+BBBike/images/srtbike_url.png
 BBBike/images/srtbike_www.ico
-BBBike/images/srtbike16.gif
-BBBike/images/srtbike32.gif
-BBBike/images/strlist.gif
+BBBike/images/srtbike_www.xpm
+BBBike/images/star.gif
+BBBike/images/star.xpm
 BBBike/images/start.gif
+BBBike/images/start.xpm
 BBBike/images/start_ptr.xbm
 BBBike/images/start_ptr_mask.xbm
+BBBike/images/steigung.gif
+BBBike/images/steigung.xpm
 BBBike/images/stip.xbm
 BBBike/images/strasse.gif
+BBBike/images/strasse.xpm
+BBBike/images/strlist.gif
+BBBike/images/strlist.xpm
+BBBike/images/thunder_cursor.xbm
 BBBike/images/ubahn.gif
+BBBike/images/ubahn.xpm
 BBBike/images/usercross.gif
 BBBike/images/usercross.xpm
 BBBike/images/via.gif
-BBBike/images/viewmag-.gif
+BBBike/images/via.xpm
 BBBike/images/viewmag+.gif
+BBBike/images/viewmag+.xpm
+BBBike/images/viewmag-.gif
+BBBike/images/viewmag-.xpm
 BBBike/images/vorfahrt.gif
+BBBike/images/vorfahrt.xpm
 BBBike/images/wasser.gif
+BBBike/images/wasser.xpm
+BBBike/images/watch_ptr.xbm
+BBBike/images/watch_ptr_mask.xbm
 BBBike/images/windrose.gif
+BBBike/images/windrose.xpm
 BBBike/images/windrose2.gif
+BBBike/images/windrose2.xpm
+BBBike/images/xy_ptr.xbm
+BBBike/images/xy_ptr_mask.xbm
 BBBike/images/ziel.gif
+BBBike/images/ziel.xpm
 BBBike/images/ziel_ptr.xbm
 BBBike/images/ziel_ptr_mask.xbm
-BBBike/images/abc.xpm
-BBBike/images/abc_hi.xpm
-BBBike/images/ampel.xpm
-BBBike/images/ampel_klein.xpm
-BBBike/images/ampel_klein2.xpm
-BBBike/images/andreaskr.xpm
-BBBike/images/andreaskr_klein.xpm
-BBBike/images/andreaskr_klein2.xpm
-BBBike/images/apfel.xpm
-BBBike/images/berlin_overview_small.xpm
-BBBike/images/berlin_small.xpm
-BBBike/images/berlin_small_hi.xpm
-BBBike/images/bicycle.xpm
-BBBike/images/birne.xpm
-BBBike/images/cgi_legende.xpm
-BBBike/images/click.xpm
-BBBike/images/cross.xpm
-BBBike/images/exit.xpm
-BBBike/images/flaechen.xpm
-BBBike/images/flag2_bl.xpm
-BBBike/images/flag_ziel.xpm
-BBBike/images/haltestelle.xpm
-BBBike/images/help.xpm
-BBBike/images/info.xpm
-BBBike/images/kirsche.xpm
-BBBike/images/koord.xpm
-BBBike/images/landstrasse.xpm
-BBBike/images/map.xpm
-BBBike/images/menupfeil.xpm
-BBBike/images/open.xpm
-BBBike/images/opt.xpm
-BBBike/images/ort.xpm
-BBBike/images/pflaume.xpm
-BBBike/images/printer.xpm
-BBBike/images/rbahn.xpm
-BBBike/images/rueckweg.xpm
-BBBike/images/save.xpm
-BBBike/images/sbahn.xpm
-BBBike/images/search.xpm
-BBBike/images/srtbike.jpg
-BBBike/images/srtbike.png
-BBBike/images/srtbike16.xpm
-BBBike/images/srtbike32.xpm
-BBBike/images/srtbike_solid.xpm
-BBBike/images/start.xpm
-BBBike/images/strasse.xpm
-BBBike/images/strlist.xpm
-BBBike/images/ubahn.xpm
-BBBike/images/via.xpm
-BBBike/images/viewmag+.xpm
-BBBike/images/viewmag-.xpm
-BBBike/images/vorfahrt.xpm
-BBBike/images/wasser.xpm
-BBBike/images/windrose.xpm
-BBBike/images/windrose2.xpm
-BBBike/images/ziel.xpm
 BBBike/install.bat
 BBBike/install.pl
 BBBike/install.pl.config
 BBBike/kde/BBBike.kdelnk.tmpl
 BBBike/kde/BBBikeDoc.kdelnk.tmpl
 BBBike/kde/BBBikeWWW.kdelnk
-BBBike/kde/x-bbbike-route.kdelnk
 BBBike/kde/x-bbbike-data.kdelnk
+BBBike/kde/x-bbbike-route.kdelnk
 BBBike/kde/x-gpstrack.kdelnk
 BBBike/lib/AutoInstall/Tk.pm
 BBBike/lib/BikePower.pm
@@ -335,77 +473,80 @@ BBBike/lib/BikePower/upright.xpm
 BBBike/lib/BrowserInfo.pm
 BBBike/lib/Devel/WidgetDump.pm
 BBBike/lib/EasySound.pm
-BBBike/lib/Geometry.pm
+BBBike/lib/GD/Convert.pm
 BBBike/lib/GD/Wbmp.pm
+BBBike/lib/Geometry.pm
 BBBike/lib/Http.pm
 BBBike/lib/KDEUtil.pm
 BBBike/lib/Met/Wind.pm
+BBBike/lib/Msg.pm
 BBBike/lib/MyFile.pm
+BBBike/lib/Text/ScriptTemplate.pm
 BBBike/lib/Tk/Arrow.pm
 BBBike/lib/Tk/Autoscroll.pm
+BBBike/lib/Tk/BreakMenu.pm
 BBBike/lib/Tk/CanvasBalloon.pm
 BBBike/lib/Tk/CanvasExt.pm
+BBBike/lib/Tk/CanvasFig.pm
+BBBike/lib/Tk/CanvasUtil.pm
+BBBike/lib/Tk/ColorFlowChooser.pm
 BBBike/lib/Tk/ContextHelp.pm
-BBBike/lib/Tk/context_help.xbm
-BBBike/lib/Tk/context_help_mask.xbm
-BBBike/lib/Tk/context_nohelp.xbm
-BBBike/lib/Tk/context_nohelp_mask.xbm
 BBBike/lib/Tk/Enscript.pm
-BBBike/lib/Tk/enscript.cfg
+BBBike/lib/Tk/FastSplash.pm
 BBBike/lib/Tk/FileDialogExt.pm
 BBBike/lib/Tk/FlatCheckbox.pm
+BBBike/lib/Tk/FlatRadiobutton.pm
 BBBike/lib/Tk/Getopt.pm
-BBBike/lib/Tk/KListbox.pm
 BBBike/lib/Tk/K2Listbox.pm
+BBBike/lib/Tk/KListbox.pm
 BBBike/lib/Tk/LayerEditor.pm
 BBBike/lib/Tk/LayerEditorCore.pm
 BBBike/lib/Tk/LayerEditorToplevel.pm
 BBBike/lib/Tk/LogScale.pm
-BBBike/lib/Tk/layereye.gif
-BBBike/lib/Tk/UnderlineAll.pm
-BBBike/lib/Tk/Splash.pm
-BBBike/lib/Tk/FastSplash.pm
+BBBike/lib/Tk/PathEntry.pm
+BBBike/lib/Tk/PathEntry/Dialog.pm
+BBBike/lib/Tk/ProgressSplash.pm
+BBBike/lib/Tk/RaisedButton.pm
 BBBike/lib/Tk/RotFont.pm
+BBBike/lib/Tk/SRTProgress.pm
+BBBike/lib/Tk/SRTScrollbar.pm
+BBBike/lib/Tk/Splash.pm
 BBBike/lib/Tk/StippleLine.pm
+BBBike/lib/Tk/TextProgress.pm
+BBBike/lib/Tk/UnderlineAll.pm
+BBBike/lib/Tk/WListbox.pm
+BBBike/lib/Tk/WidgetDump.pm
+BBBike/lib/Tk/context_help.xbm
+BBBike/lib/Tk/context_help_mask.xbm
+BBBike/lib/Tk/context_nohelp.xbm
+BBBike/lib/Tk/context_nohelp_mask.xbm
+BBBike/lib/Tk/enscript.cfg
 BBBike/lib/Tk/grid000.xbm
 BBBike/lib/Tk/grid045.xbm
 BBBike/lib/Tk/grid090.xbm
 BBBike/lib/Tk/grid135.xbm
+BBBike/lib/Tk/layereye.gif
 BBBike/lib/Tk/resizeButton.pm
-BBBike/lib/Tk/SRTProgress.pm
-BBBike/lib/Tk/TextProgress.pm
-BBBike/lib/Tk/WidgetDump.pm
-BBBike/lib/Tk/BreakMenu.pm
-BBBike/lib/Tk/RaisedButton.pm
-BBBike/lib/Tk/SRTScrollbar.pm
-BBBike/lib/Tk/WListbox.pm
 BBBike/lib/TkChange.pm
 BBBike/lib/TkCompat.pm
 BBBike/lib/UnixUtil.pm
+BBBike/lib/VectorUtil.pm
+BBBike/lib/WWWBrowser.pm
 BBBike/lib/Waitproc.pm
 BBBike/lib/Win32Util.pm
 BBBike/lib/WinCompat.pm
-BBBike/lib/WWWBrowser.pm
 BBBike/lib/click.au
 BBBike/lib/click.wav
-BBBike/lib/wettermeldung2
+BBBike/lib/enum.pm
 BBBike/lib/savevars.pm
+BBBike/lib/wettermeldung2
+BBBike/lib/your.pm
+BBBike/msg/bbbike/en
+BBBike/msg/install/en
+BBBike/podindex.html
 BBBike/smsbbbike
 BBBike/tkbikepwr
 BBBike/tmp/.keep_me
-BBBike/ESRI/Makefile.PL
-BBBike/ESRI/Shapefile.pm
-BBBike/ESRI/Shapefile/DBase.pm
-BBBike/ESRI/Shapefile/Index.pm
-BBBike/ESRI/Shapefile/Main.pm
-BBBike/ESRI/t/shapefile.t
-BBBike/GPS.pm
-BBBike/GPS/G7toWin_ASCII.pm
-BBBike/GPS/Unknown1.pm
-BBBike/GPS/Unknown2.pm
-BBBike/Geography/Muenchen_DE.pm
-BBBike/msg/bbbike/en
-BBBike/Makefile.PL
 BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.so
 BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.bs
 BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.so
@@ -413,42 +554,54 @@ BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.bs
 BBBike/lib/%%PERL_ARCH%%/BBBikeXS.pm
 BBBike/lib/%%PERL_ARCH%%/VirtArray.pm
 BBBike/bbbike.1
-@dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/VirtArray
 @dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/BBBikeXS
-@dirrm BBBike/lib/%%PERL_ARCH%%/auto/VirtArray
+@dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/VirtArray
 @dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto
 @dirrm BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS
-@dirrm BBBike/lib/%%PERL_ARCH%%/auto
+@dirrm BBBike/lib/%%PERL_ARCH%%/auto/VirtArray
+@dirrm BBBike/lib/Tk/PathEntry
+@dirrm BBBike/ext/Strassen-Inline/t
 @dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%
-@dirrm BBBike/lib/BikePower
+@dirrm BBBike/lib/%%PERL_ARCH%%/auto
+@dirrm BBBike/ext/Strassen-Inline2/t
+@dirrm BBBike/data/sehenswuerdigkeit_img
+@dirrm BBBike/ext/BBBikeXS
+@dirrm BBBike/ext/VirtArray
+@dirrm BBBike/ext/Strassen-Inline2
+@dirrm BBBike/lib/%%PERL_VER%%
+@dirrm BBBike/msg/install
+@dirrm BBBike/lib/%%PERL_ARCH%%
 @dirrm BBBike/ESRI/Shapefile
-@dirrm BBBike/msg/bbbike
 @dirrm BBBike/ESRI/t
+@dirrm BBBike/ext/Strassen-Inline
+@dirrm BBBike/msg/bbbike
+@dirrm BBBike/lib/Text
+@dirrm BBBike/lib/GD
+@dirrm BBBike/lib/BikePower
+@dirrm BBBike/GPS/t
+@dirrm BBBike/lib/Tk
+@dirrm BBBike/ext/Strassen-CNetFile
+@dirrm BBBike/lib/Met
 @dirrm BBBike/lib/Devel
 @dirrm BBBike/lib/AutoInstall
-@dirrm BBBike/lib/%%PERL_VER%%
-@dirrm BBBike/ext/VirtArray
-@dirrm BBBike/lib/%%PERL_ARCH%%
-@dirrm BBBike/lib/GD
-@dirrm BBBike/lib/Tk
-@dirrm BBBike/ext/BBBikeXS
-@dirrm BBBike/lib/Met
-@dirrm BBBike/ESRI
-@dirrm BBBike/cgi
-@dirrm BBBike/html
-@dirrm BBBike/images
-@dirrm BBBike/lib
-@dirrm BBBike/Karte
 @dirrm BBBike/Bundle
-@dirrm BBBike/gnome
-@dirrm BBBike/tmp
-@dirrm BBBike/GIS
+@dirrm BBBike/BBBikeDraw
+@dirrm BBBike/Karte
 @dirrm BBBike/GPS
-@dirrm BBBike/msg
 @dirrm BBBike/Geography
+@dirrm BBBike/msg
+@dirrm BBBike/Strassen
+@dirrm BBBike/images
+@dirrm BBBike/ext
 @dirrm BBBike/kde
 @dirrm BBBike/data
-@dirrm BBBike/BBBikeDraw
-@dirrm BBBike/ext
+@dirrm BBBike/GIS
+@dirrm BBBike/html
+@dirrm BBBike/tmp
 @dirrm BBBike/Way
+@dirrm BBBike/gnome
+@dirrm BBBike/Route
+@dirrm BBBike/lib
+@dirrm BBBike/cgi
+@dirrm BBBike/ESRI
 @dirrm BBBike
