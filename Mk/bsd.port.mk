@@ -2747,77 +2747,55 @@ package-depends:
 
 .if !target(describe)
 describe:
-	@${ECHO} `perl -e ' \
-		print "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
-		if (open (COMMENT, "${COMMENT}")) { \
+	@${ECHO} "`perl -e ' \
+		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}; \
+		if (open(COMMENT, q{${COMMENT}})) { \
 			$$_ = <COMMENT>; \
 			chomp; \
 			print; \
 		} else { \
-			print "** No Description"; \
+			print q{** No Description}; \
 		} \
-		if ( -f "${DESCR}" ) { \
-			print "|${DESCR}"; \
+		if ( -f q{${DESCR}} ) { \
+			print q{|${DESCR}}; \
 		} else { \
-			print "|/dev/null"; \
+			print q{|/dev/null}; \
 		} \
-		print q#|${MAINTAINER}|${CATEGORIES}|#; \
-		for (split /\s+/, "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}") { \
-			next if /^$$/; \
-			s/^[^:]*\://; \
-			s/\:.*//; \
-			if ( ! -d $$_ ) { \
-				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
-			} else { \
-				push @bdirs, $$_; \
+		print q{|${MAINTAINER}|${CATEGORIES}|}; \
+		@bdirs = map((split /:/)[1], split(q{ }, q{${FETCH_DEPENDS} ${BUILD_DEPENDS}})); \
+		@rdirs = map((split /:/)[1], split(q{ }, q{${RUN_DEPENDS}})); \
+		@mdirs = ( \
+			map((split /:/)[0], split(q{ }, q{${DEPENDS}})), \
+			map((split /:/)[1], split(q{ }, q{${LIB_DEPENDS}})) \
+		); \
+		for my $$i (\@bdirs, \@rdirs, \@mdirs) { \
+			my @dirs = @$$i; \
+			@$$i = (); \
+			for (@dirs) { \
+				if (-d $$_) { \
+					push @$$i, $$_; \
+				} else { \
+					print STDERR qq{${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete\n}; \
+				} \
 			} \
 		} \
-		for (split /\s+/, "${LIB_DEPENDS} ${RUN_DEPENDS}") { \
-			next if /^$$/; \
-			s/^[^:]*\://; \
-			s/\:.*//; \
-			if ( ! -d $$_ ) { \
-				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
-			} else { \
-				push @rdirs, $$_; \
+		for (@bdirs, @mdirs) { \
+			$$x{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %x), q{|}; \
+		for (@rdirs, @mdirs) { \
+			$$y{$$_} = 1; \
+		} \
+		print join(q{ }, sort keys %y), q{|}; \
+		if (open(DESCR, q{${DESCR}})) { \
+			while (<DESCR>) { \
+				if (/^WWW:\s+(\S+)/) { \
+					print $$1; \
+					last; \
+				} \
 			} \
 		} \
-		for (split /\s+/, "${DEPENDS}") { \
-			next if /^$$/; \
-			s/\:.*//; \
-			if ( ! -d $$_ ) { \
-				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
-			} else { \
-				push @mdirs, $$_; \
-			} \
-		} \
-		for (sort (@bdirs, @mdirs)) { \
-			if ($$_ ne $$l) { \
-				$$a .= $$_ . " "; \
-				$$l = $$_; \
-			} \
-		} \
-		chop $$a; \
-		print "$$a|"; \
-		for (sort (@rdirs, @mdirs)) { \
-			if ($$_ ne $$m) { \
-				$$b .= $$_ . " "; \
-				$$m = $$_; \
-			} \
-		} \
-		chop $$b; \
-		print "$$b|"; \
-		if (open (DESCR, "${DESCR}")) { \
-			until (/^WWW\:\s/ or eof DESCR) { \
-				$$_ = <DESCR>; \
-			} \
-			if (/^WWW\:\s/) { \
-				chomp; \
-				split /\s+/; \
-				print $$_[1]; \
-			} \
-		} \
-		print "\n";'`
+		print qq{\n};'`"
 .endif
 
 www-site:
