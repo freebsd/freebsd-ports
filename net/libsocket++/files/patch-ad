@@ -1,0 +1,50 @@
+--- sockstream.C.old	Sat Jan 29 16:47:41 2000
++++ sockstream.C	Sun Jan 30 11:28:18 2000
+@@ -43,6 +43,7 @@
+ 
+ #include <config.h>
+ #include <sockstream.h>
++#include <osreldate.h>
+ 
+ EXTERN_C_BEGIN
+ #include <sys/time.h>
+@@ -275,8 +276,13 @@
+ {
+   int len = sa.size ();
+   int soc = -1;
++#if (__FreeBSD_version < 400013)
+   while ((soc = ::accept (rep->sock, sa.addr (), &len)) == -1
+ 	 && errno == EINTR)
++#else
++  while ((soc = ::accept (rep->sock, sa.addr (), (socklen_t *) &len)) == -1
++	 && errno == EINTR)
++#endif
+     errno = 0;
+   if (soc == -1)
+     error ("sockbuf::accept");
+@@ -321,8 +327,13 @@
+   int	rval;
+   int	sa_len = sa.size ();
+   
++#if (__FreeBSD_version < 400013)
+   if ((rval = ::recvfrom (rep->sock, (char*) buf, len,
+ 			  msgf, sa.addr (), &sa_len)) == -1)
++#else
++  if ((rval = ::recvfrom (rep->sock, (char*) buf, len,
++			  msgf, sa.addr (), (socklen_t *) &sa_len)) == -1)
++#endif
+     error ("sockbuf::recvfrom");
+   return (rval==0) ? EOF: rval;
+ }
+@@ -491,7 +502,11 @@
+ int sockbuf::getopt (option op, void* buf, int len, level l) const
+ {
+   int	rlen = len;
++#if (__FreeBSD_version < 400013)
+   if (::getsockopt (rep->sock, l, op, (char*) buf, &rlen) == -1)
++#else
++  if (::getsockopt (rep->sock, l, op, (char*) buf, (socklen_t *) &rlen) == -1)
++#endif
+     perror ("sockbuf::getopt");
+   return rlen;
+ }
