@@ -1,4 +1,5 @@
 #!/bin/sh
+# $FreeBSD$
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
@@ -10,34 +11,40 @@ CLAMLOG=/var/log/clamav
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
-if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
-	if pw groupadd $GROUP; then
-		echo "=> Added group \"$GROUP\"."
-	else
-                echo "=> Adding group \"$GROUP\" failed..."
-                exit 1
-        fi
+	if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
+		if pw groupadd $GROUP; then
+			echo "=> Added group \"$GROUP\"."
+		else
+			echo "=> Adding group \"$GROUP\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ! pw usershow "$USER" 2>/dev/null 1>&2; then
+		if pw useradd $USER -g $GROUP -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "Clam Antivirus"; \
+		then
+			pw groupmod mail -m $USER
+			echo "=> Added user \"$USER\"."
+		else
+			echo "=> Adding user \"$USER\" failed..."
+			exit 1
+		fi
+	fi
+
+elif [ "$2" = "POST-INSTALL" ]; then
+
+	if [ ! -d "${CLAMRUN}" ]; then
+		mkdir -p "$CLAMRUN" || exit 1
+		chown "$USER:$GROUP" "$CLAMRUN" || exit 1
+	fi
+
+	if [ ! -d "${CLAMLOG}" ]; then
+		mkdir -p "$CLAMLOG" || exit 1
+		chown "$USER:$GROUP" "$CLAMLOG" || exit 1
+	fi
+
 fi
-
-if ! pw usershow "$USER" 2>/dev/null 1>&2; then
-        if pw useradd $USER -g $GROUP -h - \
-                -s "/sbin/nologin" -d "/nonexistent" \
-                -c "Clam Antivirus"; \
-        then
-		pw groupmod mail -m $USER
-                echo "=> Added user \"$USER\"."
-        else
-                echo "=> Adding user \"$USER\" failed..."
-                exit 1
-        fi
-fi
-
-mkdir -p "$CLAMRUN"
-chown "$USER:$GROUP" "$CLAMRUN"
-
-mkdir -p "$CLAMLOG"
-chown "$USER:$GROUP" "$CLAMLOG"
-
-fi # PRE-INSTALL
 
 exit 0
