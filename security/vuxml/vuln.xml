@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="15e0e963-02ed-11d9-a209-00061bc2ad93">
+    <topic>mpg123 buffer overflow</topic>
+    <affects>
+      <package>
+        <name>mpg123</name>
+        <range><le>0.59s</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The mpg123 software version 0.59r contains a
+          buffer overflow vulnerability which may permit
+          the execution of arbitrary code as the owner of
+          the mpg123 process.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0805</cvename>
+      <url>http://www.alighieri.org/advisories/advisory-mpg123.txt</url>
+      <url>www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2003-08-16</discovery>
+      <entry>2004-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86a98b57-fb8e-11d8-9343-000a95bc6fae">
     <topic>krb5 -- double-free vulnerabilities</topic>
     <affects>
