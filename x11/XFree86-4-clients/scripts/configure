@@ -21,7 +21,7 @@ rm -f $F
 
 # Tk detection
 tkversion=
-for v in 1 2 3 4; do
+for v in 1 2; do
   if [ -f /usr/local/lib/libtk4$v.a ]; then
     tkversion=$v
   fi
@@ -30,12 +30,20 @@ if [ X$tkversion != X ]; then
   echo "Using tk-4.$tkversion"
   echo "#define HasTk			YES" >>$F
   echo "#define TkLibDir		/usr/local/lib" >>$F
-  echo "#define TkIncDir		/usr/local/include" >>$F
+  echo "#define TkIncDir		/usr/local/include/tk4.$tkversion" >>$F
   echo "#define TkLibName		tk4$tkversion" >>$F
   echo "#define HasTcl			YES" >>$F
-  echo "#define TclLibDir		/usr/lib" >>$F
-  echo "#define TclIncDir		/usr/include" >>$F
-  echo "#define TclLibName		tcl75" >>$F
+  echo "#define TclLibDir		/usr/local/lib" >>$F
+  case $tkversion in
+    1)
+      tclversion=5
+      ;;
+    2)
+      tclversion=6
+      ;;
+  esac
+  echo "#define TclIncDir		/usr/local/include/tcl7.$tclversion" >>$F
+  echo "#define TclLibName		tcl7$tclversion" >>$F
 else
 cat <<EOF
 *** I don't see the static library for tk version 4 in /usr/local/lib.
