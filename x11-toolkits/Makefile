@@ -20,6 +20,7 @@
     SUBDIR += iwidgets
     SUBDIR += iv
     SUBDIR += lesstif
+    SUBDIR += linux-jdk
     SUBDIR += neXtaw
     SUBDIR += p5-Gtk
     SUBDIR += p5-Tcl-Tk
