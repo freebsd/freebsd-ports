@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.85
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -29,7 +29,7 @@ WEBMIN_MODULES=	squid-0.85-1.wbm.gz useradmin-0.85-1.wbm.gz net-0.85-1.wbm.gz ap
 post-extract:
 .if defined(WITH_UPDATES)
 	if [ "${WEBMIN_MODULES}" != "" ]; then \
-		for webmin_module in "${WEBMIN_MODULES}"; do \
+		for webmin_module in ${WEBMIN_MODULES}; do \
 			${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
