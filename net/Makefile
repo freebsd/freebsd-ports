@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.82 1996/11/11 23:26:07 ache Exp $
+# $Id: Makefile,v 1.83 1996/11/22 08:20:25 obrien Exp $
 #
 
     SUBDIR += archie
     SUBDIR += ascend-radius
+    SUBDIR += bb
     SUBDIR += cvsup
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
@@ -34,6 +35,7 @@
     SUBDIR += samba
     SUBDIR += scotty
     SUBDIR += slirp
+    SUBDIR += socks5
     SUBDIR += sup
     SUBDIR += telnetx
     SUBDIR += tintin++
