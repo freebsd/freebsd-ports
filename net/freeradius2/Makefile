@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -69,8 +68,7 @@ MAN5=		acct_users.5 clients.5 dictionary.5 naslist.5 radiusd.conf.5 \
 		users.5
 MAN8=		builddbm.8 radiusd.8 radrelay.8 radwatch.8
 
-RADDB=		acct_users attrs clients clients.conf dictionary \
-		dictionary.acc dictionary.alcatel dictionary.alteon \
+DICTS=		dictionary.acc dictionary.alcatel dictionary.alteon \
 	       	dictionary.altiga dictionary.aptis dictionary.ascend \
 	       	dictionary.bay dictionary.cisco dictionary.cisco.bbsm \
 		dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
@@ -80,15 +78,12 @@ RADDB=		acct_users attrs clients clients.conf dictionary \
 	       	dictionary.livingston dictionary.microsoft \
 	       	dictionary.nomadix dictionary.quintum dictionary.redback \
 	       	dictionary.shasta dictionary.shiva dictionary.tunnel \
-	       	dictionary.usr dictionary.versanet hints huntgroups \
-		ldap.attrmap mssql.conf naslist naspasswd oraclesql.conf \
-	       	postgresql.conf  preproxy_users proxy.conf radiusd.conf \
-	       	realms snmp.conf sql.conf users x99.conf x99passwd.sample
+	       	dictionary.usr dictionary.versanet
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/raddb
-.for db in ${RADDB}
-	${INSTALL_DATA} ${WRKSRC}/raddb/${db} ${PREFIX}/etc/raddb/${db}.sample
+	@${MKDIR} ${PREFIX}/etc/raddb ${PREFIX}/share/freeradius
+.for dict in ${DICTS}
+	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${PREFIX}/share/freeradius/${dict}
 .endfor
 	${INSTALL_SCRIPT} ${FILESDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
 
