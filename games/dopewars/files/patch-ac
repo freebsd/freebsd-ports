@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Thu Jan 13 15:58:16 2000
++++ Makefile.in	Fri Jan 28 00:24:48 2000
+@@ -66,7 +66,7 @@
+ dopewars_SOURCES = AIPlayer.c serverside.c clientside.c dopewars.c message.c 		   dopeos.c
+ 
+ 
+-DOCPATH = /usr/doc/${PACKAGE}-${VERSION}/
++DOCPATH = ${PREFIX}/share/doc/${PACKAGE}/
+ DOCS = aiplayer.html configfile.html index.html server.html clientplay.html       credits.html installation.html servercommands.html commandline.html       developer.html metaserver.html windows.html README
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -400,8 +400,8 @@
+ 	touch ${datadir}/dopewars.sco
+ 	chown root.games ${datadir}/dopewars.sco
+ 	chmod 0660 ${datadir}/dopewars.sco
+-	${INSTALL} -d -o root -g root -m 0755 $(DOCPATH)
+-	${INSTALL} -o root -g root -m 0644 $(DOCS) $(DOCPATH)
++	${INSTALL} -d -m 0755 $(DOCPATH)
++	${INSTALL} -m 0644 $(DOCS) $(DOCPATH)
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
