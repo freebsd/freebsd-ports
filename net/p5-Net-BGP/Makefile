@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-BGP
-PORTVERSION=	0.01
+PORTVERSION=	0.07
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -17,7 +17,8 @@ COMMENT=	Border Gateway Protocol version 4 speaker/listener library
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::BGP.3 Net::BGP::Notification.3 Net::BGP::Peer.3 \
-		Net::BGP::Process.3 Net::BGP::RIB.3 Net::BGP::Update.3
+MAN3=		Net::BGP.3 Net::BGP::ASPath.3 Net::BGP::NLRI.3 \
+		Net::BGP::Notification.3 Net::BGP::Peer.3 Net::BGP::Process.3 \
+		Net::BGP::Refresh.3 Net::BGP::Transport.3 Net::BGP::Update.3
 
 .include <bsd.port.mk>
