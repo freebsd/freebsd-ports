@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libglade
-PORTVERSION=	0.16
-PORTREVISION=	5
+PORTVERSION=	0.17
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libglade
@@ -20,10 +19,11 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-bonobo --enable-gnomedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>
