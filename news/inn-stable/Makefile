@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	andreas
 DISTNAME=	inn-STABLE-${STABLE}
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://www.isc.org/inn-y2k.html
 
