@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.28.o
+PORTVERSION=	2.5.28.p
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
@@ -37,10 +37,6 @@ CONFIGURE_WRKSRC=	${WRKSRC}/config
 MAKE_ENV=	OCAMLRUNPARAM="l=256M"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DOWNLOADVERSION}
-
-# XXX
-# filetp is known to be broken on version 2.5.28* and prior
-CONFIGURE_ARGS+=	--disable-filetp
 
 .if defined(WITHOUT_GUI)
 .if defined(WITHOUT_CORE)
