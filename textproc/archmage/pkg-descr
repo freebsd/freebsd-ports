@@ -1,0 +1,5 @@
+ArCHMage is the extensible reader/decompiler of files in CHM format(Microsoft
+HTML help, also known as Compiled HTML). ArCHMage is based on chmlib by Jed
+Wing and is written on python.
+
+WWW: http://archmage.sourceforge.net/

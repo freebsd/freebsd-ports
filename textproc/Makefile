@@ -15,6 +15,7 @@
     SUBDIR += am-aspell
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
+    SUBDIR += archmage
     SUBDIR += ascii2pdf
     SUBDIR += asm2html
     SUBDIR += aspell

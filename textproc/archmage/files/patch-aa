@@ -1,0 +1,25 @@
+--- setup.py.orig	Tue Feb 22 19:18:40 2005
++++ setup.py	Tue Feb 22 19:19:26 2005
+@@ -14,7 +14,7 @@
+ 
+        py_modules = ['chmlib', 'CHM', 'mod_chm'],
+        scripts = ['archmage'],
+-       data_files = [ ('/etc/', [ 'arch.conf' ] ),
++       data_files = [ ('etc/', [ 'arch.conf' ] ),
+                       ( 'share/archmage/templates/',
+                         ['templates/arch_contents.html',
+                          'templates/arch_frameset.html',
+@@ -65,13 +65,4 @@
+                          'templates/icons/7.gif',
+                          'templates/icons/8.gif',
+                          'templates/icons/9.gif']) ],
+-       ext_modules = [ Extension(name = '_chmlib',
+-                                 sources =
+-                                 [ 'chmlib/chm_lib.c',
+-                                   'chmlib/wrapper.c',
+-                                   'chmlib/lzx.c',
+-                                   'chmlib/az_chmlib_add.c'
+-                                 ],
+-                                 include_dirs=["chmlib"])
+-                     ]
+        )
