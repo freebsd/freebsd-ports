@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=-debug
 
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
-.	else
+.else
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
