@@ -7,18 +7,20 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
 
 MAINTAINER=	portmgr@FreeBSD.org
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		expat.2:${PORTSDIR}/textproc/expat2
 
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
