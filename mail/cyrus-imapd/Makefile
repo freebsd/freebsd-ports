@@ -64,7 +64,7 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif

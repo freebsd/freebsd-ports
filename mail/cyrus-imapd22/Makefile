@@ -133,7 +133,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSD
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
-.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .if !defined(WITH_OPENSSL_BASE)
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
