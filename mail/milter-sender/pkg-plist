@@ -21,7 +21,11 @@ sbin/milter-sender
 %%PORTDOCS%%%%DOCSDIR%%/milter-sender.mc
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 @unexec echo "If permanently deleting this package, don't forget to delete the filter"
-@unexec echo "description of milter-sender from /etc/mail/YOUR-CONF.mc and to rebuild"
+@unexec echo "inclusion of milter-sender from /etc/mail/YOUR-CONF.mc and to rebuild"
 @unexec echo "sendmail.cf file!"
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@unexec if [ -f %D/etc/mail/milter-sender.mc ] && cmp -s %D/etc/mail/milter-sender.mc %D/etc/mail/milter-sender.mc.sample; then rm -f %D/etc/mail/milter-sender.mc; fi
+etc/mail/milter-sender.mc.sample
+@exec if [ ! -f %D/etc/mail/milter-sender.mc ] ; then cp %D/%F %B/milter-sender.mc; fi
