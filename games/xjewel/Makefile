@@ -8,7 +8,9 @@
 
 DISTNAME=	xjewel-1.6
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
+		ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	jmz@FreeBSD.org
@@ -16,18 +18,11 @@ MAINTAINER=	jmz@FreeBSD.org
 USE_IMAKE=	yes
 MAN6=		xjewel.6
 
-pre-install:
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/X11/xjewel
-	@${MKDIR} ${PREFIX}/man/man6
-	@(cd ${WRKSRC}/bitmaps/; ${INSTALL_DATA} seven_seg.pcf.gz fonts.dir \
-		${PREFIX}/lib/X11/xjewel)
+FONTSDIR=	lib/X11/fonts/local
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 post-install:
-	@(${MV} ${PREFIX}/bin/xjewel ${PREFIX}/bin/xjewel_; \
-	$(ECHO) "#!/bin/sh" >${PREFIX}/bin/xjewel; \
-	$(ECHO) "xset +fp ${PREFIX}/lib/X11/xjewel" >>${PREFIX}/bin/xjewel; \
-	$(ECHO) "${PREFIX}/bin/xjewel_" >>${PREFIX}/bin/xjewel; \
-	${CHMOD} ugo+x ${PREFIX}/bin/xjewel)
+	${INSTALL_DATA} ${WRKSRC}/bitmaps/seven_seg.pcf.gz ${PREFIX}/${FONTSDIR}
+	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
 
 .include <bsd.port.mk>

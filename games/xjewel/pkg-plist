@@ -1,6 +1,6 @@
 bin/xjewel
-bin/xjewel_
-lib/X11/xjewel.scores
-lib/X11/xjewel/fonts.dir
-lib/X11/xjewel/seven_seg.pcf.gz
+lib/X11/xjewel/xjewel.scores
+%%FONTSDIR%%/seven_seg.pcf.gz
+@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @dirrm lib/X11/xjewel
