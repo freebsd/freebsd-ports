@@ -19,6 +19,12 @@ USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf1 --enable-utmp
+
+.if defined(WITH_FRIBIDI)
+CONFIGURE_ARGS=	--enable-fribidi
+LIB_DEPENDS=	fribidi.0:${PORTSDIR}/converters/fribidi
+.endif
+
 INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
@@ -29,7 +35,15 @@ MAN1=	mlterm.1 mlclient.1
 PKGNAMESUFFIX=	-noaa
 .else
 CONFIGURE_ARGS+=	--enable-anti-alias
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
+.endif
+
+pre-everything::
+.if !defined(WITH_FRIBIDI)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may enable BiDi support by using the"
+	@${ECHO_MSG} "WITH_FRIBIDI option."
+	@${ECHO_MSG}
 .endif
 
 post-configure:
