@@ -26,6 +26,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -fPIC"
 
 .include <bsd.port.mk>

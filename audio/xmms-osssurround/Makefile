@@ -20,6 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+CFLAGS+=	-fPIC
 
 BUILD_WRKSRC=	${WRKSRC}/OSSSurround-${PORTVERSION}
 
