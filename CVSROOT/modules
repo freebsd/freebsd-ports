@@ -7160,6 +7160,7 @@ p5-X11-IdleTime	ports/x11/p5-X11-IdleTime
 p5-X11-Protocol	ports/x11/p5-X11-Protocol
 p5-X500-DN	ports/net/p5-X500-DN
 p5-XML-Atom	ports/textproc/p5-XML-Atom
+p5-XML-Atom-Syndication	ports/textproc/p5-XML-Atom-Syndication
 p5-XML-AutoWriter	ports/textproc/p5-XML-AutoWriter
 p5-XML-Catalog	ports/textproc/p5-XML-Catalog
 p5-XML-DBMS	ports/textproc/p5-XML-DBMS
@@ -7197,7 +7198,9 @@ p5-XML-Node	ports/textproc/p5-XML-Node
 p5-XML-NodeFilter	ports/textproc/p5-XML-NodeFilter
 p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree	ports/textproc/p5-XML-Parser-EasyTree
+p5-XML-Parser-Style-Elemental	ports/textproc/p5-Parser-Style-Elemental
 p5-XML-Quote	ports/textproc/p5-XML-Quote
+p5-XML-RAI	ports/textproc/p5-RAI
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-RSS-JavaScript	ports/textproc/p5-XML-RSS-JavaScript
 p5-XML-RSS-Parser	ports/textproc/p5-XML-RSS-Parser
