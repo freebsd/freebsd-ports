@@ -739,6 +739,12 @@ INSTALL_WRKSRC?=${WRKSRC}
 
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	        PORTDOCS="@comment "
+.else
+PLIST_SUB+=	        PORTDOCS=""
+.endif
+
 CONFIGURE_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
 SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
 MAKE_ENV+=		PORTOBJFORMAT=${PORTOBJFORMAT}
@@ -810,7 +816,9 @@ RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 .if defined(USE_MOTIF)
 USE_XPM=			yes
+.if !defined(NO_OPENMOTIF)
 LIB_DEPENDS+=		Xm.2:${PORTSDIR}/x11-toolkits/open-motif
+.endif
 .endif
 
 .if defined(USE_FREETYPE)
@@ -1046,6 +1054,15 @@ PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 
+.if ${OSVERSION} >= 400000
+.for _CATEGORY in ${CATEGORIES}
+PKGCATEGORY?=	${_CATEGORY}
+.endfor
+_PORTDIRNAME!=	${BASENAME} ${.CURDIR}
+PORTDIRNAME?=	${_PORTDIRNAME}
+PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
+.endif
+
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
@@ -1065,6 +1082,9 @@ PKG_ARGS+=		-D ${PKGMESSAGE}
 .endif
 .if !defined(NO_MTREE)
 PKG_ARGS+=		-m ${MTREE_FILE}
+.endif
+.if defined(PKGORIGIN)
+PKG_ARGS+=		-o ${PKGORIGIN}
 .endif
 .endif
 .if defined(PKG_NOCOMPRESS)
@@ -1382,7 +1402,7 @@ LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
 
 .if ${OSVERSION} >= 300000
 # You need an upgrade kit or make world newer than this
-BSDPORTMKVERSION=	20000201
+BSDPORTMKVERSION=	20001103
 .if exists(/var/db/port.mkversion)
 VERSIONFILE=	/var/db/port.mkversion
 .else
