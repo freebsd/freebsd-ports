@@ -1,0 +1,10 @@
+Index: Makefile
+@@ -4,7 +4,7 @@
+ 
+ # Where you want cdlabelgen and related files to be
+ 
+-BASE_DIR   = /usr/local
++#BASE_DIR   = /usr/local
+ TEMPLATE   = ./postscript/template.ps
+ SOURCES    = cdlabelgen ChangeLog COPYING INSTALL README Makefile
+ POSTSCRIPT = template.ps recycle.ps recycle.epsi mp3.eps cdda.eps cd.eps penguin.eps

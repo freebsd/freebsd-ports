@@ -1,0 +1,9 @@
+bin/cdlabelgen
+share/cdlabelgen/template.ps
+share/cdlabelgen/recycle.ps
+share/cdlabelgen/recycle.epsi
+share/cdlabelgen/mp3.eps
+share/cdlabelgen/cdda.eps
+share/cdlabelgen/cd.eps
+share/cdlabelgen/penguin.eps
+@dirrm share/cdlabelgen
