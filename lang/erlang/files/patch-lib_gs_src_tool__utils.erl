@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- lib/gs/src/tool_utils.erl.orig	Tue Oct 12 22:14:23 2004
-+++ lib/gs/src/tool_utils.erl	Tue Oct 12 22:17:17 2004
+--- lib/gs/src/tool_utils.erl.orig
++++ lib/gs/src/tool_utils.erl
 @@ -27,6 +27,9 @@
  -export([file_dialog/1]).
  -export([notify/2, confirm/2, confirm_yesno/2, request/2]).
@@ -13,30 +13,28 @@ $FreeBSD$
  %%----------------------------------------------------------------------
  %% open_help(GS, File)
  %%   GS = gsobj()  (GS root object returned by gs:start/0,1)
-@@ -65,7 +68,8 @@
- 	      local ->
- 		  case os:type() of
- 		      {unix,_AnyType} ->
--			  "netscape -remote \"openURL(file:" ++ File ++ ")\"";
-+			  unix_url_command("file:" ++ File);
-+
+@@ -67,7 +70,7 @@
+ 		      {unix,Type} ->
+                           case Type of
+                                darwin -> "open " ++ File;
+-                               _Else -> "netscape -remote \"openURL(file:" ++ File ++ ")\""
++                               _Else -> unix_url_command("file:" ++ File)
+ 			  end;
  		      {win32,_AnyType} ->
  			  "start " ++ filename:nativename(File);
- 
-@@ -77,7 +81,7 @@
- 	      remote ->
- 		  case os:type() of
- 		      {unix,_AnyType} ->
--			  "netscape -remote \"openURL(" ++ File ++ ")\"";
-+			  unix_url_command("file:" ++ File);
- 
+@@ -82,7 +85,7 @@
+ 		      {unix,Type} ->
+                           case Type of
+                                darwin -> "open " ++ File;
+-                               _Else -> "netscape -remote \"openURL(file:" ++ File ++ ")\""
++                               _Else -> unix_url_command("file:" ++ File)
+ 			  end;
  		      {win32,_AnyType} ->
  			  "netscape.exe -h " ++ regexp:gsub(File,"\\\\","/");
-@@ -337,3 +341,54 @@
+@@ -342,3 +345,53 @@
      [Last];
  insert_newlines(Other) ->
      Other.
-+
 +
 +%% find_browser(BrowserList) => string() | false
 +%%   BrowserList - [string()]
