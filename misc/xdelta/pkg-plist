@@ -1,10 +1,16 @@
 bin/xdelta
-include/fakeglib.h
+bin/xdelta-config
+include/serializeio.h
 include/xdelta.h
-include/xdeltaconfig.h
+include/xdser.h
+@unexec install-info --delete %D/info/xdelta.info %D/info/dir
+info/xdelta.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/xdelta.info %D/info/dir
 lib/libxdelta.a
 lib/libxdelta.la
 lib/libxdelta.so
-lib/libxdelta.so.0.22
+lib/libxdelta.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/xdelta.m4
