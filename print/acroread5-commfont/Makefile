@@ -14,6 +14,7 @@ DISTNAME?=	commfont # dummy
 MAINTAINER=	taoka@FreeBSD.org
 
 NO_BUILD=	yes
+SLAVEDIRS=	chinese/acroread-chsfont chinese/acroread-chtfont
 
 .include <bsd.port.pre.mk>
 
