@@ -9174,6 +9174,7 @@ sing		ports/net-mgmt/sing
 siod		ports/lang/siod
 sipcalc		ports/net-mgmt/sipcalc
 siphon		ports/security/siphon
+sipp		ports/net/sipp
 sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
