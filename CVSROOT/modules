@@ -6336,7 +6336,6 @@ psim-freebsd	ports/emulators/psim-freebsd
 pslist		ports/sysutils/pslist
 psmark		ports/print/psmark
 psmisc		ports/sysutils/psmisc
-pspell-ispell	ports/textproc/pspell-ispell
 pspp		ports/math/pspp
 pstack		ports/sysutils/pstack
 pstat		src/usr.sbin/pstat
