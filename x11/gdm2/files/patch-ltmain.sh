@@ -1,14 +1,14 @@
 --- ltmain.sh.orig	Tue Jul  1 14:15:27 2003
-+++ ltmain.sh	Thu Jul 31 23:02:48 2003
-@@ -1269,7 +1269,7 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd* | *-*-freebsd*)
-+	  *-*-openbsd* | *-*-freebsd4*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
++++ ltmain.sh	Fri Aug  1 15:54:24 2003
+@@ -1280,7 +1280,7 @@
+ 	  esac
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
+-	 *-*-openbsd* | *-*-freebsd*)
++	 *-*-openbsd* | *-*-freebsd4*)
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
 @@ -1290,8 +1290,16 @@
  	continue
  	;;
