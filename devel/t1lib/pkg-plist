@@ -3,12 +3,12 @@ bin/xglyph
 include/t1lib.h
 include/t1libx.h
 lib/libt1.a
-lib/libt1.la
 lib/libt1x.a
-lib/libt1x.la
 lib/libt1.so
 lib/libt1.so.9
 lib/libt1x.so
 lib/libt1x.so.9
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/t1lib-0.9/t1lib.config
 @dirrm share/t1lib-0.9
