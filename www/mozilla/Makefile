@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=					\
 		--enable-editor			\
 		--enable-mailnews		\
 		--enable-mathml			\
-		--enable-optimize		\
+		--enable-optimize="${CFLAGS}"	\
 		--enable-pics			\
 		--enable-svg			\
 		--enable-tests			\
@@ -56,8 +56,9 @@ CONFIGURE_ARGS=					\
 		--with-mng=${LOCALBASE}		\
 		--with-pthreads
 CONFIGURE_ENV=	BSD_PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MOZ_OPTIMIZE_FLAGS=""
-MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
+		CFLAGS="" CXXFLAGS=""
+MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
+		CFLAGS="" CXXFLAGS=""
 
 post-build:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" \
