@@ -70,6 +70,7 @@
     SUBDIR += gutenbook
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
+    SUBDIR += haxml
     SUBDIR += hevea
     SUBDIR += htdig
     SUBDIR += html
