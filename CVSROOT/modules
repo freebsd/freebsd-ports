@@ -1728,6 +1728,7 @@ ffsrecov	ports/sysutils/ffsrecov
 fftpack		ports/math/fftpack
 fftw		ports/math/fftw
 fget		ports/ftp/fget
+fgkicker	ports/games/fgkicker
 fhist		ports/devel/fhist
 fhttpd		ports/www/fhttpd
 fib		ports/devel/fib
