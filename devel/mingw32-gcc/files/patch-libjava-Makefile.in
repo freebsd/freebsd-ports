@@ -1,0 +1,31 @@
+--- libjava/Makefile.in.orig	Wed Aug  4 17:06:43 2004
++++ libjava/Makefile.in	Wed Aug  4 17:08:55 2004
+@@ -187,8 +187,8 @@
+ jardir = $(datadir)/java
+ jar_DATA = libgcj-@gcc_version@.jar
+ 
+-secdir = $(libdir)/security
+-propdir = $(libdir)
++secdir = $(prefix)/$(target_alias)/lib/security
++propdir = $(prefix)/$(target_alias)/lib
+ 
+ @NATIVE_TRUE@bin_PROGRAMS = @NATIVE_TRUE@jv-convert gij rmic rmiregistry
+ 
+@@ -4832,17 +4832,6 @@
+ 	done
+ 
+ install-pkgconfigDATA: $(pkgconfig_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(pkgconfigdir)
+-	@list='$(pkgconfig_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfigdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgconfigdir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfigdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkgconfigdir)/$$p; \
+-	  fi; fi; \
+-	done
+ 
+ uninstall-pkgconfigDATA:
+ 	@$(NORMAL_UNINSTALL)

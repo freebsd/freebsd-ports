@@ -1,38 +1,59 @@
---- fastjar/Makefile.in.orig	Mon Aug  4 16:58:11 2003
-+++ fastjar/Makefile.in	Mon Oct 20 11:39:45 2003
-@@ -51,7 +51,7 @@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
- INSTALL_DATA = @INSTALL_DATA@
- INSTALL_SCRIPT = @INSTALL_SCRIPT@
--transform = @program_transform_name@
-+transform = s,^,$(target_alias)-,
- 
- NORMAL_INSTALL = :
- PRE_INSTALL = :
-@@ -341,26 +341,6 @@
- 	$(DVIPS) $< -o $@
+--- fastjar/Makefile.in.orig	Tue Aug  3 17:22:01 2004
++++ fastjar/Makefile.in	Tue Aug  3 17:22:35 2004
+@@ -672,31 +672,31 @@
+ install-info: install-info-am
  
  install-info-am: $(INFO_DEPS)
 -	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(infodir)
 -	@list='$(INFO_DEPS)'; \
 -	for file in $$list; do \
--	  d=$(srcdir); \
--	  for ifile in `cd $$d && echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do \
--	    if test -f $$d/$$ifile; then \
--	      echo " $(INSTALL_DATA) $$d/$$ifile $(DESTDIR)$(infodir)/$$ifile"; \
--	      $(INSTALL_DATA) $$d/$$ifile $(DESTDIR)$(infodir)/$$ifile; \
+-	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+-	  file_i=`echo "$$file" | sed 's|\.info$$||;s|$$|.i|'`; \
+-	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
+-                       $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+-	    if test -f $$ifile; then \
+-	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
+-	      echo " $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile"; \
+-	      $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile; \
 -	    else : ; fi; \
 -	  done; \
 -	done
 -	@$(POST_INSTALL)
--	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+-	@if (install-info --version && \
+-	     install-info --version 2>&1 | sed 1q | grep -i -v debian) >/dev/null 2>&1; then \
 -	  list='$(INFO_DEPS)'; \
 -	  for file in $$list; do \
--	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
--	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+-	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
+-	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile";\
+-	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile || :;\
 -	  done; \
 -	else : ; fi
++#	@$(NORMAL_INSTALL)
++#	$(mkinstalldirs) $(DESTDIR)$(infodir)
++#	@list='$(INFO_DEPS)'; \
++#	for file in $$list; do \
++#	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
++#	  file_i=`echo "$$file" | sed 's|\.info$$||;s|$$|.i|'`; \
++#	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
++#                       $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
++#	    if test -f $$ifile; then \
++#	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++#	      echo " $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile"; \
++#	      $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile; \
++#	    else : ; fi; \
++#	  done; \
++#	done
++#	@$(POST_INSTALL)
++#	@if (install-info --version && \
++#	     install-info --version 2>&1 | sed 1q | grep -i -v debian) >/dev/null 2>&1; then \
++#	  list='$(INFO_DEPS)'; \
++#	  for file in $$list; do \
++#	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++#	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile";\
++#	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile || :;\
++#	  done; \
++#	else : ; fi
+ install-man: install-man1
  
- uninstall-info:
- 	$(PRE_UNINSTALL)
+ installcheck-am:

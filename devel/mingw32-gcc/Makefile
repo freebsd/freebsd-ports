@@ -7,7 +7,6 @@
 
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
-PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -27,17 +26,17 @@ PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
 #               It allows to use main gcc sources from other ports.
 PATCHFILES=	mingw/${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}-src.diff.gz
 # Skip patching of bohem-gc, it is bug of patch's authors
-PATCH_DIST_STRIP=	-p1 -S + -S +
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	FSF gcc-3.3 for Windows cross-development
+COMMENT=	FSF gcc-3.4 for Windows cross-development
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
-GCCVERSION=	3.3.1
-PATCHVERSION=	20030804.1
+GCCVERSION=	3.4.1
+PATCHVERSION=	20040711.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 
@@ -55,7 +54,10 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-java-gc=boehm --disable-libgcj-debug \
 		--enable-interpreter --enable-hash-synchronization \
 		--without-newlib \
-		--with-gxx-include-dir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/c++/${GCCVERSION}
+		--with-gxx-include-dir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/c++/${GCCVERSION} \
+		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info \
+		--includedir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include \
+		--datadir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1 \
@@ -66,6 +68,9 @@ MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1 \
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
+
+INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 
@@ -85,7 +90,6 @@ post-configure:
 
 post-install:
 .for F in ${BINARIES}
-	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor

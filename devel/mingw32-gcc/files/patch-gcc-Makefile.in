@@ -1,30 +1,23 @@
---- gcc/Makefile.in.orig	Sun Aug  3 19:48:36 2003
-+++ gcc/Makefile.in	Fri Oct 17 14:25:15 2003
-@@ -2900,21 +2900,12 @@
- 	  $(INSTALL_DATA) $(docdir)/gcc.1 $(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext); \
- 	  chmod a-x $(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext); \
- 	fi
--	-rm -f $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-$(INSTALL_DATA) $(docdir)/cpp.1 $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-chmod a-x $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-rm -f $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-$(INSTALL_DATA) $(docdir)/gcov.1 $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-chmod a-x $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-rm -f $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/fsf-funding.7 $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-rm -f $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/gfdl.7 $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-rm -f $(DESTDIR)$(man7dir)/gpl$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/gpl.7 $(DESTDIR)$(man7dir)/gpl$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/gpl$(man7ext)
-+	-rm -f $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-$(INSTALL_DATA) $(docdir)/cpp.1 $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-chmod a-x $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-rm -f $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
-+	-$(INSTALL_DATA) $(docdir)/gcov.1 $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
-+	-chmod a-x $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+--- gcc/Makefile.in.orig	Wed Aug  4 10:53:58 2004
++++ gcc/Makefile.in	Wed Aug  4 10:54:42 2004
+@@ -2680,7 +2680,7 @@
+ doc/gccinstall.dvi: $(TEXI_GCCINSTALL_FILES)
+ 	$(TEXI2DVI) -I $(abs_docdir) -I $(abs_docdir)/include -o $@ $<
  
- # Install the library.
- install-libgcc: libgcc.mk libgcc.a installdirs
+-MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1 doc/gfdl.7 doc/gpl.7 doc/fsf-funding.7
++MANFILES = doc/gcov.1 doc/cpp.1 doc/gcc.1
+ 
+ generated-manpages: man 
+ 
+@@ -2962,10 +2962,7 @@
+ install-man: installdirs lang.install-man \
+ 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gpl$(man7ext)
++	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+ 
+ $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7
+ 	-rm -f $@
