@@ -5623,6 +5623,7 @@ py-gdchart	ports/graphics/py-gdchart
 py-gnome	ports/x11-toolkits/py-gnome
 py-gnupg	ports/security/py-gnupg
 py-gnuplot	ports/math/py-gnuplot
+py-google	ports/net/py-google
 py-graphviz	ports/graphics/py-graphviz
 py-grouch	ports/devel/py-grouch
 py-gsl		ports/math/py-gsl
