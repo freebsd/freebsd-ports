@@ -30,6 +30,10 @@ TRUE=		/usr/bin/true
 
 MAN8=		ssmtp.8
 
+.if defined(WITH_LOGFILE)
+CONFIGURE_ARGS+=	--enable-logfile
+.endif
+
 .if !defined(WITHOUT_USERPREFS)
 CFLAGS+=	-DUSERPREFS
 pre-everything::
