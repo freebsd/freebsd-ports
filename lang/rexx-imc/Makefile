@@ -7,6 +7,7 @@
 
 PORTNAME=	rexx-imc
 PORTVERSION=	1.76
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/ \
