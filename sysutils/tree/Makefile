@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		tree.1
 

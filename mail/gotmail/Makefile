@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://ssl.usu.edu/paul/gotmail/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
