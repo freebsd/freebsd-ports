@@ -22,4 +22,6 @@ LANG_CONFIGURE_ARG=	GER
 #
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
+COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Presentationsprogramm
+
 .include "${MASTERDIR}/Makefile"
