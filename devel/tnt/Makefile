@@ -21,6 +21,7 @@ COMMENT=	Template Numerical Toolkit
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+BUILD_DEPENDS=	unzip:/usr/ports/archivers/unzip
 
 do-install:
 	${MKDIR} ${PREFIX}/include/tnt
