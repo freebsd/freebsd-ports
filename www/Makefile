@@ -176,6 +176,7 @@
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-ParallelUA
+    SUBDIR += p5-Template-Toolkit
     SUBDIR += p5-WWW-Babelfish
     SUBDIR += p5-WWW-Robot
     SUBDIR += p5-WWW-Search

@@ -1,0 +1,56 @@
+bin/tpage
+bin/ttree
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Template.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Base.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Config.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Constants.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Context.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Context.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Directive.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Document.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Document.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Exception.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Filters.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Filters.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Grammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Iterator.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Parser.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Autoformat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/CGI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Datafile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Dumper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Format.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/URL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/DOM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/RSS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML/XPath.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugins.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Plugins.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Provider.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Provider.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Service.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Service.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Stash.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Stash.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/Template/Test.pod
+lib/perl5/site_perl/%%PERL_VER%%/Template/Tutorial.pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template/Plugin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Template
