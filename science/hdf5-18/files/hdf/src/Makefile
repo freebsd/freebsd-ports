@@ -49,8 +49,8 @@ afterinstall:
 		glist.h  hbitio.h  hchunks.h  hcomp.h  hcompi.h  hconv.h \
 		hdf.h hdfi.h  herr.h hfile.h hkit.h  hlimits.h hntdefs.h \
 		hproto.h hqueue.h htags.h linklist.h maldebug.h mcache.h \
-		mfan.h mfgr.h mstdio.h patchlevel.h sys_dir_mac.h tbbt.h \
-		trace.h vattr.h vg.h vgint.h hdf.inc dffunc.inc \
+		mfan.h mfgr.h mstdio.h sys_dir_mac.h tbbt.h trace.h \
+		vattr.h vg.h vgint.h hdf.inc dffunc.inc \
 			${PREFIX}/include
 
 .include <bsd.lib.mk>
