@@ -3,10 +3,10 @@
 # Date created:		06 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.2 1994/11/11 01:49:26 gpalmer Exp $
+# $Id: Makefile,v 1.3 1994/12/15 05:38:19 gpalmer Exp $
 #
 
-DISTNAME=	qpop2.1.3
+DISTNAME=	qpop2.1.3-r5
 MASTER_SITES=	ftp://ftp.qualcomm.com/quest/unix/servers/popper/
 EXTRACT_SUFX=	.tar.Z
 WRKSRC=		${WRKDIR}/qpopper2.1.3
