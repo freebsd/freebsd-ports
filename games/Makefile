@@ -245,6 +245,7 @@
     SUBDIR += jtans
     SUBDIR += jumpnbump
     SUBDIR += jzip
+    SUBDIR += kaid
     SUBDIR += kanatest
     SUBDIR += kbilliards
     SUBDIR += kcheckers

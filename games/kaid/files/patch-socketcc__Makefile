@@ -1,0 +1,71 @@
+--- socketcc/Makefile.orig	Fri Dec 31 06:52:56 2004
++++ socketcc/Makefile	Thu Mar 10 12:40:39 2005
+@@ -51,7 +51,7 @@
+ LIB_DIR     = /usr/lib
+ HEAD_DIR    = /usr/include
+ LIB_HEADERS = socketcc.h
+-PLATFORM    = macosx_jaguar
++PLATFORM    = freebsd
+ PRE_CFLAGS  = -DPLATFORM_$(PLATFORM)
+ #OPENWRT		= /home/luis/devel/Kai/buildroot/build_mipsel/staging_dir
+ 
+@@ -82,7 +82,7 @@
+ LDFLAGS    = -L../pthreadcc/src -lpthreadcc -shared
+ else
+ CC         = g++
+-CFLAGS     = -I$/usr/include -I../pthreadcc/src -Wall -O2 -fPIC
++CFLAGS     = -I$/usr/include -I../pthreadcc/src -Wall -O2
+ LD		   = g++
+ LDFLAGS    = -lpthreadcc -shared -Wl,-soname,$(LIB_SONAME)
+ endif
+@@ -98,7 +98,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), freebsd)
+ CC         = g++
+-CFLAGS     = -I/usr/include -I/usr/local/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = $(SYSTEM_CFLAGS) -I../pthreadcc/src
+ LIB_NAME   = libsocketcc.so
+ LIB_SONAME = $(LIB_NAME).$(MAJ_VER)
+ LIB_TARGET = $(LIB_SONAME).$(MIN_VER)
+@@ -113,7 +113,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), solaris)
+ CC         = cc
+-CFLAGS     = -I$/usr/include -XO2 -KPIC
++CFLAGS     = -I$/usr/include -XO2
+ LIB_NAME   = libsocketcc.so
+ LIB_SONAME = $(LIB_NAME).$(MAJ_VER)
+ LIB_TARGET = $(LIB_SONAME).$(MIN_VER)
+@@ -128,7 +128,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), macosx_1)
+ CC         = c++
+-CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2
+ LIB_NAME   = libsocketcc.dylib
+ LIB_SONAME = libsocketcc.$(MAJ_VER).dylib
+ LIB_TARGET = libsocketcc.$(MAJ_VER).$(MIN_VER).dylib
+@@ -143,7 +143,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), macosx_jaguar)
+ CC         = g++
+-CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2
+ LIB_NAME   = libsocketcc.dylib
+ LIB_SONAME = libsocketcc.$(MAJ_VER).dylib
+ LIB_TARGET = libsocketcc.$(MAJ_VER).$(MIN_VER).dylib
+@@ -181,10 +181,12 @@
+ # make all and make library perform the same task of resolving to making the   #
+ # target libary file.                                                          #
+ ################################################################################
+-all:				library
+-	@echo Run \'make install\' to use this library with other projects...
++all:				static
++
++static:				pre-compile-info objects
+ 
+ library:			pre-compile-info $(LIB_TARGET)
++	@echo Run \'make install\' to use this library with other projects...
+ 
+ ################################################################################
+ # make pre-compile-info echos pre-compilation information to the screen.       #

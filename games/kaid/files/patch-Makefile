@@ -1,0 +1,101 @@
+--- Makefile	Thu Feb  3 12:22:35 2005
+--- Makefile	Sun Feb 27 12:24:50 2005
+@@ -4,16 +4,16 @@
+ #
+ #
+ VERSION		= 7.0.0.4
+-ARCH		= x86
+-PLATFORM    = macosx_jaguar
++PLATFORM    = freebsd
+ #OPENWRT		= /home/luis/devel/Kai/buildroot/build_mipsel/staging_dir
+ #OPENWRT			= /home/luis/devel/buildroot/build_mipsel/staging_dir
+ #CC=i386-uclibc-linux-gcc 
+ #CXX=i386-linux-g++-3.4
++#PREFIX=
+ IPKG		= /home/luis/devel/Kai/ipkg
+ PRE_CFLAGS  = -D_REENTRANT -DPLATFORM_$(PLATFORM) -DVERSION=\"$(VERSION)\"
+ #STATIC		= -static
+-CFLAGS		= $(PRE_CFLAGS) -g -Wall -Ipthreadcc/src -Isocketcc/src -Ilibpcap $(STATIC)
++CFLAGS		= $(SYSTEM_CFLAGS) $(PRE_CFLAGS) -g -Wall -Ipthreadcc/src -Isocketcc/src -Ilibpcap $(STATIC) -DCONFIG_FILE="\"$(PREFIX)/etc/kaid.conf\""
+ ifneq ($(strip $(OPENWRT)),)
+ #PRE_CFLAGS	+= -nostdinc
+ PRE_CFLAGS	+= -DOPENWRT -static
+@@ -30,6 +30,16 @@
+ CXXFLAGS	+= $(CFLAGS)
+ PWD			= /home/luis/devel/Kai/kaid
+ 
++ifeq ($(strip $(PLATFORM)),macosx_jaguar)
++BSD		= true
++endif
++ifeq ($(strip $(PLATFORM)),freebsd)
++BSD		= true
++endif
++ifdef BSD
++PRE_CFLAGS  += -DPLATFORM_bsd
++endif
++
+ PCAP		= libpcap/pcap.o \
+ libpcap/inet.o \
+ libpcap/gencode.o \
+@@ -41,7 +51,7 @@
+ libpcap/grammar.o \
+ libpcap/scanner.o
+ 
+-ifeq ($(strip $(PLATFORM)),macosx_jaguar)
++ifdef BSD
+ PCAP	+= libpcap/pcap-bpf.o
+ else
+ PCAP	+= libpcap/pcap-linux.o
+@@ -63,7 +73,12 @@
+ PTCC		= pthreadcc/obj/*.o
+ SOCC		= socketcc/obj/*.o
+ 
++ifeq ($(strip $(PLATFORM)),freebsd)
++LIBS		= -pthread -lutil
++else
+ LIBS		= -lpthread
++endif
++
+ SRCS		= Api.cc \
+ ConfigFile.cc \
+ KaiDaemon.cc \
+@@ -108,9 +123,25 @@
+ 
+ all: kaid
+ 
++ifeq ($(strip $(PLATFORM)),freebsd)
++libpcap:
++	${MAKE} -C libpcap all
++
++pthreadcc:
++	${MAKE} -C pthreadcc all
++
++socketcc:
++	${MAKE} -C socketcc all
++
++install:
++.PHONY: libpcap pthreadcc socketcc install
++
++kaid: libpcap pthreadcc socketcc ${OBJS}
++else
+ kaid: ${OBJS}
++endif
+ 	@echo -n "Linking... "
+-	${CXX} ${CFLAGS} ${LDFLAGS} -o $@ $^ ${PCAP} ${PTCC} ${SOCC} ${LIBS}
++	${CXX} ${CFLAGS} ${LDFLAGS} -o $@ ${OBJS} ${PCAP} ${PTCC} ${SOCC} ${LIBS}
+ 	@echo "Done!"
+ 
+ GENDEPS=${CXX} ${CXXFLAGS} -MM -o $@ $<
+@@ -161,9 +192,9 @@
+ 	@echo "Cleaning binary and dist files..."
+ 	@rm -rf dist/
+ 	@rm -f ${OBJS} ${DEPS} kaid *~ *.o
+-	make -C libpcap clean
+-	make -C pthreadcc clean
+-	make -C socketcc clean
++	${MAKE} -C libpcap clean
++	${MAKE} -C pthreadcc clean
++	${MAKE} -C socketcc clean
+ 
+ REL=1
+ BUILDDIR=/tmp/kaid-dist
