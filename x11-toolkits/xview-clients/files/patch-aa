@@ -1,0 +1,355 @@
+diff -rc ../old/xview3.2p1-X11R6/clients/cmdtool/cmdtool.c cmdtool/cmdtool.c
+*** ../old/xview3.2p1-X11R6/clients/cmdtool/cmdtool.c	Tue Jun 29 01:12:08 1993
+--- cmdtool/cmdtool.c	Sun Nov 20 13:38:56 1994
+***************
+*** 123,129 ****
+  	int     cmdline_count = 0;
+  	char	cmdline2[50];
+  	Server_image  cmd_pixmap, cmd_mask_pixmap;
+- 
+  	
+  #ifdef GPROF
+  	if (argc > 1 && strcmp(argv[argc-1], "-gprof") == 0) {
+--- 123,128 ----
+***************
+*** 141,146 ****
+--- 140,147 ----
+  #endif	
+  	
+  	/* This is required to initialize correctly */	
++ 
++ 
+  	xv_init(XV_INIT_ARGC_PTR_ARGV, &argc, argv, 
+  		XV_USE_LOCALE, TRUE, 0);
+  
+***************
+*** 286,291 ****
+--- 287,293 ----
+  		strcat( cmdline2, argv[0] );
+  		argv[0]	= cmdline2;
+  	}
++ 
+  
+  	/* If FRAME_LABEL wasn't set by cmdline argument, set it */
+  	if ((tmp_label1 = (char *)xv_get(base_frame, FRAME_LABEL)) == NULL) {
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c olwm/cmdstream.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/cmdstream.c	Tue Jun 29 01:11:43 1993
+--- olwm/cmdstream.c	Sun Nov 20 13:38:56 1994
+***************
+*** 51,60 ****
+   *      Local Forward Declarations
+   * ---------------------------------------------------------------------*/
+  
+! Command		*MatchCommand();
+! CmdAttr		*MatchAttr();
+! int		EncodeAttrValue();
+! int		DecodeAttrValue();
+  
+  /* ----------------------------------------------------------------------
+   *      SetCmdStream
+--- 51,60 ----
+   *      Local Forward Declarations
+   * ---------------------------------------------------------------------*/
+  
+! static Command		*MatchCommand();
+! static CmdAttr		*MatchAttr();
+! static int		EncodeAttrValue();
+! static int		DecodeAttrValue();
+  
+  /* ----------------------------------------------------------------------
+   *      SetCmdStream
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/defaults.c olwm/defaults.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/defaults.c	Tue Jun 29 01:11:43 1993
+--- olwm/defaults.c	Sun Nov 20 13:38:56 1994
+***************
+*** 80,86 ****
+--- 80,90 ----
+  	if (homedir != NULL) {
+  	    (void) strcpy(filename, homedir);
+  	    (void) strcat(filename, "/.Xdefaults-");
++ #if (defined(BSD) && (BSD >= 199103))
++ 	    if (0 == gethostname(hostname, sizeof(hostname))) {
++ #else
+  	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
++ #endif
+  		(void) strcat(filename, hostname);
+  		fileDB = XrmGetFileDatabase(filename);
+  	    }
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/gettext.h olwm/gettext.h
+*** ../old/xview3.2p1-X11R6/clients/olwm/gettext.h	Tue Jun 29 01:11:46 1993
+--- olwm/gettext.h	Sun Nov 20 13:38:57 1994
+***************
+*** 27,33 ****
+  #include <stdio.h>
+  #include <sys/types.h>
+  #include <sys/param.h>
+!  
+  struct domain_binding {
+      char    *domain_name;
+      char    *binding;
+--- 27,37 ----
+  #include <stdio.h>
+  #include <sys/types.h>
+  #include <sys/param.h>
+! 
+! #ifndef LC_MESSAGES
+! #define LC_MESSAGES 0
+! #endif
+! 
+  struct domain_binding {
+      char    *domain_name;
+      char    *binding;
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/i18n.h olwm/i18n.h
+*** ../old/xview3.2p1-X11R6/clients/olwm/i18n.h	Tue Jun 29 01:11:48 1993
+--- olwm/i18n.h	Sun Nov 20 13:38:57 1994
+***************
+*** 35,40 ****
+--- 35,44 ----
+  
+  #endif /* OW_I18N_L4 */
+  
++ #ifndef LC_MESSAGES
++ #define LC_MESSAGES 0
++ #endif
++ 
+  /*
+   *	String/Text - To better handle non-i18n, Level3 and Level4
+   *	we introduce two 'types'; string and text.
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/mem.c olwm/mem.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/mem.c	Tue Jun 29 01:11:45 1993
+--- olwm/mem.c	Sun Nov 20 13:38:57 1994
+***************
+*** 14,21 ****
+   *
+   */
+  
+! 
+  #include <malloc.h>
+  #include <memory.h>
+  #include <stdio.h>
+  #include <sys/types.h>
+--- 14,25 ----
+   *
+   */
+  
+! #include <sys/param.h>
+! #if (defined(BSD) && (BSD >= 199103))
+! #include <stdlib.h>
+! #else
+  #include <malloc.h>
++ #endif
+  #include <memory.h>
+  #include <stdio.h>
+  #include <sys/types.h>
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/menu.c olwm/menu.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/menu.c	Tue Jun 29 01:11:50 1993
+--- olwm/menu.c	Sun Nov 20 13:38:57 1994
+***************
+*** 52,57 ****
+--- 52,59 ----
+  static WinGeneric *prevColorFocusWindow = NULL;
+  static MenuTrackMode menuTrackMode;
+  
++ static Bool isEnabled();
++ 
+  /*
+   * Table of currently active menus.
+   * REMIND: perhaps this should be dynamically allocated.
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/olwm.c olwm/olwm.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/olwm.c	Tue Jun 29 01:11:52 1993
+--- olwm/olwm.c	Sun Nov 20 13:38:57 1994
+***************
+*** 23,28 ****
+--- 23,32 ----
+  #include <sys/stat.h>
+  #include <sys/wait.h>
+  
++ #ifndef MAXPID
++ #define MAXPID 30000
++ #endif
++ 
+  #include <X11/Xos.h>
+  #include <X11/Xlib.h>
+  #include <X11/Xutil.h>
+***************
+*** 622,634 ****
+  void
+  ReapChildren()
+  {
+! #ifdef SYSV
+          pid_t pid;
+          int status;
+  #else
+  	int oldmask;
+  	int pid;
+  	union wait status;
+  #endif
+  
+  	if (!deadChildren)
+--- 626,644 ----
+  void
+  ReapChildren()
+  {
+! #if defined(SYSV)
+          pid_t pid;
+          int status;
+  #else
++ #if (defined(BSD) && (BSD >= 199103))
++ 	pid_t pid;
++ 	int status;
++ 	int oldmask;
++ #else   
+  	int oldmask;
+  	int pid;
+  	union wait status;
++ #endif
+  #endif
+  
+  	if (!deadChildren)
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/screen.c olwm/screen.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/screen.c	Tue Jun 29 01:11:56 1993
+--- olwm/screen.c	Sun Nov 20 13:38:58 1994
+***************
+*** 111,116 ****
+--- 111,122 ----
+  static XrmQuark stippledRubberBandsCQ;
+  static XrmQuark stippledRubberBandsIQ;
+  
++ static updateScreenWorkspaceColor();
++ static updateScreenWindowColor();
++ static updateScreenForegroundColor();
++ static updateScreenBackgroundColor();
++ static updateScreenBorderColor();
++ static updateScreenGlyphFont();
+  
+  /*-------------------------------------------------------------------------
+   *	Local Functions
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/slave.c olwm/slave.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/slave.c	Tue Jun 29 01:11:57 1993
+--- olwm/slave.c	Sun Nov 20 13:38:58 1994
+***************
+*** 22,27 ****
+--- 22,29 ----
+  #include <signal.h>
+  #include <stdio.h>
+  
++ #include <sys/param.h>
++ 
+  #include "cmdstream.h"
+  #include "error.h"
+  
+diff -rc ../old/xview3.2p1-X11R6/clients/olwm/winicon.c olwm/winicon.c
+*** ../old/xview3.2p1-X11R6/clients/olwm/winicon.c	Tue Jun 29 01:12:04 1993
+--- olwm/winicon.c	Sun Nov 20 13:38:58 1994
+***************
+*** 32,37 ****
+--- 32,41 ----
+  extern 	Bool	PropGetWMName();
+  extern 	Bool	PropGetWMIconName();
+  
++ static int heightTopIcon();
++ static int heightBottomIcon();
++ static int widthBothIcon();
++ 
+  /***************************************************************************
+  * private data
+  ***************************************************************************/
+diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/Imakefile olwmslave/Imakefile
+*** ../old/xview3.2p1-X11R6/clients/olwmslave/Imakefile	Tue Jun 29 01:12:14 1993
+--- olwmslave/Imakefile	Sun Nov 20 13:38:58 1994
+***************
+*** 38,55 ****
+          mem.c \
+          olwmslave.c \
+          propsrecv.c \
+!         propswin.c
+  
+  
+  OBJS = 	\
+          cmdstream.o \
+          help_file.o \
+!         helprecv.o \ 
+          helpwin.o \
+          mem.o \
+          olwmslave.o \
+          propsrecv.o \
+!         propswin.o
+  
+  
+  ALLFILES = \
+--- 38,55 ----
+          mem.c \
+          olwmslave.c \
+          propsrecv.c \
+!         propswin.c ${GETTEXT.C}
+  
+  
+  OBJS = 	\
+          cmdstream.o \
+          help_file.o \
+!         helprecv.o \
+          helpwin.o \
+          mem.o \
+          olwmslave.o \
+          propsrecv.o \
+!         propswin.o ${GETTEXT.O}
+  
+  
+  ALLFILES = \
+diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/cmdstream.c olwmslave/cmdstream.c
+*** ../old/xview3.2p1-X11R6/clients/olwmslave/cmdstream.c	Tue Jun 29 01:12:10 1993
+--- olwmslave/cmdstream.c	Sun Nov 20 13:38:58 1994
+***************
+*** 50,59 ****
+   *      Local Forward Declarations
+   * ---------------------------------------------------------------------*/
+  
+! Command		*MatchCommand();
+! CmdAttr		*MatchAttr();
+! int		EncodeAttrValue();
+! int		DecodeAttrValue();
+  
+  /* ----------------------------------------------------------------------
+   *      SetCmdStream
+--- 50,59 ----
+   *      Local Forward Declarations
+   * ---------------------------------------------------------------------*/
+  
+! static Command		*MatchCommand();
+! static CmdAttr		*MatchAttr();
+! static int		EncodeAttrValue();
+! static int		DecodeAttrValue();
+  
+  /* ----------------------------------------------------------------------
+   *      SetCmdStream
+diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/helpwin.c olwmslave/helpwin.c
+*** ../old/xview3.2p1-X11R6/clients/olwmslave/helpwin.c	Tue Jun 29 01:12:11 1993
+--- olwmslave/helpwin.c	Sun Nov 20 13:38:58 1994
+***************
+*** 136,141 ****
+--- 136,142 ----
+  Bool		ImageHelpWindow();
+  void		MoreHelp();
+  void		ErrorNotice();
++ static int	ConstrainMousePos();
+  
+  /* ----------------------------------------------------------------------
+   *	ShowHelpWindow
+diff -rc ../old/xview3.2p1-X11R6/clients/olwmslave/mem.c olwmslave/mem.c
+*** ../old/xview3.2p1-X11R6/clients/olwmslave/mem.c	Tue Jun 29 01:12:12 1993
+--- olwmslave/mem.c	Sun Nov 20 13:38:58 1994
+***************
+*** 16,22 ****
+--- 16,27 ----
+   *
+   */
+  
++ #include <sys/param.h>
++ #if (defined(BSD) && (BSD >= 199103))
++ #include <stdlib.h>
++ #else
+  #include <malloc.h>
++ #endif
+  #include <memory.h>
+  #include <stdio.h>
+  #include <sys/types.h>
