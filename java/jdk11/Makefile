@@ -8,8 +8,8 @@
 
 DISTNAME=	jdk-${JDK_VERSION}
 CATEGORIES=	java devel
-#MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
-MASTER_SITES=		http://www.freebsd.org/java/
+MASTER_SITES=	ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
+		http://www.freebsd.org/java/
 
 MAINTAINER=	nate@freebsd.org
 
@@ -25,9 +25,9 @@ NO_BUILD=       yes
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-DISTFILES=	jdk${JDK_VERSION}_AOUT.V99-7-19.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_AOUT.V99-9-22.tar.gz
 .else
-DISTFILES=	jdk${JDK_VERSION}_ELF.V99-7-19.tar.gz
+DISTFILES=	jdk${JDK_VERSION}_ELF.V99-9-22.tar.gz
 .endif
 
 do-install:
