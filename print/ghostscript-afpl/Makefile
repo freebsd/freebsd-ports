@@ -61,7 +61,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
 		XCFLAGS="${XCFLAGS}"
-PLIST_SUB=	GS_VERSION="${GS_VERSION}"
+PLIST_SUB=	GS_VERSION="${GS_VERSION}" \
+		CIDFONTDIR=${CIDFONTDIR}
 
 SCRIPTS_ENV=	GS_DRIVERS_LIST="${GS_DRIVERS_LIST}" \
 		WITHOUT_X11="${WITHOUT_X11}" \
@@ -113,6 +114,7 @@ PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
+CIDFONTDIR=	${PREFIX}/share/ghostscript/${GS_VERSION}/Resource
 
 # Additional Drivers:
 
@@ -439,6 +441,7 @@ pre-su-install:
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
+	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
 	${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx

@@ -407,6 +407,8 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/wrfont.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/xlatmap
 %%DATADIR%%/%%GS_VERSION%%/lib/zeroline.ps
+@exec ln -s -f %D/share/fonts/CIDFont %%CIDFONTDIR%%/CIDFont
+@unexec rm -f %%CIDFONTDIR%%/CIDFont
 @dirrm %%DATADIR%%/%%GS_VERSION%%/lib
 @dirrm %%DATADIR%%/%%GS_VERSION%%/examples
 @dirrm %%DATADIR%%/%%GS_VERSION%%/doc
