@@ -1,6 +1,5 @@
-diff -ru ../../work/release/fxemu.h ./fxemu.h
---- ../../work/release/fxemu.h	Thu Sep 23 19:56:48 1999
-+++ ./fxemu.h	Wed Dec 29 01:54:04 1999
+--- fxemu.h.orig	Mon Jan 24 16:13:54 2000
++++ fxemu.h	Wed Mar  8 23:04:52 2000
 @@ -39,18 +39,7 @@
  #ifndef _FXEMU_H_
  #define _FXEMU_H_ 1
@@ -11,7 +10,7 @@ diff -ru ../../work/release/fxemu.h ./fxemu.h
 -
 -typedef unsigned char uint8;
 -typedef unsigned short uint16;
--typedef unsigned long uint32;
+-typedef unsigned int uint32;
 -typedef unsigned char bool8;
 -typedef signed char int8;
 -typedef short int16;
