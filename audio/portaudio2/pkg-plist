@@ -25,3 +25,4 @@ include/portaudio.h
 lib/libportaudio.a
 lib/libportaudio.so
 lib/libportaudio.so.0.0.18
+lib/libportaudio.so.%%SHLIB_VERSION%%
