@@ -1,0 +1,9 @@
+share/gnome/themes/Alloy-C/metacity-1/button-base.png
+share/gnome/themes/Alloy-C/metacity-1/button-shine.png
+share/gnome/themes/Alloy-C/metacity-1/close.png
+share/gnome/themes/Alloy-C/metacity-1/maximize.png
+share/gnome/themes/Alloy-C/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Alloy-C/metacity-1/minimize.png
+share/gnome/themes/Alloy-C/metacity-1/stripes.png
+@dirrm share/gnome/themes/Alloy-C/metacity-1
+@unexec /bin/rmdir %D/share/gnome/themes/Alloy-C 2>/dev/null || /usr/bin/true
