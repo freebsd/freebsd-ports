@@ -14,6 +14,7 @@ lib/X11/qvwm/system.qvwmrc
 lib/X11/qvwm/kanji.qvwmrc
 share/doc/qvwm/BUGS.en
 share/doc/qvwm/CHANGES.en
+share/doc/qvwm/FAQ.en
 share/doc/qvwm/INSTALL.en
 share/doc/qvwm/README.en
 share/doc/qvwm/TODO.en
