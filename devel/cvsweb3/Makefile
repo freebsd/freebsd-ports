@@ -19,8 +19,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 # This version of cvsweb is Zeller's version + knu's enhancements.
-REV_ZELLER=	1.106
-REV_KNU=	1.74
+REV_ZELLER=	1.110
+REV_KNU=	1.78
 
 # Specify where your repository belongs.
 # (You can reconfigure it after installation anyway)
