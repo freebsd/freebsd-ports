@@ -42,6 +42,7 @@
     SUBDIR += balance
     SUBDIR += bandwidthd
     SUBDIR += bbsnet
+    SUBDIR += beacon-server
     SUBDIR += bfilter
     SUBDIR += bgpq
     SUBDIR += bing
