@@ -1,0 +1,11 @@
+--- charset.h.orig	Tue Mar  6 00:03:04 2001
++++ charset.h	Tue Mar  6 00:04:22 2001
+@@ -19,7 +19,7 @@
+ #ifndef _CHARSET_H
+ #define _CHARSET_H
+ 
+-#include <iconv.h>
++#include <giconv.h>
+ 
+ int mutt_convert_string (char **, const char *, const char *, int);
+ void mutt_sanitize_ja_chars (char *, size_t, int);

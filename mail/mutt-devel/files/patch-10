@@ -1,0 +1,11 @@
+--- rfc2047.c.orig	Sun Feb  4 21:04:05 2001
++++ rfc2047.c	Sun Feb  4 21:08:22 2001
+@@ -24,7 +24,7 @@
+ 
+ #include <ctype.h>
+ #include <errno.h>
+-#include <iconv.h>
++#include <giconv.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

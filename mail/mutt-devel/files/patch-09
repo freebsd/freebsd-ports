@@ -1,0 +1,11 @@
+--- gnupgparse.c.orig	Tue Jan  9 07:21:51 2001
++++ gnupgparse.c	Sun Feb  4 21:07:30 2001
+@@ -44,7 +44,7 @@
+ #include "mutt.h"
+ #include "pgp.h"
+ #include "charset.h"
+-#include "iconv.h"
++#include "giconv.h"
+ 
+ /* for hexval */
+ #include "mime.h"
