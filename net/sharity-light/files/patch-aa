@@ -1,0 +1,18 @@
+--- nfs/Makefile.orig	Sat Jul 24 23:05:05 1999
++++ nfs/Makefile	Sat Jul 24 23:05:17 1999
+@@ -16,13 +16,13 @@
+ 
+ all: nfs.o
+ 
+-COMPILE = $(CC) $(ARCH) -c $(INCLUDES) $(CFLAGS)
++COMPILE = $(CC) -c $(INCLUDES) $(CFLAGS)
+ 
+ .c.o:
+ 	$(COMPILE) $<
+ 
+ nfs.o: $(OFILES)
+-	$(LD) $(ARCH) -r -o $@ $(OFILES)
++	$(LD) -r -o $@ $(OFILES)
+ 
+ # the purpose of the sed "s/char data/long long data/" hack is to ensure
+ # proper alignment. [Marc Boucher <marc@CAM.ORG>]
