@@ -3,11 +3,11 @@
 # Date created:		12 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/09 10:18:37 dburr Exp $
 #
 
 DISTNAME=	ucspi-tcp-0.80
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils net
 MASTER_SITES=   ftp://koobera.math.uic.edu/www/software/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
