@@ -1,4 +1,20 @@
 bin/qstat
 %%PORTDOCS%%share/doc/qstat/qstat.txt
 %%PORTDOCS%%share/doc/qstat/qstatdoc.html
+%%PORTDOCS%%share/doc/qstat/template/README.txt
+%%PORTDOCS%%share/doc/qstat/template/broc.lst
+%%PORTDOCS%%share/doc/qstat/template/brocTh.html
+%%PORTDOCS%%share/doc/qstat/template/brocTp.html
+%%PORTDOCS%%share/doc/qstat/template/brocTs.html
+%%PORTDOCS%%share/doc/qstat/template/brocTt.html
+%%PORTDOCS%%share/doc/qstat/template/tribes2th.html
+%%PORTDOCS%%share/doc/qstat/template/tribes2tp.html
+%%PORTDOCS%%share/doc/qstat/template/tribes2ts.html
+%%PORTDOCS%%share/doc/qstat/template/tribes2tt.html
+%%PORTDOCS%%share/doc/qstat/template/unreal.lst
+%%PORTDOCS%%share/doc/qstat/template/unrealTh.html
+%%PORTDOCS%%share/doc/qstat/template/unrealTp.html
+%%PORTDOCS%%share/doc/qstat/template/unrealTs.html
+%%PORTDOCS%%share/doc/qstat/template/unrealTt.html
+%%PORTDOCS%%@dirrm share/doc/qstat/template
 %%PORTDOCS%%@dirrm share/doc/qstat

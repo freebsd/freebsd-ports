@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.4.c
+PORTVERSION=	2.4.d
 CATEGORIES=	games net
 MASTER_SITES=	http://www.qstat.org/
 DISTNAME=	qstat${PORTVERSION:S/.//g}
@@ -14,14 +14,17 @@ DISTNAME=	qstat${PORTVERSION:S/.//g}
 MAINTAINER=	pat@databits.net
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/qstat ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Installing documents in ${PREFIX}/share/doc/qstat"
+	@${ECHO_MSG} "Installing documents and templates in: \
+		${DOCSDIR}"
 	@${ECHO_MSG} ""
-	${MKDIR} ${PREFIX}/share/doc/qstat
-	${INSTALL_DATA} ${WRKSRC}/qstat.txt ${PREFIX}/share/doc/qstat
-	${INSTALL_DATA} ${WRKSRC}/qstatdoc.html ${PREFIX}/share/doc/qstat
+	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/template
+	@${INSTALL_DATA} ${WRKSRC}/qstat.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/qstatdoc.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/template/* ${DOCSDIR}/template
 .endif
 
 .include <bsd.port.mk>
