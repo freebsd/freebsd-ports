@@ -32,8 +32,8 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x"
+.if ${OSVERSION} >= 600000 || ${ARCH} != "i386"
+BROKEN=		"Broken pkg-plist on FreeBSD >= 6.x and on !i386"
 .endif
 
 post-install:
