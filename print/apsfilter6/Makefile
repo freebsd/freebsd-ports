@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	apsfilter-5.1.4
+DISTNAME=	apsfilter-5.1.5
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/apsfilter/download/
 
