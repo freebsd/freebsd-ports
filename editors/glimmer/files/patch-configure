@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure	2001/07/02 06:14:02	1.1
++++ configure	2001/07/02 06:14:16
+@@ -4731,7 +4731,7 @@
+ if test "$python" = yes; then
+   echo Python version.....$PY_VERSION
+ fi
+-echo GTK+ version.......`gtk-config --version`
++echo GTK+ version.......`$GTK_CONFIG --version`
+ echo GNOME version......`gnome-config --version`
+ echo
+ echo
