@@ -1,6 +1,4 @@
-lib/libmcrypt.a
-lib/libmcrypt.la
-lib/libmcrypt-2.2.so.2
-lib/libmcrypt-2.2.so
-lib/libmcrypt.so
 include/mcrypt.h
+lib/libmcrypt.a
+lib/libmcrypt.so
+lib/libmcrypt.so.2

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/old/ \
 MAINTAINER=	nsayer@freebsd.org
 
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--disable-posix-threads
 
 MAN3=		mcrypt.3
