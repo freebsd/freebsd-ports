@@ -9,7 +9,7 @@ PORTNAME=	eruby
 PORTVERSION=	${VERSION}
 PORTREVISION=	1
 CATEGORIES=	textproc www ruby
-MASTER_SITES=	http://www.ruby-lang.org/~shugo/eruby/
+MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
