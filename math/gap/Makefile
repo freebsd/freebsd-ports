@@ -8,15 +8,15 @@
 PORTNAME=	gap
 PORTVERSION=	4.4.4
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/
-DISTFILES=	gap4r4p4.tar.bz2 xtom1r1.tar.bz2 \
-		packages-2004_12_07-12_33_UTC.tar.bz2
+MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/:new \
+		ftp://ftp.gap-system.org/pub/gap/gap4/old/:old
+DISTFILES=	packages-2004_12_07-12_33_UTC.tar.bz2:old \
+		gap4r4p4.tar.bz2:new \
+		xtom1r1.tar.bz2:new
 DIST_SUBDIR=	gap
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	GAP is a system for computational discrete algebra
-
-BROKEN=		Unfetchable
 
 .include <bsd.port.pre.mk>
 
