@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1998/12/13 08:49:13 asami Exp $
+# $Id: Makefile,v 1.16 1998/12/19 07:27:37 cwt Exp $
 #
 
 DISTNAME=	tk8.0.4
@@ -11,7 +11,7 @@ PKGNAME=	tk-8.0.4
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
-MAINTAINER=	jkh@Freebsd.ORG
+MAINTAINER=	cwt@Freebsd.ORG
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 
