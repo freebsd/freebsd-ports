@@ -5,10 +5,7 @@ lib/netscape/netscape.bin
 lib/netscape/mailcap
 lib/netscape/movemail
 lib/netscape/bookmark.htm
-lib/netscape/vreg
-lib/netscape/registry
 lib/netscape/Netscape.ad
-lib/netscape/moz40p3
 lib/netscape/java/classes/ifc11.jar
 lib/netscape/java/classes/iiop10.jar
 lib/netscape/java/classes/jae40.jar
@@ -113,5 +110,7 @@ lib/netscape/nethelp/netscape/shared/navIcon.gif
 lib/netscape/nethelp/netscape/shared/netIcon.gif
 lib/netscape/nethelp/netscape/shared/Contents.htm
 lib/netscape/nethelp/netscape/shared/NetHelp1.css
+lib/netscape/nethelp/netscape/nscal/index.html
 lib/netscape/spell/netscape.dic
 lib/netscape/spell/pen4s324.dat
+lib/netscape/vreg
