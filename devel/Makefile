@@ -167,6 +167,7 @@
     SUBDIR += eieio-emacs20
     SUBDIR += elf
     SUBDIR += elfio
+    SUBDIR += elfsh
     SUBDIR += elftoaout
     SUBDIR += elib
     SUBDIR += elib-emacs19

@@ -1,0 +1,13 @@
+For impatient people, this is a short list for libelfsh's already 
+provided features: Mass file view with nice output and cross 
+references, unlink/relink the file, modify sections and program 
+header parameter fields, hijack GOT, CTORS, DTORS, modify the symbol 
+table, inject and remove symbols, inject sections, remove SHT, 
+support binaries without symtab, reconstruct the SHT. Look at 
+libelfsh-ref.txt for current libelfsh reference. elfsh offers an 
+attractive interface to libelfsh.
+
+WWW: http://www.devhell.org/~mayhem/projects/elfsh/
+
+- Samy Al Bahra
+samy@kerneled.com
