@@ -1,0 +1,19 @@
+--- ../tnm/ntping/ntping.c	Thu Sep 19 10:59:13 1996
++++ ../tnm/ntping/ntping.c	Thu Mar  6 17:32:03 1997
+@@ -749,7 +749,15 @@
+ 	  return;
+       }
+ 
+-    dprintf (stderr, "* .. got host %s .. ", job->hname);
++    dprintf (stderr, "* .. got host %s .. %x %x ", job->hname,
++	sfrom.sin_addr.s_addr, job->sa.sin_addr.s_addr );
++
++    if ( type == ping && sfrom.sin_addr.s_addr != job->sa.sin_addr.s_addr) 
++      {
++          dprintf (stderr, "* non-matching IP# was: %x should be:%x.\n",
++	  sfrom.sin_addr.s_addr, job->sa.sin_addr.s_addr );
++          return;
++      }
+     
+     switch (type) 
+       {
