@@ -7,7 +7,7 @@
 
 PORTNAME=	admuser
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://web.onda.com.br/orso/
 
@@ -15,12 +15,14 @@ MAINTAINER=	jmelo@freebsdbrasil.com.br
 COMMENT=	Handle your Squid or Web users and passwords using your browser
 
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \
 		--enable-language=English \
 		--enable-cgidir=${PREFIX}/www/cgi-bin \
 
-BROKEN=		"Install fails"
+pre-install:
+	@${MKDIR} ${PREFIX}/www/cgi-bin
+
+#BROKEN=		"Install fails"
 
 .include <bsd.port.mk>
