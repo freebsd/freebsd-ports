@@ -1,9 +1,9 @@
-bin/satixwish4.1.7.5
-bin/tixwish4.1.7.5
+bin/satixwish4.1.7.6
+bin/tixwish4.1.7.6
 @exec ln -s %D/%F %B/tixwish
 @unexec rm %B/tixwish
-bin/sawish4.1
-bin/satclsh7.5
+bin/sawish4.2
+bin/satclsh7.6
 include/tix.h
 include/tix/generic/tix.h
 include/tix/generic/tixBitmaps.h
@@ -19,10 +19,10 @@ include/tix/generic/tixPort.h
 include/tix/generic/tixTList.h
 include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
-lib/libtix4175.so.1.0
-lib/libtixsam4175.so.1.0
-lib/libtksam41.so.1.0
-lib/libtclsam75.so.1.0
+lib/libtix4176.so.1.0
+lib/libtixsam4176.so.1.0
+lib/libtksam42.so.1.0
+lib/libtclsam76.so.1.0
 @exec /sbin/ldconfig -m %B
 man/mann/BtnBox.n.gz
 man/mann/Balloon.n.gz
