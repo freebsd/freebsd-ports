@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Feb  6 15:30:42 2003
++++ Makefile	Sat Feb  8 18:22:36 2003
+@@ -1,18 +1,18 @@
+ 
+ CC=g++
+-MOC=$(QTDIR)/bin/moc
++#MOC=$(QTDIR)/bin/moc
+ #MOC=/usr/lib/qt3/bin/moc
+ EXE=mview
+ 
+-CPPFLAGS = $(INCPATH) -O2
++CPPFLAGS+= $(INCPATH) -O2
+ # supposedly compiler options for faster code
+ #CPPFLAGS = $(INCPATH) -O3 -fexceptions --fast-math -felide-constructors -fexpensive-optimizations -fdelayed-branch -fschedule-insns
+ 
+ INCPATH = -I. -Itexture -Imesh -Imathvector -I$(QTDIR)/include -I/usr/lib/qt3/include
+ LIBPATH = -L$(QTDIR)/lib -L/usr/local/lib -L/usr/X11R6/lib -L/usr/lib/qt3/lib
+ 
+-LIBS_QT = -lGL -lGLU -lqt-mt -ljpeg
+-LIBS_GLUT = -lGL -lGLU -lglut -ljpeg
++LIBS_QT = ${LIBS} -lGL -lGLU -lqt-mt -ljpeg
++LIBS_GLUT = ${LIBS} -lGL -lGLU -lglut -ljpeg
+  
+ QT =	qt/main.o \
+ 	qt/mview.o \
