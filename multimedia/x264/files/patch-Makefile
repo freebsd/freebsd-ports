@@ -1,0 +1,12 @@
+--- Makefile.orig	Tue Jan 11 23:32:24 2005
++++ Makefile	Tue Jan 11 23:33:05 2005
+@@ -22,8 +22,7 @@
+ OBJASM= $(ASMSRC:%.asm=%.o)
+ endif
+ 
+-CC=gcc
+-CFLAGS=-g -Wall -I. -DDEBUG -O4 -funroll-loops -D__X264__ $(PFLAGS)
++CFLAGS=-I. -D__X264__ %%CFLAGS%%
+ 
+ AS= nasm
+ # for linux
