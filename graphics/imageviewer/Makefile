@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	imageviewer
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.nice.ch/~phip/
+MASTER_SITES=	http://www.nice.ch/~phip/ \
+		${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=	usr-apps
 DISTNAME=	ImageViewer-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
