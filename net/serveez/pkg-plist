@@ -43,10 +43,12 @@ lib/libserveez.so.0
 share/aclocal/serveez.m4
 share/serveez/echo-server.scm
 share/serveez/eval-server.scm
+share/serveez/icecast-server.scm
 share/serveez/inetd.scm
 share/serveez/mandel-client.scm
 share/serveez/mandel-server.scm
 share/serveez/mandel-shared.scm
+share/serveez/serveez-procedures.txt
 share/serveez/serveez.scm
 @dirrm share/serveez
 @dirrm include/libserveez/coserver
