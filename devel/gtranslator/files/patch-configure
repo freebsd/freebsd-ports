@@ -1,0 +1,11 @@
+--- configure.orig	Sat Aug  7 01:53:34 2004
++++ configure	Sat Aug  7 01:53:40 2004
+@@ -5284,7 +5284,7 @@
+ if test "x$enable_debug" = "xyes" ; then
+ 	CFLAGS="$CFLAGS -ggdb "
+ else
+-	CFLAGS="`echo $CFLAGS|sed -e s/-g.//g -e s/-ggdb//g`"
++#	CFLAGS="`echo $CFLAGS|sed -e s/-g.//g -e s/-ggdb//g`"
+ fi
+ echo "$as_me:$LINENO: result: $enable_debug" >&5
+ echo "${ECHO_T}$enable_debug" >&6
