@@ -21,6 +21,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES
+USE_PERL5_BUILD=	YES
 
 VCFGDIR?=	${WRKDIR}/vcfg
 VCFGFILES?=	inc_deps lib_deps tcp.smtp
@@ -179,25 +180,25 @@ pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
 .if defined(WITH_MYSQL)
 .if defined(WITH_MYSQL_UPDATE_SERVER)
-	${PERL} -pi -e "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_UPDATE_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_UPDATE_SERVER}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_SERVER)
-	${PERL} -pi -e "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_READ_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_READ_SERVER}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_USER)
-	${PERL} -pi -e "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\$$1${WITH_MYSQL_UPDATE_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\$$1${WITH_MYSQL_UPDATE_USER}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_USER)
-	${PERL} -pi -e "s/(#define MYSQL_READ_USER.*)root(.*)/\$$1${WITH_MYSQL_READ_USER}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_READ_USER.*)root(.*)/\$$1${WITH_MYSQL_READ_USER}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_UPDATE_PASSWD)
-	${PERL} -pi -e "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_UPDATE_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_UPDATE_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_READ_PASSWD)
-	${PERL} -pi -e "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_READ_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_READ_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_DB)
-	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
+	${REINPLACE_CMD} "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .endif
 	${MKDIR} ${VCFGDIR}
