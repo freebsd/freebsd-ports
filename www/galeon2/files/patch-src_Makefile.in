@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Sun Aug 17 15:00:55 2003
++++ src/Makefile.in	Sun Aug 17 15:01:50 2003
+@@ -205,6 +205,7 @@
+ 	$(GALEON_DEPENDENCY_CFLAGS) \
+ 	-DSHARE_DIR=\"$(pkgdatadir)\" \
+ 	-DDATADIR=\""$(datadir)"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-DG_DISABLE_DEPRECATED		\
+ 	-DGDK_DISABLE_DEPRECATED	\
+ 	-DGTK_DISABLE_DEPRECATED	\
