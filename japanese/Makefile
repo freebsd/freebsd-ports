@@ -224,6 +224,7 @@
     SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += tgif2tex
+    SUBDIR += timidity++-slang
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tkstep80
