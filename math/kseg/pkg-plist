@@ -34,7 +34,9 @@ lib/X11/kseg/kseg_es.qm
 lib/X11/kseg/kseg_fr.qm
 lib/X11/kseg/kseg_hu.qm
 lib/X11/kseg/kseg_help_en.html
+lib/X11/kseg/kseg_help_es.html
 lib/X11/kseg/kseg_nb.qm
+lib/X11/kseg/kseg_nl.qm
 lib/X11/kseg/kseg_pt.qm
 lib/X11/kseg/kseg_xx.qm
 @dirrm lib/X11/kseg/examples
