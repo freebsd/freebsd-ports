@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	narray_miss
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1.1
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/narray_miss/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,12 +18,12 @@ COMMENT=	Additional class with processing of missing value to NArray
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
-NO_BUILD=	yes
 USE_RUBY=	yes
-DOCS=		ChangeLog README narray_miss.html
+USE_RUBY_SETUP=	yes
+
+DOCS=		ChangeLog README doc/narray_miss.html
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/narray_miss.rb ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
