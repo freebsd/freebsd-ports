@@ -27,6 +27,6 @@ lib/libqdbm.a
 lib/libqdbm.so
 lib/libqdbm.so.1
 lib/libqdbm.so.1.0.0
-%%DOCSDIR%%/spex-ja.html
-%%DOCSDIR%%/spex.html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/spex-ja.html
+%%PORTDOCS%%%%DOCSDIR%%/spex.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
