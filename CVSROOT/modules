@@ -1065,8 +1065,10 @@ cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
 cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
+cyrus-imapd2	ports/mail/cyrus-imapd2
 cyrus-imspd	ports/databases/cyrus-imspd
 cyrus-sasl	ports/security/cyrus-sasl
+cyrus-sasl2	ports/security/cyrus-sasl2
 cvs+ipv6		ports/devel/cvs+ipv6
 d1489		ports/russian/d1489
 dact		ports/archivers/dact
