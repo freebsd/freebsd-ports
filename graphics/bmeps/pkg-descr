@@ -1,0 +1,18 @@
+The bmeps package contains a command line program and a library to
+convert bitmap image files (PNG/JPEG/NetPBM) to EPS. EPS level 1, 2
+and 3 can be used.
+
+Depending on the EPS level there are different compression and encoding
+algorithms available: 
+
+  _ run-length-compression (2 and above)
+  _ flate compression (3 and above)
+  _ ASCII-85-encoding instead of ASCII-Hex (2 and above)
+
+The program is intended to be used with LaTeX/dvips or other DTP software
+accepting EPS graphics.
+
+No automated scaling/rotating is done by the program to fit pages of any
+paper size, this is left up to the DTP application including the graphics.
+
+WWW: http://bmeps.sourceforge.net/

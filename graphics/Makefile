@@ -28,6 +28,7 @@
     SUBDIR += bbrb
     SUBDIR += blender
     SUBDIR += blender-devel
+    SUBDIR += bmeps
     SUBDIR += cadubi
     SUBDIR += camediaplay
     SUBDIR += chbg
