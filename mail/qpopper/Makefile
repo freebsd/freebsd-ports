@@ -9,8 +9,9 @@ PORTNAME=	qpopper
 PORTVERSION=	4.0.1
 PORTREVISION=	1
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
-		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/
+MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
+		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .include <bsd.port.pre.mk>
