@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	0.9.7
+PORTVERSION=	1.0.R.1
 CATEGORIES=	hungarian textproc
 #MASTER_SITES=	http://www.szofi.hu/gnu/magyarispell/
 MASTER_SITES=	http://magyarispell.sourceforge.net/
+DISTNAME=	${PORTNAME}-1.0-RC1
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Improved Hungarian spelling checker
 
 USE_GMAKE=	yes
-USE_GCC=	3.3
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 
