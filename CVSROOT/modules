@@ -3949,6 +3949,7 @@ jode		ports/java/jode
 joe		ports/editors/joe
 joe-devel	ports/editors/joe-devel
 john		ports/security/john
+jomp		ports/java/jomp
 jonah		ports/www/jonah
 jools		ports/games/jools
 journal		ports/deskutils/journal
