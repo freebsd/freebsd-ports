@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Wed Dec 22 21:34:18 2004
++++ lib/Makefile.in	Wed Dec 22 21:35:12 2004
+@@ -71,7 +71,7 @@
+ libcompat_a_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am_libcompat_a_OBJECTS = ostringstream.$(OBJEXT)
+ libcompat_a_OBJECTS = $(am_libcompat_a_OBJECTS)
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++DEFAULT_INCLUDES = -I. -I$(LOCALBASE)/include -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = $(DEPDIR)/atan2.Po $(DEPDIR)/floor.Po \

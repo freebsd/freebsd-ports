@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Mon Aug 30 09:03:14 2004
++++ src/Makefile.in	Wed Dec 22 21:51:24 2004
+@@ -92,7 +92,7 @@
+ starplot_DEPENDENCIES = libstarplot.a ../lib/libcompat.a
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ SCRIPTS = $(bin_SCRIPTS)
+-DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
++DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir) -I$(LOCALBASE)/include
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/mathdefs.Po \
+@@ -263,7 +263,7 @@
+ starplot_LDFLAGS = `pkg-config --libs gtk+-2.0`
+ starconvert_CXXFLAGS = -Wall $(DEFINEFLAGS)
+ starconvert_LDADD = libstarplot.a ../lib/libcompat.a
+-starconvert_LDFLAGS = -lm
++starconvert_LDFLAGS = `pkg-config --libs gtk+-2.0`
+ noinst_HEADERS = classes/colors.h classes/constellations.h classes/greek.h \
+ 		 classes/mathdefs.h classes/specclass.h classes/star.h \
+ 		 classes/stararray.h classes/strings.h classes/vector3.h \
