@@ -7,6 +7,7 @@ built and tested on:
    x86 Linux (s/w via Mesa, h/w using vendor drivers, e.g., nVidia)
    Irix
    Solaris
+   FreeBSD
    Win32 (95/98/NT/2K/ME).
 
 OpenRM is a derivative work of RM Scene Graph (tm), a commercial
@@ -19,4 +20,4 @@ present in OpenRM.
 WWW:	http://openrm.sourceforge.net
 
 - Igor Pokrovsky
-tiamat@telegraph.spb.ru
+tiamat@comset.net
