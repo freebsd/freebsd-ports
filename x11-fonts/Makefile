@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.3 1998/12/13 13:53:49 jseger Exp $
+# $Id: Makefile,v 1.4 1999/01/09 03:19:28 asami Exp $
 #
 
     SUBDIR += Xg
+    SUBDIR += bitmap-font
     SUBDIR += etlfonts
     SUBDIR += freefonts
     SUBDIR += getbdf
