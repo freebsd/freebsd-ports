@@ -1,15 +1,44 @@
---- modules/Makefile.in.orig	Thu Nov  2 17:45:41 2000
-+++ modules/Makefile.in	Fri Nov  3 10:52:23 2000
-@@ -235,2 +235,3 @@
+
+$FreeBSD$
+
+--- modules/Makefile.in.orig	Tue Jan 22 12:42:11 2002
++++ modules/Makefile.in	Tue Jan 22 13:13:11 2002
+@@ -197,7 +197,7 @@
+ @HAVE_CDDA_TRUE@CDDA_LTLIBS = libcdda.la
+ @HAVE_CDDA_FALSE@CDDA_LTLIBS = 
  
-+libftp_la_LDFLAGS =	$(module_flags)
+-module_flags = -export_dynamic -avoid-version
++module_flags = -export_dynamic -avoid-version -module
+ modulesdir = $(libdir)/vfs/modules
  
-@@ -283,3 +284,3 @@
+ modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
+@@ -216,7 +216,6 @@
+ 
+ libcdda_la_SOURCES =  	cdda-method.c 					cdda-method.h					cdda-cddb.c 					cdda-cddb.h					cdda-cdrom-extensions.h
+ 
+-
+ libcdda_la_LDFLAGS = $(module_flags)
+ libcdda_la_LIBADD = -L/gnome/lib -lcdda_paranoia -lcdda_interface
+ 
+@@ -311,7 +310,7 @@
+ libextfs_la_OBJECTS =  extfs-method.lo
+ libfile_la_LIBADD = 
  libfile_la_OBJECTS =  file-method.lo
 -libvfs_test_la_LDFLAGS = 
 +libvfs_test_la_LDFLAGS = $(module_flags)
  libvfs_test_la_DEPENDENCIES = 
-@@ -292,3 +293,2 @@
+ libvfs_test_la_OBJECTS =  test-method.lo
+ libhttp_la_DEPENDENCIES = 
+@@ -320,10 +319,10 @@
+ libbzip2_la_OBJECTS =  bzip2-method.lo
+ libgzip_la_DEPENDENCIES = 
  libgzip_la_OBJECTS =  gzip-method.lo
 -libftp_la_LDFLAGS = 
++libftp_la_LDFLAGS = $(module_flags)
  libftp_la_LIBADD = 
+ libftp_la_OBJECTS =  ftp-method.lo
+-libnntp_la_LDFLAGS = 
++libnntp_la_LDFLAGS = $(module_flags)
+ libnntp_la_LIBADD = 
+ libnntp_la_OBJECTS =  nntp-method.lo
+ libvfs_pipe_la_DEPENDENCIES = 
