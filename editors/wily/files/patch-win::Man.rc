@@ -1,0 +1,10 @@
+--- tools/win/Man.rc.orig	Sun Jan 19 08:59:21 2003
++++ tools/win/Man.rc	Sun Jan 19 08:59:41 2003
+@@ -10,6 +10,6 @@
+ }
+ 
+ name = `{ echo $*($#*) }
+-man $* >[2=1] | col -bx | wreplace -c '+Man '^$name^':,'
++man $* >[2=1] | col -bx | wreplace -c '~Man '^$name^':,'
+ 
+ exit
