@@ -65,6 +65,21 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
+# fix compile with gcc-3.4.x
+.if ${OSVERSION} >= 502126
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-include::aviplay.h \
+		${FILESDIR}/extra-patch-include::avm_map.h \
+		${FILESDIR}/extra-patch-include::avm_stl.h \
+		${FILESDIR}/extra-patch-lib::aviread::AsfNetworkInputStream.cpp \
+		${FILESDIR}/extra-patch-lib::common::image.cpp \
+		${FILESDIR}/extra-patch-plugins::libvorbis::libvorbis.cpp \
+		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::dsputil_mmx.c \
+		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::motion_est_mmx.c \
+		${FILESDIR}/extra-patch-ffmpeg::libavcodec::i386::simple_idct_mmx.c \
+		${FILESDIR}/extra-patch-ffmpeg::libavcodec::liba52::resample_mmx.c \
+		${FILESDIR}/extra-patch-plugins::libmp3lame_audioenc::lame3.70::quantize-pvt.c
+.endif
+
 WITHOUT_XVID=yes	# Does not support xvid 1.0.x
 
 .if (${ARCH} != "i386") && (${ARCH} != "amd64")
