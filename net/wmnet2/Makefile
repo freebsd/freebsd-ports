@@ -7,7 +7,7 @@
 
 PORTNAME=	wmnet2
 PORTVERSION=	1.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.digitalkaos.net/linux/wmnet/download/
 DISTNAME=	wmnet-${PORTVERSION}

@@ -1,41 +1,37 @@
-*** drivers.c.orig	Fri Sep  7 16:39:23 2001
---- drivers.c	Fri Jun 29 23:21:52 2001
-***************
-*** 15,20 ****
---- 15,21 ----
-  #include<X11/Xlib.h>
-  #include<fcntl.h>
-  #include<sys/types.h>
-+ #include <sys/time.h>
-  #include<sys/stat.h>
-  #include<sys/socket.h>
-  #include<unistd.h>
-***************
-*** 24,29 ****
---- 25,32 ----
-  /* For FreeBSD */
-  #ifdef USE_KVM
-  #include<net/if.h>
-+ #include <net/if_var.h>
-+ #include <net/if_types.h>
-  #include<kvm.h>
-  #include<nlist.h>
-  
-***************
-*** 490,496 ****
-  #ifdef __OpenBSD__
-          ifnet_addr = (unsigned long)ifnet->if_list.tqe_next;
-  #else
-!         ifnet_addr = (unsigned long)ifnet->if_next;
-  #endif
-    }
+--- drivers.c.orig	Thu May  4 20:34:29 2000
++++ drivers.c	Mon Feb 18 12:54:45 2002
+@@ -15,6 +15,7 @@
+ #include<X11/Xlib.h>
+ #include<fcntl.h>
+ #include<sys/types.h>
++#include <sys/time.h>
+ #include<sys/stat.h>
+ #include<sys/socket.h>
+ #include<unistd.h>
+@@ -24,6 +25,8 @@
+ /* For FreeBSD */
+ #ifdef USE_KVM
+ #include<net/if.h>
++#include <net/if_var.h>
++#include <net/if_types.h>
+ #include<kvm.h>
+ #include<nlist.h>
+ 
+@@ -455,6 +458,8 @@
+  unsigned long ifnet_addr = ifnet_savedaddr;
+  char devname[16];
+  int flag = 0;
++ rx = False;
++ tx = False;
+  while (ifnet_addr && flag != (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND)) {
+   kvm_read(kvmfd, ifnet_addr, buffer, sizeof(struct ifnet));
+ #ifdef __OpenBSD__
+@@ -490,7 +495,7 @@
+ #ifdef __OpenBSD__
+         ifnet_addr = (unsigned long)ifnet->if_list.tqe_next;
+ #else
+-        ifnet_addr = (unsigned long)ifnet->if_next;
++	ifnet_addr = (unsigned long) TAILQ_NEXT(ifnet,if_link);
+ #endif
    }
---- 493,500 ----
-  #ifdef __OpenBSD__
-          ifnet_addr = (unsigned long)ifnet->if_list.tqe_next;
-  #else
-!         //ifnet_addr = (unsigned long)ifnet->if_next;
-! 	ifnet_addr = (unsigned long) TAILQ_NEXT(ifnet,if_link);
-  #endif
-    }
-   }
+  }
