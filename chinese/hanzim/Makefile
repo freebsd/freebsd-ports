@@ -21,7 +21,11 @@ RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/Hanzim
 ALL_TARGET=	# empty
+USE_REINPLACE=	yes
 
 MAN1=	hanzim.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/hanzim.c
 
 .include <bsd.port.mk>

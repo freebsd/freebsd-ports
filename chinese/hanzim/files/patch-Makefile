@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr  3 13:41:51 2001
-+++ Makefile	Sat Apr 14 21:38:55 2001
+--- Makefile.orig	Wed Mar 20 00:59:19 2002
++++ Makefile	Sat Jun 14 09:21:10 2003
 @@ -6,11 +6,11 @@
  
  # set INSTALLROOT to the installation base; it is used to set the
@@ -52,3 +52,12 @@
  #CFLAGS = -O2 -Wall -pedantic -ansi $(DEFINES)
  LFLAGS = $(LIBS)  -s
  
+@@ -96,7 +95,7 @@
+ 	$(INSTALL) -m 0644 hanwin.tcl fonts.unix fonts.windows \
+ 			   zidianf.gb zidianfl.b5 bushou.gb \
+ 		           cidianf.gb sanzicidianf.gb parts.gb $(LIBDIR)
+-	$(BINDIR)/hanzim -buildDB
++	$(BINDIR)/hanzim -port-install
+ 
+      uninstall : 
+ 	$(RM) $(BINDIR)/hanzim
