@@ -1,0 +1,19 @@
+--- configure.bak	Fri Aug  7 23:28:32 1998
++++ configure	Thu Feb 11 11:37:53 1999
+@@ -5963,6 +5963,7 @@
+ 	if test $found_tcap != yes ; then
+ 		case $host_os in #(vi
+ 		freebsd*)
++if test "${with_ncurses+set}" = set; then
+ 			# This is only necessary if you are linking against an
+ 			# obsolete version of ncurses (but it should do no
+ 			# harm, since it's static).
+@@ -6005,7 +6006,7 @@
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+-
++		fi
+ 			;;
+ 		esac
+ 	fi
