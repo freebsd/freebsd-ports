@@ -1,5 +1,4 @@
---- do-install.orig	Tue Oct 21 14:32:43 1997
-+++ do-install	Mon Jul 12 13:17:27 1999
+Index: do-install
 @@ -1,27 +1,23 @@
  #!/bin/sh
  
@@ -46,13 +45,13 @@
  
  $install -d $ROSELIBDIR/petal
 -test -f ./petal/Petal.so && $install -m 644 ./petal/Petal.so $ROSELIBDIR/petal
-+test -f ./petal/Petal.so && $install -m 644 ./petal/Petal.so ${PREFIX}/lib/tclmidi/
++test -f ./petal/Petal.so && $install -c -m 644 ./petal/Petal.so $ROSELIBDIR/petal
  $install -c ./petal/Petal.tcl $ROSELIBDIR/petal
  $install -c ./petal/petaleditor/PetalEditor.tcl $ROSELIBDIR/petal
  $install -c ./petal/petalmidi/PetalMidi.tcl $ROSELIBDIR/petal
  
 -( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . Petal.so *.tcl" | tclsh )
-+( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . *.tcl" | tclsh8.0 )
++( cd $ROSELIBDIR/petal ; echo "pkg_mkIndex . Petal.so *.tcl" | tclsh8.0 )
  
  $install -d $ROSELIBDIR/rosepetal-filters
  $install -c ./petal/harmonizer.tcl $ROSELIBDIR/rosepetal-filters
