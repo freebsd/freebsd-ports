@@ -1,25 +1,26 @@
 # New ports collection makefile for:   indent
-# Version required:    1.9.1
+# Version required:    1.10.0
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
 #
-# $Id: Makefile,v 1.2 1999/01/27 07:41:06 fenner Exp $
+# $Id: Makefile,v 1.3 1999/06/05 22:28:49 mharo Exp $
 #
-        
-DISTNAME=      indent-1.9.1
+
+DISTNAME=      indent-1.10.0
 CATEGORIES=    devel
 MASTER_SITES=  ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
 
 MAINTAINER=    kchowksey@hss.hns.com
-        
+
+GNU_CONFIGURE=	yes
+
 MAN1=          indent.1
 
 post-install:
-	@mv ${PREFIX}/bin/indent ${PREFIX}/bin/indent
-	@strip ${PREFIX}/bin/indent
-	@test -d ${PREFIX}/info || ${MKDIR} ${PREFIX}/info  \
-		&& chmod a+rx ${PREFIX}/info
+	@if [ ! -f ${PREFIX}/info/dir ]; then \
+	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 	@install-info ${PREFIX}/info/indent.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
