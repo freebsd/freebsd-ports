@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.31 1998/07/30 11:48:55 tg Exp $
+# $Id: Makefile,v 1.32 1998/08/07 23:56:41 asami Exp $
 #
 
 DISTNAME=	tkman-2.1b1
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@freebsd.org
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 		glimpse:${PORTSDIR}/textproc/glimpse
 
