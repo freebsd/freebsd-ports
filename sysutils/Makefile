@@ -319,6 +319,7 @@
     SUBDIR += wmpccard
     SUBDIR += wmshutdown
     SUBDIR += wmtop
+    SUBDIR += wmupmon
     SUBDIR += wmzazof
     SUBDIR += wots
     SUBDIR += wtail
