@@ -4,6 +4,9 @@
 %%RUBY_SITEARCHLIBDIR%%/rbgutil.h
 %%RUBY_SITELIBDIR%%/glib2.rb
 %%RUBY_SITELIBDIR%%/mkmf-gnome2.rb
+%%RUBY_SITELIBDIR%%/pkg-config.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/spawn.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test-glib2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/type-register.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/type-register2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/utils.rb

@@ -20,7 +20,6 @@ COMMENT=	Ruby binding for GtkHtml2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	libgtkhtml
 USE_RUBY_EXTCONF=	yes
 

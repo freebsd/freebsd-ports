@@ -17,8 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	Ruby binding for libgnomeprint
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
-		${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2 \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2 \
 		${RUBY_SITEARCHLIBDIR}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
 
 USE_RUBY=	yes

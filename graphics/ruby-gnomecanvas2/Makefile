@@ -21,7 +21,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
 
 USE_RUBY=	yes
-USE_XLIB=	yes
 USE_GNOME=	libgnomecanvas
 USE_RUBY_EXTCONF=	yes
 
