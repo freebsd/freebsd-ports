@@ -6,55 +6,100 @@
 # $FreeBSD$
 #
 
+# By default, this port depends on TCL for building docs. If you want to build
+# without TCL (and thus get no docs), define NOPORTDOCS.
+# If you want to build the TCL wrapper, you have to choose between
+# SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
+
 PORTNAME=	sqlite
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.3
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	gerhard.haering@gmx.de
+MAINTAINER=	gh@ghaering.de
 COMMENT=	An SQL database engine in a C library, including a Tcl wrapper
 
-LIB_DEPENDS=	tcl${TCL_VER:S/.//}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
+# Defaults, for building the docs:
+TCL_V=		8.3
+TCL_SHORT_V=	83
+
+.if defined(SQLITE_WITH_TCL83)
+CATEGORIES+=	tcl83
+TCL_V=		8.3
+TCL_SHORT_V=	83
+WITH_TCL=	YES
+.endif
+
+.if defined(SQLITE_WITH_TCL84)
+TCL_V=		8.4
+TCL_SHORT_V=	84
+WITH_TCL=	YES
+.endif
+
+.if defined(WITH_TCL)
+LIB_DEPENDS=	tcl${TCL_SHORT_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
+PLIST_SUB+=	WITH_TCL=""
+.else
+PLIST_SUB+=	WITH_TCL="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS=	tclsh${TCL_V}:${PORTSDIR}/lang/tcl${TCL_SHORT_V}
+MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
+MAKE_ENV+=	TCL_VER=${TCL_V}
+.endif
 
 USE_GMAKE=	YES
+USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES
 USE_REINPLACE=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
-ALL_TARGET=	all libtclsqlite.la
+ALL_TARGET=	all
+.if defined(WITH_TCL)
+ALL_TARGET+=	libtclsqlite.la
+.endif
+
 INSTALLS_SHLIB=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ARGS+=	TCLSH=tclsh${TCL_VER}
-MAKE_ENV+=	TCL_VER=${TCL_VER}
-TCL_VER?=	8.3
 
 DOCFILES=	arch.html arch.png c_interface.html changes.html \
-		crosscompile.html download.html faq.html index.html \
-		lang.html lemon.html mingw.html opcode.html report1.txt \
-		speed.html sqlite.html tclsqlite.html vdbe.html
+		conflict.html datatypes.html download.html faq.html \
+		fileformat.html formatchng.html index.html lang.html \
+		lemon.html mingw.html nulls.html omitted.html \
+		opcode.html quickstart.html report1.txt speed.html \
+		sqlite.html tclsqlite.html vdbe.html
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 post-patch:
 	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" ${WRKSRC}/Makefile.in
-	${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_VER}\"" >${WRKSRC}/freebsd.hints
-	${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VER:S/.//}\"" >>${WRKSRC}/freebsd.hints
+	${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" >${WRKSRC}/freebsd.hints
+	${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_SHORT_V}\"" >>${WRKSRC}/freebsd.hints
 	#${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
 
 post-build:
 	# Build the docs
-	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} doc
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS} doc
+.endif
 
 post-install:
+.if defined(WITH_TCL)
+	cd ${WRKSRC} && ${GMAKE} install-tcl
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${DOCSDIR}
 .for file in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
+
 .endif
 
 .include <bsd.port.mk>
