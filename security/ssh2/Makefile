@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.70 1998/10/08 13:11:52 asami Exp $
+# $Id: Makefile,v 1.71 1998/10/30 06:15:18 obrien Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -14,6 +14,8 @@ CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.funet.fi/pub/unix/security/login/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
+
+BROKEN=		update
 
 # You can set USA_RESIDENT appropriately in /etc/make.conf if this bugs you..
 
