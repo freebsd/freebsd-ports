@@ -10,7 +10,7 @@
 -PREFIX = /usr/local
  BINDIR = $(PREFIX)/sbin
 -MANDIR = $(PREFIX)/man
- VERSION = 2.11
+ VERSION = 2.12
  #
  # if you want to use Socks, use following.
 @@ -29,11 +25,11 @@
