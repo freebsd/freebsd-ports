@@ -1,15 +1,6 @@
 This is a collection of ATM fonts from the CICA Windows
 archives.  They are particularly useful with gimp.
 
-You'll have to add /usr/X11R6/lib/X11/fonts/freefont
-to your X font path by either:
-
-$ xset fp+ /usr/X11R6/lib/X11/fonts/freefont
-$ xset fp rehash
-
-or by adding it to your X-server configuration file (usually
-/etc/X11/XF86Config) and restarting the X-server.
-
 Some of these fonts are shareware, and some have restrictions on
 redistribution.  Please consult the accompanying .license files
 after installation.
