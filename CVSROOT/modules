@@ -1889,6 +1889,7 @@ gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggsd		ports/net/ggsd
 ggv		ports/print/ggv
+ggv2		ports/print/ggv2
 ghc		ports/lang/ghc
 ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
