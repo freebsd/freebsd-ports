@@ -26,7 +26,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		galeon:${PORTSDIR}/www/galeon \
 		seahorse:${PORTSDIR}/security/seahorse \
 		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
-		bluefish:${PORTSDIR}/www/bluefish-devel \
+		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net/gossip \
 		inkscape:${PORTSDIR}/graphics/inkscape \
 		straw:${PORTSDIR}/net/straw \
