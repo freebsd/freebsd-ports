@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 		http://www.us.tmda.net/releases/%SUBDIR%/ \
