@@ -135,9 +135,9 @@ while [ $# -gt 0 ]; do
     if [ ! -f ${chroot}/tmp/depends/$1 ]; then
       echo "copying package $1 for ${pkgname}"
       scp -p $master:${packages}/All/$1 ${chroot}/tmp/depends
-    else
-      echo "skipping package $1 for ${pkgname} since it is missing"
     fi
+  else
+    echo "skipping package $1 for ${pkgname} since it is missing"
   fi
   shift
 done
