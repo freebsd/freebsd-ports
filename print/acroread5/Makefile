@@ -16,6 +16,8 @@ DISTNAME=	linux-505
 
 MAINTAINER=	trevor@FreeBSD.org
 
+FORBIDDEN=	"unconfirmed suspicion of temporary file bug--see http://online.securityfocus.com/archive/1/278984 "
+
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
