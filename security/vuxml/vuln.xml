@@ -209,7 +209,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Ulf H&auml;rnhammar discovered several vulnerabilities in GNU
+	<p>Ulf Härnhammar discovered several vulnerabilities in GNU
 	  Anubis.</p>
 	<ul>
 	  <li>Unsafe uses of `sscanf'.  The `%s' format specifier is
@@ -631,7 +631,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2004-0129</cvename>
-      <url>http://www.securityfocus.com/archive/1/352378</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=107582619125932&amp;w=2</url>
       <url>http://cvs.sourceforge.net/viewcvs.py/phpmyadmin/phpMyAdmin/export.php#rev2.3.2.1</url>
     </references>
     <dates>
@@ -960,7 +960,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/archive/1/298782</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103668430620531&amp;w=2</url>
       <cvename>CAN-2002-1320</cvename>
     </references>
     <dates>
@@ -1519,7 +1519,7 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/archive/1/305162</url>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=104162752401212&amp;w=2</url>
       <cvename>CAN-2003-0031</cvename>
       <cvename>CAN-2003-0032</cvename>
     </references>
