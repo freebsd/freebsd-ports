@@ -1,0 +1,4 @@
+bin/cvpasswd
+bin/cvsup
+sbin/cvsupd
+share/cvsup/License
