@@ -6,23 +6,28 @@
 
 PORTNAME=	xmms-scrobbler
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://static.audioscrobbler.com/plugins/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	XMMS and bmp plugin for Audioscrobbler.com
+COMMENT=	XMMS plugin for Audioscrobbler.com
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		beep.2:${PORTSDIR}/multimedia/beep-media-player \
-		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
+		xmms.4:${PORTSDIR}/multimedia/xmms \
 		curl.3:${PORTSDIR}/ftp/curl
 
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk12 gtk20
+CONFIGURE_ARGS=	--disable-bmp-plugin
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+PLIST_FILES=	lib/xmms/General/libxmms_scrobbler.so
+
+.if defined(WITH_APE)
+CONFIGURE_ARGS+=	--enable-prefer-ape
+.endif
 
 .include <bsd.port.mk>
