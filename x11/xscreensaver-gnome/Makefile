@@ -88,5 +88,7 @@ post-patch:
 		${WRKSRC}/hacks/glx/extrusion.c
 	@${REINPLACE_CMD} -e 's|||' \
 		${WRKSRC}/hacks/glx/klein.c
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
