@@ -52,6 +52,8 @@ my $TAGS_FILE     = "$BASE_FN.tags";
 my $X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 
 my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
+my $CVSUSER       = $ENV{"CVS_USER"} || $ENV{"LOGNAME"} ||
+			$ENV{"USER"} || "unknown";
 
 ############################################################
 #
@@ -354,9 +356,7 @@ sub build_header {
 	my $datestr = `/bin/date +"%Y/%m/%d %H:%M:%S %Z"`;
 	chomp $datestr;
 
-	my $login = $ENV{'USER'} || getlogin ||
-	    (getpwuid($<))[0] || sprintf("uid#%d",$<);
-	my $header = sprintf("%-8s    %s", $login, $datestr);
+	my $header = sprintf("%-8s    %s", $CVSUSER, $datestr);
 
 	my @text;
 	push @text, $header;

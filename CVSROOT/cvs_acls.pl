@@ -83,7 +83,8 @@ use CVSROOT::cfg;
 my $debug = $cfg::DEBUG;
 my $cvsroot = $ENV{'CVSROOT'};
 my $availfile = $cvsroot . "/CVSROOT/avail";
-my $myname = $ENV{"LOGNAME"} || $ENV{"USER"};
+my $myname = $ENV{"CVS_USER"} || $ENV{"LOGNAME"} || $ENV{"USER"} || "unknown";
+
 
 my $die = '';
 eval "print STDERR \$die='Unknown parameter $1\n' if !defined \$$1; \$$1=\$';"
