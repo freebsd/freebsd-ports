@@ -32,7 +32,7 @@ MOD_PHP4_WRKSRC_CMD=	cd ${MOD_PHP4_PORTDIR} && ${MAKE} -V WRKSRC
 
 DOCS_EN=	README	contrib/_htaccess
 
-pre-everything:
+pre-everything::
 	dir=`${MOD_PHP4_WRKSRC_CMD}`; \
 	${MKDIR} $${dir}; \
 	${TOUCH} $${dir}/../../Makefile.inc

@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--enable-pam
 LIBPAM=		-lpam
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITH_PAM)
 	@${ECHO_MSG} "To build this port with PAM support, define \"WITH_PAM\"."
 .endif

@@ -32,7 +32,7 @@ MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
 .if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF))
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'

@@ -99,7 +99,7 @@ LIB_DEPENDS=	tcl80jp:${PORTSDIR}/japanese/tcl80 \
 		tk80jp:${PORTSDIR}/japanese/tk80
 .endif
 
-pre-everything:
+pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
 
 pre-install:

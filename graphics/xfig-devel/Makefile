@@ -30,7 +30,7 @@ MAN1=		xfig.1
 INSTALL_TARGET=	install install.all
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(WITHOUT_GHOSTSCRIPT)
 	@${ECHO_MSG} "To build this port without Ghostscript support,"
 	@${ECHO_MSG} "define \"WITHOUT_GHOSTSCRIPT\"."

@@ -28,7 +28,7 @@ BINGRP=		bin
 .endif
 
 .if ${OSVERSION} >= 400021
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "This port is just for making symlink from /bin/tcsh"
 	@${ECHO_MSG} "to ${PREFIX}/bin/tcsh and updating /etc/shells."
 

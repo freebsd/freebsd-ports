@@ -44,7 +44,7 @@ MOZILLA_SH=	mozilla.xpg4
 .endif
 
 .if !defined(MOZILLA_IPV6)
-pre-everything:
+pre-everything::
 	@${ECHO} ""
 	@${ECHO} "If you need IPv6 compliant mozilla, define \"MOZILLA_IPV6\"."
 	@${ECHO} ""
