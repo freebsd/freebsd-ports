@@ -297,6 +297,7 @@
     SUBDIR += psmisc
     SUBDIR += pstack
     SUBDIR += pstree
+    SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
     SUBDIR += pwgen
