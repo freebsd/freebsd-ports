@@ -32,16 +32,18 @@ USE_OPENSSL=	YES
 
 LIB_DEPENDS=	mm.11:${PORTSDIR}/devel/mm
 
-VERSION_APACHE=	1.3.20
-VERSION_MODSSL=	2.8.4
-RA_VERSION=	30.7
+VERSION_APACHE=	1.3.22
+VERSION_MODSSL=	2.8.5
+RA_VERSION=	30.9
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--server-gid=nogroup \
+		--server-uid=www \
+		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
+		--suexec-docroot=${PREFIX}/www/data \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
@@ -53,24 +55,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\" \
+		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
-pre-extract:
-.if defined(WITH_SUEXEC)
-	@${ECHO} "Be sure to edit suexec specific arguments to configure in the Makefile."
-CONFIGURE_ARGS+=--enable-suexec \
-		--suexec-caller=nobody \
-		--suexec-docroot=${PREFIX}/www/data \
-		--suexec-logfile=/var/log/suexec.log \
-		--suexec-uidmin=50000 \
-		--suexec-gidmin=60000
-MAN8+=		suexec.8
-.else
-	@${ECHO} "Define WITH_SUEXEC to build with suexec support."
-.endif
-
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
 OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
 CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer \
 		-fexpensive-optimizations -ffast-math
@@ -85,11 +73,24 @@ CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 INSTALL_TARGET=	install-quiet
 
 MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
-MAN8+=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
 TYPE=	test
 CRT=
 KEY=
+
+pre-extract:
+.if defined(WITH_SUEXEC)
+	@${ECHO} "Be sure to edit suexec specific arguments to configure in the Makefile."
+CONFIGURE_ARGS+=--enable-suexec \
+		--suexec-caller=nobody \
+		--suexec-logfile=/var/log/suexec.log \
+		--suexec-uidmin=50000 \
+		--suexec-gidmin=60000
+MAN8+=		suexec.8
+.else
+	@${ECHO} "Define WITH_SUEXEC to build with suexec support."
+.endif
 
 pre-patch:
 	@cd ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
@@ -111,11 +112,13 @@ certificate:
 	&& ${ECHO_MSG} "===>  Creating Test Certificate for Server" \
 	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
 
+pre-install:
+	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${SED} -e "s#!!PREFIX!!#${PREFIX}#g" < ${FILESDIR}/rc.apache.sh > ${PREFIX}/etc/rc.d/apache.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 .if defined(WITH_SUEXEC)
 	@${ECHO} "sbin/suexec" >> ${TMPPLIST}

@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/russian/apache13-modssl/Attic/pkg-install,v 1.1 2001-11-08 11:23:21 demon Exp $
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+USER=www
+GROUP=${USER}
+UID=80
+GID=${UID}
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "World Wide Web Owner"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+exit 0
