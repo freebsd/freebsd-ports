@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	mail
 MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
 
@@ -46,6 +46,12 @@ pre-extract:
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE= Needs perl 5.6.1 or higher, install lang/perl5.8 and try again
+.endif
+
 pre-install:
 	${SED}	-e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%RC_SUBR%%#${RC_SUBR}#g' \
 		${FILESDIR}/postgrey.sh > ${WRKDIR}/postgrey.sh
@@ -70,4 +76,4 @@ do-install:
 post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
