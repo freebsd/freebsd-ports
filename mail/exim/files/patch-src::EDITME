@@ -113,9 +113,10 @@
 @@ -690,12 +694,20 @@
  #
  # USE_TCP_WRAPPERS=yes
- # CFLAGS=-O -I/usr/local/include
+-# CFLAGS=-O -I/usr/local/include
 -# EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
 -#
++CFLAGS+=XX_SPF_FLAGS_XX XX_SRS_FLAGS_XX
 +EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX
 +
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM

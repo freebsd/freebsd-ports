@@ -422,18 +422,20 @@ SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
 
 .if defined(WITH_SPF) && !defined(WITHOUT_EXISCAN)
 LIB_DEPENDS+=	spf2.1:${PORTSDIR}/mail/libspf2
-CFLAGS+=	-DSPF
-SEDLIST+=	-e 's,XX_SPF_LIBS_XX,-lspf2,'
+SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,-DSPF,' \
+		-e 's,XX_SPF_LIBS_XX,-lspf2,'
 .else
-SEDLIST+=	-e 's,XX_SPF_LIBS_XX,,'
+SEDLIST+=	-e 's,XX_SPF_FLAGS_XX,,' \
+		-e 's,XX_SPF_LIBS_XX,,'
 .endif
 
 .if defined(WITH_SRS) && !defined(WITHOUT_EXISCAN)
 LIB_DEPENDS+=	srs2.0:${PORTSDIR}/mail/libsrs2
-CFLAGS+=	-DSRS
-SEDLIST+=	-e 's,XX_SRS_LIBS_XX,-lsrs2,'
+SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
+		-e 's,XX_SRS_LIBS_XX,-lsrs2,'
 .else
-SEDLIST+=	-e 's,XX_SRS_LIBS_XX,,'
+SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
+		-e 's,XX_SRS_LIBS_XX,,'
 .endif
 
 .include <bsd.port.pre.mk>
