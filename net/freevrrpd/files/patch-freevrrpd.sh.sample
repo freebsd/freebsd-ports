@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- freevrrpd.sh.sample.orig	Mon Nov 25 11:09:10 2002
++++ freevrrpd.sh.sample	Mon Nov 25 11:09:18 2002
+@@ -5,7 +5,7 @@
+ 		[ -x /usr/local/sbin/freevrrpd ] && /usr/local/sbin/freevrrpd && echo -n ' freevrrpd'
+ 		;;
+ 	stop)
+-		killall freevrrpd > /dev/null 2>&1 & && echo -n ' freevrrpd'
++		killall freevrrpd > /dev/null 2>&1 && echo -n ' freevrrpd'
+ 		;;
+ 	*)
+ 		echo ""
