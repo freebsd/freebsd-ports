@@ -1974,6 +1974,7 @@ gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
+gnomesystemmonitor	ports/sysutils/gnomesystemmonitor
 gnometelnet	ports/net/gnometelnet
 gnometerminal	ports/x11/gnometerminal
 gnomeuserdocs	ports/misc/gnomeuserdocs
