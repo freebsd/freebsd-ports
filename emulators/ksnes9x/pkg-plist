@@ -9,5 +9,11 @@ share/doc/HTML/en/ksnes9x/index-3.html
 share/doc/HTML/en/ksnes9x/index-4.html
 share/doc/HTML/en/ksnes9x/index-5.html
 share/doc/HTML/en/ksnes9x/index-6.html
+share/doc/HTML/en/ksnes9x/index-7.html
+share/doc/HTML/en/ksnes9x/index-8.html
+share/doc/HTML/en/ksnes9x/index-9.html
+share/doc/HTML/en/ksnes9x/logotp3.png
 share/apps/ksnes9x/toolbar/open.xpm
 @dirrm share/doc/HTML/en/ksnes9x
+@dirrm share/apps/ksnes9x/toolbar
+@dirrm share/apps/ksnes9x

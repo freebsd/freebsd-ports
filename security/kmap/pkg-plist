@@ -1,6 +1,5 @@
-@comment $FreeBSD: /tmp/pcvs/ports/security/kmap/Attic/pkg-plist,v 1.4 2000-01-13 20:13:52 obrien Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/security/kmap/Attic/pkg-plist,v 1.5 2000-03-25 19:44:47 imura Exp $
 bin/kmap
 share/applnk/Applications/kmap.kdelnk
 share/icons/kmap.xpm
 share/icons/mini/kmap.xpm
-@dirrm share/doc/HTML/en/kmap
