@@ -281,6 +281,7 @@
     SUBDIR += utserver
     SUBDIR += utserver-asu
     SUBDIR += utserver-to
+    SUBDIR += vamos
     SUBDIR += virt
     SUBDIR += wmeyes
     SUBDIR += wmminichess
