@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Feb 12 11:38:08 2002
++++ Makefile.in	Tue Feb 12 12:11:45 2002
+@@ -170,8 +170,6 @@
+ 	test -d ${BINDIR} || ${MAKE_DIR_CMD} ${BINDIR}
+ 	${SHELL} -c "sed -e \"s#^GISBASE.*#GISBASE=${INST_DIR}#\" ${GRASS_BIN}/grass${NAME_VER} > ${BINDIR}/grass${NAME_VER} ; true"
+ 	${SHELL} -c "chmod a+x ${BINDIR}/grass${NAME_VER} ; true"
+-	${SHELL} -c "$(INSTALL) ${GRASS_BIN}/gmake${NAME_VER} ${BINDIR} ; true"
+-	${SHELL} -c "$(INSTALL) ${GRASS_BIN}/gmakelinks${NAME_VER} ${BINDIR} ; true"
+ 	${SHELL} -c "cd ${GISBASE} ; tar cBf - bin | (cd ${INST_DIR} ; tar xBf - ) 2>/dev/null ; true"
+ 	${SHELL} -c "cd ${GISBASE} ; tar cBf - bwidget | (cd ${INST_DIR} ; tar xBf - ) 2>/dev/null ; true"
+ 	${SHELL} -c "cd ${GISBASE} ; tar cBf - documents | (cd ${INST_DIR} ; tar xBf - ) 2>/dev/null ; true"
+@@ -196,6 +194,8 @@
+ 	fi
+ 	${SHELL} -c "sed 's#'${GISBASE}'#'${INST_DIR}'#g' ${GISBASE}/etc/monitorcap > ${INST_DIR}/etc/monitorcap ; true"
+ 	${SHELL} -c "chmod -R 1777 ${INST_DIR}/locks 2>/dev/null ; true"
++	${SHELL} -c "sed 's#'${GISBASE}'#'${INST_DIR}'#g' ${GISBASE}/etc/paint/driver.rsh > ${INST_DIR}/etc/paint/driver.rsh ; true"
++	${SHELL} -c "chmod 755 ${INST_DIR}/etc/paint/driver.rsh ; true"
+ 
+ uninstall: FORCE
+ 	@ # NOTE: if anything is changed for uninstall then the same change
