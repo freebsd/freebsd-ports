@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.1.17
+PORTVERSION= 	2.1.18
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -149,14 +149,14 @@ post-patch:
 .endif
 
 post-install:
-.for file in ${CYRUS_MAN3}
-		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${file}
-		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${file}.gz \
+.for f in ${CYRUS_MAN3}
+		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
+		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${f}.gz \
 			>>${TMPPLIST}
 .endfor
-.for file in ${CYRUS_MAN8}
-		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${file}
-		@${ECHO_CMD} cyrus/man/man8/${file}.gz >>${TMPPLIST}
+.for f in ${CYRUS_MAN8}
+		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${f}
+		@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
 		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
@@ -164,23 +164,23 @@ post-install:
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}/man
 		@${MKDIR} ${DOCSDIR}/text
-.for file in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-		@${ECHO_CMD} share/doc/${PORTNAME}/${file}.html >>${TMPPLIST}
+.for f in ${DOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
 .endfor
-.for file in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
-		@if [ -f ${WRKSRC}/doc/man/${file}.html ]; then \
-		${INSTALL_DATA} ${WRKSRC}/doc/man/${file}.html \
-			${DOCSDIR}/man/${file}.html; \
-		${ECHO_CMD} share/doc/${PORTNAME}/man/${file}.html \
+.for f in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
+		@if [ -f ${WRKSRC}/doc/man/${f}.html ]; then \
+		${INSTALL_DATA} ${WRKSRC}/doc/man/${f}.html \
+			${DOCSDIR}/man/${f}.html; \
+		${ECHO_CMD} share/doc/${PORTNAME}/man/${f}.html \
 			>>${TMPPLIST}; \
 		fi
 .endfor
 		@${INSTALL_DATA} ${WRKSRC}/doc/cyrusv2.mc ${DOCSDIR}
 		@${ECHO_CMD} share/doc/${PORTNAME}/cyrusv2.mc >>${TMPPLIST}
-.for file in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
-		@${ECHO_CMD} share/doc/${PORTNAME}/text/${file} >>${TMPPLIST}
+.for f in ${DOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} ${DOCSDIR}/text
+		@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 .endfor
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
