@@ -1,0 +1,10 @@
+This is the BINARY (statically linked) version of CVSup.
+
+CVSup is a software package for distributing and updating collections
+of files across a network.  CVSup is specifically tailored to
+distributing CVS repositories.  By taking advantage of the special
+properties of the files contained in CVS repositories, CVSup is
+able to perform updates much faster than traditional systems.  It
+is especially valuable for people with slow Internet connections.
+
+jdp@polstra.com
