@@ -5,12 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=      xw
-PORTVERSION=   0.0.8
-CATEGORIES=    sysutils
-MASTER_SITES=  ftp://ftp.gurubox.com/pub/xw/
+PORTNAME=	xw
+PORTVERSION=	0.1.0
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp.gurubox.com/pub/xw/ \
+		ftp://ftp.databits.net/pub/xw/
 
-MAINTAINER=    dan@spot.org
+MAINTAINER=	dan@spot.org
+
+BUILD_DEPENDS=	imlib:${PORTSDIR}/graphics/imlib
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
