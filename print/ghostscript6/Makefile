@@ -9,8 +9,8 @@ PORTNAME=	ghostscript
 PORTVERSION=	6.50
 PORTREVISION=	6
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/gs650/ \
-	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/fonts/ \
+MASTER_SITES=	ftp://ftp.fh-koblenz.de/pub/Postscript/Ghostscript/aladdin/gs650/ \
+	ftp://ftp.fh-koblenz.de/pub/Postscript/Ghostscript/aladdin/fonts/ \
 	http://www.gelhaus.net/hp880c/1.4beta/ \
 	http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 	http://www.harsch.net/Download/ \
