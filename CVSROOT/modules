@@ -7589,6 +7589,7 @@ sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
 squeak2		ports/lang/squeak2
 squeak3		ports/lang/squeak3
+squeuer		ports/astro/squeuer
 squid		ports/www/squid
 squid24		ports/www/squid24
 squidclients	ports/www/squidclients
