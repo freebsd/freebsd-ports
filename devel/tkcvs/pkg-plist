@@ -1,10 +1,12 @@
 @comment $FreeBSD$
 bin/tkcvs
-bin/tkdiffb
+bin/tkdiff
 lib/tkcvs/annotate.tcl
 lib/tkcvs/bitmaps/add.gif
 lib/tkcvs/bitmaps/adir.gif
 lib/tkcvs/bitmaps/amod.gif
+lib/tkcvs/bitmaps/annotate.gif
+lib/tkcvs/bitmaps/annotate.xbm
 lib/tkcvs/bitmaps/arrow.gif
 lib/tkcvs/bitmaps/arrow_dn.gif
 lib/tkcvs/bitmaps/arrow_hl_dn.gif
@@ -50,6 +52,7 @@ lib/tkcvs/bitmaps/paper.gif
 lib/tkcvs/bitmaps/patches.gif
 lib/tkcvs/bitmaps/patchfile.gif
 lib/tkcvs/bitmaps/rcsdir.gif
+lib/tkcvs/bitmaps/rdiff.gif
 lib/tkcvs/bitmaps/refresh.gif
 lib/tkcvs/bitmaps/remove.gif
 lib/tkcvs/bitmaps/stat_conf.gif
@@ -102,7 +105,7 @@ lib/tkcvs/tclIndex
 lib/tkcvs/tkcvs_def.tcl
 lib/tkcvs/tooltips.tcl
 lib/tkcvs/workdir.tcl
-%%PORTDOCS%%share/doc/tkcvs/README.tkcvs
+%%PORTDOCS%%%%DOCSDIR%%/README.tkcvs
 @dirrm lib/tkcvs/bitmaps
 @dirrm lib/tkcvs
-%%PORTDOCS%%@dirrm share/doc/tkcvs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
