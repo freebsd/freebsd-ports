@@ -209,7 +209,7 @@ sub format_names {
 		print STDERR "; files = ", join(":", @files), ".\n";
 	}
 
-	foreach $file (@files) {
+	foreach my $file (@files) {
 		if (length($lines[$#lines]) + length($file) > 66) {
 			$lines[++$#lines] = sprintf($format, "", "");
 		}
@@ -427,7 +427,7 @@ sub mail_notification {
 	my @subj = &read_logfile("$SUBJ_FILE.$PID");
 	my $subjlines = 0;
 	my $subjwords = 0;	# minimum of two "words" per line
-	LINE: foreach $line (@subj) {
+	LINE: foreach my $line (@subj) {
 		foreach my $word (split(/ /, $line)) {
 			if ($subjwords > 2 &&
 			    length($subject . " " . $word) > 75) {
@@ -643,7 +643,7 @@ while ($#log_lines > -1) {
 	last if ($log_lines[$#log_lines] ne "");
 	pop(@log_lines);
 }
-for ($l = $#log_lines; $l > 0; $l--) {
+for (my $l = $#log_lines; $l > 0; $l--) {
 	if (($log_lines[$l - 1] eq "") && ($log_lines[$l] eq "")) {
 		splice(@log_lines, $l, 1);
 	}
@@ -696,7 +696,7 @@ if ($RCSIDINFO) {
 #
 if (-e "$LAST_FILE.$PID") {
 	$_ = &read_line("$LAST_FILE.$PID");
-	$tmpfiles=$files[0];
+	my $tmpfiles = $files[0];
 	$tmpfiles =~ s,([^a-zA-Z0-9_/]),\\$1,g;
 	if (! grep(/$tmpfiles$/, $_)) {
 		print "More commits to come...\n";
@@ -745,7 +745,7 @@ for (my $i = 0; ; $i++) {
 &do_changes_file(@log_msg);
 
 #
-# Now generate the extra info for the mail message..
+# Now generate the extra info for the mail message.
 #
 if ($RCSIDINFO == 1) {
 	my @summary_files;
