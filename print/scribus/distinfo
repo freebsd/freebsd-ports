@@ -1,2 +1,3 @@
-MD5 (scribus-0.6.tar.gz) = 565b166b977e82ad124c99a34cb2a603
-MD5 (kde-admindir-3.0.1.tar.gz) = 2b9efbf9905b326080d2dd5bbdcff8db
+MD5 (scribus/scribus-0.8.tar.gz) = 9a5ee8056b27d54ddba64f4c7deecce1
+MD5 (scribus/Fonts.diff) = 418671b40c4b08e6ce65a757c0999753
+MD5 (scribus/Palette.diff) = 34060ad84b63c66cd7a8e223e2c3efd6
