@@ -1,9 +1,9 @@
---- configure.orig	Thu Jun 26 06:50:27 2003
-+++ configure	Fri Jun 27 20:02:38 2003
-@@ -12994,11 +12995,11 @@
-   packageprefix=${prefix}
+--- configure.orig	Tue Apr 13 13:24:27 2004
++++ configure	Tue Apr 13 13:25:03 2004
+@@ -23995,11 +23995,11 @@
  fi
  
+ systemdatadir=share
 -packagedatadir=share/${PACKAGE}
 +packagedatadir=share/gnome/${PACKAGE}
  packagedocdir=share/doc/${PACKAGE}
