@@ -20,6 +20,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A system of IRC services for IRC networks
 
+USE_PERL5_BUILD=yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
