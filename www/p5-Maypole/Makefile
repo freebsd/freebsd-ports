@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	Maypole
-PORTVERSION=	2.04
+PORTVERSION=	2.06
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI/
+MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMONFLK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -30,7 +30,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Class/DBI/Loader.pm:${PORTSDIR}/databases/p5-Class-D
 		${SITE_PERL}/Lingua/EN/Inflect/Number.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Number \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple
+		${SITE_PERL}/CGI/Simple.pm:${PORTSDIR}/www/p5-CGI-Simple \
+		${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	MODPERL "mod_perl support" on
@@ -61,6 +62,7 @@ MAN3=		Apache::MVC.3 \
 		Maypole::CLI.3 \
 		Maypole::Config.3 \
 		Maypole::Constants.3 \
+		Maypole::Headers.3 \
 		Maypole::Manual.3 \
 		Maypole::Manual::About.3 \
 		Maypole::Manual::Beer.3 \

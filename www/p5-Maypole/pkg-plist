@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Maypole/CLI.pm
 %%SITE_PERL%%/Maypole/Config.pm
 %%SITE_PERL%%/Maypole/Constants.pm
+%%SITE_PERL%%/Maypole/Headers.pm
 %%SITE_PERL%%/Maypole/Manual.pod
 %%SITE_PERL%%/Maypole/Manual/About.pod
 %%SITE_PERL%%/Maypole/Manual/Beer.pod
