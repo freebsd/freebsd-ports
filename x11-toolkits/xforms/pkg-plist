@@ -1,6 +1,6 @@
 bin/fdesign
 lib/libxforms.a
-lib/libxforms.so.0.84
+lib/libxforms.so.0.81
 @exec ldconfig -m %B
 @exec ranlib %D/lib/libxforms.a
 include/X11/forms.h
