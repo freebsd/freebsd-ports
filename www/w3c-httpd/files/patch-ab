@@ -1,19 +1,22 @@
-*** Daemon/Implementation/CommonMakefile.DIST	Sat Oct 29 12:36:04 1994
---- Daemon/Implementation/CommonMakefile	Sat Oct 29 12:36:21 1994
+*** Library/Implementation/HTTCP.c.orig	Mon Dec 30 12:20:05 1996
+--- Library/Implementation/HTTCP.c	Mon Dec 30 13:23:20 1996
 ***************
-*** 35,41 ****
-  #  If this env var is set to something else Some makes will use that instead
-  SHELL = /bin/sh
-  #  Rule file to be used by target daemon
-! RULE_FILE = "/etc/httpd.conf"
+*** 113,118 ****
+--- 113,119 ----
+  extern int errno;
+  #endif /* errno */
   
-  CMN = $(WWW)/Library/Implementation
-  INC = $(WWW)/Library/Implementation
---- 35,41 ----
-  #  If this env var is set to something else Some makes will use that instead
-  SHELL = /bin/sh
-  #  Rule file to be used by target daemon
-! RULE_FILE = "/usr/local/etc/httpd.conf"
++ #if !(defined(BSD) && (BSD >= 199306))
+  #ifndef VM
+  #ifndef VMS
+  #ifndef NeXT
+***************
+*** 123,128 ****
+--- 124,130 ----
+  #endif	/* NeXT */
+  #endif  /* VMS */
+  #endif	/* VM */
++ #endif /* FreeBSD */
   
-  CMN = $(WWW)/Library/Implementation
-  INC = $(WWW)/Library/Implementation
+  #endif	/* PCNFS */
+  

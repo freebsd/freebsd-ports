@@ -1,36 +1,29 @@
-# New ports collection makefile for:	w3c_httpd
-# Version required:	3.0 / 2.17
+# New ports collection makefile for:	w3c-httpd
+# Version required:	3.0A
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1996/11/18 11:42:11 asami Exp $
+# $Id: Makefile,v 1.13 1996/11/29 20:02:33 torstenb Exp $
 #
 
-DISTNAME=	WWW
-PKGNAME=	w3c_httpd-3.0
+DISTNAME=	w3c-httpd-3.0A
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.w3.org/pub/httpd/ \
-		ftp://ftp.w3.org/pub/libwww/old/
-DISTFILES=      libwww_2.17_src.tar.Z \
-		httpd_3.0_src.tar.gz
+MASTER_SITES=	ftp://ftp.w3.org/pub/httpd/
 
-MAINTAINER=	sa2c@and.or.jp
+MAINTAINER=	m230761@ingenieria.ingsala.unal.edu.co 
+
+NO_WRKSUBDIR=	yes
 
 WWW_ROOT=	${PREFIX}/www
 
 do-install:
-	-mkdir ${WWW_ROOT} \
-	       ${WWW_ROOT}/data ${WWW_ROOT}/cgi-bin ${WWW_ROOT}/htbin
-	cd ${WRKSRC}/server_root; pax -rw * ${WWW_ROOT}
-	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/Daemon/unix/httpd ${PREFIX}/libexec
-	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/Daemon/unix/htadm ${PREFIX}/bin
-	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/Daemon/unix/htimage ${WWW_ROOT}/htbin
-	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/Daemon/unix/cgiparse ${WWW_ROOT}/cgi-bin
-	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-		${WRKSRC}/Daemon/unix/cgiutils ${WWW_ROOT}/cgi-bin
+	${MKDIR} ${WWW_ROOT}/data ${WWW_ROOT}/cgi-bin ${WWW_ROOT}/htbin
+	${CP} -R ${WRKSRC}/server_root/icons $(WWW_ROOT)
+	${CP} ${WRKSRC}/server_root/config/*.conf $(PREFIX)/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/Daemon/freebsd/httpd ${PREFIX}/libexec
+	${INSTALL_PROGRAM} ${WRKSRC}/Daemon/freebsd/htadm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Daemon/freebsd/htimage ${WWW_ROOT}/htbin
+	${INSTALL_PROGRAM} ${WRKSRC}/Daemon/freebsd/cgiparse ${WWW_ROOT}/cgi-bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Daemon/freebsd/cgiutils ${WWW_ROOT}/cgi-bin
 
 .include <bsd.port.mk>

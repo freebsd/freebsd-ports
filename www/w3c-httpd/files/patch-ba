@@ -1,0 +1,42 @@
+*** Daemon/Implementation/CommonMakefile.orig	Mon Dec 30 17:25:30 1996
+--- Daemon/Implementation/CommonMakefile	Mon Dec 30 17:27:26 1996
+***************
+*** 35,41 ****
+  #  If this env var is set to something else Some makes will use that instead
+  SHELL = /bin/sh
+  #  Rule file to be used by target daemon
+! RULE_FILE = "/etc/httpd.conf"
+  
+  CMN = $(WWW)/Library/Implementation
+  INC = $(WWW)/Library/Implementation
+--- 35,41 ----
+  #  If this env var is set to something else Some makes will use that instead
+  SHELL = /bin/sh
+  #  Rule file to be used by target daemon
+! RULE_FILE = "/usr/local/etc/httpd.conf"
+  
+  CMN = $(WWW)/Library/Implementation
+  INC = $(WWW)/Library/Implementation
+***************
+*** 157,166 ****
+  
+  #		Hypertext File server
+  
+! PURIFY_CACHE = /home2/frystyk/purify-cache
+  
+  PURIFY = purify \
+! 	-logfile=$(HOME)/purify.log
+  	-cache-dir=$(PURIFY_CACHE)
+  
+  #
+--- 157,166 ----
+  
+  #		Hypertext File server
+  
+! PURIFY_CACHE = /tmp/purify-cache
+  
+  PURIFY = purify \
+! 	-logfile=$(HOME)/purify.log \
+  	-cache-dir=$(PURIFY_CACHE)
+  
+  #
