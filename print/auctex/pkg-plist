@@ -1,13 +1,7 @@
-@unexec install-info --delete --entry='* AUC-Tex mode: (auctex).	Emacs mode for editing TeX and LaTeX files.' --section='TeX' %D/info/auctex %D/info/dir
-info/auctex
-info/auctex-1
-info/auctex-2
-info/auctex-3
-@exec install-info --entry='* AUC-Tex mode: (auctex).	Emacs mode for editing TeX and LaTeX files.' --section='TeX' %D/info/auctex %D/info/dir
-share/doc/auctex/CHANGES
-share/doc/auctex/INSTALLATION
-share/doc/auctex/README
-@dirrm share/doc/auctex
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALLATION
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%LISPDIR%%/tex-site.el
 %%LISPDIR%%/auctex/auc-old.el
 %%LISPDIR%%/auctex/auc-old.elc

@@ -5,7 +5,7 @@
  ;; Change this to point to the place where the TeX macros are stored
  ;; at yourt site.
 -(defcustom TeX-macro-global '("/usr/local/lib/texmf/tex/")
-+(defcustom TeX-macro-global '("/usr/local/share/texmf/tex/")
++(defcustom TeX-macro-global '("%%PREFIX%%/share/texmf/tex/")
    "Directories containing the sites TeX macro files and style files.
  The directory names *must* end with a slash."
    :group 'TeX-file

@@ -6,12 +6,10 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		11.13
+PORTVERSION=		11.14
 CATEGORIES=		print elisp
-MASTER_SITES=		${MASTER_SITE_SAVANNAH} \
-			http://wuarchive.wustl.edu/mirrors/gnu/auctex/ \
-			http://mirror.telentente.com/pub/gnu/auctex/
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
+MASTER_SITES=		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
@@ -22,25 +20,22 @@ EMACS_PORT_NAME?=	emacs21
 EMACS_NO_RUN_DEPENDS=	yes
 LISPDIR=	${EMACS_SITE_LISPDIR}
 ALL_TARGET=	all contrib
-INSTALL_TARGET=	install install-contrib
+INSTALL_TARGET=	install install-contrib install-info
 MAKE_ARGS+=	lispdir=${PREFIX}/${LISPDIR}
 PLIST_SUB+=	LISPDIR=${LISPDIR}
 USE_REINPLACE=	yes
+INFO=		auctex
 
-# adjust a hardcoded '/usr/local' string
 post-patch:
-	@${ECHO_MSG} "===>  Substituting hardcoded '/usr/local' paths"
-	${REINPLACE_CMD} -e 's?/usr/local?${PREFIX}?g' ${WRKSRC}/tex.el
+	${REINPLACE_CMD} -e 's?%%PREFIX%%?${PREFIX}?g' ${WRKSRC}/tex.el
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/auctex
+	${MKDIR} ${DOCSDIR}
 .for file in CHANGES INSTALLATION README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/auctex
+	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	cd ${WRKSRC} &&  ${SETENV} ${MAKE_ENV} ${MAKE} install-info >/dev/null
-	install-info --entry='* AUC-Tex mode: (auctex).	Emacs mode for editing TeX and LaTeX files.' --section='TeX' ${PREFIX}/info/auctex ${PREFIX}/info/dir
 .endif
-	@${CAT} ${PKGMESSAGE} | ${SED} 's?/usr/local?${PREFIX}?g'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
