@@ -19,6 +19,7 @@
     SUBDIR += jfc
     SUBDIR += jikes
     SUBDIR += jlex
+    SUBDIR += jre
     SUBDIR += jsdk
     SUBDIR += kaffe
     SUBDIR += linux-jdk
