@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/multiplayer
 
-MAINTAINER=	goranrunfeldt@home.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xpilot(client) and xpilots(server)
 
 USE_IMAKE=	yes
