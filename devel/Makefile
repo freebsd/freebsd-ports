@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.149 1998/12/20 18:00:32 jseger Exp $
+# $Id: Makefile,v 1.150 1998/12/26 04:31:13 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -27,6 +27,7 @@
     SUBDIR += cvslines
     SUBDIR += cweb
     SUBDIR += cxref
+    SUBDIR += doc++
     SUBDIR += ddd
     SUBDIR += dmake
     SUBDIR += f77flow
