@@ -1,9 +1,0 @@
---- src/HtmlOutputDev.cc	Sun Jan 12 19:09:52 2003
-+++ src/HtmlOutputDev.cc	Wed Feb 26 13:47:52 2003
-@@ -789,5 +789,5 @@
- HtmlOutputDev::HtmlOutputDev(char *fileName, char *title, 
- 	char *author, char *keywords, char *subject, char *date,
--	GBool rawOrder, int firstPage = 1) 
-+	GBool rawOrder, int firstPage /* default value is 1 */) 
- {
-   char *htmlEncoding;
