@@ -34,6 +34,7 @@ FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 MAKE_ARGS=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
+DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 post-extract:
 	(cd ${WRKSRC} ; ${TAR} xpzf ${DISTDIR}/${AYUDISTNAME}${AYU_SUFFIX})
@@ -44,11 +45,15 @@ post-extract:
 pre-build:
 	(cd ${WRKSRC} ; ${SH} makebdf.sh)
 
+pre-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/fonts.alias ${DOCSDIR}
+	@${CAT} ${WRKSRC}/fonts.alias >> ${PREFIX}/${FONTSDIR}/fonts.alias
+.if !defined(NOPORTDOCS)
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.euc-jp
+.endif
+
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ja/${PORTNAME}
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/ja/${PORTNAME}/README.euc-jp
-.endif
 
 .include <bsd.port.post.mk>
