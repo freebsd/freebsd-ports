@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	3.0.3
+PORTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tangent.org/pub/apache/ \
 		http://software.tangent.org/download/
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
