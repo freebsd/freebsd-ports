@@ -70,6 +70,7 @@
     SUBDIR += powerdns
     SUBDIR += py-adns
     SUBDIR += py-dns
+    SUBDIR += py-dnspython
     SUBDIR += rbldnsd
     SUBDIR += rbllookup
     SUBDIR += sheerdns
