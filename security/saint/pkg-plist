@@ -9,6 +9,7 @@ saint/READMEs/README.1.3.7
 saint/READMEs/CHANGES-1.3.6-1.5
 saint/READMEs/README.SNMP
 saint/READMEs/CHANGES
+saint/bin/cim.saint
 saint/bin/snmp.saint
 saint/bin/boot.saint
 saint/bin/dns-chk.saint
@@ -240,6 +241,12 @@ saint/html/tutorials/vulnerability/SGI_fam_vulnerability.html
 saint/html/tutorials/vulnerability_tutorials.pl
 saint/html/tutorials/vulnerability/remote_shell_on_the_Internet.html
 saint/html/tutorials/vulnerability/remote_login_on_the_Internet.html
+saint/html/tutorials/vulnerability/Compaq_Insight_Manager_http_server.html
+saint/html/tutorials/vulnerability/Performance_Copilot.html
+saint/html/tutorials/vulnerability/UnixWare_i2odialogd.html
+saint/html/tutorials/vulnerability/Visual_Interdev_vulnerability.html
+saint/html/tutorials/vulnerability/http_potential_problems.html
+saint/html/tutorials/vulnerability/nisd_vulnerability.html
 saint/include/netinet/if_ether.h
 saint/include/netinet/igmp.h
 saint/include/netinet/in.h
