@@ -1,3 +1,4 @@
+bin/demo
 include/atkmm-1.6/atkmm.h
 include/atkmm-1.6/atkmm/action.h
 include/atkmm-1.6/atkmm/component.h
@@ -95,6 +96,7 @@ include/gdkmm-%%API_VERSION%%/gdkmm/visual.h
 include/gdkmm-%%API_VERSION%%/gdkmm/window.h
 include/gdkmm-%%API_VERSION%%/gdkmm/wrap_init.h
 include/gtkmm-%%API_VERSION%%/gtkmm.h
+include/gtkmm-%%API_VERSION%%/gtkmm/aboutdialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/accelgroup.h
 include/gtkmm-%%API_VERSION%%/gtkmm/accelkey.h
 include/gtkmm-%%API_VERSION%%/gtkmm/accellabel.h
@@ -115,9 +117,12 @@ include/gtkmm-%%API_VERSION%%/gtkmm/celleditable.h
 include/gtkmm-%%API_VERSION%%/gtkmm/celllayout.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderer.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderer_generation.h
+include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderercombo.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererpixbuf.h
+include/gtkmm-%%API_VERSION%%/gtkmm/cellrendererprogress.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderertext.h
 include/gtkmm-%%API_VERSION%%/gtkmm/cellrenderertoggle.h
+include/gtkmm-%%API_VERSION%%/gtkmm/cellview.h
 include/gtkmm-%%API_VERSION%%/gtkmm/checkbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/checkmenuitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/clipboard.h
@@ -139,6 +144,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/enums.h
 include/gtkmm-%%API_VERSION%%/gtkmm/eventbox.h
 include/gtkmm-%%API_VERSION%%/gtkmm/expander.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filechooser.h
+include/gtkmm-%%API_VERSION%%/gtkmm/filechooserbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filechooserdialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filechooserwidget.h
 include/gtkmm-%%API_VERSION%%/gtkmm/filefilter.h
@@ -153,6 +159,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/iconinfo.h
 include/gtkmm-%%API_VERSION%%/gtkmm/iconset.h
 include/gtkmm-%%API_VERSION%%/gtkmm/iconsource.h
 include/gtkmm-%%API_VERSION%%/gtkmm/icontheme.h
+include/gtkmm-%%API_VERSION%%/gtkmm/iconview.h
 include/gtkmm-%%API_VERSION%%/gtkmm/image.h
 include/gtkmm-%%API_VERSION%%/gtkmm/imagemenuitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/inputdialog.h
@@ -167,6 +174,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/menu_elems.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menubar.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menuitem.h
 include/gtkmm-%%API_VERSION%%/gtkmm/menushell.h
+include/gtkmm-%%API_VERSION%%/gtkmm/menutoolbutton.h
 include/gtkmm-%%API_VERSION%%/gtkmm/messagedialog.h
 include/gtkmm-%%API_VERSION%%/gtkmm/misc.h
 include/gtkmm-%%API_VERSION%%/gtkmm/notebook.h
@@ -174,6 +182,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/object.h
 include/gtkmm-%%API_VERSION%%/gtkmm/optionmenu.h
 include/gtkmm-%%API_VERSION%%/gtkmm/paned.h
 include/gtkmm-%%API_VERSION%%/gtkmm/plug.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/aboutdialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/accelgroup_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/accellabel_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/action_p.h
@@ -190,9 +199,12 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/calendar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/celleditable_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/celllayout_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderer_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderercombo_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererpixbuf_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrendererprogress_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderertext_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/cellrenderertoggle_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/cellview_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/checkbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/checkmenuitem_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/clipboard_p.h
@@ -212,6 +224,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/enums_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/eventbox_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/expander_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooser_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooserbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooserdialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filechooserwidget_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/filefilter_p.h
@@ -226,6 +239,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/iconinfo_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/iconset_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/iconsource_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/icontheme_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/iconview_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/image_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/imagemenuitem_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/inputdialog_p.h
@@ -239,6 +253,7 @@ include/gtkmm-%%API_VERSION%%/gtkmm/private/menu_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menubar_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menuitem_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/menushell_p.h
+include/gtkmm-%%API_VERSION%%/gtkmm/private/menutoolbutton_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/messagedialog_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/misc_p.h
 include/gtkmm-%%API_VERSION%%/gtkmm/private/notebook_p.h
@@ -413,9 +428,12 @@ include/pangomm-1.4/pangomm/private/layoutiter_p.h
 include/pangomm-1.4/pangomm/private/layoutline_p.h
 include/pangomm-1.4/pangomm/private/layoutrun_p.h
 include/pangomm-1.4/pangomm/private/rectangle_p.h
+include/pangomm-1.4/pangomm/private/renderer_p.h
 include/pangomm-1.4/pangomm/private/tabarray_p.h
 include/pangomm-1.4/pangomm/rectangle.h
+include/pangomm-1.4/pangomm/renderer.h
 include/pangomm-1.4/pangomm/tabarray.h
+include/pangomm-1.4/pangomm/types.h
 include/pangomm-1.4/pangomm/wrap_init.h
 lib/gdkmm-%%API_VERSION%%/include/gdkmmconfig.h
 lib/gtkmm-%%API_VERSION%%/include/gtkmmconfig.h
@@ -447,6 +465,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/images/gtkmm_logo.gif
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/images/top.gif
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/index.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/aboutdialog_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/accelgroup_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/accelkey_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/accellabel_8h.html
@@ -476,9 +495,12 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/celllayout_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrenderer_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrenderer__generation_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrenderercombo_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrendererpixbuf_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrendererprogress_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrenderertext_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellrenderertoggle_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/cellview_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/checkbutton_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/checkmenuitem_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classAtk_1_1Action-members.html
@@ -612,6 +634,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGdk_1_1Window-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGdk_1_1Window.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGdk_1_1Window__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AboutDialog-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AboutDialog.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AboutDialog__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AccelGroup-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AccelGroup.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1AccelGroup__inherit__graph.png
@@ -670,9 +695,15 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellLayout__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRenderer-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRenderer.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererCombo-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererCombo.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererCombo__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererPixbuf-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererPixbuf.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererPixbuf__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererProgress-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererProgress.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererProgress__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererText-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererText.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererText__inherit__graph.png
@@ -680,6 +711,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererToggle.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRendererToggle__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellRenderer__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellView-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellView.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CellView__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CheckButton-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CheckButton.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1CheckButton__inherit__graph.png
@@ -708,6 +742,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntryText.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntryText__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxEntry__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboBoxText-members.html
@@ -722,7 +757,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDownItem-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDownItem.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDownItem__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ComboDropDown__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Combo__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Container-members.html
@@ -754,9 +791,15 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Expander__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooser-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooser.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserButton-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserButton.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserButton__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserDialog-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserDialog.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserDialog__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserError-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserError.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserError__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserWidget-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserWidget.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1FileChooserWidget__inherit__graph.png
@@ -824,7 +867,13 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconSource.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconTheme-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconTheme.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconThemeError-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconThemeError.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconThemeError__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconTheme__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconView-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconView.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1IconView__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Image-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Image.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1ImageMenuItem-members.html
@@ -863,6 +912,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuShell-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuShell.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuShell__inherit__graph.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuToolButton-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuToolButton.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1MenuToolButton__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Menu__Helpers_1_1CheckMenuElem-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Menu__Helpers_1_1CheckMenuElem.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classGtk_1_1Menu__Helpers_1_1CheckMenuElem__inherit__graph.png
@@ -1222,6 +1274,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Layout__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Rectangle-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Rectangle.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Renderer-members.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Renderer.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1Renderer__inherit__graph.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1TabArray-members.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/classPango_1_1TabArray.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/class__GtkBoxChild.html
@@ -1247,6 +1302,23 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/deprecated.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/device_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dialog_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000000.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000002.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000002_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000003.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000003_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000004.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000004_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000005.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000005_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000006.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000006_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000007.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dir_000007_dep.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/display_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/displaymanager_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/document_8h.html
@@ -1264,6 +1336,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/eventbox_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/expander_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/filechooser_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/filechooserbutton_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/filechooserdialog_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/filechooserwidget_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/filefilter_8h.html
@@ -1291,21 +1364,31 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/gdk_2gdkmm_2color_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/gdk_2gdkmm_2image_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/gdk_2gdkmm_2rectangle_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/gdk_2gdkmm_2types_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/gdk_2gdkmm_2window_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/general_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_defs.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_enum.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_eval.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_func.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_type.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/globals_vars.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/glyph_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/glyphstring_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/graph_legend.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/graph_legend.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/graph_legend.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Containers.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Containers.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Dialogs.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Menus.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Menus.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__TextView.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__TextView.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__TreeView.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__TreeView.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Widgets.dot
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__Widgets.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__atkmmEnums.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/group__gdkmmEnums.html
@@ -1327,6 +1410,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/iconset_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/iconsource_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/icontheme_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/iconview_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/imagemenuitem_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/implementor_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/index.html
@@ -1352,7 +1436,13 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__115.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__116.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__117.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__118.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__119.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__12.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__120.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__121.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__122.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__123.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__13.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__14.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/inherit__graph__15.png
@@ -1464,6 +1554,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/menubar_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/menuitem_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/menushell_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/menutoolbutton_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/messagedialog_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/misc_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/modules.html
@@ -1486,6 +1577,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/namespacemembers_vars.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/namespaces.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/namespacesigc.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/namespacestd.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/noopobject_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/notebook_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/objectaccessible_8h.html
@@ -1497,6 +1589,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pango_2pangomm_2item_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pango_2pangomm_2layout_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pango_2pangomm_2rectangle_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pango_2pangomm_2types_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pixbuf_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pixbufanimation_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/pixbufanimationiter_8h.html
@@ -1515,6 +1608,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/region_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/relation_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/relationset_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/renderer_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/rgb_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/rgbcmap_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/ruler_8h.html
@@ -1535,6 +1629,92 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stateset_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/statusbar_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_about_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_add_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_align_center_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_align_justify_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_align_left_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_align_right_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_apply_20.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_bottom_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_broken_image_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_cancel_20.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_cdrom_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_clear_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_close_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_colorselector_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_connect_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_convert_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_copy_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_cut_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dialog_authentication_48.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dialog_error_48.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dialog_info_48.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dialog_question_48.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dialog_warning_48.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_directory_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_disconnect_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dnd_32.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_dnd_multiple_32.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_down_arrow_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_edit_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_exec_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_exit_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_file_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_first_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_font_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_harddisk_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_help_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_home_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_index_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_jump_to_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_last_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_left_arrow_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_forward_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_next_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_pause_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_play_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_previous_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_record_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_rewind_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_media_stop_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_network_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_new_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_no_20.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_ok_20.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_open_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_paste_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_preferences_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_print_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_print_preview_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_properties_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_redo_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_refresh_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_remove_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_revert_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_right_arrow_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_save_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_save_as_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_search_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_search_replace_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_sort_ascending_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_sort_descending_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_spellcheck_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_stop_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_text_bold_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_text_italic_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_text_strikethrough_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_text_underline_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_top_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_trash_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_undelete_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_undo_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_up_arrow_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_yes_20.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_zoom_1_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_zoom_fit_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_zoom_in_24.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stock_zoom_out_24.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stockid_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/stockitem_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/streamablecontent_8h.html
@@ -1595,12 +1775,13 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/treeview_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/treeview__private_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/treeviewcolumn_8h.html
-%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/types_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/uimanager_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/value_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/viewport_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/visual_8h.html
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/html/widget_8h.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/widget_hierarchy.html
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/reference/widget_hierarchy.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/alignment.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/aspectframe.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/box_packing1.png
@@ -1612,6 +1793,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/clipboard_ideal.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/clipboard_simple.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/combo.png
+%%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/custom_container.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/devcpp_project_options.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_colorselectiondialog.png
 %%PORTDOCS%%share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures/dialogs_filechooser.png
@@ -1769,6 +1951,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/checkbutton/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/checkbutton/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/checkbutton/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/filechooserbutton/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/filechooserbutton/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/filechooserbutton/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/radiobutton/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/radiobutton/radiobuttons.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/radiobutton/radiobuttons.h
@@ -1797,6 +1982,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/mywidget.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget/mywidget.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/aboutdialog/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/aboutdialog/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/aboutdialog/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog/main.cc
@@ -1845,6 +2033,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/idle/idleexample.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/idle/idleexample.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/idle/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/input/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/label/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/label/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/label/main.cc
@@ -1898,6 +2087,9 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/toolbar/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/toolbar/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/toolbar/main.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/combo_renderer/examplewindow.cc
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/combo_renderer/examplewindow.h
+%%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/combo_renderer/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/drag_and_drop/examplewindow.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/drag_and_drop/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/drag_and_drop/main.cc
@@ -1950,15 +2142,6 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/treemodelcustom/examplewindow.h
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/treemodelcustom/main.cc
 %%EXAMPLES%%share/doc/gtkmm-%%API_VERSION%%/examples/window/wheelbarrow.cc
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/reference/html
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/reference
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/images
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ/html
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ
-%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/window
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/treemodelcustom
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/tictactoe
@@ -1977,6 +2160,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/filter
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/editable_cells
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/drag_and_drop
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview/combo_renderer
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/treeview
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/toolbar
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/timeout
@@ -1995,6 +2179,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/menus/main_menu
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/menus
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/label
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/input
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/idle
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/helloworld2
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/helloworld
@@ -2012,6 +2197,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/fileselection
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/filechooserdialog
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/colorselectiondialog
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs/aboutdialog
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/dialogs
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_container
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/custom/custom_widget
@@ -2024,6 +2210,7 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/clipboard
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/togglebutton
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/radiobutton
+%%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/filechooserbutton
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/checkbutton
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons/button
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book/buttons
@@ -2034,6 +2221,15 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/book
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples/arrow
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/html
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial/figures
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/tutorial
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/reference/html
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/reference
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/images
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ/html
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs/FAQ
+%%PORTDOCS%%@dirrm share/doc/gtkmm-%%API_VERSION%%/docs
 @unexec /bin/rmdir %D/share/doc/gtkmm-%%API_VERSION%% 2>/dev/null || /usr/bin/true
 %%PORTDOCS%%@dirrm share/devhelp/books/gtkmm-%%API_VERSION%%
 %%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
