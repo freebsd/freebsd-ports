@@ -39,6 +39,7 @@
     SUBDIR += expect
     SUBDIR += ezm3
     SUBDIR += f2c
+    SUBDIR += f2py
     SUBDIR += f77
     SUBDIR += fbbi
     SUBDIR += ferite
