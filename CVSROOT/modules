@@ -8112,6 +8112,7 @@ tracker		ports/audio/tracker
 tractorgen	ports/games/tractorgen
 trafd		ports/net/trafd
 trafshow	ports/net/trafshow
+traindirector	ports/games/traindirector
 tramp		ports/net/tramp
 tramp-emacs20	ports/net/tramp-emacs20
 trans		ports/converters/trans
