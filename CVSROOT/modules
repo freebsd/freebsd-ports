@@ -2948,6 +2948,7 @@ inn-stable	ports/news/inn-stable
 installwatch	ports/sysutils/installwatch
 instant-server	ports/misc/instant-server
 instant-workstation	ports/misc/instant-workstation
+insub		ports/irc/insub
 integrit	ports/security/integrit
 intel2gas	ports/lang/intel2gas
 intercal	ports/lang/intercal
