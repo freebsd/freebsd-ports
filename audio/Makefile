@@ -309,6 +309,7 @@
     SUBDIR += xmms-bonk
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
+    SUBDIR += xmms-faad
     SUBDIR += xmms-fc
     SUBDIR += xmms-kde
     SUBDIR += xmms-ladspa
