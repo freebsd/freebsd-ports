@@ -34,7 +34,7 @@ MAN1=	lqtplay.1
 CFLAGS+=	-O0
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS=".*-O3|CFLAGS="\$$CFLAGS|g ; \
-		 s|CFLAGS=".*-O6|CFLAGS="\$$CFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$OPTIMIZE_CFLAGS $$COMMON_CFLAGS|$$CFLAGS|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
