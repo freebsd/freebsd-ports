@@ -1488,6 +1488,7 @@ fortunelock	ports/sysutils/fortunelock
 fortunetw	ports/chinese/fortunetw
 fox		ports/x11-toolkits/fox
 fox-xunicode	ports/x11-toolkits/fox-xunicode
+fpc		ports/lang/fpc
 fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
