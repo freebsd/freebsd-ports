@@ -7,19 +7,15 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	ftp://sensimilia.eu.org/pub/software/sys/ \
-		http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-		http://people.FreeBSD.org/~foxfair/distfiles/
-DISTNAME=	logsentry-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sentrytools
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Auditing tool for system logs on Unix boxes
 
 USE_REINPLACE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # Install binaries and config files readable to root only
 BINMODE=	700
@@ -43,10 +39,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/logtail ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/systems/freebsd/logcheck.sh ${PREFIX}/etc
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in ${CONFIG_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${file} ${EXAMPLESDIR}
-	@${TEST} -f ${PREFIX}/etc/${file} || \
-	  ${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${file} ${PREFIX}/etc
+.for f in ${CONFIG_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/systems/freebsd/${f} ${PREFIX}/etc/${f}.sample
 .endfor
 	${TEST} -d ${LOGCHECK_TMP} || ${MKDIR} -m 700 ${LOGCHECK_TMP}
 	${CHOWN} root:wheel ${LOGCHECK_TMP}

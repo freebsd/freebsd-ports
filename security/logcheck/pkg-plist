@@ -1,20 +1,15 @@
+@comment $FreeBSD$
 bin/logtail
+@exec test -d %%LOGCHECK_TMP%% || mkdir -m 700 %%LOGCHECK_TMP%% && chown root:wheel %%LOGCHECK_TMP%%
+@unexec rmdir %%LOGCHECK_TMP%% 2>/dev/null || true
+etc/logcheck.hacking.sample
+etc/logcheck.ignore.sample
 etc/logcheck.sh
-%%EXAMPLESDIR%%/logcheck.hacking
-@exec test -f %D/etc/%f || cp %D/%f %D/etc
-%%EXAMPLESDIR%%/logcheck.ignore
-@exec test -f %D/etc/%f || cp %D/%f %D/etc
-%%EXAMPLESDIR%%/logcheck.violations.ignore
-@exec test -f %D/etc/%f || cp %D/%f %D/etc
-%%EXAMPLESDIR%%/logcheck.violations
-@exec test -f %D/etc/%f || cp %D/%f %D/etc
-@dirrm %%EXAMPLESDIR%%
+etc/logcheck.violations.ignore.sample
+etc/logcheck.violations.sample
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.how.to.interpret
 %%PORTDOCS%%%%DOCSDIR%%/README.keywords
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@cwd /
-@exec test -d %%LOGCHECK_TMP%% || mkdir -m 700 %%LOGCHECK_TMP%% && chown root:wheel %%LOGCHECK_TMP%%
-@unexec rmdir %%LOGCHECK_TMP%% 2>/dev/null || true
