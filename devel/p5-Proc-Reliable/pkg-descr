@@ -1,0 +1,11 @@
+The Proc::Reliable is intended to be a method for simple, reliable
+and configurable subprocess execution in PERL. It includes all the
+functionality of the backticks operator and system() functions,
+plus many uses of fork/exec, open2() and open3(). Proc::Reliable
+incorporates a number of options, including sending data to the
+subprocess on STDIN, collecting STDOUT and STDERR separately or
+together, killing hung processes, timouts and automatic retries.
+
+WWW: http://search.cpan.org/search?dist=Proc-Reliable
+
+Seamus Venasse <svenasse@polaris.ca>
