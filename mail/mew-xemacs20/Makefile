@@ -1,0 +1,16 @@
+# New ports collection makefile for: Mew (for xemacs20)
+# Version required:	1.93
+# Date created:		17 January 1998
+# Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+#
+# $Id$
+#
+
+PKGNAME=	mew-xemacs20-1.93
+
+EMACS_NAME=	XEmacs-20.4
+DIRSECTION=	Local Packages:
+DIRENTRY=	"* Mew::		Messaging in the Emacs World."
+INFOFILE=	mew.info
+
+.include "${.CURDIR}/../../mail/mew-common/Makefile"

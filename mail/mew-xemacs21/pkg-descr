@@ -1,0 +1,21 @@
+Mew is a "Message interface to Emacs Window" to integrate
+
+   - Email
+   - NetNews
+   - MIME(Multipurpose Internet Mail Extensions)
+   - PGP(Pretty Good Privacy)
+
+and to make it easy to view and compose them. With Mew you can send a
+picture of a birthday cake with the song "Happy Birthday to you" to your
+friend, which is encrypted by strong cryptograph.
+
+Info path and elisp load path would be set as follows :
+
+    Info path - ${PREFIX}/lib/xemacs-20.4/site-lisp/mew    
+    load path - ${PREFIX}/lib/xemacs-20.4/info
+
+Before build this port, You must be prepared Mew-common-port
+(mail/mew-common). 
+
+- Kiriyama Kazuhiko
+kiri@kiri.toba-cmt.ac.jp
