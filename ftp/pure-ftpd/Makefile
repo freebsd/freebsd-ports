@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.16c
+PORTVERSION=	1.0.17a
 PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -23,28 +23,15 @@ MASTER_SITE_SUBDIR=	pureftpd
 MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
-.if defined(WITH_LDAP)
-USE_OPENLDAP=		YES
-.endif
-
-.if defined(WITH_MYSQL)
-USE_MYSQL=		YES
-BROKEN_WITH_MYSQL=	41
-.endif
-
-.if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-.endif
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-everything \
+CONFIGURE_ARGS=		--with-everything \
 			--with-paranoidmsg \
 			--with-virtualchroot \
 			--with-tls \
 			--with-largefile \
 			--sysconfdir=${PREFIX}/etc
+
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
@@ -52,16 +39,21 @@ CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 
 # ldap support requested?
 .if defined(WITH_LDAP)
+USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
 # mysql support requested?
 .if defined(WITH_MYSQL)
+USE_MYSQL=		YES
+BROKEN_WITH_MYSQL=	41
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
 # postgresql support requested?
 .if defined(WITH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 
@@ -89,7 +81,7 @@ PAM_TEMPL?=	${FILESDIR}/pam.conf.4
 . endif
 .endif
 .if defined(PAM_TEMPL)
-PAM_DIR?=	${PREFIX}/share/examples/${PORTNAME}/pam
+PAM_DIR?=	${EXAMPLESDIR}/pam
 PAM_TARGET?=	pure-ftpd
 .endif
 
@@ -102,17 +94,17 @@ DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
 pre-fetch:
-	@${ECHO_CMD} "You can use the following additional options:"
-	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories"
-	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL databases"
-	@${ECHO_CMD} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
-	@${ECHO_CMD} "WITH_PRIVSEP=1        - Enable privilege separation"
-	@${ECHO_CMD} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
-	@${ECHO_CMD} "  english, german, romanian, french, french-funny, polish, spanish,"
-	@${ECHO_CMD} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO_CMD} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
-	@${ECHO_CMD} "  and czech."
-	@${ECHO_CMD} ""
+	@${ECHO_MSG} "You can use the following additional options:"
+	@${ECHO_MSG} "WITH_LDAP=1           - Support for users in LDAP directories"
+	@${ECHO_MSG} "WITH_MYSQL=1          - Support for users in MySQL databases"
+	@${ECHO_MSG} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
+	@${ECHO_MSG} "WITH_PRIVSEP=1        - Enable privilege separation"
+	@${ECHO_MSG} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
+	@${ECHO_MSG} "  english, german, romanian, french, french-funny, polish, spanish,"
+	@${ECHO_MSG} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
+	@${ECHO_MSG} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
+	@${ECHO_MSG} "  and czech."
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${exec_prefix}|${PREFIX}|g' ${WRKSRC}/configuration-file/pure-config.pl.in
@@ -123,19 +115,19 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-pgsql.conf ${PREFIX}/etc/pureftpd-pgsql.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
-	${MKDIR} ${PREFIX}/share/examples/pure-ftpd
-	(cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${CONTRIB} ${PREFIX}/share/examples/pure-ftpd)
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${CONTRIB} ${EXAMPLESDIR}
 	${CHMOD} 755 ${PREFIX}/sbin/pure-config.pl
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/pure-ftpd
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/pure-ftpd)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 	${INSTALL_SCRIPT} ${FILESDIR}/pure-ftpd.sh.sample ${PREFIX}/etc/rc.d/
 .if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
-	@${ECHO_CMD} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
-	@${ECHO_CMD} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
+	@${ECHO_MSG} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
+	@${ECHO_MSG} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
 .endif
 
 .include <bsd.port.post.mk>
