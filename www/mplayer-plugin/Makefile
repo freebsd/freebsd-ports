@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	2.60
+PORTVERSION=	2.66
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -15,8 +15,8 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
@@ -75,8 +75,12 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile.in
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+	@${REINPLACE_CMD} -e 's|mozilla-|firefox-|g' ${WRKSRC}/configure
+.else
 	@${REINPLACE_CMD} -e 's|mozilla-plugin|mozilla-plugin${HEADERS_SUFX}|g' \
 		${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' \
 		${WRKSRC}/Source/plugin-setup.cpp
 
