@@ -106,6 +106,7 @@ sbin/logresolve
 sbin/rotatelogs
 %%SUB_SUEXEC%%sbin/suexec
 @exec mkdir -p -m 755 www/data-dist
+@unexec chmod u+w www/data-dist
 www/data-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/data/ ] || ln -fs %B %D/www/data
 www/data-dist/apache_pb.gif
@@ -434,6 +435,7 @@ share/doc/apache/windows.html.en
 share/doc/apache/windows.html.html
 share/doc/apache/windows.html.ja.jis
 @exec mkdir -p -m 755 www/cgi-bin-dist
+@unexec chmod u+w www/cgi-bin-dist
 www/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/printenv
