@@ -1,0 +1,13 @@
+--- cdrom_freebsd.c.old	Tue Jun 27 12:19:04 2000
++++ cdrom_freebsd.c	Tue Jun 27 12:20:40 2000
+@@ -21,6 +21,10 @@
+ # include <sys/param.h>
+ # include <sys/stat.h>
+ # include <string.h>
++#include <osreldate.h>
++#if __FreeBSD_version >= 500003
++#include <sys/bio.h>
++#endif
+ # include <sys/buf.h>
+ # include <sys/time.h>
+ 
