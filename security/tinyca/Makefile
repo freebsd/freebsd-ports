@@ -15,7 +15,8 @@ COMMENT=	Simple graphical interface to manage a small Certification Authority
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
 		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
-		zip:${PORTSDIR}/archivers/zip
+		zip:${PORTSDIR}/archivers/zip \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 WRKSRC=		${WRKDIR}/TinyCA
 USE_PERL5=	yes
