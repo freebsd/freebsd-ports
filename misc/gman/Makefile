@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	gman
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	misc
 MASTER_SITES=	http://homex.coolconnect.com/user/xkwang/gman/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
@@ -20,8 +20,9 @@ USE_GTK=	yes
 
 MAN1=	gman.1x
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gman ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gman.1x ${MANPREFIX}/man/man1
+post-patch:
+	@${PERL} -pi -e "s,^CXX =,#CXX =,g ; s,^CXXFLAGS =,CXXFLAGS+=,g ; \
+		s,gtk-config,${GTK_CONFIG},g ; s,= /usr,= ${PREFIX},g ; \
+		s,/var/www,${LOCALBASE}/www,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
