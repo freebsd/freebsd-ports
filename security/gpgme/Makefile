@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.12
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/alpha/gpgme/
 
