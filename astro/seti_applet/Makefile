@@ -18,7 +18,7 @@ MAINTAINER=	clefevre@citeweb.net
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		intl.1:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	setiathome:${PORTSDIR}/astro/setiathome
+RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
