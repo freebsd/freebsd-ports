@@ -8,6 +8,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/advanced.features.html
 %%PORTDOCS%%share/doc/smarty/manual/advanced.features.outputfilters.html
 %%PORTDOCS%%share/doc/smarty/manual/advanced.features.postfilters.html
+%%PORTDOCS%%share/doc/smarty/manual/advanced.features.prefilters.html
 %%PORTDOCS%%share/doc/smarty/manual/api.append.by.ref.html
 %%PORTDOCS%%share/doc/smarty/manual/api.assign.by.ref.html
 %%PORTDOCS%%share/doc/smarty/manual/api.assign.html
@@ -16,6 +17,8 @@
 %%PORTDOCS%%share/doc/smarty/manual/api.clear.assign.html
 %%PORTDOCS%%share/doc/smarty/manual/api.clear.cache.html
 %%PORTDOCS%%share/doc/smarty/manual/api.clear.compiled.tpl.html
+%%PORTDOCS%%share/doc/smarty/manual/api.clear.config.html
+%%PORTDOCS%%share/doc/smarty/manual/api.config.load.html
 %%PORTDOCS%%share/doc/smarty/manual/api.display.html
 %%PORTDOCS%%share/doc/smarty/manual/api.fetch.html
 %%PORTDOCS%%share/doc/smarty/manual/api.functions.html
@@ -26,6 +29,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/api.register.compiler.function.html
 %%PORTDOCS%%share/doc/smarty/manual/api.register.function.html
 %%PORTDOCS%%share/doc/smarty/manual/api.register.modifier.html
+%%PORTDOCS%%share/doc/smarty/manual/api.register.object.html
 %%PORTDOCS%%share/doc/smarty/manual/api.register.outputfilter.html
 %%PORTDOCS%%share/doc/smarty/manual/api.register.postfilter.html
 %%PORTDOCS%%share/doc/smarty/manual/api.register.prefilter.html
@@ -36,6 +40,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.compiler.function.html
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.function.html
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.modifier.html
+%%PORTDOCS%%share/doc/smarty/manual/api.unregister.object.html
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.outputfilter.html
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.postfilter.html
 %%PORTDOCS%%share/doc/smarty/manual/api.unregister.prefilter.html
@@ -75,6 +80,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/language.function.insert.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.ldelim.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.literal.html
+%%PORTDOCS%%share/doc/smarty/manual/language.function.mailto.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.math.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.php.html
 %%PORTDOCS%%share/doc/smarty/manual/language.function.popup.html
@@ -93,6 +99,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.lower.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.regex.replace.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.replace.html
+%%PORTDOCS%%share/doc/smarty/manual/smarty.constants.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.spacify.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.string.format.html
 %%PORTDOCS%%share/doc/smarty/manual/language.modifier.strip.html
@@ -108,6 +115,7 @@
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.html
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.objects.html
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.smarty.capture.html
+%%PORTDOCS%%share/doc/smarty/manual/language.variables.smarty.const.html
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.smarty.html
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.smarty.loops.html
 %%PORTDOCS%%share/doc/smarty/manual/language.variables.smarty.now.html
@@ -137,7 +145,6 @@
 %%PORTDOCS%%share/doc/smarty/manual/section.property.show.html
 %%PORTDOCS%%share/doc/smarty/manual/section.property.total.html
 %%PORTDOCS%%share/doc/smarty/manual/section.template.cache.handler.func.html
-%%PORTDOCS%%share/doc/smarty/manual/smarty.constants.html
 %%PORTDOCS%%share/doc/smarty/manual/smarty.for.designers.html
 %%PORTDOCS%%share/doc/smarty/manual/smarty.for.programmers.html
 %%PORTDOCS%%share/doc/smarty/manual/stylesheet-images/caution.gif
@@ -174,7 +181,11 @@
 %%PORTDOCS%%share/doc/smarty/manual/variable.compile.dir.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.compile.id.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.compiler.class.html
+%%PORTDOCS%%share/doc/smarty/manual/variable.config.booleanize.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.config.dir.html
+%%PORTDOCS%%share/doc/smarty/manual/variable.config.fix.newlines.html
+%%PORTDOCS%%share/doc/smarty/manual/variable.config.overwrite.html
+%%PORTDOCS%%share/doc/smarty/manual/variable.config.read.hidden.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.debug.tpl.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.debugging.ctrl.html
 %%PORTDOCS%%share/doc/smarty/manual/variable.debugging.html
@@ -216,6 +227,7 @@ share/smarty/plugins/function.fetch.php
 share/smarty/plugins/function.html_options.php
 share/smarty/plugins/function.html_select_date.php
 share/smarty/plugins/function.html_select_time.php
+share/smarty/plugins/function.mailto.php
 share/smarty/plugins/function.math.php
 share/smarty/plugins/function.popup.php
 share/smarty/plugins/function.popup_init.php
@@ -239,6 +251,7 @@ share/smarty/plugins/modifier.strip_tags.php
 share/smarty/plugins/modifier.truncate.php
 share/smarty/plugins/modifier.upper.php
 share/smarty/plugins/modifier.wordwrap.php
+share/smarty/plugins/outputfilter.trimwhitespace.php
 share/smarty/plugins/shared.make_timestamp.php
 @dirrm share/smarty/plugins
 @dirrm share/smarty
