@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apsfilter
-PORTVERSION=	7.2.5
-PORTREVISION=	6
+PORTVERSION=	7.2.6
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
