@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnomekiss
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
-DISTNAME=	gnomekiss-${PORTVERSION}
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
 
@@ -20,5 +19,6 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAN1=		gnomekiss.1
 
 .include <bsd.port.mk>
