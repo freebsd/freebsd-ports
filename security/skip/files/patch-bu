@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h work.new/skip/freebsd/skip_os.h
 --- skipsrc-1.0.orig/skip/freebsd/skip_os.h	Fri Oct 25 13:12:43 1996
-+++ work.new/skip/freebsd/skip_os.h	Mon Jan 24 16:14:32 2000
++++ work.new/skip/freebsd/skip_os.h	Tue Feb  1 10:02:28 2000
 @@ -51,10 +51,9 @@
  /*
   * FreeBSD

@@ -1,12 +1,12 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/Makefile.defs work.new/skip/freebsd/Makefile.defs
 --- skipsrc-1.0.orig/skip/freebsd/Makefile.defs	Fri Oct 25 13:12:42 1996
-+++ work.new/skip/freebsd/Makefile.defs	Mon Jan 24 13:45:40 2000
++++ work.new/skip/freebsd/Makefile.defs	Wed Feb  2 11:30:42 2000
 @@ -93,7 +93,7 @@
  
  # Kernel compilation flags
  #
 -K_FLAGS_FREEBSD_gnu	= -DKERNEL -DFREEBSD
-+K_FLAGS_FREEBSD_gnu	= -DKERNEL -D_KERNEL -DKLD_MODULE
++K_FLAGS_FREEBSD_gnu	= -DKERNEL -D_KERNEL -DKLD_MODULE -I/sys
  
  # OS Libraries
  #
