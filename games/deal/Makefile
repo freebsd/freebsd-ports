@@ -8,7 +8,7 @@
 PORTNAME=	deal
 PORTVERSION=	2.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/deal/
+MASTER_SITES=	http://catb.org/~esr/deal/
 
 MAINTAINER=	markp@FreeBSD.org
 
