@@ -7,6 +7,7 @@
 
 PORTNAME=	Auth_SASL
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PEAR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR abstraction of various SASL mechanism responses
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
@@ -37,11 +38,11 @@ MANIFEST=	SASL.php SASL
 
 do-install:
 .for FILE in ${MANIFEST}
-	@${CP} -Rp ${WRKSRC}/${FILE} ${PEARDIR}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${FILE}
+	@${CP} -Rp ${WRKSRC}/${FILE} ${PEARDIR}/Auth
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Auth/${FILE}
 .endfor
-	@${CHMOD} a-x ${PEARDIR}/SASL/*
-	@${CHMOD} a-x ${PEARDIR}/SASL.php
+	@${CHMOD} a-x ${PEARDIR}/Auth/SASL/*
+	@${CHMOD} a-x ${PEARDIR}/Auth/SASL.php
 
 post-install:
 # Register a new package
