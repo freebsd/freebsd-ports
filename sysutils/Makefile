@@ -87,6 +87,7 @@
     SUBDIR += upsmon
     SUBDIR += uwatch
     SUBDIR += webmin
+    SUBDIR += whowatch
     SUBDIR += wmapm
     SUBDIR += wmavgload
     SUBDIR += wmbattery
