@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dominic_marks@btinternet.com
 
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		vorbis.1:${PORTSDIR}/audio/libvorbis
