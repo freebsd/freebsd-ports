@@ -14,7 +14,8 @@ MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Session Management library for X11
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/libICE
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/libICE \
+		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/libXtrans
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
@@ -29,7 +30,5 @@ USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-6.0.1
 
 INSTALLS_SHLIB=	yes
-
-BROKEN=		"Missing dependencies"
 
 .include <bsd.port.mk>
