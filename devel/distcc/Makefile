@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -18,8 +17,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include" \
+			--with-extra-libs="${LOCALBASE}/lib"
 
 MAN1=	distcc.1 distccd.1
 DOC_FILES=	AUTHORS COPYING COPYING.FDL NEWS OLDNEWS README \
