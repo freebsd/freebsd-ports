@@ -7,12 +7,8 @@ augments them so that they:
 * Can be used with the standard mode and padding algorithms (in the case of
   block mode ciphers).
 
-This very initial release contains:
-
-* DES
-* Blowfish
-* Cipher Block Chaining (CBC) mode
-* PKCS#5 and nulls padding
+It contains: DES, Blowfish, Cipher Block Chaining (CBC) mode, PKCS#5 and nulls
+             padding, SHA-1, RSA, OAEP, ASN.1, and PKCS#8.
 
 WWW: http://www.haskell.org/crypto/ReadMe.html
 
