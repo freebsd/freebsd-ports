@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.1501
+PORTVERSION=	0.1502
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://poe.perl.org/poedown/	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -28,6 +28,7 @@ MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Driver::SysRW.3 POE::Wheel::ListenAccept.3\
 		POE::Filter::Grep.3 POE::Session.3 POE::Filter::Reference.3\
 		POE::Wheel::SocketFactory.3 POE::Filter.3 POE::Preprocessor.3\
+		POE::Pipe.3\
 		POE::Pipe::TwoWay.3 POE::Wheel::ReadLine.3 POE::Wheel::ReadWrite.3\
 		POE::Driver.3 POE::Component::Server::TCP.3 POE::Pipe::OneWay.3\
 		POE.3 POE::Component.3 POE::Filter::Map.3 POE::Wheel.3 POE::NFA.3\
