@@ -1,441 +1,462 @@
 bin/yacas
 bin/yacas_client
 bin/ytxt2tex
-share/yacas/addons/editvi.ys
-share/yacas/addons/editvi.ys.def
-share/yacas/addons/unix.ys
-share/yacas/addons/unix.ys.def
-share/yacas/array.rep/code.ys
-share/yacas/array.rep/code.ys.def
-share/yacas/assoc.rep/code.ys
-share/yacas/assoc.rep/code.ys.def
-share/yacas/c_form.rep/code.ys
-share/yacas/c_form.rep/code.ys.def
-share/yacas/codecheck.rep/interface.ys
-share/yacas/codecheck.rep/interface.ys.def
-share/yacas/codecheck.rep/process.ys
-share/yacas/codecheck.rep/process.ys.def
-share/yacas/complex.rep/code.ys
-share/yacas/complex.rep/code.ys.def
-share/yacas/complex.rep/om.ys
-share/yacas/constants.rep/code.ys
-share/yacas/constants.rep/code.ys.def
-share/yacas/constants.rep/om.ys
-share/yacas/controlflow.rep/code.ys
-share/yacas/controlflow.rep/code.ys.def
-share/yacas/cstubgen.rep/code.ys
-share/yacas/cstubgen.rep/code.ys.def
-share/yacas/debug.rep/code.ys
-share/yacas/debug.rep/code.ys.def
-share/yacas/deffunc.rep/code.ys
-share/yacas/deffunc.rep/code.ys.def
-share/yacas/deriv.rep/code.ys
-share/yacas/deriv.rep/code.ys.def
-share/yacas/documentation/Algo.html
-share/yacas/documentation/Algochapter1.html
-share/yacas/documentation/Algochapter2.html
-share/yacas/documentation/Algochapter3.html
-share/yacas/documentation/Algochapter4.html
-share/yacas/documentation/Algochapter5.html
-share/yacas/documentation/Algochapter6.html
-share/yacas/documentation/Algochapter7.html
-share/yacas/documentation/Algochapters.html
-share/yacas/documentation/Algomanual.html
-share/yacas/documentation/LispProgramming.html
-share/yacas/documentation/LispProgrammingchapter1.html
-share/yacas/documentation/LispProgrammingchapter2.html
-share/yacas/documentation/LispProgrammingchapter3.html
-share/yacas/documentation/LispProgrammingchapter4.html
-share/yacas/documentation/LispProgrammingchapter5.html
-share/yacas/documentation/LispProgrammingchapters.html
-share/yacas/documentation/LispProgrammingmanual.html
-share/yacas/documentation/NewDesign.html
-share/yacas/documentation/NewDesignchapter1.html
-share/yacas/documentation/NewDesignchapter10.html
-share/yacas/documentation/NewDesignchapter2.html
-share/yacas/documentation/NewDesignchapter3.html
-share/yacas/documentation/NewDesignchapter4.html
-share/yacas/documentation/NewDesignchapter5.html
-share/yacas/documentation/NewDesignchapter6.html
-share/yacas/documentation/NewDesignchapter7.html
-share/yacas/documentation/NewDesignchapter8.html
-share/yacas/documentation/NewDesignchapter9.html
-share/yacas/documentation/NewDesignchapters.html
-share/yacas/documentation/NewDesignmanual.html
-share/yacas/documentation/books.html
-share/yacas/documentation/coding.html
-share/yacas/documentation/codingchapter1.html
-share/yacas/documentation/codingchapter2.html
-share/yacas/documentation/codingchapter3.html
-share/yacas/documentation/codingchapter4.html
-share/yacas/documentation/codingchapter5.html
-share/yacas/documentation/codingchapter6.html
-share/yacas/documentation/codingchapter7.html
-share/yacas/documentation/codingchapter8.html
-share/yacas/documentation/codingchapter9.html
-share/yacas/documentation/codingchapters.html
-share/yacas/documentation/codingmanual.html
-share/yacas/documentation/essays.html
-share/yacas/documentation/essayschapter1.html
-share/yacas/documentation/essayschapter2.html
-share/yacas/documentation/essayschapter3.html
-share/yacas/documentation/essayschapter4.html
-share/yacas/documentation/essayschapter5.html
-share/yacas/documentation/essayschapter6.html
-share/yacas/documentation/essayschapter7.html
-share/yacas/documentation/essayschapter8.html
-share/yacas/documentation/essayschapters.html
-share/yacas/documentation/essaysmanual.html
-share/yacas/documentation/intro.html
-share/yacas/documentation/introchapter1.html
-share/yacas/documentation/introchapter2.html
-share/yacas/documentation/introchapter3.html
-share/yacas/documentation/introchapter4.html
-share/yacas/documentation/introchapters.html
-share/yacas/documentation/intromanual.html
-share/yacas/documentation/manicon.html
-share/yacas/documentation/ref.html
-share/yacas/documentation/refchapter1.html
-share/yacas/documentation/refchapter10.html
-share/yacas/documentation/refchapter11.html
-share/yacas/documentation/refchapter12.html
-share/yacas/documentation/refchapter13.html
-share/yacas/documentation/refchapter14.html
-share/yacas/documentation/refchapter15.html
-share/yacas/documentation/refchapter16.html
-share/yacas/documentation/refchapter17.html
-share/yacas/documentation/refchapter18.html
-share/yacas/documentation/refchapter19.html
-share/yacas/documentation/refchapter20.html
-share/yacas/documentation/refchapter21.html
-share/yacas/documentation/refchapter22.html
-share/yacas/documentation/refchapter2.html
-share/yacas/documentation/refchapter3.html
-share/yacas/documentation/refchapter4.html
-share/yacas/documentation/refchapter5.html
-share/yacas/documentation/refchapter6.html
-share/yacas/documentation/refchapter7.html
-share/yacas/documentation/refchapter8.html
-share/yacas/documentation/refchapter9.html
-share/yacas/documentation/refchapters.html
-share/yacas/documentation/refmanual.html
-share/yacas/documentation/refprog.html
-share/yacas/documentation/refprogchapter1.html
-share/yacas/documentation/refprogchapter10.html
-share/yacas/documentation/refprogchapter2.html
-share/yacas/documentation/refprogchapter3.html
-share/yacas/documentation/refprogchapter4.html
-share/yacas/documentation/refprogchapter5.html
-share/yacas/documentation/refprogchapter6.html
-share/yacas/documentation/refprogchapter7.html
-share/yacas/documentation/refprogchapter8.html
-share/yacas/documentation/refprogchapter9.html
-share/yacas/documentation/refprogchapters.html
-share/yacas/documentation/refprogmanual.html
-share/yacas/documentation/yacaslogo.gif
-share/yacas/example.rep/code.ys
-share/yacas/example.rep/code.ys.def
-share/yacas/examples/ABIN.ys
-share/yacas/examples/MinimumSpanningTree.ys
-share/yacas/examples/benchbuild.ys
-share/yacas/examples/benchmark.ys
-share/yacas/examples/benchmark2.ys
-share/yacas/examples/findsum.ys
-share/yacas/examples/goldbach.ys
-share/yacas/examples/pi.ys
-share/yacas/examples/queens.ys
-share/yacas/examples/series.ys
-share/yacas/examples/wordproblems.ys
-share/yacas/factors.rep/code.ys
-share/yacas/factors.rep/code.ys.def
-share/yacas/fakedb.rep/code.ys
-share/yacas/fakedb.rep/code.ys.def
-share/yacas/functional.rep/code.ys
-share/yacas/functional.rep/code.ys.def
-share/yacas/glview.ys
-share/yacas/html.rep/code.ys
-share/yacas/html.rep/code.ys.def
-share/yacas/include/GPL_stuff.h
-share/yacas/include/anumber.h
-share/yacas/include/anumber.inl
-share/yacas/include/archiver.h
-share/yacas/include/arggetter.h
-share/yacas/include/arrayclass.h
-share/yacas/include/arrayclass.inl
-share/yacas/include/choices.h
-share/yacas/include/commandline.h
-share/yacas/include/compressedfiles.h
-share/yacas/include/ctokenizer.h
-share/yacas/include/cyacas.h
-share/yacas/include/debugmem.h
-share/yacas/include/deffile.h
-share/yacas/include/deffile.inl
-share/yacas/include/elfdll.h
-share/yacas/include/epoccli.h
-share/yacas/include/epocclsv.h
-share/yacas/include/epocserv.h
-share/yacas/include/errors.h
-share/yacas/include/evalfunc.h
-share/yacas/include/genericobject.h
-share/yacas/include/genericstructs.h
-share/yacas/include/grower.h
-share/yacas/include/grower.inl
-share/yacas/include/infixparser.h
-share/yacas/include/lispassert.h
-share/yacas/include/lispatom.h
-share/yacas/include/lispcleanupstack.h
-share/yacas/include/lispenvironment.h
-share/yacas/include/lisperror.h
-share/yacas/include/lispeval.h
-share/yacas/include/lispevalhash.h
-share/yacas/include/lispglobals.h
-share/yacas/include/lisphash.h
-share/yacas/include/lisphash.inl
-share/yacas/include/lispio.h
-share/yacas/include/lispobject.h
-share/yacas/include/lispobject.inl
-share/yacas/include/lispparser.h
-share/yacas/include/lispplugin.h
-share/yacas/include/lispstring.h
-share/yacas/include/lispstring.inl
-share/yacas/include/lispuserfunc.h
-share/yacas/include/log.h
-share/yacas/include/mathcommands.h
-share/yacas/include/mathenvironment.h
-share/yacas/include/mathuserfunc.h
-share/yacas/include/mathutil.h
-share/yacas/include/numbers.h
-share/yacas/include/patcher.h
-share/yacas/include/patternclass.h
-share/yacas/include/patterns.h
-share/yacas/include/plat/linux32/lisptype.h
-share/yacas/include/plat/linux32/platdll.h
-share/yacas/include/plat/linux32/platfileio.h
-share/yacas/include/plat/linux32/stubs.inl
-share/yacas/include/platmath.h
-share/yacas/include/ramdisk.h
-share/yacas/include/refcount.h
-share/yacas/include/standard.h
-share/yacas/include/standard.inl
-share/yacas/include/stdcommandline.h
-share/yacas/include/stdfileio.h
-share/yacas/include/stringio.h
-share/yacas/include/stubs.h
-share/yacas/include/substitute.h
-share/yacas/include/tokenizer.h
-share/yacas/include/unipoly.h
-share/yacas/include/unixcommandline.h
-share/yacas/include/version.h
-share/yacas/include/win32dll.h
-share/yacas/include/win32dllresource.h
-share/yacas/include/win32yacasdll.h
-share/yacas/include/win32yacasdllresource.h
-share/yacas/include/xmltokenizer.h
-share/yacas/include/yacas.h
-share/yacas/include/yacasbase.h
-share/yacas/include/yacasprivate.h
-share/yacas/integrate.rep/code.ys
-share/yacas/integrate.rep/code.ys.def
-share/yacas/io.rep/code.ys
-share/yacas/io.rep/code.ys.def
-share/yacas/io.rep/defaultprint.ys
-share/yacas/io.rep/defaultprint.ys.def
-share/yacas/io.rep/errors.ys
-share/yacas/io.rep/formula.ys
-share/yacas/io.rep/print.ys
-share/yacas/limit.rep/code.ys
-share/yacas/limit.rep/code.ys.def
-share/yacas/linalg.rep/code.ys
-share/yacas/linalg.rep/code.ys.def
-share/yacas/lists.rep/code.ys
-share/yacas/lists.rep/code.ys.def
-share/yacas/lists.rep/scopestack.ys
-share/yacas/lists.rep/scopestack.ys.def
-share/yacas/localrules.rep/code.ys
-share/yacas/localrules.rep/code.ys.def
-share/yacas/logic.rep/code.ys
-share/yacas/logic.rep/code.ys.def
-share/yacas/logic.rep/om.ys
-share/yacas/manmake/book2TeX.sh
-share/yacas/manmake/book2TeX.ys
-share/yacas/manmake/txt2yacasdoc.pl
-share/yacas/multivar.rep/code.ys
-share/yacas/multivar.rep/code.ys.def
-share/yacas/multivar.rep/makemulti.ys
-share/yacas/multivar.rep/sparsenomial.ys
-share/yacas/multivar.rep/sparsetree.ys
-share/yacas/multivar.rep/sparsetree.ys.def
-share/yacas/newly.rep/code.ys
-share/yacas/newly.rep/code.ys.def
-share/yacas/numbers.rep/GaussianIntegers.ys
-share/yacas/numbers.rep/GaussianIntegers.ys.def
-share/yacas/numbers.rep/NumberTheory.ys
-share/yacas/numbers.rep/NumberTheory.ys.def
-share/yacas/numbers.rep/code.ys
-share/yacas/numbers.rep/code.ys.def
-share/yacas/numbers.rep/nthroot.ys
-share/yacas/numbers.rep/nthroot.ys.def
-share/yacas/odesolver.rep/code.ys
-share/yacas/odesolver.rep/code.ys.def
-share/yacas/openmath.rep/code.ys
-share/yacas/openmath.rep/code.ys.def
-share/yacas/orthopoly.rep/code.ys
-share/yacas/orthopoly.rep/code.ys.def
-share/yacas/osdep.rep/code.ys
-share/yacas/osdep.rep/code.ys.def
-share/yacas/osdep.rep/unix.ys
-share/yacas/osdep.rep/win32.ys
-share/yacas/packages.ys
-share/yacas/padic.rep/code.ys
-share/yacas/padic.rep/code.ys.def
-share/yacas/patterns.rep/code.ys
-share/yacas/patterns.rep/code.ys.def
-share/yacas/plots.rep/backends-2d.ys
-share/yacas/plots.rep/backends-3d.ys
-share/yacas/plots.rep/code.ys
-share/yacas/plots.rep/code.ys.def
-share/yacas/plots.rep/plot2d.ys
-share/yacas/plots.rep/plot2d.ys.def
-share/yacas/plots.rep/plot3d.ys
-share/yacas/plots.rep/plot3d.ys.def
-share/yacas/predicates.rep/code.ys
-share/yacas/predicates.rep/code.ys.def
-share/yacas/probability.rep/code.ys
-share/yacas/probability.rep/code.ys.def
-share/yacas/pslq.rep/code.ys
-share/yacas/pslq.rep/code.ys.def
-share/yacas/rabinmiller.rep/code.ys
-share/yacas/rabinmiller.rep/code.ys.def
-share/yacas/radsimp.rep/code.ys
-share/yacas/radsimp.rep/code.ys.def
-share/yacas/random.rep/code.ys
-share/yacas/random.rep/code.ys.def
-share/yacas/simplify.rep/code.ys
-share/yacas/simplify.rep/code.ys.def
-share/yacas/solve.rep/code.ys
-share/yacas/solve.rep/code.ys.def
-share/yacas/specfunc.rep/bernou.ys
-share/yacas/specfunc.rep/bernou.ys.def
-share/yacas/specfunc.rep/bessel.ys
-share/yacas/specfunc.rep/bessel.ys.def
-share/yacas/specfunc.rep/code.ys
-share/yacas/specfunc.rep/code.ys.def
-share/yacas/specfunc.rep/gammaconst.ys
-share/yacas/specfunc.rep/gammaconst.ys.def
-share/yacas/specfunc.rep/gamma.ys
-share/yacas/specfunc.rep/gamma.ys.def
-share/yacas/specfunc.rep/zeta.ys
-share/yacas/specfunc.rep/zeta.ys.def
-share/yacas/standard.ys
-share/yacas/standard.ys.def
-share/yacas/statistics.rep/distributions.ys
-share/yacas/statistics.rep/distributions.ys.def
-share/yacas/statistics.rep/hypothesystest.ys
-share/yacas/statistics.rep/incompletegamma.ys.def
-share/yacas/statistics.rep/regression.ys.def
-share/yacas/statistics.rep/hypothesystest.ys.def
-share/yacas/statistics.rep/randomtest.ys
-share/yacas/statistics.rep/statistics.ys
-share/yacas/statistics.rep/incompletegamma.ys
-share/yacas/statistics.rep/regression.ys
-share/yacas/statistics.rep/statistics.ys.def
-share/yacas/stats.rep/code.ys
-share/yacas/stats.rep/code.ys.def
-share/yacas/stdfuncs.rep/code.ys
-share/yacas/stdfuncs.rep/code.ys.def
-share/yacas/stdfuncs.rep/elemfuncs.ys
-share/yacas/stdfuncs.rep/elemfuncs.ys.def
-share/yacas/stdfuncs.rep/numerical.ys
-share/yacas/stdfuncs.rep/numerical.ys.def
-share/yacas/stdfuncs.rep/nummethods.ys
-share/yacas/stdfuncs.rep/nummethods.ys.def
-share/yacas/stdfuncs.rep/om.ys
-share/yacas/stdopers.ys
-share/yacas/stubs.rep/code.ys
-share/yacas/stubs.rep/code.ys.def
-share/yacas/stubs.rep/om.ys
-share/yacas/substitute.rep/code.ys
-share/yacas/substitute.rep/code.ys.def
-share/yacas/sums.rep/code.ys
-share/yacas/sums.rep/code.ys.def
-share/yacas/tensor.rep/code.ys
-share/yacas/tensor.rep/code.ys.def
-share/yacas/testers.rep/code.ys
-share/yacas/testers.rep/code.ys.def
-share/yacas/texform.rep/code.ys
-share/yacas/texform.rep/code.ys.def
-share/yacas/transforms.rep/code.ys
-share/yacas/transforms.rep/code.ys.def
-share/yacas/trigsimp.rep/code.ys
-share/yacas/trigsimp.rep/code.ys.def
-share/yacas/univar.rep/Cyclotomic.ys
-share/yacas/univar.rep/Cyclotomic.ys.def
-share/yacas/univar.rep/sparse.ys
-share/yacas/univar.rep/sparse.ys.def
-share/yacas/univar.rep/code.ys
-share/yacas/univar.rep/code.ys.def
-share/yacas/univar.rep/sturm.ys
-share/yacas/univar.rep/sturm.ys.def
-share/yacas/yacasinit.ys
-@dirrm share/yacas/addons
-@dirrm share/yacas/array.rep
-@dirrm share/yacas/assoc.rep
-@dirrm share/yacas/c_form.rep
-@dirrm share/yacas/complex.rep
-@dirrm share/yacas/codecheck.rep
-@dirrm share/yacas/constants.rep
-@dirrm share/yacas/controlflow.rep
-@dirrm share/yacas/cstubgen.rep
-@dirrm share/yacas/debug.rep
-@dirrm share/yacas/deffunc.rep
-@dirrm share/yacas/deriv.rep
-@dirrm share/yacas/documentation
-@dirrm share/yacas/example.rep
-@dirrm share/yacas/examples
-@dirrm share/yacas/factors.rep
-@dirrm share/yacas/fakedb.rep
-@dirrm share/yacas/functional.rep
-@dirrm share/yacas/html.rep
-@dirrm share/yacas/include/plat/linux32
-@dirrm share/yacas/include/plat
-@dirrm share/yacas/include
-@dirrm share/yacas/integrate.rep
-@dirrm share/yacas/io.rep
-@dirrm share/yacas/limit.rep
-@dirrm share/yacas/linalg.rep
-@dirrm share/yacas/lists.rep
-@dirrm share/yacas/localrules.rep
-@dirrm share/yacas/logic.rep
-@dirrm share/yacas/multivar.rep
-@dirrm share/yacas/newly.rep
-@dirrm share/yacas/numbers.rep
-@dirrm share/yacas/odesolver.rep
-@dirrm share/yacas/openmath.rep
-@dirrm share/yacas/orthopoly.rep
-@dirrm share/yacas/osdep.rep
-@dirrm share/yacas/padic.rep
-@dirrm share/yacas/patterns.rep
-@dirrm share/yacas/plots.rep
-@dirrm share/yacas/predicates.rep
-@dirrm share/yacas/pslq.rep
-@dirrm share/yacas/rabinmiller.rep
-@dirrm share/yacas/radsimp.rep
-@dirrm share/yacas/random.rep
-@dirrm share/yacas/simplify.rep
-@dirrm share/yacas/solve.rep
-@dirrm share/yacas/specfunc.rep
-@dirrm share/yacas/statistics.rep
-@dirrm share/yacas/stats.rep
-@dirrm share/yacas/stdfuncs.rep
-@dirrm share/yacas/stubs.rep
-@dirrm share/yacas/substitute.rep
-@dirrm share/yacas/sums.rep
-@dirrm share/yacas/tensor.rep
-@dirrm share/yacas/testers.rep
-@dirrm share/yacas/texform.rep
-@dirrm share/yacas/transforms.rep
-@dirrm share/yacas/trigsimp.rep
-@dirrm share/yacas/univar.rep
-@dirrm share/yacas/probability.rep
-@dirrm share/yacas/manmake
-@dirrm share/yacas
+lib/libcyacas.a
+lib/libcyacas.so
+lib/libcyacas.so.0
+lib/libyacas.a
+lib/libyacas.so
+lib/libyacas.so.0
+lib/libyacasnumbers.a
+lib/libyacasnumbers.so
+lib/libyacasnumbers.so.0
+lib/libyacasplatform.a
+lib/libyacasplatform.so
+lib/libyacasplatform.so.0
+lib/yacas/example.a
+lib/yacas/example.so
+lib/yacas/forth.a
+lib/yacas/forth.so
+lib/yacas/yacas_gsl.a
+lib/yacas/yacas_gsl.so
+%%WITH_X%%lib/yacas/opengl.a
+%%WITH_X%%lib/yacas/opengl.so
+@dirrm lib/yacas
+%%DATADIR%%/addons/editvi.ys
+%%DATADIR%%/addons/editvi.ys.def
+%%DATADIR%%/addons/unix.ys
+%%DATADIR%%/addons/unix.ys.def
+%%DATADIR%%/array.rep/code.ys
+%%DATADIR%%/array.rep/code.ys.def
+%%DATADIR%%/assoc.rep/code.ys
+%%DATADIR%%/assoc.rep/code.ys.def
+%%DATADIR%%/c_form.rep/code.ys
+%%DATADIR%%/c_form.rep/code.ys.def
+%%DATADIR%%/codecheck.rep/interface.ys
+%%DATADIR%%/codecheck.rep/interface.ys.def
+%%DATADIR%%/codecheck.rep/process.ys
+%%DATADIR%%/codecheck.rep/process.ys.def
+%%DATADIR%%/complex.rep/code.ys
+%%DATADIR%%/complex.rep/code.ys.def
+%%DATADIR%%/complex.rep/om.ys
+%%DATADIR%%/constants.rep/code.ys
+%%DATADIR%%/constants.rep/code.ys.def
+%%DATADIR%%/constants.rep/om.ys
+%%DATADIR%%/controlflow.rep/code.ys
+%%DATADIR%%/controlflow.rep/code.ys.def
+%%DATADIR%%/cstubgen.rep/code.ys
+%%DATADIR%%/cstubgen.rep/code.ys.def
+%%DATADIR%%/debug.rep/code.ys
+%%DATADIR%%/debug.rep/code.ys.def
+%%DATADIR%%/deffunc.rep/code.ys
+%%DATADIR%%/deffunc.rep/code.ys.def
+%%DATADIR%%/deriv.rep/code.ys
+%%DATADIR%%/deriv.rep/code.ys.def
+%%DATADIR%%/documentation/Algo.html
+%%DATADIR%%/documentation/Algochapter1.html
+%%DATADIR%%/documentation/Algochapter2.html
+%%DATADIR%%/documentation/Algochapter3.html
+%%DATADIR%%/documentation/Algochapter4.html
+%%DATADIR%%/documentation/Algochapter5.html
+%%DATADIR%%/documentation/Algochapter6.html
+%%DATADIR%%/documentation/Algochapter7.html
+%%DATADIR%%/documentation/Algochapters.html
+%%DATADIR%%/documentation/Algomanual.html
+%%DATADIR%%/documentation/LispProgramming.html
+%%DATADIR%%/documentation/LispProgrammingchapter1.html
+%%DATADIR%%/documentation/LispProgrammingchapter2.html
+%%DATADIR%%/documentation/LispProgrammingchapter3.html
+%%DATADIR%%/documentation/LispProgrammingchapter4.html
+%%DATADIR%%/documentation/LispProgrammingchapter5.html
+%%DATADIR%%/documentation/LispProgrammingchapters.html
+%%DATADIR%%/documentation/LispProgrammingmanual.html
+%%DATADIR%%/documentation/NewDesign.html
+%%DATADIR%%/documentation/NewDesignchapter1.html
+%%DATADIR%%/documentation/NewDesignchapter10.html
+%%DATADIR%%/documentation/NewDesignchapter2.html
+%%DATADIR%%/documentation/NewDesignchapter3.html
+%%DATADIR%%/documentation/NewDesignchapter4.html
+%%DATADIR%%/documentation/NewDesignchapter5.html
+%%DATADIR%%/documentation/NewDesignchapter6.html
+%%DATADIR%%/documentation/NewDesignchapter7.html
+%%DATADIR%%/documentation/NewDesignchapter8.html
+%%DATADIR%%/documentation/NewDesignchapter9.html
+%%DATADIR%%/documentation/NewDesignchapters.html
+%%DATADIR%%/documentation/NewDesignmanual.html
+%%DATADIR%%/documentation/books.html
+%%DATADIR%%/documentation/coding.html
+%%DATADIR%%/documentation/codingchapter1.html
+%%DATADIR%%/documentation/codingchapter2.html
+%%DATADIR%%/documentation/codingchapter3.html
+%%DATADIR%%/documentation/codingchapter4.html
+%%DATADIR%%/documentation/codingchapter5.html
+%%DATADIR%%/documentation/codingchapter6.html
+%%DATADIR%%/documentation/codingchapter7.html
+%%DATADIR%%/documentation/codingchapter8.html
+%%DATADIR%%/documentation/codingchapter9.html
+%%DATADIR%%/documentation/codingchapters.html
+%%DATADIR%%/documentation/codingmanual.html
+%%DATADIR%%/documentation/essays.html
+%%DATADIR%%/documentation/essayschapter1.html
+%%DATADIR%%/documentation/essayschapter2.html
+%%DATADIR%%/documentation/essayschapter3.html
+%%DATADIR%%/documentation/essayschapter4.html
+%%DATADIR%%/documentation/essayschapter5.html
+%%DATADIR%%/documentation/essayschapter6.html
+%%DATADIR%%/documentation/essayschapter7.html
+%%DATADIR%%/documentation/essayschapter8.html
+%%DATADIR%%/documentation/essayschapters.html
+%%DATADIR%%/documentation/essaysmanual.html
+%%DATADIR%%/documentation/intro.html
+%%DATADIR%%/documentation/introchapter1.html
+%%DATADIR%%/documentation/introchapter2.html
+%%DATADIR%%/documentation/introchapter3.html
+%%DATADIR%%/documentation/introchapter4.html
+%%DATADIR%%/documentation/introchapters.html
+%%DATADIR%%/documentation/intromanual.html
+%%DATADIR%%/documentation/manicon.html
+%%DATADIR%%/documentation/ref.html
+%%DATADIR%%/documentation/refchapter1.html
+%%DATADIR%%/documentation/refchapter10.html
+%%DATADIR%%/documentation/refchapter11.html
+%%DATADIR%%/documentation/refchapter12.html
+%%DATADIR%%/documentation/refchapter13.html
+%%DATADIR%%/documentation/refchapter14.html
+%%DATADIR%%/documentation/refchapter15.html
+%%DATADIR%%/documentation/refchapter16.html
+%%DATADIR%%/documentation/refchapter17.html
+%%DATADIR%%/documentation/refchapter18.html
+%%DATADIR%%/documentation/refchapter19.html
+%%DATADIR%%/documentation/refchapter20.html
+%%DATADIR%%/documentation/refchapter21.html
+%%DATADIR%%/documentation/refchapter22.html
+%%DATADIR%%/documentation/refchapter2.html
+%%DATADIR%%/documentation/refchapter3.html
+%%DATADIR%%/documentation/refchapter4.html
+%%DATADIR%%/documentation/refchapter5.html
+%%DATADIR%%/documentation/refchapter6.html
+%%DATADIR%%/documentation/refchapter7.html
+%%DATADIR%%/documentation/refchapter8.html
+%%DATADIR%%/documentation/refchapter9.html
+%%DATADIR%%/documentation/refchapters.html
+%%DATADIR%%/documentation/refmanual.html
+%%DATADIR%%/documentation/refprog.html
+%%DATADIR%%/documentation/refprogchapter1.html
+%%DATADIR%%/documentation/refprogchapter10.html
+%%DATADIR%%/documentation/refprogchapter2.html
+%%DATADIR%%/documentation/refprogchapter3.html
+%%DATADIR%%/documentation/refprogchapter4.html
+%%DATADIR%%/documentation/refprogchapter5.html
+%%DATADIR%%/documentation/refprogchapter6.html
+%%DATADIR%%/documentation/refprogchapter7.html
+%%DATADIR%%/documentation/refprogchapter8.html
+%%DATADIR%%/documentation/refprogchapter9.html
+%%DATADIR%%/documentation/refprogchapters.html
+%%DATADIR%%/documentation/refprogmanual.html
+%%DATADIR%%/documentation/yacaslogo.gif
+%%DATADIR%%/example.rep/code.ys
+%%DATADIR%%/example.rep/code.ys.def
+%%DATADIR%%/examples/ABIN.ys
+%%DATADIR%%/examples/MinimumSpanningTree.ys
+%%DATADIR%%/examples/benchbuild.ys
+%%DATADIR%%/examples/benchmark.ys
+%%DATADIR%%/examples/benchmark2.ys
+%%DATADIR%%/examples/findsum.ys
+%%DATADIR%%/examples/goldbach.ys
+%%DATADIR%%/examples/pi.ys
+%%DATADIR%%/examples/queens.ys
+%%DATADIR%%/examples/series.ys
+%%DATADIR%%/examples/wordproblems.ys
+%%DATADIR%%/factors.rep/code.ys
+%%DATADIR%%/factors.rep/code.ys.def
+%%DATADIR%%/fakedb.rep/code.ys
+%%DATADIR%%/fakedb.rep/code.ys.def
+%%DATADIR%%/functional.rep/code.ys
+%%DATADIR%%/functional.rep/code.ys.def
+%%DATADIR%%/glview.ys
+%%DATADIR%%/html.rep/code.ys
+%%DATADIR%%/html.rep/code.ys.def
+%%DATADIR%%/include/GPL_stuff.h
+%%DATADIR%%/include/anumber.h
+%%DATADIR%%/include/anumber.inl
+%%DATADIR%%/include/archiver.h
+%%DATADIR%%/include/arggetter.h
+%%DATADIR%%/include/arrayclass.h
+%%DATADIR%%/include/arrayclass.inl
+%%DATADIR%%/include/choices.h
+%%DATADIR%%/include/commandline.h
+%%DATADIR%%/include/compressedfiles.h
+%%DATADIR%%/include/ctokenizer.h
+%%DATADIR%%/include/cyacas.h
+%%DATADIR%%/include/debugmem.h
+%%DATADIR%%/include/deffile.h
+%%DATADIR%%/include/deffile.inl
+%%DATADIR%%/include/elfdll.h
+%%DATADIR%%/include/epoccli.h
+%%DATADIR%%/include/epocclsv.h
+%%DATADIR%%/include/epocserv.h
+%%DATADIR%%/include/errors.h
+%%DATADIR%%/include/evalfunc.h
+%%DATADIR%%/include/genericobject.h
+%%DATADIR%%/include/genericstructs.h
+%%DATADIR%%/include/grower.h
+%%DATADIR%%/include/grower.inl
+%%DATADIR%%/include/infixparser.h
+%%DATADIR%%/include/lispassert.h
+%%DATADIR%%/include/lispatom.h
+%%DATADIR%%/include/lispcleanupstack.h
+%%DATADIR%%/include/lispenvironment.h
+%%DATADIR%%/include/lisperror.h
+%%DATADIR%%/include/lispeval.h
+%%DATADIR%%/include/lispevalhash.h
+%%DATADIR%%/include/lispglobals.h
+%%DATADIR%%/include/lisphash.h
+%%DATADIR%%/include/lisphash.inl
+%%DATADIR%%/include/lispio.h
+%%DATADIR%%/include/lispobject.h
+%%DATADIR%%/include/lispobject.inl
+%%DATADIR%%/include/lispparser.h
+%%DATADIR%%/include/lispplugin.h
+%%DATADIR%%/include/lispstring.h
+%%DATADIR%%/include/lispstring.inl
+%%DATADIR%%/include/lispuserfunc.h
+%%DATADIR%%/include/log.h
+%%DATADIR%%/include/mathcommands.h
+%%DATADIR%%/include/mathenvironment.h
+%%DATADIR%%/include/mathuserfunc.h
+%%DATADIR%%/include/mathutil.h
+%%DATADIR%%/include/numbers.h
+%%DATADIR%%/include/patcher.h
+%%DATADIR%%/include/patternclass.h
+%%DATADIR%%/include/patterns.h
+%%DATADIR%%/include/plat/linux32/lisptype.h
+%%DATADIR%%/include/plat/linux32/platdll.h
+%%DATADIR%%/include/plat/linux32/platfileio.h
+%%DATADIR%%/include/plat/linux32/stubs.inl
+%%DATADIR%%/include/platmath.h
+%%DATADIR%%/include/ramdisk.h
+%%DATADIR%%/include/refcount.h
+%%DATADIR%%/include/standard.h
+%%DATADIR%%/include/standard.inl
+%%DATADIR%%/include/stdcommandline.h
+%%DATADIR%%/include/stdfileio.h
+%%DATADIR%%/include/stringio.h
+%%DATADIR%%/include/stubs.h
+%%DATADIR%%/include/substitute.h
+%%DATADIR%%/include/tokenizer.h
+%%DATADIR%%/include/unipoly.h
+%%DATADIR%%/include/unixcommandline.h
+%%DATADIR%%/include/version.h
+%%DATADIR%%/include/win32dll.h
+%%DATADIR%%/include/win32dllresource.h
+%%DATADIR%%/include/win32yacasdll.h
+%%DATADIR%%/include/win32yacasdllresource.h
+%%DATADIR%%/include/xmltokenizer.h
+%%DATADIR%%/include/yacas.h
+%%DATADIR%%/include/yacasbase.h
+%%DATADIR%%/include/yacasprivate.h
+%%DATADIR%%/integrate.rep/code.ys
+%%DATADIR%%/integrate.rep/code.ys.def
+%%DATADIR%%/io.rep/code.ys
+%%DATADIR%%/io.rep/code.ys.def
+%%DATADIR%%/io.rep/defaultprint.ys
+%%DATADIR%%/io.rep/defaultprint.ys.def
+%%DATADIR%%/io.rep/errors.ys
+%%DATADIR%%/io.rep/formula.ys
+%%DATADIR%%/io.rep/print.ys
+%%DATADIR%%/limit.rep/code.ys
+%%DATADIR%%/limit.rep/code.ys.def
+%%DATADIR%%/linalg.rep/code.ys
+%%DATADIR%%/linalg.rep/code.ys.def
+%%DATADIR%%/lists.rep/code.ys
+%%DATADIR%%/lists.rep/code.ys.def
+%%DATADIR%%/lists.rep/scopestack.ys
+%%DATADIR%%/lists.rep/scopestack.ys.def
+%%DATADIR%%/localrules.rep/code.ys
+%%DATADIR%%/localrules.rep/code.ys.def
+%%DATADIR%%/logic.rep/code.ys
+%%DATADIR%%/logic.rep/code.ys.def
+%%DATADIR%%/logic.rep/om.ys
+%%DATADIR%%/manmake/book2TeX.sh
+%%DATADIR%%/manmake/book2TeX.ys
+%%DATADIR%%/manmake/txt2yacasdoc.pl
+%%DATADIR%%/multivar.rep/code.ys
+%%DATADIR%%/multivar.rep/code.ys.def
+%%DATADIR%%/multivar.rep/makemulti.ys
+%%DATADIR%%/multivar.rep/sparsenomial.ys
+%%DATADIR%%/multivar.rep/sparsetree.ys
+%%DATADIR%%/multivar.rep/sparsetree.ys.def
+%%DATADIR%%/newly.rep/code.ys
+%%DATADIR%%/newly.rep/code.ys.def
+%%DATADIR%%/numbers.rep/GaussianIntegers.ys
+%%DATADIR%%/numbers.rep/GaussianIntegers.ys.def
+%%DATADIR%%/numbers.rep/NumberTheory.ys
+%%DATADIR%%/numbers.rep/NumberTheory.ys.def
+%%DATADIR%%/numbers.rep/code.ys
+%%DATADIR%%/numbers.rep/code.ys.def
+%%DATADIR%%/numbers.rep/nthroot.ys
+%%DATADIR%%/numbers.rep/nthroot.ys.def
+%%DATADIR%%/odesolver.rep/code.ys
+%%DATADIR%%/odesolver.rep/code.ys.def
+%%DATADIR%%/openmath.rep/code.ys
+%%DATADIR%%/openmath.rep/code.ys.def
+%%DATADIR%%/orthopoly.rep/code.ys
+%%DATADIR%%/orthopoly.rep/code.ys.def
+%%DATADIR%%/osdep.rep/code.ys
+%%DATADIR%%/osdep.rep/code.ys.def
+%%DATADIR%%/osdep.rep/unix.ys
+%%DATADIR%%/osdep.rep/win32.ys
+%%DATADIR%%/packages.ys
+%%DATADIR%%/padic.rep/code.ys
+%%DATADIR%%/padic.rep/code.ys.def
+%%DATADIR%%/patterns.rep/code.ys
+%%DATADIR%%/patterns.rep/code.ys.def
+%%DATADIR%%/plots.rep/backends-2d.ys
+%%DATADIR%%/plots.rep/backends-3d.ys
+%%DATADIR%%/plots.rep/code.ys
+%%DATADIR%%/plots.rep/code.ys.def
+%%DATADIR%%/plots.rep/plot2d.ys
+%%DATADIR%%/plots.rep/plot2d.ys.def
+%%DATADIR%%/plots.rep/plot3d.ys
+%%DATADIR%%/plots.rep/plot3d.ys.def
+%%DATADIR%%/predicates.rep/code.ys
+%%DATADIR%%/predicates.rep/code.ys.def
+%%DATADIR%%/probability.rep/code.ys
+%%DATADIR%%/probability.rep/code.ys.def
+%%DATADIR%%/pslq.rep/code.ys
+%%DATADIR%%/pslq.rep/code.ys.def
+%%DATADIR%%/rabinmiller.rep/code.ys
+%%DATADIR%%/rabinmiller.rep/code.ys.def
+%%DATADIR%%/radsimp.rep/code.ys
+%%DATADIR%%/radsimp.rep/code.ys.def
+%%DATADIR%%/random.rep/code.ys
+%%DATADIR%%/random.rep/code.ys.def
+%%DATADIR%%/simplify.rep/code.ys
+%%DATADIR%%/simplify.rep/code.ys.def
+%%DATADIR%%/solve.rep/code.ys
+%%DATADIR%%/solve.rep/code.ys.def
+%%DATADIR%%/specfunc.rep/bernou.ys
+%%DATADIR%%/specfunc.rep/bernou.ys.def
+%%DATADIR%%/specfunc.rep/bessel.ys
+%%DATADIR%%/specfunc.rep/bessel.ys.def
+%%DATADIR%%/specfunc.rep/code.ys
+%%DATADIR%%/specfunc.rep/code.ys.def
+%%DATADIR%%/specfunc.rep/gammaconst.ys
+%%DATADIR%%/specfunc.rep/gammaconst.ys.def
+%%DATADIR%%/specfunc.rep/gamma.ys
+%%DATADIR%%/specfunc.rep/gamma.ys.def
+%%DATADIR%%/specfunc.rep/zeta.ys
+%%DATADIR%%/specfunc.rep/zeta.ys.def
+%%DATADIR%%/standard.ys
+%%DATADIR%%/standard.ys.def
+%%DATADIR%%/statistics.rep/distributions.ys
+%%DATADIR%%/statistics.rep/distributions.ys.def
+%%DATADIR%%/statistics.rep/hypothesystest.ys
+%%DATADIR%%/statistics.rep/incompletegamma.ys.def
+%%DATADIR%%/statistics.rep/regression.ys.def
+%%DATADIR%%/statistics.rep/hypothesystest.ys.def
+%%DATADIR%%/statistics.rep/randomtest.ys
+%%DATADIR%%/statistics.rep/statistics.ys
+%%DATADIR%%/statistics.rep/incompletegamma.ys
+%%DATADIR%%/statistics.rep/regression.ys
+%%DATADIR%%/statistics.rep/statistics.ys.def
+%%DATADIR%%/stats.rep/code.ys
+%%DATADIR%%/stats.rep/code.ys.def
+%%DATADIR%%/stdfuncs.rep/code.ys
+%%DATADIR%%/stdfuncs.rep/code.ys.def
+%%DATADIR%%/stdfuncs.rep/elemfuncs.ys
+%%DATADIR%%/stdfuncs.rep/elemfuncs.ys.def
+%%DATADIR%%/stdfuncs.rep/numerical.ys
+%%DATADIR%%/stdfuncs.rep/numerical.ys.def
+%%DATADIR%%/stdfuncs.rep/nummethods.ys
+%%DATADIR%%/stdfuncs.rep/nummethods.ys.def
+%%DATADIR%%/stdfuncs.rep/om.ys
+%%DATADIR%%/stdopers.ys
+%%DATADIR%%/stubs.rep/code.ys
+%%DATADIR%%/stubs.rep/code.ys.def
+%%DATADIR%%/stubs.rep/om.ys
+%%DATADIR%%/substitute.rep/code.ys
+%%DATADIR%%/substitute.rep/code.ys.def
+%%DATADIR%%/sums.rep/code.ys
+%%DATADIR%%/sums.rep/code.ys.def
+%%DATADIR%%/tensor.rep/code.ys
+%%DATADIR%%/tensor.rep/code.ys.def
+%%DATADIR%%/testers.rep/code.ys
+%%DATADIR%%/testers.rep/code.ys.def
+%%DATADIR%%/texform.rep/code.ys
+%%DATADIR%%/texform.rep/code.ys.def
+%%DATADIR%%/transforms.rep/code.ys
+%%DATADIR%%/transforms.rep/code.ys.def
+%%DATADIR%%/trigsimp.rep/code.ys
+%%DATADIR%%/trigsimp.rep/code.ys.def
+%%DATADIR%%/univar.rep/Cyclotomic.ys
+%%DATADIR%%/univar.rep/Cyclotomic.ys.def
+%%DATADIR%%/univar.rep/sparse.ys
+%%DATADIR%%/univar.rep/sparse.ys.def
+%%DATADIR%%/univar.rep/code.ys
+%%DATADIR%%/univar.rep/code.ys.def
+%%DATADIR%%/univar.rep/sturm.ys
+%%DATADIR%%/univar.rep/sturm.ys.def
+%%DATADIR%%/yacasinit.ys
+@dirrm %%DATADIR%%/addons
+@dirrm %%DATADIR%%/array.rep
+@dirrm %%DATADIR%%/assoc.rep
+@dirrm %%DATADIR%%/c_form.rep
+@dirrm %%DATADIR%%/complex.rep
+@dirrm %%DATADIR%%/codecheck.rep
+@dirrm %%DATADIR%%/constants.rep
+@dirrm %%DATADIR%%/controlflow.rep
+@dirrm %%DATADIR%%/cstubgen.rep
+@dirrm %%DATADIR%%/debug.rep
+@dirrm %%DATADIR%%/deffunc.rep
+@dirrm %%DATADIR%%/deriv.rep
+@dirrm %%DATADIR%%/documentation
+@dirrm %%DATADIR%%/example.rep
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/factors.rep
+@dirrm %%DATADIR%%/fakedb.rep
+@dirrm %%DATADIR%%/functional.rep
+@dirrm %%DATADIR%%/html.rep
+@dirrm %%DATADIR%%/include/plat/linux32
+@dirrm %%DATADIR%%/include/plat
+@dirrm %%DATADIR%%/include
+@dirrm %%DATADIR%%/integrate.rep
+@dirrm %%DATADIR%%/io.rep
+@dirrm %%DATADIR%%/limit.rep
+@dirrm %%DATADIR%%/linalg.rep
+@dirrm %%DATADIR%%/lists.rep
+@dirrm %%DATADIR%%/localrules.rep
+@dirrm %%DATADIR%%/logic.rep
+@dirrm %%DATADIR%%/multivar.rep
+@dirrm %%DATADIR%%/newly.rep
+@dirrm %%DATADIR%%/numbers.rep
+@dirrm %%DATADIR%%/odesolver.rep
+@dirrm %%DATADIR%%/openmath.rep
+@dirrm %%DATADIR%%/orthopoly.rep
+@dirrm %%DATADIR%%/osdep.rep
+@dirrm %%DATADIR%%/padic.rep
+@dirrm %%DATADIR%%/patterns.rep
+@dirrm %%DATADIR%%/plots.rep
+@dirrm %%DATADIR%%/predicates.rep
+@dirrm %%DATADIR%%/pslq.rep
+@dirrm %%DATADIR%%/rabinmiller.rep
+@dirrm %%DATADIR%%/radsimp.rep
+@dirrm %%DATADIR%%/random.rep
+@dirrm %%DATADIR%%/simplify.rep
+@dirrm %%DATADIR%%/solve.rep
+@dirrm %%DATADIR%%/specfunc.rep
+@dirrm %%DATADIR%%/statistics.rep
+@dirrm %%DATADIR%%/stats.rep
+@dirrm %%DATADIR%%/stdfuncs.rep
+@dirrm %%DATADIR%%/stubs.rep
+@dirrm %%DATADIR%%/substitute.rep
+@dirrm %%DATADIR%%/sums.rep
+@dirrm %%DATADIR%%/tensor.rep
+@dirrm %%DATADIR%%/testers.rep
+@dirrm %%DATADIR%%/texform.rep
+@dirrm %%DATADIR%%/transforms.rep
+@dirrm %%DATADIR%%/trigsimp.rep
+@dirrm %%DATADIR%%/univar.rep
+@dirrm %%DATADIR%%/probability.rep
+@dirrm %%DATADIR%%/manmake
+@dirrm %%DATADIR%%

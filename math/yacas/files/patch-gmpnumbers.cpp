@@ -1,6 +1,14 @@
 --- src/gmpnumbers.cpp.orig	Tue Dec 10 01:30:35 2002
-+++ src/gmpnumbers.cpp	Sat Mar 15 12:02:41 2003
-@@ -81,25 +81,19 @@
++++ src/gmpnumbers.cpp	Fri Apr 11 02:53:35 2003
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include <gmp.h>
++#include <math.h>
+ // do not use math.h without necessity
+ /*
+ #ifdef HAVE_MATH_H
+@@ -81,25 +82,19 @@
  
  void initGMPNumber(GMPNumber& x, GMPNumber& y)
  {
@@ -29,7 +37,7 @@
    x.exp = 0;
  }
  
-@@ -148,11 +142,9 @@
+@@ -148,11 +143,9 @@
      exp++;
    }
    if (!*man) {*man='0';*(man+1)='\0';neg=0;exp=0;}
@@ -43,7 +51,7 @@
    x.exp=exp;
  }
  
-@@ -169,7 +161,7 @@
+@@ -169,7 +162,7 @@
    free(str);
  }
  
@@ -52,7 +60,7 @@
  {
    long rawsize = mpz_sizeinbase(x.man,10);
    size_t size;
-@@ -240,7 +232,7 @@
+@@ -240,7 +233,7 @@
  }
  
  static LispStringPtr GMPNumberToString(GMPNumber& x, LispHashTable& h, 
