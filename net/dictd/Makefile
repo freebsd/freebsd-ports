@@ -19,7 +19,7 @@ MAINTAINER?=	dd@FreeBSD.org
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
-USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
@@ -32,13 +32,13 @@ INSTALL_TARGET=	install.dictd install.dictzip
 
 post-patch:
 .for i in dict.1 dictd.8
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
 .for i in example.conf
-	@${PERL} -pi -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
+	@${REINPLACE_CMD} -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
-	@${PERL} -pi -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
-	@${PERL} -pi -e "s|([\ \t(])T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
+	@${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
+	@${REINPLACE_CMD} -e "s|([\ \t(])T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
 	@${MKDIR} ${DATADIR}
