@@ -1,0 +1,39 @@
+--- Makefile.in.orig	Fri Jan  3 15:02:55 1997
++++ Makefile.in	Wed Oct  7 11:43:17 1998
+@@ -24,12 +24,15 @@
+ ALL_CFLAGS=-I. -DSYSCONFDIR=\"${sysconfdir}\" ${CPPFLAGS} ${CFLAGS}
+ OBJS=hesiod.o hesmailhost.o hespwnam.o hesservbyname.o hescompat.o
+ 
+-all: libhesiod.a hesinfo hestest
++all: libhesiod.a hesinfo hestest ${SHLIB}
+ 
+ libhesiod.a: ${OBJS}
+ 	ar cru $@ ${OBJS}
+ 	${RANLIB} $@
+ 
++${SHLIB}: ${OBJS}
++	${CC} ${LDFLAGS} ${OBJS} -o ${SHLIB}
++
+ hesinfo: hesinfo.o libhesiod.a
+ 	${CC} ${LDFLAGS} -o $@ hesinfo.o libhesiod.a ${LIBS}
+ 
+@@ -55,6 +58,9 @@
+ 	${INSTALL} -c -m 644 libhesiod.a ${DESTDIR}${libdir}
+ 	${RANLIB} ${DESTDIR}${libdir}/libhesiod.a
+ 	chmod u-w ${DESTDIR}${libdir}/libhesiod.a
++	${INSTALL} -c -m 444 ${SHLIB} ${DESTDIR}${libdir}
++	ln -f -s ${DESTDIR}${libdir}/${SHLIB} \
++		${DESTDIR}${libdir}/libhesiod.so
+ 	${INSTALL_PROGRAM} -c -m 555 hesinfo ${DESTDIR}${lbindir}
+ 	${INSTALL} -c -m 444 ${srcdir}/hesiod.h ${DESTDIR}${includedir}
+ 	${INSTALL} -c -m 444 ${srcdir}/hesinfo.1 ${DESTDIR}${mandir}/man1
+@@ -85,7 +93,8 @@
+ 	${INSTALL} -c -m 444 ${srcdir}/hesiod.conf.5 ${DESTDIR}${mandir}/man5
+ 
+ clean:
+-	rm -f ${OBJS} libhesiod.a hesinfo.o hesinfo hestest.o hestest
++	rm -f ${OBJS} libhesiod.a hesinfo.o hesinfo hestest.o hestest \
++		libhesiod.so.3
+ 
+ distclean: clean
+ 	rm -f config.cache config.log config.status Makefile config.h
