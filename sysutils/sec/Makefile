@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	sec
-PORTVERSION=	2.1.10
+PORTVERSION=	2.1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	sourceforge/simple-evcorr
+MASTER_SITE_SUBDIR=	simple-evcorr
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	Simple event (logs) correlator
 
-USE_PERL5=	YES
+USE_PERL5_RUN=	YES
 NO_BUILD=	YES
 USE_REINPLACE=	yes
 
 MAN8=		sec.8
-DOCS=		README convert.pl itostream.c
+DOCS=		ChangeLog README convert.pl itostream.c
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -31,9 +31,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/sec.pl.man ${PREFIX}/man/man8/sec.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
