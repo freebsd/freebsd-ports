@@ -16,7 +16,11 @@ COMMENT=	Sendmail milter wich uses Mcafee Virus Scan
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ripmime:${PORTSDIR}/mail/ripmime
 .if !defined(SENDMAIL_MILTER_IN_BASE)
+.if defined(SENDMAIL_WITH_SHARED_MILTER)
+LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_PORT}
+.else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
+.endif
 .endif
 
 SENDMAIL_PORT?=	sendmail
