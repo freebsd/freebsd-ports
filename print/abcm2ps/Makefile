@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	3.7.18
+PORTVERSION=	3.7.19
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
@@ -13,13 +13,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts ABC to music sheet in PostScript format
 
 GNU_CONFIGURE=	yes
-ALL_TARGET=	abcm2ps
+ALL_TARGET=	${PORTNAME}
+
 PORTDOCS=	README
+PLIST_FILES=	bin/abcm2ps %%DATADIR%%/fbook.fmt %%DATADIR%%/fonts.fmt \
+		%%DATADIR%%/landscape.fmt %%DATADIR%%/tight.fmt
+PLIST_DIRS=	%%DATADIR%%
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

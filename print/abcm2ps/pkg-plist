@@ -1,6 +1,0 @@
-bin/abcm2ps
-%%DATADIR%%/fbook.fmt
-%%DATADIR%%/fonts.fmt
-%%DATADIR%%/landscape.fmt
-%%DATADIR%%/tight.fmt
-@dirrm %%DATADIR%%
