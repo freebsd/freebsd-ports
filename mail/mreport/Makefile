@@ -15,6 +15,12 @@ MAINTAINER=	ports@FreeBSD.org
 ALL_TARGET=	ALL
 MAN8=		mreport.8
 
+post-patch:
+	${PERL} -pi -e "s/^.TH mreport 1/.TH mreport 8/g; s/^.LO 1/.LO 8/g;" \
+		${WRKSRC}/mreport.1
+	${PERL} -pi -e "s/^CC.+//g; s/-Wall -c -O2/${CFLAGS} -c/g;" \
+		${WRKSRC}/Makefile
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mreport ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/mreport.1 ${PREFIX}/man/man8/mreport.8
