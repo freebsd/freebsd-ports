@@ -1,15 +1,15 @@
 
 $FreeBSD$
 
---- source/tools/linux/Makefile.in.orig	Tue Aug 28 16:26:40 2001
-+++ source/tools/linux/Makefile.in	Mon Sep  3 17:29:36 2001
+--- source/tools/linux/Makefile.in.orig	Fri Oct 12 03:37:29 2001
++++ source/tools/linux/Makefile.in	Mon Oct 22 11:57:55 2001
 @@ -91,15 +91,15 @@
  asc_bin2text_SOURCES = bin2text.cpp     basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp 
  asc_weaponguide_SOURCES = weaponguide.cpp  basestrm.cpp misc.cpp ascstring.cpp loadpcxc.cpp palette.cpp sgstream.cpp newfont.cpp basegfx.cpp graphicset.cpp gameoptions.cpp CLoadable.cpp Named.cpp Property.cpp PropertyGroup.cpp stack.cpp buildingtype.cpp typen.cpp vehicletype.cpp password.cpp strtmesg.cpp textfileparser.cpp terraintype.cpp objecttype.cpp textfiletags.cpp itemrepository.cpp
  
 -asc_mount_LDADD = -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
 -asc_demount_LDADD = -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
--asc_gfx2pcx_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
+-#asc_gfx2pcx_LDADD    = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
 -asc_makegfx_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
 -asc_mntgraph_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
 -asc_viewid_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
@@ -18,7 +18,7 @@ $FreeBSD$
 -asc_weaponguide_LDADD = ../../sdl/libsdl.a -lSDL -lSDLmm -lpthread @LDADDLIBBZ2@
 +asc_mount_LDADD = -lSDLmm @LDADDLIBBZ2@
 +asc_demount_LDADD = -lSDLmm @LDADDLIBBZ2@
-+asc_gfx2pcx_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
++#asc_gfx2pcx_LDADD    = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
 +asc_makegfx_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
 +asc_mntgraph_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
 +asc_viewid_LDADD = ../../sdl/libsdl.a -lSDLmm @LDADDLIBBZ2@
