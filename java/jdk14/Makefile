@@ -44,7 +44,8 @@ JDK13DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
-RESTRICTED=	"Redistribution of pre-compiled binaries isn't permitted"
+RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
+NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		OPENWINHOME="${X11BASE}" \
@@ -88,10 +89,6 @@ PLIST_SUB+=    NATIVE:="@comment "
 PLIST_SUB+=    PLUGIN:="@comment "
 .else
 PLIST_SUB+=    PLUGIN:=""
-.endif
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"You can not legally distribute pre-compiled binaries"
 .endif
 
 .include <bsd.port.pre.mk>

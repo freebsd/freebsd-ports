@@ -43,7 +43,8 @@ JDK12DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
-RESTRICTED=	"Redistribution of pre-compiled binaries isn't permitted"
+RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
+NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	HAVE_DPS="no" \
 		ALT_BOOTDIR="${JDK12DIR}" \
@@ -69,10 +70,6 @@ PLIST_SUB+=	DEBUG:="@comment "
 PKGNAMESUFFIX=	-nodebug
 .else
 PLIST_SUB+=	DEBUG:=""
-.endif
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"You can not legally distribute pre-compiled binaries"
 .endif
 
 .include <bsd.port.pre.mk>

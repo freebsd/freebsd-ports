@@ -25,12 +25,8 @@ USE_LINUX=	yes
 JDK_VERSION=	1.2.2.013
 ONLY_FOR_ARCHS=	i386
 
-NO_CDROM=	"License doesn\'t allow distribution with fee"
+NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=	"You can not legally distribute binaries"
-.endif
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}jdk1.2.2
 DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-i586

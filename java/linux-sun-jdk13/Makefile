@@ -19,12 +19,8 @@ MAINTAINER=	znerd@FreeBSD.org
 BUILD_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-NO_CDROM=	"License doesn\'t allow distribution with fee"
+NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=	"You can not legally distribute binaries"
-.endif
 
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty

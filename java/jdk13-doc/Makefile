@@ -14,11 +14,7 @@ DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-doc
 MAINTAINER=	znerd@FreeBSD.org
 
 NO_CDROM=	"License does not allow distribution with fee."
-RESTRICTED=	"This software is under license and export control."
-
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=	"You cannot legally distribute packages"
-.endif
+RESTRICTED=	"This documentation is under license and export control."
 
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
