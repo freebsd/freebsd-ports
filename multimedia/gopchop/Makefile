@@ -18,22 +18,27 @@ DISTNAME=	GOPchop-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG2 GOP-accurate editor
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		intl.4:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
+
+SDLCONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GNOME=	gtk12
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-SDLCONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -DHAVE_DECL_GETOPT -I${LOCALBASE}/include" \
-	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt" \
-	SDLCONFIG="${SDLCONFIG}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		SDLCONFIG="${SDLCONFIG}"
+CONFIGURE_ARGS=	--disable-mlib
+
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT 
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lglib||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's| -mcpu=.*"|"|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|pixmaps/\$$(PACKAGE)|\$$(PACKAGE)/pixmaps|g ; \
+		 s|-lglib||g'
 
 .include <bsd.port.mk>
