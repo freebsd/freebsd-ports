@@ -1,17 +1,17 @@
 # New ports collection makefile for:	mozilla
-# Version required:	0.0
+# Version required:	1998-04-08
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.4 1998/03/11 00:01:05 eivind Exp $
+# $Id: Makefile,v 1.18 1998/04/12 12:47:02 jseger Exp $
 #
 
-DISTNAME=	unix
-PKGNAME=	mozilla-1998-03-31
+DISTNAME=	unix_19980408
+PKGNAME=	mozilla-1998-04-08
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/mozilla/1998-03-31/ \
-		ftp://ftp.bitcon.no/pub/www/mozilla/mozilla/1998-03-31/ \
-		ftp://ftp.mozilla.org/pub/mozilla/1998-03-31/
+MASTER_SITES=	ftp://mirror.neosoft.com/pub/mozilla/mozilla/source/ \
+		ftp://ftp.bitcon.no/pub/www/mozilla/mozilla/source/ \
+		ftp://ftp.mozilla.org/pub/mozilla/source/
 
 MAINTAINER=	jseger@FreeBSD.org
 
