@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	newmail
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/newmail/ \
 		ftp://ftp.megamirror.com/pub/ugh/unix/newmail/ \
@@ -18,5 +18,6 @@ COMMENT=	A tool for checking for new mail in multiple mail boxes
 WRKSRC=		${WRKDIR}/newmail
 
 MAN1=		newmail.1
+MANCOMPRESSED=	maybe
 
 .include <bsd.port.mk>
