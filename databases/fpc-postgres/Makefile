@@ -26,7 +26,7 @@ COMMENT=	Free Pascal interface to PostGreSQL
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql72
+USE_PGSQL=	yes
 BUILD_DEPENDS=	ppc386:${PORTSDIR}/lang/fpc
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .if ${OSVERSION} >= 500000
