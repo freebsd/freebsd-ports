@@ -40,6 +40,9 @@ BROKEN=	Xft2 requires XFree86 4.x to build.
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]LIBDIR[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
+pre-install:
+	-${MKDIR} ${PREFIX}/include/X11/Xft
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Xft.man ${PREFIX}/man/man3/Xft.3
 
