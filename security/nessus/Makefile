@@ -4,9 +4,13 @@
 #
 # $FreeBSD$
 #
+# If you want to only have the command-line client even if gtk is already
+# installed define:
+#  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -19,17 +23,25 @@ DISTNAME=	nessus-core-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	A security scanner: looks for vulnerabilities in a given network
 
+CONFLICTS=	nessus-devel-[0-9]* nessus-devel-gtk-[0-9]* \
+		nessus-devel-gtk2-[0-9]*
 LIB_DEPENDS=	nasl.2:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
 USE_LIBTOOL_VER=13
-WANT_GNOME=	yes
 USE_REINPLACE=	YES
+USE_RC_SUBR=	YES
+.if !defined(WITHOUT_NESSUS_GTK)
+WANT_GNOME=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_NESSUS_GTK)
+CONFIGURE_ARGS+=--disable-gtk
+.else
 .if ${HAVE_GNOME:Mgtk20}!=""
 USE_GNOME+=	gtk20
 PKGNAMESUFFIX=	-gtk2
@@ -39,17 +51,18 @@ PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
 .endif
+.endif
 
 MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
-post-extract:
-	@${CP} ${FILESDIR}/nessusd.sh ${WRKSRC}/nessusd.sh
-	@${REINPLACE_CMD} -E -e 's|%%PREFIX%%|${PREFIX}|g' ${BUILD_WRKSRC}/nessusd.sh
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR}
 
 post-install:
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/nessusd.sh \
-		${LOCALBASE}/etc/rc.d/nessusd.sh.sample
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/nessusd.sh > ${LOCALBASE}/etc/rc.d/nessusd.sh
+	@${CHMOD} +x ${LOCALBASE}/etc/rc.d/nessusd.sh
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
 .if ! defined(BATCH)
@@ -58,5 +71,6 @@ post-install:
 	${PREFIX}/sbin/nessus-mkcert -q
 .endif
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

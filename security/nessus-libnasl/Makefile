@@ -19,6 +19,8 @@ DISTNAME=	libnasl-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Nessus Attack Scripting Language
 
+CONFLICTS=	nessus-libnasl-devel-[0-9]*
+
 LIB_DEPENDS=	nessus.2:${PORTSDIR}/security/nessus-libraries
 
 DIST_SUBDIR=	nessus
