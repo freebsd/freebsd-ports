@@ -5,7 +5,7 @@
  
  #PROGNAME	= $(LIBDIR)$(PATHSEP)xvier_prog
 -PROGNAME	= /usr/games/lib/xvier_prog
-+PROGNAME	= $(LIBEXECDIR)/xvier_prog
++PROGNAME	= $(PREFIX)/libexec/xvier_prog
  DEFINES		= $(XVIER_ASPECT) $(NO_FD_SET) $(NO_SELECT) \
  			$(NO_GETDTABSIZE) -DPROGNAME=\"$(PROGNAME)\"
  
@@ -19,4 +19,4 @@
  NormalProgramTarget(xvier_prog, $(OBJS2), /**/, /**/, /**/)
  
 -InstallProgram(xvier_prog, $(PROGNAME))
-+InstallProgram(xvier_prog, $(LIBEXECDIR))
++InstallProgram(xvier_prog, $(PREFIX)/libexec)
