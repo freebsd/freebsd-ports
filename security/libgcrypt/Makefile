@@ -11,7 +11,6 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	libgcrypt
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -29,19 +28,6 @@ INSTALLS_SHLIB=	yes
 INFO=	gcrypt
 
 .include <bsd.port.pre.mk>
-
-pre-extract:
-.if exists(${PREFIX}/bin/gpg)
-	@${MKDIR} ${WRKDIR}
-	@${ECHO_CMD} "===> Verifying GnuPG Signature."
-	-${PREFIX}/bin/gpg --no-default-keyring --keyring ${WRKDIR}/keyring \
-		--keyserver pgp.mit.edu --recv-key 57548DCD
-	cd ${DISTDIR}; ${PREFIX}/bin/gpg --keyring ${WRKDIR}/keyring --verify \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
-.else
-	@${ECHO_CMD} "===> GnuPG not installed. Signature can not be verified"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
