@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Mar 15 20:32:19 2002
-+++ Makefile	Fri Mar 15 20:33:50 2002
-@@ -143,15 +143,15 @@
+--- Makefile.orig	Fri Jun 14 18:23:12 2002
++++ Makefile	Fri Jun 14 18:24:00 2002
+@@ -141,15 +141,15 @@
  
  TARGDIR= targets
  TARGETS= runtime prelude greencard hp2graph hattools \
@@ -23,7 +23,7 @@
  
  .PHONY: default basic all tracer compiler help config install hat hattools
  
-@@ -185,8 +185,8 @@
+@@ -183,8 +183,8 @@
  basic-nhc: $(PRAGMA) runtime hmake-nhc greencard-nhc compiler-nhc prelude
  basic-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc compiler-hbc prelude
  basic-ghc: $(PRAGMA) runtime hmake-ghc greencard-ghc compiler-ghc prelude
@@ -32,9 +32,9 @@
 +basic-gcc:   runtime prelude-gcc pragma-gcc compiler-gcc \
 +		 greencard-gcc hmake-gcc
  
- all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile tracer hoodui
+ all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile #tracer #hoodui
  
-@@ -206,9 +206,9 @@
+@@ -204,9 +204,9 @@
  		compiler-ghc traceruntime traceprelude hattools hat-ghc
  tracer-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc \
  		compiler-hbc traceruntime traceprelude hattools

@@ -5,23 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	nhc98
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
 DIST_SUBDIR=	nhc98
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.12-ranlib \
-		patch-1.12-hmake-config \
-		patch-1.12-getEnv
-
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
-
-.if defined(WITH_TRACER)
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -30,15 +20,6 @@ BUILD_DEPENDS+= ghc:${PORTSDIR}/lang/ghc
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST=		${WRKSRC}/pkg-plist
-
-.if !defined(WITH_TRACER)
-ALL_TARGET=	basic
-PLIST_SUB+=	TRACER="@comment "
-.else
-PLIST_SUB+=	TRACER=""
-MAKE_ENV+=	PATH=${PREFIX}/jdk1.1.8/bin:$$PATH
-.endif
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -54,20 +35,12 @@ CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/nhc98 +docs
 MAN1=		harch.1 hmake.1	hp2graph.1 nhc98.1 \
 		hat-detect.1 hat-observe.1 hat-stack.1 hat-trail.1
 
-pre-fetch:
-.if !defined(WITH_TRACER)
-	@${ECHO} ""
-	@${ECHO} "	To build nhc98 with the tracer (requires JAVA)"
-	@${ECHO} "	define WITH_TRACER"
-	@${ECHO} ""
-.else
-	@${ECHO} ""
-	@${ECHO} "	Building nhc98 with the tracer (requires JAVA)"
-	@${ECHO} ""
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
+
+post-configure:
+	@${ECHO} "LIBDIR=${PREFIX}/lib/nhc98" \
+		>> ${WRKSRC}/targets/ix86-FreeBSD/config.cache
 
 pre-install:
 .if exists(${PREFIX}/bin/hmake) && !defined(OVERRIDE_HMAKE)
@@ -78,19 +51,6 @@ pre-install:
 	@${ECHO} ""
 	@${FALSE}
 .endif
-# We need this to ensure that the libs will be installed into
-# ${PREFIX}/lib/nhc98. Otherwise the libs will be installed
-# into the build directory. The configure option won't work in the
-# ports system.
-	${RM} -f ${WRKSRC}/include/*.orig
-	${SED} -e "s#LIBDIR=.*##" \
-	       < ${WRKSRC}/targets/ix86-FreeBSD/config.cache \
-	       > ${WRKSRC}/targets/ix86-FreeBSD/config.cache.fix1
-	${ECHO} "LIBDIR=${PREFIX}/lib/nhc98" \
-	        >> ${WRKSRC}/targets/ix86-FreeBSD/config.cache.fix1
-	${RM} ${WRKSRC}/targets/ix86-FreeBSD/config.cache
-	${MV} ${WRKSRC}/targets/ix86-FreeBSD/config.cache.fix1 \
-	      ${WRKSRC}/targets/ix86-FreeBSD/config.cache
 
 post-install:
 	${SED} -e "s#/usr/doc/nhc98#${PREFIX}/share/doc/nhc98#" \
