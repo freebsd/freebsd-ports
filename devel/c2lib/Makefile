@@ -21,7 +21,6 @@ BUILD_DEPENDS+=	cdoc:${.CURDIR}/../../devel/cdoc
 BUILD_DEPENDS+=	make+:${.CURDIR}/../../devel/makeplus
 LIB_DEPENDS+=	pcre.0:${.CURDIR}/../../devel/pcre
 
-USE_GMAKE=	yes
 PREFIX?=	${LOCALBASE}
 MAKE_ENV+=	CC="${CC}"
 .include <bsd.port.pre.mk>
