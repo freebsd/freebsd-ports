@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.65 1998/02/18 04:23:37 steve Exp $
+# $Id: Makefile,v 1.66 1998/02/18 20:57:14 steve Exp $
 #
 
     SUBDIR += ImageMagick
@@ -10,6 +10,7 @@
     SUBDIR += cqcam
     SUBDIR += dc3play
     SUBDIR += dore
+    SUBDIR += fbm
     SUBDIR += fli2gif
     SUBDIR += fxtv
     SUBDIR += gd
