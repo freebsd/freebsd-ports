@@ -1,5 +1,6 @@
 libexec/nagios/check_breeze
 libexec/nagios/check_by_ssh
+libexec/nagios/check_dhcp
 libexec/nagios/check_dig
 libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
@@ -12,12 +13,14 @@ libexec/nagios/check_ftp
 %%SUB_QSTAT%%libexec/nagios/check_game
 %%SUB_SNMP%%libexec/nagios/check_hpjd
 libexec/nagios/check_http
+libexec/nagios/check_icmp
 libexec/nagios/check_ifoperstatus
 libexec/nagios/check_ifstatus
 libexec/nagios/check_imap
 libexec/nagios/check_ircd
 libexec/nagios/check_jabber
 %%SUB_LDAP%%libexec/nagios/check_ldap
+libexec/nagios/check_ldaps
 libexec/nagios/check_load
 libexec/nagios/check_log
 libexec/nagios/check_mailq
