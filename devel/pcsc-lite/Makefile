@@ -16,6 +16,7 @@ COMMENT=	A smartcard development library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_INC_LIBTOOL_VER=	13
 
 INSTALLS_SHLIB=	yes
