@@ -1,4 +1,5 @@
 bin/httrack
+etc/httrack.conf.sample
 lib/libhttrack.so
 lib/libhttrack.so.1
 %%PORTDOCS%%share/doc/httrack/COPYING
