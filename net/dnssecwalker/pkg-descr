@@ -1,0 +1,4 @@
+This is a proof-of-concept of a utility to download DNS zone contents even
+when AXFR is disabled on the server, assuming DNSSEC is used.
+
+WWW: http://josefsson.org/walker/
