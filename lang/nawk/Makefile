@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:  nawk
 # Version required:    99.04.16
 # Date created:        29 April 1998
@@ -11,6 +12,8 @@ PKGNAME=	nawk-99.04.16
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 EXTRACT_SUFX=	tar.gz
+
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

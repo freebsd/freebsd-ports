@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	urlview
 # Version required:	0.7
 # Date created:		21 April 1998
@@ -16,6 +17,8 @@ MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/ \
 
 PATCH_SITES=	http://feeding.frenzy.com/~rainking/
 PATCHFILES=	urlview.diff
+
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
