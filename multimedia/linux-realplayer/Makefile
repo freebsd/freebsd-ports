@@ -20,6 +20,8 @@ NO_CDROM=       "Redistribution not allowed"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rvplayer5.0/
 
+STRIP=		# Linux binary should not be stripped by INSTALL_PROGRAM as it uses /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
+
 LIBFILES=	libdecdnet.so libra14_4.so libra28_8.so libradnet.so \
 		librarv10.so librasipr.so librv10dec.so librvcore.so \
 		librvplayer.so
@@ -58,6 +60,7 @@ do-install:
 .endfor
 
 	${INSTALL_PROGRAM} ${WRKSRC}/rvplayer ${PREFIX}/bin/
+	/compat/linux/usr/bin/strip ${PREFIX}/bin/rvplayer
 	/usr/bin/brandelf -t Linux ${PREFIX}/bin/rvplayer
 
 	${INSTALL_DATA} ${WRKSRC}/welcome.rm ${PREFIX}/share/rvplayer5.0/
