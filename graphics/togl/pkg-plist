@@ -1,5 +1,5 @@
-lib/tk8.3/Togl-1.5/Togl.so
-lib/tk8.3/Togl-1.5/pkgIndex.tcl
-lib/tk8.3/Togl-1.5/togl.h
-lib/tk8.3/Togl-1.5/togl.o
-@dirrm lib/tk8.3/Togl-1.5
+lib/tk8.4/Togl-1.5/Togl.so
+lib/tk8.4/Togl-1.5/pkgIndex.tcl
+lib/tk8.4/Togl-1.5/togl.h
+lib/tk8.4/Togl-1.5/togl.o
+@dirrm lib/tk8.4/Togl-1.5
