@@ -5370,7 +5370,6 @@ ports_sendmail	ports/mail/sendmail
 ports_shells	ports/shells
 ports_smbfs	ports/net/smbfs
 ports_sysutils	ports/sysutils
-ports_texinfo	ports/print/texinfo
 ports_textproc	ports/textproc
 ports_tn3270	ports/net/tn3270
 ports_traceroute	ports/net/traceroute
