@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.50 1999/03/17 00:40:25 obrien Exp $
+# $Id: Makefile,v 1.51 1999/03/22 01:35:36 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2
@@ -75,7 +75,6 @@ pre-configure:
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
-	${TOUCH} ${PREFIX}/info/dir
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
