@@ -2,6 +2,7 @@ bin/fam
 etc/fam.conf
 include/fam.h
 lib/libfam.a
+lib/libfam.la
 lib/libfam.so
 lib/libfam.so.0
 @unexec rm -f %D/etc/rc.d/fam.sh || true

@@ -7,7 +7,7 @@
 
 PORTNAME=		fam
 PORTVERSION=		2.6.9
-PORTREVISION=		5
+PORTREVISION=		6
 CATEGORIES=		devel
 MASTER_SITES=		ftp://oss.sgi.com/projects/fam/download/
 PATCH_SITES=		ftp://oss.sgi.com/projects/fam/download/patches/
@@ -22,7 +22,7 @@ CFLAGS+=		-Wno-deprecated
 
 USE_AUTOMAKE_VER=15
 USE_AUTOCONF_VER=253
-USE_LIBTOOL_VER=15
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
