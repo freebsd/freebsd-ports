@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Feb  4 17:20:39 2005
-+++ install.sh	Fri Feb  4 17:38:04 2005
+--- install.sh.orig	Mon Jan 31 09:19:45 2005
++++ install.sh	Sun Feb 20 16:20:11 2005
 @@ -761,10 +761,9 @@
      case "${machine}:${os}" in
  	i[3456]86:Linux|x86_64:Linux|i[3456]86:FreeBSD|i[3456]86:NetBSD|i[3456]86:OpenBSD)
@@ -225,7 +225,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1359,13 +1297,13 @@
+@@ -1359,15 +1297,16 @@
  {
      # arg1 = location
  
@@ -241,28 +241,21 @@
 +Exec=linux-opera
 +Icon=linux-opera.xpm
  Terminal=0
- Type=Application'
+-Type=Application'
++Type=Application
++Categories=Application;Network;WebBrowser;'
  
-@@ -1443,74 +1381,39 @@
+     echo "${desktop_contain}" > ${desktop_file}
+     chmod $chmodv 644 ${desktop_file}
+@@ -1443,74 +1382,27 @@
  
      debug_msg 1 "in gnome()"
  
 -    if test -d /opt/gnome/; then
-+    if test -d %%X11BASE%%/share/gnome/; then
- 
+-
 -      # /opt/gnome share
 -      if test -d /opt/gnome/share; then
-+      # %%X11BASE%%/share/gnome icon
-+      if test ! -d %%X11BASE%%/share/gnome/pixmaps/; then
-+        if test -w %%X11BASE%%/share/gnome; then
-+          mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/pixmaps/
-+          chmod $chmodv 755 %%X11BASE%%/share/gnome/pixmaps
-+          cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
-+        fi
-+      elif test -w %%X11BASE%%/share/gnome/pixmaps; then
-+        cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
-+      fi
-+      # end %%X11BASE%%/share/gnome icon
++    if test -d %%X11BASE%%/share/gnome/; then
  
 -        # /opt/gnome icon
 -        if test ! -d /opt/gnome/share/pixmaps/; then
@@ -289,29 +282,29 @@
 -	    mkdir $mkdirv $mkdirp /opt/gnome/share/gnome/apps/Internet/
 -	    chmod $chmodv 755 /opt/gnome/share/gnome/apps/Internet
 -            generate_desktop /opt/gnome/share/gnome/apps/Internet
-+      # %%X11BASE%%/share/gnome link
-+      if test -d %%X11BASE%%/share/gnome/apps/; then
-+        if test -d %%X11BASE%%/share/gnome/apps/Internet/; then
-+          if test -w %%X11BASE%%/share/gnome/apps/Internet; then
-+            generate_desktop %%X11BASE%%/share/gnome/apps/Internet
-           fi
+-          fi
 -	fi
 -	# end /opt/gnome link
-+        elif test -d %%X11BASE%%/share/gnome/apps/Networking/WWW/; then
-+          if test -w %%X11BASE%%/share/gnome/apps/Networking/WWW; then
-+            generate_desktop %%X11BASE%%/share/gnome/apps/Networking/WWW
-+          fi
-+        elif test -w %%X11BASE%%/share/gnome/apps; then
-+          mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/apps/Internet/
-+          chmod $chmodv 755 %%X11BASE%%/share/gnome/apps/Internet
-+          generate_desktop %%X11BASE%%/share/gnome/apps/Internet
++      # %%X11BASE%%/share/gnome icon
++      if test ! -d %%X11BASE%%/share/gnome/pixmaps/; then
++        if test -w %%X11BASE%%/share/gnome; then
++          mkdir $mkdirv $mkdirp %%X11BASE%%/share/gnome/pixmaps/
++          chmod $chmodv 755 %%X11BASE%%/share/gnome/pixmaps
++          cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
 +        fi
++      elif test -w %%X11BASE%%/share/gnome/pixmaps; then
++        cp $cpv $share_dir/images/opera.xpm %%X11BASE%%/share/gnome/pixmaps/linux-opera.xpm
        fi
 -      # end /opt/gnome share
-+      # end %%X11BASE%%/share/gnome link
++      # end %%X11BASE%%/share/gnome icon
  
 -    elif test -d /usr/share/gnome/; then
--
++      # %%X11BASE%%/share/gnome link
++      if test -d %%X11BASE%%/share/gnome/applications/; then
++        generate_desktop %%X11BASE%%/share/gnome/applications
++      fi
++      # end %%X11BASE%%/share/gnome link
+ 
 -        # /usr/share/gnome icon
 -        if test ! -d /usr/share/gnome/pixmaps/; then
 -	  if test -w /usr/share/gnome; then
@@ -346,7 +339,7 @@
  }
  
  kde()
-@@ -1519,39 +1422,31 @@
+@@ -1519,39 +1411,31 @@
  
      debug_msg 1 "in kde()"
  
