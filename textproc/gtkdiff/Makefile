@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	gtkdiff
-PORTVERSION=	1.0.2
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		gtkdiff.1
+MAN1=		gtkdiff.1 gtkdiff-rcs.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
