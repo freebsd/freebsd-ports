@@ -394,6 +394,7 @@
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pdftohtml
+    SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += perl2html
     SUBDIR += ppower4
     SUBDIR += pocketreader
