@@ -1,45 +1,45 @@
-*** Makefile.orig	Mon Aug 12 15:52:16 1996
---- Makefile	Fri Oct 25 17:50:11 1996
+*** Makefile.bak	Thu May 22 15:10:44 1997
+--- Makefile	Wed Jun 11 22:36:10 1997
 ***************
-*** 11,18 ****
-  #LFLAGS = -laudio -lcurses -lm
+*** 15,22 ****
+  # will tell you whether these components are present on your system.
+  # If they aren't, you need to install them before building Speak
+  # Freely.
+! CC = cc -float -signed
+! LFLAGS = -laudio -lcurses -lm
   
   # SunOS 4.1.x
-! CC = cc -fsingle -DOLDCC
-! LFLAGS = -lcurses -ltermcap -lm
-  
-  # Solaris 2.x courtesy of Hans Werner Strube (strube@physik3.gwdg.de)
-  # (-fsingle is needed for pre-4.0 compilers and is ignored by 4.0 in 
---- 11,18 ----
-  #LFLAGS = -laudio -lcurses -lm
+  #CC = cc -fsingle -DOLDCC
+--- 15,22 ----
+  # will tell you whether these components are present on your system.
+  # If they aren't, you need to install them before building Speak
+  # Freely.
+! #CC = cc -float -signed
+! #LFLAGS = -laudio -lcurses -lm
   
   # SunOS 4.1.x
-! #CC = cc -fsingle -DOLDCC
-! #LFLAGS = -lcurses -ltermcap -lm
-  
-  # Solaris 2.x courtesy of Hans Werner Strube (strube@physik3.gwdg.de)
-  # (-fsingle is needed for pre-4.0 compilers and is ignored by 4.0 in 
+  #CC = cc -fsingle -DOLDCC
 ***************
-*** 35,42 ****
+*** 46,53 ****
   #    Depending on how your driver handles non-blocking I/O,
   #    you may also have to add -DAUDIO_BLOCKING to the
   #    CCFLAGS line.
 ! #CCFLAGS = -DM_LITTLE_ENDIAN
 ! #LFLAGS = -lcurses -ltermcap -lcompat -lm
   
-  # Linux 1.x, courtesy of KeyJ Phade (phade@powerweb.de)
-  #
---- 35,42 ----
+  # ** Linux users please note: many Linux audio drivers are
+  #    half-duplex, even through your sound card may actually
+--- 46,53 ----
   #    Depending on how your driver handles non-blocking I/O,
   #    you may also have to add -DAUDIO_BLOCKING to the
   #    CCFLAGS line.
 ! CCFLAGS = -DM_LITTLE_ENDIAN
 ! LFLAGS = -lcurses -ltermcap -lcompat -lm
   
-  # Linux 1.x, courtesy of KeyJ Phade (phade@powerweb.de)
-  #
+  # ** Linux users please note: many Linux audio drivers are
+  #    half-duplex, even through your sound card may actually
 ***************
-*** 62,73 ****
+*** 76,87 ****
   #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
   #LFLAGS = -lAlib -lcurses -ltermcap -lm
   
@@ -52,7 +52,7 @@
   
   # If your getdomainname() does not return the DNS domainname, define:
   #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
---- 62,75 ----
+--- 76,89 ----
   #CCFLAGS = -DHEWLETT_PACKARD -DOLDCC
   #LFLAGS = -lAlib -lcurses -ltermcap -lm
   
@@ -68,7 +68,7 @@
   # If your getdomainname() does not return the DNS domainname, define:
   #DOMAIN=-DMYDOMAIN=\"somedomain.net\"
 ***************
-*** 96,106 ****
+*** 110,120 ****
   CARGS = -DInternet_Port=$(INTERNET_PORT)
   
   #DEBUG = -g -DHEXDUMP
@@ -80,11 +80,11 @@
   
   PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfvod
   
---- 98,116 ----
+--- 112,130 ----
   CARGS = -DInternet_Port=$(INTERNET_PORT)
   
   #DEBUG = -g -DHEXDUMP
-! DEBUG =
+! #DEBUG = -O
 ! 
 ! .if exists(/usr/lib/libdes.a)
 ! LDES=-ldes
@@ -101,7 +101,7 @@
   PROGRAMS = sfspeaker sfmike sflwld sflwl sfecho sfvod
   
 ***************
-*** 108,120 ****
+*** 122,134 ****
   
   SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
   
@@ -115,7 +115,7 @@
   
   LWLDOBJS = lwld.o xdsub.o
   
---- 118,130 ----
+--- 132,144 ----
   
   SPKROBJS = speaker.o codecs.o deskey.o g711.o rate.o rtpacket.o soundbyte.o ulaw.o usleep.o vatpkt.o vox.o hp_audio.o
   
@@ -130,7 +130,7 @@
   LWLDOBJS = lwld.o xdsub.o
   
 ***************
-*** 128,135 ****
+*** 142,149 ****
   
   ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
   
@@ -139,7 +139,7 @@
   
   sfvod:	sfvod.pl
   	echo \#\! $(PERL) >sfvod
---- 138,145 ----
+--- 152,159 ----
   
   ECHOOBJS = echo.o codecs.o g711.o rtpacket.o ulaw.o xdsub.o
   
@@ -149,7 +149,7 @@
   sfvod:	sfvod.pl
   	echo \#\! $(PERL) >sfvod
 ***************
-*** 145,155 ****
+*** 159,169 ****
   	chmod 755 sfvod
   
   adpcmlib.o:
@@ -161,7 +161,7 @@
   	echo "LIBDES" >libdes.o
   
   lpclib.o:
---- 155,167 ----
+--- 169,181 ----
   	chmod 755 sfvod
   
   adpcmlib.o:
@@ -176,7 +176,7 @@
   
   lpclib.o:
 ***************
-*** 161,167 ****
+*** 175,181 ****
   	echo "LPC" >lpc10lib.o
   
   gsmlib.o:
@@ -184,7 +184,7 @@
   	echo "GSM" >gsmlib.o
   
   deslib.o:
---- 173,179 ----
+--- 187,193 ----
   	echo "LPC" >lpc10lib.o
   
   gsmlib.o:
@@ -193,7 +193,7 @@
   
   deslib.o:
 ***************
-*** 169,179 ****
+*** 183,193 ****
   	echo "DES" >deslib.o
   
   md5lib.o:
@@ -205,7 +205,7 @@
   	echo "IDEA" >idealib.o
   
   codecs.o:   codecs.c speakfree.h
---- 181,191 ----
+--- 195,205 ----
   	echo "DES" >deslib.o
   
   md5lib.o:
