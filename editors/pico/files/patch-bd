@@ -1,0 +1,11 @@
+--- pico/makefile.bsf.orig	Sun Feb 11 20:15:44 2001
++++ pico/makefile.bsf		Sun Feb 11 20:15:18 2001
+@@ -37,7 +37,7 @@
+ DEBUG=       -DDEBUG # -g
+ 
+ STDCFLAGS=	-DBSDI -DBSDI2 -DPOSIX -DJOB_CONTROL -DMOUSE
+-CFLAGS=         $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
++CFLAGS+=        $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
+ 
+ # switches for library building
+ LIBCMD=		ar
