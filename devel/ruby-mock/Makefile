@@ -15,10 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An RUnit extention that makes it very easy to implement Mock Objects
 
-RUN_DEPENDS=	{RUBY_SITELIBDIR}/runit/error.rb:${PORTSDIR}/lang/ruby16-shim-ruby18
-
 USE_BZIP2=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	runit
 
 NO_BUILD=	yes
 
