@@ -1,0 +1,76 @@
+--- Makefile.orig	Fri Nov  8 00:10:07 2002
++++ Makefile	Mon Apr 28 15:04:50 2003
+@@ -38,59 +38,59 @@
+ # ``http://www.nominum.com''.
+ #
+ 
+-all:
++all all.devel all.server all.relay all.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make all); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-install:
++install install.devel install.server install.relay install.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make install); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-depend:
++depend depend.devel depend.server depend.relay depend.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make depend); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-clean:
++clean clean.devel clean.server clean.relay clean.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make clean); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-realclean:
++realclean realclean.devel realclean.server realclean.relay realclean.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make realclean); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-distclean:
++distclean distclean.devel distclean.server distclean.relay distclean.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make distclean); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
+-links:
++links links.devel links.server links.relay links.client:
+ 	@sysname=`./configure --print-sysname`; \
+ 	 if [ ! -d work.$$sysname ]; then \
+ 	   echo No build directory for $$sysname - please run ./configure.; \
+ 	else \
+-	   (cd work.$$sysname; make links); \
++	   (cd work.$$sysname; make $@); \
+ 	fi
+ 
