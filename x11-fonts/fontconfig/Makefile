@@ -53,6 +53,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/fc-list/fc-list.man \
 		${PREFIX}/man/man1/fc-list.1
 .if !defined(PACKAGE_BUILDING)
+	@${LDCONFIG} -m ${PREFIX}/lib
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
