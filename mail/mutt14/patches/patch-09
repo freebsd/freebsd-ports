@@ -1,0 +1,16 @@
+--- po/zh_TW.Big5.po.orig	Fri Oct 22 00:47:15 1999
++++ po/zh_TW.Big5.po	Sun Oct 24 20:40:31 1999
+@@ -555,11 +555,11 @@
+ 
+ #: curs_lib.c:136
+ msgid "yes"
+-msgstr ""
++msgstr "y¬O"
+ 
+ #: curs_lib.c:137
+ msgid "no"
+-msgstr ""
++msgstr "n§_"
+ 
+ #. restore blocking operation
+ #: curs_lib.c:176
