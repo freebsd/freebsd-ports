@@ -1,0 +1,5 @@
+Regexp::Log::Common uses Regexp::Log as a base class, to generate regular
+expressions for performing the usual data munging tasks on log files that
+cannot be simply split().
+
+WWW: http://search.cpan.org/dist/Regexp-Log-Common
