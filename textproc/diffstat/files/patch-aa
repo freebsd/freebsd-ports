@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Jan 16 17:29:21 1998
++++ configure.in	Fri Oct 22 21:56:59 1999
+@@ -18,7 +18,7 @@
+ AC_CONST
+ AC_STDC_HEADERS
+ AC_HAVE_HEADERS(stdlib.h unistd.h)
+-AC_HAVE_HEADERS(getopt.h string.h malloc.h)
++AC_HAVE_HEADERS(string.h)
+ AC_TYPE_SIZE_T
+ 
+ ###	output makefile and config.h
