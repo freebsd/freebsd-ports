@@ -1,24 +1,19 @@
 # New ports collection makefile for:	DocBook XML DTD
-# Version required:	3.1.6
+# Version required:	3.1.7
 # Date created:		28 March 1999
 # Whom:			kuriyama
 #
 # $FreeBSD$
 #
 
-DISTNAME=	db3x316
-PKGNAME=	docbook-xml-3.1.6
+DISTNAME=	db3x317
+PKGNAME=	docbook-xml-3.1.7
 CATEGORIES=	textproc
-MASTER_SITES=	http://nwalsh.com/docbook/xml/3.1.6/
-EXTRACT_SUFX=	.zip
+MASTER_SITES=	http://nwalsh.com/docbook/xml/3.1.7/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-a -q -L
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	YES
 NO_MTREE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
