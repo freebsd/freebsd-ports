@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jesse@gallup.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE application for submitting updates to livejournal.com
 
 USE_KDELIBS_VER=	3
