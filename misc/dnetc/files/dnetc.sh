@@ -23,14 +23,22 @@ stop_cmd="${name}_stop"
 
 dnetc_start()
 {
-	echo -n " dnetc"
-	su -m ${user} -c "${dir}/dnetc -quiet" 2>/dev/null >/dev/null
+	if ps -U${user} >/dev/null; then
+		echo "${name} already running?"
+	else
+		su -m ${user} -c "${dir}/${name} -quiet" >/dev/null 2>&1
+		echo -n " ${name}"
+	fi
 }
 
 dnetc_stop()
 {
-	su -m ${user} -c "${dir}/dnetc -shutdown" 2>/dev/null >/dev/null
-	echo -n " dnetc"
+	if ps -U${user} >/dev/null; then
+		su -m ${user} -c "${dir}/${name} -shutdown" >/dev/null 2>&1
+		echo -n " ${name}"
+	else
+		echo "${name} not running?"
+	fi
 }
 
 load_rc_config $name

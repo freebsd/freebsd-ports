@@ -7,6 +7,7 @@
 
 PORTNAME=	dnetc
 PORTVERSION=	${VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
