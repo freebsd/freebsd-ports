@@ -9,8 +9,9 @@ PORTNAME=	tcl
 PORTVERSION=	8.0.5
 PORTREVISION=	1
 CATEGORIES=	lang tcl80
-MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
-DISTNAME=	tcl8.0.5
+MASTER_SITES=	${MASTER_SITE_TCLTK}
+MASTER_SITE_SUBDIR=tcl8_0
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool Command Language
@@ -28,6 +29,7 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +48,10 @@ TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
 	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
+.if !defined(WITH_TCL80_MAN)
+	@${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
+		${WRKSRC}/Makefile
+.endif
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
