@@ -1,0 +1,10 @@
+This module provides a 'Local Mean Time' timezone for DateTime. Using it you
+can determine the Mean Time for any location on Earth. Note however that the
+Mean Time and the Apparent Time (where the sun is in the sky) differ from day
+to day. This module may account for Local Apparent Time in the future but then
+again, the Solar:: modules will probably be a better bet.
+
+If you want more information on the difference between LMT and LAT, search the
+www for 'equation of time' or 'ephemeris'.
+
+WWW: http://datetime.perl.org/
