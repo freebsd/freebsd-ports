@@ -1,0 +1,22 @@
+bin/ElectricEyes
+share/gnome/apps/Graphics/ee.desktop
+share/gnome/help/ee/C/colors.png
+share/gnome/help/ee/C/editwin.png
+share/gnome/help/ee/C/ee.png
+share/gnome/help/ee/C/geom.png
+share/gnome/help/ee/C/index.html
+share/gnome/help/ee/C/list.png
+share/gnome/help/ee/C/thumbs.png
+share/gnome/help/ee/C/topic.dat
+share/gnome/help/ee/C/view.png
+share/locale/de/LC_MESSAGES/ee.mo
+share/locale/es/LC_MESSAGES/ee.mo
+share/locale/fi/LC_MESSAGES/ee.mo
+share/locale/fr/LC_MESSAGES/ee.mo
+share/locale/ga/LC_MESSAGES/ee.mo
+share/locale/it/LC_MESSAGES/ee.mo
+share/locale/ko/LC_MESSAGES/ee.mo
+share/locale/no/LC_MESSAGES/ee.mo
+share/locale/pt/LC_MESSAGES/ee.mo
+@dirrm share/gnome/help/ee/C
+@dirrm share/gnome/help/ee
