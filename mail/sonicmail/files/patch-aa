@@ -6,8 +6,8 @@
  # Change these to the default location of the pixmaps/wav files:
 -XPMSPATH = /usr/share/pixmaps/sonicmail
 -WAVSPATH = /usr/share/sound/sonicmail
-+XPMSPATH = ${PREFIX}/share/pixmaps/sonicmail
-+WAVSPATH = ${PREFIX}/share/sound/sonicmail
++XPMSPATH = ${PREFIX}/share/gnome/pixmaps/sonicmail
++WAVSPATH = ${PREFIX}/share/gnome/sounds/sonicmail
  
  # Change to 1 to activate debug mode:
  SONICMAIL_DEBUG = 0
