@@ -1,0 +1,5 @@
+Angst is an active sniffer, based on libpcap and libnet. Dumps into a file
+the payload of all the TCP packets received on the specified ports. Also,
+it implements methods for active sniffing of networks with switches.
+
+WWW: http://angst.sourceforge.net/
