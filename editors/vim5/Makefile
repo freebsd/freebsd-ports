@@ -47,8 +47,14 @@ MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
 
 .include <bsd.port.pre.mk>
 
+# Determine if we need xpg4.
+# No xpg4 in libc below 400020 and 500005
+.if ${OSVERSION} < 400020 && ${OSVERSION} < 500005
+LIBS=-lxpg4
+.endif
+
 .if !defined(LITE)
-MAKE_ARGS+=	X_LIBS=-lxpg4 CONF_OPT_MAX="--enable-max-features"
+MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
 .if defined(WITH_ATHENA)
@@ -67,7 +73,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tc
 .endif
 
 .else	# LITE
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x"
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
 .endif	# LITE
 
