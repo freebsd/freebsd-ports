@@ -9,7 +9,7 @@ PORTNAME=	nighthawk
 PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://lothar.arafura.net.au/~jsno/rel/unix_projects/
+		http://jsno.leal.com.au/rel/unix_projects/
 MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	-1.tar.gz
 
