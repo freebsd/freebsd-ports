@@ -4183,6 +4183,7 @@ mdw		ports/www/mdw
 me		src/share/me
 medusa		ports/sysutils/medusa
 mei		ports/sysutils/mei
+memcheck	ports/devel/memcheck
 memcontrol	src/usr.sbin/memcontrol
 memtest		ports/sysutils/memtest
 menushki	ports/misc/menushki
