@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--enable-xml \
 		--enable-shared \
 		--with-libxml1
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .ifndef NOPORTDOCS
 post-install:
