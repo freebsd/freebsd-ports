@@ -1,0 +1,27 @@
+GNU `m4'
+********
+
+   GNU `m4' is an implementation of the traditional UNIX macro
+processor.  It is mostly SVR4 compatible, although it has some
+extensions (for example, handling more than 9 positional parameters to
+macros).  `m4' also has builtin functions for including files, running
+shell commands, doing arithmetic, etc.  Autoconf needs GNU `m4' for
+generating `configure' scripts, but not for running them.
+
+   GNU `m4' was originally written by Rene Seindal, with subsequent
+changes by Franc,ois Pinard and other volunteers on the Internet.  All
+names and email addresses can be found in the file `THANKS' from the
+GNU `m4' distribution.
+
+   This is release 1.3.  It is now to be considered stable, future
+releases are only meant to fix bugs, increase speed, or improve
+documentation.  However...
+
+   An experimental feature, which would improve `m4' usefulness, allows
+for changing the syntax for what is a "word" in `m4'.  You should use:
+     ./configure --enable-changeword
+
+if you want this feature compiled in.  The current implementation slows
+down `m4' considerably and is hardly acceptable.  So, it might go away,
+do not count on it yet.
+
