@@ -1,9 +1,12 @@
 bin/seahorse
+bin/seahorse-agent
 bin/seahorse-pgp-preferences
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/seahorse.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/seahorse.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/seahorse.schemas > /dev/null || /usr/bin/true
 lib/bonobo/libseahorse-pgp-file-listener.so
+%%GEDIT%%lib/gedit-2/plugins/libseahorse-pgp.so
+%%GEDIT%%lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
+lib/libseahorse-internal.a
+lib/libseahorse-internal.so
+lib/libseahorse-internal.so.0
 libdata/bonobo/servers/Seahorse_PGP_File_Listener.server
 share/gnome/applications/seahorse.desktop
 share/gnome/control-center-2.0/capplets/seahorse-pgp-preferences.desktop
@@ -23,16 +26,17 @@ share/gnome/help/seahorse/C/seahorse.xml
 share/gnome/mime-info/seahorse.keys
 share/gnome/mime-info/seahorse.mime
 share/gnome/omf/seahorse/seahorse-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/seahorse.png
 share/gnome/seahorse/glade/seahorse-add-subkey.glade
 share/gnome/seahorse/glade/seahorse-add-uid.glade
+share/gnome/seahorse/glade/seahorse-agent-cache.glade
 share/gnome/seahorse/glade/seahorse-change-passphrase.glade
-share/gnome/seahorse/glade/seahorse-export.glade
-share/gnome/seahorse/glade/seahorse-generate.glade
-share/gnome/seahorse/glade/seahorse-import.glade
+share/gnome/seahorse/glade/seahorse-generate-adv.glade
+share/gnome/seahorse/glade/seahorse-generate-druid.glade
+share/gnome/seahorse/glade/seahorse-generate-select.glade
 share/gnome/seahorse/glade/seahorse-key-manager.glade
 share/gnome/seahorse/glade/seahorse-key-properties.glade
+share/gnome/seahorse/glade/seahorse-multi-encrypt.glade
 share/gnome/seahorse/glade/seahorse-passphrase.glade
 share/gnome/seahorse/glade/seahorse-pgp-preferences.glade
 share/gnome/seahorse/glade/seahorse-preferences.glade
@@ -40,21 +44,39 @@ share/gnome/seahorse/glade/seahorse-recipients.glade
 share/gnome/seahorse/glade/seahorse-revoke.glade
 share/gnome/seahorse/glade/seahorse-sign.glade
 share/gnome/seahorse/glade/seahorse-signatures.glade
+share/mime/application/pgp-encrypted.xml
+share/mime/application/pgp-keys.xml
+share/mime/application/pgp-signature.xml
+share/mime/packages/seahorse.xml
+share/locale/az/LC_MESSAGES/seahorse.mo
 share/locale/ca/LC_MESSAGES/seahorse.mo
 share/locale/cs/LC_MESSAGES/seahorse.mo
 share/locale/da/LC_MESSAGES/seahorse.mo
 share/locale/de/LC_MESSAGES/seahorse.mo
+share/locale/en_CA/LC_MESSAGES/seahorse.mo
+share/locale/en_GB/LC_MESSAGES/seahorse.mo
 share/locale/es/LC_MESSAGES/seahorse.mo
+share/locale/eu/LC_MESSAGES/seahorse.mo
 share/locale/fi/LC_MESSAGES/seahorse.mo
 share/locale/fr/LC_MESSAGES/seahorse.mo
+share/locale/hr/LC_MESSAGES/seahorse.mo
 share/locale/hu/LC_MESSAGES/seahorse.mo
+share/locale/it/LC_MESSAGES/seahorse.mo
 share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/ml/LC_MESSAGES/seahorse.mo
 share/locale/ms/LC_MESSAGES/seahorse.mo
 share/locale/nl/LC_MESSAGES/seahorse.mo
 share/locale/no/LC_MESSAGES/seahorse.mo
+share/locale/pa/LC_MESSAGES/seahorse.mo
+share/locale/pl/LC_MESSAGES/seahorse.mo
+share/locale/pt/LC_MESSAGES/seahorse.mo
 share/locale/pt_BR/LC_MESSAGES/seahorse.mo
 share/locale/ru/LC_MESSAGES/seahorse.mo
+share/locale/sk/LC_MESSAGES/seahorse.mo
 share/locale/sl/LC_MESSAGES/seahorse.mo
+share/locale/sq/LC_MESSAGES/seahorse.mo
+share/locale/sr/LC_MESSAGES/seahorse.mo
+share/locale/sr@Latn/LC_MESSAGES/seahorse.mo
 share/locale/sv/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
@@ -65,4 +87,5 @@ share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 @dirrm share/gnome/omf/seahorse
 @dirrm share/gnome/seahorse/glade
 @dirrm share/gnome/seahorse
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/seahorse/seahorse-C.omf 2>/dev/null || /usr/bin/true
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.7.3
-PORTREVISION=	4
+PORTVERSION=	0.7.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
@@ -18,21 +17,31 @@ COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	gpgme03.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS=	gpgme.14:${PORTSDIR}/security/gpgme
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix eel2
-USE_INC_LIBTOOL_VER=13
+USE_GNOME=	gnomehack intlhack gnomeprefix eel2
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g; \
-		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
-	@${CP} ${WRKSRC}/data/seahorse.schemas.in ${WRKSRC}/data/seahorse.schemas
+GCONF_SCHEMAS=	seahorse.schemas
 
-.include <bsd.port.mk>
+OPTIONS=	GEDIT "Enable the gedit plug-in" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GEDIT)
+BUILD_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit2
+RUN_DEPENDS+=	gedit:${PORTSDIR}/editors/gedit2
+PLIST_SUB+=	GEDIT=""
+.else
+PLIST_SUB+=	GEDIT="@comment "
+CONFIGURE_ARGS+=--disable-gedit
+.endif
+
+.include <bsd.port.post.mk>
