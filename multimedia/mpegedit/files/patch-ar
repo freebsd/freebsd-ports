@@ -1,0 +1,58 @@
+--- MpegCodec/Makefile.orig	Mon Jul 24 00:03:22 1995
++++ MpegCodec/Makefile	Thu Jun 15 09:01:03 2000
+@@ -25,12 +25,12 @@
+ #
+ 
+ AR       = ar r
+-CC       = gcc
+-CPP      = g++
++#CC      = gcc
++CPP      = ${CXX}
+ RM       = rm -f
+ RANLIB   = ranlib
+ 
+-INCLUDES = -I../ui -I../editor -I../globals -Iencoder -Idecoder
++INCLUDES = -I../ui -I../editor -I../globals -Iencoder -Idecoder -I$(X11BASE)/include
+ DEPFILE  = Dependancies
+ SUBDIRS  = decoder encoder
+ HEADERS  = bstream.H frame.H mpeg.H
+@@ -48,32 +48,32 @@
+ 
+ force:
+ 	$(RM) mpeg.a
+-	make mpeg.a
++	$(MAKE) mpeg.a
+ 
+ mpeg.a: $(DEPFILE) $(OBJS) 
+ 	$(RM) $@ 
+ 	$(AR) $@ $(OBJS)
+-	set -e; for i in $(SUBDIRS); do cd $$i && make ar CFLAGS="$(CFLAGS)" ; cd ..; done
++	set -e; for i in $(SUBDIRS); do cd $$i && $(MAKE) ar CFLAGS="$(CFLAGS)" ; cd ..; done
+ 	$(RANLIB) $@ 
+ 
+ clean:
+-	set -e; for i in $(SUBDIRS); do cd $$i && make clean && cd ..; done
++	set -e; for i in $(SUBDIRS); do cd $$i && $(MAKE) clean && cd ..; done
+ 	rm -f mpeg.a $(OBJS) $(DEPFILE)
+ 
+ FORCE:
+ 
+ 
+ dep:	FORCE
+-	set -e; for i in $(SUBDIRS); do cd $$i && make dep && cd ..; done
++	set -e; for i in $(SUBDIRS); do cd $$i && $(MAKE) dep && cd ..; done
+ 	$(RM) $(DEPFILE) 	
+-	make $(DEPFILE)
++	$(MAKE) $(DEPFILE)
+ 
+ $(DEPFILE):
+ 	set -e; for i in $(SOURCES) ; do $(CC) $(INCLUDES) -M $$i >>$(DEPFILE) ; done
+-	
++
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif

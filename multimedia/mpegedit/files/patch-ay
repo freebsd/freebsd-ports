@@ -1,0 +1,26 @@
+--- MpegCodec/encoder/Makefile.orig	Mon Jul 24 00:03:48 1995
++++ MpegCodec/encoder/Makefile	Thu Jun 15 08:56:34 2000
+@@ -26,8 +26,8 @@
+ 
+ AR 		= ar r
+ RM 		= rm -f
+-CC		= gcc
+-CPP 		= g++
++#CC		= gcc
++CPP 		= ${CXX}
+ DEPFILE 	= Dependencies
+ CCOPTIMISATIONS = -O6 -funroll-loops -fomit-frame-pointer
+ 
+@@ -73,10 +73,10 @@
+ 
+ $(DEPFILE):
+ 	set -e; for i in $(SOURCES); do $(CC) -M $$i $(DEFINES) >>$(DEPFILE); done
+-	
++
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif
