@@ -6,30 +6,40 @@
 #
 
 PORTNAME=	spambayes
-PORTVERSION=	1.0.a.6
+PORTVERSION=	1.0.rc.1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(.)\.(.)$/\1\2\3/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(..)\.(.)$/\1\2\3/}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-USE_SIZE=		yes
 
-DOC_FILES=	HAMMIE.txt INTEGRATION.txt LICENSE.txt README.txt \
-		TESTING.txt WHAT_IS_NEW.txt contrib/BULK.txt \
-		contrib/muttrc contrib/procmailrc contrib/spambayes.el
+PORTDOCS=	CHANGELOG.txt \
+		LICENSE.txt \
+		NEWTRICKS.txt \
+		POP3PROXY.txt \
+		README-DEVEL.txt \
+		README.txt \
+		TESTING.txt \
+		WHAT_IS_NEW.txt \
+		contrib/
+
+post-extract:
+	@${CHMOD} -Rf u+w ${WRKSRC}
 
 post-install:
-.ifndef(PORTDOCS)
+.ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	@${MKDIR} ${DOCSDIR}/contrib
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
 .endif
 
 .include <bsd.port.mk>

@@ -1,17 +1,19 @@
-bin/sb_pop3dnd.py
-bin/sb_dbexpimp.py
+bin/sb_bnfilter.py
+bin/sb_bnserver.py
 bin/sb_chkopts.py
-bin/sb_xmlrpcserver.py
-bin/sb_upload.py
-bin/sb_unheader.py
-bin/sb_smtpproxy.py
+bin/sb_client.py
+bin/sb_dbexpimp.py
+bin/sb_evoscore.py
 bin/sb_filter.py
 bin/sb_imapfilter.py
 bin/sb_mailsort.py
 bin/sb_mboxtrain.py
 bin/sb_notesfilter.py
+bin/sb_pop3dnd.py
 bin/sb_server.py
-bin/sb_client.py
+bin/sb_unheader.py
+bin/sb_upload.py
+bin/sb_xmlrpcserver.py
 %%PYTHON_SITELIBDIR%%/spambayes/Corpus.py
 %%PYTHON_SITELIBDIR%%/spambayes/Corpus.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/Corpus.pyo
@@ -45,9 +47,15 @@ bin/sb_client.py
 %%PYTHON_SITELIBDIR%%/spambayes/ServerUI.py
 %%PYTHON_SITELIBDIR%%/spambayes/ServerUI.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/ServerUI.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/Stats.py
+%%PYTHON_SITELIBDIR%%/spambayes/Stats.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/Stats.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/TestDriver.py
 %%PYTHON_SITELIBDIR%%/spambayes/TestDriver.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/TestDriver.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/TestToolsUI.py
+%%PYTHON_SITELIBDIR%%/spambayes/TestToolsUI.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/TestToolsUI.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.py
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/Tester.pyo
@@ -72,6 +80,9 @@ bin/sb_client.py
 %%PYTHON_SITELIBDIR%%/spambayes/classifier.py
 %%PYTHON_SITELIBDIR%%/spambayes/classifier.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/classifier.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/compatcsv.py
+%%PYTHON_SITELIBDIR%%/spambayes/compatcsv.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/compatcsv.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/compatheapq.py
 %%PYTHON_SITELIBDIR%%/spambayes/compatheapq.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/compatheapq.pyo
@@ -114,6 +125,9 @@ bin/sb_client.py
 %%PYTHON_SITELIBDIR%%/spambayes/resources/helmet_gif.py
 %%PYTHON_SITELIBDIR%%/spambayes/resources/helmet_gif.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/resources/helmet_gif.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/resources/help_gif.py
+%%PYTHON_SITELIBDIR%%/spambayes/resources/help_gif.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/resources/help_gif.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/resources/message_gif.py
 %%PYTHON_SITELIBDIR%%/spambayes/resources/message_gif.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/resources/message_gif.pyo
@@ -135,23 +149,15 @@ bin/sb_client.py
 %%PYTHON_SITELIBDIR%%/spambayes/resources/ui_psp.py
 %%PYTHON_SITELIBDIR%%/spambayes/resources/ui_psp.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/resources/ui_psp.pyo
+%%PYTHON_SITELIBDIR%%/spambayes/smtpproxy.py
+%%PYTHON_SITELIBDIR%%/spambayes/smtpproxy.pyc
+%%PYTHON_SITELIBDIR%%/spambayes/smtpproxy.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/storage.py
 %%PYTHON_SITELIBDIR%%/spambayes/storage.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/storage.pyo
 %%PYTHON_SITELIBDIR%%/spambayes/tokenizer.py
 %%PYTHON_SITELIBDIR%%/spambayes/tokenizer.pyc
 %%PYTHON_SITELIBDIR%%/spambayes/tokenizer.pyo
-%%PORTDOCS%%%%DOCSDIR%%/BULK.txt
-%%PORTDOCS%%%%DOCSDIR%%/HAMMIE.txt
-%%PORTDOCS%%%%DOCSDIR%%/INTEGRATION.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/TESTING.txt
-%%PORTDOCS%%%%DOCSDIR%%/WHAT_IS_NEW.txt
-%%PORTDOCS%%%%DOCSDIR%%/muttrc
-%%PORTDOCS%%%%DOCSDIR%%/procmailrc
-%%PORTDOCS%%%%DOCSDIR%%/spambayes.el
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes/resources
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes
 @unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
