@@ -14,8 +14,8 @@ bin/smtpfront-reject
 %%PORTDOCS%%%%DOCSDIR%%/imapfront.html
 %%PORTDOCS%%%%DOCSDIR%%/mailfront.html
 %%PORTDOCS%%%%DOCSDIR%%/mailrules.html
-%%PORTDOCS%%%%DOCSDIR%%/mailrules2.html
 %%PORTDOCS%%%%DOCSDIR%%/mailrulesx.html
+%%PORTDOCS%%%%DOCSDIR%%/patterns.html
 %%PORTDOCS%%%%DOCSDIR%%/pop3front.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail-backend.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail-validate.html
