@@ -11,7 +11,7 @@ PORTVERSION=	1.07a
 CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
-MAINTAINER?=	mita@jp.FreeBSD.org
+MAINTAINER?=	mita@FreeBSD.org
 
 LIB_DEPENDS+=	png.4:${PORTSDIR}/graphics/png
 
@@ -19,7 +19,6 @@ USE_IMAKE=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-vflib
-XFREE86_HTML_MAN=	no
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
@@ -40,11 +39,15 @@ post-configure:
 	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
 
 post-build:
-	(cd ${WRKSRC}/contrib/xmindpath; make)
+	(cd ${WRKSRC}/contrib/xmindpath; make; \
+	 ${RM} -f xmindpath.1.html xmindpath-1.html; \
+	 ${X11BASE}/bin/rman -f HTML < xmindpath.1 > xmindpath-1.html && \
+	 ${MV} -f xmindpath-1.html xmindpath.1.html)
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
-	(cd ${WRKSRC}/contrib/xmindpath; make install)
+	(cd ${WRKSRC}/contrib/xmindpath; make install; \
+	 ${INSTALL_MAN} xmindpath.1.html ${PREFIX}/lib/X11/doc/html)
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mgp
