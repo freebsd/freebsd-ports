@@ -1,15 +1,16 @@
---- Makefile.in.orig	Wed Aug 28 17:02:39 2002
-+++ Makefile.in	Fri Sep 13 08:09:01 2002
-@@ -97,7 +97,11 @@
- 
+--- Makefile.in.orig	Wed Feb 11 02:05:49 2004
++++ Makefile.in	Thu Feb 12 21:17:45 2004
+@@ -171,7 +171,12 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
  AUTOMAKE_OPTIONS = foreign
- 
 -SUBDIRS = auto common modules lib examples prog data scripts interfaces manual
++
 +ifndef NOPORTDOCS
 +MANUALSUBDIR = manual
 +endif
++SUBDIRS = auto common modules lib examples prog data scripts interfaces $(MANUALSUBDIR)
 +
-+SUBDIRS = auto common modules lib prog data scripts interfaces $(MANUALSUBDIR)
+ EXTRA_DIST = README suncc/* win32/*
+ all: all-recursive
  
- EXTRA_DIST = README
- subdir = .
