@@ -6,6 +6,8 @@
 # $FreeBSD$
 #
 
+.if !defined(Ruby_Include)
+
 Ruby_Include=			bsd.ruby.mk
 Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 
@@ -14,8 +16,10 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 #
 # RUBY_VER		- Set to the alternative short version of ruby (see below for current value).
 # USE_RUBY		- Says that the port uses ruby for building and running.
+# RUBY_NO_BUILD_DEPENDS	- Says that the port should not build-depend on ruby.
+# RUBY_NO_RUN_DEPENDS	- Says that the port should not run-depend on ruby.
 # USE_LIBRUBY		- Says that the port uses libruby.
-# USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.
+# USE_RUBY_EXTCONF	- Says that the port uses extconf.rb to configure.  Implies USE_RUBY.
 # RUBY_EXTCONF		- Set to the alternative name of extconf.rb (default: extconf.rb).
 # RUBY_EXTCONF_SUBDIRS	- Set to list of subdirectories, if multiple modules are included.
 # USE_RUBY_SETUP	- Says that the port uses setup.rb to configure and build.  Implies USE_RUBY_AMSTD.
@@ -166,8 +170,12 @@ LIB_DEPENDS+=		${RUBY_LIB_DEPENDS}
 .endif
 
 .if defined(USE_RUBY)
+.if !defined(RUBY_NO_BUILD_DEPENDS)
 BUILD_DEPENDS+=		${RUBY_DEPENDS}
+.endif
+.if !defined(RUBY_NO_RUN_DEPENDS)
 RUN_DEPENDS+=		${RUBY_DEPENDS}
+.endif
 .endif
 
 .if defined(USE_RUBY_AMSTD)
@@ -177,4 +185,6 @@ RUN_DEPENDS+=		${RUBY_AMSTD_DEPENDS}
 
 .if defined(USE_RUBY_RD) && !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		${RUBY_RD2_DEPENDS}
+.endif
+
 .endif
