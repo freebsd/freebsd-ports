@@ -1,12 +1,12 @@
 # New ports collection makefile for:	slnr
-# Version required:	2.3.0
 # Date created:		21 July 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	slnr-2.3.0
+PORTNAME=	slnr
+PORTVERSION=	2.3.0
 CATEGORIES=	news
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/slnr/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	dnews
-# Version required:     47k
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dnews47k_freebsd
-PKGNAME=	dnews-4.7k
+PORTNAME=	dnews
+PORTVERSION=	4.7k
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
+DISTNAME=	dnews47k_freebsd
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org

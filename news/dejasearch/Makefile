@@ -1,12 +1,12 @@
 # New ports collection makefile for:   dejasearch
-# Version required:    1.7.2
 # Date created:        15 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dejasearch-1.7.2
+PORTNAME=	dejasearch
+PORTVERSION=	1.7.2
 CATEGORIES=	news
 MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
 		http://homemade.virtualave.net/dejasearch/ \

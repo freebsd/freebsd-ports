@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ifmail
-# Version required:     2.15
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       ifmail-2.15
+PORTNAME=	ifmail
+PORTVERSION=	2.15
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.average.org/ifmail/ \

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    atp
-# Version required:     1.50
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		atp-1.50-src
-PKGNAME=		atp-1.50
+PORTNAME=		atp
+PORTVERSION=		1.50
 CATEGORIES=		news
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/bbs/mail
+DISTNAME=		atp-1.50-src
 
 MAINTAINER=		dburr@FreeBSD.org
 

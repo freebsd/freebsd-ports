@@ -1,15 +1,15 @@
 # New ports collection makefile for:		diablo
-# Version required:				1.10
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	diablo-1.15-rel
-PKGNAME=	diablo-1.15
+PORTNAME=	diablo
+PORTVERSION=	1.15
 CATEGORIES=	news
 MASTER_SITES=	http://www.backplane.com/diablo/
+DISTNAME=	${PKGNAME}-rel	
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jfitz@FreeBSD.org

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	cnews
-# Version required:	940927
 # Date created:		28 September 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	c-news
-PKGNAME=	cnews-cr.g
+PORTNAME=	cnews
+PORTVERSION=	cr.g
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.lan-ks.de/pub/c-news/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.mc.hik.se/pub/unix/news/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 EXTRACT_SUFX=	.tar.Z
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	c-news${EXTRACT_SUFX} \
 		pgpverify-1.12
 
 PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \

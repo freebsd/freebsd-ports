@@ -1,12 +1,12 @@
 # New ports collection makefile for:	plor
-# Version Required:	0.3.0
 # Date Created:		30 Dec 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	plor-0.3.1
+PORTNAME=	plor
+PORTVERSION=	0.3.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
 		ftp://ftp.unipd.it/pub/Linux/pluto/developers/
