@@ -21,9 +21,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
-.if !defined(NATIVE_BOOTSTRAP)
-BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk12
-.endif
 PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
@@ -37,11 +34,6 @@ JDK_PATCHSET_VERSION=	11
 
 JDK11DIR?=	${LOCALBASE}/jdk1.1.8
 JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
-.if defined(NATIVE_BOOTSTRAP)
-JDK12DIR?=      ${LOCALBASE}/jdk${JDK_VERSION}
-.else
-JDK12DIR?=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
-.endif
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
@@ -75,6 +67,15 @@ PLIST_SUB+=	DEBUG:=""
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(JDK12DIR)
+.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+JDK12DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
+BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk12
+.else
+JDK12DIR=	${LOCALBASE}/jdk${JDK_VERSION}
+.endif
+.endif
 
 # Check for patchset
 .if !exists(${DISTDIR}/${PATCHSETFILE}) && !defined(PACKAGE_BUILDING)
@@ -114,7 +115,8 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}/1.1_libs
 	@${CP} ${JFC11DIR}/*.jar ${WRKSRC}/1.1_libs
 
-.if !defined(NATIVE_BOOTSTRAP)
+.if defined(WITH_LINUX_BOOTSTRAP) || !exists(${PREFIX}/jdk${JDK_VERSION}/bin/javac)
+# Some checks for bootstrapping with a Linux JDK
 pre-build:
 	@if [ "$${WRKDIRPREFIX}" -a \
 	     -L "/compat/linux/$${WRKDIRPREFIX}" -a \
