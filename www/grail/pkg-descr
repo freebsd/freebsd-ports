@@ -1,5 +1,3 @@
-From http://grail.cnri.reston.va.us/grail/
-
 	Grail is an extensible Internet browser. It supports the
 	protocols and file formats commonly found on the World-Wide
 	Web, such as HTTP, FTP, and HTML, but, unlike most browsers,
@@ -18,5 +16,6 @@ From http://grail.cnri.reston.va.us/grail/
 	there are now stable ports of Tk to those platforms. (You need
 	a lot of RAM though.)
 
+WWW: http://grail.sourceforge.net/
+
 Jacques Vidrine <n@nectar.com>
-WWW: http://grail.cnri.reston.va.us/grail/

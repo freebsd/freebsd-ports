@@ -5,21 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		grail
-PORTVERSION= 		0.6
-CATEGORIES=		www python
-MASTER_SITES=		http://grail.cnri.reston.va.us/grail/source/
-DISTFILES=		${PORTNAME}-06.tgz
+PORTNAME=	grail
+PORTVERSION= 	0.6
+CATEGORIES=	www python
+MASTER_SITES=	http://grail.sourceforge.net/source/ \
+		http://grail.cnri.reston.va.us/grail/source/
+DISTFILES=	${PORTNAME}-06.tgz
 
-MAINTAINER=		nectar@freebsd.org
+MAINTAINER=	nectar@freebsd.org
 
-USE_PYTHON=		yes
-RUN_DEPENDS=		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+USE_PYTHON=	yes
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-GRAILSUBDIR=		share/grail
-GRAILDIR=		${PREFIX}/${GRAILSUBDIR}
-DIRS_CMD=		${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
-FILES_CMD=		${SED} -e '/^share\//bok' -e 'D' -e ':ok' -e 's,${GRAILSUBDIR}/,,' < ${PLIST}
+GRAILSUBDIR=	share/grail
+GRAILDIR=	${PREFIX}/${GRAILSUBDIR}
+DIRS_CMD=	${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
+FILES_CMD=	${SED} -e '/^share\//bok' -e 'D' -e ':ok' -e 's,${GRAILSUBDIR}/,,' < ${PLIST}
 
 FIND?=find
 PYTHON?=python
