@@ -35,7 +35,7 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.5.3
+VERSION=	1.5.4
 JP_VERSION=	1
 MANUALVERSION=	1.4
 
@@ -94,7 +94,15 @@ post-configure:
 .if !defined(NOPORTDOCS)
 post-install:
 	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/INSTALL.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/NEWS.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/PGP-Notes.ja.txt ${DOCSDIR}
 	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.SECURITY.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.SSL.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/README.ja ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/applying-patches.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${DIFFDIR}/smime-notes.ja.txt ${DOCSDIR}
 	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.ja.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
