@@ -61,7 +61,7 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 # The previous Qt port versions installed qmake and qmake's specs under X11BASE
 # The new devel/qmake port installs them under LOCALBASE. We can use
 # either one here, but we prefer the newer:
-.for d in ${X11BASE} ${LOCALBASE}
+.for d in ${X11BASE} ${LOCALBASE} ${PREFIX}
 .	if exists($d/share/qt/mkspecs/freebsd-g++)
 QTBASE=$d
 PLATFORM=${QTBASE}/share/qt/mkspecs/freebsd-g++
@@ -139,6 +139,7 @@ post-build:
 
 # Work around qmake generated dependencies
 pre-install:
+	${MKDIR} ${PREFIX}/lib ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/findtr ${PREFIX}/bin
 .for tool in makeqpf mergetr msg2qm qembed qvfb
