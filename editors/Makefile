@@ -189,7 +189,6 @@
     SUBDIR += xemacs-wp-packages
     SUBDIR += xemacs21
     SUBDIR += xemacs21-mule
-    SUBDIR += xemacs21-sumo
     SUBDIR += xenon
     SUBDIR += xmleditor
     SUBDIR += xvile
