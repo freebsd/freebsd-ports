@@ -8,18 +8,20 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=    intl.4:${PORTSDIR}/devel/gettext
 
+NO_PACKAGE=	"Too many configuration options available to set usefull defaults"
+
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --enable-imap --enable-pop \
+CONFIGURE_ARGS= --prefix=${LOCALBASE} --enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
-		--with-facedir=${PREFIX}/share/faces
+		--with-facedir=${LOCALBASE}/share/faces
 
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=--without-x
@@ -79,8 +81,9 @@ pre-everything:
 post-configure:
 	${CP} ${FILESDIR}/Makefile.compface ${WRKSRC}/compface/Makefile
 	${CP} -pf ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.man.orig
-	${SED} -e "s%/usr/local/faces%${PREFIX}/share/faces%" \
+	${SED} -e "s%/usr/local/faces%${LOCALBASE}/share/faces%" \
 	       -e "s%/var/spool/mail%/var/mail%" < ${WRKSRC}/faces/faces.man.orig > ${WRKSRC}/faces/faces.man
+	${LN} ${WRKSRC}/faces/faces.man ${WRKSRC}/faces/faces.1
 	${CP} -pf ${WRKSRC}/faces/Faces.ad ${WRKSRC}/faces/Faces.ad.orig
 .if !defined(WITHOUT_AUDIO)
 .if defined(USE_NAS)
@@ -96,17 +99,17 @@ post-configure:
 
 post-install:
 .if !defined(WITHOUT_X11)
-	${CP} -f ${WRKSRC}/faces/Faces.ad ${PREFIX}/lib/X11/app-defaults/Faces
+	${CP} -f ${WRKSRC}/faces/Faces.ad ${X11BASE}/lib/X11/app-defaults/Faces
 .endif
 .if !defined(NOPORTDOCS)
-	if [ ! -e ${PREFIX}/share/doc/${PORTNAME} ]; then \
-		${MKDIR} ${PREFIX}/share/doc/${PORTNAME}; \
-	       	${CP} -f ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}; \
+	if [ ! -e ${LOCALBASE}/share/doc/${PORTNAME} ]; then \
+		${MKDIR} ${LOCALBASE}/share/doc/${PORTNAME}; \
+	       	${CP} -f ${WRKSRC}/README ${LOCALBASE}/share/doc/${PORTNAME}; \
 	fi
 .endif
-	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${LOCALBASE}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${LOCALBASE}/bin
 
 .include <bsd.port.mk>
