@@ -37,6 +37,7 @@
     SUBDIR += gxine
     SUBDIR += hayes
     SUBDIR += kaffeine
+    SUBDIR += kaffeine-mozilla
     SUBDIR += kdemultimedia3
     SUBDIR += kino
     SUBDIR += kmplayer
