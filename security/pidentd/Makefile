@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidentd
-PORTVERSION= 	2.8.5
+PORTVERSION=	2.8.5
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
