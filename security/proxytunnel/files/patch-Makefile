@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Nov 22 06:50:01 2001
-+++ Makefile	Wed Dec  5 19:58:37 2001
+--- Makefile.orig	Wed Sep 15 03:28:55 2004
++++ Makefile	Wed Sep 15 03:29:06 2004
 @@ -2,8 +2,6 @@
  #
  # Please uncomment the appropriate settings
@@ -7,5 +7,5 @@
 -CC = gcc
 -CFLAGS = -Wall -DHAVE_GETOPT_LONG
  LDFLAGS =
+ INSTALLPATH = $(DESTDIR)/usr/bin
  
- # Solaris needs this (According to Martin Senft <martin@illicon.de>)
