@@ -1,0 +1,11 @@
+--- get/makefile.src.orig	Thu Feb 27 21:13:33 1992
++++ get/makefile.src	Tue Mar  8 00:10:02 2005
+@@ -54,7 +54,7 @@
+ #ifdef FB
+ # getfb - get to a BRL libfb display
+ #@getfb.out: getfb.c
+-#@	$(CC) $(CFLAGS) $*.c $(LIBS) $(LIBFB) -lm -o $*.new
++#@	$(CC) $(CFLAGS) $(INCFB) $*.c $(LIBS) $(LIBFB) $(LIBX11) -lm -o $*.new
+ #@	mv $*.new $@
+ #endif
+ 
