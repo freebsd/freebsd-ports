@@ -701,6 +701,7 @@ blwm		ports/x11-wm/blwm
 bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
+bmp-wma		ports/audio/bmp-wma
 bnbt		ports/net/bnbt
 bnc		ports/irc/bnc
 bnf		ports/devel/bnf
