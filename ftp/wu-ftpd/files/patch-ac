@@ -22,7 +22,7 @@
 ! #define _PATH_FTPUSERS  "!!PREFIX!!/etc/ftpusers"
 ! #define _PATH_FTPACCESS "!!PREFIX!!/etc/ftpaccess"
   #define _PATH_EXECPATH  "/bin/ftp-exec"
-! #define _PATH_PIDNAMES  "/var/run/ftp.pids-%s"
+! #define _PATH_PIDNAMES  "!!PREFIX!!/daemon/ftpd/ftp.pids-%s"
 ! #define _PATH_CVT       "!!PREFIX!!/etc/ftpconversions"
 ! #define _PATH_XFERLOG   "/var/log/xferlog"
 ! #define _PATH_PRIVATE   "!!PREFIX!!/etc/ftpgroups"
