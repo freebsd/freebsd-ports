@@ -1,0 +1,11 @@
+--- Makefile.am.orig2	Mon Feb  7 10:20:52 2005
++++ Makefile.am	Mon Feb  7 10:29:41 2005
+@@ -10,7 +10,7 @@
+ IMAP_INCLUDES = -I$(top_srcdir)/imap
+ endif
+ 
+-SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
++SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . doc
+ 
+ bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
+ 
