@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.19 1997/10/15 09:38:57 torstenb Exp $
+# $Id: Makefile,v 1.20 1998/01/25 20:45:14 torstenb Exp $
 #
 
 DISTNAME=	smail-3.2.0.101
@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident \			${PREFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrapper
+BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident
+LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 
 INSTALL_TARGET=	install installman
 
@@ -52,7 +53,7 @@ replace:
 		fi;\
 	fi
 	if [ -e /usr/local/bin/newaliases ]; then \
- 		cp -fp /usr/local/bin/newaliases /usr/bin/newaliases; \
+		cp -fp /usr/local/bin/newaliases /usr/bin/newaliases; \
 	fi
 	if [ -e /usr/bin/mailq ]; then \
 		mv -f /usr/bin/mailq /usr/bin/mailq.BAK; \
@@ -63,5 +64,5 @@ replace:
 	if [ -e /usr/local/bin/mailq ]; then \
 		cp -fp /usr/local/bin/mailq /usr/bin/mailq; \
 	fi
-	
+
 .include <bsd.port.mk>
