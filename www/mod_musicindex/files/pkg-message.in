@@ -1,0 +1,40 @@
+************************************************************
+You've installed mod_musicindex
+
+To enable it, you need to take the following steps:
+
+1) Edit httpd.conf to make sure the module is loaded.
+2) Mod_musicindex looks for a directory called musicindex below
+   the apache DocumentRoot. Make sure it finds it by either changing
+   the DocumentRoot directive in httpd.conf to %%LOCALBASE%%/www or by
+   copying or linking %%LOCALBASE%%/www/musicindex into your DocumentRoot
+3) Add a Directory configuration to your httpd.conf that should look
+   something like this:
+
+<Directory "/path/to/you/mp3/files/">
+    Options Indexes MultiViews FollowSymlinks
+    AllowOverride       None
+    MusicLister         On
+    MusicSortOrder      album disc track artist title length bitrate freq filetype filename uri
+    MusicFields         title artist length bitrate
+    MusicAllowDownload  On
+    MusicAllowStream    Off
+    MusicAllowSearch    On
+    MusicPageTitle      Myname
+    MusicCssDefault     musicindex.css
+    MusicCachePath      /tmp/musicindex
+    MusicIceServer      [ice.domain.my]:8000
+    MusicCookieLife     300
+</Directory>
+
+4) Optionally consider setting an alias to your mp3 dir, so you can access
+   the files by http://yourhost/music/ :
+
+Alias /music/ /path/to/you/mp3/files/
+
+5) To make your changes effective, restart apache:
+
+# apachectl configtest (see if there are any config errors)
+# apachectl restart
+
+************************************************************

@@ -7,5 +7,6 @@ www/musicindex/general.png
 www/musicindex/musicindex.css
 www/musicindex/right_arrow.gif
 www/musicindex/sound.png
+%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm www/musicindex
-
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
