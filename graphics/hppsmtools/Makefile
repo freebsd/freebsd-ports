@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	hppsmtools-0.92
+DISTNAME=	hppsmtools-1.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/unimut/photosmart/ \
 		http://www.freenix.no/~anders/ \
