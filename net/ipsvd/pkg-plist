@@ -5,12 +5,14 @@ sbin/udpsvd
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/benefits.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd-cdb.8.html
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd-instruct.5.html
 %%PORTDOCS%%%%DOCSDIR%%/ipsvd.7.html
+%%PORTDOCS%%%%DOCSDIR%%/sslio.8.html
 %%PORTDOCS%%%%DOCSDIR%%/tcpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/udpsvd.8.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
