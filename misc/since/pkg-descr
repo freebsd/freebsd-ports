@@ -1,0 +1,10 @@
+Paraphrasing since(1):
+
+  since is similar to tail(1) since it also displays the tail of a file.
+  However, since displays only the data which has been added since the last
+  time since was run.  If since has not been run before, the entire file is
+  displayed.  since is useful for watching over log files.
+
+Author: Marc Welz <marc@jade.cs.uct.ac.za>
+
+-- Johann Visagie <wjv@FreeBSD.org>

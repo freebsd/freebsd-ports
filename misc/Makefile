@@ -196,6 +196,7 @@
     SUBDIR += sh-utils
     SUBDIR += shc
     SUBDIR += shuffle
+    SUBDIR += since
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
