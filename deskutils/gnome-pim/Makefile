@@ -59,7 +59,7 @@ post-patch:
 .endfor
 
 pre-install:
-	${MKDIR} ${PREFIX}//share/gnome/help/gnomecard/C \
+	${MKDIR} ${PREFIX}/share/gnome/help/gnomecard/C \
 		${PREFIX}/share/gnome/help/gnomecard/eu
 
 .include <bsd.port.mk>
