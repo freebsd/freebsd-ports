@@ -8,7 +8,9 @@
 PORTNAME=	cairo
 PORTVERSION=	0.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cairographics.org/snapshots/
+MASTER_SITES=	http://www.cairographics.org/snapshots/  \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Cairo is a vector graphics library with cross-device output support
@@ -41,4 +43,3 @@ post-patch:
 .endif
 
 .include <bsd.port.post.mk>
-

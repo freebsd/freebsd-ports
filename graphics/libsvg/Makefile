@@ -8,7 +8,9 @@
 PORTNAME=	libsvg
 PORTVERSION=	0.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://cairographics.org/cairo/snapshots/
+MASTER_SITES=	http://cairographics.org/cairo/snapshots/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A parser for SVG content in files or buffers

@@ -8,7 +8,9 @@
 PORTNAME=	xdg
 PORTVERSION=	0.8
 CATEGORIES=	devel python
-MASTER_SITES=	http://freedesktop.org/Software/pyxdg/releases/
+MASTER_SITES=	http://freedesktop.org/Software/pyxdg/releases/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
