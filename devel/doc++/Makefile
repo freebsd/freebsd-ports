@@ -56,10 +56,10 @@ ADDITIONAL_DOCS=	ClassGraph.class \
 			toc.html
 
 post-install:
-.if !defined(NOPORTSDOCS)
-	${MKDIR} ${PREFIX}/share/doc/doc++
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 	for i in $(ADDITIONAL_DOCS); do \
-		${INSTALL_MAN} ${WRKSRC}/doc/manual/html/$$i ${PREFIX}/share/doc/doc++ ;\
+		${INSTALL_MAN} ${WRKSRC}/doc/manual/html/$$i ${DOCSDIR} ;\
 	done
 .endif
 
