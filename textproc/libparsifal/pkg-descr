@@ -1,0 +1,20 @@
+Parsifal is minimal non-validating XML parser written in ANSI C. Parsifal
+implements the subset of SAX2 including namespace support.
+
+Parsifal can be used for parsing XML based messages (such as SOAP and RSS) and
+for application specific data processing e.g. config files, data files etc.
+Parsifal can also be used for limited document-oriented processing and for
+parsing modular documents because it contains supports for internal and
+external general entities - it doesn't support currently parameter entities or
+other DTD features. Parsifal can be used for processing large data files and
+streams too since its SAX based and consumes very little memory not to mention
+it is fast enough for most purposes 'cos its written in C.
+
+Using Parsifal in place of large XML processing libraries (e.g. libxml, xerces)
+or even in the place of small Expat (which is considerably bigger and more
+complicated) can be justified for limited memory environments and in
+applications requiring bundled parser. If you need higher level tools, for
+example library supporting DTD validation or dom/xpath processing, you should
+look for other libs of course.
+
+WWW: http://www.saunalahti.fi/~samiuus/toni/xmlproc/

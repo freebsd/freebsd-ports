@@ -155,6 +155,7 @@
     SUBDIR += libebml
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
+    SUBDIR += libparsifal
     SUBDIR += libpathan
     SUBDIR += libtre
     SUBDIR += libuninameslist
