@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifile
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	mail textproc
 MASTER_SITES=	http://savannah.nongnu.org/download/ifile/default.pkg/${PORTVERSION}/
 
@@ -21,9 +21,6 @@ GNU_CONFIGURE=	yes
 MAN1=		ifile.1
 
 post-patch:
-.for file in argp-help.c strndup.c
-	@${REINPLACE_CMD} -e 's/malloc\.h/stdlib.h/g' ${WRKSRC}/argp/${file}
-.endfor
 	@${REINPLACE_CMD} -e 's,-lm,-lm -L${LOCALBASE}/lib -lgnugetopt,' \
 		${WRKSRC}/Makefile.in
 
