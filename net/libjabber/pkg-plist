@@ -1,0 +1,8 @@
+bin/jabber-config
+include/jabber/jabber.h
+lib/libjabber.a
+lib/libjabber.so
+lib/libjabber.so.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+@dirrm include/jabber
