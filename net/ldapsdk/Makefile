@@ -3,10 +3,11 @@
 # Date created:	17 May 1999
 # Whom:		paul@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/25 22:44:25 paul Exp $
+# $Id: Makefile,v 1.2 1999/06/06 21:01:32 paul Exp $
 #
 
 DISTNAME=	ldapsdk_12311998
+PKGNAME=	ldapsdk-1998.12.31
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/c-sdk/ldap/
 
@@ -23,9 +24,9 @@ OBJDIR=	${WRKSRC}/dist/${OPSYS}${OSREL}_DBG.OBJ
 INSTALL_DIR= ${PREFIX}/mozilla/directory
 
 do-install:
-	mkdir	-p ${INSTALL_DIR}/etc
-	mkdir	-p ${INSTALL_DIR}/include
-	mkdir	-p ${INSTALL_DIR}/lib
+	${MKDIR} ${INSTALL_DIR}/etc
+	${MKDIR} ${INSTALL_DIR}/include
+	${MKDIR} ${INSTALL_DIR}/lib
 	${INSTALL_DATA} ${OBJDIR}/bin/liblber.so.1.0 \
 						${INSTALL_DIR}/lib/liblber.so.1
 	-(cd ${INSTALL_DIR}/lib; ln -s liblber.so.1 liblber.so)
