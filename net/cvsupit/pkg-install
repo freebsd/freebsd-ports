@@ -119,7 +119,7 @@ will, select the CVS repository tag (note: you will still need to use
 CVS in manually checking out and maintaining a /usr/src tree if you
 choose to go this route).
 " -1 -1 5 \
-    "RELENG_4_4" "The 4.4 point release / patch branch" \
+    "RELENG_4_5" "The 4.5 point release / patch branch" \
     "RELENG_4" "The 4.x-stable branch" \
     "RELENG_3" "The 3.x-stable branch" \
     "RELENG_2_2" "The 2.2.x-stable branch" \

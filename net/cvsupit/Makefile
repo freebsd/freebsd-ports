@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsupit
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	net
 DISTFILES=	#empty
 
