@@ -10,7 +10,11 @@ to the author of esecanna, or the maintainer of the port.
 
 Thank you for understanding.
 
+* Using VJE-Delta 3.0 trial, esecannaserver will fail to
+* connect to vjed before once you run vje.
 
-Using VJE-Delta 3.0 trial, esecannaserver will fail to
-connect to vjed before once you run vje.
+Quick Setup:
+  Run /usr/local/etc/rc.d/vjeesecannaserver.sh as root.
+  Each user may want to configure the behavior by editing
+  `~/.esecannarc', copied after `/usr/local/etc/esecannarc'.
 ************************************************************
