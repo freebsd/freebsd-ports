@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
