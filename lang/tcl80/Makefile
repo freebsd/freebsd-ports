@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tcl8.0.5
 
-MAINTAINER=	cwt@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix
