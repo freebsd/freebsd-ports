@@ -25,6 +25,7 @@ SybaseCT	"Sybase/MS-SQL database support (CT-lib)" OFF \
 Interbase	"Interbase 6 database support (Firebird)" OFF \
 dBase		"dBase database support" OFF \
 OpenLDAP	"OpenLDAP support" OFF \
+OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
@@ -150,6 +151,10 @@ while [ "$1" ]; do
 			if [ -f /usr/lib/libkrb.a -a -f /usr/lib/libdes.a -a ! -L /usr/lib/libdes.a ]; then
 				LIBS="${LIBS} -lkrb -ldes -L\${PREFIX}/lib"
 			fi
+			;;
+		\"OpenSSL\")
+			echo "USE_OPENSSL=yes"
+			echo "CONFIGURE_ARGS+=--with-openssl=\${OPENSSLBASE}"
 			;;
 		\"SNMP\")
 			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
