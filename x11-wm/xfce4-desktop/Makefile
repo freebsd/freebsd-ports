@@ -18,11 +18,13 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 desktop background manager and root menu
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
+		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
-RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
+		xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20

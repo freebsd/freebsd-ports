@@ -17,9 +17,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Session manager for the Xfce 4 desktop environment
 
-BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
+		iceauth:${X_CLIENTS_PORT}
 LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.3:${PORTSDIR}/x11-toolkits/libxfce4gui
+RUN_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager \
+		iceauth:${X_CLIENTS_PORT}
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
