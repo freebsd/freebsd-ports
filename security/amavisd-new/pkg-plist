@@ -23,7 +23,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/amavisd.conf-default
+@unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
 etc/amavisd.conf-dist
+@exec [ ! -f %B/amavisd.conf ] && cp %B/%f %B/amavisd.conf
 etc/amavisd.conf-sample
 %%AMAVIS_NOMILTER%%etc/rc.d/amavis-milter.sh
 etc/rc.d/amavisd.sh
