@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- configure.orig	Sat Jan  1 00:30:00 2005
++++ configure	Sat Jan  1 00:30:39 2005
+@@ -4648,7 +4648,7 @@
+     exit(0);
+ }
+ EOF
+-    doit='$CC -o conftest ${CFLAGS-} ${CPPFLAGS-} ${LDFLAGS-} conftest.c ${LIBS-}'
++    doit='$CC -o conftest ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} conftest.c ${LIBS}'
+     if { (eval echo "$as_me:$LINENO: \"$doit\"") >&5
+   (eval $doit) 2>&5
+   ac_status=$?
