@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	wxGlade
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxglade
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dotz@irc.pl
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
