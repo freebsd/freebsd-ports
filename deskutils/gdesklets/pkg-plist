@@ -1,5 +1,6 @@
 bin/gdesklets
 bin/gdesklets-display-thumbnailer
+lib/gdesklets/ctrlinfo
 lib/gdesklets/Controls/ArrayBuffer/__init__.py
 lib/gdesklets/Controls/ArrayBuffer/__init__.pyc
 lib/gdesklets/Controls/ArrayBuffer/IArrayBuffer.py
@@ -136,9 +137,6 @@ lib/gdesklets/display/Display.pyo
 lib/gdesklets/display/DisplayConfigurator.py
 lib/gdesklets/display/DisplayConfigurator.pyc
 lib/gdesklets/display/DisplayConfigurator.pyo
-lib/gdesklets/display/DisplayContainer.py
-lib/gdesklets/display/DisplayContainer.pyc
-lib/gdesklets/display/DisplayContainer.pyo
 lib/gdesklets/display/DisplayTarget.py
 lib/gdesklets/display/DisplayTarget.pyc
 lib/gdesklets/display/DisplayTarget.pyo
@@ -319,6 +317,9 @@ lib/gdesklets/main/client.pyo
 lib/gdesklets/main/remotecommands.py
 lib/gdesklets/main/remotecommands.pyc
 lib/gdesklets/main/remotecommands.pyo
+lib/gdesklets/plugin/ControlRegistry.py
+lib/gdesklets/plugin/ControlRegistry.pyc
+lib/gdesklets/plugin/ControlRegistry.pyo
 lib/gdesklets/plugin/Interface.py
 lib/gdesklets/plugin/Interface.pyc
 lib/gdesklets/plugin/Interface.pyo
@@ -469,6 +470,9 @@ lib/gdesklets/utils/HIGDialog.pyo
 lib/gdesklets/utils/LogView.py
 lib/gdesklets/utils/LogView.pyc
 lib/gdesklets/utils/LogView.pyo
+lib/gdesklets/utils/MetaDataRegistry.py
+lib/gdesklets/utils/MetaDataRegistry.pyc
+lib/gdesklets/utils/MetaDataRegistry.pyo
 lib/gdesklets/utils/Observable.py
 lib/gdesklets/utils/Observable.pyc
 lib/gdesklets/utils/Observable.pyo
