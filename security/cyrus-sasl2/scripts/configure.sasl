@@ -179,6 +179,10 @@ while [ "$1" ]; do
 			DEFMYSQL=1
 			;;
 		\"OpenLDAP21\")
+			if [ -n "${WITHOUT_SASLAUTHD}" ]; then
+				shift
+				continue
+			fi
 			if [ "${OPENLDAP}" ]; then
 				echo "OpenLDAP 2.0 and 2.1 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -190,6 +194,10 @@ while [ "$1" ]; do
 			OPENLDAP=1
 			;;
 		\"OpenLDAP\")
+			if [ -n "${WITHOUT_SASLAUTHD}" ]; then
+				shift
+				continue
+			fi
 			if [ "${OPENLDAP}" ]; then
 				echo "OpenLDAP 2.0 and 2.1 are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -201,6 +209,10 @@ while [ "$1" ]; do
 			OPENLDAP=1
 			;;
 		\"SASLAUTHD\")
+			if [ -n "${WITHOUT_SASLAUTHD}" ]; then
+				shift
+				continue
+			fi
 			echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;saslauthd;g\""
 			PWCHECK=1
 			;;

@@ -48,7 +48,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--mandir=${MANPREFIX}/man \
 		--enable-static \
 		--enable-login \
-		--with-saslauthd \
 		--enable-auth-sasldb \
 		--with-rc4=openssl
 
@@ -57,6 +56,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
 		REALCURDIR="${.CURDIR}" \
+		WITHOUT_SASLAUTHD="${WITHOUT_SASLAUTHD}" \
 		WITH_DB3="${WITH_DB3}" \
 		WITH_DB4="${WITH_DB4}" \
 		WITH_DB41="${WITH_DB41}" \
@@ -86,6 +86,13 @@ CONFIGURE_ARGS+=	--disable-ntlm
 NTLM=	"@comment "
 .else
 CONFIGURE_ARGS+=	--enable-ntlm
+.endif
+
+.if defined(WITHOUT_SASLAUTHD)
+CONFIGURE_ARGS+=	--without-saslauthd
+SASLAUTHD=	"@comment "
+.else
+CONFIGURE_ARGS+=	--with-saslauthd
 .endif
 
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
@@ -151,6 +158,7 @@ HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
 	options plugprog programming readme sysadmin upgrading
 
 PLIST_SUB=	PREFIX=${PREFIX} \
+		SASLAUTHD=${SASLAUTHD} \
 		OTP=${OTP} \
 		CRAM=${CRAM} \
 		DIGEST=${DIGEST} \
@@ -195,16 +203,17 @@ post-install:
 		${MAN8PREFIX}/man/man8/saslpasswd2.8
 	${INSTALL_MAN} ${WRKSRC}/utils/sasldblistusers2.8 \
 		${MAN8PREFIX}/man/man8/sasldblistusers2.8
+.if !defined(WITHOUT_SASLAUTHD)
 	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
 	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${PWCHECK_SUB} \
 		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
 	${MKDIR} -m 770 /var/state/saslauthd
 	${CHOWN} ${CYRUS_USER}:mail /var/state/saslauthd
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
-	@${MKDIR} ${DOCSDIR}/saslauthd
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
@@ -214,9 +223,12 @@ post-install:
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}/html
 .endfor
+.if !defined(WITHOUT_SASLAUTHD)
+	@${MKDIR} ${DOCSDIR}/saslauthd
 .for file in ${SASLAUTHD_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/saslauthd/${file} ${DOCSDIR}/saslauthd
 .endfor
+.endif
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
