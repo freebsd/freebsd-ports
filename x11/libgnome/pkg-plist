@@ -221,6 +221,227 @@ share/gnome/gtkrc.vi_VN.tcvn
 share/gnome/gtkrc.vi_VN.viscii
 share/gnome/gtkrc.zh_CN
 share/gnome/gtkrc.zh_TW.Big5
+share/gnome/help/gnome-dev-info/C/addauth.html
+share/gnome/help/gnome-dev-info/C/altpol.html
+share/gnome/help/gnome-dev-info/C/arch.html
+share/gnome/help/gnome-dev-info/C/book1.html
+share/gnome/help/gnome-dev-info/C/codstd.html
+share/gnome/help/gnome-dev-info/C/cvs.html
+share/gnome/help/gnome-dev-info/C/dialogapputil-docs.html
+share/gnome/help/gnome-dev-info/C/docbook.css
+share/gnome/help/gnome-dev-info/C/event-driven-programming.html
+share/gnome/help/gnome-dev-info/C/gnome-actionarea.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper-convenience-macros.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper-functions.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper-gnomeuiinfo.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper-keybindings-config.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper-quick-example.html
+share/gnome/help/gnome-dev-info/C/gnome-app-helper.html
+share/gnome/help/gnome-dev-info/C/gnome-app-util.html
+share/gnome/help/gnome-dev-info/C/gnome-app.html
+share/gnome/help/gnome-dev-info/C/gnome-canvas-coordinates.html
+share/gnome/help/gnome-dev-info/C/gnome-canvas-getting-started.html
+share/gnome/help/gnome-dev-info/C/gnome-canvas-object-arguments.html
+share/gnome/help/gnome-dev-info/C/gnome-canvas-organization-of-items.html
+share/gnome/help/gnome-dev-info/C/gnome-canvas.html
+share/gnome/help/gnome-dev-info/C/gnome-client.html
+share/gnome/help/gnome-dev-info/C/gnome-color-selector.html
+share/gnome/help/gnome-dev-info/C/gnome-defs.html
+share/gnome/help/gnome-dev-info/C/gnome-dentry.html
+share/gnome/help/gnome-dev-info/C/gnome-dev-info.html
+share/gnome/help/gnome-dev-info/C/gnome-dialog.html
+share/gnome/help/gnome-dev-info/C/gnome-dns.html
+share/gnome/help/gnome-dev-info/C/gnome-fileconvert.html
+share/gnome/help/gnome-dev-info/C/gnome-font-selector.html
+share/gnome/help/gnome-dev-info/C/gnome-hello-0-basic.jpg
+share/gnome/help/gnome-dev-info/C/gnome-hello-1-menus.jpg
+share/gnome/help/gnome-dev-info/C/gnome-hello-2-i18n.jpg
+share/gnome/help/gnome-dev-info/C/gnome-help.html
+share/gnome/help/gnome-dev-info/C/gnome-history.html
+share/gnome/help/gnome-dev-info/C/gnome-hook.html
+share/gnome/help/gnome-dev-info/C/gnome-i18n.html
+share/gnome/help/gnome-dev-info/C/gnome-ice.html
+share/gnome/help/gnome-dev-info/C/gnome-mdi-docs.html
+share/gnome/help/gnome-dev-info/C/gnome-messagebox.html
+share/gnome/help/gnome-dev-info/C/gnome-mime.html
+share/gnome/help/gnome-dev-info/C/gnome-net.html
+share/gnome/help/gnome-dev-info/C/gnome-pixmap.html
+share/gnome/help/gnome-dev-info/C/gnome-plugins.html
+share/gnome/help/gnome-dev-info/C/gnome-properties.html
+share/gnome/help/gnome-dev-info/C/gnome-score.html
+share/gnome/help/gnome-dev-info/C/gnome-scores.html
+share/gnome/help/gnome-dev-info/C/gnome-session.html
+share/gnome/help/gnome-dev-info/C/gnome-startup.html
+share/gnome/help/gnome-dev-info/C/gnome-stock-imlib.html
+share/gnome/help/gnome-dev-info/C/gnome-stock-xpm.html
+share/gnome/help/gnome-dev-info/C/gnome-stock.html
+share/gnome/help/gnome-dev-info/C/gnome-string.html
+share/gnome/help/gnome-dev-info/C/gnome-triggers.html
+share/gnome/help/gnome-dev-info/C/gnome-util.html
+share/gnome/help/gnome-dev-info/C/gnomeappbar.html
+share/gnome/help/gnome-dev-info/C/graphics-contexts.html
+share/gnome/help/gnome-dev-info/C/gtk-clock.html
+share/gnome/help/gnome-dev-info/C/gtk-ted.html
+share/gnome/help/gnome-dev-info/C/index.html
+share/gnome/help/gnome-dev-info/C/intro.html
+share/gnome/help/gnome-dev-info/C/libgnome.html
+share/gnome/help/gnome-dev-info/C/libgnomeui.html
+share/gnome/help/gnome-dev-info/C/libgnorba-docs.html
+share/gnome/help/gnome-dev-info/C/ln14.html
+share/gnome/help/gnome-dev-info/C/nontech.html
+share/gnome/help/gnome-dev-info/C/orbitgtk.html
+share/gnome/help/gnome-dev-info/C/start.html
+share/gnome/help/gnome-dev-info/C/thisdoc.html
+share/gnome/help/gnome-dev-info/C/tut-doc.html
+share/gnome/help/gnome-dev-info/C/tut-i18n.html
+share/gnome/help/gnome-dev-info/C/tut-menus.html
+share/gnome/help/gnome-dev-info/C/tut-parsing.html
+share/gnome/help/gnome-dev-info/C/tut-sm.html
+share/gnome/help/gnome-dev-info/C/tutorial.html
+share/gnome/help/gnome-dev-info/C/visuals.html
+share/gnome/help/gnome-dev-info/C/what.html
+share/gnome/help/gnome-dev-info/C/whatis.html
+share/gnome/help/gnome-dev-info/C/x-concepts-docs.html
+share/gnome/help/gnome-dev-info/C/x1453.html
+share/gnome/help/gnome-dev-info/C/x2161.html
+share/gnome/help/gnome-dev-info/C/x2674.html
+share/gnome/help/gnome-dev-info/C/x671.html
+share/gnome/html/gnome-decl.txt
+share/gnome/html/gnome-sections.txt
+share/gnome/html/gnome.html
+share/gnome/html/gnome/book1.html
+share/gnome/html/gnome/gnome-gnome-config.html
+share/gnome/html/gnome/gnome-gnome-defs.html
+share/gnome/html/gnome/gnome-gnome-dentry.html
+share/gnome/html/gnome/gnome-gnome-exec.html
+share/gnome/html/gnome/gnome-gnome-fileconvert.html
+share/gnome/html/gnome/gnome-gnome-help.html
+share/gnome/html/gnome/gnome-gnome-history.html
+share/gnome/html/gnome/gnome-gnome-i18n.html
+share/gnome/html/gnome/gnome-gnome-metadata.html
+share/gnome/html/gnome/gnome-gnome-mime-info.html
+share/gnome/html/gnome/gnome-gnome-mime.html
+share/gnome/html/gnome/gnome-gnome-paper.html
+share/gnome/html/gnome/gnome-gnome-popt.html
+share/gnome/html/gnome/gnome-gnome-regex.html
+share/gnome/html/gnome/gnome-gnome-remote.html
+share/gnome/html/gnome/gnome-gnome-score.html
+share/gnome/html/gnome/gnome-gnome-sound.html
+share/gnome/html/gnome/gnome-gnome-triggers.html
+share/gnome/html/gnome/gnome-gnome-url.html
+share/gnome/html/gnome/gnome-gnome-util.html
+share/gnome/html/gnome/gnome-libgnome.html
+share/gnome/html/gnome/libgnome.html
+share/gnome/html/gnomeui-decl.txt
+share/gnome/html/gnomeui-scan.c
+share/gnome/html/gnomeui-sections.txt
+share/gnome/html/gnomeui.hierarchy
+share/gnome/html/gnomeui.html
+share/gnome/html/gnomeui.types
+share/gnome/html/gnomeui/book1.html
+share/gnome/html/gnomeui/gnome-objects.html
+share/gnome/html/gnomeui/gnomeabout.html
+share/gnome/html/gnomeui/gnomeanimator.html
+share/gnome/html/gnomeui/gnomeapp.html
+share/gnome/html/gnomeui/gnomeappbar.html
+share/gnome/html/gnomeui/gnomecalculator.html
+share/gnome/html/gnomeui/gnomecanvas.html
+share/gnome/html/gnomeui/gnomecanvasellipse.html
+share/gnome/html/gnomeui/gnomecanvasgroup.html
+share/gnome/html/gnomeui/gnomecanvasimage.html
+share/gnome/html/gnomeui/gnomecanvasitem.html
+share/gnome/html/gnomeui/gnomecanvasline.html
+share/gnome/html/gnomeui/gnomecanvaspolygon.html
+share/gnome/html/gnomeui/gnomecanvasre.html
+share/gnome/html/gnomeui/gnomecanvasrect.html
+share/gnome/html/gnomeui/gnomecanvastext.html
+share/gnome/html/gnomeui/gnomecanvaswidget.html
+share/gnome/html/gnomeui/gnomeclient.html
+share/gnome/html/gnomeui/gnomecolorpicker.html
+share/gnome/html/gnomeui/gnomedateedit.html
+share/gnome/html/gnomeui/gnomedentryedit.html
+share/gnome/html/gnomeui/gnomedialog.html
+share/gnome/html/gnomeui/gnomedock.html
+share/gnome/html/gnomeui/gnomedockband.html
+share/gnome/html/gnomeui/gnomedockitem.html
+share/gnome/html/gnomeui/gnomedocklayout.html
+share/gnome/html/gnomeui/gnomedruid.html
+share/gnome/html/gnomeui/gnomedruidpage.html
+share/gnome/html/gnomeui/gnomedruidpagefinish.html
+share/gnome/html/gnomeui/gnomedruidpagestandard.html
+share/gnome/html/gnomeui/gnomedruidpagestart.html
+share/gnome/html/gnomeui/gnomeentry.html
+share/gnome/html/gnomeui/gnomefileentry.html
+share/gnome/html/gnomeui/gnomefontpicker.html
+share/gnome/html/gnomeui/gnomefontselector.html
+share/gnome/html/gnomeui/gnomeguru.html
+share/gnome/html/gnomeui/gnomehref.html
+share/gnome/html/gnomeui/gnomeiconentry.html
+share/gnome/html/gnomeui/gnomeiconlist.html
+share/gnome/html/gnomeui/gnomeiconselection.html
+share/gnome/html/gnomeui/gnomeicontextitem.html
+share/gnome/html/gnomeui/gnomeless.html
+share/gnome/html/gnomeui/gnomemdi.html
+share/gnome/html/gnomeui/gnomemdichild.html
+share/gnome/html/gnomeui/gnomemdigenericchild.html
+share/gnome/html/gnomeui/gnomemessagebox.html
+share/gnome/html/gnomeui/gnomenumberentry.html
+share/gnome/html/gnomeui/gnomepaperselector.html
+share/gnome/html/gnomeui/gnomepixmap.html
+share/gnome/html/gnomeui/gnomepixmapentry.html
+share/gnome/html/gnomeui/gnomeprocbar.html
+share/gnome/html/gnomeui/gnomepropertybox.html
+share/gnome/html/gnomeui/gnomescores.html
+share/gnome/html/gnomeui/gnomespell.html
+share/gnome/html/gnomeui/gnomestock.html
+share/gnome/html/gnomeui/gnomeui-gnome-app-helper.html
+share/gnome/html/gnomeui/gnomeui-gnome-app-util.html
+share/gnome/html/gnomeui/gnomeui-gnome-canvas-util.html
+share/gnome/html/gnomeui/gnomeui-gnome-dialog-util.html
+share/gnome/html/gnomeui/gnomeui-gnome-dns.html
+share/gnome/html/gnomeui/gnomeui-gnome-geometry.html
+share/gnome/html/gnomeui/gnomeui-gnome-ice.html
+share/gnome/html/gnomeui/gnomeui-gnome-icon-text.html
+share/gnome/html/gnomeui/gnomeui-gnome-init.html
+share/gnome/html/gnomeui/gnomeui-gnome-mdi-session.html
+share/gnome/html/gnomeui/gnomeui-gnome-popup-help.html
+share/gnome/html/gnomeui/gnomeui-gnome-popup-menu.html
+share/gnome/html/gnomeui/gnomeui-gnome-preferences.html
+share/gnome/html/gnomeui/gnomeui-gnome-properties.html
+share/gnome/html/gnomeui/gnomeui-gnome-property-entries.html
+share/gnome/html/gnomeui/gnomeui-gnome-startup.html
+share/gnome/html/gnomeui/gnomeui-gnome-types.html
+share/gnome/html/gnomeui/gnomeui-gnome-uidefs.html
+share/gnome/html/gnomeui/gnomeui-gnome-window-icon.html
+share/gnome/html/gnomeui/gnomeui-gnome-winhints.html
+share/gnome/html/gnomeui/gnomeui-gtkcauldron.html
+share/gnome/html/gnomeui/gtkclock.html
+share/gnome/html/gnomeui/gtkdial.html
+share/gnome/html/gnomeui/gtkpixmapmenuitem.html
+share/gnome/html/gnomeui/gtkted.html
+share/gnome/html/gnomeui/libgnomeui.html
+share/gnome/html/gnorba-decl.txt
+share/gnome/html/gnorba-sections.txt
+share/gnome/html/gnorba/book1.html
+share/gnome/html/gnorba/gnorba-gnorba.html
+share/gnome/html/gnorba/gnorba-goad.html
+share/gnome/html/gnorba/libgnorba.html
+share/gnome/html/zvt/book1.html
+share/gnome/html/zvt/x119.html
+share/gnome/html/zvt/x144.html
+share/gnome/html/zvt/x152.html
+share/gnome/html/zvt/x192.html
+share/gnome/html/zvt/x222.html
+share/gnome/html/zvt/x243.html
+share/gnome/html/zvt/x263.html
+share/gnome/html/zvt/x98.html
+share/gnome/html/zvt/zvtterm-future.html
+share/gnome/html/zvt/zvtterm-input-output.html
+share/gnome/html/zvt/zvtterm-notes.html
+share/gnome/html/zvt/zvtterm-properties.html
+share/gnome/html/zvt/zvtterm-reference.html
+share/gnome/html/zvt/zvtterm-window-hints.html
+share/gnome/html/zvt/zvtterm.html
 share/gnome/idl/GnomeObject.idl
 share/gnome/idl/Table.idl
 share/gnome/idl/desktop-editor.idl
@@ -240,6 +461,7 @@ share/gnome/pixmaps/yes.xpm
 share/gnome/type-convert/gnome-make-postscript-mimes
 share/gnome/type-convert/postscript.convert
 share/gnome/type-convert/type.convert
+share/locale/az/LC_MESSAGES/gnome-libs.mo
 share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
 share/locale/da/LC_MESSAGES/gnome-libs.mo
@@ -272,22 +494,31 @@ share/locale/sl/LC_MESSAGES/gnome-libs.mo
 share/locale/sp/LC_MESSAGES/gnome-libs.mo
 share/locale/sr/LC_MESSAGES/gnome-libs.mo
 share/locale/sv/LC_MESSAGES/gnome-libs.mo
+share/locale/ta/LC_MESSAGES/gnome-libs.mo
 share/locale/tr/LC_MESSAGES/gnome-libs.mo
 share/locale/wa/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-libs.mo
 @exec mkdir -p %D/share/gnome/games
+@dirrm share/gnome/type-convert
+@dirrm share/gnome/pixmaps
+@dirrm share/gnome/mime-info
+@dirrm share/gnome/idl
+@dirrm share/gnome/html/zvt
+@dirrm share/gnome/html/gnorba
+@dirrm share/gnome/html/gnomeui
+@dirrm share/gnome/html/gnome
+@dirrm share/gnome/html
+@dirrm share/gnome/help/gnome-dev-info/C
+@dirrm share/gnome/help/gnome-dev-info
+@dirrm share/gnome/help
+@dirrm share/gnome/games
+@dirrm share/gnome
+@dirrm include/zvt
+@dirrm include/libgnorba
+@dirrm include/libgnomeui
+@dirrm include/libgnome
+@dirrm include/libart_lgpl
+@dirrm include/gtk-xmhtml
 @dirrm etc/sound/events
 @dirrm etc/sound
-@dirrm include/gtk-xmhtml
-@dirrm include/libart_lgpl
-@dirrm include/libgnome
-@dirrm include/libgnomeui
-@dirrm include/libgnorba
-@dirrm include/zvt
-@dirrm share/gnome/games
-@dirrm share/gnome/idl
-@dirrm share/gnome/mime-info
-@dirrm share/gnome/pixmaps
-@dirrm share/gnome/type-convert
-@dirrm share/gnome
