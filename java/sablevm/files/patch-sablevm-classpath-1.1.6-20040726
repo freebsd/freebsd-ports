@@ -1,0 +1,14 @@
+--- ../sablevm-classpath-1.1.6/native/jni/gtk-peer/gthread-jni.c	Mon Jul 19 08:49:17 2004
++++ ../sablevm-classpath-1.1.6/native/jni/gtk-peer/gthread-jni.c	Mon Jul 26 16:22:55 2004
+@@ -218,7 +218,11 @@
+ /* Global data				     				*/
+ /************************************************************************/
+ 
++#if defined HAVE_STDINT_H
+ #include <stdint.h>		/* provides intptr_t */
++#elif defined HAVE_INTTYPES_H
++#include <inttypes.h>
++#endif
+ #include <stdarg.h>		/* va_list */
+ #include "gthread-jni.h"
+ #include <assert.h>		/* assert() */
