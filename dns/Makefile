@@ -68,6 +68,7 @@
     SUBDIR += p5-Tie-DNS
     SUBDIR += pdnsd
     SUBDIR += posadis
+    SUBDIR += poweradmin
     SUBDIR += powerdns
     SUBDIR += py-adns
     SUBDIR += py-dns
