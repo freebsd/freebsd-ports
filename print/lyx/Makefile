@@ -31,7 +31,9 @@ LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 USE_NEWGCC=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS= --with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11 ${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-extra-lib=${X11BASE}/lib \
+		--with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11 ${LOCALBASE}/include" \
+		--with-included-gettext
 MAN1=		lyx.1 reLyX.1
 
 .if !defined(WITH_ISPELL)
