@@ -1,10 +1,10 @@
 DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
 		latex_tools.tar.gz
 DISTNAME=	latex
-
+EXEC_DEPENDS=	tex:${PORTSDIR}/print/tex
 FTPGET=		${FILESDIR}/ftpget
+WRKDIR=		${.CURDIR}/work
 BUILD_COOKIE=	${WRKDIR}/.build_done
-IS_INTERACTIVE= yes
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
@@ -24,12 +24,12 @@ build: ${BUILD_COOKIE}
 
 ${BUILD_COOKIE}:
 	@echo "===>  Building for ${DISTNAME}"
-	@(cd ${WRKSRC}/base; initex unpack.ins)
+	@(cd ${WRKSRC}/base; yes | initex unpack.ins)
 	@(cd ${WRKSRC}/base; TEXFONTS=${WRKSRC}/tfm:; export TEXFONTS; \
-		initex latex.ltx)
+		yes | initex latex.ltx)
 	@(cd ${WRKSRC}/packages/tools; TEXFORMATS=${WRKSRC}/base:; \
 		TEXINPUTS=${WRKSRC}/base: export TEXFORMATS TEXINPUTS;\
-		 ln -s /usr/local/bin/virtex latex; ./latex tools.ins)
+		 ln -sf /usr/local/bin/virtex latex; yes | ./latex tools.ins)
 	@touch -f ${BUILD_COOKIE}
 
 install:
