@@ -7,4 +7,4 @@ utilities (cdb(get|dump|make)) via convenient high-level Python
 objects.
 
 Author: MJ Pomraning <mjp@pilcrow.madison.wi.us>
-WWW: 	http://pilcrow.madison.wi.us/
+WWW: http://pilcrow.madison.wi.us/#pycdb
