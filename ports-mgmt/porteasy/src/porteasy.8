@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd April 02, 2004
+.Dd May 10, 2004
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -245,8 +245,9 @@ or
 options was specified,
 .Nm
 runs the
-.Sq fetch
+.Sq checksum
 target on every selected port.
+This fetches the distfiles and verifies their checksums.
 .It Build, install, package, clean ports
 If one or both of the
 .Fl f
