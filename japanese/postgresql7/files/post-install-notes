@@ -12,3 +12,5 @@ If you built PostgreSQL with TCL support, you can install the port
 "pgaccess" to get a TCL/TK based database frontend for database
 operations.
 
+To start PostgreSQL, run the startup script:
+$PREFIX/etc/rc.d/pgsql.sh start

@@ -1,11 +1,11 @@
 #! /bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/japanese/postgresql-tcltk/Attic/pkg-install,v 1.4 2000-07-19 01:18:07 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/postgresql-tcltk/Attic/pkg-install,v 1.5 2000-11-03 09:34:11 knu Exp $
 
 PATH=/bin:/usr/sbin
 
 if [ -z "${DB_DIR}" ]; then
-	DB_DIR=/usr/local/pgsql/data
+	DB_DIR=${PKG_PREFIX}/pgsql/data
 fi
 
 case $2 in
