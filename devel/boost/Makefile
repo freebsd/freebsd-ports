@@ -7,6 +7,7 @@
 
 PORTNAME=	boost
 PORTVERSION=	1.32.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
 MASTER_SITE_SUBDIR=boost/:boost_site
