@@ -43,10 +43,10 @@ diff -u -u -r1.10 -r1.11
  #endif
      installHandler(SIGCHLD, sigchldHandler);
  
-+    rc = copyTermios(0, pty);
++    /*rc = copyTermios(0, pty);
 +    if(rc < 0)
 +        FatalError("Couldn't copy terminal settings\n");
-+
++    */		/* Disabled, appears to break luit. */
      rc = setRawTermios();
      if(rc < 0)
          FatalError("Couldn't set terminal to raw\n");
