@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	bitmap-font
-PORTVERSION=	8.2
+PORTVERSION=	${BITMAP_VER}
 CATEGORIES=	x11-fonts elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
-DISTNAME=	bitmap-mule-${PORTVERSION}
+DISTNAME=	bitmap-mule-${BITMAP_VER}
 
 MAINTAINER=	shige@FreeBSD.org
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 
 # distfile version
+BITMAP_VER=	8.3
 BITMAP_FONT=	etl6x12-bitmap etl7x14-bitmap etl8x16-bitmap etl12x24-bitmap
 FONTSDIR=	lib/X11/fonts/local
 PKGINSTALL=     ${WRKDIR}/INSTALL

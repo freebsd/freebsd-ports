@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitmap-${EMACS_PORT}
-PORTVERSION=	${BITMAP_PKG_VER}
+PORTVERSION=	${BITMAP_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/bitmap/
 DISTNAME=	bitmap-mule-${BITMAP_VER}
@@ -14,8 +14,7 @@ DISTNAME=	bitmap-mule-${BITMAP_VER}
 MAINTAINER=	shige@FreeBSD.org
 
 # distfile version
-BITMAP_VER=		8.2
-BITMAP_PKG_VER=		${BITMAP_VER}
+BITMAP_VER=	8.3
 BITMAPDOCDIR=	share/doc/bitmap
 BITMAP_SETUPEL=	bitmap-setupel.el
 BITMAP_FONT=	${X11BASE}/lib/X11/fonts/local/etl8x16-bitmap.pcf.gz
