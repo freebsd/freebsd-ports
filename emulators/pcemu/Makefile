@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.8 1996/11/12 02:16:49 obrien Exp $
+# $Id: Makefile,v 1.9 1998/01/08 18:52:05 fenner Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
@@ -19,11 +19,14 @@ CATEGORIES=	emulators
 #*Initialization*:1: warning: this is the location of the previous definition
 
 #
-# a selection of sites archie has been reporting:
+# This could in theory become a chicken-and-egg problem.  Anyway,
+# wcarchive is well connected, and the distfile hasn't been changed
+# for years now.
+MASTER_SITES+=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 #
-MASTER_SITES+=	ftp://ftp.germany.eu.net/pub/os/Linux/Local.EUnet/ALPHA/dosemu/Misc/
-MASTER_SITES+=	ftp://minnie.cs.adfa.oz.au/BSD/phillip/FreeBSD/pc-emulator/
-MASTER_SITES+=	ftp://ftp.iij.ad.jp/pub/linux/tsx-11/ALPHA/dosemu/Misc/
+# interface business GmbH is not so well connected, but Joerg's got
+# direct access there.
+MASTER_SITES+=	ftp://ftp.interface-business.de/pub/outgoing/
 #
 # This is the original master site, but better use a well-connected server
 MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/users/hedley/
