@@ -102,6 +102,7 @@
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpmf20
+    SUBDIR += musicbox
     SUBDIR += musicbrainz
     SUBDIR += mutemix
     SUBDIR += mxv
