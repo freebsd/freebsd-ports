@@ -14,7 +14,9 @@ MASTER_SITES=	http://bluefish.linuxbox.com/download/ \
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
