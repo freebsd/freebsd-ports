@@ -1,0 +1,38 @@
+%%RUBY_SITEARCHLIBDIR%%/jtcur.so
+%%RUBY_SITELIBDIR%%/jttui/jtgpm.rb
+%%RUBY_SITELIBDIR%%/jttui/jtkey.rb
+%%RUBY_SITELIBDIR%%/jttui/jtloc.rb
+%%RUBY_SITELIBDIR%%/jttui/jttui.rb
+%%RUBY_SITELIBDIR%%/jttui/jttuistd.rb
+%%RUBY_SITELIBDIR%%/jttui/jtutil.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.GPL
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/DONE
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Documentation/starting-guide.txt
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/LICENSE
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/PLATFORMS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/REPORTING-BUGS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/THANKS
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/VERSION
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/addlocalpath.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jtcur-acs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jtloc-lang.cs
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jtloc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttui-1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttui-2-keynames.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttui-rootdefered.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-1-simple.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-2-calculator-lang.cs
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-2-calculator.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-3-scrollbars.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-4-trees.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-5-timed-events.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/example-jttuistd-6-asciitab.rb
+@dirrm %%RUBY_SITELIBDIR%%/jttui
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/Documentation
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
