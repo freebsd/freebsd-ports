@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rman
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://polyglot.sourceforge.net/pub/polyglotman/
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse compile man pages from formatted form
 
 MAN1=		rman.1
