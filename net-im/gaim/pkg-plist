@@ -33,6 +33,7 @@ share/gaim/pixmaps/permdel.xpm
 share/gaim/pixmaps/signing_on.xpm
 share/gaim/pixmaps/small.xpm
 share/gaim/pixmaps/speaker.xpm
+share/gaim/pixmaps/strike.xpm
 share/gaim/pixmaps/underline.xpm
 share/gaim/pixmaps/wood.xpm
 @dirrm share/gaim/pixmaps
