@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0.13
+PORTVERSION=	2.0.14
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
@@ -20,8 +20,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -DHAVE_DECL_GETOPT" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
+MAKE_ARGS=	CC="${CXX}" \
+		CFLAGS="${CXXFLAGS} ${CPPFLAGS} -DHAVE_DECL_GETOPT" \
+		LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
 MAN1=		${PORTNAME}.1
@@ -30,9 +32,6 @@ MANCOMPRESSED=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/highlight|${DATADIR}|' ${WRKSRC}/datadir.cpp
-	@${REINPLACE_CMD} -e 's|g++|$$(CXX)|g ; \
-		 s|-O2|$$(CXXFLAGS) $$(CPPFLAGS)|g ; \
-		 s|-L/usr/lib|$$(LDFLAGS)|g' ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
