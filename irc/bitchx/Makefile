@@ -7,6 +7,7 @@
 
 PORTNAME=	BitchX
 PORTVERSION=	1.0c17
+PORTREVISION=	1
 CATEGORIES=	irc gnome
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/
@@ -44,11 +45,17 @@ CONFIGURE_ARGS+=--enable-sound
 .if defined(WITH_TCL)
 BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3/tcl.h:${PORTSDIR}/lang/tcl83
 CONFIGURE_ARGS+=--with-tcl \
-		--with-tcl-includes=/usr/local/include/tcl8.3 \
-		--with-tcl-libs=/usr/local/lib
+		--with-tcl-includes=${LOCALBASE}/include/tcl8.3 \
+		--with-tcl-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
 post-extract:
 	@uudecode -p ${FILESDIR}/tcl-freebsd.o.uu > ${WRKSRC}/source/tcl.o
+.endif
+
+.if defined(WITH_SOCKS5)
+BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=--with-socks5=${LOCALBASE}
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
 
 .if defined(WITH_PLUGINS)
@@ -70,6 +77,7 @@ pre-extract:
 	@${ECHO} "WITH_PLUGINS - Build the plugins"
 	@${ECHO} "WITH_LATIN - Recommended if you are using an ISO-8859-1 display"
 	@${ECHO} "WITH_TCL - Build BitchX with TCL scripting"
+	@${ECHO} "WITH_SOCKS5 - Build BitchX with SOCKS5 support"
 
 post-install:
 .if !defined(NOPORTDOCS)
