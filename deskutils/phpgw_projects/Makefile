@@ -16,9 +16,9 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/projects
 
 do-install:
-		@if [ ! -d ${PREFIX}/www/data/phpgroupware ]; then \
-			${MKDIR} ${PREFIX}/www/data/phpgroupware; \
+		@if [ ! -d ${PREFIX}/www/data.default/phpgroupware ]; then \
+			${MKDIR} ${PREFIX}/www/data.default/phpgroupware; \
 		fi
-		@${CP} -r ${WRKSRC} ${PREFIX}/www/data/phpgroupware/
+		@${CP} -r ${WRKSRC} ${PREFIX}/www/data.default/phpgroupware/
 
 .include <bsd.port.mk>
