@@ -5785,6 +5785,7 @@ mkcmd		ports/devel/mkcmd
 mkfile		ports/sysutils/mkfile
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
+mknbi		ports/net/mknbi
 mknmz-wwwoffle	ports/www/mknmz-wwwoffle
 mkptools	ports/Tools/scripts/mkptools
 mksunbootcd	ports/sysutils/mksunbootcd
