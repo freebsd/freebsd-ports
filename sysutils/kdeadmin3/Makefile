@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=--enable-final
 .endif
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
 CONFIGURE_ARGS+=--disable-debug
+.else
+CONFIGURE_ARGS+=--enable-debug
+STRIP=''
 .endif
 
 pre-configure:
