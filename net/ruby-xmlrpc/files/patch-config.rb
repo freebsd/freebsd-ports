@@ -1,9 +1,9 @@
---- lib/config.rb.orig	Tue Jun 18 03:56:29 2002
-+++ lib/config.rb	Thu Oct 24 06:14:18 2002
-@@ -15,7 +15,7 @@
-     #   * XMLParser::XMLTreeParser
+--- lib/config.rb.orig	Sun Jan 26 00:07:14 2003
++++ lib/config.rb	Sun Jan 26 20:10:15 2003
+@@ -16,7 +16,7 @@
      #   * XMLParser::XMLStreamParser (fastest)
      #   * XMLParser::REXMLStreamParser
+     #   * XMLParser::XMLScanStreamParser
 -    DEFAULT_PARSER = XMLParser::NQXMLStreamParser 
 +    DEFAULT_PARSER = XMLParser::XMLStreamParser
  

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	1.7.13
+PORTVERSION=	1.7.14
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.fantasy-coders.de/ruby/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,19 +30,12 @@ NO_BUILD=	yes
 
 DOCS_EN=	ChangeLog README ToDo doc/*.css doc/*.html doc/*.rd
 
-post-extract:
-	${RM} -rf ${WRKSRC}/samples/monitor
-
-post-patch:
-	${RUBY} -i -pe '$$_ = "FILES2 = []\n" if /^FILES2\s*=/' ${WRKSRC}/install.rb
-
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/xmlrpc
 	${INSTALL_DATA} ${WRKSRC}/lib/*.rb ${RUBY_SITELIBDIR}/xmlrpc/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
-	${LN} -sf ../tcpsocketpipe ${RUBY_MODEXAMPLESDIR}/monitor
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/

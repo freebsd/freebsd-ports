@@ -22,7 +22,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/client.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/person.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/marshallable/server.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monitor
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/monitor/monitor.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/perf_async.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/raa/raa_fox.rb
@@ -39,6 +39,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/chat
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/introspection
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/marshallable
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/monitor
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/raa
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sandstorm
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/tcptunnel
