@@ -1,0 +1,4 @@
+bin/tksol
+lib/tk/tksol/cardbitmaps
+lib/tk/tksol/downbitmaps
+man/man1/tksol.1.gz
