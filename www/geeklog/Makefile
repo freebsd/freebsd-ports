@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s./sr/}
 
-MAINTAINER=	bob@bomar.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GeekLog is a web content magagement system
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql323-client
