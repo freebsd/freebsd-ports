@@ -7692,6 +7692,7 @@ trafshow	ports/net/trafshow
 tramp		ports/net/tramp
 tramp-emacs20	ports/net/tramp-emacs20
 trans		ports/converters/trans
+transcalc	ports/cad/transcalc
 transcode	ports/graphics/transcode
 transfig	ports/print/transfig
 translate	ports/misc/translate
