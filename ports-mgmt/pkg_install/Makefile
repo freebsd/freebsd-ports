@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040416
+PORTVERSION=		20040530
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			http://people.FreeBSD.org/~marcus/
@@ -21,6 +21,8 @@ MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_version.1
 
 MAKE_ARGS=		-DNOOBJ -DNOCRYPT -DNO_OPENSSL
+
+PKG_FILES=		main.c perform.c pkg_add.1
 
 .include <bsd.port.pre.mk>
 
@@ -46,10 +48,17 @@ pre-configure:
 		-e 's,%%MANPREFIX%%,${MANPREFIX},g' \
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
 
-.if ${OSVERSION} < 440001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500024 )
 post-patch:
+.if ${OSVERSION} < 440001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500024 )
 	@${FIND} ${WRKSRC} -name '*.c' \
 		| ${XARGS} ${PERL} -pi.orig -e 's/__FBSDID\(("[^"]*")\)/static const char rcsid[] = $$1/'
+.endif
+.if ${OSVERSION} < 500039
+.for i in ${PKG_FILES}
+	@${SED} -e 's,\.tbz,.tgz,g' ${WRKSRC}/add/${i} > \
+		${WRKSRC}/add/${i}.bak
+	@${MV} -f ${WRKSRC}/add/${i}.bak ${WRKSRC}/add/${i}
+.endfor
 .endif
 
 deinstall:
