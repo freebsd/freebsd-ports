@@ -60,6 +60,7 @@
     SUBDIR += minivmac
     SUBDIR += mips64emul
     SUBDIR += mtools
+    SUBDIR += mupen64-base
     SUBDIR += osf1_base
     SUBDIR += p-interp
     SUBDIR += pcemu
