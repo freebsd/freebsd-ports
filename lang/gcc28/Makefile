@@ -21,6 +21,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'old version, not worth the cost in real estate'
 
+LATEST_LINK=	gcc28
+
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"

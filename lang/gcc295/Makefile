@@ -22,6 +22,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 USE_BZIP2=	yes
 
+LATEST_LINK=	gcc295
+
 .include <bsd.port.pre.mk>
 
 GCC_REV=	${DISTNAME:S/gcc-//g:S/.test3//g}
