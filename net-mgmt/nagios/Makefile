@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netsaint
-PORTVERSION=	0.0.7b2
+PORTVERSION=	0.0.7b3
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/
 
@@ -14,18 +14,23 @@ MAINTAINER=	blaz@amis.net
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-# no run depends due to circular reference
-#RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
-CONFIGURE_ARGS=	--with-command-user=root \
-		--with-command-grp=wheel \
+CONFIGURE_ARGS=	--with-command-user=nobody \
+		--with-command-grp=nogroup \
 		--with-netsaint-user=netsaint \
-		--with-netsaint-grp=netsaint
-INSTALL_TARGET=	all install config install-config install-daemoninit
+		--with-netsaint-grp=netsaint \
+		--sbindir=${PREFIX}/share/netsaint/sbin \
+		--libexecdir=${PREFIX}/libexec/netsaint \
+		--datadir=${PREFIX}/share/netsaint \
+		--sysconfdir=${PREFIX}/etc/netsaint \
+		--localstatedir=${PREFIX}/var/netsaint
+
+INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
 
 pre-fetch:
 	@${SH} ${SCRIPTDIR}/checkps
