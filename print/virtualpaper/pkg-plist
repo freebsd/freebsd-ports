@@ -2,9 +2,79 @@ bin/BuildLectern
 bin/EditLectern
 bin/Lectern
 bin/LecternClient
+lib/m3/%%TARGET%%/libLecternDoc.so.%%SOVERSION%%
+lib/m3/%%TARGET%%/liblecternserver.so.%%SOVERSION%%
+lib/m3/%%TARGET%%/libocr.so.%%SOVERSION%%
+lib/m3/pkg/buildlectern/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/buildlectern/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/buildlectern/%%TARGET%%/.M3WEB
+lib/m3/pkg/buildlectern/%%TARGET%%/BBoxSeq.i3
+lib/m3/pkg/buildlectern/%%TARGET%%/BBoxSeqRep.i3
+lib/m3/pkg/buildlectern/%%TARGET%%/FromPSBundle.i3
+lib/m3/pkg/buildlectern/src/BBox.i3
+lib/m3/pkg/buildlectern/src/Cscale.i3
+lib/m3/pkg/buildlectern/src/FromPS.i3
+lib/m3/pkg/buildlectern/src/LGM.i3
+lib/m3/pkg/buildlectern/src/OCR_PS.i3
+lib/m3/pkg/buildlectern/src/OSUtils.i3
+lib/m3/pkg/editlectern/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/editlectern/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/editlectern/%%TARGET%%/.M3WEB
+lib/m3/pkg/editlectern/%%TARGET%%/EditLecternBundle.i3
+lib/m3/pkg/lectern/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/lectern/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/lectern/%%TARGET%%/.M3WEB
+lib/m3/pkg/lectern/%%TARGET%%/LecternBundle.i3
+lib/m3/pkg/lectern/src/Find.i3
+lib/m3/pkg/lectern/src/LecternOCR.i3
+lib/m3/pkg/lectern/src/Links.i3
+lib/m3/pkg/lectern/src/MyFileBrowserVBT.i3
+lib/m3/pkg/lectern/src/ThumbnailVBT.i3
+lib/m3/pkg/lectern/src/ViewAreaVBT.i3
+lib/m3/pkg/lecternclient/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/lecternclient/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/lecternclient/%%TARGET%%/.M3WEB
+lib/m3/pkg/lecternclient/%%TARGET%%/liblecternserver.a
+lib/m3/pkg/lecternclient/%%TARGET%%/liblecternserver.m3x
+lib/m3/pkg/lecternclient/%%TARGET%%/liblecternserver.so
+lib/m3/pkg/lecternclient/src/LecternClient.i3
+lib/m3/pkg/lecternclient/src/LecternServer.i3
+lib/m3/pkg/lecterndoc/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/lecterndoc/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/lecterndoc/%%TARGET%%/.M3WEB
+lib/m3/pkg/lecterndoc/%%TARGET%%/libLecternDoc.a
+lib/m3/pkg/lecterndoc/%%TARGET%%/libLecternDoc.m3x
+lib/m3/pkg/lecterndoc/%%TARGET%%/libLecternDoc.so
+lib/m3/pkg/lecterndoc/src/LecternDoc.i3
+lib/m3/pkg/ocr/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/ocr/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/ocr/%%TARGET%%/.M3WEB
+lib/m3/pkg/ocr/%%TARGET%%/libocr.a
+lib/m3/pkg/ocr/%%TARGET%%/libocr.m3x
+lib/m3/pkg/ocr/%%TARGET%%/libocr.so
+lib/m3/pkg/ocr/src/Common/OCR.i3
 lib/m3/www/BuildLectern.1.html
 lib/m3/www/EditLectern.1.html
 lib/m3/www/Lectern.1.html
 lib/m3/www/LecternClient.1.html
 share/virtualpaper/COPYRIGHT
 @dirrm share/virtualpaper
+@dirrm lib/m3/www
+@dirrm lib/m3/pkg/ocr/src/Common
+@dirrm lib/m3/pkg/ocr/src
+@dirrm lib/m3/pkg/ocr/%%TARGET%%
+@dirrm lib/m3/pkg/ocr
+@dirrm lib/m3/pkg/lecterndoc/src
+@dirrm lib/m3/pkg/lecterndoc/%%TARGET%%
+@dirrm lib/m3/pkg/lecterndoc
+@dirrm lib/m3/pkg/lecternclient/src
+@dirrm lib/m3/pkg/lecternclient/%%TARGET%%
+@dirrm lib/m3/pkg/lecternclient
+@dirrm lib/m3/pkg/lectern/src
+@dirrm lib/m3/pkg/lectern/%%TARGET%%
+@dirrm lib/m3/pkg/lectern
+@dirrm lib/m3/pkg/editlectern/%%TARGET%%
+@dirrm lib/m3/pkg/editlectern
+@dirrm lib/m3/pkg/buildlectern/src
+@dirrm lib/m3/pkg/buildlectern/%%TARGET%%
+@dirrm lib/m3/pkg/buildlectern
