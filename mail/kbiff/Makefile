@@ -7,6 +7,7 @@
 
 PORTNAME=	kbiff
 PORTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
@@ -20,5 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--disable-fast-perl
+
+MAN1=		kbiff.1
 
 .include <bsd.port.mk>
