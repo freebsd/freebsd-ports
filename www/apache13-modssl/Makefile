@@ -3,15 +3,15 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.29 1999/04/12 06:53:00 rse Exp $
+# $Id: Makefile,v 1.30 1999/04/12 14:25:36 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
 PKGNAME=	apache-${VERSION_APACHE}+mod_ssl-${VERSION_MODSSL}
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/ \
-		http://www.engelschall.com/sw/mod_ssl/distrib/ \
-		ftp://ftp.engelschall.com/sw/mod_ssl/ \
+		http://www.modssl.org/source/ \
+		ftp://ftp.modssl.org/source/ \
 		ftp://ftp.pca.dfn.de/pub/tools/net/mod_ssl/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
