@@ -21,9 +21,11 @@ USE_GNOME=	gtk20
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=	"just makes a humming noise"
-IGNORE=	${BROKEN}
+IGNORE=	just makes a humming noise
 .endif
+
+DEPRECATED=	does not work on FreeBSD versions > 5.0
+EXPIRATION_DATE=	2005-02-17
 
 PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
