@@ -472,6 +472,7 @@ balsa2		ports/mail/balsa2
 banner		src/usr.bin/banner
 barcode		ports/graphics/barcode
 barque		ports/www/barque
+barry		ports/sysutils/barry
 base64		ports/converters/base64
 basename	src/usr.bin/basename
 bash1		ports/shells/bash1
