@@ -7,7 +7,7 @@
   
 --- 220,222 ----
   #
-! program_directory = !!PREFIX!!/usr/libexec/postfix
+! program_directory = !!PREFIX!!/libexec/postfix
   
 ***************
 *** 263,267 ****
