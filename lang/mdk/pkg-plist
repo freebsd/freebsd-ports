@@ -2,26 +2,11 @@ bin/gmixvm
 bin/mixasm
 bin/mixguile
 bin/mixvm
-share/gnome/mdk/clear.xpm
-share/gnome/mdk/colors.xpm
-share/gnome/mdk/compile.xpm
-share/gnome/mdk/devdir.xpm
-share/gnome/mdk/edit.xpm
-share/gnome/mdk/extern.xpm
-share/gnome/mdk/font.xpm
-share/gnome/mdk/fontl.xpm
-share/gnome/mdk/jump.xpm
-share/gnome/mdk/mixal-mode.el
-share/gnome/mdk/mixgtk.glade
-share/gnome/mdk/mixguile-commands.scm
-share/gnome/mdk/mixguile-vm-stat.scm
-share/gnome/mdk/mixguile.scm
-share/gnome/mdk/mixvm.el
-share/gnome/mdk/next.xpm
-share/gnome/mdk/onew.xpm
-share/gnome/mdk/open.xpm
-share/gnome/mdk/output.xpm
-share/gnome/mdk/run.xpm
-share/gnome/mdk/splitw.xpm
-share/gnome/mdk/symbols.xpm
-@dirrm share/gnome/mdk
+%%DATADIR%%/mixal-mode.el
+%%DATADIR%%/mixgtk.glade
+%%DATADIR%%/mixguile-commands.scm
+%%DATADIR%%/mixguile-vm-stat.scm
+%%DATADIR%%/mixguile.scm
+%%DATADIR%%/mixvm.el
+share/locale/de/LC_MESSAGES/mdk.mo
+@dirrm %%DATADIR%%
