@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	foomatic-db-engine
-PORTVERSION=	20030704
+PORTVERSION=	20031120
 CATEGORIES=	print
 MASTER_SITES=	#
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database engine
 
+BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.2:${PORTSDIR}/ftp/curl
-
-BROKEN=		Does not compile, will be removed after Feb 2
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_AUTOCONF=	yes
-USE_AUTOMAKE=	yes
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -36,7 +34,7 @@ CVS_MODULE=	foomatic-db-engine
 
 MAN1=		foomatic-printjob.1 foomatic-ppdfile.1 foomatic-perl-data.1 \
 		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1
-MAN8=		foomatic-preferred-driver.8 foomatic-ppdload.8 \
+MAN8=		foomatic-preferred-driver.8 \
 		foomatic-kitload.8 foomatic-getpjloptions.8 \
 		foomatic-addpjloptions.8
 
