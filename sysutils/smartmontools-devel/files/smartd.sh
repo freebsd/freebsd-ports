@@ -22,10 +22,11 @@ smartd_pidfile="/var/run/smartd.pid"
 name="smartd"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/smartd"
-pidfile="${smartd_pidfile}"
 required_files="%%PREFIX%%/etc/smartd.conf"
 
 load_rc_config $name
+
+pidfile="${smartd_pidfile}"
 
 case "${smartd_flags}" in
 *-p\ *)
