@@ -1,2 +1,3 @@
 bin/txtmerge
 share/doc/txtmerge/txtmerge.doc
+@dirrm share/doc/txtmerge
