@@ -1,0 +1,16 @@
+	ATTENTIONATTENTION:
+
+ffmpeg users have reported that older version 0.4.5 encodes faster
+than later ffmpeg versions. Therefore, it might prove better for
+capturing purporses with Brooktree bktr(4) devices. The current
+ffmpeg port should be used for all other purposes unless you really
+need the additional speed.
+
+Do not install both ports at the same time. They install conflicting
+files.
+
+- ffmpeg 0.4.5
+ports/multimedia/ffmpeg045
+
+- ffmpeg current
+ports/multimedia/ffmpeg

@@ -29,6 +29,7 @@ CONFIGURE_ARGS= --cc="${CC}" --prefix="${PREFIX}" \
 		--extra-libs="-lm -L${LOCALBASE}/lib"
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 INSTALLS_SHLIB=	yes
+NO_LATEST_LINK=	yes
 
 SHLIB_VERSION=	0
 #
@@ -173,6 +174,8 @@ post-install:
 # add shared lib link
 	@${LN} -sf libavcodec.so \
 		${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
+# show PKGMESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 
 .include <bsd.port.post.mk>
