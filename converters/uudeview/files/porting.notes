@@ -1,0 +1,11 @@
+This was originally one distribution for uudeview, but I broke it up
+to make it cleaner and more useful.  It is now uulib, uudeview.  Once
+I learn more about tcl (or someone else does it), I'll have to make
+the third part -- xdeview.
+
+Because it is split up, it is possible for other (theoretical future)
+ports to use libuu.a.  I dare say it also makes the whole thing that
+much cleaner.
+
+The source itself is quite portable and required no patching.
+

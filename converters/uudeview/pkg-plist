@@ -1,0 +1,6 @@
+share/doc/uudeview/HOWTO
+share/doc/uudeview/porting.notes
+man/man1/uudeview.1.gz
+man/man1/uuenview.1.gz
+bin/uudeview
+bin/uuenview
