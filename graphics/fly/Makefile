@@ -10,7 +10,7 @@ PORTVERSION=	1.6.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://www.unimelb.edu.au/pub/www/tools/unix/fly/
 
-MAINTAINER=	j.unger@choin.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple drawing language to generate GIFs on the fly
 
 #this doesn't matter.. the program builds its own libgd.a.
