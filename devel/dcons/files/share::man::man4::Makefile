@@ -1,0 +1,3 @@
+MAN=	dcons.4
+
+.include <bsd.prog.mk>
