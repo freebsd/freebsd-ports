@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nqxml
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.io.com/~jimm/downloads/nqxml/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
