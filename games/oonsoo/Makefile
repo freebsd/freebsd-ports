@@ -8,7 +8,7 @@
 PORTNAME=	oonsoo
 PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/rohan/
+MASTER_SITES=	ftp://ftp.redlinelabs.com/pub/oonsoo/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
