@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -22,13 +22,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	distcc.1 distccd.1
-DOC_FILES=	AUTHORS COPYING COPYING.FDL NEWS README \
-		linuxdoc/distcc.sgml
+DOC_FILES=	AUTHORS COPYING COPYING.FDL DEPENDENCIES INSTALL NEWS README \
+		linuxdoc/distcc.sgml doc/protocol-1.txt doc/status-1.txt
 HTML_DOC_FILES=	distcc.html distcc-1.html distcc-2.html distcc-3.html \
 		distcc-4.html distcc-5.html
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
 
 post-install: install-doc install-html-doc install-man
