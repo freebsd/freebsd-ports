@@ -10,7 +10,6 @@ PORTVERSION=	2.2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
 		ftp://berlin.ccc.de/pub/gd/FreeBSD/                    \
-		http://www.nectar.com/distfiles/                       \
 		ftp://folk.federated.com/pub/gd/src/                   \
 		ftp://folk.federated.com/pub/gd/FreeBSD/               \
 		ftp://ftp.ntua.gr/pub/lang/gwydion/src/                \

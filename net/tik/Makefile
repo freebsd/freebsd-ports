@@ -7,9 +7,8 @@
 
 PORTNAME=	tik
 PORTVERSION=	0.59
-CATEGORIES=	net tk82
-MASTER_SITES=	http://www.aim.aol.com/tik/ \
-		http://www.nectar.com/distfiles/
+CATEGORIES=	net tk8
+MASTER_SITES=	http://www.aim.aol.com/tik/
 
 MAINTAINER=	astralblue@usa.net
 

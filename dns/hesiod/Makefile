@@ -8,8 +8,7 @@
 PORTNAME=		hesiod
 PORTVERSION=		3.0.2
 CATEGORIES=		net
-MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/   \
-			http://www.nectar.cc/distfiles/
+MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
 
 MAINTAINER=		nectar@FreeBSD.org
 
