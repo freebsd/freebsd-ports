@@ -1,0 +1,12 @@
+  Description
+  -----------
+
+    Net::Telnet allows you to make client connections to a TCP port
+    and do network I/O, especially with a port using the TELNET
+    protocol.  Simple I/O methods such as print, get, and getline are
+    provided.  More sophisticated interactive features are provided
+    because connecting to a TELNET port ultimately means communicating
+    with a program designed for human interaction.  Some interactive
+    features include the ability to specify a timeout and to wait for
+    patterns to appear in the input stream, such as the prompt from a
+    command interpreter.
