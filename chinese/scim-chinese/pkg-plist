@@ -1,10 +1,6 @@
 @unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/scim-chinese.schemas >/dev/null || /usr/bin/true
 etc/gconf/schemas/scim-chinese.schemas
-lib/scim-1.0/IMEngine/pinyin.a
-lib/scim-1.0/IMEngine/pinyin.la
 lib/scim-1.0/IMEngine/pinyin.so
-lib/scim-1.0/SetupUI/pinyin-imengine-setup.a
-lib/scim-1.0/SetupUI/pinyin-imengine-setup.la
 lib/scim-1.0/SetupUI/pinyin-imengine-setup.so
 share/locale/zh_CN/LC_MESSAGES/scim-chinese.mo
 share/locale/zh_TW/LC_MESSAGES/scim-chinese.mo
