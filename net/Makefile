@@ -719,6 +719,7 @@
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
+    SUBDIR += xmule
     SUBDIR += xnap
     SUBDIR += xprobe
     SUBDIR += xsmbrowser
