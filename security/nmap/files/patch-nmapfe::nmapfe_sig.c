@@ -1,6 +1,6 @@
---- nmapfe/nmapfe_sig.c	Mon Jun 30 18:23:48 2003
-+++ nmapfe/nmapfe_sig.c.new	Mon Jun 30 18:26:03 2003
-@@ -372,7 +372,7 @@
+--- nmapfe/nmapfe_sig.c.orig	Mon Oct  6 12:59:49 2003
++++ nmapfe/nmapfe_sig.c	Mon Oct  6 13:00:06 2003
+@@ -410,7 +410,7 @@
    if (size > command_size)
      command = realloc(command, size);
  

@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.46
+PORTVERSION=	3.48
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://download.insecure.org/nmap/dist/
-DISTNAME=	nmap-${PORTVERSION}
+MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
+		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/
 
 MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT?=	Port scanning utility for large networks
@@ -24,6 +24,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .ifndef BUILD_NMAPFE
 
 MAN1=		nmap.1
+MANLANG=	"" de.ISO8859-1 es.ISO8859-1 fr.ISO8859-1 it.ISO8859-15 \
+		lt.ISO8859-13 pt.ISO8859-1 ru.KOI8-R
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
@@ -42,7 +44,13 @@ ALL_TARGET=	nmap
 INSTALL_TARGET=	install-nmap
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/nmap
+	@for lang in de.ISO8859-1=german es.ISO8859-1=spanish fr.ISO8859-1=french it.ISO8859-15=italian \
+		lt.ISO8859-13=lithuanian pt.ISO8859-1=portuguese ru.KOI8-R=russian; do \
+		llang="`expr $${lang} : '\([^=]*\)'`"; \
+		elang="`expr $${lang} : '.*=\([^=]*\)'`"; \
+		${MKDIR} ${MAN1PREFIX}/man/$${llang}/man1; \
+		${INSTALL_MAN} ${WRKSRC}/docs/nmap_$${elang}.1 ${MAN1PREFIX}/man/$${llang}/man1/nmap.1; \
+	done
 .ifndef NOPORTDOCS
 	@${MKDIR} ${DOCSDIR}
 	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \
@@ -69,9 +77,6 @@ CONFIGURE_ARGS+=--with-nmapfe
 
 ALL_TARGET=	nbase/libnbase.a nmapfe/nmapfe
 INSTALL_TARGET=	install-nmapfe
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/nmapfe
 
 .endif
 

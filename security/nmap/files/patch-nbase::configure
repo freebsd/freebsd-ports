@@ -1,5 +1,5 @@
---- nbase/configure.orig	Sat Sep 20 11:13:26 2003
-+++ nbase/configure	Wed Sep 24 23:10:21 2003
+--- nbase/configure.orig	Mon Oct  6 13:03:52 2003
++++ nbase/configure	Mon Oct  6 13:04:08 2003
 @@ -2971,7 +2971,7 @@
  
  
@@ -9,12 +9,3 @@
  do
  as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
  if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -5905,7 +5905,7 @@
-     ;;
-   *)
-     specialssldir="$with_openssl"
--    CXXFLAGS="-I$with_openssl/include $CXXFLAGS"
-+    CPPFLAGS="-I$with_openssl/include $CPPFLAGS"
-     ;;
-   esac
- 
