@@ -7,6 +7,7 @@
 
 PORTNAME=	freeamp
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
@@ -16,7 +17,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
 		ORBit.2:${PORTSDIR}/devel/ORBit \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		ttf.4:${PORTSDIR}/print/freetype
+		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BZIP2=	yes
@@ -24,7 +25,9 @@ USE_GTK=	yes
 WANT_ESOUND=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+ORBIT_CFLAGS!=	orbit-config --cflags server
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
+			${ORBIT_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
