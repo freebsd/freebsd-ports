@@ -1,0 +1,32 @@
+*** src/pipes.c.bak	Mon Apr 28 04:27:47 1997
+--- src/pipes.c	Sat May 16 03:22:43 1998
+***************
+*** 234,239 ****
+--- 234,240 ----
+  
+  char*readdyn(bf,filled)char*bf;long*const filled;
+  { int i;long oldsize;
++   long fetched = *filled;
+    oldsize= *filled;
+    goto jumpin;
+    do
+***************
+*** 243,249 ****
+       if((size_t)*filled>=(size_t)(*filled+BLKSIZ))
+  	lcking|=lck_MEMORY,nomemerr();
+  #endif
+!      bf=realloc(bf,*filled+BLKSIZ);    /* dynamically adjust the buffer size */
+  jumpback:;
+     }
+    while(0<(i=rread(STDIN,bf+*filled,BLKSIZ)));			/* read mail */
+--- 244,253 ----
+       if((size_t)*filled>=(size_t)(*filled+BLKSIZ))
+  	lcking|=lck_MEMORY,nomemerr();
+  #endif
+!      if( fetched - *filled < BLKSIZ ) {
+! 	fetched += 4194304;
+! 	bf=realloc(bf,fetched);    /* dynamically adjust the buffer size */
+!      }
+  jumpback:;
+     }
+    while(0<(i=rread(STDIN,bf+*filled,BLKSIZ)));			/* read mail */
