@@ -1,0 +1,26 @@
+--- Makefile	Thu Aug  6 21:15:12 1998
++++ /home/andy/tmp/wrk/Makefile	Tue Aug 18 15:24:56 1998
+@@ -1,4 +1,4 @@
+-# $Id: Makefile,v 1.20 1998/08/06 21:15:11 aml Exp $
++# $Id: Makefile,v 1.20 1998/08/06 21:15:11 aml Exp andy $
+ # Main Makefile for xxl
+ #
+ # Authors: Arlindo Oliveira (aml@inesc.pt)
+@@ -8,7 +8,7 @@
+ # explicit permission of the copyright holder.
+ #
+ 
+-CCFLAGS= -g 
++CCFLAGS= $(CFLAGS) -I$(X11BASE)/include -I$(LOCALBASE)/include/tcl8.0 -I$(LOCALBASE)/include/tk8.0
+ TARGET = tcl_interf/nxlc
+ DIRS = display calc  io     graphics include runlib lib canvas tcl_interf
+ TARDIRS = $(DIRS) lib  RCS  tests regressive doc
+@@ -32,7 +32,7 @@
+ 	rm -f *~ gmon.out tests/* regressive/*.bck
+ 
+ dep : version
+-	for i in $(DIRS); do $(MAKE) dep -C $$i; done
++	for i in $(DIRS); do $(MAKE) dep -C $$i CCFLAGS="$(CCFLAGS)"; done
+ 	rm -f *~
+ 
+ 
