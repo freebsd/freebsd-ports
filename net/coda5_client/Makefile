@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
 
 MASTERDIR=	${.CURDIR}/../coda5_server
 PKGDIR=		${.CURDIR}
+LATEST_LINK=	coda5-client
 
 CODA_SUITE=	client
 
