@@ -8,5 +8,3 @@ starting watch app):
   xnodecor -w watch
 
 (assuming that your watch application has a window named "watch")
-
-WWW: http://sb.123.org/xnodecor.html
