@@ -6377,6 +6377,7 @@ quanta		ports/www/quanta
 quantlib	ports/misc/quantlib
 quasi88		ports/emulators/quasi88
 quat		ports/graphics/quat
+quat-gui	ports/graphics/quat-gui
 quelcom		ports/audio/quelcom
 queso		ports/net/queso
 quickpics	ports/graphics/quickpics
