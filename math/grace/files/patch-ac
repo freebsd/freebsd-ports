@@ -1,7 +1,7 @@
-*** examples/Makefile.orig	Wed Dec 23 18:30:25 1998
---- examples/Makefile	Wed Dec 23 18:31:38 1998
+*** examples/Makefile.org	Fri Sep 10 09:25:47 1999
+--- examples/Makefile	Fri Sep 10 09:25:57 1999
 ***************
-*** 32,38 ****
+*** 31,37 ****
   install : $(EXAMPLES) $(DOTEST)
   	$(MKINSTALLDIRS) $(GRACE_HOME)/examples
   	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/examples; done
@@ -9,11 +9,11 @@
   
   links : dummy
   
---- 32,38 ----
+--- 31,37 ----
   install : $(EXAMPLES) $(DOTEST)
   	$(MKINSTALLDIRS) $(GRACE_HOME)/examples
   	for i in $(EXAMPLES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/examples; done
-! 	$(INSTALL) -c -o root -g wheel -m 555 $(DOTEST) $(GRACE_HOME)/examples/$(DOTEST)
+! 	$(INSTALL_SCRIPT) $(DOTEST) $(GRACE_HOME)/examples/$(DOTEST)
   
   links : dummy
   

@@ -1,53 +1,40 @@
-*** configure.orig	Tue Sep 15 14:51:57 1998
---- configure	Wed Dec 23 16:46:57 1998
+*** configure.orig	Sun Aug 22 12:11:35 1999
+--- configure	Fri Sep 10 16:22:17 1999
 ***************
-*** 660,665 ****
---- 660,666 ----
-    case "${host}" in
-      i?86-*-linux-*) CONF_FILE="ix86-linux";;
-      *-*-linux-*) CONF_FILE="linux";;
-+     *-*-freebsd*) CONF_FILE="freebsd";;
-      i?86-*-sco-*) CONF_FILE="ix86-sco";;
-      i?86-*-cygwin32) CONF_FILE="ix86-cygwin32";;
-      alpha*-dec-osf4.*) CONF_FILE="alpha-osf4";;
-***************
-*** 4729,4735 ****
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-ldf  $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 4735 "configure"
-  #include "confdefs.h"
---- 4730,4736 ----
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-lmfhdf -ldf -lz $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 4735 "configure"
-  #include "confdefs.h"
-***************
-*** 4753,4759 ****
-  fi
-  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-!   NETCDF_LIBS="$NETCDF_LIBS -ldf"; cat >> confdefs.h <<\EOF
-  #define HAVE_MFHDF 1
-  EOF
+*** 1096,1106 ****
   
---- 4754,4760 ----
-  fi
-  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-    echo "$ac_t""yes" 1>&6
-!   NETCDF_LIBS="$NETCDF_LIBS -lmfhdf -ldf -lz"; cat >> confdefs.h <<\EOF
-  #define HAVE_MFHDF 1
-  EOF
+  if test "x${GCC}" = "xyes"
+  then
+-     case "${host}" in
+-     i?86-*-linux-*) CFLAGS="-m486 -malign-double $CFLAGS";;
+-     i?86-*) CFLAGS="-m486 $CFLAGS";;
+-   esac
+- 
+      echo $ac_n "checking "for gcc strength-reduce bug"""... $ac_c" 1>&6
+  echo "configure:1106: checking "for gcc strength-reduce bug"" >&5
+  if eval "test \"`echo '$''{'ac_cv_c_gcc_strength_bug'+set}'`\" = set"; then
+--- 1096,1101 ----
+***************
+*** 1832,1838 ****
+  # It thinks the first close brace ends the variable substitution.
+  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+  
+! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
+  
+  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+  
+--- 1827,1833 ----
+  # It thinks the first close brace ends the variable substitution.
+  test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+  
+! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
+  
+  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
   
 ***************
-*** 6858,6861 ****
+*** 8939,8942 ****
   chmod +x $CONFIG_STATUS
   rm -fr confdefs* $ac_clean_files
   test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
 - 
---- 6859,6861 ----
+--- 8934,8936 ----

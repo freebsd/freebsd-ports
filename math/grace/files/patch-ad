@@ -1,19 +1,19 @@
-*** auxiliary/Makefile.org	Mon Jul 20 23:51:55 1998
---- auxiliary/Makefile	Wed Dec 23 19:12:15 1998
+*** doc/Makefile.orig	Fri Aug 20 00:31:44 1999
+--- doc/Makefile	Fri Sep 10 11:06:06 1999
 ***************
-*** 22,28 ****
-  install : $(AUXILIARIES) fdf2fit
-  	$(MKINSTALLDIRS) $(GRACE_HOME)/auxiliary
-  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/auxiliary; done
-! 	$(INSTALL_PROGRAM) fdf2fit $(GRACE_HOME)/auxiliary
+*** 66,72 ****
+  	$(MKINSTALLDIRS) $(PREFIX)/man
+  	$(MKINSTALLDIRS) $(PREFIX)/man/man1
+  	cd $(PREFIX)/man/man1; \
+! 	for i in $? $(MANLINKS); do $(RM) $$i; $(LN_S) $(GRACE_HOME)/doc/$$i $$i; done
   
   tests : dummy
   
---- 22,28 ----
-  install : $(AUXILIARIES) fdf2fit
-  	$(MKINSTALLDIRS) $(GRACE_HOME)/auxiliary
-  	for i in $(AUXILIARIES); do $(INSTALL_DATA) $$i $(GRACE_HOME)/auxiliary; done
-! 	$(INSTALL) -c -o root -g wheel -m 555 fdf2fit $(GRACE_HOME)/auxiliary
+--- 66,72 ----
+  	$(MKINSTALLDIRS) $(PREFIX)/man
+  	$(MKINSTALLDIRS) $(PREFIX)/man/man1
+  	cd $(PREFIX)/man/man1; \
+! 	for i in $? $(MANLINKS); do $(RM) $$i; $(INSTALL_DATA) $(GRACE_HOME)/doc/$$i $$i; done
   
   tests : dummy
   

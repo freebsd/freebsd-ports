@@ -1,5 +1,5 @@
-grace is an plotting tool for workstations or X-terminals using X. A few of
-its features are:
+grace is an plotting tool for workstations or X-terminals using X and the
+successor of xmgr. A few of its features are:
 
     * User defined scaling, tick marks, labels, symbols, line styles, colors.
     * Batch mode for unattended plotting.
@@ -11,15 +11,3 @@ its features are:
 While grace has a convenient point-and-click interface, most parameter settings
 and operations are available through a command line interface (found in
 Data/Commands).
-
-grace is the successor of the well known xmgr plotting tool!
-
-Known PROBLEMS:
-
-  - GD-1.3 library of Thomas Boutell:
-	* patterned fills of ellipses make Grace crash
-	* complex polygons are filled incorrectly sometimes
-
-  - PDFlib-0.6 library of Thomas Merz
-	* patterned fills are not implemented
-	* bitmapped text strings are not transparent
