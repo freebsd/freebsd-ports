@@ -27,7 +27,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT} && ${MAKE} -V WRKSRC`/misc ${WRKSRC}
+	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKSRC`/misc ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_ELISPDIR}/

@@ -34,7 +34,7 @@ EXAMPLES=	../examples/rb/*.rb
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -s `cd ${PORTSDIR}/graphics/ming && ${MAKE} -V WRKDIR`/* ${WRKDIR}/
+	${LN} -s `cd ${PORTSDIR}/graphics/ming; ${MAKE} -V WRKDIR`/* ${WRKDIR}/
 
 post-extract:
 	${LN} -sf ../ming.i ${WRKSRC}/

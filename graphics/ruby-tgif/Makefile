@@ -27,14 +27,14 @@ TGIF_PORT=	graphics/tgif-nls
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-x-dir="${X11BASE}" \
-		--with-ldflags=" `cd ${WRKSRC}/tgif && ${MAKE} -V LDOPTIONS -V LOCAL_LIBRARIES -V LDLIBS -V EXTRA_LOAD_FLAGS | paste -s -`"
+		--with-ldflags=" `cd ${WRKSRC}/tgif; ${MAKE} -V LDOPTIONS -V LOCAL_LIBRARIES -V LDLIBS -V EXTRA_LOAD_FLAGS | paste -s -`"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	README
 DOCS_JA=	ChangeLog.ja	README.ja
 
 post-extract:
-	${LN} -sf `cd ${PORTSDIR}/${TGIF_PORT} && ${MAKE} -V WRKSRC` ${WRKSRC}/tgif
+	${LN} -sf `cd ${PORTSDIR}/${TGIF_PORT}; ${MAKE} -V WRKSRC` ${WRKSRC}/tgif
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|\.\./|, "tgif/"' ${WRKSRC}/extconf.rb ${WRKSRC}/*.c

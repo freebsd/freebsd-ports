@@ -26,8 +26,8 @@ INSTALL_TARGET=	site-install
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${RUBY_RD} search-namazu.en.rd > search-namazu.en.html
-	cd ${WRKSRC} && ${RUBY_RD} search-namazu.ja.rd > search-namazu.ja.html
+	cd ${WRKSRC}; ${RUBY_RD} search-namazu.en.rd > search-namazu.en.html
+	cd ${WRKSRC}; ${RUBY_RD} search-namazu.ja.rd > search-namazu.ja.html
 .endif
 
 post-install:

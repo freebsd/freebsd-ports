@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT} && ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
+	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

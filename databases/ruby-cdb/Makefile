@@ -28,7 +28,7 @@ INSTALL_TARGET=	site-install
 
 post-extract:
 	${RM} -f ${WRKSRC}/cdb
-	${LN} -s `cd ${CDB_PORTDIR} && ${MAKE} -V WRKSRC` ${WRKSRC}/cdb
+	${LN} -s `cd ${CDB_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/cdb
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -24,7 +24,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-python-lib=`cd ${PYTHON_PORTSDIR} && ${MAKE} -V WRKSRC`
+CONFIGURE_ARGS=	--with-python-lib=`cd ${PYTHON_PORTSDIR}; ${MAKE} -V WRKSRC`
 INSTALL_TARGET=	site-install
 
 post-install:
