@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/Graph3d.pod
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/lines3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/pie3d.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD/Graph 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/Graph 2>/dev/null || true
