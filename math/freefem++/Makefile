@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
 		http://mule.ann.jussieu.fr/~hecht/ftp/freefem/
@@ -45,7 +45,7 @@ LIBBLAS=	-lf2c -lf77blas -latlas -lgslcblas
 LIBARPACK=	-larpack -lalapack ${LIBBLAS}
 
 DOCS=		AUTHORS BUGS COPYING HISTORY README TODO DOC/manual.pdf
-BADSAMPLES=	load/load.link.orig load/myfunction.o tutorial/Makefile.in.orig
+BADSAMPLES=	load/myfunction.o tutorial/Makefile.in.orig
 
 .include <bsd.port.pre.mk>
 
