@@ -8,6 +8,7 @@ include/tvision/help.h
 include/tvision/helpbase.h
 include/tvision/menus.h
 include/tvision/msgbox.h
+include/tvision/myendian.h
 include/tvision/objects.h
 include/tvision/outline.h
 include/tvision/resource.h
