@@ -1,14 +1,6 @@
---- configure.orig	Sun Oct 28 22:39:13 2001
-+++ configure	Tue Jan 29 08:13:45 2002
-@@ -65,6 +65,7 @@
- # Initialize some other variables.
- subdirs=
- MFLAGS= MAKEFLAGS=
-+LDFLAGS='-L /usr/local/lib'
- 
- ac_prev=
- for ac_option
-@@ -512,7 +513,7 @@
+--- configure.orig	Tue Jan 29 08:30:36 2002
++++ configure	Tue Feb  5 07:30:45 2002
+@@ -522,7 +522,7 @@
  ac_ext=c
  # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
  ac_cpp='$CPP $CPPFLAGS'
@@ -17,12 +9,21 @@
  ac_link='${CC-cc} -o conftest $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
  
  if (echo "testing\c"; echo 1,2,3) | grep c >/dev/null; then
-@@ -2024,7 +2025,7 @@
+@@ -2085,7 +2085,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ldb  $LIBS"
 +LIBS="-ldb2  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2030 "configure"
+ #line 2091 "configure"
  #include "confdefs.h"
+@@ -2835,7 +2835,7 @@
+ #)
+ 
+ LIBS="-L/usr/lib $M_LIBS"
+-INCLUDES="-I/usr/include -I../lib -I../"
++INCLUDES="-I/usr/include -I../lib -I../ -I/usr/local/include"
+ 
+ 
+ # set default directories

@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	tiny-cobol
 
 MAINTAINER=	patrick@freebsd.org
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 ONLY_FOR_ARCHS=	i386
 HAS_CONFIGURE=	yes
@@ -21,10 +22,8 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	"--with-readline"
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
-
-pre-build:
-	${CP} ${FILESDIR}/getopt.h ${WRKSRC}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt ${LDFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" 
 
 pre-install:
 
