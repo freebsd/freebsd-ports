@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 15 13:17:28 1997
-+++ Makefile.in	Wed Aug 20 02:55:43 1997
+--- Makefile.in.orig	Fri Aug 15 16:17:28 1997
++++ Makefile.in	Sun Aug 31 19:47:11 1997
 @@ -55,7 +55,7 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -18,7 +18,44 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -432,7 +432,8 @@
+@@ -315,7 +315,7 @@
+ 
+ SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
+ 
+-all: ${TCL_LIB_FILE} tclsh
++all: ${TCL_LIB_FILE} libtcl80.a tclsh
+ 
+ # The following target is configured by autoconf to generate either
+ # a shared library or non-shared library for Tcl.
+@@ -324,6 +324,11 @@
+ 	@MAKE_LIB@
+ 	$(RANLIB) ${TCL_LIB_FILE}
+ 
++libtcl80.a: ${OBJS}
++	rm -f libtcl80.a
++	ar cr libtcl80.a ${OBJS}	
++	$(RANLIB) libtcl80.a
++
+ # Make target which outputs the list of the .o contained in the Tcl lib
+ # usefull to build a single big shared library containing Tcl and other
+ # extensions.  used for the Tcl Plugin.  -- dl
+@@ -415,7 +420,7 @@
+ # some ranlibs write to current directory, and this might not always be
+ # possible (e.g. if installing as root).
+ 
+-install-binaries: $(TCL_LIB_FILE) tclsh
++install-binaries: $(TCL_LIB_FILE) libtcl80.a tclsh
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
+@@ -429,10 +434,15 @@
+ 	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
++	@echo "Installing libtcl80.a"
++	@$(INSTALL_DATA) libtcl80.a $(LIB_INSTALL_DIR)/libtcl80.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl80.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtcl80.a
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"
@@ -28,7 +65,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
-@@ -483,28 +484,28 @@
+@@ -483,28 +493,28 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
