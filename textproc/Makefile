@@ -266,6 +266,7 @@
     SUBDIR += py-expat
     SUBDIR += py-jaxml
     SUBDIR += py-martel
+    SUBDIR += py-rdflib
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-trex
