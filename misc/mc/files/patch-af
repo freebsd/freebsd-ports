@@ -71,7 +71,7 @@
 -LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
 +LIBFILES_IN = mc.ext.in
 +LIBFILES_OUT = mc.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.lib mc.menu
  SUPPBIN_IN = mc.csh.in mc.sh.in
  SUPPBIN_OUT =  mc.csh mc.sh
 @@ -62,7 +62,7 @@

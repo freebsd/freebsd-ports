@@ -22,6 +22,7 @@ share/locale/pt_BR/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
+share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 share/mc/FAQ
@@ -56,6 +57,7 @@ share/mc/extfs/uzip
 share/mc/extfs/uzoo
 share/mc/mc.ext
 share/mc/mc.hint
+share/mc/mc.hint.cs
 share/mc/mc.hint.es
 share/mc/mc.hlp
 share/mc/mc.lib

@@ -35,6 +35,7 @@ share/gnome/mc/mc-gnome.ext
 share/gnome/mc/mc.csh
 share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
+share/gnome/mc/mc.hint.cs
 share/gnome/mc/mc.hint.es
 share/gnome/mc/mc.lib
 share/gnome/mc/mc.menu
@@ -152,6 +153,7 @@ share/locale/pt_BR/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
+share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 @dirrm share/gnome/mc/desktop-scripts
