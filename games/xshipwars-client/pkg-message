@@ -1,0 +1,18 @@
+ - --------------------------------------------------------------------- -
+ - XSHIPWARS CLIENT PORT NOTES                          ported by trolld -
+ - --------------------------------------------------------------------- -
+ -                                                                       -
+ -  The XShipWars documentation has been installed in:                   -
+ -     $PREFIX/share/doc/xshipwars/                                      -
+ -                                                                       -
+ -  Type xsw to start the game client!                                   -
+ -                                                                       -
+ -  If you get "Subsystems message: X server errors", try running the    -
+ -  game with the --no_xshm flag.                                        -
+ -                                                                       -
+ -                                                         Enjoy!        -
+ -                                                         - trolld      -
+ -                                                                       -
+ - --------------------------------------------------------------------- -
+ -  XShipWars website: http://fox.mit.edu/xsw/                           - 
+ - --------------------------------------------------------------------- -
