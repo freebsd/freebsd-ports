@@ -1,0 +1,28 @@
+bin/ziarc
+%%PYTHON_SITELIBDIR%%/ziarc/datatier.py
+%%PYTHON_SITELIBDIR%%/ziarc/graph.py
+%%PYTHON_SITELIBDIR%%/ziarc/main_ziarc.py
+%%PYTHON_SITELIBDIR%%/ziarc/polygon.py
+%%PYTHON_SITELIBDIR%%/ziarc/resistornet.py
+%%PYTHON_SITELIBDIR%%/ziarc/rnetgui.py
+%%PYTHON_SITELIBDIR%%/ziarc/undoqueue.py
+@dirrm %%PYTHON_SITELIBDIR%%/ziarc
+%%DATADIR%%/icons/del_ival.png
+%%DATADIR%%/icons/draw_con.png
+%%DATADIR%%/icons/draw_r.png
+%%DATADIR%%/icons/editdelete.png
+%%DATADIR%%/icons/exec.png
+%%DATADIR%%/icons/exit.png
+%%DATADIR%%/icons/filenew.png
+%%DATADIR%%/icons/fileopen.png
+%%DATADIR%%/icons/filesave.png
+%%DATADIR%%/icons/help.png
+%%DATADIR%%/icons/move.png
+%%DATADIR%%/icons/put_ground.png
+%%DATADIR%%/icons/put_rval.png
+%%DATADIR%%/icons/put_u0.png
+%%DATADIR%%/icons/redo.png
+%%DATADIR%%/icons/undo.png
+%%DATADIR%%/icons/ziarc.png
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
