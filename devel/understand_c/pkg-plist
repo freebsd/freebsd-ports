@@ -157,6 +157,7 @@ bin/understand_c
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/build6.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/build7.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/build8.htm
+%%PORTDOCS%%share/doc/understand_c/html/understand_c/build9.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/command.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/command2.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/command3.htm
@@ -214,11 +215,13 @@ bin/understand_c
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build16.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build17.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build18.gif
+%%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build18a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build19.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build2a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build3a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build5a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/build6a.gif
+%%PORTDOCS%%share/doc/understand_c/html/understand_c/images/edit-key.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/edit-opt.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/edit-rep.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/edit-sta.gif
@@ -243,6 +246,7 @@ bin/understand_c
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib2a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib31.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib32.gif
+%%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib32a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib34.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib3a.gif
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/images/ib7a.gif
@@ -317,6 +321,7 @@ bin/understand_c
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro10.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro11.htm
+%%PORTDOCS%%share/doc/understand_c/html/understand_c/intro12.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro2.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro3.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_c/intro4.htm

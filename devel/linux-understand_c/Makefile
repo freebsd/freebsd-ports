@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	understand_c
-PORTVERSION=	1.4.110
+PORTVERSION=	1.4.111
 PORTEPOCH=	1
 CATEGORIES=	devel linux
-MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/latest/
+MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/%SUBDIR%/
+MASTER_SITE_SUBDIR=	latest pastbuilds
 DISTNAME=	und_c-14b${PORTVERSION:E}-linux
 
 MAINTAINER=	lioux@FreeBSD.org
