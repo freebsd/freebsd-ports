@@ -1,19 +1,81 @@
---- Makefile.FreeBSD.orig	Sun Sep  9 19:52:53 2001
-+++ Makefile.FreeBSD	Sun Sep  9 19:54:01 2001
-@@ -17,14 +17,12 @@
+--- Makefile.FreeBSD.orig	Sat Oct 20 09:17:16 2001
++++ Makefile.FreeBSD	Tue Dec 11 03:01:44 2001
+@@ -17,15 +17,8 @@
  # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
  
+-CC = gcc
 -CXX = g++
--CXXFLAGS = -mcpu=pentium -march=pentium -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
-+CXXFLAGS += -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
- DEFS = -D_REENTRANT -D_THREAD_SAFE -DBSDSYS -DX86 -DUSE_MEMMOVE
+-
+-CFLAGS = -mcpu=i586 -march=i586 -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror -pthread #-g
+-OPTFLAGS = -march=i686 -O3 -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
+-CXXFLAGS = $(CFLAGS)
+-
+ # thread safety
+-DEFS = -D_REENTRANT -D_THREAD_SAFE
++#DEFS = -D_REENTRANT -D_THREAD_SAFE
+ # BSD system
+ DEFS += -DBSDSYS
+ # define if your compiler/c-library is ISO C 9x standard compliant
+@@ -37,15 +30,15 @@
+ # x86 architecture specific optimizations
+ #DEFS += -DDSP_X86
+ 
 -INCS = -I. -I/usr/local/include
-+INCS = -I. -I../Inlines-%%INLINE_VER%%
- LDFLAGS = #-g
++INCS = -I. -I../Inlines-${INLINE_VER}
+ 
+-LDFLAGS = -pthread #-g
++#LDFLAGS = -pthread #-g
+ 
  LIBS = -lm #-ldrfftw -ldfftw
+ 
  LIBTOOL = libtool
+ 
 -PREFIX = /usr/local
++PREFIX ?= /usr/local
  
- VERSION = 1:1:0
+ VERSION = 1:4:0
  
+@@ -113,24 +106,24 @@
+ 	$(LIBTOOL) --mode=link $(CXX) $(LDFLAGS) -rpath $(PREFIX)/lib -version-info $(VERSION) -o libdsp.la $(LOBJS) $(LIBS)
+ 
+ install: libdsp.la
+-	install -m 755 -d $(PREFIX)/include/dsp
+-	install -m 644 dsp/DSPConfig.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/DSPOp.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/DSPVector.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Decimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FFTDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Filter.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Filter2.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/FIRDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Hankel.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/ReBuffer.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/ReBuffer2.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/ReBuffer3.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/RecDecimator.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Transform4.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/Transform8.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/TransformS.hh $(PREFIX)/include/dsp
+-	install -m 644 dsp/X86.h $(PREFIX)/include/dsp
++	${MKDIR} $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPConfig.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPOp.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/DSPVector.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Decimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FFTDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Filter.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Filter2.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/FIRDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Hankel.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/ReBuffer.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/ReBuffer2.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/ReBuffer3.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/RecDecimator.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Transform4.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/Transform8.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/TransformS.hh $(PREFIX)/include/dsp
++	${BSD_INSTALL_DATA} dsp/X86.h $(PREFIX)/include/dsp
+ 	$(LIBTOOL) --mode=install install libdsp.la $(PREFIX)/lib
+ 
+ libdsp.dep: $(SRCS)

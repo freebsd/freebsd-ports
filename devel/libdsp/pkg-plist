@@ -3,9 +3,9 @@ include/dsp/DSPOp.hh
 include/dsp/DSPVector.hh
 include/dsp/Decimator.hh
 include/dsp/FFTDecimator.hh
+include/dsp/FIRDecimator.hh
 include/dsp/Filter.hh
 include/dsp/Filter2.hh
-include/dsp/FIRDecimator.hh
 include/dsp/Hankel.hh
 include/dsp/ReBuffer.hh
 include/dsp/ReBuffer2.hh
@@ -14,8 +14,9 @@ include/dsp/RecDecimator.hh
 include/dsp/Transform4.hh
 include/dsp/Transform8.hh
 include/dsp/TransformS.hh
-@dirrm include/dsp
+include/dsp/X86.h
 lib/libdsp.a
 lib/libdsp.la
 lib/libdsp.so
 lib/libdsp.so.1
+@dirrm include/dsp
