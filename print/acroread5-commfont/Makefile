@@ -48,7 +48,6 @@ RUN_DEPENDS=	acroread5:${PORTSDIR}/print/acroread5
 .else
 ###### For slave ports ##############################
 ## Use a local directory of the slave port!!
-COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
