@@ -17,11 +17,20 @@ COMMENT=	An utility port, installing hierarchy of common GNOME directories
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+PLIST?=		${WRKDIR}/pkg-plist
 
 USE_X_PREFIX=	yes
 
 do-fetch:
 	@${DO_NADA}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} -f ${PLIST}
+	@${CAT} ${FILESDIR}/dirlist | sort | ${SED} -e \
+		's|$$|/.keep_me|' >> ${PLIST}
+	@${CAT} ${FILESDIR}/dirlist | sort -r | ${SED} -e \
+		's|^|@dirrm |' >> ${PLIST}
 
 do-install:
 	@for dir in `${CAT} ${FILESDIR}/dirlist`; \
