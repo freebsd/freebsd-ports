@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-office
 PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 office applications
 
-RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
+RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric \
 		planner:${PORTSDIR}/deskutils/planner \
 		dia:${PORTSDIR}/graphics/dia \
 		glabels:${PORTSDIR}/deskutils/glabels \

@@ -65,7 +65,6 @@
     SUBDIR += glove
     SUBDIR += glpk
     SUBDIR += gnumeric
-    SUBDIR += gnumeric2
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
     SUBDIR += grace

@@ -18,7 +18,6 @@ COMMENT=	The Japanese "meta-port" for the GNOME integrated X11 desktop
 
 LIB_DEPENDS=	gnome.5:${PORTSDIR}/japanese/gnomelibs \
 		gal.23:${PORTSDIR}/japanese/gal
-RUN_DEPENDS=	gnumeric:${PORTSDIR}/japanese/gnumeric
 
 NO_BUILD=	yes
 

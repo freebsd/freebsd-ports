@@ -94,7 +94,6 @@
     SUBDIR += gn-gnspool
     SUBDIR += gnome
     SUBDIR += gnomelibs
-    SUBDIR += gnumeric
     SUBDIR += gorua
     SUBDIR += gqmpeg
     SUBDIR += grep

@@ -1347,3 +1347,6 @@ editors/AbiWord2|editors/abiword|2004-12-04|renamed to abiword
 multimedia/avidemux||2004-12-09|no longer maintained by the author
 devel/arch|devel/tla|2004-12-09|removed obsolete version of arch
 japanese/estraier|textproc/estraier|2004-12-11|accurate category
+math/gnumeric2|math/gnumeric|2004-12-11|renamed to gnumeric
+chinese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
+japanese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
