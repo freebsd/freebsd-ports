@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bsdsar
-PORTVERSION=	0.10
+PORTVERSION=	1.00
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.googlebit.com/bsdsar/
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	eric@trinitel.com
 
 NO_BUILD=	yes
 
