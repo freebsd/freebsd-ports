@@ -56,8 +56,11 @@ include/OpenEXR/ImfBoxAttribute.h
 include/OpenEXR/ImfCRgbaFile.h
 include/OpenEXR/ImfChannelList.h
 include/OpenEXR/ImfChannelListAttribute.h
+include/OpenEXR/ImfChromaticities.h
+include/OpenEXR/ImfChromaticitiesAttribute.h
 include/OpenEXR/ImfCompression.h
 include/OpenEXR/ImfCompressionAttribute.h
+include/OpenEXR/ImfConvert.h
 include/OpenEXR/ImfDoubleAttribute.h
 include/OpenEXR/ImfFloatAttribute.h
 include/OpenEXR/ImfFrameBuffer.h
@@ -74,7 +77,10 @@ include/OpenEXR/ImfName.h
 include/OpenEXR/ImfOpaqueAttribute.h
 include/OpenEXR/ImfOutputFile.h
 include/OpenEXR/ImfPixelType.h
+include/OpenEXR/ImfPreviewImage.h
+include/OpenEXR/ImfPreviewImageAttribute.h
 include/OpenEXR/ImfRgbaFile.h
+include/OpenEXR/ImfStandardAttributes.h
 include/OpenEXR/ImfStringAttribute.h
 include/OpenEXR/ImfVecAttribute.h
 include/OpenEXR/ImfVersion.h
