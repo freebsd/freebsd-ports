@@ -1,0 +1,18 @@
+--- Makefile.opts.in.orig	Tue Aug  7 19:55:49 2001
++++ Makefile.opts.in	Sun Aug 12 15:01:13 2001
+@@ -200,6 +200,7 @@
+ CFLAGS += -fnative-struct -D_OFF_T_ -D_off_t=long
+ endif
+ 
++ifeq ($(MODIFY_CFLAGS),1)
+ ifneq (,$(findstring bsd,$(SYS)))
+ CFLAGS += -pthread
+ endif
+@@ -235,6 +236,7 @@
+ endif
+ 
+ #end of optimisations
++endif
+ endif
+ 
+ #

@@ -1,0 +1,14 @@
+--- configure.orig	Tue Aug  7 19:55:49 2001
++++ configure	Sun Aug 12 15:36:05 2001
+@@ -3924,10 +3924,7 @@
+ 
+ if test x$enable_dsp != xno
+ then
+-  if test -c /dev/dsp
+-  then
+-    PLUGINS="${PLUGINS} dsp"
+-  fi
++  PLUGINS="${PLUGINS} dsp"
+ fi
+ 
+ # Check whether --enable-esd or --disable-esd was given.
