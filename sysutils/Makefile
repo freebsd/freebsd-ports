@@ -220,6 +220,7 @@
     SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += spinner
+    SUBDIR += srmt
     SUBDIR += ssync
     SUBDIR += stat
     SUBDIR += stmpclean
