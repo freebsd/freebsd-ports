@@ -1,199 +1,237 @@
-palmdev/sdk-4.0/include/Dynamic/PalmOptErrorCheckLevel.Debug
-palmdev/sdk-4.0/include/Dynamic/PalmOptErrorCheckLevel.h
-palmdev/sdk-4.0/include/Dynamic/PalmOptErrorCheckLevel.Release
-palmdev/sdk-4.0/include/Dynamic/PalmOptTraceLevel.h
-palmdev/sdk-4.0/include/Dynamic/PalmOptTraceLevel.Off
-palmdev/sdk-4.0/include/Dynamic/PalmOptTraceLevel.On
-palmdev/sdk-4.0/include/Core/UI/UIResources.h
-palmdev/sdk-4.0/include/Core/UI/AttentionMgr.h
-palmdev/sdk-4.0/include/Core/UI/Category.h
-palmdev/sdk-4.0/include/Core/UI/Clipboard.h
-palmdev/sdk-4.0/include/Core/UI/Control.h
-palmdev/sdk-4.0/include/Core/UI/Day.h
-palmdev/sdk-4.0/include/Core/UI/Event.h
-palmdev/sdk-4.0/include/Core/UI/FatalAlert.h
-palmdev/sdk-4.0/include/Core/UI/Field.h
-palmdev/sdk-4.0/include/Core/UI/Find.h
-palmdev/sdk-4.0/include/Core/UI/FontSelect.h
-palmdev/sdk-4.0/include/Core/UI/Form.h
-palmdev/sdk-4.0/include/Core/UI/GraffitiReference.h
-palmdev/sdk-4.0/include/Core/UI/GraffitiShift.h
-palmdev/sdk-4.0/include/Core/UI/InsPoint.h
-palmdev/sdk-4.0/include/Core/UI/Keyboard.h
-palmdev/sdk-4.0/include/Core/UI/Launcher.h
-palmdev/sdk-4.0/include/Core/UI/List.h
-palmdev/sdk-4.0/include/Core/UI/Menu.h
-palmdev/sdk-4.0/include/Core/UI/PhoneLookup.h
-palmdev/sdk-4.0/include/Core/UI/PrivateRecords.h
-palmdev/sdk-4.0/include/Core/UI/Progress.h
-palmdev/sdk-4.0/include/Core/UI/ScrollBar.h
-palmdev/sdk-4.0/include/Core/UI/Table.h
-palmdev/sdk-4.0/include/Core/UI/SelDay.h
-palmdev/sdk-4.0/include/Core/UI/SelTime.h
-palmdev/sdk-4.0/include/Core/UI/SelTimeZone.h
-palmdev/sdk-4.0/include/Core/UI/UIColor.h
-palmdev/sdk-4.0/include/Core/UI/UIControls.h
-palmdev/sdk-4.0/include/Core/UI/UIPublic.h
-palmdev/sdk-4.0/include/Core/UI/UIResDefs.r
-palmdev/sdk-4.0/include/Core/UI/AboutBox.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_string.h
-palmdev/sdk-4.0/include/Core/System/Unix/netdb.h
-palmdev/sdk-4.0/include/Core/System/Unix/netinet_in.h
-palmdev/sdk-4.0/include/Core/System/Unix/netinet_in_systm.h
-palmdev/sdk-4.0/include/Core/System/Unix/netinet_ip.h
-palmdev/sdk-4.0/include/Core/System/Unix/netinet_tcp.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_errno.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_socket.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_socketvar.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_time.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_types.h
-palmdev/sdk-4.0/include/Core/System/Unix/sys_uio.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_fcntl.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_netdb.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_stdarg.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_stdio.h
-palmdev/sdk-4.0/include/Core/System/Unix/unix_stdlib.h
-palmdev/sdk-4.0/include/Core/System/Unix/arpa_inet.h
-palmdev/sdk-4.0/include/Core/System/AppLaunchCmd.h
-palmdev/sdk-4.0/include/Core/System/Bitmap.h
-palmdev/sdk-4.0/include/Core/System/CharAttr.h
-palmdev/sdk-4.0/include/Core/System/CharLatin.h
-palmdev/sdk-4.0/include/Core/System/Chars.h
-palmdev/sdk-4.0/include/Core/System/CharShiftJIS.h
-palmdev/sdk-4.0/include/Core/System/CMCommon.h
-palmdev/sdk-4.0/include/Core/System/CMLConst.h
-palmdev/sdk-4.0/include/Core/System/ConnectionMgr.h
-palmdev/sdk-4.0/include/Core/System/ConsoleMgr.h
-palmdev/sdk-4.0/include/Core/System/Crc.h
-palmdev/sdk-4.0/include/Core/System/CTP.h
-palmdev/sdk-4.0/include/Core/System/DataMgr.h
-palmdev/sdk-4.0/include/Core/System/DateTime.h
-palmdev/sdk-4.0/include/Core/System/DebugMgr.h
-palmdev/sdk-4.0/include/Core/System/DLCommon.h
-palmdev/sdk-4.0/include/Core/System/DLServer.h
-palmdev/sdk-4.0/include/Core/System/Encrypt.h
-palmdev/sdk-4.0/include/Core/System/ErrorBase.h
-palmdev/sdk-4.0/include/Core/System/ErrorMgr.h
-palmdev/sdk-4.0/include/Core/System/ExgLib.h
-palmdev/sdk-4.0/include/Core/System/ExgMgr.h
-palmdev/sdk-4.0/include/Core/System/FeatureMgr.h
-palmdev/sdk-4.0/include/Core/System/FileStream.h
-palmdev/sdk-4.0/include/Core/System/FloatMgr.h
-palmdev/sdk-4.0/include/Core/System/Font.h
-palmdev/sdk-4.0/include/Core/System/Graffiti.h
-palmdev/sdk-4.0/include/Core/System/Helper.h
-palmdev/sdk-4.0/include/Core/System/HelperServiceClass.h
-palmdev/sdk-4.0/include/Core/System/HostControl.h
-palmdev/sdk-4.0/include/Core/System/IMCUtils.h
-palmdev/sdk-4.0/include/Core/System/IntlMgr.h
-palmdev/sdk-4.0/include/Core/System/IrLib.h
-palmdev/sdk-4.0/include/Core/System/KeyMgr.h
-palmdev/sdk-4.0/include/Core/System/LocaleMgr.h
-palmdev/sdk-4.0/include/Core/System/Localize.h
-palmdev/sdk-4.0/include/Core/System/MemoryMgr.h
-palmdev/sdk-4.0/include/Core/System/ModemMgr.h
-palmdev/sdk-4.0/include/Core/System/NetBitUtils.h
-palmdev/sdk-4.0/include/Core/System/NetMgr.h
-palmdev/sdk-4.0/include/Core/System/NotifyMgr.h
-palmdev/sdk-4.0/include/Core/System/OverlayMgr.h
-palmdev/sdk-4.0/include/Core/System/PalmLocale.h
-palmdev/sdk-4.0/include/Core/System/PalmLocRawData.h
-palmdev/sdk-4.0/include/Core/System/Password.h
-palmdev/sdk-4.0/include/Core/System/PenMgr.h
-palmdev/sdk-4.0/include/Core/System/Rect.h
-palmdev/sdk-4.0/include/Core/System/Preferences.h
-palmdev/sdk-4.0/include/Core/System/ScriptPlugin.h
-palmdev/sdk-4.0/include/Core/System/SerialDrvr.h
-palmdev/sdk-4.0/include/Core/System/SerialLinkMgr.h
-palmdev/sdk-4.0/include/Core/System/SerialMgr.h
-palmdev/sdk-4.0/include/Core/System/SerialMgrOld.h
-palmdev/sdk-4.0/include/Core/System/SerialSdrv.h
-palmdev/sdk-4.0/include/Core/System/SerialVdrv.h
-palmdev/sdk-4.0/include/Core/System/SoundMgr.h
-palmdev/sdk-4.0/include/Core/System/StdIOPalm.h
-palmdev/sdk-4.0/include/Core/System/StdIOProvider.h
-palmdev/sdk-4.0/include/Core/System/StringMgr.h
-palmdev/sdk-4.0/include/Core/System/SysEvent.h
-palmdev/sdk-4.0/include/Core/System/SysEvtMgr.h
-palmdev/sdk-4.0/include/Core/System/SysResTypes.rh
-palmdev/sdk-4.0/include/Core/System/SystemMgr.h
-palmdev/sdk-4.0/include/Core/System/SystemPkt.h
-palmdev/sdk-4.0/include/Core/System/SystemPublic.h
-palmdev/sdk-4.0/include/Core/System/SystemResources.h
-palmdev/sdk-4.0/include/Core/System/SysUtils.h
-palmdev/sdk-4.0/include/Core/System/TextMgr.h
-palmdev/sdk-4.0/include/Core/System/TextServicesMgr.h
-palmdev/sdk-4.0/include/Core/System/TimeMgr.h
-palmdev/sdk-4.0/include/Core/System/TraceMgr.h
-palmdev/sdk-4.0/include/Core/System/UDAMgr.h
-palmdev/sdk-4.0/include/Core/System/AlarmMgr.h
-palmdev/sdk-4.0/include/Core/System/Window.h
-palmdev/sdk-4.0/include/Core/Hardware/HAL.h
-palmdev/sdk-4.0/include/Core/Hardware/HwrMiscFlags.h
-palmdev/sdk-4.0/include/Core/Hardware/M68KHwr.h
-palmdev/sdk-4.0/include/Core/CoreTraps.h
-palmdev/sdk-4.0/include/Libraries/ExgLocal/ExgLocalLib.h
-palmdev/sdk-4.0/include/Libraries/Telephony/UI/TelephonyMgrUI.h
-palmdev/sdk-4.0/include/Libraries/Telephony/TelephonyMgr.h
-palmdev/sdk-4.0/include/Libraries/Telephony/TelephonyMgrTypes.h
-palmdev/sdk-4.0/include/Libraries/Sms/SmsLib.h
-palmdev/sdk-4.0/include/Libraries/Pdi/PdiConst.h
-palmdev/sdk-4.0/include/Libraries/Pdi/PdiLib.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/WinGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/CtlGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/DateGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/FldGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/FntGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/FrmGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/IntlGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/LmGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/LstGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/OmGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/PalmOSGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/ResGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/SysGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/TblGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/TsmGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/TxtGlue.h
-palmdev/sdk-4.0/include/Libraries/PalmOSGlue/BmpGlue.h
-palmdev/sdk-4.0/include/Libraries/Lz77/Lz77Mgr.h
-palmdev/sdk-4.0/include/Libraries/INet/INetMgr.h
-palmdev/sdk-4.0/include/Libraries/LibTraps.h
-palmdev/sdk-4.0/include/Extensions/ExpansionMgr/ExpansionMgr.h
-palmdev/sdk-4.0/include/Extensions/ExpansionMgr/FSLib.h
-palmdev/sdk-4.0/include/Extensions/ExpansionMgr/SlotDrvrLib.h
-palmdev/sdk-4.0/include/Extensions/ExpansionMgr/VFSMgr.h
-palmdev/sdk-4.0/include/PalmOS.pch
-palmdev/sdk-4.0/include/PalmOS.h
-palmdev/sdk-4.0/include/PalmCompatibility.h
-palmdev/sdk-4.0/include/BuildDefines.h
-palmdev/sdk-4.0/include/header.gcc
-palmdev/sdk-4.0/include/BuildDefaults.h
-palmdev/sdk-4.0/include/PalmUtils.h
-palmdev/sdk-4.0/include/PalmTypes.h
-palmdev/sdk-4.0/include/PalmOS.win.pch
-palmdev/sdk-4.0/lib/m68k-palmos-coff/libPalmOSGlue-debug.a
-palmdev/sdk-4.0/lib/m68k-palmos-coff/libPalmOSGlue.a
-palmdev/sdk-4.0/lib/m68k-palmos-coff/libNetSocket.a
-@dirrm palmdev/sdk-4.0/include/Dynamic
-@dirrm palmdev/sdk-4.0/include/Core/UI
-@dirrm palmdev/sdk-4.0/include/Core/System/Unix
-@dirrm palmdev/sdk-4.0/include/Core/System
-@dirrm palmdev/sdk-4.0/include/Core/Hardware
-@dirrm palmdev/sdk-4.0/include/Core
-@dirrm palmdev/sdk-4.0/include/Libraries/ExgLocal
-@dirrm palmdev/sdk-4.0/include/Libraries/Telephony/UI
-@dirrm palmdev/sdk-4.0/include/Libraries/Telephony
-@dirrm palmdev/sdk-4.0/include/Libraries/Sms
-@dirrm palmdev/sdk-4.0/include/Libraries/Pdi
-@dirrm palmdev/sdk-4.0/include/Libraries/PalmOSGlue
-@dirrm palmdev/sdk-4.0/include/Libraries/Lz77
-@dirrm palmdev/sdk-4.0/include/Libraries/INet
-@dirrm palmdev/sdk-4.0/include/Libraries
-@dirrm palmdev/sdk-4.0/include/Extensions/ExpansionMgr
-@dirrm palmdev/sdk-4.0/include/Extensions
-@dirrm palmdev/sdk-4.0/include
-@dirrm palmdev/sdk-4.0/lib/m68k-palmos-coff
-@dirrm palmdev/sdk-4.0/lib
-@dirrm palmdev/sdk-4.0
+%%BASEDIR%%/include/PalmUtils.h
+%%BASEDIR%%/include/PalmTypes.h
+%%BASEDIR%%/include/PalmOS.win.pch
+%%BASEDIR%%/include/PalmOS.pch
+%%BASEDIR%%/include/PalmOS.h
+%%BASEDIR%%/include/PalmCompatibility.h
+%%BASEDIR%%/include/Libraries/Telephony/UI/TelephonyMgrUI.h
+%%BASEDIR%%/include/Libraries/Telephony/TelephonyMgrTypes.h
+%%BASEDIR%%/include/Libraries/Telephony/TelephonyMgr.h
+%%BASEDIR%%/include/Libraries/Sms/SmsLib.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_zhCN.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_jpJP.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_itIT.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_frFR.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_esES.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_enUS.h
+%%BASEDIR%%/include/Libraries/Simulator/Locale/Locale_deDE.h
+%%BASEDIR%%/include/Libraries/SSL/SslLibMac.h
+%%BASEDIR%%/include/Libraries/SSL/SslLibAsn1.h
+%%BASEDIR%%/include/Libraries/SSL/SslLib.h
+%%BASEDIR%%/include/Libraries/Pdi/PdiLib.h
+%%BASEDIR%%/include/Libraries/Pdi/PdiConst.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/WinGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/UIColorGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/TxtGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/TsmGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/TblGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/SysGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/ResGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/PalmOSGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/OmGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/MemGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/LstGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/LmGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/IntlGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/FrmGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/FntGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/FldGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/DateGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/CtlGlue.h
+%%BASEDIR%%/include/Libraries/PalmOSGlue/BmpGlue.h
+%%BASEDIR%%/include/Libraries/Lz77/Lz77Mgr.h
+%%BASEDIR%%/include/Libraries/LibTraps.h
+%%BASEDIR%%/include/Libraries/INet/INetMgr.h
+%%BASEDIR%%/include/Libraries/ExgLocal/ExgLocalLib.h
+%%BASEDIR%%/include/Libraries/CPMLib/CPMLibCommon.h
+%%BASEDIR%%/include/Libraries/CPMLib/CPMLib68KInterface.h
+%%BASEDIR%%/include/Libraries/CPMLib/CPMLib.h
+%%BASEDIR%%/include/Libraries/AddressSort/AddressSortLib.h
+%%BASEDIR%%/include/Extensions/Bluetooth/BtPrefsPnlTypes.h
+%%BASEDIR%%/include/Extensions/Bluetooth/BtCommVdrv.h
+%%BASEDIR%%/include/Extensions/Bluetooth/BtExgLib.h
+%%BASEDIR%%/include/Extensions/Bluetooth/BtLib.h
+%%BASEDIR%%/include/Extensions/Bluetooth/BtLibTypes.h
+%%BASEDIR%%/include/Extensions/ExpansionMgr/VFSMgr.h
+%%BASEDIR%%/include/Extensions/ExpansionMgr/SlotDrvrLib.h
+%%BASEDIR%%/include/Extensions/ExpansionMgr/FSLib.h
+%%BASEDIR%%/include/Extensions/ExpansionMgr/ExpansionMgr.h
+%%BASEDIR%%/include/Dynamic/PalmSpecifyOptLevel.h
+%%BASEDIR%%/include/Dynamic/PalmOptUserMode.h
+%%BASEDIR%%/include/Dynamic/PalmOptTraceLevel.h
+%%BASEDIR%%/include/Dynamic/PalmOptTraceLevel.On
+%%BASEDIR%%/include/Dynamic/PalmOptTraceLevel.Off
+%%BASEDIR%%/include/Dynamic/PalmOptModel.h
+%%BASEDIR%%/include/Dynamic/PalmOptErrorCheckLevel.h
+%%BASEDIR%%/include/Dynamic/PalmOptErrorCheckLevel.Release
+%%BASEDIR%%/include/Dynamic/PalmOptErrorCheckLevel.Debug
+%%BASEDIR%%/include/Core/UI/UIResources.h
+%%BASEDIR%%/include/Core/UI/UIResDefs.r
+%%BASEDIR%%/include/Core/UI/UIPublic.h
+%%BASEDIR%%/include/Core/UI/UIControls.h
+%%BASEDIR%%/include/Core/UI/UIColor.h
+%%BASEDIR%%/include/Core/UI/Table.h
+%%BASEDIR%%/include/Core/UI/SelTimeZone.h
+%%BASEDIR%%/include/Core/UI/SelTime.h
+%%BASEDIR%%/include/Core/UI/SelDay.h
+%%BASEDIR%%/include/Core/UI/ScrollBar.h
+%%BASEDIR%%/include/Core/UI/Progress.h
+%%BASEDIR%%/include/Core/UI/PrivateRecords.h
+%%BASEDIR%%/include/Core/UI/PhoneLookup.h
+%%BASEDIR%%/include/Core/UI/Menu.h
+%%BASEDIR%%/include/Core/UI/List.h
+%%BASEDIR%%/include/Core/UI/Launcher.h
+%%BASEDIR%%/include/Core/UI/Keyboard.h
+%%BASEDIR%%/include/Core/UI/InsPoint.h
+%%BASEDIR%%/include/Core/UI/GraffitiShift.h
+%%BASEDIR%%/include/Core/UI/GraffitiReference.h
+%%BASEDIR%%/include/Core/UI/Form.h
+%%BASEDIR%%/include/Core/UI/FontSelect.h
+%%BASEDIR%%/include/Core/UI/Find.h
+%%BASEDIR%%/include/Core/UI/Field.h
+%%BASEDIR%%/include/Core/UI/FatalAlert.h
+%%BASEDIR%%/include/Core/UI/Event.h
+%%BASEDIR%%/include/Core/UI/Day.h
+%%BASEDIR%%/include/Core/UI/Control.h
+%%BASEDIR%%/include/Core/UI/Clipboard.h
+%%BASEDIR%%/include/Core/UI/Category.h
+%%BASEDIR%%/include/Core/UI/AttentionMgr.h
+%%BASEDIR%%/include/Core/UI/AboutBox.h
+%%BASEDIR%%/include/Core/System/Window.h
+%%BASEDIR%%/include/Core/System/Unix/unix_string.h
+%%BASEDIR%%/include/Core/System/Unix/unix_stdlib.h
+%%BASEDIR%%/include/Core/System/Unix/unix_stdio.h
+%%BASEDIR%%/include/Core/System/Unix/unix_stdarg.h
+%%BASEDIR%%/include/Core/System/Unix/unix_netdb.h
+%%BASEDIR%%/include/Core/System/Unix/unix_fcntl.h
+%%BASEDIR%%/include/Core/System/Unix/sys_uio.h
+%%BASEDIR%%/include/Core/System/Unix/sys_types.h
+%%BASEDIR%%/include/Core/System/Unix/sys_time.h
+%%BASEDIR%%/include/Core/System/Unix/sys_socketvar.h
+%%BASEDIR%%/include/Core/System/Unix/sys_socket.h
+%%BASEDIR%%/include/Core/System/Unix/sys_errno.h
+%%BASEDIR%%/include/Core/System/Unix/netinet_tcp.h
+%%BASEDIR%%/include/Core/System/Unix/netinet_ip.h
+%%BASEDIR%%/include/Core/System/Unix/netinet_in_systm.h
+%%BASEDIR%%/include/Core/System/Unix/netinet_in.h
+%%BASEDIR%%/include/Core/System/Unix/netdb.h
+%%BASEDIR%%/include/Core/System/Unix/arpa_inet.h
+%%BASEDIR%%/include/Core/System/UDAMgr.h
+%%BASEDIR%%/include/Core/System/TraceMgr.h
+%%BASEDIR%%/include/Core/System/TimeMgr.h
+%%BASEDIR%%/include/Core/System/TextServicesMgr.h
+%%BASEDIR%%/include/Core/System/TextMgr.h
+%%BASEDIR%%/include/Core/System/SystemResources.h
+%%BASEDIR%%/include/Core/System/SystemPublic.h
+%%BASEDIR%%/include/Core/System/SystemPkt.h
+%%BASEDIR%%/include/Core/System/SystemMgr.h
+%%BASEDIR%%/include/Core/System/SysUtils.h
+%%BASEDIR%%/include/Core/System/SysResTypes.rh
+%%BASEDIR%%/include/Core/System/SysEvtMgr.h
+%%BASEDIR%%/include/Core/System/SysEvent.h
+%%BASEDIR%%/include/Core/System/StringMgr.h
+%%BASEDIR%%/include/Core/System/StdIOProvider.h
+%%BASEDIR%%/include/Core/System/StdIOPalm.h
+%%BASEDIR%%/include/Core/System/SoundMgr.h
+%%BASEDIR%%/include/Core/System/SerialVdrv.h
+%%BASEDIR%%/include/Core/System/SerialSdrv.h
+%%BASEDIR%%/include/Core/System/SerialMgrOld.h
+%%BASEDIR%%/include/Core/System/SerialMgr.h
+%%BASEDIR%%/include/Core/System/SerialLinkMgr.h
+%%BASEDIR%%/include/Core/System/SerialDrvr.h
+%%BASEDIR%%/include/Core/System/ScriptPlugin.h
+%%BASEDIR%%/include/Core/System/Rect.h
+%%BASEDIR%%/include/Core/System/Preferences.h
+%%BASEDIR%%/include/Core/System/PenMgr.h
+%%BASEDIR%%/include/Core/System/PenInputMgr.h
+%%BASEDIR%%/include/Core/System/PceNativeCall.h
+%%BASEDIR%%/include/Core/System/Password.h
+%%BASEDIR%%/include/Core/System/PalmLocale.h
+%%BASEDIR%%/include/Core/System/PalmLocRawData.h
+%%BASEDIR%%/include/Core/System/OverlayMgr.h
+%%BASEDIR%%/include/Core/System/NotifyMgr.h
+%%BASEDIR%%/include/Core/System/NetMgr.h
+%%BASEDIR%%/include/Core/System/NetBitUtils.h
+%%BASEDIR%%/include/Core/System/ModemMgr.h
+%%BASEDIR%%/include/Core/System/MemoryMgr.h
+%%BASEDIR%%/include/Core/System/Localize.h
+%%BASEDIR%%/include/Core/System/LocaleMgr.h
+%%BASEDIR%%/include/Core/System/KeyMgr.h
+%%BASEDIR%%/include/Core/System/IrLib.h
+%%BASEDIR%%/include/Core/System/IntlMgr.h
+%%BASEDIR%%/include/Core/System/IMCUtils.h
+%%BASEDIR%%/include/Core/System/HostControl.h
+%%BASEDIR%%/include/Core/System/HelperServiceClass.h
+%%BASEDIR%%/include/Core/System/Helper.h
+%%BASEDIR%%/include/Core/System/Graffiti.h
+%%BASEDIR%%/include/Core/System/Font.h
+%%BASEDIR%%/include/Core/System/FloatMgr.h
+%%BASEDIR%%/include/Core/System/FixedMath.h
+%%BASEDIR%%/include/Core/System/FileStream.h
+%%BASEDIR%%/include/Core/System/FeatureMgr.h
+%%BASEDIR%%/include/Core/System/ExgMgr.h
+%%BASEDIR%%/include/Core/System/ExgLib.h
+%%BASEDIR%%/include/Core/System/ErrorMgr.h
+%%BASEDIR%%/include/Core/System/ErrorBase.h
+%%BASEDIR%%/include/Core/System/Encrypt.h
+%%BASEDIR%%/include/Core/System/DebugMgr.h
+%%BASEDIR%%/include/Core/System/DateTime.h
+%%BASEDIR%%/include/Core/System/DataMgr.h
+%%BASEDIR%%/include/Core/System/DLServer.h
+%%BASEDIR%%/include/Core/System/DLCommon.h
+%%BASEDIR%%/include/Core/System/Crc.h
+%%BASEDIR%%/include/Core/System/ConsoleMgr.h
+%%BASEDIR%%/include/Core/System/ConnectionMgr.h
+%%BASEDIR%%/include/Core/System/Chars.h
+%%BASEDIR%%/include/Core/System/CharShiftJIS.h
+%%BASEDIR%%/include/Core/System/CharLatin.h
+%%BASEDIR%%/include/Core/System/CTP.h
+%%BASEDIR%%/include/Core/System/CMLConst.h
+%%BASEDIR%%/include/Core/System/CMCommon.h
+%%BASEDIR%%/include/Core/System/CharGB.h
+%%BASEDIR%%/include/Core/System/Bitmap.h
+%%BASEDIR%%/include/Core/System/AppLaunchCmd.h
+%%BASEDIR%%/include/Core/System/AlarmMgr.h
+%%BASEDIR%%/include/Core/Hardware/M68KHwr.h
+%%BASEDIR%%/include/Core/Hardware/HwrMiscFlags.h
+%%BASEDIR%%/include/Core/Hardware/HAL.h
+%%BASEDIR%%/include/Core/CoreTraps.h
+%%BASEDIR%%/include/BuildDefines.h
+%%BASEDIR%%/include/BuildDefaults.h
+%%BASEDIR%%/lib/m68k-palmos-coff/mown-gp/libNetSocket-debug.a
+%%BASEDIR%%/lib/m68k-palmos-coff/mown-gp/libNetSocket.a
+%%BASEDIR%%/lib/m68k-palmos-coff/libNetSocket-debug.a
+%%BASEDIR%%/lib/m68k-palmos-coff/libNetSocket.a
+%%BASEDIR%%/lib/m68k-palmos-coff/libPalmOSGlue-debug.a
+%%BASEDIR%%/lib/m68k-palmos-coff/libPalmOSGlue.a
+%%BASEDIR%%/PalmOS 5 SDK 68K R3 Readme.txt
+%%BASEDIR%%/Palm License.txt
+@dirrm %%BASEDIR%%/lib/m68k-palmos-coff/mown-gp
+@dirrm %%BASEDIR%%/lib/m68k-palmos-coff
+@dirrm %%BASEDIR%%/lib
+@dirrm %%BASEDIR%%/include/Libraries/Telephony/UI
+@dirrm %%BASEDIR%%/include/Libraries/Telephony
+@dirrm %%BASEDIR%%/include/Libraries/Sms
+@dirrm %%BASEDIR%%/include/Libraries/Simulator/Locale
+@dirrm %%BASEDIR%%/include/Libraries/Simulator
+@dirrm %%BASEDIR%%/include/Libraries/SSL
+@dirrm %%BASEDIR%%/include/Libraries/Pdi
+@dirrm %%BASEDIR%%/include/Libraries/PalmOSGlue
+@dirrm %%BASEDIR%%/include/Libraries/Lz77
+@dirrm %%BASEDIR%%/include/Libraries/INet
+@dirrm %%BASEDIR%%/include/Libraries/ExgLocal
+@dirrm %%BASEDIR%%/include/Libraries/CPMLib
+@dirrm %%BASEDIR%%/include/Libraries/AddressSort
+@dirrm %%BASEDIR%%/include/Libraries
+@dirrm %%BASEDIR%%/include/Extensions/ExpansionMgr
+@dirrm %%BASEDIR%%/include/Extensions/Bluetooth
+@dirrm %%BASEDIR%%/include/Extensions
+@dirrm %%BASEDIR%%/include/Dynamic
+@dirrm %%BASEDIR%%/include/Core/UI
+@dirrm %%BASEDIR%%/include/Core/System/Unix
+@dirrm %%BASEDIR%%/include/Core/System
+@dirrm %%BASEDIR%%/include/Core/Hardware
+@dirrm %%BASEDIR%%/include/Core
+@dirrm %%BASEDIR%%/include
+@dirrm %%BASEDIR%%
 @dirrm palmdev
