@@ -1,0 +1,9 @@
+Mp3check is a tool for checking and fixing mp3 archive
+inconsistencies:
+- Filenames (too long, spaces, weird characters, ...)
+- Redundant play lists
+- ID3 tags
+- Broken mp3 files
+- and more..
+
+WWW: http://www.icculus.org/mp3check/
