@@ -1,9 +1,9 @@
 # New ports collection makefile for:	unclutter
 # Version required:	-8
 # Date created:		03 Aug 1996
-# Whom:			shanee@rabbit.augusta.de
+# Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.4 1996/11/18 09:54:21 asami Exp $
+# $Id: Makefile,v 1.5 1997/04/03 00:49:23 fenner Exp $
 #
 
 DISTNAME=	unclutter-8
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	shanee@rabbit.augusta.de
+MAINTAINER=	shanee@augusta.de
 
 WRKSRC=		$(WRKDIR)/unclutter
 USE_IMAKE=	yes

@@ -3,7 +3,7 @@
 # Date created:		28 Jul 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.4 1996/11/11 05:07:43 obrien Exp $
+# $Id: Makefile,v 1.5 1996/11/18 09:52:52 asami Exp $
 #
 
 DISTNAME=	xed1.3
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	shanee@rabbit.augusta.de
+MAINTAINER=	shanee@augusta.de
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
