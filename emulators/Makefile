@@ -35,6 +35,7 @@
     SUBDIR += linux_base
     SUBDIR += linux_base-6
     SUBDIR += mastergear
+    SUBDIR += minivmac
     SUBDIR += mtools
     SUBDIR += osf1_base
     SUBDIR += p-interp
