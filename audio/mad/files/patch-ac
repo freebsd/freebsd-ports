@@ -1,0 +1,9 @@
+--- libmad/configure.orig	Fri Feb  9 18:31:43 2001
++++ libmad/configure	Thu Feb 15 19:17:51 2001
+@@ -1841,5 +1841,5 @@
+ 	    ;;
+ 	-O2)
+-	    optimize="-O"
++	    optimize="-O2"
+ 	    shift
+ 	    ;;

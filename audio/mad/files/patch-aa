@@ -1,31 +1,13 @@
-This port is not CFLAGS safe. I will not try to make it on this
-particular version. However, I will make it use -O instead of -O2
-since I am told that -O2 brakes the alpha ARCH. Partially provided
-by lioux@freebsd.org
-
---- configure.orig	Fri Nov 17 04:20:18 2000
-+++ configure	Sun Nov 26 22:56:39 2000
-@@ -3800,7 +3800,8 @@
- then
-     case "$host" in
- 	i386-*)      ARCH="" ;;
--	i?86-*)      ARCH="-m486" ;;
-+	i486-*)      ARCH="-m486" ;;
-+	i586-*)      ARCH="-mpentium" ;;
- 	arm-empeg-*) ARCH="-march=armv4 -mtune=strongarm1100" ;;
- 	armv4*-*)    ARCH="-march=armv4 -mtune=strongarm" ;;
- 	mips*-*)     ARCH="" ;;
-@@ -3813,7 +3814,7 @@
- esac
- 
- case "$CFLAGS" in
--    *-O*) OPTIMIZER="-O2" ;;
-+    *-O*) OPTIMIZER="-O" ;;
- esac
- 
- CFLAGS=`echo ".$CFLAGS" |  \
-@@ -5439,10 +5440,6 @@
-       *) # Relative path.
+--- configure.orig	Fri Feb  9 18:31:26 2001
++++ configure	Thu Feb 15 19:31:10 2001
+@@ -3820,5 +3820,5 @@
+ 	    ;;
+ 	-O*|-f*)
+-	    optimize="$1"
++	    optimize="$optimize $1"
+ 	    shift
+ 	    ;;
+@@ -5653,8 +5653,4 @@
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
 -  case "$ac_given_INSTALL" in
@@ -34,4 +16,3 @@ by lioux@freebsd.org
 -        esac
  
        echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
-       # The eval makes quoting arguments work.
