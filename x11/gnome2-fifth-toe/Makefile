@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -27,6 +27,13 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		mergeant:${PORTSDIR}/databases/mergeant \
 		ghex2:${PORTSDIR}/editors/ghex2 \
 		glade-2:${PORTSDIR}/devel/glade2 \
+		gob2:${PORTSDIR}/devel/gob2 \
+		gtetrinet:${PORTSDIR}/games/gtetrinet \
+		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net/gaim-snapshot \
+		gnomemeeting:${PORTSDIR}/net/gnomemeeting2 \
+		gnome-font-viewer:${PORTSDIR}/x11-fonts/fontilus \
+		seahorse:${PORTSDIR}/security/seahorse \
+		totem:${PORTSDIR}/graphics/totem \
 		sawfish:${PORTSDIR}/x11-wm/sawfish2 \
 		galeon:${PORTSDIR}/www/galeon2
 
