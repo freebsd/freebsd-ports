@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	flowd
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www2.mindrot.org/files/flowd/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	The clowd is a small, fast and secure NetFlow collector
+COMMENT=	The flowd is a small, fast and secure NetFlow collector
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var
