@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	ncftp-3.0.0-src
-PKGNAME=	ncftp3-3.0.0
+DISTNAME=	ncftp-3.0.1-src
+PKGNAME=	ncftp3-3.0.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 
