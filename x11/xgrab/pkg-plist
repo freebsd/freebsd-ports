@@ -1,0 +1,8 @@
+@cd /usr/local
+@mode 755
+bin/xgrab
+bin/xgrabsc
+@mode 444
+lib/app-defaults/Xgrab
+man/man1/xgrab.1.gz
+man/man1/xgrabsc.1.gz
