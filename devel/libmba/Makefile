@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libmba
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eskimo.com/~miallen/libmba/dl/
 
