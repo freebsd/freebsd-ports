@@ -1,0 +1,60 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/sax.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/saxdriver.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/wget.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmldigest.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmlencoding-ja.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmlparser.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmltree.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmltreebuilder-ja.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmltreebuilder.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/xmltreevisitor.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/xmlparser.so
+share/examples/ruby/xmlparser/dtd/ext1.dtd
+share/examples/ruby/xmlparser/dtd/ext2.dtd
+share/examples/ruby/xmlparser/dtd/extdtd.rb
+share/examples/ruby/xmlparser/dtd/extdtd.xml
+share/examples/ruby/xmlparser/namespaces/namespace1.rb
+share/examples/ruby/xmlparser/namespaces/namespace1.xml
+share/examples/ruby/xmlparser/namespaces/namespace2.rb
+share/examples/ruby/xmlparser/namespaces/namespace2.xml
+share/examples/ruby/xmlparser/ja/buildertest.rb
+share/examples/ruby/xmlparser/ja/buildertest2.rb
+share/examples/ruby/xmlparser/ja/digesttest2.rb
+share/examples/ruby/xmlparser/ja/document.dtd
+share/examples/ruby/xmlparser/ja/gtktree.rb
+share/examples/ruby/xmlparser/ja/index_euc.xml
+share/examples/ruby/xmlparser/ja/index_jis.xml
+share/examples/ruby/xmlparser/ja/index_noenc.xml
+share/examples/ruby/xmlparser/ja/index_sjis.xml
+share/examples/ruby/xmlparser/ja/index_u16.xml
+share/examples/ruby/xmlparser/ja/index_u8.xml
+share/examples/ruby/xmlparser/ja/treetest.rb
+share/examples/ruby/xmlparser/ja/videolist.dtd
+share/examples/ruby/xmlparser/ja/videolist.rb
+share/examples/ruby/xmlparser/ja/videolist.xml
+share/examples/ruby/xmlparser/ja/visitor.rb
+share/examples/ruby/xmlparser/ja/xmlcheck.rb
+share/examples/ruby/xmlparser/ja/xmlevent.rb
+share/examples/ruby/xmlparser/ja/xmlgrep.rb
+share/examples/ruby/xmlparser/ja/xmliter.rb
+share/examples/ruby/xmlparser/ja/xpointer.rb
+share/examples/ruby/xmlparser/ja/xpointertest.rb
+share/examples/ruby/xmlparser/digesttest.rb
+share/examples/ruby/xmlparser/idattrtest.rb
+share/examples/ruby/xmlparser/my-html.rb
+share/examples/ruby/xmlparser/saxtest.rb
+share/examples/ruby/xmlparser/visitortest.rb
+share/examples/ruby/xmlparser/writer.rb
+share/examples/ruby/xmlparser/xmlcomments.rb
+share/examples/ruby/xmlparser/xmlstats.rb
+@dirrm share/examples/ruby/xmlparser/ja
+@dirrm share/examples/ruby/xmlparser/namespaces
+@dirrm share/examples/ruby/xmlparser/dtd
+@dirrm share/examples/ruby/xmlparser
+share/doc/ruby/xmlparser/ja/README.ja
+share/doc/ruby/xmlparser/README
+share/doc/ruby/xmlparser/xmltree.html
+share/doc/ruby/xmlparser/xmltreebuilder.html
+share/doc/ruby/xmlparser/xmltreevisitor.html
+@dirrm share/doc/ruby/xmlparser/ja
+@dirrm share/doc/ruby/xmlparser

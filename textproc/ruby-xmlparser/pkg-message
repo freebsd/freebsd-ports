@@ -1,0 +1,5 @@
+************************************************************
+If you want to deal with Japanese text, you might need
+japanese/ruby-uconv to convert between Unicode and EUC-JP or
+CP932.
+************************************************************
