@@ -1,6 +1,10 @@
---- vaiobat.c	Tue Dec 12 09:42:20 2000
-+++ vaiobat.c	Wed Mar 21 20:16:59 2001
-@@ -4,18 +4,50 @@
+--- vaiobat.c.orig	Thu Feb  8 09:15:07 2001
++++ vaiobat.c	Sun Mar  9 18:22:57 2003
+@@ -1,21 +1,54 @@
+ #define _XOPEN_SOURCE 500
++#define __BSD_VISIBLE 1
+ #include <stdio.h>
+ #include <stdlib.h>
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
@@ -51,7 +55,7 @@
  #define DATA_REG 0x62
  #define CST_REG  0x66
  
-@@ -25,20 +57,20 @@
+@@ -25,20 +58,20 @@
  static void ecr_set(u8 addr, u8 value)
  {
  	while (inb(CST_REG) & 3) usleep(1);

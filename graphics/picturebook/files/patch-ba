@@ -1,6 +1,10 @@
---- setbrightness.c.orig	Tue Dec 12 09:42:20 2000
-+++ setbrightness.c	Mon Jul 30 14:29:54 2001
-@@ -4,17 +4,47 @@
+--- setbrightness.c.orig	Tue Dec 12 01:42:20 2000
++++ setbrightness.c	Sun Mar  9 18:20:58 2003
+@@ -1,20 +1,51 @@
+ #define _XOPEN_SOURCE 500
++#define __BSD_VISIBLE 1
+ #include <stdio.h>
+ #include <stdlib.h>
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
@@ -48,7 +52,7 @@
  
  #define DATA_REG 0x62
  #define CST_REG  0x66
-@@ -24,28 +54,35 @@
+@@ -24,28 +55,35 @@
  static void ecr_set(u16 addr, u16 value)
  {
  	while (inw(CST_REG) & 3) usleep(1);

@@ -13,7 +13,7 @@ MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture
 EXTRACT_SUFX=  .tgz
 
-MAINTAINER=	alan@clegg.com
+MAINTAINER=	roberto@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
