@@ -2910,6 +2910,7 @@ igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
 iiimf-headers	ports/textproc/iiimf-headers
 iiimf-protocol-lib	ports/textproc/iiimf-protocol-lib
+iiimf-server	ports/textproc/iiimf-server
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
