@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monster
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 CATEGORIES=	games gnome
-MASTER_SITES=	http://www.cs.auc.dk/~olau/monster-masher/source/
+MASTER_SITES=	http://www.cs.aau.dk/~olau/monster-masher/source/
 PKGNAMESUFFIX=	-masher
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -18,6 +18,7 @@ COMMENT=	Gnomemm puzzle game where you have to clean the caves of monsters
 LIB_DEPENDS=	gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
 
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
