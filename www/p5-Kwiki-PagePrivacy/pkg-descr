@@ -1,0 +1,8 @@
+Kwiki::PagePrivacy is a plugin that lets you mark individual pages as:
+
+    * Public - normal readable/writable
+    * Protected - readonly to everyone except the control group.
+    * Private - invisible to everyone but the control group.
+
+WWW: http://search.cpan.org/dist/Kwiki-PagePrivacy/
+Author:	Brian Ingerson <INGY at cpan.org>

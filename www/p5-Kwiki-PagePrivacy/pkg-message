@@ -1,0 +1,15 @@
+/* ================================================================= */
+Note: 
+	Kwiki-PagePrivacy plugin installed! Now you should add
+	to your kwiki in kwiki installation directory:
+
+$ cd cgi-bin/my-kwiki
+$ kwiki -add Kwiki::PagePrivacy
+
+	To active PagePrivacy, please check official site:
+
+URL: http://www.kwiki.org/?KwikiPagePrivacy
+
+	Remeber to properly setup your .htaccess file
+
+/* ================================================================= */
