@@ -1,0 +1,20 @@
+Vida is a multi-datapipe handler, written in C with ncurses library,
+for unix and unix-like OS.
+
+Features:
+- visual interface built with ncurses library
+- multiple datapipes
+- multiple connections for each datapipe
+- password authentication over datapipes
+- computes the total of sent and received bytes
+- sniffing a routed connection (monodirectional, bidirectional and to 
+  colors, packages matching a string)
+- simple hijacking of a routed connection (in both directions)
+- dns-hijacking of a dns-spoofed connection over switched LAN (todo)
+- logging to text fil
+
+WWW:	http://vidatapipe.sourceforge.net/
+AUTHOR:	<embyte@madlab.it>
+
+	- Michael L. Hostbaek
+	<mich@FreeBSD.org>

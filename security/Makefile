@@ -342,6 +342,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += uvscan-dat
+    SUBDIR += vida
     SUBDIR += vlock
     SUBDIR += vlog
     SUBDIR += vncrypt
