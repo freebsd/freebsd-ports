@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.sundilla.net/pub/linux/apps/sshbuddy/beta1.05/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar
 
-MAINTAINER=	dan@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 
