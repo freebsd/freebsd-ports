@@ -3519,6 +3519,7 @@ kmess		ports/net/kmess
 knews		ports/news/knews
 knights		ports/games/knights
 knocker		ports/security/knocker
+knowit		ports/deskutils/knowit
 knowledgekit	ports/www/knowledgekit
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
