@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	superlu
-PORTVERSION=	2.0.20030603
+PORTVERSION=	3.0.20040401
 CATEGORIES=	math
 MASTER_SITES=	http://crd.lbl.gov/~xiaoye/SuperLU/ \
 		http://crd.lbl.gov/~xiaoye/
-DISTNAME=	${PORTNAME}_2.0
+DISTNAME=	${PORTNAME}_3.0
 .ifndef NOPORTDOCS
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} superlu_ug.ps.gz SLU_general.ps.gz simax95.ps.gz
 .endif
@@ -23,7 +23,7 @@ COMMENT=	A library of routines for performing sparse factorization
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
 
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/SuperLU
+WRKSRC=		${WRKDIR}/SuperLU_3.0
 ALL_TARGET=	superlulib
 
 BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
