@@ -13,9 +13,7 @@ MASTER_SITES=	http://www.stlport.com/archive/  \
 		http://www.stlport.com/beta/
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=	obrien@FreeBSD.org
-
-BROKEN=		"YES I _KNOW_ THIS IS BROKEN.  DO **NOT** EMAIL ME ABOUT THIS PORT UNLESS YOU ARE FUNISHING A PATCH TO FIX IT."
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 MAKEFILE=	gcc.mak
