@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.44
+PORTVERSION=	1.2.48
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/old/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
