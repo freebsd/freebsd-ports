@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple utility managing multiple Window Managers with Qt
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes

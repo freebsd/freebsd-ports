@@ -19,6 +19,9 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		qthreads.15:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+DEPRECATED=	"QT2 is obsolete"
+EXPIRATION_DATE=2004-07-14
+
 USE_QT_VER=	2
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
