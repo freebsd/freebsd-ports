@@ -1,0 +1,19 @@
+--- Makefile.orig	Fri Feb 11 13:02:00 2000
++++ Makefile	Sat Oct 26 21:35:38 2002
+@@ -1,13 +1,13 @@
+ # "Artistic Style" Makefile
+ 
+-CPPFLAGS = -Wall -Wno-sign-compare -O2
++CPPFLAGS = ${CXXFLAGS}
+ OBJS = ASResource.o ASBeautifier.o ASFormatter.o astyle_main.o
+ 
+ astyle: $(OBJS)
+-	g++ $(CPPFLAGS) -o astyle  $(OBJS)
++	$(CXX) $(CPPFLAGS) -o astyle  $(OBJS)
+ 
+ .cpp.o:
+-	g++ $(CPPFLAGS) -c $<
++	$(CXX) $(CPPFLAGS) -c $<
+ .SUFFIXES: .cpp .c .o
+ 
+ clean:
