@@ -1093,6 +1093,7 @@ dc20pack	ports/graphics/dc20pack
 dc3play		ports/graphics/dc3play
 dcc		ports/irc/dcc
 dcdflib		ports/math/dcdflib
+dcgui		ports/net/dcgui
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
 dctc		ports/net/dctc
