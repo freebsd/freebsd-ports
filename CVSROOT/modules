@@ -1350,6 +1350,7 @@ eps2png		ports/graphics/eps2png
 epstool		ports/graphics/epstool
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
+erlang_xmlrpc	ports/net/erlang_xmlrpc
 ermixer		ports/audio/ermixer
 error		ports/devel/error
 eruby		ports/textproc/eruby
