@@ -5359,6 +5359,7 @@ qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailanalog	ports/mail/qmailanalog
 qmc		ports/misc/qmc
+qmls		ports/cad/qmls
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
