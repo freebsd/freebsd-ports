@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	text-format
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
