@@ -108,7 +108,7 @@ check_group() {
 	fi
     fi
     echo ""
-    echo "I was not able to add group 'proxy:*:71:' as pw reported:"
+    echo "I was not able to add group 'proxy:*:62:' as pw reported:"
     pw groupadd -g $id -n $name -N
     echo "Please correct this and try again!"
     echo ""
@@ -176,12 +176,12 @@ PRE-INSTALL)
 	echo "Adding sample entry for ftp-proxy to /etc/inetd.conf"
 	echo "#ftp-proxy stream tcp nowait root ${PKG_PREFIX}/libexec/ftp-proxy ftp-proxy" >> /etc/inetd.conf
     fi
-    if ! check_group proxy 71 ; then 
+    if ! check_group proxy 62 ; then 
 	exit 1
     fi
     groupid=`pw groupshow proxy | awk \
 		'{ split ($1,var,":"); print var[3] }' `
-    if ! check_user proxy 71 $groupid; then
+    if ! check_user proxy 62 $groupid; then
 	exit 1
     fi
     ;;
