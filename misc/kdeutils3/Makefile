@@ -40,8 +40,6 @@ LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 501102
-RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
-
 post-patch:
 	${REINPLACE_CMD} -e 's|>tar<|>gtar<|g' ${WRKSRC}/ark/ark.kcfg
 .endif
