@@ -1,22 +1,24 @@
---- ./GNUmakef.def.orig	Sat Dec  2 13:11:50 2000
-+++ ./GNUmakef.def	Mon Oct 20 01:56:39 2003
-@@ -37,8 +37,6 @@
- OBJEXT=.o
- LIBEXT=.a
+--- GNUmakef.def.orig	Mon Dec 22 14:02:19 2003
++++ GNUmakef.def	Fri Dec 26 05:38:58 2003
+@@ -78,8 +78,8 @@
+ LNKFLAGS+=-lbe -ltextencoding
  else
+ CAT=cat
 -CC=gcc
 -CXX=g++
++#CC=gcc
++#CXX=g++
  AR=ar
+ RANLIB=ranlib
  PLATFORM=lnx
- EXEEXT=
-@@ -47,8 +45,8 @@
+@@ -91,8 +91,8 @@
  endif
  endif
  endif
--CFLAGS+=-g -funsigned-char $(INCS) -Wall -Wno-sign-compare -pedantic -O2# -fomit-frame-pointer
+-CFLAGS+=-g -funsigned-char $(INCS) -Wall -Wno-sign-compare -pedantic -O2 -DPRAGMA_PACK # -fomit-frame-pointer
 -LNKFLAGS+=-g
-+CFLAGS+=-funsigned-char $(INCS) -Wall -Wno-sign-compare #-pedantic -O2 -fomit-frame-pointer
-+LNKFLAGS+=
++CFLAGS+=-funsigned-char $(INCS) -Wall -Wno-sign-compare -O2 -DPRAGMA_PACK # -pedantic -fomit-frame-pointer
++#LNKFLAGS+=-g
  CPPFLAGS+=$(CFLAGS) -fno-exceptions -fno-rtti
  
  # comment following lines if you dislike ncurses

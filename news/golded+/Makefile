@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	golded+
-PORTVERSION=	1.1.4.7
-PORTREVISION=	1
+PORTVERSION=	1.1.5.a${SNAPDATE}
 CATEGORIES=	news mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=golded-plus
-DISTNAME=	gps114-7
+DISTNAME=	gps-${SNAPDATE}
+SNAPDATE=	20031224
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	GoldEd+ (FTN message editor)
@@ -22,6 +22,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		golded.1 goldnode.1 rddt.1
+DOCS=		copying copying.lib license.txt notework.txt rusfaq.txt tips.txt
 
 post-patch:
 	@cp ${WRKSRC}/golded3/mygolded.__h ${WRKSRC}/golded3/mygolded.h
@@ -42,6 +43,9 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_ref.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/manuals/gold_usr.txt ${DOCSDIR}
+	@for i in ${DOCS}; do \
+		${INSTALL_DATA} ${WRKSRC}/docs/$$i ${DOCSDIR}; \
+	done
 .endif
 
 .include <bsd.port.mk>

@@ -1,14 +1,23 @@
 bin/golded
 bin/goldnode
 bin/rddt
+%%PORTDOCS%%%%DOCSDIR%%/copying
+%%PORTDOCS%%%%DOCSDIR%%/copying.lib
 %%PORTDOCS%%%%DOCSDIR%%/gold_ref.txt
 %%PORTDOCS%%%%DOCSDIR%%/gold_usr.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/notework.txt
+%%PORTDOCS%%%%DOCSDIR%%/rusfaq.txt
+%%PORTDOCS%%%%DOCSDIR%%/tips.txt
 %%EXAMPLESDIR%%/charset/850_850.chs
 %%EXAMPLESDIR%%/charset/850_asc.chs
 %%EXAMPLESDIR%%/charset/850_iqp.chs
 %%EXAMPLESDIR%%/charset/850_iso.chs
 %%EXAMPLESDIR%%/charset/865_iso.chs
+%%EXAMPLESDIR%%/charset/866_koi.chs
+%%EXAMPLESDIR%%/charset/866_kou.chs
+%%EXAMPLESDIR%%/charset/866_ukr.chs
+%%EXAMPLESDIR%%/charset/866_win.chs
 %%EXAMPLESDIR%%/charset/can_asc.chs
 %%EXAMPLESDIR%%/charset/can_ibm.chs
 %%EXAMPLESDIR%%/charset/cmp_ibm.esc
@@ -42,6 +51,9 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/iso_vt1.chs
 %%EXAMPLESDIR%%/charset/ita_asc.chs
 %%EXAMPLESDIR%%/charset/itl_ibm.chs
+%%EXAMPLESDIR%%/charset/koi_866.chs
+%%EXAMPLESDIR%%/charset/kou_866.chs
+%%EXAMPLESDIR%%/charset/kou_ukr.chs
 %%EXAMPLESDIR%%/charset/mac_850.chs
 %%EXAMPLESDIR%%/charset/mac_asc.chs
 %%EXAMPLESDIR%%/charset/mac_ibm.chs
@@ -61,6 +73,11 @@ bin/rddt
 %%EXAMPLESDIR%%/charset/swi_ibm.chs
 %%EXAMPLESDIR%%/charset/uk__asc.chs
 %%EXAMPLESDIR%%/charset/uk__ibm.chs
+%%EXAMPLESDIR%%/charset/ukr_866.chs
+%%EXAMPLESDIR%%/charset/ukr_koi.chs
+%%EXAMPLESDIR%%/charset/ukr_kou.chs
+%%EXAMPLESDIR%%/charset/ukr_ukr.chs
+%%EXAMPLESDIR%%/charset/win_866.chs
 %%EXAMPLESDIR%%/colorset/gedcol00.cfg
 %%EXAMPLESDIR%%/colorset/gedcol01.cfg
 %%EXAMPLESDIR%%/colorset/gedcol02.cfg
@@ -89,17 +106,23 @@ bin/rddt
 %%EXAMPLESDIR%%/colorset/gedmon01.cfg
 %%EXAMPLESDIR%%/colorset/gedmon02.cfg
 %%EXAMPLESDIR%%/config/advanced.cfg
+%%EXAMPLESDIR%%/config/advanced.rus
+%%EXAMPLESDIR%%/config/gedcolor.cfg
+%%EXAMPLESDIR%%/config/gedcolor.rus
 %%EXAMPLESDIR%%/config/gedlngdk.cfg
 %%EXAMPLESDIR%%/config/gedlngit.cfg
 %%EXAMPLESDIR%%/config/gedlngnl.cfg
 %%EXAMPLESDIR%%/config/gedlngus.cfg
 %%EXAMPLESDIR%%/config/goldhelp.cfg
+%%EXAMPLESDIR%%/config/goldhelp.rus
 %%EXAMPLESDIR%%/config/goldkeys.cfg
+%%EXAMPLESDIR%%/config/goldkeys.rus
 %%EXAMPLESDIR%%/config/goldlang.cfg
 %%EXAMPLESDIR%%/config/goldlang.ger
 %%EXAMPLESDIR%%/config/goldlang.it
 %%EXAMPLESDIR%%/config/goldlang.nl
 %%EXAMPLESDIR%%/config/goldlang.ru2
+%%EXAMPLESDIR%%/config/goldlang.ru3
 %%EXAMPLESDIR%%/config/goldlang.rus
 %%EXAMPLESDIR%%/config/goldlang.sv
 %%EXAMPLESDIR%%/config/simple.cfg
@@ -109,8 +132,9 @@ bin/rddt
 %%EXAMPLESDIR%%/template/golded.cfm
 %%EXAMPLESDIR%%/template/golded.tpl
 %%EXAMPLESDIR%%/template/newsgrps.tpl
-@dirrm %%EXAMPLESDIR%%/charset
+@dirrm %%EXAMPLESDIR%%/template
 @dirrm %%EXAMPLESDIR%%/config
 @dirrm %%EXAMPLESDIR%%/colorset
-@dirrm %%EXAMPLESDIR%%/template
+@dirrm %%EXAMPLESDIR%%/charset
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
