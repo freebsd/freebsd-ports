@@ -19,4 +19,11 @@ PERL_CONFIGURE=	yes
 MAN1=		module_info.1 pfunc.1
 MAN3=		B::Utils.3 Module::Info.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500600
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
