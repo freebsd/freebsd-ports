@@ -3655,6 +3655,7 @@ jabber-xdb_ldap	ports/net/jabber-xdb_ldap
 jabber-yahoo	ports/net/jabber-yahoo
 jabberd		ports/net/jabberd
 jacal		ports/math/jacal
+jack		ports/audio/jack
 jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
