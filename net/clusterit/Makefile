@@ -1,12 +1,12 @@
 # New ports collection makefile for:	clusterit
-# Version required:		1.3
 # Date created:			4 February 1999
 # Whom:				Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	clusterit-1.3
+PORTNAME=	clusterit
+PORTVERSION=	1.3
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.inficad.com/~garbled/ \
 		ftp://ftp.chg.ru/pub/prog/parallel/tools/clusterit/

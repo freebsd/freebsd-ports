@@ -1,15 +1,15 @@
 # New ports collection makefile for:	coda
-# Version required:	5.2.0
 # Date created:		11 May 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	coda-doc-5.2.0-1
-PKGNAME=	coda-doc-5.2.0.1
+PORTNAME=	coda-doc
+PORTVERSION=	5.2.0.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/doc/
+DISTNAME=	coda-doc-5.2.0-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw

@@ -1,15 +1,15 @@
-# New ports collection makefile for:	netpipes4.0
-# Version required:			4.0
+# New ports collection makefile for:	netpipes
 # Date created:				12th April 1997
 # Whom:					doconnor@gsoft.com.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netpipes-4.2-export
-PKGNAME=	netpipes-4.2
+PORTNAME=	netpipes
+PORTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.purplefrog.com/pub/netpipes/
+DISTNAME=	netpipes-4.2-export
 
 MAINTAINER=	doconnor@gsoft.com.au
 

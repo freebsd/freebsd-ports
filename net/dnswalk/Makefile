@@ -1,11 +1,12 @@
 # New ports collection makefile for:	dnswalk
-# Version required:			2.0.2
 # Date created:				17 January 1998
 # Whom:					Matthew Hunt <mph@pobox.com>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	dnswalk-2.0.2
+PORTNAME=	dnswalk
+PORTVERSION=	2.0.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.visi.com/~barr/dnswalk/
 

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	tinyfugue
-# Version required:	4.0s1
 # Date created:		4 January 1997
 # Whom:			mike@binghamton.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tf-40s1
-PKGNAME=	tf-4.0s1
+PORTNAME=	tf
+PORTVERSION=	4.0s1
 CATEGORIES=	net games
 MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
 		ftp://laurel.actlab.utexas.edu/pub/tinyfugue/ \
 		ftp://ftp.ci.uminho.pt/pub/mirrors/tinyfugue/
+DISTNAME=	tf-40s1
 
 MAINTAINER=	jseger@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:   xtraceroute
-# Version required:    0.8.14
 # Date created:        17 February 2000
 # Whom:                Maxim Sobolev <sobomax@altavista.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xtraceroute-0.8.14
+PORTNAME=	xtraceroute
+PORTVERSION=	0.8.14
 CATEGORIES=	net
 MASTER_SITES=	http://www.dtek.chalmers.se/~d3august/xt/dl/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rrdtool
-# Version required:			1.0.13
 # Date created:				20 July 1999
 # Whom:					Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rrdtool-1.0.13
+PORTNAME=	rrdtool
+PORTVERSION=	1.0.13
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/rrdtool/pub/
 

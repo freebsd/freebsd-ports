@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mrt
-# Version required:	1.5.1a
 # Date created:		Sat Jun  6 00:09:52 JST 1998
 # Whom:			Jun-ichiro itojun Hagino <itojun@itojun.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mrt-${VERBASE}-src
-PKGNAME=	mrt-${VERBASE}
+PORTNAME=	mrt
+PORTVERSION=	2.1.2a
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/
+DISTNAME=	mrt-${PORTVERSION}-src
 
 MAINTAINER=	itojun@itojun.org
 

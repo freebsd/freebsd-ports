@@ -1,12 +1,12 @@
 # Ports collection makefile for:    macipgw
-# Version required:     macipgw-1.0
 # Date created:         25 Nov 1997
 # Whom:                 stb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       macipgw-1.0
+PORTNAME=	macipgw
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.hanse.de/sites/transit/netatalk/ \
 		http://people.FreeBSD.org/~stb/netatalk/

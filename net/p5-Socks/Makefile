@@ -1,16 +1,16 @@
 # New ports collection makefile for:   p5-Socks
-# Version required:    0.03
 # Date created:        22 January 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SOCKS-0.03
-PKGNAME=	p5-Socks-0.03
+PORTNAME=	p5-Socks
+PORTVERSION=	0.03
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
+DISTNAME=	SOCKS-0.03
 
 MAINTAINER=	nakai@FreeBSD.org
 

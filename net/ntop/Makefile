@@ -1,17 +1,17 @@
 # New ports collection makefile for:   ntop
-# Version required:    1.1
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ntop-1.1-src
-PKGNAME=	ntop-1.1
+PORTNAME=	ntop
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \
 		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
+DISTNAME=	ntop-1.1-src
 
 MAINTAINER=	billf@FreeBSD.org
 

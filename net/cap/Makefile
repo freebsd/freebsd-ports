@@ -1,13 +1,12 @@
 # New ports collection makefile for:	cap
-# Version required:		6.0PL198
 # Date created:			09 Nov 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cap60.pl100
-PKGNAME=	cap-6.0.198
+PORTNAME=	cap
+PORTVERSION=	6.0.198
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-ns.rutgers.edu/pub/cap/ \
 		ftp://ftp-ns.rutgers.edu/pub/cap/cap.patches/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp-ns.rutgers.edu/pub/cap/ \
 		ftp://munnari.OZ.AU/mac/cap.patches/ \
 		ftp://ftp.kuis.kyoto-u.ac.jp/net/cap/ \
 		ftp://ftp.kuis.kyoto-u.ac.jp/net/cap/cap60.patches/
-DISTFILES=	${DISTNAME}.tar.Z patches.101-126.tar.Z patches.127-143.tar.Z \
+DISTFILES=	cap60.pl100.tar.Z patches.101-126.tar.Z patches.127-143.tar.Z \
 		patches.144-154.tar.Z patches.155-162.tar.Z \
 		patches.163-182.tar.Z patches.183-192.tar.Z
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zephry
-# Version required:	2.0.4
 # Date created:		1-Aug-1995
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zephyr-2.0.4
+PORTNAME=	zephyr
+PORTVERSION=	2.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/dist/
 

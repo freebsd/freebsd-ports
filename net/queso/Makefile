@@ -1,6 +1,5 @@
 # ex:ts=8
 # Ports collection makefile for:  Queso
-# Version required: 0.0
 # Date created:			  13 Oct 1998
 # Whom:				  Wu Ching-hong <woju@freebsd.ee.ntu.edu.tw>
 # 				  and David O'Brien (obrien@NUXI.com)
@@ -8,7 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	queso-980922
+PORTNAME=	queso
+PORTVERSION=	980922
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/  \
 		${MASTER_SITE_SUNSITE} \

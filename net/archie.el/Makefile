@@ -1,17 +1,17 @@
 # New ports collection makefile for:	archie.el
-# Version required:	3.0.2
 # Date created:		99/10/6
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	archie.el
-PKGNAME=	archie.el-3.0.2
+PORTNAME=	archie.el	
+PORTVERSION=	3.0.2	
 CATEGORIES=	net elisp
 # I don't know the master site
 MASTER_SITES=	ftp://ftp.cis.ohio-state.edu/pub/elisp-lisp/interfaces/ \
 		ftp://ftp.kddlabs.co.jp/.2/gnu-attic/ohio-elisp/interfaces/
+DISTNAME=	archie.el
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=	taoka@FreeBSD.org

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	traceroute
-# Version required:	980831
 # Date created:		20 February 1997
 # Whom:			chris@vader.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	traceroute_${RELEASEDATE}
-PKGNAME=	traceroute-${RELEASEDATE}
+PORTNAME=	traceroute
+PORTVERSION=	${RELEASEDATE}	
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/	\
 	  	http://www.chg.ru/~dima/
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@Chg.RU

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pmf
-# Version required:	1.13.1
 # Date created:		24 Sep 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pmf-1.13.1
+PORTNAME=	pmf
+PORTVERSION=	1.13.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/pmf/
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Net-Telnet
-# Version required:		3.01
 # Date created:			March 3 1998
 # Whom:	      			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       Net-Telnet-3.01
-PKGNAME=        p5-Net-Telnet-3.01
+PORTNAME=	p5-Net-Telnet
+PORTVERSION=	3.01
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
+DISTNAME=	Net-Telnet-3.01
 
 MAINTAINER=	kuriyama@FreeBSD.org
 

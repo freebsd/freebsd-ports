@@ -1,12 +1,12 @@
 # New ports collection makefile for:   NOCOL
-# Version required:            4.3
 # Date created:                21 Nov 1998
 # Whom:                        bradh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nocol-4.3
+PORTNAME=	nocol
+PORTVERSION= 	4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.netplex-tech.com/software/nocol/downloads/
 

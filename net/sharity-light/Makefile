@@ -1,17 +1,17 @@
 # New ports collection makefile for:	sharity-light
-# Version required:	1.0
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Sharity-Light.1.2
-PKGNAME=	sharity-light-1.2
+PORTNAME=	sharity-light
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
 		http://people.FreeBSD.org/~dt/distfiles/
+DISTNAME=	Sharity-Light.1.2
 
 MAINTAINER=	dt@FreeBSD.org
 

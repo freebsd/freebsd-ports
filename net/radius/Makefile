@@ -1,15 +1,15 @@
 # New ports collection makefile for:	radius
-# Version required:	merit radius 2.4.23
 # Date created:		4. July 1996
 # Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	radius.3.6B.basic
-PKGNAME=	radius-basic-3.6B
+PORTNAME=	radius-basic
+PORTVERSION=	3.6B
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.merit.edu/radius/releases/
+DISTNAME=	radius.3.6B.basic
 
 MAINTAINER=	ports@FreeBSD.org
 

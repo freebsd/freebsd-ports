@@ -1,16 +1,16 @@
 # Ports collection makefile for:  libunpipc
-# Version required:		1.0
 # Date created:			Sept 28, 1999
 # Whom:				james@targetnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	unpv22e
-PKGNAME=	libunpipc-1.0
+PORTNAME=	libunpipc
+PORTVERSION=	1.0
 CATEGORIES=     net
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://compass.net.edu.cn:8000/programming/
+DISTNAME=	unpv22e
 
 MAINTAINER=	james@targetnet.com
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for: 	priss
-# Version required: 			1.0.2
 # Date created:				13 September 1999
 # Whom:					Richard Kiss <richard@homemail.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SS1.0.2
-PKGNAME=	priss-1.0
+PORTNAME=	priss
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.streamingserver.org/priss/
+DISTNAME=	SS1.0.2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	richard@homemail.com

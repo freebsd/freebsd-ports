@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-SNMP-Util
-# Version required:			1.6
 # Date created:				September 7 1999
 # Whom:					Bill Fenner <fenner@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SNMP-Util-1.6
-PKGNAME=	p5-SNMP-Util-1.6
+PORTNAME=	p5-SNMP-Util
+PORTVERSION=	1.6
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SNMP
+DISTNAME=	SNMP-Util-1.6
 
 MAINTAINER=	fenner@FreeBSD.org
 

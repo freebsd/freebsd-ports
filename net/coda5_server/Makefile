@@ -1,14 +1,14 @@
 # New ports collection makefile for:	coda-server
-# Version required:			5.3.2
 # Date created:				Mon Oct 18 12:01:28 EDT 1999
 # Whom:					???#
 # $FreeBSD$
 #
 
-DISTNAME=	coda-5.3.2
-PKGNAME=	coda-server-5.3.2
+PORTNAME=	coda-server
+PORTVERSION=	5.3.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
+DISTNAME=	coda-5.3.2
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rvb@cs.cmu.edu

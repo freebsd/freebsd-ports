@@ -1,16 +1,16 @@
 # New ports collection makefile for:	pipsecd
-# Version required:		19991014
 # Date created:			16 Aug 1999
 # Whom:				Patrick Bihan-Faou <patrick@mindstep.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pipsec-19991014
-PKGNAME=	pipsecd-19991014
+PORTNAME=	pipsecd
+PORTVERSION=	19991014
 CATEGORIES=	net security
 MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
 		http://www.mindstep.com/pipsec/
+DISTNAME=	pipsec-19991014
 
 MAINTAINER=	patrick@mindstep.com
 

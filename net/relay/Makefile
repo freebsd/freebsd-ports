@@ -1,17 +1,17 @@
 # ex:ts=8
 # Ports collection makefile for:  relay
-# Version required: 0.0
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	relay
-PKGNAME=	relay-1.10
+PORTNAME=	relay
+PORTVERSION=	1.10
 CATEGORIES=	net security
 MASTER_SITES=	http://www.iagora.com/~espel/  \
 		http://people.FreeBSD.org/~obrien/Distfiles/
+DISTNAME=	relay
 
 MAINTAINER=	obrien@FreeBSD.org
 

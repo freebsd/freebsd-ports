@@ -1,12 +1,12 @@
 # New ports collection makefile for:    rboot
-# Version required:     3.0
 # Date created:         25 Jun 1999
 # Whom:                 m.butkus@tu-bs.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=       rboot-3.0.1
+PORTNAME=	rboot
+PORTVERSION=	3.0.1
 CATEGORIES=	net
 MASTER_SITES=   http://www.bs.ni.schule.de/support/rboot/download/
 

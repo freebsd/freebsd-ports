@@ -1,12 +1,12 @@
 # Ports collection makefile for:  Dante
-# Version required:     	  1.1.1
 # Date created:			  20 October 1999
 # Whom:				  Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dante-1.1.1
+PORTNAME=	dante
+PORTVERSION=	1.1.1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://www.freenix.no/~anders/ \

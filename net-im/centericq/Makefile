@@ -1,14 +1,15 @@
 # New ports collection makefile for:   	centericq
-# Version required:                    	2.0.0
 # Date created:                        	25 December 1999
 # Whom:                                 Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	center-2.0.0
+PORTNAME=	centericq
+PORTVERSION=	2.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
+DISTNAME=	center-${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # Ports collection makefile for:  libunp
-# Version required:		1.0
 # Date created:			Sept 28, 1999
 # Whom:				james@targetnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	unpv12e
-PKGNAME=	libunp-1.0
+PORTNAME=	libunp
+PORTVERSION=	1.0
 CATEGORIES=     net ipv6
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://www.cs.columbia.edu/networks98/stevens/
+DISTNAME=	unpv12e
 
 MAINTAINER=	james@targetnet.com
 

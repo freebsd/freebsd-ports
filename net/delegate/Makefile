@@ -1,15 +1,15 @@
 # New ports collection makefile for:	DeleGate
-# Version required:		5.9.13
 # Date created:			26 Jan 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	delegate5.9.13
-PKGNAME=	delegate-5.9.13
+PORTNAME=	delegate
+PORTVERSION=	5.9.13
 CATEGORIES=	net www japanese
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/DeleGate/
+DISTNAME=	delegate5.9.13
 
 MAINTAINER=	max@FreeBSD.org
 NO_PACKAGE=	"Insecure program."

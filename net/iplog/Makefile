@@ -1,12 +1,12 @@
 # New ports collection makefile for:        iplog
-# Version required:	2.1.1
 # Date created:		4 Oct 1999
 # Whom:			Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iplog-2.1.1
+PORTNAME=	iplog
+PORTVERSION=	2.1.1
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/ojnk/ \
 		ftp://ftp.karlsbakk.net/pub/ojnk/iplog/

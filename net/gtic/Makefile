@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtic
-# Version required:	1.3b
 # Date created:		22 August 1999
 # Whom:			Denis Shaposhnikov <dsh@vlink.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtic-1.3b
+PORTNAME=	gtic
+PORTVERSION=	1.3.b
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cracksoft.kiev.ua/pub/linux/gtic/ \
 		${MASTER_SITE_SUNSITE}

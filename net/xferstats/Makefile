@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xferstats
-# Version required:	2.13
 # Date created:         19 February 1999
 # Whom:                 Dima Sivachenko
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xferstats-2.14
+PORTNAME=	xferstats
+PORTVERSION=	2.14
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/

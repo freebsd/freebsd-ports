@@ -1,12 +1,12 @@
 # New ports collection makefile for:	adns
-# Version required:		0.7
 # Date created:			Mon Mar 3, 2000
 # Whom:				Kostya Lukin <lukin@okbmei.msk.su>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	adns-0.7
+PORTNAME=	adns	
+PORTVERSION=	0.7	
 CATEGORIES=     net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.chiark.greenend.org.uk/users/ian/adns/

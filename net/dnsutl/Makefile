@@ -1,12 +1,12 @@
 # Ports collection makefile for:  dnsutl
-# Version required:     	  1.5
 # Date created:			  Nov 05, 1998
 # Whom:				  Karl Dietz (Karl.Dietz@frankfurt.netsurf.de)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dnsutl-1.5
+PORTNAME=	dnsutl
+PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/dnsutl/ \
 		http://www.tip.net.au/~millerp/dnsutl/  \

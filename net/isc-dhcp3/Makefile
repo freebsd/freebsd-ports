@@ -1,15 +1,15 @@
 # Ports collection makefile for:    dhcp
-# Version required:     2.0
 # Date created:         7 Mar 1996
 # Whom:                 se
 #
 # $FreeBSD$
 #
 
-DISTNAME=       dhcp-2.0
-PKGNAME=	isc-${DISTNAME}
+PORTNAME=	isc-dhcp
+PORTVERSION=	2.0
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
+DISTNAME=	dhcp-${PORTVERSION}
 
 MAINTAINER=	jseger@FreeBSD.org
 

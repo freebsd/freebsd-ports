@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-pRPC
-# Version required:			0.1005
 # Date Created:				Aug 18 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pRPC-modules-0.1005
-PKGNAME=	p5-pRPC-modules-0.1005
+PORTNAME=	p5-pRPC-modules
+PORTVERSION=	0.1005
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
+DISTNAME=	pRPC-modules-0.1005
 
 MAINTAINER=	vanilla@FreeBSD.org
 

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  mopd
-# Version required: 0.0
 # Date created:			  Sun Nov 14, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mopd-2.5.3
+PORTNAME=	mopd
+PORTVERSION=	2.5.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/OS/NetBSD/mopd/  		\
 		http://world.std.com/~bdc/projects/vaxen/netboot/	\

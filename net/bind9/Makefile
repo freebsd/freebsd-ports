@@ -1,12 +1,12 @@
 # New ports collection makefile for:	bind
-# Version required:	8.2.2-P5
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bind-8.2.2.p5
+PORTNAME=	bind
+PORTVERSION=	8.2.2.p5
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.2-P5/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz

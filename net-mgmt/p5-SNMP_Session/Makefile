@@ -1,15 +1,15 @@
 # New ports collection makefile for:	p5-SNMP_Session
-# Version required:			0.72
 # Date created:				13 June 1999
 # Whom:					Stephen J. Roznowski <sjr@home.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	SNMP_Session-0.75
-PKGNAME=	p5-SNMP_Session-0.75
+PORTNAME=	p5-SNMP_Session
+PORTVERSION=	0.75
 CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
+DISTNAME=	SNMP_Session-0.75
 
 MAINTAINER=	ports@FreeBSD.org
 

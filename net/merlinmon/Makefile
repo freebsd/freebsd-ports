@@ -1,15 +1,15 @@
 # Ports collection makefile for:  merlin
-# Version required:		  1.0
 # Date created:			  13 Dec 1999
 # Whom:				  Nick Sayer <nsayer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	merlin-1.0
-PKGNAME=	merlinmon-1.0
+PORTNAME=	merlinmon
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
+DISTNAME=	merlin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nsayer@freebsd.org

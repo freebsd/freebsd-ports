@@ -1,14 +1,12 @@
 # New ports collection makefile for:   tdetect
-# Ports collection makefile for:  tdetect
-# Version required:     	  0.2
 # Date created:			  Sun Jan 31, 1997
 # Whom:               		  shipley@dis.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tdetect-0.2
-PKGNAME=	tdetect-0.2.1
+PORTNAME=	tdetect
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	http://sb.123.org/ \
 		http://www.genocide2600.com/~tattooman/unix-loggers/ \

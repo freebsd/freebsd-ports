@@ -1,12 +1,12 @@
 # New ports collection makefile for:    arpwatch
-# Version required:     2.0.2a1
 # Date created:         March 24 1997
 # Whom:                 Brian Somers <brian@Awfulhak.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	arpwatch-2.1a4
+PORTNAME=	arpwatch
+PORTVERSION=	2.1.a4
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
