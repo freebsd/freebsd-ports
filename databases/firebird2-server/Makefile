@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	databases
-MASTER_SITES=	http://firebird.sourceforge.net/download/ \
-		http://www.aims.com.au/chris/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+		http://www.aims.com.au/chris/firebird/
 MASTER_SITE_SUBDIR=firebird
-DISTFILES=	bootkit-1.0.0.796.tar.gz \
-		bootkit-freebsd-1.0.0.796.tar.gz \
+DISTFILES=	bootkit-1.0.2.908.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
-		Firebird-1.0.0.796.src.tar.gz
+		Firebird-1.0.2.908.src.tar.gz
 
 MAINTAINER=	chris@aims.com.au
 
-WRKSRC=		${WRKDIR}/firebird-1.0.0.796
+WRKSRC=		${WRKDIR}/firebird-1.0.2.908
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
@@ -31,20 +28,23 @@ ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500000
+MANUAL_PACKAGE_BUILD=	"Doesn't compile on NFS on -current"
+.endif
+
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(								\
 	cd ${WRKDIR}; ${TAR} -zxf					\
-		 ${DISTDIR}/Firebird-1.0.0.796.src.tar.gz;		\
-	cd firebird-1.0.0.796;						\
-	${TAR} -zxf ${DISTDIR}/bootkit-1.0.0.796.tar.gz;		\
-	${TAR} -zxf ${DISTDIR}/bootkit-freebsd-1.0.0.796.tar.gz;	\
+		 ${DISTDIR}/Firebird-1.0.2.908.src.tar.gz;		\
+	cd firebird-1.0.2.908;						\
+	${TAR} -zxf ${DISTDIR}/bootkit-1.0.2.908.tar.gz;		\
 	${CP} -f msgs/msg.gbak misc/msg.gbak				\
 	)
 
 post-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
-.if ${OSVERSION} >= 500016 || ${OSVERSION} >= 430001
+.if ${OSVERSION} >= 430001 && ${OSVERSION} < 500000 || ${OSVERSION} >= 500016
 	@${REINPLACE_CMD} -e 's,\-ldescrypt,\-lcrypt,g' \
 		 ${WRKSRC}/builds/original/prefix.freebsd
 .else
@@ -53,16 +53,11 @@ post-patch:
 
 do-configure:
 	@(								\
-	cd ${WRKDIR}/firebird-1.0.0.796;				\
-	INTERBASE=${WRKDIR}/firebird-1.0.0.796/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/firebird-1.0.0.796/refDatabases; export REFDBPATH; \
-	${SH} buildBootDatabases;					\
+	cd ${WRKDIR}/firebird-1.0.2.908;				\
+	INTERBASE=${WRKDIR}/firebird-1.0.2.908/interbase; export INTERBASE; \
+	REFDBPATH=${WRKDIR}/firebird-1.0.2.908/refDatabases; export REFDBPATH; \
 	NOPROMPT_SETUP=yes; export NOPROMPT_SETUP;			\
 	FIREBIRD_64_BIT_IO=yes; export FIREBIRD_64_BIT_IO;		\
-	${CAT} builds_win32/original/build_no.ksh | ${TR} -d '\r'	\
-		> builds_win32/original/build_no.ksh.fix;		\
-	${MV} -f builds_win32/original/build_no.ksh.fix			\
-		 builds_win32/original/build_no.ksh;			\
 	${SH} Configure.sh PROD FREEBSD;				\
 	)
 
@@ -70,14 +65,14 @@ do-build:
 	@(								\
 	${REINPLACE_CMD} -e 's,opt,usr,'				\
 		 ${WRKSRC}/firebird/install/linux/misc/ibmgr;		\
-	${LN} -sf ${WRKDIR}/firebird-1.0.0.796/refDatabases/jrd/isc.gdb	\
-		 ${WRKDIR}/firebird-1.0.0.796/interbase/isc4.gdb;	\
-	${LN} -sf ${WRKDIR}/firebird-1.0.0.796/refDatabases/msgs/msg.gdb \
-		 ${WRKDIR}/firebird-1.0.0.796/msg.gdb;			\
-	cd ${WRKDIR}/firebird-1.0.0.796;				\
-	INTERBASE=${WRKDIR}/firebird-1.0.0.796/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/firebird-1.0.0.796/refDatabases; export REFDBPATH; \
-	${CP} ${PKGDIR}/files/buildit.sh ${WRKDIR}/firebird-1.0.0.796;	\
+	${LN} -sf ${WRKDIR}/firebird-1.0.2.908/refDatabases/jrd/isc.gdb	\
+		 ${WRKDIR}/firebird-1.0.2.908/interbase/isc4.gdb;	\
+	${LN} -sf ${WRKDIR}/firebird-1.0.2.908/refDatabases/msgs/msg.gdb \
+		 ${WRKDIR}/firebird-1.0.2.908/msg.gdb;			\
+	cd ${WRKDIR}/firebird-1.0.2.908;				\
+	INTERBASE=${WRKDIR}/firebird-1.0.2.908/interbase; export INTERBASE; \
+	REFDBPATH=${WRKDIR}/firebird-1.0.2.908/refDatabases; export REFDBPATH; \
+	${CP} ${PKGDIR}/files/buildit.sh ${WRKDIR}/firebird-1.0.2.908;	\
 	${SH} buildit.sh;						\
 	)
 
@@ -86,13 +81,14 @@ pre-install:
 
 do-install:
 	@(								\
-	cd ${WRKDIR}/firebird-1.0.0.796;				\
-	${RM} ${WRKDIR}/firebird-1.0.0.796/interbase/isc4_tmp.gdb || ${TRUE}; \
-	${RM} ${WRKDIR}/firebird-1.0.0.796/interbase/lib/gds.so.1 || ${TRUE}; \
+	cd ${WRKDIR}/firebird-1.0.2.908;				\
+	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/isc4_tmp.gdb || ${TRUE}; \
+	${RM} ${WRKDIR}/firebird-1.0.2.908/interbase/lib/gds.so.1 || ${TRUE}; \
 	${CP} /dev/null interbase/interbase.log;			\
 	${CP} -Rp interbase ${PREFIX}/firebird;				\
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\
+	${RM} ${PREFIX}/firebird/lib/libgds_pyxis.a;			\
 	${LN} -fs gds.so ${PREFIX}/firebird/lib/libgds.so.1;		\
 	cd ${PREFIX}/firebird/examples;					\
 	${TAR} -xzf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;	\

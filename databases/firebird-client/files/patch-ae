@@ -1,18 +1,11 @@
---- jrd/common.h.orig	Thu Dec  6 05:06:37 2001
-+++ jrd/common.h	Wed Nov 13 11:47:17 2002
-@@ -148,6 +148,7 @@
- /* FreeBSD for Intel platforms */
- #ifdef FREEBSD
+--- jrd/common.h.orig	Wed Nov 13 11:44:27 2002
++++ jrd/common.h	Sun Jan  5 16:49:05 2003
+@@ -204,7 +204,7 @@
+ #define I386  1
+ #define VAX   1
+ #define IMPLEMENTATION    isc_info_db_impl_freebsd   /* 61 */
+-#define SETPGRP         setpgrp ()
++#define SETPGRP         setpgrp (0, 0)
+ #define ATEXIT(c)       atexit(c)
  
-+#define UNIX_64_BIT_IO
- #define FB_ALIGN(n,b) ((n + b - 1) & ~(b - 1))
- #define ALIGNMENT     4
- #define DOUBLE_ALIGN  4
-@@ -164,6 +165,7 @@
- #define QUADCONST(n) (n##LL)
- #define KILLER_SIGNALS
- #define MMAP_SUPPORTED
-+#define MAP_ANONYMOUS
- #define SIGACTION_SUPPORTED
- #define NO_NFS        /* no MTAB_OPEN or MTAB_CLOSE in isc_file.c */
- 
+ #define QUADFORMAT "ll"
