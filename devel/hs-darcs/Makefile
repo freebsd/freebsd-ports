@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -23,7 +23,26 @@ ALL_TARGET=	darcs darcs.1
 GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
 			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
 
+.if defined(WITH_CGI)
+ALL_TARGET+=	darcs_cgi
+.if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
+CGIDIR?=	share/apache/cgi-bin
+.else
+CGIDIR?=	www/cgi-bin
+.endif
+PLIST_SUB+=	CGIDIR=${CGIDIR}
+.else
+PLIST_SUB+=	CGIDIR="@comment "
+.endif
+
 MAN1=	darcs.1
+
+pre-everything::
+.if !defined(WITH_CGI)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "To build and install the cgi script define WITH_CGI."
+	@${ECHO_CMD} ""
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<curl|<${PREFIX}/include/curl|' \
@@ -41,5 +60,9 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/darcs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/darcs.1 ${MANPREFIX}/man/man1
+.if defined(WITH_CGI)
+	${MKDIR} ${PREFIX}/${CGIDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/darcs_cgi ${PREFIX}/${CGIDIR}
+.endif
 
 .include <bsd.port.mk>
