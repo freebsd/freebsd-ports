@@ -13,11 +13,11 @@ MASTER_SITES=	http://switch.dl.sourceforge.net/sourceforge/mantisbt/
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A bug tracking system written in PHP
 
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
-		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/lang/php4
+RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/lang/php4
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
+USE_APACHE=	yes
 
 do-install:
 	${ECHO} "Installing in ${PREFIX}/www/data/mantis"
