@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IMAP-Admin
-PORTVERSION=	1.3.7
+PORTVERSION=	1.4.3
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IMAP
@@ -16,8 +16,8 @@ MAINTAINER=	martti.kuparinen@iki.fi
 
 PERL_CONFIGURE=	YES
 
-MAN3=		IMAP::Admin.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		IMAP::Admin.3
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/examples/p5-IMAP-Admin
