@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -17,10 +17,11 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Modules/CLI to determine semantic relatedness using the WordNet
 
 BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet-QueryData \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+		${SITE_PERL}/Text/OverlapFinder.pm:${PORTSDIR}/textproc/p5-Text-Similarity
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WNHOME?=	${LOCALBASE}/share/WordNet-2.0
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	WNHOME=${WNHOME}
@@ -31,10 +32,11 @@ MAN1=		rawtextFreq.pl.1 \
 		similarity.pl.1 \
 		wordVectors.pl.1 \
 		compounds.pl.1 \
-		readDB.pl.1 \
 		brownFreq.pl.1 \
 		treebankFreq.pl.1 \
-		wnDepths.pl.1
+		wnDepths.pl.1 \
+		semCorRawFreq.pl.1 \
+		semCorFreq.pl.1
 MAN3=		WordNet::Similarity.3 WordNet::Similarity::jcn.3 \
 		WordNet::Similarity::hso.3 WordNet::Similarity::vector.3 \
 		WordNet::Similarity::random.3 WordNet::Similarity::res.3 \
