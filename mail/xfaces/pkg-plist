@@ -33,6 +33,7 @@ include/X11/pixmaps/taz.xpm
 include/X11/pixmaps/texas-shape.xpm
 include/X11/pixmaps/texas.xpm
 include/X11/pixmaps/unido-shape.xpm
+include/X11/pixmaps/unknown.xpm
 include/X11/pixmaps/uucp-shape.xpm
 include/X11/pixmaps/uucp.xpm
 include/X11/pixmaps/window.xpm
