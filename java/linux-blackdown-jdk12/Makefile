@@ -23,11 +23,12 @@ RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 NO_CDROM=	"License doesn\'t allow distribution with fee"
 NO_PACKAGE=	"License doesn\'t allow binary distributions"
 
+USE_LINUX=	YES
 ONLY_FOR_ARCHS=	i386
 
 USE_BZIP2=	YES
 WRKSRC=		${WRKDIR}/jdk1.2.2
-NO_BUILD=	yes
+NO_BUILD=	YES
 
 do-install:
 	${MKDIR} ${PREFIX}/linux-jdk1.2.2
