@@ -1,7 +1,8 @@
-# New ports collection makefile for:	wget
-# Version required:	1.5.3
-# Date created:		31 December 1996
-# Whom:			Thomas Gellekum <tg@FreeBSD.org>
+# ex:ts=8
+# Ports collection makefile for:  wget
+# Version required:		  1.5.3
+# Date created:			  31 December 1996
+# Whom:				  Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #

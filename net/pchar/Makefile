@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  pchar
-# Version required:     	  1.0
+# Version required:		  1.0
 # Date created:			  Wed Nov 03, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -11,7 +11,7 @@ DISTNAME=	pchar-1.1.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN8=		pchar.8

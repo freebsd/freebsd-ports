@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:  sfio
-# Version required:	1999
-# Date created: 	8 November 1997
-# Whom:			jraynard
+# Ports collection makefile for:  sfio
+# Version required:		  1999
+# Date created:			  8 November 1997
+# Whom:				  jraynard
 #
 # $FreeBSD$
 #

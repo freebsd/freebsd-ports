@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  tcpshow
-# Version required:     	  1.0
+# Version required:		  1.0
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~obrien/Distfiles/
 #		http://www.cs.berkeley.edu/~daw/mike/
 DISTFILES=	tcpshow.c tcpshow.1
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAN1=		tcpshow.1

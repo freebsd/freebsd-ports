@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:  pathchar
-# Version required:    a0 (a.out systems), a1 (ELF systems)
-# Date created:        7 November 1998
-# Whom:                Josh Gilliam <josh@quick.net>
+# Ports collection makefile for:  pathchar
+# Version required:		  a0 (a.out systems), a1 (ELF systems)
+# Date created:			  7 November 1998
+# Whom:				  Josh Gilliam <josh@quick.net>
 #
 # $FreeBSD$
 #

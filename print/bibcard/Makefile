@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  bibcard
-# Version required:     	  0.6.4
+# Version required:		  0.6.4
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@NUXI.com
 
-LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

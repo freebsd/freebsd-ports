@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    celvis
-# Version required:     1.3
-# Date created:         Thur Aug 15, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Ports collection makefile for:  celvis
+# Version required:		  1.3
+# Date created:			  Thur Aug 15, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.edu.cn/pub/Chinese/
 #	if the distfile becomes unfetchable again.  Note this ver is slightly
 #	different.
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 MAN1=		celvis.1
 MLINKS=		celvis.1 cvi.1

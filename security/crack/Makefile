@@ -1,9 +1,9 @@
 # ex:ts=8
 # Ports collection makefile for:  Crack
-# Version required:	5.0
-# Date created:         12 Jan 1997
-# Whom:			David O'Brien <obrien@FreeBSD.org>
-# Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
+# Version required:		  5.0
+# Date created:			  12 Jan 1997
+# Whom:				  David O'Brien <obrien@FreeBSD.org>
+#				  & Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
 		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
 		ftp://ftp.riken.go.jp/pub/net/cert_security_tools/crack/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 RESTRICTED=	"contains crypto (libdes)"
 WRKSRC=		${WRKDIR}/c50a
@@ -31,13 +31,13 @@ pre-configure:
 
 pre-build:
 	@(if [ ! -f /usr/share/dict/words ];then \
-		${ECHO_MSG} "You may want to install the dict distribution into /usr/share/dict" ; \
-		${ECHO_MSG} "to increase the size of the cracking dictionary." ; \
+	    ${ECHO_MSG} "You may want to install the dict distribution into /usr/share/dict" ; \
+	    ${ECHO_MSG} "to increase the size of the cracking dictionary." ; \
 	fi)
 
 do-build:
-	(cd ${WRKSRC} ; ./Crack -makeonly)
-	(cd ${WRKSRC} ; ./Crack -makedict)
+	cd ${WRKSRC} ; ./Crack -makeonly
+	cd ${WRKSRC} ; ./Crack -makedict
 .if !defined(USE_DES)
 	@#(cd ${WRKSRC} ; ./Crack -fgnd -fmt bsd ${FILESDIR}/pw-md5.test)
 .endif
@@ -45,6 +45,6 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/crack
 	@${RM} -f ${WRKSRC}/Run/*
-	@(cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -))
+	@cd ${WRKSRC} ; tar cf - . | (cd ${PREFIX}/crack; tar xfBp -)
 
 .include <bsd.port.mk>

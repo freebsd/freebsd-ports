@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:	mixal
-# Version required:	1.06
-# Date created:		21-Dec-1996
-# Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
+# Ports collection makefile for:  mixal
+# Version required:		  1.06
+# Date created:			  21-Dec-1996
+# Whom:                 	  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ccil.org/retro/  \
 		ftp://locke.ccil.org/pub/retro/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=

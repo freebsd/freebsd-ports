@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  icmpinfo
-# Version required:     	  1.11
+# Version required:		  1.11
 # Date created:			  Mon June 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://hplyot.obspm.fr/net/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/admin
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=	obrien@NUXI.com
 
 ALL_TARGET=
 MAN1=		icmpinfo.1

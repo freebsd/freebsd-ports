@@ -1,7 +1,8 @@
-# New ports collection makefile for:    iozone
-# Version required:     2.01
-# Date created:         26 September 1994
-# Whom:                 jmz
+# ex:ts=8
+# Ports collection makefile for:  iozone
+# Version required:		  2.01
+# Date created:			  26 September 1994
+# Whom:				  jmz
 #
 # $FreeBSD$
 #

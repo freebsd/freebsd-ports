@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:	netscape (full communicator version)
-# Version required:     4.04-us
-# Date created:         14 Feb 1998
-# Whom:                 obrien@cs.ucdavis.edu
+# Ports collection makefile for:  netscape (full communicator version)
+# Version required:		  4.04-us
+# Date created:			  14 Feb 1998
+# Whom:				  obrien@cs.ucdavis.edu
 #
 # $FreeBSD$
 #

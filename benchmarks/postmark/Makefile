@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  postmark
-# Version required:     	  1.11
+# Version required:		  1.11
 # Date created:			  Sat Sep 18, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.netapp.com/ftp/  \
 		http://www.taronga.com/~nick/files/
 EXTRACT_SUFX=	.c
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 

@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    lprps (letter)
-# Version required:     2.50
-# Date created:         Sat Aug 3, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Ports collection makefile for:  lprps (letter)
+# Version required:		  2.50
+# Date created:			  Sat Aug 3, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.jclark.com/pub/lprps/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 MAKE_FLAGS?=	PAPERSIZE=${PS} -f
 MAN1=		psrev.1 textps.1

@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:    Sather
 # Version required:     1.0.5
 # Date created:         Mon Oct 31 22:04:12 PST 1994

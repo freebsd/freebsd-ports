@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    MaRS
-# Version required:     2.1
-# Date created:         Mon Nov 18, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Ports collection makefile for:  MaRS
+# Version required:		  2.1
+# Date created:			  Mon Nov 18, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

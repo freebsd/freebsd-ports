@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    netcat
-# Version required:     1.10
-# Date created:         Thur Nov 21, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Ports collection makefile for:  netcat
+# Version required:		  1.10
+# Date created:			  Thur Nov 21, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://avian.org/src/hacks/  \
 		ftp://ftp.rge.com/pub/security/coast/mirrors/avian.org/netcat/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd

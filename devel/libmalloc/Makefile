@@ -1,7 +1,8 @@
-# New ports collection makefile for:	Mark Moraes malloc library
-# Version required:	1.18
-# Date created:		11 January 1995
-# Whom:			jkh
+# ex:ts=8
+# Ports collection makefile for:  Mark Moraes malloc library
+# Version required:		  1.18
+# Date created:			  11 January 1995
+# Whom:				  jkh
 #
 # $FreeBSD$
 #
@@ -19,7 +20,7 @@ MANUAL_PACKAGE_BUILD=	installs malloc.h
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	@(cd ${PREFIX}/include ; ${LN} -sf malloc.h libmalloc.h)
+	@cd ${PREFIX}/include ; ${LN} -sf malloc.h libmalloc.h
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/libmalloc
 	${INSTALL_DATA} ${WRKSRC}/malloc.doc ${PREFIX}/share/doc/libmalloc
