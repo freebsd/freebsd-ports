@@ -50,6 +50,8 @@ v6eval/bin/freebsd-i386/setDNS.rmt
 v6eval/bin/freebsd-i386/showAddr.rmt
 v6eval/bin/freebsd-i386/tunnel.rmt
 v6eval/bin/freebsd-i386/useTempAddr.rmt
+v6eval/bin/freebsd-i386/pim6dd.rmt
+v6eval/bin/freebsd-i386/sysctl.rmt
 v6eval/bin/freebsd43-i386/cleardefr.rmt
 v6eval/bin/freebsd43-i386/clearnc.rmt
 v6eval/bin/freebsd43-i386/clearprefix.rmt
@@ -158,6 +160,8 @@ v6eval/bin/kame-freebsd/setDNS.rmt
 v6eval/bin/kame-freebsd/showAddr.rmt
 v6eval/bin/kame-freebsd/tunnel.rmt
 v6eval/bin/kame-freebsd/useTempAddr.rmt
+v6eval/bin/kame-freebsd/pim6dd.rmt
+v6eval/bin/kame-freebsd/sysctl.rmt
 v6eval/bin/kame-netbsd-i386/cleardefr.rmt
 v6eval/bin/kame-netbsd-i386/clearnc.rmt
 v6eval/bin/kame-netbsd-i386/clearprefix.rmt
@@ -249,6 +253,8 @@ v6eval/bin/manual/setDNS.rmt
 v6eval/bin/manual/showAddr.rmt
 v6eval/bin/manual/tunnel.rmt
 v6eval/bin/manual/useTempAddr.rmt
+v6eval/bin/manual/pim6dd.rmt
+v6eval/bin/manual/sysctl.rmt
 v6eval/bin/mgcs-sj6/cleardefr.rmt
 v6eval/bin/mgcs-sj6/clearnc.rmt
 v6eval/bin/mgcs-sj6/clearprefix.rmt
@@ -478,6 +484,8 @@ v6eval/bin/unknown/setDNS.rmt
 v6eval/bin/unknown/showAddr.rmt
 v6eval/bin/unknown/tunnel.rmt
 v6eval/bin/unknown/useTempAddr.rmt
+v6eval/bin/unknown/pim6dd.rmt
+v6eval/bin/unknown/sysctl.rmt
 v6eval/bin/usagi-i386/cleardefr.rmt
 v6eval/bin/usagi-i386/clearnc.rmt
 v6eval/bin/usagi-i386/clearprefix.rmt
@@ -496,6 +504,8 @@ v6eval/bin/usagi-i386/reboot_async.rmt
 v6eval/bin/usagi-i386/route.rmt
 v6eval/bin/usagi-i386/rtadvd.rmt
 v6eval/bin/usagi-i386/tunnel.rmt
+v6eval/bin/usagi-i386/racontrol.rmt
+v6eval/bin/usagi-i386/sysctl.rmt
 v6eval/bin/usagi24-i386/cleardefr.rmt
 v6eval/bin/usagi24-i386/clearnc.rmt
 v6eval/bin/usagi24-i386/clearprefix.rmt
@@ -576,6 +586,14 @@ v6eval/man/man1/pktsend.1.gz
 @dirrm v6eval/man
 @unexec rmdir %D/v6eval/etc 2>/dev/null || true
 @dirrm v6eval
+lib/perl5/%%PERL_VERSION%%/man/man3/V6evalRemote.3
+lib/perl5/%%PERL_VERSION%%/man/man3/V6evalTool.3
 %%SITE_PERL%%/V6evalCommon.pm
 %%SITE_PERL%%/V6evalRemote.pm
 %%SITE_PERL%%/V6evalTool.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalCommon/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalRemote/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalTool/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalCommon 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalRemote 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/V6evalTool 2>/dev/null || true
