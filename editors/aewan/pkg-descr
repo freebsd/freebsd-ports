@@ -1,0 +1,16 @@
+Aewan is a multi-layered ascii-art/animation editor that
+produces both stand-alone cat-able art files and an
+easy-to-parse format for integration in your terminal
+applications.
+
+Aewan is a curses-based program that allows for the creation
+and editing of ascii art. The user is able to move the cursor
+around the screen by means of the arrow keys and 'paint'
+characters by pressing the corresponding keys. There are dialog
+boxes that allow the user to choose foreground and background
+colors, as well as bold and blink attributes. The user may also
+select rectangular areas of the canvas in order to move, copy
+and paste them. Aewan also supports 'intelligent' horizontal
+and vertical flipping (e.g. converts '\' to '/', etc).
+
+WWW: http://aewan.sourceforge.net/

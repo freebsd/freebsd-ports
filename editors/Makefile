@@ -6,6 +6,7 @@
     SUBDIR += AbiWord2
     SUBDIR += MathPlanner
     SUBDIR += aee
+    SUBDIR += aewan
     SUBDIR += apel
     SUBDIR += apel-emacs19
     SUBDIR += apel-emacs20
