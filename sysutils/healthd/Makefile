@@ -15,7 +15,7 @@ MASTER_SITES=	http://healthd.thehousleys.net/ \
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
