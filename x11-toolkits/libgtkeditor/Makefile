@@ -29,9 +29,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
-.for file in install-sh config.sub mkinstalldirs
+.for file in install-sh mkinstalldirs
 	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
 .endfor
+	@${RM} ${WRKSRC}/config.guess ${WRKSRC}/config.sub
+	@${TOUCH} ${WRKSRC}/config.sub
 
 post-configure:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/scanner.c
