@@ -15,12 +15,12 @@
 -@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs test
 +@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs
  
- # @(#) $Id: Makefile.am,v 1.31 2003/11/17 12:27:39 yeti Exp $
+ # @(#) $Id: Makefile.am,v 1.32 2004/05/24 19:32:31 yeti Exp $
 -@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs test
 +@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs
  man_MANS = man/enca.1
- 
  DISTCHECK_CONFIGURE_FLAGS = --enable-maintainer-mode
+ M4TESTS = \
 @@ -204,7 +205,7 @@
    $(M4TESTS)
  

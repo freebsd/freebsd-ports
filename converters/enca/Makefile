@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://kf.fyz.fce.vutbr.cz/~yeti/Ftp/enca/
 
@@ -21,9 +20,10 @@ USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/enca \
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--without-librecode \
 		--with-libiconv=${LOCALBASE}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
