@@ -2,6 +2,7 @@
 #
     SUBDIR += ziarc
 
+    SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
     SUBDIR += calculix
