@@ -7,6 +7,7 @@
 
 PORTNAME=	kermit
 PORTVERSION=	8.0.209
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
@@ -43,6 +44,7 @@ MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
 	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ckaaaa.txt ${DOCSDIR}/READ.ME
 	@for file in COPYING.TXT ckcbwr.txt ckccfg.txt ckcplm.txt \
@@ -51,6 +53,7 @@ do-install:
 	    ${ECHO} "Installing ${DOCSDIR}/$${file} ..." ; \
 	    ${INSTALL_DATA} ${WRKSRC}/$${file} ${DOCSDIR}; \
 	done
+.endif
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ckermit.ini ${EXAMPLESDIR}/dot.kermrc
 	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLESDIR}/dot.mykermrc
