@@ -1,15 +1,5 @@
 --- configure.orig	Wed Jul 23 22:20:56 2003
 +++ configure	Fri Aug  1 12:56:48 2003
-@@ -19273,7 +19273,8 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 @@ -19567,7 +19568,7 @@
  
      echo "$as_me:$LINENO: checking where to install panel plugins" >&5
