@@ -1,6 +1,18 @@
-diff -ur ../../nmh-1.0.2-DIST/acconfig.h ./acconfig.h
---- ../../nmh-1.0.2-DIST/acconfig.h	Thu Oct 21 11:58:09 1999
-+++ ./acconfig.h	Sat Dec 11 11:54:28 1999
+--- ../../../nmh-1.0.2-DIST/acconfig.h	Thu Oct 21 11:58:09 1999
++++ ./acconfig.h	Fri Dec 24 13:50:12 1999
+@@ -22,10 +22,10 @@
+  * other programs which may modify your maildrops.
+  * Currently you can only use one type.
+  */
+-#define DOT_LOCKING   1
++/* #define DOT_LOCKING   1 */
+ /* #define FCNTL_LOCKING 1 */
+ /* #define LOCKF_LOCKING 1 */
+-/* #define FLOCK_LOCKING 1 */
++#define FLOCK_LOCKING 1
+ 
+ /*
+  * If you have defined DOT_LOCKING, then the default is to
 @@ -104,7 +104,7 @@
   * The prefix which is prepended to the name of messages when they
   * are "removed" by rmm.  This should typically be `,' or `#'
