@@ -3,7 +3,7 @@
 # Date created:		14 Jan 1998
 # Whom:			Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/09/15 11:13:25 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/17 00:32:43 asami Exp $
 
 DISTNAME=	ja-Wine-971130
 PKGNAME=	ja-wine-97.11.30
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTFILES=	Wine-971130.tar.gz Wine971130-jp.tar.gz
 
-MAINTAINER=	Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
+MAINTAINER=	j1594016@ed.kagu.sut.ac.jp
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
