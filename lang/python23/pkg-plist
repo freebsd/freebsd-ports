@@ -1130,7 +1130,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/_ssl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_testcapi.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_weakref.so
 lib/%%PYTHON_VERSION%%/lib-dynload/array.so
-%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/audioop.so
+lib/%%PYTHON_VERSION%%/lib-dynload/audioop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/binascii.so
 lib/%%PYTHON_VERSION%%/lib-dynload/bsddb185.so
 lib/%%PYTHON_VERSION%%/lib-dynload/bz2.so
