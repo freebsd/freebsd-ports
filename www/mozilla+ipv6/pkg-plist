@@ -979,6 +979,7 @@ lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/pref/xpinstall.js
 lib/mozilla/defaults/profile/bookmarks.html
 lib/mozilla/defaults/profile/panels.rdf
+lib/mozilla/dtd/mathml.dtd
 lib/mozilla/geturl
 lib/mozilla/htmlrobot
 lib/mozilla/libDebugRobot.so
@@ -1295,6 +1296,7 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/entityTables
 @dirrm lib/mozilla/res
 @dirrm lib/mozilla/plugins
+@dirrm lib/mozilla/dtd
 @dirrm lib/mozilla/defaults/profile
 @dirrm lib/mozilla/defaults/pref
 @dirrm lib/mozilla/defaults
