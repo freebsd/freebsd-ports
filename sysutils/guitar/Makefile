@@ -3,7 +3,7 @@
 # Date created:			Sat Aug 14 1999
 # Whom:				domi@saargate.de
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	guiTAR-0.1.4
