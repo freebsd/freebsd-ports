@@ -1,0 +1,5 @@
+Xgame launches your game in a separate X session. This allows gamers to
+switch between their desktop and their game with ease. The new X session
+does not run a desktop or window manager. Furthermore, since the game is run
+in a separate X session, the resolution and color depth of the desktop and
+game may be different.

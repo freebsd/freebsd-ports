@@ -540,6 +540,7 @@
     SUBDIR += xflame
     SUBDIR += xfrisk
     SUBDIR += xgalaga
+    SUBDIR += xgame
     SUBDIR += xgammon
     SUBDIR += xgolgo
     SUBDIR += xgospel
