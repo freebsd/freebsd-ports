@@ -1,5 +1,5 @@
---- database.c.orig	Fri Jan  1 22:35:33 1999
-+++ database.c	Sun Aug  3 19:55:32 2003
+--- server/database.c.orig	Fri Jan  1 22:35:33 1999
++++ server/database.c	Sun Aug  3 19:55:32 2003
 @@ -560,15 +560,15 @@
    char **cp;
    struct in_addr *subnet;
