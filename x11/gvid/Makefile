@@ -8,7 +8,7 @@
 PORTNAME=	gvid
 PORTVERSION=	0.2
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://kvand.mit.edu/gVid/ \
+MASTER_SITES=	http://kvand.mit.edu/kvand/gVid/ \
 		ftp://ftp.proxad.net/mirrors/ftp.linuxberg.com/files/gnome/xwin/ \
 		ftp://ftp.sunsite.auc.dk/disk1/linuxberg.com/files/gnome/xwin/ \
 		ftp://ftp.infomagic.com/pub/mirrors/tucows/mlinux/files/gnome/xwin/ \
