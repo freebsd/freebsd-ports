@@ -17,6 +17,13 @@ MAINTAINER=	andreas@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 
+.if defined(USE_INET6)
+PLIST=		${PKGDIR}/PLIST.v6
+.else
+CONFIGURE_ARGS+=--disable-ospf6d --disable-ripngd
+PLIST=		${PKGDIR}/PLIST
+.endif
+
 post-install:
 	@${ECHO} "===>     installing zebra startup file..."
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
