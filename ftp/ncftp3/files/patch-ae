@@ -1,36 +1,11 @@
-*** libncftp/Makefile.in.orig	Thu Nov 13 04:43:48 1997
---- libncftp/Makefile.in	Tue Sep  8 00:22:36 1998
-***************
-*** 14,20 ****
-  LIBS=-lStrn @LIBS@
-  LDFLAGS=-L@srcdir@/../Strn @LDFLAGS@
-  LIB=libncftp.a
-! LIBSO=libncftp.so.2
-  LIBSOS=libncftp.so
-  
-  # Any -D definitions:
---- 14,20 ----
-  LIBS=-lStrn @LIBS@
-  LDFLAGS=-L@srcdir@/../Strn @LDFLAGS@
-  LIB=libncftp.a
-! LIBSO=libncftp.so.2.0
-  LIBSOS=libncftp.so
-  
-  # Any -D definitions:
-***************
-*** 55,61 ****
-  
-  $(LIBSO): $(SOBJS)
-  	/bin/rm -f $(LIBSO) $(LIBSOS)
-! 	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
-  	/bin/ln -s $(LIBSO) $(LIBSOS)
-  	-@/bin/ls -l $(LIBSO)
-  
---- 55,61 ----
-  
-  $(LIBSO): $(SOBJS)
-  	/bin/rm -f $(LIBSO) $(LIBSOS)
-! 	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
-  	/bin/ln -s $(LIBSO) $(LIBSOS)
-  	-@/bin/ls -l $(LIBSO)
-  
+--- libncftp/Makefile.in.orig	Wed Nov 12 17:43:48 1997
++++ libncftp/Makefile.in	Sat Sep 26 19:48:19 1998
+@@ -55,7 +55,7 @@
+ 
+ $(LIBSO): $(SOBJS)
+ 	/bin/rm -f $(LIBSO) $(LIBSOS)
+-	gcc -shared -Wl,-soname,$(LIBSO) -o $(LIBSO) $(SOBJS)
++	$(CC) -shared -Wl,-x -o $(LIBSO) `lorder $(SOBJS) | tsort -q`
+ 	/bin/ln -s $(LIBSO) $(LIBSOS)
+ 	-@/bin/ls -l $(LIBSO)
+ 

@@ -1,7 +1,7 @@
-lib/libStrn.so.1.0
-lib/libncftp.so.2.0
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+lib/libStrn.so.1
+lib/libncftp.so.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 bin/ncftp3
 bin/ncftpbatch
 bin/ncftpget
