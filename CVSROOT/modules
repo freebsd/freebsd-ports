@@ -1189,6 +1189,7 @@ dis		ports/lang/dis
 discid		ports/audio/discid
 disco		ports/net/disco
 diskcheckd	ports/sysutils/diskcheckd
+disktool	ports/sysutils/disktool
 disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
