@@ -3,14 +3,14 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.10 1998/06/07 09:32:33 dburr Exp $
+# $Id: Makefile,v 1.11 1998/09/11 15:40:16 alex Exp $
 #
 
-VGABIOS=	VGABIOS-elpin-2.00A
-BIOS=		BIOS-bochs-980331a
-DATE= 		980513
+VGABIOS=	VGABIOS-elpin-2.20
+BIOS=		BIOS-bochs-980717a
+DATE= 		981102
 
-DISTNAME=	bochs-${DATE}a
+DISTNAME=	bochs-${DATE}b
 CATEGORIES= 	emulators
 MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
