@@ -31,22 +31,22 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uae ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/readdisk ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/COMPATIBILITY ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/CREDITS ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/NEWS ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/README ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/README.PROGRAMMERS ${PREFIX}/share/uae
-	${INSTALL_DATA} ${WRKSRC}/docs/unix/README ${PREFIX}/share/uae/README.unix
-	@${MKDIR} ${PREFIX}/share/uae/amiga
-	${INSTALL_DATA} ${WRKSRC}/amiga/mousehack ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/timehack ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/transdisk ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/transrom ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control.info ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uae_rcli ${PREFIX}/share/uae/amiga/
-	${INSTALL_DATA} ${WRKSRC}/amiga/uaectrl ${PREFIX}/share/uae/amiga/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/COMPATIBILITY ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/CREDITS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/NEWS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README.PROGRAMMERS ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/unix/README ${DOCSDIR}/README.unix
+	@${MKDIR} ${DATADIR}/amiga
+	${INSTALL_DATA} ${WRKSRC}/amiga/mousehack ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/timehack ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/transdisk ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/transrom ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae-control.info ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uae_rcli ${DATADIR}/amiga/
+	${INSTALL_DATA} ${WRKSRC}/amiga/uaectrl ${DATADIR}/amiga/
 
 .include <bsd.port.mk>
