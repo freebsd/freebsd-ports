@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/ \
 		http://maradns.3va.net/download/ \
@@ -63,7 +63,6 @@ do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/en/misc/spammers/hiddenonline
 	${INSTALL_DATA} ${WRKSRC}/00README.FIRST ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO.* ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/en/QuickStart ${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/README ${DOCSDIR}/en
 	${INSTALL_DATA} ${WRKSRC}/doc/en/faq.* ${DOCSDIR}/en
