@@ -1,17 +1,13 @@
 --- ../connectivity/source/drivers/mozab/mozillasrc/makefile.mk.orig	Tue Mar 19 12:56:24 2002
-+++ ../connectivity/source/drivers/mozab/mozillasrc/makefile.mk	Sat May 18 14:16:19 2002
-@@ -62,10 +62,10 @@
- CALL_CDECL=TRUE
- 
++++ ../connectivity/source/drivers/mozab/mozillasrc/makefile.mk	Sat May 18 15:51:13 2002
+@@ -64,8 +64,8 @@
  #mozilla specific stuff.
--MOZ_LIB=$(SOLARVERSION)$/$(INPATH)$/lib$(UPDMINOREXT)
--MOZ_INC=$(SOLARVERSION)$/$(INPATH)$/inc$(UPDMINOREXT)$/mozilla
+ MOZ_LIB=$(SOLARVERSION)$/$(INPATH)$/lib$(UPDMINOREXT)
+ MOZ_INC=$(SOLARVERSION)$/$(INPATH)$/inc$(UPDMINOREXT)$/mozilla
 -#MOZ_LIB=$(PRJ)$/$(INPATH)$/lib
 -#MOZ_INC=$(PRJ)$/$(INPATH)$/inc$/mozilla
-+#MOZ_LIB=$(SOLARVERSION)$/$(INPATH)$/lib$(UPDMINOREXT)
-+#MOZ_INC=$(SOLARVERSION)$/$(INPATH)$/inc$(UPDMINOREXT)$/mozilla
-+MOZ_LIB=$(PRJ)$/..$/moz$/$(INPATH)$/lib
-+MOZ_INC=$(PRJ)$/..$/moz$/$(INPATH)$/inc$/mozilla
++#MOZ_LIB=$(PRJ)$/..$/moz$/$(INPATH)$/lib
++#MOZ_INC=$(PRJ)$/..$/moz$/$(INPATH)$/inc$/mozilla
  #End of mozilla specific stuff.
  
  PRJ=..$/..$/..$/..
