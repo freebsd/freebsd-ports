@@ -90,7 +90,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/irb/multi-irb.rb
 %%RUBY_LIBDIR%%/irb/locale.rb
 %%RUBY_LIBDIR%%/irb/loader.rb
-%%RUBY_LIBDIR%%/irb/irb.rb
 %%RUBY_LIBDIR%%/irb/input-method.rb
 %%RUBY_LIBDIR%%/irb/init.rb
 %%RUBY_LIBDIR%%/irb/help.rb
