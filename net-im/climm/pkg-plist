@@ -1,13 +1,13 @@
 bin/micq
-%%PORTDOCS%%share/doc/micq/README.i18n
-%%PORTDOCS%%share/doc/micq/README.logformat
-%%PORTDOCS%%share/doc/micq/icq091.txt
-%%PORTDOCS%%share/doc/micq/icqv7.txt
-%%PORTDOCS%%share/doc/micq/micq.xpm
-%%PORTDOCS%%share/doc/micq/micq@16x16.png
-%%PORTDOCS%%share/doc/micq/micq@24x24.png
-%%PORTDOCS%%share/doc/micq/micq@32x32.png
-%%PORTDOCS%%share/doc/micq/micq@48x48.png
+%%PORTDOCS%%%%DOCSDIR%%/README.i18n
+%%PORTDOCS%%%%DOCSDIR%%/README.logformat
+%%PORTDOCS%%%%DOCSDIR%%/icq091.txt
+%%PORTDOCS%%%%DOCSDIR%%/icqv7.txt
+%%PORTDOCS%%%%DOCSDIR%%/micq.xpm
+%%PORTDOCS%%%%DOCSDIR%%/micq@16x16.png
+%%PORTDOCS%%%%DOCSDIR%%/micq@24x24.png
+%%PORTDOCS%%%%DOCSDIR%%/micq@32x32.png
+%%PORTDOCS%%%%DOCSDIR%%/micq@48x48.png
 share/micq/C.i18n
 share/micq/bg.i18n
 share/micq/de.i18n
@@ -35,4 +35,4 @@ share/micq/uk.i18n
 share/micq/yu.i18n
 share/micq/zh_CN.i18n
 @dirrm share/micq
-%%PORTDOCS%%@dirrm share/doc/micq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
