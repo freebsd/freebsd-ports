@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
-PORTVERSION?=	7.4.6
+PORTVERSION?=	7.4.7
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -48,7 +48,7 @@ PKGMESSAGE=	${WRKDIR}/.pkg-message${PKGNAMESUFFIX}
 .if !defined(CLIENT_ONLY) && !defined(SLAVE_ONLY)
 SERVER_ONLY=	yes
 USE_RC_SUBR=	yes
-RCSCRIPT=	${PREFIX}/etc/rc.d/postgresql.sh
+RCSCRIPT=	${PREFIX}/etc/rc.d/010.pgsql.sh
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 .endif
@@ -109,7 +109,7 @@ CFLAGS+=	-O3 -funroll-loops
 .  endif
 
 .  if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
+CONFIGURE_ARGS+=--enable-debug
 INSTALL_TARGET=	install
 .  else
 INSTALL_TARGET=	install-strip
@@ -245,7 +245,7 @@ do-install:
 	${CHOWN} root:pgsql ${RCSCRIPT} ;\
 	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${MKDIR} ${PREFIX}/etc/periodic/daily ;\
-	${INSTALL_DATA} ${FILESDIR}/502.pgsql \
+	${INSTALL_SCRIPT} ${FILESDIR}/502.pgsql \
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 	@ if [ -r ${PKGMESSAGE} ]; then \

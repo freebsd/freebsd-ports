@@ -475,6 +475,11 @@ share/postgresql/pg_service.conf.sample
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/psql.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/libpq.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_resetxlog.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/pgscripts.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_dump.mo
