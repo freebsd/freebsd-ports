@@ -1,5 +1,5 @@
 --- session.c.orig	Wed Jun 26 15:51:06 2002
-+++ session.c	Sun Jun 30 21:24:32 2002
++++ session.c	Mon Jul  1 21:33:04 2002
 @@ -64,6 +64,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -245,32 +245,41 @@
  	char **env;
 +#ifdef HAVE_LOGIN_CAP
 +	extern char **environ;
-+	char **senv;
-+#endif
++	char **senv, **var;
++#endif /* HAVE_LOGIN_CAP */
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -953,13 +1102,18 @@
- 	copy_environment(environ, &env, &envsize);
- #endif
+@@ -945,6 +1094,9 @@
+ 	env = xmalloc(envsize * sizeof(char *));
+ 	env[0] = NULL;
  
++	/* Moved up to resove confict with gsssapi patches */
 +	if (getenv("TZ"))
 +		child_set_env(&env, &envsize, "TZ", getenv("TZ"));
- 	if (!options.use_login) {
-+#ifdef HAVE_LOGIN_CAP
-+		char *var;
-+#endif /* HAVE_LOGIN_CAP */
-+
- 		/* Set basic environment. */
+ #ifdef HAVE_CYGWIN
+ 	/*
+ 	 * The Windows environment contains some setting which are
+@@ -958,10 +1110,6 @@
  		child_set_env(&env, &envsize, "USER", pw->pw_name);
  		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
  		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
- #ifdef HAVE_LOGIN_CAP
+-#ifdef HAVE_LOGIN_CAP
 -		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
- 		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
- #else /* HAVE_LOGIN_CAP */
+-		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
+-#else /* HAVE_LOGIN_CAP */
  # ifndef HAVE_CYGWIN
-@@ -984,9 +1138,19 @@
+ 		/*
+ 		 * There's no standard path on Windows. The path contains
+@@ -976,7 +1124,6 @@
+ 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
+ #  endif /* SUPERUSER_PATH */
+ # endif /* HAVE_CYGWIN */
+-#endif /* HAVE_LOGIN_CAP */
+ 
+ 		snprintf(buf, sizeof buf, "%.200s/%.50s",
+ 			 _PATH_MAILDIR, pw->pw_name);
+@@ -984,9 +1131,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -283,6 +292,8 @@
 +			perror("unable to set user context enviroment");
 +		}
 +		copy_environment(environ, &env, &envsize);
++		for (var = environ; *var != NULL; ++var)
++			xfree(*var);
 +		xfree(environ);
 +		environ = senv;
 +#endif /* HAVE_LOGIN_CAP */
@@ -292,7 +303,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1174,7 +1338,7 @@
+@@ -1174,7 +1333,7 @@
  		setpgid(0, 0);
  #endif
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -301,7 +312,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1325,7 +1489,7 @@
+@@ -1325,7 +1484,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -310,7 +321,7 @@
  		close(i);
  
  	/*
-@@ -1355,6 +1519,31 @@
+@@ -1355,6 +1514,31 @@
  			exit(1);
  #endif
  	}
