@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Display information gathered from MB power management controller
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 MAN8=		lmmon.8
