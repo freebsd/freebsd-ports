@@ -40,7 +40,7 @@ mode=local
 usage="
   local Usage:  edit-pr [-V|--version] [-h|--help] PR
 
-network Usage: nedit-pr [-V|--version] [-h|--help] [-d|--directory gnats_db_alias] 
+network Usage: nedit-pr [-V|--version] [-h|--help] [-d|--directory gnats_db_alias]
                         [-H|--host hostname] [-P|--port port_number]
                         [-v|--user userid]   [-w|--passwd password]  PR
 "
@@ -208,7 +208,7 @@ while [ "$checking" != "" ]; do
     echo "$errors"
     read fixme
     case "$fixme" in
-      q* | Q*) 
+      q* | Q*)
         echo "PR $pr_id not updated: changed file is in $new.changed"
         mv $new $new.changed
 	$PR_EDIT --unlock $pr_id

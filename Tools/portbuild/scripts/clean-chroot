@@ -18,7 +18,7 @@ fi
 if [ ${arch} = "i386" ]; then
   chroot ${chroot} umount -f /compat/linux/proc
 fi
-  
+
 umount -f ${chroot}/a/ports 2> /dev/null
 umount -f ${chroot}/usr/opt/doc 2> /dev/null
 umount -f ${chroot}/usr/src 2> /dev/null

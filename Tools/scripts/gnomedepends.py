@@ -2,7 +2,7 @@
 #
 # gnomedepends
 # Analyse pkg/PLIST and give an advice as to which GNOME
-# ports should be listes in {RUN,LIB}_DEPENDS for this port 
+# ports should be listes in {RUN,LIB}_DEPENDS for this port
 #
 # ----------------------------------------------------------------------------
 # "THE BEER-WARE LICENSE" (Revision 42, (c) Poul-Henning Kamp):

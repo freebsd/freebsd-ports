@@ -36,7 +36,7 @@ if [ "$nocopy" = 0 ]; then
     echo "not copying bindist to $(hostname) since it is already up to date"
   else
     echo "copying bindist to $(hostname)"
-    if [ ${disconnected} = 0 ]; then  
+    if [ ${disconnected} = 0 ]; then
       cp -p ${pb}/${arch}/${branch}/tarballs/bindist.tar ${tmpdir}/${branch}/tarballs
     fi
   fi

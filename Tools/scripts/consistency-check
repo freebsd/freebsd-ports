@@ -98,7 +98,7 @@ foreach (sort keys %files) {
 					"DIFFERENT from fs md5 of $fsmd5tmp!\n";
 			}
 		}
-	} 
+	}
 }
 
 exit;

@@ -8,7 +8,7 @@
 # information has been updated in the last 15 seconds (should be updated by
 # the reportload script every 5 seconds).  If so, then divide the number of
 # running jobs on the client by its weighting in mlist, and output the
-# machine(s) with the minimum value to ${buildroot}/ulist. 
+# machine(s) with the minimum value to ${buildroot}/ulist.
 #
 # Dividing by the weight has the effect of grouping machines with similar
 # job load (e.g. a weight of 5 will rank machines with job loads 0, 1, 2, 3, 4
@@ -23,7 +23,7 @@ arches=$*
 while true; do
   for i in ${arches}; do
     mlist=${buildroot}/${i}/mlist
-  
+
     set $(cat $mlist)
     while [ $# -gt 0 ]; do
       m=$1

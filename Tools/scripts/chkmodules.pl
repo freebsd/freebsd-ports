@@ -114,7 +114,7 @@ print join("\n ",
 
 print join("\n ",
     "\nModules that are not sorted correctly:",
-    map("$_: $missorted{$_}", sort { $a <=> $b } keys %missorted)), "\n" 
+    map("$_: $missorted{$_}", sort { $a <=> $b } keys %missorted)), "\n"
   if %missorted;
 
 print join("\n ",

@@ -10,9 +10,9 @@ doarch() {
 	echo "Invalid arch"
 	exit 1
     fi
-    
+
     machines=$(awk '{print $1}' ${pb}/${arch}/mlist)
-    
+
     for i in ${machines}; do
 	. ${pb}/${arch}/portbuild.conf
 	if [ -f "${pb}/${arch}/portbuild.${i}" ]; then
@@ -26,7 +26,7 @@ doarch() {
 }
 
 id=$(whoami)
-if [ "${id}" = "root" ]; then 
+if [ "${id}" = "root" ]; then
 	arch=$1
 	shift
 	root=1

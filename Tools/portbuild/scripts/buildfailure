@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# buildfailure <arch> <branch> <pkgname> 
+# buildfailure <arch> <branch> <pkgname>
 
 cleanup() {
     echo "Problem writing new failure file!"

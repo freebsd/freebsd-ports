@@ -122,7 +122,7 @@ $ vi Makefile
 $ make fetch makesum patch
 [several patches are failing to apply cleanly]
 $ cd work/foo-1.0
-[doing merging work, finally all changes are merged] 
+[doing merging work, finally all changes are merged]
 $ cd ../../ ; make all install
 [compile and works like a charm]
 $ pwd

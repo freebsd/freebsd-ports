@@ -8,7 +8,7 @@ mount_fs()
     mntpt=$2
     master=$3
 
-    if [ ${disconnected} = 1 ]; then 
+    if [ ${disconnected} = 1 ]; then
 	mount -t nullfs -r ${fs} ${mntpt}
     else
 	mount -o nfsv3,intr -r ${master}:${fs} ${mntpt}
@@ -43,12 +43,12 @@ cleanup()
   pkgname=$5
 
   #umount ${chroot}/proc
-  
+
   echo ARCH=${arch}
   if [ ${arch} = "i386" ]; then
     umount -f ${chroot}/compat/linux/proc
   fi
-    
+
   umount -f ${chroot}/a/ports
   umount -f ${chroot}/usr/opt/doc
   umount -f ${chroot}/usr/src
