@@ -1,0 +1,11 @@
+--- lib/plug-ins.c.orig	Mon Aug  7 13:51:41 2000
++++ lib/plug-ins.c	Mon Aug  7 13:52:01 2000
+@@ -45,7 +45,7 @@
+ #  define PLUG_IN_EXT_LEN 4
+ #else
+ /* this one should work on any platform where libtool is used to compile dia */
+-#  define PLUG_IN_EXT ".la"
++#  define PLUG_IN_EXT ".so"
+ #  define PLUG_IN_EXT_LEN 3
+ #endif
+ 
