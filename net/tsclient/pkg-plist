@@ -7,15 +7,11 @@ share/gnome/mime-info/tsclient.keys
 share/gnome/mime-info/tsclient.mime
 share/gnome/pixmaps/tsclient.png
 share/gnome/pixmaps/tsclient/banner-ar.png
+share/gnome/pixmaps/tsclient/banner-en.png
+share/gnome/pixmaps/tsclient/banner-hu.png
 share/gnome/pixmaps/tsclient/banner-nl.png
-share/gnome/pixmaps/tsclient/banner.png
-share/gnome/pixmaps/tsclient/colors-hi.png
-share/gnome/pixmaps/tsclient/colors-lo.png
 share/gnome/pixmaps/tsclient/colors.png
 share/gnome/pixmaps/tsclient/computer.png
-share/gnome/pixmaps/tsclient/devices.png
-share/gnome/pixmaps/tsclient/directory.png
-share/gnome/pixmaps/tsclient/folder.png
 share/gnome/pixmaps/tsclient/keyboard.png
 share/gnome/pixmaps/tsclient/perform.png
 share/gnome/pixmaps/tsclient/program.png
@@ -24,12 +20,36 @@ share/gnome/pixmaps/tsclient/sound.png
 share/gnome/pixmaps/tsclient/tsclient.png
 share/locale/ar/LC_MESSAGES/tsclient.mo
 share/locale/da_DK/LC_MESSAGES/tsclient.mo
+share/locale/de/LC_MESSAGES/tsclient.mo
 share/locale/es/LC_MESSAGES/tsclient.mo
 share/locale/fi/LC_MESSAGES/tsclient.mo
 share/locale/fr/LC_MESSAGES/tsclient.mo
 share/locale/gr/LC_MESSAGES/tsclient.mo
 share/locale/hu/LC_MESSAGES/tsclient.mo
 share/locale/nl_NL/LC_MESSAGES/tsclient.mo
+share/locale/no_nb/LC_MESSAGES/tsclient.mo
 share/locale/pl/LC_MESSAGES/tsclient.mo
 share/locale/zh_CN/LC_MESSAGES/tsclient.mo
-@dirrm share/gnome/pixmaps/tsclient/
+@unexec rmdir share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/pl 2>/dev/null || true
+@unexec rmdir share/locale/no_bb/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/no_bb 2>/dev/null || true
+@unexec rmdir share/locale/nl_NL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/nl_NL 2>/dev/null || true
+@unexec rmdir share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/hu 2>/dev/null || true
+@unexec rmdir share/locale/gr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/gr 2>/dev/null || true
+@unexec rmdir share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/fr 2>/dev/null || true
+@unexec rmdir share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/fi 2>/dev/null || true
+@unexec rmdir share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/es 2>/dev/null || true
+@unexec rmdir share/locale/da_DK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/da_DK 2>/dev/null || true
+@unexec rmdir share/locale/ar/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/ar 2>/dev/null || true
+@dirrm share/gnome/pixmaps/tsclient

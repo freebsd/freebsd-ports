@@ -1,19 +1,28 @@
---- src/connect.c.orig	Sun May 18 15:51:07 2003
-+++ src/connect.c	Sun May 18 15:51:52 2003
-@@ -264,13 +264,15 @@
-   gtk_box_pack_start (GTK_BOX (vbxMain), vbxBanner, TRUE, TRUE, 1);
-   gtk_widget_show (vbxBanner);
- 
--  g_sprintf (banner_lang, "banner-%s.png", g_strndup ((gchar*)gtk_get_default_language (), 2));
-+  banner_lang = g_strdup_printf ("banner-%s.png", g_strndup ((gchar*)gtk_get_default_language (), 2));
- 
-   if (find_pixmap_file (banner_lang)) {
-     imgBanner = create_pixmap (frmConnect, banner_lang);
-   } else {
-     imgBanner = create_pixmap (frmConnect, "banner.png");
-   }
-+
-+  g_free(banner_lang);
-   //imgBanner = create_pixmap (frmConnect, "banner.png");
-   gtk_widget_set_name (imgBanner, "imgBanner");
-   gtk_widget_show (imgBanner);
+--- src/connect.c.orig	Thu Jul  3 22:43:25 2003
++++ src/connect.c	Fri Jul  4 21:06:08 2003
+@@ -1793,9 +1793,9 @@
+       rdp_file_get_screen (rdp, main_window);
+       rdp_file_save (rdp, filename);
+       g_free (rdp);
+-    }
+-    g_free (filename);
+-  }
++    }
++/*    g_free (filename);*/
++  }
+   gtk_widget_destroy (GTK_WIDGET (save_selector));
+   return;
+ }
+@@ -1838,9 +1838,9 @@
+         rdp_file_set_screen (rdp, main_window);
+       }
+       g_free (rdp);
+-    }
+-    g_free (filename);
+-  }
++    }
++/*      g_free (filename);*/
++  }
+   gtk_widget_destroy (GTK_WIDGET (open_selector));
+   return;
+ }
