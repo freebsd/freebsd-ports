@@ -1,6 +1,19 @@
---- libmpdemux/tvi_bsdbt848.c.orig	Tue Jan 14 19:20:17 2003
-+++ libmpdemux/tvi_bsdbt848.c	Fri Aug 29 11:08:51 2003
-@@ -357,6 +357,12 @@
+--- libmpdemux/tvi_bsdbt848.c.orig	Mon Jun  2 00:30:37 2003
++++ libmpdemux/tvi_bsdbt848.c	Tue Dec 16 00:55:43 2003
+@@ -39,8 +39,12 @@
+ #include <signal.h>
+ #include <string.h>
+ 
++#include <sys/param.h>
+ #ifdef __NetBSD__
+ #include <dev/ic/bt8xx.h>
++#elif __FreeBSD_version >= 502100
++#include <dev/bktr/ioctl_meteor.h>
++#include <dev/bktr/ioctl_bt848.h>
+ #else
+ #include <machine/ioctl_meteor.h>
+ #include <machine/ioctl_bt848.h>
+@@ -357,6 +361,12 @@
              perror("fps:ioctl");
              return(0);
              }
