@@ -20,6 +20,10 @@ MAINTAINER=	cjh@FreeBSD.org
 
 RUN_DEPENDS=    hcode:${PORTSDIR}/korean/hcode
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/hpscat.h
+
 pre-configure:
 	${CP} ${FILESDIR}/hpscat.sh ${WRKSRC}/
 
