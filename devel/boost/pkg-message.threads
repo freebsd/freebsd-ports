@@ -1,0 +1,4 @@
+You have built the Boost library with thread support.
+
+Don't forget to add %%PTHREAD_LIBS%% to your linker options when
+linking your code.

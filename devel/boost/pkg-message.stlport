@@ -1,0 +1,16 @@
+You have built Boost on FreeBSD 4, which comes with the GCC 2.95.4
+compiler suite.
+
+Since the standard template library of g++ 2.95.4 is not compatible
+with this version of Boost, the library has been built against the
+STLport library (devel/stlport).
+
+In order for your own code to link properly, you have to built it
+with STLport also. You are advised to use the following compiler
+and linker options:
+
+Compiler options (be sure to append any additional options after these!)
+   -nostdinc -I%%LOCALBASE%%/include/stlport -I/usr/include
+
+Linker options:
+   -L%%LOCALBASE%%/lib -lstlport_gcc
