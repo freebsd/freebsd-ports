@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	shinonome
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.11
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	yoichi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese 12,14,16 dot fonts
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
@@ -58,7 +57,7 @@ post-build:
 .endfor
 	@${ECHO_CMD} 'Done'
 
-pre-install:
+pre-su-install:
 	@${MKDIR} ${PREFIX}/${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/fonts.alias ${PREFIX}/${DOCSDIR}
 	@${SETENV} PKG_PREFIX=${PREFIX} \
