@@ -585,7 +585,6 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
 MASTER_SITE_SAVANNAH+= \
-	ftp://ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	http://savannah.nongnu.org/download/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
