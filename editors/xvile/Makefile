@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.2y
+PORTVERSION=	9.2z
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -38,7 +38,8 @@ PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2v.patch.gz \
 		vile-9.2w.patch.gz \
 		vile-9.2x.patch.gz \
-		vile-9.2y.patch.gz
+		vile-9.2y.patch.gz \
+		vile-9.2z.patch.gz
 
 MAINTAINER=	gj@freebsd.org
 
