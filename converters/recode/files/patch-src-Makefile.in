@@ -1,5 +1,5 @@
 --- src/Makefile.in.orig	Mon Jan 22 19:14:16 2001
-+++ src/Makefile.in	Thu Sep  6 11:21:43 2001
++++ src/Makefile.in	Mon Mar 10 10:17:54 2003
 @@ -131,7 +131,7 @@
  
  librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
@@ -9,3 +9,12 @@
  
  INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/lib -I$(top_srcdir)/libiconv
  DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
+@@ -153,7 +153,7 @@
+ 
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ ../lib/libreco.a
+ ANSI2KNR = @ANSI2KNR@
+ librecode_la_LIBADD = 
+ librecode_la_OBJECTS =  argmatch$U.lo charname$U.lo combine$U.lo \
