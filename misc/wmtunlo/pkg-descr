@@ -1,0 +1,6 @@
+This is a WindowMaker dockapp that displays a zooming 2-D tunnel.
+The visualization is highly customizable, using 14 arguments. 5
+example customizations are provided as shell scripts, named
+wmtunlo.example1 through wmtunlo.example5.
+
+- Adam Weinberger adam@vectors.cx
