@@ -160,6 +160,7 @@
     SUBDIR += photopc
     SUBDIR += piddle
     SUBDIR += pixmap
+    SUBDIR += plasma-kmod
     SUBDIR += plotmtv
     SUBDIR += plotutils
     SUBDIR += png

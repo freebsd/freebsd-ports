@@ -1,0 +1,8 @@
+plasma is a FreeBSD kernel module screensaver which displays a moving
+plasma effect. You are advised that the code is quite resource-greedy
+and that you probably don't want to run it on anything but a desktop
+workstation. It's a quick hack, so comments/constructive criticism is
+appreciated. MAINTAINER is the author of this port.
+
+- George Reid
+greid@ukug.uk.freebsd.org
