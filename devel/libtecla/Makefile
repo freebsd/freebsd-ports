@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libtecla
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
@@ -16,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive command line editing facilities
 
 USE_SUBMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_AUTOCONF_VER=	253
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -32,7 +31,7 @@ PLIST_SUB+=	THREADS=""
 .endif
 
 post-extract:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genman3list.sh
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/genmanlist.sh
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc

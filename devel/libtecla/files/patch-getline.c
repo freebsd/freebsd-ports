@@ -1,10 +1,12 @@
---- getline.c.orig	Wed Feb 13 11:36:13 2002
-+++ getline.c	Tue May  6 04:09:17 2003
-@@ -45,6 +45,7 @@
-  */
- #include <sys/ioctl.h>
- #ifdef HAVE_SELECT
-+#include <sys/select.h>
- #include <sys/time.h>
- #include <sys/types.h>
+--- getline.c.orig	Sun Jul 18 13:44:44 2004
++++ getline.c	Sun Jul 18 13:44:49 2004
+@@ -9045,8 +9045,8 @@
+       return 1;
+   };
+   return 0;
+-}
  #endif
++}
+ 
+ #if defined(HAVE_SELECT)
+ /*.......................................................................
