@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	040514
+PORTVERSION=	040603
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -16,7 +16,7 @@ DISTNAME=	tidy_src
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	thierry@pompo.net
+MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
