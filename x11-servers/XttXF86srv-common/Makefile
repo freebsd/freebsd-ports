@@ -7,22 +7,28 @@
 
 PORTNAME?=	xtt-common
 PORTVERSION=	${VERSION}.${PATCHLEVEL}
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		http://X-TT.dsl.gr.jp/dists/1.x/${VERSION}/
-MASTER_SITE_SUBDIR=	3.3.6
+MASTER_SITE_SUBDIR=	${XFREE_VERSION}
 DISTFILES=	X336src-1.tgz xtt-${VERSION}.tgz
+
+PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,${XFREE_VERSION}/fixes,}
+PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
+		fix-07-s3trio64v2gx+netfinity fix-08-s3savage_ix+mx
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
+XFREE_VERSION=	3.3.6
 VERSION=	1.3
-PATCHLEVEL=	0
+PATCHLEVEL=	1
 SERVER?=	common
 INSTALLS_SHLIB=	yes
 .if !defined(USE_SHARED_WRKSRC) && defined(COMPILE_ALL_SERVERS_AT_ONCE)
-USE_SHARED_WRKSRC= YES
+USE_SHARED_WRKSRC=	YES
 .endif
 .if !defined(XDM_DES) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
@@ -55,8 +61,7 @@ COREPATCHES=	shared-libfont-1.2.diff xfs-for-delayed-font-1.0.diff \
 XTTTARBALL=	xtt-core.tar
 ADDPATCHES=	${XTTDIR}/contribute/xtt-xfsft-lib.patch
 DOCDIR=		${PREFIX}/share/doc/Xtt
-PATCH_DIST_ARGS= -d ${WRKDIR} --forward --quiet -E ${PATCH_STRIP}
-#PATCH_DIST_STRIP=	-p1
+PATCH_DIST_STRIP=	-p1
 
 .include <bsd.port.pre.mk>
 
