@@ -16,7 +16,7 @@ MAINTAINER=	erich@tacni.net
 LIB_DEPENDS=	gtkmm.1:${PORTSDIR}/x11-toolkits/gtk-- \
 		gnomemm.3:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
-		gal.3:${PORTSDIR}/x11-toolkits/gal \
+		gal.4:${PORTSDIR}/x11-toolkits/gal \
 		giconv.2:${PORTSDIR}/converters/libiconv \
 		glade.4:${PORTSDIR}/devel/libglade
 
