@@ -1,27 +1,37 @@
---- programs/xdm/session.c.orig	Wed May 30 00:56:22 2001
-+++ programs/xdm/session.c	Fri Sep 28 23:25:16 2001
-@@ -541,6 +541,7 @@
-     int	pid;
- #ifdef HAS_SETUSERCONTEXT
-     struct passwd* pwd;
-+    extern char **environ;
+--- programs/xdm/session.c.orig	Tue Feb 19 23:36:19 2002
++++ programs/xdm/session.c	Tue Feb 19 23:51:21 2002
+@@ -573,11 +573,13 @@
+ #ifdef USE_PAM
+ 	/* pass in environment variables set by libpam and modules it called */
+ 	if (pamh) {
+-	    long i;
++	    int i;
+ 	    char **pam_env = pam_getenvlist(pamh);
+ 	    for(i = 0; pam_env && pam_env[i]; i++) {
+ 		verify->userEnviron = putEnv(pam_env[i], verify->userEnviron);
++		free(pam_env[i]);
+ 	    }
++	    free(pam_env);
+ 	}
  #endif
- #ifdef USE_PAM 
-     pam_handle_t *pamh = thepamh();
-@@ -623,6 +624,8 @@
- 	 * Set the user's credentials: uid, gid, groups,
- 	 * environment variables, resource limits, and umask.
- 	 */
-+        /* destroy user environment before calling setusercontext */
-+	environ = verify->userEnviron;
+ 
+@@ -623,12 +625,19 @@
  	pwd = getpwnam(name);
  	if (pwd)
  	{
-@@ -632,6 +635,7 @@
++	    extern char **environ;
++	    char **saved_environ = environ;
++
++	    environ = verify->userEnviron;
+ 	    if (setusercontext(NULL, pwd, pwd->pw_uid, LOGIN_SETALL) < 0)
+ 	    {
++		environ = saved_environ;
+ 		LogError("setusercontext for \"%s\" failed, errno=%d\n", name,
  		    errno);
  		return (0);
  	    }
-+            verify->userEnviron = environ;    
++	    verify->userEnviron = environ;
++	    environ = saved_environ;
  	    endpwent();
  	}
  	else
