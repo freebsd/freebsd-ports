@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	torstenb@FreeBSD.org
 
+RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
+
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1= 		audiocompose.1 audiosend.1 extcompose.1 \
