@@ -1,0 +1,5 @@
+PEAR::Net_Dict provides a simple API to the DICT Protocol handling all the
+network related issues and providing DICT responses in PHP datatypes to
+make it easy for a developer to use DICT servers in their programs.
+
+WWW: http://pear.php.net/package/Net_Dict/

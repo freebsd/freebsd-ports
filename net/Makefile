@@ -547,6 +547,7 @@
     SUBDIR += pcnfsd
     SUBDIR += pear-Net_CheckIP
     SUBDIR += pear-Net_DIME
+    SUBDIR += pear-Net_Dict
     SUBDIR += pear-Net_DNSBL
     SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_NNTP
