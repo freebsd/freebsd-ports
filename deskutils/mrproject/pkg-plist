@@ -1,3 +1,4 @@
+etc/rc.d/000.mrproject.sh
 bin/mrproject
 lib/mrproject/libcalendardialog.so
 lib/mrproject/libcellrenderers.so
