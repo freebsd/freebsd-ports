@@ -1,3 +1,3 @@
 SUBDIR=	bash
 
-.include <bsd.subdir.mk>
+.include <bsd.port.subdir.mk>
