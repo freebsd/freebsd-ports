@@ -3,12 +3,12 @@
 # Date created:		Fri Mar 27 17:26:42 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:22 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:43:11 asami Exp $
 #
 
 DISTNAME=	ko-kaistfonts-ksc-1.0
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	ftp://sensor.kaist.ac.kr/pub/fonts/newones/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 		kaist-newmj16.bdf.gz ks_iyagi16.bdf.gz
 
@@ -26,5 +26,8 @@ do-extract:
 	for file in ${DISTFILES}; do \
 		${GUNZIP_CMD} -c < ${_DISTDIR}/$$file > `echo $$file | ${SED} -e 's/\.Z//' -e 's/\.gz//'`; \
 	done
+
+post-install:
+	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
