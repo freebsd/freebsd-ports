@@ -11,7 +11,6 @@ locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/pippki/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/content-packs/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/help/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/mozldap/
-locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/forms/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/messenger-smime/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/messenger-mdn/
 locale,install,url,jar:resource:/chrome/ja-JP.jar!/locale/ja-JP/chatzilla/
