@@ -33,7 +33,7 @@ etc/gconf/schemas/mini-commander.schemas
 etc/gconf/schemas/modemlights.schemas
 etc/gconf/schemas/multiload.schemas
 %%BATTERY%%etc/sound/events/battstat_applet.soundlist
-libdata/bonobo/servers/GNOME_BattstatApplet.server
+%%BATTERY%%libdata/bonobo/servers/GNOME_BattstatApplet.server
 libdata/bonobo/servers/GNOME_CDPlayerApplet.server
 libdata/bonobo/servers/GNOME_CharpickerApplet.server
 libdata/bonobo/servers/GNOME_DriveMountApplet.server
@@ -186,7 +186,7 @@ share/gnome/gkb/US_international.keyprop
 share/gnome/gkb/VN_Vietnamese.keyprop
 share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
 share/gnome/gkb/Yugoslav.keyprop
-share/gnome/gnome-2.0/ui/GNOME_BattstatApplet.xml
+%%BATTERY%%share/gnome/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CDPlayerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CharpickerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_DriveMountApplet.xml
