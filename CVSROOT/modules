@@ -3530,6 +3530,7 @@ lapack++	ports/math/lapack++
 larbin		ports/www/larbin
 larswm		ports/x11-wm/larswm
 latex		ports/print/latex
+latex-mk	ports/misc/latex-mk
 latex2html	ports/textproc/latex2html
 latex2rtf	ports/print/latex2rtf
 latex2slides	ports/print/latex2slides
