@@ -17,6 +17,7 @@ LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER} \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
 TCL_VERSION=	8.3
 TCL_DVER=	${TCL_VERSION:S/.//}
@@ -29,7 +30,7 @@ post-extract:
 	${RM} -rf ${WRKSRC}/expat
 
 post-patch:
-	${PERL} -pi -e 's/TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0/TCL_MAJOR_VERSION >= 8/;' \
+	${REINPLACE_CMD} -e 's/TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0/TCL_MAJOR_VERSION >= 8/;' \
 		-e 's/xmlparse.h/expat.h/;' ${WRKSRC}/tclexpat.c
 
 test: build

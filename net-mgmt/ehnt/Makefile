@@ -18,6 +18,8 @@ DISTFILES+=	${PORTNAME}_data-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	marck@rinet.ru
 
+USE_PERL5=	yes
+
 MAN1=		ehnt.1
 MAN8=		ehntserv.8
 

@@ -21,6 +21,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 NO_CDROM=	"This software is shareware"
+USE_REINPLACE=	yes
 
 do-extract:
 		@ ${RM} -rf ${WRKDIR}
@@ -35,7 +36,7 @@ do-configure:
 		@ ${CP} ${FILESDIR}/quakeserver.sh ${WRKSRC}
 		@ ${CP} ${FILESDIR}/qserver.sh ${WRKSRC}
 		@ ${CP} ${FILESDIR}/stopserver.sh ${WRKSRC}
-		@ ${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/quakeserver.sh ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
+		@ ${SETENV} ${MAKE_ENV} ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/quakeserver.sh ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
 
 pre-install:
 		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL

@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/jacal
 
 USE_ZIP=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		jacal.1

@@ -15,9 +15,11 @@ MAINTAINER=	markp@FreeBSD.org
 WRKSRC=		${WRKDIR}/guesser
 CFLAGS+=	-DUDM_GUESSER_STANDALONG -DLMDIR=\"${PREFIX}/share/mguesser\"
 MAKE_ENV+=	CFLAGS="${$CFLAGS}"
+USE_REINPLACE=	yes
 
 post-patch:
-	${PERL} -pi -e "s/^CC=.+//g; s|^CFLAGS=|CFLAGS+=|g; s|-Wall -g||g; \
+	${REINPLACE_CMD} -e \
+		"s/^CC=.+//g; s|^CFLAGS=|CFLAGS+=|g; s|-Wall -g||g; \
 		s|./maps|${PREFIX}/share/mguesser|g" ${WRKSRC}/Makefile
 
 do-install:

@@ -13,10 +13,12 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/deal/
 MAINTAINER=	markp@FreeBSD.org
 
 ALL_TARGET=	deal
+USE_REINPLACE=	yes
+
 MAN1=		deal.1
 
 pre-build:
-	${PERL} -pi -e "s@-g@${CFLAGS}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@-g@${CFLAGS}@g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deal ${PREFIX}/bin

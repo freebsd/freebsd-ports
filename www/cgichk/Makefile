@@ -16,10 +16,12 @@ MAINTAINER=	markp@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
+USE_REINPLACE=	yes
 
 pre-patch:
-	${PERL} -pi -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@/etc/@${PREFIX}/etc/@g; s/#include <getopt.h>//g; \
+	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		"s@/etc/@${PREFIX}/etc/@g; s/#include <getopt.h>//g; \
 		s@^(?=.+sys/socket.h)@#include <sys/types.h>\n@g;" \
 		${WRKSRC}/cgichk.h
 
