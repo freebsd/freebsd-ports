@@ -361,6 +361,7 @@
     SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += py-ipy
     SUBDIR += py-jabber
     SUBDIR += py-pcap
     SUBDIR += py-smb
