@@ -1,0 +1,18 @@
+GKrellMSS displays a VU meter showing left and right channel audio
+levels and also has a chart that shows combined left and right
+audio channels as an oscilloscope trace.
+
+There are two buttons to the left of the VU Meter which select an
+oscope horizontal sweep speed ranging from 100 microseconds (usec)
+per division to 50 miliseconds (msec) per division. There are 5
+horizontal divisions, so a trace sweep time can range from 500 usec
+(1/2000 sec) to 250 msec (1/4 sec). The oscope trace is triggered
+by a positive zero crossing audio signal to give nice stable
+displays.
+
+There is also a sensitivity level adjustment for the VU Meter and
+oscope chart. Use the mouse wheel to adjust, or left click and drag
+the sensitivity krell.
+
+Author: Bill Wilson <bill@gkrellm.net>
+WWW: http://web.wt.net/~billw/gkrellmss/gkrellmss.html

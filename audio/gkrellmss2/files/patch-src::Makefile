@@ -1,0 +1,39 @@
+--- src/Makefile.orig	Sat Oct 26 20:48:59 2002
++++ src/Makefile	Tue Feb  4 13:17:23 2003
+@@ -10,15 +10,15 @@
+ SD_INCLUDE = 
+ SD_LIB = -lasound
+ else
+-SD_INCLUDE = `esd-config --cflags`
+-SD_LIB = `esd-config --libs`
++SD_INCLUDE = `${ESD_CONFIG} --cflags`
++SD_LIB = `${ESD_CONFIG} --libs`
+ endif
+ 
+ FFTW_LIB_DIR ?=
+ 
+ FFTW_LIB = $(FFTW_LIB_DIR) -lrfftw -lfftw
+ 
+-FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(SD_INCLUDE)
++FLAGS = -Wall -fPIC $(GTK_INCLUDE) $(SD_INCLUDE)
+ LIBS = $(GTK_LIB) $(SD_LIB) $(FFTW_LIB) -lm
+ 
+ ifeq ($(OS_NAME),Darwin)
+@@ -42,7 +42,7 @@
+ 	FLAGS += -DGKRELLM_ALSA5
+ endif
+ 
+-CC = gcc $(FLAGS) $(CFLAGS)
++CC += $(FLAGS) $(CFLAGS)
+ 
+ OBJS = gkrellmss.o oscope.o spectrum.o sdlib.o
+ 
+@@ -56,7 +56,7 @@
+ 
+ install: 
+ 	$(INSTALL) -d -m 755 $(INSTALLDIR)
+-	$(INSTALL) -c $(STRIP) -m 755 gkrellmss.so $(INSTALLDIR)
++	$(INSTALL) gkrellmss.so $(INSTALLDIR)
+ 
+ gkrellmss.o: gkrellmss.c gkrellmss.h
+ oscope.o: oscope.c gkrellmss.h
