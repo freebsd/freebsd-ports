@@ -1,23 +1,15 @@
-*** config_f.h.bak	Fri Apr 26 23:17:30 1996
---- config_f.h	Mon Dec 16 03:53:59 1996
-***************
-*** 65,71 ****
-   *		if you don't have <nl_types.h>, you don't want
-   *		to define this.
-   */
-! #undef NLS_CATALOGS
-  
-  /*
-   * LOGINFIRST   Source ~/.login before ~/.cshrc
---- 65,75 ----
-   *		if you don't have <nl_types.h>, you don't want
-   *		to define this.
-   */
-! #if defined(__FreeBSD__) || defined(__OpenBSD__)
-! # define NLS_CATALOGS
-! #else
-! # undef NLS_CATALOGS
-! #endif
-  
-  /*
-   * LOGINFIRST   Source ~/.login before ~/.cshrc
+--- ../../tcsh-6.07.06/config_f.h	Sun Jun 21 10:45:27 1998
++++ config_f.h	Sun Jun 21 11:03:39 1998
+@@ -65,7 +65,11 @@
+  *		if you don't have <nl_types.h>, you don't want
+  *		to define this.
+  */
+-#undef NLS_CATALOGS
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++# define NLS_CATALOGS
++#else
++# undef NLS_CATALOGS
++#endif
+ 
+ /*
+  * LOGINFIRST   Source ~/.login before ~/.cshrc

@@ -1,6 +1,6 @@
---- sh.func.c.orig	Sun Dec 28 03:14:21 1997
-+++ sh.func.c	Sun Dec 28 03:15:00 1997
-@@ -1273,6 +1273,9 @@
+--- ../../tcsh-6.07.06/sh.func.c	Sun Jun 21 10:45:27 1998
++++ sh.func.c	Sun Jun 21 11:27:31 1998
+@@ -1279,6 +1279,9 @@
      struct command *c;
  {
      Char   *vp, *lp;
@@ -10,36 +10,19 @@
  
      USE(c);
      if (*++v == 0) {
-@@ -1312,9 +1315,19 @@
- # ifdef LC_COLLATE
- 	(void) setlocale(LC_COLLATE, "");
- # endif
--# if defined(NLS_CATALOGS) && defined(LC_MESSAGES)
-+# ifdef NLS_CATALOGS
-+# ifdef LC_MESSAGES
+@@ -1322,7 +1325,15 @@
+ #  ifdef LC_MESSAGES
  	(void) setlocale(LC_MESSAGES, "");
-+# endif
-+# ifdef __FreeBSD__
+ #  endif /* LC_MESSAGES */
++# ifdef __FreeBSD__  
 +	/* This code is to avoid bug. */
 +	if (catclosed)
- 	(void) catclose(catd);
++	    (void) catclose(catd);
 +	else
-+		catclosed = 1;
-+# else
-+		(void) catclose(catd);
++	    catclosed = 1;
++# else 
+ 	(void) catclose(catd);
 +# endif /* __FreeBSD__ */
  	nlsinit();
- # endif /* NLS_CATALOGS && LC_MESSAGES */
+ # endif /* NLS_CATALOGS */
  # ifdef LC_CTYPE
-@@ -1487,8 +1500,10 @@
- # ifdef LC_COLLATE
- 		    (void) setlocale(LC_COLLATE, "");
- # endif
--# if defined(NLS_CATALOGS) && defined(LC_MESSAGES)
-+# ifdef NLS_CATALOGS
-+# ifdef LC_MESSAGES
- 		    (void) setlocale(LC_MESSAGES, "");
-+# endif
- 		    (void) catclose(catd);
- 		    nlsinit();
- # endif /* NLS_CATALOGS && LC_MESSAGES */
