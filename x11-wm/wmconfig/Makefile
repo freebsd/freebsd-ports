@@ -18,6 +18,12 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${LOCALBASE} --sysconfdir=${LOCALBASE}/etc --mandir=${LOCALBASE}/man
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/wmconfig.1x ${PREFIX}/man/man1
@@ -35,4 +41,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/samples/gimp ${PREFIX}/etc/wmconfig
 	@${INSTALL_DATA} ${WRKSRC}/samples/eterm ${PREFIX}/etc/wmconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
