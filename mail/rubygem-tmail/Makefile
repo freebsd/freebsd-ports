@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 MASTER_SITE_SUBDIR=	knu
@@ -23,8 +22,7 @@ USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
-#CONFIGURE_ARGS=	--with=ext/b64,ext/mails,lib/tmail
-CONFIGURE_ARGS=	--without=ext/cparse,ext/cscan,lib/amstd,lib/raccrt,lib/strscan
+CONFIGURE_ARGS=	--with=ext/b64,ext/mails,lib/tmail
 
 do-install:
 .if !defined(NOPORTDOCS)
