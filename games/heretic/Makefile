@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	heretic
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/ \
-	http://heretic.linuxgames.com/wad/
-DISTNAME=	glheretic-1.0
-.if !defined(NO_WAD)
+		http://heretic.linuxgames.com/wad/
+DISTNAME=	gl${PORTNAME}-${PORTVERSION}
+.if !defined(WITHOUT_WAD)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} heretic_share.wad.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
@@ -21,23 +21,36 @@ MAINTAINER=	ports@FreeBSD.org
 FETCH_BEFORE_ARGS+=	-b
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	WANT_OGL="no" WANT_OGL_FULLSCREEN="no" WANT_NICE_OGL="no"
-.if !defined(NO_WAD)
-PLIST=		${PKGDIR}/pkg-plist.nowad
-.endif
+
+.if defined(WANT_FASTX11)
+ALL_TARGET=	fastx11
+BINARY=		xaheretic
+.else
 ALL_TARGET=	x11
 BINARY=		xheretic
-.if defined(WANT_FASTX11)
-BINARY=		xaheretic
-ALL_TARGET=	fastx11
+.endif
+
+.if defined(WITHOUT_WAD)
+PLIST_SUB=	WAD:="@comment "
+.else
+PLIST_SUB=	WAD:=""
+.endif
+
+post-extract:
+.if !defined(WITHOUT_WAD)
+	@${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/heretic_share.wad.gz \
+		> ${WRKSRC}/heretic_share.wad
 .endif
 
 do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic
+.if !defined(WITHOUT_WAD)
 	@${MKDIR} ${PREFIX}/share/heretic
-	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/heretic
-.if !defined(NO_WAD)
-	@${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/heretic_share.wad.gz \
-		> ${PREFIX}/share/heretic/heretic_share.wad
+	${INSTALL_DATA} ${WRKSRC}/heretic_share.wad ${PREFIX}/share/heretic
+.endif
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/heretic
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/heretic
 .endif
 
 .include <bsd.port.mk>
