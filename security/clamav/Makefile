@@ -70,7 +70,7 @@ SED_SCRIPT+=	-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
 		RC_SUFX=${RC_SUFX}
 
-.if defined(WITH_MILTER)
+.if defined(WITH_MILTER) && !defined(NO_SENDMAIL)
 .if exists(${LOCALBASE}/lib/libmilter.a)
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
