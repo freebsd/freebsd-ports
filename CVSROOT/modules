@@ -10020,6 +10020,7 @@ y2l		ports/textproc/y2l
 yabasic		ports/lang/yabasic
 yacas		ports/math/yacas
 yacl		ports/devel/yacl
+yadda		ports/mail/yadda
 yadex		ports/games/yadex
 yafc		ports/ftp/yafc
 yafic		ports/security/yafic
