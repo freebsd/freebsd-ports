@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nate/JDK1.1
 
-MAINTAINER=	java-port@FreeBSD.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.1
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
@@ -20,6 +20,7 @@ NO_CDROM=	"License doesn't allow distribution with fee"
 
 ONLY_FOR_ARCHS=	i386
 JDK_VERSION=	1.1.8
+LATEST_LINK=	jdk11
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
 WRKSRC=		${WRKDIR}/jdk${JDK_VERSION}
