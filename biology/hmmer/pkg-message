@@ -1,0 +1,22 @@
+*********************************************************
+
+Note on environment variables:
+
+   HMMER reads three environment variables:
+      HMMERDB  - directory location of HMM databases (e.g. PFAM)
+      BLASTDB  - directory location of FASTA-formatted sequence databases
+      BLASTMAT - directory location of PAM scoring matrices
+
+   If you have installed BLAST, you probably already have these 
+   environment variables set in system-wide or user-specific
+   .cshrc files. They are optional. If they are set up, you
+   can simplify command lines to:
+      > hmmpfam pfam my.query
+      > hmmsearch my.hmm swiss35
+   instead of
+      > hmmpfam   /some/long/path/to/databases/pfam my.query
+      > hmmsearch my.hmm /some/long/path/to/databases/swiss35
+
+Please see the website http://hmmer.wustl.edu/ for more information.
+
+*********************************************************
