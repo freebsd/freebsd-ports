@@ -1,0 +1,8 @@
+bin/jiFT
+%%PORTDOCS%%share/doc/jiFT/copying.txt
+%%PORTDOCS%%share/doc/jiFT/readme.txt
+%%JAR_DIR%%/%%JAR_FILE%%
+@dirrm %%JAR_DIR%%
+%%PORTDOCS%%@dirrm share/doc/jiFT
+@unexec rmdir %D/share/java/jar 2>/dev/null || true
+@unexec rmdir %D/share/java 2>/dev/null || true
