@@ -44,8 +44,8 @@ lib/ggi/input/stdin.la
 lib/ggi/input/stdin.so
 lib/ggi/input/tcp.la
 lib/ggi/input/tcp.so
-lib/ggi/input/vgl.la
-lib/ggi/input/vgl.so
+%%VGL%%lib/ggi/input/vgl.la
+%%VGL%%lib/ggi/input/vgl.so
 lib/ggi/input/x.la
 lib/ggi/input/x.so
 lib/ggi/input/xwin.la
@@ -56,17 +56,17 @@ lib/libgg.so.0
 lib/libgii.la
 lib/libgii.so
 lib/libgii.so.0
-share/doc/libgii/ChangeLog
-share/doc/libgii/NEWS
-share/doc/libgii/README
-share/doc/libgii/env.txt
-share/doc/libgii/inputs.txt
-share/examples/libgii/demo.c
-share/examples/libgii/filter.c
-share/examples/libgii/mhub.c
-share/examples/libgii/xsendbut.c
-@dirrm share/examples/libgii
-@dirrm share/doc/libgii
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/env.txt
+%%PORTDOCS%%%%DOCSDIR%%/inputs.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/filter.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/mhub.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/xsendbut.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/ggi/input
 @dirrm lib/ggi/filter
 @dirrm lib/ggi
