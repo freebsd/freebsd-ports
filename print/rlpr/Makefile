@@ -3,13 +3,15 @@
 # Date created:		11 April 1999
 # Whom:			Mikhail Teterin
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/11 01:59:51 taoka Exp $
 
 DISTNAME=	rlpr-2.00
 CATEGORIES=	print net
 MASTER_SITES=	ftp://sherilyn.ne.mediaone.net/pub/
 
 MAINTAINER=	mi@aldan.algebra.com
+
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lintl"
