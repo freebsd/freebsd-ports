@@ -30,6 +30,7 @@
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += syncal
+    SUBDIR += synce-libsynce
     SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
 
