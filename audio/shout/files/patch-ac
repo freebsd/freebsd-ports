@@ -1,0 +1,15 @@
+--- configure	Thu Apr 20 03:41:45 2000
++++ configure.new	Wed Jun 14 19:34:23 2000
+@@ -539,9 +539,9 @@
+         LOGDIR="/var/log/icecast"
+ else
+         echo "FSSTD DISABLED"
+-        BINDIR="${prefix}/icecast/bin"
+-        ETCDIR="${prefix}/icecast/etc"
+-        LOGDIR="${prefix}/icecast/log"
++        BINDIR="${prefix}/bin"
++        ETCDIR="${prefix}/etc/icecast"
++        LOGDIR="${prefix}/share/icecast/log"
+ fi
+ 
+ 

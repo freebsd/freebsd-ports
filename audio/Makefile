@@ -79,6 +79,7 @@
     SUBDIR += s3mod
     SUBDIR += sdl_mixer
     SUBDIR += shorten
+    SUBDIR += shout
     SUBDIR += sidplay
     SUBDIR += snowstar
     SUBDIR += soundtracker
