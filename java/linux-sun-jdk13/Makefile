@@ -36,7 +36,7 @@ DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7479
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION}\
 	archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL},\
 	download the "Linux GNUZIP Tar shell script" into ${DISTDIR} and\
