@@ -12,9 +12,6 @@ bin/zgrep
 bin/zless
 bin/zmore
 bin/znew
-@unexec install-info --delete --quiet %D/info/gzip.info %D/info/dir
-info/gzip.info
-@exec install-info %D/info/gzip.info %D/info/dir
 %%PORTDOCS%%share/doc/gzip/AUTHORS
 %%PORTDOCS%%share/doc/gzip/COPYING
 %%PORTDOCS%%share/doc/gzip/INSTALL
