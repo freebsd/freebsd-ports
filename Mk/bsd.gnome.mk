@@ -262,13 +262,13 @@ MAKE_ENV+=		HAVE_IMLIB=${HAVE_IMLIB}
 # defined for you to use.
 
 .if defined(USE_GNOMELIBS)
+CONFIGURE_ARGS+=--with-gnome=${PREFIX}
 .if !defined(HAVE_GNOME) || ${CONFIGURE_ARGS:S/--localstatedir=//} == ${CONFIGURE_ARGS}
 CONFIGURE_ARGS+=--localstatedir=${PREFIX}/share/gnome
 .endif
 .if !defined(HAVE_GNOME) || ${CONFIGURE_ARGS:S/--datadir=//} == ${CONFIGURE_ARGS}
 CONFIGURE_ARGS+=--datadir=${PREFIX}/share/gnome
 .endif
-CONFIGURE_ARGS+=--with-gnome=${PREFIX}
 LIB_DEPENDS+=	gnome.4:${PORTSDIR}/x11/gnomelibs
 GNOME_CONFIG?=	${X11BASE}/bin/gnome-config
 CONFIGURE_ENV+=	GNOME_CONFIG="${GNOME_CONFIG}"
