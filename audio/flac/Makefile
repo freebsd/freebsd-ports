@@ -27,6 +27,8 @@ PLIST_SUB=	XMMS="@comment "
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
+USE_AUTOMAKE=	yes
+AUTOMAKE_ARGS=	--include-deps
 USE_LIBTOOL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
