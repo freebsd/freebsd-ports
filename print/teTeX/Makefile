@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,6 +19,7 @@ COMMENT=	A meta port for teTeX suite
 RUN_DEPENDS=	${TETEX_MODESW}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/share/texmf/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		latex:${PORTSDIR}/print/teTeX-base \
+		${LOCALBASE}/share/texmf-local/tex/latex/base/latex.ltx:${PORTSDIR}/print/teTeX-latex2e \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
 		xdvi:${PORTSDIR}/print/xdvik
 
