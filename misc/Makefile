@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.192 1999/03/30 18:49:26 taoka Exp $
+# $Id: Makefile,v 1.193 1999/04/01 08:13:35 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -34,6 +34,7 @@
     SUBDIR += gnomeutils
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDRI += gtimer
     SUBDIR += gtkfind
     SUBDIR += gyvescm
     SUBDIR += Howto
