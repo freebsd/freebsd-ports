@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jam
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
+MASTER_SITES=	ftp://ftp.perforce.com/pub/jam/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build utility like make(1)
@@ -18,6 +18,8 @@ ONLY_FOR_ARCHS=	alpha i386
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
+
+DOCSDIR=	${PREFIX}/share/doc/jam
 
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/Makefile
