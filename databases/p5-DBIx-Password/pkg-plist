@@ -1,0 +1,2 @@
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/Password.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx 2>/dev/null || true
