@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -89,11 +89,9 @@ USE_OPENSSL=	yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 .if defined(WITH_MUTT_NNTP)
-.if ! exists(${LOCALBASE}/bin/inews)
-BUILD_DEPENDS+=	nn-inews:${PORTSDIR}/news/nn
+BUILD_DEPENDS+=	${LOCALBASE}/news/bin/inews:${PORTSDIR}/news/inn
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-inews
-.endif
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
@@ -812,6 +810,15 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
+.endif
+.if defined(WITH_MUTT_NNTP)
+	@${ECHO} 
+	@${ECHO} "------------------------------------------------"
+	@${ECHO} "Be sure to define NNTPSERVER in your environment"
+	@${ECHO} "and to be part of the group news in /etc/group"
+	@${ECHO} "if you want to post news with mutt"
+	@${ECHO} "------------------------------------------------"
+	@${ECHO} 
 .endif
 
 .include <bsd.port.post.mk>
