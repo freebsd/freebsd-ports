@@ -1,0 +1,6 @@
+This is pTeX-3.1415, p2.1.1, a TeX system which can use Japanese
+written by ASCII.
+
+This system is based on TeX 3.1415.
+
+This package can compile to use JIS, SJIS or Japanese-EUC. 

@@ -1,0 +1,19 @@
+#!/bin/sh
+if [ "$2" != "INSTALL" ]; then
+  exit 0
+fi
+echo "***********************************************************"
+echo "*                      W a r n i n g                      *"
+echo "* This port will overwrite the existing tex installation. *"
+echo "***********************************************************"
+echo -n "Is this ok? (y/n) ==> "
+read ans;
+case x"$ans" in
+  xy*|xY*)
+    return 0;
+    ;;
+  *)
+    echo "Okay, I won't install it then....";
+    return 1;
+    ;;
+esac
