@@ -2,6 +2,9 @@ bin/civserver
 bin/civclient
 share/freeciv/Freeciv
 share/freeciv/helpdata.txt
+share/freeciv/earth-80x50.sav
+share/freeciv/earth-160x90.sav
+share/freeciv/europe.sav
 share/freeciv/intro.xpm
 share/freeciv/radar.xpm
 share/freeciv/small.xpm
