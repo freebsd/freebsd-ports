@@ -32,14 +32,27 @@ lib/libhtcldisk.so
 lib/libhtclsysinstall.a
 lib/libhtclsysinstall.so.0
 lib/libhtclsysinstall.so
-share/libh/setup.tcl
-share/libh/hello_world.tcl
-share/libh/packageman.tcl
-share/libh/simple_button.tcl
-share/libh/disk.tcl
-share/libh/all_files.tcl
-share/libh/export_db.tcl
-share/libh/file_by_name.tcl
-share/libh/import_db.tcl
-share/libh/packagetool.tcl
+share/libh/console.tcl
+share/libh/console_init.tcl
+share/libh/diskedit/dialogs.tcl
+share/libh/diskedit/disk.tcl
+share/libh/diskedit/disklabel.tcl
+share/libh/diskedit/formats.tcl
+share/libh/diskedit/labeledit.tcl
+share/libh/diskedit/size.tcl
+share/libh/diskedit/sliceops.tcl
+share/libh/scripts/cdrominstall.tcl
+share/libh/scripts/choosedistrib.tcl
+share/libh/scripts/commonvars.tcl
+share/libh/scripts/ftpinstall.tcl
+share/libh/scripts/installdistrib.tcl
+share/libh/scripts/instmethod.tcl
+share/libh/scripts/netsetup.tcl
+share/libh/scripts/setup.tcl
+share/libh/pkgtools/create_db.tcl
+share/libh/pkgtools/file_owners.tcl
+share/libh/pkgtools/pkg_install.tcl
+@dirrm share/libh/diskedit
+@dirrm share/libh/scripts
+@dirrm share/libh/pkgtools
 @dirrm share/libh
