@@ -8,14 +8,14 @@
 
 PORTNAME=	shishi
 PORTVERSION=	0.0.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
 
-LIB_DEPENDS=	idn.13:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn.14:${PORTSDIR}/devel/libidn \
 		gcrypt.10:${PORTSDIR}/security/libgcrypt-devel \
 		tasn1.2:${PORTSDIR}/security/libtasn1
 
