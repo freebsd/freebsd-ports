@@ -1479,6 +1479,7 @@ firebird-devel	ports/databases/firebird-devel
 firetalk	ports/net/firetalk
 firewalk	ports/security/firewalk
 fish		src/games/fish
+fist		ports/textproc/fist
 fkiss		ports/games/fkiss
 fl_editor	ports/x11-toolkits/fl_editor
 flac		ports/audio/flac
