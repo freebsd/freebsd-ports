@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	etherboot-4.2.11
-PKGNAME=	etherboot-4.2
+DISTNAME=	etherboot-4.5.5
+PKGNAME=	etherboot-4.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.slug.org.au/etherboot/ \
 		http://www.us.kernel.org/pub/linux/devel/gcc/ \
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 NO_PACKAGE=	lots of configuration necessary
 USE_GMAKE=1
-WRKSRC=		${WRKDIR}/${PKGNAME}/src-32
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 BINUTILS_VER=   binutils-2.9.1.0.25  # need newer version of gas for data32
 
 pre-configure:
