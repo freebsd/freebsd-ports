@@ -1,0 +1,13 @@
+bin/lasergnu
+bin/gnuplot
+bin/gnuplot_x11
+share/gnuplot.gih
+share/doc/gnuplot+/Copyright.plus
+share/doc/gnuplot+/History.plus
+share/doc/gnuplot+/INSTALL-J.unx.plus
+share/doc/gnuplot+/INSTALL-J.win.plus
+share/doc/gnuplot+/INSTALL.unx.plus
+share/doc/gnuplot+/INSTALL.win.plus
+share/doc/gnuplot+/README-J.plus
+share/doc/gnuplot+/README.plus
+@dirrm share/doc/gnuplot+
