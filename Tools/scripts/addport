@@ -86,12 +86,12 @@ $tmp = $tmp2 = $offset = 0;
 chomp(my $myhost = lc(hostname()));
 if ($myhost ne lc($h)) {
 	$ssh = "$ENV{CVS_RSH} $u\@$h";
-	$repo = "$u\@$h:/home/ncvs" if !$ENV{CVSROOT};
+	$repo = "$u\@$h:/home/ncvs" if !$ENV{ADDPCVSROOT};
 } else {
 	$ssh = "";
-	$repo = "/home/ncvs" if !$ENV{CVSROOT};
+	$repo = "/home/ncvs" if !$ENV{ADDPCVSROOT};
 }
-$repo = "$ENV{CVSROOT}" if $ENV{CVSROOT};
+$repo = "$ENV{ADDPCVSROOT}" if $ENV{ADDPCVSROOT};
 my $cvs = "cvs -d $repo";
 
 # Check the editor.
@@ -225,7 +225,6 @@ foreach my $thisdir (@dirs) {
 		while(<MAKEFILE>) {
 			chomp;
 			($orig) = (m/^# Whom:\s+(\w.*)$/) if (/^# Whom:/);
-			($portname) = (m/^PORTNAME=\s+(\w.*)$/) if (/^PORTNAME=/);
 			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
 		}
 		close(MAKEFILE);
@@ -258,12 +257,13 @@ foreach my $thisdir (@dirs) {
 			}
 		}
 		chomp $pkgcomment;
-		$pkgcomment = $pkgcomment . "\n";
+		$pkgcomment = $pkgcomment . ".";
+		$pkgcomment = $pkgcomment . "\n\n" if ($autofill != -1);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
-		print AUTOFILL "Add $portname $portversion, $pkgcomment\n";
-		print AUTOFILL "PR:		$autofill\n";
-		print AUTOFILL "Submitted by:	$orig";
+		print AUTOFILL "Add $portname $portversion, $pkgcomment";
+		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
+		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
 		close(AUTOFILL);
 		print "Okay, a commit log message was automatically generated for you.\n";
 		print "Now you will have a chance to edit it to make sure it's OK to use.\n";
@@ -400,7 +400,9 @@ OPTIONS
 			order to change things like module names etc.
 	-l PR#		Attempts to autogenerate a commit message by
 			reading the Makefile/pkg-comment files.  The
-			PR number must be passed to -l.
+			PR number must be passed to -l.  If there is
+			no PR (i.e., self-created or submitted in
+			private email), use PR# -1.
 	-m		Do not checkout ports/Mk (needed for support
 			of portlinting etc).
 	-n		Do not actually commit anything.
@@ -413,9 +415,9 @@ OPTIONS
 ENVIRONMENT VARIABLES
 	$0 supports the following environment variables:
 
-	CVS_RSH - Command to use when connecting to CVS host.
-	CVSROOT - Location of CVS repository.
-	USER	- Username of user invoking $0.
+	CVS_RSH		- Command to use when connecting to CVS host.
+	ADDPCVSROOT	- Location of CVS repository.
+	USER		- Username of user invoking $0.
 
 EXAMPLES
 	% addport -n -d greatgame,helpfuldev,shoot
