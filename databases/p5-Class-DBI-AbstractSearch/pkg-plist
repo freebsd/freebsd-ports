@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Class/DBI/AbstractSearch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/AbstractSearch/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/AbstractSearch
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class/DBI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
