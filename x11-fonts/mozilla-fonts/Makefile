@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 
 CATEGORIES=	x11-fonts www
-MASTER_SITES=	http://fox.mit.edu/skunk/xwin/
+MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	dom@happygiraffe.net
 
