@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	SQL-Statement
-PORTVERSION=	1.005
+PORTVERSION=	1.09
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SQL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@thegler.dk
 COMMENT=	A perl5 module for SQL parsing and processing
 
 PERL_CONFIGURE=	yes
@@ -20,4 +20,14 @@ PERL_CONFIGURE=	yes
 MAN3=		SQL::Dialects::ANSI.3 SQL::Dialects::AnyData.3 \
 		SQL::Dialects::CSV.3 SQL::Eval.3 SQL::Parser.3 SQL::Statement.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500503
+
+# make PREFIX-clean under perl 5.005_03
+# remove DOS line-endings that confuses poor old pod2man
+post-configure:
+	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
+	${PERL} -pi -e 's,\r\n,\n,' `${FIND} ${WRKSRC} -type f`
+
+.endif
+.include <bsd.port.post.mk>
