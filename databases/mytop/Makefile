@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mytop
-PORTVERSION=	0.5
+PORTVERSION=	0.9
 CATEGORIES=	databases
 MASTER_SITES=	http://public.yahoo.com/~jzawodn/mytop/
-EXTRACT_SUFX=	.gz
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
@@ -17,22 +16,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/Read
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
-USE_PERL5=	yes
-
-NO_WRKSUBDIR=	yes
+PERL_CONFIGURE=	yes
 
 MAN1=		mytop.1
-POD2MAN?=	/usr/bin/pod2man
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTFILES} > ${WRKDIR}/${PORTNAME}
-
-do-build:
-	@${POD2MAN} ${WRKDIR}/${PORTNAME} > ${WRKDIR}/${PORTNAME}.1
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKDIR}/${PORTNAME}.1 ${PREFIX}/man/man1
+post-configure:
+	@${PERL} -pi.fbsd -e 's@INSTALLMAN1DIR = /usr/local/man/man1@INSTALLMAN1DIR = ${PREFIX}/man/man1@g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
