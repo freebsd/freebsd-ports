@@ -1,0 +1,10 @@
+bin/cim
+bin/cim2latex
+bin/cim2ps
+bin/cimetags
+bin/simindent
+lib/cim/libcim.a
+include/cim.h
+man/man1/cim.1.gz
+info/cim.info
+share/doc/cim.ps
