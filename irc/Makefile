@@ -21,6 +21,7 @@
     SUBDIR += sic
     SUBDIR += sirc
     SUBDIR += tirc
+    SUBDIR += tircproxy
     SUBDIR += tkirc
     SUBDIR += trickyirc
     SUBDIR += xchat
