@@ -4,7 +4,7 @@ display editor (emacs binary only).
 This package's emacs has a dynamic loading module function.
 
 Emacs binary is:
-    ${PREFIX}/bin/emacs-dl-20.4
+    ${PREFIX}/bin/emacs-dl-20.5
 
 Dynamic loading patch:
     http://www.etl.go.jp/~tomo/comp/emacsen/emacs-20.4-dl3.diff.gz
