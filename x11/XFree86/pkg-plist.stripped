@@ -1,4 +1,5 @@
 bin/SuperProbe
+bin/Xvfb
 bin/appres
 bin/atobm
 bin/bdftopcf
