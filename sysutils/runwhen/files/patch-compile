@@ -1,0 +1,14 @@
+--- package/compile	Thu Oct 30 20:56:44 2003
++++ package/compile.new	Fri Oct 31 16:07:38 2003
+@@ -1426,7 +1426,10 @@
+ 
+ make_37() {
+   echo && echo_ Making compile/host/skalibs &&
+-  ln -s "$depend_skalibs" compile/move/skalibs
++  mkdir compile/move/skalibs &&
++  ln -s "$depend_skalibs/include/skalibs" compile/move/skalibs/include &&
++  ln -s "$depend_skalibs/lib/skalibs" compile/move/skalibs/library
++
+ }
+ find_sums_37() {
+   rm -f compile/tmpdir/sums &&

@@ -269,6 +269,7 @@
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
     SUBDIR += runit
+    SUBDIR += runwhen
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah
