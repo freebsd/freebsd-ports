@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -30,11 +30,16 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Gallery.3
 
-TEMPLATEFILES=	directory.tpl error.tpl index.tpl info.tpl layout.tpl \
-		movie.tpl navpicture.tpl orig.tpl picture.tpl scale.tpl \
-		showpicture.tpl
-ICONS=		folder.png video-avi.png video-asf.png video-mov.png \
-		video-mpeg.png video-mpg.png
+TEMPLATEFILES=	dircomment.tpl directory.tpl error.tpl file.tpl index.tpl \
+		info.tpl interval.tpl intervalactive.tpl layout.tpl \
+		navpicture.tpl nodircomment.tpl nopictureinfo.tpl \
+		orig.tpl picture.tpl scale.tpl pictureinfo.tpl refresh.tpl \
+		scale.tpl scaleactive.tpl showpicture.tpl \
+		slideshowisoff.tpl slideshowoff.tpl
+ICONS=		application-doc.png application-mp3.png application-ogg.png \
+		application-pdf.png application-rtf.png application-wav.png \
+		gallery.css video-asf.png video-avi.png \
+		video-mov.png video-mpeg.png video-mpg.png video-wmv.png
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' pkg-message > ${PKGMESSAGE}
