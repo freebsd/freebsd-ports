@@ -6,7 +6,7 @@ all:
 	make -f Makefile.doc
 
 install:
-	install -c *.a *.so.5.2 ${PREFIX}/lib
+	install -c *.a *.so.5* ${PREFIX}/lib
 	mkdir -p ${PREFIX}/share/pgplot
 	install -c grfont.dat rgb.txt pgplot.doc pgplot.html pgplot-routines.tex cpg/cpgplot.doc ${PREFIX}/share/pgplot
 	install -c cpgplot.h ${PREFIX}/include

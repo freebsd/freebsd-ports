@@ -1,0 +1,101 @@
+--- lib/makefile.src.orig	Wed Mar  4 13:32:53 1992
++++ lib/makefile.src	Sat Oct  3 23:57:51 1998
+@@ -26,7 +26,14 @@
+ 	vaxshort.o \
+ 	$(OPT_OBJS)
+ 
+-LIBNAME = librle.a
++SOOBJS = $(OBJS:.o=.so)
++
++LIBANAME = librle.a
++.if $(PORTOBJFORMAT) == "elf"
++LIBSONAME = librle.so.1
++.else
++LIBSONAME = librle.so.1.0
++.endif
+ 
+ # Just rebuild the object files.
+ objs: $(OBJS)
+@@ -37,23 +44,14 @@
+ # Do nothing if $(DEST) is empty (or not defined)
+ install: buildlib
+ 	@sh -c "if test '$(DEST)x' != x ; then \
+-		echo cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
+-		cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
++		echo cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		echo cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
++		cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
++		ln -sf $(LIBSONAME) $(DEST)/librle.so ; \
+ 		if test x$(RANLIB) != x ; then \
+-			echo ranlib $(DEST)/$(LIBNAME) ; \
+-			ranlib $(DEST)/$(LIBNAME) ; \
+-		else \
+-			true ; \
+-		fi ; \
+-		if test -d $(DEST)/debug ; then \
+-			echo cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-			if test x$(RANLIB) != x ; then \
+-				cp $(LIBNAME) $(DEST)/debug/$(LIBNAME) ; \
+-				echo ranlib $(DEST)/debug/$(LIBNAME) ; \
+-			else \
+-				true ; \
+-			fi ; \
+-			ranlib $(DEST)/debug/$(LIBNAME) ; \
++			echo ranlib $(DEST)/$(LIBANAME) ; \
++			ranlib $(DEST)/$(LIBANAME) ; \
+ 		else \
+ 			true ; \
+ 		fi ; \
+@@ -63,14 +61,30 @@
+ 	touch install
+ 
+ # Rebuild the library from all the .o files.
+-buildlib: $(OBJS)
+-	-rm -f $(LIBNAME)
+-	ar rc $(LIBNAME)
+-	ar q $(LIBNAME) $(OBJS)
++buildlib: $(LIBANAME) $(LIBSONAME)
++
++$(LIBANAME): $(OBJS)
++	-rm -f $@
++	ar rc $@ $?
+ #ifndef NO_RANLIB
+-	ranlib $(LIBNAME)
++	ranlib $@
+ #endif
+-	touch buildlib
++
++.SUFFIXES: .so .o
++
++.c.so:
++	$(CC) -fPIC -DPIC $(CFLAGS) -c $*.c -o $*.so
++	$(LD) -X -r $*.so
++
++.if $(PORTOBJFORMAT) == "elf"
++$(LIBSONAME): $(SOOBJS)
++	-rm -f $@
++	ld -shared -soname $@ -o $@ $>
++.else
++$(LIBSONAME): $(SOOBJS)
++	-rm -f $@
++	ld -Bshareable -o $@ $>
++.endif
+ 
+ # Clean up installed stuff and binaries
+ pristine: clean
+@@ -86,9 +100,12 @@
+ # Get rid of everything which must be recompiled on a different computer.
+ clean:
+ 	-rm -f *.o
++	-rm -f *.so
+ 	-@if test x$(DEST) != x ; then \
+-		echo rm -f $(LIBNAME) ; \
+-		rm -f $(LIBNAME) ; \
++		echo rm -f $(LIBANAME) ; \
++		rm -f $(LIBANAME) ; \
++		echo rm -f $(LIBSONAME) ; \
++		rm -f $(LIBSONAME) ; \
+ 	else \
+ 		true ; \
+ 	fi
