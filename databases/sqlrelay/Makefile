@@ -136,6 +136,7 @@ post-extract:
 
 post-patch:
 	${PERL} -i -pe 's,\blibiconv\b,libgiconv,g;s,-liconv\b,-lgiconv,g' ${WRKSRC}/configure.in
+	find ${WRKSRC}/src/api -type f | xargs ${GREP} -Ele '-L(\.\./)?\.\./c\+\+/lib' /dev/null | xargs ${PERL} -i -pe 's|-L(?:\.\./)?\.\./c\+\+/lib|-L${LOCALBASE}/lib|'
 .if defined(WITH_GTK) && ${WITH_GTK:L} != no
 	${PERL} -i -pe 's,\bgtk-config\b,${GTK_CONFIG:T},g' ${WRKSRC}/configure.in
 .endif
