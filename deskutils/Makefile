@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1998/08/10 02:51:42 obrien Exp $
+# $Id: Makefile,v 1.3 1998/09/09 19:26:48 andreas Exp $
 #
 
     SUBDIR += abacus
@@ -13,6 +13,7 @@
     SUBDIR += sliderule
     SUBDIR += teapot
     SUBDIR += xcalendar
+    SUBDIR += xhime
     SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
