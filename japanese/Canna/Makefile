@@ -49,7 +49,7 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
 pre-install:
 	${MKDIR} /var/run/canna
-	${CHOWN} bin.bin /var/run/canna
+	${CHOWN} bin:bin /var/run/canna
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/canna.sh.in \
 		>${WRKDIR}/canna.sh
 
