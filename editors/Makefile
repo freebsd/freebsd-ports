@@ -113,6 +113,7 @@
     SUBDIR += speedbar-emacs20
     SUBDIR += staroffice5
     SUBDIR += staroffice52
+    SUBDIR += staroffice52-pt
     SUBDIR += staroffice60
     SUBDIR += sted
     SUBDIR += tamago
