@@ -9,3 +9,25 @@
  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
  	@echo "Please verify that the configuration values are correctly"
  	@echo "set in the mc.ext file in $(libdir)"
+--- src/Makefile.in.orig	Sun Nov 30 01:51:42 1997
++++ src/Makefile.in	Sun Nov 30 01:51:56 1997
+@@ -125,7 +125,7 @@
+ 	-$(RMF) $(srcdir)/Makefile
+ 
+ install: mc mfmt @saver@
+-	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)mc
++	$(INSTALL_PROGRAM) mc     $(DESTDIR)$(bindir)/$(binprefix)midc
+ 	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
+ 	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(libdir)/$(libprefix)mc.hlp 
+ 
+--- doc/Makefile.in.orig	Fri Nov 14 03:25:51 1997
++++ doc/Makefile.in	Sun Nov 30 01:52:16 1997
+@@ -14,7 +14,7 @@
+ all:
+ 
+ install:
+-	-$(SEDCMD2) < $(srcdir)/mc.1 > $(DESTDIR)$(mandir)/$(manprefix)mc.$(manext)
++	-$(SEDCMD2) < $(srcdir)/mc.1 > $(DESTDIR)$(mandir)/$(manprefix)midc.$(manext)
+ 	-$(SEDCMD2) < $(srcdir)/mcedit.1 > $(DESTDIR)$(mandir)/$(manprefix)mcedit.$(manext)
+ 	-$(SEDCMD2) < $(srcdir)/mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
+ 
