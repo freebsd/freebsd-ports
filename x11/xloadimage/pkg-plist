@@ -1,3 +1,4 @@
 bin/uufilter
 bin/xloadimage
+lib/X11/app-defaults/Xloadimage
 man/man1/xloadimage.1.gz
