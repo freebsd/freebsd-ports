@@ -1,5 +1,5 @@
 --- samplecfg	Sat Dec 23 15:02:40 2000
-+++ samplecfg.new	Thu Nov 29 07:44:20 2001
++++ samplecfg.new	Sun Dec  9 07:12:15 2001
 @@ -4,7 +4,7 @@
  #
  #  Generate Sample Free Pascal configuration file
@@ -9,6 +9,15 @@
    echo 'Usage :'
    echo 'samplecfg fpcdir confdir'
    echo 'fpcdir = Path where FPC is installed'
+@@ -29,7 +29,7 @@
+ #
+ if [ -f $thefile ] ; then
+   mv $thefile $thefile.orig  >/dev/null 2>&1
+-  if [ $? == 0 ]; then
++  if [ $? -eq 0 ]; then
+     echo Saved old config to $thefile.orig
+   else
+     echo Could not save old config. Bailing out...
 @@ -38,9 +38,15 @@
  fi
  
