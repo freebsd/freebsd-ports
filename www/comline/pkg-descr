@@ -1,1 +1,11 @@
-W3C Command Line WWW Tool, basic HTTP operations implemented
+The W3C Command Line Tool is a cross platform command line tool for
+accessing the Web. It is developed in C and serves as an example of a
+client application using the W3C Reference Library and as a test-tool
+for quick access to the Web from scripts, cron jobs etc. It gives a
+variety of possibilities for data format conversion, filtering etc. It
+is primarily intended as a test-tool for quick access to the Web or
+used in scripts, cron jobs etc.
+
+For more information on the application, please look at the page
+
+	http://www.w3.org/pub/WWW/ComLine/
