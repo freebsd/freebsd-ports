@@ -7,6 +7,7 @@
 
 PORTNAME=	nkf
 PORTVERSION=	1.92
+PORTREVISION=	1
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/
 PKGNAMEPREFIX=	ja-p5-
