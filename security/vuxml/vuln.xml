@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="624fe633-9006-11d9-a22c-0001020eed82">
+    <topic>libexif -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>libexif</name>
+	<range><lt>0.6.10_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Sylvain Defresne reports that libexif is vulnerable to a
+	  buffer overflow vulnerability due to insufficient input
+	  checking.  This could lead crash of applications using
+	  libexif.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12744</bid>
+      <cvename>CAN-2005-0664</cvename>
+      <url>https://bugzilla.ubuntulinux.org/show_bug.cgi?id=7152</url>
+    </references>
+    <dates>
+      <discovery>2005-03-03</discovery>
+      <entry>2005-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a0b334d-8d8d-11d9-afa0-003048705d5a">
     <topic>phpbb - Insuffient check against HTML code in usercp_register.php</topic>
     <affects>
