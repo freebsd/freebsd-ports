@@ -1,11 +1,21 @@
---- Makefile.bak	Tue Oct 19 23:58:46 1999
-+++ Makefile	Mon Apr 16 11:23:01 2001
-@@ -2,7 +2,7 @@
+--- Makefile.orig	Tue Oct 19 23:58:46 1999
++++ Makefile	Sun Apr 29 05:48:25 2001
+@@ -22,7 +22,17 @@
+ 	cp russian.hash russian.aff $(LIB)
  
- LIB=/usr/lib/ispell
+ russian.dict.koi: $(DICT)
+-	cat $^ $(YO2E) | ./sortkoi8 | uniq > $@
++	cat $(DICT) > distwords.tmp
++ifdef LOCAL_DICT
++	cut -f 1 -d / < $(LOCAL_DICT) | sed "s/.*/^&(\/.*)?$$/" > mywords.tmp
++	egrep -v -f mywords.tmp < distwords.tmp > repwords.tmp
++	rm -f distwords.tmp mywords.tmp
++else
++	mv distwords.tmp repwords.tmp
++endif
++	cat repwords.tmp $(LOCAL_DICT) $(YO2E) | ./sortkoi8 | uniq > $@
++	rm -f repwords.tmp
++
  
--DICT = base.koi computer.koi geography.koi science.koi # rare.koi
-+DICT = base.koi computer.koi geography.koi science.koi $(LOCAL_DICT) # rare.koi
- 
- ifdef YO
- PATT=y
+ check_dict: $(DICT)
+ 	for i in `cat $(DICT) | sed 's,/.*$$,,' | sort | uniq -d`; do \
