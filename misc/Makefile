@@ -267,6 +267,7 @@
     SUBDIR += rfc
     SUBDIR += ringtonetools
     SUBDIR += rname
+    SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += salias
     SUBDIR += screen
