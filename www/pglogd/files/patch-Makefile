@@ -1,0 +1,25 @@
+--- Makefile	Sat Jan 19 11:05:45 2002
++++ Makefile.new	Wed Apr 23 17:28:05 2003
+@@ -31,7 +31,7 @@
+ #
+ 
+ # Change this to your PostgreSQL install directroy.
+-PGDIR = /usr/local/pgsql
++PGDIR = ${PREFIX}
+ 
+ 
+ ### NO NEED TO EDIT BELOW THIS LINE ###
+@@ -56,3 +56,13 @@
+ 
+ pglog_dump : ${SRCS_DUMP} ${HDRS_DUMP}
+ 	${CC} ${COPTS} -o $@ ${CFLAGS} ${LDFLAGS} ${LIBS} ${SRCS_DUMP}
++
++install :
++	install -m 750 -s -c pglogd ${PREFIX}/bin/
++	install -m 755 -d ${PREFIX}/share/pglogd/
++	install -m 644 -c pglogd_tables.sql ${PREFIX}/share/pglogd/pglogd_tables.sql
++	install -m 644 -c README ${PREFIX}/share/pglogd/README
++	install -m 644 -c CHANGELOG ${PREFIX}/share/pglogd/CHANGELOG
++	install -m 644 -c weblog_daily.sql ${PREFIX}/share/pglogd/weblog_daily.sql
++	install -m 644 -c queries.txt ${PREFIX}/share/pglogd/queries.txt
++	install -m 644 -c pglogd.conf ${PREFIX}/etc/pglogd.conf.sample
