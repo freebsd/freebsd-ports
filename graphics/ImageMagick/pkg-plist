@@ -8,7 +8,6 @@ bin/import
 bin/mogrify
 bin/montage
 bin/xtp
-include/magick/PreRvIcccm.h
 include/magick/api.h
 include/magick/blob.h
 include/magick/classify.h
@@ -21,13 +20,10 @@ include/magick/gems.h
 include/magick/image.h
 include/magick/magick.h
 include/magick/memory.h
-include/magick/mng.h
 include/magick/monitor.h
 include/magick/quantize.h
 include/magick/utility.h
 include/magick/version.h
-include/magick/widget.h
-include/magick/xwindows.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
