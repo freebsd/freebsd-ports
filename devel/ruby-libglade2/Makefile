@@ -27,10 +27,13 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${RUBY_GNOME_WRKSRC}/libglade
 INSTALL_TARGET=	site-install
 
+RUBY_SHEBANG_FILES=	${WRKSRC}/bin/ruby-glade-create-template
+
 DOCS=		ChangeLog \
 		README
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/ruby-glade-create-template ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/

@@ -1,7 +1,10 @@
+bin/ruby-glade-create-template
 %%RUBY_SITEARCHLIBDIR%%/libglade2.so
 %%RUBY_SITELIBDIR%%/libglade2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.glade
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treeview.glade
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treeview.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
