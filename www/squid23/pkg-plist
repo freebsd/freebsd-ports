@@ -6,4 +6,3 @@ bin/dnsserver
 bin/ftpget
 bin/cachemgr.cgi
 etc/squid.conf.default
-etc/squid.conf

@@ -20,11 +20,16 @@ case $2 in
 	echo ""
 	echo "==> Press Enter to edit the ${PKGNAME} config file."
 	echo "    (The defaults are reasonable; and the file is well commented)"
-	echo "    You'd probably like to pay attention to the"
-	echo "    ACTUAL locations of BOTH cache \"spool\" AND logfiles."
+	tput md
+	echo "    You'd certainly like to pay attention to the"
+	echo "    ACTUAL locations of cache \"spool\", logfiles, pidfile!"
+	tput me
 	read skip
 	chown root:wheel ${PREFIX:-/usr/local}/etc/squid.conf*
 	chmod 644 ${PREFIX:-/usr/local}/etc/squid.conf*
+	[ -f ${PREFIX:-/usr/local}/etc/squid.conf ] || \
+		cp -fp	${PREFIX:-/usr/local}/etc/squid.conf.default \
+			${PREFIX:-/usr/local}/etc/squid.conf
 	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid.conf
 	;;
     *)

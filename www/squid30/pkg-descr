@@ -6,3 +6,11 @@ The Squid home page is http://www.nlanr.net/Squid/.
 This software is based on the Harvest Object Cache developed by
 the University of Colorado and the University of Southern California.
 The Harvest home page is http://harvest.cs.colorado.edu/.
+
+FreeBSD PORTER'S NOTES. To this moment, Squid is poorly documented.
+But you aren't lost in space: there is a mailing list,
+<squid-users@nlanr.net>, where you will find some support and help.
+I also _strongly_ suggest you to examine Web pages noticed above.
+If you have comments/questions/suggestions about FreeBSD port -- ask
+me.  Andrew Stesin.
+
