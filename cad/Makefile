@@ -26,6 +26,7 @@
     SUBDIR += qmls
     SUBDIR += sceptre
     SUBDIR += sis
+    SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += tkgate
     SUBDIR += vipec
