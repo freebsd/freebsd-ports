@@ -1,0 +1,9 @@
+Hapy is a runtime parser generator library. The Hapy library
+generates parsers from BNF-like language grammars. Parsing
+scripting languages and communication protocol messages are
+typical use cases. Generated parsers are C++ objects. Hapy is
+public domain software.
+
+WWW: http://www.hapy.org/
+
+- Alex Rousskov

@@ -276,6 +276,7 @@
     SUBDIR += gtranslator
     SUBDIR += gvd
     SUBDIR += happydoc
+    SUBDIR += hapy
     SUBDIR += hp48cc
     SUBDIR += hptools
     SUBDIR += hs-alex
