@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gdcalc
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	math
-MASTER_SITES=	http://sedumi.freeshell.org/unix/
+MASTER_SITES=	http://bhepple.freeshell.org/dcalc/unix/
 
 MAINTAINER=	Jan.Stocker@t-online.de
 
