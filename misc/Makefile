@@ -173,7 +173,6 @@
     SUBDIR += kdeaddons
     SUBDIR += kdeaddons3
     SUBDIR += kdeedu3
-    SUBDIR += kdeutils2
     SUBDIR += kdeutils3
     SUBDIR += kenny
     SUBDIR += koffice-i18n

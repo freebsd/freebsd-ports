@@ -20,7 +20,6 @@
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jlj
-    SUBDIR += kdepim
     SUBDIR += kdepim3
     SUBDIR += kmymoney2
     SUBDIR += kronolith

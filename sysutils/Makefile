@@ -99,7 +99,6 @@
     SUBDIR += ipsc
     SUBDIR += jailer
     SUBDIR += jailutils
-    SUBDIR += kdeadmin
     SUBDIR += kdeadmin3
     SUBDIR += koncd
     SUBDIR += lavaps
