@@ -1070,6 +1070,7 @@
     SUBDIR += p5-Term-Size
     SUBDIR += p5-Test-Builder-Tester
     SUBDIR += p5-Test-Class
+    SUBDIR += p5-Test-ClassAPI
     SUBDIR += p5-Test-Cmd
     SUBDIR += p5-Test-Deep
     SUBDIR += p5-Test-Differences
