@@ -7,6 +7,7 @@
 
 PORTNAME=	nikto
 PORTVERSION= 	1.30
+PORTREVISION=	1
 CATEGORIES= 	security www
 
 MAINTAINER=	jan@atstake.com
@@ -14,7 +15,6 @@ COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 MASTER_SITES=	http://www.cirt.net/nikto/ \
 		http://packetstormsecurity.org/UNIX/cgi-scanners/
-DISTNAME=	${PORTNAME}-current
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
