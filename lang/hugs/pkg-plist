@@ -38,9 +38,11 @@ share/hugs/lib/exts/Semaphore.lhs
 share/hugs/lib/exts/SampleVar.lhs
 share/hugs/lib/exts/STBase.hs
 share/hugs/lib/exts/ST.hs
+share/hugs/lib/exts/NumExts.hs
 share/hugs/lib/exts/LazyST.hs
 share/hugs/lib/exts/Int.hs
 share/hugs/lib/exts/IOExts.hs
+share/hugs/lib/exts/Foreign.hs
 share/hugs/lib/exts/Concurrent.lhs
 share/hugs/lib/exts/ConcBase.hs
 share/hugs/lib/exts/ChannelVar.lhs
@@ -141,6 +143,9 @@ share/hugs/demos/ArrayEx.hs
 share/hugs/demos/Tree.hs
 share/doc/hugs/libs-html/libs.html
 share/doc/hugs/libs-html/libs-10.html
+share/doc/hugs/libs-html/libs-11.html
+share/doc/hugs/libs-html/libs-12.html
+share/doc/hugs/libs-html/libs-13.html
 share/doc/hugs/libs-html/libs-2.html
 share/doc/hugs/libs-html/libs-3.html
 share/doc/hugs/libs-html/libs-4.html
@@ -150,26 +155,6 @@ share/doc/hugs/libs-html/libs-7.html
 share/doc/hugs/libs-html/libs-8.html
 share/doc/hugs/libs-html/libs-9.html
 share/doc/hugs/libs-html/libs-1.html
-share/doc/hugs/library/libindex.html
-share/doc/hugs/library/index.html
-share/doc/hugs/library/introduction.html
-share/doc/hugs/library/ratio.html
-share/doc/hugs/library/complex.html
-share/doc/hugs/library/numeric.html
-share/doc/hugs/library/ix.html
-share/doc/hugs/library/array.html
-share/doc/hugs/library/list.html
-share/doc/hugs/library/maybe.html
-share/doc/hugs/library/char.html
-share/doc/hugs/library/monad.html
-share/doc/hugs/library/io.html
-share/doc/hugs/library/directory.html
-share/doc/hugs/library/system.html
-share/doc/hugs/library/time.html
-share/doc/hugs/library/locale.html
-share/doc/hugs/library/cputime.html
-share/doc/hugs/library/random.html
-share/doc/hugs/library/title.gif
 share/doc/hugs/haskore-html/index.html~
 share/doc/hugs/haskore-html/equiv.gif
 share/doc/hugs/haskore-html/haskore.gif
@@ -190,6 +175,26 @@ share/doc/hugs/haskore-html/generalmidi.html
 share/doc/hugs/haskore-html/tutorial.html
 share/doc/hugs/haskore-html/tutindex.html
 share/doc/hugs/haskore-html/index.html
+share/doc/hugs/library/libindex.html
+share/doc/hugs/library/index.html
+share/doc/hugs/library/introduction.html
+share/doc/hugs/library/ratio.html
+share/doc/hugs/library/complex.html
+share/doc/hugs/library/numeric.html
+share/doc/hugs/library/ix.html
+share/doc/hugs/library/array.html
+share/doc/hugs/library/list.html
+share/doc/hugs/library/maybe.html
+share/doc/hugs/library/char.html
+share/doc/hugs/library/monad.html
+share/doc/hugs/library/io.html
+share/doc/hugs/library/directory.html
+share/doc/hugs/library/system.html
+share/doc/hugs/library/time.html
+share/doc/hugs/library/locale.html
+share/doc/hugs/library/cputime.html
+share/doc/hugs/library/random.html
+share/doc/hugs/library/title.gif
 share/doc/hugs/tutorial/intro.html
 share/doc/hugs/tutorial/fig2.gif
 share/doc/hugs/tutorial/fig3.gif
@@ -305,12 +310,12 @@ share/doc/hugs/graphics.html
 share/doc/hugs/TREX
 share/doc/hugs/README
 share/doc/hugs/windows-notes.txt
+share/doc/hugs/Makefile
 share/doc/hugs/server.tex
 share/doc/hugs/server.html
 share/doc/hugs/index.html
 share/doc/hugs/hugs.man
 share/doc/hugs/hugs.hlp
-share/doc/hugs/Makefile
 @dirrm share/doc/hugs/haskore-html
 @dirrm share/doc/hugs/library
 @dirrm share/doc/hugs/libs-html
@@ -318,6 +323,14 @@ share/doc/hugs/Makefile
 @dirrm share/doc/hugs/report
 @dirrm share/doc/hugs/tutorial
 @dirrm share/doc/hugs
+@dirrm share/hugs/demos/cgi
+@dirrm share/hugs/demos/prolog
 @dirrm share/hugs/demos
+@dirrm share/hugs/lib/Haskore/demos
+@dirrm share/hugs/lib/Haskore/docs
+@dirrm share/hugs/lib/Haskore/src
+@dirrm share/hugs/lib/Haskore
+@dirrm share/hugs/lib/exts
+@dirrm share/hugs/lib/hugs
 @dirrm share/hugs/lib
 @dirrm share/hugs
