@@ -16,7 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME On-Screen Keyboard (GOK)
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui atspi libwnck atk
+USE_GNOME=	gnomehack gnomeprefix libgnomeui atspi libwnck
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
