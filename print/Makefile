@@ -75,6 +75,7 @@
     SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
+    SUBDIR += pips-sc680_777
     SUBDIR += pips2200
     SUBDIR += pips3000
     SUBDIR += pips3300
