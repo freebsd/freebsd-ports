@@ -31,7 +31,7 @@
  # Note this only applies to the command-line client; to change the
  # default for the Emacs lisp version, set the archie-server variable.
 -ARCHIE= archie.sura.net
-+ARCHIE= archie.rutgers.edu
++ARCHIE= ftpsearch.ntnu.no
  
  #	Usually LDFLAGS is empty; if, after you build this, archie
  #	 complains that it can't resolve ARCHIE.ANS.NET (or whatever
