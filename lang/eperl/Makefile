@@ -3,7 +3,7 @@
 # Date created:		Sat Aug  2 17:22:46 MET DST 1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id$
+# $Id: Makefile,v 1.9 1997/08/11 08:59:04 rse Exp $
 #
 
 DISTNAME=	eperl-2.2.1
@@ -22,7 +22,7 @@ MAINTAINER=	rse@engelschall.com
 INSTALL_ALSO_AS_SSSL=	no
 
 .if defined(INSTALL_ALSO_AS_SSSL)
-RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache-stable
+RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/www/apache
 .endif
 
 USE_PERL5=	yes
