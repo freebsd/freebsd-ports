@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id:
+# $Id$
 #
 
 DISTNAME=	crossfire-0.92.8
@@ -43,7 +43,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
 USE_IMAKE=	yes
-PREFIX=		/usr/local		# don't use /usr/X11R6
+PREFIX=		${LOCALBASE}		# don't use /usr/X11R6
 CFDIR=		${PREFIX}/crossfire	# crossfire base directory
 
 # If you want to re-make playbook and spoiler you need the ARCH
