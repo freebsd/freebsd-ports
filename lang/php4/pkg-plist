@@ -193,6 +193,7 @@ include/php/regex/regex.h
 include/php/regex/regex2.h
 include/php/regex/regex_extra.h
 include/php/regex/utils.h
+lib/php/%%EXT_DIR%%/.keepme
 lib/php/build/Makefile.global
 lib/php/build/acinclude.m4
 lib/php/build/mkdep.awk
@@ -241,7 +242,6 @@ lib/php/build/shtool
 @dirrm include/php/main
 @dirrm include/php/regex
 @dirrm include/php/
-@exec mkdir %D/lib/php/%%EXT_DIR%%
 @unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
 @dirrm lib/php/build
 @unexec rmdir %D/lib/php 2> /dev/null || true
