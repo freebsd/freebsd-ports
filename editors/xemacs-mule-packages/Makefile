@@ -1,5 +1,5 @@
 # New ports collection makefile for:	X-Emacs Packages with Mule
-# Version required:	1.0
+# Version required:	1.1
 # Date created:		24 Oct 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	xemacs-mule-packages
-PKGNAME=	xemacs-mule-packages-1.0
+PKGNAME=	xemacs-mule-packages-1.1
 CATEGORIES=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -51,13 +51,13 @@ post-install:
 	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
 	@${ECHO_MSG} "running it as root and using the 'Manage Packes' menu within"
 	@${ECHO_MSG} "the 'Options' menu of the menubar."
-	@${ECHO_MSG} "To install all packages with mule, consider using the"
-	@${ECHO_MSG} "xemacs-sumo-packages and xemacs-mule-sumo-packages ports."
+	@${ECHO_MSG} "To install all packages besides basic packages(xemacs-packages or"
+	@${ECHO_MSG} "xemacs-mule-packages), consider using the xemacs-other-packages or"
+	@${ECHO_MSG} "xemacs-mule-other-packages port."
 
-# for make PLIST (only maintainer use)
-# arrange:
-# 	${MAKE} DIRRM2RMDIRS="lib/xemacs/mule-packages/pkginfo lib/xemacs/mule-packages/man lib/xemacs/mule-packages/lisp lib/xemacs/mule-packages/info lib/xemacs/mule-packages/etc lib/xemacs/mule-packages" \
-# 		DIRRMDEPTH=2 plist
-# 	${INSTALL} -c -m 644 -o kiri -g staff ${WRKPLIST} ${PLIST}
+## for make PLIST (only maintainer use)
+#arrange:
+#	${MAKE} -DPLIST_OVERRIDE DIRRM2RMDIRS="lib/xemacs/mule-packages/pkginfo lib/xemacs/mule-packages/man lib/xemacs/mule-packages/lisp lib/xemacs/mule-packages/info lib/xemacs/mule-packages/etc lib/xemacs/mule-packages" \
+#		DIRRMDEPTH=2 plist
 
 .include <bsd.port.mk>
