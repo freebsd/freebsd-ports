@@ -1,0 +1,6 @@
+cidr is a tiny command-line tool for determining network and broadcast
+addresses a la RFC 1878.  It takes an IP address and netmask and
+outputs the network address, broadcast address, and total number of
+addresses for the corresponding subnet.  The IP can be in binary,
+decimal, hex, or dotted quad.  The mask can be in binary, decimal, hex,
+dotted quad, or prefix.

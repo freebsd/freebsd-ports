@@ -21,6 +21,7 @@
     SUBDIR += cap
     SUBDIR += centericq
     SUBDIR += choparp
+    SUBDIR += cidr
     SUBDIR += ciscoconf
     SUBDIR += citrix_ica
     SUBDIR += clog
