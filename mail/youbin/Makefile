@@ -3,7 +3,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1996/10/09 12:50:54 max Exp $
+# $Id: Makefile,v 1.7 1996/11/10 21:32:56 obrien Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -31,9 +31,6 @@ post-install:
 		echo "fi" >> ${STARTUP_SCRIPT} ;			\
 		chmod 755 ${STARTUP_SCRIPT} ;				\
 	fi
-	@-(grep -v ^# /etc/inetd.conf | grep comsat > /dev/null) &&	\
-	 (echo "Now you need to edit /etc/inetd.conf and comment out the" ;\
-	  echo "entry for comsat.  Then, do:" ;				\
-	  echo "kill -HUP `cat /var/run/inetd.pid`")
+	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

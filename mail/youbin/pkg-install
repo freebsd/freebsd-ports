@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then exit 0; fi
+
+(grep -v ^# /etc/inetd.conf | grep comsat > /dev/null) || exit 0
+
+echo "***********************************************************"
+echo " Now you need to edit /etc/inetd.conf and comment out the"
+echo " entry for comsat.  Then, do:"
+echo "     kill -HUP `cat /var/run/inetd.pid`"
+echo "***********************************************************"
