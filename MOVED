@@ -1259,3 +1259,4 @@ palm/kpilot|deskutils/kdepim3|2004-08-30|kpilot has been reintegrated into kdepi
 devel/calltree|devel/callgrind|2004-09-01|renamed by author
 sysutils/top||2004-09-02|No longer maintained
 sysutils/portindex||2004-09-13|Removed on maintainer's request
+russian/gaim|net/gaim|2004-10-12|Functionality merged into original Gaim
