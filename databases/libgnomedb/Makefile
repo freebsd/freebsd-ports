@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnomedb
-PORTVERSION=	0.8.191
+PORTVERSION=	0.8.192
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/sources/libgnomedb
+MASTER_SITE_SUBDIR=	2.0.0/sources/libgnomedb
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,6 +21,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
@@ -29,13 +31,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

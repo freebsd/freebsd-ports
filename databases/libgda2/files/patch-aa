@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Jun  2 22:13:42 2002
-+++ Makefile.in	Sun Jun  2 22:13:50 2002
-@@ -149,7 +149,7 @@
- WARN_CFLAGS = @WARN_CFLAGS@
+--- Makefile.in.orig	Fri Jul 26 16:09:57 2002
++++ Makefile.in	Fri Jul 26 16:10:46 2002
+@@ -155,7 +155,7 @@
+ YACC = @YACC@
  cxxflags_set = @cxxflags_set@
  
--SUBDIRS =  	po 	idl 	libgda 	providers 	report 	tools 	testing 	data 	doc
-+SUBDIRS =  	po 	idl 	libgda 	providers 	report 	tools 	data 	doc
+-SUBDIRS =  	po 	idl 	libsql 	libgda 	providers 	report 	tools 	testing 	data 	doc
++SUBDIRS =  	po 	idl 	libsql 	libgda 	providers 	report 	tools 	data 	doc
  
  
  EXTRA_DIST =  	COPYING 	libgda.spec.in 	libgda.pc.in 	intltool-extract.in 	intltool-merge.in 	intltool-update.in
