@@ -3,6 +3,8 @@
 # Date created:		Mon Aug  5 10:54:25 CDT 1996
 # Whom:			erich@FreeBSD.org
 #
+# $Id$
+#
 
 DISTNAME=	xmmix-1.2
 CATEGORIES+=	audio
