@@ -38,7 +38,6 @@ bin/wftopfa
 %%SHLIB%%lib/libgs.so.%%SHLIB_VER%%
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/alps/README.gdevalps
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/bj10v/gdev10v.jis
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/dmprt/gdevdmpr.sj
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/ChangeLog
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/ert.txt
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gdevepag.txt
@@ -57,6 +56,64 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.mje
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.noz
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/cpem.doc
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-EUC-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-EUC-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78ms-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/78ms-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/83pv-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/90ms-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/90ms-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/90pv-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Add-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Add-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Add-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Add-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-0
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-1
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Adobe-Japan1-2
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETen-B5-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/ETen-B5-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/EUC-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/EUC-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Ext-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Ext-RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Ext-RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Ext-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/GBK-EUC-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/GBK-EUC-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Hankaku
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Hiragana
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Identity-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Identity-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/KSC-Johab-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/KSC-Johab-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/KSCms-UHC-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Katakana
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/NWP-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/NWP-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/RKSJ-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/RKSJ-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/Roman
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniCNS-UCS2-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniCNS-UCS2-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniGB-UCS2-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniGB-UCS2-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniHojo-UCS2-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniJIS-UCS2-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniJIS-UCS2-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-H
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/UniKS-UCS2-V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/V
+share/ghostscript/%%GS_VERSION%%/Resource/CMap/WP-Symbol
+share/ghostscript/%%GS_VERSION%%/Resource/Decoding/StandardEncoding
+share/ghostscript/%%GS_VERSION%%/Resource/Decoding/Unicode
 share/ghostscript/%%GS_VERSION%%/doc/API.htm
 share/ghostscript/%%GS_VERSION%%/doc/Bug-form.htm
 share/ghostscript/%%GS_VERSION%%/doc/Bug-info.htm
@@ -153,15 +210,12 @@ share/ghostscript/%%GS_VERSION%%/lib/cbjc800.ppd
 share/ghostscript/%%GS_VERSION%%/lib/cdj550.upp
 share/ghostscript/%%GS_VERSION%%/lib/cdj690.upp
 share/ghostscript/%%GS_VERSION%%/lib/cdj690ec.upp
-share/ghostscript/%%GS_VERSION%%/lib/cidfmap
 share/ghostscript/%%GS_VERSION%%/lib/cid2code.ps
+share/ghostscript/%%GS_VERSION%%/lib/cidfmap
 share/ghostscript/%%GS_VERSION%%/lib/decrypt.ps
-share/ghostscript/%%GS_VERSION%%/lib/dmp_init.ps
-share/ghostscript/%%GS_VERSION%%/lib/dmp_site.ps
 share/ghostscript/%%GS_VERSION%%/lib/dnj750c.upp
 share/ghostscript/%%GS_VERSION%%/lib/dnj750m.upp
 share/ghostscript/%%GS_VERSION%%/lib/docie.ps
-share/ghostscript/%%GS_VERSION%%/lib/escp_24.src
 share/ghostscript/%%GS_VERSION%%/lib/errpage.ps
 share/ghostscript/%%GS_VERSION%%/lib/font2c.ps
 share/ghostscript/%%GS_VERSION%%/lib/font2pcl.ps
@@ -174,6 +228,7 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_cidcm.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_ciddc.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cidfm.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cidfn.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_cidtt.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_ciecs2.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_ciecs3.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_cmap.ps
@@ -194,6 +249,7 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_dscp.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_epsf.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_fapi.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_fform.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_fntem.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_fonts.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_frsd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_icc.ps
@@ -225,6 +281,7 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_pfile.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_rdlin.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_res.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_resmp.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_resst.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_s.xbm
 share/ghostscript/%%GS_VERSION%%/lib/gs_s.xpm
 share/ghostscript/%%GS_VERSION%%/lib/gs_s_m.xbm
@@ -232,6 +289,7 @@ share/ghostscript/%%GS_VERSION%%/lib/gs_sepr.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_setpd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_statd.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_std_e.ps
+share/ghostscript/%%GS_VERSION%%/lib/gs_stres.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_sym_e.ps
 share/ghostscript/%%GS_VERSION%%/lib/gs_t.xbm
 share/ghostscript/%%GS_VERSION%%/lib/gs_t.xpm
@@ -269,6 +327,7 @@ share/ghostscript/%%GS_VERSION%%/lib/pdf_draw.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdf_font.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdf_main.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdf_ops.ps
+share/ghostscript/%%GS_VERSION%%/lib/pdf_rbld.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdf_sec.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdfopt.ps
 share/ghostscript/%%GS_VERSION%%/lib/pdfwrite.ps
@@ -342,6 +401,11 @@ share/ghostscript/%%GS_VERSION%%/lib/winmaps.ps
 share/ghostscript/%%GS_VERSION%%/lib/wrfont.ps
 share/ghostscript/%%GS_VERSION%%/lib/xlatmap
 share/ghostscript/%%GS_VERSION%%/lib/zeroline.ps
+share/ghostscript/fonts/COPYING
+share/ghostscript/fonts/ChangeLog
+share/ghostscript/fonts/README
+share/ghostscript/fonts/README.tweaks
+share/ghostscript/fonts/TODO
 share/ghostscript/fonts/a010013l.afm
 share/ghostscript/fonts/a010013l.pfb
 share/ghostscript/fonts/a010013l.pfm
@@ -376,19 +440,14 @@ share/ghostscript/fonts/bchri.afm
 share/ghostscript/fonts/bchri.pfa
 share/ghostscript/fonts/c059013l.afm
 share/ghostscript/fonts/c059013l.pfb
-share/ghostscript/fonts/c059013l.pfm
 share/ghostscript/fonts/c059016l.afm
 share/ghostscript/fonts/c059016l.pfb
-share/ghostscript/fonts/c059016l.pfm
 share/ghostscript/fonts/c059033l.afm
 share/ghostscript/fonts/c059033l.pfb
-share/ghostscript/fonts/c059033l.pfm
 share/ghostscript/fonts/c059036l.afm
 share/ghostscript/fonts/c059036l.pfb
-share/ghostscript/fonts/c059036l.pfm
 share/ghostscript/fonts/d050000l.afm
 share/ghostscript/fonts/d050000l.pfb
-share/ghostscript/fonts/d050000l.pfm
 share/ghostscript/fonts/fcyr.afm
 share/ghostscript/fonts/fcyr.gsf
 share/ghostscript/fonts/fcyri.afm
@@ -448,13 +507,10 @@ share/ghostscript/fonts/n019024l.pfb
 share/ghostscript/fonts/n019024l.pfm
 share/ghostscript/fonts/n019043l.afm
 share/ghostscript/fonts/n019043l.pfb
-share/ghostscript/fonts/n019043l.pfm
 share/ghostscript/fonts/n019044l.afm
 share/ghostscript/fonts/n019044l.pfb
-share/ghostscript/fonts/n019044l.pfm
 share/ghostscript/fonts/n019063l.afm
 share/ghostscript/fonts/n019063l.pfb
-share/ghostscript/fonts/n019063l.pfm
 share/ghostscript/fonts/n019064l.afm
 share/ghostscript/fonts/n019064l.pfb
 share/ghostscript/fonts/n019064l.pfm
@@ -472,35 +528,26 @@ share/ghostscript/fonts/n021024l.pfb
 share/ghostscript/fonts/n021024l.pfm
 share/ghostscript/fonts/n022003l.afm
 share/ghostscript/fonts/n022003l.pfb
-share/ghostscript/fonts/n022003l.pfm
 share/ghostscript/fonts/n022004l.afm
 share/ghostscript/fonts/n022004l.pfb
-share/ghostscript/fonts/n022004l.pfm
 share/ghostscript/fonts/n022023l.afm
 share/ghostscript/fonts/n022023l.pfb
-share/ghostscript/fonts/n022023l.pfm
 share/ghostscript/fonts/n022024l.afm
 share/ghostscript/fonts/n022024l.pfb
-share/ghostscript/fonts/n022024l.pfm
 share/ghostscript/fonts/p052003l.afm
 share/ghostscript/fonts/p052003l.pfb
-share/ghostscript/fonts/p052003l.pfm
 share/ghostscript/fonts/p052004l.afm
 share/ghostscript/fonts/p052004l.pfb
-share/ghostscript/fonts/p052004l.pfm
 share/ghostscript/fonts/p052023l.afm
 share/ghostscript/fonts/p052023l.pfb
-share/ghostscript/fonts/p052023l.pfm
 share/ghostscript/fonts/p052024l.afm
 share/ghostscript/fonts/p052024l.pfb
-share/ghostscript/fonts/p052024l.pfm
 share/ghostscript/fonts/putb.pfa
 share/ghostscript/fonts/putbi.pfa
 share/ghostscript/fonts/putr.pfa
 share/ghostscript/fonts/putri.pfa
 share/ghostscript/fonts/s050000l.afm
 share/ghostscript/fonts/s050000l.pfb
-share/ghostscript/fonts/s050000l.pfm
 share/ghostscript/fonts/u003043t.afm
 share/ghostscript/fonts/u003043t.gsf
 share/ghostscript/fonts/u003043t.pfm
@@ -514,7 +561,10 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
-@dirrm share/ghostscript/%%GS_VERSION%%
+@dirrm share/ghostscript/%%GS_VERSION%%/Resource/Decoding
+@dirrm share/ghostscript/%%GS_VERSION%%/Resource/CMap
+@dirrm share/ghostscript/%%GS_VERSION%%/Resource
+@unexec rmdir %D/share/ghostscript/%%GS_VERSION%% 2>/dev/null || true
 @unexec rmdir %D/share/ghostscript 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
@@ -523,7 +573,6 @@ share/ghostscript/fonts/z003034l.pfm
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gdi
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/eplaser
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/epag
-%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/dmprt
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/bj10v
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/alps
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%
