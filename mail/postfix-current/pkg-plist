@@ -1,7 +1,9 @@
+@comment $FreeBSD$
 @unexec if cmp -s %D/etc/postfix/main.cf %D/etc/postfix/sample-main.cf; then rm -f %D/etc/postfix/main.cf; fi
 @unexec if cmp -s %D/etc/postfix/master.cf %D/etc/postfix/sample-master.cf; then rm -f %D/etc/postfix/master.cf; fi
 bin/rmail
 etc/postfix/LICENSE
+etc/postfix/install.cf
 etc/postfix/postfix-script
 etc/postfix/sample-access
 etc/postfix/sample-aliases
