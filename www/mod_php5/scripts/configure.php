@@ -168,7 +168,8 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mysql=\${LOCALBASE}"
 			;;
 		\"PostgreSQL\")
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
+			echo "POSTGRESQL_PORT?=	databases/postgresql7"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			if [ -x ${LOCALBASE}/pgsql/bin/postgres -a ! -x ${LOCALBASE}/bin/postgres ]; then
 				PGPREFIX=${LOCALBASE}/pgsql
 			else

@@ -94,7 +94,8 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mysql=\${PREFIX}"
 			;;
 		\"PostgreSQL\")
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
+			echo "POSTGRESQL_PORT?=	databases/postgresql7"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "CONFIGURE_ARGS+=--with-pgsql=\${PREFIX}"
 			if /usr/bin/ldd ${PREFIX}/bin/postgres | /usr/bin/grep -q "libssl"; then
 				LIBS="-lcrypto -lssl"

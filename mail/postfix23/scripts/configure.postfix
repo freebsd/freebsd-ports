@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.24 2002-08-26 21:33:57 dwcjr Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix23/scripts/Attic/configure.postfix,v 1.25 2003-01-04 16:17:26 seanc Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -109,7 +109,8 @@ for i; do
 			echo "MYSQL_SUFFIX=	+mysql"
 			;;
 		PgSQL)
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
+			echo "POSTGRESQL_PORT?=	databases/postgresql7"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
