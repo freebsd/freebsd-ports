@@ -1,0 +1,14 @@
+--- data/Makefile.in.orig	Fri Feb 15 17:24:52 2002
++++ data/Makefile.in	Fri Feb 15 17:24:40 2002
+@@ -424,8 +424,8 @@
+ 	@rm -f system.tags
+ 
+ system.tags:
+-	cd $(top_builddir)/tagmanager && make libctags.a
+-	cd $(top_builddir)/global-tags && make system.tags
++	cd $(top_builddir)/tagmanager && $(MAKE) libctags.a
++	cd $(top_builddir)/global-tags && $(MAKE) system.tags
+ 	mv $(top_builddir)/global-tags/system.tags .
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+

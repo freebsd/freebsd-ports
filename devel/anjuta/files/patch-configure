@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Jan  4 15:39:12 2002
-+++ configure	Fri Jan  4 16:07:50 2002
+--- configure.orig	Thu Feb 14 22:13:15 2002
++++ configure	Thu Feb 14 22:15:54 2002
 @@ -8,6 +8,7 @@
  # gives unlimited permission to copy, distribute and modify it.
  
@@ -11,7 +8,7 @@ $FreeBSD$
  ac_help=
  ac_default_prefix=/usr/local
  # Any additions from configure.in:
-@@ -6391,10 +6392,10 @@
+@@ -10328,11 +10329,11 @@
    packageprefix=${prefix}
  fi
  
@@ -19,18 +16,18 @@ $FreeBSD$
 -packagedocdir=doc/${PACKAGE}
 +packagedatadir=share/gnome/${PACKAGE}
 +packagedocdir=share/doc/${PACKAGE}
+ packageplugindir=lib/${PACKAGE}/plugins/${VERSION}
  
 -packagepixmapsdir=share/pixmaps/${PACKAGE}
 +packagepixmapsdir=share/gnome/pixmaps/${PACKAGE}
  packagehelpdir=share/gnome/help/${PACKAGE}
  packagemenudir=share/gnome/apps
- 
-@@ -6557,12 +6558,10 @@
+ packageplugindir=lib/${PACKAGE}
+@@ -10505,11 +10506,9 @@
  tagmanager/Makefile
  tagmanager/include/Makefile
  global-tags/Makefile
 -scintilla/Makefile
- ccview/Makefile
  widgets/Makefile
  manuals/Makefile
  omf-install/Makefile
@@ -38,20 +35,19 @@ $FreeBSD$
  manuals/C/Makefile
  manuals/C/anjuta-manual/Makefile
  manuals/C/anjuta-faqs/Makefile
-@@ -6656,6 +6655,7 @@
+@@ -10625,6 +10624,7 @@
+ s%@GNOME_DOCKLETS_LIBS@%$GNOME_DOCKLETS_LIBS%g
  s%@GNOME_CAPPLET_LIBS@%$GNOME_CAPPLET_LIBS%g
  s%@cflags_set@%$cflags_set%g
- s%@GTK_CONFIG@%$GTK_CONFIG%g
 +s%@GLIB_CONFIG@%$GLIB_CONFIG%g
+ s%@GTK_CONFIG@%$GTK_CONFIG%g
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
- s%@XPM_LIBS@%$XPM_LIBS%g
-@@ -6759,12 +6759,10 @@
+@@ -10730,11 +10730,9 @@
  tagmanager/Makefile
  tagmanager/include/Makefile
  global-tags/Makefile
 -scintilla/Makefile
- ccview/Makefile
  widgets/Makefile
  manuals/Makefile
  omf-install/Makefile

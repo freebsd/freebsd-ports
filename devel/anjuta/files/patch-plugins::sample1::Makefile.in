@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/sample1/Makefile.in	2002/02/19 08:11:57	1.1
++++ plugins/sample1/Makefile.in	2002/02/19 08:12:31
+@@ -193,7 +193,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libanjuta_sample1_la_LDFLAGS = 
++libanjuta_sample1_la_LDFLAGS = -module -avoid-version
+ libanjuta_sample1_la_LIBADD = 
+ libanjuta_sample1_la_OBJECTS =  plugin-sample1.lo
+ CFLAGS = @CFLAGS@

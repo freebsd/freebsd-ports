@@ -1,33 +1,73 @@
-
-$FreeBSD$
-
---- src/Makefile.in.orig	Fri Jan  4 15:15:40 2002
-+++ src/Makefile.in	Fri Jan  4 15:15:54 2002
-@@ -139,10 +139,10 @@
+--- src/Makefile.in.orig	Fri Feb 15 17:01:26 2002
++++ src/Makefile.in	Fri Feb 15 17:03:35 2002
+@@ -157,38 +157,17 @@
+ 	$(GNOME_INCLUDEDIR)\
+ 	$(EXTRA_GNOME_CFLAGS)\
+ 	$(EXTRA_ORBIT_CFLAGS)\
+-	-I$(srcdir)/../scintilla/include \
++	-I$(prefix)/include/scintilla \
+ 	-I$(srcdir)/../tagmanager/include \
+ 	-I$(srcdir)/../widgets \
+ 	-I$(srcdir)/../pixmaps \
+ 	-I.. -I. \
+ 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment\
+ 	-Wuninitialized -Wparentheses -Wpointer-arith\
+-	-Wmissing-prototypes\
+- 	-O1\
+- 	-g
++	-Wmissing-prototypes
  
- EXTRA_DIST = glades.h Prj-skelimpl.c Prj-skels.c Prj-stubs.c
- 
--INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	$(EXTRA_GNOME_CFLAGS) 	$(EXTRA_ORBIT_CFLAGS) 	-I$(srcdir)/../scintilla/include 	-I$(srcdir)/../tagmanager/include 	-I$(srcdir)/../widgets 	-I$(srcdir)/../ccview 	-I$(srcdir)/../pixmaps 	-I.. -I. 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment 	-Wuninitialized -Wparentheses -Wpointer-arith 	-Wmissing-prototypes  	-O1  	-g
-+INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	$(EXTRA_GNOME_CFLAGS) 	$(EXTRA_ORBIT_CFLAGS) 	-I$(prefix)/include/scintilla 	-I$(srcdir)/../tagmanager/include 	-I$(srcdir)/../widgets 	-I$(srcdir)/../ccview 	-I$(srcdir)/../pixmaps 	-I.. -I. 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment 	-Wuninitialized -Wparentheses -Wpointer-arith 	-Wmissing-prototypes
- 
- 
--SCILEXERS =      ../scintilla/StyleContext.o 	../scintilla/LexCPP.o 	../scintilla/LexConf.o 	../scintilla/LexHTML.o 	../scintilla/LexLua.o 	../scintilla/LexOthers.o 	../scintilla/LexPerl.o 	../scintilla/LexPython.o 	../scintilla/LexSQL.o 	../scintilla/LexVB.o 	../scintilla/LexPascal.o 	../scintilla/LexAVE.o 	../scintilla/LexCrontab.o 	../scintilla/LexEiffel.o 	../scintilla/LexLisp.o 	../scintilla/LexRuby.o 	../scintilla/LexBullant.o 	../scintilla/LexAda.o
-+SCILEXERS =      -lscintilla_lexers
+-
+-SCILEXERS = \
+-    ../scintilla/StyleContext.o\
+-	../scintilla/LexCPP.o\
+-	../scintilla/LexConf.o\
+-	../scintilla/LexHTML.o\
+-	../scintilla/LexLua.o\
+-	../scintilla/LexOthers.o\
+-	../scintilla/LexPerl.o\
+-	../scintilla/LexPython.o\
+-	../scintilla/LexSQL.o\
+-	../scintilla/LexVB.o\
+-	../scintilla/LexPascal.o\
+-	../scintilla/LexAVE.o\
+-	../scintilla/LexCrontab.o\
+-	../scintilla/LexEiffel.o\
+-	../scintilla/LexLisp.o\
+-	../scintilla/LexRuby.o\
+-	../scintilla/LexBullant.o\
+-	../scintilla/LexAda.o\
+-	../scintilla/LexBaan.o
++SCILEXERS =		 -lscintilla_lexers
++SCINTILLA =		 -lscintilla
  
  
  bin_PROGRAMS = anjuta
-@@ -198,14 +198,7 @@
- defaults.$(OBJEXT) resources.$(OBJEXT) notebook.$(OBJEXT) \
+@@ -387,9 +366,9 @@
+ 	$(GNOMEUI_LIBS)\
+ 	$(EXTRA_GNOME_LIBS)\
+ 	$(EXTRA_ORBIT_LIBS)\
+-	$(top_builddir)/scintilla/libscintilla.a\
+ 	$(top_builddir)/tagmanager/libctags.a\
+ 	$(top_builddir)/widgets/libwidgets.a\
++	$(SCINTILLA)\
+ 	$(SCILEXERS)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -441,16 +420,7 @@
+ compatibility_0.$(OBJEXT) defaults.$(OBJEXT) resources.$(OBJEXT) \
  CORBA-Server.$(OBJEXT) Gladen-common.$(OBJEXT) glades.$(OBJEXT) \
  Prj-common.$(OBJEXT) Gladen-stubs.$(OBJEXT) session.$(OBJEXT)
--anjuta_DEPENDENCIES =  ../scintilla/StyleContext.o ../scintilla/LexCPP.o \
--../scintilla/LexConf.o ../scintilla/LexHTML.o ../scintilla/LexLua.o \
--../scintilla/LexOthers.o ../scintilla/LexPerl.o \
+-anjuta_DEPENDENCIES =  $(top_builddir)/scintilla/libscintilla.a \
+-$(top_builddir)/tagmanager/libctags.a \
+-$(top_builddir)/widgets/libwidgets.a ../scintilla/StyleContext.o \
+-../scintilla/LexCPP.o ../scintilla/LexConf.o ../scintilla/LexHTML.o \
+-../scintilla/LexLua.o ../scintilla/LexOthers.o ../scintilla/LexPerl.o \
 -../scintilla/LexPython.o ../scintilla/LexSQL.o ../scintilla/LexVB.o \
 -../scintilla/LexPascal.o ../scintilla/LexAVE.o \
 -../scintilla/LexCrontab.o ../scintilla/LexEiffel.o \
 -../scintilla/LexLisp.o ../scintilla/LexRuby.o ../scintilla/LexBullant.o \
--../scintilla/LexAda.o
+-../scintilla/LexAda.o ../scintilla/LexBaan.o
 +anjuta_DEPENDENCIES =
  anjuta_LDFLAGS = 
  CXXFLAGS = @CXXFLAGS@
