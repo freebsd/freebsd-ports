@@ -4,8 +4,8 @@
  #
  CCWARN= -Wall -Wno-implicit -Wno-comment
  CCOPT= ${DEBUG} ${NO_SHARED}
--CCMISC=
-+CCMISC= -O
+ CCMISC=
  #
- CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
+-CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
++CFLAGS+= ${CCWARN} ${CCOPT} ${CCMISC}
  ICFLAGS= ${CCWARN} ${CCMISC}
