@@ -1,4 +1,7 @@
 bin/pyrexc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/CmdLine.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Code.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Code.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Code.pyo
@@ -94,11 +97,17 @@ bin/pyrexc
 %%PORTDOCS%%share/doc/pyrex/About.html
 %%PORTDOCS%%share/doc/pyrex/FAQ.html
 %%PORTDOCS%%share/doc/pyrex/index.html
+%%PORTDOCS%%share/doc/pyrex/old_news.html
 %%PORTDOCS%%share/doc/pyrex/overview.html
 %%PORTDOCS%%share/doc/pyrex/primes.c
 %%PORTDOCS%%share/doc/pyrex/special_methods.html
 %%PORTDOCS%%share/examples/pyrex/Makefile
 %%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile
+%%PORTDOCS%%share/examples/pyrex/embed/README
+%%PORTDOCS%%share/examples/pyrex/embed/embedded.pxi
+%%PORTDOCS%%share/examples/pyrex/embed/embedded.pyx
+%%PORTDOCS%%share/examples/pyrex/embed/main.c
 %%PORTDOCS%%share/examples/pyrex/numeric.pyx
 %%PORTDOCS%%share/examples/pyrex/numeric_demo.pyx
 %%PORTDOCS%%share/examples/pyrex/primes.pyx
@@ -108,5 +117,6 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
 %%PORTDOCS%%share/examples/pyrex/setup.py
 %%PORTDOCS%%share/examples/pyrex/spam.pyx
+%%PORTDOCS%%@dirrm share/examples/pyrex/embed
 %%PORTDOCS%%@dirrm share/examples/pyrex
 %%PORTDOCS%%@dirrm share/doc/pyrex
