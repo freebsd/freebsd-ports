@@ -1,0 +1,86 @@
+--- Makefile.linux.orig	Wed Oct 11 13:05:18 2000
++++ Makefile.linux	Thu Oct 12 14:07:05 2000
+@@ -3,12 +3,6 @@
+ ################################
+ # Configuration
+ 
+-CC = gcc
+-CFLAGS = 
+-LDFLAGS =
+-PREFIX = /usr/local
+-# WANT_DEBUG = TRUE
+-
+ # nothing below here should need to be changed
+ 
+ ################################
+@@ -25,14 +19,10 @@
+ 	-I$(SRCDIR)/sndhrdw\
+ 	-I$(SRCDIR)/machine\
+ 	-I$(SRCDIR)/cpu/nes6502\
++	-I$(LOCALBASE)/include\
+ 	-I$(BUILDDIR)
+ 
+-ifeq "$(WANT_DEBUG)" "TRUE"
+-	CFLAGS += -ggdb -DNSF_PLAYER
+-else
+-	CFLAGS += -O2 -fomit-frame-pointer -ffast-math -funroll-loops -DNSF_PLAYER
+-	DEBUG_OBJECTS =
+-endif
++CFLAGS += -DNSF_PLAYER
+ 
+ ################################
+ # Here's where the directory tree gets ugly
+@@ -55,36 +45,26 @@
+ OBJS = $(addsuffix .o, $(FILES))
+ OBJECTS = $(addprefix $(BUILDDIR)/, $(OBJS))
+ 
++LDLIBS = -L$(LOCALBASE)/lib -lm -lgnugetopt
++
+ ################################
+ # Rules
+ 
+-all: $(BUILDDIR)/$(NAME)
++all: $(BUILDDIR)/config.h $(BUILDDIR)/$(NAME)
+ 
+ ################################
+ # Support
+ 
+-$(BUILDDIR):
++$(BUILDDIR)/config.h: Makefile.linux
++	[ -d $(BUILDDIR) ] || mkdir -p $(BUILDDIR)
+ 	-mkdir -p $(BUILDDIR)/cpu/nes6502 $(BUILDDIR)/machine $(BUILDDIR)/sndhrdw $(BUILDDIR)/linux
+-
+-$(BUILDDIR)/config.h: $(BUILDDIR) Makefile.linux
+ 	echo "#define VERSION \"$(VERSION)\"" > $(BUILDDIR)/config.h
+ 	echo "#define NAME \"$(NAME)\"" >> $(BUILDDIR)/config.h
+ 
+-$(BUILDDIR)/dep: $(BUILDDIR)/config.h
+-	$(CC) $(CFLAGS) -M $(SOURCES) > $@
+-
+-include $(BUILDDIR)/dep
+-
+ install: $(BUILDDIR)/$(NAME)
+-	mkdir -p $(PREFIX)/bin
+-	cp $(BUILDDIR)/$(NAME) $(PREFIX)/bin
+-	@echo "-----------------------------------------------"
+-	@echo "Be sure to run chmod +s $(PREFIX)/bin/$(NAME) if you want ordinary users"
+-	@echo "to be able to use /dev/dsp.  SUID isn't necessary, though, if you want to"
+-	@echo "run $(NAME) with a wrapper, like artsdsp from arts or esddsp from esound."
+-	@echo "-----------------------------------------------"
+-	@echo "Also, make sure that $(PREFIX)/bin is in your PATH."
+-	
++	[ -d $(PREFIX)/bin ] || mkdir -p $(PREFIX)/bin
++	$(INSTALL) -cs -g $(BINGRP) -m $(BINMODE) -o $(BINOWN) $(BUILDDIR)/$(NAME) $(PREFIX)/bin
++
+ uninstall:
+ 	rm -f $(PREFIX)/bin/$(NAME)
+ 
+@@ -92,7 +72,7 @@
+ # The real heavy lifting
+ 
+ $(BUILDDIR)/$(NAME): $(OBJECTS)
+-	$(CC) $(LDFLAGS) -o $@ $(OBJECTS)
++	$(CC) $(LDFLAGS) -o $@ $(OBJECTS) $(LDLIBS)
+ 
+ $(BUILDDIR)/%.o: $(SRCDIR)/%.c
+ 	$(CC) $(CFLAGS) -o $@ -c $<
