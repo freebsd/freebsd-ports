@@ -6,39 +6,23 @@
 #
 
 PORTNAME=	xforms
-PORTVERSION=	0.88
+PORTVERSION=	1.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
-MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/${MASTER_SITE_SUBDIR}/
+MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/
+FULLVERSION=	${PORTVERSION}RC4
+DISTNAME=	${PORTNAME}-${FULLVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mikeh@FreeBSD.ORG
 
-LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_IMAKE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 MAN1=		fdesign.1 fd2ps.1
-MAN5=		xforms.5 forms.5
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "alpha"
-MASTER_SITE_SUBDIR=	freeBSD-alpha
-DISTNAME=	bxform-${PORTVERSION:S/.//}
-.else
-MASTER_SITE_SUBDIR=	freeBSD
-DISTNAME=	bxform-${PORTVERSION:S/.//}-elf
-.endif
-
-post-install:
-	@${LN} -sf ${PREFIX}/lib/libforms.so.0.88 ${PREFIX}/lib/libforms.so.0
-	@${LN} -sf ${PREFIX}/lib/libforms.so.0.88 ${PREFIX}/lib/libxforms.so.0
-	@${LN} -sf ${PREFIX}/lib/libforms.a ${PREFIX}/lib/libxforms.a
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

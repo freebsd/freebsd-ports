@@ -1,9 +1,10 @@
 bin/fd2ps
 bin/fdesign
-include/forms.h
+include/X11/flimage.h
+include/X11/forms.h
+lib/libflimage.a
+lib/libflimage.so
+lib/libflimage.so.1
 lib/libforms.a
 lib/libforms.so
-lib/libforms.so.0
-lib/libforms.so.0.88
-lib/libxforms.a
-lib/libxforms.so.0
+lib/libforms.so.1

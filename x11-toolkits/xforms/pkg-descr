@@ -1,23 +1,10 @@
-This is the binary distribution of XForms, a graphical user interface
+This is the source distribution of XForms, a graphical user interface
 toolkit for X Window Systems. It should work under X11 R4, R5 & R6.
 
-Documentation on XForms is available via anonymous FTP from
-<ftp://einstein.phys.uwm.edu/pub/xforms/>.
-
-The entire XForms distribution is also accessible at
-WWW: http://bragg.phys.uwm.edu/xforms/
-
-There is also a mailing list for XForms. Send an empty message
-to <xforms-request@bob.usuf2.usuhs.mil> with one of the following headers
-
-  subscribe (your_name) Your_EmailAddress
-  unsubscribe (your_name) Your_EmailAddress
-
-to get on and off the list.
-
-To use the mailing list, send your message to
-   <xforms@bob.usuf2.usuhs.mil>
-Remember your message will be sent to many people. Please DO NOT
-send subscribe/unsubscribe messages to the list.
+XForms features a rich set of objects, such as buttons, scrollbars,
+and menus etc. integrated into an easy and efficient object/event
+callback execution model that allows fast and easy construction of
+X-applications. In addition, the library is extensible and new objects
+can easily be created and added to the library.
 
 WWW: http://world.std.com/~xforms/
