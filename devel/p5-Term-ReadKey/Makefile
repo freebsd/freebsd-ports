@@ -1,13 +1,13 @@
 # New ports collection makefile for:    p5-Term-ReadKey
-# Version required:			2.07
+# Version required:			2.12
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-#   $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/27 01:56:01 jfitz Exp $
 #
 
-DISTNAME=	TermReadKey-2.07
-PKGNAME=	p5-Term-ReadKey-2.07
+DISTNAME=	TermReadKey-2.12
+PKGNAME=	p5-Term-ReadKey-2.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
