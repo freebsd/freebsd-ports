@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
 
+FORBIDDEN=	"Remote buffer overflow"
+
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
