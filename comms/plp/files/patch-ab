@@ -1,0 +1,11 @@
+--- defaults.h.orig	Tue Nov  2 12:51:01 1999
++++ defaults.h	Wed Jan 26 20:44:56 2000
+@@ -19,7 +19,7 @@
+ 
+ // This is the default device driver for the serial link
+ // N.B. This was "/dev/cua1" in the previous release
+-#define DEFAULT_SERIAL_DEVICE "/dev/ttyS1"
++#define DEFAULT_SERIAL_DEVICE "/dev/psion"
+ 
+ // This is the default drive to use on the psion
+ #define DEFAULT_DRIVE "C:\\"

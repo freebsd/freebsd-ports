@@ -1,0 +1,16 @@
+PLP implements the Psion Link Protocol. 
+
+This program is used to transfer data between a Psion Series 5mx
+(default) or Psion Series 5 to a Unix server.  The ncp daemon is
+started to communicate with the Psion and an ftp like interface is
+provided by rfsv.
+
+Before using this port it is necessary to either
+
+    a) create a symbolic link form the serial port the psion is
+    connected to to /dev/psion eg ln -s /dev/cuaa0 /dev/psion
+
+or
+
+    b) start the ncp daemon with the correct serial port eg 
+    ncp -s 7501 -d /dev/cuaa0 -s5
