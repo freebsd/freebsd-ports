@@ -11,7 +11,10 @@
 
 PORTNAME=	cool-gorilla
 PORTVERSION=	20030726
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
 DISTNAME=	ICON-CoolGorilla
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
