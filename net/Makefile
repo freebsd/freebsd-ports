@@ -68,6 +68,7 @@
     SUBDIR += fping
     SUBDIR += freewais-sf
     SUBDIR += fspclient
+    SUBDIR += fugu
     SUBDIR += gabber
     SUBDIR += gaim
     SUBDIR += gale
