@@ -1,6 +1,18 @@
---- configure.in.orig	Tue Nov 13 15:08:03 2001
-+++ configure.in	Tue Nov 13 15:08:49 2001
-@@ -523,10 +523,10 @@
+
+$FreeBSD$
+
+--- configure.in.orig	Wed Dec 19 13:18:40 2001
++++ configure.in	Thu Jul 25 19:54:48 2002
+@@ -49,7 +49,7 @@
+ AC_ARG_WITH(zlib,--with-zlib=[[PATH]]         Which zlib library/object file to use,
+   with_zlib="$withval", with_zlib="")
+ 
+-AC_CHECK_HEADERS(crypt.h getopt.h pthread.h stdlib.h string.h strings.h unistd.h sys/inttypes.h)
++AC_CHECK_HEADERS(crypt.h getopt.h pthread.h stdlib.h string.h strings.h unistd.h inttypes.h)
+ AC_CHECK_HEADERS(netinet/ip_fil.h, AC_DEFINE(HAVE_IPF))
+ AC_CHECK_HEADERS(netinet/ip6.h, AC_DEFINE(HAVE_IP6_H))
+ 
+@@ -524,10 +524,10 @@
  esac
  
  if test "X$MYSQL_PATH" != "X" ; then
