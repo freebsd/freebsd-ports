@@ -1,0 +1,19 @@
+--- Makefile.orig	Wed Aug  4 16:46:34 2004
++++ Makefile	Sat Aug  7 13:11:43 2004
+@@ -41,14 +41,14 @@
+ DEBUG_CFLAGS:=$(if $(subst 0,,$(DEBUG)),-DDEBUG,-DNDEBUG)
+ IMAGEMAGICK_CFLAGS:=$(if $(use_imagemagick),-DUSE_MAGICK $(shell Magick-config --cflags --cppflags),)
+ IMAGEMAGICK_LDFLAGS:=$(if $(use_imagemagick),$(shell Magick-config --ldflags --libs),)
+-FFTW_CFLAGS:=$(if $(subst 0,,$(FFTW)),-DUSE_FFTW,)
++FFTW_CFLAGS:=-I%%LOCALBASE%%/include -DUSE_FFTW
+ POSIX_CFLAGS:=$(if $(subst 0,,$(POSIX)),-DUSE_UNIX,)
+ PRECISION_CFLAGS:=$(if $(subst SINGLE,,$(COLORS)),,-DALE_COLORS=SINGLE)\
+                   $(if $(subst DOUBLE,,$(COLORS)),,-DALE_COLORS=DOUBLE)\
+                   $(if $(subst HALF,,$(COLORS)),,-DALE_COLORS=HALF)\
+                   $(if $(subst SINGLE,,$(COORDINATES)),,-DALE_COORDINATES=SINGLE)\
+                   $(if $(subst DOUBLE,,$(COORDINATES)),,-DALE_COORDINATES=DOUBLE)
+-FFTW_LDFLAGS:=$(if $(subst 0,,$(FFTW)),-lfftw3,)
++FFTW_LDFLAGS:=-L%%LOCALBASE%%/lib -lfftw3
+ 
+ CFLAGS:= $(POSIX_CFLAGS) $(DEBUG_CFLAGS) $(FFTW_CFLAGS) $(PRECISION_CFLAGS) \
+          $(if $(use_imagemagick),$(IMAGEMAGICK_CFLAGS),-Wall -O2) 
