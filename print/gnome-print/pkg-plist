@@ -10,16 +10,63 @@ include/libgnomeprint/gnome-printer.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
-lib/libgnomeprint.so.0
+lib/libgnomeprint.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/fonts/fontmap
 share/gnome/gnome-print/profiles/Postscript.profile
+share/locale/de/LC_MESSAGES/gnome-print.mo
 share/locale/es/LC_MESSAGES/gnome-print.mo
+share/locale/fr/LC_MESSAGES/gnome-print.mo
+share/locale/hu/LC_MESSAGES/gnome-print.mo
+share/locale/it/LC_MESSAGES/gnome-print.mo
 share/locale/no/LC_MESSAGES/gnome-print.mo
 share/locale/pl/LC_MESSAGES/gnome-print.mo
 share/locale/ru/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/gnome-print/profiles
 @dirrm share/gnome/gnome-print
+share/gnome/fonts/afms/adobe/pagd8a.afm
+share/gnome/fonts/afms/adobe/pagdo8a.afm
+share/gnome/fonts/afms/adobe/pagk8a.afm
+share/gnome/fonts/afms/adobe/pagko8a.afm
+share/gnome/fonts/afms/adobe/pbkd8a.afm
+share/gnome/fonts/afms/adobe/pbkdi8a.afm
+share/gnome/fonts/afms/adobe/pbkl8a.afm
+share/gnome/fonts/afms/adobe/pbkli8a.afm
+share/gnome/fonts/afms/adobe/pcrb8a.afm
+share/gnome/fonts/afms/adobe/pcrbo8a.afm
+share/gnome/fonts/afms/adobe/pcrr8a.afm
+share/gnome/fonts/afms/adobe/pcrro8a.afm
+share/gnome/fonts/afms/adobe/phvb8a.afm
+share/gnome/fonts/afms/adobe/phvb8an.afm
+share/gnome/fonts/afms/adobe/phvbo8a.afm
+share/gnome/fonts/afms/adobe/phvbo8an.afm
+share/gnome/fonts/afms/adobe/phvl8a.afm
+share/gnome/fonts/afms/adobe/phvlo8a.afm
+share/gnome/fonts/afms/adobe/phvr8a.afm
+share/gnome/fonts/afms/adobe/phvr8an.afm
+share/gnome/fonts/afms/adobe/phvro8a.afm
+share/gnome/fonts/afms/adobe/phvro8an.afm
+share/gnome/fonts/afms/adobe/pncb8a.afm
+share/gnome/fonts/afms/adobe/pncbi8a.afm
+share/gnome/fonts/afms/adobe/pncr8a.afm
+share/gnome/fonts/afms/adobe/pncri8a.afm
+share/gnome/fonts/afms/adobe/pplb8a.afm
+share/gnome/fonts/afms/adobe/pplbi8a.afm
+share/gnome/fonts/afms/adobe/pplr8a.afm
+share/gnome/fonts/afms/adobe/pplri8a.afm
+share/gnome/fonts/afms/adobe/psyr.afm
+share/gnome/fonts/afms/adobe/ptmb8a.afm
+share/gnome/fonts/afms/adobe/ptmbi8a.afm
+share/gnome/fonts/afms/adobe/ptmr8a.afm
+share/gnome/fonts/afms/adobe/ptmri8a.afm
+share/gnome/fonts/afms/adobe/putb8a.afm
+share/gnome/fonts/afms/adobe/putbi8a.afm
+share/gnome/fonts/afms/adobe/putr8a.afm
+share/gnome/fonts/afms/adobe/putri8a.afm
+share/gnome/fonts/afms/adobe/pzcmi8a.afm
+share/gnome/fonts/afms/adobe/pzdr.afm
+@dirrm share/gnome/fonts/afms/adobe
+@dirrm share/gnome/fonts/afms
 @dirrm share/gnome/fonts
 @dirrm include/libgnomeprint
