@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	PDF-API2
-PORTVERSION=	0.2.1.2
+PORTVERSION=	0.2.3.7
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -16,11 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_dev
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${PERL_SITELIBDIR}/Text/PDF/Pages.pm:${PORTSDIR}/print/p5-Text-PDF \
+		${PERL_SITELIBDIR}/Font/TTF/AATKern.pm:${PORTSDIR}/x11-fonts/p5-Font-TTF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.mk>
