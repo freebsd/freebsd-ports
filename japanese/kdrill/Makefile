@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kdrill
-PORTVERSION=	5.12.2
+PORTVERSION=	6.0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.bolthole.com/kdrill/
+MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sethk@meowfishies.com
