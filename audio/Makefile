@@ -32,7 +32,6 @@
     SUBDIR += cd2mp3
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
-    SUBDIR += cdrdao
     SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += cmp3

@@ -27,6 +27,7 @@
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
     SUBDIR += cdbakeoven
+    SUBDIR += cdrdao
     SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cfengine
