@@ -1,5 +1,6 @@
 @exec mkdir -p %D/libdata/pkgconfig
 bin/pkg-config
+share/aclocal/pkg.m4
 @dirrm libdata/pkgconfig
 @unexec rmdir %%LOCALBASE%%/libdata/pkgconfig 2>/dev/null || true
 @unexec rmdir %%X11BASE%%/libdata/pkgconfig 2>/dev/null || true
