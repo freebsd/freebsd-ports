@@ -9,14 +9,11 @@
 PORTNAME=	libg++
 PORTVERSION=	2.8.1.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.m-hollstein.de/libgxx/  \
-		ftp://ftp.valinux.com/pub/support/hjl/  \
-		ftp://egcs.cygnus.com/pub/gcc/infrastructure/  \
-		ftp://ftp.iij.ad.jp/pub/egcs/infrastructure/  \
-		ftp://ftp.ninemoons.com/pub/mirrors/egcs/infrastructure/  \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://gcc.gnu.org/pub/gcc/infrastructure/ \
+		ftp://gatekeeper.dec.com/pub/GNU/
 
-PATCH_SITES=	http://www.cygnus.com/~manfredh/libgxx/
+PATCH_SITES=	ftp://gcc.gnu.org/pub/gcc/infrastructure/ \
+		http://people.redhat.com/manfredh/libgxx/
 PATCHFILES=	${DISTNAME}-20000312.diff.gz  \
 		${DISTNAME}-20000419.diff.gz  \
 		${DISTNAME}-20000816.diff.gz  \
