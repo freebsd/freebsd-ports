@@ -187,6 +187,7 @@
     SUBDIR += xemacs21-mule-sumo
     SUBDIR += xemacs21-sumo
     SUBDIR += xenon
+    SUBDIR += xmleditor
     SUBDIR += xvile
     SUBDIR += yudit
     SUBDIR += zed
