@@ -1,0 +1,9 @@
+InfoBus enables dynamic exchange of data between JavaBeans(TM) component
+architecture by defining a small number of interfaces between cooperating
+Beans and specifying the protocol for use of those interfaces. The
+protocols are based on a notion of an information bus. All components
+which implement these interfaces can plug into the bus. As a member of the
+bus any component can exchange data with any other component in a
+structured way, including arrays, tables, and database rowsets.
+
+WWW: http://java.sun.com/beans/infobus/index.html
