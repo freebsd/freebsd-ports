@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Nov 19 01:01:34 2000
++++ Makefile.in	Wed Oct 15 17:47:32 2003
+@@ -623,9 +623,7 @@
+ 	install-autoconf \
+ 	install-automake \
+ 	install-bash \
+-	install-bfd \
+ 	install-bzip2 \
+-	install-opcodes \
+ 	install-binutils \
+ 	install-bison \
+ 	install-byacc \
+@@ -658,7 +656,6 @@
+ 	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+-	install-libiberty \
+ 	install-libtool \
+ 	install-m4 \
+ 	install-make \

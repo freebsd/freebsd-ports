@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.10.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 PKGNAMEPREFIX=	mipsel-linux-
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/binutils-CVS/src
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --with-gnu-ld --with-gnu-as \
+		--with-gcc --without-x11
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
 		gas/configure gprof/configure ld/configure opcodes/configure
@@ -43,7 +44,5 @@ post-install:
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
-	@cd ${PREFIX}/lib ; ${MV} libbfd.a lib${PKGNAMEPREFIX}bfd.a
-	@cd ${PREFIX}/lib ; ${MV} libopcodes.a lib${PKGNAMEPREFIX}opcodes.a
 
 .include <bsd.port.mk>
