@@ -3,6 +3,9 @@ share/sgml/docbook/dsssl/modular/README
 share/sgml/docbook/dsssl/modular/TODO
 share/sgml/docbook/dsssl/modular/catalog
 share/sgml/docbook/dsssl/modular/docbook.dcl
+share/sgml/docbook/dsssl/modular/bin/collateindex.pl
+share/sgml/docbook/dsssl/modular/bin/dummyindex.sgm
+@dirrm share/sgml/docbook/dsssl/modular/bin
 share/sgml/docbook/dsssl/modular/common/ChangeLog
 share/sgml/docbook/dsssl/modular/common/Oldversion.sgm
 share/sgml/docbook/dsssl/modular/common/README
@@ -12,6 +15,8 @@ share/sgml/docbook/dsssl/modular/common/dbl1bmno.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1bmno.ent
 share/sgml/docbook/dsssl/modular/common/dbl1dege.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1dege.ent
+share/sgml/docbook/dsssl/modular/common/dbl1dk.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1dk.ent
 share/sgml/docbook/dsssl/modular/common/dbl1es.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1es.ent
 share/sgml/docbook/dsssl/modular/common/dbl1fr.dsl
@@ -28,6 +33,8 @@ share/sgml/docbook/dsssl/modular/common/dbl1pt.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1pt.ent
 share/sgml/docbook/dsssl/modular/common/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ru.ent
+share/sgml/docbook/dsssl/modular/common/dbl1svse.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1svse.ent
 share/sgml/docbook/dsssl/modular/common/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1usen.ent
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
@@ -81,6 +88,9 @@ share/sgml/docbook/dsssl/modular/doc/htp-graphic-default-extension.html
 share/sgml/docbook/dsssl/modular/doc/htp-graphic-extensions.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-ext.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-header-tags.html
+share/sgml/docbook/dsssl/modular/doc/htp-html-index-filename.html
+share/sgml/docbook/dsssl/modular/doc/htp-html-index.html
+share/sgml/docbook/dsssl/modular/doc/htp-html-manifest-filename.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-manifest.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-pubid.html
 share/sgml/docbook/dsssl/modular/doc/htp-legalnotice-link-file.html
@@ -363,6 +373,9 @@ share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-graphic-default-extension.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-graphic-extensions.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-ext.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-header-tags.sgm
+share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-index-filename.sgm
+share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-index.sgm
+share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-manifest-filename.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-manifest.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-html-pubid.sgm
 share/sgml/docbook/dsssl/modular/docsrc/htmlpr/htp-legalnotice-link-file.sgm
@@ -628,6 +641,7 @@ share/sgml/docbook/dsssl/modular/html/dbinline.dsl
 share/sgml/docbook/dsssl/modular/html/dbl10n.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1bmno.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1dege.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1dk.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1es.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1fr.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1it.dsl
@@ -636,6 +650,7 @@ share/sgml/docbook/dsssl/modular/html/dbl1nl.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1pl.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1pt.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1ru.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1svse.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/html/dblink.dsl
 share/sgml/docbook/dsssl/modular/html/dblists.dsl
@@ -690,6 +705,7 @@ share/sgml/docbook/dsssl/modular/print/dbinfo.dsl
 share/sgml/docbook/dsssl/modular/print/dbinline.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1bmno.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1dege.dsl
+share/sgml/docbook/dsssl/modular/print/dbl1dk.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1es.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1fr.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1it.dsl
@@ -698,6 +714,7 @@ share/sgml/docbook/dsssl/modular/print/dbl1null.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1pl.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1pt.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1ru.dsl
+share/sgml/docbook/dsssl/modular/print/dbl1svse.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/print/dblink.dsl
 share/sgml/docbook/dsssl/modular/print/dblists.dsl
@@ -723,7 +740,10 @@ share/sgml/docbook/dsssl/modular/test/ChangeLog
 share/sgml/docbook/dsssl/modular/test/docbook.css
 share/sgml/docbook/dsssl/modular/test/emc2.gif
 share/sgml/docbook/dsssl/modular/test/footnote.sgm
+share/sgml/docbook/dsssl/modular/test/genindex.sgm
 share/sgml/docbook/dsssl/modular/test/headft.dsl
+share/sgml/docbook/dsssl/modular/test/indirect.dsl
+share/sgml/docbook/dsssl/modular/test/indirect.sgm
 share/sgml/docbook/dsssl/modular/test/refentry.sgm
 share/sgml/docbook/dsssl/modular/test/struct.sgm
 share/sgml/docbook/dsssl/modular/test/xarticle.sgm
@@ -742,6 +762,8 @@ share/sgml/docbook/dsssl/modular/test/xheadft.sgm
 share/sgml/docbook/dsssl/modular/test/xinclude.sgm
 share/sgml/docbook/dsssl/modular/test/xindex.sgm
 share/sgml/docbook/dsssl/modular/test/xinlines.sgm
+share/sgml/docbook/dsssl/modular/test/xinlines.xml
+share/sgml/docbook/dsssl/modular/test/xiterms.sgm
 share/sgml/docbook/dsssl/modular/test/xlists.sgm
 share/sgml/docbook/dsssl/modular/test/xmlang.sgm
 share/sgml/docbook/dsssl/modular/test/xrefent.sgm
@@ -759,6 +781,7 @@ share/sgml/docbook/dsssl/modular/test/cases/graphic.sgm
 share/sgml/docbook/dsssl/modular/test/cases/include.sgm
 share/sgml/docbook/dsssl/modular/test/cases/index.sgm
 share/sgml/docbook/dsssl/modular/test/cases/inlines.sgm
+share/sgml/docbook/dsssl/modular/test/cases/iterms.sgm
 share/sgml/docbook/dsssl/modular/test/cases/lists.sgm
 share/sgml/docbook/dsssl/modular/test/cases/mlang.sgm
 share/sgml/docbook/dsssl/modular/test/cases/refent.sgm
