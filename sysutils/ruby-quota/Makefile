@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quota
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog README.html
+DOCS_EN=	ChangeLog README README.html
 
 post-install:
 .if !defined(NOPORTDOCS)

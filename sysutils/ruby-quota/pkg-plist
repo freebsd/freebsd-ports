@@ -2,5 +2,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/quota/test.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/quota
 %%PORTDOCS%%%%RUBY_DOCDIR%%/quota/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/quota/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/quota/README.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/quota
