@@ -18,6 +18,8 @@ EXTRACT_ONLY=	unpacked.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	An implementation of TeX for Hangul
 
+BROKEN=		"Does not compile"
+
 # it depends teTeX.
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		cedric@cedric.trix.net
 COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
+BROKEN=		"Does not compile"
+
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
