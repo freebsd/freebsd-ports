@@ -52,6 +52,7 @@
     SUBDIR += pear-Archive_Tar
     SUBDIR += ppunpack
     SUBDIR += py-bzip2
+    SUBDIR += py-lzma
     SUBDIR += py-tarfile
     SUBDIR += rar
     SUBDIR += rox-archive

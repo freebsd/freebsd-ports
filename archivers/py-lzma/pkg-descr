@@ -1,0 +1,10 @@
+Python binding for the LZMA compression library.
+
+Supported Features:
+ * Compression / decompression of a single block of data
+ * Compression from a file-like object (must provide a read method)
+ * Streaming decompression through multiple calls to decompress.
+ * An initial library that supports reading of 7-zip archives (both
+   solid and non-solid)
+
+WWW: http://www.joachim-bauch.de/projects/python/pylzma

@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/py7zlib.py
+%%PYTHON_SITELIBDIR%%/py7zlib.pyc
+%%PYTHON_SITELIBDIR%%/py7zlib.pyo
+%%PYTHON_SITELIBDIR%%/pylzma.so
