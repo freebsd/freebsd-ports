@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taglib
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	audio
 MASTER_SITES=	http://ktown.kde.org/~wheeler/files/src/
 
