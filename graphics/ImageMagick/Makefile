@@ -213,12 +213,18 @@ CONFIGURE_ARGS+=	--without-mpeg2
 .endif
 
 .if defined(NEED_GS)
-.if defined(WITHOUT_X11)
-BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
 .else
-BUILD_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
-RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+.if defined(WITHOUT_X11)
+BUILD_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}-nox11
+RUN_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}-nox11
+.else
+BUILD_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}
 .endif
 .endif
 
