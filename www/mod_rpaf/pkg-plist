@@ -1,3 +1,0 @@
-libexec/%%APACHE%%/mod_rpaf.so
-@exec %D/sbin/apxs -e -a -n rpaf %D/%F
-@unexec %D/sbin/apxs -e -A -n rpaf %D/%F
