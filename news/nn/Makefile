@@ -3,12 +3,13 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.4 1995/02/26 23:16:23 ats Exp $
+# $Id: Makefile,v 1.5 1995/04/01 12:49:10 jkh Exp $
 #
 
 DISTNAME=	nn-6.5.0.b3
-MASTER_SITES=	ftp://uniwa.uwa.edu.au/pub/nn/beta/
+PKGNAME=	nn-6.5.0
 CATEGORIES+=	news
+MASTER_SITES=	ftp://uniwa.uwa.edu.au/pub/nn/beta/
 
 pre-patch:
 	@cp ${WRKSRC}/config.h-dist ${WRKSRC}/config.h
