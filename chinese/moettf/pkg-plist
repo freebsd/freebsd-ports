@@ -1,0 +1,4 @@
+lib/X11/fonts/TrueType/moe_kai.ttf
+lib/X11/fonts/TrueType/moe_lishu.ttf
+lib/X11/fonts/TrueType/moe_sung.ttf
+@unexec rmdir %D/lib/X11/fonts/TrueType 2>/dev/null || true

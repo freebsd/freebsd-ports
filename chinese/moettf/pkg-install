@@ -1,0 +1,38 @@
+#!/bin/sh
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+if [ "$2" = "PRE-INSTALL" ]; then
+  echo "Please add ${FONTDIR} to your /etc/XF86Config file"
+  exit 0
+fi
+cd ${FONTDIR}
+
+echo "Updating fonts.dir & fonts.alias. This may take a while..."
+# Update fonts.dir
+touch fonts.dir
+sed -e '/-moe-/d' -e '/-twmoe-/d' fonts.dir > fonts.dir.tmp
+# Add 12 new fonts
+numfonts=$(echo $(cat fonts.dir.tmp |wc -l) - 1 + 12 |bc)
+echo ${numfonts} > fonts.dir
+sed -e 1d fonts.dir.tmp >> fonts.dir
+for FAMILY in kai lishu sung
+do
+  echo moe_${FAMILY}.ttf -twmoe-${FAMILY}-medium-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+  echo ab=y:moe_${FAMILY}.ttf -twmoe-${FAMILY}-bold-r-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+  echo ai=0.3:moe_${FAMILY}.ttf -twmoe-${FAMILY}-medium-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+  echo ab=y:ai=0.3:moe_${FAMILY}.ttf -twmoe-${FAMILY}-bold-i-normal--0-0-0-0-c-0-big5-0 >> fonts.dir
+done
+rm -f fonts.dir.tmp
+
+# Update fonts.alias, font size ranges from 8 to 128.
+SIZE=8
+touch fonts.alias
+sed -e '/^-moe-/d' -e '/^-twmoe-/d' fonts.alias > fonts.alias.tmp
+mv -f fonts.alias.tmp fonts.alias
+for FAMILY in kai lishu sung
+do
+  (while [ ${SIZE} -le 128 ]
+   do
+     echo -moe-${FAMILY}-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 -twmoe-${FAMILY}-medium-r-normal--${SIZE}-`expr ${SIZE} \* 10`-0-0-c-`expr ${SIZE} \* 10`-big5-0 >> fonts.alias;
+     SIZE=`expr ${SIZE} + 1`;
+   done)
+done
