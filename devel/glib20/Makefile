@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.4,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.3/ \
@@ -20,7 +20,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
 
-NO_LATEST_LINK=	yes
+LATEST_LINK=	glib20
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
