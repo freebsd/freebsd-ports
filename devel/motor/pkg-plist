@@ -1,9 +1,9 @@
 bin/motor
 bin/motorsync
-share/locale/de/LC_MESSAGES/motor.mo
-share/locale/pl/LC_MESSAGES/motor.mo
-share/locale/ru/LC_MESSAGES/motor.mo
-share/locale/zh_CN/LC_MESSAGES/motor.mo
+%%NLS%%share/locale/de/LC_MESSAGES/motor.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/motor.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/motor.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/motor.mo
 share/motor/CVS.vcsrc
 share/motor/external
 share/motor/syntax
@@ -56,6 +56,6 @@ share/motor/themes
 @dirrm share/motor/templates/library
 @dirrm share/motor/templates
 @dirrm share/motor
-%%PORTDOCS%%share/doc/motor/FAQ
-%%PORTDOCS%%share/doc/motor/README
-%%PORTDOCS%%@dirrm share/doc/motor
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
