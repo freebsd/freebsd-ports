@@ -7052,6 +7052,7 @@ xhtml		ports/textproc/xhtml
 xicq		ports/net/xicq
 xin		ports/sysutils/xin
 xine		ports/graphics/xine
+xine_d4d_plugin	ports/graphics/xine_d4d_plugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
 xinstall	src/usr.bin/xinstall
