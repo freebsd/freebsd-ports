@@ -1,13 +1,13 @@
 # New ports collection makefile for:   tinker
-# Version required:    3.6
+# Version required:    3.7
 # Date Created:                26 August 1998
 # Whom:                        Glenn Johnson
 #
-# $Id: Makefile,v 1.2 1998/11/18 02:10:54 jkoshy Exp $
+# $Id: Makefile,v 1.3 1999/05/24 02:01:37 steve Exp $
 #
 
 DISTNAME=	tinker
-PKGNAME=	tinker-3.6
+PKGNAME=	tinker-3.7
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 
@@ -18,12 +18,15 @@ MAINTAINER=	gjohnson@nola.srrc.usda.gov
 .if ${OSVERSION} < 400005
 LIB_DEPENDS=	U77:${PORTSDIR}/devel/libU77
 
-# If you have EGCS installed and wish to use it, do the following:
+# If you wish to use g77 from EGCS, do the following:
 # a) comment out the LIB_DEPENDS line above and uncomment the following line
-#BUILD_DEPENDS=	g77:${PORTSDIR}/lang/egcs
-# b) set env variable 'FC' to 'g77' before running `make'
+
+# BUILD_DEPENDS= g77:${PORTSDIR}/lang/egcs
+
+# b) set env variable 'FC' to 'g77' before running `make'; or 'make FC=g77'
+
 .else
-MAKE_ENV+=	HAVE_G2C=yes
+MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 .endif
 
 WRKSRC=		${WRKDIR}/tinker/source
@@ -35,17 +38,20 @@ INSTALL_TARGET=	rename
 RESTRICTED=	author requests no distribution except from his FTP site
 
 post-install:
+	${MKDIR} ${PREFIX}/share/tinker
 	${MKDIR} ${PREFIX}/share/tinker/params
-	${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
-${PREFIX}/share/tinker/params
 	${INSTALL_DATA} ${WRKDIR}/tinker/source/tinker.txt \
 ${PREFIX}/share/tinker
+	${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
+${PREFIX}/share/tinker/params
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/tinker/doc
 	${MKDIR} ${PREFIX}/share/tinker/example
 	${MKDIR} ${PREFIX}/share/tinker/bench
 	${MKDIR} ${PREFIX}/share/tinker/test
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/README \
+${PREFIX}/share/tinker/doc
+	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.pdf \
 ${PREFIX}/share/tinker/doc
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.ps \
 ${PREFIX}/share/tinker/doc
@@ -96,7 +102,7 @@ ${PREFIX}/share/tinker/bench
 	@${ECHO} ""
 	@${ECHO} "   **********************************************************"
 	@${ECHO} "       The author requests that you return a license form    "
-	@${ECHO} "          to him if you find Tinker to be useful.            "
+	@${ECHO} "       to him if you find Tinker to be useful.               "
 	@${ECHO} "                                                             "
 	@${ECHO} "       See ${PREFIX}/share/tinker/doc for license forms.     "
 	@${ECHO} "   **********************************************************"
