@@ -5454,6 +5454,7 @@ py-optik	ports/devel/py-optik
 py-orbit	ports/devel/py-orbit
 py-paint	ports/graphics/py-paint
 py-pcap	ports/net/py-pcap
+py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-qt		ports/x11-toolkits/py-qt
