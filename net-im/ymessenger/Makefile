@@ -10,11 +10,9 @@ PORTNAME=	ymessenger
 PORTVERSION=	1.0.4
 PORTEPOCH=	20020902
 CATEGORIES=	net
-MASTER_SITES=	http://download.yahoo.com/dl/unix/
+MASTER_SITES=	http://public.yahoo.com/~mmk/
 DISTNAME=	fbsd4.${PORTNAME}
 EXTRACT_SUFX=	.tgz
-
-BROKEN=		"Dumps core immediately when invoked on 5.x"
 
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Yahoo! Messenger - Instant messaging client
