@@ -12,13 +12,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	avleeuwen@piwebs.com
-COMMENT=	"A KDE frontend to gphoto2 for communicating with your digicam"
+COMMENT=	A KDE frontend to gphoto2 for communicating with your digicam
 
 LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+BUILD_DEPENDS=	xml2pot:${PORTSDIR}/devel/kdesdk3
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-CONFIGURE_ENV=	XML2POT=${TRUE} PO2XML=${TRUE}
 
 .include <bsd.port.mk>
