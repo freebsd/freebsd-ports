@@ -8,8 +8,7 @@
 PORTNAME=	bio
 PORTVERSION=	0.5.3
 CATEGORIES=	biology ruby
-MASTER_SITES=	ftp://ftp.bioruby.org/bioruby/
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://bioruby.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
