@@ -1,12 +1,65 @@
 bin/qhacc
-%%PORTDOCS%%share/doc/qhacc/compiling.html
-%%PORTDOCS%%share/doc/qhacc/index.html
-%%PORTDOCS%%share/doc/qhacc/intro.html
-%%PORTDOCS%%share/doc/qhacc/faq.html
-%%PORTDOCS%%share/doc/qhacc/formats.html
-%%PORTDOCS%%share/doc/qhacc/using.html
-%%PORTDOCS%%share/doc/qhacc/primer.html
-share/qhacc/config.sample
-share/qhacc/qhacc_es_ES.qm
-@dirrm share/qhacc
-%%PORTDOCS%%@dirrm share/doc/qhacc
+bin/qhacc-cli
+bin/qhacc-gui
+include/localfileplugin.h
+include/plugins.h
+include/qhacc.h
+include/qhaccconstants.h
+include/qhaccext.h
+include/qhaccsegmenter.h
+include/qhacctable.h
+include/qhacctablerows.h
+include/qhaccutils.h
+include/resultset.h
+include/sqldbplugin.h
+lib/libcliimpio.a
+lib/libcliimpio.so
+lib/libcliimpio.so.1
+lib/libcronio.a
+lib/libcronio.so
+lib/libcronio.so.1
+lib/libfiledbio.a
+lib/libfiledbio.so
+lib/libfiledbio.so.2
+lib/libforeigndbio.a
+lib/libforeigndbio.so
+lib/libforeigndbio.so.2
+lib/libnativedbio.a
+lib/libnativedbio.so
+lib/libnativedbio.so.2
+lib/libqhacc.a
+lib/libqhacc.so
+lib/libqhacc.so.2
+lib/libqhaccext.a
+lib/libqhaccext.so
+lib/libqhaccext.so.2
+lib/libqifio.a
+lib/libqifio.so
+lib/libqifio.so.1
+lib/libxmlio.a
+lib/libxmlio.so
+lib/libxmlio.so.1
+lib/qhacc/accounts
+lib/qhacc/memorized
+lib/qhacc/plugins/db/libxmlio.so
+lib/qhacc/plugins/export/libxmlio.so
+lib/qhacc/plugins/import/libcliimpio.so
+lib/qhacc/plugins/import/libcronio.so
+lib/qhacc/plugins/import/libqifio.so
+lib/qhacc/plugins/import/libxmlio.so
+lib/qhacc/preferences
+lib/qhacc/qhacc_es_ES.qm
+lib/qhacc/transactions
+%%PORTDOCS%%%%DOCSDIR%%/compiling.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/formats.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/primer.html
+%%PORTDOCS%%%%DOCSDIR%%/using.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/qhacc/plugins/import
+@dirrm lib/qhacc/plugins/export
+@dirrm lib/qhacc/plugins/db
+@dirrm lib/qhacc/plugins
+@dirrm lib/qhacc

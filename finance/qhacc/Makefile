@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	2.6.1
+PORTVERSION=	2.9
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,32 +14,39 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple QT-based financial manager
 
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
+CONFIGURE_ARGS=	--enable-mysql=no \
+		--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib
+INSTALLS_SHLIB=	yes
 
-post-extract:
-	@${RM} -f ${WRKSRC}/src/moc_*.cpp
+STRIP=		# none
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
+		 s|/usr/local/|${PREFIX}/lib/|g' ${WRKSRC}/src/qhacc.orig
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CXXFLAGS =.*$$|CXXFLAGS = \@CXXFLAGS\@|g'
+		's|-O2 -Wall -g||g ; \
+		 s|contrib docs qm|contrib|g ; \
+		 s|$$(prefix)/plugins|$$(pkglibdir)/plugins|g'
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/qhacc ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${DATADIR}
-	${INSTALL_DATA} ${FILESDIR}/config ${DATADIR}/config.sample
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/qhacc-*
+.for file in accounts memorized preferences transactions
+	${INSTALL_DATA} ${WRKSRC}/contrib/easysetup/${file} ${PREFIX}/lib/qhacc
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${PREFIX}/lib/qhacc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 .endif
-	@${SED} -e "s:/usr/X11R6:${PREFIX}:g" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
