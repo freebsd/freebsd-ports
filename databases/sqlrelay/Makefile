@@ -148,6 +148,10 @@ PLIST_SUB=	IF_SQLITE=${IF_SQLITE} \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
 
