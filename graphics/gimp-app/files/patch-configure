@@ -1,17 +1,6 @@
---- configure.orig	Fri Feb 27 18:09:19 2004
-+++ configure	Fri Feb 27 18:10:20 2004
-@@ -1995,8 +1995,8 @@
- 
- 
- 
--LT_VERSION_INFO="26:0:0"
--LT_CURRENT_MINUS_AGE=26
-+LT_VERSION_INFO="2:0:0"
-+LT_CURRENT_MINUS_AGE=2
- 
- 
- 
-@@ -31377,6 +31377,7 @@
+--- configure.orig	Sun Mar  7 02:08:10 2004
++++ configure	Sun Mar  7 02:48:14 2004
+@@ -31396,6 +31396,7 @@
  #include <gimp-print/gimp-print.h>
  #include <stdio.h>
  #include <stdlib.h>
@@ -19,7 +8,7 @@
  
  int
  main ()
-@@ -32842,8 +32843,8 @@
+@@ -32869,8 +32870,8 @@
  fi
  fi;
  

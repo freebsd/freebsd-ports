@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.0.pre3
-PORTREVISION=	1
+PORTVERSION=	2.0.pre4
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -29,7 +28,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		wmf.2:${PORTSDIR}/graphics/libwmf
 
-SHLIBVER?=	2
+SHLIBVER?=	27
 
 NO_LATEST_LINK=	yes
 
