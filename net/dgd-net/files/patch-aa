@@ -1,7 +1,7 @@
-*** Makefile.orig	Sun Dec 10 19:21:36 1995
---- Makefile	Wed Feb  7 22:53:33 1996
+*** Makefile.orig	Thu Jan  2 23:38:50 1997
+--- Makefile	Thu Jan  2 23:41:13 1997
 ***************
-*** 3,14 ****
+*** 3,24 ****
   #
   HOST=	NETBSD
   DEFINES=-D$(HOST) #-DDUMP_FUNCS
@@ -14,7 +14,17 @@
   LD=	$(CC)
   DMAKE=	make
   BIN=	../bin
---- 3,15 ----
+  
+  OBJ=	alloc.o error.o hash.o swap.o str.o array.o object.o data.o path.o \
+! 	editor.o comm.net.o call_out.o interpret.o config.o dgd.o
+  EDOBJ=	alloc.o error.o
+  LEXOBJ=	alloc.o hash.o
+  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+! 	interpret.o config.o
+  
+  a.out:	$(OBJ) always
+  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+--- 3,27 ----
   #
   HOST=	NETBSD
   DEFINES=-D$(HOST) #-DDUMP_FUNCS
@@ -23,22 +33,23 @@
   CCFLAGS=$(DEFINES) $(DEBUG)
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS=-s
-! LIBS=-lcrypt
+! LIBS=-lcrypt -lgnuregex
 ! CC=	cc
   LD=	$(CC)
   DMAKE=	make
   BIN=	../bin
-***************
-*** 20,25 ****
---- 21,28 ----
-  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
-  	interpret.o config.o
   
-+ all: a.out comp/a.out
-+ 
+  OBJ=	alloc.o error.o hash.o swap.o str.o array.o object.o data.o path.o \
+! 	editor.o comm.net.o call_out.o interpret.o config.o dgd.o rgx.o
+  EDOBJ=	alloc.o error.o
+  LEXOBJ=	alloc.o hash.o
+  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+! 	interpret.o config.o rgx.o
+! 
+! all: a.out comp/a.out
+  
   a.out:	$(OBJ) always
   	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-  	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
 ***************
 *** 38,44 ****
   	-mv $(BIN)/driver $(BIN)/driver.old
@@ -77,3 +88,10 @@
   
   clean:
   	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
+***************
+*** 92,94 ****
+--- 99,102 ----
+  call_out.o config.o dgd.o: call_out.h
+  error.o comm.o call_out.o config.o dgd.o: comm.h
+  config.o: version.h
++ rgx.o: str.h array.h rgx.h interpret.h
