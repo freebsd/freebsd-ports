@@ -30,7 +30,7 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		transcode:${PORTSDIR}/graphics/transcode \
-		vcdimager:${PORTSDIR}/graphics/vcdimager
+		vcdimager:${PORTSDIR}/multimedia/vcdimager
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
 
