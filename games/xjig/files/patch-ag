@@ -1,6 +1,6 @@
---- reset_image.H.orig	Tue Jul 16 10:59:50 1996
-+++ reset_image.H	Tue Apr  7 15:34:33 1998
-@@ -16,15 +16,24 @@
+--- reset_image.H.orig	Wed Jul 17 02:59:50 1996
++++ reset_image.H	Fri Aug  6 03:12:24 2004
+@@ -16,15 +16,25 @@
  // to access data beyond the allocated image, that might lead to a segmentation
  // violation. Therefore, it might be good to allocated some additional
  // rows of data for the image.
@@ -21,7 +21,8 @@
 -			*xdata_run++=(DATA_TYPE)blk_pixel;
 +			// *xdata_run++=(DATA_TYPE)blk_pixel;
 +			*xdata_run=(DATA_TYPE)blk_pixel; // align fault
-+			((char *)xdata_run) += DATA_BYTES;
++			char *my_xdata_run = (char *)xdata_run;
++			my_xdata_run += DATA_BYTES;
  		}
  	}
 -	xdata+=(offset_bytes/sizeof(DATA_TYPE));
@@ -29,7 +30,7 @@
  
  	if (!xdata) {
  		fprintf(stderr,"not enough memory for XImage-data");
-@@ -32,9 +41,11 @@
+@@ -32,9 +42,11 @@
  	}
  
  // create the XImage
@@ -43,7 +44,7 @@
  
  	if (!ximage) {
  		fprintf(stderr,"\n*** can't allocate ximage.\n" );
-@@ -47,9 +58,23 @@
+@@ -47,9 +59,23 @@
  		register const byte	*org  = Data();
  		register int	j,i;
  
