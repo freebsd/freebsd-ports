@@ -61,6 +61,7 @@
     SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += oroborus
+    SUBDIR += pager
     SUBDIR += pekwm
     SUBDIR += phluid
     SUBDIR += piewm
