@@ -1,0 +1,10 @@
+Dinotrace is a signal waveform tracing tool that supports traces in the form of
+Verilog Value Change Dump (VCD), ASCII, Verilator, Tempest CCLI, COSMOS, Chango
+and Decsim Binary. Dinotrace is also equipped with an interface to GNU Emacs.
+
+Dinotrace was conceived in the early 1980's by Allen Gallotta at Digital
+Equipment Corporation, who wrote the code and supported it through version 4.2.
+When created, it was the first graphical display tool for the simulators being
+designed at Digital.
+
+WWW: http://www.veripool.com/dinotrace/
