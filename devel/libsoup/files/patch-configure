@@ -8,19 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10569,11 +10570,11 @@
- fi
- 
- if test x$APXS != xno; then
--	APACHE_CFLAGS="-I`apxs -q INCLUDEDIR CFLAGS`"
--	APACHE_LIBS=`apxs -q LDFLAGS_SHLIB LIBS_SHLIB`
-+#	APACHE_CFLAGS="-I`apxs -q INCLUDEDIR CFLAGS`"
-+#	APACHE_LIBS=`apxs -q LDFLAGS_SHLIB LIBS_SHLIB`
- 
--	save_CPPFLAGS=$CPPFLAGS
--	CPPFLAGS=$APACHE_CFLAGS
-+#	save_CPPFLAGS=$CPPFLAGS
-+#	CPPFLAGS=$APACHE_CFLAGS
- 
- 
- 
