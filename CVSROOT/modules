@@ -3725,6 +3725,7 @@ mksunbootcd	ports/sysutils/mksunbootcd
 mktemp		src/usr.bin/mktemp
 ml		ports/mail/ml
 mlan		ports/comms/mlan
+mlan3		ports/comms/mlan3
 mlclock		ports/x11-clocks/mlclock
 mld6query	src/usr.sbin/mld6query
 mlterm		ports/x11/mlterm
