@@ -8,8 +8,7 @@
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
-		http://www.oasis-open.org/committees/docbook/xml/${PORTVERSION}/
+MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
 
 MAINTAINER=	gnome@FreeBSD.org
