@@ -1,0 +1,35 @@
+--- src/config.h.orig	Tue Mar  7 04:05:53 2000
++++ src/config.h	Tue Mar  7 04:11:33 2000
+@@ -19,6 +19,9 @@
+ #elif	defined(sgi) || defined(__sgi) || defined(__sgi__)
+ #define	USE_IRIX5
+ 
++#elif	defined(__FreeBSD__)
++#define	USE_FREEBSD
++
+ #else
+ #error	Could not determine the operating system in config.h
+ #endif
+@@ -68,6 +71,13 @@
+ #define	CNETGCC		"/usr/local/bin/gcc"
+ #define	CNETLD		"/bin/ld"
+ 
++#elif	defined(USE_FREEBSD)
++#define	OS_DEFINE	"-DFREEBSD"
++#define	CNETCPP		"/usr/libexec/cpp"
++#define	CNETCC		"%%CC%%"
++#define	CNETGCC		"%%CC%%"
++#define	CNETLD		"/usr/bin/ld"
++
+ #endif
+ 
+ 
+@@ -93,7 +103,7 @@
+     CNETPATH must be defined.
+  */
+ 
+-#define	CNETPATH		".:/cslinux/cnetlib:/net/tahoe6/cs78/cnetlib"
++#define	CNETPATH		".:%%PREFIX%%/libdata/cnet:%%PREFIX%%/include"
+ 
+ /*  When compiled for Tcl/Tk, the Tcl/Tk script file may be taken from
+     CNETTCLTK or provided with the -F command-line option.

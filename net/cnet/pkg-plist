@@ -1,14 +1,17 @@
 bin/cnet
 include/cnet.h
+libdata/cnet/cnet.tcl
+libdata/cnet/cnet_icon.bmp
 share/examples/cnet/AUSTRALIA.MAP
 share/examples/cnet/CLICK
-share/examples/cnet/FAST
+share/examples/cnet/EUROPE.MAP
 share/examples/cnet/FLOODING1
 share/examples/cnet/FLOODING2
 share/examples/cnet/FLOODING3
 share/examples/cnet/KEYBOARD
 share/examples/cnet/LINKSTATE
 share/examples/cnet/Makefile
+share/examples/cnet/README.flooding
 share/examples/cnet/STOPANDWAIT
 share/examples/cnet/T2
 share/examples/cnet/TICKTOCK
@@ -18,19 +21,14 @@ share/examples/cnet/TOPOLOGY.2c
 share/examples/cnet/WORLD
 share/examples/cnet/WORLD.MAP
 share/examples/cnet/click.c
-share/examples/cnet/cnet.h
-share/examples/cnet/cnet.tcl
-share/examples/cnet/fast.c
 share/examples/cnet/flooding.gp
 share/examples/cnet/flooding1.c
-share/examples/cnet/flooding1.dat
 share/examples/cnet/flooding2.c
-share/examples/cnet/flooding2.dat
 share/examples/cnet/flooding3.c
-share/examples/cnet/flooding3.dat
 share/examples/cnet/keyboard.c
 share/examples/cnet/linkstate.c
 share/examples/cnet/protocol.c
 share/examples/cnet/stopandwait.c
 share/examples/cnet/ticktock.c
 @dirrm share/examples/cnet
+@dirrm libdata/cnet

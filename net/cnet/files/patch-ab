@@ -5,7 +5,7 @@
  #define	LENDATA_EVER_0		FALSE
  
 +#elif	defined(USE_FREEBSD)
-+#define NDATASEGS		1
++#define	NDATASEGS		1
 +#define	LENDATA_EVER_0		FALSE
 +
  #elif	defined(USE_SOLARIS2)

@@ -1,54 +1,28 @@
 #
-# The following #defines are for Sun's SunOS, >= SunOS4.1.2
-# CC may be either cc or gcc
+# The following #defines are for FreeBSD
 #
+XINCLUDES	= -I${X11BASE}/include
+XLIBS		= -lXpm -lX11 -lm -L${X11BASE}/lib
 
+ANSICC		= ${CC}
 
+INCLUDES	= -I${LOCALBASE}/include \
+		  -I${LOCALBASE}/include/tcl8.2 \
+		  -I${LOCALBASE}/include/tk8.2
+CFLAGS		+= $(INCLUDES) $(XINCLUDES)
 
-# Uncomment the following line if you wish Tcl/Tk windowing (see config.h)
-#
-#XINCLUDES	= 
-#XLIBS		= -ltcl -ltk -lXpm -lX11 -lm
-#
-# Uncomment the following line if you wish XView windowing (see config.h)
-#
-OPENWINHOME	= ${X11BASE}
-XINCLUDES	= -I$(OPENWINHOME)/include
-XLIBS		= -L$(OPENWINHOME)/lib -lxview -lolgx -lXpm -lX11
-#
-# Uncomment the following lines if you wish Motif windowing (see config.h)
-#
-#XINCLUDES	= -I$(X11BASE)/include
-#XLIBS		= -L$(X11BASE)/lib -lXm -lXt -lXpm -lX11
-
-
-#CC		= cc
-CC		= gcc -Wall -ansi
-
-INCLUDES	=
-CFLAGS		= -O $(INCLUDES) $(XINCLUDES)
-
-#LD		= cc
-LD		= gcc
-LIBDIRS		= -L/usr/local/lib
-LIBS		= -lm -lgnuregex
+LD		= ${CC}
+LIBDIRS		= -L${LOCALBASE}/lib
+LIBS		= -ltcl82 -ltk82 -lm -lgnuregex
 STRIP		= strip
 
-BINDIR		= /usr/local/bin
-MANDIR		= /usr/local/man/man1
+BINDIR		= ${PREFIX}/bin
+MANDIR		= ${PREFIX}/man/manl
 MANEXT		= 1
-INCDIR		= /usr/local/include
+INCDIR		= ${PREFIX}/include
 
 
 # ---------------------- No user-serviceable code below -----------------
 
 include	Makefile.common
-
-kultarr:	$(NAME)
-	chmod 711 $(NAME)
-	rcp -p $(NAME) kultarr:/usr/kultarr/bin/$(NAME)
-	rcp -p $(NAME) kultarr:/usr/local/bin/$(NAME)
-	chmod 644 cnet.h DOC/cnet.man
-	rcp -p cnet.h kultarr:/usr/local/include/cnet.h
-	rcp -p DOC/cnet.man kultarr:/usr/local/man/manl/cnet.l
 

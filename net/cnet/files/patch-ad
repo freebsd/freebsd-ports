@@ -1,6 +1,5 @@
-patch-ad:
---- src/compile.c.orig	Sun Jan 26 03:42:23 1997
-+++ src/compile.c	Sat Feb 13 02:29:14 1999
+--- src/compile.c.orig	Wed Apr 21 23:26:23 1999
++++ src/compile.c	Fri Mar  3 07:16:22 2000
 @@ -2,6 +2,7 @@
  
  #include <fcntl.h>
@@ -9,25 +8,17 @@ patch-ad:
  
  #if	!defined(MAXPATHLEN)
  #define	MAXPATHLEN	1024
-@@ -25,6 +26,9 @@
+@@ -26,6 +27,9 @@
  #elif	defined(USE_IRIX5)
  #include "irix5/compile.c"
  
 +#elif	defined(USE_FREEBSD)
 +#include "freebsd/compile.c"
 +
- #elif	defined(USE_LINUXAOUT)
- #include "linuxaout/compile.c"
+ #endif
  
-@@ -263,7 +267,6 @@
- 			int kflag; char **Cflags, *o_file, *c_file;
- {
-     extern int	fork			_PARAMS((void));
--    extern int	execvp			_PARAMS((const char *, char **));
  
-     struct stat	stat_c, stat_o;
- 
-@@ -483,6 +486,10 @@
+@@ -141,6 +145,10 @@
  {
  
  #define	RECIEVE		"[Rr][Ee][Cc][IiEe][Ee][Vv]"
