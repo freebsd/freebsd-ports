@@ -50,6 +50,8 @@ etc/openldap/schema/openldap.schema.default
 @unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
 etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
+@unexec /bin/rmdir %D/etc/openldap/schema || true
+@unexec /bin/rmdir %D/etc/openldap || true
 etc/rc.d/slapd.sh.sample
 include/disptmpl.h
 include/lber.h
