@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	HTML_QuickForm
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4.1
 CATEGORIES=	devel www pear
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/pl\1/}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	Provide methods for creating, validating and processing HTML forms
