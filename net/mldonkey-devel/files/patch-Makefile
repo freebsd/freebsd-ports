@@ -5,7 +5,7 @@
  
  config/configure: config/configure.in
 -	cd config; autoconf
-+	cd config; autoconf213
++	cd config; %%AUTOCONF%%
  
  ifeq ("$(MYCONFIG_ARGS_DEFINED)" , "yes")
  
