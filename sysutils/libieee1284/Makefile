@@ -16,6 +16,7 @@ COMMENT=	IEEE1284 communications library
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+ONLY_FOR_ARCHS=	i386
 
 PORTDOCS=	README.FreeBSD README
 MAN3=	libieee1284.3 parport.3 parport_list.3 ieee1284_find_ports.3 \
