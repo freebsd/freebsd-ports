@@ -425,6 +425,7 @@
     SUBDIR += p5-HTTP-MHTTP
     SUBDIR += p5-HTTP-MobileAgent
     SUBDIR += p5-HTTP-Proxy
+    SUBDIR += p5-HTTP-Recorder
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-Tools
