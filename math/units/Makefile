@@ -20,4 +20,6 @@ CONFIGURE_ARGS=	--program-prefix=g
 INFO=		units
 MAN1=		gunits.1
 
+PLIST_FILES=	bin/gunits share/units.dat
+
 .include <bsd.port.mk>
