@@ -1,0 +1,12 @@
+Normally, if you try to call a method that there's no handler for, you
+get an error:
+
+  Can't locate object method "flork" via package "X".
+
+But for classes that inherit from Class::BlackHole, unhandled methods
+become just no-operations.
+
+WWW: http://search.cpan.org/search?dist=Class-BlackHole
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
