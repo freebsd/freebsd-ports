@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://nuxi.ucdavis.edu/pub/misc/  \
 		http://www.mobis.com/ajax/projects/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
+DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
 EXTRACT_SUFX=	.tgz
 
 #PATCH_SITES=	http://www.mobis.com/ajax/projects/
@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 .if ${OSVERSION} < 300004
 CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif
-MAN1=		nmap.1
+MAN1?=		nmap.1
 
 .if !target(post-install)
 post-install:
