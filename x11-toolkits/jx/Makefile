@@ -9,8 +9,7 @@ PORTNAME=	JX
 PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.ibiblio.org/pub/Linux/libs/X/c++libs/ \
-		ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/ \
+MASTER_SITES=	ftp://gd.tuwien.ac.at/hci/jx/source-1.5.3/ \
 		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
 DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
