@@ -19,10 +19,4 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 MAN1=			aqmoney.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
