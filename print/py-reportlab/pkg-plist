@@ -1,6 +1,9 @@
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/PyFontify.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/PyFontify.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/PyFontify.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/__init__.pyo
@@ -8,6 +11,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/_rl_accel.so
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/abag.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/attrmap.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/attrmap.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/attrmap.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/colors.pyo
@@ -61,6 +67,9 @@ lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/units.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/utils.pyo
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/validators.py
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/validators.pyc
+lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/validators.pyo
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.py
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.pyc
 lib/%%PYTHON_VERSION%%/site-packages/reportlab/lib/xmllib.pyo
@@ -142,7 +151,6 @@ share/examples/reportlab/odyssey/fodyssey.py
 share/examples/reportlab/odyssey/odyssey.py
 share/examples/reportlab/odyssey/odyssey.txt
 share/examples/reportlab/py2pdf/00readme.txt
-share/examples/reportlab/py2pdf/PyFontify.py
 share/examples/reportlab/py2pdf/demo-config.txt
 share/examples/reportlab/py2pdf/demo.py
 share/examples/reportlab/py2pdf/idle_print.py
