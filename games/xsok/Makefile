@@ -8,8 +8,7 @@
 PORTNAME=	xsok
 PORTVERSION=	1.02
 CATEGORIES=	games
-MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/linux/tsx-11/sources/usr.bin.X11/
+MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin.X11/
 EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
