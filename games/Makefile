@@ -209,6 +209,7 @@
     SUBDIR += ladder
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
+    SUBDIR += ldmud
     SUBDIR += lexter
     SUBDIR += lgeneral
     SUBDIR += lgeneral-data
