@@ -1,6 +1,6 @@
 bin/mcmfmt
 bin/mc
-bin/mcedit
+%%EDITOR%%bin/mcedit
 bin/mcview
 bin/midc
 share/locale/az/LC_MESSAGES/mc.mo
