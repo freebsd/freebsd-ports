@@ -57,7 +57,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 450006 || ${OSVERSION} >= 500000
-BROKEN=	only available for 4.X-STABLE (post 4.6 Release)
+BROKEN=	"only available for 4.X-STABLE (post 4.6 Release)"
 .endif
 
 .include <bsd.port.post.mk>
