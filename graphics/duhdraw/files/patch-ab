@@ -1,0 +1,29 @@
+--- Makefile.orig	Thu Apr  4 19:16:01 2002
++++ Makefile	Fri Sep 20 17:28:35 2002
+@@ -1,5 +1,6 @@
+ # These are the production settings
+-CC=gcc -O2 -s
++CC?=cc
++CFLAGS+=-s
+ STRIP=strip
+ LIBS=-lncurses
+ 
+@@ -11,15 +12,15 @@
+ all:	duhdraw ansitoc ansi
+ 
+ ansi:	cleanansi
+-	$(CC) -o ansi ansi.c $(LIBS)
++	$(CC) $(CFLAGS) -o ansi ansi.c $(LIBS)
+ 	$(STRIP) ansi
+ 
+ duhdraw:	cleandd	
+-	$(CC) -o duhdraw duhdraw.c $(LIBS) 
++	$(CC) $(CFLAGS) -o duhdraw duhdraw.c $(LIBS) 
+ 	$(STRIP) duhdraw
+ 
+ ansitoc:	cleanansitoc	
+-	$(CC) -o ansitoc ansitoc.c
++	$(CC) $(CFLAGS) -o ansitoc ansitoc.c
+ 	$(STRIP) ansitoc
+ 
+ cleanansi:	
