@@ -280,8 +280,6 @@ lib/DGS/fonts/z003034l.pfm
 lib/libdps.a
 lib/libdpstk.a
 lib/libpsres.a
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm include/DPS
 @dirrm lib/DGS/4.03/doc
 @dirrm lib/DGS/4.03/examples
