@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.22
-PORTREVISION=	4
+PORTVERSION=	4.24
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -16,28 +15,40 @@ DIST_SUBDIR=	exim
 .if !defined(WITHOUT_EXISCAN)
 PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	exiscan-acl
-PATCHFILES=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2
+PATCHFILES=	exiscan-acl-${EXISCAN_VERSION}.patch.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
+.if defined(PKGNAMESUFFIX)
+CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4*
+.endif
+.for suffix in -ldap2 -mysql -postgesql
+.if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != ${suffix}
+CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}*
+.endif
+.endfor
+
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 MAN8=		exim.8
 
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		filter.txt pcrepattern.txt pcretest.txt spec.txt
 
+PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
+
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
-EXISCAN_ACL_VERSION=	${PORTVERSION}-12
+EXISCAN_VERSION=	${PORTVERSION}-12
 
-PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}"
+PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}-${PORTREVISION}"
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
@@ -59,10 +70,14 @@ POSTGRESQL_PORT?=	databases/postgresql7
 #WITHOUT_EXISCAN=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
-# libwrap, liblibmysqlclient and libpq respectively.  Define
+# libwrap, libmysqlclient and libpq respectively.  Define
 # WITH_SASLAUTHD to enable use of the Cyrus SASL authentication daemon.
+# Define WITH_MYSQL_VER to specify a particular version of MySQL to
+# use.  Valid values are currently 323, 40 and 41.  Defining WITH_MYSQL_VER
+# implies WITH_MYSQL.
 #WITH_TCP_WRAPPERS=	yes
 #WITH_MYSQL=		yes
+#WITH_MYSQL_VER=	40
 #WITH_PGSQL=		yes
 #WITH_SASLAUTHD=	yes
 
@@ -80,18 +95,24 @@ POSTGRESQL_PORT?=	databases/postgresql7
 # be necessary.
 #WITHOUT_IPV6=		yes
 
-# Define WITH_OPENLDAP1, WITH_OPENLDAP20 or WITH_OPENLDAP21 to link
-# against the respective OpenLDAP library.
+# Define WITH_OPENLDAP or WITH_OPENLDAP_VER to link against libldap.
+# Define WITH_OPENLDAP_VER to specify a particular version of
+# OpenLDAP to use. Valid values are currently 12, 20, 21 and 22.
+# Defining WITH_OPENLDAP_VER implies WITH_OPENLDAP.
 # Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
 # client libraries exist for these in the ports tree.
-#WITH_OPENLDAP1=	yes
-#WITH_OPENLDAP20=	yes
-#WITH_OPENLDAP21=	yes
+#WITH_OPENLDAP=		yes
+#WITH_OPENLDAP_VER=	21
 
-# DB_LIB_VERSION is the version of the Berkeley DB library to use, and
+# WITH_BDB_VER is the version of the Berkeley DB library to use, and
 # may be 1, which corresponds to version 1.85 in the base system, 4 or
 # 41 which depends on the databases/db4 or databases/db41 port.
-DB_LIB_VERSION?=1
+WITH_BDB_VER?=1
+
+# When Exim is decoding MIME "words" in header lines it converts any foreign
+# character sets to the one that is set in the headers_charset option.
+# The default setting is defined by this setting:
+WITH_DEFAULT_CHARSET?=	ISO-8859-1
 
 # The following options may be defined to turn off support for various
 # features that this port enables by default.
@@ -116,10 +137,11 @@ DB_LIB_VERSION?=1
 #WITHOUT_MAILSTORE=	yes
 #WITHOUT_MBX=		yes
 #
-# Define WITHOUT_CDB, WITHOUT_DSEARCH, WILD_LSEARCH and WITHOUT_NIS to
-# disable support for CDB-style, directory-list, wildcarded-file and NIS
-# lookups respectively.
+# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WILD_LSEARCH and
+# WITHOUT_NIS to disable support for CDB-style, DNS-style, directory-list,
+# wildcarded-file and NIS lookups respectively.
 #WITHOUT_CDB=		yes
+#WITHOUT_DNSDB=		yes
 #WITHOUT_DSEARCH=	yes
 #WITHOUT_WILDLSEARCH=	yes
 #WITHOUT_NIS=		yes
@@ -127,6 +149,9 @@ DB_LIB_VERSION?=1
 # Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
 # transport.
 #WITHOUT_LMTP=		yes
+#
+# Allow alternate configuration files not only in ${PREFIX}/etc/exim
+#WITHOUT_ALT_CONFIG_PREFIX=	yes
 #
 # Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
 #WITH_WISHLIST=		yes
@@ -141,27 +166,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	${DESTDIR}/etc/rc.subr
-RC_DIR=		${DESTDIR}/etc/rc.d
-RC_SUFX=
-.else
-USE_RC_SUBR=	yes
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-.endif
-
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%RC_DIR%%,${RC_DIR},g' \
-		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-
 .if !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
 PLIST_SUB+=	EXISCAN_ACL=""
@@ -169,14 +173,13 @@ PLIST_SUB+=	EXISCAN_ACL=""
 PLIST_SUB+=	EXISCAN_ACL="@comment "
 .endif
 
-.if ${OSVERSION} < 400014
-WITHOUT_IPV6=	yes
-.endif
-
-SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},'
+SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
+		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
+		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
 
 .if !defined(WITHOUT_TLS)
 SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
+USE_OPENSSL=	yes
 .else
 SEDLIST+=	-e 's,^TLS_LIBS=,\#TLS_LIBS=,'
 .endif
@@ -192,38 +195,24 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
-.if defined(WITH_LDAP)
-LDAP_LIB_TYPE?=OPENLDAP1
-.if (${LDAP_LIB_TYPE} == OPENLDAP1) || (${LDAP_LIB_TYPE} == UMICHIGAN)
-WITH_OPENLDAP1=	yes
-.elif ${LDAP_LIB_TYPE} == OPENLDAP2
-WITH_OPENLDAP2=	yes
-.else
-.error LDAP_LIB_TYPE must be either OPENLDAP1 or OPENLDAP2
-.endif
+.if defined(WITH_LDAP) || defined(LDAP_LIB_TYPE) \
+	|| defined(WITH_OPENLDAP1) || defined(WITH_OPENLDAP2) \
+	|| defined(WITH_OPENLDAP20) || defined(WITH_OPENLDAP21)
+BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
-.if defined(WITH_OPENLDAP1) && ( defined(WITH_OPENLDAP2) || \
-	defined(WITH_OPENLDAP20) || defined(WITH_OPENLDAP21) )
-.error please select only one OpenLDAP version
-.elif defined(WITH_OPENLDAP20) && defined(WITH_OPENLDAP21)
-.error OpenLDAP 2.0 and 2.1 are mutually exclusive
+.if defined(WITH_OPENLDAP_VER)
+WITH_OPENLDAP=		yes
+WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 
-.if defined(WITH_OPENLDAP21)
-LDAP_LIB_TYPE=	OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap21-client
-.elif defined(WITH_OPENLDAP2) || defined(WITH_OPENLDAP20)
-LDAP_LIB_TYPE=	OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
-.elif defined(WITH_OPENLDAP1)
+.if defined(WITH_OPENLDAP)
+USE_OPENLDAP=	yes
+.if defined(WANT_OPENLDAP_VER) && ${WANT_OPENLDAP_VER} == 12
 LDAP_LIB_TYPE=	OPENLDAP1
-LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
-.elif defined(LDAP_LIB_TYPE)
-.error please choose the OpenLDAP version you want to use
+.else
+LDAP_LIB_TYPE=	OPENLDAP2
 .endif
-
-.if defined(LDAP_LIB_TYPE)
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
@@ -233,26 +222,35 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 		-e 's,^LDAP_LIB_TYPE=,\#LDAP_LIB_TYPE=,'
 .endif
 
-.if (${DB_LIB_VERSION} == 1)
+.if defined(DB_LIB_VERSION)
+BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
+.endif
+
+.if ${WITH_BDB_VER} == 1
 DB_LIBS=
 DB_INCLUDES=
 SEDLIST+=	-e 's,^DBMLIB=,\#DBMLIB=,'
-.elif (${DB_LIB_VERSION} == 4)
+.elif (${WITH_BDB_VER} == 4)
 DB_LIBS=	-L${LOCALBASE}/lib -ldb4
 DB_INCLUDES=	-I${LOCALBASE}/include/db4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.elif (${DB_LIB_VERSION} == 41)
+.elif (${WITH_BDB_VER} == 41)
 DB_LIBS=	-L${LOCALBASE}/lib -ldb41
 DB_INCLUDES=	-I${LOCALBASE}/include/db41
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .else
-.error DB_LIB_VERSION must be either 1, 4 or 41
+BROKEN=		WITH_BDB_VER must be either 1, 4 or 41
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
 
+.if defined(WITH_MYSQL_VER)
+WITH_MYSQL=	yes
+WANT_MYSQL_VER=	${WITH_MYSQL_VER}
+.endif
+
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE}/include/mysql,' \
 		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
@@ -299,14 +297,14 @@ SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
-.if !defined(WITHOUT_IPV6)
-SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
-.endif
-
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(LDAP_LIB_TYPE) && \
-    ${DB_LIB_VERSION} == 1
+    ${WITH_BDB_VER} == 1
 SEDLIST+=	-e 's,^LOOKUP_LIBS=,\#LOOKUP_LIBS=,' \
 		-e 's,^LOOKUP_INCLUDE=,\#LOOKUP_INCLUDE=,'
+.endif
+
+.if defined(WITH_DNSDB)
+SEDLIST+=	-e 's,^\# LOOKUP_DNSDB=,LOOKUP_DNSDB=,'
 .endif
 
 .if !defined(WITHOUT_MAILDIR)
@@ -341,6 +339,40 @@ SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
 SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 .endif
 
+.if defined(WITHOUT_ALT_CONFIG_PREFIX)
+SEDLIST+=	-e 's,^\ALT_CONFIG_PREFIX=,# ALT_CONFIG_PREFIX=,'
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
+RC_DIR=		${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
+
+.if ${OSVERSION} < 400014
+WITHOUT_IPV6=	yes
+.endif
+
+.if !defined(WITHOUT_IPV6)
+SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
+.endif
+
 pre-everything::
 .if empty(.MAKEFLAGS:M-s) && defined(WITH_WISHLIST)
 	@${ECHO} ''
@@ -351,8 +383,11 @@ pre-everything::
 .endif
 
 do-configure:
-	${MKDIR} ${WRKSRC}/Local
-	${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+	@${MKDIR} ${WRKSRC}/Local
+	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS} ${OSREL})\\n\\t"/' \
+		${WRKSRC}/src/globals.c
+	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
 
 post-build:
 .for script in exim ${DAILY_SCRIPTS}
@@ -378,17 +413,21 @@ post-install:
 .endfor
 	@[ -f ${PREFIX}/etc/exim/configure ] || \
 		${CP} ${PREFIX}/etc/exim/configure.default ${PREFIX}/etc/exim/configure
+.for manfile in ${MAN8}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${MAN8PREFIX}/man/man8
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
 .if !defined(WITHOUT_EXISCAN)
-	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
 .endif
 .for docfile in ${PORTDOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
 .endfor
-.for manfile in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${MAN8PREFIX}/man/man8
+	@${MKDIR} ${EXAMPLESDIR}
+.for example in ${PORT_EXAMPLES}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/${example} ${EXAMPLESDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
