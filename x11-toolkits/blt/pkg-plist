@@ -5,6 +5,7 @@ lib/libBLT.a
 lib/libBLT.so.2.4
 @exec /sbin/ldconfig -m %D/lib
 lib/blt2.4/bltCanvEps.pro
+lib/blt2.4/bltDnd.tcl
 lib/blt2.4/bltGraph.pro
 lib/blt2.4/bltGraph.tcl
 lib/blt2.4/bltHier.tcl
@@ -22,8 +23,11 @@ lib/blt2.4/demos/barchart2.tcl
 lib/blt2.4/demos/barchart3
 lib/blt2.4/demos/barchart4
 lib/blt2.4/demos/barchart5
+lib/blt2.4/demos/bg-test3.tcl
 lib/blt2.4/demos/bgexec
 lib/blt2.4/demos/bgexec2
+lib/blt2.4/demos/bgexec3
+lib/blt2.4/demos/bgexec4
 lib/blt2.4/demos/bitmap
 lib/blt2.4/demos/bltDemo.tcl
 lib/blt2.4/demos/bltGrPs.tcl
