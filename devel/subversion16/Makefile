@@ -215,7 +215,7 @@ post-build:
 	    CCFLAGS="${CCFLAGS}" CC="${CC}" \
 	    ${PERL} Makefile.PL PREFIX="${PREFIX}" \
 	    INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib" ; \
-	  ${MAKE} all test
+	  ${MAKE} all
 .endif
 .if defined(WITH_PYTHON)
 	cd ${WRKSRC} ; \
