@@ -1,6 +1,6 @@
---- configure.orig	Wed Oct 20 17:15:24 1999
-+++ configure	Fri Oct 22 10:26:25 1999
-@@ -3028,8 +3028,8 @@
+--- configure.orig	Tue Nov  9 15:22:08 1999
++++ configure	Mon Nov 15 14:07:02 1999
+@@ -3078,8 +3078,8 @@
  #define USE_GMODULE 1
  EOF
  
@@ -11,24 +11,25 @@
     
     
     echo "$ac_t""yes" 1>&6
-@@ -3561,8 +3561,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgif echo "configure: warning: *** Native GIF support will not be built" 1>&2;
--	gifok=no $LIBS"
-+LIBS="-lgif $GTK_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 3568 "configure"
- #include "confdefs.h"
---- Makefile.in.orig	Wed Oct 20 17:34:44 1999
-+++ Makefile.in	Fri Oct 22 10:22:14 1999
-@@ -94,7 +94,7 @@
- VERSION = @VERSION@
+--- Makefile.in.orig	Tue Nov  9 15:48:21 1999
++++ Makefile.in	Mon Nov 15 14:07:45 1999
+@@ -100,7 +100,7 @@
  
- SUBDIRS = src
+ SUBDIRS = src doc
+ 
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = gdk_pixbufConf.sh
  
  EXTRA_DIST = configure acconfig.h gdk_pixbufConf.sh.in
+--- src/Makefile.in.orig	Tue Nov  9 15:48:22 1999
++++ src/Makefile.in	Mon Nov 15 14:10:26 1999
+@@ -125,7 +125,7 @@
+ 
+ LDADDS = libgdk_pixbuf.la $(LIBART_LIBS) $(GLIB_LIBS)
+ 
+-testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS) -lgmodule
++testpixbuf_LDADD = $(LDADDS) $(LIBART_LIBS) $(GNOME_LIBS)
+ 
+ #
+ # The GdkPixBuf library

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gdk-pixbuf
-# Version required:	0.3
+# Version required:	0.4
 # Date created:		5th October 1999
 # Whom:			Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gdk-pixbuf-0.3
+DISTNAME=	gdk-pixbuf-0.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gdk-pixbuf
@@ -21,7 +21,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/giflib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
