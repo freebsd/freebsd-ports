@@ -8,11 +8,9 @@
 
 DISTNAME=	wmmon-1.0b2
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	ftp://ftp.mezaway.org/pub/DockApps/ \
+MASTER_SITES=	ftp://ftp.tecnogi.com/pub/linux/WindowMaker/ \
 		http://www.physics.adelaide.edu.au/~kkennawa/ \
-		ftp://ftp.tecnogi.com/pub/linux/WindowMaker/ \
-		ftp://ftp.deva.net/pub/sources/X11/WindowMaker/dockapps/ \
-		ftp://ftp.paco.odessa.ua/.2/x11/wm/WindowMaker/apps/
+		ftp://ftp.deva.net/pub/sources/X11/windowmaker/dockapps/
 
 MAINTAINER=	sk-ports@vegamuse.org
 
@@ -25,7 +23,7 @@ WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 .include <bsd.port.pre.mk>
 
 .if $(OSVERSION) < 400000
-BROKEN=		'cannot compile with 3-stable'
+#BROKEN=		'cannot compile with 3-stable'
 .endif
 
 .if !defined(NOPORTDOCS)
