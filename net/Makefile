@@ -125,6 +125,7 @@
     SUBDIR += icqlib0
     SUBDIR += icqnix
     SUBDIR += ip-tun
+    SUBDIR += ipcheck
     SUBDIR += ipfm
     SUBDIR += iplog
     SUBDIR += ipw

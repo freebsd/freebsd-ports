@@ -1,0 +1,22 @@
+[from web site]
+This is a simple Python script to register your dynamic IP address
+using the NIC V2.0 protocol. We aim to be fully compliant with the
+dyndns client specification.
+
+We currently support all options and latest recommendations by
+Dyndns. Ipcheck is easy to install and very easy to use.
+
+Root access is not required and no configuration files are needed.
+
+Just specify your username, password and hostname(s) on the command
+line (or cron entry).
+
+You can specify the interface (default tun0) to search for your ip
+address on or use web based IP detection.
+
+There is also direct support for determining the IP address on the
+following devices: Linksys (-L), Netgear (-N), Draytek (-D), Netopia
+(-O), HawkingTech (-H), Cisco 667i (-C), Cisco 700 series (-I),
+ZyXEL Prestige (-Z), SMC Barricade (-S)
+
+WWW: http://ipcheck.sourceforge.net/
