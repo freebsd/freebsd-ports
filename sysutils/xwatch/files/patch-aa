@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Fri Jul 17 11:25:36 1998
++++ src/Makefile.in	Fri Jul 17 11:26:35 1998
+@@ -80,7 +80,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(GTK_LIBS)
+ LIBS = @LIBS@
+ X_CFLAGS = @X_CFLAGS@
+ X_LIBS = @X_LIBS@
+@@ -89,7 +89,7 @@
+ xwatch_OBJECTS =  xwatch.o string.o util.o gui.o
+ xwatch_DEPENDENCIES = 
+ xwatch_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ $(GTK_CFLAGS)
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+ DIST_COMMON =  Makefile.am Makefile.in

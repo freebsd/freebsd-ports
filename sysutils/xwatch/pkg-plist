@@ -1,0 +1,5 @@
+bin/xwatch
+share/doc/xwatch/README
+share/doc/xwatch/TODO
+share/doc/xwatch/xwatch.test.conf
+@dirrm share/doc/xwatch

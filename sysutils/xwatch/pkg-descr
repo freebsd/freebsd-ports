@@ -1,0 +1,4 @@
+This software allows you to monitor files or pipes in a window.  The
+window is updated when the file changes, in the fashion of "tail -f",
+making xwatch well-suited for monitoring system logs, "make" logs, and
+so forth.  It uses the Gtk toolkit.
