@@ -38,7 +38,7 @@
  #-DMITSHM 
  
 -CCFLAGS = $(OPTIMISE) -DMITSHM \
-+CCFLAGS = -fomit-frame-pointer -DMITSHM \
++CCFLAGS = $(CFLAGS) -fomit-frame-pointer -DMITSHM \
  -Ii386 \
  -I. \
  -Iunzip \
@@ -70,7 +70,7 @@
  #-DSPC700_SHUTDOWN
  
 -CFLAGS=$(CCFLAGS)
-+CFLAGS+=$(CCFLAGS)
++#CFLAGS=$(CCFLAGS)
  
  .SUFFIXES: .o .cpp .c .cc .h .m .i .S .asm
 -LDLIBS = -L/usr/X11R6/lib frame.o
