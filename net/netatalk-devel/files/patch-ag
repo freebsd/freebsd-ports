@@ -1,0 +1,14 @@
+--- libatalk/asp/asp_getsess.c.orig	Tue Aug 25 21:50:54 1998
++++ libatalk/asp/asp_getsess.c	Tue Aug 25 21:51:05 1998
+@@ -3,10 +3,10 @@
+  * All Rights Reserved.  See COPYRIGHT.
+  */
+ 
++#include <sys/types.h>
+ #include <sys/errno.h>
+ #include <sys/signal.h>
+ #include <sys/time.h>
+-#include <sys/types.h>
+ #include <sys/uio.h>
+ #include <sys/wait.h>
+ #include <sys/syslog.h>
