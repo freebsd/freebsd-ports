@@ -1,4 +1,0 @@
-This module is used to calculate leap seconds for a given Rata Die day. It is
-mostly intended for use by the DateTime.pm, rather than for external users.
-
-WWW: http://datetime.perl.org/
