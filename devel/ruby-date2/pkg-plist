@@ -1,13 +1,9 @@
 %%RUBY_SITELIBDIR%%/date2.rb
-%%RUBY_SITELIBDIR%%/date3.rb
-%%RUBY_SITELIBDIR%%/holiday.rb
-%%RUBY_SITELIBDIR%%/odate.rb
 %%RUBY_SITELIBDIR%%/parsedate2.rb
-%%RUBY_SITELIBDIR%%/parsedate2.ry
-%%RUBY_SITELIBDIR%%/parsedate3.rb
-%%RUBY_SITELIBDIR%%/qholiday.rb
-%%RUBY_SITELIBDIR%%/strftime.rb
-%%RUBY_SITELIBDIR%%/strptime.rb
+%%RUBY_SITELIBDIR%%/date2/format.rb
+%%RUBY_SITELIBDIR%%/date2/holiday.rb
+%%RUBY_SITELIBDIR%%/date2/qholiday.rb
+@dirrm %%RUBY_SITELIBDIR%%/date2
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/cal.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/daylight.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/date2/goodfriday.rb
