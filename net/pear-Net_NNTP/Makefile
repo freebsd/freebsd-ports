@@ -15,32 +15,11 @@ COMMENT=	PEAR class that provides an implementation of the NNTP protocol
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+CATEGORY=	Net
+FILES=		NNTP.php NNTP/Protocol.php NNTP/Header.php NNTP/Message.php
+EXAMPLES=	README read.php group.php index.php
+_EXAMPLESDIR=	examples/news.php.net
+ 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
-
-LIB_FILES=	NNTP/Realtime.php NNTP/Protocol.php NNTP/Header.php NNTP/Message.php
-PORTDOCS=	README
-
-.if defined(NOPORTEXAMPLES)
-PLIST_SUB+=		PORTEXAMPLES="@comment "
-.else
-PLIST_SUB+=		PORTEXAMPLES=""
-.endif
-
-do-install:
-	@${MKDIR} ${PEARDIR}/Net/NNTP
-	@${CP} -p ${WRKSRC}/NNTP.php ${PEARDIR}/Net
-.for FILE in ${LIB_FILES}
-	@${CP} -p ${WRKSRC}/${FILE} ${PEARDIR}/Net/NNTP
-.endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Net
-.if !(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/news.php.net/*.php ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/news.php.net/${PORTDOCS} ${DOCSDIR}
-.endif
-
 .include <bsd.port.post.mk>
