@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Dec 11 09:11:47 2000
-+++ Makefile.in	Thu Feb  8 10:49:33 2001
-@@ -45,15 +45,13 @@
+--- Makefile.in.orig	Wed Jul 31 19:03:43 2002
++++ Makefile.in	Mon Aug 19 11:49:58 2002
+@@ -76,16 +76,14 @@
  	for i in $(DAEMONDIR) $(BINDIR) $(MANDIR)/man5 $(MANDIR)/man8 ; do \
  	   test -d $$i || mkdir -p $$i ; done
  	$(INSTALL_CMD) -m 755 xinetd/xinetd $(DAEMONDIR)
@@ -11,10 +11,12 @@
  	$(INSTALL_CMD) -m 644 $(SRCDIR)/xinetd/xinetd.log.man $(MANDIR)/man8/xinetd.log.8
  	$(INSTALL_CMD) -m 644 $(SRCDIR)/xinetd/xinetd.man $(MANDIR)/man8/xinetd.8
 -	$(INSTALL_CMD) -m 644 $(SRCDIR)/xinetd/itox.8 $(MANDIR)/man8/itox.8
+-	$(INSTALL_CMD) -m 644 $(SRCDIR)/xinetd/xconv.pl.8 $(MANDIR)/man8/xconv.pl.8
++	$(INSTALL_CMD) -m 644 $(SRCDIR)/xinetd/xconv.pl.8 $(MANDIR)/man8/xconv.8
  	@echo "You must put your xinetd.conf in /etc/xinetd.conf"
  	@echo "There is a sample config file in xinetd/sample.conf and you can"
 -	@echo "use xconv.pl to convert your old inetd.conf file to an xinetd format"
 +	@echo "use xconv to convert your old inetd.conf file to an xinetd format"
  
- distclean: clean
- 	rm -f config.cache config.log Makefile config.status xinetd/itox
+ uninstall:
+ 	rm -f $(DAEMONDIR)/xinetd
