@@ -15,9 +15,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep mail client
 
 BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-BUILD_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/mail/addresses
+BUILD_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/${ADDRESSES_PORT}
 RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
-RUN_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/mail/addresses
+RUN_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/${ADDRESSES_PORT}
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
@@ -33,5 +33,6 @@ ALL_TARGET=
 .include <bsd.port.pre.mk>
 
 PANTOMIME_PORT?=	mail/pantomime
+ADDRESSES_PORT?=	mail/addresses
 
 .include <bsd.port.post.mk>
