@@ -7,7 +7,7 @@
 -CFLAGS=-O2 `pkg-config --cflags gtk+-2.0 gthread-2.0`
 -LDFLAGS=-O2 `pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
 +CFLAGS+=`pkg-config --cflags gtk+-2.0 gthread-2.0`
-+LDFLAGS+=-`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
++LDFLAGS+=`pkg-config --libs gtk+-2.0 gthread-2.0` `xml2-config --libs`
  endif
  
  OBJS=main.o app.o launcher.o editor.o property.o \
