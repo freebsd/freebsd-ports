@@ -1,0 +1,57 @@
+%%CGIDIR%%/tv_pick.cgi
+bin/tv_cat
+bin/tv_check
+bin/tv_extractinfo_en
+bin/tv_grab_de
+bin/tv_grab_na
+bin/tv_grab_sn
+bin/tv_grab_uk
+bin/tv_grab_uk_rt
+bin/tv_grep
+bin/tv_sort
+bin/tv_to_latex
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ananova_Channel.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ask.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Clumps.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Memoize.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/TZ.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/UK_TZ.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Usage.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/ZapListings.pm
+share/doc/xmltv-%%VERSION%%/COPYING
+share/doc/xmltv-%%VERSION%%/QuickStart
+share/doc/xmltv-%%VERSION%%/README
+share/doc/xmltv-%%VERSION%%/README.tv_check
+share/doc/xmltv-%%VERSION%%/tv_check_doc.html
+share/doc/xmltv-%%VERSION%%/tv_check_doc.jpg
+share/xmltv/tv_grab_uk/channel_ids
+share/xmltv/tv_grab_uk/channel_pkgs/adult
+share/xmltv/tv_grab_uk/channel_pkgs/arts
+share/xmltv/tv_grab_uk/channel_pkgs/asia
+share/xmltv/tv_grab_uk/channel_pkgs/children
+share/xmltv/tv_grab_uk/channel_pkgs/classics
+share/xmltv/tv_grab_uk/channel_pkgs/comedy
+share/xmltv/tv_grab_uk/channel_pkgs/entertainment
+share/xmltv/tv_grab_uk/channel_pkgs/factual
+share/xmltv/tv_grab_uk/channel_pkgs/film
+share/xmltv/tv_grab_uk/channel_pkgs/gratis
+share/xmltv/tv_grab_uk/channel_pkgs/lifestyle
+share/xmltv/tv_grab_uk/channel_pkgs/misc
+share/xmltv/tv_grab_uk/channel_pkgs/music
+share/xmltv/tv_grab_uk/channel_pkgs/musicchoice
+share/xmltv/tv_grab_uk/channel_pkgs/news
+share/xmltv/tv_grab_uk/channel_pkgs/religion
+share/xmltv/tv_grab_uk/channel_pkgs/scifi
+share/xmltv/tv_grab_uk/channel_pkgs/shop
+share/xmltv/tv_grab_uk/channel_pkgs/sport
+share/xmltv/tv_grab_uk/channel_pkgs/travel
+share/xmltv/tv_grab_uk_rt/channel_ids
+@dirrm share/xmltv/tv_grab_uk_rt
+@dirrm share/xmltv/tv_grab_uk/channel_pkgs
+@dirrm share/xmltv/tv_grab_uk
+@dirrm share/xmltv
+@dirrm share/doc/xmltv-%%VERSION%%
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLTV
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV
