@@ -14,7 +14,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		xml.5:${PORTSDIR}/textproc/libxml
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
