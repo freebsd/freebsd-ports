@@ -1,10 +1,12 @@
---- logtail/Makefile.orig	Sat Dec 30 20:17:09 2000
-+++ logtail/Makefile	Sat Dec 30 20:17:35 2000
-@@ -2,7 +2,7 @@
+--- logtail/Makefile.orig	Mon Dec 25 19:24:25 2000
++++ logtail/Makefile	Sun Jan 28 22:40:44 2001
+@@ -1,8 +1,8 @@
+ SRC= logtail.c
  PROG= logtail
  CC= gcc
- CFLAGS= -Wall -Werror -O3 -ansi -pedantic
+-CFLAGS= -Wall -Werror -O3 -ansi -pedantic
 -PREFIX=/usr
++CFLAGS+= -Wall -Werror -ansi -pedantic
 +PREFIX=%%PREFIX%%
  
  default: 
