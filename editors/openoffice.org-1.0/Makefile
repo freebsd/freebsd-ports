@@ -371,7 +371,7 @@ patch-mozilla:
 	@cd ${WRKDIR}/mozilla && ${MAKE} patch WRKDIRPREFIX=""
 
 build-mozilla:
-.if ! exists(${WRKDIR}/FREEBSDGCCIinc.zip)
+.if ! exists(${WRKDIR}/FREEBSDGCCIruntime.zip)
 	@${ECHO_MSG} "===>  Building mozilla sub project"
 .if defined(WITH_DEBUG)
 	@${CP} ${WRKDIR}/mozilla/Makefile ${WRKDIR}/mozilla/Makefile.new
@@ -409,7 +409,7 @@ register-mozilla:
 	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIruntime.zip
 	@cd ${WRKDIR}/mozilla-runtime && ${UNZIP} -o ${WRKDIR}/FREEBSDGCCIlib.zip
 	@${CP} ${WRKDIR}/mozilla/work/mozilla/dist/bin/regxpcom ${WRKDIR}/mozilla-runtime/
-	@${RM} ${WRKDIR}/mozilla-runtime/components/component.reg
+	@-${RM} ${WRKDIR}/mozilla-runtime/components/component.reg
 	@cd ${WRKDIR}/mozilla-runtime && export MOZILLA_FIVE_HOME=. \
 		&& export LD_LIBRARY_PATH=.:./lib && ./regxpcom 
 	@${CP} ${WRKDIR}/mozilla-runtime/components/xpti.dat \
@@ -426,7 +426,9 @@ mozilla:
 	@${MAKE} install-mozilla
 
 do-build:
+.if ! exists(${WRKDIR}/../moz/zipped/FREEBSDGCCIruntime.zip)
 	@${MAKE} mozilla
+.endif
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
