@@ -333,6 +333,7 @@
     SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += secpanel
+    SUBDIR += sectok
     SUBDIR += sfs
     SUBDIR += sha
     SUBDIR += sig2dot
