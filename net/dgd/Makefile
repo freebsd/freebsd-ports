@@ -7,7 +7,8 @@
 DISTNAME=	dgd-1.0.9
 DISTFILES=	${DISTNAME}.tar.gz
 
-PATCHFILES=	1.0.9-1.0.9.1.gz
+# changed from PATCHFILES so it won't confuse bsd.port.mk
+PATCH_FILES=	1.0.9-1.0.9.1.gz
 .if defined(MASTER_SITE_OVERRIDE)
 PATCHSITE:=	${MASTER_SITE_OVERRIDE}
 .else
@@ -27,7 +28,7 @@ pre-fetch:
         		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
 	fi
 .if defined(MASTER_SITE_OVERRIDE)
-	@for file in ${PATCHFILES}; do \
+	@for file in ${PATCH_FILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
 			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}${DISTNAME}/$$file \
@@ -35,7 +36,7 @@ pre-fetch:
 	    	fi \
 	 done
 .else
-	@for file in ${PATCHFILES}; do \
+	@for file in ${PATCH_FILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
 			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}patches/$$file \
