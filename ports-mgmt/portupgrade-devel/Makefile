@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	1.29
+PORTVERSION=	1.31
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
-DISTNAME=	pkgtools-20010530d
+DISTNAME=	pkgtools-20010531
 
 MAINTAINER=	knu@FreeBSD.org
 
