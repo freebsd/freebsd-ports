@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- monikers/Makefile.in	2001/10/30 11:02:02	1.1
-+++ monikers/Makefile.in	2001/10/30 11:03:04
+--- monikers/Makefile.in.orig	Tue Jan 22 14:02:06 2002
++++ monikers/Makefile.in	Tue Jan 22 14:07:14 2002
 @@ -72,7 +72,7 @@
  BONOBO_LIBDIR = @BONOBO_LIBDIR@
  BONOBO_LIBS = @BONOBO_LIBS@
@@ -12,3 +12,12 @@ $FreeBSD$
  BONOBO_TEST_LIBS = @BONOBO_TEST_LIBS@
  BUILD_INCLUDED_LIBINTL = @BUILD_INCLUDED_LIBINTL@
  CATALOGS = @CATALOGS@
+@@ -212,7 +212,7 @@
+ 	bonobo-moniker-std.c			
+ 
+ 
+-libmoniker_std_la_LDFLAGS = -module
++libmoniker_std_la_LDFLAGS = -module -avoid-version
+ 
+ bonobo_moniker_gunzip_SOURCES = \
+ 	bonobo-moniker-gunzip.c		\

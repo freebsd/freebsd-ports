@@ -89,12 +89,8 @@ include/gnome-1.0/bonobo/bonobo-wrapper.h
 include/gnome-1.0/bonobo/bonobo-xobject.h
 include/gnome-1.0/bonobo/bonobo-zoomable-frame.h
 include/gnome-1.0/bonobo/bonobo-zoomable.h
-lib/bonobo/monikers/libmoniker_std.a
 lib/bonobo/monikers/libmoniker_std.so
-lib/bonobo/monikers/libmoniker_std.so.0
-lib/bonobo/plugin/libstorage_efs.a
 lib/bonobo/plugin/libstorage_efs.so
-lib/bonobo/plugin/libstorage_fs.a
 lib/bonobo/plugin/libstorage_fs.so
 lib/libbonobo-print.a
 lib/libbonobo-print.so
