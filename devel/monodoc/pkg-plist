@@ -2,9 +2,7 @@ bin/mod
 bin/monodoc
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
-@unexec gacutil /u monodoc.dll /f /package monodoc /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/monodoc.dll
-@exec gacutil /i monodoc.dll /f /package monodoc /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/monodoc/assembler.exe
 lib/monodoc/browser.exe
 lib/monodoc/cs2ecma.exe
