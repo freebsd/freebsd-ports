@@ -8,7 +8,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Applet/Install/pkg.typemap
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Applet/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Applet/Applet.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Applet/Applet.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Applet/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Applet/Install
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/Applet
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/Applet
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome 2>/dev/null || true

@@ -5,7 +5,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install/pkg.ty
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/ImlibImage.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/ImlibImage.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage/Install
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/ImlibImage
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/ImlibImage
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true

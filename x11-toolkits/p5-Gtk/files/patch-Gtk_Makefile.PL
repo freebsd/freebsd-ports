@@ -1,6 +1,6 @@
---- Gtk/Makefile.PL.orig	Mon Mar 12 02:44:49 2001
-+++ Gtk/Makefile.PL	Mon Mar 12 02:55:54 2001
-@@ -38,8 +38,8 @@
+--- Gtk/Makefile.PL.orig	Sat Mar 24 18:35:10 2001
++++ Gtk/Makefile.PL	Sun May 27 22:41:52 2001
+@@ -40,8 +40,8 @@
  	$threadl = "";
  }
  
@@ -11,7 +11,7 @@
  $libs =~ s/\s+/ /g;
  $inc =~ s/\s+/ /g;
  
-@@ -192,14 +192,14 @@
+@@ -207,14 +207,14 @@
  sub gtk_version {
  	my($result);
  
@@ -23,8 +23,8 @@
  
  # build the keysyms mapping
  sub build_ksyms {
--	my ($incfile) = `gtk-config --prefix`;
-+	my ($incfile) = `$ENV{GTK_CONFIG} --prefix`;
- 	chomp($incfile);
- 	$incfile .= "/include/gdk/gdkkeysyms.h";
- 
+-	my ($dir) = `gtk-config --prefix`;
++	my ($dir) = `$ENV{GTK_CONFIG} --prefix`;
+ 	chomp($dir);
+ 	my $incfile;
+ 	foreach ("/", "/gtk-1.2") {
