@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.28 1998/11/02 17:21:20 vanilla Exp $
+# $Id: Makefile,v 1.29 1998/11/17 15:22:02 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.1.2
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL='$${INSTALL} -c'
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk11
 
-MAN1=		gtk11-config.1
+MAN1=		gtk-config.1
 
 pre-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
