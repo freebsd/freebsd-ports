@@ -1,5 +1,5 @@
---- src/Makefile.in.orig	Wed Apr 30 16:44:52 2003
-+++ src/Makefile.in	Thu May 15 13:01:03 2003
+--- src/Makefile.in.orig	Thu May  1 08:44:52 2003
++++ src/Makefile.in	Fri Jul 25 13:44:28 2003
 @@ -69,9 +69,9 @@
  
  
@@ -12,7 +12,7 @@
  @USE_SDL_FALSE@SDL_LIBS = 
  @USE_SDL_TRUE@GLUT_LIBS = 
  @USE_SDL_FALSE@GLUT_LIBS = -lglut
-@@ -80,7 +80,7 @@
+@@ -80,11 +80,11 @@
  @USE_BUMPREF_TRUE@BUMPREF_CFLAGS = 
  @USE_BUMPREF_FALSE@BUMPREF_CFLAGS = -DNO_NV_BUMPREF
  
@@ -21,3 +21,8 @@
  
  #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
  #LIBS   = -L$(LIBDIR) -lglut -lGLU -lGL -lXext -lXaw -lm -lXi -lpng -lz
+-LDFLAGS = ${all_libraries} `freetype-config --libs` ${SDL_LIBS} ${GLUT_LIBS}
++LDFLAGS = ${all_libraries} `freetype-config --libs` ${SDL_LIBS} ${GLUT_LIBS} @LDFLAGS@
+ #LDADD = ${X_PRE_LIBS} ${X_LIBS} ${X_EXTRA_LIBS} -lGL -lGLU -lXaw -lm -lXi -lpng -lz -L/home/floh/nvsdk/OpenGL/lib/ -lnvparse
+ LDADD = ${X_PRE_LIBS} ${X_LIBS} ${X_EXTRA_LIBS} -lGL -lGLU -lXaw -lm -lXi -lpng -lz
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
