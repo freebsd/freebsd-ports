@@ -41,6 +41,7 @@ share/gnome/gdeskcal/code/values.py
 share/gnome/gdeskcal/code/values.py.bak
 share/gnome/gdeskcal/data/config.xml
 share/gnome/gdeskcal/data/format.xml
+share/gnome/gdeskcal/data/format.xml~
 share/gnome/gdeskcal/data/gfx/business.png
 share/gnome/gdeskcal/data/gfx/favorites.png
 share/gnome/gdeskcal/data/gfx/icon.png
@@ -86,6 +87,7 @@ share/locale/sk/LC_MESSAGES/gdeskcal.mo
 share/locale/sr/LC_MESSAGES/gdeskcal.mo
 share/locale/sv/LC_MESSAGES/gdeskcal.mo
 share/locale/tr/LC_MESSAGES/gdeskcal.mo
+share/locale/uk/LC_MESSAGES/gdeskcal.mo
 share/locale/zh_CN/LC_MESSAGES/gdeskcal.mo
 @dirrm share/gnome/gdeskcal/skins/miderat
 @dirrm share/gnome/gdeskcal/skins/default
