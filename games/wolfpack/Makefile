@@ -26,6 +26,12 @@ MAN6=		emp_client.6 emp_server.6
 
 MAKE_ARGS=	PREFIX=${PREFIX}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not compile on ia64"
+.endif
+
 pre-install:
 	${MKDIR} ${PREFIX}/wolfpack
 	${MKDIR} ${PREFIX}/wolfpack/data
@@ -47,4 +53,4 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/emp4/man/emp_server.6 ${PREFIX}/man/man6/
 	@${CAT} ${FILESDIR}/post-install-info
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
