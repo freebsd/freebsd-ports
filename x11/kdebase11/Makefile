@@ -28,12 +28,22 @@ USE_BZIP2=	yes
 USE_QT=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-xdmdir=${X11BASE}/lib/X11/xdm
+CONFIGURE_ARGS=	--with-qt-includes=${QTDIR}/include/X11/qt \
+		--with-extra-includes=${LOCALBASE}/include \
+		--with-extra-libs=${LOCALBASE}/lib \
+		--with-xdmdir=${X11BASE}/lib/X11/xdm
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS) -DHAVE_GETUSERSHELL -DTIME_WITH_SYS_TIME" \
 		INSTALL_SCRIPT="install -c -m 555" PATH="${PATH}:${X11BASE}/bin" \
-		RUN_KAPPFINDER="no"
+		RUN_KAPPFINDER="no" \
+		QTDIR=${QTDIR}
 MAKE_ENV=	RM=${RM}
 CFLAGS+=	"-I$(PREFIX)/include"
+
+.if defined(PREFIX)
+QTDIR?=		${PREFIX}
+.else
+QTDIR?=		${X11BASE}
+.endif
 
 pre-patch:
 	@${CP} ${FILESDIR}/ja.kimap ${WRKSRC}/kikbd/maps
