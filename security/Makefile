@@ -12,6 +12,7 @@
     SUBDIR += amavis-perl
     SUBDIR += amavisd
     SUBDIR += amavisd-new
+    SUBDIR += antivir-milter
     SUBDIR += apg
     SUBDIR += arirang
     SUBDIR += audit
