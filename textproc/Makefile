@@ -274,6 +274,7 @@
     SUBDIR += p5-Number-Format
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
+    SUBDIR += p5-POE-Filter-XML
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package

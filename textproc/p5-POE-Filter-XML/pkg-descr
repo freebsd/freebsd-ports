@@ -1,0 +1,7 @@
+POE::Filter::XML provides POE with a completely encapsulated XML
+parsing strategy for POE::Wheels that will be dealing with XML
+streams. By default the filter will attempt to use XML::Parser as
+its foundation for xml parsing. Otherwise it will depend upon a
+pure perl SAX parser included (POE::Filter::XML::Parser).
+
+WWW: http://search.cpan.org/dist/POE-Filter-XML/
