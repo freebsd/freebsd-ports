@@ -8,11 +8,14 @@
 PORTNAME=	xshodo
 PORTVERSION=	2.0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/non-free/x/xshodo
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A paint tool for Shodo, the Japanese traditional writing character
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 USE_IMAKE=	yes
 MAN1=		xshodo.1
