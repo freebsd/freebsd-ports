@@ -1,0 +1,4 @@
+include/lhtml.h
+lib/libhtmlparse.a
+lib/libhtmlparse.so
+lib/libhtmlparse.so.0

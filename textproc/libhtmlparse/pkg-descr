@@ -1,0 +1,6 @@
+libhtmlparse is a lightweight HTML parsing library. It is designed for 
+applications where speed is critical and certain advanced features aren't
+necessary. It's intended to be as simple as possible to use.
+
+Author: Mooneer Salem <mooneer@translator.cx>
+WWW:	http://www.translator.cx/software/libhtmlparse.html
