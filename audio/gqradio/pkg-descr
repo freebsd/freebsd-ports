@@ -1,0 +1,10 @@
+GQradio interfaces with radio cards through the video4linux,
+or the FreeBSD bktr APIs. Stations can be tuned manually,
+set to presets, or auto seek can find the next available
+frequency. The application supports theming (skins),
+and includes a built-in skin editor.
+
+WWW: http://gqmpeg.sourceforge.net/radio.html
+
+- Stefan Jahn
+stefan.jahn@nemesis-sektor.de

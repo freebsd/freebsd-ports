@@ -100,6 +100,7 @@
     SUBDIR += gnupod
     SUBDIR += gogo
     SUBDIR += gqmpeg
+    SUBDIR += gqradio
     SUBDIR += gramofile
     SUBDIR += grip
     SUBDIR += gsi
