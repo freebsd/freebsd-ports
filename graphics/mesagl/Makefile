@@ -11,8 +11,8 @@ CATEGORIES=	graphics
 MASTER_SITES= 	http://download.sourceforge.net/mesa3d/ \
 		ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
-DISTFILES=	MesaLib-${PORTVERSION}${DISTNAME}${EXTRACT_SUFX} \
-		MesaDemos-${VERSION}.tar.gz
+DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
+		MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	jseger@FreeBSD.org
 
