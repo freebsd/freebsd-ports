@@ -1,0 +1,9 @@
+IBM has donated translations from their WebSphere Studio products
+to Eclipse.  The language pack is distributed as a feature which
+you can install by downloading the zip file, unzipping it into
+your Eclipse directory and restarting Eclipse.  This language pack
+contains translations for German, Spanish, French, Italian,
+Japanese, Korean, Portuguese (Brazil), Traditional Chinese and
+Simplified Chinese.
+
+WWW: http://download2.eclipse.org/downloads/drops/L-2.1.x%20Translations-200307021300/index.php
