@@ -3,7 +3,7 @@
 # Date created:		December 3, 1997
 # Whom:			Oliver Breuninger <ob@seicom.NET>
 #
-# $Id: Makefile,v 1.2 1998/06/16 12:06:13 asami Exp $
+# $Id: Makefile,v 1.3 1998/06/16 12:48:59 tg Exp $
 
 DISTNAME=	o2c-1.16
 CATEGORIES=	lang
@@ -20,7 +20,7 @@ post-extract:
 	@${CP} ${FILESDIR}/o2 ${WRKSRC}
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|@PREFIX@|${PREFIX}|g;" ${WRKSRC}/system/o2c.red.template
+	@/usr/bin/perl -pi -e "s|\@PREFIX\@|${PREFIX}|g;" ${WRKSRC}/system/o2c.red.template
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/system/o2c.red.template ${PREFIX}/lib/o2c-1.16
