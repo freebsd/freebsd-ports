@@ -3,7 +3,7 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.32 1999/01/27 07:41:27 fenner Exp $
+# $Id: Makefile,v 1.33 1999/04/19 08:42:20 cracauer Exp $
 #
 
 DISTNAME=       bash-2.03
@@ -12,13 +12,12 @@ MASTER_SITES=   ${MASTER_SITE_GNU} \
 		ftp://slc2.ins.cwru.edu/pub/dist/
 MASTER_SITE_SUBDIR=	bash
 .if !defined(NOPORTDOCS)
-DISTFILES=      bash-2.03.tar.gz bash-doc-2.02.tar.gz
+DISTFILES=      bash-2.03.tar.gz bash-doc-2.03.tar.gz
 .endif
 
 MAINTAINER=	ache@FreeBSD.ORG
 
 GNU_CONFIGURE=	Yes
-CONFIGURE_ENV=	LDFLAGS=-static
 MAN1=		bash.1 bashbug.1
 
 pre-install:
@@ -33,16 +32,11 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.02/doc/article.ps  \
-		${WRKDIR}/bash-doc-2.02/doc/bashref.ps  \
+		${WRKDIR}/doc/article.ps  \
+		${WRKDIR}/doc/bashref.ps  \
 		${PREFIX}/share/doc/bash
 	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.02/doc/bash.html  \
-		${WRKDIR}/bash-doc-2.02/doc/bashref.html  \
-		${WRKDIR}/bash-doc-2.02/doc/bashref_toc.html  \
-		${PREFIX}/share/doc/bash
-	${INSTALL_MAN}  \
-		${WRKDIR}/bash-doc-2.02/doc/article.txt  \
+		${WRKDIR}/doc/article.txt  \
 		${PREFIX}/share/doc/bash
 	${GZIP_CMD} ${PREFIX}/share/doc/bash/*.ps
 .endif
