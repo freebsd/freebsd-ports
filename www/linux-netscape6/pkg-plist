@@ -10,7 +10,7 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/java/classes/joptio40.jar
 %%NSUBDIR%%/java/classes/jio40.jar
 %%NSUBDIR%%/java/classes/jsd10.jar
-%%NSUBDIR%%/java/classes/ldap30.jar
+%%NSUBDIR%%/java/classes/ldap40.jar
 %%NSUBDIR%%/java/classes/resource.jar
 %%NSUBDIR%%/java/classes/scd10.jar
 %%NSUBDIR%%/java/classes/awt.properties
@@ -178,7 +178,7 @@ bin/%%BROWSER%%-%%BROWSER_VER%%
 %%NSUBDIR%%/spell/netscape.dic
 %%NSUBDIR%%/spell/pen4s324.dat
 %%NSUBDIR%%/registry
-%%NSUBDIR%%/communicator-4.7.bin
+%%NSUBDIR%%/%%BROWSER%%-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/mailcap
 @dirrm %%NSUBDIR%%/java/classes/aix
 @dirrm %%NSUBDIR%%/java/classes/hpux
