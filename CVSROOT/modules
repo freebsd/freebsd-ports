@@ -10162,6 +10162,7 @@ zope-exuserfolder	ports/www/zope-exuserfolder
 zope-formulator	ports/www/zope-formulator
 zope-guf	ports/www/zope-guf
 zope-parsedxml	ports/www/zope-parsedxml
+zope-silvaviews	ports/www/zope-silvaviews
 zope-xmlwidgets	ports/www/zope-xmlwidgets
 zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
