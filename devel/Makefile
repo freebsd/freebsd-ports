@@ -35,6 +35,7 @@
     SUBDIR += cssc
     SUBDIR += ctags
     SUBDIR += cutils
+    SUBDIR += cvsmapfs
     SUBDIR += cvsweb
     SUBDIR += cweb
     SUBDIR += cxref
