@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.6/ \
 		ftp://mirrors.rcn.net/pub/news/tin/v1.6/ \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.6/ \
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
-LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
+LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.5:${PORTSDIR}/devel/gettext \
 		pcre.0:${PORTSDIR}/devel/pcre

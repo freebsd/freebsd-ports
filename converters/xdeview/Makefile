@@ -7,7 +7,7 @@
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters tcl84 tk84
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	uudeview-${PORTVERSION}
 MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	An X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
-LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
+LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib \
 		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
