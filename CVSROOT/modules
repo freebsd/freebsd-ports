@@ -9354,6 +9354,7 @@ zonecheck	ports/dns/zonecheck
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
+zope-cmf13	ports/www/zope-cmf13
 zope-cmf	ports/www/zope-cmf
 zope-cmfforum	ports/www/zope-cmfforum
 zope-guf	ports/www/zope-guf
