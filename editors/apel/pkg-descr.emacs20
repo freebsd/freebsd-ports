@@ -29,4 +29,6 @@ APEL is programed by MORIOKA Tomohiko <tomo@m17n.org>.
 	${LOCALBASE}/share/emacs/site-lisp/apel/	--- apel
 	${LOCALBASE}/share/emacs/20.5/site-lisp/emu/	--- emu
 
+WWW: http://cvs.m17n.org/elisp/APEL/index.en.html
+
 --- Porting by shige <shige@FreeBSD.ORG>.
