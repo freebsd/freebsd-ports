@@ -7,7 +7,6 @@
 
 PORTNAME=	qt-gui
 PORTVERSION=	${QT_LICQ_VER}
-PORTREVISION=	2
 CATEGORIES=	net
 PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -40,8 +39,11 @@ pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
+post-patch:
+	${RM} -f ${WRKDIR}/share/qt-gui/icons.thomas/icons.thomas.tar.bz2
+
 post-install:
-	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
+#	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
 .if exists(${X11BASE}/bin/XFree86)
 	@${CAT} ${PKGMESSAGE}
 .endif

@@ -30,21 +30,3 @@
      if (connect(m_nDescriptor, (struct sockaddr *)&m_sRemoteAddr, sizeofSockaddr) < 0)
      {
        // errno has been set
-@@ -1078,7 +1084,7 @@
- bool TCPSocket::SecureConnect()
- {
-   pthread_mutex_init(&mutex_ssl, NULL);
--  m_pSSL = SSL_new(gSSL_CTX);
-+  m_p_SSL = SSL_new(gSSL_CTX);
- #ifdef SSL_DEBUG
-   m_pSSL->debug = 1;
- #endif
-@@ -1111,7 +1117,7 @@
- {
-   pthread_mutex_init(&mutex_ssl, NULL);
- 
--  m_pSSL = SSL_new(gSSL_CTX);
-+  m_p_SSL = SSL_new(gSSL_CTX);
-   SSL_set_session(m_pSSL, NULL);
-   SSL_set_fd(m_pSSL, m_nDescriptor);
-   int i = SSL_accept(m_pSSL);
