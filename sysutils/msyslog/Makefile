@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	msyslog
-PORTVERSION=	1.05
+PORTVERSION=	1.07
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.core-sdi.com/soft/
+MASTER_SITES=	http://www.core-sdi.com/soft/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -32,8 +33,8 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
 MAN5=	syslog.conf.5
-MAN8=	syslogd.8 im_bsd.8 im_unix.8 om_classic.8 om_tcp.8 im_tcp.8 om_peo.8 \
-	peochk.8
+MAN8=	im_bsd.8 im_tcp.8 im_udp.8 im_unix.8 om_classic.8 om_tcp.8 om_peo.8 \
+	om_regex.8 peochk.8 syslogd.8
 .if defined(WITH_MYSQL)
 MAN8+=	om_mysql.8
 .endif
@@ -43,7 +44,8 @@ MAN8+=	om_pgsql.8
 MANCOMPRESSED=	yes
 INSTALLS_SHLIB=	yes
 
-DOCDIR=	${PREFIX}/share/doc/${PORTNAME}
+DOCS=	AUTHORS src/TODO README NEWS doc/HOW_TO_WRITE_A_MODULE \
+	doc/HOW-TO-UPGRADE
 FIXPREFIX=	README src/man/om_peo.8 src/man/syslog.conf.5 \
 		src/man/syslogd.8 src/TODO src/syslogd.h
 
@@ -56,36 +58,18 @@ pre-patch:
 .endfor
 
 post-install:
+	${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/share/examples/msyslog
+	${INSTALL_DATA} ${WRKSRC}/src/examples/* \
+		${PREFIX}/share/examples/msyslog
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0775 ${DOCDIR}/examples
-	${INSTALL_DATA} ${WRKSRC}/src/examples/* ${DOCDIR}/examples/
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/src/TODO ${DOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/HOW_TO_WRITE_A_MODULE  ${DOCDIR}/
+	${INSTALL} -d -o root -g wheel -m 0775 ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/msyslog.sh.sample ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/msyslog.sh.sample startup file."; \
 		${INSTALL_SCRIPT} ${FILESDIR}/msyslog.sh.sample ${PREFIX}/etc/rc.d/msyslog.sh.sample; \
 	fi
-	@${ECHO} "================================================================================"
-	@${ECHO}
-	@${ECHO} "To replace FreeBSD's standard syslogd, do this:"
-	@${ECHO}
-	@${ECHO} "a) create a configuration in ${PREFIX}/etc/syslog.conf."
-.if !defined(NOPORTDOCS)
-	@${ECHO} "   See ${DOCDIR}/examples for examples."
-.endif
-	@${ECHO}
-	@${ECHO} "b) Set up a startup script in ${PREFIX}/etc/rc.d. For your convinience, a"
-	@${ECHO} "   msyslog.sh.sample has been provided."
-	@${ECHO}
-	@${ECHO} "c) Stop the standard FreeBSD syslogd from starting automatically by putting this"
-	@${ECHO} "   in the end of /etc/rc.conf:"
-	@${ECHO}
-	@${ECHO} "syslogd_enable=\"NO\""
-	@${ECHO}
-	@${ECHO} "================================================================================"
 
 .include <bsd.port.mk>

@@ -1,18 +1,19 @@
-lib/libmsyslog.so.4
-sbin/syslogd
-sbin/peochk
 etc/rc.d/msyslog.sh.sample
-%%PORTDOCS%%share/doc/msyslog/examples/im_mymodule.c
-%%PORTDOCS%%share/doc/msyslog/examples/om_mymodule.c
-%%PORTDOCS%%share/doc/msyslog/examples/syslog.conf.classic
-%%PORTDOCS%%share/doc/msyslog/examples/syslog.conf.mysql
-%%PORTDOCS%%share/doc/msyslog/examples/syslog.conf.peo
-%%PORTDOCS%%share/doc/msyslog/examples/syslog.conf.pgsql
-%%PORTDOCS%%share/doc/msyslog/examples/syslog.conf.regex
+lib/libmsyslog.so.4
+sbin/peochk
+sbin/syslogd
 %%PORTDOCS%%share/doc/msyslog/AUTHORS
-%%PORTDOCS%%share/doc/msyslog/TODO
-%%PORTDOCS%%share/doc/msyslog/README
-%%PORTDOCS%%share/doc/msyslog/NEWS
+%%PORTDOCS%%share/doc/msyslog/HOW-TO-UPGRADE
 %%PORTDOCS%%share/doc/msyslog/HOW_TO_WRITE_A_MODULE
-%%PORTDOCS%%@dirrm share/doc/msyslog/examples
+%%PORTDOCS%%share/doc/msyslog/NEWS
+%%PORTDOCS%%share/doc/msyslog/README
+%%PORTDOCS%%share/doc/msyslog/TODO
+share/examples/msyslog/im_mymodule.c
+share/examples/msyslog/om_mymodule.c
+share/examples/msyslog/syslog.conf.classic
+share/examples/msyslog/syslog.conf.mysql
+share/examples/msyslog/syslog.conf.peo
+share/examples/msyslog/syslog.conf.pgsql
+share/examples/msyslog/syslog.conf.regex
+@dirrm share/examples/msyslog
 %%PORTDOCS%%@dirrm share/doc/msyslog
