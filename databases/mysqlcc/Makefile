@@ -21,7 +21,7 @@ USE_MYSQL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	3
-CONFIGURE_ARGS+=	--with-qt=${X11BASE}
+CONFIGURE_ARGS+=	--with-qt=${LOCALBASE}
 
 DOCS=	Changelog.txt README.txt TODO.txt
 SHARE_DATA=	error.wav warning.wav syntax.txt
