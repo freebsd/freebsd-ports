@@ -1,0 +1,21 @@
+$FreeBSD$
+
+--- configure.in.orig	Mon Jun 10 23:21:17 2002
++++ configure.in	Wed Jun 12 09:06:35 2002
+@@ -30,7 +30,7 @@
+ build_simple_bundle=no
+ unix_scoredir=yes
+ DATADIR='$(datadir)/games/kobo-deluxe'
+-SCOREDIR='$(prefix)/games/kobo-deluxe/scores'
++SCOREDIR='$(datadir)/games/kobo-deluxe/scores'
+ CONFIGDIR='HOME>>'
+ CONFIGFILE='.kobodlrc'
+ EXEFILE=kobodl
+@@ -165,7 +165,6 @@
+ AC_CHECK_LIB(SDL_image, IMG_Load,,
+ 	AC_MSG_ERROR([You need the SDL_image library to compile this software.
+ 	Get it at http://www.devolution.com/~slouken/SDL/]),
+-	-lSDL
+ )
+ LIBS="$LIBS -lSDL_image"
+ 
