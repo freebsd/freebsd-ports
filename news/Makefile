@@ -54,6 +54,7 @@
     SUBDIR += ubh
     SUBDIR += unpost
     SUBDIR += xmitbin
+    SUBDIR += xrn
     SUBDIR += xvnews
 
 .include <bsd.port.subdir.mk>
