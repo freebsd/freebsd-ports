@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20030616.p6
+PORTVERSION=	20030616.p7
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -73,11 +73,11 @@ SED_SCRIPT=	-e 's,%%AMAVISUSER%%,${AMAVISUSER},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 pre-build:
-	for file in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
-		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
+	for f in amavisd.sh amavis-milter.sh INSTALL DEINSTALL MESSAGE; do \
+		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl > ${WRKDIR}/$${f}; \
 	done
-	for file in amavisd.conf amavisd; do \
-		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${file} > ${WRKDIR}/$${file}; \
+	for f in amavisd.conf amavisd; do \
+		${SED} ${SED_SCRIPT} < ${WRKSRC}/$${f} > ${WRKDIR}/$${f}; \
 	done
 
 pre-install:
