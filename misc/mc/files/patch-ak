@@ -1,0 +1,14 @@
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-ak,v 1.1 2002-08-05 21:26:26 fjoe Exp $
+
+--- idl/Makefile.in.orig	Fri Aug 24 11:05:07 2001
++++ idl/Makefile.in	Tue Sep 11 18:32:49 2001
+@@ -157,7 +157,7 @@
+ 
+ IDLFILES = FileManager.idl
+ 
+-@GNOME_TRUE@idldir = $(prefix)/share/idl
++@GNOME_TRUE@idldir = $(datadir)/idl
+ 
+ @GNOME_TRUE@idl_DATA = $(IDLFILES)
+ 

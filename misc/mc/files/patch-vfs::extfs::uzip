@@ -1,0 +1,10 @@
+--- vfs/extfs/uzip.orig	Wed Mar  7 18:34:21 2001
++++ vfs/extfs/uzip	Fri Apr 20 12:42:02 2001
+@@ -17,5 +17,5 @@
+ # Location of the zip program
+-my $app_zip = '/usr/bin/zip';
++my $app_zip = '/usr/local/bin/zip';
+ # Location of the unzip program
+-my $app_unzip = '/usr/bin/unzip';
++my $app_unzip = '/usr/local/bin/unzip';
+ # Set this to 1 if zipinfo (unzip -Z) is to be used (recommended), otherwise 0.

@@ -1,7 +1,8 @@
 bin/mcmfmt
+bin/mc
+bin/mcedit
 bin/midc
 etc/mc.global
-sbin/mcserv
 share/locale/az/LC_MESSAGES/mc.mo
 share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
@@ -32,10 +33,11 @@ share/locale/uk/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
+share/mc/FAQ
+share/mc/bin/mcfn_install
 share/mc/cedit.menu
-share/mc/desktop-scripts/README.desktop
-share/mc/desktop-scripts/startup.links
 share/mc/edit.indent.rc
+share/mc/edit.spell.rc
 share/mc/extfs/README
 share/mc/extfs/a
 share/mc/extfs/apt
@@ -68,9 +70,13 @@ share/mc/mc.ext
 share/mc/mc.hint
 share/mc/mc.hint.cs
 share/mc/mc.hint.es
+share/mc/mc.hint.hu
 share/mc/mc.hint.it
+share/mc/mc.hint.nl
 share/mc/mc.hint.pl
 share/mc/mc.hint.ru
+share/mc/mc.hint.uk
+share/mc/mc.hint.zh
 share/mc/mc.hlp
 share/mc/mc.hlp.hu
 share/mc/mc.lib
@@ -88,17 +94,18 @@ share/mc/syntax/mail.syntax
 share/mc/syntax/makefile.syntax
 share/mc/syntax/ml.syntax
 share/mc/syntax/nroff.syntax
+share/mc/syntax/octave.syntax
 share/mc/syntax/pascal.syntax
 share/mc/syntax/perl.syntax
+share/mc/syntax/po.syntax
 share/mc/syntax/python.syntax
 share/mc/syntax/sh.syntax
+share/mc/syntax/slang.syntax
 share/mc/syntax/smalltalk.syntax
 share/mc/syntax/swig.syntax
 share/mc/syntax/texinfo.syntax
 share/mc/syntax/unknown.syntax
-@dirrm share/pixmaps/mc
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/mc/syntax
 @dirrm share/mc/extfs
-@dirrm share/mc/desktop-scripts
+@dirrm share/mc/bin
 @dirrm share/mc

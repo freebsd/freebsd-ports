@@ -1,0 +1,11 @@
+--- gnome/gnome-open-dialog.c.orig	Mon May 29 16:56:28 2000
++++ gnome/gnome-open-dialog.c	Wed May 31 12:30:36 2000
+@@ -359,7 +359,7 @@
+         gtk_clist_set_column_auto_resize (GTK_CLIST (retval), 0, TRUE);
+ 
+ 	/* set up the apps */
+-	prefix = gnome_unconditional_datadir_file ("gnome/apps");
++	prefix = gnome_unconditional_datadir_file ("apps");
+ 	node = read_directory (prefix);
+ 	gnome_open_dialog_generate_tree_helper (GTK_CTREE (retval), NULL, node);
+ 	gtk_ctree_expand_recursive (GTK_CTREE (retval), NULL);

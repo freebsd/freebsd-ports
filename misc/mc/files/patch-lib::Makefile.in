@@ -1,0 +1,56 @@
+
+$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-lib::Makefile.in,v 1.1 2002-08-05 21:26:26 fjoe Exp $
+
+--- lib/Makefile.in.orig	Fri Aug 24 11:05:07 2001
++++ lib/Makefile.in	Tue Sep 11 18:29:09 2001
+@@ -156,8 +156,6 @@
+ undelfs_o = @undelfs_o@
+ 
+ mclibdir = $(libdir)/mc
+-suppbindir = $(mclibdir)/bin
+-tidir = $(mclibdir)/term
+ confdir = $(sysconfdir)
+ 
+ @CHARSET_TRUE@LIBFILES_ADD = mc.charsets
+@@ -181,8 +179,6 @@
+ noinst_SCRIPTS = tdiff
+ 
+ conf_DATA = mc.global
+-suppbin_SCRIPTS = mc.csh mc.sh
+-ti_DATA = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
+ 
+ DESKTOP_FILES = startup.links README.desktop
+ @GNOME_TRUE@desktopdir = $(mclibdir)/desktop-scripts
+@@ -205,11 +201,10 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES = mc.ext mc.sh mc.csh
+-SCRIPTS = $(noinst_SCRIPTS) $(suppbin_SCRIPTS)
++SCRIPTS = $(noinst_SCRIPTS)
+ 
+ DIST_SOURCES =
+-DATA = $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA) \
+-	$(ti_DATA)
++DATA = $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA)
+ 
+ DIST_COMMON = Makefile.am Makefile.in mc.csh.in mc.ext.in mc.sh.in
+ all: all-am
+@@ -348,7 +343,7 @@
+ all-am: Makefile $(SCRIPTS) $(DATA)
+ 
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(suppbindir) $(DESTDIR)$(confdir) $(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir) $(DESTDIR)$(tidir)
++	$(mkinstalldirs) $(DESTDIR)$(confdir) $(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
+ 
+ install: install-am
+ install-exec: install-exec-am
+@@ -389,8 +384,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-confDATA install-desktopDATA install-mclibDATA \
+-	install-suppbinSCRIPTS install-tiDATA
++install-data-am: install-confDATA install-desktopDATA install-mclibDATA
+ 
+ install-exec-am:
+ 

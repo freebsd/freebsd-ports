@@ -6,47 +6,33 @@
 #
 
 PORTNAME=	mc
-PORTVERSION=	4.5.54
-PORTREVISION=	3
+PORTVERSION=	4.5.55
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
-.if defined(WITH_NCURSES_PORT)
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.elif defined(WITH_SLANG)
-LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-.endif
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
-.if defined(WITH_SLANG)
-CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit
-.else
-CONFIGURE_ARGS=	--with-ncurses --without-gnome --without-edit
-.endif
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--with-ncurses --without-gnome
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=		midc.1 mcedit.1
-MAN8=		mcserv.8
+MAN1=		mc.1 mcedit.1
 
-pre-patch:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(libdir\)/mc|\$\(datadir\)/mc|g'
+post-patch:
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/mc|\$\(datadir\)/mc|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
-.if defined(WITH_SLANG)
-PLIST=		${WRKDIR}/PLIST
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
-	@${ECHO_CMD} bin/mcedit >> ${PLIST}
-.endif
+post-install:
+	@${LN} -sf mc ${PREFIX}/bin/midc
 
 .include <bsd.port.mk>
