@@ -34,6 +34,7 @@
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
     SUBDIR += cvsupd-bin
+    SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
