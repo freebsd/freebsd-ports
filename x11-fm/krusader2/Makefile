@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	krusader
-PORTVERSION=	1.40
+PORTVERSION=	1.50
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=krusader
@@ -23,7 +23,6 @@ KDEDIR?=${LOCALBASE}/bin
 CONFIGURE_TARGET=
 CONFIGURE_ENV+=QTDIR=${QTDIR} KDEDIR=${KDEDIR}
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 
 MAN1=	krusader.1
@@ -36,6 +35,10 @@ pre-everything::
 	@${ECHO_MSG} "If these assumptions are wrong, stop the build NOW and set the variables correpondingly!"
 	@${ECHO_MSG}
 	@sleep 3
+
+pre-configure:
+	${RM} ${WRKSRC}/admin/cvs.sh
+	${TOUCH} ${WRKSRC}/admin/cvs.sh
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
