@@ -1,6 +1,6 @@
---- configure.orig	Mon May 20 17:48:43 2002
-+++ configure	Thu May 30 10:42:05 2002
-@@ -6966,6 +6966,7 @@
+--- configure.orig	Tue Aug 27 14:17:28 2002
++++ configure	Tue Aug 27 14:20:19 2002
+@@ -6994,6 +6994,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,29 +8,28 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10556,6 +10557,7 @@
+@@ -10765,6 +10766,7 @@
  *irix*) CDROM_HOST=irix; CDROM_LIBS="-lcdaudio -lmediad -lds";cd_device_path="/dev/cdrom";;
  *linux*) CDROM_HOST=linux;cd_device_path="/dev/cdrom";;
  *netbsd*) CDROM_HOST=netbsd;cd_device_path="/dev/rcd0";;
 +*freebsd*) CDROM_HOST=freebsd;cd_device_path="dev/acd0c";;
- *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";;
+ *solaris*) CDROM_HOST=solaris;cd_device_path="/vol/dev/aliases/cdrom0";cdplayer_type_sun=true;;
  esac
  case "$host" in
-@@ -10600,6 +10602,21 @@
+@@ -10817,6 +10819,20 @@
    HAVE_LIBAPM_TRUE='#'
    HAVE_LIBAPM_FALSE=
  fi
-+
 +	;;
 +  i386-*-freebsd*)
 +  	HAVE_LIBAPM=no
 +
 +if test "x$HAVE_LIBAPM" = "xyes"; then
-+    HAVE_LIBAPM_TRUE=
-+    HAVE_LIBAPM_FALSE='#'
++	HAVE_LIBAPM_TRUE=
++	HAVE_LIBAPM_FALSE='#'
 +else
-+    HAVE_LIBAPM_TRUE='#'
-+    HAVE_LIBAPM_FALSE=
++    	HAVE_LIBAPM_TRUE='#'
++	HAVE_LIBAPM_FALSE=
 +fi
 +	;;
 +  *-*-freebsd*)
