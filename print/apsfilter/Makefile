@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.apsfilter.org/download/
 
 MAINTAINER=	andreas@FreeBSD.org
 
-PORTCOMMENT=	Magic print filter with file type recognition, print preview, duplex printing
-
 DIST_SUBDIR=	apsfilter
 
 USE_SUBMAKE=	yes
