@@ -1,0 +1,5 @@
+bin/xslint
+%%PORTDOCS%%share/doc/xslint/README
+%%PORTDOCS%%share/doc/xslint/xslint.html
+%%PORTDOCS%%share/doc/xslint/xslint.xml
+%%PORTDOCS%%@dirrm share/doc/xslint

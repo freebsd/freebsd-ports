@@ -206,6 +206,7 @@
     SUBDIR += xmlppm
     SUBDIR += xp
     SUBDIR += xsl-docbook-modular
+    SUBDIR += xslint
     SUBDIR += xt
     SUBDIR += y2l
     SUBDIR += yodl
