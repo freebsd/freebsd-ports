@@ -7,7 +7,7 @@
 
 PORTNAME=	usermin
 PORTVERSION=	1.080
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +23,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes
-SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
+USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 
 USERMIN_MODULES=quota-1.080-1.wbm.gz
 
@@ -36,27 +37,33 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${usermin_module} -C ${WRKSRC}; \
 		done; \
 	fi
-	@${FIND} ${WRKSRC} -name "*.orig" -or -name "*.bak" | ${XARGS} ${RM}
+
+post-patch:
+	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
+	@${FIND} ${WRKSRC} -name "*.cgi" -print \
+		| ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
+	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
+# we may have 2 levels of empty directories which cause the plist generation
+# system to fail
+	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
+	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/usermin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/usermin
-# we may have 2 levels of empty directories which cause the plist generation
-# system to fail
-	@cd ${PREFIX}/lib/usermin && ${FIND} . -type d -empty -print \
-		| ${XARGS} ${RMDIR}
-	@cd ${PREFIX}/lib/usermin && ${FIND} . -type d -empty -print \
-		| ${XARGS} ${RMDIR}
-	@${CP} ${WRKDIR}/usermin.sh ${PREFIX}/etc/rc.d/usermin.sh-dist
-	@${CHMOD} 554 ${PREFIX}/etc/rc.d/usermin.sh-dist
+	@${SED} -e "s=%%RC_SUBR%%=${RC_SUBR}=" \
+		-e "s=%%PREFIX%%=${PREFIX}=" \
+		-e "s=%%PERL5%%=${PERL}=" \
+		< ${FILESDIR}/usermin.sh.sample > ${PREFIX}/etc/rc.d/usermin.sh
+	@${CHMOD} 555 ${PREFIX}/etc/rc.d/usermin.sh
 
 post-install:
-	@cd ${PREFIX} ; ${FIND} lib/usermin -type f -o -type l | ${SORT} \
-		> ${WRKDIR}/PLIST.lib-usermin
-	@cd ${PREFIX} ; ${FIND} lib/usermin -type d | ${SORT} -r \
-		| ${SED} -e 's/^/@dirrm /g' \
-		>> ${WRKDIR}/PLIST.lib-usermin
-
+	@cd ${WRKSRC} ; ${FIND} * -type f -o -type l | ${SORT} | ${AWK} \
+		'{ print "lib/usermin/" $$1 }' > ${WRKDIR}/PLIST.lib-usermin
+	@cd ${WRKSRC} ; ${FIND} * -type d | ${SORT} -r | ${AWK} \
+		'{ print "lib/usermin/" $$1 }' | ${SED} -e 's/^/@dirrm /g' \
+		>> ${WRKDIR}/PLIST.lib-webmin
 	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "/Insert PLIST.lib-usermin"	>> ${WRKDIR}/ex.script
 	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
@@ -64,12 +71,6 @@ post-install:
 	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-usermin
 	@cd ${WRKDIR} ; ex < ex.script
-# stop usermin if configured and enabled at startup
-	@[ -n "${BATCH}" ] || ([ ! -d ${PREFIX}/etc/usermin ] || [ ! -x ${PREFIX}/etc/rc.d/usermin.sh ] || ${PREFIX}/etc/rc.d/usermin.sh stop > /dev/null)
-# upgrade configuration if etc/usermin exists
-	@[ ! -d ${PREFIX}/etc/usermin ] || ${ECHO_CMD} | nostart=Y ${PREFIX}/lib/usermin/setup.sh
-# run interactive setup if not in BATCH mode and no configuration exists
-	@[ -n "${BATCH}" ] || ([ -d ${PREFIX}/etc/usermin ] || nostart=Y ${PREFIX}/lib/usermin/setup.sh)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

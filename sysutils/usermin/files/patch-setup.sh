@@ -1,20 +1,20 @@
 
 $FreeBSD$
 
---- setup.sh.orig	Sat Jan 31 10:52:05 2004
-+++ setup.sh	Sat Jan 31 10:55:35 2004
+--- setup.sh.orig	Fri Jun  4 01:18:07 2004
++++ setup.sh	Sat Jun 19 21:59:35 2004
 @@ -84,12 +84,12 @@
  echo "Unless you want to run multiple versions of Usermin at the same time"
  echo "you can just accept the defaults."
  echo ""
 -printf "Config file directory [/etc/usermin]: "
-+printf "Config file directory [!!PREFIX!!/etc/usermin]: "
++printf "Config file directory [%%PREFIX%%/etc/usermin]: "
  if [ "$config_dir" = "" ]; then
  	read config_dir
  fi
  if [ "$config_dir" = "" ]; then
 -	config_dir=/etc/usermin
-+	config_dir=!!PREFIX!!/etc/usermin
++	config_dir=%%PREFIX%%/etc/usermin
  fi
  abspath=`echo $config_dir | grep "^/"`
  if [ "$abspath" = "" ]; then
@@ -38,9 +38,17 @@ $FreeBSD$
  	echo "Perl 5 interpreter on your system."
  	echo ""
 -	if [ -x /usr/bin/perl ]; then
-+	if [ -x !!PERL!! ]; then
-+		perldef=!!PERL!!
++	if [ -x %%PERL%% ]; then
++		perldef=%%PERL%%
 +	elif [ -x /usr/bin/perl ]; then
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
+@@ -465,7 +467,6 @@
+ echo "Creating start and stop scripts.."
+ rm -f $config_dir/stop $config_dir/start
+ echo "#!/bin/sh" >>$config_dir/start
+-echo "echo Starting Usermin server in $wadir" >>$config_dir/start
+ echo "trap '' 1" >>$config_dir/start
+ echo "LANG=" >>$config_dir/start
+ echo "export LANG" >>$config_dir/start
