@@ -4,7 +4,6 @@ include/libdv/dv.h
 include/libdv/dv1394.h
 include/libdv/dv_types.h
 lib/libdv.a
-lib/libdv.la
 lib/libdv.so
 lib/libdv.so.1
 libdata/pkgconfig/libdv.pc

@@ -7,6 +7,7 @@
 
 PORTNAME=	libdv
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,41 +17,46 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
-USE_GNOMELIBS=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
-USE_XLIB=	yes
-XFREE86_VERSION=	4
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	encodedv.1 playdv.1
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
 DOC_FILES=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
 		README.dvconnect README.encoder TODO
 
+.include <bsd.port.pre.mk>
+
 .ifndef(WITHOUT_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 CONFIGURE_ARGS+= --enable-sdl
 CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 .endif
 
-CONFIGURE_ARGS+=	--with-x
-
 pre-everything::
+.if ${XFREE86_VERSION} < 4
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===>           ATTENTION          <==='
 	@${ECHO_MSG} '===> YOU NEED XFREE86 Version 4.0 <==='
 	@${ECHO_MSG} '===> or above to run this         <==='
 	@${ECHO_MSG} '===> SINCE IT REQUIRES XV         <==='
 	@${ECHO_MSG} '===>'
-.ifndef(WITHOUT_SDL)
-	@${ECHO_MSG} '===> Define WITHOUT_SDL to disable SDL support'
+	@${FALSE}
 .endif
+.ifndef(WITHOUT_SDL)
 	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITHOUT_SDL to disable SDL support'
+	@${ECHO_MSG} '===>'
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -77,4 +83,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
