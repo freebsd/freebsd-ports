@@ -1,5 +1,5 @@
 bin/gtkam
-%%GIMP%%libexec/gimp/1.2/plug-ins/gtkam-gimp
+%%GIMP%%libexec/gimp/1.3/plug-ins/gtkam-gimp
 %%PORTDOCS%%share/doc/gtkam/AUTHORS
 %%PORTDOCS%%share/doc/gtkam/MANUAL
 share/gtkam/images/gtkam-audio.png
