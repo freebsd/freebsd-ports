@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	2.95.2
+PORTVERSION=	2.95.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 PKGNAMEPREFIX=	m6811-
 
 PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20000111.diffs.gz
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20010922.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -28,5 +28,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
 			--program-prefix=m6811-elf-
 
 MAN1=		m6811-elf-g++.1 m6811-elf-g77.1 m6811-elf-gcc.1 cccp.1
+
+post-patch:
+	@${PERL5} -pi -e "s/TARGET_CONFIGDIRS = libiberty/TARGET_CONFIGDIRS =/" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

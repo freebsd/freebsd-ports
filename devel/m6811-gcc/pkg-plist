@@ -121,15 +121,7 @@ lib/gcc-lib/m6811-elf/%%GCC_VER%%/cc1obj
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/collect2
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/specs
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/SYSCALLS.c.X
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/cpp
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort/fshort-double/libgcc.a
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort/fshort-double/crt1.o
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort/libgcc.a
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort/crt1.o
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/libgcc.a
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/crt1.o
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/fshort-double/libgcc.a
-lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/fshort-double/crt1.o
+lib/gcc-lib/m6811-elf/%%GCC_VER%%/cpp0
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/libgcc.a
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/crt1.o
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc12/mshort/fshort-double/libgcc.a
@@ -148,10 +140,6 @@ lib/gcc-lib/m6811-elf/%%GCC_VER%%/fshort-double/libgcc.a
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/fshort-double/crt1.o
 m6811-elf/bin/gcc
 m6811-elf/include/assert.h
-@dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort/fshort-double
-@dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/fshort-double
-@dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11/mshort
-@dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc11
 @dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc12/mshort/fshort-double
 @dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc12/fshort-double
 @dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc12/mshort
