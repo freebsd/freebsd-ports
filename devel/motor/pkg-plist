@@ -1,4 +1,5 @@
 bin/motor
+bin/motorsync
 share/locale/de/LC_MESSAGES/motor.mo
 share/locale/pl/LC_MESSAGES/motor.mo
 share/locale/ru/LC_MESSAGES/motor.mo
@@ -37,7 +38,16 @@ share/motor/templates/terminal program/java/Settings
 share/motor/templates/terminal program/java/[value name].java.tmpl
 share/motor/templates/terminal program/java/[value name].spec.tmpl
 share/motor/templates/terminal program/java/configure.in.tmpl
+share/motor/templates/terminal program/perl/Debug
+share/motor/templates/terminal program/perl/Folders
+share/motor/templates/terminal program/perl/Makefile.func
+share/motor/templates/terminal program/perl/Parserules
+share/motor/templates/terminal program/perl/Settings
+share/motor/templates/terminal program/perl/[value name].pl.tmpl
+share/motor/templates/terminal program/perl/[value name].spec.tmpl
+share/motor/templates/terminal program/perl/configure.in.tmpl
 share/motor/themes
+@dirrm share/motor/templates/terminal program/perl
 @dirrm share/motor/templates/terminal program/java
 @dirrm share/motor/templates/terminal program/C++
 @dirrm share/motor/templates/terminal program/C
