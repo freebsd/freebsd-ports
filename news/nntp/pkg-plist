@@ -5,3 +5,14 @@ sbin/nntpd
 @comment     just in case anyone wants it
 %%NEWSBIN%%/shlock
 %%NEWSCTL%%/overview.fmt
+%%PORTDOCS%%share/doc/nntp/AUTHORIZE
+%%PORTDOCS%%share/doc/nntp/CHANGES
+%%PORTDOCS%%share/doc/nntp/README
+%%PORTDOCS%%share/doc/nntp/README-conf.h
+%%PORTDOCS%%share/doc/nntp/SYSLOG
+%%PORTDOCS%%share/doc/nntp/rfc977
+%%PORTDOCS%%share/doc/nntp/server-README
+%%PORTDOCS%%share/doc/nntp/support-README
+%%PORTDOCS%%share/doc/nntp/xfer-README
+%%PORTDOCS%%share/doc/nntp/xmit-README
+%%PORTDOCS%%@dirrm share/doc/nntp
