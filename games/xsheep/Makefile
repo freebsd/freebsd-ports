@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.csn.ul.ie/~caolan/publink/xsheep/
 
 MAINTAINER=	billf@FreeBSD.org
 
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
 USE_X_PREFIX=	YES
 WRKSRC=		${WRKDIR}/xsheep
 
