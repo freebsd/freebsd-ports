@@ -108,6 +108,7 @@
     SUBDIR += lopster
     SUBDIR += mad
     SUBDIR += maplay
+    SUBDIR += midimountain
     SUBDIR += mikmod
     SUBDIR += mixer.app
     SUBDIR += mp3_check
