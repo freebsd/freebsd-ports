@@ -40,6 +40,8 @@ LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 DIRS_ORDER=	mysqlxlibrary mysqladministratorlibrary \
 		mysqlcommonguiparts mysqladministrator
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#" \
 			${WRKSRC}/mysqladministrator/source/linux/Makefile.am
@@ -57,6 +59,9 @@ do-build:
 		${ECHO_MSG} "--->"; \
 		cd ${WRKSRC}/$${d}; \
 		${AUTOMAKE} --foreign; ${AUTOCONF}; \
+		${CP} -f ${TEMPLATES}/config.sub ./config.sub; \
+		${CP} -f ${TEMPLATES}/config.guess ./config.guess; \
+		${CHMOD} a+rx ./config.sub; \
 		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 		${GMAKE}; \
 	done
@@ -71,4 +76,4 @@ do-install:
 		${GMAKE} install; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
