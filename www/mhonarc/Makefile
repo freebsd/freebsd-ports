@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.3
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		http://www.perl.com/CPAN-local/authors/id/EHOOD/
 DISTNAME=	MHonArc${PORTVERSION}
 
-MAINTAINER=	max@freebsd.org
+MAINTAINER=	max@FreeBSD.org
 
 USE_BZIP2=	Yes
 USE_PERL5=	Yes
