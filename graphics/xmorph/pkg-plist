@@ -1,4 +1,36 @@
+@comment $FreeBSD$
+%%GTK2%%bin/gtkmorph
+bin/morph
 bin/xmorph
+include/xmorph/RgbaImage.h
+include/xmorph/mesh.h
+include/xmorph/my_malloc.h
+include/xmorph/relax.h
+include/xmorph/spl-array.h
+include/xmorph/spline.h
+include/xmorph/tga.h
+include/xmorph/warp.h
+info/xmorph.info
 lib/libmorph.a
 lib/libmorph.so
 lib/libmorph.so.1
+share/locale/it/LC_MESSAGES/xmorph.mo
+share/xmorph/example/README
+share/xmorph/example/gtkmorph.session
+share/xmorph/example/image1.png
+share/xmorph/example/image1.png.mesh
+share/xmorph/example/image2.png
+share/xmorph/example/image2.png.mesh
+%%GTK2%%share/xmorph/mpeg.param
+share/xmorph/pixmaps/cursor_left.xpm
+share/xmorph/pixmaps/eraser.xpm
+share/xmorph/pixmaps/example.xpm
+share/xmorph/pixmaps/hand01.xpm
+share/xmorph/pixmaps/howmany.xpm
+share/xmorph/pixmaps/pencil.xpm
+share/xmorph/pixmaps/pencil_y.xpm
+share/xmorph/pixmaps/transform.xpm
+@dirrm share/xmorph/pixmaps
+@dirrm share/xmorph/example
+@dirrm share/xmorph
+@dirrm include/xmorph
