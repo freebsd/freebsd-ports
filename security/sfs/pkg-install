@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -n "${PACKAGE_BUILDING}" ]; then
+	exit 0
+fi
+
 if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
@@ -8,23 +12,36 @@ KEYFILE="$PKG_PREFIX/etc/sfs/sfs_host_key"
 
 USER=sfs
 GROUP=sfs
+UID=71
+GID=71
+PW=/usr/sbin/pw
 
 SFSDIR=/var/spool/sfs
 
 echo -n "Checking for group '$GROUP'... "
 
-if ! pw groupshow $GROUP >/dev/null 2>&1; then
-	echo "doesn't exist, adding."
-	pw groupadd $GROUP -g 71
+if ! ${PW} groupshow $GROUP >/dev/null 2>&1; then
+	echo -n "doesn't exist, adding... "
+	if ${PW} groupadd $GROUP -g ${GID}; then
+		echo "success."
+	else
+		echo "FAILED!"
+		exit 1
+	fi
 else
 	echo "exists."
 fi
 
 echo -n "Checking for user '$USER'... "
 
-if ! pw usershow $USER >/dev/null 2>&1; then
-	echo "doesn't exist, adding."
-	pw useradd $USER -u 71 -c 'Self-Certifying File System' -d /nonexistent -g $GROUP -s /sbin/nologin -h -
+if ! ${PW} usershow $USER >/dev/null 2>&1; then
+	echo -n "doesn't exist, adding... "
+	if ${PW} useradd $USER -u ${UID} -c 'Self-Certifying File System' -d /nonexistent -g $GROUP -s /sbin/nologin -h -; then
+		echo "success."
+	else
+		echo "FAILED!"
+		exit 1
+	fi
 else
 	echo "exists."
 fi
@@ -34,12 +51,24 @@ echo -n "Checking for SFS directory ($SFSDIR)... "
 if [ -d "$SFSDIR" ]; then
 	echo "already exists."
 else
-	echo "creating."
-	mkdir $SFSDIR
+	echo -n "creating... "
+	if mkdir $SFSDIR; then
+		echo "success."
+	else
+		echo "FAILED!"
+		exit 1
+	fi
 fi
 
-chmod 750 $SFSDIR
-chown $USER:$GROUP $SFSDIR
+if ! chmod 750 $SFSDIR; then
+	echo "chmod 750 $SFSDIR FAILED!"
+	exit 1
+fi
+
+if ! chown $USER:$GROUP $SFSDIR; then
+	echo "chown $USER:$GROUP $SFSDIR FAILED!"
+	exit 1
+fi
 
 echo -n "Checking for SFS host key ($KEYFILE)... "
 
@@ -57,3 +86,7 @@ else
 	kill -TERM `cat /var/run/sfscd.pid`
 	echo "done."
 fi
+
+cat $PKG_PREFIX/share/doc/sfs/WELCOME
+
+exit 0
