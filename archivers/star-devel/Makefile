@@ -3,12 +3,15 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/03 10:16:32 andreas Exp $
+# $Id: Makefile,v 1.2 1997/05/07 02:03:58 asami Exp $
 #
 
 DISTNAME=	star-1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/star/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	star-1.0.patch-1 star-1.0.patch-2
 
 MAINTAINER=	andreas@FreeBSD.org
 
