@@ -1,18 +1,8 @@
-This collection of modules provides perl5 access methods related to mail. 
-It includes the following modules:
+MailTools is a collection of Perl modules for dealing with Internet
+e-mail messages.
 
-Mail/Address.pm
-Mail/Alias.pm
-Mail/Cap.pm
-Mail/Field.pm
-Mail/Field/Date.pm
-Mail/Folder.pm
-Mail/Folder/Emaul.pm
-Mail/Folder/Mbox.pm
-Mail/Header.pm
-Mail/Header.pm.html
-Mail/Internet.pm
-Mail/MIME.pm
-Mail/Mailer.pm
-Mail/Send.pm
-Mail/Util.pm
+The modules included can perform a wide range of tasks, including
+parsing e-mail addresses, parsing mailcap files, manipulating
+message header fields and bodies, sending messages via SMTP or the
+Unix mail and sendmail commands, reading mbox mail boxes, and
+message filtering through Perl subroutines.
