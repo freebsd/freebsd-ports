@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	1.0.b3
-PORTREVISION=	1
+PORTVERSION=	1.0.b4
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
-DISTNAME=	nagios-1.0b3
+DISTNAME=	nagios-1.0b4
 
 MAINTAINER=	blaz@si.FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-RUN_DEPENDS=	${LOCALBASE}/libexec/netsaint/check_netsaint:${PORTSDIR}/net/netsaint-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-command-user=nagios \
 		--with-template-extinfo \
 		--with-init-dir=${PREFIX}/etc/rc.d \
 		--sbindir=${PREFIX}/share/nagios/cgi-bin \
-		--libexecdir=${PREFIX}/libexec/netsaint \
+		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${PREFIX}/var/nagios \

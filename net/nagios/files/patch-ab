@@ -1,10 +1,10 @@
---- base/Makefile.in.orig	Sat Apr 20 22:34:02 2002
-+++ base/Makefile.in	Sun May 19 08:35:09 2002
+--- base/Makefile.in.orig	Sat Jun 29 21:15:49 2002
++++ base/Makefile.in	Sun Jul 14 09:15:27 2002
 @@ -102,7 +102,6 @@
+ devclean: clean
  
  install:
- 	strip nagios 
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
  	$(INSTALL) -m 774 $(INSTALL_OPTS) nagios $(DESTDIR)$(BINDIR)
- 
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/nagios
  
