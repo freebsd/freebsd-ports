@@ -1,0 +1,8 @@
+KTranslator is a very very very very very very very powerful utlity for
+KDE translators.
+
+You can read a .pot file and, using old translated files, you can easly
+translat it.
+
+You should set KDEDIR, for example
+% setenv KDEDIR /usr/local
