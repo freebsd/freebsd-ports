@@ -1,0 +1,32 @@
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DA.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DA.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DABase.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/DABase.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/README.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/VERSION.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/browse.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/connectionAdd.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/connectionEdit.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/db.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/db.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DB.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help/DB.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/bin.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/date.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/datetime.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/field.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/float.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/int.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/stable.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/table.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/text.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/time.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/view.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons/what.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/table_info.dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/icons
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZMySQLDA

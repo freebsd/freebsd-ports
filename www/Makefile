@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
     SUBDIR += zope-guf
+    SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
 
