@@ -1,15 +1,16 @@
 # New ports collection makefile for:	baekmuk fonts(x11)
-# Version required:     0.9
+# Version required:     1.1
 # Date created:		23 Jul 1999
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       baekmuk-0.9.1
-PKGNAME=	ko-baekmukfonts-bdf-0.9.1
+DISTNAME=       baekmuk-1.1
+PKGNAME=	ko-baekmukfonts-bdf-1.1
 CATEGORIES=	korean x11-fonts
-MASTER_SITES=	http://www.FreeBSD.org/~sada/distfiles/
+MASTER_SITES=	ftp://ftp.mizi.co.kr/pub/baekmuk/ \
+		http://www.FreeBSD.org/~sada/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org
 
