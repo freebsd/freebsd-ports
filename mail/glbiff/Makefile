@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/07/20 10:13:51 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/15 06:37:57 hoek Exp $
 #
 
 DISTNAME=	glbiff-0.2
@@ -13,10 +13,10 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
-		MesaGLU\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
-		Mesatk\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
-		glut\\.3\\.:${PORTSDIR}/graphics/Mesa2
+LIB_DEPENDS=	MesaGL.13:${PORTSDIR}/graphics/Mesa2 \
+		MesaGLU.13:${PORTSDIR}/graphics/Mesa2 \
+		Mesatk.13:${PORTSDIR}/graphics/Mesa2 \
+		glut.3:${PORTSDIR}/graphics/Mesa2
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/glbiff

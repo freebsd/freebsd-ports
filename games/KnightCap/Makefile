@@ -3,7 +3,7 @@
 # Date created:				10 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/07/27 23:24:29 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:30:51 asami Exp $
 #
 
 DISTNAME=	KnightCap-3.5
@@ -13,9 +13,9 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
-		MesaGLU\\.13\\.:${PORTSDIR}/graphics/Mesa2 \
-		glut\\.3\\.:${PORTSDIR}/graphics/Mesa2
+LIB_DEPENDS=	MesaGL.13:${PORTSDIR}/graphics/Mesa2 \
+		MesaGLU.13:${PORTSDIR}/graphics/Mesa2 \
+		glut.3:${PORTSDIR}/graphics/Mesa2
 
 FETCH_BEFORE_ARGS=	-P
 ALL_TARGET=	KnightCap
