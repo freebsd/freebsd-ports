@@ -6003,6 +6003,7 @@ postgresql-plruby	ports/databases/postgresql-plruby
 postgresql-pltcl	ports/databases/postgresql-pltcl
 postgresql-tcltk	ports/databases/postgresql-tcltk
 postgresql7	ports/databases/postgresql7
+postgresql_autodoc	ports/databases/postgresql_autodoc
 postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
 povchem		ports/biology/povchem
