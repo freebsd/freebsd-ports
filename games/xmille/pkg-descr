@@ -1,0 +1,6 @@
+xmille - X window mille bourne game
+
+Xmille  brings  up a window for a mille bourne game.  When selecting one
+of your cards, the left button plays the card, the right button
+discards the card and the middle button chooses whichever is appropriate,
+first trying to play the card, and then discarding it
