@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=	--with-msdfs
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
