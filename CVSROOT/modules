@@ -5781,6 +5781,7 @@ py-smb		ports/net/py-smb
 py-snmp		ports/net/py-snmp
 py-soap		ports/net/py-soap
 py-spark	ports/devel/py-spark
+py-spreadmodule	ports/net/py-spreadmodule
 py-sqlrelay	ports/databases/py-sqlrelay
 py-tarfile	ports/archivers/py-tarfile
 py-tkinter	ports/x11-toolkits/py-tkinter
