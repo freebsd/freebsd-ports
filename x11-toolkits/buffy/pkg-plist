@@ -1,0 +1,26 @@
+lib/gtk/themes/engines/libbuffy.so
+share/themes/buffyEro/ICON.png
+share/themes/buffyEro/README.html
+share/themes/buffyEro/gtk/gtkrc
+share/themes/buffyIno/ICON.png
+share/themes/buffyIno/README.html
+share/themes/buffyIno/gtk/gtkrc
+share/themes/buffyMagic/ICON.png
+share/themes/buffyMagic/README.html
+share/themes/buffyMagic/gtk/gtkrc
+share/themes/buffyNess/ICON.png
+share/themes/buffyNess/README.html
+share/themes/buffyNess/gtk/gtkrc
+share/themes/buffyRio/ICON.png
+share/themes/buffyRio/README.html
+share/themes/buffyRio/gtk/gtkrc
+@dirrm share/themes/buffyEro/gtk
+@dirrm share/themes/buffyEro
+@dirrm share/themes/buffyIno/gtk
+@dirrm share/themes/buffyIno
+@dirrm share/themes/buffyMagic/gtk
+@dirrm share/themes/buffyMagic
+@dirrm share/themes/buffyNess/gtk
+@dirrm share/themes/buffyNess
+@dirrm share/themes/buffyRio/gtk
+@dirrm share/themes/buffyRio

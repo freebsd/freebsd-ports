@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 13 18:14:38 2000
++++ Makefile.in	Tue Jun 13 18:14:52 2000
+@@ -99,7 +99,7 @@
+ 	  && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ $(ACLOCAL_M4):  configure.in 
+-	cd $(srcdir) && $(ACLOCAL)
++#	cd $(srcdir) && $(ACLOCAL)
+ 
+ config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
