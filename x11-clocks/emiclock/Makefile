@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 MAINTAINER=	koba@noge.com
 
 .if ${MACHINE_ARCH} != "i386"
-PLIST=		${PKGDIR}/PLIST.nosound
+PLIST=		${PKGDIR}/pkg-plist.nosound
 .endif
 
 USE_IMAKE=	yes
