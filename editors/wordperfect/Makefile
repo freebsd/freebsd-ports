@@ -5,7 +5,7 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/20 05:23:35 msmith Exp $
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
@@ -24,20 +24,11 @@ IS_INTERACTIVE=	"requires user interaction for installation"
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	   ${ECHO} "" ; \
-	   ${ECHO} "  The source to this port may not be automatically fetched" ; \
-	   ${ECHO} "  due to licensing restrictions. You MUST fetch the source" ; \
-	   ${ECHO} "  manually after reading and agreeing to the license at:" ; \
-	   ${ECHO} "" ; \
-	   ${ECHO} "      http://linux.corel.com/linux8/download.htm" ; \
-	   ${ECHO} "" ; \
-	   ${ECHO} "  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR}" ; \
-	   ${ECHO} "  and then restart this build." ; \
-	   ${ECHO} "" ; \
-	   exit 1 ; \
-	fi
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE='The source to this port may not be automatically fetched due to licensing restrictions.  You MUST fetch the source manually after reading and agreeing to the license at: http://linux.corel.com/linux8/download.htm  Once ${DISTFILES} has been downloaded, move it to ${DISTDIR} and then restart this build.'
+.endif
 
 post-extract:
 	@(cd ${WRKDIR} ; for file in b* g* ; do ${EXTRACT_CMD} -xf $$file ; done)
@@ -75,4 +66,4 @@ do-install:
 	   ${MV} ${PREFIX}/bin/xwp ${PREFIX}/bin/xwp.old ; fi
 	@${INSTALL_SCRIPT} ${WRKDIR}/xwp ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
