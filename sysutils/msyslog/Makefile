@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msyslog
-PORTVERSION=	1.04d
+PORTVERSION=	1.05
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.core-sdi.com/soft/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -47,7 +47,7 @@ DOCDIR=	${PREFIX}/share/doc/${PORTNAME}
 FIXPREFIX=	README src/man/om_peo.8 src/man/syslog.conf.5 \
 		src/man/syslogd.8 src/TODO src/syslogd.h
 
-WRKSRC=		${WRKDIR}/releases/${DISTNAME}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 pre-patch:
 .for f in ${FIXPREFIX}
