@@ -42,7 +42,6 @@ DIST_SUBDIR=	xdvik
 USE_XLIB=	YES
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--datadir=${PREFIX}/${TEXMF:S,texmf$,,} \
 		--enable-a4 --enable-shrink=${SHRINK} \
 		--with-dvifilter=${DVIPS} \
@@ -60,7 +59,8 @@ CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
-		XDEFS='-DMFMODE=\"${MF_MODE}\"'
+		XDEFS='-DMFMODE=\"${MF_MODE}\"' \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 SCRIPTS_ENV=	MV=${MV} SED=${SED}
 PATCH_STRIP=	-p1
 MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
