@@ -1,0 +1,11 @@
+--- config.c.bak	Wed Sep  2 21:55:04 1998
++++ config.c	Sun Mar 11 09:49:40 2001
+@@ -447,7 +447,7 @@
+ 
+ char *bsd_libs = "-lcurses -ltermcap";
+ 
+-char *freebsd_libs = "-lncurses -lmytinfo -lcompat";
++char *freebsd_libs = "-lcurses -lcompat";
+ 
+ char *sco_system[] =
+ {

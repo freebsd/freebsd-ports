@@ -1,0 +1,11 @@
+--- ecumachdep.h.bak	Thu Aug 27 23:50:46 1998
++++ ecumachdep.h	Sun Mar 11 09:47:48 2001
+@@ -28,7 +28,7 @@
+ #endif
+ 
+ #ifdef __FreeBSD__
+-#include <machine/console.h>
++#include <sys/consio.h>
+ #endif
+ 
+ #ifdef LINUX

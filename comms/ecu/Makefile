@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ecu
-PORTVERSION=	4.08
+PORTVERSION=    4.30
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/comm/
-#MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
+MASTER_SITES=  ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 
 MAINTAINER=	ache@FreeBSD.org
 
