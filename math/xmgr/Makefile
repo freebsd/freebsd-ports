@@ -1,32 +1,21 @@
-# New ports collection makefile for:	xmgr-4.1.1
-# Version required:	4.1.1
-# Date created:		Sun 18 Dec 1997
-# Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
+# New ports collection makefile for:	xmgr
+# Version required:	3.01pl8
+# Date created:		So   2 Mär 1997 12:11:43 MET
+# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/09 08:51:41 tg Exp $
 #
 
-DISTNAME=	xmgr-4.1.1
-CATEGORIES=	math print
-MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/xmgr4/src/ \
-		ftp://fire.mpi-stuttgart.mpg.de/pub/mirror/xmgr4/src/ \
-		ftp://wauug.erols.com/pub/X-Windows/xmgr4/src/
+DISTNAME=	xmgr-3.01
+CATEGORIES=	print
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	andreas@FreeBSD.ORG
 
-BUILD_DEPENDS=	${X11BASE}/lib/libhlpclient.a:${PORTSDIR}/x11/libhelp \
-		${LOCALBASE}/lib/libmfhdf.a:${PORTSDIR}/graphics/hdf
-LIB_DEPENDS=	Xbae\\.6\\.:${PORTSDIR}/x11/xbae
-
-USE_X11=	YES
-REQUIRE_MOTIF=	YES
-HAS_CONFIGURE=	YES
-CONFIGURE_ARGS=	-prefix=${X11BASE} \
-	--enable-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
-	--enable-extra-ldpath=${LOCALBASE}/lib --enable-libhelp \
-	--enable-mfhdf --enable-acegr-home=${X11BASE}/lib/X11/xmgr
-
-ALL_TARGET=
-INSTALL_TARGET=	install links
+WRKSRC=			${WRKDIR}/xmgr-3.01pl8/src
+USE_IMAKE=		yes
+REQUIRES_MOTIF=		yes
+NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
