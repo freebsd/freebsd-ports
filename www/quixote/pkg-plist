@@ -5,6 +5,7 @@
 %%PYTHON_SITELIBDIR%%/quixote/_py_htmltext.py
 %%PYTHON_SITELIBDIR%%/quixote/_py_htmltext.pyc
 %%PYTHON_SITELIBDIR%%/quixote/_py_htmltext.pyo
+%%PYTHON_SITELIBDIR%%/quixote/cimport.so
 %%PYTHON_SITELIBDIR%%/quixote/config.py
 %%PYTHON_SITELIBDIR%%/quixote/config.pyc
 %%PYTHON_SITELIBDIR%%/quixote/config.pyo
@@ -43,6 +44,21 @@
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.py
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.pyc
 %%PYTHON_SITELIBDIR%%/quixote/form/widget.pyo
+%%PYTHON_SITELIBDIR%%/quixote/form2/__init__.py
+%%PYTHON_SITELIBDIR%%/quixote/form2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/quixote/form2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/quixote/form2/compatibility.py
+%%PYTHON_SITELIBDIR%%/quixote/form2/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/quixote/form2/compatibility.pyo
+%%PYTHON_SITELIBDIR%%/quixote/form2/css.py
+%%PYTHON_SITELIBDIR%%/quixote/form2/css.pyc
+%%PYTHON_SITELIBDIR%%/quixote/form2/css.pyo
+%%PYTHON_SITELIBDIR%%/quixote/form2/form.py
+%%PYTHON_SITELIBDIR%%/quixote/form2/form.pyc
+%%PYTHON_SITELIBDIR%%/quixote/form2/form.pyo
+%%PYTHON_SITELIBDIR%%/quixote/form2/widget.py
+%%PYTHON_SITELIBDIR%%/quixote/form2/widget.pyc
+%%PYTHON_SITELIBDIR%%/quixote/form2/widget.pyo
 %%PYTHON_SITELIBDIR%%/quixote/html.py
 %%PYTHON_SITELIBDIR%%/quixote/html.pyc
 %%PYTHON_SITELIBDIR%%/quixote/html.pyo
@@ -85,10 +101,6 @@
 %%PYTHON_SITELIBDIR%%/quixote/session.py
 %%PYTHON_SITELIBDIR%%/quixote/session.pyc
 %%PYTHON_SITELIBDIR%%/quixote/session.pyo
-%%PYTHON_SITELIBDIR%%/quixote/t.ptl
-%%PYTHON_SITELIBDIR%%/quixote/t.py
-%%PYTHON_SITELIBDIR%%/quixote/t.pyc
-%%PYTHON_SITELIBDIR%%/quixote/t.pyo
 %%PYTHON_SITELIBDIR%%/quixote/upload.py
 %%PYTHON_SITELIBDIR%%/quixote/upload.pyc
 %%PYTHON_SITELIBDIR%%/quixote/upload.pyo
@@ -109,6 +121,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/default.css
 %%PORTDOCS%%%%DOCSDIR%%/demo.html
 %%PORTDOCS%%%%DOCSDIR%%/demo.txt
+%%PORTDOCS%%%%DOCSDIR%%/form2conversion.html
+%%PORTDOCS%%%%DOCSDIR%%/form2conversion.txt
 %%PORTDOCS%%%%DOCSDIR%%/multi-threaded.html
 %%PORTDOCS%%%%DOCSDIR%%/multi-threaded.txt
 %%PORTDOCS%%%%DOCSDIR%%/programming.html
@@ -134,6 +148,7 @@
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/server
+@dirrm %%PYTHON_SITELIBDIR%%/quixote/form2
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/form
 @dirrm %%PYTHON_SITELIBDIR%%/quixote/demo
 @dirrm %%PYTHON_SITELIBDIR%%/quixote
