@@ -9,9 +9,7 @@ share/linux-opera/bin/spellcheck.so
 share/linux-opera/bin/works
 share/linux-opera/chartables.bin
 share/linux-opera/config/opera6rc
-share/linux-opera/config/opera6rc.bak
 share/linux-opera/config/opera6rc.fixed
-share/linux-opera/config/opera6rc.orig
 share/linux-opera/help/advertising.html
 share/linux-opera/help/background.png
 share/linux-opera/help/chat.html
@@ -85,7 +83,7 @@ share/linux-opera/locale/en/search.ini
 share/linux-opera/locale/english.lng
 share/linux-opera/opera6.adr
 share/linux-opera/plugins/libnpp.so
-share/linux-opera/plugins/operamotifwrapper
+share/linux-opera/plugins/operamotifwrapper-2
 share/linux-opera/plugins/operamotifwrapper-3
 share/linux-opera/plugins/operaplugincleaner
 share/linux-opera/search.ini

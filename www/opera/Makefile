@@ -28,12 +28,12 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
-OPERA_VER=	7.52
+OPERA_VER=	7.53
 OPERA_REL=	final
-OPERA_DATE=	20040706
+OPERA_DATE=	20040716
 
-DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+DATADIR=	${PREFIX}/share/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
@@ -65,12 +65,13 @@ PLIST_SUB+=	KDE="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%X11BASE%%|${X11BASE}|g' \
-			${WRKSRC}/install.sh \
-			${WRKSRC}/ini/spellcheck.ini
-	@${RM} ${WRKSRC}/ini/spellcheck.ini.*
+			${WRKSRC}/install.sh ${WRKSRC}/ini/pluginpath.ini \
+			${WRKSRC}/ini/spellcheck.ini ${WRKSRC}/config/opera6rc
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
+	@(cd ${WRKSRC} && ./install.sh --prefix=${PREFIX})
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -1,5 +1,5 @@
 ##
-Changelog for 7.51 Final: http://www.opera.com/linux/changelogs/751/
+Changelog for 7.53 Final: http://www.opera.com/linux/changelogs/753/
 
 The name of the the binary, data directory, personal "~/.opera" directory,
 etc., have been renamed from "opera" to "linux-opera." This means that
@@ -10,4 +10,14 @@ toolbars, options, etc., have changed from previous versions, and are not
 recommend to transferred from the old configuration. The mail format will be
 converted to the new format automatically when the new linux-opera is run for
 the first time.
+
+*** IMPORTANT: users with custom search.ini ***
+
+If you have a custom search.ini and you've used opera 7.51 or an earlier
+version before this upgrade, edit ~/.opera/search.ini _before_ running the 
+upgraded Opera for the first time, and change the file version to 4. It should
+look like this:
+
+[Version]
+File Version=4
 ##
