@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.41
+PORTVERSION=	0.42
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
-MAINTAINER=	cordeiro@luinil.nic.br
+MAINTAINER=	cordeiro@nic.br
 COMMENT=	A tool to locally check for signs of a rootkit
 
 USE_REINPLACE=	yes
 
 ALL_TARGET=	chkrootkit chklastlog chkwtmp chkproc chkdirs ifpromisc check_wtmpx strings
 
-DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
+DOCFILES=	ACKNOWLEDGMENTS COPYRIGHT README README.chklastlog README.chkwtmp
 
 BINMODE=	0700
 
