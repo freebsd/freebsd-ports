@@ -1,5 +1,5 @@
 etc/gnomecanvaspixbufConf.sh
-include/gdk-pixbuf/gnome-canvas-pixbuf.h
+include/gdk-pixbuf-1.0/gdk-pixbuf/gnome-canvas-pixbuf.h
 lib/libgnomecanvaspixbuf.a
 lib/libgnomecanvaspixbuf.so
 lib/libgnomecanvaspixbuf.so.1
