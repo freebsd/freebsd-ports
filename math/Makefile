@@ -22,6 +22,7 @@
     SUBDIR += fudgit
     SUBDIR += geg
     SUBDIR += glove
+    SUBDIR += glpk
     SUBDIR += gnumeric
     SUBDIR += gnuplot
     SUBDIR += gnuplot+
