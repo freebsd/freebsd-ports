@@ -1,0 +1,7 @@
+bin/dungeon
+share/dungeon/dtextc.dat
+share/dungeon/dungn32b.zip
+share/dungeon/history
+share/dungeon/manifest
+share/dungeon/readme
+@dirrm share/dungeon

@@ -1,0 +1,16 @@
+Dungeon has been the most famous text type adventure game. 
+Zork I, II, III of Infocom were based on it. 
+
+For more detailed information, visit:
+
+WWW: http://www.csd.uwo.ca/Infocom/dungeon.html
+
+You can also read the articles about the history of the Zork 
+in ``The New Zork Times'' at there.
+
+This port requires both Fortran and C source zipped archives, 
+however the program is build from the C source. 
+The Fortran source archive includes useful informations 
+to solve the myth, which you should not see. 
+--
+rmiya 
