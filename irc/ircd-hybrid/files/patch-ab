@@ -1,5 +1,5 @@
---- include/config.h.orig	Tue Jul  7 17:40:42 1998
-+++ include/config.h	Sat Jul 11 23:52:40 1998
+--- include/config.h.orig	Sat Sep 19 13:12:22 1998
++++ include/config.h	Thu Oct 22 00:39:54 1998
 @@ -27,8 +27,8 @@
  /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
  /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
@@ -42,7 +42,7 @@
  
  
  /* FAILED_OPER_NOTICE - send a notice to all opers when someone
-@@ -429,7 +429,7 @@
+@@ -435,7 +435,7 @@
   * mode "i" (i == invisible). Invisibility means people dont showup in
   * WHO or NAMES unless they are on the same channel as you.
   */
@@ -51,7 +51,7 @@
  
  /* OPER_KILL OPER_REHASH OPER_RESTART OPER_DIE OPER_REMOTE -
   *      restrict what local global-Opers can do
-@@ -528,7 +528,7 @@
+@@ -534,7 +534,7 @@
   * security problem - they can use the "-f" option to read any files
   * that the 'new' access lets them.
   */
@@ -60,7 +60,7 @@
  
  /* M4_PREPROC - run ircd.conf through m4 preprocessor
   * To use m4 as a preprocessor on the ircd.conf file, define M4_PREPROC.
-@@ -557,11 +557,11 @@
+@@ -563,11 +563,11 @@
   * If you use syslog above, you may want to turn some (none) of the
   * spurious log messages for KILL,SQUIT,etc off.
   */
@@ -75,7 +75,7 @@
  #undef  SYSLOG_BLOCK_ALLOCATOR /* debug block allocator */
  
  /* LOG_FACILITY - facility to use for syslog()
-@@ -609,8 +609,8 @@
+@@ -615,8 +615,8 @@
   * define IRC_UID to that UID.  This should only be defined if you are running
   * as root and even then perhaps not.
   */
