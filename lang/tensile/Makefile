@@ -15,7 +15,7 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A programming languages designed for especially complex processing texts
+COMMENT=	Programming language designed for especially complex processing texts
 
 LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils \
 		ltdl.4:${PORTSDIR}/devel/libltdl
@@ -39,6 +39,10 @@ MAN7=		docstrip.7t sl_crypt.7t sl_files.7t sl_fpmath.7t sl_int64.7t \
 
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
 .endif
 
 post-patch:
