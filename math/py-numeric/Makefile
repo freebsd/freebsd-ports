@@ -1,47 +1,36 @@
 # New ports collection makefile for:	numpy
-# Version required:	1.8
+# Version required:	15.2
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	LLNLDistribution11
-PKGNAME=	py-numeric-1.8
+DISTNAME=	Numerical-15.2
+PKGNAME=	py-numeric-15.2
 CATEGORIES=	math python
-MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/python/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://downloads.sourceforge.net/
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	${PREFIX}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/Numerical
-CONFIGURE_ENV=	PREFIX=${PREFIX}
-ALL_TARGET=	sharedmods
-MAKE_FLAGS+=	'OPT=${CFLAGS}'
+DOCDIR=		${PREFIX}/share/doc/py-numeric
+EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/numerical
-DOCDIR=		${PREFIX}/share/doc/py-numerical
-EXAMPLEDIR=	${PREFIX}/share/examples/py-numerical
+do-build:
+	@(cd ${WRKSRC}; python setup.py build)
 
-do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} python makethis.py)
-
-post-install:
-	@${MKDIR} ${NUMPYDIR}
-	${INSTALL_DATA} ${WRKSRC}/Lib/* ${NUMPYDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${NUMPYDIR}
-	@${ECHO} "numerical" > ${NUMPYDIR}/../numerical.pth
-	@${MKDIR} ${PREFIX}/include/python1.5/numerical
-	${INSTALL_DATA} ${WRKSRC}/Include/*object.h ${PREFIX}/include/python1.5/numerical
+do-install:
+	@(cd ${WRKSRC}; python setup.py install)
 	@${MKDIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/Demo/* ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
+	@${MKDIR} ${EXAMPLEDIR}/NumTut
+	${INSTALL_DATA} ${WRKSRC}/Demo/NumTut/* ${EXAMPLEDIR}/NumTut
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCDIR}
+#	@${MKDIR} ${DOCDIR}
+#	${INSTALL_DATA} ${WRKSRC}/Doc/numpy.pdf ${DOCDIR}
 .endif
 
 .include <bsd.port.mk>

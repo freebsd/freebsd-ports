@@ -1,49 +1,46 @@
-include/python1.5/numerical/arrayobject.h
-include/python1.5/numerical/ufuncobject.h
-@dirrm include/python1.5/numerical
-lib/python1.5/site-packages/numerical/ArrayPrinter.py
-lib/python1.5/site-packages/numerical/ArrayPrinter.pyc
-lib/python1.5/site-packages/numerical/ArrayPrinter.pyo
-lib/python1.5/site-packages/numerical/FFT.py
-lib/python1.5/site-packages/numerical/FFT.pyc
-lib/python1.5/site-packages/numerical/FFT.pyo
-lib/python1.5/site-packages/numerical/LinearAlgebra.py
-lib/python1.5/site-packages/numerical/LinearAlgebra.pyc
-lib/python1.5/site-packages/numerical/LinearAlgebra.pyo
-lib/python1.5/site-packages/numerical/MLab.py
-lib/python1.5/site-packages/numerical/MLab.pyc
-lib/python1.5/site-packages/numerical/MLab.pyo
-lib/python1.5/site-packages/numerical/Matrix.py
-lib/python1.5/site-packages/numerical/Matrix.pyc
-lib/python1.5/site-packages/numerical/Matrix.pyo
-lib/python1.5/site-packages/numerical/Numeric.py
-lib/python1.5/site-packages/numerical/Numeric.pyc
-lib/python1.5/site-packages/numerical/Numeric.pyo
-lib/python1.5/site-packages/numerical/Precision.py
-lib/python1.5/site-packages/numerical/Precision.pyc
-lib/python1.5/site-packages/numerical/Precision.pyo
-lib/python1.5/site-packages/numerical/RandomArray.py
-lib/python1.5/site-packages/numerical/RandomArray.pyc
-lib/python1.5/site-packages/numerical/RandomArray.pyo
-lib/python1.5/site-packages/numerical/UserArray.py
-lib/python1.5/site-packages/numerical/UserArray.pyc
-lib/python1.5/site-packages/numerical/UserArray.pyo
-@dirrm lib/python1.5/site-packages/numerical
-lib/python1.5/site-packages/numerical.pth
-lib/python1.5/site-packages/_numpymodule.so
-lib/python1.5/site-packages/fftpack.so
-lib/python1.5/site-packages/lapack_lite.so
-lib/python1.5/site-packages/multiarraymodule.so
-lib/python1.5/site-packages/ranlib.so
-lib/python1.5/site-packages/umathmodule.so
+include/python1.5/Numeric/arrayobject.h
+include/python1.5/Numeric/f2c.h
+include/python1.5/Numeric/fftpack.h
+include/python1.5/Numeric/ranlib.h
+include/python1.5/Numeric/ufuncobject.h
+lib/python1.5/site-packages/Numeric/_numpy.so
+lib/python1.5/site-packages/Numeric/ArrayPrinter.py
+lib/python1.5/site-packages/Numeric/ArrayPrinter.pyc
+lib/python1.5/site-packages/Numeric/FFT.py
+lib/python1.5/site-packages/Numeric/FFT.pyc
+lib/python1.5/site-packages/Numeric/LinearAlgebra.py
+lib/python1.5/site-packages/Numeric/LinearAlgebra.pyc
+lib/python1.5/site-packages/Numeric/MLab.py
+lib/python1.5/site-packages/Numeric/MLab.pyc
+lib/python1.5/site-packages/Numeric/Matrix.py
+lib/python1.5/site-packages/Numeric/Matrix.pyc
+lib/python1.5/site-packages/Numeric/Numeric.py
+lib/python1.5/site-packages/Numeric/Numeric.pyc
+lib/python1.5/site-packages/Numeric/Precision.py
+lib/python1.5/site-packages/Numeric/Precision.pyc
+lib/python1.5/site-packages/Numeric/RandomArray.py
+lib/python1.5/site-packages/Numeric/RandomArray.pyc
+lib/python1.5/site-packages/Numeric/UserArray.py
+lib/python1.5/site-packages/Numeric/UserArray.pyc
+lib/python1.5/site-packages/Numeric/arrayfns.so
+lib/python1.5/site-packages/Numeric/fftpack.so
+lib/python1.5/site-packages/Numeric/lapack_lite.so
+lib/python1.5/site-packages/Numeric/multiarray.so
+lib/python1.5/site-packages/Numeric/ranlib.so
+lib/python1.5/site-packages/Numeric/umath.so
+lib/python1.5/site-packages/Numeric.pth
 @unexec rmdir %B 2>/dev/null || true
-share/doc/py-numerical/doc.html
-share/doc/py-numerical/home.html
-@dirrm share/doc/py-numerical
-share/examples/py-numerical/life.py
-share/examples/py-numerical/life.pyc
-share/examples/py-numerical/mandelbrot.py
-share/examples/py-numerical/mandelbrot.pyc
-share/examples/py-numerical/sieve.py
-share/examples/py-numerical/sieve.pyc
-@dirrm share/examples/py-numerical
+@comment share/doc/py-numeric/numpy.pdf
+share/examples/py-numeric/NumTut/__init__.py
+share/examples/py-numeric/NumTut/greece.pik
+share/examples/py-numeric/NumTut/mkpic.py
+share/examples/py-numeric/NumTut/testview.py
+share/examples/py-numeric/NumTut/view.py
+share/examples/py-numeric/life.py
+share/examples/py-numeric/mandelbrot.py
+share/examples/py-numeric/sieve.py
+@dirrm lib/python1.5/site-packages/Numeric
+@dirrm share/examples/py-numeric/NumTut
+@dirrm share/examples/py-numeric
+@comment @dirrm share/doc/py-numeric
+@dirrm include/python1.5/Numeric
