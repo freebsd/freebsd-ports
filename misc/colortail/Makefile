@@ -16,6 +16,8 @@ MAINTAINER=    cpiazza@FreeBSD.org
 
 GNU_CONFIGURE= YES
 
+MAN1=		colortail.1
+
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/colortail
 	@ ${INSTALL_DATA} ${WRKSRC}/CONFIG ${PREFIX}/share/colortail/CONFIG.example
