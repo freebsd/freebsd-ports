@@ -7,6 +7,7 @@
 
 PORTNAME=	enigmail
 PORTVERSION=	0.83.6
+PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://mozdev.secsup.org/enigmail/src/ \
 		http://downloads.us-east3.mozdev.org/enigmail/src/
@@ -21,6 +22,7 @@ RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/mozilla
 LOCAL_SRCDIR?=	www/mozilla
@@ -40,6 +42,12 @@ do-extract:
 	@for file in ${EXTRACT_ONLY}; do \
 		cd ${WRKSRC}/extensions && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS}; \
 	done
+
+pre-patch:
+	@${REINPLACE_CMD} -e "s|${LOCAL_SRCDIR}|mail/enigmail${PKGNAMESUFFIX}|g" \
+		${WRKSRC}/config/autoconf.mk \
+		${WRKSRC}/directory/c-sdk/config/autoconf.mk \
+		${WRKSRC}/nsprpub/config/autoconf.mk
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} export)
