@@ -17,10 +17,17 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_IMAKE=	yes
-MAN1=		pcb.1
-MANCOMPRESSED=	yes
+MANN=		pcb.n
+MANCOMPRESSED=	no
 
 pre-install:
-	@${CP} ${WRKSRC}/doc/pcb.man ${WRKSRC}/src
+	-${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${SETENV} PREFIX=${PREFIX} make install.info &&\
+	${INSTALL_DATA} index.html pcb.html pcb.ps refcard.ps ${DOCSDIR}
+
+post-install:
+	install-info --section="Utilities" \
+	--entry="* PCB: (pcb).	Interactive printed circuit board layout system for X11" \
+	${PREFIX}/info/pcb.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
