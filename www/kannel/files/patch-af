@@ -1,0 +1,59 @@
+*** gwlib/gwthread-pthread.c.orig	Tue Jul 18 15:08:24 2000
+--- gwlib/gwthread-pthread.c	Wed Jul 19 13:23:39 2000
+***************
+*** 58,63 ****
+--- 58,68 ----
+  pthread_key_t tsd_key;
+  
+  pthread_mutex_t threadtable_lock;
++ /*
++  * Thread creation parameters.
++  */
++ static pthread_attr_t	thread_attr;
++ #define MIN_THREAD_STACK_SIZE	(256 * 1024)
+  
+  static void lock(void) {
+  	int ret;
+***************
+*** 172,177 ****
+--- 177,183 ----
+  void gwthread_init(void) {
+  	int ret;
+  	int i;
++ 	int stack_size;
+  
+  	pthread_mutex_init(&threadtable_lock, NULL);
+  
+***************
+*** 184,189 ****
+--- 190,202 ----
+  		threadtable[i] = NULL;
+  	}
+  	active_threads = 0;
++ /*
++  * Make sure that thread stack is large enough.
++  */
++ 	pthread_attr_init(&thread_attr);
++ 	pthread_attr_getstacksize(&thread_attr, &stack_size);
++ 	if (stack_size < MIN_THREAD_STACK_SIZE)
++ 		pthread_attr_setstacksize(&thread_attr, MIN_THREAD_STACK_SIZE);
+  
+  	create_threadinfo_main();
+  }
+***************
+*** 285,291 ****
+  		return -1;
+  	}
+  
+! 	ret = pthread_create(&id, NULL, &new_thread, p);
+  	if (ret != 0) {
+  		unlock();
+  		error(ret, "Could not create new thread.");
+--- 298,304 ----
+  		return -1;
+  	}
+  
+! 	ret = pthread_create(&id, &thread_attr, &new_thread, p);
+  	if (ret != 0) {
+  		unlock();
+  		error(ret, "Could not create new thread.");
