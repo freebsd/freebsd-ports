@@ -27,6 +27,7 @@ post-patch:
 	${REINPLACE_CMD} "s,/usr/local/pgsql,${PREFIX},; \
 			  s,^CFLAGS.*,CFLAGS=${CFLAGS},; \
 			  s,\...SO_MINOR_VERSION.,,; \
+			  s,\-I,\-fPIC \-I,; \
 			  s,\(\-[IL]\)[^/]*,\\1${LOCALBASE}," ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
