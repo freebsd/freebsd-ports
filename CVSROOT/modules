@@ -1219,6 +1219,7 @@ docproj		ports/textproc/docproj
 docproj-jadetex	ports/textproc/docproj-jadetex
 docproj-nojadetex	ports/textproc/docproj-nojadetex
 docsis		ports/net/docsis
+doctorj		ports/devel/doctorj
 dog		ports/misc/dog
 domc		ports/textproc/domc
 domtools	ports/net/domtools
