@@ -5,6 +5,7 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/create.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/datetime.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/httpserver.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/marshal.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/parser.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/server.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/utils.rb
