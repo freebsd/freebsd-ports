@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.5.2
+PORTVERSION=	2.5.4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/old/ \
@@ -24,10 +24,26 @@ MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
+
+.if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
+.else
+CONFIGURE_ARGS+=	--without-ssl
+.endif
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+.if defined(WITH_SOCKS4)
+CONFIGURE_ARGS+=	--with-socks
+.endif
+.if defined(WITH_SOCKS5)
+CONFIGURE_ARGS+=	--with-socks5
+.endif
+.if defined(WITH_SOCKS_DANTE)
+CONFIGURE_ARGS+=	--with-socksdante
+.endif
 
 MAN1=		lftp.1
 
