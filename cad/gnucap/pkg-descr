@@ -1,0 +1,22 @@
+GnuCap is the Gnu Circuit Analysis Package.
+
+The primary component is a general purpose circuit simulator. It performs
+nonlinear dc and transient analyses, fourier analysis, and ac analysis. It is
+fully interactive and command driven. It can also be run in batch mode or as a
+server. Spice compatible models for the MOSFET (level 1-7) and diode are
+included in this release.
+
+GnuCap is not based on Spice, but some of the models have been derived from
+the Berkeley models.
+
+Unlike Spice, the engine is designed to do true mixed-mode simulation. Most
+of the code is in place for future support of event driven analog simulation,
+and true multi-rate simulation.
+
+If you are tired of Spice and want a second opinion, you want to play with the
+circuit and want a simulator that is interactive, you want to study the source
+code and want something easier to follow than Spice, or you are a researcher
+working on modeling and want automated model generation tools to make your job
+easier, try GnuCap.
+
+WWW: http://www.gnu.org/software/gnucap/
