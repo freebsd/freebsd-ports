@@ -1,6 +1,6 @@
---- pam_ldap.c.orig	Thu Sep  2 19:20:15 2004
-+++ pam_ldap.c	Thu Sep  2 19:21:04 2004
-@@ -127,12 +127,7 @@
+--- pam_ldap.c.orig	Sun Oct 31 02:42:54 2004
++++ pam_ldap.c	Sun Oct 31 02:48:03 2004
+@@ -131,12 +131,7 @@
  #include "pam_ldap.h"
  #include "md5.h"
  
@@ -13,7 +13,7 @@
  
  #ifndef HAVE_LDAP_MEMFREE
  #define ldap_memfree(x)	free(x)
-@@ -2946,7 +2941,7 @@
+@@ -3137,7 +3132,7 @@
    int rc;
    const char *username;
    char *p;
@@ -22,7 +22,7 @@
    int i;
    pam_ldap_session_t *session = NULL;
    const char *configFile = NULL;
-@@ -2967,6 +2962,8 @@
+@@ -3158,6 +3153,8 @@
  	;
        else if (!strcmp (argv[i], "debug"))
  	;
@@ -31,7 +31,7 @@
        else
  	syslog (LOG_ERR, "illegal option %s", argv[i]);
      }
-@@ -2980,6 +2977,22 @@
+@@ -3171,6 +3168,22 @@
      return rc;
  
    rc = pam_get_item (pamh, PAM_AUTHTOK, (CONST_ARG void **) &p);
@@ -46,15 +46,15 @@
 +             obtained during pam authentication process
 +             - rootbinddn and ldap.secret must be set
 +          */
-+          rc=_update_authtok(session,username,NULL,p);
++          rc=_update_authtok(pamh,session,username,NULL,p);
 +          return PAM_IGNORE;
 +        }
 +    }
 +  /* end of migrate facility in "pam_ldap authentication" */
    if (rc == PAM_SUCCESS && (use_first_pass || try_first_pass))
      {
-       rc = _do_authentication (session, username, p);
-@@ -3228,11 +3241,11 @@
+       rc = _do_authentication (pamh, session, username, p);
+@@ -3419,11 +3432,11 @@
  		    {
  		      _conv_sendmsg (appconv, "Password change aborted",
  				     PAM_ERROR_MSG, no_warn);
@@ -70,7 +70,7 @@
  		    }
  		  else
  		    {
-@@ -3246,7 +3259,7 @@
+@@ -3437,7 +3450,7 @@
  	  if (curpass == NULL)
  	    return PAM_MAXTRIES;	/* maximum tries exceeded */
  	  else
@@ -79,7 +79,7 @@
  	}
        else
  	{
-@@ -3274,11 +3287,11 @@
+@@ -3465,11 +3478,11 @@
        syslog (LOG_ERR,
  	      "pam_ldap: error getting old authentication token (%s)",
  	      pam_strerror (pamh, rc));
@@ -95,7 +95,7 @@
      }
  
    if (try_first_pass || use_first_pass)
-@@ -3288,11 +3301,11 @@
+@@ -3479,11 +3492,11 @@
  	newpass = NULL;
  
        if (use_first_pass && newpass == NULL)
@@ -111,7 +111,7 @@
      }
  
    tries = 0;
-@@ -3342,11 +3355,11 @@
+@@ -3533,11 +3546,11 @@
  	}
        else
  	{
@@ -127,7 +127,7 @@
  	}
  
        if (cmiscptr == NULL)
-@@ -3378,11 +3391,11 @@
+@@ -3569,11 +3582,11 @@
  		{
  		  _conv_sendmsg (appconv, "Password change aborted",
  				 PAM_ERROR_MSG, no_warn);
