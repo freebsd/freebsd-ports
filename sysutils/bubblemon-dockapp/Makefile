@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bubblemon-dockapp
-PORTVERSION=	1.40
-PORTREVISION=	1
+PORTVERSION=	1.46
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/0$//}
