@@ -672,6 +672,7 @@
     SUBDIR += tas
     SUBDIR += tcpcat
     SUBDIR += tcpdstat
+    SUBDIR += tcpdump
     SUBDIR += tcpflow
     SUBDIR += tcpillust
     SUBDIR += tcpmssd
