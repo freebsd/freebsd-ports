@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION=		3.0.6
+PORTVERSION=		3.0.7
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -70,8 +70,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
 		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
-		POPT		"With installed POPT library" on \
-		I18N		"With i18n patch" off
+		POPT		"With installed POPT library" on
 .endif
 
 .include <bsd.port.pre.mk>
@@ -248,18 +247,6 @@ WINBIND_FILTER=		${SED} -e 's|%%WINBIND%%||g'
 WINBIND_FILTER=		${GREP} -v '^%%WINBIND%%'
 .endif
 
-.if defined(WITH_I18N)
-IGNORE=			"I18N patch not ported yet!"
-# Based on patch from miraclelinux.com.
-# http://www.miraclelinux.com/english/technet/samba30/index.html
-PATCH_SITES=		http://dist.bsdlab.org/
-PATCHFILES=		samba-3.0.4-i18n-20040521.bz2
-PATCH_DIST_STRIP=	-p1
-PLIST_SUB+=		I18N=""
-.else
-PLIST_SUB+=		I18N="@comment "
-.endif
-
 PLIST_SUB+=		RC_DIR=${RC_DIR} \
 			SAMBA_LOGDIR=${SAMBA_LOGDIR} \
 			SAMBA_LOCKDIR=${SAMBA_LOCKDIR}
@@ -282,7 +269,6 @@ pre-fetch:
 post-patch:
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
-	@${CP} -pf ${FILESDIR}/samba.schema ${WRKDIR}/${DISTNAME}/examples/LDAP
 
 post-install:
 .for sect in 1 5 7 8
