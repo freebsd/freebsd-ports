@@ -14,11 +14,3 @@
 +#  include <sys/param.h>
 +#  include <sys/mount.h>
  #  include <stdio.h>
-@@ -424,5 +425,4 @@
-   struct statfs buf;
--  int errNum=0, fstyp;
-+  int errNum=0;
-   /* Get file system stats */
--  fstyp=0;
--  errNum = statfs ( ".", &buf, sizeof( struct statfs ), fstyp);
-+  errNum = statfs ( ".", &buf);
