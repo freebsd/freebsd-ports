@@ -1,19 +1,10 @@
 $FreeBSD$
 
---- Makefile.am	Tue May 13 22:11:38 2003
-+++ Makefile.am	Tue May 13 22:12:05 2003
-@@ -42,12 +42,12 @@
- 	gcc -shared -o $@ ${OBJECTS} -Wl,--kill-at
- 
- jmp/JMPController.class : java/jmp/JMPController.java	
--	javac -sourcepath java -d . $<
-+	${JAVAC} -sourcepath java -d . $<
- 
- # javah does not update file modification time, so touch it
- # otherwise we will remake file every time
- jmp_JMPController.h: jmp/JMPController.class
--	javah jmp.JMPController
-+	${JAVAH} jmp.JMPController
- 	@touch jmp_JMPController.h
- 
- javadocs:
+--- Makefile.am.orig	Mon May 31 00:17:56 2004
++++ Makefile.am	Wed Aug 18 00:28:51 2004
+@@ -50 +50 @@
+-	javac -sourcepath ${top_srcdir}/java -d . $<
++	${JAVAC} -sourcepath ${top_srcdir}/java -d . $<
+@@ -55 +55 @@
+-	javah -classpath . jmp.JMPController
++	${JAVAH} -classpath . jmp.JMPController

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
@@ -52,5 +52,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
 INSTALLS_SHLIB=	yes
+
+PLIST_FILES=	lib/libjmp.so lib/libjmp.so.0 \
+		share/locale/de/LC_MESSAGES/jmp.mo share/locale/sv/LC_MESSAGES/jmp.mo
 
 .include <bsd.port.mk>
