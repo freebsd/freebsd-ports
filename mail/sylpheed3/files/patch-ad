@@ -1,0 +1,11 @@
+--- intl/Makefile.in.orig	Wed Oct 24 03:57:52 2001
++++ intl/Makefile.in	Wed Oct 24 03:58:06 2001
+@@ -41,7 +41,7 @@
+ MKINSTALLDIRS = @MKINSTALLDIRS@
+ mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) echo "$(MKINSTALLDIRS)" ;; *) echo "$(top_builddir)/$(MKINSTALLDIRS)" ;; esac`
+ 
+-l = @INTL_LIBTOOL_SUFFIX_PREFIX@
++l = 
+ 
+ AR = ar
+ CC = @CC@
