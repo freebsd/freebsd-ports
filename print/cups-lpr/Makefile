@@ -17,6 +17,8 @@ MASTER_SITES=	${CUPS_MASTER_SITES}
 MAINTAINER=	asa@gascom.ru
 COMMENT=	The CUPS BSD and system V compatibility binaries (lp* commands)
 
+FORBIDDEN=	"Changes ownership of system directories"
+
 USE_REINPLACE=	yes
 
 MANLANG=	"" fr
