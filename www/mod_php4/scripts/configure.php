@@ -117,7 +117,7 @@ BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.3.10
+VERSION_MODSSL=	2.3.11
 
 RESTRICTED=	"Contains cryptography"
 
