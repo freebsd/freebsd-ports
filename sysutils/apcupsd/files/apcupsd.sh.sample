@@ -42,7 +42,8 @@ case $1 in
 	    kill -KILL $PID || return="  Failed."
 	    rm -f ${apcupsd_pidfile}
 	    # some slaves won't die
-	    killall apcupsd
+	    killall apcupsd > /dev/null 2>&1
+	    echo " apcupsd killed"
 	else
 	    return="  Failed."
 	fi
