@@ -1,20 +1,20 @@
---- src/Makefile.in.orig	Thu Jan 22 14:21:35 2004
-+++ src/Makefile.in	Thu Jan 22 14:21:56 2004
-@@ -128,7 +128,7 @@
- am__include = @am__include@
- am__quote = @am__quote@
- install_sh = @install_sh@
+--- src/Makefile.in.orig	Sat Feb  7 03:17:47 2004
++++ src/Makefile.in	Sat Feb  7 03:19:58 2004
+@@ -110,7 +110,7 @@
+ LIBGLADE_CFLAGS = @LIBGLADE_CFLAGS@
+ LIBGLADE_LIBS = @LIBGLADE_LIBS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lcam
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -171,7 +171,7 @@
+ target_alias = @target_alias@
+ 
+ # General compiler flags
 -AM_CFLAGS = -Wall -Werror -export-dynamic -W -Wno-unused-parameter
 +AM_CFLAGS = -Wall -export-dynamic -W
  
- AM_CPPFLAGS = \
- 	@DISABLE_DEPRECATED_CFLAGS@ \
-@@ -212,7 +212,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lcam
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/bacon-cd-selection.Po \
+ # General CPP flags. When I can demand automake 1.8, this can become
+ # sound_juicer_CPPFLAGS.
