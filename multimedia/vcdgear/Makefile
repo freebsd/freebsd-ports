@@ -20,9 +20,10 @@ ONLY_FOR_ARCHS=	alpha i386
 IGNORE=	"Only an ELF binary is distributed; requires FreeBSD 3.1 or later"
 .endif
 
+ONLY_FOR_ARCHS=	i386 alpha
 .if ${ARCH} == i386
 DISTNAME=	${PORTNAME}16d_i386_freebsd42
-.else if ${ARCH} == alpha
+.elif ${ARCH} == alpha
 DISTNAME=	${PORTNAME}16d_alpha_freebsd41
 .endif
 
