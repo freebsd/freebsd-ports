@@ -876,6 +876,7 @@
     SUBDIR += p5-Inline-Java
     SUBDIR += p5-Inline-Tcl
     SUBDIR += p5-Ioctl
+    SUBDIR += p5-List-Group
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-Maketext-Fuzzy
     SUBDIR += p5-Locale-Maketext-Gettext
