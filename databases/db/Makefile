@@ -14,7 +14,6 @@ MAINTAINER=	josh@ican.net
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
 
-MANUAL_PACKAGE_BUILD=	incompatible with libc internal db calls
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 INSTALLS_SHLIB=		yes
