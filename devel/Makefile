@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1997/03/28 09:29:24 asami Exp $
+# $Id: Makefile,v 1.47 1997/04/09 20:40:23 erich Exp $
 #
 
     SUBDIR += SWIG
@@ -22,6 +22,7 @@
     SUBDIR += libmalloc
     SUBDIR += libslang
     SUBDIR += linux_devel
+    SUBDIR += linuxgdb
     SUBDIR += m4
     SUBDIR += mkmf
     SUBDIR += mprof
@@ -44,6 +45,7 @@
     SUBDIR += p5-Time
     SUBDIR += prcs
     SUBDIR += sawt
+    SUBDIR += scogdb
     SUBDIR += tkcvs
     SUBDIR += tvision
     SUBDIR += uulib
