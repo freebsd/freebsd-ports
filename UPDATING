@@ -6,6 +6,36 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050213:
+  AFFECTS: users of print/teTeX-*
+  AUTHOR: hrs@FreeBSD.org
+
+  print/teTeX-* are now based on teTeX 3.0.  Although some
+  reliability fixes are also added, here are several common problems
+  which you might fall on.
+
+  1) $PREFIX/bin/pdftex is missing:
+
+   Probably your system has old files included teTeX 2.x which can
+   prevent the new version from working.  Please remove the old
+   files first (see 20050206 in this file) and reinstall.
+
+  2) Some formats are still corrupted (for example, "Fatal format file error;
+     I'm stymied" is displayed) or not updated even after a clean install:
+
+   You might have old or corrupted *.fmt and/or *.map files
+   under /root/.texmf-* or $HOME/.texmf-* directories.  Typically
+   these directories are generated when you invoke the updmap(1),
+   texconfig(1), or fmtutil(1) utility manually.  However, for a period
+   after the first revision of the teTeX-base port erroneously used
+   fmtutil(1) to regenerate *.fmt files, you could have these directories
+   without your intent.  In such a case, please remove these directories
+   and reinstall the ports (it is not needed to rebuild ports/packages).
+   Just for your information, $HOME/.texmf-config and $HOME/.texmf-var
+   can be used for your personal configuration.
+
+  If you have other problems, please contact hrs@FreeBSD.org.
+
 20050212:
   AFFECTS: users of x11-fonts/mkbold, mkitalic and mkbold-mkitalic
   AUTHOR: koma2@ms.u-tokyo.ac.jp
