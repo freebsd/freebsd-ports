@@ -1,0 +1,27 @@
+udmsearch is successfully installed.
+Now, to use udmsearch you need to create the appropriate mysql database
+manually:
+
+  Create mysql database 'udmsearch'.
+  You can also use existing MySQL database, skip this step in this case. 
+
+	$ mysqladmin create udmsearch
+
+
+  Create tables.
+  If you are installing UdmSearch for the first time: 
+
+	$ mysql udmsearch < /usr/local/etc/udmsearch/create/create.txt
+
+  IMPORTANT: If you already use UdmSearch and want to upgrade from
+  UdmSearch 2.0 or earlier while keep existing data, please do not use
+  create.txt. Instead, to upgrade from UdmSearch 2.0, run 
+
+ 	$ mysql udmsearch < /usr/local/etc/udmsearch/create/alter20-21.txt
+
+  or, to upgrade from UdmSearch 1.x, run 
+        $ mysql udmsearch < /usr/local/etc/udmsearch/create/alter19-20.txt
+        $ mysql udmsearch < /usr/local/etc/udmsearch/create/alter20-21.txt
+
+For more information on how to use udmsearch, please refer to their
+web site at http://mysearch.udm.net/
