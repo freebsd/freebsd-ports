@@ -17,7 +17,7 @@ COMMENT=	A handy utility to show codepoint information of given characters
 
 RUN_DEPENDS=	${_RUN_DEPENDS}
 
-USE_PERL=	yes
+USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
