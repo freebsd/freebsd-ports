@@ -1,7 +1,7 @@
---- ext/gd/gd_ctx.c.orig	Wed Mar 12 05:16:31 2003
-+++ ext/gd/gd_ctx.c	Sat Jun 28 15:47:56 2003
-@@ -24,17 +24,22 @@
- 	
+--- ext/gd/gd_ctx.c.orig	Mon Jun 23 20:07:47 2003
++++ ext/gd/gd_ctx.c	Tue Jul 15 01:54:58 2003
+@@ -44,23 +44,29 @@
+ /* {{{ _php_image_output_ctx */	
  static void _php_image_output_ctx(INTERNAL_FUNCTION_PARAMETERS, int image_type, char *tn, void (*func_p)()) 
  {
 -	zval **imgind, **file, **quality;
@@ -16,27 +16,34 @@
 +#endif /* HAVE_GD_GIF_ANIM */
  	gdIOCtx *ctx;
  
- 	/* The quality parameter for Wbmp stands for the threshold when called from image2wbmp() */
-+	/* The quality parameter for GIF animation stands for colormap inclusion. 1==include local/global colormap */
-+	/* The LeftOfs parameter for GIF animation begin stands for NETSCAPE2.0 Loop count extension. */
+ 	/* The third (quality) parameter for Wbmp stands for the threshold when called from image2wbmp().
+ 	 * The third (quality) parameter for Wbmp and Xbm stands for the foreground color index when called
+ 	 * from imagey<type>().
++	 * The third (quality) parameter for GIF animation stands for colormap inclusion. 1==include
++	 * local/global colormap.
++	 * The fourth (LeftOfs) parameter for GIF animation begin stands for NETSCAPE2.0 Loop count extension.
+ 	 */
  	
+ 	if (argc < 2 && image_type == PHP_GDIMG_TYPE_XBM) {
+ 		WRONG_PARAM_COUNT;
+ 	}
 -	if (argc < 1 || argc > 3 || zend_get_parameters_ex(argc, &imgind, &file, &quality) == FAILURE) 
-+	if (argc < 1 || argc > 7 || zend_get_parameters_ex(argc, &imgind, &file, &quality, &lo, &to, &del, &dis) == FAILURE) 
++	if (argc < 1 || argc > 7 || zend_get_parameters_ex(argc, &imgind, &file, &quality, &lo, &to, &del, &dis) == FAILURE)
  	{
  		WRONG_PARAM_COUNT;
  	}
-@@ -44,11 +49,29 @@
+@@ -70,11 +76,29 @@
  	if (argc > 1) {
  		convert_to_string_ex(file);
  		fn = Z_STRVAL_PP(file);
 -		if (argc == 3) {
 -			convert_to_long_ex(quality);
--			q = Z_LVAL_PP(quality);
+-			q = Z_LVAL_PP(quality);/* or colorindex for foreground of BW images (defaults to black) */
 -		}
  	}
 +	if (argc >= 3) {
 +		convert_to_long_ex(quality);
-+		q = Z_LVAL_PP(quality);
++		q = Z_LVAL_PP(quality);/* or colorindex for foreground of BW images (defaults to black) */
 +	}
 +#ifdef HAVE_GD_GIF_ANIM
 +	if (argc >= 4) {
@@ -59,7 +66,7 @@
  
  	if ((argc == 2) || (argc > 2 && Z_STRLEN_PP(file))) {
  		if (!fn || fn == empty_string || php_check_open_basedir(fn TSRMLS_CC)) {
-@@ -56,7 +79,7 @@
+@@ -82,7 +106,7 @@
  			RETURN_FALSE;
  		}
  
@@ -68,9 +75,9 @@
  		if (!fp) {
  			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unable to open '%s' for writing", fn);
  			RETURN_FALSE;
-@@ -94,6 +117,14 @@
- 			} 
- 			(*func_p)(im, i, ctx);
+@@ -128,6 +152,14 @@
+ 				(*func_p)(im, q, ctx);
+ 			}
  			break;
 +#ifdef HAVE_GD_GIF_ANIM
 +		case PHP_GDIMG_TYPE_GIFANIMBEGIN:
@@ -83,7 +90,7 @@
  		default:
  			(*func_p)(im, ctx);
  			break;
-@@ -112,3 +143,72 @@
+@@ -146,6 +178,75 @@
  	
      RETURN_TRUE;
  }
@@ -156,3 +163,6 @@
 +}
 +/* }}} */
 +#endif /* HAVE_GD_GIF_ANIM */
+ /* }}} */
+ 
+ /*
