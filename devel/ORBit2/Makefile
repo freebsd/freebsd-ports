@@ -3,7 +3,7 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.19 1999/05/30 03:35:07 steve Exp $
+# $Id: Makefile,v 1.20 1999/08/22 03:39:33 steve Exp $
 #
 
 DISTNAME=	ORBit-0.4.93
@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	sources/ORBit
 
 MAINTAINER=	clkao@CirX.ORG
 
-LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
+		intl.1:${PORTSDIR}/devel/gettext
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
