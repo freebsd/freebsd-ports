@@ -69,19 +69,19 @@ share/examples/saxon/trax/xsl/inc1/inc1.xsl
 share/examples/saxon/trax/xsl/inc1/inc2/inc2.xsl
 share/examples/saxon/trax/xsl/preamble.txt
 share/examples/saxon/trax/xsl/text.xsl
-@dirrm share/examples/saxon/applet/demo
-@dirrm share/examples/saxon/applet/family-tree
-@dirrm share/examples/saxon/applet
-@dirrm share/examples/saxon/data
-@dirrm share/examples/saxon/java
-@dirrm share/examples/saxon/styles
-@dirrm share/examples/saxon/trax/xml/subdir1/subdir2
-@dirrm share/examples/saxon/trax/xml/subdir1
-@dirrm share/examples/saxon/trax/xml
 @dirrm share/examples/saxon/trax/xsl/inc1/inc2
 @dirrm share/examples/saxon/trax/xsl/inc1
 @dirrm share/examples/saxon/trax/xsl
+@dirrm share/examples/saxon/trax/xml/subdir1/subdir2
+@dirrm share/examples/saxon/trax/xml/subdir1
+@dirrm share/examples/saxon/trax/xml
 @dirrm share/examples/saxon/trax
+@dirrm share/examples/saxon/styles
+@dirrm share/examples/saxon/java
+@dirrm share/examples/saxon/data
+@dirrm share/examples/saxon/applet/family-tree
+@dirrm share/examples/saxon/applet/demo
+@dirrm share/examples/saxon/applet
 @dirrm share/examples/saxon
 %%PORTDOCS%%share/doc/saxon/api-guide.html
 %%PORTDOCS%%share/doc/saxon/api/allclasses-frame.html
@@ -129,6 +129,7 @@ share/examples/saxon/trax/xsl/text.xsl
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/ASCIICharacterSet.html
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/CP1250CharacterSet.html
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/CP1251CharacterSet.html
+%%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/CP852CharacterSet.html
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/CharacterSet.html
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/CharacterSetFactory.html
 %%PORTDOCS%%share/doc/saxon/api/com/icl/saxon/charcode/KOI8RCharacterSet.html
@@ -503,7 +504,6 @@ share/examples/saxon/trax/xsl/text.xsl
 %%PORTDOCS%%share/doc/saxon/changes5.html
 %%PORTDOCS%%share/doc/saxon/conditions.html
 %%PORTDOCS%%share/doc/saxon/conformance.html
-%%PORTDOCS%%share/doc/saxon/dtdgen.html
 %%PORTDOCS%%share/doc/saxon/expressions.html
 %%PORTDOCS%%share/doc/saxon/extensibility.html
 %%PORTDOCS%%share/doc/saxon/extensions.html
@@ -512,41 +512,40 @@ share/examples/saxon/trax/xsl/text.xsl
 %%PORTDOCS%%share/doc/saxon/instant.html
 %%PORTDOCS%%share/doc/saxon/patterns.html
 %%PORTDOCS%%share/doc/saxon/samples.html
-%%PORTDOCS%%share/doc/saxon/suggestions.html
 %%PORTDOCS%%share/doc/saxon/using-xsl.html
 %%PORTDOCS%%share/doc/saxon/xsl-elements.html
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/aelfred
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/charcode
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/expr
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/exslt
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/functions
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/handlers
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/jdom
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/number
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/om
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/output
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/pattern
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/sort
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/sql
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/style
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/tinytree
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/trace
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/tree
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl
-%%PORTDOCS%%@dirrm share/doc/saxon/api/com
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/class-use
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/dom/class-use
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/dom
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/sax/class-use
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/sax
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/stream/class-use
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/stream
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml
-%%PORTDOCS%%@dirrm share/doc/saxon/api/javax
 %%PORTDOCS%%@dirrm share/doc/saxon/api/org/w3c/xsl
 %%PORTDOCS%%@dirrm share/doc/saxon/api/org/w3c
 %%PORTDOCS%%@dirrm share/doc/saxon/api/org
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/stream/class-use
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/stream
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/sax/class-use
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/sax
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/dom/class-use
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/dom
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform/class-use
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml/transform
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax/xml
+%%PORTDOCS%%@dirrm share/doc/saxon/api/javax
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/tree
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/trace
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/tinytree
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/style
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/sql
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/sort
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/pattern
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/output
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/om
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/number
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/jdom
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/handlers
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/functions
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/exslt
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/expr
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/charcode
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon/aelfred
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl/saxon
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com/icl
+%%PORTDOCS%%@dirrm share/doc/saxon/api/com
 %%PORTDOCS%%@dirrm share/doc/saxon/api
 %%PORTDOCS%%@dirrm share/doc/saxon
