@@ -13,19 +13,15 @@ MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
 		http://cas3.zlin.vutbr.cz/~stehlik/a800/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
-MAINTAINER=	jsutton@webnet.com.au
-
-BROKEN='MD5 checksum mismatch.  Also xf25.zip has an "End-of-central-directory signature not found" when unzipping problem.'
+MAINTAINER=	jsutton@bbcon.com.au
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-.if defined(ATARI) && (${ATARI} == "freebsd-xview")
-LIB_DEPENDS=	xview:${PORTSDIR}/x11-toolkits/xview
-.endif
+
 DIST_SUBDIR=	atari
 EXTRA_FILES=	xf25.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-ALL_TARGET=	${ATARI}
+ALL_TARGET=	freebsd-x11
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 NO_PACKAGE=	${RESTRICTED}
@@ -39,14 +35,6 @@ DOC_FILES= 	BUGS CHANGES COPYING CREDITS INSTALL README TODO USAGE
 
 MAN1=		atari800.1
 
-.if !defined(ATARI)
-pre-extract:
-	@${ECHO_MSG} "Please define the environment variable ATARI to"
-	@${ECHO_MSG} "determine how to build the emulator. Your choices are:"
-	@${ECHO_MSG} "   freebsd-ncurses, freebsd-x11, freebsd-xview. "
-	@${ECHO_MSG}
-	@${FALSE}
-.endif
 post-extract:
 	@${ECHO_MSG} "===>  Unzipping ROM files"
 	unzip -Lo ${DISTDIR}/${DIST_SUBDIR}/${EXTRA_FILES} ${ATARI_XF}\

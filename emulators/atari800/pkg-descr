@@ -11,22 +11,12 @@ settings.
 If you're at all serious about your emulator then you SHOULD check out
 these URL's in the order they're written:
 
-  http://www.signus.demon.co.uk/david/
-  http://zippy.sonoma.edu/~kendrick/nbs/new_and_emu.html
-  ftp://ftp.hackerz.com/hackerz/atari/web/index.html
+  http://cas3.zlin.vutbr.cz/~stehlik/a800.htm
+  http://www.signus.demon.co.uk/index.html
   comp.sys.atari.8bit
-
-This should get you started and provide you with numerous links to
-other web sites. 
 
 The ROM's for the Atari computers are, unfortunately, copyright. This
 port will attempt to down-load another freeware Atari emulator for DOS
 called PC Xformer 2.5 which contains copies of these ROM files. If you
 would like to take a further look at XF2.5 you should find it in your
-distfiles directory (if it successfully down-loaded :->). For more info
-on this emulator check out "http://www.halcyon.com/brasoft/".
-
-Share and enjoy,
-
-Joel...
-jsutton@webnet.com.au
+distfiles directory (if it successfully down-loaded :->).

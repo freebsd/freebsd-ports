@@ -1,5 +1,20 @@
---- Makefile.orig	Thu Jun 18 19:49:19 1998
-+++ Makefile	Thu Jun 18 20:00:02 1998
+--- Makefile.orig	Sun Feb  6 16:38:57 2000
++++ Makefile	Sun Feb  6 16:40:45 2000
+@@ -6,12 +6,12 @@
+ 
+ CC		= gcc
+ CPPFLAGS	= $(OTHER)
+-CFLAGS		= -c -O6 -DGNU_C
++CFLAGS+=	  -c -DGNU_C
+ LD		= gcc
+ LDFLAGS		=
+ LDLIBS		= -lm
+ 
+-PREFIX		= /usr/local
++PREFIX?=	  /usr/local
+ BIN_PATH	= ${PREFIX}/bin
+ LIB_PATH	= ${PREFIX}/lib
+ MAN_PATH	= ${PREFIX}/man
 @@ -246,7 +246,6 @@
  			platform.h
  
