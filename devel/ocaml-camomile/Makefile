@@ -25,6 +25,12 @@ USE_GMAKE=	yes
 
 PKGDEINSTALL=	${PKGINSTALL}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Coredump during build on amd64"
+.endif
+
 post-install:
 	@${FIND} ${PREFIX}/lib/ocaml/site-lib/${PORTNAME} -type f | \
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
@@ -35,4 +41,4 @@ post-install:
 	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
