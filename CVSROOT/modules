@@ -89,6 +89,7 @@ IPXrouted	src/usr.sbin/IPXrouted
 IglooFTP	ports/ftp/IglooFTP
 ImageMagick	ports/graphics/ImageMagick
 KnightCap	ports/games/KnightCap
+L-Breeder	ports/biology/L-Breeder
 LPRng		ports/sysutils/LPRng
 LPRngTool	ports/sysutils/LPRngTool
 LibraryReport	src/tools/LibraryReport
