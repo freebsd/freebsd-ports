@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.76 1997/06/18 12:18:47 tg Exp $
+# $Id: LEGAL,v 1.77 1997/07/01 07:02:37 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -69,6 +69,7 @@ mutt/* (without `e')    ports/mail/mutt.with_pgp ITAR export-controlled
 netscape-*		ports/net/netscape	Commercial product
 nte-1.5a23		ports/mbone/nte		Crypto; export-controlled
 pgp262s.zip		ports/security/pgp*	Various locality restrictions
+prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake101.zip		ports/games/quakeserver	Shareware
