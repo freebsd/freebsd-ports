@@ -71,6 +71,7 @@
     SUBDIR += oroborus
     SUBDIR += pager
     SUBDIR += pawm
+    SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid
     SUBDIR += piewm
