@@ -7,12 +7,12 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An utility port, installing hierarchy of common GNOME directories
 
 NO_BUILD=	yes
