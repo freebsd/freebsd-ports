@@ -17,12 +17,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of BEEP core and BEEP mapping for TCP in Java
 
-RUN_DEPENDS=	${LOCALBASE}/share/java/classes/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
+RUN_DEPENDS=	${JAVALIBDIR}/xercesImpl.jar:${PORTSDIR}/textproc/xerces-j
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
-
-NO_BUILD_DEPENDS_JAVA=	yes
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -30,15 +29,18 @@ PORTDOCS=	*
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/beep*.jar ${JAVAJARDIR}
-	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/example \
+	  && ${FIND} -s . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} -s . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	${INSTALL_DATA} ${WRKSRC}/lib/example.jar ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/example/* ${EXAMPLESDIR}
 
 post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${WRKSRC}/*.htm ${DOCSDIR}
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+	cd ${WRKSRC}/doc \
+	  && ${FIND} -s . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} -s . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
 .include <bsd.port.mk>
