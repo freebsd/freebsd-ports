@@ -10,6 +10,7 @@
 
 PORTNAME=	filtermail
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
@@ -20,12 +21,12 @@ MAINTAINER=	harry_newton@telinco.co.uk
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
-		iconv:${PORTSDIR}/converters/libiconv \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+		iconv:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
 
 MAN1=		filtermail.1
@@ -42,7 +43,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+BROKEN=		"Does not compile (bad C++ code)"
 .endif
 
 .include <bsd.port.post.mk>
