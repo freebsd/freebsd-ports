@@ -1,16 +1,16 @@
 # New ports collection makefile for:   libU77
 # Version required:    2.6
 # Date Created:                8 October 1998
-# Whom:                        Glenn Johnson
+# Whom:                        Glenn Johnson <gjohnson@nola.srrc.usda.gov>
 #
 # $FreeBSD$
 #
 
 DISTNAME=      libU77-2.6
 CATEGORIES=    devel
-MASTER_SITES=  http://www.maths.unsw.EDU.AU/~norris/src/
+MASTER_SITES=  http://flo.mech.eng.usyd.edu.au/norris/src/
 
-MAINTAINER=    gjohnson@nola.srrc.usda.gov
+MAINTAINER=    ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
