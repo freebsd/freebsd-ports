@@ -4,7 +4,7 @@
 # Whom:			asami
 # Original by:		roberto
 #
-# $Id: Makefile,v 1.4 1995/01/28 18:29:14 asami Exp $
+# $Id: Makefile,v 1.5 1995/02/11 13:49:36 asami Exp $
 #
 
 DISTNAME=	xfig.3.1.3
@@ -14,5 +14,8 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/xfig/ \
 	ftp://crl.dec.com/pub/X11/contrib/applications/drawing_tools/xfig/
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 USE_IMAKE=	yes
+MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
+		XAPPLOADDIR=${PREFIX}/lib/app-defaults  \
+		XFIGLIBDIR=${PREFIX}/lib/xfig  -f
 
 .include <bsd.port.mk>
