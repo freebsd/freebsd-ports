@@ -21,6 +21,7 @@ share/icons/hicolor/32x32/apps/krename.png
 share/icons/hicolor/48x48/apps/krename.png
 share/icons/locolor/16x16/apps/krename.png
 share/icons/locolor/32x32/apps/krename.png
+share/locale/bs/LC_MESSAGES/krename.mo
 share/locale/de/LC_MESSAGES/krename.mo
 share/locale/es/LC_MESSAGES/krename.mo
 share/locale/fr/LC_MESSAGES/krename.mo
