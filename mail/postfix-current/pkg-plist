@@ -37,6 +37,7 @@ libexec/postfix/pipe
 libexec/postfix/proxymap
 libexec/postfix/qmgr
 libexec/postfix/qmqpd
+libexec/postfix/scache
 libexec/postfix/showq
 libexec/postfix/smtp
 libexec/postfix/smtpd
@@ -195,6 +196,7 @@ bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/regexp_table.5.html
 %%PORTDOCS%%%%DOCSDIR%%/relocated.5.html
 %%PORTDOCS%%%%DOCSDIR%%/sendmail.1.html
+%%PORTDOCS%%%%DOCSDIR%%/scache.8.html
 %%PORTDOCS%%%%DOCSDIR%%/showq.8.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-sink.1.html
 %%PORTDOCS%%%%DOCSDIR%%/smtp-source.1.html
