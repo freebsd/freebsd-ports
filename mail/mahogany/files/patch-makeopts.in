@@ -1,0 +1,17 @@
+--- makeopts.in.orig	Sat Oct  4 23:36:51 2003
++++ makeopts.in	Sat Oct  4 23:38:06 2003
+@@ -108,11 +108,11 @@
+ # Directory in which to install library files.
+ DATADIR = $(DESTDIR)/share/Mahogany
+ # where to install docs
+-DOCDIR = $(DATADIR)/doc
++DOCDIR = $(DESTDIR)/share/doc/Mahogany
+ 
+ # for the dynamic linker, better than using -rpath
+-LD_RUN_PATH=$(DATADIR)/$(CANONICAL_HOST)/lib
+-MODULEDIR=$(DATADIR)/$(CANONICAL_HOST)/modules
++LD_RUN_PATH=$(DESTDIR)/lib
++MODULEDIR=$(DESTDIR)/libexec/Mahogany/modules
+ 
+ LINK = $(CXX)
+ 

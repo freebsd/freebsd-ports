@@ -1,0 +1,19 @@
+--- src/Makefile.orig	Sat Oct  4 23:45:28 2003
++++ src/Makefile	Sat Oct  4 23:47:49 2003
+@@ -139,14 +139,8 @@
+ 	$(RM) $(MOBJS:.o=.d) $(MSOS:.so=.d)
+ 
+ install:
+-	$(INSTALL_PROGRAM) $(INSTALL_OPTIONS) M $(DATADIR)/$(CANONICAL_HOST)/bin
+-	if test -f libM.so; \
+-	then $(INSTALL_PROGRAM) libM.so $(DATADIR)/$(CANONICAL_HOST)/lib; \
+-	fi
+-	$(RM) -f $(BINDIR)/M $(DATADIR)/bin/M
+-	ln -f -s ../share/Mahogany/$(CANONICAL_HOST)/bin/M $(BINDIR)/M
+-	$(RM) $(BINDIR)/mahogany
+-	ln -f -s ../share/Mahogany/$(CANONICAL_HOST)/bin/M $(BINDIR)/mahogany
++	${INSTALL_PROGRAM} ${INSTALL_OPTIONS} M ${BINDIR}
++	ln -f -s ${BINDIR}/M ${BINDIR}/mahogany
+ ifeq ($(USE_MODULES),dynamic)
+ 	$(INSTALL) -d $(MODULEDIR)
+ 	set -e $(MSOS); while test $$# -ge 1; \
