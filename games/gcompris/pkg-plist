@@ -9,8 +9,8 @@ share/gcompris/data/wordsgame/wordslevel2.fr
 share/gcompris/data/wordsgame/wordslevelmax.en
 share/gcompris/data/wordsgame/wordslevelmax.es
 share/gcompris/data/wordsgame/wordslevelmax.fr
+share/gcompris/data/wordsgame/wordslevelmax.nl
 share/gnome/apps/Games/gcompris.desktop
-share/gnome/games/gcompris.scores
 share/gnome/pixmaps/gcompris/animals/baby-elephant.png
 share/gnome/pixmaps/gcompris/animals/baby-gorilla.png
 share/gnome/pixmaps/gcompris/animals/bat.png
@@ -54,15 +54,27 @@ share/gnome/pixmaps/gcompris/animals/swallowtail-butterfly.png
 share/gnome/pixmaps/gcompris/animals/tiger-leaping.png
 share/gnome/pixmaps/gcompris/animals/trout-1.png
 share/gnome/pixmaps/gcompris/animals/turkey.png
+share/gnome/pixmaps/gcompris/buttons/bad.png
+share/gnome/pixmaps/gcompris/buttons/button.png
+share/gnome/pixmaps/gcompris/buttons/home.png
+share/gnome/pixmaps/gcompris/buttons/ok.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice1.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice2.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice3.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice4.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice5.png
 share/gnome/pixmaps/gcompris/dice/gnome-dice6.png
+share/gnome/pixmaps/gcompris/gameicons/algebragame.png
+share/gnome/pixmaps/gcompris/gameicons/clickgame.png
+share/gnome/pixmaps/gcompris/gameicons/gletters.png
+share/gnome/pixmaps/gcompris/gameicons/smallnumbers.png
+share/gnome/pixmaps/gcompris/gameicons/wordsgame.png
 share/gnome/pixmaps/gcompris/gcompris-about.png
 share/gnome/pixmaps/gcompris/gcompris-bg.png
 share/gnome/pixmaps/gcompris/gcompris-init.png
+share/gnome/pixmaps/gcompris/letters/*.png
+share/gnome/pixmaps/gcompris/letters/+.png
+share/gnome/pixmaps/gcompris/letters/-.png
 share/gnome/pixmaps/gcompris/letters/0.png
 share/gnome/pixmaps/gcompris/letters/1.png
 share/gnome/pixmaps/gcompris/letters/2.png
@@ -73,6 +85,8 @@ share/gnome/pixmaps/gcompris/letters/6.png
 share/gnome/pixmaps/gcompris/letters/7.png
 share/gnome/pixmaps/gcompris/letters/8.png
 share/gnome/pixmaps/gcompris/letters/9.png
+share/gnome/pixmaps/gcompris/letters/:.png
+share/gnome/pixmaps/gcompris/letters/?.png
 share/gnome/pixmaps/gcompris/letters/A.png
 share/gnome/pixmaps/gcompris/letters/B.png
 share/gnome/pixmaps/gcompris/letters/C.png
@@ -131,10 +145,15 @@ share/gnome/sounds/gcompris/crash.wav
 share/gnome/sounds/gcompris/gobble.wav
 share/gnome/sounds/gcompris/laughter.wav
 share/gnome/sounds/gcompris/life.wav
+share/locale/es/LC_MESSAGES/gcompris.mo
 share/locale/fr/LC_MESSAGES/gcompris.mo
+share/locale/it/LC_MESSAGES/gcompris.mo
+share/locale/nl/LC_MESSAGES/gcompris.mo
 @dirrm share/gnome/sounds/gcompris
 @dirrm share/gnome/pixmaps/gcompris/letters
+@dirrm share/gnome/pixmaps/gcompris/gameicons
 @dirrm share/gnome/pixmaps/gcompris/dice
+@dirrm share/gnome/pixmaps/gcompris/buttons
 @dirrm share/gnome/pixmaps/gcompris/animals
 @dirrm share/gnome/pixmaps/gcompris
 @dirrm share/gcompris/data/wordsgame
