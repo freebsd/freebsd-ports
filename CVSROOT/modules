@@ -1793,6 +1793,7 @@ eshell-emacs20	ports/editors/eshell-emacs20
 esmtp		ports/mail/esmtp
 esound		ports/audio/esound
 est		ports/sysutils/est
+estctrl		ports/sysutils/estctrl
 estic		ports/misc/estic
 esvn		ports/devel/esvn
 et-aspell	ports/textproc/et-aspell
