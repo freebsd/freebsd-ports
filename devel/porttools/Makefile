@@ -15,7 +15,8 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
-		sudo:${PORTSDIR}/security/sudo
+		sudo:${PORTSDIR}/security/sudo \
+		newfile:${PORTSDIR}/devel/newfile
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-docs
