@@ -50,6 +50,7 @@ MYSQL		"MySQL database support" ${WITH_MYSQL:-OFF} \
 NCURSES		"ncurses support (CLI only)" ${WITH_NCURSES:-OFF} \
 OPENLDAP	"OpenLDAP support" ${WITH_OPENLDAP:-OFF} \
 OPENSSL		"OpenSSL support" ${WITH_OPENSSL:-OFF} \
+ORACLE		"Oracle support" ${WITH_ORACLE:-OFF} \
 PCNTL		"pcntl support (CLI only)" ${WITH_PCNTL:-OFF} \
 PCRE		"Perl Compatible Regular Expression support" ${WITH_PCRE:-OFF} \
 PDFLIB		"PDFlib support" ${WITH_PDFLIB:-OFF} \

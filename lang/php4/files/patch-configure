@@ -1,6 +1,120 @@
---- configure.orig	Thu May  1 23:30:59 2003
-+++ configure	Fri May  2 15:59:58 2003
-@@ -70925,29 +70925,6 @@
+--- configure.orig	Wed May 28 14:36:29 2003
++++ configure	Sat Jun  7 15:37:45 2003
+@@ -54106,8 +54106,8 @@
+   
+   echo $ac_n "checking Oracle version""... $ac_c" 1>&6
+ echo "configure:54109: checking Oracle version" >&5
+-  if test -s "$ORACLE_DIR/orainst/unix.rgs"; then
+-  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/orainst/unix.rgs | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
++  if test -s "$ORACLE_DIR/ocommon/install/partial.prd"; then
++  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/ocommon/install/partial.prd | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
+ 	test -z "$ORACLE_VERSION" && ORACLE_VERSION=7.3
+   elif test -f $ORACLE_DIR/lib/libclntsh.$SHLIB_SUFFIX_NAME.9.0; then
+     ORACLE_VERSION=9.0
+@@ -56370,6 +56370,102 @@
+ 	    
+ 
+   if test "$ext_shared" = "yes"; then
++    ORACLE_SHARED_LIBADD="-lwrap $ORACLE_SHARED_LIBADD"
++    if test -n "$ORACLE_DIR/lib"; then
++      
++  if test "$ORACLE_DIR/lib" != "/usr/lib"; then
++    
++  if test -z "$ORACLE_DIR/lib" || echo "$ORACLE_DIR/lib" | grep '^/' >/dev/null ; then
++    ai_p=$ORACLE_DIR/lib
++  else
++    
++    ep_dir="`echo $ORACLE_DIR/lib|sed 's%/*[^/][^/]*/*$%%'`"
++    
++    ep_realdir="`(cd \"$ep_dir\" && pwd)`"
++    ai_p="$ep_realdir/`basename \"$ORACLE_DIR/lib\"`"
++  fi
++
++    
++      if test "$ext_shared" = "yes"; then
++        ORACLE_SHARED_LIBADD="$ld_runpath_switch$ai_p -L$ai_p $ORACLE_SHARED_LIBADD"
++      else
++        
++  
++  
++  unique=`echo $ai_p|sed 's/[^a-zA-Z0-9]/_/g'`
++  
++  cmd="echo $ac_n \"\$LIBPATH$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBPATH$unique=set"
++    
++    test -n "$ld_runpath_switch" && LDFLAGS="$LDFLAGS $ld_runpath_switch$ai_p"
++    LDFLAGS="$LDFLAGS -L$ai_p"
++    PHP_RPATHS="$PHP_RPATHS $ai_p"
++  
++  fi
++
++
++      fi
++    
++  fi
++
++    fi
++  else
++    
++
++  if test -n "$ORACLE_DIR/lib"; then
++    
++  if test "$ORACLE_DIR/lib" != "/usr/lib"; then
++    
++  if test -z "$ORACLE_DIR/lib" || echo "$ORACLE_DIR/lib" | grep '^/' >/dev/null ; then
++    ai_p=$ORACLE_DIR/lib
++  else
++    
++    ep_dir="`echo $ORACLE_DIR/lib|sed 's%/*[^/][^/]*/*$%%'`"
++    
++    ep_realdir="`(cd \"$ep_dir\" && pwd)`"
++    ai_p="$ep_realdir/`basename \"$ORACLE_DIR/lib\"`"
++  fi
++
++    
++      
++  
++  
++  unique=`echo $ai_p|sed 's/[^a-zA-Z0-9]/_/g'`
++  
++  cmd="echo $ac_n \"\$LIBPATH$unique$ac_c\""
++  if test -n "$unique" && test "`eval $cmd`" = "" ; then
++    eval "LIBPATH$unique=set"
++    
++    test -n "$ld_runpath_switch" && LDFLAGS="$LDFLAGS $ld_runpath_switch$ai_p"
++    LDFLAGS="$LDFLAGS -L$ai_p"
++    PHP_RPATHS="$PHP_RPATHS $ai_p"
++  
++  fi
++
++
++    
++  fi
++
++  fi
++  
++  
++  case wrap in
++  c|c_r|pthread*) ;;
++  *) 
++      LIBS="-lwrap $LIBS" 
++   ;;
++  esac
++
++
++
++
++  fi
++
++
++	    
++
++  if test "$ext_shared" = "yes"; then
+     ORACLE_SHARED_LIBADD="-lnlsrtl3 $ORACLE_SHARED_LIBADD"
+     if test -n "$ORACLE_DIR/lib"; then
+       
+@@ -70911,29 +71007,6 @@
    else
      
    
@@ -30,7 +144,7 @@
    case ct in
    c|c_r|pthread*) ;;
    *) 
-@@ -70971,52 +70948,7 @@
+@@ -70957,52 +71030,7 @@
  
      
    
@@ -84,7 +198,7 @@
    
      
    save_old_LDFLAGS=$LDFLAGS
-@@ -71086,37 +71018,6 @@
+@@ -71072,37 +71100,6 @@
  
      
    
@@ -122,7 +236,7 @@
  fi
  
    
-@@ -84050,10 +83951,7 @@
+@@ -84033,10 +84030,7 @@
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
  all_targets='$(OVERALL_TARGET) $(PHP_MODULES) $(PHP_CLI_TARGET)'
