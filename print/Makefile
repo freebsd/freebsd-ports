@@ -92,6 +92,7 @@
     SUBDIR += kcdlabel
     SUBDIR += kover
     SUBDIR += latex
+    SUBDIR += latex-beamer
     SUBDIR += latex-pgf
     SUBDIR += latex-xcolor
     SUBDIR += latex2rtf

@@ -1,0 +1,6 @@
+The beamer class is a LaTeX class that allows you to create a beamer
+presentation. It can also be used to create slides.  It behaves similarly
+to other packages like Prosper, but has the advantage that it works
+together directly with pdflatex, but also with dvips.
+
+WWW: http://latex-beamer.sourceforge.net/
