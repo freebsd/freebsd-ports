@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	. old-versions
 
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An X11/GTK network analyzer/capture tool
+FORBIDDEN=	http://www.vuxml.org/freebsd/cdf18ed9-7f4a-11d8-9645-0020ed76ef5a.html
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
