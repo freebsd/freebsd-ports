@@ -3,6 +3,7 @@ lib/X11/app-defaults/Tgif
 lib/X11/ja_JP.EUC/app-defaults/Tgif
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-ps2epsi.sym
+lib/X11/tgif/eq4-epstool.sym
 lib/X11/tgif/eq4.sym
 lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
