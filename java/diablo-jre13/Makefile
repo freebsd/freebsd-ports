@@ -33,7 +33,7 @@ RUN_DEPENDS+=   ${X11BASE}/lib/X11/fonts/webfonts/fonts.dir:${PORTSDIR}/x11-font
 RUN_DEPENDS+=   ${LOCALBASE}/share/fonts/TrueType/arphic:${PORTSDIR}/chinese/arphicttf
 .endif
 
-NO_CDROM=	"License doesn't allow distribution with fee"
+RESTRICTED=	"License doesn't allow distribution with fee"
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
