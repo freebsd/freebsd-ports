@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libcharset/configure
 CONFIGURE_ARGS=	--enable-static
 INSTALLS_SHLIB=	yes
 
