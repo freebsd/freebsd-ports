@@ -569,6 +569,7 @@
     SUBDIR += oaf
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-classes
+    SUBDIR += ocaml-equeue
     SUBDIR += ocaml-extlib
     SUBDIR += ocaml-findlib
     SUBDIR += ocaml-pcre

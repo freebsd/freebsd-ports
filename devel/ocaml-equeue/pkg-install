@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+  echo "${PKG_PREFIX}/lib/ocaml/site-lib/shell" >> ${PKG_PREFIX}/lib/ocaml/ld.conf
+  if test -d ${PKG_PREFIX}/lib/ocaml/site-lib/equeue-tcl; then
+    echo "${PKG_PREFIX}/lib/ocaml/site-lib/equeue-tcl" >> ${PKG_PREFIX}/lib/ocaml/ld.conf
+  fi
+elif [ "$2" = "DEINSTALL" ]; then
+  TMPFILE=`mktemp ${PKG_PREFIX}/lib/ocaml/ld.conf.XXX` || exit 1
+  cp ${PKG_PREFIX}/lib/ocaml/ld.conf ${TMPFILE}
+  grep -v "shell" ${TMPFILE} | grep -v "equeue-tcl" > ${PKG_PREFIX}/lib/ocaml/ld.conf
+  rm -f ${TMPFILE}
+fi
