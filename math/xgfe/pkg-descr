@@ -1,4 +1,2 @@
 An X11-based front-end for Gnuplot, written in C++ with the
 Qt library.
-
-WWW: http://www2.msstate.edu/~dmi1/xgfe/xgfe.html
