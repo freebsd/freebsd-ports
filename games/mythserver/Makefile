@@ -9,7 +9,7 @@ PORTNAME=	mythserver
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://support.bungie.com/ftp/pub/win/misc/
+MASTER_SITES=	http://projectmagma.net/files/os/
 DISTNAME=	metaserver2open
 
 MAINTAINER=	ports@FreeBSD.org
