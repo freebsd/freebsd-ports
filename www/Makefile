@@ -51,6 +51,7 @@
     SUBDIR += httperf
     SUBDIR += hypermail
     SUBDIR += ijb
+    SUBDIR += indexme
     SUBDIR += jesred
     SUBDIR += kdreamsite
     SUBDIR += libghttp
