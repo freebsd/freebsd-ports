@@ -1,6 +1,6 @@
 --- Makefile.static.in.orig	Thu Oct 24 03:34:40 2002
 +++ Makefile.static.in	Sat Oct 26 01:55:17 2002
-@@ -39,15 +39,15 @@
+@@ -39,15 +39,16 @@
  	mkdir -p $(bindir)
  	mkdir -p $(mandir)/man1
  	mkdir -p $(sharedir)
@@ -9,6 +9,7 @@
 -	cp pfaedit/pfaedit-*.ui $(sharedir)
 +	${BSD_INSTALL_PROGRAM} pfaedit/pfaedit $(bindir)
 +	${BSD_INSTALL_PROGRAM} pfaedit/sfddiff $(bindir)
++	${BSD_INSTALL_PROGRAM} pfaedit/acorn2sfd $(bindir)
 +	${BSD_INSTALL_DATA} pfaedit/pfaedit-*.ui $(sharedir)
  #The next line will fail for most installs. If you have downloaded the cidmaps
  # this will install them. If you haven't it won't. You only need the cidmaps
