@@ -29,20 +29,23 @@ MakeWorkingDirectory() {
 }
 
 conf=@prefix@/etc/ndtpd.conf
+ndtpd=@prefix@/sbin/ndtpd
+ndtpcheck=@prefix@/sbin/ndtpcheck
+ndtpcontrol=@prefix@/sbin/ndtpcontrol
 
-ndtpcheck -c ${conf} || exit
+${ndtpcheck} -c ${conf} || exit
 
 case "${command}" in
 start)
     MakeWorkingDirectory
 
     if [ "${standalone}" = YES ]; then
-	@prefix@/sbin/ndtpd && echo -n " ndtpd"
+	${ndtpd} && echo -n " ndtpd"
     fi
     ;;
 stop)
     if [ "${standalone}" = YES ]; then
-	@prefix@/sbin/ndtpcontrol terminate && echo -n " ndtpd"
+	${ndtpcontrol} terminate && echo -n " ndtpd"
     fi
     ;;
 *)
