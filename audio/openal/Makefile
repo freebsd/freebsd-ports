@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20030125
+PORTVERSION=	20030524
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
-		http://www.smluc.org/~erik/\
-		http://csc.smsu.edu/~greenwald/
+		http://www.smluc.org/~erik/
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A 3D positional spatialized sound library
 
-WRKSRC=		${WRKDIR}/${DISTNAME}fbsd/linux
+WRKSRC=		${WRKDIR}/${DISTNAME}/linux
 GNU_CONFIGURE=  yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
