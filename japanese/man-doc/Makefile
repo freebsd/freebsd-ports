@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.17 1998/01/12 02:48:47 steve Exp $
+# $Id: Makefile,v 1.18 1998/03/20 16:30:27 itojun Exp $
 #
 
 DISTNAME=	jpman-2.2
@@ -11,7 +11,7 @@ PKGNAME=	ja-man-doc-2.2
 CATEGORIES=	japanese
 DISTFILES=	# none
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	horikawa@jp.FreeBSD.org
 
 PREFIX?=	/usr
 NO_CHECKSUM=	yes
