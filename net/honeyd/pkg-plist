@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/honeyd
+bin/honeydctl
 include/honeyd/debug.h
 include/honeyd/hooks.h
 include/honeyd/plugins.h
@@ -12,7 +13,9 @@ lib/honeyd/libhoneyd.so
 %%DATADIR%%/nmap.prints
 %%DATADIR%%/xprobe2.conf
 %%DATADIR%%/config.sample
+%%DATADIR%%/config.ethernet
 %%DATADIR%%/pf.os
+%%DATADIR%%/scripts/mydoom.pl
 %%DATADIR%%/scripts/proxy.pl
 %%DATADIR%%/scripts/router-telnet.pl
 %%DATADIR%%/scripts/smtp.pl
