@@ -6,9 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	geekcode-1.5
+DISTNAME=	geekcode-1.7
 CATEGORIES= 	misc
-MASTER_SITES=	http://seymour.napalm.net/
+MASTER_SITES=	http://seymour.lazygenes.net/ \
+		http://www.zort.on.ca/software
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
