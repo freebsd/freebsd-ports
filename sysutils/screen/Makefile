@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 MAN1=		screen.1
 INFO=		screen
 
+NO_PACKAGE=	Tends to loop using 100% CPU when used from package - perhaps it hard-codes information about the build host
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
