@@ -7,10 +7,15 @@ share/applnk/Multimedia/More/kmplayer.desktop
 share/applnk/Multimedia/kmplayer.desktop
 share/apps/kmplayer/kmplayerpartui.rc
 share/apps/kmplayer/kmplayerui.rc
+share/config/kmplayerrc
 share/doc/HTML/en/kmplayer/common
 share/doc/HTML/en/kmplayer/index.cache.bz2
 share/doc/HTML/en/kmplayer/index.docbook
-share/config/kmplayerrc
+share/icons/locolor/16x16/apps/kmplayer.png
+share/icons/locolor/32x32/apps/kmplayer.png
+share/locale/hu/LC_MESSAGES/kmplayer.mo
 share/services/kmplayer_component.desktop
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @dirrm share/doc/HTML/en/kmplayer
 @dirrm share/apps/kmplayer
