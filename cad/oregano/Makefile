@@ -18,7 +18,7 @@ LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
-		libgnomeprintui
+		libgnomeui libgnomeprintui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
