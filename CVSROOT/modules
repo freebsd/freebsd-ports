@@ -8508,6 +8508,7 @@ pkfonts400	ports/print/pkfonts400
 pkfonts600	ports/print/pkfonts600
 pkg_cutleaves	ports/sysutils/pkg_cutleaves
 pkg_remove	ports/sysutils/pkg_remove
+pkg_rmleaves	ports/sysutils/pkg_rmleaves
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
 pkill		ports/sysutils/pkill
