@@ -16,10 +16,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jfieber@FreeBSD.org
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		nsgmls coredumps in static constructors
-.endif
-
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -29,6 +25,16 @@ CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+#	This is to deal with the broken assumption that Vector<T>::size_type, 
+#	String<T>::size_type is size_t as mentioned in doc/ideas.htm.  At least
+#	I believe this is what is preventing jade from linking on the Alpha.
+post-patch:
+	${PERL} -pi.size_t -e 's/<size_t>/<unsigned int>/g' `find ${WRKSRC} -type f`
+.endif
 
 pre-install:
 	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
@@ -49,4 +55,4 @@ post-install:
 		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|${PREFIX}/share/sgml/jade/catalog|;print "CATALOG \"${PREFIX}/share/sgml/jade/catalog\"\n" if eof;' ${PREFIX}/share/sgml/catalog; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
