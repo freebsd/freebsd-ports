@@ -33,7 +33,7 @@ upclient_precmd ()
 upclient_enable=NO
 upclient_flags=
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=upclient
 rcvar=$(set_rcvar)
