@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.53 1998/09/21 08:41:42 asami Exp $
+# $Id: Makefile,v 1.54 1998/09/21 08:54:23 asami Exp $
 #
 
 DISTNAME=       ImageMagick-4.0.9
@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
 		tiff34.1:${PORTSDIR}/graphics/tiff34 \
 		png.2:${PORTSDIR}/graphics/png \
-		jbig\\.1\\.:${PORTSDIR}/graphics/jbigkit \
+		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		ttf.2:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
@@ -36,10 +36,10 @@ MAN5=	quantize.5
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-lzw --enable-shared --with-perl=${PREFIX}/bin/perl5
+CONFIGURE_ARGS=	--enable-lzw --enable-shared --with-perl=${PERL5}
 USE_PERL5=	YES
 CONFIGURE_ENV=  LDFLAGS="$(LDFLAGS) -L${WRKSRC}/magick/.libs"
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
