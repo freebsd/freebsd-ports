@@ -1,18 +1,15 @@
 # New ports collection makefile for:	ScrollZ
-# Version required:	1.8i5
+# Version required:	1.8i6
 # Date created:		10 Aug 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ScrollZ-1.8i5-FreeBSD-3.2
-PKGNAME=	scrollz-1.8i5
+DISTNAME=	scrollz-18i6-fbsd-3.4
+PKGNAME=	scrollz-1.8i6
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.scrollz.net/pub/ScrollZ/ \
-		ftp://scrollz.unixpower.com/ScrollZ/ \
-		http://white.hole.org/Bins/ \
-		ftp://ftp.enlighte.nu/pub/ScrollZ/Bins/
+MASTER_SITES=	ftp://ns0.hole.org/pub/ScrollZ/Bins/
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	andrews@technologist.com
