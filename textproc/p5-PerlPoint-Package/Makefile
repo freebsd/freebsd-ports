@@ -33,6 +33,8 @@ MAN3=		PerlPoint::Anchors.3 \
 		PerlPoint::Tags::SDF.3
 
 .if !defined(NOPORTDOCS)
+PORTDOCS=	# suck all DOCSDIR
+
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc; ${FIND} . | ${CPIO} -padm ${DOCSDIR}
