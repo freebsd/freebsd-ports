@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Thu Apr  1 01:01:02 1999
++++ src/Makefile.in	Thu Feb  5 22:17:35 2004
+@@ -80,8 +80,8 @@
+ @DEVELMODE_TRUE@DEVELFLAGS =  -g -Wall
+ 
+ CLEANFILES = *~ .deps/*
+-CXXFLAGS =  $(GTK_CFLAGS) -DXLM_HOME=\"$(XLM_HOME)\" -DXLM_DB=\"$(XLM_DB)\" -DXLM_USER_DB=\"$(XLM_USER_DB)\" -DXLM_LIB=\"$(XLM_LIB)\"  -I../import $(DEVELFLAGS)
+-LDFLAGS =  $(GTK_LIBS)
++CXXFLAGS = @CXXFLAGS@ $(GTK_CFLAGS) -DXLM_HOME=\"$(XLM_HOME)\" -DXLM_DB=\"$(XLM_DB)\" -DXLM_USER_DB=\"$(XLM_USER_DB)\" -DXLM_LIB=\"$(XLM_LIB)\"  -I../import $(DEVELFLAGS)
++LDFLAGS = @LDFLAGS@ $(GTK_LIBS)
+ 
+ bin_PROGRAMS = xlogmaster
+ xlogmaster_SOURCES = xlogmaster.cc 	alert.cc 	audio.cc 	database.cc 	dialog.cc 	execute.cc 	file.cc 	logclass.cc 	menu.cc 	customize.cc 	watchdog.cc 	output.cc 

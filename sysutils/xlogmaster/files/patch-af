@@ -1,5 +1,5 @@
---- configure.orig	Wed Mar 31 08:00:59 1999
-+++ configure	Fri Feb 11 00:28:01 2000
+--- configure.orig	Thu Apr  1 01:00:59 1999
++++ configure	Thu Feb  5 22:01:46 2004
 @@ -860,7 +860,7 @@
  
  
@@ -9,12 +9,12 @@
  if test x${CXXFLAGS+set} = xset ; then
    :
  else
-@@ -2835,7 +2835,7 @@
- s%@host_os@%$host_os%g
- s%@LN_S@%$LN_S%g
- s%@GTK_CONFIG@%$GTK_CONFIG%g
--s%@GTK_CFLAGS@%$GTK_CFLAGS%g
-+s%@GTK_CFLAGS@%$CFLAGS $GTK_CFLAGS%g
- s%@GTK_LIBS@%$GTK_LIBS%g
- s%@CPP@%$CPP%g
- s%@NEED_LIBIMPORT_TRUE@%$NEED_LIBIMPORT_TRUE%g
+@@ -1874,7 +1874,7 @@
+ import_sources="$force_libimport"
+ rx_sources="$force_libimport"
+ 
+-for ac_func in getopt_long_only
++for ac_func in getopt_long
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1881: checking for $ac_func" >&5
