@@ -1,10 +1,3 @@
---- filter/Makefile.in.orig	Sat Aug 19 19:26:37 2000
-+++ filter/Makefile.in	Wed Aug 23 12:09:59 2000
-@@ -164,3 +164,3 @@
- 
--gladedir = $(prefix)/share/evolution/glade
-+gladedir = $(datadir)/evolution/glade
- glade_DATA = filter.glade
 --- mail/mail-crypto.c.orig	Fri Aug 11 15:27:12 2000
 +++ mail/mail-crypto.c	Wed Aug 23 11:17:44 2000
 @@ -189,7 +189,7 @@
