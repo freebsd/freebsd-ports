@@ -1,4 +1,5 @@
 bin/fastjar
+bin/grepjar
 %%PORTDOCS%%share/doc/fastjar/CHANGES
 %%PORTDOCS%%share/doc/fastjar/README
 %%PORTDOCS%%@dirrm share/doc/fastjar
