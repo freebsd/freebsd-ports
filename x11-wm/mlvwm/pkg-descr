@@ -1,24 +1,8 @@
 Mlvwm is a Macintosh like window manager.
 
-Execute:
-	mlvwm [-f config_file] [-d display_name] [-c] [-debug]
-
-	-f 	Specify the configuration file.
-	-d 	Change display on which mlvwm run
-	-c	Compatible mode. Change the window border to dot  line
-		when move or resize the window. This causes speed down.
-	-debug	Show debug message.
-
 Configuration:
 	Copy /usr/X11R6/lib/X11/mlvwm/system.mlvwmrc(default) to 
 	$HOME/.mlvwmrc . Please refer to the comment  in  that  sample
 	mlvwmrc.
 
-Send HUP signal to let mlvwm show debug message when it freezes. Please
-e-mail to the author with the debug information such as how  to  replay
-the freeze or when the freeze occurs.
-
-Author:
-	tak@bioele.nuee.nagoya-u.ac.jp
-------------------------------------------
-Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
+WWW: http://www2u.biglobe.ne.jp/~y-miyata/mlvwm.html

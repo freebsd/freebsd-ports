@@ -1,7 +1,7 @@
-*** sample_rc/Mlvwmrc.orig	Fri Dec  5 23:31:56 1997
---- sample_rc/Mlvwmrc	Fri Dec  5 23:33:38 1997
+*** sample_rc/Mlvwmrc.orig	Sat Jan 23 21:37:52 1999
+--- sample_rc/Mlvwmrc	Thu Sep 23 00:15:13 1999
 ***************
-*** 40,46 ****
+*** 52,58 ****
   Compatible
   
   # Set icon search path. It needs before "Style".
@@ -9,30 +9,28 @@
   IconMenuIcon label2.xpm
   
   # Balloon help Settings
---- 40,46 ----
+--- 52,58 ----
   Compatible
   
   # Set icon search path. It needs before "Style".
-! IconPath /usr/X11R6/lib/X11/mlvwm/pixmap:/home2/tak/bin/pixmap
+! IconPath %%PREFIX%%/lib/X11/pixmaps
   IconMenuIcon label2.xpm
   
   # Balloon help Settings
 ***************
-*** 68,75 ****
+*** 80,86 ****
   Menu Apple, Icon label1.xpm, Stick
   "About this Workstation..." NonSelect, Gray, Action About
   "" NonSelect
 ! "Terminal"	Icon mini-display.xpm, Action Exec "kterm" exec kterm -ls
-! "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
+  "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
   "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
   END
-  
---- 68,75 ----
+--- 80,86 ----
   Menu Apple, Icon label1.xpm, Stick
   "About this Workstation..." NonSelect, Gray, Action About
   "" NonSelect
 ! "Terminal"	Icon mini-display.xpm, Action Exec "xterm" exec xterm -ls
-! "Editor"  Action Exec "emacs" exec emacs, Icon mini-edit.xpm
+  "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
   "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
   END
-  

@@ -1,20 +1,19 @@
---- configure.h.orig	Fri Dec 18 17:59:21 1998
-+++ configure.h	Fri Dec 18 18:00:53 1998
-@@ -33,7 +33,7 @@
- #ifdef MlvwmLibDir
-     MLVWMLIBDIR = MlvwmLibDir
- #else
--    MLVWMLIBDIR = $(USRLIBDIR)/mlvwm
-+    MLVWMLIBDIR = $(USRLIBDIR)/X11/mlvwm
- #endif
- 
- #ifndef HasLocale
-@@ -74,7 +74,7 @@
- XCOMM            CDEBUGFLAGS = -g -Wall
- XCOMM            CDEBUGFLAGS = -g
- 
--ICONPATH = /usr/X11R6/include/pixmaps
-+ICONPATH = /usr/X11R6/include/X11/pixmaps
- 
- MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
- MLVWMLIBRARIES = $(Locale_LIBRARIES)
+*** configure.h.orig	Tue Jul 13 00:35:34 1999
+--- configure.h	Thu Sep 23 00:19:06 1999
+***************
+*** 74,80 ****
+  XCOMM            CDEBUGFLAGS = -g -Wall
+  XCOMM            CDEBUGFLAGS = -g
+  
+! ICONPATH = /usr/X11R6/include/pixmaps
+  
+  MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
+  MLVWMLIBRARIES = $(Locale_LIBRARIES)
+--- 74,80 ----
+  XCOMM            CDEBUGFLAGS = -g -Wall
+  XCOMM            CDEBUGFLAGS = -g
+  
+! ICONPATH = /usr/X11R6/include/X11/pixmaps
+  
+  MLVWMDEFINES = $(Locale_DEFINES) $(COMPATIBLE)
+  MLVWMLIBRARIES = $(Locale_LIBRARIES)
