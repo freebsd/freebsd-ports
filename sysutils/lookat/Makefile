@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lookat
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://staf.patat.org/downloads/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
@@ -15,17 +14,16 @@ DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Lookat is a program to view Un*x text files and manual pages
 
-MAN1=	  	lookat.1
-
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
+
+MAN1=		lookat.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-	's|/etc/lookat.conf|${PREFIX}/etc/lookat.conf|g' \
-		${WRKSRC}/${PORTNAME}.1
+	's|/etc/lookat.conf|${PREFIX}/etc/lookat.conf|g' ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/lookat \
