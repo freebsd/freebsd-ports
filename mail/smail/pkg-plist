@@ -24,7 +24,6 @@ libexec/smail/gleem
 libexec/smail/logsumm
 libexec/smail/makedb
 libexec/smail/mkaliases
-libexec/smail/mkaliases
 libexec/smail/mkdbm
 libexec/smail/mkhpath
 libexec/smail/mkline
@@ -36,6 +35,5 @@ libexec/smail/mkuuwho.awk
 libexec/smail/pathalias
 libexec/smail/pathmerge
 libexec/smail/savelog
-libexec/smail/smailbug
 libexec/smail/smailbug
 libexec/smail/unsharmap
