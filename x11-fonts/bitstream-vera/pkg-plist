@@ -13,9 +13,9 @@ etc/fonts/local.conf-vera
 %%FONTSDIR%%/VeraMono.ttf
 %%FONTSDIR%%/VeraSe.ttf
 %%FONTSDIR%%/VeraSeBd.ttf
-%%PORTDOCS%%share/doc/bitstream-vera/README.TXT
-%%PORTDOCS%%share/doc/bitstream-vera/RELEASENOTES.TXT
-%%PORTDOCS%%@dirrm share/doc/bitstream-vera
+%%PORTDOCS%%%%DOCSDIR%%/README.TXT
+%%PORTDOCS%%%%DOCSDIR%%/RELEASENOTES.TXT
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
 @exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true

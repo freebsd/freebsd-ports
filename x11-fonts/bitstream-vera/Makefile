@@ -7,6 +7,7 @@
 
 PORTNAME=	bitstream-vera
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+PREFIX?=	${X11BASE}
 NO_BUILD=	yes
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
