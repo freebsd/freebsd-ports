@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.3.5
+PORTVERSION=	0.9.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -20,8 +20,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 USE_PYTHON=	yes
 SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
-DOCS=		README.MySQLmodule MANIFEST README
-
+DOCS=		MANIFEST README doc/*.html
 
 do-configure:
 	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
@@ -30,14 +29,12 @@ do-build:
 	${SETUP_CMD} build
 
 do-install:
-	${SETUP_CMD} install
+	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/py-MySQLdb/examples
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/py-MySQLdb
+	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	@${INSTALL_MAN} \
-		${WRKSRC}/examples/* ${PREFIX}/share/doc/py-MySQLdb/examples
 .endif
 
 .include <bsd.port.mk>
