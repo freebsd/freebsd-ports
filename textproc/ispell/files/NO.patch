@@ -1,0 +1,36 @@
+*** inorsk/parse.y.org	Sun Feb  6 19:41:49 2000
+--- inorsk/parse.y	Sun Feb  6 19:42:58 2000
+***************
+*** 870,876 ****
+  				flagbit = toupper (flagbit);
+  #endif /* MASKBITS */
+  #if MASKBITS <= 64
+! 			    if (!isalpha (flagbit))
+  				yyerror (PARSE_Y_BAD_FLAG);
+  #endif /* MASKBITS */
+  			    flagbit = CHARTOBIT (flagbit);
+--- 870,876 ----
+  				flagbit = toupper (flagbit);
+  #endif /* MASKBITS */
+  #if MASKBITS <= 64
+! 			    if (flagbit < 'A' || flagbit > 'z')
+  				yyerror (PARSE_Y_BAD_FLAG);
+  #endif /* MASKBITS */
+  			    flagbit = CHARTOBIT (flagbit);
+***************
+*** 902,908 ****
+  				flagbit = toupper (flagbit);
+  #endif /* MASKBITS */
+  #if MASKBITS <= 64
+! 			    if (!isalpha (flagbit))
+  				yyerror (PARSE_Y_BAD_FLAG);
+  #endif /* MASKBITS */
+  			    flagbit = CHARTOBIT (flagbit);
+--- 902,908 ----
+  				flagbit = toupper (flagbit);
+  #endif /* MASKBITS */
+  #if MASKBITS <= 64
+! 			    if (flagbit < 'A' || flagbit > 'z')
+  				yyerror (PARSE_Y_BAD_FLAG);
+  #endif /* MASKBITS */
+  			    flagbit = CHARTOBIT (flagbit);

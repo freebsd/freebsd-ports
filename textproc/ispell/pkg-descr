@@ -4,9 +4,11 @@ corrections when it can figure them out.  Compared to UNIX spell, it
 is faster and much easier to use.  Ispell can also handle languages
 other than English.
 Included in this port are:
+	- British English
 	- French
 	- Brasilian
 	- German (old and new spelling)
+	- Norwegian
 	- Swedish 
 
 WWW: http://fmg-www.cs.ucla.edu/geoff/ispell.html
