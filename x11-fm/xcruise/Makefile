@@ -16,6 +16,7 @@ MAINTAINER=	sanpei@FreeBSD.org
 COMMENT=	Navigate through a three-dimensional view of a file system
 
 USE_IMAKE=	yes
+MAN1=		xcruiser.1
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/xcruise
