@@ -17,6 +17,8 @@ COMMENT=	State-event driven class extendible C++ script interpreter
 
 LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp
 
+BROKEN=		"Broken dependency"
+
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
