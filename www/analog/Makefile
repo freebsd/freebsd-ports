@@ -1,15 +1,21 @@
 # New ports collection makefile for: analog
-# Version required:	1.9.6
-# Date created:		9 June 1996
-# Whom:			jraynard
+# Version required:	1.92b1
+# Date created:		October 21st 1996
+# Whom:			jfitz
 #
-# $Id: Makefile,v 1.2 1996/08/04 14:09:28 jraynard Exp $
+# $Id: Makefile,v 1.3 1996/08/06 21:18:00 jfitz Exp $
 #
 
-DISTNAME=	analog.1.91.4
-PKGNAME=	analog-1.91.4
+DISTNAME=	analog.1.92.1
+PKGNAME=	analog-1.92.1
 CATEGORIES+=	www
-MASTER_SITES=	ftp://ftp.statslab.cam.ac.uk/pub/users/sret1/analog/
+MASTER_SITES=	http://www.statslab.cam.ac.uk/~sret1/ \
+		http://www.lightside.net/analog/ \
+		http://www.gamesdomain.com/analog/ \
+		http://www.monash.edu.au/mirror/analog/ \
+		http://www.gamesdomain.co.uk/analog/ \
+		ftp://download.netvision.net.il/pub/mirrors/analog/ \
+		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
 
 MAINTAINER=	jfitz@freebsd.org
 

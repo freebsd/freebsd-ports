@@ -10,3 +10,5 @@ share/analog/images/bar32.gif
 share/analog/images/bar4.gif
 share/analog/images/bar8.gif
 share/analog/images/html2.gif
+@dirrm share/analog/images
+@dirrm share/analog

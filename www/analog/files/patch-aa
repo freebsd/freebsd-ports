@@ -1,9 +1,9 @@
---- Makefile.orig	Sun Aug  4 09:19:11 1996
-+++ Makefile	Sun Aug  4 09:20:41 1996
+--- Makefile.orig	Wed Oct  9 09:46:19 1996
++++ Makefile	Mon Oct 21 20:37:22 1996
 @@ -2,7 +2,7 @@
  # Please read Readme.html, or http://www.statslab.cam.ac.uk/~sret1/analog/
  CC = gcc           # which compiler to use. NB Different compilers need
-                    # different CFLAGS, e.g., -O instead of -O2.
+ #                    different CFLAGS, e.g., -O instead of -O2.
 -CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
 +#CFLAGS = -O2       # options, e.g. for optimisation or ANSI compilation.
  DEFS =             # any of -DNOPIPES -DNODNS -DNODIRENT
@@ -18,14 +18,3 @@
  
  $(PROGRAM): $(OBJS) $(HEADERS) Makefile
  	$(CC) $(CFLAGS) $(OBJS) -o $(PROGRAM) $(LIBS)
---- analform.c.orig	Sat Jul 13 14:47:55 1996
-+++ analform.c	Sun Aug  4 09:16:42 1996
-@@ -11,7 +11,7 @@
- 
- /* You must change the next line to indicate where the analog program lives */
- 
--#define COMMAND "/usr/local/etc/httpd/analog/analog"
-+#define COMMAND "/usr/local/bin/analog"
- #define MAXARGLENGTH (2048)   /* should be plenty */
- #define OK (0)
- #define ERR (-1)
