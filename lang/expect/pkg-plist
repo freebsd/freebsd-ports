@@ -23,7 +23,6 @@ bin/xpstat
 include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
-include/tclRegexp.h
 include/tcldbg.h
 lib/expect5.31/pkgIndex.tcl
 lib/expect5.31/libexpect531.a

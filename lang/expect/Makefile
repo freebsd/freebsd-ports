@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	expect
-PORTVERSION=	5.31.5
+PORTVERSION=	5.31.8
 CATEGORIES=	lang tcl82 tk82
 MASTER_SITES=	http://expect.nist.gov/
 DISTNAME=	expect
