@@ -1475,6 +1475,7 @@ eterm-bg	ports/graphics/eterm-bg
 etherape	ports/net/etherape
 etherboot	ports/net/etherboot
 ethereal	ports/net/ethereal
+etktab		ports/audio/etktab
 etlfonts	ports/x11-fonts/etlfonts
 ettercap	ports/net/ettercap
 euchre		ports/games/euchre
