@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	2.01a
+PORTVERSION=	2.01b
 CATEGORIES=	shells
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
 		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
@@ -14,9 +14,12 @@ DISTNAME=	FD-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 MANLANG=	"" ja
 MAN1=		fd.1
 MAKE_ENV=	LANG=ja
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 DOCS_EN=	FAQ.eng \
 		LICENSES.eng \
@@ -29,6 +32,9 @@ DOCS_JA=	FAQ \
 		README \
 		TECHKNOW \
 		ToAdmin
+
+post-patch:
+	${REINPLACE_CMD} -E -e 's|^(#define[[:space:]]+EXTENDCCOPT[[:space:]]+)"-O"$$|\1 "${CFLAGS}"|' ${WRKSRC}/machine.h
 
 post-install:
 	@${ECHO} "Updating /etc/shells"
