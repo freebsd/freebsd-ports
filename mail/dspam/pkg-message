@@ -1,7 +1,16 @@
 --------------------------------------------------------------------
 
- See the file %%PREFIX%%/share/doc/dspam/README for advice about
+ See the file %%DOCSDIR%%/README for advice about
  how to configure DSPAM with your MTA. Examples are provided for
  sendmail, exim and other popular MTAs.
+%%MYSQL%%
+%%MYSQL%% See %%DOCSDIR%%/mysql/README
+%%MYSQL%% for instructions on how to configure MySQL
+%%MYSQL%% for use with DSPAM.
+%%MYSQL%%
+%%MYSQL%% %%EXAMPLESDIR%%/mysql.data
+%%MYSQL%% contains an example configuration for use with MySQL.
+%%MYSQL%% Edit and install as
+%%MYSQL%% %%LOCALBASE%%/etc/dspam/mysql.data
 
 --------------------------------------------------------------------
