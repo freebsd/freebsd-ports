@@ -171,6 +171,7 @@
     SUBDIR += p5-Mail-Verify
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += pantomime
+    SUBDIR += pantomime-ssl
     SUBDIR += pathalias
     SUBDIR += perdition
     SUBDIR += pflogsumm
