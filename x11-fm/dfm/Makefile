@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dfm
-PORTVERSION= 	0.99.6
+PORTVERSION= 	0.99.8
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://linux.tucows.com/files/x11/file/
+MASTER_SITES=   http://dfm.online.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,7 +22,8 @@ USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib"		
+		LIBS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=	--disable-gtktest --disable-imlibtest
 
 MAN1=		dfm.1x
