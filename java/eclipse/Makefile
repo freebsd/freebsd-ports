@@ -19,6 +19,7 @@ COMMENT=	An open extensible IDE for anything and nothing in particular
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+=	${EXTRACT_DEPENDS}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
