@@ -1,0 +1,4 @@
+recmpeg is a simple video encoder, based on libfame, which compresses raw
+video sequences to MPEG video.
+
+WWW: http://fame.sourceforge.net/
