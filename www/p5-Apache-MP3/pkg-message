@@ -1,0 +1,5 @@
+To read the manual on how to set up Apache::MP3, run:
+
+    % perldoc Apache::MP3
+
+It contains information on what you need to put in your httpd.conf.
