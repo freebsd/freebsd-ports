@@ -2,7 +2,6 @@ bin/backup-conduit-control-applet
 bin/email-conduit-control-applet
 bin/expense-conduit-control-applet
 bin/file-conduit-control-applet
-bin/gnome-pilot-config
 bin/gnome-pilot-make-password
 bin/gpilot-install-file
 bin/gpilotd
@@ -30,21 +29,11 @@ include/gpilotd/gpilotd-app.h
 include/gpilotd/gpilotd-conduit-mgmt.h
 include/libgpilotdCM/gnome-pilot-conduit-config.h
 include/libgpilotdCM/gnome-pilot-conduit-management.h
-lib/gnome-pilot/conduits/libbackup_conduit.a
 lib/gnome-pilot/conduits/libbackup_conduit.so
-lib/gnome-pilot/conduits/libbackup_conduit.so.0
-lib/gnome-pilot/conduits/libemail_conduit.a
 lib/gnome-pilot/conduits/libemail_conduit.so
-lib/gnome-pilot/conduits/libemail_conduit.so.0
-lib/gnome-pilot/conduits/libexpense_conduit.a
 lib/gnome-pilot/conduits/libexpense_conduit.so
-lib/gnome-pilot/conduits/libexpense_conduit.so.0
-lib/gnome-pilot/conduits/libfile_conduit.a
 lib/gnome-pilot/conduits/libfile_conduit.so
-lib/gnome-pilot/conduits/libfile_conduit.so.0
-lib/gnome-pilot/conduits/libmemo_file_conduit.a
 lib/gnome-pilot/conduits/libmemo_file_conduit.so
-lib/gnome-pilot/conduits/libmemo_file_conduit.so.0
 lib/libgpilotd.a
 lib/libgpilotd.so
 lib/libgpilotd.so.0
@@ -92,6 +81,7 @@ share/locale/ja/LC_MESSAGES/gnome-pilot.mo
 share/locale/no/LC_MESSAGES/gnome-pilot.mo
 share/locale/pl/LC_MESSAGES/gnome-pilot.mo
 share/locale/pt_PT/LC_MESSAGES/gnome-pilot.mo
+share/locale/ru/LC_MESSAGES/gnome-pilot.mo
 share/locale/sv/LC_MESSAGES/gnome-pilot.mo
 share/locale/uk/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/gob
