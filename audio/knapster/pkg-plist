@@ -6,8 +6,7 @@ share/doc/HTML/en/knapster/index-4.html
 share/doc/HTML/en/knapster/index-5.html
 share/doc/HTML/en/knapster/index-6.html
 share/doc/HTML/en/knapster/index.html
-share/doc/HTML/en/knapster/logotp3.gif.
 share/icons/mini/knapster.xpm
 share/icons/knapster.xpm
-share/applnk/Internet/knapster.kdelnk
+share/applnk/Applications/knapster.kdelnk
 @dirrm share/doc/HTML/en/knapster
