@@ -10,6 +10,7 @@ lib/ROX-Lib2/Help/findrox.pyo
 lib/ROX-Lib2/Help/python/rox.Menu.html
 lib/ROX-Lib2/Help/python/rox.OptionsBox.html
 lib/ROX-Lib2/Help/python/rox.applet.html
+lib/ROX-Lib2/Help/python/rox.basedir.html
 lib/ROX-Lib2/Help/python/rox.choices.html
 lib/ROX-Lib2/Help/python/rox.debug.html
 lib/ROX-Lib2/Help/python/rox.filer.html
@@ -38,6 +39,9 @@ lib/ROX-Lib2/python/rox/__init__.pyo
 lib/ROX-Lib2/python/rox/applet.py
 lib/ROX-Lib2/python/rox/applet.pyc
 lib/ROX-Lib2/python/rox/applet.pyo
+lib/ROX-Lib2/python/rox/basedir.py
+lib/ROX-Lib2/python/rox/basedir.pyc
+lib/ROX-Lib2/python/rox/basedir.pyo
 lib/ROX-Lib2/python/rox/choices.py
 lib/ROX-Lib2/python/rox/choices.pyc
 lib/ROX-Lib2/python/rox/choices.pyo
