@@ -1,0 +1,43 @@
+bin/GP
+lib/GP/filters/DVI-Direct
+lib/GP/filters/Image-Direct
+lib/GP/filters/ImageMagick
+lib/GP/filters/TEXT-Direct
+lib/GP/filters/a2ps
+lib/GP/filters/a2ps-j
+lib/GP/filters/dvips
+lib/GP/filters/dvi2ps-j
+lib/GP/filters/jdvi2kps
+lib/GP/icons/printer.xbm
+lib/GP/icons/exit.xbm
+lib/GP/filetype
+lib/GP/printer
+share/doc/GP/README
+share/doc/GP/COPYING
+share/doc/GP/Config
+share/doc/GP/Filters_conf
+share/doc/GP/History
+share/doc/GP/Install
+share/doc/GP/Manual/GP.gif
+share/doc/GP/Manual/index.html
+share/doc/GP/Manual/README
+share/doc/GP/Manual/English/bug_info.html
+share/doc/GP/Manual/English/future.html
+share/doc/GP/Manual/English/intro.html
+share/doc/GP/Manual/English/option.html
+share/doc/GP/Manual/English/print.html
+share/doc/GP/Manual/English/queue.html
+share/doc/GP/Manual/English/queue_remove.html
+share/doc/GP/Manual/English/start.html
+share/doc/GP/Manual/English/image/Remove.gif
+share/doc/GP/Manual/English/image/Queue.gif
+share/doc/GP/Manual/English/image/Print.gif
+share/doc/GP/Manual/English/image/Option.gif
+share/doc/GP/Manual/English/image/GPicon.gif
+@dirrm lib/GP/filters
+@dirrm lib/GP/icons
+@dirrm lib/GP
+@dirrm share/doc/GP/Manual/English/image
+@dirrm share/doc/GP/Manual/English
+@dirrm share/doc/GP/Manual
+@dirrm share/doc/GP

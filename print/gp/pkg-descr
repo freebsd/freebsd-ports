@@ -1,0 +1,18 @@
+GP (GUI Printer) is a printing tool on X-Window with Tcl/Tk  
+interactively without any attention to the filetypes or the  
+printernames in the printcap.                                
+                                                             
+  Using a PostScript printer on GP, you have to name the     
+printer "ps" in the printcap.                                
+                                                             
+To change the printer information or the associated printer  
+with filetypes, edit the following two files:                
+                                                             
+        /usr/local/lib/GP/printer                            
+        /usr/local/lib/GP/filetype                           
+                                                             
+  For more information, see the files in the                 
+"/usr/local/share/doc/GP"  directory.                        
+                                                             
+  Written by UEDA Hiroyuki (hueda@kamome.or.jp),             
+                                 KAMOME Internet, JAPAN      

@@ -1,0 +1,24 @@
+*** Makefile~	Sun Feb  1 20:48:49 1998
+--- Makefile	Mon Feb  2 16:47:20 1998
+***************
+*** 13,19 ****
+  BINDIR = $(PREFIX)/bin
+  LIBDIR = $(PREFIX)/lib/GP
+  
+! FILTERS        = `ls filters`
+  FILTERS.SAMPLE = `ls filters.sample`
+  
+  ICONS   = printer.xbm exit.xbm
+--- 13,24 ----
+  BINDIR = $(PREFIX)/bin
+  LIBDIR = $(PREFIX)/lib/GP
+  
+! .if (${LANGUAGE} == "Japanese")
+! FILTERS	=a2ps-j dvi2ps-j ImageMagick
+! .else
+! FILTERS	=a2ps dvips ImageMagick
+! .endif
+! 
+  FILTERS.SAMPLE = `ls filters.sample`
+  
+  ICONS   = printer.xbm exit.xbm
