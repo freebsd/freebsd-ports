@@ -1,9 +1,9 @@
 Streaming Quicktime server for FreeBSD.
 
-Elsa is a standards-based Quicktime server
+TeraCast is a standards-based Quicktime server
 based on the RTSP (RFC 2326) and RTP (RFC 1889)
-standards.  This version is a beta which is
-currently free for non-commercial use.
+standards.  This version is now out of beta and
+is currently free for non-commercial use.
 
 The server can serve media from QuickTime 4.0
 "hinted" files which transparently support
@@ -13,4 +13,4 @@ MP3, WAV, AU, etc.).
 WWW: http://www.entera.com
 
 -Chris D. Faulhaber
-jedgar@fxp.org
+ <jedgar@FreeBSD.org>
