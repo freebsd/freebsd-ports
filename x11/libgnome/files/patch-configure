@@ -1,10 +1,11 @@
---- configure.orig	Mon Aug 11 15:31:05 2003
-+++ configure	Mon Aug 11 15:31:06 2003
-@@ -19070,6 +19070,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Tue Apr 20 02:47:31 2004
++++ configure	Tue Apr 20 02:49:09 2004
+@@ -1514,7 +1514,7 @@
+ LIBGNOME_MAJOR_VERSION=2
+ LIBGNOME_MINOR_VERSION=6
+ LIBGNOME_MICRO_VERSION=1
+-LIBGNOME_INTERFACE_AGE=0
++LIBGNOME_INTERFACE_AGE=1
+ # If you need a modifier for the version number.
+ # Normally empty, but can be used to make "fixup" releases.
+ LIBGNOME_EXTRAVERSION=
