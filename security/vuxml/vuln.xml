@@ -32,6 +32,58 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ad74a1bd-16d2-11d9-bc4a-000c41e2cdad">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>mod_php4-twig</name>
+        <name>php4-cgi</name>
+        <name>php4-cli</name>
+        <name>php4-dtc</name>
+        <name>php4-horde</name>
+        <name>php4-nms</name>
+        <name>php4</name>
+        <range><le>4.3.10</le></range>
+      </package>
+      <package>
+        <name>mod_php</name>
+        <name>mod_php4</name>
+	<range><ge>4</ge><le>4.3.10</le></range>
+      </package>
+      <package>
+        <name>php5</name>
+        <name>php5-cgi</name>
+        <name>php5-cli</name>
+        <range><le>5.0.3</le></range>
+      </package>
+      <package>
+        <name>mod_php5</name>
+        <range><le>5.0.3,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/13481/">
+          <p>Multiple vulnerabilities have been reported in PHP,
+             which can be exploited to gain escalated privileges,
+             bypass certain security restrictions, gain knowledge
+             of sensitive information, or compromise a vulnerable
+             system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <url>http://secunia.com/advisories/13481/</url>
+       <cvename>CAN-2004-1019</cvename>
+       <cvename>CAN-2004-1065</cvename>
+    </references>
+    <dates>
+      <discovery>2004-12-16</discovery>
+      <entry>2004-12-17</entry>
+    </dates>
+  </vuln>
+
    <vuln vid="01c231cd-4393-11d9-8bb9-00065be4b5b6">
      <topic>mysql -- GRANT access restriction problem</topic>
      <affects>
