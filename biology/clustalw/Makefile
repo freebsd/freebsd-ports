@@ -9,18 +9,19 @@ PORTNAME=	clustalw
 PORTVERSION=	1.81
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp-igbmc.u-strasbg.fr/pub/ClustalW/
-DISTNAME=	clustalw1.81.UNIX
+DISTNAME=	${PORTNAME}${PORTVERSION}.UNIX
 
 MAINTAINER=	dbader@eece.unm.edu
 
+PORTREVISION=	1
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
-do-build:
-		cd ${WRKSRC} ; ${MAKE} -f makefile
+MAKEFILE=	makefile
+ALL_TARGET=	# empty
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/clustalw ${PREFIX}/bin
-		${MKDIR} ${PREFIX}/share/${PORTNAME}
-		${INSTALL_DATA} ${WRKSRC}/clustalw_help ${PREFIX}/share/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/clustalw ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/clustalw_help ${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.mk>

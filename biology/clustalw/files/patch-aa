@@ -5,7 +5,7 @@
          char *help_file_name = "clustalw.hlp";
  #else
 -        char *help_file_name = "clustalw_help";
-+        char *help_file_name = "/usr/local/share/clustalw/clustalw_help";
++        char *help_file_name = DATADIR "/clustalw_help";
  #endif
  
  sint max_names; /* maximum length of names in current alignment file */

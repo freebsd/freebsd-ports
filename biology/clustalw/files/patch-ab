@@ -1,0 +1,15 @@
+--- makefile.orig	Wed Jun  7 16:55:06 2000
++++ makefile	Tue Aug  8 02:30:53 2000
+@@ -10,9 +10,9 @@
+ 
+ HEADERS = general.h clustalw.h
+ 
+-CC	= cc
+-CFLAGS  = -c -O
+-LFLAGS	= -O -lm 
++CC	?= cc
++CFLAGS  += -c -DDATADIR=\"${PREFIX}/share/clustalw\"
++LFLAGS	= -lm 
+ 
+ clustalw : $(OBJECTS) amenu.o clustalw.o
+ 	$(CC) -o $@ $(OBJECTS) amenu.o clustalw.o $(LFLAGS)
