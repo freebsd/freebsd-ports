@@ -16,7 +16,6 @@ MAINTAINER=	perky@fallin.lv
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_PYTHON=	yes
-EXCMD=		/usr/bin/ex
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
 		EXAMPLE_DIR=${EXAMPLE_DIR:S,^${PREFIX}/,,g}
 EXAMPLE_DIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
@@ -26,10 +25,10 @@ USE_XPM=	yes
 .endif
 
 post-patch:
-	${EXCMD} -c 's,^\(gd.*\)$$,\1 -I${LOCALBASE}/include/gd,g|wq!' ${WRKSRC}/Setup
-	${EXCMD} -c 's,-lttf,,g|wq!' ${WRKSRC}/Setup
+	${PERL} -pi -e 's,^(gd.*)$$,\1 -I${LOCALBASE}/include/gd -L${LOCALBASE}/lib,g; s,-lttf,,g; s,/usr/X11R6,${X11BASE},g;' \
+		${WRKSRC}/Setup
 .if defined(WITHOUT_X11)
-	${EXCMD} -c 's,-lX11 -lXpm,,g|wq!' ${WRKSRC}/Setup
+	${PERL} -pi -e 's,-lX11 -lXpm,,g' ${WRKSRC}/Setup
 .endif
 
 pre-build:
