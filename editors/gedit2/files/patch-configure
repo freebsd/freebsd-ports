@@ -1,0 +1,23 @@
+--- configure.orig	Wed May 15 00:43:11 2002
++++ configure	Wed May 15 00:45:35 2002
+@@ -6547,6 +6547,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9358,10 +9359,10 @@
+   pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
+ else
+   cat >>confdefs.h <<EOF
+-#define PIXMAPS_DIR "${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++#define PIXMAPS_DIR "${datadir}/pixmaps"
+ EOF
+ 
+-  pixmapsdir="${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++  pixmapsdir="${datadir}/pixmaps"
+ fi
+ 
+ # Extract the first word of "glib-genmarshal", so it can be a program name with args.
