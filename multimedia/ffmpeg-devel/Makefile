@@ -44,6 +44,11 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 ##
 .if ${ARCH} != "i386"
 WITHOUT_MMX=	yes
+.else
+# only for i386
+EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile \
+		${FILESDIR}/extra-bktr-patch-libavformat::avformat.h \
+		${FILESDIR}/extra-bktr-patch-ffmpeg.c
 .endif
 
 ## lib detection
@@ -136,6 +141,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
 .endif
+.if ${ARCH} == "i386"
 .if !(defined(WITH_BKTR_FORMAT) && defined(WITH_BKTR_DEV))
 	@${ECHO_MSG}
 	@${ECHO_MSG} 'If you want to capture from a bktr(4) supported card'
@@ -147,23 +153,23 @@ pre-everything::
 	@${ECHO_MSG} 'Warning: invalid settings will probably dump cores'
 	@${ECHO_MSG}
 .endif
+.endif # ${ARCH} == i386
 
 post-extract:
+.if ${ARCH} == "i386"
 # install booktree extension
 	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
+.endif # ${ARCH} == i386
 
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
 		${WRKSRC}/ffserver.c
+.if ${ARCH} == "i386"
 # we support "v4l" per default through Steve O'Hara-Smith's bktr(4)
 # patch
 	@${REINPLACE_CMD} -E -e \
 		's|^(v4l).*$$|\1="yes"|' \
 		${WRKSRC}/configure
-# malloc.h was deprecated in favor of stdlib.h
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|malloc.h|stdlib.h|'
 .ifdef(WITH_BKTR_FORMAT)
 	@${REINPLACE_CMD} -e \
 		"s!VIDEO_FORMAT NTSC!VIDEO_FORMAT ${WITH_BKTR_FORMAT}!" \
@@ -174,6 +180,11 @@ post-patch:
 		"s!VIDEO_INPUT METEOR_INPUT_DEV0!VIDEO_INPUT METEOR_INPUT_DEV${WITH_BKTR_DEV}!" \
 		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
+.endif # ${ARCH} == i386
+# malloc.h was deprecated in favor of stdlib.h
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 ${REINPLACE_CMD} -e \
+		's|malloc.h|stdlib.h|'
 .ifndef(WITHOUT_LIBA52)
 	@${REINPLACE_CMD} -e 's|-ldl||' \
 		${WRKSRC}/configure
