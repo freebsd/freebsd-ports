@@ -1,0 +1,35 @@
+bin/gtkextramm-config
+include/gtkextra--.h
+include/gtkextra--/bordercombo.h
+include/gtkextra--/checkitem.h
+include/gtkextra--/colorcombo.h
+include/gtkextra--/combobox.h
+include/gtkextra--/dirtree.h
+include/gtkextra--/filelist.h
+include/gtkextra--/fontcombo.h
+include/gtkextra--/iconfilesel.h
+include/gtkextra--/iconlist.h
+include/gtkextra--/itementry.h
+include/gtkextra--/plot.h
+include/gtkextra--/plotcanvas.h
+include/gtkextra--/private/bordercombo_p.h
+include/gtkextra--/private/checkitem_p.h
+include/gtkextra--/private/colorcombo_p.h
+include/gtkextra--/private/combobox_p.h
+include/gtkextra--/private/dirtree_p.h
+include/gtkextra--/private/filelist_p.h
+include/gtkextra--/private/fontcombo_p.h
+include/gtkextra--/private/iconfilesel_p.h
+include/gtkextra--/private/iconlist_p.h
+include/gtkextra--/private/itementry_p.h
+include/gtkextra--/private/plot_p.h
+include/gtkextra--/private/plotcanvas_p.h
+include/gtkextra--/private/sheet_p.h
+include/gtkextra--/sheet.h
+include/gtkextramm_marshal.h
+lib/libgtkextramm.a
+lib/libgtkextramm.so
+lib/libgtkextramm.so.7
+share/aclocal/gtkextra--.m4
+@dirrm include/gtkextra--/private
+@dirrm include/gtkextra--

@@ -24,6 +24,7 @@
     SUBDIR += gtk13
     SUBDIR += gtkbe
     SUBDIR += gtkextra
+    SUBDIR += gtkextra--
     SUBDIR += gtkglarea
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
