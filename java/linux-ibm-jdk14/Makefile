@@ -13,6 +13,7 @@ DISTNAME=	IBMJava2-SDK-14
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	IBM Java Development Kit 1.4 for Linux
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
