@@ -11,7 +11,6 @@ CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.0/src/:moz \
-		${MASTER_SITE_LOCAL}:moz \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
@@ -22,13 +21,13 @@ EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 
-SNAPDATE=	20041030
+SNAPDATE=	20041101
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_SOURCE=		mozilla-source-1.0.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:moz
+DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}:moz
 USE_GNOME+=	orbit gtk12
 .endif
 
