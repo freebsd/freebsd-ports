@@ -1,7 +1,7 @@
-lib/canna/dic/canna/dics.dir.gpl_canna
-lib/canna/dic/canna/gcanna.cld
-lib/canna/dic/canna/gcanna.cbd
-lib/canna/dic/canna/gcannaf.t
+share/canna/dic/canna/dics.dir.gpl_canna
+share/canna/dic/canna/gcanna.cld
+share/canna/dic/canna/gcanna.cbd
+share/canna/dic/canna/gcannaf.t
 %%PORTDOCS%%share/doc/cannadic/README
 %%PORTDOCS%%share/doc/cannadic/README.FreeBSD
 %%PORTDOCS%%@dirrm share/doc/cannadic

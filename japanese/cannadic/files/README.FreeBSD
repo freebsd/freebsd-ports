@@ -4,12 +4,12 @@
 手動で行わなければならないことを，かんな辞書のマニュアルから抜粋したものです．
 
 
-1) 辞書登録ファイルの ${LOCALBASE}/lib/canna/dic/canna/dics.dir に、
-   ${LOCALBASE}/lib/canna/dic/canna/dics.dir.gpl_canna の内容を追加します。
+1) 辞書登録ファイルの ${LOCALBASE}/share/canna/dic/canna/dics.dir に、
+   ${LOCALBASE}/share/canna/dic/canna/dics.dir.gpl_canna の内容を追加します。
 
-# cd /usr/local/lib/canna/dic/canna
-# mv dics.dir dics.dir.orig
-# cat dics.dir.orig dics.dir.gpl_canna > dics.dir
+# cd /usr/local/share/canna/dic/canna
+# cp dics.dir dics.dir.orig
+# cat dics.dir.gpl_canna >> dics.dir
 
 2) cannaserver を停止，起動します。
 
