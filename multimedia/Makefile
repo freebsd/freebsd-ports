@@ -105,8 +105,6 @@
     SUBDIR += xawtv
     SUBDIR += xdvshow
     SUBDIR += xine
-    SUBDIR += xine_d4d_plugin
-    SUBDIR += xine_d5d_plugin
     SUBDIR += xmms
     SUBDIR += xmms-avi
     SUBDIR += xmms-status-plugin
