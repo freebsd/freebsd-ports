@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aafid2
+    SUBDIR += aide
     SUBDIR += bjorb
     SUBDIR += bro
     SUBDIR += bugs

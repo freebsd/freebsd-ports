@@ -1,0 +1,22 @@
+AIDE is Advanced Intrusion Detection Environment.
+This piece of software was written as a replacement and extension
+for Tripwire. Tripwire is an excellent program in itself but lacks
+some features and is a closed product.
+
+Current Features:
+Multiple integrity checking algorithms (Even more with mhash support)
+Ability to output the database to stdout/file
+Easy configuration through a powerful configuration file
+
+Planned Features:
+Multiple database retrieval backends
+Encrypted databases
+Compressed databases(zlib bzip2 support)
+Windows NT port
+Email report
+More elaborate report options
+Recurse=n
+Interactive db update
+
+WWW: http://www.cs.tut.fi/~rammer/
+Author: rammer@cs.tut.fi
