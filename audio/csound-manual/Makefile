@@ -19,6 +19,8 @@ DIST_SUBDIR=	csound
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Manuals for Csound
 
+BROKEN=		Checksum mismatch
+
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
 NO_BUILD=		yes
