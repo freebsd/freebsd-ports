@@ -2,4 +2,4 @@ include/ggz.h
 include/ggz_common.h
 lib/libggz.a
 lib/libggz.so
-lib/libggz.so.2
+lib/libggz.so.3
