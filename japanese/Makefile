@@ -285,6 +285,7 @@
     SUBDIR += w3
     SUBDIR += w3m
     SUBDIR += w3m-ssl
+    SUBDIR += wdic-fpw
     SUBDIR += web1913-fpw
     SUBDIR += weblint97
     SUBDIR += wine
