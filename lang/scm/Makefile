@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d6
-PORTREVISION=	1
+PORTVERSION=	5d7
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTFILES=	scm5d6.zip slib2d4.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	scm5d6.zip slib2d4.zip
+DISTFILES=	scm5d7.zip slib2d5.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5d7.zip slib2d5.zip
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_REINPLACE=	yes
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	scmlit
@@ -39,7 +38,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ; \
-		 s|%%CFLAGS%%|${CFLAGS}|g' ${WRKSRC}/build.scm
+		 s|%%CFLAGS%%|${CFLAGS}|g ; \
+		 s|%%X11BASE%%|${X11BASE}|g' ${WRKSRC}/build.scm
 
 post-build:
 	@cd ${WRKSRC} \
