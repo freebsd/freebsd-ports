@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wyvern
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.MysticWALL.COM/software/src/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	kouichi@MysticWALL.COM
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
