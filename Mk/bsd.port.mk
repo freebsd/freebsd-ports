@@ -320,7 +320,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  the same file.
 # checksum		- Use files/md5 to ensure that your distfiles are valid.
 # checksum-recursive - Run checksum in this port and all dependencies.
-# makesum		- Generate files/md5 (only do this for your own ports!).
+# makesum		- Generate distinfo (only do this for your own ports!).
 # clean		    - Remove ${WRKDIR} and other temporary files used for building.
 # clean-depends	- Do a "make clean" for all dependencies.
 #
@@ -384,6 +384,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  The patches specified by this variable will be
 #				  applied after the normal distribution patches but
 #				  before those in ${PATCHDIR}.
+# PATCH_WRKSRC  - Directory to apply patches in (default: ${WRKSRC}).
 #
 # For configure:
 #
@@ -393,8 +394,9 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  HAS_CONFIGURE.
 # PERL_CONFIGURE - Configure using Perl's MakeMaker.  Implies USE_PERL5.
 # CONFIGURE_WRKSRC - Directory to run configure in (default: ${WRKSRC}).
-# CONFIGURE_SCRIPT - Name of configure script (default: "Makefile.PL" if
-#					 PERL_CONFIGURE is set, "configure" otherwise).
+# CONFIGURE_SCRIPT - Name of configure script, relative to ${CONFIGURE_WRKSRC}
+#				  (default: "Makefile.PL" if PERL_CONFIGURE is set,
+#				  "configure" otherwise).
 # CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
 #				  defined (default: ${MACHINE_ARCH}--freebsd${OSREL}).
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
@@ -409,6 +411,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 # For build and install:
 #
 # ALL_TARGET	- Default target for sub-make in build stage (default: all).
+# BUILD_WRKSRC  - Directory to do build in (default: ${WRKSRC}).
 # MAKE_ENV		- Additional environment vars passed to sub-make in build
 #				  and install stages (default: see below).
 # MAKE_ARGS		- Any extra arguments to sub-make in build and install
@@ -418,6 +421,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # INSTALL_TARGET - Default target for sub-make in install stage 
 # 				  (default: install).
+# INSTALL_WRKSRC - Directory to install from (default: ${WRKSRC}).
 # NO_MTREE		- If set, will not invoke mtree from bsd.port.mk from
 #				  the "install" target.
 # MTREE_FILE	- The name of the mtree file (default: /etc/mtree/BSD.x11.dist
@@ -704,6 +708,11 @@ WRKSRC?=		${WRKDIR}
 WRKSRC?=		${WRKDIR}/${DISTNAME}
 .endif
 
+PATCH_WRKSRC?=	${WRKSRC}
+CONFIGURE_WRKSRC?=	${WRKSRC}
+BUILD_WRKSRC?=	${WRKSRC}
+INSTALL_WRKSRC?=${WRKSRC}
+
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
 CONFIGURE_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
@@ -801,7 +810,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_1|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_2|Motif-2\.1\.10)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -933,12 +942,12 @@ PATCH_STRIP?=	-p0
 PATCH_DIST_STRIP?=	-p0
 .if defined(PATCH_DEBUG)
 PATCH_DEBUG_TMP=	yes
-PATCH_ARGS?=	-d ${WRKSRC} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${WRKSRC} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DEBUG_TMP=	no
-PATCH_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS?=	-d ${WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
+PATCH_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP}
+PATCH_DIST_ARGS?=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 .if defined(BATCH)
 PATCH_ARGS+=		--batch
@@ -1250,7 +1259,6 @@ USE_PERL5=			yes
 .undef HAS_CONFIGURE
 .endif
 
-CONFIGURE_WRKSRC?=	${WRKSRC}
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
 CONFIGURE_LOG?=		config.log
@@ -1746,12 +1754,7 @@ do-patch:
 	done
 .endif
 	@if [ -d ${PATCHDIR} ]; then \
-		if [ "`echo ${PATCHDIR}/patch-*`" = "${PATCHDIR}/patch-*" ]; then \
-			${ECHO_MSG} "===>   Ignoring empty patch directory"; \
-			if [ -d ${PATCHDIR}/CVS ]; then \
-				${ECHO_MSG} "===>   Perhaps you forgot the -P flag to cvs co or update?"; \
-			fi; \
-		else \
+		if [ "`echo ${PATCHDIR}/patch-*`" != "${PATCHDIR}/patch-*" ]; then \
 			${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
 			PATCHES_APPLIED="" ; \
 			for i in ${PATCHDIR}/patch-*; do \
@@ -1784,10 +1787,10 @@ do-patch:
 .if !target(do-configure)
 do-configure:
 .if defined(USE_AUTOMAKE)
-	@(cd ${WRKSRC} && ${AUTOMAKE})
+	@(cd ${CONFIGURE_WRKSRC} && ${AUTOMAKE})
 .endif
 .if defined(USE_AUTOCONF)
-	@(cd ${WRKSRC} && ${AUTOCONF})
+	@(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
 .endif
 	@if [ -f ${SCRIPTDIR}/configure ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
@@ -1811,10 +1814,10 @@ do-configure:
 .if defined(PERL_CONFIGURE)
 	@cd ${CONFIGURE_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} \
-		${PERL5} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+		${PERL5} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .endif
 .if defined(USE_IMAKE)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
+	@(cd ${CONFIGURE_WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
 .endif
 .endif
 
@@ -1823,9 +1826,9 @@ do-configure:
 .if !target(do-build)
 do-build:
 .if defined(USE_GMAKE)
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .else
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 .endif
 
@@ -1834,14 +1837,14 @@ do-build:
 .if !target(do-install)
 do-install:
 .if defined(USE_GMAKE)
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
 .endif
 .else defined(USE_GMAKE)
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
 .endif
 .endif
 .endif
@@ -2186,7 +2189,7 @@ patch-libtool:
 		 exit 1); \
 	  fi; \
 	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
-	 cd ${WRKSRC}; \
+	 cd ${PATCH_WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
 		${SED} -e "s^\$$ac_aux_dir/ltconfig^$${LIBTOOLDIR}/ltconfig^g" \
@@ -2267,7 +2270,8 @@ pre-distclean:
 .endif
 
 .if !target(distclean)
-distclean: pre-distclean clean delete-distfiles
+distclean: pre-distclean clean
+	@cd ${.CURDIR} && ${MAKE} delete-distfiles RESTRICTED_FILES="${DISTFILES} ${PATCHFILES}"
 .endif
 
 .if !target(delete-distfiles)
@@ -2284,7 +2288,7 @@ delete-distfiles:
 		done; \
 	fi)
 .if defined(DIST_SUBDIR)
-	-@${RMDIR} ${_DISTDIR}  
+	-@${RMDIR} ${_DISTDIR} >/dev/null 2>&1 || ${TRUE}
 .endif
 .endif
 
@@ -2301,7 +2305,7 @@ delete-distfiles-list:
 		done; \
 	fi
 .if defined(DIST_SUBDIR)
-	@${ECHO} "${RMDIR} ${_DISTDIR} 2>/dev/null"
+	@${ECHO} "${RMDIR} ${_DISTDIR} 2>/dev/null || ${TRUE}"
 .endif
 .endif
 
@@ -2351,7 +2355,6 @@ fetch-list:
 .if !target(makesum)
 makesum:
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes
-	@${MKDIR} ${FILESDIR}
 	@if [ -f ${MD5_FILE} ]; then ${RM} -f ${MD5_FILE}; fi
 	@(cd ${DISTDIR}; \
 	 for file in ${_CKSUMFILES}; do \
@@ -2405,7 +2408,7 @@ checksum:
 		  if [ "$$OK" != "true" ]; then \
 			${ECHO_MSG} "Make sure the Makefile and md5 file (${MD5_FILE})"; \
 			${ECHO_MSG} "are up to date.  If you are absolutely sure you want to override this"; \
-			${ECHO_MSG} "\"check, type make NO_CHECKSUM=yes [other args]\"."; \
+			${ECHO_MSG} "check, type \"make NO_CHECKSUM=yes [other args]\"."; \
 			exit 1; \
 		  fi) ; \
 	fi
