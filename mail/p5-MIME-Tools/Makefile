@@ -72,5 +72,8 @@ MAN3=	MIME::Body.3 \
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
+.if ${PERL_LEVEL} < 500600
+IGNORE=		5.005 is not supported
+.endif
 
 .include <bsd.port.post.mk>
