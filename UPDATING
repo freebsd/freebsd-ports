@@ -14,7 +14,7 @@ upgrades.
   ports to make them get ready to Python 2.4.
 
   To do this, you will need to:
-    portupgrade -Rr python
+    portupgrade -rf python
 
 20041128:
   AFFECTS: users of mail/dspam and mail/dspam-devel
