@@ -32,6 +32,7 @@
     SUBDIR += bmeps
     SUBDIR += bugle
     SUBDIR += cadubi
+    SUBDIR += cal3d
     SUBDIR += camediaplay
     SUBDIR += cbview
     SUBDIR += chbg

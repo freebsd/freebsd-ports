@@ -1,0 +1,19 @@
+Cal3D is a skeletal based 3D character animation library written in C++
+in a way that is both platform-independent and graphics API-independent.
+It was originally designed to be used in a 3D client for Worldforge, but
+evolved into a stand-alone product which can be used in many different
+kinds of projects.
+
+Cal3D's essentials can be boiled down to 2 parts: the C++ library and
+the exporter. The exporter is what you would use to take your characters
+(built in a 3D modeling package) and create the Cal3D-format files that
+the library knows how to load. The exporters are actually plug-ins for
+3D modeling packages. This allows 3D artists to use the modeling tools
+that they're already comfortable with.
+
+The C++ library is what you would actually use in your application,
+whether it's a game or a VR application. The library provides methods to
+load your exported files, build characters, run animations, and access
+the data necessary to render them with 3D graphics. 
+
+WWW:	http://cal3d.sourceforge.net/
