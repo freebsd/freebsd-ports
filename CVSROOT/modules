@@ -6605,6 +6605,7 @@ powerpc-rtems-gdb	ports/devel/powerpc-rtems-gdb
 powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
 pp		ports/games/pp
+ppantsfonts	ports/x11-fonts/ppantsfonts
 ppgen		ports/security/ppgen
 ppl		ports/devel/ppl
 ppm2fli		ports/multimedia/ppm2fli
