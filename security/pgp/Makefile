@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/lib/pgp
-MAN1=		pgp.1
+MAN1=		pgp.1 pgp2.1
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} -c -o bin -g bin -m 555 pgp ${PREFIX}/bin
@@ -41,5 +41,8 @@ do-install:
 post-extract:
 	cd ${WRKDIR}; $(TAR) -xf pgp263ii.tar; \
 		${RM} -f pgp263ii.tar
+
+post-install:
+	@${CP} ${PREFIX}/man/man1/pgp.1 ${PREFIX}/man/man1/pgp2.1
 
 .include <bsd.port.mk>
