@@ -18,7 +18,6 @@ FreeType	"TrueType font rendering (implies GD)" OFF \
 zlib		"zlib library support" ON \
 mcrypt		"Encryption support" OFF \
 mhash		"Crypto-hashing support" OFF \
-pdflib		"pdflib support (implies zlib)" OFF \
 IMAP		"IMAP support" OFF \
 MySQL		"MySQL database support" ON \
 PostgreSQL	"PostgreSQL database support" OFF \
@@ -85,15 +84,6 @@ while [ "$1" ]; do
 		\"mhash\")
 			echo "LIB_DEPENDS+=	mhash.2:\${PORTSDIR}/security/mhash"
 			echo "CONFIGURE_ARGS+=--with-mhash=\${PREFIX}"
-			;;
-		\"pdflib\")
-			echo "LIB_DEPENDS+=	pdf.2:\${PORTSDIR}/print/pdflib"
-			echo "CONFIGURE_ARGS+=--with-pdflib=\${PREFIX} \\"
-			echo "		--with-jpeg-dir=\${PREFIX} \\"
-			echo "		--with-tiff-dir=\${PREFIX}"
-			if [ -z "$ZLIB" ]; then
-				set $* \"zlib\"
-			fi
 			;;
 		\"IMAP\")
 			echo "LIB_DEPENDS+=	c-client4.8:\${PORTSDIR}/mail/cclient"
