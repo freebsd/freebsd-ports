@@ -17,3 +17,4 @@ share/locale/cs/LC_MESSAGES/pavuk.mo
 share/locale/de/LC_MESSAGES/pavuk.mo
 share/locale/sk/LC_MESSAGES/pavuk.mo
 @dirrm share/doc/pavuk
+@unexec rmdir %D/share/icons > /dev/null 2>&1 || true
