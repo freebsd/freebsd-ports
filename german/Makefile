@@ -3,6 +3,7 @@
 
     SUBDIR += BBBike
     SUBDIR += cheapcall
+    SUBDIR += citrix_ica
     SUBDIR += dict
     SUBDIR += ispell
     SUBDIR += ispell-alt
