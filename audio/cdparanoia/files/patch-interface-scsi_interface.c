@@ -2,10 +2,10 @@ Index: interface/scsi_interface.c
 ===================================================================
 RCS file: /home/cvs/cdparanoia/interface/scsi_interface.c,v
 retrieving revision 1.1.1.1
-retrieving revision 1.6
-diff -u -r1.1.1.1 -r1.6
+retrieving revision 1.7
+diff -u -r1.1.1.1 -r1.7
 --- interface/scsi_interface.c	2003/01/05 09:46:26	1.1.1.1
-+++ interface/scsi_interface.c	2003/01/07 00:49:01	1.6
++++ interface/scsi_interface.c	2003/01/18 15:42:15	1.7
 @@ -3,6 +3,8 @@
   * Original interface.c Copyright (C) 1994-1997 
   *            Eissfeldt heiko@colossus.escape.de
@@ -83,7 +83,7 @@ diff -u -r1.1.1.1 -r1.6
  static int handle_scsi_cmd(cdrom_drive *d,
  			   unsigned int cmd_len, 
  			   unsigned int in_size, 
-@@ -284,6 +322,83 @@
+@@ -284,6 +322,84 @@
    return(0);
  }
  
@@ -92,7 +92,6 @@ diff -u -r1.1.1.1 -r1.6
 +			   unsigned int cmd_len, 
 +			   unsigned int out_size, 
 +			   unsigned int in_size,
-+
 +			   unsigned char bytefill,
 +			   int bytecheck) {
 +	int result;
@@ -100,11 +99,14 @@ diff -u -r1.1.1.1 -r1.6
 +	bzero(&d->ccb->csio, sizeof(d->ccb->csio));
 +
 +	memcpy(d->ccb->csio.cdb_io.cdb_bytes, d->sg_buffer, cmd_len);
++
++	if (bytecheck && out_size == 0)
++		memset(d->sg_buffer, bytefill, in_size);
++
 +	cam_fill_csio(&d->ccb->csio,
-+	    /* retries */ 3,		/* XXX */
++	    /* retries */ 0,
 +	    /* cbfcnp */ NULL,
-+	    /* flags */ CAM_PASS_ERR_RECOVER | CAM_DEV_QFRZDIS | 
-+	    	(out_size ? CAM_DIR_OUT : CAM_DIR_IN),
++	    /* flags */ CAM_DEV_QFRZDIS | (out_size ? CAM_DIR_OUT : CAM_DIR_IN),
 +	    /* tag_action */ MSG_SIMPLE_Q_TAG,
 +	    /* data_ptr */ out_size ? d->sg_buffer + cmd_len : d->sg_buffer,
 +	    /* dxfer_len */ out_size ? out_size : in_size,
@@ -112,15 +114,14 @@ diff -u -r1.1.1.1 -r1.6
 +	    /* cdb_len */ cmd_len,
 +	    /* timeout */ 60000);	/* XXX */
 +
-+	if ((result = cam_send_ccb(d->dev, d->ccb)) < 0)
++	if ((result = cam_send_ccb(d->dev, d->ccb)) < 0 ||
++	    (d->ccb->ccb_h.status & CAM_STATUS_MASK) == 0 /* hack? */)
 +		return TR_EREAD;
 +
-+	if ((d->ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP) {
-+		fprintf (stderr, "error returned from SCSI command:\n");
-+		if ((d->ccb->ccb_h.status & CAM_STATUS_MASK) == CAM_SCSI_STATUS_ERROR)
-+			scsi_sense_print (d->dev, &d->ccb->csio, stderr);
-+		else
-+			fprintf (stderr, "ccb->ccb_h.status == %d\n", d->ccb->ccb_h.status);
++	if ((d->ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_REQ_CMP &&
++	    (d->ccb->ccb_h.status & CAM_STATUS_MASK) != CAM_SCSI_STATUS_ERROR) {
++		fprintf (stderr, "\t\terror returned from SCSI command:\n"
++				 "\t\tccb->ccb_h.status == %d\n", d->ccb->ccb_h.status);
 +		errno = EIO;
 +		return TR_UNKNOWN;
 +	}
@@ -167,7 +168,7 @@ diff -u -r1.1.1.1 -r1.6
  /* Group 1 (10b) command */
  
  static int mode_sense_atapi(cdrom_drive *d,int size,int page){ 
-@@ -833,30 +948,33 @@
+@@ -833,30 +949,33 @@
    while(1) {
      if((err=map(d,(p?buffer:NULL),begin,sectors))){
        if(d->report_all){
@@ -210,7 +211,7 @@ diff -u -r1.1.1.1 -r1.6
        }
  
        if(!d->error_retry)return(-7);
-@@ -1307,6 +1425,7 @@
+@@ -1307,6 +1426,7 @@
    return;
  }
  
@@ -218,7 +219,7 @@ diff -u -r1.1.1.1 -r1.6
  static int check_atapi(cdrom_drive *d){
    int atapiret=-1;
    int fd = d->cdda_fd; /* this is the correct fd (not ioctl_fd), as the 
-@@ -1333,6 +1452,47 @@
+@@ -1333,6 +1453,47 @@
    }
  }  
  
@@ -266,7 +267,7 @@ diff -u -r1.1.1.1 -r1.6
  static int check_mmc(cdrom_drive *d){
    char *b;
    cdmessage(d,"\nChecking for MMC style command set...\n");
-@@ -1379,6 +1539,7 @@
+@@ -1379,6 +1540,7 @@
    }
  }
  
@@ -274,7 +275,7 @@ diff -u -r1.1.1.1 -r1.6
  /* request vendor brand and model */
  unsigned char *scsi_inquiry(cdrom_drive *d){
    memcpy(d->sg_buffer,(char[]){ 0x12,0,0,0,56,0},6);
-@@ -1389,6 +1550,7 @@
+@@ -1389,6 +1551,7 @@
    }
    return (d->sg_buffer);
  }
@@ -282,7 +283,7 @@ diff -u -r1.1.1.1 -r1.6
  
  
  int scsi_init_drive(cdrom_drive *d){
-@@ -1458,8 +1620,12 @@
+@@ -1458,8 +1621,12 @@
    check_fua_bit(d);
  
    d->error_retry=1;
