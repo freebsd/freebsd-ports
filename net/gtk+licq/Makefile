@@ -14,7 +14,7 @@ MAINTAINER=	roman@xpert.com
 
 BUILD_DEPENDS=	${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
 LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell \
-		iconv.2:${PORTSDIR}/converters/libiconv
+		giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	licq:${PORTSDIR}/net/licq
 
 # It breaks the build for some reason
