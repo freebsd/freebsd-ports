@@ -23,10 +23,6 @@ ALL_TARGET=	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 do-install:
 	$(INSTALL_PROGRAM) $(WRKSRC)/xwmm $(PREFIX)/bin
 	$(INSTALL_SCRIPT) $(WRKSRC)/startkde.fixed $(PREFIX)/bin/startkde.xwmm
