@@ -7,6 +7,7 @@
 
 PORTNAME=	erlang
 PORTVERSION=	r9c2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
@@ -36,6 +37,7 @@ ERLANG_DOCS=	otp_html_R9C-2.tar.gz
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
@@ -102,6 +104,14 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
+	@for SCRIPT in ecc elink ear escript; do \
+		${REINPLACE_CMD} -e "s@ERLANG_EARS=.*@ERLANG_EARS=${LOCALBASE}/lib/erlang/erts-${ERTS_VSN}@" ${LOCALBASE}/bin/$${SCRIPT}; \
+	done
+		
+	@for SCRIPT in ecc elink; do \
+		${REINPLACE_CMD} -e "s@exec .*beam_evm@exec beam_evm@" ${LOCALBASE}/bin/$${SCRIPT}; \
+	done
+
 	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 		-C ${PREFIX}/lib/erlang
