@@ -506,12 +506,6 @@
 %%PORTDOCS%%share/doc/docbook-xsl/html/variablelist.as.table.html
 %%PORTDOCS%%share/doc/docbook-xsl/htmlhelp.html
 %%PORTDOCS%%share/doc/docbook-xsl/htmlhelp.html.html
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/ChangeLog
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/htmlhelp-common.xsl
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/htmlhelp.xsl
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/langcodes.xml
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/profile-htmlhelp-common.xsl
-%%PORTDOCS%%share/doc/docbook-xsl/htmlhelp/profile-htmlhelp.xsl
 %%PORTDOCS%%share/doc/docbook-xsl/index.html
 %%PORTDOCS%%share/doc/docbook-xsl/jrefhtml.xsl
 %%PORTDOCS%%share/doc/docbook-xsl/lib/ChangeLog
@@ -768,6 +762,12 @@ share/xsl/docbook/html/titlepage.xsl
 share/xsl/docbook/html/toc.xsl
 share/xsl/docbook/html/verbatim.xsl
 share/xsl/docbook/html/xref.xsl
+share/xsl/docbook/htmlhelp/ChangeLog
+share/xsl/docbook/htmlhelp/htmlhelp-common.xsl
+share/xsl/docbook/htmlhelp/htmlhelp.xsl
+share/xsl/docbook/htmlhelp/langcodes.xml
+share/xsl/docbook/htmlhelp/profile-htmlhelp-common.xsl
+share/xsl/docbook/htmlhelp/profile-htmlhelp.xsl
 share/xsl/docbook/images/ChangeLog
 share/xsl/docbook/images/blank.png
 share/xsl/docbook/images/callouts/1.gif
@@ -1204,6 +1204,7 @@ share/xsl/docbook/xhtml/xref.xsl
 @dirrm share/xsl/docbook/javahelp
 @dirrm share/xsl/docbook/images/callouts
 @dirrm share/xsl/docbook/images
+@dirrm share/xsl/docbook/htmlhelp
 @dirrm share/xsl/docbook/html
 @dirrm share/xsl/docbook/fo
 @dirrm share/xsl/docbook/extensions/xsltproc/python
@@ -1232,7 +1233,6 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/tools
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/template
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/lib
-%%PORTDOCS%%@dirrm share/doc/docbook-xsl/htmlhelp
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/html
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/fo
 %%PORTDOCS%%@dirrm share/doc/docbook-xsl/common
