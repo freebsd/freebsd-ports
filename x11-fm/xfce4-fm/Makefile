@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
@@ -17,7 +18,8 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 file manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	dbh.1:${PORTSDIR}/databases/dbh \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		dbh.1:${PORTSDIR}/databases/dbh \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
@@ -26,9 +28,12 @@ USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-NO_FILTER_SHLIBS=	yes
+CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LIBS=-L${LOCALBASE}/lib
 
 MAN1=		fgr.1
 
