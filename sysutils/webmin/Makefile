@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.130
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -33,7 +33,7 @@ WEBMIN_MODULES=	apache-1.130-1.wbm.gz \
 		htaccess-htpasswd-1.130-1.wbm.gz \
 		logrotate-1.130-6.wbm.gz \
 		postfix-1.130-3.wbm.gz \
-		postgresql-1.130-7.wbm.gz \
+		postgresql-1.130-8.wbm.gz \
 		quota-1.130-5.wbm.gz \
 		shorewall-1.130-1.wbm.gz \
 		software-1.130-5.wbm.gz \
