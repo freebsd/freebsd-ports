@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.00
+PORTVERSION=	4.03
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
@@ -19,9 +19,10 @@ USE_OPENSSL=	YES
 USE_REINPLACE=	YES
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR}
+CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR} \
+		--enable-static
 
-MAN8=		stunnel.8
+MAN8=		stunnel.8 stunnel.pl.8
 
 PEM_DIR?=	${PREFIX}/etc
 
@@ -59,7 +60,7 @@ cert:
 	@${ECHO} "The new certificate will be saved into ${PREFIX}/etc/stunnel.pem"
 	@${ECHO} "**************************************************************************"
 	@${ECHO} ""
-	@(cd ${WRKSRC}; make cert)
-	${INSTALL} -m 600 ${WRKSRC}/stunnel.pem ${PEM_DIR}/
+	@(cd ${WRKSRC}/tools/; make stunnel.pem)
+	${INSTALL} -m 600 ${WRKSRC}/tools/stunnel.pem ${PEM_DIR}/
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
 etc/rc.d/stunnel.sh.sample
 etc/stunnel/stunnel.conf-sample
-lib/libstunnel.so.0
 lib/libstunnel.so
 lib/libstunnel.la
 lib/libstunnel.a
 sbin/stunnel
 %%PORTDOCS%%share/doc/stunnel/stunnel.html
+%%PORTDOCS%%share/doc/stunnel/stunnel.pl.html
 %%PORTDOCS%%share/doc/stunnel/examples/ca.html
 %%PORTDOCS%%share/doc/stunnel/examples/ca.pl
 %%PORTDOCS%%share/doc/stunnel/examples/importCA.html
@@ -18,7 +18,6 @@ sbin/stunnel
 %%PORTDOCS%%share/doc/stunnel/COPYING
 %%PORTDOCS%%share/doc/stunnel/COPYRIGHT.GPL
 %%PORTDOCS%%share/doc/stunnel/CREDITS
-%%PORTDOCS%%share/doc/stunnel/FAQ
 %%PORTDOCS%%share/doc/stunnel/INSTALL
 %%PORTDOCS%%share/doc/stunnel/INSTALL.W32
 %%PORTDOCS%%share/doc/stunnel/NEWS
