@@ -1,0 +1,28 @@
+--- configure.in.orig	Thu Dec 13 08:19:58 2001
++++ configure.in	Sun Dec 23 23:39:48 2001
+@@ -1642,10 +1642,9 @@
+     CFLAGS="$CFLAGS -I$withval/include"
+     CPPFLAGS="$CPPFLAGS -I$withval/include"
+     LDFLAGS="$LDFLAGS -L$withval/lib"
+-    ;;
+-  esac ],
+-  AC_MSG_RESULT(no)
+-)
++
++    # don't automatically detect krb5 stuff, only do it if --with-krb5=foo
++    # is given (and isn't 'no').
+ 
+ # now check for krb5.h. Some systems have the libraries without the headers!
+ # note that this check is done here to allow for different kerberos
+@@ -1669,6 +1668,11 @@
+ AC_CHECK_LIB(krb5, krb5_mk_req_extended, [LIBS="$LIBS -lkrb5";
+ 	AC_DEFINE(HAVE_KRB5)])
+ 
++    ;;
++  esac ],
++  AC_MSG_RESULT(no)
++)
++# end of --with-krb5 check
+ 
+ ##################################################################
+ # we might need the lber lib on some systems. To avoid link errors
