@@ -5480,6 +5480,7 @@ p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
 p5-Make		ports/devel/p5-Make
+p5-MasonX-Request-WithApacheSession	ports/www/p5-MasonX-Request-WithApacheSession
 p5-Math-Base85	ports/math/p5-Math-Base85
 p5-Math-BaseCalc	ports/math/p5-Math-BaseCalc
 p5-Math-Bezier	ports/math/p5-Math-Bezier
