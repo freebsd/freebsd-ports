@@ -107,6 +107,8 @@ lib/libcdialog.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox4-eucjp
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox4-utf8
 %%PORTDOCS%%%%EXAMPLESDIR%%/msgbox5
+%%PORTDOCS%%%%EXAMPLESDIR%%/msgbox6
+%%PORTDOCS%%%%EXAMPLESDIR%%/msgbox6a
 %%PORTDOCS%%%%EXAMPLESDIR%%/password
 %%PORTDOCS%%%%EXAMPLESDIR%%/password1
 %%PORTDOCS%%%%EXAMPLESDIR%%/password2
