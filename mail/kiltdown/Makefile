@@ -25,12 +25,12 @@ MY_CONFIGURE_ARGS+=	-dbinc ${LOCALBASE}/include/db3 -dblib ${LOCALBASE}/lib
 BUILD_ENV+=		PATH=${PATH}:${X11BASE}/bin
 
 post-patch:
-	@${PERL5} -pi \
+	@${MV} ${WRKSRC}/configs/bsd-generic ${WRKSRC}/configs/bsd-generic.sed
+	${SED} \
 	 -e "s/SYS_CFLAGS=-pthread/SYS_CFLAGS=${PTHREAD_CFLAGS} ${CFLAGS}/" \
-		${WRKSRC}/configs/bsd-generic
-	@${PERL5} -pi \
 	 -e "s/SYS_LDFLAGS=-pthread/SYS_LDFLAGS=${PTHREAD_LIBS} ${LDFLAGS}/" \
-		${WRKSRC}/configs/bsd-generic
+		${WRKSRC}/configs/bsd-generic.sed \
+		> ${WRKSRC}/configs/bsd-generic
 
 do-configure:
 	(cd ${CONFIGURE_WRKSRC} && \
