@@ -127,8 +127,8 @@ if ($addlchk && -f $portlint) {
 	push(@commands, "$portlint $plint_args");
 	push(@commands, "$make $passenv FETCH_BEFORE_ARGS='-btA' checksum") if !$nofetch;
 	if ($more_testing) {
-		push(@commands, "$make distclean");
-		push(@commands, "$make build");
+		push(@commands, "$make $passenv distclean");
+		push(@commands, "$make $passenv build");
 	}
 	if (!$nomkdir) {
 		chdir $tmpdir;
@@ -261,7 +261,7 @@ foreach my $thisdir (@dirs) {
 		$pkgcomment = $pkgcomment . "\n\n" if ($autofill != -1);
 		# Write out the data to the comment file.
 		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
-		print AUTOFILL "Add $portname $portversion, $pkgcomment";
+		print AUTOFILL "Add $portname $portversion,$pkgcomment";
 		print AUTOFILL "PR:		$autofill\n" if ($autofill != -1);
 		print AUTOFILL "Submitted by:	$orig" if ($autofill != -1);
 		close(AUTOFILL);
@@ -294,8 +294,8 @@ foreach my $thisdir (@dirs) {
 	}
 	chdir $category or err(1,"$category");
 	system("$cp -PRp $thisdir .");
-	system("$cvs add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
-	system("$cvs add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
+	system("$cvs $n add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
+	system("$cvs $n add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
 
 	# figure out where the port name belongs in category Makefile
 	my @ports = &lsports;
@@ -328,7 +328,7 @@ foreach my $thisdir (@dirs) {
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
 	system("$commitfile $cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
-	if (!$nomodules) {
+	if (!$nomodules && ($n ne "-n")) {
 		system("$ssh $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
 }
@@ -382,7 +382,8 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-h host] [-u user] [-s distdir] [-acfilmnt] -d directory
+	$0 [-c commitfile] [-h host] [-l PR number] [-s distdir] [-s distdir]
+	   [-afgimnt] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
@@ -394,6 +395,7 @@ OPTIONS
 			there are no problems.  Recommended.
 	-c file		Use file in place of normal log message.
 	-f		Do not fetch the distfile.
+	-g		Do not commit to CVSROOT/modules.
 	-h host		Use a cvshost besides freefall.FreeBSD.org.
 	-i		Interactive mode; allow more control over
 			where things are placed.  This is required in
