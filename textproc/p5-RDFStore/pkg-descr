@@ -1,0 +1,13 @@
+RDFStore is a set of Perl modules to manage Resource Description
+Framework (RDF) model databases in a easy and straightforward way.  The
+software started as a pure Perl implementation of the Draft Java API
+(see http://www-db.stanford.edu/~melnik/rdf/api.html) from the Stanford
+University DataBase Group by Sergey Melnik.  A set of companion modules
+RDFStore::Parser::SiRPAC(3) RDFStore::Parser::OpenHealth(3) and
+Data::MagicTie(3) the suite allow a user to fetch, parse, process, store
+and query RDF models.
+
+WWW: http://search.cpan.org/search?dist=RDFStore
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
