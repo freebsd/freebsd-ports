@@ -196,6 +196,7 @@
     SUBDIR += mad
     SUBDIR += madplay
     SUBDIR += maplay
+    SUBDIR += marlin
     SUBDIR += mbrola
     SUBDIR += mbrolavox
     SUBDIR += mctoolame-decoder

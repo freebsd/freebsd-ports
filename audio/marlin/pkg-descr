@@ -1,0 +1,5 @@
+Marlin is a audio sample editor for GNOME 2. It uses Gstreamer as a backend
+to provide support for numerous file formats. Marlin can also record
+from microphone or rip audio from CD.
+
+WWW: http://marlin.sourceforge.net/
