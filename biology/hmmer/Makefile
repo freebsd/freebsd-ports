@@ -3,27 +3,29 @@
 # Date created:		June 29 1998
 # Whom:			barnhart@genetics.wustl.edu
 #
-# $Id: Makefile,v 1.2 1998/12/09 22:35:04 billf Exp $
+# $Id: Makefile,v 1.3 1999/01/02 00:12:17 asami Exp $
 #
 
-DISTNAME=	hmmer-2.0
+DISTNAME=	hmmer-2.1.1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/oldversions/2.0/
+MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	barnhart@genetics.wustl.edu
 
-USE_PERL5=	yes
-MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 hmmer.1 hmmpfam.1 hmmsearch.1
+GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/build/${DISTNAME}
+USE_PERL5=	yes
+MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 \
+		hmmer.1 hmmpfam.1 hmmsearch.1 hmmfetch.1 hmmindex.1 alistat.1 \
+		getseq.1 seqstat.1 sreformat.1
 
 post-build:
 	@ strip ${WRKSRC}/binaries/*
 	@ make test
 
 test:
-	@(cd ${WRKSRC}; make test)
+	@(cd ${WRKSRC}; make check)
 
 post-install:
 .if !defined(NOPORTDOCS)

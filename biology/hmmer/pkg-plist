@@ -1,9 +1,15 @@
+bin/alistat
+bin/getseq
 bin/hmmalign
 bin/hmmbuild
 bin/hmmcalibrate
 bin/hmmconvert
 bin/hmmemit
+bin/hmmfetch
+bin/hmmindex
 bin/hmmpfam
 bin/hmmsearch
+bin/seqstat
+bin/sreformat
 share/doc/hmmer/Userguide.ps
 @dirrm share/doc/hmmer
