@@ -3,14 +3,13 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+#   $Id: Makefile,v 1.1.1.1 1996/09/24 15:11:58 jfitz Exp $
 #
 
 DISTNAME=	rad0919
 PKGNAME=	ascend-radius-960919
 CATEGORIES+=	net
 MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/
-EXTRACT_SUFX=	.gz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
