@@ -1,39 +1,11 @@
---- calendar.c.orig	Fri Sep 19 20:27:37 1997
-+++ calendar.c	Fri Sep 19 20:27:00 1997
-@@ -37,7 +37,14 @@
- #include "common.h"
- #include "config.h"
- #include "getfile.h"
--#include "getopt.h"
-+#ifdef __FreeBSD__
-+/* FreeBSD version 2.x and earlier has them defined in stdlib.h */
-+  #if __FreeBSD__ >= 3
-+    #include <unistd.h>
-+  #endif
-+#else
-+  #include "getopt.h"
-+#endif
- #include "getsb.h"
- #include "kyureki.h"
- #include "main.h"
-@@ -909,7 +916,7 @@
+--- calendar.c.orig	Sun Mar 14 00:00:00 1999
++++ calendar.c	Sun Feb 13 15:43:52 2000
+@@ -848,7 +848,7 @@
  
  	va_start(ap, fmt);
  
--	fprintf(stderr, "calendar: ", func);
-+	fprintf(stderr, "calendar: %s", func);
+-	fprintf(stderr, "calendar: ");
++	fprintf(stderr, "calendar: %s");
  	if (level != ERR_INFO) {
  		fprintf(stderr, "%s: ", statname[level - ERR_WARN]);
  	}
-@@ -960,7 +967,11 @@
- /*
-  * エラーによるプログラム中断処理
-  */
-+#ifndef __FreeBSD__
- void	terminate_program(int sig, int subcode)
-+#else
-+void	terminate_program(int sig)
-+#endif
- {
- 	switch (sig) {
- 	case TERM_MEMERROR:
