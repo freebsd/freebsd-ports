@@ -1,0 +1,32 @@
+--- Source_Files/Misc/FileHandler.h.orig	Fri Aug  8 15:00:21 2003
++++ Source_Files/Misc/FileHandler.h	Fri Aug  8 15:01:07 2003
+@@ -46,6 +46,7 @@
+ #endif
+ #endif
+ 
++using namespace std;
+ 
+ // Symbolic constant for a closed file's reference number (refnum) (MacOS only)
+ const short RefNum_Closed = -1;
+--- Source_Files/Misc/resource_manager.h.orig	Fri Aug  8 15:00:22 2003
++++ Source_Files/Misc/resource_manager.h	Fri Aug  8 15:04:02 2003
+@@ -10,6 +10,8 @@
+ #include <stdio.h>
+ #include <vector>
+ 
++using namespace std;
++
+ class FileSpecifier;
+ class LoadedResource;
+ 
+--- Source_Files/Misc/sdl_dialogs.h.orig	Fri Aug  8 15:00:22 2003
++++ Source_Files/Misc/sdl_dialogs.h	Fri Aug  8 15:01:43 2003
+@@ -9,6 +9,8 @@
+ 
+ #include <vector>
+ 
++using namespace std;
++
+ class widget;
+ struct SDL_Surface;
+ class sdl_font_info;
