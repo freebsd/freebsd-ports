@@ -89,7 +89,7 @@ PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
 .if defined(WITH_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.0:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	dbus-glib-1.1:${PORTSDIR}/devel/dbus
 PLIST_SUB+=	DBUS=""
 .else
 PLIST_SUB+=	DBUS="@comment "
