@@ -189,6 +189,7 @@
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_auth_pwcheck
     SUBDIR += mod_backhand
+    SUBDIR += mod_bandwidth
     SUBDIR += mod_bf
     SUBDIR += mod_blosxom
     SUBDIR += mod_blowchunks
