@@ -22,6 +22,7 @@ include/w3c-libwww/HTChannl.h
 include/w3c-libwww/HTChunk.h
 include/w3c-libwww/HTConLen.h
 include/w3c-libwww/HTCookie.h
+include/w3c-libwww/HTDAV.h
 include/w3c-libwww/HTDNS.h
 include/w3c-libwww/HTDemux.h
 include/w3c-libwww/HTDescpt.h

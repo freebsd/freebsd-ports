@@ -1,6 +1,6 @@
---- Library/src/HTMIMImp.c.orig	Sat Apr  5 09:26:21 1997
-+++ Library/src/HTMIMImp.c	Tue May  6 01:15:02 1997
-@@ -213,7 +213,7 @@
+--- Library/src/HTMIMImp.c.orig	Sun Jun 30 22:51:48 2002
++++ Library/src/HTMIMImp.c	Sun Jun 30 22:52:01 2002
+@@ -226,7 +226,7 @@
      int value = deflt;
      if (start != NULL) {
  	start += strlen(needle);
