@@ -1,11 +1,11 @@
 bin/dbimon
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Mysql.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Bundle/Mysql.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/mysql.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Mysql/Statement.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/mysql/mysql.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/mysql/mysql.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Msql-Mysql-modules/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/mysql
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Msql-Mysql-modules
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Mysql
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/Mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mysql/Statement.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql/mysql.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql/mysql.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Msql-Mysql-modules/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/mysql
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Msql-Mysql-modules
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Mysql

@@ -1,2 +1,2 @@
 lib/perl5/site_perl/%%PERL_VER%%/HTML/QuickCheck.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/HTML/QuickCheck/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/QuickCheck/.packlist

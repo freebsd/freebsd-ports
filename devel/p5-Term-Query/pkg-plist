@@ -1,5 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Term/Query.pm
 lib/perl5/site_perl/%%PERL_VER%%/Term/Tester.pm
 lib/perl5/site_perl/%%PERL_VER%%/Term/Query_Test.pl
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/Query/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/Query
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Query/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/Query

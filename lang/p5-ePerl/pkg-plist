@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Apache/ePerl.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Parse/ePerl.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse/ePerl/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse/ePerl/ePerl.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse/ePerl/ePerl.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse/ePerl/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse/ePerl
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Parse
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Parse
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Apache
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/ePerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Parse/ePerl.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/ePerl/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/ePerl/ePerl.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/ePerl/ePerl.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/ePerl/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/ePerl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Parse
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache

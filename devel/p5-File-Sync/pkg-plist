@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/File/Sync.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/Sync.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/Sync.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Sync
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/File
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File/Sync.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/Sync.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/Sync.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File

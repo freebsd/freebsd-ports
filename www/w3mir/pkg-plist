@@ -3,7 +3,7 @@ bin/w3mir
 lib/perl5/site_perl/%%PERL_VER%%/htmlop.pm
 lib/perl5/site_perl/%%PERL_VER%%/w3http.pm
 lib/perl5/site_perl/%%PERL_VER%%/w3pdfuri.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/w3mir/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/w3mir/.packlist
 share/doc/w3mir/Artistic
 share/doc/w3mir/README
 share/doc/w3mir/example.cfg

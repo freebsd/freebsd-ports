@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Crypt/DES.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Crypt/DES.pod
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/DES/DES.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/DES/DES.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/DES/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/DES
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES

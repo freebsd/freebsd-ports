@@ -2,5 +2,5 @@ lib/perl5/site_perl/%%PERL_VER%%/News/Article.pm
 lib/perl5/site_perl/%%PERL_VER%%/News/AutoReply.pm
 lib/perl5/site_perl/%%PERL_VER%%/News/FormArticle.pm
 lib/perl5/site_perl/%%PERL_VER%%/News/FormReply.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/News/Article/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/News/Article
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Article/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Article

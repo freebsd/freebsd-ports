@@ -1,6 +1,6 @@
 bin/dprofpp
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Devel/DProf.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/DProf.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/DProf.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/DProf
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Devel/DProf.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf/DProf.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf/DProf.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/DProf

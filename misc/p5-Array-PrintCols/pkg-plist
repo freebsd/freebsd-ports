@@ -1,3 +1,3 @@
 lib/perl5/site_perl/%%PERL_VER%%/Array/PrintCols.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Array/PrintCols/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Array/PrintCols
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/PrintCols/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/PrintCols

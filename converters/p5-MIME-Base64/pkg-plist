@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME/Base64/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME/Base64/Base64.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME/Base64/Base64.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/MIME/Base64.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/MIME/QuotedPrint.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME/Base64
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64/Base64.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MIME/Base64.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MIME/QuotedPrint.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME/Base64

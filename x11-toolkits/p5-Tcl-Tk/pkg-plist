@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Tcl/Tk.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Tcl/Tk/Tk.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Tcl/Tk/Tk.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Tcl/Tk/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Tcl/Tk
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tcl/Tk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tcl/Tk/Tk.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tcl/Tk/Tk.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tcl/Tk/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tcl/Tk

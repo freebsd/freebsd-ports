@@ -1,28 +1,28 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Atoms.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/ColorSelectButton.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Gdk.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Types.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/Files.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/GdkTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/GtkDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/GtkTypemap
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/GtkTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/MiscTypes.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/PerlGtkExt.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/gendefs.pl
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/genext.pl
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/pkg-gdkimlib.defs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/pkg-gdkimlib.typemap
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/pkg-gtk-1.1.defs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/pkg-gtk.defs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install/pkg-gtk.typemap
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/Gtk.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/Gtk.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/Gdk/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk/Gdk
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Gtk
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Gtk
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Atoms.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/ColorSelectButton.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Types.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GdkTypes.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkDefs.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkTypemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/GtkTypes.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/MiscTypes.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/PerlGtkExt.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/gendefs.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/genext.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/pkg-gdkimlib.defs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/pkg-gdkimlib.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/pkg-gtk-1.1.defs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/pkg-gtk.defs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install/pkg-gtk.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gtk.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Install
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk

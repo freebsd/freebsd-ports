@@ -22,6 +22,6 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/mailaddress.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/maildomain.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/read_mbox.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Mail/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet

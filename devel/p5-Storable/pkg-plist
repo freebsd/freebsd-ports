@@ -1,18 +1,18 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Storable.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_freeze.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_store.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_store_fd.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/freeze.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nfreeze.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nstore.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nstore_fd.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/retrieve.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/retrieve_fd.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/store.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/store_fd.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/thaw.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/Storable.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/Storable.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Storable.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_store.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/_store_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nfreeze.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nstore.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/nstore_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/retrieve.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/retrieve_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/store.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/store_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/thaw.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/Storable.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Storable

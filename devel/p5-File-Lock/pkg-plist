@@ -1,11 +1,11 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/File/Lock.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/info.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/pid.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/sysid.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/test.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/Lock.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/Lock.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/Lock
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/File 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File/Lock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/info.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/pid.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/sysid.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/test.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/Lock.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/Lock.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true

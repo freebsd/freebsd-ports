@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/GD.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/qd.pl
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/GD.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/GD.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/libgd/extralibs.ld
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/libgd
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GD.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/qd.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libgd/extralibs.ld
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libgd
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD

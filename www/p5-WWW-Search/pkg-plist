@@ -24,8 +24,8 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Companies.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Email.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Web.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/WWW/Search/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/WWW/Search
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search

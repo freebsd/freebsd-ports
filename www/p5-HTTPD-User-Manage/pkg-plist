@@ -10,5 +10,5 @@ lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/DBM.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/SQL.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text/cern.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/HTTPD-Tools/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/HTTPD-Tools
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools

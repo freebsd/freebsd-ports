@@ -1,4 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/Data/Flow.pm
 lib/perl5/site_perl/%%PERL_VER%%/auto/Data/Flow/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Data/Flow/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Data/Flow
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Flow/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Flow

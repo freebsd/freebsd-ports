@@ -19,7 +19,7 @@ lib/perl5/site_perl/%%PERL_VER%%/MIME/ParserBase.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/ToolUtils.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Tools.pm
 lib/perl5/site_perl/%%PERL_VER%%/MIME/Words.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME-tools/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MIME-tools
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Field
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder

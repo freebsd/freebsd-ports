@@ -1,5 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Devel/Symdump.pm
 lib/perl5/site_perl/%%PERL_VER%%/Devel/Symdump/Export.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Symdump/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Devel/Symdump
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Symdump/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Devel/Symdump
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Devel/Symdump

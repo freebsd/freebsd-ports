@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Term/ReadKey.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/ReadKey.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/ReadKey.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey
-@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Term/ReadKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/ReadKey.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/ReadKey.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey
+@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term 2>/dev/null || true

@@ -11,7 +11,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Client.pm
 lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Server.pm
 lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/PGP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/Transparent.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin/.packlist
 lib/perl5/site_perl/Penguin/bin/.pen
 lib/perl5/site_perl/Penguin/bin/makeapplet
 lib/perl5/site_perl/Penguin/bin/pclient
@@ -41,4 +41,4 @@ lib/perl5/site_perl/Penguin/doc/TODO
 @dirrm lib/perl5/site_perl/Penguin/misc
 @dirrm lib/perl5/site_perl/Penguin/doc
 @unexec rmdir lib/perl5/site_perl/Penguin 2>/dev/null || true
-@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin 2>/dev/null || true
+@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin 2>/dev/null || true

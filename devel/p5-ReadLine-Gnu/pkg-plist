@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadLine/Gnu/Gnu.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadLine/Gnu/Gnu.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Term/ReadLine/Gnu.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadLine/Gnu/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadLine/Gnu
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/Gnu.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/Gnu.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Term/ReadLine/Gnu.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadLine/Gnu

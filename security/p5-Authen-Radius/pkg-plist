@@ -1,2 +1,2 @@
 lib/perl5/site_perl/%%PERL_VER%%/Authen/Radius.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Authen/Radius/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Radius/.packlist
