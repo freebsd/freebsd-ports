@@ -4512,8 +4512,6 @@ mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
 mozilla-devel	ports/www/mozilla-devel
 mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
-mozilla-embedded ports/www/mozilla-embedded
-mozilla-embedded-devel ports/www/mozilla-embedded-devel
 mozilla-firebird	ports/www/mozilla-firebird
 mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
