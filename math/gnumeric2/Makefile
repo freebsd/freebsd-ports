@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric2
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
@@ -44,6 +44,9 @@ post-patch:
 	@${FIND} ${WRKSRC}/src/cut-n-paste-code/goffice/graph/plugins -name \
 		"plugin.xml.in" | ${XARGS} ${REINPLACE_CMD} -e 's|\.la|.so|g'
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
+	@${FIND} ${WRKSRC} -name "intltool-merge.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|mkdir $$lang or|mkdir $$lang, 0777 or| ; \
+		 s|^push @INC, "/.*|push @INC, "${LOCALBASE}/share/intltool";|'
 
 post-install:
 .for dir in share/gnome lib
