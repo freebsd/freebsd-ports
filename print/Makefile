@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1996/06/14 09:20:18 jkh Exp $
+# $Id: Makefile,v 1.30 1996/07/18 04:24:32 asami Exp $
 #
 
     SUBDIR += a2ps
@@ -17,6 +17,7 @@
     SUBDIR += latex209
     SUBDIR += makeindex
     SUBDIR += mltex
+    SUBDIR += mp
     SUBDIR += musixtex
     SUBDIR += pkfonts
     SUBDIR += psutils
