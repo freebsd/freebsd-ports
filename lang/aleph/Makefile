@@ -1,0 +1,28 @@
+# ex:ts=8
+# New ports collection makefile for:	aleph
+# Date created:			Mar 7, 2001
+# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	aleph
+PORTVERSION=	0.7.1
+CATEGORIES=	lang
+MASTER_SITES=	ftp://ftp.aleph-lang.org/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
+DISTNAME=	${PORTNAME}-src-${PORTVERSION:S,.,-,g}
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+USE_GMAKE=	yes
+USE_NEWGCC=	yes
+
+INSTALLS_SHLIB=	yes
+
+MAN1=	aleph.1
+
+do-configure:
+	@(cd ${WRKSRC}; ./cnf/bin/aleph-setup -o)
+
+.include <bsd.port.mk>

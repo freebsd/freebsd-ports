@@ -6,6 +6,7 @@
     SUBDIR += STk
     SUBDIR += Sather
     SUBDIR += TenDRA
+    SUBDIR += aleph
     SUBDIR += atlast
     SUBDIR += bc-gcc
     SUBDIR += bwbasic
