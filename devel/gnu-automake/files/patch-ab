@@ -1,40 +1,11 @@
---- Makefile.in.orig	Fri Sep 19 06:13:16 1997
-+++ Makefile.in	Fri Sep 19 06:15:31 1997
-@@ -131,11 +131,11 @@
- 	$(mkinstalldirs) $(bindir)
- 	@list='$(bin_SCRIPTS)'; for p in $$list; do \
- 	  if test -f $$p; then \
--	    echo " $(INSTALL_SCRIPT) $$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
--	    $(INSTALL_SCRIPT) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
-+	    echo " $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
-+	    $(INSTALL) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
- 	  else if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
--	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`; \
-+	    echo " $(INSTALL) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`"; \
-+	    $(INSTALL) $(srcdir)/$$p $(bindir)/`echo $$p|sed '$(transform)'`; \
- 	  else :; fi; fi; \
- 	done
+--- Makefile.in.orig	Mon Jun 23 11:25:50 1997
++++ Makefile.in	Fri Sep 19 18:19:19 1997
+@@ -196,7 +196,7 @@
+ .texi.info:
+ 	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
+ 	cd $(srcdir) \
+-	  && $(MAKEINFO) `echo $< | sed 's,.*/,,'`
++	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
  
-@@ -150,11 +150,11 @@
- 	$(mkinstalldirs) $(pkgdatadir)
- 	@list='$(pkgdata_SCRIPTS)'; for p in $$list; do \
- 	  if test -f $$p; then \
--	    echo " $(INSTALL_SCRIPT) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
--	    $(INSTALL_SCRIPT) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
-+	    echo " $(INSTALL) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
-+	    $(INSTALL) $$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
- 	  else if test -f $(srcdir)/$$p; then \
--	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
--	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
-+	    echo " $(INSTALL) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`"; \
-+	    $(INSTALL) $(srcdir)/$$p $(pkgdatadir)/`echo $$p|sed '$(transform)'`; \
- 	  else :; fi; fi; \
- 	done
- 
-@@ -569,3 +569,5 @@
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
-+.texi.info:
-+	makeinfo --no-split $(TEXINFOS)
+ .texi.dvi:
+ 	TEXINPUTS=$(srcdir):$$TEXINPUTS \
