@@ -22,7 +22,7 @@ MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
 .if ${OSVERSION} < 500000
 LATEST_LINK=	imake
 .else
-LATEST_LINK=	imake-1
+LATEST_LINK=	imake1
 .endif
 PREFIX=		${X11BASE}
 DIST_SUBDIR=	xc
