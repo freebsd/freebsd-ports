@@ -939,7 +939,6 @@ share/bx/BitchX.kick
 share/bx/script/SCRIPTS
 share/bx/script/actplug.gmz
 share/bx/script/bxglobal
-share/bx/script/bxglobal.old
 share/bx/script/bxtcl.tcl
 share/bx/script/cyp1.0k.tar.gz
 share/bx/script/dcc_fserve-0.50.tgz
