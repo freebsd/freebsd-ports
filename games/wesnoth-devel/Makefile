@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.wesnoth.org/files/
 MASTER_SITE_SUBDIR=	wesnoth
 .if defined(LITE)
 PKGNAMESUFFIX=	-lite
@@ -19,7 +20,7 @@ MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
 USE_GCC=	3.4
-USE_SDL=	image mixer net ttf
+USE_SDL=	image mixer net
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 WANT_GNOME=	yes
@@ -30,6 +31,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sdltest \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
+		--with-freetype-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
 CONFIGURE_ENV=	CPPFLAGS="-ftemplate-depth-45" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
