@@ -13,8 +13,7 @@ MASTER_SITES=	http://www.amavis.org/dist/perl/
 MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Mail Virus Scanner (uses external antivirus)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
-		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
+BUILD_DEPENDS=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
@@ -29,12 +28,27 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+
+.if !defined(WITHOUT_AMAVIS_VSCAN)
+BUILD_DEPENDS+= ${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan
+.endif
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+
+.if defined(WITHOUT_AMAVIS_X-HEADER)
+CONFIGURE_ARGS+=	--disable-x-header
+.endif
+.if defined(WITHOUT_AMAVIS_WARNSENDER)
+CONFIGURE_ARGS+=	--with-warnsender=no
+.endif
+.if defined(WITH_AMAVIS_USER)
+CONFIGURE_ARGS+=	--with-amavisuser="${WITH_AMAVIS_USER}"
+.endif
+
 CONFIGURE_ARGS+=	--with-virusdir=/var/spool/quarantine --with-runtime-dir=/var/log/amavis \
 			--with-logdir=/var/log/amavis
 
