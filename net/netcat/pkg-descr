@@ -8,7 +8,8 @@ capabilities.
 
 Some of netcat's major features are:
 
-	Outbound or inbound connections, TCP or UDP, to or from any ports
+	Outbound or inbound connections, IPv4 or IPv6, TCP or UDP,
+		to or from any ports
 	Full DNS forward/reverse checking, with appropriate warnings
 	Ability to use any local source port
 	Ability to use any locally-configured network source address

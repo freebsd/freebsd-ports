@@ -29,7 +29,7 @@
  # virtually the same as netbsd/bsd44lite/whatever
  freebsd:
 -	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD' STATIC=-static
-+	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD -DGAPING_SECURITY_HOLE -DTELNET' STATIC=-static
++	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD -DGAPING_SECURITY_HOLE -DTELNET -DINET6' STATIC=-static
  
  bsdi:
  	make -e $(ALL) $(MFLAGS) XFLAGS='-DBSDI' STATIC=-Bstatic
