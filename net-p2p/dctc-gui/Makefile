@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.48
-PORTREVISION=	1
+PORTVERSION=	0.51
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -17,6 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
+		db4.0:${PORTSDIR}/databases/db4 \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.1:${PORTSDIR}/devel/gettext-old
 
@@ -34,11 +34,15 @@ DOC_FILES= COPYING ChangeLog README
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi -e \
 		's|(\$$\(datadir\))/gnome|\1|; \
+		s|ldb-4.0|ldb4|; \
 		s|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
 	@${PERL} -pi -e 's|(hublist)|dc_\1|m' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|; \
 		s|(cmdline.+)(hublist)|\1dc_\2|' \
 		${WRKSRC}/src/init_fnc.c
+.for file in bdb.c callbacks.c main.c
+	@${PERL} -pi -e 's|<(db.h>)|<db4/\1|' ${WRKSRC}/src/${file}
+.endfor
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
