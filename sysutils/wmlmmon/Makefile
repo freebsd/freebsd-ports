@@ -22,11 +22,8 @@ MANCOMPRESSED=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-pre-fetch:
-	@${ECHO}
-	@${ECHO} "This port uses the intpm controller which"
-	@${ECHO} "is only available in FreeBSD 4.0-CURRENT."
-	@${ECHO}
+BROKEN="This port uses the intpm controller which is only available in FreeBSD 4
+.0+"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
