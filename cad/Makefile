@@ -8,6 +8,7 @@
     SUBDIR += felt
     SUBDIR += geda
     SUBDIR += geda-symbols
+    SUBDIR += gnetlist
     SUBDIR += irsim
     SUBDIR += iverilog
     SUBDIR += kaskade
