@@ -70,7 +70,7 @@ do-install:
 	@${RM} ${FACT_CNF}.beforeFacturier
 	@${CP} -p ${FACT_CNF} ${FACT_CNF}.dist
 # Set perms
-#	@${CHOWN} -R www:www ${FACT_REP}
+	@${CHOWN} -R www:www ${FACT_REP}
 	@${CHMOD} -R 644 ${FACT_REP}
 	@${FIND} ${FACT_REP} -type d -exec ${CHMOD} a+x {} \;
 	@${CHMOD} -R u+x ${FACT_REP}/cgi-bin
