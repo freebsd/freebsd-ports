@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wenju
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wenju
@@ -29,8 +28,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500041
-PATCHFILES+=	configure-getopt.patch
-BROKEN=		"Does not fetch"
+EXTRA_PATCHES+=	${FILESDIR}/configure-getopt.patch
 .endif
 
 .include <bsd.port.post.mk>
