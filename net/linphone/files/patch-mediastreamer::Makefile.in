@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- mediastreamer/Makefile.in	2002/12/30 08:36:10	1.1
++++ mediastreamer/Makefile.in	2002/12/30 08:43:27
+@@ -163,7 +163,7 @@
+ @BUILD_V4L_TRUE@V4L_PLUGIN_TEST = test_v4l
+ 
+ @BUILD_MEDIASTREAMER_TRUE@lib_LTLIBRARIES = libmediastreamer.la $(XINE_PLUGIN) $(SMPEG_PLUGIN)\
+-@BUILD_MEDIASTREAMER_TRUE@			$(FFMPEG_PLUGIN) $(GDK_VO_PLUGIN) $(V4L_PLUGIN) libmsspeex.la
++@BUILD_MEDIASTREAMER_TRUE@			$(FFMPEG_PLUGIN) $(GDK_VO_PLUGIN) $(V4L_PLUGIN) libmsspeex.la $(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ libmediastreamer_la_SOURCES = msfilter.c msfilter.h msutils.h\
+@@ -239,7 +239,7 @@
+ 
+ 
+ mstest_SOURCES = test.c
+-mstest_LDADD = libmediastreamer.la -lglib -lpthread -lgthread
++mstest_LDADD = libmediastreamer.la @GLIB_LIBS@
+ 
+ #test program to test MSRingPlayer object
+ ring_test_SOURCES = ring_test.c
+@@ -291,7 +291,7 @@
+ 
+ #the mediastream program that runs a processing that will be used in linphone
+ mediastream_SOURCES = mediastream.c audiostream.c mediastream.h
+-mediastream_LDADD = libmediastreamer.la libmsspeex.la
++mediastream_LDADD = libmediastreamer.la libmsspeex.la $(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ DEFS = @DEFS@ -DG_LOG_DOMAIN=\"MediaStreamer\" 
+ 

@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- osipua/src/Makefile.in	2002/12/30 08:45:50	1.1
++++ osipua/src/Makefile.in	2002/12/30 08:49:29
+@@ -91,7 +91,7 @@
+ SIP_MLEAK_FLAGS = @SIP_MLEAK_FLAGS@
+ SOCKET_LIB = @SOCKET_LIB@
+ STRIP = @STRIP@
+-THREAD_LIB = @THREAD_LIB@
++THREAD_LIB = -pthread
+ VERSION = @VERSION@
+ am__include = @am__include@
+ am__quote = @am__quote@
+@@ -126,7 +126,7 @@
+ 
+ 
+ libosipua_la_LDFLAGS = -version-info $(LIBOSIPUA_SO_VERSION) \
+- @POSIX4_LIB@ @THREAD_LIB@ @NSL_LIB@ @SOCKET_LIB@
++ @POSIX4_LIB@ -pthread @NSL_LIB@ @SOCKET_LIB@
+ 
+ 
+ libosipua_la_LIBADD = @OSIP_LIBS@
+@@ -137,10 +137,10 @@
+ 
+ bin_PROGRAMS = osipua_tester test_sdphandler
+ osipua_tester_SOURCES = osipua_tester.c  osipua_tester.h
+-osipua_tester_LDADD = libosipua.la
++osipua_tester_LDADD = libosipua.la -pthread
+ 
+ test_sdphandler_SOURCES = test_sdphandler.c
+-test_sdphandler_LDADD = libosipua.la
++test_sdphandler_LDADD = libosipua.la -pthread
+ subdir = src
+ mkinstalldirs = $(SHELL) $(top_srcdir)/../mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/osipua-config.h

@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- console/Makefile.in	2002/12/30 09:08:53	1.1
++++ console/Makefile.in	2002/12/30 09:10:07
+@@ -166,7 +166,8 @@
+ 				$(top_srcdir)/osipua/src/libosipua.la \
+ 				$(top_srcdir)/mediastreamer/audiostream.o \
+ 				$(top_srcdir)/mediastreamer/libmediastreamer.la \
+-				$(top_srcdir)/mediastreamer/libmsspeex.la
++				$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
++				$(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ sipomatic_SOURCES = \
+@@ -177,7 +178,8 @@
+ 				$(top_srcdir)/osipua/src/libosipua.la \
+ 				$(top_srcdir)/mediastreamer/audiostream.o \
+ 				$(top_srcdir)/mediastreamer/libmediastreamer.la \
+-				$(top_srcdir)/mediastreamer/libmsspeex.la
++				$(top_srcdir)/mediastreamer/.libs/libmsspeex.so \
++				$(top_srcdir)/speex/libspeex/libspeex.la
+ 
+ 
+ noinst_PROGRAMS = wav2raw

@@ -1,0 +1,170 @@
+bin/linphone
+bin/linphonec
+bin/osipua_tester
+bin/sipomatic
+bin/speexdec
+bin/speexenc
+bin/test_sdphandler
+bin/testenc
+bin/testenc_wb
+etc/CORBA/servers/linphone.gnorba
+include/ortp/ortp-config.h
+include/ortp/ortp.h
+include/ortp/payloadtype.h
+include/ortp/rtp.h
+include/ortp/rtpmod.h
+include/ortp/rtpport.h
+include/ortp/rtpsession.h
+include/ortp/rtpsignaltable.h
+include/ortp/rtptimer.h
+include/ortp/scheduler.h
+include/ortp/sessionset.h
+include/ortp/str_utils.h
+include/ortp/telephonyevents.h
+include/osipua/bodycontext.h
+include/osipua/bodyhandler.h
+include/osipua/osipdialog.h
+include/osipua/osipmanager.h
+include/osipua/osipua.h
+include/osipua/regctxt.h
+include/osipua/resolver.h
+include/osipua/sdpcontext.h
+include/osipua/sdphandler.h
+include/osipua/utils.h
+include/speex.h
+include/speex_bits.h
+include/speex_callbacks.h
+include/speex_header.h
+lib/libmediastreamer.a
+lib/libmediastreamer.so
+lib/libmediastreamer.so.0
+lib/libmsspeex.a
+lib/libmsspeex.so
+lib/libmsspeex.so.0
+lib/libortp.a
+lib/libortp.la
+lib/libortp.so
+lib/libortp.so.0
+lib/libosipua.a
+lib/libosipua.la
+lib/libosipua.so
+lib/libosipua.so.1
+lib/libspeex.a
+lib/libspeex.la
+share/doc/manual.pdf
+share/doc/mediastreamer/book1.html
+share/doc/mediastreamer/coreapi.html
+share/doc/mediastreamer/index.sgml
+share/doc/mediastreamer/mediastreamer-filters.html
+share/doc/mediastreamer/mediastreamer-msringplayer.html
+share/doc/mediastreamer/mediastreamer-mssync.html
+share/doc/mediastreamer/mediastreamer-running-processing-chains.html
+share/doc/mediastreamer/msfilterimplementations.html
+share/doc/mediastreamer/userapi.html
+share/doc/ortp/book1.html
+share/doc/ortp/index.sgml
+share/doc/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
+share/doc/ortp/ortp-rtp-payloads-and-profiles.html
+share/doc/ortp/ortp-rtpsession-api.html
+share/doc/ortp/ortp-stack-management-functions.html
+share/doc/ortp/ortp-telephone-events-(rfc2833)-.html
+share/doc/ortp/ortpapi.html
+share/doc/osipua/book1.html
+share/doc/osipua/index.sgml
+share/doc/osipua/osipcallleg.html
+share/doc/osipua/osipua--registrationctxt-api-.html
+share/doc/osipua/osipua-osipcallleg-private-api.html
+share/doc/osipua/osipua-osipcallleg-public-api.html
+share/doc/osipua/osipua-osipua-private-api.html
+share/doc/osipua/osipua-osipua-public-api.html
+share/doc/osipua/osipua.html
+share/doc/osipua/registrationctxt.html
+share/gnome/apps/Internet/linphone.desktop
+share/gnome/applets/Network/linphone_applet.desktop
+share/gnome/help/linphone/C/manual/CVS/Entries
+share/gnome/help/linphone/C/manual/CVS/Repository
+share/gnome/help/linphone/C/manual/CVS/Root
+share/gnome/help/linphone/C/manual/docbook.css
+share/gnome/help/linphone/C/manual/index.html
+share/gnome/help/linphone/C/manual/params.html
+share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Entries
+share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Repository
+share/gnome/help/linphone/C/manual/stylesheet-images/CVS/Root
+share/gnome/help/linphone/C/manual/t1.html
+share/gnome/help/linphone/C/manual/x118.html
+share/gnome/help/linphone/C/manual/x121.html
+share/gnome/help/linphone/C/manual/x137.html
+share/gnome/help/linphone/C/manual/x143.html
+share/gnome/help/linphone/C/manual/x167.html
+share/gnome/help/linphone/C/manual/x172.html
+share/gnome/help/linphone/C/manual/x188.html
+share/gnome/help/linphone/C/manual/x26.html
+share/gnome/help/linphone/C/manual/x36.html
+share/gnome/help/linphone/fr/manual/CVS/Entries
+share/gnome/help/linphone/fr/manual/CVS/Repository
+share/gnome/help/linphone/fr/manual/CVS/Root
+share/gnome/help/linphone/fr/manual/docbook.css
+share/gnome/help/linphone/fr/manual/params.html
+share/gnome/help/linphone/fr/manual/registering.html
+share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Entries
+share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Repository
+share/gnome/help/linphone/fr/manual/stylesheet-images/CVS/Root
+share/gnome/help/linphone/fr/manual/t1.html
+share/gnome/help/linphone/fr/manual/x116.html
+share/gnome/help/linphone/fr/manual/x134.html
+share/gnome/help/linphone/fr/manual/x140.html
+share/gnome/help/linphone/fr/manual/x164.html
+share/gnome/help/linphone/fr/manual/x170.html
+share/gnome/help/linphone/fr/manual/x188.html
+share/gnome/help/linphone/fr/manual/x24.html
+share/gnome/help/linphone/fr/manual/x34.html
+share/gnome/help/linphone/it/manual/CVS/Entries
+share/gnome/help/linphone/it/manual/CVS/Repository
+share/gnome/help/linphone/it/manual/CVS/Root
+share/gnome/help/linphone/it/manual/docbook.css
+share/gnome/help/linphone/it/manual/params.html
+share/gnome/help/linphone/it/manual/registering.html
+share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Entries
+share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Repository
+share/gnome/help/linphone/it/manual/stylesheet-images/CVS/Root
+share/gnome/help/linphone/it/manual/t1.html
+share/gnome/help/linphone/it/manual/x116.html
+share/gnome/help/linphone/it/manual/x134.html
+share/gnome/help/linphone/it/manual/x140.html
+share/gnome/help/linphone/it/manual/x164.html
+share/gnome/help/linphone/it/manual/x170.html
+share/gnome/help/linphone/it/manual/x189.html
+share/gnome/help/linphone/it/manual/x24.html
+share/gnome/help/linphone/it/manual/x34.html
+share/gnome/linphonec
+share/gnome/pixmaps/linphone/linphone.png
+share/gnome/pixmaps/linphone/linphone2.png
+share/gnome/pixmaps/linphone/linphone2.xpm
+share/gnome/sounds/linphone/hello.raw
+share/gnome/sounds/linphone/ring.raw
+share/gnome/sounds/linphone/ringback.raw
+share/locale/de/LC_MESSAGES/linphone.mo
+share/locale/fr/LC_MESSAGES/linphone.mo
+share/locale/it/LC_MESSAGES/linphone.mo
+@dirrm share/gnome/sounds/linphone
+@dirrm share/gnome/help/linphone/it/manual/stylesheet-images/CVS
+@dirrm share/gnome/help/linphone/it/manual/stylesheet-images
+@dirrm share/gnome/help/linphone/it/manual/CVS
+@dirrm share/gnome/help/linphone/it/manual
+@dirrm share/gnome/help/linphone/it
+@dirrm share/gnome/help/linphone/fr/manual/stylesheet-images/CVS
+@dirrm share/gnome/help/linphone/fr/manual/stylesheet-images
+@dirrm share/gnome/help/linphone/fr/manual/CVS
+@dirrm share/gnome/help/linphone/fr/manual
+@dirrm share/gnome/help/linphone/fr
+@dirrm share/gnome/help/linphone/C/manual/stylesheet-images/CVS
+@dirrm share/gnome/help/linphone/C/manual/stylesheet-images
+@dirrm share/gnome/help/linphone/C/manual/CVS
+@dirrm share/gnome/help/linphone/C/manual
+@dirrm share/gnome/help/linphone/C
+@dirrm share/gnome/help/linphone
+@dirrm share/doc/osipua
+@dirrm share/doc/ortp
+@dirrm share/doc/mediastreamer
+@dirrm include/osipua
+@dirrm include/ortp

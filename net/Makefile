@@ -264,6 +264,7 @@
     SUBDIR += licq-qt-gui
     SUBDIR += limewire
     SUBDIR += linc
+    SUBDIR += linphone
     SUBDIR += linpopup
     SUBDIR += linux-edonkey-gui-gtk
     SUBDIR += linux-edonkey-server
