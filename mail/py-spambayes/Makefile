@@ -36,7 +36,9 @@ post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@if [ -f ${WRKSRC}/${file} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR} ; \
+	fi
 .endfor
 	@${MKDIR} ${DOCSDIR}/contrib
 	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
