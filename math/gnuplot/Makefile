@@ -1,19 +1,22 @@
 # New ports collection makefile for:    gnuplot
-# Version required:     3.5
-# Date created:         6 October 1994
-# Whom:                 jmz
+# Version required:     3.6
+# Date created:         11 January 1997
+# Whom:                 cbr
 #
-# $Id: Makefile,v 1.6 1996/11/18 10:24:43 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/18 14:05:16 asami Exp $
 #
 
 DISTNAME=	gnuplot
-PKGNAME=	gnuplot-3.5
+PKGNAME=	gnuplot-beta325
 CATEGORIES=	math graphics
-MASTER_SITES=	ftp://ftp.dartmouth.edu/pub/gnuplot/ \
-		${MASTER_SITE_GNU}
-DISTFILES=	gnuplot3.5.tar.Z
+#MASTER_SITES=	http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot%2B/3.6base/gnuplot-beta325.tar.gz
+MASTER_SITES=	http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot%2B/3.6base/
+DISTFILES=	gnuplot-beta325.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	cbr@FreeBSD.org
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-x --without-linux-vga --with-gnu-readline --with-lasergnu
 
 MAN1=		gnuplot.1 lasergnu.1
 
