@@ -5,7 +5,6 @@ bin/gba
 bin/gbc
 bin/gbi
 bin/gbx
-include/gambas.h
 lib/gambas/lib.gb.a
 lib/gambas/lib.gb.component
 lib/gambas/lib.gb.compress.a
@@ -48,10 +47,6 @@ lib/gambas/lib.gb.eval.component
 lib/gambas/lib.gb.eval.la
 lib/gambas/lib.gb.eval.so
 lib/gambas/lib.gb.eval.so.0
-lib/gambas/lib.gb.example.a
-lib/gambas/lib.gb.example.la
-lib/gambas/lib.gb.example.so
-lib/gambas/lib.gb.example.so.0
 lib/gambas/lib.gb.net.a
 lib/gambas/lib.gb.net.component
 lib/gambas/lib.gb.net.curl.a
