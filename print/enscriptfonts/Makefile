@@ -3,7 +3,7 @@
 # Date created:			15 June, 1998
 # Whom:				kline
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/20 02:30:58 steve Exp $
 #
 
 DISTNAME=	enscript_fonts-0.75
@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kline@thought.org
 
-RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript
+# user should choose their own version
+#RUN_DEPENDS=	enscript:${PORTSDIR}/print/enscript-letter
 
 NO_WRKSUBDIR=	YES
 NOMANCOMPRESS=	YES
