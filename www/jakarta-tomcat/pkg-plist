@@ -1,16 +1,10 @@
 tomcat/LICENSE
 tomcat/bin/ant
-tomcat/bin/ant.bat
 tomcat/bin/antRun
-tomcat/bin/jspc.bat
 tomcat/bin/jspc.sh
-tomcat/bin/shutdown.bat
 tomcat/bin/shutdown.sh
-tomcat/bin/startup.bat
 tomcat/bin/startup.sh
-tomcat/bin/tomcat.bat
 tomcat/bin/tomcat.sh
-tomcat/bin/tomcatEnv.bat
 tomcat/conf/build.xml
 tomcat/conf/jni_server.xml
 tomcat/conf/jni_workers.properties
@@ -35,7 +29,6 @@ tomcat/doc/appdev/installation.html
 tomcat/doc/appdev/introduction.html
 tomcat/doc/appdev/processes.html
 tomcat/doc/appdev/sample/build
-tomcat/doc/appdev/sample/build.bat
 tomcat/doc/appdev/sample/build.xml
 tomcat/doc/appdev/sample/etc/web.xml
 tomcat/doc/appdev/sample/src/Hello.java
