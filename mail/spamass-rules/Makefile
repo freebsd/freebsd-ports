@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20041101
+PORTVERSION=	20041105
 CATEGORIES=	mail
-MASTER_SITES=	http://www.ranner.jawa.at/stuff/
+MASTER_SITES=	http://www.ranner.jawa.at/stuff/ \
+		http://web.inforum.at/downloads/
 
 MAINTAINER=	mranner@inode.at
 COMMENT=	Custom rulesets for SpamAssassin
@@ -17,11 +18,12 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		AIRMAX "Some custom rulesets" off \
-		ANTIDRUG "Catch those pesky 'pill spams'" on \
+		ANTIDRUG "Already included in SA 3.0" off \
 		BACKHAIR "Catch those ugly, unsightly HTML tags" on \
 		BOGUS_VIRUS "Catch 'collateral spam' caused by viruses" on \
 		BRAZILIAN "Catches spam written in Portuguese" off \
 		CHICKENPOX "Catch spam like 'l.ooks f|or th.is garb+age'" on \
+		CHINESE "Catches spam written in Chinese" off \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		FRENCH "Catches spam written in French" off \
 		GERMAN "Catches spam written in German" off \
@@ -52,7 +54,7 @@ SPAMASS_FILES+=	20_dnsbl_ahbl.cf
 SPAMASS_FILES+=	airmax.cf
 .endif
 
-.if !defined(WITHOUT_ANTIDRUG)
+.if defined(WITH_ANTIDRUG)
 SPAMASS_FILES+=	antidrug.cf
 .endif
 
@@ -73,6 +75,10 @@ SPAMASS_FILES+=	$i
 
 .if !defined(WITHOUT_CHICKENPOX)
 SPAMASS_FILES+=	chickenpox.cf
+.endif
+
+.if defined(WITH_CHINESE)
+SPAMASS_FILES+=	chinese_rules.cf
 .endif
 
 .if !defined(WITHOUT_EVILNUMBERS)
@@ -100,7 +106,7 @@ SPAMASS_FILES+=	random.cf
 .if !defined(WITHOUT_SARE)
 .for i in 70_sare_adult.cf 70_sare_bayes_poison_nxm.cf 70_sare_header0.cf \
 	70_sare_html0.cf 70_sare_genlsubj0.cf 70_sare_oem.cf 70_sare_random.cf \
-	70_sare_ratware.cf 70_sare_specific.cf 70_sare_spoof.cf 70_sare_unsub.cf \
+	70_sare_specific.cf 70_sare_spoof.cf 70_sare_unsub.cf 70_sare_uri.cf \
 	71_sare_redirect_pre3.0.0.cf 72_sare_bml_post25x.cf \
 	99_sare_fraud_post25x.cf
 SPAMASS_FILES+=	$i
