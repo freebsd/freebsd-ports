@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.194 1999/06/23 19:54:23 cpiazza Exp $
+# $Id: Makefile,v 1.195 1999/06/27 17:48:40 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -60,7 +60,6 @@
     SUBDIR += id-utils
     SUBDIR += ilu
     SUBDIR += jam
-    SUBDIR += java-cup
     SUBDIR += ktranslator
     SUBDIR += lclint
     SUBDIR += libPropList
