@@ -11,15 +11,16 @@ CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 
-MAINTAINER=	steve@farrell.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-NO_INSTALL_MANPAGES=	yes
 
-pre-install:
-	@cd ${WRKSRC}/xbackdrop/backdrops; ${MV} index index.orig; ${SED} -e 's,/usr/lib,${PREFIX}/lib,' index.orig > index; ${RM} index.orig index~
+post-build:
+	${RM} -f ${WRKSRC}/xbackdrop/backdrops/index~ ;\
+	${PERL} -pi -e 's,/usr/lib,${PREFIX}/lib,' \
+		${WRKSRC}/xbackdrop/backdrops/index
 
 .include <bsd.port.mk>
