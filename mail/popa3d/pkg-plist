@@ -1,6 +1,7 @@
 @comment $FreeBSD$
+%%STANDALONE_POP3%%etc/rc.d/popa3d.sh-dist
 libexec/popa3d
-%%PORTDOCS%%share/doc/popa3d/DESIGN
-%%PORTDOCS%%share/doc/popa3d/LICENSE
-%%SMTP_AFTER_POP3%%%%PORTDOCS%%share/doc/popa3d/POPAUTH
-%%PORTDOCS%%@dirrm share/doc/popa3d
+%%PORTDOCS%%%%DOCSDIR%%/DESIGN
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%SMTP_AFTER_POP3%%%%PORTDOCS%%%%DOCSDIR%%/POPAUTH
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -13,10 +13,14 @@ MASTER_SITES=	http://www.openwall.com/popa3d/ \
 .if defined(SMTP_AFTER_POP3)
 PKGNAMESUFFIX?=	-before-sendmail
 .endif
+.if defined(STANDALONE_POP3)
+PKGNAMESUFFIX?=	-standalone
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure, performance, tiny POP3 daemon
 
+USE_REINPLACE=	yes
 ALL_TARGET=	popa3d
 MAN8=		popa3d.8
 PLIST=		${WRKDIR}/.PLIST.more
@@ -27,10 +31,23 @@ PLIST_SUB+=	SMTP_AFTER_POP3=""
 .else
 PLIST_SUB+=	SMTP_AFTER_POP3="@comment "
 .endif
+.if defined(STANDALONE_POP3)
+PLIST_SUB+=	STANDALONE_POP3=""
+.else
+PLIST_SUB+=	STANDALONE_POP3="@comment "
+.endif
+
+.if defined(STANDALONE_POP3)
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/popa3d.sh \
+		> ${WRKSRC}/popa3d.sh
+.endif
 
 pre-configure:
 	@${CAT} ${PKGDIR}/pkg-plist >${PLIST}
 .if !exists(/var/empty)
+	@${REINPLACE_CMD} -e "s=/var/empty=${PREFIX}/empty=" \
+		${WRKSRC}/params.h
 	@${ECHO_CMD} "@exec ${MKDIR} %D/empty" >>${PLIST}
 	@${ECHO_CMD} "@dirrm empty" >>${PLIST}
 .endif
@@ -38,12 +55,9 @@ pre-configure:
 	@${ECHO_CMD} "@cwd ${CFDIR}" >>${PLIST}
 	@${ECHO_CMD} "hack/popauth.m4" >>${PLIST}
 .endif
-
-.if !exists(/var/empty)
-pre-patch:
-	@${MV} ${WRKSRC}/params.h ${WRKSRC}/params.h.sed
-	${SED} -e "s=/var/empty=${PREFIX}/empty=" \
-		${WRKSRC}/params.h.sed > ${WRKSRC}/params.h
+.if defined(STANDALONE_POP3)
+	@${REINPLACE_CMD} -e 's|^\(#define POP_STANDALONE\).*|\1 1|' \
+		${WRKSRC}/params.h
 .endif
 
 pre-install:
@@ -59,12 +73,15 @@ do-install:
 .if defined(SMTP_AFTER_POP3)
 	${INSTALL_DATA} ${FILESDIR}/popauth.m4 ${CFDIR}/hack/
 .endif
+.if defined(STANDALONE_POP3)
+	${INSTALL_DATA} ${WRKSRC}/popa3d.sh ${PREFIX}/etc/rc.d/popa3d.sh-dist
+.endif
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/DESIGN ${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/popa3d
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/DESIGN ${DOCSDIR}/
+	${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}/
 .if defined(SMTP_AFTER_POP3)
-	${INSTALL_DATA} ${FILESDIR}/POPAUTH ${PREFIX}/share/doc/popa3d
+	${INSTALL_DATA} ${FILESDIR}/POPAUTH ${DOCSDIR}/
 .endif
 .endif
 
