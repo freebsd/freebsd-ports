@@ -1,0 +1,4 @@
+To use diff-mode, simply add to your .emacs the following lines:
+
+(autoload 'diff-mode "diff-mode" "Diff major mode" t)
+(add-to-list 'auto-mode-alist '("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode))

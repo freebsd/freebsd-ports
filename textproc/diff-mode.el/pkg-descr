@@ -1,0 +1,15 @@
+Diff-mode is a major-mode for viewing/editing context diffs in Emacs.
+Supports unified and context diffs as well as (to a lesser extent)
+normal diffs.
+
+The diff-mode provides features such as:
+
+    - Unified diff <-> Context diff conversion.
+    - Reverse the direction of the diffs.
+    - Jump to the corresponding source line.
+    - Move to the next/previous hunk/file header.
+    - Restrict the view to the current hunk/file.
+
+
+- Tetsurou
+okazaki@be.to
