@@ -1,5 +1,5 @@
---- /ports/devel/sdl12/work/SDL-1.2.7/src/cpuinfo/SDL_cpuinfo.c	Tue Feb 10 16:31:35 2004
-+++ ../cpuinfo/SDL_cpuinfo.c	Sun May 16 19:19:48 2004
+--- src/cpuinfo/SDL_cpuinfo.c.orig	Tue Feb 10 16:31:35 2004
++++ src/cpuinfo/SDL_cpuinfo.c	Sun May 16 19:19:48 2004
 @@ -22,7 +22,7 @@
  
  #ifdef SAVE_RCSID
