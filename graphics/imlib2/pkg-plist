@@ -11,11 +11,11 @@ include/gdk_imlib_types.h
 lib/libImlib.a
 lib/libImlib.la
 lib/libImlib.so
-lib/libImlib.so.1.8
+lib/libImlib.so.1.9
 lib/libgdk_imlib.a
 lib/libgdk_imlib.la
 lib/libgdk_imlib.so
-lib/libgdk_imlib.so.1.8
+lib/libgdk_imlib.so.1.9
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm etc/imlib
