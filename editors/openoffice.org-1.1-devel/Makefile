@@ -464,11 +464,6 @@ do-build:
 .endif
 
 pre-install:
-	@${CP} ${FILESDIR}/oo_setup.resp \
-		${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/
-	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
-			${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 	@${MKDIR} -p ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
@@ -478,15 +473,15 @@ do-install:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
-		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
+        @cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	@SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		./install --prefix=${PREFIX}
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
-		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
+        @cd ${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/ ; \
+	@SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		./install --prefix=${PREFIX}
 .endif
 
 install-user:
