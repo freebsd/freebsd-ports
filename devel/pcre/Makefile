@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pcre
-# Version required:			2.05
+# Version required:			2.08
 # Date created:				08 July 1998
 # Whom:					dom
 #
 # $FreeBSD$
 #
 
-DISTNAME=       pcre-2.05
+DISTNAME=       pcre-2.08
 CATEGORIES=     devel
 MASTER_SITES=   ftp://ftp.cus.cam.ac.uk/pub/software/programs/pcre/
 
