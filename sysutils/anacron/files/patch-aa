@@ -1,0 +1,275 @@
+diff -uN ../anacron-2.3/Makefile ./Makefile
+--- ../anacron-2.3/Makefile	Fri Jun 23 00:26:11 2000
++++ ./Makefile	Fri May  2 22:16:51 2003
+@@ -19,16 +19,16 @@
+ #   `COPYING' that comes with the Anacron source distribution.
+ 
+ 
+-PREFIX = 
+-BINDIR = $(PREFIX)/usr/sbin
+-MANDIR = $(PREFIX)/usr/man
++PREFIX ?= /usr/local
++BINDIR = $(PREFIX)/sbin
++MANDIR = $(PREFIX)/man
+ CFLAGS = -Wall -pedantic -O2
+ #CFLAGS = -Wall -O2 -g -DDEBUG
+ 
+ # If you change these, please update the man-pages too
+ # Only absolute paths here, please
+ SPOOLDIR = /var/spool/anacron
+-ANACRONTAB = /etc/anacrontab
++ANACRONTAB = $(PREFIX)/etc/anacrontab
+ 
+ RELEASE = 2.3
+ package_name = anacron-$(RELEASE)
+@@ -64,7 +64,7 @@
+ 
+ .PHONY: installdirs
+ installdirs:
+-	$(INSTALL_DIR) $(BINDIR) $(PREFIX)$(SPOOLDIR) \
++	$(INSTALL_DIR) $(BINDIR) $(SPOOLDIR) \
+ 		$(MANDIR)/man5 $(MANDIR)/man8
+ 
+ .PHONY: install
+@@ -72,6 +72,7 @@
+ 	$(INSTALL_PROGRAM) anacron $(BINDIR)/anacron
+ 	$(INSTALL_DATA) anacrontab.5 $(MANDIR)/man5/anacrontab.5
+ 	$(INSTALL_DATA) anacron.8 $(MANDIR)/man8/anacron.8
++	$(INSTALL_DATA) anacrontab.sample $(PREFIX)/etc/anacrontab.sample
+ 
+ .PHONY: clean
+ clean:
+diff -uN ../anacron-2.3/anacron.8 ./anacron.8
+--- ../anacron-2.3/anacron.8	Fri Jun 23 00:42:05 2000
++++ ./anacron.8	Fri May  2 21:57:56 2003
+@@ -18,7 +18,7 @@
+ usually controlled by \fBcron\fR.
+ .PP
+ When executed, Anacron reads a list of jobs from a configuration file, normally
+-.I /etc/anacrontab
++.I /usr/local/etc/anacrontab
+ (see \fBanacrontab(5)\fR).  This file
+ contains the list of jobs that Anacron controls.  Each
+ job entry specifies a period in days, 
+@@ -84,7 +84,7 @@
+ .TP
+ .B -n
+ Run jobs now.  Ignore the delay specifications in the
+-.I /etc/anacrontab
++.I /usr/local/etc/anacrontab
+ file.  This options implies \fB-s\fR.
+ .TP
+ .B -d
+@@ -117,7 +117,7 @@
+ for more information.
+ .SH FILES
+ .TP
+-.I /etc/anacrontab
++.I /usr/local/etc/anacrontab
+ Contains specifications of jobs.  See \fBanacrontab(5)\fR for a complete
+ description.
+ .TP
+diff -uN ../anacron-2.3/anacrontab.5 ./anacrontab.5
+--- ../anacron-2.3/anacrontab.5	Wed Jun 21 01:12:18 2000
++++ ./anacrontab.5	Fri May  2 21:58:31 2003
+@@ -1,9 +1,9 @@
+ .TH ANACRONTAB 5 1998-02-02 "Itai Tzur" "Anacron Users' Manual"
+ .SH NAME
+-/etc/anacrontab \- configuration file for anacron
++/usr/local/etc/anacrontab \- configuration file for anacron
+ .SH DESCRIPTION
+ The file
+-.I /etc/anacrontab
++.I /usr/local/etc/anacrontab
+ describes the jobs controlled by \fBanacron(8)\fR.  Its lines can be of
+ three kinds:  job-description lines, environment
+ assignments, or empty lines.
+diff -uN ../anacron-2.3/anacrontab.sample ./anacrontab.sample
+--- ../anacron-2.3/anacrontab.sample	Thu Jan  1 01:00:00 1970
++++ ./anacrontab.sample	Sat May  3 20:14:43 2003
+@@ -0,0 +1,12 @@
++
++PATH=/bin:/sbin:/usr/bin:/usr/sbin
++
++# days		make sure the command is executed at least every 'days' days
++# delay		delay in minutes, before a command starts
++# id		unique id of a command
++
++# days	delay	id		command
++1	5	daily		periodic daily
++7	15	weekly		periodic weekly
++30	60	monthly		periodic monthly
++
+diff -uN ../anacron-2.3/matchrx.c ./matchrx.c
+--- ../anacron-2.3/matchrx.c	Wed Jun 21 01:12:18 2000
++++ ./matchrx.c	Thu May  1 14:46:35 2003
+@@ -23,6 +23,7 @@
+ 
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ #include <regex.h>
+ #include <stdarg.h>
+ #include <stdlib.h>
+diff -uN ../anacron-2.3/readtab.c ./readtab.c
+--- ../anacron-2.3/readtab.c	Fri Jun 23 00:13:12 2000
++++ ./readtab.c	Mon Aug 25 16:46:18 2003
+@@ -19,6 +19,11 @@
+  
+     The GNU General Public License can also be found in the file
+     `COPYING' that comes with the Anacron source distribution.
++
++    Changes:
++
++    May 2003 (Derik van Zuetphen)
++	replaced obstack with malloc/realloc calls
+ */
+ 
+ 
+@@ -29,7 +34,6 @@
+ #include <errno.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <obstack.h>
+ #include <limits.h>
+ #include <fnmatch.h>
+ #include <unistd.h>
+@@ -37,8 +41,6 @@
+ #include "global.h"
+ #include "matchrx.h"
+ 
+-static struct obstack input_o;   /* holds input line */
+-static struct obstack tab_o;    /* holds processed data read from anacrontab */
+ static FILE *tab;
+ job_rec **job_array;
+ int njobs;                       /* number of jobs to run */
+@@ -47,9 +49,7 @@
+ static job_rec *last_job_rec;    /* last job stored in memory, at the moment */
+ static env_rec *last_env_rec;    /* last environment assignment stored */
+ 
+-/* some definitions for the obstack macros */
+-#define obstack_chunk_alloc xmalloc
+-#define obstack_chunk_free free
++#define MAXTABLINE	1000
+ 
+ static void *
+ xmalloc (size_t size)
+@@ -63,6 +63,18 @@
+     return ptr;
+ }
+ 
++static void *
++xrealloc (void *mem, size_t size)
++/* Just like standard realloc(), only never returns NULL. */
++{
++    void * ptr;
++
++    ptr = realloc(mem,size);
++    if (ptr == NULL)
++	die("Memory exhausted");
++    return ptr;
++}
++
+ static int
+ conv2int(const char *s)
+ /* Return the int or -1 on over/under-flow
+@@ -78,19 +90,20 @@
+ }
+ 
+ static char *
+-read_tab_line ()
++read_tab_line (char *line)
+ /* Read one line and return a pointer to it.
+ Return NULL if no more lines.
+  */
+ {
+     int c;
++    int i = 0;
+ 
+     if (feof(tab)) return NULL;
+-    while ((c = getc(tab)) != EOF && c != '\n')
+-	obstack_1grow(&input_o, c);
++    while (i < MAXTABLINE-1 && (c = getc(tab)) != EOF && c != '\n')
++	line[i++] = c;
+     if (ferror(tab)) die_e("Error reading %s", anacrontab);
+-    obstack_1grow(&input_o, '\0');
+-    return obstack_finish(&input_o);
++    line[i] = 0;
++    return line;
+ }
+ 
+ static int
+@@ -119,8 +132,8 @@
+ 
+     var_len = strlen(env_var);
+     val_len = strlen(value);
+-    er = obstack_alloc(&tab_o, sizeof(env_rec));
+-    er->assign = obstack_alloc(&tab_o, var_len + 1 + val_len + 1);
++    er = (env_rec*)xmalloc(sizeof(env_rec));
++    er->assign = (char*)xmalloc(var_len + 1 + val_len + 1);
+     strcpy(er->assign, env_var);
+     er->assign[var_len] = '=';
+     strcpy(er->assign + var_len + 1, value);
+@@ -151,14 +164,14 @@
+ 		 anacrontab, line_num);
+ 	return;
+     }
+-    jr = obstack_alloc(&tab_o, sizeof(job_rec));
++    jr = (job_rec*)xmalloc(sizeof(job_rec));
+     jr->period = period;
+     jr->delay = delay;
+     jr->tab_line = line_num;
+-    jr->ident = obstack_alloc(&tab_o, ident_len + 1);
++    jr->ident = (char*)xmalloc(ident_len + 1);
+     strcpy(jr->ident, ident);
+     jr->arg_num = job_arg_num(ident);
+-    jr->command = obstack_alloc(&tab_o, command_len + 1);
++    jr->command = (char*)xmalloc(command_len + 1);
+     strcpy(jr->command, command);
+     jr->job_pid = jr->mailer_pid = 0;
+     if (last_job_rec != NULL) last_job_rec->next = jr;
+@@ -222,7 +235,7 @@
+ read_tab()
+ /* Read the anacrontab file into memory */
+ {
+-    char *tab_line;
++    char tab_line[MAXTABLINE];
+ 
+     first_job_rec = last_job_rec = NULL;
+     first_env_rec = last_env_rec = NULL;
+@@ -231,14 +244,10 @@
+     /* Open the anacrontab file */
+     tab = fopen(anacrontab, "r");
+     if (tab == NULL) die_e("Error opening %s", anacrontab);
+-    /* Initialize the obstacks */
+-    obstack_init(&input_o);
+-    obstack_init(&tab_o);
+-    while ((tab_line = read_tab_line()) != NULL)
++    while ((read_tab_line(tab_line)) != NULL)
+     {
+ 	line_num++;
+ 	parse_tab_line(tab_line);
+-	obstack_free(&input_o, tab_line);
+     }
+     if (fclose(tab)) die_e("Error closing %s", anacrontab);
+ }
+@@ -269,16 +278,17 @@
+ 
+     j = first_job_rec;
+     njobs = 0;
++    job_array = NULL;
+     while (j != NULL)
+     {
+ 	if (j->arg_num != -1 && (update_only || consider_job(j)))
+ 	{
++	    job_array = (job_rec**)xrealloc(job_array, (njobs+1)*sizeof(j));
++	    job_array[njobs] = j;
+ 	    njobs++;
+-	    obstack_grow(&tab_o, &j, sizeof(j));
+ 	}
+ 	j = j->next;
+     }
+-    job_array = obstack_finish(&tab_o);
+ 
+     /* sort the jobs */
+     qsort(job_array, njobs, sizeof(*job_array),

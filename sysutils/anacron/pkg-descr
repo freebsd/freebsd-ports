@@ -1,0 +1,13 @@
+Anacron is a periodic command scheduler.  It executes commands at
+intervals specified in days.  Unlike cron, it does not assume that the
+system is running continuously.  It can therefore be used to control
+the execution of daily, weekly and monthly jobs (or anything with a
+period of n days), on systems that don't run 24 hours a day.
+
+Anacron is not an attempt to make cron redundant.
+
+Requirements
+ - A functioning syslog daemon.
+ - A functioning /usr/lib/sendmail command.  (all MTAs should have that).
+
+WWW: http://sourceforge.net/projects/anacron

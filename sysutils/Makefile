@@ -11,6 +11,7 @@
     SUBDIR += afbinit
     SUBDIR += afio
     SUBDIR += ah-tty
+    SUBDIR += anacron
     SUBDIR += and
     SUBDIR += anteater
     SUBDIR += apachetop
