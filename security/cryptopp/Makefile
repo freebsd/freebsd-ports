@@ -27,8 +27,8 @@ MAKEFILE=		GNUmakefile
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
+.if ${ARCH} == "ia64 && ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on ia64 or sparc64"
 .endif
 
 pre-install:
