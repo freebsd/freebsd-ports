@@ -1,0 +1,43 @@
+--- configure.in.orig	Thu Feb 12 13:38:59 2004
++++ configure.in	Thu Feb 12 13:44:17 2004
+@@ -315,7 +315,6 @@
+ 
+ 	  ;;
+ freebsd*) CFLAGS="$CFLAGS -D_REENTRANT -DFREEBSD -D_THREAD_SAFE -DFD_SETSIZE=2048 -I."
+-	  CXX=g++
+ 	  CXXSOFLAGS="-shared -Xlinker -Bstatic"
+ 	  LIBS="$LEXLIB $LIBS"
+ 	  if test "$large_files" = "yes" ; then
+@@ -328,14 +327,14 @@
+           rel=`uname -r`
+           case "$rel" in
+             4*)
+-              CFLAGS="$CFLAGS -pthread"
++              CFLAGS="$CFLAGS $PTHREAD_CFLAGS $PTHREAD_LIBS"
+               ;;
+             5*)
+-              LIBS="-lc_r $LEXLIB $LIBS"
++              LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
+               ;;
+             *)
+-              CFLAGS="$CFLAGS -pthread"
+-              LIBS="-lc_r $LEXLIB $LIBS"
++              CFLAGS="$CFLAGS $PTHREAD_CFLAGS"
++              LIBS="$PTHREAD_LIBS $LEXLIB $LIBS"
+               ;;
+           esac
+ 	  RPATH_OPTION="-rpath"
+@@ -430,10 +429,10 @@
+ esac
+ 
+ if test "X$MYSQL_PATH" != "X" ; then
+-    LIBS="-L$MYSQL_PATH/lib -lmysqlclient $LIBS"
++    LIBS="-L$MYSQL_PATH/lib/mysql -lmysqlclient $LIBS"
+     AC_DEFINE(HAVE_MYSQL)
+-    CFLAGS="$CFLAGS -I$MYSQL_PATH/include"
+-    MYSQL_LIB="-L$MYSQL_PATH/lib -lmysqlclient"
++    CFLAGS="$CFLAGS -I$MYSQL_PATH/include/mysql"
++    MYSQL_LIB="-L$MYSQL_PATH/lib/mysql -lmysqlclient"
+ fi
+ 
+ if test "X$PGSQL_PATH" != "X" ; then
