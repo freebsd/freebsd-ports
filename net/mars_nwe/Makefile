@@ -31,9 +31,9 @@ do-install:
 	@${ECHO} "Please read details in ${WORKDIR}/mars_nwe/doc directory."
 
 pre-install:
-	@cp ${PKGDIR}/PLIST ${WRKDIR}/PLIST.DYN
+	@cp ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
 .if !defined(NOPORSDOCS)
-	@cat ${PKGDIR}/PLIST.DOC >> ${WRKDIR}/PLIST.DYN
+	@cat ${PKGDIR}/pkg-plist.DOC >> ${WRKDIR}/PLIST.DYN
 .endif
 
 post-install:
