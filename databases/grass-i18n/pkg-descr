@@ -1,9 +1,17 @@
-          Geographic Resources Analysis Support System
-                           (GRASS GIS)
+Geographic Resources Analysis Support System (GRASS GIS)
 
 An open source Geographical Information System (GIS) with raster,
 topological vector, image processing, and graphics production functionality
 that operates on various platforms through a graphical user interface and
 shell in X-Windows. It is released under GNU General Public License (GPL). 
 
+grass-i18n+ipafont is an internationalized version of GRASS,
+from GRASS i18n Project sponsored by IPA, Information-technology Promotion
+Agency, Japan, with a Japanese TrueType font set (IPA font).
+While the i18n GRASS is released under GNU GPL, redistribution of
+the font set is allowed only when it is done with the i18n GRASS.
+For more information, see $PREFIX/share/fonts/TrueType/license-ipafonts.eucjp
+(in Japanese).
+
 WWW: http://grass.itc.it/
+WWW: http://www.grass-japan.org/FOSS4G/GRASS/grass-inten.html

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/grass5
 grass5/bin/bmif_to_cell
 grass5/bin/d.3d
@@ -37,13 +38,13 @@ grass5/bin/d.rast
 grass5/bin/d.rast.arrow
 grass5/bin/d.rast.edit
 grass5/bin/d.rast.num
-grass5/bin/d.rast.pg
+%%POSTGRES%%grass5/bin/d.rast.pg
 grass5/bin/d.rgb
 grass5/bin/d.rhumbline
 grass5/bin/d.save
 grass5/bin/d.scale
 grass5/bin/d.site.labels
-grass5/bin/d.site.pg
+%%POSTGRES%%grass5/bin/d.site.pg
 grass5/bin/d.sites
 grass5/bin/d.sites.qual
 grass5/bin/d.text
@@ -53,13 +54,13 @@ grass5/bin/d.vect
 grass5/bin/d.vect.area
 grass5/bin/d.vect.labels
 grass5/bin/d.vect.line
-grass5/bin/d.vect.pg
+%%POSTGRES%%grass5/bin/d.vect.pg
 grass5/bin/d.what.db
-grass5/bin/d.what.r.pg
+%%POSTGRES%%grass5/bin/d.what.r.pg
 grass5/bin/d.what.rast
-grass5/bin/d.what.s.pg
+%%POSTGRES%%grass5/bin/d.what.s.pg
 grass5/bin/d.what.sites
-grass5/bin/d.what.v.pg
+%%POSTGRES%%grass5/bin/d.what.v.pg
 grass5/bin/d.what.vect
 grass5/bin/d.where
 grass5/bin/d.zoom
@@ -76,7 +77,7 @@ grass5/bin/db.select
 grass5/bin/db.tables
 grass5/bin/g.access
 grass5/bin/g.ask
-grass5/bin/g.column.pg
+%%POSTGRES%%grass5/bin/g.column.pg
 grass5/bin/g.copy
 grass5/bin/g.filename
 grass5/bin/g.findfile
@@ -84,13 +85,14 @@ grass5/bin/g.gisenv
 grass5/bin/g.help
 grass5/bin/g.list
 grass5/bin/g.mapsets
+grass5/bin/g.parser
 grass5/bin/g.region
 grass5/bin/g.remove
 grass5/bin/g.rename
-grass5/bin/g.select.pg
+%%POSTGRES%%grass5/bin/g.select.pg
 grass5/bin/g.setproj
-grass5/bin/g.stats.pg
-grass5/bin/g.table.pg
+%%POSTGRES%%grass5/bin/g.stats.pg
+%%POSTGRES%%grass5/bin/g.table.pg
 grass5/bin/g.tempfile
 grass5/bin/g.version
 grass5/bin/i.cca
@@ -154,7 +156,8 @@ grass5/bin/m.strip99s
 grass5/bin/m.svfit
 grass5/bin/m.tiger.region
 grass5/bin/m.u2ll
-grass5/bin/nviz
+%%TCLTK%%grass5/bin/nviz
+%%TCLTK%%grass5/bin/nviz-i18n
 grass5/bin/p.chart
 grass5/bin/p.colors
 grass5/bin/p.icons
@@ -164,13 +167,11 @@ grass5/bin/p.map.new
 grass5/bin/p.ppm
 grass5/bin/p.select
 grass5/bin/p.vrml
-grass5/bin/pg.in.dbf
+%%POSTGRES%%grass5/bin/pg.in.dbf
 grass5/bin/poly_to_bmif
 grass5/bin/ps.icon
 grass5/bin/ps.map
 grass5/bin/ps.select
-grass5/bin/r.agnps50.run
-grass5/bin/r.agnps50.view
 grass5/bin/r.average
 grass5/bin/r.basins.fill
 grass5/bin/r.bilinear
@@ -179,7 +180,6 @@ grass5/bin/r.buffer
 grass5/bin/r.cats
 grass5/bin/r.circle
 grass5/bin/r.clump
-grass5/bin/r.cn
 grass5/bin/r.coin
 grass5/bin/r.colors
 grass5/bin/r.colors.paint
@@ -299,7 +299,6 @@ grass5/bin/r.water.outlet
 grass5/bin/r.watershed
 grass5/bin/r.weight
 grass5/bin/r.weight2
-grass5/bin/r.weighted.cn
 grass5/bin/r.what
 grass5/bin/s.delaunay
 grass5/bin/s.hull
@@ -330,6 +329,7 @@ grass5/bin/s.voronoi
 grass5/bin/s.what
 grass5/bin/s.windavg
 grass5/bin/tcltkgrass
+%%TCLTK%%grass5/bin/tcltkgrass-i18n
 grass5/bin/v.alabel
 grass5/bin/v.apply.census
 grass5/bin/v.area
@@ -385,7 +385,7 @@ grass5/bin/v.proj
 grass5/bin/v.prune
 grass5/bin/v.random
 grass5/bin/v.reclass
-grass5/bin/v.reclass.pg
+%%POSTGRES%%grass5/bin/v.reclass.pg
 grass5/bin/v.report
 grass5/bin/v.rm.dangles
 grass5/bin/v.rmdup
@@ -401,7 +401,7 @@ grass5/bin/v.support
 grass5/bin/v.surf.rst
 grass5/bin/v.timestamp
 grass5/bin/v.to.db
-grass5/bin/v.to.pg
+%%POSTGRES%%grass5/bin/v.to.pg
 grass5/bin/v.to.rast
 grass5/bin/v.to.sites
 grass5/bin/v.transform
@@ -1360,9 +1360,6 @@ grass5/documents/html/ps.html
 grass5/documents/html/ps.icon.html
 grass5/documents/html/ps.map.html
 grass5/documents/html/ps.select.html
-grass5/documents/html/r.agnps50.input.html
-grass5/documents/html/r.agnps50.run.html
-grass5/documents/html/r.agnps50.view.html
 grass5/documents/html/r.answers.html
 grass5/documents/html/r.average.html
 grass5/documents/html/r.basins.fill.html
@@ -1439,7 +1436,6 @@ grass5/documents/html/r.moran.html
 grass5/documents/html/r.neighbors.html
 grass5/documents/html/r.nntool.html
 grass5/documents/html/r.null.html
-grass5/documents/html/r.out.agnps.html
 grass5/documents/html/r.out.arc.html
 grass5/documents/html/r.out.ascii.html
 grass5/documents/html/r.out.bin.html
@@ -1697,78 +1693,80 @@ grass5/documents/index.html
 grass5/documents/misc.html
 grass5/documents/missing.html
 grass5/documents/models.html
-grass5/documents/nviz/gmsmodviz.gif
-grass5/documents/nviz/grass.smlogo.gif
-grass5/documents/nviz/help_frame.tcl
-grass5/documents/nviz/html_library.tcl
-grass5/documents/nviz/img/nv/9j.gif
-grass5/documents/nviz/img/nv/9j_i.gif
-grass5/documents/nviz/img/nv/cplane.gif
-grass5/documents/nviz/img/nv/cplane_i.gif
-grass5/documents/nviz/img/nv/cut1.gif
-grass5/documents/nviz/img/nv/cut1_i.gif
-grass5/documents/nviz/img/nv/inter1.gif
-grass5/documents/nviz/img/nv/inter1_i.gif
-grass5/documents/nviz/img/nv/inter1b.gif
-grass5/documents/nviz/img/nv/lmodel.gif
-grass5/documents/nviz/img/nv/lmodel_i.gif
-grass5/documents/nviz/img/nv/mask1.gif
-grass5/documents/nviz/img/nv/mask1_i.gif
-grass5/documents/nviz/img/nv/sit0.gif
-grass5/documents/nviz/img/nv/sit0_i.gif
-grass5/documents/nviz/img/nv/sit3a.gif
-grass5/documents/nviz/img/nv/sit3a_i.gif
-grass5/documents/nviz/img/nv/surf3a.gif
-grass5/documents/nviz/img/nv/surf3a_i.gif
-grass5/documents/nviz/img/nv/transp2.gif
-grass5/documents/nviz/img/nv/transp2_i.gif
-grass5/documents/nviz/img/nv/trcut0.gif
-grass5/documents/nviz/img/nv/trcut0_i.gif
-grass5/documents/nviz/img/nv/trcut1.gif
-grass5/documents/nviz/img/nv/trcut1_i.gif
-grass5/documents/nviz/img/nv/trcut3.gif
-grass5/documents/nviz/img/nv/trcut3_i.gif
-grass5/documents/nviz/index.html
-grass5/documents/nviz/nvimg/panel/anim.gif
-grass5/documents/nviz/nvimg/panel/color.gif
-grass5/documents/nviz/nvimg/panel/cut.gif
-grass5/documents/nviz/nvimg/panel/keyanim.gif
-grass5/documents/nviz/nvimg/panel/keyexample.gif
-grass5/documents/nviz/nvimg/panel/light.gif
-grass5/documents/nviz/nvimg/panel/main.gif
-grass5/documents/nviz/nvimg/panel/mkdspf.gif
-grass5/documents/nviz/nvimg/panel/sites.gif
-grass5/documents/nviz/nvimg/panel/surf.gif
-grass5/documents/nviz/nvimg/panel/vect.gif
-grass5/documents/nviz/nvimg/panel/whats.gif
-grass5/documents/nviz/nvimg/work/AddField.gif
-grass5/documents/nviz/nvimg/work/FBrowse.gif
-grass5/documents/nviz/nvimg/work/FSTool.gif
-grass5/documents/nviz/nvimg/work/FSToolBrowse.gif
-grass5/documents/nviz/nvimg/work/FSToolExample.gif
-grass5/documents/nviz/nvimg/work/SimpLoop.gif
-grass5/documents/nviz/nvimg/work/script_pulldown.gif
-grass5/documents/nviz/nviz_anim.html
-grass5/documents/nviz/nviz_credit.html
-grass5/documents/nviz/nviz_desc.html
-grass5/documents/nviz/nviz_general.html
-grass5/documents/nviz/nviz_hints.html
-grass5/documents/nviz/nviz_misc.html
-grass5/documents/nviz/nviz_panel_anim.html
-grass5/documents/nviz/nviz_panel_color.html
-grass5/documents/nviz/nviz_panel_cplane.html
-grass5/documents/nviz/nviz_panel_dsf.html
-grass5/documents/nviz/nviz_panel_lights.html
-grass5/documents/nviz/nviz_panel_move.html
-grass5/documents/nviz/nviz_panel_sites.html
-grass5/documents/nviz/nviz_panel_surf.html
-grass5/documents/nviz/nviz_panel_vect.html
-grass5/documents/nviz/nviz_panel_what.html
-grass5/documents/nviz/nviz_script.html
-grass5/documents/nviz/nviz_startup.html
-grass5/documents/nviz/nviz_state.html
-grass5/documents/nviz/nviz_toc.html
-grass5/documents/nviz/nviz_tut.html
+%%TCLTK%%grass5/documents/nviz/gmsmodviz.gif
+%%TCLTK%%grass5/documents/nviz/grass.smlogo.gif
+%%TCLTK%%grass5/documents/nviz/help_frame.tcl
+%%TCLTK%%grass5/documents/nviz/html_library.tcl
+%%TCLTK%%grass5/documents/nviz/help_frame-i18n.tcl
+%%TCLTK%%grass5/documents/nviz/html_library-i18n.tcl
+%%TCLTK%%grass5/documents/nviz/img/nv/9j.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/9j_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/cplane.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/cplane_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/cut1.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/cut1_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/inter1.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/inter1_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/inter1b.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/lmodel.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/lmodel_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/mask1.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/mask1_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/sit0.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/sit0_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/sit3a.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/sit3a_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/surf3a.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/surf3a_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/transp2.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/transp2_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut0.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut0_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut1.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut1_i.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut3.gif
+%%TCLTK%%grass5/documents/nviz/img/nv/trcut3_i.gif
+%%TCLTK%%grass5/documents/nviz/index.html
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/anim.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/color.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/cut.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/keyanim.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/keyexample.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/light.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/main.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/mkdspf.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/sites.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/surf.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/vect.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/panel/whats.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/AddField.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/FBrowse.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/FSTool.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/FSToolBrowse.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/FSToolExample.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/SimpLoop.gif
+%%TCLTK%%grass5/documents/nviz/nvimg/work/script_pulldown.gif
+%%TCLTK%%grass5/documents/nviz/nviz_anim.html
+%%TCLTK%%grass5/documents/nviz/nviz_credit.html
+%%TCLTK%%grass5/documents/nviz/nviz_desc.html
+%%TCLTK%%grass5/documents/nviz/nviz_general.html
+%%TCLTK%%grass5/documents/nviz/nviz_hints.html
+%%TCLTK%%grass5/documents/nviz/nviz_misc.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_anim.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_color.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_cplane.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_dsf.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_lights.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_move.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_sites.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_surf.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_vect.html
+%%TCLTK%%grass5/documents/nviz/nviz_panel_what.html
+%%TCLTK%%grass5/documents/nviz/nviz_script.html
+%%TCLTK%%grass5/documents/nviz/nviz_startup.html
+%%TCLTK%%grass5/documents/nviz/nviz_state.html
+%%TCLTK%%grass5/documents/nviz/nviz_toc.html
+%%TCLTK%%grass5/documents/nviz/nviz_tut.html
 grass5/documents/paint.html
 grass5/documents/photo.html
 grass5/documents/projections.html
@@ -1781,11 +1779,7 @@ grass5/documents/spearfish_directorytree.html
 grass5/documents/terminology.html
 grass5/documents/tips_and_tricks.html
 grass5/documents/vector.html
-grass5/driver/CELL
-grass5/driver/HTMLMAP
-grass5/driver/PNG
-grass5/driver/XDRIVER
-grass5/driver/db/odbc
+%%POSTGRES%%grass5/driver/db/odbc
 grass5/etc/FIPS.code
 grass5/etc/Gcolortab/preview/blue8
 grass5/etc/Gcolortab/preview/ht10c
@@ -1853,25 +1847,6 @@ grass5/etc/Gcolortab/tek4695/it7b
 grass5/etc/Gcolortab/tek4695/it7gn
 grass5/etc/Gcolortab/tek4695/it7ps
 grass5/etc/Init.sh
-grass5/etc/agnps50/agnps_input_1
-grass5/etc/agnps50/agnps_input_2a
-grass5/etc/agnps50/copy_cell_num.sh
-grass5/etc/agnps50/create_asp_map
-grass5/etc/agnps50/display_cell_map.sh
-grass5/etc/agnps50/display_map.sh
-grass5/etc/agnps50/get_cell_id.sh
-grass5/etc/agnps50/make_display_rules.pl
-grass5/etc/agnps50/psu_agnps_max_cat.sh
-grass5/etc/agnps50/r.agnps50.input
-grass5/etc/agnps50/remove_old_tmp_files.sh
-grass5/etc/agnps50/remove_tmp_file.sh
-grass5/etc/agnps50/show_COD.csh
-grass5/etc/agnps50/show_N.csh
-grass5/etc/agnps50/show_P.csh
-grass5/etc/agnps50/show_PPERC.csh
-grass5/etc/agnps50/show_PRUNOFF.csh
-grass5/etc/agnps50/show_PSED.csh
-grass5/etc/agnps50/show_S.csh
 grass5/etc/b.a.plus
 grass5/etc/bin/cmd/bmif_to_cell
 grass5/etc/bin/cmd/d.3d
@@ -1908,13 +1883,13 @@ grass5/etc/bin/cmd/d.profile
 grass5/etc/bin/cmd/d.rast
 grass5/etc/bin/cmd/d.rast.arrow
 grass5/etc/bin/cmd/d.rast.num
-grass5/etc/bin/cmd/d.rast.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.rast.pg
 grass5/etc/bin/cmd/d.rgb
 grass5/etc/bin/cmd/d.rhumbline
 grass5/etc/bin/cmd/d.save
 grass5/etc/bin/cmd/d.scale
 grass5/etc/bin/cmd/d.site.labels
-grass5/etc/bin/cmd/d.site.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.site.pg
 grass5/etc/bin/cmd/d.sites
 grass5/etc/bin/cmd/d.sites.qual
 grass5/etc/bin/cmd/d.text
@@ -1924,13 +1899,13 @@ grass5/etc/bin/cmd/d.vect
 grass5/etc/bin/cmd/d.vect.area
 grass5/etc/bin/cmd/d.vect.labels
 grass5/etc/bin/cmd/d.vect.line
-grass5/etc/bin/cmd/d.vect.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.vect.pg
 grass5/etc/bin/cmd/d.what.db
-grass5/etc/bin/cmd/d.what.r.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.what.r.pg
 grass5/etc/bin/cmd/d.what.rast
-grass5/etc/bin/cmd/d.what.s.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.what.s.pg
 grass5/etc/bin/cmd/d.what.sites
-grass5/etc/bin/cmd/d.what.v.pg
+%%POSTGRES%%grass5/etc/bin/cmd/d.what.v.pg
 grass5/etc/bin/cmd/d.what.vect
 grass5/etc/bin/cmd/d.where
 grass5/etc/bin/cmd/d.zoom
@@ -1946,19 +1921,20 @@ grass5/etc/bin/cmd/db.execute
 grass5/etc/bin/cmd/db.select
 grass5/etc/bin/cmd/db.tables
 grass5/etc/bin/cmd/g.ask
-grass5/etc/bin/cmd/g.column.pg
+%%POSTGRES%%grass5/etc/bin/cmd/g.column.pg
 grass5/etc/bin/cmd/g.copy
 grass5/etc/bin/cmd/g.filename
 grass5/etc/bin/cmd/g.findfile
 grass5/etc/bin/cmd/g.gisenv
 grass5/etc/bin/cmd/g.list
 grass5/etc/bin/cmd/g.mapsets
+grass5/etc/bin/cmd/g.parser
 grass5/etc/bin/cmd/g.region
 grass5/etc/bin/cmd/g.remove
 grass5/etc/bin/cmd/g.rename
-grass5/etc/bin/cmd/g.select.pg
-grass5/etc/bin/cmd/g.stats.pg
-grass5/etc/bin/cmd/g.table.pg
+%%POSTGRES%%grass5/etc/bin/cmd/g.select.pg
+%%POSTGRES%%grass5/etc/bin/cmd/g.stats.pg
+%%POSTGRES%%grass5/etc/bin/cmd/g.table.pg
 grass5/etc/bin/cmd/g.tempfile
 grass5/etc/bin/cmd/g.version
 grass5/etc/bin/cmd/i.cca
@@ -2014,7 +1990,7 @@ grass5/etc/bin/cmd/p.map.new
 grass5/etc/bin/cmd/p.ppm
 grass5/etc/bin/cmd/p.select
 grass5/etc/bin/cmd/p.vrml
-grass5/etc/bin/cmd/pg.in.dbf
+%%POSTGRES%%grass5/etc/bin/cmd/pg.in.dbf
 grass5/etc/bin/cmd/poly_to_bmif
 grass5/etc/bin/cmd/ps.icon
 grass5/etc/bin/cmd/ps.map
@@ -2027,7 +2003,6 @@ grass5/etc/bin/cmd/r.buffer
 grass5/etc/bin/cmd/r.cats
 grass5/etc/bin/cmd/r.circle
 grass5/etc/bin/cmd/r.clump
-grass5/etc/bin/cmd/r.cn
 grass5/etc/bin/cmd/r.coin
 grass5/etc/bin/cmd/r.colors
 grass5/etc/bin/cmd/r.colors.paint
@@ -2142,7 +2117,6 @@ grass5/etc/bin/cmd/r.volume
 grass5/etc/bin/cmd/r.water.outlet
 grass5/etc/bin/cmd/r.watershed
 grass5/etc/bin/cmd/r.weight2
-grass5/etc/bin/cmd/r.weighted.cn
 grass5/etc/bin/cmd/r.what
 grass5/etc/bin/cmd/s.delaunay
 grass5/etc/bin/cmd/s.hull
@@ -2221,7 +2195,7 @@ grass5/etc/bin/cmd/v.proj
 grass5/etc/bin/cmd/v.prune
 grass5/etc/bin/cmd/v.random
 grass5/etc/bin/cmd/v.reclass
-grass5/etc/bin/cmd/v.reclass.pg
+%%POSTGRES%%grass5/etc/bin/cmd/v.reclass.pg
 grass5/etc/bin/cmd/v.report
 grass5/etc/bin/cmd/v.rm.dangles
 grass5/etc/bin/cmd/v.rmdup
@@ -2236,7 +2210,7 @@ grass5/etc/bin/cmd/v.support
 grass5/etc/bin/cmd/v.surf.rst
 grass5/etc/bin/cmd/v.timestamp
 grass5/etc/bin/cmd/v.to.db
-grass5/etc/bin/cmd/v.to.pg
+%%POSTGRES%%grass5/etc/bin/cmd/v.to.pg
 grass5/etc/bin/cmd/v.to.rast
 grass5/etc/bin/cmd/v.to.sites
 grass5/etc/bin/cmd/v.transform
@@ -2284,7 +2258,6 @@ grass5/etc/bin/inter/p.labels
 grass5/etc/bin/inter/p.map
 grass5/etc/bin/inter/p.select
 grass5/etc/bin/inter/ps.map
-grass5/etc/bin/inter/r.agnps50.view
 grass5/etc/bin/inter/r.average
 grass5/etc/bin/inter/r.buffer
 grass5/etc/bin/inter/r.compress
@@ -3254,59 +3227,116 @@ grass5/etc/nad/stgeorge
 grass5/etc/nad/stlrnc
 grass5/etc/nad/stpaul
 grass5/etc/nad2bin
-grass5/etc/nviz2.2/NVWISH2.2
-grass5/etc/nviz2.2/bitmaps/down
-grass5/etc/nviz2.2/bitmaps/left
-grass5/etc/nviz2.2/bitmaps/right
-grass5/etc/nviz2.2/bitmaps/slow_left
-grass5/etc/nviz2.2/bitmaps/slow_right
-grass5/etc/nviz2.2/bitmaps/stop
-grass5/etc/nviz2.2/bitmaps/trash
-grass5/etc/nviz2.2/bitmaps/up
-grass5/etc/nviz2.2/scripts/assoc.tcl
-grass5/etc/nviz2.2/scripts/attPopup.tcl
-grass5/etc/nviz2.2/scripts/colorPopup.tcl
-grass5/etc/nviz2.2/scripts/config.tcl
-grass5/etc/nviz2.2/scripts/cutplane_channels.tcl
-grass5/etc/nviz2.2/scripts/extra_bindings.tcl
-grass5/etc/nviz2.2/scripts/fileBrowser.tcl
-grass5/etc/nviz2.2/scripts/filemapBrowser.tcl
-grass5/etc/nviz2.2/scripts/mapBrowser.tcl
-grass5/etc/nviz2.2/scripts/multimapBrowser.tcl
-grass5/etc/nviz2.2/scripts/nviz2.2_script
-grass5/etc/nviz2.2/scripts/nviz_init.tcl
-grass5/etc/nviz2.2/scripts/panelIndex
-grass5/etc/nviz2.2/scripts/panel_animation.tcl
-grass5/etc/nviz2.2/scripts/panel_color.tcl
-grass5/etc/nviz2.2/scripts/panel_cutplane.tcl
-grass5/etc/nviz2.2/scripts/panel_kanimator.tcl
-grass5/etc/nviz2.2/scripts/panel_label.tcl
-grass5/etc/nviz2.2/scripts/panel_lights.tcl
-grass5/etc/nviz2.2/scripts/panel_main.tcl
-grass5/etc/nviz2.2/scripts/panel_mkdspf.tcl
-grass5/etc/nviz2.2/scripts/panel_query.tcl
-grass5/etc/nviz2.2/scripts/panel_query_orig.tcl
-grass5/etc/nviz2.2/scripts/panel_query_pg.tcl
-grass5/etc/nviz2.2/scripts/panel_scale.tcl
-grass5/etc/nviz2.2/scripts/panel_sdiff.tcl
-grass5/etc/nviz2.2/scripts/panel_site.tcl
-grass5/etc/nviz2.2/scripts/panel_surf.tcl
-grass5/etc/nviz2.2/scripts/panel_tst.tcl
-grass5/etc/nviz2.2/scripts/panel_vect.tcl
-grass5/etc/nviz2.2/scripts/panel_vol.tcl
-grass5/etc/nviz2.2/scripts/position_procs.tcl
-grass5/etc/nviz2.2/scripts/queue.tcl
-grass5/etc/nviz2.2/scripts/script_file_tools
-grass5/etc/nviz2.2/scripts/script_get_line
-grass5/etc/nviz2.2/scripts/script_play
-grass5/etc/nviz2.2/scripts/script_support.tcl
-grass5/etc/nviz2.2/scripts/script_tools
-grass5/etc/nviz2.2/scripts/send_support.tcl
-grass5/etc/nviz2.2/scripts/structlib.tcl
-grass5/etc/nviz2.2/scripts/tclIndex
-grass5/etc/nviz2.2/scripts/unique.tcl
-grass5/etc/nviz2.2/scripts/widgets.tcl
-grass5/etc/nviz2.2/scripts/wirecolorPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2/NVWISH2.2
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/down
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/left
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/right
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/slow_left
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/slow_right
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/stop
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/trash
+%%TCLTK%%grass5/etc/nviz2.2/bitmaps/up
+%%TCLTK%%grass5/etc/nviz2.2/scripts/assoc.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/attPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/colorPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/config.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/cutplane_channels.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/extra_bindings.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/fileBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/filemapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/mapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/multimapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/nviz2.2_script
+%%TCLTK%%grass5/etc/nviz2.2/scripts/nviz_init.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panelIndex
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_animation.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_color.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_cutplane.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_kanimator.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_label.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_lights.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_main.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_mkdspf.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_query.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_query_orig.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_query_pg.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_scale.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_sdiff.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_site.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_surf.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_tst.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_vect.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/panel_vol.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/position_procs.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/queue.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/script_file_tools
+%%TCLTK%%grass5/etc/nviz2.2/scripts/script_get_line
+%%TCLTK%%grass5/etc/nviz2.2/scripts/script_play
+%%TCLTK%%grass5/etc/nviz2.2/scripts/script_support.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/script_tools
+%%TCLTK%%grass5/etc/nviz2.2/scripts/send_support.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/structlib.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/tclIndex
+%%TCLTK%%grass5/etc/nviz2.2/scripts/unique.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/widgets.tcl
+%%TCLTK%%grass5/etc/nviz2.2/scripts/wirecolorPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/down
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/error
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/left
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/right
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/slow_left
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/slow_right
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/stop
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/trash
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/up
+%%TCLTK%%grass5/etc/nviz2.2-i18n/bitmaps/warning
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/assoc.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/attPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/colorPopup.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/config.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/cutplane_channels.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/en.msg
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/extra_bindings.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/fileBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/filemapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/ja.msg
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/mapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/multimapBrowser.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/nviz2.2_script
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/nviz_init.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panelIndex
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panelIndex.txt
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_animation.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_color.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_cutplane.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_kanimator.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_label.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_lights.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_main.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_mkdspf.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_query.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_query_orig.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_query_pg.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_scale.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_sdiff.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_site.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_surf.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_tst.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_vect.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/panel_vol.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/position_procs.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/queue.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/script_file_tools
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/script_get_line
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/script_play
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/script_support.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/script_tools
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/send_support.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/structlib.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/tclIndex
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/unique.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/widgets.tcl
+%%TCLTK%%grass5/etc/nviz2.2-i18n/scripts/wirecolorPopup.tcl
 grass5/etc/paint/char.test
 grass5/etc/paint/driver.rsh
 grass5/etc/paint/driver.sh/preview
@@ -3373,6 +3403,12 @@ grass5/fonts/romans
 grass5/fonts/romant
 grass5/fonts/scriptc
 grass5/fonts/scripts
+grass5/fonts/ipag.ttf
+grass5/fonts/ipagp.ttf
+grass5/fonts/ipagui.ttf
+grass5/fonts/ipam.ttf
+grass5/fonts/ipamp.ttf
+grass5/fonts/license-ipafonts.eucjp
 grass5/include/P_datetime.h
 grass5/include/P_site.h
 grass5/include/datetime.h
@@ -3381,6 +3417,199 @@ grass5/include/gisdefs.h
 grass5/include/site.h
 grass5/lib/libdatetime.a
 grass5/lib/libgis.a
+grass5/locale/ja/LC_MESSAGES/cell.out.tiff.mo
+grass5/locale/ja/LC_MESSAGES/d.3d.mo
+grass5/locale/ja/LC_MESSAGES/d.barscale.mo
+grass5/locale/ja/LC_MESSAGES/d.colormode.mo
+grass5/locale/ja/LC_MESSAGES/d.colors.mo
+grass5/locale/ja/LC_MESSAGES/d.colortable.mo
+grass5/locale/ja/LC_MESSAGES/d.erase.mo
+grass5/locale/ja/LC_MESSAGES/d.font.freetype.mo
+grass5/locale/ja/LC_MESSAGES/d.font.mo
+grass5/locale/ja/LC_MESSAGES/d.frame.mo
+grass5/locale/ja/LC_MESSAGES/d.geodesic.mo
+grass5/locale/ja/LC_MESSAGES/d.graph.mo
+grass5/locale/ja/LC_MESSAGES/d.grid.mo
+grass5/locale/ja/LC_MESSAGES/d.his.mo
+grass5/locale/ja/LC_MESSAGES/d.histogram.mo
+grass5/locale/ja/LC_MESSAGES/d.icons.mo
+grass5/locale/ja/LC_MESSAGES/d.label.mo
+grass5/locale/ja/LC_MESSAGES/d.legend.mo
+grass5/locale/ja/LC_MESSAGES/d.measure.mo
+grass5/locale/ja/LC_MESSAGES/d.mon.mo
+grass5/locale/ja/LC_MESSAGES/d.paint.labels.mo
+grass5/locale/ja/LC_MESSAGES/d.pan.mo
+grass5/locale/ja/LC_MESSAGES/d.points.mo
+grass5/locale/ja/LC_MESSAGES/d.profile.mo
+grass5/locale/ja/LC_MESSAGES/d.rast.mo
+grass5/locale/ja/LC_MESSAGES/d.rast.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.rgb.mo
+grass5/locale/ja/LC_MESSAGES/d.rhumbline.mo
+grass5/locale/ja/LC_MESSAGES/d.site.labels.mo
+grass5/locale/ja/LC_MESSAGES/d.site.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.sites.mo
+grass5/locale/ja/LC_MESSAGES/d.text.mo
+grass5/locale/ja/LC_MESSAGES/d.title.mo
+grass5/locale/ja/LC_MESSAGES/d.vect.area.mo
+grass5/locale/ja/LC_MESSAGES/d.vect.line.mo
+grass5/locale/ja/LC_MESSAGES/d.vect.mo
+grass5/locale/ja/LC_MESSAGES/d.vect.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.what.r.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.what.rast.mo
+grass5/locale/ja/LC_MESSAGES/d.what.s.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.what.sites.mo
+grass5/locale/ja/LC_MESSAGES/d.what.v.pg.mo
+grass5/locale/ja/LC_MESSAGES/d.what.vect.mo
+grass5/locale/ja/LC_MESSAGES/d.where.mo
+grass5/locale/ja/LC_MESSAGES/d.zoom.mo
+grass5/locale/ja/LC_MESSAGES/db.columns.mo
+grass5/locale/ja/LC_MESSAGES/db.connect.mo
+grass5/locale/ja/LC_MESSAGES/db.describe.mo
+grass5/locale/ja/LC_MESSAGES/db.execute.mo
+grass5/locale/ja/LC_MESSAGES/db.select.mo
+grass5/locale/ja/LC_MESSAGES/db.tables.mo
+grass5/locale/ja/LC_MESSAGES/g.column.pg.mo
+grass5/locale/ja/LC_MESSAGES/g.copy.mo
+grass5/locale/ja/LC_MESSAGES/g.list.mo
+grass5/locale/ja/LC_MESSAGES/g.manual.mo
+grass5/locale/ja/LC_MESSAGES/g.mapsets.mo
+grass5/locale/ja/LC_MESSAGES/g.region.mo
+grass5/locale/ja/LC_MESSAGES/g.remove.mo
+grass5/locale/ja/LC_MESSAGES/g.rename.mo
+grass5/locale/ja/LC_MESSAGES/g.select.pg.mo
+grass5/locale/ja/LC_MESSAGES/g.stats.pg.mo
+grass5/locale/ja/LC_MESSAGES/g.table.pg.mo
+grass5/locale/ja/LC_MESSAGES/i.cca.mo
+grass5/locale/ja/LC_MESSAGES/i.cluster.mo
+grass5/locale/ja/LC_MESSAGES/i.fft.mo
+grass5/locale/ja/LC_MESSAGES/i.gensig.mo
+grass5/locale/ja/LC_MESSAGES/i.gensigset.mo
+grass5/locale/ja/LC_MESSAGES/i.ifft.mo
+grass5/locale/ja/LC_MESSAGES/i.in.erdas.mo
+grass5/locale/ja/LC_MESSAGES/i.maxlik.mo
+grass5/locale/ja/LC_MESSAGES/i.out.erdas.mo
+grass5/locale/ja/LC_MESSAGES/i.pca.mo
+grass5/locale/ja/LC_MESSAGES/i.smap.mo
+grass5/locale/ja/LC_MESSAGES/i.zc.mo
+grass5/locale/ja/LC_MESSAGES/libgis.mo
+grass5/locale/ja/LC_MESSAGES/m.datum.shift.mo
+grass5/locale/ja/LC_MESSAGES/m.dem.examine.mo
+grass5/locale/ja/LC_MESSAGES/m.dem.extract.mo
+grass5/locale/ja/LC_MESSAGES/m.dted.examine.mo
+grass5/locale/ja/LC_MESSAGES/m.dted.extract.mo
+grass5/locale/ja/LC_MESSAGES/m.flip.mo
+grass5/locale/ja/LC_MESSAGES/m.gc2ll.mo
+grass5/locale/ja/LC_MESSAGES/m.ll2gc.mo
+grass5/locale/ja/LC_MESSAGES/m.ll2u.mo
+grass5/locale/ja/LC_MESSAGES/m.region.ll.mo
+grass5/locale/ja/LC_MESSAGES/m.rot90.mo
+grass5/locale/ja/LC_MESSAGES/m.tiger.region.mo
+grass5/locale/ja/LC_MESSAGES/m.u2ll.mo
+grass5/locale/ja/LC_MESSAGES/mapcalculator.sh.mo
+grass5/locale/ja/LC_MESSAGES/nviz.mo
+grass5/locale/ja/LC_MESSAGES/p.map.new.mo
+grass5/locale/ja/LC_MESSAGES/p.select.mo
+grass5/locale/ja/LC_MESSAGES/pause.mo
+grass5/locale/ja/LC_MESSAGES/ps.icon.mo
+grass5/locale/ja/LC_MESSAGES/ps.map.mo
+grass5/locale/ja/LC_MESSAGES/ps.select.mo
+grass5/locale/ja/LC_MESSAGES/r.average.mo
+grass5/locale/ja/LC_MESSAGES/r.basins.fill.mo
+grass5/locale/ja/LC_MESSAGES/r.binfer.mo
+grass5/locale/ja/LC_MESSAGES/r.buffer.mo
+grass5/locale/ja/LC_MESSAGES/r.cats.mo
+grass5/locale/ja/LC_MESSAGES/r.clump.mo
+grass5/locale/ja/LC_MESSAGES/r.coin.mo
+grass5/locale/ja/LC_MESSAGES/r.colors.mo
+grass5/locale/ja/LC_MESSAGES/r.combine.mo
+grass5/locale/ja/LC_MESSAGES/r.compress.mo
+grass5/locale/ja/LC_MESSAGES/r.contour.mo
+grass5/locale/ja/LC_MESSAGES/r.cost.mo
+grass5/locale/ja/LC_MESSAGES/r.covar.mo
+grass5/locale/ja/LC_MESSAGES/r.cross.mo
+grass5/locale/ja/LC_MESSAGES/r.describe.mo
+grass5/locale/ja/LC_MESSAGES/r.drain.mo
+grass5/locale/ja/LC_MESSAGES/r.flow.mo
+grass5/locale/ja/LC_MESSAGES/r.grow.mo
+grass5/locale/ja/LC_MESSAGES/r.in.arc.mo
+grass5/locale/ja/LC_MESSAGES/r.in.ascii.mo
+grass5/locale/ja/LC_MESSAGES/r.in.bin.mo
+grass5/locale/ja/LC_MESSAGES/r.in.gdal.mo
+grass5/locale/ja/LC_MESSAGES/r.in.ll.mo
+grass5/locale/ja/LC_MESSAGES/r.in.png.mo
+grass5/locale/ja/LC_MESSAGES/r.in.ppm.mo
+grass5/locale/ja/LC_MESSAGES/r.in.tiff.mo
+grass5/locale/ja/LC_MESSAGES/r.infer.mo
+grass5/locale/ja/LC_MESSAGES/r.info.mo
+grass5/locale/ja/LC_MESSAGES/r.line.mo
+grass5/locale/ja/LC_MESSAGES/r.los.mo
+grass5/locale/ja/LC_MESSAGES/r.mfilter.mo
+grass5/locale/ja/LC_MESSAGES/r.neighbors.mo
+grass5/locale/ja/LC_MESSAGES/r.out.arc.mo
+grass5/locale/ja/LC_MESSAGES/r.out.ascii.mo
+grass5/locale/ja/LC_MESSAGES/r.out.bin.mo
+grass5/locale/ja/LC_MESSAGES/r.out.ppm.mo
+grass5/locale/ja/LC_MESSAGES/r.out.tiff.mo
+grass5/locale/ja/LC_MESSAGES/r.patch.mo
+grass5/locale/ja/LC_MESSAGES/r.poly.mo
+grass5/locale/ja/LC_MESSAGES/r.profile.mo
+grass5/locale/ja/LC_MESSAGES/r.proj.mo
+grass5/locale/ja/LC_MESSAGES/r.random.mo
+grass5/locale/ja/LC_MESSAGES/r.reclass.mo
+grass5/locale/ja/LC_MESSAGES/r.report.mo
+grass5/locale/ja/LC_MESSAGES/r.resample.mo
+grass5/locale/ja/LC_MESSAGES/r.rescale.mo
+grass5/locale/ja/LC_MESSAGES/r.slope.aspect.mo
+grass5/locale/ja/LC_MESSAGES/r.statistics.mo
+grass5/locale/ja/LC_MESSAGES/r.stats.mo
+grass5/locale/ja/LC_MESSAGES/r.surf.contour.mo
+grass5/locale/ja/LC_MESSAGES/r.surf.idw.mo
+grass5/locale/ja/LC_MESSAGES/r.surf.idw2.mo
+grass5/locale/ja/LC_MESSAGES/r.thin.mo
+grass5/locale/ja/LC_MESSAGES/r.to.sites.mo
+grass5/locale/ja/LC_MESSAGES/r.transect.mo
+grass5/locale/ja/LC_MESSAGES/r.volume.mo
+grass5/locale/ja/LC_MESSAGES/r.watershed.mo
+grass5/locale/ja/LC_MESSAGES/r.what.mo
+grass5/locale/ja/LC_MESSAGES/s.in.ascii.mo
+grass5/locale/ja/LC_MESSAGES/s.in.garmin.sh.mo
+grass5/locale/ja/LC_MESSAGES/s.info.mo
+grass5/locale/ja/LC_MESSAGES/s.mask.mo
+grass5/locale/ja/LC_MESSAGES/s.out.ascii.mo
+grass5/locale/ja/LC_MESSAGES/s.proj.mo
+grass5/locale/ja/LC_MESSAGES/s.surf.idw.mo
+grass5/locale/ja/LC_MESSAGES/s.surf.rst.mo
+grass5/locale/ja/LC_MESSAGES/s.to.rast.mo
+grass5/locale/ja/LC_MESSAGES/s.to.vect.mo
+grass5/locale/ja/LC_MESSAGES/s.windavg.mo
+grass5/locale/ja/LC_MESSAGES/v.build.polylines.mo
+grass5/locale/ja/LC_MESSAGES/v.clean.mo
+grass5/locale/ja/LC_MESSAGES/v.cutter.mo
+grass5/locale/ja/LC_MESSAGES/v.db.reclass.mo
+grass5/locale/ja/LC_MESSAGES/v.in.arc.mo
+grass5/locale/ja/LC_MESSAGES/v.in.ascii.mo
+grass5/locale/ja/LC_MESSAGES/v.in.dxf.mo
+grass5/locale/ja/LC_MESSAGES/v.in.garmin.sh.mo
+grass5/locale/ja/LC_MESSAGES/v.in.shape.mo
+grass5/locale/ja/LC_MESSAGES/v.info.mo
+grass5/locale/ja/LC_MESSAGES/v.mkgrid.mo
+grass5/locale/ja/LC_MESSAGES/v.out.arc.mo
+grass5/locale/ja/LC_MESSAGES/v.out.ascii.mo
+grass5/locale/ja/LC_MESSAGES/v.out.e00.mo
+grass5/locale/ja/LC_MESSAGES/v.patch.mo
+grass5/locale/ja/LC_MESSAGES/v.proj.mo
+grass5/locale/ja/LC_MESSAGES/v.prune.mo
+grass5/locale/ja/LC_MESSAGES/v.reclass.pg.mo
+grass5/locale/ja/LC_MESSAGES/v.report.mo
+grass5/locale/ja/LC_MESSAGES/v.spag.mo
+grass5/locale/ja/LC_MESSAGES/v.stats.mo
+grass5/locale/ja/LC_MESSAGES/v.support.mo
+grass5/locale/ja/LC_MESSAGES/v.surf.rst.mo
+grass5/locale/ja/LC_MESSAGES/v.to.db.mo
+grass5/locale/ja/LC_MESSAGES/v.to.rast.mo
+grass5/locale/ja/LC_MESSAGES/v.to.sites.mo
+grass5/locale/ja/LC_MESSAGES/v.transform.mo
+grass5/locale/ja/LC_MESSAGES/v.what.mo
 grass5/locale/ru/LC_MESSAGES/d.rast.pg.mo
 grass5/locale/ru/LC_MESSAGES/d.site.pg.mo
 grass5/locale/ru/LC_MESSAGES/d.vect.pg.mo
@@ -3616,9 +3845,6 @@ grass5/man/man1/pngdriver.1
 grass5/man/man1/ps.icon.1
 grass5/man/man1/ps.map.1
 grass5/man/man1/ps.select.1
-grass5/man/man1/r.agnps50.input.1
-grass5/man/man1/r.agnps50.run.1
-grass5/man/man1/r.agnps50.view.1
 grass5/man/man1/r.answers.1
 grass5/man/man1/r.average.1
 grass5/man/man1/r.basins.fill.1
@@ -3695,7 +3921,6 @@ grass5/man/man1/r.moran.1
 grass5/man/man1/r.neighbors.1
 grass5/man/man1/r.nntool.1
 grass5/man/man1/r.null.1
-grass5/man/man1/r.out.agnps.1
 grass5/man/man1/r.out.arc.1
 grass5/man/man1/r.out.ascii.1
 grass5/man/man1/r.out.bin.1
@@ -3943,6 +4168,7 @@ grass5/scripts/blend.sh
 grass5/scripts/bug.report.sh
 grass5/scripts/create_fifos.sh
 grass5/scripts/d.dm
+grass5/scripts/d.dm-i18n
 grass5/scripts/d.monsize
 grass5/scripts/d.rast.labels
 grass5/scripts/d.rast.leg
@@ -3981,6 +4207,7 @@ grass5/scripts/demo.scripts/continue.yes
 grass5/scripts/demo.scripts/not-available
 grass5/scripts/demo.scripts/outline
 grass5/scripts/demo.sh
+grass5/scripts/en.msg
 grass5/scripts/fig2grass
 grass5/scripts/g.html2man
 grass5/scripts/g.man2html
@@ -3998,9 +4225,9 @@ grass5/scripts/i.tasscap.tm4
 grass5/scripts/i.tasscap.tm5
 grass5/scripts/i.tm.dehaze
 grass5/scripts/intens.sh
+grass5/scripts/ja.msg
 grass5/scripts/ps.add.pagesize
 grass5/scripts/ps.map.barscale
-grass5/scripts/r.agnps50.input
 grass5/scripts/r.avgstats
 grass5/scripts/r.combine
 grass5/scripts/r.edge.dig
@@ -4040,12 +4267,14 @@ grass5/tcltkgrass/docs/Programming_intro.html
 grass5/tcltkgrass/docs/Programming_intro.txt
 grass5/tcltkgrass/main/about.tcl
 grass5/tcltkgrass/main/balloon.tcl
+grass5/tcltkgrass/main/en.msg
 grass5/tcltkgrass/main/gis_set.tcl
 grass5/tcltkgrass/main/grassabout.tcl
 grass5/tcltkgrass/main/gui.tcl
 grass5/tcltkgrass/main/help-netscape.tcl
 grass5/tcltkgrass/main/help-scripting.tcl
 grass5/tcltkgrass/main/help.tcl
+grass5/tcltkgrass/main/ja.msg
 grass5/tcltkgrass/main/menu.tcl
 grass5/tcltkgrass/main/pause
 grass5/tcltkgrass/main/tcltkgrass.tcl
@@ -4065,7 +4294,6 @@ grass5/tcltkgrass/module/NOT_yet_implemented/r.calibrate
 grass5/tcltkgrass/module/NOT_yet_implemented/r.random.xclip!!
 grass5/tcltkgrass/module/NOT_yet_implemented/r.robust
 grass5/tcltkgrass/module/NOT_yet_implemented/v.b.a.dlg
-grass5/tcltkgrass/module/TODO
 grass5/tcltkgrass/module/cell.out.tiff
 grass5/tcltkgrass/module/d.3d
 grass5/tcltkgrass/module/d.barscale
@@ -4168,6 +4396,7 @@ grass5/tcltkgrass/module/mapcalculator
 grass5/tcltkgrass/module/mapset.remove
 grass5/tcltkgrass/module/missing_modules.sh
 grass5/tcltkgrass/module/nviz
+grass5/tcltkgrass/module/nviz-i18n
 grass5/tcltkgrass/module/p.map.new
 grass5/tcltkgrass/module/p.select
 grass5/tcltkgrass/module/ps.icon
@@ -4248,6 +4477,7 @@ grass5/tcltkgrass/module/s.surf.rst
 grass5/tcltkgrass/module/s.to.rast
 grass5/tcltkgrass/module/s.to.vect
 grass5/tcltkgrass/module/s.windavg
+grass5/tcltkgrass/module/todo
 grass5/tcltkgrass/module/unused/i.group
 grass5/tcltkgrass/module/unused/i.ortho.photo
 grass5/tcltkgrass/module/unused/i.points
@@ -4438,9 +4668,11 @@ grass5/txt/WEIGHT/general
 grass5/txt/WEIGHT/intro
 grass5/txt/WEIGHT/syntax
 @dirrm grass5/txt/WEIGHT
-@dirrm grass5/txt/MONITOR
-@dirrm grass5/txt/DIGIT2
 @dirrm grass5/txt/DIGIT
+@exec mkdir -p %D/grass5/txt/DIGIT2
+@dirrm grass5/txt/DIGIT2
+@exec mkdir -p %D/grass5/txt/MONITOR
+@dirrm grass5/txt/MONITOR
 @dirrm grass5/txt/COMBINE
 @dirrm grass5/txt
 @dirrm grass5/tcltkgrass/script
@@ -4453,32 +4685,46 @@ grass5/txt/WEIGHT/syntax
 @dirrm grass5/tcltkgrass
 @dirrm grass5/scripts/demo.scripts
 @dirrm grass5/scripts
+@exec mkdir -p %D/grass5/man/help
+@dirrm grass5/man/help
+@exec mkdir -p %D/grass5/man/man5
 @dirrm grass5/man/man5
+@exec mkdir -p %D/grass5/man/man4
 @dirrm grass5/man/man4
+@exec mkdir -p %D/grass5/man/man3
 @dirrm grass5/man/man3
+@exec mkdir -p %D/grass5/man/man2
 @dirrm grass5/man/man2
 @dirrm grass5/man/man1
-@dirrm grass5/man/help
 @dirrm grass5/man
-@dirrm grass5/locks
 @dirrm grass5/locale/ru/LC_MESSAGES
 @dirrm grass5/locale/ru
+@dirrm grass5/locale/ja/LC_MESSAGES
+@dirrm grass5/locale/ja
 @dirrm grass5/locale
 @dirrm grass5/lib
+@exec mkdir -p %D/grass5/locks
+@dirrm grass5/locks
 @dirrm grass5/include
 @dirrm grass5/fonts
+@exec mkdir -p %D/grass5/etc/dig_drivers
+@dirrm grass5/etc/dig_drivers
 @dirrm grass5/etc/water
-@dirrm grass5/etc/sites
 @dirrm grass5/etc/r.fea
 @dirrm grass5/etc/paint/ps.devices
 @dirrm grass5/etc/paint/driver.uninst
 @dirrm grass5/etc/paint/driver.sh
 @dirrm grass5/etc/paint/driver
 @dirrm grass5/etc/paint
-@dirrm grass5/etc/nviz2.2/scripts
-@dirrm grass5/etc/nviz2.2/bitmaps
-@dirrm grass5/etc/nviz2.2
+@exec mkdir -p %D/grass5/etc/sites
+@dirrm grass5/etc/sites
 @dirrm grass5/etc/nad
+%%TCLTK%%@dirrm grass5/etc/nviz2.2/scripts
+%%TCLTK%%@dirrm grass5/etc/nviz2.2/bitmaps
+%%TCLTK%%@dirrm grass5/etc/nviz2.2
+%%TCLTK%%@dirrm grass5/etc/nviz2.2-i18n/scripts
+%%TCLTK%%@dirrm grass5/etc/nviz2.2-i18n/bitmaps
+%%TCLTK%%@dirrm grass5/etc/nviz2.2-i18n
 @dirrm grass5/etc/lister
 @dirrm grass5/etc/imagery
 @dirrm grass5/etc/i.oif
@@ -4504,26 +4750,19 @@ grass5/txt/WEIGHT/syntax
 @dirrm grass5/etc/help/01.instruc
 @dirrm grass5/etc/help
 @dirrm grass5/etc/digitizers
-@dirrm grass5/etc/dig_drivers
 @dirrm grass5/etc/d.siter
 @dirrm grass5/etc/census.docs
 @dirrm grass5/etc/bin/inter
 @dirrm grass5/etc/bin/cmd
 @dirrm grass5/etc/bin
-@dirrm grass5/etc/agnps50
 @dirrm grass5/etc/Gcolortab/tek4695
 @dirrm grass5/etc/Gcolortab/shinko635
 @dirrm grass5/etc/Gcolortab/preview
 @dirrm grass5/etc/Gcolortab
 @dirrm grass5/etc
-@dirrm grass5/driver/db
+%%POSTGRES%%@dirrm grass5/driver/db
+@exec mkdir -p %D/grass5/driver
 @dirrm grass5/driver
-@dirrm grass5/documents/nviz/nvimg/work
-@dirrm grass5/documents/nviz/nvimg/panel
-@dirrm grass5/documents/nviz/nvimg
-@dirrm grass5/documents/nviz/img/nv
-@dirrm grass5/documents/nviz/img
-@dirrm grass5/documents/nviz
 @dirrm grass5/documents/html/help/Commands.def
 @dirrm grass5/documents/html/help/18.biblio
 @dirrm grass5/documents/html/help/17.manual
@@ -4545,6 +4784,12 @@ grass5/txt/WEIGHT/syntax
 @dirrm grass5/documents/html/help/01.instruc
 @dirrm grass5/documents/html/help
 @dirrm grass5/documents/html
+%%TCLTK%%@dirrm grass5/documents/nviz/nvimg/work
+%%TCLTK%%@dirrm grass5/documents/nviz/nvimg/panel
+%%TCLTK%%@dirrm grass5/documents/nviz/nvimg
+%%TCLTK%%@dirrm grass5/documents/nviz/img/nv
+%%TCLTK%%@dirrm grass5/documents/nviz/img
+%%TCLTK%%@dirrm grass5/documents/nviz
 @dirrm grass5/documents
 @dirrm grass5/dev
 @dirrm grass5/bwidget/lang
