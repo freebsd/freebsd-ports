@@ -1,4 +1,4 @@
-include/musicbrainz/bitprint.h
+include/musicbrainz/bitprintinfo.h
 include/musicbrainz/bitzi/bitcollider.h
 include/musicbrainz/bitzi/gui_win32.h
 include/musicbrainz/bitzi/list.h
