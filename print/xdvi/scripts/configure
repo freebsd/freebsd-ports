@@ -7,7 +7,7 @@ prefix=$PREFIX;
 if `echo $PREFIX |grep -q X11` ; then
   prefix=/usr/local
 fi
-CACHE=$prefix/lib/texmf/fonts
+CACHE=$prefix/share/texmf/fonts
 
 if [ -f $PREFIX/bin/MakeTeXPK ]; then
   echo "**WARNING** MakeTeXPK already exists in $PREFIX/bin"
@@ -50,8 +50,9 @@ else
   echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/post-install
 fi
   
-sed -e s:/usr/lib/tex:$prefix/lib/texmf: \
+sed -e s:/usr/lib/tex:$prefix/share/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
+    -e s:-v:-verbose: \
      $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
 
@@ -59,6 +60,6 @@ sed -e s:/usr/lib/tex:$prefix/lib/texmf: \
 chmod +w  ${WRKSRC}/Imakefile 
 echo "OSDEFS=" >> ${WRKSRC}/Imakefile || exit 1;
 echo "OPTIONDEFS=-DUSE_PK -DGREY -DPS_GS -DMAKEPK -DBUTTONS" >> ${WRKSRC}/Imakefile
-echo "DEFAULT_FONT_PATH=$prefix/lib/texmf/fonts/pk:$CACHE/pk:/tmp/pk"  >> ${WRKSRC}/Imakefile
-echo "DEFAULT_VF_PATH=$prefix/lib/texmf/fonts/vf" >> ${WRKSRC}/Imakefile
+echo "DEFAULT_FONT_PATH=$prefix/share/texmf/fonts/pk:$CACHE/pk:/tmp/pk"  >> ${WRKSRC}/Imakefile
+echo "DEFAULT_VF_PATH=$prefix/share/texmf/fonts/vf" >> ${WRKSRC}/Imakefile
 exit 0;

@@ -7,7 +7,7 @@ prefix=$PREFIX;
 if `echo $PREFIX |grep -q X11` ; then
   prefix=/usr/local
 fi
-CACHE=$prefix/lib/texmf/fonts
+CACHE=$prefix/share/texmf/fonts
 
 if [ -f $prefix/bin/MakeTeXPK ]; then
   echo
@@ -50,8 +50,9 @@ else
   echo "mkdir -p $CACHE/pk; chmod 1777 $CACHE/pk" > $SCRIPTDIR/post-install
 fi
   
-sed -e s:/usr/lib/tex:$PREFIX/lib/texmf: \
+sed -e s:/usr/lib/tex:$PREFIX/share/texmf: \
     -e s:/common/rokicki/cmps/dvips:$CACHE: \
+    -e s:-v:-verbose: \
      $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
 #configure config.ps
@@ -72,7 +73,7 @@ else
 fi
 
 #makefile
-echo "TEXDIR=$PREFIX/lib/texmf" >> ${WRKSRC}/Makefile || exit 1;
+echo "TEXDIR=$PREFIX/share/texmf" >> ${WRKSRC}/Makefile || exit 1;
 echo "LOCALDIR=$CACHE" >> ${WRKSRC}/Makefile
 echo "TEXMACRODIR=\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
 echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
