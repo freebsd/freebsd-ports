@@ -1,0 +1,8 @@
+This package contains all of the items you'll need to run a
+Quake III Arena dedicated server with OSP Tourney DM/CA/CTF
+mod under FreeBSD with Linux emulation.
+
+WWW: http://www.orangesmoothie.org/
+
+- Patrick Li
+pat@databits.net

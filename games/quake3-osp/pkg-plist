@@ -1,0 +1,117 @@
+%%Q3DIR%%1v1.cfg
+%%PORTDOCS%%%%Q3DIR%%Docs/CPM-info.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/Logging-OSP.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-ClientReadme-RUS.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Commands-RUS.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-README-RUS.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-ClientReadme.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Commands.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Decal-Editing.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-History.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Logging.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Mode-info.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-PlayerFilters.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Server-gfx.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Variables.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Viewcam.txt
+%%PORTDOCS%%%%Q3DIR%%INSTALL.txt
+%%Q3DIR%%OSP Match Quick Start.txt
+%%PORTDOCS%%%%Q3DIR%%README.txt
+%%Q3DIR%%altmodes/arena1v1.cfg
+%%Q3DIR%%altmodes/rail.cfg
+%%Q3DIR%%altmodes/railctf.cfg
+%%Q3DIR%%altmodes/railteam.cfg
+%%Q3DIR%%cfg-SinglePlayer/1v1.cfg
+%%Q3DIR%%cfg-SinglePlayer/clanarena.cfg
+%%Q3DIR%%cfg-SinglePlayer/ctf.cfg
+%%Q3DIR%%cfg-SinglePlayer/ffa.cfg
+%%Q3DIR%%cfg-SinglePlayer/instagib.cfg
+%%Q3DIR%%cfg-SinglePlayer/team.cfg
+%%Q3DIR%%cfg-custom/1v1.cfg
+%%Q3DIR%%cfg-custom/arena1v1.cfg
+%%Q3DIR%%cfg-custom/clanarena.cfg
+%%Q3DIR%%cfg-custom/ctf.cfg
+%%Q3DIR%%cfg-custom/ffa.cfg
+%%Q3DIR%%cfg-custom/rail.cfg
+%%Q3DIR%%cfg-custom/railctf.cfg
+%%Q3DIR%%cfg-custom/railteam.cfg
+%%Q3DIR%%cfg-custom/team.cfg
+%%Q3DIR%%cfg-gfxexample/gfxdef.cfg
+%%Q3DIR%%cfg-gfxexample/z-osp-misc.pk3
+%%Q3DIR%%cfg-maps/1v1arenamaps.txt
+%%Q3DIR%%cfg-maps/1v1maps.txt
+%%Q3DIR%%cfg-maps/Map_Config_Info.txt
+%%Q3DIR%%cfg-maps/badlands.txt
+%%Q3DIR%%cfg-maps/ctfmaps.txt
+%%Q3DIR%%cfg-maps/ffamaps.txt
+%%Q3DIR%%cfg-maps/teammaps.txt
+%%Q3DIR%%cfg-modes/instamodes-single.cfg
+%%Q3DIR%%cfg-modes/instamodes.cfg
+%%Q3DIR%%cfg-reference/1v1.cfg
+%%Q3DIR%%cfg-reference/clanarena.cfg
+%%Q3DIR%%cfg-reference/ctf.cfg
+%%Q3DIR%%cfg-reference/ffa.cfg
+%%Q3DIR%%cfg-reference/team.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-japanctf.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-overkill.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-pro-q3dm6.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3ctf1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3ctf2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3ctf3.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3ctf4.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm10.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm11.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm12.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm13.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm14.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm15.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm16.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm17.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm19.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm3.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm4.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm5.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm6.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm7.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm8.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3dm9.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3jdm8a.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney3.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney4-broken.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney4.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3tourney5.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wctf1.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wctf2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-q3wctf3.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-ztn3dm1.cfg
+%%Q3DIR%%clanarena.cfg
+%%Q3DIR%%ctf-public.cfg
+%%Q3DIR%%ctf.cfg
+%%Q3DIR%%description.txt
+%%Q3DIR%%ffa.cfg
+%%Q3DIR%%filters.txt
+%%Q3DIR%%instagib.cfg
+%%Q3DIR%%paks/z-osp-game099v1.pk3
+%%Q3DIR%%spectool.cfg
+%%Q3DIR%%team.cfg
+%%Q3DIR%%vm/qagame.qvm
+%%Q3DIR%%z-osp-cgame099v1.pk3
+%%Q3DIR%%z-osp-extra099u.pk3
+%%Q3DIR%%z-osp-players-099u.pk3
+@dirrm %%Q3DIR%%vm
+@dirrm %%Q3DIR%%paks
+@dirrm %%Q3DIR%%cfg-viewcam
+@dirrm %%Q3DIR%%cfg-reference
+@dirrm %%Q3DIR%%cfg-modes
+@dirrm %%Q3DIR%%cfg-maps
+@dirrm %%Q3DIR%%cfg-gfxexample
+@dirrm %%Q3DIR%%cfg-custom
+@dirrm %%Q3DIR%%cfg-SinglePlayer
+@dirrm %%Q3DIR%%altmodes
+%%PORTDOCS%%@dirrm %%Q3DIR%%Docs/RUS
+%%PORTDOCS%%@dirrm %%Q3DIR%%Docs
+@unexec rmdir %D/%%Q3DIR%% 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -Rf ${PKG_PREFIX}/%%Q3DIR%%`` to remove any configuration files left" | fmt
