@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/devel/gnustep-base
-RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/devel/gnustep-base
+BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 .include <bsd.port.pre.mk>
