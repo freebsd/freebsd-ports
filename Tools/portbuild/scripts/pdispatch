@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# wait 5 hours maximum
-timeout=18000
+# wait 12 hours maximum
+timeout=43200
 
 branch=$1
 command=$2
@@ -36,5 +36,5 @@ fi
 if [ "x$NODUMMY" != "x" ]; then
   flags="${flags} -nodummy"
 fi
-echo "dispatching: ssh -a $1 ${command} ${branch} $flags $args"
-${buildroot}/scripts/ptimeout $timeout ssh -a $1 ${command} ${branch} ${flags} $args
+echo "dispatching: ssh -a -t -n $1 ${command} ${branch} $flags $args at $(date)"
+${buildroot}/scripts/ptimeout $timeout ssh -a -t -n $1 ${command} ${branch} ${flags} $args
