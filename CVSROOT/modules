@@ -7060,6 +7060,7 @@ sformat		ports/sysutils/sformat
 sfront		ports/audio/sfront
 sfs		ports/security/sfs
 sftp_port	ports/ftp/sftp
+sgb		ports/devel/sgb
 sgf2tex		ports/print/sgf2tex
 sgifonts	ports/x11-fonts/sgifonts
 sgmlformat	ports/textproc/sgmlformat
