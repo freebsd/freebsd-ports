@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.132 1999/03/31 14:22:19 dirk Exp $
+# $Id: LEGAL,v 1.133 1999/04/02 04:34:35 steve Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -65,6 +65,7 @@ fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
+GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-*		ports/graphics/graphviz	Needs license before fetching
 inn2-*			ports/news/inn2		Copyright file in package
