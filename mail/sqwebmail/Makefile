@@ -96,7 +96,7 @@ PLIST_SUB+=		AUTHDFLAG="@comment "
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
+USE_OPENLDAP=		YES
 CONFIGURE_ARGS+=	--with-authldap
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
