@@ -1,0 +1,50 @@
+# New ports collection makefile for:   py-pypgsql
+# Date created:                                01 Nov 2001
+# Whom:                                        Gerhard Haering <gerhard@bigfoot.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=      pyPgSQL
+PORTVERSION=   1.6
+CATEGORIES=    databases python
+MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR= pypgsql
+PKGNAMEPREFIX=  py-
+DISTNAME=      pypgsql-${PORTVERSION}
+
+MAINTAINER=    gerhard@bigfoot.de
+
+BUILD_DEPENDS= ${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=   ${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+LIB_DEPENDS=   pq.2:${PORTSDIR}/databases/postgresql7
+
+WRKSRC=		${WRKDIR}/pypgsql
+USE_PYTHON=	yes
+SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+
+DOCS=		README
+
+PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+
+DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
+
+post-patch:
+	perl -i -p \
+		-e 's#^include_dirs  = \[ "/usr/local/pgsql/include" \]#include_dirs  = [ "${LOCALBASE}/include/pgsql" ]# ;' \
+		-e 's#^library_dirs  = \[ "/usr/local/pgsql/lib" \]#library_dirs  = [ "${LOCALBASE}/lib" ]#' \
+		${WRKSRC}/setup.py
+
+do-build:
+	${SETUP_CMD} build_ext --inplace
+
+do-install:
+	${SETUP_CMD} install
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
