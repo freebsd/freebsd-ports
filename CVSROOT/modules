@@ -200,7 +200,7 @@ acm		ports/games/acm
 acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
-acroread5	ports/print/acroread5
+acroread	ports/print/acroread
 acroread5-commfont	ports/print/acroread5-commfont
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
