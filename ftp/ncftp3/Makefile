@@ -4,7 +4,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.51 1998/06/26 22:34:33 asami Exp $
+# $Id: Makefile,v 1.52 1998/07/02 02:10:23 obrien Exp $
 #
 
 DISTNAME=	ncftp-3.0beta14-src
@@ -16,7 +16,7 @@ MAINTAINER=	obrien@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-curses
+#CONFIGURE_ARGS= --disable-curses
 MAN1=		ncftp3.1 ncftpbatch.1 ncftpget.1 ncftpls.1 ncftpput.1
 MAN3=		Strn.3
 NO_LATEST_LINK=	yes
@@ -33,7 +33,8 @@ pre-build:
 do-install:
 	@$(INSTALL_PROGRAM) $(WRKSRC)/bin/ncftp $(PREFIX)/bin/ncftp3
 	@cd ${WRKSRC}/bin ; $(INSTALL_PROGRAM) \
-		ncftpbatch ncftpget ncftpls ncftpput $(PREFIX)/bin
+		ncftpbatch ncftpget ncftpls ncftpput ncftpbookmarks \
+		$(PREFIX)/bin
 	@$(INSTALL_DATA) $(WRKSRC)/Strn/libStrn.so.1 $(PREFIX)/lib
 	@$(INSTALL_DATA) $(WRKSRC)/libncftp/libncftp.so.2 $(PREFIX)/lib
 	@${LDCONFIG} -m ${PREFIX}/lib
