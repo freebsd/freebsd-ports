@@ -1,4 +1,5 @@
 bin/ant
+bin/antRun
 %%T%%/lib/ant.jar
 %%T%%/lib/optional.jar
 %%T%%/lib/README
