@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nate/JDK1.1
 
-MAINTAINER=	nate@FreeBSD.org
+MAINTAINER=	java-port@@FreeBSD.org
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
