@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.20 1999/02/23 08:15:54 asami Exp $
+# $Id: Makefile,v 1.21 1999/03/07 23:53:37 billf Exp $
 #
 
     SUBDIR += FWF
@@ -12,6 +12,7 @@
     SUBDIR += gtk10
     SUBDIR += gtk11
     SUBDIR += gtk11-devel
+    SUBDIR += gtk12
     SUBDIR += gtkgl
     SUBDIR += gtkstep
     SUBDIR += iv

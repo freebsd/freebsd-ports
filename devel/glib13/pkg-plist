@@ -1,24 +1,24 @@
-bin/glib11d-config
-include/glib11d/glib.h
-include/glib11d/glibconfig.h
-include/glib11d/gmodule.h
+bin/glib12-config
+include/glib12/glib.h
+include/glib12/glibconfig.h
+include/glib12/gmodule.h
 @unexec install-info --delete %D/info/glib.info %D/info/dir
 info/glib.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/glib.info %D/info/dir
-lib/libglib11d.a
-lib/libglib11d.la
-lib/libglib11d.so
-lib/libglib11d.so.2.1
-lib/libgmodule11d.a
-lib/libgmodule11d.la
-lib/libgmodule11d.so
-lib/libgmodule11d.so.2.1
-lib/libgthread11d.a
-lib/libgthread11d.la
-lib/libgthread11d.so
-lib/libgthread11d.so.2.1
+lib/libglib12.a
+lib/libglib12.la
+lib/libglib12.so
+lib/libglib12.so.1
+lib/libgmodule12.a
+lib/libgmodule12.la
+lib/libgmodule12.so
+lib/libgmodule12.so.1
+lib/libgthread12.a
+lib/libgthread12.la
+lib/libgthread12.so
+lib/libgthread12.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/glib.m4
-@dirrm include/glib11d
+@dirrm include/glib12

@@ -1,36 +1,20 @@
---- configure.orig	Tue Feb  2 09:42:09 1999
-+++ configure	Tue Feb  2 09:43:37 1999
-@@ -1108,13 +1108,13 @@
- 	    fi
- 	
- 	    if test "$no_gnome_config" = "yes"; then
--              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1113: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	      if test -f $gnome_prefix/gnomeConf.sh; then
-+              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1113: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	      if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	        echo "$ac_t""found" 1>&6
- 	        echo "loading gnome configuration from" \
--		     "$gnome_prefix/gnomeConf.sh"
--	        . $gnome_prefix/gnomeConf.sh
-+		     "$prefix/share/gnome/gnomeConf.sh"
-+	        . $prefix/share/gnome/gnomeConf.sh
- 	        
- 	      else
- 	        echo "$ac_t""not found" 1>&6
-@@ -3121,10 +3121,10 @@
- 
- if test $OBJECTIVE_C = yes; then
+--- configure.orig	Tue Mar  2 00:23:40 1999
++++ configure	Sat Mar  6 23:55:23 1999
+@@ -3143,7 +3143,7 @@
    
--        echo $ac_n "checking for obGnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:3126: checking for obGnomeConf.sh file in $gnome_prefix" >&5
--	if test -f $gnome_prefix/obGnomeConf.sh; then
--	    . $gnome_prefix/obGnomeConf.sh
-+        echo $ac_n "checking for obGnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:3126: checking for obGnomeConf.sh file in $prefix/share/gnome" >&5
-+	if test -f $prefix/share/gnome/obGnomeConf.sh; then
-+	    . $prefix/share/gnome/obGnomeConf.sh
- 	    echo "$ac_t""found" 1>&6
- 	else
- 	    echo "$ac_t""not found" 1>&6
+ 	echo $ac_n "checking for an obGnomeConf.sh""... $ac_c" 1>&6
+ echo "configure:3146: checking for an obGnomeConf.sh" >&5
+-	my_gnome_libdir=`$GNOME_CONFIG --libdir`
++	my_gnome_libdir=`$GNOME_CONFIG --sysconfdir`
+ 	if test -f $my_gnome_libdir/obGnomeConf.sh; then
+ 	    . $my_gnome_libdir/obGnomeConf.sh
+ 	    echo "$ac_t""found $my_gnome_libdir" 1>&6
+@@ -5389,7 +5389,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo

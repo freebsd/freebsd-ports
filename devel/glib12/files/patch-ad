@@ -1,6 +1,6 @@
 --- configure.in.orig	Thu Jan 28 09:59:01 1999
 +++ configure.in	Thu Jan 28 23:13:01 1999
-@@ -250,7 +250,7 @@
+@@ -268,7 +268,7 @@
  AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
  
  # Check for some functions
@@ -9,7 +9,17 @@
  
  # Check for sys_errlist
  AC_MSG_CHECKING(for sys_errlist)
-@@ -732,11 +732,13 @@
+@@ -507,6 +507,9 @@
+ 	  linux*)
+ 	    G_MODULE_LDFLAGS='-rdynamic'
+ 	    ;;
++	  freebsd*)
++	    G_MODULE_LDFLAGS='-Wl,-E'
++	    ;;
+ 	esac
+ 	LIBS_orig="$LIBS"
+ 	LDFLAGS_orig="$LDFLAGS"
+@@ -716,11 +719,13 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -18,17 +28,17 @@
 -
 -		# FreeBSD 2.2.x shiped with gcc 2.7.2.x, which doesn't support
 -		# -mthreads flag.
-+	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
++	*-*-freebsd*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
 +			have_poll=no
 +		else
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE"
++			G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
 +		fi
  		;;
      esac
  
-@@ -785,6 +788,9 @@
+@@ -834,6 +839,9 @@
  dnl ****************************************
  dnl *** GLib POLL* compatibility defines ***
  dnl ****************************************

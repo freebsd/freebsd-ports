@@ -1,5 +1,5 @@
---- sounds/Makefile.orig	Tue Feb 16 01:07:51 1999
-+++ sounds/Makefile	Fri Feb 19 03:28:42 1999
+--- sounds/Makefile.orig	Wed Feb 24 22:19:09 1999
++++ sounds/Makefile	Sat Mar  6 15:20:39 1999
 @@ -6,10 +6,10 @@
  
  install-files:
@@ -11,7 +11,7 @@
  	done
  
  install-default-links:
--	ln -sf startup2.wav $(prefix)/share/sounds/login.wav
+-	ln -sf startup3.wav $(prefix)/share/sounds/login.wav
 -	ln -sf shutdown1.wav $(prefix)/share/sounds/logout.wav
-+	ln -sf startup1.wav $(prefix)/share/gnome/sounds/startup.wav
++	ln -sf startup3.wav $(prefix)/share/gnome/sounds/startup.wav
 +	ln -sf shutdown1.wav $(prefix)/share/gnome/sounds/logout.wav

@@ -164,14 +164,14 @@
  
  # Sound files
  shell/.mod
---- gnome/mc.keys.in.in.orig	Tue Jan 19 00:44:12 1999
-+++ gnome/mc.keys.in.in	Thu Jan 28 11:54:32 1999
-@@ -86,7 +86,7 @@
+--- gnome/mc.keys.in.in.orig	Tue Feb 16 01:29:18 1999
++++ gnome/mc.keys.in.in	Fri Feb 19 01:47:31 1999
+@@ -96,7 +96,7 @@
  	icon-filename=@icondir@/tex.xpm
  
  application/postscript:
 -	open=gv %f
 +	open=ggv %f
- 	icon-filename=@icondir@/postscript.xpm
+ 	icon-filename=@icondir@/gnome-application-postscript.png
  
  application/x-object-file:

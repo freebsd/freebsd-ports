@@ -1,13 +1,13 @@
---- configure.orig	Fri Feb 12 14:06:46 1999
-+++ configure	Thu Feb 18 00:47:01 1999
+--- configure.orig	Thu Feb 25 01:44:38 1999
++++ configure	Mon Mar  1 20:30:08 1999
 @@ -2304,8 +2304,8 @@
  echo "configure:2305: checking If dynamic linking works on this system" >&5
    oLIBS="$LIBS"
    oCFLAGS="$CFLAGS"
 -  LIBS="$LIBS `glib-config --libs gmodule`"
 -  CFLAGS="$CFLAGS `glib-config --cflags gmodule`"
-+  LIBS="$LIBS `glib11d-config --libs gmodule`"
-+  CFLAGS="$CFLAGS `glib11d-config --cflags gmodule`"
++  LIBS="$LIBS `glib12-config --libs gmodule`"
++  CFLAGS="$CFLAGS `glib12-config --cflags gmodule`"
    if test "$cross_compiling" = yes; then
      { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
  else
@@ -17,8 +17,8 @@
  
 -   GMODULE_LIBS="`glib-config --libs gmodule`"
 -   GMODULE_FLAGS="`glib-config --cflags gmodule`"
-+   GMODULE_LIBS="`glib11d-config --libs gmodule`"
-+   GMODULE_FLAGS="`glib11d-config --cflags gmodule`"
++   GMODULE_LIBS="`glib12-config --libs gmodule`"
++   GMODULE_FLAGS="`glib12-config --cflags gmodule`"
     
     
     echo "$ac_t""yes" 1>&6
@@ -40,24 +40,3 @@
  cat > conftest.$ac_ext <<EOF
  #line 4494 "configure"
  #include "confdefs.h"
-@@ -4715,16 +4715,16 @@
- 
- 
- 
--ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
--echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:4721: checking for gif_lib.h" >&5
-+ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:4721: checking for giflib/gif_lib.h" >&5
- if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   cat > conftest.$ac_ext <<EOF
- #line 4726 "configure"
- #include "confdefs.h"
--#include <gif_lib.h>
-+#include <giflib/gif_lib.h>
- EOF
- ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4731: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }

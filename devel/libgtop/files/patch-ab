@@ -1,99 +1,16 @@
--- lib/Makefile.in.orig	Wed Jan  6 03:54:31 1999
-+++ lib/Makefile.in	Thu Jan  7 21:47:02 1999
-@@ -129,7 +129,7 @@
- LT_CURRENT = @LT_CURRENT@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
--LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 1:0:0
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
- NM = @NM@
---- sysdeps/common/Makefile.in.orig	Wed Jan  6 03:53:49 1999
-+++ sysdeps/common/Makefile.in	Thu Jan  7 21:47:02 1999
-@@ -129,7 +129,7 @@
- LT_CURRENT = @LT_CURRENT@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
--LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 1:0:0
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
- NM = @NM@
---- sysdeps/freebsd/Makefile.in.orig	Wed Jan  6 03:54:24 1999
-+++ sysdeps/freebsd/Makefile.in	Thu Jan  7 21:47:02 1999
-@@ -129,7 +129,7 @@
- LT_CURRENT = @LT_CURRENT@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
--LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 1:0:0
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
- NM = @NM@
---- sysdeps/names/Makefile.in.orig	Wed Jan  6 03:54:09 1999
-+++ sysdeps/names/Makefile.in	Thu Jan  7 21:47:02 1999
-@@ -129,7 +129,7 @@
- LT_CURRENT = @LT_CURRENT@
- LT_RELEASE = @LT_RELEASE@
- LT_REVISION = @LT_REVISION@
--LT_VERSION_INFO = @LT_VERSION_INFO@
-+LT_VERSION_INFO = -version-info 1:0:0
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
- NM = @NM@
---- sysdeps/guile/Makefile.in.orig	Fri Jan  8 11:23:00 1999
-+++ sysdeps/guile/Makefile.in	Fri Jan  8 11:26:57 1999
-@@ -126,9 +126,9 @@
- LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
- LT_AGE = @LT_AGE@
--LT_CURRENT = @LT_CURRENT@
--LT_RELEASE = @LT_RELEASE@
--LT_REVISION = @LT_REVISION@
-+LT_CURRENT = 1
-+LT_RELEASE = 0
-+LT_REVISION = 0
- LT_VERSION_INFO = @LT_VERSION_INFO@
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
---- sysdeps/guile/names/Makefile.in.orig	Wed Jan  6 03:54:02 1999
-+++ sysdeps/guile/names/Makefile.in	Fri Jan  8 11:27:22 1999
-@@ -126,9 +126,9 @@
- LN_S = @LN_S@
- LTLIBOBJS = @LTLIBOBJS@
- LT_AGE = @LT_AGE@
--LT_CURRENT = @LT_CURRENT@
--LT_RELEASE = @LT_RELEASE@
--LT_REVISION = @LT_REVISION@
-+LT_CURRENT = 1
-+LT_RELEASE = 0
-+LT_REVISION = 0
- LT_VERSION_INFO = @LT_VERSION_INFO@
- MAKEINFO = @MAKEINFO@
- MKINSTALLDIRS = @MKINSTALLDIRS@
---- po/Makefile.in.in.orig	Wed Jan  6 03:50:44 1999
-+++ po/Makefile.in.in	Thu Jan  7 21:47:02 1999
-@@ -18,7 +18,7 @@
+--- src/daemon/Makefile.in.orig	Tue Mar  2 18:48:38 1999
++++ src/daemon/Makefile.in	Tue Mar  2 18:49:07 1999
+@@ -191,7 +191,7 @@
  
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
-+datadir = $(prefix)/share
- localedir = $(datadir)/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
+ 
+ libgtop_server_SOURCES = server.c slave.c io.c version.c daemon.h
+-libgtop_server_LDADD = $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid.la 				  $(top_builddir)/sysdeps/common/libgtop_suid_common.la 				  @LIBSUPPORT@
++libgtop_server_LDADD = $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid.la 				  $(top_builddir)/sysdeps/common/libgtop_suid_common.la 				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@
+ 
+ 
+ EXTRA_DIST = server_config.h.in server_config.pl
 --- Makefile.in.orig	Wed Feb 17 18:34:29 1999
 +++ Makefile.in	Fri Feb 19 01:58:32 1999
-@@ -174,7 +174,7 @@
- 
- @BUILD_GNOME_SUPPORT_TRUE@support = support
- 
--SUBDIRS = po intl $(support) macros misc include sysdeps lib src 	  $(examples_SUBDIRS)
-+SUBDIRS = po intl macros misc include sysdeps lib src
- 
- 
- include_HEADERS = glibtop.h
 @@ -182,7 +182,7 @@
  EXTRA_DIST = autogen.sh libgtop.spec.in copyright.txt libgtopConf.sh.in 	LIBGTOP-VERSION features.def libgtop-config.in RELNOTES-0.25 	RELNOTES-1.0 libgtop-sysdeps.m4 ANNOUNCE-0.25 ANNOUNCE-1.0 	README NEWS.old libgtop-mirror.sh
  

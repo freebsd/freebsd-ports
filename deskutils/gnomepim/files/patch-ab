@@ -1,7 +1,7 @@
---- gncal/Makefile.in.orig	Tue Feb  2 09:08:47 1999
-+++ gncal/Makefile.in	Tue Feb  2 09:09:32 1999
-@@ -111,11 +111,11 @@
- YACC = @YACC@
+--- gncal/Makefile.in.orig	Mon Mar  1 00:39:07 1999
++++ gncal/Makefile.in	Wed Mar  3 10:45:10 1999
+@@ -112,11 +112,11 @@
+ ZVT_LIBS = @ZVT_LIBS@
  l = @l@
  
 -help_base = $(datadir)/gnome/help/cal
@@ -14,11 +14,23 @@
  
  
  bin_PROGRAMS = gnomecal
---- gnomecard/Makefile.in.orig	Tue Feb  2 09:09:12 1999
-+++ gnomecard/Makefile.in	Tue Feb  2 09:10:02 1999
-@@ -113,11 +113,11 @@
+@@ -134,7 +134,7 @@
+ EXTRA_DIST =  	gncal.desktop		topic.dat		gnome-cal.html		bell.xpm		recur.xpm
  
- SUBDIRS = help
+ 
+-Productivitydir = $(datadir)/gnome/apps/Applications
++Productivitydir = $(datadir)/apps/Applications
+ 
+ Productivity_DATA = gncal.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+--- gnomecard/Makefile.in.orig	Mon Mar  1 00:39:10 1999
++++ gnomecard/Makefile.in	Wed Mar  3 10:45:39 1999
+@@ -112,13 +112,13 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-SUBDIRS = help
++# SUBDIRS = help
  
 -xpmhelp_base = $(datadir)/gnome/help/cal
 +xpmhelp_base = $(datadir)/help/cal
@@ -30,6 +42,15 @@
  
  
  bin_PROGRAMS = gnomecard
+@@ -143,7 +143,7 @@
+ EXTRA_DIST =  	addr.xpm		addrtool.xpm		cardedit.xpm		cardnew.xpm		cardfind.xpm		email.xpm		expl.xpm		first.xpm		geo.xpm			ident.xpm		last.xpm		org.xpm			sec.xpm			tel.xpm			teltool.xpm		phone.xpm		world.xpm		gnomecard.desktop 	gnomecard.gnorba
+ 
+ 
+-Productivitydir = $(datadir)/gnome/apps/Applications
++Productivitydir = $(datadir)/apps/Applications
+ 
+ Productivity_DATA = gnomecard.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
 --- gnomecard/help/C/Makefile.in.orig	Tue Feb  2 09:10:22 1999
 +++ gnomecard/help/C/Makefile.in	Tue Feb  2 09:10:30 1999
 @@ -112,7 +112,7 @@
@@ -41,14 +62,3 @@
  
  gnomecard_help_DATA =  	index.html			topic.dat
  
---- po/Makefile.in.in.orig	Tue Feb  2 09:11:11 1999
-+++ po/Makefile.in.in	Tue Feb  2 09:11:19 1999
-@@ -18,7 +18,7 @@
- 
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
-+datadir = $(prefix)/share
- localedir = $(datadir)/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gnomeaudio
-# Version required:			0.99.8
+# Version required:			1.0.0
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/31 19:08:54 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/02/19 04:24:59 vanilla Exp $
 #
 
-DISTNAME=	gnome-audio-0.99.8
-PKGNAME=	gnomeaudio-0.99.8
+DISTNAME=	gnome-audio-1.0.0
+PKGNAME=	gnomeaudio-1.0.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	gnome-audio
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -22,5 +22,8 @@ USE_GMAKE=	yes
 NO_BUILD=	yes
 
 INSTALL_TARGET=	INSTALL_DATA="${INSTALL_DATA}" install
+
+post-extract:
+	@${RM} -r ${WRKSRC}/sounds/sounds
 
 .include <bsd.port.mk>

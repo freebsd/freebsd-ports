@@ -1,0 +1,11 @@
+--- capplets/wm-properties/wm-list.c.orig	Tue Mar  2 22:53:29 1999
++++ capplets/wm-properties/wm-list.c	Tue Mar  2 22:53:52 1999
+@@ -210,7 +210,7 @@
+         gchar *tempdir;
+         gchar *name;
+         
+-        tempdir = gnome_unconditional_datadir_file ("gnome/wm-properties/");
++        tempdir = gnome_unconditional_datadir_file ("wm-properties/");
+         wm_list_read_dir (tempdir, FALSE);
+         g_free (tempdir);
+         

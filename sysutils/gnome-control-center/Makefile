@@ -1,16 +1,16 @@
 # New ports collection makefile for:	control-center
-# Version required:			0.99.3.1
+# Version required:			1.0.1
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/27 08:31:52 fenner Exp $
+# $Id: Makefile,v 1.5 1999/01/31 20:48:01 vanilla Exp $
 #
 
-DISTNAME=	control-center-0.99.3.1
-PKGNAME=	gnomecontrolcenter-0.99.3.1
+DISTNAME=	control-center-1.0.1
+PKGNAME=	gnomecontrolcenter-1.0.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	control-center
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:

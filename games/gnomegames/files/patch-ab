@@ -1,50 +1,78 @@
---- aisleriot/Makefile.in.orig	Mon Feb 15 13:57:56 1999
-+++ aisleriot/Makefile.in	Fri Feb 19 13:24:41 1999
-@@ -130,7 +130,7 @@
+--- aisleriot/Makefile.in.orig	Mon Mar  1 02:50:59 1999
++++ aisleriot/Makefile.in	Wed Mar  3 00:00:04 1999
+@@ -126,12 +126,12 @@
+ scoredir = $(localstatedir)/games
+ cardimagedir = $(datadir)/pixmaps/cards
+ icondir = $(datadir)/pixmaps
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ typesdir = $(datadir)/sol-games
  
- SUBDIRS = docs pixmaps
+-SUBDIRS = docs pixmaps
++SUBDIRS = pixmaps
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = sol
---- aisleriot/docs/Makefile.in.orig	Mon Feb 15 13:58:07 1999
-+++ aisleriot/docs/Makefile.in	Fri Feb 19 13:24:41 1999
-@@ -128,7 +128,7 @@
- XPM_LIBS = @XPM_LIBS@
+@@ -152,7 +152,7 @@
+ EXTRA_DIST = TODO FIXME  AUTHORS $(types_DATA) $(cardimage_DATA) 	$(icon_DATA) sol.desktop SCHEME_GAMES.h
+ 
+ 
+-sysdir = $(datadir)/gnome/apps/Games
++sysdir = $(datadir)/apps/Games
+ sys_DATA = sol.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+--- aisleriot/docs/Makefile.in.orig	Mon Mar  1 02:51:00 1999
++++ aisleriot/docs/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -129,7 +129,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
  l = @l@
  
 -helpdir = $(datadir)/gnome/help/aisleriot/C
 +helpdir = $(datadir)/help/aisleriot/C
  
- help_DATA = index.html intro.html glossary.html gpl.html 	camelot.html canfield.html clock.html doublets.html 	eagle-wing.html fortunes.html klondike.html pileon.html 	neighbor.html odessa.html osmosis.html spider.html yukon.html 	beleaguered-castle.html 	camelot-goal.gif clock-rules.gif docbook.css topic.dat
+ help_DATA = index.html intro.html glossary.html gpl.html 	camelot.html canfield.html clock.html doublets.html 	eagle-wing.html elevator.html fortunes.html klondike.html 	fourteen.html pileon.html auld-lang-syne.html hopscotch.html 	neighbor.html odessa.html osmosis.html spider.html yukon.html 	beleaguered-castle.html thirteen.html thieves.html 	freecell.html bristol.html 	camelot-goal.gif clock-rules.gif docbook.css topic.dat
  
---- freecell/src/Makefile.in.orig	Mon Feb 15 13:57:16 1999
-+++ freecell/src/Makefile.in	Fri Feb 19 13:24:41 1999
-@@ -124,7 +124,7 @@
+--- freecell/src/Makefile.in.orig	Mon Mar  1 02:50:27 1999
++++ freecell/src/Makefile.in	Wed Mar  3 00:01:13 1999
+@@ -123,9 +123,9 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
  
- Gamesdir = $(datadir)/apps/Games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir)						$(GNOME_INCLUDEDIR)					-I$(srcdir)/../gdk-card-image
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir)						$(GNOME_INCLUDEDIR)					-I$(srcdir)/../gdk-card-image
  
  
  bin_PROGRAMS = freecell
---- gnibbles/Makefile.in.orig	Sun Feb 21 03:28:13 1999
-+++ gnibbles/Makefile.in	Sun Feb 21 03:28:33 1999
-@@ -128,7 +128,7 @@
+--- gnibbles/Makefile.in.orig	Mon Mar  1 02:51:08 1999
++++ gnibbles/Makefile.in	Wed Mar  3 00:00:39 1999
+@@ -127,10 +127,10 @@
+ configdir = $(datadir)/gnibbles
+ appicondir = $(datadir)/pixmaps
  soundlistdir = $(sysconfdir)/sound/events
- Gamesdir = $(datadir)/apps/Games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ scoredir = $(localstatedir)/games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = gnibbles
---- gnobots/Makefile.in.orig	Mon Feb 15 13:57:38 1999
-+++ gnobots/Makefile.in	Fri Feb 19 13:24:41 1999
-@@ -129,7 +129,7 @@
+--- gnobots/Makefile.in.orig	Mon Mar  1 02:50:42 1999
++++ gnobots/Makefile.in	Wed Mar  3 00:00:54 1999
+@@ -126,11 +126,11 @@
+ scoredir = $(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/gnobots
+ appicondir = $(datadir)/pixmaps
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
  SUBDIRS = help
  
@@ -53,9 +81,9 @@
  
  
  bin_PROGRAMS = gnobots
---- gnobots/help/C/Makefile.in.orig	Mon Feb 15 13:57:40 1999
-+++ gnobots/help/C/Makefile.in	Fri Feb 19 13:24:41 1999
-@@ -125,7 +125,7 @@
+--- gnobots/help/C/Makefile.in.orig	Mon Mar  1 02:50:44 1999
++++ gnobots/help/C/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -126,7 +126,7 @@
  EXTRA_DIST = index.html 	     topic.dat
  
  
@@ -64,9 +92,9 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
---- gnobots/help/es/Makefile.in.orig	Mon Feb 15 13:57:41 1999
-+++ gnobots/help/es/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -125,7 +125,7 @@
+--- gnobots/help/es/Makefile.in.orig	Mon Mar  1 02:50:45 1999
++++ gnobots/help/es/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -126,7 +126,7 @@
  EXTRA_DIST = index.html 	     topic.dat
  
  
@@ -75,9 +103,14 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
---- gnobots2/Makefile.in.orig	Mon Feb 15 13:57:43 1999
-+++ gnobots2/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -132,7 +132,7 @@
+--- gnobots2/Makefile.in.orig	Mon Mar  1 02:50:46 1999
++++ gnobots2/Makefile.in	Wed Mar  3 00:00:36 1999
+@@ -129,11 +129,11 @@
+ soundlistdir = $(sysconfdir)/sound/events
+ sounddir = $(datadir)/sounds/gnobots2
+ appicondir = $(datadir)/pixmaps
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
  SUBDIRS = help
  
@@ -86,9 +119,9 @@
  
  
  bin_PROGRAMS = gnobots2
---- gnobots2/help/C/Makefile.in.orig	Mon Feb 15 13:57:45 1999
-+++ gnobots2/help/C/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -125,7 +125,7 @@
+--- gnobots2/help/C/Makefile.in.orig	Mon Mar  1 02:50:49 1999
++++ gnobots2/help/C/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -126,7 +126,7 @@
  EXTRA_DIST = index.html 	     topic.dat
  
  
@@ -97,9 +130,9 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
---- gnobots2/help/es/Makefile.in.orig	Mon Feb 15 13:57:46 1999
-+++ gnobots2/help/es/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -125,7 +125,7 @@
+--- gnobots2/help/es/Makefile.in.orig	Mon Mar  1 02:50:50 1999
++++ gnobots2/help/es/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -126,7 +126,7 @@
  EXTRA_DIST = index.html 	     topic.dat
  
  
@@ -108,9 +141,15 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
---- gnome-stones/Makefile.in.orig	Mon Feb 15 13:57:53 1999
-+++ gnome-stones/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -129,7 +129,7 @@
+--- gnome-stones/Makefile.in.orig	Mon Mar  1 02:50:55 1999
++++  gnome-stones/Makefile.in	Wed Mar  3 00:33:00 1999
+@@ -125,12 +125,12 @@
+ 
+ SUBDIRS = objects graphics
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ scoredir = $(localstatedir)/games
  Pixmapdir = $(datadir)/pixmaps
  Cavesdir = $(datadir)/gnome-stones
  
@@ -119,9 +158,18 @@
  
  
  bin_PROGRAMS = gnome-stones
---- gnome-stones/objects/Makefile.in.orig	Mon Feb 15 13:57:54 1999
-+++ gnome-stones/objects/Makefile.in	Sun Feb 21 04:22:07 1999
-@@ -124,9 +124,9 @@
+@@ -145,7 +145,7 @@
+ Games_DATA = gnome-stones.desktop
+ Caves_DATA = default.caves tutorial.caves gnomekoban.caves
+ 
+-gtkrcdir = $(datadir)
++gtkrcdir = $(datadir)/gnome-stones
+ gtkrc_DATA = gnome-stonesrc gnome-stonesrc.ko
+ 
+ EXTRA_DIST =  	$(Pixmap_DATA)					$(Games_DATA)					$(Caves_DATA)					$(gtkrc_DATA)					TODO						README
+--- gnome-stones/objects/Makefile.in.orig	Mon Mar  1 02:50:56 1999
++++ gnome-stones/objects/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -125,9 +125,9 @@
  
  GSTONES_SRC_DIR = $(srcdir)/../
  
@@ -133,7 +181,7 @@
  
  
  object_LTLIBRARIES = libgnome-stones.la libgnomekoban.la
-@@ -141,10 +141,10 @@
+@@ -142,10 +142,10 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
@@ -146,32 +194,42 @@
  libgnomekoban_la_LIBADD = 
  libgnomekoban_la_OBJECTS =  gnomekoban.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
---- gnometris/Makefile.in.orig	Mon Feb 15 13:58:10 1999
-+++ gnometris/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -126,7 +126,7 @@
+--- gnometris/Makefile.in.orig	Mon Mar  1 02:51:03 1999
++++ gnometris/Makefile.in	Wed Mar  3 00:00:33 1999
+@@ -125,9 +125,9 @@
+ 
+ SUBDIRS = pix
  scoredir = $(localstatedir)/games
- Gamesdir = $(datadir)/apps/Games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	$(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = gnometris
---- gnomine/Makefile.in.orig	Mon Feb 15 13:57:17 1999
-+++ gnomine/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -125,7 +125,7 @@
+--- gnomine/Makefile.in.orig	Mon Mar  1 02:50:28 1999
++++ gnomine/Makefile.in	Wed Mar  3 00:00:48 1999
+@@ -124,9 +124,9 @@
+ l = @l@
+ 
  scoredir = $(localstatedir)/games
- Gamesdir = $(datadir)/apps/Games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = gnomine
---- gnothello/Makefile.in.orig	Mon Feb 15 13:57:49 1999
-+++ gnothello/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -127,7 +127,7 @@
- Gamesdir = $(datadir)/apps/Games
+--- gnothello/Makefile.in.orig	Mon Mar  1 02:50:51 1999
++++ gnothello/Makefile.in	Wed Mar  3 00:00:29 1999
+@@ -125,10 +125,10 @@
+ 
+ scoredir = $(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/iagno
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  appicondir = $(datadir)/pixmaps
  
 -INCLUDES =  	-DHAVE_ORBIT 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR) -I.
@@ -179,26 +237,31 @@
  
  
  bin_PROGRAMS = iagno
---- gnotravex/Makefile.in.orig	Mon Feb 15 13:57:51 1999
-+++ gnotravex/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -126,7 +126,7 @@
+--- gnotravex/Makefile.in.orig	Mon Mar  1 02:50:54 1999
++++ gnotravex/Makefile.in	Wed Mar  3 00:00:45 1999
+@@ -125,9 +125,9 @@
+ 
+ scoredir = $(localstatedir)/games
  pixmapdir = $(datadir)/pixmaps/gnotravex
- Gamesdir = $(datadir)/apps/Games
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR)
 +INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR)
  
  
  bin_PROGRAMS = gnotravex
---- gturing/Makefile.in.orig	Mon Feb 15 13:57:32 1999
-+++ gturing/Makefile.in	Sun Feb 21 04:24:15 1999
-@@ -122,12 +122,10 @@
- XPM_LIBS = @XPM_LIBS@
+--- gturing/Makefile.in.orig	Mon Mar  1 02:50:36 1999
++++ gturing/Makefile.in	Wed Mar  3 00:00:25 1999
+@@ -124,12 +124,12 @@
+ ZVT_LIBS = @ZVT_LIBS@
  l = @l@
  
 -SUBDIRS = help
--
- Gamesdir = $(datadir)/apps/Games
++# SUBDIRS = help
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  examplesdir = $(datadir)/gturing/examples
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				 	$(GNOME_INCLUDEDIR)			 	-DVERSION=\""$(VERSION)"\" 	-DGTURING_EXAMPLES_DIR=\""$(examplesdir)"\"
@@ -206,9 +269,26 @@
  
  
  bin_PROGRAMS = gturing
---- gyahtzee/Makefile.in.orig	Mon Feb 15 13:57:35 1999
-+++ gyahtzee/Makefile.in	Sun Feb 21 04:25:11 1999
-@@ -127,12 +127,12 @@
+--- gturing/help/C/Makefile.in.orig	Mon Mar  1 02:50:38 1999
++++ gturing/help/C/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -123,7 +123,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-gturing_helpdir = $(datadir)/gnome/help/gturing/C
++gturing_helpdir = $(datadir)/help/gturing/C
+ 
+ gturing_help_DATA =  	index.html			topic.dat
+ 
+--- gyahtzee/Makefile.in.orig	Mon Mar  1 02:50:39 1999
++++ gyahtzee/Makefile.in	Wed Mar  3 00:00:42 1999
+@@ -123,17 +123,17 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
+ scoredir = $(localstatedir)/games
  
  SUBDIRS = pix
  
@@ -223,10 +303,14 @@
  
  gtali_SOURCES =          gyahtzee.c               gyahtzee.h               clist.c                  yahtzee.h                yahtzee.c                computer.c               setup.c
  
---- mahjongg/Makefile.in.orig	Mon Feb 15 13:57:31 1999
-+++ mahjongg/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -127,7 +127,7 @@
- Gamesdir = $(datadir)/apps/Games
+--- mahjongg/Makefile.in.orig	Mon Mar  1 02:50:35 1999
++++ mahjongg/Makefile.in	Wed Mar  3 00:01:32 1999
+@@ -125,10 +125,10 @@
+ 
+ scoredir = $(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/mahjongg
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  appicondir = $(datadir)/pixmaps
  
 -INCLUDES = -I.. -I$(srcdir)/..			-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)				$(GNOME_INCLUDEDIR)
@@ -234,9 +318,18 @@
  
  
  bin_PROGRAMS = mahjongg
---- metatris/Makefile.in.orig	Mon Feb 15 13:58:13 1999
-+++ metatris/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -145,7 +145,7 @@
+--- metatris/Makefile.in.orig	Mon Mar  1 02:51:06 1999
++++ metatris/Makefile.in	Wed Mar  3 00:01:34 1999
+@@ -128,7 +128,7 @@
+ appicondir = $(datadir)/pixmaps
+ appicon_DATA = gnome-metatris.png
+ 
+-sysdir = $(datadir)/gnome/apps/Games
++sysdir = $(datadir)/apps/Games
+ sys_DATA = metatris.desktop
+ 
+ mydatadir = $(datadir)/metatris/default-theme
+@@ -146,7 +146,7 @@
  metatris_LDFLAGS = $(GTK_LIBS)		$(GNOME_LIBDIR) 		$(GNOMEUI_LIBS)			$(INTLLIBS)
  
  
@@ -245,9 +338,14 @@
  
  
  scoredir = $(localstatedir)/games
---- same-gnome/Makefile.in.orig	Mon Feb 15 13:57:18 1999
-+++ same-gnome/Makefile.in	Fri Feb 19 13:24:42 1999
-@@ -128,7 +128,7 @@
+--- same-gnome/Makefile.in.orig	Mon Mar  1 02:50:30 1999
++++ same-gnome/Makefile.in	Wed Mar  3 00:01:52 1999
+@@ -125,11 +125,11 @@
+ 
+ scoredir = $(localstatedir)/games
+ pixmapdir = $(datadir)/pixmaps/same-gnome
+-Gamesdir = $(datadir)/gnome/apps/Games
++Gamesdir = $(datadir)/apps/Games
  
  SUBDIRS = help
  
@@ -256,10 +354,10 @@
  
  
  bin_PROGRAMS = same-gnome
---- same-gnome/help/C/Makefile.in.orig	Sun Feb 21 04:26:30 1999
-+++ same-gnome/help/C/Makefile.in	Sun Feb 21 04:26:40 1999
-@@ -122,7 +122,7 @@
- XPM_LIBS = @XPM_LIBS@
+--- same-gnome/help/C/Makefile.in.orig	Mon Mar  1 02:50:32 1999
++++ same-gnome/help/C/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -123,7 +123,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
  l = @l@
  
 -same_gnome_helpdir = $(datadir)/gnome/help/samegnome/C
@@ -267,10 +365,10 @@
  
  same_gnome_help_DATA =  	index.html			topic.dat
  
---- scottfree/Makefile.in.orig	Sun Feb 21 04:27:05 1999
-+++ scottfree/Makefile.in	Sun Feb 21 04:27:17 1999
-@@ -122,7 +122,7 @@
- XPM_LIBS = @XPM_LIBS@
+--- scottfree/Makefile.in.orig	Mon Mar  1 02:50:33 1999
++++ scottfree/Makefile.in	Tue Mar  2 23:58:05 1999
+@@ -123,7 +123,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
  l = @l@
  
 -INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir)			$(GNOME_INCLUDEDIR)
@@ -278,14 +376,3 @@
  
  
  bin_PROGRAMS = GnomeScott
---- po/Makefile.in.in.orig	Sun Feb 21 04:27:30 1999
-+++ po/Makefile.in.in	Sun Feb 21 04:27:40 1999
-@@ -18,7 +18,7 @@
- 
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
-+datadir = $(prefix)/share
- localedir = $(datadir)/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po

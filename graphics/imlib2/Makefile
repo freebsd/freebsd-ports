@@ -1,15 +1,15 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.9.3
+# Version required:	1.9.4
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.43 1999/01/23 07:05:26 vanilla Exp $
+# $Id: Makefile,v 1.44 1999/02/18 04:55:07 vanilla Exp $
 #
 
-DISTNAME=	imlib-1.9.3
+DISTNAME=	imlib-1.9.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	imlib
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
@@ -17,17 +17,25 @@ LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		gif.3:${PORTSDIR}/graphics/giflib \
-		gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel
+		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/giflib" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-	${CAT} ${PKGDIR}/MESSAGE
+	@${ECHO} '************************************************************'
+	@${ECHO} '*                                                          *'
+	@${ECHO} '*     If you want to use autoconf with imlib,              *'
+	@${ECHO} '*     Please copy imlib.m4 to /usr/local/share/aclocal     *'
+	@${ECHO} '*     by yourself, thanks.                                 *'
+	@${ECHO} '*                                                          *'
+	@${ECHO} '************************************************************'
 
 .include <bsd.port.mk>

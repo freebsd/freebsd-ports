@@ -1,24 +1,40 @@
 bin/background-properties-capplet
 bin/bell-properties-capplet
-bin/e-conf
+bin/gnome-edit-properties-capplet
 bin/gnomecc
 bin/keyboard-properties
 bin/mouse-properties-capplet
 bin/screensaver-properties-capplet
+bin/session-properties-capplet
 bin/sound-properties
 bin/theme-selector-capplet
 bin/ui-properties
 bin/url-properties
+bin/wm-properties-capplet
 etc/CORBA/servers/gnomecc.gnorba
+etc/cappletConf.sh
 include/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.la
 lib/libcapplet.so
-lib/libcapplet.so.0.99
+lib/libcapplet.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/cappletConf.sh
-share/gnome/apps/System/gnomecc.desktop
+share/gnome/apps/Settings/application.desktop
+share/gnome/apps/Settings/background-properties.desktop
+share/gnome/apps/Settings/bell-properties.desktop
+share/gnome/apps/Settings/dialogs.desktop
+share/gnome/apps/Settings/gnome-edit-properties.desktop
+share/gnome/apps/Settings/gnomecc.desktop
+share/gnome/apps/Settings/keyboard-properties.desktop
+share/gnome/apps/Settings/mdi.desktop
+share/gnome/apps/Settings/mouse-properties.desktop
+share/gnome/apps/Settings/screensaver-properties.desktop
+share/gnome/apps/Settings/session-properties.desktop
+share/gnome/apps/Settings/sound-properties.desktop
+share/gnome/apps/Settings/theme-selector.desktop
+share/gnome/apps/Settings/url-properties.desktop
+share/gnome/apps/Settings/wm-properties.desktop
 share/gnome/control-center/.data/Ant.desktop
 share/gnome/control-center/.data/Attraction.desktop
 share/gnome/control-center/.data/Blitspin.desktop
@@ -90,33 +106,62 @@ share/gnome/control-center/.data/Xjack.desktop
 share/gnome/control-center/.data/Xlyap.desktop
 share/gnome/control-center/.data/Xroger.desktop
 share/gnome/control-center/.data/ant.png
+share/gnome/control-center/.data/attraction.png
+share/gnome/control-center/.data/blitspin.png
 share/gnome/control-center/.data/bouboule.png
+share/gnome/control-center/.data/braid.png
+share/gnome/control-center/.data/bsod.png
+share/gnome/control-center/.data/bubbles.png
+share/gnome/control-center/.data/coral.png
+share/gnome/control-center/.data/crystal.png
+share/gnome/control-center/.data/cynosure.png
+share/gnome/control-center/.data/decayscreen.png
 share/gnome/control-center/.data/deco.png
+share/gnome/control-center/.data/discrete.png
+share/gnome/control-center/.data/drift.png
+share/gnome/control-center/.data/epicycle.png
+share/gnome/control-center/.data/flag.png
+share/gnome/control-center/.data/flame.png
+share/gnome/control-center/.data/forest.png
+share/gnome/control-center/.data/goop.png
+share/gnome/control-center/.data/grav.png
+share/gnome/control-center/.data/greynetic.png
+share/gnome/control-center/.data/halo.png
+share/gnome/control-center/.data/helix.png
+share/gnome/control-center/.data/hopalong.png
+share/gnome/control-center/.data/hypercube.png
+share/gnome/control-center/.data/ifs.png
+share/gnome/control-center/.data/julia.png
+share/gnome/control-center/.data/kaleidescope.png
 share/gnome/control-center/.data/laser.png
+share/gnome/control-center/.data/lightning.png
+share/gnome/control-center/.data/lisa.png
 share/gnome/control-center/.data/qix.png
 share/gnome/control-center/.data/starfish.png
 share/gnome/control-center/.directory
-share/gnome/control-center/Appearances/.directory
-share/gnome/control-center/Appearances/theme-selector.desktop
-share/gnome/control-center/Appearances/ui-properties/.directory
-share/gnome/control-center/Appearances/ui-properties/application.desktop
-share/gnome/control-center/Appearances/ui-properties/dialogs.desktop
-share/gnome/control-center/Appearances/ui-properties/mdi.desktop
-share/gnome/control-center/Inputdevs/.directory
-share/gnome/control-center/Inputdevs/bell-properties.desktop
-share/gnome/control-center/Inputdevs/keyboard-properties.desktop
-share/gnome/control-center/Inputdevs/mouse-properties.desktop
+share/gnome/control-center/Desktop/.directory
+share/gnome/control-center/Desktop/background-properties.desktop
+share/gnome/control-center/Desktop/screensaver-properties.desktop
+share/gnome/control-center/Desktop/theme-selector.desktop
+share/gnome/control-center/Desktop/wm-properties.desktop
 share/gnome/control-center/Multimedia/.directory
+share/gnome/control-center/Multimedia/bell-properties.desktop
 share/gnome/control-center/Multimedia/sound-properties.desktop
-share/gnome/control-center/WindowManager/.directory
-share/gnome/control-center/Workspace/.directory
-share/gnome/control-center/Workspace/Enlightenment.desktop
-share/gnome/control-center/Workspace/background-properties.desktop
-share/gnome/control-center/Workspace/screensaver-properties.desktop
-share/gnome/control-center/Workspace/url-properties.desktop
+share/gnome/control-center/Peripherals/.directory
+share/gnome/control-center/Peripherals/keyboard-properties.desktop
+share/gnome/control-center/Peripherals/mouse-properties.desktop
+share/gnome/control-center/UIOptions/.directory
+share/gnome/control-center/UIOptions/application.desktop
+share/gnome/control-center/UIOptions/dialogs.desktop
+share/gnome/control-center/UIOptions/mdi.desktop
+share/gnome/control-center/gnome-edit-properties.desktop
+share/gnome/control-center/session-properties.desktop
+share/gnome/control-center/url-properties.desktop
 share/gnome/idl/control-center.idl
 share/gnome/pixmaps/control-center.png
-share/locale/ca/LC_MESSAGES/control-center.mo
+share/gnome/wm-properties/Enlightenment.desktop
+share/gnome/wm-properties/IceWM.desktop
+share/gnome/wm-properties/WindowMaker.desktop
 share/locale/cs/LC_MESSAGES/control-center.mo
 share/locale/da/LC_MESSAGES/control-center.mo
 share/locale/de/LC_MESSAGES/control-center.mo
@@ -133,11 +178,10 @@ share/locale/pl/LC_MESSAGES/control-center.mo
 share/locale/pt/LC_MESSAGES/control-center.mo
 share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
-@dirrm share/gnome/control-center/.data
-@dirrm share/gnome/control-center/Appearances/ui-properties
-@dirrm share/gnome/control-center/Appearances
-@dirrm share/gnome/control-center/Inputdevs
+@dirrm share/gnome/wm-properties
+@dirrm share/gnome/control-center/UIOptions
+@dirrm share/gnome/control-center/Peripherals 
 @dirrm share/gnome/control-center/Multimedia
-@dirrm share/gnome/control-center/WindowManager
-@dirrm share/gnome/control-center/Workspace
+@dirrm share/gnome/control-center/Desktop 
+@dirrm share/gnome/control-center/.data
 @dirrm share/gnome/control-center

@@ -6,8 +6,8 @@
  
 -    client		(calls glib-config)
 -    server		(calls glib-config)
-+    client		(calls glib11d-config)
-+    server		(calls glib11d-config)
++    client		(calls glib12-config)
++    server		(calls glib12-config)
  EOF
  
      exit $1
@@ -17,8 +17,8 @@
      client|server)
 -	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
 -	the_flags="$the_flags `glib-config --cflags` -I@includedir@"
-+	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib11d-config --libs` @LIBS@ -lm"
-+	the_flags="$the_flags `glib11d-config --cflags` -I@includedir@"
++	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib12-config --libs` @LIBS@ -lm"
++	the_flags="$the_flags `glib12-config --cflags` -I@includedir@"
  	;;
  
     --use-service=*)

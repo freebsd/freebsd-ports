@@ -1,42 +1,49 @@
---- gnome-config.in.orig	Wed Jan 13 07:42:48 1999
-+++ gnome-config.in	Fri Jan 15 00:02:56 1999
-@@ -41,18 +41,18 @@
+--- gnome-config.in.orig	Mon Feb 15 20:05:33 1999
++++ gnome-config.in	Tue Mar  2 09:00:51 1999
+@@ -43,25 +43,25 @@
  
  Known values for LIBRARY are:
  
 -    glib	(calls glib-config)
-+    glib11d	(calls glib11d-config)
++    glib	(calls glib12-config)
      idl         (to be used with orbit-idl)
      gnome
      gnomeui
      gnorba
 -    gtk		(calls gtk-config)
-+    gtk11d		(calls gtk11d-config)
++    gtk		(calls gtk12-config)
      gtkxmhtml	(only --libs)
      zvt		(only --libs)
  
  If LIBRARY is none of these,
      
 -    ${libdir}/<LIBRARY>Conf.sh
-+    ${datadir}/<LIBRARY>Conf.sh
++    ${sysconfdir}/<LIBRARY>Conf.sh
  
- is looked in for the necessary information. 
+ is looked in for the necessary information.  Those currently installed 
+ appear to be:
+ 
  EOF
-@@ -114,33 +114,33 @@
+ 
+-    conf_shs=`cd ${libdir}; echo *Conf.sh`
++    conf_shs=`cd ${sysconfdir}; echo *Conf.sh`
+ 
+     if test "x$conf_shs" = x || test "x$conf_shs" = 'x*Conf.sh'; then
+ 	echo "    <NONE>"
+@@ -146,36 +146,36 @@
  	usage 1
  	;;
      glib)
 -	the_libs="$the_libs `glib-config --libs`"
 -	the_flags="$the_flags `glib-config --cflags`"
-+	the_libs="$the_libs `glib11d-config --libs`"
-+	the_flags="$the_flags `glib11d-config --cflags`"
++	the_libs="$the_libs `glib12-config --libs`"
++	the_flags="$the_flags `glib12-config --cflags`"
  	;;
--    gtk)
+     gtk)
 -	the_libs="$the_libs `gtk-config --libs`"
 -	the_flags="$the_flags `gtk-config --cflags`"
-+    gtk11)
-+	the_libs="$the_libs `gtk11d-config --libs`"
-+	the_flags="$the_flags `gtk11d-config --cflags`"
++	the_libs="$the_libs `gtk12-config --libs`"
++	the_flags="$the_flags `gtk12-config --cflags`"
  	;;
      gnome)
 -       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
@@ -65,4 +72,8 @@
 +	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@ -lintl"
  	;;
      *)
- 	cnf_sh=${libdir}/${1}Conf.sh
+-	cnf_sh=${libdir}/${1}Conf.sh
++	cnf_sh=${sysconfdir}/${1}Conf.sh
+ 	if test -f ${cnf_sh}; then
+ 	    . ${cnf_sh}
+ 	    up_name=`echo $1 | tr a-z A-Z`

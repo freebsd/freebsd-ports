@@ -1,6 +1,6 @@
---- configure.orig	Wed Jan 27 00:01:05 1999
-+++ configure	Wed Jan 27 00:01:25 1999
-@@ -3188,15 +3188,15 @@
+--- configure.orig	Tue Feb 16 05:58:53 1999
++++ configure	Tue Feb 23 00:58:48 1999
+@@ -3269,15 +3269,15 @@
  fi
  
          
@@ -22,7 +22,7 @@
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -10362,7 +10362,7 @@
+@@ -10553,7 +10553,7 @@
          if test -f /usr/include/ncurses.h
  	then
  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
@@ -31,12 +31,12 @@
  	    CURSES_INCLUDEDIR=""
  	    search_ncurses=false
  	    screen_manager="ncurses on /usr/include"
-@@ -10676,6 +10676,8 @@
- fi
- done
+@@ -10681,6 +10681,8 @@
+ 	fi
+     fi
  
 +CFLAGS="$CFLAGS $CURSES_INCLUDEDIR"
 +LIBS="$LIBS $CURSES_LIBS"
  
- if test "x$screen_manager" = "xunknown"; then
-     cat >> confdefs.h <<\EOF
+                 if $search_ncurses 
+     then

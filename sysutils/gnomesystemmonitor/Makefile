@@ -1,16 +1,15 @@
 # New ports collection makefile for:	gtop
-# Version required:			0.99.2
+# Version required:			1.0.1
 # Date created:				28 September 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1999/01/27 08:31:52 fenner Exp $
+# $Id: Makefile,v 1.7 1999/02/02 14:19:19 vanilla Exp $
 #
 
-DISTNAME=	gtop-0.99.2
+DISTNAME=	gtop-1.0.1
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		ftp://ftp.home-of-linux.org/pub/gtop/0.99.2/
-MASTER_SITE_SUBDIR=	gtop
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	nacai@iname.com
 
@@ -23,11 +22,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
-
-post-install:
-		chown root.kmem ${PREFIX}/bin/gtop
-		chmod 2555 ${PREFIX}/bin/gtop
 
 .include <bsd.port.mk>
