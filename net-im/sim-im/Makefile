@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
@@ -14,7 +14,8 @@ DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	Plugin-based instant messenger
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
+
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
@@ -34,10 +35,13 @@ PLIST_SUB+=	SSL="@comment "
 
 .if defined(WITHOUT_KDE)
 CONFIGURE_ARGS+=--disable-kde --enable-mt
-PLIST_SUB+=	KDE="@comment "
+LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+PLIST_SUB+=	KDE="@comment " \
+		SPELL=""
 .else
 USE_KDELIBS_VER=3
-PLIST_SUB+=	KDE=""
+PLIST_SUB+=	KDE="" \
+		SPELL="@comment "
 .endif
 
 pre-everything::
@@ -49,7 +53,9 @@ pre-everything::
 .endif
 
 post-extract:
-	@${TOUCH} ${WRKSRC}/plugins/splash/Makefile.in
+.for i in _core filter forward icq remote
+	@${TOUCH} ${WRKSRC}/plugins/${i}/Makefile.in
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
