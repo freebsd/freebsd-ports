@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/msged.info %D/info/dir
-info/msged.info
-@exec install-info %D/info/msged.info %D/info/dir
 bin/msged
 bin/testcons
 etc/fido/msghelp.dat

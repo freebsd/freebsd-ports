@@ -18,6 +18,7 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 MAN1=		bsopack.1
 MANCOMPRESSED=	yes
+INFO=		bsopack
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"

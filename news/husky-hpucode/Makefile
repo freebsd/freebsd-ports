@@ -17,6 +17,7 @@ LIB_DEPENDS=	fidoconfig.0:${PORTSDIR}/news/husky-fidoconf
 
 MAN1=		hpucode.1
 MANCOMPRESSED=	yes
+INFO=		hpucode
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
