@@ -1,0 +1,8 @@
+This module has a very simple task - to be a base class for PerlSAX
+drivers and filters. It's default behaviour is to pass the input directly
+to the output unchanged. It can be useful to use this module as a base class
+so you don't have to, for example, implement the characters() callback.
+
+WWW: http://search.cpan.org/search?dist=XML-SAX-Base
+
+Seamus Venasse <svenasse@polaris.ca>
