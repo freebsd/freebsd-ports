@@ -14,6 +14,9 @@ lib/gbottler-%%VERSION%%/downloader.pyo
 lib/gbottler-%%VERSION%%/gbottler.py
 lib/gbottler-%%VERSION%%/gbottler.pyc
 lib/gbottler-%%VERSION%%/gbottler.pyo
+lib/gbottler-%%VERSION%%/gvwindow.py
+lib/gbottler-%%VERSION%%/gvwindow.pyc
+lib/gbottler-%%VERSION%%/gvwindow.pyo
 lib/gbottler-%%VERSION%%/logs.py
 lib/gbottler-%%VERSION%%/logs.pyc
 lib/gbottler-%%VERSION%%/logs.pyo
@@ -38,6 +41,21 @@ lib/gbottler-%%VERSION%%/textmanager.pyo
 lib/gbottler-%%VERSION%%/xmllogs.py
 lib/gbottler-%%VERSION%%/xmllogs.pyc
 lib/gbottler-%%VERSION%%/xmllogs.pyo
+lib/gbottler-%%VERSION%%/viewer/__init__.py
+lib/gbottler-%%VERSION%%/viewer/__init__.pyc
+lib/gbottler-%%VERSION%%/viewer/__init__.pyo
+lib/gbottler-%%VERSION%%/viewer/ghost.py
+lib/gbottler-%%VERSION%%/viewer/ghost.pyc
+lib/gbottler-%%VERSION%%/viewer/ghost.pyo
+lib/gbottler-%%VERSION%%/viewer/ghostmanager.py
+lib/gbottler-%%VERSION%%/viewer/ghostmanager.pyc
+lib/gbottler-%%VERSION%%/viewer/ghostmanager.pyo
+lib/gbottler-%%VERSION%%/viewer/gviewer.py
+lib/gbottler-%%VERSION%%/viewer/gviewer.pyc
+lib/gbottler-%%VERSION%%/viewer/gviewer.pyo
+lib/gbottler-%%VERSION%%/viewer/viewercommon.py
+lib/gbottler-%%VERSION%%/viewer/viewercommon.pyc
+lib/gbottler-%%VERSION%%/viewer/viewercommon.pyo
 share/locale/ja/LC_MESSAGES/gbottler.mo
 share/doc/gbottler-%%VERSION%%/COPYING
 share/doc/gbottler-%%VERSION%%/ChangeLog
@@ -45,4 +63,5 @@ share/doc/gbottler-%%VERSION%%/README
 share/doc/gbottler-%%VERSION%%/README.bottler
 share/doc/gbottler-%%VERSION%%/TODO
 @dirrm share/doc/gbottler-%%VERSION%%
+@dirrm lib/gbottler-%%VERSION%%/viewer
 @dirrm lib/gbottler-%%VERSION%%
