@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTNAME=	calctool-2.4pl13
 MASTER_SITE_SUBDIR=	nsayer
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 USE_X_PREFIX=	yes
 MAN1=		calctool.1
