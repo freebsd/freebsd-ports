@@ -20,6 +20,7 @@
 # Skip all ports files except for Makefiles.
 ^ports/.*(?<!/Makefile)$
 
+^src/contrib/gcc
 ^src/contrib/gdb/gdb/version.in
 ^src/contrib/nvi/catalog
 ^src/etc/minfree
