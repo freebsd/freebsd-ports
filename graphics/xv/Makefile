@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.24 1998/09/15 11:57:45 asami Exp $
+# $Id: Makefile,v 1.25 1998/09/17 00:50:49 asami Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -29,6 +29,7 @@ LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.2:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
+MAN1=		bggen.1 vdcomp.1 xcmap.1 xv.1 xvpictoppm.1
 
 XVDIST=		${DISTDIR}/${DIST_SUBDIR}
 

@@ -3,7 +3,7 @@
 # Date created:		06 September 1995
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:23 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:42 asami Exp $
 #
 
 DISTNAME=	xbmbrowser5.1
@@ -17,6 +17,8 @@ MAINTAINER=	tg@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+MAN1=		xbmbrowser.1
+
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

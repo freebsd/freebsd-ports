@@ -3,7 +3,7 @@
 # Date created:		4 January 1995
 # Whom:			roberto
 #
-# $Id: Makefile,v 1.24 1998/09/17 00:32:42 asami Exp $
+# $Id: Makefile,v 1.25 1998/09/21 01:35:31 steve Exp $
 #
 
 DISTNAME=	xfig.3.2.2
@@ -20,6 +20,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 USE_IMAKE=	yes
+MAN1=		xfig.1
+
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
 		XFIGLIBDIR=${PREFIX}/lib/X11/xfig  -f

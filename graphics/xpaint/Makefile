@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.26 1998/09/17 00:50:49 asami Exp $
+# $Id: Makefile,v 1.27 1998/09/19 05:46:06 steve Exp $
 #
 
 DISTNAME=       xpaint-2.5.4
@@ -19,5 +19,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=      yes
+MAN1=		xpaint.1
 
 .include <bsd.port.mk>

@@ -12,5 +12,5 @@ lib/X11/Pixmap/Stipple
 lib/X11/Pixmap/Up 
 lib/X11/Pixmap/Term 
 lib/X11/Pixmap/Excl
-man/man1/pixmap.1.gz
 lib/libXgnu.a
+@dirrm lib/X11/Pixmap
