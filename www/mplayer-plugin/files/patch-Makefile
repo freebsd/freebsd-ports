@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Feb 20 16:38:02 2003
++++ Makefile	Thu Feb 20 16:38:09 2003
+@@ -30,8 +30,8 @@
+ PLUGIN_DEFINES= -DXP_UNIX -Iinclude -ISource/_gen -I/usr/X11R6/include
+ 
+ CC= gcc
+-OPTIMIZER= -g
+-CFLAGS=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
++OPTIMIZER=
++CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
+ 
+ SRC= Source/mplayerplug-in.c Source/stubs.c 
+ OBJ= mplayerplug-in.o stubs.o

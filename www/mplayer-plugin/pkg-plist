@@ -1,0 +1,2 @@
+lib/browser_plugins/mplayerplug-in.so
+@unexec rmdir %D/lib/browser_plugins 2>/dev/null || /usr/bin/true
