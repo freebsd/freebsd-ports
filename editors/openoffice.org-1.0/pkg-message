@@ -51,16 +51,16 @@ If you have chosen US-ASCII as locale, you cannot load
 and save documents with special characters and these
 characters are also not available in swriter and scalc.
 
-3 Setup problems (> 4.7-RELEASE only)
--------------------------------------
+3 Setup problems (FreeBSD < 4.7-RELEASE only)
+---------------------------------------------
 
 If the setup complains about a missing file "setup.ins",
 it's time to upgrade your FreeBSD system to the latest
 version. You will encounter this bug only if your OS is
 older than FreeBSD 4.7-RELEASE.
 
-4 Crashes in URL-location bar (> 4.7-RELEASE only)
---------------------------------------------------
+4 Crashes in URL-location bar (FreeBSD < 4.7-RELEASE only)
+----------------------------------------------------------
 
 OO.org can crash if you enter a non existing path
 or URL in the location bar. To fix these crashes
