@@ -8,7 +8,7 @@
 PORTNAME=	ddup
 PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.ddup.org/download/
+MASTER_SITES=	${MASTER_SITES_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	cjm2@altavista.net
