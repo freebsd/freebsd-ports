@@ -9,6 +9,7 @@
 
 PORTNAME=	jpeg
 PORTVERSION=	6b
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.uu.net/graphics/jpeg/
 DISTNAME=	jpegsrc.v${PORTVERSION}
@@ -21,6 +22,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 
+ADDITIONAL_HEADER=	jinclude.h jpegint.h
+
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
@@ -29,5 +32,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
 .endif
+.for header in ${ADDITIONAL_HEADER}
+	@${INSTALL_DATA} ${WRKSRC}/${header} ${PREFIX}/include
+.endfor
 
 .include <bsd.port.mk>
