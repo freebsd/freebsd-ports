@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2002.01.22
+PORTVERSION=	2002.03.10
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -73,7 +73,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-.for i in README ANNOUNCE AUTHORS LICENSE WARRANTY documentation/psdrv.reg
+.for i in README ANNOUNCE AUTHORS LICENSE documentation/psdrv.reg
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/debugger/README \

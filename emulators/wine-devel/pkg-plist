@@ -55,6 +55,7 @@ include/wine/instance.h
 include/wine/lmcons.h
 include/wine/lzexpand.h
 include/wine/mapi.h
+include/wine/mapicode.h
 include/wine/mapidefs.h
 include/wine/mciavi.h
 include/wine/mcx.h
@@ -69,6 +70,7 @@ include/wine/msvcrt/ctype.h
 include/wine/msvcrt/direct.h
 include/wine/msvcrt/dos.h
 include/wine/msvcrt/eh.h
+include/wine/msvcrt/excpt.h
 include/wine/msvcrt/fcntl.h
 include/wine/msvcrt/io.h
 include/wine/msvcrt/locale.h
@@ -262,6 +264,7 @@ lib/wine/libmsimg32.so
 lib/wine/libmsnet32.so
 lib/wine/libmsrle32.so
 lib/wine/libmsvcrt.so
+lib/wine/libmsvcrt20.so
 lib/wine/libmsvfw32.so
 lib/wine/libmsvideo.so
 lib/wine/libnetapi32.so
@@ -351,7 +354,6 @@ lib/wine/winedefault.reg
 %%PORTDOCS%%share/doc/wine/README
 %%PORTDOCS%%share/doc/wine/README.debugger
 %%PORTDOCS%%share/doc/wine/README.regapi
-%%PORTDOCS%%share/doc/wine/WARRANTY
 %%PORTDOCS%%share/doc/wine/psdrv.reg
 %%PORTDOCS%%@dirrm share/doc/wine
 @dirrm lib/wine/reg
