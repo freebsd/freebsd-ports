@@ -1,6 +1,6 @@
---- configure.orig	Fri Mar 30 04:55:57 2001
-+++ configure	Sat Apr 28 11:41:53 2001
-@@ -1262,7 +1262,9 @@
+--- configure.orig	Fri Jun 15 07:53:27 2001
++++ configure	Mon Dec 17 20:14:24 2001
+@@ -1268,7 +1268,9 @@
  
  # Defaults
  
@@ -11,7 +11,7 @@
  
  # Double precision
  # Note that because there is no standard way to invoke double
-@@ -1530,9 +1532,9 @@
+@@ -1536,9 +1538,9 @@
  # Optimization
  
  if test "$with_opt" = "yes"; then
@@ -24,7 +24,50 @@
  fi
  
  # ----------------------------------------------------------------------------
-@@ -4628,6 +4630,13 @@
+@@ -2012,15 +2014,33 @@
+ # Default linker library commands.  These may need version numbers
+ # appended to them though.
+ 
+-ITKLIBSTR=-litk
+-TKLIBSTR=-ltk
+-ITCLLIBSTR=-litcl
+-TCLLIBSTR=-ltcl
+-XLIBSTR=-lX11
+-GDLIBSTR=-lgd
+-PNGLIBSTR=-lpng
+-JPEGLIBSTR=-ljpeg
+-ZLIBLIBSTR=-lz
++if test -z "$ITKLIBSTR"; then
++    ITKLIBSTR=-litk
++fi
++if test -z "$TKLIBSTR"; then
++    TKLIBSTR=-ltk
++fi
++if test -z "$ITCLLIBSTR"; then
++    ITCLLIBSTR=-litcl
++fi
++if test -z "$TCLLIBSTR"; then
++    TCLLIBSTR=-ltcl
++fi
++if test -z "$XLIBSTR"; then
++    XLIBSTR=-lX11
++fi
++if test -z "$GDLIBSTR"; then
++    GDLIBSTR=-lgd
++fi
++if test -z "$PNGLIBSTR"; then
++    PNGLIBSTR=-lpng
++fi
++if test -z "$JPEGLIBSTR"; then
++    JPEGLIBSTR=-ljpeg
++fi
++if test -z "$ITKLIBSTR"; then
++    ZLIBLIBSTR=-lz
++fi
+ 
+ # Add the current directory to the include path.  This must occur
+ # first in the list, before we add the directories for any auxilliary
+@@ -4721,6 +4741,13 @@
  		EXTRA_LIBS="-ldl -lm"
  	    fi
  	;;
@@ -37,8 +80,8 @@
 +	;;
  	* ) 	
  	    echo $ac_n "checking for main in -lXbsd""... $ac_c" 1>&6
- echo "configure:4634: checking for main in -lXbsd" >&5
-@@ -4909,6 +4918,20 @@
+ echo "configure:4727: checking for main in -lXbsd" >&5
+@@ -5002,6 +5029,20 @@
              # for Linux.)
  	    SHLIB_F77FLAGS=-fPIC
  	;;
@@ -59,7 +102,7 @@
  	HP-UX-* )
  	    SO=".sl"
  	    SHLIB_F77FLAGS="+z"
-@@ -6600,6 +6623,7 @@
+@@ -6719,6 +6760,7 @@
  s%@LDCXX_FLAGS@%$LDCXX_FLAGS%g
  s%@F77_FLAGS@%$F77_FLAGS%g
  s%@LDF_FLAGS@%$LDF_FLAGS%g

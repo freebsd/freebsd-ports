@@ -2,6 +2,8 @@ bin/plm2gif
 bin/plplot-config
 bin/plpr
 bin/plrender
+%%TCLTK%%bin/plserver
+%%TCLTK%%bin/pltcl
 bin/pltek
 bin/pstex2eps
 include/plplot/drivers.h
@@ -15,11 +17,15 @@ include/plplot/plplot.h
 include/plplot/plplotP.h
 include/plplot/plstream.h
 include/plplot/plstrm.h
+%%TCLTK%%include/plplot/pltcl.h
+%%TCLTK%%include/plplot/pltk.h
 include/plplot/plxwd.h
+%%TCLTK%%include/plplot/tclMatrix.h
 lib/libplcxxd.a
 lib/libplplotd.a
 lib/libplplotd.so
 lib/libplplotd.so.5
+%%TCLTK%%lib/libtclmatrixd.a
 share/doc/plplot/CHANGES
 share/doc/plplot/COPYING.LIB
 share/doc/plplot/Copyright
@@ -30,8 +36,6 @@ share/doc/plplot/README.local
 share/doc/plplot/ToDo
 share/doc/plplot/mklinks
 share/examples/plplot/Makefile
-share/examples/plplot/c++/Makefile
-share/examples/plplot/c++/x01cc.cc
 share/examples/plplot/c/Makefile
 share/examples/plplot/c/tutor.c
 share/examples/plplot/c/x01c.c
@@ -53,6 +57,8 @@ share/examples/plplot/c/x16c.c
 share/examples/plplot/c/x17c.c
 share/examples/plplot/c/x18c.c
 share/examples/plplot/c/x19c.c
+share/examples/plplot/c++/Makefile
+share/examples/plplot/c++/x01cc.cc
 share/examples/plplot/f77/Makefile
 share/examples/plplot/f77/x01f.f
 share/examples/plplot/f77/x02f.f
@@ -69,23 +75,101 @@ share/examples/plplot/f77/x12f.f
 share/examples/plplot/f77/x13f.f
 share/examples/plplot/f77/x16f.f
 share/examples/plplot/plplot-test.sh
+%%TCLTK%%share/examples/plplot/tcl/README.tcldemos
+%%TCLTK%%share/examples/plplot/tcl/plgrid.tcl
+%%TCLTK%%share/examples/plplot/tcl/plot.dat
+%%TCLTK%%share/examples/plplot/tcl/plot.tcl
+%%TCLTK%%share/examples/plplot/tcl/r.dat
+%%TCLTK%%share/examples/plplot/tcl/stats.log
+%%TCLTK%%share/examples/plplot/tcl/tcldemos.tcl
+%%TCLTK%%share/examples/plplot/tcl/x01.tcl
+%%TCLTK%%share/examples/plplot/tcl/x02.tcl
+%%TCLTK%%share/examples/plplot/tcl/x03.tcl
+%%TCLTK%%share/examples/plplot/tcl/x04.tcl
+%%TCLTK%%share/examples/plplot/tcl/x05.tcl
+%%TCLTK%%share/examples/plplot/tcl/x06.tcl
+%%TCLTK%%share/examples/plplot/tcl/x07.tcl
+%%TCLTK%%share/examples/plplot/tcl/x08.tcl
+%%TCLTK%%share/examples/plplot/tcl/x09.tcl
+%%TCLTK%%share/examples/plplot/tcl/x10.tcl
+%%TCLTK%%share/examples/plplot/tcl/x11.tcl
+%%TCLTK%%share/examples/plplot/tcl/x12.tcl
+%%TCLTK%%share/examples/plplot/tcl/x13.tcl
+%%TCLTK%%share/examples/plplot/tcl/x14.tcl
+%%TCLTK%%share/examples/plplot/tcl/x15.tcl
+%%TCLTK%%share/examples/plplot/tcl/x16.tcl
+%%TCLTK%%share/examples/plplot/tcl/x17.tcl
+%%TCLTK%%share/examples/plplot/tcl/x18.tcl
 share/examples/plplot/test_c.sh
 share/examples/plplot/test_cxx.sh
 share/examples/plplot/test_f77.sh
 share/examples/plplot/test_octave.sh
 share/examples/plplot/test_python.sh
 share/examples/plplot/test_tcl.sh
+%%TCLTK%%share/examples/plplot/tk/Makefile
+%%TCLTK%%share/examples/plplot/tk/README.tkdemos
+%%TCLTK%%share/examples/plplot/tk/tk01
+%%TCLTK%%share/examples/plplot/tk/tk02
+%%TCLTK%%share/examples/plplot/tk/tk03
+%%TCLTK%%share/examples/plplot/tk/tk04
+%%TCLTK%%share/examples/plplot/tk/tkdemos.tcl
+%%TCLTK%%share/examples/plplot/tk/x01.tcl
+%%TCLTK%%share/examples/plplot/tk/x02.tcl
+%%TCLTK%%share/examples/plplot/tk/x03.tcl
+%%TCLTK%%share/examples/plplot/tk/x04.tcl
+%%TCLTK%%share/examples/plplot/tk/x05.tcl
+%%TCLTK%%share/examples/plplot/tk/x06.tcl
+%%TCLTK%%share/examples/plplot/tk/x07.tcl
+%%TCLTK%%share/examples/plplot/tk/x08.tcl
+%%TCLTK%%share/examples/plplot/tk/x09.tcl
+%%TCLTK%%share/examples/plplot/tk/x10.tcl
+%%TCLTK%%share/examples/plplot/tk/x11.tcl
+%%TCLTK%%share/examples/plplot/tk/x12.tcl
+%%TCLTK%%share/examples/plplot/tk/x13.tcl
+%%TCLTK%%share/examples/plplot/tk/x14.tcl
+%%TCLTK%%share/examples/plplot/tk/x15.tcl
+%%TCLTK%%share/examples/plplot/tk/x16.tcl
+%%TCLTK%%share/examples/plplot/tk/x17.tcl
+%%TCLTK%%share/examples/plplot/tk/x18.tcl
+%%TCLTK%%share/examples/plplot/tk/xtk01.c
+%%TCLTK%%share/examples/plplot/tk/xtk02.c
+%%TCLTK%%share/examples/plplot/tk/xtk04.c
 share/plplot/data/cglobe.map
 share/plplot/data/globe.map
 share/plplot/data/plstnd5.fnt
 share/plplot/data/plxtnd5.fnt
 share/plplot/data/usa.map
 share/plplot/data/usaglobe.map
+%%TCLTK%%share/plplot/tcl/FileSelector.tcl
+%%TCLTK%%share/plplot/tcl/PLWin.itk
+%%TCLTK%%share/plplot/tcl/PLXWin.itk
+%%TCLTK%%share/plplot/tcl/Pltkwin.tcl
+%%TCLTK%%share/plplot/tcl/about.tcl
+%%TCLTK%%share/plplot/tcl/cmap0a.pal
+%%TCLTK%%share/plplot/tcl/cmap1a.pal
+%%TCLTK%%share/plplot/tcl/cmap1b.pal
+%%TCLTK%%share/plplot/tcl/cmap1c.pal
+%%TCLTK%%share/plplot/tcl/cmap1d.pal
+%%TCLTK%%share/plplot/tcl/help_gui.tcl
+%%TCLTK%%share/plplot/tcl/help_keys.tcl
+%%TCLTK%%share/plplot/tcl/help_tcltk.tcl
+%%TCLTK%%share/plplot/tcl/plclient.tcl
+%%TCLTK%%share/plplot/tcl/plcolor.tcl
+%%TCLTK%%share/plplot/tcl/plconfig.tcl
+%%TCLTK%%share/plplot/tcl/pldefaults.tcl
+%%TCLTK%%share/plplot/tcl/plplot.tcl
+%%TCLTK%%share/plplot/tcl/plserver.tcl
+%%TCLTK%%share/plplot/tcl/pltools.tcl
+%%TCLTK%%share/plplot/tcl/plwidget.tcl
+%%TCLTK%%share/plplot/tcl/tclIndex
+%%TCLTK%%@dirrm share/plplot/tcl
 @dirrm share/plplot/data
 @dirrm share/plplot
+%%TCLTK%%@dirrm share/examples/plplot/tk
+%%TCLTK%%@dirrm share/examples/plplot/tcl
 @dirrm share/examples/plplot/f77
-@dirrm share/examples/plplot/c
 @dirrm share/examples/plplot/c++
+@dirrm share/examples/plplot/c
 @dirrm share/examples/plplot
 @dirrm share/doc/plplot
 @dirrm include/plplot
