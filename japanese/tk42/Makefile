@@ -3,7 +3,7 @@
 # Date created:		
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:55:45 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/27 08:24:35 kuriyama Exp $
 #
 
 DISTNAME=	tk4.2p2
@@ -50,6 +50,9 @@ pre-install:
 post-install:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} VERSION=${VERSION} install
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libtk42jp.so.1.0 ${PREFIX}/lib/libtk42jp.so; \
+	fi
 	@echo "**********"
 	@echo "IMPORTANT:"
 	@echo "**********"
