@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	2.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -27,6 +27,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
+USE_PERL5_RUN=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
