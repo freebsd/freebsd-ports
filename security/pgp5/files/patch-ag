@@ -1,0 +1,11 @@
+--- language50.txt.orig	Sat Feb  7 11:54:56 1998
++++ language50.txt	Mon Oct 23 00:48:23 2000
+@@ -879,7 +879,7 @@
+ trust of this key, first.\n
+ 
+ [RETRIEVING_URL]
+-us="Retreiving %s:/%s:%i%s\n"
++us="Retreiving %s://%s:%i%s\n"
+ 
+ [ADD_THESE_KEYS]
+ us="\nAdd these keys to your keyring? [Y/n] "
