@@ -29,6 +29,10 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		"Does not compile on alpha 4.x"
 .endif
