@@ -16,7 +16,6 @@ MAINTAINER=	kuriyama@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
 WRKSRC=		${WRKDIR}/XML4J_3_0_1
-RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
 
 JAVASUBDIR=	jdk1.1.8
