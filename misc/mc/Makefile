@@ -7,7 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -60,6 +60,10 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 
 .if defined(WITHOUT_SUBSHELL)
 CONFIGURE_ARGS+=--without-subshell
+.endif
+
+.if ${PERL_LEVEL} < 500601
+RUN_DEPENDS=    ${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 
 MAN1=		mc.1 mcedit.1 mcview.1
