@@ -29,6 +29,7 @@
     SUBDIR += geramik
     SUBDIR += gevas
     SUBDIR += gnome--
+    SUBDIR += gnome-industrial-theme
     SUBDIR += gnome-look
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
