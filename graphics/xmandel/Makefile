@@ -3,7 +3,7 @@
 # Date created:         		18 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/15 10:22:03 asami Exp $
 #
 
 DISTNAME=	xmandel
@@ -18,6 +18,7 @@ EXTRACT_CMD=    sh
 EXTRACT_BEFORE_ARGS=
 USE_IMAKE=      yes
 NO_WRKSUBDIR=   yes
+MAN1=		xmandel.1
 
 MAINTAINER=	andreas@marvin.robin.de
 
