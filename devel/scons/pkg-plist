@@ -78,6 +78,9 @@ lib/scons/SCons/Platform/aix.pyo
 lib/scons/SCons/Platform/cygwin.py
 lib/scons/SCons/Platform/cygwin.pyc
 lib/scons/SCons/Platform/cygwin.pyo
+lib/scons/SCons/Platform/darwin.py
+lib/scons/SCons/Platform/darwin.pyc
+lib/scons/SCons/Platform/darwin.pyo
 lib/scons/SCons/Platform/hpux.py
 lib/scons/SCons/Platform/hpux.pyc
 lib/scons/SCons/Platform/hpux.pyo
