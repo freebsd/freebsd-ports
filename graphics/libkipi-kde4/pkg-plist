@@ -1,0 +1,57 @@
+include/libkipi/batchprogressdialog.h
+include/libkipi/imagecollection.h
+include/libkipi/imagecollectionselector.h
+include/libkipi/imagecollectionshared.h
+include/libkipi/imagedialog.h
+include/libkipi/imageinfo.h
+include/libkipi/imageinfoshared.h
+include/libkipi/interface.h
+include/libkipi/plugin.h
+include/libkipi/pluginloader.h
+include/libkipi/uploadwidget.h
+include/libkipi/version.h
+lib/libkipi.la
+lib/libkipi.so
+lib/libkipi.so.0
+libdata/pkgconfig/libkipi.pc
+share/apps/kipi/data/banner_left.png
+share/icons/hicolor/16x16/apps/kipi.png
+share/icons/hicolor/22x22/apps/kipi.png
+share/icons/hicolor/32x32/apps/kipi.png
+share/icons/hicolor/48x48/apps/kipi.png
+share/locale/br/LC_MESSAGES/libkipi.mo
+share/locale/ca/LC_MESSAGES/libkipi.mo
+share/locale/cy/LC_MESSAGES/libkipi.mo
+share/locale/da/LC_MESSAGES/libkipi.mo
+share/locale/de/LC_MESSAGES/libkipi.mo
+share/locale/en_GB/LC_MESSAGES/libkipi.mo
+share/locale/es/LC_MESSAGES/libkipi.mo
+share/locale/et/LC_MESSAGES/libkipi.mo
+share/locale/fi/LC_MESSAGES/libkipi.mo
+share/locale/fr/LC_MESSAGES/libkipi.mo
+share/locale/ga/LC_MESSAGES/libkipi.mo
+share/locale/it/LC_MESSAGES/libkipi.mo
+share/locale/nl/LC_MESSAGES/libkipi.mo
+share/locale/pt/LC_MESSAGES/libkipi.mo
+share/locale/pt_BR/LC_MESSAGES/libkipi.mo
+share/locale/sl/LC_MESSAGES/libkipi.mo
+share/locale/sr/LC_MESSAGES/libkipi.mo
+share/locale/sv/LC_MESSAGES/libkipi.mo
+share/locale/ta/LC_MESSAGES/libkipi.mo
+share/locale/tr/LC_MESSAGES/libkipi.mo
+share/servicetypes/kipiplugin.desktop
+@unexec rmdir %D/share/servicetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/apps/kipi/data
+@dirrm share/apps/kipi
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@dirrm include/libkipi
