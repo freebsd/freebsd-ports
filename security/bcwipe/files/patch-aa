@@ -1,6 +1,14 @@
---- wipe.c.orig	Thu Jun  6 17:25:28 2002
-+++ wipe.c	Thu Jun  6 17:26:36 2002
-@@ -66,7 +66,7 @@
+--- wipe.c	Fri Nov  8 11:21:30 2002
++++ wipe.c	Fri Nov  8 11:15:03 2002
+@@ -28,7 +28,6 @@
+ #include <utime.h>
+ #include <stdlib.h>
+ #include <sys/ioctl.h>
+-#include <sys/vfs.h>
+ #include <time.h>
+ #include <ctype.h>
+ #include <sys/mount.h>
+@@ -68,7 +67,7 @@
  int ask_y_n(char *string)
  {
      char c;
@@ -9,7 +17,7 @@
      c = tolower(fgetc(stdin));
      if ( '\n' == c ) return FALSE;
      while ( '\n' != fgetc(stdin) );
-@@ -675,7 +675,7 @@
+@@ -700,7 +699,7 @@
              case '?':
              case 'h':
              default:
@@ -18,7 +26,7 @@
                  exit(0);
          } /* end of switch */
      } /* end of while */
-@@ -685,7 +685,7 @@
+@@ -710,7 +709,7 @@
  
      if ( 0 == argc )
      {
