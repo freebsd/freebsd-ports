@@ -2,6 +2,7 @@
 %%CGIDIR%%/lib/MT/L10N/zh_cn.pm
 %%CGIDIR%%/lib/MT/L10N/zh_tw.pm
 %%CGIDIR%%/lib/XML/RSS/LP.pm
+%%CGIDIR%%/extlib/HTTP/Clean.pm
 %%CGIDIR%%/extlib/jayallen/Blacklist.pm
 %%CGIDIR%%/extlib/jayallen/MTBlPing.pm
 %%CGIDIR%%/extlib/jayallen/MTBlPost.pm
@@ -305,6 +306,8 @@
 %%DATADIR%%/popups/select_color.html
 %%DATADIR%%/popupwin.js
 %%DATADIR%%/reference.html
+%%DATADIR%%/search_templates/default.zh.tmpl
+@dirrm %%DATADIR%%/search_templates
 @dirrm %%DATADIR%%/popups
 @dirrm %%DATADIR%%/plugins/TableOperations/lang
 @dirrm %%DATADIR%%/plugins/TableOperations/img
