@@ -1,6 +1,15 @@
---- src/lib/Main.py.orig	Tue Feb 17 13:35:41 2004
-+++ src/lib/Main.py	Tue Feb 17 13:36:26 2004
-@@ -479,7 +479,7 @@
+--- src/lib/Main.py.orig	Mon Apr 26 12:17:31 2004
++++ src/lib/Main.py	Sun May  2 15:30:14 2004
+@@ -417,7 +417,7 @@
+         gtk.main()
+ 
+     def quit(self):
+-        gtk.mainquit()
++        gtk.main_quit()
+         self._itemstore.stop()
+         return
+ 
+@@ -480,7 +480,7 @@
          return os.environ["STRAW_DATA"]
      h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
      if t == 'bin':
