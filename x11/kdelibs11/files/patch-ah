@@ -1,0 +1,20 @@
+--- kimgio/Makefile.in	Tue Sep  7 11:23:07 1999
++++ kimgio/Makefile.in.new	Sun Jan  2 09:37:34 2000
+@@ -132,6 +132,8 @@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_INCLUDES = @X_INCLUDES@
+ X_LDFLAGS = @X_LDFLAGS@
++SOMAJOR ?= 2
++SOMINOR ?= 0
+ all_includes = @all_includes@
+ all_libraries = @all_libraries@
+ install_root = @install_root@
+@@ -159,7 +161,7 @@
+ 
+ lib_LTLIBRARIES = libkimgio.la
+ 
+-libkimgio_la_LDFLAGS = -version-info 2:0
++libkimgio_la_LDFLAGS = -version-info $(SOMAJOR):$(SOMINOR)
+ 
+ libkimgio_la_SOURCES = jpeg.cpp xview.cpp kimgio.cpp kimgio.h eps.cpp 		tiffr.cpp pngr.cpp
+ 

@@ -7,6 +7,7 @@
 #
 
 DISTNAME=	kdelibs-1.1.2
+PKGNAME=	kdelibs-1.1.2.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
@@ -23,26 +24,30 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--with-extra-includes=${PREFIX}/include" \
 		"--x-inc=$(X11BASE)/include" \
-		"--x-lib=$(X11BASE)/lib"
+		"--x-lib=$(X11BASE)/lib" \
+		--enable-shared
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+LIBMAJOR=	3
+LIBMINOR=	0
 .if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libjscript.so.2.0   ${PREFIX}/lib/libjscript.so
-	${LN} -sf libkab.so.2.0       ${PREFIX}/lib/libkab.so
-	${LN} -sf libkdecore.so.2.0   ${PREFIX}/lib/libkdecore.so
-	${LN} -sf libkdeui.so.2.0     ${PREFIX}/lib/libkdeui.so
-	${LN} -sf libkfile.so.2.0     ${PREFIX}/lib/libkfile.so
-	${LN} -sf libkfm.so.2.0       ${PREFIX}/lib/libkfm.so
-	${LN} -sf libkhtmlw.so.2.0    ${PREFIX}/lib/libkhtmlw.so
-	${LN} -sf libkimgio.so.2.0    ${PREFIX}/lib/libkimgio.so
-	${LN} -sf libkspell.so.2.0    ${PREFIX}/lib/libkspell.so
-	${LN} -sf libmediatool.so.2.0 ${PREFIX}/lib/libmediatool.so
+LIBVER=		${LIBMAJOR}.${LIBMINOR}
+.else
+LIBVER=		${LIBMAJOR}
 .endif
+PLIST_SUB=	LIBVER=${LIBVER}
+MAKE_ENV=	SOMAJOR=${LIBMAJOR} SOMINOR=${LIBMINOR}
+
+post-install:
+.for LIB in jscript kab kdecore kdeui kfile kfm khtmlw kimgio kspell mediatool
+	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${LIBVER} ${PREFIX}/lib/lib${LIB}.so
+.if ${PORTOBJFORMAT} == "aout"
+	@${RM} -f ${PREFIX}/lib/lib${LIB}.so.${LIBMAJOR}
+.endif
+.endfor
 
 .include <bsd.port.post.mk>
