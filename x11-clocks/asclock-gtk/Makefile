@@ -18,7 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	asclock
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 HAS_CONFIGURE=	yes
 
 .if defined(BATCH)

@@ -15,7 +15,8 @@ MAINTAINER=	anders@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
 GTK_LIBS?=	`${GTK_CONFIG} --libs`
