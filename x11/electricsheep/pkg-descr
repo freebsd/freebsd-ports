@@ -1,0 +1,11 @@
+Electricsheep is a distributed screensaver.  It realizes the
+collective dream of sleeping computers from all over the internet.
+When the screen-saver is activated, the screen goes black and an
+animated 'sheep' appears.  Behind the scenes, the screen-saver
+contacts an internet server and joins the parallel computation of
+new sheep.
+
+WWW: http://www.electricsheep.org/
+
+- David
+dyeske@yahoo.com
