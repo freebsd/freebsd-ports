@@ -65,7 +65,7 @@ PLIST_SUB+=	SHARED="" STATIC="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" && !defined(NO_ALPHA_UNOPTIMIZATION)
 CFLAGS+=	-O0
 .endif
 
@@ -97,8 +97,8 @@ post-patch:
 
 pre-configure: qt-pre-configure
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
-			s,/usr/X11R6,${X11BASE},g; \
-			s,-fno-exceptions,-fno-exceptions ${CXXFLAGS} -I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_ -frerun-cse-after-loop,g" ${CONFIG}
+			s,/usr/X11R6,${X11BASE},g;s,-O2,${CFLAGS},g; \
+			s,-fno-exceptions,-fno-exceptions ${CXXFLAGS} -I/usr/include -D_PTH_H_ -D_PTH_PTHREAD_H_,g" ${CONFIG}
 	${PERL} -pi -e "s,VER_MAJ = 2,VER_MAJ = 4,g; \
 			s,TARGET	= qt,TARGET = qt2,g" ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET\t= moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
