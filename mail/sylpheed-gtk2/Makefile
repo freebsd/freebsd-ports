@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		sylpheed-gtk2
-PORTVERSION=		0.9.9.20040229
-PORTREVISION=		2
+PORTVERSION=		0.9.11.20040613
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,7 @@ USE_ICONV=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
 USE_OPENSSL=		yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=		yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -79,7 +78,7 @@ post-patch:
 		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
 
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po intl src manual faq$$|SUBDIRS = ac po intl src|g' \
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po src manual faq$$|SUBDIRS = ac po src|g' \
 		${WRKSRC}/Makefile.in
 .else
 .for i in ${MAKEFILES}
@@ -88,9 +87,6 @@ post-patch:
 		${WRKSRC}/${i}
 .endfor
 .endif
-
-pre-build:
-	${LN} -sf ${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
