@@ -5387,7 +5387,6 @@ modplugplay	ports/audio/modplugplay
 moftpd		ports/ftp/moftpd
 moinmoin	ports/www/moinmoin
 molden		ports/biology/molden
-moleskine	ports/editors/moleskine
 momspider	ports/www/momspider
 monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
