@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ald
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://dunx1.irt.drexel.edu/~psa22/source/
 
