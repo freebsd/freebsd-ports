@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmng
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.libmng.com/download/
