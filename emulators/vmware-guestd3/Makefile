@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/vmware-freebsd-tools
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
+NO_LATEST_LINK=	yes
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
