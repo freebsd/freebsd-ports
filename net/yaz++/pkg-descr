@@ -1,0 +1,5 @@
+YAZ++ is a C++ programmer's toolkit supporting the development of Z39.50v3
+clients and servers.  It includes an implementation of the ZOOM C++ binding,
+a generic YAZ++ client/server API and a powerful Z39.50 proxy.
+
+WWW: http://www.indexdata.dk/yaz++/
