@@ -1,0 +1,6 @@
+CLE(Chinese Linux Extension) is a project providing Chinese L10N for
+Linux, mainly the RedHat distribution.  This port picks packages from
+a minimal CLE installation.  In addition to Linux emulation, you can
+run L10N Linux applications like Netscape or (hopefully) Star Office.
+
+WWW: http://cle.linux.org.tw
