@@ -4,4 +4,4 @@ Now that the package is installed, please finish it with the following steps:
 - Check the values of @@PREFIX@@/etc/tspc.conf. If you have registered at
   the website, fill in your userid and password there.
 - Run @@PREFIX@@/etc/rc.d/freenet6.sh to start the tunnel.
-- Try to ping a IPv6 host, for example: ping6 mud6.fataldimensions.org
+- Try to ping a IPv6 host, for example: ping6 www.jp.freebsd.org

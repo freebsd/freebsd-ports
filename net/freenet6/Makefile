@@ -16,6 +16,8 @@ MAINTAINER=	edwin@mavetju.org
 MAN8=		tspc.8
 MAN5=		tspc.conf.5
 
+PKGMESSAGE=	${WRKSRC}/pkg-message
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
@@ -50,25 +52,22 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/template/freebsd4.sh ${PREFIX}/bin/tspc-freebsd4.sh
 	@${INSTALL_MAN} ${WRKSRC}/man/man8/tspc.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/man/man5/tspc.conf.5 ${PREFIX}/man/man5
-	@${INSTALL_SCRIPT} ${FILESDIR}/freenet6.sh ${PREFIX}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKSRC}/freenet6.sh ${PREFIX}/etc/rc.d/
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 	@${MV} ${WRKSRC}/src/tspc.c ${WRKSRC}/src/tspc.c.orig
 	@${SED} -e "s|tspc.conf|${PREFIX}/etc/tspc.conf|" < ${WRKSRC}/src/tspc.c.orig > ${WRKSRC}/src/tspc.c
 
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/freenet6.sh.in > ${FILESDIR}/freenet6.sh
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/pkg-message.in > pkg-message
+	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/freenet6.sh.in > ${WRKSRC}/freenet6.sh
+	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/pkg-message.in > ${WRKSRC}/pkg-message
 
 	@${MV} ${WRKSRC}/man/man8/tspc.8 ${WRKSRC}/man/man8/tspc.8.orig
 	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${WRKSRC}/man/man8/tspc.8.orig > ${WRKSRC}/man/man8/tspc.8
 
 	@${MV} ${WRKSRC}/man/man5/tspc.conf.5 ${WRKSRC}/man/man5/tspc.conf.5.orig
 	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${WRKSRC}/man/man5/tspc.conf.5.orig > ${WRKSRC}/man/man5/tspc.conf.5
-
-post-clean:
-	@${RM} -f ${FILESDIR}/freenet6.sh
 
 .include <bsd.port.post.mk>
