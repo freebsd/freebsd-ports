@@ -1,0 +1,11 @@
+--- configure.orig	Tue Jul 29 14:10:16 2003
++++ configure	Tue Jul 29 14:15:56 2003
+@@ -135,7 +135,7 @@
+     XLIBS="$XLIBS -lresolv"
+ fi
+ 
+-for i in /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
++for i in ${MANPPREFIX}/man /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
+   if [ -d $i ]; then
+     MANDIR=$i
+   fi

@@ -1,12 +1,11 @@
---- amap.h.orig	Tue Jun 10 17:05:40 2003
-+++ amap.h	Tue Jun 10 17:06:25 2003
-@@ -57,7 +57,8 @@
- //-----------------------------------------
+--- amap.h.orig	Tue Jul 22 13:54:37 2003
++++ amap.h	Tue Jul 29 14:06:27 2003
+@@ -24,7 +24,7 @@
+ #define AMAP_EMAIL     "amap-dev@thc.org"
+ #define AMAP_RESOURCE  "www.thc.org"
  
- // where are my appdefs files? all entries must end with a slash!
--char *searchpath[14] = { "./", "/etc/", "/usr/etc/", "/usr/local/etc/",
-+char *searchpath[15] = { "./", "PREFIX/share/amap/", "/etc/", "/usr/etc/",
-+  "/usr/local/etc/",
-   "/opt/etc/", "/usr/local/amap/", "/opt/amap/",
-   "/usr/local/lib/", "/usr/local/lib/amap/",
-   "/usr/lib/amap/", "/usr/local/bin/",
+-#define AMAP_APPDEF_PATH	"/usr/local/bin"
++#define AMAP_APPDEF_PATH	"PREFIX/bin"
+ #define AMAP_BUFSIZE		1024	// standard buffer size
+ #define AMAP_BUFSIZE_BIG	16348   // big standard buffer size
+ #define AMAP_REGEX_OPTIONS	( PCRE_MULTILINE | PCRE_CASELESS )
