@@ -7,6 +7,7 @@
 
 PORTNAME=	saferpay
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.saferpay.com/download/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_linux-g++_src.tar.gz
@@ -15,6 +16,7 @@ MAINTAINER=	mb@imp.ch
 
 MAKEFILE=	${WRKSRC}/saferpay/Makefile
 
+USE_GMAKE=	yes
 USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}

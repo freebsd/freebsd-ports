@@ -1,3 +1,5 @@
+include/idpapi.h
+include/idperrc.h
 lib/libidpapp.so
 lib/libidpapp.so.1
 bin/saferpay
