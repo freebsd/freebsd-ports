@@ -1,0 +1,9 @@
+#! /bin/sh
+
+cat - > ${WRKSRC}/unix-gcc.mak.new << !EOT
+DEVICE_DEVS=appledmp.dev iwhi.dev iwlo.dev iwlq.dev hl7x0.dev bj10e.dev bj200.dev bjc600.dev bjc800.dev lbp8.dev lips3.dev m8510.dev uniprint.dev la50.dev la70.dev la75.dev la75plus.dev lj250.dev declj250.dev ln03.dev ap3250.dev epson.dev eps9mid.dev eps9high.dev lp8000.dev lq850.dev epsonc.dev st800.dev stcolor.dev lp2563.dev dnj650c.dev deskjet.dev djet500.dev cdeskjet.dev djet500c.dev cdjcolor.dev cdjmono.dev cdj500.dev cdj550.dev cdj670.dev cdj850.dev cdj890.dev cdj1600.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet3d.dev ljet4.dev lj4dith.dev cljet5.dev lj5mono.dev lj5gray.dev pj.dev pjetxl.dev pjxl.dev paintjet.dev pjxl300.dev pxlmono.dev pxlcolor.dev ibmpro.dev jetp3852.dev imagen.dev cp50.dev necp6.dev oce9050.dev oki182.dev okiibm.dev r4081.dev sj48.dev xes.dev bmpmono.dev bmp16.dev bmp256.dev bmp16m.dev ccr.dev cgmmono.dev cgm8.dev cgm24.dev sxlcrt.dev dfaxhigh.dev dfaxlow.dev faxg3.dev faxg32d.dev faxg4.dev bit.dev bitrgb.dev bitcmyk.dev cif.dev miff24.dev inferno.dev jpeg.dev jpeggray.dev mgrmono.dev mgrgray2.dev mgrgray4.dev mgrgray8.dev mgr4.dev mgr8.dev pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev pcxcmyk.dev pdfwrite.dev plan9bm.dev pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev pkmraw.dev pngmono.dev pnggray.dev png16.dev png256.dev png16m.dev psmono.dev psgray.dev psrgb.dev pswrite.dev epswrite.dev sgirgb.dev t4693d2.dev t4693d4.dev t4693d8.dev tek4696.dev tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev tiff12nc.dev tiff24nc.dev tifflzw.dev tiffpack.dev x11.dev x11alpha.dev x11cmyk.dev x11cmyk2.dev x11cmyk4.dev x11cmyk8.dev x11gray2.dev x11gray4.dev x11mono.dev
+!EOT
+
+# create one new Makefile, where DEVICE_DEVS contains all wanted devices
+cat ${WRKSRC}/unix-gcc.mak >> ${WRKSRC}/unix-gcc.mak.new
+mv ${WRKSRC}/unix-gcc.mak.new ${WRKSRC}/unix-gcc.mak
