@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Mac-Macbinary
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mac
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Perl module that can extract info from Macbinary files
 
 PERL_CONFIGURE=	yes
