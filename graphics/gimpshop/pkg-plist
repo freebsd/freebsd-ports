@@ -521,6 +521,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-curve-smooth-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-default-colors-12.png
 %%DOCSDIR%%/libgimpwidgets/stock-device-status-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-device-status-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-duplicate-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-edit-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-error-64.png
@@ -554,6 +555,10 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-grid-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-hchain-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-hchain-broken-24.png
+%%DOCSDIR%%/libgimpwidgets/stock-histogram-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-histogram-22.png
+%%DOCSDIR%%/libgimpwidgets/stock-histogram-linear-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-histogram-logarithmic-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-image-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-image-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-image-32.png
@@ -665,8 +670,6 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-tool-free-select-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-fuzzy-select-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-fuzzy-select-22.png
-%%DOCSDIR%%/libgimpwidgets/stock-tool-histogram-16.png
-%%DOCSDIR%%/libgimpwidgets/stock-tool-histogram-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-hue-saturation-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-hue-saturation-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-ink-16.png
@@ -680,6 +683,7 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-tool-move-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-move-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-options-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-tool-options-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-paintbrush-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-paintbrush-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-path-16.png
@@ -706,6 +710,8 @@ share/aclocal/gimp-2.0.m4
 %%DOCSDIR%%/libgimpwidgets/stock-tool-threshold-22.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-zoom-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-tool-zoom-22.png
+%%DOCSDIR%%/libgimpwidgets/stock-tools-16.png
+%%DOCSDIR%%/libgimpwidgets/stock-tools-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-transparency-16.png
 %%DOCSDIR%%/libgimpwidgets/stock-transparency-24.png
 %%DOCSDIR%%/libgimpwidgets/stock-undo-history-16.png
@@ -1111,7 +1117,6 @@ share/gimp/scripts/alien-neon-logo.scm
 share/gimp/scripts/asc2img.scm
 share/gimp/scripts/basic1-logo.scm
 share/gimp/scripts/basic2-logo.scm
-share/gimp/scripts/beavis.jpg
 share/gimp/scripts/beveled-button.scm
 share/gimp/scripts/beveled-pattern-arrow.scm
 share/gimp/scripts/beveled-pattern-bullet.scm
@@ -1154,6 +1159,11 @@ share/gimp/scripts/grid-system.scm
 share/gimp/scripts/hsv-graph.scm
 share/gimp/scripts/i26-gunya2.scm
 share/gimp/scripts/image-structure.scm
+share/gimp/scripts/images/beavis.jpg
+share/gimp/scripts/images/texture.jpg
+share/gimp/scripts/images/texture1.jpg
+share/gimp/scripts/images/texture2.jpg
+share/gimp/scripts/images/texture3.jpg
 share/gimp/scripts/land.scm
 share/gimp/scripts/lava.scm
 share/gimp/scripts/line-nova.scm
@@ -1185,10 +1195,6 @@ share/gimp/scripts/swirly-pattern.scm
 share/gimp/scripts/t-o-p-logo.scm
 share/gimp/scripts/test-sphere.scm
 share/gimp/scripts/text-circle.scm
-share/gimp/scripts/texture.jpg
-share/gimp/scripts/texture1.jpg
-share/gimp/scripts/texture2.jpg
-share/gimp/scripts/texture3.jpg
 share/gimp/scripts/textured-logo.scm
 share/gimp/scripts/tileblur.scm
 share/gimp/scripts/title-header.scm
@@ -1201,6 +1207,7 @@ share/gimp/scripts/xach-effect.scm
 share/gimp/themes/Default/gtkrc
 share/gimp/themes/Default/imagerc
 share/gimp/themes/Default/images/preferences/default-comment.png
+share/gimp/themes/Default/images/preferences/default-grid.png
 share/gimp/themes/Default/images/preferences/display.png
 share/gimp/themes/Default/images/preferences/environment.png
 share/gimp/themes/Default/images/preferences/folders-brushes.png
@@ -1222,6 +1229,7 @@ share/gimp/themes/Default/images/preferences/input-devices.png
 share/gimp/themes/Default/images/preferences/interface.png
 share/gimp/themes/Default/images/preferences/monitor.png
 share/gimp/themes/Default/images/preferences/new-image.png
+share/gimp/themes/Default/images/preferences/session.png
 share/gimp/themes/Default/images/preferences/tool-options.png
 share/gimp/themes/Default/images/stock-anchor-16.png
 share/gimp/themes/Default/images/stock-cap-butt-16.png
@@ -1266,6 +1274,7 @@ share/gimp/themes/Default/images/stock-curve-free-16.png
 share/gimp/themes/Default/images/stock-curve-smooth-16.png
 share/gimp/themes/Default/images/stock-default-colors-12.png
 share/gimp/themes/Default/images/stock-device-status-16.png
+share/gimp/themes/Default/images/stock-device-status-24.png
 share/gimp/themes/Default/images/stock-duplicate-16.png
 share/gimp/themes/Default/images/stock-edit-16.png
 share/gimp/themes/Default/images/stock-error-64.png
@@ -1299,6 +1308,10 @@ share/gimp/themes/Default/images/stock-gravity-west-24.png
 share/gimp/themes/Default/images/stock-grid-16.png
 share/gimp/themes/Default/images/stock-hchain-24.png
 share/gimp/themes/Default/images/stock-hchain-broken-24.png
+share/gimp/themes/Default/images/stock-histogram-16.png
+share/gimp/themes/Default/images/stock-histogram-22.png
+share/gimp/themes/Default/images/stock-histogram-linear-16.png
+share/gimp/themes/Default/images/stock-histogram-logarithmic-16.png
 share/gimp/themes/Default/images/stock-image-16.png
 share/gimp/themes/Default/images/stock-image-24.png
 share/gimp/themes/Default/images/stock-image-32.png
@@ -1410,8 +1423,6 @@ share/gimp/themes/Default/images/stock-tool-free-select-16.png
 share/gimp/themes/Default/images/stock-tool-free-select-22.png
 share/gimp/themes/Default/images/stock-tool-fuzzy-select-16.png
 share/gimp/themes/Default/images/stock-tool-fuzzy-select-22.png
-share/gimp/themes/Default/images/stock-tool-histogram-16.png
-share/gimp/themes/Default/images/stock-tool-histogram-22.png
 share/gimp/themes/Default/images/stock-tool-hue-saturation-16.png
 share/gimp/themes/Default/images/stock-tool-hue-saturation-22.png
 share/gimp/themes/Default/images/stock-tool-ink-16.png
@@ -1425,6 +1436,7 @@ share/gimp/themes/Default/images/stock-tool-measure-22.png
 share/gimp/themes/Default/images/stock-tool-move-16.png
 share/gimp/themes/Default/images/stock-tool-move-22.png
 share/gimp/themes/Default/images/stock-tool-options-16.png
+share/gimp/themes/Default/images/stock-tool-options-24.png
 share/gimp/themes/Default/images/stock-tool-paintbrush-16.png
 share/gimp/themes/Default/images/stock-tool-paintbrush-22.png
 share/gimp/themes/Default/images/stock-tool-path-16.png
@@ -1451,6 +1463,8 @@ share/gimp/themes/Default/images/stock-tool-threshold-16.png
 share/gimp/themes/Default/images/stock-tool-threshold-22.png
 share/gimp/themes/Default/images/stock-tool-zoom-16.png
 share/gimp/themes/Default/images/stock-tool-zoom-22.png
+share/gimp/themes/Default/images/stock-tools-16.png
+share/gimp/themes/Default/images/stock-tools-24.png
 share/gimp/themes/Default/images/stock-transparency-16.png
 share/gimp/themes/Default/images/stock-transparency-24.png
 share/gimp/themes/Default/images/stock-undo-history-16.png
@@ -1543,6 +1557,10 @@ share/locale/ko/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ko/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ko/LC_MESSAGES/gimp20.mo
+share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/ms/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/ms/LC_MESSAGES/gimp20.mo
 share/locale/nl/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1623,6 +1641,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrm share/gimp/themes/Default/images
 @dirrm share/gimp/themes/Default
 @dirrm share/gimp/themes
+@dirrm share/gimp/scripts/images
 @dirrm share/gimp/scripts
 @dirrm share/gimp/patterns
 @dirrm share/gimp/palettes
