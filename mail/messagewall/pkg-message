@@ -1,0 +1,16 @@
+***************************************************************************
+Messagewall has been installed, now create the chroot environment:
+	mkdir /home/mwall
+	groupadd mwall
+	useradd -g mwall mwall
+	mkdir /home/mwall/pids
+	chown mwall:mwall /home/mwall/pids
+	mkdir /home/mwalla
+	groupadd mwalla
+	useradd -g mwalla mwalla
+	mkdir /home/mwalla/pids
+	chown mwalla:mwalla /home/mwalla/pids
+copy the virus patterns into your enviroment
+	cp /usr/local/etc/messagewall/virus.patterns /home/mwall
+and don't forget to edit your configfile!
+***************************************************************************

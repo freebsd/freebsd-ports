@@ -114,6 +114,7 @@
     SUBDIR += mboxgrep
     SUBDIR += mbx2mbox
     SUBDIR += mess822
+    SUBDIR += messagewall
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mew-emacs20
