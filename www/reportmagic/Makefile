@@ -18,8 +18,9 @@ RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+BROKEN=		"Not compatible with Analog 5.0."
 
+WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	YES
 
 do-install:
