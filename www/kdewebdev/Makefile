@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/quanta/ \
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11/
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext/
 
 USE_BZIP2=	yes
 USE_QT=		yes
