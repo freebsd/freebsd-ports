@@ -21,4 +21,10 @@ MANLANG=	ja
 MAN1=		prn.1 cprn.1 cmt.1 psconv.1
 MAN5=		cmtdefs.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
