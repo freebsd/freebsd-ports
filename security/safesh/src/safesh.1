@@ -34,9 +34,33 @@
 .Nd safe key manager for OpenSSH
 .Sh SYNOPSIS
 .Nm 
-.Op Ar host
-.Op Ar -- ssh-parameters ...
+.Sm off
+.Op Ar user@
+.Ar host
+.Sm on
+.Op Ar "-- ssh-parameters ..."
+.Nm safeshinstall
+.Sm off
+.Op Ar user@
+.Ar host
+.Sm on
+.Nm cvs-safesh
+.Sm off
+.Op Ar user@
+.Ar host
+.Sm on
+.Op Ar command
+.Nm scpsh
+.Sm off
+.Op Ar user@
+.Ar host
+.Sm on
 .Sh DESCRIPTION
+NOTE: This text often refers to $VARIABLE in description.
+What each of the references will be replaced with when
+.Nm
+runs is described at the end of the manpage.
+.Pp
 .Nm
 automatically creates one DSA key (called an identity) for each host you
 connect to, and store this in a separate agent for each host.
@@ -46,7 +70,7 @@ Because each host use its own
 .Xr ssh-agent 1 ,
 the hosts you forward authentication to can only get at the authentication for
 the hosts you specifically say it should be able to get at.
-
+.Pp
 When run,
 .Nm
 .Bl -enum
@@ -80,7 +104,6 @@ Executes
 .Xr ssh 1
 with either $USER@$HOST or the extra command line supplied by the user.
 .El
-
 .Sh BASIC CONCEPT DESCRIPTION
 .Nm
 is an authentication manager for OpenSSH.
@@ -94,47 +117,291 @@ OpenSSH has improved this security model somewhat by not forwarding ssh
 authentication by default, but still allows the host that you connect to
 to grab your credentials and authenticate as you to anybody else when you
 do authentication forwarding to it.
-
 .Sh SIMPLE HOWTO
 Starting to make use of
 .Nm
 is trivial:
 .Bl -enum
 .It
-Do "safesh <hostname>".
-This will ask you for a passphrase (three times), and create a directory
-$HOME/.safesh/<yourusername>@<hostname>-22, which contains authentication
-data for your user at <hostname>.
+Do 
+.Dl % safeshinstall <[user@]hostname>
+This will ask for a passphrase (three times), create a directory
+$HOME/.safesh/<user>@<hostname>-22, which contains authentication
+data for your user at <hostname>, and add the contents of
+$HOME/.safesh/<user>@<hostname>-22/id_dsa.pub to
+$HOME/.ssh/authorized_keys2 on the host you connect to.
+The latter will result in
+.Xr ssh 1
+asking for authentication in the fashion you already use (most likely by
+asking for your password.)
 .It
-Add the contents of $HOME/.safesh/<yourusername>@<hostname>-22/id_dsa.pub to
-$HOME/.ssh/authorized_keys2 on the host you
-.Nm
-*to*.
-.It
-Log in with "safesh <hostname>" from now on.
+Log in with 
+.Li "safesh <hostname>"
+from now on.
 This will ask you for a passphrase if you have not logged into that host this
 session, and otherwise just let right in.
 .El
-
-To give an example, let us say I (eivind@FreeBSD.org) want to set up this up
-for use with the main FreeBSD development server, freefall.freebsd.org, from
-the account "eivind" on my workstation:
+.Sh UTILITY COMMANDS
+.Nm
+ships with two utility hacks to work around the fact that it is not a complete
+.Xr ssh 1
+replacement,
+.Nm scpsh
+and
+.Nm cvs-safesh .
+.Pp
+.Nm scpsh
+is for supporting use of
+.Xr scp 1
+with
+.Nm .
+.Nm scpsh
+.Sm off
+.Op Ar user@
+.Ar host
+.Sm on
+will start a new interactive shell (using the
+.Ev SHELL
+environment variable to determine which it should be), with the environment
+variables for using
+.Xr ssh-agent 1
+to authenticate to [user@]host already set.
+This allows use of 
+.Xr scp 1
+without having to type passwords to authenticate.
+.Pp
+.Nm cvs-safesh
+makes it easy to use
+.Nm
+along with
+.Xr cvs 1
+and other programs that use
+.Xr rsh 1
+or
+.Xr ssh 1
+with the format 
+.Qq Li "ssh <user@host> <command>"
+or 
+.Qq Li "ssh <host> <command>" .
+To use with
+.Xr cvs 1 ,
+just set
+.Ev CVS_RSH
+to
+.Qq Li cvs-safesh
+instead of
+.Qq Li ssh .
+.Pp
+.Sh FILES
+.Bl -tag -width "$HOME/.safesh" -compact
+.It Pa $HOME/.safesh/
+Directory containing information for
+.Nm .
+.Pp
+.It Pa $HOME/.safesh/map
+Mapping file for
+.Nm ,
+describing how to map host names to their canonical form.
+This is usually used to map short names to their long form.
+The format of the file is one mapping per line, what it is mapped from as the
+first word, what it is mapped to as the second.
+.Pp
+It is also possible to use this to map DNS names to their safe form by having
+the name of the host as the first parameter, and the name of the host with a
+period (.) at the end as the second parameter.
+E.g, "freefall.freebsd.org freefall.freebsd.org."
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/
+Directory with data for a particular hostname.
+Automatically generated on first connect to a host with
+.Nm .
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id
+Private key for use to authenticate as $USER@$HOST.
+Automatically generated on first connect to a host with
+.Nm .
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id.pub
+Public key for use by $HOST to authenticate $USER.
+To connect to $HOST as $USER using 
+.Nm
+without giving a password, add the contents of this file
+to the end of $HOME/.ssh/authorized_keys2.
+Automatically generated on first connect to a host with
+.Nm .
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/$AUTHTARGET
+Private key for use when $HOST authenticates towards $AUTHTARGET.
+This is used in preference to $HOME/.safesh/$AUTHTARGET/dsa_id for authentication
+forwarding through $HOST to $AUTHTARGET.
+The file is only used if $AUTHTARGET is listed in $HOME/.safesh/$USER@$HOST-$PORT/extra_keys.
+This file is not generated automatically by
+.Nm .
+It is only present if you have generated it using
+.Xr ssh-keygen 1 .
+Note that it is usually more than useless (can pose a security risk) to copy a
+key used for other authentication to this location.
+.Pp
+The use of explict authentication files for authentication forwarding is
+primarily for protection against the case where the machine you run
+.Nm
+on is compromised.
+Using this file, you can use a separate passphrase from the one used for the
+key for connecting directly to $AUTHTARGET; that key need not even exist.
+By using IP restrictions in the authorized_keys file for the key, you can make
+sure that the host
+.Nm
+runs on cannot connect to $AUTHTARGET using the authentication forwarding
+key.
+The use of a separate forwarding key can also be used in combination with a
+modified SSH to log which key was used where, and thus track key propagation.
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/$AUTHTARGET.pub
+Public key corresponding to the private key described above.
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/extra_keys
+List of extra keys to make available for this host.
+Each line in the file is first attempted matched against the host/user/port
+database in $HOME/.safesh/.
+Username and/or port is added if just the hostname is specified extra_keys, and
+the hostname is always normalized using the map file.
+If a key exists in $HOME/.safesh/, 
+.Nm
+attempts to add that.
+Otherwise, it first tries to look for the line as a file relative to /, then
+relative to $HOME.
+If it does not find either of these,
+.Nm
+will exit with an error message.
+If it finds one, it will add it using
+.Xr ssh-add 1 .
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/activeagent-$YOURHOST.sh
+Bourne shell (see
+.Xr sh 1 ,
+.Xr bash 1 ,
+.Xr zsh 1 )
+script for setting up the environment variables for the particular ssh-agent used for this host.
+Only valid if
+.Nm
+has been run against that host as this user since the machine 
+.Nm
+runs on was last booted.
+Note that this file most be source'd, not just run as a shell script.
+.Pp
+.It Pa $HOME/.safesh/$USER@$HOST-$PORT/activeagent-$YOURHOST.csh
+CSH (see
+.Xr csh 1 ,
+.Xr tcsh 1 )
+script for setting up the environment variables for the particular ssh-agent used for this host.
+Only valid if
+.Nm
+has been run against that host as this user since the machine 
+.Nm
+runs on was last booted.
+Note that this file most be source'd, not just run as a shell script.
+.El
+.Pp
+.Sh AUTHORS
+.Nm
+was written by
+.An Eivind Eklund Aq eivind@FreeBSD.org .
+.Sh SEE ALSO
+.Xr ssh 1 ,
+.Xr ssh-add 1 ,
+.Xr ssh-agent 1 ,
+.Xr ssh-keygen 1 .
+.Pp
+.Sh KNOWN ISSUES
+.Nm
+does not handle whitespace in filenames specified in extra_keys correctly.
+.Pp
+The ssh-agents that are started by will hang around until next reboot unless
+you put 'killall ssh-agent' in .logout or similar.
+This allows any login to your account to use your authentication towards
+machines you have connected to (including anybody with root on the box),
+persisting after you log out.
+You must always assume that root can grab your authentication at the moment
+you run do it, so this is only an issue in that the authentication stays
+available longer.
+This is not resolvable without rewriting ssh-agent.
+.Pp
+.Sh MISSING FEATURES
+.Bl -tag -width "mmmm" -compact
+.It Pa Two-step secure SSH with an untrusted host in the middle
+It is possible to use the port forwarding capability of ssh to forward
+authentication through another server - without allowing the other server to
+indepently authenticate to a third party, and without allowing it to see
+what is going on in your connection.
+This is based on just forwarding a tunnel through the untrusted host, and
+doing direct authentication to the server on the other side.
+With the present version of OpenSSH, this has the problem of leaving the
+actual port forwarding open while the tunnel is open - allowing other users to
+set up their own tunnels, and weakening another side of the security model.
+.Pp
+.It Pa Read out fingerprints
+.Nm
+should make it trivial to retrieve the fingerprint for
 .Bl -enum
 .It
-eivind(ws)--% safesh freefall.freebsd.org
-
-<answer passphrase three times, then break off password prompt>
-.It
-eivind(ws)--% cat ~/.safesh/eivind@freefall.freebsd.org-22/id_dsa.pub | safesh freefall.freebsd.org -- freefall.freebsd.org 'mkdir -p .ssh && cat >> ~/.ssh/authorized_keys2'
-
-Answer password prompt with the password used on freefall.
-The command above updates authorized_keys2 file with the key we just
-generated.
-From now on, it is possible to connect to freefall with just
-"safesh freefall.freebsd.org"
+The host it is running on.
+This must presently done with "ssh-keygen -l /etc/ssh/ssh_host_key.pub" (to get
+the fingerprint for SSH 1) and "ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key"
+(for SSH 2).
+.It 
+Other hosts, as registered in the known_host file on the host it is running
+on.
+This must presently be done by manual inspection.
 .El
-
-.Sh NAME REPLACEMENT
+.Pp
+.It Pa Merge known_hosts
+.Nm
+should make it trivial to merge known_hosts and known_hosts2 with ones from
+another host, including retrieving and uploading known_hosts as appropriate.
+.Pp
+.It Pa Manage .ssh/authorized_keys2
+.Nm
+should be able to automatically remove keys from the authorized_keys2 file
+on other machines, to make everything about the
+.Nm
+process self-contained.
+.Pp
+.It Pa Manage setup of key limitations
+When managing authorized_keys2, it is also reasonable to manage key limitation
+in this.
+IP restrictions ("from=") should be handled to make it easy to create setups
+where the local machine do not have direct access to a target.
+Command restrictions etc would be good to have just for completeness.
+.Pp
+.It Pa Emulate the entire ssh syntax
+Presently, the
+.Nm
+command has a fairly weird syntax.
+This is because it is a fairly quick hack, just made to be usable.
+Later, it would be nice to rewrite it to be fully compatible with
+.Xr ssh 1 .
+This would allow use as a drop-in replacement.
+.Pp
+.It Pa Description of the trust/threat/security model
+It would be nice to have a complete description of the normal SSH threat model
+as well as the
+.Nm
+threat model, in order to make people fully conscious of their own model.
+.Pp
+.It Pa Emulate scp
+.Xr scp 1
+is very useful, and the only way to use it with
+.Nm
+at the moment is through a subshell created by
+.Nm scpsh .
+An ideal
+.Nm
+implementation would include wrapping of
+.Xr scp 1 ,
+too.
+.Pp
+.El
+.Sh VARIABLE REPLACEMENT IN DESCRIPTIONS
 .Bl -tag -width "$HOME/.safesh" -compact
 .It Pa $HOME
 is replaced with the path your home directory,
@@ -179,207 +446,4 @@ user@host instead of just safesh host.
 The port used on $HOST.
 Presently always 22.
 .El
-
-.Sh FILES
-.Bl -tag -width "$HOME/.safesh" -compact
-.It Pa $HOME/.safesh/
-Directory containing information for
-.Nm .
-
-.It Pa $HOME/.safesh/map
-Mapping file for
-.Nm ,
-describing how to map host names to their canonical form.
-This is usually used to map short names to their long form.
-The format of the file is one mapping per line, what it is mapped from as the
-first word, what it is mapped to as the second.
-
-It is also possible to use this to map DNS names to their safe form by having
-the name of the host as the first parameter, and the name of the host with a
-period (.) at the end as the second parameter.
-E.g, "freefall.freebsd.org freefall.freebsd.org."
-
-.It Pa $HOME/.safesh/$USER@$HOST-$PORT/
-Directory with data for a particular hostname.
-Automatically generated on first connect to a host with
-.Nm .
-
-.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id
-Private key for use to authenticate as $USER@$HOST.
-Automatically generated on first connect to a host with
-.Nm .
-
-.It Pa $HOME/.safesh/$USER@$HOST-$PORT/dsa_id.pub
-Public key for use by $HOST to authenticate $USER.
-To connect to $HOST as $USER using 
-.Nm
-without giving a password, add the contents of this file
-to the end of $HOME/.ssh/authorized_keys2.
-Automatically generated on first connect to a host with
-.Nm .
-
-.It Pa $HOME/.safesh/$USER@$HOST-$PORT/$AUTHTARGET
-Private key for use when $HOST authenticates towards $AUTHTARGET.
-This is used in preference to $HOME/.safesh/$AUTHTARGET/dsa_id for authentication
-forwarding through $HOST to $AUTHTARGET.
-The file is only used if $AUTHTARGET is listed in $HOME/.safesh/$HOST/extra_keys.
-This file is not generated automatically by
-.Nm .
-It is only present if you have generated it using
-.Xr ssh-keygen 1 .
-Note that it is usually more than useless (can pose a security risk) to copy a
-key used for other authentication to this location.
-
-The use of explict authentication files for authentication forwarding is
-primarily for protection against the case where the machine you run
-.Nm
-on is compromised.
-Using this file, you can use a separate passphrase from the one used for the
-key for connecting directly to $AUTHTARGET; that key need not even exist.
-By using IP restrictions in the authorized_keys file for the key, you can make
-sure that the host
-.Nm
-runs on cannot connect to $AUTHTARGET using the authentication forwarding
-key.
-The use of a separate forwarding key can also be used in combination with a
-modified SSH to log which key was used where, and thus track key propagation.
-
-.It Pa $HOME/.safesh/$HOST/$AUTHTARGET.pub
-Public key corresponding to the private key described above.
-
-.It Pa $HOME/.safesh/$HOST/extra_keys
-List of extra keys to make available for this host.
-Each line in the file is first attempted matched against the host/user/port
-database in $HOME/.safesh/.
-Username and/or port is added if just the hostname is specified extra_keys, and
-the hostname is always normalized using the map file.
-If a key exists in $HOME/.safesh/, 
-.Nm
-attempts to add that.
-Otherwise, it first tries to look for the line as a file relative to /, then
-relative to $HOME.
-If it does not find either of these,
-.Nm
-will exit with an error message.
-If it finds one, it will add it using
-.Xr ssh-add 1 .
-
-.It Pa $HOME/.safesh/$HOST/activeagent-$YOURHOST.sh
-Bourne shell (see
-.Xr sh 1 ,
-.Xr bash 1 ,
-.Xr zsh 1 )
-script for setting up the environment variables for the particular ssh-agent used for this host.
-Only valid if
-.Nm
-has been run against that host as this user since the machine 
-.Nm
-runs on was last booted.
-Note that this file most be source'd, not just run as a shell script.
-
-.It Pa $HOME/.safesh/$HOST/activeagent-$YOURHOST.csh
-CSH (see
-.Xr csh 1 ,
-.Xr tcsh 1 )
-script for setting up the environment variables for the particular ssh-agent used for this host.
-Only valid if
-.Nm
-has been run against that host as this user since the machine 
-.Nm
-runs on was last booted.
-Note that this file most be source'd, not just run as a shell script.
-.El
-
-.Sh AUTHORS
-.Nm
-was written by
-.An Eivind Eklund Aq eivind@FreeBSD.org .
-.Sh SEE ALSO
-.Xr ssh 1 ,
-.Xr ssh-add 1 ,
-.Xr ssh-agent 1 ,
-.Xr ssh-keygen 1 .
-
-.Sh KNOWN ISSUES
-.Nm does not handle whitespace in filenames specified in extra_keys correctly.
-
-The ssh-agents that are started by will hang around until next reboot unless
-you put 'killall ssh-agent' in .logout or similar.
-This allows any login to your account to use your authentication towards
-machines you have connected to (including anybody with root on the box),
-persisting after you log out.
-You must always assume that root can grab your authentication at the moment
-you run do it, so this is only an issue in that the authentication stays
-available longer.
-This is not resolvable without rewriting ssh-agent.
-
-.Sh MISSING FEATURES
-.Bl -tag -width "mmmm" -compact
-.It Pa Two-step secure SSH with an untrusted host in the middle
-It is possible to use the port forwarding capability of ssh to forward
-authentication through another server - without allowing the other server to
-indepently authenticate to a third party, and without allowing it to see
-what is going on in your connection.
-This is based on just forwarding a tunnel through the untrusted host, and
-doing direct authentication to the server on the other side.
-With the present version of OpenSSH, this has the problem of leaving the
-actual port forwarding open while the tunnel is open - allowing other users to
-set up their own tunnels, and weakening another side of the security model.
-
-.It Pa Read out fingerprints
-.Nm
-should make it trivial to retrieve the fingerprint for
-.Bl -enum
-.It
-The host it is running on.
-This must presently done with "ssh-keygen -l /etc/ssh/ssh_host_key.pub" (to get
-the fingerprint for SSH 1) and "ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key"
-(for SSH 2).
-.It 
-Other hosts, as registered in the known_host file on the host it is running
-on.
-This must presently be done by manual inspection.
-.El
-
-.It Pa Merge known_hosts
-.Nm
-should make it trivial to merge known_hosts and known_hosts2 with ones from
-another host, including retrieving and uploading known_hosts as appropriate.
-
-.It Pa Manage .ssh/authorized_keys2
-.Nm
-should be able to automatically add/remove keys from the authorized_keys2 file
-on other machines, to make the entire
-.Nm
-process self-contained.
-
-.It Pa Manage setup of key limitations
-When managing authorized_keys2, it is also reasonable to manage key limitation
-in this.
-IP restrictions ("from=") should be handled to make it easy to create setups
-where the local machine do not have direct access to a target.
-Command restrictions etc would be good to have just for completeness.
-
-.It Pa Emulate the entire ssh syntax
-Presently, the
-.Nm
-command has a fairly weird syntax.
-This is because it is a fairly quick hack, just made to be usable.
-Later, it would be nice to rewrite it to be fully compatible with
-.Xr ssh 1 .
-This would allow use as a drop-in replacement.
-
-.It Pa Description of the trust/threath/security model
-It would be nice to have a complete description of the normal SSH threath model
-as well as the
-.Nm
-threath model, in order to make people fully conscious of their own model.
-
-.It Pa Emulate scp
-.Xr scp 1
-is a very useful command.
-Unfortunately, it is almost unusable along with safesh, unless you use the
-activeagent files (preferably along with running all of this in a subshell, so
-you do not get extra authentication keys when you are not planning to.)
-
-.El
+.Pp

@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	safesh
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -20,6 +20,8 @@ NO_WRKSUBDIR=	yes
 
 SRC=		${.CURDIR}/src
 
+# XXX Anybody that know how to create manlinks from ports easily, please
+# contact me.
 MAN1=		${PORTNAME}.1
 
 do-fetch:
@@ -29,5 +31,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${SRC}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_SCRIPT} ${SRC}/cvs-safesh.sh ${PREFIX}/bin/cvs-safesh
 	@${INSTALL_MAN} ${SRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+	@${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/scpsh
+	@${LN} ${PREFIX}/bin/${PORTNAME} ${PREFIX}/bin/safeshinstall
 
 .include <bsd.port.mk>

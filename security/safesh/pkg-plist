@@ -1,2 +1,4 @@
-bin/safesh
 bin/cvs-safesh
+bin/safesh
+bin/safeshinstall
+bin/scpsh

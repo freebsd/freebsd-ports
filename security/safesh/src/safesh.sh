@@ -38,6 +38,13 @@ shift 2> /dev/null;
 
 HOSTDIR=$AKEYS/$USER@${HOST}-22
 if [ ! -d $HOSTDIR ]; then
+	while ! [ "$answer" = "yes" -o "$answer" = "no" ]; do
+		echo -n "New host $HOST - create key (yes/no)? " 1>&2
+		read answer
+	done
+	if [ "$answer" = "no" ]; then
+		exit 1
+	fi
 	mkdir -p $HOSTDIR || myx "$0: Unable to create $HOSTDIR"
 fi
 
@@ -106,7 +113,12 @@ if [ "${KEYLIST}" != "" ]; then
 	fi
 fi
 
-if [ "$1" = "" ]; then
+BASENAME=`basename $0`
+if [ "$BASENAME" = "scpsh" ]; then
+	exec $SHELL -i
+elif [ "$BASENAME" = "safeshinstall" ]; then
+	cat $HOSTDIR/id_dsa.pub | ssh $USER@$HOST 'mkdir -p .ssh && cat >> .ssh/authorized_keys2'
+elif [ "$1" = "" ]; then
 	exec ssh -A $USER@$HOST
 else
 	exec ssh "$@"
