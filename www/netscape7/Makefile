@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	linux-netscape
-PORTVERSION=	6.2.1
-PORTREVISION=	1
+PORTVERSION?=	6.2.2
 CATEGORIES?=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cica.es/pub6/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
