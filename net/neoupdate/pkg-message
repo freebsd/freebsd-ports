@@ -1,0 +1,13 @@
+You must edit $PREFIX/etc/neoupdate.conf before using.  These items must
+be changed or verified.
+
+1) (line 44) $ipmethod
+2) (line 53) $device
+3) (line 91) $enable_log
+4) (line 98) $ipfile
+5) (line 102) $username & $password
+6) (line 107) $domain
+7) (line 112) $email
+8) (line 117) TTL information
+9) (line 129) Domain Information
+

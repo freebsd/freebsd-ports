@@ -1,0 +1,16 @@
+diff -ruN neoupdate.orig/neoupdate.pl neoupdate/neoupdate.pl
+--- neoupdate.pl.orig	Fri Dec  8 04:23:16 2000
++++ neoupdate.pl	Tue Jan  9 08:16:20 2001
+@@ -246,9 +246,10 @@
+ ($device) = @_;
+ my(@newip,$newip,$nic);
+ $nic = qx(/sbin/ifconfig $device);
+-@newip = grep(/^addr/, split(/\s/, $nic));
++@newip = grep(/inet /, split(/[\n\r]/, $nic));
+ $newip = $newip[0];
+-$newip =~ s/addr://;
++$newip =~ s/\sinet //;
++$newip =~ s/ .*$//;
+ if ($newip =~ m/(\d+)\.(\d+)\.(\d+)\.(\d+)/){ 
+ return $newip;
+ }else{

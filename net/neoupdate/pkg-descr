@@ -1,0 +1,12 @@
+NeoUpdate is a Perl Script that monitors network connection and 
+update DNS records on free DNS service provider CentralInfo whenever 
+an IP address change is detected.  Centralinfo provide free dns 
+hosting for your domain name (Example : www.mydomain.com). It is 
+extremely useful for Cable Modem or DSL users who runs various 
+service like ftp and http server on their computer and prevent 
+service downtime whenever an IP change occur. 
+
+WWW: http://www.iamnewbie.com/
+
+- Jim
+jim@thehousleys.net

@@ -154,6 +154,7 @@
     SUBDIR += ncat
     SUBDIR += ncplib
     SUBDIR += nemesis
+    SUBDIR += neoupdate
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
