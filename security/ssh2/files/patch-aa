@@ -1,19 +1,19 @@
-*** make-ssh-known-hosts.pl.in.orig	Fri Oct  6 21:12:34 1995
---- make-ssh-known-hosts.pl.in	Fri Oct  6 21:14:28 1995
+*** make-ssh-known-hosts.pl.in.orig	Sun Feb 11 22:45:15 1996
+--- make-ssh-known-hosts.pl.in	Sat Feb 17 17:55:08 1996
 ***************
-*** 74,80 ****
-  $sshdisablepasswordoption="-o 'PasswordAuthentication no'";
+*** 78,84 ****
+  $debug = 5;
   $defserver = '';
   $bell='\a';
 ! $public_key = '/etc/ssh_host_key.pub';
-  if (!defined($ENV{'HOME'})) {
-      ($junk, $junk, $junk, $junk, $junk, $junk, $junk, $dir, $junk) =
-  	getpwuid($<);
---- 74,80 ----
-  $sshdisablepasswordoption="-o 'PasswordAuthentication no'";
+  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
+  $timeout = 60;
+  $ping_timeout = 3;
+--- 78,84 ----
+  $debug = 5;
   $defserver = '';
   $bell='\a';
 ! $public_key = '@ETCDIR@/ssh_host_key.pub';
-  if (!defined($ENV{'HOME'})) {
-      ($junk, $junk, $junk, $junk, $junk, $junk, $junk, $dir, $junk) =
-  	getpwuid($<);
+  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
+  $timeout = 60;
+  $ping_timeout = 3;

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ssh
-# Version required:     1.2.12a
+# Version required:     1.2.13
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.12 1996/01/25 04:17:28 ache Exp $
+# $Id: Makefile,v 1.13 1996/02/06 02:56:57 pst Exp $
 #
 
-DISTNAME=       ssh-1.2.12.92
+DISTNAME=       ssh-1.2.13
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
 LIB_DEPENDS=    z\\.0\\.:${PORTSDIR}/devel/libz
