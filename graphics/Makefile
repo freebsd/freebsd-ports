@@ -30,6 +30,7 @@
     SUBDIR += eog
     SUBDIR += epstool
     SUBDIR += eterm-bg
+    SUBDIR += evas
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += flashplayer
