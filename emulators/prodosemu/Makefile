@@ -8,7 +8,8 @@
 PORTNAME=	prodosemu
 PORTVERSION=	0.1
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://apple2.caltech.edu/pub/apple2/emulators/
+MASTER_SITES=	http://eachan.dorsai.org/~druid/apple2/ \
+		ftp://apple2.caltech.edu/pub/apple2/emulators/
 DISTNAME=	${PORTNAME}.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
