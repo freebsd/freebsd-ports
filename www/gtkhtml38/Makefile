@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/gtkhtml
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
+		ghttp.1:${PORTSDIR}/www/libghttp \
 		wwwzip.1:${PORTSDIR}/www/libwww \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		pspell.4:${PORTSDIR}/textproc/pspell \
