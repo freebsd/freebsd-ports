@@ -4114,7 +4114,6 @@ joe		ports/editors/joe
 joe-devel	ports/editors/joe-devel
 john		ports/security/john
 jomp		ports/java/jomp
-jonah		ports/www/jonah
 jools		ports/games/jools
 journal		ports/deskutils/journal
 jove		ports/editors/jove
@@ -5499,7 +5498,6 @@ mkbold		ports/x11-fonts/mkbold
 mkcatalog	ports/textproc/mkcatalog
 mkcmd		ports/devel/mkcmd
 mkfile		ports/sysutils/mkfile
-mkfontalias	ports/x11-fonts/mkfontalias
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
 mknmz-wwwoffle	ports/www/mknmz-wwwoffle
