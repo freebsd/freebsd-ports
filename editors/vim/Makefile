@@ -7,7 +7,8 @@
 #
 
 PORTNAME?=	vim
-PORTVERSION=	6.0.150
+PATCHLEVEL=	150
+PORTVERSION=	6.0.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
@@ -20,24 +21,11 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-#	0xy
-.for t in	0 1 2 3 4 5 6 7 8 9
-.for o in	0 1 2 3 4 5 6 7 8 9
-PATCHFILES+=	${PORTVERSION:C/\.[0-9]*$//}.0${t}${o}
-.endfor
-.endfor
-#	1xy where y covers 0-9
-.for t in	0 1 2 3 4
-.for o in	0 1 2 3 4 5 6 7 8 9
-PATCHFILES+=	${PORTVERSION:C/\.[0-9]*$//}.1${t}${o}
-.endfor
-.endfor
-#	1xy remander
-.for t in	5
-.for o in	0
-PATCHFILES+=	${PORTVERSION:C/\.[0-9]*$//}.1${t}${o}
-.endfor
-.endfor
+PATCHFILES!=	p=0 ; \
+		while [ $$p -le ${PATCHLEVEL} ] ; do \
+			printf "${PORTVERSION:C/\.[0-9]*$//}.%03d " $$p ; \
+			p=$$(($$p + 1)) ; \
+		done
 #	bits to remove
 BADPATCHES=	000 012 027 035 048 053 064 070 073 087 093 106 107 115 116 117 119 121 122 123 125 135 137 138
 .for p in ${BADPATCHES}
