@@ -11,12 +11,3 @@ $FreeBSD$
  		if (-f $targetfile){
  		    forceunlink($targetfile) unless $nonono;
  		} else {
-@@ -156,7 +156,7 @@
- 	    } else {
- 		inc_uninstall($_,$File::Find::dir,$verbose,0); # nonono set to 0
- 	    }
--	    $packlist->{$origfile}++;
-+	    $packlist->{$targetfile}++;
- 
- 	}, ".");
- 	chdir($cwd) or Carp::croak("Couldn't chdir to $cwd: $!");
