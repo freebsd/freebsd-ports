@@ -9,7 +9,7 @@ include/gtkDPS/gtkDPSwidget.h
 lib/libgtkDPS.a
 lib/libgtkDPS.la
 lib/libgtkDPS.so
-lib/libgtkDPS.so.1.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libgtkDPS.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/gtkDPS

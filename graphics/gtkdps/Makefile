@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:25 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/22 22:55:53 asami Exp $
 #
 
 DISTNAME=	gtkDPS-0.2.11
@@ -22,6 +22,6 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
