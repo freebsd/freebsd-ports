@@ -16,7 +16,7 @@ DISTFILES=		${SPEEDTOUCH}.tar.bz2:src ${ALCATELDRIVER}:mngt
 EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 
 MAINTAINER=		tom@FreeBSD.org
-COMMENT=	Run PPP over Alcatel's USB Speedtouch device
+COMMENT=		Run PPP over Alcatel's USB Speedtouch device
 
 HAS_CONFIGURE=		yes
 SPEEDTOUCH=		speedtouch-1.2-beta3
@@ -29,6 +29,12 @@ WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
 MAN1=			modem_run.1 pppoa2.1 pppoa3.1
 USE_BZIP2=		yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=			"Does not compile"
+.endif
+
 post-extract:
 	${TAR} -zxf ${DISTDIR}/${ALCATELDRIVER} -C ${WRKSRC}
 
@@ -39,4 +45,4 @@ post-install:
 	    ${LOCALBASE}/share/doc/speedtouch/.
 	@${CAT} ${LOCALBASE}/share/doc/speedtouch/quick-install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
