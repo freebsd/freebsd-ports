@@ -9,7 +9,7 @@ PORTNAME=	flasm
 PORTVERSION=	1.32
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nowrap.de/
-DISTNAME=	flasm132src
+DISTNAME=	flasm13src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
