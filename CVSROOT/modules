@@ -5861,6 +5861,7 @@ mserver		ports/comms/mserver
 msgconvert	ports/mail/msgconvert
 mshell		ports/misc/mshell
 msmtp		ports/mail/msmtp
+msmtp-devel	ports/mail/msmtp-devel
 msmtpqueue	ports/mail/msmtpqueue
 msntp		ports/net/msntp
 msp430-binutils		ports/devel/msp430-binutils
