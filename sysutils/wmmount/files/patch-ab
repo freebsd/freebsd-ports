@@ -1,6 +1,6 @@
---- config/system.wmmount.eg.orig      Fri Jun 18 04:41:41 1999
-+++ config/system.wmmount.eg   Tue Jun 27 22:33:35 2000
-@@ -8,7 +8,7 @@
+--- config/system.wmmount.sh.orig      Fri Jun 18 04:41:41 1999
++++ config/system.wmmount.sh   Tue Jun 27 22:34:30 2000
+@@ -24,7 +24,7 @@
  # See the README file for a more complete notice.
  
  # This configuration file to be saved as
@@ -9,7 +9,7 @@
  
  # Commands must appear (without a '#') at the beginning of the line.
  
-@@ -25,7 +25,7 @@
+@@ -41,7 +41,7 @@
  # Tell wmmount what to do when you double-click on the information box.
  # This entry may be ommitted.
  
@@ -18,7 +18,7 @@
  #opencmd=kfmclient exec %m
  
  # Choose fonts for the information box.
-@@ -39,10 +39,10 @@
+@@ -55,10 +55,10 @@
  # Ensure all icons exist and are accessible.
  # At least one icon must be specified.
  
@@ -32,13 +32,4 @@
 +icon %%PREFIX%%/lib/X11/wmmount/harddisk.xpm
  
  # Give details of all mountpoints.
- 
-@@ -62,7 +62,7 @@
- # overridden for particular mountpoints.
- 
- mountpoint /
--name=Linux
-+name=FreeBSD
- iconnumber=3
- usagedisplay=1
  
