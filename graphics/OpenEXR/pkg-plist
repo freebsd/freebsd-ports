@@ -107,9 +107,10 @@ include/OpenEXR/ImfXdr.h
 include/OpenEXR/half.h
 include/OpenEXR/halfFunction.h
 include/OpenEXR/halfLimits.h
-@dirrm include/OpenEXR
 libdata/pkgconfig/OpenEXR.pc
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 share/aclocal/openexr.m4
+@dirrm include/OpenEXR
 %%EXAMPLESDIR%%/drawImage.cpp
 %%EXAMPLESDIR%%/drawImage.h
 %%EXAMPLESDIR%%/generalInterfaceExamples.cpp
