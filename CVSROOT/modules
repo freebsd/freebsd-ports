@@ -1613,6 +1613,7 @@ eclipse-gef-examples	ports/java/eclipse-gef-examples
 eclipse-langpack	ports/java/eclipse-langpack
 eclipse-pmd	ports/java/eclipse-pmd
 eclipse-vep	ports/java/eclipse-vep
+eclipse-vep-examples	ports/java/eclipse-vep-examples
 eclipse-xsd	ports/java/eclipse-xsd
 ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
