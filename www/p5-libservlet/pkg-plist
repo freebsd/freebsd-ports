@@ -1,0 +1,43 @@
+lib/perl5/site_perl/%%PERL_VER%%/Servlet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSession.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpServletRequestWrapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpServletResponse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpServlet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionEvent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/Cookie.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionAttributesListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpServletResponseWrapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpServletRequest.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionBindingEvent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionActivationListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http/HttpSessionBindingListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util/Exception.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/FilterChain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/FilterConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/GenericServlet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/RequestDispatcher.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/Servlet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletConfig.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletContext.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletContextAttributeEvent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletContextAttributeListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletContextEvent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletContextListener.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletException.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletInputStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletOutputStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletRequest.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletRequestWrapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletResponse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/ServletResponseWrapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/SingleThreadModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/Servlet/UnavailableException.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Servlet/Http
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Servlet/Util
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Servlet
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libservlet/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libservlet
