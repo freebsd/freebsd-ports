@@ -9,7 +9,7 @@ PORTNAME=	granulate
 PORTVERSION=	0.2
 CATEGORIES=	misc
 MASTER_SITES=	http://exe2bin.com/granulate/ \
-		http://galileo.spaceports.com/~jharris/distfiles/
+		http://keyserver.kjsl.com/~jharris/distfiles/
 
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	Granulate is a program for splitting files in place

@@ -8,12 +8,12 @@
 PORTNAME=	zipcodes
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 PKGNAMEPREFIX=	us-
 DISTFILES=	${PORTNAME}.gz
 
 MAINTAINER=	jharris@widomaker.com
-COMMENT=	USA postal code
+COMMENT=	USA postal codes
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}

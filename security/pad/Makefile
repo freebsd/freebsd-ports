@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4
 PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security
-MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 #		http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
 
