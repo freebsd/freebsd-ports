@@ -5,65 +5,71 @@ bin/lwp-download
 bin/lwp-mirror
 bin/lwp-request
 bin/lwp-rget
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/LWP.pm
-lib/perl5/site_perl/%%PERL_VER%%/File/Listing.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/Form.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Cookies.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Daemon.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/Auth.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/ETag.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Negotiate.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request/Common.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Response.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Status.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Basic.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen/Digest.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/ConnCache.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Debug.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/MediaTypes.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/MemberMixin.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/GHTTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/data.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/file.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/ftp.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/gopher.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/http.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/http10.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/https.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/https10.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/mailto.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/nntp.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol/nogo.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/RobotUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/UserAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/media.types
-lib/perl5/site_perl/%%PERL_VER%%/Net/HTTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/HTTP/Methods.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/HTTP/NB.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/HTTPS.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules/AnyDBM_File.pm
-lib/perl5/site_perl/%%PERL_VER%%/lwpcook.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/RobotRules
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/HTTP
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Authen
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Protocol
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LWP 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/File 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+%%SITE_PERL%%/Bundle/LWP.pm
+%%SITE_PERL%%/File/Listing.pm
+%%SITE_PERL%%/HTML/Form.pm
+%%SITE_PERL%%/HTTP/Cookies.pm
+%%SITE_PERL%%/HTTP/Cookies/Microsoft.pm
+%%SITE_PERL%%/HTTP/Cookies/Netscape.pm
+%%SITE_PERL%%/HTTP/Daemon.pm
+%%SITE_PERL%%/HTTP/Date.pm
+%%SITE_PERL%%/HTTP/Headers.pm
+%%SITE_PERL%%/HTTP/Headers/Auth.pm
+%%SITE_PERL%%/HTTP/Headers/ETag.pm
+%%SITE_PERL%%/HTTP/Headers/Util.pm
+%%SITE_PERL%%/HTTP/Message.pm
+%%SITE_PERL%%/HTTP/Negotiate.pm
+%%SITE_PERL%%/HTTP/Request.pm
+%%SITE_PERL%%/HTTP/Request/Common.pm
+%%SITE_PERL%%/HTTP/Response.pm
+%%SITE_PERL%%/HTTP/Status.pm
+%%SITE_PERL%%/LWP.pm
+%%SITE_PERL%%/LWP/Authen/Basic.pm
+%%SITE_PERL%%/LWP/Authen/Digest.pm
+%%SITE_PERL%%/LWP/Authen/Ntlm.pm
+%%SITE_PERL%%/LWP/ConnCache.pm
+%%SITE_PERL%%/LWP/Debug.pm
+%%SITE_PERL%%/LWP/DebugFile.pm
+%%SITE_PERL%%/LWP/MediaTypes.pm
+%%SITE_PERL%%/LWP/MemberMixin.pm
+%%SITE_PERL%%/LWP/Protocol.pm
+%%SITE_PERL%%/LWP/Protocol/GHTTP.pm
+%%SITE_PERL%%/LWP/Protocol/data.pm
+%%SITE_PERL%%/LWP/Protocol/file.pm
+%%SITE_PERL%%/LWP/Protocol/ftp.pm
+%%SITE_PERL%%/LWP/Protocol/gopher.pm
+%%SITE_PERL%%/LWP/Protocol/http.pm
+%%SITE_PERL%%/LWP/Protocol/http10.pm
+%%SITE_PERL%%/LWP/Protocol/https.pm
+%%SITE_PERL%%/LWP/Protocol/https10.pm
+%%SITE_PERL%%/LWP/Protocol/mailto.pm
+%%SITE_PERL%%/LWP/Protocol/nntp.pm
+%%SITE_PERL%%/LWP/Protocol/nogo.pm
+%%SITE_PERL%%/LWP/RobotUA.pm
+%%SITE_PERL%%/LWP/Simple.pm
+%%SITE_PERL%%/LWP/UserAgent.pm
+%%SITE_PERL%%/LWP/media.types
+%%SITE_PERL%%/Net/HTTP.pm
+%%SITE_PERL%%/Net/HTTP/Methods.pm
+%%SITE_PERL%%/Net/HTTP/NB.pm
+%%SITE_PERL%%/Net/HTTPS.pm
+%%SITE_PERL%%/WWW/RobotRules.pm
+%%SITE_PERL%%/WWW/RobotRules/AnyDBM_File.pm
+%%SITE_PERL%%/lwpcook.pod
+%%SITE_PERL%%/lwptut.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
+@dirrm %%SITE_PERL%%/WWW/RobotRules
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/HTTP
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/LWP/Authen
+@dirrm %%SITE_PERL%%/LWP/Protocol
+@unexec rmdir %D/%%SITE_PERL%%/LWP 2>/dev/null || true
+@dirrm %%SITE_PERL%%/HTTP/Cookies
+@dirrm %%SITE_PERL%%/HTTP/Headers
+@dirrm %%SITE_PERL%%/HTTP/Request
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libwww-perl
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/File 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTTP 2>/dev/null || true
