@@ -74,7 +74,6 @@ html/de/Welcome.html
 html/de/README.CONF.html
 html/de/local/index.html
 html/de/messages/AddCacheInfo.html
-html/de/messages/AliasRedirect.html
 html/de/messages/CantRefreshPosted.html
 html/de/messages/ConfigurationAuthFail.html
 html/de/messages/ConfigurationChange.html
@@ -108,7 +107,6 @@ html/de/messages/ControlWWWOFFLE-Tail.html
 html/de/messages/ExecCGIFailed.html
 html/de/messages/FTPDir-Head.html
 html/de/messages/FTPDir-Tail.html
-html/de/messages/FTPDirRedirect.html
 html/de/messages/FileLocked.html
 html/de/messages/FTPPut.html
 html/de/messages/HostNotCached.html
@@ -136,11 +134,8 @@ html/de/messages/IndexOutgoing-Tail.html
 html/de/messages/IndexProtocol-Body.html
 html/de/messages/IndexProtocol-Head.html
 html/de/messages/IndexProtocol-Tail.html
-html/de/messages/IndexRedirect.html
 html/de/messages/IndexRoot-Body.html
 html/de/messages/IndexSeparator-Body.html
-html/de/messages/IndexURLRedirect.html
-html/de/messages/LocalDirRedirect.html
 html/de/messages/MethodUnsupported.html
 html/de/messages/MonitorFormError.html
 html/de/messages/MonitorIllegal.html
@@ -153,7 +148,6 @@ html/de/messages/README.CONF.txt
 html/de/messages/RefreshFormError.html
 html/de/messages/RefreshIllegal.html
 html/de/messages/RefreshPage.html
-html/de/messages/RefreshRedirect.html
 html/de/messages/RefreshWillGet.html
 html/de/messages/RefusedRequest.html
 html/de/messages/RemoteHostError.html
@@ -173,7 +167,6 @@ html/en/local/dontget/replacement.js
 html/en/local/dontget/replacement.png
 html/en/local/index.html
 html/en/messages/AddCacheInfo.html
-html/en/messages/AliasRedirect.html
 html/en/messages/CantRefreshPosted.html
 html/en/messages/ConfigurationAuthFail.html
 html/en/messages/ConfigurationChange.html
@@ -207,7 +200,6 @@ html/en/messages/ControlWWWOFFLE-Tail.html
 html/en/messages/ExecCGIFailed.html
 html/en/messages/FTPDir-Head.html
 html/en/messages/FTPDir-Tail.html
-html/en/messages/FTPDirRedirect.html
 html/en/messages/FTPPut.html
 html/en/messages/FileLocked.html
 html/en/messages/HostNotCached.html
@@ -235,11 +227,15 @@ html/en/messages/IndexOutgoing-Tail.html
 html/en/messages/IndexProtocol-Body.html
 html/en/messages/IndexProtocol-Head.html
 html/en/messages/IndexProtocol-Tail.html
-html/en/messages/IndexRedirect.html
 html/en/messages/IndexRoot-Body.html
 html/en/messages/IndexSeparator-Body.html
-html/en/messages/IndexURLRedirect.html
-html/en/messages/LocalDirRedirect.html
+html/en/messages/InfoCached-Body.html
+html/en/messages/InfoCached-Head.html
+html/en/messages/InfoCached-Tail.html
+html/en/messages/InfoContents-Body.html
+html/en/messages/InfoIllegal.html
+html/en/messages/InfoRequest.html
+html/en/messages/InfoSource-Body.html
 html/en/messages/MethodUnsupported.html
 html/en/messages/MonitorFormError.html
 html/en/messages/MonitorIllegal.html
@@ -249,10 +245,10 @@ html/en/messages/PageNotFound.html
 html/en/messages/ProxyAuthFail.html
 html/en/messages/README
 html/en/messages/README.CONF.txt
+html/en/messages/Redirect.html
 html/en/messages/RefreshFormError.html
 html/en/messages/RefreshIllegal.html
 html/en/messages/RefreshPage.html
-html/en/messages/RefreshRedirect.html
 html/en/messages/RefreshWillGet.html
 html/en/messages/RefusedRequest.html
 html/en/messages/RemoteHostError.html
@@ -298,7 +294,6 @@ html/es/README.CONF.html
 html/es/Welcome.html
 html/es/index.html
 html/es/messages/AddCacheInfo.html
-html/es/messages/AliasRedirect.html
 html/es/messages/CantRefreshPosted.html
 html/es/messages/ConfirmRequest.html
 html/es/messages/ControlAuthFail.html
@@ -316,7 +311,6 @@ html/es/messages/ControlWWWOFFLE-Head.html
 html/es/messages/ControlWWWOFFLE-Tail.html
 html/es/messages/FTPDir-Head.html
 html/es/messages/FTPDir-Tail.html
-html/es/messages/FTPDirRedirect.html
 html/es/messages/FTPPut.html
 html/es/messages/FileLocked.html
 html/es/messages/HostNotCached.html
@@ -344,11 +338,8 @@ html/es/messages/IndexOutgoing-Tail.html
 html/es/messages/IndexProtocol-Body.html
 html/es/messages/IndexProtocol-Head.html
 html/es/messages/IndexProtocol-Tail.html
-html/es/messages/IndexRedirect.html
 html/es/messages/IndexRoot-Body.html
 html/es/messages/IndexSeparator-Body.html
-html/es/messages/IndexURLRedirect.html
-html/es/messages/LocalDirRedirect.html
 html/es/messages/MethodUnsupported.html
 html/es/messages/MonitorFormError.html
 html/es/messages/MonitorIllegal.html
@@ -361,7 +352,6 @@ html/es/messages/README.CONF.txt
 html/es/messages/RefreshFormError.html
 html/es/messages/RefreshIllegal.html
 html/es/messages/RefreshPage.html
-html/es/messages/RefreshRedirect.html
 html/es/messages/RefreshWillGet.html
 html/es/messages/RefusedRequest.html
 html/es/messages/RemoteHostError.html
@@ -387,7 +377,6 @@ html/fr/README.CONF.html
 html/fr/Welcome.html
 html/fr/index.html
 html/fr/messages/AddCacheInfo.html
-html/fr/messages/AliasRedirect.html
 html/fr/messages/CantRefreshPosted.html
 html/fr/messages/ConfirmRequest.html
 html/fr/messages/ControlAuthFail.html
@@ -405,7 +394,6 @@ html/fr/messages/ControlWWWOFFLE-Head.html
 html/fr/messages/ControlWWWOFFLE-Tail.html
 html/fr/messages/FTPDir-Head.html
 html/fr/messages/FTPDir-Tail.html
-html/fr/messages/FTPDirRedirect.html
 html/fr/messages/FTPPut.html
 html/fr/messages/FileLocked.html
 html/fr/messages/HostNotCached.html
@@ -433,11 +421,8 @@ html/fr/messages/IndexOutgoing-Tail.html
 html/fr/messages/IndexProtocol-Body.html
 html/fr/messages/IndexProtocol-Head.html
 html/fr/messages/IndexProtocol-Tail.html
-html/fr/messages/IndexRedirect.html
 html/fr/messages/IndexRoot-Body.html
 html/fr/messages/IndexSeparator-Body.html
-html/fr/messages/IndexURLRedirect.html
-html/fr/messages/LocalDirRedirect.html
 html/fr/messages/MethodUnsupported.html
 html/fr/messages/MonitorFormError.html
 html/fr/messages/MonitorIllegal.html
@@ -450,7 +435,6 @@ html/fr/messages/README.CONF.txt
 html/fr/messages/RefreshFormError.html
 html/fr/messages/RefreshIllegal.html
 html/fr/messages/RefreshPage.html
-html/fr/messages/RefreshRedirect.html
 html/fr/messages/RefreshWillGet.html
 html/fr/messages/RefusedRequest.html
 html/fr/messages/RemoteHostError.html
@@ -469,7 +453,6 @@ html/it/FAQ.html
 html/it/Welcome.html
 html/it/index.html
 html/it/messages/AddCacheInfo.html
-html/it/messages/AliasRedirect.html
 html/it/messages/CantRefreshPosted.html
 html/it/messages/ConfirmRequest.html
 html/it/messages/ControlAuthFail.html
@@ -487,7 +470,6 @@ html/it/messages/ControlWWWOFFLE-Head.html
 html/it/messages/ControlWWWOFFLE-Tail.html
 html/it/messages/FTPDir-Head.html
 html/it/messages/FTPDir-Tail.html
-html/it/messages/FTPDirRedirect.html
 html/it/messages/FTPPut.html
 html/it/messages/FileLocked.html
 html/it/messages/HostNotCached.html
@@ -515,11 +497,8 @@ html/it/messages/IndexOutgoing-Tail.html
 html/it/messages/IndexProtocol-Body.html
 html/it/messages/IndexProtocol-Head.html
 html/it/messages/IndexProtocol-Tail.html
-html/it/messages/IndexRedirect.html
 html/it/messages/IndexRoot-Body.html
 html/it/messages/IndexSeparator-Body.html
-html/it/messages/IndexURLRedirect.html
-html/it/messages/LocalDirRedirect.html
 html/it/messages/MethodUnsupported.html
 html/it/messages/MonitorFormError.html
 html/it/messages/MonitorIllegal.html
@@ -531,7 +510,6 @@ html/it/messages/README
 html/it/messages/RefreshFormError.html
 html/it/messages/RefreshIllegal.html
 html/it/messages/RefreshPage.html
-html/it/messages/RefreshRedirect.html
 html/it/messages/RefreshWillGet.html
 html/it/messages/RefusedRequest.html
 html/it/messages/RemoteHostError.html
@@ -553,7 +531,6 @@ html/it/search/start3.html
 html/it/search/start4.html
 html/it/search/udmsearch
 html/nl/messages/AddCacheInfo.html
-html/nl/messages/AliasRedirect.html
 html/nl/messages/CantRefreshPosted.html
 html/nl/messages/ConfigurationAuthFail.html
 html/nl/messages/ConfigurationChange.html
@@ -578,7 +555,6 @@ html/nl/messages/ControlPage.html
 html/nl/messages/ControlWWWOFFLE-Head.html
 html/nl/messages/ControlWWWOFFLE-Tail.html
 html/nl/messages/FTPDir-Head.html
-html/nl/messages/FTPDirRedirect.html
 html/nl/messages/FTPPut.html
 html/nl/messages/FileLocked.html
 html/nl/messages/HostNotCached.html
@@ -599,11 +575,8 @@ html/nl/messages/IndexMonitor-Tail.html
 html/nl/messages/IndexOutgoing-Head.html
 html/nl/messages/IndexOutgoing-Tail.html
 html/nl/messages/IndexProtocol-Head.html
-html/nl/messages/IndexRedirect.html
 html/nl/messages/IndexRoot-Body.html
 html/nl/messages/IndexSeparator-Body.html
-html/nl/messages/IndexURLRedirect.html
-html/nl/messages/LocalDirRedirect.html
 html/nl/messages/MethodUnsupported.html
 html/nl/messages/MonitorFormError.html
 html/nl/messages/MonitorIllegal.html
@@ -614,7 +587,6 @@ html/nl/messages/ProxyAuthFail.html
 html/nl/messages/RefreshFormError.html
 html/nl/messages/RefreshIllegal.html
 html/nl/messages/RefreshPage.html
-html/nl/messages/RefreshRedirect.html
 html/nl/messages/RefreshWillGet.html
 html/nl/messages/RefusedRequest.html
 html/nl/messages/RemoteHostError.html
@@ -626,7 +598,6 @@ html/pl/Welcome.html
 html/pl/index.html
 html/pl/local/index.html
 html/pl/messages/AddCacheInfo.html
-html/pl/messages/AliasRedirect.html
 html/pl/messages/CantRefreshPosted.html
 html/pl/messages/ConfigurationAuthFail.html
 html/pl/messages/ConfigurationChange.html
@@ -659,7 +630,6 @@ html/pl/messages/ControlWWWOFFLE-Head.html
 html/pl/messages/ControlWWWOFFLE-Tail.html
 html/pl/messages/FTPDir-Head.html
 html/pl/messages/FTPDir-Tail.html
-html/pl/messages/FTPDirRedirect.html
 html/pl/messages/FTPPut.html
 html/pl/messages/FileLocked.html
 html/pl/messages/HostNotCached.html
@@ -687,11 +657,8 @@ html/pl/messages/IndexOutgoing-Tail.html
 html/pl/messages/IndexProtocol-Body.html
 html/pl/messages/IndexProtocol-Head.html
 html/pl/messages/IndexProtocol-Tail.html
-html/pl/messages/IndexRedirect.html
 html/pl/messages/IndexRoot-Body.html
 html/pl/messages/IndexSeparator-Body.html
-html/pl/messages/IndexURLRedirect.html
-html/pl/messages/LocalDirRedirect.html
 html/pl/messages/MethodUnsupported.html
 html/pl/messages/MonitorFormError.html
 html/pl/messages/MonitorIllegal.html
@@ -703,7 +670,6 @@ html/pl/messages/README
 html/pl/messages/RefreshFormError.html
 html/pl/messages/RefreshIllegal.html
 html/pl/messages/RefreshPage.html
-html/pl/messages/RefreshRedirect.html
 html/pl/messages/RefreshWillGet.html
 html/pl/messages/RefusedRequest.html
 html/pl/messages/RemoteHostError.html
@@ -731,7 +697,6 @@ html/ru/Welcome.html
 html/ru/index.html
 html/ru/local/index.html
 html/ru/messages/AddCacheInfo.html
-html/ru/messages/AliasRedirect.html
 html/ru/messages/CantRefreshPosted.html
 html/ru/messages/ConfirmRequest.html
 html/ru/messages/ControlAuthFail.html
@@ -749,7 +714,6 @@ html/ru/messages/ControlWWWOFFLE-Head.html
 html/ru/messages/ControlWWWOFFLE-Tail.html
 html/ru/messages/FTPDir-Head.html
 html/ru/messages/FTPDir-Tail.html
-html/ru/messages/FTPDirRedirect.html
 html/ru/messages/FTPPut.html
 html/ru/messages/FileLocked.html
 html/ru/messages/HostNotCached.html
@@ -777,11 +741,8 @@ html/ru/messages/IndexOutgoing-Tail.html
 html/ru/messages/IndexProtocol-Body.html
 html/ru/messages/IndexProtocol-Head.html
 html/ru/messages/IndexProtocol-Tail.html
-html/ru/messages/IndexRedirect.html
 html/ru/messages/IndexRoot-Body.html
 html/ru/messages/IndexSeparator-Body.html
-html/ru/messages/IndexURLRedirect.html
-html/ru/messages/LocalDirRedirect.html
 html/ru/messages/MethodUnsupported.html
 html/ru/messages/MonitorFormError.html
 html/ru/messages/MonitorIllegal.html
@@ -793,7 +754,6 @@ html/ru/messages/README
 html/ru/messages/RefreshFormError.html
 html/ru/messages/RefreshIllegal.html
 html/ru/messages/RefreshPage.html
-html/ru/messages/RefreshRedirect.html
 html/ru/messages/RefreshWillGet.html
 html/ru/messages/RefusedRequest.html
 html/ru/messages/RemoteHostError.html
