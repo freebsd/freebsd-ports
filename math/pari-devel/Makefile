@@ -8,14 +8,11 @@
 PORTNAME=	pari
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.a
 CATEGORIES=	math
-MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.2/ \
-		http://www.gn-50uma.de/ftp/pari-2.2/
+MASTER_SITES=	http://pari.math.u-bordeaux.fr/download/
 DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}.alpha
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 COMMENT=	Mathmatics library and advanced calculator package
-
-ONLY_FOR_ARCHS=	i386
 
 NO_LATEST_LINK=	yes
 INSTALLS_SHLIB=	yes
@@ -29,7 +26,7 @@ PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} REV_VER
 
 MAJOR_VERSION=	2
 MINOR_VERSION=	2
-REV_VERSION=	4
+REV_VERSION=	7
 
 MAN1=		gp.1 gphelp.1 tex2mail.1
 MLINKS=		gp.1 pari.1

@@ -1,0 +1,11 @@
+--- config/get_cc.orig	Thu Jan  8 01:20:56 2004
++++ config/get_cc	Thu Jan  8 01:21:30 2004
+@@ -119,7 +119,7 @@
+   DBGFLAGS=${DBGFLAGS:-"-g $warn"}
+   # Some architectures need -fPIC for building dynamic lib
+   case "$osname-$arch" in
+-    hpux-*|*-ia64) DLCFLAGS=-fPIC ;;
++    hpux-*|*-ia64|*-amd64) DLCFLAGS=-fPIC ;;
+     darwin-*) DLCFLAGS=-fno-common;;
+   esac
+   # Specific optimisations for some architectures

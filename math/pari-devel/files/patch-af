@@ -1,15 +1,50 @@
---- config/Makefile.SH.orig	Tue Jun 11 02:48:05 2002
-+++ config/Makefile.SH	Mon Jul 29 11:31:28 2002
-@@ -242,7 +242,7 @@
- LIBDIR = \$(DESTDIR)$libdir
- BINDIR = \$(DESTDIR)$bindir
- DATADIR= \$(DESTDIR)$datadir
--MANDIR = \$(DESTDIR)$mandir
-+MANDIR = \$(DESTDIR)\${PREFIX}/man/man1
- ALLDIR = \$(DESTDIR)$miscdir
- READMEDIR = \$(ALLDIR)
- DOCDIR  = \$(ALLDIR)/doc
-@@ -430,7 +430,7 @@
+--- config/Makefile.SH.orig	Wed Dec 17 07:44:36 2003
++++ config/Makefile.SH	Sun Jan 11 01:52:40 2004
+@@ -255,9 +255,12 @@
+ INCLUDEDIR= \$(DESTDIR)$includedir
+ LIBDIR    = \$(DESTDIR)$libdir
+ BINDIR    = \$(DESTDIR)$bindir
+-MANDIR    = \$(DESTDIR)$mandir
++MANDIR    = \$(DESTDIR)\${PREFIX}/man/man1
+ EMACSDIR  = \$(DESTDIR)$emacsdir
+-DATADIR   = \$(DESTDIR)$datadir
++#DATADIR   = \$(DESTDIR)$datadir
++ALLDIR    =\${PREFIX}/share/doc/pari
++READMEDIR = \$(ALLDIR)
++DATADIR   = \$(ALLDIR)
+ SYSDATADIR= \$(DESTDIR)$sysdatadir
+ 
+ EXDIR     = \$(DATADIR)/examples
+@@ -403,7 +406,7 @@
+ 	-\$(RM) \$(MANDIR)/pari.1
+ 	-\$(LN) gp.1 \$(MANDIR)/pari.1
+ 
+-install-misc: $install_emacs_files
++install-misc: $install_emacs_files install-top
+ 	-mkdir -p \$(MISCDIR) \$(BINDIR)
+ 	\$(INSTALL_PROGRAM) $misc/tex2mail \$(BINDIR)
+ 	\$(INSTALL_DATA) $doc/tex2mail.1 \$(MANDIR)
+@@ -416,6 +419,19 @@
+ 	\$(INSTALL_DATA) $misc/pari.xpm  \$(MISCDIR)
+ 	\$(INSTALL_PROGRAM) $misc/xgp    \$(MISCDIR)
+ 
++install-top::
++	-mkdir -p \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/AUTHORS      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/Announce.2.1 \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/CHANGES      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/COMPAT       \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/COPYING      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/CVS.txt      \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/MACHINES     \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/NEW          \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/README       \$(READMEDIR)
++	\$(INSTALL_DATA) $TOP/TODO         \$(READMEDIR)
++
+ install-cfg::
+ 	-mkdir -p \$(SYSDATADIR) \$(DATADIR)/PARI
+ 	\$(INSTALL_DATA) $desc/pari.desc   \$(DATADIR)
+@@ -424,7 +440,7 @@
  
  install-doc::
  	-mkdir -p \$(BINDIR) \$(DOCDIR)
@@ -18,7 +53,7 @@
  	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
  	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
-@@ -448,10 +448,10 @@
+@@ -442,10 +458,10 @@
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
  	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(DOCDIR)
@@ -33,33 +68,26 @@
  
  install-examples:
  	-mkdir -p \$(EXDIR)
-@@ -469,8 +469,8 @@
- 	-\$(INSTALL_DATA) $ex/taylor.gp   \$(EXDIR)
- 
- install-data:
--	-mkdir -p \$(DATADIR)
--	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
-+#	-mkdir -p \$(DATADIR)
-+#	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
- 
- install-lib-sta: \$(LIBPARI_STA)
- 	-mkdir -p \$(LIBDIR)
-@@ -538,13 +538,13 @@
+@@ -540,15 +556,16 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT
--$pari_elc: $emx/pari.el
--	@echo "Byte-Compiling pari.el..."
--	-cd $emx; $emacs -batch -l compile
-+#$pari_elc: $emx/pari.el
-+#	@echo "Byte-Compiling pari.el..."
-+#	-cd $emx; $emacs -batch -l compile
+-elc:
+-	@echo "Byte-Compiling elisp files..."
+-	-cd $emx; $emacs -batch \
+-	   --eval '(setq load-path (append (list ".") load-path))' \
+-	   -f batch-byte-compile *.el
++#elc:
++#	@echo "Byte-Compiling elisp files..."
++#	-cd $emx; $emacs -batch \
++#	   --eval '(setq load-path (append (list ".") load-path))' \
++#	   -f batch-byte-compile *.el
  
--$install_emacs_files: $pari_elc
-+$install_emacs_files: # $pari_elc
+ $install_emacs_files: elc
  	-mkdir -p \$(EMACSDIR)
--	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
-+#	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/pari.el        \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/pariemacs.txt  \$(EMACSDIR)
- 	\$(INSTALL_DATA)    $emx/with-syntax.el     \$(EMACSDIR)
+-	-cd $emx; for f in *.elc *.el pariemacs.txt; do \
++#	-cd $emx; for f in *.elc *.el pariemacs.txt; do \
++	-cd $emx; for f in *.el pariemacs.txt; do \
+ 	  \$(INSTALL_DATA) \$\$f \$(EMACSDIR); \
+ 	done
+ EOT
