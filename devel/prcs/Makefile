@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	prcs
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +17,17 @@ COMMENT=	The Project Revision Control System
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_GCC=	2.95
+USE_GCC=	3.3
 
 MAN1=		prcs.1
 INFO=		prcs
-PLIST_FILES=	bin/prcs bin/prcs-callback bin/prcs-ediff bin/prcs-emerge
+PLIST_FILES=	bin/prcs
+
+.include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/emacs)
-PLIST_FILES+=	share/emacs/site-lisp/prcs.el \
+PLIST_FILES+=	bin/prcs-callback bin/prcs-ediff bin/prcs-emerge \
+		share/emacs/site-lisp/prcs.el \
 		share/emacs/site-lisp/prcs.elc \
 		share/emacs/site-lisp/prcs-ediff.el \
 		share/emacs/site-lisp/prcs-ediff.elc \
@@ -35,7 +37,7 @@ PLIST_FILES+=	share/emacs/site-lisp/prcs.el \
 
 post-patch:
 	${REINPLACE_CMD} -Ee 's,#!/usr/local/bin/perl5?,#!${PERL},g' \
-		${WRKSRC}/contrib/prcs-*
+		${WRKSRC}/emacs/prcs-*
 
 pre-configure:
 .if !exists(${LOCALBASE}/bin/emacs)
@@ -43,7 +45,4 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 
-post-install:
-	install-info ${PREFIX}/info/${INFO}.info ${PREFIX}/info/dir
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
