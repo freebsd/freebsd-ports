@@ -100,69 +100,69 @@
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.py
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.pyc
 %%PYTHON_SITELIBDIR%%/numarray/ufunc.pyo
-%%PORTDOCS%%share/doc/py-numarray/Announce.txt
-%%PORTDOCS%%share/doc/py-numarray/CHANGES
-%%PORTDOCS%%share/doc/py-numarray/CVS-files
-%%PORTDOCS%%share/doc/py-numarray/ChangeLog
-%%PORTDOCS%%share/doc/py-numarray/Design.txt
-%%PORTDOCS%%share/doc/py-numarray/INSTALL.txt
-%%PORTDOCS%%share/doc/py-numarray/Repackaging.txt
-%%PORTDOCS%%share/doc/py-numarray/UsersGuide.txt
-%%PORTDOCS%%share/doc/py-numarray/doctest.py
-%%PORTDOCS%%share/doc/py-numarray/manual/ChangeLog
-%%PORTDOCS%%share/doc/py-numarray/manual/Makefile
-%%PORTDOCS%%share/doc/py-numarray/manual/README
-%%PORTDOCS%%share/doc/py-numarray/manual/StyleGuide
-%%PORTDOCS%%share/doc/py-numarray/manual/TODO
-%%PORTDOCS%%share/doc/py-numarray/manual/arrayattributes.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/arraybasics.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/arrayfunctions.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/arraymethods.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/convolve.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/copyright.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/extending.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/fft.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/glossary.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/installation.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/introduction.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/linearalgebra.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/ma.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/mklinks
-%%PORTDOCS%%share/doc/py-numarray/manual/numarray.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/overview.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/pseudoindices.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/randomarray.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/table.py
-%%PORTDOCS%%share/doc/py-numarray/manual/ufuncs.tex
-%%PORTDOCS%%share/doc/py-numarray/manual/webpage/update.py
-%%PORTDOCS%%share/doc/py-numarray/sitecustomize.py
-%%PORTDOCS%%share/doc/py-numarray/unittest.py
-%%PORTDOCS%%share/examples/py-numarray/ChangeLog
-%%PORTDOCS%%share/examples/py-numarray/README
-%%PORTDOCS%%share/examples/py-numarray/__init__.py
-%%PORTDOCS%%share/examples/py-numarray/bench.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/ChangeLog
-%%PORTDOCS%%share/examples/py-numarray/convolve/README
-%%PORTDOCS%%share/examples/py-numarray/convolve/__init__.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/benchmark.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/convolve_test.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/convtest.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/element_wisemodule.c
-%%PORTDOCS%%share/examples/py-numarray/convolve/high_levelmodule.c
-%%PORTDOCS%%share/examples/py-numarray/convolve/lineshape.py
-%%PORTDOCS%%share/examples/py-numarray/convolve/numpy_compat2.c
-%%PORTDOCS%%share/examples/py-numarray/convolve/numpy_compatmodule.c
-%%PORTDOCS%%share/examples/py-numarray/convolve/one_dimensionalmodule.c
-%%PORTDOCS%%share/examples/py-numarray/convolve/testlite.c
-%%PORTDOCS%%share/examples/py-numarray/pstats.py
-%%PORTDOCS%%share/examples/py-numarray/setup.py
-%%PORTDOCS%%share/examples/py-numarray/sortperf.py
-%%PORTDOCS%%share/examples/py-numarray/testall.py
-%%PORTDOCS%%share/examples/py-numarray/testthread.py
-%%PORTDOCS%%@dirrm share/examples/py-numarray/convolve
-%%PORTDOCS%%@dirrm share/examples/py-numarray
-%%PORTDOCS%%@dirrm share/doc/py-numarray/manual/webpage
-%%PORTDOCS%%@dirrm share/doc/py-numarray/manual
-%%PORTDOCS%%@dirrm share/doc/py-numarray
+%%PORTDOCS%%%%DOCSDIR%%/Announce.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CVS-files
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Design.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/Repackaging.txt
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
+%%PORTDOCS%%%%DOCSDIR%%/doctest.py
+%%PORTDOCS%%%%DOCSDIR%%/manual/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/manual/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/manual/README
+%%PORTDOCS%%%%DOCSDIR%%/manual/StyleGuide
+%%PORTDOCS%%%%DOCSDIR%%/manual/TODO
+%%PORTDOCS%%%%DOCSDIR%%/manual/arrayattributes.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/arraybasics.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/arrayfunctions.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/arraymethods.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/convolve.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/copyright.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/extending.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/fft.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/glossary.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/installation.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/introduction.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/linearalgebra.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/ma.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/mklinks
+%%PORTDOCS%%%%DOCSDIR%%/manual/numarray.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/overview.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/pseudoindices.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/randomarray.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/table.py
+%%PORTDOCS%%%%DOCSDIR%%/manual/ufuncs.tex
+%%PORTDOCS%%%%DOCSDIR%%/manual/webpage/update.py
+%%PORTDOCS%%%%DOCSDIR%%/sitecustomize.py
+%%PORTDOCS%%%%DOCSDIR%%/unittest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/bench.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/ChangeLog
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/__init__.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/benchmark.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/convolve_test.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/convtest.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/element_wisemodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/high_levelmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/lineshape.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/numpy_compat2.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/numpy_compatmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/one_dimensionalmodule.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/convolve/testlite.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/pstats.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/setup.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/sortperf.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testall.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/testthread.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/convolve
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/webpage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/numarray
 @dirrm %%PYTHON_INCLUDEDIR%%/numarray
