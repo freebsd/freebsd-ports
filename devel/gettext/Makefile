@@ -31,6 +31,8 @@ CONFIGURE_ARGS=	--with-libexpat-prefix=${LOCALBASE}/lib \
 		--mandir=${PREFIX}/man
 INSTALLS_SHLIB=	yes
 
+OPTIONS=	EXAMPLES "install example files" off
+PLIST=		${WRKDIR}/plist
 PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 		VERSION=${PORTVERSION}
 
@@ -68,10 +70,27 @@ post-build:
 	@sleep 5
 .endif
 
+pre-install:
+	@${RM} -f ${PLIST}
+.if defined (WITH_EXAMPLES)
+	cd ${WRKSRC}/gettext-tools && \
+		${FIND} -s examples -type f | ${GREP} -vw examples/po | \
+		${GREP} -v ChangeLog | ${GREP} -v examples/Makefile | \
+		${GREP} -v examples/installpaths.in | \
+		${SED} 's:^:share/doc/gettext/:' > ${PLIST} && \
+		${FIND} -d examples -type d | ${GREP} -v examples/po | \
+		${SED} -e 's:^:@dirrm share/doc/gettext/:' \
+		>> ${PLIST}
+.endif
+	@${CAT} ${.CURDIR}/pkg-plist >> ${PLIST}
+
 post-install:
 .for f in po-compat.el po-mode.el
 	${INSTALL_DATA} ${WRKSRC}/gettext-tools/misc/${f} ${PREFIX}/share/emacs/site-lisp
 .endfor
 	${MKDIR} ${X11BASE}/share/locale
+.if defined (WITH_EXAMPLES)
+	cd ${WRKSRC}/gettext-tools/examples && make install
+.endif
 
 .include <bsd.port.post.mk>
