@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.38 1999/04/11 22:55:24 ache Exp $
+# $Id: Makefile,v 1.39 1999/04/18 21:26:34 dirk Exp $
 #
 
 DISTNAME=       communicator-v451-export.x86-unknown-freebsd
