@@ -23,3 +23,6 @@ share/doc/bochs/jbochs.html
 share/doc/bochs/mtools.html
 share/doc/bochs/licensing.html
 share/doc/bochs/whatisbochs.html
+@dirrm lib/bochs/bios
+@dirrm lib/bochs
+@dirrm share/doc/bochs
