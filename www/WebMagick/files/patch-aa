@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.119
-diff -u -r1.117 -r1.119
+retrieving revision 1.122
+diff -u -r1.117 -r1.122
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	30 Jan 2003 04:19:33 -0000	1.119
++++ webmagick.in	30 Jan 2003 12:02:29 -0000	1.122
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.119 2003/01/30 04:19:33 ache Exp $
++# $Id: webmagick.in,v 1.122 2003/01/30 12:02:29 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -90,7 +90,22 @@ diff -u -r1.117 -r1.119
      print( INDEX ">\n");
  
      print( INDEX "${opt_header}\n" ) if ("$opt_header" ne '');
-@@ -2433,7 +2424,9 @@
+@@ -2397,8 +2388,12 @@
+     if( $numimages > 0 ) {
+ 	# Total HACK!!!
+ 	if( !$opt_frames || $opt_framestyle == 1 ) {
+-	    print( INDEX "<p><FONT SIZE=\"-1\">${opt_msg_index_of_files}\"$imageNames[$pageNumber - 1][0]\" ${opt_msg_index_through}",
+-		  " \"$imageNames[$pageNumber - 1][$numimages-1]\"</FONT></p>\n" );
++	    print( INDEX "<p><FONT SIZE=\"-1\">${opt_msg_index_of_files}\"",
++		  escapehtml($imageNames[$pageNumber - 1][0]),
++		  "\" ${opt_msg_index_through}",
++		  " \"",
++		  escapehtml($imageNames[$pageNumber - 1][$numimages-1]),
++		  "\"</FONT></p>\n" );
+ 	}
+ 	print( INDEX "$indexbar<BR>\n" );
+ 
+@@ -2433,22 +2428,30 @@
  	
  	    my $pic = $imageNames[$pageNumber - 1][$imageNum];
  	    my $pichtml;
@@ -100,29 +115,30 @@ diff -u -r1.117 -r1.119
  	    if ($opt_pichtml && $opt_frames && "$opt_pichtmltarget" ne '') {
  		$target = " TARGET=\"${opt_pichtmltarget}\"";
  	    }
-@@ -2441,6 +2434,12 @@
++	    if (defined($imageLabels{$pic})) {
++		$altlabel = $imageLabels{$pic};
++	    } else {
++		($altlabel = $pic) =~ s/(.*)\.\w+$/$1/i;
++		$altlabel =~ y/_/ /; # Usual space replacement in file name
++	    }
++	    $altlabel = escapehtml($altlabel);
+ 
  	    if ( $opt_pichtml ) {
  			
  			$pichtml = $pic . $opt_pichtmlext;
-+			if (defined($imageLabels{$pic})) {
-+			    $altlabel = $imageLabels{$pic};
-+			} else {
-+			    ($altlabel = $pic) =~ s/(.*)\.\w+$/$1/i;
-+			    $altlabel =~ y/_/ /; # Usual space replacement in file name
-+			}
- 
+-
  			open( PICHTML, ">$pichtml")
  			    || die("$0: Failed to open file $pichtml for output\n$@\n");
-@@ -2448,7 +2447,7 @@
+ 			print( PICHTML "<HTML>\n<HEAD>\n" );
  			# Charset is better before title
  			print( PICHTML "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  			    if( "$opt_metacharset" ne '' );
 -			print( PICHTML "  <TITLE>$pic</TITLE>\n" );
-+			print( PICHTML "  <TITLE>", escapehtml($altlabel), "</TITLE>\n" );
++			print( PICHTML "  <TITLE>${altlabel}</TITLE>\n" );
  
  			# Meta tags
  			print( PICHTML "  <META NAME=\"GENERATOR\" CONTENT=\"WebMagick/$webmagickInfo{version} [WebMagick]\">\n" );
-@@ -2469,27 +2468,20 @@
+@@ -2469,28 +2472,19 @@
  
  			print( PICHTML "</HEAD>\n" );
  			print( PICHTML "<BODY\n" );
@@ -148,31 +164,76 @@ diff -u -r1.117 -r1.119
  			print( PICHTML "$opt_pichtmltop") if ("$opt_pichtmltop" ne '');
  
  			if ($opt_pichtmlputtitle) {
- 			    print ( PICHTML "${opt_pichtmltitlestart}");
+-			    print ( PICHTML "${opt_pichtmltitlestart}");
 -			    if (defined( $imageLabels{$pic})) {
 -				print( PICHTML "$imageLabels{$pic}");
 -			    } else {
 -				print( PICHTML "$pic");
 -			    }
-+			    print ( PICHTML escapehtml($altlabel));
- 			    print ( PICHTML "${opt_pichtmltitleend}");
+-			    print ( PICHTML "${opt_pichtmltitleend}");
++			    print ( PICHTML "${opt_pichtmltitlestart}${altlabel}${opt_pichtmltitleend}");
  			}
  
-@@ -2556,10 +2548,10 @@
+ 			if ($opt_pichtmlnav) {
+@@ -2526,9 +2520,9 @@
+ 				} else {
+ 					print ( PICHTML "<A${target} HREF=\"");
+ 					if ($imageNum == 0 && $pageNumber != 1) {
+-						print ( PICHTML $imageNames[$pageNumber - 2][$#{$imageNames[$pageNumber - 2]}]);
++						print ( PICHTML escapeurl($imageNames[$pageNumber - 2][$#{$imageNames[$pageNumber - 2]}]) );
+ 					} else {
+-						print ( PICHTML $imageNames[$pageNumber - 1][${imageNum} - 1]);
++						print ( PICHTML escapeurl($imageNames[$pageNumber - 1][${imageNum} - 1]) );
+ 					}
+ 					print ( PICHTML $opt_pichtmlext);
+ 					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'prev'}\"",
+@@ -2543,9 +2537,9 @@
+ 				} else {
+ 					print ( PICHTML "<A${target} HREF=\"");
+ 					if (($imageNum == $#{$imageNames[$pageNumber - 1]}) && $pageNumber != $numPages) {
+-						print ( PICHTML $imageNames[$pageNumber][0]);
++						print ( PICHTML escapeurl($imageNames[$pageNumber][0]) );
+ 					} else {
+-						print ( PICHTML $imageNames[$pageNumber - 1][${imageNum} + 1]);
++						print ( PICHTML escapeurl($imageNames[$pageNumber - 1][${imageNum} + 1]) );
+ 					}
+ 					print ( PICHTML $opt_pichtmlext);
+ 					print ( PICHTML "\"><IMG SRC=\"$iconImageUrls{'next'}\"",
+@@ -2556,10 +2550,10 @@
  				print ( PICHTML "</NOBR><BR>");
  			}
  
 -			if ( $pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i ) {
 -			    print( PICHTML "<IMG SRC=\"$pic\" ALT=\"\">" );
 +			if ($pic =~ /\.(jpg|jpeg?|gif|xbm|png)$/i) {
-+			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" ALT=\"", escapehtml($altlabel), "\">" );
++			    print( PICHTML "<IMG SRC=\"", escapeurl($pic), "\" ALT=\"${altlabel}\">" );
  			} else {
 -			    print( PICHTML "<A HREF=\"", escapeurl($pic), "\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>" );
 +			    print( PICHTML "<A HREF=\"", escapeurl($pic), "\"><BIG><B>", escapehtml($pic), "</B></A> ", fsize($pic), "</BIG>" );
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
-@@ -4296,6 +4288,7 @@
+@@ -2601,12 +2595,16 @@
+ 			# TODO: make sure the thumbnails are created, and get some image sizes
+ 			# TODO: save the labels in a new array, maybe same with sizes
+ 			if ( $thumbImageSizes{$pic}) {
+-				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}", "\" $thumbImageSizes{$pic} BORDER=0>");
++				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}",
++				       "\" $thumbImageSizes{$pic} ALT=\"${altlabel}\" BORDER=0>");
+ 			} else {
+-				print (INDEX "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0>");
++				print (INDEX "<IMG SRC=\"", escapeurl($pic),
++				       "\" ALT=\"${altlabel}\" BORDER=0>");
+ 			}
+ 			
+-			print (INDEX "</A><BR><FONT SIZE=\"-1\">" . $tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]} . "</FONT></TD>\n");
++			print (INDEX "</A><BR><FONT SIZE=\"-1\">",
++				escapehtml($tableImageLabels{$imageNames[$pageNumber - 1][$imageNum]}),
++				"</FONT></TD>\n");
+ 						
+ 			if ($imageNum%$opt_columns == ($opt_columns - 1))
+ 			{
+@@ -4296,6 +4294,7 @@
      s/&/&amp;/g;
      s/>/&gt;/g;
      s/</&lt;/g;
@@ -180,3 +241,27 @@ diff -u -r1.117 -r1.119
      return( $_ );
  }
  
+@@ -4325,21 +4324,8 @@
+ #		
+ sub escapeurl {
+     local($_) = @_;
+-    s/\%/%25/g;		# % (must substitute first!)
+-    s/\"/%22/g;		# "
+-    s/\#/%23/g;		# #
+-    s/\</%3C/g;		# <
+-    s/\>/%3E/g;		# >
+-    s/\[/%5B/g;		# [
+-    #s/\\/%5C/g;		# \
+-    s/\]/%5D/g;		# ]
+-    s/\^/%5E/g;		# ^
+-    s/\`/%60/g;		# `
+-    s/\{/%7B/g;		# {
+-    s/\|/%7C/g;		# |
+-    s/\}/%7D/g;		# }
+-    s/\~/%7E/g;		# ~
+-    s/ /%20/g;          # " "
++    # ' is here because some bots (Google) goes crazy on "xxx'xxx"
++    s/([][\x00-\x20"#%'<>^`{|}~\x7F-\xFF])/sprintf("%%%02x", ord($1))/eg;
+     s:\\:/:g; # replace \ with / for better URLs
+     return( $_ );
+ }
