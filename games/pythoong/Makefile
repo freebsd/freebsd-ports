@@ -11,6 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://perso.wanadoo.fr/christophe.cressend/tarballs/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A snake-like game written for Gnome desktop
 
 BUILD_DEPENDS=	xbmtopbm:${PORTSDIR}/graphics/netpbm
 

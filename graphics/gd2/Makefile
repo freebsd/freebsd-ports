@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.boutell.com/gd/http/ \
 MASTER_SITE_SUBDIR=	graphics/gd
 
 MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	A graphics library for fast creation of images
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
