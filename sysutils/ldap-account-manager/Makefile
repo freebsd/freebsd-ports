@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -43,10 +42,10 @@ WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
 
 LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
 
-CVS_DIRS=	${WRKSRC}/lib/font/CVS ${WRKSRC}/lib/font/makefont/CVS
+#CVS_DIRS=	${WRKSRC}/lib/font/CVS ${WRKSRC}/lib/font/makefont/CVS
 
-post-extract:
-	@${RM} -fr ${CVS_DIRS}
+#post-extract:
+#	@${RM} -fr ${CVS_DIRS}
 
 do-install:
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}
