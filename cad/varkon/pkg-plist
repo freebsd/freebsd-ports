@@ -960,5 +960,29 @@ share/varkon/mdf/x11.INC
 %%PORTDOCS%%%%DOCSDIR%%/m_man/vprod.htm
 %%PORTDOCS%%%%DOCSDIR%%/m_man/wait_win.htm
 %%PORTDOCS%%%%DOCSDIR%%/m_man/xhatch.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_infloat.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/gethedge.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outrobtarget.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/sort_mesh.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outspeed.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/getmshh.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_inspeeddata.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/getxfloat.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/getface.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_inint.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_infloatarr.html
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outfloatarr.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/mesh_arr.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_inrobtarget.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_inspeed.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rpc_clientcreate.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outfloat.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/getvertex.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rpc_clientdestroy.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rapindx.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outrobtarr.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_infloatarr.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_inrobtarr.htm
+%%PORTDOCS%%%%DOCSDIR%%/m_man/rap_outint.htm
 %%PORTDOCS%%@dirrm %%PORTDOCS%%%%DOCSDIR%%/m_man
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
