@@ -20,15 +20,17 @@ LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 
 WANT_GNOME=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-sigc-prefix=${LOCALBASE} \
 		--with-gtkmm-prefix=${X11BASE}
+CONFIGURE_ENV=	CPPFLAGS="`${LOCALBASE}/bin/sigc-config --cflags`"
 
 post-patch:
-	@${PERL} -pi -e 's|(#include <sys/socket.h>)|#include <sys/types.h>\n\1|' \
-		${WRKSRC}/ctrlsocket/ControlSocket.h
+	@${REINPLACE_CMD} -E -e 's|(gtkmm_config_args[[:space:]]*=).+$$|\1|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
 
