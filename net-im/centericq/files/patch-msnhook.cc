@@ -1,61 +1,51 @@
---- src/hooks/msnhook.cc	Mon Oct 28 19:29:41 2002
-+++ src/hooks/msnhook.cc	Tue Nov 26 16:10:34 2002
-@@ -30,6 +30,7 @@
+--- src/hooks/msnhook.cc	Fri Dec 13 00:17:12 2002
++++ src/hooks/msnhook.cc	Wed Dec 18 14:57:02 2002
+@@ -29,6 +29,7 @@
+ #include "accountmanager.h"
  #include "eventmanager.h"
- #include "centericq.h"
  #include "imlogger.h"
 +#include "utf8conv.h"
  
- msnhook mhook;
+ #include "msn_bittybits.h"
  
-@@ -159,7 +160,8 @@
+@@ -225,7 +226,8 @@
      }
  
      icqcontact *c = clist.get(ev.getcontact());
 -    text = siconv(text, conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET, "utf8");
-+    text = StrToUtf8(text);
 +//    text = siconv(text, conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET, "utf8");
- //    text = toutf8(rusconv("kw", text));
++    text = StrToUtf8(text);
  
      if(c)
-@@ -274,8 +276,8 @@
- 	m.homepage = "http://members.msn.com/" + b.email;
+     if(c->getstatus() != offline || !c->inlist()) {
+@@ -556,7 +558,8 @@
  
- 	if(!friendlynicks[ic.nickname].empty()) {
--	    c->setdispnick(friendlynicks[ic.nickname]);
--	    b.fname = friendlynicks[ic.nickname];
-+	    c->setdispnick(Utf8ToStr(friendlynicks[ic.nickname]));
-+	    b.fname = Utf8ToStr(friendlynicks[ic.nickname]);
- 	}
+     mhook.checkinlist(ic);
  
- 	c->setbasicinfo(b);
-@@ -371,7 +373,8 @@
- 	}
+-    string text = siconv(msg->body, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
++//    string text = siconv(msg->body, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
++    string text = Utf8ToStr(msg->body);
+     em.store(immessage(ic, imevent::incoming, text));
+ }
  
- //        text = rusconv("wk", fromutf8(d->msg));
--	text = siconv(d->msg, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
-+//	text = siconv(d->msg, "utf8", conf.getrussian() ? "koi8-u" : DEFAULT_CHARSET);
-+	text = Utf8ToStr(d->msg);
- 	em.store(immessage(ic, imevent::incoming, text));
- 
- 	if(c)
-@@ -453,3 +456,136 @@
- 	clist.get(contactroot)->playsound(imevent::email);
+@@ -717,3 +720,138 @@
+ 	log(string("[OUT] ") + buf);
      }
  }
++
 +#if HAVE_ICONV_H
 +int safe_iconv( iconv_t handle, const char **inbuf, size_t *inbytesleft,
-+	     char **outbuf, size_t *outbytesleft)
++            char **outbuf, size_t *outbytesleft)
 +{
 +    int ret;
 +    while (*inbytesleft) {
-+	 ret = iconv( handle, inbuf, inbytesleft,
-+		outbuf, outbytesleft);
-+	if (!*inbytesleft || !*outbytesleft)
-+	    return ret;
-+	/*got invalid seq - so replace it with '?' */
-+	**outbuf = '?'; (*outbuf)++; (*outbytesleft)--;
-+	(*inbuf)++; (*inbytesleft)--;
++        ret = iconv( handle, inbuf, inbytesleft,
++               outbuf, outbytesleft);
++       if (!*inbytesleft || !*outbytesleft)
++           return ret;
++       /*got invalid seq - so replace it with '?' */
++       **outbuf = '?'; (*outbuf)++; (*outbytesleft)--;
++       (*inbuf)++; (*inbytesleft)--;
 +    }
 +    return ret;
 +}
@@ -65,28 +55,28 @@
 +    char *lang, *ch;
 +    /* Return previously learned charset */
 +    if (loc_charset[0])
-+	return loc_charset;
++       return loc_charset;
 +
 +    lang = getenv("LANG");
 +    if (!lang) {
-+	strcpy( loc_charset, DEFAULT_CHARSET );
-+	return loc_charset;
++       strcpy( loc_charset, DEFAULT_CHARSET );
++       return loc_charset;
 +    };
 +    ch = strrchr( lang, '.' );
 +    if (!ch)
-+	strcpy( loc_charset, DEFAULT_CHARSET );
++       strcpy( loc_charset, DEFAULT_CHARSET );
 +    else {
-+	iconv_t pt;
-+	ch++;
-+	strncpy( loc_charset, ch, sizeof(loc_charset) );
-+	/* try to open iconv handle using guessed charset */
-+	if ( (pt = iconv_open( loc_charset, loc_charset )) == (iconv_t)(-1) )
-+	{
-+	    strcpy( loc_charset, DEFAULT_CHARSET );
-+	} else {
-+	    iconv_close(pt);
-+	};
-+	
++       iconv_t pt;
++       ch++;
++       strncpy( loc_charset, ch, sizeof(loc_charset) );
++       /* try to open iconv handle using guessed charset */
++       if ( (pt = iconv_open( loc_charset, loc_charset )) == (iconv_t)(-1) )
++       {
++           strcpy( loc_charset, DEFAULT_CHARSET );
++       } else {
++           iconv_close(pt);
++       };
++
 +    }
 +
 +    return loc_charset;
@@ -102,16 +92,16 @@
 +
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
 +    if(((int) handle) != -1) {
-+	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+    
-+	*outbuf = '\0';
-+	iconv_close( handle );
-+	return outbuf_save;
++       ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++
++       *outbuf = '\0';
++       iconv_close( handle );
++       return outbuf_save;
 +    } else {
-+	return (char *)inbuf;
++       return (char *)inbuf;
 +    };
 +}
-+ 
++
 +std::string StrToUtf8( const std::string &instr )
 +{
 +    size_t length = instr.length();
@@ -123,18 +113,18 @@
 +
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
 +    if(((int) handle) != -1) {
-+	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+    
-+	*outbuf = '\0';
-+	iconv_close( handle );
++       ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +
-+	std::string return_me = outbuf_save;
-+	return return_me;
++       *outbuf = '\0';
++       iconv_close( handle );
++
++       std::string return_me = outbuf_save;
++       return return_me;
 +    } else {
-+	return instr;
++       return instr;
 +    };
 +}
-+ 
++
 +char *Utf8ToStr( const char *inbuf )
 +{
 +    size_t length = strlen( inbuf );
@@ -145,12 +135,12 @@
 +
 +    iconv_t handle = iconv_open( guess_current_locale_charset(), "utf-8" );
 +    if(((int) handle) != -1) {
-+	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+	*outbuf = '\0';
-+	iconv_close( handle );
-+	return outbuf_save;
++       ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++       *outbuf = '\0';
++       iconv_close( handle );
++       return outbuf_save;
 +    } else {
-+	return (char *)inbuf;
++       return (char *)inbuf;
 +    };
 +}
 +
@@ -166,13 +156,14 @@
 +    iconv_t handle = iconv_open( guess_current_locale_charset(), "utf-8" );
 +
 +    if(((int) handle) != -1) {
-+	ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
-+	*outbuf = '\0';
-+	iconv_close( handle );
-+	std::string return_me = outbuf_save;
-+	return return_me;
++       ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
++       *outbuf = '\0';
++       iconv_close( handle );
++       std::string return_me = outbuf_save;
++       return return_me;
 +    } else {
-+	return instr;
++       return instr;
 +    };
 +}
 +#endif /* HAVE_ICONV_H */
++

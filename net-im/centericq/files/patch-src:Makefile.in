@@ -1,7 +1,7 @@
---- src/Makefile.in.orig	Fri Oct 18 17:57:39 2002
-+++ src/Makefile.in	Fri Oct 18 17:57:55 2002
-@@ -100,3 +100,3 @@
- centericq_LDFLAGS = -L$(top_srcdir)/kkconsui-0.1 -L$(top_srcdir)/kkstrtext-0.1 -L$(top_srcdir)/kksystr-0.1 -L$(top_srcdir)/libicq2000-0.3.3 -L$(top_srcdir)/libmsn-0.1 -L$(top_srcdir)/firetalk-0.1 -L$(top_srcdir)/libyahoo2-0.1
--centericq_LDADD = $(top_srcdir)/src/hooks/libhooks.a  -lkkconsui -lkkstrtext -lkksystr -llibicq2000 -llibmsn -lfiretalk -llibyahoo2  @INTLLIBS@
-+centericq_LDADD = $(top_srcdir)/src/hooks/libhooks.a  -lkkconsui -lkkstrtext -lkksystr -llibicq2000 -llibmsn -lfiretalk -llibyahoo2  @INTLLIBS@ -lintl
+--- src/Makefile.in.orig	Wed Dec 18 10:32:12 2002
++++ src/Makefile.in	Wed Dec 18 10:32:49 2002
+@@ -96,3 +96,3 @@
+ centericq_LDFLAGS = -L$(top_srcdir)/kkconsui-0.1 -L$(top_srcdir)/kkstrtext-0.1 -L$(top_srcdir)/kksystr-0.1 -L$(top_srcdir)/libicq2000-0.4.0 -L$(top_srcdir)/firetalk-0.1 -L$(top_srcdir)/libyahoo2-0.1 -L$(top_srcdir)/libjabber-0.1 -L$(top_srcdir)/connwrap-0.1 -L$(top_srcdir)/blip-0.1
+-centericq_LDADD = $(top_srcdir)/src/hooks/libhooks.a  -lkkconsui -lkkstrtext -lkksystr -llibicq2000 -lfiretalk -llibyahoo2 -llibjabber -lconnwrap -lblip  @INTLLIBS@
++centericq_LDADD = $(top_srcdir)/src/hooks/libhooks.a  -lkkconsui -lkkstrtext -lkksystr -llibicq2000 -lfiretalk -llibyahoo2 -llibjabber -lconnwrap -lblip  @INTLLIBS@ -lintl
  SUBDIRS = hooks
