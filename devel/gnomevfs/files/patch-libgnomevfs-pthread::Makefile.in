@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libgnomevfs-pthread/Makefile.in	2002/01/24 08:42:41	1.1
++++ libgnomevfs-pthread/Makefile.in	2002/01/24 08:43:37
+@@ -207,7 +207,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ LIBS = @LIBS@
+-libgnomevfs_pthread_la_LIBADD = 
++libgnomevfs_pthread_la_LIBADD = $(PTHREAD_LIB)
+ libgnomevfs_pthread_la_OBJECTS =  gnome-vfs-pthread.lo \
+ gnome-vfs-thread-pool.lo gnome-vfs-async-job-map.lo \
+ gnome-vfs-async-ops.lo gnome-vfs-job-slave.lo gnome-vfs-job.lo

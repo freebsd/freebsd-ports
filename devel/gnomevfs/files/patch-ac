@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- modules/Makefile.in.orig	Tue Jan 22 12:42:11 2002
-+++ modules/Makefile.in	Tue Jan 22 13:13:11 2002
+--- modules/Makefile.in.orig	Thu Jan 24 10:25:14 2002
++++ modules/Makefile.in	Thu Jan 24 10:45:26 2002
 @@ -197,7 +197,7 @@
  @HAVE_CDDA_TRUE@CDDA_LTLIBS = libcdda.la
  @HAVE_CDDA_FALSE@CDDA_LTLIBS = 
  
 -module_flags = -export_dynamic -avoid-version
-+module_flags = -export_dynamic -avoid-version -module
++module_flags = -export_dynamic -avoid-version -module $(PTHREAD_LIB)
  modulesdir = $(libdir)/vfs/modules
  
  modules_LTLIBRARIES =  	$(CDDA_LTLIBS)					libextfs.la					libfile.la					libvfs-test.la					$(HTTP_LTLIBS)					libbzip2.la					libgzip.la					libftp.la					libnntp.la					libvfs-pipe.la					libvfs-translate.la				libdesktop.la					$(NULL)
