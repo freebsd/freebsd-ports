@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	2.3.STABLE1
+# Version required:	2.3.STABLE2
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	squid-2.3.STABLE1
+DISTNAME=	squid-2.3.STABLE2
 PKGNAME=	squid-2.3
 CATEGORIES=	www
 MASTER_SITES=  \
@@ -15,6 +15,10 @@ MASTER_SITES=  \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
 EXTRACT_SUFX=	-src.tar.gz
+
+PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
+PATCHFILES=	squid-2.3.stable2-EOF_in_cf.data.pre.patch \
+		squid-2.3.stable2-USE_DNSSERVER.patch
 
 MAINTAINER=	peter@freebsd.org
 
@@ -27,6 +31,12 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 NO_LATEST_LINK=	yes
+
+.if defined(PATCH_DEBUG)
+PATCH_DIST_ARGS?=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
+.else
+PATCH_DIST_ARGS?=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
+.endif
 
 # Some other configure options..
 #  - Compile and use the malloc package from Doug Lea

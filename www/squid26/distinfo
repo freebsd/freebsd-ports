@@ -1,1 +1,3 @@
-MD5 (squid2.3/squid-2.3.STABLE1-src.tar.gz) = b575dcc0bbb98c806efee15b9963630f
+MD5 (squid2.3/squid-2.3.STABLE2-src.tar.gz) = ba90c12907e5dd8a29bf824bde2f7755
+MD5 (squid2.3/squid-2.3.stable2-EOF_in_cf.data.pre.patch) = aaa8ba879452b23c4fa5a4da6bdce5ed
+MD5 (squid2.3/squid-2.3.stable2-USE_DNSSERVER.patch) = ab04e0f9681dfdb62a813502cc936f98
