@@ -1,13 +1,11 @@
-This is Skk-8.6, a Japanese input method based emacs-lisp for mule.
-When you use this, you can choose to use skkserv or not.
-If you use skkserv, you must add a following entry into
-/etc/services file or NIS/YP services map.
+SKK (Simple Kana Kanji Convertor) is a very fast and efficient Japanese input
+method system, written in emacs-lisp. SKK runs on NEmacs (Japanized Emacs18),
+Mule (MULtilingual Emacs), and Demacs (DOS version of Emacs18/NEmacs).
 
-skkserv		1178/tcp
+Check <URL:http://skk.kuis.kyoto-u.ac.jp/skk/> also, Home Page of SKK.
 
-This also include some patches for FreeBSD or others.
-(Fix a bug of emacs-lisp and change make rule.)
-If there are any problem in this patches, please know me via E-mail.
+When you select 'skkserv' as a conversion server, add
 
-Hidekazu Kuroki
-(hidekazu@cs.titech.ac.jp)
+	skkserv		1178/tcp
+
+to your /etc/services (or 'services' NIS database).
