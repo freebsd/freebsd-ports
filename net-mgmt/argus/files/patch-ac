@@ -1,0 +1,29 @@
+--- server/ArgusOutput.c~	Thu Mar 15 22:19:42 2001
++++ server/ArgusOutput.c	Fri Apr  6 17:08:28 2001
+@@ -365,5 +365,5 @@
+    sigignore(SIGINT);
+    sigignore(SIGTERM);
+-   sigignore(SIGCHLD);
++// sigignore(SIGCHLD);
+ #else
+    (void) signal (SIGPIPE, SIG_IGN);
+@@ -371,9 +371,10 @@
+    (void) signal (SIGINT,  SIG_IGN);
+    (void) signal (SIGTERM, SIG_IGN);
+-   (void) signal (SIGCHLD, SIG_IGN);
++// (void) signal (SIGCHLD, SIG_IGN);
+ #endif
+ 
+    (void) signal (SIGUSR1, (void (*)(int)) ArgusUsr1Sig);
+    (void) signal (SIGUSR2, (void (*)(int)) ArgusUsr2Sig);
++   (void) signal (SIGCHLD, (void (*)(int)) ArgusChildExit);
+ 
+    if ((ArgusInputSocket = ArgusNewSocket (lfd)) != NULL) {
+@@ -436,4 +437,7 @@
+             }
+ 
++            if (ArgusUpdateTime())
++               ArgusHandleData(NULL, NULL, 0, NULL);
++
+             if ((kill (ArgusParentPid, 0)) < 0) {
+                ArgusOutputCleanUp(0);
