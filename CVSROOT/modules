@@ -4752,6 +4752,7 @@ papers		src/share/doc/papers
 par		ports/textproc/par
 paraget		ports/ftp/paraget
 paragui		ports/x11-toolkits/paragui
+parchive	ports/archivers/parchive
 pardiff		ports/textproc/pardiff
 pari		ports/math/pari
 parmetis	ports/math/parmetis
