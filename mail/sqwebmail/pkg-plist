@@ -23,8 +23,8 @@ libexec/sqwebmail/sqwebmail/makemime
 libexec/sqwebmail/sqwebmail/pcpd
 libexec/sqwebmail/sqwebmail/reformime
 libexec/sqwebmail/sqwebmail/sqwebmaild
+libexec/sqwebmail/sqwebmaild.rc
 %%AUTHDFLAG%%share/sqwebmail/authdaemonrc.dist
-share/sqwebmail/authmodulelist
 %%LDAPFLAG%%share/sqwebmail/authldaprc.dist
 %%MYSQLFLAG%%share/sqwebmail/authmysqlrc.dist
 %%PGSQLFLAG%%share/sqwebmail/authpgsqlrc.dist
@@ -82,6 +82,7 @@ share/sqwebmail/html/en-us/spellchk.html
 share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
 share/sqwebmail/nodsn
+share/sqwebmail/sbin/courierlogger
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
 share/sqwebmail/sbin/sharedindexinstall
@@ -90,6 +91,7 @@ share/sqwebmail/sbin/userdb
 share/sqwebmail/sbin/userdbpw
 share/sqwebmail/sbin/vchkpw2userdb
 share/sqwebmail/sendit.sh
+share/sqwebmail/sqwebmaild.dist
 share/sqwebmail/webgpg
 @dirrm share/sqwebmail/var/calendar/public
 @dirrm share/sqwebmail/var/calendar/private

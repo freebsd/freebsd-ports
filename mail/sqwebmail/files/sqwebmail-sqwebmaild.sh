@@ -7,10 +7,10 @@ fi
 
 case "$1" in
 start)
-	${PREFIX}/libexec/sqwebmail/sqwebmail/sqwebmaild start > /dev/null && echo -n ' sqwebmaild'
+	${PREFIX}/libexec/sqwebmail/sqwebmaild.rc start && echo -n ' sqwebmaild'
 	;;
 stop)
-	${PREFIX}/libexec/sqwebmail/sqwebmail/sqwebmaild stop > /dev/null && echo -n ' sqwebmaild'
+	${PREFIX}/libexec/sqwebmail/sqwebmaild.rc stop && echo -n ' sqwebmaild'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
