@@ -1241,3 +1241,4 @@ misc/sword-modules||2004-08-17|Obsoleted
 print/tipa|print/latex-tipa|2004-08-18|Port renamed for better categorisation
 x11-toolkits/notif2|x11-themes/notif2|2004-08-20|Better category
 www/apache13-fp||2004-08-20|Obsolete and unfixed security vulnerabilities
+www/mod_csacek||2004-08-20|Obsolete and broken
