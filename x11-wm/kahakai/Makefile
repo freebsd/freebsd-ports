@@ -11,8 +11,6 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-DEPRECATED=	"Development ceased"
-
 MAINTAINER=	xcas@cox.net
 COMMENT=	Kahakai window manager
 
@@ -22,6 +20,8 @@ LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 RUN_DEPENDS=	\
 	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
+
+DEPRECATED=	"Development ceased"
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
