@@ -1,0 +1,10 @@
+--- src/set.c.orig	Thu Nov 25 01:20:02 1999
++++ src/set.c	Thu Nov 25 01:20:12 1999
+@@ -49,7 +49,6 @@
+ #include "set.h"
+ 
+ #include <X11/cursorfont.h>
+-#include <X11/Xaw3d/Form.h>
+ 
+ /* ---------------------------------------------------------------------------
+  * output of cursor position

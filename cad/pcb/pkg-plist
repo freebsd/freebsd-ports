@@ -1,4 +1,5 @@
 bin/pcb
+lib/X11/app-defaults/Pcb
 lib/X11/pcb/default_font
 lib/X11/pcb/pcblib
 lib/X11/pcb/pcblib.contents
