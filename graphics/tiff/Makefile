@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.7.0
-PORTREVISION=	2
+PORTVERSION=	3.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://dl1.maptools.org/dl/libtiff/
@@ -37,80 +36,85 @@ MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
 	ppm2tiff.1 ras2tiff.1 raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 \
 	thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 \
 	tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
-	tiffsplit.1 tiffsv.1
-MAN3=	TIFFClose.3t TIFFDataWidth.3t TIFFError.3t TIFFFlush.3t \
-	TIFFGetField.3t TIFFOpen.3t TIFFPrintDirectory.3t TIFFRGBAImage.3t \
-	TIFFReadDirectory.3t TIFFReadEncodedStrip.3t TIFFReadEncodedTile.3t \
-	TIFFReadRGBAImage.3t TIFFReadRGBAStrip.3t TIFFReadRGBATile.3t \
-	TIFFReadRawStrip.3t TIFFReadRawTile.3t TIFFReadScanline.3t \
-	TIFFReadTile.3t TIFFSetDirectory.3t TIFFSetField.3t TIFFWarning.3t \
-	TIFFWriteDirectory.3t TIFFWriteEncodedStrip.3t \
-	TIFFWriteEncodedTile.3t TIFFWriteRawStrip.3t TIFFWriteRawTile.3t \
-	TIFFWriteScanline.3t TIFFWriteTile.3t TIFFbuffer.3t TIFFcodec.3t \
-	TIFFcolor.3t TIFFmemory.3t TIFFquery.3t TIFFsize.3t TIFFstrip.3t \
-	TIFFswab.3t TIFFtile.3t libtiff.3t
-MLINKS=	TIFFError.3t          TIFFSetErrorHandler.3t \
-	TIFFFlush.3t          TIFFFlushData.3t \
-	TIFFGetField.3t       TIFFGetFieldDefaulted.3t \
-	TIFFGetField.3t       TIFFVGetField.3t \
-	TIFFGetField.3t       TIFFVGetFieldDefaulted.3t \
-	TIFFOpen.3t           TIFFFdOpen.3t \
-	TIFFOpen.3t           TIFFClientOpen.3t \
-	TIFFRGBAImage.3t      TIFFRGBAImageOK.3t \
-	TIFFRGBAImage.3t      TIFFRGBAImageBegin.3t \
-	TIFFRGBAImage.3t      TIFFRGBAImageGet.3t \
-	TIFFRGBAImage.3t      TIFFRGBAImageEnd.3t \
-	TIFFRGBAImage.3t      TIFFReadRGBAImageOriented.3t \
-	TIFFSetDirectory.3t   TIFFSetSubDirectory.3t \
-	TIFFSetField.3t       TIFFVSetField.3t \
-	TIFFWarning.3t        TIFFSetWarningHandler.3t \
-	TIFFWriteDirectory.3t TIFFRewriteDirectory.3t \
-	TIFFbuffer.3t         TIFFReadBufferSetup.3t \
-	TIFFbuffer.3t         TIFFWriteBufferSetup.3t \
-	TIFFcodec.3t          TIFFFindCODEC.3t \
-	TIFFcodec.3t          TIFFRegisterCODEC.3t \
-	TIFFcodec.3t          TIFFUnRegisterCODEC.3t \
-	TIFFmemory.3t         TIFFfree.3t \
-	TIFFmemory.3t         TIFFmalloc.3t \
-	TIFFmemory.3t         TIFFmemcmp.3t \
-	TIFFmemory.3t         TIFFmemcpy.3t \
-	TIFFmemory.3t         TIFFmemset.3t \
-	TIFFmemory.3t         TIFFrealloc.3t \
-	TIFFquery.3t          TIFFCurrentDirectory.3t \
-	TIFFquery.3t          TIFFCurrentRow.3t \
-	TIFFquery.3t          TIFFCurrentStrip.3t \
-	TIFFquery.3t          TIFFCurrentTile.3t \
-	TIFFquery.3t          TIFFFileName.3t \
-	TIFFquery.3t          TIFFFileno.3t \
-	TIFFquery.3t          TIFFGetMode.3t \
-	TIFFquery.3t          TIFFIsTiled.3t \
-	TIFFquery.3t          TIFFIsByteSwapped.3t \
-	TIFFquery.3t          TIFFIsUpSampled.3t \
-	TIFFquery.3t          TIFFIsMSB2LSB.3t \
-	TIFFquery.3t          TIFFLastDirectory.3t \
-	TIFFsize.3t           TIFFScanlineSize.3t \
-	TIFFstrip.3t          TIFFComputeStrip.3t \
-	TIFFstrip.3t          TIFFDefaultStripSize.3t \
-	TIFFstrip.3t          TIFFNumberOfStrips.3t \
-	TIFFstrip.3t          TIFFStripSize.3t \
-	TIFFstrip.3t          TIFFVStripSize.3t \
-	TIFFswab.3t           TIFFReverseBits.3t \
-	TIFFswab.3t           TIFFSwabArrayOfLong.3t \
-	TIFFswab.3t           TIFFSwabArrayOfShort.3t \
-	TIFFswab.3t           TIFFSwabLong.3t \
-	TIFFswab.3t           TIFFSwabShort.3t \
-	TIFFtile.3t           TIFFCheckTile.3t \
-	TIFFtile.3t           TIFFComputeTile.3t \
-	TIFFtile.3t           TIFFDefaultTileSize.3t \
-	TIFFtile.3t           TIFFNumberOfTiles.3t \
-	TIFFtile.3t           TIFFTileSize.3t \
-	TIFFtile.3t           TIFFTileRowSize.3t \
-	TIFFtile.3t           TIFFVTileSize.3t
+	tiffset.1 tiffsplit.1 tiffsv.1
+MAN3=	TIFFClose.3tiff TIFFDataWidth.3tiff TIFFError.3tiff TIFFFlush.3tiff \
+	TIFFGetField.3tiff TIFFOpen.3tiff TIFFPrintDirectory.3tiff \
+	TIFFRGBAImage.3tiff TIFFReadDirectory.3tiff \
+	TIFFReadEncodedStrip.3tiff TIFFReadEncodedTile.3tiff \
+	TIFFReadRGBAImage.3tiff TIFFReadRGBAStrip.3tiff \
+	TIFFReadRGBATile.3tiff TIFFReadRawStrip.3tiff TIFFReadRawTile.3tiff \
+	TIFFReadScanline.3tiff TIFFReadTile.3tiff TIFFSetDirectory.3tiff \
+	TIFFSetField.3tiff TIFFWarning.3tiff TIFFWriteDirectory.3tiff \
+	TIFFWriteEncodedStrip.3tiff TIFFWriteEncodedTile.3tiff \
+	TIFFWriteRawStrip.3tiff TIFFWriteRawTile.3tiff \
+	TIFFWriteScanline.3tiff TIFFWriteTile.3tiff TIFFbuffer.3tiff \
+	TIFFcodec.3tiff TIFFcolor.3tiff TIFFmemory.3tiff TIFFquery.3tiff \
+	TIFFsize.3tiff TIFFstrip.3tiff TIFFswab.3tiff TIFFtile.3tiff \
+	libtiff.3tiff
+MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
+	TIFFFlush.3tiff          TIFFFlushData.3tiff \
+	TIFFGetField.3tiff       TIFFGetFieldDefaulted.3tiff \
+	TIFFGetField.3tiff       TIFFVGetField.3tiff \
+	TIFFGetField.3tiff       TIFFVGetFieldDefaulted.3tiff \
+	TIFFOpen.3tiff           TIFFFdOpen.3tiff \
+	TIFFOpen.3tiff           TIFFClientOpen.3tiff \
+	TIFFRGBAImage.3tiff      TIFFRGBAImageOK.3tiff \
+	TIFFRGBAImage.3tiff      TIFFRGBAImageBegin.3tiff \
+	TIFFRGBAImage.3tiff      TIFFRGBAImageGet.3tiff \
+	TIFFRGBAImage.3tiff      TIFFRGBAImageEnd.3tiff \
+	TIFFRGBAImage.3tiff      TIFFReadRGBAImageOriented.3tiff \
+	TIFFSetDirectory.3tiff   TIFFSetSubDirectory.3tiff \
+	TIFFSetField.3tiff       TIFFVSetField.3tiff \
+	TIFFWarning.3tiff        TIFFSetWarningHandler.3tiff \
+	TIFFWriteDirectory.3tiff TIFFRewriteDirectory.3tiff \
+	TIFFbuffer.3tiff         TIFFReadBufferSetup.3tiff \
+	TIFFbuffer.3tiff         TIFFWriteBufferSetup.3tiff \
+	TIFFcodec.3tiff          TIFFFindCODEC.3tiff \
+	TIFFcodec.3tiff          TIFFRegisterCODEC.3tiff \
+	TIFFcodec.3tiff          TIFFUnRegisterCODEC.3tiff \
+	TIFFmemory.3tiff         TIFFfree.3tiff \
+	TIFFmemory.3tiff         TIFFmalloc.3tiff \
+	TIFFmemory.3tiff         TIFFmemcmp.3tiff \
+	TIFFmemory.3tiff         TIFFmemcpy.3tiff \
+	TIFFmemory.3tiff         TIFFmemset.3tiff \
+	TIFFmemory.3tiff         TIFFrealloc.3tiff \
+	TIFFquery.3tiff          TIFFCurrentDirectory.3tiff \
+	TIFFquery.3tiff          TIFFCurrentRow.3tiff \
+	TIFFquery.3tiff          TIFFCurrentStrip.3tiff \
+	TIFFquery.3tiff          TIFFCurrentTile.3tiff \
+	TIFFquery.3tiff          TIFFFileName.3tiff \
+	TIFFquery.3tiff          TIFFFileno.3tiff \
+	TIFFquery.3tiff          TIFFGetMode.3tiff \
+	TIFFquery.3tiff          TIFFIsTiled.3tiff \
+	TIFFquery.3tiff          TIFFIsByteSwapped.3tiff \
+	TIFFquery.3tiff          TIFFIsUpSampled.3tiff \
+	TIFFquery.3tiff          TIFFIsMSB2LSB.3tiff \
+	TIFFquery.3tiff          TIFFLastDirectory.3tiff \
+	TIFFsize.3tiff           TIFFScanlineSize.3tiff \
+	TIFFstrip.3tiff          TIFFComputeStrip.3tiff \
+	TIFFstrip.3tiff          TIFFDefaultStripSize.3tiff \
+	TIFFstrip.3tiff          TIFFNumberOfStrips.3tiff \
+	TIFFstrip.3tiff          TIFFStripSize.3tiff \
+	TIFFstrip.3tiff          TIFFVStripSize.3tiff \
+	TIFFswab.3tiff           TIFFReverseBits.3tiff \
+	TIFFswab.3tiff           TIFFSwabArrayOfLong.3tiff \
+	TIFFswab.3tiff           TIFFSwabArrayOfShort.3tiff \
+	TIFFswab.3tiff           TIFFSwabLong.3tiff \
+	TIFFswab.3tiff           TIFFSwabShort.3tiff \
+	TIFFtile.3tiff           TIFFCheckTile.3tiff \
+	TIFFtile.3tiff           TIFFComputeTile.3tiff \
+	TIFFtile.3tiff           TIFFDefaultTileSize.3tiff \
+	TIFFtile.3tiff           TIFFNumberOfTiles.3tiff \
+	TIFFtile.3tiff           TIFFTileSize.3tiff \
+	TIFFtile.3tiff           TIFFTileRowSize.3tiff \
+	TIFFtile.3tiff           TIFFVTileSize.3tiff
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} \
-		-e 's=-version-number .*$$=-version-number 4:0:0=' \
+		-e 's|-version-number .*$$|-version-number 4:0:0|' \
 		${WRKSRC}/libtiff/Makefile.in
+	${REINPLACE_CMD} -e 's|^docfiles|no-docfiles|' \
+		-e 's|man html|man|' ${WRKSRC}/Makefile.in
 
 .if !defined(NOPORTDOCS)
 post-install:
