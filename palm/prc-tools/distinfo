@@ -1,1 +1,4 @@
-MD5 (prc-tools-2.0.tar.gz) = cd22ec500ebb3ec90fd8a8da53c6e39a
+MD5 (prc-tools-2.2.tar.gz) = 91a9a04d2042fcf673ff212a3ffd7ab9
+MD5 (binutils-2.12.1.tar.bz2) = f67fe2e8065c5683bc34782de131f5d3
+MD5 (gdb-5.0.tar.bz2) = b2720def719fd024e380793d9084da2a
+MD5 (gcc-2.95.3.tar.bz2) = 87ee083a830683e2aaa57463940a0c3c
