@@ -8,7 +8,7 @@ share/applnk/Settings/LookNFeel/transmenu.desktop
 share/apps/kdisplay/color-schemes/Liquid.kcsrc
 share/apps/kstyle/themes/liquid.themerc
 share/apps/kwin/liquid.desktop
-@dirrm share/apps/kwin/
+@dirrm share/apps/kwin
 @dirrm share/apps/kstyle/themes
 @dirrm share/apps/kdisplay/color-schemes
 @dirrm share/applnk/Settings/LookNFeel
