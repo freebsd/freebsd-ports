@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.8.12
+PORTVERSION=	0.8.16
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -45,10 +45,11 @@ do-build:
 do-install:
 	(cd ${WRKSRC} && ${SETENV} INSTALL_ROOT=${PREFIX} \
 	    MAN_DIR=${PREFIX}/man DOC_DIR=${DOCSDIR} \
-	    INFO_DIR=${DOCSDIR}/info ${SH} install.sh)
-.if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/doc/html && ${FIND} . -print | \
-	    ${CPIO} -pdmu -R${DOCOWN}:${DOCGRP} ${DOCSDIR}/html)
+	    INFO_DIR=${DOCSDIR}/info NO_DOCS=${NO_DOCS} \
+	    ${SH} install.sh)
+.if defined(NOPORTDOCS)
+	# sbcl creates these directories even when they're not needed
+	${RMDIR} ${DOCSDIR}/html ${DOCSDIR}/info
 .endif
 
 .include <bsd.port.mk>
