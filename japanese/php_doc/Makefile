@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.20011116
 CATEGORIES=	japanese lang
 PHP_LANG=	ja
 MASTERDIR=	${.CURDIR}/../../lang/php_doc
