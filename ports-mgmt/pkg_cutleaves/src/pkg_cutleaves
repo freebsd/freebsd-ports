@@ -30,19 +30,21 @@
 # Interactive script for deinstalling "leaf" packages;
 # requires the portupgrade tools
 #
-# Syntax: pkg_cutleaves [-c] [-l] [-x] [-R]
+# Syntax: pkg_cutleaves [-c] [-F] [-l] [-R] [-x]
 # Options:
 #   -c: Show comments, too; only works with '-l' (ignored otherwise)
+#   -F: Fix package db after each deinstallation run (via 'pkgdb -F')
 #   -l: List leaf packages only, don't ask if they should be deinstalled
-#   -x: Honor exclude list in $excludefile
 #   -R: Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall'
+#   -x: Honor exclude list in $excludefile
 
 use strict;
 
 my $dbdir = "/var/db/pkg";
 my $excludefile = "/usr/local/etc/pkg_leaves.exclude";
 my $pkgdeinstall = "/usr/local/sbin/pkg_deinstall";
-my ($opt_comments, $opt_listonly, $opt_excludelist, $opt_recursive);
+my @pkgdb_args = ("/usr/local/sbin/pkgdb", "-F");
+my ($opt_comments, $opt_listonly, $opt_excludelist, $opt_recursive, $opt_pkgdb);
 my $exclpattern;
 
 # Read the exclude list if the file exists
@@ -84,7 +86,7 @@ sub get_leaves {
 		my $reqlist = $path . '/+REQUIRED_BY';
 		my $commentfile = $path . '/+COMMENT';
 		# Exclude non-directories, "." and ".."
-		if (($file ne ".") && ($file ne "..") && (-d $path) && (!-e $reqlist)) {
+		if (($file ne ".") && ($file ne "..") && (-d $path) && (!-s $reqlist)) {
 			# Exclude packages matching exclude pattern, if requested
 			unless ($file =~ m/$excl_pattern/) {
 				# Read package's short description/comment
@@ -107,17 +109,20 @@ sub get_leaves {
 # Examine command line arguments
 while(@ARGV) {
 	my $arg = shift(@ARGV);
-	if ($arg eq "-x") {
-		$opt_excludelist = 1;
+	if ($arg eq "-c") {
+		$opt_comments = 1;
+	}
+	elsif ($arg eq "-F") {
+		$opt_pkgdb = 1;
 	}
 	elsif ($arg eq "-l") {
 		$opt_listonly = 1;
 	}
-	elsif ($arg eq "-c") {
-		$opt_comments = 1;
-	}
 	elsif ($arg eq "-R") {
 		$opt_recursive = 1;
+	}
+	elsif ($arg eq "-x") {
+		$opt_excludelist = 1;
 	} else {
 		warn "Unrecognized command line argument $arg ignored.\n";
 	}
@@ -149,8 +154,11 @@ if ($opt_listonly) {
 	# Loop while the user wants to
 	my $again = "y";
 	ROUND: while($again eq "y") {
-		# Get list of packages and put them into an array
+		# Get list of leaf packages and put them into a hash
 		my %leaves = get_leaves($dbdir, $exclpattern);
+		# Always start with an empty list of leaves to cut
+		%leavestocut = ();
+
 		LEAVESLOOP: foreach my $leaf (sort keys %leaves) {
 			if (!$leavestokeep{$leaf}) {
 				print "$leaf - $leaves{$leaf}\n";
@@ -175,10 +183,14 @@ if ($opt_listonly) {
 				}
 			}
 		} # LEAVESLOOP
-		
+
+		# Initialize 'progress meter'
+		my $ncuts = keys %leavestocut;
+		my $noff = 0;
 		# loop through packages marked for removal and pkg_deinstall them
 		foreach my $leaf (sort keys %leavestocut) {
-			print "Deleting $leaf.\n";
+			$noff++;
+			print "Deleting $leaf, package $noff of $ncuts.\n";
 			my @deinstall_args;
 			if ($opt_recursive) {
 				@deinstall_args = ($pkgdeinstall, '-R', $leaf);
@@ -186,22 +198,32 @@ if ($opt_listonly) {
 				@deinstall_args = ($pkgdeinstall, $leaf);
 			}
 			if ((my $status = system(@deinstall_args) >> 8) != 0) {
-				print "\nError: pkg_deinstall returned $status - exiting, fix this first.\n\n";
+				print "\npkg_cutleaves: pkg_deinstall returned $status - exiting, fix this first.\n\n";
 				last ROUND;
 			}
 			@cutleaves = (@cutleaves, $leaf);
-			delete $leavestocut{$leaf};
 		}
-		
-		print "Once more ((y)es/[no])? ";
+
+		# Run 'pkgdb -F' if requested
+		if ($opt_pkgdb) {
+			print "Running 'pkgdb -F'.\n";
+			if ((my $status = system(@pkgdb_args) >> 8) != 0) {
+				print "\npkg_cutleaves: pkgdb returned $status - exiting, fix this first.\n\n";
+				last ROUND;
+			}
+		}
+
+		print "Go on with new leaf packages ((y)es/[no])? ";
 		$again = substr(lc(<STDIN>), 0, 1);
 		print "\n";
 	} # ROUND
 
-	# print list of removed packages, sorted lexically
+	# print list of removed packages, sorted lexically, and their number
 	print "** Deinstalled packages:\n";
 	foreach my $cutleaf (sort @cutleaves) {
 		print "$cutleaf\n";
 	}
+	my $noff = @cutleaves;
+	print "** Number of deinstalled packages: $noff\n";
 }
 

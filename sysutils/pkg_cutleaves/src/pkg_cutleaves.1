@@ -2,7 +2,7 @@
 .SH NAME
 pkg_cutleaves \- deinstall 'leaf' packages
 .SH SYNOPSIS
-.B pkg_cutleaves [-c] [-l] [-x] [-R]
+.B pkg_cutleaves [-c] [-F] [-l] [-R] [-x]
 .SH DESCRIPTION
 .B pkg_cutleaves
 finds installed 'leaf' packages, i.e. packages that are not referenced
@@ -21,14 +21,19 @@ running pkg_cutleaves.
 .IP -c
 When listing leaf packages, also print their comments/short
 descriptions. Will be ignored unless the '-l' parameter is given, too.
+.IP -F
+Run 'pkgdb -F' after each deinstallation run, to make sure the package
+registry database is up to date. (Note: This is mostly for convenience;
+it shouldn't be necessary to run 'pkgdb -F' after each run, but it
+doesn't hurt, either.)
 .IP -l
 List leaf packages only, one per line, and don't ask for anything to be
 deinstalled.
-.IP -x
-Exclude packages matching expressions given in the exclude file.
 .IP -R
 Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall', so packages the
 removed leaf packages depend(ed) on will be deinstalled, too.
+.IP -x
+Exclude packages matching expressions given in the exclude file.
 .SH FILES
 .I /usr/local/etc/pkg_leaves.exclude
 .RS
@@ -40,4 +45,4 @@ exclude all packages with names starting with 'XFree86').
 .SH AUTHOR
 Stefan Walter <sw@gegenunendlich.de>
 .SH SEE ALSO
-pkg_deinstall(1), portsclean(1)
+pkg_deinstall(1), pkgdb(1), portsclean(1)

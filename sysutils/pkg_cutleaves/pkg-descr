@@ -1,10 +1,3 @@
 pkg_cutleaves finds installed 'leaf' packages, i.e. packages that are
 not referenced by any other installed package, and lets you decide for
 each one if you want to keep or deinstall it (via pkg_deinstall(1)).
-
-Usage: pkg_cutleaves [-l] [-x] [-R]
-  -l: List leaf packages only, one per line, and don't ask for anything
-      to be deinstalled.
-  -x: Exclude packages matching expressions given in the exclude file.
-  -R: Run 'pkg_deinstall -R' instead of plain 'pkg_deinstall', so packages
-      the removed leaf packages depend(ed) on will be deinstalled, too.
