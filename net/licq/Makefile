@@ -24,6 +24,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+# workaround for installed autoconf/automake
+CONFIGURE_ARGS+=--program-transform-name=s,y,y,
+
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=--enable-socks5
 .if defined(WITH_DANTE)
