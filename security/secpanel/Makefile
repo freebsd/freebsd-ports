@@ -7,7 +7,7 @@
 
 PORTNAME=	secpanel
 PORTVERSION=	0.41
-CATEGORIES=	security
+CATEGORIES=	security tcl84 tk84
 MASTER_SITES=	http://www.pingx.net/secpanel/
 
 MAINTAINER=	petef@FreeBSD.org
