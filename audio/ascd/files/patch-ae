@@ -1,15 +1,16 @@
---- Imakefile.orig	Sun Sep  5 09:24:23 1999
-+++ Imakefile	Sat Sep 25 23:52:18 1999
-@@ -6,10 +6,10 @@
+--- Imakefile.orig	Sun Sep  5 08:24:23 1999
++++ Imakefile	Wed Aug  2 04:41:16 2000
+@@ -5,11 +5,10 @@
+ BINDIR		= CBINDIR
  MANDIR		= CMANDIR
  THEMESDIR	= CTHDIR
- MOREFLAGS	= -I/usr/local/include -I/usr/X11R6/include -I.
+-MOREFLAGS	= -I/usr/local/include -I/usr/X11R6/include -I.
 -CCOPTIONS	= $(MOREFLAGS)
-+CCOPTIONS	= -O0 $(MOREFLAGS)
++EXTRA_INCLUDES	= -I.
  SYS_LIBRARIES	= $(XLIB) -lXpm
  
 -LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
-+LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/X11R6/lib
++LOCAL_LIBRARIES = -lworkman
  
  SRCS_OPT1 =
  SRCS_OPT2 =

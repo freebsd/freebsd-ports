@@ -16,17 +16,21 @@ MAINTAINER=	jim@FreeBSD.org
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
+
 USE_IMAKE=	yes
 USE_XPM=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	default
+
 DATAFILES=	ascd-0.13pr6-themes.tgz
 THEMESDIR=	ascd-0.13pr6-themes
 
 MAN1=		ascd.1
 
 post-patch:
-	@${LN} -fs ${WRKSRC}/misc/default ${WRKSRC}/default
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		${WRKSRC}/misc/config.h.default > ${WRKSRC}/config.h
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		${WRKSRC}/misc/dirs.h.default > ${WRKSRC}/dirs.h
+	@${CAT} ${WRKSRC}/version.h >> ${WRKSRC}/config.h
 
 post-install:
 	@${CP} ${FILESDIR}/install ${WRKDIR}/${THEMESDIR}
