@@ -1,0 +1,25 @@
+--- parse/Makefile.orig	Tue Nov 11 14:58:11 2003
++++ parse/Makefile	Tue Nov 11 15:00:26 2003
+@@ -1,7 +1,7 @@
+ JOBJS=../libs/JsStr.o ../libs/JsStrOS.o ../libs/JsStrCP.o 
+ MJOBJS=../libs/MaraHash.o
+ POBJECTS=ParseMaraRc.o ParseCsv1.o ParseIpAcl.o
+-DOBJECTS=../dns/Queries.o ../dns/Compress.o ../dns/bobbit.o ../dns/Decompress.o ../server/timestamp.o
++DOBJECTS=../dns/Queries.o ../dns/Compress.o ../dns/bobbit.o ../dns/Decompress.o
+ OBJECTS=$(JOBJS) $(MJOBJS) $(POBJECTS) $(DOBJECTS)
+ EXECS=parsetest parsetest2
+ 
+@@ -25,9 +25,9 @@
+ ParseIpAcl.o: ParseIpAcl.c ../libs/JsStr.h ../libs/MaraHash.h ../MaraDns.h
+ 	$(CC) -c $(FLAGS) -o ParseIpAcl.o ParseIpAcl.c
+ 
+-parsetest: parsetest.c $(OBJECTS) 
+-	$(CC) $(FLAGS) -o parsetest parsetest.c $(OBJECTS) 
++parsetest: parsetest.c $(OBJECTS) ../server/timestamp.o
++	$(CC) $(FLAGS) -o parsetest parsetest.c $(OBJECTS) timestamp.o 
+ 
+-parsetest2: parsetest2.c $(OBJECTS) 
+-	$(CC) $(FLAGS) -o parsetest2 parsetest2.c $(OBJECTS) 
++parsetest2: parsetest2.c $(OBJECTS) ../server/timestamp.o
++	$(CC) $(FLAGS) -o parsetest2 parsetest2.c $(OBJECTS) timestamp.o
+ 
