@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.28.6
+PORTVERSION=	4.29.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
-DISTNAME=	MailScanner-${PORTVERSION}-${PATCHLEVEL}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PATCHLEVEL}
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+	${SITE_PERL}/Convert/BinHex.pm:${PORTSDIR}/converters/p5-Convert-BinHex \
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
@@ -34,10 +35,11 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CONFLICTS=	MailScanner-devel-*
 
+PATCHLEVEL=	1
+
 USE_PERL5=	yes
 
-PATCHLEVEL=	1
-WRKSRC=		${WRKDIR}/MailScanner-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN8=		MailScanner.8
@@ -73,7 +75,8 @@ do-build:
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
 		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
 		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
+		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
 		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \
@@ -107,7 +110,6 @@ do-build:
 .endfor
 
 do-install:
-	#
 	# Step 1: Install libexec files
 	#
 	${MKDIR} ${PREFIX}/libexec/MailScanner
@@ -147,6 +149,7 @@ do-install:
 	# Step 4: Install lib
 	#
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner
+	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
 		${PREFIX}/lib/MailScanner/MailScanner.pm
 	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
