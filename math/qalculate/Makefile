@@ -27,14 +27,10 @@ USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 libgnome
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-# cln is built with gcc 3.3 on FreeBSD 4.x
-USE_GCC=	3.3
+# cln is built with gcc 3.4 on FreeBSD 4.x
+USE_GCC=	3.4
 # in FreeBSD 4.x struct liconv does not contain int_p_cs_precedes
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-FreeBSD4
-# XXX configure script fails to detect gettext on FreeBSD 4.x with gcc 3.3
-PLIST_SUB+=	5X="@comment "
-.else
-PLIST_SUB+=	5X="@comment "
 .endif
 
 .include <bsd.port.post.mk>
