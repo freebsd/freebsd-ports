@@ -28,7 +28,7 @@ SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 gettext		"gettext library support" OFF \
-jstring		"jstring module" OFF \
+japanese	"jstring and mbregex module" OFF \
 YP		"YP/NIS support" OFF \
 BCMath		"BCMath support" OFF \
 ming		"ming library support" OFF \
@@ -162,19 +162,20 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
 			;;
-		\"jstring\")
+		\"japanese\")
 			${CAT} << EOF
 MASTER_SITES+=	ftp://night.fminn.nagano.nagano.jp/php4/
-DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php-4.0RC2_jstring-1.0.tar.gz
-CONFIGURE_ARGS+=--enable-jstring
+DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php4_jstring-20010205.tar.gz php4_mbregex-1.2.tar.gz
+CONFIGURE_ARGS+=--enable-jstring --enable-mbregex
 BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
 BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
-POSTEXTRACT+=	post-extract-jstring
+POSTEXTRACT+=	post-extract-japanese
 
-post-extract-jstring:
-	[ -d \${WRKDIR}/jstring ] && \\
+post-extract-japanese:
+	[ -d \${WRKDIR}/jstring -a \${WRKDIR}/mbregex ] && \\
 	(cd \${WRKSRC}; \\
 	 \${MV} ${WRKDIR}/jstring ext; \\
+	 \${MV} ${WRKDIR}/mbregex ext; \\
 	 \${RM} configure; \\
 	 ./buildconf)
 
