@@ -1,0 +1,20 @@
+--- mediatool/Makefile.in	Tue Sep  7 11:23:18 1999
++++ mediatool/Makefile.in.new	Sun Jan  2 09:40:22 2000
+@@ -150,6 +150,8 @@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_INCLUDES = @X_INCLUDES@
+ X_LDFLAGS = @X_LDFLAGS@
++SOMAJOR ?= 2
++SOMINOR ?= 0
+ all_includes = @all_includes@
+ all_libraries = @all_libraries@
+ install_root = @install_root@
+@@ -188,7 +190,7 @@
+ include_HEADERS = mediatool.h kaudio.h
+ noinst_HEADERS = chunk.h playlist.h
+ 
+-libmediatool_la_LDFLAGS = -version-info 2:0 
++libmediatool_la_LDFLAGS = -version-info $(SOMAJOR):$(SOMINOR) 
+ libmediatool_la_LIBADD = $(LIBCOMPAT)
+ 
+ libmediatool_la_METASOURCES = kaudio.moc

@@ -1,0 +1,18 @@
+--- kdeui/Makefile.in	Tue Sep  7 11:23:16 1999
++++ kdeui/Makefile.in.new	Sun Jan  2 09:30:39 2000
+@@ -150,6 +150,8 @@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_INCLUDES = @X_INCLUDES@
+ X_LDFLAGS = @X_LDFLAGS@
++SOMAJOR ?= 2
++SOMINOR ?= 0
+ all_includes = @all_includes@
+ all_libraries = @all_libraries@
+ install_root = @install_root@
+@@ -179,5 +181,5 @@
+ EXTRA_DIST = $(data_DATA) CHANGES.kdatepicker USERS.kdatepicker
+ 
+ lib_LTLIBRARIES = libkdeui.la
+-libkdeui_la_LDFLAGS = -version-info 2:0  
++libkdeui_la_LDFLAGS = -version-info ${SOMAJOR}:${SOMINOR}
+ 
