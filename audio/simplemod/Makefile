@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simplemod
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://borderworlds.dk/projects/sm/
 
