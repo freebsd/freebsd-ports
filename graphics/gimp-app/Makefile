@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	2.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -73,7 +73,7 @@ PLIST_SUB+=		AA=""
 .if defined(WITHOUT_EXIF)
 CONFIGURE_ARGS+=	--without-libexif
 .else
-LIB_DEPENDS+=		exif.10:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=		exif.12:${PORTSDIR}/graphics/libexif
 .endif
 
 .if defined(WITHOUT_MNG)
