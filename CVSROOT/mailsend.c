@@ -228,10 +228,6 @@ main(int ac, char **av)
 	*s = '\0';
       if ((s = strchr(gecos, ';')))
 	*s = '\0';
-#ifdef EVIL
-      if (strcmp(gecos, "Alfred Perlstein") == 0)
-	strcpy(gecos, "Albert Perlstein");
-#endif
       snprintf(Frombuf, sizeof(Frombuf), "%s <%s@%s>", gecos, pw->pw_name, hostname);
     } else {
       snprintf(Frombuf, sizeof(Frombuf), "%s@%s", pw->pw_name, hostname);	/* From@hostname */
