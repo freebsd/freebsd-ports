@@ -1,0 +1,22 @@
+Dbmail is the name of a group of programs that enable the possiblilty of storing
+and retrieving mail messages from a database (currently MySQL or PostgreSQL).
+
+What are the advantages?
+
+    * Scalability.
+      Dbmail is as scalable as the database that is used for the mail storage.
+    * Manageability.
+      Dbmail is based upon a database. Dbmail can be managed by changing
+      settings in the database (f.e. using PHP/Perl/SQL).
+    * Speed.
+      Dbmail uses very efficient, database specific queries for retrieving mail
+      information. This is much faster then parsing a filesystem.
+    * Security.
+      Dbmail has got nothing to do with the filesystem or interaction with other
+      programs in the Unix environment which need special permissions.  Dbmail
+      is as secure as the database it's based upon.
+    * Flexibility.
+      Changes on a Dbmail system (adding of users, changing passwords etc.) are
+      effective immediately.
+
+WWW: http://www.dbmail.org/

@@ -38,6 +38,7 @@
     SUBDIR += cyrus-imapd
     SUBDIR += cyrus-imapd2
     SUBDIR += cyrus-imapd22
+    SUBDIR += dbmail
     SUBDIR += dcc-dccd
     SUBDIR += demime
     SUBDIR += distribute
