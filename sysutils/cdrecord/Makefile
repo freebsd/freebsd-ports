@@ -3,7 +3,7 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1998/05/13 01:51:02 jmz Exp $
+# $Id: Makefile,v 1.7 1998/10/07 14:46:22 jmz Exp $
 #
 
 DISTNAME=	cdrecord-1.6.1a4
@@ -12,8 +12,6 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
 MAINTAINER=	jmz@FreeBSD.org
-
-RUN_DEPENDS=	mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 MAN1=		cdrecord.1
 USE_GMAKE=	yes
