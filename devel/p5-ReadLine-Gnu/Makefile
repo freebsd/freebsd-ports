@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ReadLine-Gnu
-PORTVERSION=	1.12
+PORTVERSION=	1.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Term
@@ -18,7 +18,6 @@ COMMENT=	Perl 5 module that allows Term::ReadLine to use GNU readline
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Term::ReadLine::Gnu.3
 
 .include <bsd.port.mk>
