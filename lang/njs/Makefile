@@ -7,6 +7,7 @@
 
 PORTNAME=	njs
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.bbassett.net/pub/njs/	\
 		http://www.bbassett.net/njs/	\
@@ -17,7 +18,8 @@ MAINTAINER=	thierry@pompo.net
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-MAKE_ARG=	MAKEINFO="makeinfo --no-split"
+INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--enable-shared
 
 MAN1=	js.1 jsdas.1
 
@@ -26,6 +28,14 @@ post-extract:
 
 post-patch:
 	${PERL} -pi -e 's:=makeinfo:="makeinfo --no-split":g' ${WRKSRC}/configure
+
+pre-configure:
+	@if [ -f ${LOCALBASE}/include/js.h ]; then \
+		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "Conflict: please deinstall the port converters/kdesupport11." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	fi
 
 pre-install:
 .if defined(NOPORTDOCS)
