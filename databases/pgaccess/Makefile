@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	pgaccess
-PORTVERSION=	0.98.4
+PORTVERSION=	0.98.6
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.flex.ro/pub/pgaccess/
 
 MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/pgsql/bin/postmaster:${PORTSDIR}/databases/postgresql\
-		wish8.2:${PORTSDIR}/x11-toolkits/tk82
+		wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 WRKSRC=		${WRKDIR}/pgaccess
 NO_BUILD=		yes
-FETCH_BEFORE_ARGS=	-b
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/pgaccess
