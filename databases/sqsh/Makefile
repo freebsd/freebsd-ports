@@ -6,15 +6,15 @@
 
 PORTNAME=	sqsh
 PORTVERSION=	2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqsh.org/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kiesel@schlund.de
 COMMENT=	Interactive tool for querying Sybase database servers
 
-LIB_DEPENDS=	tds.2:${PORTSDIR}/databases/freetds \
+LIB_DEPENDS=	ct.2:${PORTSDIR}/databases/freetds \
 		intl.5:${PORTSDIR}/devel/gettext
 
 USE_REINPLACE=	yes
