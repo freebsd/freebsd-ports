@@ -1,0 +1,12 @@
+--- fd2ps/Imakefile.orig	Mon Oct  7 01:14:21 2002
++++ fd2ps/Imakefile	Mon Oct  7 01:14:35 2002
+@@ -68,8 +68,8 @@
+ 
+ EXTRA_LIBRARIES	= \
+ 		  $(STATIC) \
+-		  $(IMAGELIB) \
+ 		  $(FORMSLIB) \
++		  $(XPMLIB) \
+ 		  $(SNPLIB) \
+ 		  $(UNSTATIC) \
+ 		  -lm
