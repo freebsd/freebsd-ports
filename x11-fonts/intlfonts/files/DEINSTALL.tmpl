@@ -10,4 +10,9 @@ if [ "x$2" = "xPOST-DEINSTALL" ]; then
 	 echo "to enable this update."
 	 echo "**********************************************************"
 	)
+	[ `wc -c ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir
+	[ `wc -c ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.dir
+	[ `wc -c ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale
+# Remove a backup file made by type1inst
+	rm -f ${PKG_PREFIX}/%%T1_FONTSDIR%%/fonts.scale.bak
 fi

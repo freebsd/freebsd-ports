@@ -1,3 +1,6 @@
+@exec [ -f %D/%%FONTSDIR%%/fonts.dir ] || mv %D/%%FONTSDIR%%/fonts.dir %D/%%FONTSDIR%%/fonts.dir.org
+@exec [ -f %D/%%T1_FONTSDIR%%/fonts.dir ] || mv %D/%%T1_FONTSDIR%%/fonts.dir %D/%%FONTSDIR%%/fonts.dir.org
+@exec [ -f %D/%%T1_FONTSDIR%%/fonts.scale ] || mv %D/%%T1_FONTSDIR%%/fonts.scale %D/%%FONTSDIR%%/fonts.scale.org
 %%FONTSDIR%%/a18rk.pcf.gz
 %%FONTSDIR%%/a18rkb.pcf.gz
 %%FONTSDIR%%/a18rki.pcf.gz
@@ -221,3 +224,4 @@
 %%DOCDIR%%/Emacs.ap
 %%DOCDIR%%/NEWS
 @dirrm %%DOCDIR%%
+@dirrm %%TT_FONTSDIR%%
