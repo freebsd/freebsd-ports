@@ -1,38 +1,15 @@
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gfax.schema > /dev/null || /usr/bin/true
+etc/gconf/schemas/gfax.schema
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gfax.schema > /dev/null || /usr/bin/true
+@unexec %D/share/gnome/gfax/printer-setup.sh --remove
+share/gnome/gfax/printer-setup.sh
+@exec %D/share/gnome/gfax/printer-setup.sh --install
 bin/gfax
-lib/gfax/controller.py
-lib/gfax/en.h
-lib/gfax/fax-g3.profile
-lib/gfax/fax.py
-lib/gfax/file_handler.py
-lib/gfax/gfax.desktop
-lib/gfax/gfax.glade
-lib/gfax/gfax.png
-lib/gfax/gfax.py
-lib/gfax/gfax.spec
-lib/gfax/hfaxlib.py
-lib/gfax/install.sh
-lib/gfax/mgettydruid.glade
-lib/gfax/pixmaps/gfax.png
-lib/gfax/pixmaps/gnome-logo-icon-transparent.png
-lib/gfax/prefs.py
-lib/gfax/prefs_ui.py
-lib/gfax/setup.glade
-lib/gfax/ui.py
-lib/gfax/uninstall.sh
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-share/gnome/apps/Applications/gfax.desktop
-share/gnome/ximian/Programs/Utilities/gfax.desktop
-@dirrm share/gnome/ximian/Programs/Utilities
-@dirrm share/gnome/ximian/Programs
-@dirrm share/gnome/ximian
-@dirrm share/gnome/apps/Applications
-@dirrm share/gnome/apps
-@dirrm share/gnome
-%%PORTDOCS%%%%DOCSDIR%%
-@dirrm lib/gfax/pixmaps
-@dirrm lib/gfax
+bin/gfaxlpr
+bin/mono-gfax.exe
+share/gnome/applications/gfax.desktop
+share/gnome/gfax/GFAX.xml
+share/gnome/gfax/GNOME-GFAX-PS.xml
+share/gnome/gfax/fax-g3.profile
+share/gnome/pixmaps/gfax.png
+@dirrm share/gnome/gfax
