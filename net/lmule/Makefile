@@ -20,7 +20,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-FORBIDDEN=	"Probable format string bug and no longer maintained"
+FORBIDDEN=	"Probable format string bug and no longer maintained, port will be removed after Feb 2"
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier \
