@@ -14,3 +14,4 @@ lib/libsndfile.so.0
 %%PORTDOCS%%share/doc/libsndfile/libsndfile.jpg
 %%PORTDOCS%%share/doc/libsndfile/new_file_type.HOWTO
 %%PORTDOCS%%share/doc/libsndfile/sfinfo.html
+%%PORTDOCS%%@dirrm share/doc/libsndfile
