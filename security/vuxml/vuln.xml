@@ -32,6 +32,56 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2cfb400-1df0-11d9-a859-0050fc56d258">
+    <topic>icecast -- Cross-Site Scripting Vulnerability</topic>
+    <affects>
+      <package>
+	<name>icecast</name>
+	<range><lt>1.3.12_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Caused by improper filtering of HTML code in the
+	  status display, it is possible for a remote user
+	  to execute scripting code in the target user's
+	  browser.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0781</cvename>
+      <url>http://www.securitytracker.com/alerts/2004/Aug/1011047.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-24</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="741c3957-1d69-11d9-a804-0050fc56d258">
+    <topic>icecast -- HTTP header overflow</topic>
+    <affects>
+      <package>
+        <name>icecast2</name>
+	<range><lt>2.0.2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>It is possible to execute remote code simply using
+	HTTP request plus 31 headers followed by a shellcode that will be
+	executed directly.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20040928184943.0a82b6f6.aluigi@autistici.org">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109646043512722</mlist>
+    </references>
+    <dates>
+      <discovery>2004-09-29</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+      
   <vuln vid="20dfd134-1d39-11d9-9be9-000c6e8f12e">
     <topic>freeradius -- denial-of-service vulnerability</topic>
     <affects>
@@ -59,10 +109,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="76301302-1d59-11d9-814e-0001020eed82">
-    <topic>xerces-c2 -- Attribute blowup denial-of-service</topic>
+    <topic>xerces_c -- Attribute blowup denial-of-service</topic>
     <affects>
       <package>
-	<name>xerces-c2</name>
+	<name>xerces_c</name>
         <range><lt>2.6.0</lt></range>
       </package>
     </affects>
@@ -85,7 +135,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-10-02</discovery>
       <entry>2004-10-13</entry>
-      <modified>2004-10-14</modified>
     </dates>
   </vuln>
 
