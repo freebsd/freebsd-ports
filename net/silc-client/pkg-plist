@@ -109,6 +109,18 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/themes/default.theme
+%%SITE_PERL%%/%%PERL_ARCH%%/Irssi.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/UI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Irssi/TextUI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/CodingStyle
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -124,5 +136,8 @@ share/silc/themes/default.theme
 @dirrm share/silc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/silcsim/client
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/TextUI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Irssi/UI
+@unexec rmdir %D%%SITE_PERL%%/%%PERL_ARCH%%/Irssi 2>/dev/null || true
 @unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true
