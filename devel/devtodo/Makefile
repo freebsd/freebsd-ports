@@ -6,27 +6,31 @@
 #
 
 PORTNAME=	devtodo
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://activelysecure.net/~athomas/development/devtodo/download.php?filename=${PORTVERSION}/
-MASTER_SITE_SUBDIR=	petef
+MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
 
 MAINTAINER=	petef@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
+# Note: without this define util/regex.c doesn't compile due to redeclaration
+# of malloc and realloc functions. Adding this define was the simplest
+# (although not elegant) solution.
+CFLAGS+=	-DSTDC_HEADERS
+
 MAN1=	devtodo.1
 MLINKS=	devtodo.1 tda.1 devtodo.1 tdd.1 devtodo.1 tde.1 devtodo.1 tdr.1 \
 	devtodo.1 todo.1
+MANCOMPRESSED=	yes
 
 post-patch:
 	@${PERL} -pi -e 's/^\ttest -f.*todorc.*\n//' ${WRKSRC}/doc/Makefile.in
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/devtodo
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in scripts.sh scripts.tcsh todorc.example
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/examples/devtodo
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${EXAMPLESDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/doc/todorc.example ${PREFIX}/etc/todorc.sample
 
