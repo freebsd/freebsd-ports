@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmms
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-WRKSRC=		${WRKDIR}/gkrellmms2-${PORTVERSION}
+WRKSRC=		${WRKDIR}/gkrellmms
 
 USE_X_PREFIX=	yes
 
