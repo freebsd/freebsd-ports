@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ngircd
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	irc
 MASTER_SITES=	http://download.berlios.de/ngircd/ \
 		ftp://ftp.berlios.de/pub/ngircd/
@@ -14,7 +14,6 @@ MASTER_SITES=	http://download.berlios.de/ngircd/ \
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Free open source daemon for Internet Relay Chat (IRC)
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
