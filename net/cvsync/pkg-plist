@@ -4,6 +4,11 @@ bin/cvsync
 bin/cvsyncd
 bin/rcscan
 bin/rcscmp
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/cvsync.conf
 %%EXAMPLESDIR%%/cvsyncd.conf
 @dirrm %%EXAMPLESDIR%%
