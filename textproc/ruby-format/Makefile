@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	format
-PORTVERSION=	0.9
+PORTVERSION=	0.92
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/
+#MASTER_SITES=	http://www.crhc.uiuc.edu/~rubel/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	FormatR
+DISTNAME=	FormatR-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
