@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache+mod_ssl
-PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}${PVERSION_MODSNMP}${PVERSION_MODACCEL}${PVERSION_MODDEFLATE}
-PORTREVISION=	4
+PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
 CATEGORIES?=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -37,7 +36,7 @@ CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
 VERSION_APACHE=	1.3.31
-VERSION_MODSSL=	2.8.18
+VERSION_MODSSL=	2.8.19
 VERSION_MODSNMP=	1.3.14.12
 VERSION_MODACCEL=	1.0.31
 VERSION_MODDEFLATE=	1.0.21
@@ -180,7 +179,6 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+mod_deflate-1.* \
 		apache+mod_ssl+mod_deflate+ipv6-1.* \
 MODSNMP_SUFFIX=	+mod_snmp
-PVERSION_MODSNMP=	+${VERSION_MODSNMP}
 CONFIGURE_ARGS+=	--activate-module=src/modules/snmp_agt/libsnmp_agt.a
 CFLAGS+=	-DSNMP -DUSE_DB -DSNMP_CONFIG_H -DHARD_VIRTUAL_HOST_MAX=1000 \
 		-DSNMPLOCALONLY
@@ -211,7 +209,6 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+mod_deflate-1.* \
 		apache+mod_ssl+mod_deflate+ipv6-1.*
 MODACCEL_SUFFIX=	+mod_accel
-PVERSION_MODACCEL=	+${VERSION_MODACCEL}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_randban.o \
 		--enable-shared=randban \
 		--activate-module=src/modules/extra/mod_freeze.o \
@@ -241,7 +238,6 @@ CONFLICTS+=	apache+mod_ssl-1.* \
 		apache+mod_ssl+mod_accel-1.* \
 		apache+mod_ssl+mod_accel+ipv6-1.*
 MODDEFLATE_SUFFIX=	+mod_deflate
-PVERSION_MODDEFLATE=	+${VERSION_MODDEFLATE}
 CONFIGURE_ARGS+=	--activate-module=src/modules/extra/mod_deflate.o
 PLIST_FILES+=	%%DOCSDIR%%/mod/mod_deflate.html
 .else
