@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.25 1997/06/26 15:50:06 max Exp $
+# $Id: Makefile,v 1.26 1997/06/30 09:53:44 tg Exp $
 #
 
 DISTNAME=	kaffe-0.9.1
@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}.tgz kaffe-0.9.1-package-biss-net.com.tgz \
 		kaffe-0.9.1-package-javasoft.com.tgz
 
 MAINTAINER=	xaa@stack.nl
+
+RESTRICTED=	"No redistribution of the Java(tm) Development Kit"
+NO_PACKAGE=	${RESTRICTED}
 
 GNU_CONFIGURE=	yes
 MAN1=		kaffe.1
