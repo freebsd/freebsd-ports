@@ -1,14 +1,30 @@
-
-$FreeBSD$
-
---- Makefile.in	2002/10/08 14:58:02	1.1
-+++ Makefile.in	2002/10/08 14:58:10
-@@ -94,7 +94,7 @@
+--- Makefile.in	Wed Jun 25 13:11:13 2003
++++ Makefile.in	Wed Jun 25 18:29:00 2003
+@@ -29,6 +29,7 @@
+ sharedstatedir = @sharedstatedir@
+ localstatedir = @localstatedir@
+ libdir = @libdir@
++libdatadir = $(exec_prefix)/libdata
+ infodir = @infodir@
+ mandir = @mandir@
+ includedir = @includedir@
+@@ -95,8 +96,8 @@
  am__include = @am__include@
  am__quote = @am__quote@
  install_sh = @install_sh@
--SUBDIRS = tools data script lib src devel-docs test
-+SUBDIRS = tools data script lib src devel-docs
+-@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs test
+-@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs test
++@MAINTAINER_MODE_TRUE@SUBDIRS = tools data script lib src devel-docs
++@MAINTAINER_MODE_FALSE@SUBDIRS = tools script lib src devel-docs
  man_MANS = man/enca.1
  
  M4TESTS = \
+@@ -131,7 +132,7 @@
+   $(M4TESTS)
+ 
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdatadir)/pkgconfig
+ pkgconfig_DATA = enca.pc
+ subdir = .
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

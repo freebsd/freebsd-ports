@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	0.10.7
-CATEGORIES=	converters textproc
+PORTVERSION=	0.99.2
+CATEGORIES=	converters textproc russian ukrainian
 MASTER_SITES=	http://physics.muni.cz/~yeti/Ftp/enca/
 
 MAINTAINER=	never@nevermind.kiev.ua
@@ -15,6 +15,7 @@ COMMENT=	A package for detecting encoding of text files
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GNOME=	pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
