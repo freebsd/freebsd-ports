@@ -22,6 +22,12 @@ USE_X_PREFIX=	Yes
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' `${FIND} ${WRKSRC} -name \*.cc -or -name \*.c`
 	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' \
@@ -34,4 +40,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/synaesthesia
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
