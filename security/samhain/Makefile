@@ -38,7 +38,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=	--with-database=mysql \
 			--with-cflags=-I${LOCALBASE}/include/mysql \
 			--with-libs=-L${LOCALBASE}/lib/mysql --enable-xml-log
 .endif
-.if defined(WITH_POSTGRES)
+.if defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--with-database=postgresql --enable-xml-log
 .endif
 .if defined(WITH_LIBWRAP)
@@ -78,7 +78,7 @@ CONFIGURE_ARGS+=	--with-libwrap
 .if defined(CLIENT)
 CONFIGURE_ARGS+=	--enable-network=client \
 		--with-data-file=REQ_FROM_SERVER/var/lib/samhain/data.samhain \
-		--with-config-file=REQ_FROM_SERVER --with-logserver=${LOG_SERVER}
+		--with-config-file=REQ_FROM_SERVER
 PLIST_SUB+=	SAMHAIN="" SETPWD="" YULE="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5=	samhainrc.5
@@ -94,6 +94,9 @@ PLIST_SUB+=	SAMHAIN="" YULE="@comment " SETPWD="@comment "
 EXTRA_PATCHES+=	${FILESDIR}/fixsamhainrc.patch
 MAN5=	samhainrc.5
 MAN8=	samhain.8
+.endif
+.if defined(LOG_SERVER)
+CONFIGURE_ARGS+=	--with-logserver=${ALT_LOG_SERVER}
 .endif
 .if defined(ALT_LOG_SERVER)
 CONFIGURE_ARGS+=	--with-altlogserver=${ALT_LOG_SERVER}
@@ -114,14 +117,6 @@ pre-everything::
 	@${ECHO_MSG} "Can't build client and server at once!"
 	@${ECHO_MSG}
 .error "Can't build client and server at once!"
-.endif
-
-.if defined(CLIENT) && !defined(LOG_SERVER)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Please define LOG_SERVER (and ALT_LOG_SERVER, if "
-	@${ECHO_MSG} "applicable), the machine(s) this client will log to."
-	@${ECHO_MSG}
-.error "Please define LOG_SERVER."
 .endif
 
 .if defined(WITH_KCHECK)
