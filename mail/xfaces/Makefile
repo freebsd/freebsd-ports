@@ -5,14 +5,13 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1997/10/22 06:07:33 obrien Exp $
+# $Id: Makefile,v 1.8 1997/11/17 18:47:51 max Exp $
 #
 
 DISTNAME=	xfaces-3.3
 CATEGORIES=	mail
 # xfaces-sounds.tar.gz only in LOCAL_PORTS
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
-		ftp://odie.physik2.uni-rostock.de/pub/ \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
