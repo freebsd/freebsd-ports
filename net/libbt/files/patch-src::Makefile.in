@@ -1,0 +1,19 @@
+--- src/Makefile.in.old	Thu Feb 26 18:27:14 2004
++++ src/Makefile.in	Thu Feb 26 18:28:04 2004
+@@ -1,8 +1,8 @@
+-OBJS=benc.o bts.o types.o random.o strbuf.o stream.o peer.o segmenter.o util.o bitset.o context.o
+-CFLAGS=-Wall -g -I../include 
++OBJS=bterror.o benc.o bts.o types.o random.o strbuf.o stream.o peer.o segmenter.o util.o bitset.o context.o
++CFLAGS=@CFLAGS@ -Wall -I../include -I${PREFIX}/include
+ LIBS=@LIBS@ `curl-config --libs`
+ 
+-all: btlist btget btcheck
++all: libbt.a
+ btcheck: btcheck.c libbt.a
+ 	gcc ${CFLAGS} btcheck.c ${LIBS} -lbt -L. -o btcheck
+ 
+@@ -20,3 +20,4 @@
+ 
+ libbt.a: ${OBJS}
+ 	ar rc $@ ${OBJS}
++	ranlib libbt.a
