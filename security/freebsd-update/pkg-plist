@@ -1,8 +1,0 @@
-sbin/freebsd-update
-sbin/freebsd-update-verify
-etc/freebsd-update.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/VERSION
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm freebsd-update
