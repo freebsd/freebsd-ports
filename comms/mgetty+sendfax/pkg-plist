@@ -30,6 +30,7 @@ bin/pvftovoc
 bin/pvftowav
 bin/rmdfile
 bin/rmdtopvf
+bin/sff2g3
 bin/vm
 bin/voctopvf
 bin/wavtopvf
@@ -51,9 +52,6 @@ etc/mgetty+sendfax/login.config.dist
 @unexec if cmp -s %D/etc/mgetty+sendfax/voice.conf %D/etc/mgetty+sendfax/voice.conf.dist; then rm -f %D/etc/mgetty+sendfax/voice.conf; fi
 etc/mgetty+sendfax/voice.conf.dist
 @exec if [ ! -f %D/etc/mgetty+sendfax/voice.conf ]; then cp %B/%f %D/etc/mgetty+sendfax/voice.conf; fi
-@unexec install-info --delete %D/info/mgetty.info %D/info/dir
-info/mgetty.info
-@exec install-info %D/info/mgetty.info %D/info/dir
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
 lib/mgetty+sendfax/faxq-helper
