@@ -958,6 +958,7 @@ cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvspadm		ports/devel/cvspadm
+cvsps		ports/devel/cvsps
 cvsstat		ports/devel/cvsstat
 cvsup		ports/net/cvsup
 cvsup-mirror	ports/net/cvsup-mirror
