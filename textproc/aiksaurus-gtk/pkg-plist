@@ -1,0 +1,8 @@
+bin/gaiksaurus
+include/Aiksaurus/AiksaurusGTK-C.h
+include/Aiksaurus/AiksaurusGTK.h
+lib/libAiksaurusGTK-1.2.so
+lib/libAiksaurusGTK-1.2.so.0
+lib/libAiksaurusGTK.a
+lib/libAiksaurusGTK.so
+libdata/pkgconfig/gaiksaurus-1.0.pc

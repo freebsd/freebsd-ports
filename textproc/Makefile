@@ -9,6 +9,7 @@
     SUBDIR += aft
     SUBDIR += agrep
     SUBDIR += aiksaurus
+    SUBDIR += aiksaurus-gtk
     SUBDIR += align
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
