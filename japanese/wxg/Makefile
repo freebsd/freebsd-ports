@@ -18,6 +18,8 @@ MAINTAINER=	knu@FreeBSD.org
 # are useful for WXG too.
 RUN_DEPENDS=	cannakill:${PORTSDIR}/japanese/Canna
 
+BROKEN=		"This software has been discontinued"
+
 RESTRICTED=	"You must not copy or redistribute the distfile or the package."
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
