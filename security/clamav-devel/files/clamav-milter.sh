@@ -37,7 +37,7 @@ start_precmd()
 
 # set defaults
 
-clamav_milter_enable=${clamav_milter_enable:-"NO"}
+clamav_milter=${clamav_milter:-"NO"}
 clamav_milter_socket=${clamav_milter_socket:-"%%CLAMAV_MILTER_SOCKET%%"}
 clamav_milter_flags=${clamav_milter_flags:-"--postmaster-only --local --outgoing --max-children=50"}
 
