@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	unrar
-PORTVERSION=	3.00
+PORTVERSION=    3.10b1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/
-DISTNAME=	unrarsrc
+DISTNAME=       unrarsrc-3.1.0
 
 MAINTAINER=	ache@FreeBSD.org
 
-NO_WRKSUBDIR=	Yes
+WRKSRC=         ${WRKDIR}/unrar
 
 ALL_TARGET=	makeunrar
 
