@@ -3,7 +3,7 @@
 # Date created:		19 July 1996
 # Whom:			koshy
 #
-# $Id: Makefile,v 1.2 1996/08/04 08:46:07 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:22:01 asami Exp $
 #
 
 DISTNAME=	netperf-2.1pl1
@@ -19,11 +19,11 @@ MAN1=		netperf.1 netserver.1
 post-install:
 	strip ${PREFIX}/netperf/netperf
 	strip ${PREFIX}/netperf/netserver
-	cp ${WRKSRC}/netperf.man ${PREFIX}/man/man1/netperf.1
-	cp ${WRKSRC}/netserver.man ${PREFIX}/man/man1/netserver.1
+	${CP} ${WRKSRC}/netperf.man ${PREFIX}/man/man1/netperf.1
+	${CP} ${WRKSRC}/netserver.man ${PREFIX}/man/man1/netserver.1
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/netperf
-	cp ${WRKSRC}/netperf.ps ${PREFIX}/share/doc/netperf
+	${MKDIR} ${PREFIX}/share/doc/netperf
+	${CP} ${WRKSRC}/netperf.ps ${PREFIX}/share/doc/netperf
 	gzip -9nf ${PREFIX}/share/doc/netperf/netperf.ps
 .endif
 
