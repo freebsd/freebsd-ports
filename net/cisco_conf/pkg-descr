@@ -1,0 +1,13 @@
+This is an interactive configuration editor for Cisco devices. It is based on
+joe editor's macros that let you load either running or startup configuration
+from a Cisco router/switch/access server directly into the editor and commit
+it back after modification.
+
+The CiscoConf program maintains the database of previous versions of startup
+and running configurations for each router in /var/db/CiscoConf. The
+number of versions to keep is specified in its configuration file.
+
+It also provides locking to prevent concurrent editing of the same
+configuration by more than one person.
+
+WWW:	http://rnoc.urc.ac.ru/~anton/projects/ciscoconf/CiscoConf.html

@@ -33,6 +33,7 @@
     SUBDIR += cflowd
     SUBDIR += choparp
     SUBDIR += cidr
+    SUBDIR += cisco_conf
     SUBDIR += ciscoconf
     SUBDIR += citrix_ica
     SUBDIR += clog
