@@ -1,16 +1,16 @@
 # New ports collection makefile for:	steghide
 # Date created:				26 February 2001
-# Whom:					RaRa Rasputin <rara.rasputin@virgin.net>
+# Whom:					RaRa Rasputin <rasputin@submonkey.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	steghide
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
 
-MAINTAINER=	rara.rasputin@virgin.net
+MAINTAINER=	rasputin@submonkey.net
 
 LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash
