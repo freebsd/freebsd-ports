@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel
 MASTER_SITES=	http://www.firstworks.com/downloads/rudiments/
 
