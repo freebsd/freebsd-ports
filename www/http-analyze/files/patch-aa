@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu Apr  2 15:53:41 1998
-+++ Makefile	Fri Apr 10 20:39:26 1998
++++ Makefile	Sat Apr 18 11:37:54 1998
 @@ -28,9 +28,9 @@
  #	SVR4	/usr/share/man/cat1	-		1
  #	Linux	/usr/local/man/man1	-		man
@@ -7,7 +7,7 @@
 -LOCALLIB = /usr/local/lib
 -LOCALBIN = /usr/local/bin
 -LOCALMAN = /usr/local/man/cat1
-+LOCALLIB = $(PREFIX)/lib/http-analyze
++LOCALLIB = $(PREFIX)/lib
 +LOCALBIN = $(PREFIX)/bin
 +LOCALMAN = $(PREFIX)/man/man1
  
@@ -44,7 +44,7 @@
  #CC = gcc
  
 +# FreeBSD
-+DEFINES = -DBSD -DHA_LIBDIR="$(LOCALLIB)"
++DEFINES = -DBSD -DHA_LIBDIR="$(LOCALLIB)/http-analyze"
 +PLATFORM =
 +
  # HP/UX
