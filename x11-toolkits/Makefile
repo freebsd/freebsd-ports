@@ -55,6 +55,7 @@
     SUBDIR += gtkglarea
     SUBDIR += gtkglarea--
     SUBDIR += gtkglarea2
+    SUBDIR += gtkmathview
     SUBDIR += gtkscintilla
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel

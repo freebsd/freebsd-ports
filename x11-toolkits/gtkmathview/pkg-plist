@@ -1,0 +1,30 @@
+bin/gtkmathview-config
+bin/mathml2ps
+bin/mathmlviewer
+include/gtkmathview/defs.h
+include/gtkmathview/gtkmathview.h
+@dirrm include/gtkmathview
+lib/libgtkmathview.a
+lib/libgtkmathview.so
+lib/libgtkmathview.so.3
+@unexec install-info --delete %D/info/gtkmathview.info %D/info/dir
+info/gtkmathview.info
+@exec install-info %D/info/gtkmathview.info %D/info/dir
+share/gtkmathview/dictionary-combining.xml
+share/gtkmathview/dictionary-local.xml
+share/gtkmathview/dictionary.dtd
+share/gtkmathview/dictionary.xml
+share/gtkmathview/entities-table.dtd
+share/gtkmathview/entities-table.xml
+share/gtkmathview/font-configuration-adobe.xml
+share/gtkmathview/font-configuration-bh.xml
+share/gtkmathview/font-configuration-euclid.xml
+share/gtkmathview/font-configuration-mt.xml
+share/gtkmathview/font-configuration-tex.xml
+share/gtkmathview/font-configuration-wri.xml
+share/gtkmathview/font-configuration.dtd
+share/gtkmathview/font-configuration.xml
+share/gtkmathview/math-engine-configuration.dtd
+share/gtkmathview/math-engine-configuration.xml
+share/gtkmathview/t1.config
+@dirrm share/gtkmathview
