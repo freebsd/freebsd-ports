@@ -1,4 +1,4 @@
-This is a module for the Apache HTTP Server <http://www.apache.org/httpd.html>.
+This is a DSO-module for the Apache HTTP Server <http://www.apache.org/httpd.html>.
 It replaces the Apache-FP patches and module supplied with the FrontPage Server
 Extensions.
  
@@ -12,3 +12,4 @@ FTP: ftp://ftp.edo.uni-dortmund.de/pub/mod_frontpage
 
 Copyright (C) 2001 Christof Pohl <chripo+frontpage@edo.uni-dortmund.de>
 APXS install by Jean-Michel Dault <jmdault@mandrakesoft.com
+Modified to work with FP extensions 5.0 by Martin Blapp <mbr@freebsd.org>
