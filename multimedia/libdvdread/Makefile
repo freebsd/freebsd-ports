@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
