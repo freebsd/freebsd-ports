@@ -9,7 +9,7 @@
 
 DISTNAME=	linux_glide_2_4
 PKGNAME=	linux_glide-2.4
-CATEGORIES=	emulators graphics
+CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.3dfx.com/pub/glide/
 
 MAINTAINER= 	cracauer@cons.org
