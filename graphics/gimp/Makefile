@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.0.pre2
-PORTREVISION=	2
+PORTVERSION=	2.0.pre3
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -21,7 +20,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
-BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		exif.10:${PORTSDIR}/graphics/libexif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -39,14 +37,15 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gtk20 libartlgpl2 librsvg2
+USE_GNOME=	gnomehack intltool gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
 		--with-html-dir=${PREFIX}/share/doc/gimp \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
