@@ -81,6 +81,7 @@
     SUBDIR += cvsup-mirror
     SUBDIR += cvsup-without-gui
     SUBDIR += cvsupit
+    SUBDIR += cvsync
     SUBDIR += dante
     SUBDIR += darkstat
     SUBDIR += datapipe
