@@ -1,0 +1,16 @@
+--- bidwatcher.cpp.orig	Tue Sep 17 09:42:59 2002
++++ bidwatcher.cpp	Tue Sep 17 09:44:43 2002
+@@ -4006,8 +4006,12 @@
+     
+     // ebay is GMT+8hrs, but add a 5 minute fudge so that we bid
+     // early to be safe
++
++    // In the era of accurate timekeeping, it's not clear that this is
++    // necessary, so we allow TIMEFUDGE to be set when building the
++    // FreeBSD port.  -mph
+     
+-    timeDiff += 5*60;
++    timeDiff += TIMEFUDGE;
+     
+     showError("WARNING: Couldn't reach eBay, using local clock."
+ 	      " Do not depend on times or sniping.");
