@@ -17,6 +17,12 @@ COMMENT=	A fast, portable multithreaded web server
 
 NO_WRKSUBDIR=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 do-build:
 	@${CHMOD} +x ${WRKSRC}/xibuild
 	@${SETENV} TOPDIR=${WRKSRC} ${SH} ${WRKSRC}/xibuild
@@ -39,4 +45,4 @@ do-install:
 	@${INSTALL_MAN} ${FILESDIR}/default.html ${PREFIX}/xitami/webpages/default.html.sample
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
