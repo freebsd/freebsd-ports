@@ -7,7 +7,7 @@
 
 PORTNAME=	driglide
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= anholt/driglide/
@@ -23,19 +23,14 @@ USE_LIBTOOL=		yes
 USE_AUTOMAKE_VER=	14
 AUTOMAKE_ARGS=		-a
 USE_GMAKE=		yes
+MAKE_ARGS=		PREPROCESSOR=/usr/bin/cpp
 # Not yet ported to Alpha.
 ONLY_FOR_ARCHS=		i386
 
 # Glide DOES NOT work with CFLAGS greater than -O2
 CFLAGS+= -O
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-extract:
 	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
