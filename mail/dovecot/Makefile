@@ -24,6 +24,8 @@ CONFIGURE_ARGS+=	--without-shadow --enable-ipv6 \
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 	LDFLAGS=-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
 #
 # Feature Autodetection
 #
@@ -160,4 +162,4 @@ post-install:
 		${WRKDIR}/pkg-message
 	@${CAT} ${WRKDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
