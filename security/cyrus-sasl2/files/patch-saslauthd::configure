@@ -1,5 +1,23 @@
 --- saslauthd/configure.orig	Mon Apr 14 20:07:50 2003
 +++ saslauthd/configure	Tue Apr 15 01:39:33 2003
+@@ -2988,7 +2988,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
++LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2994 "configure"
+ #include "confdefs.h"
+@@ -3026,7 +3026,7 @@
+      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+   elif test "$gss_impl" = "heimdal"; then
+-     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
++     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
+      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   else
+      gssapi="no"
 @@ -3441,7 +3441,7 @@
  	    BDB_LIBADD=""
  	fi

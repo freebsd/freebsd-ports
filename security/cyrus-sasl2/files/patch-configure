@@ -18,3 +18,21 @@
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
  echo "configure:3050: checking for db_create in -l$dbname" >&5
+@@ -5456,7 +5456,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
++LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 5462 "configure"
+ #include "confdefs.h"
+@@ -5494,7 +5494,7 @@
+      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
+      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
+   elif test "$gss_impl" = "heimdal"; then
+-     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
++     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
+      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
+   else
+      gssapi="no"
