@@ -1,0 +1,26 @@
+--- xworm.c	Wed May  7 16:25:57 1997
++++ /home/andy/tmp/wrk/xworm.c	Wed Mar 18 23:40:39 1998
+@@ -3,13 +3,20 @@
+  
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
++#ifdef __FreeBSD__
++#include <sys/time.h>
++#endif
+ #include <time.h>
+ #include <string.h>
+ #include <stdio.h>
+ 
+-#define gridfile "xworm.grid"
+-#define fontfile "xworm.font"
+-#define logofile "xworm.raw"
++#ifndef PREFIX
++#define PREFIX "."
++#endif
++
++#define gridfile PREFIX "/xworm.grid"
++#define fontfile PREFIX "/xworm.font"
++#define logofile PREFIX "/xworm.raw"
+ 
+ #define maxQ 5000    /* max queue */
+ #define NCOLORS 15   /* number of colours */

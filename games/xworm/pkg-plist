@@ -1,0 +1,5 @@
+bin/xworm
+share/xworm/xworm.font
+share/xworm/xworm.grid
+share/xworm/xworm.raw
+@dirrm share/xworm
