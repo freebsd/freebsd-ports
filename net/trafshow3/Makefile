@@ -31,6 +31,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/trafshow ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/trafshow.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow
+	${INSTALL_DATA} ${WRKSRC}/.trafshow ${PREFIX}/etc/trafshow.dist
+	${CP} ${PREFIX}/etc/trafshow.dist ${PREFIX}/etc/trafshow
 
 .include <bsd.port.post.mk>
