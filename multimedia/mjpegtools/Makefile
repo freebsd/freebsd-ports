@@ -7,6 +7,7 @@
 
 PORTNAME=	mjpegtools
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mjpeg
@@ -14,9 +15,9 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_GNOME=	glib12 lthack
 USE_GMAKE=	yes
@@ -56,10 +57,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-PLIST_SUB+=	DIVX='@comment '
-.else
-PLIST_SUB+=	DIVX=''
+.if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 # pre-detection
@@ -99,6 +98,12 @@ LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif
 #
+.ifdef(WITH_LIBDV_PAL)
+CONFIGURE_ARGS+=	--with-dv-yv12
+
+WITH_LIBDV=	yes
+.endif
+#
 .ifdef(WITH_LIBGNUGETOPT)
 USE_GETOPT_LONG=	yes
 .endif
@@ -127,6 +132,9 @@ pre-everything::
 .ifndef(WITH_LIBDV)
 	@${ECHO_MSG} "====> You can enable DV support by defining WITH_LIBDV"
 .endif
+.ifndef(WITH_LIBDV_PAL)
+	@${ECHO_MSG} "====> You can enable DV PAL support by defining WITH_LIBDV_PAL"
+.endif
 .ifndef(WITH_LIBMOVTAR)
 	@${ECHO_MSG} "====> You can enable movtar support by defining WITH_LIBMOVTAR"
 .endif
@@ -153,6 +161,7 @@ post-patch:
 		${WRKSRC}/lavtools/liblavplay.c \
 		${WRKSRC}/lavtools/yuvplay.c
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/scripts/lav2avi.sh \
 		${WRKSRC}/scripts/lav2mpeg ${WRKSRC}/scripts/mpegtranscode
 .ifdef(WITH_QUICKTIME)
 	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+$$|\1true|' \
