@@ -1,0 +1,11 @@
+--- plugins/patch/Makefile.in.orig	Tue Nov  5 16:59:47 2002
++++ plugins/patch/Makefile.in	Tue Nov  5 16:59:56 2002
+@@ -210,7 +210,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(plugin_LTLIBRARIES)
+ 
+-libanjuta_patch_la_LDFLAGS =
++libanjuta_patch_la_LDFLAGS = -module -avoid-version
+ libanjuta_patch_la_LIBADD =
+ am_libanjuta_patch_la_OBJECTS = patch-plugin.lo
+ libanjuta_patch_la_OBJECTS = $(am_libanjuta_patch_la_OBJECTS)

@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Fri Feb 15 17:01:26 2002
-+++ src/Makefile.in	Fri Feb 15 17:03:35 2002
-@@ -157,38 +157,17 @@
+--- src/Makefile.in.orig	Tue Nov  5 15:22:08 2002
++++ src/Makefile.in	Tue Nov  5 15:23:34 2002
+@@ -178,7 +178,7 @@
  	$(GNOME_INCLUDEDIR)\
  	$(EXTRA_GNOME_CFLAGS)\
  	$(EXTRA_ORBIT_CFLAGS)\
@@ -9,15 +9,10 @@
  	-I$(srcdir)/../tagmanager/include \
  	-I$(srcdir)/../widgets \
  	-I$(srcdir)/../pixmaps \
- 	-I.. -I. \
- 	-Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment\
- 	-Wuninitialized -Wparentheses -Wpointer-arith\
--	-Wmissing-prototypes\
-- 	-O1\
-- 	-g
-+	-Wmissing-prototypes
+@@ -186,28 +186,8 @@
+ 	-I.. -I. -DPACKAGE_BIN_DIR=\"$(bindir)\"
  
--
+ 
 -SCILEXERS = \
 -    ../scintilla/StyleContext.o\
 -	../scintilla/LexCPP.o\
@@ -37,38 +32,45 @@
 -	../scintilla/LexRuby.o\
 -	../scintilla/LexBullant.o\
 -	../scintilla/LexAda.o\
--	../scintilla/LexBaan.o
-+SCILEXERS =		 -lscintilla_lexers
-+SCINTILLA =		 -lscintilla
- 
+-	../scintilla/LexBaan.o\
+-	../scintilla/LexMatlab.o
+-
++SCILEXERS =             -lscintilla_lexers
++SCINTILLA =             -lscintilla
  
  bin_PROGRAMS = anjuta
-@@ -387,9 +366,9 @@
+ 
+@@ -413,10 +393,10 @@
  	$(GNOMEUI_LIBS)\
  	$(EXTRA_GNOME_LIBS)\
  	$(EXTRA_ORBIT_LIBS)\
 -	$(top_builddir)/scintilla/libscintilla.a\
  	$(top_builddir)/tagmanager/libctags.a\
  	$(top_builddir)/widgets/libwidgets.a\
+ 	$(top_builddir)/printing/libanjutaprint.a\
 +	$(SCINTILLA)\
  	$(SCILEXERS)
  
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -441,16 +420,7 @@
- compatibility_0.$(OBJEXT) defaults.$(OBJEXT) resources.$(OBJEXT) \
- CORBA-Server.$(OBJEXT) Gladen-common.$(OBJEXT) glades.$(OBJEXT) \
- Prj-common.$(OBJEXT) Gladen-stubs.$(OBJEXT) session.$(OBJEXT)
--anjuta_DEPENDENCIES =  $(top_builddir)/scintilla/libscintilla.a \
--$(top_builddir)/tagmanager/libctags.a \
--$(top_builddir)/widgets/libwidgets.a ../scintilla/StyleContext.o \
--../scintilla/LexCPP.o ../scintilla/LexConf.o ../scintilla/LexHTML.o \
--../scintilla/LexLua.o ../scintilla/LexOthers.o ../scintilla/LexPerl.o \
--../scintilla/LexPython.o ../scintilla/LexSQL.o ../scintilla/LexVB.o \
--../scintilla/LexPascal.o ../scintilla/LexAVE.o \
--../scintilla/LexCrontab.o ../scintilla/LexEiffel.o \
--../scintilla/LexLisp.o ../scintilla/LexRuby.o ../scintilla/LexBullant.o \
--../scintilla/LexAda.o ../scintilla/LexBaan.o
+ subdir = src
+@@ -473,20 +453,7 @@
+ 	Gladen-common.$(OBJEXT) glades.$(OBJEXT) Prj-common.$(OBJEXT) \
+ 	Gladen-stubs.$(OBJEXT) session.$(OBJEXT)
+ anjuta_OBJECTS = $(am_anjuta_OBJECTS)
+-anjuta_DEPENDENCIES = $(top_builddir)/scintilla/libscintilla.a \
+-	$(top_builddir)/tagmanager/libctags.a \
+-	$(top_builddir)/widgets/libwidgets.a \
+-	$(top_builddir)/printing/libanjutaprint.a \
+-	../scintilla/StyleContext.o ../scintilla/LexCPP.o \
+-	../scintilla/LexConf.o ../scintilla/LexHTML.o \
+-	../scintilla/LexLua.o ../scintilla/LexOthers.o \
+-	../scintilla/LexPerl.o ../scintilla/LexPython.o \
+-	../scintilla/LexSQL.o ../scintilla/LexVB.o \
+-	../scintilla/LexPascal.o ../scintilla/LexAVE.o \
+-	../scintilla/LexCrontab.o ../scintilla/LexEiffel.o \
+-	../scintilla/LexLisp.o ../scintilla/LexRuby.o \
+-	../scintilla/LexBullant.o ../scintilla/LexAda.o \
+-	../scintilla/LexBaan.o ../scintilla/LexMatlab.o
 +anjuta_DEPENDENCIES =
- anjuta_LDFLAGS = 
- CXXFLAGS = @CXXFLAGS@
- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ anjuta_LDFLAGS =
+ 
+ DEFS = @DEFS@

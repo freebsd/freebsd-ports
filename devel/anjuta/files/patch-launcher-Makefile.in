@@ -1,26 +1,22 @@
---- launcher/Makefile.in.orig	Thu Feb 14 22:17:29 2002
-+++ launcher/Makefile.in	Thu Feb 14 22:18:22 2002
-@@ -12,6 +12,7 @@
+--- launcher/Makefile.in.orig	Tue Nov  5 15:18:07 2002
++++ launcher/Makefile.in	Tue Nov  5 15:19:10 2002
+@@ -14,6 +14,7 @@
  
- 
+ @SET_MAKE@
  SHELL = @SHELL@
 +GLIB_CONFIG = @GLIB_CONFIG@
  
  srcdir = @srcdir@
  top_srcdir = @top_srcdir@
-@@ -150,13 +151,13 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
- 
--INCLUDES = `glib-config --cflags` -I. -I.. -g -O
-+INCLUDES = `$(GLIB_CONFIG) --cflags` -I. -I.. -g -O
- 
+@@ -170,9 +171,9 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-INCLUDES = `glib-config --cflags` -I. -I..
++INCLUDES = `$(GLIB_CONFIG) --cflags` -I. -I..
  bin_PROGRAMS = anjuta_launcher
- 
- anjuta_launcher_SOURCES = anjuta_launcher.c
- 
--anjuta_launcher_LDFLAGS = `glib-config --libs` 
-+anjuta_launcher_LDFLAGS = `$(GLIB_CONFIG) --libs`
+-LDFLAGS = `glib-config --libs` 
++LDFLAGS = `$(GLIB_CONFIG) --libs` 
+ subdir = launcher
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
+ CONFIG_HEADER = $(top_builddir)/config.h

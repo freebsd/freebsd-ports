@@ -1,6 +1,19 @@
---- data/Makefile.in.orig	Fri Feb 15 17:24:52 2002
-+++ data/Makefile.in	Fri Feb 15 17:24:40 2002
-@@ -424,8 +424,8 @@
+--- data/Makefile.in.orig	Tue Nov  5 16:39:59 2002
++++ data/Makefile.in	Tue Nov  5 17:01:01 2002
+@@ -190,10 +190,10 @@
+ 	autogen.sh.wxwin
+ 
+ 
+-anjuta_mimedir = $(prefix)/share/mime-info
++anjuta_mimedir = $(prefix)/share/gnome/mime-info
+ anjuta_mime_DATA = anjuta.mime
+ 
+-anjuta_mimelnkdir = $(prefix)/share/mimelnk/application
++anjuta_mimelnkdir = $(prefix)/share/gnome/mimelnk/application
+ anjuta_mimelnk_DATA = x-anjuta-project.desktop
+ 
+ MACROS = \
+@@ -555,8 +555,8 @@
  	@rm -f system.tags
  
  system.tags:
@@ -9,6 +22,5 @@
 +	cd $(top_builddir)/tagmanager && $(MAKE) libctags.a
 +	cd $(top_builddir)/global-tags && $(MAKE) system.tags
  	mv $(top_builddir)/global-tags/system.tags .
- 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
-
+ # Otherwise a system limit (for SysV at least) may be exceeded.
