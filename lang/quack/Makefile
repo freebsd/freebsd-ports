@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quack
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.24
 CATEGORIES=	lang scheme elisp
 MASTER_SITES=	http://www.neilvandyke.org/quack/
 DISTNAME=	${PORTNAME}
