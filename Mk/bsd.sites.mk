@@ -167,7 +167,6 @@ MASTER_SITE_EXIM+=	\
 	http://public.planetmirror.com/pub/exim/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
 	ftp://ftp.easynet.be/exim/%SUBDIR%/ \
-	ftp://mirror.direct.ca/pub/exim/%SUBDIR%/ \
 	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/mail/exim/%SUBDIR%/ \
 	ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/%SUBDIR%/ \
@@ -176,7 +175,6 @@ MASTER_SITE_EXIM+=	\
 	ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
 	ftp://exim.stupendous.net/mirror/exim/%SUBDIR%/ \
-	http://washitake.com/mail/exim/mirror/%SUBDIR%/ \
 	http://exim.psshee.com/ftp/%SUBDIR%/ \
 	ftp://ftp.nl.uu.net/pub/unix/mail/exim/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
