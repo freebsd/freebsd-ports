@@ -62,6 +62,7 @@
     SUBDIR += roottail
     SUBDIR += sarah
     SUBDIR += sdd
+    SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += skill
     SUBDIR += socket
