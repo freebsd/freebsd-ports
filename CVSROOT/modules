@@ -2436,6 +2436,7 @@ gallery		ports/www/gallery
 gambas		ports/lang/gambas
 gambit		ports/math/gambit
 games_crimson	ports/games/crimson
+gamin		ports/devel/gamin
 gammu		ports/comms/gammu
 ganglia-monitor-core	ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend	ports/sysutils/ganglia-webfrontend
