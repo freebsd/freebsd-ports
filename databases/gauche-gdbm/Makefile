@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdbm
-PORTVERSION=	0.7	# Keep this in sync with lang/gauche
+PORTVERSION=	0.7.1	# Keep this in sync with lang/gauche
 CATEGORIES=	databases
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	gauche-
