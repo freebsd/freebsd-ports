@@ -1944,6 +1944,7 @@ fluidsynth	ports/audio/fluidsynth
 fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-devel	ports/x11-wm/fluxbox-devel
+fluxbox-sid-pack	ports/x11-themes/fluxbox-sid-pack
 fluxconf	ports/x11-wm/fluxconf
 fluxspace	ports/x11-wm/fluxspace
 fluxter		ports/x11-wm/fluxter
