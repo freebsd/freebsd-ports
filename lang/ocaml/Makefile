@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.00
-PORTREVISION=	1
+PORTVERSION=	3.01
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
+MASTER_SITES=	http://caml.inria.fr/distrib/ \
+		ftp://ftp.inria.fr/lang/caml-light/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
@@ -25,7 +25,7 @@ PLIST_SUB+=	LABLTK:="@comment "
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-ALL_TARGET=	world bootstrap opt ocamlc.opt ocamlopt.opt
+ALL_TARGET=	world bootstrap opt opt.opt
 
 .if ${MACHINE_ARCH} != "i386"
 PLIST_SUB+=	PROF:="@comment "
@@ -33,9 +33,9 @@ PLIST_SUB+=	PROF:="@comment "
 PLIST_SUB+=	PROF:=""
 .endif
 
-MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
-		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1 \
-		ocamlc.opt.1 ocamlopt.opt.1
+MAN1=		ocamlcp.1 ocamldep.1 ocamldebug.1 ocamlopt.1 ocamlc.opt.1 \
+		ocamlrun.1 ocamlyacc.1 ocamlmktop.1 ocamlopt.opt.1 \
+		ocaml.1 ocamlc.1 ocamllex.1 ocamlprof.1
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-x11include ${X11BASE}/include \
@@ -56,7 +56,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ocaml/html
 	@cd ${WRKDIR}/htmlman; ${INSTALL_DATA} * ${PREFIX}/share/doc/ocaml/html
-	@${RM} ${PREFIX}/share/doc/ocaml/html/*~
 	@${CP} ${DISTDIR}/${DISTNAME}-refman.ps.gz ${PREFIX}/share/doc/ocaml
 .endif
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
