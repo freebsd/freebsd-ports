@@ -7483,6 +7483,7 @@ tcpflow		ports/net/tcpflow
 tcpillust	ports/net/tcpillust
 tcplist		ports/sysutils/tcplist
 tcpmssd		ports/net/tcpmssd
+tcpreen		ports/net/tcpreen
 tcpreplay	ports/net/tcpreplay
 tcpshow		ports/net/tcpshow
 tcpslice	ports/net/tcpslice
