@@ -1,0 +1,17 @@
+--- config/cf/X11.rules.orig	Sun May 30 12:49:38 2004
++++ config/cf/X11.rules	Sun May 30 12:50:02 2004
+@@ -23,6 +23,14 @@
+ # define UseInstalledX11	YES
+ #endif
+ 
++#ifndef UseInstalledPrograms
++# define UseInstalledPrograms	NO
++#endif
++
++#ifndef UseInstalledClients
++# define UseInstalledClients	NO
++#endif
++
+ #ifndef ImportX11
+ # ifdef UseImports
+ #  define ImportX11		YES
