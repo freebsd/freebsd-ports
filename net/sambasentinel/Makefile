@@ -8,7 +8,7 @@
 PORTNAME=	sambasentinel
 PORTVERSION=	0.1
 CATEGORIES=	net
-MASTER_SITES=	http://kling.mine.nu/kling/files/
+MASTER_SITES=	http://kling.mine.nu/files/
 DISTNAME=	SambaSentinel-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
