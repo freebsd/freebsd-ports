@@ -20,6 +20,8 @@ BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		"Missing dependency"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
 SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
