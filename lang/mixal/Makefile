@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mixal
-PORTVERSION=	1.09
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/mixal/
 
