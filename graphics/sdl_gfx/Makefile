@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SDL graphics drawing primitives and other support functions
 
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/I/IL/ILYAZ/modules
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module to display 3D data using OpenGL, GLU, GLUT, and GLX
 
 PERL_CONFIGURE=	yes
 USE_MESA=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://vento.pi.tu-berlin.de/ppm2fli/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Utilities to merge PPM files into animated FLI and backwards
 
 USE_REINPLACE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.paassen.tmfweb.nl/
 DISTNAME=	libWPCG-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A basic 2D/3D computer graphics library which uses OpenGL
 
 USE_GCC=	3.1
 USE_MESA=	yes

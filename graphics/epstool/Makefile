@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 DISTNAME=	gsv42src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create or extract preview bitmaps in EPS files
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 

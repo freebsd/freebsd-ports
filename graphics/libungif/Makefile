@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/ \
 		ftp://ftp.ayamura.org/pub/graphics/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools and library routines for working with GIF images
 
 INSTALLS_SHLIB=	yes
 

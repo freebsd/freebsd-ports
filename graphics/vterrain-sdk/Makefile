@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	rhh
 DISTNAME=	TerrainSDK-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Virtual Terrain Project Software Development Kit
 
 BUILD_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg

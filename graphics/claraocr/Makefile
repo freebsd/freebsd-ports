@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://carroll.cac.psu.edu/pub/linux/distributions/mandrake-devel/p
 DISTNAME=	clara-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Optical character recognition (OCR) utility
 
 USE_XLIB=	yes
 USE_PERL5=	yes

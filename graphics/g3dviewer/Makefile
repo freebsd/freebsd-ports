@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://madsworld.exhome.de/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A 3D file viewer for GTK+
 
 LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 

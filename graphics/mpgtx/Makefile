@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command line MPEG audio/video/system file toolbox
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes

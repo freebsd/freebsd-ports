@@ -28,6 +28,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Image processing tools (interactive optional--misc/display conflict)
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \

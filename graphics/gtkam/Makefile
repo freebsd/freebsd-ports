@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Download and view files from various digital cameras
 
 LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \

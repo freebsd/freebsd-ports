@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Image pick up utility for X Window System
 
 USE_IMAKE=		yes
 MAN1=			xwpick.1

@@ -15,6 +15,7 @@ DISTNAME=	camlimages-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Objective Caml image processing library
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \

@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A publicly available virtual reality (VR) system
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A hardware-accelerated canvas API for X-Windows
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 

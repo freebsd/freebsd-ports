@@ -14,6 +14,7 @@ DISTNAME=	libtk
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An OpenGL/Tk interface
 
 USE_IMAKE=	yes
 USE_MESA=	yes

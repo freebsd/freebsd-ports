@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 

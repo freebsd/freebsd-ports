@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphic utilities for the processing of CGM metafiles
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	drawcgm gtex gplot

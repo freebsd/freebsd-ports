@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command-line frontend to libgphoto2
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		aa.1:${PORTSDIR}/graphics/aalib \

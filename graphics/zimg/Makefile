@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

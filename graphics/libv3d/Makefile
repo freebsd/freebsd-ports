@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	V3D IO Library
 
 USE_REINPLACE=	yes
 USE_MESA=	yes

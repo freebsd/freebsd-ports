@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
 DISTNAME=	dx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
 		df.1:${PORTSDIR}/graphics/hdf \

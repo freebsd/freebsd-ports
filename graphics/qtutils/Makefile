@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.flyn.org/projects/qtutils/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	QuickTime Utilities
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
 		quicktime.0:${PORTSDIR}/graphics/libquicktime

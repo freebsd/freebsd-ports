@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.phoenix.net/pub/USERS/twegner/ \
 DISTNAME=	xfrac310
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Unix port of fractint
 
 USE_REINPLACE=	yes
 USE_ZIP=	yes

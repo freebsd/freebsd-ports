@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/HDF5/hdf5-${PORTVERSION}/src/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Hierarchical Data Format library (from NCSA)
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes

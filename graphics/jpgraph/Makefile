@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.aditus.nu/jpgraph/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Draw both "quick and dirty" graphs with a minimum of code
 
 NO_BUILD=	yes
 

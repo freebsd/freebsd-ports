@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.ijg.org/files/ \
 DISTNAME=	jpegsrc.v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	IJG's jpeg compression utilities
 
 WRKSRC=		${WRKDIR}/jpeg-6b
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Multibody Dynamic Simulation Library
 
 USE_MESA=	yes
 USE_GMAKE=	yes

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Use many scaled down images to try to duplicate another image
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dark.x.dtu.dk/~mbn/clanlib/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fast pixel formats conversion library
 
 ONLY_FOR_ARCHS=	i386 alpha
 USE_GMAKE=	yes

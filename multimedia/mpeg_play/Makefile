@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/
 EXTRACT_SUFX=	-patched-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program to play mpeg movies on X displays
 
 WRKSRC=		${WRKDIR}/mpeg_play
 USE_IMAKE=	yes

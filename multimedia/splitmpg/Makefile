@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Splits an ISO 11172-1 into its components
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

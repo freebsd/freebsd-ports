@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.ny.us.rasterman.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An image viewer written using libraries for Enlightenment 0.17 development
 
 LIB_DEPENDS=	ecore.0:${PORTSDIR}/x11/ecore \
 		evas.6:${PORTSDIR}/graphics/evas

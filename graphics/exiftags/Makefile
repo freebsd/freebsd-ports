@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://johnst.org/sw/exiftags/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Parses a specified JPEG file for a JPEG APP1 section containing Exif data
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 

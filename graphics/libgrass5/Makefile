@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://gdal.velocet.ca/projects/grass/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library of functions from the GRASS GIS application for use by non-GRASS programs
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

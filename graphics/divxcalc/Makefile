@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	DivX Calculator
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 

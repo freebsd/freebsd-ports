@@ -14,6 +14,7 @@ MASTER_SITES=	http://gsculpt.sourceforge.net/downloads/
 DISTNAME=	gSculpt-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An Opensource 3D modelling application
 
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
 USE_REINPLACE=	yes

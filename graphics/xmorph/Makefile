@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.colorado-research.com/~gourlay/software/Graphics/Xmorph
 DISTNAME=	${PORTNAME}-2001feb22
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A digital image warping program
 
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

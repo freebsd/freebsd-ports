@@ -25,6 +25,7 @@ DISTFILES=	appendices.htm blank.gif blurb-works-1.2.gif concepts.htm \
 		tutorial.htm writing-your-own-file-decoder.htm
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Python Imaging Library Handbook
 
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=

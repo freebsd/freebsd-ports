@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
 BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		tifftopnm:${PORTSDIR}/graphics/netpbm \

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Ricoh/DC-3/unix/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Digital camera downloading tool for Ricoh DC-3
 
 RESTRICTED=	"Beta test period, redistribution prohibited"
 

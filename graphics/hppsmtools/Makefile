@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tool for HP PhotoSmart C5340A & Konica Q-EZ digital cameras
 
 do-install:
 .for file in psmdel psmdir psmget psmsho

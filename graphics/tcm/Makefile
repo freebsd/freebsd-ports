@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Toolkit for Conceptual Modeling, create diagrams/tables/trees
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

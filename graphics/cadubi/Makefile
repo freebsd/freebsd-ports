@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://logicallemon.com/pub/cadubi/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ASCII drawing utility
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 

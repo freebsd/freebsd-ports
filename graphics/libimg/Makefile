@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/packages-8.0/graphics
 DISTNAME=	img${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library of image format handlers for Tk4.1 and later
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		png.5:${PORTSDIR}/graphics/png \
