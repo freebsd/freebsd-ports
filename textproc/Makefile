@@ -23,6 +23,7 @@
     SUBDIR += cdif
     SUBDIR += cdiff
     SUBDIR += chpp
+    SUBDIR += cl-meta
     SUBDIR += coco
     SUBDIR += cocoon
     SUBDIR += code2html
