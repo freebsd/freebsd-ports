@@ -48,7 +48,7 @@ diff -c -r Makefile Makefile
 + 
 + instfont:
 + 	@for i in k14.bdf 7x14rk.bdf; do\
-+ 	install -c /usr/ports/distfiles/$$i $(FONTDIR);\
++ 	install -c $(DISTDIR)/$$i $(FONTDIR);\
 + 	gzip -f -9 $(FONTDIR)/$$i;\
   	done
 diff -c -r README.FreeBSD README.FreeBSD
