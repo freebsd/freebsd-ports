@@ -8714,6 +8714,7 @@ texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
 texmacs		ports/editors/texmacs
 texmaker	ports/editors/texmaker
+texpower	ports/print/texpower
 textedit	ports/editors/textedit
 textmaze	ports/games/textmaze
 textutils	ports/textproc/textutils
