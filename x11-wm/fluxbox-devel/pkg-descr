@@ -4,8 +4,10 @@ Fluxbox is a window manager based on BlackBox with some new features:
  o Iconbar
  o Configurable titlebar
  o Windows tabs
+ o Wheel scroll changes workspace
+ o KDE and partial Gnome support
  
 WWW: http://fluxbox.sourceforge.net/
 
-- spn
-spn@g0v.ru
+- Hendrik Scholz
+hendrik@scholz.net
