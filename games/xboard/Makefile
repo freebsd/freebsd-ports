@@ -1,15 +1,15 @@
 # New ports collection makefile for:    xboard
-# Version required:     4.0.2
+# Version required:     4.0.3
 # Date created:         5 Jan 1997
 # Whom:                 xaa@stack.nl
 #
 # $FreeBSD$
 #
 
-DISTNAME=       xboard-4.0.2
+DISTNAME=       xboard-4.0.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	xboard
+MASTER_SITES=	ftp://ftp.freechess.org/pub/chess/X/ \
+		http://www.research.digital.com/SRC/personal/Tim_Mann/xboard/
 
 MAINTAINER=	xaa@xaa.iae.nl
 
