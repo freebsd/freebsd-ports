@@ -1,0 +1,20 @@
+--- misc/magic.h.orig	Wed Sep 11 15:23:25 1996
++++ misc/magic.h	Sun Apr 25 22:32:12 1999
+@@ -166,7 +166,7 @@
+  *
+  */
+ 
+-#ifdef        i386
++#if defined(i386) || (defined(__alpha__) && defined(__FreeBSD__))
+ #define       IS_LITTLE_ENDIAN        /* Intel x86 processors. */
+ #endif
+ 
+@@ -244,7 +244,7 @@
+ #if defined(sun) && !defined(sparc)
+ # define NEED_MONCNTL
+ #endif  
+-#ifdef	ALPHA
++#if defined(ALPHA) || (defined(__alpha__) && defined(__FreeBSD__))
+ # define NEED_MONCNTL
+ #endif  
+ 
