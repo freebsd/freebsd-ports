@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- c_src/esdl_events.c.orig	Mon Dec  9 23:13:11 2002
-+++ c_src/esdl_events.c	Mon Dec  9 23:13:35 2002
-@@ -14,7 +14,11 @@
+--- c_src/esdl_events.c.ori	Tue Sep  9 10:28:24 2003
++++ c_src/esdl_events.c	Mon Nov 17 18:23:24 2003
+@@ -15,7 +15,11 @@
  #ifdef WIN32
  #include <SDL_events.h>
  #else
@@ -14,4 +11,4 @@ $FreeBSD$
 +#endif
  #endif
  
- /* Foward decls */
+ #define MAX_EVENT_SIZE 13
