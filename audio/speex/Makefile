@@ -13,7 +13,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.speex.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jre@vineyard.net
 COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
