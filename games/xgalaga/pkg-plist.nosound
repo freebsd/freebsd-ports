@@ -1,0 +1,27 @@
+bin/xgalaga
+lib/X11/xgalaga/sounds/ddloo.raw
+lib/X11/xgalaga/sounds/explode.raw
+lib/X11/xgalaga/sounds/explode_big.raw
+lib/X11/xgalaga/sounds/firetorp.raw
+lib/X11/xgalaga/sounds/shield.raw
+lib/X11/xgalaga/sounds/smart.raw
+lib/X11/xgalaga/sounds/torphit.raw
+lib/X11/xgalaga/sounds/warp.raw
+lib/X11/xgalaga/levels/level1.xgl
+lib/X11/xgalaga/levels/level2.xgl
+lib/X11/xgalaga/levels/level3.xgl
+lib/X11/xgalaga/levels/level4.xgl
+lib/X11/xgalaga/levels/level5.xgl
+lib/X11/xgalaga/levels/level6.xgl
+lib/X11/xgalaga/levels/level7.xgl
+lib/X11/xgalaga/levels/level8.xgl
+lib/X11/xgalaga/levels/level9.xgl
+lib/X11/xgalaga/levels/level10.xgl
+lib/X11/xgalaga/levels/level11.xgl
+lib/X11/xgalaga/levels/level12.xgl
+lib/X11/xgalaga/levels/level13.xgl
+lib/X11/xgalaga/levels/level14.xgl
+lib/X11/xgalaga/levels/level15.xgl
+@dirrm lib/X11/xgalaga/levels
+@dirrm lib/X11/xgalaga/sounds
+@dirrm lib/X11/xgalaga

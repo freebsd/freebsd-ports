@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1998/09/15 11:13:13 asami Exp $
+# $Id: Makefile,v 1.10 1998/09/17 00:32:37 asami Exp $
 #
 
 DISTNAME=	xgalaga-2.0
@@ -15,6 +15,10 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+.if ${MACHINE_ARCH} == "alpha"
+NOSOUND=	yes
+.endif
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 # xgalaga has a very strange usage of these variables...
@@ -23,8 +27,8 @@ CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 
 .if defined(NOSOUND)
 CONFIGURE_ARGS+=	--without-sound
-.endif
-
+PLIST=			${PKGDIR}/PLIST.nosound
+.else
 pre-configure:
 	@${ECHO} "*****************************************************"
 	@${ECHO} "* Note that you can build a version of xgalaga that *"
@@ -34,5 +38,6 @@ pre-configure:
 	@${ECHO} "* Try it if you don't have a sound card and are     *"
 	@${ECHO} "* getting core dumps.                               *"
 	@${ECHO} "*****************************************************"
+.endif
 
 .include <bsd.port.mk>
