@@ -9,7 +9,8 @@ PORTNAME=	cos
 PORTVERSION=	2002.11.05
 PORTEPOCH=	1
 CATEGORIES=	java
-MASTER_SITES=	http://www.servlets.com/cos/
+MASTER_SITES=	http://www.servlets.com/cos/ \
+		http://www.oreilly.com.tw/bookcode/
 DISTNAME=	${PORTNAME}-05Nov2002
 
 MAINTAINER=	java@freebsd.org
