@@ -1,0 +1,35 @@
+bin/cover
+bin/gcov2perl
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Branch.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_and_3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_or_2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_or_3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_xor_4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Criterion.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Inc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Op.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Pod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_basic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Html_subtle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report/Text2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Statement.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Subroutine.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Time.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Truth_Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Cover.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover/Cover.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Devel 2>/dev/null || true

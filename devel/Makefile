@@ -608,6 +608,7 @@
     SUBDIR += p5-DateTime-TimeZone
     SUBDIR += p5-DateTime-TimeZone-Alias
     SUBDIR += p5-Devel-Constants
+    SUBDIR += p5-Devel-Cover
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Leak
     SUBDIR += p5-Devel-Modlist

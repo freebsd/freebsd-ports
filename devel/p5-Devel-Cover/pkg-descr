@@ -1,0 +1,20 @@
+This module provides code coverage metrics for Perl.
+
+If you can't guess by the version number this is an alpha release.
+
+Code coverage data are collected using a pluggable runops function which counts
+how many times each op is executed. These data are then mapped back to reality
+using the B compiler modules. There is also a statement profiling facility
+which needs a better backend to be really useful.
+
+The cover program can be used to generate coverage reports.
+
+Statement, branch, condition, subroutine, pod and time coverage information is
+reported. Statement coverage data should be reasonable, although there may be
+some statements which are not reported. Branch and condition coverage data
+should be mostly accurate too, although not always what one might initially
+expect. Subroutine coverage should be as accurate as statement coverage. Pod
+coverage comes from Pod::Coverage. Coverage data for path coverage are not yet
+collected.
+
+WWW: http://search.cpan.org/dist/Devel-Cover/
