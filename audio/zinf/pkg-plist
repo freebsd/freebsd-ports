@@ -1,5 +1,6 @@
 bin/zinf
 etc/sdr/plugins/sdr2.plugin.S100.audio.rtp.mpa.zinf
+lib/zinf/plugins/albumart.ui
 %%LIBARTS%%lib/zinf/plugins/arts.pmo
 lib/zinf/plugins/cd.lmc
 lib/zinf/plugins/cd.pmo
@@ -7,9 +8,9 @@ lib/zinf/plugins/cmdline.ui
 lib/zinf/plugins/download.ui
 %%ESOUND%%lib/zinf/plugins/esound.pmo
 lib/zinf/plugins/http.pmi
+lib/zinf/plugins/id3lib.mdf
 lib/zinf/plugins/irman.ui
 lib/zinf/plugins/kjofol.ftf
-lib/zinf/plugins/id3lib.mdf
 lib/zinf/plugins/lcd.ui
 lib/zinf/plugins/local.pmi
 lib/zinf/plugins/m3u.plf
@@ -28,6 +29,8 @@ lib/zinf/plugins/wavout.pmo
 lib/zinf/plugins/winamp.ftf
 lib/zinf/plugins/xingmp3.lmc
 lib/zinf/plugins/zinf.ui
+share/locale/ca_ES/LC_MESSAGES/zinf.mo
+share/locale/ru/LC_MESSAGES/zinf.mo
 share/zinf/themes/Aquatica.fat
 share/zinf/themes/Zinf.fat
 share/zinf/themes/ZinfClassic.fat

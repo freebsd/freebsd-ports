@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zinf
-PORTVERSION=	2.2.4
-PORTREVISION=	3
+PORTVERSION=	2.2.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,21 +19,17 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gdkpixbuf gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget gtk20 lthack
 WANT_GNOME=	yes
 USE_PERL5=	yes
-USE_FREETYPE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-ipv6
 
-CPPFLAGS=	-I${LOCALBASE}/include/freetype1/freetype \
-		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-CFLAGS+=	-O0
 
 .include <bsd.port.pre.mk>
 
@@ -52,6 +47,7 @@ CPPFLAGS+=	"-D_M_ALPHA"
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CFLAGS+=	-O0
 CPPFLAGS+=	-I${LOCALBASE}/include/stlport
 LDFLAGS+=	-lstlport_gcc
 .endif
@@ -79,12 +75,6 @@ PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBIS="@comment "
-.endif
-
-# Stop a flood of complaints and PRs from people who can't be bothered
-# to keep their ports and packages up to date.
-.if exists(${LOCALBASE}/include/freetype/freetype.h)
-.error UPGRADE print/freetype TO CURRENT VERSION!
 .endif
 
 pre-everything::
