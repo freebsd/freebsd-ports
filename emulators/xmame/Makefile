@@ -27,6 +27,9 @@ USE_REINPLACE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
 
+# Broken on ia-64
+NOT_FOR_ARCHS=	ia64
+
 # Are we building MAME, MESS or PinMAME? (also set by slave ports)
 MAMEMESS?=	mame
 
@@ -209,12 +212,6 @@ NETWORK=
 NETWORK=\#
 .endif
 
-.if ${MAMEMESS} == "mess"
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile - duplicate symbols in messtest
-.endif
-.endif
-
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 do-configure:
@@ -257,8 +254,10 @@ do-configure:
 	${LN} -s ${WRKSRC}/src/png.h ${WRKSRC}/src/mame_png.h
 
 .if ${MAMEMESS} == "mess"
-	${REINPLACE_CMD} -e "s@-Wl,--allow-multiple-definition@-Wl,-z -Wl,muldefs@" \
+.if ${OSVERSION} < 500000
+	${REINPLACE_CMD} -e "s@-Wl,--allow-multiple-definition@@" \
 		${WRKSRC}/makefile.mes ${WRKSRC}/src/unix/unix.mak
+.endif
 .endif
 
 post-build:
