@@ -13,14 +13,15 @@ MASTER_SITES=	http://lightside.eresmas.com/
 MAINTAINER=	llwang@infor.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
-MAKE_ARGS=	PROF="${CFLAGS}"
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500041
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib" \
+MAKE_ARGS=	PROF="-I${LOCALBASE}/include ${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-lncurses -lgnugetopt"
+.else
+MAKE_ARGS=	PROF="${CFLAGS}"
 .endif
 
 pre-build:
