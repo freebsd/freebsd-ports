@@ -3,11 +3,11 @@
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
-# $Id: Makefile,v 1.3 1999/05/17 19:52:00 mharo Exp $
+# $Id: Makefile,v 1.4 1999/05/29 03:55:22 steve Exp $
 #
 
 DISTNAME=	gftp-2.0.1
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	http://www.newwave.net/~masneyb/
 
 MAINTAINER=	dmarion@open.hr

@@ -4,11 +4,11 @@
 # Date created:		19 August 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1998/07/24 10:49:34 ache Exp $
+# $Id: Makefile,v 1.4 1998/12/19 15:39:19 ache Exp $
 #
 
 DISTNAME=       omi-alpha-9
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=   http://dorifer.heim3.tu-clausthal.de/~olli/omi/
 
 MAINTAINER=     ache@FreeBSD.org

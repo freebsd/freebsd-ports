@@ -3,11 +3,11 @@
 # Date created:				14 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1999/04/05 23:44:25 jseger Exp $
+# $Id: Makefile,v 1.3 1999/06/05 22:31:13 mharo Exp $
 #
 
 DISTNAME=	cftp-0.9.3
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/
 
 MAINTAINER=	andy@icc.surw.chel.su

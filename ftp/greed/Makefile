@@ -3,11 +3,11 @@
 # Date created:		13 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1999/06/12 07:09:08 mharo Exp $
+# $Id: Makefile,v 1.9 1999/06/19 08:25:44 cpiazza Exp $
 #
 
 DISTNAME=	greed-0.801
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	http://www.public.asu.edu/~arturner/greed/
 
 MAINTAINER=	cpiazza@FreeBSD.org

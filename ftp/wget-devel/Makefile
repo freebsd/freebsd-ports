@@ -3,11 +3,11 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1999/07/15 06:15:10 obrien Exp $
+# $Id: Makefile,v 1.17 1999/08/02 07:29:04 ache Exp $
 #
 
 DISTNAME=	wget-1.5.3
-CATEGORIES=	net www
+CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
 		ftp://ftp.informatik.hu-berlin.de/gnu/wget/ \

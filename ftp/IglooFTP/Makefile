@@ -3,12 +3,12 @@
 # Date created:				3 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/07 17:43:08 flathill Exp $
+# $Id: Makefile,v 1.2 1999/05/29 03:55:07 steve Exp $
 #
 
 DISTNAME=		IglooFTP-0.6.1.src
 PKGNAME=		IglooFTP-0.6.1
-CATEGORIES=		net
+CATEGORIES=		ftp
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://littleigloo.org/pub/iglooftp/
 MASTER_SITE_SUBDIR=	system/network/file-transfer

@@ -3,11 +3,11 @@
 # Date Created:		4 Febuary 1999
 # Whom:			Justin Robinson
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/02 00:58:51 taoka Exp $
 #
 
 DISTNAME=	jmirror-1.0b
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ruin.org/pub/All/
 
 MAINTAINER=	jmrobins@jmirror.ruin.org

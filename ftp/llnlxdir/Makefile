@@ -4,12 +4,12 @@
 #
 # Whom: Dima Ruban <dima@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/02/21 21:44:27 dima Exp $
+# $Id: Makefile,v 1.5 1999/05/02 20:52:59 mharo Exp $
 #
 
 DISTNAME=	latest_xdir
 PKGNAME=	llnlxdir-2.1
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp-lc.llnl.gov/pub/ia/llnlxdir/
 EXTRACT_SUFX=	.tar.Z
 

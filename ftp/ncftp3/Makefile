@@ -4,12 +4,12 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.64 1999/02/20 20:54:29 obrien Exp $
+# $Id: Makefile,v 1.65 1999/06/11 11:42:40 ache Exp $
 #
 
 DISTNAME=       ncftp-3.0beta19-src
 PKGNAME=        ncftp-3.0b19
-CATEGORIES=	net
+CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/3.0BETA/
 
 MAINTAINER=	obrien@FreeBSD.ORG
