@@ -21,7 +21,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --includedir=${LOCALBASE}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=83
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
@@ -29,7 +29,6 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 USE_REINPLACE=	YES
-
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
 MAN1=	tclsh.1
@@ -422,11 +421,11 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	safe.n Safe\Base.n \
 	tcltest.n Tcltest.n
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}${PORTSDIR}=$${WRKDIRPREFIX}${PORTSDIR}=' \
 		${WRKSRC}/tclConfig.sh
-
-.include <bsd.port.pre.mk>
 
 post-install:
 .if exists(${PKGINSTALL})
