@@ -15,6 +15,7 @@ MAINTAINER=		nectar@FreeBSD.org
 MAN8=			pam_krb5.8
 
 USE_BZIP2=		yes
+USE_PERL5=		yes
 GNU_CONFIGURE=		yes
 
 .if defined(PACKAGE_BUILDING)
