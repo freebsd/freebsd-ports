@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTVERSION=	1.0.21
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	cad tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)
@@ -15,7 +14,7 @@ PKGNAMESUFFIX=	-serveur
 .else
 PKGNAMESUFFIX=	-client
 .endif
-DISTNAME=	aster-src-${ASTER_VER}
+DISTNAME=	aster-src-${ASTER_VER}-8
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -35,7 +34,7 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
-RUN_DEPENDS=	${LOCALBASE}/lib/Tktable${TKTAB_VER}:${PORTSDIR}/x11-toolkits/tktable	\
+RUN_DEPENDS=	wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
 		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 .if defined(WITH_PBS) && !defined(CLIENT_SEUL)
 RUN_DEPENDS+=	${LOCALBASE}bin/pbs_tclsh:misc/pbs
@@ -48,7 +47,8 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-EXTDIR=		${WRKDIR}/aster-${ASTER_VER}.src
+EXTDIR=		${WRKDIR}/aster-src-${ASTER_VER}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 .if !defined(CLIENT_SEUL)
 WRKSRC=		${EXTDIR}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
@@ -56,18 +56,22 @@ PLIST_SUB=	SERV="" CLIENT="@comment " vaster=${vaster}
 .else
 WRKSRC=		${EXTDIR}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
-PLIST_SUB=	SERV="@comment " CLIENT="" vaster=""
-PKGMESSAGE=	${PKGDIR}/pkg-message.client
+PLIST_SUB=	SERV="@comment " CLIENT="" vaster=""		\
+		BWidget_DIR=ASTK/ASTK_CLIENT/share/BWidget-${BWidget_VER}
 .endif
+FILESDIR=	${PATCHDIR}
 
 SLAVEDIRS=	cad/astk-client
 
 TK_VER?=	8.4
 TCL_VER?=	${TK_VER}
+SHORT_TK_VER=	${TK_VER:S/.//}
+BWidget_VER=	1.7.0
 
-TKTAB_VER?=	2.8
-ASTER_VER=	7.2.0-2
-vaster=		STA${ASTER_VER}
+ASTER_VER=	7.3.0
+vaster=		STA${ASTER_VER:S/.0//}
+
+GIBI=		gibi2000
 
 .if defined(WITH_ZSH)
 SHIA=		zsh
@@ -112,7 +116,7 @@ unames!=	${UNAME} -s
 unamesm!=	${UNAME} -sm
 v_ifdef=	${unames:U}
 SHELL_INSTALL_ASTER=	${LOCALBASE}/bin/${SHIA}
-gzip!=		dirname `${WHICH} ${GZIP_CMD}`
+gzip!=		${DIRNAME} `${WHICH} ${GZIP_CMD}`
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
 ASTK_LANG=	FR
@@ -134,25 +138,21 @@ post-extract:
 post-patch:
 .if !defined(CLIENT_SEUL)
 .for scripts in ${S_SCRIPTS}
-	@${REINPLACE_CMD} -e "s#SHELL_EXECUTION#${SHELL_INSTALL_ASTER}#g"	\
+	@${REINPLACE_CMD} -e "s#SHELL_EXECUTION#${SHELL_INSTALL_ASTER}#"	\
 	-e "s#HOME_ASTK#${inst_dir}#"						\
-	-e "s#HOME_TKTABLE#${LOCALBASE}/lib/Tktable${TKTAB_VER}#"		\
 	-e "s#HOME_TCL_TK#${LOCALBASE}#"					\
-	-e "s#TCLSH_BIN#tclsh${TCL_VER}#"					\
-	-e "s#WISH_BIN#wish${TK_VER}#" ${WRKSRC}/${scripts}
+	-e "s#TCLSH_BIN#tclsh${TCL_VER}#" ${WRKSRC}/${scripts}
 .endfor
 	@${REINPLACE_CMD} -e "s#IFDEF#${v_ifdef}#g"				\
 	-e "s#/aster#${aster_dir}#g"						\
 	-e "s#EDITOR#${WITH_ED}#g"						\
-	-e "s#TCL_TK_VERSION#${TK_VER}#g"					\
-	-e "s#HOME_PYTHON#${python_dir}#g"					\
 	-e "s#/bin/sh#${SHELL_INSTALL_ASTER}#g"					\
 	-e "s#NODE#${SERVER_NAME}#"						\
 	-e "s#%%vaster%%#${vaster}#"						\
 	-e "s#LOCALBASE#${LOCALBASE}#"						\
 	-e "s|#%%v_ifdef%%|${v_ifdef}|" ${WRKSRC}/conf/config
 	@${RM} ${WRKSRC}/conf/config.orig
-	@${CP} ${WRKSRC}/conf/config.NEW7 ${WRKSRC}/conf/config.${vaster}
+	@${CP} ${WRKSRC}/conf/config.version ${WRKSRC}/conf/config.${vaster}
 	@${REINPLACE_CMD} -e "s#/aster#${aster_dir}#"				\
 	-e "s#/NEW7##"								\
 	-e "s#ans debug binairies#and debug binaries#"				\
@@ -175,14 +175,13 @@ post-patch:
 .else
 # CLIENT_SEUL
 .for scripts in ${C_SCRIPTS}
-	@${REINPLACE_CMD} -e "s#SHELL_EXECUTION#${SHELL_INSTALL_ASTER}#g"	\
+	@${REINPLACE_CMD} -e "s#SHELL_EXECUTION#${SHELL_INSTALL_ASTER}#"	\
 	-e "s#HOME_ASTK#${inst_dir}#"						\
-	-e "s#HOME_TKTABLE#${LOCALBASE}/lib/Tktable${TKTAB_VER}#"		\
 	-e "s#HOME_TCL_TK#${LOCALBASE}#"					\
-	-e "s#TCLSH_BIN#tclsh${TCL_VER}#"					\
 	-e "s#WISH_BIN#wish${TK_VER}#" ${WRKSRC}/${scripts}
 .endfor
-	@${REINPLACE_CMD} -e "s#HOME_ASTK#${inst_dir}#g"			\
+	@${REINPLACE_CMD} -e "s#HOME_ASTK#${inst_dir}#"				\
+		-e "s#GIBI#${GIBI}#"		\
 		-e "s#TOOLS_DIR#${tools_dir}#" ${conf_dir}/outils
 	@${REINPLACE_CMD} -e "s#HOME_ASTK#${inst_dir}#"				\
 		-e "s#HOME_XTERM#${X11BASE}/bin#"				\
@@ -208,9 +207,10 @@ do-install:
 
 post-install:
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s#%%inst_dir%%#${inst_dir}#"		\
-			-e "s#%%tools_dir%%#${tools_dir}#"			\
-			-e "s#%%ASTER_VER%%#${vaster}#"
+	@${SED} -e "s#%%inst_dir%%#${inst_dir}#;s#%%tools_dir%%#${tools_dir}#"	\
+		-e "s#%%ASTER_VER%%#${vaster}#"					\
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
