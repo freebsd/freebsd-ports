@@ -5,7 +5,12 @@ pb=/var/portbuild
 arch=$1
 branch=$2
 node=$3
-shift
+shift 3
+
+norsync=0
+if [ "$1" = "-norsync" ]; then
+  norsync=1
+fi
 
 . ${pb}/${arch}/portbuild.conf
 
@@ -25,7 +30,7 @@ if [ ! -z "${sudo_cmd}" ]; then
   ssh -n ${client_user}@${node} ${sudo_cmd} "chown -R ${client_user} /var/portbuild/"
 fi
 
-if [ "${disconnected}" = 1 ]; then
+if [ "${disconnected}" = 1 -a "${norsync}" = 0 ]; then
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/scripts ${client_user}@${node}:${pb}/
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/portbuild* ${client_user}@${node}:${pb}/${arch}
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/${branch}/ports ${client_user}@${node}:${pb}/${arch}/${branch}
@@ -34,4 +39,5 @@ if [ "${disconnected}" = 1 ]; then
   rsync ${rsync_gzip} -r -l -p --delete ${pb}/${arch}/${branch}/tarballs/bindist* ${client_user}@${node}:${pb}/${arch}/${branch}/tarballs
 fi
 
+lockf ${pb}/${arch}/queue/.lock ${pb}/scripts/pollmachine ${arch} ${node} -queue
 echo "setting up of $node ended at $(date)"
