@@ -1565,7 +1565,6 @@ exim-mysql	ports/mail/exim-mysql
 exim-old	ports/mail/exim-old
 exim-postgresql	ports/mail/exim-postgresql
 expand		src/usr.bin/expand
-expat		ports/textproc/expat
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
 explosions	ports/misc/explosions
