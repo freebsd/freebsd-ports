@@ -6,9 +6,11 @@ fi
 
 CLIENTUSER=$3
 CLIENTGROUP=$4
+UID=105
+GID=$UID
 
 if ! pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
-	if pw groupadd $CLIENTGROUP; then
+	if pw groupadd $CLIENTGROUP -g $GID; then
 		echo "=> Added group \"$CLIENTGROUP\"."
 	else
                 echo "=> Adding group \"$CLIENTGROUP\" failed..."
@@ -17,7 +19,7 @@ if ! pw groupshow "$CLIENTGROUP" 2>/dev/null 1>&2; then
 fi
 
 if ! pw usershow "$CLIENTUSER" 2>/dev/null 1>&2; then
-        if pw useradd $CLIENTUSER -g $CLIENTGROUP -h - \
+        if pw useradd $CLIENTUSER -u $UID -g $CLIENTGROUP -h - \
                 -s "/sbin/nologin" -d "/nonexistent" \
                 -c "distributed.net client and proxy pseudo-user"; \
         then
