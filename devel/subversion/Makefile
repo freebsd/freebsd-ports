@@ -11,7 +11,7 @@ MASTER_SITES=	http://subversion.tigris.org/files/documents/15/5642/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=		bmah
 
-MAINTAINER=	bmah@freebsd.org
+MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
