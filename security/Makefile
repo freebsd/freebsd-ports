@@ -15,6 +15,7 @@
     SUBDIR += gnupg
     SUBDIR += gpasman
     SUBDIR += gtkportscan
+    SUBDIR += heimdal
     SUBDIR += identify
     SUBDIR += john
     SUBDIR += keynote
