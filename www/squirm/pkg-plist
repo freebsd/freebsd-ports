@@ -1,0 +1,8 @@
+bin/squirm
+etc/squirm/squirm.local.dist
+etc/squirm/squirm.patterns.dist
+@comment @exec install -m 755 -o root -g wheel -d %D/squirm
+@comment @exec install -m 750 -o nobody -g nogroup -d %D/squirm/logs
+@dirrm etc/squirm
+@dirrm squirm/logs
+@dirrm squirm
