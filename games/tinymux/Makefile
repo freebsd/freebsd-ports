@@ -7,7 +7,7 @@
 
 PORTNAME=	tinymux
 PORTVERSION=	1.6p0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-1.x/
 
@@ -23,17 +23,8 @@ USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/gdbm.h
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/udb_ochunk.c
 
 #
 # Distribution does not include an install target.  So here it is.
@@ -67,4 +58,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
