@@ -1,0 +1,11 @@
+--- jabberoo/src/sha.c.orig    Wed Jun 21 22:38:30 2000
++++ jabberoo/src/sha.c Wed Jun 21 22:39:14 2000
+@@ -45,7 +45,7 @@
+ #include <sys/stat.h>
+ #ifndef WIN32
+ #include <unistd.h>
+-#include <endian.h>
++#include <machine/endian.h>
+ #define INT64 long long
+ #else
+ #include <string.h>

@@ -1,0 +1,10 @@
+--- src/GabberConfig.hh.in.orig	Fri Jun 30 17:20:39 2000
++++ src/GabberConfig.hh.in	Fri Jun 30 17:21:45 2000
+@@ -7,6 +7,6 @@
+ static const char* GABBER_VERSION   = VERSION;
+ static const char* GABBER_GLADEFILE = "@prefix@/share/gabber/gabber.glade";
+ static const char* GABBER_CONFIG    = "/Gabber/";
+-static const char* GABBER_PIXPATH   = "@prefix@/share/pixmaps/gabber/";
++static const char* GABBER_PIXPATH   = "@prefix@/share/gnome/pixmaps/gabber/";
+ 
+

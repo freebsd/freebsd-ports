@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Fri Jun 30 09:25:00 2000
++++ src/Makefile.in	Fri Jun 30 09:25:25 2000
+@@ -141,7 +141,7 @@
+ 
+ EXTRA_DIST = Gabber.hh GladeHelper.hh gabber.glade GabberGladeStrings.c GabberConfig.hh
+ 
+-CXXFLAGS = -g -O2
++CXXFLAGS = @CXXFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES =  GabberConfig.hh
