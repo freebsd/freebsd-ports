@@ -18,8 +18,6 @@ USE_GTK=	yes
 ALL_TARGET=	gripnopar gcd
 MAN1=		grip.1
 MLINKS=		grip.1 gcd.1
-MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/*.c
