@@ -12004,7 +12004,6 @@ zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
 zh-chinput3	ports/chinese/chinput3
 zh-chm2html	ports/chinese/chm2html
-zh-cle_base	ports/chinese/cle_base
 zh-cless	ports/chinese/cless
 zh-cmexfonts	ports/chinese/cmexfonts
 zh-cnprint	ports/chinese/cnprint
@@ -12046,7 +12045,6 @@ zh-kon2		ports/chinese/kon2
 zh-libchewing	ports/chinese/libchewing
 zh-libtabe	ports/chinese/libtabe
 zh-links	ports/chinese/links
-zh-linux-gtk	ports/chinese/linux-gtk
 zh-linux-mozillafirebird-zh_CN	ports/chinese/linux-mozillafirebird-zh_CN
 zh-linux-mozillafirebird-zh_TW	ports/chinese/linux-mozillafirebird-zh_TW
 zh-lunar	ports/chinese/lunar
