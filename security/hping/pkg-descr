@@ -1,10 +1,12 @@
-hping2 is a network tool able to send custom ICMP/UDP/TCP
-packets and to display target replies like ping do with
-ICMP replies. hping2 handle fragmentation, arbitrary packet
-body and size and can be used in order to transfer files
-under supported protocols. Using hping2 you are able at
-least to perform the following jobs:
-
+hping is a command-line oriented TCP/IP packet assembler/analyzer. 
+The interface is inspired to the ping(8) unix command, but hping isn't 
+only able to send ICMP echo requests. It supports TCP, UDP, ICMP and 
+RAW-IP protocols, has a traceroute mode, the ability to send files 
+between a covered channel, and many other features. 
+While hping was mainly used as a security tool in the past, it can be 
+used in many ways by people that don't care about security to test 
+networks and hosts. A subset of the stuff you can do using hping:
+ 
 	- Test firewall rules
 	- [spoofed] port scanning
 	- Test net performance using different protocols,
@@ -15,8 +17,7 @@ least to perform the following jobs:
 	- Firewalk like usage.
 	- Remote OS fingerprint.
 	- TCP/IP stack auditing.
-	- A lot of others. 
 
-WWW: http://www.kyuzz.org/antirez/hping/
+WWW: http://www.hping.org/
 
--- Roman Shterenzon <roman@xpert.com>
+-- Nicolas Jombart <Nicolas.Jombart@hsc-labs.com>
