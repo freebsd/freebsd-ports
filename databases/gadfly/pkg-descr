@@ -1,0 +1,7 @@
+Gadfly is a relational database management system which uses a
+large subset of very standard SQL as its query language and Python
+modules and optional Python/C extension modules as its underlying
+engine. Gadfly stores the active database in memory, with recovery
+logging to a file system. It supports an optional TCP/IP based
+client server mode and log based failure recovery for system or
+software failures (but not for disk failures).
