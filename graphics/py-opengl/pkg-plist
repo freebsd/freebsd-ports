@@ -112,6 +112,7 @@ lib/%%PYTHON_VERSION%%/site-packages/OpenGL/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu.so
+lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glu_num.so
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_glut.so
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl.so
 lib/%%PYTHON_VERSION%%/site-packages/OpenGL/dynload/freebsd%%OSMAJOR%%/_opengl_num.so
