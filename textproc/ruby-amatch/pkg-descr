@@ -1,0 +1,6 @@
+This is a Ruby library for approximate string matching and searching
+using a dynamic programming algorithm to compute the Levenstein
+distance between strings.  Written in C for speed.
+
+Author:	Florian Frank <flori@ping.de>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=amatch

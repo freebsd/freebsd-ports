@@ -307,6 +307,7 @@
     SUBDIR += rotix
     SUBDIR += rtf2htm
     SUBDIR += rtfreader
+    SUBDIR += ruby-amatch
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
     SUBDIR += ruby-format
