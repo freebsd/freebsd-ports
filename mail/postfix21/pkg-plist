@@ -22,6 +22,7 @@ etc/postfix/postfix-script
 etc/postfix/master.cf
 libexec/postfix/bounce
 libexec/postfix/cleanup
+libexec/postfix/error
 libexec/postfix/fsstone
 libexec/postfix/local
 libexec/postfix/master
@@ -30,8 +31,6 @@ libexec/postfix/pipe
 libexec/postfix/qmgr
 libexec/postfix/showq
 libexec/postfix/smtp
-libexec/postfix/smtp-sink
-libexec/postfix/smtp-source
 libexec/postfix/smtpd
 libexec/postfix/trivial-rewrite
 sbin/sendmail
@@ -45,5 +44,7 @@ sbin/postlog
 sbin/postmap
 sbin/postsuper
 sbin/postdrop
+sbin/smtp-sink
+sbin/smtp-source
 @exec mkdir -p -m 0755 /var/spool/postfix
 @exec chown root:wheel /var/spool/postfix
