@@ -9,7 +9,7 @@ PORTNAME=	HTTP_Upload
 PORTVERSION=	0.9.1
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	Easy and secure managment of files submitted via HTML Forms
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
