@@ -1,19 +1,11 @@
-*** pilot-mail.c.orig	Sun Oct 10 23:57:07 1999
---- pilot-mail.c	Sun Oct 10 23:57:34 1999
-***************
-*** 15,21 ****
-  #define POPUSER		""
-  #define POPPASS		""
-  #define PILOTFROM	""
-! #define SENDMAIL	"/usr/lib/sendmail -t -i"
-  #define POPKEEP 	"keep"
-  #define DISPOSE		"keep"
-  #define TOPILOT_MHDIR   ""
---- 15,21 ----
-  #define POPUSER		""
-  #define POPPASS		""
-  #define PILOTFROM	""
-! #define SENDMAIL	"/usr/sbin/sendmail -t -i"
-  #define POPKEEP 	"keep"
-  #define DISPOSE		"keep"
-  #define TOPILOT_MHDIR   ""
+--- src/pilot-mail.c.orig	Fri Mar  1 23:13:57 2002
++++ src/pilot-mail.c	Wed Mar 27 12:34:36 2002
+@@ -252,7 +252,7 @@
+ 		*pop_host 	= getvars("POPHOST", ""),
+ 		*pop_user 	= getvars("POPUSER", ""),
+ 		*pop_pass 	= getvars("POPPASS", ""),
+-		*sendmail 	= getvars("SENDMAIL", "/usr/lib/sendmail -t -i"),
++		*sendmail 	= getvars("SENDMAIL", "/usr/sbin/sendmail -t -i"),
+ 		*pop_keep 	= getvars("POPKEEP", "keep"),
+ 		*pilot_dispose 	= getvars("PILOTDISPOSE", "keep"),
+ 		*topilot_mhdir 	= getvars("TOPILOT_MHDIR", "");

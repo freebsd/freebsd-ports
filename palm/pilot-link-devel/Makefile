@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.9.5
-PORTREVISION=	4
+PORTVERSION=	0.11.3
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
-DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dima@FreeBSD.org
 
@@ -27,8 +25,9 @@ MAN1=		dlpsh.1 ietf2datebook.1 install-datebook.1 \
 		pilot-addresses.1 pilot-xfer.1 read-ical.1
 MAN7=		pilot-link.7
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 CONFIGURE_ARGS=	--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
+MAKE_ARGS=	LIBTOOL=libtool
 
 post-patch:
 	# Remove the FORCE tag, which forced recompiling/relinking
