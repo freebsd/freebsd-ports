@@ -113,9 +113,6 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTimeCounter.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTimeFuncs.py
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTimeFuncs.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTimeFuncs.pyo
-lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTreeBrowse.py
-lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTreeBrowse.pyc
-lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwTreeBrowse.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwVerticalGauge.py
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwVerticalGauge.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/%%PMWVERSION%%/lib/PmwVerticalGauge.pyo
@@ -127,6 +124,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/doc/Pmw/AboutDialog.gif
 %%PORTDOCS%%share/doc/Pmw/AboutDialog.html
+%%PORTDOCS%%share/doc/Pmw/Balloon.gif
 %%PORTDOCS%%share/doc/Pmw/Balloon.html
 %%PORTDOCS%%share/doc/Pmw/Blt.html
 %%PORTDOCS%%share/doc/Pmw/ButtonBox.gif
@@ -147,6 +145,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/doc/Pmw/ExampleDemo.py
 %%PORTDOCS%%share/doc/Pmw/Group.gif
 %%PORTDOCS%%share/doc/Pmw/Group.html
+%%PORTDOCS%%share/doc/Pmw/HistoryText.gif
 %%PORTDOCS%%share/doc/Pmw/HistoryText.html
 %%PORTDOCS%%share/doc/Pmw/LabeledWidget.gif
 %%PORTDOCS%%share/doc/Pmw/LabeledWidget.html
@@ -216,6 +215,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/doc/Pmw/transdove.gif
 %%PORTDOCS%%share/examples/Pmw/AboutDialog.py
 %%PORTDOCS%%share/examples/Pmw/All.py
+%%PORTDOCS%%share/examples/Pmw/Args.py
 %%PORTDOCS%%share/examples/Pmw/Balloon.py
 %%PORTDOCS%%share/examples/Pmw/BltGraph.py
 %%PORTDOCS%%share/examples/Pmw/BltTabset.py
@@ -247,6 +247,7 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/examples/Pmw/NoteBook_3.py
 %%PORTDOCS%%share/examples/Pmw/OptionMenu.py
 %%PORTDOCS%%share/examples/Pmw/PanedWidget.py
+%%PORTDOCS%%share/examples/Pmw/PanedWidget_2.py
 %%PORTDOCS%%share/examples/Pmw/PromptDialog.py
 %%PORTDOCS%%share/examples/Pmw/RadioSelect.py
 %%PORTDOCS%%share/examples/Pmw/Resources.py
@@ -256,12 +257,14 @@ lib/%%PYTHON_VERSION%%/site-packages/Pmw/__init__.pyo
 %%PORTDOCS%%share/examples/Pmw/ScrolledFrame.py
 %%PORTDOCS%%share/examples/Pmw/ScrolledListBox.py
 %%PORTDOCS%%share/examples/Pmw/ScrolledText.py
+%%PORTDOCS%%share/examples/Pmw/ScrolledText_2.py
 %%PORTDOCS%%share/examples/Pmw/SelectionDialog.py
 %%PORTDOCS%%share/examples/Pmw/ShowBusy.py
 %%PORTDOCS%%share/examples/Pmw/SpecialCounter.py
 %%PORTDOCS%%share/examples/Pmw/SpecialEntry.py
 %%PORTDOCS%%share/examples/Pmw/Spectrum.py
 %%PORTDOCS%%share/examples/Pmw/SpeedTest.py
+%%PORTDOCS%%share/examples/Pmw/SubClassing.py
 %%PORTDOCS%%share/examples/Pmw/TextDialog.py
 %%PORTDOCS%%share/examples/Pmw/TextDisplay.py
 %%PORTDOCS%%share/examples/Pmw/TimeCounter.py
