@@ -1,4 +1,3 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Email/Find/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Email/Find.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Email/Find/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Email/Find
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Email 2>/dev/null || true

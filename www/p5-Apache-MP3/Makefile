@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-MP3
-PORTVERSION=	2.15
+PORTVERSION=	2.16
 CATEGORIES=	www audio
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
@@ -24,6 +24,7 @@ PERL_CONFIGURE=	YES
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::MP3.3 \
 		Apache::MP3::Playlist.3 \
+		Apache::MP3::Resample.3 \
 		Apache::MP3::Sorted.3
 
 PKGDATADIR=	${PREFIX}/share/${PORTNAME}
