@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1998/05/19 06:35:27 tg Exp $
+# $Id: Makefile,v 1.142 1998/05/20 07:59:26 tg Exp $
 #
 
     SUBDIR += 3dc
@@ -16,6 +16,7 @@
     SUBDIR += cgoban
     SUBDIR += connect4
     SUBDIR += cosmo
+    SUBDIR += crafty
     SUBDIR += crossfire
     SUBDIR += dontspace
     SUBDIR += doom
