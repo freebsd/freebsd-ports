@@ -1,0 +1,14 @@
+GNOME Clipboard Daemon is a program that keeps the content of your X clipboard
+in memory, so the clipboard will not get lost even after you close the
+application from which you copied. It is a daemon - it has no GUI. You start
+it and it will run in the background and Just Work(tm).
+
+Example:
+	1. Start AbiWord.
+	2. Type in 'hello world'. Select everything and click Copy.
+	3. Close AbiWord.
+	4. Start gedit.
+	5. Click Paste. Normally nothing will happen. But if GNOME Clipboard
+	   Daemon is running, pasting will work.
+
+WWW: http://members.chello.nl/~h.lai/gnome-clipboard-daemon/
