@@ -1,5 +1,5 @@
 --- configure.orig	Mon Feb  5 02:03:23 2001
-+++ configure	Mon Feb  5 08:29:21 2001
++++ configure	Mon May 21 08:14:53 2001
 @@ -11827,6 +11827,10 @@
  	LIB_openldap="-R $openldap_libdir $LIB_openldap"
  fi
@@ -11,3 +11,15 @@
  # Check whether --with-krb4 or --without-krb4 was given.
  if test "${with_krb4+set}" = set; then
    withval="$with_krb4"
+@@ -21344,7 +21348,10 @@
+ "$ac_cv_func_SHA1_Init" = "yes" -a \
+ "$ac_cv_func_RC4" = "yes"; then
+   DIR_des=''
+-  LIB_des="-R $krb4_libdir -L$krb4_libdir $ac_cv_funclib_MD4_Init"
++  LIB_des="$ac_cv_funclib_MD4_Init"
++  if test "$krb4_libdir"; then
++    LIB_des="-R $krb4_libdir -L$krb4_libdir $LIB_des"
++  fi
+   LIB_des_appl="$LIB_des"
+ else
+   DIR_des='des'
