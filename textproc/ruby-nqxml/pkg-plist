@@ -26,4 +26,29 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/Credits
 %%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/t1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/dependencies.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/installation.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/howtouse.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/limitations.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/resources.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/bugs.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/copying.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/warranty.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/HTML.manifest
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/docbook.css
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/caution.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/home.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/important.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/next.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/note.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/prev.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/tip.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/toc-blank.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/toc-minus.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/toc-plus.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/up.gif
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/html/stylesheet-images/warning.gif
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/nqxml/html/stylesheet-images
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/nqxml/html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/nqxml
