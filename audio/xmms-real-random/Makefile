@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-real-random
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	http://kingleo.home.pages.at/development/stuff/
 DISTNAME=	real_random-${PORTVERSION}
@@ -24,6 +23,7 @@ USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}'
 
 post-patch:
