@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	newfile
-PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTVERSION=	1.0.14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,22 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
-		rdoc:${PORTSDIR}/textproc/ruby-rdoc \
-		pod2man:${PORTSDIR}/lang/perl5
-
-BROKEN=		"Does not build on 4.x/Broken pkg-plist on 5.x, will be removed after Feb 2"
-
 USE_RUBY=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(NOPORTDOCS)
 MAN1=		newfile.1
-.else
-pre-configure:
-	@${REINPLACE_CMD} -e 's@SUBDIRS = src doc data doc-src www@SUBDIRS = src data@g' \
-	${WRKSRC}/Makefile.in
+DOCS=		doc/newfile.html
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/newfile.1 ${MAN1PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
