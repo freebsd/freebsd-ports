@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	0.0.3.011209
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	deskutils www
-MASTER_SITES=	http://pompo.net/horde/kronolith/
+MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/tarballs/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC1
 
 MAINTAINER=	thierry@pompo.net
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 IS_INTERACTIVE=	'need to build mod_php4 with mcrypt option set.'
 NO_BUILD=	yes
 
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL docs/TODO
 CONFFILE=	conf.php html.php keywords.php menu.php prefs.php
+SUB_DIRS=	config graphics lib locale po scripts templates
 
 LHORDEDIR?=	www/horde
 LKRONOLITHDIR?=	${LHORDEDIR}/kronolith
@@ -43,11 +46,11 @@ pre-install:
 
 do-install:
 	@${MKDIR}  ${KRONOLITHDIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${KRONOLITHDIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/po ${WRKSRC}/templates ${KRONOLITHDIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${KRONOLITHDIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${KRONOLITHDIR}
 	@${MKDIR} ${KRONOLITHDIR}/scripts
-	@${CP} -p  ${WRKSRC}/docs/kronolith.sql ${KRONOLITHDIR}/scripts
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
