@@ -43,6 +43,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/chartab.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/cm.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/coding-system-slots.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/commands.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/compiler.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/config.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/conslots.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/console-gtk-impl.h
@@ -63,6 +64,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/device-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/device.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/devslots.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dragdrop.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dump-data.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/dumper.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/elhash.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/emodules.h
@@ -128,7 +130,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/dpx2.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/dual.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/elxsi.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/ews4800r.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/gec63.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/gould-np1.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/gould.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/m/hp300bsd.h
@@ -209,7 +210,9 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/menubar.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/miscplay.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mule-ccl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/ndir.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/nt.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number-gmp.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number-mp.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/number.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-gtk-impl.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-gtk.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/objects-impl.h
@@ -388,6 +391,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/make-docfile
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/mmencode
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/auto-autoloads.el
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/auto-autoloads.elc
+%%WITH_PGSQL%%lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/modules/postgresql.ell
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/movemail
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/profile
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/rcs2log
