@@ -790,6 +790,7 @@
     SUBDIR += vls
     SUBDIR += vnc
     SUBDIR += vnc2swf
+    SUBDIR += vncreflector
     SUBDIR += vomit
     SUBDIR += vtun
     SUBDIR += wais

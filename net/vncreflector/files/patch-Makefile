@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
+@@ -14,7 +14,7 @@
+ #
+ # Variables you might want to edit: CFLAGS, CONFFLAGS
+ 
+-IFLAGS =	-I.
++IFLAGS =	-I/usr/local/include
+ 
+ # Production
+ CFLAGS =	-O2 $(IFLAGS)
