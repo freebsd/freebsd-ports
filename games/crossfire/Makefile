@@ -87,4 +87,4 @@ post-install:
 	${ECHO} "Note: don't forget to update ${PREFIX}/etc/rplay.conf"
 	${ECHO} "	with new sounds in ${CFDIR}/sounds"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
