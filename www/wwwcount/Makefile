@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dervish@ikhala.tcimet.net
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
 IS_INTERACTIVE=	yes
