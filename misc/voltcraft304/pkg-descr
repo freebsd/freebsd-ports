@@ -1,0 +1,2 @@
+vc304 reads temperatures from the 4 sensors of a "Voltcraft 304"
+thermometer, which is connected to a serial line of the computer.
