@@ -1,7 +1,9 @@
-bin/au2h
 bin/everybuddy
 bin/update.pl
 bin/contact-update.pl
-share/applnk/Internet/Everybuddy.kdelnk
-share/gnome/apps/Internet/Everybuddy.desktop
+share/applnk/Internet/Everybuddy.desktop
 share/pixmaps/ebicon.xpm
+share/sounds/everybuddy/BuddyArrive.au
+share/sounds/everybuddy/BuddyLeave.au
+share/sounds/everybuddy/Send.au
+share/sounds/everybuddy/Receive.au
