@@ -1,6 +1,6 @@
---- Makefile.orig	Mon May 31 09:28:44 1999
-+++ Makefile	Fri Mar 17 17:42:37 2000
-@@ -2,13 +2,13 @@
+--- Makefile.orig	Sun May 30 23:28:44 1999
++++ Makefile	Sat Apr  1 18:15:32 2000
+@@ -2,16 +2,21 @@
  MISCOPT =
  OPT = $(MISCOPT) $(MAXOPT)
  
@@ -8,17 +8,27 @@
 +#CFLAGS = $(OPT) -DMAGNIFY=0 -DNDEBUG
  #CFLAGS = -fprofile-arcs -ftest-coverage -DMAGNIFY=0
 -CFLAGS = -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
-+CFLAGS += -g -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
++CFLAGS += -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
  #CFLAGS = -O -Wall -pedantic -DDEBUG $(MISCOPT)
  
 -LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
 -LFLAGS = -g -L/usr/X11R6/lib
-+#LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
-+LFLAGS = -g -L$(X11BASE)/lib
++.if !defined(CXXFLAGS)
++CXXFLAGS:=${CFLAGS}
++.endif
++CFLAGS := ${CXXFLAGS} -Wall -pedantic $(MISCOPT) -DMAGNIFY=0
  
- CC = c++
- LD = c++
-@@ -56,8 +56,8 @@
+-CC = c++
+-LD = c++
++#LFLAGS = -L/usr/X11R6/lib -L/usr/openwin/lib/X11
++LFLAGS = -L$(X11BASE)/lib
++
++CC = ${CXX}
++LD = ${CXX}
+ 
+ OBJS =	RAFile.o	\
+ 	TTFont.o	\
+@@ -56,8 +61,8 @@
  	$(LD) -o $@ $(OBJS) xfstt.o encoding.o $(LFLAGS) -lm
  
  xfstt.o : xfstt.cpp xfstt.h ttf.h arch.h Makefile
