@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -189,9 +190,9 @@ post-install:
 .endfor
 	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox
 	${RM} -f ${PREFIX}/bin/firefox-config
-	${LN} -sf ${LOCAL_PREFIX}/bin/mozilla-config \
+	${LN} -sf ${LOCAL_PREFIX}/bin/firefox-config \
 		${PREFIX}/bin/firefox-config
-	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/mozilla-config
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
 		's|${FAKEDIR}|${PREFIX}|g'
 	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
