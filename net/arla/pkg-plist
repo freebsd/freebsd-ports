@@ -24,7 +24,7 @@ include/cellconfig.h
 include/fs_errors.h
 include/getarg.h
 include/lock.h
-include/lwp.h
+include/lwp_asm.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
