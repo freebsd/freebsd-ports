@@ -26,7 +26,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 DISTNAME=	apache_${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	apache-1.3.12-v6-20000821a.diff.gz
+PATCHFILES=	apache-1.3.12-v6-20000908a.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
