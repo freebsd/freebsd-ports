@@ -35,7 +35,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 		--enable-nautilus-view \
-		--with-mozilla-snapshot="1.0.1"
+		--with-mozilla-snapshot="trunk"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
