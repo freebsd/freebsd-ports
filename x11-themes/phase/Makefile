@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phase
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.usermode.org/code/
 
