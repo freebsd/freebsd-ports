@@ -1,9 +1,7 @@
 bin/mlv
-etc/gconf/gconf.xml.defaults/apps/mlview/colours/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/mlview/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mlview/colours/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mlview/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mlview.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/mlview.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mlview.schemas > /dev/null || /usr/bin/true
 lib/libmlview.a
 lib/libmlview.so
 lib/libmlview.so.4
@@ -39,7 +37,3 @@ share/locale/sr/LC_MESSAGES/mlview.mo
 share/locale/sr@Latn/LC_MESSAGES/mlview.mo
 share/locale/sv/LC_MESSAGES/mlview.mo
 @dirrm share/gnome/mlview
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mlview/colours
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mlview
-@dirrm etc/gconf/gconf.xml.defaults/apps/mlview/colours
-@dirrm etc/gconf/gconf.xml.defaults/apps/mlview

@@ -1,6 +1,6 @@
-etc/gconf/gconf.xml.defaults/schemas/apps/glunarclock_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/glunarclock_applet/prefs/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/glunarclock.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/glunarclock.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/glunarclock.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GLunarclockApplet_Factory.server
 libexec/glunarclock-applet-2
 share/gnome/glunarclock/glunarclock.glade
@@ -37,6 +37,4 @@ share/locale/wa/LC_MESSAGES/glunarclock-0.30.mo
 @dirrm share/gnome/help/glunarclock-applet-2/C
 @dirrm share/gnome/help/glunarclock-applet-2
 @dirrm share/gnome/glunarclock
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/glunarclock_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/glunarclock_applet
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/glunarclock-applet-2-C.omf 2>/dev/null || /usr/bin/true

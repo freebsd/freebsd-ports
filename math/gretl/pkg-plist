@@ -1,9 +1,9 @@
 bin/gretl
 bin/gretl_x11
 bin/gretlcli
-%%GNOME:%%etc/gconf/gconf.xml.defaults/apps/gretl/%gconf.xml
-%%GNOME:%%etc/gconf/gconf.xml.defaults/schemas/apps/gretl/%gconf.xml
+%%GNOME:%%@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/%%GNOME:%%etc/gconf/schemas/gretl.schemas > /dev/null || /usr/bin/true
 %%GNOME:%%etc/gconf/schemas/gretl.schemas
+%%GNOME:%%@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/%%GNOME:%%etc/gconf/schemas/gretl.schemas > /dev/null || /usr/bin/true
 include/gretl/bhhh_max.h
 include/gretl/calendar.h
 include/gretl/clapack_double.h
@@ -395,5 +395,3 @@ share/locale/ja/LC_MESSAGES/gretl.mo
 @dirrm %%DATADIR%%
 @dirrm lib/gretl-gtk2
 @dirrm include/gretl
-%%GNOME:%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gretl
-%%GNOME:%%@dirrm etc/gconf/gconf.xml.defaults/apps/gretl

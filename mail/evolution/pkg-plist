@@ -1,79 +1,21 @@
 bin/evolution
 bin/evolution-%%VERSION%%
 bin/evolution-addressbook-export
-etc/gconf/gconf.xml.defaults/apps/evolution/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/addressbook/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/addressbook/completion/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/addressbook/select_names/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/date_navigator/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/display/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/notify/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/other/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/prompts/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/colors/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/view/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/fonts/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/filters/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/format/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/notify/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/prompts/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/mail/trash/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/default_folders/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/offline/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults/folder_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults/shortcut_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/calendar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/mail/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/rdf/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/tasks/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/evolution/summary/weather/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook/completion/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook/select_names/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/date_navigator/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/display/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/notify/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/other/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/prompts/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/colors/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/view/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/fonts/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/filters/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/format/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/notify/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/prompts/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/trash/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/default_folders/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/offline/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults/folder_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults/shortcut_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/calendar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/mail/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/rdf/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/tasks/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/weather/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_evolution_addressbook.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_evolution_addressbook.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_evolution_addressbook.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_evolution_calendar.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_evolution_calendar.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_evolution_calendar.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_evolution_shell.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_evolution_shell.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_evolution_shell.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_evolution_summary.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_evolution_summary.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_evolution_summary.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/evolution-mail.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/evolution-mail.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/evolution-mail.schemas > /dev/null || /usr/bin/true
 include/evolution-%%VERSION%%/cal-client/cal-client-multi.h
 include/evolution-%%VERSION%%/cal-client/cal-client-types.h
 include/evolution-%%VERSION%%/cal-client/cal-client.h
@@ -470,7 +412,9 @@ share/gnome/evolution/%%VERSION%%/etspec/mail-accounts.etspec
 share/gnome/evolution/%%VERSION%%/etspec/meeting-page.etspec
 share/gnome/evolution/%%VERSION%%/etspec/message-list.etspec
 share/gnome/evolution/%%VERSION%%/etspec/subscribe-dialog.etspec
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/share/gnome/evolution/%%VERSION%%/evolutionperson.schema > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/evolutionperson.schema
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/share/gnome/evolution/%%VERSION%%/evolutionperson.schema > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/filtertypes.xml
 share/gnome/evolution/%%VERSION%%/glade/alarm-notify.glade
 share/gnome/evolution/%%VERSION%%/glade/alarm-options.glade
@@ -1334,72 +1278,4 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/cal-util
 @dirrm include/evolution-%%VERSION%%/cal-client
 @dirrm include/evolution-%%VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/weather
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/tasks
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/rdf
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/mail
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary/calendar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/summary
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults/shortcut_bar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults/folder_bar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/offline
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/default_folders
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/trash
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/prompts
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/notify
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/format
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/filters
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/fonts
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/view
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/colors
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/prompts
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/other
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/notify
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/display
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/date_navigator
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook/select_names
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook/completion
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/addressbook
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary/weather
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary/tasks
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary/rdf
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary/mail
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary/calendar
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/summary
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults/shortcut_bar
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults/folder_bar
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/view_defaults
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/offline
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/default_folders
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/trash
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/prompts
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/notify
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/format
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/filters
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/fonts
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/display
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/view
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/colors
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/prompts
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/other
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/notify
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/display
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/date_navigator
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/addressbook/select_names
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/addressbook/completion
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/addressbook
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/evolution/evolution-%%VERSION%%-C.omf 2>/dev/null || /usr/bin/true

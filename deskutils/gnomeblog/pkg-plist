@@ -1,8 +1,8 @@
 bin/blog_applet.py
 bin/gnome-blog-poster
-etc/gconf/gconf.xml.defaults/apps/gnome-blogger/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-blogger/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomeblog.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnomeblog.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomeblog.schemas > /dev/null || /usr/bin/true
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.py
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.pyc
 %%PYTHON_SITELIBDIR%%/gnomeblog/MetaWeblog.pyo
@@ -51,5 +51,3 @@ share/gnome/applications/gnome-blog.desktop
 share/gnome/gnome-2.0/ui/GNOME_BlogApplet.xml
 share/gnome/pixmaps/gnome-blog.png
 @dirrm %%PYTHON_SITELIBDIR%%/gnomeblog
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-blogger
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-blogger

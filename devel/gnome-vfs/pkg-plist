@@ -3,49 +3,18 @@ bin/gnomevfs-copy
 bin/gnomevfs-info
 bin/gnomevfs-ls
 bin/gnomevfs-mkdir
-etc/gconf/gconf.xml.defaults/desktop/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/applications/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/applications/component_viewer/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/callto/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ghelp/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/h323/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/http/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/https/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/info/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/mailto/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/man/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/trash/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/component_viewer/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/callto/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ghelp/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/h323/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/http/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/https/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/info/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/mailto/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/man/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/trash/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/http_proxy/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/proxy/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/system/smb/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/http_proxy/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/proxy/%gconf.xml
-etc/gconf/gconf.xml.defaults/system/smb/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_default_applications.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/desktop_default_applications.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_default_applications.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_url_handlers.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/desktop_gnome_url_handlers.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_url_handlers.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/system_http_proxy.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/system_http_proxy.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/system_http_proxy.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/system_smb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/system_smb.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/system_smb.schemas > /dev/null || /usr/bin/true
 %%CDPARANOIA%%etc/gnome-vfs-2.0/modules/cdda-module.conf
 etc/gnome-vfs-2.0/modules/default-modules.conf
 %%SAMBA%%etc/gnome-vfs-2.0/modules/smb-module.conf
@@ -275,41 +244,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
 @dirrm include/gnome-vfs-2.0/include
 @dirrm include/gnome-vfs-2.0
 @dirrm etc/gnome-vfs-2.0/vfolders
-@dirrm etc/gconf/gconf.xml.defaults/system/smb
-@dirrm etc/gconf/gconf.xml.defaults/system/proxy
-@dirrm etc/gconf/gconf.xml.defaults/system/http_proxy
-@dirrm etc/gconf/gconf.xml.defaults/system
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/smb
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/proxy
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system/http_proxy
-@dirrm etc/gconf/gconf.xml.defaults/schemas/system
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/trash
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/man
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/mailto
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/info
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/https
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/http
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/h323
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/ghelp
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/callto
-@unexec /bin/rmdir %D/etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers 2>/dev/null || true
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/terminal
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications/component_viewer
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/applications
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/trash
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/man
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/mailto
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/info
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/https
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/http
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/h323
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/ghelp
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers/callto
-@unexec /bin/rmdir %D/etc/gconf/gconf.xml.defaults/desktop/gnome/url-handlers 2>/dev/null || true
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/component_viewer
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome
-@dirrm etc/gconf/gconf.xml.defaults/desktop

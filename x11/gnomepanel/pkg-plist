@@ -3,87 +3,37 @@ bin/gnome-panel
 bin/gnome-panel-preferences
 bin/gnome-panel-screenshot
 bin/panel-test-applets
-etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/clock/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/mixer/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/show_desktop_button/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_list/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_menu/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/workspace_switcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/menu_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/nautilus_launcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/clock/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/mixer/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/show_desktop_button/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_list/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_menu/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/workspace_switcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/menu_bar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/nautilus_launcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/terminal_launcher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_panel_screenshot/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000002/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000003/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000004/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/show_desktop_button/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000001/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000002/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/objects/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/prefs/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/clock.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/clock.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/clock.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/fish.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/fish.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/fish.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-panel-screenshot.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-panel-screenshot.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-panel-screenshot.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/panel-compatibility.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-compatibility.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/panel-compatibility.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-default-setup.entries
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/panel-general.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-general.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/panel-general.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/panel-global.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-global.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/panel-global.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/panel-object.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-object.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/panel-object.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/panel-toplevel.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/panel-toplevel.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/panel-toplevel.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/window-list.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/window-list.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/window-list.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/workspace-switcher.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/workspace-switcher.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/workspace-switcher.schemas > /dev/null || /usr/bin/true
 include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
@@ -551,76 +501,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/gnome-panel
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/workspace_switcher_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/window_list_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels/background
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/toplevels
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/objects
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000002
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000001
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/show_desktop_button
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000004
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000003
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000002
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_panel_screenshot
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel/background
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/top_panel
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel/background
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels/bottom_panel
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/toplevels
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/terminal_launcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/nautilus_launcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects/menu_bar
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/objects
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/workspace_switcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_menu
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/window_list
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/show_desktop_button
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/mixer
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets/clock
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default/applets
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles/default
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/profiles
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/global
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel/background
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/top_panel
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel/background
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels/bottom_panel
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/toplevels
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/terminal_launcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/nautilus_launcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects/menu_bar
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/objects
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/workspace_switcher
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_menu
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/window_list
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/show_desktop_button
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/mixer
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets/clock
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup/applets
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel/default_setup
-@dirrm etc/gconf/gconf.xml.defaults/apps/panel
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_panel_screenshot
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-es.omf 2>/dev/null || /usr/bin/true

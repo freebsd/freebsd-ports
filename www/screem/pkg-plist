@@ -1,18 +1,7 @@
 bin/screem
-etc/gconf/gconf.xml.defaults/apps/screem/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/editor/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/hint/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/linkview/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/screem/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/screem/ui/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/screem.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/screem.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/screem.schemas > /dev/null || /usr/bin/true
 lib/screem/plugins/colourWizard.so
 lib/screem/plugins/cssWizard.so
 lib/screem/plugins/css_wizard.so
@@ -174,17 +163,4 @@ share/locale/zh_CN/LC_MESSAGES/screem.mo
 @dirrm share/gnome/help/screem
 @dirrm lib/screem/plugins
 @dirrm lib/screem
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/hint
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor/print
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem/editor
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/screem
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/linkview
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/hint
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor/print
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem/editor
-@dirrm etc/gconf/gconf.xml.defaults/apps/screem
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/screem/screem-C.omf 2>/dev/null || /usr/bin/true

@@ -1,19 +1,7 @@
 bin/gnome-mud
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/connections/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/functionality/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/mapper/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/Default/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-mud/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/connections/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/functionality/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/mapper/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/Default/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/ui/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-mud.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-mud.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-mud.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gnome-mud.desktop
 share/gnome/help/gnome-mud/C/figures/connections-window.png
 share/gnome/help/gnome-mud/C/figures/main-window.png
@@ -52,19 +40,5 @@ share/locale/tr/LC_MESSAGES/gnome-mud.mo
 @dirrm share/gnome/help/gnome-mud/C/figures
 @dirrm share/gnome/help/gnome-mud/C
 @dirrm share/gnome/help/gnome-mud
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles/Default
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/profiles
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/mapper
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/functionality
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud/connections
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-mud
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles/Default
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/profiles
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/mapper
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/functionality
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud/connections
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-mud
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-mud/gnome-mud-manual-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-mud/gnome-mud-plugin-api-C.omf 2>/dev/null || /usr/bin/true

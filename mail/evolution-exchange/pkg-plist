@@ -1,7 +1,7 @@
 bin/ximian-connector-setup
-etc/gconf/gconf.xml.defaults/apps/evolution/exchange/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/evolution/exchange/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_evolution_exchange.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_evolution_exchange.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_evolution_exchange.schemas > /dev/null || /usr/bin/true
 lib/evolution/%%EVO_VERSION%%/camel-providers/libcamelexchange.so
 lib/evolution/%%EVO_VERSION%%/camel-providers/libcamelexchange.urls
 libdata/bonobo/servers/GNOME_Evolution_Exchange_Storage.server
@@ -19,5 +19,3 @@ share/locale/de/LC_MESSAGES/ximian-connector-%%VERSION%%.mo
 @dirrm share/gnome/ximian-connector/%%VERSION%%/glade
 @dirrm share/gnome/ximian-connector/%%VERSION%%
 @dirrm share/gnome/ximian-connector
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/exchange
-@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/exchange

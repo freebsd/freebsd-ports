@@ -1,7 +1,7 @@
 bin/bug-buddy
-etc/gconf/gconf.xml.defaults/apps/bug-buddy/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/bug-buddy/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/bug-buddy.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/bug-buddy.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/bug-buddy.schemas > /dev/null || /usr/bin/true
 share/gnome/application-registry/bug-buddy.applications
 share/gnome/applications/bug-buddy.desktop
 share/gnome/bug-buddy/bug-buddy.glade
@@ -161,8 +161,6 @@ share/locale/zh_TW/LC_MESSAGES/bug-buddy.mo
 @dirrm share/gnome/bug-buddy/bugzilla/gnome
 @dirrm share/gnome/bug-buddy/bugzilla
 @dirrm share/gnome/bug-buddy
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/bug-buddy
-@dirrm etc/gconf/gconf.xml.defaults/apps/bug-buddy
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/bug-buddy/bug-buddy-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/bug-buddy/bug-buddy-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/bug-buddy/bug-buddy-es.omf 2>/dev/null || /usr/bin/true

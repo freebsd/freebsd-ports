@@ -1,11 +1,7 @@
 bin/monster-masher
-etc/gconf/gconf.xml.defaults/apps/monster-masher/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/monster-masher/player1/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/monster-masher/player2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player1/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player2/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/monster-masher.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/monster-masher.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/monster-masher.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/monster-masher.desktop
 share/gnome/monster-masher/glade/ui.glade
 share/gnome/monster-masher/pixmaps/block-24.png
@@ -106,9 +102,3 @@ share/gnome/pixmaps/monster-masher.png
 @dirrm share/gnome/monster-masher/pixmaps
 @dirrm share/gnome/monster-masher/sounds
 @dirrm share/gnome/monster-masher
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player2
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher/player1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/monster-masher
-@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher/player2
-@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher/player1
-@dirrm etc/gconf/gconf.xml.defaults/apps/monster-masher

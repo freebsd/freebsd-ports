@@ -1,13 +1,7 @@
 bin/giftui
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/giftui.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/giftui.schemas
-etc/gconf/gconf.xml.defaults/apps/giftui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/giftui/daemon/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/giftui/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/giftui/ui/transfers/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/giftui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/giftui/daemon/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/transfers/%gconf.xml
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/giftui.schemas > /dev/null || /usr/bin/true
 share/applications/giftui.desktop
 share/doc/giftui/AUTHORS
 share/doc/giftui/COPYING
@@ -35,11 +29,3 @@ share/pixmaps/giftui.png
 @dirrm share/giftui/icons
 @dirrm share/giftui
 @dirrm share/doc/giftui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui/transfers
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui/daemon
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/giftui
-@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/ui/transfers
-@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/giftui/daemon
-@dirrm etc/gconf/gconf.xml.defaults/apps/giftui

@@ -1,19 +1,7 @@
 bin/net-rhythmbox
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/library/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/iradio/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/library/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/net-rhythmbox.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/net-rhythmbox.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/net-rhythmbox.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_netRhythmbox_Shell.server
 share/gnome/application-registry/net-rhythmbox.applications
 share/gnome/applications/net-rhythmbox.desktop
@@ -129,18 +117,4 @@ share/locale/vi/LC_MESSAGES/netrhythmbox.mo
 @dirrm share/gnome/help/net-rhythmbox/C/figures
 @dirrm share/gnome/help/net-rhythmbox/C
 @dirrm share/gnome/help/net-rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui/iradio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/net-rhythmbox
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui/iradio
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/library
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state/iradio
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox/state
-@dirrm etc/gconf/gconf.xml.defaults/apps/net-rhythmbox
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/net-rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true

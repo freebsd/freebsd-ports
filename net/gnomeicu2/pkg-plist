@@ -1,28 +1,8 @@
 bin/gnomeicu
 bin/gnomeicu-client
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/connections/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/events/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/files/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/status/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/themes/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/color/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/network/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/connections/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/events/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/files/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/status/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/themes/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/color/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/network/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomeicu.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnomeicu.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomeicu.schemas > /dev/null || /usr/bin/true
 etc/sound/events/GnomeICU.soundlist
 share/gnome/applications/GnomeICU.desktop
 share/gnome/gnomeicu/emoticons/AIM/angel.xpm
@@ -321,27 +301,5 @@ share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/gnomeicu/emoticons/AIM
 @dirrm share/gnome/gnomeicu/emoticons
 @dirrm share/gnome/gnomeicu
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/network
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq/color
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/icq
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/themes
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/status
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/files
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/events
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general/connections
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomeicu
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/network
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq/color
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/icq
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/themes
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/status
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/files
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/events
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general/connections
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomeicu
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnomeicu/gnomeicu-uk.omf 2>/dev/null || /usr/bin/true

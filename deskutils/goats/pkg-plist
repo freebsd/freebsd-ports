@@ -1,12 +1,8 @@
 bin/goats-applet
 bin/goat-create
-etc/gconf/gconf.xml.defaults/apps/goats/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/goats/defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/goats/settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/goats/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/goats/defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/goats/settings/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/goats.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/goats.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/goats.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GoatsApplet.server
 share/gnome/gnome-2.0/ui/GNOME_GoatsApplet.xml
 share/gnome/goats/alarm.png
@@ -38,9 +34,3 @@ share/locale/ru/LC_MESSAGES/goats-2.0.mo
 @dirrm share/gnome/help/goats/C
 @dirrm share/gnome/help/goats
 @dirrm share/gnome/goats
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats/settings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats/defaults
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/goats
-@dirrm etc/gconf/gconf.xml.defaults/apps/goats/settings
-@dirrm etc/gconf/gconf.xml.defaults/apps/goats/defaults
-@dirrm etc/gconf/gconf.xml.defaults/apps/goats

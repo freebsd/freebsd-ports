@@ -19,37 +19,27 @@ bin/gnome-thumbnail-font
 bin/gnome-typing-monitor
 bin/gnome-ui-properties
 bin/gnome-window-properties
-etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/font_rendering/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/keyboard/xkb/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-otf/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-pcf/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-ttf/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-type1/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gnome-theme-installed/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gnome-theme/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/keybindings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/font_rendering/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/peripherals/keyboard/xkb/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-otf/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-pcf/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-ttf/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-type1/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gnome-theme-installed/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gnome-theme/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_keybindings.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_font_rendering.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/desktop_gnome_font_rendering.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_font_rendering.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/fontilus.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/fontilus.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/fontilus.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/themus.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/themus.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/themus.schemas > /dev/null || /usr/bin/true
 etc/gnome-vfs-2.0/modules/font-method.conf
 etc/gnome-vfs-2.0/modules/theme-method.conf
 include/gnome-window-settings-2.0/gnome-window-manager.h
@@ -238,27 +228,3 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/applications
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gnome-theme-installed
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gnome-theme
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-type1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-ttf
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-pcf
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-font-otf
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/keyboard/xkb
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/font_rendering
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/font_rendering
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/keybindings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/editor
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gnome-theme-installed
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gnome-theme
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-type1
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-ttf
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-pcf
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-font-otf
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/peripherals/keyboard/xkb
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/keybindings
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/editor
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon

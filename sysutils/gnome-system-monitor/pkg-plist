@@ -1,13 +1,7 @@
 bin/gnome-system-monitor
-etc/gconf/gconf.xml.defaults/apps/procman/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/procman/disktree/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/procman/memmapstree/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/procman/proctree/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/procman/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/procman/disktree/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/procman/memmapstree/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/procman/proctree/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-system-monitor.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-system-monitor.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-system-monitor.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gnome-system-monitor.desktop
 share/gnome/help/gnome-system-monitor/C/figures/addColumn.png
 share/gnome/help/gnome-system-monitor/C/figures/changePriority.png
@@ -84,12 +78,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
 @dirrm share/gnome/help/gnome-system-monitor/C/figures
 @dirrm share/gnome/help/gnome-system-monitor/C
 @dirrm share/gnome/help/gnome-system-monitor
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/proctree
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/memmapstree
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman/disktree
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/procman
-@dirrm etc/gconf/gconf.xml.defaults/apps/procman/proctree
-@dirrm etc/gconf/gconf.xml.defaults/apps/procman/memmapstree
-@dirrm etc/gconf/gconf.xml.defaults/apps/procman/disktree
-@dirrm etc/gconf/gconf.xml.defaults/apps/procman
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf 2>/dev/null || /usr/bin/true

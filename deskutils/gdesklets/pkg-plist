@@ -1,8 +1,8 @@
 bin/gdesklets
 bin/gdesklets-display-thumbnailer
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gdesklets-display-thumbnail.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gdesklets-display-thumbnail.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gdesklets-display-thumbnail.schemas > /dev/null || /usr/bin/true
 libdata/pkgconfig/gdesklets-core.pc
 share/gnome/application-registry/gdesklets.applications
 share/gnome/applications/gdesklets.desktop
@@ -259,5 +259,3 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/Sensors
 @dirrm share/gnome/gdesklets/Displays
 @dirrm share/gnome/gdesklets
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-gdesklets-display
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-gdesklets-display

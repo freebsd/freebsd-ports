@@ -14,81 +14,51 @@ bin/iagno
 bin/mahjongg
 bin/same-gnome
 bin/sol
-etc/gconf/gconf.xml.defaults/apps/aisleriot/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/blackjack/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/blackjack/deck/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/blackjack/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/blackjack/settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gataxx/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/glines/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/glines/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/glines/saved/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnect/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/0/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/1/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/2/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/3/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnobots2/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnobots2/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-stones/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-stones/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnometris/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnometris/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomine/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnomine/geometry/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnotravex/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtali/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/iagno/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/mahjongg/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/same-gnome/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/aisleriot/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/deck/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/settings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gataxx/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/glines/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/glines/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/glines/saved/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnect/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/0/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/1/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/3/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnotravex/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtali/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/iagno/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/aisleriot.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/aisleriot.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/aisleriot.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/blackjack.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/blackjack.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/blackjack.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gataxx.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gataxx.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gataxx.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/glines.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/glines.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/glines.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnect.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnect.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnect.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnibbles.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnibbles.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnibbles.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnobots2.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnobots2.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnobots2.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-stones.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-stones.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-stones.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnometris.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnometris.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnometris.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnomine.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnomine.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnomine.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnotravex.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnotravex.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnotravex.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtali.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gtali.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtali.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/iagno.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/iagno.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/iagno.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/mahjongg.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/mahjongg.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/mahjongg.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/same-gnome.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/same-gnome.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/same-gnome.schemas > /dev/null || /usr/bin/true
 etc/sound/events/gataxx.soundlist
 etc/sound/events/gnect.soundlist
 etc/sound/events/gnibbles.soundlist
@@ -830,66 +800,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/gnibbles
 @dirrm share/gnome/gnect
 @dirrm share/gnome/blackjack
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtali
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnotravex
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine/geometry
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnomine
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris/options
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnometris
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-stones
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnobots2
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/3
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/2
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/1
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm/0
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences/worm
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnibbles
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnect
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/glines/saved
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/glines/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/glines
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gataxx
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/settings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/blackjack/deck
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/blackjack
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/aisleriot
-@dirrm etc/gconf/gconf.xml.defaults/apps/same-gnome
-@dirrm etc/gconf/gconf.xml.defaults/apps/mahjongg
-@dirrm etc/gconf/gconf.xml.defaults/apps/iagno
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtali
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnotravex
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine/geometry
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnomine
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnometris/options
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnometris
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-stones/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-stones
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnobots2/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnobots2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/3
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/1
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm/0
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences/worm
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnibbles
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnect
-@dirrm etc/gconf/gconf.xml.defaults/apps/glines/saved
-@dirrm etc/gconf/gconf.xml.defaults/apps/glines/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/glines
-@dirrm etc/gconf/gconf.xml.defaults/apps/gataxx
-@dirrm etc/gconf/gconf.xml.defaults/apps/blackjack/settings
-@dirrm etc/gconf/gconf.xml.defaults/apps/blackjack/global
-@dirrm etc/gconf/gconf.xml.defaults/apps/blackjack/deck
-@dirrm etc/gconf/gconf.xml.defaults/apps/blackjack
-@dirrm etc/gconf/gconf.xml.defaults/apps/aisleriot
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/aisleriot-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/blackjack-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-games/gataxx-C.omf 2>/dev/null || /usr/bin/true

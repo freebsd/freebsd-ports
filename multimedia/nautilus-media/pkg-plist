@@ -1,21 +1,7 @@
 bin/gst-thumbnail
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-shockwave-flash/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-shockwave-flash/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gst-thumbnail.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gst-thumbnail.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gst-thumbnail.schemas > /dev/null || /usr/bin/true
 lib/bonobo/libnautilus-audio-properties-view.so
 libdata/bonobo/servers/Nautilus_View_audio.server
 libdata/bonobo/servers/Nautilus_View_audio_properties.server
@@ -87,19 +73,3 @@ share/locale/vi/LC_MESSAGES/nautilus-media.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus-media.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus-media.mo
 @dirrm share/gnome/pixmaps/nautilus-media
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-msvideo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-wmv
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-ms-asf
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-fli
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@x-avi
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@quicktime
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/video@mpeg
-@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/thumbnailers/application@x-shockwave-flash
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-msvideo
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-wmv
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-ms-asf
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-fli
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@x-avi
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@quicktime
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/video@mpeg
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/thumbnailers/application@x-shockwave-flash

@@ -1,7 +1,7 @@
 bin/gnome-pkgview
-etc/gconf/gconf.xml.defaults/apps/gnome-pkgview/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-pkgview/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-pkgview.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-pkgview.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-pkgview.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gnome-pkgview.desktop
 share/gnome/pixmaps/gnome-pkgview/debian.png
 share/gnome/pixmaps/gnome-pkgview/fedora.png
@@ -48,5 +48,3 @@ share/locale/vi/LC_MESSAGES/gnome-pkgview.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pkgview.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pkgview.mo
 @dirrm share/gnome/pixmaps/gnome-pkgview
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-pkgview
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-pkgview

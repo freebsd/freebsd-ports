@@ -1,11 +1,7 @@
 bin/gnome-database-properties
-etc/gconf/gconf.xml.defaults/apps/gnome-db/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-db/Editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-db/UI/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/libgnomedb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/libgnomedb.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/libgnomedb.schemas > /dev/null || /usr/bin/true
 include/libgnomedb/gnome-db-browser.h
 include/libgnomedb/gnome-db-combo.h
 include/libgnomedb/gnome-db-config.h
@@ -173,10 +169,4 @@ share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/gnome/gnome-db
 @dirrm %%DOCSDIR%%
 @dirrm include/libgnomedb
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Editor
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db/UI
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db/Editor
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/libgnomedb/libgnomedb-C.omf 2>/dev/null || /usr/bin/true
