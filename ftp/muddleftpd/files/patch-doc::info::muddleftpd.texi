@@ -1,0 +1,12 @@
+--- doc/info/muddleftpd.texi.orig	Tue Mar 20 13:39:59 2001
++++ doc/info/muddleftpd.texi	Sat Jul  7 04:41:04 2001
+@@ -3,6 +3,9 @@
+ @setfilename muddleftpd.info
+ @settitle muddleftpd, a file transfer protocol server
+ @dircategory Internet
++@direntry
++* Muddle.ftpd: (muddleftpd).	A file transfer protocol server.
++@end direntry
+ @c %**end of header
+ 
+ @c This file has the new style title page commands.

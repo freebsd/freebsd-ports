@@ -7,37 +7,34 @@
 #
 
 PORTNAME=	muddleftpd
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.11
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.arach.net.au/~wildfire/muddleftpd/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-USE_GMAKE=	yes
-MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+MAN1=		muddleftpd.1 ftpwho.1 mudpasswd.1
 
-MAN1=	muddleftpd.1 ftpwho.1 mudpasswd.1
-EXAMPLES=	anon-only.conf anon-reigon.conf ratios.conf standard.conf \
-		vserver-host.conf vserver.conf vserverbig.conf
-DOCS=	cookie.txt ftpcmds.txt muddleftpd.txt mudpasswd.txt reference.txt
+post-patch:
+	@${PERL} -pi -e 's|^NEWMALLOC|#NEWMALLOC|g' ${WRKSRC}/Makefile.defs
+	@${PERL} -pi -e 's|"/etc|"${PREFIX}/etc|g' ${WRKSRC}/defaults.h
+	@${PERL} -pi -e 's|#include <malloc.h>||g' ${WRKSRC}/src/ftpd.h
+
+pre-configure:
+	@${CHMOD} -f u+x ${WRKSRC}/configure
 
 post-install:
 	install-info ${PREFIX}/info/muddleftpd.info ${PREFIX}/info/dir
-	@${MKDIR} ${PREFIX}/share/examples/muddleftpd
-	${CP} ${WRKSRC}/examples/README ${PREFIX}/share/examples/muddleftpd
-.for file in ${EXAMPLES}
-	${CP} ${WRKSRC}/examples/${file} ${PREFIX}/share/examples/muddleftpd
-.endfor
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/examples/muddleftpd
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/share/examples/muddleftpd
+	${INSTALL_DATA} ${WRKSRC}/examples/*.conf ${PREFIX}/share/examples/muddleftpd
 	@${MKDIR} ${PREFIX}/share/doc/muddleftpd
-.for file in ${DOCS}
-	${CP} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/muddleftpd
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/muddleftpd
 .endif
 
 .include <bsd.port.mk>
