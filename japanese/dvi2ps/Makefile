@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvi2ps
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	${PORTNAME}-${PORTVERSION}j

@@ -1,60 +1,11 @@
-*** Makefile.orig	Thu Dec 26 19:37:51 1996
---- Makefile	Thu Dec 26 19:39:54 1996
-***************
-*** 2,8 ****
-  # your site:
-  #
-  # BINAREA and DVI2LIB are relative to PREFIX
-! PREFIX=/usr/local
-  # where dvi2ps is installed
-  BINAREA=${PREFIX}/bin
-  #
---- 2,8 ----
-  # your site:
-  #
-  # BINAREA and DVI2LIB are relative to PREFIX
-! PREFIX?=/usr/local
-  # where dvi2ps is installed
-  BINAREA=${PREFIX}/bin
-  #
-***************
-*** 42,60 ****
-  # 1) libVFlib.a and VF.h are installed in the standard directory
-  #VFLIB = -lVFlib
-  # 2) libVFlib.a and VF.h are installed in the non-standard directory
-! #VFLIB = -L${PREFIX}/lib -lVFlib
-! #VFLIBINC = -I${PREFIX}/include
-  # 3) use VFlib.a and VF.h in the source directory of VFlib
-! VFLIBSRCDIR = ../VFlib-2.22/src
-! VFLIB = ${VFLIBSRCDIR}/VFlib.a
-! VFLIBINC = -I${VFLIBSRCDIR}
-  
-  #
-  CC=cc
-  #
-! CCFLAGS = -g
-  #CCFLAGS = -O		# SUNOS 4.X etc ...
-! #CCFLAGS = -O -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
-  #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
-  #CCFLAGS = -O -DANSI -DPOSIX -DSYSV -DSYSVIO	# Solaris 2.X (SUNWpro/bin/cc)
-  #CCFLAGS = -O -DSYSVIO		# Solaris 2.X (/usr/ucb/cc -- not recommended)
---- 42,60 ----
-  # 1) libVFlib.a and VF.h are installed in the standard directory
-  #VFLIB = -lVFlib
-  # 2) libVFlib.a and VF.h are installed in the non-standard directory
-! VFLIB = -L${PREFIX}/lib -lVFlib2 -lttf
-! VFLIBINC = -I${PREFIX}/include
-  # 3) use VFlib.a and VF.h in the source directory of VFlib
-! #VFLIBSRCDIR = ../VFlib-2.22/src
-! #VFLIB = ${VFLIBSRCDIR}/VFlib.a
-! #VFLIBINC = -I${VFLIBSRCDIR}
-  
-  #
-  CC=cc
-  #
-! #CCFLAGS = -g
-  #CCFLAGS = -O		# SUNOS 4.X etc ...
-! CCFLAGS = -O2 -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
-  #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
-  #CCFLAGS = -O -DANSI -DPOSIX -DSYSV -DSYSVIO	# Solaris 2.X (SUNWpro/bin/cc)
-  #CCFLAGS = -O -DSYSVIO		# Solaris 2.X (/usr/ucb/cc -- not recommended)
+--- Makefile.orig	Thu May 10 23:44:24 2001
++++ Makefile	Thu May 10 23:47:47 2001
+@@ -2,7 +2,7 @@
+ # your site:
+ #
+ # BINAREA and DVI2LIB are relative to PREFIX
+-PREFIX=${DESTDIR}/usr/local
++PREFIX?=/usr/local
+ # where dvi2ps is installed
+ BINAREA=${PREFIX}/bin
+ #
