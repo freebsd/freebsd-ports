@@ -4,8 +4,10 @@ if [ "$2" != POST-INSTALL ] ; then
 	exit 0
 fi
 
+INCLUDEDIR=/usr/include
+
 install -d ${PREFIX}/lib/perl5/site_perl/5.6.0/arch
-cd /usr/include && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h
+cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h
 
 
 exit 0
