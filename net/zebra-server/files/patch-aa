@@ -1,0 +1,11 @@
+--- index/lockutil.c.orig	Sat Sep 16 14:24:25 2000
++++ index/lockutil.c	Sat Sep 16 14:24:40 2000
+@@ -79,7 +79,7 @@
+ 	    (O_BINARY|O_CREAT|O_RDWR), 0666);
+ #else
+     h->fd= open (name, ((h->excl_flag > 1) ? O_EXCL : 0)|
+-	    (O_BINARY|O_CREAT|O_RDWR|O_SYNC), 0666);
++	    (O_BINARY|O_CREAT|O_RDWR), 0666);
+ #endif
+     if (h->fd == -1)
+     {
