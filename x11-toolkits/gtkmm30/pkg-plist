@@ -910,6 +910,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__Pointer__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value__inherit__graph.png
+share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1unconst.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ustring__Iterator-members.html
@@ -1456,6 +1457,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1ConnectionNode.html
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1ConnectionNode__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1Object.html
 share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1Object__inherit__graph.png
+share/doc/gtkmm-2.0/docs/reference/html/classSigC_1_1manage.html
 share/doc/gtkmm-2.0/docs/reference/html/class_8h.html
 share/doc/gtkmm-2.0/docs/reference/html/class__GtkBoxChild.html
 share/doc/gtkmm-2.0/docs/reference/html/class__GtkBoxChild__inherit__graph.png
@@ -1591,6 +1593,8 @@ share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__114.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__115.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__116.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__117.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__118.png
+share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__119.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__12.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__13.png
 share/doc/gtkmm-2.0/docs/reference/html/inherit__graph__14.png
@@ -1971,6 +1975,7 @@ share/doc/gtkmm-2.0/docs/tutorial/figures/checkbutton.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/clipboard_ideal.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/clipboard_simple.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/combo.png
+share/doc/gtkmm-2.0/docs/tutorial/figures/devcpp_project_options.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_colorselectiondialog.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_fileselection.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/dialogs_fontselectiondialog.png
@@ -1995,6 +2000,7 @@ share/doc/gtkmm-2.0/docs/tutorial/figures/range_widgets.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/scrolledwindow.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/spinbutton.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/table.png
+share/doc/gtkmm-2.0/docs/tutorial/figures/textview.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/toolbar.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_draganddrop.png
 share/doc/gtkmm-2.0/docs/tutorial/figures/treeview_editablecells.png
@@ -2013,6 +2019,9 @@ share/doc/gtkmm-2.0/docs/tutorial/html/apbs05.html
 share/doc/gtkmm-2.0/docs/tutorial/html/apbs06.html
 share/doc/gtkmm-2.0/docs/tutorial/html/apc.html
 share/doc/gtkmm-2.0/docs/tutorial/html/apd.html
+share/doc/gtkmm-2.0/docs/tutorial/html/ape.html
+share/doc/gtkmm-2.0/docs/tutorial/html/apes02.html
+share/doc/gtkmm-2.0/docs/tutorial/html/apes03.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch01.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch01s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch02.html
@@ -2048,6 +2057,7 @@ share/doc/gtkmm-2.0/docs/tutorial/html/ch08s05.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch08s06.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch09.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch09s02.html
+share/doc/gtkmm-2.0/docs/tutorial/html/ch09s03.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch10.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch10s02.html
 share/doc/gtkmm-2.0/docs/tutorial/html/ch11.html
@@ -2165,6 +2175,9 @@ share/doc/gtkmm-2.0/examples/book/helloworld/main.cc
 share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.cc
 share/doc/gtkmm-2.0/examples/book/helloworld2/helloworld.h
 share/doc/gtkmm-2.0/examples/book/helloworld2/main.cc
+share/doc/gtkmm-2.0/examples/book/idle/idleexample.cc
+share/doc/gtkmm-2.0/examples/book/idle/idleexample.h
+share/doc/gtkmm-2.0/examples/book/idle/main.cc
 share/doc/gtkmm-2.0/examples/book/label/examplewindow.cc
 share/doc/gtkmm-2.0/examples/book/label/examplewindow.h
 share/doc/gtkmm-2.0/examples/book/label/main.cc
@@ -2246,7 +2259,6 @@ share/doc/gtkmm-2.0/examples/exception/exceptiontest.cc
 share/doc/gtkmm-2.0/examples/filesel/filesel.cc
 share/doc/gtkmm-2.0/examples/fixed/fixed.cc
 share/doc/gtkmm-2.0/examples/gdk/radar.cc
-share/doc/gtkmm-2.0/examples/idle/idle.cc
 share/doc/gtkmm-2.0/examples/markup/parser.cc
 share/doc/gtkmm-2.0/examples/rulers/rulers.cc
 share/doc/gtkmm-2.0/examples/statusbar/statusbar.cc
@@ -2266,7 +2278,6 @@ share/doc/gtkmm-2.0/examples/window/wheelbarrow.cc
 @dirrm share/doc/gtkmm-2.0/examples/statusbar
 @dirrm share/doc/gtkmm-2.0/examples/rulers
 @dirrm share/doc/gtkmm-2.0/examples/markup
-@dirrm share/doc/gtkmm-2.0/examples/idle
 @dirrm share/doc/gtkmm-2.0/examples/gdk
 @dirrm share/doc/gtkmm-2.0/examples/fixed
 @dirrm share/doc/gtkmm-2.0/examples/filesel
@@ -2295,6 +2306,7 @@ share/doc/gtkmm-2.0/examples/window/wheelbarrow.cc
 @dirrm share/doc/gtkmm-2.0/examples/book/menus/main_menu
 @dirrm share/doc/gtkmm-2.0/examples/book/menus
 @dirrm share/doc/gtkmm-2.0/examples/book/label
+@dirrm share/doc/gtkmm-2.0/examples/book/idle
 @dirrm share/doc/gtkmm-2.0/examples/book/helloworld2
 @dirrm share/doc/gtkmm-2.0/examples/book/helloworld
 @dirrm share/doc/gtkmm-2.0/examples/book/frame
