@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- doc/Makefile.in.orig	Thu Feb  8 13:47:31 2001
-+++ doc/Makefile.in	Fri Feb  9 02:04:41 2001
+--- doc/Makefile.in.orig	Sat Mar 31 17:53:38 2001
++++ doc/Makefile.in	Sat Mar 31 17:54:08 2001
 @@ -112,7 +112,7 @@
  Z_CFLAGS = @Z_CFLAGS@
  Z_LIBS = @Z_LIBS@
@@ -12,12 +9,3 @@ $FreeBSD$
  
  # The top-level SGML file.
  DOC_MAIN_SGML_FILE = gnome-xml.sgml
-@@ -120,7 +120,7 @@
- # The directory containing the source code (if it contains documentation).
- DOC_SOURCE_DIR = ..
- 
--HTML_DIR = $(prefix)/doc
-+HTML_DIR = $(datadir)
- 
- TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)/html
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
