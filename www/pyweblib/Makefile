@@ -7,6 +7,7 @@
 
 PORTNAME=	pyweblib
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		http://www.tricknology.org/ports/
@@ -17,5 +18,25 @@ COMMENT=	Yet another web programming framework for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
+
+DOCS=		PyWebLib.html \
+		pydoc/pyweblib.forms.html \
+		pydoc/pyweblib.helper.html \
+		pydoc/pyweblib.html \
+		pydoc/pyweblib.httphelper.html \
+		pydoc/pyweblib.session.html \
+		pydoc/pyweblib.sslenv.html
+
+EXAMPLES=	*.py
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/cgi-bin
+	${INSTALL_DATA} ${WRKSRC}/cgi-bin/${EXAMPLES} ${EXAMPLESDIR}/cgi-bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/pydoc
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/htdocs/${file} ${DOCSDIR}/${file}
+.endfor
+.endif
 
 .include <bsd.port.mk>
