@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perforce
-PORTVERSION=	00.1
+PORTVERSION=	00.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.freebsd/ \
