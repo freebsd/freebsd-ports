@@ -1,0 +1,18 @@
+--- config/config.h.in	Thu Aug 27 11:43:52 1998
++++ config/config.h.in	Sun Sep  6 11:38:27 1998
+@@ -1,4 +1,4 @@
+-/* config/config.h.in.  Generated automatically from configure.in by autoheader.  */
++/* config/config.h.in.  Generated automatically from ../configure.in by autoheader.  */
+ #ifndef _CONFIG_H
+ #define _CONFIG_H
+ 
+@@ -360,6 +360,9 @@
+ 
+ /* Define if you have the <arpa/inet.h> header file.  */
+ #undef HAVE_ARPA_INET_H
++
++/* Define if you have the <camlib.h> header file.  */
++#undef HAVE_CAMLIB_H
+ 
+ /* Define if you have the <chio.h> header file.  */
+ #undef HAVE_CHIO_H

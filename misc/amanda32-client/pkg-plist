@@ -1,23 +1,19 @@
 lib/libamanda.a
 lib/libamanda.la
 lib/libamanda.so
-lib/libamanda.so.5.0
+lib/libamanda.so.6.0
 lib/libamclient.a
 lib/libamclient.la
 lib/libamclient.so
-lib/libamclient.so.0.4
-lib/libamnolog.a
-lib/libamnolog.la
-lib/libamnolog.so
-lib/libamnolog.so.0.0
+lib/libamclient.so.0.5
 lib/libamserver.a
 lib/libamserver.la
 lib/libamserver.so
-lib/libamserver.so.3.0
+lib/libamserver.so.4.0
 lib/libamtape.a
 lib/libamtape.la
 lib/libamtape.so
-lib/libamtape.so.1.1
+lib/libamtape.so.2.0
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 libexec/amanda/amandad
@@ -35,12 +31,14 @@ libexec/amanda/chg-manual
 libexec/amanda/chg-mtx
 libexec/amanda/chg-multi
 libexec/amanda/chg-rth
+libexec/amanda/chg-scsi
+libexec/amanda/chg-zd-mtx
 libexec/amanda/driver
 libexec/amanda/dumper
 libexec/amanda/getconf
+libexec/amanda/killpgrp
 libexec/amanda/patch-system
 libexec/amanda/planner
-libexec/amanda/reporter
 libexec/amanda/rundump
 libexec/amanda/runtar
 libexec/amanda/selfcheck
@@ -58,13 +56,16 @@ sbin/amlabel
 sbin/amoverview
 sbin/amplot
 sbin/amrecover
+sbin/amreport
 sbin/amrestore
 sbin/amrmtape
+sbin/amstatus
 sbin/amtape
 sbin/amtoc
 sbin/amverify
 share/examples/amanda/amanda.conf
 share/examples/amanda/chg-multi.conf
+share/examples/amanda/chg-scsi.conf
 share/examples/amanda/disklist
 @dirrm share/examples/amanda
 @dirrm libexec/amanda
