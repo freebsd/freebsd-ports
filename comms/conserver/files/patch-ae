@@ -1,5 +1,5 @@
---- console/Makefile.orig	Sat Nov 22 23:02:48 1997
-+++ console/Makefile	Sat Nov 22 23:03:45 1997
+--- console/Makefile.orig	Fri Nov 10 22:22:39 2000
++++ console/Makefile	Fri Nov 10 22:30:59 2000
 @@ -6,8 +6,8 @@
  # edit the ETC directory below to change where the console client
  # is installed.
@@ -11,15 +11,19 @@
  
  I=/usr/include
  S=/usr/include/sys
-@@ -17,7 +17,7 @@
+@@ -16,9 +16,9 @@
+ P=
  
  INCLUDE= -I$C
- DEBUG=-O
+-DEBUG=-O
 -CDEFS=  -DSUN5
+-CFLAGS= ${DEBUG} ${CDEFS} ${INCLUDE}
++#DEBUG=-O
 +CDEFS=  -DFREEBSD -DHOST=\"${DEFAULTHOST}\" -DPORT=782
- CFLAGS= ${DEBUG} ${CDEFS} ${INCLUDE}
++CFLAGS+= ${DEBUG} ${CDEFS} ${INCLUDE}
  
  HDR=	
+ ONEC=	console.c
 @@ -29,7 +29,7 @@
  all: ${PROG}
  
@@ -34,8 +38,8 @@
  
  install: all dirs FRC
 -	install -cs ${PROG} ${ETC}/${PROG}
-+	install -c -s -o bin -g bin -m 555 ${PROG} ${ETC}/${PROG}
-+	install -c -o bin -g bin -m 444 ${MAN} ${DOC}/console.8
++	${BSD_INSTALL_PROG} ${PROG} ${ETC}/${PROG}
++	${BSD_INSTALL_MAN} ${MAN} ${DOC}/console.8
  
  lint: ${HDR} ${ONEC} FRC
  	lint -h ${CDEFS} ${INCLUDE} ${ONEC}

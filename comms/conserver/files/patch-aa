@@ -1,33 +1,46 @@
---- conserver/Makefile.orig	Sat Nov 22 20:42:18 1997
-+++ conserver/Makefile	Sat Nov 22 20:43:24 1997
-@@ -8,6 +8,6 @@
+--- conserver/Makefile.orig	Fri Nov 10 22:22:39 2000
++++ conserver/Makefile	Fri Nov 10 22:26:14 2000
+@@ -7,8 +7,9 @@
+ # (1) change ETC below to where you would like the console server installed
  # I would not change the name, you have to much with the docs then...
  PROG=	conserver
 -ETC=	${DESTDIR}/usr/local/etc
 -DOC=	${DESTDIR}/usr/local/man
 +ETC=	${PREFIX}/sbin
 +DOC=	${PREFIX}/man/man8
++CONFIG=	${PREFIX}/etc/conserver.cf
  
  # if we have to PUCC ptyd daemon we can use it to get ptys, else use fallback.o
-@@ -25,5 +25,5 @@
- INCLUDE=
- DEBUG=-O
--CDEFS=  -DSUN5 -DHAVE_PTYD=0 -DDO_VIRTUAL=1
-+CDEFS=  -DFREEBSD -DHAVE_PTYD=0 -DDO_VIRTUAL=1 -DPORT=782
- CFLAGS= ${DEBUG} ${CDEFS} ${INCLUDE}
+ # and change the CDEFS line below to =0
+@@ -23,9 +24,9 @@
+ P=
  
-@@ -42,5 +42,5 @@
+ INCLUDE=
+-DEBUG=-O
+-CDEFS=  -DSUN5 -DHAVE_PTYD=0 -DDO_VIRTUAL=1
+-CFLAGS= ${DEBUG} ${CDEFS} ${INCLUDE}
++#DEBUG=-O
++CDEFS=  -DFREEBSD -DHAVE_PTYD=0 -DDO_VIRTUAL=1 -DPORT=782 -DCONFIG=\"${CONFIG}\"
++CFLAGS+= ${DEBUG} ${CDEFS} ${INCLUDE}
+ 
+ HDR=	cons.h \
+ 	access.h client.h consent.h group.h main.h master.h \
+@@ -41,7 +42,7 @@
+ all: ${PROG}
  
  ${PROG}:$P ${OBJ}
 -	${CC} -o $@ ${CFLAGS} ${OBJ} ${PUCCLIB} -lsocket -lnsl
 +	${CC} -o $@ ${CFLAGS} ${OBJ} ${PUCCLIB} -lcrypt
  
  clean: FRC
-@@ -60,5 +60,6 @@
+ 	rm -f Makefile.bak ${PROG} a.out *.o core errs lint.out tags
+@@ -59,7 +60,8 @@
+ 	distrib -c ${ETC}/${PROG}
  
  install: all dirs FRC
 -	install -c -s ${PROG} ${ETC}/${PROG}
-+	install -c -s -o bin -g bin -m 555 ${PROG} ${ETC}/${PROG}
-+	install -c -o bin -g bin -m 444 ${MAN} ${DOC}/conserver.8
++	${BSD_INSTALL_PROGRAM} ${PROG} ${ETC}/${PROG}
++	${BSD_INSTALL_MAN} ${MAN} ${DOC}/conserver.8
  
  lint: ${HDR} ${SRC} FRC
+ 	lint -h ${CDEFS} ${INCLUDE} ${SRC}

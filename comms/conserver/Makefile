@@ -11,7 +11,7 @@ PORTVERSION=	5.21b
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.uu.net/vendor/bitsko/config-mgmt/ \
 		ftp://unix.hensa.ac.uk/mirrors/uunet/vendor/bitsko/config-mgmt/
-DISTNAME=	conserver-5.21-Beta
+DISTNAME=	${PORTNAME}-5.21-Beta
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -30,16 +30,15 @@ MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}"
 
 # XXX we also have to work around ``new'' uudecode behavior, thanks guys!
 post-extract:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	if [ -f ${WRKSRC}/group.c ]; then \
-		${MV} ${WRKSRC}/group.c ${WRKSRC}/conserver/group.c ; \
-	fi
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+.if !exists(${WRKSRC}/group.c)
+	@${MV} ${WRKSRC}/group.c ${WRKSRC}/conserver/group.c
+.endif
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/conserver.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/conserver.sh \
-			${PREFIX}/etc/rc.d/conserver.sh; \
-	fi
+.if !exists(${PREFIX}/etc/rc.d/conserver.sh)
+	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/conserver.sh ${PREFIX}/etc/rc.d
+.endif
 
 .include <bsd.port.mk>
