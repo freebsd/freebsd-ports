@@ -46,8 +46,8 @@ lib/avifile/libaudiodec.so
 %%MAD%%lib/avifile/libmad_audiodec.so
 lib/avifile/libmjpeg.la
 lib/avifile/libmjpeg.so
-lib/avifile/libmp3lamebin_audioenc.la
-lib/avifile/libmp3lamebin_audioenc.so
+lib/avifile/libmp3lame_audioenc.la
+lib/avifile/libmp3lame_audioenc.so
 lib/avifile/libmpeg_audiodec.la
 lib/avifile/libmpeg_audiodec.so
 %%VORBIS%%lib/avifile/libvorbis_audio.la
