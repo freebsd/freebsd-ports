@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
+		intl.2:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
