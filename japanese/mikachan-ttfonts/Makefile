@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mikachan-ttfonts
-PORTVERSION=	8.5
+PORTVERSION=	8.6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/mikachan_font/
 DISTNAME=	ver${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	sada@FreeBSD.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-RESTRICTED=	"detailed condition is not clear"
+NO_CDROM=	"Don't sell distfile"
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	pq
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mika.ttf
