@@ -20,6 +20,12 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Software for production and maintenance of web sites
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BZIP2=	YES
 GNU_CONFIGURE=	YES
 
@@ -43,4 +49,4 @@ post-install:
 	${LN} ${WSMAKE_DOCDIR}/user-manual/book1.html ${WSMAKE_DOCDIR}/user-manual/index.html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

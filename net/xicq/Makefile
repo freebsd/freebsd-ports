@@ -14,6 +14,12 @@ DISTNAME=	xicq-071298-snapshot.src
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Xtropy's ICQ Client
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 WRKSRC=		${WRKDIR}/xicq-071298
 
 USE_GMAKE=	yes
@@ -26,4 +32,4 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/examples/xicq
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,6 +14,12 @@ MASTER_SITE_SUBDIR=	asami
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A simple utility managing multiple Window Managers with Qt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
 USE_GMAKE=	yes
@@ -26,4 +32,4 @@ do-install:
 	$(MKDIR) $(PREFIX)/lib/X11/xwmm
 	$(INSTALL_DATA) $(WRKSRC)/system.xwmmrc $(PREFIX)/lib/X11/xwmm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
