@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e31d44a2-21e3-11d9-9289-000c41e2cdad">
+    <topic>imwheel -- insecure handling of PID file</topic>
+    <affects>
+      <package>
+	<name>imwheel</name>
+	<range><lt>1.0.0.p12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Computer Academic Underground advisory describes the
+	  consequences of imwheel's handling of the process ID file (PID
+	  file):</p>
+	<blockquote
+	  cite="http://www.caughq.org/advisories/CAU-2004-0002.txt">
+          <p>imwheel exclusively uses a predictably named PID file for
+            management of multiple imwheel processes. A race condition
+            exists when the -k command-line option is used to kill
+            existing imwheel processes. This race condition may be
+            used by a local user to Denial of Service another user
+            using imwheel, lead to resource exhaustion of the host
+            system, or append data to arbitrary files.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.caughq.org/advisories/CAU-2004-0002.txt</url>
+      <url>http://imwheel.sourceforge.net/files/DEVELOPMENT.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-08-20</discovery>
+      <entry>2004-10-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="064225c5-1f53-11d9-836a-0090962cff2a">
     <topic>squid -- NTLM authentication denial-of-service vulnerability</topic>
       <affects>
