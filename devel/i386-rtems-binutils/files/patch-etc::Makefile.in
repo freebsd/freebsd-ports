@@ -1,0 +1,11 @@
+--- etc/Makefile.in.orig	Sat Nov 15 12:15:31 2003
++++ etc/Makefile.in	Sat Nov 15 12:15:46 2003
+@@ -52,7 +52,7 @@
+ all:
+ 
+ # We want install to imply install-info as per GNU standards.
+-install: install-info
++install:
+ 
+ uninstall:
+ 
