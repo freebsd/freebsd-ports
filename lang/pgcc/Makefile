@@ -4,7 +4,7 @@
 # Date created:				10 Dec 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.16 1999/05/24 17:12:49 obrien Exp $
+# $Id: Makefile,v 1.17 1999/06/05 22:30:57 mharo Exp $
 #
 
 DISTNAME=	egcs-1.1.2
@@ -28,6 +28,8 @@ PATCH_SITES=	http://www.gcc.ml.org/data/source/  \
 PATCHFILES=	egcs-1.1.2-pgcc-1.1.3.diff.gz
 
 MAINTAINER=	obrien@FreeBSD.org
+
+BROKEN='waiting for new patches against gcc-2.95'
 
 USE_BZIP2=	yes
 
