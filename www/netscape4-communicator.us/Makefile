@@ -4,11 +4,11 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.2 1998/02/14 23:35:48 obrien Exp $
+# $Id: Makefile,v 1.3 1998/05/11 22:13:18 obrien Exp $
 #
 
-DISTNAME=	communicator_pro-v405-us.x86-unknown-linux2.0
-PKGNAME=	netscape-communicator-4.05.us
+DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
+PKGNAME=	netscape-communicator-4.07.us
 CATEGORIES=	www
 
 MAINTAINER=	obrien@FreeBSD.ORG
@@ -18,7 +18,7 @@ RESTRICTED=	"Commerial & USA ITAR export restrictions"
 NO_FETCH=	yes
 NO_BUILD=	Yes
 
-WRKSRC=		${WRKDIR}/communicator-v405.x86-unknown-linux2.0
+WRKSRC=		${WRKDIR}/communicator-v407.x86-unknown-linux2.0
 NDIR=		${PREFIX}/lib/netscape.us
 BINDIR=		${PREFIX}/bin
 
@@ -38,7 +38,7 @@ pre-fetch:
 pre-fetch:
 	@(if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 	${ECHO} You must manually obtain ${DISTNAME}${EXTRACT_SUFX} ; \
-	${ECHO} distribution and placed it in ${DISTDIR}. ; \
+	${ECHO} distribution and place it in ${DISTDIR}. ; \
 	false ; \
 	fi )
 .else
@@ -53,10 +53,10 @@ pre-fetch:
 do-install:
 	cd ${WRKSRC} && yes "" | \
 	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-pro-4.05.us.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-pro-4.05.us
-	ln -sf communicator-pro-4.05.us ${BINDIR}/communicator-4.us
-	ln -sf communicator-pro-4.05.us ${BINDIR}/netscape.us
+	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.07.us.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.07.us
+	ln -sf communicator-4.07.us ${BINDIR}/communicator-4.us
+	ln -sf communicator-4.07.us ${BINDIR}/netscape.us
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
