@@ -1,0 +1,3 @@
+bin/pancho
+%%PORTDOCS%%share/doc/pancho/README
+%%PORTDOCS%%share/doc/pancho/LOGGING

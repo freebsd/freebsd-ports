@@ -1,0 +1,11 @@
+--- pancho.orig	Sat Nov  3 16:12:13 2001
++++ pancho	Sat Nov  3 16:13:03 2001
+@@ -34,7 +34,7 @@
+ 
+ my $logging = "";	# set this to "1" to enable logging
+ 
+-my $logfile = "";	# full path to your logfile 
++my $logfile = $ENV{HOME}."/pancho.log";	# full path to your logfile 
+ 
+ ############ NO FURTHER EDITING SHOULD BE REQUIRED.    ############
+ ############ DOING SO IS AT YOUR OWN RISK.	       ############

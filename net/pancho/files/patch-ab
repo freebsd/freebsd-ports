@@ -1,0 +1,10 @@
+--- LOGGING.orig	Sat Nov  3 16:26:20 2001
++++ LOGGING	Sat Nov  3 17:31:18 2001
+@@ -69,3 +69,7 @@
+ 
+     % touch /var/log/pancho
+     % chmod 600 /var/log/pancho
++
++Note: The FreeBSD port compiled with -DWITH_PANCHO_LOGGING enables
++logging into ~/pancho.log so the setuid bit isn't set.
++
