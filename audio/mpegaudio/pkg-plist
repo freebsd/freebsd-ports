@@ -1,25 +1,25 @@
 bin/mpeg_musicin
 bin/mpeg_musicout
-lib/mpegaudio/tables/1cb0
-lib/mpegaudio/tables/1cb1
-lib/mpegaudio/tables/1cb2
-lib/mpegaudio/tables/1th0
-lib/mpegaudio/tables/1th1
-lib/mpegaudio/tables/1th2
-lib/mpegaudio/tables/2cb0
-lib/mpegaudio/tables/2cb1
-lib/mpegaudio/tables/2cb2
-lib/mpegaudio/tables/2th0
-lib/mpegaudio/tables/2th1
-lib/mpegaudio/tables/2th2
-lib/mpegaudio/tables/absthr_0
-lib/mpegaudio/tables/absthr_1
-lib/mpegaudio/tables/absthr_2
-lib/mpegaudio/tables/alloc_0
-lib/mpegaudio/tables/alloc_1
-lib/mpegaudio/tables/alloc_2
-lib/mpegaudio/tables/alloc_3
-lib/mpegaudio/tables/dewindow
-lib/mpegaudio/tables/enwindow
-@dirrm lib/mpegaudio/tables
-@dirrm lib/mpegaudio
+share/mpegaudio/tables/1cb0
+share/mpegaudio/tables/1cb1
+share/mpegaudio/tables/1cb2
+share/mpegaudio/tables/1th0
+share/mpegaudio/tables/1th1
+share/mpegaudio/tables/1th2
+share/mpegaudio/tables/2cb0
+share/mpegaudio/tables/2cb1
+share/mpegaudio/tables/2cb2
+share/mpegaudio/tables/2th0
+share/mpegaudio/tables/2th1
+share/mpegaudio/tables/2th2
+share/mpegaudio/tables/absthr_0
+share/mpegaudio/tables/absthr_1
+share/mpegaudio/tables/absthr_2
+share/mpegaudio/tables/alloc_0
+share/mpegaudio/tables/alloc_1
+share/mpegaudio/tables/alloc_2
+share/mpegaudio/tables/alloc_3
+share/mpegaudio/tables/dewindow
+share/mpegaudio/tables/enwindow
+@dirrm share/mpegaudio/tables
+@dirrm share/mpegaudio

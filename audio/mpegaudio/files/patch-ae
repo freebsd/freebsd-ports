@@ -1,0 +1,47 @@
+--- musicout.c.orig	Wed Jan  5 13:39:27 1994
++++ musicout.c	Tue Aug 22 02:37:30 2000
+@@ -58,6 +58,8 @@
+ #include        "common.h"
+ #include        "decoder.h"
+ 
++#include <stdlib.h>
++
+ /********************************************************************
+ /*
+ /*        This part contains the MPEG I decoder for Layers I & II.
+@@ -139,7 +141,7 @@
+     if(argc==1) {        /* no command line args -> interact */
+        do {
+           printf ("Enter encoded file name <required>: ");
+-          gets (encoded_file_name);
++          fgets (encoded_file_name,sizeof(encoded_file_name),stdin);
+           if (encoded_file_name[0] == NULL_CHAR)
+              printf ("Encoded file name is required. \n");
+        } while (encoded_file_name[0] == NULL_CHAR);
+@@ -151,7 +153,7 @@
+        printf ("Enter MPEG decoded file name <%s%s>: ", encoded_file_name,
+                DFLT_OPEXT);
+ #endif
+-       gets (decoded_file_name);
++       fgets (decoded_file_name,sizeof(decoded_file_name),stdin);
+        if (decoded_file_name[0] == NULL_CHAR) {
+ #ifdef  MS_DOS
+            /* replace old extension with new one, 92-08-19 shn */
+@@ -164,7 +166,7 @@
+ 
+        printf(
+           "Do you wish to write an AIFF compatible sound file ? (y/<n>) : ");
+-       gets(t);
++       fgets(t,sizeof(t),stdin);
+        if (*t == 'y' || *t == 'Y') need_aiff = TRUE;
+        else                        need_aiff = FALSE;
+        if (need_aiff)
+@@ -173,7 +175,7 @@
+ 
+        printf(
+           "Do you wish to exit (last chance before decoding) ? (y/<n>) : ");
+-       gets(t);
++       fgets(t,sizeof(t),stdin);
+        if (*t == 'y' || *t == 'Y') exit(0);
+     }
+     else {        /* interpret CL Args */
