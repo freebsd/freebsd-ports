@@ -1,0 +1,23 @@
+# New ports collection makefile for:	user-selector-applet
+# Date created:		8 May 2004
+# Whom:			Alexander Nedotsukov <bland@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	user-selector-applet
+PORTVERSION=	0.0.7
+CATEGORIES=	x11 gnome
+MASTER_SITES=	http://esco.mine.nu/downloads/
+DIST_SUBDIR=	gnome2
+
+MAINTAINER=	bland@FreeBSD.org
+COMMENT=	Fast user switching applet for GNOME
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gtk20 gnomepanel
+USE_LIBTOOL_VER=	13
+INSTALLS_SHLIB=	yes
+
+.include <bsd.port.mk>
