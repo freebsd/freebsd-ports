@@ -6,15 +6,14 @@
 #
 
 PORTNAME?=	ra3
-PORTVERSION?=	1.5
+PORTVERSION?=	1.6
 CATEGORIES=	games linux
-MASTER_SITES?=	http://www.quakeshit.com/files/ \
-		ftp://ftp.gigabell.net/pub/exp/q3/mod/ra3/ \
-		ftp://ftp.telekabel.at/pub/games/quake3/ra3/ \
-		ftp://ftp.online.no/pub/online.no/spill/servers/quake/quake3/ra3/
+MASTER_SITES?=	ftp://ftp.online.no/pub/online.no/spill/servers/quake/quake3/ra3/ \
+		http://217.116.227.199/modifications/ \
+		ftp://ftp.telekabel.at/pub/games/quake3/ra3/
 PKGNAMEPREFIX=	q3server-
 .ifndef(DISTNAME)
-DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl_linuxmac.zip \
+DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl.zip \
 		${PORTNAME}${PORTVERSION:S/.//}sv.zip
 .endif
 
@@ -30,13 +29,12 @@ NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 .if (${PORTNAME}==ra3)
 WRKSRC=		${WRKDIR}/arena
-HAS_WIERDPATCHES=	yes
 .endif
 .ifndef(DONT_USE_ZIP)
 USE_ZIP=	yes
 .endif
 .if defined(HAS_WIERDPATCHES)
-EXTRACT_ONLY?=	${PORTNAME}${PORTVERSION:S/.//}cl_linuxmac.zip
+EXTRACT_ONLY?=	${PORTNAME}${PORTVERSION:S/.//}cl.zip
 .endif
 .ifndef(NO_WRKSUBDIR)
 Q3SUBDIR?=	${WRKSRC:T}
