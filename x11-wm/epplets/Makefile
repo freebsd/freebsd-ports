@@ -12,7 +12,6 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
 		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
 
-MASTER_SITES=	ftp://ftp.enlightenment.org/enlightenment/epplets/
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	cmc@groupofnine.org
