@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	masini@uniroma3.it
 
-BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	f2c:${PORTSDIR}/lang/f2c \
+		imake:${PORTSDIR}/devel/imake-4
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

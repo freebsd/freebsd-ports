@@ -15,6 +15,8 @@ DISTFILES=	vrweb-src-1.5.tar.gz help-1.5.tar.gz
 
 MAINTAINER=	saper@system.pl
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes

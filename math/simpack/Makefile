@@ -13,6 +13,8 @@ DISTFILES=	SimPack3.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 
