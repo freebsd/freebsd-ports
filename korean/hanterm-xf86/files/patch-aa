@@ -14,8 +14,8 @@
     # It would also be nice to do this for all -L options, not just this one.
     if test -n "$x_libraries"; then
 !     case "${PORTOBJFORMAT}" in
-!       elf) X_LIBS="$X_LIBS -L$x_libraries -rpath $x_libraries" ;;
-!       *) X_LIBS="$X_LIBS -L$x_libraries" ;;
+!       elf) X_LIBS="$X_LIBS -L$x_libraries -rpath $x_libraries -lxpg4" ;;
+!       *) X_LIBS="$X_LIBS -L$x_libraries -lxpg4" ;;
 !     esac
       # For Solaris; some versions of Sun CC require a space after -R and
       # others require no space.  Words are not sufficient . . . .
@@ -34,8 +34,8 @@
     # Check for libraries that X11R6 Xt/Xaw programs need.
     ac_save_LDFLAGS="$LDFLAGS"
 !   test -n "$x_libraries" && case "${PORTOBJFORMAT}" in
-!     elf) LDFLAGS="$LDFLAGS -L$x_libraries -rpath $x_libraries" ;;
-!     *) LDFLAGS="$LDFLAGS -L$x_libraries" ;;
+!     elf) LDFLAGS="$LDFLAGS -L$x_libraries -rpath $x_libraries -lxpg4" ;;
+!     *) LDFLAGS="$LDFLAGS -L$x_libraries -lxpg4" ;;
 !   esac
     # SM needs ICE to (dynamically) link under SunOS 4.x (so we have to
     # check for ICE first), but we must link in the order -lSM -lICE or
