@@ -2,6 +2,7 @@
 @unexec if cmp -s %D/%%ADODB_DIR%%/adodb-session.php %D/%%ADODB_DIR%%/adodb-session.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-session.php; fi
 @unexec if cmp -s %D/%%ADODB_DIR%%/server.php %D/%%ADODB_DIR%%/server.php.sample; then rm -f %D/%%ADODB_DIR%%/server.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/benchmark.php %D/%%ADODB_TESTS%%/benchmark.php.sample; then rm -f %D/%%ADODB_TESTS%%/benchmark.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/client.php %D/%%ADODB_TESTS%%/client.php.sample; then rm -f %D/%%ADODB_TESTS%%/client.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test.php %D/%%ADODB_TESTS%%/test.php.sample; then rm -f %D/%%ADODB_TESTS%%/test.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test2.php %D/%%ADODB_TESTS%%/test2.php.sample; then rm -f %D/%%ADODB_TESTS%%/test2.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test3.php %D/%%ADODB_TESTS%%/test3.php.sample; then rm -f %D/%%ADODB_TESTS%%/test3.php; fi
@@ -25,7 +26,6 @@
 %%ADODB_DIR%%/adodb.png
 %%ADODB_DIR%%/adodb2.gif
 %%ADODB_DIR%%/adodb2.png
-%%ADODB_DIR%%/client.php
 %%ADODB_DIR%%/crypt.inc.php
 %%ADODB_DIR%%/server.php.sample
 %%ADODB_DIR%%/tohtml.inc.php
@@ -56,6 +56,7 @@
 %%ADODB_DRIVERS%%/adodb-sybase.inc.php
 %%ADODB_DRIVERS%%/adodb-vfp.inc.php
 %%ADODB_TESTS%%/benchmark.php.sample
+%%ADODB_TESTS%%/client.php.sample
 %%ADODB_TESTS%%/test.php.sample
 %%ADODB_TESTS%%/test2.php.sample
 %%ADODB_TESTS%%/test3.php.sample
@@ -75,3 +76,5 @@
 @dirrm %%ADODB_TESTS%%
 @dirrm %%ADODB_DIR%%
 @dirrm www/data.default/php
+@unexec rmdir %D/www/data.default 2> /dev/null || true
+@unexec rmdir %D/www 2> /dev/null || true

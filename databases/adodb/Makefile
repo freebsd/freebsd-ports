@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.90
+PORTVERSION=	2.50
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -62,7 +62,6 @@ INCLUDES=	adodb-csvlib.inc.php \
 		adodb.inc.php \
 		adodb-lib.inc.php \
 		adodb-pear.inc.php \
-		client.php \
 		crypt.inc.php \
 		tohtml.inc.php
 
@@ -76,6 +75,7 @@ SAMPLES=	adodb-cryptsession.php \
 		server.php
 
 TESTS=		tests/benchmark.php \
+		tests/client.php \
 		tests/test.php \
 		tests/test2.php \
 		tests/test3.php \
