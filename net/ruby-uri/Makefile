@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uri
-PORTVERSION=	4.22
+PORTVERSION=	4.27
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www02.so-net.ne.jp/%7Egreentea/ruby/uri/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
