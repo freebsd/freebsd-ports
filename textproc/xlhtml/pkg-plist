@@ -1,8 +1,15 @@
+@comment $FreeBSD$
 bin/nsopen
 bin/nspptview
 bin/nsxlview
 bin/ppthtml
 bin/xlhtml
-share/doc/xlhtml/README.ppthtml
-share/doc/xlhtml/README.xlhtml
-@dirrm share/doc/xlhtml
+%%PORTDOCS%%%%DOCSDIR%%/xlhtml/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/xlhtml/README
+%%PORTDOCS%%%%DOCSDIR%%/xlhtml/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xlhtml
+%%PORTDOCS%%%%DOCSDIR%%/ppthtml/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/ppthtml/README
+%%PORTDOCS%%%%DOCSDIR%%/ppthtml/THANKS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/ppthtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
