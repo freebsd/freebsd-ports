@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.18.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_DEBIAN:S,$,:debian,}
@@ -142,7 +142,7 @@ install-info:
 
 install-links:
 .for F in eqn neqn pic tbl
-	${LN} -sf ${FILE} ${PREFIX}/bin/g${F}
+	${LN} -sf ${F} ${PREFIX}/bin/g${F}
 .endfor
 
 .include <bsd.port.post.mk>
