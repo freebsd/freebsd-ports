@@ -32,6 +32,7 @@
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += firebird
+    SUBDIR += fortunetw
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += ghostscript6
