@@ -14,7 +14,8 @@ DISTNAME=	gnome-games-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore \
+		guile.6:${PORTSDIR}/lang/guile
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
