@@ -19,6 +19,7 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+USE_REINPLACE=	YES
 
 VCFGDIR?=	${WRKDIR}/vcfg
 VCFGFILES?=	inc_deps lib_deps tcp.smtp
@@ -237,6 +238,11 @@ CONFIGURE_ARGS+=	--enable-users-big-dir=n
 .if defined(WITHOUT_SEEKABLE)
 CONFIGURE_ARGS+=	--enable-make-seekable=n
 .endif
+
+# autoconf and automake can remove our patches to the configure scripts.
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
 
 #
 # This port doesn't honour PREFIX, it honours vpopmail's home directory.

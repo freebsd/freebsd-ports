@@ -34,6 +34,7 @@ post-patch:
 		${WRKSRC}/tools/stunnel.conf-sample.in
 	@${REINPLACE_CMD} -E -e 's|localstatedir/run/stunnel.pid|localstatedir/stunnel.pid|' \
 		${WRKSRC}/configure.ac ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E -e 's,@(ACLOCAL|AUTO(MAKE|CONF|HEADER))@,/usr/bin/true,'
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
 		${WRKSRC}/Makefile.in
