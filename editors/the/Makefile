@@ -19,16 +19,23 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"The Hessling Editor", an implementation of the xedit editor
 
-BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
-RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-imc
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ncurses --with-rexx=rexximc \
+CONFIGURE_ARGS=	--with-ncurses \
 		--with-rexxincdir=${LOCALBASE}/include \
 		--with-rexxlibdir=${LOCALBASE}/lib
 ALL_TARGET=	all html
 
 MAN1=		the.1
+
+.if defined(WITH_REXX_REGINA)
+BUILD_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
+RUN_DEPENDS+=	regina:${PORTSDIR}/lang/rexx-regina
+CONFIGURE_ARGS+=	--with-rexx=regina
+.else
+BUILD_DEPENDS+=	rexx:${PORTSDIR}/lang/rexx-imc
+RUN_DEPENDS+=	rexx:${PORTSDIR}/lang/rexx-imc
+CONFIGURE_ARGS+=	--with-rexx=rexximc
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
