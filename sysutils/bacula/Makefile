@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -153,7 +153,7 @@ post-install:
 		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
 	fi
 	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
-		${ECHO_CMD} "etc/console.conf.new" >> ${TMPPLIST}; \
+		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
 		${MV} ${PREFIX}/etc/bconsole.conf ${PREFIX}/etc/bconsole.conf.sample; \
 		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
