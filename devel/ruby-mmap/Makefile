@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmap
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ DOCS=		Changes \
 		README.en \
 		${RUBY_RD_FILES} \
 		${RUBY_RD_HTML_FILES} \
-		docs/doc
+		doc/doc
 
 .include <bsd.port.pre.mk>
 
