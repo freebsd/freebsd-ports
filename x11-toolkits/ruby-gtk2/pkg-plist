@@ -33,7 +33,9 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/buttonbox.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/calendar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/checkbutton.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/color_font_button.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/combo_check.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/combobox.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/cursor.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dialog.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dialog2.rb
@@ -41,9 +43,13 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/dndtreeview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/drawing.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/entry.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/entrycompletion.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/expander.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/filechooser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/fileselection.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/frame.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gdkscreen.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/gnome-logo-icon.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/helloworld.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/image.rb
@@ -67,7 +73,11 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/to_drawable.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/togglebutton.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/toolbar.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treemodelfilter.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/treeview.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/uimanager.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/uimanager2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/uimanager2.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/window.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/xbm_cursor.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testgtk/3DRings.xpm
@@ -135,6 +145,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/misc
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/gtk-demo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING.LIB
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -21,31 +21,29 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
 
 USE_RUBY=	yes
+USE_XLIB=	yes
 USE_GNOME=	libgnomeui
 USE_RUBY_EXTCONF=	yes
-USE_XLIB=	yes
 
 .include "${.CURDIR}/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gnome
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	AUTHORS \
-		ChangeLog \
-		README \
-		README.gnome2-all
+DOCS_EN=	AUTHORS COPYING.LIB ChangeLog README README.gnome2-all
 
-post-extract:
-	${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
-	${CP} ${RUBY_GNOME_WRKSRC}/README ${WRKSRC}/README.gnome2-all
+post-build:
+	@${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
+	@${CP} ${RUBY_GNOME_WRKSRC}/README ${WRKSRC}/README.gnome2-all
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/test-gnome
+	@${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/sample/test-gnome/* ${RUBY_MODEXAMPLESDIR}/test-gnome/
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

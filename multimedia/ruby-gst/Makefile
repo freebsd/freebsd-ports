@@ -7,7 +7,6 @@
 
 PORTNAME=	gst
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia devel ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -20,10 +19,8 @@ COMMENT=	Ruby bindings for the GStreamer framework
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
-BROKEN=		"Can't compile with gstreamer 0.8 due to API/ABI change"
-
 USE_RUBY=	yes
-USE_GNOME=	pkgconfig gstreamerplugins
+USE_GNOME=	gstreamerplugins
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
@@ -31,16 +28,16 @@ USE_RUBY_EXTCONF=	yes
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gstreamer
 INSTALL_TARGET=	site-install
 
-DOCS=		ChangeLog \
-		README
+DOCS=		COPYING.LIB ChangeLog README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/tests/* ${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

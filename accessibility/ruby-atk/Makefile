@@ -20,23 +20,22 @@ COMMENT=	Ruby binding for ATK
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
+USE_XLIB=	yes
 USE_GNOME=	atk
 USE_RUBY_EXTCONF=	yes
-USE_XLIB=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/atk
 INSTALL_TARGET=	site-install
 
-DOCS=		ChangeLog \
-		README
+DOCS=		COPYING.LIB ChangeLog README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
