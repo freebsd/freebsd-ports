@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX
-PORTVERSION=	0.05
+PORTVERSION=	0.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -27,9 +27,12 @@ MAN3=		XML::SAX.3 XML::SAX::Base.3 XML::SAX::DocumentLocator.3 \
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+post-patch:
+		@${PERL} -pi -e 's/\x0d(?=\x0a)//;' ${WRKSRC}/SAX/Intro.pod
+
 post-configure:
 # dirty hack to deceive irritable pod2man
-		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 -lax/;' \
+		@${PERL} -pi -e 's/^(POD2MAN_EXE.*)$$/\1 --lax/;' \
 				${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
