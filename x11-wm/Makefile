@@ -33,6 +33,7 @@
     SUBDIR += scwm
     SUBDIR += toolbox
     SUBDIR += tvtwm
+    SUBDIR += ude
     SUBDIR += vtwm
     SUBDIR += windowmaker
     SUBDIR += windowmaker-i18n
