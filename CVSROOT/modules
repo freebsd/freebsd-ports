@@ -6600,6 +6600,7 @@ pysol-cardsets	ports/games/pysol-cardsets
 pysol-music	ports/games/pysol-music
 pysol-sound-server	ports/audio/pysol-sound-server
 python		ports/lang/python
+python-devel	ports/lang/python-devel
 python-doc-html	ports/lang/python-doc-html
 python-doc-pdf-a4	ports/lang/python-doc-pdf-a4
 python-doc-pdf-letter	ports/lang/python-doc-pdf-letter
