@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Mon Oct 18 11:35:58 1999
-+++ src/Imakefile	Mon May 22 20:01:17 2000
+--- src/Imakefile.orig	Mon Oct 18 17:35:58 1999
++++ src/Imakefile	Sun Dec 10 17:09:01 2000
 @@ -5,9 +5,9 @@
  
  ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
@@ -25,3 +25,12 @@
  DEPLIBS = $(DEPXLIB) 
  
  LOCAL_LIBRARIES =	$(XLIB) $(WINGSLIBS) $(WSOUNDLFLAGS) $(WSOUNDLIBS) $(WRASTERLFLAGS) $(WRASTERLIBS) $(EFENCELIB)
+@@ -30,7 +30,7 @@
+ SRCS = PLFunctions.c SoundEvents.c SoundPaths.c SystemInfo.c WSoundPrefs.c main.c
+ OBJS = PLFunctions.o SoundEvents.o SoundPaths.o SystemInfo.o WSoundPrefs.o main.o
+ 
+-ComplexProgramTarget(WSoundPrefs)
++ComplexProgramTargetNoMan(WSoundPrefs)
+ 
+ InstallMultiple($(ICONS),$(BINDIR))
+ 
