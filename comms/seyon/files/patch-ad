@@ -1,0 +1,15 @@
+--- Imakefile.orig	Mon Mar 29 13:40:32 1999
++++ Imakefile	Mon Mar 29 13:40:41 1999
+@@ -46,13 +46,6 @@
+ InstallAppDefaultsLong(Seyon-co,Seyon-color)
+ InstallNonExecFile(seyon.help,$(LIBDIR))
+ 
+-install::
+-	@if [ ! -d $(HOME)/.seyon ]; then mkdir $(HOME)/.seyon; fi; \
+-	echo "=== Copying example files (no overwrite) to $(HOME)/.seyon ..."; \
+-	for i in phonelist protocols startup script.*; do \
+-		if [ ! -f $(HOME)/.seyon/$$i ]; then cp $$i $(HOME)/.seyon; fi;\
+-	done;
+-
+ clean::
+ 	rm -f version.h y.tab.* SeParse.c
