@@ -1,0 +1,40 @@
+bin/hacha
+bin/hevea
+bin/imagen
+lib/hevea/contents_motif.gif
+lib/hevea/cutfoot-eng.html
+lib/hevea/cutfoot-fra.html
+lib/hevea/footer.tex
+lib/hevea/hevea.sty
+lib/hevea/html/ams.hva
+lib/hevea/html/article.hva
+lib/hevea/html/book.hva
+lib/hevea/html/hevea.hva
+lib/hevea/html/mathaccents.hva
+lib/hevea/html/multind.hva
+lib/hevea/html/report.hva
+lib/hevea/html/seminar.hva
+lib/hevea/html/symb-eng.hva
+lib/hevea/html/symb-fra.hva
+lib/hevea/html/symb-mathml.hva
+lib/hevea/html/symb-text.hva
+lib/hevea/html/symb.hva
+lib/hevea/info/article.hva
+lib/hevea/info/book.hva
+lib/hevea/info/hevea.hva
+lib/hevea/info/report.hva
+lib/hevea/info/seminar.hva
+lib/hevea/next_motif.gif
+lib/hevea/previous_motif.gif
+lib/hevea/text/article.hva
+lib/hevea/text/book.hva
+lib/hevea/text/hevea.hva
+lib/hevea/text/report.hva
+lib/hevea/text/seminar.hva
+lib/hevea/text/symb.hva
+share/texmf/tex/latex/hevea/hevea.sty
+@dirrm lib/hevea/html
+@dirrm lib/hevea/info
+@dirrm lib/hevea/text
+@dirrm lib/hevea
+@dirrm share/texmf/tex/latex/hevea
