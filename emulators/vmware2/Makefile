@@ -23,7 +23,7 @@ PATCH_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
 PATCH_SITE_SUBDIR=	knu
-PATCHFILES=	vmmon-freebsd-0.95.1.tar.gz \
+PATCHFILES=	vmmon-freebsd-0.97-b1.tar.gz \
 		vmnet-freebsd-0.11.tar.gz
 
 # Feel free to post your questions/reports/suggestions on this port to
