@@ -21,7 +21,7 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .if exists(/usr/lib/libcrypto.a)
-PYTHON_LIBS=	-lcrypto
+PYTHON_LIBS=	-lssl -lcrypto
 .endif
 PYTHON_LIBS+=	-lutil -lreadline -lcrypt -lpython
 

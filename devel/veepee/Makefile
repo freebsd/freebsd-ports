@@ -23,7 +23,7 @@ CONFIGURE_ENV=	LDFLAGS="-pthread ${PYTHON_LIBS}"
 CONFIGURE_ARGS=	--with-gd-includes=${LOCALBASE}/include/gd \
 		--disable-kde
 .if exists(/usr/lib/libcrypto.a)
-PYTHON_LIBS+=	-lcrypto
+PYTHON_LIBS+=	-lssl -lcrypto
 .endif
 
 pre-patch:
