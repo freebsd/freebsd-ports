@@ -1,0 +1,6 @@
+bin/dejis
+bin/rjis
+bin/rsjis
+bin/rujis
+lib/recjis/sjis_tbl
+lib/recjis/ujis_tbl
