@@ -10,7 +10,7 @@ PORTVERSION=	5.4.2
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 PATCH_SITES=	http://www.apsfilter.org/download/
-PATCHFILES=	diff-5.4.2-14.08.2000.gz
+PATCHFILES=	diff-5.4.2-22.08.2000.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
