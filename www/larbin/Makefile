@@ -9,14 +9,15 @@ PORTNAME=	larbin
 PORTVERSION=	2.6.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/ \
-		http://prdownloads.sourceforge.net/larbin/
+MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
 
-MAINTAINER=	hmp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful HTTP crawler with an easy interface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		makedepend:${X_IMAKE_PORT}
+
+BROKEN=		Unfetchable
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
