@@ -27,9 +27,7 @@ ONLY_FOR_ARCHS=	i386
 # Recommended ONLY for benchmarks.
 # CFLAGS=-march=pentiumpro -O6 -finline-functions -fomit-frame-pointer -funrol
 
-MAKE_ENV=	"CC=$(CCMD)" "LD=$(CC)"
-
-CCMD!=		${ECHO} "$(CC) -c $(CFLAGS)"
+MAKE_ENV=	"CC=$(CC) -c $(CFLAGS)" "LD=$(CC)"
 
 pre-fetch:
 .if !defined(USE_MT)
