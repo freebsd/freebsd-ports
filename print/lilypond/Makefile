@@ -10,8 +10,7 @@
 PORTNAME=	lilypond
 PORTVERSION=	1.6.0
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.cs.uu.nl/pub/GNU/LilyPond/v1.6/ \
-		ftp://sca.uwaterloo.ca/pub/lilypond/v1.6/
+MASTER_SITES=	ftp://ftp.lilypond.org/pub/LilyPond/v1.6/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	The GNU music typesetter
