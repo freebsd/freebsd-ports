@@ -1,25 +1,15 @@
---- configure.orig	Wed Dec 16 23:06:18 1998
-+++ configure	Tue Jan 26 14:13:02 1999
-@@ -1076,13 +1076,13 @@
- 	    fi
- 	
- 	    if test "$no_gnome_config" = "yes"; then
--              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:1081: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	      if test -f $gnome_prefix/gnomeConf.sh; then
-+              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:1081: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	      if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	        echo "$ac_t""found" 1>&6
- 	        echo "loading gnome configuration from" \
--		     "$gnome_prefix/gnomeConf.sh"
--	        . $gnome_prefix/gnomeConf.sh
-+		     "$prefix/share/gnome/gnomeConf.sh"
-+	        . $prefix/share/gnome/gnomeConf.sh
- 	        
- 	      else
- 	        echo "$ac_t""not found" 1>&6
-@@ -4024,15 +4024,15 @@
+--- configure.orig	Sat Apr 17 04:25:20 1999
++++ configure	Sat May 22 21:58:31 1999
+@@ -2083,7 +2083,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -4165,15 +4165,15 @@
  fi
  
          
@@ -29,13 +19,11 @@
          INSTOBJEXT=.mo
          DATADIRNAME=share
 -	INTLDEPS='$(top_builddir)/intl/libintl.a'
--	INTLLIBS=$INTLDEPS
--	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++	INTLDEPS='-lintl'
+ 	INTLLIBS=$INTLDEPS
+ 	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
-+#	INTLDEPS='$(top_builddir)/intl/libintl.a'
-+#	INTLLIBS=$INTLDEPS
-+#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 +#        nls_cv_header_intl=intl/libintl.h
 +#        nls_cv_header_libgt=intl/libgettext.h
        fi
