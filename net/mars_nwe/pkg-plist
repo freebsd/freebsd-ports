@@ -1,3 +1,4 @@
+etc/nwserv.conf.example
 sbin/nwserv
 sbin/ncpserv
 sbin/nwbind

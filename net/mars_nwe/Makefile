@@ -23,6 +23,7 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC} && ./mk.li install)
+	@${INSTALL_DATA} ${WRKSRC}/examples/nw.ini ${PREFIX}/etc/nwserv.conf.example
 	@${ECHO} "You'll need to create a startup file to load MARS_NWE Server when booting."
 	@${ECHO}  "Create a nwserv.sh in ${PREFIX}/etc/rc.d directory and modify"
 	@${ECHO}  "${PREFIX}/etc/nwserv.conf manually before you loading server."
