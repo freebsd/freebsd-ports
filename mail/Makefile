@@ -207,6 +207,7 @@
     SUBDIR += tlb
     SUBDIR += tmda
     SUBDIR += tpop3d
+    SUBDIR += turba
     SUBDIR += vbsfilter
     SUBDIR += vm-pop3d
     SUBDIR += vpopmail
