@@ -2,7 +2,7 @@ bin/libmikmod-config
 include/mikmod.h
 lib/libmikmod.a
 lib/libmikmod.so
-lib/libmikmod.so.1.1
+lib/libmikmod.so.2
 @unexec install-info --delete %D/info/mikmod.info %D/info/dir
 info/mikmod.info
 @exec install-info %D/info/mikmod.info %D/info/dir
