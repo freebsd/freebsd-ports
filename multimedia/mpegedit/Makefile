@@ -17,12 +17,9 @@ COMMENT=	A program to edit encoded mpeg streams
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
 USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+USE_GCC=	2.95
+PORTDOCS=	README manual.ps
+PLIST_FILES=	bin/mpeg_edit
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '.depend' | ${XARGS} ${RM} -f
@@ -31,8 +28,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg_edit ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/manual.ps ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
