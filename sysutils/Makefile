@@ -69,6 +69,7 @@
     SUBDIR += guitar
     SUBDIR += gupsc
     SUBDIR += healthd
+    SUBDIR += httplog
     SUBDIR += idled
     SUBDIR += installwatch
     SUBDIR += ipa
