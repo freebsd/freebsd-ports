@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.3
+PORTVERSION=	0.4a
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/
 
@@ -20,11 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE} \
 		--with-pcap
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		honeyd.8
-
-# This is necessary to keep auto* from running.
-pre-configure:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH}
 
 .include <bsd.port.mk>
