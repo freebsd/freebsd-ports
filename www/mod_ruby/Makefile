@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	0.1.9
+PORTVERSION=	0.2.0
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.ruby-lang.org/~shugo/mod_ruby/
 DIST_SUBDIR=	ruby
@@ -14,15 +14,17 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+LIB_DEPENDS=	eruby.1:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 USE_RUBY=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 APXS=		${LOCALBASE}/sbin/apxs
 
-CONFIGURE_ARGS=	--apxs="${APXS}"
+CONFIGURE_ARGS=	--apxs="${APXS}" \
+		--enable-eruby=yes \
+		--eruby-includes="${LOCALBASE}/include" \
+		--eruby-libraries="${LOCALBASE}/lib"
 
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
@@ -43,6 +45,4 @@ do-install:
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
