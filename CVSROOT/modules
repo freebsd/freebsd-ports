@@ -1515,6 +1515,7 @@ figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 file		src/usr.bin/file
 file2c		src/usr.bin/file2c
+file_menu_applet	ports/x11-fm/file_menu_applet
 filedupe	ports/sysutils/filedupe
 filepp		ports/textproc/filepp
 filerunner	ports/x11-fm/filerunner
