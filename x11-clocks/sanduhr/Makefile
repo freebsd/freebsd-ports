@@ -8,27 +8,18 @@
 PORTNAME=	sanduhr
 PORTVERSION=	1.0
 CATEGORIES=	x11-clocks gnome
-MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/
+MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/data/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alarm clock for GNOME desktop designed as a sand-glass
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomelibs gnometarget gnomeprefix oaf
 USE_GMAKE=	yes
-USE_GNOME=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		sanduhr.1
-
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>
