@@ -1,0 +1,15 @@
+--- skyutils-1.09/skyutils.h.old	Mon Jan  8 14:19:04 2001
++++ skyutils-1.09/skyutils.h	Sat Jan 20 12:54:57 2001
+@@ -35,11 +35,8 @@
+ #define strncasecmp strnicmp
+ #endif
+ 
+-#ifdef MSG_NOSIGNAL
++#define MSG_NOSIGNAL 0
+ #define SU_MSG_NOSIGNAL MSG_NOSIGNAL
+-#else
+-#define SU_MSG_NOSIGNAL 0
+-#endif
+ 
+ #ifndef INADDR_NONE
+ #define INADDR_NONE -1
