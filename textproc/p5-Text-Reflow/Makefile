@@ -18,11 +18,11 @@ COMMENT=	Perl module for reflowing text files
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Reflow.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-pre-everything::
-	@${PERL} -M5.006 -e1 2>/dev/null || \
-	( ${ECHO_MSG} "===> Requires perl 5.6 or above (available from the port collection)"; \
-	  ${FALSE} )
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 500601
+IGNORE= "Requires perl 5.6.1"
+.endif
+
+.include <bsd.port.post.mk>
