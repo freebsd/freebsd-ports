@@ -50,7 +50,7 @@ PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
 .else
-.error "Unsupported platform, sorry."
+IGNORE=		"Unsupported platform, sorry."
 .endif
 
 do-build:
