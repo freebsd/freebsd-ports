@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.26 1998/12/01 03:06:30 asami Exp $
+# $Id: Makefile,v 1.27 1998/12/13 08:49:09 asami Exp $
 #
 
 DISTNAME=	tclX8.0.2
@@ -16,6 +16,8 @@ MAINTAINER=	jseger@FreeBSD.ORG
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
+
+BROKEN_ELF=	library names
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
