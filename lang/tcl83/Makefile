@@ -50,7 +50,7 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	fcopy.n file.n fileevent.n filename.n flush.n for.n foreach.n \
 	format.n gets.n glob.n global.n history.n http.n if.n incr.n info.n \
 	interp.n join.n lappend.n library.n lindex.n linsert.n list.n \
-	llength.n load.n lrange.n lreplace.n lsearch.n lsort.n msgcat.n \
+	llength.n load.n lrange.n lreplace.n lsearch.n lsort.n memory.n msgcat.n \
 	namespace.n open.n package.n packagens.n pid.n pkgMkIndex.n proc.n \
 	puts.n pwd.n re_syntax.n read.n regexp.n registry.n regsub.n rename.n \
 	resource.n return.n safe.n scan.n seek.n set.n socket.n source.n \
