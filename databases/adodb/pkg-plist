@@ -21,6 +21,7 @@
 %%ADODB_DIR%%/adodb-lib.inc.php
 %%ADODB_DIR%%/adodb-pear.inc.php
 %%ADODB_DIR%%/adodb-session.php.sample
+%%ADODB_DIR%%/adodb-time.inc.php
 %%ADODB_DIR%%/adodb.gif
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/adodb.png
