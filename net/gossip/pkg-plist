@@ -3,11 +3,13 @@ etc/gconf/gconf.xml.defaults/apps/gossip/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/contacts/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/conversation/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/sound/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gossip/status/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gossip/ui/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/contacts/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/conversation/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/sound/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gossip/status/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gossip/ui/%gconf.xml
 etc/gconf/schemas/gossip.schemas
 share/gnome/applications/gossip.desktop
@@ -73,11 +75,13 @@ share/locale/zh_CN/LC_MESSAGES/gossip.mo
 share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrm share/gnome/gossip
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/ui
+@dirrm etc/gconf/gconf.xml.defaults/apps/gossip/status
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/sound
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/conversation
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/contacts
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/ui
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gossip/status
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/sound
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/conversation
 @dirrm etc/gconf/gconf.xml.defaults/apps/gossip/contacts
