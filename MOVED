@@ -721,3 +721,4 @@ devel/sparc-rtems-gcj|devel/sparc-rtems-gcc|2003-11-18|Now included in the gcc p
 www/netraider||2003-11-20|Mastersite gone for 2 years, was listed as alpha quality
 security/whisker|security/nikto|2003-11-20|Discontinued by author, who recommends nikto
 sysutils/medusa||2003-11-27|Obsolete, and broken on 64-bit platforms
+databases/postgresql7-client|databases/postgresql-client|2003-12-04|Duplicate after postgresql update
