@@ -7,17 +7,21 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
-USE_GNOME=	gnometarget lthack
-USE_INC_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -O3||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
