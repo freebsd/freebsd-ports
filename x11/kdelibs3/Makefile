@@ -65,7 +65,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 
 # kabc (the addressbook backend) can use ldap if it's available
 .if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
 PLIST_APPEND+=	plist.ldap
 .endif
 

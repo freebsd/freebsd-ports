@@ -37,7 +37,7 @@ MAN7=		gnupg.7
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 .if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so.2)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 PLIST_SUB+=	WITH_LDAP=""
 .else
 PLIST_SUB+=	WITH_LDAP="@comment "

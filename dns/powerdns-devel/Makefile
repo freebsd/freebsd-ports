@@ -86,8 +86,8 @@ describe:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500043 && defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_MODULES+=	"ldap"
 
 post-patch:

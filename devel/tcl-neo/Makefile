@@ -20,7 +20,7 @@ LIB_DEPENDS=	tclx83:${PORTSDIR}/lang/tclX \
 		db2:${PORTSDIR}/databases/db2
 
 # Not yet -- openldap used db3, neo used db2 :(
-#		ldap.2:${PORTSDIR}/net/openldap20
+#		ldap.2:${PORTSDIR}/net/openldap20-client
 
 SUBDIR=		neowebscript-3.3/neotcl8.3.0-lite/neo${PORTVERSION}
 WRKSRC=		${WRKDIR}/${SUBDIR}/generic

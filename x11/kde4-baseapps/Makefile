@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--without-java			\
 
 # This enables kio_ldap (needed by kaddresbook).
 .if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
 PLIST_APPEND+=	plist.ldap
 .endif
 

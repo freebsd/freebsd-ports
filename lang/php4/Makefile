@@ -437,12 +437,12 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .elif exists(${LOCALBASE}/lib/libldap.la)
 .if exists(${LOCALBASE}/bin/ldapwhoami)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22-client
 .endif
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif

@@ -18,7 +18,7 @@ COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
 
 # perl authentication

@@ -25,8 +25,8 @@ LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
 .endif
 .if defined(WITH_LDAP2)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20-client
 .endif
 
 # This may be set interactively at install-time.  NNTPCache will

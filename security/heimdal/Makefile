@@ -19,7 +19,7 @@ MAINTAINER=		nectar@FreeBSD.ORG
 COMMENT=		A re-implementation of Kerberos V
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
 .if defined(WITH_CRACKLIB)
 BUILD_DEPENDS+= ${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib

@@ -24,9 +24,9 @@ MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 .if defined(WITH_LDAP) && !defined(WITH_LDAP21)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap20-client
 .elif defined(WITH_LDAP21) && !defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
 .elif defined(WITH_LDAP21) && defined(WITH_LDAP)
 BROKEN=		"You may only specify WITH_LDAP xor WITH_LDAP21, but not both together"
 .endif

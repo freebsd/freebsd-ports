@@ -22,7 +22,7 @@ COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 .if !defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
 .endif
 
 .if defined(WITH_LDAP2)

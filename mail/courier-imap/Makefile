@@ -89,11 +89,11 @@ CONFIGURE_ARGS+=--with-authldap
 PLIST_SUB+=	LDAPFLAG=""
 
 .if defined(WITH_LDAP21)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21 \
-		lber.2:${PORTSDIR}/net/openldap21
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client \
+		lber.2:${PORTSDIR}/net/openldap21-client
 .elseif defined(WITH_LDAP20)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
-		lber.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client \
+		lber.2:${PORTSDIR}/net/openldap20-client
 .else
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12 \
 		lber.1:${PORTSDIR}/net/openldap12
