@@ -1,0 +1,11 @@
+--- src/thread.c.orig	Wed Nov  5 15:03:00 1997
++++ src/thread.c	Sat Jan  9 18:44:09 1999
+@@ -269,7 +269,7 @@
+ 	  	*--t->sp = (unsigned long)_start - 8;
+ 	  	*--t->sp = (unsigned long)fp;
+ 	  	t->sp -= 64/4; }
+-#elif linux && i386
++#elif (linux || unix) && i386
+ 	{ extern void _thrstart(void);
+ 	  t->sp -= 4/4;
+ 	  *t->sp = (unsigned long)_thrstart;

@@ -1,0 +1,24 @@
+This hierarchy contains all the source code from my book
+"C Interfaces and Implementations: Techniques for Creating Reusable
+Software (Addison-Wesley Professional Computing Series, 1997,
+ISBN 0-201-49841-3).
+
+For installation instructions, see install.html.
+
+For a summary of the distribution's revision history, see history.html.
+
+For more information, visit http://www.cs.princeton.edu/software/cii/.
+-----
+David R. Hanson
+drh@microsoft.com / http://www.research.microsoft.com/~drh/
+$Id: README,v 1.11 1997/10/30 00:51:23 drh Exp $
+---
+FreeBSD note: in /usr/local
+lib/libcii.a	->	lib/cii/1/libcii.a
+include/cii	->	lib/cii/1/include
+example binaries are in lib/cii/1/examples
+copyright, history, etc share/doc/cii
+source of CII		share/doc/cii/src
+source of examples	share/doc/cii/examples
+
+There is no documentation other than the book and its web site.

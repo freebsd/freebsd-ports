@@ -1,0 +1,108 @@
+lib/cii/1/libcii.a
+@exec ranlib %D/%F
+lib/cii/1/include/ap.h
+lib/cii/1/include/arena.h
+lib/cii/1/include/arith.h
+lib/cii/1/include/array.h
+lib/cii/1/include/arrayrep.h
+lib/cii/1/include/assert.h
+lib/cii/1/include/atom.h
+lib/cii/1/include/bit.h
+lib/cii/1/include/chan.h
+lib/cii/1/include/except.h
+lib/cii/1/include/fmt.h
+lib/cii/1/include/list.h
+lib/cii/1/include/mem.h
+lib/cii/1/include/mp.h
+lib/cii/1/include/ring.h
+lib/cii/1/include/sem.h
+lib/cii/1/include/seq.h
+lib/cii/1/include/set.h
+lib/cii/1/include/stack.h
+lib/cii/1/include/str.h
+lib/cii/1/include/table.h
+lib/cii/1/include/text.h
+lib/cii/1/include/thread.h
+lib/cii/1/include/xp.h
+lib/cii/1/examples/double
+lib/cii/1/examples/calc
+lib/cii/1/examples/ids
+lib/cii/1/examples/mpcalc
+lib/cii/1/examples/wf
+lib/cii/1/examples/xref
+lib/cii/1/examples/cref
+lib/cii/1/examples/iref
+lib/cii/1/examples/kref
+lib/cii/1/examples/idents
+lib/cii/1/examples/words
+lib/cii/1/examples/basename
+lib/cii/1/examples/dirname
+lib/cii/1/examples/sort
+lib/cii/1/examples/spin
+lib/cii/1/examples/sieve
+@dirrm lib/cii/1/include
+@dirrm lib/cii/1/examples
+@dirrm lib/cii/1
+@dirrm lib/cii
+@unexec /bin/rm /usr/local/lib/libcii.a
+@unexec /bin/rm /usr/local/include/cii
+share/doc/cii/CPYRIGHT
+share/doc/cii/README
+share/doc/cii/history.html
+share/doc/cii/install.html
+share/doc/cii/makefile
+share/doc/cii/packing.lst
+share/doc/cii/src/ap.c
+share/doc/cii/src/arena.c
+share/doc/cii/src/arith.c
+share/doc/cii/src/array.c
+share/doc/cii/src/assert.c
+share/doc/cii/src/atom.c
+share/doc/cii/src/bit.c
+share/doc/cii/src/chan.c
+share/doc/cii/src/except.c
+share/doc/cii/src/fmt.c
+share/doc/cii/src/libcii.def
+share/doc/cii/src/list.c
+share/doc/cii/src/mem.c
+share/doc/cii/src/memchk.c
+share/doc/cii/src/memcmp.c
+share/doc/cii/src/memmove.c
+share/doc/cii/src/mp.c
+share/doc/cii/src/ring.c
+share/doc/cii/src/seq.c
+share/doc/cii/src/set.c
+share/doc/cii/src/stack.c
+share/doc/cii/src/str.c
+share/doc/cii/src/strerror.c
+share/doc/cii/src/strncmp.c
+share/doc/cii/src/table.c
+share/doc/cii/src/swtch.s
+share/doc/cii/src/swtch.s.orig
+share/doc/cii/src/text.c
+share/doc/cii/src/thread-nt.c
+share/doc/cii/src/thread.c
+share/doc/cii/src/thread.c.orig
+share/doc/cii/src/xp.c
+share/doc/cii/examples/basename.c
+share/doc/cii/examples/calc.c
+share/doc/cii/examples/cref.c
+share/doc/cii/examples/double.c
+share/doc/cii/examples/getword.c
+share/doc/cii/examples/getword.h
+share/doc/cii/examples/idents.c
+share/doc/cii/examples/ids.c
+share/doc/cii/examples/integer.c
+share/doc/cii/examples/integer.h
+share/doc/cii/examples/iref.c
+share/doc/cii/examples/kref.c
+share/doc/cii/examples/mpcalc.c
+share/doc/cii/examples/sieve.c
+share/doc/cii/examples/sort.c
+share/doc/cii/examples/spin.c
+share/doc/cii/examples/wf.c
+share/doc/cii/examples/words.c
+share/doc/cii/examples/xref.c
+@dirrm share/doc/cii/src
+@dirrm share/doc/cii/examples
+@dirrm share/doc/cii
