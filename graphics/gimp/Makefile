@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -30,7 +29,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 
 CONFLICTS=	gimp-1.*
 
-SHLIBVER?=	0
+SHLIBVER?=	200
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -51,8 +50,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAN1=		gimp.1 gimp-2.0.1 gimptool-2.0.1 gimp-remote.1 gimp-remote-2.0.1
-MAN5=		gimprc.5 gimprc-2.0.5
+MAN1=	gimp.1 gimp-2.2.1 gimp-remote.1 gimp-remote-2.2.1 gimptool-2.0.1
+MAN5=	gimprc.5 gimprc-2.2.5
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -76,13 +75,18 @@ LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
 PLIST_SUB+=		PRINT=""
 .endif
 
+.if defined(WITH_MP)
+CONFIGURE_ARGS+=	--enable-mp
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
-USE_GNOME+=		gnomepanel
+USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
+GNOME_ENABLED=		yes
 .else
 PLIST_SUB+=		GNOMEPANEL:="@comment "
 .endif
@@ -102,6 +106,12 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python-Fu support"
 	@${ECHO_MSG} "	WITHOUT_PRINT=yes	Turns off GIMP printing"
 	@${ECHO_MSG} "	WITH_HTML_HELP_BROWSER=yes	Turns on the GIMP help browser"
+	@${ECHO_MSG} "	WITH_MP=yes 		Turns on multiple-processor support"
 	@${ECHO_MSG} ""
+
+.if defined(GNOME_ENABLED)
+post-install:
+	@${X11BASE}/bin/update-desktop-database
+.endif
 
 .include <bsd.port.post.mk>
