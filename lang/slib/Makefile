@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	slib
-PORTVERSION=	2c7
+PORTVERSION=	2c9
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	scm
+#MASTER_SITES=	${MASTER_SITE_GNU}
+#MASTER_SITE_SUBDIR=	scm
+MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 
 MAINTAINER=	nakai@FreeBSD.org
-DISTNAME=	slib2c7
+DISTNAME=	slib2c9
 
-BUILD_DEPENDS=	scheme48:${PORTSDIR}/lang/scheme48
+BUILD_DEPENDS=	scheme48:${PORTSDIR}/lang/scheme48 \
+		scm:${PORTSDIR}/lang/scm
 
 WRKSRC=		${WRKDIR}/slib
 
