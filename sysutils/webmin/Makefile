@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.130
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +25,9 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	firewall-1.130-1.wbm.gz \
+		logrotate-1.130-1.wbm.gz \
+		webmin-1.130-1.wbm.gz
 
 WEBMIN_THEMES=
 
