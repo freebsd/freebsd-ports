@@ -1,0 +1,19 @@
+--- Makefile.orig	Fri Feb 13 15:18:30 1998
++++ Makefile	Fri Feb 20 13:00:05 1998
+@@ -186,3 +186,16 @@
+ 		-cd tests;		$(MAKE) Clean
+ 
+ ##################################################################
++
++install:
++	@bin/patchstr bin/iconc ${PREFIX}/share/icon/
++	@bin/patchstr bin/icont ${PREFIX}/bin/iconx
++	install -c -s -g bin -o bin -m 755 bin/iconc ${PREFIX}/bin/iconc
++	install -c -s -g bin -o bin -m 755 bin/icont ${PREFIX}/bin/icont
++	install -c -s -g bin -o bin -m 755 bin/iconx ${PREFIX}/bin/iconx
++	install -c -s -g bin -o bin -m 755 bin/patchstr ${PREFIX}/bin/patchstr
++	@mkdir -p ${PREFIX}/share/icon
++	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/share/icon/dlrgint.o
++	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/share/icon/rt.a
++	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/share/icon/rt.db
++	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/share/icon/rt.h
