@@ -7,16 +7,14 @@
 
 PORTNAME=	fnorb
 PORTVERSION=	1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.fnorb.org/download/ \
-		ftp://ftp.dstc.edu.au/DSTC/fnorb/
+MASTER_SITES=	http://www.fnorb.org/download/
 
 MAINTAINER=	wjv@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-NO_CDROM=	Free for academic, research and non-commercial purposes only
 WRKSRC=		${WRKDIR}/Fnorb-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -25,7 +23,6 @@ ALL_TARGET=
 
 CPIO=		cpio --quiet -pdum -R
 FNORB_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Fnorb
-EXAMPLESDIR=	${PREFIX}/share/examples/fnorb
 FNORB_BINS=	fnaming fnendian fnfeed fngen fnidl fnifr fnior fnlogger \
 		fnmetrics fnmkior fnoptions fnping
 
@@ -54,10 +51,10 @@ post-install:
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC}/doc && find . \
-	  | ${CPIO} ${MANOWN}:${MANGRP} ${DOCSDIR}
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ ${CHMOD} -R u-x ${DOCSDIR} && ${CHMOD} -R u+X ${DOCSDIR}
 .for file in ANNOUNCE CHANGES README LICENSE.HTML
-	@ ${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
