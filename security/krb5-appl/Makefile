@@ -7,6 +7,7 @@
 
 PORTNAME=		krb5
 PORTVERSION=		1.2.6
+PORTREVISION=		1
 CATEGORIES=		security
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == "NO"
 MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
