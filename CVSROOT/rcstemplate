@@ -4,7 +4,7 @@ Obtained from:
 CVS: ----------------------------------------------------------------------
 CVS: The 'fmt' command will split lines at column 72. In Emacs, this
 CVS: means a fill-column of 71 is desired.
-CVS:
+CVS: 
 CVS: Local Variables:
 CVS: fill-column:71
 CVS: End:
