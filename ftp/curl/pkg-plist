@@ -8,5 +8,5 @@ include/curl/types.h
 @dirrm include/curl
 lib/libcurl.a
 lib/libcurl.la
+lib/libcurl.so
 lib/libcurl.so.%%SHLIB_VER%%
-@unexec rm -f %B/libcurl.so
