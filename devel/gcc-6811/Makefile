@@ -3,7 +3,7 @@
 # Date created:		Thu Sep 14 11:10:01 CDT 1995
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/01 19:54:20 erich Exp $
+# $Id: Makefile,v 1.2 1996/08/02 08:36:40 asami Exp $
 #
 
 DISTNAME=	gcc11
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ \
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
 MAINTAINER=	erich@FreeBSD.ORG
-
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 NO_WRKSUBDIR=	yes
 
