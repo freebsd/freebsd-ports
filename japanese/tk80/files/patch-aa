@@ -1,14 +1,14 @@
---- configure.in.ORIG	Fri Sep 25 13:59:42 1998
-+++ configure.in	Fri Sep 25 14:07:23 1998
+--- configure.in.ORIG	Wed Mar 24 11:32:28 1999
++++ configure.in	Wed Mar 24 11:32:37 1999
 @@ -10,6 +10,7 @@
  TK_MINOR_VERSION=0
- TK_PATCH_LEVEL=".3"
+ TK_PATCH_LEVEL=".5"
  VERSION=${TK_VERSION}
 +TCL_L10N=jp
  
  if test "${prefix}" = "NONE"; then
      prefix=/usr/local
-@@ -51,8 +52,8 @@
+@@ -68,8 +69,8 @@
  if test ! -d $TCL_BIN_DIR; then
      AC_MSG_ERROR(Tcl directory $TCL_BIN_DIR doesn't exist)
  fi
@@ -19,16 +19,16 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -86,6 +87,8 @@
- CFLAGS_DEBUG=$TCL_CFLAGS_DEBUG
+@@ -104,6 +105,8 @@
  CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
+ EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
 +
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -535,7 +538,11 @@
+@@ -564,7 +567,11 @@
      TK_SHARED_BUILD=1
      TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
      TK_LIB_FILE=libtk${TCL_SHARED_LIB_SUFFIX}
@@ -40,7 +40,7 @@
      RANLIB=":"
  else
      TK_SHARED_BUILD=0
-@@ -576,10 +583,12 @@
+@@ -606,10 +613,12 @@
  AC_SUBST(SHLIB_VERSION)
  AC_SUBST(TCL_BIN_DIR)
  AC_SUBST(TCL_BUILD_LIB_SPEC)

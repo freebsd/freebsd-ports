@@ -36,6 +36,7 @@ lib/tk8.0jp/dialog.tcl
 lib/tk8.0jp/entry.tcl
 lib/tk8.0jp/focus.tcl
 lib/tk8.0jp/kinput.tcl
+lib/tk8.0jp/kinsoku.tcl
 lib/tk8.0jp/listbox.tcl
 lib/tk8.0jp/menu.tcl
 lib/tk8.0jp/msgbox.tcl

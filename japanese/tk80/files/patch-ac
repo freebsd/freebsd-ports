@@ -1,7 +1,6 @@
-diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
---- tk8.0.ORIG/generic/tkText.c	Mon Jan  5 12:35:50 1998
-+++ ../generic/tkText.c	Mon Jan  5 16:03:17 1998
-@@ -946,6 +946,7 @@
+--- ../generic/tkText.c.ORIG	Wed Mar 24 11:36:00 1999
++++ ../generic/tkText.c	Wed Mar 24 11:38:57 1999
+@@ -947,6 +947,7 @@
  	    || (textPtr->selTagPtr->spacing2String != NULL)
  	    || (textPtr->selTagPtr->spacing3String != NULL)
  	    || (textPtr->selTagPtr->tabString != NULL)
@@ -9,7 +8,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  	    || (textPtr->selTagPtr->underlineString != NULL)
  	    || (textPtr->selTagPtr->wrapMode != NULL)) {
  	textPtr->selTagPtr->affectsDisplay = 1;
-@@ -1520,7 +1521,7 @@
+@@ -1521,7 +1522,7 @@
  		    }
  		}
  	    }
@@ -18,7 +17,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  #ifdef TK_KANJI_OK
  		memcpy((VOID *) buffer, (VOID *) (str + offset), (size_t) numBytes);
  		offset = 0;
-@@ -1828,7 +1829,7 @@
+@@ -1829,7 +1830,7 @@
      int argc;			/* Number of arguments. */
      char **argv;		/* Argument strings. */
  {
@@ -27,7 +26,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
      size_t length;
      int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
      int code, matchLength, matchChar, passes, stopLine, searchWholeText;
-@@ -1839,6 +1840,7 @@
+@@ -1840,6 +1841,7 @@
      Tcl_DString line, patDString;
      TkTextSegment *segPtr;
      TkTextLine *linePtr;
@@ -35,7 +34,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
      Tcl_RegExp regexp = NULL;		/* Initialization needed only to
  					 * prevent compiler warning. */
  
-@@ -1847,6 +1849,8 @@
+@@ -1848,6 +1850,8 @@
       */
  
      exact = 1;
@@ -44,7 +43,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
      backwards = 0;
      noCase = 0;
      varName = NULL;
-@@ -1860,7 +1864,7 @@
+@@ -1861,7 +1865,7 @@
  	    badSwitch:
  	    Tcl_AppendResult(interp, "bad switch \"", arg,
  		    "\": must be -forward, -backward, -exact, -regexp, ",
@@ -53,7 +52,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  	    return TCL_ERROR;
  	}
  	c = arg[1];
-@@ -1881,6 +1885,8 @@
+@@ -1882,6 +1886,8 @@
  	    noCase = 1;
  	} else if ((c == 'r') && (strncmp(argv[i], "-regexp", length) == 0)) {
  	    exact = 0;
@@ -62,7 +61,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  	} else if ((c == '-') && (strncmp(argv[i], "--", length) == 0)) {
  	    i++;
  	    break;
-@@ -1976,13 +1982,14 @@
+@@ -1977,13 +1983,14 @@
  	 */
  
  	linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
@@ -79,7 +78,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  		continue;
  	    }
  #ifdef TK_KANJI_OK
-@@ -2210,7 +2217,7 @@
+@@ -2211,7 +2218,7 @@
      int argc;			/* Number of arguments. */
      char **argv;		/* Argument strings. */
  {
@@ -88,7 +87,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
      size_t length;
      int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
      int code, matchLength, matchChar, passes, stopLine, searchWholeText;
-@@ -2230,6 +2237,7 @@
+@@ -2231,6 +2238,7 @@
  #endif /* TK_KANJI_OK */
      TkTextSegment *segPtr;
      TkTextLine *linePtr;
@@ -96,7 +95,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  #ifndef TK_KANJI_OK
      Tcl_RegExp regexp = NULL;		/* Initialization needed only to
  					 * prevent compiler warning. */
-@@ -2240,6 +2248,8 @@
+@@ -2241,6 +2249,8 @@
       */
  
      exact = 1;
@@ -105,7 +104,7 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
      backwards = 0;
      noCase = 0;
      varName = NULL;
-@@ -2253,7 +2263,7 @@
+@@ -2254,7 +2264,7 @@
  	    badSwitch:
  	    Tcl_AppendResult(interp, "bad switch \"", arg,
  		    "\": must be -forward, -backward, -exact, -regexp, ",
@@ -114,16 +113,16 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  	    return TCL_ERROR;
  	}
  	c = arg[1];
-@@ -2278,6 +2288,8 @@
- 	    noCase = 1;
- 	} else if ((c == 'r') && (strncmp(argv[i], "-regexp", length) == 0)) {
+@@ -2279,6 +2289,8 @@
+ 	    return TCL_ERROR;
+ #endif /* TK_KANJI_OK */
  	    exact = 0;
 +	} else if ((c == 'e') && (strncmp(argv[i], "-elide", length) == 0)) {
 +	    searchElide = 1;
  	} else if ((c == '-') && (strncmp(argv[i], "--", length) == 0)) {
  	    i++;
  	    break;
-@@ -2405,9 +2417,10 @@
+@@ -2406,9 +2418,10 @@
  	 */
  
  	linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
@@ -136,9 +135,8 @@ diff -urN tk8.0.ORIG/generic/tkText.c ../generic/tkText.c
  		continue;
  	    }
  #ifdef TK_KANJI_OK
-diff -urN tk8.0.ORIG/generic/tkText.h ../generic/tkText.h
---- tk8.0.ORIG/generic/tkText.h	Mon Jan  5 12:35:52 1998
-+++ ../generic/tkText.h	Mon Jan  5 14:10:20 1998
+--- ../generic/tkText.h.ORIG	Wed Mar 24 11:36:25 1999
++++ ../generic/tkText.h	Wed Mar 24 11:38:58 1999
 @@ -378,6 +378,10 @@
  				 * Must be tkTextCharUid, tkTextNoneUid,
  				 * tkTextWordUid, or NULL to use wrapMode
@@ -159,9 +157,8 @@ diff -urN tk8.0.ORIG/generic/tkText.h ../generic/tkText.h
  			    TkTextIndex *indexPtr));
  extern int		TkTextMarkCmd _ANSI_ARGS_((TkText *textPtr,
  			    Tcl_Interp *interp, int argc, char **argv));
-diff -urN tk8.0.ORIG/generic/tkTextBTree.c ../generic/tkTextBTree.c
---- tk8.0.ORIG/generic/tkTextBTree.c	Mon Jan  5 12:35:50 1998
-+++ ../generic/tkTextBTree.c	Mon Jan  5 14:10:20 1998
+--- ../generic/tkTextBTree.c.ORIG	Wed Mar 24 11:36:47 1999
++++ ../generic/tkTextBTree.c	Wed Mar 24 11:38:58 1999
 @@ -2447,6 +2447,132 @@
      }
      return tagInfo.tagPtrs;
@@ -295,9 +292,8 @@ diff -urN tk8.0.ORIG/generic/tkTextBTree.c ../generic/tkTextBTree.c
  
  /*
   *----------------------------------------------------------------------
-diff -urN tk8.0.ORIG/generic/tkTextDisp.c ../generic/tkTextDisp.c
---- tk8.0.ORIG/generic/tkTextDisp.c	Mon Jan  5 12:35:50 1998
-+++ ../generic/tkTextDisp.c	Mon Jan  5 14:10:21 1998
+--- ../generic/tkTextDisp.c.ORIG	Wed Mar 24 11:37:14 1999
++++ ../generic/tkTextDisp.c	Wed Mar 24 11:38:59 1999
 @@ -59,6 +59,7 @@
  				 * be NULL). */
      int underline;		/* Non-zero means draw underline underneath
@@ -714,7 +710,7 @@ diff -urN tk8.0.ORIG/generic/tkTextDisp.c ../generic/tkTextDisp.c
  /*
   *--------------------------------------------------------------
   *
-@@ -4457,7 +4602,7 @@
+@@ -4480,7 +4625,7 @@
       * Draw the text, underline, and overstrike for this chunk.
       */
  
@@ -723,9 +719,8 @@ diff -urN tk8.0.ORIG/generic/tkTextDisp.c ../generic/tkTextDisp.c
  	int numChars = ciPtr->numChars - offsetChars;
  #ifdef TK_KANJI_OK
  	wchar *string = ciPtr->chars + offsetChars;
-diff -urN tk8.0.ORIG/generic/tkTextTag.c ../generic/tkTextTag.c
---- tk8.0.ORIG/generic/tkTextTag.c	Mon Jan  5 12:35:51 1998
-+++ ../generic/tkTextTag.c	Mon Jan  5 14:10:21 1998
+--- ../generic/tkTextTag.c.ORIG	Wed Mar 24 11:37:36 1999
++++ ../generic/tkTextTag.c	Wed Mar 24 11:38:59 1999
 @@ -63,6 +63,9 @@
      {TK_CONFIG_STRING, "-underline", (char *) NULL, (char *) NULL,
  	(char *) NULL, Tk_Offset(TkTextTag, underlineString),
@@ -776,10 +771,9 @@ diff -urN tk8.0.ORIG/generic/tkTextTag.c ../generic/tkTextTag.c
      }
      ckfree((char *) tagPtr);
  }
-diff -urN tk8.0.ORIG/tests/text.test ../tests/text.test
---- tk8.0.ORIG/tests/text.test	Mon Jan  5 12:35:27 1998
-+++ ../tests/text.test	Mon Jan  5 15:06:05 1998
-@@ -866,7 +866,7 @@
+--- ../tests/text.test.ORIG	Wed Mar 24 11:37:58 1999
++++ ../tests/text.test	Wed Mar 24 11:38:59 1999
+@@ -862,7 +862,7 @@
  .t insert end "xxyz xyz x. the\nfoo -forward bar xxxxx BaR foo\nxyz xxyzx"
  test text-20.1 {TextSearchCmd procedure, argument parsing} {
      list [catch {.t search -} msg] $msg
