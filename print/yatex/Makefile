@@ -119,22 +119,23 @@ do-build:
 .endif
 
 do-install:
-	(cd ${WRKSRC}; \
+	cd ${WRKSRC}; \
 	${MKDIR} ${ELISPDIR}/yatex; \
 	${MKDIR} ${HELPDIR} ${INFODIR}; \
 	${INSTALL_DATA} ${EL_FILES} ${ELISPDIR}/yatex; \
 	${INSTALL_DATA} ${HELP} ${HELPDIR}; \
-	${MKDIR} ${INFODIR}; \
+	${MKDIR} ${INFODIR}
 .if defined(XEMACS) || defined(XEMACS-MULE)
+	cd ${WRKSRC}; \
 	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}.info; \
-	done; \
+	done
 .else
+	cd ${WRKSRC}; \
 	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}; \
-	done; \
+	done
 .endif
-	)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PORTSDOCDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${NEW} ${DOCSRC} ${PORTSDOCDIR}
@@ -151,7 +152,7 @@ post-install:
 	${RM} -f ${WRKDIR}/${MANIFEST}
 	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
 	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
-		${SED} -e "s;^${EMACSDIR}/;;" > ${WRKDIR}/${MANIFEST}
+		${SED} -e "s;^$${emacsdir}/;;" > ${WRKDIR}/${MANIFEST}
 	${MKDIR} ${EMACSDIR}/pkginfo
 	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
 		${EMACSDIR}/pkginfo/
