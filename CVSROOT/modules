@@ -4164,6 +4164,7 @@ mp3rename	ports/audio/mp3rename
 mp3stat		ports/audio/mp3stat
 mpack		ports/converters/mpack
 mpage		ports/print/mpage
+mpb		ports/science/mpb
 mpd		ports/net/mpd
 mpeg		ports/multimedia/mpeg
 mpeg2codec	ports/multimedia/mpeg2codec
