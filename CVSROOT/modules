@@ -4430,6 +4430,7 @@ nab		ports/biology/nab
 nadar		ports/games/nadar
 nag		ports/deskutils/nag
 nagios		ports/net/nagios
+nagios-plugins	ports/net/nagios-plugins
 nail		ports/mail/nail
 naim		ports/net/naim
 nam		ports/net/nam
