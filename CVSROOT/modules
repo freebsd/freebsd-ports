@@ -6539,6 +6539,7 @@ p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filesys-Statvfs_Df	ports/devel/p5-Filesys-Statvfs_Df
 p5-Filesys-Virtual	ports/devel/p5-Filesys-Virtual
+p5-Filesys-Virtual-DAAP	ports/audio/p5-Filesys-Virtual-DAAP
 p5-Filter	ports/devel/p5-Filter
 p5-Filter-CBC	ports/devel/p5-Filter-CBC
 p5-Filter-Simple	ports/textproc/p5-Filter-Simple
