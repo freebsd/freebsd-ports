@@ -4597,6 +4597,7 @@ openoffice-pl	ports/editors/openoffice-pl
 openoffice-se	ports/editors/openoffice-se
 openoffice-tr	ports/editors/openoffice-tr
 openquicktime	ports/multimedia/openquicktime
+openrm		ports/graphics/openrm
 opensc		ports/security/opensc
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
