@@ -1,14 +1,11 @@
---- src/capture.c.orig	Sat Feb 14 21:14:20 2004
-+++ src/capture.c	Sat May 15 23:01:57 2004
-@@ -643,7 +643,11 @@
-             (*job->close) (fp);
-         else if (job->flags & FLG_SYNC) {
-             if (job->open == (void *(*)(char *, char*))fopen)
-+#ifdef HAVE_FDATASYNC
+--- src/capture.c.orig	Mon Mar 15 18:34:42 2004
++++ src/capture.c	Sun Jan  2 18:00:09 2005
+@@ -662,7 +662,7 @@
+ #ifdef HAVE_FDATASYNC
                  fdatasync(fileno(fp));
-+#else
+ #else
+-                fsync(fileno(fp));
 +                fsync(fileno((FILE *) fp));
-+#endif
-         }
+ #endif // HAVE_FDATASYNC
+         } 
          
-         /* substract the time we needed for creating and saving
