@@ -1,0 +1,3046 @@
+diff -Nur srclib/apr.orig/include/apr_poll.h srclib/apr/include/apr_poll.h
+--- srclib/apr.orig/include/apr_poll.h	Mon Dec 13 18:57:05 2004
++++ srclib/apr/include/apr_poll.h	Mon Dec 13 18:57:28 2004
+@@ -50,6 +50,11 @@
+ #define APR_POLLHUP   0x020     /**< Hangup occurred */
+ #define APR_POLLNVAL  0x040     /**< Descriptior invalid */
+ 
++/**
++ * Pollset Flags
++ */
++#define APR_POLLSET_THREADSAFE 0x001 /**< Adding or Removing a Descriptor is thread safe */
++
+ /** Used in apr_pollfd_t to determine what the apr_descriptor is */
+ typedef enum { 
+     APR_NO_DESC,                /**< nothing here */
+diff -Nur srclib/apr.orig/include/apr_poll.h.orig srclib/apr/include/apr_poll.h.orig
+--- srclib/apr.orig/include/apr_poll.h.orig	Thu Jan  1 01:00:00 1970
++++ srclib/apr/include/apr_poll.h.orig	Fri Feb 13 10:38:38 2004
+@@ -0,0 +1,164 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#ifndef APR_POLL_H
++#define APR_POLL_H
++/**
++ * @file apr_poll.h
++ * @brief APR Poll interface
++ */
++#include "apr.h"
++#include "apr_pools.h"
++#include "apr_errno.h"
++#include "apr_inherit.h" 
++#include "apr_file_io.h" 
++#include "apr_network_io.h" 
++
++#if APR_HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
++
++#ifdef __cplusplus
++extern "C" {
++#endif /* __cplusplus */
++
++/**
++ * @defgroup apr_poll Poll Routines
++ * @ingroup APR 
++ * @{
++ */
++
++/**
++ * Poll options
++ */
++#define APR_POLLIN    0x001     /**< Can read without blocking */
++#define APR_POLLPRI   0x002     /**< Priority data available */
++#define APR_POLLOUT   0x004     /**< Can write without blocking */
++#define APR_POLLERR   0x010     /**< Pending error */
++#define APR_POLLHUP   0x020     /**< Hangup occurred */
++#define APR_POLLNVAL  0x040     /**< Descriptior invalid */
++
++/** Used in apr_pollfd_t to determine what the apr_descriptor is */
++typedef enum { 
++    APR_NO_DESC,                /**< nothing here */
++    APR_POLL_SOCKET,            /**< descriptor refers to a socket */
++    APR_POLL_FILE,              /**< descriptor refers to a file */
++    APR_POLL_LASTDESC           /**< descriptor is the last one in the list */
++} apr_datatype_e ;
++
++/** Union of either an APR file or socket. */
++typedef union {
++    apr_file_t *f;              /**< file */
++    apr_socket_t *s;            /**< socket */
++} apr_descriptor;
++
++/** @see apr_pollfd_t */
++typedef struct apr_pollfd_t apr_pollfd_t;
++
++/** Poll descriptor set. */
++struct apr_pollfd_t {
++    apr_pool_t *p;              /**< associated pool */
++    apr_datatype_e desc_type;   /**< descriptor type */
++    apr_int16_t reqevents;      /**< requested events */
++    apr_int16_t rtnevents;      /**< returned events */
++    apr_descriptor desc;        /**< @see apr_descriptor */
++    void *client_data;          /**< allows app to associate context */
++};
++
++
++/* General-purpose poll API for arbitrarily large numbers of
++ * file descriptors
++ */
++
++/** Opaque structure used for pollset API */
++typedef struct apr_pollset_t apr_pollset_t;
++
++/**
++ * Setup a pollset object
++ * @param pollset  The pointer in which to return the newly created object 
++ * @param size The maximum number of descriptors that this pollset can hold
++ * @param p The pool from which to allocate the pollset
++ * @param flags Optional flags to modify the operation of the pollset
++ *              (reserved for future expansion)
++ */
++APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
++                                             apr_uint32_t size,
++                                             apr_pool_t *p,
++                                             apr_uint32_t flags);
++
++/**
++ * Destroy a pollset object
++ * @param pollset The pollset to destroy
++ */
++APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t *pollset);
++
++/**
++ * Add a socket or file descriptor to a pollset
++ * @param pollset The pollset to which to add the descriptor
++ * @param descriptor The descriptor to add
++ * @remark If you set client_data in the descriptor, that value
++ *         will be returned in the client_data field whenever this
++ *         descriptor is signalled in apr_pollset_poll().
++ */
++APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
++                                          const apr_pollfd_t *descriptor);
++
++/**
++ * Remove a descriptor from a pollset
++ * @param pollset The pollset from which to remove the descriptor
++ * @param descriptor The descriptor to remove
++ */
++APR_DECLARE(apr_status_t) apr_pollset_remove(apr_pollset_t *pollset,
++                                             const apr_pollfd_t *descriptor);
++
++/**
++ * Block for activity on the descriptor(s) in a pollset
++ * @param pollset The pollset to use
++ * @param timeout Timeout in microseconds
++ * @param num Number of signalled descriptors (output parameter)
++ * @param descriptors Array of signalled descriptors (output parameter)
++ */
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors);
++
++
++/**
++ * Poll the sockets in the poll structure
++ * @param aprset The poll structure we will be using. 
++ * @param numsock The number of sockets we are polling
++ * @param nsds The number of sockets signalled.
++ * @param timeout The amount of time in microseconds to wait.  This is 
++ *                a maximum, not a minimum.  If a socket is signalled, we 
++ *                will wake up before this time.  A negative number means 
++ *                wait until a socket is signalled.
++ * @remark The number of sockets signalled is returned in the third argument. 
++ *         This is a blocking call, and it will not return until either a 
++ *         socket has been signalled, or the timeout has expired. 
++ */
++APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, apr_int32_t numsock,
++                                   apr_int32_t *nsds, 
++                                   apr_interval_time_t timeout);
++
++/** @} */
++
++
++#ifdef __cplusplus
++}
++#endif
++
++#endif  /* ! APR_POLL_H */
++
+diff -Nur srclib/apr.orig/include/arch/unix/apr_arch_poll_private.h srclib/apr/include/arch/unix/apr_arch_poll_private.h
+--- srclib/apr.orig/include/arch/unix/apr_arch_poll_private.h	Thu Jan  1 01:00:00 1970
++++ srclib/apr/include/arch/unix/apr_arch_poll_private.h	Mon Dec 13 18:58:32 2004
+@@ -0,0 +1,92 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#ifndef APR_ARCH_POLL_PRIVATE_H
++#define APR_ARCH_POLL_PRIVATE_H
++
++#include "apr.h"
++#include "apr_poll.h"
++#include "apr_time.h"
++#include "apr_portable.h"
++#include "apr_arch_networkio.h"
++#include "apr_arch_file_io.h"
++
++#if HAVE_POLL_H
++#include <poll.h>
++#endif
++
++#if HAVE_SYS_POLL_H
++#include <sys/poll.h>
++#endif
++
++#ifdef HAVE_KQUEUE
++#include <sys/types.h>
++#include <sys/event.h>
++#include <sys/time.h>
++#endif
++
++#ifdef HAVE_EPOLL
++#include <sys/epoll.h>
++#endif
++
++#ifdef NETWARE
++#define HAS_SOCKETS(dt) (dt == APR_POLL_SOCKET) ? 1 : 0
++#define HAS_PIPES(dt) (dt == APR_POLL_FILE) ? 1 : 0
++#endif
++
++/* Choose the best method platform specific to use in apr_pollset */
++#ifdef HAVE_KQUEUE
++#define POLLSET_USES_KQUEUE
++#elif defined(HAVE_EPOLL)
++#define POLLSET_USES_EPOLL
++#elif defined(HAVE_POLL)
++#define POLLSET_USES_POLL
++#else
++#define POLLSET_USES_SELECT
++#endif
++
++#ifdef HAVE_POLL
++#define POLL_USES_POLL
++#else
++#define POLL_USES_SELECT
++#endif
++
++#if defined(POLLSET_USES_KQUEUE) || defined(POLLSET_USES_EPOLL)
++
++#include "apr_ring.h"
++
++#if APR_HAS_THREADS
++#include "apr_thread_mutex.h"
++#define pollset_lock_rings() \
++    if(pollset->flags & APR_POLLSET_THREADSAFE) \
++        apr_thread_mutex_lock(pollset->ring_lock);
++#define pollset_unlock_rings() \
++    if(pollset->flags & APR_POLLSET_THREADSAFE) \
++        apr_thread_mutex_unlock(pollset->ring_lock);
++#else
++#define pollset_lock_rings()
++#define pollset_unlock_rings()
++#endif
++
++typedef struct pfd_elem_t pfd_elem_t;
++
++struct pfd_elem_t {
++    APR_RING_ENTRY(pfd_elem_t) link;
++    apr_pollfd_t pfd;
++};
++
++#endif
++
++#endif /* APR_ARCH_POLL_PRIVATE_H */
+diff -Nur srclib/apr.orig/poll/unix/epoll.c srclib/apr/poll/unix/epoll.c
+--- srclib/apr.orig/poll/unix/epoll.c	Thu Jan  1 01:00:00 1970
++++ srclib/apr/poll/unix/epoll.c	Mon Dec 13 18:57:28 2004
+@@ -0,0 +1,270 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include "apr_arch_poll_private.h"
++
++#ifdef POLLSET_USES_EPOLL
++
++static apr_int16_t get_epoll_event(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & APR_POLLIN)
++        rv |= EPOLLIN;
++    if (event & APR_POLLPRI)
++        rv |= EPOLLPRI;
++    if (event & APR_POLLOUT)
++        rv |= EPOLLOUT;
++    if (event & APR_POLLERR)
++        rv |= EPOLLERR;
++    if (event & APR_POLLHUP)
++        rv |= EPOLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
++
++    return rv;
++}
++
++static apr_int16_t get_epoll_revent(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & EPOLLIN)
++        rv |= APR_POLLIN;
++    if (event & EPOLLPRI)
++        rv |= APR_POLLPRI;
++    if (event & EPOLLOUT)
++        rv |= APR_POLLOUT;
++    if (event & EPOLLERR)
++        rv |= APR_POLLERR;
++    if (event & EPOLLHUP)
++        rv |= APR_POLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
++
++    return rv;
++}
++
++struct apr_pollset_t
++{
++    apr_pool_t *pool;
++    apr_uint32_t nelts;
++    apr_uint32_t nalloc;
++    int epoll_fd;
++    struct epoll_event *pollset;
++    apr_pollfd_t *result_set;
++    apr_uint32_t flags;
++#if APR_HAS_THREADS
++    /* A thread mutex to protect operations on the rings */
++    apr_thread_mutex_t *ring_lock;
++#endif
++    /* A ring containing all of the pollfd_t that are active */
++    APR_RING_HEAD(pfd_query_ring_t, pfd_elem_t) query_ring;
++    /* A ring of pollfd_t that have been used, and then _remove()'d */
++    APR_RING_HEAD(pfd_free_ring_t, pfd_elem_t) free_ring;
++    /* A ring of pollfd_t where rings that have been _remove()`ed but
++        might still be inside a _poll() */
++    APR_RING_HEAD(pfd_dead_ring_t, pfd_elem_t) dead_ring;
++};
++
++static apr_status_t backend_cleanup(void *p_)
++{
++    apr_pollset_t *pollset = (apr_pollset_t *) p_;
++    close(pollset->epoll_fd);
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
++                                             apr_uint32_t size,
++                                             apr_pool_t *p,
++                                             apr_uint32_t flags)
++{
++    apr_status_t rv;
++
++    *pollset = apr_palloc(p, sizeof(**pollset));
++#if APR_HAS_THREADS
++    if (flags & APR_POLLSET_THREADSAFE &&
++        ((rv = apr_thread_mutex_create(&(*pollset)->ring_lock,
++                                       APR_THREAD_MUTEX_DEFAULT,
++                                       p) != APR_SUCCESS))) {
++        *pollset = NULL;
++        return rv;
++    }
++#else
++    if (flags & APR_POLLSET_THREADSAFE) {
++        *pollset = NULL;
++        return APR_ENOTIMPL;
++    }
++#endif
++    (*pollset)->nelts = 0;
++    (*pollset)->nalloc = size;
++    (*pollset)->flags = flags;
++    (*pollset)->pool = p;
++    (*pollset)->epoll_fd = epoll_create(size);
++    (*pollset)->pollset = apr_palloc(p, size * sizeof(struct epoll_event));
++    apr_pool_cleanup_register(p, (void *) (*pollset), backend_cleanup,
++                              apr_pool_cleanup_null);
++    (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++
++    APR_RING_INIT(&(*pollset)->query_ring, pfd_elem_t, link);
++    APR_RING_INIT(&(*pollset)->free_ring, pfd_elem_t, link);
++    APR_RING_INIT(&(*pollset)->dead_ring, pfd_elem_t, link);
++
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t *pollset)
++{
++    return apr_pool_cleanup_run(pollset->pool, pollset, backend_cleanup);
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
++                                          const apr_pollfd_t *descriptor)
++{
++    struct epoll_event ev;
++    int ret = -1;
++    pfd_elem_t *elem;
++    apr_status_t rv = APR_SUCCESS;
++
++    pollset_lock_rings();
++
++    if (!APR_RING_EMPTY(&(pollset->free_ring), pfd_elem_t, link)) {
++        elem = APR_RING_FIRST(&(pollset->free_ring));
++        APR_RING_REMOVE(elem, link);
++    }
++    else {
++        elem = (pfd_elem_t *) apr_palloc(pollset->pool, sizeof(pfd_elem_t));
++        APR_RING_ELEM_INIT(elem, link);
++    }
++    elem->pfd = *descriptor;
++
++    ev.events = get_epoll_event(descriptor->reqevents);
++    ev.data.ptr = elem;
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
++                        descriptor->desc.s->socketdes, &ev);
++    }
++    else {
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
++                        descriptor->desc.f->filedes, &ev);
++    }
++
++    if (0 != ret) {
++        rv = APR_EBADF;
++        APR_RING_INSERT_TAIL(&(pollset->free_ring), elem, pfd_elem_t, link);
++    }
++    else {
++        pollset->nelts++;
++        APR_RING_INSERT_TAIL(&(pollset->query_ring), elem, pfd_elem_t, link);
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_remove(apr_pollset_t *pollset,
++                                             const apr_pollfd_t *descriptor)
++{
++    pfd_elem_t *ep;
++    apr_status_t rv = APR_SUCCESS;
++    struct epoll_event ev;
++    int ret = -1;
++
++    pollset_lock_rings();
++
++    ev.events = get_epoll_event(descriptor->reqevents);
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
++                        descriptor->desc.s->socketdes, &ev);
++    }
++    else {
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
++                        descriptor->desc.f->filedes, &ev);
++    }
++    if (ret < 0) {
++        rv = APR_NOTFOUND;
++    }
++
++    if (!APR_RING_EMPTY(&(pollset->query_ring), pfd_elem_t, link)) {
++        for (ep = APR_RING_FIRST(&(pollset->query_ring));
++             ep != APR_RING_SENTINEL(&(pollset->query_ring),
++                                     pfd_elem_t, link);
++             ep = APR_RING_NEXT(ep, link)) {
++
++            if (descriptor->desc.s == ep->pfd.desc.s) {
++                APR_RING_REMOVE(ep, link);
++                APR_RING_INSERT_TAIL(&(pollset->dead_ring),
++                                     ep, pfd_elem_t, link);
++                break;
++            }
++        }
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int ret, i;
++    apr_status_t rv = APR_SUCCESS;
++    pfd_elem_t *ep;
++
++    if (timeout > 0) {
++        timeout /= 1000;
++    }
++
++    ret = epoll_wait(pollset->epoll_fd, pollset->pollset, pollset->nalloc,
++                     timeout);
++    (*num) = ret;
++
++    if (ret < 0) {
++        rv = apr_get_netos_error();
++    }
++    else if (ret == 0) {
++        rv = APR_TIMEUP;
++    }
++    else {
++        for (i = 0; i < ret; i++) {
++            pollset->result_set[i] =
++                (((pfd_elem_t *) (pollset->pollset[i].data.ptr))->pfd);
++            pollset->result_set[i].rtnevents =
++                get_epoll_revent(pollset->pollset[i].events);
++        }
++
++        if (descriptors) {
++            *descriptors = pollset->result_set;
++        }
++    }
++
++    pollset_lock_rings();
++
++    /* Shift all PFDs in the Dead Ring to be Free Ring */
++    while (!APR_RING_EMPTY(&(pollset->dead_ring), pfd_elem_t, link)) {
++        ep = APR_RING_FIRST(&(pollset->dead_ring));
++        APR_RING_REMOVE(ep, link);
++        APR_RING_INSERT_TAIL(&(pollset->free_ring), ep, pfd_elem_t, link);
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++#endif /* POLLSET_USES_EPOLL */
+diff -Nur srclib/apr.orig/poll/unix/kqueue.c srclib/apr/poll/unix/kqueue.c
+--- srclib/apr.orig/poll/unix/kqueue.c	Thu Jan  1 01:00:00 1970
++++ srclib/apr/poll/unix/kqueue.c	Mon Dec 13 18:57:28 2004
+@@ -0,0 +1,288 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include "apr_arch_poll_private.h"
++
++#ifdef POLLSET_USES_KQUEUE
++
++static apr_int16_t get_kqueue_revent(apr_int16_t event, apr_int16_t flags)
++{
++    apr_int16_t rv = 0;
++
++    if (event & EVFILT_READ)
++        rv |= APR_POLLIN;
++    if (event & EVFILT_WRITE)
++        rv |= APR_POLLOUT;
++    if (flags & EV_EOF)
++        rv |= APR_POLLHUP;
++    if (flags & EV_ERROR)
++        rv |= APR_POLLERR;
++
++    return rv;
++}
++
++struct apr_pollset_t
++{
++    apr_pool_t *pool;
++    apr_uint32_t nelts;
++    apr_uint32_t nalloc;
++    int kqueue_fd;
++    struct kevent kevent;
++    struct kevent *ke_set;
++    apr_pollfd_t *result_set;
++    apr_uint32_t flags;
++#if APR_HAS_THREADS
++    /* A thread mutex to protect operations on the rings */
++    apr_thread_mutex_t *ring_lock;
++#endif
++    /* A ring containing all of the pollfd_t that are active */
++    APR_RING_HEAD(pfd_query_ring_t, pfd_elem_t) query_ring;
++    /* A ring of pollfd_t that have been used, and then _remove'd */
++    APR_RING_HEAD(pfd_free_ring_t, pfd_elem_t) free_ring;
++    /* A ring of pollfd_t where rings that have been _remove'd but
++       might still be inside a _poll */
++    APR_RING_HEAD(pfd_dead_ring_t, pfd_elem_t) dead_ring;
++};
++
++static apr_status_t backend_cleanup(void *p_)
++{
++    apr_pollset_t *pollset = (apr_pollset_t *) p_;
++    close(pollset->kqueue_fd);
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
++                                             apr_uint32_t size,
++                                             apr_pool_t *p,
++                                             apr_uint32_t flags)
++{
++    apr_status_t rv = APR_SUCCESS;
++    *pollset = apr_palloc(p, sizeof(**pollset));
++#if APR_HAS_THREADS
++    if (flags & APR_POLLSET_THREADSAFE &&
++        ((rv = apr_thread_mutex_create(&(*pollset)->ring_lock,
++                                       APR_THREAD_MUTEX_DEFAULT,
++                                       p) != APR_SUCCESS))) {
++        *pollset = NULL;
++        return rv;
++    }
++#else
++    if (flags & APR_POLLSET_THREADSAFE) {
++        *pollset = NULL;
++        return APR_ENOTIMPL;
++    }
++#endif
++    (*pollset)->nelts = 0;
++    (*pollset)->nalloc = size;
++    (*pollset)->flags = flags;
++    (*pollset)->pool = p;
++
++    (*pollset)->ke_set =
++        (struct kevent *) apr_palloc(p, size * sizeof(struct kevent));
++
++    memset((*pollset)->ke_set, 0, size * sizeof(struct kevent));
++
++    (*pollset)->kqueue_fd = kqueue();
++
++    if ((*pollset)->kqueue_fd == -1) {
++        return APR_ENOMEM;
++    }
++
++    apr_pool_cleanup_register(p, (void *) (*pollset), backend_cleanup,
++                              apr_pool_cleanup_null);
++
++    (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++
++    APR_RING_INIT(&(*pollset)->query_ring, pfd_elem_t, link);
++    APR_RING_INIT(&(*pollset)->free_ring, pfd_elem_t, link);
++    APR_RING_INIT(&(*pollset)->dead_ring, pfd_elem_t, link);
++
++    return rv;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t * pollset)
++{
++    return apr_pool_cleanup_run(pollset->pool, pollset, backend_cleanup);
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
++                                          const apr_pollfd_t *descriptor)
++{
++    apr_os_sock_t fd;
++    pfd_elem_t *elem;
++    apr_status_t rv = APR_SUCCESS;
++
++    pollset_lock_rings();
++
++    if (!APR_RING_EMPTY(&(pollset->free_ring), pfd_elem_t, link)) {
++        elem = APR_RING_FIRST(&(pollset->free_ring));
++        APR_RING_REMOVE(elem, link);
++    }
++    else {
++        elem = (pfd_elem_t *) apr_palloc(pollset->pool, sizeof(pfd_elem_t));
++        APR_RING_ELEM_INIT(elem, link);
++    }
++    elem->pfd = *descriptor;
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++        fd = descriptor->desc.f->filedes;
++    }
++
++    if (descriptor->reqevents & APR_POLLIN) {
++        EV_SET(&pollset->kevent, fd, EVFILT_READ, EV_ADD, 0, 0, elem);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            rv = APR_ENOMEM;
++        }
++    }
++
++    if (descriptor->reqevents & APR_POLLOUT && rv == APR_SUCCESS) {
++        EV_SET(&pollset->kevent, fd, EVFILT_WRITE, EV_ADD, 0, 0, elem);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            rv = APR_ENOMEM;
++        }
++    }
++
++    if (rv == APR_SUCCESS) {
++        pollset->nelts++;
++        APR_RING_INSERT_TAIL(&(pollset->query_ring), elem, pfd_elem_t, link);
++    }
++    else {
++        APR_RING_INSERT_TAIL(&(pollset->free_ring), elem, pfd_elem_t, link);
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_remove(apr_pollset_t *pollset,
++                                             const apr_pollfd_t *descriptor)
++{
++    pfd_elem_t *ep;
++    apr_status_t rv = APR_SUCCESS;
++    apr_os_sock_t fd;
++
++    pollset_lock_rings();
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++        fd = descriptor->desc.f->filedes;
++    }
++
++    if (descriptor->reqevents & APR_POLLIN) {
++        EV_SET(&pollset->kevent, fd, EVFILT_READ, EV_DELETE, 0, 0, NULL);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            rv = APR_NOTFOUND;
++        }
++    }
++
++    if (descriptor->reqevents & APR_POLLOUT && rv == APR_SUCCESS) {
++        EV_SET(&pollset->kevent, fd, EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            rv = APR_NOTFOUND;
++        }
++    }
++
++    if (!APR_RING_EMPTY(&(pollset->query_ring), pfd_elem_t, link)) {
++        for (ep = APR_RING_FIRST(&(pollset->query_ring));
++             ep != APR_RING_SENTINEL(&(pollset->query_ring),
++                                     pfd_elem_t, link);
++             ep = APR_RING_NEXT(ep, link)) {
++
++            if (descriptor->desc.s == ep->pfd.desc.s) {
++                APR_RING_REMOVE(ep, link);
++                APR_RING_INSERT_TAIL(&(pollset->dead_ring),
++                                     ep, pfd_elem_t, link);
++                break;
++            }
++        }
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int ret, i;
++    pfd_elem_t *ep;
++    struct timespec tv, *tvptr;
++    apr_status_t rv = APR_SUCCESS;
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long) apr_time_sec(timeout);
++        tv.tv_nsec = (long) apr_time_msec(timeout);
++        tvptr = &tv;
++    }
++
++    ret = kevent(pollset->kqueue_fd, NULL, 0, pollset->ke_set, pollset->nalloc,
++                tvptr);
++    (*num) = ret;
++    if (ret < 0) {
++        rv = apr_get_netos_error();
++    }
++    else if (ret == 0) {
++        rv = APR_TIMEUP;
++    }
++    else {
++        for (i = 0; i < ret; i++) {
++            pollset->result_set[i] =
++                (((pfd_elem_t*)(pollset->ke_set[i].udata))->pfd);
++            pollset->result_set[i].rtnevents =
++                get_kqueue_revent(pollset->ke_set[i].filter,
++                              pollset->ke_set[i].flags);
++        }
++
++        if (descriptors) {
++            *descriptors = pollset->result_set;
++        }
++    }
++
++
++    pollset_lock_rings();
++
++    /* Shift all PFDs in the Dead Ring to be Free Ring */
++    while (!APR_RING_EMPTY(&(pollset->dead_ring), pfd_elem_t, link)) {
++        ep = APR_RING_FIRST(&(pollset->dead_ring));
++        APR_RING_REMOVE(ep, link);
++        APR_RING_INSERT_TAIL(&(pollset->free_ring), ep, pfd_elem_t, link);
++    }
++
++    pollset_unlock_rings();
++
++    return rv;
++}
++
++#endif /* POLLSET_USES_KQUEUE */
+diff -Nur srclib/apr.orig/poll/unix/poll.c srclib/apr/poll/unix/poll.c
+--- srclib/apr.orig/poll/unix/poll.c	Mon Dec 13 18:57:05 2004
++++ srclib/apr/poll/unix/poll.c	Mon Dec 13 18:57:28 2004
+@@ -13,111 +13,26 @@
+  * limitations under the License.
+  */
+ 
+-#include "apr.h"
+-#include "apr_poll.h"
+-#include "apr_time.h"
+-#include "apr_portable.h"
+-#include "apr_arch_networkio.h"
+-#include "apr_arch_file_io.h"
+-#if HAVE_POLL_H
+-#include <poll.h>
+-#endif
+-#if HAVE_SYS_POLL_H
+-#include <sys/poll.h>
+-#endif
+-
+-#ifdef HAVE_KQUEUE
+-#include <sys/types.h>
+-#include <sys/event.h>
+-#include <sys/time.h>
+-#endif
+-
+-#ifdef HAVE_EPOLL
+-#include <sys/epoll.h>
+-#endif
+-
+-#ifdef NETWARE
+-#define HAS_SOCKETS(dt) (dt == APR_POLL_SOCKET) ? 1 : 0
+-#define HAS_PIPES(dt) (dt == APR_POLL_FILE) ? 1 : 0
+-#endif
+-
+-#ifdef HAVE_KQUEUE
+-static apr_int16_t get_kqueue_revent(apr_int16_t event, apr_int16_t flags)
+-{
+-    apr_int16_t rv = 0;
+-
+-    if (event & EVFILT_READ)
+-        rv |= APR_POLLIN;
+-    if (event & EVFILT_WRITE)
+-        rv |= APR_POLLOUT;
+-    if (flags & EV_EOF)
+-        rv |= APR_POLLHUP;
+-    if (flags & EV_ERROR)
+-        rv |= APR_POLLERR;
+-
+-    return rv;
+-}
+-
+-#endif
++#include "apr_arch_poll_private.h"
+ 
+-#ifdef HAVE_EPOLL
+-static apr_int16_t get_epoll_event(apr_int16_t event)
+-{
+-    apr_int16_t rv = 0;
+-
+-    if (event & APR_POLLIN)
+-        rv |= EPOLLIN;
+-    if (event & APR_POLLPRI)
+-        rv |= EPOLLPRI;
+-    if (event & APR_POLLOUT)
+-        rv |= EPOLLOUT;
+-    if (event & APR_POLLERR)
+-        rv |= EPOLLERR;
+-    if (event & APR_POLLHUP)
+-        rv |= EPOLLHUP;
+-    /* APR_POLLNVAL is not handled by epoll. */
+-
+-    return rv;
+-}
+-
+-static apr_int16_t get_epoll_revent(apr_int16_t event)
+-{
+-    apr_int16_t rv = 0;
+-
+-    if (event & EPOLLIN)
+-        rv |= APR_POLLIN;
+-    if (event & EPOLLPRI)
+-        rv |= APR_POLLPRI;
+-    if (event & EPOLLOUT)
+-        rv |= APR_POLLOUT;
+-    if (event & EPOLLERR)
+-        rv |= APR_POLLERR;
+-    if (event & EPOLLHUP)
+-        rv |= APR_POLLHUP;
+-    /* APR_POLLNVAL is not handled by epoll. */
+-
+-    return rv;
+-}
+-#endif
+-
+-#ifdef HAVE_POLL    /* We can just use poll to do our socket polling. */
++#if defined(POLL_USES_POLL) || defined(POLLSET_USES_POLL)
+ 
+ static apr_int16_t get_event(apr_int16_t event)
+ {
+     apr_int16_t rv = 0;
+ 
+     if (event & APR_POLLIN)
+-        rv |= POLLIN;        
++        rv |= POLLIN;
+     if (event & APR_POLLPRI)
+-        rv |= POLLPRI;        
++        rv |= POLLPRI;
+     if (event & APR_POLLOUT)
+-        rv |= POLLOUT;       
++        rv |= POLLOUT;
+     if (event & APR_POLLERR)
+-        rv |= POLLERR;        
++        rv |= POLLERR;
+     if (event & APR_POLLHUP)
+-        rv |= POLLHUP;        
++        rv |= POLLHUP;
+     if (event & APR_POLLNVAL)
+-        rv |= POLLNVAL;        
++        rv |= POLLNVAL;
+ 
+     return rv;
+ }
+@@ -140,12 +55,18 @@
+         rv |= APR_POLLNVAL;
+ 
+     return rv;
+-}        
++}
++
++#endif /* POLL_USES_POLL || POLLSET_USES_POLL */
++
++
++#ifdef POLL_USES_POLL
+ 
+ #define SMALL_POLLSET_LIMIT  8
+ 
+ APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, apr_int32_t num,
+-                      apr_int32_t *nsds, apr_interval_time_t timeout)
++                                   apr_int32_t *nsds, 
++                                   apr_interval_time_t timeout)
+ {
+     int i, num_to_poll;
+ #ifdef HAVE_VLA
+@@ -215,298 +136,55 @@
+ }
+ 
+ 
+-#else    /* Use select to mimic poll */
+-
+-APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, int num, apr_int32_t *nsds, 
+-		    apr_interval_time_t timeout)
+-{
+-    fd_set readset, writeset, exceptset;
+-    int rv, i;
+-    int maxfd = -1;
+-    struct timeval tv, *tvptr;
+-#ifdef NETWARE
+-    apr_datatype_e set_type = APR_NO_DESC;
+-#endif
+-
+-    if (timeout < 0) {
+-        tvptr = NULL;
+-    }
+-    else {
+-        tv.tv_sec = (long)apr_time_sec(timeout);
+-        tv.tv_usec = (long)apr_time_usec(timeout);
+-        tvptr = &tv;
+-    }
+-
+-    FD_ZERO(&readset);
+-    FD_ZERO(&writeset);
+-    FD_ZERO(&exceptset);
+-
+-    for (i = 0; i < num; i++) {
+-        apr_os_sock_t fd;
+-
+-        aprset[i].rtnevents = 0;
+-
+-        if (aprset[i].desc_type == APR_POLL_SOCKET) {
+-#ifdef NETWARE
+-            if (HAS_PIPES(set_type)) {
+-                return APR_EBADF;
+-            }
+-            else {
+-                set_type = APR_POLL_SOCKET;
+-            }
+-#endif
+-            fd = aprset[i].desc.s->socketdes;
+-        }
+-        else if (aprset[i].desc_type == APR_POLL_FILE) {
+-#if !APR_FILES_AS_SOCKETS
+-            return APR_EBADF;
+-#else
+-#ifdef NETWARE
+-            if (aprset[i].desc.f->is_pipe && !HAS_SOCKETS(set_type)) {
+-                set_type = APR_POLL_FILE;
+-            }
+-            else
+-                return APR_EBADF;
+-#endif /* NETWARE */
+-
+-            fd = aprset[i].desc.f->filedes;
+-
+-#endif /* APR_FILES_AS_SOCKETS */
+-        }
+-        else {
+-            break;
+-        }
+-#if !defined(WIN32) && !defined(NETWARE) /* socket sets handled with array of handles */
+-        if (fd >= FD_SETSIZE) {
+-            /* XXX invent new error code so application has a clue */
+-            return APR_EBADF;
+-        }
+-#endif
+-        if (aprset[i].reqevents & APR_POLLIN) {
+-            FD_SET(fd, &readset);
+-        }
+-        if (aprset[i].reqevents & APR_POLLOUT) {
+-            FD_SET(fd, &writeset);
+-        }
+-        if (aprset[i].reqevents & 
+-            (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
+-            FD_SET(fd, &exceptset);
+-        }
+-        if ((int)fd > maxfd) {
+-            maxfd = (int)fd;
+-        }
+-    }
++#endif /* POLL_USES_POLL */
+ 
+-#ifdef NETWARE
+-    if (HAS_PIPES(set_type)) {
+-        rv = pipe_select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
+-    }
+-    else {
+-#endif
+ 
+-    rv = select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++#ifdef POLLSET_USES_POLL
+ 
+-#ifdef NETWARE
+-    }
+-#endif
+-
+-    (*nsds) = rv;
+-    if ((*nsds) == 0) {
+-        return APR_TIMEUP;
+-    }
+-    if ((*nsds) < 0) {
+-        return apr_get_netos_error();
+-    }
+-
+-    for (i = 0; i < num; i++) {
+-        apr_os_sock_t fd;
+-
+-        if (aprset[i].desc_type == APR_POLL_SOCKET) {
+-            fd = aprset[i].desc.s->socketdes;
+-        }
+-        else if (aprset[i].desc_type == APR_POLL_FILE) {
+-#if !APR_FILES_AS_SOCKETS
+-            return APR_EBADF;
+-#else
+-            fd = aprset[i].desc.f->filedes;
+-#endif
+-        }
+-        else {
+-            break;
+-        }
+-        if (FD_ISSET(fd, &readset)) {
+-            aprset[i].rtnevents |= APR_POLLIN;
+-        }
+-        if (FD_ISSET(fd, &writeset)) {
+-            aprset[i].rtnevents |= APR_POLLOUT;
+-        }
+-        if (FD_ISSET(fd, &exceptset)) {
+-            aprset[i].rtnevents |= APR_POLLERR;
+-        }
+-    }
+-
+-    return APR_SUCCESS;
+-}
+-
+-#endif 
+-
+-struct apr_pollset_t {
++struct apr_pollset_t
++{
+     apr_pool_t *pool;
+-
+     apr_uint32_t nelts;
+     apr_uint32_t nalloc;
+-#ifdef HAVE_KQUEUE
+-    int kqueue_fd;
+-    struct kevent kevent;
+-    struct kevent *ke_set;
+-#elif defined(HAVE_EPOLL)
+-    int epoll_fd;
+-    struct epoll_event *pollset;
+-#elif defined(HAVE_POLL)
+     struct pollfd *pollset;
+-#else
+-    fd_set readset, writeset, exceptset;
+-    int maxfd;
+-#endif
+     apr_pollfd_t *query_set;
+     apr_pollfd_t *result_set;
+-
+-#ifdef NETWARE
+-    int set_type;
+-#endif
+ };
+ 
+-#if defined(HAVE_KQUEUE) || defined(HAVE_EPOLL)
+-static apr_status_t backend_cleanup(void *p_)
+-{
+-    apr_pollset_t *pollset = (apr_pollset_t *)p_;
+-#ifdef HAVE_KQUEUE
+-    close(pollset->kqueue_fd);
+-#elif defined(HAVE_EPOLL)
+-    close(pollset->epoll_fd);
+-#endif
+-    return APR_SUCCESS;
+-}
+-#endif /* HAVE_KQUEUE || HAVE_EPOLL */
+-
+ APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
+                                              apr_uint32_t size,
+                                              apr_pool_t *p,
+                                              apr_uint32_t flags)
+ {
+-#if !defined(HAVE_KQUEUE) && !defined(HAVE_EPOLL) && !defined(HAVE_POLL) && defined(FD_SETSIZE)
+-    if (size > FD_SETSIZE) {
++    if (flags & APR_POLLSET_THREADSAFE) {                
+         *pollset = NULL;
+-        return APR_EINVAL;
++        return APR_ENOTIMPL;
+     }
+-#endif
++
+     *pollset = apr_palloc(p, sizeof(**pollset));
+     (*pollset)->nelts = 0;
+     (*pollset)->nalloc = size;
+     (*pollset)->pool = p;
+-#ifdef HAVE_KQUEUE
+-    (*pollset)->ke_set = (struct kevent*)apr_palloc(p, size * sizeof(struct  kevent));
+-    memset((*pollset)->ke_set, 0, size * sizeof(struct kevent));
+-    (*pollset)->kqueue_fd = kqueue();
+-    if ((*pollset)->kqueue_fd == -1) {
+-         return APR_ENOMEM;
+-    }
+-    apr_pool_cleanup_register(p, (void*)(*pollset), backend_cleanup, 
+-        apr_pool_cleanup_null);
+-#elif defined(HAVE_EPOLL)
+-    (*pollset)->epoll_fd = epoll_create(size);
+-    (*pollset)->pollset = apr_palloc(p, size * sizeof(struct epoll_event));
+-    apr_pool_cleanup_register(p, (void*)(*pollset), backend_cleanup, 
+-        apr_pool_cleanup_null);
+-#elif defined(HAVE_POLL)
+     (*pollset)->pollset = apr_palloc(p, size * sizeof(struct pollfd));
+-#else
+-    FD_ZERO(&((*pollset)->readset));
+-    FD_ZERO(&((*pollset)->writeset));
+-    FD_ZERO(&((*pollset)->exceptset));
+-    (*pollset)->maxfd = 0;
+-#ifdef NETWARE
+-    (*pollset)->set_type = APR_NO_DESC;
+-#endif
+-#endif
+     (*pollset)->query_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
+     (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
+-
+     return APR_SUCCESS;
+ }
+ 
+ APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t *pollset)
+ {
+-#if defined(HAVE_KQUEUE) || defined(HAVE_EPOLL)
+-    return apr_pool_cleanup_run(pollset->pool, pollset, backend_cleanup);
+-#else
+     return APR_SUCCESS;
+-#endif
+ }
+ 
+ APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
+                                           const apr_pollfd_t *descriptor)
+ {
+-#ifdef HAVE_KQUEUE
+-    apr_os_sock_t fd;
+-#elif defined(HAVE_EPOLL)
+-    struct epoll_event ev;
+-    int ret = -1;
+-#else
+-#if !defined(HAVE_POLL)
+-    apr_os_sock_t fd;
+-#endif
+-#endif
+-
+     if (pollset->nelts == pollset->nalloc) {
+         return APR_ENOMEM;
+     }
+ 
+     pollset->query_set[pollset->nelts] = *descriptor;
+ 
+-#ifdef HAVE_KQUEUE
+-    if (descriptor->desc_type == APR_POLL_SOCKET) {
+-        fd = descriptor->desc.s->socketdes;
+-    }
+-    else {
+-        fd = descriptor->desc.f->filedes;
+-    }
+-
+-    if (descriptor->reqevents & APR_POLLIN) {
+-        EV_SET(&pollset->kevent, fd, EVFILT_READ, EV_ADD, 0, 0, NULL);
+-
+-        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
+-                   NULL) == -1) {
+-            return APR_ENOMEM;
+-        }
+-    }
+-
+-    if (descriptor->reqevents & APR_POLLOUT) {
+-        EV_SET(&pollset->kevent, fd, EVFILT_WRITE, EV_ADD, 0, 0, NULL);
+-
+-        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
+-                   NULL) == -1) {
+-            return APR_ENOMEM;
+-        }
+-    }
+-
+-#elif defined(HAVE_EPOLL)
+-    ev.events = get_epoll_event(descriptor->reqevents);
+-    if (descriptor->desc_type == APR_POLL_SOCKET) {
+-        ev.data.fd = descriptor->desc.s->socketdes;
+-        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
+-                        descriptor->desc.s->socketdes, &ev);
+-    }
+-    else {
+-        ev.data.fd = descriptor->desc.f->filedes;
+-        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
+-                        descriptor->desc.f->filedes, &ev);
+-    }
+-    if (0 != ret) {
+-        return APR_EBADF;
+-    }
+-#elif defined(HAVE_POLL)
+-
+     if (descriptor->desc_type == APR_POLL_SOCKET) {
+         pollset->pollset[pollset->nelts].fd = descriptor->desc.s->socketdes;
+     }
+@@ -514,59 +192,10 @@
+         pollset->pollset[pollset->nelts].fd = descriptor->desc.f->filedes;
+     }
+ 
+-    pollset->pollset[pollset->nelts].events = get_event(descriptor->reqevents);
+-#else
+-    if (descriptor->desc_type == APR_POLL_SOCKET) {
+-#ifdef NETWARE
+-        /* NetWare can't handle mixed descriptor types in select() */
+-        if (HAS_PIPES(pollset->set_type)) {
+-            return APR_EBADF;
+-        }
+-        else {
+-            pollset->set_type = APR_POLL_SOCKET;
+-        }
+-#endif
+-        fd = descriptor->desc.s->socketdes;
+-    }
+-    else {
+-#if !APR_FILES_AS_SOCKETS
+-        return APR_EBADF;
+-#else
+-#ifdef NETWARE
+-        /* NetWare can't handle mixed descriptor types in select() */
+-        if (descriptor->desc.f->is_pipe && !HAS_SOCKETS(pollset->set_type)) {
+-            pollset->set_type = APR_POLL_FILE;
+-            fd = descriptor->desc.f->filedes;
+-        }
+-        else {
+-            return APR_EBADF;
+-        }
+-#else
+-        fd = descriptor->desc.f->filedes;
+-#endif
+-#endif
+-    }
+-#if !defined(WIN32) && !defined(NETWARE) /* socket sets handled with array of handles */
+-    if (fd >= FD_SETSIZE) {
+-        /* XXX invent new error code so application has a clue */
+-        return APR_EBADF;
+-    }
+-#endif
+-    if (descriptor->reqevents & APR_POLLIN) {
+-        FD_SET(fd, &(pollset->readset));
+-    }
+-    if (descriptor->reqevents & APR_POLLOUT) {
+-        FD_SET(fd, &(pollset->writeset));
+-    }
+-    if (descriptor->reqevents &
+-        (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
+-        FD_SET(fd, &(pollset->exceptset));
+-    }
+-    if ((int)fd > pollset->maxfd) {
+-        pollset->maxfd = (int)fd;
+-    }
+-#endif
++    pollset->pollset[pollset->nelts].events =
++        get_event(descriptor->reqevents);
+     pollset->nelts++;
++
+     return APR_SUCCESS;
+ }
+ 
+@@ -574,97 +203,8 @@
+                                              const apr_pollfd_t *descriptor)
+ {
+     apr_uint32_t i;
+-#ifdef HAVE_KQUEUE
+-    apr_os_sock_t fd;
+-#elif defined(HAVE_EPOLL)
+-    struct epoll_event ev;
+-    int ret = -1;
+-#elif !defined(HAVE_POLL)
+     apr_os_sock_t fd;
+-#endif
+ 
+-#ifdef HAVE_KQUEUE
+-    for (i = 0; i < pollset->nelts; i++) {
+-        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-            /* Found an instance of the fd: remove this and any other copies  */
+-            apr_uint32_t dst = i;
+-            apr_uint32_t old_nelts = pollset->nelts;
+-            pollset->nelts--;
+-            for (i++; i < old_nelts; i++) {
+-                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-                    pollset->nelts--;
+-                }
+-                else {
+-                    pollset->query_set[dst] = pollset->query_set[i];
+-                    dst++;
+-                }
+-            }
+-
+-            if (descriptor->desc_type == APR_POLL_SOCKET) {
+-                fd = descriptor->desc.s->socketdes;
+-            }
+-            else {
+-                fd = descriptor->desc.f->filedes;
+-            }
+-
+-            if (descriptor->reqevents & APR_POLLIN) {
+-                EV_SET(&pollset->kevent, fd,
+-                       EVFILT_READ, EV_DELETE, 0, 0, NULL);
+-
+-                if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
+-                          NULL) == -1) {
+-                    return APR_EBADF;
+-                }
+-            }
+-
+-            if (descriptor->reqevents & APR_POLLOUT) {
+-                EV_SET(&pollset->kevent, fd,
+-                       EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
+-
+-                if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
+-                          NULL) == -1) {
+-                    return APR_EBADF;
+-                }
+-            }
+-
+-            return APR_SUCCESS;
+-        }
+-    }
+-#elif defined(HAVE_EPOLL)
+-    for (i = 0; i < pollset->nelts; i++) {
+-        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-            /* Found an instance of the fd: remove this and any other copies  */
+-            apr_uint32_t dst = i;
+-            apr_uint32_t old_nelts = pollset->nelts;
+-            pollset->nelts--;
+-            for (i++; i < old_nelts; i++) {
+-                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-                    pollset->nelts--;
+-                }
+-                else {
+-                    pollset->query_set[dst] = pollset->query_set[i];
+-                    dst++;
+-                }
+-            }
+-            ev.events = get_epoll_event(descriptor->reqevents);
+-            if (descriptor->desc_type == APR_POLL_SOCKET) {
+-                ev.data.fd = descriptor->desc.s->socketdes;
+-                ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
+-                                descriptor->desc.s->socketdes, &ev);
+-            }
+-            else {
+-                ev.data.fd = descriptor->desc.f->filedes;
+-                ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
+-                                descriptor->desc.f->filedes, &ev);
+-            }
+-            if (ret < 0) {
+-                return APR_EBADF;
+-            }
+-
+-            return APR_SUCCESS;
+-        }
+-    }
+-#elif defined(HAVE_POLL)
+     for (i = 0; i < pollset->nelts; i++) {
+         if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+             /* Found an instance of the fd: remove this and any other copies */
+@@ -685,159 +225,9 @@
+         }
+     }
+ 
+-#else /* no poll */
+-    if (descriptor->desc_type == APR_POLL_SOCKET) {
+-        fd = descriptor->desc.s->socketdes;
+-    }
+-    else {
+-#if !APR_FILES_AS_SOCKETS
+-        return APR_EBADF;
+-#else
+-        fd = descriptor->desc.f->filedes;
+-#endif
+-    }
+-
+-    for (i = 0; i < pollset->nelts; i++) {
+-        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-            /* Found an instance of the fd: remove this and any other copies */
+-            apr_uint32_t dst = i;
+-            apr_uint32_t old_nelts = pollset->nelts;
+-            pollset->nelts--;
+-            for (i++; i < old_nelts; i++) {
+-                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
+-                    pollset->nelts--;
+-                }
+-                else {
+-                    pollset->query_set[dst] = pollset->query_set[i];
+-                    dst++;
+-                }
+-            }
+-            FD_CLR(fd, &(pollset->readset));
+-            FD_CLR(fd, &(pollset->writeset));
+-            FD_CLR(fd, &(pollset->exceptset));
+-            if (((int)fd == pollset->maxfd) && (pollset->maxfd > 0)) {
+-                pollset->maxfd--;
+-            }
+-            return APR_SUCCESS;
+-        }
+-    }
+-#endif /* no poll */
+-
+     return APR_NOTFOUND;
+ }
+-#ifdef HAVE_KQUEUE
+-APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
+-                                           apr_interval_time_t timeout,
+-                                           apr_int32_t *num,
+-                                           const apr_pollfd_t **descriptors)
+-{
+-    int rv;
+-    apr_uint32_t i, j, r = 0;
+-    struct timespec tv, *tvptr;
+-
+-    if (timeout < 0) {
+-        tvptr = NULL;
+-    }
+-    else {
+-        tv.tv_sec = (long)apr_time_sec(timeout);
+-        tv.tv_nsec = (long)apr_time_msec(timeout);
+-        tvptr = &tv;
+-    }
+ 
+-    rv = kevent(pollset->kqueue_fd, NULL, 0, pollset->ke_set, pollset->nelts,
+-                tvptr);
+-    (*num) = rv;
+-    if (rv < 0) {
+-        return apr_get_netos_error();
+-    }
+-    if (rv == 0) {
+-        return APR_TIMEUP;
+-    }
+-
+-    /* TODO: Is there a better way to re-associate our data? */
+-    for (i = 0; i < pollset->nelts; i++) {
+-        apr_os_sock_t fd;
+-        if (pollset->query_set[i].desc_type == APR_POLL_SOCKET) {
+-            fd = pollset->query_set[i].desc.s->socketdes;
+-        }
+-        else {
+-            fd = pollset->query_set[i].desc.f->filedes;
+-        }
+-        for (j = 0; j < rv; j++) {
+-            if (pollset->ke_set[j].ident == fd ) {
+-                pollset->result_set[r] = pollset->query_set[i];
+-                pollset->result_set[r].rtnevents =
+-                    get_kqueue_revent(pollset->ke_set[j].filter,
+-                                      pollset->ke_set[j].flags);
+-                r++;
+-            }
+-        }
+-    }
+-
+-    (*num) = r;
+-
+-    if (descriptors) {
+-        *descriptors = pollset->result_set;
+-    }
+-
+-    return APR_SUCCESS;
+-}
+-
+-#elif defined(HAVE_EPOLL)
+-
+-APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
+-                                           apr_interval_time_t timeout,
+-                                           apr_int32_t *num,
+-                                           const apr_pollfd_t **descriptors)
+-{
+-    int rv;
+-    apr_uint32_t i, j, k;
+-
+-    if (timeout > 0) {
+-        timeout /= 1000;
+-    }
+-
+-    rv = epoll_wait(pollset->epoll_fd, pollset->pollset, pollset->nelts,
+-                    timeout);
+-    (*num) = rv;
+-    if (rv < 0) {
+-        return apr_get_netos_error();
+-    }
+-    if (rv == 0) {
+-        return APR_TIMEUP;
+-    }
+-    j = 0;
+-    for (i = 0; i < pollset->nelts; i++) {
+-        if (pollset->pollset[i].events != 0) {
+-            /* TODO: Is there a better way to re-associate our data? */
+-            for (k = 0; k < pollset->nelts; k++) {
+-                if (pollset->query_set[k].desc_type == APR_POLL_SOCKET &&
+-                    pollset->query_set[k].desc.s->socketdes ==
+-                        pollset->pollset[i].data.fd) {
+-                    pollset->result_set[j] = pollset->query_set[k];
+-                    pollset->result_set[j].rtnevents =
+-                        get_epoll_revent(pollset->pollset[i].events);
+-                    j++;
+-                    break;
+-                }
+-                else if (pollset->query_set[k].desc_type == APR_POLL_FILE 
+-                         && pollset->query_set[k].desc.f->filedes ==
+-                            pollset->pollset[i].data.fd) {
+-                    pollset->result_set[j] = pollset->query_set[k];
+-                    pollset->result_set[j].rtnevents =
+-                        get_epoll_revent(pollset->pollset[i].events);
+-                    j++;
+-                    break;
+-                }
+-            }
+-        }
+-    }
+-    if (descriptors) {
+-        *descriptors = pollset->result_set;
+-    }
+-    return APR_SUCCESS;
+-}
+-#elif defined(HAVE_POLL)
+ APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
+                                            apr_interval_time_t timeout,
+                                            apr_int32_t *num,
+@@ -871,79 +261,4 @@
+     return APR_SUCCESS;
+ }
+ 
+-#else /* no poll */
+-
+-APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
+-                                           apr_interval_time_t timeout,
+-                                           apr_int32_t *num,
+-                                           const apr_pollfd_t **descriptors)
+-{
+-    int rv;
+-    apr_uint32_t i, j;
+-    struct timeval tv, *tvptr;
+-    fd_set readset, writeset, exceptset;
+-
+-    if (timeout < 0) {
+-        tvptr = NULL;
+-    }
+-    else {
+-        tv.tv_sec = (long)apr_time_sec(timeout);
+-        tv.tv_usec = (long)apr_time_usec(timeout);
+-        tvptr = &tv;
+-    }
+-
+-    memcpy(&readset, &(pollset->readset), sizeof(fd_set));
+-    memcpy(&writeset, &(pollset->writeset), sizeof(fd_set));
+-    memcpy(&exceptset, &(pollset->exceptset), sizeof(fd_set));
+-
+-#ifdef NETWARE
+-    if (HAS_PIPES(pollset->set_type)) {
+-        rv = pipe_select(pollset->maxfd + 1, &readset, &writeset, &exceptset, tvptr);
+-    }
+-    else
+-#endif
+-    rv = select(pollset->maxfd + 1, &readset, &writeset, &exceptset, tvptr);
+-
+-    (*num) = rv;
+-    if (rv < 0) {
+-        return apr_get_netos_error();
+-    }
+-    if (rv == 0) {
+-        return APR_TIMEUP;
+-    }
+-    j = 0;
+-    for (i = 0; i < pollset->nelts; i++) {
+-        apr_os_sock_t fd;
+-        if (pollset->query_set[i].desc_type == APR_POLL_SOCKET) {
+-            fd = pollset->query_set[i].desc.s->socketdes;
+-        }
+-        else {
+-#if !APR_FILES_AS_SOCKETS
+-            return APR_EBADF;
+-#else
+-            fd = pollset->query_set[i].desc.f->filedes;
+-#endif
+-        }
+-        if (FD_ISSET(fd, &readset) || FD_ISSET(fd, &writeset) ||
+-            FD_ISSET(fd, &exceptset)) {
+-            pollset->result_set[j] = pollset->query_set[i];
+-            pollset->result_set[j].rtnevents = 0;
+-            if (FD_ISSET(fd, &readset)) {
+-                pollset->result_set[j].rtnevents |= APR_POLLIN;
+-            }
+-            if (FD_ISSET(fd, &writeset)) {
+-                pollset->result_set[j].rtnevents |= APR_POLLOUT;
+-            }
+-            if (FD_ISSET(fd, &exceptset)) {
+-                pollset->result_set[j].rtnevents |= APR_POLLERR;
+-            }
+-            j++;
+-        }
+-    }
+-
+-    if (descriptors)
+-        *descriptors = pollset->result_set;
+-    return APR_SUCCESS;
+-}
+-
+-#endif /* no poll */
++#endif /* POLLSET_USES_POLL */
+diff -Nur srclib/apr.orig/poll/unix/poll.c.orig srclib/apr/poll/unix/poll.c.orig
+--- srclib/apr.orig/poll/unix/poll.c.orig	Thu Jan  1 01:00:00 1970
++++ srclib/apr/poll/unix/poll.c.orig	Wed Nov 17 02:07:02 2004
+@@ -0,0 +1,949 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include "apr.h"
++#include "apr_poll.h"
++#include "apr_time.h"
++#include "apr_portable.h"
++#include "apr_arch_networkio.h"
++#include "apr_arch_file_io.h"
++#if HAVE_POLL_H
++#include <poll.h>
++#endif
++#if HAVE_SYS_POLL_H
++#include <sys/poll.h>
++#endif
++
++#ifdef HAVE_KQUEUE
++#include <sys/types.h>
++#include <sys/event.h>
++#include <sys/time.h>
++#endif
++
++#ifdef HAVE_EPOLL
++#include <sys/epoll.h>
++#endif
++
++#ifdef NETWARE
++#define HAS_SOCKETS(dt) (dt == APR_POLL_SOCKET) ? 1 : 0
++#define HAS_PIPES(dt) (dt == APR_POLL_FILE) ? 1 : 0
++#endif
++
++#ifdef HAVE_KQUEUE
++static apr_int16_t get_kqueue_revent(apr_int16_t event, apr_int16_t flags)
++{
++    apr_int16_t rv = 0;
++
++    if (event & EVFILT_READ)
++        rv |= APR_POLLIN;
++    if (event & EVFILT_WRITE)
++        rv |= APR_POLLOUT;
++    if (flags & EV_EOF)
++        rv |= APR_POLLHUP;
++    if (flags & EV_ERROR)
++        rv |= APR_POLLERR;
++
++    return rv;
++}
++
++#endif
++
++#ifdef HAVE_EPOLL
++static apr_int16_t get_epoll_event(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & APR_POLLIN)
++        rv |= EPOLLIN;
++    if (event & APR_POLLPRI)
++        rv |= EPOLLPRI;
++    if (event & APR_POLLOUT)
++        rv |= EPOLLOUT;
++    if (event & APR_POLLERR)
++        rv |= EPOLLERR;
++    if (event & APR_POLLHUP)
++        rv |= EPOLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
++
++    return rv;
++}
++
++static apr_int16_t get_epoll_revent(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & EPOLLIN)
++        rv |= APR_POLLIN;
++    if (event & EPOLLPRI)
++        rv |= APR_POLLPRI;
++    if (event & EPOLLOUT)
++        rv |= APR_POLLOUT;
++    if (event & EPOLLERR)
++        rv |= APR_POLLERR;
++    if (event & EPOLLHUP)
++        rv |= APR_POLLHUP;
++    /* APR_POLLNVAL is not handled by epoll. */
++
++    return rv;
++}
++#endif
++
++#ifdef HAVE_POLL    /* We can just use poll to do our socket polling. */
++
++static apr_int16_t get_event(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & APR_POLLIN)
++        rv |= POLLIN;        
++    if (event & APR_POLLPRI)
++        rv |= POLLPRI;        
++    if (event & APR_POLLOUT)
++        rv |= POLLOUT;       
++    if (event & APR_POLLERR)
++        rv |= POLLERR;        
++    if (event & APR_POLLHUP)
++        rv |= POLLHUP;        
++    if (event & APR_POLLNVAL)
++        rv |= POLLNVAL;        
++
++    return rv;
++}
++
++static apr_int16_t get_revent(apr_int16_t event)
++{
++    apr_int16_t rv = 0;
++
++    if (event & POLLIN)
++        rv |= APR_POLLIN;
++    if (event & POLLPRI)
++        rv |= APR_POLLPRI;
++    if (event & POLLOUT)
++        rv |= APR_POLLOUT;
++    if (event & POLLERR)
++        rv |= APR_POLLERR;
++    if (event & POLLHUP)
++        rv |= APR_POLLHUP;
++    if (event & POLLNVAL)
++        rv |= APR_POLLNVAL;
++
++    return rv;
++}        
++
++#define SMALL_POLLSET_LIMIT  8
++
++APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, apr_int32_t num,
++                      apr_int32_t *nsds, apr_interval_time_t timeout)
++{
++    int i, num_to_poll;
++#ifdef HAVE_VLA
++    /* XXX: I trust that this is a segv when insufficient stack exists? */
++    struct pollfd pollset[num];
++#elif defined(HAVE_ALLOCA)
++    struct pollfd *pollset = alloca(sizeof(struct pollfd) * num);
++    if (!pollset)
++        return APR_ENOMEM;
++#else
++    struct pollfd tmp_pollset[SMALL_POLLSET_LIMIT];
++    struct pollfd *pollset;
++
++    if (num <= SMALL_POLLSET_LIMIT) {
++        pollset = tmp_pollset;
++    }
++    else {
++        /* This does require O(n) to copy the descriptors to the internal
++         * mapping.
++         */
++        pollset = malloc(sizeof(struct pollfd) * num);
++        /* The other option is adding an apr_pool_abort() fn to invoke
++         * the pool's out of memory handler
++         */
++        if (!pollset)
++            return APR_ENOMEM;
++    }
++#endif
++    for (i = 0; i < num; i++) {
++        if (aprset[i].desc_type == APR_POLL_SOCKET) {
++            pollset[i].fd = aprset[i].desc.s->socketdes;
++        }
++        else if (aprset[i].desc_type == APR_POLL_FILE) {
++            pollset[i].fd = aprset[i].desc.f->filedes;
++        }
++        else {
++            break;
++        }
++        pollset[i].events = get_event(aprset[i].reqevents);
++    }
++    num_to_poll = i;
++
++    if (timeout > 0) {
++        timeout /= 1000; /* convert microseconds to milliseconds */
++    }
++
++    i = poll(pollset, num_to_poll, timeout);
++    (*nsds) = i;
++
++    for (i = 0; i < num; i++) {
++        aprset[i].rtnevents = get_revent(pollset[i].revents);
++    }
++    
++#if !defined(HAVE_VLA) && !defined(HAVE_ALLOCA)
++    if (num > SMALL_POLLSET_LIMIT) {
++        free(pollset);
++    }
++#endif
++
++    if ((*nsds) < 0) {
++        return apr_get_netos_error();
++    }
++    if ((*nsds) == 0) {
++        return APR_TIMEUP;
++    }
++    return APR_SUCCESS;
++}
++
++
++#else    /* Use select to mimic poll */
++
++APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, int num, apr_int32_t *nsds, 
++		    apr_interval_time_t timeout)
++{
++    fd_set readset, writeset, exceptset;
++    int rv, i;
++    int maxfd = -1;
++    struct timeval tv, *tvptr;
++#ifdef NETWARE
++    apr_datatype_e set_type = APR_NO_DESC;
++#endif
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long)apr_time_sec(timeout);
++        tv.tv_usec = (long)apr_time_usec(timeout);
++        tvptr = &tv;
++    }
++
++    FD_ZERO(&readset);
++    FD_ZERO(&writeset);
++    FD_ZERO(&exceptset);
++
++    for (i = 0; i < num; i++) {
++        apr_os_sock_t fd;
++
++        aprset[i].rtnevents = 0;
++
++        if (aprset[i].desc_type == APR_POLL_SOCKET) {
++#ifdef NETWARE
++            if (HAS_PIPES(set_type)) {
++                return APR_EBADF;
++            }
++            else {
++                set_type = APR_POLL_SOCKET;
++            }
++#endif
++            fd = aprset[i].desc.s->socketdes;
++        }
++        else if (aprset[i].desc_type == APR_POLL_FILE) {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++#ifdef NETWARE
++            if (aprset[i].desc.f->is_pipe && !HAS_SOCKETS(set_type)) {
++                set_type = APR_POLL_FILE;
++            }
++            else
++                return APR_EBADF;
++#endif /* NETWARE */
++
++            fd = aprset[i].desc.f->filedes;
++
++#endif /* APR_FILES_AS_SOCKETS */
++        }
++        else {
++            break;
++        }
++#if !defined(WIN32) && !defined(NETWARE) /* socket sets handled with array of handles */
++        if (fd >= FD_SETSIZE) {
++            /* XXX invent new error code so application has a clue */
++            return APR_EBADF;
++        }
++#endif
++        if (aprset[i].reqevents & APR_POLLIN) {
++            FD_SET(fd, &readset);
++        }
++        if (aprset[i].reqevents & APR_POLLOUT) {
++            FD_SET(fd, &writeset);
++        }
++        if (aprset[i].reqevents & 
++            (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
++            FD_SET(fd, &exceptset);
++        }
++        if ((int)fd > maxfd) {
++            maxfd = (int)fd;
++        }
++    }
++
++#ifdef NETWARE
++    if (HAS_PIPES(set_type)) {
++        rv = pipe_select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++    }
++    else {
++#endif
++
++    rv = select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++
++#ifdef NETWARE
++    }
++#endif
++
++    (*nsds) = rv;
++    if ((*nsds) == 0) {
++        return APR_TIMEUP;
++    }
++    if ((*nsds) < 0) {
++        return apr_get_netos_error();
++    }
++
++    for (i = 0; i < num; i++) {
++        apr_os_sock_t fd;
++
++        if (aprset[i].desc_type == APR_POLL_SOCKET) {
++            fd = aprset[i].desc.s->socketdes;
++        }
++        else if (aprset[i].desc_type == APR_POLL_FILE) {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++            fd = aprset[i].desc.f->filedes;
++#endif
++        }
++        else {
++            break;
++        }
++        if (FD_ISSET(fd, &readset)) {
++            aprset[i].rtnevents |= APR_POLLIN;
++        }
++        if (FD_ISSET(fd, &writeset)) {
++            aprset[i].rtnevents |= APR_POLLOUT;
++        }
++        if (FD_ISSET(fd, &exceptset)) {
++            aprset[i].rtnevents |= APR_POLLERR;
++        }
++    }
++
++    return APR_SUCCESS;
++}
++
++#endif 
++
++struct apr_pollset_t {
++    apr_pool_t *pool;
++
++    apr_uint32_t nelts;
++    apr_uint32_t nalloc;
++#ifdef HAVE_KQUEUE
++    int kqueue_fd;
++    struct kevent kevent;
++    struct kevent *ke_set;
++#elif defined(HAVE_EPOLL)
++    int epoll_fd;
++    struct epoll_event *pollset;
++#elif defined(HAVE_POLL)
++    struct pollfd *pollset;
++#else
++    fd_set readset, writeset, exceptset;
++    int maxfd;
++#endif
++    apr_pollfd_t *query_set;
++    apr_pollfd_t *result_set;
++
++#ifdef NETWARE
++    int set_type;
++#endif
++};
++
++#if defined(HAVE_KQUEUE) || defined(HAVE_EPOLL)
++static apr_status_t backend_cleanup(void *p_)
++{
++    apr_pollset_t *pollset = (apr_pollset_t *)p_;
++#ifdef HAVE_KQUEUE
++    close(pollset->kqueue_fd);
++#elif defined(HAVE_EPOLL)
++    close(pollset->epoll_fd);
++#endif
++    return APR_SUCCESS;
++}
++#endif /* HAVE_KQUEUE || HAVE_EPOLL */
++
++APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
++                                             apr_uint32_t size,
++                                             apr_pool_t *p,
++                                             apr_uint32_t flags)
++{
++#if !defined(HAVE_KQUEUE) && !defined(HAVE_EPOLL) && !defined(HAVE_POLL) && defined(FD_SETSIZE)
++    if (size > FD_SETSIZE) {
++        *pollset = NULL;
++        return APR_EINVAL;
++    }
++#endif
++    *pollset = apr_palloc(p, sizeof(**pollset));
++    (*pollset)->nelts = 0;
++    (*pollset)->nalloc = size;
++    (*pollset)->pool = p;
++#ifdef HAVE_KQUEUE
++    (*pollset)->ke_set = (struct kevent*)apr_palloc(p, size * sizeof(struct  kevent));
++    memset((*pollset)->ke_set, 0, size * sizeof(struct kevent));
++    (*pollset)->kqueue_fd = kqueue();
++    if ((*pollset)->kqueue_fd == -1) {
++         return APR_ENOMEM;
++    }
++    apr_pool_cleanup_register(p, (void*)(*pollset), backend_cleanup, 
++        apr_pool_cleanup_null);
++#elif defined(HAVE_EPOLL)
++    (*pollset)->epoll_fd = epoll_create(size);
++    (*pollset)->pollset = apr_palloc(p, size * sizeof(struct epoll_event));
++    apr_pool_cleanup_register(p, (void*)(*pollset), backend_cleanup, 
++        apr_pool_cleanup_null);
++#elif defined(HAVE_POLL)
++    (*pollset)->pollset = apr_palloc(p, size * sizeof(struct pollfd));
++#else
++    FD_ZERO(&((*pollset)->readset));
++    FD_ZERO(&((*pollset)->writeset));
++    FD_ZERO(&((*pollset)->exceptset));
++    (*pollset)->maxfd = 0;
++#ifdef NETWARE
++    (*pollset)->set_type = APR_NO_DESC;
++#endif
++#endif
++    (*pollset)->query_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++    (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t *pollset)
++{
++#if defined(HAVE_KQUEUE) || defined(HAVE_EPOLL)
++    return apr_pool_cleanup_run(pollset->pool, pollset, backend_cleanup);
++#else
++    return APR_SUCCESS;
++#endif
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
++                                          const apr_pollfd_t *descriptor)
++{
++#ifdef HAVE_KQUEUE
++    apr_os_sock_t fd;
++#elif defined(HAVE_EPOLL)
++    struct epoll_event ev;
++    int ret = -1;
++#else
++#if !defined(HAVE_POLL)
++    apr_os_sock_t fd;
++#endif
++#endif
++
++    if (pollset->nelts == pollset->nalloc) {
++        return APR_ENOMEM;
++    }
++
++    pollset->query_set[pollset->nelts] = *descriptor;
++
++#ifdef HAVE_KQUEUE
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++        fd = descriptor->desc.f->filedes;
++    }
++
++    if (descriptor->reqevents & APR_POLLIN) {
++        EV_SET(&pollset->kevent, fd, EVFILT_READ, EV_ADD, 0, 0, NULL);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            return APR_ENOMEM;
++        }
++    }
++
++    if (descriptor->reqevents & APR_POLLOUT) {
++        EV_SET(&pollset->kevent, fd, EVFILT_WRITE, EV_ADD, 0, 0, NULL);
++
++        if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                   NULL) == -1) {
++            return APR_ENOMEM;
++        }
++    }
++
++#elif defined(HAVE_EPOLL)
++    ev.events = get_epoll_event(descriptor->reqevents);
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        ev.data.fd = descriptor->desc.s->socketdes;
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
++                        descriptor->desc.s->socketdes, &ev);
++    }
++    else {
++        ev.data.fd = descriptor->desc.f->filedes;
++        ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_ADD,
++                        descriptor->desc.f->filedes, &ev);
++    }
++    if (0 != ret) {
++        return APR_EBADF;
++    }
++#elif defined(HAVE_POLL)
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        pollset->pollset[pollset->nelts].fd = descriptor->desc.s->socketdes;
++    }
++    else {
++        pollset->pollset[pollset->nelts].fd = descriptor->desc.f->filedes;
++    }
++
++    pollset->pollset[pollset->nelts].events = get_event(descriptor->reqevents);
++#else
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++#ifdef NETWARE
++        /* NetWare can't handle mixed descriptor types in select() */
++        if (HAS_PIPES(pollset->set_type)) {
++            return APR_EBADF;
++        }
++        else {
++            pollset->set_type = APR_POLL_SOCKET;
++        }
++#endif
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++#if !APR_FILES_AS_SOCKETS
++        return APR_EBADF;
++#else
++#ifdef NETWARE
++        /* NetWare can't handle mixed descriptor types in select() */
++        if (descriptor->desc.f->is_pipe && !HAS_SOCKETS(pollset->set_type)) {
++            pollset->set_type = APR_POLL_FILE;
++            fd = descriptor->desc.f->filedes;
++        }
++        else {
++            return APR_EBADF;
++        }
++#else
++        fd = descriptor->desc.f->filedes;
++#endif
++#endif
++    }
++#if !defined(WIN32) && !defined(NETWARE) /* socket sets handled with array of handles */
++    if (fd >= FD_SETSIZE) {
++        /* XXX invent new error code so application has a clue */
++        return APR_EBADF;
++    }
++#endif
++    if (descriptor->reqevents & APR_POLLIN) {
++        FD_SET(fd, &(pollset->readset));
++    }
++    if (descriptor->reqevents & APR_POLLOUT) {
++        FD_SET(fd, &(pollset->writeset));
++    }
++    if (descriptor->reqevents &
++        (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
++        FD_SET(fd, &(pollset->exceptset));
++    }
++    if ((int)fd > pollset->maxfd) {
++        pollset->maxfd = (int)fd;
++    }
++#endif
++    pollset->nelts++;
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_remove(apr_pollset_t *pollset,
++                                             const apr_pollfd_t *descriptor)
++{
++    apr_uint32_t i;
++#ifdef HAVE_KQUEUE
++    apr_os_sock_t fd;
++#elif defined(HAVE_EPOLL)
++    struct epoll_event ev;
++    int ret = -1;
++#elif !defined(HAVE_POLL)
++    apr_os_sock_t fd;
++#endif
++
++#ifdef HAVE_KQUEUE
++    for (i = 0; i < pollset->nelts; i++) {
++        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++            /* Found an instance of the fd: remove this and any other copies  */
++            apr_uint32_t dst = i;
++            apr_uint32_t old_nelts = pollset->nelts;
++            pollset->nelts--;
++            for (i++; i < old_nelts; i++) {
++                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++                    pollset->nelts--;
++                }
++                else {
++                    pollset->query_set[dst] = pollset->query_set[i];
++                    dst++;
++                }
++            }
++
++            if (descriptor->desc_type == APR_POLL_SOCKET) {
++                fd = descriptor->desc.s->socketdes;
++            }
++            else {
++                fd = descriptor->desc.f->filedes;
++            }
++
++            if (descriptor->reqevents & APR_POLLIN) {
++                EV_SET(&pollset->kevent, fd,
++                       EVFILT_READ, EV_DELETE, 0, 0, NULL);
++
++                if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                          NULL) == -1) {
++                    return APR_EBADF;
++                }
++            }
++
++            if (descriptor->reqevents & APR_POLLOUT) {
++                EV_SET(&pollset->kevent, fd,
++                       EVFILT_WRITE, EV_DELETE, 0, 0, NULL);
++
++                if (kevent(pollset->kqueue_fd, &pollset->kevent, 1, NULL, 0,
++                          NULL) == -1) {
++                    return APR_EBADF;
++                }
++            }
++
++            return APR_SUCCESS;
++        }
++    }
++#elif defined(HAVE_EPOLL)
++    for (i = 0; i < pollset->nelts; i++) {
++        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++            /* Found an instance of the fd: remove this and any other copies  */
++            apr_uint32_t dst = i;
++            apr_uint32_t old_nelts = pollset->nelts;
++            pollset->nelts--;
++            for (i++; i < old_nelts; i++) {
++                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++                    pollset->nelts--;
++                }
++                else {
++                    pollset->query_set[dst] = pollset->query_set[i];
++                    dst++;
++                }
++            }
++            ev.events = get_epoll_event(descriptor->reqevents);
++            if (descriptor->desc_type == APR_POLL_SOCKET) {
++                ev.data.fd = descriptor->desc.s->socketdes;
++                ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
++                                descriptor->desc.s->socketdes, &ev);
++            }
++            else {
++                ev.data.fd = descriptor->desc.f->filedes;
++                ret = epoll_ctl(pollset->epoll_fd, EPOLL_CTL_DEL,
++                                descriptor->desc.f->filedes, &ev);
++            }
++            if (ret < 0) {
++                return APR_EBADF;
++            }
++
++            return APR_SUCCESS;
++        }
++    }
++#elif defined(HAVE_POLL)
++    for (i = 0; i < pollset->nelts; i++) {
++        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++            /* Found an instance of the fd: remove this and any other copies */
++            apr_uint32_t dst = i;
++            apr_uint32_t old_nelts = pollset->nelts;
++            pollset->nelts--;
++            for (i++; i < old_nelts; i++) {
++                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++                    pollset->nelts--;
++                }
++                else {
++                    pollset->pollset[dst] = pollset->pollset[i];
++                    pollset->query_set[dst] = pollset->query_set[i];
++                    dst++;
++                }
++            }
++            return APR_SUCCESS;
++        }
++    }
++
++#else /* no poll */
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++#if !APR_FILES_AS_SOCKETS
++        return APR_EBADF;
++#else
++        fd = descriptor->desc.f->filedes;
++#endif
++    }
++
++    for (i = 0; i < pollset->nelts; i++) {
++        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++            /* Found an instance of the fd: remove this and any other copies */
++            apr_uint32_t dst = i;
++            apr_uint32_t old_nelts = pollset->nelts;
++            pollset->nelts--;
++            for (i++; i < old_nelts; i++) {
++                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++                    pollset->nelts--;
++                }
++                else {
++                    pollset->query_set[dst] = pollset->query_set[i];
++                    dst++;
++                }
++            }
++            FD_CLR(fd, &(pollset->readset));
++            FD_CLR(fd, &(pollset->writeset));
++            FD_CLR(fd, &(pollset->exceptset));
++            if (((int)fd == pollset->maxfd) && (pollset->maxfd > 0)) {
++                pollset->maxfd--;
++            }
++            return APR_SUCCESS;
++        }
++    }
++#endif /* no poll */
++
++    return APR_NOTFOUND;
++}
++#ifdef HAVE_KQUEUE
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int rv;
++    apr_uint32_t i, j, r = 0;
++    struct timespec tv, *tvptr;
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long)apr_time_sec(timeout);
++        tv.tv_nsec = (long)apr_time_msec(timeout);
++        tvptr = &tv;
++    }
++
++    rv = kevent(pollset->kqueue_fd, NULL, 0, pollset->ke_set, pollset->nelts,
++                tvptr);
++    (*num) = rv;
++    if (rv < 0) {
++        return apr_get_netos_error();
++    }
++    if (rv == 0) {
++        return APR_TIMEUP;
++    }
++
++    /* TODO: Is there a better way to re-associate our data? */
++    for (i = 0; i < pollset->nelts; i++) {
++        apr_os_sock_t fd;
++        if (pollset->query_set[i].desc_type == APR_POLL_SOCKET) {
++            fd = pollset->query_set[i].desc.s->socketdes;
++        }
++        else {
++            fd = pollset->query_set[i].desc.f->filedes;
++        }
++        for (j = 0; j < rv; j++) {
++            if (pollset->ke_set[j].ident == fd ) {
++                pollset->result_set[r] = pollset->query_set[i];
++                pollset->result_set[r].rtnevents =
++                    get_kqueue_revent(pollset->ke_set[j].filter,
++                                      pollset->ke_set[j].flags);
++                r++;
++            }
++        }
++    }
++
++    (*num) = r;
++
++    if (descriptors) {
++        *descriptors = pollset->result_set;
++    }
++
++    return APR_SUCCESS;
++}
++
++#elif defined(HAVE_EPOLL)
++
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int rv;
++    apr_uint32_t i, j, k;
++
++    if (timeout > 0) {
++        timeout /= 1000;
++    }
++
++    rv = epoll_wait(pollset->epoll_fd, pollset->pollset, pollset->nelts,
++                    timeout);
++    (*num) = rv;
++    if (rv < 0) {
++        return apr_get_netos_error();
++    }
++    if (rv == 0) {
++        return APR_TIMEUP;
++    }
++    j = 0;
++    for (i = 0; i < pollset->nelts; i++) {
++        if (pollset->pollset[i].events != 0) {
++            /* TODO: Is there a better way to re-associate our data? */
++            for (k = 0; k < pollset->nelts; k++) {
++                if (pollset->query_set[k].desc_type == APR_POLL_SOCKET &&
++                    pollset->query_set[k].desc.s->socketdes ==
++                        pollset->pollset[i].data.fd) {
++                    pollset->result_set[j] = pollset->query_set[k];
++                    pollset->result_set[j].rtnevents =
++                        get_epoll_revent(pollset->pollset[i].events);
++                    j++;
++                    break;
++                }
++                else if (pollset->query_set[k].desc_type == APR_POLL_FILE 
++                         && pollset->query_set[k].desc.f->filedes ==
++                            pollset->pollset[i].data.fd) {
++                    pollset->result_set[j] = pollset->query_set[k];
++                    pollset->result_set[j].rtnevents =
++                        get_epoll_revent(pollset->pollset[i].events);
++                    j++;
++                    break;
++                }
++            }
++        }
++    }
++    if (descriptors) {
++        *descriptors = pollset->result_set;
++    }
++    return APR_SUCCESS;
++}
++#elif defined(HAVE_POLL)
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int rv;
++    apr_uint32_t i, j;
++
++    if (timeout > 0) {
++        timeout /= 1000;
++    }
++    rv = poll(pollset->pollset, pollset->nelts, timeout);
++    (*num) = rv;
++    if (rv < 0) {
++        return apr_get_netos_error();
++    }
++    if (rv == 0) {
++        return APR_TIMEUP;
++    }
++    j = 0;
++    for (i = 0; i < pollset->nelts; i++) {
++        if (pollset->pollset[i].revents != 0) {
++            pollset->result_set[j] = pollset->query_set[i];
++            pollset->result_set[j].rtnevents =
++                get_revent(pollset->pollset[i].revents);
++            j++;
++        }
++    }
++    if (descriptors)
++        *descriptors = pollset->result_set;
++    return APR_SUCCESS;
++}
++
++#else /* no poll */
++
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int rv;
++    apr_uint32_t i, j;
++    struct timeval tv, *tvptr;
++    fd_set readset, writeset, exceptset;
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long)apr_time_sec(timeout);
++        tv.tv_usec = (long)apr_time_usec(timeout);
++        tvptr = &tv;
++    }
++
++    memcpy(&readset, &(pollset->readset), sizeof(fd_set));
++    memcpy(&writeset, &(pollset->writeset), sizeof(fd_set));
++    memcpy(&exceptset, &(pollset->exceptset), sizeof(fd_set));
++
++#ifdef NETWARE
++    if (HAS_PIPES(pollset->set_type)) {
++        rv = pipe_select(pollset->maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++    }
++    else
++#endif
++    rv = select(pollset->maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++
++    (*num) = rv;
++    if (rv < 0) {
++        return apr_get_netos_error();
++    }
++    if (rv == 0) {
++        return APR_TIMEUP;
++    }
++    j = 0;
++    for (i = 0; i < pollset->nelts; i++) {
++        apr_os_sock_t fd;
++        if (pollset->query_set[i].desc_type == APR_POLL_SOCKET) {
++            fd = pollset->query_set[i].desc.s->socketdes;
++        }
++        else {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++            fd = pollset->query_set[i].desc.f->filedes;
++#endif
++        }
++        if (FD_ISSET(fd, &readset) || FD_ISSET(fd, &writeset) ||
++            FD_ISSET(fd, &exceptset)) {
++            pollset->result_set[j] = pollset->query_set[i];
++            pollset->result_set[j].rtnevents = 0;
++            if (FD_ISSET(fd, &readset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLIN;
++            }
++            if (FD_ISSET(fd, &writeset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLOUT;
++            }
++            if (FD_ISSET(fd, &exceptset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLERR;
++            }
++            j++;
++        }
++    }
++
++    if (descriptors)
++        *descriptors = pollset->result_set;
++    return APR_SUCCESS;
++}
++
++#endif /* no poll */
+diff -Nur srclib/apr.orig/poll/unix/select.c srclib/apr/poll/unix/select.c
+--- srclib/apr.orig/poll/unix/select.c	Thu Jan  1 01:00:00 1970
++++ srclib/apr/poll/unix/select.c	Mon Dec 13 18:57:28 2004
+@@ -0,0 +1,392 @@
++/* Copyright 2000-2004 The Apache Software Foundation
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++#include "apr_arch_poll_private.h"
++
++#ifdef POLL_USES_SELECT
++
++APR_DECLARE(apr_status_t) apr_poll(apr_pollfd_t *aprset, int num,
++                                   apr_int32_t *nsds,
++                                   apr_interval_time_t timeout)
++{
++    fd_set readset, writeset, exceptset;
++    int rv, i;
++    int maxfd = -1;
++    struct timeval tv, *tvptr;
++#ifdef NETWARE
++    apr_datatype_e set_type = APR_NO_DESC;
++#endif
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long) apr_time_sec(timeout);
++        tv.tv_usec = (long) apr_time_usec(timeout);
++        tvptr = &tv;
++    }
++
++    FD_ZERO(&readset);
++    FD_ZERO(&writeset);
++    FD_ZERO(&exceptset);
++
++    for (i = 0; i < num; i++) {
++        apr_os_sock_t fd;
++
++        aprset[i].rtnevents = 0;
++
++        if (aprset[i].desc_type == APR_POLL_SOCKET) {
++#ifdef NETWARE
++            if (HAS_PIPES(set_type)) {
++                return APR_EBADF;
++            }
++            else {
++                set_type = APR_POLL_SOCKET;
++            }
++#endif
++            fd = aprset[i].desc.s->socketdes;
++        }
++        else if (aprset[i].desc_type == APR_POLL_FILE) {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++#ifdef NETWARE
++            if (aprset[i].desc.f->is_pipe && !HAS_SOCKETS(set_type)) {
++                set_type = APR_POLL_FILE;
++            }
++            else
++                return APR_EBADF;
++#endif /* NETWARE */
++
++            fd = aprset[i].desc.f->filedes;
++
++#endif /* APR_FILES_AS_SOCKETS */
++        }
++        else {
++            break;
++        }
++#if !defined(WIN32) && !defined(NETWARE)        /* socket sets handled with array of handles */
++        if (fd >= FD_SETSIZE) {
++            /* XXX invent new error code so application has a clue */
++            return APR_EBADF;
++        }
++#endif
++        if (aprset[i].reqevents & APR_POLLIN) {
++            FD_SET(fd, &readset);
++        }
++        if (aprset[i].reqevents & APR_POLLOUT) {
++            FD_SET(fd, &writeset);
++        }
++        if (aprset[i].reqevents &
++            (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
++            FD_SET(fd, &exceptset);
++        }
++        if ((int) fd > maxfd) {
++            maxfd = (int) fd;
++        }
++    }
++
++#ifdef NETWARE
++    if (HAS_PIPES(set_type)) {
++        rv = pipe_select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++    }
++    else {
++#endif
++
++        rv = select(maxfd + 1, &readset, &writeset, &exceptset, tvptr);
++
++#ifdef NETWARE
++    }
++#endif
++
++    (*nsds) = rv;
++    if ((*nsds) == 0) {
++        return APR_TIMEUP;
++    }
++    if ((*nsds) < 0) {
++        return apr_get_netos_error();
++    }
++
++    for (i = 0; i < num; i++) {
++        apr_os_sock_t fd;
++
++        if (aprset[i].desc_type == APR_POLL_SOCKET) {
++            fd = aprset[i].desc.s->socketdes;
++        }
++        else if (aprset[i].desc_type == APR_POLL_FILE) {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++            fd = aprset[i].desc.f->filedes;
++#endif
++        }
++        else {
++            break;
++        }
++        if (FD_ISSET(fd, &readset)) {
++            aprset[i].rtnevents |= APR_POLLIN;
++        }
++        if (FD_ISSET(fd, &writeset)) {
++            aprset[i].rtnevents |= APR_POLLOUT;
++        }
++        if (FD_ISSET(fd, &exceptset)) {
++            aprset[i].rtnevents |= APR_POLLERR;
++        }
++    }
++
++    return APR_SUCCESS;
++}
++
++#endif /* POLL_USES_SELECT */
++
++#ifdef POLLSET_USES_SELECT
++
++struct apr_pollset_t
++{
++    apr_pool_t *pool;
++
++    apr_uint32_t nelts;
++    apr_uint32_t nalloc;
++    fd_set readset, writeset, exceptset;
++    int maxfd;
++    apr_pollfd_t *query_set;
++    apr_pollfd_t *result_set;
++#ifdef NETWARE
++    int set_type;
++#endif
++};
++
++APR_DECLARE(apr_status_t) apr_pollset_create(apr_pollset_t **pollset,
++                                             apr_uint32_t size,
++                                             apr_pool_t *p,
++                                             apr_uint32_t flags)
++{
++    if (flags & APR_POLLSET_THREADSAFE) {                
++        *pollset = NULL;
++        return APR_ENOTIMPL;
++    }
++#ifdef FD_SETSIZE
++    if (size > FD_SETSIZE) {
++        *pollset = NULL;
++        return APR_EINVAL;
++    }
++#endif
++    *pollset = apr_palloc(p, sizeof(**pollset));
++    (*pollset)->nelts = 0;
++    (*pollset)->nalloc = size;
++    (*pollset)->pool = p;
++    FD_ZERO(&((*pollset)->readset));
++    FD_ZERO(&((*pollset)->writeset));
++    FD_ZERO(&((*pollset)->exceptset));
++    (*pollset)->maxfd = 0;
++#ifdef NETWARE
++    (*pollset)->set_type = APR_NO_DESC;
++#endif
++    (*pollset)->query_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++    (*pollset)->result_set = apr_palloc(p, size * sizeof(apr_pollfd_t));
++
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_destroy(apr_pollset_t * pollset)
++{
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_add(apr_pollset_t *pollset,
++                                          const apr_pollfd_t *descriptor)
++{
++    apr_os_sock_t fd;
++
++    if (pollset->nelts == pollset->nalloc) {
++        return APR_ENOMEM;
++    }
++
++    pollset->query_set[pollset->nelts] = *descriptor;
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++#ifdef NETWARE
++        /* NetWare can't handle mixed descriptor types in select() */
++        if (HAS_PIPES(pollset->set_type)) {
++            return APR_EBADF;
++        }
++        else {
++            pollset->set_type = APR_POLL_SOCKET;
++        }
++#endif
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++#if !APR_FILES_AS_SOCKETS
++        return APR_EBADF;
++#else
++#ifdef NETWARE
++        /* NetWare can't handle mixed descriptor types in select() */
++        if (descriptor->desc.f->is_pipe && !HAS_SOCKETS(pollset->set_type)) {
++            pollset->set_type = APR_POLL_FILE;
++            fd = descriptor->desc.f->filedes;
++        }
++        else {
++            return APR_EBADF;
++        }
++#else
++        fd = descriptor->desc.f->filedes;
++#endif
++#endif
++    }
++#if !defined(WIN32) && !defined(NETWARE)        /* socket sets handled with array of handles */
++    if (fd >= FD_SETSIZE) {
++        /* XXX invent new error code so application has a clue */
++        return APR_EBADF;
++    }
++#endif
++    if (descriptor->reqevents & APR_POLLIN) {
++        FD_SET(fd, &(pollset->readset));
++    }
++    if (descriptor->reqevents & APR_POLLOUT) {
++        FD_SET(fd, &(pollset->writeset));
++    }
++    if (descriptor->reqevents &
++        (APR_POLLPRI | APR_POLLERR | APR_POLLHUP | APR_POLLNVAL)) {
++        FD_SET(fd, &(pollset->exceptset));
++    }
++    if ((int) fd > pollset->maxfd) {
++        pollset->maxfd = (int) fd;
++    }
++    pollset->nelts++;
++    return APR_SUCCESS;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_remove(apr_pollset_t * pollset,
++                                             const apr_pollfd_t * descriptor)
++{
++    apr_uint32_t i;
++    apr_os_sock_t fd;
++
++    if (descriptor->desc_type == APR_POLL_SOCKET) {
++        fd = descriptor->desc.s->socketdes;
++    }
++    else {
++#if !APR_FILES_AS_SOCKETS
++        return APR_EBADF;
++#else
++        fd = descriptor->desc.f->filedes;
++#endif
++    }
++
++    for (i = 0; i < pollset->nelts; i++) {
++        if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++            /* Found an instance of the fd: remove this and any other copies */
++            apr_uint32_t dst = i;
++            apr_uint32_t old_nelts = pollset->nelts;
++            pollset->nelts--;
++            for (i++; i < old_nelts; i++) {
++                if (descriptor->desc.s == pollset->query_set[i].desc.s) {
++                    pollset->nelts--;
++                }
++                else {
++                    pollset->query_set[dst] = pollset->query_set[i];
++                    dst++;
++                }
++            }
++            FD_CLR(fd, &(pollset->readset));
++            FD_CLR(fd, &(pollset->writeset));
++            FD_CLR(fd, &(pollset->exceptset));
++            if (((int) fd == pollset->maxfd) && (pollset->maxfd > 0)) {
++                pollset->maxfd--;
++            }
++            return APR_SUCCESS;
++        }
++    }
++
++    return APR_NOTFOUND;
++}
++
++APR_DECLARE(apr_status_t) apr_pollset_poll(apr_pollset_t *pollset,
++                                           apr_interval_time_t timeout,
++                                           apr_int32_t *num,
++                                           const apr_pollfd_t **descriptors)
++{
++    int rv;
++    apr_uint32_t i, j;
++    struct timeval tv, *tvptr;
++    fd_set readset, writeset, exceptset;
++
++    if (timeout < 0) {
++        tvptr = NULL;
++    }
++    else {
++        tv.tv_sec = (long) apr_time_sec(timeout);
++        tv.tv_usec = (long) apr_time_usec(timeout);
++        tvptr = &tv;
++    }
++
++    memcpy(&readset, &(pollset->readset), sizeof(fd_set));
++    memcpy(&writeset, &(pollset->writeset), sizeof(fd_set));
++    memcpy(&exceptset, &(pollset->exceptset), sizeof(fd_set));
++
++#ifdef NETWARE
++    if (HAS_PIPES(pollset->set_type)) {
++        rv = pipe_select(pollset->maxfd + 1, &readset, &writeset, &exceptset,
++                         tvptr);
++    }
++    else
++#endif
++        rv = select(pollset->maxfd + 1, &readset, &writeset, &exceptset,
++                    tvptr);
++
++    (*num) = rv;
++    if (rv < 0) {
++        return apr_get_netos_error();
++    }
++    if (rv == 0) {
++        return APR_TIMEUP;
++    }
++    j = 0;
++    for (i = 0; i < pollset->nelts; i++) {
++        apr_os_sock_t fd;
++        if (pollset->query_set[i].desc_type == APR_POLL_SOCKET) {
++            fd = pollset->query_set[i].desc.s->socketdes;
++        }
++        else {
++#if !APR_FILES_AS_SOCKETS
++            return APR_EBADF;
++#else
++            fd = pollset->query_set[i].desc.f->filedes;
++#endif
++        }
++        if (FD_ISSET(fd, &readset) || FD_ISSET(fd, &writeset) ||
++            FD_ISSET(fd, &exceptset)) {
++            pollset->result_set[j] = pollset->query_set[i];
++            pollset->result_set[j].rtnevents = 0;
++            if (FD_ISSET(fd, &readset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLIN;
++            }
++            if (FD_ISSET(fd, &writeset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLOUT;
++            }
++            if (FD_ISSET(fd, &exceptset)) {
++                pollset->result_set[j].rtnevents |= APR_POLLERR;
++            }
++            j++;
++        }
++    }
++
++    if (descriptors)
++        *descriptors = pollset->result_set;
++    return APR_SUCCESS;
++}
++
++#endif /* POLLSET_USES_SELECT */

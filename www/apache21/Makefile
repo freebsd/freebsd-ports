@@ -9,6 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}
 DISTNAME=	httpd-${PORTVERSION}-alpha
@@ -32,14 +33,6 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* \
 		apache-2.0.* apache-*-2.0.*
 
-# patch files
-.if defined (WITH_WINDOWSUPDATEFIX)
-EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
-.endif
-.if defined(WITH_EXPERIMENTAL_PATCHES)
-EXTRA_PATCHES+=		${FILESDIR}/exp-apr-kqueue.patch
-.endif
-
 SCRIPTS_ENV+=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
 			LIBTOOL_VERSION=${LIBTOOL_VERSION} AUTOCONF=${AUTOCONF} \
 			LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4 \
@@ -51,8 +44,9 @@ USE_PERL5=		yes
 USE_RC_SUBR=		yes
 USE_REINPLACE=		yes
 LIBTOOLFILES=		configure
+.if !defined(WITH_APR_FROM_PORTS)
 INSTALLS_SHLIB=		yes
-
+.endif
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
 		--with-perl=${PERL5} \
@@ -71,9 +65,13 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 
-WITH_MPM?=	prefork # or worker, perchild, threadpool
+WITH_MPM?=	prefork # or worker, perchild, threadpool, event
 
 WITH_HTTP_PORT?=	80
+
+.if defined (WITH_WINDOWSUPDATEFIX)
+EXTRA_PATCHES+=		${FILESDIR}/exp-windowsupdate.patch
+.endif
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
@@ -92,10 +90,6 @@ USE_OPENSSL=	yes
 
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
-.endif
-
-.if defined(WITH_SSL_EXPERIMENTAL_ENGINE)
-CFLAGS+=	-DSSL_EXPERIMENTAL_ENGINE
 .endif
 
 # debug overrides CFLAGS
@@ -196,6 +190,7 @@ post-patch:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache21.sh
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
+	@${RM} -f ${WRKSRC}/docs/conf/highperformance-std.conf
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
 	@${REINPLACE_CMD} -e 's,freebsd\[2345\],freebsd\[23456\],' \

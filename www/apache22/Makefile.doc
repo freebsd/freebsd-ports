@@ -90,6 +90,8 @@
 ##
 
 DOCSDIR=	${PREFIX}/share/doc/apache21
+EXAMPLESDIR=	${PREFIX}/share/examples/apache21
+MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes
