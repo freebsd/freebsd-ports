@@ -19,6 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	EGCS enhanced version of the GNU compiler suite
 
 USE_BZIP2=	yes
+ONLY_FOR_ARCHS=	i386 alpha
 
 .include <bsd.port.pre.mk>
 
