@@ -33,7 +33,7 @@
  #CFLAGS= -g -funroll-loops # gnu cc 2.00 on SunOS with debug
 -CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
 +#CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
-+CFLAGS= -O2 -m486 -pipe -fno-strength-reduce
++CFLAGS= -O2 -pipe -fno-strength-reduce
  
  # flags for DJGPP package
  #COFF2EXE= coff2exe $(GNUSHOGI)
