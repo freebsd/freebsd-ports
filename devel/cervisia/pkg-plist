@@ -1,10 +1,18 @@
 bin/cervisia
 share/applnk/Development/Cervisia.kdelnk
+share/doc/HTML/en/cervisia/accessingrepository.html
 share/doc/HTML/en/cervisia/addingfiles.html
 share/doc/HTML/en/cervisia/addingremovingdirs.html
 share/doc/HTML/en/cervisia/browsinglogs.html
+share/doc/HTML/en/cervisia/history.html
 share/doc/HTML/en/cervisia/ignoredfiles.html
 share/doc/HTML/en/cervisia/index.html
 share/doc/HTML/en/cervisia/mainscreen.html
 share/doc/HTML/en/cervisia/removingfiles.html
+share/doc/HTML/en/cervisia/.anchors
+share/doc/HTML/en/cervisia/common/kde-common.css
+share/doc/HTML/en/cervisia/common/kde-default.css
+share/doc/HTML/en/cervisia/common/kde-localised.css
+share/doc/HTML/en/cervisia/common/logotp3.png
+@dirrm share/doc/HTML/en/cervisia/common
 @dirrm share/doc/HTML/en/cervisia
