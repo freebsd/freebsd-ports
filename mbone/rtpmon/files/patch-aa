@@ -1,0 +1,23 @@
+--- configure.orig	Tue Oct 22 22:32:09 1996
++++ configure	Wed Nov  6 22:57:53 1996
+@@ -1609,6 +1609,7 @@
+         $prefix/lib/tcl7.6 \
+         $prefix/share/lib/tcl7.6 \
+         $x_libraries/tcl7.6 \
++	/usr/libdata/tcl \
+ 	$dir/lib/tcl7.5 \
+         $dir/share/lib/tcl7.5 \
+         ../tcl7.5/library \
+@@ -1951,6 +1952,12 @@
+             LDFLAGS="$LDFLAGS -L$place"
+             libtk="-ltk41"
+         fi
++
++	if test -r $place/libtk41.so.1.0 ; then
++	    echo "$ac_t""$place/libtk41.so.1.0" 1>&6
++	    LDFLAGS="$LDFLAGS -L$place"
++	    libtk="-ltk41"
++	fi
+ 
+         if test "$libtk" = "no" ; then
+             if test -r $place/libtk4.2.a ; then
