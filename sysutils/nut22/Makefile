@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://penguin.harrison.k12.co.us/mirrors/nut/release/${PORTVERSION:R}/
+MASTER_SITES=	http://us1.networkupstools.org/source/${PORTVERSION:R}/ \
+		http://eu1.networkupstools.org/source/${PORTVERSION:R}/
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Network UPS Tools
@@ -23,13 +24,14 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 
 MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
 		upssched.conf.5
-MAN8=		apcsmart.8 bcmxcp.8 belkin.8 bestferrups801-807.8 \
+MAN8=		apcsmart.8 bcmxcp.8 belkin.8 \
 		bestfortress.8 bestuferrups.8 bestups.8 cyberpower.8 etapro.8 \
 		everups.8 fentonups.8 genericups.8 hp.8 isbmex.8 liebert.8 \
 		masterguard.8 mge-shut.8 mge-utalk.8 microdowell.8 newapc.8 \
 		nutupsdrv.8 oneac.8 powercom.8 powernet.8 sec.8 sms.8 \
 		snmp-ups.8 tripplite.8 tripplitesu.8 upsc.8 upscmd.8 upsd.8 \
-		upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8 victronups.8
+		upsdrvctl.8 upslog.8 upsmon.8 upsrw.8 upssched.8 victronups.8 \
+		dummycons.8 energizerups.8 ferrups.8 safenet.8
 
 ALL_TARGET=	all
 INSTALL_TARGET=	install

@@ -11,15 +11,16 @@ etc/rc.d/nut.sh.sample
 libexec/nut/apcsmart
 libexec/nut/bcmxcp
 libexec/nut/belkin
-libexec/nut/bestferrups801-807
 libexec/nut/bestfortress
 libexec/nut/bestuferrups
 libexec/nut/bestups
+libexec/nut/blazer
 libexec/nut/cyberpower
 libexec/nut/esupssmart
 libexec/nut/etapro
 libexec/nut/everups
 libexec/nut/fentonups
+libexec/nut/ferrups
 libexec/nut/genericups
 libexec/nut/hp
 libexec/nut/isbmex
@@ -31,6 +32,7 @@ libexec/nut/microdowell
 libexec/nut/newapc
 libexec/nut/oneac
 libexec/nut/powercom
+libexec/nut/safenet
 libexec/nut/sec
 libexec/nut/sms
 libexec/nut/tripplite
