@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Mknod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mknod/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mknod/Mknod.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mknod/Mknod.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mknod
