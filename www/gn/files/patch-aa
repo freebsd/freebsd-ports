@@ -85,7 +85,7 @@
    * If you wish to run at a different port than 70, edit this line.
    */
   
-! #define DECOMPRESS	"/usr/net/bin/zcat"
+! #define DECOMPRESS	"/usr/local/bin/zcat"
   /*
    * This is the program which does "on the fly" decompression
    */

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    gn
-# Version required:     2.13
+# Version required:     2.17
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.2 1994/09/25 19:11:34 adam Exp $
+# $Id: Makefile,v 1.3 1994/10/06 02:56:44 jkh Exp $
 #
 
-DISTNAME=       gn-2.13
+DISTNAME=       gn-2.17
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 INETD_CONF=	/etc/inetd.conf
 CONF=	'	stream	tcp	nowait	nobody	/usr/local/etc/gn	gn'
