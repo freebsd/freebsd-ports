@@ -24,10 +24,4 @@ MAN1=		dns-boot-check.1 dns-bootp.1 dns-bootparams.1 \
 		dns-hosts-import.1 dns-hosts.1 dns-license.1 \
 		dns-ng.1 dns-rev.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501000
-BROKEN=		"Does not build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
