@@ -1,15 +1,14 @@
-This code was originaly from FreeBSD and then the Linux folks greatly
-enhanced its functionality and capabilities. It produces ROM-able
-code to boot ELF/aout kernels over NFS or TFTP. It also includes
-boot loaders to load the ROM images from raw floppy or hard disks,
-or DOS disks.
+This code produce bootloaders for a number of cards that can be
+loaded from from raw or DOS-formatted floppy/hard disks and ROMs
+to boot ELF/aout kernels over NFS or TFTP.
+Edit work/etherboot/src/Config to see/set the desired features.
 
-There are different ROM images for different network cards
-(many are supported). They are built in work/etherboot/src/bin32.
+The defaults used here are suited to boot FreeBSD ELF kernels over NFS.
 
-Edit "Config" in work/etherboot/src directory for more features,
-default is to boot ELF kernels over NFS.
+To produce an etherboot floppy (or HD partition) do
 
-To make a floppy image do
-	cd work/etherboot/src ; gmake bin32/<device.fd0
-.COM images are made via  gmake bin32/<device type>.com .
+	cd work/etherboot/src 
+	cat bin/boot1a.bin bin32/<device>.lzrom > /dev/fd0
+
+Replace <device> with the specific code for your card, and /dev/fd0
+with your hard disk partition.
