@@ -13,10 +13,10 @@
 #WITHOUT_SA_EXIM
 # SA-Exim support (<http://marc.merlins.org/linux/exim/sa.html>)
 
-#WITH_BDB_VER=		1, 4, 41, 42
+#WITH_BDB_VER=		1, 4, 41, 42, 43
 # BDB_VER is the version of the Berkeley DB library to use, and
 # may be 1, which corresponds to version 1.85 in the base system, 4,
-# 41 or 42 which depends on the databases/db4[12] ports.
+# 41, 42 or 43 which depends on the databases/db4[123] ports.
 
 #WITH_DEFAULT_CHARSET=	ISO-8859-1, *
 # When Exim is decoding MIME "words" in header lines it converts any foreign
@@ -30,10 +30,10 @@
 #! lookup types
 
 #WITHOUT_OPENLDAP
-#WITH_OPENLDAP_VER=	auto, 21, 22
+#WITH_OPENLDAP_VER=	auto, 21, 22, 23
 # Link against libldap.
 # Define OPENLDAP_VER to specify a particular version of
-# OpenLDAP to use. Valid values are currently auto, 21 and 22.
+# OpenLDAP to use. Valid values are currently auto, 21, 22 and 23.
 # The use of `auto' is recommended to avoid conflicting with
 # other ports that use the OpenLDAP client libraries.
 # Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
