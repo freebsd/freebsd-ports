@@ -28,6 +28,8 @@ bb-*			ports/net/bb		FreeBSD has permission from
 blender			ports/graphics/blender	Can't distribute commercially.
 bro-*			ports/security/bro	No distribution due to
 						alpha status
+bugseeker2ww*		ports/java/bugseeker	License doesn't allow
+						redistribution.
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
 						Opinions differ. Commercial 

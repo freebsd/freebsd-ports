@@ -1,0 +1,36 @@
+--- bin/bugseeker2.sh.orig	Sun Oct 22 01:20:38 2000
++++ bin/bugseeker2.sh	Thu Jun 21 19:40:14 2001
+@@ -2,22 +2,15 @@
+ #
+ # BugSeeker for Java 2 Startup Script
+ # ============================================================================
+-# For Linux, Solaris, Unix
+-#
+-# Please customize this script by following the five simple configuration
+-# steps listed below
+-# ----------------------------------------------------------------------------
++# For FreeBSD
+ 
+ # Step 1: 
+ # =======
+ #   Specify the JAVA_HOME for this script. JAVA_HOME should refer to the
+ #   home location where your system's Java Development Kit is installed
+-#   For instance, the supplied example assumes the JDK is installed at
+-#   /usr/java 
+ # ----------------------------------------------------------------------------
+ 
+-JAVA_HOME=/usr/java
+-#JAVA_HOME=/usr/j2se		# Solaris JDK 1.3
++JAVA_HOME=%%JAVA_HOME%%
+ 
+ # Step 2: 
+ # =======
+@@ -26,7 +19,7 @@
+ #   system.
+ # ----------------------------------------------------------------------------
+ 
+-BUGSEEKER2_HOME=/usr/local/bugseeker2
++BUGSEEKER2_HOME=%%TARGET_DIR%%
+ 
+ # Step 3:
+ # =======
