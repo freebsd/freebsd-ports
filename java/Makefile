@@ -16,6 +16,7 @@
     SUBDIR += cryptix-jce
     SUBDIR += diablo-jdk13
     SUBDIR += diablo-jre13
+    SUBDIR += drexelsnmp
     SUBDIR += eclipse
     SUBDIR += eclipse-EPIC
     SUBDIR += eclipse-cdt
