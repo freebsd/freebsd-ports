@@ -7,13 +7,14 @@
 
 PORTNAME=	phppgadmin
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	ftp://ftp.greatbridge.org/pub/phppgadmin/stable/
 DISTNAME=	phpPgAdmin_2-3
 
 MAINTAINER=	nbm@FreeBSD.org
 
-.if defined(WITH_PHP4)
+.if !defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
