@@ -1,0 +1,17 @@
+--- include/pathnames.h.orig	Mon Aug 26 11:24:39 2002
++++ include/pathnames.h	Mon Aug 26 11:25:09 2002
+@@ -49,12 +49,12 @@
+ 
+ /* where unerased tmp directory */
+ #ifndef	_PATH_VARTMP
+-#define	_PATH_VARTMP		"/usr/local/var/trafd/tmp/"
++#define	_PATH_VARTMP		"/usr/local/var/bpft/tmp/"
+ #endif
+ 
+ /* where backuped data */
+ #ifndef	PATH_TOSAVE
+-#define	PATH_TOSAVE		"/usr/local/var/trafd/"
++#define	PATH_TOSAVE		"/usr/local/var/bpft/"
+ #endif
+ 
+ /* where locate trafstat */

@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Dec  2 11:44:35 2001
++++ Makefile	Wed Feb  5 04:24:20 2003
+@@ -43,8 +43,6 @@
+ #
+ 
+ 
+-PREFIX=/usr/local
+-
+ # Man pages prefix
+ PREFIX_MANPAGES=${PREFIX}/man/man
+ PREFIX_CATMANPAGES=${PREFIX}/man/cat
+@@ -59,7 +57,7 @@
+ PATH_SBINDIR=${PREFIX}/sbin
+ 
+ # Trailing slash directory, summary traffic log files will be put there.
+-PATH_TOSAVE=${PREFIX}/var/trafd/
++PATH_TOSAVE=${PREFIX}/var/bpft/
+ 
+ # Full pathname where locate trafstat program.
+ PATH_TRAFSTAT=${PREFIX}/bin/trafstat

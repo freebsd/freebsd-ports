@@ -41,6 +41,7 @@
     SUBDIR += binkd
     SUBDIR += boclient
     SUBDIR += bounce
+    SUBDIR += bpft
     SUBDIR += bsd-airtools
     SUBDIR += bsdproxy
     SUBDIR += cap
