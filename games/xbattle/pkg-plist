@@ -13,7 +13,11 @@ etc/xbattle/xbos/tropical2.xbo
 etc/xbattle/xbos/tundra.xbo
 etc/xbattle/xbts/castle.xbt
 etc/xbattle/xbts/natural.xbt
-man/man1/xbattle.1.gz
 share/doc/xbattle/README
 share/doc/xbattle/tutorial1
 share/doc/xbattle/tutorial2
+@dirrm etc/xbattle/xbas
+@dirrm etc/xbattle/xbos
+@dirrm etc/xbattle/xbts
+@dirrm etc/xbattle
+@dirrm share/doc/xbattle
