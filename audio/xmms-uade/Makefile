@@ -14,12 +14,14 @@ DISTFILES=	uade-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	mbr@FreeBSD.org
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_LIBTOOL=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
