@@ -1,6 +1,7 @@
-include/GL/FooMesa.h
 include/GL/dosmesa.h
+include/GL/foomesa.h
 include/GL/fxmesa.h
+include/GL/ggimesa.h
 include/GL/gl.h
 include/GL/gl_mangle.h
 include/GL/glu.h

@@ -3,7 +3,7 @@
 # Date created:				17 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:30:52 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/27 16:06:56 steve Exp $
 #
 
 DISTNAME=	battalion-1.4
@@ -13,8 +13,8 @@ DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL.13:${PORTSDIR}/graphics/Mesa2 \
-		MesaGLU.13:${PORTSDIR}/graphics/Mesa2
+LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
+		MesaGLU.14:${PORTSDIR}/graphics/Mesa3
 
 ALL_TARGET=
 USE_X_PREFIX=	yes

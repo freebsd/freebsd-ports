@@ -1,5 +1,5 @@
---- Make-config.orig	Wed Jul  1 13:17:10 1998
-+++ Make-config	Sun Sep 27 11:46:02 1998
+--- Make-config.orig	Sun Aug 30 05:27:56 1998
++++ Make-config	Wed Sep 30 14:50:03 1998
 @@ -1,8 +1,12 @@
  # Make-config
  
@@ -14,7 +14,7 @@
  
  # Mesa 3-D graphics library
  # Copyright (C) 1995-1998  Brian Paul
-@@ -238,6 +242,16 @@
+@@ -281,6 +285,16 @@
  	"MAKELIB = ../mklib.freebsd" \
  	"XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lXi -lX11"
  
@@ -31,11 +31,10 @@
  freebsd-386:
  	$(MAKE) $(MFLAGS) targets \
  	"GL_LIB = libMesaGL.a" \
-@@ -247,6 +261,17 @@
- 	"CFLAGS = -O3 -ffast-math -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100 -DUSE_X86_ASM -DFREEBSD" \
+@@ -291,6 +305,17 @@
  	"MAKELIB = ../mklib.freebsd" \
  	"XLIBS = -L/usr/X11R6/lib -lXext -lXmu -lXi -lX11" \
-+	"ASM_SOURCES = asm-386.S"
+ 	"ASM_SOURCES = asm_386.S"
 +
 +freebsd-386-elf:
 +	$(MAKE) $(MFLAGS) targets \
@@ -46,6 +45,7 @@
 +	"CFLAGS = -O3 -ffast-math -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100 -DUSE_X86_ASM" \
 +	"MAKELIB = ../mklib.freebsd" \
 +	"XLIBS = -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib -lXext -lXmu -lXi -lX11" \
- 	"ASM_SOURCES = asm-386.S"
++	"ASM_SOURCES = asm-386.S"
  
  gcc:
+ 	$(MAKE) $(MFLAGS) targets \

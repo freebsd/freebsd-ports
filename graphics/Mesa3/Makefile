@@ -1,26 +1,24 @@
 # New ports collection makefile for:    Mesa
-# Version required:     3.0 beta 6
+# Version required:     3.0
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.27 1998/08/12 22:52:25 asami Exp $
+# $Id: Makefile,v 1.28 1998/09/26 23:33:10 steve Exp $
 #
 
-DISTNAME=       MesaLib-3.0beta6
-PKGNAME=	Mesa-3.0b6
+DISTNAME=       MesaLib-3.0
+PKGNAME=	Mesa-3.0
 CATEGORIES=	graphics
-MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/beta/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0beta6.tar.gz
+MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
+		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.ORG
-
-MANUAL_PACKAGE_BUILD=	shlib version conflict
 
 WRKSRC=		${WRKDIR}/Mesa-3.0
 
 USE_X_PREFIX=	yes
 LIBS=		libMesaGL libMesaGLU
-NO_LATEST_LINK=	yes
 
 do-install:
 .for file in ${LIBS}
