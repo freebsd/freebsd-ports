@@ -1589,3 +1589,4 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.xemacs-devel
 @dirrm lib/xemacs/xemacs-packages/etc/auctex
 @unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages/etc 2>/dev/null || true
 @unexec rmdir %%PREFIX%%/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %%PREFIX%%/lib/xemacs 2>/dev/null || true

@@ -338,3 +338,6 @@ lib/xemacs/xemacs-packages/pkginfo/MANIFEST.strokes
 @dirrm lib/xemacs/xemacs-packages/lisp/calc
 @dirrm lib/xemacs/xemacs-packages/etc/slider
 @dirrm lib/xemacs/xemacs-packages/etc/frame-icon
+@unexec rmdir %D/lib/xemacs/xemacs-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/xemacs-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true

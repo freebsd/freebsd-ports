@@ -173,3 +173,6 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.lookup
 @dirrm lib/xemacs/mule-packages/lisp/leim/quail
 @dirrm lib/xemacs/mule-packages/lisp/leim
 @dirrm lib/xemacs/mule-packages/lisp/edict
+@unexec rmdir %D/lib/xemacs/mule-packages/* 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
+@unexec rmdir %D/lib/xemacs 2>/dev/null || true
