@@ -1,0 +1,20 @@
+GtkEditor is a source code editor widget for GTK+. It is currently used, in one
+version or another, in several GTK+/GNOME applications, including gIDE,
+VDKBuilder, GXEdit, and Bluefish. 
+
+The longterm goal of GtkEditor is to provide a framework for source code
+editing in GTK+ applications, whether just for editing macros or for full
+fledged IDEs. We try to achieve this through a highly configurable editor
+widget sub-classing the gtktext widget. After initialisation, the editor widget
+can be treated as the usual text widget, and all source-code editing features
+are taken care of by the widget itself. The behaviour of the editor is decided
+by dynamic libraries loaded during initialisation of the widget or statically
+linked with the application using the widget. These libraries can be hand-coded
+or created using tools supplied with GtkEditor. 
+
+In the current version of GtkEditor, the widget only support syntax
+highlighting, but future versions will include automatic/semi-automatic
+indenting, parenthesis matching, and what other nifty features we can come up
+with. 
+
+WWW: http://gtkeditor.sourceforge.net/
