@@ -96,6 +96,7 @@
     SUBDIR += moscow_ml
     SUBDIR += mozart
     SUBDIR += nawk
+    SUBDIR += nhc98
     SUBDIR += nickle
     SUBDIR += nml
     SUBDIR += nqc

@@ -1,0 +1,12 @@
+diff -ruN src.bak/hp2graph/Makefile src/hp2graph/Makefile
+--- src.bak/hp2graph/Makefile	Mon Oct 11 13:50:38 1999
++++ src/hp2graph/Makefile	Mon Jun 18 16:32:04 2001
+@@ -31,7 +31,7 @@
+ 
+ 
+ $(OBJDIR):
+-	mkdir -p $(OBJDIR) || /bin/true
++	mkdir -p $(OBJDIR) || /usr/bin/true
+ 
+ $(OBJS): $(OBJDIR)/%.o: %.c
+ 	$(CC) -c $(CFLAGS) -o $@ $<

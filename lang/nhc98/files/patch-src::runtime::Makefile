@@ -1,0 +1,21 @@
+diff -ruN src.bak/runtime/Makefile src/runtime/Makefile
+--- src.bak/runtime/Makefile	Thu Dec 16 11:58:42 1999
++++ src/runtime/Makefile	Mon Jun 18 16:30:56 2001
+@@ -9,7 +9,7 @@
+ 
+ LD = ld
+ LDFLAGS = -r
+-TRUE = /bin/true
++TRUE = /usr/bin/true
+ CC = gcc
+ AR = ar
+ ARFLAGS = r
+@@ -48,7 +48,7 @@
+ 	mkdir -p ${OBJDIR}
+ 
+ ${OBJDIRS}: ${OBJDIR}/% :
+-	mkdir -p $@  || /bin/true
++	mkdir -p $@  || /usr/bin/true
+ 
+ objdir: ${OBJDIR}
+ 	cd Kernel;  $(MAKE) objdir

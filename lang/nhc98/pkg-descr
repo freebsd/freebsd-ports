@@ -1,0 +1,10 @@
+nhc98 is a fully-fledged compiler for Haskell 98, the standard lazy functional
+programming language. Written in Haskell, it is small and very portable, and
+aims to produce small executables that run in small amounts of memory. It comes
+with extensive tool support for automatic compilation, foreign language
+interfacing, heap and time profiling, tracing, and debugging.
+
+WWW: http://www.cs.york.ac.uk/fp/nhc98/
+
+-- Oliver Braun
+obraun@informatik.unibw-muenchen.de
