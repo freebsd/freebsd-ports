@@ -1,6 +1,6 @@
 # New ports collection makefile for:    adobe-cmaps
 # Date created:         Wed, 10 Apr 2002 02:22:30 +0900
-# Whom:                 KATO Tsuguru <dai_fugo@geocities.co.jp>
+# Whom:                 KATO Tsuguru <tkato@prontomail.com>
 #
 # $FreeBSD$
 #
