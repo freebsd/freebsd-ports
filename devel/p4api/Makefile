@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM
 		http://www.perforce.com/perforce/doc.${DOCVER}/user/:txt
 EXTRACT_SUFX=
 DISTFILES=	${TAR_FILES}:tar p4api.txt:txt
-DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
+DIST_SUBDIR=	perforce/${VERSION}/${ARCH}-${PLATFORM}
 EXTRACT_ONLY=	${TAR_FILES}
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -22,17 +22,22 @@ COMMENT=	Perforce API (static libraries and header files)
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+VERSION=	03.1
+REVISION=	1
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
+.if ${OSVERSION} >= 501103
+PLATFORM=	freebsd5
+.else
 PLATFORM=	freebsd4
+.endif
 TAR_FILES=	p4api.tar
 .else
 IGNORE=		"Unsupported platform, sorry."
 .endif
 
-VERSION=	03.1
-REVISION=	0
 DOCVER=		${VERSION:S/.//}
 
 do-install:
