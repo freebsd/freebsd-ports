@@ -1,0 +1,7 @@
+************************************************************
+If you are upgrading an older (1.85) database, be sure to
+convert the *.dbb files, e.g:
+
+	mv file.dbb file.old
+	db_dump185 file.old | db_load file.dbb
+************************************************************
