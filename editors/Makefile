@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1996/07/29 00:43:04 chuckr Exp $
+# $Id: Makefile,v 1.31 1996/08/08 15:05:22 jmz Exp $
 #
 
     SUBDIR += axe
@@ -7,6 +7,7 @@
     SUBDIR += bpatch
     SUBDIR += e93
     SUBDIR += emacs
+    SUBDIR += joe
     SUBDIR += jove
     SUBDIR += mule
     SUBDIR += nedit
