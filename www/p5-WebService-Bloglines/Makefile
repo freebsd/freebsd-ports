@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	WebService-Bloglines
-PORTVERSION=	0.02
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WebService
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy-to-use Interface for Bloglines Web Services
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
