@@ -33,7 +33,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
   <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
-    <topic>mod_python denial-of-service vulenerability in parse_qs</topic>
+    <topic>mod_python denial-of-service vulnerability in parse_qs</topic>
     <affects>
       <package>
         <name>mod_python</name>
@@ -55,7 +55,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2003-11-28</discovery>
-      <entry>2004-03-11</entry>
+      <entry>2004-03-03</entry>
+      <modified>2004-03-11</modified>
     </dates>
   </vuln>
 
