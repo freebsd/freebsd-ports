@@ -1,0 +1,162 @@
+--- doc/gawk.texi.orig	Tue Aug  8 07:57:43 2000
++++ doc/gawk.texi	Mon Jul 16 21:30:14 2001
+@@ -16550,8 +16550,7 @@
+ arranges to clean up any temporary files on program exit or upon an
+ interrupt.
+ 
+-@c 2e: For the temp file handling, go with Darrel's ig=${TMP:-/tmp}/igs.$$
+-@c 2e: or something as similar as possible.
++@c 2e: For the temporary file handling, use mktemp with $@{TMPDIR:-/tmp@}.
+ 
+ The next part loops through all the command line arguments.
+ There are several cases of interest.
+@@ -16576,7 +16575,7 @@
+ @itemx --file
+ @itemx --file=
+ @itemx -Wfile=
+-The file name is saved to the temporary file @file{/tmp/ig.s.$$} with an
++The file name is saved to a temporary file with an
+ @samp{@@include} statement.
+ The @code{sed} utility is used to remove the leading option part of the
+ argument (e.g., @samp{--file=}).
+@@ -16584,7 +16583,7 @@
+ @item --source
+ @itemx --source=
+ @itemx -Wsource=
+-The source text is echoed into @file{/tmp/ig.s.$$}.
++The source text is echoed into a temporary file.
+ 
+ @item --version
+ @itemx -Wversion
+@@ -16596,16 +16595,11 @@
+ or @samp{-Wsource}, were supplied, then the first non-option argument
+ should be the @code{awk} program.  If there are no command line
+ arguments left, @code{igawk} prints an error message and exits.
+-Otherwise, the first argument is echoed into @file{/tmp/ig.s.$$}.
++Otherwise, the first argument is echoed into a temporary file.
+ 
+ In any case, after the arguments have been processed,
+-@file{/tmp/ig.s.$$} contains the complete text of the original @code{awk}
+-program.
+-
+-The @samp{$$} in @code{sh} represents the current process ID number.
+-It is often used in shell programs to generate unique temporary file
+-names.  This allows multiple users to run @code{igawk} without worrying
+-that the temporary file names will clash.
++the complete text of the original @code{awk} program
++is contained in a temporary file.
+ 
+ @cindex @code{sed} utility
+ Here's the program:
+@@ -16620,13 +16614,25 @@
+ # Arnold Robbins, arnold@@gnu.org, Public Domain
+ # July 1993
+ 
++# Temporary file handling modifications for Owl by
++# Jarno Huuskonen and Solar Designer, still Public Domain
++# May 2001
++
++if [ ! -x /bin/mktemp ]; then
++    echo "$0 needs mktemp to create temporary files."
++    exit 1
++fi
++
++STEMPFILE=`/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.s.XXXXXX` || exit 1
++ETEMPFILE=`/bin/mktemp $@{TMPDIR:-/tmp@}/igawk.e.XXXXXX` || exit 1
++
+ if [ "$1" = debug ]
+ then
+     set -x
+     shift
+ else
+     # cleanup on exit, hangup, interrupt, quit, termination
+-    trap 'rm -f /tmp/ig.[se].$$' 0 1 2 3 15
++    trap 'rm -f $STEMPFILE $ETEMPFILE' EXIT HUP INT QUIT TERM
+ fi
+ 
+ while [ $# -ne 0 ] # loop over arguments
+@@ -16643,28 +16649,28 @@
+ 
+     -[vF]*) opts="$opts '$1'" ;;
+ 
+-    -f)     echo @@include "$2" >> /tmp/ig.s.$$
++    -f)     echo @@include "$2" >> $STEMPFILE
+             shift;;
+ 
+ @group
+     -f*)    f=`echo "$1" | sed 's/-f//'`
+-            echo @@include "$f" >> /tmp/ig.s.$$ ;;
++            echo @@include "$f" >> $STEMPFILE ;;
+ @end group
+ 
+     -?file=*)    # -Wfile or --file
+             f=`echo "$1" | sed 's/-.file=//'`
+-            echo @@include "$f" >> /tmp/ig.s.$$ ;;
++            echo @@include "$f" >> $STEMPFILE ;;
+ 
+     -?file)    # get arg, $2
+-            echo @@include "$2" >> /tmp/ig.s.$$
++            echo @@include "$2" >> $STEMPFILE
+             shift;;
+ 
+     -?source=*)    # -Wsource or --source
+             t=`echo "$1" | sed 's/-.source=//'`
+-            echo "$t" >> /tmp/ig.s.$$ ;;
++            echo "$t" >> $STEMPFILE ;;
+ 
+     -?source)  # get arg, $2
+-            echo "$2" >> /tmp/ig.s.$$
++            echo "$2" >> $STEMPFILE
+             shift;;
+ 
+     -?version)
+@@ -16679,19 +16685,19 @@
+     shift
+ done
+ 
+-if [ ! -s /tmp/ig.s.$$ ]
++if [ ! -s $STEMPFILE ]
+ then
+     if [ -z "$1" ]
+     then
+          echo igawk: no program! 1>&2
+          exit 1
+     else
+-        echo "$1" > /tmp/ig.s.$$
++        echo "$1" > $STEMPFILE
+         shift
+     fi
+ fi
+ 
+-# at this point, /tmp/ig.s.$$ has the program
++# at this point, $STEMPFILE has the program
+ @c endfile
+ @c @end group
+ @end example
+@@ -16776,7 +16782,7 @@
+ @end group
+ @end example
+ 
+-The stack is initialized with @code{ARGV[1]}, which will be @file{/tmp/ig.s.$$}.
++The stack is initialized with @code{ARGV[1]}, which will be @file{$STEMPFILE}.
+ The main loop comes next.  Input lines are read in succession. Lines that
+ do not start with @samp{@@include} are printed verbatim.
+ 
+@@ -16825,7 +16831,7 @@
+ @group
+         close(input[stackptr])
+     @}
+-@}' /tmp/ig.s.$$ > /tmp/ig.e.$$
++@}' $STEMPFILE > $ETEMPFILE
+ @end group
+ @c endfile
+ @c @end group
+@@ -16852,7 +16858,7 @@
+ @example
+ @c @group
+ @c file eg/prog/igawk.sh
+-eval gawk -f /tmp/ig.e.$$ $opts -- "$@@"
++eval gawk -f $ETEMPFILE $opts -- "$@@"
+ 
+ exit $?
+ @c endfile

@@ -19,6 +19,6 @@ share/awk/passwd.awk
 share/awk/round.awk
 %%PORTDOCS%%share/doc/ja-gawk/OREADME.MB
 %%PORTDOCS%%share/doc/ja-gawk/README.MB
-@dirrm share/awk
 %%PORTDOCS%%@dirrm share/doc/ja-gawk
+@dirrm share/awk
 @dirrm libexec/awk
