@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION=	0.84.0
+PORTVERSION?=	0.84.0
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.brunschwig.net/enigmail/src/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.brunschwig.net/enigmail/src/ \
 		http://ftp.heanet.ie/pub/mozdev/enigmail/src/ \
 		http://mirror.meisterwerk.net/rmozdev/enigmail/src/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		ipc-1.0.5${EXTRACT_SUFX}
+		ipc-${IPCVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail client
@@ -26,6 +26,8 @@ EXTRACT_DEPENDS?=	${WRKDIR}/../../../${LOCAL_SRCDIR}/work/mozilla/Makefile:${POR
 RUN_DEPENDS?=	mozilla:${PORTSDIR}/${LOCAL_SRCDIR}
 
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+
+IPCVERSION?=	1.0.5
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
