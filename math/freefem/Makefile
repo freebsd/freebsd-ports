@@ -6,25 +6,29 @@
 #
 
 PORTNAME=	freefem
-PORTVERSION=	3.4
+PORTVERSION=	3.5.1
 CATEGORIES=	math cad
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	kfem
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-adapt --with-optimization
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--enable-adapt --with-optimization
 
-post-install:
+MAN1=		freefem.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/freefem/freefem ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/debian/freefem.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/share/examples/freefem
+	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${PREFIX}/share/examples/freefem
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/freefem
-	${CP} ${WRKSRC}/doc/freefem.dvi ${PREFIX}/share/doc/freefem
-	${CP} ${WRKSRC}/doc/freefem.ps ${PREFIX}/share/doc/freefem
-	${CP} ${WRKSRC}/doc/freefem.txt ${PREFIX}/share/doc/freefem
-	${GZIP_CMD} ${PREFIX}/share/doc/freefem/freefem.txt
-	${RM} -rf ${PREFIX}/share/examples/freefem
-	${MV} ${PREFIX}/share/freefem ${PREFIX}/share/examples
+	@${MKDIR} ${PREFIX}/share/doc/freefem
+.for file in ChangeLog NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/freefem
+.endfor
 .endif
 
 .include <bsd.port.mk>
