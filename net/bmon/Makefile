@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	bmon
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	net
-MASTER_SITES=	http://trash.net/~reeler/bmon/files/
+MASTER_SITES=	http://people.suug.ch/~tgr/bmon/files/
 
 MAINTAINER=	nistor@snickers.org
-COMMENT=	"BMON - bandwidth monitor using curses lib"
+COMMENT=	"BMON - Portable bandwidth monitor and rate estimator"
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
+MAKEFILE=	GNUmakefile
 
 MAN1=		bmon.1
 PLIST_FILES=	sbin/bmon
 
 do-install:
-	${INSTALL} ${STRIP} ${COPY} ${_BINOWNGRP} -m 755 ${WRKSRC}/bmon ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/bmon.1 ${PREFIX}/man/man1/bmon.1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bmon ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/man/bmon.1 ${PREFIX}/man/man1/bmon.1
 
 .include <bsd.port.mk>
