@@ -7,8 +7,9 @@
 
 PORTNAME=	ispell
 PORTVERSION=	0.0.2b
-CATEGORIES=     textproc
+CATEGORIES=     textproc ukrainian
 MASTER_SITES=   http://virtual-estates.net/port-stuff/ \
+		http://www.brama.com/compute/unix/ \
 		ftp://cad.ntu-kpi.kiev.ua/soft/lingvist/UkrIspell/
 PKGNAMEPREFIX=	ua-
 DISTNAME=	ua-ispell.${PORTVERSION}
