@@ -151,6 +151,7 @@ include/postgresql/server/executor/nodeTidscan.h
 include/postgresql/server/executor/nodeUnique.h
 include/postgresql/server/executor/spi.h
 include/postgresql/server/executor/spi_priv.h
+include/postgresql/server/executor/tstoreReceiver.h
 include/postgresql/server/executor/tuptable.h
 include/postgresql/server/lib/dllist.h
 include/postgresql/server/lib/lispsort.h
@@ -163,7 +164,6 @@ include/postgresql/server/libpq/ip.h
 include/postgresql/server/libpq/libpq-be.h
 include/postgresql/server/libpq/libpq-fs.h
 include/postgresql/server/libpq/libpq.h
-include/postgresql/server/libpq/password.h
 include/postgresql/server/libpq/pqcomm.h
 include/postgresql/server/libpq/pqformat.h
 include/postgresql/server/libpq/pqsignal.h
@@ -224,6 +224,7 @@ include/postgresql/server/parser/scansup.h
 include/postgresql/server/port/aix.h
 include/postgresql/server/port/beos.h
 include/postgresql/server/port/bsdi.h
+include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
 include/postgresql/server/port/dgux.h
 include/postgresql/server/port/freebsd.h
@@ -273,7 +274,6 @@ include/postgresql/server/storage/lmgr.h
 include/postgresql/server/storage/lock.h
 include/postgresql/server/storage/lwlock.h
 include/postgresql/server/storage/off.h
-include/postgresql/server/storage/page.h
 include/postgresql/server/storage/pg_sema.h
 include/postgresql/server/storage/pg_shmem.h
 include/postgresql/server/storage/pmsignal.h
@@ -340,8 +340,10 @@ include/postgresql/server/c.h
 include/postgresql/server/dynloader.h
 include/postgresql/server/fmgr.h
 include/postgresql/server/funcapi.h
+include/postgresql/server/getaddrinfo.h
 include/postgresql/server/getopt_long.h
 include/postgresql/server/miscadmin.h
+include/postgresql/server/pg_config_manual.h
 include/postgresql/server/pgstat.h
 include/postgresql/server/postgres.h
 include/postgresql/server/postgres_ext.h
@@ -373,9 +375,12 @@ include/pg_config_os.h
 include/libpq/libpq-fs.h
 @dirrm include/libpq
 include/libpq-fe.h
+include/ecpg_informix.h
 include/ecpgerrno.h
 include/ecpglib.h
 include/ecpgtype.h
+include/pgtypes_error.h
+include/pgtypes_numeric.h
 include/sqlca.h
 include/sql3types.h
 lib/libpq.so
@@ -384,6 +389,13 @@ lib/libpq.so.3
 lib/libecpg.so
 lib/libecpg.a
 lib/libecpg.so.3
+lib/libpgtypes.so
+lib/libpgtypes.a
+lib/libpgtypes.so.1
+lib/libecpg_compat.a
+lib/libecpg_compat.so.1
+lib/libecpg_compat.so
+%%PGCRYPTO%%lib/postgresql/pgcrypto.so
 %%SERVER%%lib/postgresql/plpgsql.so
 %%SERVER%%lib/postgresql/ascii_and_mic.so
 %%SERVER%%lib/postgresql/cyrillic_and_mic.so
@@ -422,6 +434,11 @@ lib/libecpg.so.3
 %%SERVER%%share/postgresql/pg_hba.conf.sample
 %%SERVER%%share/postgresql/pg_ident.conf.sample
 %%SERVER%%share/postgresql/postgresql.conf.sample
+%%PGCRYPTO%%share/doc/postgresql/contrib/README.pgcrypto
+@unexec rmdir %D/share/doc/postgresql/contrib 2> /dev/null || true
+@unexec rmdir %D/share/doc/postgresql 2> /dev/null || true
+%%PGCRYPTO%%share/postgresql/contrib/pgcrypto.sql
+@unexec rmdir %D/share/postgresql/contrib 2> /dev/null || true
 share/postgresql/post-install-notes
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
 @unexec rmdir %D/pgsql 2>/dev/null || true
