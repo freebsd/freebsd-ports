@@ -8603,6 +8603,7 @@ xfce4-panel	ports/x11-wm/xfce4-panel
 xfce4-panel-themes	ports/misc/xfce4-panel-themes
 xfce4-print	ports/print/xfce4-print
 xfce4-systray	ports/x11-wm/xfce4-systray
+xfce4-toys	ports/games/xfce4-toys
 xfce4-wm	ports/x11-wm/xfce4-wm
 xfed		ports/x11-fonts/xfed
 xfedor		ports/x11/xfedor
