@@ -7,15 +7,6 @@ bin/xcbm2
 bin/xpet
 bin/xplus4
 bin/xvic
-include/resid/envelope.h
-include/resid/extfilt.h
-include/resid/filter.h
-include/resid/pot.h
-include/resid/sid.h
-include/resid/siddefs.h
-include/resid/spline.h
-include/resid/voice.h
-include/resid/wave.h
 @unexec install-info --delete %D/info/vice.info %D/info/dir
 info/vice.info
 @exec install-info %D/info/vice.info %D/info/dir
@@ -224,4 +215,3 @@ share/doc/vice/plain/serial.txt
 @dirrm lib/vice/C128
 @dirrm lib/vice/fonts
 @dirrm lib/vice
-@dirrm include/resid

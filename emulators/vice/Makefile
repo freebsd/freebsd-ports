@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.11
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 .if defined(VICE_WITH_GNOME)
