@@ -1,4 +1,4 @@
-@cwd /usr/X11R6
+@cwd ${X11BASE}
 bin/xcdplayer
 lib/X11/app-defaults/XCdplayer
 man/man1/xcdplayer.1.gz
