@@ -70,6 +70,10 @@ firebird/lib/libib_util.so
 firebird/lib/gds_pyxis.a
 firebird/help/help.gbak
 firebird/help/help.gdb
+firebird/bin/ibguard
+firebird/bin/ibmgr
+firebird/bin/ibmgr.bin
+firebird/bin/ibserver
 firebird/bin/isc4.gbak
 firebird/bin/gpre
 firebird/bin/gds_pipe
@@ -86,12 +90,15 @@ firebird/bin/gstat
 firebird/bin/gds_relay
 firebird/bin/gsec
 firebird/bin/gbak
+firebird/misc/firebird.init.d.generic
+firebird/misc/firebird.init.d.mandrake
 firebird/services.isc
 firebird/isc_config
 firebird/isc4.gdb
 firebird/interbase.msg
 firebird/interbase.log
 firebird/inetd.conf.isc
+firebird/README
 firebird/RELNOTES
 @dirrm firebird
 @dirrm firebird/intl
@@ -104,3 +111,4 @@ firebird/RELNOTES
 @dirrm firebird/lib
 @dirrm firebird/help
 @dirrm firebird/bin
+@dirrm firebird/misc

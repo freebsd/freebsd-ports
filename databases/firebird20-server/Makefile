@@ -7,6 +7,7 @@
 
 PORTNAME=	firebird
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://firebird.sourceforge.net/download/ \
 		http://www.aims.com.au/chris/ \
@@ -25,7 +26,6 @@ LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_REINPLACE=	yes
-USE_PERL5=	yes
 
 ONLY_FOR_ARCHS=	i386
 
@@ -55,7 +55,7 @@ do-configure:
 	@(								\
 	cd ${WRKDIR}/firebird-1.0.0.796;				\
 	INTERBASE=${WRKDIR}/firebird-1.0.0.796/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/refDatabases; export REFDBPATH;		\
+	REFDBPATH=${WRKDIR}/firebird-1.0.0.796/refDatabases; export REFDBPATH; \
 	${SH} buildBootDatabases;					\
 	NOPROMPT_SETUP=yes; export NOPROMPT_SETUP;			\
 	FIREBIRD_64_BIT_IO=yes; export FIREBIRD_64_BIT_IO;		\
@@ -68,24 +68,27 @@ do-configure:
 
 do-build:
 	@(								\
-	 ${ECHO_CMD} '#!/bin/sh'; ${ECHO_CMD}				\
-	'[ -d ${LDCONFIG_RUNLIST} ] && ${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
-	) > ${WRKDIR}/000.${PORTNAME}.sh
-	@(								\
-	${LN} -sf ${WRKDIR}/refDatabases/jrd/isc.gdb			\
+	${REINPLACE_CMD} -e 's,opt,usr,'				\
+		 ${WRKSRC}/firebird/install/linux/misc/ibmgr;		\
+	${LN} -sf ${WRKDIR}/firebird-1.0.0.796/refDatabases/jrd/isc.gdb	\
 		 ${WRKDIR}/firebird-1.0.0.796/interbase/isc4.gdb;	\
-	${LN} -sf ${WRKDIR}/refDatabases/msgs/msg.gdb			\
+	${LN} -sf ${WRKDIR}/firebird-1.0.0.796/refDatabases/msgs/msg.gdb \
 		 ${WRKDIR}/firebird-1.0.0.796/msg.gdb;			\
 	cd ${WRKDIR}/firebird-1.0.0.796;				\
 	INTERBASE=${WRKDIR}/firebird-1.0.0.796/interbase; export INTERBASE; \
-	REFDBPATH=${WRKDIR}/refDatabases; export REFDBPATH;		\
-	${SH} boot.freebsd;						\
+	REFDBPATH=${WRKDIR}/firebird-1.0.0.796/refDatabases; export REFDBPATH; \
+	${CP} ${PKGDIR}/files/buildit.sh ${WRKDIR}/firebird-1.0.0.796;	\
+	${SH} buildit.sh;						\
 	)
+
+pre-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@(								\
 	cd ${WRKDIR}/firebird-1.0.0.796;				\
-	${RM} ${WRKDIR}/firebird-1.0.0.796/interbase/isc4_tmp.gdb;	\
+	${RM} ${WRKDIR}/firebird-1.0.0.796/interbase/isc4_tmp.gdb || ${TRUE}; \
+	${RM} ${WRKDIR}/firebird-1.0.0.796/interbase/lib/gds.so.1 || ${TRUE}; \
 	${CP} /dev/null interbase/interbase.log;			\
 	${CP} -Rp interbase ${PREFIX}/firebird;				\
 	${RM} ${PREFIX}/firebird/install;				\
@@ -94,7 +97,11 @@ do-install:
 	cd ${PREFIX}/firebird/examples;					\
 	${TAR} -xzf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;	\
 	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/;			\
-	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/ \
+	${CP} ${WRKSRC}/firebird/install/linux/misc/ibmgr		\
+		${PREFIX}/firebird/bin;					\
 	)
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
