@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmhm
-PORTVERSION=	1.45
-PORTREVISION=	1
+PORTVERSION=	1.46
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
@@ -21,5 +20,8 @@ WRKSRC=		${WRKDIR}/wmhm/wmhm
 GNU_CONFIGURE=	yes
 MAN8=		wmhm.8
 MANCOMPRESSED=	yes
+
+post-install:
+	strip ${PREFIX}/bin/wmhm
 
 .include <bsd.port.mk>
