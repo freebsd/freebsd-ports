@@ -7,6 +7,7 @@
 
 PORTNAME=	artswrapper
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 DISTNAME=	# none
 EXTRACT_SUFX=	# none
@@ -22,7 +23,7 @@ do-fetch:
 .include <bsd.port.pre.mk>
 
 do-build:
-	${CC} ${CFLAGS} -DHAVE_REALTIME_SCHED -DEXECUTE=\"${LOCALBASE}/bin/artsd\" -o ${WRKSRC}/artswrapper ${FILESDIR}/artswrapper.c
+	${CC} ${CFLAGS} -DHAVE_REALTIME_SCHED -DEXECUTE=\"${PREFIX}/bin/artsd\" -o ${WRKSRC}/artswrapper ${FILESDIR}/artswrapper.c
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m 4555 ${WRKSRC}/artswrapper ${PREFIX}/bin
