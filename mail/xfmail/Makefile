@@ -6,19 +6,31 @@
 #
 
 PORTNAME=	xfmail
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	mail
-MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/old/1.4.0/
+MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/	       \
+		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/ \
+		ftp://cfreeze.ufies.org/pub/xfmail/release/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
-MAINTAINER=	gena@NetVision.net.il
+MAINTAINER=	mikeh@FreeBSD.org
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms \
+		gdbm.2:${PORTSDIR}/databases/gdbm
 
+USE_AUTOMAKE=	yes
 USE_BZIP2=	yes
+USE_GLIB=	yes
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-dead-keys --with-xkb-dead-keys
+
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	--with-dbm-lib=gdbm
 MAN1=		xfmail.1
 
-.include <bsd.port.mk>
+pre-configure:
+	@cd ${WRKSRC} && ${SH} autogen.sh
+
+.include <bsd.port.post.mk>
