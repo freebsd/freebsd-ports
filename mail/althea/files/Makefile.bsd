@@ -1,0 +1,34 @@
+PROG=	althea
+NOMAN=	forget it :(
+
+objs!=	${MAKE} -V OBJS -f ${.CURDIR}/Makefile
+SRCS:=	${objs:.o=.cpp} main.cpp
+
+BINDIR=${LOCALBASE}/bin
+DOCDIR=${LOCALBASE}/share/doc/${PROG}
+PIXDIR=${LOCALBASE}/share/${PROG}
+
+# Compiled-in pathes:
+CXXFLAGS+=-DDOCDIR=\"${DOCDIR}\" -DPIXDIR=\"${PIXDIR}\"
+
+# Use the GTK's CFLAGS:
+CXXFLAGS+=-I${LOCALBASE}/include/gtk12 -I${LOCALBASE}/include/glib12 \
+	-I${LOCALBASE}/include -I${LOCALBASE}/include
+
+# Use the GTK's libraries:
+LDADD+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lgtk12 -lgdk12 \
+	-Wl,-E -lgmodule12 -lglib12 -lintl -lxpg4 -lXext -lX11 -lm
+
+# A hack to ensure C++ is called to do the final linking:
+CC:=	${CXX}
+
+${DOCDIR}/images ${PIXDIR}:
+	${MKDIR} $@
+
+beforeinstall: ${DOCDIR}/images ${PIXDIR}
+	${INSTALL_DATA} ${.CURDIR}/Documentation/*.* ${DOCDIR}
+	${INSTALL_DATA} ${.CURDIR}/Documentation/images/*.* ${DOCDIR}/images
+	${INSTALL_DATA} ${.CURDIR}/pixmaps/*.* ${PIXDIR}
+	${INSTALL_DATA} ${.CURDIR}/althearc.example ${LOCALBASE}/etc/
+
+.include <bsd.prog.mk>
