@@ -55,12 +55,6 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
-# No matter what file you try to play, it gives the error message:
-# Error: Pulse coding not allowed in short blocks.
-.if ${ARCH} == "amd64"
-IGNORE=		Does not work
-.endif
-
 CONFIGURE_ARGS+=	--build=${CONFIGURE_TARGET}
 
 .include <bsd.port.post.mk>
