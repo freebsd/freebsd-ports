@@ -1,7 +1,7 @@
-*** make.44bsd.orig	Thu May 30 04:37:44 1996
---- make.44bsd	Wed Apr  2 05:30:47 1997
+*** make.44bsd.orig	Mon Mar 31 21:47:57 1997
+--- make.44bsd	Wed Apr 23 07:58:19 1997
 ***************
-*** 3,10 ****
+*** 3,32 ****
   
   #               Defines are described in the INSTALL document.
   
@@ -10,7 +10,29 @@
   SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
   	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
   	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
---- 3,14 ----
+  	pop_updt.c pop_user.c pop_xtnd.c pop_xmit.c popper.c pop_bull.c \
+! 	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c pop_auth.c
+! #SRCS+=	flock.c mktemp.c
+! 
+! BINDIR=/usr/local/libexec
+! MANDIR=/usr/local/man/man
+  
+! #LDADD+= -lcrypt -lndbm
+  
+! CFLAGS+=-DHAVE_PARAM_H 
+  
+  # if you want APOP support, uncomment the next line
+! #CFLAGS+=-DAPOP=\"/etc/pop.auth\" -DPOPUID=\"pop\"
+  
+  # if you want RPOP support, uncomment the next line
+  #CFLAGS+=-DRPOP
+  
+  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
+! #CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
+  
+  .include <bsd.prog.mk>
+- 
+--- 3,51 ----
   
   #               Defines are described in the INSTALL document.
   
@@ -23,47 +45,28 @@
   SRCS=	pop_dele.c pop_dropcopy.c pop_get_command.c pop_get_subcommand.c \
   	pop_init.c pop_last.c pop_list.c pop_log.c pop_lower.c pop_msg.c \
   	pop_parse.c pop_pass.c pop_quit.c pop_rset.c pop_send.c pop_stat.c \
-***************
-*** 12,32 ****
-  	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
-  #SRCS+=	flock.c mktemp.c
-  
-! BINDIR=/usr/local/libexec
-! MANDIR=/usr/local/man/man
-  
-  #LDADD+= -lcrypt -lndbm
-  
-! CFLAGS+=-DHAVE_PARAM_H 
-  
-  # if you want APOP support, uncomment the next line
-! #CFLAGS+=-DAPOP=\"/etc/pop.auth\" -DPOPUID=\"pop\"
-  
-  # if you want RPOP support, uncomment the next line
-! #CFLAGS+=-DRPOP
-  
-  # if you want to block POP access for anyone in /etc/ftpusers, uncomment
-! #CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
-  
-  .include <bsd.prog.mk>
-- 
---- 16,47 ----
-  	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
-  #SRCS+=	flock.c mktemp.c
+  	pop_updt.c pop_user.c pop_xtnd.c pop_xmit.c popper.c pop_bull.c \
+! 	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c pop_auth.c
+! #SRCS+= md5.c flock.c mktemp.c
   
 ! PREFIX?=/usr/local
 ! BINDIR=${PREFIX}/libexec
 ! MANDIR=${PREFIX}/man/man
-  
-  #LDADD+= -lcrypt -lndbm
-  
+! 
 ! CFLAGS+=-DHAVE_PARAM_H -DSETPROCTITLE
 ! LDADD+=-lutil
+! DPADD+=${LIBUTIL}
 ! 
+! .if !defined(APOP_ONLY)
 ! .if exists(/usr/lib/libskey.a) && exists(/usr/lib/libmd.a)
-! DPADD+= ${LIBSKEY} ${LIBMD} ${LIBCRYPT}
-! LDADD+= -lskey -lmd -lcrypt
-! CFLAGS+= -DSKEY
+! DPADD+=${LIBSKEY}
+! LDADD+=-lskey
+! CFLAGS+=-DSKEY
 ! .endif
+! .endif
+  
+! LDADD+=-lmd -lcrypt
+! DPADD+=${LIBMD} ${LIBCRYPT}
   
   # if you want APOP support, uncomment the next line
 ! CFLAGS+=-DAPOP=\"${PREFIX}/etc/popper/pop.auth\" -DPOPUID=\"pop\"
@@ -73,7 +76,7 @@
 ! .endif
   
   # if you want RPOP support, uncomment the next line
-! # CFLAGS+=-DRPOP
+  #CFLAGS+=-DRPOP
   
   # if you want to block POP access for anyone in /etc/ftpusers, uncomment
 ! CFLAGS+=-DNONAUTHFILE=\"/etc/ftpusers\"
