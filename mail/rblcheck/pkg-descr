@@ -1,0 +1,17 @@
+This program is a very basic interface to Paul Vixie's RBL filter.  The
+basic idea of the filter is that when someone is blacklisted for an email
+abuse, a new domain name is resolved in the form of
+"a.b.c.d.rbl.maps.vix.com", where "a.b.c.d" is actually the IP address
+"d.c.b.a". For example, if the IP address 127.0.0.2 were listed as a
+blacklisted address, "2.0.0.127.rbl.maps.vix.com"  would have a DNS entry
+(this is a real example; that address is in place as a verification
+mechanism).
+
+For more information about the RBL blacklist, please take a look at
+http://maps.vix.com/rbl/ . For more information about BIND, drop by
+http://www.isc.org/bind.html . The official home page for rblcheck is at
+http://www.xnet.com/~emarshal/rblcheck/ .
+
+Any ideas, bugfixes, or porting notes should be sent to me at
+"emarshal@logic.net". Don't bug the MAPS people about this; they didn't
+write it, and probably woudn't like getting a bunch of mail about it.
