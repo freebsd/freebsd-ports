@@ -108,6 +108,7 @@
     SUBDIR += p5-Math-Trig
     SUBDIR += p5-Math-TrulyRandom
     SUBDIR += p5-MatrixReal
+    SUBDIR += p5-Roman
     SUBDIR += p5-Set-IntSpan
     SUBDIR += p5-Set-Window
     SUBDIR += p5-Statistics-ChiSquare
