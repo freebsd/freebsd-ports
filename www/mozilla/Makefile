@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.5
-PORTREVISION?=	1
+PORTVERSION=	1.6
+PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -25,7 +25,8 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		nspr4.1:${PORTSDIR}/devel/nspr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -41,7 +42,7 @@ USE_GNOME=	gtk12 orbit
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla and Xft2 render the mozilla-fonts \
+BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 		illegibly. Please remove the mozilla-fonts package.
 .endif
 .endif
@@ -56,7 +57,6 @@ LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
 .endif
 
 LATEST_LINK=	${MOZILLA}
-USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
 			--exclude */package/* \
@@ -109,8 +109,7 @@ CONFIGURE_ARGS+=	--disable-ldap --enable-mailnews
 CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
 .endif
 .endif
-
-MOZ_EXTENSIONS=		default
+MOZ_EXTENSIONS=	default
 .if !defined(WITHOUT_CHATZILLA)
 MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 .endif
@@ -118,7 +117,7 @@ MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},irc
 MOZ_EXTENSIONS:=	${MOZ_EXTENSIONS},xmlterm
 .endif
 CONFIGURE_ARGS+=	--enable-extensions=${MOZ_EXTENSIONS}
-CONFIGURE_ENV=		MOZ_INTERNAL_LIBART_LGPL=1
+CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
 
 .if defined(WITH_JAVASCRIPT_DEBUGGER)
 CONFIGURE_ARGS+=	--enable-jsd \
@@ -149,17 +148,15 @@ CONFIGURE_ARGS+=	--enable-xft
 CONFIGURE_ARGS+=	--disable-xft
 .endif
 
-PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
-			mozilla-nspr mozilla-nss mozilla-plugin
+PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+		mozilla-nspr mozilla-nss mozilla-plugin
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST=\
-	  ${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	  ${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
-	  ${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-	  ${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
-
-NOT_FOR_ARCHS=	amd64
+	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
 .include <bsd.port.pre.mk>
 
@@ -207,19 +204,20 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
-		-e 's|%%HEADERS_SUFX%%||g' \
+		-e 's|%%HEADERS_SUFX%%|${MOZ_SUFX}|g' \
 			${WRKSRC}/config/autoconf.mk.in
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure \
+		${WRKSRC}/nsprpub/configure
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/nsprpub/config/FreeBSD.mk \
+		${WRKSRC}/nsprpub/configure \
 		${WRKSRC}/security/coreconf/FreeBSD.mk \
 		${WRKSRC}/directory/c-sdk/config/FreeBSD.mk \
 		${WRKSRC}/js/src/Makefile.in
 	@for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${PKGNAMESUFFIX}|g ; \
+		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
@@ -258,7 +256,7 @@ pre-install:
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
 	done
 
 do-install:
@@ -276,15 +274,15 @@ do-install:
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
-				${LN} -sf $${jpi} \
-					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+		    		${LN} -sf $${jpi} \
+			    		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 				break; \
 			fi; \
 		done; \
 	fi
 	for pcfile in ${PKGCONFIG_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${PKGNAMESUFFIX}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
 	done
 
 post-install:
