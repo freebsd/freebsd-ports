@@ -19,12 +19,12 @@ WRKSRC=		${WRKDIR}/mico
 MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
 
 .if defined(QT2)
-USE_QT2=	yes
+USE_QT_VER=	2
 MAKE_ENV=	QT_INCLUDES="${X11BASE}/include/qt2" \
 		QTVER="2"
 CONFIGURE_ENV=	QTVER="2"
 .else
-USE_QT=		yes
+USE_QT_VER=	1
 MAKE_ENV=	QT_INCLUDES="${X11BASE}/include/X11/qt" \
 		QTVER=""
 CONFIGURE_ENV=	QTVER=""
