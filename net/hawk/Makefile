@@ -15,12 +15,8 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Track uptime and DNS status for machines on your networks
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
-		safe_mysqld:${PORTSDIR}/databases/mysql323-server \
+		safe_mysqld:${PORTSDIR}/databases/mysql40-server \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
-
-BROKEN=		"Inconsistent dependencies (mysql-client 3.x and 4.x)"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-04-15
 
 do-patch:
 	@${SED} -e 's#dirname.*"/hawk#"${PREFIX}/etc/hawk/daemon#' \
@@ -41,8 +37,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/daemon/hawk.conf ${PREFIX}/etc/hawk/daemon.conf.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/daemon/hawk ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/www/data-dist/hawk/images
-	(for file in ${WRKSRC}/php/images/*; do \
-		${INSTALL_DATA} $$file ${PREFIX}/www/data-dist/hawk/images; \
+	(for f in ${WRKSRC}/php/images/*; do \
+		${INSTALL_DATA} $$f ${PREFIX}/www/data-dist/hawk/images; \
 	done)
 	${INSTALL_DATA} ${WRKSRC}/php/hawk.php ${PREFIX}/www/data-dist/hawk
 	${INSTALL_DATA} ${WRKSRC}/php/hawk.css ${PREFIX}/www/data-dist/hawk
