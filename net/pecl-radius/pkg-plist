@@ -1,0 +1,6 @@
+%%PORTDOCS%%%%EXAMPLESDIR%%/radius-auth.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/radius-acct.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/des.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/mschap.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/mschaptest.php
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
