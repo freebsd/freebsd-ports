@@ -22,6 +22,8 @@ export PERL="@PERL@"
 mk_add_options PERL=$PERL
 # Configure options for installation
 ac_add_options --prefix=@FAKEDIR@
+ac_add_options --x-includes=@X11BASE@/include
+ac_add_options --x-libraries=@X11BASE@/lib
 ######################################################################
 # Use ports for these libraries
 ac_add_options --with-system-jpeg=@LOCALBASE@
