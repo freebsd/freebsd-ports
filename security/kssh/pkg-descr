@@ -2,7 +2,4 @@ KSSH is a SSH frontend written primarily for
 KDE. It most nearly matches the windowing
 style of the Windows PuTTY & TeraTerm clients.
 
-WWW: http://www.geocities.com/bilibao/kssh.html
-
-- Kevin
-kevlo@FreeBSD.org
+WWW: http://kssh.sourceforge.net
