@@ -1,0 +1,87 @@
+--- src/Install.sh.in.ok	Sun Feb  4 22:26:28 2001
++++ src/Install.sh.in	Mon Feb  5 08:34:33 2001
+@@ -3,34 +3,41 @@
+ # CVS: $Id: Install.sh.in,v 1.14 2000/12/11 11:28:28 edwardc Exp $
+ 
+ BBS_HOME=@BBS_HOME@
++OLD_HOME="../.."
+ BBSUID=@BBS_UID@
+ BBSGRP=@BBS_GID@
+ INSTALL="@INSTALL@"
+ TARGET=@BBS_HOME@/bin
+ 
+-if [ -f "${BBS_HOME}/BOARDS" ] ; then
+-	echo "This script will setting up the BBS directory for you on ${BBS_HOME} .."
+-	echo -n "Press <Enter> to continue ..."
+-	read ans
+-else
+-	if [ ".${FORCE_INSTALL}" = ".YES" ] ; then
+-		echo "force install ........ that might be many error, be aware!"
+-		echo "Press <Enter> to continue ..."
+-		read ans
+-	else
+-		echo "WARNING: You have \"make install\" before, so you wont be install again."
+-		echo "To install the new binary, please try \"make update\"."
+-		echo " "
+-		echo "If you want to force the install, please try "
+-		echo "% make install FORCE_INSTALL=YES"
+-		exit
+-	fi	
+-fi
+-
++echo ""
+ echo "Setup bbs directory tree ....."
+-mv ${BBS_HOME}/BOARDS ${BBS_HOME}/.BOARDS
++mkdir -p ${BBS_HOME}
++mv ${OLD_HOME}/BOARDS ${BBS_HOME}/.BOARDS
+ touch ${BBS_HOME}/.hushlogin
+ 
++mdirs="0Announce bbssrc bin etc help innd table"
++mfiles="CONTRIB COPYING Version.Info Welcome Welcome2"
++
++echo ""
++
++echo "copying dirs .."
++echo -n "    "
++for x in $mdirs; \
++do \
++   echo -n " $x"
++   cp -R ${OLD_HOME}/$x ${BBS_HOME}
++done
++echo " done."
++
++echo "copying files .."
++echo -n "    "
++for x in $mfiles; \
++do \
++   echo -n " $x"
++   cp -R ${OLD_HOME}/$x ${BBS_HOME}
++done
++echo " done."
++echo ""
+ echo "creating necessary empty directory (user mail, user home)"
+ 
+ alphabet="A B C D E F G H I J K L M N O P Q R S T U V W X Y Z"
+@@ -84,6 +91,8 @@
+ mv ${BBS_HOME}/table/movie.3 ${BBS_HOME}/boards/notepad/G.960994672.A
+ cp ${BBS_HOME}/boards/notepad/G.960994672.A ${BBS_HOME}/boards/notepad/M.960994672.A
+ 
++echo " done."
++
+ cat > ${BBS_HOME}/etc/sysconf.ini << EOF
+ #---------------------------------------------------------------
+ # Here is where you adjust the BBS System Configuration
+@@ -174,11 +183,7 @@
+ ${INSTALL} -m 550  -s -g ${BBSGRP} -o ${BBSUID}  SO/paging.so     ${TARGET}
+ ${INSTALL} -m 550  -s -g ${BBSGRP} -o ${BBSUID}  SO/thread.so     ${TARGET}
+ 
+-#if test -f ../.reldate; then
+-#  echo "cleanning CVS directories in bbshome ...."
+-#  find ${BBS_HOME} -name "CVS" -print | xargs rm -fr
+-#fi
++echo "cleanning .o files in bbshome ...."
++find ${BBS_HOME}"/bbssrc/src" -name "*.o" -print | xargs rm -fr
+ 
+ echo "Install is over...."
+-echo "Check the configuration in ${BBS_HOME}/etc/sysconf.ini"
+-echo "Then login your BBS and create an account called SYSOP (case-sensitive)"

@@ -24,6 +24,7 @@
     SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
+    SUBDIR += firebird
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += ghostscript6
