@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.69 1998/10/08 06:17:56 jkh Exp $
+# $Id: Makefile,v 1.70 1998/10/08 13:11:52 asami Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -73,6 +73,10 @@ CONFIGURE_ARGS+= --with-secureid
 # Warning: untested !
 .if defined(DONT_USE_IDEA) && ${DONT_USE_IDEA} == YES
 CONFIGURE_ARGS+= --without-idea
+.endif
+
+.if !exists(${X11BASE}/bin/xauth)
+CONFIGURE_ARGS+= --without-x
 .endif
 
 MAN1=		scp1.1 ssh-add1.1 ssh-agent1.1 ssh-keygen1.1 ssh1.1 \
