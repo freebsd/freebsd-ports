@@ -1,8 +1,7 @@
+bin/pike-roxen
 etc/rc.d/roxen.sh
 roxen/BUGS
 roxen/CHANGES
-roxen/CHANGES.old.gz
-roxen/CONTRIBUTORS
 roxen/COPYING
 roxen/COPYING.int
 roxen/ChangeLog.gz
@@ -11,14 +10,626 @@ roxen/GPL
 roxen/INSTALLING
 roxen/INSTALLING.BIN
 roxen/INSTALLING.CD
-roxen/README
-roxen/README.ssl3
-roxen/TODO
 roxen/VERSION
-roxen/server/.cvsignore
-roxen/server/base_server/TAGS
-roxen/server/base_server/cache.pike
-roxen/server/base_server/color.pike
+roxen/server/nfonts/32/avant_garde/CVS/Root
+roxen/server/nfonts/32/avant_garde/CVS/Repository
+roxen/server/nfonts/32/avant_garde/CVS/Entries
+roxen/server/nfonts/32/avant_garde/bi
+roxen/server/nfonts/32/avant_garde/bn
+roxen/server/nfonts/32/avant_garde/ni
+roxen/server/nfonts/32/avant_garde/nn
+roxen/server/nfonts/32/lucida/CVS/Root
+roxen/server/nfonts/32/lucida/CVS/Repository
+roxen/server/nfonts/32/lucida/CVS/Entries
+roxen/server/nfonts/32/lucida/bi
+roxen/server/nfonts/32/lucida/bn
+roxen/server/nfonts/32/lucida/ni
+roxen/server/nfonts/32/lucida/nn
+roxen/server/nfonts/32/bell_gothic/CVS/Root
+roxen/server/nfonts/32/bell_gothic/CVS/Repository
+roxen/server/nfonts/32/bell_gothic/CVS/Entries
+roxen/server/nfonts/32/bell_gothic/bn
+roxen/server/manual/unparsed/img/logga.gif
+roxen/server/manual/unparsed/img/note.gif
+roxen/server/manual/unparsed/img/tip.gif
+roxen/server/manual/unparsed/img/warning.gif
+roxen/server/manual/unparsed/index.html
+roxen/server/manual/unparsed/install.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/introduction/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/introduction/administrating.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/introduction/versions.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/introduction/concepts.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/installation/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/installation/windows_install.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/installation/unix_install.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/installation/files.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/installation/starting.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/ui.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/logs.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/restarting.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/status.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/maintenance.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/handling/tuning.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/https.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/creating.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/http.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/ftp.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/tetris.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/logs.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers/messages.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/generic.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/secure.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/user.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/ftp.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/examples/proxy.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/modules/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/modules/installing.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/modules/configuring.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/modules/types.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems/filesystem.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems/directory.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems/extension.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems/content_types.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/packages.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/parser.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/flik.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/countdown.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/obox.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/indirect_href.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/sed.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/pike.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/tablify.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags/wizard.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/formats.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/fonts.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/gtext.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/bg.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics/pimage.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy/http.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy/ssl.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy/ftp.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy/cache.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous/demo.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous/spell.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous/language.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous/kill_frame.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/databases/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/databases/module.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/databases/user_database.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/databases/databases.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/security/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/security/functions.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/security/user.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/security/pages.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/modules.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/scripts.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/tag.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/ssi.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/fastcgi.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/cgi.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting/servlets.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/frontpage/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/frontpage/installing.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/upgrading/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/upgrading/modules.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/upgrading/releases.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/upgrading/upgrade_server.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/third_party/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/third_party/installing.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/portability/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/portability/windows.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/portability/unixes.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/reporting/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/reporting/really.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/reporting/info.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/reporting/how.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/appendix/index.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/appendix/modules.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/appendix/codes.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/appendix/migrating.html
+roxen/server/manual/unparsed/Challenger1.2/Administrator/img/tablist.gif
+roxen/server/manual/unparsed/Challenger1.2/Administrator/img/focusing.gif
+roxen/server/manual/unparsed/Challenger1.2/Administrator/img/https.gif
+roxen/server/manual/unparsed/Challenger1.2/Administrator/img/addvirtual.gif
+roxen/server/manual/unparsed/Challenger1.2/Administrator/img/listenports.gif
+roxen/server/manual/unparsed/Challenger1.2/User/introduction/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/introduction/content_types.html
+roxen/server/manual/unparsed/Challenger1.2/User/introduction/concepts.html
+roxen/server/manual/unparsed/Challenger1.2/User/introduction/RXML.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/ai.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/autoformat.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/case.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/comment.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/doc.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/fl.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/obox.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/smallcaps.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/sort.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/source.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/spell.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/trimlines.html
+roxen/server/manual/unparsed/Challenger1.2/User/string/tablify.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/accept-language.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/clientname.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/configurl.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/accessed.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/configimage.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/countdown.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/date.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/file.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/help.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/language.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/available_languages.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/unavailable_language.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/line.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/list-tags.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/modified.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/number.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/pr.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/referrer.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/user.html
+roxen/server/manual/unparsed/Challenger1.2/User/information/version.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/formoutput.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/set.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/unset.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/cset.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/append.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/undefine.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/define.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/use.html
+roxen/server/manual/unparsed/Challenger1.2/User/variable/insert.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/apre.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/aconf.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/remove_cookie.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/set_cookie.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/auth-required.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/expire_time.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/header.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/redirect.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/killframe.html
+roxen/server/manual/unparsed/Challenger1.2/User/URL/return.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/else.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/elseif.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/if.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/elif.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/true.html
+roxen/server/manual/unparsed/Challenger1.2/User/if/false.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/diagram.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/gtext.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/gclock.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/pimage.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/imgs.html
+roxen/server/manual/unparsed/Challenger1.2/User/graphics/config_tablist.html
+roxen/server/manual/unparsed/Challenger1.2/User/database/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/database/sqlquery.html
+roxen/server/manual/unparsed/Challenger1.2/User/database/sqltable.html
+roxen/server/manual/unparsed/Challenger1.2/User/database/sqloutput.html
+roxen/server/manual/unparsed/Challenger1.2/User/supports/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/supports/classes.html
+roxen/server/manual/unparsed/Challenger1.2/User/supports/file.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/catch.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/cgi.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/throw.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/crypt.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/debug.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/default.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/for.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/gauge.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/noparse.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/nooutput.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/pike.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/random.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/realfile.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/scope.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/sed.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/strlen.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/trace.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/vfs.html
+roxen/server/manual/unparsed/Challenger1.2/User/programming/wizard.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/config.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/exec.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/echo.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/flastmod.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/fsize.html
+roxen/server/manual/unparsed/Challenger1.2/User/SSI/include.html
+roxen/server/manual/unparsed/Challenger1.2/User/htaccess/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/htaccess/htaccess.html
+roxen/server/manual/unparsed/Challenger1.2/User/htaccess/htgroup.html
+roxen/server/manual/unparsed/Challenger1.2/User/htaccess/htpasswd.html
+roxen/server/manual/unparsed/Challenger1.2/User/image_maps/index.html
+roxen/server/manual/unparsed/Challenger1.2/User/appendix/index.html
+roxen/server/manual/unparsed/internal-roxen-unit
+roxen/server/manual/unparsed/internal-roxen-err_1.gif
+roxen/server/manual/unparsed/internal-roxen-err_2.gif
+roxen/server/manual/unparsed/internal-roxen-err_3.gif
+roxen/server/manual/Challenger1_3_Administrator.pdf
+roxen/server/manual/Challenger1_3_User.pdf
+roxen/server/manual/parsed/img/logga.gif
+roxen/server/manual/parsed/img/note.gif
+roxen/server/manual/parsed/img/tip.gif
+roxen/server/manual/parsed/img/warning.gif
+roxen/server/manual/parsed/index.html
+roxen/server/manual/parsed/install.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/introduction/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/introduction/administrating.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/introduction/versions.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/introduction/concepts.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/installation/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/installation/windows_install.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/installation/unix_install.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/installation/files.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/installation/starting.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/ui.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/restarting.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/logs.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/status.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/maintenance.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/handling/tuning.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/creating.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/https.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/http.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/ftp.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/tetris.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/logs.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers/messages.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/modules/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/modules/installing.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/modules/configuring.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/modules/types.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/generic.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/secure.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/user.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/ftp.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/examples/proxy.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems/directory.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems/filesystem.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems/content_types.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems/extension.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/parser.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/packages.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/countdown.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/flik.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/obox.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/indirect_href.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/sed.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/pike.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/tablify.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/wizard.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/internal-roxen-unfold
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/flik_fl=11&flc1=2.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/flik_fl=11&flc2=2.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/internal-roxen-fold
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/flik_fl=11&flc1=1.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags/flik_fl=11&flc2=1.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/fonts.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/formats.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/bg.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/gtext.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/graphics/pimage.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/proxy/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/proxy/http.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/proxy/ssl.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/proxy/ftp.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/proxy/cache.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous/demo.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous/spell.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous/language.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous/kill_frame.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/databases/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/databases/module.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/databases/databases.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/databases/user_database.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/security/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/security/functions.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/security/user.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/security/pages.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/modules.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/scripts.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/tag.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/cgi.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/ssi.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/servlets.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/scripting/fastcgi.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/frontpage/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/frontpage/installing.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/upgrading/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/upgrading/releases.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/upgrading/modules.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/upgrading/upgrade_server.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/third_party/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/third_party/installing.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/portability/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/portability/unixes.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/portability/windows.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/reporting/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/reporting/info.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/reporting/really.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/reporting/how.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/appendix/index.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/appendix/codes.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/appendix/modules.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/appendix/migrating.html
+roxen/server/manual/parsed/Challenger1.2/Administrator/img/tablist.gif
+roxen/server/manual/parsed/Challenger1.2/Administrator/img/focusing.gif
+roxen/server/manual/parsed/Challenger1.2/Administrator/img/addvirtual.gif
+roxen/server/manual/parsed/Challenger1.2/Administrator/img/listenports.gif
+roxen/server/manual/parsed/Challenger1.2/Administrator/img/https.gif
+roxen/server/manual/parsed/Challenger1.2/User/introduction/index.html
+roxen/server/manual/parsed/Challenger1.2/User/introduction/concepts.html
+roxen/server/manual/parsed/Challenger1.2/User/introduction/content_types.html
+roxen/server/manual/parsed/Challenger1.2/User/introduction/RXML.html
+roxen/server/manual/parsed/Challenger1.2/User/information/index.html
+roxen/server/manual/parsed/Challenger1.2/User/information/accept-language.html
+roxen/server/manual/parsed/Challenger1.2/User/information/clientname.html
+roxen/server/manual/parsed/Challenger1.2/User/information/accessed.html
+roxen/server/manual/parsed/Challenger1.2/User/information/configurl.html
+roxen/server/manual/parsed/Challenger1.2/User/information/configimage.html
+roxen/server/manual/parsed/Challenger1.2/User/information/countdown.html
+roxen/server/manual/parsed/Challenger1.2/User/information/date.html
+roxen/server/manual/parsed/Challenger1.2/User/information/file.html
+roxen/server/manual/parsed/Challenger1.2/User/information/available_languages.html
+roxen/server/manual/parsed/Challenger1.2/User/information/help.html
+roxen/server/manual/parsed/Challenger1.2/User/information/language.html
+roxen/server/manual/parsed/Challenger1.2/User/information/unavailable_language.html
+roxen/server/manual/parsed/Challenger1.2/User/information/line.html
+roxen/server/manual/parsed/Challenger1.2/User/information/list-tags.html
+roxen/server/manual/parsed/Challenger1.2/User/information/modified.html
+roxen/server/manual/parsed/Challenger1.2/User/information/number.html
+roxen/server/manual/parsed/Challenger1.2/User/information/referrer.html
+roxen/server/manual/parsed/Challenger1.2/User/information/pr.html
+roxen/server/manual/parsed/Challenger1.2/User/information/user.html
+roxen/server/manual/parsed/Challenger1.2/User/information/version.html
+roxen/server/manual/parsed/Challenger1.2/User/string/index.html
+roxen/server/manual/parsed/Challenger1.2/User/string/ai.html
+roxen/server/manual/parsed/Challenger1.2/User/string/autoformat.html
+roxen/server/manual/parsed/Challenger1.2/User/string/case.html
+roxen/server/manual/parsed/Challenger1.2/User/string/comment.html
+roxen/server/manual/parsed/Challenger1.2/User/string/doc.html
+roxen/server/manual/parsed/Challenger1.2/User/string/fl.html
+roxen/server/manual/parsed/Challenger1.2/User/string/obox.html
+roxen/server/manual/parsed/Challenger1.2/User/string/smallcaps.html
+roxen/server/manual/parsed/Challenger1.2/User/string/source.html
+roxen/server/manual/parsed/Challenger1.2/User/string/sort.html
+roxen/server/manual/parsed/Challenger1.2/User/string/spell.html
+roxen/server/manual/parsed/Challenger1.2/User/string/trimlines.html
+roxen/server/manual/parsed/Challenger1.2/User/string/tablify.html
+roxen/server/manual/parsed/Challenger1.2/User/string/internal-roxen-unfold
+roxen/server/manual/parsed/Challenger1.2/User/string/fl_fl=12&flc2=1.html
+roxen/server/manual/parsed/Challenger1.2/User/string/fl_fl=12&flc1=2.html
+roxen/server/manual/parsed/Challenger1.2/User/string/internal-roxen-fold
+roxen/server/manual/parsed/Challenger1.2/User/string/fl_fl=12&flc1=1.html
+roxen/server/manual/parsed/Challenger1.2/User/string/fl_fl=12&flc2=2.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/index.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/formoutput.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/set.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/unset.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/cset.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/append.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/undefine.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/define.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/use.html
+roxen/server/manual/parsed/Challenger1.2/User/variable/insert.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/index.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/apre.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/aconf.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/remove_cookie.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/set_cookie.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/auth-required.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/expire_time.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/redirect.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/header.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/killframe.html
+roxen/server/manual/parsed/Challenger1.2/User/URL/return.html
+roxen/server/manual/parsed/Challenger1.2/User/if/index.html
+roxen/server/manual/parsed/Challenger1.2/User/if/else.html
+roxen/server/manual/parsed/Challenger1.2/User/if/elseif.html
+roxen/server/manual/parsed/Challenger1.2/User/if/if.html
+roxen/server/manual/parsed/Challenger1.2/User/if/elif.html
+roxen/server/manual/parsed/Challenger1.2/User/if/true.html
+roxen/server/manual/parsed/Challenger1.2/User/if/false.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/index.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/gtext.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/diagram.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/gclock.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/pimage.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/imgs.html
+roxen/server/manual/parsed/Challenger1.2/User/graphics/config_tablist.html
+roxen/server/manual/parsed/Challenger1.2/User/database/index.html
+roxen/server/manual/parsed/Challenger1.2/User/database/sqlquery.html
+roxen/server/manual/parsed/Challenger1.2/User/database/sqltable.html
+roxen/server/manual/parsed/Challenger1.2/User/database/sqloutput.html
+roxen/server/manual/parsed/Challenger1.2/User/supports/index.html
+roxen/server/manual/parsed/Challenger1.2/User/supports/classes.html
+roxen/server/manual/parsed/Challenger1.2/User/supports/file.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/index.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/config.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/echo.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/exec.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/fsize.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/flastmod.html
+roxen/server/manual/parsed/Challenger1.2/User/SSI/include.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/index.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/catch.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/cgi.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/throw.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/crypt.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/debug.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/default.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/for.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/nooutput.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/gauge.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/noparse.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/pike.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/random.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/realfile.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/scope.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/sed.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/strlen.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/vfs.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/trace.html
+roxen/server/manual/parsed/Challenger1.2/User/programming/wizard.html
+roxen/server/manual/parsed/Challenger1.2/User/htaccess/index.html
+roxen/server/manual/parsed/Challenger1.2/User/htaccess/htaccess.html
+roxen/server/manual/parsed/Challenger1.2/User/htaccess/htpasswd.html
+roxen/server/manual/parsed/Challenger1.2/User/htaccess/htgroup.html
+roxen/server/manual/parsed/Challenger1.2/User/image_maps/index.html
+roxen/server/manual/parsed/Challenger1.2/User/appendix/index.html
+roxen/server/manual/parsed/Challenger1.2/User/index.html
+roxen/server/manual/parsed/internal-roxen-unit
+roxen/server/manual/parsed/_internal/graphic_text/T7
+roxen/server/manual/parsed/_internal/graphic_text/fl
+roxen/server/manual/parsed/_internal/graphic_text/pU
+roxen/server/manual/parsed/_internal/graphic_text/=n
+roxen/server/manual/parsed/_internal/graphic_text/ba
+roxen/server/manual/parsed/_internal/graphic_text/kT
+roxen/server/manual/parsed/_internal/graphic_text/T1
+roxen/server/manual/parsed/_internal/graphic_text/3+
+roxen/server/manual/parsed/_internal/graphic_text/fk
+roxen/server/manual/parsed/_internal/graphic_text/pw
+roxen/server/manual/parsed/_internal/graphic_text/io
+roxen/server/manual/parsed/_internal/graphic_text/pB
+roxen/server/manual/parsed/_internal/graphic_text/uA
+roxen/server/manual/parsed/_internal/graphic_text/J3
+roxen/server/manual/parsed/internal-roxen-err_1.gif
+roxen/server/manual/parsed/internal-roxen-err_2.gif
+roxen/server/manual/parsed/internal-roxen-err_3.gif
+roxen/server/manual/parsed/diagram/bJvtDJ8m0+B0EM$scDgkk4PjVTA=.gif
+roxen/server/manual/parsed/diagram/CgK$+nvmjMgk00RECuvkHOYKNg8=.gif
+roxen/server/manual/parsed/diagram/Pp+ecixEa0+0X9fEXgGDGSncjiM=.gif
+roxen/server/manual/parsed/diagram/mU+8O$MLVnDztFKfOfdUcVTd5MU=.gif
+roxen/server/manual/parsed/diagram/dXTTSwcxrtORN5vn5j+$PYEgA8U=.gif
+roxen/server/manual/parsed/diagram/xz296cNEdHHBoZFNmAD6Hvp05Bw=.gif
+roxen/server/manual/parsed/diagram/yH4pv4I4awX5A+86CtJYIG7dZ+o=.gif
+roxen/server/manual/parsed/diagram/5FQKkgAX+Hc$QK6RENVksxsqIcw=.gif
+roxen/server/manual/parsed/internal-roxen-fold
+roxen/server/manual/parsed/internal-roxen-power-medium-green
+roxen/server/manual/parsed/(foo)/Challenger1.2/User/URL/apre.html
+roxen/server/manual/parsed/(foo)/Challenger1.2/User/URL/remove_cookie.html
+roxen/server/manual/parsed/(foo)/Challenger1.2/User/URL/set_cookie.html
+roxen/server/manual/parsed/(foo)/Challenger1.2/User/URL/aconf.html
+roxen/server/manual/parsed/(foo)/Challenger1.2/User/database/sqlquery.html
+roxen/server/manual/parsed/configtabs/u/white/gtext.gif
+roxen/server/manual/parsed/configtabs/u/white/gclock.gif
+roxen/server/manual/parsed/configtabs/s/white/config-tablist.gif
+roxen/server/manual/parsed/internal-roxen-colsel-small
+roxen/server/manual/parsed/internal-roxen-colorbar_0,0,0
+roxen/server/manual/parsed/(-foo)/Challenger1.2/User/URL/aconf.html
+roxen/server/manual/parsed/(-foo,foo)/Challenger1.2/User/URL/aconf.html
+roxen/server/unfinishedmodules/non-working/extended_logger.pike.gz
+roxen/server/unfinishedmodules/non-working/fastcgi.pike.gz
+roxen/server/unfinishedmodules/non-working/javascript.pike.gz
+roxen/server/unfinishedmodules/non-working/mirror.lpc.gz
+roxen/server/unfinishedmodules/non-working/tree.pike.gz
+roxen/server/unfinishedmodules/non-working/httpc.lpc.gz
+roxen/server/unfinishedmodules/hedbor.pike
+roxen/server/unfinishedmodules/newpikescript.pike
+roxen/server/unfinishedmodules/whois++.pike
+roxen/server/unfinishedmodules/mountserver.pike
+roxen/server/unfinishedmodules/deepthought.pike
+roxen/server/server_templates/bare.pike
+roxen/server/server_templates/basic.pike
+roxen/server/server_templates/manualserver.pike
+roxen/server/server_templates/proxy.pike
+roxen/server/server_templates/standard.pike
+roxen/server/server_templates/ftp.pike
+roxen/server/roxen-images/auto/.cvsignore
+roxen/server/roxen-images/auto/README
+roxen/server/roxen-images/dir/binary.gif
+roxen/server/roxen-images/dir/image.gif
+roxen/server/roxen-images/dir/menu.gif
+roxen/server/roxen-images/dir/movie.gif
+roxen/server/roxen-images/dir/sound.gif
+roxen/server/roxen-images/dir/text.gif
+roxen/server/roxen-images/dir/unknown.gif
+roxen/server/roxen-images/modules/1stfilt.ppm
+roxen/server/roxen-images/modules/dir.ppm
+roxen/server/roxen-images/modules/experimental.ppm
+roxen/server/roxen-images/modules/extension.ppm
+roxen/server/roxen-images/modules/fade.ppm
+roxen/server/roxen-images/modules/find.ppm
+roxen/server/roxen-images/modules/first.ppm
+roxen/server/roxen-images/modules/last.ppm
+roxen/server/roxen-images/modules/lastfilt.ppm
+roxen/server/roxen-images/modules/log.ppm
+roxen/server/roxen-images/modules/padding.ppm
+roxen/server/roxen-images/modules/proxy.ppm
+roxen/server/roxen-images/modules/security.ppm
+roxen/server/roxen-images/modules/tag.ppm
+roxen/server/roxen-images/blue.gif
+roxen/server/roxen-images/colsel-small.jpg
+roxen/server/roxen-images/colsel.jpg
+roxen/server/roxen-images/err_1.gif
+roxen/server/roxen-images/err_2.gif
+roxen/server/roxen-images/err_3.gif
+roxen/server/roxen-images/fold.gif
+roxen/server/roxen-images/fold2.gif
+roxen/server/roxen-images/help.gif
+roxen/server/roxen-images/idonex.gif
+roxen/server/roxen-images/ihfc.gif
+roxen/server/roxen-images/manual-note.gif
+roxen/server/roxen-images/manual-tip.gif
+roxen/server/roxen-images/manual-warning.gif
+roxen/server/roxen-images/pike.gif
+roxen/server/roxen-images/power-large-blue.gif
+roxen/server/roxen-images/power-large-green.gif
+roxen/server/roxen-images/power.gif
+roxen/server/roxen-images/roxen-small.gif
+roxen/server/roxen-images/power-medium-green.gif
+roxen/server/roxen-images/power-small-blue.gif
+roxen/server/roxen-images/power-small-brown.gif
+roxen/server/roxen-images/power-small-green.gif
+roxen/server/roxen-images/power-small-purple.gif
+roxen/server/roxen-images/roxen-icon-gray.gif
+roxen/server/roxen-images/roxen-rotated2.gif
+roxen/server/roxen-images/roxen-source-inside.jpg
+roxen/server/roxen-images/roxen.gif
+roxen/server/roxen-images/roxen.ppm
+roxen/server/roxen-images/tab_selected.ppm
+roxen/server/roxen-images/tab_unselected.ppm
+roxen/server/roxen-images/unfold.gif
+roxen/server/roxen-images/unit.gif
+roxen/server/roxen-images/urtavla.ppm
+roxen/server/roxen-images/unfold2.gif
+roxen/server/roxen-images/.cvsignore
+roxen/server/roxen-images/back.gif
+roxen/server/roxen-images/background.gif
+roxen/server/protocols/ftp.pike
+roxen/server/protocols/gopher.pike
+roxen/server/protocols/http.pike
+roxen/server/protocols/ssl3.pike
+roxen/server/protocols/tetris.pike
+roxen/server/old_modules/filters/hostredirect.pike
+roxen/server/old_modules/tags/ximg.pike
+roxen/server/more_modules/bofh.pike
+roxen/server/more_modules/clock.pike
+roxen/server/more_modules/configure.pike
+roxen/server/more_modules/lysator.pike
+roxen/server/base_server/struct/node.pike
 roxen/server/base_server/config/builders.pike
 roxen/server/base_server/config/button_font
 roxen/server/base_server/config/describers.pike
@@ -26,8 +637,8 @@ roxen/server/base_server/config/draw_things.pike
 roxen/server/base_server/config/font
 roxen/server/base_server/config/low_describers.pike
 roxen/server/base_server/config/savers.pike
+roxen/server/base_server/color.pike
 roxen/server/base_server/configuration.pike
-roxen/server/base_server/dates.pike
 roxen/server/base_server/disk_cache.pike
 roxen/server/base_server/dummy_hosts.pike
 roxen/server/base_server/fonts.pike
@@ -43,27 +654,28 @@ roxen/server/base_server/neighborhood.pike
 roxen/server/base_server/newdecode.pike
 roxen/server/base_server/persistent.pike
 roxen/server/base_server/privs.pike
+roxen/server/base_server/roxen.pike
+roxen/server/base_server/socket.pike
 roxen/server/base_server/proxyauth.pike
 roxen/server/base_server/read_config.pike
 roxen/server/base_server/restorable.pike
-roxen/server/base_server/roxen.pike
-roxen/server/base_server/roxenlib.pike
 roxen/server/base_server/roxenloader.pike
 roxen/server/base_server/smartpipe.pike
-roxen/server/base_server/socket.pike
 roxen/server/base_server/spinnerlib.pike
-roxen/server/base_server/struct/node.pike
 roxen/server/base_server/wizard.pike
+roxen/server/base_server/roxenlib.pike
+roxen/server/base_server/dates.pike
+roxen/server/base_server/TAGS
+roxen/server/base_server/cache.pike
 roxen/server/bin/.cvsignore
-roxen/server/bin/cgi
-roxen/server/bin/cgi-bin
-roxen/server/bin/fcgi
 roxen/server/bin/garbagecollector.pike
-roxen/server/bin/install.pike
 roxen/server/bin/pdbi.pike
+roxen/server/bin/sqladduser.pike
+roxen/server/bin/install.pike
 roxen/server/bin/pike
 roxen/server/bin/roxen
-roxen/server/bin/sqladduser.pike
+roxen/server/bin/fcgi
+roxen/server/bin/htpasswd
 roxen/server/config_actions/cachestatus.pike
 roxen/server/config_actions/changepass.pike
 roxen/server/config_actions/clearlog.pike
@@ -76,6 +688,7 @@ roxen/server/config_actions/linuxproc.pike
 roxen/server/config_actions/listfonts.pike
 roxen/server/config_actions/locks.pike
 roxen/server/config_actions/make_csr.pike
+roxen/server/config_actions/make_selfsigned_rsa.pike
 roxen/server/config_actions/network_neighborhood.pike
 roxen/server/config_actions/openfiles.pike
 roxen/server/config_actions/openports.pike
@@ -84,6 +697,7 @@ roxen/server/config_actions/problems.pike
 roxen/server/config_actions/proc.pike
 roxen/server/config_actions/processstatus.pike
 roxen/server/config_actions/profile.pike
+roxen/server/config_actions/proxystatus.pike
 roxen/server/config_actions/quick_config.pike
 roxen/server/config_actions/reloadconfiginterface.pike
 roxen/server/config_actions/reloadconfigurations.pike
@@ -91,107 +705,232 @@ roxen/server/config_actions/requeststatus.pike
 roxen/server/config_actions/resolv.pike
 roxen/server/config_actions/shutdown.pike
 roxen/server/config_actions/upgrade.pike
-roxen/server/configvar
-roxen/server/demo_certificate.pem
-roxen/server/etc/.cvsignore
-roxen/server/etc/config.html
-roxen/server/etc/config.int.html
-roxen/server/etc/digits/a/0.ppm
-roxen/server/etc/digits/a/1.ppm
-roxen/server/etc/digits/a/2.ppm
-roxen/server/etc/digits/a/3.ppm
-roxen/server/etc/digits/a/4.ppm
-roxen/server/etc/digits/a/5.ppm
-roxen/server/etc/digits/a/6.ppm
-roxen/server/etc/digits/a/7.ppm
-roxen/server/etc/digits/a/8.ppm
-roxen/server/etc/digits/a/9.ppm
-roxen/server/etc/digits/a/CVS/Entries
-roxen/server/etc/digits/a/CVS/Repository
-roxen/server/etc/digits/a/CVS/Root
-roxen/server/etc/errordata
-roxen/server/etc/extensions
-roxen/server/etc/include/config.h
-roxen/server/etc/include/confignode.h
-roxen/server/etc/include/extra_config.h
-roxen/server/etc/include/module.h
-roxen/server/etc/include/roxen.h
-roxen/server/etc/include/stat.h
-roxen/server/etc/include/udp.h
-roxen/server/etc/include/variables.h
-roxen/server/etc/modules/Dims.pmod
-roxen/server/etc/modules/GText.pmod
-roxen/server/etc/modules/PDB.pmod
-roxen/server/etc/modules/RoxenRPC.pmod/CVS/Entries
-roxen/server/etc/modules/RoxenRPC.pmod/CVS/Repository
-roxen/server/etc/modules/RoxenRPC.pmod/CVS/Root
-roxen/server/etc/modules/RoxenRPC.pmod/Client.pike
-roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Entries
-roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Repository
-roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Root
-roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Client.pike
-roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Server.pike
-roxen/server/etc/modules/RoxenRPC.pmod/Server.pike
-roxen/server/etc/restart.html
-roxen/server/etc/rgb.dat
-roxen/server/etc/roxen_hilfe.pike
-roxen/server/etc/roxen_master.pike
-roxen/server/etc/shutdown.html
-roxen/server/etc/supports
-roxen/server/etc/upgrade_servers
-roxen/server/etc/welcome.html
+roxen/server/lib/pike/modules/CVS/Root
+roxen/server/lib/pike/modules/CVS/Repository
+roxen/server/lib/pike/modules/CVS/Entries
+roxen/server/lib/pike/modules/ADT.pmod/CVS/Root
+roxen/server/lib/pike/modules/ADT.pmod/CVS/Repository
+roxen/server/lib/pike/modules/ADT.pmod/CVS/Entries
+roxen/server/lib/pike/modules/ADT.pmod/Table.pmod
+roxen/server/lib/pike/modules/ADT.pmod/queue.pike
+roxen/server/lib/pike/modules/ADT.pmod/struct.pike
+roxen/server/lib/pike/modules/Calendar.pmod/CVS/Root
+roxen/server/lib/pike/modules/Calendar.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Calendar.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Calendar.pmod/Gregorian.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/ISO.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/Julian.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/Orthodox.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/Stardate.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/Swedish.pmod
+roxen/server/lib/pike/modules/Calendar.pmod/module.pmod
+roxen/server/lib/pike/modules/Crypto/CVS/Root
+roxen/server/lib/pike/modules/Crypto/CVS/Repository
+roxen/server/lib/pike/modules/Crypto/CVS/Entries
+roxen/server/lib/pike/modules/Crypto/des3.pike
+roxen/server/lib/pike/modules/Crypto/des3_cbc.pike
+roxen/server/lib/pike/modules/Crypto/des_cbc.pike
+roxen/server/lib/pike/modules/Crypto/hmac.pike
+roxen/server/lib/pike/modules/Crypto/idea_cbc.pike
+roxen/server/lib/pike/modules/Crypto/randomness.pmod
+roxen/server/lib/pike/modules/Crypto/rsa.pike
+roxen/server/lib/pike/modules/LR.pmod/CVS/Root
+roxen/server/lib/pike/modules/LR.pmod/CVS/Repository
+roxen/server/lib/pike/modules/LR.pmod/CVS/Entries
+roxen/server/lib/pike/modules/LR.pmod/Grammar_parser.pmod
+roxen/server/lib/pike/modules/LR.pmod/item.pike
+roxen/server/lib/pike/modules/LR.pmod/lr.pike
+roxen/server/lib/pike/modules/LR.pmod/parser.pike
+roxen/server/lib/pike/modules/LR.pmod/priority.pike
+roxen/server/lib/pike/modules/LR.pmod/rule.pike
+roxen/server/lib/pike/modules/LR.pmod/scanner.pike
+roxen/server/lib/pike/modules/Languages.pmod/CVS/Root
+roxen/server/lib/pike/modules/Languages.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Languages.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Languages.pmod/PLIS.pmod
+roxen/server/lib/pike/modules/Locale.pmod/CVS/Root
+roxen/server/lib/pike/modules/Locale.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Locale.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Locale.pmod/Charset.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/CVS/Root
+roxen/server/lib/pike/modules/Protocols.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Protocols.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/CVS/Root
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/client.pike
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/ldap_errors.h
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/ldap_globals.h
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/ldap_privates.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/protocol.pike
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/CVS/Root
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/CVS/Root
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/CVS/Repository
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/CVS/Entries
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/compose
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/compose.db
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/convert_compose.pike
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/keysyms
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/AUTHORS
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Atom.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Auth.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Extensions.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Requests.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Types.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/XImage.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/XTools.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/Xlib.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/_Types.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/_Xlib.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/error.h
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/keysyms.h
+roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/my_struct.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/DNS.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/Ident.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/LPD.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/Line.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/NNTP.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/Ports.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/SMTP.pmod
+roxen/server/lib/pike/modules/Protocols.pmod/TELNET.pmod
+roxen/server/lib/pike/modules/Remote.pmod/CVS/Root
+roxen/server/lib/pike/modules/Remote.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Remote.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Remote.pmod/Client.pike
+roxen/server/lib/pike/modules/Remote.pmod/Server.pike
+roxen/server/lib/pike/modules/Remote.pmod/call.pike
+roxen/server/lib/pike/modules/Remote.pmod/connection.pike
+roxen/server/lib/pike/modules/Remote.pmod/context.pike
+roxen/server/lib/pike/modules/Remote.pmod/obj.pike
+roxen/server/lib/pike/modules/Remote.pmod/remote.h
+roxen/server/lib/pike/modules/Sql.pmod/CVS/Root
+roxen/server/lib/pike/modules/Sql.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Sql.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Sql.pmod/msql.pike
+roxen/server/lib/pike/modules/Sql.pmod/mysql.pike
+roxen/server/lib/pike/modules/Sql.pmod/mysql_result.pike
+roxen/server/lib/pike/modules/Sql.pmod/odbc.pike
+roxen/server/lib/pike/modules/Sql.pmod/odbc_result.pike
+roxen/server/lib/pike/modules/Sql.pmod/oracle.pike
+roxen/server/lib/pike/modules/Sql.pmod/postgres.pike
+roxen/server/lib/pike/modules/Sql.pmod/postgres_result.pike
+roxen/server/lib/pike/modules/Sql.pmod/sql.pike
+roxen/server/lib/pike/modules/Sql.pmod/sql_result.pike
+roxen/server/lib/pike/modules/Standards.pmod/CVS/Root
+roxen/server/lib/pike/modules/Standards.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Standards.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Root
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/Decode.pmod
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/Encode.pmod
+roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/Types.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Root
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CSR.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Certificate.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Identifiers.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/PFX.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/RSA.pmod
+roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Signature.pmod
+roxen/server/lib/pike/modules/Tools.pmod/CVS/Root
+roxen/server/lib/pike/modules/Tools.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Tools.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Tools.pmod/Hilfe.pmod
+roxen/server/lib/pike/modules/Tools.pmod/PEM.pmod
+roxen/server/lib/pike/modules/Tools.pmod/X509.pmod
+roxen/server/lib/pike/modules/Tools.pmod/_PEM.pmod
+roxen/server/lib/pike/modules/Tools.pmod/sed.pmod
+roxen/server/lib/pike/modules/Yabu.pmod/CVS/Root
+roxen/server/lib/pike/modules/Yabu.pmod/CVS/Repository
+roxen/server/lib/pike/modules/Yabu.pmod/CVS/Entries
+roxen/server/lib/pike/modules/Yabu.pmod/module.pmod
+roxen/server/lib/pike/modules/Yabu.pmod/test.pike
+roxen/server/lib/pike/modules/SSL.pmod/CVS/Root
+roxen/server/lib/pike/modules/SSL.pmod/CVS/Repository
+roxen/server/lib/pike/modules/SSL.pmod/CVS/Entries
+roxen/server/lib/pike/modules/SSL.pmod/DOC
+roxen/server/lib/pike/modules/SSL.pmod/TODO
+roxen/server/lib/pike/modules/SSL.pmod/alert.pike
+roxen/server/lib/pike/modules/SSL.pmod/cipher.pike
+roxen/server/lib/pike/modules/SSL.pmod/connection.pike
+roxen/server/lib/pike/modules/SSL.pmod/constants.pike
+roxen/server/lib/pike/modules/SSL.pmod/context.pike
+roxen/server/lib/pike/modules/SSL.pmod/handshake.pike
+roxen/server/lib/pike/modules/SSL.pmod/https.pike
+roxen/server/lib/pike/modules/SSL.pmod/packet.pike
+roxen/server/lib/pike/modules/SSL.pmod/server.pike
+roxen/server/lib/pike/modules/SSL.pmod/session.pike
+roxen/server/lib/pike/modules/SSL.pmod/sslfile.pike
+roxen/server/lib/pike/modules/SSL.pmod/sslport.pike
+roxen/server/lib/pike/modules/SSL.pmod/state.pike
+roxen/server/lib/pike/modules/Array.pmod
+roxen/server/lib/pike/modules/Colors.pmod
+roxen/server/lib/pike/modules/Crypto.pmod
+roxen/server/lib/pike/modules/Getopt.pmod
+roxen/server/lib/pike/modules/Process.pmod
+roxen/server/lib/pike/modules/Simulate.pmod
+roxen/server/lib/pike/modules/Stack.pmod
+roxen/server/lib/pike/modules/Stdio.pmod
+roxen/server/lib/pike/modules/String.pmod
+roxen/server/lib/pike/modules/Thread.pmod
+roxen/server/lib/pike/modules/__builtin.pmod
+roxen/server/lib/pike/modules/error.pmod
+roxen/server/lib/pike/modules/CommonLog.so
+roxen/server/lib/pike/modules/Gdbm.so
+roxen/server/lib/pike/modules/Gmp.so
+roxen/server/lib/pike/modules/Gz.so
+roxen/server/lib/pike/modules/HTTPAccept.so
+roxen/server/lib/pike/modules/Image.so
+roxen/server/lib/pike/modules/MIME.so
+roxen/server/lib/pike/modules/MIME.pmod
+roxen/server/lib/pike/modules/Msql.so
+roxen/server/lib/pike/modules/Mysql.so
+roxen/server/lib/pike/modules/Perl.so
+roxen/server/lib/pike/modules/Pipe.so
+roxen/server/lib/pike/modules/Postgres.so
+roxen/server/lib/pike/modules/Regexp.so
+roxen/server/lib/pike/modules/Ssleay.so
+roxen/server/lib/pike/modules/Yp.so
+roxen/server/lib/pike/modules/Yp.pmod
+roxen/server/lib/pike/modules/_Charset.so
+roxen/server/lib/pike/modules/_Charset.pmod
+roxen/server/lib/pike/modules/_Crypto.so
+roxen/server/lib/pike/modules/_Image_JPEG.so
+roxen/server/lib/pike/modules/_Image_TTF.so
+roxen/server/lib/pike/modules/_Image_XFace.so
+roxen/server/lib/pike/modules/files.pmod
+roxen/server/lib/pike/modules/call_out.pmod
+roxen/server/lib/pike/modules/math.pmod
+roxen/server/lib/pike/modules/readline.so
+roxen/server/lib/pike/modules/spider.so
+roxen/server/lib/pike/modules/sprintf.pmod
+roxen/server/lib/pike/modules/system.pmod
+roxen/server/lib/pike/include/CVS/Root
+roxen/server/lib/pike/include/CVS/Repository
+roxen/server/lib/pike/include/CVS/Entries
+roxen/server/lib/pike/include/array.h
+roxen/server/lib/pike/include/fifo.h
+roxen/server/lib/pike/include/getopt.h
+roxen/server/lib/pike/include/msql.h
+roxen/server/lib/pike/include/mysql.h
+roxen/server/lib/pike/include/postgres.h
+roxen/server/lib/pike/include/process.h
+roxen/server/lib/pike/include/simulate.h
+roxen/server/lib/pike/include/sql.h
+roxen/server/lib/pike/include/stack.h
+roxen/server/lib/pike/include/stdio.h
+roxen/server/lib/pike/include/string.h
+roxen/server/lib/pike/include/syslog.h
+roxen/server/lib/pike/CVS/Root
+roxen/server/lib/pike/CVS/Repository
+roxen/server/lib/pike/CVS/Entries
+roxen/server/lib/pike/master.pike.in
+roxen/server/lib/pike/master.pike
 roxen/server/fonts/32/urw_itc_avant_garde-demi-r
-roxen/server/include/pike/acconfig.h
-roxen/server/include/pike/array.h
-roxen/server/include/pike/backend.h
-roxen/server/include/pike/block_alloc.h
-roxen/server/include/pike/builtin_functions.h
-roxen/server/include/pike/callback.h
-roxen/server/include/pike/compilation.h
-roxen/server/include/pike/constants.h
-roxen/server/include/pike/cyclic.h
-roxen/server/include/pike/dmalloc.h
-roxen/server/include/pike/docode.h
-roxen/server/include/pike/dynamic_buffer.h
-roxen/server/include/pike/dynamic_load.h
-roxen/server/include/pike/efun.h
-roxen/server/include/pike/encode.h
-roxen/server/include/pike/error.h
-roxen/server/include/pike/fd_control.h
-roxen/server/include/pike/fsort.h
-roxen/server/include/pike/fsort_template.h
-roxen/server/include/pike/gc.h
-roxen/server/include/pike/global.h
-roxen/server/include/pike/hashtable.h
-roxen/server/include/pike/interpret.h
-roxen/server/include/pike/language.h
-roxen/server/include/pike/las.h
-roxen/server/include/pike/lex.h
-roxen/server/include/pike/machine.h
-roxen/server/include/pike/main.h
-roxen/server/include/pike/mapping.h
-roxen/server/include/pike/module.h
-roxen/server/include/pike/module_support.h
-roxen/server/include/pike/multiset.h
-roxen/server/include/pike/object.h
-roxen/server/include/pike/opcodes.h
-roxen/server/include/pike/operators.h
-roxen/server/include/pike/otable.h
-roxen/server/include/pike/peep.h
-roxen/server/include/pike/pike_macros.h
-roxen/server/include/pike/pike_memory.h
-roxen/server/include/pike/pike_types.h
-roxen/server/include/pike/port.h
-roxen/server/include/pike/program.h
-roxen/server/include/pike/rusage.h
-roxen/server/include/pike/signal_handler.h
-roxen/server/include/pike/stralloc.h
-roxen/server/include/pike/stuff.h
-roxen/server/include/pike/svalue.h
-roxen/server/include/pike/threads.h
-roxen/server/include/pike/time_stuff.h
-roxen/server/include/pike/version.h
-roxen/server/install
 roxen/server/languages/catala.pike
 roxen/server/languages/croatian.pike
 roxen/server/languages/czech.pike
@@ -211,134 +950,8 @@ roxen/server/languages/serbian.pike
 roxen/server/languages/slovenian.pike
 roxen/server/languages/spanish.pike
 roxen/server/languages/swedish.pike
-roxen/server/lib/pike/CVS/Entries
-roxen/server/lib/pike/CVS/Repository
-roxen/server/lib/pike/CVS/Root
-roxen/server/lib/pike/include/CVS/Entries
-roxen/server/lib/pike/include/CVS/Repository
-roxen/server/lib/pike/include/CVS/Root
-roxen/server/lib/pike/include/array.h
-roxen/server/lib/pike/include/fifo.h
-roxen/server/lib/pike/include/getopt.h
-roxen/server/lib/pike/include/msql.h
-roxen/server/lib/pike/include/mysql.h
-roxen/server/lib/pike/include/postgres.h
-roxen/server/lib/pike/include/process.h
-roxen/server/lib/pike/include/simulate.h
-roxen/server/lib/pike/include/sql.h
-roxen/server/lib/pike/include/stack.h
-roxen/server/lib/pike/include/stdio.h
-roxen/server/lib/pike/include/string.h
-roxen/server/lib/pike/include/syslog.h
-roxen/server/lib/pike/master.pike
-roxen/server/lib/pike/modules/ADT.pmod/CVS/Entries
-roxen/server/lib/pike/modules/ADT.pmod/CVS/Repository
-roxen/server/lib/pike/modules/ADT.pmod/CVS/Root
-roxen/server/lib/pike/modules/ADT.pmod/queue.pike
-roxen/server/lib/pike/modules/ADT.pmod/struct.pike
-roxen/server/lib/pike/modules/Array.pmod
-roxen/server/lib/pike/modules/CVS/Entries
-roxen/server/lib/pike/modules/CVS/Repository
-roxen/server/lib/pike/modules/CVS/Root
-roxen/server/lib/pike/modules/Colors.pmod
-roxen/server/lib/pike/modules/CommonLog.so
-roxen/server/lib/pike/modules/Crypto.pmod
-roxen/server/lib/pike/modules/Crypto/CVS/Entries
-roxen/server/lib/pike/modules/Crypto/CVS/Repository
-roxen/server/lib/pike/modules/Crypto/CVS/Root
-roxen/server/lib/pike/modules/Crypto/des3.pike
-roxen/server/lib/pike/modules/Crypto/des3_cbc.pike
-roxen/server/lib/pike/modules/Crypto/des_cbc.pike
-roxen/server/lib/pike/modules/Crypto/idea_cbc.pike
-roxen/server/lib/pike/modules/Crypto/randomness.pmod
-roxen/server/lib/pike/modules/Gdbm.so
-roxen/server/lib/pike/modules/Getopt.pmod
-roxen/server/lib/pike/modules/Gmp.so
-roxen/server/lib/pike/modules/Gz.so
-roxen/server/lib/pike/modules/Image.so
-roxen/server/lib/pike/modules/LR.pmod/CVS/Entries
-roxen/server/lib/pike/modules/LR.pmod/CVS/Repository
-roxen/server/lib/pike/modules/LR.pmod/CVS/Root
-roxen/server/lib/pike/modules/LR.pmod/Grammar_parser.pmod
-roxen/server/lib/pike/modules/LR.pmod/item.pike
-roxen/server/lib/pike/modules/LR.pmod/kernel.pike
-roxen/server/lib/pike/modules/LR.pmod/lr.pike
-roxen/server/lib/pike/modules/LR.pmod/parser.pike
-roxen/server/lib/pike/modules/LR.pmod/priority.pike
-roxen/server/lib/pike/modules/LR.pmod/rule.pike
-roxen/server/lib/pike/modules/LR.pmod/scanner.pike
-roxen/server/lib/pike/modules/MIME.pmod
-roxen/server/lib/pike/modules/MIME.so
-roxen/server/lib/pike/modules/Msql.so
-roxen/server/lib/pike/modules/Mysql.so
-roxen/server/lib/pike/modules/Pipe.so
-roxen/server/lib/pike/modules/Postgres.so
-roxen/server/lib/pike/modules/Process.pmod
-roxen/server/lib/pike/modules/Protocols.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Protocols.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Protocols.pmod/CVS/Root
-roxen/server/lib/pike/modules/Protocols.pmod/DNS.pmod
-roxen/server/lib/pike/modules/Protocols.pmod/LPD.pmod
-roxen/server/lib/pike/modules/Protocols.pmod/NNTP.pmod
-roxen/server/lib/pike/modules/Protocols.pmod/SMTP.pmod
-roxen/server/lib/pike/modules/Regexp.so
-roxen/server/lib/pike/modules/Simulate.pmod
-roxen/server/lib/pike/modules/Sql.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Sql.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Sql.pmod/CVS/Root
-roxen/server/lib/pike/modules/Sql.pmod/msql.pike
-roxen/server/lib/pike/modules/Sql.pmod/mysql.pike
-roxen/server/lib/pike/modules/Sql.pmod/mysql_result.pike
-roxen/server/lib/pike/modules/Sql.pmod/odbc.pike
-roxen/server/lib/pike/modules/Sql.pmod/odbc_result.pike
-roxen/server/lib/pike/modules/Sql.pmod/oracle.pike
-roxen/server/lib/pike/modules/Sql.pmod/postgres.pike
-roxen/server/lib/pike/modules/Sql.pmod/postgres_result.pike
-roxen/server/lib/pike/modules/Sql.pmod/sql.pike
-roxen/server/lib/pike/modules/Sql.pmod/sql_result.pike
-roxen/server/lib/pike/modules/Stack.pmod
-roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS/Root
-roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/Encode.pmod
-roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/decode.pike
-roxen/server/lib/pike/modules/Standards.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Standards.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Standards.pmod/CVS/Root
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CSR.pmod
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS/Root
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Certificate.pmod
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Identifiers.pmod
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/RSA.pmod
-roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/Signature.pmod
-roxen/server/lib/pike/modules/Stdio.pmod
-roxen/server/lib/pike/modules/String.pmod
-roxen/server/lib/pike/modules/Thread.pmod
-roxen/server/lib/pike/modules/Tools.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Tools.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Tools.pmod/CVS/Root
-roxen/server/lib/pike/modules/Tools.pmod/PEM.pmod
-roxen/server/lib/pike/modules/Tools.pmod/_PEM.pmod
-roxen/server/lib/pike/modules/WideValues.so
-roxen/server/lib/pike/modules/Yabu.pmod/CVS/Entries
-roxen/server/lib/pike/modules/Yabu.pmod/CVS/Repository
-roxen/server/lib/pike/modules/Yabu.pmod/CVS/Root
-roxen/server/lib/pike/modules/Yabu.pmod/module.pmod
-roxen/server/lib/pike/modules/Yabu.pmod/test.pike
-roxen/server/lib/pike/modules/Yp.pmod
-roxen/server/lib/pike/modules/Yp.so
-roxen/server/lib/pike/modules/_Lobotomized_Crypto.so
-roxen/server/lib/pike/modules/__builtin.pmod
-roxen/server/lib/pike/modules/call_out.pmod
-roxen/server/lib/pike/modules/files.pmod
-roxen/server/lib/pike/modules/math.pmod
-roxen/server/lib/pike/modules/readline.so
-roxen/server/lib/pike/modules/spider.so
-roxen/server/lib/pike/modules/sprintf.pmod
-roxen/server/lib/pike/modules/system.pmod
-roxen/server/mkdir
+roxen/server/modules/ldap/ldaptag.pike
+roxen/server/modules/ldap/ldapuserauth.pike
 roxen/server/modules/directories/directories.pike
 roxen/server/modules/directories/directories2.pike
 roxen/server/modules/directories/fastdir.pike
@@ -355,25 +968,22 @@ roxen/server/modules/filters/auto_gzip.pike
 roxen/server/modules/filters/htaccess.pike
 roxen/server/modules/filters/redirect.pike
 roxen/server/modules/filters/relay.pike
-roxen/server/modules/graphics/business_graphics/CVS/Entries
-roxen/server/modules/graphics/business_graphics/CVS/Repository
 roxen/server/modules/graphics/business_graphics/CVS/Root
+roxen/server/modules/graphics/business_graphics/CVS/Repository
+roxen/server/modules/graphics/business_graphics/CVS/Entries
 roxen/server/modules/graphics/business_graphics/business.pike
 roxen/server/modules/graphics/business_graphics/create_bars.pike
-roxen/server/modules/graphics/business_graphics/create_graph.pike
 roxen/server/modules/graphics/business_graphics/create_pie.pike
 roxen/server/modules/graphics/business_graphics/diagram.h
 roxen/server/modules/graphics/business_graphics/polyline.pike
-roxen/server/modules/graphics/counter.pike
-roxen/server/modules/graphics/graphic_text.pike
-roxen/server/modules/graphics/pimage.pike
-roxen/server/modules/graphics/rimage/CVS/Entries
-roxen/server/modules/graphics/rimage/CVS/Repository
+roxen/server/modules/graphics/business_graphics/create_graph.pike
 roxen/server/modules/graphics/rimage/CVS/Root
-roxen/server/modules/graphics/rimage/plugins/.no_modules
-roxen/server/modules/graphics/rimage/plugins/CVS/Entries
-roxen/server/modules/graphics/rimage/plugins/CVS/Repository
+roxen/server/modules/graphics/rimage/CVS/Repository
+roxen/server/modules/graphics/rimage/CVS/Entries
 roxen/server/modules/graphics/rimage/plugins/CVS/Root
+roxen/server/modules/graphics/rimage/plugins/CVS/Repository
+roxen/server/modules/graphics/rimage/plugins/CVS/Entries
+roxen/server/modules/graphics/rimage/plugins/.no_modules
 roxen/server/modules/graphics/rimage/plugins/autocrop.pike
 roxen/server/modules/graphics/rimage/plugins/color.pike
 roxen/server/modules/graphics/rimage/plugins/copy.pike
@@ -402,11 +1012,13 @@ roxen/server/modules/graphics/rimage/plugins/threshold.pike
 roxen/server/modules/graphics/rimage/plugins/tunedbox.pike
 roxen/server/modules/graphics/rimage/plugins/write.pike
 roxen/server/modules/graphics/rimage/rimage.pike
+roxen/server/modules/graphics/graphic_text.pike
 roxen/server/modules/graphics/tablist.pike
+roxen/server/modules/graphics/counter.pike
+roxen/server/modules/graphics/pimage.pike
 roxen/server/modules/logging/client_logger.pike
 roxen/server/modules/logging/home_logger.pike
 roxen/server/modules/logging/nologging.pike
-roxen/server/modules/misc/SQLuserdb.pike
 roxen/server/modules/misc/contenttypes.pike
 roxen/server/modules/misc/demo.pike
 roxen/server/modules/misc/ip-less_hosts.pike
@@ -417,8 +1029,8 @@ roxen/server/modules/misc/pathinfo.pike
 roxen/server/modules/misc/sqldb.pike
 roxen/server/modules/misc/upgrade_proxy.pike
 roxen/server/modules/misc/userdb.pike
+roxen/server/modules/misc/SQLuserdb.pike
 roxen/server/modules/misc/ypuserdb.pike
-roxen/server/modules/protocols/fwww.pike
 roxen/server/modules/proxies/connect.pike
 roxen/server/modules/proxies/ftpgateway.pike
 roxen/server/modules/proxies/gopher.pike
@@ -426,49 +1038,73 @@ roxen/server/modules/proxies/proxy.pike
 roxen/server/modules/proxies/wais.pike
 roxen/server/modules/scripting/cgi.pike
 roxen/server/modules/scripting/fcgi.pike
-roxen/server/modules/scripting/fpscript.pike
-roxen/server/modules/scripting/newpikescript.pike
+roxen/server/modules/scripting/oldcgi.pike
 roxen/server/modules/scripting/pikescript.pike
-roxen/server/modules/tags/check_spelling.pike
-roxen/server/modules/tags/configtablist.pike
-roxen/server/modules/tags/countdown.pike
-roxen/server/modules/tags/doc/.no_modules
-roxen/server/modules/tags/doc/CVS/Entries
-roxen/server/modules/tags/doc/CVS/Repository
+roxen/server/modules/scripting/servlet.pike
+roxen/server/modules/scripting/fpscript.pike
 roxen/server/modules/tags/doc/CVS/Root
+roxen/server/modules/tags/doc/CVS/Repository
+roxen/server/modules/tags/doc/CVS/Entries
+roxen/server/modules/tags/doc/.no_modules
+roxen/server/modules/tags/doc/add_cookie
+roxen/server/modules/tags/doc/date_doc
+roxen/server/modules/tags/doc/expire-time
+roxen/server/modules/tags/doc/graphic_text
+roxen/server/modules/tags/doc/logview
+roxen/server/modules/tags/doc/navigation
+roxen/server/modules/tags/doc/preparse
+roxen/server/modules/tags/doc/quote
+roxen/server/modules/tags/doc/recursive-output
+roxen/server/modules/tags/doc/sb-if
+roxen/server/modules/tags/doc/sb-login
+roxen/server/modules/tags/doc/sb-menu
+roxen/server/modules/tags/doc/sb-output
+roxen/server/modules/tags/doc/set-max-cache
+roxen/server/modules/tags/doc/signature
 roxen/server/modules/tags/doc/accept-language
 roxen/server/modules/tags/doc/accessed
 roxen/server/modules/tags/doc/aconf
-roxen/server/modules/tags/doc/add_cookie
+roxen/server/modules/tags/doc/ai
 roxen/server/modules/tags/doc/append
 roxen/server/modules/tags/doc/apre
 roxen/server/modules/tags/doc/auth-required
 roxen/server/modules/tags/doc/autoformat
+roxen/server/modules/tags/doc/available_languages
 roxen/server/modules/tags/doc/case
 roxen/server/modules/tags/doc/catch
+roxen/server/modules/tags/doc/cgi
 roxen/server/modules/tags/doc/clientname
 roxen/server/modules/tags/doc/comment
+roxen/server/modules/tags/doc/config_tablist
 roxen/server/modules/tags/doc/configimage
 roxen/server/modules/tags/doc/configurl
+roxen/server/modules/tags/doc/countdown
 roxen/server/modules/tags/doc/crypt
 roxen/server/modules/tags/doc/cset
 roxen/server/modules/tags/doc/date
-roxen/server/modules/tags/doc/date_doc
 roxen/server/modules/tags/doc/debug
+roxen/server/modules/tags/doc/default
 roxen/server/modules/tags/doc/define
+roxen/server/modules/tags/doc/diagram
+roxen/server/modules/tags/doc/doc
+roxen/server/modules/tags/doc/elif
 roxen/server/modules/tags/doc/else
 roxen/server/modules/tags/doc/elseif
-roxen/server/modules/tags/doc/expire-time
+roxen/server/modules/tags/doc/expire_time
 roxen/server/modules/tags/doc/false
 roxen/server/modules/tags/doc/file
+roxen/server/modules/tags/doc/fl
 roxen/server/modules/tags/doc/for
+roxen/server/modules/tags/doc/formoutput
 roxen/server/modules/tags/doc/gauge
-roxen/server/modules/tags/doc/graphic_text
+roxen/server/modules/tags/doc/gclock
+roxen/server/modules/tags/doc/gtext
 roxen/server/modules/tags/doc/header
 roxen/server/modules/tags/doc/help
 roxen/server/modules/tags/doc/if
 roxen/server/modules/tags/doc/imgs
 roxen/server/modules/tags/doc/insert
+roxen/server/modules/tags/doc/killframe
 roxen/server/modules/tags/doc/language
 roxen/server/modules/tags/doc/line
 roxen/server/modules/tags/doc/list-tags
@@ -477,36 +1113,42 @@ roxen/server/modules/tags/doc/nooutput
 roxen/server/modules/tags/doc/noparse
 roxen/server/modules/tags/doc/number
 roxen/server/modules/tags/doc/obox
+roxen/server/modules/tags/doc/pike
+roxen/server/modules/tags/doc/pimage
 roxen/server/modules/tags/doc/pr
-roxen/server/modules/tags/doc/preparse
-roxen/server/modules/tags/doc/quote
 roxen/server/modules/tags/doc/random
 roxen/server/modules/tags/doc/realfile
-roxen/server/modules/tags/doc/recursive-output
+roxen/server/modules/tags/doc/return
 roxen/server/modules/tags/doc/redirect
 roxen/server/modules/tags/doc/referrer
 roxen/server/modules/tags/doc/remove_cookie
-roxen/server/modules/tags/doc/return
+roxen/server/modules/tags/doc/scope
+roxen/server/modules/tags/doc/sed
 roxen/server/modules/tags/doc/set
-roxen/server/modules/tags/doc/set-max-cache
 roxen/server/modules/tags/doc/set_cookie
-roxen/server/modules/tags/doc/signature
 roxen/server/modules/tags/doc/smallcaps
 roxen/server/modules/tags/doc/sort
 roxen/server/modules/tags/doc/source
+roxen/server/modules/tags/doc/spell
+roxen/server/modules/tags/doc/sqloutput
 roxen/server/modules/tags/doc/sqlquery
+roxen/server/modules/tags/doc/sqltable
 roxen/server/modules/tags/doc/strlen
 roxen/server/modules/tags/doc/tablify
 roxen/server/modules/tags/doc/throw
 roxen/server/modules/tags/doc/trace
 roxen/server/modules/tags/doc/trimlines
 roxen/server/modules/tags/doc/true
+roxen/server/modules/tags/doc/unavailable_language
 roxen/server/modules/tags/doc/undefine
+roxen/server/modules/tags/doc/unset
 roxen/server/modules/tags/doc/use
 roxen/server/modules/tags/doc/user
 roxen/server/modules/tags/doc/version
 roxen/server/modules/tags/doc/vfs
 roxen/server/modules/tags/doc/wizard
+roxen/server/modules/tags/check_spelling.pike
+roxen/server/modules/tags/countdown.pike
 roxen/server/modules/tags/flik.pike
 roxen/server/modules/tags/htmlparse.pike
 roxen/server/modules/tags/indirect_href.pike
@@ -519,132 +1161,153 @@ roxen/server/modules/tags/sed.pike
 roxen/server/modules/tags/sqltag.pike
 roxen/server/modules/tags/tablify.pike
 roxen/server/modules/tags/wizard_tag.pike
-roxen/server/modules/tags/ximg.pike
-roxen/server/more_modules/bofh.pike
-roxen/server/more_modules/clock.pike
-roxen/server/more_modules/configure.pike
-roxen/server/more_modules/lysator.pike
-roxen/server/nfonts/32/avant_garde/CVS/Entries
-roxen/server/nfonts/32/avant_garde/CVS/Repository
-roxen/server/nfonts/32/avant_garde/CVS/Root
-roxen/server/nfonts/32/avant_garde/bi
-roxen/server/nfonts/32/avant_garde/bn
-roxen/server/nfonts/32/avant_garde/ni
-roxen/server/nfonts/32/avant_garde/nn
-roxen/server/nfonts/32/lucida/CVS/Entries
-roxen/server/nfonts/32/lucida/CVS/Repository
-roxen/server/nfonts/32/lucida/CVS/Root
-roxen/server/nfonts/32/lucida/bi
-roxen/server/nfonts/32/lucida/bn
-roxen/server/nfonts/32/lucida/ni
-roxen/server/nfonts/32/lucida/nn
-roxen/server/old_modules/filters/hostredirect.pike
-roxen/server/protocols/ftp.pike
-roxen/server/protocols/ftp2.pike
-roxen/server/protocols/gopher.pike
-roxen/server/protocols/http.pike
-roxen/server/protocols/tetris.pike
-roxen/server/roxen-images/.cvsignore
-roxen/server/roxen-images/auto/.cvsignore
-roxen/server/roxen-images/auto/README
-roxen/server/roxen-images/back.gif
-roxen/server/roxen-images/background.gif
-roxen/server/roxen-images/blue.gif
-roxen/server/roxen-images/colsel-small.jpg
-roxen/server/roxen-images/colsel.jpg
-roxen/server/roxen-images/dir/binary.gif
-roxen/server/roxen-images/dir/image.gif
-roxen/server/roxen-images/dir/menu.gif
-roxen/server/roxen-images/dir/sound.gif
-roxen/server/roxen-images/dir/text.gif
-roxen/server/roxen-images/dir/unknown.gif
-roxen/server/roxen-images/err_1.gif
-roxen/server/roxen-images/err_2.gif
-roxen/server/roxen-images/err_3.gif
-roxen/server/roxen-images/fold.gif
-roxen/server/roxen-images/fold2.gif
-roxen/server/roxen-images/help.gif
-roxen/server/roxen-images/idonex.gif
-roxen/server/roxen-images/ihfc.gif
-roxen/server/roxen-images/manual-note.gif
-roxen/server/roxen-images/manual-tip.gif
-roxen/server/roxen-images/manual-warning.gif
-roxen/server/roxen-images/modules/1stfilt.ppm
-roxen/server/roxen-images/modules/dir.ppm
-roxen/server/roxen-images/modules/experimental.ppm
-roxen/server/roxen-images/modules/extension.ppm
-roxen/server/roxen-images/modules/fade.ppm
-roxen/server/roxen-images/modules/find.ppm
-roxen/server/roxen-images/modules/first.ppm
-roxen/server/roxen-images/modules/last.ppm
-roxen/server/roxen-images/modules/lastfilt.ppm
-roxen/server/roxen-images/modules/log.ppm
-roxen/server/roxen-images/modules/padding.ppm
-roxen/server/roxen-images/modules/proxy.ppm
-roxen/server/roxen-images/modules/security.ppm
-roxen/server/roxen-images/modules/tag.ppm
-roxen/server/roxen-images/pike.gif
-roxen/server/roxen-images/power-large-blue.gif
-roxen/server/roxen-images/power-large-green.gif
-roxen/server/roxen-images/power-medium-green.gif
-roxen/server/roxen-images/power-small-blue.gif
-roxen/server/roxen-images/power-small-brown.gif
-roxen/server/roxen-images/power-small-green.gif
-roxen/server/roxen-images/power-small-purple.gif
-roxen/server/roxen-images/power.gif
-roxen/server/roxen-images/roxen-icon-gray.gif
-roxen/server/roxen-images/roxen-rotated2.gif
-roxen/server/roxen-images/roxen-small.gif
-roxen/server/roxen-images/roxen-source-inside.jpg
-roxen/server/roxen-images/roxen.gif
-roxen/server/roxen-images/roxen.ppm
-roxen/server/roxen-images/unfold.gif
-roxen/server/roxen-images/unfold2.gif
-roxen/server/roxen-images/unit.gif
-roxen/server/roxen-images/urtavla.ppm
-roxen/server/roxen.bat
-roxen/server/server_templates/bare.pike
-roxen/server/server_templates/basic.pike
-roxen/server/server_templates/ftp.pike
-roxen/server/server_templates/proxy.pike
-roxen/server/server_templates/sitebuilder.pike
-roxen/server/server_templates/standard.pike
+roxen/server/modules/tags/configtablist.pike
+roxen/server/etc/env.d/informix.pike
+roxen/server/etc/env.d/oracle.pike
+roxen/server/etc/include/config.h
+roxen/server/etc/include/confignode.h
+roxen/server/etc/include/extra_config.h
+roxen/server/etc/include/module.h
+roxen/server/etc/include/roxen.h
+roxen/server/etc/include/stat.h
+roxen/server/etc/include/udp.h
+roxen/server/etc/include/variables.h
+roxen/server/etc/modules/RoxenRPC.pmod/CVS/Root
+roxen/server/etc/modules/RoxenRPC.pmod/CVS/Repository
+roxen/server/etc/modules/RoxenRPC.pmod/CVS/Entries
+roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Root
+roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Repository
+roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS/Entries
+roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Client.pike
+roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/Server.pike
+roxen/server/etc/modules/RoxenRPC.pmod/Client.pike
+roxen/server/etc/modules/RoxenRPC.pmod/Server.pike
+roxen/server/etc/modules/Dims.pmod
+roxen/server/etc/modules/GText.pmod
+roxen/server/etc/modules/PDB.pmod
+roxen/server/etc/modules/Servlet.pmod
+roxen/server/etc/classes/jsdk.jar
+roxen/server/etc/classes/roxen_servlet.jar
+roxen/server/etc/digits/a/CVS/Root
+roxen/server/etc/digits/a/CVS/Repository
+roxen/server/etc/digits/a/CVS/Entries
+roxen/server/etc/digits/a/0.ppm
+roxen/server/etc/digits/a/1.ppm
+roxen/server/etc/digits/a/2.ppm
+roxen/server/etc/digits/a/3.ppm
+roxen/server/etc/digits/a/4.ppm
+roxen/server/etc/digits/a/5.ppm
+roxen/server/etc/digits/a/6.ppm
+roxen/server/etc/digits/a/7.ppm
+roxen/server/etc/digits/a/8.ppm
+roxen/server/etc/digits/a/9.ppm
+roxen/server/etc/roxen_hilfe.pike
+roxen/server/etc/roxen_master.pike
+roxen/server/etc/shutdown.html
+roxen/server/etc/supports
+roxen/server/etc/upgrade_servers
+roxen/server/etc/welcome.html
+roxen/server/etc/config.40bit.html
+roxen/server/etc/config.int.html
+roxen/server/etc/config.html
+roxen/server/etc/.cvsignore
+roxen/server/etc/errordata
+roxen/server/etc/extensions
+roxen/server/etc/restart.html
+roxen/server/etc/rgb.dat
+roxen/server/install
 roxen/server/start
+roxen/server/mkdir
 roxen/server/testca.pem
-roxen/server/unfinishedmodules/deepthought.pike
-roxen/server/unfinishedmodules/hedbor.pike
-roxen/server/unfinishedmodules/mountserver.pike
-roxen/server/unfinishedmodules/non-working/extended_logger.pike.gz
-roxen/server/unfinishedmodules/non-working/fastcgi.pike.gz
-roxen/server/unfinishedmodules/non-working/httpc.lpc.gz
-roxen/server/unfinishedmodules/non-working/javascript.pike.gz
-roxen/server/unfinishedmodules/non-working/mirror.lpc.gz
-roxen/server/unfinishedmodules/non-working/tree.pike.gz
-roxen/server/unfinishedmodules/whois++.pike
-bin/pike-roxen
-@dirrm roxen/server/unfinishedmodules/non-working
-@dirrm roxen/server/unfinishedmodules
-@dirrm roxen/server/server_templates
-@dirrm roxen/server/roxen-images/modules
-@dirrm roxen/server/roxen-images/dir
-@dirrm roxen/server/roxen-images/auto
-@dirrm roxen/server/roxen-images
-@dirrm roxen/server/protocols
-@dirrm roxen/server/old_modules/filters
-@dirrm roxen/server/old_modules
-@dirrm roxen/server/nfonts/32/lucida/CVS
-@dirrm roxen/server/nfonts/32/lucida
-@dirrm roxen/server/nfonts/32/avant_garde/CVS
-@dirrm roxen/server/nfonts/32/avant_garde
-@dirrm roxen/server/nfonts/32
-@dirrm roxen/server/nfonts
-@dirrm roxen/server/more_modules
+roxen/server/demo_certificate.pem
+roxen/server/configvar
+roxen/server/.cvsignore
+roxen/server/include/pike/acconfig.h
+roxen/server/include/pike/array.h
+roxen/server/include/pike/backend.h
+roxen/server/include/pike/block_alloc.h
+roxen/server/include/pike/builtin_functions.h
+roxen/server/include/pike/callback.h
+roxen/server/include/pike/compilation.h
+roxen/server/include/pike/constants.h
+roxen/server/include/pike/cpp.h
+roxen/server/include/pike/cyclic.h
+roxen/server/include/pike/dmalloc.h
+roxen/server/include/pike/docode.h
+roxen/server/include/pike/dynamic_buffer.h
+roxen/server/include/pike/dynamic_load.h
+roxen/server/include/pike/efun.h
+roxen/server/include/pike/encode.h
+roxen/server/include/pike/error.h
+roxen/server/include/pike/fd_control.h
+roxen/server/include/pike/fdlib.h
+roxen/server/include/pike/fsort.h
+roxen/server/include/pike/fsort_template.h
+roxen/server/include/pike/gc.h
+roxen/server/include/pike/global.h
+roxen/server/include/pike/las.h
+roxen/server/include/pike/hashtable.h
+roxen/server/include/pike/interpret.h
+roxen/server/include/pike/language.h
+roxen/server/include/pike/lex.h
+roxen/server/include/pike/machine.h
+roxen/server/include/pike/main.h
+roxen/server/include/pike/mapping.h
+roxen/server/include/pike/module.h
+roxen/server/include/pike/module_support.h
+roxen/server/include/pike/multiset.h
+roxen/server/include/pike/object.h
+roxen/server/include/pike/opcodes.h
+roxen/server/include/pike/operators.h
+roxen/server/include/pike/otable.h
+roxen/server/include/pike/peep.h
+roxen/server/include/pike/pike_macros.h
+roxen/server/include/pike/pike_memory.h
+roxen/server/include/pike/pike_types.h
+roxen/server/include/pike/port.h
+roxen/server/include/pike/program.h
+roxen/server/include/pike/program_areas.h
+roxen/server/include/pike/queue.h
+roxen/server/include/pike/rusage.h
+roxen/server/include/pike/signal_handler.h
+roxen/server/include/pike/stralloc.h
+roxen/server/include/pike/stuff.h
+roxen/server/include/pike/svalue.h
+roxen/server/include/pike/threads.h
+roxen/server/include/pike/time_stuff.h
+roxen/server/include/pike/version.h
+roxen/server/include/pike/y.tab.h
+@exec mkdir -p %D/roxen/argument_cache
+@exec mkdir -p %D/roxen/configurations
+@exec mkdir -p %D/roxen/logs
+@exec mkdir -p /var/log/roxen
+@unexec rm -f %D/roxen/server/\.[0-9a-zA-Z]*
+@unexec rm -rf /var/log/roxen
+@unexec rm -rf %D/roxen/logs
+@unexec rm -rf %D/roxen/configurations
+@unexec rm -rf %D/roxen/argument_cache
+@dirrm roxen/local/nfonts
+@dirrm roxen/local/modules
+@dirrm roxen/local
+@dirrm roxen/server/include/pike
+@dirrm roxen/server/include
+@dirrm roxen/server/etc/digits/a/CVS
+@dirrm roxen/server/etc/digits/a
+@dirrm roxen/server/etc/digits
+@dirrm roxen/server/etc/classes
+@dirrm roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS
+@dirrm roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod
+@dirrm roxen/server/etc/modules/RoxenRPC.pmod/CVS
+@dirrm roxen/server/etc/modules/RoxenRPC.pmod
+@dirrm roxen/server/etc/modules
+@dirrm roxen/server/etc/include
+@dirrm roxen/server/etc/env.d
+@dirrm roxen/server/etc
 @dirrm roxen/server/modules/tags/doc/CVS
 @dirrm roxen/server/modules/tags/doc
 @dirrm roxen/server/modules/tags
 @dirrm roxen/server/modules/scripting
 @dirrm roxen/server/modules/proxies
-@dirrm roxen/server/modules/protocols
 @dirrm roxen/server/modules/misc
 @dirrm roxen/server/modules/logging
 @dirrm roxen/server/modules/graphics/rimage/plugins/CVS
@@ -658,58 +1321,180 @@ bin/pike-roxen
 @dirrm roxen/server/modules/filesystems
 @dirrm roxen/server/modules/examples
 @dirrm roxen/server/modules/directories
+@dirrm roxen/server/modules/ldap
 @dirrm roxen/server/modules
+@dirrm roxen/server/languages
+@dirrm roxen/server/fonts/32
+@dirrm roxen/server/fonts
+@dirrm roxen/server/lib/pike/CVS
+@dirrm roxen/server/lib/pike/include/CVS
+@dirrm roxen/server/lib/pike/include
+@dirrm roxen/server/lib/pike/modules/SSL.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/SSL.pmod
 @dirrm roxen/server/lib/pike/modules/Yabu.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Yabu.pmod
 @dirrm roxen/server/lib/pike/modules/Tools.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Tools.pmod
 @dirrm roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Standards.pmod/PKCS.pmod
-@dirrm roxen/server/lib/pike/modules/Standards.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Standards.pmod/ASN1.pmod
+@dirrm roxen/server/lib/pike/modules/Standards.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Standards.pmod
 @dirrm roxen/server/lib/pike/modules/Sql.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Sql.pmod
+@dirrm roxen/server/lib/pike/modules/Remote.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Remote.pmod
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db/CVS
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/db
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/X.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/X.pmod
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Protocols.pmod/LDAP.pmod
 @dirrm roxen/server/lib/pike/modules/Protocols.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/Protocols.pmod
+@dirrm roxen/server/lib/pike/modules/Locale.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Locale.pmod
+@dirrm roxen/server/lib/pike/modules/Languages.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Languages.pmod
 @dirrm roxen/server/lib/pike/modules/LR.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/LR.pmod
 @dirrm roxen/server/lib/pike/modules/Crypto/CVS
 @dirrm roxen/server/lib/pike/modules/Crypto
-@dirrm roxen/server/lib/pike/modules/CVS
+@dirrm roxen/server/lib/pike/modules/Calendar.pmod/CVS
+@dirrm roxen/server/lib/pike/modules/Calendar.pmod
 @dirrm roxen/server/lib/pike/modules/ADT.pmod/CVS
 @dirrm roxen/server/lib/pike/modules/ADT.pmod
+@dirrm roxen/server/lib/pike/modules/CVS
 @dirrm roxen/server/lib/pike/modules
-@dirrm roxen/server/lib/pike/include/CVS
-@dirrm roxen/server/lib/pike/include
-@dirrm roxen/server/lib/pike/CVS
 @dirrm roxen/server/lib/pike
 @dirrm roxen/server/lib
-@dirrm roxen/server/languages
-@dirrm roxen/server/include/pike
-@dirrm roxen/server/include
-@dirrm roxen/server/fonts/32
-@dirrm roxen/server/fonts
-@dirrm roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod/CVS
-@dirrm roxen/server/etc/modules/RoxenRPC.pmod/HTTP.pmod
-@dirrm roxen/server/etc/modules/RoxenRPC.pmod/CVS
-@dirrm roxen/server/etc/modules/RoxenRPC.pmod
-@dirrm roxen/server/etc/modules
-@dirrm roxen/server/etc/include
-@dirrm roxen/server/etc/digits/a/CVS
-@dirrm roxen/server/etc/digits/a
-@dirrm roxen/server/etc/digits
-@dirrm roxen/server/etc
 @dirrm roxen/server/config_actions
 @dirrm roxen/server/bin
-@dirrm roxen/server/base_server/struct
 @dirrm roxen/server/base_server/config
+@dirrm roxen/server/base_server/struct
 @dirrm roxen/server/base_server
+@dirrm roxen/server/more_modules
+@dirrm roxen/server/old_modules/tags
+@dirrm roxen/server/old_modules/filters
+@dirrm roxen/server/old_modules
+@dirrm roxen/server/protocols
+@dirrm roxen/server/roxen-images/modules
+@dirrm roxen/server/roxen-images/dir
+@dirrm roxen/server/roxen-images/auto
+@dirrm roxen/server/roxen-images
+@dirrm roxen/server/server_templates
+@dirrm roxen/server/unfinishedmodules/non-working
+@dirrm roxen/server/unfinishedmodules
+@dirrm roxen/server/manual/parsed/(-foo,foo)/Challenger1.2/User/URL
+@dirrm roxen/server/manual/parsed/(-foo,foo)/Challenger1.2/User
+@dirrm roxen/server/manual/parsed/(-foo,foo)/Challenger1.2
+@dirrm roxen/server/manual/parsed/(-foo,foo)
+@dirrm roxen/server/manual/parsed/(-foo)/Challenger1.2/User/URL
+@dirrm roxen/server/manual/parsed/(-foo)/Challenger1.2/User
+@dirrm roxen/server/manual/parsed/(-foo)/Challenger1.2
+@dirrm roxen/server/manual/parsed/(-foo)
+@dirrm roxen/server/manual/parsed/configtabs/s/white
+@dirrm roxen/server/manual/parsed/configtabs/s
+@dirrm roxen/server/manual/parsed/configtabs/u/white
+@dirrm roxen/server/manual/parsed/configtabs/u
+@dirrm roxen/server/manual/parsed/configtabs
+@dirrm roxen/server/manual/parsed/(foo)/Challenger1.2/User/database
+@dirrm roxen/server/manual/parsed/(foo)/Challenger1.2/User/URL
+@dirrm roxen/server/manual/parsed/(foo)/Challenger1.2/User
+@dirrm roxen/server/manual/parsed/(foo)/Challenger1.2
+@dirrm roxen/server/manual/parsed/(foo)
+@dirrm roxen/server/manual/parsed/diagram
+@dirrm roxen/server/manual/parsed/_internal/graphic_text
+@dirrm roxen/server/manual/parsed/_internal
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/appendix
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/image_maps
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/htaccess
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/programming
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/SSI
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/supports
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/database
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/graphics
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/if
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/URL
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/variable
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/string
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/information
+@dirrm roxen/server/manual/parsed/Challenger1.2/User/introduction
+@dirrm roxen/server/manual/parsed/Challenger1.2/User
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/img
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/appendix
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/reporting
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/portability
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/third_party
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/upgrading
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/frontpage
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/scripting
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/security
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/databases
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/miscellaneous
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/proxy
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/graphics
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/RXML_tags
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/filesystems
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/examples
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/modules
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/virtual_servers
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/handling
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/installation
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator/introduction
+@dirrm roxen/server/manual/parsed/Challenger1.2/Administrator
+@dirrm roxen/server/manual/parsed/Challenger1.2
+@dirrm roxen/server/manual/parsed/img
+@dirrm roxen/server/manual/parsed
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/appendix
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/image_maps
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/htaccess
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/SSI
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/programming
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/supports
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/database
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/graphics
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/if
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/URL
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/variable
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/information
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/string
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User/introduction
+@dirrm roxen/server/manual/unparsed/Challenger1.2/User
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/img
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/appendix
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/reporting
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/portability
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/third_party
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/upgrading
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/frontpage
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/scripting
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/security
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/databases
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/miscellaneous
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/proxy
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/graphics
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/RXML_tags
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/filesystems
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/modules
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/examples
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/virtual_servers
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/handling
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/installation
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator/introduction
+@dirrm roxen/server/manual/unparsed/Challenger1.2/Administrator
+@dirrm roxen/server/manual/unparsed/Challenger1.2
+@dirrm roxen/server/manual/unparsed/img
+@dirrm roxen/server/manual/unparsed
+@dirrm roxen/server/manual
+@dirrm roxen/server/nfonts/32/bell_gothic/CVS
+@dirrm roxen/server/nfonts/32/bell_gothic
+@dirrm roxen/server/nfonts/32/lucida/CVS
+@dirrm roxen/server/nfonts/32/lucida
+@dirrm roxen/server/nfonts/32/avant_garde/CVS
+@dirrm roxen/server/nfonts/32/avant_garde
+@dirrm roxen/server/nfonts/32
+@dirrm roxen/server/nfonts
 @dirrm roxen/server
-@dirrm roxen/logs
-@dirrm roxen/local/nfonts
-@dirrm roxen/local/modules
-@dirrm roxen/local
-@dirrm roxen/configurations
 @dirrm roxen
