@@ -476,11 +476,18 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
 	ftp://netbsd.stevens-tech.edu/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+     ftp://ftp.proxad.net/mirrors/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
+	ftp://ftp.weird.com/pub/NetBSD/distfiles/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
+     ftp://sunsite.rediris.es/sites/ftp.netbsd.org/packages/distfiles/%SUBDIR%/\
 	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.duth.gr/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.bme.hu/OS/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.uninett.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://sunsite.uio.no/bsd/unix/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.icm.edu.pl/vol/rzm9/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://gort.ludd.luth.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
@@ -491,6 +498,9 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.sra.co.jp/pub/os/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.itjit.ne.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.nihon-u.ac.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.spin.ad.jp/.02/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://zoffy.asahi-net.or.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://melanoma.cs.rmit.edu.au/pub/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_NETSCAPE+= \
