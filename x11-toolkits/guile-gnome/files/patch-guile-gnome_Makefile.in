@@ -1,0 +1,11 @@
+--- guile-gnome/Makefile.in.orig	Wed Jun 19 16:09:26 2002
++++ guile-gnome/Makefile.in	Wed Jun 19 16:09:56 2002
+@@ -517,7 +517,7 @@
+ 	$(INSTALL_DATA) $(srcdir)/gnome.scm $(scmgnomedir)/gnome.scm
+ 	$(INSTALL_DATA) $(srcdir)/gnorba.scm $(scmgnomedir)/gnorba.scm
+ .c.x:
+-	guile-snarf $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) $< >tmp \
++	guile-snarf -o tmp $< $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS) \
+ 	&& mv tmp $@
+ 
+ client.x: client.c
