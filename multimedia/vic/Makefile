@@ -3,14 +3,18 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.2 1995/02/11 13:51:38 asami Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:48:46 jkh Exp $
 #
 
 DISTNAME=	vic-2.6
-DISTFILES=	vicsrc-2.6.tar.Z
-MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
 CATEGORIES+=	networking
+MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
+DISTFILES=	vicsrc-2.6.tar.Z
+
+MAINTAINER=	wollman@FreeBSD.ORG
+
 LIB_DEPENDS=	BLT\\.1\\.:${PORTSDIR}/x11/blt
+
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	MANDIR=${PREFIX}/man/manl install
 
