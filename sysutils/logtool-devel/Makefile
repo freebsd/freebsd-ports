@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	logtool
 # Date created:			Dec 30, 2000
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
@@ -7,24 +6,24 @@
 #
 
 PORTNAME=	logtool
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/logtool/download/
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Parse ASCII logfiles into ANSI, CSV, HTML formats
 
-USE_GMAKE= 		yes
-USE_GETOPT_LONG= 	yes
+USE_GMAKE=	yes
+USE_GETOPT_LONG=	yes
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV= 		CFLAGS="${CFLAGS}" 
-CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc/${PORTNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/${PORTNAME}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		logtool.1
-DOCS=		CREDITS Changes README TODO doc/logtool.txt
+DOCS=		CHANGES CREDITS README TODO doc/logtool.txt
 
 do-build:
 	cd ${WRKSRC}/src && ${GMAKE} INCLUDES="${CPPFLAGS}"
