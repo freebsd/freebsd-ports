@@ -65,6 +65,7 @@
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffmpeg
+    SUBDIR += figurine
     SUBDIR += flashplayer
     SUBDIR += flasm
     SUBDIR += fli2gif
