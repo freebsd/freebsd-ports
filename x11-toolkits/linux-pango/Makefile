@@ -7,14 +7,17 @@
 
 PORTNAME=	pango
 PORTVERSION=	1.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Linux/i386 pango binary
 
-BUILD_DEPENDS+=	\
-	${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
+# these libraries are required by pango-querymodules
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXft.so.2:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
+		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
@@ -33,8 +36,6 @@ pre-install:
 		${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 post-install:
-	- chroot ${LINUXBASE} usr/bin/pango-querymodules > \
-		${WRKSRC}/pango.modules
-	${INSTALL_DATA} ${WRKSRC}/pango.modules ${LINUXBASE}/etc/pango/
+	${PREFIX}/usr/bin/pango-querymodules > ${PREFIX}/etc/pango/pango.modules
 
 .include "../linux-gtk/Makefile"
