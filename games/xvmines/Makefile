@@ -23,6 +23,7 @@ MANCOMPRESSED=	no
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xvmines ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xvmines.man ${PREFIX}/man/man6/xvmines.6
+	${INSTALL_DATA} ${WRKSRC}/xvmines.1.html ${PREFIX}/lib/X11/doc/html/xvmines.6.html
 	@${MKDIR} ${PREFIX}/share/doc/xvmines
 	${INSTALL_DATA} ${WRKSRC}/Copyright ${PREFIX}/share/doc/xvmines
 
