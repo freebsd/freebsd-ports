@@ -3,7 +3,7 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/09/24 17:03:35 max Exp $
 #
 
 DISTNAME=	mnews119
@@ -33,17 +33,15 @@ do-install:
 	if [ ! -d ${PREFIX}/lib/mnews ]	;				\
 	  then /bin/mkdir -p ${PREFIX}/lib/mnews ; fi
 	${INSTALL_DATA} ${WRKSRC}/jnames.fj ${PREFIX}/lib/mnews/jnames
-	if [ ! -d ${PREFIX}/share/mnews ] ;				\
-	  then /bin/mkdir -p ${PREFIX}/share/mnews ; fi
-	if [ ! -d ${PREFIX}/share/mnews/doc ] ;				\
-	  then /bin/mkdir ${PREFIX}/share/mnews/doc ; fi
+	if [ ! -d ${PREFIX}/share/doc/mnews ] ;				\
+	  then /bin/mkdir -p ${PREFIX}/share/doc/mnews; fi
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/mnews/doc
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/mnews
 .endfor
-	if [ ! -d ${PREFIX}/share/mnews/samples ] ;			\
-	  then /bin/mkdir ${PREFIX}/share/mnews/samples ; fi
+	if [ ! -d ${PREFIX}/share/examples/mnews ] ;			\
+	  then /bin/mkdir -p ${PREFIX}/share/examples/mnews; fi
 .for f in ${SAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/mnews/samples
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/examples/mnews
 .endfor
 post-install:
 .if !defined(BATCH)
@@ -56,6 +54,7 @@ post-install:
 	@echo "contains correct domain name."
 	@echo my.domain.com > ${PREFIX}/lib/mnews/default-domain
 .endif
-	@echo "Refer to the files in ${PREFIX}/share/mnews."
+	@echo "Please refer to the files in:"
+	@echo "${PREFIX}/share/doc/mnews & ${PREFIX}/share/examples/mnews."
 
 .include <bsd.port.mk>
