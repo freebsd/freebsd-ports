@@ -8,6 +8,7 @@
 PORTNAME=	mozilla
 PORTVERSION=	1.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -17,8 +18,6 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 		libart_lgpl-${PORTVERSION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
-
-FORBIDDEN= 	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339 "
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
