@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	aterm
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES+=	x11	# `+=' is for slave ports
 MASTER_SITES=	http://download.sourceforge.net/aterm/
 
