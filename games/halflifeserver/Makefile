@@ -14,6 +14,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	markm@FreeBSD.org
 
+FORBIDDEN=	"Remotely exploitable buffer overflows."
+
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
