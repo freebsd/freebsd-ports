@@ -3,14 +3,13 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1996/01/21 00:49:39 ache Exp $
+# $Id: Makefile,v 1.10 1996/01/22 18:41:57 markm Exp $
 #
 
 DISTNAME=       ssh-1.2.12a
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
 LIB_DEPENDS=    z\\.0\\.:${PORTSDIR}/devel/libz
-BUILD_DEPENDS+= wish:${PORTSDIR}/x11/tk
 BUILD_DEPENDS+= perl5.001:${PORTSDIR}/lang/perl5
 
 MAINTAINER=	torstenb@FreeBSD.ORG
@@ -41,13 +40,6 @@ CONFIGURE_ARGS+= --with-rsaref
 # Warning: untested !
 .if defined(USE_SOCKS) && ${USE_SOCKS} == YES
 CONFIGURE_ARGS+= --with-socks
-.endif
-
-# Include tcp-wrapper support (call remote identd)
-.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
-CONFIGURE_ENV=  LDFLAGS=-L${PREFIX}/lib CFLAGS="${CFLAGS} -I${PREFIX}/include"
-BUILD_DEPENDS+= safe_finger:${PORTSDIR}/security/tcp_wrapper
-CONFIGURE_ARGS+= --with-libwrap
 .endif
 
 # Include support for the SecureID card
@@ -92,3 +84,25 @@ post-install:
 		${PREFIX}/man/man1/make-ssh-known-hosts.1
 
 .include <bsd.port.mk>
+
+# Following stuff must be after <bsd.port.mk> to expand exists() properly
+
+.if exists(${X11BASE}/bin/xauth)
+.if exists(${PREFIX}/bin/wish4.0)
+BUILD_DEPENDS+= wish4.0:${PORTSDIR}/x11/tk4
+CONFIGURE_ENV+= WISH=${PREFIX}/bin/wish4.0
+.else
+BUILD_DEPENDS+= wish:${PORTSDIR}/x11/tk
+.endif
+.else
+CONFIGURE_ENV+= WISH=/replace_it_with_WISH_path
+.endif
+
+# Include tcp-wrapper support (call remote identd)
+.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES || \
+    exists(${PREFIX}/lib/libwrap.a) && \
+    (!defined(USE_TCPWRAP) || ${USE_TCPWRAP} != NO)
+BUILD_DEPENDS+= ${PREFIX}/lib/libwrap.a:${PORTSDIR}/security/tcp_wrapper
+CONFIGURE_ARGS+= --with-libwrap
+.endif
+
