@@ -1,5 +1,8 @@
---- Makefile.orig	Sun Dec 17 02:23:13 2000
-+++ Makefile	Sun Dec 17 02:26:42 2000
+
+$FreeBSD$
+
+--- Makefile.orig	Sat Mar 10 11:50:58 2001
++++ Makefile	Sat Mar 10 12:02:21 2001
 @@ -4,13 +4,15 @@
  
  # Where to install binary and manpage on "make install":
@@ -18,7 +21,7 @@
  # Additional LIBDIR and libraries if exist
  IPV6LIBDIR=
  IPV6LIB=
-@@ -300,35 +302,63 @@
+@@ -300,35 +302,65 @@
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='$(CFLAGS) -DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
@@ -30,7 +33,9 @@
 +	 -DROT_I386 -DI386_ASSEM -DREAL_IS_FLOAT 
 +ARCHFILES= decode_i386.o
 +CFLAGS ?=-O4 -m486
-+.if defined(OPT_ARCH)
++.if !defined(OPT_ARCH)
++ARCHFILES+= dct64_i386.c
++.else
 +.if (${OPT_ARCH} == "i486")
 +ARCHOPT+= -DI486_OPT
 +ARCHFILES+= decode_i486.o dct64_i486.o dct64_i386.o
@@ -103,7 +108,7 @@
  		$(FRONTEND)
   
  
-@@ -567,7 +597,7 @@
+@@ -567,7 +599,7 @@
  	@ $(MAKE) CFLAGS='$(CFLAGS)' BINNAME=mpg123m mpg123
  
  mpg123-make:
