@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/stable.pkg/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
-LIB_DEPENDS=	physfs-0.1.9:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs-1.0.0:${PORTSDIR}/devel/physfs \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 USE_X_PREFIX=	yes
