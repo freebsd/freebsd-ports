@@ -302,6 +302,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms-a52dec
+    SUBDIR += xmms-audiofile
     SUBDIR += xmms-bonk
     SUBDIR += xmms-crossfade
     SUBDIR += xmms-crystality
