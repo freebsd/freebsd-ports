@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	1.4.16
+PORTVERSION=	1.5.4
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_QT_VER=	2
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
-MAKE_ENV=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
-		QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}"
+USE_QT_VER=	3
 
 .include <bsd.port.pre.mk>
 
@@ -26,7 +25,13 @@ CFLAGS+=	-O0
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
+	${REINPLACE_CMD} -e 's,warn_on,warn_on thread,' ${WRKSRC}/qcad.pro
+	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
+		${WRKSRC}/rconfig.cpp ${WRKSRC}/rprgdef.h\
+		${WRKSRC}/rfonts.cpp ${WRKSRC}/rlibrarybrowser.cpp
+
+pre-build:
+	cd ${BUILD_WRKSRC}; qmake -spec ${X11BASE}/mkspecs/freebsd-g++ qcad.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin
