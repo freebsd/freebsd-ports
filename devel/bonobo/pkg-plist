@@ -1,10 +1,13 @@
 bin/bonobo-application-x-mines
 bin/bonobo-audio-ulaw
-bin/bonobo-image-x-png
+bin/bonobo-echo
+bin/bonobo-hello
 bin/bonobo-text-plain
+bin/echo-client
 bin/efstool
 bin/gshell
 bin/paint-component-simple
+bin/sample-canvas-item
 bin/sample-container
 bin/sample-control-container
 bin/sample-control-factory
@@ -14,14 +17,15 @@ etc/CORBA/servers/application-x-mines.gnorba
 etc/CORBA/servers/audio-ulaw.gnorba
 etc/CORBA/servers/bonobo-calculator-control.gnorba
 etc/CORBA/servers/bonobo-clock-control.gnorba
-etc/CORBA/servers/image-x-png.gnorba
+etc/CORBA/servers/echo.gnorba
+etc/CORBA/servers/hello.gnorba
 etc/CORBA/servers/item.gnorba
 etc/CORBA/servers/paint-component-simple.gnorba
-etc/CORBA/servers/sample.gnorba
 etc/CORBA/servers/text-plain.gnorba
 etc/bonoboConf.sh
 include/bonobo.h
 include/bonobo/Bonobo.h
+include/bonobo/bonobo-arg.h
 include/bonobo/bonobo-canvas-component.h
 include/bonobo/bonobo-canvas-item.h
 include/bonobo/bonobo-client-site.h
@@ -37,14 +41,16 @@ include/bonobo/bonobo-main.h
 include/bonobo/bonobo-moniker-client.h
 include/bonobo/bonobo-moniker.h
 include/bonobo/bonobo-object-client.h
+include/bonobo/bonobo-object-directory.h
 include/bonobo/bonobo-object-io.h
 include/bonobo/bonobo-object.h
 include/bonobo/bonobo-persist-file.h
 include/bonobo/bonobo-persist-stream.h
 include/bonobo/bonobo-persist.h
+include/bonobo/bonobo-print-client.h
+include/bonobo/bonobo-print.h
 include/bonobo/bonobo-progressive.h
 include/bonobo/bonobo-property-bag-client.h
-include/bonobo/bonobo-property-bag-xml.h
 include/bonobo/bonobo-property-bag.h
 include/bonobo/bonobo-property-types.h
 include/bonobo/bonobo-property.h
@@ -60,9 +66,9 @@ include/bonobo/bonobo-view.h
 include/bonobo/bonobo-widget.h
 include/bonobo/bonobo-wrapper.h
 include/efs.h
-lib/libbonobo-xml.a
-lib/libbonobo-xml.so
-lib/libbonobo-xml.so.0
+lib/libbonobo-print.a
+lib/libbonobo-print.so
+lib/libbonobo-print.so.0
 lib/libbonobo.a
 lib/libbonobo.so
 lib/libbonobo.so.2
@@ -73,8 +79,8 @@ lib/libstorage_efs.so
 lib/libstorage_fs.so
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/apps/Games/gnomine-bonobo.desktop
 share/gnome/idl/Bonobo.idl
+share/gnome/idl/Echo.idl
 share/gnome/idl/bonobo-advise.idl
 share/gnome/idl/bonobo-canvas.idl
 share/gnome/idl/bonobo-client-site.idl
@@ -84,6 +90,7 @@ share/gnome/idl/bonobo-desktop.idl
 share/gnome/idl/bonobo-embeddable.idl
 share/gnome/idl/bonobo-factory.idl
 share/gnome/idl/bonobo-persist.idl
+share/gnome/idl/bonobo-print.idl
 share/gnome/idl/bonobo-progressive.idl
 share/gnome/idl/bonobo-property.idl
 share/gnome/idl/bonobo-storage.idl
@@ -91,6 +98,13 @@ share/gnome/idl/bonobo-ui-handler.idl
 share/gnome/idl/bonobo-unknown.idl
 share/gnome/idl/bonobo.idl
 share/gnome/mime-info/bonobo.keys
+share/gnome/oaf/application-x-mines.oafinfo
+share/gnome/oaf/audio-ulaw.oafinfo
+share/gnome/oaf/bonobo-calculator-control.oafinfo
+share/gnome/oaf/bonobo-clock-control.oafinfo
+share/gnome/oaf/echo.oafinfo
+share/gnome/oaf/paint-component-simple.oafinfo
+share/gnome/oaf/text-plain.oafinfo
 share/locale/da/LC_MESSAGES/bonobo.mo
 share/locale/de/LC_MESSAGES/bonobo.mo
 share/locale/el/LC_MESSAGES/bonobo.mo
@@ -99,6 +113,7 @@ share/locale/fr/LC_MESSAGES/bonobo.mo
 share/locale/gl/LC_MESSAGES/bonobo.mo
 share/locale/it/LC_MESSAGES/bonobo.mo
 share/locale/ja/LC_MESSAGES/bonobo.mo
+share/locale/nl/LC_MESSAGES/bonobo.mo
 share/locale/no/LC_MESSAGES/bonobo.mo
 share/locale/pl/LC_MESSAGES/bonobo.mo
 share/locale/pt_BR/LC_MESSAGES/bonobo.mo
@@ -108,4 +123,5 @@ share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
+@dirrm share/gnome/oaf
 @dirrm include/bonobo
