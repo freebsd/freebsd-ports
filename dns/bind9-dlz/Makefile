@@ -29,7 +29,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
 ISCVERSION=	9.2.2
-DLZVERSION=	0.5.0
+DLZVERSION=	0.6.0
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -62,6 +62,20 @@ LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
 CONFIGURE_ARGS+=	--with-dlz-mysql
 .endif
 
+.if defined(WITH_LDAP)
+LDAP_PORT?=	net/openldap20-client
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/${LDAP_PORT}
+CONFIGURE_ARGS+=	--with-dlz-ldap
+.endif
+
+.if defined(WITH_BERKLEYDB_DRIVER)
+BERKLEYDB_PORT?=	databases/db41
+BERKLEYDB_LIB?=		db41.1
+CONFIGURE_ARGS+=	--with-dlz-bdb=${LOCALBASE}
+LIB_DEPENDS+=		${BERKLEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
+.endif
+
 .if defined(WITH_FILESYSTEM_DRIVER)
 .if !defined(WITHOUT_FILESYSTEM_DRIVER)
 CONFIGURE_ARGS+=	--with-dlz-filesystem
@@ -82,6 +96,7 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 WRKSRC=		${WRKDIR}/bind-${ISCVERSION}
 EXTRA_PATCHES=	${WRKDIR}/dlz.patch
 PLIST=		${WRKDIR}/.PLIST.more
+PLIST_SUB+=	EXTRA_DOCSDIR=${EXTRA_DOCSDIR}
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 	        CURDIR2="${.CURDIR}" \
@@ -91,12 +106,8 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 DOCSDIR=	${PREFIX}/share/doc/bind9
 EXTRA_DOCSDIR=	share/doc/bind9-dlz
-DOCS=		README.txt bind_dlz.txt changelog.txt \
-		dlz_bdb_driver.txt dlz_filesystem_driver.txt \
-		dlz_interface.txt dlz_mysql_driver.txt \
-		dlz_odbc_driver.txt dlz_postgres_driver.txt \
-		dlz_stub_driver.txt \
-		sdlz_helper.txt sdlz_interface.txt
+DOCS=		README.txt bind_dlz.txt changelog.txt dlz.schema \
+		dlz_interface.txt sdlz_helper.txt sdlz_interface.txt
 
 MAN1=	dig.1 host.1
 MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
@@ -159,9 +170,13 @@ pre-install:
 .if !defined(NOPORTDOCS)
 .for i in ${DOCS}
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
-	${AWK} '{print "${EXTRA_DOCSDIR}/" $$1}' >>${PLIST}
+	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm ${EXTRA_DOCSDIR}" >>${PLIST}
+	@(cd ${WRKSRC}/.. && find dlz_docs -type f ) | \
+	${SED}  -e "s=^=%%EXTRA_DOCSDIR%%/=" >>${PLIST}
+	@(cd ${WRKSRC}/.. && find -d dlz_docs -type d ) | \
+	${SED} -e "s=^=@dirrm %%EXTRA_DOCSDIR%%/=" >>${PLIST}
+	@${ECHO_CMD} "@dirrm %%EXTRA_DOCSDIR%%" >>${PLIST}
 .endif
 
 post-install:
@@ -174,6 +189,8 @@ post-install:
 	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
 		${WRKSRC}/README ${DOCSDIR}/
 	${MKDIR} ${PREFIX}/${EXTRA_DOCSDIR}
+	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
+	${CP} -R ${WRKSRC}/../dlz_docs ${PREFIX}/${EXTRA_DOCSDIR}/dlz_docs
 	@cd ${WRKDIR} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/${EXTRA_DOCSDIR}/
 .endif
 
