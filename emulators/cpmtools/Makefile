@@ -3,10 +3,11 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.5 1995/04/17 07:54:44 joerg Exp $
+# $Id: Makefile,v 1.6 1995/04/23 13:02:20 asami Exp $
 #
 
 DISTNAME=	cpm-1.1
+CATEGORIES+=	utils emulators
 MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 MAINTAINER=	joerg@FreeBSD.org
 
