@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1998/06/28 18:56:20 max Exp $
+# $Id: Makefile,v 1.125 1998/06/29 19:47:30 max Exp $
 #
 
     SUBDIR += Canna
@@ -45,11 +45,15 @@
     SUBDIR += kcc
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+sj3
-    SUBDIR += kinput2-canna+sj3+wnn
-    SUBDIR += kinput2-canna+wnn
+    SUBDIR += kinput2-canna+sj3+wnn4
+    SUBDIR += kinput2-canna+sj3+wnn6
+    SUBDIR += kinput2-canna+wnn4
+    SUBDIR += kinput2-canna+wnn6
     SUBDIR += kinput2-sj3
-    SUBDIR += kinput2-sj3+wnn
-    SUBDIR += kinput2-wnn
+    SUBDIR += kinput2-sj3+wnn4
+    SUBDIR += kinput2-sj3+wnn6
+    SUBDIR += kinput2-wnn4
+    SUBDIR += kinput2-wnn6
     SUBDIR += kon
     SUBDIR += kterm
     SUBDIR += less
