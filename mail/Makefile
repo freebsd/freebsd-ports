@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1996/10/10 15:06:54 peter Exp $
+# $Id: Makefile,v 1.28 1996/10/15 04:58:30 max Exp $
 #
 
     SUBDIR += elm
@@ -10,6 +10,9 @@
     SUBDIR += metamail
     SUBDIR += mh
     SUBDIR += mpack
+    SUBDIR += p5-Mail-Folder
+    SUBDIR += p5-Mail-POP3Client
+    SUBDIR += p5-Mail-Tools
     SUBDIR += pgpsendmail
     SUBDIR += pine
     SUBDIR += popclient
