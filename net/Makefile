@@ -451,6 +451,7 @@
     SUBDIR += p5-Cflow
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
+    SUBDIR += p5-File-RsyncP
     SUBDIR += p5-Filesys-SmbClient
     SUBDIR += p5-Frontier-RPC
     SUBDIR += p5-Geo-IP
