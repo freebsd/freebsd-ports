@@ -1,0 +1,31 @@
+--- configure.in.orig	Sat Jan 20 02:06:28 2001
++++ configure.in	Sun Apr  8 11:32:48 2001
+@@ -142,7 +142,7 @@
+     sys/soundcard.h machine/soundcard.h \
+     sys/ultrasound.h linux/ultrasound.h machine/ultrasound.h \
+     awe_voice.h sys/awe_voice.h linux/awe_voice.h \
+-    sys/asoundlib.h esd.h)
++    sys/asoundlib.h)
+ 
+ dnl -----------------------------------------------------------------------
+ dnl Check OS/architecture independent drivers
+@@ -173,15 +173,10 @@
+     fi])
+ fi
+ 
+-if test "${ac_cv_header_esd_h}" = "yes"; then
+-    AC_CHECK_LIB(esd, esd_play_stream, [
+-    if test "${enable_esd}" != no; then
+-	if test "${enable_dynamic}" != "yes"; then
+-	    LIBS="${LIBS} -lesd"
+-	fi
+-	DRIVERS="${DRIVERS} esd.o"
+-	AC_DEFINE(DRIVER_ESD)
+-    fi])
++if test "$enable_esd" = yes; then
++    AC_CHECK_LIB(esd, esd_play_stream)
++    DRIVERS="${DRIVERS} esd.o"
++    AC_DEFINE(DRIVER_ESD)
+ fi
+ 
+ dnl -----------------------------------------------------------------------
