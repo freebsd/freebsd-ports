@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.31
+PORTVERSION=	1.9.33
 PORTREVISION=	0
-CATEGORIES=	news
+CATEGORIES=	news ipv6
 MASTER_SITES=	http://dl.sourceforge.net/sourceforge/leafnode/ \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
 		http://www.Awfulhak.org/leafnode/ \
-		${MASTER_SITE_SUNSITE}/system/news/transport/ \
+		${MASTER_SITE_SUNSITE:S/$/:sunsite/} \
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
 		ftp://ftp.stikman.com/pub/leafnode/ \
 		ftp://ftp.gigabell.net/pub/leafnode/
+MASTER_SITE_SUBDIR=	./:DEFAULT system/news/transport/:sunsite
 DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,sunsite
 
 MAINTAINER=	matthias.andree@web.de
 
@@ -27,17 +29,11 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet --sysconfdir=${LOCALBASE}/etc/leafnode \
 		--with-lockfile=/var/spool/lock/news/leafnode.lck \
-		--with-spooldir=/var/spool/news
+		--with-spooldir=/var/spool/news --with-ipv6
+CONFIGURE_TARGET=    --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=
 MAN1=		leafnode-version.1 newsq.1
 MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
-
-# The next two parts work around a packaging error in the tarball.
-post-extract:
-		${RM} ${WRKSRC}/leafnode.cron.daily
-
-pre-build:
-		cd ${WRKSRC} && ${MAKE} leafnode.cron.daily
 
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/setup-daemontools.sh ${LOCALBASE}/sbin/
