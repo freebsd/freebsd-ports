@@ -1,0 +1,13 @@
+etc/web500gw/ldapfriendly
+etc/web500gw/ldapfriendly.de
+etc/web500gw/sample.ldapfilter.conf
+etc/web500gw/sample.ldaptemplates.conf
+etc/web500gw/sample.web500gw.conf
+etc/web500gw/web500gw.attr
+etc/web500gw/web500gw.attr.de
+etc/web500gw/web500gw.help
+etc/web500gw/web500gw.help.de
+etc/web500gw/web500gw.messages
+etc/web500gw/web500gw.messages.de
+man/man8/web500gw.8.gz
+www/cgi-bin/web500gw
