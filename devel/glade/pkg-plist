@@ -1,31 +1,31 @@
 bin/glade
-share/glade/gnome/Makefile.am
-share/glade/gnome/aclocal-include.m4
-share/glade/gnome/autogen.sh
-share/glade/gnome/compiler-flags.m4
-share/glade/gnome/curses.m4
-share/glade/gnome/gnome-bonobo-check.m4
-share/glade/gnome/gnome-common.m4
-share/glade/gnome/gnome-fileutils.m4
-share/glade/gnome/gnome-ghttp-check.m4
-share/glade/gnome/gnome-gnorba-check.m4
-share/glade/gnome/gnome-guile-checks.m4
-share/glade/gnome/gnome-libgtop-check.m4
-share/glade/gnome/gnome-objc-checks.m4
-share/glade/gnome/gnome-orbit-check.m4
-share/glade/gnome/gnome-print-check.m4
-share/glade/gnome/gnome-pthread-check.m4
-share/glade/gnome/gnome-support.m4
-share/glade/gnome/gnome-undelfs.m4
-share/glade/gnome/gnome-vfs.m4
-share/glade/gnome/gnome-x-checks.m4
-share/glade/gnome/gnome-xml-check.m4
-share/glade/gnome/gnome.m4
-share/glade/gnome/gperf-check.m4
-share/glade/gnome/linger.m4
-share/glade/gnome/need-declaration.m4
-share/glade/gtk/autogen.sh
 share/gnome/apps/Development/glade.desktop
+share/gnome/glade/gnome/Makefile.am
+share/gnome/glade/gnome/aclocal-include.m4
+share/gnome/glade/gnome/autogen.sh
+share/gnome/glade/gnome/compiler-flags.m4
+share/gnome/glade/gnome/curses.m4
+share/gnome/glade/gnome/gnome-bonobo-check.m4
+share/gnome/glade/gnome/gnome-common.m4
+share/gnome/glade/gnome/gnome-fileutils.m4
+share/gnome/glade/gnome/gnome-ghttp-check.m4
+share/gnome/glade/gnome/gnome-gnorba-check.m4
+share/gnome/glade/gnome/gnome-guile-checks.m4
+share/gnome/glade/gnome/gnome-libgtop-check.m4
+share/gnome/glade/gnome/gnome-objc-checks.m4
+share/gnome/glade/gnome/gnome-orbit-check.m4
+share/gnome/glade/gnome/gnome-print-check.m4
+share/gnome/glade/gnome/gnome-pthread-check.m4
+share/gnome/glade/gnome/gnome-support.m4
+share/gnome/glade/gnome/gnome-undelfs.m4
+share/gnome/glade/gnome/gnome-vfs.m4
+share/gnome/glade/gnome/gnome-x-checks.m4
+share/gnome/glade/gnome/gnome-xml-check.m4
+share/gnome/glade/gnome/gnome.m4
+share/gnome/glade/gnome/gperf-check.m4
+share/gnome/glade/gnome/linger.m4
+share/gnome/glade/gnome/need-declaration.m4
+share/gnome/glade/gtk/autogen.sh
 share/gnome/help/glade/C/faq/docbook.css
 share/gnome/help/glade/C/faq/index.html
 share/gnome/help/glade/C/faq/ln7.html
@@ -107,8 +107,8 @@ share/gnome/help/glade/C/user-guide/windows-editor.html
 share/gnome/help/glade/C/user-guide/windows-palette.html
 share/gnome/help/glade/C/user-guide/windows-tree.html
 share/gnome/help/glade/C/user-guide/windows.html
-share/gnome/help/glade/C/user-guide/x230.html
-share/gnome/help/glade/C/user-guide/x329.html
+share/gnome/help/glade/C/user-guide/x225.html
+share/gnome/help/glade/C/user-guide/x324.html
 share/gnome/pixmaps/glade.png
 share/gnome/pixmaps/glade/glade_logo.png
 share/locale/ca/LC_MESSAGES/glade.mo
@@ -123,11 +123,13 @@ share/locale/ga/LC_MESSAGES/glade.mo
 share/locale/gl/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/ko/LC_MESSAGES/glade.mo
 share/locale/no/LC_MESSAGES/glade.mo
 share/locale/pl/LC_MESSAGES/glade.mo
 share/locale/pt_BR/LC_MESSAGES/glade.mo
 share/locale/ru/LC_MESSAGES/glade.mo
 share/locale/sv/LC_MESSAGES/glade.mo
+share/locale/tr/LC_MESSAGES/glade.mo
 share/locale/uk/LC_MESSAGES/glade.mo
 @dirrm share/gnome/pixmaps/glade
 @dirrm share/gnome/help/glade/C/user-guide/user-guide-images
@@ -139,6 +141,6 @@ share/locale/uk/LC_MESSAGES/glade.mo
 @dirrm share/gnome/help/glade/C/faq
 @dirrm share/gnome/help/glade/C
 @dirrm share/gnome/help/glade
-@dirrm share/glade/gtk
-@dirrm share/glade/gnome
-@dirrm share/glade
+@dirrm share/gnome/glade/gtk
+@dirrm share/gnome/glade/gnome
+@dirrm share/gnome/glade
