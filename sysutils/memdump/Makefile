@@ -15,10 +15,6 @@ COMMENT=	Forensic utility for memory-dumping
 
 .include <bsd.port.pre.mk>
 
-.if ( ${OSVERSION} >= 500000 )
-IGNORE=		Only supports FreeBSD up to 4.x (yet?)
-.endif
-
 ALL_TARGET=	what
 
 PLIST_FILES=	bin/memdump
