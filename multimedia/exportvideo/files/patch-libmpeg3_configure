@@ -1,0 +1,13 @@
+--- libmpeg3/configure.orig	Mon Feb 12 22:35:19 2001
++++ libmpeg3/configure	Mon Nov  1 09:41:06 2004
+@@ -43,8 +43,8 @@
+ EOF
+ 
+ 
+-if test -z "$CFLAGS"; then
+-	echo >> global_config "CFLAGS = -O2 -D_FILE_OFFSET_BITS=64 -funroll-loops -fomit-frame-pointer -malign-loops=2 -malign-jumps=2 -malign-functions=2 -march=i486 -I/usr/local/include"
++if true; then
++	echo >> global_config "CFLAGS = $CFLAGS -D_FILE_OFFSET_BITS=64 -I/usr/local/include"
+ fi
+ 
+ cat >> global_config << EOF

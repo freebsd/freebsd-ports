@@ -1,0 +1,29 @@
+--- video/Makefile.orig	Fri Oct 26 03:26:40 2001
++++ video/Makefile	Mon Nov  1 09:41:06 2004
+@@ -1,4 +1,4 @@
+-include ../global_config
++include ./global_config
+ CC = gcc
+ #CFLAGS += -g -I../libmpeg3 -I../quicktime
+ CFLAGS += -I../libmpeg3 -I../quicktime 
+@@ -17,7 +17,8 @@
+  ifneq ($(strip $(DYNAMIC_LOADING)),)
+   PLUGINS+= codecs/rtjpeg_input.so 
+  else
+-  OBJ+= rtjpeg_input.o \
++  OBJ+= memmem.o \
++	rtjpeg_input.o \
+ 	rtjpeg_plugin.o \
+ 	../rtjpeg/RTjpegN.o \
+ 	../rtjpeg/minilzo.o 
+@@ -99,8 +100,8 @@
+ encode: $(PLUGINS) $(OBJ) ../global_config
+ 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJ) ../libmpeg3/libmpeg3.a ../quicktime/libquicktime.a -lpthread -lpng -lz -lm -L/usr/local/lib $(LIBAVIPLAYORNOT)
+ 
+-exportvideo: $(PLUGINS) $(OBJ) ../global_config 
+-	if [ \"x$(VIDEO_EXPORT_ONLY)\" = \"x\" ]; then VIDEO_EXPORT_ONLY=1 make exportvideo; else $(CXX) $(CFLAGS) -o $@ $(OBJ) ../libmpeg3/libmpeg3.a ../quicktime/libquicktime.a -lpthread -lpng -lz -lm -L/usr/local/lib $(LIBAVIPLAYORNOT) $(LDFLAGS); fi
++exportvideo: $(PLUGINS) $(OBJ)
++	$(CXX) $(CFLAGS) -o $@ $(OBJ) ../libmpeg3/libmpeg3.a ../quicktime/libquicktime.a -pthread -lpng -lz -lm -L/usr/local/lib $(LIBAVIPLAYORNOT) $(LDFLAGS)
+ 
+ .s.o:
+ 	nasm -f elf $*.s

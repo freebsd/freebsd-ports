@@ -1,0 +1,109 @@
+#!/bin/sh
+#
+# Trancode NUV to DVD compliant MPEG2 (PAL or NTSC)
+#
+ 
+usage(){
+    echo "Usage: `basename $0` [-h] | [-N] [-G WxH] nuvfile"
+    echo
+    echo "  -N   Set TV norm to NTSC (default: PAL)"
+    echo
+    echo "  -G   Set output geometry (Width x Height)"
+    echo "       Admissible scales:"
+    echo "       +---------------------------------------+"
+    echo "       | PAL               | NTSC              |"
+    echo "       +---------------------------------------+"
+    echo "       | 352x288 (default) | 352x240 (default) |"
+    echo "       | 352x576           | 352x480           |"
+    echo "       | 704x576           | 704x480           |"
+    echo "       | 720x576           | 720x480           |"
+    echo "       +---------------------------------------+"
+}
+
+args=`getopt hNG: $*`
+if [ $? != 0 ]; then
+    usage
+    exit 1
+fi
+set -- $args
+
+for i ; do
+    case "$i" in
+	-h)
+	usage
+	exit 1
+	;;
+	-N)
+	tvnorm="NTSC"
+	shift
+	;;
+	-G) 
+	scale="$2" 
+	shift ; shift
+	;;
+	--) shift ; break
+	;;
+    esac
+done
+
+if [ "$tvnorm" = "NTSC" ]; then
+    res="352x240"
+else
+    res="352x288"
+    tvnorm="PAL"
+fi
+
+if [ "$scale" ]; then
+    case $tvnorm in
+	PAL)
+	case $scale in
+	    352x288|352x576|704x576|720x576) res=$scale
+	    ;;
+	    *) 
+	    echo "Scale \"$scale\" is not admissible for $tvnorm." >&2
+	    exit 1
+	    ;;
+	esac
+	;;
+	NTSC)
+	case $scale in
+	    352x240|352x480|704x480|720x480) res=$scale
+	    ;;
+	    *) 
+	    echo "Scale \"$scale\" is not admissible for $tvnorm." >&2
+	    exit 1
+	    ;;
+	esac
+	;;
+    esac
+fi
+
+# Allow to specify the input filename
+# with or without the .nuv extension.
+movie=""
+[ "${1%.*}.nuv" = "$1" ] && movie=${1%.*}
+[ "$movie" ] || movie=$1
+if [ "$movie" -a ! -e $movie.nuv ]; then
+    echo "No such file: $movie.nuv" >&2
+    exit 1
+elif [ -z "$movie" ]; then
+    usage
+    exit 1
+fi
+
+# We need nuvplay (provided by nuppelvideo), lame, as well as
+# mpeg2enc and mplex (provided by mjpegtools) for transcoding.
+retval=0
+for PROG in nuvplay lame mpeg2enc mplex ; do
+    which -s $PROG || retval=$?
+    if [ $retval -ne 0 ]; then
+	echo "Error: could't find '$PROG' on this system." >&2
+	exit 1
+    fi
+done
+
+nuvplay -e $movie.nuv | lame -s 44.1 -b 192 -q 2 -rx - $movie.mp3
+exportvideo -Y 2 -G $res $movie.nuv | mpeg2enc -f 8 -o $movie.m2v
+mplex -f 8 -o ${movie}_%d.mpg $movie.m2v $movie.mp3
+
+exit 0

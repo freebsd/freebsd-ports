@@ -1,0 +1,24 @@
+--- rtjpeg/Makefile.orig	Thu Jun 21 23:28:03 2001
++++ rtjpeg/Makefile	Mon Nov  1 09:41:06 2004
+@@ -1,5 +1,5 @@
+ CC=gcc
+-CFLAGS= -g -Wall -O3 -mcpu=pentium -march=pentium -funroll-loops -fexpensive-optimizations -finline
++#CFLAGS= -g -Wall -O3 -mcpu=pentium -march=pentium -funroll-loops -fexpensive-optimizations -finline
+ 
+ V4LDIR=/usr/src/linux/drivers/char/
+ COPTS=$(CFLAGS) -I$(V4LDIR)
+@@ -8,12 +8,12 @@
+ all:	RTjpeg.o minilzo.o
+ 
+ RTjpeg.o:
+-	$(CC) -c $(COPTS) -fPIC RTjpeg.c
++	$(CC) -c $(CFLAGS) -fPIC RTjpeg.c
+ 
+ #	$(CC) -c $(COPTSRT) -fPIC RTjpeg.c
+ 
+ minilzo.o: minilzo.c minilzo.h
+-	$(CC) $(COPTS) -fPIC -O3 -fexpensive-optimizations -funroll-loops -finline-functions -c minilzo.c
++	$(CC) $(CFLAGS) -fPIC -c minilzo.c
+ 
+ clean:	
+ 	rm -f *.o

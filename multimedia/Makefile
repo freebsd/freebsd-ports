@@ -21,6 +21,7 @@
     SUBDIR += dvts
     SUBDIR += emovix
     SUBDIR += enjoympeg
+    SUBDIR += exportvideo
     SUBDIR += ffmpeg
     SUBDIR += fxtv
     SUBDIR += gaim-xmms-remote
