@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	oaf
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.6.10
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/oaf
+DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GLIB=	yes
@@ -23,11 +24,12 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOMELIBS=	yes
 CONFIGURE_ARGS= --enable-static --enable-shared \
-		--disable-more-warnings
+		--disable-more-warnings --disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=		oafd.1
+MAN1=	oafd.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
