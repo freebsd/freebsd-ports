@@ -3,7 +3,7 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/18 03:47:32 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.00A
@@ -27,13 +27,6 @@ WRKSRC=		${WRKDIR}/bochs-${DATE}
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
-
-pre-patch:
-	@${SED} -e 's!LOCAL_PREFIX!${PREFIX}!' patches/patch-aa > patches/patch-aa.new
-	@${MV} patches/patch-aa.new patches/patch-aa
-
-	@${SED} -e 's!LOCAL_PREFIX!${PREFIX}!' pkg/MESSAGE > pkg/MESSAGE.new
-	@${MV} pkg/MESSAGE.new pkg/MESSAGE
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/bin
