@@ -12,12 +12,9 @@ SNAPVER=	${SNAPDATE:S/-//g}
 PORTNAME=	gcc-30snap
 PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE}/  \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
-		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
-		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
+		${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
 DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
@@ -42,11 +39,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-##WRKSRC=		${WRKDIR}/gcc-${SNAPVER}
-##CONFIGURE_WRKSRC=	${WRKDIR}/build
-##BUILD_WRKSRC=		${WRKDIR}/build
-##INSTALL_WRKSRC=		${WRKDIR}/build
-##CONFIGURE_SCRIPT=	${WRKSRC}/configure
 EGCS_REV=	3.0
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
@@ -58,7 +50,6 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${TARGLIB}/include/g++
-#CONFIGURE_ARGS+=	--program-prefix=e
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .else
@@ -72,18 +63,15 @@ CONFIGURE_ARGS+= --enable-threads=posix
 ALL_TARGET=	bootstrap
 MAN1=		cpp30.1 g++30.1 g77-30.1 gcc30.1 gcov30.1
 
+pre-fetch:
+	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
+
 pre-configure:
-	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	    ${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
-	    ${SRCDIR}/gcc/config/freebsd.h )
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
-	##@touch ${WRKSRC}/gcc/configure
-	##@touch ${WRKSRC}/gcc/cstamp-h.in
 	@touch ${SRCDIR}/gcc/configure
 	@touch ${SRCDIR}/gcc/cstamp-h.in
 	@${MKDIR} ${CONFIGURE_WRKSRC}
-	#${RM} -rf ${SRCDIR}/libjava
 
 pre-build:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
@@ -92,7 +80,7 @@ pre-install:
 	${MKDIR} ${PREFIX}/info
 
 post-install:
-	@${RM} -f ${PREFIX}/bin/c++
+	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
@@ -106,24 +94,22 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-	${MV} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc30
-	${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/g++30
-	${MV} -f ${PREFIX}/bin/g77 ${PREFIX}/bin/g77-30
-	${MV} -f ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt30
-	${MV} -f ${PREFIX}/bin/gcov ${PREFIX}/bin/gcov30
+.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}30
+	-( test -e ${PREFIX}/man/man1/${file}.1 \
+		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+		${PREFIX}/man/man1/${file}30.1 )
+.endfor
+.for file in g77
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-30
+	${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-30.1
+.endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
-	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
-	${RM} -f ${PREFIX}/bin/cpp
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
 	${MV} -f ${PREFIX}/lib/libstdc++.* ${PREFIX}/lib/libsupc++.* ${TARGLIB}
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	${MV} -f ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc30.1
-	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++30.1
-	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77-30.1
-	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/cpp30.1
-	${MV} -f ${PREFIX}/man/man1/gcov.1 ${PREFIX}/man/man1/gcov30.1
 #.if defined(WANT_SHAREDLIBS)
 #	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 #.endif
