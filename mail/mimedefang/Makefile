@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -33,7 +33,7 @@ IGNORE=	"requires libmilter installed in the base system, upgrade your FreeBSD"
 .endif
 
 post-install:
-	${INSTALL} -m 755 ${FILESDIR}/mimedefang.sh ${PREFIX}/etc/rc.d/mimedefang.sh
+	${INSTALL_SCRIPT} ${FILESDIR}/mimedefang.sh ${PREFIX}/etc/rc.d/mimedefang.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}

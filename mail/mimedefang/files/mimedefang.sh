@@ -1,6 +1,6 @@
 #!/bin/sh -
 #
-#	initialization/shutdown script for DrWeb daemon and DrWeb mail filter
+#	initialization/shutdown script for MIMEDefang mail filter
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
@@ -30,14 +30,13 @@ MIMEDEFANG=${PREFIX}/bin/mimedefang
 MULTIPLEX=${PREFIX}/bin/mimedefang-multiplexor
 
 # MIMEDefang socket
-SOCK=${SPOOLDIR}/mimedefang.sock
-
+SOCK=/var/run/mimedefang.sock
 # MIMEDefang-multiplexor socket
-MXSOCK=${SPOOLDIR}/mdefang-mx.sock
-
+MXSOCK=/var/run/mdefang-mx.sock
 # PID file location
-PIDFILE=${SPOOLDIR}/mimedefang.pid
-
+PIDFILE=/var/run/mimedefang.pid
+# Multiplexor PID file location
+MXPIDFILE=/var/run/mdefang-mx.pid
 # MIMEDefang owner
 USER=mailnull
 
@@ -47,16 +46,15 @@ USER=mailnull
 # See how we were called.
 case "$1" in
   start)
-	# Clean spool directory
-	su -m ${USER} -c "rm -f ${PIDFILE} ${SOCK} ${MXSOCK}"
-	# Start daemons.
+	# Remove socket if it exists
+	rm -f ${SOCK}
 	# Start multiplexor
-	su -m ${USER} -c "$MULTIPLEX -x $MAX_SLAVES -m $MIN_SLAVES -b $BUSY_TIMEOUT -i $IDLE_TIMEOUT $DO_LOGGING $STATS_LOG $FLUSH_STATS -s ${MXSOCK}"
+	$MULTIPLEX -U ${USER} -x $MAX_SLAVES -m $MIN_SLAVES -b $BUSY_TIMEOUT -i $IDLE_TIMEOUT $DO_LOGGING $STATS_LOG $FLUSH_STATS -s ${MXSOCK} -p ${MXPIDFILE}
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] && exit 1
 	echo -n " mimedefang-multiplexor"
 
-	su -m ${USER} -c "$MIMEDEFANG -m ${MXSOCK} -p ${SOCK} -P ${PIDFILE}"
+	$MIMEDEFANG -U ${USER} -m ${MXSOCK} -p ${SOCK} -P ${PIDFILE}
 	RETVAL=$?
 	[ $RETVAL -ne 0 ] && exit 1
 	echo -n " mimedefang"
@@ -65,8 +63,7 @@ case "$1" in
 	# Stop daemons.
 	kill `cat ${PIDFILE}`
 	echo -n " mimedefang"
-	kill `ps ax | grep mimedefang-multiplexor | grep -v grep | grep -v sh | awk '{print $1}'`
-	su -m ${USER} -c "rm -f ${PIDFILE} ${SOCK} ${MXSOCK}"
+	kill `cat ${MXPIDFILE}`
 	echo -n " mimedefang-multiplexor"
 	;;
 	restart)
