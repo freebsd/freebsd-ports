@@ -5,24 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=		MT
+PORTNAME=	MT
 PORTVERSION=	2.661
-PORTREVISION=	2
-CATEGORIES=		www
+PORTREVISION=	3
+CATEGORIES=	www
+MASTER_SITES=	http://www.movabletype.org/downloads/
 .if defined(WITH_OLD_DISTFILE)
-DISTNAME=		${PORTNAME}-${PORTVERSION}-full-lib
+DISTNAME=	${PORTNAME}-${PORTVERSION}-full-lib
 .endif
+DISTFILES=	nofollow.tar.gz ${DISTNAME}.tar.gz
 
-MAINTAINER=		arved@FreeBSD.org
-COMMENT=		A web-based personal publishing system for weblogs
+MAINTAINER=	arved@FreeBSD.org
+COMMENT=	A web-based personal publishing system for weblogs
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-				${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
-				${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
+		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 RUN_DEPENDS+=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-				${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
 .endif
 
@@ -30,33 +32,33 @@ DATADIR=		www/data/mt
 CGIDIR=			www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
-DB_DIR?=			/var/db/mysql/blog
+DB_DIR?=		/var/db/mysql/blog
 USE_MYSQL=		yes
 .elif defined(WITH_POSTGRES)
-DB_DIR?=			${PREFIX}/pgsql/data/blog
+DB_DIR?=		${PREFIX}/pgsql/data/blog
 # Or somewhere defined in $PGDATA
 
 RUN_DEPENDS+=	postgres:${PORTSDIR}/databases/postgresql7
 .elif defined(WITH_SQLITE)
-DB_DIR?=			${PREFIX}/${CGIDIR}/db
+DB_DIR?=	${PREFIX}/${CGIDIR}/db
 RUN_DEPENDS+=\
 	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .else
-DB_DIR?=			${PREFIX}/${CGIDIR}/db
+DB_DIR?=	${PREFIX}/${CGIDIR}/db
 WITH_DEFAULTDB=	yes
 .endif
 
-PLIST_SUB+=		DATADIR=${DATADIR} CGIDIR=${CGIDIR}
+PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR}
 
 USE_PERL5_RUN=	yes
-NO_BUILD=		yes
-RESTRICTED=		License does not permit distribution
+NO_BUILD=	yes
+RESTRICTED=	License does not permit distribution
 
 .if defined(WITH_OLD_DISTFILE)
-PLIST_SUB+=		OLD=""
+PLIST_SUB+=	OLD=""
 .else
-WRKSRC=			${WRKDIR}/MT-${PORTVERSION}-full-lib
-PLIST_SUB+=		OLD="@comment "
+WRKSRC=		${WRKDIR}/MT-${PORTVERSION}-full-lib
+PLIST_SUB+=	OLD="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
@@ -131,6 +133,8 @@ do-install:
 	@cd ${WRKSRC}; ${INSTALL_DATA} LICENSE LICENSE-COMMERCIAL \
 		${PREFIX}/${DATADIR}
 .endif
+	${MKDIR} ${PREFIX}/${CGIDIR}/plugins
+	${INSTALL_DATA} ${WRKDIR}/nofollow/plugins/nofollow.pl ${PREFIX}/${CGIDIR}/plugins
 .if defined(WITH_DEFAULTDB)
 	@${MKDIR} -m 755 ${DB_DIR}
 	@${CHOWN} -R www:www ${DB_DIR}
