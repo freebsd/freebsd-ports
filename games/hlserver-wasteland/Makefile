@@ -7,6 +7,7 @@
 
 PORTNAME=	wasteland
 PORTVERSION=	0.2b
+PORTREVISION=	1
 MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/modifications/wasteland/ \
 		ftp://ftp.gigabell.net/pub/exp/hl/mod/wastelandhl/ \
 		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/wastelandhl/ \
