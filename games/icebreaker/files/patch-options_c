@@ -1,0 +1,12 @@
+$OpenBSD: patch-options_c,v 1.1 2003/06/17 01:32:49 avsm Exp $
+--- options.c.orig	Tue Jun 17 02:20:08 2003
++++ options.c	Tue Jun 17 02:21:20 2003
+@@ -71,7 +71,7 @@ int readoptions(void)
+ 			linebuf[i]=tolower(linebuf[i]);
+ 		}
+ 			
+-		if (sscanf(linebuf,"%20s %10s",optbuf,valbuf)==2)
++		if (sscanf(linebuf,"%19s %9s",optbuf,valbuf)==2)
+ 		{
+ 			if (!strcmp(optbuf,"sound"))
+ 			{
