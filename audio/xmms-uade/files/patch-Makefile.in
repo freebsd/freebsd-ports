@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Feb 15 18:28:42 2003
-+++ Makefile.in	Sun Feb 16 01:18:56 2003
+--- Makefile.in.orig	Thu Aug 14 20:18:51 2003
++++ Makefile.in	Fri Aug 15 12:19:17 2003
 @@ -1,6 +1,7 @@
  # Top-level Makefile for UADE
  
@@ -8,16 +8,16 @@
  
  FINALBINDIR = {BINDIR}
  FINALDATADIR = {DATADIR}
-@@ -16,10 +17,10 @@
- 	@test "{USEXMMS}" = "no" || $(MAKE) plugin
+@@ -15,10 +16,10 @@
+ 	@chmod u+rx uade
  
  uade-bin:	
 -	@ cd src && $(MAKE)
 +	@ cd src && CFLAGS='$(CFLAGS)' $(MAKE)
  
  plugin:	
--	@ cd plugindir && $(MAKE)
-+	@ cd plugindir && CFLAGS='$(CFLAGS)' $(MAKE)
+-	@ cd plugindir && test "{USEXMMS}" = "no" || $(MAKE)
++	@ cd plugindir && test "{USEXMMS}" = "no" || CFLAGS='$(CFLAGS)' $(MAKE)
  
  config.h:	
  	@echo ""

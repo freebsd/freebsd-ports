@@ -1,11 +1,19 @@
 lib/xmms/Input/libuade.la
 lib/xmms/Input/libuade.so
+share/uade/players/ENV/EaglePlayer/ahx
+share/uade/players/ENV/EaglePlayer/EP-TFMX_7V.cfg
+share/uade/players/ENV/EaglePlayer/EP-TFMX_Pro.cfg
+share/uade/players/ENV/EaglePlayer/EP-Mugician_II.cfg
+share/uade/players/ENV/EaglePlayer/ahx.waves
+share/uade/players/ENV/EaglePlayer/ems_v6.cfg
+share/uade/players/ENV/EaglePlayer/ems_v6.cfg.txt
 share/uade/db-content
 share/uade/players/AHX
 share/uade/players/AMComposer1.2
 share/uade/players/ActionAmics
 share/uade/players/Art&Magic
 share/uade/players/ArtOfNoise
+share/uade/players/ArtOfNoise8
 share/uade/players/AudioSculpture
 share/uade/players/BeathovenSynthesizer
 share/uade/players/BennDaglish
@@ -22,15 +30,9 @@ share/uade/players/DavidWhittaker
 share/uade/players/Delta2.0
 share/uade/players/DeltaMusic
 share/uade/players/Desire
+share/uade/players/DigitalSonix_Chrome
 share/uade/players/DynamicSynthesizer
 share/uade/players/EMS_v6
-share/uade/players/ENV:EaglePlayer/EP-Mugician_II.cfg
-share/uade/players/ENV:EaglePlayer/EP-TFMX_7V.cfg
-share/uade/players/ENV:EaglePlayer/EP-TFMX_Pro.cfg
-share/uade/players/ENV:EaglePlayer/ems_v6.cfg
-share/uade/players/ENV:EaglePlayer/ems_v6.cfg.txt
-share/uade/players/ENV:EaglePlayer/ahx
-share/uade/players/ENV:EaglePlayer/ahx.waves
 share/uade/players/FC1.3
 share/uade/players/FC1.4
 share/uade/players/Fred
@@ -91,6 +93,7 @@ share/uade/players/SIDMon1.0
 share/uade/players/SIDMon2.0
 share/uade/players/SOPROL
 share/uade/players/SUNtronic
+share/uade/players/ScottJohnston
 share/uade/players/SeanConnolly
 share/uade/players/SeanConran
 share/uade/players/Silmarils
@@ -102,6 +105,7 @@ share/uade/players/SoundMon2.2
 share/uade/players/SoundPlayer
 share/uade/players/Soundcontrol
 share/uade/players/Soundfactory
+share/uade/players/SoundMaster
 share/uade/players/Special_FX
 share/uade/players/SpeedyA1System
 share/uade/players/SpeedySystem
@@ -136,6 +140,8 @@ bin/pwrap.pl
 lib/xmms/doc/uade-0.80/INSTALL.alpha
 lib/xmms/doc/uade-0.80/INSTALL.MorphOS
 lib/xmms/doc/uade-0.80/amplifiers.txt
+lib/xmms/doc/uade-0.80/local-slaves.txt
+lib/xmms/doc/uade-0.80/INSTALL.darwin
 lib/xmms/doc/uade-0.80/players/WantedTeam/WT_Players.txt
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_BennDaglish.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_BladePacker.readme
@@ -145,6 +151,7 @@ lib/xmms/doc/uade-0.80/players/WantedTeam/EP_DWhittaker.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_DaveLowe.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_DaveLoweNew.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_Desire.readme
+lib/xmms/doc/uade-0.80/players/WantedTeam/EP_DigitSonix.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_DynamicSynt.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_FredGray.readme
 lib/xmms/doc/uade-0.80/players/WantedTeam/EP_HowieDavies.readme
@@ -222,6 +229,8 @@ lib/xmms/doc/uade-0.80/COPYING
 @dirrm lib/xmms/doc/uade-0.80/players
 @dirrm lib/xmms/doc/uade-0.80
 @dirrm lib/xmms/doc
-@dirrm share/uade/players/ENV:EaglePlayer
+@dirrm share/uade/players/ENV/EaglePlayer
+@dirrm share/uade/players/ENV
+@dirrm share/uade/players/S
 @dirrm share/uade/players
 @dirrm share/uade

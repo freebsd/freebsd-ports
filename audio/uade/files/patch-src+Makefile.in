@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Tue May 13 17:31:53 2003
-+++ src/Makefile.in	Tue May 13 22:59:48 2003
-@@ -2,7 +2,7 @@
- 
- ARCHFLAGS = {ARCHFLAGS}
+--- src/Makefile.in.orig	Thu Aug 14 20:18:51 2003
++++ src/Makefile.in	Fri Aug 15 12:22:07 2003
+@@ -7,7 +7,7 @@
+ SDLLIBS= {SDLLIBS}
+ SOUNDLIBS= {SOUNDLIBS}
  
 -CFLAGS	= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS) -O2
 +CFLAGS	+= -fomit-frame-pointer  -Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes -DGCCCONSTFUNC="__attribute__((const))" -D_REENTRANT -fno-exceptions -fno-strength-reduce -DREGPARAM= -D__inline__=inline $(ARCHFLAGS) -O2
+ LIBRARIES = -lm $(ARCHLIBS) $(SDLLIBS) $(SOUNDLIBS)
  
- SDLLIBS= {SDLLIBS}
- SDLFLAGS= {SDLFLAGS}
+ .SUFFIXES: .a .o .c .h .S

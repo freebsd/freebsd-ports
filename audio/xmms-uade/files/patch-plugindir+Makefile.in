@@ -1,11 +1,11 @@
---- plugindir/Makefile.in.orig	Tue May 13 17:31:52 2003
-+++ plugindir/Makefile.in	Tue May 13 22:29:02 2003
-@@ -26,7 +26,7 @@
+--- plugindir/Makefile.in.orig	Thu Aug 14 20:18:51 2003
++++ plugindir/Makefile.in	Fri Aug 15 12:21:02 2003
+@@ -30,7 +30,7 @@
  
- UADEDEPS = uade.h defaults.h gui.h ../decrunch/decrunch.h
+ UADEDEPS = uade.h defaults.h gui.h $(DECDIR)/decrunch.h
  INCLUDEFLAGS = -I. -I../osdep -I../effects -I../src/include $(GLIBFLAGS) $(GTKFLAGS) $(XMMSFLAGS) $(INCLUDEFLAG)
--CFLAGS = -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall
-+CFLAGS += -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall
+-CFLAGS = -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall $(DEBUGFLAGS)
++CFLAGS += -O2 -DHAVE_CONFIG_H -D_REENTRANT -DVERSION=\"$(VERSION)\" -W -Wall $(DEBUGFLAGS)
  LDFLAGS = $(LIBFLAG) $(GLIBLIBS) $(XMMSLIBS)
+ DECFLAGS  = -c -O2 -W -Wall -Wno-implicit-int -finline-functions {ARCHFLAGS} $(DEBUGFLAGS)
  
- LIBTOOL = libtool
