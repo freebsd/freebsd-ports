@@ -1,5 +1,5 @@
 bin/kterm16c
-lib/X11/app-defaults/KTerm.16-colors
+lib/X11/app-defaults/KTerm
 lib/X11/fonts/misc/vga.pcf.gz
 @exec /usr/X11R6/bin/mkfontdir %B
 share/doc/kterm16c/dot.termcap
