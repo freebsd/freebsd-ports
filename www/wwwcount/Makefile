@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/05/16 21:15:35 ache Exp $
+# $Id: Makefile,v 1.3 1996/05/27 03:42:47 asami Exp $
 #
 
 # WWW site: http://www.semcor.com/~muquit/Count.html
@@ -17,6 +17,7 @@ MASTER_SITES=   ftp://warm.semcor.com/pub/muquit/wwwcount2.3/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+NO_PACKAGE=	yes	# hostname compiled in
 GNU_CONFIGURE=  yes
 IS_INTERACTIVE= yes
 
