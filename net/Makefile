@@ -146,6 +146,7 @@
     SUBDIR += gnut
     SUBDIR += googolplex
     SUBDIR += gopher
+    SUBDIR += gps
     SUBDIR += gq
     SUBDIR += gsk
     SUBDIR += gtic
