@@ -1,2 +1,2 @@
 A sample configuration file has be installed in
-${PREFIX}/share/examples/yafic
+@@PREFIX@@/share/examples/yafic
