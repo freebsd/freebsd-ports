@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellmss
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
@@ -33,11 +34,7 @@ PLIST_FILES=	libexec/gkrellm2/plugins/gkrellmss.so \
 post-patch:
 	@${REINPLACE_CMD} -e 's|= -O2|=|g ; \
 		 s|= gcc|+=|g' ${WRKSRC}/src/Makefile
-
-do-configure:
-	@${ECHO_CMD} "" > ${WRKSRC}/src/configure.h
-	@${ECHO_CMD} "#define HAVE_ESOUND 1" >> ${WRKSRC}/src/configure.h
-	@${ECHO_CMD} "#define HAVE_FFTW3 1" >> ${WRKSRC}/src/configure.h
+	@${REINPLACE_CMD} -e 's|PKG_LIBS|PKG_LIB|g' ${WRKSRC}/src/configure
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/gkrellmss.so \
