@@ -13,9 +13,9 @@ CATEGORIES=	shells
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	bash
+DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz
 .if !defined(NOPORTDOCS)
-DISTFILES=	bash-${PORTVERSION:C/\....$//}.tar.gz \
-		bash-doc-${PORTVERSION:C/\....$//}.tar.gz
+DISTFILES+=	bash-doc-${PORTVERSION:C/\....$//}.tar.gz
 .endif
 
 PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/ \
