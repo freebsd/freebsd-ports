@@ -25,9 +25,8 @@ LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 .endif
 
 NO_BUILD=	YES
-PHP4_PORT?=	www/mod_php4
+PHP4_PORT?=	www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
-NO_PACKAGE=	need a matching version of mod_php
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}
 ROOTFILES=	index.php3 test.php3 goto.php3
