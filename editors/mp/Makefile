@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	3.1.5
+PORTVERSION=	3.1.7
 CATEGORIES=	editors
-MASTER_SITES=	http://www.triptico.com/download/
+MASTER_SITES=	http://triptico.dhis.org/download/
 
 MAINTAINER=	markp@FreeBSD.org
 
