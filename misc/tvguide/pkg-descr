@@ -2,5 +2,3 @@ tvguide is a Perl script that reads the tv listings from tvguide.com
 and outputs them in a table format.
 
 WWW: http://www.cherrynebula.net/tvguide.html
-
-[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG> ]

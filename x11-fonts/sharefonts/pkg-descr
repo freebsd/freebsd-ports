@@ -13,5 +13,3 @@ or by adding it to your X-server configuration file (usually
 NOTE: These fonts are SHAREWARE.  You must pay a fee if you find that you
 are using them a lot.  Please read the *.shareware files in
 /usr/X11R6/lib/X11/fonts/sharefont for each font's licensing restrictions.
-
-Donald Burr <dburr@FreeBSD.ORG>

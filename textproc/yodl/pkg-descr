@@ -4,5 +4,3 @@ preparation language with converters for ASCII, man, latex, SGML, and HTML.
 YODL implements an easy-to-use, yet powerful document preparation language.
 It also includes converters to convert documents written in that language to
 several formats, including ASCII, man page format, LaTeX, dvi, SGML, and HTML.
-
-[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]

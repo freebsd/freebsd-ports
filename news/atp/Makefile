@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/bbs/mail
 DISTFILES=		${DISTNAME}-src.tar.gz
 
-MAINTAINER=		dburr@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A QWK message packet reader and composer for FreeBSD
 
 RUN_DEPENDS=		zip:${PORTSDIR}/archivers/zip \

@@ -4,5 +4,3 @@ download all of your new e-mail and board messages as a QWK packet,
 read them offline, compose replies to selected messages off-line,
 then upload all of your replies as one QWK reply packet the next
 time you call the BBS.
-
-[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]

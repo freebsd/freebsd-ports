@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	news graphics
 MASTER_SITES=	http://download.sourceforge.net/PicMonger/
 
-MAINTAINER=	dburr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated USENET (NNT) picture decoding client
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
