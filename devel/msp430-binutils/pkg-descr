@@ -1,0 +1,11 @@
+GNU binutils for TI's msp430 MCUs cross-development
+
+This brings the binutils (assembel, linker and others) for the Texas
+Instruments MSP430 16-bit RISC-like family of microcontrollers.
+
+Prerequisite for the GCC for MSP430 cross-compilation environment.
+
+binutils site: http://sources.redhat.com/binutils/
+MSP430 site:   http://www.ti.com/msp430/
+
+WWW: http://mspgcc.sf.net/
