@@ -14,13 +14,14 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 MAINTAINER=	billf@FreeBSD.org
 
 HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-PATCHFILES=	mtr-041-v6-20000113.diff.gz
+PATCHFILES=	mtr-041-v6-20000127a.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
