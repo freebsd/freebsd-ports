@@ -12,6 +12,7 @@
     SUBDIR += arla
     SUBDIR += arping
     SUBDIR += arpwatch
+    SUBDIR += arts++
     SUBDIR += ascend-radius
     SUBDIR += bb
     SUBDIR += bind8
