@@ -1,14 +1,10 @@
 bin/gnome-dictionary
 bin/gnome-search-tool
 bin/gnome-system-log
-etc/gconf/gconf.xml.defaults/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-dictionary/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-search-tool/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-search-tool/select/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-system-log/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-search-tool/select/%gconf.xml
