@@ -7,10 +7,8 @@
 
 PORTNAME=	existence
 PORTVERSION=	0.1.4.0
-MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/existence/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/existence/
-
-DISTNAME=	X-beta1.4.linux
+MASTER_SITES=	http://uml-pub.ists.dartmouth.edu/halflife/linux/
+DISTNAME=	x-beta1.4.linux
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Existence (Matrix alike) full server package for Linux
