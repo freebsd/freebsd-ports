@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/clients/uclient/ \
 		ftp://two.woovis.com/pub/worldforge/clients/uclient/ \
 		ftp://two.woovis.com/pub/worldforge/acorn/0.3/media/ \
 		http://dreadnought.res.cmu.edu/worldforge/clients/uclient/ \
-		http://dreadnought.res.cmu.edu/worldforge/acorn/0.3/media/ \
+		http://dreadnought.res.cmu.edu/worldforge/acorn/0.3/media/
 DISTFILES=	uclient-graphics-0.9.2.tar.gz \
 		uclient-sound-0.9.2.tar.gz \
 		${PORTNAME}-${PORTVERSION}-2.tar.gz
