@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	graphthing
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	math
 MASTER_SITES=	http://graph.seul.org/
 
@@ -22,7 +22,5 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-CONFIGURE_ARGS=	--without-included-gettext
 
 .include <bsd.port.mk>
