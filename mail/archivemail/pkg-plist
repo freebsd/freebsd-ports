@@ -1,1 +1,9 @@
 bin/archivemail
+%%PORTDOCS%%share/doc/archivemail/CHANGELOG
+%%PORTDOCS%%share/doc/archivemail/FAQ
+%%PORTDOCS%%share/doc/archivemail/README
+%%PORTDOCS%%share/doc/archivemail/TODO
+%%PORTDOCS%%@dirrm share/doc/archivemail
+share/examples/archivemail/archivemail_all
+share/examples/archivemail/test_archivemail.py
+@dirrm share/examples/archivemail

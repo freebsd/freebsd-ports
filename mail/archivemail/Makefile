@@ -7,6 +7,7 @@
 
 PORTNAME=	archivemail
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,5 +18,17 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 MAN1=		archivemail.1
+DOCS=		CHANGELOG FAQ README TODO
+
+post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/archivemail_all ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/test_archivemail.py ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
