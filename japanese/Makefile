@@ -237,10 +237,6 @@
     SUBDIR += pips900
     SUBDIR += plain2
     SUBDIR += plan
-    SUBDIR += platex-common
-    SUBDIR += platex-euc
-    SUBDIR += platex-jis
-    SUBDIR += platex-sjis
     SUBDIR += platex209-euc
     SUBDIR += platex209-jis
     SUBDIR += platex209-sjis
