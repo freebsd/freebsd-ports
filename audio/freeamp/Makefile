@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
