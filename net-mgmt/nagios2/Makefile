@@ -7,6 +7,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	1.0.b3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nagios
@@ -23,13 +24,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
 CONFIGURE_ARGS=	--with-command-user=nagios \
-		--with-command-grp=nogroup \
+		--with-command-grp=www \
 		--with-nagios-user=nagios \
 		--with-nagios-grp=nagios \
 		--with-template-objects \
 		--with-template-extinfo \
 		--with-init-dir=${PREFIX}/etc/rc.d \
-		--sbindir=${PREFIX}/share/nagios/sbin \
+		--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/netsaint \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \

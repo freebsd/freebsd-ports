@@ -21,6 +21,22 @@ etc/nagios/serviceextinfo.cfg-sample
 etc/nagios/services.cfg-sample
 etc/nagios/timeperiods.cfg-sample
 etc/rc.d/nagios.sh
+share/nagios/cgi-bin/avail.cgi
+share/nagios/cgi-bin/cmd.cgi
+share/nagios/cgi-bin/config.cgi
+share/nagios/cgi-bin/extinfo.cgi
+share/nagios/cgi-bin/histogram.cgi
+share/nagios/cgi-bin/history.cgi
+share/nagios/cgi-bin/notifications.cgi
+share/nagios/cgi-bin/outages.cgi
+share/nagios/cgi-bin/showlog.cgi
+share/nagios/cgi-bin/status.cgi
+share/nagios/cgi-bin/statusmap.cgi
+share/nagios/cgi-bin/statuswml.cgi
+share/nagios/cgi-bin/statuswrl.cgi
+share/nagios/cgi-bin/summary.cgi
+share/nagios/cgi-bin/tac.cgi
+share/nagios/cgi-bin/trends.cgi
 share/nagios/contexthelp/A1.html
 share/nagios/contexthelp/A2.html
 share/nagios/contexthelp/A3.html
@@ -264,22 +280,6 @@ share/nagios/media/critical.wav
 share/nagios/media/hostdown.wav
 share/nagios/media/warning.wav
 share/nagios/robots.txt
-share/nagios/sbin/avail.cgi
-share/nagios/sbin/cmd.cgi
-share/nagios/sbin/config.cgi
-share/nagios/sbin/extinfo.cgi
-share/nagios/sbin/histogram.cgi
-share/nagios/sbin/history.cgi
-share/nagios/sbin/notifications.cgi
-share/nagios/sbin/outages.cgi
-share/nagios/sbin/showlog.cgi
-share/nagios/sbin/status.cgi
-share/nagios/sbin/statusmap.cgi
-share/nagios/sbin/statuswml.cgi
-share/nagios/sbin/statuswrl.cgi
-share/nagios/sbin/summary.cgi
-share/nagios/sbin/tac.cgi
-share/nagios/sbin/trends.cgi
 share/nagios/side.html
 share/nagios/stylesheets/avail.css
 share/nagios/stylesheets/checksanity.css
@@ -298,13 +298,13 @@ share/nagios/stylesheets/summary.css
 share/nagios/stylesheets/tac.css
 share/nagios/stylesheets/trends.css
 @unexec rmdir %D/etc/nagios 2>/dev/null || true
+@dirrm share/nagios/cgi-bin
 @dirrm share/nagios/contexthelp
 @dirrm share/nagios/docs/images
 @dirrm share/nagios/docs
 @dirrm share/nagios/images/logos
 @dirrm share/nagios/images
 @dirrm share/nagios/media
-@dirrm share/nagios/sbin
 @dirrm share/nagios/ssi
 @dirrm share/nagios/stylesheets
 @dirrm share/nagios
