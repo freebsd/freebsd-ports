@@ -15,4 +15,4 @@ share/doc/gnat/html/process.gif
 share/doc/gnat/html/tasks.gif
 share/doc/gnat/html/tooltips.gif
 @dirrm share/doc/gnat/html
-@unexec rmdir %D/share/doc/gnat 2>/dev/null || true
+@dirrm share/doc/gnat

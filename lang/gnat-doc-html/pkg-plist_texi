@@ -3,7 +3,7 @@ share/doc/gnat/texi/cpp.texi
 share/doc/gnat/texi/extend.texi
 share/doc/gnat/texi/gcc.texi
 share/doc/gnat/texi/gcov.texi
-share/doc/gnat/texi/gdb.texinfo
+share/doc/gnat/texi/gfdl.texi
 share/doc/gnat/texi/gnat_rm.texi
 share/doc/gnat/texi/gnat_ug_unx.texi
 share/doc/gnat/texi/gvd.texi
@@ -15,4 +15,4 @@ share/doc/gnat/texi/texinfo.tex
 share/doc/gnat/texi/texiplus.tex
 share/doc/gnat/texi/tm.texi
 @dirrm share/doc/gnat/texi
-@unexec rmdir %D/share/doc/gnat 2>/dev/null || true
+@dirrm share/doc/gnat
