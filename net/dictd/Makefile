@@ -34,7 +34,7 @@ post-patch:
 	@${PERL} -pi -e "s|/usr|${PREFIX}|g" ${WRKSRC}/$i
 .endfor
 	@${PERL} -pi -e "s|%%CFLAGS%%|${CFLAGS}|g" ${WRKSRC}/zlib/Makefile
-	@${PERL} -pi -e "s|[\ \t]T_USER| T_USERNAME|g" ${WRKSRC}/*.[chly]
+	@${PERL} -pi -e "s|([\ \t(])T_USER|\1T_USERNAME|g" ${WRKSRC}/*.[chly]
 
 post-install:
 	@${MKDIR} ${DATADIR}
