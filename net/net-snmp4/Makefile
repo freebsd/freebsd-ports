@@ -46,7 +46,7 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 343"
 .endif
 .if ${OSVERSION} >= 400000
-BROKEN=		"Uses the old VM system interfaces"
+CONFIGURE_ARGS+=	--with-out-mib-modules="ucd-snmp/vmstat_freebsd2 ucd-snmp/memory_freebsd2"
 .endif
 
 SHLIB_VERSION=4
