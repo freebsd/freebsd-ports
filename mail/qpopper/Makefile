@@ -23,7 +23,7 @@ PATCHFILES=     qpopper3.1.2-ipv6-20001214.diff.gz
 PATCH_DIST_STRIP=       -p1
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lioux@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lmd -lutil" \
