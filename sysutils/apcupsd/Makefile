@@ -7,6 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.8.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.apcupsd.org/pub/apcupsd/stable/tar/
 
