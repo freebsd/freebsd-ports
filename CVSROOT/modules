@@ -4039,6 +4039,7 @@ kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
 kino		ports/multimedia/kino
 kinterbasdb	ports/databases/kinterbasdb
+kismet		ports/net-mgmt/kismet
 kisomandel	ports/graphics/kisomandel
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
