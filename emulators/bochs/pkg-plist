@@ -1,49 +1,46 @@
 @comment $FreeBSD$
 bin/bochs
+bin/bxcommit
 bin/bximage
-libexec/bochs.bin
-share/bochs/bios/BIOS-bochs-2-processors
-share/bochs/bios/BIOS-bochs-4-processors
-share/bochs/bios/BIOS-bochs-8-processors
-share/bochs/bios/BIOS-bochs-latest
-share/bochs/bios/VGABIOS-elpin-2.40
-share/bochs/bios/VGABIOS-elpin-LICENSE
-share/bochs/bios/VGABIOS-lgpl-latest
-share/bochs/bios/VGABIOS-lgpl-README
-share/bochs/bochsrc.sample
-share/bochs/font/fonts.dir
-share/bochs/font/vga.pcf.gz
-%%PORTDOCS%%share/doc/bochs/cvs-structure.txt
-%%PORTDOCS%%share/doc/bochs/html/3rdparty.license.html
-%%PORTDOCS%%share/doc/bochs/html/Linux.html
-%%PORTDOCS%%share/doc/bochs/html/Minix.html
-%%PORTDOCS%%share/doc/bochs/html/OldWindows95.html
-%%PORTDOCS%%share/doc/bochs/html/Windows95.html
-%%PORTDOCS%%share/doc/bochs/html/changelog.html
-%%PORTDOCS%%share/doc/bochs/html/codingguidelines.html
-%%PORTDOCS%%share/doc/bochs/html/configure.html
-%%PORTDOCS%%share/doc/bochs/html/construction.html
-%%PORTDOCS%%share/doc/bochs/html/cosimulation.html
-%%PORTDOCS%%share/doc/bochs/html/cvs-status.html
-%%PORTDOCS%%share/doc/bochs/html/developers.html
-%%PORTDOCS%%share/doc/bochs/html/faq.html
-%%PORTDOCS%%share/doc/bochs/html/features.html
-%%PORTDOCS%%share/doc/bochs/html/fpu.html
-%%PORTDOCS%%share/doc/bochs/html/guestNT.html
-%%PORTDOCS%%share/doc/bochs/html/index.html
-%%PORTDOCS%%share/doc/bochs/html/install.html
-%%PORTDOCS%%share/doc/bochs/html/instrumentation.html
-%%PORTDOCS%%share/doc/bochs/html/iodebug.html
-%%PORTDOCS%%share/doc/bochs/html/mtools.html
-%%PORTDOCS%%share/doc/bochs/html/smp-simulation.html
-%%PORTDOCS%%share/doc/bochs/html/sound.html
-%%PORTDOCS%%share/doc/bochs/html/undercon.gif
-%%PORTDOCS%%share/doc/bochs/html/whatisbochs.html
-%%PORTDOCS%%share/doc/bochs/html/win32.html
-%%PORTDOCS%%share/doc/bochs/random.txt
-%%PORTDOCS%%share/doc/bochs/release-prep.txt
+share/bochs/BIOS-bochs-2-processors
+share/bochs/BIOS-bochs-4-processors
+share/bochs/BIOS-bochs-8-processors
+share/bochs/BIOS-bochs-latest
+share/bochs/VGABIOS-elpin-2.40
+share/bochs/VGABIOS-elpin-LICENSE
+share/bochs/VGABIOS-lgpl-README
+share/bochs/VGABIOS-lgpl-latest
+share/bochs/VGABIOS-lgpl-latest-debug
+share/bochs/keymaps/convertmap.pl
+share/bochs/keymaps/sdl-pc-de.map
+share/bochs/keymaps/sdl-pc-us.map
+share/bochs/keymaps/x11-pc-be.map
+share/bochs/keymaps/x11-pc-da.map
+share/bochs/keymaps/x11-pc-de.map
+share/bochs/keymaps/x11-pc-es.map
+share/bochs/keymaps/x11-pc-fr.map
+share/bochs/keymaps/x11-pc-it.map
+share/bochs/keymaps/x11-pc-se.map
+share/bochs/keymaps/x11-pc-uk.map
+share/bochs/keymaps/x11-pc-us.map
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/README
+%%DOCSDIR%%/biossums.txt
+%%DOCSDIR%%/bochsrc-sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/cvs-structure.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/3rdparty.license.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Linux.html
+%%PORTDOCS%%%%DOCSDIR%%/html/Minix.html
+%%PORTDOCS%%%%DOCSDIR%%/html/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/html/codingguidelines.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cosimulation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/guestNT.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/iodebug.html
+%%PORTDOCS%%%%DOCSDIR%%/random.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-prep.txt
 %%PORTDOCS%%@dirrm share/doc/bochs/html
-%%PORTDOCS%%@dirrm share/doc/bochs
-@dirrm share/bochs/font
-@dirrm share/bochs/bios
+@dirrm share/bochs/keymaps
 @dirrm share/bochs
+@dirrm %%DOCSDIR%%
