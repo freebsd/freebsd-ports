@@ -3,7 +3,7 @@
 # Date created:		16 October 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:31:39 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/23 06:46:37 hoek Exp $
 #
 
 DISTNAME=	ashe-1.1.2
@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/src/ \
 DISTFILES=	ashe_cci.tar.Z cci.tar.Z libhtmlw.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+MAN1=		xhtml.1
+MANCOMPRESSED=	yes
 
 REQUIRES_MOTIF=	yes
 NO_WRKSUBDIR=	yes

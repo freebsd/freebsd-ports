@@ -3,7 +3,7 @@
 # Date created:         Thu Aug  1 21:52:06 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:28:44 asami Exp $
+# $Id: Makefile,v 1.4 1997/03/25 08:58:33 max Exp $
 #
 
 DISTNAME=	mpeg_stat-2.2b-src
@@ -12,6 +12,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
 
 MAINTAINER=	erich@FreeBSD.org
+
+MAN1=		mpeg_stat.1
+MANCOMPRESSED=	yes
 
 WRKSRC=		${WRKDIR}/mpeg_stat
 
