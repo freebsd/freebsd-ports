@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlobject
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,5 +23,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-M
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-QLObject is an object-relational mapper.
+SQLObject is an object-relational mapper.
 It allows you to translate RDBMS table rows into Python objects,
 and manipulate those objects to transparently manipulate the database.
 
