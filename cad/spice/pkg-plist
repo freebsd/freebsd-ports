@@ -4,33 +4,33 @@ bin/sconvert
 bin/help
 bin/proc2mod
 bin/multidec
-share/examples/spice3/bjtnoise.cir
-share/examples/spice3/bsim1tst.cir
-share/examples/spice3/bsim2tst.cir
-share/examples/spice3/diffpair.cir
-share/examples/spice3/diodisto.cir
-share/examples/spice3/ltra_1.cir
-share/examples/spice3/ltra_2.cir
-share/examples/spice3/ltra_3.cir
-share/examples/spice3/mixdisto.cir
-share/examples/spice3/mos6inv.cir
-share/examples/spice3/mosamp2.cir
-share/examples/spice3/mosmem.cir
-share/examples/spice3/pz2.cir
-share/examples/spice3/pzt.cir
-share/examples/spice3/rc.cir
-share/examples/spice3/rca3040.cir
-share/examples/spice3/resnoise.cir
-share/examples/spice3/rtlinv.cir
-share/examples/spice3/schmitt.cir
-share/examples/spice3/simplepz.cir
+%%PORTDOCS%%share/examples/spice3/bjtnoise.cir
+%%PORTDOCS%%share/examples/spice3/bsim1tst.cir
+%%PORTDOCS%%share/examples/spice3/bsim2tst.cir
+%%PORTDOCS%%share/examples/spice3/diffpair.cir
+%%PORTDOCS%%share/examples/spice3/diodisto.cir
+%%PORTDOCS%%share/examples/spice3/ltra_1.cir
+%%PORTDOCS%%share/examples/spice3/ltra_2.cir
+%%PORTDOCS%%share/examples/spice3/ltra_3.cir
+%%PORTDOCS%%share/examples/spice3/mixdisto.cir
+%%PORTDOCS%%share/examples/spice3/mos6inv.cir
+%%PORTDOCS%%share/examples/spice3/mosamp2.cir
+%%PORTDOCS%%share/examples/spice3/mosmem.cir
+%%PORTDOCS%%share/examples/spice3/pz2.cir
+%%PORTDOCS%%share/examples/spice3/pzt.cir
+%%PORTDOCS%%share/examples/spice3/rc.cir
+%%PORTDOCS%%share/examples/spice3/rca3040.cir
+%%PORTDOCS%%share/examples/spice3/resnoise.cir
+%%PORTDOCS%%share/examples/spice3/rtlinv.cir
+%%PORTDOCS%%share/examples/spice3/schmitt.cir
+%%PORTDOCS%%share/examples/spice3/simplepz.cir
 share/spice3/helpdir/spice.txt
 share/spice3/helpdir/spice.idx
 share/spice3/scripts/setplot
 share/spice3/scripts/spinit
 share/spice3/mfbcap
 share/spice3/news
-@dirrm share/examples/spice3
+%%PORTDOCS%%@dirrm share/examples/spice3
 @dirrm share/spice3/helpdir
 @dirrm share/spice3/scripts
 @dirrm share/spice3
