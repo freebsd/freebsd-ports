@@ -1,5 +1,5 @@
 --- src/device/k3bdevicemanager.cpp.orig	Sun Nov 28 13:27:24 2004
-+++ src/device/k3bdevicemanager.cpp	Sun Jan  2 09:44:09 2005
++++ src/device/k3bdevicemanager.cpp	Wed Mar 23 19:45:36 2005
 @@ -49,6 +49,12 @@
  #include <sys/stat.h>
  #include <sys/ioctl.h>
@@ -205,7 +205,7 @@
 +#if __FreeBSD_version < 500100
 +					dev += "c";
 +#endif
-+					if (dev1 != "" && dev2 != "")
++					if (dev1 != "" && dev2 != "" && dev.startsWith("/dev/cd"))
 +					{
 +						K3bDevice* device = new K3bDevice(dev.latin1());
 +						device->m_bus = bus;
@@ -259,7 +259,7 @@
 +#if __FreeBSD_version < 500100
 +					dev += "c";
 +#endif
-+					if (dev1 != "" && dev2 != "")
++					if (dev1 != "" && dev2 != "" && dev.startsWith("/dev/cd"))
 +					{
 +						K3bDevice* device = new K3bDevice(dev.latin1());
 +						device->m_bus = bus;
