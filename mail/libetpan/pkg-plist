@@ -1,10 +1,10 @@
 bin/libetpan-config
-include/libetpan/base64.h
 include/libetpan/carray.h
 include/libetpan/charconv.h
 include/libetpan/chash.h
 include/libetpan/cinthash.h
 include/libetpan/clist.h
+include/libetpan/data_message_driver.h
 include/libetpan/generic_cache.h
 include/libetpan/generic_cache_types.h
 include/libetpan/imapdriver.h
@@ -14,7 +14,17 @@ include/libetpan/imapdriver_message.h
 include/libetpan/imapdriver_types.h
 include/libetpan/imapstorage.h
 include/libetpan/libetpan.h
+include/libetpan/libetpan_version.h
 include/libetpan/mail.h
+include/libetpan/mail_cache_db_types.h
+include/libetpan/maildir.h
+include/libetpan/maildir_types.h
+include/libetpan/maildirdriver.h
+include/libetpan/maildirdriver_cached.h
+include/libetpan/maildirdriver_cached_message.h
+include/libetpan/maildirdriver_message.h
+include/libetpan/maildirdriver_types.h
+include/libetpan/maildirstorage.h
 include/libetpan/maildriver.h
 include/libetpan/maildriver_tools.h
 include/libetpan/maildriver_types.h
@@ -74,6 +84,7 @@ include/libetpan/mhdriver_cached_message.h
 include/libetpan/mhdriver_message.h
 include/libetpan/mhdriver_types.h
 include/libetpan/mhstorage.h
+include/libetpan/mime_message_driver.h
 include/libetpan/mmapstring.h
 include/libetpan/newsnntp.h
 include/libetpan/newsnntp_socket.h
