@@ -1,5 +1,5 @@
 # New ports collection makefile for:	ftnchek
-# Version required:	2.10.1
+# Version required:	2.11.0
 # Date created:		4 May 1998
 # Whom:			kargl@apl.washington.edu
 #
