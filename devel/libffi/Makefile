@@ -17,4 +17,10 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Configure fails on !i386 and !alpha"
+.endif
+
+.include <bsd.port.post.mk>
