@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	GNOME 2 visual diff and merge tool
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
 USE_GNOME=	pygnome2
 USE_PYTHON=	yes
