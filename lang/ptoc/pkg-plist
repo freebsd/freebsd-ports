@@ -9,45 +9,45 @@ include/ptoc/ptoc.h
 include/ptoc/set.h
 lib/libXbgi.a
 lib/libptoc.a
-%%PORTDOCS%%share/doc/ptoc/Readme.htm
-share/examples/ptoc/arr.pas
-share/examples/ptoc/bgidemo.pas
-share/examples/ptoc/ccall.pas
-share/examples/ptoc/coord.txt
-share/examples/ptoc/dos.h
-share/examples/ptoc/dos.pas
-share/examples/ptoc/func.pas
-share/examples/ptoc/hello.pas
-share/examples/ptoc/impact.pas
-share/examples/ptoc/lister.pas
-share/examples/ptoc/makefile.bsd
-share/examples/ptoc/nested.pas
-share/examples/ptoc/objpas.pas
-share/examples/ptoc/polut2.pas
-share/examples/ptoc/printer.pas
-share/examples/ptoc/q2.txt
-share/examples/ptoc/random.txt
-share/examples/ptoc/rename.cxx
-share/examples/ptoc/rename.pas
-share/examples/ptoc/set.pas
-share/examples/ptoc/str.pas
-share/examples/ptoc/test.c
-share/examples/ptoc/test.cxx
-share/examples/ptoc/test.pas
-share/examples/ptoc/test.txt
-share/examples/ptoc/tpascal.pas
-share/examples/ptoc/trinor.pas
-share/examples/ptoc/vibrkinp.pas
-share/examples/ptoc/vibrkinp.txt
-share/examples/ptoc/vibrtabl.pas
-share/examples/ptoc/war2.pas
-share/examples/ptoc/war2.txt
-share/examples/ptoc/xy2.txt
-share/examples/ptoc/xy2orig.txt
-share/ptoc/graph.pas
-share/ptoc/ptoc.pas
-share/ptoc/tptoc.pas
-@dirrm share/examples/ptoc
-@dirrm share/ptoc
-%%PORTDOCS%%@dirrm share/doc/ptoc
+%%PORTDOCS%%%%DOCSDIR%%/Readme.htm
+%%EXAMPLESDIR%%/arr.pas
+%%EXAMPLESDIR%%/bgidemo.pas
+%%EXAMPLESDIR%%/ccall.pas
+%%EXAMPLESDIR%%/coord.txt
+%%EXAMPLESDIR%%/dos.h
+%%EXAMPLESDIR%%/dos.pas
+%%EXAMPLESDIR%%/func.pas
+%%EXAMPLESDIR%%/hello.pas
+%%EXAMPLESDIR%%/impact.pas
+%%EXAMPLESDIR%%/lister.pas
+%%EXAMPLESDIR%%/makefile.bsd
+%%EXAMPLESDIR%%/nested.pas
+%%EXAMPLESDIR%%/objpas.pas
+%%EXAMPLESDIR%%/polut2.pas
+%%EXAMPLESDIR%%/printer.pas
+%%EXAMPLESDIR%%/q2.txt
+%%EXAMPLESDIR%%/random.txt
+%%EXAMPLESDIR%%/rename.cxx
+%%EXAMPLESDIR%%/rename.pas
+%%EXAMPLESDIR%%/set.pas
+%%EXAMPLESDIR%%/str.pas
+%%EXAMPLESDIR%%/test.c
+%%EXAMPLESDIR%%/test.cxx
+%%EXAMPLESDIR%%/test.pas
+%%EXAMPLESDIR%%/test.txt
+%%EXAMPLESDIR%%/tpascal.pas
+%%EXAMPLESDIR%%/trinor.pas
+%%EXAMPLESDIR%%/vibrkinp.pas
+%%EXAMPLESDIR%%/vibrkinp.txt
+%%EXAMPLESDIR%%/vibrtabl.pas
+%%EXAMPLESDIR%%/war2.pas
+%%EXAMPLESDIR%%/war2.txt
+%%EXAMPLESDIR%%/xy2.txt
+%%EXAMPLESDIR%%/xy2orig.txt
+%%DATADIR%%/graph.pas
+%%DATADIR%%/ptoc.pas
+%%DATADIR%%/tptoc.pas
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/ptoc

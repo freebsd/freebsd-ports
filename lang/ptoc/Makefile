@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ptoc
-PORTVERSION=	3.50
+PORTVERSION=	3.54
 CATEGORIES=	lang
-MASTER_SITES=	http://www.ispras.ru/~knizhnik/
+MASTER_SITES=	http://www.garret.ru/~knizhnik/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	osa@FreeBSD.org
 COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -40,17 +40,17 @@ do-install:
 .for file in array.h graph.h io.h paslib.h ptoc.h set.h
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/ptoc
 .endfor
-	@${MKDIR} ${PREFIX}/share/ptoc
+	@${MKDIR} ${DATADIR}
 .for file in graph.pas ptoc.pas tptoc.pas
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/ptoc
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
-	@${MKDIR} ${PREFIX}/share/examples/ptoc
+	@${MKDIR} ${EXAMPLESDIR}
 .for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/share/examples/ptoc
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ptoc
-	${INSTALL_DATA} ${WRKSRC}/Readme.htm ${PREFIX}/share/doc/ptoc
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme.htm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
