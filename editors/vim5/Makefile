@@ -63,7 +63,6 @@ MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-tclinterp --enable-csco
 
 .else	# LITE
 PLIST=		${WRKDIR}/PLIST.nogui
-MAKE_FLAGS:=	CONF_OPT_MAX="--enable-min-features" ${MAKE_FLAGS}
 MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=no --without-x" ${MAKE_FLAGS}
 MAKE_FLAGS:=	CONF_OPT_PERL="--disable-perlinterp --disable-tclinterp" ${MAKE_FLAGS}
 .endif	# LITE
