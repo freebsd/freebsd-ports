@@ -1,0 +1,8 @@
+dv2jpg converts a Type-2 DV codec-encoded AVI stream (from dvgrab, for example)
+to an mjpeg-encoded AVI stream that can be processed by the mjpeg tools
+package. The mjpeg AVI can be converted to mpeg video/audio and burned onto a
+VCD later.
+
+WWW: http://sourceforge.net/projects/dv2jpg/
+
+- Anders Nordby <anders@FreeBSD.org>
