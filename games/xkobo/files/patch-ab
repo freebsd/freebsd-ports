@@ -1,0 +1,35 @@
+--- xlwin.C.orig	Wed Mar 13 17:34:46 1996
++++ xlwin.C	Wed Mar 25 20:16:00 1998
+@@ -21,6 +21,10 @@
+  */
+ 
+ extern "C"{
++#ifdef SECURE_SCOREFILES
++#include <sys/types.h>
++#include <unistd.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ }
+@@ -105,7 +109,21 @@
+ {
+     if (mask == -1) return;
+     if (disp == NULL){
++#ifdef SECURE_SCOREFILES
++        uid_t ruid, euid;
++
++        /* get ruid */
++        ruid = getuid();
++        /* save euid */
++        euid = geteuid();
++        /* become normal user to read $HOME/.Xauthority */
++        (void)seteuid(ruid);
++#endif
+         disp = XOpenDisplay(disp_string);
++#ifdef SECURE_SCOREFILES
++        /* become XKOBO_ADMINISTER again */
++        (void)seteuid(euid);
++#endif 
+         if (disp == NULL){
+             fprintf(stderr, "xlwin: can't open display\n");
+             exit(1);

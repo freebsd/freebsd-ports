@@ -1,4 +1,4 @@
 bin/xkobo
 man/man1/xkobo.1.gz
-@exec mkdir %D/lib/X11/xkobo-scores && chmod 777 %D/lib/X11/xkobo-scores
-@unexec rm -r %D/lib/X11/xkobo-scores
+@exec mkdir -p %D/lib/X11/xkobo-scores && chmod 755 %D/lib/X11/xkobo-scores; chown games %D/lib/X11/xkobo-scores
+@unexec rm -rf %D/lib/X11/xkobo-scores
