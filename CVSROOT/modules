@@ -7340,6 +7340,7 @@ ports_x11_clocks	ports/x11-clocks
 ports_x11_fm	ports/x11-fm
 ports_x11_fonts	ports/x11-fonts
 ports_x11_servers	ports/x11-servers
+ports_x11_themes	ports/x11-themes
 ports_x11_toolkits	ports/x11-toolkits
 ports_x11_wm	ports/x11-wm
 portscanner	ports/security/portscanner
