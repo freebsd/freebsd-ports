@@ -14,8 +14,8 @@ lib/gaim/libirc.so
 lib/gaim/libjabber.so
 lib/gaim/libmsn.so
 lib/gaim/libnapster.so
+lib/gaim/libnovell.so
 lib/gaim/liboscar.so
-lib/gaim/libtoc.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
@@ -250,8 +250,10 @@ share/gnome/pixmaps/gaim/status/default/msn.png
 share/gnome/pixmaps/gaim/status/default/na.png
 share/gnome/pixmaps/gaim/status/default/napster.png
 share/gnome/pixmaps/gaim/status/default/notauthorized.png
+share/gnome/pixmaps/gaim/status/default/novell.png
 share/gnome/pixmaps/gaim/status/default/occupied.png
 share/gnome/pixmaps/gaim/status/default/offline.png
+share/gnome/pixmaps/gaim/status/default/rendezvous.png
 share/gnome/pixmaps/gaim/status/default/secure.png
 share/gnome/pixmaps/gaim/status/default/trepia.png
 share/gnome/pixmaps/gaim/status/default/wireless.png
@@ -284,6 +286,7 @@ share/locale/hu/LC_MESSAGES/gaim.mo
 share/locale/it/LC_MESSAGES/gaim.mo
 share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/mk/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
