@@ -1,0 +1,11 @@
+--- config-scripts/cups-common.m4.orig	Tue Jun  4 16:58:55 2002
++++ config-scripts/cups-common.m4	Tue Jul  2 02:18:13 2002
+@@ -88,7 +88,7 @@
+ AC_HEADER_STDC
+ AC_HEADER_DIRENT
+ AC_CHECK_HEADER(crypt.h,AC_DEFINE(HAVE_CRYPT_H))
+-AC_CHECK_HEADER(malloc.h,AC_DEFINE(HAVE_MALLOC_H))
++dnl AC_CHECK_HEADER(malloc.h,AC_DEFINE(HAVE_MALLOC_H))
+ AC_CHECK_HEADER(shadow.h,AC_DEFINE(HAVE_SHADOW_H))
+ AC_CHECK_HEADER(string.h,AC_DEFINE(HAVE_STRING_H))
+ AC_CHECK_HEADER(strings.h,AC_DEFINE(HAVE_STRINGS_H))
