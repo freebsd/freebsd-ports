@@ -48,3 +48,8 @@ share/locale/ru/LC_MESSAGES/nt.mo
 share/locale/sk/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
 %%PORTDOCS%%@dirrm share/doc/downloader
+share/d4x/sounds/complete.wav
+share/d4x/sounds/dnd.wav
+share/d4x/sounds/finish.wav
+@dirrm share/d4x/sounds
+@dirrm share/d4x
