@@ -41,7 +41,6 @@
     SUBDIR += kbear
     SUBDIR += kwebget
     SUBDIR += lftp
-    SUBDIR += libfxp
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += lukemftp
