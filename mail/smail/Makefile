@@ -35,8 +35,22 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "      make replace"
 
+.include <bsd.port.pre.mk>
+
 replace:
-	@${ECHO_MSG} "===> Replacing sendmail"
+.if ${OSVERSION} >= 400014
+	@${ECHO_MSG} "===> Activating smail in /etc/mail/mailer.conf"
+	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
+	@${ECHO} "#" > /etc/mail/mailer.conf
+	@${ECHO} -n "# Execute the smail sendmail program" >> /etc/mail/mailer.conf
+	@${ECHO} ", named ${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO} "#" >> /etc/mail/mailer.conf
+	@${ECHO} "sendmail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO} "send-mail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO} "mailq		${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+	@${ECHO} "newaliases	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
+.else
+	@${ECHO_MSG} "===> Replacing sendmail programs"
 	if [ -e /usr/sbin/sendmail ]; then \
 		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK; \
 		if [ -f /usr/sbin/sendmail.BAK ]; then \
@@ -44,7 +58,7 @@ replace:
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/smail ]; then \
-		${CP} -fp ${PREFIX}/bin/smail /usr/sbin/sendmail; \
+		${LN} -s ${PREFIX}/bin/smail /usr/sbin/sendmail; \
 	fi
 	if [ -f /usr/sbin/mailstats ]; then \
 		${CHMOD} 0 /usr/sbin/mailstats; \
@@ -56,7 +70,7 @@ replace:
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/newaliases ]; then \
-		${CP} -fp ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
+		${LN} -s ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
 	fi
 	if [ -e /usr/bin/mailq ]; then \
 		${MV} -f /usr/bin/mailq /usr/bin/mailq.BAK; \
@@ -65,7 +79,8 @@ replace:
 		fi;\
 	fi
 	if [ -e ${PREFIX}/bin/mailq ]; then \
-		${CP} -fp ${PREFIX}/bin/mailq /usr/bin/mailq; \
+		${LN} -s ${PREFIX}/bin/mailq /usr/bin/mailq; \
 	fi
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

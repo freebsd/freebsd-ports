@@ -13,6 +13,8 @@ bin/uuwho
 etc/smail/COPYING
 etc/smail/forcepaths
 etc/smail/forcesmtp
+@exec mkdir -p %D/etc/smail/maps
+@exec mkdir -p %D/etc/smail/methods
 etc/smail/paths
 libexec/smail/bouncemail
 libexec/smail/checkerr
