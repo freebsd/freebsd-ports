@@ -6,8 +6,6 @@ bin/etags
 bin/gex
 bin/gview
 bin/gvim
-bin/rex
-bin/rgex
 bin/rgview
 bin/rgvim
 bin/rview
