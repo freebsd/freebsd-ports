@@ -14,9 +14,10 @@ COMMENT=	Qt version of the classic boardgame checkers
 
 WRKSRC=		${WRKDIR}/kcheckers
 USE_QT_VER=	3
+MAKE_ENV=	QTDIR="${X11BASE}"
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
 		-spec ${PREFIX}/share/qt/mkspecs/freebsd-g++ kcheckers.pro
 
 .include <bsd.port.mk>
