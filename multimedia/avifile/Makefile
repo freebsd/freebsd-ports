@@ -28,8 +28,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 LIBTOOLFILES=	acinclude.m4
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
@@ -48,7 +47,6 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 
 LIB_VERSION=	3
 VERSION=	0.7
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DIFF?=		/usr/bin/diff
 FMT?=		/usr/bin/fmt
 
@@ -121,8 +119,7 @@ PLIST_SUB+=	MAD="@comment "
 
 # sdl
 .if !defined(WITHOUT_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=		sdl
 CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE} \
 			--with-sdl-exec-prefix=${LOCALBASE}
 .else
@@ -131,7 +128,7 @@ CONFIGURE_ARGS+=	--without-sdl
 
 # vidix support: requires root privileges
 .if defined(WITH_VIDIX)
-CONFIGURE_ARGS+=	--enable-vidix	
+CONFIGURE_ARGS+=	--enable-vidix
 PLIST_SUB+=	VIDIX=""
 .else
 CONFIGURE_ARGS+=	--disable-vidix
