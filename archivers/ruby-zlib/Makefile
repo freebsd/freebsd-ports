@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zlib
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	archivers ruby
 MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,11 +21,8 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog zlib.rd.en zlib.en.html
-DOCS_JA=	zlib.rd.ja zlib.ja.html
-
-post-extract:
-	${RM} ${WRKSRC}/depend
+DOCS_EN=	ChangeLog doc/zlib.rd doc/zlib.html
+DOCS_JA=	doc/zlib.rd.ja doc/zlib.ja.html
 
 post-install:
 .if !defined(NOPORTDOCS)
