@@ -21,9 +21,9 @@ Gnome_Include_MAINTAINER=	reg@FreeBSD.org
 # The logic of this section is like this:
 #
 # .if defined(WANT_FOO)
-#   .if ${WITH_FOO} == "yes"
+#   .if defined(WITH_FOO)
 #     HAVE_FOO=yes
-#   .elif ${WITH_FOO} == "no"
+#   .elif defined(WITHOUT_FOO)
 #     .undef HAVE_FOO
 #   .elif (if FOO installed)
 #     HAVE_FOO=yes
@@ -51,10 +51,11 @@ Gnome_Include_MAINTAINER=	reg@FreeBSD.org
 # GLib/GTK+/GNOME group of software. There are the following options:
 #
 # WITH_GLIB, WITH_GTK, WITH_ESOUND, WITH_IMLIB, WITH_GNOME:
-#	yes		- Only set by the user, indicates that they always want
-#			  this setting.
-#	no		- Only set by the user, indicates that they never want
-#			  this setting.
+#	- Only set by the user, indicates that they always want
+#	  this setting.
+# WITHOUT_GLIB, WITHOUT_GTK, WITHOUT_ESOUND, WITHOUT_IMLIB, WITHOUT_GNOME:
+#	- Only set by the user, indicates that they never want
+#	  this setting.
 #
 # The following variables might be set:
 #
