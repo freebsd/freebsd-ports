@@ -5,7 +5,7 @@
      gLocalIPAddr = 0;
      
 -    if (getsockname(ConnectionNumber(gDisplay), &saddr, &len) != -1)
-+    if (getsockname(ConnectionNumber(gDisplay), &saddr, (int *)&len) != -1)
++    if (getsockname(ConnectionNumber(gDisplay), &saddr, (socklen_t *)&len) != -1)
      	if (saddr.sa_family == AF_INET)
      		gLocalIPAddr = ntohl(((sockaddr_in*)&saddr)->sin_addr.s_addr);
      
