@@ -341,6 +341,7 @@
     SUBDIR += pgpgpg
     SUBDIR += pgpin
     SUBDIR += php4-crack
+    SUBDIR += php4-cryptopp
     SUBDIR += php4-mcrypt
     SUBDIR += php4-mhash
     SUBDIR += php4-openssl
