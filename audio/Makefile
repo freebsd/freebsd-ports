@@ -261,6 +261,7 @@
     SUBDIR += tracker
     SUBDIR += umix
     SUBDIR += vorbis-tools
+    SUBDIR += vorbisgain
     SUBDIR += vsound
     SUBDIR += waveplay
     SUBDIR += wavplay

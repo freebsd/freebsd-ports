@@ -1,0 +1,14 @@
+When listening to Ogg Vorbis (or MP3) files on your computer, you may have
+noticed that some songs are louder than others. To a degree, this can be
+what the artist or producer intended, at least when comparing songs from the
+same CD. However, when (randomly) listening to songs from different CDs, the
+sound level can vary quite much, so much that you need to adjust the volume
+every now and then, to get a comfortable sound level. Wouldn't it be nice if
+that could be handled automatically?
+
+This is where VorbisGain comes in. It calculates a percieved sound level of
+an Ogg Vorbis file using the ReplayGain algorithm. VorbisGain then stores in
+the comments (tags) in the file a suggestion on how the volume should be
+changed during playback, to get a uniform sound level. However, this only
+solves half the problem; the player application needs to act on that
+suggestion for it to be any useful.
