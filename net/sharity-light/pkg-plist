@@ -1,5 +1,5 @@
-sbin/rumba
-sbin/unrumba
+sbin/shlight
+sbin/unshlight
 man/man8/smbmount.8.gz
-share/doc/rumba/README
-share/doc/rumba/FAQ
+share/doc/Sharity-Light/README
+share/doc/Sharity-Light/FAQ

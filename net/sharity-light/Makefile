@@ -1,37 +1,35 @@
-# New ports collection makefile for:	rumba
-# Version required:	0.6
+# New ports collection makefile for:	sharity-light
+# Version required:	1.0
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.3 1998/06/04 04:18:39 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/06/24 18:01:16 dt Exp $
 #
 
-DISTNAME=	rumba.0.6a.s
-PKGNAME=	rumba-0.6a
+DISTNAME=	Sharity-Light.1.0.s
+PKGNAME=	sharity-light-1.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://hal.kph.tuwien.ac.at/pub/NeXT/tools/rumba/ \
-		ftp://ftp.obdev.at/pub/Products/rumba/
-EXTRACT_SUFX=	.gnutar.gz
+MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/SharityLight
 
 MAINTAINER=	dt@FreeBSD.ORG
 
 MAN8=		smbmount.8
 
 post-extract:
-	@${MKDIR} work/unrumba
-	@${CP} ${FILESDIR}/unrumba.c ${WRKDIR}/unrumba
-	@${CP} files/Makefile.unrumba ${WRKDIR}/unrumba/Makefile
+	@${MKDIR} work/unshlight
+	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
+	@${CP} files/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
 
 post-build:
-	cd ${WRKDIR}/unrumba && make
+	cd ${WRKDIR}/unshlight && make
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rumba ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKDIR}/unrumba/unrumba ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/shlight ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKDIR}/unshlight/unshlight ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/rumba
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rumba/README
-	${INSTALL_DATA} ${WRKSRC}/FAQ.txt ${PREFIX}/share/doc/rumba/FAQ
+	${MKDIR} ${PREFIX}/share/doc/Sharity-Light
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/Sharity-Light/README
+	${INSTALL_DATA} ${WRKSRC}/FAQ.txt ${PREFIX}/share/doc/Sharity-Light/FAQ
 .endif
 	${INSTALL_MAN} ${WRKSRC}/smbmount.8 ${PREFIX}/man/man8
 
