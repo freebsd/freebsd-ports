@@ -1,0 +1,23 @@
+===========================================================================
+
+Depending on how you would like to start sshd2(8) you have three choices:
+1) Copy the sample start-up script %%PREFIX%%/etc/rc.d/sshd2.sh.sample
+to %%PREFIX%%/etc/rc.d/sshd2.sh.
+
+2) Add the following entries to your /etc/inetd.conf:
+ssh stream tcp  nowait root %%PREFIX%%/sbin/sshd2 sshd -i
+ssh stream tcp6 nowait root %%PREFIX%%/sbin/sshd2 sshd -i
+
+3) On FreeBSD 4 only (on FreeBSD 5 with rcNG this currently doesn't work
+properly) add the following entries to your /etc/rc.conf:
+sshd_enable="YES"
+sshd_program="%%PREFIX%%/sbin/sshd2"
+
+NOTE: This port traditionally sets up 1) automatically unless it detects 2).
+      If you want to use 2) or 3) you have to manually delete the start-up
+      script %%PREFIX%%/etc/rc.d/sshd2.sh. This version of the port is the
+      last one that does 1) automatically. To prevent foot shooting when
+      updating to the next version this port won't remove an existing
+      %%PREFIX%%/etc/rc.d/sshd2.sh on deinstallation.
+
+===========================================================================

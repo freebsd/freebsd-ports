@@ -1,0 +1,117 @@
+--- HOWTO.anonymous.sftp.orig	Wed Dec  3 14:17:17 2003
++++ HOWTO.anonymous.sftp	Thu Jan  1 19:18:54 2004
+@@ -3,57 +3,27 @@
+ Author: Sami Lehtinen <sjl@ssh.com>
+ Created: Thu Oct 18 18:21:56 2001
+ 
+-1.  Follow the standard build process otherwise, except for the following
++1.  Create a dedicated user account for the guest user (e.g. "ssh-guest").
+    
+-      % ./configure --enable-static <your-flags-here>
+-   
+-    If your system doesn't support fully static binaries (atleast newer
+-    Solarises), you have to copy extra files after step 5, so that the
+-    necessary shared libraries and system configuration files can be
+-    found by ssh-dummy-shell and sftp-server in the chrooted
+-    environment.
+-    
+-    With internal sftp-server:
+-    You may also use the internal sftp-server. It simplifies logging and
+-    chrooting considerably. You don't need to build the static binaries.
+-   
+-2.  Create a dedicated user account for the guest user (e.g. "ssh-guest").
+-   
+-    In RH Linux:
+-    
+-      % useradd [-d home_dir] [-u uid] [-g group] [-s default-shell] ssh-guest
++      % pw useradd ssh-guest -m -s /nonexistent [-d homedir] [-u uid] [-g group]
+    
+     Remember that the home directory will be the root ("/") of the
+     chrooted environment, so choose wisely (you can change it later, of
+     course).
+    
+-3.  Set some known password (e.g. "guest") for the account with "passwd".
++2.  Set some known password (e.g. "guest") for the account with "passwd".
+    
+-4.  Change the user's shell to "ssh-dummy-shell" with "vipw".
++      % passwd ssh-guest
+     
+-    With internal sftp-server:
+-    If you're using the internal sftp-server, you can use /bin/false or
+-    whatever as the user's shell. The sftp service isn't executed with
+-    the shell in this case. The user's shell doesn't even need to exist.
+-   
+-5.  Run
+-   
+-      % ssh-chrootmgr -v ssh-guest # (or the account you created)
+-     
+-    This will copy necessary static binaries to the user's home directory.
+-   
+-    With internal sftp-server:   
+-    You don't need this step if you don't need the static
+-    ssh-dummy-shell.
+-   
+-6.  Modify /etc/ssh2/sshd2_config. Add the following line:
++3.  Modify /etc/ssh2/sshd2_config. Add the following line:
+    
+       ChRootUsers ssh-guest
+    
+-7.  If you wish, you may announce the existence of this account in your
+-    login banner message. The file /etc/ssh2/ssh_banner_message, if not
+-    empty, will be displayed to incoming users before they authenticate. Or
+-    you can change the default by modifying the sshd2_config:
++4.  If you wish, you may announce the existence of this account in your
++    login banner message. The file /etc/ssh2/ssh_banner_message,
++    if not empty, will be displayed to incoming users before they
++    authenticate. Or you can change the default by modifying the
++    /etc/ssh2/sshd2_config:
+     
+       BannerMessageFile /etc/ssh2/some_other_ssh_banner_message
+    
+@@ -74,7 +44,7 @@
+     Remember that you may use subconfiguration files to change a banner
+     message based on e.g. user name (xxx example file).
+ 
+-8.  You most probably want to restrict access to read-only. For this,
++5.  You most probably want to restrict access to read-only. For this,
+     change the accounts owner to something else (e.g. root):
+    
+       % chown -R root:root ~ssh-guest
+@@ -82,7 +52,7 @@
+     If you want to give some directories write access, change ownership of
+     those to "ssh-guest".
+    
+-9.  To enable logging, you have to add the following line to sshd2_config
++6.  To enable logging, you have to add the following line to sshd2_config
+     (or possibly to a subconfig file (see sshd2_subconfig(5))):
+    
+       SftpSysLogFacility  <facility>
+@@ -90,26 +60,11 @@
+     <facility> could be LOCAL7, or whatever you wish. See sshd2_config(5)
+     for additional documentation.
+    
+-    Note, that logging in the chrooted environment with a separate
+-    binary for sftp-server is tricky. Most likely you have to create a
+-    /dev/log device under the chrooted jail, and add that to the listened
+-    devices (with the full path) of your syslogd. See the documentation of
+-    syslog daemon for this. However, see below.
+-
+-    With internal sftp-server:   
+-    Logging in the chrooted jail is much simpler with the internal
+-    sftp-server. Just specify the correct SftpSysLogFacility, and you are
+-    set.
+-
+-10. Add your sftp-server to sshd2_config (if not already there):
+-
+-      subsystem-sftp sftp-server
+-
+-    With internal sftp-server:   
++7.  Add your sftp-server to sshd2_config (if not already there):
+ 
+       subsystem-sftp internal://sftp-server
+ 
+-11. Remember to restart the sshd2 daemon after you modify the configuration
++8.  Remember to restart the sshd2 daemon after you modify the configuration
+     file for the changes to take effect!
+ 
+ Have fun.
