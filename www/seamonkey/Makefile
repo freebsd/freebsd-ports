@@ -109,7 +109,8 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
 	JAVASCRIPT_DEBUGGER "Enable the DTD and JavaScript debuggers" off \
 	OPTIMIZED_CFLAGS "Enable -O2 optimizations" off \
-	SMB "Enable smb:// URI support using gnomevfs" off
+	SMB "Enable smb:// URI support using gnomevfs" off \
+	MENU_ENTRY "Add mozilla-devel to the GNOME menu" on
 
 .include <bsd.port.pre.mk>
 
@@ -213,6 +214,10 @@ CFLAGS:=		-O ${CFLAGS:N-O*:N-m*}
 CONFIGURE_ENV+=		WITH_OPTIMIZE=-O
 .endif
 
+.if defined(WITH_MENU_ENTRY)
+USE_GNOME+=	gnomehier
+.endif
+
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	"core dumps on alpha during post-build"
 .endif
@@ -258,6 +263,10 @@ post-patch:
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		< ${FILESDIR}/mozilla-devel.desktop.in > \
+		${WRKDIR}/mozilla-devel.desktop
+
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -300,6 +309,9 @@ pre-install:
 .endfor
 .if !defined(WITHOUT_MAILNEWS)
 	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
+.endif
+.if defined(WITH_MENU_ENTRY)
+	 ${ECHO_CMD} share/gnome/applications/mozilla-devel.desktop >> ${PLIST}
 .endif
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
@@ -350,6 +362,11 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/${MOZILLA}
 	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/include/${MOZILLA}
+.if defined(WITH_MENU_ENTRY)
+	${MKDIR} ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKDIR}/mozilla-devel.desktop \
+		${PREFIX}/share/gnome/applications
+.endif
 
 post-install:
 	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
