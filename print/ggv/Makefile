@@ -17,19 +17,17 @@ MAINTAINER=	gnome@FreeBSD.org
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
 USE_GMAKE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack bonobo
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-pre-patch:
+post-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
