@@ -20,14 +20,10 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+BROKEN=		"Does not compile"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
