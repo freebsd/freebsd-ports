@@ -1,4 +1,5 @@
 bin/blackbox
-lib/X11/app-defaults/Blackbox
-lib/X11/app-defaults/Blackbox-menu
-lib/X11/app-defaults/Blackbox-style
+share/Blackbox/rc
+share/Blackbox/menu
+share/Blackbox/style
+@dirrm share/Blackbox
