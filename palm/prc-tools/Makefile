@@ -24,6 +24,8 @@ COMMENT=	Collection of tools supporting C and C++ programming for Palm OS
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
 
+BROKEN=		"Incorrect pkg-plist"
+
 # it is unknown whether it could actually be made to work elsewhere,
 # but right now it does not.
 ONLY_FOR_ARCHS=	i386
