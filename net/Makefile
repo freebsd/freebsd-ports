@@ -571,6 +571,7 @@
     SUBDIR += py-samba
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
+    SUBDIR += py-soappy
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
     SUBDIR += py-xmlrpc
