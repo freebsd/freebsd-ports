@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Date-Manip
-PORTVERSION=	5.40
+PORTVERSION=	5.42
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 DISTNAME=	DateManip-${PORTVERSION}
 
-MAINTAINER=	kapr@crosswinds.net
+MAINTAINER=	port@FreeBSD.org
 COMMENT=	Perl5 module containing date manipulation routines
 
 PERL_CONFIGURE=	YES
