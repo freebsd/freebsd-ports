@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
-		c-news-patch-newsrun c-news-patch-sendbatches \
+		c-news-patch-newsrun c-news-patch-sendbatches2 \
 		c-news-patch-ctl-pgp3 c-news-patch-ctl-more \
 		c-news-patch-ctl-regexp \
 		c-news-patch-doexpire c-news-patch-queuelen.tay \
