@@ -3,7 +3,7 @@
 # Date created:				June 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1998/10/15 01:28:34 jseger Exp $
+# $Id: Makefile,v 1.10 1998/11/11 05:37:33 asami Exp $
 #
 
 DISTNAME=	WWW-Search-1.021
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	WWW
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
+
+BROKEN=		"installs files in /usr/bin"
 
 USE_PERL5=	YES
 
