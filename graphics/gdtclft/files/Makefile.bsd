@@ -29,16 +29,16 @@ pkgIndex.tcl:
 	echo 'package ifneeded $(PACKAGE) $(VERSION) [list load [file join $$dir $(SHLIB_NAME)] $(PACKAGE)]' > pkgIndex.tcl
 
 DIR		= lib/tcl${TCL_VER}/gdtclft
-SHLIBDIR	= ${PREFIX}/${DIR}
+LIBDIR	= ${PREFIX}/${DIR}
 MANDIR		= ${PREFIX}/man/man
 
-${SHLIBDIR}:
-	${MKDIR} ${SHLIBDIR}
+${LIBDIR}:
+	${MKDIR} ${LIBDIR}
 
 env:
 	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
 
-beforeinstall: ${SHLIBDIR}
-	${INSTALL_DATA} pkgIndex.tcl ${SHLIBDIR}
+beforeinstall: ${LIBDIR}
+	${INSTALL_DATA} pkgIndex.tcl ${LIBDIR}
 
 .include <bsd.lib.mk>
