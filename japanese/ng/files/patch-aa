@@ -1,6 +1,7 @@
---- sys/bsd/Makefile.orig	Tue Jun  6 11:04:18 2000
-+++ sys/bsd/Makefile	Wed Jun  7 09:56:45 2000
-@@ -2,7 +2,7 @@
+diff -ur work/ng/sys/bsd/Makefile work.new/ng/sys/bsd/Makefile
+--- sys/bsd/Makefile.dist	Tue Jun 27 10:48:02 2000
++++ sys/bsd/Makefile	Tue Sep 12 19:49:46 2000
+@@ -8,7 +8,7 @@
  # Modified for Ng 1.0	by Shigeki Yoshida (shige@csk.CO.JP)	1990.01.29
  
  SYS	= bsd

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ng
-PORTVERSION=	1.4.b5
+PORTVERSION=	1.4
 CATEGORIES=     japanese editors
 MASTER_SITES=   http://ha3.seikyou.ne.jp/home/amura/archives/ng/
-DISTNAME=	${PORTNAME}-1.4beta5
 
 MAINTAINER=     ginga@athena.club.ne.jp
 
