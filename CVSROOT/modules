@@ -1093,6 +1093,7 @@ cube		ports/games/cube
 cucipop		ports/mail/cucipop
 cue2toc		ports/audio/cue2toc
 cuecat		ports/misc/cuecat
+cuetools	ports/audio/cuetools
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-lpr	ports/print/cups-lpr
