@@ -7,6 +7,7 @@
 
 PORTNAME=	DateTime-Format-DateManip
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -15,14 +16,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Convert Date::Manip dates and durations to DateTimes and vice versa
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 
 PERL_CONFIGURE=	yes
 
+MAN3=		DateTime::Format::DateManip.3
+
+.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600

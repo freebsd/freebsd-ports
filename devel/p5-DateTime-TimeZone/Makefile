@@ -7,6 +7,7 @@
 
 PORTNAME=	DateTime-TimeZone
 PORTVERSION=	0.25.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -16,11 +17,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Time zone object base class and factory
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/Class/Singleton.pm:${PORTSDIR}/devel/p5-Class-Singleton \
 		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
 
 PERL_CONFIGURE=	yes
 
+MAN3=		DateTime::TimeZone.3 DateTime::TimeZone::Floating.3 \
+		DateTime::TimeZone::Local.3 DateTime::TimeZone::OffsetOnly.3 \
+		DateTime::TimeZone::OlsonDB.3 DateTime::TimeZone::UTC.3 \
+		DateTime::TimeZoneCatalog.3
+
+.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>
