@@ -1,0 +1,57 @@
+diff -rBbc lib-src/Makefile.in lib-src/Makefile.in
+*** lib-src/Makefile.in	Tue Aug 18 14:48:25 1998
+--- lib-src/Makefile.in	Sat Dec 29 03:49:52 2001
+***************
+*** 92,97 ****
+--- 92,100 ----
+  # Things that a user might actually run,
+  # which should be installed in bindir.
+  INSTALLABLES = etags ctags emacsclient b2m m2ps coco
++ INSTALLABLES_COCO = coco
++ INSTALLABLES_M2PS = m2ps
++ INSTALLABLE_SCRIPTS_M2PS = any2ps
+  INSTALLABLE_SCRIPTS = rcs-checkin any2ps
+  
+  # Things that Emacs runs internally, or during the build process,
+***************
+*** 266,276 ****
+--- 269,307 ----
+  	  chmod a+rx ${bindir}/$${file}; \
+  	done
+  
++ install-coco: all
++ 	@echo
++ 	@echo "Installing utility coco for users to run."
++ 	for file in ${INSTALLABLES_COCO} ; do \
++ 	  $(INSTALL_PROGRAM) $${file} ${bindir}/$${file} ; \
++ 	  chmod a+rx ${bindir}/$${file}; \
++ 	done
++ 
++ install-m2ps: all
++ 	@echo
++ 	@echo "Installing utilities, m2ps and any2ps, for users to run."
++ 	for file in ${INSTALLABLES_M2PS} ; do \
++ 	  $(INSTALL_PROGRAM) $${file} ${bindir}/$${file} ; \
++ 	  chmod a+rx ${bindir}/$${file}; \
++ 	done
++ 	for file in ${INSTALLABLE_SCRIPTS_M2PS} ; do \
++ 	  $(INSTALL) ${srcdir}/$${file} ${bindir}/$${file} ; \
++ 	  chmod a+rx ${bindir}/$${file}; \
++ 	done
++ 
+  uninstall:
+  	(cd ${bindir}; \
+  	 rm -f ${INSTALLABLES} ${INSTALLABLE_SCRIPTS})
+  	(cd ${archlibdir}; \
+  	 rm -f ${UTILITIES} ${INSTALLABLES} ${SCRIPTS} ${INSTALLABLE_SCRIPTS})
++ 
++ uninstall-coco:
++ 	(cd ${bindir}; \
++ 	 rm -f ${INSTALLABLES_COCO})
++ 
++ uninstall-m2ps:
++ 	(cd ${bindir}; \
++ 	 rm -f ${INSTALLABLES_M2PS} ${INSTALLABLE_SCRIPTS_M2PS})
+  
+  mostlyclean:
+  	-rm -f core *.o

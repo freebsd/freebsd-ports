@@ -1,0 +1,45 @@
+diff -rBbc man/Makefile.in man/Makefile.in
+*** man/Makefile.in	Fri Jun 28 07:27:19 1996
+--- man/Makefile.in	Sat Dec 29 03:49:32 2001
+***************
+*** 13,19 ****
+  # The makeinfo program is part of the Texinfo distribution.
+  MAKEINFO = makeinfo
+  INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl ../info/dired-x \
+! 	       ../info/ediff ../info/forms ../info/gnus ../info/info \
+  	       ../info/mh-e ../info/sc ../info/vip ../info/viper \
+  	       ../info/message
+  DVI_TARGETS = emacs.dvi cc-mode.dvi cl.dvi dired-x.dvi ediff.dvi forms.dvi \
+--- 13,19 ----
+  # The makeinfo program is part of the Texinfo distribution.
+  MAKEINFO = makeinfo
+  INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl ../info/dired-x \
+! 	       ../info/ediff ../info/forms ../info/gnus \
+  	       ../info/mh-e ../info/sc ../info/vip ../info/viper \
+  	       ../info/message
+  DVI_TARGETS = emacs.dvi cc-mode.dvi cl.dvi dired-x.dvi ediff.dvi forms.dvi \
+***************
+*** 66,71 ****
+--- 66,72 ----
+  	${srcdir}/gnu1.texi \
+  	${srcdir}/glossary.texi
+  
++ all: info
+  info: $(INFO_TARGETS)
+  
+  dvi: $(DVI_TARGETS)
+***************
+*** 74,85 ****
+  # in srcdir.  There is no provision for Info files
+  # to exist in the build directory.
+  # In a distribution of Emacs, the Info files should be up to date.
+- 
+- ../info/info: ${INFOSOURCES}
+- 	cd $(srcdir); $(MAKEINFO) --no-split info.texi
+- 
+- info.dvi: ${INFOSOURCES}
+- 	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/info.texi
+  
+  ../info/emacs: ${EMACSSOURCES}
+  	cd $(srcdir); $(MAKEINFO) emacs.texi
+--- 75,80 ----

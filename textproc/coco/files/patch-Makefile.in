@@ -1,0 +1,150 @@
+diff -rBbc Makefile.in Makefile.in
+*** Makefile.in	Tue Aug 18 14:48:19 1998
+--- Makefile.in	Sat Dec 29 03:49:52 2001
+***************
+*** 191,197 ****
+  # Subdirectories to make recursively.  `lisp' is not included
+  # because the compiled lisp files are part of the distribution
+  # and you cannot remake them without installing Emacs first.
+! SUBDIR = lib-src src
+  
+  # The makefiles of the directories in $SUBDIR.
+  SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
+--- 191,197 ----
+  # Subdirectories to make recursively.  `lisp' is not included
+  # because the compiled lisp files are part of the distribution
+  # and you cannot remake them without installing Emacs first.
+! SUBDIR = lib-src src man
+  
+  # The makefiles of the directories in $SUBDIR.
+  SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
+***************
+*** 306,323 ****
+  install: ${SUBDIR} install-arch-indep install-arch-dep blessmail
+  	@true
+  
+  ### Install the executables that were compiled specifically for this machine.
+  ### It would be nice to do something for a parallel make
+  ### to ensure that install-arch-indep finishes before this starts.
+  install-arch-dep: mkdir
+- 	(cd lib-src; \
+- 	  $(MAKE) install $(MFLAGS) prefix=${prefix} \
+- 	    exec_prefix=${exec_prefix} bindir=${bindir} \
+- 	    libexecdir=${libexecdir} archlibdir=${archlibdir})
+  	${INSTALL_PROGRAM} src/emacs ${bindir}/${executable}-${version}
+  	-chmod 1755  ${bindir}/${executable}-${version}
+  	rm -f ${bindir}/$(EMACS)
+  	-ln ${bindir}/${executable}-${version} ${bindir}/$(EMACS)
+  
+  ### Install the files that are machine-independent.
+  ### Most of them come straight from the distribution;
+--- 306,354 ----
+  install: ${SUBDIR} install-arch-indep install-arch-dep blessmail
+  	@true
+  
++ ## 
++ install-coco: ${SUBDIR}
++ 	(cd lib-src; \
++ 	  $(MAKE) install-coco $(MFLAGS) prefix=${prefix} \
++ 	    exec_prefix=${exec_prefix} bindir=${bindir} \
++ 	    libexecdir=${libexecdir} archlibdir=${archlibdir})
++ 	-mkdir ${etcdir}; \
++ 	   chmod a+r ${etcdir}
++ 	(thisdir=`/bin/pwd`; \
++ 	 cd ${thisdir}; \
++ 	 ${INSTALL_DATA} ${srcdir}/etc/coco.1 ${man1dir}/coco${manext}; \
++ 	   chmod a+r ${man1dir}/coco${manext}; \
++ 	 ${INSTALL_DATA} ${srcdir}/etc/CODINGS ${etcdir}/CODINGS; \
++ 	   chmod a+r ${etcdir}/CODINGS; \
++ 	 ${INSTALL_DATA} ${srcdir}/etc/CHARSETS ${etcdir}/CHARSETS; \
++ 	   chmod a+r ${etcdir}/CHARSETS )
++ 
++ install-m2ps: ${SUBDIR}
++ 	(cd lib-src; \
++ 	 $(MAKE) install-m2ps $(MFLAGS) prefix=${prefix} \
++ 	    exec_prefix=${exec_prefix} bindir=${bindir} \
++ 	    libexecdir=${libexecdir} archlibdir=${archlibdir})
++ 	-mkdir ${etcdir}; \
++ 	   chmod a+r ${etcdir}
++ 	(thisdir=`/bin/pwd`; \
++ 	 cd ${thisdir}; \
++ 	 ${INSTALL_DATA} ${srcdir}/etc/m2ps.1 ${man1dir}/m2ps${manext}; \
++ 	   chmod a+r ${man1dir}/m2ps${manext}; \
++ 	 ${INSTALL_DATA} ${srcdir}/etc/m2ps.ps ${etcdir}/m2ps.ps; \
++ 	   chmod a+r ${etcdir}/m2ps.ps )
++ 
+  ### Install the executables that were compiled specifically for this machine.
+  ### It would be nice to do something for a parallel make
+  ### to ensure that install-arch-indep finishes before this starts.
+  install-arch-dep: mkdir
+  	${INSTALL_PROGRAM} src/emacs ${bindir}/${executable}-${version}
+  	-chmod 1755  ${bindir}/${executable}-${version}
+  	rm -f ${bindir}/$(EMACS)
+  	-ln ${bindir}/${executable}-${version} ${bindir}/$(EMACS)
++ 	echo "Copying etc/DOC-* to ${docdir} ..." ; \
++ 	   (cd ./etc; tar -cf - DOC*)|(cd ${docdir}; umask 0; tar -xvf - ); \
++ 	   (cd $(docdir); chmod a+r DOC*; rm DOC) \
++ 
+  
+  ### Install the files that are machine-independent.
+  ### Most of them come straight from the distribution;
+***************
+*** 327,332 ****
+--- 358,367 ----
+  ### Note that we copy DOC* and then delete DOC
+  ### as a workaround for a bug in tar on Ultrix 4.2.
+  install-arch-indep: mkdir
++ 	(cd lib-src; \
++ 	  $(MAKE) install $(MFLAGS) prefix=${prefix} \
++ 	    exec_prefix=${exec_prefix} bindir=${bindir} \
++ 	    libexecdir=${libexecdir} archlibdir=${archlibdir})
+  	-set ${COPYDESTS} ; \
+  	for dir in ${COPYDIR} ; do \
+  	  if [ `(cd $$1 && /bin/pwd)` != `(cd $${dir} && /bin/pwd)` ] ; then \
+***************
+*** 360,368 ****
+  	-chmod -R a+r ${COPYDESTS}
+  	if [ `(cd ./etc; /bin/pwd)` != `(cd ${docdir}; /bin/pwd)` ]; \
+  	then \
+! 	   echo "Copying etc/DOC-*, etc/CHARSETS, and etc/CODINGS to ${docdir} ..." ; \
+! 	   (cd ./etc; tar -cf - DOC* CHARSETS CODINGS)|(cd ${docdir}; umask 0; tar -xvf - ); \
+! 	   (cd $(docdir); chmod a+r DOC* CHARSETS CODINGS; rm DOC) \
+  	else true; fi
+  	if [ -r ./lisp ] \
+  	   && [ x`(cd ./lisp; /bin/pwd)` != x`(cd ${lispdir}; /bin/pwd)` ] \
+--- 395,403 ----
+  	-chmod -R a+r ${COPYDESTS}
+  	if [ `(cd ./etc; /bin/pwd)` != `(cd ${docdir}; /bin/pwd)` ]; \
+  	then \
+! 	   echo "Copying etc/CHARSETS, and etc/CODINGS to ${docdir} ..." ; \
+! 	   (cd ./etc; tar -cf - CHARSETS CODINGS)|(cd ${docdir}; umask 0; tar -xvf - ); \
+! 	   (cd $(docdir); chmod a+r CHARSETS CODINGS) \
+  	else true; fi
+  	if [ -r ./lisp ] \
+  	   && [ x`(cd ./lisp; /bin/pwd)` != x`(cd ${lispdir}; /bin/pwd)` ] \
+***************
+*** 375,388 ****
+  	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
+  	then \
+  	  (cd ${infodir};  \
+- 	   if [ -f dir ]; then \
+- 	     if [ ! -f dir.old ]; then mv -f dir dir.old; \
+- 	     else mv -f dir dir.bak; fi; \
+- 	   fi; \
+  	   cd ${srcdir}/info ; \
+- 	   (cd $${thisdir}; ${INSTALL_DATA} ${srcdir}/info/dir ${infodir}/dir); \
+  	   (cd $${thisdir}; chmod a+r ${infodir}/dir); \
+! 	   for f in ccmode* cl* dired-x* ediff* emacs* forms* gnus* info* message* mh-e* sc* vip* \
+  		antenews* canna* egg* languages* m2ps* mule* kbd-trans* \
+  		quail* terminology* CCL* ISO2022* R2L* XFONT*; do \
+  	     (cd $${thisdir}; \
+--- 410,418 ----
+  	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
+  	then \
+  	  (cd ${infodir};  \
+  	   cd ${srcdir}/info ; \
+  	   (cd $${thisdir}; chmod a+r ${infodir}/dir); \
+! 	   for f in ccmode* cl* dired-x* ediff* emacs* forms* gnus* message* mh-e* sc* vip* \
+  		antenews* canna* egg* languages* m2ps* mule* kbd-trans* \
+  		quail* terminology* CCL* ISO2022* R2L* XFONT*; do \
+  	     (cd $${thisdir}; \
