@@ -1,7 +1,8 @@
+bin/mboxtest
+lib/libc-client.so
 lib/libc-client.so.2.1
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -m %B
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
-bin/mboxtest

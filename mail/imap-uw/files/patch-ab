@@ -1,6 +1,12 @@
---- src/osdep/unix/Makefile.orig	Thu Jul 16 22:12:22 1998
-+++ src/osdep/unix/Makefile	Tue Jul 21 16:38:38 1998
-@@ -93,7 +93,7 @@
+--- src/osdep/unix/Makefile.orig	Thu Jul 16 14:12:22 1998
++++ src/osdep/unix/Makefile	Mon Oct 12 19:21:56 1998
+@@ -88,12 +88,12 @@
+ 
+ # Normally no need to change any of these
+ 
+-ARCHIVE=c-client.a
++ARCHIVE=libc-client.a
+ BINARIES=mail.o misc.o newsrc.o smanager.o osdep.o utf8.o siglocal.o \
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -9,19 +15,23 @@
  MAKE=make
  MV=mv
  RM=rm -rf
-@@ -108,6 +108,11 @@
+@@ -108,6 +108,15 @@
   PASSWDTYPE=$(PASSWDTYPE) AFSDIR=$(AFSDIR) GSSDIR=$(GSSDIR)
  BUILD=$(MAKE) build $(BUILDOPTIONS) $(EXTRASPECIALS)
  
 +# Need this for the shared library rule to work correctly
 +.SUFFIXES: .o .so
++.if ${PORTOBJFORMAT} == "elf"
++SHLIB=libc-client.so.2
++.else
 +SHLIB=libc-client.so.2.1
++.endif
 +SOFILES=${BINARIES:.o=.so}
 +
  # Here if no make argument established
  
  missing: osdep.h
-@@ -179,11 +184,11 @@
+@@ -179,11 +188,11 @@
  	 BASECFLAGS="-g -Dconst= -DNFSKLUDGE"
  
  bsf:	# FreeBSD
@@ -35,12 +45,16 @@
  	 BASELDFLAGS="-lcrypt"
  
  bsi:	# BSD/i386
-@@ -565,10 +570,17 @@
+@@ -565,10 +574,21 @@
  	@cat ARCHIVE
  	@$(SH) ARCHIVE
  
 +$(SHLIB): $(SOFILES)
++.if $(PORTOBJFORMAT) == "elf"
 +	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
++.else
++	ld -Bshareable -x -soname $(SHLIB) -o $(SHLIB) $(SOFILES)
++.endif
 +
 +.c.so:	osdep.h
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
@@ -53,7 +67,7 @@
  
  
  # Dependencies
-@@ -602,7 +614,7 @@
+@@ -602,7 +622,7 @@
  
  # OS-dependent
  
@@ -62,7 +76,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -614,7 +626,12 @@
+@@ -614,7 +634,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
