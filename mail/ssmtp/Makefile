@@ -8,8 +8,8 @@
 PORTNAME=	ssmtp
 PORTVERSION=	2.38
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.debian.org/debian/dists/woody/main/source/mail/ \
-		ftp://ftp.icm.edu.pl/pub/Linux/debian/dists/woody/main/source/mail/
+MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/ssmtp/ \
+		ftp://ftp.icm.edu.pl/pub/Linux/debian/pool/main/s/ssmtp/
 DISTNAME=	ssmtp_2.38-9
 
 BROKEN=		pkg_add cannot create /etc/ssmtp/smmtp.conf
