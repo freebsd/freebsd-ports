@@ -20,6 +20,14 @@ USE_REINPLACE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CXX=${CXX}
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 3
+BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/imake
+.else
+BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/imake-4
+.endif
+
 post-patch:
 	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
 		${WRKSRC}/adns/Makefile > ${WRKSRC}/adns/Makefile.new
@@ -55,4 +63,4 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} "====================================================================="
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
