@@ -53,7 +53,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if defined(WITH_BERKELEYDB)
-CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
 .    if !defined(WITH_BDB_VER)
 WITH_BDB_VER=	41
 .    endif
