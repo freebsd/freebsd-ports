@@ -254,6 +254,7 @@
     SUBDIR += vfxdvik
     SUBDIR += w3
     SUBDIR += w3m
+    SUBDIR += w3m-ssl
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += word
