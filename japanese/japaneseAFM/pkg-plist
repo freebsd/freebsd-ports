@@ -3,3 +3,4 @@ share/fonts/afm/GothicBBB-Medium-V
 share/fonts/afm/Ryumin-Light-H
 share/fonts/afm/Ryumin-Light-V
 @unexec rmdir %D/share/fonts/afm 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true
