@@ -3,14 +3,14 @@
 # Date created:				03/20/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/11/14 09:43:26 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/03/20 08:50:50 nectar Exp $
 #
 
 DISTNAME=		HTMLgen
 PKGNAME=		py-HTMLgen-2.1
-CATEGORIES=		www
+CATEGORIES=		www python
 MASTER_SITES=		http://starship.skyport.net/crew/friedrich/ \
-			http://www.nectar.com/distfiles/
+			http://www.nectar.cc/distfiles/
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
