@@ -13,6 +13,7 @@ share/gnome/glimmer/languages/bash.lang
 share/gnome/glimmer/languages/c.lang
 share/gnome/glimmer/languages/cpp.lang
 share/gnome/glimmer/languages/dtml.lang
+share/gnome/glimmer/languages/fortran.lang
 share/gnome/glimmer/languages/html.lang
 share/gnome/glimmer/languages/java.lang
 share/gnome/glimmer/languages/js.lang
@@ -30,6 +31,7 @@ share/gnome/glimmer/languages/sql.lang
 share/gnome/glimmer/languages/tcltk.lang
 share/gnome/glimmer/languages/wml.lang
 share/gnome/glimmer/languages/x86.lang
+share/gnome/glimmer/languages/xhtml-trans.lang
 share/gnome/glimmer/languages/xml.lang
 share/gnome/glimmer/languages/z80.lang
 share/gnome/glimmer/scripts/Delete_To_End.py
@@ -38,6 +40,7 @@ share/gnome/glimmer/scripts/FileSelector.py
 share/gnome/glimmer/scripts/ISO2HTML.py
 share/gnome/glimmer/scripts/Replace_Spaces.py
 share/gnome/glimmer/scripts/Replace_Tabs.py
+share/gnome/glimmer/scripts/To_Lower.py
 share/gnome/glimmer/scripts/To_Upper.py
 share/gnome/help/glimmer/C/bugs.html
 share/gnome/help/glimmer/C/customize.html
@@ -54,9 +57,9 @@ share/gnome/pixmaps/glimmer-icon.png
 share/gnome/pixmaps/glimmer-title.png
 share/locale/ja/LC_MESSAGES/glimmer.mo
 share/locale/sv/LC_MESSAGES/glimmer.mo
+@dirrm share/gnome/help/glimmer/C
+@dirrm share/gnome/help/glimmer
 @dirrm share/gnome/glimmer/scripts
 @dirrm share/gnome/glimmer/languages
 @dirrm share/gnome/glimmer/docs
 @dirrm share/gnome/glimmer
-@dirrm share/gnome/help/glimmer/C
-@dirrm share/gnome/help/glimmer
