@@ -3,13 +3,14 @@
 # Date created:         2 Oct 1995
 # Whom:                 se
 #
-# $Id: Makefile,v 1.4 1997/12/25 22:29:17 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/28 02:13:23 steve Exp $
 #
 
 DISTNAME=	spider
 PKGNAME=	spider-1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
+MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/ \
+		http://www.lovett.com/~ade/FreeBSD/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
