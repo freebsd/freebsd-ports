@@ -9,6 +9,9 @@ PORTNAME=	jpeg
 PORTVERSION=	6b.15
 CATEGORIES=	graphics linux
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	RPM of the JPEG lib
+
 RPM_SET=	libjpeg-6b-15.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"

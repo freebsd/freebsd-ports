@@ -10,6 +10,7 @@ PORTVERSION=	1.2.8
 CATEGORIES=	x11 linux
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	RPM of gnome-libs
 
 RPM_SET=	gnome-libs-${PORTVERSION}-11.${MACHINE_ARCH}.rpm
 

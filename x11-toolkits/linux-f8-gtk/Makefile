@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	linux-
 DISTFILES=	${RPM_SET}
 
 MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	RPM of the Gtk lib
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 USE_LINUX_PREFIX=	yes
