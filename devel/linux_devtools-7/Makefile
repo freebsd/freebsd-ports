@@ -25,6 +25,8 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+BROKEN=			Incomplete pkg-plist
+
 ONLY_FOR_ARCHS=		alpha i386
 
 USE_LINUX=		7
