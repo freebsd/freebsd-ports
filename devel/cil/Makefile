@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cil
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://manju.cs.berkeley.edu/cil/distrib/
 
@@ -30,10 +29,6 @@ LIBFILES=	Cilly.pm KeptFile.pm OutputFile.pm TempFile.pm
 EXECFILES=	cilly.byte.exe machdep.exe
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
 
 .if ${PERL_LEVEL} < 500601
 IGNORE=		"Does not work with perl < 5.6.1"
