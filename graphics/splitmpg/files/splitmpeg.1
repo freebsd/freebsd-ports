@@ -1,0 +1,45 @@
+.\" The following requests are required for all man pages.
+.Dd Thu Aug  1 09:36:57 CDT 1996
+.Os
+.Dt splitmpeg 1
+.Sh NAME
+.Nm splitmpeg
+.Sh SYNOPSIS
+.Nm splitmpeg
+.Op Fl vq
+.Ar filename
+.Sh DESCRIPTION
+.Nm splitmpeg
+splits an ISO 11172-1 MPEG system layer stream into its components.
+
+.Fl v
+print pack SCR and mux rate for each pack.
+
+.Fl q
+work quitely, nothing is written to stdout.
+
+.\" .Sh ENVIRONMENT
+.Sh FILES
+
+.Bl -tag -width stm188.mpg -compact
+.It Pa stm188.mpg
+is a reserved stream.
+
+.It Pa stm189.mpg
+is private stream 1.
+
+.It Pa stm190.mpg
+is the padding stream.
+
+.It Pa stm191.mpg
+is private stream 2.
+
+.It Pa stm192.mpg to stm223.mpg
+are audio streams.
+
+.It Pa stm224.mpg to stm239.mpg
+are video streams. 
+
+.Sh AUTHORS
+splitmpeg was written by Michael Simmons <michael@ecel.uwa.edu.au>.
+This man page was written by Eric L. Hernes <erich@FreeBSD.org>
