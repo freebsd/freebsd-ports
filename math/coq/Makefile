@@ -29,6 +29,8 @@ CONFIGURE_ARGS+=	--opt
 
 ALL_TARGET=	world
 
+PORTDOCS=	CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
@@ -50,7 +52,7 @@ MAN1=	coq-interface.1 coq-tex.1 coq_makefile.1 coqc.1 coqdep.1 coqdoc.1 \
 post-install:
 .if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
-.for i in CHANGES COPYRIGHT CREDITS INSTALL LICENSE README
+.for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

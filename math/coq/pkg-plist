@@ -517,10 +517,7 @@ lib/coq/theories7/ZArith/zarith_aux.vo
 share/emacs/site-lisp/coq-inferior.el
 share/emacs/site-lisp/coq.el
 share/texmf/tex/latex/misc/coqdoc.sty
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/texmf/tex/latex/misc 2>/dev/null || true
+@unexec rmdir %D/share/texmf/tex/latex 2>/dev/null || true
+@unexec rmdir %D/share/texmf/tex 2>/dev/null || true
+@unexec rmdir %D/share/texmf 2>/dev/null || true
