@@ -88,9 +88,11 @@
 %%PLIST_TOPO%%share/EMBOSS/acd/topo.acd
 bin/abiview
 bin/acdc
+bin/alignwrap
 bin/antigenic
 bin/backtranseq
 bin/banana
+bin/biosed
 bin/btwisted
 bin/cai
 bin/chaos
@@ -115,6 +117,7 @@ bin/dbiflat
 bin/dbigcg
 bin/degapseq
 bin/descseq
+bin/dichet
 bin/diffseq
 bin/digest
 bin/distmat
@@ -132,6 +135,7 @@ bin/entret
 bin/equicktandem
 bin/est2genome
 bin/etandem
+bin/extractfeat
 bin/extractseq
 bin/findkm
 bin/freak
@@ -148,6 +152,7 @@ bin/infoalign
 bin/infoseq
 bin/isochore
 bin/lindna
+bin/listor
 bin/marscan
 bin/maskfeat
 bin/maskseq
@@ -155,6 +160,7 @@ bin/matcher
 bin/megamerger
 bin/merger
 bin/msbar
+bin/mwfilter
 bin/needle
 bin/newcpgreport
 bin/newcpgseek
@@ -182,7 +188,7 @@ bin/polydot
 bin/preg
 bin/prettyplot
 bin/prettyseq
-bin/prima
+bin/primer3
 bin/primersearch
 bin/printsextract
 bin/profit
@@ -190,6 +196,7 @@ bin/prophecy
 bin/prophet
 bin/prosextract
 bin/pscan
+bin/psiblasts
 bin/rebaseextract
 bin/recoder
 bin/redata
@@ -197,6 +204,7 @@ bin/remap
 bin/restover
 bin/restrict
 bin/revseq
+bin/runJemboss.csh
 bin/scopalign
 bin/scope
 bin/seealso
@@ -214,6 +222,7 @@ bin/showseq
 bin/shuffleseq
 bin/sigcleave
 bin/siggen
+bin/sigscan
 bin/silent
 bin/splitter
 bin/stretcher
@@ -227,6 +236,7 @@ bin/tfm
 bin/tfscan
 bin/tmap
 bin/transeq
+bin/trimest
 bin/trimseq
 bin/vectorstrip
 bin/water
@@ -236,24 +246,30 @@ bin/wordmatch
 bin/wossname
 etc/emboss.default.sample
 lib/libajax.a
+lib/libajax.la
 lib/libajax.so
 lib/libajax.so.1
 lib/libajaxg.a
+lib/libajaxg.la
 lib/libajaxg.so
 lib/libajaxg.so.1
 lib/libnucleus.a
+lib/libnucleus.la
 lib/libnucleus.so
 lib/libnucleus.so.1
 lib/libplplot.a
+lib/libplplot.la
 lib/libplplot.so
-lib/libplplot.so.4
+lib/libplplot.so.5
 share/EMBOSS/acd/abiview.acd
 share/EMBOSS/acd/ajbad.acd
 share/EMBOSS/acd/ajfeatest.acd
 share/EMBOSS/acd/ajtest.acd
+share/EMBOSS/acd/alignwrap.acd
 share/EMBOSS/acd/antigenic.acd
 share/EMBOSS/acd/backtranseq.acd
 share/EMBOSS/acd/banana.acd
+share/EMBOSS/acd/biosed.acd
 share/EMBOSS/acd/btwisted.acd
 share/EMBOSS/acd/cai.acd
 share/EMBOSS/acd/chaos.acd
@@ -267,6 +283,7 @@ share/EMBOSS/acd/codes.english
 share/EMBOSS/acd/complex.acd
 share/EMBOSS/acd/compseq.acd
 share/EMBOSS/acd/cons.acd
+share/EMBOSS/acd/contacts.acd
 share/EMBOSS/acd/corbatest.acd
 share/EMBOSS/acd/cpgplot.acd
 share/EMBOSS/acd/cpgreport.acd
@@ -279,12 +296,15 @@ share/EMBOSS/acd/dbifasta.acd
 share/EMBOSS/acd/dbiflat.acd
 share/EMBOSS/acd/dbigcg.acd
 share/EMBOSS/acd/degapseq.acd
+share/EMBOSS/acd/demoalign.acd
 share/EMBOSS/acd/demofeatures.acd
 share/EMBOSS/acd/demolist.acd
+share/EMBOSS/acd/demoreport.acd
 share/EMBOSS/acd/demosequence.acd
 share/EMBOSS/acd/demostring.acd
 share/EMBOSS/acd/demotable.acd
 share/EMBOSS/acd/descseq.acd
+share/EMBOSS/acd/dichet.acd
 share/EMBOSS/acd/diffseq.acd
 share/EMBOSS/acd/digest.acd
 share/EMBOSS/acd/distmat.acd
@@ -303,6 +323,7 @@ share/EMBOSS/acd/entret.acd
 share/EMBOSS/acd/equicktandem.acd
 share/EMBOSS/acd/est2genome.acd
 share/EMBOSS/acd/etandem.acd
+share/EMBOSS/acd/extractfeat.acd
 share/EMBOSS/acd/extractseq.acd
 share/EMBOSS/acd/findkm.acd
 share/EMBOSS/acd/freak.acd
@@ -320,6 +341,7 @@ share/EMBOSS/acd/infoalign.acd
 share/EMBOSS/acd/infoseq.acd
 share/EMBOSS/acd/isochore.acd
 share/EMBOSS/acd/lindna.acd
+share/EMBOSS/acd/listor.acd
 share/EMBOSS/acd/marscan.acd
 share/EMBOSS/acd/maskfeat.acd
 share/EMBOSS/acd/maskseq.acd
@@ -327,6 +349,7 @@ share/EMBOSS/acd/matcher.acd
 share/EMBOSS/acd/megamerger.acd
 share/EMBOSS/acd/merger.acd
 share/EMBOSS/acd/msbar.acd
+share/EMBOSS/acd/mwfilter.acd
 share/EMBOSS/acd/needle.acd
 share/EMBOSS/acd/newcpgreport.acd
 share/EMBOSS/acd/newcpgseek.acd
@@ -356,6 +379,8 @@ share/EMBOSS/acd/preg.acd
 share/EMBOSS/acd/prettyplot.acd
 share/EMBOSS/acd/prettyseq.acd
 share/EMBOSS/acd/prima.acd
+share/EMBOSS/acd/primer3.acd
+share/EMBOSS/acd/primers.acd
 share/EMBOSS/acd/primersearch.acd
 share/EMBOSS/acd/printsextract.acd
 share/EMBOSS/acd/profit.acd
@@ -380,8 +405,8 @@ share/EMBOSS/acd/seqret.acd
 share/EMBOSS/acd/seqretall.acd
 share/EMBOSS/acd/seqretallfeat.acd
 share/EMBOSS/acd/seqretset.acd
+share/EMBOSS/acd/seqretsingle.acd
 share/EMBOSS/acd/seqretsplit.acd
-share/EMBOSS/acd/seqrettype.acd
 share/EMBOSS/acd/showalign.acd
 share/EMBOSS/acd/showdb.acd
 share/EMBOSS/acd/showfeat.acd
@@ -396,6 +421,7 @@ share/EMBOSS/acd/splitter.acd
 share/EMBOSS/acd/stretcher.acd
 share/EMBOSS/acd/stssearch.acd
 share/EMBOSS/acd/supermatcher.acd
+share/EMBOSS/acd/swissparse.acd
 share/EMBOSS/acd/syco.acd
 share/EMBOSS/acd/testplot.acd
 share/EMBOSS/acd/textsearch.acd
@@ -405,6 +431,7 @@ share/EMBOSS/acd/tfscan.acd
 share/EMBOSS/acd/tmap.acd
 share/EMBOSS/acd/transeq.acd
 share/EMBOSS/acd/treetypedisplay.acd
+share/EMBOSS/acd/trimest.acd
 share/EMBOSS/acd/trimseq.acd
 share/EMBOSS/acd/vectorstrip.acd
 share/EMBOSS/acd/water.acd
@@ -694,8 +721,243 @@ share/EMBOSS/data/PROSITE/dummyfile
 share/EMBOSS/data/REBASE/dummyfile
 share/EMBOSS/data/embossre.equ
 share/EMBOSS/emboss.default.template
+share/EMBOSS/jemboss/LICENSE
+share/EMBOSS/jemboss/api/allclasses-frame.html
+share/EMBOSS/jemboss/api/deprecated-list.html
+share/EMBOSS/jemboss/api/getClasses.pl
+share/EMBOSS/jemboss/api/help-doc.html
+share/EMBOSS/jemboss/api/index-all.html
+share/EMBOSS/jemboss/api/index.html
+share/EMBOSS/jemboss/api/makeDocs.csh
+share/EMBOSS/jemboss/api/org/emboss/jemboss/Jemboss.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/Jemboss.winExit.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/JembossLogo.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/JembossParams.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/BuildProgramMenu.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/ResultsMenuBar.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/SetUpMenuBar.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/ShowResultSet.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/ShowSavedResults.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/SwingWorker.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree/DragTree.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree/FileEditorDisplay.PopupListener.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree/FileEditorDisplay.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree/FileNode.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree/FileSaving.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/BuildJembossForm.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/ListFilePanel.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/SectionPanel.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/SetInFileCard.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/SetOutFileCard.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/TextFieldFloat.DecimalNumberDocument.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/TextFieldFloat.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/TextFieldInt.WholeNumberDocument.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/TextFieldInt.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/TextFieldSink.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/myComboPopup.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form/myComboPopup.myComboUI.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/CutNPasteTextArea.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/FileChooser.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/InputSequenceAttributes.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/OutputSequenceAttributes.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/SequenceFilter.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser/TextAreaSink.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/startup/Database.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/startup/ProgList.HorizontalMenu.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/startup/ProgList.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/startup/Splash.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/AcdFunResolve.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/AcdVarResolve.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/Ajax.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/Dependent.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/ParseAcd.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/acd/Application.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/acd/ApplicationFields.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/acd/ApplicationParam.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/programs/JembossProcess.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/programs/ListFile.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/programs/ResultList.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/programs/RunEmbossApplication.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/AuthPopup.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/CallAjax.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/GetWossname.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/JembossRun.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/JembossSoapException.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/PendingResults.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/PrivateRequest.html
+share/EMBOSS/jemboss/api/org/emboss/jemboss/soap/ResListView.html
+share/EMBOSS/jemboss/api/overview-tree.html
+share/EMBOSS/jemboss/api/package-list
+share/EMBOSS/jemboss/api/packages.html
+share/EMBOSS/jemboss/api/serialized-form.html
+share/EMBOSS/jemboss/api/stylesheet.css
+share/EMBOSS/jemboss/embreo/LICENSE
+share/EMBOSS/jemboss/embreo/Modules/EmbossSoap.pm
+share/EMBOSS/jemboss/embreo/Modules/EmbreoFile.pm
+share/EMBOSS/jemboss/embreo/Modules/ParseSoapOptions.pm
+share/EMBOSS/jemboss/embreo/Modules/README
+share/EMBOSS/jemboss/embreo/PROBLEMS
+share/EMBOSS/jemboss/embreo/README
+share/EMBOSS/jemboss/embreo/README.macos
+share/EMBOSS/jemboss/embreo/README.properties
+share/EMBOSS/jemboss/embreo/api-docs/allclasses-frame.html
+share/EMBOSS/jemboss/embreo/api-docs/deprecated-list.html
+share/EMBOSS/jemboss/embreo/api-docs/help-doc.html
+share/EMBOSS/jemboss/embreo/api-docs/index-all.html
+share/EMBOSS/jemboss/embreo/api-docs/index.html
+share/EMBOSS/jemboss/embreo/api-docs/overview-tree.html
+share/EMBOSS/jemboss/embreo/api-docs/package-list
+share/EMBOSS/jemboss/embreo/api-docs/serialized-form.html
+share/EMBOSS/jemboss/embreo/api-docs/stylesheet.css
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoACD.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoAnnotate.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoAppList.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoAuthException.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoAuthPopup.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoAuthPrompt.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoException.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoFrame.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoGroupList.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoGroupTree.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoHelp.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoHelpView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoJList.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoListFile.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoMakeFileSafe.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoParams.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoPendingResults.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoPrivateRequest.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoPublicRequest.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoResList.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoResListView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoResSave.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoResView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoResult.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoRun.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoServiceDesc.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoShowDB.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoStartup.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoTreeCellRenderer.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/EmbreoUtils.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFile.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileGet.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileLaunch.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileList.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileListView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileMgr.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileNode.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFilePut.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileRequest.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileRoots.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileSave.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileTree.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileTreePanel.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoFileViewPanel.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalGet.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalRoots.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalTree.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalTreePanel.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalView.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/EmbreoLocalViewPanel.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/FileNode.html
+share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr/WindowsAltFileSystemView.html
+share/EMBOSS/jemboss/embreo/cgi-bin/soap.cgi
+share/EMBOSS/jemboss/embreo/embreo-full.jar
+share/EMBOSS/jemboss/images/Backward_arrow_button.gif
+share/EMBOSS/jemboss/images/Forward_arrow_button.gif
+share/EMBOSS/jemboss/images/Go_button.gif
+share/EMBOSS/jemboss/images/Information_button.gif
+share/EMBOSS/jemboss/images/Jemboss_logo_greyback.gif
+share/EMBOSS/jemboss/images/Jemboss_logo_large.gif
+share/EMBOSS/jemboss/images/Jemboss_logo_small.gif
+share/EMBOSS/jemboss/images/Job_manager_button.gif
+share/EMBOSS/jemboss/images/Refresh_button.gif
+share/EMBOSS/jemboss/images/Refresh_button2.gif
+share/EMBOSS/jemboss/interface.html
+share/EMBOSS/jemboss/lib/README
+share/EMBOSS/jemboss/lib/activation.jar
+share/EMBOSS/jemboss/lib/jakarta-regexp-1.2.jar
+share/EMBOSS/jemboss/lib/jalview.jar
+share/EMBOSS/jemboss/lib/mail.jar
+share/EMBOSS/jemboss/lib/soap.jar
+share/EMBOSS/jemboss/lib/xerces.jar
+share/EMBOSS/jemboss/org/emboss/jemboss/Jemboss.java
+share/EMBOSS/jemboss/org/emboss/jemboss/JembossLogo.java
+share/EMBOSS/jemboss/org/emboss/jemboss/JembossParams.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/AdvancedOptions.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/BuildProgramMenu.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/LaunchJalView.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/ResultsMenuBar.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/SetUpMenuBar.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/ShowResultSet.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/ShowSavedResults.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/SwingWorker.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/DragTree.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/FileEditorDisplay.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/FileNode.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/FileSave.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/FileSaving.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/RemoteDragTree.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/RemoteFileNode.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree/RemoteFileTreePanel.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/BuildJembossForm.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/ListFilePanel.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/MultiLineToolTipUI.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/PlafMacros.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/SectionPanel.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/Separator.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/SetInFileCard.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/SetOutFileCard.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/TextFieldFloat.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/TextFieldInt.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/TextFieldSink.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/form/myComboPopup.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/CutNPasteTextArea.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/FileChooser.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/InputSequenceAttributes.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/OutputSequenceAttributes.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/SequenceFilter.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser/TextAreaSink.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/startup/Database.java
+share/EMBOSS/jemboss/org/emboss/jemboss/gui/startup/ProgList.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/AcdFunResolve.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/AcdVarResolve.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/Ajax.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/Dependent.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/ParseAcd.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/acd/Application.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/acd/ApplicationFields.java
+share/EMBOSS/jemboss/org/emboss/jemboss/parser/acd/ApplicationParam.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/BatchUpdateTimer.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/JembossProcess.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/ListFile.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/ResultList.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/ResultsUpdateTimer.java
+share/EMBOSS/jemboss/org/emboss/jemboss/programs/RunEmbossApplication.java
+share/EMBOSS/jemboss/org/emboss/jemboss/server/JembossServer.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/AuthPopup.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/CallAjax.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/GetWossname.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/JembossRun.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/JembossSoapException.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/PendingResults.java
+share/EMBOSS/jemboss/org/emboss/jemboss/soap/PrivateRequest.java
+share/EMBOSS/jemboss/readme.html
+share/EMBOSS/jemboss/resources/jemboss.properties
+share/EMBOSS/jemboss/resources/readme.txt
+share/EMBOSS/jemboss/resources/version
+share/EMBOSS/jemboss/runJemboss.csh
+share/EMBOSS/jemboss/setup.html
+share/EMBOSS/jemboss/utils/makeJar.csh
 share/EMBOSS/plstnd5.fnt
 share/EMBOSS/plxtnd5.fnt
+share/EMBOSS/test/data/aligna.dna
+share/EMBOSS/test/data/aligna.prot
+share/EMBOSS/test/data/alignapart.dna
+share/EMBOSS/test/data/alignapart.prot
+share/EMBOSS/test/data/alignb.dna
+share/EMBOSS/test/data/alignb.prot
 share/EMBOSS/test/data/dna.acedb
 share/EMBOSS/test/data/dna.aln
 share/EMBOSS/test/data/dna.asn1
@@ -726,6 +988,7 @@ share/EMBOSS/test/data/feat.emft
 share/EMBOSS/test/data/feat.fasta
 share/EMBOSS/test/data/feat.pir
 share/EMBOSS/test/data/paamir.pep
+share/EMBOSS/test/data/pax6_cdna.fasta
 share/EMBOSS/test/data/prot.acedb
 share/EMBOSS/test/data/prot.codata
 share/EMBOSS/test/data/prot.fasta
@@ -742,6 +1005,7 @@ share/EMBOSS/test/data/prot.nbrf
 share/EMBOSS/test/data/prot.ncbi
 share/EMBOSS/test/data/prot.swiss
 share/EMBOSS/test/data/prot.text
+share/EMBOSS/test/data/z83307.seq
 share/EMBOSS/test/embl/acnum.hit
 share/EMBOSS/test/embl/acnum.trg
 share/EMBOSS/test/embl/division.lkp
@@ -816,6 +1080,7 @@ share/doc/EMBOSS/manuals/emboss_qg.ps
 share/doc/EMBOSS/manuals/program.ps.gz
 share/doc/EMBOSS/programs/html/abiview.html
 share/doc/EMBOSS/programs/html/abiview0.gif
+share/doc/EMBOSS/programs/html/ajtest.html
 share/doc/EMBOSS/programs/html/alignment_consensus_group.html
 share/doc/EMBOSS/programs/html/alignment_differences_group.html
 share/doc/EMBOSS/programs/html/alignment_dot_plots_group.html
@@ -826,6 +1091,7 @@ share/doc/EMBOSS/programs/html/antigenic.html
 share/doc/EMBOSS/programs/html/backtranseq.html
 share/doc/EMBOSS/programs/html/banana.html
 share/doc/EMBOSS/programs/html/banana0.gif
+share/doc/EMBOSS/programs/html/biosed.html
 share/doc/EMBOSS/programs/html/btwisted.html
 share/doc/EMBOSS/programs/html/cai.html
 share/doc/EMBOSS/programs/html/chaos.html
@@ -847,6 +1113,7 @@ share/doc/EMBOSS/programs/html/cpgplot.html
 share/doc/EMBOSS/programs/html/cpgplot0.gif
 share/doc/EMBOSS/programs/html/cpgreport.html
 share/doc/EMBOSS/programs/html/cusp.html
+share/doc/EMBOSS/programs/html/cutgextract.html
 share/doc/EMBOSS/programs/html/cutseq.html
 share/doc/EMBOSS/programs/html/dan.html
 share/doc/EMBOSS/programs/html/dbiblast.html
@@ -911,6 +1178,7 @@ share/doc/EMBOSS/programs/html/erestml.html
 share/doc/EMBOSS/programs/html/eseqboot.html
 share/doc/EMBOSS/programs/html/est2genome.html
 share/doc/EMBOSS/programs/html/etandem.html
+share/doc/EMBOSS/programs/html/extractfeat.html
 share/doc/EMBOSS/programs/html/extractseq.html
 share/doc/EMBOSS/programs/html/factor.html
 share/doc/EMBOSS/programs/html/feature_tables_group.html
@@ -938,6 +1206,7 @@ share/doc/EMBOSS/programs/html/isochore0.gif
 share/doc/EMBOSS/programs/html/kitsch.html
 share/doc/EMBOSS/programs/html/lindna.gif
 share/doc/EMBOSS/programs/html/lindna.html
+share/doc/EMBOSS/programs/html/listor.html
 share/doc/EMBOSS/programs/html/marscan.html
 share/doc/EMBOSS/programs/html/maskfeat.html
 share/doc/EMBOSS/programs/html/maskseq.html
@@ -948,6 +1217,7 @@ share/doc/EMBOSS/programs/html/merger.html
 share/doc/EMBOSS/programs/html/mix.html
 share/doc/EMBOSS/programs/html/msbar.html
 share/doc/EMBOSS/programs/html/mse.html
+share/doc/EMBOSS/programs/html/mwfilter.html
 share/doc/EMBOSS/programs/html/needle.html
 share/doc/EMBOSS/programs/html/neighbor.html
 share/doc/EMBOSS/programs/html/newcpgreport.html
@@ -1003,6 +1273,7 @@ share/doc/EMBOSS/programs/html/prettyplot3.gif
 share/doc/EMBOSS/programs/html/prettyplot4.gif
 share/doc/EMBOSS/programs/html/prettyseq.html
 share/doc/EMBOSS/programs/html/prima.html
+share/doc/EMBOSS/programs/html/primer3.html
 share/doc/EMBOSS/programs/html/primersearch.html
 share/doc/EMBOSS/programs/html/printsextract.html
 share/doc/EMBOSS/programs/html/profit.html
@@ -1067,6 +1338,7 @@ share/doc/EMBOSS/programs/html/tmap0.gif
 share/doc/EMBOSS/programs/html/topo.gif
 share/doc/EMBOSS/programs/html/topo.html
 share/doc/EMBOSS/programs/html/transeq.html
+share/doc/EMBOSS/programs/html/trimest.html
 share/doc/EMBOSS/programs/html/trimseq.html
 share/doc/EMBOSS/programs/html/utils_database_creation_group.html
 share/doc/EMBOSS/programs/html/utils_database_indexing_group.html
@@ -1080,9 +1352,11 @@ share/doc/EMBOSS/programs/html/wordmatch.html
 share/doc/EMBOSS/programs/html/wossname.html
 share/doc/EMBOSS/programs/text/SITE-DIRECTED.txt
 share/doc/EMBOSS/programs/text/abiview.txt
+share/doc/EMBOSS/programs/text/ajtest.txt
 share/doc/EMBOSS/programs/text/antigenic.txt
 share/doc/EMBOSS/programs/text/backtranseq.txt
 share/doc/EMBOSS/programs/text/banana.txt
+share/doc/EMBOSS/programs/text/biosed.txt
 share/doc/EMBOSS/programs/text/btwisted.txt
 share/doc/EMBOSS/programs/text/cai.txt
 share/doc/EMBOSS/programs/text/chaos.txt
@@ -1103,6 +1377,7 @@ share/doc/EMBOSS/programs/text/contrast.txt
 share/doc/EMBOSS/programs/text/cpgplot.txt
 share/doc/EMBOSS/programs/text/cpgreport.txt
 share/doc/EMBOSS/programs/text/cusp.txt
+share/doc/EMBOSS/programs/text/cutgextract.txt
 share/doc/EMBOSS/programs/text/cutseq.txt
 share/doc/EMBOSS/programs/text/dan.txt
 share/doc/EMBOSS/programs/text/dbiblast.txt
@@ -1161,6 +1436,7 @@ share/doc/EMBOSS/programs/text/erestml.txt
 share/doc/EMBOSS/programs/text/eseqboot.txt
 share/doc/EMBOSS/programs/text/est2genome.txt
 share/doc/EMBOSS/programs/text/etandem.txt
+share/doc/EMBOSS/programs/text/extractfeat.txt
 share/doc/EMBOSS/programs/text/extractseq.txt
 share/doc/EMBOSS/programs/text/factor.txt
 share/doc/EMBOSS/programs/text/findkm.txt
@@ -1181,6 +1457,7 @@ share/doc/EMBOSS/programs/text/infoseq.txt
 share/doc/EMBOSS/programs/text/isochore.txt
 share/doc/EMBOSS/programs/text/kitsch.txt
 share/doc/EMBOSS/programs/text/lindna.txt
+share/doc/EMBOSS/programs/text/listor.txt
 share/doc/EMBOSS/programs/text/marscan.txt
 share/doc/EMBOSS/programs/text/maskfeat.txt
 share/doc/EMBOSS/programs/text/maskseq.txt
@@ -1190,6 +1467,7 @@ share/doc/EMBOSS/programs/text/merger.txt
 share/doc/EMBOSS/programs/text/mix.txt
 share/doc/EMBOSS/programs/text/msbar.txt
 share/doc/EMBOSS/programs/text/mse.txt
+share/doc/EMBOSS/programs/text/mwfilter.txt
 share/doc/EMBOSS/programs/text/needle.txt
 share/doc/EMBOSS/programs/text/neighbor.txt
 share/doc/EMBOSS/programs/text/newcpgreport.txt
@@ -1220,6 +1498,7 @@ share/doc/EMBOSS/programs/text/preg.txt
 share/doc/EMBOSS/programs/text/prettyplot.txt
 share/doc/EMBOSS/programs/text/prettyseq.txt
 share/doc/EMBOSS/programs/text/prima.txt
+share/doc/EMBOSS/programs/text/primer3.txt
 share/doc/EMBOSS/programs/text/primersearch.txt
 share/doc/EMBOSS/programs/text/printsextract.txt
 share/doc/EMBOSS/programs/text/profit.txt
@@ -1272,6 +1551,7 @@ share/doc/EMBOSS/programs/text/tfscan.txt
 share/doc/EMBOSS/programs/text/tmap.txt
 share/doc/EMBOSS/programs/text/topo.txt
 share/doc/EMBOSS/programs/text/transeq.txt
+share/doc/EMBOSS/programs/text/trimest.txt
 share/doc/EMBOSS/programs/text/trimseq.txt
 share/doc/EMBOSS/programs/text/vectorstrip.txt
 share/doc/EMBOSS/programs/text/water.txt
@@ -1303,6 +1583,47 @@ share/doc/EMBOSS/tutorials/tmap.ps.gz
 @dirrm share/EMBOSS/test/embl
 @dirrm share/EMBOSS/test/data
 @dirrm share/EMBOSS/test
+@dirrm share/EMBOSS/jemboss/utils
+@dirrm share/EMBOSS/jemboss/resources
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/soap
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/server
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/programs
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/parser/acd
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/parser
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/gui/startup
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/gui/sequenceChooser
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/gui/form
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/gui/filetree
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss/gui
+@dirrm share/EMBOSS/jemboss/org/emboss/jemboss
+@dirrm share/EMBOSS/jemboss/org/emboss
+@dirrm share/EMBOSS/jemboss/org
+@dirrm share/EMBOSS/jemboss/lib
+@dirrm share/EMBOSS/jemboss/images
+@dirrm share/EMBOSS/jemboss/embreo/cgi-bin
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo/filemgr
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp/embreo
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc/hgmp
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk/ac/mrc
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk/ac
+@dirrm share/EMBOSS/jemboss/embreo/api-docs/uk
+@dirrm share/EMBOSS/jemboss/embreo/api-docs
+@dirrm share/EMBOSS/jemboss/embreo/Modules
+@dirrm share/EMBOSS/jemboss/embreo
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/soap
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/programs
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/parser/acd
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/parser
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/startup
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/sequenceChooser
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/form
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/gui/filetree
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss/gui
+@dirrm share/EMBOSS/jemboss/api/org/emboss/jemboss
+@dirrm share/EMBOSS/jemboss/api/org/emboss
+@dirrm share/EMBOSS/jemboss/api/org
+@dirrm share/EMBOSS/jemboss/api
+@dirrm share/EMBOSS/jemboss
 @dirrm share/EMBOSS/data/REBASE
 @dirrm share/EMBOSS/data/PROSITE
 @dirrm share/EMBOSS/data/PRINTS
