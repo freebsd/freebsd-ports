@@ -558,6 +558,7 @@
     SUBDIR += p5-WWW-Search-AltaVista
     SUBDIR += p5-WWW-Search-Google
     SUBDIR += p5-WWW-Shorten
+    SUBDIR += p5-WWW-SourceForge
     SUBDIR += p5-WWW-Wikipedia
     SUBDIR += p5-WebService-Bloglines
     SUBDIR += p5-ldap-abook
