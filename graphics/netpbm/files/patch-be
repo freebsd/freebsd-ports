@@ -1,5 +1,5 @@
---- pgm/Makefile.orig	Fri Aug 17 13:42:24 2001
-+++ pgm/Makefile	Wed Sep  5 00:00:00 2001
+--- pgm/Makefile.orig	Sun Sep  9 04:31:29 2001
++++ pgm/Makefile	Mon Jan 28 00:00:00 2002
 @@ -33,6 +33,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
@@ -13,7 +13,7 @@
  all:	$(PGMLIB) $(BINARIES) $(EXTRA_STATICLIB)
  .PHONY: merge
 -merge: $(MERGENAME)
-+merge: $(MERGENAME) $(EXTRA_STATICLIB) $(EXTRA_STATICLIB)
++merge: $(MERGENAME) $(EXTRA_STATICLIB)
  
  # LIBRARIES
  
