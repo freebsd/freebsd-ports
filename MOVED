@@ -639,3 +639,4 @@ security/ruby-openssl||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
 sysutils/ruby-devel-logger||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
 textproc/ruby-rexml||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
 www/ruby-webrick||2003-10-31|integrated into ruby18 and ruby16-shim-ruby18
+editors/AbiWord|editors/AbiWord2|2003-10-31|2.0 is the new stable release
