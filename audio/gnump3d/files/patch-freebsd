@@ -1,5 +1,5 @@
---- mkfiles/freebsd.orig	Thu May 30 03:58:51 2002
-+++ mkfiles/freebsd	Fri May 31 21:18:56 2002
+--- mkfiles/freebsd.orig	Fri Jun  7 06:31:56 2002
++++ mkfiles/freebsd	Sat Jun  8 09:27:02 2002
 @@ -6,8 +6,8 @@
  # if you wish you may change PREFIX to be /usr/local,
  # for example
@@ -30,14 +30,14 @@
 +LIBS   = ${PTHREAD_LIBS}
  
  
--DEFAULT_CFLAGS = -I.  -D_THREAD_SAFE -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.8\""
--CFLAGS  = $(DEFAULT_CFLAGS) -Wall -DFREEBSD=1 -DOS_TYPE="\"FreeBSD\""
-+DEFAULT_CFLAGS = -I.  ${PTHREAD_CFLAGS} -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.8\""
-+CFLAGS  += $(DEFAULT_CFLAGS) -Wall -DFREEBSD=1 -DOS_TYPE="\"FreeBSD\""
+-DEFAULT_CFLAGS = -I.  -D_THREAD_SAFE -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.9\""
+-CFLAGS  = $(DEFAULT_CFLAGS) -Wall -DOS_TYPE="\"FreeBSD\""
++DEFAULT_CFLAGS = -I.  ${PTHREAD_CFLAGS} -D_REENTRANT -DBINARY_DIR="\"$(BINARYDIR)\"" -DSYSCONFDIR="\"$(CONFIGDIR)\"" -DVERSION="\"0.9.9.9\""
++CFLAGS += $(DEFAULT_CFLAGS) -Wall -DOS_TYPE="\"FreeBSD\""
  
  
  #
-@@ -113,19 +113,25 @@
+@@ -116,25 +116,26 @@
  #  Install the software.
  #
  install: $(PROG)
@@ -52,12 +52,17 @@
  	# Install all the theme directories.
 -	for i in ../templates/*/; do cp -R ../templates/$$i $(TEMPLATEDIR); done
 -	install ../templates/README $(TEMPLATEDIR)
--	chmod -R 555 $(TEMPLATEDIR)
-+	-mkdir -p $(TEMPLATEDIR)/default 
+-
+-	# Fix up permissions correctly.
+-	find $(TEMPLATEDIR) -name "CVS" -print | xargs rm -rf
+-	chmod -R a+rx $(TEMPLATEDIR)
+-	find $(TEMPLATEDIR) -name "*.*" -print | xargs chmod -x
+-
++	-mkdir -p $(TEMPLATEDIR)/default
 +	${BSD_INSTALL_DATA} ../templates/default/* $(TEMPLATEDIR)/default
 +	-mkdir -p $(TEMPLATEDIR)/nausicaa
 +	${BSD_INSTALL_DATA} ../templates/nausicaa/* $(TEMPLATEDIR)/nausicaa
-+	-mkdir -p $(TEMPLATEDIR)/simple 
++	-mkdir -p $(TEMPLATEDIR)/simple
 +	${BSD_INSTALL_DATA} ../templates/simple/* $(TEMPLATEDIR)/simple
 +	-mkdir -p $(TEMPLATEDIR)/split
 +	${BSD_INSTALL_DATA} ../templates/split/* $(TEMPLATEDIR)/split
@@ -67,10 +72,12 @@
 -	install ../doc/mp3d.1 $(MANDIR)
 -	install ../doc/mp3d.conf.1 $(MANDIR)
 -	install ../doc/mp3d-top.1 $(MANDIR)
+-	install ../doc/mp3d-config.1 $(MANDIR)
 +	-mkdir -p $(MANDIR)
 +	${BSD_INSTALL_MAN} ../doc/mp3d.1 $(MANDIR)
 +	${BSD_INSTALL_MAN} ../doc/mp3d.conf.1 $(MANDIR)
 +	${BSD_INSTALL_MAN} ../doc/mp3d-top.1 $(MANDIR)
++	${BSD_INSTALL_MAN} ../doc/mp3d-config.1 $(MANDIR)
  
  
  #
