@@ -23,9 +23,7 @@ PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fox/
 PATCHFILES=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.diff
 PATCH_DIST_STRIP=	-p1
 
-#EXTRA_PATCHES=	${PATCHDIR}/xunicode.patch-*
-
-BUILD_DEPENDS=	${X11BASE}/lib/libxunicode.a:${PORTSDIR}/converters/xunicode
+BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xunicode
 
 CONFIGURE_ENV=	X_CFLAGS=-DUSE_XUNICODE
 .endif
@@ -52,5 +50,10 @@ SHLIB_MIN=	0
 MAKE_ENV+=	LT_CURRENT="${SHLIB_MAJ}" LT_REVISION="${SHLIB_MIN}"
 PLIST_SUB+=	LIBVER="${SHLIB_MAJ}"
 MAN1=		reswrap.1
+
+.if defined(WITH_XUNICODE)
+post-extract:
+	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
+.endif
 
 .include <bsd.port.mk>
