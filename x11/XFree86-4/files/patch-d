@@ -17,14 +17,3 @@
  #endif
  
  #ifndef PreIncDir
-@@ -463,8 +463,9 @@
- /*
-  * A hack to work around an optimisation problem with the compiler on
-  * FreeBSD 4.0-current in late 1999/early 2000.
-+ * (and FreeBSD 5.0-current in early 2000)
-  */
--#if OSMajorVersion == 4 && OSMinorVersion == 0 && OSTeenyVersion == 0
-+#if (OSMajorVersion == 4 || OSMajorVersion == 5) && OSMinorVersion == 0 && OSTeenyVersion == 0
- #define FreeBSDGccOptBug
- #endif
- 
