@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.13";
+my $VERSION	= "2.7.14";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -991,7 +991,7 @@ sub fetch_port($) {
     my $port = shift;		# Port to fetch
 
     setproctitle("fetching $port");
-    make($port, "fetch")
+    make($port, "checksum")
 	or bsd::errx(1, "failed to fetch %s", $port);
     setproctitle();
 }
