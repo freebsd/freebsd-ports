@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
+DISTNAME?=	netscape-${BROWSER_ARC}-${BROWSER_VER}
 CATEGORIES?=	www
 MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
 DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
@@ -29,6 +29,7 @@ PKGDIR=		${.CURDIR}/pkg
 
 AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
 BROWSER?=	communicator
+BROWSER_ARC?=	${BROWSER}
 BROWSER_VER?=	4.08
 FORTIFY=	Fortify-1.4.6-unix-x86
 NDIR=		${PREFIX}/${NSUBDIR}
@@ -38,7 +39,7 @@ INFILE_HEAD?=	'Communicator,4.08.0.98306'
 WRAPPER_TEMPLATE= ${MASTERDIR}/files/netscape.sh
 MAILCAP?=	${MASTERDIR}/files/mailcap
 
-PLIST_SUB=	BROWSER=${BROWSER} BROWSER_VER=${BROWSER_VER} \
+PLIST_SUB=	BROWSER=${BROWSER_ARC} BROWSER_VER=${BROWSER_VER} \
 		NSUBDIR=${NSUBDIR}
 
 .if (${BROWSER} == "communicator") && !defined(NO_AUTOADMIN)
@@ -71,7 +72,7 @@ pre-extract:
 
 post-configure:
 	${SED}	-e "s;@PREFIX@;${PREFIX};g" -e "s;@NSUBDIR@;${NSUBDIR};g" \
-		-e "s;@BROWSER@;${BROWSER};g" \
+		-e "s;@BROWSER@;${BROWSER_ARC};g" \
 		-e "s;@BROWSER_VER@;${BROWSER_VER};g" \
 		${WRAPPER_TEMPLATE} >${WRKSRC}/netscape
 	${CHMOD} +x ${WRKSRC}/netscape
@@ -90,11 +91,11 @@ do-install:
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} ${EXTRACT_AFTER_ARGS} -C ${NDIR}; \
 	done
 	${WRKSRC}/vreg ${NDIR}/registry ${WRKSRC}/infile
-	${MV} -f ${NDIR}/netscape ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
+	${MV} -f ${NDIR}/netscape ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape \
-		${BINDIR}/${BROWSER}-${BROWSER_VER}
-	${LN} -sf ${BROWSER}-${BROWSER_VER} ${BINDIR}/${BROWSER}-4
-	${LN} -sf ${BROWSER}-4 ${BINDIR}/netscape
+		${BINDIR}/${BROWSER_ARC}-${BROWSER_VER}
+	${LN} -sf ${BROWSER_ARC}-${BROWSER_VER} ${BINDIR}/${BROWSER_ARC}-4
+	${LN} -sf ${BROWSER_ARC}-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 		${INSTALL_DATA} ${MAILCAP} ${NDIR}; \
 	fi
@@ -105,7 +106,7 @@ do-install:
 .if defined(USE_128BIT) && !defined(NO_FORTIFY)
 	cd ${WRKDIR}/${FORTIFY} \
 	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
-	| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
+	| ./Fortify.sh ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin
 .endif
 	${CHOWN} -R root:wheel ${NDIR}
 
