@@ -7,6 +7,7 @@
 
 PORTNAME=	postgresql
 PORTVERSION=	7.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.de.postgresql.org/%SUBDIR%/ \
@@ -133,9 +134,9 @@ post-install:
 	@ ${CHOWN} root:pgsql ${PREFIX}/pgsql/lib
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
 	@ ${SED} -e "s=!!PREFIX!!=${PREFIX}=g" < ${FILESDIR}/pgsql.sh.tmpl \
-		> ${PREFIX}/etc/rc.d/pgsql.sh
-	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
-	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/pgsql.sh
+		> ${PREFIX}/etc/rc.d/010.pgsql.sh
+	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/010.pgsql.sh
+	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#' < ${FILESDIR}/post-install-notes \
 		> ${PREFIX}/pgsql/post-install-notes
 .if defined(WITHOUT_MULTIBYTE)

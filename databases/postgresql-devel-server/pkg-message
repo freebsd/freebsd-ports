@@ -8,5 +8,5 @@ Example:
 
 You can then start PostgreSQL by running:
 
-  /usr/local/etc/rc.d/pgsql.sh start
+  /usr/local/etc/rc.d/010.pgsql.sh start
 ==========================================
