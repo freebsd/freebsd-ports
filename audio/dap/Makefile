@@ -3,7 +3,7 @@
 # Date created:				23 August 1998
 # Whom:					yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.5 1999/01/07 08:19:19 simokawa Exp $
+# $Id: Makefile,v 1.6 1999/05/01 03:25:02 steve Exp $
 #
 
 DISTNAME=	DAPSource
@@ -15,9 +15,6 @@ MAINTAINER=	yoshiaki@kt.rim.or.jp
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 WRKSRC=		${WRKDIR}/dap
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:			Tue Sep  2 15:46:09 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.17 1999/01/27 18:19:35 fenner Exp $
+# $Id: Makefile,v 1.18 1999/02/12 11:57:57 dirk Exp $
 #
 
 DISTNAME=	xmysql-1.9
@@ -17,9 +17,6 @@ MAINTAINER=	andreas@FreeBSD.ORG
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.6:${PORTSDIR}/databases/mysql322
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
 

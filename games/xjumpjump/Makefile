@@ -3,7 +3,7 @@
 # Date created:				9 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/12/07 20:46:39 billf Exp $
+# $Id: Makefile,v 1.7 1999/01/07 08:19:31 simokawa Exp $
 #
 
 DISTNAME=	xjumpjump
@@ -15,9 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
 

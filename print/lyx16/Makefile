@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.28 1999/04/18 20:54:54 obrien Exp $
+# $Id: Makefile,v 1.29 1999/05/05 14:09:34 flathill Exp $
 #
 
 DISTNAME=	lyx-1.0.2
@@ -22,9 +22,6 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:		27 April 1999
 # Whom:			Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/31 11:44:24 flathill Exp $
 #
 
 DISTNAME=	lyx-1.0.0
@@ -25,9 +25,6 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
