@@ -22,9 +22,6 @@ USE_RUBY_RD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-post-fetch:
-	${MV} ${_DISTDIR}/${DISTFILES} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-
 do-build:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${RUBY_RD} tzfile.rb > tzfile.html
