@@ -3,10 +3,11 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.2 1997/06/08 01:41:05 jfitz Exp $
+# $Id: Makefile,v 1.3 1997/07/05 03:31:28 jfitz Exp $
 #
 
-DISTNAME=	diablo-1.10
+DISTNAME=	diablo-1.15-rel
+PKGNAME=	diablo-1.15
 CATEGORIES=	news
 MASTER_SITES=	http://www.backplane.com/diablo/
 EXTRACT_SUFX=	.tgz
@@ -19,9 +20,11 @@ WRKSRC=		${WRKDIR}/diablo
 
 NO_PACKAGE=	"has to create/verify news user"
 
-MAN5=		diablo-files.5
+MAN5=		diablo-files.5 diablo-kp.5
 MAN8=		diablo.8 dclean.8 dicmd.8 dexpire.8 didump.8 \
-		dilookup.8 doutq.8 dspoolout.8
+		dilookup.8 doutq.8 dspoolout.8 dkp.8 dnewslink.8 \
+		dreadart.8 dreaderd.8 dsyncgroups.8
+
 
 do-configure:
 		${CP} ${FILESDIR}/post-install-notes ${WRKSRC}
@@ -39,7 +42,7 @@ pre-install:
 
 do-install:
 		cd ${WRKSRC} && ${PREFIX}/bin/xmake install
-.for file in COPYRIGHT INSTALL README RELEASE_NOTES TODO
+.for file in COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/diablo
 .endfor
 		${INSTALL_DATA} ${WRKSRC}/post-install-notes ${PREFIX}/share/doc/diablo
