@@ -1,0 +1,21 @@
+--- sockets.c.old	Sun Mar  4 17:57:04 2001
++++ sockets.c	Sun Mar  4 17:58:02 2001
+@@ -4,14 +4,16 @@
+  * Socket routines.
+  */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/time.h>
++
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <netdb.h>
+ #include <netinet/in.h>
+-#include <sys/socket.h>
+-#include <sys/time.h>
+ #include "sockets.h"
+ #include "tetrinet.h"
+ 

@@ -1,0 +1,22 @@
+--- server.c.old	Sun Mar  4 17:57:08 2001
++++ server.c	Sun Mar  4 17:57:44 2001
+@@ -4,6 +4,10 @@
+  * Tetrinet server code
+  */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/time.h>
++
+ #include <stdarg.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -14,8 +18,6 @@
+  * reason to not use glibc. */
+ /* #include <netinet/protocols.h> */
+ #include <signal.h>
+-#include <sys/socket.h>
+-#include <sys/time.h>
+ #include "tetrinet.h"
+ #include "tetris.h"
+ #include "server.h"
