@@ -1601,6 +1601,7 @@ enscriptfonts	ports/print/enscriptfonts
 enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
+entitymib	ports/net/entitymib
 entropy		ports/math/entropy
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
