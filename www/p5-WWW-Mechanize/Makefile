@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -16,7 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is to help you automate interaction with a website
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
+		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
