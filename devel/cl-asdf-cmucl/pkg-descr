@@ -1,0 +1,11 @@
+asdf is Another System Definition Facility for Common Lisp. It intends
+to solve the same class of problems as mk-defsystem - compiling and
+installing Lisp libraries -, but internally it takes advantage of
+modern CL features like pathname support etc., and uses CLOS for
+extensibility.
+
+This package installs binaries compiled for CMU Common Lisp.
+
+WWW: http://www.cliki.net/asdf
+
+- Henrik Motakef

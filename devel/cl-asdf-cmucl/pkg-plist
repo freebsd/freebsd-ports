@@ -1,0 +1,3 @@
+lib/common-lisp/asdf/cmuclfasl/asdf.fasl
+lib/common-lisp/asdf/cmuclfasl/wild-modules.fasl
+@dirrm lib/common-lisp/asdf/cmuclfasl
