@@ -28,7 +28,6 @@
     SUBDIR += auth_ldap
     SUBDIR += awstats
     SUBDIR += axis
-    SUBDIR += beonex
     SUBDIR += bins
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
