@@ -8,8 +8,8 @@ lib/libidn.a
 lib/libidn.so
 lib/libidn.so.13
 libdata/pkgconfig/libidn.pc
-%%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
-%%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
+share/emacs/site-lisp/idna.el
+share/emacs/site-lisp/punycode.el
 %%NLS%%share/locale/da/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libidn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libidn.mo
@@ -18,6 +18,4 @@ libdata/pkgconfig/libidn.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 @unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
-%%EMACS%%@dirrm %%EMACSDIR%%/site-lisp
-%%EMACS%%@dirrm %%EMACSDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
