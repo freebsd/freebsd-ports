@@ -75,6 +75,7 @@
     SUBDIR += kdegraphics11
     SUBDIR += kdegraphics11-i18n
     SUBDIR += killustrator
+    SUBDIR += kplot3d
     SUBDIR += lfview
     SUBDIR += libimg
     SUBDIR += libwmf
