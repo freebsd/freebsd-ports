@@ -17,7 +17,7 @@ USE_REINPLACE=	yes
 
 NO_BUILD=	yes
 
-DOCS=		BUGS CHANGELOG COPYING pymsgauth.txt pymsgauth.html
+DOCS=		BUGS CHANGELOG pymsgauth.txt pymsgauth.html
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
@@ -28,16 +28,14 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pymsgauth-* ${PYTHON_SITELIBDIR}
 	${LN} -sf ${PYTHON_SITELIBDIR}/pymsgauth-* ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}
-
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/pymsgauthrc-example ${EXAMPLESDIR}
-
-	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/pymsgauthrc-example ${EXAMPLESDIR}
+	@${SED} -e 's,__EXAMPLES__,${EXAMPLESDIR},' ${PKGMESSAGE}
 
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,__EXAMPLES__,${EXAMPLESDIR},'
 .include <bsd.port.mk>
