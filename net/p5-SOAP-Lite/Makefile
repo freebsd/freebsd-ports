@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	SOAP-Lite
-PORTVERSION=	0.51
+PORTVERSION=	0.55
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SOAP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kapr@crosswinds.net
+MAINTAINER=	kappa@freebsd.org.ua
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
@@ -23,6 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
 
 MAN1=		SOAPsh.pl.1 XMLRPCsh.pl.1
