@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITES+=	http://people.freebsd.org/~joerg/:local
@@ -23,10 +24,10 @@ COMMENT=	FSF GCC 3.3.1 for Atmel AVR 8-bit RISC cross-development
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
-		autoheader:${PORTSDIR}/devel/autoconf \
-		gettext:${PORTSDIR}/devel/gettext-old
+		autoheader:${PORTSDIR}/devel/autoconf
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
+USE_GETTEXT=	yes
 
 WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 

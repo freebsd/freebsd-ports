@@ -7,14 +7,14 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A POP3 & IMAP4 proxy that can map users to multiple backend servers
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		popt.0:${PORTSDIR}/devel/popt \
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
 		vanessa_socket.0:${PORTSDIR}/devel/libvanessa_socket \
 		vanessa_adt.0:${PORTSDIR}/devel/libvanessa_adt
@@ -24,6 +24,7 @@ MAN8=		perdition.8
 
 MANCOMPRESSED=	no
 
+USE_GETTEXT=	yes
 USE_LIBTOOL=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" BDB_LIB=db3
 LDFLAGS+=	-L${LOCALBASE}/lib

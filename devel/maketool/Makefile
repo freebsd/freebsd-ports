@@ -7,6 +7,7 @@
 
 PORTNAME=	maketool
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.alphalink.com.au/~gnb/maketool/downloads/
 
@@ -14,14 +15,14 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	GUI interface for make or gmake
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		freetype.9:${PORTSDIR}/print/freetype2
 
 DOCS=		COPYING COPYRIGHT ChangeLog TODO
 GNU_CONFIGURE=	yes
 MAN1=		maketool.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	atk glib20 gtk20 pango
 USE_X_PREFIX=	yes
 

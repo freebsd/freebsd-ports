@@ -7,6 +7,7 @@
 
 PORTNAME=	gettext
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	contrib
@@ -17,9 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby implementation of the gettext library
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old \
-		racc:${PORTSDIR}/devel/ruby-racc
+BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
 
+USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	racc-runtime
 USE_RUBY_SETUP=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	lostirc
 PORTVERSION=	0.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	LostIRC is a simple and minimal IRC client for X
 
-LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2 \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	gtkmm-2:${PORTSDIR}/x11-toolkits/gtk--2
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

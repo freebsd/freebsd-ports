@@ -7,6 +7,7 @@
 
 PORTNAME=	gnokii
 PORTVERSION=	0.5.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
@@ -17,9 +18,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to talk to Nokia cellular phones
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes

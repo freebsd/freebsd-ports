@@ -14,13 +14,12 @@ MASTER_SITES=	http://www.lyra.org/sitecopy/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Maintains remote websites, uses FTP or WebDAV to sync up with local copy
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS=	--with-included-neon --with-libxml2
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	libxml2
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

@@ -8,17 +8,17 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 
 MAINTAINER?=	varju@webct.com
 COMMENT=	Desktop Organizer Software for the Palm Pilot
 
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 
 CONFIGURE_ARGS+=	--with-pilot-prefix=${PREFIX}
+USE_GETTEXT=	yes
 .if defined(WITH_GTK2)
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes

@@ -8,17 +8,17 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.9.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	A text mode menu- and window-driven IM interface
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_OPENSSL=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

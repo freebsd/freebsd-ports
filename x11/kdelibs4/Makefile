@@ -8,7 +8,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -24,12 +24,12 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 
+USE_GETTEXT=	yes
 USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 USE_OPENSSL=	yes

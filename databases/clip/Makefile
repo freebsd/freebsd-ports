@@ -7,6 +7,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.5.1
+PORTREVISION=	1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
@@ -17,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
+USE_GETTEXT=	yes
+
 .include <bsd.port.pre.mk>
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
@@ -26,7 +29,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
 		gd.4:${PORTSDIR}/graphics/gd			\
-		intl.5:${PORTSDIR}/devel/gettext-old		\
 		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget

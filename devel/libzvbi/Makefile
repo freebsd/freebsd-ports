@@ -7,7 +7,7 @@
 
 PORTNAME=	libzvbi
 PORTVERSION=	0.2.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	zapping
@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Routines to access raw VBI capture devices
 
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

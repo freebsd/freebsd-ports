@@ -7,7 +7,7 @@
 
 PORTNAME=	pavuk
 PORTVERSION=	0.9.28
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.idata.sk/~ondrej/sw/
@@ -18,8 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP, FTP and Gopher mirroring tool
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes

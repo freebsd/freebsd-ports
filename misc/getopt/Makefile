@@ -7,14 +7,14 @@
 
 PORTNAME=	getopt
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://huizen.dds.nl/~frodol/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A getopt(1) replacement that supports GNU-style long options
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=		yes
 USE_GMAKE=		yes
 USE_GETOPT_LONG=	yes
 

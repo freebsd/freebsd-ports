@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpreen
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAN1=		tcpreen.1
 

@@ -10,6 +10,7 @@
 
 PORTNAME=	filtermail
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
@@ -18,8 +19,6 @@ DISTNAME=	mailfilter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
-
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 # This port is filtermail, but the author called it mailfilter. To avoid a
 #  clash with another port called mailfilter, we change all files
@@ -31,6 +30,7 @@ EXTRACT_AFTER_ARGS=	| ${SED} 's/[mM][aA][iI][lL][fF][iI][lL][tT][eE][rR]/filterm
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.0.a4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -314,7 +314,7 @@ CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .endif
 
 .if defined(WITH_GETTEXT)
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
+USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-gettext=${LOCALBASE}
 .endif
 

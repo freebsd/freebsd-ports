@@ -6,7 +6,7 @@
 
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -16,12 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 # includes assember code
 ONLY_FOR_ARCHS=	i386
 
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

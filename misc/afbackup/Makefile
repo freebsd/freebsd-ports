@@ -7,7 +7,7 @@
 
 PORTNAME=	afbackup
 PORTVERSION=	3.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afbackup
@@ -20,8 +20,8 @@ COMMENT=	AF's backup system
 
 WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext-old
 
+USE_GETTEXT=	yes
 .if ! defined(NO_DES)
 USE_OPENSSL=	yes
 CONFIG_WITH_DES=	--with-des --with-des-header=openssl/des.h \

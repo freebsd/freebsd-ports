@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-panel
 PORTVERSION=	4.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
                 ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \
@@ -19,12 +19,12 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 panel module
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_GNU:S/$/:gcc/}
@@ -33,6 +33,7 @@ GCCNAME=	gcc-${GCCVERSION}
 PLIST_SUB+=	"GCCVERSION=${GCCVERSION}"
 NEWLIBNAME=	newlib-1.11.0
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
+USE_GETTEXT=	yes
 
 # autoheader is used by the port but autoconf is not, setting USE_AUTOCONF
 # will break the port.  Since USE_AUTOHEADER sets USE_AUTOCONF, this is
@@ -42,7 +43,6 @@ BUILD_DEPENDS=	autoheader:${PORTSDIR}/devel/autoconf \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
 RUN_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 
 PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes

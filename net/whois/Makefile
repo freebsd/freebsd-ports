@@ -7,6 +7,7 @@
 
 PORTNAME=	whois
 PORTVERSION=	4.6.9
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.linux.it/~md/software/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -14,11 +15,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Marco d'Itri whois client
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 MAN1=	whois.1
 
+USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

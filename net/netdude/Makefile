@@ -8,7 +8,7 @@
 
 PORTNAME=	netdude
 PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv \
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		ltdl.4:${PORTSDIR}/devel/libltdl
 
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12 gtk12
 USE_LIBTOOL=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	hello
 PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	hello
@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	hello
 MAINTAINER=	shipley@dis.org
 COMMENT=	A utility for saying hello to the world and reading email
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	YES
 USE_PERL5_BUILD=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

@@ -7,7 +7,7 @@
 
 PORTNAME=	vflib
 PORTVERSION=	${VFLIB_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/TypeHack/
 DISTNAME=	VFlib2-${PORTVERSION}
@@ -17,13 +17,13 @@ MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Japanese Vector font library
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho-subst.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 VFLIB_VERSION=	2.25.6
 PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 USE_FREETYPE=	yes
+USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_AUTOCONF_VER=213
 INSTALLS_SHLIB=	yes

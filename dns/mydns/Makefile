@@ -7,17 +7,18 @@
 
 PORTNAME=	mydns
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
+USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 USE_BZIP2=	yes
 

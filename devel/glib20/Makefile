@@ -7,6 +7,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.2/ \
@@ -20,11 +21,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Some useful routines of C programming (current stable version)
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig

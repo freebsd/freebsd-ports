@@ -9,7 +9,7 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/attic/ \
@@ -23,9 +23,9 @@ COMMENT=	Replacement for crypt(1)
 
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
-		mhash.2:${PORTSDIR}/security/mhash/ \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		mhash.2:${PORTSDIR}/security/mhash/
 
+USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

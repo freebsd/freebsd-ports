@@ -7,7 +7,7 @@
 
 PORTNAME=	kappdock
 PORTVERSION=	0.46.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~bigboss/kappdock/
 DISTNAME=	${PORTNAME}-0.46-1
@@ -16,8 +16,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.46
 MAINTAINER=	jeremy@external.org
 COMMENT=	A dock-like applet for KDE3
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=

@@ -7,6 +7,7 @@
 
 PORTNAME=	ami
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://download.kldp.net/ami/ \
 		http://www.kr.freebsd.org/~hwang/ami/:hjdic \
@@ -17,9 +18,9 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf

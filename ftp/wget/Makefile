@@ -10,7 +10,7 @@
 
 PORTNAME=	wget
 PORTVERSION=	1.8.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
@@ -24,7 +24,7 @@ MAINTAINER=	sf@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 .if !defined(WITHOUT_NLS)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
+USE_GETTEXT=	yes
 .endif
 
 CONFLICTS=	wget-devel-*

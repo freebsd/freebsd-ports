@@ -7,7 +7,7 @@
 
 PORTNAME=	upclient
 PORTVERSION=	5.0.b8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.wonko.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
@@ -18,8 +18,7 @@ COMMENT=	The Uptimes project client
 # Global variables
 #
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src

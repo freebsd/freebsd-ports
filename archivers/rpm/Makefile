@@ -7,7 +7,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	3.0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
@@ -15,12 +15,12 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=14
 USE_REINPLACE=	yes

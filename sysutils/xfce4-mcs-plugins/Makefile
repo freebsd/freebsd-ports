@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-mcs-plugins
 PORTVERSION=	4.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
                 ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \
@@ -20,10 +20,10 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings manager plugins
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes

@@ -7,16 +7,15 @@
 
 PORTNAME=	amyc
 PORTVERSION=	0.9.159
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.crevola.com/about/current/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Display the contents of your Netscape cache
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_AUTOCONF=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

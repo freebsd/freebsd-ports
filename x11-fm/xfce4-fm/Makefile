@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-fm
 PORTVERSION=	4.0.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
                 ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/xfce-${PORTVERSION}/src/ \
@@ -20,12 +20,12 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 file manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		dbh.1:${PORTSDIR}/databases/dbh \
+LIB_DEPENDS=	dbh.1:${PORTSDIR}/databases/dbh \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

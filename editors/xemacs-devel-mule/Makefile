@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
+PORTREVISION=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
 		${MASTER_SITE_XEMACS:S|%SUBDIR%|xemacs-${XEMACS_REL}|}
@@ -29,11 +30,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
+USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_XPM=	yes
 .endif
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old \
-		${LIB_INPUT_METHOD}
+LIB_DEPENDS+=	${LIB_INPUT_METHOD}
 
 XEMACS_MAJOR_VER?=	21
 XEMACS_REL=		${XEMACS_MAJOR_VER}.5

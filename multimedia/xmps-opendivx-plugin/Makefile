@@ -7,7 +7,7 @@
 
 PORTNAME=	xmps-opendivx-plugin
 PORTVERSION=	0.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.projectmayo.com/dnload/divx4linux/xmps/
 
@@ -15,10 +15,10 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	xmps plugin using OpenDivX decoding engine from Project Mayo
 
 LIB_DEPENDS=	divxdecore.0:${PORTSDIR}/multimedia/libdivxdecore \
-		xmps.0:${PORTSDIR}/multimedia/xmps \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		xmps.0:${PORTSDIR}/multimedia/xmps
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.0.2
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gtk12

@@ -8,6 +8,7 @@
 
 PORTNAME=	ggz-txt-client
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggz
@@ -15,11 +16,11 @@ MASTER_SITE_SUBDIR=	ggz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		ggz.1:${PORTSDIR}/games/libggz \
+LIB_DEPENDS=	ggz.1:${PORTSDIR}/games/libggz \
 		ggzcore.3:${PORTSDIR}/games/ggz-client-libs
 
 USE_GETOPT_LONG=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
 CONFIGURE_ENV=	\

@@ -7,19 +7,18 @@
 
 PORTNAME=	nano
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v1.2/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-all
+USE_GETTEXT=	yes
 
 INFO=		nano
 MAN1=		nano.1

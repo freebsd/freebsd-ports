@@ -7,6 +7,7 @@
 
 PORTNAME=	libgphoto2
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gphoto
@@ -14,11 +15,11 @@ MASTER_SITE_SUBDIR=	gphoto
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A universal digital camera picture control tool
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		usb-0.1.7:${PORTSDIR}/devel/libusb \
+LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
 		exif.10:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes

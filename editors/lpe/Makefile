@@ -7,7 +7,7 @@
 
 PORTNAME=	lpe
 PORTVERSION=	1.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/ \
 		ftp://ftp.twu.net/users/cdsmith/lpe/
@@ -16,9 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ryan@sasknow.com
 COMMENT=	A "lightweight programmer's editor" with syntax highlighting
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
-		intl.5:${PORTSDIR}/devel/gettext-old
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \

@@ -7,7 +7,7 @@
 
 PORTNAME=	bison
 PORTVERSION=	1.875
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,11 +18,11 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 CONFLICTS=	bison-[0-9]+
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

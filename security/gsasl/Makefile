@@ -8,6 +8,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	0.0.14
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -16,11 +17,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		idn.12:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn.12:${PORTSDIR}/devel/libidn \
 		gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		ntlm.0:${PORTSDIR}/security/libntlm \
+		ntlm.0:${PORTSDIR}/security/libntlm
 
+USE_GETTEXT=	yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes

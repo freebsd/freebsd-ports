@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	2.6.11
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \
@@ -34,9 +35,8 @@ MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 MAINTAINER=	fm@code.org.ua
 COMMENT=	Shell-like command line ftp client
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes

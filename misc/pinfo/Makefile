@@ -7,19 +7,19 @@
 
 PORTNAME=	pinfo
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://dione.ids.pl/~pborys/software/pinfo/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-readline \
 		--with-localedir=${PREFIX}/share/locale
+USE_GETTEXT=	yes
 
 MAN1=	pinfo.1
 INFO=	pinfo

@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-mule
 PORTVERSION=	${XEMACS_VER}
+PORTREVISION=	1
 .if defined(WNN6)
 .endif
 CATEGORIES+=	editors
@@ -32,7 +33,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		${LIB_INPUT_METHOD}
 
 XEMACS_MAJOR_VER?=	21
@@ -40,6 +40,7 @@ XEMACS_REL=		${XEMACS_MAJOR_VER}.4
 XEMACS_VER=		${XEMACS_MAJOR_VER}.4.14
 XEMACS_ARCH=		${CONFIGURE_TARGET}
 
+USE_GETTEXT=	yes
 USE_XLIB=	yes
 STRIP=
 USE_AUTOCONF=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
@@ -18,11 +18,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		usb-0.1.7:${PORTSDIR}/devel/libusb \
+LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_REINPLACE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

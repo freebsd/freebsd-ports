@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkgraph
 PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR= jedgar
 MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	Graphing calculator using GTK+
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
 USE_PERL5_BUILD=yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	freeciv
 PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
@@ -15,8 +16,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 MAINTAINER?=	adam-ports@blacktabby.org
 COMMENT?=	A civilisation clone for X11; multiplayer
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old
-
+USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
 WANT_GNOME=	yes

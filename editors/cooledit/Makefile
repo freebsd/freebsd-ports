@@ -7,16 +7,16 @@
 
 PORTNAME=	cooledit
 PORTVERSION=	3.17.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://cooledit.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Suite of utilities, including a GUI editor
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		vga.1:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
+USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	lodju
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	graphics
 MASTER_SITES=	http://liw.iki.fi/liw/lodju/tarballs/
 
@@ -16,8 +16,7 @@ COMMENT?=	An image management tool for the X Window System
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12 \
-		${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext-old
+		gtk12-config:${PORTSDIR}/x11-toolkits/gtk12
 LIB_DEPENDS=	glade-gnome:${PORTSDIR}/x11-toolkits/rep-gtk \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
@@ -27,5 +26,6 @@ MANCOMPRESSED=	yes
 AUTOCONF=       autoconf
 GNU_AUTOCONF=   yes
 HAS_CONFIGURE=  yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>

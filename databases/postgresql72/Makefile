@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -48,8 +48,8 @@ USE_GETOPT_LONG=yes
 CONFIGURE_ARGS+=--enable-nls
 CONFIGURE_ENV+=	"LIBS=-lintl"
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-LIB_DEPENDS+=	intl.5:${PORTSDIR}/devel/gettext-old
 PLIST_SUB+=	GETTEXT=""
+USE_GETTEXT=	yes
 .else
 PLIST_SUB+=	GETTEXT="@comment "
 .endif

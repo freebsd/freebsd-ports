@@ -7,7 +7,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.80.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	source/release
@@ -18,8 +18,7 @@ COMMENT=	GNUStep-compliant NeXTStep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		tiff.4:${PORTSDIR}/graphics/tiff
 .if !defined(WITHOUT_HERMES)
 LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
 .endif
@@ -27,6 +26,7 @@ LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
 RUN_DEPENDS=	${X11BASE}/share/WindowMaker/Themes/Checker.themed/style:${PORTSDIR}/graphics/wmicons
 
 USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -18,7 +19,6 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		mad.2:${PORTSDIR}/audio/mad \
 		avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
 		a52.0:${PORTSDIR}/audio/liba52 \
-		intl.5:${PORTSDIR}/devel/gettext-old \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac \
@@ -33,6 +33,7 @@ LIB_DEPENDS+=	dvbpsi.3:${PORTSDIR}/multimedia/libdvbpsi
 #		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2 \
 
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes

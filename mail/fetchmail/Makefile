@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.5
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/%SUBDIR%/ \
 		ftp://ftp.ayamura.org/pub/%SUBDIR%/ \
@@ -21,11 +22,11 @@ MASTER_SITE_SUBDIR=	fetchmail
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Batch mail retrieval utility for IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext-old
 .if defined(WITH_X11)
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
+USE_GETTEXT=	yes
 .if defined(WITH_X11)
 USE_PYTHON=	yes
 .endif

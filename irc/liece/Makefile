@@ -7,6 +7,7 @@
 
 PORTNAME=	liece
 PORTVERSION=	1.4.10
+PORTREVISION=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -14,12 +15,12 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	yoichi@FreeBSD.org
 COMMENT=	Yet another IRC client which runs under Emacsen
 
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
-		msgfmt:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		ldcc:${PORTSDIR}/irc/liece-dcc
 
 HAS_CONFIGURE=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 
 EMACS_PORT_NAME?=	emacs21

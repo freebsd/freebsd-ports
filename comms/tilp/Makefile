@@ -7,6 +7,7 @@
 
 PORTNAME=	tilp
 PORTVERSION=	6.68
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tilp
@@ -17,9 +18,9 @@ COMMENT=	TI Linking Program
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	ticalcs-4.5:${PORTSDIR}/devel/libticalcs \
 		ticables.10:${PORTSDIR}/comms/libticables \
-		tifiles.5:${PORTSDIR}/devel/libtifiles \
-		intl.5:${PORTSDIR}/devel/gettext-old
+		tifiles.5:${PORTSDIR}/devel/libtifiles
 
+USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libglade2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
