@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1998/05/04 14:57:27 mph Exp $
+# $Id: Makefile,v 1.35 1998/05/04 15:11:23 mph Exp $
 #
 
     SUBDIR += aub
@@ -25,6 +25,7 @@
     SUBDIR += tin
     SUBDIR += trn
     SUBDIR += unpost
+    SUBDIR += xmitbin
     SUBDIR += xvnews
 
 .include <bsd.port.subdir.mk>
