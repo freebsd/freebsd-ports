@@ -1,0 +1,7 @@
+Raggle is a console RSS aggregator, written in Ruby. Features include
+customizable keybindings, basic HTML rendering, HTTP proxy support, OPML
+import/export, themes, support for various versions of RSS, Screen support,
+browser auto-detection, and more. Raggle has been tested under Linux and
+OpenBSD, and should work properly under other Unix variants as well.
+
+WWW: http://www.raggle.org/about/
