@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.12
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -19,10 +19,10 @@ COMMENT=	An Open Document Cataloging Project
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 # Don't use USE_X_PREFIX - the port doesn't really require X11 to run.

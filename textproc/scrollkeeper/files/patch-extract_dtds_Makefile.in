@@ -5,7 +5,7 @@
  am__quote = @am__quote@
  install_sh = @install_sh@
 -CATALOG = $(sysconfdir)/xml/catalog
-+CATALOG = %%LOCALBASE%%/share/sk/catalog
++CATALOG = %%LOCALBASE%%/share/xml/catalog
  dtdsdir = $(datadir)/xml/scrollkeeper/dtds
  dtds_HEADERS = scrollkeeper-omf.dtd scrollkeeper-cl.dtd
  subdir = extract/dtds
