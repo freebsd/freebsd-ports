@@ -1,6 +1,8 @@
 lib/perl5/man/man3/DBI.3.gz
 lib/perl5/man/man3/DBI::W32ODBC.3.gz
+lib/perl5/man/man3/DBI::FAQ.3.gz
 lib/perl5/site_perl/DBI/W32ODBC.pm
+lib/perl5/site_perl/DBI/FAQ.pm
 lib/perl5/site_perl/DBD/ExampleP.pm
 lib/perl5/site_perl/DBD/NullP.pm
 lib/perl5/site_perl/DBD/Sponge.pm
