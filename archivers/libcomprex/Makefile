@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libcomprex
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.3.3
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnupdate
@@ -17,18 +16,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
-		curl.2:${PORTSDIR}/ftp/curl \
-		ltdl.4:${PORTSDIR}/devel/libltdl
-
+		ltdl.4:${PORTSDIR}/devel/libltdl \
+		curl.2:${PORTSDIR}/ftp/curl
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl"
+LIBTOOLFLAGS=	# none
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
 .include "Makefile.man"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
