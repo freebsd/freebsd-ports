@@ -1,0 +1,77 @@
+bin/kpilot
+bin/kpilotDaemon
+include/kpilot/kpilotlink.h
+include/kpilot/pilotDatabase.h
+include/kpilot/pilotLocalDatabase.h
+include/kpilot/pilotRecord.h
+include/kpilot/pilotSerialDatabase.h
+include/kpilot/plugin.h
+include/kpilot/syncAction.h
+include/kpilot/uiDialog.h
+lib/kde3/libaddressconduit.la
+lib/kde3/libaddressconduit.so
+lib/kde3/libexpenseconduit.la
+lib/kde3/libexpenseconduit.so
+lib/kde3/libknotesconduit.la
+lib/kde3/libknotesconduit.so
+lib/kde3/libmalconduit.la
+lib/kde3/libmalconduit.so
+lib/kde3/libnullconduit.la
+lib/kde3/libnullconduit.so
+lib/kde3/libpopmailconduit.la
+lib/kde3/libpopmailconduit.so
+lib/kde3/libtimeconduit.la
+lib/kde3/libtimeconduit.so
+lib/kde3/libtodoconduit.la
+lib/kde3/libtodoconduit.so
+lib/kde3/libvcalconduit.la
+lib/kde3/libvcalconduit.so
+lib/libkpilot.la
+lib/libkpilot.so
+lib/libkpilot.so.0
+share/applnk/Utilities/kpilot.desktop
+share/applnk/Utilities/kpilotdaemon.desktop
+share/apps/kpilot/icons/crystalsvg/16x16/actions/backup.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/busysync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/fastsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/hotsync.png
+share/apps/kpilot/icons/crystalsvg/16x16/actions/restore.png
+share/apps/kpilot/kpilot-address.png
+share/apps/kpilot/kpilot-fileinstaller.png
+share/apps/kpilot/kpilot-hotsync.png
+share/apps/kpilot/kpilot-knotes.png
+share/apps/kpilot/kpilot-splash.png
+share/apps/kpilot/kpilotui.rc
+share/icons/crystalsvg/16x16/apps/kpilot.png
+share/icons/crystalsvg/16x16/apps/kpilotDaemon.png
+share/icons/crystalsvg/22x22/apps/kpilot.png
+share/icons/crystalsvg/32x32/apps/kpilot.png
+share/icons/crystalsvg/48x48/apps/kpilot.png
+share/icons/crystalsvg/48x48/apps/kpilotDaemon.png
+share/icons/locolor/16x16/apps/kpilot.png
+share/services/abbrowser_conduit.desktop
+share/services/expense-conduit.desktop
+share/services/knotes-conduit.desktop
+share/services/mal_conduit.desktop
+share/services/null-conduit.desktop
+share/services/popmail-conduit.desktop
+share/services/time_conduit.desktop
+share/services/todo-conduit.desktop
+share/services/vcal-conduit.desktop
+share/servicetypes/kpilotconduit.desktop
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kandy/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/knotes/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/kpilot/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/ksync/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html

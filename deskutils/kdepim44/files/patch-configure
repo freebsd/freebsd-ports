@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jul 30 16:23:53 2003
++++ configure	Wed Jul 30 16:24:58 2003
+@@ -30398,7 +30398,7 @@
+   kde_safe_LIBS="$LIBS"
+   kde_safe_CFLAGS="$CFLAGS"
+   kde_safe_CPPFLAGS="$CPPFLAGS"
+-  LIBS="$LIBS $PISOCK_LIB $MAL_LIB -ldl"
++  LIBS="$LIBS $PISOCK_LIB $MAL_LIB"
+   CFLAGS="$CFLAGS $MAL_INCLUDE"
+   CPPFLAGS="$CPPFLAGS $PISOCK_INCLUDE $MAL_INCLUDE"
+ 

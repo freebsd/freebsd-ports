@@ -1,0 +1,128 @@
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkpimexchange/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkdepim/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/libkcal/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/ksync/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/korganizer/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/konsolekalendar/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/knotes/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kgantt/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kfile-plugins/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kandy/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kalarmd/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kalarm/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kaddressbook/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt/html || true
+@unexec /bin/rmdir %D/share/doc/HTML/en/kdepim-apidocs/calendarsystem/html || true
+@dirrm share/servicetypes
+@dirrm share/services/korganizer
+@dirrm share/services
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/22x22/actions
+@dirrm share/icons/crystalsvg/22x22
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16/actions
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
+@dirrm share/doc/HTML/en/kpilot
+@dirrm share/doc/HTML/en/korganizer
+@dirrm share/doc/HTML/en/knotes
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkpimexchange
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkdepim
+@dirrm share/doc/HTML/en/kdepim-apidocs/libkcal
+@dirrm share/doc/HTML/en/kdepim-apidocs/ksync
+@dirrm share/doc/HTML/en/kdepim-apidocs/korganizer
+@dirrm share/doc/HTML/en/kdepim-apidocs/konsolekalendar
+@dirrm share/doc/HTML/en/kdepim-apidocs/knotes
+@dirrm share/doc/HTML/en/kdepim-apidocs/kgantt
+@dirrm share/doc/HTML/en/kdepim-apidocs/kfile-plugins
+@dirrm share/doc/HTML/en/kdepim-apidocs/kandy
+@dirrm share/doc/HTML/en/kdepim-apidocs/kalarmd
+@dirrm share/doc/HTML/en/kdepim-apidocs/kalarm
+@dirrm share/doc/HTML/en/kdepim-apidocs/kaddressbook
+@dirrm share/doc/HTML/en/kdepim-apidocs/kabc/kabc2mutt
+@dirrm share/doc/HTML/en/kdepim-apidocs/kabc
+@dirrm share/doc/HTML/en/kdepim-apidocs/calendarsystem
+@dirrm share/doc/HTML/en/kdepim-apidocs
+@dirrm share/doc/HTML/en/kcontrol/kalarmd
+@dirrm share/doc/HTML/en/kcontrol
+@dirrm share/doc/HTML/en/karm
+@dirrm share/doc/HTML/en/kandy
+@dirrm share/doc/HTML/en/kalarm
+@dirrm share/doc/HTML/en/kaddressbook
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/config
+@dirrm share/autostart
+@dirrm share/apps/ksync
+@dirrm share/apps/korganizer/sounds
+@dirrm share/apps/korganizer/plugins
+@dirrm share/apps/korganizer/icons/crystalsvg/32x32/actions
+@dirrm share/apps/korganizer/icons/crystalsvg/32x32
+@dirrm share/apps/korganizer/icons/crystalsvg/22x22/actions/emptybox
+@dirrm share/apps/korganizer/icons/crystalsvg/22x22/actions
+@dirrm share/apps/korganizer/icons/crystalsvg/22x22
+@dirrm share/apps/korganizer/icons/crystalsvg/16x16/actions
+@dirrm share/apps/korganizer/icons/crystalsvg/16x16
+@dirrm share/apps/korganizer/icons/crystalsvg
+@dirrm share/apps/korganizer/icons
+@dirrm share/apps/korganizer
+@dirrm share/apps/knotes/pics
+@dirrm share/apps/knotes
+@dirrm share/apps/kgantt/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kgantt/icons/crystalsvg/32x32
+@dirrm share/apps/kgantt/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kgantt/icons/crystalsvg/22x22
+@dirrm share/apps/kgantt/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kgantt/icons/crystalsvg/16x16
+@dirrm share/apps/kgantt/icons/crystalsvg
+@dirrm share/apps/kgantt/icons
+@dirrm share/apps/kgantt
+@dirrm share/apps/karm/pics
+@dirrm share/apps/karm
+@dirrm share/apps/kandy
+@dirrm share/apps/kalarmdgui/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kalarmdgui/icons/crystalsvg/22x22
+@dirrm share/apps/kalarmdgui/icons/crystalsvg
+@dirrm share/apps/kalarmdgui/icons
+@dirrm share/apps/kalarmdgui
+@dirrm share/apps/kalarm/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kalarm/icons/crystalsvg/22x22
+@dirrm share/apps/kalarm/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kalarm/icons/crystalsvg/16x16
+@dirrm share/apps/kalarm/icons/crystalsvg
+@dirrm share/apps/kalarm/icons
+@dirrm share/apps/kalarm
+@dirrm share/apps/kaddressbook/printing
+@dirrm share/apps/kaddressbook/icons/locolor/22x22/actions
+@dirrm share/apps/kaddressbook/icons/locolor/22x22
+@dirrm share/apps/kaddressbook/icons/locolor/16x16/actions
+@dirrm share/apps/kaddressbook/icons/locolor/16x16
+@dirrm share/apps/kaddressbook/icons/locolor
+@dirrm share/apps/kaddressbook/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kaddressbook/icons/crystalsvg/32x32
+@dirrm share/apps/kaddressbook/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kaddressbook/icons/crystalsvg/16x16
+@dirrm share/apps/kaddressbook/icons/crystalsvg
+@dirrm share/apps/kaddressbook/icons
+@dirrm share/apps/kaddressbook/csv-templates
+@dirrm share/apps/kaddressbook
+@dirrm share/apps
+@dirrm share/applnk/Utilities/More
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Applications
+@dirrm share/applnk/.hidden
+@dirrm share/applnk
+@dirrm lib/kde3
+@dirrm include/korganizer
+@dirrm include/kgantt
+@dirrm include/kdepim
+@dirrm include/calendar
