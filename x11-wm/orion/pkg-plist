@@ -1,0 +1,23 @@
+bin/orion
+share/orion-0.2/scheme/button.scm
+share/orion-0.2/scheme/config.scm
+share/orion-0.2/scheme/drag-window.scm
+share/orion-0.2/scheme/file-name-completion.scm
+share/orion-0.2/scheme/key-grab.scm
+share/orion-0.2/scheme/main.scm
+share/orion-0.2/scheme/manager.scm
+share/orion-0.2/scheme/motif.scm
+share/orion-0.2/scheme/move-wm-icon.scm
+share/orion-0.2/scheme/move-wm-resizer.scm
+share/orion-0.2/scheme/move-wm.scm
+share/orion-0.2/scheme/packages.scm
+share/orion-0.2/scheme/prompt.scm
+share/orion-0.2/scheme/root-manager.scm
+share/orion-0.2/scheme/split-wm.scm
+share/orion-0.2/scheme/switch-wm.scm
+share/orion-0.2/scheme/titlebar.scm
+share/orion-0.2/scheme/utils.scm
+%%PORTDOCS%%%%DOCSDIR%%/user.html
+@dirrm share/orion-0.2/scheme
+@dirrm share/orion-0.2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

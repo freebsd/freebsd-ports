@@ -1,0 +1,15 @@
+Orion is a window manager for the X11 windowing system. Orion is
+written in Scheme and accesses Xlib via the scx library for
+scsh. Orion is in fact a family of window managers that can be
+nested. This enables great flexibility and efficient handling of X11
+applications. Orion currently comes with four child window managers:
+
+ * a conventional moving window manager
+ * a window manager for stacking windows in a frame
+ * a window manager for splitting windows horizontally and vertically
+ * a work space manager
+
+Orion also supports saving the window manager layout and programmatic
+configuration.
+
+WWW: http://www.scsh.net/resources/graphics.html
