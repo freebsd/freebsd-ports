@@ -9,8 +9,7 @@ PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
 CATEGORIES=	net devel games
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
-		ftp://ftp.veda.is/pub/mud/dgd/ \
-		ftp://ftp.dreamlabs.com/pub/mud/dgd/mudlibs/
+		ftp://ftp.veda.is/pub/mud/dgd/
 DISTFILES=	2.4.5-for-1.1.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
