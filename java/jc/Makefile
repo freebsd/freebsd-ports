@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jc
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=jcvm/
@@ -36,7 +36,7 @@ ONLY_FOR_ARCHS=	i386
 .include <bsd.port.pre.mk>
 
 post-install:
-.for dir in ${PREFIX}/etc/jc ${PREFIX}/include/jc ${PREFIX}/lib/jc ${PREFIX}/share/jc
+.for dir in ${PREFIX}/include/jc ${PREFIX}/lib/jc ${PREFIX}/share/jc
 	@${FIND} ${dir} ! -type d | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${dir} -type d | ${SORT} -r | \
