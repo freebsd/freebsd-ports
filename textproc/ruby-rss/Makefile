@@ -15,7 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser \
+		${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv
 
 USE_RUBY=	yes
 
