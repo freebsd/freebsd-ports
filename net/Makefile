@@ -149,6 +149,7 @@
     SUBDIR += flowscan
     SUBDIR += forg
     SUBDIR += fping
+    SUBDIR += fprobe
     SUBDIR += freebsd-uucp
     SUBDIR += freenet
     SUBDIR += freenet6
