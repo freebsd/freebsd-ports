@@ -1,5 +1,5 @@
---- src/main.c.orig	Sat Jan  1 20:35:47 2000
-+++ src/main.c	Sat Jan  1 20:36:14 2000
+--- src/main.c.orig	Sat Apr 15 19:50:38 2000
++++ src/main.c	Sat Apr 15 19:50:52 2000
 @@ -10,10 +10,13 @@
  #include "app.h"
  #include <gtk/gtk.h>
