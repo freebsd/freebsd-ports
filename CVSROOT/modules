@@ -7682,6 +7682,7 @@ unzip		ports/archivers/unzip
 uox3		ports/games/uox3
 upclient	ports/misc/upclient
 update		src/usr.sbin/update
+upnp		ports/devel/upnp
 ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsmon		ports/sysutils/upsmon
