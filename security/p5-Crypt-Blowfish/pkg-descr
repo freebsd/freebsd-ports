@@ -1,0 +1,4 @@
+This is Crypt::Blowfish, an XS-based implementation of the
+Blowfish cryptography algorithm designed by Bruce Schneier.  It's designed
+to take full advantage of Crypt::CBC when desired.  Blowfish keys may be
+up to 448 bits (56 bytes) long.
