@@ -25,7 +25,7 @@ USE_PERL5=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} --with-tclinclude=/usr/local/include/tcl8.3/ --with-tcl=/usr/local/lib/tcl8.3/ --program-transform-name=
+CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} --with-tclinclude=${LOCALBASE}/include/tcl8.3/ --with-tcl=${LOCALBASE}/lib/tcl8.3/ --program-transform-name=
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include "${.CURDIR}/manpages.mk"
