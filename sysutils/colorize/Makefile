@@ -16,9 +16,13 @@ MAINTAINER=	petef@databits.net
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+
 NO_BUILD=	yes
 USE_PERL5=	yes
+
 MAN1=		colorize.1
+
+FMT?=	/usr/bin/fmt
 
 post-patch:
 	@${PERL} -pi -e "s|/etc/colorizerc|${PREFIX}/etc/colorizerc|; \
@@ -27,11 +31,13 @@ post-patch:
 	@${PERL} -pi -e 's!colorize.pl!colorize!g' ${WRKSRC}/colorize.pl.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/colorize.pl ${PREFIX}/bin/colorize
-	${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc.sample
-	${INSTALL_MAN} ${WRKSRC}/colorize.pl.1 ${PREFIX}/man/man1/colorize.1
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/colorize.pl ${PREFIX}/bin/colorize
+	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc.dist
+.if !exists(${PREFIX}/etc/colorizerc)
+	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc
+.endif
+	@${INSTALL_MAN} ${WRKSRC}/colorize.pl.1 ${PREFIX}/man/man1/colorize.1
+	@${PERL} -pi -e 's,PREFIX,${PREFIX},' ${PKGMESSAGE}
+	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE} | ${FMT}
 
 .include <bsd.port.mk>
