@@ -1,4 +1,3 @@
 bin/ftnchek
 lib/ftnchek/dcl2inc.awk
-man/man1/ftnchek.1.gz
 @dirrm lib/ftnchek

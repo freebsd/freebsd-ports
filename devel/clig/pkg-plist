@@ -1,5 +1,4 @@
 bin/clig
-man/man1/clig.1.gz
 share/clig-1.0.2/bin/clig
 share/clig-1.0.2/tcl/genCheckMandatory.tcl
 share/clig-1.0.2/tcl/genStruct.tcl

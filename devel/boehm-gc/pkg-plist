@@ -2,4 +2,3 @@ include/gc.h
 include/gc_cpp.h
 lib/libgc.a
 lib/libleak.a
-man/man3/gc.3.gz

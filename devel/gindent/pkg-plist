@@ -1,5 +1,4 @@
 bin/indent
-man/man1/indent.1.gz
 info/indent.info
 @unexec install-info --delete %D/info/indent.info %D/info/dir
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir

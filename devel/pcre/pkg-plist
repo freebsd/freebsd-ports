@@ -1,6 +1,3 @@
 bin/pgrep
 include/pcre.h
 lib/libpcre.a
-man/man1/pgrep.1.gz
-man/man3/pcre.3.gz
-man/man3/pcreposix.3.gz

@@ -1,6 +1,5 @@
 bin/ctangle
 bin/cweave
-man/man1/cweb.1.gz
 share/doc/cweb/cwebman.tex
 share/emacs/site-lisp/cweb.el
 share/texmf/tex/generic/misc/cwebmac.tex

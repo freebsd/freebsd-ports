@@ -68,7 +68,6 @@ lib/libIDL.a
 lib/libCosNaming.a
 lib/libCosProperty.a
 lib/libCosEvent.a
-man/man1/idl.1.gz
 man/man1/hidl.1.gz
 man/man1/irdel.1.gz
 man/man1/irfeed.1.gz
