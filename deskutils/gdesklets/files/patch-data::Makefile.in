@@ -1,12 +1,6 @@
---- data/Makefile.in.orig	Mon Nov 15 01:17:16 2004
-+++ data/Makefile.in	Mon Nov 15 01:18:12 2004
-@@ -165,12 +165,12 @@
- desktop_in_files = gdesklets.desktop.in
- desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
- 
--sharedmimedir = $(datadir)/mime
-+sharedmimedir = $(prefix)/share/mime
- sharedmimepackagedir = $(sharedmimedir)/packages
+--- data/Makefile.in.orig	Mon Dec 20 17:28:59 2004
++++ data/Makefile.in	Mon Dec 20 17:29:43 2004
+@@ -170,7 +170,7 @@
  sharedmimepackage_in_files = gdesklets.xml.in
  sharedmimepackage_DATA = $(sharedmimepackage_in_files:.xml.in=.xml)
  

@@ -27,7 +27,4 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|(datadir)/mime$$|(prefix)/share/mime| ; s|(datadir)/mime/|(prefix)/share/mime/|g' ${WRKSRC}/Makefile.in
-
 .include <bsd.port.mk>

@@ -35,8 +35,7 @@ post-patch:
 		< ${FILESDIR}/gnome-cups-manager.desktop \
 		> ${WRKSRC}/gnome-cups-manager.desktop
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-D.*_DISABLE_DEPRECATED||g ; \
-		 s|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g'
+		's|-D.*_DISABLE_DEPRECATED||g'
 
 post-install:
 	${MKDIR} ${PREFIX}/share/gnome/applications

@@ -61,8 +61,4 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|[(]datadir[)]/icons/hicolor|(prefix)/share/icons/hicolor|g' \
-		${WRKSRC}/gswitchit/Makefile.in
-
 .include <bsd.port.post.mk>
