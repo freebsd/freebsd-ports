@@ -8,7 +8,7 @@
 
 DISTNAME=	cqcam-0.45a
 CATEGORIES=	graphics tk82
-MASTER_SITES=	http://www.cs.virginia.edu/~patrick/cqcam/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/unixfreeware/graphics/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
