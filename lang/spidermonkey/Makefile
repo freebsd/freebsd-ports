@@ -5,20 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	js
-PORTVERSION=	1.5.p5
-PORTREVISION=	2
+PORTVERSION=	1.5.p6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	js
-DISTNAME=	js-1.5-rc5a
+DISTNAME=	js-1.5-rc6
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
 CONFLICTS=	njs-*
 
-PLIST_FILES=	bin/js
 USE_GMAKE=	YES
+INSTALLS_SHLIB=	YES
 
 .include <bsd.port.pre.mk>
 
@@ -26,15 +25,24 @@ USE_GMAKE=	YES
 BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC)"
 .endif
 
+JS_ARCH:=	`uname -s``uname -r`
+JS_HEADERS!=	${GREP} '\.h$$' ${MASTERDIR}/pkg-plist | ${SED} 'sX^include/XX'
+
 post-extract:
 	${MV} ${WRKDIR}/js/src ${WRKSRC} && \
 	${RM} -rf js && \
 	${CP} ${WRKSRC}/config/Linux_All.mk \
-		${WRKSRC}/config/`uname -s``uname -r`.mk && \
+		${WRKSRC}/config/${JS_ARCH}.mk && \
 	${CP} ${WRKSRC}/Makefile.ref ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/`uname -s``uname -r`_DBG.OBJ/js \
+	${INSTALL_PROGRAM} ${WRKSRC}/${JS_ARCH}_DBG.OBJ/js \
 		${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${JS_ARCH}_DBG.OBJ/libjs.so \
+		${PREFIX}/lib
+	${CP} ${WRKSRC}/${JS_ARCH}_DBG.OBJ/jsautocfg.h ${WRKSRC}
+.for jsh in ${JS_HEADERS}
+	@${INSTALL_DATA} ${WRKSRC}/${jsh} ${PREFIX}/include/
+.endfor
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,10 @@
+bin/js
+lib/libjs.so
+include/jsapi.h
+include/jsautocfg.h
+include/jscompat.h
+include/jslong.h
+include/jsosdep.h
+include/jsotypes.h
+include/jspubtd.h
+include/jstypes.h
