@@ -1,0 +1,19 @@
+--- callbacks.c.orig	Fri Jan 27 16:09:15 1995
++++ callbacks.c	Thu Mar  6 22:50:38 1997
+@@ -45,7 +45,6 @@
+ #else
+ extern int	errno;
+ extern int	sys_nerr;
+-extern char	*sys_errlist[];
+ #endif
+ 
+ extern	char	otherBuf[BUFSIZ];
+@@ -608,7 +607,7 @@
+           }
+ 
+        if (! (m = GetMailEnv("sendmail")))
+-            m = XtNewString("/usr/lib/sendmail");
++            m = XtNewString("/usr/sbin/sendmail");
+ #ifdef X_FACE
+        else {
+           add_face = (strcmp(&m[strlen(m)-14], "faces.sendmail") != 0) ? 1 : 0;

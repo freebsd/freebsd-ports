@@ -1,0 +1,16 @@
+xmail is an X-based interface to the Berkeley mail program.  This
+version of xmail depends heavily upon the installation of the
+application default resources file for the proper declaration of
+features and enhancements documented in the man pages.  If the
+defaults file or the resource declarations are not installed or in
+some manner made accessable to the X11 resource database manager,
+xmail will operate in only a minimal fashion.
+
+This version of xmail includes support for decompressing and
+displaying the content of an X-Face mail header, if such a header
+exists in the message being read.  This feature is a compile time
+option, and requires the existence of the compface library routines,
+which are NOT supplied with the xmail sources.    X-Face headers
+are compressed bitmap images, typically of the face of the person
+owning such a header.  The compressed header contains only printable
+characters, which allows it to be included in a mail message.
