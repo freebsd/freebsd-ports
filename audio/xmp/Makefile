@@ -29,6 +29,10 @@ CFLAGS+=	-fPIC
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--disable-oss --enable-esd

@@ -35,6 +35,10 @@ CONFIGURE_ENV=	ICEB_DB_LIB=${LOCALBASE}/lib/mysql
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 503000
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure.in
 
