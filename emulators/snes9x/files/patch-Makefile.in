@@ -1,0 +1,53 @@
+--- Makefile.in.orig	Wed Aug 13 06:27:16 2003
++++ Makefile.in	Sun Oct 12 14:13:49 2003
+@@ -74,8 +74,6 @@
+         CHEATS.O cheats2.o data.o unix/unix.o unix/config.o GLOBALS.O \
+ 	$(SPC7110OBJ) $(OBC1OBJ) $(SETAOBJ) $(KREEDOBJ)
+ 
+-OBJECTS += ../zlib/libz.a
+-
+ ifdef GUI
+ GUIOBJS = unix/snes9x_gui.o unix/moc_snes9x_gui.o
+ GUILIBS = -L$(QTDIR)/lib -lqt
+@@ -95,7 +93,6 @@
+ 
+ ifdef THREAD_SOUND
+ CPUDEFINES += -DUSE_THREADS
+-EXTRALIBS += -lpthread
+ endif
+ 
+ ifdef GLIDE
+@@ -132,7 +129,7 @@
+ CC = @CC@
+ NASM = @NASM@
+ 
+-INCLUDES = -I../zlib @XINCLUDES@
++INCLUDES = @XINCLUDES@
+ 
+ OPTIMISE = @OPTIMIZE@
+ 
+@@ -209,19 +206,19 @@
+ ../zlib/libz.a:
+ 	cd ../zlib && sh ./configure && make
+ 
+-snes9x: $(OBJECTS) ../zlib/libz.a unix/x11.o $(AIDOOBJS) $(GUIOBJS)
++snes9x: $(OBJECTS) unix/x11.o $(AIDOOBJS) $(GUIOBJS)
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) $(AIDOOBJS) $(GLIDEOBJS) $(OPENGLOBJS) unix/x11.o $(GUIOBJS) $(LDLIBS) $(GLIDELIBS) $(OPENGLLIBS) $(GUILIBS) @SYSLIBS@ -lXext -lX11 $(EXTRALIBS) -lz -lm
+ 
+-ssnes9x: $(OBJECTS) ../zlib/libz.a unix/svga.o 
++ssnes9x: $(OBJECTS) unix/svga.o 
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) $(GLIDEOBJS) unix/svga.o $(LDLIBS) $(GLIDELIBS) -lvga -lvgagl -lz $(EXTRALIBS) -lm
+ 
+-gsnes9x: $(OBJECTS) ../zlib/libz.a $(GLIDEOBJS)
++gsnes9x: $(OBJECTS) $(GLIDEOBJS)
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) $(GLIDEOBJS) $(LDLIBS) -lglide -lz $(EXTRALIBS) -lm
+ 
+-ggisnes9x: $(OBJECTS) ../zlib/libz.a unix/ggi.o
++ggisnes9x: $(OBJECTS) unix/ggi.o
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/ggi.o $(LDLIBS) -lggi -lz $(EXTRALIBS) -lm
+ 
+-osnes9x: $(OBJECTS) ../zlib/libz.a unix/x11.o $(OPENGLOBJS)
++osnes9x: $(OBJECTS) unix/x11.o $(OPENGLOBJS)
+ 	$(CCC) $(INCLUDES) -o $@ $(OBJECTS) unix/x11.o $(OPENGLOBJS) $(LDLIBS) $(OPENGLLIBS) @SYSLIBS@ -lXext -lX11 $(EXTRALIBS) -lz -lm
+ 
+ s9xserver: $(SERVER_OBJECTS)

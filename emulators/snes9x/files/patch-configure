@@ -1,0 +1,122 @@
+--- configure.orig	Wed Aug 13 06:27:17 2003
++++ configure	Sun Oct 12 14:15:50 2003
+@@ -857,6 +857,7 @@
+   --with(out)-aido        Use a shared memory area for output (default: without)
+   --with(out)-joystick    Enable joystick support if available (default: with)
+   --with(out)-assembler   Use assembler cores if available (default: with)
++  --with(out)-mmx         Use mmx assembly code (default: with)
+   --with-x                use the X Window System
+ 
+ Some influential environment variables:
+@@ -2515,6 +2516,14 @@
+   with_assembler=yes
+ fi;
+ 
++# Check whether --with-mmx or --without-mmx was given.
++if test "${with_mmx+set}" = set -a yes = "$with_assembler"; then
++  withval="$with_mmx"
++
++else
++  with_mmx=no
++fi;
++
+ 
+ 
+ OPTIMIZE="${OPTFLAGS-}"
+@@ -4855,6 +4864,59 @@
+ echo "$as_me:$LINENO: result: $snes9x_cv_hpux_os" >&5
+ echo "${ECHO_T}$snes9x_cv_hpux_os" >&6
+ 
++echo "$as_me:$LINENO: checking if the OS is FreeBSD" >&5
++echo $ECHO_N "checking if the OS is FreeBSD... $ECHO_C" >&6
++if test "${snes9x_cv_freebsd_os+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++
++  cat >conftest.$ac_ext <<_ACEOF
++#line $LINENO "configure"
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++#ifdef __FreeBSD__
++/* */
++#else
++#error Not FreeBSD.
++#endif
++
++int
++main ()
++{
++
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext
++if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
++  (eval $ac_compile) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++         { ac_try='test -s conftest.$ac_objext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  snes9x_cv_freebsd_os=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++snes9x_cv_freebsd_os=no
++fi
++rm -f conftest.$ac_objext conftest.$ac_ext
++fi
++
++echo "$as_me:$LINENO: result: $snes9x_cv_freebsd_os" >&5
++echo "${ECHO_T}$snes9x_cv_freebsd_os" >&6
++
+ echo "$as_me:$LINENO: checking if the OS is MS Windows" >&5
+ echo $ECHO_N "checking if the OS is MS Windows... $ECHO_C" >&6
+ if test "${snes9x_cv_win32_os+set}" = set; then
+@@ -4920,7 +4982,9 @@
+   ZSNESFX='ZSNESFX=1'
+   ZSNESC4='ZSNESC4=1'
+   ASMCPU='ASMCPU=1'
++if test yes = "$with_mmx"; then
+   ASMKREED='ASMKREED=1'
++fi
+ #  SPC700ASM='SPC700ASM=1'
+   I386SPC='i386/SPC.O'
+   CPUINC='-Ii386'
+@@ -4932,6 +4996,9 @@
+ 
+ if test yes = "$snes9x_cv_linux_os" -a yes = "$with_joystick"; then
+    JOYDEFINES=' -DJOYSTICK_SUPPORT'
++elif test yes = "$snes9x_cv_freebsd_os" -a yes = "$with_joystick"; then
++   JOYDEFINES=' -DJOYSTICK_SUPPORT'
++   SYSLIBS="$SYSLIBS"' -lusbhid'
+ else
+    with_joystick="no"
+ fi
+@@ -6408,7 +6475,7 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-#if defined(__linux) || defined(__sun) || defined(__sgi)
++#if defined(__linux) || defined(__sun) || defined(__sgi) || defined(__FreeBSD__)
+ /* */
+ #else
+ #error No sound for this platform
+@@ -6617,6 +6684,7 @@
+ display system.... $snes9x_info_display
+ joystick support.. $with_joystick
+ using asm cores... $with_assembler
++using mmx code... $with_mmx
+ 
+ EOF
+ cat config.info
