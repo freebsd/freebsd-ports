@@ -12,6 +12,7 @@ include/tilp/pause.h
 include/tilp/ticalcs.h
 include/tilp/tikeys.h
 include/tilp/update.h
+lib/libticalcs-4.a
 lib/libticalcs-4.la
 lib/libticalcs-4.so
 lib/libticalcs-4.so.5
