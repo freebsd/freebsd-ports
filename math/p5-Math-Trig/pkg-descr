@@ -1,0 +1,4 @@
+This module exports the missing inverse and hyperbolic trigonometric functions
+of real numbers. The inverse functions return values cooresponding to the
+principal values. Specifying an argument outside of the domain of the function
+will cause undef to be returned.
