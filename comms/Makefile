@@ -17,6 +17,7 @@
     SUBDIR += conserver
     SUBDIR += conserver-com
     SUBDIR += cutecom
+    SUBDIR += cwdaemon
     SUBDIR += echolinux
     SUBDIR += ecu
     SUBDIR += efax

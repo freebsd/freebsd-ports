@@ -1,0 +1,11 @@
+sbin/cwdaemon
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/cwdaemon.png
+%%PORTDOCS%%%%DOCSDIR%%/cwsetup.sh
+%%PORTDOCS%%%%DOCSDIR%%/cwtest.c
+%%PORTDOCS%%%%DOCSDIR%%/cwtest.sh
+%%PORTDOCS%%%%DOCSDIR%%/parallelport_circuit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/parallelport_circuit.ps
+%%PORTDOCS%%%%DOCSDIR%%/serialport_circuit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/serialport_circuit.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
