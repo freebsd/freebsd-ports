@@ -78,6 +78,14 @@ share/licq/qt-gui/extended.icons.basic/pixCellular.xpm
 share/licq/qt-gui/extended.icons.basic/pixCustomAR.xpm
 share/licq/qt-gui/extended.icons.basic/pixInvisible.xpm
 share/licq/qt-gui/extended.icons.basic/pixPhone.xpm
+share/licq/qt-gui/extended.icons.thomas/itemCollapsed.xpm
+share/licq/qt-gui/extended.icons.thomas/itemExpanded.xpm
+share/licq/qt-gui/extended.icons.thomas/pixBirthday.xpm
+share/licq/qt-gui/extended.icons.thomas/pixCellular.xpm
+share/licq/qt-gui/extended.icons.thomas/pixCustomAR.xpm
+share/licq/qt-gui/extended.icons.thomas/pixInvisible.xpm
+share/licq/qt-gui/extended.icons.thomas/pixPhone.xpm
+share/licq/qt-gui/extended.icons.thomas/thomas.icons
 share/licq/qt-gui/icons.computer/chat.xpm
 share/licq/qt-gui/icons.computer/chess.xpm
 share/licq/qt-gui/icons.computer/computer.icons
@@ -127,6 +135,26 @@ share/licq/qt-gui/icons.mark/offline.ppm
 share/licq/qt-gui/icons.mark/online.ppm
 share/licq/qt-gui/icons.mark/private.ppm
 share/licq/qt-gui/icons.mark/url.ppm
+share/licq/qt-gui/icons.thomas/authorize.xpm
+share/licq/qt-gui/icons.thomas/away.xpm
+share/licq/qt-gui/icons.thomas/chat.xpm
+share/licq/qt-gui/icons.thomas/contact.xpm
+share/licq/qt-gui/icons.thomas/dnd.xpm
+share/licq/qt-gui/icons.thomas/ffc.xpm
+share/licq/qt-gui/icons.thomas/file.xpm
+share/licq/qt-gui/icons.thomas/history.xpm
+share/licq/qt-gui/icons.thomas/info.xpm
+share/licq/qt-gui/icons.thomas/invisible.xpm
+share/licq/qt-gui/icons.thomas/message.xpm
+share/licq/qt-gui/icons.thomas/na.xpm
+share/licq/qt-gui/icons.thomas/occ.xpm
+share/licq/qt-gui/icons.thomas/offline.xpm
+share/licq/qt-gui/icons.thomas/online.xpm
+share/licq/qt-gui/icons.thomas/secureoff.xpm
+share/licq/qt-gui/icons.thomas/secureon.xpm
+share/licq/qt-gui/icons.thomas/sms.xpm
+share/licq/qt-gui/icons.thomas/thomas.icons
+share/licq/qt-gui/icons.thomas/url.xpm
 share/licq/qt-gui/skin.basic-ncb/basic-ncb.skin
 share/licq/qt-gui/skin.basic/basic.skin
 share/licq/qt-gui/skin.bheart/Frame.png
@@ -173,12 +201,20 @@ share/licq/qt-gui/skin.shale/butMenuFocus.png
 share/licq/qt-gui/skin.shale/frame.png
 share/licq/qt-gui/skin.shale/shale.skin
 share/licq/qt-gui/skin.shale/status.png
+share/licq/qt-gui/skin.thomas/Button.xcf
+share/licq/qt-gui/skin.thomas/README
+share/licq/qt-gui/skin.thomas/background.png
+share/licq/qt-gui/skin.thomas/btnDown.png
+share/licq/qt-gui/skin.thomas/btnHighlight.png
+share/licq/qt-gui/skin.thomas/btnUp.png
+share/licq/qt-gui/skin.thomas/thomas.skin
 @dirrm share/licq/qt-gui/icons.mark
 @dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.icq
-@dirrm share/licq/qt-gui/icons.dots
 @dirrm share/licq/qt-gui/icons.computer
+@dirrm share/licq/qt-gui/icons.thomas
 @dirrm share/licq/qt-gui/extended.icons.basic
+@dirrm share/licq/qt-gui/extended.icons.thomas
 @dirrm share/licq/qt-gui/dock.pli
 @dirrm share/licq/qt-gui/dock.kde2
 @dirrm share/licq/qt-gui/dock.glicq
@@ -196,4 +232,5 @@ share/licq/qt-gui/skin.shale/status.png
 @dirrm share/licq/qt-gui/skin.bheart
 @dirrm share/licq/qt-gui/skin.basic-ncb
 @dirrm share/licq/qt-gui/skin.basic
+@dirrm share/licq/qt-gui/skin.thomas
 @dirrm share/licq/qt-gui

@@ -2,7 +2,9 @@ bin/licq
 bin/viewurl-lynx.sh
 bin/viewurl-ncftp.sh
 bin/viewurl-netscape.sh
+bin/viewurl-mozilla.sh
 bin/viewurl-w3m.sh
+bin/viewurl-opera.sh
 include/licq/licq_buffer.h
 include/licq/licq_chat.h
 include/licq/licq_color.h
