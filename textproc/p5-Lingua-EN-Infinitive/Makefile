@@ -5,20 +5,19 @@
 # $FreeBSD$
 #
 
-PORTNAME=		Lingua-EN-Infinitive
-PORTVERSION=		1.06
-CATEGORIES=		textproc perl5
-MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
+PORTNAME=	Lingua-EN-Infinitive
+PORTVERSION=	1.07
+CATEGORIES=	textproc perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
-PKGNAMEPREFIX=		p5-
-EXTRACT_SUFX=		.tgz
+PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		svenasse@polaris.ca
+MAINTAINER=	svenasse@polaris.ca
 COMMENT=	Determine the infinitive form of a conjugated word
 
-PERL_CONFIGURE=		yes
+PERL_CONFIGURE=	yes
 
-MAN3=			Lingua::EN::Infinitive.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Lingua::EN::Infinitive.3
 
 .include <bsd.port.mk>
