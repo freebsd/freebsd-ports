@@ -1,0 +1,8 @@
+Regexpr is part of the base packages of Free Pascal,
+a 32-bit Turbo Pascal/Delphi compatible compiler.  Regexpr
+provides regular expression routines.
+
+WWW: http://www.freepascal.org/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>
