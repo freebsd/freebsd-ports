@@ -18,7 +18,6 @@ LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile \
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes

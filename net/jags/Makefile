@@ -17,7 +17,6 @@ MAINTAINER=	pat@FreeBSD.org
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_GTK=	yes
-USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 
 pre-patch:

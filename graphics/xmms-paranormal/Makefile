@@ -24,7 +24,6 @@ CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml" SDL_CONFIG="${SDL
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes

@@ -18,7 +18,6 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		intl.2:${PORTSDIR}/devel/gettext
 
 USE_XLIB=	yes
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
