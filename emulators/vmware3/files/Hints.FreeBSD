@@ -81,9 +81,9 @@ empty or when you're about to eject the media.
 - Under FreeBSD, floppy device should be configured as follows:
 
 	Type: file
-	Path: /dev/rfd0
+	Path: /dev/fd0
 
-(Obtain the write permission on /dev/rfd0 if you write floppy disks)
+(Obtain the write permission on /dev/fd0 if you write floppy disks)
 
 - VMware creates a file that is about 25% larger than the guest OS's
 RAM size, unlinks it and mmap's on it on the first startup of the VM.
