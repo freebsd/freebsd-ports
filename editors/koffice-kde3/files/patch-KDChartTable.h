@@ -1,15 +1,18 @@
---- ./kchart/kdchart/KDChartTable.h.orig	Mon Dec 10 06:53:35 2001
-+++ ./kchart/kdchart/KDChartTable.h	Sat May 25 13:28:46 2002
-@@ -28,9 +28,9 @@
+$FreeBSD$
+
+--- ./kchart/kdchart/KDChartTable.h.orig	Tue Aug 13 18:05:16 2002
++++ ./kchart/kdchart/KDChartTable.h	Tue Aug 13 18:07:10 2002
+@@ -23,12 +23,10 @@
  #define MAXDOUBLE DBL_MAX
  #define MINDOUBLE DBL_MIN
- #else
+ #define std
+-#elif defined __APPLE__
++#else
+ #include <float.h>
+ #define MAXDOUBLE DBL_MAX
+ #define MINDOUBLE DBL_MIN
+-#else
 -#include <values.h>
--#include <limits.h>
--#include <math.h>
-+#include <float.h>
-+#define MAXDOUBLE DBL_MAX
-+#define MINDOUBLE DBL_MIN
+ #include <limits.h>
+ #include <math.h>
  #endif
- 
- #if defined SUN7 || ( defined HP11_aCC && defined HP1100 )
