@@ -8,10 +8,11 @@
 PORTNAME=	japaneseAFM
 PORTVERSION=	1.0
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kiri
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	Japanese AFM fonts
 
 NO_WRKSUBDIR=	yes
