@@ -1432,9 +1432,11 @@ lib/X11/xkb/symbols/pc104
 lib/X11/xkb/symbols/pl
 lib/X11/xkb/symbols/pt
 lib/X11/xkb/symbols/ralt
+lib/X11/xkb/symbols/ro
 lib/X11/xkb/symbols/ru
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/sgi/jp
+lib/X11/xkb/symbols/si
 lib/X11/xkb/symbols/sony/us
 lib/X11/xkb/symbols/sun/se
 lib/X11/xkb/symbols/sun/us
