@@ -1,0 +1,15 @@
+--- ../include/lcms.h	Wed Aug  7 15:34:37 2002
++++ ../include/lcms.h	Wed Nov  6 01:23:21 2002
+@@ -66,5 +73,11 @@
+ // Uncomment this one if you are using big endian machines (only meaningful
+ // when NON_WINDOWS is used)
+-// #define USE_BIG_ENDIAN   1
++
++#include <machine/endian.h>
++#if _BYTE_ORDER == _BIG_ENDIAN
++#	define USE_BIG_ENDIAN   1
++#elif _BYTE_ORDER != _LITTLE_ENDIAN
++#	error "Unexpected BYTE_ORDER on this architecture"
++#endif
+ 
+ // Uncomment this one if your compiler/machine does support the
