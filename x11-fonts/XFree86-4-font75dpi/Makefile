@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86-4-font75dpi
+# New ports collection makefile for:	XFree86-font75dpi
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	font75dpi
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-2.tgz
+DISTFILES=	X410src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 

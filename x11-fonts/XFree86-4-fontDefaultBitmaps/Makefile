@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86-4-fontDefaultBitmap
+# New ports collection makefile for:	XFree86-fontDefaultBitmap
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	fontDefaultBitmaps
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-1.tgz X402src-2.tgz
-EXTRACT_ONLY=	X402src-2.tgz
+DISTFILES=	X410src-1.tgz X410src-2.tgz
+EXTRACT_ONLY=	X410src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -29,7 +29,7 @@ WRKSRC=			${WRKDIR}/xc/fonts/bdf/misc
 post-extract:
 	(cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X402src-1.tgz \
+		${DISTDIR}/${DIST_SUBDIR}/X410src-1.tgz \
 		| ${TAR} -xf - xc/extras/fonts)
 
 do-configure:

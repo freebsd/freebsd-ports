@@ -12,6 +12,7 @@ lib/X11/fonts/encodings/iso8859-13.enc
 lib/X11/fonts/encodings/large/big5.eten-0.enc.gz
 lib/X11/fonts/encodings/large/encodings.dir
 lib/X11/fonts/encodings/large/gb2312.1980-0.enc.gz
+lib/X11/fonts/encodings/large/gbk-0.enc.gz
 lib/X11/fonts/encodings/large/jisx0201.1976-0.enc.gz
 lib/X11/fonts/encodings/large/jisx0208.1983-0.enc.gz
 lib/X11/fonts/encodings/large/jisx0208.1990-0.enc.gz
