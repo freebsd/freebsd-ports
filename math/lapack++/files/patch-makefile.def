@@ -1,16 +1,17 @@
 --- makefile.def.orig	Wed Mar  1 02:42:58 2000
-+++ makefile.def	Mon May 20 11:18:27 2002
++++ makefile.def	Tue Nov 19 13:16:28 2002
 @@ -12,11 +12,11 @@
  #		g++ 2.7.0)  Some other choices for ARCH are "SGI" and "RIOS" (RS-6000)
  #
  
 -ARCH = Linux
-+ARCH = FreeBSD
- CPP = g++
+-CPP = g++
 -CPPFLAGS =  -I$(LAPACKPP_INC) -D$(ARCH)   -Wall
 -CPPLIBS = -lm
 -CFLAGS = -I$(LAPACKPP_INC)
-+CPPFLAGS+=  $(CFLAGS) -I$(LAPACKPP_INC) -D$(ARCH)
++ARCH = FreeBSD
++CPP = $(CXX)
++CPPFLAGS+=  $(CXXFLAGS) -I$(LAPACKPP_INC) -D$(ARCH)
 +CPPLIBS+= -lm
 +CFLAGS+= -I$(LAPACKPP_INC)
  #
