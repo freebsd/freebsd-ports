@@ -45,46 +45,46 @@ ${PREFIX}/share/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/params/* \
 ${PREFIX}/share/tinker/params
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/tinker/doc
-	${MKDIR} ${PREFIX}/share/tinker/example
+	${MKDIR} ${PREFIX}/share/doc/tinker
+	${MKDIR} ${PREFIX}/share/examples/tinker
 	${MKDIR} ${PREFIX}/share/tinker/bench
 	${MKDIR} ${PREFIX}/share/tinker/test
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/README \
-${PREFIX}/share/tinker/doc
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.pdf \
-${PREFIX}/share/tinker/doc
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.ps \
-${PREFIX}/share/tinker/doc
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.Z \
-${PREFIX}/share/tinker/doc
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/doc/*.txt \
-${PREFIX}/share/tinker/doc
+${PREFIX}/share/doc/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/README \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/anion.dyn0 \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.in* \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.key \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.log \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/*.xyz \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/argon.1st \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/crambin.pdb \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/cyclohex.boat \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/cyclohex.chair \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/example/formamide.cell \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/clean.make \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_SCRIPT} ${WRKDIR}/tinker/example/*.run \
-${PREFIX}/share/tinker/example
+${PREFIX}/share/examples/tinker
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.input \
 ${PREFIX}/share/tinker/bench
 	${INSTALL_DATA} ${WRKDIR}/tinker/bench/*.key \

@@ -1,5 +1,5 @@
 --- ../make/Makefile.orig	Mon Jul 12 10:56:36 1999
-+++ ../make/Makefile	Sun Aug 29 15:07:57 1999
++++ ../make/Makefile	Wed May 31 16:00:31 2000
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -62,16 +62,16 @@
 +.if ${FC}==f77
 +.if !defined(HAVE_G2C)
 +LIBS = -lU77
-+F77FLAGS = -NL400 -c
++F77FLAGS = -NL400 -c -w
 +LINKFLAGS = -L${PREFIX}/lib
 +.else
-+LIBS = -lg2c
-+F77FLAGS = -Wno-globals -fno-globals -c
++LIBS =
++F77FLAGS = -Wno-globals -fno-globals -c -w
 +LINKFLAGS =
 +.endif
 +.elseif ${FC}==g77
 +LIBS=
-+F77FLAGS = -Wno-globals -fno-globals -c
++F77FLAGS = -Wno-globals -fno-globals -c -w
 +LINKFLAGS =
 +.endif
 +
@@ -143,51 +143,51 @@
 -	mv  xyzint.x     $(BINDIR)/xyzint
 -	mv  xyzpdb.x     $(BINDIR)/xyzpdb
 -	mv  xyzsybyl.x   $(BINDIR)/xyzsybyl
-+	${INSTALL} -c -s  alchemy.x    $(BINDIR)/alchemy
-+	${INSTALL} -c -s  analyze.x    $(BINDIR)/analyze
-+	${INSTALL} -c -s  anneal.x     $(BINDIR)/anneal
-+	${INSTALL} -c -s  archive.x    $(BINDIR)/archive
-+	${INSTALL} -c -s  correlate.x  $(BINDIR)/correlate
-+	${INSTALL} -c -s  crystal.x    $(BINDIR)/crystal
-+	${INSTALL} -c -s  distgeom.x   $(BINDIR)/distgeom
-+	${INSTALL} -c -s  document.x   $(BINDIR)/document
-+	${INSTALL} -c -s  dynamic.x    $(BINDIR)/dynamic
-+	${INSTALL} -c -s  gda.x        $(BINDIR)/gda
-+	${INSTALL} -c -s  intedit.x    $(BINDIR)/intedit
-+	${INSTALL} -c -s  intxyz.x     $(BINDIR)/intxyz
-+	${INSTALL} -c -s  minimize.x   $(BINDIR)/minimize
-+	${INSTALL} -c -s  minirot.x    $(BINDIR)/minirot
-+	${INSTALL} -c -s  newton.x     $(BINDIR)/newton
-+	${INSTALL} -c -s  newtrot.x    $(BINDIR)/newtrot
-+	${INSTALL} -c -s  optimize.x   $(BINDIR)/optimize
-+	${INSTALL} -c -s  optirot.x    $(BINDIR)/optirot
-+	${INSTALL} -c -s  optrigid.x   $(BINDIR)/optrigid
-+	${INSTALL} -c -s  path.x       $(BINDIR)/path
-+	${INSTALL} -c -s  pdbxyz.x     $(BINDIR)/pdbxyz
-+	${INSTALL} -c -s  protein.x    $(BINDIR)/protein
-+	${INSTALL} -c -s  pss.x        $(BINDIR)/pss
-+	${INSTALL} -c -s  pssrigid.x   $(BINDIR)/pssrigid
-+	${INSTALL} -c -s  pssrot.x     $(BINDIR)/pssrot
-+	${INSTALL} -c -s  saddle.x     $(BINDIR)/saddle
-+	${INSTALL} -c -s  scan.x       $(BINDIR)/scan
-+	${INSTALL} -c -s  sniffer.x    $(BINDIR)/sniffer
-+	${INSTALL} -c -s  spacefill.x  $(BINDIR)/spacefill
-+	${INSTALL} -c -s  superpose.x  $(BINDIR)/superpose
-+	${INSTALL} -c -s  sybylxyz.x   $(BINDIR)/sybylxyz
-+	${INSTALL} -c -s  testgrad.x   $(BINDIR)/testgrad
-+	${INSTALL} -c -s  testhess.x   $(BINDIR)/testhess
-+	${INSTALL} -c -s  testlight.x  $(BINDIR)/testlight
-+	${INSTALL} -c -s  testrot.x    $(BINDIR)/testrot
-+	${INSTALL} -c -s  timer.x      $(BINDIR)/timer
-+	${INSTALL} -c -s  timerot.x    $(BINDIR)/timerot
-+	${INSTALL} -c -s  vibrate.x    $(BINDIR)/vibrate
-+	${INSTALL} -c -s  vibrot.x     $(BINDIR)/vibrot
-+	${INSTALL} -c -s  xtalfit.x    $(BINDIR)/xtalfit
-+	${INSTALL} -c -s  xtalmin.x    $(BINDIR)/xtalmin
-+	${INSTALL} -c -s  xyzedit.x    $(BINDIR)/xyzedit
-+	${INSTALL} -c -s  xyzint.x     $(BINDIR)/xyzint
-+	${INSTALL} -c -s  xyzpdb.x     $(BINDIR)/xyzpdb
-+	${INSTALL} -c -s  xyzsybyl.x   $(BINDIR)/xyzsybyl
++	${INSTALL_PROGRAM}  alchemy.x    $(BINDIR)/alchemy
++	${INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze
++	${INSTALL_PROGRAM}  anneal.x     $(BINDIR)/anneal
++	${INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
++	${INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate
++	${INSTALL_PROGRAM}  crystal.x    $(BINDIR)/crystal
++	${INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom
++	${INSTALL_PROGRAM}  document.x   $(BINDIR)/document
++	${INSTALL_PROGRAM}  dynamic.x    $(BINDIR)/dynamic
++	${INSTALL_PROGRAM}  gda.x        $(BINDIR)/gda
++	${INSTALL_PROGRAM}  intedit.x    $(BINDIR)/intedit
++	${INSTALL_PROGRAM}  intxyz.x     $(BINDIR)/intxyz
++	${INSTALL_PROGRAM}  minimize.x   $(BINDIR)/minimize
++	${INSTALL_PROGRAM}  minirot.x    $(BINDIR)/minirot
++	${INSTALL_PROGRAM}  newton.x     $(BINDIR)/newton
++	${INSTALL_PROGRAM}  newtrot.x    $(BINDIR)/newtrot
++	${INSTALL_PROGRAM}  optimize.x   $(BINDIR)/optimize
++	${INSTALL_PROGRAM}  optirot.x    $(BINDIR)/optirot
++	${INSTALL_PROGRAM}  optrigid.x   $(BINDIR)/optrigid
++	${INSTALL_PROGRAM}  path.x       $(BINDIR)/path
++	${INSTALL_PROGRAM}  pdbxyz.x     $(BINDIR)/pdbxyz
++	${INSTALL_PROGRAM}  protein.x    $(BINDIR)/protein
++	${INSTALL_PROGRAM}  pss.x        $(BINDIR)/pss
++	${INSTALL_PROGRAM}  pssrigid.x   $(BINDIR)/pssrigid
++	${INSTALL_PROGRAM}  pssrot.x     $(BINDIR)/pssrot
++	${INSTALL_PROGRAM}  saddle.x     $(BINDIR)/saddle
++	${INSTALL_PROGRAM}  scan.x       $(BINDIR)/scan
++	${INSTALL_PROGRAM}  sniffer.x    $(BINDIR)/sniffer
++	${INSTALL_PROGRAM}  spacefill.x  $(BINDIR)/spacefill
++	${INSTALL_PROGRAM}  superpose.x  $(BINDIR)/superpose
++	${INSTALL_PROGRAM}  sybylxyz.x   $(BINDIR)/sybylxyz
++	${INSTALL_PROGRAM}  testgrad.x   $(BINDIR)/testgrad
++	${INSTALL_PROGRAM}  testhess.x   $(BINDIR)/testhess
++	${INSTALL_PROGRAM}  testlight.x  $(BINDIR)/testlight
++	${INSTALL_PROGRAM}  testrot.x    $(BINDIR)/testrot
++	${INSTALL_PROGRAM}  timer.x      $(BINDIR)/timer
++	${INSTALL_PROGRAM}  timerot.x    $(BINDIR)/timerot
++	${INSTALL_PROGRAM}  vibrate.x    $(BINDIR)/vibrate
++	${INSTALL_PROGRAM}  vibrot.x     $(BINDIR)/vibrot
++	${INSTALL_PROGRAM}  xtalfit.x    $(BINDIR)/xtalfit
++	${INSTALL_PROGRAM}  xtalmin.x    $(BINDIR)/xtalmin
++	${INSTALL_PROGRAM}  xyzedit.x    $(BINDIR)/xyzedit
++	${INSTALL_PROGRAM}  xyzint.x     $(BINDIR)/xyzint
++	${INSTALL_PROGRAM}  xyzpdb.x     $(BINDIR)/xyzpdb
++	${INSTALL_PROGRAM}  xyzsybyl.x   $(BINDIR)/xyzsybyl
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
