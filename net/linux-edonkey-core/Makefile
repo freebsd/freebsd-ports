@@ -40,12 +40,6 @@ post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 
-pre-install:
-.if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
-.endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/sbin/${BINARY_NAME}-real
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
@@ -55,4 +49,12 @@ do-install:
 .endif
 	@${SED} s!/usr/local/share/doc/edonkey-core!${DOCSDIR}${PKGNAMESUFFIX}! ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if exists(${STRIP_CMD})
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+.endif
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+
+.include <bsd.port.post.mk>

@@ -40,12 +40,6 @@ post-patch:
 		s|%%DATAFILES%%|${DATA_FILES}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
-pre-install:
-.if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
-.endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
-
 do-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -58,4 +52,12 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin/${BINARY_NAME}-real
 	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if exists(${STRIP_CMD})
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+.endif
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+
+.include <bsd.port.post.mk>

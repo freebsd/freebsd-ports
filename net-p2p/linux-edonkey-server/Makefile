@@ -44,12 +44,6 @@ post-patch:
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|" ${FILESDIR}/${RC_SAMPLE} \
 		> ${WRKDIR}/${RC_SAMPLE}
 
-pre-install:
-.if exists(${STRIP_CMD})
-#	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
-.endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
-
 do-install:
 # pre-install work: create user ids, ...
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
@@ -58,4 +52,12 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${RC_SAMPLE} ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${FILESDIR}/donkey.ini ${PREFIX}/etc/edonkey2000
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if exists(${STRIP_CMD})
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+.endif
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+
+.include <bsd.port.post.mk>

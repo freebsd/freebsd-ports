@@ -35,12 +35,6 @@ post-patch:
 	@${SED} -e "s|%%DATADIR%%|${DATADIR}|" ${FILESDIR}/wrapper.sh \
 		> ${WRKDIR}/wrapper.sh
 
-pre-install:
-.if exists(${STRIP_CMD})
-	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
-.endif
-	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
-
 do-install:
 # skin files
 	@${MKDIR} ${DATADIR}
@@ -52,4 +46,12 @@ do-install:
 		${PREFIX}/bin/${BINARY_NAME:S/.bin$//}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+.if exists(${STRIP_CMD})
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+.endif
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+
+.include <bsd.port.post.mk>
