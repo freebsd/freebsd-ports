@@ -58,6 +58,7 @@
     SUBDIR += bs
     SUBDIR += bsdtris
     SUBDIR += bsp
+    SUBDIR += bubbros
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += burgerspace
