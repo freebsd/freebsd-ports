@@ -1,7 +1,5 @@
-SKK (Simple Kana Kanji Convertor) is a very fast and efficient Japanese input
-method system, written in emacs-lisp. SKK runs on NEmacs (Japanized Emacs18),
-Mule (MULtilingual Emacs), and Demacs (DOS version of Emacs18/NEmacs).
+SKK (Simple Kana Kanji Convertor) is a very fast and efficient Japanese
+input method system, written in emacs-lisp. This package provides jisyo
+files (kana-kanji conversion dictionaries).
 
-WWW: http://skk.kuis.kyoto-u.ac.jp/skk/
-
-This package is jisyo file (kana-kanji conversion dictionary) for the SKK.
+WWW: http://openlab.ring.gr.jp/skk/

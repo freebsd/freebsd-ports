@@ -1,2 +1,4 @@
-share/skk/%%JISYONAME%%
+share/skk/SKK-JISYO.L
+share/skk/SKK-JISYO.M
+share/skk/SKK-JISYO.S
 @dirrm share/skk
