@@ -8,20 +8,21 @@
 
 PORTNAME=	snack
 PORTVERSION=	2.2.2
-CATEGORIES=	audio tcl83 tk83
+PORTREVISION=	1
+CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Snack Sound Toolkit
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.3 \
-		--with-tk=${LOCALBASE}/lib/tk8.3 \
+CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
+		--with-tk=${LOCALBASE}/lib/tk8.4 \
 		--prefix=${PREFIX}
 
 PLIST_SUB=	SNACK_VER=2.2
