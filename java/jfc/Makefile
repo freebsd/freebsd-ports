@@ -3,7 +3,7 @@
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/06/23 15:26:12 kuriyama Exp $
+# $Id: Makefile,v 1.3 1999/06/28 02:22:13 billf Exp $
 #
 
 DISTNAME=	swing11
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
-RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/lang/jdk
+RUN_DEPENDS=	${PREFIX}/${JAVASUBDIR}/bin/java:${PORTSDIR}/java/jdk
 
 RESTRICTED=	"Cannot distribute without value-added application."
 WRKSRC=		${WRKDIR}/swing-1.1
