@@ -216,6 +216,7 @@ qtools-*		ports/mail/qtools	Possibly restricted binary
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake106.zip		ports/games/quakeserver	Shareware
+radiator		ports/net/radiator	Commercial software
 radius*			ports/net/radius	Binary redistribution only,
 						no fee allowed
 rarlnx*			ports/archivers/linux_rar	Only unmodified original package can be distributed
