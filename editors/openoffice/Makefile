@@ -375,6 +375,8 @@ post-extract:
 
 post-patch:
 	@${MAKE} patch-mozilla
+	@${MAKE} fix-kdewrappers
+	@${MAKE} fix-gnomewrappers
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
@@ -395,7 +397,6 @@ post-patch:
 		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/gifpatch-goodies+source+filter.vcl+egif+makefile.mk ; \
 	fi
 .endif
-
 .if defined(WITH_DEBUG)
 	@if [ "`echo ${PATCHDIR}/debugpatch-*`" != "${PATCHDIR}/debugpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional debug ${OPSYS} patches for ${PKGNAME}" ; \
@@ -426,6 +427,14 @@ post-patch:
 	@${ECHO_MSG} "===>  Find old malloc.h defines and fix them in ${PKGNAME} source"
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
+
+fix-kdewrappers:
+	@${PERL} -pi -e 's|"Exec", "\\"\<progpath\>/program/|"Exec", "\\"${PREFIX}/bin/openoffice-|' \
+		${WRKSRC}/../sysui/oounix/office/kde2/kdeint
+
+fix-gnomewrappers:
+	@${PERL} -pi -e 's|"Exec", "<progpath>/program/|"Exec", "${PREFIX}/bin/openoffice-|' \
+		${WRKSRC}/../sysui/oounix/office/gnome/gnomeint
 
 extract-mozilla:
 .if ! exists(${WRKDIR}/mozilla/Makefile)
@@ -538,9 +547,6 @@ do-build:
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
 	   > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
-	# fix KDE-files to use our wrapper skrips.
-	@${FIND} ${WRKSRC}/../sysui/unxfbsd.pro | ${EGREP} "\.desktop$$" | ${XARGS} \
-		${PERL} -pi -e 's|Exec="\<progpath\>/program/|Exec="${PREFIX}/bin/openoffice-|'
 
 do-install:
 .if !defined(DISPLAY)
