@@ -1837,6 +1837,7 @@ gcompris2	ports/games/gcompris2
 gconf		ports/devel/gconf
 gconf-editor	ports/sysutils/gconf-editor
 gconf2		ports/devel/gconf2
+gconfmm		ports/devel/gconfmm
 gctpc		ports/misc/gctpc
 gcvs		ports/devel/gcvs
 gd		ports/graphics/gd
