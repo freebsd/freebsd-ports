@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.uk.xmms.org/xmms/1.2.x/ \
