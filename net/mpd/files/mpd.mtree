@@ -2,6 +2,10 @@
 
 /set type=dir uname=root gname=wheel mode=0755
 .
+    etc
+	rc.d
+	..
+    ..
     sbin
     ..
     etc
