@@ -1,0 +1,13 @@
+lib/%%PYTHON_VERSION%%/site-packages/rt/bgp.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/clean.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/isis.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/mrtd.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/mutils.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/parse.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/splice.py
+lib/%%PYTHON_VERSION%%/site-packages/rt/table-dump.py
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/rt
+%%PORTDOCS%%share/doc/py-rt/README
+%%PORTDOCS%%share/doc/py-rt/README.mrtd
+%%PORTDOCS%%share/doc/py-rt/README.rv
+%%PORTDOCS%%@dirrm share/doc/py-rt
