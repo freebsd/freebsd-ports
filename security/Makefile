@@ -16,6 +16,7 @@
     SUBDIR += cksfv
     SUBDIR += cops
     SUBDIR += crack
+    SUBDIR += cracklib
     SUBDIR += cyrus-sasl
     SUBDIR += ddos_scan
     SUBDIR += donkey
