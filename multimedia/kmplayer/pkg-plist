@@ -1,0 +1,16 @@
+bin/kmplayer
+lib/kde3/kparts_kmplayer.la
+lib/kde3/kparts_kmplayer.so
+lib/kdeinit_kmplayer.la
+lib/kdeinit_kmplayer.so
+share/applnk/Multimedia/More/kmplayer.desktop
+share/applnk/Multimedia/kmplayer.desktop
+share/apps/kmplayer/kmplayerpartui.rc
+share/apps/kmplayer/kmplayerui.rc
+share/doc/HTML/en/kmplayer/common
+share/doc/HTML/en/kmplayer/index.cache.bz2
+share/doc/HTML/en/kmplayer/index.docbook
+share/config/kmplayerrc
+share/services/kmplayer_component.desktop
+@dirrm share/doc/HTML/en/kmplayer
+@dirrm share/apps/kmplayer

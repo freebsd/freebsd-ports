@@ -13,6 +13,7 @@
     SUBDIR += gsubedit
     SUBDIR += gtksubtitler
     SUBDIR += kdemultimedia3
+    SUBDIR += kmplayer
     SUBDIR += ksubeditor
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
