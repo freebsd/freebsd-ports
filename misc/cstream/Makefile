@@ -3,10 +3,10 @@
 # Date created:         19990304
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 10:55:35 cracauer Exp $
+# $Id: Makefile,v 1.2 1999/04/13 16:24:36 cracauer Exp $
 #
 
-DISTNAME=	cstream-1.1
+DISTNAME=	cstream-1.2
 CATEGORIES=     misc
 MASTER_SITES=   http://www.cons.org/cracauer/download/ \
 		http://www2.cons.org/cracauer/download/ \
