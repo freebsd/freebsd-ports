@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="53e711ed-8972-11d9-9ff8-00306e01dda2">
+    <topic>phpbb -- privilege elevation and path disclosure</topic>
+    <affects>
+      <package>
+        <name>phpbb</name>
+        <range><lt>2.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The phpbb developer group reports:</p>
+        <blockquote cite="http://www.phpbb.com/phpBB/viewtopic.php?t=267563">
+          <p>phpBB Group announces the release of phpBB 2.0.13, the
+	    "Beware of the furries" edition. This release addresses two
+	    recent security exploits, one of them critical. They were
+	    reported a few days after .12 was released and no one is
+	    more annoyed than us, having to release a new version ini
+	    such a short period of time. Fortunately both fixes are
+	    easy and in each case just one line needs to be edited.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+        <url>http://www.phpbb.com/phpBB/viewtopic.php?t=267563</url>
+    </references>
+    <dates>
+      <discovery>2005-02-27</discovery>
+      <entry>2005-02-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96df5fd0-8900-11d9-aa18-0001020eed82">
     <topic>curl -- authentication buffer overflow vulnerability</topic>
     <affects>
