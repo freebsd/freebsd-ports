@@ -1,0 +1,18 @@
+Tool to check and undelete partition
+Works with the following partitions:
+- FAT12 FAT16 FAT32
+- Linux EXT2/EXT3
+- Linux SWAP (version 1 and 2)
+- NTFS (Windows NT/W2K/XP)
+- BeFS (BeOS)
+- UFS (BSD)
+- Netware
+- ReiserFS
+
+TestDisk is under GNU Public License.
+You can compile it under Dos with DJGPP or under Linux or BSD with gcc.
+
+WWW: http://www.cgsecurity.org/
+
+- Florent Thoumie
+flz@xbsd.org

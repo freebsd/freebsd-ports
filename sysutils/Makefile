@@ -360,6 +360,7 @@
     SUBDIR += tct
     SUBDIR += tdir
     SUBDIR += tentakel
+    SUBDIR += testdisk
     SUBDIR += thefish
     SUBDIR += ticker.app
     SUBDIR += timelimit
