@@ -15,11 +15,14 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml \
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser \
 		${RUBY_SITELIBDIR}/TCPSocketPipe.rb:${PORTSDIR}/net/ruby-tcpsocketpipe \
 		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver
-# Alternative to ruby-nqxml:
-#		${RUBY_SITELIBDIR}/xmlparser.rb:${PORTSDIR}/textproc/ruby-xmlparser
+# Alternative to ruby-xmlparser:
+#     NQXML
+#		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
+#     REXML (not fully supported yet)
+#		${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
 
 USE_RUBY=	yes
 
