@@ -1,0 +1,35 @@
+--- src/mledit.cpp.orig	Mon Jul 13 20:53:46 1998
++++ src/mledit.cpp	Wed Aug  5 18:12:05 1998
+@@ -6,18 +6,25 @@
+ {
+    // add word wrap here
+    char *newText = new char[strlen(s) + 1];
+-   int j = 0;
+-   for (int i = 0; i < strlen(s); i++) 
++   int j, m, n;
++   j = 0;
++   for (unsigned long i = 0; i < strlen(s); i++) 
+    {
+       //if (s[i] == '\t') j += 3;  // add whatever the length of a tab is (broken)
+       if (j > fill_column_value)
+       {
+          // backup until we get to a space or a newline
+-         while (s[i] != ' ' && s[i] != '\n') { i--; j--; }
+-         newText[j] = '\0';
+-         QMultiLineEdit::append(newText);
+-         j = 0;
+-         i++;  // get past the space or newline
++         m = i;
++         n = j;
++         while (m >= 0 && s[m] != ' ' && s[m] != '\n') { m--; n--; }
++         if (s[m] == ' ')  // space found
++         {
++            i = m;
++            newText[n] = '\0';
++            QMultiLineEdit::append(newText);
++            j = 0;
++            i++;  // get past the space or newline
++         }
+       }
+       if (s[i] == '\n') 
+       {

@@ -1,23 +1,19 @@
 bin/licq
-bin/licq-binary
-share/licq/conf/2127503.uin
-share/licq/conf/licq.conf
-share/licq/conf/sample.uin
-share/licq/conf/users.conf
-share/licq/data/0001.ppm
-share/licq/data/FFFF.ppm
-share/licq/data/0005.ppm
-share/licq/data/0000.ppm
-share/licq/data/0011.ppm
-share/licq/data/message.ppm
-share/licq/data/bg.ppm
-share/licq/history/8562000.history
-share/licq/history/2127503.history
-share/licq/README
-share/licq/javaToLicq
-share/licq/micqToLicq
-share/licq/licq.inst
-@dirrm share/licq/conf
-@dirrm share/licq/data
-@dirrm share/licq/history
-@dirrm share/licq
+bin/licq.inst
+bin/licq.javaconvert
+bin/licq.micqconvert
+share/Licq/data/online.ppm
+share/Licq/data/away.ppm
+share/Licq/data/na.ppm
+share/Licq/data/occupied.ppm
+share/Licq/data/offline.ppm
+share/Licq/data/bg.ppm
+share/Licq/data/message.ppm
+share/Licq/data/message.wav
+share/Licq/conf/2127503.uin
+share/Licq/conf/sample.uin
+share/Licq/conf/users.conf
+share/Licq/conf/licq.conf
+@dirrm share/Licq/data
+@dirrm share/Licq/conf
+@dirrm share/Licq

@@ -1,87 +1,16 @@
-diff -ur Makefile Makefile
---- Makefile	Sat Jul  4 18:46:51 1998
-+++ Makefile	Sun Jul  5 10:33:57 1998
-@@ -1,7 +1,7 @@
- # stuff to check
+--- src/Makefile.in	Tue Jul 14 16:18:02 1998
++++ src/Makefile.in	Wed Aug  5 18:05:00 1998
+@@ -15,11 +15,11 @@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  
- # base directory to install licq and the data sub directories to
--BASE_DIR=/usr/local/licq
-+BASE_DIR=/usr/local/share/licq
+ CXX	= @CXX@
+-CXXFLAGS= @CXXFLAGS@
++CXXFLAGS= @CXXFLAGS@ -I.
+ CPPFLAGS= -DPACKAGE=\"@PACKAGE@\" -DVERSION=\"@VERSION@\" \
+ 	  @QT_INCLUDES@ @X_INCLUDES@
+ LDFLAGS	= @QT_LDFLAGS@ @X_LDFLAGS@
+-LDLIBS	= -lqt
++LDLIBS	= -lqt -lX11
+ MOC	= @MOC@
  
- all:
- 	(cd src; make; mv licq ..)
-@@ -10,10 +10,9 @@
- 	(cd src; make clean)
- 
- install:
--	mkdir $(BASE_DIR)
-+	mkdir -p $(BASE_DIR)
- 	cp -R ./conf $(BASE_DIR)/conf
- 	cp -R ./data $(BASE_DIR)/data
- 	cp -R ./history $(BASE_DIR)/history
- 	cp ./licq ./licq.inst ./micqToLicq ./javaToLicq ./README $(BASE_DIR)
--	echo Now have each user who wants to use Licq run $(BASE_DIR)/licq.inst.
--	
-+	@echo Now have each user who wants to use Licq run $(BASE_DIR)/licq.inst.
-diff -ur licq.inst licq.inst
---- licq.inst	Sat Jul  4 18:42:37 1998
-+++ licq.inst	Sun Jul  5 10:35:21 1998
-@@ -4,12 +4,12 @@
- # BASE_DIR = base directory where licq was installed, typically /usr/local/licq
- # INST_DIR = dir to install to, typically ~/licq
- 
--BASE_DIR=/usr/local/licq
--INST_DIR=~/licq
-+BASE_DIR=/usr/local/share/licq
-+INST_DIR=~/.licq
- 
- echo Installing Licq from $BASE_DIR to $INST_DIR.
- echo Making $INST_DIR...
--mkdir $INST_DIR
-+mkdir -p $INST_DIR
- echo Copying data to $INST_DIR...
- cp -R $BASE_DIR/data $INST_DIR/data
- cp -R $BASE_DIR/conf $INST_DIR/conf
-diff -ur src/Makefile src/Makefile
---- src/Makefile	Sat Jul  4 20:51:29 1998
-+++ src/Makefile	Sun Jul  5 10:23:36 1998
-@@ -1,6 +1,6 @@
- # ----- stuff to check -----
- 
--QTDIR=-I/usr/lib/qt/include
-+QTDIR=-I/usr/X11R6/include/X11/qt
- GCC=g++
- MOC=moc
- 
-diff -ur src/icq-defines.h src/icq-defines.h
---- src/icq-defines.h	Sat Jul  4 12:27:15 1998
-+++ src/icq-defines.h	Sun Jul  5 10:29:36 1998
-@@ -3,7 +3,7 @@
- #define ICQDEFINES_H
- 
- // directory constants
--const char DEFAULT_BASE_DIR[]                      = "/usr/local/licq";
-+const char DEFAULT_BASE_DIR[]                      = "/usr/local/share/licq";
- const char CONF_DIR[]                              = "conf/";
- const char DATA_DIR[]                              = "data/";
- const char HISTORY_DIR[]                           = "history/";
-diff -ur src/socket.h src/socket.h
---- src/socket.h	Tue Jun  9 21:35:43 1998
-+++ src/socket.h	Sun Jul  5 10:26:14 1998
-@@ -1,6 +1,8 @@
- #ifndef socket_h
- #define socket_h
- 
-+#include <sys/types.h>
-+#include <netinet/in.h>
- #include <arpa/inet.h>
- #include <qsocknot.h>
- 
-diff -ur src/user.cpp src/user.cpp
---- src/user.cpp	Sat Jul  4 20:17:53 1998
-+++ src/user.cpp	Sun Jul  5 10:25:12 1998
-@@ -1,3 +1,4 @@
-+#include <sys/types.h>
- #include <netinet/in.h> 
- 
- #include "user.h"
+ OBJECTS	= file.o message.o packet.o socket.o icqfunctions.o user.o \
