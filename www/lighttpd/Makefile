@@ -7,6 +7,7 @@
 
 PORTNAME=	lighttpd
 PORTVERSION=	1.3.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 				http://dl.fkb.wormulon.net/lighttpd/ \
