@@ -3,7 +3,7 @@
 # Date created:		11 September 1998
 # Whom:			giffunip
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/13 16:16:41 taoka Exp $
 #
 
 DISTNAME=	amsps
@@ -30,8 +30,8 @@ do-install:
 	$(INSTALL_DATA) ${WRKSRC}/pfb/* $(AMSFNTDIR)/type1
 	@${MKDIR} $(TEXDIR)/dvips/mapfiles.ams
 	$(INSTALL_DATA) ${WRKSRC}/mapfiles/* $(TEXDIR)/dvips/mapfiles.ams
-	@${MKDIR} $(TEXDIR)/fonts/afm
-	$(INSTALL_DATA) ${WRKSRC}/afm/* $(TEXDIR)/fonts/afm
+	@${MKDIR} $(PREFIX)/lib/afm
+	$(INSTALL_DATA) ${WRKSRC}/afm/* $(PREFIX)/lib/afm
 
 .ifndef (NOPORTSDOC)
 	@${MKDIR} $(PREFIX)/share/doc/amspsfnt
