@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
-BROKEN=	"Requires a recent FreeBSD 5.0-CURRENT"
+BROKEN=	"ACL support requires a recent FreeBSD 5.0-CURRENT"
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
