@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ident2
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	security net
-MASTER_SITES=	http://netgraft.com/downloads/ident2/
-DISTNAME=	ident2-v1.02_FINAL
+MASTER_SITES=	http://michael.bacarella.com/projects/ident2/
+DISTNAME=	ident2-v${PORTVERSION}_FINAL
 
 MAINTAINER=	scorpio@drkshdw.org
 

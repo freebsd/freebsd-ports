@@ -4,4 +4,6 @@ home directory.   A .noident will make it do an ident will not be conducted
 if the file is found in the users home directory.
 
 The server can also send random replies to all requests.  This simplifies
-the problem of using IRC through a NATD network.  
+the problem of using IRC through a NATD network.
+
+WWW: http://michael.bacarella.com/?p=projects#ident2
