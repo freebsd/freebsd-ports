@@ -15,14 +15,13 @@ DISTNAME=	pypgsql-${PORTVERSION}
 
 MAINTAINER=	gerhard.haering@gmx.de
 
-BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pypgsql
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=  YES
+USE_REINPLACE=	YES
 
 DOCS=		README
 
@@ -33,7 +32,7 @@ DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 
 post-patch:
-	${REINPLACE_CMD} -e "s/\/usr\/local\/pgsql/$${LOCALBASE}/g" ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's^/usr/local^${LOCALBASE}^g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
