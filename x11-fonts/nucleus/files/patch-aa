@@ -13,7 +13,6 @@
 + 	[ -d $(DESTDIR) ] || mkdir $(DESTDIR)
 + 	(cd nucleus && tar -cf - nucleus) | (cd ${DESTDIR}; tar -xf -)
 + 	mkdir -p ${DESTDIR}/mozilla
-+ 	cd nucleus/mozilla-src && make
-+ 	(cd nucleus/mozilla-src && tar -cf - *.pcf) | (cd ${DESTDIR}/mozilla && tar -xf -)
-+ 	cd ${DESTDIR}/mozilla && gzip *.pcf
++ 	cd nucleus/mozilla-src && make && gzip -f *.pcf
++ 	(cd nucleus/mozilla-src && tar -cf - *.pcf.gz) | (cd ${DESTDIR}/mozilla && tar -xf -)
 + 	cd ${DESTDIR}/mozilla && mkfontdir .
