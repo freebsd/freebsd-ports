@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.1.0.0
+PORTVERSION=	1.2.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.2
 
 MAN1=	socat.1
 
