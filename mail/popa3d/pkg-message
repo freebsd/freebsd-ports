@@ -1,0 +1,12 @@
+===========================================================================
+1. Edit your /etc/inetd.conf to use popa3d. The line should look like this:
+
+pop3	stream	tcp	nowait	root	/usr/local/libexec/popa3d   popa3d
+
+Note: when started via an inetd clone, the logging of connections is left
+up to that inetd clone or TCP wrappers.
+
+2. Restart inetd by sending it a SIGHUP:
+
+# killall -HUP inetd
+===========================================================================

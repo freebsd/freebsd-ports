@@ -8,24 +8,14 @@
 
 DISTNAME=	popa3d-0.4
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.false.com/pub/security/popa3d/
+MASTER_SITES=	http://www.openwall.com/popa3d/ \
+		ftp://ftp.openwall.com/popa3d/ \
+		ftp://ftp.dataforce.net/pub/solar/ \
+		ftp://ftp.false.com/pub/security/popa3d/
 
 MAINTAINER=	gonza@techline.ru
 
-post-install:
-
-	@ ${ECHO} "==========================================================================="
-	@ ${ECHO} "1. Edit your /etc/inetd.conf to use popa3d. The line should look like this:"
-	@ ${ECHO} ""
-	@ ${ECHO} "pop3	stream	tcp	nowait	root	/usr/local/libexec/popa3d   popa3d"
-	@ ${ECHO} ""
-	@ ${ECHO} "Note: when started via an inetd clone, the logging of connections is left"
-	@ ${ECHO} "up to that inetd clone or TCP wrappers."
-	@ ${ECHO} ""
-	@ ${ECHO} "2. Restart inetd by sending it a SIGHUP:"
-	@ ${ECHO} ""
-	@ ${ECHO} "# killall -HUP inetd"
-	@ ${ECHO} "==========================================================================="
+ALL_TARGET=	popa3d
 
 do-install:
 	${INSTALL} ${COPY} -o root -g wheel -m 500 \
@@ -33,15 +23,14 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/INSTALL \
-		${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/DESIGN \
-		${PREFIX}/share/doc/popa3d
-	${INSTALL_MAN} ${WRKSRC}/COPYING \
-		${PREFIX}/share/doc/popa3d
+	${INSTALL_MAN} ${WRKSRC}/DESIGN ${PREFIX}/share/doc/popa3d
+	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/popa3d
 .endif
 
 pre-install:
-	${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+
+post-install:
+	@ ${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
+@comment $FreeBSD$
 libexec/popa3d
 share/doc/popa3d/DESIGN
-share/doc/popa3d/INSTALL
 share/doc/popa3d/COPYING
 @dirrm share/doc/popa3d
