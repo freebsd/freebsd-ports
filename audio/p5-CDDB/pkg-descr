@@ -1,0 +1,21 @@
+The CDDB module implements a Perl class for communicating with an
+audio compact disc database through the CDDBP protocol. It allows
+quering the database and submitting new entries to it via e-mail
+(the Mail::Internet and Mail::Header modules are required for
+submitting, but their absence won't affect other functions). Unlike
+its analogs, CDDB.pm doesn't try to read a disc in your CD-ROM by
+itself, but relies on the main program supplying disc data.
+Therefore, it is particularly useful for developing software that
+deals with alternative media, such as MPEG audio files.
+
+*Note*: The original CDDB project (http://www.cddb.com) was aquired
+by some greedy folks that decided to force developers pay license
+fees. Thus they no longer provide service to those who use unlicensed
+client software. So a patch is included in this port that changes
+the default server to that of the freedb.org project
+(http://www.freedb.org).
+
+WWW: http://search.cpan.org/search?module=CDDB
+
+- Yar
+yar@comp.chem.msu.su
