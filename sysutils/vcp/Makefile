@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 
@@ -15,6 +15,7 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface
 
 USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.7
 
 MAN1=		${PORTNAME}.1
 
