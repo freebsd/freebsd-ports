@@ -14,6 +14,5 @@ PKGMESSAGE=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.standalone
 
 STANDALONE=	yes
-NOPORTDOCS=	yes
 
 .include "${MASTERDIR}/Makefile"
