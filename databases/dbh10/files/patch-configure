@@ -1,0 +1,11 @@
+--- configure.orig	Fri Aug  9 23:22:33 2002
++++ configure	Fri Aug  9 23:22:38 2002
+@@ -10854,7 +10854,7 @@
+ "NONE")
+ ;;
+ *)
+-   CFLAGS="$CFLAGS -march=$target"
++   CFLAGS="$CFLAGS"
+    ;;
+ esac
+ 

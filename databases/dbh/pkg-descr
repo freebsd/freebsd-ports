@@ -1,0 +1,7 @@
+A DBH is a convenient way to associate keys composed by characters to data
+records. Any kind of digital information can go into the data record, such
+as text, graphic information, database structures, you name it. The idea
+behind using a DBH is to get rid of what is known as an index file in the
+database world. In the DBH world, the index is built into the file format.
+
+WWW: http://dbh.sourceforge.net/

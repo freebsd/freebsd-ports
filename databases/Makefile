@@ -16,6 +16,7 @@
     SUBDIR += dbconnect
     SUBDIR += dbdesigner
     SUBDIR += dbf2mysql
+    SUBDIR += dbh
     SUBDIR += dbmetrix
     SUBDIR += dbtool
     SUBDIR += dbview
