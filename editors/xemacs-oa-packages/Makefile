@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	xemacs-oa-packages
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		calc-1.13-pkg.tar.gz \
-		calendar-1.15-pkg.tar.gz \
-		forms-1.12-pkg.tar.gz \
-		frame-icon-1.08-pkg.tar.gz \
-		pc-1.18-pkg.tar.gz \
-		slider-1.12-pkg.tar.gz \
-		speedbar-1.17-pkg.tar.gz \
-		strokes-1.07-pkg.tar.gz
+		calc-1.14-pkg.tar.gz \
+		calendar-1.16-pkg.tar.gz \
+		forms-1.13-pkg.tar.gz \
+		frame-icon-1.09-pkg.tar.gz \
+		pc-1.19-pkg.tar.gz \
+		slider-1.13-pkg.tar.gz \
+		speedbar-1.18-pkg.tar.gz \
+		strokes-1.08-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
