@@ -1,0 +1,20 @@
+--- src/dbase/Route.hh.orig	Sat Nov 27 18:08:21 1999
++++ src/dbase/Route.hh	Sat Nov 27 18:08:41 1999
+@@ -92,7 +92,7 @@
+       clear();
+    }
+ 
+-   clear () {
++   void clear () {
+       pix = NULL;
+       _dontcare = 0;
+    }
+@@ -248,7 +248,7 @@
+       pref = 0;
+    }
+ 
+-   set (Pix asn, int p) {
++   void set (Pix asn, int p) {
+       asno = asn;
+       pref = p;
+    }
