@@ -34,12 +34,6 @@ LIBRARIES=	cifparse.a      libnab.a        libsym.a
 
 INCS=	defreal.h       nab.h           nabcode.h       nabtypes.h
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/config.h ${WRKSRC}
 
@@ -102,4 +96,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
