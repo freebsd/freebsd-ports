@@ -1,4 +1,4 @@
-# New ports collection makefile for:   ion-devel
+# New ports collection makefile for:   ion-2
 # Date created:        20 August 2003
 # Whom:                anthony.ginepro@laposte.net
 # Original ion port:   ricci@cs.utah.edu
@@ -22,6 +22,11 @@ USE_LIBLTDL=	yes
 USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	DEFINES="${IONDEFINES}"
+
+.if !defined(WITH_MULTIBYTE)
+IONDEFINES+=	-DCF_NO_MB_SUPPORT
+.endif
 
 MAN1=		ion.1 pwm.1
 DOCSDIR=	share/doc/ion

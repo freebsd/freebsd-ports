@@ -1,5 +1,5 @@
 --- system.mk.orig	Tue Jun  1 16:35:23 2004
-+++ system.mk	Wed Jun  2 05:15:27 2004
++++ system.mk	Sat Jun  5 13:27:08 2004
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -51,7 +51,7 @@
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -119,29 +119,29 @@
+@@ -119,7 +119,7 @@
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -60,13 +60,7 @@
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
- # without even dummy multibyte/widechar support, you may have to uncomment
- # the following line:
--#DEFINES += -DCF_NO_MB_SUPPORT
-+DEFINES += -DCF_NO_MB_SUPPORT
- 
- 
- ##
+@@ -132,16 +132,16 @@
  ## C compiler
  ##
  
