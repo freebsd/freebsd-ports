@@ -31,6 +31,11 @@ USE_BZIP2=	yes
 
 MAN1=		rxvt.1
 
+# set the default encoding for multi-char glyph languages
+.if defined(WITH_ENCODING)
+CONFIGURE_ARGS+=	--with-encoding=${WITH_ENCODING}
+.endif # WITH_ENCODING
+#
 # enable greek keyboard support
 .if defined(WITH_GREEK_KEYBOARD)
 CONFIGURE_ARGS+=	--enable-greek
@@ -57,14 +62,36 @@ CONFIGURE_ARGS+=	--enable-rxvt-scroll
 .endif # WITH_RXVT_SCROLLBAR
 #
 # XIM (X Input Method) protocol support
-.if defined(WITH_XIM)
+.ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
-.endif # WITH_XIM
+.endif # WITHOUT_XIM
 #
 # enable Xterm style scrollbar
 .if defined(WITH_XTERM_SCROLLBAR)
 CONFIGURE_ARGS+=	--enable-xterm-scroll	
 .endif # WITH_XTERM_SCROLLBAR
+
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
+	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
+	@${ECHO_MSG} "WITH_WITH_MOUSEWHEEL=yes	add support for scrolling via mouse wheel"
+	@${ECHO_MSG} "				or buttons 4 & 5"
+	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes		add support for a NeXT-like scrollbar"
+	@${ECHO_MSG} "WITH_RXVT_SCROLLBAR=yes		add support for the original rxvt scrollbar"
+	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	add support for an Xterm-like scrollbar"
+	@${ECHO_MSG}
+.ifndef(WITH_ENCODING)
+	@${ECHO_MSG} "==> You can specify an alternate encoding by setting the WITH_ENCODING variable"
+	@${ECHO_MSG} '==> Options are: "eucj" EUC Japanese encoding; "sjis" Shift JIS encoding;'
+	@${ECHO_MSG} '==> "big5" BIG5 encoding; "gb" GB encoding; "kr" EUC Korean encoding'
+	@${ECHO_MSG} '==> "noenc" for no encoding (useful if you are experiencing encoding problems)'
+	@${ECHO_MSG} '==> For example, "WITH_ENCODING=gb" for GB encoding'
+	@${ECHO_MSG}
+.endif
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
