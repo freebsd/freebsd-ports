@@ -1,5 +1,5 @@
 ##
-Changelog for 7.54 Final: http://www.opera.com/linux/changelogs/754/
+Changelog for 7.54u2 Final: http://www.opera.com/linux/changelogs/754u2/
 
 The name of the the binary, data directory, personal "~/.opera" directory,
 etc., have been renamed from "opera" to "linux-opera." This means that
@@ -14,9 +14,9 @@ the first time.
 *** IMPORTANT: users with custom search.ini ***
 
 If you have a custom search.ini and you've used opera 7.51 or an earlier
-version before this upgrade, edit ~/.opera/search.ini _before_ running the 
-upgraded Opera for the first time, and change the file version to 4. It should
-look like this:
+version before this upgrade, edit ~/.linux-opera/search.ini _before_ running
+the upgraded Opera for the first time, and change the file version to 4. It
+should look like this:
 
 [Version]
 File Version=4
