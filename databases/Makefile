@@ -177,6 +177,7 @@
     SUBDIR += postgresql7
     SUBDIR += postgresql7-client
     SUBDIR += postgresql72
+    SUBDIR += postgresql73
     SUBDIR += postgresql_autodoc
     SUBDIR += puredb
     SUBDIR += pxtools
