@@ -1,0 +1,31 @@
+# New ports collection makefile for:	yaucg
+# Date created:			26 August 2001
+# Whom:				Gea-Suan Lin (gslin@ccca.nctu.edu.tw)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	yaucg
+PORTVERSION=	0.11
+CATEGORIES=	misc
+MASTER_SITES=	http://home.balcab.ch/joelle.wiesmann/secuserv/
+DISTNAME=	${PORTNAME}
+
+MAINTAINER=	gslin@ccca.nctu.edu.tw
+
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
+		bash:${PORTSDIR}/shells/bash2
+
+NO_BUILD=	yes
+STRIP=		# empty
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/grepper/userfriendly.sh ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in changelog license readme todo
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
