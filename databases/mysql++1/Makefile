@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	1.7.31
+PORTVERSION=	1.7.32
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/
 
@@ -15,7 +15,8 @@ COMMENT=	Complex C++ API for MySQL
 
 USE_MYSQL=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_ARGS=	--with-mysql=${LOCALBASE}
+CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} --includedir=${PREFIX}/include/mysql++
+CONFIGURE_ARGS+=	--disable-examples
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
