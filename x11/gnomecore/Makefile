@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
 DISTNAME=	gnome-core-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER?=	ade@FreeBSD.org
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		bz2.1:${PORTSDIR}/archivers/bzip2
