@@ -245,6 +245,7 @@
     SUBDIR += sb16config
     SUBDIR += sbniconfig
     SUBDIR += sdd
+    SUBDIR += sec
     SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
