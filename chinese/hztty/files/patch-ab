@@ -1,0 +1,11 @@
+--- tty.c.orig	Sun Jan 29 12:24:55 1995
++++ tty.c	Mon Oct  6 23:56:32 1997
+@@ -26,7 +26,7 @@
+ # define	TTYDEV		"/dev/pty/ttyxx"
+ #else   /* !hpux */
+ # define	PTYCHAR1	"pqrstuvwxyzPQRSTUVWXYZ"
+-# define	PTYCHAR2	"0123456789abcdef"
++# define	PTYCHAR2	"0123456789abcdefghijklmnopqrstuv"
+ # define	PTYDEV		"/dev/ptyxx"
+ # define	TTYDEV		"/dev/ttyxx"
+ #endif  /* !hpux */
