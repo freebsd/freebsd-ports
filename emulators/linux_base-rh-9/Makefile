@@ -12,8 +12,16 @@ PORTREVISION=		4
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
+MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX} \
+			${MASTER_SITE_REDHAT_LINUX:S/$/:new/}
+MASTER_SITE_SUBDIR=    \
+			${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS \
+			updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/:new
+
 DISTFILES=		redhat-release-8.0-8.noarch.rpm \
-			${RPM_SETUP} \
+			glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
+			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm:new \
+			setup-2.5.20-1.noarch.rpm \
 			filesystem-2.1.6-5.noarch.rpm \
 			basesystem-8.0-1.noarch.rpm \
 			libattr-2.0.8-3.${MACHINE_ARCH}.rpm \
@@ -23,26 +31,26 @@ DISTFILES=		redhat-release-8.0-8.noarch.rpm \
 			termcap-11.0.1-13.noarch.rpm \
 			compat-db-3.3.11-2.${MACHINE_ARCH}.rpm \
 			db4-4.0.14-14.${MACHINE_ARCH}.rpm \
-			${RPM_GDBM} \
+			gdbm-1.8.0-18.${MACHINE_ARCH}.rpm \
 			glib-1.2.10-8.${MACHINE_ARCH}.rpm \
 			libtermcap-2.0.8-31.${MACHINE_ARCH}.rpm \
 			bash-2.05b-5.${MACHINE_ARCH}.rpm \
-			${RPM_BZIP2} \
-			${RPM_LIBSTDCXX} \
-			${RPM_COMPAT_LIBSTDCXX} \
+			bzip2-1.0.2-5.${MACHINE_ARCH}.rpm \
+			compat-libstdc++-7.3-2.96.110.${MACHINE_ARCH}.rpm \
 			ncurses-5.2-28.${MACHINE_ARCH}.rpm \
 			info-4.2-5.${MACHINE_ARCH}.rpm \
 			grep-2.5.1-4.${MACHINE_ARCH}.rpm \
 			fileutils-4.1.9-11.${MACHINE_ARCH}.rpm \
 			popt-1.7-1.06.${MACHINE_ARCH}.rpm \
 			readline-4.3-3.${MACHINE_ARCH}.rpm \
-			${RPM_SETSERIAL} \
-			libstdc++-3.2-7.i386.rpm \
+			setserial-2.17-9.${MACHINE_ARCH}.rpm \
+			libstdc++-3.2-7.${MACHINE_ARCH}.rpm \
 			slang-1.4.5-11.${MACHINE_ARCH}.rpm \
 			sh-utils-2.0.12-3.${MACHINE_ARCH}.rpm \
 			rpm-4.1-1.06.${MACHINE_ARCH}.rpm \
 			libgcc-3.2-7.${MACHINE_ARCH}.rpm \
-			${RPM_FREETYPE}
+			freetype-2.1.2-7.${MACHINE_ARCH}.rpm \
+			zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm:new
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
 PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
@@ -67,28 +75,11 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-UPD_SET1=		glibc-common-2.3.2-4.80.8.${MACHINE_ARCH}.rpm \
-			glibc-2.3.2-4.80.8.${MACHINE_ARCH}.rpm
-UPD_SET2=		zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm
-UPDATES=		${UPD_SET1} ${UPD_SET2}
-
 .ifdef USE_LINUX
 .error You have `USE_LINUX' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64")
-MACHINE_ARCH=		i386
-.endif
-
-RPM_BZIP2=		bzip2-1.0.2-5.i386.rpm
-RPM_FREETYPE=		freetype-2.1.2-7.i386.rpm
-RPM_GDBM=		gdbm-1.8.0-18.i386.rpm
-RPM_LIBSTDCXX=
-RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-7.3-2.96.110.i386.rpm
-RPM_SETSERIAL=		setserial-2.17-9.i386.rpm
-RPM_SETUP=		setup-2.5.20-1.noarch.rpm
 
 DBPATH=			/var/lib/rpm
 RPM=			LC_ALL=C rpm
@@ -103,6 +94,8 @@ REMOVE_FILES=		bin/df bin/su etc/exports etc/group etc/localtime \
 BRAND_FILES=		bin/rpm sbin/ldconfig sbin/sln
 
 .if (${ARCH} == "amd64")
+LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
+MACHINE_ARCH=		i386
 FALLBACK_ELF_MIB=	kern.elf32.fallback_brand
 .else
 FALLBACK_ELF_MIB=	kern.fallback_elf_brand
@@ -132,7 +125,7 @@ do-extract:
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
-	@for R in ${UPD_SET1} ${DISTFILES} ${UPD_SET2}; do \
+	@for R in ${DISTFILES}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
@@ -174,7 +167,3 @@ post-install:
 	@${ECHO} ''
 
 .include <bsd.port.post.mk>
-
-.if (${ARCH} == "amd64")
-LATEST_LINK:=	${LATEST_LINK:C/linux/linux32/}
-.endif
