@@ -14,9 +14,10 @@ MASTER_SITES=	http://www.aigeek.com/txt2html/
 MAINTAINER=	croyle@gelemna.org
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 do-configure:
-	@${PERL} -pi -e "s|/usr/local|${PREFIX}|g; \
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g; \
 		s|${PREFIX}/lib|${DATADIR}|" ${WRKSRC}/txt2html.pl
 
 do-install:

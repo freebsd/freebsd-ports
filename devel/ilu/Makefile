@@ -32,6 +32,7 @@ CONFIGURE_ARGS=	--enable-http-protocol --enable-os-threads=posix \
 		--disable-cplusplus-shared-libary
 
 NO_WRKSUBDIR=	yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/ilu
 
@@ -59,7 +60,7 @@ startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/stubbers/parser/ilu.bison \
 		${WRKSRC}/stubbers/parser/genregs.c \
 		${WRKSRC}/stubbers/parser/iluparse.c.dist \

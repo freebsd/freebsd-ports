@@ -15,9 +15,10 @@ DISTNAME=	byaccj1.1
 MAINTAINER=	davidxu@viatech.com.cn
 
 WRKSRC=		$(WRKDIR)/byaccj1.1/src
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
+	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/yacc ${PREFIX}/bin/byaccj

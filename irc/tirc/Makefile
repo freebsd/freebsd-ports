@@ -12,13 +12,14 @@ MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/network/irc/tirc/
 
 MAINTAINER=	dr@astorit.com
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-ansi-colours"
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 MAN1=		tirc.1
 
 post-patch:
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c ${WRKSRC}/*.1
+	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/*.c ${WRKSRC}/*.1
 
 post-install:
 	strip ${PREFIX}/bin/tirc

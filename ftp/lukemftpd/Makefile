@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/ \
 
 MAINTAINER=	debolaz@debolaz.com
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 DOCS=		ChangeLog README THANKS
@@ -25,7 +26,7 @@ FIXPREFIX=	ftpd.8 ftpd.conf.5 ftpusers.5
 
 pre-patch:
 .for f in ${FIXPREFIX}
-	${PERL} -pi -e "s@^\.Dq Pa /etc@.Dq Pa ${PREFIX}/etc@g; \
+	${REINPLACE_CMD} -e "s@^\.Dq Pa /etc@.Dq Pa ${PREFIX}/etc@g; \
 		s@^\.Pa /etc@.Pa ${PREFIX}/etc@g; \
 		s@^\.It Pa /etc/@.It Pa ${PREFIX}/etc/@g; \
 		s@^\.Ss /etc/@.Ss ${PREFIX}/etc/@g; \
@@ -35,7 +36,7 @@ pre-patch:
 		s@${PREFIX}/etc/pwd.db@/etc/pwd.db@g" \
 	${WRKSRC}/src/${f}
 .endfor
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -e \
 		"s@^#define\t_DEFAULT_CONFDIR\t\"/etc\"@#define\t_DEFAULT_CONFDIR\t\"${PREFIX}/etc\"@" \
 	${WRKSRC}/src/pathnames.h
 

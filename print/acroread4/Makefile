@@ -26,6 +26,7 @@ RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
 
 ONLY_FOR_ARCHS=	i386 alpha
 
+USE_REINPLACE=	yes
 LATEST_LINK=	acroread4
 NO_FILTER_SHLIBS=	yes
 
@@ -40,9 +41,9 @@ PLIST_SUB=	"ARCHDIR=alphaosf"
 
 pre-configure:
 .if ${ARCH} == "i386"
-	@${PERL} -pi.fbsd -e 's:Linux\):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e 's:Linux\):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
 .elif ${ARCH} == "alpha"
-	@${PERL} -pi.fbsd -e 's:OSF1\):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e 's:OSF1\):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
 	${SED} -e 's/@comment ALPHA-ONLY://g' ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
@@ -55,11 +56,11 @@ do-install:
 
 post-install:
 .if ${ARCH} == "i386"
-	@${PERL} -pi -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat4/bin/acroread
+	@${REINPLACE_CMD} -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat4/bin/acroread
 	-@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 .elif ${ARCH} == "alpha"
-	@${PERL} -pi -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat4/bin/acroread
+	@${REINPLACE_CMD} -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat4/bin/acroread
 	@strip ${PREFIX}/Acrobat4/Reader/alphaosf/bin/acroread
 .endif
 	@cd ${PREFIX}/Acrobat4/bin && \
