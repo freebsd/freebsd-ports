@@ -28,6 +28,12 @@ MAKE_ENV=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
 		MOC="${X11BASE}/bin/moc2"
 MAKE_ARGS=	-e
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 post-configure:
 	@${PERL} -pi -e 's|\$\(SUBDIRS\):.*tmake_all|\$\(SUBDIRS\):|' \
 		${WRKSRC}/Makefile
@@ -41,4 +47,4 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/linguist
 	${INSTALL_MAN} ${WRKSRC}/linguist/tutorial/doc/html/* ${PREFIX}/share/doc/linguist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
