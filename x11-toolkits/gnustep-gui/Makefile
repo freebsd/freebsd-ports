@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	gnustep-gui
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.8.9
-.else
-PORTVERSION=	0.8.5
-.endif
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -39,7 +35,7 @@ USE_GNUSTEP_BASE=	yes
 MAKEFILE=
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
-EXTRA_FIX=		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
+USE_REINPLACE=	yes
 
 post-extract:
 .for file in config.guess config.sub install-sh
@@ -47,10 +43,12 @@ post-extract:
 .endfor
 
 pre-configure:
-	@ ${MV} ${EXTRA_FIX} ${EXTRA_FIX}.sed
-	${SED} -e "s=-lphread=${PTHREAD_LIBS}=" -e "s;CFLAGS =;CFLAGS+=;" \
-		-e "s;-Wall;-Wall ${PTHREAD_CFLAGS:S=""==};" \
-		${EXTRA_FIX}.sed > ${EXTRA_FIX}
+	${REINPLACE_CMD} -e "s|-lphread|${PTHREAD_LIBS}|" -e "s|CFLAGS =|CFLAGS+=|" \
+		-e "s|-Wall|-Wall ${PTHREAD_CFLAGS:S=""==}|" \
+		${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss/Makefile
+.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
+.endif
 
 test:
 	@(cd ${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss && \
