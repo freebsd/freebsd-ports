@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tamago
-PORTVERSION=	4.0.6.0.20041122.1
-PORTREVISION=	1
+PORTVERSION=	4.0.6.0.20041122.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/e/egg
@@ -16,7 +15,7 @@ DISTNAME=	egg_4.0.6+0.20041122cvs.orig
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN:S,%SUBDIR%,pool/main/e/egg,} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,nork,}
-PATCHFILES=	egg_4.0.6+0.20041122cvs-1.diff.gz
+PATCHFILES=	egg_4.0.6+0.20041122cvs-2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -42,7 +41,11 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
 
+post-build:
+	(cd ${WRKSRC}/helper && ${MAKE} egg-helper)
+
 post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/helper/egg-helper ${PREFIX}/bin/egg-helper
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
