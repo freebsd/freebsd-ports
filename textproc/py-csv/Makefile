@@ -17,4 +17,10 @@ COMMENT=	A Python module to parse or write comma-separated value (CSV) files
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 230
+IGNORE=		As of Python 2.3, a similar (but not identical) module is included in the base system
+.endif
+
+.include <bsd.port.post.mk>
