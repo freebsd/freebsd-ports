@@ -31,6 +31,12 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	ginac-config.1 ginsh.1 viewgar.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=	"need gcc32 and cln must build with gcc32"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/tutorial/ginac.info*
 
@@ -42,4 +48,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-release \$$(LT_RELEASE)||g' \
 		${WRKSRC}/ginac/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
