@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.41.01
+PORTVERSION=	0.44
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.exit1.org/dvdrip/dist/pre/
-DISTNAME=	Video-DVDRip-${PORTVERSION:S/.01$//g}_01
+MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
+DISTNAME=	Video-DVDRip-${PORTVERSION}
 
 MAINTAINER=	michaelnottebrock@gmx.net
 
@@ -59,5 +59,7 @@ post-patch:
 		${WRKSRC}/dvdrip
 	@${PERL} -pi -e 's#/usr/local/bin/perl#${PERL5}#' \
 		${WRKSRC}/dvdrip-master
+	@${PERL} -pi -e 's#cc#${CC}#' \
+		${WRKSRC}/src/Makefile
 
 .include <bsd.port.mk>

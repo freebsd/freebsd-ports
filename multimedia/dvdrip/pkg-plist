@@ -9,10 +9,11 @@ lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/Audio.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergeAudio.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergeChunks.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergePSUs.pm
+lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/MergeVideoAudio.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/RemoveVOBs.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/Split.pm
-lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/Transcode.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/TranscodeAudio.pm
+lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Job/TranscodeVideo.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Master.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/Node.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Cluster/PSU.pm
@@ -39,6 +40,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/StorageTab.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/TitleTab.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Project/TranscodeTab.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/Window.pm
+lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/GUI/ZoomCalculator.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/PSU.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Preset.pm
 lib/perl5/site_perl/%%PERL_VER%%/Video/DVDRip/Probe.pm
