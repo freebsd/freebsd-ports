@@ -33,7 +33,6 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 DOCSDIR=	${PREFIX}/share/doc/samba
 
-
 NO_LATEST_LINK=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
