@@ -176,7 +176,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>tr-openoffice</name>
 	<name>zh-openoffice-CN</name>
 	<name>zh-openoffice-TW</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.1.2_1</lt></range>
+	<range><ge>2.0</ge></range>
       </package>
     </affects>
     <description>
