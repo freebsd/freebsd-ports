@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.120 1998/06/01 22:29:07 kuriyama Exp $
+# $Id: Makefile,v 1.121 1998/06/08 11:13:07 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -124,6 +124,7 @@
     SUBDIR += vflib
     SUBDIR += vftool
     SUBDIR += vfxdvi
+    SUBDIR += vfxdvik
     SUBDIR += w3
     SUBDIR += weblint97
     SUBDIR += wine
