@@ -1,5 +1,8 @@
---- configure.orig	Sun Nov 11 11:47:08 2001
-+++ configure	Sun Nov 11 21:39:39 2001
+
+$FreeBSD$
+
+--- configure.orig	Thu Nov 15 11:09:00 2001
++++ configure	Thu Nov 15 18:26:26 2001
 @@ -261,7 +261,6 @@
  : ${ac_max_here_lines=38}
  
@@ -27,29 +30,20 @@
  # Check whether --enable-shared or --disable-shared was given.
  if test "${enable_shared+set}" = set; then
    enableval="$enable_shared"
-@@ -6507,7 +6494,7 @@
- build_old_libs=$enable_static
- 
- # Whether or not to add -lc for building shared libraries.
--build_libtool_need_lc=$need_lc
-+build_libtool_need_lc=no
- 
- # Whether or not to optimize for fast installation.
- fast_install=$enable_fast_install
 @@ -7096,13 +7083,13 @@
     { (exit 1); exit 1; }; }
  fi
  
 -echo "$as_me:7099: checking for pthread_mutex_lock in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_mutex_lock in -lpthread... $ECHO_C" >&6
-+echo "$as_me:7099: checking for pthread_mutex_lock in -pthread" >&5
-+echo $ECHO_N "checking for pthread_mutex_lock in -pthread... $ECHO_C" >&6
++echo "$as_me:7099: checking for pthread_mutex_lock in %%PTHREAD_LIBS%%" >&5
++echo $ECHO_N "checking for pthread_mutex_lock in %%PTHREAD_LIBS%%... $ECHO_C" >&6
  if test "${ac_cv_lib_pthread_pthread_mutex_lock+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="%%PTHREAD_LIBS%%  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line 7107 "configure"
  #include "confdefs.h"
@@ -58,7 +52,7 @@
  EOF
  
 -  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
++  LIBS="%%PTHREAD_LIBS%% $LIBS"
  
  else
  

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/builder
 bin/ferite
 bin/ferite-config
@@ -35,6 +36,7 @@ lib/ferite/modules/system.so
 lib/ferite/modules/time.so
 lib/ferite/modules/xml.so
 lib/ferite/scripts/cgi/cgi.fe
+lib/ferite/scripts/test/autoload.fe
 lib/ferite/scripts/test/error.fe
 lib/ferite/scripts/test/helloworld.fe
 lib/ferite/scripts/test/loop.fe
@@ -49,6 +51,7 @@ lib/ferite/scripts/test/test.fe
 lib/ferite/scripts/test/test2.fe
 lib/ferite/scripts/test/testfncparams.fe
 lib/ferite/scripts/test/uarray.fe
+lib/ferite/scripts/test/var_args.fe
 lib/libferite.a
 lib/libferite.so
 lib/libferite.so.0
