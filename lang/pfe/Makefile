@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfe
-PORTVERSION=	0.32.56
+PORTVERSION=	0.32.91
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,5 +16,7 @@ MAINTAINER=	patrick@FreeBSD.org
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	#
 USE_GMAKE=	yes
+MAKE_ARGS=      mandir=/usr/local/man
+MAN1=        pfe.1 pfe-config.1
 
 .include <bsd.port.mk>
