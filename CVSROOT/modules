@@ -3223,6 +3223,7 @@ libatm		src/lib/libatm
 libaudiofile	ports/audio/libaudiofile
 libaux		ports/graphics/libaux
 libavl		ports/devel/libavl
+libbonobo	ports/devel/libbonobo
 libc		src/lib/libc
 libc_alpha	src/lib/libc/alpha
 libc_compat_43	src/lib/libc/compat-43
