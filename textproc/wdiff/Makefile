@@ -18,6 +18,8 @@ COMMENT=	Display word differences between text files
 GNU_CONFIGURE=	yes
 
 MAN1=		wdiff.1
+INFO=		wdiff
+PLIST_FILES=	bin/wdiff
 
 post-install:
 	@install-info ${PREFIX}/${INFO_PATH}/wdiff.info ${PREFIX}/${INFO_PATH}/dir
