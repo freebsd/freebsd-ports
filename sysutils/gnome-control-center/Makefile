@@ -22,7 +22,8 @@ USE_GMAKE=	yes
 USE_GNOMELIBS=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			  `gdk-pixbuf-config --cflags`" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:

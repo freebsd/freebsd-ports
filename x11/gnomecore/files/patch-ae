@@ -20,14 +20,3 @@
  libfish_applet_la_LIBADD = 
  libfish_applet_la_OBJECTS =  fish.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
---- applets/gen_util/Makefile.in.orig	Tue May 23 04:26:11 2000
-+++ applets/gen_util/Makefile.in	Fri May 26 16:23:39 2000
-@@ -181,7 +181,7 @@
- 
- DEFS = @DEFS@ -I. -I$(srcdir) -I../..
- LIBS = @LIBS@
--libgen_util_applet_la_LDFLAGS = 
-+libgen_util_applet_la_LDFLAGS = -version-info 5:0:0
- libgen_util_applet_la_LIBADD = 
- libgen_util_applet_la_OBJECTS =  main.lo mailcheck.lo popcheck.lo \
- printer.lo clock.lo
