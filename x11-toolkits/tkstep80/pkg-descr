@@ -1,0 +1,17 @@
+This package contains the binary release of Tk version 8.0, a GUI
+toolkit for Tcl enhanced by the following features:
+
+- transparent XPM
+- transparent TIFF (only full transparency)
+- OffiX Drag'n'Drop
+- rounded rectangle canvas items
+
+included demos:
+- droptest
+- dragtest (watch stdout)
+- imagedrop
+
+For occasional updates to TkSTEP 8.0 you can visit the following locations:
+
+	http://rhein-zeitung.de/~ograf/wm/TkStep.html
+	http://touchwood.ee.uts.edu.au/TkSTEP/TkSTEP.html
