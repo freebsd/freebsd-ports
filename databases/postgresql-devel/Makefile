@@ -6,25 +6,31 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.b2
+PORTVERSION?=	7.3.b3
 PKGNAMESUFFIX=	-devel
 CATEGORIES?=	databases
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
+		ftp://ftp5.us.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
+		ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
+		ftp://ftp13.us.postgresql.org/mirror/postresql/%SUBDIR%/ \
+		ftp://ftp8.us.postgresql.org/pub/pgsql/%SUBDIR%/ \
+		ftp://ftp10.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
 		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.de.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.chg.ru/pub/databases/postgresql/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/%SUBDIR%/ \
-		ftp://ftp2.ch.postgresql.org/mirror/postgresql/%SUBDIR%/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
-		ftp://ftp.us.postgresql.org/%SUBDIR%/
+		ftp://ftp.us.postgresql.org/%SUBDIR%/ \
+		ftp://ftp.postgresql.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/v7.3beta
-DISTFILES=	postgresql-base-7.3b2${EXTRACT_SUFX} \
-		postgresql-opt-7.3b2${EXTRACT_SUFX}
+DISTFILES=	postgresql-base-7.3b3${EXTRACT_SUFX} \
+		postgresql-opt-7.3b3${EXTRACT_SUFX} \
+		postgresql-test-7.3b3${EXTRACT_SUFX}
 
 MAINTAINER?=	seanc@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/postgresql-7.3b2
+WRKSRC=		${WRKDIR}/postgresql-7.3b3
 DIST_SUBDIR=	postgresql
 
 USE_GMAKE=	YES
@@ -127,7 +133,8 @@ pre-everything::
 	@${ECHO} "CAUTION!!!!!"
 	@${ECHO} ""
 	@${ECHO} "	This is a development port!  You will have to re-initdb between"
-	@${ECHO} "	upgrades as the system catalogs may change between snapshots."
+	@${ECHO} "	upgrades as the system catalogs have changed between snapshots."
+	@${ECHO} ""
 	@${ECHO} "	Running this version of the port implies a large degree of"
 	@${ECHO} "	familiarity with the PostgreSQL development cycle and process."
 	@${ECHO} "	You should _always_ backup your data using pg_dump(all) before"
@@ -200,6 +207,10 @@ do-install:
 
 post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
+check:
+	@ cd ${WRKSRC}; \
+	${GMAKE} check
 
 .include <bsd.port.mk>
 .endif
