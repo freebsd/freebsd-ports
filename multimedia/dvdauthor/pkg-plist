@@ -4,15 +4,15 @@ bin/dvdunauthor
 bin/mpeg2desc
 bin/spumux
 bin/spuunmux
-%%PORTDOCS%%share/doc/dvdauthor/README
-%%PORTDOCS%%share/doc/dvdauthor/README.FreeBSD
-%%PORTDOCS%%share/doc/dvdauthor/dvdauthor.html
-%%PORTDOCS%%share/doc/dvdauthor/ex-title.html
-%%PORTDOCS%%share/doc/dvdauthor/examples.html
-%%PORTDOCS%%share/doc/dvdauthor/index.html
-%%PORTDOCS%%share/doc/dvdauthor/languages.html
-%%PORTDOCS%%share/doc/dvdauthor/lib.txt
-%%PORTDOCS%%share/doc/dvdauthor/manpages.html
-%%PORTDOCS%%share/doc/dvdauthor/menu.txt
-%%PORTDOCS%%share/doc/dvdauthor/spumux.html
-%%PORTDOCS%%@dirrm share/doc/dvdauthor
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/dvdauthor.html
+%%PORTDOCS%%%%DOCSDIR%%/ex-title.html
+%%PORTDOCS%%%%DOCSDIR%%/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/languages.html
+%%PORTDOCS%%%%DOCSDIR%%/lib.txt
+%%PORTDOCS%%%%DOCSDIR%%/manpages.html
+%%PORTDOCS%%%%DOCSDIR%%/menu.txt
+%%PORTDOCS%%%%DOCSDIR%%/spumux.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
