@@ -147,7 +147,7 @@ include/gal-2.0/gal/widgets/widget-pixmap-combo.h
 lib/gtk-2.0/modules/libgal-a11y-2.0.so
 lib/libgal-2.0.a
 lib/libgal-2.0.so
-lib/libgal-2.0.so.3
+lib/libgal-2.0.so.4
 libdata/pkgconfig/gal-2.0.pc
 share/doc/gal2/gal-api.html
 share/doc/gal2/gal-api.sgml
@@ -184,6 +184,7 @@ share/gnome/gal-2.0/%%VERSION%%/pixmaps/categories/category_suppliers_16.png
 share/gnome/gal-2.0/%%VERSION%%/pixmaps/categories/category_time-and-expenses_16.png
 share/locale/am/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gal-%%VERSION%%.mo
+share/locale/be/LC_MESSAGES/gal-1.99.7.mo
 share/locale/ca/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gal-%%VERSION%%.mo
