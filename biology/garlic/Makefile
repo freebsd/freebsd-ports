@@ -7,6 +7,7 @@
 
 PORTNAME=	garlic
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://garlic.mefos.hr/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -26,9 +27,10 @@ ALL_TARGET=     # empty
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=	-mcpu=i686 -march=i686 -mfancy-math-387
+CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
 .endif # i386
 .endif
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
@@ -50,7 +52,7 @@ do-install:
 	@${INSTALL_DATA}    ${WRKSRC}/*.script     ${EXAMPLESDIR}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${WRKDIR}/doc
-	@cd ${WRKDIR}/doc ; ${TAR} xvfz ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX}
+	@(cd ${WRKDIR}/doc ; ${TAR} xfz ${DISTDIR}/${DISTNAME}-doc${EXTRACT_SUFX} )
 	@${TAR} -C ${WRKDIR}/doc/${DISTNAME} -cf - .  | \
 		${TAR} -C ${DOCSDIR} -xf -
 	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
