@@ -20,11 +20,12 @@ PKGMESSAGE=	${WRKDIR}/.MESSAGE
 ENCODINGS=	cd ${WRKSRC}/templates && ${ECHO} [^C]* | \
 			${SED} 's|\.txt|,|g'
 FMT=		/usr/bin/fmt
+FLAG!=		/usr/bin/grep -e cd9660_wchar2char \
+			${SRCPREFIX}/sys/isofs/cd9660/cd9660_util.c || \
+			/usr/bin/true
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"FreeBSD 3.*, 4.* are not supported"
+.if (${FLAG} == "")
+BROKEN=		"your FreeBSD version is not supported. Please update to the latest version and try again"
 .endif
 
 pre-fetch:
@@ -46,4 +47,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
