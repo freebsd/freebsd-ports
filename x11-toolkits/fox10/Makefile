@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fox
-PORTVERSION?=	0.99.174
-PORTREVISION?=	1
+PORTVERSION?=	0.99.181
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -32,13 +32,16 @@ BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xun
 
 CONFIGURE_ENV=	X_CFLAGS=-DUSE_UNICODE
 
-PLIST_SUB=	NEWFILE="@comment "
+PLIST_SUB=	OLDFILE="" \
+		NEWFILE="@comment "
 .else
-PLIST_SUB=	NEWFILE=""
+PLIST_SUB=	OLDFILE="@comment " \
+		NEWFILE=""
 .endif
 
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -62,7 +65,7 @@ MAKE_ARGS+=	DOC=
 .else
 MAKE_ARGS+=	DOC=doc
 .endif
-USE_LIBTOOL=	yes
+#USE_LIBTOOL=	yes
 SHLIB_MAJ=	1
 SHLIB_MIN=	0
 MAKE_ENV+=	LT_CURRENT="${SHLIB_MAJ}" LT_REVISION="${SHLIB_MIN}"
@@ -76,5 +79,9 @@ MAN1=		reswrap.1
 post-extract:
 	cd ${WRKSRC} && ${LN} -s ${X11BASE}/include/xunicode
 .endif
+
+post-patch:
+	${PERL} -i -pe 's/^(SUBDIRS\s*=\s*).*/$$1utils include src \$${DOC}/' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
