@@ -18,7 +18,8 @@ PATCHFILES=	flash-0.4.3-fbsd-19990512.patch
 
 MAINTAINER=	knu@idaemons.org
 
-MAKE_ENV+=	OBJFORMAT=aout LIBRARY_PATH=${PREFIX}/lib/aout
+USE_XLIB=	yes
+MAKE_ENV=	OBJFORMAT=aout LIBRARY_PATH=${PREFIX}/lib/aout
 PORTOBJFORMAT=	aout
 ALL_TARGET=	libswf.so
 
@@ -26,6 +27,7 @@ do-install:
 .if !defined(PACKAGE_BUILDING)
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 .endif
+	${MKDIR} ${PREFIX}/lib/netscape/plugins
 	cd ${WRKSRC} && ${SETENV} OBJFORMAT=aout ${INSTALL_PROGRAM} libswf.so ${PREFIX}/lib/netscape/plugins
 
 .include <bsd.port.mk>
