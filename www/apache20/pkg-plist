@@ -1653,8 +1653,6 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.ja
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.meta
-%%PORTDOCS%%@dirrm share/nls/en_US.US-ASCII
-%%PORTDOCS%%@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vhosts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style/xsl/util
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style/xsl
