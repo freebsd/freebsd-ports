@@ -1,8 +1,0 @@
-include/format.h
-lib/libformat.a
-lib/libformat.so
-lib/libformat.so.1
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/testformat.cpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
