@@ -8,9 +8,31 @@
 %gids = ("vchkpw", 89);
 %uids = ('vpopmail', 89);
 
+sub checkenv () {
+	my ($u, $g);
+
+	# Users
+	foreach $u (keys %users) {
+		$var = uc($u)."_UID";
+		if (defined($ENV{$var})) {
+			$uids{$u} = $ENV{$var};
+		}
+	}
+
+	# Groups
+	foreach $g (@groups) {
+		$var = uc($g)."_GID";
+		if (defined($ENV{$var})) {
+			$gids{$g} = $ENV{$var};
+		}
+	}
+}
+
 if ($ENV{PACKAGE_BUILDING} || $ARGV[1] eq "PRE-INSTALL") {
 	$doguid=1;  # Make sure we get the assigned guids.
 }
+
+checkenv();
 
 foreach $group (@groups) {
 	if (! getgrnam ($group)) {

@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	4.9.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -45,6 +45,11 @@ CONFIGURE_ARGS=	--enable-qmail-dir=${QMAIL_DIR} \
 # APOPFILE	- location of apop secrets file
 # QMAIL_DIR     - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
+# WITH_MYSQL_USER - the username for connecting to the MySQL server (root)
+# WITH_MYSQL_PASSWD - the password for connecting to the MySQL server (gipgap)
+# WITH_MYSQL_DB - the name of the MySQL database to use (vpopmail)
+# VCHKPW_GID	- the group ID of the new vchkpw group (89)
+# VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
 #
 
 HARDQUOTA?=	10000000
@@ -112,5 +117,16 @@ CONFIGURE_ARGS+=	--enable-default-domain=${DEFAULT_DOMAIN}
 
 pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
+.if defined(WITH_MYSQL)
+.if defined(WITH_MYSQL_USER)
+	${PERL} -pi -e "s/(#define MYSQL_USER.*)root(.*)/\$$1${WITH_MYSQL_USER}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_PASSWD)
+	${PERL} -pi -e "s/(#define MYSQL_PASSWD.*)gipgap(.*)/\$$1${WITH_MYSQL_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_DB)
+	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.endif
 
 .include <bsd.port.mk>
