@@ -23,4 +23,8 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -Dfreebsd" \
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
+post-patch:
+	@find ${WRKSRC} -name Makefile.in | \
+	  xargs /usr/bin/perl -pi -e 's/-lXm /\$${MOTIFLIB} /g'
+
 .include <bsd.port.mk>
