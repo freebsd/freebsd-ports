@@ -719,6 +719,7 @@ catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
 caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
+caudium-devel	ports/www/caudium-devel
 cave		ports/misc/cave
 cbb		ports/deskutils/cbb
 cbedic		ports/textproc/cbedic
