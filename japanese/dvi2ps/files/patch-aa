@@ -54,7 +54,7 @@
   #
 ! #CCFLAGS = -g
   #CCFLAGS = -O		# SUNOS 4.X etc ...
-! CCFLAGS = -O -DPOSIX -m486	# NetBSD FreeBSD (gcc 2.X), Linux
+! CCFLAGS = -O2 -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
   #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
   #CCFLAGS = -O -DANSI -DPOSIX -DSYSV -DSYSVIO	# Solaris 2.X (SUNWpro/bin/cc)
   #CCFLAGS = -O -DSYSVIO		# Solaris 2.X (/usr/ucb/cc -- not recommended)
