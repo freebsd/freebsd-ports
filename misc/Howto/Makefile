@@ -22,6 +22,8 @@ COMMENT=	Linux HOW-TOs modified for applicablity on FreeBSD
 
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
+BROKEN=		Size mismatch
+
 DIST_SUBDIR=	Howto
 NO_WRKSUBDIR=	yes
 USE_ZIP=		yes
