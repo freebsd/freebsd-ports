@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chgrep
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bmk.bicom.pl/chgrep/
 EXTRACT_SUFX=	.tgz
@@ -20,7 +20,9 @@ USE_GMAKE=	yes
 MAN1=		chgrep.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/chgrep.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/chgrep \
+		${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/chgrep.1 \
+		${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
