@@ -1,31 +1,31 @@
 # New ports collection makefile for:	nfbtrans
-# Version required:		7.53
+# Version required:		7.55
 # Date created:			30 Aug 1998
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nfbtr753
-PKGNAME=	nfbtrans-7.53
+DISTNAME=	nfbtr755
+PKGNAME=	nfbtrans-7.55
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.netcom.com/pub/in/inge/
-EXTRACT_SUFX=	.zip
+MASTER_SITES=	ftp://nfb.org/braille/nfbtrans/
+EXTRACT_SUFX=	.exe
 
 MAINTAINER=	max@FreeBSD.org
 
 RESTRICTED=	"Unclear copyright status"
 
-USE_ZIP=	yes
+USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-q -a -L -o
-NO_WRKSUBDIR=	yes
-ALL_TARGET=	freebsd
-MAKEFILE=	makefile
+NO_WRKSUBDIR=		yes
+ALL_TARGET=		freebsd
+MAKEFILE=		makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/nfbtrans/tables
 	${INSTALL_PROGRAM} ${WRKSRC}/nfbtrans ${PREFIX}/bin
-.for f in braille.tab back.tab english.dic nfbtrans.cnf
+.for f in braille.tab back.tab english.dic nfbtrans.cnf menu.cnf
 	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/lib/nfbtrans
 .endfor
 	@unzip -q -L -a -o ${WRKSRC}/tables.zip -d ${PREFIX}/lib/nfbtrans/tables
@@ -35,8 +35,9 @@ do-install:
 	@${WRKSRC}/nfbtrans st=${WRKSRC}/stat.txt qm=1 ob=oc=15 \
 	  ${WRKSRC}/nfbprint.fmt > ${WRKSRC}/nfbtrans.doc
 	${MKDIR} ${PREFIX}/share/doc/nfbtrans
-	${INSTALL_DATA} ${WRKSRC}/nfbtrans.doc ${PREFIX}/share/doc/nfbtrans
-	${INSTALL_DATA} ${WRKSRC}/nfbtrans.fmt ${PREFIX}/share/doc/nfbtrans
+.for f in read.me nfbtrans.doc nfbtrans.fmt tvfreqs.fmt
+	${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/nfbtrans
+.endfor
 .endif
 
 .include <bsd.port.mk>
