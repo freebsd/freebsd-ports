@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.10 1996/11/17 06:12:49 obrien Exp $
+# $Id: Makefile,v 1.11 1997/01/02 10:02:48 tg Exp $
 #
 
 DISTNAME=       python1.4
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PyTix-1.12.tar.gz
 MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41 \
-		tix4141\\.1\\.:${PORTSDIR}/x11/tix
+		tix4175\\.1\\.:${PORTSDIR}/x11/tix
 
 WRKSRC=		${WRKDIR}/Python-1.4
 HAS_CONFIGURE=	yes
