@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=	mmuir@cwnet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based hardware monitor for FreeBSD
 
 WRKSRC=		${WRKDIR}/consolehm/consolehm
