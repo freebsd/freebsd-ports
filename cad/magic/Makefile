@@ -3,13 +3,14 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.2 1995/02/13 13:19:22 ats Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:44:14 jkh Exp $
 #
 
 DISTNAME=       magic-6.4.4
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
 CATEGORIES+=	cad
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/magic/6.4/
+EXTRACT_SUFX=   .tar.Z
+
 USE_GMAKE=	yes
 
 install:
