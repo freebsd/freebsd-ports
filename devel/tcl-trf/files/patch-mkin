@@ -1,5 +1,5 @@
 --- Makefile.in	Tue Aug 21 01:52:21 2001
-+++ Makefile.in	Fri Feb 15 15:02:35 2002
++++ Makefile.in	Fri Jul  9 18:59:24 2004
 @@ -34,5 +34,5 @@
  #========================================================================
  
@@ -35,8 +35,11 @@
 +Trf_LIB_FILE			=	libTrf2.so.1
  $(Trf_LIB_FILE)_OBJECTS		=	$(Trf_OBJECTS)
  
-@@ -301,8 +301,8 @@
- SHLIB_LD		= @SHLIB_LD@
+@@ -299,10 +299,10 @@
+ RANLIB			= @RANLIB@
+ SHLIB_CFLAGS		= @SHLIB_CFLAGS@
+-SHLIB_LD		= @SHLIB_LD@
++SHLIB_LD		= $(CC) -shared
  SHLIB_LDFLAGS		= @SHLIB_LDFLAGS@
 -SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
 +SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@ -lmd -lbz2 -lz
