@@ -23,7 +23,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/${PHP3_PORT}
 .endif
 
 NO_BUILD=	YES
-PHP_PORT?=	www/mod_php4-twig
+PHP_PORT?=	${PORTSDIR}/www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
 PLIST_SUB+=	TWIG=${TWIG}
