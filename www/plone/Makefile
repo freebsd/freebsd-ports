@@ -18,6 +18,8 @@ COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS= ${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf13
 
+CONFLICTS=	zope-formulator-*
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 PYTHON_VERSION=	python2.1
