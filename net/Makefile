@@ -486,6 +486,7 @@
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
+    SUBDIR += packit
     SUBDIR += pancho
     SUBDIR += papaya
     SUBDIR += papaya-plugins
