@@ -9,17 +9,8 @@ PORTNAME=	gzip
 PORTVERSION=	1.3.5
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.digex.net/pub/linux/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://sunfreeware.risq.qc.ca/SOURCES/ \
-		ftp://ftp.muug.mb.ca/mirror/slackware/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/ \
-		ftp://ftp.informatik.rwth-aachen.de/pub/comp/Linux/slackware/slackware-current/source/a/gzip/ \
-		ftp://ftp.sunsite.auc.dk/disk2/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://ftp.ist.utl.pt/1/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://ftp.carrier.kiev.ua/pub/Linux/slackware/source/a/gzip/ \
-		ftp://ftp.is.co.za/linux/distributions/slackware/slackware-8.1/source/a/gzip/ \
-		ftp://ftp.monash.edu.au/pub/disk10/slackware/slackware-8.1/source/a/gzip/
+MASTER_SITES=	ftp://sunfreeware.risq.qc.ca/SOURCES/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/solaris-freeware/SOURCES/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	cyrille.lefevre@laposte.net
