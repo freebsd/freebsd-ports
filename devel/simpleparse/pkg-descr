@@ -1,0 +1,18 @@
+SimpleParse is a BSD-licensed Python package providing a simple parser
+generator for use with the mxTextTools text-tagging engine. SimpleParse allows
+you to generate tagging tables for use with the text-tagging engine directly
+from your EBNF grammar.
+
+Unlike most parser generators, SimpleParse generates single-pass parsers
+(there is no distinct tokenization stage), an approach taken from the
+predecessor project (mcf.pars) which attempted to create "autonomously parsing
+regex objects". The resulting parsers are not as generalized as those created
+by, for instance, the Earley algorithm, but they do tend to be useful for the
+parsing of computer file formats and the like (as distinct from natural
+language and similar "hard" parsing problems).
+
+In addition to the parser generator, the SimpleParse project includes a
+sub-project to create a modified version of the mxTextTools engine which
+reorganizes the code to allow for certain common EBNF constructs.
+
+WWW: http://simpleparse.sourceforge.net/
