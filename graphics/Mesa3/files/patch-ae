@@ -1,0 +1,11 @@
+--- src/config.c	2000/09/11 12:25:04	1.1
++++ src/config.c	2000/09/11 12:25:27
+@@ -406,7 +406,7 @@
+ #if defined(__WIN32__) || defined(__MSDOS__)
+    const char *filename = "mesa.cnf";
+ #else
+-   const char *filename = "/etc/mesa.conf"; 
++   const char *filename = "%%PREFIX%%/etc/mesa.conf"; 
+ #endif   
+    FILE *file;
+    struct cnode *list;
