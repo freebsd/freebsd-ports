@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paml
-PORTVERSION=	3.03
+PORTVERSION=	3.04
 CATEGORIES=	biology
 MASTER_SITES=	ftp://abacus.gene.ucl.ac.uk/pub/paml/
-DISTNAME=	paml3.0c
+DISTNAME=	paml3.0d
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dbader@eece.unm.edu
