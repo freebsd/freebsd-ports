@@ -1,0 +1,3 @@
+share/xmakemol/elements
+bin/xmakemol
+@dirrm share/xmakemol

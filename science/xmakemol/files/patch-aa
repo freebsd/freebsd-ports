@@ -1,0 +1,683 @@
+Index: animate.c
+===================================================================
+--- animate.c	2001/06/09 00:28:23	1.1.1.1
++++ animate.c	2001/06/09 00:30:18
+@@ -19,10 +19,19 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#if HAVE_FTIME
+ #include <sys/timeb.h>
++#else
++#include <sys/time.h>
++#include <unistd.h>
++#endif
+ /* aro - use following headers if using timeval struct
+    and gettimeofday function below (in case compiler can't
+    find ftime() function).
+@@ -45,8 +54,8 @@
+ #include <X11/xpm.h>
+ #endif
+ 
+-#include "defs.h"
+ #include "globals.h"
++#include "defs.h"
+ 
+ void echo_to_message_area(char *);
+ 
+@@ -254,9 +263,12 @@
+   double phi = rot_angle*PI/180.0, time, last_time = 0.0;
+ 
+   XEvent event;
+-
++  
++#ifdef HAVE_FTIME
+   static struct timeb tb;
+-
++#else
++  struct timeval tv;
++#endif
+   /* aro - if xmakemol fails to compile due to use of ftime function,
+      try uncommenting lines using struct timeval tv, and comment out lines
+      using struct timeb tb.  Also need to uncomment appropiate #include lines
+@@ -278,11 +290,16 @@
+     rotate_atoms(rot_axis,phi,1,True);
+ 
+     /* Get the time  */
+-
++#ifdef HAVE_FTIME
+     ftime (&tb);
+ 
+     time = tb.time + (tb.millitm / 1000.0);
++#else
++    gettimeofday(&tv,NULL);
++
++    time= tv.tv_sec + (tv.tv_usec / 1000000.0);
+ 
++#endif
+     /* gettimeofday(&tv, NULL);
+        time = tv.tv_sec + (tv.tv_usec / 1000000.0); */
+ 
+Index: bbox.c
+===================================================================
+
+
+
+--- bbox.c	2001/06/09 00:28:23	1.1.1.1
++++ bbox.c	2001/06/09 00:30:18
+@@ -21,18 +21,22 @@
+ 
+ #define __BBOX_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+ #include <Xm/Xm.h>
+ 
++#include "globals.h"
+ #include "bbox.h"
+ #include "defs.h"
+ #ifdef GL
+ #include "gl_funcs.h" /* aro - for visinfo */
+ #endif /* GL */
+-#include "globals.h"
+ #include "view.h"
+ 
+ static int top_point_index;
+Index: canvas.c
+===================================================================
+
+
+
+--- canvas.c	2001/06/09 00:28:23	1.1.1.1
++++ canvas.c	2001/06/09 00:30:18
+@@ -19,19 +19,24 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+ 
+ #include <Xm/Xm.h>
+ 
++#include "globals.h"
++
+ #include "bonds.h"
+ #include "defs.h"
+ #include "draw.h"
+ #ifdef GL
+ #include "gl_funcs.h" /* aro */
+ #endif /* GL */
+-#include "globals.h"
+ #include "view.h"
+ 
+ #ifdef XPM
+Index: config.h
+===================================================================
+
+
+
+--- config.h	2001/06/09 00:28:24	1.1.1.1
++++ config.h	2001/06/09 00:30:18
+@@ -1,24 +1,107 @@
+-/*
++/* config.h.  Generated automatically by configure.  */
++/* config.h.in.  Generated automatically from configure.in by autoheader.  */
+ 
+-Copyright (C) 1999 Matthew P. Hodges
+-This file is part of XMakemol.
++/* Define if using alloca.c.  */
++/* #undef C_ALLOCA */
+ 
+-XMakemol is free software; you can redistribute it and/or modify
+-it under the terms of the GNU General Public License as published by
+-the Free Software Foundation; either version 2, or (at your option)
+-any later version.
++/* Define to empty if the keyword does not work.  */
++/* #undef const */
+ 
+-XMakemol is distributed in the hope that it will be useful,
+-but WITHOUT ANY WARRANTY; without even the implied warranty of
+-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-GNU General Public License for more details.
++/* Define to one of _getb67, GETB67, getb67 for Cray-2 and Cray-YMP systems.
++   This function is required for alloca.c support on those systems.  */
++/* #undef CRAY_STACKSEG_END */
+ 
+-You should have received a copy of the GNU General Public License
+-along with XMakemol; see the file COPYING.  If not, write to the Free Software
+-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
++/* Define if you have alloca, as a function or macro.  */
++#define HAVE_ALLOCA 1
+ 
+-*/
++/* Define if you have <alloca.h> and it should be used (not on Ultrix).  */
++/* #undef HAVE_ALLOCA_H */
+ 
+-/* If usleep is available, define HAVE_USLEEP */
++/* If using the C implementation of alloca, define if you know the
++   direction of stack growth for your system; otherwise it will be
++   automatically deduced at run-time.
++ STACK_DIRECTION > 0 => grows toward higher addresses
++ STACK_DIRECTION < 0 => grows toward lower addresses
++ STACK_DIRECTION = 0 => direction of growth unknown
++ */
++/* #undef STACK_DIRECTION */
+ 
+-#define HAVE_USLEEP
++/* Define if you have the ANSI C header files.  */
++#define STDC_HEADERS 1
++
++/* Define if the X Window System is missing or not being used.  */
++/* #undef X_DISPLAY_MISSING */
++
++/* #undef HAVE_LIBGEN */
++#define HAVE_MOTIF 1
++#define XPM 1
++#define VERSION "4.40.2b"
++/* #undef GL */
++
++/* Define if using alloca.c.  */
++/* #undef C_ALLOCA */
++
++/* Define to empty if the keyword does not work.  */
++/* #undef const */
++
++/* Define to one of _getb67, GETB67, getb67 for Cray-2 and Cray-YMP systems.
++   This function is required for alloca.c support on those systems.  */
++/* #undef CRAY_STACKSEG_END */
++
++/* Define if you have alloca, as a function or macro.  */
++#define HAVE_ALLOCA 1
++
++/* Define if you have <alloca.h> and it should be used (not on Ultrix).  */
++/* #undef HAVE_ALLOCA_H */
++
++/* If using the C implementation of alloca, define if you know the
++   direction of stack growth for your system; otherwise it will be
++   automatically deduced at run-time.
++ STACK_DIRECTION > 0 => grows toward higher addresses
++ STACK_DIRECTION < 0 => grows toward lower addresses
++ STACK_DIRECTION = 0 => direction of growth unknown
++ */
++/* #undef STACK_DIRECTION */
++
++/* Define if you have the ANSI C header files.  */
++#define STDC_HEADERS 1
++
++/* Define if the X Window System is missing or not being used.  */
++/* #undef X_DISPLAY_MISSING */
++
++/* Define if you have the ftime function.  */
++/* #undef HAVE_FTIME */
++
++/* Define if you have the strstr function.  */
++#define HAVE_STRSTR 1
++
++/* Define if you have the usleep function.  */
++#define HAVE_USLEEP 1
++
++/* Define if you have the <X11/xpm.h> header file.  */
++#define HAVE_X11_XPM_H 1
++
++/* Define if you have the <unistd.h> header file.  */
++#define HAVE_UNISTD_H 1
++
++/* Name of package */
++#define PACKAGE "xmakemol"
++
++/* Version number of package */
++#define VERSION "4.40.2b"
++
++/* Define this to use OpenGL widget from <GL/GLwDrawA.h> */
++/* #undef HAVE_GL_GLWDRAWA_H */
++
++/* Define this to use OpenGL widget from <X11/GLw/GLwDrawA.h> */
++/* #undef HAVE_X11_GLW_GLWDRAWA_H */
++
++/* Define this to use OpenGL widget from <GL/GLwMDrawA.h> */
++/* #undef HAVE_GL_GLWMDRAWA_H */
++
++/* Define this to use OpenGL widget from <X11/GLw/GLwMDrawA.h> */
++/* #undef HAVE_X11_GLW_GLWMDRAWA_H */
++
++/* Define this to the Xt/Motif OpenGL widget class to use */
++/* #undef XT_GLWIDGET */
++
+Index: control.c
+===================================================================
+
+
+
+--- control.c	2001/06/09 00:28:23	1.1.1.1
++++ control.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: draw.c
+===================================================================
+
+
+
+--- draw.c	2001/06/09 00:28:23	1.1.1.1
++++ draw.c	2001/06/09 00:30:17
+@@ -21,6 +21,10 @@
+ 
+ #define __DRAW_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+Index: edit.c
+===================================================================
+
+
+
+--- edit.c	2001/06/09 00:28:23	1.1.1.1
++++ edit.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: file.c
+===================================================================
+
+
+
+--- file.c	2001/06/09 00:28:23	1.1.1.1
++++ file.c	2001/06/09 00:30:17
+@@ -21,7 +21,13 @@
+ 
+ #define __FILE_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
++#if HAVE_ALLOCA_H
+ #include <alloca.h>
++#endif
+ #include <ctype.h> /* aro - needed for isalnum() */
+ #include <locale.h>
+ #include <math.h>
+@@ -40,13 +46,13 @@
+ #include <Xm/TextF.h>    /* aro */
+ #include <Xm/ToggleB.h>  /* aro */
+ 
++#include "globals.h"
+ #include "bonds.h"
+ #include "defs.h"
+ #include "draw.h"
+ #ifdef GL
+ #include "gl_funcs.h" /* aro - for visinfo */
+ #endif /* GL */
+-#include "globals.h"
+ #include "view.h"
+ 
+ #ifdef XPM
+Index: frames.c
+===================================================================
+
+
+
+--- frames.c	2001/06/09 00:28:23	1.1.1.1
++++ frames.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -38,7 +42,9 @@
+ #include <X11/xpm.h>
+ #endif
+ 
++#ifdef HAVE_CONFIG_H
+ #include "config.h"
++#endif
+ #include "draw.h"
+ #include "globals.h"
+ 
+Index: gl_funcs.c
+===================================================================
+
+
+
+--- gl_funcs.c	2001/06/09 00:28:23	1.1.1.1
++++ gl_funcs.c	2001/06/09 00:30:17
+@@ -19,18 +19,23 @@
+ 
+ */
+ 
+-#ifdef GL
+ 
+ #define __GL_FUNCS_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <math.h>
+ #include <Xm/Xm.h>
+ 
++#include "globals.h"
++
++#ifdef GL
+ #include "bonds.h"
+ #include "defs.h"
+ #include "draw.h"
+-#include "globals.h"
+ #include "view.h"
+ 
+ #include "gl_funcs.h"
+@@ -271,8 +276,7 @@
+      XpmWriteFileFromPixmap is called and canvas_pm is used. */
+ 
+   XCopyArea (display, XtWindow (canvas), canvas_pm, gc, 0, 0,
+-             canvas_width, canvas_width, 0, 0);
+-
++	     canvas_width, canvas_width, 0, 0);
+ }
+ 
+ void StereoProjection(float left, float right, float bottom, float top,
+Index: globals.h
+===================================================================
+
+
+
+--- globals.h	2001/06/09 00:28:24	1.1.1.1
++++ globals.h	2001/06/09 00:30:17
+@@ -19,6 +19,7 @@
+ 
+ */
+ 
++
+ #ifndef __GLOBALS_H__
+ #define __GLOBALS_H__
+ 
+Index: help.c
+===================================================================
+
+
+
+--- help.c	2001/06/09 00:28:23	1.1.1.1
++++ help.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+   
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+@@ -81,7 +85,7 @@
+ 
+       if(about_string == NULL)
+         {
+-          about_string = malloc(sizeof(ABOUT_MSG));          
++          about_string = malloc(sizeof(ABOUT_MSG)+sizeof(VERSION));          
+         }
+       
+       sprintf(about_string, ABOUT_MSG, VERSION);
+Index: menus.c
+===================================================================
+
+
+
+--- menus.c	2001/06/09 00:28:23	1.1.1.1
++++ menus.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <Xm/Xm.h>
+ 
+ #include "globals.h"
+Index: region.c
+===================================================================
+
+
+
+--- region.c	2001/06/09 00:28:23	1.1.1.1
++++ region.c	2001/06/09 00:30:17
+@@ -24,6 +24,10 @@
+ /* Functions to define a region on the canvas and to determine which
+    atoms lie inside it */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+Index: rotate.c
+===================================================================
+
+
+
+--- rotate.c	2001/06/09 00:28:23	1.1.1.1
++++ rotate.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: sort.c
+===================================================================
+
+
+
+--- sort.c	2001/06/09 00:28:23	1.1.1.1
++++ sort.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: store.c
+===================================================================
+
+
+
+--- store.c	2001/06/09 00:28:23	1.1.1.1
++++ store.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: track.c
+===================================================================
+
+
+
+--- track.c	2001/06/09 00:28:23	1.1.1.1
++++ track.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: translate.c
+===================================================================
+
+
+
+--- translate.c	2001/06/09 00:28:23	1.1.1.1
++++ translate.c	2001/06/09 00:30:17
+@@ -19,6 +19,10 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+Index: utils.c
+===================================================================
+
+
+
+--- utils.c	2001/06/09 00:28:23	1.1.1.1
++++ utils.c	2001/06/09 00:30:17
+@@ -19,13 +19,19 @@
+ 
+ */
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <math.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+ #include <Xm/MessageB.h>
+ 
++#ifdef HAVE_CONFIG_H
+ #include "config.h"
++#endif
+ #include "defs.h"
+ #include "globals.h"
+ 
+Index: vectors.c
+===================================================================
+
+
+
+--- vectors.c	2001/06/09 00:28:24	1.1.1.1
++++ vectors.c	2001/06/09 00:30:17
+@@ -21,6 +21,10 @@
+ 
+ #define __VECTORS_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+Index: view.c
+===================================================================
+
+
+
+--- view.c	2001/06/09 00:28:23	1.1.1.1
++++ view.c	2001/06/09 00:30:17
+@@ -21,6 +21,10 @@
+ 
+ #define __VIEW_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+Index: xmakemol.c
+===================================================================
+
+
+
+--- xmakemol.c	2001/06/09 00:28:24	1.1.1.1
++++ xmakemol.c	2001/06/09 00:30:18
+@@ -21,6 +21,10 @@
+ 
+ #define __XMAKEMOL_C__
+ 
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
++
+ #include <locale.h>
+ #include <math.h>
+ #include <stdio.h>
+@@ -31,8 +35,8 @@
+ #include <Xm/Label.h>
+ #include <Xm/MainW.h>
+ 
+-#include "defs.h"
+ #include "globals.h"
++#include "defs.h"
+ #include "view.h"
+ 
+ /* aro - might not be necessary if using mesa+linux */
