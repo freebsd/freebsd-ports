@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
@@ -37,8 +37,10 @@ MAN3=		Module::Build.3 \
 		Module::Build::Platform::VMS.3 \
 		Module::Build::Platform::VOS.3 \
 		Module::Build::Platform::Windows.3 \
+		Module::Build::Platform::aix.3 \
 		Module::Build::Platform::cygwin.3 \
-		Module::Build::Platform::darwin.3
+		Module::Build::Platform::darwin.3 \
+		Module::Build::Platform::os2.3
 
 .include <bsd.port.pre.mk>
 

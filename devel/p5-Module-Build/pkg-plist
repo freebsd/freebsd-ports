@@ -13,8 +13,11 @@
 %%SITE_PERL%%/Module/Build/Platform/VMS.pm
 %%SITE_PERL%%/Module/Build/Platform/VOS.pm
 %%SITE_PERL%%/Module/Build/Platform/Windows.pm
+%%SITE_PERL%%/Module/Build/Platform/aix.pm
 %%SITE_PERL%%/Module/Build/Platform/cygwin.pm
 %%SITE_PERL%%/Module/Build/Platform/darwin.pm
+%%SITE_PERL%%/Module/Build/Platform/os2.pm
+%%SITE_PERL%%/Module/Build/PodParser.pm
 @dirrm %%SITE_PERL%%/Module/Build/Platform
 @dirrm %%SITE_PERL%%/Module/Build
 @unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
