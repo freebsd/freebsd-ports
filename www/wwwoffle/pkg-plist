@@ -1,4 +1,5 @@
 bin/wwwoffle
+bin/wwwoffle-hash
 bin/wwwoffle-ls
 bin/wwwoffle-mv
 bin/wwwoffle-read
