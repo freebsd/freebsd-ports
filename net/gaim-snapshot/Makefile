@@ -30,6 +30,7 @@ MAN1=			gaim.1
 
 .if defined(HAVE_GNOME)
 USE_GNOME=		yes
+RUN_DEPENDS=		ispell:${PORTSDIR}/texproc/ispell
 CONFIGURE_ARGS+=	--enable-panel
 .else
 CONFIGURE_ARGS+=	--disable-gnome
