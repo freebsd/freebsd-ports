@@ -280,6 +280,7 @@
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sxsame
+    SUBDIR += taipan
     SUBDIR += tank
     SUBDIR += teg
     SUBDIR += tetrinet

@@ -1,0 +1,3 @@
+bin/taipan
+%%PORTDOCS%%share/doc/taipan/README
+%%PORTDOCS%%@dirrm share/doc/taipan
