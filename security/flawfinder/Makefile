@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flawfinder
-PORTVERSION=	0.15
+PORTVERSION=	0.21
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.dwheeler.com/flawfinder/
 
