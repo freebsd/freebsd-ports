@@ -3,9 +3,10 @@ Congratulations, SANE-FRONTENDS is now installed.
 If you built it with WITH_GIMP set to yes, you can use
 xscanimage as a GIMP plug-in.  To do this, type:
 
-ln -sf /usr/local/bin/xscanimage ~/.gimp-1.2/plug-ins/xscanimage
+ln -sf /usr/local/bin/xscanimage ~/.gimp-2.0/plug-ins/xscanimage (gimp-2.x)
+ln -sf /usr/local/bin/xscanimage ~/.gimp-1.2/plug-ins/xscanimage (gimp-1.x)
 
-Then run the GIMP, and a new "Acquire Image" menu item should appear in the
-"Xtns" menu.  Use this to access your scanner.
+Then run the GIMP, and a new "xscanimage" menu item should appear in the
+"File->Acquire" menu.  Use this to access your scanner.
 
 Have fun!
