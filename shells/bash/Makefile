@@ -20,7 +20,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=		ftp://ftp.cwru.edu/pub/%SUBDIR%/:bash
 PATCH_SITE_SUBDIR=	${PORTNAME}/${DISTNAME}-patches/:bash
-.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
+.for patch in		01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
 PATCHFILES+=		${PORTNAME}${PORTVERSION:R:S/.//g}-0${patch}:bash
 PATCHLEVEL=		${patch}
 .endfor
@@ -83,6 +83,12 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600006
+CONFIGURE_ARGS+=	--with-installed-readline
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
 
@@ -114,4 +120,4 @@ post-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
