@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	1.01
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-japanese
