@@ -16,7 +16,7 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${HP850_DRV} ${DECRYPT_PDF}
 
 PATCH_SITES=	ftp://ftp.kr.FreeBSD.org/pub/users/cjh/gs-ko/
-PATCHFILES=	gs5.50-httf-19990114.diff
+PATCHFILES=	gs5.50-httf-19990114_1.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
