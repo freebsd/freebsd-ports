@@ -17,6 +17,8 @@ COMMENT=	An implementation of dialog(1) under a BSD-friendly license
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty
 
+CFLAGS:=	-I${LOCALBASE}/include/freelibiberty ${CFLAGS}
+
 MAN1=		dialog.1
 PLIST_FILES=	bin/dialog
 
