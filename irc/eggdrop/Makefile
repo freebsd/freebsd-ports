@@ -7,7 +7,7 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc tcl84
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
 DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	The most popular open source Internet Relay Chat bot
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_TCL)
-BUILD_DEPENDS+=		${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS+=		tcl84.1:${PORTSDIR}/lang/tcl84
 CONFIGURE_ARGS+=	--with-tcllib=${LOCALBASE}/lib/libtcl84.so \
 			--with-tclinc=${LOCALBASE}/include/tcl8.4/tcl.h
 .endif
