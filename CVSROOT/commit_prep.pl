@@ -278,7 +278,7 @@ if ($directory =~ /^src\/crypto/) {
 #
 # Now check each file name passed in, except those excluded.
 #
-if ($cfg::CHECK_HEADERS) {
+if ($cfg::CHECK_HEADERS or $cfg::WARN_HEADERS) {
 	my $failed = 0;
 	foreach my $arg (@ARGV) {
 		my $hastag = ($cvstag{$arg} ne '');
