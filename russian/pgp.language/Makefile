@@ -3,13 +3,13 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1996/05/27 01:44:48 ache Exp $
+# $Id: Makefile,v 1.14 1996/11/18 11:39:14 asami Exp $
 #
 
 DISTNAME=       pgp26ru
 PKGNAME=        ru-pgp-2.6.3ia
 CATEGORIES=     russian
-MASTER_SITES=   ftp://ftp.relcom.ru/unix/crypto/pgp/
+MASTER_SITES=   ftp://ftp.relcom.ru/pub/unix/crypto/pgp/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
