@@ -1,4 +1,4 @@
-bin/junkbuster
+sbin/junkbuster
 etc/junkbuster/aclfile.sample
 etc/junkbuster/blockfile.sample
 etc/junkbuster/cookiefile.sample
