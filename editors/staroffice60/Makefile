@@ -11,12 +11,14 @@ PORTREVISION=	1
 CATEGORIES=	editors linux
 MASTER_SITES=
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
-DISTFILES=	so-6_0-ga-bin-linux-en.bin 112887-02.tar.Z
+.if !defined(USE_CDROM)
+DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-03.tar
+.endif
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
 .endif
 
-EXTRACT_ONLY=	112887-02.tar.Z
+EXTRACT_ONLY=	112887-03.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 
@@ -31,7 +33,7 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/112887-02
+SUNSOLVE=	${WRKDIR}/112887-03
 ADABAS_DIST=	soa-6_0-ga-bin-linux-en.bin
 
 .include <bsd.port.pre.mk>
@@ -99,8 +101,13 @@ pre-fetch:
 	@${ECHO} WITH_ADABAS=YES.
 	@${ECHO}
 .endif
-.if !exists(${DISTDIR}/${DISTNAME})
-IGNORE="Please manually download ${DISTNAME} from http://www.sun.com/staroffice.  Put ${DISTNAME} into the directory ${DISTDIR} and run make again."
+.if defined(USE_CDROM)
+DLTEST=112887-03.tar
+.else
+DLTEST=${DISTNAME}
+.endif
+.if !exists(${DISTDIR}/${DLTEST})
+IGNORE="Please manually download ${DLTEST} from http://www.sun.com/staroffice.  Put ${DLTEST} into the directory ${DISTDIR} and run make again."
 .endif
 
 post-extract:
@@ -112,12 +119,16 @@ post-extract:
 	@ ${FALSE}
 .else
 	@${MKDIR} ${WRKSRC}
+.if defined(USE_CDROM)
+	@ln -sf /cdrom/linux/office60/* ${WRKSRC}
+.else
 	@${MKDIR} ${TMPDIR}
 	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/${DISTNAME}
 	@cd ${WRKSRC}
 	@SAL_IGNOREXERRORS=1 ${WRKSRC}/${DISTNAME} -extract ${WRKSRC}
 	@${RM} ${WRKSRC}/${DISTNAME}
+.endif
 .if defined(WITH_ADABAS)
 	@${CP} ${_DISTDIR}/${ADABAS_DIST} ${WRKSRC}
 	@${CHMOD} 755 ${WRKSRC}/${ADABAS_DIST}
@@ -125,7 +136,7 @@ post-extract:
 .endif
 
 post-configure:
-	@${PERL} -pi.orig -e \
+	@${SED} -i .orig -e \
 	    's|DefaultDestPath = "staroffice%PRODUCTVERSION";|DefaultDestPath = "${PREFIX}/staroffice%PRODUCTVERSION";|' \
 	    ${WRKSRC}/setup.ins
 
@@ -169,8 +180,8 @@ do-install:
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXrender.so)
 	@${LN} -fs ${LINUXBASE}/usr/X11R6/lib/libXrender.so.1.0 ${PREFIX}/${SOVERSION}/program/libXrender.so
 .endif
-	@${MV} ${INSTDB.INS} ${INSTDB.INS}.orig
-	@${SED} -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
+	@${SED} -i .orig -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
+	${INSTDB.INS}
 	    ${INSTDB.INS}.orig > ${INSTDB.INS}
 	@make install-user
 .endif
@@ -190,7 +201,7 @@ install-user:
 
 install-patch:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-02/so-6_0-pp1-bin-linux.bin'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-03/so-6_0-pp1-bin-linux.bin'
 
 install-update:
 	@make extract
