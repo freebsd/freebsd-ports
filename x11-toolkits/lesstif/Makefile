@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.9 1997/07/01 08:14:59 tg Exp $
+# $Id: Makefile,v 1.10 1997/07/02 08:28:33 tg Exp $
 #
 
 DISTNAME=	lesstif-0.80public
@@ -15,8 +15,6 @@ MASTER_SITES=	ftp://ftp.lesstif.org/pub/hungry/lesstif/  \
 MAINTAINER=	ports@FreeBSD.org
 
 #	see below for shared lib version information
-
-BROKEN=		"Sorry, distfile is gone from the master site"
 
 GNU_CONFIGURE=  yes
 USE_X11=	yes
