@@ -1,0 +1,11 @@
+--- contrib/pkgconfig/GNUmakefile.in.orig       Fri Jul 16 15:33:32 2004
++++ contrib/pkgconfig/GNUmakefile.in    Fri Jul 16 15:33:53 2004
+@@ -4,7 +4,7 @@
+ VPATH=@srcdir@
+ INSTALL=@INSTALL@
+
+-INSTALLDIR = $(INSTALLLIBDIR)/pkgconfig
++INSTALLDIR = @prefix@/libdata/pkgconfig
+
+ PKGFILES = omnithread3.pc omniORB4.pc omniDynamic4.pc \
+            omniCOS4.pc omniCOSDynamic4.pc
