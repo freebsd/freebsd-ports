@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 DISTNAME=	RadiusPerl-0.05
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MD5.pm:${PORTSDIR}/security/p5-MD5
 

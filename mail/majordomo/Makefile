@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/1.94.5/ \
 		ftp://ftp.sgi.com/other/majordomo/1.94.5/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 Y2K=		http://www.greatcircle.com/majordomo/majordomo-faq.html#1.8
 

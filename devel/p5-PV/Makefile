@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	perlvision
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Curses.pm:${PORTSDIR}/devel/p5-Curses
 

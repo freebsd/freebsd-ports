@@ -10,7 +10,7 @@ PORTVERSION=	2.9.2
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 

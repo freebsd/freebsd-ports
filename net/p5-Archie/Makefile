@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Archie
 DISTNAME=	perl_archie.${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PERL5=	yes
 

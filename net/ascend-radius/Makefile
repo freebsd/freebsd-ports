@@ -19,7 +19,7 @@ DISTFILES=	radius-980618.tar.gz \
 		980618.pdf
 EXTRACT_ONLY=	radius-980618.tar.gz
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKPREFIX=	radius-980618/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd

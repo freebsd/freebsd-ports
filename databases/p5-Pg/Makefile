@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Pg
 DISTNAME=	pgsql_perl5-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=   	pq.2:${PORTSDIR}/databases/postgresql7
 

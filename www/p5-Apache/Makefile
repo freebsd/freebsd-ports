@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Apache
 DISTNAME=	mod_perl-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .if !defined(APACHE_PORT)
 APACHE_PORT=apache13

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/quake/planetquake/threewave/unix/ \
 DISTFILES=	unixded-1.0-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
 
-MAINTAINER=	jfitz@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha

@@ -9,7 +9,7 @@ PORTNAME=	msql
 PORTVERSION=	2.0.4.1
 CATEGORIES=	databases
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES
