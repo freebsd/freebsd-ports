@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"Remotely exploitable buffer overflow."
+
 IS_INTERACTIVE=
 NO_PACKAGE=	"Hostname compiled in"
 
