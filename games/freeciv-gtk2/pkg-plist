@@ -5,10 +5,6 @@ share/freeciv/civ1/buildings.ruleset
 share/freeciv/civ1/techs.ruleset
 share/freeciv/civ1/units.ruleset
 share/freeciv/civ1.serv
-share/freeciv/classic/flags.xpm
-share/freeciv/classic/roads.xpm
-share/freeciv/classic/tiles.xpm
-share/freeciv/classic/units.xpm
 share/freeciv/default/buildings.ruleset
 share/freeciv/default/flags.xpm
 share/freeciv/default/roads.xpm
@@ -19,6 +15,10 @@ share/freeciv/default/tiles.xpm
 share/freeciv/default/treaty.xpm
 share/freeciv/default/units.ruleset
 share/freeciv/default/units.xpm
+share/freeciv/trident/flags.xpm
+share/freeciv/trident/roads.xpm
+share/freeciv/trident/tiles.xpm
+share/freeciv/trident/units.xpm
 share/freeciv/earth-80x50.sav
 share/freeciv/earth-160x90.sav
 share/freeciv/europe.sav
@@ -26,6 +26,6 @@ share/freeciv/helpdata.txt
 share/freeciv/intro.xpm
 share/freeciv/radar.xpm
 @dirrm share/freeciv/civ1
-@dirrm share/freeciv/classic
 @dirrm share/freeciv/default
+@dirrm share/freeciv/trident
 @dirrm share/freeciv
