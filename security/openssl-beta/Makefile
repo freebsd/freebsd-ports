@@ -3,7 +3,7 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.24 1999/01/09 12:55:48 dirk Exp $
 #
 
 DISTNAME=		openssl-0.9.1c
@@ -27,7 +27,7 @@ pre-fetch:
 	@${ECHO} "You must also have installed RSAREF if you are USA resident."
 	@${FALSE}
 .elif defined(USA_RESIDENT)
-.if ${USA_RESIDENT} == YES
+.if ${USA_RESIDENT} == YES && !defined(I_HAVE_AN_RSA_LICENSE)
 LIB_DEPENDS=		rsaref.2:${PORTSDIR}/security/rsaref
 
 post-configure:
