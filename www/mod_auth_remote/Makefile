@@ -8,8 +8,10 @@
 PORTNAME=	mod_auth_remote
 PORTVERSION=	0.1
 CATEGORIES=	www
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
+		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 # Original location is here: http://puggy.symonds.net/~srp/stuff/
+DIST_SUBDIR=	apache
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Allows users to authenticate on a remote web server
