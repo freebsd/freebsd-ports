@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socklog
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default
 
 MAN1=		tryto.1 uncat.1
-MAN8=		socklog-conf.8 socklog.8
+MAN8=		socklog-check.8 socklog-conf.8 socklog.8
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
 do-configure:
