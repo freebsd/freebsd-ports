@@ -41,6 +41,15 @@ bin/pp2sdf
 %%PORTDOCS%%%%DOCSDIR%%/utilities/perlpoint-hilit19.lisp
 %%PORTDOCS%%%%DOCSDIR%%/utilities/utilities.txt
 %%PORTDOCS%%%%DOCSDIR%%/writing-converters.pp
+%%PORTDOCS%%%%EXAMPLESDIR%%/.pp2sdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/perlpods.pp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2cppp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2pod
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2pp
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2ppresenter
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2sdf
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp2tree
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/utilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/faq/Portability
@@ -49,5 +58,5 @@ bin/pp2sdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint/Package
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlPoint 2>/dev/null || true
-@dirrm %%SITE_PERL%%/PerlPoint/Tags
+@unexec rmdir %D/%%SITE_PERL%%/PerlPoint/Tags 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/PerlPoint 2>/dev/null || true
