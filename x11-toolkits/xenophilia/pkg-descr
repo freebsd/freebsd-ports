@@ -1,0 +1,12 @@
+A GTK Theme Engine. The Xenophilia Theme Engine will after install be loaded
+automatically by all GTK+ programs as a module. The module will replace all of
+GTK's default rendering functions with its own and also install patches to the
+widget code that further alters the look and behaviour of GTK.
+
+The default look can best be described as a mix of NeXTStep, Windows 95, Amiga
+and old GTK, but as an engine you are able to redefine as much as without any
+engine. The purpose is to make a clean plain look that feels professional,
+unlike many extravagant themes for GTK. Note, that "gtkrc-themes" can still be
+based on this theme. 
+
+WWW: http://www.obsession.se/johan/gtk.html
