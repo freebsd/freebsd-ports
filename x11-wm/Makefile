@@ -23,7 +23,6 @@
     SUBDIR += gwm
     SUBDIR += icewm
     SUBDIR += libdockapp
-    SUBDIR += libwmfun
     SUBDIR += lwm
     SUBDIR += mlvwm
     SUBDIR += olvwm
