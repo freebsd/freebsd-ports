@@ -1,0 +1,61 @@
+--- Makefile.orig	Sat Mar 17 04:08:18 2001
++++ Makefile	Mon Jun 18 16:57:12 2001
+@@ -12,10 +12,10 @@
+ # SO          Extension for shared libs.
+ 
+ HAVE_JPEG = 1
+-PY_INCLUDE = -I/usr/local/include/python2.0
+-LIB_DIRS = -L/usr/local/lib -L/usr/lib
+-GCC = gcc
+-CFLAGS = -Wall -fpic -O2
++INC_DIRS = -I${GDCHART_INCLUDE} -I$(GD_INCLUDE) -I$(PYTHON_INCLUDE)
++LIB_DIRS = -L${LOCALBASE}/lib -L/usr/lib
++GCC = ${CC}
++CFLAGS ?= -Wall -fpic -O2
+ 
+ # Linux
+ LD = $(GCC) -shared
+@@ -31,20 +31,14 @@
+ 
+ # Shouldn't need to touch anything below this point.
+ 
+-GD = gd-1.8.4
+-LIBGD = $(GD)/libgd.a
+-
+-GDCHART = gdchart0.10.1dev
+-LIBGDCHART = $(GDCHART)/libgdchart.a
+-
+ DEFS =
+ ifeq ($(HAVE_JPEG),1)
+     DEFS += -DHAVE_JPEG
+     LIBJPEG = -ljpeg
+ endif
+ 
+-CFLAGS += -I$(GDCHART) $(PY_INCLUDE) $(DEFS)
+-LDFLAGS = -L$(GDCHART) -L$(GD) $(LIB_DIRS)
++CFLAGS += ${INC_DIRS} $(DEFS)
++LDFLAGS = $(LIB_DIRS)
+ LDLIBS = -lgdchart -lgd -lpng -lz $(LIBJPEG)
+ 
+ TARGET = gdchart$(SO)
+@@ -53,19 +47,11 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): $(LIBGD) $(LIBGDCHART) $(PY_OBJ)
++$(TARGET): $(PY_OBJ)
+ 	$(LD) $(PY_OBJ) $(LDFLAGS) $(LDLIBS) -o $@
+ 
+ $(PY_OBJ): $(PY_SRC)
+ 	$(GCC) -c $(CFLAGS) $<
+ 
+-$(LIBGD):
+-	make -C $(GD) libgd.a HAVE_JPEG=$(HAVE_JPEG)
+-
+-$(LIBGDCHART):
+-	make -C $(GDCHART) libgdchart.a HAVE_JPEG=$(HAVE_JPEG)
+-
+ clean:
+-	-make -C $(GD) clean
+-	-make -C $(GDCHART) clean
+ 	-rm -f $(TARGET) $(PY_OBJ)

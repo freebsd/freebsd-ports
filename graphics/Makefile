@@ -200,6 +200,7 @@
     SUBDIR += ppmcaption
     SUBDIR += pstoedit
     SUBDIR += pvmpov
+    SUBDIR += py-gdchart
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
     SUBDIR += py-ming
