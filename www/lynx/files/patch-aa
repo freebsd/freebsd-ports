@@ -1,35 +1,3 @@
-*** ./WWW/Library/Implementation/HTTCP.c.orig	Mon May 29 21:05:50 1995
---- ./WWW/Library/Implementation/HTTCP.c	Sat Jun 17 02:29:35 1995
-***************
-*** 95,102 ****
---- 95,104 ----
-  #ifndef NeXT
-  #ifndef THINK_C
-  #ifndef __NetBSD__
-+ #ifndef __FreeBSD__
-  extern char *sys_errlist[];		/* see man perror on cernvax */
-  extern int sys_nerr;
-+ #endif  /* __FreeBSD__ */
-  #endif	/* __NetBSD__ */
-  #endif  /* think c */
-  #endif	/* NeXT */
-***************
-*** 205,211 ****
-  #endif
-  #define ER_NO_TRANS_DONE
-  #endif
-! #ifdef NeXT
-  	    strerror(errno));
-  #define ER_NO_TRANS_DONE
-  #endif
---- 207,213 ----
-  #endif
-  #define ER_NO_TRANS_DONE
-  #endif
-! #if defined(NeXT) || defined(__FreeBSD__)
-  	    strerror(errno));
-  #define ER_NO_TRANS_DONE
-  #endif
 *** ./WWW/Library/Implementation/HTFile.c.orig	Sat Apr  1 01:34:48 1995
 --- ./WWW/Library/Implementation/HTFile.c	Sat Jun 17 02:04:19 1995
 ***************
@@ -782,3 +750,37 @@
   LYK_PREV_LINK,    LYK_NEXT_LINK,    LYK_ACTIVATE,   LYK_PREV_DOC,
   /* UPARROW */     /* DNARROW */     /* RTARROW */   /* LTARROW */
   
+*** WWW/Library/Implementation/HTTCP.c.orig	Wed Sep  6 15:06:49 1995
+--- WWW/Library/Implementation/HTTCP.c	Thu Sep 21 00:28:50 1995
+***************
+*** 96,105 ****
+--- 96,107 ----
+  #ifndef NeXT
+  #ifndef THINK_C
+  #ifndef __NetBSD__
++ #ifndef __FreeBSD__
+  #ifndef BSDI
+  extern char *sys_errlist[];		/* see man perror on cernvax */
+  extern int sys_nerr;
+  #endif /* BSDI */
++ #endif	/* __FreeBSD */
+  #endif	/* __NetBSD__ */
+  #endif  /* think c */
+  #endif	/* NeXT */
+***************
+*** 208,214 ****
+  #endif
+  #define ER_NO_TRANS_DONE
+  #endif
+! #ifdef NeXT
+  	    strerror(errno));
+  #define ER_NO_TRANS_DONE
+  #endif
+--- 210,216 ----
+  #endif
+  #define ER_NO_TRANS_DONE
+  #endif
+! #if defined(NeXT) || defined(__FreeBSD__)
+  	    strerror(errno));
+  #define ER_NO_TRANS_DONE
+  #endif
