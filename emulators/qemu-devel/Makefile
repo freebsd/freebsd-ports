@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.6.2s.20050224
+PORTVERSION=	0.6.2s.20050301
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.fruitsalad.org/nox/qemu/ \
 		http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2005-02-24_23
+DISTNAME=	${PORTNAME}-snapshot-2005-03-01_23
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
