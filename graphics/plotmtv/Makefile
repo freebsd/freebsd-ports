@@ -3,13 +3,15 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.2 1997/02/26 09:44:44 asami Exp $
+# $Id: Makefile,v 1.3 1997/02/26 13:19:14 obrien Exp $
 #
 
-DISTNAME=	Plotmtv1.4.0
-PKGNAME=	plotmtv-1.4.0
+DISTNAME=	Plotmtv1.4.1
+PKGNAME=	plotmtv-1.4.1
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://tanqueray.eecs.berkeley.edu/pub/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+
+MASTER_SITE_SUBDIR=	applications
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
@@ -20,11 +22,26 @@ ALL_TARGET=	World
 MAN1=		plotmtv.1
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/Docs/plotmtv.man ${PREFIX}/man/man1/plotmtv.1
+	@${INSTALL_MAN} ${WRKSRC}/Docs/plotmtv.man ${PREFIX}/man/man1/plotmtv.1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/plotmtv
-	${INSTALL_DATA} ${WRKSRC}/Docs/DataFormat.ps.Z \
-		${PREFIX}/share/doc/plotmtv/
+	@${MKDIR}  ${PREFIX}/share/doc/plotmtv/Tests
+	@${INSTALL_DATA} ${WRKSRC}/Docs/DataFormat.ps.Z \
+		${PREFIX}/share/doc/plotmtv
+	@${INSTALL_SCRIPT} ${WRKSRC}/Tests/run.csh ${WRKSRC}/Tests/run.sh \
+		${PREFIX}/share/doc/plotmtv/Tests
+.for f in README test_abs.mtv test_abs2.mtv test_annot.mtv \
+	test_annot2.mtv test_axisflip.mtv test_axislabel.mtv \
+	test_bar.mtv test_column.mtv test_column2.mtv \
+	test_ctrcolors.mtv test_ctrelb.mtv test_ctrelb2.mtv \
+	test_ctrelb3.mtv test_ctrs.mtv test_curve2D.mtv \
+	test_curve3D.mtv test_curve3D2.mtv test_exp.mtv \
+	test_fillclrs.mtv test_fillclrs2.mtv test_grid4D.mtv \
+	test_histogram.mtv test_lines.mtv test_log.mtv \
+	test_markers.mtv test_prob.mtv test_pyramid.mtv \
+	test_smallnum.mtv test_spln.mtv test_trictr.mtv \
+	test_vector.mtv test_vector2.mtv
+	@${INSTALL_DATA} ${WRKSRC}/Tests/${f} ${PREFIX}/share/doc/plotmtv/Tests
+.endfor
 .endif
 
-.include <bsd.port.mk>
+.include	<bsd.port.mk>
