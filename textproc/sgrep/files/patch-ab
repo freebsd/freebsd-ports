@@ -1,0 +1,11 @@
+--- sgrep.1--	Wed Apr 29 12:26:40 1998
++++ sgrep.1	Wed Apr 29 12:26:49 1998
+@@ -91,7 +91,7 @@
+ \fB$HOME/.sgreprc,\fP
+ or if it doesn't exist,
+ from file
+-\fB/usr/lib/sgreprc, \fP
++\fB/usr/local/share/sgreprc, \fP
+ and then from the command line. Different behavior
+ can be specified through command line options.
+ .Pp
