@@ -99,7 +99,7 @@ ELFCheck:: initialize
 .if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
 	@( \
 	${ECHO} "#define UseElfFormat YES" >> ${CONFFILE}; \
-	${ECHO} "#define FreeTypeCConvModule NO" >> ${CONFFILE}; \
+	${ECHO} "#define BuildDynamicLoading YES" >> ${CONFFILE}; \
 	${ECHO_MSG} "   Using ELF format." )
 .else
 	@${DO_NADA}
