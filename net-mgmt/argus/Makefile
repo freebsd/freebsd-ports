@@ -17,6 +17,7 @@ MAINTAINER=	se@freebsd.org
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
+USE_BISON=	true
 GNU_CONFIGURE=	true
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
 
