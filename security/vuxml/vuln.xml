@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1ecf4ca1-f7ad-11d8-96c9-00061bc2ad93">
+    <topic>moinmoin ACL group bypass (and lack thereof bypass)</topic>
+    <affects>
+      <package>
+        <name>moinmoin</name>
+        <range><lt>1.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The moinmoin package contains two bugs with ACLs and anonymous
+	  users.  Both bugs may permit anonymous users to gain access to
+	  administrative functions; for example the delete function.</p>
+        <p>There is no known workaround, the vulnerability exists regardless
+	  if a site is using ACLs or not.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.osvdb.org/displayvuln.php?osvdb_id=8194</url>
+      <url>http://www.osvdb.org/displayvuln.php?osvdb_id=8195</url>
+      <url>http://security.gentoo.org/glsa/glsa-200408-25.xml</url>
+    </references>
+    <dates>
+      <discovery>2004-07-21</discovery>
+      <entry>2004-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2689f4cb-ec4c-11d8-9440-000347a4fa7d">
     <topic>rsync -- path sanitizing vulnerability</topic>
     <affects>
