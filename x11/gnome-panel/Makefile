@@ -19,7 +19,8 @@ COMMENT=	Panel component for the GNOME 2 Desktop
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop libwnck lthack
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop libwnck lthack \
+		intlhack
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
