@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Business
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business

@@ -1,0 +1,9 @@
+Business::OnlinePayment is a generic interface for processing payments through
+online credit card processors, online check acceptance houses, etc.  (If you
+like buzzwords, call it an "multiplatform ecommerce-enabling middleware
+solution").
+
+IMPORTANT: Business::OnlinePayment only defines the frontend interface to the
+system, in order to use it you also need to have at least one backend
+processing module installed, the processors supported are listed below along
+with the types of transactions supported.
