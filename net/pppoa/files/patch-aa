@@ -1,0 +1,18 @@
+--- doc-bsd/adsl.sh.sample.orig	Tue Aug 14 22:15:19 2001
++++ doc-bsd/adsl.sh.sample	Fri Aug 31 09:01:15 2001
+@@ -1,3 +1,15 @@
++#! /bin/sh
++
++prog=$(realpath $0) || exit 1
++dir=${prog%/*}
++PREFIX=${dir%/etc/rc.d}
++
++if [ ."$dir" = ."$prog" -o ."$PREFIX" = ."$dir" ]
++then
++	echo "$0: Cannot determine the PREFIX" >&2
++	exit 1
++fi
++
+ ISP=adsl
+ PATH=$PATH:$PREFIX/bin
+ 
