@@ -22,13 +22,13 @@ USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=		--disable-manage-devices
+CONFIGURE_ARGS=		--disable-manage-devices --with-devdir=/var/lirc
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_IRMAN)
 CONFIGURE_ARGS+=	--with-driver=irman
-BUILD_DEPENDS=		${LOCALBASE}/libirman.a:${PORTSDIR}/comms/libirman
+BUILD_DEPENDS=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
 .if ${OSVERSION} >= 500041
 # These are already included in the getopt_long case on < 50041
 CPPFLAGS+=		-I${LOCALBASE}/include
