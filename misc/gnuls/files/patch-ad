@@ -1,0 +1,183 @@
+*** man/Makefile.in.orig	Sun Jan 26 21:26:52 1997
+--- man/Makefile.in	Sun Aug 10 19:50:02 1997
+***************
+*** 47,58 ****
+  LN = @LN@
+  RM = @RM@
+  
+! man_MANS = chgrp.1 chmod.1 chown.1 cp.1 dd.1 df.1 dircolors.1 du.1 install.1 \
+! ln.1 ls.1 mkdir.1 mkfifo.1 mknod.1 mv.1 rm.1 rmdir.1 touch.1
+  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+  CONFIG_HEADER = ../config.h
+  CONFIG_CLEAN_FILES = 
+! MANS = chgrp.1 chmod.1 chown.1 cp.1 dd.1 df.1 dircolors.1 du.1 install.1 ln.1 ls.1 mkdir.1 mkfifo.1 mknod.1 mv.1 rm.1 rmdir.1 touch.1
+  
+  
+  NROFF = nroff
+--- 47,57 ----
+  LN = @LN@
+  RM = @RM@
+  
+! man_MANS = dircolors.1 gnuls.1 
+  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+  CONFIG_HEADER = ../config.h
+  CONFIG_CLEAN_FILES = 
+! MANS = dircolors.1 ls.1
+  
+  
+  NROFF = nroff
+***************
+*** 80,211 ****
+  	$(NORMAL_INSTALL)
+  	$(mkinstalldirs) $(mandir)/man1
+  	sect=1;				\
+! 	inst=`echo "ln" | sed '$(transform)'`.1; \
+! 	if test -f $(srcdir)/ln.1; then file=$(srcdir)/ln.1; \
+! 	else file=ln.1; fi; \
+! 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+! 	sect=1;				\
+! 	inst=`echo "chgrp" | sed '$(transform)'`.1; \
+! 	if test -f $(srcdir)/chgrp.1; then file=$(srcdir)/chgrp.1; \
+! 	else file=chgrp.1; fi; \
+! 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+! 	sect=1;				\
+! 	inst=`echo "ls" | sed '$(transform)'`.1; \
+  	if test -f $(srcdir)/ls.1; then file=$(srcdir)/ls.1; \
+  	else file=ls.1; fi; \
+  	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+  	sect=1;				\
+- 	inst=`echo "chmod" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/chmod.1; then file=$(srcdir)/chmod.1; \
+- 	else file=chmod.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "mkdir" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/mkdir.1; then file=$(srcdir)/mkdir.1; \
+- 	else file=mkdir.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "chown" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/chown.1; then file=$(srcdir)/chown.1; \
+- 	else file=chown.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "mkfifo" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/mkfifo.1; then file=$(srcdir)/mkfifo.1; \
+- 	else file=mkfifo.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "cp" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/cp.1; then file=$(srcdir)/cp.1; \
+- 	else file=cp.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "mknod" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/mknod.1; then file=$(srcdir)/mknod.1; \
+- 	else file=mknod.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "dd" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/dd.1; then file=$(srcdir)/dd.1; \
+- 	else file=dd.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "mv" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/mv.1; then file=$(srcdir)/mv.1; \
+- 	else file=mv.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "df" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/df.1; then file=$(srcdir)/df.1; \
+- 	else file=df.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "rm" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/rm.1; then file=$(srcdir)/rm.1; \
+- 	else file=rm.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+  	inst=`echo "dircolors" | sed '$(transform)'`.1; \
+  	if test -f $(srcdir)/dircolors.1; then file=$(srcdir)/dircolors.1; \
+  	else file=dircolors.1; fi; \
+  	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "rmdir" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/rmdir.1; then file=$(srcdir)/rmdir.1; \
+- 	else file=rmdir.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "du" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/du.1; then file=$(srcdir)/du.1; \
+- 	else file=du.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "touch" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/touch.1; then file=$(srcdir)/touch.1; \
+- 	else file=touch.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+- 	sect=1;				\
+- 	inst=`echo "install" | sed '$(transform)'`.1; \
+- 	if test -f $(srcdir)/install.1; then file=$(srcdir)/install.1; \
+- 	else file=install.1; fi; \
+- 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+  
+  uninstall-man:
+- 	inst=`echo "ln" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "chgrp" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+  	inst=`echo "ls" | sed '$(transform)'`.1; \
+  	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "chmod" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "mkdir" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "chown" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "mkfifo" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "cp" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "mknod" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "dd" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "mv" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "df" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "rm" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+  	inst=`echo "dircolors" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "rmdir" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "du" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "touch" | sed '$(transform)'`.1; \
+- 	rm -f $(mandir)/man1/$$inst
+- 	inst=`echo "install" | sed '$(transform)'`.1; \
+  	rm -f $(mandir)/man1/$$inst
+  
+  tags: TAGS
+--- 79,98 ----
+  	$(NORMAL_INSTALL)
+  	$(mkinstalldirs) $(mandir)/man1
+  	sect=1;				\
+! 	inst=`echo "gnuls" | sed '$(transform)'`.1; \
+  	if test -f $(srcdir)/ls.1; then file=$(srcdir)/ls.1; \
+  	else file=ls.1; fi; \
+  	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+  	sect=1;				\
+  	inst=`echo "dircolors" | sed '$(transform)'`.1; \
+  	if test -f $(srcdir)/dircolors.1; then file=$(srcdir)/dircolors.1; \
+  	else file=dircolors.1; fi; \
+  	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+  
+  uninstall-man:
+  	inst=`echo "ls" | sed '$(transform)'`.1; \
+  	rm -f $(mandir)/man1/$$inst
+  	inst=`echo "dircolors" | sed '$(transform)'`.1; \
+  	rm -f $(mandir)/man1/$$inst
+  
+  tags: TAGS
