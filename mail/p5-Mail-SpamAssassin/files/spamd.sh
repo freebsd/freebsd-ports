@@ -10,7 +10,6 @@ start)
 	[ -x ${PREFIX}/bin/spamd ] && ${PREFIX}/bin/spamd -a -c -d && echo -n ' spamd'
 	;;
 stop)
-	killall spamd && echo -n ' spamd'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
