@@ -78,7 +78,8 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-libwarning 15 70 || 1)
+	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-libwarning 15 70 || \
+		/usr/bin/true)
 .endif
 
 post-patch:
