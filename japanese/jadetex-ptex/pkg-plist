@@ -4,8 +4,8 @@
 share/texmf/tex/jadetex/dsssl-ptex.def
 share/texmf/tex/jadetex/jadetex-ptex.ltx
 share/texmf/web2c/jadetex-ptex.fmt
-%%PORTDOCS%%share/doc/jadetex-ptex/README.jadetex-ptex
-%%PORTDOCS%%@dirrm share/doc/jadetex-ptex
+%%PORTDOCS%%%%DOCSDIR%%/README.jadetex-ptex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %D/bin/mktexlsr
 @unexec %D/bin/mktexlsr
 @unexec rmdir %D/share/texmf/tex/jadetex 2> /dev/null || true

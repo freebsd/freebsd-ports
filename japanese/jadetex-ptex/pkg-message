@@ -1,6 +1,6 @@
 JadeTeX uses quite a lot of TeX's resources.  You may find it
 necessary to increase the size of some of TeX's resource pools by
-editing the file %%LOCALBASE%%/share/texmf/web2c/texmf.cnf with any text
+editing the file %%LOCALBASE%%/share/texmf/web2c-ptex/texmf.cnf with any text
 editor.
 
 For example, to typeset the FreeBSD Handbook with JadeTeX, change the
@@ -11,6 +11,3 @@ following settings to the listed values:
 	  max_strings = 70000
 	  save_size = 10000
 
-If you change %%LOCALBASE%%/share/texmf/web2c/texmf.cnf, delete the word
-"original" on line 1 of the file.  This will prevent future
-installations of TeX from overwriting changes you've made.
