@@ -617,6 +617,7 @@
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-POE-Session-Cascading
+    SUBDIR += p5-POE-Session-MultiDispatch
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
     SUBDIR += p5-Parallel-ForkManager

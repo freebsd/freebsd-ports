@@ -1,0 +1,18 @@
+POE::Session::MultiDispatch is a drop in replacement for POE::Session
+that adds callback dispatch functionality to POE sessions.  Each event
+may have multiple handlers associated with it.  Fine control over the
+order of execution is available using helper methods that extend the
+interface of a POE::Session.
+
+POE::Session::MultiDispatch uses POE::Session as a base class.  When
+multiple callbacks are registered for an event, only the last callback
+survives, all the others are clobbered.  POE::Session::MultiDispatch is
+much nicer to your registered callbacks, it keeps them all in the order
+they were defined.  When an event is triggered, all the callbacks are
+then executed in that same order (unless you muck around with said
+order).
+
+WWW: http://search.cpan.org/dist/POE-Session-MultiDispatch/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
