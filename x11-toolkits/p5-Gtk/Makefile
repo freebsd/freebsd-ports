@@ -3,12 +3,12 @@
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.9 1998/06/01 23:32:50 vanilla Exp $
+# $Id: Makefile,v 1.10 1998/08/06 15:06:24 vanilla Exp $
 #
 
 DISTNAME=	Gtk-0.2.2
 PKGNAME=	p5-Gtk-0.2.2
-CATEGORIES=	x11 lang perl5
+CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
 

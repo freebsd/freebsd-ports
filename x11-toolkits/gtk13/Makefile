@@ -3,12 +3,12 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.20 1998/06/07 02:05:42 vanilla Exp $
+# $Id: Makefile,v 1.21 1998/07/30 05:24:38 vanilla Exp $
 #
 
 DISTNAME=	gtk+-1.0.5
 PKGNAME=	gtk-1.0.5
-CATEGORIES=	x11
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.0/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.0/ \
 		http://www.ameth.org/gimp/pub/gtk/v1.0/

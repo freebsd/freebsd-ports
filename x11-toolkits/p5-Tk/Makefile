@@ -3,12 +3,12 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.14 1997/09/14 04:00:00 jfitz Exp $
+# $Id: Makefile,v 1.15 1998/08/07 12:01:21 markm Exp $
 #
 
 DISTNAME=	Tk800.008
 PKGNAME=	p5-Tk-800.008
-CATEGORIES=	x11 tk80 perl5
+CATEGORIES=	x11-toolkits tk80 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
 
