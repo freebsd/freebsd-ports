@@ -7,24 +7,23 @@
 #
 
 PORTNAME=	stowES
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.inf.tu-dresden.de/~al10/stowES/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-#RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2 \
-#		stow:${PORTSDIR}/sysutils/stow
+RUN_DEPENDS=	stow:${PORTSDIR}/sysutils/stow
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500021
+RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 
 GNU_CONFIGURE=	yes
-
 USE_GMAKE=	yes
 
 MAN1=	stowES.1
 
-post-patch:
-.for file in stowES.in stowES.pod
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
