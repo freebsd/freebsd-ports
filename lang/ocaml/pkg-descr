@@ -1,5 +1,3 @@
-OVERVIEW:
-
 Objective Caml is an implementation of the ML language, based on
 the Caml Light dialect extended with a complete class-based object system
 and a powerful module system in the style of Standard ML.
@@ -17,33 +15,6 @@ The other compiler generates high-performance native code for a number
 of processors. Compilation takes longer and generates bigger code, but
 the generated programs deliver excellent performance (better than
 Standard ML of New Jersey 1.09 on our tests), while retaining the
-moderate memory requirements of the bytecode compiler. The native-code
-compiler currently runs on the following platforms:
-
-    Alpha processors: all Digital Alpha machines under Digital Unix or Linux
-    Sparc processors: Sun Sparc under SunOS 4.1, Solaris 2, NetBSD, Linux
-    Intel Pentium processors: PCs under Linux, NextStep, FreeBSD, Solaris 2
-    Mips processors: SGI workstations and mainframes under IRIX 6
-    HP PA-RISC processors: HP 9000/700 under HPUX 9 and NextStep
-    PowerPC processors: IBM RS6000 and PowerPC workstations under AIX 3.2,
-                        PowerMacintosh under MkLinux, LinuxPPC, Rhapsody
-    Motorola 680x0 processors: Sun 3 under SunOS
-    Strong ARM processors: Corel Netwinder under Linux
-
-DOCUMENTATION:
-
-The Objective Caml manual is distributed in HTML, PDF, Postscript, and
-DVI. It can be obtained by anonymous FTP from ftp.inria.fr as
-described below. It is also available on the World Wide Web, at
+moderate memory requirements of the bytecode compiler.
 
 WWW: http://caml.inria.fr/ocaml/
-
-AVAILABILITY:
-
-The complete Objective Caml distribution resides on ftp.inria.fr,
-and can be accessed by anonymous FTP:
-
-        host:       ftp.inria.fr (192.93.2.54)
-        directory:  lang/caml-light
-
-or through a Web browser at ftp://ftp.inria.fr/lang/caml-light/
