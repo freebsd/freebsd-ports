@@ -10,6 +10,30 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050313:
+AUTHOR: ahze@FreeBSD.org, kwm@FreeBSD.org
+  The following changes were committed:
+
+ * USE_GNOME=gstreamerplugins has been deprecated.
+     The new method which uses bsd.gstreamer.mk is:
+       USE_GSTREAMER=plugin-name
+
+    Example:
+     USE_GSTREAMER= dvd
+
+     or
+
+     WANT_GSTREAMER= yes
+     .include <bsd.port.pre.mk>
+     .if defined(WITH_DVD)
+     USE_GSTREAMER= dvd
+     .endif
+
+  * misc/gnomehier now creates a mtree file and each port
+    using USE_GNOME=gnomehier or gnomeprefix now use the
+    BSD.gnome-x11.dist mtree file to help "keep" directories
+    and not accidentally add gnome directories to a port.
+
 20050207:
 AUTHOR: portmgr@FreeBSD.org
   The following changes were committed:
