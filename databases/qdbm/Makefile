@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.7.23
+PORTVERSION=	1.7.26
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://qdbm.sourceforge.net/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@nigredo.org
@@ -16,13 +17,11 @@ COMMENT=	Quick Database Manager
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-zlib
-MAKE_ARGS=	RELCFLAGS="${CFLAGS}" MYDATADIR="${DOCSDIR}"
+MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
+		MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}"
 INSTALLS_SHLIB=	yes
-
 .if !defined(NOPORTDOCS)
-MAKE_ARGS+=	MYDOCS="spex.html spex-ja.html ChangeLog NEWS"
-.else
-MAKE_ARGS+=	MYDOCS=""
+PORTDOCS=	spex.html spex-ja.html ChangeLog NEWS
 .endif
 
 MAN3=		cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
