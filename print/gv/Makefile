@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/ghostscript/gnu/gv/unix
 
-PATCHFILES=	gv_3.5.8-17.1.diff.gz
+PATCHFILES=	gv_3.5.8-26.1.diff.gz
 PATCH_SITES=	http://security.debian.org/pool/updates/main/g/gv/
 PATCH_DIST_STRIP=	-p1
 
