@@ -16,7 +16,8 @@ PKGNAMESUFFIX=	-portable
 
 MAINTAINER= dwcjr@FreeBSD.org
 
-MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1 slogin.1
+MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
+MLINKS=	ssh.1 slogin.1
 MAN8=	sftp-server.8 sshd.8
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
