@@ -1,0 +1,3 @@
+bin/wmmemload
+%%PORTDOCS%%share/doc/wmmemload/ChangeLog
+%%PORTDOCS%%@dirrm share/doc/wmmemload

@@ -1,0 +1,8 @@
+This is a port of wmmemload, which displays the current mem/swap usage in
+a simulated lcd-display, which supports background lighting.
+
+WWW: http://www.markstaggs.net/
+Author: Mark Staggs <me@markstaggs.net>
+
+Based largely on work on WMMemMon and WMCPULoad done by:
+Seiichi SATO <ssato@sh.rim.or.jp>
