@@ -1,0 +1,10 @@
+share/dict/roget-fpw/roget/data/honmon
+share/dict/roget-fpw/roget/gaiji/gai16h
+share/dict/roget-fpw/catalogs
+@dirrm share/dict/roget-fpw/roget/data
+@dirrm share/dict/roget-fpw/roget/gaiji
+@dirrm share/dict/roget-fpw/roget
+@dirrm share/dict/roget-fpw
+share/doc/roget-fpw/readme.pkg
+share/doc/roget-fpw/readme.txt
+@dirrm share/doc/roget-fpw
