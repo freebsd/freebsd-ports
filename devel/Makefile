@@ -145,6 +145,7 @@
     SUBDIR += gnomecrash
     SUBDIR += gnomevfs
     SUBDIR += gnustep
+    SUBDIR += gnustep-make
     SUBDIR += gpasm
     SUBDIR += gperf
     SUBDIR += gtgt
