@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--without-gnutls
 .if defined(WITHOUT_GPGME)
 CONFIGURE_ARGS+=	--without-gpgme
 .else
-LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme03
 .endif
 
 # PCRE
