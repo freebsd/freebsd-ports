@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf
@@ -25,7 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-gdk-pixbuf-prefix=${X11BASE} \
-		--without-included-gettext
+		--with-libintl-prefix=${LOCALBASE}
 DATADIR=	share
 
 .include <bsd.port.pre.mk>

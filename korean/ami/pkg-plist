@@ -1,7 +1,6 @@
 bin/ami
 bin/hanja_hwp2ami
 bin/wmami
-lib/charset.alias
 share/doc/ami/AUTHORS
 share/doc/ami/ChangeLog
 share/doc/ami/NEWS
@@ -14,6 +13,7 @@ share/hangul_keyboard/dvorak_2bul.kbd
 share/hangul_keyboard/dvorak_3bul_390.kbd
 share/hangul_keyboard/dvorak_3bul_final.kbd
 share/hangul_keyboard/dvorak.map
+share/locale/ko/LC_MESSAGES/ami.mo
 %%DATADIR%%/ami/gtkrc
 %%DATADIR%%/ami/hanja.dic
 %%DATADIR%%/ami/pix/Aqua/AUTHORS
