@@ -12,7 +12,8 @@ MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
 		ftp://ftp.plig.net/pub/ircII/
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	anders@andersa.net
+COMMENT=	The 'Internet Relay Chat' Client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc

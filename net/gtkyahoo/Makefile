@@ -11,7 +11,8 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkyahoo
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	anders@andersa.net
+COMMENT=	Yahoo Messenger Client using GTK
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

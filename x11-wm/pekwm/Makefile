@@ -10,7 +10,8 @@ PORTVERSION=	0.1.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.babblica.net/files/source/
 
-MAINTAINER=	anders@hack.org
+MAINTAINER=	anders@andersa.net
+COMMENT=	A windowmanager based on aewm++
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
