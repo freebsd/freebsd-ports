@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
@@ -17,7 +17,7 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
 
-pre-build:
+post-extract:
 	@${RM} -f ${WRKSRC}/src/moc_*.cpp
 
 do-install:
