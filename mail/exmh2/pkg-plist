@@ -1,6 +1,7 @@
 bin/exmh
 bin/exmh-async
 bin/exmh-bg
+bin/exmh-strip
 bin/ftp.expect
 bin/inc.expect
 lib/exmh-%%EXMH_VERSION%%/PgpDecryptExpect

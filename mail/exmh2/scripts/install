@@ -12,7 +12,7 @@ do
 	install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1
 done
 
-BINS="exmh-async exmh-bg exmh ftp.expect inc.expect"
+BINS="exmh-async exmh-bg exmh-strip exmh ftp.expect inc.expect"
 
 echo "install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin"
 install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin

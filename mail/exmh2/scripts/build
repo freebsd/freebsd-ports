@@ -87,7 +87,7 @@ sed <${FILESDIR}/${CONFIGFILE} \
 	-e "s+!!DATE!!+${DATE}+g" \
  | sed -e 's/$/\\/' -e '$ s/.$//' >> ${SEDFILE}
 
-for i in exmh-async exmh-bg exmh ftp.expect inc.expect
+for i in exmh-async exmh-bg exmh-strip exmh ftp.expect inc.expect
 do
 	echo "sed -f ${SEDFILE} < $i.MASTER > $i"
 	sed -f ${SEDFILE} < $i.MASTER > $i
