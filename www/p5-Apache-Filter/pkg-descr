@@ -1,0 +1,20 @@
+This module lets you stack handlers so that the next one will handle
+or "filter" the output of previous one.
+
+From README:
+    When you've got this module, you can use the same handler both as a
+    stand-alone handler, and as an element in a chain. Just make sure that
+    whenever you're chaining, all the handlers in the chain are "Filter-
+    aware," i.e. they each call $r->filter_register() exactly once, before
+    they start printing to STDOUT. There should be almost no overhead for
+    doing this when there's only one element in the chain.
+
+    Currently the following public modules are Filter-aware.
+
+     Apache::Registry (using Apache::RegistryFilter, included here)
+     Apache::SSI
+     Apache::ASP
+     HTML::Mason
+     Apache::SimpleReplace
+
+-- Alex Kapranoff <kapr@crosswinds.net>
