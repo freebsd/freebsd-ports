@@ -8,7 +8,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	20.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 .if (${WITH_WNN6} == "yes" || ${WITH_WNN6} == "YES")
 CONFIGURE_ARGS+=--with-wnn --with-wnn-includes=${LOCALBASE}/include/wnn6/wnn \
 		--with-wnn-libraries=${LOCALBASE}/lib/libwnn6.so
-LIB_DEPENDS+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_DEPENDS+=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .endif
 
 .if (${WITH_FREEWNN} == "yes" || ${WITH_FREEWNN} == "YES")

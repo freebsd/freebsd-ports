@@ -20,6 +20,9 @@
 #	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
 #	WITH_XIM          : X Input Method(configure arguments), xlib or motif
 
+.if defined(WNN6)
+PORTREVISION=	1
+.endif
 CATEGORIES=	japanese
 
 MANLANG=	ja
@@ -40,7 +43,7 @@ PKGNAMESUFFIX=		-canna+wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-canna --with-wnn6
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
-			wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and Wnn6 support
 .elif defined(FREEWNN)
 PKGNAMESUFFIX=		-freewnn
@@ -51,7 +54,7 @@ COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK an
 PKGNAMESUFFIX=		-wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no
-LIB_INPUT_METHOD=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Wnn6 support
 .else
 PKGNAMESUFFIX=		-canna

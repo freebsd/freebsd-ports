@@ -8,7 +8,7 @@
 PORTNAME=	mule
 PORTVERSION=	${MULE_VERSION}
 PKGNAMESUFFIX=	${INPUT_METHOD}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
@@ -80,15 +80,15 @@ WITH_INPUT_METHOD+=	--with-sj3
 .if !defined(FREEWNN) && !defined(CFREEWNN) && !defined(KFREEWNN)
 .if defined(WNN6)
 INPUT_METHOD+=		wnn6
-LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD+=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .elif defined(WNN7)
 # mule 2.3 cannot use Wnn7SDK (Wnn7-lib) 
-# so it uses Wnn6SDK (Wnn6-lib) instead of Wnn7SDK.
+# so it should use Wnn6SDK (Wnn6-lib) instead of Wnn7SDK.
 # But it can partly support Wnn7 by ${PREFIX}/share/mule/19.34/lisp/eggrc-wnn
 INPUT_METHOD+=		wnn7
-LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD+=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 WITH_INPUT_METHOD+=	--with-wnn6=-lwnn6 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .endif

@@ -7,6 +7,9 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER}
+.if defined(WNN6)
+PORTREVISION=	1
+.endif
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -140,7 +143,7 @@ PKGNAMESUFFIX=		-canna+wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-canna --with-wnn6
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
-			wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(FREEWNN)
 PKGNAMESUFFIX=		-freewnn
 WITH_INPUT_METHOD=	--with-wnn --with-canna=no --with-wnn6=no
@@ -149,7 +152,7 @@ LIB_INPUT_METHOD=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 PKGNAMESUFFIX=		-wnn6
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no
-LIB_INPUT_METHOD=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+LIB_INPUT_METHOD=	wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(CANNA)
 PKGNAMESUFFIX=		-canna
 WITH_INPUT_METHOD=	--with-canna --with-wnn=no --with-wnn6=no
