@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		NTLTOOL_PERL="${PERL}"
+		INTLTOOL_PERL="${PERL}"
 CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
 		--with-tutorial-path="${DOCSDIR}" \
 		--with-lib3ds-prefix="${LOCALBASE}"
