@@ -1,0 +1,10 @@
+The perl script mysql2pgsql can be used to convert MySQL database
+dumps to a -compatible format (so the data can be imported into
+PostgreSQL).  This can be useful if you are switching from MySQL
+to PostgreSQL and you have quite a bit of data in your MySQL
+databases.
+
+WWW: http://www.rot13.org/~dpavlin/projects.html
+
+- Pete
+petef@databits.net
