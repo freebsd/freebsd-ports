@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.2.14
+PORTVERSION=	1.2.15
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -63,6 +63,10 @@ pre-configure:
 		s:%%QT_LIB%%:${X11BASE}/lib:g ; \
 		s:%%CFLAGS%%:${CFLAGS}:g ; \
 		s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/tmake/lib/freebsd-g++/tmake.conf
+
+post-patch:
+	@${PERL} -pi.fbsd -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/libpng/pngconf.h \
+	${WRKSRC}/libpng/zutil.h ${WRKSRC}/src/pngenc.cpp
 
 post-build:
 	cd ${BUILD_WRKSRC}/examples; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
