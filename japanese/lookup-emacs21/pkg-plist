@@ -24,6 +24,8 @@
 %%ELISPDIR%%/lookup/ndic.elc
 %%ELISPDIR%%/lookup/ndeb.el
 %%ELISPDIR%%/lookup/ndeb.elc
+%%ELISPDIR%%/lookup/ndeb-binary.el
+%%ELISPDIR%%/lookup/ndeb-binary.elc
 %%ELISPDIR%%/lookup/ndtp.el
 %%ELISPDIR%%/lookup/ndtp.elc
 %%ELISPDIR%%/lookup/ndict.el
