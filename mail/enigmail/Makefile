@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	0.84.0
+PORTVERSION?=	0.84.1
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.brunschwig.net/enigmail/src/ \
