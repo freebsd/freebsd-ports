@@ -11087,6 +11087,7 @@ xfce4-weather-plugin	ports/misc/xfce4-weather-plugin
 xfce4-windowlist-plugin	ports/deskutils/xfce4-windowlist-plugin
 xfce4-wm	ports/x11-wm/xfce4-wm
 xfce4-wm-themes	ports/misc/xfce4-wm-themes
+xfce4-xkb-plugin	ports/deskutils/xfce4-xkb-plugin
 xfce4-xmms-plugin	ports/multimedia/xfce4-xmms-plugin
 xfe		ports/x11-fm/xfe
 xfed		ports/x11-fonts/xfed
