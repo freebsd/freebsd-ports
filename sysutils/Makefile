@@ -254,6 +254,7 @@
     SUBDIR += task
     SUBDIR += tcplist
     SUBDIR += tdir
+    SUBDIR += tentakel
     SUBDIR += thefish
     SUBDIR += ticker.app
     SUBDIR += timelimit
