@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Mon Apr 20 00:24:18 1998
++++ doc/Makefile.in	Sun Oct  4 22:13:57 1998
+@@ -55,7 +55,7 @@
+ 
+ tags allbin:
+ 
+-alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
++alldoc:	rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
+ 
+ $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+ 	$(SED) $(SEDREPLACE) < LSM.in > $@
