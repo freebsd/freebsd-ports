@@ -89,6 +89,7 @@ lib/mozilla/chrome/en-US.jar
 lib/mozilla/chrome/en-mac.jar
 lib/mozilla/chrome/en-unix.jar
 lib/mozilla/chrome/en-win.jar
+lib/mozilla/chrome/forms.jar
 lib/mozilla/chrome/help.jar
 lib/mozilla/chrome/inspector.jar
 lib/mozilla/chrome/installed-chrome.txt
@@ -110,11 +111,13 @@ lib/mozilla/components/accessibility.xpt
 lib/mozilla/components/addrbook.xpt
 lib/mozilla/components/appshell.xpt
 lib/mozilla/components/autocomplete.xpt
+lib/mozilla/components/autoconfig.xpt
 lib/mozilla/components/bookmarks.xpt
 lib/mozilla/components/caps.xpt
 lib/mozilla/components/chardet.xpt
 lib/mozilla/components/chatzilla-service.js
 lib/mozilla/components/chrome.xpt
+lib/mozilla/components/content.xpt
 lib/mozilla/components/content_base.xpt
 lib/mozilla/components/content_xsl.xpt
 lib/mozilla/components/cookie.xpt
@@ -142,6 +145,7 @@ lib/mozilla/components/gfx.xpt
 lib/mozilla/components/gfx2.xpt
 lib/mozilla/components/helperAppDlg.xpt
 lib/mozilla/components/history.xpt
+lib/mozilla/components/htmlparser.xpt
 lib/mozilla/components/imglib2.xpt
 lib/mozilla/components/import.xpt
 lib/mozilla/components/inspector.xpt
@@ -159,6 +163,7 @@ lib/mozilla/components/libabsyncsvc.so
 lib/mozilla/components/libaccessibility.so
 lib/mozilla/components/libaddrbook.so
 lib/mozilla/components/libappcomps.so
+lib/mozilla/components/libautoconfig.so
 lib/mozilla/components/libcaps.so
 lib/mozilla/components/libchardet.so
 lib/mozilla/components/libchrome.so
@@ -181,6 +186,7 @@ lib/mozilla/components/libimgbmp.so
 lib/mozilla/components/libimggif.so
 lib/mozilla/components/libimgjpeg.so
 lib/mozilla/components/libimglib2.so
+lib/mozilla/components/libimgmng.so
 lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
 lib/mozilla/components/libimpText.so
@@ -209,7 +215,6 @@ lib/mozilla/components/libmsgsmime.so
 lib/mozilla/components/libnecko.so
 lib/mozilla/components/libnecko2.so
 lib/mozilla/components/libnkcache.so
-lib/mozilla/components/libnpsimple.so
 lib/mozilla/components/libnsappshell.so
 lib/mozilla/components/libnslocale.so
 lib/mozilla/components/libnsprefm.so
@@ -225,7 +230,6 @@ lib/mozilla/components/libsample.so
 lib/mozilla/components/libshistory.so
 lib/mozilla/components/libstrres.so
 lib/mozilla/components/libtestdynamic.so
-lib/mozilla/components/libtimer_gtk.so
 lib/mozilla/components/libtransformiix.so
 lib/mozilla/components/libtxmgr.so
 lib/mozilla/components/libtxtsvc.so
@@ -279,7 +283,6 @@ lib/mozilla/components/necko_res.xpt
 lib/mozilla/components/necko_socket.xpt
 lib/mozilla/components/necko_strconv.xpt
 lib/mozilla/components/necko_viewsource.xpt
-lib/mozilla/components/npsimple.xpt
 lib/mozilla/components/nsDictionary.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
@@ -340,6 +343,7 @@ lib/mozilla/components/xpti.dat
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
+lib/mozilla/defaults/autoconfig/prefcalls.js
 lib/mozilla/defaults/pref/all.js
 lib/mozilla/defaults/pref/config.js
 lib/mozilla/defaults/pref/editor.js
@@ -373,6 +377,7 @@ lib/mozilla/defaults/wallet/StateSchema.tbl
 lib/mozilla/defaults/wallet/VcardSchema.tbl
 lib/mozilla/dirver
 lib/mozilla/dtd/mathml.dtd
+lib/mozilla/dtd/svg.dtd
 lib/mozilla/htmlrobot
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
@@ -400,6 +405,7 @@ lib/mozilla/mozilla
 lib/mozilla/mozilla-bin
 lib/mozilla/mozilla-config
 lib/mozilla/mozilla-viewer.sh
+lib/mozilla/mozilla-xremote-client
 lib/mozilla/nsIFileEnumerator
 lib/mozilla/nsIFileTest
 lib/mozilla/nsTestSample
@@ -597,7 +603,6 @@ lib/mozilla/searchplugins/lxrmozilla.gif
 lib/mozilla/searchplugins/lxrmozilla.src
 lib/mozilla/searchplugins/mozilla.gif
 lib/mozilla/searchplugins/mozilla.src
-lib/mozilla/splash.xpm
 lib/mozilla/testart
 lib/mozilla/testuta
 lib/mozilla/urltest
@@ -629,6 +634,7 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/defaults/profile/US
 @dirrm lib/mozilla/defaults/profile
 @dirrm lib/mozilla/defaults/pref
+@dirrm lib/mozilla/defaults/autoconfig
 @dirrm lib/mozilla/defaults
 @dirrm lib/mozilla/components
 @dirrm lib/mozilla/chrome/overlayinfo/navigator/content
