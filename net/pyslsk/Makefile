@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/ \
 		http://stud4.tuwien.ac.at/~e0125637/
