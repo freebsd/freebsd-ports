@@ -7,15 +7,19 @@
 
 PORTNAME=	timidity++
 PORTVERSION=	2.9.0
-PKGNAMESUFFIX=	-${INTERFACE}
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+PKGNAMESUFFIX=	-${INTERFACE}
 DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-RUN_DEPENDS=	${PREFIX}/bin/timidity:${PORTSDIR}/audio/timidity++
+RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
+
+SLAVEDIRS=	audio/timidity++-gtk audio/timidity++-motif \
+		audio/timidity++-slang audio/timidity++-tcltk \
+		audio/timidity++-xaw audio/timidity++-xskin
 
 INTERFACE?=	emacs
 
@@ -70,7 +74,7 @@ INTERFACE_DEPS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 CONFIGURE_ARGS+=	--with-tcl-includes=${PREFIX}/include/tcl8.0 \
 		--with-tk-includes=${PREFIX}/include/tk8.0 \
 		--with-tcl-libs=${PREFIX}/lib --with-tk-libs=${PREFIX}/lib
-CONFIGURE_ENV=  WISH=wish8.0
+CONFIGURE_ENV=	WISH=wish8.0
 .endif
 .elif ${INTERFACE} == "xaw"
 LINK=		xawmidi
@@ -79,8 +83,8 @@ DOCLANG=	C ja_JP.ujis
 INTERFACE_DEPS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 .elif ${INTERFACE} == "xskin"
 LINK=		xskinmidi
-DOCFILES=       README.xskin
-DOCLANG=        C ja_JP.ujis
+DOCFILES=	README.xskin
+DOCLANG=	C ja_JP.ujis
 .else
 NO_BUILD=	yes
 NO_INSTALL=	yes
