@@ -126,6 +126,7 @@ include/xview.h
 lib/libjscript.so.%%LIBVER%%
 lib/libkab.so.%%LIBVER%%
 lib/libkdecore.so.%%LIBVER%%
+lib/libkdecore.la
 lib/libkdeui.so.%%LIBVER%%
 lib/libkfile.so.%%LIBVER%%
 lib/libkfm.so.%%LIBVER%%
