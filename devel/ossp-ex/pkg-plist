@@ -1,0 +1,6 @@
+bin/ex-config
+include/ex.h
+lib/libex.a
+lib/libex.la
+lib/libex.so
+lib/libex.so.10
