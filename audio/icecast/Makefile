@@ -18,14 +18,13 @@ WRKSRC=		${WRKDIR}/icecast-1.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libwrap
 
-do-configure:
-	cd ${WRKSRC} && ${SH} ./configure ${CONFIGURE_ARGS}
-	cd ${WRKSRC}/liveice && ${SH} ./configure ${CONFIGURE_ARGS}
+ALL_TARGET=	all mkpasswd
 
-do-build:
-	cd ${WRKSRC} && ${MAKE}
-	cd ${WRKSRC} && ${MAKE} mkpasswd
-	cd ${WRKSRC}/liveice && ${MAKE}
+post-configure:
+	@${MAKE} WRKSRC=${WRKSRC}/liveice do-configure
+
+post-build:
+	@${MAKE} WRKSRC=${WRKSRC}/liveice ALL_TARGET=all do-build
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icecast ${PREFIX}/sbin
