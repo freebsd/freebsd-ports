@@ -1,0 +1,16 @@
+--- src/format.c.orig	Fri Sep 22 09:45:19 2000
++++ src/format.c	Wed Oct 11 12:36:59 2000
+@@ -28,3 +28,5 @@
+ #include <math.h>
++#ifdef __linux__
+ #include <langinfo.h>
++#endif
+ #include <limits.h>
+@@ -108,2 +110,3 @@
+ 
++#ifdef __linux__
+ 	if (!date_order_cached) {
+@@ -123,2 +126,3 @@
+ 	}
++#endif
+ 
