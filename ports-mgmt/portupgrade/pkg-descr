@@ -1,9 +1,16 @@
-Portupgrade is a tool to upgrade installed packages via the port.
+Portupgrade is a very powerful tool to upgrade installed packages via
+the port.  It upgrades ports without reinstalling dependent packages
+by directly modifying the package info recorded in the files under
+/var/db/pkg.
 
-It upgrades ports without reinstalling dependent packages by directly
-modifying the package info recorded in the files under /var/db/pkg.
+This package also includes:
 
-You may want to use portversion which is a replacement of
-pkg_version(8) optimized and cooperative with portupgrade.
+portversion:
+	This is a replacement of pkg_version(8), which runs faster
+	than pkg_version and is cooperative with portupgrade.
+
+pkgdepfix:
+	This is an interactive tool to fix /var/db/pkg's @pkgdep /
+	+REQUIRED_BY discrepancies.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
