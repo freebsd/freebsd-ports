@@ -3,13 +3,15 @@
 # Date created:        15 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/03/14 12:33:56 kris Exp $
+# $Id: Makefile,v 1.3 1999/04/16 03:30:23 mharo Exp $
 #
 
-DISTNAME=	dejasearch11
-PKGNAME=	dejasearch-1.1
+DISTNAME=	dejasearch12
+PKGNAME=	dejasearch-1.2
 CATEGORIES=	news
-MASTER_SITES=	http://homemade.hypermart.net/dejasearch/
+MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
+		http://homemade.virtualave.net/dejasearch/ \
+		http://www.freebsd.org/~mharo/distfiles/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
