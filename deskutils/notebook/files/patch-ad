@@ -1,0 +1,44 @@
+--- programs/notebook/Make.header.orig	Mon Oct  4 20:49:51 1999
++++ programs/notebook/Make.header	Wed Jun 14 23:46:30 2000
+@@ -14,13 +14,14 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${CODEDIR} \
+ 	      	  -I${TREEDIR} \
+ 	      	  -I${TOOLBARDIR} \
+               -I${JCOREDIR} \
+               -I${JXDIR} \
+-              -I${ACE_ROOT}
++              -I${ACE_ROOT} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+ 
+@@ -37,15 +38,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.so 
+-#              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.a 
+-#              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+@@ -64,7 +56,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs notebook
++default: notebook
+ 
+ .PHONY : Makefiles
+ Makefiles:

@@ -1,0 +1,11 @@
+--- include/make/sys/FreeBSD-3.x_g++.orig	Wed Jun 14 01:44:51 2000
++++ include/make/sys/FreeBSD-3.x_g++	Wed Jun 14 01:45:00 2000
+@@ -35,7 +35,7 @@
+ # Comment this out if ACE or other code gives you warnings that
+ # you can't avoid.
+ 
+-J_DIE_ON_WARNING := -Werror
++#J_DIE_ON_WARNING := -Werror
+ 
+ # Uncomment this if istrstream is broken.  One way to check is to run
+ # testjcore/testJFileArray.
