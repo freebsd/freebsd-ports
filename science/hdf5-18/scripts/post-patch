@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^CFLAGS = -ansi -O"`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^CFLAGS = -ansi -O"`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -10,7 +10,7 @@ patch -p << END_OF_PATCH
 +#CFLAGS = -ansi -O
 END_OF_PATCH
 done
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^ZLIB_LIB = "`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^ZLIB_LIB = "`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -20,7 +20,7 @@ patch -p << END_OF_PATCH
 +#ZLIB_LIB = \$(TOP_SRCDIR)/hdf/zlib/libz.a
 END_OF_PATCH
 done
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^JPEG_LIB = "`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^JPEG_LIB = "`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -30,7 +30,7 @@ patch -p << END_OF_PATCH
 +#JPEG_LIB = \$(TOP_SRCDIR)/hdf/jpeg/libjpeg.a
 END_OF_PATCH
 done
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^ZLIBLIB="`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^ZLIBLIB="`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -43,7 +43,7 @@ patch -p << END_OF_PATCH
 END_OF_PATCH
 done
 
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^ZLIBLIB="`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^ZLIBLIB="`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -56,7 +56,7 @@ patch -p << END_OF_PATCH
 END_OF_PATCH
 done
 
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^JPEGLIB="`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^JPEGLIB="`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
@@ -69,7 +69,7 @@ patch -p << END_OF_PATCH
 END_OF_PATCH
 done
 
-for f in `find $1 -type f -name Makefile.in -print | xargs grep -l "^JPEGLIB="`
+for f in `find ${WRKSRC} -type f -name Makefile.in -print | xargs grep -l "^JPEGLIB="`
 do
 patch -p << END_OF_PATCH
 --- $f.orig
