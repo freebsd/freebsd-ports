@@ -103,7 +103,9 @@ CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+ldap-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+.if !defined(SENDMAIL_WITHOUT_SASLAUTHD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+.endif
 .else
 CONFLICTS+=	sendmail*+sasl2*-8.*
 .endif
