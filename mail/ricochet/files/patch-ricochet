@@ -5,7 +5,7 @@
  sub initialize { 
      my $self = shift; 
 -    my $rc = "$ENV{RICOCHET}" || "$ENV{HOME}/.ricochet"; $rc .= "/ricochetrc"; 
-+    my $rc = "$ENV{RICOCHET}" || -f "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
++    my $rc = "$ENV{RICOCHET}" || -d "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
 +    $rc .= "/ricochetrc"; 
      Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
      open (RC, $rc); 
