@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdick
-PORTVERSION=	0.6.4
+PORTVERSION=	0.7
 CATEGORIES=	korean python
 MASTER_SITES=	http://ddt.mirstyle.org/data/
 
