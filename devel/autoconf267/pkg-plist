@@ -21,9 +21,13 @@ share/autoconf/actypes.m4
 share/autoconf/acversion.m4
 share/autoconf/autoconf.m4
 share/autoconf/autoconf.m4f
+share/autoconf/config.guess
+share/autoconf/config.sub
 share/autoconf/install-sh
 share/autoconf/m4sh.m4
 share/autoconf/m4sugar.m4
+share/autoconf/missing
+share/autoconf/mkinstalldirs
 @dirrm share/autoconf
 @unexec install-info --delete %D/info/autoconf.info %D/info/dir
 @unexec install-info --delete %D/info/standards.info %D/info/dir
