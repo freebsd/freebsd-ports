@@ -1,0 +1,14 @@
+nut is nutrition software to record what you eat and analyze
+your meals for nutrient composition. The database included is
+the USDA Nutrient Database for Standard Reference, Release 15,
+which contains 6,220 foods and 117 nutrients. This database
+contains values for vitamins, minerals, fats, calories,
+protein, carbohydrates, fiber, etc., and includes the essential
+polyunsaturated fats, Omega-3 and Omega-6. Nutrient levels are
+expressed as a percentage of the Daily Value, the familiar
+standard of food labeling in the United States, but also can be
+fully customized. Recipes can be added, and graphs drawn. The
+program is completely menu-driven and there are no commands to
+learn.
+
+WWW: http://www.lafn.org/~av832/
