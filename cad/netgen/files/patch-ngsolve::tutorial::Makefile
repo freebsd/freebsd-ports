@@ -1,0 +1,47 @@
+--- ./ngsolve/tutorial/Makefile.orig	Tue Nov 16 09:57:27 2004
++++ ./ngsolve/tutorial/Makefile	Sun Nov 21 18:20:37 2004
+@@ -1,10 +1,12 @@
+-COMPILE = gcc -O2 -I../include -I../../libsrc/include -finline-limit=50000 -ftemplate-depth-99 -mcpu=pentium4 -funroll-loops -fforce-addr
++include ../libsrc/makefile.mach.$(MACHINE)
++
++COMPILE = $(CPLUSPLUS) $(CXXFLAGS) -I../include -I../../libsrc/include -finline-limit=50000 -ftemplate-depth-99 -funroll-loops -fforce-addr
+ # COMPILE = /opt/gcc40/bin/gcc -O2 -I../include -I../../libsrc/include -funroll-loops
+ # -finline-limit=10000 -march=pentium4 -fforce-addr  -ftemplate-depth-99 
+ # COMPILE = icc -xB -O3 -Ob2  -I../include -Qoption,c,-ip_ninl_max_stats=10000 -Qoption,c,-ip_ninl_min_stats=100 -Qoption,c,-ip_ninl_max_total_stats=4000
+ # COMPILE = icc -xN  -O3 -Ob2  -I../include -opt_report_fileopt.rep -Qoption,c,-ip_ninl_max_stats=10000 -Qoption,c,-ip_ninl_min_stats=100 -Qoption,c,-ip_ninl_max_total_stats=4000
+ 
+-stdlib = -lm -pthread -lstdc++
++stdlib = -lm $(PTHREAD_LIBS) $(SYSLIB2)
+ # stdlib = -L/opt/gcc40/lib -lm -pthread /opt/gcc40/lib/libstdc++.a
+ 
+ default:
+@@ -38,25 +40,25 @@
+ libngstd.a: ../ngstd/bitarray.cpp  ../ngstd/blockalloc.cpp   ../ngstd/evalfunc.cpp   ../ngstd/exception.cpp   ../ngstd/flags.cpp   ../ngstd/localheap.cpp   ../ngstd/symboltable.cpp    ../ngstd/table.cpp    ../ngstd/templates.cpp ../../libsrc/general/moveablemem.cpp ../../libsrc/general/dynamicmem.cpp ../../libsrc/general/ngexception.cpp
+ 	@-rm *.o
+ 	$(COMPILE) -c $?
+-	ar -r libngstd.a *.o 
++	$(AR) -r libngstd.a *.o 
+ 	@-rm *.o
+ 
+ libngbla.a: ../basiclinalg/bandmatrix.cpp ../basiclinalg/eigensystem.cpp ../basiclinalg/calcinverse.cpp ../basiclinalg/vecmat.cpp ../basiclinalg/cholesky.cpp
+ 	@-rm *.o
+ 	$(COMPILE) -c $?
+-	ar -r libngbla.a *.o 
++	$(AR) -r libngbla.a *.o 
+ 	@-rm *.o
+ 
+ libngla.a:
+ 	@-rm *.o
+ 	$(COMPILE) -c ../linalg/*.cpp
+-	ar -r libngla.a *.o 
++	$(AR) -r libngla.a *.o 
+ 	@-rm *.o
+ 
+ libngfem.a: ../fem/bdbequations.cpp ../fem/hdivhofe.cpp ../fem/coefficient.cpp ../fem/highorderfe.cpp ../fem/elementtopology.cpp ../fem/integrator.cpp ../fem/equilibrium.cpp ../fem/intrule.cpp ../fem/fastmat.cpp ../fem/l2hofe.cpp ../fem/finiteelement.cpp ../fem/maxwellintegrator.cpp ../fem/h1hofe.cpp ../fem/hcurlfe.cpp ../fem/recursive_pol.cpp ../fem/hcurlhofe.cpp ../fem/recursive_pol_trig.cpp ../fem/hdiv_equations.cpp ../fem/specialelement.cpp ../fem/hdivfe.cpp
+ 
+ 	@-rm *.o
+ 	$(COMPILE) -c $?
+-	ar -r libngfem.a *.o 
++	$(AR) -r libngfem.a *.o 
+ 	@-rm *.o
+ 

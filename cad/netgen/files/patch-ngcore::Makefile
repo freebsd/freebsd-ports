@@ -1,0 +1,28 @@
+--- ngcore/Makefile.orig	Fri Jul  2 23:21:25 2004
++++ ngcore/Makefile	Sun Nov 21 18:11:55 2004
+@@ -108,6 +108,7 @@
+ 	../libsrc/general/mystring.cpp 
+ #
+ #
++include ../libsrc/makefile.mach.$(MACHINE)
+ #
+ allsrc = $(main).cpp $(src)
+ #
+@@ -116,14 +117,14 @@
+ #
+ #
+ .cpp.o:
+-	gcc -c -O2 -w $< -o $(<:.cpp=.o) -I../libsrc/include -DNO_PARALLEL_THREADS
++	$(CPLUSPLUS) -c $(CXXFLAGS) -w $< -o $(<:.cpp=.o) -I../libsrc/include -DNO_PARALLEL_THREADS
+ #
+ $(main) : $(main).o libng.a
+-	gcc -w -o $@ $(main).o -L. -lng -lm -lpthread -lstdc++
++	$(CPLUSPLUS) -w -o $@ $(main).o -L. -lng -lm $(PTHREAD_LIBS) $(SYSLIB2)
+ #
+ #
+ libng.a	: $(src:.cpp=.o) 
+-	ar r libng.a $(src:.cpp=.o) 
++	$(AR) r libng.a $(src:.cpp=.o) 
+ #
+ clean:
+ 	-@rm -r ngcore *.o */*.o */*/*.o */*/*/*.o */*/ii_files
