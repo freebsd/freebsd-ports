@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fdp-tools
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ruhr.de/home/nathan/FreeBSD/
 
-MAINTAINER=	ue@nathan.ruhr.de
+MAINTAINER=	ue@FreeBSD.org
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
