@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 
 MAKE_APPS=	Finger GFractal GPuzzle HostAddress
 INSTALL_APPS=	Finger GFractal GPuzzle HostAddress

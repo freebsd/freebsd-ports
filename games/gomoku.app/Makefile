@@ -19,7 +19,6 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 

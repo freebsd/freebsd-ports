@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV+=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}"
 MAKE_ENV+=	ADDITIONAL_LIB_DIRS="-L${WRKSRC}/PCLib/shared_obj/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu"
-ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 

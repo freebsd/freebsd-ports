@@ -21,7 +21,6 @@ PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-ALL_TARGET=
 INSTALLS_SHLIB=	yes
 
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
