@@ -2378,6 +2378,8 @@ share/doc/gtkmm-2.0/docs/tutorial/html/index.html
 @dirrm share/doc/gtkmm-2.0/docs
 @dirrm share/doc/gtkmm-2.0
 @dirrm share/devhelp/books/gtkmm-2.0
+@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
 @dirrm lib/gtkmm-2.0/proc/pm
 @dirrm lib/gtkmm-2.0/proc/m4
 @dirrm lib/gtkmm-2.0/proc

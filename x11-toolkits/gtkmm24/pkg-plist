@@ -2077,8 +2077,8 @@ libdata/pkgconfig/pangomm-1.4.pc
 %%EXAMPLES%%@dirrm share/doc/gtkmm-%%API_VERSION%%/examples
 @unexec /bin/rmdir %D/share/doc/gtkmm-%%API_VERSION%% 2>/dev/null || /usr/bin/true
 %%PORTDOCS%%@dirrm share/devhelp/books/gtkmm-%%API_VERSION%%
-%%PORTDOCS%%@dirrm share/devhelp/books
-%%PORTDOCS%%@dirrm share/devhelp
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp/books 2> /dev/null || /usr/bin/true
+%%PORTDOCS%%@unexec /bin/rmdir %D/share/devhelp 2> /dev/null || /usr/bin/true
 @dirrm lib/gtkmm-%%API_VERSION%%/proc/m4
 @dirrm lib/gtkmm-%%API_VERSION%%/proc
 @dirrm lib/gtkmm-%%API_VERSION%%/include
