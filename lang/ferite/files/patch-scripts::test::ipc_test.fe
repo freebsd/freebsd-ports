@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- scripts/test/ipc_test.fe.orig	Wed Nov 21 10:01:07 2001
++++ scripts/test/ipc_test.fe	Wed Jan  9 12:05:55 2002
+@@ -16,7 +16,7 @@
+ myipc = new IpcObject();
+ 
+ Console.println ("::Connecting...");
+-myipc.connect ("/bin/bash");
++myipc.connect ("/bin/sh");
+ 
+ 
+ Console.println ("Choose one of the following options");

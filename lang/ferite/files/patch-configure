@@ -1,36 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Thu Nov 15 11:09:00 2001
-+++ configure	Thu Nov 15 18:26:26 2001
-@@ -261,7 +261,6 @@
- : ${ac_max_here_lines=38}
- 
- ac_unique_file="src/ferite.c"
--ac_subdirs_all="$ac_subdirs_all libs/ltdl"
- 
- # Initialize some variables set by options.
- ac_init_help=
-@@ -2666,18 +2665,6 @@
-   SET_MAKE="MAKE=${MAKE-make}"
- fi
- 
--  case $enable_ltdl_convenience in
--  no) { { echo "$as_me:2670: error: this package needs a convenience libltdl" >&5
--echo "$as_me: error: this package needs a convenience libltdl" >&2;}
--   { (exit 1); exit 1; }; } ;;
--  "") enable_ltdl_convenience=yes
--      ac_configure_args="$ac_configure_args --enable-ltdl-convenience" ;;
--  esac
--  LIBLTDL='${top_builddir}/''libltdl'/libltdlc.la
--  INCLTDL='-I${top_srcdir}/''libltdl'
--
--subdirs="$subdirs libs/ltdl"
--
- # Check whether --enable-shared or --disable-shared was given.
- if test "${enable_shared+set}" = set; then
-   enableval="$enable_shared"
-@@ -7096,13 +7083,13 @@
+--- configure.orig	Wed Jan  9 08:47:22 2002
++++ configure	Wed Jan  9 12:39:13 2002
+@@ -7096,13 +7096,13 @@
     { (exit 1); exit 1; }; }
  fi
  
@@ -47,7 +20,7 @@ $FreeBSD$
  cat >conftest.$ac_ext <<_ACEOF
  #line 7107 "configure"
  #include "confdefs.h"
-@@ -7150,7 +7137,7 @@
+@@ -7150,7 +7150,7 @@
  #define HAVE_LIBPTHREAD 1
  EOF
  
@@ -56,3 +29,27 @@ $FreeBSD$
  
  else
  
+@@ -7229,7 +7229,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lmysqlclient  $LIBS"
++LIBS="-L%%LOCALBASE%%/lib/mysql -lmysqlclient  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 7234 "configure"
+ #include "confdefs.h"
+@@ -7279,10 +7279,10 @@
+ fi
+ 
+ if test "$mysql" = yes; then
+-  mysql_LIBS=`mysql_config --libs`
+-  mysql_CFLAGS=`mysql_config --cflags`
+-  MYSQL_SOCKET=`mysql_config --socket`
+-  MYSQL_PORT=`mysql_config --port`
++  mysql_LIBS="-L%%LOCALBASE%%/lib/mysql -lmysqlclient -lz -lm -lcrypt"
++  mysql_CFLAGS="-I%%LOCALBASE%%/include/mysql"
++  MYSQL_SOCKET=""
++  MYSQL_PORT=""
+ 
+   sql_LIBS="$sql_LIBS $mysql_LIBS"
+   sql_CFLAGS="$sql_CFLAGS $mysql_CFLAGS"

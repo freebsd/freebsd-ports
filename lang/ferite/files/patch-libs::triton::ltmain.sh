@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- ltmain.sh.orig	Wed Jan  9 08:46:56 2002
-+++ ltmain.sh	Wed Jan  9 12:09:50 2002
+--- libs/triton/ltmain.sh.orig	Wed Jan  9 08:46:56 2002
++++ libs/triton/ltmain.sh	Wed Jan  9 12:09:50 2002
 @@ -958,6 +958,7 @@
  	;;
  

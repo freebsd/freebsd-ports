@@ -25,28 +25,37 @@ include/ferite/fstack.h
 include/ferite/fstructs.h
 include/ferite/futils.h
 include/ferite/fvariables.h
+include/triton.h
 lib/ferite/modules/array.so
 lib/ferite/modules/console.so
 lib/ferite/modules/file.so
+lib/ferite/modules/ipc.so
 lib/ferite/modules/math.so
 lib/ferite/modules/network.so
+lib/ferite/modules/reflection.so
 lib/ferite/modules/sql.so
 lib/ferite/modules/string.so
 lib/ferite/modules/system.so
 lib/ferite/modules/time.so
 lib/ferite/modules/xml.so
 lib/ferite/scripts/cgi/cgi.fe
+lib/ferite/scripts/test/array_in_script.fe
 lib/ferite/scripts/test/autoload.fe
 lib/ferite/scripts/test/error.fe
 lib/ferite/scripts/test/helloworld.fe
+lib/ferite/scripts/test/initialisers_non_function.fe
+lib/ferite/scripts/test/ipc_test.fe
 lib/ferite/scripts/test/loop.fe
 lib/ferite/scripts/test/mem.fe
 lib/ferite/scripts/test/namespace.fe
 lib/ferite/scripts/test/native_inheiritance.fe
 lib/ferite/scripts/test/recurse.fe
+lib/ferite/scripts/test/reflection.fe
 lib/ferite/scripts/test/regex.fe
+lib/ferite/scripts/test/static.fe
 lib/ferite/scripts/test/string.fe
 lib/ferite/scripts/test/super.fe
+lib/ferite/scripts/test/switch.fe
 lib/ferite/scripts/test/test.fe
 lib/ferite/scripts/test/test2.fe
 lib/ferite/scripts/test/testfncparams.fe
@@ -62,11 +71,10 @@ lib/libferite.so.0
 %%PORTDOCS%%share/doc/ferite/ROADMAP
 %%PORTDOCS%%share/doc/ferite/TODO
 %%PORTDOCS%%share/doc/ferite/manual.pdf
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo.xcf
 %%PORTDOCS%%share/doc/ferite/images/ferite_logo_black.png
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo_black_600x300.png
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo_colour.png
-%%PORTDOCS%%share/doc/ferite/images/ferite_logo_colour_blue.png
+share/ferite/config.h
+share/ferite/libtool
+share/ferite/shtool
 @dirrm include/ferite
 @dirrm lib/ferite/modules
 @dirrm lib/ferite/scripts/cgi
@@ -75,3 +83,4 @@ lib/libferite.so.0
 @dirrm lib/ferite
 %%PORTDOCS%%@dirrm share/doc/ferite/images
 %%PORTDOCS%%@dirrm share/doc/ferite
+@dirrm share/ferite

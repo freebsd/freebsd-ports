@@ -1,17 +1,17 @@
 
 $FreeBSD$
 
---- scripts/test/test.fe.orig	Thu Jul 26 01:10:56 2001
-+++ scripts/test/test.fe	Thu Nov 15 18:53:41 2001
+--- scripts/test/test.fe.orig	Sun Dec 23 14:17:44 2001
++++ scripts/test/test.fe	Wed Jan  9 11:25:18 2002
 @@ -17,17 +17,17 @@
     a_global_int = 10;
     testfile = new File();
     
 -   Console.println( "Printing Out All ext2 Partitions in /etc/fstab" );
 +   Console.println( "Printing Out All ufs Partitions in /etc/fstab" );
-    testfile->open( "/etc/fstab", "r" );
+    testfile->open( "/etc/fstab", "r", "" );
     Console.println( "Here." );
-    while( blam = testfile->readln() && ! testfile->eof() )
+    while( blam = testfile->readln(1024) && ! testfile->eof() )
     {
        if( blam =~ /
 -	 (\/dev\/[hs]d[a-g][1-9])   # device entry
@@ -19,11 +19,11 @@ $FreeBSD$
 -	 (\/[a-z]*(\/[a-z]*)*)      # mount point
 -	 [\ \t]*                    # whitespace
 -	 ext2                       # force adherance to ext2
-+	 (\/dev\/[adw][ad][0-9][0-9]?s?[1-4]?[a-h]) # device entry
-+	 [\ \t]*                                    # whitespace 
-+	 (\/[a-z]*(\/[a-z]*)*)                      # mount point
-+	 [\ \t]*                                    # whitespace
-+	 ufs                                        # force adherance to ufs
++	 (\/dev\/[adw][ad][0-9][0-9]?s?[1-4]?[a-h])   # device entry
++	 [\ \t]*                                      # whitespace 
++	 (\/[a-z]*(\/[a-z]*)*)                        # mount point
++	 [\ \t]*                                      # whitespace
++	 ufs                                          # force adherance to ufs
  	 /xoi   /* make usre it's not case sensitive */ 
          )
        {
