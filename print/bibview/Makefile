@@ -1,9 +1,9 @@
 # New ports collection makefile for:	bibview
-# Version required:	1.5
+# Version required:	2.2
 # Date created:		21 July 1997
-# Whom:			dbader@umiacs.umd.edu
+# Whom:			dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.2 1997/11/22 01:28:05 asami Exp $
+# $Id: Makefile,v 1.3 1997/11/24 08:40:52 tg Exp $
 #
 
 DISTNAME=	bibview-2.2
@@ -11,7 +11,7 @@ CATEGORIES=	databases print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
 
-MAINTAINER=	dbader@umiacs.umd.edu
+MAINTAINER=	dbader@eece.unm.edu
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bibview-2.2
