@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/cdecl
 bin/c++decl
 share/doc/cdecl/testset

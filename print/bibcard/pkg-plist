@@ -1,2 +1,3 @@
+@comment $FreeBSD$
 bin/bibcard
 lib/help/bt.info
