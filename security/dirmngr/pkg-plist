@@ -1,5 +1,5 @@
 bin/dirmngr
-share/locale/de/LC_MESSAGES/dirmngr.mo
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale
+%%NLS%%lib/charset.alias
+%%NLS%%share/locale/de/LC_MESSAGES/dirmngr.mo
+%%NLS%%share/locale/locale.alias
+%%NLS%%@dirrm share/locale/de/LC_MESSAGES

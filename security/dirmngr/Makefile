@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dirmngr
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/dirmngr
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A client for managing and downloading certificate revocation lists
@@ -24,7 +23,14 @@ USE_OPENLDAP=	yes
 USE_GETOPT_LONG=yes
 USE_LIBTOOL_VER=13
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 INFO=		dirmngr
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include <bsd.port.mk>
