@@ -3,7 +3,7 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.25 1999/01/11 05:03:10 steve Exp $
+# $Id: Makefile,v 1.26 1999/01/17 03:03:38 billf Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -19,6 +19,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+NO_LATEST_LINK= yes
 USE_X_PREFIX=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
