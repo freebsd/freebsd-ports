@@ -10,7 +10,7 @@ PORTVERSION=	4.0.99k
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/
 
-MAINTAINER=	pat@databits.net
+MAINTAINER=	ports@FreeBSD.org
 
 # ntp's configure script created by autoconf 2.14.1 doesn't work
 # if GNU_CONFIGURE is defined
