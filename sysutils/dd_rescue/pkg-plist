@@ -1,0 +1,3 @@
+bin/dd_rescue
+%%PORTDOCS%%%%DOCSDIR%%/README.dd_rescue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

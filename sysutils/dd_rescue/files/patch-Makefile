@@ -1,0 +1,12 @@
+--- Makefile.orig	Fri Oct 22 16:38:03 2004
++++ Makefile	Tue Mar 15 01:00:23 2005
+@@ -6,9 +6,7 @@
+ 
+ DESTDIR = 
+ 
+-CC = gcc
+ RPM_OPT_FLAGS = -O2 -Wall -g
+-CFLAGS = $(RPM_OPT_FLAGS) $(EXTRA_CFLAGS)
+ DEFINES = -DVERSION=\"$(VERSION)\"
+ INSTALL = install
+ INSTALLFLAGS = -s
