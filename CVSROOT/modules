@@ -5786,6 +5786,7 @@ ntfsprogs	ports/sysutils/ntfsprogs
 ntl		ports/math/ntl
 ntop		ports/net/ntop
 ntp-devel	ports/net/ntp-devel
+ntraceroute	ports/net/ntraceroute
 nttcp		ports/benchmarks/nttcp
 nucleus		ports/x11-fonts/nucleus
 nulib		ports/archivers/nulib
