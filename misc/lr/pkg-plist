@@ -1,0 +1,3 @@
+bin/lr
+%%PORTDOCS%%share/doc/lr/README
+%%PORTDOCS%%@dirrm share/doc/lr
