@@ -18,7 +18,7 @@ LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_LIBTOOL=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
