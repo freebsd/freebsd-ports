@@ -97,20 +97,20 @@ pre-fetch:
 	@${ECHO_MSG} "============================================================================"
 
 post-extract:
-	${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
+	@${TAR} xzf ${DISTDIR}/doc-html.tar.gz -C ${WRKDIR}
 
 post-patch:
-	${REINPLACE_CMD} -e "s#-O2#${CFLAGS}#" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s#-O2#${CFLAGS}#;s#\"-pthread#\"${PTHREAD_LIBS}#" ${WRKSRC}/configure
 .if ${OSVERSION} < 500035 && !defined(WITH_SYSTEM_GCC)
-	${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
+	@${LN} -s /usr/include/g++/FlexLexer.h ${WRKSRC}/include
 .endif
 
 post-configure:
-	${FIND} ${WRKSRC}/demo -name Makefile | ${XARGS} \
+	@${FIND} ${WRKSRC}/demo -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s#/doc/mico/examples#${EXAMPLESDIR:S#^${PREFIX}##}#"
-	${REINPLACE_CMD} -e "s#/doc/mico/examples#${EXAMPLESDIR:S#^${PREFIX}##}#" ${WRKSRC}/demo/MakeVars
-	${REINPLACE_CMD} -e "s#ministl##" ${WRKSRC}/include/Makefile
-	${RM} -f ${WRKSRC}/include/mico/*.orig ${WRKSRC}/include/coss/*.orig
+	@${REINPLACE_CMD} -e "s#/doc/mico/examples#${EXAMPLESDIR:S#^${PREFIX}##}#" ${WRKSRC}/demo/MakeVars
+	@${REINPLACE_CMD} -e "s#ministl##" ${WRKSRC}/include/Makefile
+	@${RM} -f ${WRKSRC}/include/mico/*.orig ${WRKSRC}/include/coss/*.orig
 
 post-install:
 	@for i in `${GREP} '^lib/lib.*so$$' ${TMPPLIST}`; do \
