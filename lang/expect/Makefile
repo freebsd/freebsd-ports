@@ -54,6 +54,9 @@ MAN1+=		expectk.1
 MAN3=		libexpect.3
 .endif
 
+post-patch:
+	${TOUCH} ${WRKSRC}/configure
+
 post-install:
 	${LN} -sf libexpect${LIBEXPECT_VER}.so.1 \
 		${PREFIX}/lib/libexpect${LIBEXPECT_VER}.so
