@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An utility port, installing hierarchy of common GNOME directories
+COMMENT=	A utility port that creates the GNOME directory tree
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
