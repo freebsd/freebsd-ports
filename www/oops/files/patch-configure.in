@@ -1,13 +1,15 @@
---- configure.in.orig	Thu Feb 12 13:38:59 2004
-+++ configure.in	Thu Feb 12 13:44:17 2004
-@@ -315,7 +315,6 @@
+--- configure.in.orig	Tue Oct 14 00:49:36 2003
++++ configure.in	Mon Mar 15 03:38:44 2004
+@@ -315,8 +315,7 @@
  
  	  ;;
  freebsd*) CFLAGS="$CFLAGS -D_REENTRANT -DFREEBSD -D_THREAD_SAFE -DFD_SETSIZE=2048 -I."
 -	  CXX=g++
- 	  CXXSOFLAGS="-shared -Xlinker -Bstatic"
+-	  CXXSOFLAGS="-shared -Xlinker -Bstatic"
++	  CXXSOFLAGS="-shared"
  	  LIBS="$LEXLIB $LIBS"
  	  if test "$large_files" = "yes" ; then
+ 		## FreeBSD need no any special flags for 64bit files
 @@ -328,14 +327,14 @@
            rel=`uname -r`
            case "$rel" in
