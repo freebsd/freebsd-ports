@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-# To depend on postgresql-client, set USE_POSTGRESQL=yes.
+# To depend on postgresql-client, set USE_PGSQL=yes.
 # See Mk/bsd.port.mk for more info
 
 PORTNAME=	postgresql
