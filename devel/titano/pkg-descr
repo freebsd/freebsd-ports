@@ -1,0 +1,13 @@
+Titano is an IDE built with Glade using GTK+. It uses GtkEditor as a main
+editing widget though you will be able to use your favorite editor as an
+editing component in Titano via Bonobo technology.
+
+Features (some of features are only planned and may appear not very soon):
+ o Project managment with automake/autoconf support. 
+ o Support for different languages. 
+ o Bonobo editor components. 
+ o Integrated debugger. 
+ o Code exploring tools. 
+ o And many other things you may need for developing. 
+
+WWW: http://titano.sourceforge.net/
