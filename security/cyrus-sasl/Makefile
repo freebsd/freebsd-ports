@@ -10,7 +10,7 @@ PORTVERSION=	1.5.28
 PORTREVISION=	2
 CATEGORIES=	security ipv6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	FreeBSD-Maintainer@westbend.net
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -225,12 +225,12 @@ pre-configure:
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@if [ -f ${PREFIX}/sbin/saslauthd ]; then \
-		mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd2; \
+		${MV} ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd2; \
 		if [ -f ${PREFIX}/man/man8/saslauthd.8 ]; then \
-			mv ${PREFIX}/man/man8/saslauthd.8 \
+			${MV} ${PREFIX}/man/man8/saslauthd.8 \
 			   ${PREFIX}/man/man8/saslauthd2.8; \
 		elif [ -f ${PREFIX}/man/man8/saslauthd.8.gz ]; then \
-			mv ${PREFIX}/man/man8/saslauthd.8.gz \
+			${MV} ${PREFIX}/man/man8/saslauthd.8.gz \
 			   ${PREFIX}/man/man8/saslauthd2.8.gz; \
 		fi; \
 	fi
@@ -262,15 +262,15 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/java/doc/draft-weltman-java-sasl-02.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .endif
-	@mv ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd1
-	@mv ${PREFIX}/man/man8/saslauthd.8 ${PREFIX}/man/man8/saslauthd1.8
+	@${MV} ${PREFIX}/sbin/saslauthd ${PREFIX}/sbin/saslauthd1
+	@${MV} ${PREFIX}/man/man8/saslauthd.8 ${PREFIX}/man/man8/saslauthd1.8
 	@if [ -f ${PREFIX}/sbin/saslauthd2 ]; then \
-		mv ${PREFIX}/sbin/saslauthd2 ${PREFIX}/sbin/saslauthd; \
+		${MV} ${PREFIX}/sbin/saslauthd2 ${PREFIX}/sbin/saslauthd; \
 		if [ -f ${PREFIX}/man/man8/saslauthd2.8 ]; then \
-			mv ${PREFIX}/man/man8/saslauthd2.8 \
+			${MV} ${PREFIX}/man/man8/saslauthd2.8 \
 			   ${PREFIX}/man/man8/saslauthd.8; \
 		elif [ -f ${PREFIX}/man/man8/saslauthd2.8.gz ]; then \
-			mv ${PREFIX}/man/man8/saslauthd2.8.gz \
+			${MV} ${PREFIX}/man/man8/saslauthd2.8.gz \
 			   ${PREFIX}/man/man8/saslauthd.8.gz; \
 		fi; \
 	fi
