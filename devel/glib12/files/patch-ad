@@ -1,15 +1,15 @@
---- configure.in.orig	Sun Jan 17 23:32:45 1999
-+++ configure.in	Tue Jan 19 11:43:21 1999
-@@ -247,7 +247,7 @@
+--- configure.in.orig	Thu Jan 28 09:59:01 1999
++++ configure.in	Thu Jan 28 23:13:01 1999
+@@ -250,7 +250,7 @@
  AC_CHECK_HEADERS(values.h, AC_DEFINE(HAVE_VALUES_H))
  
  # Check for some functions
--AC_CHECK_FUNCS(localtime_r rand_r lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll)
-+AC_CHECK_FUNCS(localtime_r rand_r lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp)
+-AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp poll)
++AC_CHECK_FUNCS(lstat strerror strsignal memmove vsnprintf strcasecmp strncasecmp)
  
  # Check for sys_errlist
  AC_MSG_CHECKING(for sys_errlist)
-@@ -682,11 +682,14 @@
+@@ -732,11 +732,13 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -21,7 +21,6 @@
 +	*-*-freebsd2.2* | *-*-freebsd3* | *-*-freebsd4*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -pthread"
-+			G_THREAD_LIBS=""
 +			have_poll=no
 +		else
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE"
@@ -29,7 +28,7 @@
  		;;
      esac
  
-@@ -735,6 +738,9 @@
+@@ -785,6 +788,9 @@
  dnl ****************************************
  dnl *** GLib POLL* compatibility defines ***
  dnl ****************************************
