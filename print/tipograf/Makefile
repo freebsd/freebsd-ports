@@ -8,17 +8,20 @@
 
 PORTNAME=	tipograf
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.falk-henrich.de/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for a2ps
 
+BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter
 
 USE_REINPLACE=	yes
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-qt-dir=${QT_PREFIX}
 USE_GMAKE=	yes
 
