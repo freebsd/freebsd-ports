@@ -80,6 +80,7 @@
     SUBDIR += namg
     SUBDIR += newmail
     SUBDIR += nmh
+    SUBDIR += nullmailer
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-IMAP-Admin
