@@ -75,6 +75,7 @@
     SUBDIR += impress
     SUBDIR += jed
     SUBDIR += jedit
+    SUBDIR += jedit-devel
     SUBDIR += jext
     SUBDIR += joe
     SUBDIR += joe-devel
