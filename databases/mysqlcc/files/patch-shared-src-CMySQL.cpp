@@ -1,10 +1,12 @@
---- shared/src/CMySQL.cpp.orig	Thu Aug  5 12:26:14 2004
-+++ shared/src/CMySQL.cpp	Thu Aug  5 12:29:53 2004
-@@ -451,7 +451,11 @@
+--- shared/src/CMySQL.cpp.orig	Sun Dec 14 00:10:44 2003
++++ shared/src/CMySQL.cpp	Sun Dec 26 14:24:43 2004
+@@ -450,8 +450,12 @@
+   
    if (!isConnected())
      return false;
-   
-+#if  ( MYSQL_VERSION_ID == 40103 ) || ( MYSQL_VERSION_ID == 50001 )
+-  
++
++#if  ( MYSQL_VERSION_ID == 40103 ) || ( MYSQL_VERSION_ID == 50001 ) || ( MYSQL_VERSION_ID == 40107 )
 +  if (mysql_shutdown(mysql,SHUTDOWN_DEFAULT) != 0)
 +#else
    if (mysql_shutdown(mysql) != 0)
