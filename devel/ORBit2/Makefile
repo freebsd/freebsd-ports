@@ -7,6 +7,7 @@
 
 PORTNAME=	ORBit2
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -28,8 +29,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@find ${WRKSRC} -type f | xargs ${GREP} -l LINC_THREADSAFE | \
-		xargs ${REINPLACE_CMD} -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l LINC_THREADSAFE | \
+		${XARGS} ${REINPLACE_CMD} -e 's|LINC_THREADSAFE|G_THREADS_ENABLED|g'
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/src/idl-compiler/orbit-idl-backend.c \
+		${WRKSRC}/src/orb/orb-core/orbit-typelib.c
 
 post-install:
 	@${ECHO_CMD} "ORBIIOPIPv4=0" > ${PREFIX}/etc/orbit2rc.default
