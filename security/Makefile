@@ -51,6 +51,7 @@
     SUBDIR += drwebd
     SUBDIR += dsniff
     SUBDIR += fakebo
+    SUBDIR += fakeident
     SUBDIR += find-zlib
     SUBDIR += find_ddos
     SUBDIR += firewalk
