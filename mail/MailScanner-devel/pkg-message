@@ -5,7 +5,7 @@
 	 / ___ \| |   | | | |___| |\  | | |  | | |_| | |\  |
 	/_/   \_\_|   |_| |_____|_| \_| |_| |___\___/|_| \_|
 							
-	See PREFIX/share/doc/MailScanner/README.FreeBSD.port,
+	See %%PREFIX%%/share/doc/MailScanner/README.FreeBSD.port,
 	http://www.mailscanner.info, the man pages MailScanner and
 	MailScanner.conf for further instructions.
 
@@ -20,5 +20,15 @@
 	within this directory. Without this step you will only have
 	.sample files instead of real .conf files and report
 	templates.
+
+	If you are upgrading your port you might consider 
+	running
+
+	make renew-wrapper
+	make renew-autoupdate
+	make renew-reports
+
+	to update your virus-wrappers, autoupdates, reports and
+	languages.conf
 
 *************************************************************************
