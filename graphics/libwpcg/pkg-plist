@@ -1,1 +1,6 @@
+include/OPCODE-1.2/Opcode.h
+include/WPCG/WPCG.h
+lib/libOPCODE.a
 lib/libWPCG.a
+@dirrm include/WPCG
+@dirrm include/OPCODE-1.2
