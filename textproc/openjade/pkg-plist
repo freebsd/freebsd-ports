@@ -29,3 +29,4 @@ share/sgml/openjade/pdfjadetex.ini
 share/sgml/openjade/style-sheet.dtd
 share/sgml/openjade/unicode.sty
 @dirrm share/sgml/openjade
+@unexec rmdir %D/share/sgml 2>/dev/null || true
