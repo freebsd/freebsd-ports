@@ -8,7 +8,7 @@
 PORTNAME=	metakit
 PORTVERSION=	2.4.2
 PORTREVISION=	32
-CATEGORIES=	databases python
+CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
@@ -30,8 +30,7 @@ INSTALLS_SHLIB=	yes
 MAKE_ARGS=	CXXFLAGS="-Dq4_INLINE ${CFLAGS} -fpermissive"
 
 .if defined(METAKIT_WITH_PYTHON)
-# BROKEN for python 2.2
-PYTHON_VERSION=	python2.1
+USE_PYTHON=	yes
 CONFIGURE_ARGS+=	--enable-python
 CATEGORIES+=	python
 PLIST_SUB+=	WITH_PYTHON=""
