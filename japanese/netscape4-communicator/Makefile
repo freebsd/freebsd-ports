@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.21 1999/05/21 01:10:54 sada Exp $
+# $Id: Makefile,v 1.22 1999/05/22 21:36:46 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -43,7 +43,7 @@ MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
 MANDIR=		${MANPREFIX}/man/${MANLANG}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
-PORTKIT?=	ja-netscape-portkit.1999.0502.tar.gz
+PORTKIT=	ja-netscape-portkit.1999.0613.tar.gz
 PORTKIT_DIR=	${WRKDIR}/portkit
 PORTKIT_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
