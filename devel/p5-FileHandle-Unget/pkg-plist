@@ -3,4 +3,4 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Unget
 @dirrm %%SITE_PERL%%/FileHandle
 @unexec rmdir %D/%%SITE_PERL%%/FileHandle 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle/Unget 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/FileHandle 2>/dev/null || true
