@@ -19,12 +19,12 @@ MASTER_SITE_SUBDIR=	freetype2
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
-BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 BUILD_DEPENDS+=	${PORTSDIR}/print/freetype2/work/freetype-${PORTVERSION}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.6:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 MAKE_ENV=	TOP="${PORTSDIR}/print/freetype2/work/freetype-${PORTVERSION}"
 
 FT_PROGRAMS=	ftdump ftlint ftmulti ftstring fttimer ftview

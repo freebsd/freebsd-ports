@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR= kdbg/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-
+USE_LIBTOOL=	yes
 USE_KDEBASE_VER=2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kde-version=2
