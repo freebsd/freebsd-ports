@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Nov 25 18:39:27 2002
++++ Makefile.in	Mon Nov 25 18:40:07 2002
+@@ -4,7 +4,7 @@
+ 
+ .PHONY: clean mrclean distclean boa docs
+ 
+-all:	boa
++all:	boa docs
+ 
+ boa:
+ 	(cd src && $(MAKE) $(MFLAGS))

@@ -1,5 +1,5 @@
---- defines.h.orig	Fri Mar 22 12:30:45 2002
-+++ defines.h	Fri Mar 22 12:31:58 2002
+--- src/defines.h.orig	Mon Nov 25 18:25:31 2002
++++ src/defines.h	Mon Nov 25 18:26:09 2002
 @@ -27,7 +27,7 @@
  /***** Change this, or use -c on the command line to specify it *****/
  
@@ -9,3 +9,12 @@
  #endif
  
  /***** Change this via the CGIPath configuration value in boa.conf *****/
+@@ -53,7 +53,7 @@
+ 
+ #define REQUEST_TIMEOUT				60
+ 
+-#define MIME_TYPES_DEFAULT                      "/etc/mime.types"
++#define MIME_TYPES_DEFAULT                      "%%PREFIX%%/etc/mime.types"
+ #define CGI_MIME_TYPE                           "application/x-httpd-cgi"
+ 
+ /***** CHANGE ANYTHING BELOW THIS LINE AT YOUR OWN PERIL *****/

@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.13
+PORTVERSION=	0.94.14.r7
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	sysadmin@alexdupre.com
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -21,26 +22,25 @@ GNU_CONFIGURE=	yes
 MAN8=		boa.8
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/defines.h \
-		${WRKSRC}/../boa.conf
-
-post-build:
-	@cd ${WRKSRC}/../docs && ${MAKE} boa.info boa.html boa.txt
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
+		${WRKSRC}/examples/boa.conf ${WRKSRC}/src/defines.h
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/boa ${PREFIX}/sbin
-	@${INSTALL_PROGRAM} ${WRKSRC}/boa_indexer ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/../docs/boa.8 ${PREFIX}/man/man8
-	@${INSTALL_DATA} ${WRKSRC}/../boa.conf ${PREFIX}/etc/boa.conf.sample
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/boa ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/boa_indexer ${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/docs/boa.8 ${PREFIX}/man/man8
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../examples/* ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/boa.conf ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/cgi-test.cgi ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/nph-test.cgi ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/resolver.pl ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.texi ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../docs/boa_banner.png ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../docs/boa.info ${PREFIX}/info
+	@${INSTALL_DATA} ${WRKSRC}/docs/boa.texi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/boa.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/boa.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/boa_banner.png ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/boa.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/boa.info ${PREFIX}/info/dir
 .endif
 
