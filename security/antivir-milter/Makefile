@@ -6,9 +6,10 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.antivir.de/freebsd/
+MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
+		http://www.antivir.de/dateien/antivir/release/
 DISTNAME=	avfbmlt
 EXTRACT_SUFX=	.tgz
 
@@ -49,13 +50,13 @@ post-patch:
 do-install:
 	@${INSTALL} -d -o daemon -g daemon -m 755 ${PREFIX}/AntiVir
 	@${INSTALL} -o daemon -g daemon -m 755 ${WRKSRC}/bin/antivir \
-		${PREFIX}/AntiVir/antivir-dist
+		${PREFIX}/AntiVir/antivir-dist_avfbmlt
 .if !exists(${PREFIX}/AntiVir/antivir)
 	@${INSTALL} -o daemon -g daemon -m 755 ${WRKSRC}/bin/antivir \
 		${PREFIX}/AntiVir
 .endif
 	@${INSTALL} -o daemon -g daemon -m 644 ${WRKSRC}/vdf/antivir.vdf \
-		${PREFIX}/AntiVir/antivir.vdf-dist
+		${PREFIX}/AntiVir/antivir.vdf-dist_avfbmlt
 .if !exists(${PREFIX}/AntiVir/antivir.vdf)
 	@${INSTALL} -o daemon -g daemon -m 644 ${WRKSRC}/vdf/antivir.vdf \
 		${PREFIX}/AntiVir
