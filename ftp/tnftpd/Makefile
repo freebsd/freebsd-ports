@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	tnftpd
-PORTVERSION=	2.0b3
-PORTREVISION=	1
+PORTVERSION=	20031217
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
-DISTNAME=	${PORTNAME}-2.0-beta3
 
 MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
@@ -18,6 +16,8 @@ COMMENT=	Enhanced ftp server from NetBSD
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+CFLAGS+=	-DSUPPORT_UTMP
 
 .if defined(WITH_SOCKS5)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
