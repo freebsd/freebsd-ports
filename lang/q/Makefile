@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
@@ -16,7 +16,7 @@ MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
 COMMENT=	Q -- equational programming language
 
 BUILD_DEPENDS=	${LOCALBASE}/dx/lib_freebsd/libDXL.a:${PORTSDIR}/graphics/opendx
-LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		gii.0:${PORTSDIR}/devel/libgii \
