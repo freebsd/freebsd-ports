@@ -1,0 +1,7 @@
+***************************************************************
+Snortreport has been installed in %%PREFIX%%/www/snortreport.
+Change into this directory and make changes to the config
+file (srconf.php).
+Also modify your web server configuration to let access to this
+directory.
+***************************************************************
