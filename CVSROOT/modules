@@ -1178,6 +1178,7 @@ dsssl-docbook-cygnus	ports/textproc/dsssl-docbook-cygnus
 dsssl-docbook-modular	ports/textproc/dsssl-docbook-modular
 dtd-catalogs	ports/textproc/dtd-catalogs
 dte		ports/editors/dte
+dtv		ports/graphics/dtv
 du		src/usr.bin/du
 du2ps		ports/sysutils/du2ps
 dump		src/sbin/dump
