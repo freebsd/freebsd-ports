@@ -1,4 +1,3 @@
-@cwd /usr/local
 man/man1/zip.1
 man/man1/zipgrep.1
 bin/zip
