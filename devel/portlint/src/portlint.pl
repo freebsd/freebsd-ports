@@ -4,7 +4,6 @@
 # implemented by:
 #	Jun-ichiro itojun Itoh <itojun@itojun.org>
 #	Yoshishige Arai <ryo2@on.rim.or.jp>
-# visit ftp://ftp.foretune.co.jp/pub/tools/portlint/ for latest version.
 #
 # Copyright(c) 1997 by Jun-ichiro Itoh <itojun@itojun.org>.
 # All rights reserved.
@@ -14,7 +13,7 @@
 # bsd.port.mk.  There are significant differences in those so you'll have
 # hard time upgrading this...
 #
-# $Id: portlint.pl,v 1.65 1998/03/07 04:17:55 itojun Exp $
+# $Id: portlint.pl,v 1.1 1999/01/05 12:23:28 itojun Exp $
 #
 
 $err = $warn = 0;
