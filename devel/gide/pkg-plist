@@ -3,18 +3,38 @@ bin/gide
 include/gtkeditor.h
 include/gtkhint.h
 include/gtksctext.h
+lib/gide/plugins/%%VERSION%%/libgide_asciitable.a
+lib/gide/plugins/%%VERSION%%/libgide_asciitable.so
+lib/gide/plugins/%%VERSION%%/libgide_asciitable.so.0
+lib/gide/plugins/%%VERSION%%/libgide_calculator.a
+lib/gide/plugins/%%VERSION%%/libgide_calculator.so
+lib/gide/plugins/%%VERSION%%/libgide_calculator.so.0
+lib/gide/plugins/%%VERSION%%/libgide_docstat.a
+lib/gide/plugins/%%VERSION%%/libgide_docstat.so
+lib/gide/plugins/%%VERSION%%/libgide_docstat.so.0
+lib/gide/plugins/%%VERSION%%/libgide_sample.a
+lib/gide/plugins/%%VERSION%%/libgide_sample.so
+lib/gide/plugins/%%VERSION%%/libgide_sample.so.0
+lib/gide/plugins/%%VERSION%%/libgide_text.a
+lib/gide/plugins/%%VERSION%%/libgide_text.so
+lib/gide/plugins/%%VERSION%%/libgide_text.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-share/gnome/gIDE/extra/README
-share/gnome/gIDE/extra/compile_sets
-share/gnome/gIDE/extra/functions.highlight
-share/gnome/gIDE/extra/functions.ignore
-share/gnome/gIDE/extra/gide.conf
-share/gnome/gIDE/extra/gide.scm
-share/gnome/gIDE/extra/glob
-share/gnome/gIDE/extra/glob.scm
-share/gnome/gIDE/extra/patterns
-share/gnome/gIDE/extra/patterns.scm
+share/gIDE/extra/README
+share/gIDE/extra/compile_sets
+share/gIDE/extra/functions.highlight
+share/gIDE/extra/functions.ignore
+share/gIDE/extra/gide.conf
+share/gIDE/extra/gide.scm
+share/gIDE/extra/glob
+share/gIDE/extra/glob.scm
+share/gIDE/extra/patterns
+share/gIDE/extra/patterns.scm
+share/gnome/apps/Development/gIDE.desktop
 share/locale/fr/LC_MESSAGES/gIDE.mo
-@dirrm share/gnome/gIDE/extra
-@dirrm share/gnome/gIDE
+@unexec rmdir %D/share/gnome/apps/Development 2>/dev/null || true
+@dirrm share/gIDE/extra
+@dirrm share/gIDE
+@dirrm lib/gide/plugins/%%VERSION%%
+@dirrm lib/gide/plugins
+@dirrm lib/gide

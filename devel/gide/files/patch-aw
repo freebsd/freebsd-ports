@@ -1,0 +1,14 @@
+--- src/GtkEditor/gtkeditor/gtkeditor-regex.h.orig	Mon Oct 11 09:49:57 1999
++++ src/GtkEditor/gtkeditor/gtkeditor-regex.h	Mon Feb 28 01:35:42 2000
+@@ -24,7 +24,11 @@
+ #define GTKEDITOR_REGEX_H
+ 
+ #include <sys/types.h>
++#ifdef __FreeBSD__
++#include <gnuregex.h>
++#else
+ #include <regex.h>
++#endif
+ #include <string.h>
+ 
+ #include <gtk/gtk.h>
