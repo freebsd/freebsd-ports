@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.99 1996/09/03 01:34:59 ache Exp $
+# $Id: Makefile,v 1.100 1996/09/15 10:33:18 torstenb Exp $
 #
 
     SUBDIR += FWF
@@ -26,6 +26,7 @@
     SUBDIR += specJava
     SUBDIR += stars
     SUBDIR += sunclock
+    SUBDIR += swisswatch
     SUBDIR += sxpc
     SUBDIR += tk
     SUBDIR += tk4
