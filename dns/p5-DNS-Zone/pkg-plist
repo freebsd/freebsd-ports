@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/DNS-Zone/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone.pm
-lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/Label.pm
-lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/Record.pm
-lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File/Default.pm
-%%PORTDOCS%%share/doc/p5-DNS-Zone/README
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/DNS-Zone
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DNS 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/p5-DNS-Zone
+%%SITE_PERL%%/DNS/Zone.pm
+%%SITE_PERL%%/DNS/Zone/File.pm
+%%SITE_PERL%%/DNS/Zone/File/Default.pm
+%%SITE_PERL%%/DNS/Zone/Label.pm
+%%SITE_PERL%%/DNS/Zone/Record.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Zone/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DNS-Zone
+@dirrm %%SITE_PERL%%/DNS/Zone/File
+@dirrm %%SITE_PERL%%/DNS/Zone
+@unexec rmdir %D/%%SITE_PERL%%/DNS 2>/dev/null || true
