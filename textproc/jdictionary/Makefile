@@ -7,31 +7,30 @@
 
 PORTNAME=	jdictionary
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=jdictionary
-DISTNAME=	jdictionary-1_8
+MASTER_SITE_SUBDIR=${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	JDictionary - Platform independent, plugin based dictionary
+COMMENT=	Platform independent, plugin based dictionary
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/jdictionary
-NO_BUILD=yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_BUILD=	yes
 
-do-configure:
-	@${SED} "s|%%PREFIX%%|${PREFIX}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${FILESDIR}/jdictionary.sh > ${WRKDIR}/jdictionary.sh
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+SUB_FILES=	jdictionary.sh
 
 do-install:
-	@if [ ! -d ${PREFIX}/share/java/classes/jdictionary ]; then \
-		${MKDIR} ${PREFIX}/share/java/classes/jdictionary; fi
-	${CP} ${WRKSRC}/jdictionary.jar                                \
-		${PREFIX}/share/java/classes/jdictionary/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/jdictionary.jar ${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/jdictionary.sh ${PREFIX}/bin/jdictionary
 
 .include <bsd.port.mk>

@@ -1,0 +1,38 @@
+# New ports collection makefile for:    jdictionary (plugins)
+# Date created:				15.12.2004
+# Whom:					hq@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	jdictionary
+EXTRACT_SUFX=	#
+
+MAINTAINER?=	janos.mohacsi@bsd.hu
+COMMENT?=	JDictionary plugin master port
+
+RUN_DEPENDS+=	jdictionary:${PORTSDIR}/textproc/jdictionary
+
+# WARNING: USE_JAVA is set to be able to use JAVASHAREDIR.
+#          Please make sure that JAVA_VERSION here is the same as in Makefile.
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
+
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	#
+EXTRACT_AFTER_ARGS=	${WRKDIR}
+NO_BUILD=	yes
+
+DATADIR=	${JAVASHAREDIR}/jdictionary/Plugins
+
+PLIST=		${MASTERDIR}/pkg-plist.plugin
+MD5_FILE=	${.CURDIR}/distinfo
+DESCR=		${.CURDIR}/pkg-descr
+PLIST_SUB+=	DISTNAME=${DISTNAME}
+
+do-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${DATADIR}/
+
+.include <bsd.port.mk>
