@@ -1,5 +1,5 @@
---- clients/lcdproc/cpu.c.orig	Thu Jan  3 13:32:42 2002
-+++ clients/lcdproc/cpu.c	Tue May  6 05:08:51 2003
+--- clients/lcdproc/cpu.c.orig	Tue Jan 18 19:58:47 2005
++++ clients/lcdproc/cpu.c	Tue Jan 18 19:59:52 2005
 @@ -60,6 +60,9 @@
  #include <sys/dkstat.h>
  #endif
