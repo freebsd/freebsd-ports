@@ -2,6 +2,7 @@
 #jtokenizer kakasi # 'make WITH_KAKASI=yes install'
 #jtokenizer MeCab # 'make WITH_MECAB=yes install'
 spam-cutoff 0.6
+db gdbm
 
 ## IMAP 
 ## (bsfilter --imap --imap-fetch-unflagged --insert-flag --insert-probability --imap-folder-spam inbox.spam inbox)
