@@ -460,16 +460,16 @@ MASTER_SITE_KDE+=	\
 MASTER_SITE_MOZILLA+= \
 	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/mozilla.org/%SUBDIR%/ \
+	http://mozilla.gnusoft.net/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
-	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
-	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://ftp.belnet.be/packages/mozilla/%SUBDIR%/ \
+	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
+	ftp://ftp.uni-bayreuth.de/pub/packages/netscape/mozilla/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
-	ftp://ftp.sunsite.kth.se/mirrors/ftp.mozilla.org/%SUBDIR%/ \
-	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/mozilla.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	ftp://ftp.rediris.es/mirror/mozilla/%SUBDIR%/ \
+	ftp://ftp.kaist.ac.kr/pub/mozilla/%SUBDIR%/ \
+	ftp://mozilla.mirror.pacific.net.au/mozilla/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
 
 MASTER_SITE_NETBSD+=	\
