@@ -7,6 +7,7 @@
 
 PORTNAME=	rtfreader
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.fiction.net/blong/programs/
 DISTNAME=	ms-rtf
