@@ -7,18 +7,13 @@
 #
 
 PORTNAME=	libsocket++
-PORTVERSION=	1.12.7
+PORTVERSION=	1.12.8
 CATEGORIES=	net
-MASTER_SITES=	http://members.aon.at/~hstraub/linux/socket++/ \
-		ftp://ftp.umsicht.fhg.de/pub/unix/language/C++/class-libraries/ \
-		ftp://ftp.par.univie.ac.at/pub/unix/c++/  \
-		ftp://jungfrau.ptf.hro.nl/pub/socket/
+MASTER_SITES=	http://www.hstraub.at/linux/downloads/src/
 DISTNAME=	socket++-${PORTVERSION}
 
 MAINTAINER=	narvi@haldjas.folklore.ee
 COMMENT=	A C++ wrapper library to the sockets
-
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

@@ -1,0 +1,1347 @@
+Index: ChangeLog
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/ChangeLog,v
+retrieving revision 1.12
+diff -u -r1.12 ChangeLog
+--- ChangeLog	6 Dec 2002 17:02:33 -0000	1.12
++++ ChangeLog	6 Mar 2003 16:37:19 -0000
+@@ -1,3 +1,9 @@
++2003-03-06  Herbert Straub <h.straub@aon.at>
++	* Feature: class sockbuf new methods: setname(sockname), getname
++
++	* Feature: all methods of class sockbuf throw error description:
++	method name and sockname
++
+ 2002-12-06  Herbert Straub <h.straub@aon.at>
+ 	* Bugfix: correcting the COPYING, NEWS and README3 file
+ 
+Index: configure.in
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/configure.in,v
+retrieving revision 1.6
+diff -u -r1.6 configure.in
+--- configure.in	6 Dec 2002 17:02:33 -0000	1.6
++++ configure.in	6 Mar 2003 15:39:52 -0000
+@@ -12,7 +12,7 @@
+ #  ? :+1 : ?   == just some internal changes, nothing breaks but might work 
+ #                 better
+ # CURRENT : REVISION : AGE
+-LIBSOCKET_SO_VERSION=0:0:0
++LIBSOCKET_SO_VERSION=1:0:0
+ 
+ SOCKET_VERSION=1.12.8
+ AC_SUBST(SOCKET_VERSION)
+@@ -48,7 +48,7 @@
+ dnl check for header files
+ AC_LANG_SAVE
+ AC_LANG_CPLUSPLUS
+-AC_CHECK_HEADERS(string.h memory.h)
++AC_CHECK_HEADERS(string.h memory.h sstream string)
+ AC_CHECK_HEADER(_G_config.h, AC_DEFINE(_S_LIBGXX))
+ AC_LANG_RESTORE
+ AC_HEADER_SYS_WAIT
+Index: socket++/ftp.h
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/ftp.h,v
+retrieving revision 1.1
+diff -u -r1.1 ftp.h
+--- socket++/ftp.h	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/ftp.h	9 Mar 2003 12:18:34 -0000
+@@ -11,7 +11,7 @@
+ #ifndef FTP_H
+ #define FTP_H
+ 
+-#include <protocol.h>
++#include <socket++/protocol.h>
+ #ifndef WIN32
+ #	include <sys/param.h>
+ #else
+Index: socket++/pipestream.h
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/pipestream.h,v
+retrieving revision 1.1
+diff -u -r1.1 pipestream.h
+--- socket++/pipestream.h	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/pipestream.h	9 Mar 2003 12:09:53 -0000
+@@ -11,7 +11,7 @@
+ #ifndef _PIPESTREAM_H
+ #define	_PIPESTREAM_H
+ 
+-#include <sockstream.h>
++#include <socket++/sockstream.h>
+ 
+ class ipipestream: public isockstream {
+ protected:
+Index: socket++/protocol.h
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/protocol.h,v
+retrieving revision 1.1
+diff -u -r1.1 protocol.h
+--- socket++/protocol.h	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/protocol.h	9 Mar 2003 12:16:57 -0000
+@@ -11,7 +11,7 @@
+ #ifndef PROTOCOL_H
+ #define PROTOCOL_H
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ 
+ class protocol: public iosockstream {
+ public:
+Index: socket++/sockstream.cpp
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/sockstream.cpp,v
+retrieving revision 1.1
+diff -u -r1.1 sockstream.cpp
+--- socket++/sockstream.cpp	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/sockstream.cpp	11 Mar 2003 15:40:21 -0000
+@@ -62,6 +62,12 @@
+ 
+ #include <config.h>
+ #include <socket++/sockstream.h>
++#ifdef HAVE_SSTREAM
++#include <sstream>
++#else
++#include <strstream>
++#endif
++#include <string>
+ 
+ #ifndef WIN32
+ 	EXTERN_C_BEGIN
+@@ -317,9 +323,9 @@
+     delete rep;
+     if (c == SOCKET_ERROR) 
+ #ifndef WIN32
+-			throw sockerr (errno, "sockbuf::~sockbuf");
++			throw sockerr (errno, "sockbuf::~sockbuf", sockname.c_str());
+ #else
+-			throw sockerr(WSAGetLastError(), "sockbuf::~sockbuf");
++			throw sockerr(WSAGetLastError(), "sockbuf::~sockbuf", sockname.c_str());
+ #endif
+   }
+ }
+@@ -342,6 +348,13 @@
+     }
+     catch (int wlen) {
+       // write was not completely successful
++#ifdef HAVE_SSTREAM
++      stringstream sb;
++#else
++      strstream sb;
++#endif
++      string err ("sockbuf::sync");
++      err += "(" + sockname + ")";
+       if (wlen) {
+ 	// reposition unwritten chars
+ 	char* pto = pbase ();
+@@ -350,8 +363,10 @@
+ 	while (pfrom < pptr ()) *pto++ = *pfrom++;
+ 	setp (pbase (), (char_type*) rep->pend);
+ 	pbump (len);
++	sb << " wlen=(" << wlen << ")";
++	err += sb.rdbuf()->str();
+       }
+-      throw sockerr (errno, "sockbuf::sync");
++      throw sockerr (errno, err.c_str ());
+     }
+ 
+     setp (pbase (), (char_type*) rep->pend);
+@@ -463,19 +478,19 @@
+ void sockbuf::bind (sockAddr& sa)
+ {
+   if (::bind (rep->sock, sa.addr (), sa.size ()) == -1)
+-    throw sockerr (errno, "sockbuf::bind");
++    throw sockerr (errno, "sockbuf::bind", sockname.c_str());
+ }
+ 
+ void sockbuf::connect (sockAddr& sa)
+ {
+   if (::connect(rep->sock, sa.addr (), sa.size()) == -1)
+-    throw sockerr (errno, "sockbuf::connect");
++    throw sockerr (errno, "sockbuf::connect", sockname.c_str());
+ }
+ 
+ void sockbuf::listen (int num)
+ {
+   if (::listen (rep->sock, num) == -1)
+-    throw sockerr (errno, "sockbuf::listen");
++    throw sockerr (errno, "sockbuf::listen", sockname.c_str());
+ }
+ 
+ sockbuf::sockdesc sockbuf::accept (sockAddr& sa)
+@@ -484,7 +499,7 @@
+   int soc = -1;
+   if ((soc = ::accept (rep->sock, sa.addr (), (socklen_t*) // LN
+                        &len)) == -1)
+-    throw sockerr (errno, "sockbuf::sockdesc");
++    throw sockerr (errno, "sockbuf::sockdesc", sockname.c_str());
+   return sockdesc (soc);
+ }
+ 
+@@ -492,42 +507,43 @@
+ {
+   int soc = -1;
+   if ((soc = ::accept (rep->sock, 0, 0)) == -1)
+-    throw sockerr (errno, "sockbuf::sockdesc");
++    throw sockerr (errno, "sockbuf::sockdesc", sockname.c_str());
+   return sockdesc (soc);
+ }
+ 
+ int sockbuf::read (void* buf, int len)
+ {
+-  if (rep->rtmo != -1 && is_readready (rep->rtmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::read");
++  if (rep->rtmo != -1 && is_readready (rep->rtmo)==0) {
++    throw sockerr (ETIMEDOUT, "sockbuf::read", sockname.c_str());
++  }
+   
+   if (rep->oob && atmark ())
+     throw sockoob ();
+ 
+   int rval = 0;
+   if ((rval = ::read (rep->sock, (char*) buf, len)) == -1)
+-    throw sockerr (errno, "sockbuf::read");
++    throw sockerr (errno, "sockbuf::read", sockname.c_str());
+   return rval;
+ }
+ 
+ int sockbuf::recv (void* buf, int len, int msgf)
+ {
+   if (rep->rtmo != -1 && is_readready (rep->rtmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::recv");
++    throw sockerr (ETIMEDOUT, "sockbuf::recv", sockname.c_str());
+   
+   if (rep->oob && atmark ())
+     throw sockoob ();
+ 
+   int rval = 0;
+   if ((rval = ::recv (rep->sock, (char*) buf, len, msgf)) == -1)
+-    throw sockerr (errno, "sockbuf::recv");
++    throw sockerr (errno, "sockbuf::recv", sockname.c_str());
+   return rval;
+ }
+ 
+ int sockbuf::recvfrom (sockAddr& sa, void* buf, int len, int msgf)
+ {
+   if (rep->rtmo != -1 && is_readready (rep->rtmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::recvfrom");
++    throw sockerr (ETIMEDOUT, "sockbuf::recvfrom", sockname.c_str());
+   
+   if (rep->oob && atmark ())
+     throw sockoob ();
+@@ -538,7 +554,7 @@
+   if ((rval = ::recvfrom (rep->sock, (char*) buf, len,
+                           msgf, sa.addr (), (socklen_t*) // LN
+                           &sa_len)) == -1)
+-    throw sockerr (errno, "sockbuf::recvfrom");
++    throw sockerr (errno, "sockbuf::recvfrom", sockname.c_str());
+   return rval;
+ }
+ 
+@@ -547,7 +563,7 @@
+ // of sockerr.
+ {
+   if (rep->stmo != -1 && is_writeready (rep->stmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::write");
++    throw sockerr (ETIMEDOUT, "sockbuf::write", sockname.c_str());
+   
+   int wlen=0;
+   while(len>0) {
+@@ -564,7 +580,7 @@
+ // of sockerr.
+ {
+   if (rep->stmo != -1 && is_writeready (rep->stmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::send");
++    throw sockerr (ETIMEDOUT, "sockbuf::send", sockname.c_str());
+   
+   int wlen=0;
+   while(len>0) {
+@@ -581,7 +597,7 @@
+ // of sockerr.
+ {
+   if (rep->stmo != -1 && is_writeready (rep->stmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::sendto");
++    throw sockerr (ETIMEDOUT, "sockbuf::sendto", sockname.c_str());
+   
+   int wlen=0;
+   while(len>0) {
+@@ -600,13 +616,13 @@
+ int sockbuf::recvmsg (msghdr* msg, int msgf)
+ {
+   if (rep->rtmo != -1 && is_readready (rep->rtmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::recvmsg");
++    throw sockerr (ETIMEDOUT, "sockbuf::recvmsg", sockname.c_str());
+   
+   if (rep->oob && atmark ())
+     throw sockoob ();
+ 
+   int rval = ::recvmsg(rep->sock, msg, msgf);
+-  if (rval == -1) throw sockerr (errno, "sockbuf::recvmsg");
++  if (rval == -1) throw sockerr (errno, "sockbuf::recvmsg", sockname.c_str());
+   return rval;
+ }
+ 
+@@ -615,7 +631,7 @@
+ // of sockerr.
+ {
+   if (rep->stmo != -1 && is_writeready (rep->stmo)==0)
+-    throw sockerr (ETIMEDOUT, "sockbuf::sendmsg");
++    throw sockerr (ETIMEDOUT, "sockbuf::sendmsg", sockname.c_str());
+   
+   int wlen = ::sendmsg (rep->sock, msg, msgf);
+   if (wlen == -1) throw 0;
+@@ -648,7 +664,7 @@
+   tv.tv_usec = wp_usec;
+   
+   int ret = select (rep->sock+1, &fds, 0, 0, (wp_sec == -1) ? 0: &tv);
+-  if (ret == -1) throw sockerr (errno, "sockbuf::is_readready");
++  if (ret == -1) throw sockerr (errno, "sockbuf::is_readready", sockname.c_str());
+   return ret;
+ }
+ 
+@@ -663,7 +679,7 @@
+   tv.tv_usec = wp_usec;
+   
+   int ret = select (rep->sock+1, 0, &fds, 0, (wp_sec == -1) ? 0: &tv);
+-  if (ret == -1) throw sockerr (errno, "sockbuf::is_writeready");
++  if (ret == -1) throw sockerr (errno, "sockbuf::is_writeready", sockname.c_str());
+   return ret;
+ }
+ 
+@@ -678,7 +694,7 @@
+   tv.tv_usec = wp_usec;
+   
+   int ret = select (rep->sock+1, 0, 0, &fds, (wp_sec == -1) ? 0: &tv);
+-  if (ret == -1) throw sockerr (errno, "sockbuf::is_exceptionpending");
++  if (ret == -1) throw sockerr (errno, "sockbuf::is_exceptionpending", sockname.c_str());
+   return ret;
+ }
+ 
+@@ -698,21 +714,21 @@
+     shutdown (shut_write);
+     break;
+   }
+-  if (::shutdown(rep->sock, sh) == -1) throw sockerr (errno, "sockbuf::shutdown");
++  if (::shutdown(rep->sock, sh) == -1) throw sockerr (errno, "sockbuf::shutdown", sockname.c_str());
+ }
+ 
+ int sockbuf::getopt (int op, void* buf, int len, int level) const
+ {
+     if (::getsockopt (rep->sock, level, op, (char*) buf, (socklen_t*) // LN
+                       &len) == -1)
+-    throw sockerr (errno, "sockbuf::getopt");
++    throw sockerr (errno, "sockbuf::getopt", sockname.c_str());
+   return len;
+ }
+ 
+ void sockbuf::setopt (int op, void* buf, int len, int level) const
+ {
+   if (::setsockopt (rep->sock, level, op, (char*) buf, len) == -1)
+-    throw sockerr (errno, "sockbuf::setopt");
++    throw sockerr (errno, "sockbuf::setopt", sockname.c_str());
+ }
+ 
+ sockbuf::type sockbuf::gettype () const
+@@ -884,11 +900,11 @@
+ #ifndef WIN32
+ 	int arg;
+   if (::ioctl (rep->sock, SIOCATMARK, &arg) == -1)
+-    throw sockerr (errno, "sockbuf::atmark");
++    throw sockerr (errno, "sockbuf::atmark", sockname.c_str());
+ #else
+ 	unsigned long arg = 0;
+   if (::ioctlsocket(rep->sock, SIOCATMARK, &arg) == SOCKET_ERROR)
+-    throw sockerr (WSAGetLastError(), "sockbuf::atmark");
++    throw sockerr (WSAGetLastError(), "sockbuf::atmark", sockname.c_str());
+ #endif // !WIN32
+   return arg!=0;
+ }
+@@ -900,7 +916,7 @@
+ {
+   int arg;
+   if (::ioctl (rep->sock, SIOCGPGRP, &arg) == -1)
+-    throw sockerr (errno, "sockbuf::pgrp");
++    throw sockerr (errno, "sockbuf::pgrp", sockname.c_str());
+   return arg;
+ }
+ 
+@@ -910,7 +926,7 @@
+ {
+   int old = pgrp ();
+   if (::ioctl (rep->sock, SIOCSPGRP, &new_pgrp) == -1)
+-    throw sockerr (errno, "sockbuf::pgrp");
++    throw sockerr (errno, "sockbuf::pgrp", sockname.c_str());
+   return old;
+ }
+ 
+@@ -920,10 +936,10 @@
+ {
+   if (set) {
+     if (::ioctl (rep->sock, FIOCLEX, 0) == -1)
+-      throw sockerr (errno, "sockbuf::closeonexec");
++      throw sockerr (errno, "sockbuf::closeonexec", sockname.c_str());
+   } else {
+     if (::ioctl (rep->sock, FIONCLEX, 0) == -1)
+-      throw sockerr (errno, "sockbuf::closeonexec");
++      throw sockerr (errno, "sockbuf::closeonexec", sockname.c_str());
+   }
+ }
+ #endif // !WIN32
+@@ -935,10 +951,10 @@
+ 	long arg;
+ #ifndef WIN32  
+   if (::ioctl (rep->sock, FIONREAD, &arg) == -1)
+-    throw sockerr (errno, "sockbuf::nread");
++    throw sockerr (errno, "sockbuf::nread", sockname.c_str());
+ #else
+ 	if (::ioctlsocket (rep->sock, FIONREAD, (unsigned long *) &arg) == SOCKET_ERROR)
+-    throw sockerr (WSAGetLastError(), "sockbuf::nread");
++    throw sockerr (WSAGetLastError(), "sockbuf::nread", sockname.c_str());
+ #endif // !WIN32
+   return arg;
+ }
+@@ -959,11 +975,11 @@
+ #ifndef WIN32
+   int arg = set;
+   if (::ioctl (rep->sock, FIONBIO, &arg) == -1)
+-    throw sockerr (errno, "sockbuf::nbio");
++    throw sockerr (errno, "sockbuf::nbio", sockname.c_str());
+ #else
+   unsigned long arg = (set)?1:0;
+   if (::ioctlsocket (rep->sock, FIONBIO, &arg) == -1)
+-    throw sockerr (WSAGetLastError(), "sockbuf::nbio");
++    throw sockerr (WSAGetLastError(), "sockbuf::nbio", sockname.c_str());
+ #endif // !WIN32
+ }
+ 
+@@ -974,7 +990,7 @@
+ {
+   int arg = set;
+   if (::ioctl (rep->sock, FIOASYNC, &arg) == -1)
+-    throw sockerr (errno, "sockbuf::async");
++    throw sockerr (errno, "sockbuf::async", sockname.c_str());
+ }
+ #endif // !WIN32
+ 
+Index: socket++/sockstream.h
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/sockstream.h,v
+retrieving revision 1.1
+diff -u -r1.1 sockstream.h
+--- socket++/sockstream.h	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/sockstream.h	11 Mar 2003 15:42:14 -0000
+@@ -26,6 +26,9 @@
+ //
+ // Version: 1.2 2002-07-25 Herbert Straub 
+ // 	Improved Error Handling - extending the sockerr class by cOperation
++// 2003-03-06 Herbert Straub
++// 	adding sockbuf::getname und setname (sockname)
++// 	sockbuf methods throw method name + sockname
+ 
+ #ifndef _SOCKSTREAM_H
+ #define	_SOCKSTREAM_H
+@@ -35,6 +38,7 @@
+ #include <ctype.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <string>
+ #include <cstdio>
+ #ifndef WIN32
+ #	include <sys/types.h>
+@@ -47,8 +51,6 @@
+ #	pragma comment(lib, "Wininet")
+ #endif
+ 
+-#define ERRTXT_LENGTH 50
+-
+ using namespace std;
+ 
+ #ifdef __linux__
+@@ -58,22 +60,32 @@
+ // socket exception classes
+ class sockerr {
+   int  err;
+-  char cOperation[ERRTXT_LENGTH];
++  string text;
+ public:
+   sockerr (int e, const char *operation = NULL): err (e) {
+-	if (operation == NULL) {
+-		cOperation[0] = '\0';
+-	} else if (strlen (operation) < sizeof (cOperation)-1) {
+-		strcpy (cOperation, operation);
+-	} else {
+-		strncpy (cOperation, operation, sizeof(cOperation)-1);
+-		cOperation[sizeof(cOperation)-1] = '\0';
++	if (operation != NULL) {
++		text = operation;
++	}
++  }
++  sockerr (int e, const char *operation, const char *specification) {
++	if (operation != NULL)
++		text = operation;
++	if (specification != NULL) {
++		text += "(";
++		text += specification;
++		text += ")";
+ 	}
+-	
++  }
++  sockerr (int e, const string &operation): err (e) {
++	text = operation;
++  }
++  sockerr (const sockerr &O) {
++	  err = O.err;
++	  text = O.text;
+   }
+ 
+   const char* what () const { return "sockerr"; }
+-  const char* operation () const { return cOperation; }
++  const char* operation () const { return text.c_str(); }
+ 
+ //  int errno () const { return err; }
+   int serrno () const { return err; } // LN
+@@ -187,6 +199,7 @@
+   };
+ 
+   sockcnt* rep;  // counts the # refs to sock
++  string		sockname; // name of sockbuf - Herbert Straub
+ 
+ #if 0
+   virtual sockbuf*      setbuf (char_type* s, int_type* n);
+@@ -283,7 +296,11 @@
+   bool                  atmark    () const;  
+   long                  nread     () const;
+   long                  howmanyc  () const;
+-  void                  nbio      (bool set=true) const;
++  void                  nbio      (bool set=true) const;
++  inline void		setname	  (const char *name);
++  inline void		setname	  (const string &name);
++  inline const string&	getname	  ();
++
+ #ifndef WIN32
+   void                  async     (bool set=true) const;
+ 	int                   pgrp      () const;
+@@ -328,5 +345,20 @@
+ // manipulators
+ extern osockstream& crlf (osockstream&);
+ extern osockstream& lfcr (osockstream&);
++
++// inline
++
++void sockbuf::setname (const char *name)
++{
++	sockname = name;
++}
++void sockbuf::setname (const string &name)
++{
++	sockname = name;
++}
++const string& sockbuf::getname ()
++{
++	return sockname;
++}
+ 
+ #endif	// _SOCKSTREAM_H
+Index: socket++/sockunix.h
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/socket++/sockunix.h,v
+retrieving revision 1.1
+diff -u -r1.1 sockunix.h
+--- socket++/sockunix.h	25 Nov 2002 11:47:51 -0000	1.1
++++ socket++/sockunix.h	9 Mar 2003 12:02:36 -0000
+@@ -11,7 +11,7 @@
+ #ifndef _SOCKUNIX_H
+ #define	_SOCKUNIX_H
+ 
+-#include <sockstream.h>
++#include <socket++/sockstream.h>
+ #include <sys/un.h>
+ 
+ class sockunixaddr: public sockAddr, public sockaddr_un {
+Index: test/Makefile.in
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/Makefile.in,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 Makefile.in
+--- test/Makefile.in	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/Makefile.in	11 Mar 2003 16:45:06 -0000
+@@ -7,7 +7,7 @@
+ CXXFLAGS = @CXXFLAGS@
+ LDFLAGS  = @LDFLAGS@
+ 
+-LIBS = -L$(srcdir)/.. -lsocket++ @NETWORK_LIBS@
++LIBS = -L$(srcdir)/.. -L$(srcdir)/../socket++/.libs -lsocket++ @NETWORK_LIBS@
+ 
+ TESTSRCS = tdunread.C tdunwrite.C \
+ 	tdinread.C tdinwrite.C \
+@@ -29,7 +29,8 @@
+         tcftp.C \
+ 	tbind-0.C tbind-1.C \
+         tsig-0.C \
+-	test_sockerr.C
++	test_sockerr.C \
++	simple_httpd.C
+ 
+ TESTOBJS = $(TESTSRCS:.C=.o)
+ TESTS = $(TESTSRCS:.C=)
+@@ -39,7 +40,7 @@
+ .SUFFIXES: .o .C .cc
+ 
+ .cc.o .C.o:
+-	$(CXX) -c $(CXXFLAGS) -I$(srcdir) -I$(srcdir)/.. $<
++	$(CXX) -c $(CXXFLAGS) -I$(srcdir) -I$(srcdir)/.. -I$(srcdir)/socket++ $<
+ 
+ .PHONY: check
+ check: testall.out
+Index: test/simple_httpd.C
+===================================================================
+RCS file: test/simple_httpd.C
+diff -N test/simple_httpd.C
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ test/simple_httpd.C	11 Mar 2003 16:39:54 -0000
+@@ -0,0 +1,150 @@
++/* simple_httpd.C
++ * -- Copyright (C) 2003 by Herbert Straub
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; if not, write to the Free Software
++ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ */
++
++#include <config.h>
++#include <socket++/fork.h>
++#include <socket++/sig.h>
++#include <socket++/sockinet.h>
++#include <sys/stat.h>
++#include <iostream>
++#include <fstream>
++#ifdef HAVE_SSTREAM
++#include <sstream>
++#else
++#include <strstream>
++#endif
++
++int process_request (iosockinet *sock);
++void get_filesize (const char *name, string &buffer);
++
++int main (int argc, char **argv)
++{
++	class hnd: public sig::hnd {
++		public:
++		int id;
++		hnd (int signo): sig::hnd (signo), id (signo) {};
++		hnd (int signo, int i): sig::hnd (signo), id (1) {};
++		void operator () (int s) {
++			cout << "handler for " << id << endl;
++		}
++	};
++	sockinetbuf sin (sockbuf::sock_stream);
++	Fork *pF;
++
++	sin.bind ();
++
++	cout << "localhost = " << sin.localhost() << endl;
++	cout << "localport = " << sin.localport() << endl;
++
++	sin.listen ();
++
++	for (;;) {
++		iosockinet *sock;
++		sock = new iosockinet (sin.accept ());
++		pF = new Fork (0, 1);
++		if (pF->is_child ()) {
++			sock->rdbuf()->keepalive (1);
++			process_request (sock);
++			return (0);
++		}
++	}
++}
++
++int process_request (iosockinet *sock)
++{
++	string buffer;
++	string filename; 
++	ifstream file;
++
++	try {
++	while (1) {
++		getline (*sock, buffer);
++		buffer[buffer.length()-1] = '\n';
++		cout << "buffer: " << buffer << endl;
++		if (sock->eof())
++			break;
++		if (buffer.compare (0, 4, "quit") == 0)
++			break;
++		if (buffer.length() == 0)
++			break;
++		if (buffer[0] == '\n')
++			break;
++		if (buffer.compare (0, 3, "GET") == 0)
++			filename.assign (buffer, 4, buffer.rfind (" HTTP")-3);
++	}
++	}
++	catch (sockerr s) {
++		cout << "catched " << endl;
++		goto END;
++	}
++	
++	//filename.insert (0, ".");
++	filename.replace (filename.length()-1, 1, "");
++	cout << "Filename: " << filename << endl;
++	file.open (filename.c_str());
++	if (file.bad() || !file.is_open() || !file.good()) {
++		cout << "Error opening file: " << filename << endl;
++		goto END;
++	}
++	*sock << "HTTP/1.1 200 OK\r\n";
++	*sock << "Server: socket++ Testserver\r\n";
++	get_filesize (filename.c_str(), buffer);
++	*sock << "Content-Length: " << buffer << "\r\n";
++	*sock << "Connection: close\r\n";
++	*sock << "Content-Type: plain/text; charset=iso-8859-1\r\n";
++	*sock << "\r\n";
++	sock->flush();
++	try {
++	for (getline(file, buffer); !file.eof(); getline(file,buffer)) {
++		cout << "Sending Buffer: " << buffer << endl;
++		*sock << buffer << "\r\n";
++	}
++	sock->flush();
++	}
++	catch (sockerr e) {
++		cout << "Catched sockerr" << endl;
++	}
++	file.close ();
++END:
++	try {
++		sock->rdbuf()->shutdown(sockbuf::shut_readwrite);
++	}
++	catch (...) 
++	{
++		// if the client break the connection, then
++		// the shutdown method throws sockerr
++	}
++	delete sock;
++
++	return 0;
++}
++
++void get_filesize (const char *name, string &buffer)
++{
++	struct stat buf;
++#ifdef HAVE_SSTREAM
++      stringstream sb;
++#else
++      strstream sb;
++#endif
++
++	if (stat (name, &buf) == -1) 
++		buf.st_size = 0;
++	sb << buf.st_size;
++	buffer = sb.rdbuf()->str();
++}
+Index: test/tbind-0.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tbind-0.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tbind-0.C
+--- test/tbind-0.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tbind-0.C	9 Mar 2003 12:19:06 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ 
+ int main ()
+ {
+Index: test/tbind-1.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tbind-1.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tbind-1.C
+--- test/tbind-1.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tbind-1.C	9 Mar 2003 12:19:25 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ 
+ int main ()
+ {
+Index: test/tcecho.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tcecho.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tcecho.C
+--- test/tcecho.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tcecho.C	9 Mar 2003 12:17:17 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <echo.h>
++#include <socket++/echo.h>
+ #include <stdlib.h>
+ 
+ int main (int ac, char** av)
+Index: test/tcftp.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tcftp.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tcftp.C
+--- test/tcftp.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tcftp.C	9 Mar 2003 12:18:10 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <ftp.h>
++#include <socket++/ftp.h>
+ 
+ // sunos does not prototype this in stdio.h
+ extern "C" char* getpass (char* prompt); 
+Index: test/tcsmtp.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tcsmtp.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tcsmtp.C
+--- test/tcsmtp.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tcsmtp.C	9 Mar 2003 12:17:43 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <smtp.h>
++#include <socket++/smtp.h>
+ #include <stdio.h>
+ #include <pwd.h>
+ #include <unistd.h>
+Index: test/tdinread.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tdinread.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tdinread.C
+--- test/tdinread.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tdinread.C	9 Mar 2003 12:03:13 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ 
+ int main(int ac, char** av)
+ {
+Index: test/tdinwrite.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tdinwrite.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tdinwrite.C
+--- test/tdinwrite.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tdinwrite.C	9 Mar 2003 12:03:35 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ 
+Index: test/tdunread.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tdunread.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tdunread.C
+--- test/tdunread.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tdunread.C	9 Mar 2003 12:05:21 -0000
+@@ -8,7 +8,8 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockunix.h>
++#include <iostream>
++#include <socket++/sockunix.h>
+ #include <unistd.h>
+ #include <stdio.h> // solaris2.3 perror is here
+ #include <sys/stat.h> // solaris 2.3 chmod is here
+Index: test/tdunwrite.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tdunwrite.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tdunwrite.C
+--- test/tdunwrite.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tdunwrite.C	9 Mar 2003 12:02:55 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockunix.h>
++#include <socket++/sockunix.h>
+ #include <stdlib.h>
+ 
+ void terminate (void) { exit (1); }
+Index: test/test_sockerr.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/test_sockerr.C,v
+retrieving revision 1.1
+diff -u -r1.1 test_sockerr.C
+--- test/test_sockerr.C	8 Oct 2002 12:37:31 -0000	1.1
++++ test/test_sockerr.C	9 Mar 2003 12:20:20 -0000
+@@ -17,7 +17,9 @@
+  */
+ 
+ 
+-#include <sockstream.h>
++#include <socket++/sockstream.h>
++
++void f1 ();
+ 
+ main () 
+ {
+@@ -31,4 +33,18 @@
+ 	} catch (...) {
+ 		cout << "Catching void" << endl;
+ 	}
++
++	try {
++		f1();
++	}  catch (sockerr e) {
++		cout << "Catching sockeer with " << e.serrno () << " and "
++		     << e.operation () << endl;
++	} catch (...) {
++		cout << "Catching void" << endl;
++	}
++}
++
++void f1 ()
++{
++	throw (sockerr (311, "Test Error", "f1"));
+ }
+Index: test/testall.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/testall.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 testall.C
+--- test/testall.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/testall.C	9 Mar 2003 12:12:19 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
+ #include <unistd.h>
+ #include <stdio.h>
+ 
+Index: test/tfork.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tfork.C,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 tfork.C
+--- test/tfork.C	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/tfork.C	9 Mar 2003 12:14:58 -0000
+@@ -8,7 +8,7 @@
+ // Version: 12Jan97 1.11
+ 
+ #include <iostream>
+-#include <Fork.h>
++#include <socket++/fork.h>
+ 
+ using namespace std;
+ 
+Index: test/tfork0.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tfork0.C,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 tfork0.C
+--- test/tfork0.C	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/tfork0.C	9 Mar 2003 12:15:26 -0000
+@@ -8,7 +8,7 @@
+ // Version: 12Jan97 1.11
+ 
+ #include <iostream>
+-#include <Fork.h>
++#include <socket++/fork.h>
+ 
+ using namespace std;
+ 
+Index: test/thostnames.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/thostnames.C,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 thostnames.C
+--- test/thostnames.C	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/thostnames.C	9 Mar 2003 12:14:05 -0000
+@@ -26,7 +26,7 @@
+ // 	Test bind and improved Error Handling
+ 
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <ctype.h>
+ #include <string.h>
+ 
+@@ -51,7 +51,9 @@
+     return 1;
+   }
+ 
++  sio.rdbuf()->setname ("Testsocket");
+   cout << "rdbuf: " << (unsigned int) sio.rdbuf() << "\n";
++  cout << "socketname: " << sio.rdbuf()->getname() << endl;
+ 
+   try {
+   sockinetaddr addrInterface (av[3]);
+Index: test/tnntp.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tnntp.C,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 tnntp.C
+--- test/tnntp.C	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/tnntp.C	9 Mar 2003 12:13:04 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <stdlib.h>
+ 
+ static int send_cmd(const char*, iosockstream&);
+@@ -16,7 +16,7 @@
+ int main()
+ {
+ 	iosockinet     sio(sockbuf::sock_stream);
+-	sio->connect("news.xund.magwien.gv.at", "nntp", "tcp");
++	sio->connect("localhost", "nntp", "tcp");
+ 
+ 	send_cmd(0, sio);
+ 	
+Index: test/tpipe.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tpipe.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tpipe.C
+--- test/tpipe.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tpipe.C	9 Mar 2003 12:09:24 -0000
+@@ -8,7 +8,8 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
++#include <iostream>
+ 
+ 
+ int main(int ac, char** av)
+Index: test/tpopen-ftp.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tpopen-ftp.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tpopen-ftp.C
+--- test/tpopen-ftp.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tpopen-ftp.C	9 Mar 2003 12:11:49 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
+ 
+ int main()
+ {
+Index: test/tpopen-lpc.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tpopen-lpc.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tpopen-lpc.C
+--- test/tpopen-lpc.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tpopen-lpc.C	9 Mar 2003 12:11:01 -0000
+@@ -7,7 +7,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
+ 
+ int main()
+ {
+Index: test/tpopen.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tpopen.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tpopen.C
+--- test/tpopen.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tpopen.C	9 Mar 2003 12:10:39 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
+ #include <unistd.h>
+ 
+ int main()
+Index: test/tsecho.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsecho.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsecho.C
+--- test/tsecho.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsecho.C	9 Mar 2003 12:15:59 -0000
+@@ -11,7 +11,7 @@
+ // Version: 12Jan97 1.11
+ 
+ 
+-#include <echo.h>
++#include <socket++/echo.h>
+ #include <stdlib.h>
+ 
+ int main (int ac, char** av)
+Index: test/tsendfiles.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsendfiles.C,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 tsendfiles.C
+--- test/tsendfiles.C	8 Oct 2002 11:47:58 -0000	1.1.1.2
++++ test/tsendfiles.C	9 Mar 2003 12:13:45 -0000
+@@ -9,7 +9,7 @@
+ 
+ 
+ #include <fstream>
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <pwd.h>
+ #include <stdio.h>
+ #include <unistd.h>
+Index: test/tsig-0.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsig-0.C,v
+retrieving revision 1.3
+diff -u -r1.3 tsig-0.C
+--- test/tsig-0.C	15 Nov 2002 21:32:22 -0000	1.3
++++ test/tsig-0.C	9 Mar 2003 13:44:59 -0000
+@@ -7,7 +7,7 @@
+ // with no express or implied warranty.
+ 
+ #include <iostream>
+-#include <sig.h>
++#include <socket++/sig.h>
+ #include <unistd.h>
+ 
+ using namespace std;
+Index: test/tsinread.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsinread.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsinread.C
+--- test/tsinread.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsinread.C	9 Mar 2003 12:07:28 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <unistd.h>
+ 
+ static void process_input (iosockinet& s);
+Index: test/tsinwrite.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsinwrite.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsinwrite.C
+--- test/tsinwrite.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsinwrite.C	9 Mar 2003 12:08:17 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <errno.h>
+Index: test/tsmtp.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsmtp.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsmtp.C
+--- test/tsmtp.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsmtp.C	11 Mar 2003 15:46:52 -0000
+@@ -7,38 +7,45 @@
+ // with no express or implied warranty.
+ //
+ // Version: 12Jan97 1.11
++// 2003-03-06 Herbert Straub: variable from and to
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ #include <stdio.h>
++#include <string>
+ 
+ static void send_cmd(iosockstream&, const char* cmd=0);
+ static void get_text(iosockstream&);
+ 
+ int main(int ac, char** av)
+ {
+-  if (ac != 3) {
+-    cerr << "USAGE: " << av[0] << " hostname userid\n";
++  if (ac != 4) {
++    cerr << "USAGE: " << av[0] << " hostname from to\n";
+     return 1;
+   }
+     
++  try {
+   iosockinet sio (sockbuf::sock_stream);
++  sio.rdbuf()->setname ("smtp socket");
++  string buffer;
+     
+   sio->connect(av[1], "smtp", "tcp");
+     
+-  send_cmd(sio, 0);
++  //send_cmd(sio, 0);
+   send_cmd(sio, "HELO kelvin.seas.virginia.edu");
+   send_cmd(sio, "HELP");
+-  send_cmd(sio, "MAIL FROM:<test@test>");
+-    
+-  char buf[512];
+-  sprintf(buf, "RCPT TO:%s", av[2]);
+-  send_cmd(sio, buf);
++  buffer = "MAIL FROM: ";
++  buffer += av[2];
++  send_cmd(sio, buffer.c_str());
++    
++  buffer = "RCPT TO: ";
++  buffer += av[3];
++  send_cmd(sio, buffer.c_str());
+     
+   send_cmd(sio, "DATA");
+   cout << "terminate your input with cntrl-D\n\n";
+-  while(cin.getline(buf, 511)) {
+-    if (buf[0] == '.') sio << '.';
+-    sio <<  buf << "\r\n";
++  while(getline(cin, buffer)) {
++    if (buffer[0] == '.') sio << '.';
++    sio <<  buffer << "\r\n";
+   }
+   sio << "\r\n.\r\n" << flush;
+   send_cmd(sio, 0);
+@@ -47,6 +54,16 @@
+   send_cmd(sio, "HELP");
+     
+   send_cmd(sio, "QUIT");
++  }
++  catch (sockerr err) {
++	  cout << "catched"<< endl;
++	  cout << "catched sockerr: " << err.serrno() 
++	       << " : " << err.operation ()
++	       << endl;
++  }
++  catch (...) {
++	  cout << "unknown exception" << endl;
++  }
+ 
+   return 0;
+ }
+@@ -61,11 +78,17 @@
+ 
+ void get_text(iosockstream& s)
+ {
+-  char buf[256];
+-  int tmo = s->recvtimeout(1); // wait for 1 sec before timing out
+-  while ( s.getline(buf, 255) ) {
+-    if (buf[0] == '.' && buf[1] == '\r' && buf[2] == '\n') break;
+-    cout << buf << endl;
++  string buffer;
++  int tmo = s->recvtimeout(2); // wait for 1 sec before timing out
++  try { // FIXME: Straub debug
++  	while ( getline(s, buffer) ) {
++    		if (buffer[0] == '.' && buffer[1] == '\r' && buffer[2] == '\n')
++			break;
++    	cout << buffer << endl;
++  	}
++  }
++  catch (sockerr e) {
++	  cout << "catched sockerr" << endl;
+   }
+   if ( !s.eof() ) s.clear();
+   s->recvtimeout(tmo); //reset timeout to the previous value
+Index: test/tsockpair.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsockpair.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsockpair.C
+--- test/tsockpair.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsockpair.C	9 Mar 2003 12:10:18 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <pipestream.h>
++#include <socket++/pipestream.h>
+ 
+ int main(int ac, char** av)
+ {
+Index: test/tsunread.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsunread.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsunread.C
+--- test/tsunread.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsunread.C	9 Mar 2003 12:06:46 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockunix.h>
++#include <socket++/sockunix.h>
+ #include <unistd.h>
+ #include <errno.h>
+ #include <sys/stat.h>
+Index: test/tsunwrite.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/tsunwrite.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 tsunwrite.C
+--- test/tsunwrite.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/tsunwrite.C	9 Mar 2003 12:07:04 -0000
+@@ -8,7 +8,7 @@
+ //
+ // Version: 12Jan97 1.11
+ 
+-#include <sockunix.h>
++#include <socket++/sockunix.h>
+ 
+ int main(int ac, char** av)
+ {
+Index: test/twhois.C
+===================================================================
+RCS file: /home/stb/products/socket++/my_cvs/socket++/test/twhois.C,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 twhois.C
+--- test/twhois.C	8 Oct 2002 11:43:30 -0000	1.1.1.1
++++ test/twhois.C	9 Mar 2003 12:14:27 -0000
+@@ -8,7 +8,7 @@
+ // Version: 12Jan97 1.11
+ 
+ 
+-#include <sockinet.h>
++#include <socket++/sockinet.h>
+ 
+ int main(int ac, char** av)
+ {
