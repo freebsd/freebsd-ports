@@ -6,7 +6,11 @@
 #
 
 PORTNAME=	gnustep
+.if defined(WITH_GNUSTEP_DEVEL)
+PORTVERSION=	1.7.0
+.else
 PORTVERSION=	1.6.0
+.endif
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +40,11 @@ GNU_ARCH=	ix86
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
+.if defined(WITH_GNUSTEP_DEVEL)
+SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries/${GNU_ARCH}/${OPSYS:L}
+.else
 SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
+.endif
 COMBOPATH=	${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle/${COMBOPATH}
 
