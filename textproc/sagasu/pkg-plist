@@ -1,0 +1,26 @@
+bin/sagasu
+share/gnome/applications/sagasu.desktop
+share/gnome/doc/sagasu-2.0.3/AUTHORS
+share/gnome/doc/sagasu-2.0.3/COPYING
+share/gnome/doc/sagasu-2.0.3/INSTALL
+share/gnome/doc/sagasu-2.0.3/NEWS
+share/gnome/doc/sagasu-2.0.3/README
+share/gnome/doc/sagasu-2.0.3/THANKS
+share/gnome/doc/sagasu-2.0.3/TODO
+share/gnome/help/sagasu/C/sagasu.html
+share/gnome/help/sagasu/fr/sagasu.html
+share/gnome/pixmaps/close.xpm
+share/gnome/pixmaps/sagasu.png
+share/gnome/sagasu/COPYING
+share/gnome/sagasu/sagasu-helper.pl
+share/gnome/sounds/sagasu/sagasu.wav
+share/locale/fr/LC_MESSAGES/sagasu.mo
+share/locale/ja/LC_MESSAGES/sagasu.mo
+share/locale/sr/LC_MESSAGES/sagasu.mo
+share/locale/ru/LC_MESSAGES/sagasu.mo
+@dirrm share/gnome/sounds/sagasu
+@dirrm share/gnome/sagasu
+@dirrm share/gnome/help/sagasu/fr
+@dirrm share/gnome/help/sagasu/C
+@dirrm share/gnome/help/sagasu
+@dirrm share/gnome/doc/sagasu-2.0.3
