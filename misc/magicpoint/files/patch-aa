@@ -1,0 +1,11 @@
+--- image/new.c.orig    Sun Dec 30 18:08:41 2001
++++ image/new.c Sun Dec 30 18:08:58 2001
+@@ -11,7 +11,7 @@
+ #include "copyright.h"
+ #include "image.h"
+ 
+-#include <malloc.h>
++#include <stdlib.h>
+ 
+ extern int _Xdebug;
+ extern void memoryExhausted(void);
