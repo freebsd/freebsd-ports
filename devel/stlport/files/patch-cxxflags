@@ -1,9 +1,0 @@
---- src/gcc-freebsd.mak	Tue Nov 27 02:17:56 2001
-+++ src/gcc-freebsd.mak	Sun Mar 10 12:59:08 2002
-@@ -43,4 +43,4 @@
- 
--CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) -O2
--CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) -O2 -fPIC
-+CXXFLAGS_RELEASE_static = $(CXXFLAGS_COMMON) ${CXXFLAGS}
-+CXXFLAGS_RELEASE_dynamic = $(CXXFLAGS_COMMON) ${CXXFLAGS} -fPIC
- 

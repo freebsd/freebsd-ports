@@ -34,8 +34,9 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
 .endif
 
-.if !defined(NOPORTDOCS)
 post-install:
+	${FIND} ${PREFIX}/include/stlport -name \*.orig -delete
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.css ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}

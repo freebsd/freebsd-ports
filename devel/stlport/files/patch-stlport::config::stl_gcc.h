@@ -1,4 +1,4 @@
---- stlport/config/stl_gcc.h	Thu Jan 10 19:41:58 2002
+--- stlport/config/stl_gcc.h.orig	Thu Jan 10 19:41:58 2002
 +++ stlport/config/stl_gcc.h	Thu Jun  6 23:15:40 2002
 @@ -250,8 +250,13 @@
  
