@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050130:
+  AFFECTS: users of net/howl
+  AUTHOR: marcus@FreeBSD.org
+
+  Howl now installs an rcNG script for starting mDNSResponder.  To enable
+  mDNSResponder to start at boot time, add the following to /etc/rc.conf:
+
+  mdnsresponder_enable="YES"
+
+  You can also pass flags to mDNSResponder by setting the rc.conf variable
+  mdnsresponder_flags to the appropriate value.  See the mDNSResponder(8)
+  man page for the list of supported flags.  The default is not to pass
+  any flags to mDNSResponder.
+
 20050126:
   AFFECTS: users of x11-wm/xfce4
   AUTHOR: oliver@FreeBSD.org
