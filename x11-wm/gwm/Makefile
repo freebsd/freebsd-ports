@@ -8,9 +8,7 @@
 PORTNAME=	gwm
 PORTVERSION=	1.8d
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
-		ftp://koala.inria.fr/pub/gwm/
-MASTER_SITE_SUBDIR=	window_managers/gwm
+MASTER_SITES=	http://koala.ilog.fr/ftp/pub/gwm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
