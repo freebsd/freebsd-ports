@@ -262,6 +262,7 @@
     SUBDIR += sdcc
     SUBDIR += sdl
     SUBDIR += sdl-devel
+    SUBDIR += sdts++
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils
     SUBDIR += sh-rtems-chill
