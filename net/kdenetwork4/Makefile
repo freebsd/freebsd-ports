@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.14 1998/07/13 23:31:51 se Exp $
+# $Id: Makefile,v 1.15 1998/07/19 17:47:33 se Exp $
 #
 
 DISTNAME=	kdenetwork-1.0
@@ -13,9 +13,9 @@ MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt133 \
+BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt140 \
 		${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
-LIB_DEPENDS=	qt\\.1\\.3[3-9]:${PORTSDIR}/x11/qt133 \
+LIB_DEPENDS=	qt\\.1\\.\\\(33\\\|40\\\):${PORTSDIR}/x11/qt140 \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
 		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		uu\\.1\\.:${PORTSDIR}/converters/uulib \
