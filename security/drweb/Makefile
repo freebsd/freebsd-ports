@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=    4.28.2
+PORTREVISION=   1
 CATEGORIES=	security
 MASTER_SITES=   http://drweb.spb.ru/download/unix/
 DISTFILES=      ${MAIN_NAME}.tgz
@@ -31,7 +32,8 @@ do-install:
 		--exclude "*.key" --exclude "update/update.pl*"
 	${TAR} -cf - -C ${WRKSRC}/var/drweb bases | \
 		${TAR} -xf - -C ${DRWEB_PREFIX}
-	chmod 755 ${DRWEB_PREFIX}/bases
+	chmod 755 ${DRWEB_PREFIX}/bases ${DRWEB_PREFIX}/doc \
+		${DRWEB_PREFIX}/lib ${DRWEB_PREFIX}/updates
 	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drweb.key \
 		${DRWEB_PREFIX}/drweb.key-dist
 	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drwebd.key \
