@@ -1,0 +1,10 @@
+The idea behind OpenAL is a 3d positional spatialized sound library analogous
+to OpenGL: instead of micromanaging each aspect of sound playback and effect,
+the application writer may limit themselves to placing the sounds in the 
+scene and letting the native OpenAL implementation determine the correct
+amount of pitch alteration, gain attenuation, phase shift, etc, required to
+render the sounds correctly.
+
+That's the goal, anyway.  
+
+WWW: http://www.openal.org/
