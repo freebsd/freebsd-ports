@@ -48,6 +48,7 @@
     SUBDIR += dri-devel
     SUBDIR += drm-kmod
     SUBDIR += duhdraw
+    SUBDIR += dvipng
     SUBDIR += dynamechs
     SUBDIR += ecg2png
     SUBDIR += electriceyes
