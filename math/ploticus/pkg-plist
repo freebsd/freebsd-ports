@@ -31,6 +31,8 @@ bin/pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/data24
 %%PORTDOCS%%%%EXAMPLESDIR%%/data25
 %%PORTDOCS%%%%EXAMPLESDIR%%/data26
+%%PORTDOCS%%%%EXAMPLESDIR%%/data27
+%%PORTDOCS%%%%EXAMPLESDIR%%/data28
 %%PORTDOCS%%%%EXAMPLESDIR%%/data3
 %%PORTDOCS%%%%EXAMPLESDIR%%/data4
 %%PORTDOCS%%%%EXAMPLESDIR%%/data5
@@ -41,6 +43,7 @@ bin/pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/data9
 %%PORTDOCS%%%%EXAMPLESDIR%%/devol.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/devol.htm
+%%PORTDOCS%%%%EXAMPLESDIR%%/dexa.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/distrib.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/drawcom.dcm
 %%PORTDOCS%%%%EXAMPLESDIR%%/drawcom.htm
@@ -72,6 +75,7 @@ bin/pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/td.htm
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_chron
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_cumufrac
+%%PORTDOCS%%%%EXAMPLESDIR%%/testpf_compare
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_draw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testpf_heatmap
@@ -92,6 +96,7 @@ bin/pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/windbarbs.htm
 %%DATADIR%%/README
 %%DATADIR%%/chron.pl
+%%DATADIR%%/chron.pl-
 %%DATADIR%%/chunk_area
 %%DATADIR%%/chunk_chronfilter
 %%DATADIR%%/chunk_doheatmap
@@ -105,6 +110,7 @@ bin/pl
 %%DATADIR%%/chunk_vdistfilter
 %%DATADIR%%/chunk_xaxis
 %%DATADIR%%/chunk_yaxis
+%%DATADIR%%/compare.pl
 %%DATADIR%%/cumufrac.pl
 %%DATADIR%%/dist.pl
 %%DATADIR%%/draw.pl
