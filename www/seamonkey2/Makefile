@@ -126,8 +126,8 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 BROKEN=	 	"Coredump during build on amd64"
 .endif
 
-.if ${ARCH} == "ia64"
-BROKEN=		"Does not compile on ia64"
+.if ${ARCH} == "ia64" || ${ARCH} == "alpha"
+BROKEN=		"Does not compile on ia64 or alpha"
 .endif
 
 .if !defined(WITHOUT_XFT)
