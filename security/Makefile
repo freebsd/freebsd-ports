@@ -42,6 +42,7 @@
     SUBDIR += crack
     SUBDIR += cracklib
     SUBDIR += crank
+    SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += cryptplug
     SUBDIR += cyrus-sasl

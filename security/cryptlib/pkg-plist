@@ -1,0 +1,6 @@
+bin/endian
+lib/libcl.a
+lib/libcl.so
+lib/libcl.so.3.1.0
+%%PORTDOCS%%share/doc/cryptlib/README
+%%PORTDOCS%%@dirrm share/doc/cryptlib

@@ -1,0 +1,15 @@
+cryptlib is a powerful security toolkit which allows even inexperienced 
+crypto programmers to easily add encryption and authentication services to 
+their software. The high-level interface provides anyone with the ability to 
+add strong security capabilities to an application in as little as half an 
+hour, without needing to know any of the low-level details which make the 
+encryption or authentication work. Because of this, cryptlib dramatically 
+reduces the cost involved in adding security to new or existing applications.
+
+cryptlib provides a standardised interface to a number of popular encryption
+algorithms, as well as providing a high-level interface which hides most of 
+the implementation details and provides an operating-system-independent 
+encoding method which makes it easy to transfer secured data from one operating
+environment to another.
+
+WWW: http://www.cs.auckland.ac.nz/~pgut001/cryptlib/
