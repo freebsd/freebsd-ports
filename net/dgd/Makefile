@@ -68,6 +68,5 @@ do-install:
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C /usr/local -xpf -
-	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1995/04/20 18:20:55 asami Exp $
+# $Id: Makefile,v 1.12 1995/04/21 01:21:26 asami Exp $
 #
 
 DISTNAME=	jetpack
@@ -22,6 +22,5 @@ do-install:
 	@chmod u+s ${PREFIX}/bin/jetpack
 	@chown games ${PREFIX}/lib/X11/jetpack
 	@chmod go+r ${PREFIX}/lib/X11/jetpack/jetpack.lev000
-	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
