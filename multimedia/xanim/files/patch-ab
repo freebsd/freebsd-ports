@@ -1,5 +1,5 @@
---- Imakefile.orig	Sun Mar 21 16:36:26 1999
-+++ Imakefile	Sat Jun 19 19:23:26 1999
+--- Imakefile.orig	Sun Mar 21 17:36:26 1999
++++ Imakefile	Thu Aug  2 14:48:37 2001
 @@ -116,12 +116,12 @@
  XCOMM XA_DLL_DEF = -DXA_DLL
  XCOMM
@@ -35,20 +35,18 @@
  XCOMM 
  XCOMM  -- Linux PC's with OLD Rev sound drivers -------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO -DXA_LINUX_OLDER_SND
-@@ -314,8 +314,10 @@
+@@ -314,8 +314,8 @@
  XCOMM  XA_AUDIO_LIBS = -lc
  XCOMM  
  XCOMM  -- Also FreeBSD, and BSDI with SBlast-BSD-1.5 (development stages)------
 -XCOMM  XA_AUDIO_DEFS = -DXA_LINUX_AUDIO
 -XCOMM  XA_AUDIO_LIBS = -lc
-+#ifdef i386Architecture
 +XA_AUDIO_DEFS = -DXA_LINUX_AUDIO
 +XA_AUDIO_LIBS = -lc
-+#endif
  XCOMM 
  XCOMM  -- TOWNS Linux 16 bit PCM ----------------------------------------------
  XCOMM  XA_AUDIO_DEFS = -DXA_TOWNS_AUDIO
-@@ -442,7 +444,7 @@
+@@ -442,7 +442,7 @@
  XCOMM    -- following symbols(XmbufDisplayBuffers, XmbufQueryExtension,
  XCOMM    --  XmbufCreateBuffers).
  XCOMM    -- NOTE_8: HP-UX machines need to comment this out.
@@ -57,7 +55,7 @@
  XCOMM 
  XCOMM ###########
  XCOMM 
-@@ -465,7 +467,7 @@
+@@ -465,7 +465,7 @@
  
  PROGRAMS = $(XANIM)
  
