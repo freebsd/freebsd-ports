@@ -1,0 +1,19 @@
+bin/grn
+share/locale/ru/LC_MESSAGES/grn.mo
+share/gnome/apps/Internet/grn.desktop
+share/gnome/help/grn/C/Perl_functions.html
+share/gnome/help/grn/C/hooks-Perl.html
+share/gnome/help/grn/C/index.html
+share/gnome/help/grn/C/inline_vars.html
+share/gnome/help/grn/C/keyboard.html
+share/gnome/help/grn/C/topic.dat
+share/gnome/help/grn/ru/Perl_functions.html
+share/gnome/help/grn/ru/hooks-Perl.html
+share/gnome/help/grn/ru/index.html
+share/gnome/help/grn/ru/inline_vars.html
+share/gnome/help/grn/ru/keyboard.html
+share/gnome/help/grn/ru/topic.dat
+share/gnome/pixmaps/grn.png
+@dirrm share/gnome/help/grn/ru
+@dirrm share/gnome/help/grn/C
+@dirrm share/gnome/help/grn
