@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.56 1999/06/01 20:39:08 mharo Exp $
+# $Id: Makefile,v 1.57 1999/06/02 08:13:02 mharo Exp $
 #
 
     SUBDIR += bjorb
@@ -45,6 +45,7 @@
     SUBDIR += sniff
     SUBDIR += ssh
     SUBDIR += ssh2
+    SUBDIR += sslproxy
     SUBDIR += strobe
     SUBDIR += stunnel
     SUBDIR += sudo
