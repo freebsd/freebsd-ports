@@ -13,6 +13,7 @@
     SUBDIR += OpenEXR
     SUBDIR += aalib
     SUBDIR += acidwarp
+    SUBDIR += animabob
     SUBDIR += aoi
     SUBDIR += aqsis
     SUBDIR += autotrace
