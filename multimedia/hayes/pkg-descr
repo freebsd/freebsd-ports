@@ -1,0 +1,10 @@
+Hayes is the playlist for Noatun 2 / KDE 3 that attempts to be 
+efficent for those users with large directories full of music, 
+especially directories futher organized by album. For these 
+users, Hayes should be more efficient in speed and memory 
+than the usual playlist. Plus, the playlist is updated in 
+realtime as the directories change on-disk, so playlist 
+maintenance is no longer an issue.
+
+Author: Neil Stevens <neil@qualityassistant.com>
+WWW: http://www.freekde.org/neil/hayes/
