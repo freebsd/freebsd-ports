@@ -1,0 +1,13 @@
+--- build.xml.orig	Sun Oct 17 01:24:11 2004
++++ build.xml	Sun Oct 17 01:26:18 2004
+@@ -199,10 +199,6 @@
+     <copy todir="${dist.home}/src" filtering="on">
+       <fileset dir="${source.home}"/>
+     </copy>
+-    <mkdir dir="${dist.home}/lib"/>
+-    <copy todir="${dist.home}/lib">
+-      <fileset dir="lib"/>
+-    </copy>
+   </target>
+ 
+ <!-- ========== Targets: "External" Targets: Clean-up ===================== -->
