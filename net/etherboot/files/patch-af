@@ -1,0 +1,50 @@
+--- ./arch/i386/include/bits/string.h.orig	Sat Dec  4 09:31:24 2004
++++ ./arch/i386/include/bits/string.h	Sat Dec  4 09:33:37 2004
+@@ -65,9 +65,10 @@ __asm__ __volatile__(
+ return dest;
+ }
+ 
++#ifndef __FreeBSD__
+ #define memcmp __builtin_memcmp
+ #define __HAVE_ARCH_MEMCMP
+-
++#endif
+ 
+ #define __HAVE_ARCH_MEMSET
+ static inline void *memset(void *s, int c,size_t count)
+--- drivers/disk/ide_disk.c.orig	Sat Dec  4 09:24:19 2004
++++ drivers/disk/ide_disk.c	Sat Dec  4 15:57:18 2004
+@@ -592,7 +592,8 @@ static int init_drive(struct harddisk_in
+ 			info->sectors_per_track *
+ 			info->heads *
+ 			info->cylinders;
+-		printf(__FUNCTION__ " sectors_per_track=[%d], heads=[%d], cylinders=[%d]\n",
++		printf("%s sectors_per_track=[%d], heads=[%d], cylinders=[%d]\n",
++			__FUNCTION__,
+ 			info->sectors_per_track,
+ 			info->heads,
+ 			info->cylinders);
+--- drivers/net/3c509.c.orig	Sat Dec  4 16:08:56 2004
++++ drivers/net/3c509.c	Sat Dec  4 16:11:59 2004
+@@ -620,9 +620,9 @@ static int t509_probe(struct dev *dev, u
+ 	dev->devid.vendor_id = htons(GENERIC_ISAPNP_VENDOR);
+ 	dev->devid.device_id = htons(0x80f7);
+ 	return 1;
++	}
+ no3c509:
+ 	/* printf("(probe fail)"); */
+-	}
+ 	return 0;
+ }
+ 
+--- util/makerom.pl.orig	Mon Dec  6 08:36:43 2004
++++ util/makerom.pl	Mon Dec  6 08:36:54 2004
+@@ -19,8 +19,6 @@ use strict;
+ 
+ use vars qw(%opts);
+ 
+-use bytes;
+-
+ sub getromsize ($) {
+ 	my ($romref) = @_;
+ 	my $i;
