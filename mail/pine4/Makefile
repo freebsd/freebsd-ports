@@ -4,13 +4,15 @@
 # Date created:		03 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.16 1996/12/04 20:43:27 ache Exp $
+# $Id: Makefile,v 1.18 1997/01/12 17:34:50 ache Exp $
 #
 
 DISTNAME=	pine3.95
-PKGNAME=	pine-3.95
+PKGNAME=        pine-3.95q
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
+PATCH_SITES=    ${MASTER_SITES}
+PATCHFILES=     pine3.95.patch-1
 
 MAINTAINER=	ports@FreeBSD.org
 
