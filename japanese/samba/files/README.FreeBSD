@@ -1,3 +1,5 @@
+$FreeBSD$
+
 If you want to use samba ports,
 
 1. Copy /usr/local/etc/smb.conf.default to /usr/local/etc/smb.conf, and edit

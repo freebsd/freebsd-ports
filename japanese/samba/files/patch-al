@@ -1,0 +1,11 @@
+--- script/installcp.sh.orig	Mon Nov 26 13:40:10 2001
++++ script/installcp.sh	Mon Nov 26 13:40:24 2001
+@@ -12,7 +12,7 @@
+ echo Installing codepage files in $CODEPAGEDIR
+ for d in $LIBDIR $CODEPAGEDIR; do
+ if [ ! -d $d ]; then
+-mkdir $d
++mkdir -p $d
+ if [ ! -d $d ]; then
+   echo Failed to make directory $d
+   exit 1

@@ -1,11 +1,20 @@
---- configure.in.orig	Mon Oct  4 09:03:55 1999
-+++ configure.in	Mon Oct  4 09:04:00 1999
-@@ -1064,7 +1064,7 @@
-   --whithout-krb5          Don't include Kerbers 5 support (default)],
- [   AC_MSG_RESULT(yes)
+--- configure.in.orig	Mon Nov 26 17:55:39 2001
++++ configure.in	Tue Dec 11 00:42:47 2001
+@@ -19,7 +19,7 @@
+     codepagedir="\$(LIBDIR)/codepages"
+     configdir="\$(LIBDIR)"
+     lockdir="\$(VARDIR)/locks"
+-    logfilebase="\$(VARDIR)"
++    logfilebase="\$(VARDIR)/log"
+     privatedir="\${prefix}/private"
+     swatdir="\${prefix}/swat")
+ 
+@@ -1655,7 +1655,7 @@
+   yes)
+     AC_MSG_RESULT(yes)
      AC_DEFINE(KRB5_AUTH)
 -    LIBS="$LIBS -ldes425 -lkrb5 -lcrypto -lcom_err"
 +    LIBS="$LIBS -ldes425 -lkrb5 -lk5crypto -lcom_err"
      CFLAGS="$CFLAGS -I$withval/include"
-     LDFLAGS="$LDFLAGS -L$withval/lib"],
-   AC_MSG_RESULT(no)
+     LDFLAGS="$LDFLAGS -L$withval/lib"
+     ;;

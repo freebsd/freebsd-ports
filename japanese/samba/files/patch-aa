@@ -1,47 +1,30 @@
---- Makefile.in.orig	Wed Apr 26 02:06:11 2000
-+++ Makefile.in	Thu Apr 27 11:08:08 2000
-@@ -25,7 +25,7 @@
- BINDIR = @bindir@
- # we don't use sbindir because we want full compatibility with
- # the previous releases of Samba
--SBINDIR = @bindir@
-+SBINDIR = @sbindir@
- LIBDIR = @libdir@
- VARDIR = @localstatedir@
- MANDIR = @mandir@
-@@ -37,12 +37,13 @@
- # set these to where to find various files
- # These can be overridden by command line switches (see smbd(8))
- # or in smb.conf (see smb.conf(5))
--SMBLOGFILE = $(VARDIR)/log.smb
--NMBLOGFILE = $(VARDIR)/log.nmb
-+LOGDIR=$(VARDIR)/log
-+SMBLOGFILE = $(LOGDIR)/log.smb
-+NMBLOGFILE = $(LOGDIR)/log.nmb
- CONFIGFILE = $(LIBDIR)/smb.conf
- LMHOSTSFILE = $(LIBDIR)/lmhosts
- DRIVERFILE = $(LIBDIR)/printers.def
+--- Makefile.in.orig	Tue Oct 30 13:03:01 2001
++++ Makefile.in	Mon Nov 26 10:40:10 2001
+@@ -51,7 +51,7 @@
+ CONFIGFILE = $(CONFIGDIR)/smb.conf
+ LMHOSTSFILE = $(CONFIGDIR)/lmhosts
+ DRIVERFILE = $(CONFIGDIR)/printers.def
 -PASSWD_PROGRAM = /bin/passwd
 +PASSWD_PROGRAM = /usr/bin/passwd
  # This is where smbpasswd et al go
  PRIVATEDIR = @privatedir@
  
-@@ -54,6 +55,9 @@
- # the directory where lock files go
- LOCKDIR = @lockdir@
+@@ -69,6 +69,9 @@
+ LIBSMBCLIENT_MAJOR=0
+ LIBSMBCLIENT_MINOR=1
  
 +# the directory where pid files go
 +PIDFILEDIR = $(VARDIR)/run
 +
  # The directory where code page definition files go
- CODEPAGEDIR = $(LIBDIR)/codepages
+ CODEPAGEDIR = @codepagedir@
  
-@@ -71,7 +75,7 @@
- PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\"
- FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DSMBLOGFILE=\"$(SMBLOGFILE)\" -DNMBLOGFILE=\"$(NMBLOGFILE)\"
+@@ -88,7 +91,7 @@
+ PASSWD_FLAGS = -DPASSWD_PROGRAM=\"$(PASSWD_PROGRAM)\" -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DTDB_PASSWD_FILE=\"$(TDB_PASSWD_FILE)\"
+ FLAGS1 = $(CFLAGS) -Iinclude -I$(srcdir)/include -I$(srcdir)/ubiqx -I$(srcdir)/smbwrapper $(CPPFLAGS) -DLOGFILEBASE=\"$(LOGFILEBASE)\"
  FLAGS2 = -DCONFIGFILE=\"$(CONFIGFILE)\" -DLMHOSTSFILE=\"$(LMHOSTSFILE)\"  
--FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
-+FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\" -DSMBRUN=\"$(SMBRUN)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
- FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\"
- FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H
- FLAGS  = $(ISA) $(FLAGS5) $(PASSWD_FLAGS)
+-FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\"
++FLAGS3 = -DSWATDIR=\"$(SWATDIR)\" -DSBINDIR=\"$(SBINDIR)\" -DLOCKDIR=\"$(LOCKDIR)\" -DCODEPAGEDIR=\"$(CODEPAGEDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\"
+ FLAGS4 = -DDRIVERFILE=\"$(DRIVERFILE)\" -DBINDIR=\"$(BINDIR)\" 
+ FLAGS5 = $(FLAGS1) $(FLAGS2) $(FLAGS3) $(FLAGS4) -DHAVE_INCLUDES_H   -DI18N_PACKAGE=\"$(I18N_PACKAGE)\" -DSWAT_I18N_PACKAGE=\"$(SWAT_I18N_PACKAGE)\" -DSWAT_I18N_LOCALEDIR=\"$(i18n_localedir)\" -DI18N_LOCALEDIR=\"$(i18n_localedir)\" -Iintl -I$(srcdir)/intl
+ 
