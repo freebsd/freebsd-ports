@@ -81,3 +81,4 @@ lib/libnet.a
 %%EXAMPLESDIR%%/udp1.c
 %%EXAMPLESDIR%%/udp2.c
 @dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
