@@ -1,0 +1,15 @@
+--- zebra/Makefile.in.orig	Thu Jan 11 11:22:36 2001
++++ zebra/Makefile.in	Thu Jan 11 11:23:00 2001
+@@ -331,10 +331,10 @@
+ 
+ 
+ zebra : $(zebra_OBJECTS) $(otherobj) ../lib/libzebra.a
+-	$(CC) -g -o zebra $(zebra_OBJECTS) $(otherobj) ../lib/libzebra.a $(LIBS) $(LIB_IPV6)
++	$(CC) -o zebra $(zebra_OBJECTS) $(otherobj) ../lib/libzebra.a $(LIBS) $(LIB_IPV6)
+ 
+ client : client_main.o ../lib/libzebra.a
+-	$(CC) -g -o client client_main.o ../lib/libzebra.a $(LIBS) $(LIB_IPV6)
++	$(CC) -o client client_main.o ../lib/libzebra.a $(LIBS) $(LIB_IPV6)
+ 
+ install-sysconfDATA: $(sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
