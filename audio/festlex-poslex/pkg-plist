@@ -2,3 +2,4 @@
 share/festival/lib/dicts/COPYING.poslex
 share/festival/lib/dicts/wsj.wp39.poslexR
 share/festival/lib/dicts/wsj.wp39.tri.ngrambin
+@dirrm share/festival/lib/dicts
