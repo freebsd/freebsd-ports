@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -36,7 +36,8 @@ MAN1=		xgettext.pl.1
 .if ${PERL_LEVEL} < 500600
 post-patch:
 	@${PERL} -pi -e '$$_ = "" if /no warnings/;' \
-          ${WRKSRC}/lib/Locale/Maketext/Lexicon.pm
+		-e 's/^our (\S+);/use vars qw{$$1};/;' \
+		${WRKSRC}/lib/Locale/Maketext/Lexicon.pm
 .endif
 
 .include <bsd.port.post.mk>
