@@ -42,8 +42,9 @@
 -CXX=			g++
 -CDEFS+=			-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400
 -CDEFS+=			-D_REENTRANT -D_PTHREADS -D_THREAD_SAFE
+-CFLAGS+= -c $(INCLUDE)
 +# flags for C and C++ Compile
- CFLAGS+= -w -c $(INCLUDE)
++CFLAGS+= -w -c $(INCLUDE)
  CFLAGS+= -I/usr/X11R6/include
 +
 +# flags for the C++ Compiler
