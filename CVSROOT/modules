@@ -5150,6 +5150,7 @@ mips-rtems-g77	ports/devel/mips-rtems-g77
 mips-rtems-gcc	ports/devel/mips-rtems-gcc
 mips-rtems-gdb	ports/devel/mips-rtems-gdb
 mips-rtems-objc	ports/devel/mips-rtems-objc
+mips64emul	ports/emulators/mips64emul
 mipsel-linux-binutils	ports/devel/mipsel-linux-binutils
 mipsel-linux-gcc	ports/devel/mipsel-linux-gcc
 mipsel-linux-kernel-headers	ports/devel/mipsel-linux-kernel-headers
