@@ -1,0 +1,118 @@
+--- ../SrcUnix/EmTransportSerialUnix.cpp-	Mon Jun 19 02:03:59 2000
++++ ../SrcUnix/EmTransportSerialUnix.cpp	Mon Jun 19 02:16:39 2000
+@@ -372,9 +372,9 @@
+ EmHostTransportSerial::EmHostTransportSerial (void) :
+ 	fReadThread (NULL),
+ 	fWriteThread (NULL),
+-	fCommHandle (0),
+-	fCommSignalPipeA (0),
+-	fCommSignalPipeB (0),
++	fCommHandle (-1),
++	fCommSignalPipeA (-1),
++	fCommSignalPipeB (-1),
+ 	fTimeToQuit (false),
+ 	fDataMutex (),
+ 	fDataCondition (&fDataMutex),
+@@ -402,9 +402,9 @@
+ {
+ 	assert (fReadThread == NULL);
+ 	assert (fWriteThread == NULL);
+-	assert (fCommHandle == 0);
+-	assert (fCommSignalPipeA == 0);
+-	assert (fCommSignalPipeB == 0);
++	assert (fCommHandle == -1);
++	assert (fCommSignalPipeA == -1);
++	assert (fCommSignalPipeB == -1);
+ }
+ 
+ 
+@@ -440,7 +440,7 @@
+ 
+ 		if (fCommHandle <= 0)
+ 		{
+-			fCommHandle = 0;
++			fCommHandle = -1;
+ 
+ 			return errno;
+ 		}
+@@ -470,7 +470,7 @@
+ 
+ ErrCode EmHostTransportSerial::CreateCommThreads (const EmTransportSerial::ConfigSerial& /*config*/)
+ {
+-	if (fCommHandle)
++	if (fCommHandle != -1)
+ 	{
+ 		PRINTF ("EmTransportSerial::HostOpen: Creating serial port handler threads...");
+ 
+@@ -510,35 +510,37 @@
+ {
+ 	// Signal the threads to quit.
+ 
+-	fDataMutex.lock ();
++	if ( fCommSignalPipeA != -1 && fCommSignalPipeB != -1 ) {
++		fDataMutex.lock ();
+ 
+-	fTimeToQuit = true;
++		fTimeToQuit = true;
+ 
+-	int dummy = 0;
+-	write (fCommSignalPipeB, &dummy, sizeof (dummy));		// Signals CommRead.
++		int dummy = 0;
++		write (fCommSignalPipeB, &dummy, sizeof (dummy));		// Signals CommRead.
+ 
+-	fDataCondition.broadcast ();	// Signals CommWrite.
+-	fDataMutex.unlock ();
++		fDataCondition.broadcast ();	// Signals CommWrite.
++		fDataMutex.unlock ();
+ 
+-	// Wait for the threads to quit.
++		// Wait for the threads to quit.
+ 
+-	if (fReadThread)
+-	{
+-		fReadThread->join (NULL);
+-		fWriteThread->join (NULL);
+-	}
++		if (fReadThread)
++		{
++			fReadThread->join (NULL);
++			fWriteThread->join (NULL);
++		}
+ 
+-	// Thread objects delete themselves, so set our references to NULL.
++		// Thread objects delete themselves, so set our references to NULL.
+ 
+-	fReadThread = NULL;
+-	fWriteThread = NULL;
++		fReadThread = NULL;
++		fWriteThread = NULL;
+ 
+-	// Close the signal pipe.
++		// Close the signal pipe.
+ 
+-	close (fCommSignalPipeA);
+-	close (fCommSignalPipeB);
++		close (fCommSignalPipeA);
++		close (fCommSignalPipeB);
+ 
+-	fCommSignalPipeA = fCommSignalPipeB = 0;
++		fCommSignalPipeA = fCommSignalPipeB = -1;
++	}
+ 
+ 	return errNone;
+ }
+@@ -558,10 +560,11 @@
+ 
+ ErrCode EmHostTransportSerial::CloseCommPort (void)
+ {
+-	int	result;
+-	result = close (fCommHandle);
++	if ( fCommHandle != -1 ) {
++		int result = close (fCommHandle);
+ 
+-	fCommHandle = 0;
++		fCommHandle = -1;
++	}
+ 
+ 	return errNone;
+ }
