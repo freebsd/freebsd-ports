@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbmail
-PORTVERSION=	0.6.9
+PORTVERSION=	0.8.2
 CATEGORIES=	mail
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
@@ -14,5 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+
+MAN1=		bbmail.1
 
 .include <bsd.port.mk>
