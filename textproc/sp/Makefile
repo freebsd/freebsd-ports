@@ -3,7 +3,7 @@
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/26 20:01:59 jfieber Exp $
 #
 
 DISTNAME=	sp-1.1.1
@@ -13,6 +13,6 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	jfieber@FreeBSD.ORG
 
 post-install:
-	/sbin/ldconfig -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
