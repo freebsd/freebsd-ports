@@ -78,13 +78,13 @@ PLIST_SUB+=	VTYSH="@comment "
 
 .if !defined(BATCH)
 pre-configure:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+	@${RM} -f ${WRKDIR}/Makefile.inc
 
 post-clean:
-	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+	@${RM} -f ${WRKDIR}/Makefile.inc
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if exists(${WRKDIR}/Makefile.inc)
+.include "${WRKDIR}/Makefile.inc"
 .endif
 .endif
 
