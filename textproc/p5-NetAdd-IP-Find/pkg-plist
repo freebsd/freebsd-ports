@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/NetAddr/IP/Find.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/NetAddr/IP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/NetAddr 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr/IP/Find/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr/IP/Find
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr/IP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/NetAddr 2>/dev/null || true
