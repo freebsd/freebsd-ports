@@ -756,7 +756,6 @@ cdrtools	ports/sysutils/cdrtools
 cel		ports/lang/cel
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
-cervisia	ports/devel/cervisia
 cfe		ports/misc/cfe
 cfengine	ports/sysutils/cfengine
 cfengine2	ports/sysutils/cfengine2
