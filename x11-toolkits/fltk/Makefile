@@ -3,7 +3,7 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/03/07 23:52:55 billf Exp $
 #
 
 DISTNAME=	fltk-19990127
@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ftp.easysw.com/pub/fltk/ \
 		ftp://ftp.c-com.net/pub/LinuxBerg/files/x11/dev/
 
 MAINTAINER=	dima@chg.ru
+
+LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
