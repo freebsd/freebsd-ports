@@ -21,6 +21,8 @@ MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	Modular converter between charsets and filter
 
 BROKEN=		"Does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2

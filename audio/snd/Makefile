@@ -18,6 +18,8 @@ COMMENT=		Multitracking sound editor and utilities
 LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl
 
 BROKEN=			"Does not compile"
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2004-06-18
 
 .if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound

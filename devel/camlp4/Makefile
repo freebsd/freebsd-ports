@@ -31,6 +31,8 @@ MLINKS=		camlp4.1 camlp4o.1 camlp4.1 camlp4o.opt.1 \
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 
 BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	${DISTNAME}-manual.html${EXTRACT_SUFX} ${DISTNAME}-manual.ps.gz \

@@ -22,6 +22,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/plperl.so:${PORTSDIR}/databases/p5-post
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
+BROKEN=		"Inconsistent dependencies"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
+
 PERL_CONFIGURE=	yes
 
 MAN3=		DBD::PgSPI.3

@@ -20,6 +20,8 @@ EXTRACT_DEPENDS= unrar:${PORTSDIR}/archivers/unrar
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 
 BROKEN=		"Unfetchable"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 RESTRICTED=	Some of the patches are marked no-commercial-use
 

@@ -18,6 +18,8 @@ COMMENT=	A web based, hierarchical task manager
 RESTRICTED=	No redistribution or repackaging allowed
 
 BROKEN=		"Size mismatch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 USE_APACHE=	yes
 USE_MYSQL=	yes

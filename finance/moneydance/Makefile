@@ -17,6 +17,8 @@ MAINTAINER=	sreilly@seanreilly.com
 COMMENT=	A Personal Finance Manager
 
 BROKEN=		Checksum mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 USE_JAVA=	1.3+
 RESTRICTED=	Strict license

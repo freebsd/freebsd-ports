@@ -22,6 +22,10 @@ USE_ZIP=	yes
 PLIST=		${WRKDIR}/plist
 WRKSRC=		${WRKDIR}/voices
 
+BROKEN=		"Does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
+
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif

@@ -15,6 +15,8 @@ MAINTAINER=	jre@vineyard.net
 COMMENT=	Utilities for accessing HFS+ filesystems
 
 BROKEN=		"Does not compile"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

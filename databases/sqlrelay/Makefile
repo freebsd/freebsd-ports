@@ -153,6 +153,8 @@ BROKEN=		"Broken pkg-plist"
 .else
 BROKEN=		"Does not compile on 5.x"
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*

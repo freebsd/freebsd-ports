@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Quick C-- Compiler
 
 BROKEN=		"Does not fetch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		notangle:${PORTSDIR}/devel/noweb \

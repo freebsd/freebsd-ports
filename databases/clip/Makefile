@@ -29,6 +29,8 @@ BROKEN=		"Does not compile on !i386"
 .else
 BROKEN=		"Broken pkg-plist"
 .endif
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget

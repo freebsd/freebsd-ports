@@ -21,6 +21,8 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 USE_GHOSTSCRIPT_RUN=	yes
 
 BROKEN=		"Fails to patch"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 pre-fetch:
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
