@@ -88,6 +88,7 @@
     SUBDIR += kssh
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
+    SUBDIR += l5
     SUBDIR += labrea
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
