@@ -7,15 +7,16 @@
 # Note: vbidecode is one part of the bttv distribution, the Linux bt848 driver
 # It therefore has a DISTNAME of vbidecode but DISTFILES of bttv
 
-PORTNAME=	vbidecode
-PORTVERSION=	1.1.3
-CATEGORIES=	misc
-MASTER_SITES=	http://people.freebsd.org/~roger/
-DISTFILES=	bttv-0.6.4.tar.gz
+PORTNAME=		vbidecode
+PORTVERSION=		1.1.3
+CATEGORIES=		misc
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	roger
+DISTNAME=		bttv-0.6.4
 
-MAINTAINER=	roger@freebsd.org
+MAINTAINER=		roger@freebsd.org
 
-WRKSRC=		${WRKDIR}/bttv/apps/vbidecode
+WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vbidecode ${PREFIX}/bin
