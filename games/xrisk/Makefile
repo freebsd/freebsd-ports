@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/games/xrisk/ \
 		http://www.mikro.biologie.tu-muenchen.de/pub/rec/games/xrisk/
 
-MAINTAINER=	adam@blacktabby.org
+MAINTAINER=	adam-ports@blacktabby.org
 
 USE_IMAKE=	yes
 MAN6=		xrisk.6
