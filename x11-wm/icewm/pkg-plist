@@ -2,28 +2,28 @@ bin/icehelp
 bin/icewm
 bin/icewmbg
 bin/icewmhint
-%%NODOCS:%%share/doc/icewm/CHANGES
-%%NODOCS:%%share/doc/icewm/FAQ
-%%NODOCS:%%share/doc/icewm/INSTALL
-%%NODOCS:%%share/doc/icewm/README
-%%NODOCS:%%share/doc/icewm/TODO
-%%NODOCS:%%share/doc/icewm/icewm-1.html
-%%NODOCS:%%share/doc/icewm/icewm-10.html
-%%NODOCS:%%share/doc/icewm/icewm-11.html
-%%NODOCS:%%share/doc/icewm/icewm-12.html
-%%NODOCS:%%share/doc/icewm/icewm-13.html
-%%NODOCS:%%share/doc/icewm/icewm-14.html
-%%NODOCS:%%share/doc/icewm/icewm-15.html
-%%NODOCS:%%share/doc/icewm/icewm-16.html
-%%NODOCS:%%share/doc/icewm/icewm-2.html
-%%NODOCS:%%share/doc/icewm/icewm-3.html
-%%NODOCS:%%share/doc/icewm/icewm-4.html
-%%NODOCS:%%share/doc/icewm/icewm-5.html
-%%NODOCS:%%share/doc/icewm/icewm-6.html
-%%NODOCS:%%share/doc/icewm/icewm-7.html
-%%NODOCS:%%share/doc/icewm/icewm-8.html
-%%NODOCS:%%share/doc/icewm/icewm-9.html
-%%NODOCS:%%share/doc/icewm/icewm.html
+%%PORTDOCS%%share/doc/icewm/CHANGES
+%%PORTDOCS%%share/doc/icewm/FAQ
+%%PORTDOCS%%share/doc/icewm/INSTALL
+%%PORTDOCS%%share/doc/icewm/README
+%%PORTDOCS%%share/doc/icewm/TODO
+%%PORTDOCS%%share/doc/icewm/icewm-1.html
+%%PORTDOCS%%share/doc/icewm/icewm-10.html
+%%PORTDOCS%%share/doc/icewm/icewm-11.html
+%%PORTDOCS%%share/doc/icewm/icewm-12.html
+%%PORTDOCS%%share/doc/icewm/icewm-13.html
+%%PORTDOCS%%share/doc/icewm/icewm-14.html
+%%PORTDOCS%%share/doc/icewm/icewm-15.html
+%%PORTDOCS%%share/doc/icewm/icewm-16.html
+%%PORTDOCS%%share/doc/icewm/icewm-2.html
+%%PORTDOCS%%share/doc/icewm/icewm-3.html
+%%PORTDOCS%%share/doc/icewm/icewm-4.html
+%%PORTDOCS%%share/doc/icewm/icewm-5.html
+%%PORTDOCS%%share/doc/icewm/icewm-6.html
+%%PORTDOCS%%share/doc/icewm/icewm-7.html
+%%PORTDOCS%%share/doc/icewm/icewm-8.html
+%%PORTDOCS%%share/doc/icewm/icewm-9.html
+%%PORTDOCS%%share/doc/icewm/icewm.html
 share/icewm/icons/app_16x16.xpm
 share/icewm/icons/app_32x32.xpm
 share/icewm/icons/bomb_16x16.xpm
@@ -289,4 +289,4 @@ share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/ledclock
 @dirrm share/icewm/icons
 @dirrm share/icewm
-%%NODOCS:%%@dirrm share/doc/icewm
+%%PORTDOCS%%@dirrm share/doc/icewm
