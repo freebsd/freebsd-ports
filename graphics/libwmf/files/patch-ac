@@ -1,0 +1,43 @@
+--- libxfig/Makefile.in.orig	Tue Jul 13 10:16:20 1999
++++ libxfig/Makefile.in	Fri May 26 01:11:08 2000
+@@ -28,22 +28,29 @@
+ 
+ SHELL = /bin/sh
+ 
+-.SUFFIXES: .C .o
++.SUFFIXES: .c .o .so
+ 
+ MYOBJECTS = \
+ 	color.o \
+ 	objlist.o \
+ 	fileops.o
+ 
+-all: libxfig.a 
++all: libxfig.a libxfig.so.0
+ 
+ libxfig.a:  $(MYOBJECTS)
+ 	$(AR) rc libxfig.a $(MYOBJECTS)
+ 	$(RANLIB) libxfig.a 
+ 
++libxfig.so.0:  $(MYOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(MYOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libxfig.so.0 libxfig.so
++
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c $*.c
+ 
++.c.so:
++	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
++
+ clean:
+ 	rm -rf *.o *.a core
+ 
+@@ -52,6 +59,8 @@
+ 
+ install: all installdirs
+ 	$(INSTALL_DATA) libxfig.a @libdir@/libxfig.a
++	$(INSTALL_DATA) libxfig.so.0 @libdir@/libxfig.so.0
++	ln -sf libxfig.so.0 @libdir@/libxfig.so
+ 
+ installdirs:
+ 	$(MKINSTALLDIRS) @libdir@ \
