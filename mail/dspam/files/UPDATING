@@ -11,6 +11,19 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 #############################################################################
+# dspam-3.2.4
+#
+
+- drop WITH_WHITELIST, is not supported by ./configure but by dspam.conf
+
+[20041203.0800] jonz: performance fixes for pgsql_drv
+minor performance fixed for pgsql_drv that may have a big effect on some
+implementations. you should also consider creating the (unnecessary) index
+below to precent the pgsql query builder from getting confused:
+CREATE INDEX id_token_data_04 ON dspam_token_data(uid);
+
+
+#############################################################################
 # dspam-3.2.3.20041229.1945
 #
 
@@ -21,7 +34,6 @@ TrustedDeliveryAgent, but leave them commented out
 - change default DSPAM_HOME_MODE to 0770
 (ports/75549 by Julien Gabel <jpeg@thilelli.net>)
 - DSPAM_HOME_{OWNER,GROUP} default to DSPAM_{OWNER,GROUP}
-- fix make describe by USE_MYSQL
 
 
 #############################################################################

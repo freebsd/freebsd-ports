@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	dspam
-PORTVERSION=	3.2.3${SNAP_DATE}
+PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
-DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
 
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
+PORTVER_MAJ=	3.2.4
+#SNAP_DATE=	.20041229.1945
 
-SNAP_DATE=	.20041229.1945
+.ifdef(SNAP_DATE)
+DISTFILES=	dspam.${PORTVER_MAJ}.cvs.stable${SNAP_DATE}.tar.gz
+WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
+.endif
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -32,7 +35,6 @@ OPTIONS+=	CHI_SQUARE "Use Fisher-Robinson Inv Chi-Square" off
 OPTIONS+=	RPV "Use Robinson technique combining p-values" off
 OPTIONS+=	TEST_COND "More inoculous results rapidly, risk fps" on
 OPTIONS+=	NO_BIAS "No bias toward innocent mail" off
-OPTIONS+=	WHITELIST "Automatic whitelisting of ham" off
 OPTIONS+=	NEURAL_NET "Enable neural networking" off
 
 ## run-time configure  options
@@ -159,10 +161,6 @@ CONFIGURE_ARGS+=	 --disable-test-conditional
 
 .if defined(WITH_NO_BIAS)
 CONFIGURE_ARGS+=	--disable-bias
-.endif
-
-.if defined(WITH_WHITELIST)
-CONFIGURE_ARGS+=	--enable-whitelist
 .endif
 
 .if defined(WITH_NEURAL_NET)
@@ -444,10 +442,10 @@ pre-extract:
 	@${ECHO_CMD} ""
 	@sleep 5
 
-.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES WITH_SPAM_SUBJ \
+.for old_opt in MAILDROP PROCMAIL TRAD_BAYES ALT_BAYES SPAM_SUBJ \
 	USER_LOGGING SYSTEM_LOGGING WEBMAIL OPT_IN SAT PARSE_TO_HEADERS \
 	BROKEN_MTA BROKEN_ERR_CODES SIGNATURE_HEADERS SIGNATURE_ATACH \
-	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT
+	HOMEDIR_DOT SIGNATURE_LIFE SQLITE QUARANTINE_AGENT WHITELIST
 .	if defined(WITH_${old_opt}) || defined(WITHOUT_${old_opt})
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "******************************************************************"
