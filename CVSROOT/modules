@@ -3924,6 +3924,7 @@ messarge	ports/russian/messarge
 metakit		ports/databases/metakit
 metamail	ports/mail/metamail
 metatheme	ports/misc/metatheme
+metatheme2	ports/misc/metatheme2
 metis		ports/math/metis
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
