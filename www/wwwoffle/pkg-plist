@@ -125,7 +125,7 @@ wwwoffle/hold/html/messages/UserNeedsPass.html
 wwwoffle/hold/html/messages/WillGet.html
 wwwoffle/hold/html/robots.txt
 wwwoffle/hold/html/wwwoffle.pac
-wwwoffle/hold/upgrade-config.pl
+@comment wwwoffle/hold/upgrade-config.pl
 wwwoffle/html/FAQ.html
 wwwoffle/html/Welcome.html
 wwwoffle/html/htdig/button1.gif
@@ -227,10 +227,12 @@ wwwoffle/html/messages/UserNeedsPass.html
 wwwoffle/html/messages/WillGet.html
 wwwoffle/html/robots.txt
 wwwoffle/html/wwwoffle.pac
+@unexec rm -rf %D/wwwoffle/http
 wwwoffle/outgoing/Owwwoffle-browser
 wwwoffle/outgoing/Owwwoffle-user
 wwwoffle/outgoing/Uwwwoffle-browser
 wwwoffle/outgoing/Uwwwoffle-user
+wwwoffle/wwwoffle.conf
 wwwoffle/wwwoffle.conf.install
 @dirrm wwwoffle/hold/html/htdig/conf
 @dirrm wwwoffle/hold/html/htdig/scripts
@@ -251,5 +253,4 @@ wwwoffle/wwwoffle.conf.install
 @dirrm wwwoffle/lasttime
 @dirrm wwwoffle/monitor
 @dirrm wwwoffle/outgoing
-@dirrm wwwoffle/http
 @dirrm wwwoffle

@@ -3,7 +3,7 @@
 # Date created:		1 Jun 1998
 # Whom:			Peter Mutsaers
 #
-# $Id: Makefile,v 1.2 1999/03/08 19:58:02 fenner Exp $
+# $Id: Makefile,v 1.3 1999/03/08 20:38:17 fenner Exp $
 #
 
 DISTNAME=	wwwoffle-2.4
@@ -81,7 +81,7 @@ do-install:
 
 post-install:
 	# upgrade cache, convert cache, build additional files, configure html and wwwoffle.conf
-	$(PKGDIR)/INSTALL ${DISTNAME} POST-INSTALL
+	$(SH) $(PKGDIR)/INSTALL ${DISTNAME} POST-INSTALL
 
 # keep at end
 .include <bsd.port.mk>
