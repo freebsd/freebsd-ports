@@ -10,8 +10,10 @@ portinstall:	Helps you install new ports in a handy way.
 portcvsweb:	Instantly browses a history via CVSweb.
 portversion:	Replaces pkg_version(1).  This runs much faster and is
 		cooperative with portupgrade(1).
-portsclean:	Cleans ports workdir's and unreferenced distfiles.
-portsdb:	Creates binary database from the ports INDEX.
+portsclean:	Cleans ports workdir's, unreferenced distfiles and
+		old and orphan shared libraries.
+portsdb:	Creates binary database from the ports INDEX, and
+		expands ports globs.
 pkg_deinstall:	Wraps pkg_delete(1) and provides wildcards and
 		dependency recursion support, plus some more.
 pkg_glob:	Expands package globs.
