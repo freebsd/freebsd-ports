@@ -26,7 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
+LIB_DEPENDS+=	gimp-1.3:${PORTSDIR}/graphics/gimp-devel
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS=	--without-gimp
