@@ -8,7 +8,7 @@
 PORTNAME=	portsentry
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.psionic.com/tools/
+MASTER_SITES=	http://www.psionic.com/downloads/
 
 MAINTAINER=	ports@freebsddiary.org
 
