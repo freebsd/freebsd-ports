@@ -65,6 +65,7 @@
     SUBDIR += py-MySQLdb
     SUBDIR += py-PyGreSQL
     SUBDIR += py-SQLDict
+    SUBDIR += py-bsddb3
     SUBDIR += py-gdbm
     SUBDIR += rdb
     SUBDIR += ruby-bdb

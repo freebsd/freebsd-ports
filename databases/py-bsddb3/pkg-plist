@@ -1,0 +1,16 @@
+%%PYTHON_SITELIBDIR%%/bsddb3/__init__.py
+%%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/_db.so
+%%PYTHON_SITELIBDIR%%/bsddb3/db.py
+%%PYTHON_SITELIBDIR%%/bsddb3/db.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbobj.py
+%%PYTHON_SITELIBDIR%%/bsddb3/dbobj.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbrecio.py
+%%PYTHON_SITELIBDIR%%/bsddb3/dbrecio.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbshelve.py
+%%PYTHON_SITELIBDIR%%/bsddb3/dbshelve.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbtables.py
+%%PYTHON_SITELIBDIR%%/bsddb3/dbtables.pyc
+%%PYTHON_SITELIBDIR%%/bsddb3/dbutils.py
+%%PYTHON_SITELIBDIR%%/bsddb3/dbutils.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/bsddb3
