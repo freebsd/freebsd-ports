@@ -10549,6 +10549,7 @@ stardict2	ports/textproc/stardict2
 stardict2-dict-ja	ports/japanese/stardict2-dict-ja
 stardict2-dict-zh_CN	ports/chinese/stardict2-dict-zh_CN
 stardict2-dict-zh_TW	ports/chinese/stardict2-dict-zh_TW
+stardict2-dictd_mova	ports/textproc/stardict2-dictd_mova
 stardict2-quick	ports/textproc/stardict2-quick
 starlanes	ports/games/starlanes
 starlogo	ports/lang/starlogo
