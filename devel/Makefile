@@ -409,6 +409,7 @@
     SUBDIR += oniguruma
     SUBDIR += openzz
     SUBDIR += orbitcpp
+    SUBDIR += ossp-mm
     SUBDIR += p4.el
     SUBDIR += p4db
     SUBDIR += p5-Agent
