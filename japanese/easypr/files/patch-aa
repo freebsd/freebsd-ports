@@ -1,0 +1,25 @@
+--- setcap.c.orig	Mon Jul 24 23:22:11 2000
++++ setcap.c	Fri Aug 25 11:17:42 2000
+@@ -1,6 +1,10 @@
+ #include <stdio.h>
+ #include <signal.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ int main(int argc, char **argv) {
+ 	FILE *fp;
+ 	int  i, pid;
+@@ -9,7 +13,11 @@
+ 	switch(argc) {
+ 	case 1:
+ 		for(i = 0;i < 3;i++) {
++#if (defined(BSD) && (BSD >= 199103))
++			sprintf(com, "/dev/lpt%d", i);
++#else
+ 			sprintf(com, "/dev/lp%d", i);
++#endif
+ 			if((fp = fopen(com, "w")) != 0) {
+ 				puts(com);
+ 				fclose(fp);
