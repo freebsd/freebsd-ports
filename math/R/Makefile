@@ -22,7 +22,7 @@ MASTER_SITES=	http://cran.r-project.org/src/base/ \
 PKGNAMESUFFIX=	-${PAPERSIZE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	maurice@serc.rmit.edu.au
+MAINTAINER=	vangyzen@stat.duke.edu
 COMMENT=	A language for statistical computing and graphics
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
