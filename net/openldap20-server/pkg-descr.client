@@ -8,7 +8,7 @@ This package includes the following major components:
  * LDAP tools - A collection of command line LDAP utilities
  * documentation - man pages for all components
 
-This release is an old version, you should upgrade.
+This version is no longer actively maintained, please upgrade.
 
 WWW: http://www.OpenLDAP.org/
 

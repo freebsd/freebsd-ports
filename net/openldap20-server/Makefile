@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR=	openldap-release
 PKGNAMESUFFIX=		${OPENLDAP_PKGNAMESUFFIX}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		eik@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT?=		Open source LDAP server implementation
 
 LATEST_LINK=		${PKGNAMEPREFIX}openldap20${PKGNAMESUFFIX}
@@ -39,8 +39,12 @@ WANT_OPENLDAP_VER?=	20
 BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
+DEPRECATED=		"OpenLDAP 2.0 is no longer actively maintained." \
+			"Please upgrade to OpenLDAP 2.2"
+EXPIRATION_DATE=	2004-05-01
+
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTVERSION=	1
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
 
@@ -52,7 +56,7 @@ PORTDOCS=		drafts rfc
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	3
+OPENLDAP_PORTVERSION=	4
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
@@ -119,8 +123,8 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 
 WITH_BDB_VER?=		3
 
-.if ${WITH_BDB_VER} == 41
-BROKEN=			"OpenLDAP 2.0 doesn't support Berkeley DB 4.1"
+.if ${WITH_BDB_VER} == 41 || ${WITH_BDB_VER} == 42
+BROKEN=			"OpenLDAP 2.0 doesn't support Berkeley DB 4.1 or 4.2"
 .elif ${WITH_BDB_VER} == 4
 LIB_DEPENDS+=		db4.0:${PORTSDIR}/databases/db4
 .elif ${WITH_BDB_VER} == 3

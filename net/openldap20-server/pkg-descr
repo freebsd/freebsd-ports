@@ -7,7 +7,7 @@ This package includes the following major components:
  * slurpd - a stand-alone LDAP replication server
  * LDIF tools - data conversion tools for use with slapd
 
-This release is an old version, you should upgrade.
+This version is no longer actively maintained, please upgrade.
 
 WWW: http://www.OpenLDAP.org/
 
