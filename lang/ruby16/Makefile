@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ruby
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	lang ipv6
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/${BRANCH_NAME}/ \
@@ -15,12 +15,12 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://ftp.krnet.ne.jp/pub/ruby/${BRANCH_NAME}/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
 
-MAINTAINER=	yasuf@big.or.jp
+MAINTAINER=	yasuf@bsdclub.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-shared
+CONFIGURE_ARGS=	--enable-shared
 MAN1=		ruby.1
-PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
+PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
 RUBY_VER=	1.4
 RUBY_ARCH=	${ARCH}-freebsd${OSREL}
