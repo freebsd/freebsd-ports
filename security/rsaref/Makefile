@@ -11,12 +11,12 @@ DISTNAME=       rsaref20.1996
 PKGNAME=        rsaref-2.0
 CATEGORIES=     security
 MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/crypto/LIBS/rsa/ \
-		ftp://ftp.ntua.gr/pub/crypt/mirrors/utopia.hacktic.nl/crypto/LIBS/math/ \
+		ftp://ftp.replay.com/pub/crypto/crypto/LIBS/rsa \
 		ftp://ftp.tuwien.ac.at/opsys/linux/replay.com/crypto/LIBS/math/ \
-		ftp://ftp.nstu.ru/pub/sources/security/crypt/
+		ftp://ftp.zedz.net/pub/crypto/crypto/LIBS/rsa/
 EXTRACT_SUFX=   .tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kris@FreeBSD.ORG
 
 WRKSRC=         ${WRKDIR}/source
 RESTRICTED=     "Crypto"
