@@ -28,6 +28,7 @@
     SUBDIR += crimson
     SUBDIR += cs-aspell
     SUBDIR += cwtext
+    SUBDIR += cy-aspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
     SUBDIR += dico
