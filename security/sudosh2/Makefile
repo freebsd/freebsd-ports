@@ -15,9 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=	A sudo shell
 
+RUN_DEPENDS=		sudo:${PORTSDIR}/security/sudo
+
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 
 CONFIGURE_ARGS=		--bindir="${PREFIX}/bin"
+CONFIGURE_ENV=		LDFLAGS="-lutil"
 
 .include <bsd.port.mk>
