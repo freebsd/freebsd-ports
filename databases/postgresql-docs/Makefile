@@ -1,6 +1,6 @@
 # New ports collection makefile for:	PostgreSQL docs
 # Date created:		August 26, 2002
-# Whom:			Palle Girgensohn <girgen@partitur.se>
+# Whom:			Palle Girgensohn <girgen@pingpong.net>
 #
 # $FreeBSD$
 #
@@ -8,10 +8,11 @@
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-docs
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	girgen@pingpong.net
 
 POSTGRESQL_SUBPORT=	YES
-.include <${.CURDIR}/../postgresql7/Makefile>
+POSTGRESQL_PORT?=	databases/postgresql7
+.include <${PORTSDIR}/${POSTGRESQL_PORT}/Makefile>
 DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 .undef GNU_CONFIGURE
 NO_BUILD=	YES
