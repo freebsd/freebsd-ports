@@ -71,6 +71,7 @@
     SUBDIR += ghostview
     SUBDIR += gimp-print
     SUBDIR += gnome-cups-manager
+    SUBDIR += gnomephotoprinter
     SUBDIR += gnomeprint
     SUBDIR += gsfonts
     SUBDIR += gtklp
