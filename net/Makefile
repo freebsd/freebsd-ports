@@ -280,6 +280,7 @@
     SUBDIR += libnids
     SUBDIR += libnss-mysql
     SUBDIR += libosip
+    SUBDIR += libosip2
     SUBDIR += librsync
     SUBDIR += libsmi
     SUBDIR += libsocket++
