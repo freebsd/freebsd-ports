@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.16 1997/10/04 22:43:21 andreas Exp $
+# $Id: Makefile,v 1.17 1997/10/04 23:38:59 andreas Exp $
 
 DISTNAME=	postgresql-6.2
 CATEGORIES=	databases
@@ -76,6 +76,8 @@ post-install:
 		${ECHO} "MANPATH=${MANPATH}:${PREFIX}/pgsql/bin" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "PGLIB=${PREFIX}/pgsql/lib" \
+			>> ${PREFIX}/pgsql/.profile; \
+		${ECHO} "# note: PGDATA overwrites the -D startup option" \
 			>> ${PREFIX}/pgsql/.profile; \
 		${ECHO} "PGDATA=${PREFIX}/pgsql/data" \
 			>> ${PREFIX}/pgsql/.profile; \
