@@ -8,7 +8,7 @@
 PORTNAME=	keylaunch
 PORTVERSION=	1.3.0
 CATEGORIES=	x11
-MASTER_SITES=	http://www.kensden.pwp.blueyonder.co.uk/Oroborus/files/
+MASTER_SITES=	http://www.mired.org/downloads/
 
 MAINTAINER=	mwm@mired.org
 
