@@ -8,11 +8,11 @@
 #
 
 PORTNAME=	knowit
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 PORTREVISION=	0
 #PORTEPOCH=
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.uw.edu.pl/~mrudolf/files/
+MASTER_SITES=	http://knowit.sourceforge.net/files/
 
 MAINTAINER=	alane@FreeBSD.org
 
