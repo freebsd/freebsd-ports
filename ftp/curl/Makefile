@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.9.2
-PORTREVISION=	1
+PORTVERSION=	7.9.6
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
-
-PATCHFILES=	curl-lib-sendf.c.patch
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	roam
 
 MAINTAINER=	roam@FreeBSD.org
 
@@ -29,10 +24,13 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		curl_getdate.3 curl_getenv.3 \
 		curl_global_init.3 curl_global_cleanup.3 \
 		curl_mprintf.3 \
+		curl_multi_add_handle.3 curl_multi_cleanup.3 \
+		curl_multi_fdset.3 curl_multi_info_read.3 curl_multi_init.3 \
+		curl_multi_perform.3 curl_multi_remove_handle.3 \
 		curl_slist_append.3 curl_slist_free_all.3 \
 		curl_strequal.3 curl_strnequal.3 \
 		curl_version.3 \
-		libcurl.3
+		libcurl.3 libcurl-multi.3 libcurl-errors.3
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	2
