@@ -1,38 +1,36 @@
-bin/GP
-lib/GP/filters/ImageMagick
-lib/GP/filters/a2ps-j
-lib/GP/filters/dvi2ps-j
-lib/GP/icons/printer.xbm
-lib/GP/icons/exit.xbm
-lib/GP/filetype
-lib/GP/printer
-share/doc/GP/README.euc
-share/doc/GP/COPYING.euc
-share/doc/GP/Changes.euc
-share/doc/GP/Config.euc
-share/doc/GP/Filters_conf.euc
-share/doc/GP/History.euc
-share/doc/GP/Install.euc
-share/doc/GP/Manual/GP.gif
-share/doc/GP/Manual/index.html
-share/doc/GP/Manual/README.euc
-share/doc/GP/Manual/Japanese/bug_info-j.html
-share/doc/GP/Manual/Japanese/future-j.html
-share/doc/GP/Manual/Japanese/intro-j.html
-share/doc/GP/Manual/Japanese/option-j.html
-share/doc/GP/Manual/Japanese/print-j.html
-share/doc/GP/Manual/Japanese/queue-j.html
-share/doc/GP/Manual/Japanese/queue_remove-j.html
-share/doc/GP/Manual/Japanese/start-j.html
-share/doc/GP/Manual/Japanese/image/Remove.gif
-share/doc/GP/Manual/Japanese/image/Queue.gif
-share/doc/GP/Manual/Japanese/image/Print.gif
-share/doc/GP/Manual/Japanese/image/Option.gif
-share/doc/GP/Manual/Japanese/image/GPicon.gif
-@dirrm lib/GP/filters
-@dirrm lib/GP/icons
-@dirrm lib/GP
-@dirrm share/doc/GP/Manual/Japanese/image
-@dirrm share/doc/GP/Manual/Japanese
-@dirrm share/doc/GP/Manual
-@dirrm share/doc/GP
+bin/GPja
+@exec cd %B;if [ -h GP ]; then mv GP GP.previous; fi;ln -sf %f GP
+@unexec cd %B;ls -l GP GP.previous 2>/dev/null|awk -v f=%f '$11==f{cmd="rm -f " $9; system(cmd)}';if [ -h GP.previous ]; then mv GP.previous GP; fi
+lib/GP/ja/filters/ImageMagick
+lib/GP/ja/filters/a2ps-j
+lib/GP/ja/filters/dvi2ps-j
+lib/GP/ja/icons/printer.xbm
+lib/GP/ja/icons/exit.xbm
+lib/GP/ja/filetype
+lib/GP/ja/printer
+share/doc/GP/ja/README.euc
+share/doc/GP/ja/COPYING.euc
+share/doc/GP/ja/Config.euc
+share/doc/GP/ja/Filters_conf.euc
+share/doc/GP/ja/History.euc
+share/doc/GP/ja/Install.euc
+share/doc/GP/ja/Manual/GP.gif
+share/doc/GP/ja/Manual/index.html
+share/doc/GP/ja/Manual/README.euc
+share/doc/GP/ja/Manual/bug_info-j.html
+share/doc/GP/ja/Manual/future-j.html
+share/doc/GP/ja/Manual/intro-j.html
+share/doc/GP/ja/Manual/option-j.html
+share/doc/GP/ja/Manual/print-j.html
+share/doc/GP/ja/Manual/queue-j.html
+share/doc/GP/ja/Manual/queue_remove-j.html
+share/doc/GP/ja/Manual/start-j.html
+share/doc/GP/ja/Manual/image/Remove.gif
+share/doc/GP/ja/Manual/image/Queue.gif
+share/doc/GP/ja/Manual/image/Print.gif
+share/doc/GP/ja/Manual/image/Option.gif
+share/doc/GP/ja/Manual/image/GPicon.gif
+@dirrm lib/GP/ja/filters
+@dirrm lib/GP/ja/icons
+@dirrm share/doc/GP/ja/Manual/image
+@dirrm share/doc/GP/ja/Manual
