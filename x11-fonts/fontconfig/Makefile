@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.90
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.fontconfig.org/release/ \
 		http://nexp.cs.pdx.edu/fontconfig/release/
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 
+MAN1=		fc-cache.1 fc-list.1 fc-match.1
 MAN3=		FcAtomicCreate.3  \
 		FcAtomicDeleteNew.3  \
 		FcAtomicDestroy.3  \
