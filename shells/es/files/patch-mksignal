@@ -1,0 +1,15 @@
+*** mksignal.orig	Wed Dec  3 20:59:12 2003
+--- mksignal	Wed Dec  3 21:00:50 2003
+***************
+*** 106,111 ****
+--- 106,115 ----
+  		ignore["SIGRTMIN"]	= 1
+  		ignore["SIGSETS"]	= 1
+  		ignore["SIGSTKSZ"]	= 1
++ 
++ 		# FreeBSD 5 added a signal beyond NSIG; es makes too many
++ 		# assumptions to make this worth fixing.
++ 		ignore["SIGTHR"]	= 1
+  		
+  		# upper to lowercase translation table:  can someone give me an easier
+  		# way to do this that works in ancient versions of awk?
