@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1587
+PORTVERSION=	r1682+
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tigris.org/files/15/38/
+MASTER_SITES=	http://www.tigris.org/files/15/48/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
