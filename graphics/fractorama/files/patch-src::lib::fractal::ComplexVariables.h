@@ -1,5 +1,5 @@
---- lib/fractal/ComplexVariables.h.bak	Sat Dec  1 01:27:59 2001
-+++ lib/fractal/ComplexVariables.h	Sun Dec 22 06:06:53 2002
+--- lib/fractal/ComplexVariables.h.orig	Fri Oct 24 22:41:22 2003
++++ lib/fractal/ComplexVariables.h	Tue Mar  2 23:07:05 2004
 @@ -3,7 +3,9 @@
  
  #include "dcomplex.h"
@@ -8,6 +8,6 @@
 +#include <iostream>
 +using namespace std;
 +
- struct ComplexEntry;
+ class ComplexEntry;
  
  class ComplexVariables

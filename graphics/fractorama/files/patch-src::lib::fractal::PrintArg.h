@@ -1,16 +1,12 @@
---- lib/fractal/PrintArg.h.orig	Sun Feb  2 08:45:00 2003
-+++ lib/fractal/PrintArg.h	Mon Apr 28 04:26:13 2003
-@@ -1,10 +1,12 @@
+--- lib/fractal/PrintArg.h.orig	Fri Oct 24 22:33:26 2003
++++ lib/fractal/PrintArg.h	Tue Mar  2 23:09:27 2004
+@@ -1,7 +1,8 @@
  #ifndef _PRINT_ARG_H_
  #   define _PRINT_ARG_H_
  
+-class ostream;
 +#include <iostream>
 +using namespace std;
-+
- class ComplexVariables;
- class DoubleVariables;
- class ColorEnvironment;
--class ostream;
  
  class PrintArg
  {
