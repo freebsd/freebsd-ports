@@ -1448,6 +1448,7 @@ fbm		ports/graphics/fbm
 fbsd-icons	ports/x11/fbsd-icons
 fc++		ports/devel/fc++
 fcgi		ports/www/fcgi
+fcitx		ports/chinese/fcitx
 fconv		ports/converters/fconv
 fcplay		ports/audio/fcplay
 fcron		ports/sysutils/fcron
