@@ -13,6 +13,9 @@ share/sgml/docbook/dsssl/modular/common/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
 share/sgml/docbook/dsssl/modular/common/version.sgm
+share/sgml/docbook/dsssl/modular/common/xbl1usen.dsl
+share/sgml/docbook/dsssl/modular/common/changelog/HTML.manifest
+share/sgml/docbook/dsssl/modular/common/changelog/changelog.crf
 share/sgml/docbook/dsssl/modular/common/changelog/changelog.htm
 share/sgml/docbook/dsssl/modular/common/changelog/changelog.rtf
 share/sgml/docbook/dsssl/modular/common/changelog/changelog.sgm
@@ -24,6 +27,8 @@ share/sgml/docbook/dsssl/modular/doc/html.html
 share/sgml/docbook/dsssl/modular/doc/htp-body-attr.html
 share/sgml/docbook/dsssl/modular/doc/htp-callout-default-col.html
 share/sgml/docbook/dsssl/modular/doc/htp-chapter-autolabel.html
+share/sgml/docbook/dsssl/modular/doc/htp-css-decoration.html
+share/sgml/docbook/dsssl/modular/doc/htp-css-liststyle-alist.html
 share/sgml/docbook/dsssl/modular/doc/htp-default-simplesect-level.html
 share/sgml/docbook/dsssl/modular/doc/htp-force-chapter-toc.html
 share/sgml/docbook/dsssl/modular/doc/htp-funcsynopsis-decoration.html
@@ -50,13 +55,15 @@ share/sgml/docbook/dsssl/modular/doc/htp-gentext-nav-use-tables.html
 share/sgml/docbook/dsssl/modular/doc/htp-graphic-default-extension.html
 share/sgml/docbook/dsssl/modular/doc/htp-graphic-extensions.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-ext.html
-share/sgml/docbook/dsssl/modular/doc/htp-html-meta-tags.html
+share/sgml/docbook/dsssl/modular/doc/htp-html-header-tags.html
+share/sgml/docbook/dsssl/modular/doc/htp-html-manifest.html
 share/sgml/docbook/dsssl/modular/doc/htp-html-pubid.html
 share/sgml/docbook/dsssl/modular/doc/htp-legalnotice-link-file.html
 share/sgml/docbook/dsssl/modular/doc/htp-linenumber-length.html
 share/sgml/docbook/dsssl/modular/doc/htp-linenumber-mod.html
 share/sgml/docbook/dsssl/modular/doc/htp-linenumber-padchar.html
 share/sgml/docbook/dsssl/modular/doc/htp-linenumber-space.html
+share/sgml/docbook/dsssl/modular/doc/htp-link-mailto-url.html
 share/sgml/docbook/dsssl/modular/doc/htp-nochunks.html
 share/sgml/docbook/dsssl/modular/doc/htp-number-address-lines.html
 share/sgml/docbook/dsssl/modular/doc/htp-number-funcsynopsisinfo-lines.html
@@ -113,6 +120,7 @@ share/sgml/docbook/dsssl/modular/doc/lib-list-2-string.html
 share/sgml/docbook/dsssl/modular/doc/lib-list-head.html
 share/sgml/docbook/dsssl/modular/doc/lib-list-member-find.html
 share/sgml/docbook/dsssl/modular/doc/lib-list-put.html
+share/sgml/docbook/dsssl/modular/doc/lib-map.html
 share/sgml/docbook/dsssl/modular/doc/lib-match-split-list.html
 share/sgml/docbook/dsssl/modular/doc/lib-match-split.html
 share/sgml/docbook/dsssl/modular/doc/lib-match-split-string-list.html
@@ -193,7 +201,6 @@ share/sgml/docbook/dsssl/modular/doc/prp-generate-set-titlepage.html
 share/sgml/docbook/dsssl/modular/doc/prp-generate-set-toc.html
 share/sgml/docbook/dsssl/modular/doc/prp-graphic-default-extension.html
 share/sgml/docbook/dsssl/modular/doc/prp-graphic-extensions.html
-share/sgml/docbook/dsssl/modular/doc/prp-two-side.html
 share/sgml/docbook/dsssl/modular/doc/prp-guilabel-font-family.html
 share/sgml/docbook/dsssl/modular/doc/prp-head-after-factor.html
 share/sgml/docbook/dsssl/modular/doc/prp-head-before-factor.html
@@ -207,8 +214,10 @@ share/sgml/docbook/dsssl/modular/doc/prp-linenumber-padchar.html
 share/sgml/docbook/dsssl/modular/doc/prp-linenumber-space.html
 share/sgml/docbook/dsssl/modular/doc/prp-mono-font-family.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-address-lines.html
-share/sgml/docbook/dsssl/modular/doc/prp-refentry-function.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-funcsynopsisinfo-lines.html
+share/sgml/docbook/dsssl/modular/doc/prp-page-n-columns.html
+share/sgml/docbook/dsssl/modular/doc/prp-refentry-function.html
+share/sgml/docbook/dsssl/modular/doc/prp-two-side.html
 share/sgml/docbook/dsssl/modular/doc/cmnchanges.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-programlisting-lines.html
 share/sgml/docbook/dsssl/modular/doc/prp-number-screen-lines.html
@@ -287,6 +296,7 @@ share/sgml/docbook/dsssl/modular/html/dbttlpg.dsl
 share/sgml/docbook/dsssl/modular/html/dbverb.dsl
 share/sgml/docbook/dsssl/modular/html/docbook.dsl
 share/sgml/docbook/dsssl/modular/html/version.dsl
+share/sgml/docbook/dsssl/modular/html/changelog/HTML.manifest
 share/sgml/docbook/dsssl/modular/html/changelog/changelog.htm
 share/sgml/docbook/dsssl/modular/html/changelog/changelog.rtf
 share/sgml/docbook/dsssl/modular/html/changelog/changelog.sgm
@@ -296,13 +306,13 @@ share/sgml/docbook/dsssl/modular/lib/README
 share/sgml/docbook/dsssl/modular/lib/dblib.dsl
 share/sgml/docbook/dsssl/modular/lib/doc.zip
 share/sgml/docbook/dsssl/modular/lib/version.sgm
+share/sgml/docbook/dsssl/modular/lib/changelog/HTML.manifest
 share/sgml/docbook/dsssl/modular/lib/changelog/changelog.htm
 share/sgml/docbook/dsssl/modular/lib/changelog/changelog.rtf
 share/sgml/docbook/dsssl/modular/lib/changelog/changelog.sgm
 @dirrm share/sgml/docbook/dsssl/modular/lib/changelog
 @dirrm share/sgml/docbook/dsssl/modular/lib
 share/sgml/docbook/dsssl/modular/print/README
-share/sgml/docbook/dsssl/modular/print/TAGS
 share/sgml/docbook/dsssl/modular/print/XREF
 share/sgml/docbook/dsssl/modular/print/catalog
 share/sgml/docbook/dsssl/modular/print/dbadmon.dsl
@@ -343,30 +353,16 @@ share/sgml/docbook/dsssl/modular/print/docbook.dsl
 share/sgml/docbook/dsssl/modular/print/notoc.dsl
 share/sgml/docbook/dsssl/modular/print/plain.dsl
 share/sgml/docbook/dsssl/modular/print/version.dsl
+share/sgml/docbook/dsssl/modular/print/changelog/HTML.manifest
 share/sgml/docbook/dsssl/modular/print/changelog/changelog.htm
 share/sgml/docbook/dsssl/modular/print/changelog/changelog.rtf
 share/sgml/docbook/dsssl/modular/print/changelog/changelog.sgm
 @dirrm share/sgml/docbook/dsssl/modular/print/changelog
 @dirrm share/sgml/docbook/dsssl/modular/print
-share/sgml/docbook/dsssl/modular/test/biblio.sgm
-share/sgml/docbook/dsssl/modular/test/blocks.sgm
-share/sgml/docbook/dsssl/modular/test/callout.sgm
-share/sgml/docbook/dsssl/modular/test/cmdsyn.sgm
 share/sgml/docbook/dsssl/modular/test/docbook.css
 share/sgml/docbook/dsssl/modular/test/elements
 share/sgml/docbook/dsssl/modular/test/emc2.gif
-share/sgml/docbook/dsssl/modular/test/funcsyn.sgm
-share/sgml/docbook/dsssl/modular/test/gloss.sgm
-share/sgml/docbook/dsssl/modular/test/graphic.sgm
 share/sgml/docbook/dsssl/modular/test/headft.dsl
-share/sgml/docbook/dsssl/modular/test/index.sgm
-share/sgml/docbook/dsssl/modular/test/inlines.sgm
-share/sgml/docbook/dsssl/modular/test/lists.sgm
-share/sgml/docbook/dsssl/modular/test/mlang.sgm
-share/sgml/docbook/dsssl/modular/test/refent.sgm
-share/sgml/docbook/dsssl/modular/test/sections.sgm
-share/sgml/docbook/dsssl/modular/test/tables.sgm
-share/sgml/docbook/dsssl/modular/test/titlepg.sgm
 share/sgml/docbook/dsssl/modular/test/xarticle.sgm
 share/sgml/docbook/dsssl/modular/test/xbadtag.sgm
 share/sgml/docbook/dsssl/modular/test/xbiblio.sgm
@@ -388,6 +384,22 @@ share/sgml/docbook/dsssl/modular/test/xrefent.sgm
 share/sgml/docbook/dsssl/modular/test/xsections.sgm
 share/sgml/docbook/dsssl/modular/test/xset.sgm
 share/sgml/docbook/dsssl/modular/test/xtables.sgm
+share/sgml/docbook/dsssl/modular/test/cases/biblio.sgm
+share/sgml/docbook/dsssl/modular/test/cases/blocks.sgm
+share/sgml/docbook/dsssl/modular/test/cases/callout.sgm
+share/sgml/docbook/dsssl/modular/test/cases/cmdsyn.sgm
+share/sgml/docbook/dsssl/modular/test/cases/funcsyn.sgm
+share/sgml/docbook/dsssl/modular/test/cases/gloss.sgm
+share/sgml/docbook/dsssl/modular/test/cases/graphic.sgm
+share/sgml/docbook/dsssl/modular/test/cases/index.sgm
+share/sgml/docbook/dsssl/modular/test/cases/inlines.sgm
+share/sgml/docbook/dsssl/modular/test/cases/lists.sgm
+share/sgml/docbook/dsssl/modular/test/cases/mlang.sgm
+share/sgml/docbook/dsssl/modular/test/cases/refent.sgm
+share/sgml/docbook/dsssl/modular/test/cases/sections.sgm
+share/sgml/docbook/dsssl/modular/test/cases/tables.sgm
+share/sgml/docbook/dsssl/modular/test/cases/titlepg.sgm
+@dirrm share/sgml/docbook/dsssl/modular/test/cases
 share/sgml/docbook/dsssl/modular/test/xml/catalog
 share/sgml/docbook/dsssl/modular/test/xml/inlines.xml
 share/sgml/docbook/dsssl/modular/test/xml/xinlines.xml
