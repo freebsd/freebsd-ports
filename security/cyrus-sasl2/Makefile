@@ -7,12 +7,15 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.24
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_LOCAL} \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 MASTER_SITE_SUBDIR=	stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail
+
+PATCH_SITES=    http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=     ${DISTNAME}-ipv6-20010321.diff.gz
 
 MAINTAINER=	hetzels@westbend.net
 
@@ -98,14 +101,10 @@ DOC2=	draft-leach-digest-sasl-05.txt \
 
 HTDOCS=	gssapi index programming sysadmin
 
-.if defined(NOPORTDOCS)
-NODOCS=	"@comment "
-.endif
-
 PLIST_SUB=	PREFIX=${PREFIX} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
-		NOPORTDOCS=${NODOCS}
+		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
@@ -123,16 +122,16 @@ post-install:
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/SASL/html
+	@${MKDIR} ${DOCSDIR}/html
 .for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/SASL
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .for file in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/SASL
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${PREFIX}/share/doc/SASL
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
 .for file in ${HTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
+	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
 .endfor
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -34,27 +34,27 @@ lib/sasl/libplain.so.1
 sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
-%%NOPORTDOCS%%share/doc/SASL/AUTHORS
-%%NOPORTDOCS%%share/doc/SASL/COPYING
-%%NOPORTDOCS%%share/doc/SASL/ChangeLog
-%%NOPORTDOCS%%share/doc/SASL/INSTALL
-%%NOPORTDOCS%%share/doc/SASL/NEWS
-%%NOPORTDOCS%%share/doc/SASL/README
-%%NOPORTDOCS%%share/doc/SASL/Sendmail.README
-%%NOPORTDOCS%%share/doc/SASL/TODO
-%%NOPORTDOCS%%share/doc/SASL/draft-leach-digest-sasl-05.txt
-%%NOPORTDOCS%%share/doc/SASL/draft-newman-auth-scram-03.txt
-%%NOPORTDOCS%%share/doc/SASL/rfc1321.txt
-%%NOPORTDOCS%%share/doc/SASL/rfc2095.txt
-%%NOPORTDOCS%%share/doc/SASL/rfc2104.txt
-%%NOPORTDOCS%%share/doc/SASL/rfc2222.txt
-%%NOPORTDOCS%%share/doc/SASL/rfc2245.txt
-%%NOPORTDOCS%%share/doc/SASL/html/gssapi.html
-%%NOPORTDOCS%%share/doc/SASL/html/index.html
-%%NOPORTDOCS%%share/doc/SASL/html/programming.html
-%%NOPORTDOCS%%share/doc/SASL/html/sysadmin.html
-%%NOPORTDOCS%%@dirrm share/doc/SASL/html
-%%NOPORTDOCS%%@dirrm share/doc/SASL
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Sendmail.README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/draft-leach-digest-sasl-05.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-newman-auth-scram-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2095.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2222.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc2245.txt
+%%PORTDOCS%%%%DOCSDIR%%/gssapi.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/programming.html
+%%PORTDOCS%%%%DOCSDIR%%/sysadmin.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/sasl
 @mode ug=rwx,o=
 @cwd /var
