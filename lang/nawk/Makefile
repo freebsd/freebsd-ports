@@ -1,13 +1,13 @@
 # New ports collection makefile for:  nawk
-# Version required:    98.10.20
+# Version required:    99.04.16
 # Date created:        29 April 1998
 # Whom:                Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.2 1998/11/10 02:05:09 steve Exp $
+# $Id: Makefile,v 1.3 1999/01/18 02:53:20 steve Exp $
 #
 
 DISTNAME=	awk
-PKGNAME=	nawk-98.10.20
+PKGNAME=	nawk-99.04.16
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 EXTRACT_SUFX=	tar.gz

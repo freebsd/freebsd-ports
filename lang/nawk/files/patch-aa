@@ -1,31 +1,25 @@
-*** makefile.orig	Tue Oct 20 08:48:03 1998
---- makefile	Wed Jan 13 19:10:37 1999
-***************
-*** 22,34 ****
-  # THIS SOFTWARE.
-  # ****************************************************************/
-  
-! CFLAGS = -g
-! CFLAGS = -O
-! CC = gcc -Wall -g
-! CC = purify cc
-! CC = cc
-  
-! YACC = bison -y
-  YACC = yacc
-  YFLAGS = -d
-  
---- 22,34 ----
-  # THIS SOFTWARE.
-  # ****************************************************************/
-  
-! #CFLAGS = -g
-! CFLAGS ?= -O
-! #CC = gcc -Wall -g
-! #CC = purify cc
-! CC ?= cc
-  
-! #YACC = bison -y
-  YACC = yacc
-  YFLAGS = -d
-  
+--- makefile.orig	Tue Apr  6 11:54:42 1999
++++ makefile	Fri Apr 30 23:29:43 1999
+@@ -22,15 +22,15 @@
+ # THIS SOFTWARE.
+ # ****************************************************************/
+ 
+-CFLAGS = -g
+-CFLAGS = -O2
+-CFLAGS =
++#CFLAGS = -g
++CFLAGS ?= -O2
++#CFLAGS =
+ 
+-CC = gcc -Wall -g
+-CC = purify cc
+-CC = cc
++CC ?= gcc -Wall -g
++#CC = purify cc
++#CC = cc
+ 
+-YACC = bison -y
++#YACC = bison -y
+ YACC = yacc
+ YFLAGS = -d
+ 
