@@ -1,12 +1,12 @@
-# New ports collection makefile for:   icewm
-# Version required:    0.9.27
-# Date created:        10 August 1997
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	icewm
+# Version required:	0.9.28
+# Date created:		10 August 1997
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.28 1999/01/10 05:42:21 vanilla Exp $
+# $Id: Makefile,v 1.29 1999/01/12 16:50:51 vanilla Exp $
 #
 
-DISTNAME=	icewm-0.9.27
+DISTNAME=	icewm-0.9.28
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
 		http://www.freebsd.org/~vanilla/
@@ -28,8 +28,11 @@ ICEOPTION=	--with-shape
 .if defined(I18N)
 ICEOPTION+=	--with-i18n
 .endif
+.if defined(XLOCALE)
+ICEOPTION+=	--with-xlocale
+.endif
 .if defined(GNOME)
-ICEOPTION+=	--with-imlib --with-gnome
+ICEOPTION+=	--with-imlib --with-gnome --with-sm
 .endif
 
 pre-patch:
