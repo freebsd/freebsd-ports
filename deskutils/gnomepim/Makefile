@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomepim
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://www.eskil.org/gnome-pilot/download/tarballs/ \
