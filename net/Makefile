@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.215 1998/12/31 17:21:42 sada Exp $
+# $Id: Makefile,v 1.216 1999/01/07 12:05:28 asami Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -113,7 +113,6 @@
     SUBDIR += pavuk
     SUBDIR += pcnfsd
     SUBDIR += pmf
-    SUBDIR += portscanner
     SUBDIR += ppp-nt
     SUBDIR += pppload
     SUBDIR += ppxp
@@ -141,7 +140,6 @@
     SUBDIR += sniffit
     SUBDIR += socks5
     SUBDIR += spegla
-    SUBDIR += strobe
     SUBDIR += sup
     SUBDIR += tac_plus
     SUBDIR += tcpshow
