@@ -2,6 +2,7 @@ bin/kaffeine
 lib/kaffeineplugin/kaffeineplugin.la
 lib/kaffeineplugin/kaffeineplugin.so
 lib/libkaffeinepart.la
+lib/libkaffeinepart.so
 share/applnk/Multimedia/kaffeine.desktop
 share/apps/kaffeine/kmp-playlist.png
 share/apps/kaffeine/logo.avi
@@ -22,12 +23,16 @@ share/doc/HTML/en/kaffeine/index.cache.bz2
 share/doc/HTML/en/kaffeine/common
 share/icons/hicolor/128x128/apps/kaffeine.png
 share/icons/hicolor/16x16/apps/kaffeine.png
+share/icons/hicolor/16x16/mimetypes/mime_kaffeine.png
+share/icons/hicolor/16x16/actions/player_record.png
 share/icons/hicolor/22x22/apps/kaffeine.png
 share/icons/hicolor/32x32/apps/kaffeine-pause.png
 share/icons/hicolor/32x32/apps/kaffeine-play.png
 share/icons/hicolor/32x32/apps/kaffeine-record.png
 share/icons/hicolor/32x32/apps/kaffeine.png
+share/icons/hicolor/32x32/mimetypes/mime_kaffeine.png
 share/icons/hicolor/48x48/apps/kaffeine.png
+share/icons/hicolor/48x48/mimetypes/mime_kaffeine.png
 share/icons/hicolor/64x64/apps/kaffeine.png
 share/locale/cs/LC_MESSAGES/kaffeine.mo
 share/locale/da/LC_MESSAGES/kaffeine.mo
@@ -40,12 +45,15 @@ share/locale/hu/LC_MESSAGES/kaffeine.mo
 share/locale/it/LC_MESSAGES/kaffeine.mo
 share/locale/ja/LC_MESSAGES/kaffeine.mo
 share/locale/ms/LC_MESSAGES/kaffeine.mo
+share/locale/nb/LC_MESSAGES/kaffeine.mo
 share/locale/pl/LC_MESSAGES/kaffeine.mo
 share/locale/pt_BR/LC_MESSAGES/kaffeine.mo
+share/locale/sl/LC_MESSAGES/kaffeine.mo
 share/locale/sv/LC_MESSAGES/kaffeine.mo
 share/locale/zh_CN/LC_MESSAGES/kaffeine.mo
 share/locale/zh_TW/LC_MESSAGES/kaffeine.mo
 share/mimelnk/application/x-kaffeine.desktop
+share/mimelnk/application/x-mplayer2.desktop
 share/services/kaffeine_part.desktop
 @dirrm lib/kaffeineplugin/
 @dirrm share/apps/kaffeine
