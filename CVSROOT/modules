@@ -6796,6 +6796,7 @@ regm		ports/mail/regm
 relate		ports/mbone/relate
 relay		ports/net/relay
 remarp		ports/net/remarp
+render		ports/x11-toolkits/render
 renderpark	ports/graphics/renderpark
 rep-gtk		ports/x11-toolkits/rep-gtk
 rep-gtk2	ports/x11-toolkits/rep-gtk2
