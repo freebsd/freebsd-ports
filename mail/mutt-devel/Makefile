@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1996/11/17 07:42:41 obrien Exp $
+# $Id: Makefile,v 1.5 1996/11/25 00:55:17 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.52
@@ -24,7 +24,7 @@ PATCHFILES=
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
-DIST_SUBDIR=	Mutt
+DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
 #PATCH_DIST_STRIP=	-p2
 PATCH_DIST_STRIP=	
