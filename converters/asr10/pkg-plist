@@ -1,0 +1,3 @@
+bin/asr10
+bin/wav2asr
+libdata/asr10.template

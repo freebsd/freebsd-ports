@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aish
+    SUBDIR += asr10
     SUBDIR += base64
     SUBDIR += btoa
     SUBDIR += chmview
