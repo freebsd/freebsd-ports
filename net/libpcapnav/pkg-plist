@@ -1,0 +1,29 @@
+@comment $FreeBSD$
+bin/pcapnav-config
+include/pcapnav.h
+lib/libpcapnav.so.0
+lib/libpcapnav.so
+lib/libpcapnav.la
+lib/libpcapnav.a
+%%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/note.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/a1145.html
+%%PORTDOCS%%%%DOCSDIR%%/a1147.html
+%%PORTDOCS%%%%DOCSDIR%%/a1148.html
+%%PORTDOCS%%%%DOCSDIR%%/about.html
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/c15.html
+%%PORTDOCS%%%%DOCSDIR%%/c16.html
+%%PORTDOCS%%%%DOCSDIR%%/c58.html
+%%PORTDOCS%%%%DOCSDIR%%/c59.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-debug.html
+%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-macros.html
+%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav-timestamp.html
+%%PORTDOCS%%%%DOCSDIR%%/pcapnav-pcapnav.html
+%%PORTDOCS%%%%DOCSDIR%%/x28.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

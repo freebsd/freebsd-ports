@@ -271,6 +271,7 @@
     SUBDIR += libosip
     SUBDIR += libosip2
     SUBDIR += libpcap
+    SUBDIR += libpcapnav
     SUBDIR += libpdtp
     SUBDIR += librsync
     SUBDIR += libsocket++

@@ -1,0 +1,5 @@
+Libcapnav is a libpcap wrapper library that allows navigation to arbitrary
+packets in a tcpdump trace file between reads, using timestamps or percentage
+offsets. The API is intentionally much like that of the pcap library.
+
+WWW: http://netdude.sourceforge.net/
