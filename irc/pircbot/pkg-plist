@@ -2,6 +2,8 @@ share/java/classes/pircbot.jar
 %%PORTDOCS%%share/doc/pircbot/constant-values.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/NickAlreadyInUseException.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccChat.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccFileTransfer.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/DccManager.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IdentServer.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/InputThread.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/class-use/IrcException.html
@@ -16,6 +18,8 @@ share/java/classes/pircbot.jar
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-summary.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/package-tree.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccChat.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccFileTransfer.html
+%%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/DccManager.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/IdentServer.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/InputThread.html
 %%PORTDOCS%%share/doc/pircbot/org/jibble/pircbot/OutputThread.html
