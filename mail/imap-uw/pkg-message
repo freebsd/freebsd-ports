@@ -5,13 +5,16 @@ pop2    stream  tcp     nowait  root    /usr/local/libexec/ipop2d   ipop2d
 pop3    stream  tcp     nowait  root    /usr/local/libexec/ipop3d   ipop3d
 imap4   stream  tcp     nowait  root    /usr/local/libexec/imapd    imapd
 
-If PAM authentication support has been compiled in you may need to add
+If PAM authentication support has been compiled in you will need to add
 something like the following lines to /etc/pam.conf (PAM authentication is
 default):
 
-imap	auth	required	pam_unix.so			try_first_pass
+imap	auth	required	pam_unix.so
 imap	account	required	pam_unix.so			try_first_pass
-imap	session	required	pam_unix.so			try_first_pass
-pop3	auth	required	pam_unix.so			try_first_pass
+imap	session	required	pam_deny.so
+pop3	auth	required	pam_unix.so
 pop3	account	required	pam_unix.so			try_first_pass
-pop3	session	required	pam_unix.so			try_first_pass
+pop3	session	required	pam_deny.so
+
+The pam_unix module does not have session support, so we do not use it for
+session management. Be sure to read up on pam.conf(5).

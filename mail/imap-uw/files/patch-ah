@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.orig	Wed Feb 21 03:23:01 2001
-+++ src/ipopd/ipop3d.c	Wed Apr 11 12:02:25 2001
+--- src/ipopd/ipop3d.c.orig	Tue Apr 24 01:31:57 2001
++++ src/ipopd/ipop3d.c	Tue Apr 24 01:34:34 2001
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -22,15 +22,15 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2001.75";	/* server version */
+ char *version = "2001.76";	/* server version */
  short state = AUTHORIZATION;	/* server state */
  short critical = NIL;		/* non-zero if in critical code */
 @@ -100,7 +111,7 @@
  #include "linkage.c"
  				/* initialize server */
-   server_init ((s = strrchr (argv[0],'/')) ? s + 1 : argv[0],
--	       "pop3","pop3s","pop",clkint,kodint,hupint,trmint);
-+	       "pop3","pop3s","pop3",clkint,kodint,hupint,trmint);
+   server_init (((s = strrchr (argv[0],'/')) || (s = strrchr (argv[0],'\\'))) ?
+-	       s+1 : argv[0],"pop3","pop3s","pop",clkint,kodint,hupint,trmint);
++	       s+1 : argv[0],"pop3","pop3s","pop3",clkint,kodint,hupint,trmint);
    challenge[0] = '\0';		/* find the CRAM-MD5 authenticator */
    if (i = mail_lookup_auth_name ("CRAM-MD5",NIL)) {
      AUTHENTICATOR *a = mail_lookup_auth (i);
