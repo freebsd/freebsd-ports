@@ -1,0 +1,52 @@
+diff -ud --recursive ./Makefile.in /usr/devel/ports/uudeview/src/Makefile.in
+--- ./Makefile.in	Sat Jul 20 17:43:22 1996
++++ /usr/devel/ports/uudeview/src/Makefile.in	Thu Aug  1 20:07:25 1996
+@@ -144,7 +144,7 @@
+ 	cat uudeview-$(VERSION).$(PATCH).tar.gz >> uudeview-sfx-$(VERSION).$(PATCH).sh
+ 	chmod 755 uudeview-sfx*
+ 
+-uudeview:	unix/config.h libuu.a
++uudeview:	unix/config.h
+ 	(cd unix;  $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
+ 
+ xdeview:	tcl/config.h libuu.a
+diff -ud --recursive ./man/uudeview.1 /usr/devel/ports/uudeview/src/man/uudeview.1
+--- ./man/uudeview.1	Sun Jul 21 05:54:38 1996
++++ /usr/devel/ports/uudeview/src/man/uudeview.1	Thu Aug  1 18:03:36 1996
+@@ -319,6 +319,8 @@
+ .BR uuenview (1),
+ .BR uudecode (1),
+ .BR uuencode (1),
++.BR munpack (1),
++.BR metamail (1),
+ .PD 0
+ .PP
+ The
+diff -ud --recursive ./man/uuenview.1 /usr/devel/ports/uudeview/src/man/uuenview.1
+--- ./man/uuenview.1	Sat Jul 20 16:38:46 1996
++++ /usr/devel/ports/uudeview/src/man/uuenview.1	Thu Aug  1 18:04:22 1996
+@@ -145,6 +145,8 @@
+ .BR uudecode (1),
+ .BR mail (1),
+ .BR inews (1),
++.BR mpack (1),
++.BR metamail (1),
+ .PD 0
+ .PP
+ The
+diff -ud --recursive ./unix/Makefile.in /usr/devel/ports/uudeview/src/unix/Makefile.in
+--- ./unix/Makefile.in	Thu Jun  6 15:41:08 1996
++++ /usr/devel/ports/uudeview/src/unix/Makefile.in	Thu Aug  1 20:15:58 1996
+@@ -115,10 +115,10 @@
+ 	rm -f uudeview uuenview
+ 	make all
+ 
+-uudeview:	$(UUDEVIEW_OBJ) ../uulib/libuu.a
++uudeview:	$(UUDEVIEW_OBJ)
+ 	$(CC) -o $@ $(UUDEVIEW_OBJ) -L../uulib -luu $(LIBS)
+ 
+-uuenview:	$(UUENVIEW_OBJ) ../uulib/libuu.a
++uuenview:	$(UUENVIEW_OBJ)
+ 	$(CC) -o $@ $(UUENVIEW_OBJ) -L../uulib -luu $(LIBS)
+ 
+ .c.o:
