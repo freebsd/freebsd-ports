@@ -4054,6 +4054,7 @@ mulberry	ports/mail/mulberry
 mule		ports/editors/mule
 mule-common	ports/editors/mule-common
 mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
+multi-gnome-terminal	ports/x11/multi-gnome-terminal
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
 musicbox	ports/audio/musicbox
