@@ -8,6 +8,8 @@ lib/dict/foldoc.dict.dz
 lib/dict/foldoc.index
 lib/dict/gazetteer.dict.dz
 lib/dict/gazetteer.index
+lib/dict/gcide.dict.dz
+lib/dict/gcide.index
 lib/dict/hitchcock.dict.dz
 lib/dict/hitchcock.index
 lib/dict/jargon.dict.dz
