@@ -1,0 +1,19 @@
+#!/bin/sh
+TTY=/dev/tty
+
+case $2 in
+    POST-INSTALL)
+	;;
+    PRE-INSTALL)
+	if dialog --yesno "This port installs old X libraries, which contain possible security exploits.  If security is a concern for you, then you can install fresh a.out libraries from the XFree86 3.3.6 port, although these might not work with older a.out binaries." 16 65 < ${TTY} >${TTY} 2>&1; then
+	    exit 0
+	else
+	    exit 1
+	fi
+	;;
+    *)
+	echo "Unexpected argument $2!"
+	exit 1
+	;;
+esac
+exit 0

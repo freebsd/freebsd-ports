@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/binaries/FreeBSD-2.2.x/
 DISTNAME=	Xbin
 EXTRACT_SUFX=	.tgz
 
-FORBIDDEN=	"Remote denial of service and buffer overflow vulnerabilities"
-
 MAINTAINER=	reg@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
@@ -23,6 +21,13 @@ NO_BUILD=	yes
 PORTOBJFORMAT=	aout
 
 USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
+pre-extract:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@${SH} ${PKGINSTALL} foo PRE-INSTALL || ${FALSE}
+.endif
 
 pre-configure:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
@@ -36,4 +41,4 @@ do-install:
 	done
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib/aout
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
