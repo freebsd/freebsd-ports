@@ -2,9 +2,9 @@ Index: info/makefile
 ===================================================================
 RCS file: /cvsroot/gcl/gcl/info/makefile,v
 retrieving revision 1.23.6.4.2.1
-diff -u -d -b -B -r1.23.6.4.2.1 makefile
+diff -u -d -r1.23.6.4.2.1 makefile
 --- info/makefile	25 Jun 2004 22:40:25 -0000	1.23.6.4.2.1
-+++ info/makefile	19 Jul 2004 13:19:54 -0000
++++ info/makefile	18 Aug 2004 16:29:48 -0000
 @@ -11,12 +11,12 @@
  
  -include ../makedefs
