@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.5.5
+PORTVERSION=	0.11.5.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/ \
 		http://128.113.139.111/~n/.naim_archive/0/11/
@@ -14,10 +14,10 @@ MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/ \
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	Curses based AOL Instant Messager implementation
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--build=${CONFIGURE_TARGET} \
-		--disable-nirc-manlink
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-nirc-manlink
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_LIBTOOL=		yes
 
 MAN1=		naim.1
 MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
