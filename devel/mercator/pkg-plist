@@ -1,0 +1,25 @@
+lib/libmercator-0.2.a
+lib/libmercator-0.2.so
+lib/libmercator-0.2.so.2
+include/Mercator-0.2/Mercator/Mercator.h
+include/Mercator-0.2/Mercator/Matrix.h
+include/Mercator-0.2/Mercator/Terrain.h
+include/Mercator-0.2/Mercator/TerrainMod.h
+include/Mercator-0.2/Mercator/TerrainMod_impl.h
+include/Mercator-0.2/Mercator/BasePoint.h
+include/Mercator-0.2/Mercator/Segment.h
+include/Mercator-0.2/Mercator/Buffer_impl.h
+include/Mercator-0.2/Mercator/Buffer.h
+include/Mercator-0.2/Mercator/Shader.h
+include/Mercator-0.2/Mercator/FillShader.h
+include/Mercator-0.2/Mercator/ThresholdShader.h
+include/Mercator-0.2/Mercator/DepthShader.h
+include/Mercator-0.2/Mercator/GrassShader.h
+include/Mercator-0.2/Mercator/Intersect.h
+include/Mercator-0.2/Mercator/Surface.h
+include/Mercator-0.2/Mercator/Plant.h
+include/Mercator-0.2/Mercator/Forest.h
+include/Mercator-0.2/Mercator/RandCache.h
+@dirrm include/Mercator-0.2/Mercator
+@dirrm include/Mercator-0.2
+libdata/pkgconfig/mercator-0.2.pc
