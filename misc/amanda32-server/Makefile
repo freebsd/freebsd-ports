@@ -10,7 +10,7 @@ PORTVERSION=	2.4.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jeh@FreeBSD.org
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
