@@ -3,12 +3,12 @@
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.2 1998/11/19 15:08:31 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/11/23 10:47:11 asami Exp $
 #
 
 DISTNAME=	xchat-0.3.1
 CATEGORIES=	net
-MASTER_SITES=	http://users.mentasm.com/~zed/xchat/files/
+MASTER_SITES=	http://users.mentasm.com/~zed/xchat/files/old/
 
 MAINTAINER=	jim@phrantic.phear.net
 
