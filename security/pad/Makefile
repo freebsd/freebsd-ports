@@ -22,6 +22,12 @@ MAN1=		pad.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_OPENSSL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-install:
 	${ECHO_CMD} bin/pad > ${PLIST}
 .if !defined(NOPORTDOCS)
@@ -41,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

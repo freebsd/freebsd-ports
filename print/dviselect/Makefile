@@ -20,5 +20,10 @@ SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
 MAN1=		dviselect.1
 
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
