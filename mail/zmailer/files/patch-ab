@@ -1,5 +1,5 @@
---- configure.orig	Mon Jul 19 03:48:10 1999
-+++ configure	Thu Feb 17 19:10:58 2000
+--- configure.orig	Mon Jul 19 00:48:10 1999
++++ configure	Sun Sep 29 01:36:22 2002
 @@ -94,6 +94,8 @@
    --with-getpwnam-library=\"-L.. -l..\"
                              Linking options for non-std getpwnam() libraries"
@@ -18,7 +18,15 @@
  else
      if test "$ac_cv_header_shadow_h" = "yes"; then
  	AUTHLIB="-lshadow"
-@@ -7847,6 +7849,9 @@
+@@ -4723,6 +4725,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 4725 "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
+ #include <sys/socket.h>
+ int main() {
+ socklen_t sl = 2;
+@@ -7847,6 +7850,9 @@
  
  
  
@@ -28,7 +36,7 @@
  # Check whether --with-openssl-prefix or --without-openssl-prefix was given.
  if test "${with_openssl_prefix+set}" = set; then
    withval="$with_openssl_prefix"
-@@ -7929,12 +7934,13 @@
+@@ -7929,12 +7935,13 @@
      OPENSSLPREFIX="/usr"
      OPENSSLINCL=""
      if test -f "$OPENSSLPREFIX/lib/libssl.so" ; then
