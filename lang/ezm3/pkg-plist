@@ -1,0 +1,1101 @@
+bin/m3build
+bin/m3bundle
+bin/m3ship
+lib/m3/%%TARGET%%/m3cgc1
+lib/m3/pkg/X11/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/X11/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/X11/%%TARGET%%/.M3WEB
+lib/m3/pkg/X11/%%TARGET%%/libm3X11.a
+lib/m3/pkg/X11/%%TARGET%%/libm3X11.m3x
+lib/m3/pkg/X11/src/Common/X.i3
+lib/m3/pkg/X11/src/Common/Xatom.i3
+lib/m3/pkg/X11/src/Common/Xaw.i3
+lib/m3/pkg/X11/src/Common/Xct.i3
+lib/m3/pkg/X11/src/Common/Xmbuf.i3
+lib/m3/pkg/X11/src/Common/Xmu.i3
+lib/m3/pkg/X11/src/Common/Xrm.i3
+lib/m3/pkg/X11/src/Common/Xt.i3
+lib/m3/pkg/X11/src/Common/XtC.i3
+lib/m3/pkg/X11/src/Common/XtE.i3
+lib/m3/pkg/X11/src/Common/XtN.i3
+lib/m3/pkg/X11/src/Common/XtR.i3
+lib/m3/pkg/X11/src/Vanilla/XMachine.i3
+lib/m3/pkg/formsvbt/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/formsvbt/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/formsvbt/%%TARGET%%/.M3WEB
+lib/m3/pkg/formsvbt/%%TARGET%%/libm3formsvbt.a
+lib/m3/pkg/formsvbt/%%TARGET%%/libm3formsvbt.m3x
+lib/m3/pkg/formsvbt/src/FVRuntime.i3
+lib/m3/pkg/formsvbt/src/FVTypes.i3
+lib/m3/pkg/formsvbt/src/FormsVBT.i3
+lib/m3/pkg/formsvbt/src/Macro.i3
+lib/m3/pkg/formsvbt/src/Manpage.i3
+lib/m3/pkg/formsvbt/src/RefListUtils.i3
+lib/m3/pkg/formsvbt/src/StubImageRd.i3
+lib/m3/pkg/formsvbt/src/StubImageVBT.i3
+lib/m3/pkg/formsvbt/src/StubImages.i3
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/.M3WEB
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/FormsVBTPixmapsBundle.i3
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/libm3formsvbtpixmaps.a
+lib/m3/pkg/formsvbtpixmaps/%%TARGET%%/libm3formsvbtpixmaps.m3x
+lib/m3/pkg/jvideo/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/jvideo/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/jvideo/%%TARGET%%/.M3WEB
+lib/m3/pkg/jvideo/%%TARGET%%/libjvideo.a
+lib/m3/pkg/jvideo/%%TARGET%%/libjvideo.m3x
+lib/m3/pkg/jvideo/src/POSIX/JVAudio.i3
+lib/m3/pkg/jvideo/src/POSIX/JVBuffer.i3
+lib/m3/pkg/jvideo/src/POSIX/JVConverter.i3
+lib/m3/pkg/jvideo/src/POSIX/JVConverterF.i3
+lib/m3/pkg/jvideo/src/POSIX/JVDecomp.i3
+lib/m3/pkg/jvideo/src/POSIX/JVDecompPool.i3
+lib/m3/pkg/jvideo/src/POSIX/JVFromDecomp.i3
+lib/m3/pkg/jvideo/src/POSIX/JVFromSource.i3
+lib/m3/pkg/jvideo/src/POSIX/JVSink.i3
+lib/m3/pkg/jvideo/src/POSIX/JVSinkPool.i3
+lib/m3/pkg/jvideo/src/POSIX/Jv.i3
+lib/m3/pkg/jvideo/src/POSIX/Jva.i3
+lib/m3/pkg/jvideo/src/POSIX/JvaProtocol.i3
+lib/m3/pkg/jvideo/src/POSIX/Jvs.i3
+lib/m3/pkg/jvideo/src/POSIX/JvsBuffer.i3
+lib/m3/pkg/jvideo/src/POSIX/JvsProtocol.i3
+lib/m3/pkg/jvideo/src/POSIX/jvprotocol.i3
+lib/m3/pkg/libm3/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/libm3/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/libm3/%%TARGET%%/.M3WEB
+lib/m3/pkg/libm3/%%TARGET%%/AtomAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomList.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomListSort.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomPQ.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomPQRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomSeq.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomSeqRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/AtomTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntArraySort.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntList.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntListSort.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntPQ.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntPQRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntSeq.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntSeqRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/IntTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/LongFloatExtras.i3
+lib/m3/pkg/libm3/%%TARGET%%/LongSqrt.i3
+lib/m3/pkg/libm3/%%TARGET%%/PackingTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/PklActionSeq.i3
+lib/m3/pkg/libm3/%%TARGET%%/PklActionSeqRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/RealFloatExtras.i3
+lib/m3/pkg/libm3/%%TARGET%%/RealSqrt.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefList.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefListSort.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefPQ.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefPQRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefSeq.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefSeqRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/RefTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedAtomAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedAtomIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedAtomRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedAtomTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedIntAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedIntIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedIntRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedIntTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedRefAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedRefIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedRefRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedRefTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedTextAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedTextIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedTextRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/SortedTextTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextArraySort.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextAtomTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextIntTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextList.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextListSort.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextPQ.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextPQRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextRefTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextSeq.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextSeqRep.i3
+lib/m3/pkg/libm3/%%TARGET%%/TextTextTbl.i3
+lib/m3/pkg/libm3/%%TARGET%%/libm3.a
+lib/m3/pkg/libm3/%%TARGET%%/libm3.m3x
+lib/m3/pkg/libm3/src/arith/POSIX/Math.i3
+lib/m3/pkg/libm3/src/atom/Atom.i3
+lib/m3/pkg/libm3/src/bundleintf/Bundle.i3
+lib/m3/pkg/libm3/src/bundleintf/BundleRep.i3
+lib/m3/pkg/libm3/src/etimer/ETimer.i3
+lib/m3/pkg/libm3/src/fmtlex/Fmt.i3
+lib/m3/pkg/libm3/src/fmtlex/FmtBuf.i3
+lib/m3/pkg/libm3/src/fmtlex/FmtBufF.i3
+lib/m3/pkg/libm3/src/fmtlex/FmtBufTest.i3
+lib/m3/pkg/libm3/src/fmtlex/Lex.i3
+lib/m3/pkg/libm3/src/fmtlex/OldFmt.i3
+lib/m3/pkg/libm3/src/fmtlex/OldLex.i3
+lib/m3/pkg/libm3/src/fmtlex/OldScan.i3
+lib/m3/pkg/libm3/src/fmtlex/Scan.i3
+lib/m3/pkg/libm3/src/formatter/Formatter.i3
+lib/m3/pkg/libm3/src/geometry/Axis.i3
+lib/m3/pkg/libm3/src/geometry/Interval.i3
+lib/m3/pkg/libm3/src/geometry/Path.i3
+lib/m3/pkg/libm3/src/geometry/PathPrivate.i3
+lib/m3/pkg/libm3/src/geometry/Point.i3
+lib/m3/pkg/libm3/src/geometry/PolyRegion.i3
+lib/m3/pkg/libm3/src/geometry/Rect.i3
+lib/m3/pkg/libm3/src/geometry/Region.i3
+lib/m3/pkg/libm3/src/geometry/RegionRep.i3
+lib/m3/pkg/libm3/src/geometry/Transform.i3
+lib/m3/pkg/libm3/src/geometry/Trapezoid.i3
+lib/m3/pkg/libm3/src/list/List.ig
+lib/m3/pkg/libm3/src/list/List.mg
+lib/m3/pkg/libm3/src/list/ListSort.ig
+lib/m3/pkg/libm3/src/list/ListSort.mg
+lib/m3/pkg/libm3/src/list/list.tmpl
+lib/m3/pkg/libm3/src/os/Common/FS.i3
+lib/m3/pkg/libm3/src/os/Common/File.i3
+lib/m3/pkg/libm3/src/os/Common/OSError.i3
+lib/m3/pkg/libm3/src/os/Common/Pathname.i3
+lib/m3/pkg/libm3/src/os/Common/Pipe.i3
+lib/m3/pkg/libm3/src/os/Common/Process.i3
+lib/m3/pkg/libm3/src/os/Common/RegularFile.i3
+lib/m3/pkg/libm3/src/os/Common/Terminal.i3
+lib/m3/pkg/libm3/src/os/POSIX/FilePosix.i3
+lib/m3/pkg/libm3/src/os/POSIX/OSErrorPosix.i3
+lib/m3/pkg/libm3/src/params/Env.i3
+lib/m3/pkg/libm3/src/params/Params.i3
+lib/m3/pkg/libm3/src/perftool/Common/LowPerfTool.i3
+lib/m3/pkg/libm3/src/perftool/Common/PerfComm.ig
+lib/m3/pkg/libm3/src/perftool/Common/PerfComm.mg
+lib/m3/pkg/libm3/src/perftool/Common/PerfTool.i3
+lib/m3/pkg/libm3/src/pickle/AtomPkl.i3
+lib/m3/pkg/libm3/src/pickle/ConvertPacking.i3
+lib/m3/pkg/libm3/src/pickle/ListPkl.i3
+lib/m3/pkg/libm3/src/pickle/PackingTypeCode.i3
+lib/m3/pkg/libm3/src/pickle/Pickle.i3
+lib/m3/pkg/libm3/src/pickle/PickleRd.i3
+lib/m3/pkg/libm3/src/pickle/PickleStubs.i3
+lib/m3/pkg/libm3/src/pickle/PklAction.i3
+lib/m3/pkg/libm3/src/pickle/PklTipeMap.i3
+lib/m3/pkg/libm3/src/pqueue/PQueue.ig
+lib/m3/pkg/libm3/src/pqueue/PQueue.mg
+lib/m3/pkg/libm3/src/pqueue/PQueueRep.ig
+lib/m3/pkg/libm3/src/pqueue/pqueue.tmpl
+lib/m3/pkg/libm3/src/property/MProperty.i3
+lib/m3/pkg/libm3/src/property/MPropertyF.i3
+lib/m3/pkg/libm3/src/property/Property.i3
+lib/m3/pkg/libm3/src/property/PropertyF.i3
+lib/m3/pkg/libm3/src/property/PropertyV.i3
+lib/m3/pkg/libm3/src/random/Common/Random.i3
+lib/m3/pkg/libm3/src/random/Common/RandomPerm.i3
+lib/m3/pkg/libm3/src/random/Common/RandomReal.i3
+lib/m3/pkg/libm3/src/regex/RegEx.i3
+lib/m3/pkg/libm3/src/rw/Common/AutoFlushWr.i3
+lib/m3/pkg/libm3/src/rw/Common/FileRd.i3
+lib/m3/pkg/libm3/src/rw/Common/FileWr.i3
+lib/m3/pkg/libm3/src/rw/Common/IO.i3
+lib/m3/pkg/libm3/src/rw/Common/MsgRd.i3
+lib/m3/pkg/libm3/src/rw/Common/MsgWr.i3
+lib/m3/pkg/libm3/src/rw/Common/NullRd.i3
+lib/m3/pkg/libm3/src/rw/Common/NullWr.i3
+lib/m3/pkg/libm3/src/rw/Common/Rd.i3
+lib/m3/pkg/libm3/src/rw/Common/RdClass.i3
+lib/m3/pkg/libm3/src/rw/Common/RdCopy.i3
+lib/m3/pkg/libm3/src/rw/Common/RdUtils.i3
+lib/m3/pkg/libm3/src/rw/Common/Stdio.i3
+lib/m3/pkg/libm3/src/rw/Common/TextRd.i3
+lib/m3/pkg/libm3/src/rw/Common/TextWr.i3
+lib/m3/pkg/libm3/src/rw/Common/UnsafeRd.i3
+lib/m3/pkg/libm3/src/rw/Common/UnsafeWr.i3
+lib/m3/pkg/libm3/src/rw/Common/Wr.i3
+lib/m3/pkg/libm3/src/rw/Common/WrClass.i3
+lib/m3/pkg/libm3/src/sequence/Sequence.ig
+lib/m3/pkg/libm3/src/sequence/Sequence.mg
+lib/m3/pkg/libm3/src/sequence/SequenceRep.ig
+lib/m3/pkg/libm3/src/sequence/sequence.tmpl
+lib/m3/pkg/libm3/src/sort/ArraySort.ig
+lib/m3/pkg/libm3/src/sort/ArraySort.mg
+lib/m3/pkg/libm3/src/sort/arraysort.tmpl
+lib/m3/pkg/libm3/src/sortedtable/SortedTable.ig
+lib/m3/pkg/libm3/src/sortedtable/SortedTable.mg
+lib/m3/pkg/libm3/src/sortedtable/sortedtable.tmpl
+lib/m3/pkg/libm3/src/sqrt/FloatExtras.ig
+lib/m3/pkg/libm3/src/sqrt/FloatExtras.mg
+lib/m3/pkg/libm3/src/sqrt/Sqrt.ig
+lib/m3/pkg/libm3/src/sqrt/Sqrt.mg
+lib/m3/pkg/libm3/src/statistics/Stat.i3
+lib/m3/pkg/libm3/src/sx/Sx.i3
+lib/m3/pkg/libm3/src/table/Table.ig
+lib/m3/pkg/libm3/src/table/Table.mg
+lib/m3/pkg/libm3/src/table/table.tmpl
+lib/m3/pkg/libm3/src/types/ASCII.i3
+lib/m3/pkg/libm3/src/types/Boolean.i3
+lib/m3/pkg/libm3/src/types/CIText.i3
+lib/m3/pkg/libm3/src/types/Char.i3
+lib/m3/pkg/libm3/src/types/Int32.i3
+lib/m3/pkg/libm3/src/types/Integer.i3
+lib/m3/pkg/libm3/src/types/LongrealType.i3
+lib/m3/pkg/libm3/src/types/RealType.i3
+lib/m3/pkg/libm3/src/types/Refany.i3
+lib/m3/pkg/libm3/src/uid/Common/Capability.i3
+lib/m3/pkg/libm3/src/uid/Common/MachineID.i3
+lib/m3/pkg/libm3/src/uid/Common/Swap.i3
+lib/m3/pkg/libm3/src/uid/Common/TimeStamp.i3
+lib/m3/pkg/libm3/src/uid/Common/TimeStampRep.i3
+lib/m3/pkg/m3build/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3build/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3build/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3bundle/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3bundle/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3bundle/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3config/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3config/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3config/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3config/%%TARGET%%/M3Config.i3
+lib/m3/pkg/m3config/%%TARGET%%/libm3config.a
+lib/m3/pkg/m3config/%%TARGET%%/libm3config.m3x
+lib/m3/pkg/m3config/src/COMMON
+lib/m3/pkg/m3config/src/%%TARGET%%
+lib/m3/pkg/m3config/src/GCWRAP
+lib/m3/pkg/m3core/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3core/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3core/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3core/%%TARGET%%/libm3core.a
+lib/m3/pkg/m3core/%%TARGET%%/libm3core.m3x
+lib/m3/pkg/m3core/src/C/%%WORDSIZE%%BITS/BasicCtypes.i3
+lib/m3/pkg/m3core/src/C/Common/Cerrno.i3
+lib/m3/pkg/m3core/src/C/Common/Cstdarg.i3
+lib/m3/pkg/m3core/src/C/Common/Cstddef.i3
+lib/m3/pkg/m3core/src/C/Common/Cstdlib.i3
+lib/m3/pkg/m3core/src/C/Common/Ctypes.i3
+lib/m3/pkg/m3core/src/C/Common/M3toC.i3
+lib/m3/pkg/m3core/src/C/%%TARGET%%/Csetjmp.i3
+lib/m3/pkg/m3core/src/C/%%TARGET%%/Csignal.i3
+lib/m3/pkg/m3core/src/C/%%TARGET%%/Cstdio.i3
+lib/m3/pkg/m3core/src/C/%%TARGET%%/Cstring.i3
+lib/m3/pkg/m3core/src/Csupport/Common/dtoa.h
+lib/m3/pkg/m3core/src/convert/CConvert.i3
+lib/m3/pkg/m3core/src/convert/Convert.i3
+lib/m3/pkg/m3core/src/fingerprint/Fingerprint.i3
+lib/m3/pkg/m3core/src/fingerprint/Poly.i3
+lib/m3/pkg/m3core/src/fingerprint/PolyBasis.i3
+lib/m3/pkg/m3core/src/float/Common/DragonInt.i3
+lib/m3/pkg/m3core/src/float/Common/DragonT.i3
+lib/m3/pkg/m3core/src/float/Common/ExtendedFloat.i3
+lib/m3/pkg/m3core/src/float/Common/Float.ig
+lib/m3/pkg/m3core/src/float/Common/IEEESpecial.i3
+lib/m3/pkg/m3core/src/float/Common/LongFloat.i3
+lib/m3/pkg/m3core/src/float/Common/RealFloat.i3
+lib/m3/pkg/m3core/src/float/IEEE-default/FPU.i3
+lib/m3/pkg/m3core/src/float/IEEE-default/FloatMode.i3
+lib/m3/pkg/m3core/src/float/IEEE-le/LongRealRep.i3
+lib/m3/pkg/m3core/src/float/IEEE-le/RealRep.i3
+lib/m3/pkg/m3core/src/float/IEEE/Extended.i3
+lib/m3/pkg/m3core/src/float/IEEE/LongReal.i3
+lib/m3/pkg/m3core/src/float/IEEE/Real.i3
+lib/m3/pkg/m3core/src/main/Main.i3
+lib/m3/pkg/m3core/src/runtime/%%TARGET%%/RTMachine.i3
+lib/m3/pkg/m3core/src/runtime/POSIX/RT0u.i3
+lib/m3/pkg/m3core/src/runtime/POSIX/RTPerfTool.i3
+lib/m3/pkg/m3core/src/runtime/POSIX/RTThread.i3
+lib/m3/pkg/m3core/src/runtime/common/RT0.i3
+lib/m3/pkg/m3core/src/runtime/common/RTAllocStats.i3
+lib/m3/pkg/m3core/src/runtime/common/RTAllocator.i3
+lib/m3/pkg/m3core/src/runtime/common/RTArgs.i3
+lib/m3/pkg/m3core/src/runtime/common/RTCollector.i3
+lib/m3/pkg/m3core/src/runtime/common/RTCollectorSRC.i3
+lib/m3/pkg/m3core/src/runtime/common/RTException.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeap.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapDebug.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapDep.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapEvent.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapInfo.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapMap.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapRep.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHeapStats.i3
+lib/m3/pkg/m3core/src/runtime/common/RTHooks.i3
+lib/m3/pkg/m3core/src/runtime/common/RTIO.i3
+lib/m3/pkg/m3core/src/runtime/common/RTLinker.i3
+lib/m3/pkg/m3core/src/runtime/common/RTMapOp.i3
+lib/m3/pkg/m3core/src/runtime/common/RTMisc.i3
+lib/m3/pkg/m3core/src/runtime/common/RTModule.i3
+lib/m3/pkg/m3core/src/runtime/common/RTOS.i3
+lib/m3/pkg/m3core/src/runtime/common/RTPacking.i3
+lib/m3/pkg/m3core/src/runtime/common/RTParams.i3
+lib/m3/pkg/m3core/src/runtime/common/RTProcedure.i3
+lib/m3/pkg/m3core/src/runtime/common/RTProcedureSRC.i3
+lib/m3/pkg/m3core/src/runtime/common/RTProcess.i3
+lib/m3/pkg/m3core/src/runtime/common/RTSignal.i3
+lib/m3/pkg/m3core/src/runtime/common/RTStack.i3
+lib/m3/pkg/m3core/src/runtime/common/RTThreadInit.i3
+lib/m3/pkg/m3core/src/runtime/common/RTTipe.i3
+lib/m3/pkg/m3core/src/runtime/common/RTType.i3
+lib/m3/pkg/m3core/src/runtime/common/RTTypeFP.i3
+lib/m3/pkg/m3core/src/runtime/common/RTTypeMap.i3
+lib/m3/pkg/m3core/src/runtime/common/RTTypeSRC.i3
+lib/m3/pkg/m3core/src/runtime/common/RTWeakRef.i3
+lib/m3/pkg/m3core/src/runtime/common/RTutils.i3
+lib/m3/pkg/m3core/src/runtime/ex_frame/RTExRep.i3
+lib/m3/pkg/m3core/src/text/Text.i3
+lib/m3/pkg/m3core/src/text/TextConv.i3
+lib/m3/pkg/m3core/src/text/TextExtras.i3
+lib/m3/pkg/m3core/src/text/TextF.i3
+lib/m3/pkg/m3core/src/thread/Common/Scheduler.i3
+lib/m3/pkg/m3core/src/thread/Common/Thread.i3
+lib/m3/pkg/m3core/src/thread/POSIX/SchedulerPosix.i3
+lib/m3/pkg/m3core/src/thread/POSIX/ThreadEvent.i3
+lib/m3/pkg/m3core/src/thread/POSIX/ThreadF.i3
+lib/m3/pkg/m3core/src/time/Common/Date.i3
+lib/m3/pkg/m3core/src/time/Common/FmtTime.i3
+lib/m3/pkg/m3core/src/time/Common/Tick.i3
+lib/m3/pkg/m3core/src/time/Common/Time.i3
+lib/m3/pkg/m3core/src/time/POSIX/TimePosix.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Udir.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uerror.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uexec.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ugrp.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uin.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uipc.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umman.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Umsg.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unetdb.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Unix.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uprocess.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Upwd.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uresource.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usem.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ushm.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usignal.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usocket.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Ustat.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Usyslog.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utime.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Utypes.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uugid.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uuio.i3
+lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%/Uutmp.i3
+lib/m3/pkg/m3core/src/weakref/WeakRef.i3
+lib/m3/pkg/m3core/src/word/Word.i3
+lib/m3/pkg/m3doc/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3doc/src/m3doc.tmpl
+lib/m3/pkg/m3driver/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3driver/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3driver/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3driver/%%TARGET%%/LibSeq.i3
+lib/m3/pkg/m3driver/%%TARGET%%/LibSeqRep.i3
+lib/m3/pkg/m3driver/%%TARGET%%/libm3driver.a
+lib/m3/pkg/m3driver/%%TARGET%%/libm3driver.m3x
+lib/m3/pkg/m3driver/src/Arg.i3
+lib/m3/pkg/m3driver/src/Lib.i3
+lib/m3/pkg/m3driver/src/M3Backend.i3
+lib/m3/pkg/m3driver/src/M3Driver.i3
+lib/m3/pkg/m3driver/src/M3DriverRep.i3
+lib/m3/pkg/m3driver/src/M3Path.i3
+lib/m3/pkg/m3driver/src/Msg.i3
+lib/m3/pkg/m3driver/src/Unit.i3
+lib/m3/pkg/m3driver/src/Utils.i3
+lib/m3/pkg/m3driver/src/WebFile.i3
+lib/m3/pkg/m3front/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3front/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3front/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3front/%%TARGET%%/libm3front.a
+lib/m3/pkg/m3front/%%TARGET%%/libm3front.m3x
+lib/m3/pkg/m3front/src/builtinOps/Abs.i3
+lib/m3/pkg/m3front/src/builtinOps/Adr.i3
+lib/m3/pkg/m3front/src/builtinOps/AdrSize.i3
+lib/m3/pkg/m3front/src/builtinOps/BitSize.i3
+lib/m3/pkg/m3front/src/builtinOps/BuiltinOps.i3
+lib/m3/pkg/m3front/src/builtinOps/ByteSize.i3
+lib/m3/pkg/m3front/src/builtinOps/Ceiling.i3
+lib/m3/pkg/m3front/src/builtinOps/Dec.i3
+lib/m3/pkg/m3front/src/builtinOps/Dispose.i3
+lib/m3/pkg/m3front/src/builtinOps/First.i3
+lib/m3/pkg/m3front/src/builtinOps/Floatt.i3
+lib/m3/pkg/m3front/src/builtinOps/Floor.i3
+lib/m3/pkg/m3front/src/builtinOps/Inc.i3
+lib/m3/pkg/m3front/src/builtinOps/IsType.i3
+lib/m3/pkg/m3front/src/builtinOps/Last.i3
+lib/m3/pkg/m3front/src/builtinOps/Loophole.i3
+lib/m3/pkg/m3front/src/builtinOps/Max.i3
+lib/m3/pkg/m3front/src/builtinOps/Min.i3
+lib/m3/pkg/m3front/src/builtinOps/Narrow.i3
+lib/m3/pkg/m3front/src/builtinOps/New.i3
+lib/m3/pkg/m3front/src/builtinOps/Number.i3
+lib/m3/pkg/m3front/src/builtinOps/Ord.i3
+lib/m3/pkg/m3front/src/builtinOps/Round.i3
+lib/m3/pkg/m3front/src/builtinOps/Subarray.i3
+lib/m3/pkg/m3front/src/builtinOps/Trunc.i3
+lib/m3/pkg/m3front/src/builtinOps/Typecode.i3
+lib/m3/pkg/m3front/src/builtinOps/Val.i3
+lib/m3/pkg/m3front/src/builtinTypes/Addr.i3
+lib/m3/pkg/m3front/src/builtinTypes/Bool.i3
+lib/m3/pkg/m3front/src/builtinTypes/BuiltinTypes.i3
+lib/m3/pkg/m3front/src/builtinTypes/CChar.i3
+lib/m3/pkg/m3front/src/builtinTypes/Card.i3
+lib/m3/pkg/m3front/src/builtinTypes/EReel.i3
+lib/m3/pkg/m3front/src/builtinTypes/ErrType.i3
+lib/m3/pkg/m3front/src/builtinTypes/Int.i3
+lib/m3/pkg/m3front/src/builtinTypes/LReel.i3
+lib/m3/pkg/m3front/src/builtinTypes/Mutex.i3
+lib/m3/pkg/m3front/src/builtinTypes/Null.i3
+lib/m3/pkg/m3front/src/builtinTypes/ObjectAdr.i3
+lib/m3/pkg/m3front/src/builtinTypes/ObjectRef.i3
+lib/m3/pkg/m3front/src/builtinTypes/Reel.i3
+lib/m3/pkg/m3front/src/builtinTypes/Reff.i3
+lib/m3/pkg/m3front/src/builtinTypes/Textt.i3
+lib/m3/pkg/m3front/src/builtinWord/WordAnd.i3
+lib/m3/pkg/m3front/src/builtinWord/WordDivide.i3
+lib/m3/pkg/m3front/src/builtinWord/WordExtract.i3
+lib/m3/pkg/m3front/src/builtinWord/WordGE.i3
+lib/m3/pkg/m3front/src/builtinWord/WordGT.i3
+lib/m3/pkg/m3front/src/builtinWord/WordInsert.i3
+lib/m3/pkg/m3front/src/builtinWord/WordLE.i3
+lib/m3/pkg/m3front/src/builtinWord/WordLT.i3
+lib/m3/pkg/m3front/src/builtinWord/WordMinus.i3
+lib/m3/pkg/m3front/src/builtinWord/WordMod.i3
+lib/m3/pkg/m3front/src/builtinWord/WordModule.i3
+lib/m3/pkg/m3front/src/builtinWord/WordNot.i3
+lib/m3/pkg/m3front/src/builtinWord/WordOr.i3
+lib/m3/pkg/m3front/src/builtinWord/WordPlus.i3
+lib/m3/pkg/m3front/src/builtinWord/WordRotate.i3
+lib/m3/pkg/m3front/src/builtinWord/WordShift.i3
+lib/m3/pkg/m3front/src/builtinWord/WordTimes.i3
+lib/m3/pkg/m3front/src/builtinWord/WordXor.i3
+lib/m3/pkg/m3front/src/exprs/AddExpr.i3
+lib/m3/pkg/m3front/src/exprs/AddressExpr.i3
+lib/m3/pkg/m3front/src/exprs/AndExpr.i3
+lib/m3/pkg/m3front/src/exprs/ArrayExpr.i3
+lib/m3/pkg/m3front/src/exprs/CallExpr.i3
+lib/m3/pkg/m3front/src/exprs/CastExpr.i3
+lib/m3/pkg/m3front/src/exprs/CheckExpr.i3
+lib/m3/pkg/m3front/src/exprs/CompareExpr.i3
+lib/m3/pkg/m3front/src/exprs/ConcatExpr.i3
+lib/m3/pkg/m3front/src/exprs/ConsExpr.i3
+lib/m3/pkg/m3front/src/exprs/DerefExpr.i3
+lib/m3/pkg/m3front/src/exprs/DivExpr.i3
+lib/m3/pkg/m3front/src/exprs/DivideExpr.i3
+lib/m3/pkg/m3front/src/exprs/EnumExpr.i3
+lib/m3/pkg/m3front/src/exprs/EqualExpr.i3
+lib/m3/pkg/m3front/src/exprs/Expr.i3
+lib/m3/pkg/m3front/src/exprs/ExprParse.i3
+lib/m3/pkg/m3front/src/exprs/ExprRep.i3
+lib/m3/pkg/m3front/src/exprs/InExpr.i3
+lib/m3/pkg/m3front/src/exprs/IntegerExpr.i3
+lib/m3/pkg/m3front/src/exprs/KeywordExpr.i3
+lib/m3/pkg/m3front/src/exprs/MethodExpr.i3
+lib/m3/pkg/m3front/src/exprs/ModExpr.i3
+lib/m3/pkg/m3front/src/exprs/MultiplyExpr.i3
+lib/m3/pkg/m3front/src/exprs/NamedExpr.i3
+lib/m3/pkg/m3front/src/exprs/NegateExpr.i3
+lib/m3/pkg/m3front/src/exprs/NilChkExpr.i3
+lib/m3/pkg/m3front/src/exprs/NotExpr.i3
+lib/m3/pkg/m3front/src/exprs/OrExpr.i3
+lib/m3/pkg/m3front/src/exprs/PlusExpr.i3
+lib/m3/pkg/m3front/src/exprs/ProcExpr.i3
+lib/m3/pkg/m3front/src/exprs/QualifyExpr.i3
+lib/m3/pkg/m3front/src/exprs/RangeExpr.i3
+lib/m3/pkg/m3front/src/exprs/RecordExpr.i3
+lib/m3/pkg/m3front/src/exprs/ReelExpr.i3
+lib/m3/pkg/m3front/src/exprs/SetExpr.i3
+lib/m3/pkg/m3front/src/exprs/SubscriptExpr.i3
+lib/m3/pkg/m3front/src/exprs/SubtractExpr.i3
+lib/m3/pkg/m3front/src/exprs/TextExpr.i3
+lib/m3/pkg/m3front/src/exprs/TypeExpr.i3
+lib/m3/pkg/m3front/src/exprs/VarExpr.i3
+lib/m3/pkg/m3front/src/misc/CG.i3
+lib/m3/pkg/m3front/src/misc/Coverage.i3
+lib/m3/pkg/m3front/src/misc/ESet.i3
+lib/m3/pkg/m3front/src/misc/Error.i3
+lib/m3/pkg/m3front/src/misc/Host.i3
+lib/m3/pkg/m3front/src/misc/M3.i3
+lib/m3/pkg/m3front/src/misc/M3Compiler.i3
+lib/m3/pkg/m3front/src/misc/M3Header.i3
+lib/m3/pkg/m3front/src/misc/M3String.i3
+lib/m3/pkg/m3front/src/misc/Marker.i3
+lib/m3/pkg/m3front/src/misc/ProcBody.i3
+lib/m3/pkg/m3front/src/misc/Runtime.i3
+lib/m3/pkg/m3front/src/misc/Scanner.i3
+lib/m3/pkg/m3front/src/misc/Scope.i3
+lib/m3/pkg/m3front/src/misc/TipeDesc.i3
+lib/m3/pkg/m3front/src/misc/TipeMap.i3
+lib/m3/pkg/m3front/src/misc/Token.i3
+lib/m3/pkg/m3front/src/misc/Tracer.i3
+lib/m3/pkg/m3front/src/misc/WebInfo.i3
+lib/m3/pkg/m3front/src/stmts/AssertStmt.i3
+lib/m3/pkg/m3front/src/stmts/AssignStmt.i3
+lib/m3/pkg/m3front/src/stmts/BlockStmt.i3
+lib/m3/pkg/m3front/src/stmts/CallStmt.i3
+lib/m3/pkg/m3front/src/stmts/CaseStmt.i3
+lib/m3/pkg/m3front/src/stmts/EvalStmt.i3
+lib/m3/pkg/m3front/src/stmts/ExitStmt.i3
+lib/m3/pkg/m3front/src/stmts/ForStmt.i3
+lib/m3/pkg/m3front/src/stmts/IfStmt.i3
+lib/m3/pkg/m3front/src/stmts/LockStmt.i3
+lib/m3/pkg/m3front/src/stmts/LoopStmt.i3
+lib/m3/pkg/m3front/src/stmts/RaiseStmt.i3
+lib/m3/pkg/m3front/src/stmts/RepeatStmt.i3
+lib/m3/pkg/m3front/src/stmts/ReturnStmt.i3
+lib/m3/pkg/m3front/src/stmts/Stmt.i3
+lib/m3/pkg/m3front/src/stmts/StmtRep.i3
+lib/m3/pkg/m3front/src/stmts/TryFinStmt.i3
+lib/m3/pkg/m3front/src/stmts/TryStmt.i3
+lib/m3/pkg/m3front/src/stmts/TypeCaseStmt.i3
+lib/m3/pkg/m3front/src/stmts/WhileStmt.i3
+lib/m3/pkg/m3front/src/stmts/WithStmt.i3
+lib/m3/pkg/m3front/src/types/ArrayType.i3
+lib/m3/pkg/m3front/src/types/EnumType.i3
+lib/m3/pkg/m3front/src/types/NamedType.i3
+lib/m3/pkg/m3front/src/types/ObjectType.i3
+lib/m3/pkg/m3front/src/types/OpaqueType.i3
+lib/m3/pkg/m3front/src/types/OpenArrayType.i3
+lib/m3/pkg/m3front/src/types/PackedType.i3
+lib/m3/pkg/m3front/src/types/ProcType.i3
+lib/m3/pkg/m3front/src/types/RecordType.i3
+lib/m3/pkg/m3front/src/types/RefType.i3
+lib/m3/pkg/m3front/src/types/SetType.i3
+lib/m3/pkg/m3front/src/types/SubrangeType.i3
+lib/m3/pkg/m3front/src/types/Type.i3
+lib/m3/pkg/m3front/src/types/TypeFP.i3
+lib/m3/pkg/m3front/src/types/TypeRep.i3
+lib/m3/pkg/m3front/src/types/TypeTbl.i3
+lib/m3/pkg/m3front/src/types/UserProc.i3
+lib/m3/pkg/m3front/src/values/Constant.i3
+lib/m3/pkg/m3front/src/values/Decl.i3
+lib/m3/pkg/m3front/src/values/EnumElt.i3
+lib/m3/pkg/m3front/src/values/Exceptionz.i3
+lib/m3/pkg/m3front/src/values/External.i3
+lib/m3/pkg/m3front/src/values/Field.i3
+lib/m3/pkg/m3front/src/values/Formal.i3
+lib/m3/pkg/m3front/src/values/Ident.i3
+lib/m3/pkg/m3front/src/values/Method.i3
+lib/m3/pkg/m3front/src/values/Module.i3
+lib/m3/pkg/m3front/src/values/Procedure.i3
+lib/m3/pkg/m3front/src/values/Revelation.i3
+lib/m3/pkg/m3front/src/values/Tipe.i3
+lib/m3/pkg/m3front/src/values/Value.i3
+lib/m3/pkg/m3front/src/values/ValueRep.i3
+lib/m3/pkg/m3front/src/values/Variable.i3
+lib/m3/pkg/m3linker/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3linker/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3linker/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3linker/%%TARGET%%/libm3link.a
+lib/m3/pkg/m3linker/%%TARGET%%/libm3link.m3x
+lib/m3/pkg/m3linker/src/Mx.i3
+lib/m3/pkg/m3linker/src/MxCheck.i3
+lib/m3/pkg/m3linker/src/MxGen.i3
+lib/m3/pkg/m3linker/src/MxGenC.i3
+lib/m3/pkg/m3linker/src/MxGenCG.i3
+lib/m3/pkg/m3linker/src/MxGenRep.i3
+lib/m3/pkg/m3linker/src/MxIO.i3
+lib/m3/pkg/m3linker/src/MxIn.i3
+lib/m3/pkg/m3linker/src/MxMap.i3
+lib/m3/pkg/m3linker/src/MxMerge.i3
+lib/m3/pkg/m3linker/src/MxOut.i3
+lib/m3/pkg/m3linker/src/MxRep.i3
+lib/m3/pkg/m3linker/src/MxSet.i3
+lib/m3/pkg/m3linker/src/MxVS.i3
+lib/m3/pkg/m3linker/src/MxVSSet.i3
+lib/m3/pkg/m3middle/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3middle/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3middle/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3middle/%%TARGET%%/libm3middle.a
+lib/m3/pkg/m3middle/%%TARGET%%/libm3middle.m3x
+lib/m3/pkg/m3middle/src/M3Buf.i3
+lib/m3/pkg/m3middle/src/M3CG.i3
+lib/m3/pkg/m3middle/src/M3CG_Check.i3
+lib/m3/pkg/m3middle/src/M3CG_Clean.i3
+lib/m3/pkg/m3middle/src/M3CG_Ops.i3
+lib/m3/pkg/m3middle/src/M3CG_Rd.i3
+lib/m3/pkg/m3middle/src/M3CG_Wr.i3
+lib/m3/pkg/m3middle/src/M3FP.i3
+lib/m3/pkg/m3middle/src/M3File.i3
+lib/m3/pkg/m3middle/src/M3ID.i3
+lib/m3/pkg/m3middle/src/M3RT.i3
+lib/m3/pkg/m3middle/src/M3Timers.i3
+lib/m3/pkg/m3middle/src/POSIX/CoffTime.i3
+lib/m3/pkg/m3middle/src/TFloat.i3
+lib/m3/pkg/m3middle/src/TInt.i3
+lib/m3/pkg/m3middle/src/TWord.i3
+lib/m3/pkg/m3middle/src/Target.i3
+lib/m3/pkg/m3middle/src/TargetMap.i3
+lib/m3/pkg/m3quake/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3quake/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3quake/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3quake/%%TARGET%%/QVSeq.i3
+lib/m3/pkg/m3quake/%%TARGET%%/QVSeqRep.i3
+lib/m3/pkg/m3quake/%%TARGET%%/QVTbl.i3
+lib/m3/pkg/m3quake/%%TARGET%%/libm3quake.a
+lib/m3/pkg/m3quake/%%TARGET%%/libm3quake.m3x
+lib/m3/pkg/m3quake/src/QCode.i3
+lib/m3/pkg/m3quake/src/QCompiler.i3
+lib/m3/pkg/m3quake/src/QMachRep.i3
+lib/m3/pkg/m3quake/src/QMachine.i3
+lib/m3/pkg/m3quake/src/QScanner.i3
+lib/m3/pkg/m3quake/src/QToken.i3
+lib/m3/pkg/m3quake/src/QVal.i3
+lib/m3/pkg/m3quake/src/QValue.i3
+lib/m3/pkg/m3quake/src/Quake.i3
+lib/m3/pkg/m3ship/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3ship/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3ship/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3templates/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/m3templates/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/m3templates/%%TARGET%%/.M3WEB
+lib/m3/pkg/m3templates/%%TARGET%%/IntM3LibsTbl.i3
+lib/m3/pkg/m3templates/%%TARGET%%/IntMapTbl.i3
+lib/m3/pkg/m3templates/%%TARGET%%/TextLocTbl.i3
+lib/m3/pkg/m3templates/%%TARGET%%/libm3templates.a
+lib/m3/pkg/m3templates/%%TARGET%%/libm3templates.m3x
+lib/m3/pkg/m3templates/src/BldFace.i3
+lib/m3/pkg/m3templates/src/BldHooks.i3
+lib/m3/pkg/m3templates/src/BldPosix.i3
+lib/m3/pkg/m3templates/src/BldQRep.i3
+lib/m3/pkg/m3templates/src/BldQuake.i3
+lib/m3/pkg/m3templates/src/BldWin32.i3
+lib/m3/pkg/m3templates/src/Location.i3
+lib/m3/pkg/m3templates/src/M3Libs.i3
+lib/m3/pkg/set/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/set/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/set/%%TARGET%%/.M3WEB
+lib/m3/pkg/set/%%TARGET%%/AtomSet.i3
+lib/m3/pkg/set/%%TARGET%%/AtomSetDef.i3
+lib/m3/pkg/set/%%TARGET%%/AtomSetList.i3
+lib/m3/pkg/set/%%TARGET%%/IntSet.i3
+lib/m3/pkg/set/%%TARGET%%/IntSetDef.i3
+lib/m3/pkg/set/%%TARGET%%/IntSetList.i3
+lib/m3/pkg/set/%%TARGET%%/RefSet.i3
+lib/m3/pkg/set/%%TARGET%%/RefSetList.i3
+lib/m3/pkg/set/%%TARGET%%/TextSet.i3
+lib/m3/pkg/set/%%TARGET%%/TextSetDef.i3
+lib/m3/pkg/set/%%TARGET%%/TextSetList.i3
+lib/m3/pkg/set/%%TARGET%%/libset.a
+lib/m3/pkg/set/%%TARGET%%/libset.m3x
+lib/m3/pkg/set/src/Set.ig
+lib/m3/pkg/set/src/Set.mg
+lib/m3/pkg/set/src/SetDef.ig
+lib/m3/pkg/set/src/SetDef.mg
+lib/m3/pkg/set/src/SetList.ig
+lib/m3/pkg/set/src/SetList.mg
+lib/m3/pkg/set/src/set.tmpl
+lib/m3/pkg/tcp/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/tcp/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/tcp/%%TARGET%%/.M3WEB
+lib/m3/pkg/tcp/%%TARGET%%/libm3tcp.a
+lib/m3/pkg/tcp/%%TARGET%%/libm3tcp.m3x
+lib/m3/pkg/tcp/src/POSIX/Herrno.i3
+lib/m3/pkg/tcp/src/POSIX/TCPHack.i3
+lib/m3/pkg/tcp/src/POSIX/TCPPosix.i3
+lib/m3/pkg/tcp/src/common/ConnFD.i3
+lib/m3/pkg/tcp/src/common/ConnMsgRW.i3
+lib/m3/pkg/tcp/src/common/ConnRW.i3
+lib/m3/pkg/tcp/src/common/IP.i3
+lib/m3/pkg/tcp/src/common/TCP.i3
+lib/m3/pkg/tcp/src/common/TCPSpecial.i3
+lib/m3/pkg/tempfiles/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/tempfiles/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/tempfiles/%%TARGET%%/.M3WEB
+lib/m3/pkg/tempfiles/%%TARGET%%/libTempFiles.a
+lib/m3/pkg/tempfiles/%%TARGET%%/libTempFiles.m3x
+lib/m3/pkg/tempfiles/src/TempFiles.i3
+lib/m3/pkg/ui/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/ui/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/ui/%%TARGET%%/.M3WEB
+lib/m3/pkg/ui/%%TARGET%%/ComplSeq.i3
+lib/m3/pkg/ui/%%TARGET%%/ComplSeqRep.i3
+lib/m3/pkg/ui/%%TARGET%%/CompletionSeq.i3
+lib/m3/pkg/ui/%%TARGET%%/CompletionSeqRep.i3
+lib/m3/pkg/ui/%%TARGET%%/STypeMapSeq.i3
+lib/m3/pkg/ui/%%TARGET%%/STypeMapSeqRep.i3
+lib/m3/pkg/ui/%%TARGET%%/libm3ui.a
+lib/m3/pkg/ui/%%TARGET%%/libm3ui.m3x
+lib/m3/pkg/ui/src/picture/Completion.i3
+lib/m3/pkg/ui/src/picture/FreeList.mg
+lib/m3/pkg/ui/src/picture/Picture.i3
+lib/m3/pkg/ui/src/picture/PictureRep.i3
+lib/m3/pkg/ui/src/split/AnchorBtnVBT.i3
+lib/m3/pkg/ui/src/split/BdrVBTClass.i3
+lib/m3/pkg/ui/src/split/BorderedVBT.i3
+lib/m3/pkg/ui/src/split/BtnVBTClass.i3
+lib/m3/pkg/ui/src/split/ButtonVBT.i3
+lib/m3/pkg/ui/src/split/ComposeKey.i3
+lib/m3/pkg/ui/src/split/DblBufferUtil.i3
+lib/m3/pkg/ui/src/split/DblBufferVBT.i3
+lib/m3/pkg/ui/src/split/ETAgent.i3
+lib/m3/pkg/ui/src/split/Filter.i3
+lib/m3/pkg/ui/src/split/FilterClass.i3
+lib/m3/pkg/ui/src/split/Gray.i3
+lib/m3/pkg/ui/src/split/HVBar.i3
+lib/m3/pkg/ui/src/split/HVSplit.i3
+lib/m3/pkg/ui/src/split/HighlightVBT.i3
+lib/m3/pkg/ui/src/split/JoinCMap.i3
+lib/m3/pkg/ui/src/split/JoinCursor.i3
+lib/m3/pkg/ui/src/split/JoinFont.i3
+lib/m3/pkg/ui/src/split/JoinPaintOp.i3
+lib/m3/pkg/ui/src/split/JoinParent.i3
+lib/m3/pkg/ui/src/split/JoinPixmap.i3
+lib/m3/pkg/ui/src/split/JoinScreen.i3
+lib/m3/pkg/ui/src/split/JoinedVBT.i3
+lib/m3/pkg/ui/src/split/MenuBtnVBT.i3
+lib/m3/pkg/ui/src/split/OverlayVBT.i3
+lib/m3/pkg/ui/src/split/PackSplit.i3
+lib/m3/pkg/ui/src/split/ProperSplit.i3
+lib/m3/pkg/ui/src/split/QuickBtnVBT.i3
+lib/m3/pkg/ui/src/split/RigidVBT.i3
+lib/m3/pkg/ui/src/split/STypeMap.i3
+lib/m3/pkg/ui/src/split/SelectQueue.i3
+lib/m3/pkg/ui/src/split/Split.i3
+lib/m3/pkg/ui/src/split/StableVBT.i3
+lib/m3/pkg/ui/src/split/TSplit.i3
+lib/m3/pkg/ui/src/split/TextVBT.i3
+lib/m3/pkg/ui/src/split/TextVBTClass.i3
+lib/m3/pkg/ui/src/split/TextureVBT.i3
+lib/m3/pkg/ui/src/split/TranslateVBT.i3
+lib/m3/pkg/ui/src/split/TwoTone.i3
+lib/m3/pkg/ui/src/split/TypeInVBT.i3
+lib/m3/pkg/ui/src/split/ZSplit.i3
+lib/m3/pkg/ui/src/trestle/DpyFilter.i3
+lib/m3/pkg/ui/src/trestle/InstallQueue.i3
+lib/m3/pkg/ui/src/trestle/InstalledVBT.i3
+lib/m3/pkg/ui/src/trestle/TrestleConf.i3
+lib/m3/pkg/ui/src/trestle/TrestleGoo.i3
+lib/m3/pkg/ui/src/trestle/TrestleImpl.i3
+lib/m3/pkg/ui/src/trestle/TrestleOS.i3
+lib/m3/pkg/ui/src/vbt/Batch.i3
+lib/m3/pkg/ui/src/vbt/BatchRep.i3
+lib/m3/pkg/ui/src/vbt/BatchUtil.i3
+lib/m3/pkg/ui/src/vbt/Cursor.i3
+lib/m3/pkg/ui/src/vbt/Font.i3
+lib/m3/pkg/ui/src/vbt/KeyboardKey.i3
+lib/m3/pkg/ui/src/vbt/Latin1Key.i3
+lib/m3/pkg/ui/src/vbt/MiscDetail.i3
+lib/m3/pkg/ui/src/vbt/MouseSplit.i3
+lib/m3/pkg/ui/src/vbt/PaintExt.i3
+lib/m3/pkg/ui/src/vbt/PaintOp.i3
+lib/m3/pkg/ui/src/vbt/PaintPrivate.i3
+lib/m3/pkg/ui/src/vbt/Palette.i3
+lib/m3/pkg/ui/src/vbt/Pixmap.i3
+lib/m3/pkg/ui/src/vbt/PlttFrnds.i3
+lib/m3/pkg/ui/src/vbt/ScreenType.i3
+lib/m3/pkg/ui/src/vbt/ScrnColorMap.i3
+lib/m3/pkg/ui/src/vbt/ScrnCursor.i3
+lib/m3/pkg/ui/src/vbt/ScrnFont.i3
+lib/m3/pkg/ui/src/vbt/ScrnPaintOp.i3
+lib/m3/pkg/ui/src/vbt/ScrnPixmap.i3
+lib/m3/pkg/ui/src/vbt/Trestle.i3
+lib/m3/pkg/ui/src/vbt/TrestleClass.i3
+lib/m3/pkg/ui/src/vbt/TrestleComm.i3
+lib/m3/pkg/ui/src/vbt/VBT.i3
+lib/m3/pkg/ui/src/vbt/VBTClass.i3
+lib/m3/pkg/ui/src/vbt/VBTRep.i3
+lib/m3/pkg/ui/src/vbt/VBTTuning.i3
+lib/m3/pkg/ui/src/xvbt/Compl.i3
+lib/m3/pkg/ui/src/xvbt/TrestleOnX.i3
+lib/m3/pkg/ui/src/xvbt/TrslOnXF.i3
+lib/m3/pkg/ui/src/xvbt/XAtomQueue.i3
+lib/m3/pkg/ui/src/xvbt/XClient.i3
+lib/m3/pkg/ui/src/xvbt/XClientExt.i3
+lib/m3/pkg/ui/src/xvbt/XClientF.i3
+lib/m3/pkg/ui/src/xvbt/XConfCtl.i3
+lib/m3/pkg/ui/src/xvbt/XCursors.i3
+lib/m3/pkg/ui/src/xvbt/XEventQueue.i3
+lib/m3/pkg/ui/src/xvbt/XExtensions.i3
+lib/m3/pkg/ui/src/xvbt/XGC.i3
+lib/m3/pkg/ui/src/xvbt/XImUtil.i3
+lib/m3/pkg/ui/src/xvbt/XInput.i3
+lib/m3/pkg/ui/src/xvbt/XMessenger.i3
+lib/m3/pkg/ui/src/xvbt/XPaint.i3
+lib/m3/pkg/ui/src/xvbt/XPicture.i3
+lib/m3/pkg/ui/src/xvbt/XProperties.i3
+lib/m3/pkg/ui/src/xvbt/XScreenType.i3
+lib/m3/pkg/ui/src/xvbt/XScrnCmap.i3
+lib/m3/pkg/ui/src/xvbt/XScrnCrsr.i3
+lib/m3/pkg/ui/src/xvbt/XScrnFont.i3
+lib/m3/pkg/ui/src/xvbt/XScrnPntOp.i3
+lib/m3/pkg/ui/src/xvbt/XScrnPxmp.i3
+lib/m3/pkg/ui/src/xvbt/XScrnTpRep.i3
+lib/m3/pkg/ui/src/xvbt/XScrollQueue.i3
+lib/m3/pkg/ui/src/xvbt/XSharedMem.i3
+lib/m3/pkg/ui/src/xvbt/XShm.i3
+lib/m3/pkg/vbtkit/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/vbtkit/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/vbtkit/%%TARGET%%/.M3WEB
+lib/m3/pkg/vbtkit/%%TARGET%%/VBTKitBundle.i3
+lib/m3/pkg/vbtkit/%%TARGET%%/libm3vbtkit.a
+lib/m3/pkg/vbtkit/%%TARGET%%/libm3vbtkit.m3x
+lib/m3/pkg/vbtkit/src/color/Color.i3
+lib/m3/pkg/vbtkit/src/color/ColorName.i3
+lib/m3/pkg/vbtkit/src/color/ColorNameF.i3
+lib/m3/pkg/vbtkit/src/color/ColorNameTable.i3
+lib/m3/pkg/vbtkit/src/etext/EmacsModel.i3
+lib/m3/pkg/vbtkit/src/etext/ISOChar.i3
+lib/m3/pkg/vbtkit/src/etext/IvyModel.i3
+lib/m3/pkg/vbtkit/src/etext/Key.i3
+lib/m3/pkg/vbtkit/src/etext/KeyFilter.i3
+lib/m3/pkg/vbtkit/src/etext/KeyTrans.i3
+lib/m3/pkg/vbtkit/src/etext/MTextUnit.i3
+lib/m3/pkg/vbtkit/src/etext/MacModel.i3
+lib/m3/pkg/vbtkit/src/etext/TextEditVBT.i3
+lib/m3/pkg/vbtkit/src/etext/TextPort.i3
+lib/m3/pkg/vbtkit/src/etext/TextPortClass.i3
+lib/m3/pkg/vbtkit/src/etext/TypeinVBT.i3
+lib/m3/pkg/vbtkit/src/etext/TypescriptVBT.i3
+lib/m3/pkg/vbtkit/src/etext/XtermModel.i3
+lib/m3/pkg/vbtkit/src/lego/AnchorHelpSplit.i3
+lib/m3/pkg/vbtkit/src/lego/AnchorHelpVBT.i3
+lib/m3/pkg/vbtkit/src/lego/AnchorSplit.i3
+lib/m3/pkg/vbtkit/src/lego/BiFeedbackVBT.i3
+lib/m3/pkg/vbtkit/src/lego/BooleanVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ChoiceVBT.i3
+lib/m3/pkg/vbtkit/src/lego/FeedbackVBT.i3
+lib/m3/pkg/vbtkit/src/lego/FileBrowserVBT.i3
+lib/m3/pkg/vbtkit/src/lego/FlexVBT.i3
+lib/m3/pkg/vbtkit/src/lego/GuardedBtnVBT.i3
+lib/m3/pkg/vbtkit/src/lego/Image.i3
+lib/m3/pkg/vbtkit/src/lego/ListVBT.i3
+lib/m3/pkg/vbtkit/src/lego/MarginFeedbackVBT.i3
+lib/m3/pkg/vbtkit/src/lego/MenuSwitchVBT.i3
+lib/m3/pkg/vbtkit/src/lego/MultiClass.i3
+lib/m3/pkg/vbtkit/src/lego/MultiFilter.i3
+lib/m3/pkg/vbtkit/src/lego/MultiSplit.i3
+lib/m3/pkg/vbtkit/src/lego/NumericVBT.i3
+lib/m3/pkg/vbtkit/src/lego/OffsetVBT.i3
+lib/m3/pkg/vbtkit/src/lego/PixmapVBT.i3
+lib/m3/pkg/vbtkit/src/lego/QuickSwitchVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ReactivityVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ScaleFilter.i3
+lib/m3/pkg/vbtkit/src/lego/ScrollerVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ScrollerVBTClass.i3
+lib/m3/pkg/vbtkit/src/lego/Shadow.i3
+lib/m3/pkg/vbtkit/src/lego/ShadowPaint.i3
+lib/m3/pkg/vbtkit/src/lego/ShadowedBarVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ShadowedFeedbackVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ShadowedVBT.i3
+lib/m3/pkg/vbtkit/src/lego/SourceVBT.i3
+lib/m3/pkg/vbtkit/src/lego/SplitterVBT.i3
+lib/m3/pkg/vbtkit/src/lego/SwitchVBT.i3
+lib/m3/pkg/vbtkit/src/lego/TrillSwitchVBT.i3
+lib/m3/pkg/vbtkit/src/lego/VBTKitResources.i3
+lib/m3/pkg/vbtkit/src/lego/ViewportVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZBackgroundVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZChassisVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZChildVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZGrowVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZMoveVBT.i3
+lib/m3/pkg/vbtkit/src/lego/ZSplitUtils.i3
+lib/m3/pkg/vbtkit/src/lego/ZTilps.i3
+lib/m3/pkg/vbtkit/src/mtext/MText.i3
+lib/m3/pkg/vbtkit/src/mtext/MTextDebug.i3
+lib/m3/pkg/vbtkit/src/mtext/MTextDs.i3
+lib/m3/pkg/vbtkit/src/mtext/MTextPrivate.i3
+lib/m3/pkg/vbtkit/src/mtext/MTextRd.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/AnyEvent.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/AutoRepeat.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/LargeCursor.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/Pts.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/Rsrc.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/VBTColors.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/VBTKitEnv.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/XParam.i3
+lib/m3/pkg/vbtkit/src/vbtkitutils/XTrestle.i3
+lib/m3/pkg/vbtkit/src/vtext/VT.i3
+lib/m3/pkg/vbtkit/src/vtext/VTBase.i3
+lib/m3/pkg/vbtkit/src/vtext/VTCaret.i3
+lib/m3/pkg/vbtkit/src/vtext/VTDef.i3
+lib/m3/pkg/vbtkit/src/vtext/VTInterval.i3
+lib/m3/pkg/vbtkit/src/vtext/VTMarker.i3
+lib/m3/pkg/vbtkit/src/vtext/VTPounce.i3
+lib/m3/pkg/vbtkit/src/vtext/VTRd.i3
+lib/m3/pkg/vbtkit/src/vtext/VTReal.i3
+lib/m3/pkg/vbtkit/src/vtext/VTTexture.i3
+lib/m3/pkg/vbtkit/src/vtext/VTView.i3
+lib/m3/pkg/vbtkit/src/vtext/VTVirtual.i3
+lib/m3/pkg/vbtkit/src/vtext/VText.i3
+lib/m3/pkg/vbtkit/src/vtext/VTextDef.i3
+lib/m3/pkg/vbtkit/src/vtext/VTextRegion.i3
+lib/m3/pkg/videovbt/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/videovbt/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/videovbt/%%TARGET%%/.M3WEB
+lib/m3/pkg/videovbt/%%TARGET%%/libvideovbt.a
+lib/m3/pkg/videovbt/%%TARGET%%/libvideovbt.m3x
+lib/m3/pkg/videovbt/src/AudioVBT.i3
+lib/m3/pkg/videovbt/src/POSIX/VideoVBTRep.i3
+lib/m3/pkg/videovbt/src/VideoVBT.i3
+lib/m3/pkg/web/%%TARGET%%/.M3EXPORTS
+lib/m3/pkg/web/%%TARGET%%/.M3IMPTAB
+lib/m3/pkg/web/%%TARGET%%/.M3WEB
+lib/m3/pkg/web/%%TARGET%%/libweb.a
+lib/m3/pkg/web/%%TARGET%%/libweb.m3x
+lib/m3/pkg/web/src/Web.i3
+share/ezm3/COPYRIGHT
+@dirrm share/ezm3
+@dirrm lib/m3/%%TARGET%%
+@dirrm lib/m3/pkg/m3doc/%%TARGET%%
+@dirrm lib/m3/pkg/m3doc/src
+@dirrm lib/m3/pkg/m3doc
+@dirrm lib/m3/pkg/m3core/%%TARGET%%
+@dirrm lib/m3/pkg/m3core/src/runtime/POSIX
+@dirrm lib/m3/pkg/m3core/src/runtime/common
+@dirrm lib/m3/pkg/m3core/src/runtime/ex_frame
+@dirrm lib/m3/pkg/m3core/src/runtime/%%TARGET%%
+@dirrm lib/m3/pkg/m3core/src/runtime
+@dirrm lib/m3/pkg/m3core/src/main
+@dirrm lib/m3/pkg/m3core/src/time/Common
+@dirrm lib/m3/pkg/m3core/src/time/POSIX
+@dirrm lib/m3/pkg/m3core/src/time
+@dirrm lib/m3/pkg/m3core/src/weakref
+@dirrm lib/m3/pkg/m3core/src/unix/%%TARGETDIR%%
+@dirrm lib/m3/pkg/m3core/src/unix
+@dirrm lib/m3/pkg/m3core/src/fingerprint
+@dirrm lib/m3/pkg/m3core/src/thread/Common
+@dirrm lib/m3/pkg/m3core/src/thread/POSIX
+@dirrm lib/m3/pkg/m3core/src/thread
+@dirrm lib/m3/pkg/m3core/src/Csupport/Common
+@dirrm lib/m3/pkg/m3core/src/Csupport
+@dirrm lib/m3/pkg/m3core/src/text
+@dirrm lib/m3/pkg/m3core/src/word
+@dirrm lib/m3/pkg/m3core/src/C/Common
+@dirrm lib/m3/pkg/m3core/src/C/%%WORDSIZE%%BITS
+@dirrm lib/m3/pkg/m3core/src/C/%%TARGET%%
+@dirrm lib/m3/pkg/m3core/src/C
+@dirrm lib/m3/pkg/m3core/src/float/IEEE-default
+@dirrm lib/m3/pkg/m3core/src/float/IEEE
+@dirrm lib/m3/pkg/m3core/src/float/IEEE-le
+@dirrm lib/m3/pkg/m3core/src/float/Common
+@dirrm lib/m3/pkg/m3core/src/float
+@dirrm lib/m3/pkg/m3core/src/convert
+@dirrm lib/m3/pkg/m3core/src
+@dirrm lib/m3/pkg/m3core
+@dirrm lib/m3/pkg/libm3/%%TARGET%%
+@dirrm lib/m3/pkg/libm3/src/property
+@dirrm lib/m3/pkg/libm3/src/perftool/Common
+@dirrm lib/m3/pkg/libm3/src/perftool
+@dirrm lib/m3/pkg/libm3/src/bundleintf
+@dirrm lib/m3/pkg/libm3/src/regex
+@dirrm lib/m3/pkg/libm3/src/types
+@dirrm lib/m3/pkg/libm3/src/arith/POSIX
+@dirrm lib/m3/pkg/libm3/src/arith
+@dirrm lib/m3/pkg/libm3/src/table
+@dirrm lib/m3/pkg/libm3/src/geometry
+@dirrm lib/m3/pkg/libm3/src/pqueue
+@dirrm lib/m3/pkg/libm3/src/os/POSIX
+@dirrm lib/m3/pkg/libm3/src/os/Common
+@dirrm lib/m3/pkg/libm3/src/os
+@dirrm lib/m3/pkg/libm3/src/sx
+@dirrm lib/m3/pkg/libm3/src/rw/Common
+@dirrm lib/m3/pkg/libm3/src/rw
+@dirrm lib/m3/pkg/libm3/src/fmtlex
+@dirrm lib/m3/pkg/libm3/src/pickle
+@dirrm lib/m3/pkg/libm3/src/atom
+@dirrm lib/m3/pkg/libm3/src/sort
+@dirrm lib/m3/pkg/libm3/src/statistics
+@dirrm lib/m3/pkg/libm3/src/etimer
+@dirrm lib/m3/pkg/libm3/src/params
+@dirrm lib/m3/pkg/libm3/src/sqrt
+@dirrm lib/m3/pkg/libm3/src/sequence
+@dirrm lib/m3/pkg/libm3/src/uid/Common
+@dirrm lib/m3/pkg/libm3/src/uid
+@dirrm lib/m3/pkg/libm3/src/list
+@dirrm lib/m3/pkg/libm3/src/random/Common
+@dirrm lib/m3/pkg/libm3/src/random
+@dirrm lib/m3/pkg/libm3/src/formatter
+@dirrm lib/m3/pkg/libm3/src/sortedtable
+@dirrm lib/m3/pkg/libm3/src
+@dirrm lib/m3/pkg/libm3
+@dirrm lib/m3/pkg/m3bundle/%%TARGET%%
+@dirrm lib/m3/pkg/m3bundle
+@dirrm lib/m3/pkg/tempfiles/%%TARGET%%
+@dirrm lib/m3/pkg/tempfiles/src
+@dirrm lib/m3/pkg/tempfiles
+@dirrm lib/m3/pkg/m3config/src
+@dirrm lib/m3/pkg/m3config/%%TARGET%%
+@dirrm lib/m3/pkg/m3config
+@dirrm lib/m3/pkg/m3middle/%%TARGET%%
+@dirrm lib/m3/pkg/m3middle/src/POSIX
+@dirrm lib/m3/pkg/m3middle/src
+@dirrm lib/m3/pkg/m3middle
+@dirrm lib/m3/pkg/m3front/%%TARGET%%
+@dirrm lib/m3/pkg/m3front/src/stmts
+@dirrm lib/m3/pkg/m3front/src/builtinTypes
+@dirrm lib/m3/pkg/m3front/src/misc
+@dirrm lib/m3/pkg/m3front/src/values
+@dirrm lib/m3/pkg/m3front/src/builtinWord
+@dirrm lib/m3/pkg/m3front/src/exprs
+@dirrm lib/m3/pkg/m3front/src/types
+@dirrm lib/m3/pkg/m3front/src/builtinOps
+@dirrm lib/m3/pkg/m3front/src
+@dirrm lib/m3/pkg/m3front
+@dirrm lib/m3/pkg/m3linker/%%TARGET%%
+@dirrm lib/m3/pkg/m3linker/src
+@dirrm lib/m3/pkg/m3linker
+@dirrm lib/m3/pkg/m3driver/%%TARGET%%
+@dirrm lib/m3/pkg/m3driver/src
+@dirrm lib/m3/pkg/m3driver
+@dirrm lib/m3/pkg/m3quake/%%TARGET%%
+@dirrm lib/m3/pkg/m3quake/src
+@dirrm lib/m3/pkg/m3quake
+@dirrm lib/m3/pkg/m3templates/%%TARGET%%
+@dirrm lib/m3/pkg/m3templates/src
+@dirrm lib/m3/pkg/m3templates
+@dirrm lib/m3/pkg/m3build/%%TARGET%%
+@dirrm lib/m3/pkg/m3build
+@dirrm lib/m3/pkg/m3ship/%%TARGET%%
+@dirrm lib/m3/pkg/m3ship
+@dirrm lib/m3/pkg/set/%%TARGET%%
+@dirrm lib/m3/pkg/set/src
+@dirrm lib/m3/pkg/set
+@dirrm lib/m3/pkg/tcp/%%TARGET%%
+@dirrm lib/m3/pkg/tcp/src/POSIX
+@dirrm lib/m3/pkg/tcp/src/common
+@dirrm lib/m3/pkg/tcp/src
+@dirrm lib/m3/pkg/tcp
+@dirrm lib/m3/pkg/web/%%TARGET%%
+@dirrm lib/m3/pkg/web/src
+@dirrm lib/m3/pkg/web
+@dirrm lib/m3/pkg/X11/%%TARGET%%
+@dirrm lib/m3/pkg/X11/src/Vanilla
+@dirrm lib/m3/pkg/X11/src/Common
+@dirrm lib/m3/pkg/X11/src
+@dirrm lib/m3/pkg/X11
+@dirrm lib/m3/pkg/ui/%%TARGET%%
+@dirrm lib/m3/pkg/ui/src/picture
+@dirrm lib/m3/pkg/ui/src/trestle
+@dirrm lib/m3/pkg/ui/src/vbt
+@dirrm lib/m3/pkg/ui/src/split
+@dirrm lib/m3/pkg/ui/src/xvbt
+@dirrm lib/m3/pkg/ui/src
+@dirrm lib/m3/pkg/ui
+@dirrm lib/m3/pkg/vbtkit/%%TARGET%%
+@dirrm lib/m3/pkg/vbtkit/src/etext
+@dirrm lib/m3/pkg/vbtkit/src/color
+@dirrm lib/m3/pkg/vbtkit/src/vtext
+@dirrm lib/m3/pkg/vbtkit/src/vbtkitutils
+@dirrm lib/m3/pkg/vbtkit/src/lego
+@dirrm lib/m3/pkg/vbtkit/src/mtext
+@dirrm lib/m3/pkg/vbtkit/src
+@dirrm lib/m3/pkg/vbtkit
+@dirrm lib/m3/pkg/jvideo/%%TARGET%%
+@dirrm lib/m3/pkg/jvideo/src/POSIX
+@dirrm lib/m3/pkg/jvideo/src
+@dirrm lib/m3/pkg/jvideo
+@dirrm lib/m3/pkg/videovbt/%%TARGET%%
+@dirrm lib/m3/pkg/videovbt/src/POSIX
+@dirrm lib/m3/pkg/videovbt/src
+@dirrm lib/m3/pkg/videovbt
+@dirrm lib/m3/pkg/formsvbtpixmaps/%%TARGET%%
+@dirrm lib/m3/pkg/formsvbtpixmaps
+@dirrm lib/m3/pkg/formsvbt/%%TARGET%%
+@dirrm lib/m3/pkg/formsvbt/src
+@dirrm lib/m3/pkg/formsvbt
+@dirrm lib/m3/pkg
+@dirrm lib/m3
