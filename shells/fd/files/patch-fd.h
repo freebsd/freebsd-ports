@@ -1,0 +1,7 @@
+--- fd.h.orig	Wed Jul 10 00:00:00 2002
++++ fd.h	Sun Aug 11 22:25:15 2002
+@@ -132,3 +132,3 @@
+ #define	MAXLAUNCHTABLE	32
+-#define	MAXARCHIVETABLE	16
++#define	MAXARCHIVETABLE	32
+ #define	MAXALIASTABLE	256
