@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cstream
-PORTVERSION=	2.3
+PORTVERSION=	2.5.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cons.org/cracauer/download/ \
-		http://www3.cons.org/cracauer/download/ \
+		http://www3.cons.org/freebsd-distfiles/ \
 		http://www.hanse.de/~cracauer/homepage-mirror/download/
 
 MAINTAINER=	cracauer@cons.org
