@@ -1,0 +1,13 @@
+A port of a tool which tries to guess the primary partition table of a PC-type
+hard disk in case the primary partition table in sector 0 is damaged, incorrect
+or deleted. The guessed table can be written to a file or device.
+
+Supported (guessable) filesystem or partition types: DOS/Windows FAT, Linux
+ext2 and swap, OS/2 HPFS, Windows NTFS, FreeBSD and Solaris/x86 disklabels,
+Minix FS, Reiser FS
+
+Author: Michail Brzitwa <mb@ichabod.han.de>
+WWW: http://home.pages.de/~michab/gpart/
+
+- Andrew Stevenson
+<andrew@ugh.net.au>
