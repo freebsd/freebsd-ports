@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m17n-db
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.m17n.org/m17n-lib/download/:m17n \
 		${MASTER_SITE_GNU:S/$/:glibc/}
@@ -18,9 +18,10 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Data files for the m17n library
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 
 M17N_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 GLIBC_VERSION=	2.3.3
