@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.7.6
+PORTVERSION=	0.7.7
 CATEGORIES=	editors python gnome
-MASTER_SITES=	http://www.moleskine.f2s.com/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org

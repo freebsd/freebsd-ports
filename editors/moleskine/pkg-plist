@@ -1,10 +1,10 @@
 bin/moleskine
 etc/gnome/config/Moleskine/LanguageModes
 etc/gnome/config/Moleskine/Preferences
-share/gnome/Moleskine/Moleskine/Config.py
-share/gnome/Moleskine/Moleskine/Config.pyc
 share/gnome/Moleskine/Moleskine/CVS.py
 share/gnome/Moleskine/Moleskine/CVS.pyc
+share/gnome/Moleskine/Moleskine/Config.py
+share/gnome/Moleskine/Moleskine/Config.pyc
 share/gnome/Moleskine/Moleskine/Dialogs.py
 share/gnome/Moleskine/Moleskine/Dialogs.pyc
 share/gnome/Moleskine/Moleskine/Document.py
