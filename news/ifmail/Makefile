@@ -7,7 +7,7 @@
 
 PORTNAME=	ifmail
 PORTVERSION=	2.15
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
@@ -24,7 +24,7 @@ pre-configure:
 	@${MV} ${WRKSRC}/CONFIG ${WRKSRC}/CONFIG.sed
 	${SED} -e "s/OWNER = ifmail/OWNER = ${IFMAIL_RUNAS}/" \
 		-e "s#CC = gcc#CC = ${CC}#" \
-		-e "s#-O2 -Wall#${CFLAGS} -Wall#" \
+		-e "s#-O2 -Wall#${CFLAGS} -DHAS_STDARG_H -Wall#" \
 		${WRKSRC}/CONFIG.sed > ${WRKSRC}/CONFIG
 
 pre-install:
@@ -54,13 +54,4 @@ post-install:
 	@${TAR} -C ${WRKSRC}/misc -cf - . | ${TAR} -C ${EXAMPLESDIR} -xf -
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501101
-CC=		gcc32
-CXX=		g++32
-BUILD_DEPENDS+=	gcc32:${PORTSDIR}/${GCC32_PORT}
-GCC32_PORT?=	lang/gcc32
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
