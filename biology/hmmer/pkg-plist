@@ -1,5 +1,3 @@
-bin/afetch
-bin/alistat
 bin/hmmalign
 bin/hmmbuild
 bin/hmmcalibrate
@@ -9,13 +7,24 @@ bin/hmmfetch
 bin/hmmindex
 bin/hmmpfam
 bin/hmmsearch
-bin/seqstat
-bin/sfetch
-bin/shuffle
-bin/sindex
-bin/sreformat
 %%PORTDOCS%%%%DOCSDIR%%/00README
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/NOTES
 %%PORTDOCS%%%%DOCSDIR%%/Userguide.pdf
+%%EXAMPLESDIR%%/7LES_DROME
+%%EXAMPLESDIR%%/amino.null
+%%EXAMPLESDIR%%/globins50.msf
+%%EXAMPLESDIR%%/nucleic.pri
+%%EXAMPLESDIR%%/rrm.sto
+%%EXAMPLESDIR%%/Artemia.fa
+%%EXAMPLESDIR%%/amino.pri
+%%EXAMPLESDIR%%/globins630.fa
+%%EXAMPLESDIR%%/pkinase.sto
+%%EXAMPLESDIR%%/RU1A_HUMAN
+%%EXAMPLESDIR%%/fn3.sto
+%%EXAMPLESDIR%%/nucleic.null
+%%EXAMPLESDIR%%/rrm.hmm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
