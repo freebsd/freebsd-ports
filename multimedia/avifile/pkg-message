@@ -20,3 +20,7 @@ port.
 
 Please, check the FreeBSD Handbook on
 updating your port tree if you need to.
+
+ALSO, remove ~/.avirc configuration file
+prior to running avifile. The newer version
+has problems with old configuration files.
