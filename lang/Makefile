@@ -151,6 +151,7 @@
     SUBDIR += python15
     SUBDIR += python20
     SUBDIR += python21
+    SUBDIR += qscheme
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rotfl

@@ -1,0 +1,47 @@
+bin/qscheme
+share/qscheme/%%PORTVERSION%%/regex.so
+share/qscheme/%%PORTVERSION%%/object.so
+share/qscheme/%%PORTVERSION%%/process.so
+share/qscheme/%%PORTVERSION%%/struct.so
+share/qscheme/%%PORTVERSION%%/socket.so
+share/qscheme/%%PORTVERSION%%/unix.so
+share/qscheme/%%PORTVERSION%%/s.scm
+share/qscheme/%%PORTVERSION%%/macro.scm
+share/qscheme/%%PORTVERSION%%/loop.scm
+share/qscheme/%%PORTVERSION%%/wloop.scm
+share/qscheme/%%PORTVERSION%%/fib.scm
+share/qscheme/%%PORTVERSION%%/cat.scm
+share/qscheme/%%PORTVERSION%%/doc/s.dvi
+share/qscheme/%%PORTVERSION%%/doc/s.ps
+share/qscheme/%%PORTVERSION%%/doc/html/WARNINGS
+share/qscheme/%%PORTVERSION%%/doc/html/footnode.html
+share/qscheme/%%PORTVERSION%%/doc/html/images.aux
+share/qscheme/%%PORTVERSION%%/doc/html/images.log
+share/qscheme/%%PORTVERSION%%/doc/html/images.pl
+share/qscheme/%%PORTVERSION%%/doc/html/images.tex
+share/qscheme/%%PORTVERSION%%/doc/html/img1.png
+share/qscheme/%%PORTVERSION%%/doc/html/img2.png
+share/qscheme/%%PORTVERSION%%/doc/html/index.html
+share/qscheme/%%PORTVERSION%%/doc/html/internals.pl
+share/qscheme/%%PORTVERSION%%/doc/html/labels.pl
+share/qscheme/%%PORTVERSION%%/doc/html/node1.html
+share/qscheme/%%PORTVERSION%%/doc/html/node10.html
+share/qscheme/%%PORTVERSION%%/doc/html/node11.html
+share/qscheme/%%PORTVERSION%%/doc/html/node12.html
+share/qscheme/%%PORTVERSION%%/doc/html/node13.html
+share/qscheme/%%PORTVERSION%%/doc/html/node14.html
+share/qscheme/%%PORTVERSION%%/doc/html/node15.html
+share/qscheme/%%PORTVERSION%%/doc/html/node2.html
+share/qscheme/%%PORTVERSION%%/doc/html/node3.html
+share/qscheme/%%PORTVERSION%%/doc/html/node4.html
+share/qscheme/%%PORTVERSION%%/doc/html/node5.html
+share/qscheme/%%PORTVERSION%%/doc/html/node6.html
+share/qscheme/%%PORTVERSION%%/doc/html/node7.html
+share/qscheme/%%PORTVERSION%%/doc/html/node8.html
+share/qscheme/%%PORTVERSION%%/doc/html/node9.html
+share/qscheme/%%PORTVERSION%%/doc/html/s.css
+share/qscheme/%%PORTVERSION%%/doc/html/s.html
+@dirrm share/qscheme/%%PORTVERSION%%/doc/html
+@dirrm share/qscheme/%%PORTVERSION%%/doc
+@dirrm share/qscheme/%%PORTVERSION%%
+@dirrm share/qscheme
