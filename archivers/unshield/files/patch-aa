@@ -1,0 +1,10 @@
+--- src/unshield.c~	Mon Aug 25 19:17:29 2003
++++ src/unshield.c	Fri Apr  9 13:55:47 2004
+@@ -1,5 +1,7 @@
+ #define _BSD_SOURCE 1
++#if !defined(__FreeBSD__)
+ #define _POSIX_C_SOURCE 2
++#endif
+ #include <libunshield.h>
+ #include <ctype.h>
+ #include <stdio.h>

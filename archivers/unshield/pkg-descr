@@ -1,0 +1,14 @@
+An installer created by the InstallShield software stores the files it will
+install inside of InstallShield Cabinet Files. It would thus be desirable
+to be able to extract the Microsoft Cabinet Files from the InstallShield
+Cabinet Files in order to be able to install the applications without access
+to Microsoft Windows.
+
+- Use a well known open source license (MIT)
+- Work on both little-endian and big-endian systems
+- Separate the implementation in a tool and a library
+- Support InstallShield versions 5 and later
+- Be able to list contents of InstallShield Cabinet Files
+- Be able to extract files from InstallShield Cabinet Files
+
+WWW: http://synce.sourceforge.net/synce/unshield.php
