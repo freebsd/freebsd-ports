@@ -33,12 +33,12 @@ WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
-CODEC_MPLAYER_VERSION=	0.99
+CODEC_MPLAYER_VERSION=	1.0pre5
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
 # additional codec packs
-ADDITIONAL_CODECS_DISTFILES=	qt65dlls-20040704.tar.bz2 \
+ADDITIONAL_CODECS_DISTFILES=	qt63dlls-20040626.tar.bz2 \
 				qtextras-20040704.tar.bz2 \
 				rp9codecs-20040626.tar.bz2 \
 				xanimdlls-20040626.tar.bz2
