@@ -53,6 +53,7 @@
     SUBDIR += p5-Device-SerialPort
     SUBDIR += plp
     SUBDIR += pr
+    SUBDIR += pstngw
     SUBDIR += py-bulksms
     SUBDIR += py-lirc
     SUBDIR += py-serial
