@@ -1,25 +1,23 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
-case "$1" in
-start)
-  if [ -x %PREFIX%/bin/dancer-ircd ]; then
-    su -fm ircd -c %PREFIX%/bin/dancer-ircd && echo ' dancer-ircd'
-  fi
-  ;;
+# PROVIDE: dancer-ircd
+# KEYWORD: FreeBSD
 
-stop)
-  if [ -f /var/run/dancer-ircd.pid ]; then
-    kill `cat /var/run/dancer-ircd.pid`
-  else
-    # oh well
-    killall dancer-ircd
-  fi
-  ;;
+. %%RC_SUBR%%
 
-*)
-  echo "usage: $0 {start|stop}" >&2
-  exit 64
-  ;;
-esac
+name=dancer_ircd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/dancer-ircd
+pidfile=/var/run/dancer-ircd/dancer-ircd.pid
+required_files=%%PREFIX%%/etc/dancer-ircd/ircd.conf
+
+[ -z "$dancer_ircd_enable" ] && dancer_ircd_enable=NO
+[ -z "$dancer_ircd_user" ] && dancer_ircd_user=ircd
+
+load_rc_config $name
+
+run_rc_command "$1"

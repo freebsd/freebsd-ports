@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	dancer-ircd
-PORTVERSION=	1.0.32
-PORTREVISION=	1
+PORTVERSION=	1.0.35
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://freenode.net/ \
-		http://source.freenode.net/~asuffield/dancer/dancer-oper-guide/:doc1 \
-		http://source.freenode.net/~asuffield/dancer/dancer-user-guide/:doc2
-MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases
-DISTNAME=	${PORTNAME}-${PORTVERSION}+6p4
+MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/ \
+		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc1 \
+		http://source.freenode.net/~asuffield/dancer/%SUBDIR%/:doc2
+MASTER_SITE_SUBDIR=	${PORTNAME}/stable/releases \
+			dancer-oper-guide:doc1 \
+			dancer-user-guide:doc2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		dancer-oper-guide.txt:doc1 \
 		dancer-user-guide.txt:doc2
@@ -25,6 +25,10 @@ COMMENT=	An irc daemon based on hybrid ircd
 IGNOREFILES=	dancer-oper-guide.txt \
 		dancer-user-guide.txt
 
+USE_RC_SUBR=	yes
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -35,12 +39,12 @@ IS_INTERACTIVE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' ${WRKSRC}/src/paths.c
+
+post-build:
+	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${FILESDIR}/dancer-ircd.sh > ${WRKDIR}/dancer-ircd.sh
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -64,8 +68,6 @@ post-install:
 	${FIND} ${PREFIX}/etc/dancer-ircd -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 600
 	${CHOWN} -R ircd:ircd ${PREFIX}/etc/dancer-ircd
-	${SED} -e "s,%PREFIX%,${PREFIX},g" ${FILESDIR}/dancer-ircd.sh \
-		> ${WRKDIR}/dancer-ircd.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/dancer-ircd.sh ${PREFIX}/etc/rc.d/
 	${SED} -e "s,/usr/local/,${PREFIX}/,g" ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)

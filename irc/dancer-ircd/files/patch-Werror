@@ -1,0 +1,358 @@
+--- src/channel.c.orig	Fri Feb  6 14:33:55 2004
++++ src/channel.c	Tue Apr 20 00:38:54 2004
+@@ -3894,23 +3894,23 @@
+             {
+               sendto_match_servs(chptr, cptr,
+                                  ":%s SJOIN %lu %s + :@%s", me.name,
+-                                 chptr->channelts, name, sptr->name);
++				(unsigned long)chptr->channelts, name, sptr->name);
+             }                                
+           else
+             sendto_match_servs(chptr, cptr,
+                                ":%s SJOIN %lu %s + :%s", me.name,
+-                               chptr->channelts, name, sptr->name);
++                               (unsigned long)chptr->channelts, name, sptr->name);
+ #else
+           sendto_match_servs(chptr, cptr,
+                              ":%s SJOIN %lu %s + :@%s", me.name,
+-                             chptr->channelts, name, sptr->name);
++                             (unsigned long)chptr->channelts, name, sptr->name);
+ #endif
+         }
+       else if (MyClient(sptr))
+         {
+           sendto_match_servs(chptr, cptr,
+                              ":%s SJOIN %lu %s + :%s", me.name,
+-                             chptr->channelts, name, sptr->name);
++                             (unsigned long)chptr->channelts, name, sptr->name);
+         }
+       else
+         sendto_match_servs(chptr, cptr, ":%s JOIN :%s", sptr->name,
+@@ -4652,7 +4652,7 @@
+       sendto_one(sptr,":%s NOTICE %s :*** Notice -- Wait %.1ld seconds before another knock",
+                  me.name,
+                  sptr->name,
+-                 KNOCK_DELAY - (CurrentTime - sptr->last_knock));
++                 KNOCK_DELAY - ((unsigned long)CurrentTime - sptr->last_knock));
+       return 0;
+     }
+ 
+@@ -4766,9 +4766,9 @@
+               strncpy_irc(chptr->topic_nick, sptr->name, NICKLEN + 1);
+               chptr->topic_time = CurrentTime;
+ #endif
+-              sendto_match_servs(chptr, cptr, ":%s STOPIC %s %s %.1ld %.1ld :%s",
++              sendto_match_servs(chptr, cptr, ":%s STOPIC %s %s %.1lu %.1lu :%s",
+ 				 sptr->name, chptr->chname, sptr->name,
+-				 chptr->topic_time, chptr->channelts,
++				 (unsigned long)chptr->topic_time, (unsigned long)chptr->channelts,
+ 				 chptr->topic);
+               sendto_channel_butserv(chptr, sptr, ":%s TOPIC %s :%s",
+ 				     IsServer(sptr) ? NETWORK_NAME : sptr->name, chptr->chname,
+@@ -5433,9 +5433,9 @@
+     {
+       sendto_channel_butserv(chptr, &me,
+ 			     ":%s NOTICE %s :*** Notice -- TS for %s changed from %lu to 0",
+-			     me.name, chptr->chname, chptr->chname, oldts);
++			     me.name, chptr->chname, chptr->chname, (unsigned long)oldts);
+       sendto_ops_flag(UMODE_SERVNOTICE, "Server %s changing TS on %s from %lu to 0",
+-		      sptr->name,parv[2],oldts);
++		      sptr->name,parv[2],(unsigned long)oldts);
+     }
+ 
+   doesop = (parv[4+args][0] == '@' || parv[4+args][1] == '@');
+@@ -5970,7 +5970,7 @@
+         }
+         sendto_channel_butserv(chptr, &me,
+             ":%s NOTICE %s :*** Notice -- TS for %s changed from %lu to %lu",
+-            me.name, chptr->chname, chptr->chname, oldts, newts);
++            me.name, chptr->chname, chptr->chname, (unsigned long)oldts, (unsigned long)newts);
+     }
+   if (mbuf != modebuf)
+     {
+--- src/client.c.orig	Tue Jul  8 14:41:54 2003
++++ src/client.c	Tue Apr 20 00:40:14 2004
+@@ -604,7 +604,8 @@
+ 		      currenttime - cptr->lasttime);
+ 	  if (IsServer(cptr))
+ 	    logprintf(L_NOTICE, "Ping timeout: %.1lu seconds for %s",
+-		currenttime - cptr->lasttime, cptr->name);
++		(unsigned long)currenttime - (unsigned long)cptr->lasttime,
++		cptr->name);
+ 
+           /* ugh. this is horrible.
+            * but I can get away with this hack because of the
+@@ -1659,10 +1660,11 @@
+       if (sptr->servptr == &me)
+         {
+           sendto_ops_flag(UMODE_SEEROUTING, "%s was connected to %s for %.1ld seconds.  %d/%d sendK/recvK. (%s)",
+-			  sptr->name, (char*) &me.name, CurrentTime - sptr->firsttime,
++			  sptr->name, (char*) &me.name,
++			  (unsigned long)CurrentTime - (unsigned long)sptr->firsttime,
+ 			  sptr->sendK, sptr->receiveK, comment);
+-          logprintf(L_NOTICE, "%s was connected for %.1ld seconds.  %d/%d sendK/recvK. (%s)",
+-              sptr->name, CurrentTime - sptr->firsttime, 
++          logprintf(L_NOTICE, "%s was connected for %.1lu seconds.  %d/%d sendK/recvK. (%s)",
++              sptr->name, (unsigned long)CurrentTime - (unsigned long)sptr->firsttime, 
+               sptr->sendK, sptr->receiveK, comment);
+ 
+               /* Just for paranoia... this shouldn't be necessary if the
+--- src/m_kline.c.orig	Wed Aug 20 04:45:53 2003
++++ src/m_kline.c	Tue Apr 20 01:03:29 2004
+@@ -818,12 +818,12 @@
+ 
+ #ifdef FULL_TIMEOUT_KLINES
+   if(temporary_kline_time)
+-    sendto_local_ops_flag(UMODE_SERVNOTICE, "%s added K-Line for [%s@%s] [%s], expiring at %.1ld (%d minutes)",
++    sendto_local_ops_flag(UMODE_SERVNOTICE, "%s added K-Line for [%s@%s] [%s], expiring at %.1lu (%d minutes)",
+ 			  rcptr ? rcptr->name : sptr->name,
+ 			  user,
+ 			  host,
+ 			  reason ? reason : "No reason",
+-			  aconf->hold, temporary_kline_time);
++			  (unsigned long)aconf->hold, temporary_kline_time);
+   else
+ #endif
+     sendto_local_ops_flag(UMODE_SERVNOTICE, "%s added K-Line for [%s@%s] [%s]",
+--- src/m_pong.c.orig	Tue Jul  8 14:41:55 2003
++++ src/m_pong.c	Tue Apr 20 00:42:21 2004
+@@ -128,7 +128,7 @@
+ 	  time_t ping;
+           sendto_ops_flag_butone(cptr, UMODE_SEEROUTING,
+ 				 "%s acknowledged end of %s burst (%.1lu sec). %u messages in %u kB",
+-				 sptr->name, me.name, CurrentTime - sptr->firsttime,
++				 sptr->name, me.name, (unsigned long)CurrentTime - (unsigned long)sptr->firsttime,
+ 				 sptr->sendM, sptr->sendK);
+ 	  sendto_ops_flag_butflag_butone_hidefrom(cptr, UMODE_SERVNOTICE, UMODE_SEEROUTING,
+ 						  "Burst complete, %s has linked", sptr->name);
+@@ -168,8 +168,8 @@
+ #if 0
+ 	  if (MyConnect(sptr)) /* This should never fail, with all dancer servers */
+ 	    {
+-	      sendto_serv_butone(cptr, ":%s SPINGTIME %s %.1ld", me.name, sptr->name, 
+-				 (sptr->ping_time.tv_sec * 1000000) + sptr->ping_time.tv_usec);
++	      sendto_serv_butone(cptr, ":%s SPINGTIME %s %.1lu", me.name, sptr->name, 
++				 (unsigned long)(sptr->ping_time.tv_sec * 1000000) + (unsigned long)sptr->ping_time.tv_usec);
+ 	    }
+ #endif
+ 	}
+--- src/m_set.c.orig	Tue Jul  8 14:41:55 2003
++++ src/m_set.c	Tue Apr 20 00:42:48 2004
+@@ -466,10 +466,10 @@
+                 }
+               else
+                 {
+-                  sendto_one(sptr, ":%s NOTICE %s :SPLITDELAY is currently %.1li",
++                  sendto_one(sptr, ":%s NOTICE %s :SPLITDELAY is currently %.1lu",
+                              me.name,
+                              parv[0],
+-                             SPLITDELAY/60);
++                             (unsigned long)SPLITDELAY/60);
+                 }
+           return 0;
+           break;
+--- src/m_snick.c.orig	Sun Sep  7 13:49:46 2003
++++ src/m_snick.c	Tue Apr 20 00:43:21 2004
+@@ -93,8 +93,9 @@
+   if (parc > 4)
+     acptr->firsttime = atol(parv[4]);
+ 
+-  sendto_serv_butone(cptr, "SNICK %s %s %s %.1ld", acptr->name,
+-		     acptr->origname, acptr->spoofhost, acptr->firsttime);
++  sendto_serv_butone(cptr, "SNICK %s %s %s %.1lu", acptr->name,
++		     acptr->origname, acptr->spoofhost,
++		     (unsigned long)acptr->firsttime);
+ 
+   return 0;
+ }
+--- src/m_svinfo.c.orig	Tue Jul  8 14:41:55 2003
++++ src/m_svinfo.c	Tue Apr 20 00:45:05 2004
+@@ -133,16 +133,22 @@
+   if (deltat > TS_MAX_DELTA)
+     {
+       sendto_ops_flag(UMODE_SERVNOTICE, 
+-		      "Link %s dropped, excessive TS delta (my TS=%.1ld, their TS=%.1ld, delta=%.1ld)",
+-		      get_client_name(sptr, MASK_IP), CurrentTime, theirtime,deltat);
++		      "Link %s dropped, excessive TS delta (my TS=%.1lu, their TS=%.1lu, delta=%.1lu)",
++		      get_client_name(sptr, MASK_IP),
++		      (unsigned long)CurrentTime,
++		      (unsigned long)theirtime,
++		      (unsigned long)deltat);
+       return exit_client(sptr, sptr, sptr, "Excessive TS delta");
+     }
+ 
+   if (deltat > TS_WARN_DELTA)
+     { 
+       sendto_ops_flag(UMODE_SERVNOTICE, 
+-		      "Link %s notable TS delta (my TS=%.1ld, their TS=%.1ld, delta=%.1ld)",
+-		      get_client_name(sptr, MASK_IP), CurrentTime, theirtime, deltat);
++		      "Link %s notable TS delta (my TS=%.1lu, their TS=%.1lu, delta=%.1lu)",
++		      get_client_name(sptr, MASK_IP),
++		      (unsigned long)CurrentTime,
++		      (unsigned long)theirtime,
++		      (unsigned long)deltat);
+     }
+ 
+   return 0;
+--- src/res.c.orig	Tue Jul  8 14:41:55 2003
++++ src/res.c	Tue Apr 20 00:51:00 2004
+@@ -265,8 +265,8 @@
+  * From bind 8.3, these aren't in earlier versions of bind
+  *
+  */
+-extern u_short  _getshort(const u_char *);
+-extern u_int    _getlong(const u_char *);
++/*extern u_short  _getshort(const u_char *);*/
++/*extern u_int    _getlong(const u_char *);*/
+ /*
+  * int
+  * res_isourserver(ina)
+@@ -503,7 +503,7 @@
+       else {
+         request->sentat = now;
+         request->timeout += request->timeout / 2;
+-        logprintf(L_WARN, "DNS lookup timed out, new timeout %lu, retries %d", request->timeout, request->retries);
++        logprintf(L_WARN, "DNS lookup timed out, new timeout %lu, retries %d", (unsigned long)request->timeout, request->retries);
+         resend_query(request);
+ #ifdef DEBUG
+         Debug((DEBUG_INFO,"r %x now %d retry %d c %x",
+@@ -1715,8 +1715,8 @@
+   if (parv[1] && *parv[1] == 'l') {
+     for(cp = cacheTop; cp; cp = cp->list_next) {
+       hp = &cp->he.h;
+-      sendto_one(sptr, "NOTICE %s :Ex %.1ld ttl %.1ld host %s(%s)",
+-                 parv[0], cp->expireat - CurrentTime, cp->ttl,
++      sendto_one(sptr, "NOTICE %s :Ex %.1lu ttl %.1lu host %s(%s)",
++		 parv[0], (unsigned long)(cp->expireat - CurrentTime), (unsigned long)cp->ttl,
+                  hp->h_name, inetntoa(hp->h_addr));
+       for (i = 0; hp->h_aliases[i]; i++)
+         sendto_one(sptr,"NOTICE %s : %s = %s (CN)",
+--- src/s_debug.c.orig	Tue Jul  8 14:41:56 2003
++++ src/s_debug.c	Tue Apr 20 00:53:00 2004
+@@ -155,10 +155,10 @@
+ 
+ 
+   sendto_one(cptr,
+-	     ":%s %d %s :CPU Secs %ld:%ld User %ld:%ld System %ld:%ld",
+-	     me.name, RPL_STATSDEBUG, nick, secs / 60, secs % 60,
+-	     rus.ru_utime.tv_sec / 60, rus.ru_utime.tv_sec % 60,
+-	     rus.ru_stime.tv_sec / 60, rus.ru_stime.tv_sec % 60);
++	     ":%s %d %s :CPU Secs %lu:%lu User %lu:%lu System %lu:%lu",
++	     me.name, RPL_STATSDEBUG, nick, (unsigned long)secs / 60, (unsigned long)secs % 60,
++	     (unsigned long)rus.ru_utime.tv_sec / 60, (unsigned long)rus.ru_utime.tv_sec % 60,
++	     (unsigned long)rus.ru_stime.tv_sec / 60, (unsigned long)rus.ru_stime.tv_sec % 60);
+   sendto_one(cptr, ":%s %d %s :RSS %ld ShMem %ld Data %ld Stack %ld",
+ 	     me.name, RPL_STATSDEBUG, nick, rus.ru_maxrss,
+ 	     rus.ru_ixrss / rup, rus.ru_idrss / rup, rus.ru_isrss / rup);
+--- src/s_serv.c.orig	Thu Dec  4 04:19:47 2003
++++ src/s_serv.c	Tue Apr 20 00:57:25 2004
+@@ -485,7 +485,7 @@
+   if (IsPerson(acptr))
+     {
+       sendto_one(cptr, "NICK %s %d %lu +%s %s %s %s %s :%s", acptr->name, 
+-                 acptr->hopcount + 1, acptr->tsinfo, umodes_as_string(&acptr->umodes),
++                 acptr->hopcount + 1, (unsigned long)acptr->tsinfo, umodes_as_string(&acptr->umodes),
+                  acptr->username, acptr->host,
+                  acptr->user->server, inetntoa((char *)&acptr->ip.s_addr), acptr->info);
+       {
+@@ -495,8 +495,8 @@
+           sendto_one(cptr, ":%s OPER %s +%s", me.name, acptr->name,
+                      umodes_as_string(&privs));
+       }
+-      sendto_one(cptr, ":%s SNICK %s %s %s %.1ld", me.name, acptr->name,
+-                 acptr->origname, acptr->spoofhost, acptr->firsttime);
++      sendto_one(cptr, ":%s SNICK %s %s %s %.1lu", me.name, acptr->name,
++                 acptr->origname, acptr->spoofhost, (unsigned long)acptr->firsttime);
+       /* Let's propogate AWAY status in the burst as well */
+       if (acptr->user->away)
+         sendto_one(cptr, ":%s AWAY :%s", acptr->name, acptr->user->away);
+@@ -728,7 +728,7 @@
+     ClearCap(cptr, CAP_ZIP);
+ #endif /* ZIP_LINKS */
+ 
+-  sendto_one(cptr,"SVINFO %d %d 0 :%lu", TS_CURRENT, TS_MIN, CurrentTime);
++  sendto_one(cptr,"SVINFO %d %d 0 :%lu", TS_CURRENT, TS_MIN, (unsigned long)CurrentTime);
+   
+   det_confs_butmask(cptr, CONF_LEAF|CONF_HUB|CONF_NOCONNECT_SERVER);
+   release_client_dns_reply(cptr);
+@@ -872,7 +872,7 @@
+           }
+         else
+           {
+-            sendto_one(cptr, ":%s UNKLINE %s %.1ld", me.name, ukr2->mask, ukr2->placed);
++            sendto_one(cptr, ":%s UNKLINE %s %.1lu", me.name, ukr2->mask, (unsigned long)ukr2->placed);
+             sent_unkline = 1;
+           }
+       }
+@@ -919,9 +919,9 @@
+         send_channel_modes(cptr, chptr);
+ #ifdef TOPIC_INFO
+         if (chptr->topic_time)
+-          sendto_one(cptr,":%s STOPIC %s %s %.1ld %.1ld :%s",
++          sendto_one(cptr,":%s STOPIC %s %s %.1lu %.1lu :%s",
+                      me.name, chptr->chname, chptr->topic_nick,
+-                     chptr->topic_time, chptr->channelts,
++                     (unsigned long)chptr->topic_time, (unsigned long)chptr->channelts,
+                      chptr->topic);
+ #endif
+       }
+@@ -1022,7 +1022,7 @@
+       sendto_one(cptr, ":%s %d %s :%s (%s!%s@%s) Idle: %.1ld",
+                  me.name, RPL_STATSDEBUG, cptr->name, cptr2->name,
+                  (cptr2->serv->by[0] ? cptr2->serv->by : "Remote."), 
+-                 "*", "*", CurrentTime - cptr2->lasttime);
++                 "*", "*", (unsigned long)(CurrentTime - cptr2->lasttime));
+ 
+       /*
+        * NOTE: moving the username and host to the client struct
+--- src/s_stats.c.orig	Tue Jul  8 14:41:56 2003
++++ src/s_stats.c	Tue Apr 20 00:57:41 2004
+@@ -125,7 +125,7 @@
+              me.name, RPL_STATSDEBUG, name,
+              sp->is_ckr, sp->is_cbr, sp->is_skr, sp->is_sbr);
+   sendto_one(cptr, ":%s %d %s :time connected %.1lu %.1lu",
+-             me.name, RPL_STATSDEBUG, name, sp->is_cti, sp->is_sti);
++             me.name, RPL_STATSDEBUG, name, (unsigned long)sp->is_cti, (unsigned long)sp->is_sti);
+ #ifdef FLUD
+   sendto_one(cptr, ":%s %d %s :CTCP Floods Blocked %u",
+              me.name, RPL_STATSDEBUG, name, sp->is_flud);
+--- src/s_user.c.orig	Thu Aug  7 03:36:13 2003
++++ src/s_user.c	Tue Apr 20 00:58:27 2004
+@@ -920,7 +920,7 @@
+   if (!IsHoneypot(sptr))
+     {
+       sendto_serv_butone(cptr, "NICK %s %d %lu +%s %s %s %s %s :%s",
+-                         nick, sptr->hopcount+1, sptr->tsinfo,
++                         nick, sptr->hopcount+1, (unsigned long)sptr->tsinfo,
+                          umodes_as_string(&sptr->umodes),
+                          sptr->username, sptr->host, user->server,
+                          inetntoa((char *)&sptr->ip.s_addr),
+@@ -931,8 +931,8 @@
+        * correct value
+        */
+       if (MyConnect(sptr) && strcmp(sptr->spoofhost, SPOOF_LIMIT_HOST) != 0)
+-        sendto_serv_butone(NULL, "SNICK %s %s %s %.1ld", sptr->name,
+-                           sptr->origname, sptr->spoofhost, sptr->firsttime);
++        sendto_serv_butone(NULL, "SNICK %s %s %s %.1lu", sptr->name,
++                           sptr->origname, sptr->spoofhost, (unsigned long)sptr->firsttime);
+     }
+ 
+   if (sptr->user)
+@@ -1250,7 +1250,7 @@
+                   add_history(sptr,1);
+               
+                   sendto_serv_butone(cptr, ":%s NICK %s :%lu",
+-                                     parv[0], nick, sptr->tsinfo);
++                                     parv[0], nick, (unsigned long)sptr->tsinfo);
+ 		  /* This global message will reset the idle time everywhere, so
+ 		   *  reset the last_sent counter as well
+ 		   */
+@@ -1281,7 +1281,7 @@
+             {
+               add_history(sptr,1);
+               sendto_serv_butone(cptr, ":%s NICK %s :%lu",
+-                                 parv[0], nick, sptr->tsinfo);
++                                 parv[0], nick, (unsigned long)sptr->tsinfo);
+ 	      sptr->user->last_sent = CurrentTime;
+ 
+               sendto_local_ops_flag(UMODE_NCHANGE,
