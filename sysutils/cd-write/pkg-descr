@@ -2,7 +2,6 @@ Cd-write is a X11 based program which can be used to make audio
 (CD-DA) and CDROM disks. It also provide a graphical interface to
 mkisofs and can be used to extract data and audio tracks from your
 CDROMS.
-This version supports the HP 4020,  HP 6020, Philips CDD2000 and 
-Philips CDD2600 writers (but only tested with CDD2600)
-Audio extraction can be done with the above disks and with the
-Sony CDU-55S and the Sony CDU-8003 (aka Apple CD 300).
+This version will work with all drives supported by the worm driver.
+Audio extraction can be done with the HP 4020, HP 6020, Philips CDD2000 and 
+Philips CDD2600 CD-R and with the Sony and Toshiba CDROM drives
