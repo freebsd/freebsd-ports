@@ -1,0 +1,10 @@
+bin/crashexport
+bin/crashgetnode
+bin/crashlist
+bin/crashmail
+bin/crashmaint
+bin/crashstats
+bin/crashwrite
+etc/crashmail/example.prefs
+etc/crashmail/areafix.help
+@dirrm etc/crashmail

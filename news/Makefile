@@ -9,6 +9,7 @@
     SUBDIR += cleanfeed
     SUBDIR += cleanscore
     SUBDIR += cnews
+    SUBDIR += crashmail
     SUBDIR += diablo
     SUBDIR += dnews
     SUBDIR += fidogate
