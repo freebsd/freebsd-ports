@@ -317,6 +317,7 @@
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
     SUBDIR += ruby-mecab
+    SUBDIR += ruby-rdic
     SUBDIR += ruby-refe
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
