@@ -1,13 +1,13 @@
 # New ports collection makefile for:    speak_freely
 # Original WWW site: http://www.fourmilab.ch/speakfree/unix/index.html
-# Version required:     6.1b
+# Version required:     6.1c
 # Date created:         18 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/11/11 23:24:31 ache Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:33:26 asami Exp $
 #
 
-DISTNAME=       speak_freely-6.1b
+DISTNAME=       speak_freely-6.1c
 CATEGORIES=     mbone audio security
 MASTER_SITES=   http://www.fourmilab.ch/speakfree/unix/
 
@@ -26,7 +26,7 @@ do-install:
 		install -d -o ${BINOWN} -g ${BINGRP} -m 755 ${SFLIB}; \
 	fi
 	cd ${WRKSRC}; \
-	$(INSTALL_DATA) ring.au ${SFLIB}
+	$(INSTALL_DATA) busy.au ring.au ${SFLIB}
 	cd ${WRKSRC}; \
 	for p in ${UTILS}; do \
 		$(INSTALL_PROGRAM) $$p ${PREFIX}/bin; \
