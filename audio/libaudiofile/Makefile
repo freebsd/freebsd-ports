@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libaudiofile
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.68k.org/~michael/audiofile/ \
 		ftp://oss.sgi.com/projects/audiofile/download/ \
