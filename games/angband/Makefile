@@ -10,6 +10,7 @@ PORTVERSION=	2.8.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Source/ \
 		http://people.FreeBSD.org/~mph/distfiles/
+DISTNAME=	angband-283
 DISTFILES=	angband-283.tar.gz ext-x11-283.tar.gz angband-data.tar.gz
 
 MAINTAINER=	mph@freebsd.org

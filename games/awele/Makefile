@@ -9,13 +9,13 @@ PORTNAME=	awele
 PORTVERSION=	1.0
 CATEGORIES=	games tk82
 MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}1.0.tgz
 
 MAINTAINER=	tg@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 MAN6=		xawele.6

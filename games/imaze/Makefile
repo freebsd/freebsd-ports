@@ -25,6 +25,7 @@ MAINTAINER=	kuehn@rz.tu-clausthal.de
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 .endif
 
+WRKSRC=		${WRKDIR}/imaze
 EXTRACT_ONLY=	imaze1.3.tar.Z
 USE_X_PREFIX=	yes
 MAN6=		genlab.6 imaze.6 imazesrv.6 ninja.6

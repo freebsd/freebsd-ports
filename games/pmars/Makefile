@@ -15,6 +15,7 @@ DISTFILES=	pmars08s.tar.Z
 MAINTAINER=	gmarco@giovannelli.it
 
 USE_XLIB=	yes
+NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	pmars
 MAN6=		pmars.6
