@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	zebra-pj
-PORTVERSION=	20030722
+PORTVERSION=	20030810
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://zebra.dishone.st/snapshots/cvs/
+MASTER_SITES=	http://www.quagga.net/snapshots/cvs/
 DISTNAME=	${PORTNAME}-${ZEBRAVER}-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=		Patched Zebra
+COMMENT=	Patched Zebra
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
