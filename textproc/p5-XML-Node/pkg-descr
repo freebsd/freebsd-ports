@@ -1,0 +1,17 @@
+XML::Node is a Perl5 module which provides a simplified extension interface
+to XML::Parser.
+
+Paraphrasing the README:
+
+  Instead of worrying about "start", "end", and "char" callbacks of every
+  single XML node, you can simply say that you only want to be notified when
+  a path is found.
+
+  Using XML::Node, you can ignore the parts of XML files that you are not
+  interested in.  Additionally, you can register a variable instead of a
+  callback function.  The corresponding string found in an XML file will be
+  automatically appended to your variable.
+
+Author: Chang Liu <liu@ics.uci.edu>
+
+-- Johann Visagie <johann@egenetics.com>
