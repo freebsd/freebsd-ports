@@ -1,3 +1,4 @@
+bin/convertxdccfile
 bin/iroffer
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/WHATSNEW

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	1.2b29
+PORTVERSION=	1.4.1
 CATEGORIES=	irc
-MASTER_SITES=	http://iroffer.org/archive/v1.2/
-DISTNAME=	iroffer${PORTVERSION}
+MASTER_SITES=	http://iroffer.org/archive/v1.4/
+DISTNAME=	iroffer1.4.b01
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.ORG
@@ -19,7 +19,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
