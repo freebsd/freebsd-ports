@@ -25,7 +25,7 @@ MAKE_ARGS=	PGSQL_SRC=${PGSQL_SRC}
 
 PGSQL_PORTDIR=	${WRKDIR}/../../../databases/postgresql7
 WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}
-PGSQL_SRC=	${PGSQL_PORTDIR}/work/postgresql-7.4.3
+PGSQL_SRC=	${PGSQL_PORTDIR}/work/postgresql-7.4.5
 INSTALL_TARGET=	install
 
 .if defined(WITH_GEOS)
