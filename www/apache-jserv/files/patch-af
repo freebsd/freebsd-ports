@@ -1,26 +1,6 @@
---- src/java/org/apache/java/lang/AdaptiveClassLoader.java.orig	Tue Feb  8 18:37:01 2000
-+++ src/java/org/apache/java/lang/AdaptiveClassLoader.java	Tue Feb  8 20:33:18 2000
-@@ -661,7 +661,18 @@
-             ZipEntry entry = zipfile.getEntry(name);
- 
-             if (entry != null) {
--                return zipfile.getInputStream(entry);
-+                InputStream stream = zipfile.getInputStream(entry);
-+                byte data[] = new byte[(int)entry.getSize()];
-+		for(int i = 0 ; i < data.length ;) {
-+			int size = stream.read(data, i, data.length - i);
-+			if(size < 0) {
-+				stream.close();
-+				return null;
-+			}
-+			i += size;
-+		}
-+		stream.close();
-+                return new ByteArrayInputStream(data);
-             } else {
-                 return null;
-             }
-@@ -671,6 +682,7 @@
+--- src/java/org/apache/java/lang/AdaptiveClassLoader.java.orig	Sun Mar 12 06:34:42 2000
++++ src/java/org/apache/java/lang/AdaptiveClassLoader.java	Fri May 19 00:10:41 2000
+@@ -723,6 +723,7 @@
              if ( zipfile != null ) {
                  try {
                      zipfile.close();

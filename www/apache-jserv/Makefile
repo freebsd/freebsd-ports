@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	apache-jserv
-PORTVERSION= 	1.1
+PORTVERSION= 	1.1.1
 CATEGORIES=	www java
 MASTER_SITES=	http://java.apache.org/jserv/dist/
-DISTNAME=	ApacheJServ-1.1
+DISTNAME=	ApacheJServ-1.1.1
 
 MAINTAINER=	greg@greg.rim.or.jp
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--with-gnu-ld\
 		--enable-compressed-jar\
 		--enable-EAPI
-.if defined (USE_JIKES)
+.if defined (WITH_JIKES)
 CONFIGURE_ARGS+=--with-javac=${LOCALBASE}/bin/jikes
 .endif
 
