@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wordnet
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	2.0.1
+PORTREVISION=	0
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pywordnet
@@ -25,7 +25,7 @@ WORDNETBASE?=	${LOCALBASE}/share/WordNet-${WORDNET_VERSION}
 WORDNET_VERSION?=	2.0
 
 post-patch:
-	@${SED} -e 's|/usr/local/wordnet1.6|${WORDNETBASE}|g' \
+	@${SED} -e 's|/usr/local/wordnet${WORDNET_VERSION}|${WORDNETBASE}|g' \
 		-e 's|os.path.join(WNHOME.*))|WNHOME)|g' ${WRKSRC}/wordnet.py \
 		> ${WRKSRC}/wordnet.py.tmp && ${CAT} ${WRKSRC}/wordnet.py.tmp \
 		> ${WRKSRC}/wordnet.py
