@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.96.4
-PORTREVISION=	5
+PORTVERSION=	0.96.5
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
 
 PATCH_SITES=	http://quagga.net/
-PATCHFILES=	quagga-bgp_route-wspace.diff
 
 MAINTAINER=	boris@tagnet.ru
-COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
+COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software (server/reflector)
 
 CONFLICTS=	zebra-devel-* zebra-0*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_SUBMAKE=	yes
-WANT_AUTOCONF_VER=	253
-WANT_AUTOMAKE_VER=	15
-AUTOMAKE_ARGS= -a -i
+WANT_AUTOCONF_VER=	257
+WANT_AUTOMAKE_VER=	17
+AUTOMAKE_ARGS=	-a -i
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include/quagga
+CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX} WITH_SNMP_4=${WITH_SNMP_4} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
@@ -44,9 +43,13 @@ pre-fetch:
 .if ${CONFIGURE_ARGS:M--enable-opaque-lsa} != ""
 PLIST_SUB+=	OSPFAPI_HEADER="include/quagga/ospfapi/ospf_apiclient.h"
 PLIST_SUB+=	OSPFAPI_PATH="@dirrm include/quagga/ospfapi"
+PLIST_SUB+=	OSPFAPI_LIB="lib/libospfapiclient.a"
+PLIST_SUB+=	OSPFAPI_SBIN="sbin/ospfclient"
 .else
 PLIST_SUB+=	OSPFAPI_HEADER=
 PLIST_SUB+=	OSPFAPI_PATH=
+PLIST_SUB+=	OSPFAPI_LIB=
+PLIST_SUB+=	OSPFAPI_SBIN=
 .endif
 
 .if !defined(ENABLE_USER)
@@ -136,7 +139,7 @@ post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
 
 post-install:
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} "===>     installing ${PORTNAME} startup file..."
 	@${ECHO} "Add the folliwing lines to /etc/rc.conf to enable quagga:"
 	@${ECHO} ""
@@ -144,7 +147,7 @@ post-install:
 	@${ECHO} "quagga_enable=\"YES\""
 	@${ECHO} "Also You may want to set router_enable=\"NO\""
 	@${ECHO} ""
-	@${ECHO} "Note!!! Since 0.96_5 port uses new id for quagga user and group."
+	@${ECHO} "Note!!! Since 0.96.4_5 port uses new id for quagga user and group."
 	@${ECHO} "        So, You need to manually chown files:"
 	@${ECHO} "        in ${SYSCONF_DIR}"
 	@${ECHO} "        and ${LOCALSTATE_DIR}"

@@ -13,7 +13,7 @@
 #
 # You may also use next flags to tune startup
 #quagga_flags="-d"
-#quagga_daemons="zebra ripd ripng ospfd ospf6d bgpd"
+#quagga_daemons="zebra ripd ripng ospfd ospf6d bgpd isisd"
 #
 
 . %%RC_SUBR%%
@@ -33,7 +33,7 @@ stop_postcmd()
 
 quagga_enable=${quagga_enable:-"NO"}
 quagga_flags=${quagga_flags:-"-d"}
-quagga_daemons=${quagga_daemons:-"zebra ripd ripng ospfd ospf6d bgpd"}
+quagga_daemons=${quagga_daemons:-"zebra ripd ripng ospfd ospf6d bgpd isisd"}
 load_rc_config $name
 
 quagga_cmd=$1
