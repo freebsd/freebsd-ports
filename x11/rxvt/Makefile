@@ -11,10 +11,11 @@
 PORTNAME=	rxvt
 PORTVERSION=	2.6.3
 CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
-		ftp://mason.primenet.com.au/pub/rxvt/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
+		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
+		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old devel
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -51,6 +52,11 @@ CONFIGURE_ARGS+=	--enable-kanji
 CONFIGURE_ARGS+=	--enable-menubar
 .endif # WITH_MENUBAR
 #
+# enable NeXT style scrollbar
+.if defined(WITH_NEXT_SCROLLBAR)
+CONFIGURE_ARGS+=	--enable-next-scroll
+.endif
+#
 # XIM (X Input Method) protocol support
 .ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
@@ -58,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-xim
 #
 # enable Xterm style scrollbar
 .if defined(WITH_XTERM_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-xterm-scroll	
+CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
 #
 
@@ -72,6 +78,7 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
 	@${ECHO_MSG} "WITH_KANJI=yes		add support for Kanji characters"
 	@${ECHO_MSG} "WITH_MENUBAR=yes	add support for rxvt menu bar system"
+	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes	add support for a NeXT-like scrollbar"
 	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	make the scrollbar look like an Xterm scrollbar"
 	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes 	use cleartext passwords"
 
