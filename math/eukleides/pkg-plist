@@ -1,0 +1,6 @@
+bin/eukleides
+bin/euk2eps
+bin/euk2edit
+@unexec install-info --delete %D/info/eukleides.info %D/info/dir
+info/eukleides.info
+@exec install-info %D/info/eukleides.info %D/info/dir

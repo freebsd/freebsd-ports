@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Jun  5 01:38:47 2002
++++ Makefile	Wed Jun  5 01:41:39 2002
+@@ -1,14 +1,14 @@
+ # Eukleides 0.9.0 makefile
+ # Copyright (c) Christian Obrecht 2000-2002
+ 
+-CC = gcc
+-CFLAGS = -c -O2
++#CC = gcc
++CFLAGS += -c
+ OBJECTS = lex.yy.o parser.tab.o main.o geometry.o drawing.o
+ LEX = flex
+ YACC = bison -d
+-BIN = /usr/local/bin/
+-MAN = /usr/man/man1/
+-INFO = /usr/info/
++BIN = ${PREFIX}/bin/
++MAN = ${PREFIX}/man/man1/
++INFO = ${PREFIX}/info/
+ PAPER = --texinfo=@afourpaper
+ DOC = eukleides.info eukleides.dvi eukleides.ps
+ 
