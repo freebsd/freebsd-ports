@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-vi
     SUBDIR += MathPlanner
     SUBDIR += abiword
+    SUBDIR += abiword-plugins
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel
