@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 #PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
@@ -32,7 +32,9 @@ MAN1=		balsa.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|-liconv|-lgiconv|g ; s|iconv_open|libiconv_open|g' \
+			${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
