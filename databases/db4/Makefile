@@ -10,7 +10,8 @@ PORTVERSION=	4.0.14
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 #PATCH_SITES=	${MASTER_SITES}
@@ -33,6 +34,7 @@ INSTALLS_SHLIB=	yes
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_docs
+PORTDOCS=	*
 .endif
 
 # the db install_docs target installs an empty directory, kill it
