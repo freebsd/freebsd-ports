@@ -16,7 +16,8 @@ MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
 		http://codeczone.virtualave.net/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTFILES=	w32codec-${CODEC_MPLAYER_VERSION}.zip \
+DISTFILES=	w32codec-0.18.zip \
+		w32codec-diff-0.18-${CODEC_MPLAYER_VERSION}.zip \
 		binaries-${CODEC_VERSION}.zip \
 		wmvds32.ax.gz
 EXTRACT_ONLY=	${DISTFILES:S/wmvds32.ax.gz//}
@@ -34,7 +35,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
 CODEC_VERSION=	010122
-CODEC_MPLAYER_VERSION=	0.18
+CODEC_MPLAYER_VERSION=	0.50
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
