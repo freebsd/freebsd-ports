@@ -1,0 +1,11 @@
+bin/oooqs
+share/applnk/Applications/oooqs.desktop
+share/icons/hicolor/16x16/apps/oooqs.png
+share/icons/hicolor/32x32/apps/oooqs.png
+share/icons/hicolor/48x48/apps/oooqs.png
+share/icons/hicolor/64x64/apps/oooqs.png
+share/locale/de/LC_MESSAGES/oooqs.mo
+share/doc/HTML/en/oooqs/index.docbook
+share/doc/HTML/en/oooqs/index.cache.bz2
+share/doc/HTML/en/oooqs/common
+@dirrm share/doc/HTML/en/oooqs
