@@ -1,4 +1,2 @@
 bin/cfv
-lib/%%PYTHON_VERSION%%/site-packages/cfv.py
-lib/%%PYTHON_VERSION%%/site-packages/cfv.pyc
-lib/%%PYTHON_VERSION%%/site-packages/cfv.pyo
+lib/%%PYTHON_VERSION%%/site-packages/fchksum.so
