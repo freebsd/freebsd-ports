@@ -110,6 +110,7 @@
     SUBDIR += enteruser
     SUBDIR += eroaster
     SUBDIR += etcmerge
+    SUBDIR += eventwatcher
     SUBDIR += extipl
     SUBDIR += fastest_cvsup
     SUBDIR += fcron

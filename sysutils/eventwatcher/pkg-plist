@@ -1,0 +1,39 @@
+bin/eventwatcher
+include/eventwatcher/eventdata.h
+include/eventwatcher/plugin.h
+lib/kde3/eventwatcherdcopplugin.la
+lib/kde3/eventwatcherdcopplugin.so
+lib/kde3/eventwatcherlogplugin.la
+lib/kde3/eventwatcherlogplugin.so
+lib/kde3/eventwatcherlogplugin_config.la
+lib/kde3/eventwatcherlogplugin_config.so
+lib/kde3/eventwatcherrssplugin.la
+lib/kde3/eventwatcherrssplugin.so
+lib/kde3/eventwatcherrssplugin_config.la
+lib/kde3/eventwatcherrssplugin_config.so
+lib/libeventwatcherplugin.la
+lib/libeventwatcherplugin.so
+lib/libeventwatcherplugin.so.0
+share/applnk/Utilities/eventwatcher.desktop
+share/apps/eventwatcher/eventwatcherui.rc
+share/apps/eventwatcher/icons/crystalsvg/16x16/apps/dcopplugin.png
+share/apps/eventwatcher/icons/crystalsvg/16x16/apps/logplugin.png
+share/apps/eventwatcher/icons/crystalsvg/16x16/apps/rssplugin.png
+share/apps/eventwatcher/icons/crystalsvg/22x22/apps/eventwatchergray.png
+share/apps/eventwatcher/icons/crystalsvg/22x22/apps/eventwatcherlight.png
+share/config.kcfg/eventwatcher.kcfg
+share/icons/hicolor/16x16/apps/eventwatcher.png
+share/icons/hicolor/22x22/apps/eventwatcher.png
+share/icons/hicolor/32x32/apps/eventwatcher.png
+share/services/eventwatcherdcop.desktop
+share/services/eventwatcherlog.desktop
+share/services/eventwatcherrss.desktop
+share/servicetypes/eventwatcherplugin.desktop
+@dirrm share/apps/eventwatcher/icons/crystalsvg/22x22/apps
+@dirrm share/apps/eventwatcher/icons/crystalsvg/22x22
+@dirrm share/apps/eventwatcher/icons/crystalsvg/16x16/apps
+@dirrm share/apps/eventwatcher/icons/crystalsvg/16x16
+@dirrm share/apps/eventwatcher/icons/crystalsvg
+@dirrm share/apps/eventwatcher/icons
+@dirrm share/apps/eventwatcher
+@dirrm include/eventwatcher

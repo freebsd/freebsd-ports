@@ -1,0 +1,9 @@
+EventWatcher is a KDE application which notifies you  about various events.
+
+"Events" are pieces of information about, for example, news ticker or blog
+updates, new emails, user logons, system warnings, hardware events etc.
+They get collected by EventWatcher plugins and sent to the main application
+which lives in the KDE system tray for most of the time and displays this
+information.
+
+WWW: http://eventwatcher.sourceforge.net/
