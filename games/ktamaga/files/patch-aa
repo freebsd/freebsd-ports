@@ -1,7 +1,7 @@
-*** Makefile~	Thu Nov 13 23:49:08 1997
---- Makefile	Wed Dec  3 00:48:04 1997
+*** Makefile~	Sun Nov 30 20:46:24 1997
+--- Makefile	Mon Feb 15 21:44:29 1999
 ***************
-*** 11,19 ****
+*** 11,22 ****
   HAVE_KDE=1
   
 ! QTDIR	= /usr/lib/qt
@@ -11,7 +11,10 @@
 ! KDEDIR	= /opt/kde
   
   # Uncomment, if you need debug info in the prog.
---- 11,19 ----
+! DEBUG_FL = -g
+  
+  # Binaries
+--- 11,22 ----
   HAVE_KDE=1
   
 ! QTDIR	= $(X11BASE)
@@ -21,6 +24,9 @@
 ! KDEDIR	= $(PREFIX)
   
   # Uncomment, if you need debug info in the prog.
+! #DEBUG_FL = -g
+  
+  # Binaries
 ***************
 *** 24,28 ****
   SHELL   = /bin/sh
@@ -48,7 +54,7 @@
   QTLIBDIR	= $(QTDIR)/lib
   KDEINCDIR	= $(KDEDIR)/include 
 ***************
-*** 43,66 ****
+*** 43,74 ****
   INSTALL_DIR_PRIVATE = $(install) -d -m 0700
   
 - ifdef HAVE_KDE
@@ -73,18 +79,34 @@
 - endif
   
   INCLUDES	= -I $(QTINCDIR) -I $(X11INCDIR) $(KINC)
---- 43,55 ----
-***************
-*** 70,74 ****
+! LIBS		= -L $(X11LIBDIR) $(KLIB) -lqt -lm
+  DEFINES		= -DSTDC_HEADERS $(KDEF)
+  #DEFINES		= -DHAVE_CONFIG_H $(KDEF)
   # maybe -DSTDC_HEADERS needed instead of -DHAVE_CONFIG_H
   
 ! CFLAGS	= $(DEBUG_FL) -O2 -fno-strength-reduce -Wall -W $(INCLUDES) $(DEFINES)
   LFLAGS  = $(DEBUG_FL) $(LIBS)
   
---- 59,63 ----
+--- 43,63 ----
+  INSTALL_DIR_PRIVATE = $(install) -d -m 0700
+  
+  BINDIR = $(KDEDIR)/bin
+  DATADIR = $(KDEDIR)/share/apps/ktamaga
+  HELPDIR = $(KDEDIR)/share/doc/HTML/default/ktamaga
+  
+  ###########################################################
+  
+  KINC	= -I $(KDEINCDIR)
+  KLIB	= -L $(KDELIBDIR) -lkdecore -lkdeui -lXext
+  KDEF	= -DUSEKDE
+  
+  INCLUDES	= -I $(QTINCDIR) -I $(X11INCDIR) $(KINC)
+! LIBS		= -L $(X11LIBDIR) $(KLIB) -lqt -lm -lstdc++
+  DEFINES		= -DSTDC_HEADERS $(KDEF)
+  #DEFINES		= -DHAVE_CONFIG_H $(KDEF)
   # maybe -DSTDC_HEADERS needed instead of -DHAVE_CONFIG_H
   
-! CFLAGS	= $(DEBUG_FL) -O2 -fno-strength-reduce -Wall -W $(INCLUDES) $(DEFINES) -DX11BASE=\"$(X11BASE)\"
+! CFLAGS	= $(DEBUG_FL) $(INCLUDES) $(DEFINES) -DX11BASE=\"$(X11BASE)\" -DKDEDIR=\"$(KDEDIR)\"
   LFLAGS  = $(DEBUG_FL) $(LIBS)
   
 ***************
@@ -131,18 +153,3 @@
   
   	$(INSTALL_DIR) $(DATADIR)
 --- 121,124 ----
-** tamaga.h~	Thu Nov 13 23:55:28 1997
---- tamaga.h	Thu Nov 13 23:56:18 1997
-***************
-*** 28,32 ****
-  
-  // The Data dir for the X-only version
-! #define XDATPATH	"/usr/lib/X11/tamaga"
-  
-  //------------------------------------
---- 28,32 ----
-  
-  // The Data dir for the X-only version
-! #define XDATPATH	X11BASE "/lib/X11/tamaga"
-  
-  //------------------------------------

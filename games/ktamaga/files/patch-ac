@@ -1,0 +1,27 @@
+*** tlcd.cpp~	Thu Nov 13 12:18:14 1997
+--- tlcd.cpp	Mon Feb 15 21:57:52 1999
+***************
+*** 12,20 ****
+  tlcd::tlcd( QWidget *parent, const char *name ) : QWidget( parent, name )
+  {
+- #ifdef USEKDE
+-  datadir = app->kdedir()+TDATADS;
+- #else
+   datadir = XDATPATH;
+- #endif
+  
+   pbase = new QPixmap();
+--- 12,16 ----
+***************
+*** 220,224 ****
+   r=q;
+   for ( ; *p ; p++ ) {
+!   if (pspec[cnt]) delete pspec[cnt];
+    if (r>=qend) { printf(".%d. ",cnt); cnt++; continue; } 
+  
+--- 216,220 ----
+   r=q;
+   for ( ; *p ; p++ ) {
+!    /*  if (pspec[cnt]) delete pspec[cnt];*/
+    if (r>=qend) { printf(".%d. ",cnt); cnt++; continue; } 
+  

@@ -1,0 +1,14 @@
+*** lwinstat.cpp~	Sun Nov 30 11:53:16 1997
+--- lwinstat.cpp	Mon Feb 15 21:22:30 1999
+***************
+*** 18,26 ****
+  
+   cont = new QWidget( this );
+- #ifdef USEKDE
+-  datadir = app->kdedir()+TDATADS;
+- #else
+   datadir = XDATPATH;
+- #endif 
+  
+   bp.load(datadir+"/bg1.xpm");
+--- 18,22 ----
