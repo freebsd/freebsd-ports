@@ -20,6 +20,7 @@ EXTRACT_ONLY=	dataplot_source${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
+FORBIDDEN=	checksum mismatch due to extensive changes to distfile
 LIB_DEPENDS=	gd1:${PORTSDIR}/graphics/gd1 \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
