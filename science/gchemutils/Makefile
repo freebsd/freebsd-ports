@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gchemutils
-PORTVERSION=	0.2.7
-PORTREVISION=	3
+PORTVERSION=	0.4.1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,4 +26,13 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-*
+.endif
+
+post-install:
+	${RM} -rf ${PREFIX}/share/gnome/doc/gchemutils/reference/html/CVS
+
+.include <bsd.port.post.mk>
