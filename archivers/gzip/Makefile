@@ -27,6 +27,7 @@ COMMENT=	A compression utility designed to be a replacement for compress
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 \
 	zgrep.1 zless.1 zmore.1 znew.1
