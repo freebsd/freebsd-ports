@@ -3,7 +3,7 @@
 # Date created:         30 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/04/15 04:33:41 asami Exp $
 #
 
 DISTNAME=	dvips
@@ -19,5 +19,6 @@ IS_INTERACTIVE=	yes
 pre-install:
 	@mkdir -p ${PREFIX}/lib/texmf
 	@mkdir -p ${PREFIX}/man/man1
+	@if -f ${SCRIPTDIR}/install.tmp; then sh ${SCRIPTDIR}/install.tmp; fi
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1995/04/15 22:06:55 jmz Exp $
+# $Id: Makefile,v 1.11 1995/04/17 20:31:43 asami Exp $
 #
 
 DISTNAME=	xdvi
@@ -30,6 +30,7 @@ install: build
 	@(cd ${WRKSRC}; ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} xdvi.man)
 	@(cd ${WRKSRC}; ${GMAKE} -f Makefile install BINDIR=${PREFIX}/bin)
 	@(cd ${WRKSRC}; install -c -m 755 -o bin MakeTeXPK ${PREFIX}/bin)
+	@if -f ${SCRIPTDIR}/install.tmp; then sh ${SCRIPTDIR}/install.tmp; fi
 .endif
 
 .include <bsd.port.mk>
