@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.61 1997/06/04 05:55:00 asami Exp $
+# $Id: Makefile,v 1.62 1997/06/11 00:20:40 jfitz Exp $
 #
 
     SUBDIR += SWIG
@@ -53,6 +53,7 @@
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
     SUBDIR += p5-Time
+    SUBDIR += portlint
     SUBDIR += prcs
     SUBDIR += sawt
     SUBDIR += scogdb
