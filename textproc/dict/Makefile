@@ -21,7 +21,7 @@ LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
 
 USE_BISON=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	14
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,11 +1,17 @@
---- apr-0.9.4/buildconf.orig	Wed Jun 18 05:44:25 2003
-+++ apr-0.9.4/buildconf	Thu Oct  2 15:58:45 2003
-@@ -81,7 +81,7 @@
- $libtoolize --copy --automake
- 
+--- apr-0.9.4/buildconf.orig	Tue Jun 17 13:44:25 2003
++++ apr-0.9.4/buildconf	Tue Mar 23 21:53:36 2004
+@@ -83,3 +83,3 @@
  ltpath=`dirname $libtoolize`
 -ltfile=${LIBTOOL_M4-`cd $ltpath/../share/aclocal ; pwd`/libtool.m4}
-+ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/libtool14.m4}
++ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/libtool15.m4}
  
- if [ ! -f $ltfile ]; then
-     echo "$ltfile not found"
+@@ -102,3 +102,3 @@
+ echo "Creating include/arch/unix/apr_private.h.in ..."
+-${AUTOHEADER:-autoheader}
++${AUTOHEADER:-autoheader257}
+ 
+@@ -106,3 +106,3 @@
+ ### do some work to toss config.cache?
+-${AUTOCONF:-autoconf}
++${AUTOCONF:-autoconf257}
+ 

@@ -22,7 +22,7 @@ WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	14
+USE_LIBTOOL_VER=15
 USE_X_PREFIX=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
@@ -38,6 +38,6 @@ post-patch:
 		's|-lpthread||'
 
 post-configure:
-	${CP} ${LOCALBASE}/bin/libtool14 ${WRKSRC}/libtool
+	${CP} ${LIBTOOL} ${WRKSRC}/libtool
 
 .include <bsd.port.mk>
