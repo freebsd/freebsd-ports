@@ -1,0 +1,12 @@
+bin/gcng
+bin/gptg
+bin/gscg
+share/doc/gtgt/autoconf.html
+share/doc/gtgt/automake.html
+share/doc/gtgt/company-license.long
+share/doc/gtgt/company-license.short
+share/doc/gtgt/gtgt.html
+share/doc/gtgt/gtgt.txt
+share/doc/gtgt/index.html
+share/doc/gtgt/libtool.html
+@dirrm share/doc/gtgt
