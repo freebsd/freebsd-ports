@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsane
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
@@ -45,8 +46,8 @@ pre-everything::
 .endif
 
 pre-patch:
-	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
-		's|\$$\(sbindir\)||g'
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
+		-i "" -e 's|\$$(sbindir)||g'
 
 post-install:
 	@${SED} 's:/usr/X11R6:${PREFIX}:' ${PKGMESSAGE}
