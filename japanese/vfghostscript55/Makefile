@@ -3,7 +3,7 @@
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.27 1998/12/23 04:12:03 asami Exp $
+# $Id: Makefile,v 1.28 1998/12/23 18:51:31 steve Exp $
 #
 
 DISTNAME=	ghostscript-5.50
@@ -57,7 +57,7 @@ GS_DRIVERS+=	epag-3.07.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-5.10a.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.50.tar.gz
 
 pre-fetch:
