@@ -40,7 +40,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if defined(WITH_VORBIS)
 CONFIGURE_ARGS+=	--enable-ogg-vorbis
-LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-ogg-vorbis
 .endif

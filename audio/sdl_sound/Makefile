@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl_sound
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
 DISTNAME=	SDL_sound-${PORTVERSION}
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-midi
 .endif
 
 .if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-ogg
 .endif

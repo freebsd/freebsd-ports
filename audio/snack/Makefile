@@ -28,7 +28,7 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
 PLIST_SUB=	SNACK_VER=2.2
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 ALL_TARGET=	all libsnackogg.so

@@ -7,6 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	2.0.b.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://www.icecast.org/files/
@@ -16,9 +17,8 @@ MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming mp3/ogg-vorbis audio server
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		ogg.4:${PORTSDIR}/audio/libogg \
 		shout.3:${PORTSDIR}/audio/libshout2 \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
 USE_GMAKE=	yes

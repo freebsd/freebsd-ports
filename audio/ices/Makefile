@@ -7,6 +7,7 @@
 
 PORTNAME=	ices
 PORTVERSION=	2.0.b.2.20030811
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://tigress.com/lofi/ \
@@ -16,9 +17,8 @@ DISTNAME=	${PORTNAME}-2.0-Beta2-20030811
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming source client for icecast 2
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
-		shout.3:${PORTSDIR}/audio/libshout2 \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2 \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \

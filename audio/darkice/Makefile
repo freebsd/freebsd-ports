@@ -8,6 +8,7 @@
 
 PORTNAME=	darkice
 PORTVERSION=	0.13.1
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

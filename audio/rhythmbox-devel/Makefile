@@ -45,7 +45,7 @@ WITH_VORBIS=	yes
 .endif
 
 .ifdef (WITH_VORBIS)
-LIB_DEPENDS+=		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=		vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	nogger
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/nogger/
 
@@ -14,7 +15,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	No-frills, GTK-based Ogg Vorbis player
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 .include <bsd.port.pre.mk>
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	mq3
 PORTVERSION=	8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mq3.org/source/
 
@@ -15,7 +15,7 @@ MAINTAINER=	erich@tacni.net
 COMMENT=	A minimal mp3/ogg player written in Qt
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		qthreads.15:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

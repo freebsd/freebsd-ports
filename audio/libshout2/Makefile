@@ -7,7 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/files/libshout/
@@ -16,8 +16,7 @@ DISTNAME=	libshout-${PORTVERSION}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Routines for connecting and transmitting data to the icecast server
 
-LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
