@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	mysql
-PORTREVISION=	2
+PORTREVISION=	0
 PKGNAMESUFFIX=	-client
 
-MASTERDIR=	${.CURDIR}/../mysql40-server
 COMMENT=	Multithreaded SQL database (client)
+
+MASTERDIR=	${.CURDIR}/../mysql40-server
+
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
 

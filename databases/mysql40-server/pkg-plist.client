@@ -9,12 +9,12 @@ bin/mysqlmanagerc
 bin/mysqlshow
 bin/mysqltest
 etc/rc.d/000.mysql-client.sh
-include/mysql/dbug.h
 include/mysql/errmsg.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/my_alloc.h
 include/mysql/my_config.h
+include/mysql/my_dbug.h
 include/mysql/my_dir.h
 include/mysql/my_getopt.h
 include/mysql/my_global.h

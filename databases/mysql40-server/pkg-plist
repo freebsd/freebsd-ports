@@ -98,6 +98,7 @@ libexec/mysqld
 %%PORTDOCS%%share/doc/mysql/manual_toc.html
 share/mysql/Description.plist
 share/mysql/Info.plist
+share/mysql/MySQL-shared-compat.spec
 share/mysql/StartupParameters.plist
 share/mysql/binary-configure
 share/mysql/postinstall
