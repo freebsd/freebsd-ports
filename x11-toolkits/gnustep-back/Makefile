@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -62,7 +62,8 @@ PLIST_SUB+=		USE_XLIB="" USE_XDPS="@comment " USE_ART="@comment "
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-MAKE_ENV+=		ADDITIONAL_LDFLAGS=-lcipher
+ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
+MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 .endif
 
 post-extract:
