@@ -103,6 +103,7 @@
     SUBDIR += mtr
     SUBDIR += naim
     SUBDIR += nam
+    SUBDIR += ncplib
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
