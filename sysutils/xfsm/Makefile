@@ -8,7 +8,8 @@
 
 DISTNAME=	xfsm-1.99
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.peoplesoft.com/peoplepages/g/robert_gasch/src/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/status/xstatus
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vanilla@FreeBSD.org

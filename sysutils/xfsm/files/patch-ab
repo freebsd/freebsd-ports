@@ -1,0 +1,23 @@
+--- Imakefile.orig	Tue Feb  2 05:17:28 1999
++++ Imakefile	Wed Mar 15 03:55:07 2000
+@@ -26,7 +26,7 @@
+ # uncomment the DEFINES definition appropriate for your machine
+ # HP will take care of itself ...
+ # CCOPTIONS		= -O -DSUNOS 
+-CCOPTIONS		= -O2 -DLINUX 
++# CCOPTIONS		= -O2 -DLINUX 
+ # CCOPTIONS		= -O -DSVR4 
+ # CCOPTIONS		= -O -DAIX 
+ #ifdef HPArchitecture
+@@ -45,9 +45,9 @@
+ # CCOPTIONS		= -O -DDGUX
+ 
+ 
+-EXTRA_DEFINES                 = -DAPP_DEFAULTS_DIR=\"$(XAPPLOADDIR)/\"
++EXTRA_DEFINES                 = -DFreeBSD -DAPP_DEFAULTS_DIR=\"$(XAPPLOADDIR)/\"
+ 
+-CC = cc
++# CC = cc
+ 
+ 
+ ##############################################################################
