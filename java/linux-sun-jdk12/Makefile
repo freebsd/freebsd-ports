@@ -24,14 +24,15 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-JDK_VERSION=	1.2.2.015
+JDK_VERSION=	1.2.2.017
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}jdk1.2.2
-DOWNLOAD_URL=	http://java.sun.com/Download5?config-file=${PORTNAME}-${JDK_VERSION:S/./_/g}.config&platform=linux-i586
+SUN_BUNDLE_ID?=	9153
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +54,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Registering with javavm..."
-	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Sun-JDK${PORTVERSION}_${PORTREVISION}"
+	@${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # Linux-Sun-JDK${PORTVERSION}_${PORTREVISION}"
 	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.post.mk>
