@@ -1,9 +1,10 @@
 --- config/locale.alias.orig	Tue Aug  3 19:38:53 2004
 +++ config/locale.alias	Thu Aug 19 13:11:27 2004
-@@ -14,84 +14,50 @@
+@@ -14,88 +14,50 @@
  #
  #		- George
  
+-Afrikaans			af_ZA.UTF-8,af_ZA
 -Albanian			sq_AL.UTF-8,sq_AL
 -Amharic			am_ET.UTF-8,am_ET
 -Arabic(Egypt)		ar_EG.UTF-8,ar_EG
@@ -28,6 +29,7 @@
 -English(UK)		en_GB.UTF-8,en_GB
 -English(Canada)		en_CA.UTF-8,en_CA
 -English(Ireland)	en_IE.UTF-8,en_IE
+-English(SouthAfrica)	en_ZA.UTF-8,en_ZA
 -Estonian		et_EE.UTF-8,et_EE
 -Finnish			fi_FI.UTF-8,fi_FI
 -French			fr_FR.UTF-8,fr_FR
@@ -57,6 +59,7 @@
 -Malay			ms_MY.UTF-8,ms_MY
 -Marathi			mr_IN.UTF-8,mr_IN
 -Mongolian		mn_MN.UTF-8,mn_MN
+-NorthernSotho	nso_ZA.UTF-8,nso_ZA
 -Norwegian(bokmal)	nb_NO.UTF-8,nb_NO,no_NO.UTF-8,no_NO
 -Norwegian(nynorsk)	nn_NO.UTF-8,nn_NO
 -Oriya			or_IN.UTF-8,or_IN
@@ -85,6 +88,7 @@
 -Walloon			wa_BE.UTF-8,wa_BE
 -Welsh			cy_GB.UTF-8,cy_GB
 -Yiddish			yi.UTF-8,yi
+-Zulu			zu_ZA.UTF-8,zu_ZA
 +Afrikaans              af_ZA.UTF-8,af_ZA.ISO8859-15,af_ZA.ISO8859-1
 +Amharic                am_ET.UTF-8
 +Armenian               hy_AM.UTF-8
