@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.126 1999/06/01 12:14:08 tg Exp $
+# $Id: Makefile,v 1.127 1999/06/01 13:17:44 tg Exp $
 #
 
     SUBDIR += 4va
@@ -36,6 +36,7 @@
     SUBDIR += gimp-manual-ps
     SUBDIR += gimp1
     SUBDIR += gimp1-i18n
+    SUBDIR += gphoto
     SUBDIR += gplot
     SUBDIR += gqview
     SUBDIR += graphviz
