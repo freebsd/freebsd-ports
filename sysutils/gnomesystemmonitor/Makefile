@@ -3,16 +3,14 @@
 # Date created:        28 September 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1999/01/12 16:50:46 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/01/15 18:12:24 vanilla Exp $
 #
 
 DISTNAME=	gtop-0.99.2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/ \
+MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.home-of-linux.org/pub/gtop/0.99.2/
+MASTER_SITE_SUBDIR=	gtop
 
 MAINTAINER=	nacai@iname.com
 

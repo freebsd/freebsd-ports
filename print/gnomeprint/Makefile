@@ -3,16 +3,14 @@
 # Date created:				15 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/17 20:19:18 vanilla Exp $
 #
 
 DISTNAME=	gnome-print-0.0.3
 PKGNAME=	gnomeprint-0.0.3
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-print
 
 MAINTAINER=	nacai@iname.com
 

@@ -3,16 +3,14 @@
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.27 1999/01/22 10:13:35 vanilla Exp $
+# $Id: Makefile,v 1.28 1999/01/23 07:05:23 vanilla Exp $
 #
 
 DISTNAME=	gnome-libs-0.99.4
 PKGNAME=	gnomelibs-0.99.4
 CATEGORIES=	x11 gnome
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-libs
 
 MAINTAINER=	nacai@iname.com
 

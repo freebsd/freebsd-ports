@@ -3,16 +3,14 @@
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.12 1999/01/17 10:11:06 vanilla Exp $
+# $Id: Makefile,v 1.13 1999/01/24 06:24:31 vanilla Exp $
 #
 
 DISTNAME=	gnome-core-0.99.3.2
 PKGNAME=	gnomecore-0.99.3.2
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	gnome-core
 
 MAINTAINER=	nacai@iname.com
 

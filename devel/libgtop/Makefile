@@ -3,16 +3,14 @@
 # Date Created:			26 Sep 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/01/12 16:50:56 vanilla Exp $
+# $Id: Makefile,v 1.12 1999/01/14 17:00:22 vanilla Exp $
 #
 
 DISTNAME=	libgtop-0.99.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/ \
+MASTER_SITES=	${MASTER_SITE_GNOME} \
 		ftp://ftp.home-of-linux.org/pub/libgtop/0.99.2/
+MASTER_SITE_SUBDIR=	libgtop
 
 MAINTAINER=	nacai@iname.com
 

@@ -3,15 +3,13 @@
 # Date Created:				24 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/23 19:14:23 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/17 08:43:25 vanilla Exp $
 #
 
 DISTNAME=	libghttp-0.99.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
-		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
-		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	libghttp
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
