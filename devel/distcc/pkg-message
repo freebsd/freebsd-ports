@@ -1,0 +1,9 @@
+WARNING: distcc[d] performs NO AUTHENTICATION at all and should
+ONLY be used in trusted networks!
+
+The daemon runs on port 4200 by default. You can change that
+value by calling distccd with the -p parameter, e.g.
+`distccd -p 4711'.
+
+Note that remote daemons currently won't work if they cannot
+resolve the reverse DNS of the master machine

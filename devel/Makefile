@@ -129,6 +129,7 @@
     SUBDIR += devtodo
     SUBDIR += dia2code
     SUBDIR += diffconvert
+    SUBDIR += distcc
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
