@@ -1,0 +1,3 @@
+lib/libfirestring.so
+lib/libfirestring.a
+include/firestring.h

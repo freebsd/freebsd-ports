@@ -74,6 +74,7 @@
     SUBDIR += figlet
     SUBDIR += figlet-fonts
     SUBDIR += findutils
+    SUBDIR += firestring
     SUBDIR += floatator
     SUBDIR += flyway
     SUBDIR += fortuneit

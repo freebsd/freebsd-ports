@@ -1,0 +1,18 @@
+From libfirestring(3):
+
+"libfirestring is a string handling library that provides
+maximum length aware string handling functions to programs.
+Several functions provide saner interfaces than the standard
+libc functions.  libfirestring also provides functions that
+are in most libc's but not provided for by POSIX, enabling
+programmers to write POSIX-compliant code while using such
+safe functions (strcasecmp, strncasecmp, snprintf).
+
+"libfirestring also includes functions for dealing with
+reading configuration files in an easy to program fashion."
+
+WWW: http://ares.penguinhosting.net/~ian/
+
+- Dean
+
+dean@odyssey.apana.org.au
