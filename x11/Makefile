@@ -147,6 +147,7 @@
     SUBDIR += ruby-gnome-all
     SUBDIR += ruby-gnome2
     SUBDIR += ruby-gnome2-all
+    SUBDIR += ruby-gtktrayicon
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += settitle
