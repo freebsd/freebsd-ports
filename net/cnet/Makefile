@@ -7,6 +7,7 @@
 
 PORTNAME=	cnet
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	net tk82
 MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
 
