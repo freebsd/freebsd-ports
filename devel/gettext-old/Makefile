@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gettext
 
-MAINTAINER=	portmgr@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 #BROKEN=	"De-orbit burn sequence initiated"
 
