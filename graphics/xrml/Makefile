@@ -16,11 +16,11 @@ DIST_SUBDIR=	RenderPark
 MAINTAINER=	tiamat@comset.net
 COMMENT=	Extensible scene graph library based on VRML'97
 
-WRKSRC=		${WRKDIR}/XRML
+WRKSRC=		${WRKDIR}/${PORTNAME:U}
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -58,16 +58,11 @@ pre-build:
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/xrml
-	${INSTALL_DATA} ${WRKSRC}/include/*.H ${PREFIX}/include/xrml
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/xrml
-	@${MKDIR} ${PREFIX}/include/xrml/cso
-	${INSTALL_DATA} ${WRKSRC}/include/cso/* ${PREFIX}/include/xrml/cso
-	@${MKDIR} ${PREFIX}/include/xrml/mgf
-	${INSTALL_DATA} ${WRKSRC}/include/mgf/* ${PREFIX}/include/xrml/mgf
-	@${MKDIR} ${PREFIX}/include/xrml/nff
-	${INSTALL_DATA} ${WRKSRC}/include/nff/* ${PREFIX}/include/xrml/nff
-	@${MKDIR} ${PREFIX}/include/xrml/vrml2_utf8
-	${INSTALL_DATA} ${WRKSRC}/include/vrml2_utf8/* ${PREFIX}/include/xrml/vrml2_utf8
+	${INSTALL_DATA} ${WRKSRC}/include/*.[hH] ${PREFIX}/include/xrml
+.for i in cso mgf nff vrml2_utf8
+	@${MKDIR} ${PREFIX}/include/xrml/${i}
+	${INSTALL_DATA} ${WRKSRC}/include/${i}/* ${PREFIX}/include/xrml/${i}
+.endfor
 
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libxrml.so.0.5 ${PREFIX}/lib/libxrml.so.0
@@ -77,10 +72,9 @@ do-install:
 
 .ifdef (WITH_EXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/TEST/*.wrl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/TEST/*.ppm ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/TEST/*.gz ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/TEST/*.mgf ${EXAMPLESDIR}
+.for i in wrl ppm gz mgf
+	${INSTALL_DATA} ${WRKSRC}/TEST/*.${i} ${EXAMPLESDIR}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/TEST/plotfunc.c ${EXAMPLESDIR}
 .endif
 
@@ -97,10 +91,14 @@ do-install:
 	@${MKDIR} ${DOCSDIR}/VRML97
 	${INSTALL_DATA} ${WRKSRC}/DOC/VRML97/*.html ${DOCSDIR}/VRML97
 	@${MKDIR} ${DOCSDIR}/VRML97/Images
-	${INSTALL_DATA} ${WRKSRC}/DOC/VRML97/Images/* ${DOCSDIR}/VRML97/Images
+.for i in gif jpg
+	${INSTALL_DATA} ${WRKSRC}/DOC/VRML97/Images/*.${i} ${DOCSDIR}/VRML97/Images
+.endfor
 	@${MKDIR} ${DOCSDIR}/VRML97/part1
-	${INSTALL_DATA} ${WRKSRC}/DOC/VRML97/part1/* ${DOCSDIR}/VRML97/part1
-	${LN} -s VRML97 ${DOCSDIR}/VRML
+.for i in html wrl wav
+	${INSTALL_DATA} ${WRKSRC}/DOC/VRML97/part1/*.${i} ${DOCSDIR}/VRML97/part1
+.endfor
+	${LN} -sf VRML97 ${DOCSDIR}/VRML
 .endif
 
 .include <bsd.port.post.mk>
