@@ -7,7 +7,7 @@
 
 PORTNAME=	elisp-manual
 PORTVERSION=	2.5.20000508
-CATEGORIES=	japanese lang
+CATEGORIES=	japanese elisp lang
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/elisp-manual-20/
 DISTNAME=	elisp-manual-20-2.5-jp
 EXTRACT_SUFX=	.tgz
