@@ -13,7 +13,10 @@ MASTER_SITES=	# http://www.afro-productions.com/libcache/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that allows a programmer to parse sentences easier
+
 BROKEN=		unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-06-18
 
 INSTALLS_SHLIB=	yes
 
