@@ -1,0 +1,28 @@
+# New ports collection makefile for:	fastcrc
+# Version required:			1.0
+# Date created:				27 April 1999
+# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
+#
+# $Id$
+#
+
+DISTNAME=	fastcrc-1.0
+CATEGORIES=	devel
+MASTER_SITES=	http://www.whizkidtech.net/fports/
+
+MAINTAINER=	adam@whizkidtech.net
+
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm:install
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${PREFIX}/lib
+	ln -fs ${PREFIX}/lib/libfcrc.so.1 ${PREFIX}/lib/libfcrc.so
+	${INSTALL_DATA} ${WRKSRC}/fastcrc.h ${PREFIX}/include
+	${MKDIR} ${PREFIX}/share/doc/fastcrc
+	${INSTALL_MAN} ${WRKSRC}/index.html ${PREFIX}/share/doc/fastcrc
+	${INSTALL_PROGRAM} ${WRKSRC}/fc ${PREFIX}/bin
+
+post-install:
+	${SETENV} OBFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>
