@@ -249,6 +249,7 @@
     SUBDIR += libqglviewer
     SUBDIR += librsvg
     SUBDIR += librsvg2
+    SUBDIR += libsvg
     SUBDIR += libtheora
     SUBDIR += libungif
     SUBDIR += libv3d
