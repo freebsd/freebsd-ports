@@ -3,6 +3,7 @@ bin/des
 bin/ftp
 bin/kauth
 bin/kdestroy
+bin/kf
 bin/kgetcred
 bin/kinit
 bin/klist
@@ -14,6 +15,7 @@ bin/otpprint
 bin/pfrom
 bin/rsh
 bin/string2key
+bin/su
 bin/telnet
 bin/verify_krb5_conf
 include/asn1.h
@@ -33,6 +35,8 @@ include/hdb_asn1.h
 include/hdb_err.h
 include/heim_err.h
 include/kadm5/admin.h
+include/kadm5/kadm5-protos.h
+include/kadm5/kadm5-private.h
 include/kadm5/kadm5_err.h
 include/kadm5/private.h
 include/kafs.h
@@ -49,17 +53,19 @@ include/parse_time.h
 include/parse_units.h
 include/rc4.h
 include/resolve.h
+include/rtbl.h
 include/roken-common.h
 include/roken.h
 include/sha.h
 include/sl.h
 include/ss/ss.h
+include/xdbm.h
 @unexec install-info --delete %D/info/heimdal.info %D/info/dir
 info/heimdal.info
 @exec install-info %D/info/heimdal.info %D/info/dir
 lib/libasn1.a
 lib/libasn1.so
-lib/libasn1.so.2
+lib/libasn1.so.3
 lib/libcom_err.a
 lib/libcom_err.so
 lib/libcom_err.so.1
@@ -69,31 +75,34 @@ lib/libdes.so.2
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
-lib/libgssapi.so.1
+lib/libgssapi.so.2
 lib/libhdb.a
 lib/libhdb.so
-lib/libhdb.so.4
+lib/libhdb.so.6
 lib/libkadm5clnt.a
 lib/libkadm5clnt.so
-lib/libkadm5clnt.so.5
+lib/libkadm5clnt.so.6
 lib/libkadm5srv.a
 lib/libkadm5srv.so
-lib/libkadm5srv.so.6
+lib/libkadm5srv.so.7
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.11
+lib/libkrb5.so.13
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1
 lib/libroken.a
 lib/libroken.so
-lib/libroken.so.8
+lib/libroken.so.10
 lib/libsl.a
 lib/libsl.so
 lib/libsl.so.1
 lib/libss.a
 lib/libss.so
 lib/libss.so.1
+lib/libvers.a
+lib/libvers.so
+lib/libvers.so.1
 libexec/ftpd
 libexec/hprop
 libexec/hpropd
@@ -101,6 +110,7 @@ libexec/ipropd-master
 libexec/ipropd-slave
 libexec/kadmind
 libexec/kdc
+libexec/kfd
 libexec/kpasswdd
 libexec/popper
 libexec/push
@@ -111,5 +121,6 @@ sbin/kadmin
 sbin/kstash
 sbin/ktutil
 sbin/replay_log
+sbin/truncate_log
 @dirrm include/kadm5
 @dirrm include/ss

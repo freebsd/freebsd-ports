@@ -1,12 +1,13 @@
---- configure.orig	Sun Apr  2 21:21:46 2000
-+++ configure	Mon Apr 17 14:40:32 2000
-@@ -2217,6 +2217,9 @@
+--- configure.orig	Wed Aug 30 07:17:21 2000
++++ configure	Wed Aug 30 07:18:31 2000
+@@ -9346,6 +9346,10 @@
+ 	LIB_openldap="-rpath $openldap_libdir $LIB_openldap"
  fi
- 
  
 +# Kerberos IV on FreeBSD depends on libcom_err
 +LIBS="-lcom_err $LIBS"
 +echo '#define HAVE_LIBCOM_ERR 1' >> confdefs.h
- 
++
  # Check whether --with-krb4 or --without-krb4 was given.
  if test "${with_krb4+set}" = set; then
+   withval="$with_krb4"
