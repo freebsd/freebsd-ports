@@ -11,6 +11,6 @@ include/musicbrainz/queries.h
 lib/libmusicbrainz.a
 lib/libmusicbrainz.so
 lib/libmusicbrainz.so.2
+libdata/pkgconfig/libmusicbrainz.pc
 @dirrm include/musicbrainz/bitzi
 @dirrm include/musicbrainz
-libdata/pkgconfig/libmusicbrainz.pc
