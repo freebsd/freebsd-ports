@@ -4,7 +4,7 @@ bin/bzcat
 bin/bzip2recover
 include/bzlib.h
 lib/libbz2.a
-share/doc/bzip2/manual.ps.bz2 
+share/doc/bzip2/manual.ps
 share/doc/bzip2/manual.texi
 share/doc/bzip2/manual_1.html
 share/doc/bzip2/manual_2.html
