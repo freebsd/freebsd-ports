@@ -1,0 +1,1516 @@
+%%TWIG%%/config/.htaccess
+%%TWIG%%/config/announcements.inc.php3
+%%TWIG%%/config/config.inc.php3
+%%TWIG%%/config/dbconfig.inc.php3
+%%TWIG%%/config/defaults.inc.php3
+%%TWIG%%/config/footer.inc.php3
+%%TWIG%%/config/header.inc.php3
+%%TWIG%%/config/images.inc.php3
+%%TWIG%%/config/login.footer.inc.php3
+%%TWIG%%/config/login.form.php3
+%%TWIG%%/config/login.header.inc.php3
+%%TWIG%%/config/mailfooter.inc.php3.sample
+%%TWIG%%/config/mainmenu.inc.php3
+%%TWIG%%/config/newusergroups.inc.php3
+%%TWIG%%/features/.htaccess
+%%TWIG%%/features/admin/.htaccess
+%%TWIG%%/features/admin/admin.feature.php3
+%%TWIG%%/features/admin/admin.inc.php3
+%%TWIG%%/features/admin/admin.main.inc.php3
+%%TWIG%%/features/admin/help/.htaccess
+%%TWIG%%/features/admin/help/english/.htaccess
+%%TWIG%%/features/admin/help/english/admin.help.inc.php3
+%%TWIG%%/features/admin/help/french/.htaccess
+%%TWIG%%/features/admin/help/french/admin.help.inc.php3
+%%TWIG%%/features/admin/help/spanish/admin.help.inc.php3
+%%TWIG%%/features/admin/modules/.htaccess
+%%TWIG%%/features/admin/modules/accounts.inc.php3
+%%TWIG%%/features/admin/modules/acl.inc.php3
+%%TWIG%%/features/admin/modules/announce.inc.php3
+%%TWIG%%/features/admin/modules/bookmarks.inc.php3
+%%TWIG%%/features/admin/modules/contacts.inc.php3
+%%TWIG%%/features/admin/modules/global.inc.php3
+%%TWIG%%/features/admin/modules/groups.inc.php3
+%%TWIG%%/features/admin/modules/languages.inc.php3
+%%TWIG%%/features/admin/modules/mail.inc.php3
+%%TWIG%%/features/admin/modules/main.inc.php3
+%%TWIG%%/features/admin/modules/meetings.inc.php3
+%%TWIG%%/features/admin/modules/news.inc.php3
+%%TWIG%%/features/admin/modules/notes.inc.php3
+%%TWIG%%/features/admin/modules/schedule.inc.php3
+%%TWIG%%/features/admin/modules/search.inc.php3
+%%TWIG%%/features/admin/modules/sql.inc.php3
+%%TWIG%%/features/admin/modules/sqltxt.admin.inc.php3
+%%TWIG%%/features/admin/modules/sqltxt.inc.php3
+%%TWIG%%/features/admin/modules/todo.inc.php3
+%%TWIG%%/features/admin/strings/catalan.strings.php3
+%%TWIG%%/features/admin/strings/chinesebig5.strings.php3
+%%TWIG%%/features/admin/strings/chinesegb.strings.php3
+%%TWIG%%/features/admin/strings/czech.strings.php3
+%%TWIG%%/features/admin/strings/danish.strings.php3
+%%TWIG%%/features/admin/strings/dutch.strings.php3
+%%TWIG%%/features/admin/strings/english.strings.php3
+%%TWIG%%/features/admin/strings/estonian.strings.php3
+%%TWIG%%/features/admin/strings/finnish.strings.php3
+%%TWIG%%/features/admin/strings/french.strings.php3
+%%TWIG%%/features/admin/strings/german.strings.php3
+%%TWIG%%/features/admin/strings/greek.strings.php3
+%%TWIG%%/features/admin/strings/hebrew.strings.php3
+%%TWIG%%/features/admin/strings/italian.strings.php3
+%%TWIG%%/features/admin/strings/jpeuc.strings.php3
+%%TWIG%%/features/admin/strings/korean.strings.php3
+%%TWIG%%/features/admin/strings/polish.strings.php3
+%%TWIG%%/features/admin/strings/portuguese.strings.php3
+%%TWIG%%/features/admin/strings/russian.strings.php3
+%%TWIG%%/features/admin/strings/russianwin.strings.php3
+%%TWIG%%/features/admin/strings/spanish.strings.php3
+%%TWIG%%/features/admin/strings/swedish.strings.php3
+%%TWIG%%/features/admin/strings/test.strings.php3
+%%TWIG%%/features/admin/strings/turkish.strings.php3
+%%TWIG%%/features/bookmarks/.htaccess
+%%TWIG%%/features/bookmarks/bookmarks.edit.inc.php3
+%%TWIG%%/features/bookmarks/bookmarks.feature.php3
+%%TWIG%%/features/bookmarks/bookmarks.inc.php3
+%%TWIG%%/features/bookmarks/bookmarks.main.inc.php3
+%%TWIG%%/features/bookmarks/bookmarks.prefs.inc.php3
+%%TWIG%%/features/bookmarks/bookmarks.view.inc.php3
+%%TWIG%%/features/bookmarks/strings/catalan.strings.php3
+%%TWIG%%/features/bookmarks/strings/chinesebig5.strings.php3
+%%TWIG%%/features/bookmarks/strings/chinesegb.strings.php3
+%%TWIG%%/features/bookmarks/strings/czech.strings.php3
+%%TWIG%%/features/bookmarks/strings/danish.strings.php3
+%%TWIG%%/features/bookmarks/strings/dutch.strings.php3
+%%TWIG%%/features/bookmarks/strings/english.strings.php3
+%%TWIG%%/features/bookmarks/strings/estonian.strings.php3
+%%TWIG%%/features/bookmarks/strings/finnish.strings.php3
+%%TWIG%%/features/bookmarks/strings/french.strings.php3
+%%TWIG%%/features/bookmarks/strings/german.strings.php3
+%%TWIG%%/features/bookmarks/strings/greek.strings.php3
+%%TWIG%%/features/bookmarks/strings/hebrew.strings.php3
+%%TWIG%%/features/bookmarks/strings/italian.strings.php3
+%%TWIG%%/features/bookmarks/strings/jpeuc.strings.php3
+%%TWIG%%/features/bookmarks/strings/korean.strings.php3
+%%TWIG%%/features/bookmarks/strings/polish.strings.php3
+%%TWIG%%/features/bookmarks/strings/portuguese.strings.php3
+%%TWIG%%/features/bookmarks/strings/russian.strings.php3
+%%TWIG%%/features/bookmarks/strings/russianwin.strings.php3
+%%TWIG%%/features/bookmarks/strings/spanish.strings.php3
+%%TWIG%%/features/bookmarks/strings/swedish.strings.php3
+%%TWIG%%/features/bookmarks/strings/test.strings.php3
+%%TWIG%%/features/bookmarks/strings/turkish.strings.php3
+%%TWIG%%/features/common.inc.php3
+%%TWIG%%/features/contacts/.htaccess
+%%TWIG%%/features/contacts/contacts.edit.inc.php3
+%%TWIG%%/features/contacts/contacts.feature.php3
+%%TWIG%%/features/contacts/contacts.import.inc.php3
+%%TWIG%%/features/contacts/contacts.inc.php3
+%%TWIG%%/features/contacts/contacts.ledit.inc.php3
+%%TWIG%%/features/contacts/contacts.lview.inc.php3
+%%TWIG%%/features/contacts/contacts.main.inc.php3
+%%TWIG%%/features/contacts/contacts.prefs.inc.php3
+%%TWIG%%/features/contacts/contacts.vcard.inc.php3
+%%TWIG%%/features/contacts/contacts.view.inc.php3
+%%TWIG%%/features/contacts/help/.htaccess
+%%TWIG%%/features/contacts/help/english/.htaccess
+%%TWIG%%/features/contacts/help/english/contacts.edit.help.inc.php3
+%%TWIG%%/features/contacts/help/english/contacts.help.inc.php3
+%%TWIG%%/features/contacts/help/english/contacts.import.help.inc.php3
+%%TWIG%%/features/contacts/help/english/contacts.main.help.inc.php3
+%%TWIG%%/features/contacts/help/english/contacts.prefs.help.inc.php3
+%%TWIG%%/features/contacts/help/english/contacts.view.help.inc.php3
+%%TWIG%%/features/contacts/help/english/menu.contacts.help.inc.php3
+%%TWIG%%/features/contacts/help/french/.htaccess
+%%TWIG%%/features/contacts/help/french/contacts.edit.help.inc.php3
+%%TWIG%%/features/contacts/help/french/contacts.help.inc.php3
+%%TWIG%%/features/contacts/help/french/contacts.import.help.inc.php3
+%%TWIG%%/features/contacts/help/french/contacts.main.help.inc.php3
+%%TWIG%%/features/contacts/help/french/contacts.prefs.help.inc.php3
+%%TWIG%%/features/contacts/help/french/contacts.view.help.inc.php3
+%%TWIG%%/features/contacts/help/french/menu.contacts.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/.htaccess
+%%TWIG%%/features/contacts/help/spanish/contacts.edit.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/contacts.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/contacts.import.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/contacts.main.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/contacts.prefs.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/contacts.view.help.inc.php3
+%%TWIG%%/features/contacts/help/spanish/menu.contacts.help.inc.php3
+%%TWIG%%/features/contacts/import.defs/.htaccess
+%%TWIG%%/features/contacts/import.defs/Netscape46.def.php3
+%%TWIG%%/features/contacts/import.defs/Outlook2002.def.php3
+%%TWIG%%/features/contacts/import.defs/Outlook98.def.php3
+%%TWIG%%/features/contacts/import.defs/OutlookExpress.def.php3
+%%TWIG%%/features/contacts/import.defs/OutlookExpressComplete.def.php3
+%%TWIG%%/features/contacts/import.defs/PegasusMail.def.php3
+%%TWIG%%/features/contacts/import.defs/vCard21.def.php3
+%%TWIG%%/features/contacts/import.defs/vCard30.def.php3
+%%TWIG%%/features/contacts/import.inc.php3
+%%TWIG%%/features/contacts/strings/catalan.strings.php3
+%%TWIG%%/features/contacts/strings/chinesebig5.strings.php3
+%%TWIG%%/features/contacts/strings/chinesegb.strings.php3
+%%TWIG%%/features/contacts/strings/czech.strings.php3
+%%TWIG%%/features/contacts/strings/danish.strings.php3
+%%TWIG%%/features/contacts/strings/dutch.strings.php3
+%%TWIG%%/features/contacts/strings/english.strings.php3
+%%TWIG%%/features/contacts/strings/estonian.strings.php3
+%%TWIG%%/features/contacts/strings/finnish.strings.php3
+%%TWIG%%/features/contacts/strings/french.strings.php3
+%%TWIG%%/features/contacts/strings/german.strings.php3
+%%TWIG%%/features/contacts/strings/greek.strings.php3
+%%TWIG%%/features/contacts/strings/hebrew.strings.php3
+%%TWIG%%/features/contacts/strings/italian.strings.php3
+%%TWIG%%/features/contacts/strings/jpeuc.strings.php3
+%%TWIG%%/features/contacts/strings/korean.strings.php3
+%%TWIG%%/features/contacts/strings/polish.strings.php3
+%%TWIG%%/features/contacts/strings/portuguese.strings.php3
+%%TWIG%%/features/contacts/strings/russian.strings.php3
+%%TWIG%%/features/contacts/strings/russianwin.strings.php3
+%%TWIG%%/features/contacts/strings/spanish.strings.php3
+%%TWIG%%/features/contacts/strings/swedish.strings.php3
+%%TWIG%%/features/contacts/strings/test.strings.php3
+%%TWIG%%/features/contacts/strings/turkish.strings.php3
+%%TWIG%%/features/groups/.htaccess
+%%TWIG%%/features/groups/groups.feature.php3
+%%TWIG%%/features/groups/groups.inc.php3
+%%TWIG%%/features/groups/strings/catalan.strings.php3
+%%TWIG%%/features/groups/strings/chinesebig5.strings.php3
+%%TWIG%%/features/groups/strings/chinesegb.strings.php3
+%%TWIG%%/features/groups/strings/czech.strings.php3
+%%TWIG%%/features/groups/strings/danish.strings.php3
+%%TWIG%%/features/groups/strings/dutch.strings.php3
+%%TWIG%%/features/groups/strings/english.strings.php3
+%%TWIG%%/features/groups/strings/estonian.strings.php3
+%%TWIG%%/features/groups/strings/finnish.strings.php3
+%%TWIG%%/features/groups/strings/french.strings.php3
+%%TWIG%%/features/groups/strings/german.strings.php3
+%%TWIG%%/features/groups/strings/greek.strings.php3
+%%TWIG%%/features/groups/strings/hebrew.strings.php3
+%%TWIG%%/features/groups/strings/italian.strings.php3
+%%TWIG%%/features/groups/strings/jpeuc.strings.php3
+%%TWIG%%/features/groups/strings/korean.strings.php3
+%%TWIG%%/features/groups/strings/polish.strings.php3
+%%TWIG%%/features/groups/strings/portuguese.strings.php3
+%%TWIG%%/features/groups/strings/russian.strings.php3
+%%TWIG%%/features/groups/strings/russianwin.strings.php3
+%%TWIG%%/features/groups/strings/spanish.strings.php3
+%%TWIG%%/features/groups/strings/swedish.strings.php3
+%%TWIG%%/features/groups/strings/test.strings.php3
+%%TWIG%%/features/groups/strings/turkish.strings.php3
+%%TWIG%%/features/help/.htaccess
+%%TWIG%%/features/help/help.feature.php3
+%%TWIG%%/features/help/help.inc.php3
+%%TWIG%%/features/help/help/.htaccess
+%%TWIG%%/features/help/help/english/.htaccess
+%%TWIG%%/features/help/help/english/help.help.inc.php3
+%%TWIG%%/features/help/help/english/help.structure.help.inc.php3
+%%TWIG%%/features/help/help/english/help.using.help.inc.php3
+%%TWIG%%/features/help/help/english/help.writing.help.inc.php3
+%%TWIG%%/features/help/help/english/menu.help.help.inc.php3
+%%TWIG%%/features/help/help/portuguese/.htaccess
+%%TWIG%%/features/help/help/portuguese/help.help.inc.php3
+%%TWIG%%/features/help/help/portuguese/help.structure.help.inc.php3
+%%TWIG%%/features/help/help/portuguese/help.using.help.inc.php3
+%%TWIG%%/features/help/help/portuguese/help.writing.help.inc.php3
+%%TWIG%%/features/help/help/portuguese/menu.help.help.inc.php3
+%%TWIG%%/features/help/help/spanish/.htaccess
+%%TWIG%%/features/help/help/spanish/help.help.inc.php3
+%%TWIG%%/features/help/help/spanish/help.structure.help.inc.php3
+%%TWIG%%/features/help/help/spanish/help.using.help.inc.php3
+%%TWIG%%/features/help/help/spanish/help.writing.help.inc.php3
+%%TWIG%%/features/help/help/spanish/menu.help.help.inc.php3
+%%TWIG%%/features/help/strings/catalan.strings.php3
+%%TWIG%%/features/help/strings/chinesebig5.strings.php3
+%%TWIG%%/features/help/strings/chinesegb.strings.php3
+%%TWIG%%/features/help/strings/czech.strings.php3
+%%TWIG%%/features/help/strings/danish.strings.php3
+%%TWIG%%/features/help/strings/dutch.strings.php3
+%%TWIG%%/features/help/strings/english.strings.php3
+%%TWIG%%/features/help/strings/estonian.strings.php3
+%%TWIG%%/features/help/strings/finnish.strings.php3
+%%TWIG%%/features/help/strings/french.strings.php3
+%%TWIG%%/features/help/strings/german.strings.php3
+%%TWIG%%/features/help/strings/greek.strings.php3
+%%TWIG%%/features/help/strings/hebrew.strings.php3
+%%TWIG%%/features/help/strings/italian.strings.php3
+%%TWIG%%/features/help/strings/jpeuc.strings.php3
+%%TWIG%%/features/help/strings/korean.strings.php3
+%%TWIG%%/features/help/strings/polish.strings.php3
+%%TWIG%%/features/help/strings/portuguese.strings.php3
+%%TWIG%%/features/help/strings/russian.strings.php3
+%%TWIG%%/features/help/strings/russianwin.strings.php3
+%%TWIG%%/features/help/strings/spanish.strings.php3
+%%TWIG%%/features/help/strings/swedish.strings.php3
+%%TWIG%%/features/help/strings/test.strings.php3
+%%TWIG%%/features/help/strings/turkish.strings.php3
+%%TWIG%%/features/logout/.htaccess
+%%TWIG%%/features/logout/help/.htaccess
+%%TWIG%%/features/logout/help/english/.htaccess
+%%TWIG%%/features/logout/help/english/logout.help.inc.php3
+%%TWIG%%/features/logout/help/spanish/.htaccess
+%%TWIG%%/features/logout/help/spanish/logout.help.inc.php3
+%%TWIG%%/features/logout/logout.feature.php3
+%%TWIG%%/features/logout/logout.inc.php3
+%%TWIG%%/features/logout/strings/catalan.strings.php3
+%%TWIG%%/features/logout/strings/chinesebig5.strings.php3
+%%TWIG%%/features/logout/strings/chinesegb.strings.php3
+%%TWIG%%/features/logout/strings/czech.strings.php3
+%%TWIG%%/features/logout/strings/danish.strings.php3
+%%TWIG%%/features/logout/strings/dutch.strings.php3
+%%TWIG%%/features/logout/strings/english.strings.php3
+%%TWIG%%/features/logout/strings/estonian.strings.php3
+%%TWIG%%/features/logout/strings/finnish.strings.php3
+%%TWIG%%/features/logout/strings/french.strings.php3
+%%TWIG%%/features/logout/strings/german.strings.php3
+%%TWIG%%/features/logout/strings/greek.strings.php3
+%%TWIG%%/features/logout/strings/hebrew.strings.php3
+%%TWIG%%/features/logout/strings/italian.strings.php3
+%%TWIG%%/features/logout/strings/jpeuc.strings.php3
+%%TWIG%%/features/logout/strings/korean.strings.php3
+%%TWIG%%/features/logout/strings/polish.strings.php3
+%%TWIG%%/features/logout/strings/portuguese.strings.php3
+%%TWIG%%/features/logout/strings/russian.strings.php3
+%%TWIG%%/features/logout/strings/russianwin.strings.php3
+%%TWIG%%/features/logout/strings/spanish.strings.php3
+%%TWIG%%/features/logout/strings/swedish.strings.php3
+%%TWIG%%/features/logout/strings/test.strings.php3
+%%TWIG%%/features/logout/strings/turkish.strings.php3
+%%TWIG%%/features/mail/.htaccess
+%%TWIG%%/features/mail/help/.htaccess
+%%TWIG%%/features/mail/help/english/.htaccess
+%%TWIG%%/features/mail/help/english/mail.compose.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.folders.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.foldover.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.main.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.msgview.help.inc.php3
+%%TWIG%%/features/mail/help/english/mail.prefs.help.inc.php3
+%%TWIG%%/features/mail/help/english/menu.mail.help.inc.php3
+%%TWIG%%/features/mail/help/french/.htaccess
+%%TWIG%%/features/mail/help/french/mail.compose.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.folders.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.foldover.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.main.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.msgview.help.inc.php3
+%%TWIG%%/features/mail/help/french/mail.prefs.help.inc.php3
+%%TWIG%%/features/mail/help/french/menu.mail.help.inc.php3
+%%TWIG%%/features/mail/help/portuguese/.htaccess
+%%TWIG%%/features/mail/help/portuguese/mail.help.inc.php3
+%%TWIG%%/features/mail/help/portuguese/mail.main.help.inc.php3
+%%TWIG%%/features/mail/help/portuguese/menu.mail.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/.htaccess
+%%TWIG%%/features/mail/help/spanish/mail.compose.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.folders.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.foldover.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.main.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.msgview.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/mail.prefs.help.inc.php3
+%%TWIG%%/features/mail/help/spanish/menu.mail.help.inc.php3
+%%TWIG%%/features/mail/mail.attachment.inc.php3
+%%TWIG%%/features/mail/mail.compose.inc.php3
+%%TWIG%%/features/mail/mail.copy.inc.php3
+%%TWIG%%/features/mail/mail.copy_to.inc.php3
+%%TWIG%%/features/mail/mail.delete.inc.php3
+%%TWIG%%/features/mail/mail.expunge.inc.php3
+%%TWIG%%/features/mail/mail.feature.php3
+%%TWIG%%/features/mail/mail.folders.inc.php3
+%%TWIG%%/features/mail/mail.foldover.inc.php3
+%%TWIG%%/features/mail/mail.forward.inc.php3
+%%TWIG%%/features/mail/mail.inc.php3
+%%TWIG%%/features/mail/mail.main.inc.php3
+%%TWIG%%/features/mail/mail.mdn.inc.php3
+%%TWIG%%/features/mail/mail.msgprint.inc.php3
+%%TWIG%%/features/mail/mail.msgview.inc.php3
+%%TWIG%%/features/mail/mail.prefs.inc.php3
+%%TWIG%%/features/mail/mail.recompose.inc.php3
+%%TWIG%%/features/mail/mail.reply.inc.php3
+%%TWIG%%/features/mail/mail.submit.inc.php3
+%%TWIG%%/features/mail/mail.transfer.inc.php3
+%%TWIG%%/features/mail/mail.transfer_to.inc.php3
+%%TWIG%%/features/mail/mail.undelete.inc.php3
+%%TWIG%%/features/mail/mail.unread.inc.php3
+%%TWIG%%/features/mail/strings/catalan.strings.php3
+%%TWIG%%/features/mail/strings/chinesebig5.strings.php3
+%%TWIG%%/features/mail/strings/chinesegb.strings.php3
+%%TWIG%%/features/mail/strings/czech.strings.php3
+%%TWIG%%/features/mail/strings/danish.strings.php3
+%%TWIG%%/features/mail/strings/dutch.strings.php3
+%%TWIG%%/features/mail/strings/empty.strings.php3
+%%TWIG%%/features/mail/strings/english.strings.php3
+%%TWIG%%/features/mail/strings/estonian.strings.php3
+%%TWIG%%/features/mail/strings/finnish.strings.php3
+%%TWIG%%/features/mail/strings/french.strings.php3
+%%TWIG%%/features/mail/strings/german.strings.php3
+%%TWIG%%/features/mail/strings/greek.strings.php3
+%%TWIG%%/features/mail/strings/hebrew.strings.php3
+%%TWIG%%/features/mail/strings/italian.strings.php3
+%%TWIG%%/features/mail/strings/jpeuc.strings.php3
+%%TWIG%%/features/mail/strings/korean.strings.php3
+%%TWIG%%/features/mail/strings/polish.strings.php3
+%%TWIG%%/features/mail/strings/portuguese.strings.php3
+%%TWIG%%/features/mail/strings/russian.strings.php3
+%%TWIG%%/features/mail/strings/russianwin.strings.php3
+%%TWIG%%/features/mail/strings/spanish.strings.php3
+%%TWIG%%/features/mail/strings/swedish.strings.php3
+%%TWIG%%/features/mail/strings/test.strings.php3
+%%TWIG%%/features/mail/strings/turkish.strings.php3
+%%TWIG%%/features/main/.htaccess
+%%TWIG%%/features/main/help/.htaccess
+%%TWIG%%/features/main/help/english/.htaccess
+%%TWIG%%/features/main/help/english/main.faq.help.inc.php3
+%%TWIG%%/features/main/help/english/main.help.inc.php3
+%%TWIG%%/features/main/help/english/main.intro.help.inc.php3
+%%TWIG%%/features/main/help/english/main.main.help.inc.php3
+%%TWIG%%/features/main/help/english/menu.main.help.inc.php3
+%%TWIG%%/features/main/help/french/main.faq.help.inc.php3
+%%TWIG%%/features/main/help/french/main.help.inc.php3
+%%TWIG%%/features/main/help/french/main.intro.help.inc.php3
+%%TWIG%%/features/main/help/french/main.main.help.inc.php3
+%%TWIG%%/features/main/help/french/menu.main.help.inc.php3
+%%TWIG%%/features/main/help/spanish/.htaccess
+%%TWIG%%/features/main/help/spanish/main.faq.help.inc.php3
+%%TWIG%%/features/main/help/spanish/main.help.inc.php3
+%%TWIG%%/features/main/help/spanish/main.intro.help.inc.php3
+%%TWIG%%/features/main/help/spanish/main.main.help.inc.php3
+%%TWIG%%/features/main/help/spanish/menu.main.help.inc.php3
+%%TWIG%%/features/main/main.feature.php3
+%%TWIG%%/features/main/main.inc.php3
+%%TWIG%%/features/main/modules/announcements.inc.php3
+%%TWIG%%/features/main/modules/mail.inc.php3
+%%TWIG%%/features/main/modules/meetings.inc.php3
+%%TWIG%%/features/main/modules/options.inc.php3
+%%TWIG%%/features/main/modules/schedule.inc.php3
+%%TWIG%%/features/main/modules/todo.inc.php3
+%%TWIG%%/features/main/strings/catalan.strings.php3
+%%TWIG%%/features/main/strings/chinesebig5.strings.php3
+%%TWIG%%/features/main/strings/chinesegb.strings.php3
+%%TWIG%%/features/main/strings/czech.strings.php3
+%%TWIG%%/features/main/strings/danish.strings.php3
+%%TWIG%%/features/main/strings/dutch.strings.php3
+%%TWIG%%/features/main/strings/english.strings.php3
+%%TWIG%%/features/main/strings/estonian.strings.php3
+%%TWIG%%/features/main/strings/finnish.strings.php3
+%%TWIG%%/features/main/strings/french.strings.php3
+%%TWIG%%/features/main/strings/german.strings.php3
+%%TWIG%%/features/main/strings/greek.strings.php3
+%%TWIG%%/features/main/strings/hebrew.strings.php3
+%%TWIG%%/features/main/strings/italian.strings.php3
+%%TWIG%%/features/main/strings/jpeuc.strings.php3
+%%TWIG%%/features/main/strings/korean.strings.php3
+%%TWIG%%/features/main/strings/polish.strings.php3
+%%TWIG%%/features/main/strings/portuguese.strings.php3
+%%TWIG%%/features/main/strings/russian.strings.php3
+%%TWIG%%/features/main/strings/russianwin.strings.php3
+%%TWIG%%/features/main/strings/spanish.strings.php3
+%%TWIG%%/features/main/strings/swedish.strings.php3
+%%TWIG%%/features/main/strings/test.strings.php3
+%%TWIG%%/features/main/strings/turkish.strings.php3
+%%TWIG%%/features/meetings/.htaccess
+%%TWIG%%/features/meetings/help/.htaccess
+%%TWIG%%/features/meetings/help/english/.htaccess
+%%TWIG%%/features/meetings/help/english/meetings.edit.help.inc.php3
+%%TWIG%%/features/meetings/help/english/meetings.fulledit.help.inc.php3
+%%TWIG%%/features/meetings/help/english/meetings.help.inc.php3
+%%TWIG%%/features/meetings/help/english/meetings.invite.help.inc.php3
+%%TWIG%%/features/meetings/help/english/meetings.main.help.inc.php3
+%%TWIG%%/features/meetings/help/english/menu.meetings.help.inc.php3
+%%TWIG%%/features/meetings/help/spanish/.htaccess
+%%TWIG%%/features/meetings/help/spanish/meetings.help.inc.php3
+%%TWIG%%/features/meetings/help/spanish/menu.meetings.help.inc.php3
+%%TWIG%%/features/meetings/meetings.db.inc.php3
+%%TWIG%%/features/meetings/meetings.edit.inc.php3
+%%TWIG%%/features/meetings/meetings.feature.php3
+%%TWIG%%/features/meetings/meetings.inc.php3
+%%TWIG%%/features/meetings/meetings.invite.inc.php3
+%%TWIG%%/features/meetings/meetings.main.inc.php3
+%%TWIG%%/features/meetings/meetings.notes.inc.php3
+%%TWIG%%/features/meetings/meetings.prefs.inc.php3
+%%TWIG%%/features/meetings/meetings.todo.inc.php3
+%%TWIG%%/features/meetings/meetings.view.inc.php3
+%%TWIG%%/features/meetings/strings/catalan.strings.php3
+%%TWIG%%/features/meetings/strings/chinesebig5.strings.php3
+%%TWIG%%/features/meetings/strings/chinesegb.strings.php3
+%%TWIG%%/features/meetings/strings/czech.strings.php3
+%%TWIG%%/features/meetings/strings/danish.strings.php3
+%%TWIG%%/features/meetings/strings/dutch.strings.php3
+%%TWIG%%/features/meetings/strings/english.strings.php3
+%%TWIG%%/features/meetings/strings/estonian.strings.php3
+%%TWIG%%/features/meetings/strings/finnish.strings.php3
+%%TWIG%%/features/meetings/strings/french.strings.php3
+%%TWIG%%/features/meetings/strings/german.strings.php3
+%%TWIG%%/features/meetings/strings/greek.strings.php3
+%%TWIG%%/features/meetings/strings/hebrew.strings.php3
+%%TWIG%%/features/meetings/strings/italian.strings.php3
+%%TWIG%%/features/meetings/strings/jpeuc.strings.php3
+%%TWIG%%/features/meetings/strings/korean.strings.php3
+%%TWIG%%/features/meetings/strings/polish.strings.php3
+%%TWIG%%/features/meetings/strings/portuguese.strings.php3
+%%TWIG%%/features/meetings/strings/russian.strings.php3
+%%TWIG%%/features/meetings/strings/russianwin.strings.php3
+%%TWIG%%/features/meetings/strings/spanish.strings.php3
+%%TWIG%%/features/meetings/strings/swedish.strings.php3
+%%TWIG%%/features/meetings/strings/test.strings.php3
+%%TWIG%%/features/meetings/strings/turkish.strings.php3
+%%TWIG%%/features/news/.htaccess
+%%TWIG%%/features/news/help/.htaccess
+%%TWIG%%/features/news/help/english/.htaccess
+%%TWIG%%/features/news/help/english/menu.news.help.inc.php3
+%%TWIG%%/features/news/help/english/news.help.inc.php3
+%%TWIG%%/features/news/help/english/news.main.help.inc.php3
+%%TWIG%%/features/news/help/spanish/.htaccess
+%%TWIG%%/features/news/help/spanish/menu.news.help.inc.php3
+%%TWIG%%/features/news/help/spanish/news.help.inc.php3
+%%TWIG%%/features/news/help/spanish/news.main.help.inc.php3
+%%TWIG%%/features/news/news.feature.php3
+%%TWIG%%/features/news/news.folders.inc.php3
+%%TWIG%%/features/news/news.inc.php3
+%%TWIG%%/features/news/news.main.inc.php3
+%%TWIG%%/features/news/news.post.inc.php3
+%%TWIG%%/features/news/news.prefs.inc.php3
+%%TWIG%%/features/news/news.uudecode.inc.php3
+%%TWIG%%/features/news/news.view.inc.php3
+%%TWIG%%/features/news/strings/catalan.strings.php3
+%%TWIG%%/features/news/strings/chinesebig5.strings.php3
+%%TWIG%%/features/news/strings/chinesegb.strings.php3
+%%TWIG%%/features/news/strings/czech.strings.php3
+%%TWIG%%/features/news/strings/danish.strings.php3
+%%TWIG%%/features/news/strings/dutch.strings.php3
+%%TWIG%%/features/news/strings/english.strings.php3
+%%TWIG%%/features/news/strings/estonian.strings.php3
+%%TWIG%%/features/news/strings/finnish.strings.php3
+%%TWIG%%/features/news/strings/french.strings.php3
+%%TWIG%%/features/news/strings/german.strings.php3
+%%TWIG%%/features/news/strings/greek.strings.php3
+%%TWIG%%/features/news/strings/hebrew.strings.php3
+%%TWIG%%/features/news/strings/italian.strings.php3
+%%TWIG%%/features/news/strings/jpeuc.strings.php3
+%%TWIG%%/features/news/strings/korean.strings.php3
+%%TWIG%%/features/news/strings/polish.strings.php3
+%%TWIG%%/features/news/strings/portuguese.strings.php3
+%%TWIG%%/features/news/strings/russian.strings.php3
+%%TWIG%%/features/news/strings/russianwin.strings.php3
+%%TWIG%%/features/news/strings/spanish.strings.php3
+%%TWIG%%/features/news/strings/swedish.strings.php3
+%%TWIG%%/features/news/strings/test.strings.php3
+%%TWIG%%/features/news/strings/turkish.strings.php3
+%%TWIG%%/features/notes/.htaccess
+%%TWIG%%/features/notes/notes.edit.inc.php3
+%%TWIG%%/features/notes/notes.feature.php3
+%%TWIG%%/features/notes/notes.inc.php3
+%%TWIG%%/features/notes/notes.inline.inc.php3
+%%TWIG%%/features/notes/notes.main.inc.php3
+%%TWIG%%/features/notes/notes.prefs.inc.php3
+%%TWIG%%/features/notes/notes.view.inc.php3
+%%TWIG%%/features/notes/strings/catalan.strings.php3
+%%TWIG%%/features/notes/strings/chinesebig5.strings.php3
+%%TWIG%%/features/notes/strings/chinesegb.strings.php3
+%%TWIG%%/features/notes/strings/czech.strings.php3
+%%TWIG%%/features/notes/strings/danish.strings.php3
+%%TWIG%%/features/notes/strings/dutch.strings.php3
+%%TWIG%%/features/notes/strings/english.strings.php3
+%%TWIG%%/features/notes/strings/estonian.strings.php3
+%%TWIG%%/features/notes/strings/finnish.strings.php3
+%%TWIG%%/features/notes/strings/french.strings.php3
+%%TWIG%%/features/notes/strings/german.strings.php3
+%%TWIG%%/features/notes/strings/greek.strings.php3
+%%TWIG%%/features/notes/strings/hebrew.strings.php3
+%%TWIG%%/features/notes/strings/italian.strings.php3
+%%TWIG%%/features/notes/strings/jpeuc.strings.php3
+%%TWIG%%/features/notes/strings/korean.strings.php3
+%%TWIG%%/features/notes/strings/polish.strings.php3
+%%TWIG%%/features/notes/strings/portuguese.strings.php3
+%%TWIG%%/features/notes/strings/russian.strings.php3
+%%TWIG%%/features/notes/strings/russianwin.strings.php3
+%%TWIG%%/features/notes/strings/spanish.strings.php3
+%%TWIG%%/features/notes/strings/swedish.strings.php3
+%%TWIG%%/features/notes/strings/test.strings.php3
+%%TWIG%%/features/notes/strings/turkish.strings.php3
+%%TWIG%%/features/prefs/.htaccess
+%%TWIG%%/features/prefs/modules/.htaccess
+%%TWIG%%/features/prefs/modules/bookmarks.inc.php3
+%%TWIG%%/features/prefs/modules/contacts.inc.php3
+%%TWIG%%/features/prefs/modules/global.inc.php3
+%%TWIG%%/features/prefs/modules/mail.inc.php3
+%%TWIG%%/features/prefs/modules/main.inc.php3
+%%TWIG%%/features/prefs/modules/meetings.inc.php3
+%%TWIG%%/features/prefs/modules/mycontact.inc.php3
+%%TWIG%%/features/prefs/modules/news.inc.php3
+%%TWIG%%/features/prefs/modules/notes.inc.php3
+%%TWIG%%/features/prefs/modules/password.inc.php3
+%%TWIG%%/features/prefs/modules/schedule.inc.php3
+%%TWIG%%/features/prefs/modules/todo.inc.php3
+%%TWIG%%/features/prefs/prefs.feature.php3
+%%TWIG%%/features/prefs/prefs.inc.php3
+%%TWIG%%/features/prefs/strings/catalan.strings.php3
+%%TWIG%%/features/prefs/strings/chinesebig5.strings.php3
+%%TWIG%%/features/prefs/strings/chinesegb.strings.php3
+%%TWIG%%/features/prefs/strings/czech.strings.php3
+%%TWIG%%/features/prefs/strings/danish.strings.php3
+%%TWIG%%/features/prefs/strings/dutch.strings.php3
+%%TWIG%%/features/prefs/strings/english.strings.php3
+%%TWIG%%/features/prefs/strings/estonian.strings.php3
+%%TWIG%%/features/prefs/strings/finnish.strings.php3
+%%TWIG%%/features/prefs/strings/french.strings.php3
+%%TWIG%%/features/prefs/strings/german.strings.php3
+%%TWIG%%/features/prefs/strings/greek.strings.php3
+%%TWIG%%/features/prefs/strings/hebrew.strings.php3
+%%TWIG%%/features/prefs/strings/italian.strings.php3
+%%TWIG%%/features/prefs/strings/jpeuc.strings.php3
+%%TWIG%%/features/prefs/strings/korean.strings.php3
+%%TWIG%%/features/prefs/strings/polish.strings.php3
+%%TWIG%%/features/prefs/strings/portuguese.strings.php3
+%%TWIG%%/features/prefs/strings/russian.strings.php3
+%%TWIG%%/features/prefs/strings/russianwin.strings.php3
+%%TWIG%%/features/prefs/strings/spanish.strings.php3
+%%TWIG%%/features/prefs/strings/swedish.strings.php3
+%%TWIG%%/features/prefs/strings/test.strings.php3
+%%TWIG%%/features/prefs/strings/turkish.strings.php3
+%%TWIG%%/features/schedule/.htaccess
+%%TWIG%%/features/schedule/schedule.calendar.inc.php3
+%%TWIG%%/features/schedule/schedule.day.inc.php3
+%%TWIG%%/features/schedule/schedule.edit.inc.php3
+%%TWIG%%/features/schedule/schedule.edit.main.inc.php3
+%%TWIG%%/features/schedule/schedule.edit.recur.inc.php3
+%%TWIG%%/features/schedule/schedule.feature.php3
+%%TWIG%%/features/schedule/schedule.inc.php3
+%%TWIG%%/features/schedule/schedule.list.inc.php3
+%%TWIG%%/features/schedule/schedule.main.inc.php3
+%%TWIG%%/features/schedule/schedule.maint.inc.php3
+%%TWIG%%/features/schedule/schedule.month.inc.php3
+%%TWIG%%/features/schedule/schedule.prefs.inc.php3
+%%TWIG%%/features/schedule/schedule.view.inc.php3
+%%TWIG%%/features/schedule/schedule.week.inc.php3
+%%TWIG%%/features/schedule/schedule.year.inc.php3
+%%TWIG%%/features/schedule/strings/catalan.strings.php3
+%%TWIG%%/features/schedule/strings/chinesebig5.strings.php3
+%%TWIG%%/features/schedule/strings/chinesegb.strings.php3
+%%TWIG%%/features/schedule/strings/czech.strings.php3
+%%TWIG%%/features/schedule/strings/danish.strings.php3
+%%TWIG%%/features/schedule/strings/dutch.strings.php3
+%%TWIG%%/features/schedule/strings/english.strings.php3
+%%TWIG%%/features/schedule/strings/estonian.strings.php3
+%%TWIG%%/features/schedule/strings/finnish.strings.php3
+%%TWIG%%/features/schedule/strings/french.strings.php3
+%%TWIG%%/features/schedule/strings/german.strings.php3
+%%TWIG%%/features/schedule/strings/greek.strings.php3
+%%TWIG%%/features/schedule/strings/hebrew.strings.php3
+%%TWIG%%/features/schedule/strings/italian.strings.php3
+%%TWIG%%/features/schedule/strings/jpeuc.strings.php3
+%%TWIG%%/features/schedule/strings/korean.strings.php3
+%%TWIG%%/features/schedule/strings/polish.strings.php3
+%%TWIG%%/features/schedule/strings/portuguese.strings.php3
+%%TWIG%%/features/schedule/strings/russian.strings.php3
+%%TWIG%%/features/schedule/strings/russianwin.strings.php3
+%%TWIG%%/features/schedule/strings/spanish.strings.php3
+%%TWIG%%/features/schedule/strings/swedish.strings.php3
+%%TWIG%%/features/schedule/strings/test.strings.php3
+%%TWIG%%/features/schedule/strings/turkish.strings.php3
+%%TWIG%%/features/search/.htaccess
+%%TWIG%%/features/search/help/english/menu.search.help.inc.php3
+%%TWIG%%/features/search/help/english/search.help.inc.php3
+%%TWIG%%/features/search/help/english/search.mail.help.inc.php3
+%%TWIG%%/features/search/modules/.htaccess
+%%TWIG%%/features/search/modules/bookmarks.inc.php3
+%%TWIG%%/features/search/modules/contacts.inc.php3
+%%TWIG%%/features/search/modules/global.inc.php3
+%%TWIG%%/features/search/modules/mail.inc.php3
+%%TWIG%%/features/search/modules/meetings.inc.php3
+%%TWIG%%/features/search/modules/news.inc.php3
+%%TWIG%%/features/search/modules/notes.inc.php3
+%%TWIG%%/features/search/modules/schedule.inc.php3
+%%TWIG%%/features/search/modules/todo.inc.php3
+%%TWIG%%/features/search/search.feature.php3
+%%TWIG%%/features/search/search.inc.php3
+%%TWIG%%/features/search/strings/.htaccess
+%%TWIG%%/features/search/strings/catalan.strings.php3
+%%TWIG%%/features/search/strings/chinesebig5.strings.php3
+%%TWIG%%/features/search/strings/chinesegb.strings.php3
+%%TWIG%%/features/search/strings/czech.strings.php3
+%%TWIG%%/features/search/strings/danish.strings.php3
+%%TWIG%%/features/search/strings/dutch.strings.php3
+%%TWIG%%/features/search/strings/english.strings.php3
+%%TWIG%%/features/search/strings/estonian.strings.php3
+%%TWIG%%/features/search/strings/finnish.strings.php3
+%%TWIG%%/features/search/strings/french.strings.php3
+%%TWIG%%/features/search/strings/german.strings.php3
+%%TWIG%%/features/search/strings/greek.strings.php3
+%%TWIG%%/features/search/strings/hebrew.strings.php3
+%%TWIG%%/features/search/strings/italian.strings.php3
+%%TWIG%%/features/search/strings/jpeuc.strings.php3
+%%TWIG%%/features/search/strings/korean.strings.php3
+%%TWIG%%/features/search/strings/polish.strings.php3
+%%TWIG%%/features/search/strings/portuguese.strings.php3
+%%TWIG%%/features/search/strings/russian.strings.php3
+%%TWIG%%/features/search/strings/russianwin.strings.php3
+%%TWIG%%/features/search/strings/spanish.strings.php3
+%%TWIG%%/features/search/strings/swedish.strings.php3
+%%TWIG%%/features/search/strings/test.strings.php3
+%%TWIG%%/features/search/strings/turkish.strings.php3
+%%TWIG%%/features/shared/.htaccess
+%%TWIG%%/features/shared/contacts.inc.php3
+%%TWIG%%/features/shared/newlists.inc.php3
+%%TWIG%%/features/shared/prefs.inc.php3
+%%TWIG%%/features/shared/todo.inc.php3
+%%TWIG%%/features/shared/treemenu2.inc.php3
+%%TWIG%%/features/shared/wrap.inc.php3
+%%TWIG%%/features/todo/.htaccess
+%%TWIG%%/features/todo/help/english/.htaccess
+%%TWIG%%/features/todo/help/english/menu.todo.help.inc.php3
+%%TWIG%%/features/todo/help/english/todo.add.help.inc.php3
+%%TWIG%%/features/todo/help/english/todo.edit.help.inc.php3
+%%TWIG%%/features/todo/help/english/todo.help.inc.php3
+%%TWIG%%/features/todo/help/english/todo.index.help.inc.php3
+%%TWIG%%/features/todo/help/english/todo.prefs.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/.htaccess
+%%TWIG%%/features/todo/help/spanish/menu.todo.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/todo.add.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/todo.edit.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/todo.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/todo.index.help.inc.php3
+%%TWIG%%/features/todo/help/spanish/todo.prefs.help.inc.php3
+%%TWIG%%/features/todo/strings/catalan.strings.php3
+%%TWIG%%/features/todo/strings/chinesebig5.strings.php3
+%%TWIG%%/features/todo/strings/chinesegb.strings.php3
+%%TWIG%%/features/todo/strings/czech.strings.php3
+%%TWIG%%/features/todo/strings/danish.strings.php3
+%%TWIG%%/features/todo/strings/dutch.strings.php3
+%%TWIG%%/features/todo/strings/english.strings.php3
+%%TWIG%%/features/todo/strings/estonian.strings.php3
+%%TWIG%%/features/todo/strings/finnish.strings.php3
+%%TWIG%%/features/todo/strings/french.strings.php3
+%%TWIG%%/features/todo/strings/german.strings.php3
+%%TWIG%%/features/todo/strings/greek.strings.php3
+%%TWIG%%/features/todo/strings/hebrew.strings.php3
+%%TWIG%%/features/todo/strings/italian.strings.php3
+%%TWIG%%/features/todo/strings/jpeuc.strings.php3
+%%TWIG%%/features/todo/strings/korean.strings.php3
+%%TWIG%%/features/todo/strings/polish.strings.php3
+%%TWIG%%/features/todo/strings/portuguese.strings.php3
+%%TWIG%%/features/todo/strings/russian.strings.php3
+%%TWIG%%/features/todo/strings/russianwin.strings.php3
+%%TWIG%%/features/todo/strings/spanish.strings.php3
+%%TWIG%%/features/todo/strings/swedish.strings.php3
+%%TWIG%%/features/todo/strings/test.strings.php3
+%%TWIG%%/features/todo/strings/turkish.strings.php3
+%%TWIG%%/features/todo/todo.edit.inc.php3
+%%TWIG%%/features/todo/todo.feature.php3
+%%TWIG%%/features/todo/todo.inc.php3
+%%TWIG%%/features/todo/todo.main.inc.php3
+%%TWIG%%/features/todo/todo.prefs.inc.php3
+%%TWIG%%/features/todo/todo.view.inc.php3
+%%TWIG%%/features/twig.footer.inc.php3
+%%TWIG%%/features/twig.header.inc.php3
+%%TWIG%%/goto.php3
+%%TWIG%%/images/addressbook.gif
+%%TWIG%%/images/attachment.gif
+%%TWIG%%/images/check.gif
+%%TWIG%%/images/checked-box.gif
+%%TWIG%%/images/clock-yellow.gif
+%%TWIG%%/images/clock-yellow2.gif
+%%TWIG%%/images/clock.gif
+%%TWIG%%/images/close.gif
+%%TWIG%%/images/deleted.gif
+%%TWIG%%/images/done.gif
+%%TWIG%%/images/edit.gif
+%%TWIG%%/images/empty.gif
+%%TWIG%%/images/exclamation.gif
+%%TWIG%%/images/glasses.gif
+%%TWIG%%/images/glasses2.gif
+%%TWIG%%/images/gray-dot.gif
+%%TWIG%%/images/green-dot.gif
+%%TWIG%%/images/green.gif
+%%TWIG%%/images/grey-x.gif
+%%TWIG%%/images/help.gif
+%%TWIG%%/images/lhand.gif
+%%TWIG%%/images/magnify-glass.gif
+%%TWIG%%/images/maildelete.gif
+%%TWIG%%/images/mailundelete.gif
+%%TWIG%%/images/menus-nt/bookmarks/backto.gif
+%%TWIG%%/images/menus-nt/bookmarks/compose.gif
+%%TWIG%%/images/menus-nt/bookmarks/delete.gif
+%%TWIG%%/images/menus-nt/bookmarks/edit.gif
+%%TWIG%%/images/menus-nt/bookmarks/prefs.gif
+%%TWIG%%/images/menus-nt/contacts/backto.gif
+%%TWIG%%/images/menus-nt/contacts/compose.gif
+%%TWIG%%/images/menus-nt/contacts/delete.gif
+%%TWIG%%/images/menus-nt/contacts/edit.gif
+%%TWIG%%/images/menus-nt/contacts/import.gif
+%%TWIG%%/images/menus-nt/contacts/newlist.gif
+%%TWIG%%/images/menus-nt/contacts/prefs.gif
+%%TWIG%%/images/menus-nt/groups/backto.gif
+%%TWIG%%/images/menus-nt/groups/compose.gif
+%%TWIG%%/images/menus-nt/groups/delete.gif
+%%TWIG%%/images/menus-nt/groups/edit.gif
+%%TWIG%%/images/menus-nt/groups/editgroup.gif
+%%TWIG%%/images/menus-nt/mail/backthree.gif
+%%TWIG%%/images/menus-nt/mail/backto.gif
+%%TWIG%%/images/menus-nt/mail/blank.gif
+%%TWIG%%/images/menus-nt/mail/compose.gif
+%%TWIG%%/images/menus-nt/mail/contacts.gif
+%%TWIG%%/images/menus-nt/mail/delete.gif
+%%TWIG%%/images/menus-nt/mail/expunge.gif
+%%TWIG%%/images/menus-nt/mail/folders.gif
+%%TWIG%%/images/menus-nt/mail/foldover.gif
+%%TWIG%%/images/menus-nt/mail/forward.gif
+%%TWIG%%/images/menus-nt/mail/move.gif
+%%TWIG%%/images/menus-nt/mail/prefs.gif
+%%TWIG%%/images/menus-nt/mail/printview.gif
+%%TWIG%%/images/menus-nt/mail/recompose.gif
+%%TWIG%%/images/menus-nt/mail/refresh.gif
+%%TWIG%%/images/menus-nt/mail/reply.gif
+%%TWIG%%/images/menus-nt/mail/replyall.gif
+%%TWIG%%/images/menus-nt/mail/undelete.gif
+%%TWIG%%/images/menus-nt/meetings/backto.gif
+%%TWIG%%/images/menus-nt/meetings/compose.gif
+%%TWIG%%/images/menus-nt/meetings/delete.gif
+%%TWIG%%/images/menus-nt/meetings/prefs.gif
+%%TWIG%%/images/menus-nt/meetings/private.gif
+%%TWIG%%/images/menus-nt/meetings/public.gif
+%%TWIG%%/images/menus-nt/meetings/registered.gif
+%%TWIG%%/images/menus-nt/news/backto.gif
+%%TWIG%%/images/menus-nt/news/compose.gif
+%%TWIG%%/images/menus-nt/news/folders.gif
+%%TWIG%%/images/menus-nt/news/prefs.gif
+%%TWIG%%/images/menus-nt/news/reply.gif
+%%TWIG%%/images/menus-nt/notes/backto.gif
+%%TWIG%%/images/menus-nt/notes/compose.gif
+%%TWIG%%/images/menus-nt/notes/delete.gif
+%%TWIG%%/images/menus-nt/notes/edit.gif
+%%TWIG%%/images/menus-nt/notes/prefs.gif
+%%TWIG%%/images/menus-nt/primary/backto.gif
+%%TWIG%%/images/menus-nt/primary/bookmarks.gif
+%%TWIG%%/images/menus-nt/primary/contacts.gif
+%%TWIG%%/images/menus-nt/primary/help.gif
+%%TWIG%%/images/menus-nt/primary/logout.gif
+%%TWIG%%/images/menus-nt/primary/mail.gif
+%%TWIG%%/images/menus-nt/primary/main.gif
+%%TWIG%%/images/menus-nt/primary/meetings.gif
+%%TWIG%%/images/menus-nt/primary/news.gif
+%%TWIG%%/images/menus-nt/primary/notes.gif
+%%TWIG%%/images/menus-nt/primary/prefs.gif
+%%TWIG%%/images/menus-nt/primary/schedule.gif
+%%TWIG%%/images/menus-nt/primary/search.gif
+%%TWIG%%/images/menus-nt/primary/todo.gif
+%%TWIG%%/images/menus-nt/schedule/backto.gif
+%%TWIG%%/images/menus-nt/schedule/calendar.gif
+%%TWIG%%/images/menus-nt/schedule/compose.gif
+%%TWIG%%/images/menus-nt/schedule/daily.gif
+%%TWIG%%/images/menus-nt/schedule/edit.gif
+%%TWIG%%/images/menus-nt/schedule/list.gif
+%%TWIG%%/images/menus-nt/schedule/maintenance.gif
+%%TWIG%%/images/menus-nt/schedule/monthly.gif
+%%TWIG%%/images/menus-nt/schedule/prefs.gif
+%%TWIG%%/images/menus-nt/schedule/today.gif
+%%TWIG%%/images/menus-nt/schedule/weekly.gif
+%%TWIG%%/images/menus-nt/schedule/year.gif
+%%TWIG%%/images/menus-nt/todo/backto.gif
+%%TWIG%%/images/menus-nt/todo/compose.gif
+%%TWIG%%/images/menus-nt/todo/delete.gif
+%%TWIG%%/images/menus-nt/todo/edit.gif
+%%TWIG%%/images/menus-nt/todo/prefs.gif
+%%TWIG%%/images/menus/bookmarks/english/backto.gif
+%%TWIG%%/images/menus/bookmarks/english/compose.gif
+%%TWIG%%/images/menus/bookmarks/english/delete.gif
+%%TWIG%%/images/menus/bookmarks/english/edit.gif
+%%TWIG%%/images/menus/bookmarks/english/prefs.gif
+%%TWIG%%/images/menus/bookmarks/german/backto.gif
+%%TWIG%%/images/menus/bookmarks/german/compose.gif
+%%TWIG%%/images/menus/bookmarks/german/delete.gif
+%%TWIG%%/images/menus/bookmarks/german/edit.gif
+%%TWIG%%/images/menus/bookmarks/german/prefs.gif
+%%TWIG%%/images/menus/bookmarks/italian/backto.gif
+%%TWIG%%/images/menus/bookmarks/italian/compose.gif
+%%TWIG%%/images/menus/bookmarks/italian/delete.gif
+%%TWIG%%/images/menus/bookmarks/italian/edit.gif
+%%TWIG%%/images/menus/bookmarks/italian/prefs.gif
+%%TWIG%%/images/menus/contacts/english/backto.gif
+%%TWIG%%/images/menus/contacts/english/compose.gif
+%%TWIG%%/images/menus/contacts/english/delete.gif
+%%TWIG%%/images/menus/contacts/english/edit.gif
+%%TWIG%%/images/menus/contacts/english/import.gif
+%%TWIG%%/images/menus/contacts/english/newlist.gif
+%%TWIG%%/images/menus/contacts/english/prefs.gif
+%%TWIG%%/images/menus/contacts/german/backto.gif
+%%TWIG%%/images/menus/contacts/german/compose.gif
+%%TWIG%%/images/menus/contacts/german/delete.gif
+%%TWIG%%/images/menus/contacts/german/edit.gif
+%%TWIG%%/images/menus/contacts/german/import.gif
+%%TWIG%%/images/menus/contacts/german/newlist.gif
+%%TWIG%%/images/menus/contacts/german/prefs.gif
+%%TWIG%%/images/menus/contacts/italian/backto.gif
+%%TWIG%%/images/menus/contacts/italian/compose.gif
+%%TWIG%%/images/menus/contacts/italian/delete.gif
+%%TWIG%%/images/menus/contacts/italian/edit.gif
+%%TWIG%%/images/menus/contacts/italian/import.gif
+%%TWIG%%/images/menus/contacts/italian/newlist.gif
+%%TWIG%%/images/menus/contacts/italian/prefs.gif
+%%TWIG%%/images/menus/groups/english/backto.gif
+%%TWIG%%/images/menus/groups/english/compose.gif
+%%TWIG%%/images/menus/groups/english/delete.gif
+%%TWIG%%/images/menus/groups/english/edit.gif
+%%TWIG%%/images/menus/groups/english/editgroup.gif
+%%TWIG%%/images/menus/groups/german/backto.gif
+%%TWIG%%/images/menus/groups/german/compose.gif
+%%TWIG%%/images/menus/groups/german/delete.gif
+%%TWIG%%/images/menus/groups/german/edit.gif
+%%TWIG%%/images/menus/groups/german/editgroup.gif
+%%TWIG%%/images/menus/groups/italian/backto.gif
+%%TWIG%%/images/menus/mail/english/backthree.gif
+%%TWIG%%/images/menus/mail/english/backto.gif
+%%TWIG%%/images/menus/mail/english/blank.gif
+%%TWIG%%/images/menus/mail/english/compose.gif
+%%TWIG%%/images/menus/mail/english/contacts.gif
+%%TWIG%%/images/menus/mail/english/delete.gif
+%%TWIG%%/images/menus/mail/english/expunge.gif
+%%TWIG%%/images/menus/mail/english/folders.gif
+%%TWIG%%/images/menus/mail/english/foldover.gif
+%%TWIG%%/images/menus/mail/english/forward.gif
+%%TWIG%%/images/menus/mail/english/move.gif
+%%TWIG%%/images/menus/mail/english/prefs.gif
+%%TWIG%%/images/menus/mail/english/printview.gif
+%%TWIG%%/images/menus/mail/english/recompose.gif
+%%TWIG%%/images/menus/mail/english/refresh.gif
+%%TWIG%%/images/menus/mail/english/reply.gif
+%%TWIG%%/images/menus/mail/english/replyall.gif
+%%TWIG%%/images/menus/mail/english/undelete.gif
+%%TWIG%%/images/menus/mail/german/backto.gif
+%%TWIG%%/images/menus/mail/german/compose.gif
+%%TWIG%%/images/menus/mail/german/contacts.gif
+%%TWIG%%/images/menus/mail/german/delete.gif
+%%TWIG%%/images/menus/mail/german/expunge.gif
+%%TWIG%%/images/menus/mail/german/folders.gif
+%%TWIG%%/images/menus/mail/german/foldover.gif
+%%TWIG%%/images/menus/mail/german/forward.gif
+%%TWIG%%/images/menus/mail/german/move.gif
+%%TWIG%%/images/menus/mail/german/prefs.gif
+%%TWIG%%/images/menus/mail/german/printview.gif
+%%TWIG%%/images/menus/mail/german/recompose.gif
+%%TWIG%%/images/menus/mail/german/refresh.gif
+%%TWIG%%/images/menus/mail/german/reply.gif
+%%TWIG%%/images/menus/mail/german/replyall.gif
+%%TWIG%%/images/menus/mail/german/undelete.gif
+%%TWIG%%/images/menus/mail/italian/backthree.gif
+%%TWIG%%/images/menus/mail/italian/backto.gif
+%%TWIG%%/images/menus/mail/italian/blank.gif
+%%TWIG%%/images/menus/mail/italian/compose.gif
+%%TWIG%%/images/menus/mail/italian/contacts.gif
+%%TWIG%%/images/menus/mail/italian/delete.gif
+%%TWIG%%/images/menus/mail/italian/expunge.gif
+%%TWIG%%/images/menus/mail/italian/folders.gif
+%%TWIG%%/images/menus/mail/italian/foldover.gif
+%%TWIG%%/images/menus/mail/italian/forward.gif
+%%TWIG%%/images/menus/mail/italian/move.gif
+%%TWIG%%/images/menus/mail/italian/prefs.gif
+%%TWIG%%/images/menus/mail/italian/printview.gif
+%%TWIG%%/images/menus/mail/italian/recompose.gif
+%%TWIG%%/images/menus/mail/italian/refresh.gif
+%%TWIG%%/images/menus/mail/italian/reply.gif
+%%TWIG%%/images/menus/mail/italian/replyall.gif
+%%TWIG%%/images/menus/mail/italian/undelete.gif
+%%TWIG%%/images/menus/meetings/english/backto.gif
+%%TWIG%%/images/menus/meetings/english/compose.gif
+%%TWIG%%/images/menus/meetings/english/delete.gif
+%%TWIG%%/images/menus/meetings/english/prefs.gif
+%%TWIG%%/images/menus/meetings/english/private.gif
+%%TWIG%%/images/menus/meetings/english/public.gif
+%%TWIG%%/images/menus/meetings/english/registered.gif
+%%TWIG%%/images/menus/meetings/german/backto.gif
+%%TWIG%%/images/menus/meetings/german/compose.gif
+%%TWIG%%/images/menus/meetings/german/delete.gif
+%%TWIG%%/images/menus/meetings/german/prefs.gif
+%%TWIG%%/images/menus/meetings/german/private.gif
+%%TWIG%%/images/menus/meetings/german/puplic.gif
+%%TWIG%%/images/menus/meetings/italian/backto.gif
+%%TWIG%%/images/menus/meetings/italian/compose.gif
+%%TWIG%%/images/menus/meetings/italian/delete.gif
+%%TWIG%%/images/menus/meetings/italian/prefs.gif
+%%TWIG%%/images/menus/meetings/italian/private.gif
+%%TWIG%%/images/menus/meetings/italian/public.gif
+%%TWIG%%/images/menus/meetings/italian/registered.gif
+%%TWIG%%/images/menus/news/english/backto.gif
+%%TWIG%%/images/menus/news/english/compose.gif
+%%TWIG%%/images/menus/news/english/folders.gif
+%%TWIG%%/images/menus/news/english/prefs.gif
+%%TWIG%%/images/menus/news/english/reply.gif
+%%TWIG%%/images/menus/news/german/backto.gif
+%%TWIG%%/images/menus/news/german/compose.gif
+%%TWIG%%/images/menus/news/german/folders.gif
+%%TWIG%%/images/menus/news/german/prefs.gif
+%%TWIG%%/images/menus/news/german/reply.gif
+%%TWIG%%/images/menus/news/italian/backto.gif
+%%TWIG%%/images/menus/news/italian/compose.gif
+%%TWIG%%/images/menus/news/italian/folders.gif
+%%TWIG%%/images/menus/news/italian/prefs.gif
+%%TWIG%%/images/menus/news/italian/reply.gif
+%%TWIG%%/images/menus/notes/english/backto.gif
+%%TWIG%%/images/menus/notes/english/compose.gif
+%%TWIG%%/images/menus/notes/english/delete.gif
+%%TWIG%%/images/menus/notes/english/edit.gif
+%%TWIG%%/images/menus/notes/english/prefs.gif
+%%TWIG%%/images/menus/notes/german/backto.gif
+%%TWIG%%/images/menus/notes/german/compose.gif
+%%TWIG%%/images/menus/notes/german/delete.gif
+%%TWIG%%/images/menus/notes/german/edit.gif
+%%TWIG%%/images/menus/notes/german/prefs.gif
+%%TWIG%%/images/menus/notes/italian/compose.gif
+%%TWIG%%/images/menus/notes/italian/delete.gif
+%%TWIG%%/images/menus/notes/italian/edit.gif
+%%TWIG%%/images/menus/notes/italian/prefs.gif
+%%TWIG%%/images/menus/primary/chinesebig5/bookmarks.gif
+%%TWIG%%/images/menus/primary/chinesebig5/contacts.gif
+%%TWIG%%/images/menus/primary/chinesebig5/help.gif
+%%TWIG%%/images/menus/primary/chinesebig5/logout.gif
+%%TWIG%%/images/menus/primary/chinesebig5/mail.gif
+%%TWIG%%/images/menus/primary/chinesebig5/main.gif
+%%TWIG%%/images/menus/primary/chinesebig5/news.gif
+%%TWIG%%/images/menus/primary/chinesebig5/schedule.gif
+%%TWIG%%/images/menus/primary/chinesebig5/todo.gif
+%%TWIG%%/images/menus/primary/chinesegb/bookmarks.gif
+%%TWIG%%/images/menus/primary/chinesegb/contacts.gif
+%%TWIG%%/images/menus/primary/chinesegb/help.gif
+%%TWIG%%/images/menus/primary/chinesegb/logout.gif
+%%TWIG%%/images/menus/primary/chinesegb/mail.gif
+%%TWIG%%/images/menus/primary/chinesegb/main.gif
+%%TWIG%%/images/menus/primary/chinesegb/news.gif
+%%TWIG%%/images/menus/primary/chinesegb/schedule.gif
+%%TWIG%%/images/menus/primary/chinesegb/todo.gif
+%%TWIG%%/images/menus/primary/czech/bookmarks.gif
+%%TWIG%%/images/menus/primary/czech/contacts.gif
+%%TWIG%%/images/menus/primary/czech/help.gif
+%%TWIG%%/images/menus/primary/czech/logout.gif
+%%TWIG%%/images/menus/primary/czech/mail.gif
+%%TWIG%%/images/menus/primary/czech/main.gif
+%%TWIG%%/images/menus/primary/czech/news.gif
+%%TWIG%%/images/menus/primary/czech/schedule.gif
+%%TWIG%%/images/menus/primary/czech/todo.gif
+%%TWIG%%/images/menus/primary/danish/bookmarks.gif
+%%TWIG%%/images/menus/primary/danish/contacts.gif
+%%TWIG%%/images/menus/primary/danish/help.gif
+%%TWIG%%/images/menus/primary/danish/logout.gif
+%%TWIG%%/images/menus/primary/danish/mail.gif
+%%TWIG%%/images/menus/primary/danish/main.gif
+%%TWIG%%/images/menus/primary/danish/news.gif
+%%TWIG%%/images/menus/primary/danish/schedule.gif
+%%TWIG%%/images/menus/primary/danish/todo.gif
+%%TWIG%%/images/menus/primary/english/backto.gif
+%%TWIG%%/images/menus/primary/english/bookmarks.gif
+%%TWIG%%/images/menus/primary/english/contacts.gif
+%%TWIG%%/images/menus/primary/english/help.gif
+%%TWIG%%/images/menus/primary/english/logout.gif
+%%TWIG%%/images/menus/primary/english/mail.gif
+%%TWIG%%/images/menus/primary/english/main.gif
+%%TWIG%%/images/menus/primary/english/meetings.gif
+%%TWIG%%/images/menus/primary/english/news.gif
+%%TWIG%%/images/menus/primary/english/notes.gif
+%%TWIG%%/images/menus/primary/english/prefs.gif
+%%TWIG%%/images/menus/primary/english/schedule.gif
+%%TWIG%%/images/menus/primary/english/search.gif
+%%TWIG%%/images/menus/primary/english/todo.gif
+%%TWIG%%/images/menus/primary/estonian/bookmarks.gif
+%%TWIG%%/images/menus/primary/estonian/contacts.gif
+%%TWIG%%/images/menus/primary/estonian/help.gif
+%%TWIG%%/images/menus/primary/estonian/logout.gif
+%%TWIG%%/images/menus/primary/estonian/mail.gif
+%%TWIG%%/images/menus/primary/estonian/main.gif
+%%TWIG%%/images/menus/primary/estonian/news.gif
+%%TWIG%%/images/menus/primary/estonian/schedule.gif
+%%TWIG%%/images/menus/primary/estonian/todo.gif
+%%TWIG%%/images/menus/primary/french/bookmarks.gif
+%%TWIG%%/images/menus/primary/french/contacts.gif
+%%TWIG%%/images/menus/primary/french/help.gif
+%%TWIG%%/images/menus/primary/french/logout.gif
+%%TWIG%%/images/menus/primary/french/mail.gif
+%%TWIG%%/images/menus/primary/french/main.gif
+%%TWIG%%/images/menus/primary/french/news.gif
+%%TWIG%%/images/menus/primary/french/schedule.gif
+%%TWIG%%/images/menus/primary/french/todo.gif
+%%TWIG%%/images/menus/primary/german/backto.gif
+%%TWIG%%/images/menus/primary/german/bookmarks.gif
+%%TWIG%%/images/menus/primary/german/contacts.gif
+%%TWIG%%/images/menus/primary/german/help.gif
+%%TWIG%%/images/menus/primary/german/logout.gif
+%%TWIG%%/images/menus/primary/german/mail.gif
+%%TWIG%%/images/menus/primary/german/main.gif
+%%TWIG%%/images/menus/primary/german/meetings.gif
+%%TWIG%%/images/menus/primary/german/news.gif
+%%TWIG%%/images/menus/primary/german/prefs.gif
+%%TWIG%%/images/menus/primary/german/schedule.gif
+%%TWIG%%/images/menus/primary/german/todo.gif
+%%TWIG%%/images/menus/primary/italian/backto.gif
+%%TWIG%%/images/menus/primary/italian/bookmarks.gif
+%%TWIG%%/images/menus/primary/italian/contacts.gif
+%%TWIG%%/images/menus/primary/italian/global.gif
+%%TWIG%%/images/menus/primary/italian/help.gif
+%%TWIG%%/images/menus/primary/italian/logout.gif
+%%TWIG%%/images/menus/primary/italian/mail.gif
+%%TWIG%%/images/menus/primary/italian/main.gif
+%%TWIG%%/images/menus/primary/italian/meetings.gif
+%%TWIG%%/images/menus/primary/italian/news.gif
+%%TWIG%%/images/menus/primary/italian/notes.gif
+%%TWIG%%/images/menus/primary/italian/prefs.gif
+%%TWIG%%/images/menus/primary/italian/schedule.gif
+%%TWIG%%/images/menus/primary/italian/search.gif
+%%TWIG%%/images/menus/primary/italian/todo.gif
+%%TWIG%%/images/menus/primary/portuguese/bookmarks.gif
+%%TWIG%%/images/menus/primary/portuguese/contacts.gif
+%%TWIG%%/images/menus/primary/portuguese/help.gif
+%%TWIG%%/images/menus/primary/portuguese/logout.gif
+%%TWIG%%/images/menus/primary/portuguese/mail.gif
+%%TWIG%%/images/menus/primary/portuguese/main.gif
+%%TWIG%%/images/menus/primary/portuguese/news.gif
+%%TWIG%%/images/menus/primary/portuguese/schedule.gif
+%%TWIG%%/images/menus/primary/portuguese/todo.gif
+%%TWIG%%/images/menus/primary/russian/bookmarks.gif
+%%TWIG%%/images/menus/primary/russian/contacts.gif
+%%TWIG%%/images/menus/primary/russian/help.gif
+%%TWIG%%/images/menus/primary/russian/logout.gif
+%%TWIG%%/images/menus/primary/russian/mail.gif
+%%TWIG%%/images/menus/primary/russian/main.gif
+%%TWIG%%/images/menus/primary/russian/news.gif
+%%TWIG%%/images/menus/primary/russian/schedule.gif
+%%TWIG%%/images/menus/primary/russian/todo.gif
+%%TWIG%%/images/menus/primary/russianwin/bookmarks.gif
+%%TWIG%%/images/menus/primary/russianwin/contacts.gif
+%%TWIG%%/images/menus/primary/russianwin/help.gif
+%%TWIG%%/images/menus/primary/russianwin/logout.gif
+%%TWIG%%/images/menus/primary/russianwin/mail.gif
+%%TWIG%%/images/menus/primary/russianwin/main.gif
+%%TWIG%%/images/menus/primary/russianwin/news.gif
+%%TWIG%%/images/menus/primary/russianwin/schedule.gif
+%%TWIG%%/images/menus/primary/russianwin/todo.gif
+%%TWIG%%/images/menus/primary/spanish/bookmarks.gif
+%%TWIG%%/images/menus/primary/spanish/contacts.gif
+%%TWIG%%/images/menus/primary/spanish/help.gif
+%%TWIG%%/images/menus/primary/spanish/logout.gif
+%%TWIG%%/images/menus/primary/spanish/mail.gif
+%%TWIG%%/images/menus/primary/spanish/main.gif
+%%TWIG%%/images/menus/primary/spanish/news.gif
+%%TWIG%%/images/menus/primary/spanish/schedule.gif
+%%TWIG%%/images/menus/primary/spanish/todo.gif
+%%TWIG%%/images/menus/primary/swedish/bookmarks.gif
+%%TWIG%%/images/menus/primary/swedish/contacts.gif
+%%TWIG%%/images/menus/primary/swedish/help.gif
+%%TWIG%%/images/menus/primary/swedish/logout.gif
+%%TWIG%%/images/menus/primary/swedish/mail.gif
+%%TWIG%%/images/menus/primary/swedish/main.gif
+%%TWIG%%/images/menus/primary/swedish/news.gif
+%%TWIG%%/images/menus/primary/swedish/schedule.gif
+%%TWIG%%/images/menus/primary/swedish/todo.gif
+%%TWIG%%/images/menus/primary/test/bookmarks.gif
+%%TWIG%%/images/menus/primary/test/contacts.gif
+%%TWIG%%/images/menus/primary/test/help.gif
+%%TWIG%%/images/menus/primary/test/logout.gif
+%%TWIG%%/images/menus/primary/test/mail.gif
+%%TWIG%%/images/menus/primary/test/main.gif
+%%TWIG%%/images/menus/primary/test/news.gif
+%%TWIG%%/images/menus/primary/test/schedule.gif
+%%TWIG%%/images/menus/primary/test/todo.gif
+%%TWIG%%/images/menus/schedule/english/backto.gif
+%%TWIG%%/images/menus/schedule/english/calendar.gif
+%%TWIG%%/images/menus/schedule/english/compose.gif
+%%TWIG%%/images/menus/schedule/english/daily.gif
+%%TWIG%%/images/menus/schedule/english/edit.gif
+%%TWIG%%/images/menus/schedule/english/list.gif
+%%TWIG%%/images/menus/schedule/english/maintenance.gif
+%%TWIG%%/images/menus/schedule/english/monthly.gif
+%%TWIG%%/images/menus/schedule/english/prefs.gif
+%%TWIG%%/images/menus/schedule/english/today.gif
+%%TWIG%%/images/menus/schedule/english/weekly.gif
+%%TWIG%%/images/menus/schedule/english/year.gif
+%%TWIG%%/images/menus/schedule/german/backto.gif
+%%TWIG%%/images/menus/schedule/german/calendar.gif
+%%TWIG%%/images/menus/schedule/german/compose.gif
+%%TWIG%%/images/menus/schedule/german/daily.gif
+%%TWIG%%/images/menus/schedule/german/edit.gif
+%%TWIG%%/images/menus/schedule/german/list.gif
+%%TWIG%%/images/menus/schedule/german/maintenance.gif
+%%TWIG%%/images/menus/schedule/german/monthly.gif
+%%TWIG%%/images/menus/schedule/german/prefs.gif
+%%TWIG%%/images/menus/schedule/german/today.gif
+%%TWIG%%/images/menus/schedule/german/weekly.gif
+%%TWIG%%/images/menus/schedule/german/year.gif
+%%TWIG%%/images/menus/schedule/italian/backto.gif
+%%TWIG%%/images/menus/schedule/italian/calendar.gif
+%%TWIG%%/images/menus/schedule/italian/compose.gif
+%%TWIG%%/images/menus/schedule/italian/daily.gif
+%%TWIG%%/images/menus/schedule/italian/edit.gif
+%%TWIG%%/images/menus/schedule/italian/list.gif
+%%TWIG%%/images/menus/schedule/italian/maintenance.gif
+%%TWIG%%/images/menus/schedule/italian/monthly.gif
+%%TWIG%%/images/menus/schedule/italian/prefs.gif
+%%TWIG%%/images/menus/schedule/italian/today.gif
+%%TWIG%%/images/menus/schedule/italian/weekly.gif
+%%TWIG%%/images/menus/schedule/italian/year.gif
+%%TWIG%%/images/menus/todo/english/backto.gif
+%%TWIG%%/images/menus/todo/english/compose.gif
+%%TWIG%%/images/menus/todo/english/delete.gif
+%%TWIG%%/images/menus/todo/english/edit.gif
+%%TWIG%%/images/menus/todo/english/prefs.gif
+%%TWIG%%/images/menus/todo/german/backto.gif
+%%TWIG%%/images/menus/todo/german/compose.gif
+%%TWIG%%/images/menus/todo/german/delete.gif
+%%TWIG%%/images/menus/todo/german/edit.gif
+%%TWIG%%/images/menus/todo/german/prefs.gif
+%%TWIG%%/images/menus/todo/italian/backto.gif
+%%TWIG%%/images/menus/todo/italian/compose.gif
+%%TWIG%%/images/menus/todo/italian/delete.gif
+%%TWIG%%/images/menus/todo/italian/edit.gif
+%%TWIG%%/images/menus/todo/italian/prefs.gif
+%%TWIG%%/images/newmail.gif
+%%TWIG%%/images/next-last.gif
+%%TWIG%%/images/next-none.gif
+%%TWIG%%/images/next.gif
+%%TWIG%%/images/pencil.gif
+%%TWIG%%/images/pencil2.gif
+%%TWIG%%/images/pencil3.gif
+%%TWIG%%/images/prev-first.gif
+%%TWIG%%/images/prev-none.gif
+%%TWIG%%/images/prev.gif
+%%TWIG%%/images/project.gif
+%%TWIG%%/images/read.gif
+%%TWIG%%/images/recurring.gif
+%%TWIG%%/images/red-box.gif
+%%TWIG%%/images/red-dot.gif
+%%TWIG%%/images/rhand.gif
+%%TWIG%%/images/thumbsdown.gif
+%%TWIG%%/images/thumbsup.gif
+%%TWIG%%/images/trash2.gif
+%%TWIG%%/images/tree_collapse.gif
+%%TWIG%%/images/tree_end.gif
+%%TWIG%%/images/tree_expand.gif
+%%TWIG%%/images/tree_leaf.gif
+%%TWIG%%/images/tree_space.gif
+%%TWIG%%/images/tree_split.gif
+%%TWIG%%/images/tree_vertline.gif
+%%TWIG%%/images/twig.gif
+%%TWIG%%/images/unopened.gif
+%%TWIG%%/index.php3
+%%TWIG%%/lib/.htaccess
+%%TWIG%%/lib/auth/.htaccess
+%%TWIG%%/lib/auth/basic.inc.php3
+%%TWIG%%/lib/auth/forms.inc.php3
+%%TWIG%%/lib/auth/ibase.authpro.inc.php3
+%%TWIG%%/lib/auth/imap-limit.authpro.inc.php3
+%%TWIG%%/lib/auth/imap-new.authpro.inc.php3
+%%TWIG%%/lib/auth/imap.authpro.inc.php3
+%%TWIG%%/lib/auth/ldap.authpro.inc.php3
+%%TWIG%%/lib/auth/mysql.authpro.inc.php3
+%%TWIG%%/lib/auth/nntp.authpro.inc.php3
+%%TWIG%%/lib/auth/oracle.authpro.inc.php3
+%%TWIG%%/lib/auth/pgsql.authpro.inc.php3
+%%TWIG%%/lib/auth/pop3.authpro.inc.php3
+%%TWIG%%/lib/auth/sqlimap.authpro.inc.php3
+%%TWIG%%/lib/auth/sqlopen.authpro.inc.php3
+%%TWIG%%/lib/auth/sqltable.authpro.inc.php3
+%%TWIG%%/lib/db/.htaccess
+%%TWIG%%/lib/db/dbasesql.db.inc.php3
+%%TWIG%%/lib/db/ibase.db.inc.php3
+%%TWIG%%/lib/db/mssql.db.inc.php3
+%%TWIG%%/lib/db/mysql.db.inc.php3
+%%TWIG%%/lib/db/oracle.db.inc.php3
+%%TWIG%%/lib/db/pgsql-new.db.inc.php3
+%%TWIG%%/lib/db/pgsql.db.inc.php3
+%%TWIG%%/lib/db/sqltxt/.htaccess
+%%TWIG%%/lib/db/sqltxt/dbase.inc.php3
+%%TWIG%%/lib/db/sqltxt/dbf/.htaccess
+%%TWIG%%/lib/db/sqltxt/dbf/twig_accounts.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_accounts.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_acl.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_acl.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_acl_groups.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_acl_groups.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_announce.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_announce.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_bookmarks.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_bookmarks.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_bookmarks_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_bookmarks_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts_lists_entries.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts_lists_entries.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_contacts_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_context.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_context.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_folders.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_folders.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_global_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_global_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_groups.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_groups.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_lhsqltable.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_lhsqltable.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_mail_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_mail_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_main_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_main_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_invitations.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_invitations.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_registration.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_meetings_registration.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_members.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_members.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_news_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_news_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_notes.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_notes.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_notes_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_notes_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule_recurring.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_schedule_recurring.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_sclhsqltable.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_sclhsqltable.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_session.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_session.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_todo.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_todo.def.php3
+%%TWIG%%/lib/db/sqltxt/dbf/twig_todo_prefs.dbf
+%%TWIG%%/lib/db/sqltxt/dbf/twig_todo_prefs.def.php3
+%%TWIG%%/lib/db/sqltxt/sqlcommands.inc.php3
+%%TWIG%%/lib/db/sybase.db.inc.php3
+%%TWIG%%/lib/groups/.htaccess
+%%TWIG%%/lib/groups/none.groups.inc.php3
+%%TWIG%%/lib/groups/none/none.inc.php3
+%%TWIG%%/lib/groups/personal.groups.inc.php3
+%%TWIG%%/lib/groups/personal/personal.edit.inc.php3
+%%TWIG%%/lib/groups/personal/personal.inc.php3
+%%TWIG%%/lib/groups/personal/personal.main.inc.php3
+%%TWIG%%/lib/groups/standard.groups.inc.php3
+%%TWIG%%/lib/groups/standard/standard.edit.inc.php3
+%%TWIG%%/lib/groups/standard/standard.inc.php3
+%%TWIG%%/lib/groups/standard/standard.main.inc.php3
+%%TWIG%%/lib/groups/standard/standard.members.inc.php3
+%%TWIG%%/lib/groups/standard/standard.members_edit.inc.php3
+%%TWIG%%/lib/groups/userperms.groups.inc.php3
+%%TWIG%%/lib/groups/userperms/userperms.edit.inc.php3
+%%TWIG%%/lib/groups/userperms/userperms.inc.php3
+%%TWIG%%/lib/groups/userperms/userperms.main.inc.php3
+%%TWIG%%/lib/groups/userperms/userperms.members.inc.php3
+%%TWIG%%/lib/groups/userperms/userperms.members_edit.inc.php3
+%%TWIG%%/lib/login/.htaccess
+%%TWIG%%/lib/login/base64cookie.login.php3
+%%TWIG%%/lib/login/cookie.login.php3
+%%TWIG%%/lib/login/php4session.login.php3
+%%TWIG%%/lib/login/securecookie.php4session.login.php3
+%%TWIG%%/lib/login/securecookie.sqltable.login.php3
+%%TWIG%%/lib/login/session.login.php3
+%%TWIG%%/lib/login/sqltable.login.php3
+%%TWIG%%/lib/mail/.htaccess
+%%TWIG%%/lib/mail/php-imap.inc.php3
+%%TWIG%%/lib/mail/php-pop3-vf.inc.php3
+%%TWIG%%/lib/mail/php-pop3.inc.php3
+%%TWIG%%/lib/mail/send.imap-mail.inc.php3
+%%TWIG%%/lib/mail/send.internal.inc.php3
+%%TWIG%%/lib/mail/send.relay.inc.php3
+%%TWIG%%/lib/prevnext/.htaccess
+%%TWIG%%/lib/prevnext/arrows.prevnext.php3
+%%TWIG%%/lib/prevnext/multitabs+arrows+fl.prevnext.php3
+%%TWIG%%/lib/prevnext/multitabs+arrows.prevnext.php3
+%%TWIG%%/lib/prevnext/multitabs+words+fl.prevnext.php3
+%%TWIG%%/lib/prevnext/multitabs+words.prevnext.php3
+%%TWIG%%/lib/prevnext/multitabs.prevnext.php3
+%%TWIG%%/lib/prevnext/select+arrows.prevnext.php3
+%%TWIG%%/lib/prevnext/select.prevnext.php3
+%%TWIG%%/lib/prevnext/tabs+arrows.prevnext.php3
+%%TWIG%%/lib/prevnext/tabs+select+arrows.prevnext.php3
+%%TWIG%%/lib/prevnext/tabs+select.prevnext.php3
+%%TWIG%%/lib/prevnext/tabs.prevnext.php3
+%%TWIG%%/lib/security/.htaccess
+%%TWIG%%/lib/security/advanced.inc.php3
+%%TWIG%%/lib/security/basic.inc.php3
+%%TWIG%%/lib/session/.htaccess
+%%TWIG%%/lib/session/get.session.php3
+%%TWIG%%/lib/session/get2.session.php3
+%%TWIG%%/lib/session/php4session.session.php3
+%%TWIG%%/lib/session/sqltable.session.php3
+%%TWIG%%/lib/strings/.htaccess
+%%TWIG%%/lib/strings/catalan.strings.php3
+%%TWIG%%/lib/strings/chinesebig5.strings.php3
+%%TWIG%%/lib/strings/chinesegb.strings.php3
+%%TWIG%%/lib/strings/czech.strings.php3
+%%TWIG%%/lib/strings/danish.strings.php3
+%%TWIG%%/lib/strings/dutch.strings.php3
+%%TWIG%%/lib/strings/english.strings.php3
+%%TWIG%%/lib/strings/estonian.strings.php3
+%%TWIG%%/lib/strings/finnish.strings.php3
+%%TWIG%%/lib/strings/french.strings.php3
+%%TWIG%%/lib/strings/german.strings.php3
+%%TWIG%%/lib/strings/greek.strings.php3
+%%TWIG%%/lib/strings/hebrew.strings.php3
+%%TWIG%%/lib/strings/italian.strings.php3
+%%TWIG%%/lib/strings/jpeuc.strings.php3
+%%TWIG%%/lib/strings/korean.strings.php3
+%%TWIG%%/lib/strings/polish.strings.php3
+%%TWIG%%/lib/strings/portuguese.strings.php3
+%%TWIG%%/lib/strings/russian.strings.php3
+%%TWIG%%/lib/strings/russianwin.strings.php3
+%%TWIG%%/lib/strings/spanish.strings.php3
+%%TWIG%%/lib/strings/swedish.strings.php3
+%%TWIG%%/lib/strings/test.strings.php3
+%%TWIG%%/lib/strings/turkish.strings.php3
+%%TWIG%%/test.php3
+@dirrm %%TWIG%%/config
+@dirrm %%TWIG%%/features/admin/help/english
+@dirrm %%TWIG%%/features/admin/help/french
+@dirrm %%TWIG%%/features/admin/help/spanish
+@dirrm %%TWIG%%/features/admin/help
+@dirrm %%TWIG%%/features/admin/modules
+@dirrm %%TWIG%%/features/admin/strings
+@dirrm %%TWIG%%/features/admin
+@dirrm %%TWIG%%/features/main/help/english
+@dirrm %%TWIG%%/features/main/help/french
+@dirrm %%TWIG%%/features/bookmarks/strings
+@dirrm %%TWIG%%/features/bookmarks
+@dirrm %%TWIG%%/features/contacts/help/english
+@dirrm %%TWIG%%/features/contacts/help/french
+@dirrm %%TWIG%%/features/contacts/help/spanish
+@dirrm %%TWIG%%/features/contacts/help
+@dirrm %%TWIG%%/features/contacts/import.defs
+@dirrm %%TWIG%%/features/contacts/strings
+@dirrm %%TWIG%%/features/contacts
+@dirrm %%TWIG%%/features/groups/strings
+@dirrm %%TWIG%%/features/groups
+@dirrm %%TWIG%%/features/help/help/english
+@dirrm %%TWIG%%/features/help/help/portuguese
+@dirrm %%TWIG%%/features/help/help/spanish
+@dirrm %%TWIG%%/features/help/help
+@dirrm %%TWIG%%/features/help/strings
+@dirrm %%TWIG%%/features/help
+@dirrm %%TWIG%%/features/logout/help/english
+@dirrm %%TWIG%%/features/logout/help/spanish
+@dirrm %%TWIG%%/features/logout/help
+@dirrm %%TWIG%%/features/logout/strings
+@dirrm %%TWIG%%/features/logout
+@dirrm %%TWIG%%/features/mail/help/english
+@dirrm %%TWIG%%/features/mail/help/french
+@dirrm %%TWIG%%/features/mail/help/portuguese
+@dirrm %%TWIG%%/features/mail/help/spanish
+@dirrm %%TWIG%%/features/mail/help
+@dirrm %%TWIG%%/features/mail/strings
+@dirrm %%TWIG%%/features/mail
+@dirrm %%TWIG%%/features/main/help/spanish
+@dirrm %%TWIG%%/features/main/help
+@dirrm %%TWIG%%/features/main/modules
+@dirrm %%TWIG%%/features/main/strings
+@dirrm %%TWIG%%/features/main
+@dirrm %%TWIG%%/features/meetings/help/english
+@dirrm %%TWIG%%/features/meetings/help/spanish
+@dirrm %%TWIG%%/features/meetings/help
+@dirrm %%TWIG%%/features/meetings/strings
+@dirrm %%TWIG%%/features/meetings
+@dirrm %%TWIG%%/features/news/help/english
+@dirrm %%TWIG%%/features/news/help/spanish
+@dirrm %%TWIG%%/features/news/help
+@dirrm %%TWIG%%/features/news/strings
+@dirrm %%TWIG%%/features/news
+@dirrm %%TWIG%%/features/notes/strings
+@dirrm %%TWIG%%/features/notes
+@dirrm %%TWIG%%/features/prefs/modules
+@dirrm %%TWIG%%/features/prefs/strings
+@dirrm %%TWIG%%/features/prefs
+@dirrm %%TWIG%%/features/schedule/strings
+@dirrm %%TWIG%%/features/schedule
+@dirrm %%TWIG%%/features/search/help/english
+@dirrm %%TWIG%%/features/search/help
+@dirrm %%TWIG%%/features/search/modules
+@dirrm %%TWIG%%/features/search/strings
+@dirrm %%TWIG%%/features/search
+@dirrm %%TWIG%%/features/shared
+@dirrm %%TWIG%%/features/todo/help/english
+@dirrm %%TWIG%%/features/todo/help/spanish
+@dirrm %%TWIG%%/features/todo/help
+@dirrm %%TWIG%%/features/todo/strings
+@dirrm %%TWIG%%/features/todo
+@dirrm %%TWIG%%/features
+@dirrm %%TWIG%%/images/menus/news/english
+@dirrm %%TWIG%%/images/menus/news/german
+@dirrm %%TWIG%%/images/menus/news/italian
+@dirrm %%TWIG%%/images/menus/news
+@dirrm %%TWIG%%/images/menus/contacts/english
+@dirrm %%TWIG%%/images/menus/contacts/german
+@dirrm %%TWIG%%/images/menus/contacts/italian
+@dirrm %%TWIG%%/images/menus/contacts
+@dirrm %%TWIG%%/images/menus/groups/english
+@dirrm %%TWIG%%/images/menus/groups/german
+@dirrm %%TWIG%%/images/menus/groups/italian
+@dirrm %%TWIG%%/images/menus/groups
+@dirrm %%TWIG%%/images/menus/mail/english
+@dirrm %%TWIG%%/images/menus/mail/german
+@dirrm %%TWIG%%/images/menus/mail/italian
+@dirrm %%TWIG%%/images/menus/mail
+@dirrm %%TWIG%%/images/menus/meetings/english
+@dirrm %%TWIG%%/images/menus/meetings/german
+@dirrm %%TWIG%%/images/menus/meetings/italian
+@dirrm %%TWIG%%/images/menus/meetings
+@dirrm %%TWIG%%/images/menus/bookmarks/english
+@dirrm %%TWIG%%/images/menus/bookmarks/german
+@dirrm %%TWIG%%/images/menus/bookmarks/italian
+@dirrm %%TWIG%%/images/menus/bookmarks
+@dirrm %%TWIG%%/images/menus/notes/english
+@dirrm %%TWIG%%/images/menus/notes/german
+@dirrm %%TWIG%%/images/menus/notes/italian
+@dirrm %%TWIG%%/images/menus/notes
+@dirrm %%TWIG%%/images/menus/primary/german
+@dirrm %%TWIG%%/images/menus/primary/chinesebig5
+@dirrm %%TWIG%%/images/menus/primary/chinesegb
+@dirrm %%TWIG%%/images/menus/primary/czech
+@dirrm %%TWIG%%/images/menus/primary/danish
+@dirrm %%TWIG%%/images/menus/primary/english
+@dirrm %%TWIG%%/images/menus/primary/estonian
+@dirrm %%TWIG%%/images/menus/primary/french
+@dirrm %%TWIG%%/images/menus/primary/italian
+@dirrm %%TWIG%%/images/menus/primary/portuguese
+@dirrm %%TWIG%%/images/menus/primary/russian
+@dirrm %%TWIG%%/images/menus/primary/russianwin
+@dirrm %%TWIG%%/images/menus/primary/spanish
+@dirrm %%TWIG%%/images/menus/primary/swedish
+@dirrm %%TWIG%%/images/menus/primary/test
+@dirrm %%TWIG%%/images/menus/primary
+@dirrm %%TWIG%%/images/menus/schedule/english
+@dirrm %%TWIG%%/images/menus/schedule/german
+@dirrm %%TWIG%%/images/menus/schedule/italian
+@dirrm %%TWIG%%/images/menus/schedule
+@dirrm %%TWIG%%/images/menus/todo/english
+@dirrm %%TWIG%%/images/menus/todo/german
+@dirrm %%TWIG%%/images/menus/todo/italian
+@dirrm %%TWIG%%/images/menus/todo
+@dirrm %%TWIG%%/images/menus-nt/news
+@dirrm %%TWIG%%/images/menus-nt/contacts
+@dirrm %%TWIG%%/images/menus-nt/groups
+@dirrm %%TWIG%%/images/menus-nt/mail
+@dirrm %%TWIG%%/images/menus-nt/meetings
+@dirrm %%TWIG%%/images/menus-nt/bookmarks
+@dirrm %%TWIG%%/images/menus-nt/notes
+@dirrm %%TWIG%%/images/menus-nt/primary
+@dirrm %%TWIG%%/images/menus-nt/schedule
+@dirrm %%TWIG%%/images/menus-nt/todo
+@dirrm %%TWIG%%/images/menus-nt
+@dirrm %%TWIG%%/images/menus
+@dirrm %%TWIG%%/images
+@dirrm %%TWIG%%/lib/auth
+@dirrm %%TWIG%%/lib/db/sqltxt/dbf
+@dirrm %%TWIG%%/lib/db/sqltxt
+@dirrm %%TWIG%%/lib/db
+@dirrm %%TWIG%%/lib/groups/none
+@dirrm %%TWIG%%/lib/groups/personal
+@dirrm %%TWIG%%/lib/groups/standard
+@dirrm %%TWIG%%/lib/groups/userperms
+@dirrm %%TWIG%%/lib/groups
+@dirrm %%TWIG%%/lib/login
+@dirrm %%TWIG%%/lib/mail
+@dirrm %%TWIG%%/lib/prevnext
+@dirrm %%TWIG%%/lib/security
+@dirrm %%TWIG%%/lib/session
+@dirrm %%TWIG%%/lib/strings
+@dirrm %%TWIG%%/lib
+@dirrm %%TWIG%%
