@@ -4,12 +4,14 @@
 # Date created:			  Mon June 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.3 1997/07/10 03:03:57 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/04 20:47:58 obrien Exp $
 #
 
 DISTNAME=	icmpinfo-1.11
 CATEGORIES=	net sysutils
-MASTER_SITES=	ftp://hplyot.obspm.fr/net/
+MASTER_SITES=	ftp://hplyot.obspm.fr/net/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/network/admin
 
 MAINTAINER=     obrien@NUXI.com
 
