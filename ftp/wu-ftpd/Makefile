@@ -9,9 +9,15 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=	2.6.1
-PORTREVISION=   4
+PORTREVISION=   5
 CATEGORIES=	ftp
+DIST_SUBDIR=    wu-ftpd
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
+PATCH_SITES=    ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.1/
+PATCHFILES=     missing_format_strings.patch \
+		nlst-shows-dirs.patch \
+		pasv-port-allow-correction.patch
+PATCH_DIST_STRIP= -S + -p0
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -19,7 +25,7 @@ MAN1=		ftpcount.1 ftpwho.1
 MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5
 MAN8=		ftpd.8 ftpshut.8 ftprestart.8 privatepw.8
 
-pre-patch:
+post-patch:
 	@${CP} ${WRKSRC}/config.h.noac ${WRKSRC}/config.h
 	@${CP} ${WRKSRC}/src/pathnames.h.noac ${WRKSRC}/src/pathnames.h
 

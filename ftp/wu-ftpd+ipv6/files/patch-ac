@@ -1,5 +1,5 @@
 *** src/pathnames.h.orig	Wed Oct 20 20:27:34 1999
---- src/pathnames.h	Wed Oct 20 20:30:19 1999
+--- src/pathnames.h.noac	Wed Oct 20 20:30:19 1999
 ***************
 *** 104,113 ****
   #define _PATH_FTPSERVERS "/opt/ftpd/lib/ftpservers"

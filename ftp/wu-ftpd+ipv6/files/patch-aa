@@ -1,5 +1,5 @@
---- src/ftpd.c.orig	Sat Jul  1 22:17:39 2000
-+++ src/ftpd.c	Sat Sep 29 22:49:41 2001
+--- src/ftpd.c.orig	Tue Oct  2 22:21:17 2001
++++ src/ftpd.c	Tue Oct  2 22:21:17 2001
 @@ -447,7 +447,6 @@
  #ifdef OPIE
  #include <opie.h>
@@ -57,15 +57,6 @@
  	}
  #else
  	reply(331, "Password required for %s.", name);
-@@ -2572,7 +2568,7 @@
- #ifdef BSD_AUTH
- 	if (ext_auth) {
- 	    if ((salt = check_auth(the_user, passwd))) {
--		reply(530, salt);
-+		reply(530, "%s", salt);
- #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
- 		syslog(LOG_INFO, "failed login from %s",
- 		       remoteident);
 @@ -2593,8 +2589,8 @@
  	    if (pw == NULL)
  		salt = "xx";
@@ -95,55 +86,3 @@
  #endif /* OPIE */
  #ifdef ULTRIX_AUTH
  	    if ((numfails = ultrix_check_pass(passwd, xpasswd)) >= 0) {
-@@ -6274,7 +6276,7 @@
- 	if (s) {
- 	    int i = ntohs(pasv_addr.sin_port);
- 	    sprintf(s, "PASV port %i assigned to %s", i, remoteident);
--	    syslog(LOG_DEBUG, s);
-+	    syslog(LOG_DEBUG, "%s", s);
- 	    free(s);
- 	}
-     }
-@@ -6289,7 +6291,7 @@
- 	char *s = calloc(128 + strlen(remoteident), sizeof(char));
- 	if (s) {
- 	    sprintf(s, "PASV port assignment assigned for %s", remoteident);
--	    syslog(LOG_DEBUG, s);
-+	    syslog(LOG_DEBUG, "%s", s);
- 	    free(s);
- 	}
-     }
-@@ -6435,7 +6437,7 @@
- 	dirlist = ftpglob(whichfiles);
- 	sdirlist = dirlist;	/* save to free later */
- 	if (globerr != NULL) {
--	    reply(550, globerr);
-+	    reply(550, "%s", globerr);
- 	    goto globfree;
- 	}
- 	else if (dirlist == NULL) {
-@@ -6486,7 +6488,6 @@
- 	    }
- 	    goto globfree;
- 	}
--	if ((st.st_mode & S_IFMT) != S_IFDIR) {
- 	    if (dout == NULL) {
- 		dout = dataconn("file list", (off_t) - 1, "w");
- 		if (dout == NULL)
-@@ -6509,7 +6510,6 @@
- 		byte_count_out++;
- 	    }
- #endif
--	}
-     }
- 
-     if (dout != NULL) {
-@@ -7274,7 +7274,7 @@
-     int which;
-     struct aclmember *entry = NULL;
-     (void) acl_getclass(class);
--    while (getaclentry("port-allow", &entry)) {
-+    while (getaclentry("pasv-allow", &entry)) {
- 	if ((ARG0 != NULL) && (strcasecmp(class, ARG0) == 0))
- 	    for (which = 1; (which < MAXARGS) && (ARG[which] != NULL); which++) {
- 		if (hostmatch(ARG[which], remoteaddr, NULL))
