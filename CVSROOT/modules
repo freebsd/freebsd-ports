@@ -4760,6 +4760,7 @@ nroff		src/contrib/groff/nroff
 ns		ports/net/ns
 nsc		ports/net/nsc
 nscache		ports/www/nscache
+nsd		ports/net/nsd
 nsf		ports/misc/nsf
 nslint		ports/net/nslint
 nslookup	src/usr.sbin/nslookup
