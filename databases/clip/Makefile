@@ -32,7 +32,8 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
-		wget:${PORTSDIR}/ftp/wget
+		wget:${PORTSDIR}/ftp/wget			\
+		xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		png.5:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
