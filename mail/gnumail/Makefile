@@ -8,7 +8,8 @@
 PORTNAME=	gnumail
 PORTVERSION=	1.0.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.collaboration-world.com/gnumail/
+MASTER_SITES=	http://www.collaboration-world.com/gnumail/ \
+		http://extrovert.screwdriver.net/~extra/
 DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
