@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.3.7
-PORTREVISION=	2
+PORTVERSION=	1.6.4.1
+PORTREVISION=	0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
+MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
+		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/ \
 		ftp://ftp.uu.net/pub/security/sudo/
-DISTNAME=	${PORTNAME}-1.6.3p7
+DISTNAME=	${PORTNAME}-1.6.4p1
 
 MAINTAINER=	mharo@FreeBSD.org
 
