@@ -3,14 +3,15 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.4 1996/11/15 23:31:01 obrien Exp $
+# $Id: Makefile,v 1.5 1996/11/18 10:34:54 asami Exp $
 #
 
-DISTNAME=       spice3f4
+DISTNAME=       sp3f4.kit
 PKGNAME=	spice-3f4
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/circuits
+MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
+EXTRACT_SUFX=   .tar.Z
+WRKSRC=		${WRKDIR}
 
 #PATCH_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/3f4patches
 #PATCHFILES=	grid.patch newcoms.patch spsmp.patch
@@ -19,6 +20,9 @@ MASTER_SITE_SUBDIR=	apps/circuits
 MAINTAINER=	kaveman@magna.com.au
 
 RESTRICTED=	"export restrictions"
+MAN1=		sconvert.1 nutmeg.1 spice.1
+MAN3=		mfb.3
+MAN5=		mfbcap.5
 
 post-install:
 	chmod a+rx ${PREFIX}/bin/spice3 ${PREFIX}/bin/nutmeg \
@@ -28,8 +32,5 @@ post-install:
 	    ${PREFIX}/bin/sconvert ${PREFIX}/bin/help ${PREFIX}/bin/proc2mod \
 	    ${PREFIX}/bin/multidec
 	chmod -R a+rX ${PREFIX}/share/spice
-	chmod a+rx ${PREFIX}/man/man5/mfbcap.5.gz \
-	    ${PREFIX}/man/man1/sconvert.1.gz ${PREFIX}/man/man1/nutmeg.1.gz \
-	    ${PREFIX}/man/man1/spice.1.gz ${PREFIX}/man/man3/mfb.3.gz
 
 .include <bsd.port.mk>
