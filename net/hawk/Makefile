@@ -18,6 +18,8 @@ RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
 		safe_mysqld:${PORTSDIR}/databases/mysql40-server \
 		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask
 
+BROKEN=		"Broken dependency"
+
 do-patch:
 	@${SED} -e 's#dirname.*"/hawk#"${PREFIX}/etc/hawk/daemon#' \
 		${WRKSRC}/daemon/hawk > ${WRKSRC}/daemon/hawk.sed
