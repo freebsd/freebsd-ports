@@ -11,6 +11,9 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR		= $(INSTALL_ROOT)$(mandir)
+@@ -103,1 +103,1 @@
+-CFLAGS			= @CFLAGS@
++CFLAGS			?= @CFLAGS@
 @@ -197,7 +199,7 @@
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
