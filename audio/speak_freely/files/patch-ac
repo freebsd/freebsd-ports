@@ -1,0 +1,14 @@
+*** mike.c.orig	Tue Apr 23 14:45:52 1996
+--- mike.c	Fri Oct 25 19:11:15 1996
+***************
+*** 687,692 ****
+--- 687,695 ----
+  		    (sb->buffer.buffer_len > 16)) {
+  		    pktlen += sizeof(sb->sendinghost);
+  		}
++ 		/* must stay in network order for debugging output */
++ 		sb->compression = htonl(sb->compression);
++ 		sb->buffer.buffer_len = htonl(sb->buffer.buffer_len);
+  	    }
+  	}
+      }
