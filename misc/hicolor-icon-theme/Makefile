@@ -7,7 +7,9 @@
 PORTNAME=	hicolor-icon-theme
 PORTVERSION=	0.5
 CATEGORIES=	misc gnome
-MASTER_SITES=	http://www.freedesktop.org/Software/icon-theme/releases/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.freedesktop.org/Software/icon-theme/releases/
+MASTER_SITE_SUBDIR=	kwm
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A high-color icon theme shell from the FreeDesktop project
