@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.9
+PORTVERSION=	5.1.10
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	Xbae.8:${PORTSDIR}/x11-toolkits/xbae 	\
+LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		netcdf.1:${PORTSDIR}/math/netcdf	\
 		fftw.2:${PORTSDIR}/math/fftw		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
