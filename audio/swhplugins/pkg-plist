@@ -12,11 +12,12 @@ lib/ladspa/chebstortion_1430.so
 lib/ladspa/comb_1190.so
 lib/ladspa/comb_1887.so
 lib/ladspa/comb_splitter_1411.so
+lib/ladspa/const_1909.so
 lib/ladspa/crossover_dist_1404.so
 lib/ladspa/dc_remove_1207.so
+lib/ladspa/decay_1886.so
 lib/ladspa/decimator_1202.so
 lib/ladspa/declip_1195.so
-lib/ladspa/decay_1886.so
 lib/ladspa/delay_1898.so
 lib/ladspa/delayorama_1402.so
 lib/ladspa/diode_1185.so
@@ -47,7 +48,9 @@ lib/ladspa/inv_1429.so
 lib/ladspa/karaoke_1409.so
 lib/ladspa/lcr_delay_1436.so
 lib/ladspa/lookahead_limiter_1435.so
+lib/ladspa/lookahead_limiter_const_1906.so
 lib/ladspa/lowpass_iir_1891.so
+lib/ladspa/ls_filter_1908.so
 lib/ladspa/matrix_ms_st_1421.so
 lib/ladspa/matrix_spatialiser_1422.so
 lib/ladspa/matrix_st_ms_1420.so
@@ -59,6 +62,7 @@ lib/ladspa/phasers_1217.so
 lib/ladspa/pitch_scale_1193.so
 lib/ladspa/pitch_scale_1194.so
 lib/ladspa/plate_1423.so
+lib/ladspa/pointer_cast_1910.so
 lib/ladspa/rate_shifter_1417.so
 lib/ladspa/retro_flange_1208.so
 lib/ladspa/revdelay_1605.so
@@ -89,6 +93,7 @@ lib/ladspa/wave_terrain_1412.so
 lib/ladspa/zm1_1428.so
 share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
+share/ladspa/rdf/swh-scales.rdf
 %%NLS%%share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
 @unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
 @unexec rmdir %D/share/ladspa 2>/dev/null || true
