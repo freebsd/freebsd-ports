@@ -3,13 +3,13 @@
 # Date created:		25 Dec 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.5 1998/10/07 06:11:41 asami Exp $
+# $Id: Makefile,v 1.6 1998/12/01 03:06:05 asami Exp $
 #
 
 MASTERDIR=	${.CURDIR}/../../misc/magicpoint
 COMMENT=	${.CURDIR}/pkg/COMMENT
 
-LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 PKGNAME=	ja-magicpoint-1.04a
 
