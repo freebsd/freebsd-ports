@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.3 1997/05/21 07:35:05 asami Exp $
+# $Id: Makefile,v 1.4 1997/06/21 12:02:29 ache Exp $
 #
 
     SUBDIR += btoa
+    SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Convert-UU
     SUBDIR += p5-MIME-Base64
