@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pydance
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.icculus.org/pyddr/ \
-		http://http.us.debian.org/debian/pool/main/p/pydance/:source
-DISTFILES=	${PORTNAME}_${PORTVERSION}-2.tar.gz:source ${SONGS}
+MASTER_SITES=	http://www.icculus.org/pyddr/
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
 DIST_SUBDIR=	pydance
-EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}-2.tar.gz
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	freebsd-dr@durchnull.de
 COMMENT=	Dancing simulation game similar to the kind in arcades
@@ -28,7 +27,7 @@ USE_REINPLACE=	yes
 
 .if !defined(WITHOUT_PYDANCE_SONGS)
 PLIST_SUB=	SONGS=""
-SONGS=		0forkbomb.ogg 0forkbomb.step 6jan.ogg 6jan.dance 6jan-banner.png synrg.ogg synrg.dance synrg-bg.png
+SONGS=		forkbomb.ogg forkbomb.dance forkbomb-bg.jpg forkbomb-banner.png 6jan.ogg 6jan.dance 6jan-bg.jpg 6jan-banner.png synrg.ogg synrg.dance synrg-bg.png pydance-cdtitle.png
 .else
 PLIST_SUB=	SONGS="@comment "
 SONGS=
@@ -57,6 +56,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} pydance.posix.cfg ${PREFIX}/etc/pydance.cfg.sample
 .if !defined(WITHOUT_PYDANCE_SONGS)
 	for SONG in ${SONGS}; do ${INSTALL_DATA} ${_DISTDIR}/$$SONG ${PREFIX}/share/games/pydance/songs; done
+	${MV} ${PREFIX}/share/games/pydance/songs/pydance-cdtitle.png ${PREFIX}/share/games/pydance/songs/pydance.png
 .endif
 
 pre-install:
