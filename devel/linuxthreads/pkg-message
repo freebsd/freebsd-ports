@@ -1,0 +1,19 @@
+
+
+NOTES:  This package is intended to run on FreeBSD 4.0-current or
+FreeBSD 3.X, with sources more recent than March 1, 1999.
+
+This package does not currently work on an SMP machine. It also only
+works on i386 architectures.
+
+Compile your applications that use Linux Threads with the following
+command line options:
+
+	-D_THREAD_SAFE -DLINUXTHREADS -lpthread
+or (equivalently):
+	-D_THREAD_SAFE -DLINUXTHREADS -kthread
+
+DO NOT use libc_r with Linux Threads, and do not compile/link with
+the -pthread option (which pulls in libc_r).  DO link with libc
+(which you will get by default).
+

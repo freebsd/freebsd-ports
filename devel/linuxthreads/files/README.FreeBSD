@@ -1,0 +1,101 @@
+Some brief notes:
+
+1) Consider updating your FreeBSD source to 3.X after January 27,
+1999 or to 4.0-current after January 25, 1999.  If you insist on
+using older source, be sure it is at least 3.0-current after
+January 12, 1999.
+
+If you are using older source:
+
+You must have compiled your kernel/world with the option
+COMPAT_LINUX_THREADS.  Optionally, you can also have compiled
+with the option VM_STACK.  This package will not run properly
+without COMPAT_LINUX_THREADS.  If you have not done so, add
+-DCOMPAT_LINUX_THREADS to the CFLAGS, and also to COPTFLAGS in
+your /etc/make.conf file (optionally add -DVM_STACK also), and
+do a "make world" and remake and reinstall the kernel.
+
+If you are using new source:
+
+Everything is included by default for i386 systems.
+
+2) You should consider enabling the posix priority extensions
+in your kernel.  Adding the following to your kernel config
+file before you execute config and before you remake the kernel
+should suffice.
+
+options		"P1003_1B"
+options		"_KPOSIX_PRIORITY_SCHEDULING"
+options		"_KPOSIX_VERSION=199309L"
+
+These options are not manditory.
+
+3) If you plan on having lots of threads, check the sysctl value
+of kern.maxproc.  Each kernel thread counts against maxproc.  You
+can increase maxproc by changing the MAXUSERS value in your kernel
+config file.  maxproc is set at 20 + 16 * MAXUSERS.
+
+4)  This package does not currently work on a normal SMP machine,
+since the flags needed for the rfork function are not enabled.
+More work needs to be done on the kernel.  However, if wish
+to try it, take a look at http://www.freebsd.org/~luoqi/pmap.diff .
+
+5) DO NOT link with the libc_r library (by default you won't). 
+Don't use the option -pthread when compiling/linking.  It pulls
+in libc_r.  
+
+6) Compile your applications that use Linux Threads with either of
+the following (equivalent) command line options:
+
+	-D_THREAD_SAFE -DLINUXTHREADS -lpthread
+or:
+	-D_THREAD_SAFE -DLINUXTHREADS -kthread 
+
+
+7) You should link with the normal FreeBSD libc directory (by
+default you will).  Be aware of the following issues:
+
+	a) Not all libc calls are thread safe.  Many are.
+	In particular gmtime, localtime, etc are not thread
+	safe. In general, where the pthreads spec calls for "_r"
+	functions, these are either not provided, or if provided
+	are not thread safe (in most cases)  and the related 
+	libc calls are not thread safe.  This differs somewhat
+	from the FreeBSD libc_r library, where some, but not
+	all, of these functions are both thread safe and have
+	"_r" versions.
+
+	b) None of the libc calls that are supposed to be
+	cancellation points are implemented as such.  There
+	is a lot of work that needs to be done on libc before
+	cancellation points will work correctly.  Therefore,
+	while linux threads has the cancel functions implemented,
+	deferred cancellation will not really do anything, since
+	the co-operation needed from libc is not there.
+
+8) There is a call implemented for FreeBSD (see stack.c):
+ 
+int _pthread_setstackspacing(size_t spacing, size_t guardsize)
+
+By default, Linux Threads spaces thread stacks 2MB apart, and
+makes each thread stack an "autogrow" stack.  If you know that
+your maximum stack for any thread can be less than that, you
+can decrease the spacing by calling this function.  It must
+be called before any other pthreads function calls, and it
+will only succeed the first time its called.  Note that the
+pthread TLS and the guardsize will be included in the spacing.
+ie. maximum stack size = spacing - TLSpagesize - guardsize.
+
+The spacing must be a power of 2 times the pagesize (and if its
+not, it will be rounded up to the next highest value that is).
+
+9) If you want to link your ports or other programs that use
+GNU configure with pthreads, check the documentation of the
+program.  If the configure file hasn't been customized too
+much for FreeBSD libc_r, and if it explicitly supports posix
+threads, then something like the following works in a 
+number of cases (exact details may vary case to case):
+
+CFLAGS="-DLINUXTHREADS -D_THREAD_SAFE" ./configure --with-threads=posix
+
+10) Read file README.

@@ -1,0 +1,11 @@
+lib/liblthread.a
+lib/liblthread_p.a
+lib/liblthread.so
+lib/liblthread.so.0
+include/pthread/linuxthreads/pthread.h
+include/pthread/linuxthreads/pthread_rw.h
+include/pthread/linuxthreads/pthread_stack.h
+@exec /sbin/ldconfig -m %D/lib
+@dirrm include/pthread/linuxthreads
+@dirrm include/pthread
+@unexec /sbin/ldconfig -R
