@@ -50,7 +50,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 
 .if !defined(WITH_APACHE2)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
-		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 .endif
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
