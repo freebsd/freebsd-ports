@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/x11-toolkits/py-wxPython24/files/Attic/patch-ad,v 1.1 2002-01-21 02:19:46 sobomax Exp $
 
 --- contrib/stc/contrib/src/stc/scintilla/src/PosRegExp.cxx	2001/11/27 12:10:53	1.1
 +++ contrib/stc/contrib/src/stc/scintilla/src/PosRegExp.cxx	2001/11/27 12:12:05
