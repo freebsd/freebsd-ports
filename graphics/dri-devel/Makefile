@@ -29,11 +29,8 @@ DRILIST=	gamma/gamma_dri.so i810/i810_dri.so i830/i830_dri.so \
 
 ONLY_FOR_ARCHS=	alpha i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
 BROKEN=		"Broken pkg-plist"
-.endif
+DEPRECATED=	"Will be removed after April 7 if still broken"
 
 do-configure:
 	@${RM} -f  ${WRKSRC}/config/cf/version.def
@@ -55,4 +52,4 @@ do-install:
 		${PREFIX}/lib/modules/dri
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
