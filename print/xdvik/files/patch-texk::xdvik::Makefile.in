@@ -1,0 +1,10 @@
+--- texk/xdvik/Makefile.in.orig	Sat May 15 01:15:17 2004
++++ texk/xdvik/Makefile.in	Sat May 15 01:15:39 2004
+@@ -137,7 +137,6 @@
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) 
+ 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(texmf)/xdvi/pixmaps
+ 	$(INSTALL_DATA) $(srcdir)/$(manpage).1 $(mandir)/$(manpage).$(manext)
+-	$(INSTALL_DATA) $(srcdir)/texmf/XDvi $(texmf)/xdvi/XDvi
+ 	$(INSTALL_DATA) $(srcdir)/pixmaps/toolbar.xpm $(srcdir)/pixmaps/toolbar2.xpm $(texmf)/xdvi/pixmaps
+ 	if \
+ 	    grep 'original xdvi.cfg --' $(texmf)/xdvi/xdvi.cfg >/dev/null 2>&1 \
