@@ -3,7 +3,7 @@
 # Date created:        5 March 1997
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:51 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/21 22:15:59 steve Exp $
 #
 
 DISTNAME=	SlingShot2.1
@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	giffunip@asme.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+
+BROKEN_ELF=	yes
 
 WRKSRC=		$(WRKDIR)/sspkg2.1
 USE_X_PREFIX=	yes
