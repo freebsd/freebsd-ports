@@ -7,6 +7,7 @@
 
 PORTNAME=	login.app
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://largo.windowmaker.org/files/Login.app/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -41,6 +42,11 @@ pre-configure:
 		${WRKSRC}/Themes/GNUstep/Makefile.in \
 		${WRKSRC}/Themes/Drone/Makefile.in \
 		${WRKSRC}/Themes/Drone/Makefile.am \
+		${WRKSRC}/src/Makefile.in \
+		${WRKSRC}/src/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|-lWUtil|-lWUtil -lintl|' \
+		${WRKSRC}/configure \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/src/Makefile.am
 
