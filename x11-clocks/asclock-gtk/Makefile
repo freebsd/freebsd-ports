@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
-DISTNAME=	${PKGNAME}beta
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	New flavor of asclock (GTK version)
