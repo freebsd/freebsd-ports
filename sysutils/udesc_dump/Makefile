@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	udesc_dump
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.jp.freebsd.org/~gehenna/src/
 
