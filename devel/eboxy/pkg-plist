@@ -2,7 +2,7 @@ bin/eboxy
 include/eboxy/eboxyplugin.h
 include/eboxy/pluginconstants.h
 include/eboxy/plugintypes.h
-lib/eboxy/simplemusic.so
+lib/eboxy/filebrowser.so
 lib/libeboxyplugin.a
 share/eboxy/eboxy.dtd
 @dirrm share/eboxy
