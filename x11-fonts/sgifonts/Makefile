@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
