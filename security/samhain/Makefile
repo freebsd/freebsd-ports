@@ -17,7 +17,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.8.11
+PORTVERSION=	1.8.12
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
@@ -35,10 +35,6 @@ OPTIONS=	KCHECK "Enable rogue KLD detection" off \
 		SERVER "Build as Yule network server" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not build on FreeBSD >= 5.x"
-.endif
 
 .if defined(WITH_GPG)
 BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
@@ -116,7 +112,7 @@ pre-everything::
 .if !defined(WITHOUT_KCHECK)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Building with kernel checking requires reading /dev/kmem"
-	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit 
+	@${ECHO_MSG} "and /dev/mem. If you're not building as root, please hit"
 	@${ECHO_MSG} "Control-C and restart the build as root."
 	@${ECHO_MSG}
 .endif
