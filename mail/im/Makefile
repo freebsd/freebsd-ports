@@ -1,25 +1,26 @@
 # New ports collection makefile for: IM
-# Version required:	100
+# Version required:	130
 # Date created:		13 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	im-100
+DISTNAME=	im-130
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 USE_PERL5=	yes
-
+USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libdir=${PREFIX}/etc
 # If you use RPOP instead of APOP, comment out following line.
 #CONFIGURE_ARGS+=--enable-rpop
+MAKE_ARGS=	prefix=${PREFIX} imlibdir=${PREFIX}/etc/im
 
 PORTDOCDIR=	${PREFIX}/share/doc/im
 SAMPLEDIR=	${PREFIX}/share/examples/im

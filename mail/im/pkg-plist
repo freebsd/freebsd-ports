@@ -1,9 +1,12 @@
 bin/imali
 bin/imcat
 bin/imcd
+bin/imclean
 bin/imget
 bin/imgrep
 bin/imhist
+bin/imhsync
+bin/imjoin
 bin/imls
 bin/immv
 bin/impack
@@ -14,8 +17,6 @@ bin/imrm
 bin/imsetup
 bin/imsort
 bin/imstore
-bin/imclean
-bin/imjoin
 bin/imtar
 etc/im/SiteConfig
 @unexec if [ -f %B/SiteConfig.new ]; then rm -f %B/SiteConfig.new; fi
@@ -26,7 +27,7 @@ lib/IM/EncDec.pm
 lib/IM/File.pm
 lib/IM/Folder.pm
 lib/IM/GetPass.pm
-lib/IM/Header.pm
+lib/IM/Grep.pm
 lib/IM/History.pm
 lib/IM/Http.pm
 lib/IM/Imap.pm
@@ -44,15 +45,7 @@ lib/IM/Scan.pm
 lib/IM/Smtp.pm
 lib/IM/Stdio.pm
 lib/IM/TcpTransaction.pm
-lib/IM/Grep.pm
 lib/IM/Util.pm
-share/examples/im/Config
-share/examples/im/Petnames
-share/examples/im/get.sbr
-share/examples/im/password
-share/examples/im/scan.sbr
-share/examples/im/scan.sbr.sample1
-share/examples/im/scan.sbr.sample2
 share/doc/im/00changes
 share/doc/im/00copyright
 share/doc/im/00copyright.jis
@@ -76,6 +69,15 @@ share/doc/im/man/imsetup.jis
 share/doc/im/man/imsort.jis
 share/doc/im/man/imstore.jis
 share/doc/im/man/imtar.jis
+share/examples/im/Config
+share/examples/im/Petnames
+share/examples/im/get.sbr
+share/examples/im/getchk.sbr
+share/examples/im/getchk.sbr.postpet
+share/examples/im/password
+share/examples/im/scan.sbr
+share/examples/im/scan.sbr.sample1
+share/examples/im/scan.sbr.sample2
 @dirrm lib/IM
 @dirrm share/doc/im/man
 @dirrm share/doc/im
