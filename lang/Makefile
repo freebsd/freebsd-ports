@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.123 1999/01/21 18:22:23 ejc Exp $
+# $Id: Makefile,v 1.124 1999/01/25 06:10:06 asami Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -44,6 +44,7 @@
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += logo
+    SUBDIR += m3gdb
     SUBDIR += mawk
     SUBDIR += mit-scheme
     SUBDIR += mixal
