@@ -209,6 +209,7 @@
     SUBDIR += libunicode
     SUBDIR += libusb
     SUBDIR += libuta
+    SUBDIR += libvanessa_adt
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libxalloc
