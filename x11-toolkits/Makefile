@@ -5,6 +5,7 @@
     SUBDIR += Motif-dummy
     SUBDIR += Xaw3d
     SUBDIR += blt
+    SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += fltk
     SUBDIR += fox
