@@ -1,4 +1,4 @@
---- ump/UnixShell.c.orig.1	Thu Nov 15 20:47:15 2001
+--- ump/UnixShell.c.orig	Thu Nov 15 20:47:15 2001
 +++ ump/UnixShell.c	Thu Nov 15 20:50:37 2001
 @@ -38,7 +38,7 @@
  /*
@@ -9,6 +9,28 @@
  #include <X11/Xlib.h>                            /* Xlib */
  #include <X11/Intrinsic.h>                       /* Xt */
  #include <X11/StringDefs.h>                      /* "callback" */
+--- ump/UnixShell.c.orig	Fri Feb 15 02:42:28 2002
++++ ump/UnixShell.c	Fri Feb 15 02:42:48 2002
+@@ -144,8 +144,8 @@
+ 	int argc = 0;
+ 
+ 	argv[argc++] = "timidity";
+-#ifdef AU_ALSA
+-	argv[argc++] = "-Os";
++#ifdef AU_ESD
++	argv[argc++] = "-Oe";
+ #else
+ 	argv[argc++] = "-Od";
+ #endif
+@@ -151,7 +151,7 @@
+ #endif
+ 
+ 	if(timid_ump_rate <= 0)
+-		argv[argc++] = eightKFlag ? "-s8000": "-s22050"; /* check if the user specified 8K rate */
++		argv[argc++] = eightKFlag ? "-s8000": "-s44100"; /* check if the user specified 8K rate */
+ 	else
+ 	{
+ 	  sprintf(opt_rate, "-s%d", timid_ump_rate);
 @@ -230,7 +230,7 @@
    int loop; /* 0 means play only once, non-zero means loop forever */
    

@@ -1,0 +1,10 @@
+--- timidity/Makefile.in.orig	Fri Jan 18 07:43:16 2002
++++ timidity/Makefile.in	Fri Feb 15 03:08:51 2002
+@@ -291,6 +291,7 @@
+ @ENABLE_W32GUI_TRUE@	$(top_builddir)/utils/libutils.a \
+ @ENABLE_W32GUI_TRUE@	$(top_builddir)/interface/w32g_res.res
+ @ENABLE_W32GUI_FALSE@timidity_DEPENDENCIES = \
++@ENABLE_W32GUI_FALSE@	$(SYSEXTRAS:.c=.o) \
+ @ENABLE_W32GUI_FALSE@	$(top_builddir)/interface/libinterface.a \
+ @ENABLE_W32GUI_FALSE@	$(top_builddir)/libarc/libarc.a \
+ @ENABLE_W32GUI_FALSE@	$(top_builddir)/libunimod/libunimod.a \
