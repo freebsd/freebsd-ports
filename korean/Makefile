@@ -12,6 +12,7 @@
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += ftghostscript5
+    SUBDIR += ftghostscript55
     SUBDIR += gau
     SUBDIR += gtk10
     SUBDIR += gtkcomm
