@@ -8,7 +8,7 @@ export BATCH=t
 export NO_RESTRICTED=t
 #export FOR_CDROM=t
 export USA_RESIDENT=YES
-export FORCE_PKG_REGISTER=t
+#export FORCE_PKG_REGISTER=t
 #export FORCE_PACKAGE=t
 export PARALLEL_PACKAGE_BUILD=t
 export PACKAGE_BUILDING=t
@@ -46,13 +46,13 @@ fi
 case ${branch} in
   4*)
     export OSREL=4.0
-    export OSVERSION=400003
+    export OSVERSION=400009
     export PORTOBJFORMAT=elf
     ;;
   3*)
-    export OSREL=3.2
-    export OSVERSION=320000
-    export PORTOBJFORMAT=elf
+#    export OSREL=3.3
+#    export OSVERSION=330000
+#    export PORTOBJFORMAT=elf
     ;;
   *)
     export OSREL=2.2.8
@@ -111,21 +111,23 @@ echo "building ${pkgname} on $(hostname -s)" | tee ${chroot}/tmp/${pkgname}.log
 echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
 echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
-  >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
-  >/dev/null 2>&1
-mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
-  >/dev/null 2>&1
-
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
 mount -o -2 -r ${master}:${buildroot}/usr/ports ${chroot}/a/ports
 ln -sf ../a/ports ${chroot}/usr/ports
 
+mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
+
 mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
 mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
+
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.var.dist -p ${chroot}/var \
+  >/dev/null 2>&1
+mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.usr.dist -p ${chroot}/usr \
+  >/dev/null 2>&1
 
 # just in case...
 for dir in ${cleandirs}; do
@@ -134,6 +136,13 @@ for dir in ${cleandirs}; do
     rm -rf ${chroot}${dir} >/dev/null 2>&1
   fi
 done
+
+rm -rf /var/db/pkg/*
+
+chroot ${chroot} /sbin/ldconfig -R
+chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/aout
+chroot ${chroot} /sbin/ldconfig -aout -m /usr/lib/compat/aout
+chroot ${chroot} /sbin/ldconfig -aout -R
 
 while [ $# -gt 0 ]; do
   if ssh -a ${master} [ -f ${packages}/All/$1 ]; then
@@ -182,6 +191,8 @@ if [ $noclean = 0 -o $error = 0 ]; then
     fi
   done
   chroot ${chroot} /sbin/ldconfig -R
+  chroot ${chroot} /sbin/ldconfig -aout -R
+  rm -rf /var/db/pkg/*
   rm ${chroot}/used/${pkgname}
   rmdir ${chroot}/used
 fi
