@@ -20,6 +20,28 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/ZopePageTemplate.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/PageTemplate_Edit.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/metal-define-macro.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/metal-define-slot.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/metal-fill-slot.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/metal-use-macro.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/metal.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-attributes.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-condition.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-content.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-define.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-omit-tag.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-on-error.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-repeat.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal-replace.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tal.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-exists.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-nocall.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-not.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-path.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-python.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales-string.stx
+%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help/tales.stx
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/batch.py
@@ -214,6 +236,7 @@
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Batch.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Batch.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/CHANGES.txt
+%%ZOPEBASEDIR%%/lib/python/ZTUtils/HISTORY.txt
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Iterator.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/Iterator.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/SimpleTree.py
@@ -243,4 +266,5 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates
