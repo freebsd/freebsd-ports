@@ -1,0 +1,14 @@
+This package contains the set of ukrainian fonts for X11 Release 6.
+Copyright (C) 1995 Victor Forsyuk <victor@gu.net>
+
+This set is based on so-called "Cronyx" font set, that was copyrighted
+by Cronyx Ltd.: Copyright (C) 1994-1995 Cronyx Ltd.
+
+Under no circumstances is the author responsible for the proper
+functioning of this software, nor does the author assume any
+responsibility for damages incurred with its use.
+
+This port also creates  two aliases for each of the  fonts -- for koi8-r
+encoding (koi8-u is a superset of koi8-r anyway) and for cronyx foundry.
+Some applications (gtk?) look for -cronyx-*- and/or *-koi8-r explicitly,
+but there is no reason why this fonts can not be used in those cases.
