@@ -32,7 +32,9 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::AAAA.3 Net::DNS::RR::EID.3 Net::DNS::RR::LOC.3 \
 		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 \
 		Net::DNS::RR::NIMLOC.3 Net::DNS::RR::NSAP.3 \
-		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3
+		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3 \
+		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
+		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3
 
 post-install:
 .if !defined(NOPORTDOCS)
