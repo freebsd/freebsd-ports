@@ -1,6 +1,6 @@
---- configure.orig	Mon Jun 10 20:46:18 2002
-+++ configure	Mon Jun 10 20:48:32 2002
-@@ -469,19 +469,10 @@
+--- configure.orig	Mon Aug  5 19:23:22 2002
++++ configure	Wed Aug  7 12:47:05 2002
+@@ -480,19 +480,10 @@
  
  # Try to find the available options for the current CPU
  if x86 || ppc; then
@@ -20,7 +20,18 @@
  
    pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
    pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
-@@ -1485,13 +1476,7 @@
+@@ -1246,8 +1237,8 @@
+     ;;
+ 
+   *)
+-    echo "Unknown parameter: $ac_option"
+-    exit
++    echo -n "Unknown parameter: $ac_option"
++    echo " (ignoring)"
+     ;;
+ 
+   esac
+@@ -1588,13 +1579,7 @@
  
  
  echocheck "memalign()"
@@ -34,7 +45,7 @@
  if test "$_memalign" = yes ; then
   _def_memalign='#define HAVE_MEMALIGN 1'
  else
-@@ -1568,31 +1553,7 @@
+@@ -1671,31 +1656,7 @@
  
  
  echocheck "pthread"
@@ -57,47 +68,48 @@
 -    elif ( cc_check -pthread ) ; then
 -     _ld_pthread='-pthread'
 -    else
--      die "Static lib pthread not found. (needed by windows and networking stuff)"
+-      die "Static lib pthread not found (needed by Windows and networking stufff)."
 -    fi
 -  else
--    die "Lib pthread not found. (needed by windows and networking stuff)"
+-    die "Lib pthread not found (needed by Windows and networking stuff)."
 -  fi
 -fi
 +_ld_pthread="${PTHREAD_LIBS}"
  echores "yes (using $_ld_pthread)"
  
  
-@@ -3219,11 +3180,7 @@
+@@ -3413,11 +3374,7 @@
  
  echocheck "iconv"
  if test "$_iconv" = auto ; then
 -  if freebsd ; then
 -    _iconv_tmp='#include <giconv.h>'
 -  else
-     _iconv_tmp='#include <iconv.h>'
+-    _iconv_tmp='#include <iconv.h>'
 -  fi
++   _iconv_tmp='#include <iconv.h>'
    cat > $TMPC << EOF
  #include <stdio.h>
  #include <unistd.h>
-@@ -3257,7 +3214,7 @@
+@@ -3451,7 +3408,7 @@
  EOF
    _iconv=no
    if freebsd ; then
 -    cc_check  -lm -lgiconv && _iconv=yes
 +    cc_check  -lm -liconv && _iconv=yes
-   elif bsdos ; then
+   elif bsdos || openbsd ; then
      cc_check  -lm -liconv && _iconv=yes
    else
-@@ -3266,7 +3223,7 @@
+@@ -3460,7 +3417,7 @@
  fi
  if test "$_iconv" = yes ; then
    _def_iconv='#define USE_ICONV 1'
 -  freebsd && _ld_iconv='-lgiconv'
 +  freebsd && _ld_iconv='-liconv'
    bsdos && _ld_iconv='-liconv'
+   openbsd && _ld_iconv='-liconv'
  else
-   _def_iconv='#undef USE_ICONV'
-@@ -3733,7 +3690,7 @@
+@@ -3979,7 +3936,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es

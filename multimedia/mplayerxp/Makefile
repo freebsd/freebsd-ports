@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	0.90.0.5
-PORTREVISION=	1
+PORTVERSION=	0.90.0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -17,7 +16,7 @@ MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp2.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-0.90pre5
+DISTNAME=	MPlayer-0.90pre6
 
 MAINTAINER=	riggs@rrr.de
 
@@ -41,9 +40,9 @@ MLINKS=		mplayer.1 mencoder.1
 MANCOMPRESSED=	no
 
 CONFFILES=	codecs.conf example.conf input.conf
-DOCFILES=       DVB bugreports.html cd-dvd.html codecs-in.html \
+DOCFILES=       bugreports.html cd-dvd.html codecs-in.html \
 		codecs.html documentation.html faq.html skin-en.html \
-		encoding.html formats.html sound.html tech/tech-eng.txt \
+		encoding.html formats.html sound.html \
 		users_against_developers.html \
 		video.html
 
@@ -59,6 +58,10 @@ WITH_SVGALIB=	yes
 
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.4)
 WITH_SDL=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libvorbis.so.2)
+WITH_VORBIS=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libjpeg.so.9)
