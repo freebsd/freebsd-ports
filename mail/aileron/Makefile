@@ -15,6 +15,8 @@ DISTNAME=	Aileron-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WINGs mail client
 
+BROKEN=		"Does not build with new version of windowmaker"
+
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 BUILD_DEPENDS=	${X11BASE}/bin/get-wings-flags:${PORTSDIR}/x11-wm/windowmaker
 
