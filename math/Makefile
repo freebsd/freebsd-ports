@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yacas
 
     SUBDIR += GiNaC
     SUBDIR += PDL
