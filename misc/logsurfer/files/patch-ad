@@ -1,0 +1,10 @@
+--- src/readcf.c.orig	Fri Feb 16 07:45:31 1996
++++ src/readcf.c	Fri May 28 14:28:07 1999
+@@ -112,6 +112,7 @@
+ 		(void) fprintf(stderr, "memory problems reading configfile\n");
+ 		return(1);
+ 	}
++	buffer[0]='\0';
+ 	/* dito for one complete configline */
+ 	cfline_size=1024;
+ 	if ( (cfline=(char *)malloc(cfline_size)) == NULL ) {

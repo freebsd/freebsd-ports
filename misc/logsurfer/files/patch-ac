@@ -1,0 +1,10 @@
+--- src/logsurfer.c.orig	Mon Apr  8 10:15:53 1996
++++ src/logsurfer.c	Fri May 28 14:28:06 1999
+@@ -382,6 +382,7 @@
+ 		(void) fprintf(stderr, "unable to allocate memory for logline_buffer\n");
+ 		exit(99);
+ 	}
++	logline_buffer[0]='\0';
+ 
+ 	while ( (opt = getopt(argc, argv, "fc:d:l:p:r:s")) != EOF )
+ 		switch(opt) {
