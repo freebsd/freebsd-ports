@@ -4,7 +4,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1997/08/13 23:29:52 jmz Exp $
+# $Id: Makefile,v 1.22 1997/12/16 19:05:59 ache Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -12,6 +12,9 @@ PKGNAME=	ispell-3.1.20
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 DISTFILES=	ispell-3.1.20.tar.gz
+
+PATCH_SITES=    ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
+PATCHFILES=     ispell-html-mode.patch
 
 MAINTAINER=	jmz@FreeBSD.org
 
