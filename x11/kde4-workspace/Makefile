@@ -30,6 +30,26 @@ CONFIGURE_ARGS+=--with-xdmdir=${X11BASE}/lib/X11/xdm \
 		--disable-closure
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/include/Xm/Xm.h)
+WITH_MOTIF=	yes
+.endif
+
+.if defined(WITH_MOTIF) && ${WITH_MOTIF} == yes
+USE_MOTIF=	yes
+PLIST_SUB+=	MOTIF=""
+.else
+PLIST_SUB+=	MOTIF="@comment "
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Motif support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_MOTIF=yes\""
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Motif is used for Netscape plugin compatibility."
+	@${ECHO_MSG}
+.endif
+
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
@@ -43,4 +63,4 @@ pre-configure:
 post-configure:
 	${PERL} -pi -e "s@444@644@g" ${WRKSRC}/kdesktop/init/Templates/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
