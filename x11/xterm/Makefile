@@ -7,7 +7,7 @@
 
 PORTNAME=	xterm
 PORTVERSION=	196
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		http://voodoo.oberon.net/download/
@@ -26,5 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
 
 MAN1=		resize.1 xterm.1
+
+post-install:
+	@${CHMOD} 4711 ${PREFIX}/bin/xterm-static
 
 .include <bsd.port.mk>
