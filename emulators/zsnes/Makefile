@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	zsnes
-PORTVERSION=	1.337
+PORTVERSION=	1.35
+PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,14 +16,12 @@ DISTNAME=	zsnes${PORTVERSION:S/.//}src
 MAINTAINER=	stijn@win.tue.nl
 
 # This must be >= 0.98!
-BUILD_DEPENDS=	nasm-0.98:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm-0.98.33:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-q -a
 
 MAN1=		zsnes.1
 
@@ -32,12 +31,9 @@ ONLY_FOR_ARCHS=	i386
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 
-WRKSRC=		${WRKDIR}/zsnes/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 GNU_CONFIGURE=	yes
-ALL_TARGET=	
-
-pre-configure:
-		cd ${WRKSRC} && chmod +x configure
+ALL_TARGET=	ALL
 
 .include <bsd.port.mk>
