@@ -9,7 +9,7 @@
  MKDIR = mkdir -p
  INSTALL = install -c
 -CFLAGS = -Wall -O2 -fomit-frame-pointer
-+CFLAGS += -Wall -O2 -fomit-frame-pointer
++CFLAGS?= -Wall -O2 -fomit-frame-pointer
  # You may use OpenSSL's MD5 routines instead of the ones supplied here
  #CFLAGS += -DHAVE_OPENSSL
  LDFLAGS = -s
