@@ -13,6 +13,7 @@ DISTNAME=	tintin++v1.83
 
 MAINTAINER=	jhp@cocoja.holywar.net
 
+NO_LATEST_LINK=	yes
 WRKSRC=         ${WRKDIR}/tintin++/src
 GNU_CONFIGURE=	yes
 
