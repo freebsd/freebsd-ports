@@ -1,5 +1,5 @@
 --- config.mk.orig	Sun Mar 23 00:08:58 2003
-+++ config.mk	Sun May 18 12:02:44 2003
++++ config.mk	Sat Oct 25 21:05:31 2003
 @@ -34,7 +34,7 @@
  # You can add -DNDEBUG to speed up a release build by removing the assert() 
  # calls.  But, on a really obscure Linux machine, this caused Xlib to blow up 
@@ -20,12 +20,14 @@
  		archit=$$HOSTTYPE ; \
  	elif [ $${hosttype-bob} != bob ] ; then \
  		archit=$$hosttype ; \
-@@ -162,7 +164,7 @@
+@@ -161,8 +163,8 @@
+ # The -DMSEC_PER_CLOCK=8 is kind of a hack, take it out if the game speed of 
  # XEvil is all screwed up.
  freebsd:
- 	@$(MAKE) CC="c++" \
+-	@$(MAKE) CC="c++" \
 -CFLAGS="-DUSE_RANDOM -DPROTECTED_IS_PUBLIC -DMSEC_PER_CLOCK=8 -DUNAME_USR_BIN" \
-+CFLAGS="-DUSE_RANDOM -DUSE_UINT_NET_LENGTH -DUNAME_USR_BIN ${CFLAGS}" \
++	@$(MAKE) CC="${CXX}" \
++CFLAGS="-DUSE_RANDOM -DUSE_UINT_NET_LENGTH -DUNAME_USR_BIN ${CXXFLAGS}" \
  INCL_DIRS="-I/usr/X11R6/include" LIBS_DIRS="-L/usr/X11R6/lib" \
  OBJ_DIR=$(DEPTH)/x11/FREEBSD PCKG_NAME="freebsd" \
  LIBS="-lXpm -lX11 -lm" $(TARGETS)

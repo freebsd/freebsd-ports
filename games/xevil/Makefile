@@ -17,6 +17,9 @@ COMMENT=	A fast-action, networked, anti-social, kill-everything game
 USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKEFILE=	makefile
 ALL_TARGET=	freebsd
 
 .include <bsd.port.pre.mk>
@@ -26,26 +29,19 @@ ALL_TARGET=	freebsd
 CFLAGS+="-DXEVIL_KEYSET=UIalpha"
 .endif
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 pre-extract:
 	@${MKDIR} ${WRKDIR}/${DISTNAME}
 
 do-extract:
 	@unzip -aqo ${DISTDIR}/${DISTFILES} -d ${WRKSRC}
 
-post-extract:
-	@${MV} -f ${WRKDIR}/${DISTNAME}/makefile ${WRKDIR}/${DISTNAME}/Makefile
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/x11/FREEBSD/xevil ${PREFIX}/bin/xevil
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/xevil/instructions
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/xevil
-	${INSTALL_DATA} ${WRKSRC}/instructions/* \
-	${PREFIX}/share/doc/xevil/instructions
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/instructions
+	${INSTALL_DATA} ${WRKSRC}/instructions/* ${DOCSDIR}/instructions
 .endif
 
 .include <bsd.port.post.mk>

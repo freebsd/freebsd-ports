@@ -1,10 +1,10 @@
 bin/xevil
-share/doc/xevil/instructions/UNIXSetControls.gif
-share/doc/xevil/instructions/UNIXShowControls.gif
-share/doc/xevil/instructions/UNIXmenu.gif
-share/doc/xevil/instructions/instructions.html
-share/doc/xevil/instructions/keysdlg.gif
-share/doc/xevil/instructions/optionsdlg.gif
-share/doc/xevil/readme.txt
-@dirrm share/doc/xevil/instructions
-@dirrm share/doc/xevil
+%%PORTDOCS%%%%DOCSDIR%%/instructions/UNIXSetControls.gif
+%%PORTDOCS%%%%DOCSDIR%%/instructions/UNIXShowControls.gif
+%%PORTDOCS%%%%DOCSDIR%%/instructions/UNIXmenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/instructions/instructions.html
+%%PORTDOCS%%%%DOCSDIR%%/instructions/keysdlg.gif
+%%PORTDOCS%%%%DOCSDIR%%/instructions/optionsdlg.gif
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/instructions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
