@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+CONFLICTS=	walker-1.*
+
 MAN1=	walker.1
 
 do-install:

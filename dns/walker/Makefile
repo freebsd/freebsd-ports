@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind9
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
+CONFLICTS=	dnssecwalker-2.*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,`dig,`${LOCALBASE}/bin/dig,g' ${WRKSRC}/walker
 
