@@ -1,3 +1,0 @@
-bin/XF98_GANBWAP.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF98_GANBWAP ] && /bin/ln -fs %B/XF98_GANBWAP %B/X) || /bin/rm -f %B/X
