@@ -18,9 +18,10 @@ DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 NO_BUILD=	yes
-PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
+PLIST=		${WRKDIR}/pkg-plist_${DOCFORMAT}
 
 DOCDIR=		${PREFIX}/share/doc/${PYTHON_VERSION}
+PLIST_DIFF=	${FILESDIR}/plist-${DOCFORMAT}-${PORTVERSION}.diff
 
 DOCFORMAT?=	html
 
@@ -35,6 +36,12 @@ DOCFORMAT?=	html
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
+
+pre-install:
+	@${CP} ${PKGDIR}/pkg-plist_${DOCFORMAT} ${WRKDIR}
+	@if [ -f ${PLIST_DIFF} ]; then \
+		cd ${WRKDIR} && patch -p --quiet < ${PLIST_DIFF}; \
+	fi
 
 do-install:
 .if !defined(NOPORTDOCS)
