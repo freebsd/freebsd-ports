@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	esvn
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	devel
 MASTER_SITES=	http://esvn.umputun.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
 MAINTAINER=	az@inec.ru
 COMMENT=	GUI frontend for the Subversion revision system
