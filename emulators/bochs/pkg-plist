@@ -11,5 +11,7 @@ share/doc/bochs/Minix.html
 share/doc/bochs/OldWindows95.html
 share/doc/bochs/Windows31.html
 share/doc/bochs/Windows95.html
+share/doc/bochs/changelog.html
+share/doc/bochs/debugger.html
 share/doc/bochs/features.html
 share/doc/bochs/mtools.html
