@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.3
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -51,7 +51,7 @@ XD3D_LANG=	FRANCAIS
 XD3D_LANG=	ENGLISH
 .endif
 
-DOCS=		BUGS FAQ INSTALL README Manuals/formats.txt	\
+DOCS=		BUGS CHANGELOG FAQ INSTALL README Manuals/formats.txt	\
 		Manuals/xd3d_doc.pdf Manuals/xgraphic_doc.pdf
 
 .include <bsd.port.pre.mk>
