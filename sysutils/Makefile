@@ -197,6 +197,7 @@
     SUBDIR += pciutils
     SUBDIR += pdumpfs
     SUBDIR += pear-File
+    SUBDIR += pear-File_Find
     SUBDIR += pear-Log
     SUBDIR += penv
     SUBDIR += perf
