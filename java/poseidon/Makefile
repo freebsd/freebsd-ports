@@ -6,41 +6,38 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	2.6.0
+PORTVERSION=	3.0.1
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.gentleware.org/ \
 		http://download.gentleware.org/ \
 		ftp://download.gentleware.biz/ \
 		http://download.gentleware.biz/ \
 		ftp://ftp.beine-computer.de/pub/distfiles/
-DISTNAME=	${PORTNAME}${EDI}-${PORTVERSION}
+DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}.01
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
 
+WRKSRC=		${WRKDIR}/${PORTNAME}${EDITION}-${PORTVERSION}
+
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"Redistribution is not permitted"
 NO_CDROM=	${NO_PACKAGE}
 RESTRICTED=	${NO_PACKAGE}
 
-.for edition in SE PE
-. if defined(POSEIDON_${edition})
-EDI=	${edition}
-. endif
-.endfor
-.if !defined(EDI)
-EDI=	CE
+EDITION=	CE
+.if defined(WITH_EDITION)
+EDITION=	${WITH_EDITION}
 .endif
-
 DATAFILES=	LICENSE.txt lib
-.if defined(POSEIDON_PE)
+.if ${EDITION} == "PE"
 DATAFILES+=	LICENSE-concurrent.txt
 .endif
-.if !defined(POSEIDON_SE) && !defined(POSEIDON_PE)
+.if ${EDITION} == "CE"
 DATAFILES+=	license-keys.txt
 .endif
 PLIST_FILES=	bin/poseidon %%DATADIR%%/bin/poseidon.sh
@@ -50,22 +47,22 @@ PORTDOCS=	*
 PLIST_FILES+=	%%DATADIR%%/docs %%DATADIR%%/examples
 .endif
 
+SUB_FILES=	poseidon.sh
+SUB_LIST=	JAVA_HOME="${JAVA_HOME}" EDITION="${EDITION}"
+
 pre-fetch:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "There is a free usable edition of Poseidon for UML,"
 	@${ECHO_MSG} "the Community Edition, which is installed by default."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you like to install the Standard Edition or the Professional Edition"
-	@${ECHO_MSG} "please specify POSEIDON_SE=yes for the Standard Edition"
-	@${ECHO_MSG} "or POSEIDON_PE=yes for the Professional Edition."
+	@${ECHO_MSG} "please specify WITH_EDITION=SE for the Standard Edition"
+	@${ECHO_MSG} "or WITH_EDITION=PE for the Professional Edition."
 	@${ECHO_MSG}
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,%%JAVA_HOME%%,${JAVA_HOME}," ${WRKSRC}/bin/poseidon.sh
 
 do-install:
 	${MKDIR} ${DATADIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/poseidon.sh ${DATADIR}/bin/
+	${INSTALL_SCRIPT} ${WRKDIR}/poseidon.sh ${DATADIR}/bin/
 	${LN} -s ${DATADIR}/bin/poseidon.sh ${PREFIX}/bin/poseidon
 	cd ${WRKSRC}/ \
 	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
