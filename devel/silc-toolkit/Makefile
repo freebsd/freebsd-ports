@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.11
-PORTREVISION=	1
+PORTVERSION=	0.9.12
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -91,6 +90,7 @@ post-patch:
 	@${PERL} -pi -e 's/example_silcd.conf \\\n//' ${WRKSRC}/doc/Makefile.in
 	@${PERL} -pi -e 's/--libtool-enable-shared//' \
 		${WRKSRC}/lib/silccrypt/Makefile.in
+	@${RM} -f ${WRKSRC}/tutorial/mybot/mybot.c.\~1.5.\~
 
 .include <bsd.port.pre.mk>
 
