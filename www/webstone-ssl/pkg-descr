@@ -1,0 +1,20 @@
+WebStone is free benchmarking tool for web servers available from
+Mindcraft. The version available here has been SSL enabled, so secure
+web servers can be benchmarked using our version. In addition to the
+default configuration parameters, the following can be specified:
+
+  1. SSL_VERSION: SSLv2, SSLv23 or SSLv3 (default SSLv3)
+
+  2. SSL_CIPHER(SSL preferred cipher): use ssl ciphers specified in
+     ssl[2,3].h, e.g RC4-SHA, IDEA-CBC-SHA, DH-DSS-DES-CBC3-SHA
+     (default EDH-RSA-DES-CBC3-SHA). Specifying an SSLv2 cipher in
+     SSLv3 mode won't work (and vice versa)
+
+  3. SSL_CACHE_MODE(client cache mode): ON, OFF (default OFF) 
+
+  4. SSL_MIX(percentage HTTPS connections, remaining connections are
+     filled in with HTTP connections): 0.0-1.0 (default 1.0)
+
+  5. HTTPS_PORT: port (default 8443) 
+
+WWW: http://crypto.stanford.edu/~nagendra/projects/WebStone/

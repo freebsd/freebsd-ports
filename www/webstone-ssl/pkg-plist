@@ -1,0 +1,55 @@
+webstone-ssl/bin/WebStone-common.pl
+webstone-ssl/bin/WebStone-filelist.wpl
+webstone-ssl/bin/WebStone-help.wpl
+webstone-ssl/bin/WebStone-manage.wpl
+webstone-ssl/bin/WebStone-run.wpl
+webstone-ssl/bin/WebStone-testbed.wpl
+webstone-ssl/bin/checkfilelist
+webstone-ssl/bin/genfiles
+webstone-ssl/bin/genfiles-from-filelist.sh
+webstone-ssl/bin/genfiles.pl
+webstone-ssl/bin/genrand
+webstone-ssl/bin/gui-configure
+webstone-ssl/bin/killbench
+webstone-ssl/bin/killbench.wpl
+webstone-ssl/bin/mine-logs.wpl
+webstone-ssl/bin/move-filelist.wpl
+webstone-ssl/bin/move-runs.wpl
+webstone-ssl/bin/runbench
+webstone-ssl/bin/runbench.pl
+webstone-ssl/bin/runbench.wpl
+webstone-ssl/bin/tabs2html
+webstone-ssl/bin/view-results.wpl
+webstone-ssl/bin/webclient
+webstone-ssl/bin/webmaster
+webstone-ssl/bin/webstone-gui.pl
+webstone-ssl/bin/write-testbed.wpl
+webstone-ssl/bin/ws-utils.pl
+webstone-ssl/bin/wscollect
+webstone-ssl/bin/wscollect.pl
+webstone-ssl/conf/README
+webstone-ssl/conf/filelist
+webstone-ssl/conf/filelist-dyn-cgi-ws20
+webstone-ssl/conf/filelist-dyn-cgi-ws20-win
+webstone-ssl/conf/filelist-dyn-cgi-ws25
+webstone-ssl/conf/filelist-dyn-cgi-ws25-win
+webstone-ssl/conf/filelist-dyn-ws20-iis
+webstone-ssl/conf/filelist-dyn-ws20-ns
+webstone-ssl/conf/filelist-dyn-ws25-iis
+webstone-ssl/conf/filelist-dyn-ws25-ns
+webstone-ssl/conf/filelist.homepage
+webstone-ssl/conf/filelist.manyfiles
+webstone-ssl/conf/filelist.standard
+webstone-ssl/conf/fileset
+webstone-ssl/conf/paths.pl
+webstone-ssl/conf/testbed
+webstone-ssl/conf/testbed.nt
+webstone-ssl/conf/testbed.orig
+webstone-ssl/lgm/keepme
+webstone-ssl/lgm/ws20_cgi
+webstone-ssl/lgm/ws25_cgi
+webstone-ssl/webstone
+@dirrm webstone-ssl/bin
+@dirrm webstone-ssl/conf
+@dirrm webstone-ssl/lgm
+@dirrm webstone-ssl
