@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.9
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://savannah.nongnu.org/download/gotmail/stable.pkg/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
