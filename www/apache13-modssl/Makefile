@@ -22,8 +22,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${MODSSL_FILE} \
 		${MODACCEL_FILE} ${MODDEFLATE_FILE}
 
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
-PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/
-PATCHFILES+=	apache-1.3.29modssl-v6-20031204.diff.gz
+PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/ ${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	dinoex
+PATCHFILES+=	apache-1.3.31modssl-v6-20040514.diff.gz
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -35,8 +36,8 @@ PATCH_DEPENDS=	${BUILD_DEPENDS}
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		apache_fp-1.* caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.* w3c-httpd-3.*
-VERSION_APACHE=	1.3.29
-VERSION_MODSSL=	2.8.16
+VERSION_APACHE=	1.3.31
+VERSION_MODSSL=	2.8.17
 VERSION_MODSNMP=	1.3.14.12
 VERSION_MODACCEL=	1.0.31
 VERSION_MODDEFLATE=	1.0.20
@@ -60,7 +61,14 @@ DATADIR=	${PREFIX}/www
 DOCSDIR=	${PREFIX}/share/doc/apache
 DOCUMENT_ROOT=	${DATADIR}/data
 
-.if !exist(${PREFIX}/etc/rc.d/apache.sh && !defined(WITHOUT_RC_SUBR)
+.if exists(${LOCALBASE}/include/fnmatch.h)
+check-depends::
+	@${ECHO_CMD} "Dependency error, please do: pkg_delete " \
+		`pkg_info -W ${LOCALBASE}/include/fnmatch.h`
+	@${FALSE}
+.endif
+
+.if !exists(${PREFIX}/etc/rc.d/apache.sh) && !defined(WITHOUT_RC_SUBR)
 USE_RC_SUBR=	yes
 PLIST_FILES+=	etc/rc.d/apache.sh
 .else
@@ -169,7 +177,7 @@ PLIST_FILES+=	%%DOCSDIR%%/mod/mod_snmp.html \
 		%%DOCSDIR%%/snmp_agt/rfc2594.txt \
 		%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt \
 		%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
-PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt %%DOCSDIR%% www/buckets
+PLIST_DIRS+=	%%DOCSDIR%%/snmp_agt %%DOCSDIR%% www/buckets www
 .else
 CONFLICTS+=	apache+mod_snmp*-1.*
 .endif
@@ -240,8 +248,6 @@ CONFIGURE_ARGS+=	--enable-rule=INET6
 PLIST_SUB+=	WITHIPV6=""
 PLIST_FILES+=	include/apache/sa_len.h \
 		include/apache/sockaddr_storage.h
-.else
-EXTRA_PATCHES+=	${FILESDIR}/mod_access.c.patch
 .endif
 
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
@@ -314,8 +320,6 @@ pre-fetch:
 	@${ECHO_MSG} "				This setting activates build of mod_deflate."
 	@${ECHO_MSG} "				[default is no]"
 	@${ECHO_MSG} ""
-
-post-extract:
 
 post-extract:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
