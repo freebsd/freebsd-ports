@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/17 11:10:08 ache Exp $
+# $Id: Makefile,v 1.2 1996/11/18 05:20:10 asami Exp $
 #
 
 DISTNAME=       timidity-0.2i
@@ -29,6 +29,6 @@ do-configure:
 
 post-install:
 	cd ${PREFIX}/lib/timidity/patch && \
-	unzip -q -L ${DISTDIR}${TIINS}
+	unzip -o -q -L ${DISTDIR}/${TIINS}
 
 .include <bsd.port.mk>
