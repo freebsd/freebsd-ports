@@ -11,7 +11,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ponomarew@oberon.net
 COMMENT=	A sound editor for the GNOME/GTK 1.2 desktop
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
