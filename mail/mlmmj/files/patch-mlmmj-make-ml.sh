@@ -13,10 +13,10 @@
  echo "$OWNER" > "$LISTDIR"/"control/owner"
  
 -echo -n "The path to texts for the list? (listtexts/ dir in the src) [] : "
-+echo -n "The path to texts for the list? (listtexts/ dir in the src) [$PREFIX/share/mlmmj/listtexts] : "
++echo -n "The path to texts for the list? (listtexts/ dir in the src) [$PREFIX/share/mlmmj/text.skel] : "
  read TEXTPATH
 +if [ -z "$TEXTPATH" ]; then
-+	TEXTPATH="$PREFIX/share/mlmmj/listtexts"
++	TEXTPATH="$PREFIX/share/mlmmj/text.skel"
 +fi
  if [ -z "$TEXTPATH" -o ! -d "$TEXTPATH" ]; then
  	echo "**NOTE** Could not copy the texts for the list"
