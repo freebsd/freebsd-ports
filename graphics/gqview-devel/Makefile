@@ -7,26 +7,32 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION= 1.3.1
+PORTVERSION=	1.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMESUFFIX= -devel
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER= cthulhu@cthulhu.ru
-COMMENT= Another gtk2-based graphic file viewer
-
-LIB_DEPENDS= png.5:${PORTSDIR}/graphics/png \
-			gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+MAINTAINER=	cthulhu@cthulhu.ru
+COMMENT=	Another gtk2-based graphic file viewer
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gtk20
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+.if !defined(WANT_GNOME) || defined(WITHOUT_GNOME)
+CONFIGURE_ARGS=	--disable-gnome
+.endif
 
 MAN1=		gqview.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g' \
+		${WRKSRC}/aclocal.m4
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
