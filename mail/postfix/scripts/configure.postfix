@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.46 2004-03-29 16:13:44 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix/scripts/Attic/configure.postfix,v 1.47 2004-05-12 09:08:16 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -34,7 +34,7 @@ MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" 
 PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
 PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
 PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
-OpenLDAP	"OpenLDAP map lookups (choose ver. with WANT_OPENLDAP_VER)" "$status_OpenLDAP" \
+OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
 2> $tempfile
 
@@ -108,8 +108,8 @@ while [ "$1" ]; do
 			echo "USE_OPENSSL=	yes"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.16-2.0.16-0.9.7b.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.16-2.0.16-0.9.7b/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.18-2.1.0-0.9.7d.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.18-2.1.0-0.9.7d/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls"
 			SUB_TLS=""
@@ -173,9 +173,6 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PATCH_SITES+=	http://mat.cc/postfix/"
-			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
-			echo "PATCH_DIST_STRIP= -p1"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		PgSQL73)
@@ -183,9 +180,6 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PATCH_SITES+=	http://mat.cc/postfix/"
-			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
-			echo "PATCH_DIST_STRIP= -p1"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		PgSQL72)
@@ -193,9 +187,6 @@ while [ "$1" ]; do
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/\${POSTGRESQL_PORT}"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PATCH_SITES+=	http://mat.cc/postfix/"
-			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
-			echo "PATCH_DIST_STRIP= -p1"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
 		OpenLDAP)
@@ -205,7 +196,8 @@ while [ "$1" ]; do
 			echo "OPENLDAP_SUFFIX=	+openldap"
 			;;
 		Test)
-			echo "BIN1=		smtp-sink smtp-source"
+			echo "BIN1=		smtp-sink smtp-source qmqp-source"
+#			echo "MAN1+=		smtp-sink.1 smtp-source.1 qmqp-sink.1 qmqp-source.1"
 			SUB_TEST=""
 			;;
 		IPv6)
@@ -215,7 +207,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.21-pf-2.0.18.patch.gz"
+			echo "PATCHFILES+=	ipv6-1.23-pf-2.1.0.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
@@ -233,7 +225,7 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.21-pf-2.0.18.patch.gz"
+			echo "PATCHFILES+=	tls+ipv6-1.23-pf-2.1.0.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
