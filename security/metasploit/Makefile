@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metasploit
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.metasploit.org/tools/
 DISTNAME=	framework-${PORTVERSION}
@@ -30,7 +30,7 @@ IGNORE=		"This port requires perl version 5.6.0 or higher."
 do-install:
 	${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/ ${DATADIR}
-.	for i in msfcli msfconsole msfdldebug msfencode msflogdump msfpayload msfpayload.cgi msfpescan msfupdate msfweb
+.	for i in msfcli msfconsole msfdldebug msfelfscan msfencode msflogdump msfpayload msfpayload.cgi msfpescan msfupdate msfweb
 		${LN} -s ${WRKSRC}/$i ${PREFIX}/bin/
 .	endfor
 
