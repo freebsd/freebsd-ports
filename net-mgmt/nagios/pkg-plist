@@ -1,9 +1,9 @@
 @exec mkdir -p %D/share/nagios/ssi
-@exec mkdir -p %D/var/nagios/archives
-@exec mkdir -p %D/var/nagios/rw
-@exec chmod 775 %D/var/nagios %D/var/nagios/archives %D/var/nagios/rw
-@exec chown nagios:nagios %D/var/nagios %D/var/nagios/archives
-@exec chown nagios:nogroup %D/var/nagios/rw
+@exec mkdir -p /var/spool/nagios/archives
+@exec mkdir -p /var/spool/nagios/rw
+@exec chmod 775 /var/spool/nagios /var/spool/nagios/archives /var/spool/nagios/rw
+@exec chown nagios:nagios /var/spool/nagios /var/spool/nagios/archives
+@exec chown nagios:nogroup /var/spool/nagios/rw
 bin/nagios
 etc/nagios/cgi.cfg-sample
 etc/nagios/checkcommands.cfg-sample
@@ -309,7 +309,6 @@ share/nagios/stylesheets/trends.css
 @dirrm share/nagios/ssi
 @dirrm share/nagios/stylesheets
 @dirrm share/nagios
-@unexec rmdir %D/var/nagios/archives 2>/dev/null || true
-@unexec rmdir %D/var/nagios/rw 2>/dev/null || true
-@unexec rmdir %D/var/nagios 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@unexec rmdir /var/spool/nagios/archives 2>/dev/null || true
+@unexec rmdir /var/spool/nagios/rw 2>/dev/null || true
+@unexec rmdir /var/spool/nagios 2>/dev/null || true
