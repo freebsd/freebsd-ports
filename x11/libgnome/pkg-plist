@@ -64,6 +64,7 @@ include/libgnome/gnome-fileconvert.h
 include/libgnome/gnome-help.h
 include/libgnome/gnome-history.h
 include/libgnome/gnome-i18n.h
+include/libgnome/gnome-magic.h
 include/libgnome/gnome-metadata.h
 include/libgnome/gnome-mime-info.h
 include/libgnome/gnome-mime.h
@@ -175,6 +176,10 @@ lib/libgnorba.a
 lib/libgnorba.la
 lib/libgnorba.so
 lib/libgnorba.so.1
+lib/libgnorbagtk.a
+lib/libgnorbagtk.la
+lib/libgnorbagtk.so
+lib/libgnorbagtk.so.0
 lib/libgtkxmhtml.a
 lib/libgtkxmhtml.la
 lib/libgtkxmhtml.so
@@ -187,6 +192,8 @@ lib/libzvt.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/gnomeConf.sh
 share/gnome/gtkrc
+share/gnome/gtkrc.ja
+share/gnome/gtkrc.ko
 share/gnome/idl/Table.idl
 share/gnome/idl/gnome-factory.idl
 share/gnome/idl/name-service.idl

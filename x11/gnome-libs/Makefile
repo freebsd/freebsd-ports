@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gnomelibs
-# Version required:    0.99.2
+# Version required:    0.99.3
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.23 1999/01/07 10:45:06 vanilla Exp $
+# $Id: Makefile,v 1.24 1999/01/12 16:50:35 vanilla Exp $
 #
 
-DISTNAME=	gnome-libs-0.99.2
-PKGNAME=	gnomelibs-0.99.2
+DISTNAME=	gnome-libs-0.99.3
+PKGNAME=	gnomelibs-0.99.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.geo.net/pub/gnome/sources/ \
@@ -18,7 +18,7 @@ MAINTAINER=	nacai@iname.com
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	gdk_imlib.1:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib \
 		gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
