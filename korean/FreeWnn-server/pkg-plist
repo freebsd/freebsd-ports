@@ -1,4 +1,4 @@
-@cwd %%LOCALBASE%%
+@cwd /usr/local
 etc/rc.d/kWnn.sh
 lib/wnn/cvt_key_empty
 lib/wnn/cvt_key_tbl
@@ -46,7 +46,7 @@ bin/kWnn4/kwnnkill
 bin/kWnn4/kwnnstat
 bin/kWnn4/kwnntouch
 @dirrm bin/kWnn4
-@cwd %%X11BASE%%
+@cwd /usr/X11R6
 lib/libkwnn.a
 include/kwnn/commonhd.h
 include/kwnn/cplib.h

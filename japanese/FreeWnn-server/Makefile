@@ -3,11 +3,11 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.16 1997/06/19 11:26:07 asami Exp $
+# $Id: Makefile,v 1.17 1997/09/10 06:51:52 asami Exp $
 #
 
 DISTNAME=	Wnn4.2
-PKGNAME?=	jp-Wnn-4.2
+PKGNAME?=	ja-Wnn-4.2
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
@@ -20,10 +20,9 @@ PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
 FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
 PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
 WRKSRC=		${WRKDIR}/Xsi
-IS_INTERACTIVE=	yes	# needs "wnn" user
 
-.if (${PKGNAME} == jp-Wnn-4.2)
-PORT_DOCDIR=	${PREFIX}/share/doc/jp-Wnn
+.if (${PKGNAME} == ja-Wnn-4.2)
+PORT_DOCDIR=	${PREFIX}/share/doc/ja-Wnn
 DOC_FROM=	${WRKSRC}/Wnn
 .elif (${PKGNAME} == cn-Wnn-4.2)
 PORT_DOCDIR=	${PREFIX}/share/doc/cn-Wnn
@@ -41,7 +40,7 @@ pre-patch:
 # Applying a patch for depending on language
 post-patch:
 	case ${PKGNAME} in \
-	  jp-Wnn-4.2) \
+	  ja-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-japanese;; \
 	  cn-Wnn-4.2) \
 		LANG_PATCH=${FILESDIR}/patch-for-chinese;; \
@@ -55,8 +54,8 @@ post-patch:
 pre-build:
 	for file in ${WRKSRC}/config/Project.tmpl \
 		${WRKSRC}/Contrib/dic/gerodic/Makefile; do \
-	  mv $$file $$file.orig2; \
-	  sed 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
+	  ${MV} $$file $$file.orig2; \
+	  ${SED} 's!^\([ ]*PREFIX = \).*$$!\1${PREFIX}!' \
 		$$file.orig2 > $$file; \
 	done
 
@@ -66,13 +65,14 @@ do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile.inst World)
 
 pre-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 post-install:
 # This package uses imake's "install.man" target to install man pages but
 #  I can't define USE_IMAKE because it doesn't involve xmkmf
 	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
 	${MKDIR} ${PORT_DOCDIR}

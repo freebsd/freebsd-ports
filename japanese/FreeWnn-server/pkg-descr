@@ -27,5 +27,11 @@ Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for Wnn4.2.
 Patches for those are in 'Wnn4.2.patch.tar.gz' and are applied in this
 port.
 
+[Notice]
+When compiling by this ports, if $LOCALBASE is not '/usr/local' and/or
+$X11BASE is not '/usr/X11R6' then you should properly change two lines
+'@cwd /usr/local' and '@cwd /usr/X11R6' in
+$PORTSDIR/japanese/Wnn/pkg/PLIST.
+
 -- S. Taoka
 <taoka@infonets.hiroshima-u.ac.jp>
