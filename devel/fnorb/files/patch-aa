@@ -1,4 +1,4 @@
-Allow the port to work with Python 2.0.  This should be fixed in the next
+Allow the port to work with Python 2.0+.  This should be fixed in the next
 release of Fnorb.  (Caveat:  There may be more broken calls.)
 
 Thanks to Mike Meyer <mwm@mired.org>, Brad Chapman <chapmanb@arches.uga.edu>.
