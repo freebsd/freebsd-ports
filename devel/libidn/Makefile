@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/${PORTNAME}/ \
@@ -44,7 +44,8 @@ MAN3=	idna_to_ascii_4i.3 idna_to_ascii_4z.3 idna_to_ascii_8z.3		\
 	stringprep_profile.3 stringprep_ucs4_nfkc_normalize.3 			\
 	stringprep_ucs4_to_utf8.3 stringprep_unichar_to_utf8.3			\
 	stringprep_utf8_nfkc_normalize.3 stringprep_utf8_to_locale.3		\
-	stringprep_utf8_to_ucs4.3 stringprep_utf8_to_unichar.3
+	stringprep_utf8_to_ucs4.3 stringprep_utf8_to_unichar.3			\
+	stringprep_4i.3 stringprep_4zi.3
 
 post-install:
 .if !defined(NOPORTDOCS)
