@@ -1,0 +1,29 @@
+bin/raki
+lib/kde3/kio_rapip.la
+lib/kde3/kio_rapip.so
+share/applnk/Utilities/raki.desktop
+share/doc/HTML/en/raki/index.cache.bz2
+share/doc/HTML/en/raki/index.docbook
+share/icons/hicolor/16x16/apps/raki.png
+share/icons/hicolor/16x16/apps/raki_bw.png
+share/icons/hicolor/16x16/apps/rapip.png
+share/icons/hicolor/16x16/apps/rapip_bw.png
+share/icons/hicolor/22x22/apps/raki.png
+share/icons/hicolor/22x22/apps/raki_bw.png
+share/icons/hicolor/22x22/apps/rapip.png
+share/icons/hicolor/22x22/apps/rapip_bw.png
+share/icons/hicolor/32x32/apps/raki.png
+share/icons/hicolor/32x32/apps/raki_bw.png
+share/icons/hicolor/32x32/apps/rapip.png
+share/icons/hicolor/32x32/apps/rapip_bw.png
+share/icons/hicolor/48x48/apps/raki.png
+share/icons/hicolor/48x48/apps/raki_bw.png
+share/icons/hicolor/48x48/apps/rapip.png
+share/icons/hicolor/48x48/apps/rapip_bw.png
+share/icons/hicolor/64x64/apps/raki.png
+share/icons/hicolor/64x64/apps/raki_bw.png
+share/icons/hicolor/64x64/apps/rapip.png
+share/icons/hicolor/64x64/apps/rapip_bw.png
+share/services/rapip.protocol
+@dirrm share/doc/HTML/en/raki/common
+@dirrm share/doc/HTML/en/raki

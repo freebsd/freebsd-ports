@@ -1,0 +1,6 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Rapip is a KIO-slave giving KDE users transparent access to the files and
+information on their Windows CE device as if it were a local folder. Raki
+is a tray application giving instant access to these functions.
+
+WWW: http://synce.sourceforge.net/
