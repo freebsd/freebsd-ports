@@ -21,6 +21,7 @@ cyrus/bin/imapd
 cyrus/bin/ipurge
 cyrus/bin/lmtpd
 cyrus/bin/master
+cyrus/bin/mbexamine
 cyrus/bin/mbpath
 cyrus/bin/mkimap
 cyrus/bin/notifyd
