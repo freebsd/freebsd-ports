@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.11 1996/06/26 23:06:49 gpalmer Exp $
+# $Id: Makefile,v 1.12 1996/11/18 11:44:14 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -23,6 +23,7 @@ SOURCEFILES=	Epistle,README,Imakefile,xfed.man \
 #MASTER_SITES=	ftp://me10.lbl.gov/pub/hp_X11R3_tape/source/app/
 SOURCESITE=	ftp://ftp.cs.orst.edu/pub/src/X11R4/contrib/clients/xfed/
 #EXTRACT_SUFX=	.tar.Z
+IGNOREFILES=	${DISTFILES}
 
 do-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi

@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.23 1996/11/17 08:45:11 obrien Exp $
+# $Id: Makefile,v 1.24 1996/11/18 14:12:23 asami Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -14,6 +14,7 @@ DISTFILES=	web2c-6.1.tar.gz web-6.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 
+IGNOREFILES=	${DISTFILES}
 EXTRACT_ONLY=	web2c-6.1.tar.gz web-6.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 MAN1=		bibtex.1 dvitype.1 gftodvi.1 gftopk.1 gftype.1 \

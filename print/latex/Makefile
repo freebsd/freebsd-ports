@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.22 1996/07/06 08:30:53 gpalmer Exp $
+# $Id: Makefile,v 1.24 1996/11/22 17:35:18 obrien Exp $
 #
 VERSION=	96.06
 DISTNAME=	latex
@@ -16,6 +16,8 @@ MAINTAINER=	jmz@FreeBSD.org
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
+
+IGNOREFILES=	${DISTFILES}
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN?=		ftp.tex.ac.uk
