@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.101 1998/02/04 14:05:52 itojun Exp $
+# $Id: Makefile,v 1.102 1998/02/23 20:07:09 steve Exp $
 #
 
     SUBDIR += Canna
@@ -76,6 +76,7 @@
     SUBDIR += okphone
     SUBDIR += oleo
     SUBDIR += perl5
+    SUBDIR += pgp.language
     SUBDIR += pine
     SUBDIR += pkfonts
     SUBDIR += plain2
