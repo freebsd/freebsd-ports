@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1996/03/29 18:52:08 jkh Exp $
+# $Id: Makefile,v 1.11 1996/04/01 04:04:16 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif
@@ -16,7 +16,6 @@ RESTRICTED += ashe           # requires Motif
     SUBDIR += linemode
     SUBDIR += lynx
     SUBDIR += mapedit
-    SUBDIR += netscape
     SUBDIR += netscape2
     SUBDIR += netscape3
     SUBDIR += tkHTML
