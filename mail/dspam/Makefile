@@ -19,8 +19,8 @@ MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
 MAINTAINER=	itetcu@people.tecnik93.com
 COMMENT=	Bayesian spam filter - stable maintenance version
 
-PORTVER_MAJ=	3.2.6
-SNAP_DATE=	.20050128.1500
+PORTVER_MAJ=	3.2.7
+#SNAP_DATE=	.20050128.1500
 
 .ifdef(SNAP_DATE)
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
@@ -97,7 +97,7 @@ CFLAGS+=	-g -DDEBUG
 
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
 
-UPD_LINE_NO=	9
+UPD_LINE_NO=	6
 
 CONFLICTS=	dspam-2* dspam-devel-[0-9]*
 
