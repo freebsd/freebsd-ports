@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ldap
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	net ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -21,9 +20,10 @@ COMMENT=	Ruby interface to LDAP API based on RFC1823
 WITH_LDAP?=	openldap2
 
 .if ${WITH_LDAP} == openldap1
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
+USE_OPENLDAP=	yes
+WANT_OPENLDAP_VER=	12
 .elif ${WITH_LDAP} == openldap2
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=	yes
 .elif ${WITH_LDAP} == ldapsdk
 LIB_DEPENDS=	${LOCALBASE}/mozilla/directory/lib/libldap.so.1:${PORTSDIR}/net/ldapsdk
 .else
@@ -55,7 +55,7 @@ CONFIGURE_ARGS?=	--with-netscape \
 #WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog	README		README.html	TODO
+DOCS_EN=	ChangeLog FAQ README TODO
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|/usr/local/openldap|, "${PREFIX}"' \
