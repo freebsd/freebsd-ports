@@ -7413,6 +7413,7 @@ ruby-evas	ports/graphics/ruby-evas
 ruby-fam	ports/devel/ruby-fam
 ruby-fcgi	ports/www/ruby-fcgi
 ruby-filelock	ports/devel/ruby-filelock
+ruby-filemagic	ports/devel/ruby-filemagic
 ruby-flex_rb	ports/devel/ruby-flex_rb
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
