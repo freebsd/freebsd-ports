@@ -270,6 +270,7 @@
     SUBDIR += otojiro-fpw
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Jcode
+    SUBDIR += p5-MeCab
     SUBDIR += p5-PDFJ
     SUBDIR += p5-Text-ChaSen
     SUBDIR += p5-Text-Kakasi
