@@ -1,0 +1,11 @@
+--- flx/Imakefile.orig	Tue Feb 10 04:42:39 1998
++++ flx/Imakefile	Tue Feb 17 08:44:05 1998
+@@ -49,7 +49,7 @@
+         -I$(TOP)/flx_show_dialog \
+         -I$(TOP)/flx_util
+ 
+-EXTRA_LIBRARIES = -shared -L$(XFORMS_LIBDIR) -lforms -lm
++EXTRA_LIBRARIES = -shared -L$(XFORMS_LIBDIR) -lxforms -lm
+  EXTRA_INCLUDES = -I$(XFORMS_INCDIR) $(INCS)
+   EXTRA_DEFINES =
+          LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)

@@ -13,9 +13,5 @@ lib/X11/xfpovray/help/Options
 lib/X11/xfpovray/help/Table_Of_Contents
 lib/X11/xfpovray/help/Templates
 lib/X11/xfpovray/help/help_topics
-lib/X11/xfpovray/icons/xfpovray.xpm
-lib/X11/xfpovray/icons/xfpovray_icon.xpm
-lib/X11/xfpovray/icons/xfpovray_info.xpm
-@dirrm lib/X11/xfpovray/icons
 @dirrm lib/X11/xfpovray/help
 @dirrm lib/X11/xfpovray
