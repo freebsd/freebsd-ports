@@ -68,3 +68,6 @@ share/emacs/site-lisp/w3/xbm-button.el
 share/emacs/site-lisp/w3/xbm-button.elc
 share/emacs/site-lisp/w3/xpm-button.el
 share/emacs/site-lisp/w3/xpm-button.elc
+@dirrm share/emacs/site-lisp/w3
+@dirrm share/examples/w3
+@dirrm share/doc/w3

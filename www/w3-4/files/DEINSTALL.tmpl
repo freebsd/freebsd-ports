@@ -1,0 +1,31 @@
+#!/bin/sh
+
+infodir=${INFODIR:-%INFODIR%}
+infofile=${INFOFILE:-%INFOFILE%}
+elispdir=${ELISPDIR:-%ELISPDIR%}
+addir=${ADDIR:-%ADDIR%}
+
+if [ "X$2" = X"DEINSTALL" ]; then
+	echo "Deleting \"w3\" entry from ${infodir}/dir"
+	install-info --delete ${infodir}/${infofile} ${infodir}/dir
+	OptionStart=";;; Emacs-w3 configuration options"
+	OptionEnd=";;; End of Emacs-w3 configuration options"
+	if  [ "`grep \"^${OptionStart}\"  ${elispdir}/site-start.el`" ]; then 
+		echo "Deleting \"w3\" entry from ${elispdir}/site-start.el"
+		sed -e "/^${OptionStart}/,/^${OptionEnd}/d"\
+			 ${elispdir}/site-start.el \
+					> ${elispdir}/site-start.el.bak
+		mv ${elispdir}/site-start.el.bak ${elispdir}/site-start.el
+	fi
+	OptionStart="!!! Emacs-w3 configuration options"
+	OptionEnd="!!! End of Emacs-w3 configuration options"
+	if  [ "`grep \"^${OptionStart}\"  ${addir}/Emacs`" ]; then 
+		echo "Deleting \"w3\" entry from ${addir}/Emacs"
+		sed -e 's/^![ 	]*\(Emacs\*w3-.*\)$/&/' \
+			-e "/^${OptionStart}/,/^${OptionEnd}/d" \
+			${addir}/Emacs		> ${addir}/Emacs.bak
+		mv ${addir}/Emacs.bak ${addir}/Emacs
+	fi
+else
+	exit 0
+fi
