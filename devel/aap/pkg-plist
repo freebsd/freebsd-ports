@@ -98,6 +98,9 @@ lib/aap/Exec-%%PORTVERSION%%/__init__.py
 lib/aap/Exec-%%PORTVERSION%%/__init__.pyc
 lib/aap/Exec-%%PORTVERSION%%/__init__.pyo
 lib/aap/Exec-%%PORTVERSION%%/aap
+lib/aap/Exec-%%PORTVERSION%%/aap.py
+lib/aap/Exec-%%PORTVERSION%%/aap.pyc
+lib/aap/Exec-%%PORTVERSION%%/aap.pyo
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.py
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyc
 lib/aap/Exec-%%PORTVERSION%%/aapnetrc.pyo
@@ -106,10 +109,10 @@ lib/aap/Exec-%%PORTVERSION%%/doc/exec.pdf
 lib/aap/Exec-%%PORTVERSION%%/doc/index.html
 lib/aap/Exec-%%PORTVERSION%%/doc/license.html
 lib/aap/Exec-%%PORTVERSION%%/doc/ln12.html
-lib/aap/Exec-%%PORTVERSION%%/doc/p1181.html
+lib/aap/Exec-%%PORTVERSION%%/doc/p1235.html
 lib/aap/Exec-%%PORTVERSION%%/doc/p27.html
-lib/aap/Exec-%%PORTVERSION%%/doc/p771.html
-lib/aap/Exec-%%PORTVERSION%%/doc/p836.html
+lib/aap/Exec-%%PORTVERSION%%/doc/p805.html
+lib/aap/Exec-%%PORTVERSION%%/doc/p888.html
 lib/aap/Exec-%%PORTVERSION%%/doc/ref-arguments.html
 lib/aap/Exec-%%PORTVERSION%%/doc/ref-attributes.html
 lib/aap/Exec-%%PORTVERSION%%/doc/ref-commands.html
@@ -133,6 +136,7 @@ lib/aap/Exec-%%PORTVERSION%%/doc/user-depend.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-fetch.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-filetype.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-issue.html
+lib/aap/Exec-%%PORTVERSION%%/doc/user-makedif.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-porting.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-publish.html
 lib/aap/Exec-%%PORTVERSION%%/doc/user-python.html

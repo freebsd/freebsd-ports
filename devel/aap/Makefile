@@ -6,13 +6,19 @@
 #
 
 PORTNAME=	aap
-PORTVERSION=	0.100
+PORTVERSION=	0.111
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
 DISTNAME=	exec-${PORTVERSION}
 
 MAINTAINER=	bram@a-a-p.org
+
+# A-A-P requires an "scp" command.  If it doesn't exist, we need to chose which
+# one to install.  The OpenSSH one is probably the best choice.
+RUN_DEPENDS=	scp:${PORTSDIR}/security/openssh
+
+MAN1=		aap.1
 
 NO_WRKSUBDIR=	yes
 
@@ -38,6 +44,7 @@ do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} *.py *.pyc *.pyo aap ${PREFIX}/lib/aap/Exec-${PORTVERSION}
 	cd ${WRKSRC}; ${INSTALL_DATA} -m 0744 COPYING README.txt filetype.txt default.aap ${PREFIX}/lib/aap/Exec-${PORTVERSION}
 	cd ${WRKSRC}; ${INSTALL_DATA} doc/*.html doc/exec.pdf ${PREFIX}/lib/aap/Exec-${PORTVERSION}/doc
+	cd ${WRKSRC}; ${INSTALL_DATA} aap.1 ${PREFIX}/man/man1
 	cd ${PREFIX}/bin; ${LN} -fhs ../lib/aap/Exec-${PORTVERSION}/aap aap
 	cd ${PREFIX}/share/doc; ${LN} -fhs ../../lib/aap/Exec-${PORTVERSION}/doc aap
 
