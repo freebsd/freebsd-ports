@@ -35,6 +35,7 @@
     SUBDIR += faces
     SUBDIR += fetchmail
     SUBDIR += ftrack
+    SUBDIR += gbiff
     SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += gkrellmmailwatch

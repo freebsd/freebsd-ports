@@ -1,0 +1,10 @@
+bin/gbiff
+etc/CORBA/servers/gbiff.gnorba
+share/gnome/applets/Network/gbiff.desktop
+share/gnome/pixmaps/gbiff/gnome-mail.xpm
+share/gnome/pixmaps/gbiff/gnome-nomail.xpm
+share/gnome/pixmaps/gbiff/gtk-mail.xpm
+share/gnome/pixmaps/gbiff/gtk-nomail.xpm
+share/gnome/sounds/gbiff/mail.wav
+@dirrm share/gnome/pixmaps/gbiff
+@dirrm share/gnome/sounds/gbiff

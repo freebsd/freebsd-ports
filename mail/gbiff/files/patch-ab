@@ -1,0 +1,17 @@
+--- configure.orig	Sat Mar 31 22:26:45 2001
++++ configure	Sat Mar 31 22:27:00 2001
+@@ -3834,12 +3834,12 @@
+ 
+ if test "x${prefix}" = "xNONE"; then
+   cat >> confdefs.h <<EOF
+-#define PACKAGE_DATA_DIR "${ac_default_prefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${ac_default_prefix}/${DATADIRNAME}/gnome"
+ EOF
+ 
+ else
+   cat >> confdefs.h <<EOF
+-#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}"
++#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}/gnome"
+ EOF
+ 
+ fi
