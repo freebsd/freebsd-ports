@@ -1,0 +1,68 @@
+--- src/screens.c.orig	Sun Jun 20 18:10:54 1999
++++ src/screens.c	Sun Jun 20 18:14:57 1999
+@@ -1640,7 +1640,7 @@
+ 
+ void CalibrateJoystick(int player_nr)
+ {
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   struct joystick joy_ctrl;
+ #else
+   struct joystick_control
+@@ -1705,7 +1705,7 @@
+ 
+   BackToFront();
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   joy_ctrl.b1 = joy_ctrl.b2 = 0;
+ #else
+   joy_ctrl.buttons = 0;
+@@ -1914,13 +1914,13 @@
+   DrawText(SX+16, SY+9*32, "AND PRESS BUTTON",FS_BIG,FC_YELLOW);
+   BackToFront();
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   joy_ctrl.b1 = joy_ctrl.b2 = 0;
+ #else
+   joy_ctrl.buttons = 0;
+ #endif
+   while(Joystick() & JOY_BUTTON);
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   while(!(joy_ctrl.b1 || joy_ctrl.b2))
+ #else
+   while(!joy_ctrl.buttons)
+@@ -1943,13 +1943,13 @@
+   DrawText(SX+16, SY+9*32, "AND PRESS BUTTON",FS_BIG,FC_YELLOW);
+   BackToFront();
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   joy_ctrl.b1 = joy_ctrl.b2 = 0;
+ #else
+   joy_ctrl.buttons = 0;
+ #endif
+   while(Joystick() & JOY_BUTTON);
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   while(!(joy_ctrl.b1 || joy_ctrl.b2))
+ #else
+   while(!joy_ctrl.buttons)
+@@ -1971,13 +1971,13 @@
+   DrawText(SX+16, SY+16+8*32, "AND PRESS BUTTON",FS_BIG,FC_YELLOW);
+   BackToFront();
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   joy_ctrl.b1 = joy_ctrl.b2 = 0;
+ #else
+   joy_ctrl.buttons = 0;
+ #endif
+   while(Joystick() & JOY_BUTTON);
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(NO_JOYSTICK)
+   while(!(joy_ctrl.b1 || joy_ctrl.b2))
+ #else
+   while(!joy_ctrl.buttons)
