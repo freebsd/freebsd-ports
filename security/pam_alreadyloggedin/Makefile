@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_alreadyloggedin
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}					\
 		http://green.homeunix.org/~green/
@@ -18,10 +19,6 @@ COMMENT=	PAM module based on whether a user is already logged in
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "
