@@ -32,6 +32,53 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c4b025bb-f05d-11d8-9837-000c41e2cdad">
+    <topic>tnftpd -- remotely exploitable vulnerability</topic>
+    <affects>
+      <package>
+	<name>tnftpd</name>
+	<range><lt>20040810</lt></range>
+      </package>
+      <package>
+	<name>lukemftpd</name>
+	<range><ge>0</ge></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.7</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>lukemftpd(8) is an enhanced BSD FTP server produced
+          within the NetBSD project.  The sources for lukemftpd are
+          shipped with some versions of FreeBSD, however it is not
+          built or installed by default.  The build system option
+          WANT_LUKEMFTPD must be set to build and install lukemftpd.
+          [<strong>NOTE</strong>: An exception is FreeBSD 4.7-RELEASE,
+          wherein lukemftpd was installed, but not enabled, by
+	  default.]</p>
+        <p>Przemyslaw Frasunek discovered several vulnerabilities
+          in lukemftpd arising from races in the out-of-band signal
+          handling code used to implement the ABOR command.  As a
+          result of these races, the internal state of the FTP server
+          may be manipulated in unexpected ways.</p>
+        <p>A remote attacker may be able to cause FTP commands to
+          be executed with the privileges of the running lukemftpd
+          process.  This may be a low-privilege `ftp' user if the `-r'
+          command line option is specified, or it may be superuser
+          privileges if `-r' is *not* specified.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvsweb.netbsd.org/bsdweb.cgi/src/libexec/ftpd/ftpd.c#rev1.158</url>
+    </references>
+    <dates>
+      <discovery>2004-08-17</discovery>
+      <entry>2004-08-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6fd9a1e9-efd3-11d8-9837-000c41e2cdad">
     <topic>xonix -- failure to drop privileges</topic>
     <affects>
