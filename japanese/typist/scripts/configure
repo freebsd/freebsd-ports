@@ -1,0 +1,25 @@
+#!/bin/sh
+# typist configuration shell script
+# usage: /bin/sh configure 
+
+if [ X"${BATCH}" != X"yes" ] ; then
+/usr/bin/dialog --title "typist port configuration" --radiolist \
+"Is a type of your keyboard?" -1 -1 2 \
+"106" "Japanese 106 keymap" ON \
+"101" "101 keymap" OFF 2>/tmp/typist.ports.selection
+
+if [ X`cat /tmp/typist.ports.selection` = "X101" ]
+	then
+	 echo '101 keymap'
+	 cp ${WRKSRC}/Makefile	${WRKSRC}/Makefile.tmp
+	  sed -e 's/-DKEYTYPE=\\"j\\"/-DKEYTYPE=\\"e\\"/g' \
+		${WRKSRC}/Makefile.tmp > ${WRKSRC}/Makefile
+else
+	 echo 'Japanese 106 keymap'
+fi
+
+rm -f /tmp/typist.ports.selection
+
+else
+ echo 'Japanese 106 keymap (default) is selected'
+fi

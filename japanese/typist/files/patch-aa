@@ -1,0 +1,32 @@
+*** Makefile.orig	Wed May 21 13:41:33 1997
+--- Makefile	Mon Jun 23 19:45:04 1997
+***************
+*** 54,66 ****
+  ##### INSTALL PARAMETERS #####
+  LIBS=-ltermcap
+  DEBUG=-O -s
+! LESSONDIR=/usr/local/lib/typist
+! TARGETDIR=/usr/local/bin
+! MANPATH=/usr/local/man
+  # NeXT ONLY!!  To make FAT binary.
+  MAB=
+  
+! CFLAGS=$(DEBUG) $(MAB) -DTERMIO
+  # -DKEYTYPE=\"e\"
+  # -DLESSONDIR=\"$(LESSONDIR)\"
+  # -DVANISHCHAR
+--- 54,67 ----
+  ##### INSTALL PARAMETERS #####
+  LIBS=-ltermcap
+  DEBUG=-O -s
+! PREFIX?=/usr/local
+! LESSONDIR=${PREFIX}/lib/typist
+! TARGETDIR=${PREFIX}/bin
+! MANPATH=${PREFIX}/man
+  # NeXT ONLY!!  To make FAT binary.
+  MAB=
+  
+! CFLAGS=$(DEBUG) $(MAB) -DLESSONDIR=\"$(LESSONDIR)\" -DKEYTYPE=\"j\"
+  # -DKEYTYPE=\"e\"
+  # -DLESSONDIR=\"$(LESSONDIR)\"
+  # -DVANISHCHAR

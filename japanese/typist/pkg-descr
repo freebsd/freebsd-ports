@@ -1,0 +1,16 @@
+Typist provides typing drills and maintains statistics for
+learning to type.  The  initial  menu  provides  following
+lessons:
+     Quick QWERTY course (q1 - q5)
+     Long QWERTY course  (r1 - r14)
+     QWERTY touch typing (t1 - t16)
+     Yet Another QWERTY  (v1 - v20)
+     QWERTY Review       (u1 - u13)
+     Typing drills       (m1 - m11)
+     Speed drills        (s1 - s4)
+     Calculator keypad   (n1 - n3)
+Specifying  a  lesson  on  command line, you can start the
+lesson immediately.  If  Japanese  version  is  installed,
+Kana typing lessons are also available.
+
+Your  history of exercises can be saved when typist exits.
