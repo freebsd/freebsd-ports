@@ -4,8 +4,8 @@
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += althea
-    SUBDIR += asmail
     SUBDIR += arrow
+    SUBDIR += asmail
     SUBDIR += autorespond
     SUBDIR += autosig
     SUBDIR += balsa
@@ -182,8 +182,8 @@
     SUBDIR += sigrot
     SUBDIR += smail
     SUBDIR += smapi
-    SUBDIR += smtpd
     SUBDIR += smtpclient
+    SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += smunge
     SUBDIR += solidpop3d

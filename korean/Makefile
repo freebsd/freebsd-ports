@@ -1,9 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += w3m
-    SUBDIR += uniksc
-    SUBDIR += pycodec
-    SUBDIR += texinfo
 
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
@@ -38,9 +34,9 @@
     SUBDIR += hlatex-wansung
     SUBDIR += hlatexfonts-ocf
     SUBDIR += hlatexp
+    SUBDIR += hlatexp-pkfonts1200
     SUBDIR += hlatexp-pkfonts300
     SUBDIR += hlatexp-pkfonts600
-    SUBDIR += hlatexp-pkfonts1200
     SUBDIR += hmconv
     SUBDIR += hpscat
     SUBDIR += htexp
@@ -49,8 +45,8 @@
     SUBDIR += kde2-i18n
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
-    SUBDIR += linuxdoc-sgml
     SUBDIR += linux_locale
+    SUBDIR += linuxdoc-sgml
     SUBDIR += mizifont
     SUBDIR += mkisofs
     SUBDIR += mozilla-klp
@@ -70,5 +66,9 @@
     SUBDIR += pgp.language
     SUBDIR += pine
     SUBDIR += pinetreefonts
+    SUBDIR += pycodec
+    SUBDIR += texinfo
+    SUBDIR += uniksc
+    SUBDIR += w3m
 
 .include <bsd.port.subdir.mk>

@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zsnes
 
     SUBDIR += aftp
     SUBDIR += atari800
@@ -26,10 +25,10 @@
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
+    SUBDIR += kmamerun
     SUBDIR += ksnes9x
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux_base
-    SUBDIR += kmamerun
     SUBDIR += mastergear
     SUBDIR += mtools
     SUBDIR += osf1_base
@@ -51,10 +50,10 @@
     SUBDIR += tuxnes
     SUBDIR += twin
     SUBDIR += uae
+    SUBDIR += vMac
     SUBDIR += vgb
     SUBDIR += vgb-bin
     SUBDIR += vice
-    SUBDIR += vMac
     SUBDIR += visualos
     SUBDIR += vmsbackup
     SUBDIR += vmware
@@ -71,5 +70,6 @@
     SUBDIR += xpinmame
     SUBDIR += xsystem35
     SUBDIR += xzx
+    SUBDIR += zsnes
 
 .include <bsd.port.subdir.mk>
