@@ -24,10 +24,4 @@ INSTALLS_SHLIB=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-stable
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
