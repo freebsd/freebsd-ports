@@ -3,7 +3,7 @@
 # Date created:		2 Dec 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.14 1998/09/01 15:49:45 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/09/27 00:05:53 steve Exp $
 #
 
 DISTNAME=       tinpre-1.4-980818
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
-BROKEN=		build
+BROKEN_ELF=	build
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
