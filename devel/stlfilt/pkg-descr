@@ -1,0 +1,6 @@
+STLFilt simplifies and/or reformats long-winded C++ error and warning
+messages, with a focus on STL-related diagnostics (and for MSVC 6, it
+fully eliminates C4786 warnings and their detritus). The result renders
+many of even the most cryptic diagnostics comprehensible.
+
+WWW: http://www.bdsoft.com/tools/stlfilt.html

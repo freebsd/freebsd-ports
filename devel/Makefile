@@ -1128,6 +1128,7 @@
     SUBDIR += spirit
     SUBDIR += splint
     SUBDIR += st
+    SUBDIR += stlfilt
     SUBDIR += stlport
     SUBDIR += stlport-icc
     SUBDIR += str
