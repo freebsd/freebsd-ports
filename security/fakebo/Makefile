@@ -3,7 +3,7 @@
 # Date created:        16 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/16 11:18:18 kris Exp $
 #
 
 DISTNAME=	fakebo
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://yi.com/home/KosturjakVlatko/ \
 		ftp://ftp.c-com.net/pub/.10/LinuxBerg/files/console/ \
 		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/console/ \
-		ftp://ftp.ist.utl.pt/Ftest/ftp/pub/linuxberg/files/console/
+		ftp://ftp.ist.utl.pt/pub/linuxberg/files/console/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.ORG
