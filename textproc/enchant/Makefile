@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	enchant
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abiword
@@ -19,7 +18,7 @@ COMMENT=	Dictionary/spellchecking framework
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget glib20
+USE_GNOME=	gnomehack gnomeprefix gnometarget glib20 lthack
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -29,10 +28,6 @@ MAN1=		enchant.1
 
 .if exists(${LOCALBASE}/lib/libpspell.so)
 WITH_ASPELL=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/ispell)
-WITH_ISPELL=	yes
 .endif
 
 .if exists(${LOCALBASE}/bin/hspell)
@@ -46,13 +41,6 @@ PLIST_SUB+=	ASPELL=""
 PLIST_SUB+=	ASPELL="@comment "
 .endif
 
-.if defined(WITH_ISPELL)
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-PLIST_SUB+=	ISPELL=""
-.else
-PLIST_SUB+=	ISPELL="@comment "
-.endif
-
 .if defined(WITH_HSPELL)
 BUILD_DEPENDS+=	hspell:${PORTSDIR}/hebrew/hspell
 PLIST_SUB+=	HSPELL=""
@@ -61,15 +49,11 @@ PLIST_SUB+=	HSPELL="@comment "
 .endif
 
 pre-everything::
-.if !defined(WITH_ASPELL) || !defined(WITH_ISPELL) || !defined(WITH_HSPELL)
+.if !defined(WITH_ASPELL) || !defined(WITH_HSPELL)
 	@${ECHO_CMD} '===> The following options are available for this port:'
 .if !defined(WITH_ASPELL)
 	@${ECHO_CMD} '===>'
 	@${ECHO_CMD} '===> Define WITH_ASPELL to enable aspell support'
-.endif
-.if !defined(WITH_ISPELL)
-	@${ECHO_CMD} '===>'
-	@${ECHO_CMD} '===> Define WITH_ISPELL to enable ispell support'
 .endif
 .if !defined(WITH_HSPELL)
 	@${ECHO_CMD} '===>'
