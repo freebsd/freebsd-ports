@@ -8,7 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
@@ -126,6 +126,7 @@ pre-install:
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
+	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && ${CHMOD} a+rx ${PREFIX}/share/doc/mutt
