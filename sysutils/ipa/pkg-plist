@@ -7,5 +7,7 @@ etc/rc.d/ipa.sh.sample
 %%PORTDOCS%%share/examples/ipa/example-1
 %%PORTDOCS%%share/examples/ipa/example-2
 %%PORTDOCS%%@dirrm share/examples/ipa
-@unexec rmdir %D/man/ru_SU.KOI8-R/man8 %D/man/ru_SU.KOI8-R/man5 %D/man/ru_SU.KOI8-R 2>/dev/null || true
-@unexec if [ -L %D/man/ru_RU.KOI8-R ]; then rm %D/man/ru_RU.KOI8-R 2>/dev/null || true; else rmdir %D/man/ru_RU.KOI8-R/man8 %D/man/ru_RU.KOI8-R/man5 %D/man/ru_RU.KOI8-R && rm %D/man/ru_RU.KOI8-R 2>/dev/null || true ; fi
+@unexec if [ ! -L %D/man/ru_RU.KOI8-R ]; then rmdir %D/man/ru_RU.KOI8-R/man8 %D/man/ru_RU.KOI8-R/man5 %D/man/ru_RU.KOI8-R 2>/dev/null || true ; fi
+@unexec if [ ! -L %D/man/ru_SU.KOI8-R ]; then rmdir %D/man/ru_SU.KOI8-R/man8 %D/man/ru_SU.KOI8-R/man5 %D/man/ru_SU.KOI8-R 2>/dev/null || true ; fi
+@unexec if [ -L %D/man/ru_RU.KOI8-R -a ! -d %D/man/ru_SU.KOI8-R ]; then rm %D/man/ru_RU.KOI8-R 2>/dev/null || true ; fi
+@unexec if [ -L %D/man/ru_SU.KOI8-R -a ! -d %D/man/ru_RU.KOI8-R ]; then rm %D/man/ru_SU.KOI8-R 2>/dev/null || true ; fi
