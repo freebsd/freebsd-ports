@@ -6917,6 +6917,7 @@ relate		ports/mbone/relate
 relay		ports/net/relay
 release		src/release
 relnotes	src/release/doc
+renderpark	ports/graphics/renderpark
 renice		src/usr.bin/renice
 rep-gtk		ports/x11-toolkits/rep-gtk
 replaceit	ports/textproc/replaceit
