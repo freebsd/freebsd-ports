@@ -30,11 +30,6 @@ WRKSRC=		${WRKDIR}/PCSC-ruby
 DOCS=		README.txt
 EXAMPLES=	examples/test.rb examples/pcsclient.rb
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 502102
-BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/
@@ -47,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

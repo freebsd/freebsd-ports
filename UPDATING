@@ -7,6 +7,16 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20050224:
+  AFFECTS: users of lang/ruby18 and any apps that depend on ruby18
+  AUTHOR: mezz@FreeBSD.org
+
+  The theads support has been disabled again. It causes the more trouble, so
+  it now builds with ${PTHREAD_CFLAGS} and ${PTHREAD_LIBS}. It is recommend
+  you to rebuild any apps that depend on lang/ruby18. Do something like this:
+
+  	portupgrade -rf ruby-1.8.2\*
+
+20050224:
   AFFECTS: users of www/apache21
   AUTHOR: clement@FreeBSD.org
 
