@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.12.3
+PORTVERSION=	0.13.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -16,7 +16,9 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A load balancer for simple tcp based protocols
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR}
+USE_OPENSSL=		yes
+CONFIGURE_ARGS=		--with-daemon --with-docdir=${DOCSDIR} \
+			--with-ssl=${OPENSSLBASE}
 
 PORTDOCS=		penstats HOWTO AUTHORS README ChangeLog COPYING
 PLIST_FILES=		bin/mergelogs bin/pen bin/penctl bin/penlog \
