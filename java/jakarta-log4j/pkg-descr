@@ -7,7 +7,4 @@ using external configuration files. Best of all, Log4J has a gentle
 learning curve. Beware: judging from user feedback, it is also quite
 addictive.
 
-WWW: http://jakarta.apache.org/log4j/
-
-- Herve Quiroz
-herve.quiroz@esil.univ-mrs.fr
+WWW: http://logging.apache.org/log4j/
