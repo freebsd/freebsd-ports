@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+indexfile=/usr/ports/INDEX
+tmpfile=/tmp/makedescribe.tmp
+#
+failures=0
+for i in `sed -e "s/ /_/g" ${indexfile}`; do
+  set $(echo $i | tr \| " ")
+  port=$2
+  cd ${port}
+  make describe > /dev/null 2> ${tmpfile} || \
+  { failures=$(($failures+1)); \
+  echo '--------------- make describe failed for '${port}':'; \
+  cat ${tmpfile}; }
+  rm -f ${tmpfile}
+done
+echo '---------------'
+echo 'Total number of ports that failed trying to build /usr/ports/INDEX: '${failures}
+exit ${failures}
