@@ -17,12 +17,3 @@
        *) ac_cv_exeext=`echo $file | sed -e s/conftest//` ;;
        esac
      done
-@@ -2308,7 +2307,7 @@
- LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
- DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
- ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
-+$libtool_flags --no-verify $ac_aux_dir/ltmain.sh $host \
- || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
- 
- # Reload cache, that may have been modified by ltconfig
