@@ -1,5 +1,5 @@
---- breakpoints.c.orig	Wed Apr 14 00:36:58 2004
-+++ breakpoints.c	Wed Apr 14 00:37:19 2004
+--- src/breakpoints.c.orig	Wed Apr 14 00:36:58 2004
++++ src/breakpoints.c	Wed Apr 14 00:37:19 2004
 @@ -1409,8 +1409,9 @@
  				ptr1 = strchr (ptr, '\n');
  				if (ptr1)
