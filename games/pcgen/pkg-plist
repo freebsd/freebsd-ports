@@ -1,981 +1,981 @@
 bin/pcgen.sh
-%%T%%/system/unitSet.lst
-%%T%%/system/tips.lst
-%%T%%/system/specials/specials.lst
-%%T%%/system/specials/equipmentslots.lst
-%%T%%/system/specials/bonusstacks.lst
-%%T%%/system/sizeAdjustment.lst
-%%T%%/system/schools.lst
-%%T%%/system/pointbuymethods_system.lst
-%%T%%/system/paperInfo.lst
-%%T%%/system/outputFilters/xml.lst
-%%T%%/system/outputFilters/htm.lst
-%%T%%/system/outputFilters/fo.lst
-%%T%%/system/opengaminglicense.10a.txt
-%%T%%/system/gameModes/Modern/statsandchecks.lst
-%%T%%/system/gameModes/Modern/rules.lst
-%%T%%/system/gameModes/Modern/miscinfo.lst
-%%T%%/system/gameModes/Modern/load.lst
-%%T%%/system/gameModes/Modern/level.lst
-%%T%%/system/gameModes/3e/statsandchecks.lst
-%%T%%/system/gameModes/3e/rules.lst
-%%T%%/system/gameModes/3e/miscinfo.lst
-%%T%%/system/gameModes/3e/load.lst
-%%T%%/system/gameModes/3e/level.lst
-%%T%%/system/gameModes/35e/statsandchecks.lst
-%%T%%/system/gameModes/35e/rules.lst
-%%T%%/system/gameModes/35e/miscinfo.lst
-%%T%%/system/gameModes/35e/load.lst
-%%T%%/system/gameModes/35e/level.lst
-%%T%%/system/bio/traits.lst
-%%T%%/system/bio/names/sparhawk.nam
-%%T%%/system/bio/names/rw_Scottish_Gaelic_Male.nam
-%%T%%/system/bio/names/rw_Scottish_Gaelic_Female.nam
-%%T%%/system/bio/names/rw_Russian_Male.nam
-%%T%%/system/bio/names/rw_Russian_Female.nam
-%%T%%/system/bio/names/rw_Roman_Male.nam
-%%T%%/system/bio/names/rw_Roman_Female.nam
-%%T%%/system/bio/names/rw_Pictish_Medieval_Male.nam
-%%T%%/system/bio/names/rw_Pictish_Classical_NAMES.nam
-%%T%%/system/bio/names/rw_Persian_NAMES.nam
-%%T%%/system/bio/names/rw_Italian_Renaissance_Male.nam
-%%T%%/system/bio/names/rw_Italian_Renaissance_Female.nam
-%%T%%/system/bio/names/rw_Irish_Gaelic_Male.nam
-%%T%%/system/bio/names/rw_Irish_Gaelic_Female.nam
-%%T%%/system/bio/names/rw_Gothic_NAMES.nam
-%%T%%/system/bio/names/rw_German_Male.nam
-%%T%%/system/bio/names/rw_German_Female.nam
-%%T%%/system/bio/names/rw_French_NAMES.nam
-%%T%%/system/bio/names/rw_Frankish_Male.nam
-%%T%%/system/bio/names/rw_Frankish_Female.nam
-%%T%%/system/bio/names/rw_Flemish_NAMES.nam
-%%T%%/system/bio/names/rw_English_Middle_Period_Male.nam
-%%T%%/system/bio/names/rw_English_Middle_Period_Female.nam
-%%T%%/system/bio/names/rw_English_Late_Period_Male.nam
-%%T%%/system/bio/names/rw_English_Late_Period_Female.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Male.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Male.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Female.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Female.nam
-%%T%%/system/bio/names/orc.nam
-%%T%%/system/bio/names/kerrel.nam
-%%T%%/system/bio/names/hispanic_NAMES.nam
-%%T%%/system/bio/names/gnome.nam
-%%T%%/system/bio/names/cg_NAMES.nam
-%%T%%/system/bio/names/ReadMe.txt
-%%T%%/system/bio/names/Narn.nam
-%%T%%/system/bio/names/Mar_NAMES.nam
-%%T%%/system/bio/names/Mar_Knightly_NAMES.nam
-%%T%%/system/bio/names/Mar_Draconic.nam
-%%T%%/system/bio/names/HOBER.NAM
-%%T%%/system/bio/names/Generic_NAMES.nam
-%%T%%/system/bio/names/GALLER.NAM
-%%T%%/system/bio/names/Felana.nam
-%%T%%/system/bio/names/Deverry.nam
-%%T%%/system/bio/names/DVARGAR.NAM
-%%T%%/system/bio/names/Arabic.nam
-%%T%%/system/bio/names/Albion.nam
-%%T%%/system/bio/names/ALVER.NAM
-%%T%%/system/bio/locations.lst
-%%T%%/system/bio/biosettings.lst
-%%T%%/system/Languages/LanguageBundle_en_US.properties
-%%T%%/system/Languages/LanguageBundle.properties
-%%T%%/system/D20System.htm
-%%T%%/pcgen.sh
-%%T%%/pcgen.jar
-%%T%%/outputsheets/d20/western/text/placeholder.txt
-%%T%%/outputsheets/d20/western/pdf/placeholder.txt
-%%T%%/outputsheets/d20/western/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/western/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/western/htmlxml/csheetDeadlands.htm
-%%T%%/outputsheets/d20/sciencefiction/text/placeholder.txt
-%%T%%/outputsheets/d20/sciencefiction/pdf/placeholder.txt
-%%T%%/outputsheets/d20/sciencefiction/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/sciencefiction/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/modern/text/placeholder.txt
-%%T%%/outputsheets/d20/modern/pdf/placeholder.txt
-%%T%%/outputsheets/d20/modern/pdf/csheet_modern_std.xslt
-%%T%%/outputsheets/d20/modern/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/modern/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/modern/htmlxml/csheet_modern_std.htm
-%%T%%/outputsheets/d20/horror/text/placeholder.txt
-%%T%%/outputsheets/d20/horror/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/horror/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/historical/text/placeholder.txt
-%%T%%/outputsheets/d20/historical/pdf/placeholder.txt
-%%T%%/outputsheets/d20/historical/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/historical/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/fantasy/text/csheet_plain.TXT
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.xslt
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_picture.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_descriptions.fo
-%%T%%/outputsheets/d20/fantasy/htmlxml/psheet_fantasy_std.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_std.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_consumables.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_std.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock2.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock1.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_compact.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_combined.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_OpenRPG.xml
-%%T%%/outputsheets/base.xml
-%%T%%/lib/themes/xplunathemepack.zip
-%%T%%/lib/themes/whistlerthemepack.zip
-%%T%%/lib/themes/toxicthemepack.zip
-%%T%%/lib/themes/themepack.zip
-%%T%%/lib/themes/modernthemepack.zip
-%%T%%/lib/themes/macosthemepack.zip
-%%T%%/lib/themes/cellshadedthemepack.zip
-%%T%%/lib/themes/beosthemepack.zip
-%%T%%/lib/themes/bbjthemepack.zip
-%%T%%/lib/themes/aquathemepack.zip
-%%T%%/lib/skinlf.jar
-%%T%%/lib/readme.txt
-%%T%%/lib/kunststoff.jar
-%%T%%/lib/jep.LICENSE.txt
-%%T%%/lib/jep-2.24.jar
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesweapprofs.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesmutations.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesdefects.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplates.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesskills.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesraces.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldruleslanguage.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesfeats.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapranged.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapmelee.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapammo.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipcoins.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequiparmorshields.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequip.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesclasses.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesbiosettings.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrules.pcc
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/OGL.txt
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequipweapmelee.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequip.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteclasses.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizenste.pcc
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/OGL.txt
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/darwinworld.pcc
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaweapprofs.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoafeats.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapranged.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapmelee.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapammo.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequiparmorshields.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequip.lst
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoa.pcc
-%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/OGL.txt
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodweapprofs.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodspells.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodskills.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodfeats.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipwondrousitems.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapranged.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapammo.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequiprodstaffwands.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequip.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodclasses.lst
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seablood.pcc
-%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/OGL.txt
-%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesspells.lst
-%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesdeities.lst
-%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesclasses.lst
-%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytes.pcc
-%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/OGL.txt
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobspells.lst
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobraces.lst
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgoblanguages.lst
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobbiosettings.lst
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgob.pcc
-%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/OGL.txt
-%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollraces.lst
-%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnolllanguages.lst
-%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollbiosettings.lst
-%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnoll.pcc
-%%T%%/data/permissioned/mongoose/slayersguides/gnolls/OGL.txt
-%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentraces.lst
-%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentclasses.lst
-%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentbiosettings.lst
-%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscent.pcc
-%%T%%/data/permissioned/mongoose/slayersguides/centaurs/OGL.txt
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsspells.lst
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdomains.lst
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdeities.lst
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsclasses.lst
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazons.pcc
-%%T%%/data/permissioned/mongoose/slayersguides/amazons/OGL.txt
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinweapprofs.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinpotionspoisons.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapranged.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapammo.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipmods.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequip.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinclasses.lst
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassin.pcc
-%%T%%/data/permissioned/mongoose/powerclasses/assassin/OGL.txt
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorweapprofs.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatortemplates.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorfeats.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapranged.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequip.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorclasses.lst
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiator.pcc
-%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/OGL.txt
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancytemplates.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyspells.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyskills.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyfeats.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipwondrousitems.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequiprings.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipartifacts.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancycompanionmods.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyclasses.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancy.pcc
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/OGL.txt
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyskills.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyfeats.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipwondrousitems.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprods.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprings.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipartifacts.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyclasses.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonology.pcc
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/OGL.txt
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicskills.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicfeats.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicclasses.lst
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagic.pcc
-%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/OGL.txt
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueweapprofs.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueskills.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintroguefeats.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipwondrousitems.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapranged.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmeleespecific.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammospecific.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammo.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequippotionspoisons.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipmods.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequiparmorshields.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequip.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueclasses.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogue.pcc
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/OGL.txt
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterweapprofs.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterskills.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterfeats.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapranged.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapmelee.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapblackpowder.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapammo.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequiparmorshields.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequip.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterclasses.lst
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighter.pcc
-%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/OGL.txt
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebspells.lst
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebraces.lst
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebfeats.lst
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclassfeats.lst
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclasses.lst
-%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookweb.pcc
-%%T%%/data/permissioned/malhavocpress/malhavocweb/Permission.txt
-%%T%%/data/permissioned/malhavocpress/malhavocweb/OGL.txt
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskilltemplates.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillraces.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillpowers.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillfeats.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillequip.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillclasses.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillbiosettings.lst
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskill.pcc
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/readme.txt
-%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/OGL.txt
-%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfanepermission.htm
-%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipwondrousitems.lst
-%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipartifacts.lst
-%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfanedeities.lst
-%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfane.pcc
-%%T%%/data/permissioned/malhavocpress/demongodsfane/OGL.txt
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2spells.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2feats.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipwondrousitems.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprodstaffwands.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprings.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipmods.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2domain.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2deities.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2classes.lst
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2.pcc
-%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/OGL.txt
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeweapprofs.lst
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadetemplate.lst
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jaderace.lst
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeequipweapmelee.lst
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadebiosettings.lst
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jade.pcc
-%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/OGL.txt
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebmonsters.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebfeats.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipweapmeleespecific.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipartifacts.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanaweb.pcc
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/OGL.txt
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/readme.txt
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanatemplates.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaspells.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanafeats.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequipwondrousitems.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequiprings.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequip.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadomains.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadeities.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaclasses.lst
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcana.pcc
-%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/OGL.txt
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachspells.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachskills.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachfeats.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipwondrousitems.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipweapmelee.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequiprings.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequippotionspoisons.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequip.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachdomains.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachclasses.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreach.pcc
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/OGL.txt
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftspells.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftfeats.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipwondrousitems.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipweapmelee.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprodstaffwand.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprings.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequippotionspoisons.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipfamiliars.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiparmorshield.lst
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraft.pcc
-%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/OGL.txt
-%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelfeats.lst
-%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelequipweapmelee.lst
-%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelclasses.lst
-%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteel.pcc
-%%T%%/data/permissioned/avalanchepress/jadeandsteel/OGL.txt
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianspells.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianskills.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianraces.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipwondrousitems.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipweapmelee.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipspecific.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiprings.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequippotionspoisons.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiparmorshields.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipammo.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequip.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardiandeities.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianbiosettings.lst
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardian.pcc
-%%T%%/data/permissioned/aurand20/darkawakeningsguardian/OGL.txt
-%%T%%/data/permissioned/aurand20/apothecarynotes/apothecaryequippotionspoisons.lst
-%%T%%/data/permissioned/aurand20/apothecarynotes/apothecaryequip.lst
-%%T%%/data/permissioned/aurand20/apothecarynotes/apothecary.pcc
-%%T%%/data/permissioned/aurand20/apothecarynotes/OGL.txt
-%%T%%/data/permissioned/aurand20/ReadMe-aurand20.txt
-%%T%%/data/permissioned/aurand20/History.txt
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsspells.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsskills.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsfeats.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsequipwondrousitems.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdomains.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdeities.lst
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgods.pcc
-%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/OGL.txt
-%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforestequipwondrousitems.lst
-%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforest.pcc
-%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/OGL.txt
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveiltemplates.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilspells.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipwondrousitems.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipweapmeleespecific.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequippotionspoisons.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipmods.lst
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveil.pcc
-%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/OGL.txt
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsraces.lst
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipwondrousitems.lst
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequippotionspoisons.lst
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipartifacts.lst
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequip.lst
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdrops.pcc
-%%T%%/data/permissioned/atlasgames/penumbra/backdrops/OGL.txt
-%%T%%/data/permissioned/alderacentgroup/war/warspells.lst
-%%T%%/data/permissioned/alderacentgroup/war/warskills.lst
-%%T%%/data/permissioned/alderacentgroup/war/warfeats.lst
-%%T%%/data/permissioned/alderacentgroup/war/wardomains.lst
-%%T%%/data/permissioned/alderacentgroup/war/wardeities.lst
-%%T%%/data/permissioned/alderacentgroup/war/warclasses.lst
-%%T%%/data/permissioned/alderacentgroup/war/war.pcc
-%%T%%/data/permissioned/alderacentgroup/war/OGL.txt
-%%T%%/data/permissioned/alderacentgroup/undead/undeadtemplates.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadspells.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadskills.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadfeats.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequipwondrousitems.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequiprodstaffwands.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequiprings.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequippotionspoisons.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequipmods.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadequip.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeaddomains.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeaddeities.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undeadclasses.lst
-%%T%%/data/permissioned/alderacentgroup/undead/undead.pcc
-%%T%%/data/permissioned/alderacentgroup/undead/OGL.txt
-%%T%%/data/permissioned/alderacentgroup/evil/evilspells.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilskills.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilraces.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilfeats.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilequipwondrousitems.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilequipartifacts.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evildomains.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evildeities.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evilclasses.lst
-%%T%%/data/permissioned/alderacentgroup/evil/evil.pcc
-%%T%%/data/permissioned/alderacentgroup/evil/OGL.txt
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsspells.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsskills.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsfeats.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsequipwondrousitems.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsequip.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsclassfeats.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsclasses.lst
-%%T%%/data/permissioned/alderacentgroup/dungeons/dungeons.pcc
-%%T%%/data/permissioned/alderacentgroup/dungeons/OGL.txt
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsweapprofs.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsspells.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsskills.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsfeats.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipwondrousitems.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmeleespecific.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmelee.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapammospecific.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequippotionspoisons.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipmods.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequip.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsdeities.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragonsclasses.lst
-%%T%%/data/permissioned/alderacentgroup/dragons/dragons.pcc
-%%T%%/data/permissioned/alderacentgroup/dragons/OGL.txt
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsweapprofs.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualstemplates.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsspells.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsskills.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualspermission.HTM
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsfeatshidden.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsfeats.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipwondrousitems.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweaprangedspecific.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweapmeleespecific.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweapammospecific.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipscrolls.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiprodstaffwands.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiprings.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequippotionspoisons.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipartifacts.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiparmorshieldsspecific.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequip.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsdomains.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsclasses.lst
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsrituals.pcc
-%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/OGL.txt
-%%T%%/data/d20ogl/srd35/rsrd_weaponprofs_natural.lst
-%%T%%/data/d20ogl/srd35/rsrd_weaponprofs.lst
-%%T%%/data/d20ogl/srd35/rsrd_templates_types.lst
-%%T%%/data/d20ogl/srd35/rsrd_templates_monsters.lst
-%%T%%/data/d20ogl/srd35/rsrd_templates.lst
-%%T%%/data/d20ogl/srd35/rsrd_spells.lst
-%%T%%/data/d20ogl/srd35/rsrd_skills.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_y_z.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_w_x.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_u_v.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_s_t.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_q_r.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_o_p.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_m_n.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_k_l.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_i_j.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_g_h.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_e_f.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_c_d.lst
-%%T%%/data/d20ogl/srd35/rsrd_races_a_b.lst
-%%T%%/data/d20ogl/srd35/rsrd_races__vermin.lst
-%%T%%/data/d20ogl/srd35/rsrd_races__dragons.lst
-%%T%%/data/d20ogl/srd35/rsrd_races__base.lst
-%%T%%/data/d20ogl/srd35/rsrd_races__animals.lst
-%%T%%/data/d20ogl/srd35/rsrd_languages.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats_templates.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats_monster.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats_hidden2.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats_hidden.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats_descriptions.lst
-%%T%%/data/d20ogl/srd35/rsrd_feats.lst
-%%T%%/data/d20ogl/srd35/rsrd_equipmods_enhancing.lst
-%%T%%/data/d20ogl/srd35/rsrd_equipmods_base.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_wondrousitems.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ranged_specific.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ranged.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_natural.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_melee_specific.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_melee.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ammo_specific.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ammo.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_scrolls.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_rodsstaffswands.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_rings.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_potions.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_poisons.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_coinsgems.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_basetypes.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_armorshields_specific.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip_armorshields.lst
-%%T%%/data/d20ogl/srd35/rsrd_equip.lst
-%%T%%/data/d20ogl/srd35/rsrd_domains.lst
-%%T%%/data/d20ogl/srd35/rsrd_deities.lst
-%%T%%/data/d20ogl/srd35/rsrd_companionmods.lst
-%%T%%/data/d20ogl/srd35/rsrd_classes_prestige.lst
-%%T%%/data/d20ogl/srd35/rsrd_classes_npc.lst
-%%T%%/data/d20ogl/srd35/rsrd_classes_monsters.lst
-%%T%%/data/d20ogl/srd35/rsrd_classes_base.lst
-%%T%%/data/d20ogl/srd35/rsrd.pcc
-%%T%%/data/d20ogl/srd35/altpcc/rsrdpsionics.pcc
-%%T%%/data/d20ogl/srd35/altpcc/rsrdmonsters.pcc
-%%T%%/data/d20ogl/srd35/altpcc/rsrdbasics.pcc
-%%T%%/data/d20ogl/srd35/altpcc/rsrdadvancednorace.pcc
-%%T%%/data/d20ogl/srd35/altpcc/rsrdadvanced.pcc
-%%T%%/data/d20ogl/srd35/OGL.txt
-%%T%%/data/d20ogl/srd/srd_weapprofs_psionic.lst
-%%T%%/data/d20ogl/srd/srd_weapprofs_natural.lst
-%%T%%/data/d20ogl/srd/srd_weapprofs.lst
-%%T%%/data/d20ogl/srd/srd_templates_types.lst
-%%T%%/data/d20ogl/srd/srd_templates_psionic.lst
-%%T%%/data/d20ogl/srd/srd_templates_creatures.lst
-%%T%%/data/d20ogl/srd/srd_templates.lst
-%%T%%/data/d20ogl/srd/srd_starting_kits.lst
-%%T%%/data/d20ogl/srd/srd_spells_psionic.lst
-%%T%%/data/d20ogl/srd/srd_spells.lst
-%%T%%/data/d20ogl/srd/srd_skills_psionic.lst
-%%T%%/data/d20ogl/srd/srd_skills.lst
-%%T%%/data/d20ogl/srd/srd_races_xyz.lst
-%%T%%/data/d20ogl/srd/srd_races_uvw.lst
-%%T%%/data/d20ogl/srd/srd_races_st.lst
-%%T%%/data/d20ogl/srd/srd_races_opr.lst
-%%T%%/data/d20ogl/srd/srd_races_mn.lst
-%%T%%/data/d20ogl/srd/srd_races_ikl.lst
-%%T%%/data/d20ogl/srd/srd_races_gh.lst
-%%T%%/data/d20ogl/srd/srd_races_ef.lst
-%%T%%/data/d20ogl/srd/srd_races_d.lst
-%%T%%/data/d20ogl/srd/srd_races_abc.lst
-%%T%%/data/d20ogl/srd/srd_races__vermin.lst
-%%T%%/data/d20ogl/srd/srd_races__psionic.lst
-%%T%%/data/d20ogl/srd/srd_races__phb.lst
-%%T%%/data/d20ogl/srd/srd_races__dragons.lst
-%%T%%/data/d20ogl/srd/srd_races__animals.lst
-%%T%%/data/d20ogl/srd/srd_languages.lst
-%%T%%/data/d20ogl/srd/srd_feats_psionic.lst
-%%T%%/data/d20ogl/srd/srd_feats_hidden_psionic.lst
-%%T%%/data/d20ogl/srd/srd_feats_hidden.lst
-%%T%%/data/d20ogl/srd/srd_feats_descriptions.lst
-%%T%%/data/d20ogl/srd/srd_feats.lst
-%%T%%/data/d20ogl/srd/srd_equipmods_psionic.lst
-%%T%%/data/d20ogl/srd/srd_equipmods_mundane.lst
-%%T%%/data/d20ogl/srd/srd_equipmods_magic.lst
-%%T%%/data/d20ogl/srd/srd_equip_wondrousitems.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_ranged_specific.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_ranged.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_melee_specific.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_melee_psionic.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_melee.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_ammo_specific.lst
-%%T%%/data/d20ogl/srd/srd_equip_weap_ammo.lst
-%%T%%/data/d20ogl/srd/srd_equip_scrolls.lst
-%%T%%/data/d20ogl/srd/srd_equip_rodsstaffswands.lst
-%%T%%/data/d20ogl/srd/srd_equip_rings.lst
-%%T%%/data/d20ogl/srd/srd_equip_psionic.lst
-%%T%%/data/d20ogl/srd/srd_equip_potions_poisons.lst
-%%T%%/data/d20ogl/srd/srd_equip_dorjes_psionic.lst
-%%T%%/data/d20ogl/srd/srd_equip_coinsgems.lst
-%%T%%/data/d20ogl/srd/srd_equip_basetypes_psionic.lst
-%%T%%/data/d20ogl/srd/srd_equip_basetypes.lst
-%%T%%/data/d20ogl/srd/srd_equip_artifacts.lst
-%%T%%/data/d20ogl/srd/srd_equip_armorshields_specific.lst
-%%T%%/data/d20ogl/srd/srd_equip_armorshields.lst
-%%T%%/data/d20ogl/srd/srd_equip.lst
-%%T%%/data/d20ogl/srd/srd_domains.lst
-%%T%%/data/d20ogl/srd/srd_deities.lst
-%%T%%/data/d20ogl/srd/srd_companion_mods.lst
-%%T%%/data/d20ogl/srd/srd_classes_psionic.lst
-%%T%%/data/d20ogl/srd/srd_classes_prestige.lst
-%%T%%/data/d20ogl/srd/srd_classes_dragon.lst
-%%T%%/data/d20ogl/srd/srd_classes_creature_types.lst
-%%T%%/data/d20ogl/srd/srd_classes_creature_specific.lst
-%%T%%/data/d20ogl/srd/srd_classes_base.lst
-%%T%%/data/d20ogl/srd/srd.pcc
-%%T%%/data/d20ogl/srd/altpcc/srdpsionics.pcc
-%%T%%/data/d20ogl/srd/altpcc/srdmonsters.pcc
-%%T%%/data/d20ogl/srd/altpcc/srdbasic.pcc
-%%T%%/data/d20ogl/srd/altpcc/srdasian.pcc
-%%T%%/data/d20ogl/srd/altpcc/srdadvanced.pcc
-%%T%%/data/d20ogl/srd/OGL.txt
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlweapprofs.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlspells.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlskills.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlfeats.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapranged.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapmelee.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequiparmorshields.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequip.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldomains.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldeities.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlclasses.lst
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawl.pcc
-%%T%%/data/d20ogl/pandaheadproductions/xcrawl/OGL.txt
-%%T%%/data/d20ogl/msrd/msrd_weaponprofs.lst
-%%T%%/data/d20ogl/msrd/msrd_templates_fiends.lst
-%%T%%/data/d20ogl/msrd/msrd_templates.lst
-%%T%%/data/d20ogl/msrd/msrd_spells.lst
-%%T%%/data/d20ogl/msrd/msrd_skills.lst
-%%T%%/data/d20ogl/msrd/msrd_races.lst
-%%T%%/data/d20ogl/msrd/msrd_powers.lst
-%%T%%/data/d20ogl/msrd/msrd_languages.lst
-%%T%%/data/d20ogl/msrd/msrd_feats_occupations.lst
-%%T%%/data/d20ogl/msrd/msrd_feats_hidden.lst
-%%T%%/data/d20ogl/msrd/msrd_feats.lst
-%%T%%/data/d20ogl/msrd/msrd_equipmods_fx.lst
-%%T%%/data/d20ogl/msrd/msrd_equipmods.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_wonderousitems.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_weap_ranged_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_weap_ranged.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_weap_melee_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_weap_melee.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_weap_ammo.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_wands_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_vehicles.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_tattoos_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_staffs_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_scrolls_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_ring_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_potion_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_armor_specific.lst
-%%T%%/data/d20ogl/msrd/msrd_equip_armor.lst
-%%T%%/data/d20ogl/msrd/msrd_equip.lst
-%%T%%/data/d20ogl/msrd/msrd_classes_npc.lst
-%%T%%/data/d20ogl/msrd/msrd_classes_base.lst
-%%T%%/data/d20ogl/msrd/msrd_classes_advanced.lst
-%%T%%/data/d20ogl/msrd/msrd.pcc
-%%T%%/data/d20ogl/msrd/altpcc/msrdnofx.pcc
-%%T%%/data/d20ogl/msrd/OGL.txt
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_templates.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_spells.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_races.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats_hidden.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equipmods.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_wondrousitems.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_weap_specific.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_rings.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_potions.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_domains.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_classes.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_armorshields_specific.lst
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight.pcc
-%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/OGL.txt
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchspells.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchskills.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchraces.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchfeats.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequipwondrousitems.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequipweapmelee.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequiprodstaffwands.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequiprings.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequippotionspoisons.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchclasses.lst
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritch.pcc
-%%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/OGL.txt
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesweapprofs.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracestemplates.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesspells.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesskills.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesraces.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicraceslanguages.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesfeatshidden.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesfeats.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapranged.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapmelee.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapammo.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesdomains.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesclasses.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesbiosettings.lst
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicraces.pcc
-%%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/OGL.txt
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_weapprofs.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_templates.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_spells.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_skills.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_races.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_languages.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats_hidden.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ranged.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_melee.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ammo.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mods.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mech.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_armorshields.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_deities.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_classes.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_biosettings.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb.pcc
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/OGL.txt
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspellsspells.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspells.pcc
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/OGL.txt
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equipmod_magic.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_wondrousitems.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weaprangedspecific.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapmeleespecific.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapammospecific.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_scrolls.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rodstaffswands.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rings.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_potions.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_artifacts.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_armorshieldsspecific.lst
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures.pcc
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/issues.txt
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/Magical_Items.pdf
-%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/FanCC_NBoMT.txt
-%%T%%/data/d20ogl/creativemountaingames/permission.txt
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2spells.lst
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2.pcc
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1spells.lst
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1.pcc
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprimespells.lst
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprime.pcc
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/OGL.txt
-%%T%%/data/d20ogl/creativemountaingames/openspellscollection/OGL.txt
-%%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/trundlefolk.pcc
-%%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/lexustrundlefolkspells.lst
-%%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/lexustrundlefolkclasses.lst
-%%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/OGL.txt
-%%T%%/data/d20ogl/creativemountaingames/lexus/permission.txt
-%%T%%/data/d20ogl/creativemountaingames/lexus/groupcombat/lexusgroupcombatfeats.lst
-%%T%%/data/d20ogl/creativemountaingames/lexus/groupcombat/groupcombat.pcc
-%%T%%/data/d20ogl/creativemountaingames/lexus/groupcombat/OGL.txt
-%%T%%/data/d20ogl/creativemountaingames/lexus/countyclergy/lexusclergyspells.lst
-%%T%%/data/d20ogl/creativemountaingames/lexus/countyclergy/lexusclergyclasses.lst
-%%T%%/data/d20ogl/creativemountaingames/lexus/countyclergy/countyclergy.pcc
-%%T%%/data/d20ogl/creativemountaingames/lexus/countyclergy/OGL.txt
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeweapprofs.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapetemplates.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeskills.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscaperaces.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapelanguages.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapefeats.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapranged.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapmelee.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapammo.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipmods.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequiparmorshields.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequip.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeclassfeats.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeclasses.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapebiosettings.lst
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscape.pcc
-%%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/OGL.txt
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundweapprofs.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundtemplates.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundspells.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundskills.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundraces.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundpermission.htm
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundlanguages.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundfeats30.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundfeats.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapranged.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapmelee.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapammo.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipmods.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipmagicitems.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipgoods.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequiparmorshields.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequip.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundclassfeats.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundclasses.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathboundbiosettings.lst
-%%T%%/data/d20ogl/bastionpress/oathbound/oathbound.pcc
-%%T%%/data/d20ogl/bastionpress/oathbound/UPDATE2003-11-09-ruemere.TXT
-%%T%%/data/d20ogl/bastionpress/oathbound/UPDATE.txt
-%%T%%/data/d20ogl/bastionpress/oathbound/OGL.txt
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistspells.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistskills.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistfeats.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipwondrousitems.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipherbs.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistclasses.lst
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalist.pcc
-%%T%%/data/d20ogl/bastionpress/alchemyherbalists/OGL.txt
-%%T%%/data/d20ogl/avalanchepress/blackflags/blackflagskills.lst
-%%T%%/data/d20ogl/avalanchepress/blackflags/blackflags.pcc
-%%T%%/data/d20ogl/avalanchepress/blackflags/blackflagfeats.lst
-%%T%%/data/d20ogl/avalanchepress/blackflags/blackflagclasses.lst
-%%T%%/data/d20ogl/avalanchepress/blackflags/OGL.txt
-%%T%%/data/customsources/readme-customsources.txt
-%%T%%/characters/Code Monkey.htm
-@dirrm %%T%%/system/specials
-@dirrm %%T%%/system/outputFilters
-@dirrm %%T%%/system/gameModes/Modern
-@dirrm %%T%%/system/gameModes/3e
-@dirrm %%T%%/system/gameModes/35e
-@dirrm %%T%%/system/gameModes
-@dirrm %%T%%/system/bio/names
-@dirrm %%T%%/system/bio
-@dirrm %%T%%/system/Languages
-@dirrm %%T%%/system
-@dirrm %%T%%/outputsheets/d20/western/text
-@dirrm %%T%%/outputsheets/d20/western/pdf
-@dirrm %%T%%/outputsheets/d20/western/htmlxml
-@dirrm %%T%%/outputsheets/d20/western
-@dirrm %%T%%/outputsheets/d20/sciencefiction/text
-@dirrm %%T%%/outputsheets/d20/sciencefiction/pdf
-@dirrm %%T%%/outputsheets/d20/sciencefiction/htmlxml
-@dirrm %%T%%/outputsheets/d20/sciencefiction
-@dirrm %%T%%/outputsheets/d20/modern/text
-@dirrm %%T%%/outputsheets/d20/modern/pdf
-@dirrm %%T%%/outputsheets/d20/modern/htmlxml
-@dirrm %%T%%/outputsheets/d20/modern
-@dirrm %%T%%/outputsheets/d20/horror/text
-@dirrm %%T%%/outputsheets/d20/horror/htmlxml
-@dirrm %%T%%/outputsheets/d20/horror
-@dirrm %%T%%/outputsheets/d20/historical/text
-@dirrm %%T%%/outputsheets/d20/historical/pdf
-@dirrm %%T%%/outputsheets/d20/historical/htmlxml
-@dirrm %%T%%/outputsheets/d20/historical
-@dirrm %%T%%/outputsheets/d20/fantasy/text
-@dirrm %%T%%/outputsheets/d20/fantasy/pdf
-@dirrm %%T%%/outputsheets/d20/fantasy/htmlxml
-@dirrm %%T%%/outputsheets/d20/fantasy
-@dirrm %%T%%/outputsheets/d20
-@dirrm %%T%%/outputsheets
-@dirrm %%T%%/lib/themes
-@dirrm %%T%%/lib
-@dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules
-@dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens
-@dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts
-@dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld
-@dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld
-@dirrm %%T%%/data/permissioned/rpgobjects
-@dirrm %%T%%/data/permissioned/mongoose/travellerstales/seasofblood
-@dirrm %%T%%/data/permissioned/mongoose/travellerstales
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides/troglodytes
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides/hobgoblins
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides/gnolls
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides/centaurs
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides/amazons
-@dirrm %%T%%/data/permissioned/mongoose/slayersguides
-@dirrm %%T%%/data/permissioned/mongoose/powerclasses/assassin
-@dirrm %%T%%/data/permissioned/mongoose/powerclasses
-@dirrm %%T%%/data/permissioned/mongoose/gladiatorsandsofdeath
-@dirrm %%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy
-@dirrm %%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology
-@dirrm %%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic
-@dirrm %%T%%/data/permissioned/mongoose/encyclopediaarcane
-@dirrm %%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue
-@dirrm %%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter
-@dirrm %%T%%/data/permissioned/mongoose/collectorsseries
-@dirrm %%T%%/data/permissioned/mongoose
-@dirrm %%T%%/data/permissioned/malhavocpress/malhavocweb
-@dirrm %%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill
-@dirrm %%T%%/data/permissioned/malhavocpress/demongodsfane
-@dirrm %%T%%/data/permissioned/malhavocpress/bookofeldritchmight2
-@dirrm %%T%%/data/permissioned/malhavocpress
-@dirrm %%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts
-@dirrm %%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb
-@dirrm %%T%%/data/permissioned/greenronin/arcanasocietiesofmagic
-@dirrm %%T%%/data/permissioned/greenronin
-@dirrm %%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery
-@dirrm %%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft
-@dirrm %%T%%/data/permissioned/fantasyflightgames/legendsandlairs
-@dirrm %%T%%/data/permissioned/fantasyflightgames
-@dirrm %%T%%/data/permissioned/avalanchepress/jadeandsteel
-@dirrm %%T%%/data/permissioned/avalanchepress
-@dirrm %%T%%/data/permissioned/aurand20/darkawakeningsguardian
-@dirrm %%T%%/data/permissioned/aurand20/apothecarynotes
-@dirrm %%T%%/data/permissioned/aurand20
-@dirrm %%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods
-@dirrm %%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest
-@dirrm %%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil
-@dirrm %%T%%/data/permissioned/atlasgames/penumbra/backdrops
-@dirrm %%T%%/data/permissioned/atlasgames/penumbra
-@dirrm %%T%%/data/permissioned/atlasgames
-@dirrm %%T%%/data/permissioned/alderacentgroup/war
-@dirrm %%T%%/data/permissioned/alderacentgroup/undead
-@dirrm %%T%%/data/permissioned/alderacentgroup/evil
-@dirrm %%T%%/data/permissioned/alderacentgroup/dungeons
-@dirrm %%T%%/data/permissioned/alderacentgroup/dragons
-@dirrm %%T%%/data/permissioned/alderacentgroup
-@dirrm %%T%%/data/permissioned
-@dirrm %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals
-@dirrm %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands
-@dirrm %%T%%/data/d20ogl/swordandsorcerystudios
-@dirrm %%T%%/data/d20ogl/srd35/altpcc
-@dirrm %%T%%/data/d20ogl/srd35
-@dirrm %%T%%/data/d20ogl/srd/altpcc
-@dirrm %%T%%/data/d20ogl/srd
-@dirrm %%T%%/data/d20ogl/pandaheadproductions/xcrawl
-@dirrm %%T%%/data/d20ogl/pandaheadproductions
-@dirrm %%T%%/data/d20ogl/msrd/altpcc
-@dirrm %%T%%/data/d20ogl/msrd
-@dirrm %%T%%/data/d20ogl/malhavocpress/bookofhallowedmight
-@dirrm %%T%%/data/d20ogl/malhavocpress/bookofeldritchmight
-@dirrm %%T%%/data/d20ogl/malhavocpress
-@dirrm %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces
-@dirrm %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs
-@dirrm %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook
-@dirrm %%T%%/data/d20ogl/fantasyflightgames/dragonstar
-@dirrm %%T%%/data/d20ogl/fantasyflightgames
-@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic
-@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures
-@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbook
-@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil
-@dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2
-@dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1
-@dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary
-@dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection
-@dirrm %%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk
-@dirrm %%T%%/data/d20ogl/creativemountaingames/lexus/groupcombat
-@dirrm %%T%%/data/d20ogl/creativemountaingames/lexus/countyclergy
-@dirrm %%T%%/data/d20ogl/creativemountaingames/lexus
-@dirrm %%T%%/data/d20ogl/creativemountaingames
-@dirrm %%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape
-@dirrm %%T%%/data/d20ogl/battlefieldpress/cityscape
-@dirrm %%T%%/data/d20ogl/battlefieldpress
-@dirrm %%T%%/data/d20ogl/bastionpress/oathbound
-@dirrm %%T%%/data/d20ogl/bastionpress/alchemyherbalists
-@dirrm %%T%%/data/d20ogl/bastionpress
-@dirrm %%T%%/data/d20ogl/avalanchepress/blackflags
-@dirrm %%T%%/data/d20ogl/avalanchepress
-@dirrm %%T%%/data/d20ogl
-@dirrm %%T%%/data/customsources
-@dirrm %%T%%/data
-@dirrm %%T%%/characters
+%%DATADIR%%/system/unitSet.lst
+%%DATADIR%%/system/tips.lst
+%%DATADIR%%/system/specials/specials.lst
+%%DATADIR%%/system/specials/equipmentslots.lst
+%%DATADIR%%/system/specials/bonusstacks.lst
+%%DATADIR%%/system/sizeAdjustment.lst
+%%DATADIR%%/system/schools.lst
+%%DATADIR%%/system/pointbuymethods_system.lst
+%%DATADIR%%/system/paperInfo.lst
+%%DATADIR%%/system/outputFilters/xml.lst
+%%DATADIR%%/system/outputFilters/htm.lst
+%%DATADIR%%/system/outputFilters/fo.lst
+%%DATADIR%%/system/opengaminglicense.10a.txt
+%%DATADIR%%/system/gameModes/Modern/statsandchecks.lst
+%%DATADIR%%/system/gameModes/Modern/rules.lst
+%%DATADIR%%/system/gameModes/Modern/miscinfo.lst
+%%DATADIR%%/system/gameModes/Modern/load.lst
+%%DATADIR%%/system/gameModes/Modern/level.lst
+%%DATADIR%%/system/gameModes/3e/statsandchecks.lst
+%%DATADIR%%/system/gameModes/3e/rules.lst
+%%DATADIR%%/system/gameModes/3e/miscinfo.lst
+%%DATADIR%%/system/gameModes/3e/load.lst
+%%DATADIR%%/system/gameModes/3e/level.lst
+%%DATADIR%%/system/gameModes/35e/statsandchecks.lst
+%%DATADIR%%/system/gameModes/35e/rules.lst
+%%DATADIR%%/system/gameModes/35e/miscinfo.lst
+%%DATADIR%%/system/gameModes/35e/load.lst
+%%DATADIR%%/system/gameModes/35e/level.lst
+%%DATADIR%%/system/bio/traits.lst
+%%DATADIR%%/system/bio/names/sparhawk.nam
+%%DATADIR%%/system/bio/names/rw_Scottish_Gaelic_Male.nam
+%%DATADIR%%/system/bio/names/rw_Scottish_Gaelic_Female.nam
+%%DATADIR%%/system/bio/names/rw_Russian_Male.nam
+%%DATADIR%%/system/bio/names/rw_Russian_Female.nam
+%%DATADIR%%/system/bio/names/rw_Roman_Male.nam
+%%DATADIR%%/system/bio/names/rw_Roman_Female.nam
+%%DATADIR%%/system/bio/names/rw_Pictish_Medieval_Male.nam
+%%DATADIR%%/system/bio/names/rw_Pictish_Classical_NAMES.nam
+%%DATADIR%%/system/bio/names/rw_Persian_NAMES.nam
+%%DATADIR%%/system/bio/names/rw_Italian_Renaissance_Male.nam
+%%DATADIR%%/system/bio/names/rw_Italian_Renaissance_Female.nam
+%%DATADIR%%/system/bio/names/rw_Irish_Gaelic_Male.nam
+%%DATADIR%%/system/bio/names/rw_Irish_Gaelic_Female.nam
+%%DATADIR%%/system/bio/names/rw_Gothic_NAMES.nam
+%%DATADIR%%/system/bio/names/rw_German_Male.nam
+%%DATADIR%%/system/bio/names/rw_German_Female.nam
+%%DATADIR%%/system/bio/names/rw_French_NAMES.nam
+%%DATADIR%%/system/bio/names/rw_Frankish_Male.nam
+%%DATADIR%%/system/bio/names/rw_Frankish_Female.nam
+%%DATADIR%%/system/bio/names/rw_Flemish_NAMES.nam
+%%DATADIR%%/system/bio/names/rw_English_Middle_Period_Male.nam
+%%DATADIR%%/system/bio/names/rw_English_Middle_Period_Female.nam
+%%DATADIR%%/system/bio/names/rw_English_Late_Period_Male.nam
+%%DATADIR%%/system/bio/names/rw_English_Late_Period_Female.nam
+%%DATADIR%%/system/bio/names/rw_Anglo_Saxon_Male.nam
+%%DATADIR%%/system/bio/names/rw_Anglo_Saxon_Latinized_Male.nam
+%%DATADIR%%/system/bio/names/rw_Anglo_Saxon_Latinized_Female.nam
+%%DATADIR%%/system/bio/names/rw_Anglo_Saxon_Female.nam
+%%DATADIR%%/system/bio/names/orc.nam
+%%DATADIR%%/system/bio/names/kerrel.nam
+%%DATADIR%%/system/bio/names/hispanic_NAMES.nam
+%%DATADIR%%/system/bio/names/gnome.nam
+%%DATADIR%%/system/bio/names/cg_NAMES.nam
+%%DATADIR%%/system/bio/names/ReadMe.txt
+%%DATADIR%%/system/bio/names/Narn.nam
+%%DATADIR%%/system/bio/names/Mar_NAMES.nam
+%%DATADIR%%/system/bio/names/Mar_Knightly_NAMES.nam
+%%DATADIR%%/system/bio/names/Mar_Draconic.nam
+%%DATADIR%%/system/bio/names/HOBER.NAM
+%%DATADIR%%/system/bio/names/Generic_NAMES.nam
+%%DATADIR%%/system/bio/names/GALLER.NAM
+%%DATADIR%%/system/bio/names/Felana.nam
+%%DATADIR%%/system/bio/names/Deverry.nam
+%%DATADIR%%/system/bio/names/DVARGAR.NAM
+%%DATADIR%%/system/bio/names/Arabic.nam
+%%DATADIR%%/system/bio/names/Albion.nam
+%%DATADIR%%/system/bio/names/ALVER.NAM
+%%DATADIR%%/system/bio/locations.lst
+%%DATADIR%%/system/bio/biosettings.lst
+%%DATADIR%%/system/Languages/LanguageBundle_en_US.properties
+%%DATADIR%%/system/Languages/LanguageBundle.properties
+%%DATADIR%%/system/D20System.htm
+%%DATADIR%%/pcgen.sh
+%%DATADIR%%/pcgen.jar
+%%DATADIR%%/outputsheets/d20/western/text/placeholder.txt
+%%DATADIR%%/outputsheets/d20/western/pdf/placeholder.txt
+%%DATADIR%%/outputsheets/d20/western/htmlxml/psheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/western/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/western/htmlxml/csheetDeadlands.htm
+%%DATADIR%%/outputsheets/d20/sciencefiction/text/placeholder.txt
+%%DATADIR%%/outputsheets/d20/sciencefiction/pdf/placeholder.txt
+%%DATADIR%%/outputsheets/d20/sciencefiction/htmlxml/psheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/sciencefiction/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/modern/text/placeholder.txt
+%%DATADIR%%/outputsheets/d20/modern/pdf/placeholder.txt
+%%DATADIR%%/outputsheets/d20/modern/pdf/csheet_modern_std.xslt
+%%DATADIR%%/outputsheets/d20/modern/htmlxml/psheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/modern/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/modern/htmlxml/csheet_modern_std.htm
+%%DATADIR%%/outputsheets/d20/horror/text/placeholder.txt
+%%DATADIR%%/outputsheets/d20/horror/htmlxml/psheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/horror/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/historical/text/placeholder.txt
+%%DATADIR%%/outputsheets/d20/historical/pdf/placeholder.txt
+%%DATADIR%%/outputsheets/d20/historical/htmlxml/psheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/historical/htmlxml/eqsheet_dnd_std.htm
+%%DATADIR%%/outputsheets/d20/fantasy/text/csheet_plain.TXT
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.xslt
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.fo
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook.fo
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_picture.fo
+%%DATADIR%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_descriptions.fo
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/psheet_fantasy_std.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_std.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_consumables.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_std.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock2.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock1.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_compact.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_combined.htm
+%%DATADIR%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_OpenRPG.xml
+%%DATADIR%%/outputsheets/base.xml
+%%DATADIR%%/lib/themes/xplunathemepack.zip
+%%DATADIR%%/lib/themes/whistlerthemepack.zip
+%%DATADIR%%/lib/themes/toxicthemepack.zip
+%%DATADIR%%/lib/themes/themepack.zip
+%%DATADIR%%/lib/themes/modernthemepack.zip
+%%DATADIR%%/lib/themes/macosthemepack.zip
+%%DATADIR%%/lib/themes/cellshadedthemepack.zip
+%%DATADIR%%/lib/themes/beosthemepack.zip
+%%DATADIR%%/lib/themes/bbjthemepack.zip
+%%DATADIR%%/lib/themes/aquathemepack.zip
+%%DATADIR%%/lib/skinlf.jar
+%%DATADIR%%/lib/readme.txt
+%%DATADIR%%/lib/kunststoff.jar
+%%DATADIR%%/lib/jep.LICENSE.txt
+%%DATADIR%%/lib/jep-2.24.jar
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesweapprofs.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesmutations.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesdefects.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplates.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesskills.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesraces.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldruleslanguage.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesfeats.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapranged.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapmelee.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapammo.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipcoins.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequiparmorshields.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequip.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesclasses.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesbiosettings.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrules.pcc
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/OGL.txt
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequipweapmelee.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequip.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteclasses.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizenste.pcc
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/OGL.txt
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/darwinworld.pcc
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaweapprofs.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoafeats.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapranged.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapmelee.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapammo.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequiparmorshields.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequip.lst
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoa.pcc
+%%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodweapprofs.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodspells.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodskills.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapranged.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapammo.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequiprodstaffwands.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequip.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/seablood.pcc
+%%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesspells.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesdeities.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytes.pcc
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobspells.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobraces.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgoblanguages.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobbiosettings.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgob.pcc
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollraces.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnolllanguages.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollbiosettings.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnoll.pcc
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentraces.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentbiosettings.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscent.pcc
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsspells.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdomains.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdeities.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazons.pcc
+%%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinweapprofs.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinpotionspoisons.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapranged.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapammo.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipmods.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinequip.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassinclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/assassin.pcc
+%%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorweapprofs.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatortemplates.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapranged.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequip.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiator.pcc
+%%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancytemplates.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyspells.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyskills.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequiprings.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipartifacts.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancycompanionmods.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancy.pcc
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyskills.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprods.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprings.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipartifacts.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonology.pcc
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicskills.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagic.pcc
+%%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueweapprofs.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueskills.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintroguefeats.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapranged.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmeleespecific.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammospecific.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammo.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipmods.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequiparmorshields.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequip.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogue.pcc
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/OGL.txt
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterweapprofs.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterskills.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterfeats.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapranged.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapmelee.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapblackpowder.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapammo.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequiparmorshields.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequip.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterclasses.lst
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighter.pcc
+%%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/OGL.txt
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookwebspells.lst
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookwebraces.lst
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookwebfeats.lst
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclassfeats.lst
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclasses.lst
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/montecookweb.pcc
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/Permission.txt
+%%DATADIR%%/data/permissioned/malhavocpress/malhavocweb/OGL.txt
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskilltemplates.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillraces.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillpowers.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillfeats.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillequip.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillclasses.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillbiosettings.lst
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskill.pcc
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/readme.txt
+%%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill/OGL.txt
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/demonfanepermission.htm
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipartifacts.lst
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/demonfanedeities.lst
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/demonfane.pcc
+%%DATADIR%%/data/permissioned/malhavocpress/demongodsfane/OGL.txt
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2spells.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2feats.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipwondrousitems.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprodstaffwands.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprings.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipmods.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2domain.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2deities.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2classes.lst
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2.pcc
+%%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2/OGL.txt
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeweapprofs.lst
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadetemplate.lst
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jaderace.lst
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeequipweapmelee.lst
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadebiosettings.lst
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jade.pcc
+%%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts/OGL.txt
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebmonsters.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebfeats.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipweapmeleespecific.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipartifacts.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanaweb.pcc
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/OGL.txt
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/readme.txt
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanatemplates.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaspells.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanafeats.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequiprings.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequip.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadomains.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadeities.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaclasses.lst
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcana.pcc
+%%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic/OGL.txt
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachspells.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachskills.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachfeats.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipweapmelee.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequiprings.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequip.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachdomains.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachclasses.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreach.pcc
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/OGL.txt
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftspells.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftfeats.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipweapmelee.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprodstaffwand.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprings.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipfamiliars.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiparmorshield.lst
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraft.pcc
+%%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/OGL.txt
+%%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelfeats.lst
+%%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelequipweapmelee.lst
+%%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelclasses.lst
+%%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel/jadesteel.pcc
+%%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel/OGL.txt
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianspells.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianskills.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianraces.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipweapmelee.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipspecific.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiprings.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiparmorshields.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipammo.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequip.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardiandeities.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardianbiosettings.lst
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/guardian.pcc
+%%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian/OGL.txt
+%%DATADIR%%/data/permissioned/aurand20/apothecarynotes/apothecaryequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/aurand20/apothecarynotes/apothecaryequip.lst
+%%DATADIR%%/data/permissioned/aurand20/apothecarynotes/apothecary.pcc
+%%DATADIR%%/data/permissioned/aurand20/apothecarynotes/OGL.txt
+%%DATADIR%%/data/permissioned/aurand20/ReadMe-aurand20.txt
+%%DATADIR%%/data/permissioned/aurand20/History.txt
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsspells.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsskills.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsfeats.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdomains.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdeities.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgods.pcc
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods/OGL.txt
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforestequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforest.pcc
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/thievesintheforest/OGL.txt
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveiltemplates.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilspells.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipweapmeleespecific.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipmods.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveil.pcc
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil/OGL.txt
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsraces.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipartifacts.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequip.lst
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/backdrops.pcc
+%%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/war/warspells.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/warskills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/warfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/wardomains.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/wardeities.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/warclasses.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/war/war.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/war/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadtemplates.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadspells.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadskills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequiprodstaffwands.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequiprings.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequipmods.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadequip.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeaddomains.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeaddeities.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undeadclasses.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/undead.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/undead/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilspells.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilskills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilraces.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilequipartifacts.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evildomains.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evildeities.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evilclasses.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/evil.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/evil/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsspells.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsskills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsequip.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsclassfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeonsclasses.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/dungeons.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/dungeons/OGL.txt
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsweapprofs.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsspells.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsskills.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsfeats.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequipwondrousitems.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmeleespecific.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmelee.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapammospecific.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequippotionspoisons.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequipmods.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsequip.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsdeities.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragonsclasses.lst
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/dragons.pcc
+%%DATADIR%%/data/permissioned/alderacentgroup/dragons/OGL.txt
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsweapprofs.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualstemplates.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsspells.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsskills.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualspermission.HTM
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsfeatshidden.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsfeats.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipwondrousitems.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweaprangedspecific.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweapmeleespecific.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipweapammospecific.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipscrolls.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiprodstaffwands.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiprings.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequippotionspoisons.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequipartifacts.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequiparmorshieldsspecific.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsequip.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsdomains.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsclasses.lst
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsrituals.pcc
+%%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/OGL.txt
+%%DATADIR%%/data/d20ogl/srd35/rsrd_weaponprofs_natural.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_weaponprofs.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_templates_types.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_templates_monsters.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_templates.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_spells.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_skills.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_y_z.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_w_x.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_u_v.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_s_t.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_q_r.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_o_p.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_m_n.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_k_l.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_i_j.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_g_h.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_e_f.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_c_d.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races_a_b.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races__vermin.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races__dragons.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races__base.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_races__animals.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_languages.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats_templates.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats_monster.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats_hidden2.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats_descriptions.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_feats.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equipmods_enhancing.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equipmods_base.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_ranged_specific.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_ranged.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_natural.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_melee_specific.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_melee.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_ammo_specific.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_weap_ammo.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_scrolls.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_rodsstaffswands.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_rings.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_potions.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_poisons.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_coinsgems.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_basetypes.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_armorshields_specific.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip_armorshields.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_equip.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_domains.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_deities.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_companionmods.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_classes_prestige.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_classes_npc.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_classes_monsters.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd_classes_base.lst
+%%DATADIR%%/data/d20ogl/srd35/rsrd.pcc
+%%DATADIR%%/data/d20ogl/srd35/altpcc/rsrdpsionics.pcc
+%%DATADIR%%/data/d20ogl/srd35/altpcc/rsrdmonsters.pcc
+%%DATADIR%%/data/d20ogl/srd35/altpcc/rsrdbasics.pcc
+%%DATADIR%%/data/d20ogl/srd35/altpcc/rsrdadvancednorace.pcc
+%%DATADIR%%/data/d20ogl/srd35/altpcc/rsrdadvanced.pcc
+%%DATADIR%%/data/d20ogl/srd35/OGL.txt
+%%DATADIR%%/data/d20ogl/srd/srd_weapprofs_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_weapprofs_natural.lst
+%%DATADIR%%/data/d20ogl/srd/srd_weapprofs.lst
+%%DATADIR%%/data/d20ogl/srd/srd_templates_types.lst
+%%DATADIR%%/data/d20ogl/srd/srd_templates_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_templates_creatures.lst
+%%DATADIR%%/data/d20ogl/srd/srd_templates.lst
+%%DATADIR%%/data/d20ogl/srd/srd_starting_kits.lst
+%%DATADIR%%/data/d20ogl/srd/srd_spells_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_spells.lst
+%%DATADIR%%/data/d20ogl/srd/srd_skills_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_skills.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_xyz.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_uvw.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_st.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_opr.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_mn.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_ikl.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_gh.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_ef.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_d.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races_abc.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races__vermin.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races__psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races__phb.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races__dragons.lst
+%%DATADIR%%/data/d20ogl/srd/srd_races__animals.lst
+%%DATADIR%%/data/d20ogl/srd/srd_languages.lst
+%%DATADIR%%/data/d20ogl/srd/srd_feats_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_feats_hidden_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/srd/srd_feats_descriptions.lst
+%%DATADIR%%/data/d20ogl/srd/srd_feats.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equipmods_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equipmods_mundane.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equipmods_magic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_ranged_specific.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_ranged.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_melee_specific.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_melee_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_melee.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_ammo_specific.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_weap_ammo.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_scrolls.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_rodsstaffswands.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_rings.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_potions_poisons.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_dorjes_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_coinsgems.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_basetypes_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_basetypes.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_artifacts.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_armorshields_specific.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip_armorshields.lst
+%%DATADIR%%/data/d20ogl/srd/srd_equip.lst
+%%DATADIR%%/data/d20ogl/srd/srd_domains.lst
+%%DATADIR%%/data/d20ogl/srd/srd_deities.lst
+%%DATADIR%%/data/d20ogl/srd/srd_companion_mods.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_psionic.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_prestige.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_dragon.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_creature_types.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_creature_specific.lst
+%%DATADIR%%/data/d20ogl/srd/srd_classes_base.lst
+%%DATADIR%%/data/d20ogl/srd/srd.pcc
+%%DATADIR%%/data/d20ogl/srd/altpcc/srdpsionics.pcc
+%%DATADIR%%/data/d20ogl/srd/altpcc/srdmonsters.pcc
+%%DATADIR%%/data/d20ogl/srd/altpcc/srdbasic.pcc
+%%DATADIR%%/data/d20ogl/srd/altpcc/srdasian.pcc
+%%DATADIR%%/data/d20ogl/srd/altpcc/srdadvanced.pcc
+%%DATADIR%%/data/d20ogl/srd/OGL.txt
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlweapprofs.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlspells.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlskills.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlfeats.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapranged.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapmelee.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequiparmorshields.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequip.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldomains.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldeities.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlclasses.lst
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawl.pcc
+%%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl/OGL.txt
+%%DATADIR%%/data/d20ogl/msrd/msrd_weaponprofs.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_templates_fiends.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_templates.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_spells.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_skills.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_races.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_powers.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_languages.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_feats_occupations.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_feats.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equipmods_fx.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equipmods.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_wonderousitems.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_weap_ranged_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_weap_ranged.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_weap_melee_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_weap_melee.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_weap_ammo.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_wands_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_vehicles.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_tattoos_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_staffs_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_scrolls_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_ring_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_potion_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_armor_specific.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip_armor.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_equip.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_classes_npc.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_classes_base.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd_classes_advanced.lst
+%%DATADIR%%/data/d20ogl/msrd/msrd.pcc
+%%DATADIR%%/data/d20ogl/msrd/altpcc/msrdnofx.pcc
+%%DATADIR%%/data/d20ogl/msrd/OGL.txt
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_templates.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_spells.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_races.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equipmods.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_weap_specific.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_rings.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_potions.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_domains.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_classes.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_armorshields_specific.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight.pcc
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight/OGL.txt
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchspells.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchskills.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchraces.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchfeats.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequipwondrousitems.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequipweapmelee.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequiprodstaffwands.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequiprings.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchequippotionspoisons.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchclasses.lst
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritch.pcc
+%%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight/OGL.txt
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesweapprofs.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracestemplates.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesspells.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesskills.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesraces.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicraceslanguages.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesfeatshidden.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesfeats.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapranged.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapmelee.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesequipweapammo.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesdomains.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesclasses.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesbiosettings.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicraces.pcc
+%%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/OGL.txt
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_weapprofs.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_templates.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_spells.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_skills.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_races.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_languages.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats_hidden.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ranged.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_melee.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ammo.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mods.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mech.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_armorshields.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_deities.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_classes.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_biosettings.lst
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb.pcc
+%%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/OGL.txt
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspellsspells.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspells.pcc
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/OGL.txt
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equipmod_magic.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_wondrousitems.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weaprangedspecific.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapmeleespecific.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapammospecific.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_scrolls.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rodstaffswands.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rings.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_potions.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_artifacts.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_armorshieldsspecific.lst
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures.pcc
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/issues.txt
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/Magical_Items.pdf
+%%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/FanCC_NBoMT.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/permission.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2spells.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1spells.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprimespells.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprime.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/primary/OGL.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/OGL.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/trundlefolk.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/lexustrundlefolkspells.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/lexustrundlefolkclasses.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/OGL.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/permission.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/groupcombat/lexusgroupcombatfeats.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/groupcombat/groupcombat.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/groupcombat/OGL.txt
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/countyclergy/lexusclergyspells.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/countyclergy/lexusclergyclasses.lst
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/countyclergy/countyclergy.pcc
+%%DATADIR%%/data/d20ogl/creativemountaingames/lexus/countyclergy/OGL.txt
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeweapprofs.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapetemplates.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeskills.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscaperaces.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapelanguages.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapefeats.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapranged.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapmelee.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipweapammo.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequipmods.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequiparmorshields.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeequip.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeclassfeats.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeclasses.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapebiosettings.lst
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscape.pcc
+%%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape/OGL.txt
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundweapprofs.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundtemplates.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundspells.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundskills.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundraces.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundpermission.htm
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundlanguages.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundfeats30.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundfeats.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapranged.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapmelee.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapammo.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipmods.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipmagicitems.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequipgoods.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequiparmorshields.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundequip.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundclassfeats.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundclasses.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathboundbiosettings.lst
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/oathbound.pcc
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/UPDATE2003-11-09-ruemere.TXT
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/UPDATE.txt
+%%DATADIR%%/data/d20ogl/bastionpress/oathbound/OGL.txt
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistspells.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistskills.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistfeats.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipwondrousitems.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipherbs.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistclasses.lst
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalist.pcc
+%%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists/OGL.txt
+%%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflagskills.lst
+%%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflags.pcc
+%%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflagfeats.lst
+%%DATADIR%%/data/d20ogl/avalanchepress/blackflags/blackflagclasses.lst
+%%DATADIR%%/data/d20ogl/avalanchepress/blackflags/OGL.txt
+%%DATADIR%%/data/customsources/readme-customsources.txt
+%%DATADIR%%/characters/Code Monkey.htm
+@dirrm %%DATADIR%%/system/specials
+@dirrm %%DATADIR%%/system/outputFilters
+@dirrm %%DATADIR%%/system/gameModes/Modern
+@dirrm %%DATADIR%%/system/gameModes/3e
+@dirrm %%DATADIR%%/system/gameModes/35e
+@dirrm %%DATADIR%%/system/gameModes
+@dirrm %%DATADIR%%/system/bio/names
+@dirrm %%DATADIR%%/system/bio
+@dirrm %%DATADIR%%/system/Languages
+@dirrm %%DATADIR%%/system
+@dirrm %%DATADIR%%/outputsheets/d20/western/text
+@dirrm %%DATADIR%%/outputsheets/d20/western/pdf
+@dirrm %%DATADIR%%/outputsheets/d20/western/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/western
+@dirrm %%DATADIR%%/outputsheets/d20/sciencefiction/text
+@dirrm %%DATADIR%%/outputsheets/d20/sciencefiction/pdf
+@dirrm %%DATADIR%%/outputsheets/d20/sciencefiction/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/sciencefiction
+@dirrm %%DATADIR%%/outputsheets/d20/modern/text
+@dirrm %%DATADIR%%/outputsheets/d20/modern/pdf
+@dirrm %%DATADIR%%/outputsheets/d20/modern/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/modern
+@dirrm %%DATADIR%%/outputsheets/d20/horror/text
+@dirrm %%DATADIR%%/outputsheets/d20/horror/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/horror
+@dirrm %%DATADIR%%/outputsheets/d20/historical/text
+@dirrm %%DATADIR%%/outputsheets/d20/historical/pdf
+@dirrm %%DATADIR%%/outputsheets/d20/historical/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/historical
+@dirrm %%DATADIR%%/outputsheets/d20/fantasy/text
+@dirrm %%DATADIR%%/outputsheets/d20/fantasy/pdf
+@dirrm %%DATADIR%%/outputsheets/d20/fantasy/htmlxml
+@dirrm %%DATADIR%%/outputsheets/d20/fantasy
+@dirrm %%DATADIR%%/outputsheets/d20
+@dirrm %%DATADIR%%/outputsheets
+@dirrm %%DATADIR%%/lib/themes
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects/darwinsworld
+@dirrm %%DATADIR%%/data/permissioned/rpgobjects
+@dirrm %%DATADIR%%/data/permissioned/mongoose/travellerstales/seasofblood
+@dirrm %%DATADIR%%/data/permissioned/mongoose/travellerstales
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides/troglodytes
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides/hobgoblins
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides/gnolls
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides/centaurs
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides/amazons
+@dirrm %%DATADIR%%/data/permissioned/mongoose/slayersguides
+@dirrm %%DATADIR%%/data/permissioned/mongoose/powerclasses/assassin
+@dirrm %%DATADIR%%/data/permissioned/mongoose/powerclasses
+@dirrm %%DATADIR%%/data/permissioned/mongoose/gladiatorsandsofdeath
+@dirrm %%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/necromancy
+@dirrm %%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/demonology
+@dirrm %%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic
+@dirrm %%DATADIR%%/data/permissioned/mongoose/encyclopediaarcane
+@dirrm %%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue
+@dirrm %%DATADIR%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter
+@dirrm %%DATADIR%%/data/permissioned/mongoose/collectorsseries
+@dirrm %%DATADIR%%/data/permissioned/mongoose
+@dirrm %%DATADIR%%/data/permissioned/malhavocpress/malhavocweb
+@dirrm %%DATADIR%%/data/permissioned/malhavocpress/ifthoughtscouldkill
+@dirrm %%DATADIR%%/data/permissioned/malhavocpress/demongodsfane
+@dirrm %%DATADIR%%/data/permissioned/malhavocpress/bookofeldritchmight2
+@dirrm %%DATADIR%%/data/permissioned/malhavocpress
+@dirrm %%DATADIR%%/data/permissioned/greenronin/jadedragonsandhungryghosts
+@dirrm %%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagicweb
+@dirrm %%DATADIR%%/data/permissioned/greenronin/arcanasocietiesofmagic
+@dirrm %%DATADIR%%/data/permissioned/greenronin
+@dirrm %%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery
+@dirrm %%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft
+@dirrm %%DATADIR%%/data/permissioned/fantasyflightgames/legendsandlairs
+@dirrm %%DATADIR%%/data/permissioned/fantasyflightgames
+@dirrm %%DATADIR%%/data/permissioned/avalanchepress/jadeandsteel
+@dirrm %%DATADIR%%/data/permissioned/avalanchepress
+@dirrm %%DATADIR%%/data/permissioned/aurand20/darkawakeningsguardian
+@dirrm %%DATADIR%%/data/permissioned/aurand20/apothecarynotes
+@dirrm %%DATADIR%%/data/permissioned/aurand20
+@dirrm %%DATADIR%%/data/permissioned/atlasgames/penumbra/touchedbythegods
+@dirrm %%DATADIR%%/data/permissioned/atlasgames/penumbra/thievesintheforest
+@dirrm %%DATADIR%%/data/permissioned/atlasgames/penumbra/beyondtheveil
+@dirrm %%DATADIR%%/data/permissioned/atlasgames/penumbra/backdrops
+@dirrm %%DATADIR%%/data/permissioned/atlasgames/penumbra
+@dirrm %%DATADIR%%/data/permissioned/atlasgames
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/war
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/undead
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/evil
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/dungeons
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup/dragons
+@dirrm %%DATADIR%%/data/permissioned/alderacentgroup
+@dirrm %%DATADIR%%/data/permissioned
+@dirrm %%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals
+@dirrm %%DATADIR%%/data/d20ogl/swordandsorcerystudios/scarredlands
+@dirrm %%DATADIR%%/data/d20ogl/swordandsorcerystudios
+@dirrm %%DATADIR%%/data/d20ogl/srd35/altpcc
+@dirrm %%DATADIR%%/data/d20ogl/srd35
+@dirrm %%DATADIR%%/data/d20ogl/srd/altpcc
+@dirrm %%DATADIR%%/data/d20ogl/srd
+@dirrm %%DATADIR%%/data/d20ogl/pandaheadproductions/xcrawl
+@dirrm %%DATADIR%%/data/d20ogl/pandaheadproductions
+@dirrm %%DATADIR%%/data/d20ogl/msrd/altpcc
+@dirrm %%DATADIR%%/data/d20ogl/msrd
+@dirrm %%DATADIR%%/data/d20ogl/malhavocpress/bookofhallowedmight
+@dirrm %%DATADIR%%/data/d20ogl/malhavocpress/bookofeldritchmight
+@dirrm %%DATADIR%%/data/d20ogl/malhavocpress
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/legendsandlairs
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames/dragonstar
+@dirrm %%DATADIR%%/data/d20ogl/fantasyflightgames
+@dirrm %%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic
+@dirrm %%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures
+@dirrm %%DATADIR%%/data/d20ogl/fantasycommunitycouncil/netbook
+@dirrm %%DATADIR%%/data/d20ogl/fantasycommunitycouncil
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation2
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/variation1
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection/primary
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/openspellscollection
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/lexus/trundlefolk
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/lexus/groupcombat
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/lexus/countyclergy
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames/lexus
+@dirrm %%DATADIR%%/data/d20ogl/creativemountaingames
+@dirrm %%DATADIR%%/data/d20ogl/battlefieldpress/cityscape/cityscape
+@dirrm %%DATADIR%%/data/d20ogl/battlefieldpress/cityscape
+@dirrm %%DATADIR%%/data/d20ogl/battlefieldpress
+@dirrm %%DATADIR%%/data/d20ogl/bastionpress/oathbound
+@dirrm %%DATADIR%%/data/d20ogl/bastionpress/alchemyherbalists
+@dirrm %%DATADIR%%/data/d20ogl/bastionpress
+@dirrm %%DATADIR%%/data/d20ogl/avalanchepress/blackflags
+@dirrm %%DATADIR%%/data/d20ogl/avalanchepress
+@dirrm %%DATADIR%%/data/d20ogl
+@dirrm %%DATADIR%%/data/customsources
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/characters
