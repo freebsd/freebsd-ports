@@ -35,6 +35,7 @@ lib/%%PYTHON_VERSION%%/site-packages/TMDA/__init__.pyc
 %%PORTDOCS%%share/doc/tmda/UPGRADE
 %%PORTDOCS%%share/doc/tmda/contrib/ChangeLog
 %%PORTDOCS%%share/doc/tmda/contrib/README.RELAY
+%%PORTDOCS%%share/doc/tmda/contrib/collectaddys
 %%PORTDOCS%%share/doc/tmda/contrib/printcdb
 %%PORTDOCS%%share/doc/tmda/contrib/printdbm
 %%PORTDOCS%%share/doc/tmda/contrib/qmail-smtpd_auth.patch
