@@ -1763,6 +1763,7 @@ emu		ports/x11/emu
 en-ooodict-CA	ports/editors/ooodict-en_CA
 en-ooodict-GB	ports/editors/ooodict-en_GB
 en-ooodict-US	ports/editors/ooodict-en_US
+enblend		ports/graphics/enblend
 enca		ports/converters/enca
 enchant		ports/textproc/enchant
 endeavour	ports/x11-fm/endeavour
