@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/ \
 		http://nadja.cis.ibaraki.ac.jp/pub/X11/
 
-MAINTAINER=	th@cis.ibaraki.ac.jp
+MAINTAINER=	cbc06942@pop06.odn.ne.jp
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
