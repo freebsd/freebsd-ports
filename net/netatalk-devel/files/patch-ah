@@ -1,0 +1,11 @@
+--- etc/afpd/desktop.c.orig	Tue Aug 25 21:59:28 1998
++++ etc/afpd/desktop.c	Tue Aug 25 22:00:23 1998
+@@ -429,7 +429,7 @@
+     m = mpath;
+     u = upath;
+     while ( *m != '\0' ) {
+-	if ( !isascii( *m ) || *m == '/' || ( i == 0 && *m == '.' )) {
++	if ( !isprint( (unsigned char)*m ) || *m == '/' || ( i == 0 && *m == '.' )) {
+ 	    *u++ = ':';
+ 	    *u++ = hexdig[ ( *m & 0xf0 ) >> 4 ];
+ 	    *u++ = hexdig[ *m & 0x0f ];

@@ -29,14 +29,6 @@ include/atalk/paths.h
 include/atalk/rtmp.h
 include/atalk/zip.h
 @dirrm include/atalk
-include/netatalk/aarp.h
-include/netatalk/at.h
-include/netatalk/at_var.h
-include/netatalk/ddp.h
-include/netatalk/ddp_var.h
-include/netatalk/endian.h
-include/netatalk/phase2.h
-@dirrm include/netatalk
 lib/libatalk.a
 lib/libatalk_p.a
 libexec/afpd
@@ -45,28 +37,6 @@ libexec/etc2ps
 libexec/papd
 libexec/psa
 libexec/psf
-man/man1/aecho.1
-man/man1/getzones.1
-man/man1/hqx2bin.1
-man/man1/macbinary.1
-man/man1/megatron.1
-man/man1/nbp.1
-man/man1/nbplkup.1
-man/man1/nbprgstr.1
-man/man1/pap.1
-man/man1/papstatus.1
-man/man1/psorder.1
-man/man1/single2bin.1
-man/man1/unbin.1
-man/man1/unhex.1
-man/man1/unsingle.1
-man/man3/atalk_aton.3
-man/man3/nbp_name.3
-man/man4/atalk.4
-man/man8/afpd.8
-man/man8/atalkd.8
-man/man8/papd.8
-man/man8/psf.8
 share/examples/netatalk/atalkd.conf
 share/examples/netatalk/papd.conf
 @dirrm share/examples/netatalk
@@ -92,3 +62,14 @@ share/filters/tfwpap
 share/filters/tfwpaprev
 @dirrm share/filters
 share/pagecount.ps
+@comment	Remove man page aliases
+@unexec rm -f %D/man/man1/hqx2bin.1*
+@unexec rm -f %D/man/man1/macbinary.1*
+@unexec rm -f %D/man/man1/single2bin.1*
+@unexec rm -f %D/man/man1/unbin.1*
+@unexec rm -f %D/man/man1/unhex.1*
+@unexec rm -f %D/man/man1/unsingle.1*
+@unexec rm -f %D/man/man1/nbplkup.1*
+@unexec rm -f %D/man/man1/nbprgstr.1*
+@unexec rm -f %D/man/man1/nbpunrgstr.1*
+@unexec rm -f %D/man/man1/papstatus.1*

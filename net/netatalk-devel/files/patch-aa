@@ -1,35 +1,30 @@
-*** ../netatalk-1.4b2/Makefile	Wed Oct  9 20:14:20 1996
---- ./Makefile	Thu Jul 24 01:40:24 1997
-***************
-*** 1,15 ****
-  # Root of installation. Subdirectories will be ${DESTDIR}/etc,
-  # ${DESTDIR}/bin, and ${DESTDIR}/lib.
-! DESTDIR=/usr/local/atalk
-  
-  # for system-level binaries
-! SBINDIR=$(DESTDIR)/etc
-  # for user-level binaries
-  BINDIR=$(DESTDIR)/bin
-  # for program libraries (*.a)
-  LIBDIR=$(DESTDIR)/lib
-  # for machine-independent resources (pagecount.ps, etc.)
-! RESDIR=$(DESTDIR)/etc
-  # for configuration files (AppleVolumes.system, etc.)
-  ETCDIR=$(DESTDIR)/etc
-  # for include files
---- 1,15 ----
-  # Root of installation. Subdirectories will be ${DESTDIR}/etc,
-  # ${DESTDIR}/bin, and ${DESTDIR}/lib.
-! DESTDIR=$(PREFIX)
-  
-  # for system-level binaries
-! SBINDIR=$(DESTDIR)/libexec
-  # for user-level binaries
-  BINDIR=$(DESTDIR)/bin
-  # for program libraries (*.a)
-  LIBDIR=$(DESTDIR)/lib
-  # for machine-independent resources (pagecount.ps, etc.)
-! RESDIR=$(DESTDIR)/share
-  # for configuration files (AppleVolumes.system, etc.)
-  ETCDIR=$(DESTDIR)/etc
-  # for include files
+--- Makefile.old	Wed Sep  9 02:42:06 1998
++++ Makefile	Wed Sep  9 02:42:37 1998
+@@ -1,15 +1,15 @@
+ # Root of installation. Subdirectories will be ${DESTDIR}/etc,
+ # ${DESTDIR}/bin, and ${DESTDIR}/lib.
+-DESTDIR=/usr/local/atalk
++DESTDIR=$(PREFIX)
+ 
+ # for system-level binaries
+-SBINDIR=$(DESTDIR)/etc
++SBINDIR=$(DESTDIR)/libexec
+ # for user-level binaries
+ BINDIR=$(DESTDIR)/bin
+ # for program libraries (*.a)
+ LIBDIR=$(DESTDIR)/lib
+ # for machine-independent resources (pagecount.ps, etc.)
+-RESDIR=$(DESTDIR)/etc
++RESDIR=$(DESTDIR)/share
+ # for configuration files (AppleVolumes.system, etc.)
+ ETCDIR=$(DESTDIR)/etc
+ # for include files
+@@ -54,7 +54,7 @@
+ 	    SBINDIR="${SBINDIR}" BINDIR="${BINDIR}" RESDIR="${RESDIR}"\
+ 	    ETCDIR="${ETCDIR}" LIBDIR="${LIBDIR}" INCDIR="${INCDIR}" \
+ 	    DESTDIR="${DESTDIR}" MANDIR="${MANDIR}" \
+-	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" $@
++	    AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" OPTOPTS="${CFLAGS}" $@
+ 
+ FRC:
+ 
