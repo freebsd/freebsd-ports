@@ -1,0 +1,12 @@
+--- conf.c.~1~	Thu Jun 23 11:42:33 1994
++++ conf.c	Mon Sep 14 15:48:41 1998
+@@ -220,7 +220,8 @@
+ #define IR(func)			(romkan_select() ? func : 0)
+ #define ONEWromkan_ready(rkpath)	IR((*RP->rk_ready)(rkpath))
+ #define ONEWromkan_modesw(mode)		IR((*RP->rk_modesw)(mode))
+-#define ONEWromkan_clear()		IR((*RP->rk_gotch)())
++/*#define ONEWromkan_clear()		IR((*RP->rk_gotch)())*/
++#define ONEWromkan_clear()		IR((*RP->rk_clear)())
+ #define ONEWromkan_getc()		IR((*RP->rk_getc)())
+ #define ONEWromkan_next()		IR((*RP->rk_next)())
+ #define ONEWromkan_dispmode()		IR((*RP->rk_dispmode)())
