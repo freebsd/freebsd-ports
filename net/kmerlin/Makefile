@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	cedric@cedric.trix.net
 COMMENT=	An IM (Instant Messenger) KDE client for the Microsoft MSN Network
 
+BROKEN=		"Does not compile with qt 3.3"
+
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
