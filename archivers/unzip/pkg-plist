@@ -4,6 +4,6 @@ bin/unzip
 bin/funzip
 bin/unzipsfx
 bin/zipgrep
-share/doc/unzip/README
-share/doc/unzip/WHERE
-@dirrm share/doc/unzip
+%%PORTDOCS%%share/doc/unzip/README
+%%PORTDOCS%%share/doc/unzip/WHERE
+%%PORTDOCS%%@dirrm share/doc/unzip
