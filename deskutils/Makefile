@@ -44,6 +44,7 @@
     SUBDIR += knowit
     SUBDIR += kronolith
     SUBDIR += krss
+    SUBDIR += ktagebuch
     SUBDIR += libmrproject
     SUBDIR += ljcharm
     SUBDIR += logjam
