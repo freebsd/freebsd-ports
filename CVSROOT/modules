@@ -4374,6 +4374,7 @@ m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gcj	ports/devel/m68k-rtems-gcj
 m68k-rtems-gdb	ports/devel/m68k-rtems-gdb
 m68k-rtems-objc	ports/devel/m68k-rtems-objc
+mac-robber	ports/security/mac-robber
 macipgw		ports/net/macipgw
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
