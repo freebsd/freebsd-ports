@@ -4655,6 +4655,7 @@ p5-Math-Random	ports/math/p5-Math-Random
 p5-Math-Random-MT	ports/math/p5-Math-Random-MT
 p5-MatrixReal	ports/math/p5-MatrixReal
 p5-Memoize	ports/devel/p5-Memoize
+p5-Metadata	ports/databases/p5-Metadata
 p5-Mon		ports/net/p5-Mon
 p5-Msql		ports/databases/p5-Msql
 p5-MyObject	ports/databases/p5-MyObject
