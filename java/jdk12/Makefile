@@ -20,11 +20,11 @@ COMMENT=	Java Development Kit 1.2
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
-		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
-		${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(NATIVE_BOOTSTRAP)
 BUILD_DEPENDS+=	${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk12
 .endif
+PATCH_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
