@@ -16,12 +16,14 @@
 #              "ftp.br.FreeBSD.org"
 # Europe
 #
+56.2,	10.2,	"ftp.FreeBSD.org"			# Skejby, Aarhus, Denmark (TDC Internet)
 54.0,   -7.0, "ftp.ie.FreeBSD.org"            # Dublin, Ireland
 #              "ftp.de.FreeBSD.org"            # Aachen, DE (rwth-aachen)
 53.5,   -0.2,  "ftp.uk.FreeBSD.org"           # UK (Imperial College)
 53.5,   0.0    "ftp3.uk.FreeBSD.org"          # UK (Demon Internet@Thus)
-56.6,	10.2,	"ftp.dk.FreeBSD.org"		# Aarhus, Denmark (Tele Danmark)
-55.7,	12.6,	"ftp2.dk.FreeBSD.org"		# Copenhagen, Denmark (DKUUG co Tele Danmark Internet)
+56.1,	10.1,	"ftp.dk.FreeBSD.org"		# Slet, Aarhus, Denmark (TDC Tele Danmark)
+55.7,	12.6,	"ftp2.dk.FreeBSD.org"		# Oesterbro, Copenhagen, Denmark (DKUUG co TDC Internet)
+56.2,	10.2,	"ftp3.dk.FreeBSD.org"		# Skejby, Aarhus, Denmark (TDC Internet)
 59.92,	10.75,	"ftp.no.FreeBSD.org"		# Oslo, Norway (University of Oslo)
 60.19, 24.83, "nic.funet.fi"                   # Espoo, Finland
 60.2,   25.0, "ftp.fi.FreeBSD.org"             # Helsinki?, Finland
