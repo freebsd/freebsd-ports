@@ -1,0 +1,9 @@
+--- pksd.c.orig	Thu Jul 27 10:16:19 2000
++++ pksd.c	Thu Jul 27 10:17:34 2000
+@@ -85,6 +85,7 @@
+    psc.mrc = &mrc;
+ 
+    pwc.port = pc.www_port;
++   pwc.db_dir = pc.db_dir;
+    pwc.max_reply_keys = pc.max_reply_keys;
+    pwc.pic = &pic;

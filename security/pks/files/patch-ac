@@ -1,0 +1,55 @@
+$NetBSD$
+
+--- pks_www.c.orig	Wed Jun  2 02:06:01 1999
++++ pks_www.c	Thu Jul 27 10:17:35 2000
+@@ -113,6 +113,9 @@
+    w_error(fd, vers, (unsigned char *) str, strlen(str));
+ }
+ 
++static const char homepage_str[] = "/";
++static int homepage_len = sizeof(homepage_str)-1;
++
+ static const char lookup_str[] = "/pks/lookup";
+ static int lookup_len = sizeof(lookup_str)-1;
+ 
+@@ -291,6 +294,34 @@
+    search = -1;
+    search_len = 0;
+ 
++   if (is_token(uri, urilen, homepage_str, homepage_len, 1)) {
++      FILE *homepage;
++      char homepage_path[2048];
++      char buf[1024];
++      unsigned char *line;
++      xbuffer xb;
++
++      strncpy(homepage_path, conf->db_dir, 2035);
++      strncat(homepage_path, "/index.html", 2046);
++      if ((homepage = fopen(homepage_path,"r")) == NULL) {
++         log_fatal("pks_www", "non-existent homepage");
++	 return;
++      }
++
++      xbuffer_alloc(&xb);
++
++      while (line = (unsigned char *) fgets(buf,sizeof(buf), homepage)) {
++         if (!xbuffer_append_str(&xb, line)) {
++            log_fatal("pks_www", "displaying home page");
++	    return;
++         }
++      }
++   
++      w_reply(fd, vers, xb.buf, xb.len);
++
++      xbuffer_free(&xb);
++      return;
++   } 
+    if (is_token(uri, urilen, lookup_str, lookup_len, 1)) {
+       long op, op_len, exact, exact_len, fingerprint, fingerprint_len;
+       int flags;
+@@ -498,4 +529,5 @@
+ void pks_www_init(pks_www_conf *conf)
+ {
+    www_init(conf->port, pks_www, conf);
++   www_init(conf->db_dir, pks_www, conf);
+ }

@@ -101,6 +101,7 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pidentd
+    SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += portscanner
     SUBDIR += portsentry
