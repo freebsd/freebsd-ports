@@ -31,11 +31,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
 BROKEN=		"Broken pkg-plist"
-.endif
+DEPRECATED=     "Will be removed after April 7 if still broken"
 
 pre-configure:
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LIBTOOL_SHAREDIR}/libltdl
@@ -43,4 +40,4 @@ pre-configure:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
