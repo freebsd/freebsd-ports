@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timidity++
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -50,6 +50,7 @@ CONFIGURE_ARGS+=	--enable-audio=oss
 MAN1=		timidity.1
 MAN5=		timidity.cfg.5
 
+MANLANG=	"" ja
 DOCFILES=	README.dl README.sf
 DOCLANG=	C ja_JP.ujis
 
@@ -60,7 +61,6 @@ CONFIGURE_ENV=	LDFLAGS=-export-dynamic
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/man/ja/man1 ${PREFIX}/man/ja/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.1 \
 	${PREFIX}/man/ja/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/ja_JP.ujis/timidity.cfg.5 \
