@@ -3,14 +3,13 @@
 # Date created:		Thu Sep 14 11:10:01 CDT 1995
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.3 1996/09/11 05:53:42 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 10:22:31 asami Exp $
 #
 
 DISTNAME=	gcc11
 PKGNAME=	gcc11-2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ 
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
 MAINTAINER=	erich@FreeBSD.ORG
