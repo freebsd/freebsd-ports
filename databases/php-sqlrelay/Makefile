@@ -15,8 +15,8 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PHP modules to access to SQL Relay
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
-		php-config:${PORTSDIR}/www/mod_php4
+EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
+BUILD_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

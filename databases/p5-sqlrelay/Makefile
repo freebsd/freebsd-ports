@@ -15,8 +15,8 @@ DISTFILES=	# none
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Perl5 modules to access to SQL Relay, including a DBD interface
 
-BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 
