@@ -18,5 +18,6 @@ NO_BUILD=	yes
 do-install:
 		${MKDIR} ${PREFIX}/share/certs
 		${INSTALL_DATA} ${FILESDIR}/ca-root.crt ${PREFIX}/share/certs
+		${LN} -sf ${PREFIX}/share/certs/ca-root.crt /etc/ssl/cert.pem
 
 .include <bsd.port.mk>
