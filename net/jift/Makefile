@@ -13,22 +13,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/jar:${PORTSDIR}/java/jdk12-beta
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
-		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk12-beta
-
 BROKEN=		'Does not currently work'
 
+USE_JAVA=	1.2+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/classes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE}
 
-JDK_VERSION=	1.2.2
-JAVAC_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/javac
-JAR_CMD=	${LOCALBASE}/jdk${JDK_VERSION}/bin/jar
 JAVAVM=		${LOCALBASE}/bin/javavm
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_MANIFEST=	${FILESDIR}/manifest
@@ -52,9 +45,9 @@ post-patch:
 do-build:
 	@${MKDIR} ${BUILD_WRKSRC}
 .for dir in ${CLASS_SRCDIRS}
-	@${JAVAC_CMD} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} -sourcepath ${WRKDIR} ${WRKDIR}/${CLASS_PACKAGE}/${dir}/*.java
+	@${JAVAC} -d ${BUILD_WRKSRC} -classpath ${BUILD_WRKSRC} -sourcepath ${WRKDIR} ${WRKDIR}/${CLASS_PACKAGE}/${dir}/*.java
 .endfor
-	@cd ${BUILD_WRKSRC} && ${JAR_CMD} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} *
+	@cd ${BUILD_WRKSRC} && ${JAR} -cmf ${JAR_MANIFEST} ${WRKDIR}/${JAR_FILE} *
 
 do-install:
 	@${MKDIR} ${PREFIX}/${JAR_DIR}
