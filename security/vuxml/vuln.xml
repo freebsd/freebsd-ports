@@ -511,12 +511,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-1152</cvename>
+      <certvu>253024</certvu>
       <url>http://www.adobe.com/support/techdocs/331153.html</url>
       <url>http://www.idefense.com/application/poi/display?id=161&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2004-10-14</discovery>
       <entry>2004-12-21</entry>
+      <modified>2005-01-06</modified>
     </dates>
   </vuln>
 
@@ -6527,6 +6529,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>acroread</name>
+	<name>acroread4</name>
+	<name>acroread5</name>
 	<range><lt>5.0.9</lt></range>
       </package>
     </affects>
@@ -6555,6 +6559,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-08-12</discovery>
       <entry>2004-08-12</entry>
+      <modified>2005-01-06</modified>
     </dates>
   </vuln>
 
