@@ -14,3 +14,5 @@ to check and report functional status.  Examples: mountd(s) under
 Ultrix 4.3 which tend to fork themselves crazy and eventually fill
 up the process table; On our hp700s, "amd" sometimes stops working,
 HP VUE hangs and fails to start X, etc.
+
+http://ucd-snmp.ucdavis.edu/
