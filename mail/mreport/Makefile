@@ -8,7 +8,8 @@
 PORTNAME=	mreport
 PORTVERSION=	0.9
 CATEGORIES=	mail sysutils
-MASTER_SITES=	ftp://ftp.datrix.co.za/pub/mreport/
+# mastersite disappeared in August 2003
+MASTER_SITES=	# ftp://ftp.datrix.co.za/pub/mreport/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail logfile summary tool
