@@ -1,0 +1,10 @@
+--- lib/erl_interface/src/configure.in.orig	Fri Sep 22 16:09:38 2000
++++ lib/erl_interface/src/configure.in	Sat Nov  2 15:43:51 2002
+@@ -28,7 +28,7 @@
+ AC_FUNC_MEMCMP
+ AC_TYPE_SIGNAL
+ AC_FUNC_VPRINTF
+-AC_CHECK_FUNCS(gethostname gettimeofday select socket strdup strerror strstr uname)
++AC_CHECK_FUNCS(gethostname gettimeofday select socket strdup strerror strerror_r strstr uname)
+ 
+ AC_OUTPUT(GNUmakefile)

@@ -1,0 +1,11 @@
+--- erts/configure.in.orig	Thu Oct 10 16:18:27 2002
++++ erts/configure.in	Sat Nov  2 15:43:51 2002
+@@ -546,7 +546,7 @@
+ dnl ----------------------------------------------------------------------
+ 
+ AC_CHECK_FUNCS([ieee_handler fpsetmask finite isnan isinf res_gethostbyname dlopen \
+-		poll pread pwrite writev memmove strerror strncasecmp \
++		poll pread pwrite writev memmove strerror strerror_r strncasecmp \
+ 		gethrtime localtime_r gmtime_r mremap memcpy mallopt])
+ AC_FUNC_SETVBUF_REVERSED
+ AC_FUNC_VFORK

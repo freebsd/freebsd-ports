@@ -1,5 +1,5 @@
---- ./erts/etc/unix/Install.src.orig	Wed Jan 17 17:18:57 2001
-+++ ./erts/etc/unix/Install.src	Wed Jan 17 17:35:40 2001
+--- erts/etc/unix/Install.src.orig	Tue Oct 15 13:40:55 2002
++++ erts/etc/unix/Install.src	Sat Nov  2 15:43:51 2002
 @@ -97,7 +97,8 @@
    chmod 755 start_erl
  fi

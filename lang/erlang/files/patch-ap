@@ -1,6 +1,6 @@
---- erts/config.h.in.orig	Thu Mar 28 21:53:19 2002
-+++ erts/config.h.in	Thu Mar 28 21:54:07 2002
-@@ -211,6 +211,9 @@
+--- erts/config.h.in.orig	Wed Oct 16 10:41:05 2002
++++ erts/config.h.in	Sat Nov  2 15:43:51 2002
+@@ -258,6 +258,9 @@
  /* Define if you have the strerror function.  */
  #undef HAVE_STRERROR
  
@@ -9,4 +9,3 @@
 +
  /* Define if you have the strncasecmp function.  */
  #undef HAVE_STRNCASECMP
- 
