@@ -6,26 +6,26 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.54.20030928
+PORTVERSION=	0.55
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
-MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
+#MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
 # This is for release versions, leave it in please:
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-#MASTER_SITE_SUBDIR=	courier
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	"Console based mail client with POP3/IMAP/SMAP support"
+COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		aspell.15:${PORTSDIR}/textproc/aspell
-BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		${LOCALBASE}/lib/libncurses.so.5.3:${PORTSDIR}/devel/ncurses
-RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		${LOCALBASE}/lib/libncurses.so.5.3:${PORTSDIR}/devel/ncurses
+		aspell.15:${PORTSDIR}/textproc/aspell \
+		ncurses.5:${PORTSDIR}/devel/ncurses
+BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg 
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-C --without-db --prefix=${PREFIX} --exec-prefix=${PREFIX}
 
