@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Broken by removal of values.h"
+
 .if ${MACHINE_ARCH} == alpha
 BROKEN=		will not build on alpha
 .endif
