@@ -1,7 +1,9 @@
 # New ports collection makefile for:    p5-URI
 # Version required:                     1.*
+# Date created:				1999/04/07
+# Whom:					ache
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/07 20:56:04 ache Exp $
+# $Id: Makefile,v 1.2 1999/04/07 20:59:45 ache Exp $
 #
 
 DISTNAME=       URI-1.02
