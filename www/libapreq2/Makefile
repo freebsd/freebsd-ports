@@ -23,11 +23,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2:${PORTSDIR}/www/mod_perl2
 
 CONFLICTS=	p5-libapreq
 
-BROKEN=		"Fails to configure"
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-perl-glue
+CONFIGURE_ARGS+=--enable-perl-glue --with-apache2-apxs=${LOCALBASE}/sbin/apxs
 USE_PERL5=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_04//}
