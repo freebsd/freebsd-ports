@@ -1,0 +1,20 @@
+--- tools/Makefile.in.orig	Fri Jul 12 06:40:27 2002
++++ tools/Makefile.in	Mon Nov 15 16:51:10 2004
+@@ -121,17 +121,9 @@
+ 		echo "mkdir $(moduledir)"; \
+ 		mkdir $(moduledir); \
+ 	fi
+-	-@if test ! -d $(automoduledir); then \
+-		echo "mkdir $(automoduledir)"; \
+-		mkdir $(automoduledir); \
+-	fi
+ 	-@if test ! -d $(sysconfdir); then \
+ 		echo "mkdir $(sysconfdir)"; \
+ 		mkdir $(sysconfdir); \
+-	fi
+-	-@if test ! -d $(localstatedir)/logs; then \
+-		echo "mkdir $(localstatedir)/logs"; \
+-		mkdir $(localstatedir)/logs; \
+ 	fi
+ 
+ install: install-mkdirs build

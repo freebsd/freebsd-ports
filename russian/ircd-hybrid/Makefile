@@ -7,34 +7,31 @@
 
 PORTNAME=	ircd
 PORTVERSION=	7.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc russian
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	ircd-hybrid-ru
 PKGNAMESUFFIX=	-hybrid-ru
-DISTNAME=	ircd-hybrid-ru-7.1rc2
+DISTNAME=	ircd-hybrid-ru-7.0rc4
 
 MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Russian version of well known hybrid IRC server
 
-CONFLICTS=	ircd*
+CONFLICTS=	ircd-hybrid-7* ircd-ru[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 USE_OPENSSL=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd-hybrid-ru --enable-kqueue
 
+MANCOMPRESSED=	no
 MAN8=		ircd.8
 
 .if defined(WITH_SMALL_NET)
 CONFIGURE_ARGS+=-enable-small-net
-.endif
-
-.if defined(WITH_SYSLOG)
-CONFIGURE_ARGS+=--enable-syslog=\"kill squit connect users oper\"
 .endif
 
 .if defined(NICKLENGTH)
@@ -45,22 +42,30 @@ CONFIGURE_ARGS+=--with-nicklen=${NICKLENGTH}
 CONFIGURE_ARGS+=--with-topiclen=${TOPICLENGTH}
 .endif
 
-.if defined(MAXCONN)
-CONFIGURE_ARGS+=--with-maxconn=${MAXCONN}
+.if defined(MAXCLIENTS)
+CONFIGURE_ARGS+=--with-maxclients=${MAXCLIENTS}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,"-g,",; s,-O2 -g,-O,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/modules/,/lib/ircd-hybrid-ru-modules/,' ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e 's,/etc,/etc/ircd-hybrid-ru,' ${WRKSRC}/include/config.h
+	@${REINPLACE_CMD} -e 's,IRCD_PREFIX "/logs","/var/log/ircd-hybrid-ru",' ${WRKSRC}/include/config.h
+	@${FIND} ${WRKSRC} -type f -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
+		-e "s,/modules,/lib/ircd-hybrid-ru-modules,"
 
 pre-extract:
 	@${ECHO_MSG} "* * * Build options for ircd-hybrid-ru * * *"
 	@${ECHO_MSG} "Issue make WITH_SMALL_NET=yes to build server optimized for small network"
-	@${ECHO_MSG} "Issue make WITH_SYSLOG=yes to enable logging via syslogd"
 	@${ECHO_MSG} "You can define maximum nick length. For example make NICKLENGTH=46 (default is 30)"
 	@${ECHO_MSG} "You can define maximum topic length. For example make TOPICLENGTH=254 (default is 120; maximum is 390)"
-	@${ECHO_MSG} "You can define maximum number of connections for ircd. For example make MAXCONN=512"
+	@${ECHO_MSG} "You can define maximum number of connections for ircd. For example make MAXCLIENTS=512"
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	@${REINPLACE_CMD} -e 's,ircd/etc/codepage,etc/ircd-hybrid-ru/codepage,' ${WRKSRC}/etc/example.conf
-	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/etc/example.conf
+	@${REINPLACE_CMD} -e 's,ircd/etc/codepage,etc/ircd-hybrid-ru/codepage,' ${WRKSRC}/doc/example.conf
+	@${REINPLACE_CMD} -e 's,/ircd/modules,/lib/ircd-hybrid-ru-modules,' ${WRKSRC}/doc/example.conf
+	@${REINPLACE_CMD} -e 's,logs/,/var/log/ircd-hybrid-ru/,' ${WRKSRC}/doc/example.conf
 
 post-install:
 	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd-hybrid-ru.sh.sample ${PREFIX}/etc/rc.d
