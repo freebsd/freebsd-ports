@@ -805,6 +805,7 @@ cmatrix		ports/misc/cmatrix
 cmp		src/usr.bin/cmp
 cmp3		ports/audio/cmp3
 cmpsfont	ports/print/cmpsfont
+cmt		ports/audio/cmt
 cmucl		ports/lang/cmucl
 cn2jp		ports/converters/cn2jp
 cnet		ports/net/cnet
