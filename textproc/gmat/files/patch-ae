@@ -1,5 +1,14 @@
---- bin/gmat.troff~	Fri Dec 27 15:20:10 2002
-+++ bin/gmat.troff	Fri Dec 27 15:20:33 2002
+--- bin/gmat.troff.orig	Tue Feb  1 21:49:18 2000
++++ bin/gmat.troff	Mon Dec 13 14:04:14 2004
+@@ -90,7 +90,7 @@
+ 
+ $PS_FONT_FILE = ($ENV{"PSFONTFILE"} 
+ 	      || &cfg($gmat, $PROGNAME, "ps-font-file")
+-	      || "/usr/local/lib/groff/font/devps/download");
++	      || "/usr/share/groff_font/devps");
+ 
+ ############################################################################
+ # Let's get to work, process each file with its options
 @@ -519,10 +519,10 @@
  # HANDLE RETURN CODE!
      } elsif ($preview) {

@@ -21,7 +21,6 @@ bin/crlf
 %%DATADIR%%/bin/gmat.nop
 %%DATADIR%%/bin/gmat.sgmls
 %%DATADIR%%/bin/gmat.troff
-%%DATADIR%%/bin/gmat.troff.orig
 %%DATADIR%%/bin/gnct
 %%DATADIR%%/bin/inx
 %%DATADIR%%/bin/kern10sed
