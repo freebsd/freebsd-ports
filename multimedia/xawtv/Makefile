@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.91
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -94,7 +94,7 @@ pre-everything::
 	@${ECHO} "	WITH_LIBDV=yes    Enable reading/writing raw dv files"
 	@${ECHO} "	WITH_LIBQTIME=yes Enable quicktime support"
 	@${ECHO} "	WITH_LIBZVBI=yes  Enable libzvbi support"
-	@${ECHO} "	                  (scantv compiles, but doesn't work for me)"
+	@${ECHO} "	                  (You wont get station names)"
 	@${ECHO} "	WITH_MMX=yes      Enable mmx support"
 	@${ECHO} ""
 
