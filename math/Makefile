@@ -128,6 +128,7 @@
     SUBDIR += ruby-gsl
     SUBDIR += ruby-math3d
     SUBDIR += ruby-narray
+    SUBDIR += ruby-netcdf
     SUBDIR += sc
     SUBDIR += scigraphica
     SUBDIR += scilab

@@ -1,0 +1,5 @@
+This is a Ruby interface to the NetCDF scientific IO library.
+
+Author:	Takeshi Horinouchi <horinout@kurasc.kyoto-u.ac.jp>
+	& Dennou Ruby Project
+WWW:	http://ruby.gfd-dennou.org/products/ruby-netcdf
