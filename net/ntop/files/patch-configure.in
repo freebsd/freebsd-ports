@@ -1,5 +1,5 @@
---- configure.in.orig	Fri May 31 12:09:35 2002
-+++ configure.in	Mon Jun 24 14:25:15 2002
+--- configure.in.orig	Fri May 31 19:09:35 2002
++++ configure.in	Sun Sep 15 20:29:44 2002
 @@ -826,12 +826,10 @@
  
  if test ".${GDBM_ROOT}" != .; then
@@ -32,7 +32,7 @@
           GDCHART_ROOT=`cd ${GDCHART_ROOT} && pwd`
 -         MORELIBS="${MORELIBS} -L$GDCHART_ROOT -lgdchart -L$GDCHART_ROOT/gd-1.8.3 -lgd -L$GDCHART_ROOT/gd-1.8.3/libpng-1.2.1 -lpng -L$GDCHART_ROOT/zlib-1.1.4 -lz"
 -         INCS="${INCS} -I$GDCHART_ROOT -I$GDCHART_ROOT/zlib-1.1.4"
-+         MORELIBS="${MORELIBS} -L${prefix}/lib -lgdchart -lgd -lpng -lz"
++         MORELIBS="${MORELIBS} -L${prefix}/lib -lgdc -lgd -lpng -lz"
 +         INCS="${INCS} -I${prefix}/include/gd"
           AC_DEFINE(HAVE_GDCHART)
  	 AC_DEFINE(HAVE_ZLIB)
