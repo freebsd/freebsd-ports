@@ -1,0 +1,9 @@
+Autobench is a simple Perl script for automating the process of benchmarking
+a web server (or for conducting a comparative test of two different web
+servers). The script is a wrapper around  httperf. Autobench runs httperf a
+number of times against each host, increasing the number of requested
+connections per second on each iteration, and extracts the significant data
+from the httperf output, delivering a CSV or TSV format file which can be
+imported directly into a spreadsheet for analysis/graphing.
+
+WWW: http://www.xenoclast.org/autobench/

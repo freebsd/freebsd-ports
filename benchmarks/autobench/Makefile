@@ -1,0 +1,31 @@
+# ex:ts=8
+# Ports collection makefile for:	autobench
+# Date created:			Oct 20, 2003
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	autobench
+PORTVERSION=	2.0.1
+CATEGORIES=	benchmarks www
+MASTER_SITES=	http://www.xenoclast.org/autobench/downloads/
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Automating the process of benchmarking a web server
+
+RUN_DEPENDS=	httperf:${PORTSDIR}/www/httperf
+
+USE_PERL5=	yes
+USE_GMAKE=	yes
+
+MAN1=	autobench.1 autobench_admin.1 autobenchd.1 bench2graph.1 \
+	crfile.1 sesslog.1
+
+post-patch:
+	@${PERL} -pi -e "s|^PREFIX|#PREFIX|g" ${WRKSRC}/Makefile
+.for file in autobench autobench_admin
+	@${PERL} -pi -e "s|/etc/|${PREFIX}/etc|g" ${WRKSRC}/${file}
+.endfor
+
+.include <bsd.port.mk>
