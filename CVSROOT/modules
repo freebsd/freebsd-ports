@@ -5651,6 +5651,7 @@ nwrite		ports/misc/nwrite
 nxml-emacs21	ports/editors/nxml-emacs21
 nxtvepg		ports/multimedia/nxtvepg
 nylon		ports/net/nylon
+nzbget		ports/news/nzbget
 o2c		ports/lang/o2c
 oaf		ports/devel/oaf
 oases		ports/science/oases
