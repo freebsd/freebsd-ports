@@ -44,6 +44,7 @@
     SUBDIR += psmisc
     SUBDIR += rdate
     SUBDIR += rtty
+    SUBDIR += roottail
     SUBDIR += sdd
     SUBDIR += setquota
     SUBDIR += skill
