@@ -356,6 +356,7 @@
     SUBDIR += micq
     SUBDIR += minder
     SUBDIR += minisapserver
+    SUBDIR += mknbi
     SUBDIR += mldonkey
     SUBDIR += mldonkey-core
     SUBDIR += mldonkey-core-devel
