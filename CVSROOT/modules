@@ -3812,6 +3812,7 @@ libneural	ports/math/libneural
 libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
 libnova		ports/astro/libnova
+libnss-mysql	ports/net/libnss-mysql
 liboe		ports/mail/liboe
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
