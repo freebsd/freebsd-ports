@@ -1,0 +1,5 @@
+The comservd program provides a facility to access network terminal
+server serial ports, such as those available on Xyplex terminal server
+models, via /dev device file entries.  This allows programs such as
+tip(1) to access devices connected to the terminal server serial
+ports.
