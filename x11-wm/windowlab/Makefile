@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	windowlab
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.nickgravgaard.com/windowlab/
 EXTRACT_SUFX=	.tar
