@@ -7,6 +7,7 @@
 #
 
 DISTNAME=	traceroute_${RELEASEDATE}
+PKGNAME=	traceroute-${RELEASEDATE}
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/	\
 	  	http://www.chg.ru/~dima/
