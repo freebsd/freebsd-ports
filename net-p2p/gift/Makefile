@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
-MAINTAINER=	Stefan Ehmann <shoesoft@gmx.net>
+MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
