@@ -18,7 +18,7 @@ COMMENT=	ISO 7816 Smartcard API Library (OpenSSH Compatible)
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
-USE_OPENLDAP_VER=	20
+USE_OPENLDAP_VER=	22
 INSTALLS_SHLIB=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL_VER=13
@@ -35,10 +35,6 @@ MAN1=		pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
 MAN5=		pkcs15-profile.5
 MAN7=		pkcs15.7 opensc.7
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	-fPIC
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
