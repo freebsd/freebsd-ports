@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oftpd
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://www.freenix.no/~anders/
