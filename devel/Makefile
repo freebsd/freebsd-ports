@@ -459,6 +459,7 @@
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-Setting
     SUBDIR += p5-ConfigReader
+    SUBDIR += p5-Coro
     SUBDIR += p5-Curses
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-DB_File-Lock

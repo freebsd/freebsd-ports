@@ -1,0 +1,26 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/Event/Event.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/Event/Event.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/State/State.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/State/State.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Cont.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/State.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Channel.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Semaphore.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/SemaphoreSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/RWLock.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/CoroAPI.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Specific.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Timer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/MakeMaker.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Signal.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Handle.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro/Socket.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/Event
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro/State
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Coro
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Coro
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach 2>/dev/null || true
