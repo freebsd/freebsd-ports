@@ -57,6 +57,19 @@ share/gnome/applications/gthumb.desktop
 share/gnome/gnome-2.0/ui/GNOME_GThumb_CatalogView.xml
 share/gnome/gnome-2.0/ui/GNOME_GThumb_Viewer.xml
 share/gnome/gnome-2.0/ui/gthumb-ui.xml
+share/gnome/gthumb/albumthemes/BlueStripes/background.png
+share/gnome/gthumb/albumthemes/BlueStripes/back.png
+share/gnome/gthumb/albumthemes/BlueStripes/bottom.png
+share/gnome/gthumb/albumthemes/BlueStripes/image.gthtml
+share/gnome/gthumb/albumthemes/BlueStripes/index.gthtml
+share/gnome/gthumb/albumthemes/BlueStripes/left.png
+share/gnome/gthumb/albumthemes/BlueStripes/next.png
+share/gnome/gthumb/albumthemes/BlueStripes/prev.png
+share/gnome/gthumb/albumthemes/BlueStripes/right.png
+share/gnome/gthumb/albumthemes/BlueStripes/thumbnail.gthtml
+share/gnome/gthumb/albumthemes/BlueStripes/top.png
+share/gnome/gthumb/albumthemes/BlueStripes/transparent.png
+share/gnome/gthumb/albumthemes/BlueStripes/white-dot.png
 share/gnome/gthumb/albumthemes/Classic/1.gif
 share/gnome/gthumb/albumthemes/Classic/back.png
 share/gnome/gthumb/albumthemes/Classic/background.gif
@@ -118,15 +131,6 @@ share/gnome/gthumb/albumthemes/NeatSquare/prev.png
 share/gnome/gthumb/albumthemes/NeatSquare/right.png
 share/gnome/gthumb/albumthemes/NeatSquare/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/NeatSquare/top.png
-share/gnome/gthumb/albumthemes/Simple/1.gif
-share/gnome/gthumb/albumthemes/Simple/first.gif
-share/gnome/gthumb/albumthemes/Simple/image.gthtml
-share/gnome/gthumb/albumthemes/Simple/index.gthtml
-share/gnome/gthumb/albumthemes/Simple/last.gif
-share/gnome/gthumb/albumthemes/Simple/next.gif
-share/gnome/gthumb/albumthemes/Simple/prev.gif
-share/gnome/gthumb/albumthemes/Simple/thumbnail.gthtml
-share/gnome/gthumb/albumthemes/Simple/up.gif
 share/gnome/gthumb/glade/gthumb.glade
 share/gnome/gthumb/glade/gthumb_comments.glade
 share/gnome/gthumb/glade/gthumb_convert.glade
@@ -183,18 +187,19 @@ share/locale/sr/LC_MESSAGES/gthumb.mo
 share/locale/sr@Latn/LC_MESSAGES/gthumb.mo
 share/locale/sv/LC_MESSAGES/gthumb.mo
 share/locale/uk/LC_MESSAGES/gthumb.mo
+share/locale/zn_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
 @dirrm share/gnome/gthumb/icons
 @dirrm share/gnome/gthumb/glade
-@dirrm share/gnome/gthumb/albumthemes/Simple
 @dirrm share/gnome/gthumb/albumthemes/NeatSquare
 @dirrm share/gnome/gthumb/albumthemes/NeatRound
 @dirrm share/gnome/gthumb/albumthemes/Clean
 @dirrm share/gnome/gthumb/albumthemes/ClassicClips
 @dirrm share/gnome/gthumb/albumthemes/Classic
+@dirrm share/gnome/gthumb/albumthemes/BlueStripes
 @dirrm share/gnome/gthumb/albumthemes
 @dirrm share/gnome/gthumb
 @dirrm lib/gthumb/modules
