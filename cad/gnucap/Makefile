@@ -9,12 +9,12 @@
 PORTNAME=	gnucap
 PORTVERSION=	0.34
 CATEGORIES=	cad
-MASTER_SITES=	http://www.geda.seul.org/dist/
+MASTER_SITES=	http://www.gnucap.org/ \
+		http://www.geda.seul.org/dist/ \
+		http://www.kettering.edu/~adavis/gnucap/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
-
-BROKEN=		"Unfetchable"
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
