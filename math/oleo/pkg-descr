@@ -1,0 +1,1036 @@
+
+			How to Use Oleo
+
+This is a brief description of Oleo.  It is not a good introduction to
+spreadsheets in general.  We hope to provide more complete
+documentation in the future.
+
+
+		Cell references:
+
+The case of cell and range letters is ignored.  Lowercase letters in
+cell and range letters are silently turned into their uppercase
+equivelents.
+
+	Absolute vs Relative references:
+
+A reference to a cell may be either absolute or relative.  The only
+difference between them (besides how they are printed) is how they are
+adjusted when a cell is moved or copied.
+
+When an expression containing an absolute reference is moved or copied, the
+reference will still point to the same cell.
+
+When an expression containing a relative reference is moved or copied, the
+reference is changed to point to the cell at the same offset from the
+reference's new position.
+
+So if the expression 'R[+1]C[+1]' is in cell R8C9 it refers to cell R9C10.
+If the same expression is copied into cell R1C1 it will refer to R2C2.
+
+
+	Address Syntax:
+
+Oleo supports two syntaxes for cell address, called `a0' and `noa0'.
+To switch between these syntaxes, use the set-option command.
+
+	M-x set-option a0
+	M-x set-option no a0
+
+
+	In 'noa0' mode: (the default)
+
+Absolute cell references have the form R{row_num}C{col_num}, as in R1C1 (the
+topleft cell in the sheet).
+
+Relative ones have the form R[{offset}]C[{offset}], as in R[-1]C[+1] (The
+cell above and to the right of the current cell).  An offset of zero, can be
+deleted, along with its square-brackets, as in RC[+1] (the cell to the right
+of the current cell.)
+
+Mixed-mode references also work about the same as you'd
+expect, as in R4C[-1] (the cell in row four that's one left
+of the current cell.)
+
+Ranges are of the form R{row1}:{row2}C{col1}:{col2}, where the row and
+column references may be either absolute or relative.  If
+{row2}=={row1} or {col2}=={col1}, the colon and the redundant number
+may be omitted, as in R1:10c2 (Rows one through ten in column two).
+
+Mixed-mode rangers work, and have the syntax you'd expect, as in R2:[-1]c3.
+
+
+	In 'a0' mode:
+
+Relative cell reference have the form {col_let}{row_num}, as in A1 (the
+topleft cell in the sheet).
+		
+Absolute ones have the form ${col_let}${row_num}, as in $A$1 (The topleft
+cell in the sheet).
+
+Mixed-mode ones work about the way you'd expect, with $A1 having an absolute
+column, but a relative row. . .
+
+Ranges are either {cell_ref}:{cell_ref} or {cell_ref}.{cell_ref}, where the
+cell_refs describe opposite corners of the range.  So A1:B2 is the topmost,
+leftmost four cells in the spreadsheet.
+
+Mixed mode rangers work, and have the syntax you'd expect, as in '$A3.$F9.
+
+
+
+		Keymaps:
+
+Keymaps may have a 'default map'.  If a key is pressed which does not have an
+assigned meaning in that map, the map's default map is checked, and that
+map's default map, until a command is found or there are no more default maps
+to scan.
+
+Here is a list of keymaps, and the keymaps to which they default:
+Oleo normally has five keymaps.  They are:
+
+   KEYMAP (DEFAULT)		 USE
+  universal			The root of all keymaps.
+  help (universal)		Help commands.
+  mouse (universal)		Bindings for mouse buttons.
+  navigate (universal)		Commands that move the cursor.
+  trolx-navigate (universal)	Navigate commands prefixed by ^X.
+  meta-navigate (universal)     Navigate commands prefixed by ESC.
+  main (navigate)		The default keymap.
+  trolx (trolx-navigate)	Default ^X commands.
+  meta (meta-navigate)		Default ESC commands.
+  digit (main)			The numeric prefix keymap.
+  edit (universal)		The keymap for edditting in the input area.
+  meta-edit (universal)	  	Edit commands prefixed by ESC.
+  trolx-edit (universal)	Edit commands prefixed by ^X.
+  ansi (universal)		A keymap for ANSI arrows keys.
+
+
+The command write-keys can be used to produce a listing of
+keybindings.  Also, the source file init.c lists the default bindings.
+
+
+		Input Editing:
+
+When the spreadsheet is reading text input, you can use a few
+text-editing commands.  Note that there in no history mechanism and no
+yank command.  If you accidentally ^U your text, it is *gone*.
+This will be improved in the future.
+
+While the input area is active, the commands that move the cell cursor
+are disabled.  If you want to move the cell cursor, use the
+other-window command (^X-o) to leave and later reenter the input area.
+
+The following editing commands are defined:
+
+Name:		Key:	What it does:
+
+M-A	insert-abs-ref		Insert/over-write an absolute reference to the
+				current cell/region.
+M-R	insert-rel-ref		Insert/over-write a relative reference to the
+				current cell/region.
+M-E	insert-cell-expression	Insert/over-write the expression in the
+				current cell.
+M-V	insert-cell-value	Insert/over-write the value of the current
+				cell.
+^A	cursor-begin-line	Move the cursor to the beginning of the text.
+^B	cursor-back-char	Move the cursor back a character.
+M-B	cursor-back-word	Move back a word.
+^D	delete-next-char	Delete the character under the cursor.
+M-D	delete-next-word	Delete from the cursor to the end of
+				the current word.
+^E	cursor-end-line		Move to the end of the text.
+^F	cursor-fwd-charF	Move forward a character.
+M-F	cursor-fwd-word		Move forward a word.
+^H  ^?	delete-prev-char	Delete the character to the left of the cursor.
+^J  ^M	finish-line		Finish editing the text, and execute the
+				command you've been typing the text in for.
+^K	delete-to-end		Delete from the cursor to the end of the text.
+M-O	toggle-over-write	Toggle between overwrite and insert mode.
+^U  ^X	delete-to-start		(BEWARE!) Deletes from the cursor to the
+				beginning of the line.
+^W	delete-prev-word	Delete the word to the left of the cursor.
+' ' to ~ self-insert		These characters are either inserted or
+				over-written into the text.
+^X-O	other-window		Move the cursor into the cell area.
+
+		Input Defaults:
+
+Almost all editing commands remember what you typed the last time you used
+that command, and start you up editing a copy of that text.  If you want to
+type in something completely new, just type ^X (or ^U) and type in your new
+text.
+
+
+			Error Messages:
+
+Error messages are displayed on the input line.  If oleo needs to display
+more than one error message at a time, it will display [MORE] at the end of
+the first msg, and will wait for you to type a key before displaying the next
+one.  Oleo will also display the [MORE] message if you are entering text in
+the input line, so that you will be able to see the error message.  
+
+			Info Messages:
+
+Some commands (like format-cell) occasionally display non-error information.
+If the status line is enabled, the message is displayed there, and subsequent
+non-error messages will over-write them without [MORE] prompting.  This in
+quite useful if the msg in question concerns how far oleo has gotten through
+some task (like reading a file).  If the status line is disabled, the
+messages are displayed in the input line.
+
+			The Main Commands:
+
+Key	Command Name		What it does
+h  ^B	go-left		These commands move the cell-cursor one cell
+j  ^N	go-down		in the appropriate direction.  
+k  ^P	go-up
+l  ^F	go-right
+y	go-upleft
+u	go-upright
+b	go-downleft
+n	go-downright
+
+H ^X-<	scroll-left		These scroll the current window one screenful
+J M-v	scroll-down		in the appropriate direction.  They try to
+K ^V	scroll-up		leave the cell cursor in (roughly the same
+L ^X->	scroll-right		place in the window, so that an L followed by
+Y	scroll-upleft		an H will leave the cell cursor back in the
+U	scroll-upright		original cell, however, since the number of
+B	scroll-downleft		rows and columns in each screenful varies,
+N	scroll-downright	this will not always work.
+
+M-H M-b	scan-left	These commands move to the first/last nonempty cell in
+M-J M-n	scan-down	the current row/column.  If given a repeat count, they
+M-K M-p	scan-up		go to the N-th most nonempty cell.  If there are no
+M-L M-f	scan-right	cells, the cursor is moved to the leftmost/top cell.
+
+^G	break	This will abort a partially completed command.  If you are
+		typing text on the top line, the text you typed will be saved
+		and presented as the default the next time you start that
+		command.
+
+^L	recenter-window		This redraws the screen.  If the page option
+		is not set in this window, it will try to move the current
+		cell to the center of the window.  If the page option is set,
+		this will just redraw the screen.
+
+o	set-option	This asks for an option to set or reset, and tries to
+		do so.
+
+
+d	set-defaults	This command will change the default alignment, format,
+		protection, or width.  If the status-line is enabled,
+		this will display the current settings there.
+
+Q	quit	This command exits the spreadsheet and returns you to the
+		shell.  This may ask for confirmation if oleo thinks you have
+		unsaved changes.  If you do not save your changes before
+		quitting, they will be lost forever.
+
+^R M-^l	redraw-screen	This redraws the screen.  It is most useful if
+		line-noise or another program has scribbled on your display.
+				
+
+M-U	set-user-format		Set a user-defined format.
+
+v	set-variable	This prompts you for a name followed by a cell or
+		range that you want to refer to by that name.  To
+		'undefine' a variable, use set-variable with just its
+		name.
+
+V	show-variable
+
+^V	show-all-variables	This shows the values of all currently defined
+		variables.
+
+!	recalculate	 Recalculate the spreadsheet until all the cells whose
+		values may have changed have been evaluated.  If there are
+		circular cell references, the cells in the loop will be
+		evaluated at most 40 times (this number subject to change!)
+
+:	bind-key  This asks for the name of a keymap followed by a
+		command name and a key to bind it to.  If the 'command' you
+		give is a cell or region in the spreadsheet, it is taken as a
+		macro, and bound to the key you specify.
+
+;	describe-key	Have the user press a key, and then describe
+		what function that key is bound to.
+
+M-<	read-commands	This command opens the file you specify reads in each
+		line, and executes them as if you'd typed them in to
+		execute-command.  If any command needs more arguments than are
+		included on the line, it will prompt you (interactively) for
+		the missing information.
+
+M->	write-keys	Write a list of commands to the file that, when
+		executed with read-commands, will return the keymaps to their
+		current state.
+
+w ^x^s		Save the spreadsheet to a file, using the current
+		file-format.
+
+r ^x^v	visit-spreadsheet	Read in a file in the current
+ 		file-format.  This erases the current contents of the
+		spreadsheet first.  This may ask for confirmation.
+
+R ^x^i	merge-spreadsheet
+		Read in a file and merge its contents into the
+		current spreadsheet.  Note that some file-formats, (like
+		panic-save) won't work with this command.
+
+^X-DEL	clear-spreadsheet
+		Delete the entire spreadsheet.  This may ask
+		for confirmation if oleo thinks you may be about to lose
+		un-saved work.
+
+c	copy-region	Copy a region.  Takes two ranges, copies the source
+		range into the dest range.  If the dest range size is a
+		multiple of the source range size, the source range is copied
+		multiple times.  If the dest range is given as a cell, the
+		cell is the location of the top-left corner of the dest range.
+
+C	copy-values-in-region	Copy just the values of one region to another.
+
+F	format-region	Change the format, alignment, protection,
+		or width of a region.  If the status line is active, oleo
+		will display the current alignment, format, width and
+		protection of the top-left cell in the region.
+
+m	move-region	This is similar to copy-region, except that the two
+		ranges must be the same size, and that cells that reference
+		the source region may be modified to reference the dest
+		region instead.  (absolute references are modified, relative
+		ones aren't.)  Variables whose ranges are inside the source
+		region are also adjusted.
+
+p	print-region	Print a region to a file.  Asks for a region
+		(to print) and a filename to to write to.
+
+s	sort-region	Sort a region.  This takes the region to sort, a
+		region that is the first element of the region, and a list of
+		cells that are to be used as the sorting-keys.  Here's an
+		example.  sort-region r1:100c1:10 r1:2c1:10 +r1c2 -r1c3 This
+		means: Sort the region R1:100C1:10 in two-row, ten-column
+		chunks, sorting on the cell that's in the top-row
+		one-column-in.  If they are similar, use the cell in the
+		top-row two-columns-in, with high values ending up before low
+		ones.
+
+^x-w	write-region-to-file	Write a region of the spreadsheet to a file.
+		This command is not allowed with some
+		file-formats (like panic-save).
+
+X	delete-region	Delete {value, formula, format, etc} of a
+		region.  This DOES NOT ask for confirmation.
+
+M-(	start-entering-macro	Start storing a keyboard macro.  Keyboard
+		macros are strings that contain the characters you typed.
+
+M-)	stop-entering-macro	Finish a keyboard macro, and store it in a
+		cell that you specify.
+
+M-X	execute-command		This will allow you to execute either a
+		builtin command, or a macro.  For a builtin command, simply
+		enter the command's name (and, optionally, any arguments the
+		command will want).  For a macro, enter its name, or
+		the region in the spreadsheet that contains it.
+
+		You can create macros with text strings.  Command names may
+		be enclosed in {CMD}, as in {go-left}.  Some commands may
+		take arguments, as in {go-up 12} or {goto-cell r1c3}.  To
+		execute multiple commands, concatenate them.  Other
+		characters are taken as keystrokes, and act exactly as if you
+		had typed them.
+
+		When the spreadsheet is executing a macro, it stops when
+		1) It encounters an empty cell, or one which is not a string,
+		   or which is the empty string "".
+		2) an error occurs while trying to parse a command name, or a
+		   command's arguments.
+		3) All the cells in the region have been executed.
+
+		The top-left cell in a region is executed first, then the one
+		below it, down to the bottom cell in the macro, then the one
+		to the right of the top-left cell, down to the bottom cell in
+		that column, etc. . .
+
+		Macros may execute other macros.
+
+g ^xg	goto-cell	Asks for a cell to go to, and moves the cell cursor
+		there.  The cell can be either a cell name as in 'R32C96',
+		or a variable.  This command starts with a default of
+		wherever the cursor was the last time this command was used.
+		If you type a range, the cursor is placed in the top-left
+		corner of the range, and the cell-mark is placed at the
+		opposite corner of the region.
+
+^@	mark-cell	Mark one corner of a rectangular region to use for
+		the next command.  (The cell cursor marks the other corner.)
+		You can use this while a command is prompting you for a
+		region by moving to one corner, typing ^@, moving to the
+		other corner, and hitting <RETURN>.
+
+e	edit-cell	Edit the formula of the current cell.
+
+E	edit-value-cell		Edit the value of the current cell.  Using
+		this command will replace the current cell's formula with a
+		constant expression.
+
+
+f	format-cell	Change the format, alignment, or protection of the
+		current cell, or the width of the current column.  If the
+		status line is enabled, the current alignment, format,
+		protection, and width will be displayed there.
+
+x	delete-cell	This deletes the (value, formula, format, etc) of the
+		current cell.  To delete just the value and formula, use
+		<space><return>.
+
+=	edit-cell-with-default	Enter a formula for the current cell with the
+		default text of the last formula you typed.
+
+M-0	digit-0		Repeat the next command [digits] times.
+M-1	digit-1		You can type multiple digits, as in
+M-2	digit-2		M-1 0 0 j
+M-3	digit-3		which will go down 100 cells.  This command uses the
+M-4	digit-4		digit-map so that you the second and subsequent digits
+M-5	digit-5		do not need to be meta-ized.
+M-6	digit-6
+M-7	digit-7
+M-8	digit-8
+M-9	digit-9
+
+0-9	enter-text-in-cell	Enter a new formula that begins with the
+		character typed.  Note that this blows away whatever was
+		saved as a default from the last time you entered a formula.
+
+O	show-options	This shows the current state of all the spreadsheet
+		options, and also shows the current definitions for all the
+		user-defined variables.
+
+^X-2	split-window-vertically
+^X-5	split-window-horizontally
+		These commands divide the current window in half.
+^X-0	delete-window
+		Delete the current window.
+^X-1	delete-other-windows
+		Delete all but the current window.
+^X-o	other-window
+		Move to the next window.  Repeated, this will visit
+		all the windows.
+
+M-W	open-window	This command takes a line beginning with the letter
+		'h' (for horizontal), or 'v' (for vertical), followed by the
+		number of lines/columns to leave in the current window.
+		The cell cursor is placed in the new window.
+
+M-C	close-window	This takes the number of a window to close, and makes
+		it go away.  The surrounding window(s) expand to fill the
+		space the window occupied.
+
+M-G	goto-window	This takes the number of a window to go to, and
+		places the cell-cursor in that window.
+
+Oleo uses the character ^\ to prefix mouse commands.  The default
+bindings in the mouse map are:
+
+0	mouse-goto
+	Move to the pointed to cell.
+1	mouse-mark
+	Mark the pointed to cell without moving.
+2	mouse-mark-and-goto
+	Mark the current cell, and move to the pointed to cell.
+
+The numbers correspond to X button numbers (usually 0 is the leftmost
+button on the mouse).
+
+		Displaying Cell Contents:
+
+If a cell contains a number or string that takes more characters than the
+width of the cell to display, the display may slop over into the cell(s) to the
+right.  This does not affect the slopped over cells in any way.  Only cells
+that are empty, or have their format set to hidden, will be slopped over.
+
+If there isn't room to display a number, a series of '#', will appear in the
+cell.
+
+If there isn't room to display any other value, only the characters that fit
+(less one, so there'll be a space separating cells) will be displayed.
+
+		Numeric formats:
+
+Oleo can display numbers in a variety of formats.  In addition to the sixteen
+user-defined formats, you can use:
+
+integer		The number is rounded to an integer before being displayed.
+
+float		The number is displayed in normal, everyday notation, using
+		whatever precision is needed (or fits).
+
+hidden		The number is not displayed.  It is recalculated, etc as
+		normal, but the cell is displayed as if it were empty.
+
+graph		The number is displayed as a small graph.  If the number is
+		close to zero, it will be displayed as '0', If it is positive,
+		a row of '+'-es is displayed.  If it is negative, a row of
+		'-'-es is displayed.
+
+user-1 through	These are the sixteen user-defined formats, as described
+user-16		below.
+
+The following formats require a precision.  The precision may be a number
+from zero to 14, in which case that number of digits will always be displayed
+after the decimal point (zero-padding or rounding the number as needed), or
+the precision may be 'float', in which case oleo will use as many digits as
+necessary.  As examples:
+
+	dollar.2			display like ``$1,769.00''
+	general.float			    "    "   ``1769.00032''	
+
+
+
+general		This uses either normal or scientific notation, depending on
+		the magnitude of the number and the width of the column.
+
+dollar		Positive values are preceeded by '$', (so 3 is displayed as
+		'$3').  Negative values are parenthasized (so -3 is displayed
+		as '($3)'), and all large values have a ',' every three
+		digits (so 1000 is displayed as '$1,000'.
+
+comma		Positive numbers are not preceede by '$', but this is
+		otherwise identical to 'dollar'.
+
+percent		The value is multiplied by 100, and is displayed with a
+		trailing '%'.  Thus .01 displays as '1%', while 1 displays as
+		'100%'.
+
+fixed		The number is displayed in normal, everyday notation, using
+		the precision specified.  'fixed.float' is the same as
+		'float'.  'fixed.0' is the same as 'integer'.
+
+exponent	The number is displayed in scientific notation.
+
+
+		User-defined numeric formats:
+
+You can set up to sixteen user-defined numeric formats:
+
+The current parts of a format are:
+(Using the 'dollar' format for an example.)
+
+	Example:	What it is:
+	$		What to print before postive numbers.
+	(		What to print before negative numbers.
+			What to print after positive numbers.
+	)		What to print after negative numbers.
+	$0		What to print if the number is zero.
+	,		What to print between the thousands and the
+			hundreds, etc.
+	.		What to print for a decimal point.
+
+	0-14 or float	The number of digits to print after the decimal point.
+			'float' means use however many digits are needed, or
+			however many will fit, whichever is less. . .
+
+	any-number	What to multiply the value by before printing.
+			Most often this will be one, but it might be 100 if
+			you're printing percentages, or .000001 if you're
+			printing in megabucks.  (Beware of overflow!)
+
+Do not use digits for the headers, trailers, the comma, or the decimal point
+symbol.  Using digits will confuse the internal routines and produce
+incomprehensible results. . .  (Should the set-user-format command check its
+input for validity?)
+
+			Other Cell Formatting Options:
+
+Values in a cell may be displayed aligned flush with either the left or right
+edges of the cell, or centered in the cell.  The default is left-aligned.
+
+The width of a column of cells may be set to any non-negative value.  A value
+of zero means that cells in that column won't be displayed, and the normal
+cursor-motion commands will skip over those cells.  However, you can position
+the cursor on a non-displayed cell by using the goto-cell command.
+
+If the width of a column is wider than the display, it is displayed as if it
+were the width of the display.
+
+
+			Currently Supported Options:
+
+(no)a0		In a0 mode, Oleo uses {letters}{digits} style cell-references,
+		like some popular spreadsheets.
+		In noa0 mode, Oleo uses R{digits}C{digits} style references,
+		like some other popular spreadsheets.
+
+(no)auto	In auto mode, cells whose values may have chaged are
+		automatically recalculated.  In noauto mode, cells are only
+		recalculated when the recalculate command is used.
+
+(no)background	In background mode, automatic recalculation is done while
+(no)bkgrnd	the spreadsheet waits for you to type a key (and stops while
+		the key is being handled).  In nobackground mode, oleo
+		performs all its recalculation before listening for
+		keystrokes. . .
+
+(no)backup	In backup mode, whenever the spreadsheet writes out a file,
+		if the file already exists, a backup copy is made (like
+		emacs).
+
+(no)bkup_copy	In nobackup mode bkup_copy is ignored.  In bkup_copy mode,
+		backup files are made by copying the original file, instead of
+		renaming it.
+
+ticks (number)	This value controls how often should rnd(), cell(), my(),
+		curcell(), etc cells get updated.  This value is in seconds
+		(???).  The initial value is 10 seconds.
+
+print (number)	This is the width of the page for the print command.  The
+		initial value is the width of the screen.
+
+file (format-name) If -DUSE_DLD was defined, format-name may be any .o file
+		that contains definitions for the appropriate functions, or
+		'panic', which is the only file format that oleo will have
+		compiled into it.  If -DUSE_DLD was not defined, format-name
+		must be one of sylk, sc, panic, or list, and oleo will have
+		to be re-compiled before any other formats may be used.
+
+load (file-name) This option is only avaliable if oleo was compiled with
+		-DUSE_DLD.  This option loads in a .o file of spreadsheet
+		functions, keyboard commands, and/or keymaps.  Spreadsheet
+		functions and keyboard commands must be loaded in before they
+		can be used in expressiond or bound to keys.
+
+status (number)	This option controls which line on the screen is used for
+		displaying the status of the current cell.  The number may be
+		positive, (counting down from the top), negative (counting up
+		from the bottom, or zero (disabling the status line).
+
+input (number)	This option controls which line on the screen is used for
+		reading lines of text.  The number may be positive (counting
+		down from the top), or negative (counting up from the
+		bottom), but not zero.
+		
+The following options affect the currently active window:
+
+(no)page	Basically, in page mode, whenever a paticular cell is
+		displayed in the window, it will always be in the same
+		location on the screen.  In page mode, the recenter command
+		acts just like the redraw-screen command.
+
+(no)pageh	These options turns on or off page mode only in
+(no)pagev	the horizontal or vertical axis.
+
+link (wnum)	This option 'links' the current window with the one
+		specified.  A window may only be linked to one other window
+		at a time.  When a window is linked to another one, whenever
+		the cell cursor in the first window is moved, the cursor in
+		the other window moves as well.  (unless the cursor in other
+		window is locked from moving in that diretion.)
+
+		(Should linking to a window force that window to link
+		back?  That might make life easier for naive users.)
+
+nolink		This removes the link (if any) on the current window.
+unlink
+
+(no)lockh	These options prevent the cell cursor in the current window
+(no)lockv	from moving in the horizontal or vertical direction, but only
+		when the cell cursor is moved in a window that this one is
+		linked.
+
+
+(no)edges	In edges mode oleo displays Row and Column numbers at the top
+		and left edges of the window.  Perhaps edges should be split
+		into edgeh and edgev?
+
+(no)standout	In standout mode, the edges (see (no)edges) are drawn in
+		standout mode (reverse video, usually).
+
+
+Options supported by the list file format:
+
+list ch		Use the character CH to separate the cell values.
+
+
+		File names:
+
+If a file name begins with a '|', the rest of the name is taken as a command,
+which oleo opens a pipe to.  So you can use the name '|zcat file.Z' to read
+a compressed spreadsheed, or '|compress > file.Z' to write one.
+
+
+			 Using Oleo with X11
+
+If your system has libX11, Oleo will be built with X support.  If you run
+Oleo with the DISPLAY environment variable set, Oleo will open an X window 
+instead of using curses.
+
+Under X, cells are normally displayed in the default font.  You can
+change that font using the set-default-font command.  The value you
+specify may include wild cards, especially for the point size of the
+font.  You can change the font used for specific areas of a
+spreadsheet using the commands `set-cell-font' and `set-region-font'.
+
+			 Font Specifications
+
+The easiest way to specify a font is to use one of the built in
+short-hand names.  These names are `fixed', `times', and `courier'.
+Optionally, these names can be followed by a scale.  The scale is the
+ratio of the default point size to the desired point size. For
+example, if the default font is a 10 point font, then `times 1.2'
+refers to a 12 point Times-Roman type font.
+
+Every font has a long name that can also be used in specifications.
+The long name has three parts: an X name, a PostScript(*) name, and a
+scale.  The X name and PostScript may be omitted.  The shorthand name
+`times 1.2' is the same as the long name:
+
+	*times-medium-r-*, Times-Roman, 1.2
+
+Notice that the size is left wildcarded in the X name.  This is not
+absolutely necessary, but if it is done Oleo can resize the font
+should the size of the default font change (the command
+set-default-point-size does this).
+
+New short hand names can be defined using the `define-font-name'
+command.  Later, if a user uses a shorthand name in a font
+specification, the name is replace by the text of the definition.  For
+example, here is a standard definition from init.c:
+
+	define-font-name time *times-medium-r-*, Times-Roman
+
+Notice that the scale has been omitted.  That is so that
+specifications like `times 1.2' will be properly expanded.
+
+		X resources and command line options.
+
+Oleo doesn't yet recognize and .Xdefault resources or X specific
+command line options.  It will in a future release.
+
+
+(*) PostScript is a trademark of Adobe Systems Incorporated.
+
+
+			 PostScript Printing
+
+
+Oleo can generate an embedded postScript redition of any part of a
+spreadsheet.  Using the commands outlined in `Using Oleo with X11',
+you can control the fonts used in the printed output.
+
+The command `psprint-region' takes a range and file name as arguments.
+It writes embedded postScript to the file.  
+
+Oleo will make the output as large as possible to fit the page.  You
+can change the page size using the command `set-page-size'.  For
+example, the default setting is `set-page-size 8.5 x 11'.  To specify
+a page size in centimeters, use: `set-page-size 20 x 30 c'.
+
+The command `set-default-ps-font' controls the default font for cells.
+For example, the initial value is `set-default-ps-font Times-Roman'.
+
+
+			Formulae:
+
+Numbers must be entered in 'general' format:
+	[-]digits[.digits][e[-]digits]
+
+Strings are entered surrounded by double-quotes.  To include unusual
+characters, you can either use \char (works well for ") or use
+\nnn where nnn is the octal code for the character you want to include.
+
+			Magic constants:
+
+Note that oleo automatically converts the names of constants to upper case,
+but they can be entered in any case.
+
+#TRUE			The logical TRUE value
+#FALSE			The logical FALSE value
+
+#ERROR			Various error types.
+#BAD_INPUT
+#NON_NUMBER
+#NON_STRING
+#NON_BOOL
+#NON_RANGE
+#OUT_OF_RANGE
+#NO_VALUES
+#DIV_BY_ZERO
+#BAD_NAME
+#NOT_AVAIL
+#PARSE_ERROR
+#NEED_OPEN
+#NEED_CLOSE
+#NEED_QUOTE
+#UNK_CHAR
+#UNK_FUNC
+
+#INF			Various trancendental values.  On some machines,
+#INFINITY		(like the vax), these may all be the same value.
+#NAN
+#NOT_A_NUMBER
+#NINF
+#MINUS_INFINITY
+
+
+			Infix functions:
+
+- num			0-num
+! bool			#TRUE if bool is #FALSE
+			#FALSE if bool is #TRUE, error otherwise.
+
+num1 ^ num2		Exponentiation  This is *right* associative!
+num1 * num2		Multiplication  Note that these functions are not as
+num1 / num2		Division	good as they should be at detecting
+int1 % int2		Modulus		overflow.  There *is* code that should
+
+num1 + num2		Addition	force integer expressions to become
+num1 - num2		subtraction	floating-point if the result wouldn't
+					fit in an integer.
+num1 >= num2		Arithmatic greater-or-equal
+num1 > num2		greater-than
+num1 < num2		less-than
+num1 <= num2		less-than-or-equal
+
+val1 = val2		#TRUE if val1 and val2 can be considered equal.
+			#FALSE otherwise
+val1 != val2		Equivelent to !(val1=val2)
+
+str1 & str2		Text concatination.
+
+bool ? val1 : val2	if(bool==#TRUE)
+				evaluate val1
+			else if(bool!=#FALSE)
+				error...
+			else
+				evaluate val2.
+
+( val )			(To override default precedence) Note that since oleo
+			stores expressions in a byte-compiled form, excess
+			parens will mysteriously vanish.
+
+
+		Prefix functions:
+
+In 'a0' mode, all prefix functions have '@' prepended to their names.
+
+if(bool,val1,val2)	if(test==#TRUE)
+				evaluate val1
+			else if(test!=#FALSE)
+				error...
+			else
+				evaluate val2.
+and(bool1,bool2)	if(val1==#FALSE)
+				#FALSE
+			else if(val1!=#TRUE)
+				error...
+			else val2;
+or(bool1,bool2)		if(val1==#TRUE)
+				#TRUE
+			else if(val1!=#FALSE)
+				error...
+			else val2;
+pi()			3.14159265358979326848
+row()			The row number of the cell the expression is in.
+col()			The column number of the cell the expression is in.
+now()			The current time in seconds since Jan 1 1970 (?)
+abs(num)		The absolute value of num.
+acos(num)		The arc-cosine of num (num in radians)
+asin(num)		The arc-sine of num (num in radians)
+atan(num)		The arc-tangent of num (in radians)
+int(num)		Convert to integer (toward zero)
+ceil(num)		Convert to integer (round up)
+floor(num)		Convert to integer (round down)
+cos(num)		The cosine of num (in radians)
+dtr(num)		num degrees in radians
+exp(num)		The exponential function of num
+log(num)		The natural log of num
+log10(num)		The log of num to base 10
+rtd(num)		num radians in degrees
+sin(num)		The sine (in radians) of num
+sqrt(num)		The square-root of num
+tan(num)		The tangent (in radians) of num
+rnd(num)		A random number from 0 to num-1
+negate(num)		0-num
+not(bool)		#TRUE if bool is #FALSE
+			#FALSE if bool is #TRUE, error otherwise.
+iserr(val)		#TRUE if the expression is an error
+			else #FALSE
+isnum(val)		#TRUE if the expression is a number, or can be
+			automatically converted into a number, thus
+			isnum("12") is #TRUE, while isnum("12 ") is
+			#FALSE. (This might be worth fixing.)
+rows(rng)		number of rows in rng.
+cols(rng)		number of columns in rng.
+ctime(num)		Convert num into a readable date/time string.
+atan2(num1,num2)	Two number arctangent
+hypot(num1,num2)	use man 2 hypot
+fixed(num1,num2)	num1 rounded to num2 decimal places
+
+index(rng,int)		the contents of the int-th cell in rng.
+index(rng,num1,num2)	The contents of the int1-th down and int2-th
+			over cell in rng
+oneof(int,val1,val2,val3...) switch(int) {
+				case 1: val1;
+				case 2: val2;
+				...
+				default: error;
+			}
+
+For the following functions, arguments that are ranges are scanned
+for numeric values only.  Strings, error values, empty cells, etc, are ignored.
+All these functions except cnt() will give a #NO_VALUES error if it does not
+find any numbers.  You can give most of the functions an explicit value if
+you don't want to get a #NO_VALUES error.  For example, if you want to add
+up the range r1:20c5, and return 0 if there are no numbers there,
+'sum(0,r1:20c5)' will work.
+
+Strings, etc, that are explicitly given to the functions are subjected to the
+usual conversion.
+
+sum(vr1...)		...
+prod(vr1...)		...
+avg(vr1...)		...
+std(vr1...)		The SAMPLE standard deviation.  To get the population
+			standard deviation, use sqrt(var(...))
+max(vr1...)		...
+min(vr1...)		...
+cnt(vr1...)		The number of numeric values found.
+var(vr1...)		The POPULATION variance.  To get the sample variance,
+			use std(...)^2
+
+These functions are in the 'string' package.  If oleo is compiled with
+-DUSE_DLD, the string package must be loaded before these functions can be
+used.  If a spreadsheet that uses these functions is loaded before the
+string package is loaded, things will fail (silently!)  (This is probably a
+bug.
+
+len(str)		length of string in characters.
+strupr(str)		string converted to upper case
+strlwr(str)		string converted to lower case
+strcap(str)		string with each word capitalized.
+trim(str)		string with extra spaces and non-ascii chars
+			removed.
+find(str1,str2,int)	return the location where str2 appears in
+			str1, start looking at character #int
+substr(int1,int2,str)	The characters in string from position int1
+			to position int2.  Positions can be either
+			positive (First character is #1, last char is
+			#(length of string)) or negative(last
+			character is #-1, first character is #-(length
+			of string)).
+mid(str,int1,int2)	The characters in string from int1 (counting
+			from the beginning) continuing for int2 chars.
+edit(str,int1,int2,...)	Remove the text from int1 to int2 in string
+			and replace it with ... (zero or more strings)
+			int1 and int2 are like for substr() above.
+repeat(int,str)		str repeated int times, thus repeat(2,"foo")
+			returns "foofoo"
+concat(vr1,...)		Concatinate strings, ranges, etc.
+
+
+These functions are in the 'cells' package.  If oleo is compiled with
+-DUSE_DLD, the cells package must be loaded before these functions can be
+used.
+my(str)			String:		Returns:
+			row		row()
+			column		col()
+			width		The width of the column containing
+					this cell.
+			lock		"locked" or "unlocked"
+			protection	ditto
+			justify		"left" "right" "center" or "default"
+			alignment	ditto
+			format		"default" "user-1" etc.
+			fmt		ditto.
+			type		"error", "boolean", "float",
+					"integer", "null", "Unknown",
+					etc.
+			formula		A string of the cell's current
+					formula.
+			value		The cells current value.
+			anything-else	error--> #BAD_INPUT
+
+curcell(str)		Like my(), but for the cell under the
+			cell-cursor in the current window.
+
+cell(int1,int2,str)	Like my(), but for the cell at Rint1Cint2.
+
+member(rng,val)		The number of the first cell in RNG that contains
+			VAL, or zero if no cells contain it.
+
+
+These next four functions could probably be replaced by a pair of smart
+regex routines. . .
+
+smember(rng,str)	The number of the first cell in RNG that contains a
+			substring of STR, or zero if no cell contains one.
+
+members(rng,str)	The number of the first cell in RNG whose value is
+			a substring of STR.
+
+pmember(rng,str)	The number of the first cell in RNG whose value
+			equals the first few characters of STR.
+
+memberp(rng,str)	The number of the first cell in RNG whose value
+			starts with STR.
+
+hlookup(rng,num,int)	Scan through the top row of RANGE looking for a
+			number which is greater than NUM.  Then return the
+			value in the cell that is INT rows down from the top
+			of the range.
+
+vlookup(rng,num,int)	Like hlookup, but scans the left column
+			and returns the value in the cell that is INT
+			columns over from the left edge of the range.
+
+vlookup_str(rng,num,str)Like vlookup, but scans the left column
+			for a string.  The column need not be sorted.
+
+These functions are in the 'busi' package.  If oleo is compiled with
+-DUSE_DLD, the busi package must be loaded before these functions can be
+used.
+
+pmt(p,r,t)		Payment per period for a loan of $P at rate R for T
+	payments.
+
+pv(pmt,int,term)	Present value of an investment that pays $PMT at the
+	end of each of TERM periods with a discount rate (interest) of INT.
+
+npv(rng,rate)		Net Present Value of an investment which will pay
+	uneaven payments.  The term is calculated from the number of cells in
+	RNG.  .
+
+irr(rng,guess)		Internal Rate of Return.  This function is paticularly
+	untested, and should not be trusted.
+
+fv(pmt,int,term)	Future Value of an annuity.
+
+rate(fut,pres,term)	Interest rate required to turn $PRES into $FUT in
+	TERM periods.
+
+term(pmt,int,fut)	Number of periods required to collect $FUT in
+	payments of $PMT, where depositd payments earn at a rate of INT.
+
+cterm(int,fut,pres)	Number of periods required to collect $FUT from a
+	single initial deposit of $PRES, at an interest rate of INT.
+
+sln(cost,scrap,life)	Straight line depreciation of an asset that cost
+	$COST when new, can be sold for $SCRAP, and will last for LIFE
+	periods.
+
+syd(cost,scrap,life,per)	Sum-of-the-digits depreciation of an asset
+	that cost $COST, can be sold for $SCRAP and lasts LIFE, in period PER.
+
+ddb(cost,scrap,life,per)	Double-declining-balance deprecion, otherwise
+	similar to syd().
+
+anrate(pmt,pres,term)	
+anterm(pmt,prin,rate)
+balance(prin,rate,term,period)
+paidint(prin,rate,term,period)
+kint(prin,rate,term,period)
+kprin(prin,rate,term,period)
+compbal(print,rate,term)
