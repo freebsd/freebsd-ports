@@ -10,6 +10,7 @@ share/molden/test/chemx.test
 share/molden/test/complex2.out
 share/molden/test/esp.test
 share/molden/test/esp.txt
+share/molden/test/esp.xyz
 share/molden/test/fragment
 share/molden/test/gamess_uk.freq
 share/molden/test/gamess_uk.input
