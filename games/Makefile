@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1997/04/06 02:46:48 andreas Exp $
+# $Id: Makefile,v 1.64 1997/04/27 14:28:49 max Exp $
 #
 
     SUBDIR += acm
@@ -6,6 +6,7 @@
     SUBDIR += angband
     SUBDIR += cgoban
     SUBDIR += crossfire
+    SUBDIR += dontspace
     SUBDIR += doom
     SUBDIR += flying
     SUBDIR += gnuchess
@@ -14,6 +15,7 @@
     SUBDIR += golddig
     SUBDIR += imaze
     SUBDIR += jetpack
+    SUBDIR += klondike
     SUBDIR += lincity
     SUBDIR += nethack
     SUBDIR += nethack-qt
