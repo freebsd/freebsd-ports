@@ -14,7 +14,7 @@ DISTNAME=	bugseeker2ee-1_0_2
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/linux-jdk13
+RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/linux-sun-jdk13
 
 NO_CDROM=	"License doesn\'t allow redistribution"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
