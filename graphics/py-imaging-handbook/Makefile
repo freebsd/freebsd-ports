@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	imaging-handbook
-PORTVERSION=	1.1
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pythonware.com/library/pil/handbook/ \
 		http://www.pythonware.com/images/ \
 		http://www.pythonware.com/
 PKGNAMEPREFIX=	py-
-DISTFILES=	appendices.htm blank.gif blurb-works-1.2.gif concepts.htm \
-		concept1.gif getting-support.htm icon-works.gif \
-		image-file-formats.htm image.htm imagechops.htm \
-		imagecrackcode.htm imagedraw.htm imageenhance.htm \
-		imagefile.htm imagefileio.htm imagefilter.htm imagefont.htm \
-		imagepath.htm imagesequence.htm imagestat.htm imagetk.htm \
-		imagewin.htm index.htm introducing-pil.htm mailto-light.gif \
-		module-reference.htm pilconvert.htm pildriver.htm pilfile.htm \
+DISTFILES=	blank.gif blurb-works-1.2.gif concepts.htm \
+		concept1.gif decoder.htm formats.htm \
+		icon-works.gif image.htm imagechops.htm \
+		imagecolor.htm imagecrackcode.htm imagedraw.htm \
+		imageenhance.htm imagefile.htm imagefileio.htm imagefilter.htm \
+		imagefont.htm imagegrab.htm imagemath.htm imageops.htm \
+		imagepath.htm imagepalette.htm \
+		imagesequence.htm imagestat.htm imagetk.htm \
+		imagewin.htm index.htm introduction.htm license.htm \
+		mailto-light.gif overview.htm \
+		pilconvert.htm pildriver.htm pilfile.htm \
 		pilfont.htm pilprint.htm preface.htm psdraw.htm pythonware.css \
-		remote-light.gif software-license.htm tools-reference.htm \
-		tutorial.htm writing-your-own-file-decoder.htm
+		remote-light.gif support.htm tutorial.htm
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Imaging Library Handbook
-
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=
