@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
@@ -16,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		portaudio.0:${PORTSDIR}/audio/portaudio
 
 USE_GNOME=	gnomehack gnometarget gtk20
