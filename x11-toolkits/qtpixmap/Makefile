@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	QtPixmap
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	7043-${PORTNAME}-${PORTVERSION}
