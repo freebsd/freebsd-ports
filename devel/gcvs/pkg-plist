@@ -36,22 +36,29 @@ lib/cvs/contrib/sccs2rcs
 @dirrm lib/cvs/contrib
 @dirrm lib/cvs
 share/gcvs/ChangeRoot.tcl
+share/gcvs/ChangeRootTK.tcl
 share/gcvs/Cleanup.tcl
 share/gcvs/ColorTest.tcl
 share/gcvs/CvsAddAll.tcl
 share/gcvs/DocMacros.txt
+share/gcvs/EditSafely.tcl
 share/gcvs/FastModSearch.tcl
 share/gcvs/FolderTest.tcl
+share/gcvs/ForceUpdate.tcl
 share/gcvs/ListDeleted.tcl
 share/gcvs/ListLockedFiles.tcl
 share/gcvs/ListModules.tcl
 share/gcvs/ListNonCVS.tcl
 share/gcvs/ListStickyTags.tcl
+share/gcvs/PrepPatch.tcl
 share/gcvs/QueryState.tcl
 share/gcvs/RevertChanges.tcl
 share/gcvs/SelectionTest.tcl
+share/gcvs/SetCurrentVersion.tcl
 share/gcvs/TclVersion.tcl
 share/gcvs/cvs2cl.tcl
+share/gcvs/cvsignore_add.tcl
+share/gcvs/cvsignore_remove.tcl
 share/gcvs/startup.tcl
 share/gcvs/pixmaps/add.xpm
 share/gcvs/pixmaps/addb.xpm
