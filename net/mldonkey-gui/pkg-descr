@@ -1,10 +1,13 @@
-mldonkey is a OCAML/GTK client for the eDonkey peer-to-peer network
-(see http://www.edonkey2000.com/ and the 'edonkey' ports).
+mldonkey is a OCAML/GTK client for both eDonkey and Overnet
+peer-to-peer networks.
+(see http://www.edonkey2000.com/ and the 'edonkey' ports)
+(see http://www.overnet.com/)
 
-It is separated into a core with telnet and web interfaces, and
-brings a GTK GUI.
+This is the official GTK GUI that comes along with the port.
+Like all other control methods (telnet, web), it can run on
+another box than the client does.
 
-Other features over the original client are:
+Other features over the original eDonkey client are:
 - better stability
 - faster operation
 - much better control
