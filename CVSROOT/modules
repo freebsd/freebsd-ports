@@ -4121,6 +4121,7 @@ linux-nwserver	ports/games/linux-nwserver
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
 linux-p4v	ports/devel/linux-p4v
+linux-pam-docs	ports/security/linux-pam-docs
 linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
