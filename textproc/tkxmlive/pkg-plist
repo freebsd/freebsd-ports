@@ -1,0 +1,51 @@
+bin/tkxmlive
+%%DATADIR%%/Xresource
+%%DATADIR%%/book.css
+%%DATADIR%%/book.xml
+%%DATADIR%%/gui/default.tcl
+%%DATADIR%%/gui/gui.xml
+%%DATADIR%%/gui/msgs/en.msg
+%%DATADIR%%/gui/msgs/ru.msg
+%%DATADIR%%/img/del_tag.gif
+%%DATADIR%%/img/err-img.gif
+%%DATADIR%%/img/info_tag.gif
+%%DATADIR%%/img/ins_after_tag.gif
+%%DATADIR%%/img/ins_before_tag.gif
+%%DATADIR%%/img/ins_in_tag.gif
+%%DATADIR%%/img/panel.gif
+%%DATADIR%%/interface.tcl
+%%DATADIR%%/library/gridbox.tcl
+%%DATADIR%%/library/gui.tcl
+%%DATADIR%%/library/pane.tcl
+%%DATADIR%%/library/parsexml.tcl
+%%DATADIR%%/library/pkgIndex.tcl
+%%DATADIR%%/library/richtext-bind.tcl
+%%DATADIR%%/library/richtext-instag.tcl
+%%DATADIR%%/library/richtext-status.tcl
+%%DATADIR%%/library/richtext-updatewidget.tcl
+%%DATADIR%%/library/richtext.tcl
+%%DATADIR%%/library/scrolled_text.tcl
+%%DATADIR%%/library/simcss.tcl
+%%DATADIR%%/library/simxml.tcl
+%%DATADIR%%/library/tmp.tcl
+%%DATADIR%%/sample/article/article-1.xml
+%%DATADIR%%/sample/article/article-2.xml
+%%DATADIR%%/sample/article/article-3.xml
+%%DATADIR%%/sample/article/article-3.xml.html
+%%DATADIR%%/sample/article/article-clear.css
+%%DATADIR%%/sample/article/article.css
+%%DATADIR%%/sample/article/article.xml
+%%DATADIR%%/sample/article/article.xsl
+%%DATADIR%%/sample/article/article2latex.xsl
+%%DATADIR%%/sample/article/translate.sh
+%%DATADIR%%/sample/article/xsl2tex.sh
+%%DATADIR%%/sample/docbook.css
+%%DATADIR%%/sample/docbook.xml
+%%DATADIR%%/tkxmlive
+@dirrm %%DATADIR%%/gui/msgs
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/library
+@dirrm %%DATADIR%%/sample/article
+@dirrm %%DATADIR%%/sample
+@dirrm %%DATADIR%%/

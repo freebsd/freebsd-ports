@@ -629,6 +629,7 @@
     SUBDIR += texi2html
     SUBDIR += tinyxml
     SUBDIR += tkdiff
+    SUBDIR += tkxmlive
     SUBDIR += tl-aspell
     SUBDIR += tn-aspell
     SUBDIR += tnef2txt
