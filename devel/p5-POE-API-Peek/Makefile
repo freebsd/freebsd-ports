@@ -1,0 +1,25 @@
+# New ports collection makefile for:	POE-API-Peek
+# Date created:	   11 November 2003
+# Whom:		   Sergey Skvortsov <skv@protey.ru>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	POE-API-Peek
+PORTVERSION=	0.01
+CATEGORIES=	devel perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	POE
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Peek into the internals of a running POE environment
+
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_MODBUILD=	yes
+
+MAN3=		POE::API::Peek.3
+
+.include <bsd.port.mk>
