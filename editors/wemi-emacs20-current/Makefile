@@ -1,9 +1,9 @@
 # New ports collection makefile for:	wemi-current for emacs20
-# Version required:	1.12.x
+# Version required:	1.13.3
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/02/22 02:48:47 steve Exp $
+# $Id: Makefile,v 1.4 1999/03/01 09:37:53 shige Exp $
 #
 
 DISTNAME=	wemi-${WEMI_VER}
@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/wemi/
 MAINTAINER?=	shige@FreeBSD.ORG
 
 # distfile version
-FLIM_VER=	1.12.1
-WEMI_VER=	1.12.0
+FLIM_VER=	1.12.5
+WEMI_VER=	1.13.3
 WEMIDOCDIR=	share/doc/semi
 
 # emacs20
@@ -47,18 +47,14 @@ BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 300006
 MAKEINFO=	makeinfo --no-split --no-validate
-.else
-MAKEINFO=	makeinfo --no-split
-.endif
 
 post-build:
 	@(cd ${WRKSRC} ; \
 	for i in mime-ui-en.texi mime-ui-ja.texi; do \
-		mv $${i} $${i}.jis ; \
-		cat $${i}.jis | nkf -e > $${i} ; \
-		echo "===>   Please ignore the following errors." ; \
+		${MV} $${i} $${i}.jis ; \
+		${CAT} $${i}.jis | nkf -e > $${i} ; \
+		${ECHO_MSG} "===>   Please ignore the following errors." ; \
 		${MAKEINFO} $${i} || ${TRUE} ; \
 	done)
 
