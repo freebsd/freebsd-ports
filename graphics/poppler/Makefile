@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	poppler
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	graphics print
-MASTER_SITES=	http://freedesktop.org/~krh/
+MASTER_SITES=	http://poppler.freedesktop.org/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A PDF rendering library
