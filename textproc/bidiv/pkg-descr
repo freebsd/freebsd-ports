@@ -1,0 +1,5 @@
+bidiv is a filter for changing birectional text stored in
+logical-order to 8-bit visual order text for viewing on terminals
+which do not handle bidirectionality. 
+
+WWW: http://www.ivrix.org.il
