@@ -189,7 +189,6 @@
     SUBDIR += ffcall
     SUBDIR += fhist
     SUBDIR += fib
-    SUBDIR += file
     SUBDIR += flick
     SUBDIR += fnccheck
     SUBDIR += fnorb
