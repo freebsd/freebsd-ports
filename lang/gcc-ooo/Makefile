@@ -17,6 +17,9 @@ DISTFILES=	\
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX}
 
+PATCH_SITES+=	http://www.nedprod.com/TnFOX/patches/
+PATCHFILES+=	GCC3.4.0VisibilityPatch2.diff
+PATCH_STRIP=	-p1
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	openoffice@FreeBSD.org
@@ -24,9 +27,6 @@ COMMENT?=	GNU Compiler Collection for OpenOffice.org
 
 NO_LATEST_LINK=	yes
 
-PATCHFILES+=	GCC3.4.0VisibilityPatch2.diff
-PATCH_SITES+=	http://www.nedprod.com/TnFOX/patches/
-PATCH_STRIP=	-p1
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
