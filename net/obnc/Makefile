@@ -7,6 +7,7 @@
 
 PORTNAME=	obnc
 PORTVERSION=	20010703
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.unixfreak.org/~dima/distfiles/
@@ -17,6 +18,9 @@ MAINTAINER=	dd@FreeBSD.org
 MANSECTS=	1
 MAN1=		nc.1
 MANCOMPRESSED=	maybe
+
+CFLAGS+=	-DIPSEC
+MAKE_ENV=	LDADD="${LDADD} -lipsec"
 
 # MAN page COMPression SUFFIX
 .if !defined(NOMANCOMPRESS)
