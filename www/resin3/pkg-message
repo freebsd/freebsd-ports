@@ -1,6 +1,0 @@
-********************************************************************************
-Resin is now installed.  You may want to start it using the startup script
-installed as %%PREFIX%%/etc/rc.d/resin.sh, and then point your web browser to
-the default home page at http://localhost%%PORT%%/ to read the doc.  Resin can
-be configured using %%PREFIX%%/etc/resin.xml.
-*******************************************************************************
