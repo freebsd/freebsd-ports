@@ -11,6 +11,7 @@
     SUBDIR += kde2-i18n
     SUBDIR += manpages
     SUBDIR += phone
+    SUBDIR += php_doc
     SUBDIR += staroffice5
     SUBDIR += staroffice52
     SUBDIR += webalizer
