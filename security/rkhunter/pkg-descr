@@ -1,5 +1,5 @@
 Rootkit Hunter is scanning tool to ensure you for about 99.9% you're
-clean of nasty tools. 
+clean of nasty tools.
 
 This tool scans for rootkits, backdoors and local exploits by running
 tests like:
@@ -11,4 +11,7 @@ tests like:
 - Look for hidden files
 - Optional scan within plaintext and binary files
 
-WWW: http://www.rootkit.nl/ 
+WWW: http://www.rootkit.nl/
+
+- bugghy
+bugghy@SAFe-mail.net
