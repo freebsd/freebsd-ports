@@ -1,0 +1,11 @@
+This program may be used for sending email messages for CVS repository
+activity. There are a number of different modes supported. It can send
+messages for every change to the repository (like syncmail), or it can be used
+to send a single message for each commit. In the latter case, a list of all
+the files affected by the commit will be assembled and listed in the single
+message. This is similar to how commit_prep and log_accum work, but is more
+efficient.
+
+An additional option allows for diffs to be calculated for the recent changes,
+and either appended to the message (like syncmail) or added as an attachment
+(neater). See the -d and -a options in the documentation.
