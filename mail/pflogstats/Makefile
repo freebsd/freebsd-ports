@@ -22,6 +22,12 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=         Port requires perl 5.6.1 or later. Install lang/perl5 then try again
+.endif
+
 post-patch:
 # fix location of PERL
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
@@ -38,4 +44,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
