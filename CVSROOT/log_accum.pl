@@ -507,7 +507,7 @@ if ($input_params =~ /New directory/) {
 
 	push @text, "  $input_params";
 	&do_changes_file(@text);
-	#&mail_notification(@text);
+	&mail_notification(@text) if $cfg::MAIL_ON_DIR_CREATION;
 	&cleanup_tmpfiles();
 	exit 0;
 }

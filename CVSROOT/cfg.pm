@@ -11,7 +11,7 @@
 package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
-	    $TMPDIR %TEMPLATE_HEADERS);
+	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS);
 
 
 ######################
@@ -66,6 +66,8 @@ $MAILADDRS = "nobody";
 # i.e. $MAILBANNER = "Project X CVS Repository";
 $MAILBANNER = "";
 
+# Send mail when directories are created in the repository.
+$MAIL_ON_DIR_CREATION = 1;
 
 
 
