@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/Blowfish.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt
