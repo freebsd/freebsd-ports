@@ -1,7 +1,7 @@
 @owner games
 @group games
 @mode 4711
-bin/omega
+bin/omega-game
 @mode 666
 share/omega/omega.hi
 share/omega/omega.log
