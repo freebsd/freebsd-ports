@@ -49,6 +49,7 @@ bin/zsh-%%ZSH_VER%%
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zprof.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
+%%PORTDOCS%%share/doc/zsh/zsh.html
 %%PORTDOCS%%share/doc/zsh/zsh_1.html
 %%PORTDOCS%%share/doc/zsh/zsh_10.html
 %%PORTDOCS%%share/doc/zsh/zsh_11.html
@@ -71,6 +72,17 @@ bin/zsh-%%ZSH_VER%%
 %%PORTDOCS%%share/doc/zsh/zsh_27.html
 %%PORTDOCS%%share/doc/zsh/zsh_28.html
 %%PORTDOCS%%share/doc/zsh/zsh_29.html
+%%PORTDOCS%%share/doc/zsh/zsh_30.html
+%%PORTDOCS%%share/doc/zsh/zsh_31.html
+%%PORTDOCS%%share/doc/zsh/zsh_32.html
+%%PORTDOCS%%share/doc/zsh/zsh_33.html
+%%PORTDOCS%%share/doc/zsh/zsh_34.html
+%%PORTDOCS%%share/doc/zsh/zsh_35.html
+%%PORTDOCS%%share/doc/zsh/zsh_36.html
+%%PORTDOCS%%share/doc/zsh/zsh_37.html
+%%PORTDOCS%%share/doc/zsh/zsh_38.html
+%%PORTDOCS%%share/doc/zsh/zsh_39.html
+%%PORTDOCS%%share/doc/zsh/zsh_40.html
 %%PORTDOCS%%share/doc/zsh/zsh_3.html
 %%PORTDOCS%%share/doc/zsh/zsh_4.html
 %%PORTDOCS%%share/doc/zsh/zsh_5.html
@@ -78,6 +90,8 @@ bin/zsh-%%ZSH_VER%%
 %%PORTDOCS%%share/doc/zsh/zsh_7.html
 %%PORTDOCS%%share/doc/zsh/zsh_8.html
 %%PORTDOCS%%share/doc/zsh/zsh_9.html
+%%PORTDOCS%%share/doc/zsh/zsh_abt.html
+%%PORTDOCS%%share/doc/zsh/zsh_ovr.html
 %%PORTDOCS%%share/doc/zsh/zsh_toc.html
 share/examples/zsh/zlogin
 share/examples/zsh/zshenv
@@ -104,6 +118,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_bison
 %%ZSHFUNC_SUBDIR%%/_brace_parameter
 %%ZSHFUNC_SUBDIR%%/_bsd_pkg
+%%ZSHFUNC_SUBDIR%%/_bts
 %%ZSHFUNC_SUBDIR%%/_bug
 %%ZSHFUNC_SUBDIR%%/_builtin
 %%ZSHFUNC_SUBDIR%%/_bzip2
@@ -111,6 +126,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_call_function
 %%ZSHFUNC_SUBDIR%%/_call_program
 %%ZSHFUNC_SUBDIR%%/_cd
+%%ZSHFUNC_SUBDIR%%/_chflags
 %%ZSHFUNC_SUBDIR%%/_chown
 %%ZSHFUNC_SUBDIR%%/_combination
 %%ZSHFUNC_SUBDIR%%/_command
@@ -201,6 +217,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_killall
 %%ZSHFUNC_SUBDIR%%/_kld
 %%ZSHFUNC_SUBDIR%%/_limits
+%%ZSHFUNC_SUBDIR%%/_links
 %%ZSHFUNC_SUBDIR%%/_list
 %%ZSHFUNC_SUBDIR%%/_loadkeys
 %%ZSHFUNC_SUBDIR%%/_logical_volumes
@@ -282,6 +299,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_rlogin
 %%ZSHFUNC_SUBDIR%%/_rpm
 %%ZSHFUNC_SUBDIR%%/_ruby
+%%ZSHFUNC_SUBDIR%%/_samba
 %%ZSHFUNC_SUBDIR%%/_sched
 %%ZSHFUNC_SUBDIR%%/_sep_parts
 %%ZSHFUNC_SUBDIR%%/_set
@@ -302,6 +320,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_sub_commands
 %%ZSHFUNC_SUBDIR%%/_subscript
 %%ZSHFUNC_SUBDIR%%/_sudo
+%%ZSHFUNC_SUBDIR%%/_sysctl
 %%ZSHFUNC_SUBDIR%%/_tags
 %%ZSHFUNC_SUBDIR%%/_tar
 %%ZSHFUNC_SUBDIR%%/_tar_archive
@@ -320,6 +339,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_unsetopt
 %%ZSHFUNC_SUBDIR%%/_update-alternatives
 %%ZSHFUNC_SUBDIR%%/_urls
+%%ZSHFUNC_SUBDIR%%/_user_admin
 %%ZSHFUNC_SUBDIR%%/_user_at_host
 %%ZSHFUNC_SUBDIR%%/_users
 %%ZSHFUNC_SUBDIR%%/_users_on
@@ -380,6 +400,7 @@ share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_zpty
 %%ZSHFUNC_SUBDIR%%/_zstyle
 %%ZSHFUNC_SUBDIR%%/allopt
+%%ZSHFUNC_SUBDIR%%/bash-backward-kill-word
 %%ZSHFUNC_SUBDIR%%/checkmail
 %%ZSHFUNC_SUBDIR%%/colors
 %%ZSHFUNC_SUBDIR%%/compaudit
