@@ -1,8 +1,12 @@
 lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager_TS.so
 lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager.so
-lib/php/%%PHP_EXT_DIR%%/ZendOptimizer_TS.so
-lib/php/%%PHP_EXT_DIR%%/ZendOptimizer.so
+lib/php/%%PHP_EXT_DIR%%/Optimizer/php-4.3.x/ZendOptimizer.so
+lib/php/%%PHP_EXT_DIR%%/Optimizer_TS/php-4.3.x/ZendOptimizer.so
 %%PORTDOCS%%%%DOCSDIR%%/ZendOptimizer_TechFAQ.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ZendOptimizer_UserGuide.pdf
+@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer_TS/php-4.3.x
+@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer_TS
+@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer/php-4.3.x
+@dirrm lib/php/%%PHP_EXT_DIR%%/Optimizer
 @unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2> /dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

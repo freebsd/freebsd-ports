@@ -6,8 +6,8 @@ Edit %%LOCALBASE%%/etc/php.ini and add:
 
 [Zend]
 zend_optimizer.optimization_level=15
-zend_extension_manager.optimizer="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendOptimizer.so"
-zend_extension_manager.optimizer_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendOptimizer_TS.so"
+zend_extension_manager.optimizer="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/Optimizer"
+zend_extension_manager.optimizer_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/Optimizer_TS"
 zend_extension="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager.so"
 zend_extension_ts="%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/ZendExtensionManager_TS.so"
 
