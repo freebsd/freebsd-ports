@@ -97,7 +97,6 @@ lib/libgtkhtml.so
 lib/libgtkhtml.so.20
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
-share/gnome/control-center/capplets/gtkhtml-properties.desktop
 share/gnome/gtkhtml/Editor.idl
 share/gnome/gtkhtml/gtkhtml-capplet.glade
 share/gnome/gtkhtml/gtkhtml-editor-properties.glade
@@ -180,5 +179,4 @@ share/locale/zh_TW/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/html/gtkhtml
 @dirrm share/gnome/gtkhtml/icons
 @dirrm share/gnome/gtkhtml
-@dirrm share/gnome/control-center/capplets
 @dirrm include/gtkhtml
