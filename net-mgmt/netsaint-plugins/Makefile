@@ -7,6 +7,7 @@
 
 PORTNAME=	netsaint-plugins
 PORTVERSION=	1.2.9.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/netsaintplug/
 DISTNAME=	${PORTNAME}-1.2.9-3
