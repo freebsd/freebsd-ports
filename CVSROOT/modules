@@ -5572,7 +5572,6 @@ mpqc		ports/science/mpqc
 mpqc-mpich	ports/science/mpqc-mpich
 mprime		ports/math/mprime
 mprof		ports/devel/mprof
-mpt		ports/audio/mpt
 mreport		ports/mail/mreport
 mrsidviewer	ports/graphics/mrsidviewer
 mrt		ports/net/mrt
@@ -9716,7 +9715,6 @@ solfege		ports/audio/solfege
 solidpop3d	ports/mail/solidpop3d
 solitaire	ports/math/solitaire
 soltaire	ports/math/solitaire
-songprint	ports/audio/songprint
 sonice		ports/audio/sonice
 sonytv		ports/misc/sonytv
 sopwith		ports/games/sopwith

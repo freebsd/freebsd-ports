@@ -237,7 +237,6 @@
     SUBDIR += mpiosh
     SUBDIR += mpmf20
     SUBDIR += mppdec
-    SUBDIR += mpt
     SUBDIR += mt-daapd
     SUBDIR += muine
     SUBDIR += muse
@@ -342,7 +341,6 @@
     SUBDIR += snd
     SUBDIR += snowstar
     SUBDIR += solfege
-    SUBDIR += songprint
     SUBDIR += sonice
     SUBDIR += sound-juicer
     SUBDIR += soundgrab
