@@ -178,7 +178,7 @@ while (<VERSIONS>) {
         $newversion =~ s/^.*-//;
         $oldversion =~ s/^.*-//;
 
-        my $result = readfrom '',
+        my $result = $newversion eq $oldversion ? '=' : readfrom '',
           $pkg_version, '-t', $newversion, $oldversion;
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
