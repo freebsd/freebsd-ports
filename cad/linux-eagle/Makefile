@@ -9,7 +9,7 @@ PORTNAME=	linux-eagle
 EAGLEVERSION?=	4.09r2
 EAGLELANG?=	e
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME:S/linux-//}-${EAGLEVERSION}${EAGLELANG}
@@ -38,6 +38,7 @@ CPIO?=		/usr/bin/cpio --quiet -pdum -R
 do-install:
 	@${MKDIR} ${DATADIR}
 	@ cd ${WRKSRC} && ${FIND} * -type f -print | ${CPIO} ${BINOWN}:${BINGRP} ${DATADIR}
+	@ cd ${DATADIR} && ${FIND} * -type d -print | xargs ${CHMOD} 0755
 	@${LN} -sf ${DATADIR}/bin/eagle ${PREFIX}/bin/eagle
 	@${INSTALL_MAN} ${DATADIR}/man/eagle.1 ${PREFIX}/man/man1
 
