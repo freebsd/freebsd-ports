@@ -6,20 +6,11 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.22
+PORTVERSION=	4.0.23a
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.0/ \
-		http://www.softagency.co.jp/MySQL/Downloads/MySQL-4.0/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/MySQL-4.0/ \
-		http://mysql.mediatraffic.fi/Downloads/MySQL-4.0/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/MySQL-4.0/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/MySQL-4.0/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/MySQL-4.0/ \
-		http://www.mysql.cz/Downloads/MySQL-4.0/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/MySQL-4.0/ \
-		http://mysql.proserve.nl/Downloads/MySQL-4.0/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.0/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	MySQL-4.0
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	ale@FreeBSD.org
@@ -61,6 +52,10 @@ CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
+.endif
+
+.if defined(WITHOUT_INNODB)
+CONFIGURE_ARGS+=--without-innodb
 .endif
 
 .include <bsd.port.pre.mk>
@@ -135,7 +130,11 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} ""
+
+post-extract:
+	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in

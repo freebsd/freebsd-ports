@@ -1,0 +1,29 @@
+--- Docs/Makefile.in.orig	Sun Jan  9 12:51:43 2005
++++ Docs/Makefile.in	Sun Jan  9 12:58:11 2005
+@@ -316,7 +316,7 @@
+ 
+ SUBDIRS = Images
+ GT = $(srcdir)/Support/generate-text-files.pl
+-all: $(BUILT_SOURCES)
++all:
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+ .SUFFIXES:
+@@ -626,7 +626,7 @@
+ 	for dir in "$(DESTDIR)$(infodir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+-install: $(BUILT_SOURCES)
++install:
+ 	$(MAKE) $(AM_MAKEFLAGS) install-recursive
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+@@ -750,7 +750,7 @@
+ 	tags tags-recursive uninstall uninstall-am uninstall-info-am
+ 
+ 
+-all:			$(targets) txt_files
++all:
+ 
+ txt_files:		../INSTALL-SOURCE ../COPYING ../EXCEPTIONS-CLIENT \
+ 			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
