@@ -1,6 +1,6 @@
---- makefiles/Makefile.FreeBSD.orig	Fri Oct 22 00:20:20 1999
-+++ makefiles/Makefile.FreeBSD	Fri Oct 22 18:36:19 1999
-@@ -6,18 +6,18 @@
+--- makefiles/Makefile.FreeBSD.orig	Wed Feb 16 22:55:41 2000
++++ makefiles/Makefile.FreeBSD	Wed Feb 16 22:58:34 2000
+@@ -6,19 +6,19 @@
  
  include makefiles/Makefile.common
  
@@ -9,22 +9,24 @@
  #CC = /usr/local/bin/c++
  
 -OPTIMIZER = -O2
-+#OPTIMIZER = -O2
++OPTIMIZER = $(CXXFLAGS)
  
  #ARCH = -b i586-pc-linux-gnulibc1
  ARCH = 
  
  # For making a dso, add -fPIC
 -CCFLAGS = $(OPTIMIZER) -pipe -Wall -fno-exceptions
-+CCFLAGS = $(CXXFLAGS) $(CFLAGS)
++CCFLAGS = $(OPTIMIZER)
  
 -INCLUDES = -I$(XEINC)
-+INCLUDES = -I$(XEINC) -I/usr/X11R6/include
- LIBS = -L/usr/X11R6/lib -lXpm -lX11
+-LIBS = -L/usr/X11R6/lib -lXpm -lX11
++INCLUDES = -I$(XEINC) -I${X11BASE}/include
++LIBS = -L${X11BASE}/lib -lXpm -lX11
  
  backup:
+ 	cd ..;tar -cvzf xenon.tar.gz $(BACKUP)
 @@ -29,4 +29,3 @@
  floppy:
-       cd ..;tar -cvzf /dev/fd0 $(BACKUP)
+ 	cd ..;tar -cvzf /dev/fd0 $(BACKUP)
  
 --include $(DEPEND)
