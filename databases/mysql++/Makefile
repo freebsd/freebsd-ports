@@ -27,6 +27,11 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} >= 500035
 PATCHFILES=	patch_gcc_3.3.gz
 PATCH_SITES=	${MASTER_SITES}

@@ -15,7 +15,13 @@ COMMENT=	Service that restarts other standalone services
 
 MAN8=		monitord.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	@${CP} ${WRKSRC}/monitord.conf.sample ${PREFIX}/etc/monitord.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

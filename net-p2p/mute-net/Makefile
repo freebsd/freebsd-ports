@@ -138,6 +138,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 # we cannot install if either a slave or master port is already
 # installed
 CONFLICTS+=	mute-net-[0-9]*
