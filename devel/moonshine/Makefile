@@ -17,6 +17,7 @@ USE_QT_VER=	2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+QTCPPFLAGS+=	-I${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ak@freenet.co.uk
 
 USE_KDEBASE_VER=1
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-extra-includes=${LOCALBASE}/include
 
 .include <bsd.port.mk>
