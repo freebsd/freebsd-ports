@@ -200,6 +200,7 @@
     SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pyzor
+    SUBDIR += qconfirm
     SUBDIR += qmHandle
     SUBDIR += qmail
     SUBDIR += qmail-contrib
