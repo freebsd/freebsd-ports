@@ -1,5 +1,8 @@
 bin/wol
+bin/wol-dhcpdconf
 @unexec install-info --delete %D/info/wol.info %D/info/dir
 info/wol.info
 @exec install-info %D/info/wol.info %D/info/dir
 share/locale/de/LC_MESSAGES/wol.mo
+share/locale/fr/LC_MESSAGES/wol.mo
+share/locale/it/LC_MESSAGES/wol.mo
