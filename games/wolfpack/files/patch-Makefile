@@ -1,0 +1,31 @@
+--- Makefile.orig	Tue Sep  7 23:52:39 2004
++++ Makefile	Sun Oct 10 11:26:07 2004
+@@ -106,7 +106,6 @@
+ 	($(MAKE) genlibs $(FREEBSDMASTER))
+ 	(cd src/lib/lwp; $(MAKE) $(FREEBSDMASTER))
+ 	($(MAKE) binaries $(FREEBSDMASTER))
+-	($(MAKE) install)
+ 
+ hp:
+ 	@echo 'building a $(WORLDX) by $(WORLDY) server...'
+@@ -499,6 +498,20 @@
+ 	-(mv $(EMPDIR)/data/econfig $(EMPDIR)/data/econfig.bak)
+ 	($(EMPDIR)/bin/pconfig > $(EMPDIR)/data/econfig)
+ 	-(mv $(EMPDIR)/data/econfig.bak $(EMPDIR)/data/econfig)
++	echo "# Wolfpack, 1996-2000" >$(EMPDIR)/data/auth
++	echo "#" >>$(EMPDIR)/data/auth
++	echo "# Empire Authorization File - Users listed will be allowed to log in as deities." >>$(EMPDIR)/data/auth
++	echo "#" >>$(EMPDIR)/data/auth
++	echo "# Format is:" >>$(EMPDIR)/data/auth
++	echo "# hostname that authorized user uses on a line" >>$(EMPDIR)/data/auth
++	echo "# username that authorized user uses on a line" >>$(EMPDIR)/data/auth
++	echo "#" >>$(EMPDIR)/data/auth
++	echo "# REMEMBER TO USE PAIRS OF LINES!" >>$(EMPDIR)/data/auth
++	echo "#" >>$(EMPDIR)/data/auth
++	echo "# Example:" >>$(EMPDIR)/data/auth
++	echo "#" >>$(EMPDIR)/data/auth
++	echo "localhost" >>$(EMPDIR)/data/auth
++	echo "root" >>$(EMPDIR)/data/auth
+ 
+ ntinstall:
+ 	cd src\client
