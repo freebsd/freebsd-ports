@@ -1,6 +1,6 @@
 # New ports collection makefile for:  xw
 # Date created:                       26 January 20001
-# Whom:                               Daniel Hemmerich <dan@spot.org>
+# Whom:                               Daniel Hemmerich <dan@BSDpro.com>
 #
 # $FreeBSD$
 #
@@ -11,13 +11,12 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gurubox.com/pub/xw/ \
 		ftp://ftp.databits.net/pub/xw/
 
-MAINTAINER=	dan@spot.org
-
-BUILD_DEPENDS=	imlib:${PORTSDIR}/graphics/imlib
+MAINTAINER=	dan@BSDpro.com
 
 GTK_CONFIG=${X11BASE}/bin/gtk12-config
 
 USE_GTK=  yes
+USE_IMLIB=  yes
 USE_X_PREFIX=  yes
 
 .include <bsd.port.mk>
