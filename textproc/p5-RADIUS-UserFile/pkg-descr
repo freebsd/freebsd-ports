@@ -1,0 +1,6 @@
+This module provides methods for reading information from and modifying
+a RADIUS users text file.
+
+WWW: http://search.cpan.org/search?dist=RADIUS-UserFile
+
+Seamus Venasse <svenasse@polaris.ca>
