@@ -1,22 +1,23 @@
---- Configure.orig	Thu Dec 25 11:47:24 1997
-+++ Configure	Thu Feb 19 23:02:55 1998
+--- Configure.orig	Wed Jun 10 02:44:18 1998
++++ Configure	Sun Sep 19 12:44:16 1999
 @@ -44,16 +44,16 @@
  #  be overwritten by any of the parameters saved in $config.
  #  For yes/no values, 0=no, 1=yes
  
 -DOMO_DIR=			# Majordomo home directory
-+DOMO_DIR=/usr/local/majordomo	# Majordomo home directory
++DOMO_DIR=!!PREFIX!!/majordomo	# Majordomo home directory
  DOMO_CONF=			# Majordomo configuration file
  DOMO_VERSION=			# Majordomo version number
  WEB_SCHEME="http"		# Web server scheme/protocol
 -WEB_ROOT=			# Web server root directory
-+WEB_ROOT=/usr/local/www		# Web server root directory
++WEB_ROOT=!!PREFIX!!/share/apache	# Web server root directory
  WEB_CGIDIR=			# Web server CGI directory
  WEB_CGIURL="/cgi-bin"		# Web server CGI URL
  WEB_IMGDIR=			# Web server images directory
- WEB_IMGURL="/images"		# Web server images URL
+-WEB_IMGURL="/images"		# Web server images URL
 -WEB_DOCROOT=			# Root for served documents
-+WEB_DOCROOT=/usr/local/www/data	# Root for served documents
++WEB_IMGURL="/icons"		# Web server images URL
++WEB_DOCROOT=!!PREFIX!!/share/apache/htdocs	# Root for served documents
  WEB_HEADER=			# Header for common site look
  WEB_FOOTER=			# Footer for common site look
  COOL_CF=			# Config file for this installation
@@ -28,4 +29,13 @@
 +COOL_HELPFILE=/majorcool.html	# MajorCool HTML info file location
  COOL_SITEADDR="simple"		# The address lookup function to use
  COOL_CREATECMD=			# Program to call on CREATE request
- COOL_DELETECMD=			# Program to call on DELETE request
+ COOL_RENAMECMD=			# Program to call on RENAME request
+@@ -86,7 +86,7 @@
+ OPT_PREFSRETURN=0		# Return to prior screen from Prefs session?
+ OPT_ROBOTS=1			# Allow Internet spiders to index the CGI?
+ OPT_SCANSTEPS=50		# Update interval suring list scan.
+-PERLBIN="/usr/local/bin/perl"	# How to start a perl script
++PERLBIN="/usr/bin/perl"		# How to start a perl script
+ 
+ #----------------------------------------------------------------------------
+ 

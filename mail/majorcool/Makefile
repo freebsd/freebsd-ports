@@ -6,10 +6,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	majorcool-1.30
-PKGNAME=	majorcool-1.3.0
+DISTNAME=	majorcool-1.3.2
 CATEGORIES=	mail
-MASTER_SITES=	http://ncrinfo.ncr.com/pub/contrib/unix/MajorCool/
+MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.org
 
