@@ -1,5 +1,6 @@
 bin/lyx
 bin/reLyX
+share/locale/cs/LC_MESSAGES/lyx.mo
 share/locale/da/LC_MESSAGES/lyx.mo
 share/locale/de/LC_MESSAGES/lyx.mo
 share/locale/es/LC_MESSAGES/lyx.mo
@@ -8,6 +9,8 @@ share/locale/fr/LC_MESSAGES/lyx.mo
 share/locale/hu/LC_MESSAGES/lyx.mo
 share/locale/nl/LC_MESSAGES/lyx.mo
 share/locale/no/LC_MESSAGES/lyx.mo
+share/locale/pl/LC_MESSAGES/lyx.mo
+share/locale/pt/LC_MESSAGES/lyx.mo
 share/locale/ru/LC_MESSAGES/lyx.mo
 share/locale/sl/LC_MESSAGES/lyx.mo
 share/locale/sv/LC_MESSAGES/lyx.mo
@@ -21,6 +24,7 @@ share/lyx/bind/hollywood.bind
 share/lyx/bind/hu_menus.bind
 share/lyx/bind/math.bind
 share/lyx/bind/menus.bind
+share/lyx/bind/pt_menus.bind
 share/lyx/bind/sv_menus.bind
 share/lyx/bind/xemacs.bind
 share/lyx/chkconfig.ltx
@@ -35,6 +39,7 @@ share/lyx/doc/LaTeXConfig.lyx.in
 share/lyx/doc/Reference.lyx
 share/lyx/doc/Tutorial.lyx
 share/lyx/doc/UserGuide.lyx
+share/lyx/doc/cs_Tutorial.lyx
 share/lyx/doc/de_BUGS.lyx
 share/lyx/doc/de_Customization.lyx
 share/lyx/doc/de_Extended.lyx
@@ -47,6 +52,7 @@ share/lyx/doc/sv_Intro.lyx
 share/lyx/doc/sv_Tutorial.lyx
 share/lyx/examples/Foils.lyx
 share/lyx/examples/ItemizeBullets.lyx
+share/lyx/examples/Literate.lyx
 share/lyx/examples/MathLabeling.lyx
 share/lyx/examples/Math_macros.lyx
 share/lyx/examples/Minipage.lyx
@@ -57,10 +63,13 @@ share/lyx/examples/amsart-test.lyx
 share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/beispiel_gelyxt.lyx
 share/lyx/examples/beispiel_roh.lyx
+share/lyx/examples/de_splash.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
 share/lyx/examples/landslide.lyx
+share/lyx/examples/pl_splash.lyx
 share/lyx/examples/scriptone.lyx
+share/lyx/examples/splash.lyx
 share/lyx/images/amssymb.xbm
 share/lyx/images/amssymb.xpm
 share/lyx/images/psnfss1.xbm
@@ -112,6 +121,7 @@ share/lyx/layouts/amsdefs.inc
 share/lyx/layouts/amsmaths-plain.inc
 share/lyx/layouts/amsmaths-seq.inc
 share/lyx/layouts/amsmaths.inc
+share/lyx/layouts/apa.layout
 share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
 share/lyx/layouts/dinbrief.layout
@@ -122,6 +132,10 @@ share/lyx/layouts/iletter.layout
 share/lyx/layouts/latex8.layout
 share/lyx/layouts/letter.layout
 share/lyx/layouts/linuxdoc.layout
+share/lyx/layouts/literate-article.layout
+share/lyx/layouts/literate-book.layout
+share/lyx/layouts/literate-report.layout
+share/lyx/layouts/literate-scrap.inc
 share/lyx/layouts/lyxmacros.inc
 share/lyx/layouts/manpage.layout
 share/lyx/layouts/obsolete.inc
