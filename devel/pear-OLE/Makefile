@@ -12,8 +12,8 @@ CATEGORIES=	devel www pear
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	PEAR class for reading and writing OLE containers
 
-USE_PHP=	yes
-WANT_PHP_PEAR=	yes
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	OLE
 FILES=		OLE.php PPS.php PPS/File.php PPS/Root.php
