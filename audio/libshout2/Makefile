@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libshout
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	audio net
 MASTER_SITES=	http://developer.icecast.org/libshout/releases/
 
