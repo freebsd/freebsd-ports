@@ -28,7 +28,6 @@ share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
 share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/hextoeuc
 share/examples/samba/misc/wall.perl
 share/examples/samba/printer-accounting/README
 share/examples/samba/printer-accounting/acct-all
@@ -42,6 +41,20 @@ share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
 share/examples/samba/svr4-startup/README
 share/examples/samba/svr4-startup/samba.server
+share/examples/samba/smbchartool/jcode.pl
+share/examples/samba/smbchartool/COPYING.txt
+share/examples/samba/smbchartool/README
+share/examples/samba/smbchartool/INSTALL.sh
+share/examples/samba/smbchartool/capecho
+share/examples/samba/smbchartool/hexecho
+share/examples/samba/smbchartool/smbfnconv
+share/examples/samba/smbchartool/dot.bashrc.example
+share/examples/samba/smbchartool/gendir.pl
+share/examples/samba/smbchartool/gengaiji.pl
+share/examples/samba/smbchartool/genibmkanji.pl
+share/examples/samba/smbchartool/hextestkanji.tar.gz
+share/examples/samba/smbchartool/smbfnconv.v1.9
+share/examples/samba/smbchartool/smbchartool.html
 share/examples/samba/thoralf/smb.conf
 share/examples/samba/tridge/README
 share/examples/samba/tridge/smb.conf
@@ -64,6 +77,7 @@ share/examples/samba/wins_hook/dns_update
 @dirrm share/examples/samba/printer-accounting
 @dirrm share/examples/samba/simple
 @dirrm share/examples/samba/svr4-startup
+@dirrm share/examples/samba/smbchartool
 @dirrm share/examples/samba/thoralf
 @dirrm share/examples/samba/tridge
 @dirrm share/examples/samba/validchars
