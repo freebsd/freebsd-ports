@@ -3,11 +3,11 @@
 # Date created:		11 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.17 1997/09/10 06:51:52 asami Exp $
+# $Id: Makefile,v 1.18 1997/09/10 07:55:37 asami Exp $
 #
 
 DISTNAME=	FreeBSD-2.2R
-PKGNAME=	jp-Wnn6-lib-97.6.6
+PKGNAME=	ja-Wnn6-lib-97.6.6
 CATEGORIES=	japanese
 MASTER_SITES=	file://localhost${PREFIX}/OMRONWnn6/wnnsdk/sdk/ \
 		ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk/
