@@ -1,13 +1,13 @@
 # New ports collection makefile for:	e93
-# Version required:	1.1r4X
+# Version required:	1.2r5X
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.2 1995/07/03 08:43:45 asami Exp $
+# $Id: Makefile,v 1.3 1995/07/18 22:46:38 asami Exp $
 #
 
-DISTNAME=	e93-1.1r4X
-PKGNAME=	e93-1.1.4
+DISTNAME=	e93-1.2r5X
+PKGNAME=	e93-1.2.5
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.x.org/contrib/editors/ \
 		ftp://crl.dec.com/pub/X11/contrib/editors/
@@ -16,6 +16,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 MAKEFILE=	makefile
 USE_X11=	yes
+WRKSRC=		${WRKDIR}/e93
 # The license is a little scary, so disable packaging for now
 NO_PACKAGE=	yes
 
