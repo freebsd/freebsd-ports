@@ -6459,6 +6459,7 @@ sys_sparc64_include	src/sys/sparc64/include
 sys_sys		src/sys/sys
 sys_ufs		src/sys/ufs
 sys_vm		src/sys/vm
+sysconftool	ports/devel/sysconftool
 syscons		src/share/syscons
 sysctl		src/sbin/sysctl
 sysinstall	src/usr.sbin/sysinstall
