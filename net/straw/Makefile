@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	straw
-PORTVERSION=	0.23
+PORTVERSION=	0.25.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -22,7 +21,8 @@ USE_GNOME=	libglade2 pygnome2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
-				--install-lib=${PREFIX}/share/gnome
+				--install-lib=${PREFIX}/share/gnome \
+				--with-desktop-file-dir=share/gnome/applications
 
 .include <bsd.port.pre.mk>
 
@@ -38,10 +38,6 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
 		${WRKSRC}/src/straw
-	@${REINPLACE_CMD} -e 's|share/applications|share/gnome/applications|g' \
-		${WRKSRC}/tools/straw_distutils.py
-	@${REINPLACE_CMD} -e 's|Internet|Network|g' \
-		${WRKSRC}/straw.desktop.in
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
