@@ -7,9 +7,10 @@
 +PREFIX?= /usr/local
 +
  CC      = gcc
- CFLAGS  = -g -w
+-CFLAGS  = -g -w
 -INCLUDE = -I/usr/local/pcsc/include
 -LIBS    = -L/usr/local/pcsc/lib -lpcsclite
++CFLAGS  = -g -w -pthread
 +INCLUDE = -I${PREFIX}/include
 +LIBS    = -L${PREFIX}/lib -lpcsclite
  OBJS = testIBM.o testAMMI.o testSCHL.o testSIEMENS.o testBULL.o testGD.o commands.o testA.o testB.o
