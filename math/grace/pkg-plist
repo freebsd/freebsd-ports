@@ -1,3 +1,4 @@
+bin/grace
 bin/gracebat
 bin/xmgrace
 include/grace_np.h
