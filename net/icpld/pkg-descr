@@ -1,0 +1,11 @@
+ICPLD (Internet Connection Performance Logging Daemon) is a
+daemon which, by sending ICMP requests to an IP address of your
+choice, monitors whether your machine has a working network
+connection. It will log any failed attempts, and will stamp a
+log as soon as a reply is received. It keeps track of when the
+connection was unavailable, as well as for how long. It records
+both total down time and each occasion of interrupted
+connection. The log can also be duplicated in HTML format to
+put online.
+
+WWW: http://icpld.northernmost.org/

@@ -1,0 +1,3 @@
+bin/icpld
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
