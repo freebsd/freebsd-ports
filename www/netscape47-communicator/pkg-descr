@@ -1,0 +1,8 @@
+This is the netscape web-surfboard.  Please read the file
+"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+
+Note: If Java applets fail to display.  Type this as root:
+		cd /usr/X11R6/lib/X11/fonts/misc
+		/usr/X11R6/bin/mkfontdir
+		chmod 444 fonts.dir
+      And then exit and restart your X server.
