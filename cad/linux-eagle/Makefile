@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	linux-eagle
-EAGLEVERSION?=	4.09r2
+EAGLEVERSION?=	4.11
 EAGLELANG?=	e
 PORTVERSION=	${EAGLEVERSION:S/r/./}
-PORTREVISION?=	2
 CATEGORIES?=	cad linux
 MASTER_SITES=	ftp://ftp.cadsoft.de/pub/program/${EAGLEVERSION}/
 DISTNAME=	${PORTNAME:S/linux-//}-${EAGLEVERSION}${EAGLELANG}
@@ -19,6 +18,8 @@ MAINTAINER?=	riggs@rrr.de
 COMMENT?=	An easy to use, yet powerful tool for designing printed circuit boards
 
 RUN_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
+
+CONFLICTS?=	de-linux-eagle-*
 
 ONLY_FOR_ARCHS=	i386
 
