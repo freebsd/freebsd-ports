@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTVERSION=	0.7.7
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
@@ -41,10 +40,6 @@ RC_SUBR?=	/etc/rc.subr
 EXTRA_PATCHES=	files/healthd.sh-500038
 .else
 USE_RC_SUBR=	yes
-.endif
-
-.if ${OSVERSION} > 502110
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 post-install:
