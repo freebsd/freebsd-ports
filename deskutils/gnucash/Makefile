@@ -17,8 +17,6 @@ MASTER_SITE_SUBDIR=	gnucash
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13 \
-		eperl:${PORTSDIR}/lang/eperl
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
