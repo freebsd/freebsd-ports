@@ -3,10 +3,11 @@
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/04/12 04:54:30 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/11 19:32:28 ache Exp $
 #
 
 DISTNAME=       ecu-3.34beta
+PKGNAME=	ecu-3.34b
 CATEGORIES+=	comms
 MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
 EXTRACT_SUFX=   .cpio.Z
