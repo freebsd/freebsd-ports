@@ -15,6 +15,15 @@ ONLY_FOR_ARCHS= i386
 
 MAINTAINER=    jasone@freebsd.org
 
+.include <bsd.port.pre.mk>
+
+# This port only works on i386 right now.
+ONLY_FOR_ARCHS=i386
+
+.if ${OSVERSION} < 400000
+BROKEN="Requires FreeBSD 4.0 or newer"
+.endif
+
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
 	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c
@@ -51,4 +60,4 @@ post-install:
 
 #	@sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
