@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	parsedxml
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/faassen/ParsedXML/${PORTVERSION}/
-MASTER_SITE_SUBDIR=	formulator
+MASTER_SITES=	http://www.infrae.com/download/ParsedXML/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ParsedXML-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -26,17 +25,14 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=	ParsedXML
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
+	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)

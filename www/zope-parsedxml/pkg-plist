@@ -1,3 +1,5 @@
+%%ZOPEPRODUCTDIR%%/ParsedXML/AdaptableStorage.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/AdaptableStorage.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/CHANGES.txt
 %%ZOPEPRODUCTDIR%%/ParsedXML/CREDITS.txt
 %%ZOPEPRODUCTDIR%%/ParsedXML/DOM/Core.py
@@ -41,13 +43,9 @@
 %%ZOPEPRODUCTDIR%%/ParsedXML/ParsedXML.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/PrettyPrinter.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/PrettyPrinter.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/Printer.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/Printer.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/README.DOMProxy
 %%ZOPEPRODUCTDIR%%/ParsedXML/README.parseprint
 %%ZOPEPRODUCTDIR%%/ParsedXML/README.txt
-%%ZOPEPRODUCTDIR%%/ParsedXML/StrIO.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/StrIO.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/TransPubDOMProxy.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/TransPubDOMProxy.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/__init__.py
@@ -78,11 +76,20 @@
 %%ZOPEPRODUCTDIR%%/ParsedXML/help/Traversal.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/help/XMLExtended.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/help/XMLExtended.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/helpers.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/helpers.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/homepage.stx
 %%ZOPEPRODUCTDIR%%/ParsedXML/main.dtml
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/.cvsignore
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/README
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/__init__.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_aqpain.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_aqpain.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_persistence.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_persistence.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_pyxmldom.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/demo_pyxmldom.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/Base.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/Base.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/CoreLvl1.py
@@ -101,26 +108,14 @@
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/XMLLvl2.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/__init__.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi/__init__.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/domloader.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/domloader.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/domtester.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/domtester.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profParse.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profParse.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPrinter.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPrinter.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPyXMLParse.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPyXMLParse.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPyXMLPrinter.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/profPyXMLPrinter.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/framework.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/framework.pyc
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/runalltests.py
+%%ZOPEPRODUCTDIR%%/ParsedXML/tests/runalltests.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_ODB.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_ODB.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_acquisition.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_acquisition.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_all.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_all.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_aqpain.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_aqpain.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_collection.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_collection.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_dom.py
@@ -129,14 +124,8 @@
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_elementid.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_parser.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_parser.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_persistence.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_persistence.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_prettyprinter.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_prettyprinter.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_printer.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_printer.pyc
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_pyxmldom.py
-%%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_pyxmldom.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_truthable.py
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_truthable.pyc
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/test_wrappeddom.py
@@ -504,18 +493,18 @@
 %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest/sa/out/119.xml
 %%ZOPEPRODUCTDIR%%/ParsedXML/version.txt
 %%ZOPEPRODUCTDIR%%/ParsedXML/www/pxml.gif
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/www
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest/sa/out
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/DOM
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/NodePath/tests
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/NodePath
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/dtml
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/help
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest/sa/ParsedXMLTestOut
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest/sa/out
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest/sa
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf/xmltest
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml/conf
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/xml
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests/domapi
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/tests
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/help
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/dtml
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/NodePath/tests
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/NodePath
-@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/DOM
+@dirrm %%ZOPEPRODUCTDIR%%/ParsedXML/www
 @dirrm %%ZOPEPRODUCTDIR%%/ParsedXML
