@@ -15,25 +15,24 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-docs${EXTRACT_SUFX}
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomevfs gtkhtml
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/gnome-vfs-1.0" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gnomevfs --with-ssl --with-included-neon
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g ; \
-		 s|\$\(datadir\)/gnome|\$\(datadir\)|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g'
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../${PORTNAME}-docs/* \
