@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.1.9.4
+PORTVERSION=	6.2.0.5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/ImageMagick/ \
+		http://people.fruitsalad.org/avleeuwen/distfiles/imagemagick/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/pav/}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
@@ -146,8 +147,17 @@ CONFIGURE_ARGS+=	--without-ttf
 .endif
 
 # WMF (Windows Meta File) images
-.if !defined(WITHOUT_IMAGEMAGICK_WMF)
+.if defined(WITH_IMAGEMAGICK_WMF)
+.if !defined(WITH_IMAGEMAGICK_MODULES)
+IGNORE=			WMF support requires WITH_IMAGEMAGICK_MODULES
+.else
+.if defined(WITHOUT_X11)
+IGNORE=			WMF support requires X11 libraries, please unset WITHOUT_X11
+.else
 LIB_DEPENDS+=		wmf.2:${PORTSDIR}/graphics/libwmf
+CONFIGURE_ARGS+=	--with-wmf=yes
+.endif
+.endif
 .else
 CONFIGURE_ARGS+=	--without-wmf
 .endif
