@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/XML/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/parse-foo.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/parse-orders.pl
+lib/perl5/site_perl/%%PERL_VER%%/XML/parse-testsuite.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%//auto/XML/Node/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Node
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
