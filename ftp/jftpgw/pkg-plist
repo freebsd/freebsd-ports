@@ -1,0 +1,3 @@
+sbin/jftpgw
+etc/jftpgw.conf.sample
+etc/rc.d/jftpgw.sh
