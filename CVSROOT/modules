@@ -1176,6 +1176,7 @@ dansguardian	ports/www/dansguardian
 dansguardian-devel	ports/www/dansguardian-devel
 dante		ports/net/dante
 dap		ports/audio/dap
+dar		ports/sysutils/dar
 darcnes		ports/emulators/darcnes
 darcs		ports/devel/darcs
 darkbot		ports/irc/darkbot
