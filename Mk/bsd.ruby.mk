@@ -100,7 +100,7 @@ RUBY_SUFFIX?=		# empty
 .endif
 
 RUBY_DISTVERSION?=	${RUBY_VERSION}-preview2
-RUBY_SNAPSHOTVERSION?=	2001.04.19
+RUBY_SNAPSHOTVERSION?=	2001.04.24
 RUBY_DISTVER=		${RUBY_DISTVERSION:S/-preview/.p/}
 
 .if !defined(RUBY_SNAPSHOTVERSION) || empty(RUBY_SNAPSHOTVERSION)
@@ -215,7 +215,7 @@ RUBY_FLAGS+=	-d
 USE_RUBY=		yes
 
 RUBY_EXTCONF?=		extconf.rb
-CONFIGURE_ARGS+=	--with-opt-dir="${LOCALBASE}" \
+CONFIGURE_ARGS+=	--with-opt-dir="${X11BASE}" \
 			--with-pthread-cflags="${PTHREAD_CFLAGS}" \
 			--with-pthread-libs="${PTHREAD_LIBS}"
 
