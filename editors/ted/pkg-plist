@@ -1,5 +1,4 @@
 bin/Ted
-lib/X11/app-defaults/Ted
 share/Ted/afm/Courier-Bold.afm
 share/Ted/afm/Courier-BoldOblique.afm
 share/Ted/afm/Courier-Oblique.afm
@@ -13,9 +12,9 @@ share/Ted/afm/Times-Bold.afm
 share/Ted/afm/Times-BoldItalic.afm
 share/Ted/afm/Times-Italic.afm
 share/Ted/afm/Times-Roman.afm
-share/doc/Ted/TedDocument.rtf
+share/Ted/ind/US_English.ind
+share/doc/Ted/TedDocument-en_US.rtf
 @dirrm share/doc/Ted
-@exec mkdir -p %D/share/Ted/ind
 @dirrm share/Ted/ind
 @dirrm share/Ted/afm
 @dirrm share/Ted

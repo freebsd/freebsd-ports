@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ted
-PORTVERSION=	2.10
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
@@ -22,27 +21,31 @@ WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_MOTIF=	yes
+USE_XPM=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/Ted
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
-CONFIGURE_ARGS=	--with-MOTIF
+CONFIGURE_ARGS=	--with-GTK
+MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
+		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}\\\"\"" \
+		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${INFODIR}/\\\"\""
 ALL_TARGET=	compile.shared
 
 AFMDIR=		${PREFIX}/share/Ted/afm
-INDDIR=		${PREFIX}/share/Ted/ind
+INDDIR= 	${PREFIX}/share/Ted/ind
 INFODIR=	${PREFIX}/share/doc/Ted
 
 post-extract:
 	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
 
 post-patch:
-	cd ${WRKSRC}/tedPackage/info && \
-	    ${SED} -e 's,/usr/local/afm,${AFMDIR},' \
-		-e 's,/usr/local/ind,${INDDIR},' \
-		-e 's,/usr/local/info,${INFODIR},' \
-		Ted.ad.sample >Ted
-	${REINPLACE_CMD} -e 's|/usr/apps|${LOCALBASE}|g' ${WRKSRC}/bitmap/configure
+	${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|/usr/apps|${LOCALBASE}|g ; \
+		 s|gtk-config|${GTK_CONFIG:T}|g'
+	${REINPLACE_CMD} \
+		's|DEF_PKGDIR|DEF_DOCUMENT_DIR|g' ${WRKSRC}/Ted/makefile.in
 
 post-configure:
 .for dir in appFrame appUtil bitmap ind libreg
@@ -55,8 +58,8 @@ do-install:
 	@${MKDIR} ${AFMDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/* ${AFMDIR}
 	@${MKDIR} ${INDDIR}
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/ind/US_English.ind ${INDDIR}
 	@${MKDIR} ${INFODIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/info/TedDocument.rtf ${INFODIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/info/Ted ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/TedDocument-en_US.rtf ${INFODIR}
 
 .include <bsd.port.mk>
