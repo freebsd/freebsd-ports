@@ -6,17 +6,22 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	3.4.5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.spelio.net.ru/soft/
+MASTER_SITES=	http://ipcad.sourceforge.net/	\
+		http://www.spelio.net.ru/soft/
 
-MAINTAINER=	vlm@spelio.net.ru
-COMMENT=	IP accounting daemon with Cisco-like ip accounting export
+MAINTAINER=	vlm@lionet.info
+COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export modes
 
 MANCOMPRESSED=	no
 MAN5=	ipcad.conf.5
 MAN8=	ipcad.8
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
+		s|/usr/local|${PREFIX}|g' ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/ipcad
