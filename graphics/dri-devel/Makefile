@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	20020830
+PORTVERSION=	20021008
 CATEGORIES=	graphics x11-servers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt/dri-devel
@@ -37,6 +37,13 @@ DDXLIST=	ati/r128_drv.o ati/radeon_drv.o \
 		mga/mga_drv.o tdfx/tdfx_drv.o
 XMAKEFILE_TARGETS=	VerifyOS version.def Makefiles includes depend
 
+pre-fetch::
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG} "This port installs unstable, development-class drivers."
+	@${ECHO_MSG} "It comes from snapshots of DRI CVS (http://dri.sf.net)"
+	@${ECHO_MSG} "If you just want 3d, that is included with XFree86."
+	@${ECHO_MSG} "********************************************************"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/DRI trunk/DRI trunk: dri-devel-${PORTVERSION}/g' \
 		${WRKSRC}/config/cf/host.def
@@ -64,6 +71,8 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/os-support/bsd/drm/libdrm.a \
 		${PREFIX}/lib/modules/freebsd/
+	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/xaa/libxaa.a \
+		${PREFIX}/lib/modules/extensions/
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/GL/dri/libdri.a \
 		${PREFIX}/lib/modules/extensions/
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/GL/libglx.a \
