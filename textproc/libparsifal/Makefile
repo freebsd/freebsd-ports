@@ -21,7 +21,13 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's| -O3||g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
