@@ -1,8 +1,8 @@
---- Imakefile.orig	Sun Sep 24 21:09:20 2000
-+++ Imakefile	Tue Dec 26 16:18:02 2000
+--- Imakefile.orig	Sun Apr  8 12:44:25 2001
++++ Imakefile	Sun Apr  8 19:55:47 2001
 @@ -3,6 +3,10 @@
   * 
-  * $Id: Imakefile.sound,v 1.21 2000/09/24 19:03:27 xblast Exp $
+  * $Id: Imakefile.sound,v 1.25 2001/04/07 18:19:57 xblast Exp $
   */
 +
 +#define IHaveSubdirs
@@ -40,19 +40,19 @@
 +SRCS1=xblast.c util.c str_util.c intro.c introdat.c map.c sprite.c \
  	color.c status.c player.c action.c bomb.c event.c image.c \
  	shrink.c func.c game.c info.c ini_file.c atom.c scramble.c \
- 	demo.c debug.c \
+ 	demo.c debug.c level.c random.c \
 @@ -43,7 +52,7 @@
  	x11_common.c x11_event.c x11_atom.c x11_config.c x11_msgbox.c\
  	x11c_init.c x11c_image.c x11c_text.c x11c_tile.c x11c_sprite.c \
- 	x11c_pixmap.c x11_sound.c
+ 	x11c_pixmap.c x11_sound.c x11_socket.c x11_joystick.c
 -OBJS=xblast.o util.o str_util.o intro.o introdat.o map.o sprite.o \
 +OBJS1=xblast.o util.o str_util.o intro.o introdat.o map.o sprite.o \
  	color.o status.o player.o bomb.o action.o event.o image.o \
  	shrink.o func.o game.o info.o ini_file.o atom.o scramble.o \
- 	demo.o debug.o \
+ 	demo.o debug.o level.o random.o \
 @@ -62,5 +71,26 @@
  	x11c_init.o x11c_image.o x11c_text.o x11c_tile.o x11c_sprite.o \
- 	x11c_pixmap.o x11_sound.o
+ 	x11c_pixmap.o x11_sound.o x11_socket.o x11_joystick.o 
  
 -AllTarget(xblast)
 -ComplexProgramTarget(xblast)

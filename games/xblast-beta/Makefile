@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xblast-beta
-PORTVERSION=	2.7.30
+PORTVERSION=	2.7.33
 CATEGORIES=	games
 MASTER_SITES=	http://www.ndh.net/home/m.vogel/tnt/ \
 		${MASTER_SITE_SUNSITE}

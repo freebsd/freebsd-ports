@@ -1,18 +1,18 @@
---- common.h~	Mon Jun 12 16:52:17 2000
-+++ common.h	Mon Mar 12 18:53:58 2001
-@@ -23,6 +23,7 @@
- #ifndef _COMMON_H
- #define _COMMON_H
+--- common.h~	Sun Apr  1 20:16:33 2001
++++ common.h	Sun Apr  8 19:59:01 2001
+@@ -27,6 +27,7 @@
+ #include "config.h"
+ #endif
  
 +#include <sys/types.h>
  #include <assert.h>
  #include <ctype.h>
  #include <dirent.h>
-@@ -38,7 +39,6 @@
- #include <sys/socket.h>
- #include <sys/stat.h>
+@@ -39,7 +40,6 @@
+ #include <time.h>
+ #ifndef Win32_Winsock
  #include <sys/time.h>
 -#include <sys/types.h>
- #include <sys/wait.h>
- #include <time.h>
- #include <unistd.h>
+ #include <sys/socket.h>
+ #endif
+ 
