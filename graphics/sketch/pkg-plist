@@ -16,6 +16,8 @@ share/sketch/Plugins/Filters/ailoader.py
 share/sketch/Plugins/Filters/ailoader.pyc
 share/sketch/Plugins/Filters/aisaver.py
 share/sketch/Plugins/Filters/aisaver.pyc
+share/sketch/Plugins/Filters/bziploader.py
+share/sketch/Plugins/Filters/bziploader.pyc
 share/sketch/Plugins/Filters/cmxloader.py
 share/sketch/Plugins/Filters/cmxloader.pyc
 share/sketch/Plugins/Filters/gziploader.py
@@ -95,6 +97,7 @@ share/sketch/Script/abut_horizontal.py
 share/sketch/Script/abut_vertical.py
 share/sketch/Script/create_star.py
 share/sketch/Script/create_text.py
+share/sketch/Script/save_selection.py
 share/sketch/Script/select_same_fill_color.py
 share/sketch/Script/select_same_line_color.py
 share/sketch/Script/usersguide.py
@@ -491,9 +494,6 @@ share/doc/sketch/Doc/devguide-22.html
 share/doc/sketch/Doc/devguide-23.html
 share/doc/sketch/Doc/devguide-24.html
 share/doc/sketch/Doc/devguide-25.html
-share/doc/sketch/Doc/devguide-26.html
-share/doc/sketch/Doc/devguide-27.html
-share/doc/sketch/Doc/devguide-28.html
 share/doc/sketch/Doc/devguide-3.html
 share/doc/sketch/Doc/devguide-4.html
 share/doc/sketch/Doc/devguide-5.html
@@ -506,7 +506,6 @@ share/doc/sketch/Doc/fonts.alias
 share/doc/sketch/Doc/fonts.scale
 share/doc/sketch/Doc/usersguide-1.html
 share/doc/sketch/Doc/usersguide-10.html
-share/doc/sketch/Doc/usersguide-11.html
 share/doc/sketch/Doc/usersguide-2.html
 share/doc/sketch/Doc/usersguide-3.html
 share/doc/sketch/Doc/usersguide-4.html
