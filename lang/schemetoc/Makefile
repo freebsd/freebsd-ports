@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.10 1997/07/17 15:12:49 max Exp $
+# $Id: Makefile,v 1.11 1998/10/14 04:02:27 jseger Exp $
 #
 
 DISTNAME= 	schemetoc-93.3.15
@@ -16,6 +16,7 @@ MAINTAINER=	jmacd@FreeBSD.ORG
 
 BROKEN_ELF=	yes
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 
 post-install:
