@@ -1,0 +1,13 @@
+/usr/bin/diff --ignore-matching-lines=.*{$Id:|$Header:}.* -u arr_script.orig arr_script
+--- arr_script.orig	Wed Sep  8 15:57:17 1999
++++ arr_script	Wed Sep  8 15:57:56 1999
+@@ -10,8 +10,7 @@
+   TOLERANCE=15
+   MAX_RETRIES=3
+ 
+-  NETPERF="/usr/local/netperf/netperf"
+-  NETPERF="./netperf"
++  NETPERF="%%PREFIX%%/netperf/netperf"
+ 
+   NPROC_LIST=""
+   RR_SIZES=""
