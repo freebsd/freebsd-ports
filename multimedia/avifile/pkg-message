@@ -8,7 +8,7 @@ options USER_LDT
 Please, check the FreeBSD Handbook for instructions
 on building a custom kernel. If you do not know
 where to find it, check the FreeBSD website
-http://www.freebsd.org/
+http://www.FreeBSD.org/
 
 ALSO, remove ~/.avirc configuration file
 prior to running avifile. The newer version
