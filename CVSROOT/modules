@@ -4772,6 +4772,7 @@ libggz		ports/games/libggz
 libghthash	ports/devel/libghthash
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
+libgiigic	ports/devel/libgiigic
 libgksu		ports/sysutils/libgksu
 libgksuui	ports/sysutils/libgksuui
 libglade	ports/devel/libglade
