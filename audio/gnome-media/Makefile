@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomemedia2
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/2.6
@@ -15,8 +15,6 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the GNOME 2 desktop
-
-RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
