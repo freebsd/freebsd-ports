@@ -1,1 +1,6 @@
 bin/profxp
+lib/perl5/site_perl/%%PERL_VER%%/profxp/command.pm
+lib/perl5/site_perl/%%PERL_VER%%/profxp/config.pm
+lib/perl5/site_perl/%%PERL_VER%%/profxp/screen.pm
+lib/perl5/site_perl/%%PERL_VER%%/profxp/tcp.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/profxp
