@@ -1,5 +1,5 @@
 
-This is the 7.2 version of the TCP/IP daemon wrapper package.
+This is the 7.4 version of the TCP/IP daemon wrapper package.
 
 With this package you can monitor and filter incoming requests for the
 SYSTAT, FINGER, FTP, TELNET, RLOGIN, RSH, EXEC, TFTP, TALK, and other
