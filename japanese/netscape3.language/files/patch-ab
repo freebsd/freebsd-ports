@@ -1,0 +1,20 @@
+diff -rc nls.org/ja_JP.ujis nls/ja_JP.ujis
+*** nls.org/ja_JP.ujis	Sun Jun  8 14:49:40 1997
+--- nls/ja_JP.ujis	Wed Nov 19 16:50:08 1997
+***************
+*** 50,56 ****
+  # KATAKANA: JIS X0201-1976, GL encoding
+  jisx0201.1976-0:GR
+  # Code of the supplementary Japanese graphic character set
+! jisx0212.1990-0:GL
+  # User Defined character
+  # name:GL/GR:woffset:sequence
+  #omron_udc_ja-0:GL:20400080:\033\045\057200omron_udc_ja-0\002
+--- 50,56 ----
+  # KATAKANA: JIS X0201-1976, GL encoding
+  jisx0201.1976-0:GR
+  # Code of the supplementary Japanese graphic character set
+! #jisx0212.1990-0:GL
+  # User Defined character
+  # name:GL/GR:woffset:sequence
+  #omron_udc_ja-0:GL:20400080:\033\045\057200omron_udc_ja-0\002
