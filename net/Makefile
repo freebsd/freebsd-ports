@@ -257,6 +257,7 @@
     SUBDIR += jarl
     SUBDIR += java-beepcore
     SUBDIR += javadc
+    SUBDIR += jcifs
     SUBDIR += jffnms
     SUBDIR += jit
     SUBDIR += jsch
