@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsup
-PORTVERSION?=	16.1g
+PORTVERSION?=	16.1h
 PORTREVISION?=	0
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_FREEBSD_ORG}
@@ -37,26 +37,21 @@ M3FLAGS+=	-DSTATIC
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "aout"
-TARGET=		FreeBSD2
-.elif ${ARCH} == "i386"
-.if ${OSVERSION} < 400011
-TARGET=		FreeBSD3
-.else
-TARGET=		FreeBSD4
+ONLY_FOR_ARCHS=	alpha i386 sparc64
+
+.if ${OSVERSION} < 410000
+BROKEN=		Not supported on versions earlier than 4.1-RELEASE
 .endif
-.elif ${ARCH} == "alpha"
-.if ${OSVERSION} < 400011
-BROKEN=		Not supported on older versions of FreeBSD/Alpha
-.endif
+
+.if ${ARCH} == "alpha"
 TARGET=		FBSD_ALPHA
+.elif ${ARCH} == "i386"
+TARGET=		FreeBSD4
+.elif ${ARCH} == "sparc64"
+TARGET=		FBSD_SPARC64
 .endif
 
 pre-fetch:
-.if !defined(TARGET)
-	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
-	@${FALSE}
-.endif
 .ifndef WITHOUT_X11
 	@${ECHO_MSG} "*****************************************************"
 	@${ECHO_MSG} "* To build CVSup without X11 (and without the GUI), *"
