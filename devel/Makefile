@@ -145,6 +145,7 @@
     SUBDIR += doxygen
     SUBDIR += e4graph
     SUBDIR += ebnf2yacc
+    SUBDIR += eboxy
     SUBDIR += ecb
     SUBDIR += ecb-emacs20
     SUBDIR += ecgi
