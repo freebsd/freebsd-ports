@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail
-PORTVERSION= 	1.03
+PORTVERSION?= 	${QMAIL_VERSION}
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
@@ -14,6 +14,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
 		ftp://ftp.net.ohio-state.edu/pub/networking/mail/qmail/ \
 		ftp://ftp.id.wustl.edu/pub/qmail/
+DISTNAME=	${PORTNAME}-${QMAIL_VERSION}
 
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
@@ -27,7 +28,8 @@ MAINTAINER=	lioux@linf.unb.br
 # A normal qmail installation puts everything into /var/qmail/.
 # If you want to install to /usr/local/, then "/usr/local/qmail" is
 # suggested instead of "/usr/local", but both will work.
-PREFIX=		/var/qmail
+PREFIX?=		/var/qmail
+QMAIL_VERSION?=		1.03
 
 ALL_TARGET=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
