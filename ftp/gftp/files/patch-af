@@ -1,6 +1,6 @@
---- ./src/text/gftp-text.h.orig	Fri Feb 23 10:59:57 2001
-+++ ./src/text/gftp-text.h	Mon Apr 30 00:19:21 2001
-@@ -43,7 +43,7 @@
+--- src/text/gftp-text.h.orig	Thu Sep 20 03:10:29 2001
++++ src/text/gftp-text.h	Wed Jan  2 13:59:28 2002
+@@ -48,7 +48,7 @@
  /* gftp-text.h */
  void gftp_text_log				( gftp_logging_level level, 
  						  void *ptr, 

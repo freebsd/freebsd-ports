@@ -1,6 +1,6 @@
---- lib/cache.c.orig	Sat Mar  3 17:42:43 2001
-+++ lib/cache.c	Mon Apr 30 00:16:57 2001
-@@ -42,7 +42,7 @@
+--- lib/cache.c.orig	Fri Jul 20 21:26:19 2001
++++ lib/cache.c	Wed Jan  2 13:54:45 2002
+@@ -45,7 +45,7 @@
      }
    g_free (tempstr);
  
@@ -9,7 +9,7 @@
    tempstr = NULL;
    cachefile = NULL;
    do
-@@ -54,7 +54,7 @@
+@@ -57,7 +57,7 @@
          g_free (cachefile);
  
        cachefile = g_strdup_printf ("cache%ld",

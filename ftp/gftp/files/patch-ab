@@ -1,8 +1,8 @@
---- docs/Makefile.in.orig	Sun Aug  6 19:53:16 2000
-+++ docs/Makefile.in	Fri Sep  8 02:09:07 2000
-@@ -91,11 +91,13 @@
+--- docs/Makefile.in.orig	Fri Dec 21 01:40:24 2001
++++ docs/Makefile.in	Wed Jan  2 13:50:13 2002
+@@ -104,11 +104,13 @@
  SUBDIRS = sample.gftp
- EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png
+ EXTRA_DIST = USERS-GUIDE gftp.1 gftp.desktop gftp.lsm gftp.png parse-netrc.pl
  
 +.ifdef HAVE_GNOME
  Utilitiesdir = $(datadir)/apps/Internet
