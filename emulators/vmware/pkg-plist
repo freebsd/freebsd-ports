@@ -110,7 +110,7 @@ share/doc/vmware/README.FreeBSD
 @exec ln -s /dev/ttyvb /compat/linux/dev/tty11
 @exec mknod /compat/linux/dev/hda b 0 0x00010002
 @exec mknod /compat/linux/dev/hdb b 0 0x0001000a
-@exec ln -s %D/etc/vmware /etc/vmware
+@exec ln -sf %D/etc/vmware /etc/
 @exec mknod /dev/vmmon c 200 0
 @exec mknod /dev/vmnet1 c 201 1
 @unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd?

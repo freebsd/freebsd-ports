@@ -109,7 +109,7 @@ pre-install: setoptions
 .endif
 
 post-install:
-	${LN} -s ${PREFIX}/etc/vmware /etc/vmware
+	${LN} -sf ${PREFIX}/etc/vmware /etc/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
