@@ -8,3 +8,12 @@
  
  #define    IPPROTO_IP              0
  
+@@ -547,7 +547,7 @@
+ 		nCurrentIndex++;
+ 		ac++;
+ 	}
+-	av = new (char*)[ac];
++	av = new char*[ac];
+ 	
+ 	/* Now fill the av[] array */
+ 	for (int i =0;i < ac;i++)
