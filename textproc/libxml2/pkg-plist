@@ -6,9 +6,12 @@ include/libxml2/libxml/DOCBparser.h
 include/libxml2/libxml/HTMLparser.h
 include/libxml2/libxml/HTMLtree.h
 include/libxml2/libxml/SAX.h
+include/libxml2/libxml/SAX2.h
 include/libxml2/libxml/c14n.h
 include/libxml2/libxml/catalog.h
+include/libxml2/libxml/chvalid.h
 include/libxml2/libxml/debugXML.h
+include/libxml2/libxml/dict.h
 include/libxml2/libxml/encoding.h
 include/libxml2/libxml/entities.h
 include/libxml2/libxml/globals.h
@@ -29,6 +32,7 @@ include/libxml2/libxml/xlink.h
 include/libxml2/libxml/xmlIO.h
 include/libxml2/libxml/xmlautomata.h
 include/libxml2/libxml/xmlerror.h
+include/libxml2/libxml/xmlexports.h
 include/libxml2/libxml/xmlmemory.h
 include/libxml2/libxml/xmlreader.h
 include/libxml2/libxml/xmlregexp.h
@@ -36,6 +40,7 @@ include/libxml2/libxml/xmlschemas.h
 include/libxml2/libxml/xmlschemastypes.h
 include/libxml2/libxml/xmlunicode.h
 include/libxml2/libxml/xmlversion.h
+include/libxml2/libxml/xmlwriter.h
 include/libxml2/libxml/xpath.h
 include/libxml2/libxml/xpathInternals.h
 include/libxml2/libxml/xpointer.h
@@ -65,6 +70,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/reader4.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader5.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader6.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader7.py
 %%PYTHON:%%share/doc/libxml2-python/examples/readererr.py
 %%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
 %%PYTHON:%%share/doc/libxml2-python/examples/relaxng.py
@@ -77,6 +83,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/tstxpath.py
 %%PYTHON:%%share/doc/libxml2-python/examples/valid.xml
 %%PYTHON:%%share/doc/libxml2-python/examples/validate.py
+%%PYTHON:%%share/doc/libxml2-python/examples/walker.py
 %%PYTHON:%%share/doc/libxml2-python/examples/xpath.py
 %%PYTHON:%%share/doc/libxml2-python/examples/xpathext.py
 %%PYTHON:%%share/doc/libxml2-python/examples/xpathret.py
@@ -91,7 +98,9 @@ share/doc/libxml2/html/Libxml2-Logo-180x168.gif
 share/doc/libxml2/html/Libxml2-Logo-90x34.gif
 share/doc/libxml2/html/book1.html
 share/doc/libxml2/html/encoding.html
+share/doc/libxml2/html/home.png
 share/doc/libxml2/html/index.html
+share/doc/libxml2/html/left.png
 share/doc/libxml2/html/libxml-DOCBparser.html
 share/doc/libxml2/html/libxml-HTMLparser.html
 share/doc/libxml2/html/libxml-HTMLtree.html
@@ -130,8 +139,10 @@ share/doc/libxml2/html/libxml-xpathInternals.html
 share/doc/libxml2/html/libxml-xpointer.html
 share/doc/libxml2/html/libxml.gif
 share/doc/libxml2/html/redhat.gif
+share/doc/libxml2/html/right.png
 share/doc/libxml2/html/smallfootonly.gif
 share/doc/libxml2/html/structure.gif
+share/doc/libxml2/html/up.png
 share/doc/libxml2/html/tutorial/apa.html
 share/doc/libxml2/html/tutorial/apb.html
 share/doc/libxml2/html/tutorial/apc.html
@@ -140,6 +151,7 @@ share/doc/libxml2/html/tutorial/ape.html
 share/doc/libxml2/html/tutorial/apf.html
 share/doc/libxml2/html/tutorial/apg.html
 share/doc/libxml2/html/tutorial/aph.html
+share/doc/libxml2/html/tutorial/api.html
 share/doc/libxml2/html/tutorial/ar01s02.html
 share/doc/libxml2/html/tutorial/ar01s03.html
 share/doc/libxml2/html/tutorial/ar01s04.html
@@ -147,6 +159,7 @@ share/doc/libxml2/html/tutorial/ar01s05.html
 share/doc/libxml2/html/tutorial/ar01s06.html
 share/doc/libxml2/html/tutorial/ar01s07.html
 share/doc/libxml2/html/tutorial/ar01s08.html
+share/doc/libxml2/html/tutorial/ar01s09.html
 share/doc/libxml2/html/tutorial/images/blank.png
 share/doc/libxml2/html/tutorial/images/callouts/1.png
 share/doc/libxml2/html/tutorial/images/callouts/10.png
@@ -176,6 +189,7 @@ share/doc/libxml2/html/tutorial/includeaddkeyword.c
 share/doc/libxml2/html/tutorial/includeconvert.c
 share/doc/libxml2/html/tutorial/includegetattribute.c
 share/doc/libxml2/html/tutorial/includekeyword.c
+share/doc/libxml2/html/tutorial/includexpath.c
 share/doc/libxml2/html/tutorial/index.html
 share/doc/libxml2/html/tutorial/ix01.html
 share/doc/libxml2/html/tutorial/xmltutorial.pdf
