@@ -1,5 +1,5 @@
-*** install.sh.orig	Tue Dec  3 19:27:22 1996
---- install.sh	Tue Dec  3 20:18:07 1996
+*** install.sh.orig	Mon Jan 20 10:12:42 1997
+--- install.sh	Sat Apr 26 07:15:36 1997
 ***************
 *** 47,52 ****
 --- 47,55 ----
@@ -13,7 +13,7 @@
   # Utility functions
   #
 ***************
-*** 542,548 ****
+*** 550,556 ****
   
   while :
   do
@@ -21,7 +21,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 545,555 ----
+--- 553,563 ----
   
   while :
   do
@@ -34,7 +34,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 594,600 ****
+*** 602,608 ****
   
   while :
   do
@@ -42,7 +42,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 601,611 ----
+--- 609,619 ----
   
   while :
   do
@@ -55,7 +55,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 613,619 ****
+*** 621,627 ****
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -63,7 +63,7 @@
   	then
   		if [ -d "$ANS" ]
   		then
---- 624,634 ----
+--- 632,642 ----
   APPDEFAULTSDIR=$LIBDIR/app-defaults
   while :
   do
@@ -76,7 +76,7 @@
   		if [ -d "$ANS" ]
   		then
 ***************
-*** 648,654 ****
+*** 656,662 ****
   	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
   fi
   
@@ -84,7 +84,7 @@
   then
   	MANFILE=$ANS
   fi
---- 663,672 ----
+--- 671,680 ----
   	MANFILE=`echo $MANFILE | sed 's/\/\//\//g'`
   fi
   
@@ -96,7 +96,7 @@
   	MANFILE=$ANS
   fi
 ***************
-*** 670,676 ****
+*** 678,684 ****
   # Determine CMANFILE
   
   CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
@@ -104,7 +104,7 @@
   then
   	CMANFILE=$ANS
   fi
---- 688,697 ----
+--- 696,705 ----
   # Determine CMANFILE
   
   CMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/cda/'`"
@@ -116,7 +116,7 @@
   	CMANFILE=$ANS
   fi
 ***************
-*** 692,698 ****
+*** 700,706 ****
   # Determine WMANFILE
   
   WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
@@ -124,7 +124,7 @@
   then
   	WMANFILE=$ANS
   fi
---- 713,722 ----
+--- 721,730 ----
   # Determine WMANFILE
   
   WMANFILE="`dirname $MANFILE`/`basename $MANFILE | sed 's/xmcd/wm2xmcd/'`"
