@@ -1,0 +1,10 @@
+--- check_slang.orig	Sat Aug 21 03:25:35 1999
++++ check_slang	Sat Jan  6 09:39:13 2001
+@@ -1,5 +1,5 @@
+-#!/bin/bash
+-
++#!/bin/sh
++exit 0 # FreeBSD port: We know we have libslang already installed.
+ # This little script to alert people who didn't bother to read
+ # step (0) in the README installation instructions
+ 

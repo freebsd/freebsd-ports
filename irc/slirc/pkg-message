@@ -1,0 +1,18 @@
+************************************************************
+Quickstart:
+
+- Copy config.sl and colours.sl to ~/.slirc/scripts
+
+  mkdir -p ~/.slirc/scripts
+  cp ${PREFIX}/lib/slirc/scripts/config.sl  ~/.slirc/scripts
+  cp ${PREFIX}/lib/slirc/scripts/colours.sl ~/.slirc/scripts
+
+- Edit ~/.slirc/scripts/config.sl
+
+  () = s_putlast(servers,"server:port::nick");
+  variable chan_on_connect = "channel";
+
+- Set your name to the environment variable "IRCNAME"
+
+  export IRCNAME="John Doe"
+************************************************************

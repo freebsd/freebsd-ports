@@ -1,0 +1,39 @@
+bin/slirc
+lib/slirc/vfile-module.so
+lib/slirc/utils-module.so
+lib/slirc/scripts/LList.sl
+lib/slirc/scripts/RBL.sl
+lib/slirc/scripts/ak47.sl
+lib/slirc/scripts/bot-kernel.sl
+lib/slirc/scripts/bot.sl
+lib/slirc/scripts/colours.sl
+lib/slirc/scripts/config.sl
+lib/slirc/scripts/ctcp.sl
+lib/slirc/scripts/ctcp_cmd.sl
+lib/slirc/scripts/dcc.sl
+lib/slirc/scripts/editor.sl
+lib/slirc/scripts/flip.sl
+lib/slirc/scripts/goodies.sl
+lib/slirc/scripts/init.sl
+lib/slirc/scripts/lists.sl
+lib/slirc/scripts/op-stuff.sl
+lib/slirc/scripts/registry.sl
+lib/slirc/scripts/slftp.sl
+lib/slirc/scripts/standard.sl
+lib/slirc/scripts/tab-ex.sl
+@dirrm lib/slirc/scripts
+@dirrm lib/slirc
+share/doc/slirc/BUGS
+share/doc/slirc/CHANGES
+share/doc/slirc/COPYING
+share/doc/slirc/FAQ
+share/doc/slirc/LACK-OF-WARRANTY
+share/doc/slirc/README
+share/doc/slirc/README.dropin
+share/doc/slirc/README.gutsbonesbloodtoilsweat
+%%JA%%share/doc/slirc/README.ja
+share/doc/slirc/TODO
+share/doc/slirc/VFile.txt
+share/doc/slirc/slirc.hlp
+share/doc/slirc/utilsfun.txt
+@dirrm share/doc/slirc
