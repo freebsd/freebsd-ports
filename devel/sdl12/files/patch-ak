@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- sdl-config.in	2002/04/17 10:56:17	1.1
-+++ sdl-config.in	2002/04/17 10:57:31
+--- sdl-config.in.orig	Mon Sep  9 08:28:06 2002
++++ sdl-config.in	Thu Jan  2 12:44:39 2003
 @@ -5,7 +5,7 @@
  exec_prefix_set=no
  
@@ -12,12 +12,12 @@ $FreeBSD$
  
  if test $# -eq 0; then
        echo "${usage}" 1>&2
-@@ -45,7 +45,7 @@
- 
-           includes=-I@includedir@
-       fi
--      echo $includes -I@includedir@/SDL @SDL_CFLAGS@
-+      echo $includes -I@includedir@/SDL11 @SDL_CFLAGS@
+@@ -39,7 +39,7 @@
+       echo @SDL_VERSION@
        ;;
- @ENABLE_SHARED_TRUE@    --libs)
- @ENABLE_SHARED_TRUE@      libdirs="-L@libdir@ @SDL_RLD_FLAGS@"
+     --cflags)
+-      echo -I@includedir@/SDL @SDL_CFLAGS@
++      echo -I@includedir@/SDL11 @SDL_CFLAGS@
+ 
+       # The portable way of including SDL is #include "SDL.h"
+       #if test @includedir@ != /usr/include ; then
