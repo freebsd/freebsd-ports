@@ -32,6 +32,19 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.so.0)
+WITH_CDPARANOIA=        yes
+.endif
+
+.if defined(WITH_CDPARANOIA)
+LIB_DEPENDS+=   cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+PLIST_SUB+=     CDPARANOIA=""
+.else
+PLIST_SUB+=     CDPARANOIA="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
@@ -39,4 +52,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
