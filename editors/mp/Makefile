@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 CATEGORIES=	editors
 MASTER_SITES=	http://www.triptico.com/download/
 
