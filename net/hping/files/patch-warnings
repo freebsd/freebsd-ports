@@ -1,0 +1,145 @@
+*** datafiller.c.org	Sun Mar 30 13:18:24 2003
+--- datafiller.c	Sun Mar 30 13:20:22 2003
+***************
+*** 14,19 ****
+--- 14,20 ----
+  #include <sys/stat.h>
+  #include <fcntl.h>
+  #include <string.h> /* memset */
++ #include <stdlib.h>
+  
+  #include "hping2.h"
+  #include "globals.h"
+
+
+*** libpcap_stuff.c.org	Sun Mar 30 13:19:42 2003
+--- libpcap_stuff.c	Sun Mar 30 13:25:51 2003
+***************
+*** 17,22 ****
+--- 17,23 ----
+  #include <sys/ioctl.h>
+  #include <pcap.h>
+  #include <net/bpf.h>
++ #include <string.h>
+  
+  #include "globals.h"
+
+  
+*** listen.c.org	Sun Mar 30 13:19:24 2003
+--- listen.c	Sun Mar 30 13:24:31 2003
+***************
+*** 14,19 ****
+--- 14,20 ----
+  #include <sys/types.h>
+  #include <sys/socket.h>
+  #include <netinet/in.h>
++ #include <stdlib.h>
+  
+  #include "hping2.h" /* hping2.h includes hcmp.h */
+  #include "globals.h"
+
+
+*** resolve.c.org	Sun Mar 30 13:18:51 2003
+--- resolve.c	Sun Mar 30 13:22:02 2003
+***************
+*** 15,20 ****
+--- 15,21 ----
+  #include <sys/socket.h>
+  #include <netinet/in.h>
+  #include <arpa/inet.h>
++ #include <stdlib.h>
+  
+  void resolve (struct sockaddr * addr, char *hostname)
+  {
+
+
+*** rtt.c.org	Sun Mar 30 13:19:33 2003
+--- rtt.c	Mon Mar 31 17:32:40 2003
+***************
+*** 72,82 ****
+  		printf("\n\nSANITY CHECK in rtt.c FAILED!\n");
+  		printf("- seqnum = %d\n", *seqp);
+  		printf("- status = %d\n", status);
+! 		printf("- get_usec() = %ld\n", get_usec());
+! 		printf("- delaytable.usec = %ld\n", delaytable[tablepos].usec);
+! 		printf("- usec_delay = %ld\n", usec_delay);
+! 		printf("- time(NULL) = %ld\n", time(NULL));
+! 		printf("- delaytable.sec = %ld\n", delaytable[tablepos].sec);
+  		printf("- sec_delay = %ld\n", sec_delay);
+  		printf("- ms_delay = %f\n", *ms_delay);
+  		printf("END SANITY CHECK REPORT\n\n");
+--- 72,83 ----
+  		printf("\n\nSANITY CHECK in rtt.c FAILED!\n");
+  		printf("- seqnum = %d\n", *seqp);
+  		printf("- status = %d\n", status);
+! 		/* time_t is __int32_t on i386 FreeBSD */
+! 		printf("- get_usec() = %ld\n", (long)get_usec());
+! 		printf("- delaytable.usec = %ld\n", (long)delaytable[tablepos].usec);
+! 		printf("- usec_delay = %ld\n", (long)usec_delay);
+! 		printf("- time(NULL) = %ld\n", (long)time(NULL));
+! 		printf("- delaytable.sec = %ld\n", (long)delaytable[tablepos].sec);
+  		printf("- sec_delay = %ld\n", sec_delay);
+  		printf("- ms_delay = %f\n", *ms_delay);
+  		printf("END SANITY CHECK REPORT\n\n");
+
+
+*** statistics.c.org	Sun Mar 30 13:19:02 2003
+--- statistics.c	Sun Mar 30 13:22:18 2003
+***************
+*** 9,14 ****
+--- 9,15 ----
+   */ 
+  
+  #include <stdio.h>
++ #include <stdlib.h>
+  
+  #include "hping2.h"
+  #include "globals.h"
+
+
+*** version.c.org	Sun Mar 30 13:19:17 2003
+--- version.c	Sun Mar 30 13:23:17 2003
+***************
+*** 9,14 ****
+--- 9,15 ----
+   */ 
+  
+  #include <stdio.h>
++ #include <stdlib.h>
+  
+  #include "release.h"
+  #include "hping2.h"
+
+
+*** waitpacket.c.org	Sun Mar 30 13:18:32 2003
+--- waitpacket.c	Sun Mar 30 20:28:13 2003
+***************
+*** 13,18 ****
+--- 13,19 ----
+  #include <time.h>
+  #include <ctype.h>
+  #include <unistd.h>
++ #include <stdlib.h>
+  
+  #include "hping2.h"
+  #include "globals.h"
+
+*** waitpacket.c.org	Sun Mar 30 13:18:32 2003
+--- waitpacket.c	Sun Mar 30 20:28:13 2003
+***************
+*** 179,185 ****
+  		(unsigned int) ntohl(icmp_tstamp.orig),
+  		(unsigned int) ntohl(icmp_tstamp.recv),
+  		(unsigned int) ntohl(icmp_tstamp.tran));
+! 	printf("ICMP timestamp RTT tsrtt=%lu\n\n",
+  		(get_midnight_ut_ms() - ntohl(icmp_tstamp.orig)));
+  }
+  
+--- 180,186 ----
+  		(unsigned int) ntohl(icmp_tstamp.orig),
+  		(unsigned int) ntohl(icmp_tstamp.recv),
+  		(unsigned int) ntohl(icmp_tstamp.tran));
+! 	printf("ICMP timestamp RTT tsrtt=%u\n\n",
+  		(get_midnight_ut_ms() - ntohl(icmp_tstamp.orig)));
+  }
+  
