@@ -15,4 +15,6 @@ WANT_MYSQL_VER=	41
 
 MASTERDIR=	${.CURDIR}/../p5-DBD-mysql
 
+BROKEN=		"Does not compile"
+
 .include "${MASTERDIR}/Makefile"
