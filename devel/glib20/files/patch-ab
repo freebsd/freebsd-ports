@@ -1,16 +1,14 @@
 --- Makefile.in.orig	Sun Oct 25 15:59:19 1998
-+++ Makefile.in	Wed Oct 28 23:22:13 1998
-@@ -82,9 +82,7 @@
- RANLIB = @RANLIB@
- VERSION = @VERSION@
++++ Makefile.in	Mon Nov  2 20:00:22 1998
+@@ -84,8 +84,6 @@
  
--SUBDIRS = gmodule docs
--
+ SUBDIRS = gmodule docs
+ 
 -configincludedir = $(pkglibdir)/include
-+SUBDIRS = gmodule
- 
+-
  bin_SCRIPTS=glib-config
  BUILT_SOURCES=glib-config
+ 
 @@ -94,9 +92,9 @@
  		glib.spec	\
  		sanity_check
@@ -143,7 +141,7 @@
  install-includeHEADERS install-data-recursive uninstall-data-recursive \
  install-exec-recursive uninstall-exec-recursive installdirs-recursive \
 --- gmodule/Makefile.in.orig	Sun Oct 25 15:59:20 1998
-+++ gmodule/Makefile.in	Wed Oct 28 23:12:09 1998
++++ gmodule/Makefile.in	Mon Nov  2 19:59:52 1998
 @@ -94,30 +94,29 @@
  include_HEADERS = \
  		gmodule.h
@@ -259,3 +257,14 @@
  	 if test -f $$p; then \
  	  echo "$(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p"; \
  	  $(LIBTOOL)  --mode=install $(INSTALL_DATA) $$p $(DESTDIR)$(libdir)/$$p; \
+--- docs/Makefile.in.orig	Mon Nov  2 20:01:03 1998
++++ docs/Makefile.in	Mon Nov  2 20:01:16 1998
+@@ -76,7 +76,7 @@
+ LT_RELEASE = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+ MAINT = @MAINT@
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ NM = @NM@
+ PACKAGE = @PACKAGE@
+ RANLIB = @RANLIB@
