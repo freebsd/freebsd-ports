@@ -1,20 +1,28 @@
---- Makefile.orig	Thu Jun 28 02:07:37 2001
-+++ Makefile	Thu Jun 28 02:11:27 2001
-@@ -21,4 +21,3 @@
+--- Makefile.orig	Mon Dec  2 11:51:54 2002
++++ Makefile	Mon Dec  2 11:53:24 2002
+@@ -19,8 +19,7 @@
+ 
+ VERSION=0.3.2
  
 -CC=g++
--CFLAGS=-O0 -g -DVERSION=\"$(VERSION)\"
+-CFLAGS=-O0 -fno-rtti -g -DVERSION=\"$(VERSION)\"
 +CFLAGS+=-DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
  # With the following options you may generate an optimized version of
-@@ -38,3 +37,3 @@
+ # Rascal, but you will need a lot of time (takes 20min, that is 15* 
+ # longer, on my machine) and physical memory (256 MB physical memory 
+@@ -38,10 +37,14 @@
+ RMDIR=rm -rf
+ INSTDIR=install -d
  
 -LIBS=-lm -lreadline -lcurses
 +LIBS=-lm -lreadline -lcurses -L%%LOCALBASE%%/lib -lgnugetopt
  OBJS=y.tab.o lex.yy.o symtab.o value.o
-@@ -42,2 +41,6 @@
+ 
  -include value.mak
 +
 +.SUFFIXES:	.o .c
 +
 +.c.o:	;	${CXX} ${CFLAGS} -c $*.c
+ 
+ all: rascal 
  

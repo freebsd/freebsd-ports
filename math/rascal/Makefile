@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rascal
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,19 +18,12 @@ LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GNOME=	yes
+#USE_GNOME=	yes
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
 USE_GMAKE=	yes
-ALL_TARGET=	rascal grascal
+#ALL_TARGET=	rascal grascal
 
-MANCOMPRESSED=	yes
 MAN1=	rascal.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not compile"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
@@ -38,5 +31,20 @@ post-patch:
 		s,doc/,share/doc/,g ; \
 		s,gnome-config,${GNOME_CONFIG},g ; \
 		s,CC,CXX,g" ${WRKSRC}/Makefile
+.for file in hoc.y rascal.1
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
+.endfor
 
-.include <bsd.port.post.mk>
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/rascal ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/rascal.rc ${PREFIX}/etc
+	${INSTALL_MAN} ${WRKSRC}/rascal.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+.for file in rascal.ps rascal.pdf CHANGES TEST TOOLBOXTEST
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/rascal_html/* ${DOCSDIR}/html
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,70 @@
+--- rascal.1.orig	Tue May 14 06:09:26 2002
++++ rascal.1	Tue Dec  3 14:58:09 2002
+@@ -64,7 +64,7 @@
+ For more information read the extensive user documentation:
+ 
+ .B gv
+-.I /usr/local/doc/rascal/rascal.ps
++.I %%PREFIX%%/share/doc/rascal/rascal.ps
+ 
+ .SH EXAMPLE SESSIONS
+ 
+@@ -114,10 +114,7 @@
+     [-4 2;3 -1]
+  
+ .SH FILES
+-.I /etc/rascal.rc 
+-.RS
+-.RE
+-.I /usr/local/bin/rascal.rc 
++.I %%PREFIX%%/etc/rascal.rc 
+ .RS
+ .RE
+ .I ./rascal.rc
+@@ -126,30 +123,30 @@
+ i)
+ .RE
+ .P
+-.I /usr/local/doc/rascal/rascal.ps 
++.I %%PREFIX%%/share/doc/rascal/rascal.ps 
+ .RS
+ .RE
+-.I /usr/local/doc/rascal/rascal.pdf
++.I %%PREFIX%%/share/doc/rascal/rascal.pdf
+ .RS
+ .RE
+-.I /usr/local/doc/rascal/rascal/rascal.html
++.I %%PREFIX%%/share/doc/rascal/html/rascal.html
+ .RS
+ User documentation, to view it invoke
+ .RS
+ .RE
+ .B gv
+-.I /usr/local/doc/rascal/rascal.ps
++.I %%PREFIX%%/share/doc/rascal/rascal.ps
+ .RE
+ .P
+-.I /usr/local/doc/rascal/TEST
++.I %%PREFIX%%/share/doc/rascal/TEST
+ .RS
+ Test suite, to test Rascal invoke
+ .RS
+ .RE
+-.BI "rascal " "/usr/local/doc/rascal/TEST"
++.BI "rascal " "%%PREFIX%%/share/doc/rascal/TEST"
+ .RE
+ .P
+-.I /usr/local/doc/rascal/CHANGES
++.I %%PREFIX%%/share/doc/rascal/CHANGES
+ .RS
+ Changelog
+ 
+@@ -169,7 +166,7 @@
+ .I "http://rascal.sourceforge.net/"
+ and attach the output of the test
+ .RE
+-.BI "rascal " "/usr/local/doc/rascal/TEST"
++.BI "rascal " "%%PREFIX%%/share/doc/rascal/TEST"
+ 
+ .SH AUTHOR
+ Sebastian Ritterbusch <rascal@ritterbusch.de>

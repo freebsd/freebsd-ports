@@ -1,10 +1,10 @@
 bin/rascal
-bin/rascal.rc
-bin/grascal
+etc/rascal.rc
 share/doc/rascal/rascal.pdf
 share/doc/rascal/rascal.ps
 share/doc/rascal/CHANGES
 share/doc/rascal/TEST
+share/doc/rascal/TOOLBOXTEST
 share/doc/rascal/html/img1.gif
 share/doc/rascal/html/img2.gif
 share/doc/rascal/html/img3.gif
