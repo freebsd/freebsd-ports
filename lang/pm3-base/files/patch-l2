@@ -1,5 +1,5 @@
---- boot-FreeBSD4/m3core/FreeBSD4/RTHeapDepC.c.orig    Tue Jun 12 13:53:47 2001
-+++ boot-FreeBSD4/m3core/FreeBSD4/RTHeapDepC.c Tue Jun 12 14:08:44 2001
+--- libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c.old  Thu Jun  1 02:54:33 2000
++++ libs/m3core/src/runtime/FBSD_ALPHA/RTHeapDepC.c      Tue Jun 12 14:07:31 2001
 @@ -693,7 +693,9 @@
    void *data;
  { int result;
