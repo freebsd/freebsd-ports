@@ -145,6 +145,7 @@ share/locale/en_GB/LC_MESSAGES/sylpheed-claws.mo
 share/locale/es/LC_MESSAGES/sylpheed-claws.mo
 share/locale/fr/LC_MESSAGES/sylpheed-claws.mo
 share/locale/hr/LC_MESSAGES/sylpheed-claws.mo
+share/locale/hu/LC_MESSAGES/sylpheed-claws.mo
 share/locale/it/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ja/LC_MESSAGES/sylpheed-claws.mo
 share/locale/ko/LC_MESSAGES/sylpheed-claws.mo
@@ -160,16 +161,20 @@ share/sylpheed-claws/calypso_convert.pl
 share/sylpheed-claws/eud2gc.py
 share/sylpheed-claws/filter_conv.pl
 share/sylpheed-claws/gif2xface.pl
+share/sylpheed-claws/google_msgid.pl
 share/sylpheed-claws/gpg-sign-syl
 share/sylpheed-claws/kmail2sylpheed.pl
 share/sylpheed-claws/kmail2sylpheed_v2.pl
 share/sylpheed-claws/newscache_clean.pl
 share/sylpheed-claws/outlook2sylpheed.pl
 share/sylpheed-claws/tb2sylpheed
+%%THEMES%%share/sylpheed-claws/themes/Crystal/.directory
 %%THEMES%%share/sylpheed-claws/themes/Crystal/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/continue.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/dir-close.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/dir-open.xpm
+%%THEMES%%share/sylpheed-claws/themes/Crystal/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/Crystal/dir_open.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/down_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/error.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/exec.xpm
@@ -444,6 +449,47 @@ share/sylpheed-claws/tb2sylpheed
 %%THEMES%%share/sylpheed-claws/themes/black/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/black/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/black/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/Readme.txt
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/address.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/address_book.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/dir-close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/dir-open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/dir_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/dir_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/down_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/edit_extern.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/exec.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/forwarded.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/ignorethread.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/inbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/inbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/insert_file.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_attach.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_forward.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_receive.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_receive_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_reply.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_reply_to_all.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_reply_to_author.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_send.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_send_queue.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/mail_sign.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/new.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/news_compose.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/outbox_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/outbox_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/paste.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/queue_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/queue_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/replied.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/trash_close.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/trash_open.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/unread.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/dir_close.xpm
@@ -701,6 +747,7 @@ share/sylpheed-claws/uudec
 %%THEMES%%@dirrm share/sylpheed-claws/themes/stw
 %%THEMES%%@dirrm share/sylpheed-claws/themes/mozilla
 %%THEMES%%@dirrm share/sylpheed-claws/themes/mongrel
+%%THEMES%%@dirrm share/sylpheed-claws/themes/blue_anarchy
 %%THEMES%%@dirrm share/sylpheed-claws/themes/black
 %%THEMES%%@dirrm share/sylpheed-claws/themes/XeNtish
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Plain_and_Bluish
