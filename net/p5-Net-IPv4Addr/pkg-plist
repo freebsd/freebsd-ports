@@ -1,0 +1,5 @@
+bin/ipv4calc
+lib/perl5/site_perl/%%PERL_VER%%/Net/IPv4Addr.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Net/IPv4Addr/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IPv4Addr/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IPv4Addr

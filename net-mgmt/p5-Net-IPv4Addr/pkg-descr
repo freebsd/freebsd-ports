@@ -1,0 +1,10 @@
+Net::IPv4Addr provides functions to parse IPv4 addresses both
+in traditional address/netmask format and in the new CIDR format.
+Methods for calculating the network and broadcast address, and
+also to check if a given address is in a specific network also exist.
+
+WWW: http://indev.insu.com/
+
+--
+Brad Hendrickse
+bradh@uunet.co.za
