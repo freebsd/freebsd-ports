@@ -1,0 +1,35 @@
+# $FreeBSD$
+#
+# GTK+ Input Method Modules file
+#
+# ModulesPath = /usr/lib/gtk-2.0/2.2.0/immodules:/usr/lib/gtk-2.0/immodules
+#
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-am-et.so" 
+"am_et" "Amharic (EZ+)" "gtk+" "/usr/share/locale" "am" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-cyrillic-translit.so" 
+"cyrillic_translit" "Cyrillic (Transliterated)" "gtk+" "/usr/share/locale" "" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-hangul.so" 
+"hangul" "Hangul (KSC 5601)" "gtk+" "" "" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-inuktitut.so" 
+"inuktitut" "Inukitut (Transliterated)" "gtk+" "/usr/share/locale" "iu" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-ipa.so" 
+"ipa" "IPA" "gtk+" "/usr/share/locale" "" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-thai-broken.so" 
+"thai_broken" "Thai (Broken)" "gtk+" "/usr/share/locale" "" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-ti-er.so" 
+"ti_er" "Tigrigna-Eritrean (EZ+)" "gtk+" "/usr/share/locale" "ti" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-ti-et.so" 
+"ti_et" "Tigrigna-Ethiopian (EZ+)" "gtk+" "/usr/share/locale" "ti" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-viqr.so" 
+"viqr" "Vietnamese (VIQR)" "gtk+" "/usr/share/locale" "vi" 
+
+"/usr/lib/gtk-2.0/2.2.0/immodules/im-xim.so" 
+"xim" "X Input Method" "gtk+" "/usr/share/locale" "ko:ja:zh" 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk2
 PORTVERSION=	2.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits linux
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -22,12 +22,20 @@ RESTRICTED=	"binaries under GNU LGPL without accompanying source"
 RPM_SET=	gtk2-2.2.1-4.i386.rpm
 
 pre-install:
+	${RM} -f ${PLIST}
+.for ii in gtk.immodules gdk-pixbuf.loaders
+	${ECHO_CMD} etc/gtk-2.0/${ii} >> ${PLIST}
+.endfor
 	${RM} -rf ${WRKSRC}/tmp
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -id; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d  | ${SED} -e 's:^:@dirrm :' \
-		>> ${PLIST}
+		${FIND} * -type f -o -type l >> ${PLIST}; \
+		${FIND} -d * -type d | ${GREP} -E 'locale|gtk|themes' | \
+		${SED} -e 's:^:@dirrm :' >> ${PLIST}
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/gtk.immodules ${PREFIX}/etc/gtk-2.0/
+	${TOUCH} ${PREFIX}/etc/gtk-2.0/gdk-pixbuf.loaders
 
 .include "../linux-gtk/Makefile"
