@@ -1,0 +1,132 @@
+--- msdosfs_denode.c.orig	Mon Apr 10 04:32:36 2000
++++ msdosfs_denode.c	Sun Feb 11 16:59:48 2001
+@@ -51,7 +51,4 @@
+ #include "opt_msdosfs.h"
+ 
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+@@ -60,13 +57,12 @@
+ #include <sys/malloc.h>
+ #include <sys/proc.h>
++#include <sys/bio.h>
+ #include <sys/buf.h>
+ #include <sys/vnode.h>
++#include <sys/mutex.h>
+ 
+ #include <vm/vm.h>
+ #include <vm/vm_extern.h>
+ 
+-/*
+- * MSDOSFS include files.
+- */
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/msdosfsmount.h>
+@@ -81,7 +77,5 @@
+ #define	DEHASH(dev, dcl, doff)	(dehashtbl[(minor(dev) + (dcl) + (doff) / 	\
+ 				sizeof(struct direntry)) & dehash])
+-#ifndef NULL_SIMPLELOCKS
+-static struct simplelock dehash_slock;
+-#endif
++static struct mtx dehash_mtx;
+ 
+ union _qcvt {
+@@ -114,5 +108,16 @@
+ {
+ 	dehashtbl = hashinit(desiredvnodes/2, M_MSDOSFSMNT, &dehash);
+-	simple_lock_init(&dehash_slock);
++	mtx_init(&dehash_mtx, "msdosfs dehash", MTX_DEF);
++	return (0);
++}
++
++int 
++msdosfs_uninit(vfsp)
++	struct vfsconf *vfsp;
++{
++
++	if (dehashtbl)
++		free(dehashtbl, M_MSDOSFSMNT);
++	mtx_destroy(&dehash_mtx);
+ 	return (0);
+ }
+@@ -129,5 +134,5 @@
+ 
+ loop:
+-	simple_lock(&dehash_slock);
++	mtx_lock(&dehash_mtx);
+ 	for (dep = DEHASH(dev, dirclust, diroff); dep; dep = dep->de_next) {
+ 		if (dirclust == dep->de_dirclust
+@@ -136,6 +141,6 @@
+ 		    && dep->de_refcnt != 0) {
+ 			vp = DETOV(dep);
+-			simple_lock(&vp->v_interlock);
+-			simple_unlock(&dehash_slock);
++			mtx_lock(&vp->v_interlock);
++			mtx_unlock(&dehash_mtx);
+ 			if (vget(vp, LK_EXCLUSIVE | LK_INTERLOCK, p))
+ 				goto loop;
+@@ -143,5 +148,5 @@
+ 		}
+ 	}
+-	simple_unlock(&dehash_slock);
++	mtx_unlock(&dehash_mtx);
+ 	return (NULL);
+ }
+@@ -153,5 +158,5 @@
+ 	struct denode **depp, *deq;
+ 
+-	simple_lock(&dehash_slock);
++	mtx_lock(&dehash_mtx);
+ 	depp = &DEHASH(dep->de_dev, dep->de_dirclust, dep->de_diroffset);
+ 	deq = *depp;
+@@ -161,5 +166,5 @@
+ 	dep->de_prev = depp;
+ 	*depp = dep;
+-	simple_unlock(&dehash_slock);
++	mtx_unlock(&dehash_mtx);
+ }
+ 
+@@ -170,5 +175,5 @@
+ 	struct denode *deq;
+ 
+-	simple_lock(&dehash_slock);
++	mtx_lock(&dehash_mtx);
+ 	deq = dep->de_next;
+ 	if (deq)
+@@ -179,5 +184,5 @@
+ 	dep->de_prev = NULL;
+ #endif
+-	simple_unlock(&dehash_slock);
++	mtx_unlock(&dehash_mtx);
+ }
+ 
+@@ -260,5 +265,6 @@
+ 	}
+ 	bzero((caddr_t)ldep, sizeof *ldep);
+-	lockinit(&ldep->de_lock, PINOD, "denode", 0, 0);
++	lockinit(&nvp->v_lock, PINOD, "denode", 0, 0);
++	nvp->v_vnlock = &nvp->v_lock;
+ 	nvp->v_data = ldep;
+ 	ldep->de_vnode = nvp;
+@@ -276,5 +282,5 @@
+ 	 * call msdosfs_hashins() with a locked denode.
+ 	 */
+-	if (lockmgr(&ldep->de_lock, LK_EXCLUSIVE, (struct simplelock *)0, p))
++	if (VOP_LOCK(nvp, LK_EXCLUSIVE, p) != 0)
+ 		panic("deget: unexpected lock failure");
+ 
+@@ -658,4 +664,5 @@
+ 	dep->de_flag = 0;
+ #endif
++	lockdestroy(&vp->v_lock);
+ 	FREE(dep, M_MSDOSFSNODE);
+ 	vp->v_data = NULL;
+@@ -716,5 +723,5 @@
+ #endif
+ 	if (dep->de_Name[0] == SLOT_DELETED)
+-		vrecycle(vp, (struct simplelock *)0, p);
++		vrecycle(vp, NULL, p);
+ 	return (error);
+ }

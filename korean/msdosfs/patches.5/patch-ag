@@ -1,0 +1,152 @@
+--- msdosfs_vnops.c.orig	Mon Apr 10 04:32:37 2000
++++ msdosfs_vnops.c	Sun Feb 11 17:00:36 2001
+@@ -51,7 +51,4 @@
+ #include "opt_msdosfs.h"
+ 
+-/*
+- * System include files.
+- */
+ #include <sys/param.h>
+ #include <sys/systm.h>
+@@ -60,4 +57,5 @@
+ #include <sys/kernel.h>
+ #include <sys/stat.h>
++#include <sys/bio.h>
+ #include <sys/buf.h>
+ #include <sys/proc.h>
+@@ -71,10 +69,8 @@
+ #include <vm/vm.h>
+ #include <vm/vm_extern.h>
+-#include <vm/vm_zone.h>
+ #include <vm/vnode_pager.h>
+ 
+-/*
+- * MSDOSFS include files.
+- */
++#include <machine/mutex.h>
++
+ #include <msdosfs/bpb.h>
+ #include <msdosfs/direntry.h>
+@@ -240,10 +236,10 @@
+ 	struct timespec ts;
+ 
+-	simple_lock(&vp->v_interlock);
++	mtx_lock(&vp->v_interlock);
+ 	if (vp->v_usecount > 1) {
+ 		getnanotime(&ts);
+ 		DETIMES(dep, &ts, &ts, &ts);
+ 	}
+-	simple_unlock(&vp->v_interlock);
++	mtx_unlock(&vp->v_interlock);
+ 	return 0;
+ }
+@@ -261,8 +257,5 @@
+ 	struct denode *dep = VTODE(ap->a_vp);
+ 	struct msdosfsmount *pmp = dep->de_pmp;
+-	struct ucred *cred = ap->a_cred;
+-	mode_t mask, file_mode, mode = ap->a_mode;
+-	register gid_t *gp;
+-	int i;
++	mode_t file_mode, mode = ap->a_mode;
+ 
+ 	file_mode = (S_IXUSR|S_IXGRP|S_IXOTH) | (S_IRUSR|S_IRGRP|S_IROTH) |
+@@ -288,41 +281,6 @@
+ 	}
+ 
+-	/* User id 0 always gets access. */
+-	if (cred->cr_uid == 0)
+-		return 0;
+-
+-	mask = 0;
+-
+-	/* Otherwise, check the owner. */
+-	if (cred->cr_uid == pmp->pm_uid) {
+-		if (mode & VEXEC)
+-			mask |= S_IXUSR;
+-		if (mode & VREAD)
+-			mask |= S_IRUSR;
+-		if (mode & VWRITE)
+-			mask |= S_IWUSR;
+-		return (file_mode & mask) == mask ? 0 : EACCES;
+-	}
+-
+-	/* Otherwise, check the groups. */
+-	for (i = 0, gp = cred->cr_groups; i < cred->cr_ngroups; i++, gp++)
+-		if (pmp->pm_gid == *gp) {
+-			if (mode & VEXEC)
+-				mask |= S_IXGRP;
+-			if (mode & VREAD)
+-				mask |= S_IRGRP;
+-			if (mode & VWRITE)
+-				mask |= S_IWGRP;
+-			return (file_mode & mask) == mask ? 0 : EACCES;
+-		}
+-
+-	/* Otherwise, check everyone else. */
+-	if (mode & VEXEC)
+-		mask |= S_IXOTH;
+-	if (mode & VREAD)
+-		mask |= S_IROTH;
+-	if (mode & VWRITE)
+-		mask |= S_IWOTH;
+-	return (file_mode & mask) == mask ? 0 : EACCES;
++	return (vaccess(vp->v_type, file_mode, pmp->pm_uid, pmp->pm_gid,
++	    ap->a_mode, ap->a_cred, NULL));
+ }
+ 
+@@ -915,7 +873,5 @@
+ 
+ /*
+- * DOS filesystems don't know what links are. But since we already called
+- * msdosfs_lookup() with create and lockparent, the parent is locked so we
+- * have to free it before we return the error.
++ * DOS filesystems don't know what links are.
+  */
+ static int
+@@ -975,9 +931,4 @@
+  * On exit:
+  *	all denodes should be released
+- *
+- * Notes:
+- * I'm not sure how the memory containing the pathnames pointed at by the
+- * componentname structures is freed, there may be some memory bleeding
+- * for each rename done.
+  */
+ static int
+@@ -1109,5 +1060,4 @@
+ 	if (VTODE(fdvp)->de_StartCluster != VTODE(tdvp)->de_StartCluster)
+ 		newparent = 1;
+-	vrele(fdvp);
+ 	if (doingdirectory && newparent) {
+ 		if (error)	/* write access check above */
+@@ -1177,5 +1127,6 @@
+ 	if (!newparent)
+ 		VOP_UNLOCK(tdvp, 0, p);
+-	(void) relookup(fdvp, &fvp, fcnp);
++	if (relookup(fdvp, &fvp, fcnp) == 0)
++		vrele(fdvp);
+ 	if (fvp == NULL) {
+ 		/*
+@@ -1857,6 +1808,6 @@
+ 		if (error) {
+ 			bp->b_error = error;
+-			bp->b_flags |= B_ERROR;
+-			biodone(bp);
++			bp->b_ioflags |= BIO_ERROR;
++			bufdone(bp);
+ 			return (error);
+ 		}
+@@ -1865,5 +1816,5 @@
+ 	}
+ 	if (bp->b_blkno == -1) {
+-		biodone(bp);
++		bufdone(bp);
+ 		return (0);
+ 	}
+@@ -1890,5 +1841,5 @@
+ 	       dep->de_StartCluster, dep->de_dirclust, dep->de_diroffset);
+ 	printf(" dev %d, %d", major(dep->de_dev), minor(dep->de_dev));
+-	lockmgr_printinfo(&dep->de_lock);
++	lockmgr_printinfo(&ap->a_vp->v_lock);
+ 	printf("\n");
+ 	return (0);

@@ -1,0 +1,20 @@
+--- /dev/null	Mon Jul  3 02:05:31 2000
++++ Makefile	Mon Jul  3 02:15:22 2000
+@@ -0,0 +1,17 @@
++.PATH:	${.CURDIR}
++KMOD=	msdos_ko
++SRCS=	vnode_if.h \
++	msdosfs_conv.c msdosfs_denode.c msdosfs_fat.c msdosfs_lookup.c \
++	msdosfs_vfsops.c msdosfs_vnops.c opt_msdosfs.h
++NOMAN=
++CLEANFILES+= opt_msdosfs.h
++
++opt_msdosfs.h:
++	touch opt_msdosfs.h
++	echo "#define MSDOSFS_LC_KOREA 1" >> opt_msdosfs.h
++
++.if ${MACHINE} == "pc98"
++CFLAGS+= -DPC98
++.endif
++
++.include <bsd.kmod.mk>
