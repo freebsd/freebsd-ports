@@ -3,15 +3,15 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.50 1998/04/22 16:28:43 ache Exp $
+# $Id: Makefile,v 1.51 1998/06/05 17:16:01 ache Exp $
 #
 
-DISTNAME=       apache_1.3b7
-PKGNAME=        apache-1.3b7
+DISTNAME=       apache_1.3.0
+PKGNAME=        apache-1.3.0
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
-#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3b7/
+#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.0/
 
 MAINTAINER=     ache@freebsd.org
 
