@@ -26,7 +26,7 @@ exec >${log} 2>&1
 
 # Do the update
 
-date "+CVSup update begins at %Y/%m/%d %H:%M:%S"
+date "+CVSup update begins at %Y-%m-%d %T"
 
 # The rest of this is executed while holding the lock file, to ensure that
 # multiple instances won't collide with one another.
@@ -72,4 +72,4 @@ fi
 
 E*O*F
 
-date "+CVSup update ends at %Y/%m/%d %H:%M:%S"
+date "+CVSup update ends at %Y-%m-%d %T"
