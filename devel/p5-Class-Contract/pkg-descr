@@ -1,0 +1,8 @@
+The Class::Contract module implements strong encapsulation, static
+inheritance, and design-by-contract condition checking for
+object-oriented Perl. The module provides a declarative syntax for
+attribute, method, constructor, and destructor definitions at both
+the object and class level. Pre-conditions, post-conditions, and
+class invariants are also fully supported.
+
+WWW: http://search.cpan.org/search?dist=Class-Contract
