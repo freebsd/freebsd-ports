@@ -133,7 +133,7 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"SNMP\")
-			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
+			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/net-snmp"
 			echo "CONFIGURE_ARGS+=--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
