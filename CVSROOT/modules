@@ -2404,7 +2404,6 @@ guile-gnome	ports/x11-toolkits/guile-gnome
 guile-gtk	ports/x11-toolkits/guile-gtk
 guileobjc	ports/lang/guileobjc
 guilib		ports/graphics/guilib
-guitar		ports/sysutils/guitar
 guitartex	ports/print/guitartex
 gup		ports/news/gup
 guppi		ports/math/guppi
