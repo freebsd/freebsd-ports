@@ -9273,6 +9273,7 @@ wxgtk2-unicode	ports/x11-toolkits/wxgtk2-unicode
 wxgtk2-unicode-contrib	ports/x11-toolkits/wxgtk2-unicode-contrib
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
+wzdftpd		ports/ftp/wzdftpd
 wzip		ports/archivers/wzip
 x-files		ports/x11-fm/x-files
 x11-chameleon	ports/x11/chameleon
