@@ -17,6 +17,7 @@ lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_log_file_h.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ls.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_revproxy.beam
+lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_rss.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_server.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_session_server.beam
 lib/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ssl.beam
@@ -45,6 +46,7 @@ lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_rss.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_server.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_session_server.erl
 lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ssl.erl
@@ -197,6 +199,7 @@ www/yaws/icons/yaws_head.gif
 www/yaws/icons/yaws_pb.gif
 www/yaws/icons/yaws_y.gif
 www/yaws/index.yaws
+www/yaws/internals.yaws
 www/yaws/man.yaws
 www/yaws/motivation.yaws
 www/yaws/news
