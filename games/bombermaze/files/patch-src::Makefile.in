@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/11/13 14:00:49	1.1
++++ src/Makefile.in	2001/11/13 14:01:29
+@@ -127,7 +127,7 @@
+ 
+ CPPFLAGS = -Wall
+ 
+-INCLUDES = -I$(top_srcdir) -I$(includedir) $(GNOME_INCLUDEDIR) 	-DG_LOG_DOMAIN=\"$(PACKAGE)\" 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DPACKAGE_DATADIR=\"$(configdir)\" 	-I../intl -I$(top_srcdir)/intl
++INCLUDES = -I$(top_srcdir) -I$(includedir) $(GDK_PIXBUF_CFLAGS) $(GNOME_INCLUDEDIR) 	-DG_LOG_DOMAIN=\"$(PACKAGE)\" 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-DPACKAGE_DATADIR=\"$(configdir)\" 	-I../intl -I$(top_srcdir)/intl
+ 
+ 
+ bin_PROGRAMS = bombermaze
