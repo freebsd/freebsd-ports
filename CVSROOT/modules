@@ -7060,6 +7060,7 @@ tkrat2		ports/mail/tkrat2
 tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
 tkrunit		ports/misc/tkrunit
+tkscanfax	ports/comms/tkscanfax
 tkseti		ports/astro/tkseti
 tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
