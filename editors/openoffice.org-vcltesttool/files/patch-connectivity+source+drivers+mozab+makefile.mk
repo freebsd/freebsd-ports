@@ -1,12 +1,12 @@
---- ../connectivity/source/drivers/mozab/makefile.mk.orig	Wed Jun 12 01:37:30 2002
-+++ ../connectivity/source/drivers/mozab/makefile.mk	Wed Jun 12 01:37:47 2002
-@@ -107,9 +107,7 @@
+--- ../connectivity/source/drivers/mozab/makefile.mk.orig	Mon Aug 19 19:23:47 2002
++++ ../connectivity/source/drivers/mozab/makefile.mk	Wed Oct 16 00:01:36 2002
+@@ -167,7 +167,9 @@
+ 
  # --- MOZAB BASE Library -----------------------------------
  
- SHL1VERSIONMAP= $(TARGET).map
--.IF "$(OS)"!="FREEBSD"
- SHL1TARGET=	$(TARGET)$(MOZAB_MAJOR)
--.ENDIF
- SHL1OBJS=$(SLOFILES)
- SHL1STDLIBS=\
- 	$(CPPULIB)					\
++.IF "$(OS)"!="FREEBSD"
+ SHL2VERSIONMAP= $(TARGET2).map
++.ENDIF
+ SHL2TARGET=	$(TARGET2)$(MOZAB_MAJOR)
+ SHL2OBJS=$(SLO2FILES)
+ SHL2STDLIBS=\

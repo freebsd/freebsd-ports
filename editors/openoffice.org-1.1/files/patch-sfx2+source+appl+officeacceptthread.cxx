@@ -1,18 +1,11 @@
---- ../sfx2/source/appl/officeacceptthread.cxx.orig	Sat Jul 20 22:56:19 2002
-+++ ../sfx2/source/appl/officeacceptthread.cxx	Sat Jul 20 22:56:54 2002
-@@ -123,13 +123,13 @@
- 			sal_Bool static isProcessRunning( ::vos::OProcess::TProcessInfo& aProcessInfo )
- 			{
- 				int nRet;
--#if defined (SOLARIS) || defined (IRIX)
-+#if defined (SOLARIS) || defined (IRIX) || defined (FREEBSD) || defined (NETBSD)
+--- ../sfx2/source/appl/officeacceptthread.cxx.orig	Thu Oct 11 15:39:58 2001
++++ ../sfx2/source/appl/officeacceptthread.cxx	Fri Oct 18 23:35:14 2002
+@@ -126,7 +126,7 @@
+ #if defined (SOLARIS)
  				int status;
  				nRet = waitpid(aProcessInfo.Ident, &status,WNOHANG);
- #elif defined(LINUX)
+-#elif defined(LINUX)
++#elif defined(LINUX) || defined (FREEBSD)
  				nRet = kill(aProcessInfo.Ident, 0);
  #endif
--#if defined (LINUX) || defined (SOLARIS) || defined (IRIX)
-+#if defined (LINUX) || defined (SOLARIS) || defined (IRIX) || defined (FREEBSD) || defined (NETBSD)
- 				if ( nRet == 0 )
- 					return sal_True; // process is running
- 				if ( nRet < 0 )
+ #if defined (UNX)
