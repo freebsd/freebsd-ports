@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.19 1998/09/21 01:35:32 steve Exp $
+# $Id: Makefile,v 1.20 1998/10/13 23:04:41 jseger Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.pacbell.com/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
-
-BROKEN_ELF=	yes
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
@@ -36,8 +34,6 @@ CONFIGURE_ARGS=	athena
 PROGRAM_NAME=xftp
 RESOURCE_NAME=Xftp
 .endif
-
-#LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 
 post-install:
 	@strip ${PREFIX}/bin/${PROGRAM_NAME}
