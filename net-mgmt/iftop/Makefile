@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iftop
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	net
 MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 
