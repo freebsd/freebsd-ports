@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 1996/04/17 01:06:31 asami Exp $
+# $Id: Makefile,v 1.5 1996/06/15 07:01:00 gpalmer Exp $
 #
 
     SUBDIR += SSLeay
@@ -8,5 +8,6 @@
     SUBDIR += pidentd
     SUBDIR += ssh
     SUBDIR += tcp_wrapper
+    SUBDIR += xinetd
 
 .include <bsd.port.subdir.mk>
