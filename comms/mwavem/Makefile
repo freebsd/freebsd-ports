@@ -8,7 +8,8 @@
 PORTNAME=	mwavem-fbsd
 PORTVERSION=	1.1
 CATEGORIES=	comms
-MASTER_SITES=	http://www.escape.com/developer/~simonw/ \
+MASTER_SITES=	http://home.pacbell.net/simonw2/src/ \
+		http://www.escape.com/developer/~simonw/ \
 		${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
@@ -76,8 +77,6 @@ pre-fetch:
 
 .if ${OSVERSION} < 410000
 BROKEN=		"Systems prior to 4.1 are not supported"
-.else
-BROKEN=		"Archive cannot be fetched"
 .endif
 
 .include <bsd.port.post.mk>
