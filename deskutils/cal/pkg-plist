@@ -1,3 +1,4 @@
 bin/cal
 etc/cal/calcol
 etc/cal/caldat
+@dirrm etc/cal
