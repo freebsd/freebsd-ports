@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DB_DataObject_FormBuilder
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	antonio@php.net
