@@ -1,0 +1,19 @@
+*** ../hmconv.old/hmailedit	Mon Mar 31 22:27:38 1997
+--- hmailedit	Mon Mar 31 22:35:23 1997
+***************
+*** 6,12 ****
+  # set your favorite Hangul editor to HEDITOR
+  # Pico users should  give '-t' option, i.e. 'pico -t' instead of 'pico'
+  # Emacs,Mule,Hanemacs users may give '-nw' option
+! HEDITOR=hvi 
+  
+  # 'hmconv' is to be put in your search path
+  
+--- 6,12 ----
+  # set your favorite Hangul editor to HEDITOR
+  # Pico users should  give '-t' option, i.e. 'pico -t' instead of 'pico'
+  # Emacs,Mule,Hanemacs users may give '-nw' option
+! HEDITOR=$EDITOR 
+  
+  # 'hmconv' is to be put in your search path
+  
