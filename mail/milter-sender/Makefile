@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	milter-sender
-PORTVERSION=	0.58
+PORTVERSION=	0.61
 CATEGORIES=	mail
 MASTER_SITES=	http://www.snert.com/Software/download/
-DISTFILES=	libsnert-1.36.tgz milter-sender-${PORTVERSION}.tgz
+DISTFILES=	libsnert-1.39.tgz milter-sender-${PORTVERSION}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time sender address verification, based on Milter API
@@ -39,7 +39,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
 DOCS=		CHANGES.TXT index.shtml style.css mailto.js \
-		license-body.html LICENSE.TXT
+		LICENSE.TXT
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool \
 		--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
 post-patch:
-.if ( ${OSVERSION} < 440000 )
+.if ( ${OSVERSION} < 440000 ) # please contact vs@ if in doubt
 	${REINPLACE_CMD} 's/xargs -J{}/gxargs -i{}/' ${WRKSRC}/../lib/configure
 	${REINPLACE_CMD} 's+/usr/sbin/daemon -f ++' ${WRKSRC}/milter-sender.sh.in
 .endif

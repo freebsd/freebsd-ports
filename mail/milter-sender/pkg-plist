@@ -19,7 +19,6 @@ sbin/milter-sender
 %%PORTDOCS%%%%DOCSDIR%%/Img/sun.gif
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/index.shtml
-%%PORTDOCS%%%%DOCSDIR%%/license-body.html
 %%PORTDOCS%%%%DOCSDIR%%/mailto.js
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 @unexec echo
