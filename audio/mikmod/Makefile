@@ -1,20 +1,15 @@
 # ports collection makefile for:   mikmod304
-# Version required:    3.1.5
+# Version required:    3.1.6
 # Date created:        16 November 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.11 1999/05/05 22:16:23 mharo Exp $
+# $Id: Makefile,v 1.12 1999/07/03 18:56:53 mharo Exp $
 #
 
-DISTNAME=	mikmod-3.1.5
+DISTNAME=	mikmod-3.1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/mikmod/ \
-		http://mikmod.darkorb.net/mikmod/
-
-PATCH_SITES=	http://www.multimania.com/miodrag/mikmod/patches/ \
-		http://mikmod.darkorb.net/patches/
-PATCHFILES=	patch-mikmod-3.1.5-a patch-mikmod-3.1.5-b
-PATCH_DIST_STRIP=	-p1
+				http://mikmod.darkorb.net/mikmod/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
