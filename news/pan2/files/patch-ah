@@ -1,0 +1,11 @@
+--- pan/Makefile.in.orig	Tue May  9 13:27:56 2000
++++ pan/Makefile.in	Tue May 16 17:44:07 2000
+@@ -116,7 +116,7 @@
+ 
+ SUBDIRS = dialogs xpm
+ 
+-INCLUDES =  	-I$(top_srcdir) 					-I$(top_srcdir)/uulib 					-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 		-DLOCALEDIR=\"$(datadir)/locale\" 			$(GNOME_INCLUDEDIR) 					$(GLIB_CFLAGS) 						@CPPFLAGS@
++INCLUDES =  	-I$(top_srcdir) 					-I$(top_srcdir)/uulib 					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DLOCALEDIR=\"$(prefix)/share/locale\" 			$(GNOME_INCLUDEDIR) 					$(GLIB_CFLAGS) 						@CPPFLAGS@
+ 
+ 
+ bin_PROGRAMS = pan
