@@ -3,13 +3,14 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1998/11/04 01:18:33 jdp Exp $
+# $Id: Makefile,v 1.11 1998/11/04 01:34:59 jdp Exp $
 #
 
 DISTNAME=	cyrus-imapd-v1.5.14
 PKGNAME=	cyrus-1.5.14
 CATEGORIES=	mail tcl80
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+		ftp://ftp.promo.de/pub/people/stefan/FreeBSD/cyrus-mail/
 
 MAINTAINER=	stb@FreeBSD.ORG
 
