@@ -71,6 +71,7 @@
     SUBDIR += comclear
     SUBDIR += coppermine
     SUBDIR += crawl
+    SUBDIR += crp
     SUBDIR += css-mode.el
     SUBDIR += cybercalendar
     SUBDIR += dansguardian
