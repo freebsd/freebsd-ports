@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poptop
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://poptop.lineo.com/releases/
 DISTNAME=	pptpd-${PORTVERSION}
@@ -21,6 +21,6 @@ MAN8=		pptpd.8 pptpctrl.8
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf ${PREFIX}/etc/pptpd.conf.sample
-	${INSTALL_DATA} ${FILESDIR}/pptpd.sh ${PREFIX}/etc/rc.d/pptpd.sh
+	${INSTALL_SCRIPT} ${FILESDIR}/pptpd.sh ${PREFIX}/etc/rc.d/pptpd.sh
 
 .include <bsd.port.mk>
