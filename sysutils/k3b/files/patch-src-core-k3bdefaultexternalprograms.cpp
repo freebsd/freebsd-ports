@@ -1,5 +1,5 @@
 --- src/core/k3bdefaultexternalprograms.cpp.orig	Fri May 21 19:03:21 2004
-+++ src/core/k3bdefaultexternalprograms.cpp	Sun Jul 11 12:24:22 2004
++++ src/core/k3bdefaultexternalprograms.cpp	Sat Jul 31 09:49:57 2004
 @@ -30,6 +30,7 @@
  #include <unistd.h>
  #include <sys/stat.h>
@@ -134,7 +134,7 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path << "-version";
-@@ -838,7 +839,7 @@
+@@ -838,14 +839,14 @@
    K3bExternalBin* bin = 0;
  
    // probe version
@@ -143,6 +143,14 @@
    K3bProcess::OutputCollector out( &vp );
  
    vp << path;
+   if( vp.start( KProcess::Block, KProcess::AllOutput ) ) {
+     // different locales make searching for the +- char difficult
+     // so we simply ignore it.
+-    int pos = out.output().find( QRegExp("DVD.*RW format utility") );
++    int pos = out.output().find( QRegExp("DVD.*RW.* format utility") );
+     if( pos < 0 )
+       return false;
+ 
 @@ -913,7 +914,7 @@
    K3bExternalBin* bin = 0;
  
