@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.56.3
+PORTVERSION=	1.57.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -45,6 +45,12 @@ MAN1=		gmsh.1
 NO_CDROM=	Triangle must not be sold for profit
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONFIGURE_ARGS+=	--disable-netgen	# Problem with Netgen & gcc-295
+.endif
+
 post-extract:
 .if !defined(WITHOUT_TRIANGLE)
 	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.* ${WRKSRC}/Triangle
@@ -71,4 +77,4 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
