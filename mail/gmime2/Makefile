@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -19,12 +18,11 @@ CONFLICTS=	gmime-1.0.*
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 lthack
+USE_GNOME=	gnomehack gnometarget glib20 lthack
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 
 LATEST_LINK=	gmime2
