@@ -30,7 +30,7 @@ PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/ \
 PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER?=	obrien@FreeBSD.org
 
 .if defined(PACKAGE_BUILDING)
 WITH_SLANG=	yes
