@@ -28,7 +28,12 @@ USE_GNOME=	yes
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Gnome::Print::reference.3pm
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
