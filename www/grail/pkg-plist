@@ -1,3 +1,4 @@
+bin/grail
 share/grail/AppletLoader.py
 share/grail/AppletLoader.pyc
 share/grail/AppletRExec.py
