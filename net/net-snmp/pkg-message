@@ -3,8 +3,8 @@
      If you want to invoke snmpd from startup, put these lines into
      /etc/rc.conf.
 
-	net_snmpd_enable="YES"
-	net_snmpd_flags=""
+	snmpd_enable="YES"
+	snmpd_flags=""
 
 **** You can specify make variables as:
 
