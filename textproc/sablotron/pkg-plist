@@ -5,4 +5,4 @@ include/shandler.h
 include/sxpath.h
 lib/libsablot.a
 lib/libsablot.so
-lib/libsablot.so.%%SHLIB_VER%%
+lib/libsablot.so.%%SHLIB_MAJOR%%
