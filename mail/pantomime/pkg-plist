@@ -68,3 +68,4 @@
 @dirrm %%LOCALLIBRARY%%/Libraries
 @dirrm %%LOCALLIBRARY%%/Headers/Pantomime
 @dirrm %%LOCALLIBRARY%%/Headers
+%%GNUSTEP_DEVEL%%@dirrm %%LOCALLIBRARY%%
