@@ -26,6 +26,7 @@ branch=$1
 buildenv ${pb} ${arch} ${branch}
 
 duds=${pb}/${arch}/${branch}/duds
+index=${PORTSDIR}/${INDEXFILE}
 
 unset DISPLAY
 
@@ -34,3 +35,6 @@ cd ${PORTSDIR}
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
 mv -f ${duds}.tmp ${duds}
+
+cp ${duds} ${duds}.orig
+grep -Ff ${duds}.orig ${index} | cut -f 1 -d \| > ${duds}.full 
