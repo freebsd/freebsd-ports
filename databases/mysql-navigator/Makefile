@@ -9,7 +9,8 @@ PORTNAME=	mysql-navigator
 PORTVERSION=	1.4.2
 PORTREVISION=	1
 CATEGORIES=	databases kde
-MASTER_SITES=	http://sql.kldp.org/snapshots/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	mysqlnavigator-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
@@ -24,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
-CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
 MAKE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
 
