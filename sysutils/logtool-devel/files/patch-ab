@@ -1,0 +1,10 @@
+--- logtool/includes.h.orig	Sat Dec 30 20:19:32 2000
++++ logtool/includes.h	Sat Dec 30 20:40:09 2000
+@@ -23,6 +23,7 @@
+ #include<stdlib.h>
+ #include<string.h>
+ #include<getopt.h>
++#include<unistd.h>
+ #include<regex.h>
+ #include<errno.h>
+ 

@@ -1,0 +1,20 @@
+Logtool is a command line program that will parse syslog (and syslog-
+like) logfiles into a more palatable format. It will take anything
+resembling a standard syslog file (this includes syslog-ng, and
+probably most of the other variants out there), and crunch it into one
+of the following formats for your viewing pleasure: 
+
+  - ANSI (colorized for easy "at a glance" viewing)
+  - ASCII (for e-mail'ed reports, and term's that don't support color)
+  - CSV (for importing into your favorite spreadsheet/database)
+  - HTML (for generating web pages)
+  - RAW (for no good reason)
+
+It can be configured to parse the data any one of several ways,
+including stripping the host, and/or program fields, and modifying the
+time display format of the log entry's. 
+
+WWW: http://users.digitex.net/~max/
+
+-- Ying-Chieh Liao
+   ijliao@csie.nctu.edu.tw

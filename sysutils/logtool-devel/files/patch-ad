@@ -1,0 +1,11 @@
+--- logtail/Makefile.orig	Sat Dec 30 20:17:09 2000
++++ logtail/Makefile	Sat Dec 30 20:17:35 2000
+@@ -2,7 +2,7 @@
+ PROG= logtail
+ CC= gcc
+ CFLAGS= -Wall -Werror -O3 -ansi -pedantic
+-PREFIX=/usr
++PREFIX=%%PREFIX%%
+ 
+ default: 
+ 	$(CC) $(CFLAGS) -o $(PROG) $(SRC)
