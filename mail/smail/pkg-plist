@@ -1,3 +1,4 @@
+bin/bouncemail
 bin/mailq
 bin/mkaliases
 bin/newaliases
@@ -8,6 +9,7 @@ bin/runq
 bin/smail
 bin/smailbug
 bin/smtpd
+bin/unfreezemail
 bin/uupath
 bin/uuwho
 etc/smail/COPYING
@@ -45,6 +47,7 @@ libexec/smail/unfreezemail
 libexec/smail/unfreezemail.O
 libexec/smail/unsharmap
 sbin/sendmail
+@dirrm include/snprintfv
 @dirrm libexec/smail
 @dirrm etc/smail/maps
 @dirrm etc/smail/methods
