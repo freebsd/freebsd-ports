@@ -1,0 +1,48 @@
+--- AcrobatViewer.lax.orig	Fri Feb 11 18:02:57 2000
++++ AcrobatViewer.lax	Fri Feb 11 18:04:07 2000
+@@ -4,7 +4,7 @@
+ #   --------------------
+ #   name given the launcher in console windows
+ 
+-lax.application.name=AcrobatViewer.exe
++lax.application.name=AcrobatViewer
+ 
+ 
+ #   LAX.CLASS.PATH
+@@ -12,7 +12,7 @@
+ #   the Java classpath necessary to run this application
+ #   Can be separated by colons or semicolons
+ 
+-lax.class.path=acrobat.jar;lax.jar
++lax.class.path=acrobat.jar:lax.jar
+ 
+ 
+ #   LAX.COMMAND.LINE.ARGS
+@@ -26,7 +26,7 @@
+ #   -------
+ #   path to directory holding LaunchAnywhere's native launcher
+ 
+-lax.dir=C:\\Program Files\\AdobeAcrobatViewer\\
++lax.dir=%INSTDIR%/
+ 
+ 
+ #   LAX.MAIN.CLASS
+@@ -47,7 +47,8 @@
+ #   -----------------
+ #   the VM to use for the next launch
+ 
+-lax.nl.current.vm=C:\\Java\\jdk1.1.8\\bin\\jre.exe
++lax.nl.current.vm=%JAVAVM%
++lax.nl.java.compiler=%JAVAJIT%
+ 
+ 
+ #   LAX.NL.JAVA.LAUNCHER.MAIN.CLASS
+@@ -104,7 +105,7 @@
+ #   --------------------
+ #   path to the installdir magic folder
+ 
+-lax.root.install.dir=C:\\Program Files\\AdobeAcrobatViewer
++lax.root.install.dir=%INSTDIR%
+ 
+ 
+ #   LAX.STDERR.REDIRECT

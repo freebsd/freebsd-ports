@@ -1,0 +1,13 @@
+Adobe(R) Acrobat(R) Viewer lets you view Adobe Portable Document Format (PDF)
+files on all platforms that have a Java(TM) Virtual Machine (JVM) installed.
+
+If you already have Adobe Acrobat Reader, you won't need Acrobat Viewer. But if
+there is no available version of Acrobat Reader for your system, and you have a
+Java Virtual Machine installed, then Acrobat Viewer is for you. Written
+entirely in Java, Acrobat Viewer can be used as an application or a JavaBean.
+
+Acrobat Viewer can be licensed for free to be bundled with Java-related
+products, or integrated into custom Java solutions through the JavaBean
+interface. Please read the End User License Agreement for details.
+
+WWW: http://www.adobe.com/products/acrviewer/main.html
