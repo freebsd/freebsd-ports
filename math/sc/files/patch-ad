@@ -1,0 +1,19 @@
+--- cmds.c.orig	Mon May 11 20:43:34 1992
++++ cmds.c	Wed Feb 16 21:55:06 2000
+@@ -1800,14 +1800,14 @@
+ 	int	infd, outfd;
+ 	int	count;
+ 
+-	/* tpath will be the [path/]file ---> [path/]#file~ */
++	/* tpath will be the [path/]file ---> [path/]file~ */
+ 	strcpy(tpath, path);
+ 	if ((tpp = strrchr(tpath, '/')) == NULL)
+ 		tpp = tpath;
+ 	else
+ 		tpp++;
+ 	strcpy(fname, tpp);
+-	(void) sprintf(tpp, "#%s~", fname);
++	(void) sprintf(tpp, "%s~", fname);
+ 
+ 	if (stat(path, &statbuf) == 0)
+ 	{

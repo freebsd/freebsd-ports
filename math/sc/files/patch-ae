@@ -1,0 +1,10 @@
+--- format.c.orig	Mon May 11 20:43:34 1992
++++ format.c	Sat Dec  9 21:24:41 2000
+@@ -263,7 +263,6 @@
+ 	  break;
+       }
+     }
+-    zero_pad = strlen(decimal) - zero_pad;
+   }
+   (void) sprintf(prtfmt, "%%.%dlf", width);
+   (void) sprintf(mantissa, prtfmt, val);

@@ -1,5 +1,5 @@
---- lex.c.orig	Mon May 11 20:43:36 1992
-+++ lex.c	Thu Jul 30 20:26:51 1998
+--- lex.c.orig	Mon May 11 13:43:36 1992
++++ lex.c	Sun Dec  2 15:23:46 2001
 @@ -384,11 +384,11 @@
  	ctl('z'), 0
  };
@@ -14,3 +14,12 @@
  }
  
  void
+@@ -493,7 +493,7 @@
+     if (dumpindex && *dumpindex)
+ 	    return (*dumpindex++);
+ 
+-    c = toascii(getchar());
++    c = getchar();
+     biggest = 0;
+     almost = 0;
+ 
