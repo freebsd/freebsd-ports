@@ -29,6 +29,7 @@
     SUBDIR += bs
     SUBDIR += bugsx
     SUBDIR += CaribbeanStud
+    SUBDIR += bzflag
     SUBDIR += cgoban
     SUBDIR += columns
     SUBDIR += connect4
