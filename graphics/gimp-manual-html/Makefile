@@ -3,10 +3,11 @@
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/10 13:57:13 dburr Exp $
 #
 
 DISTNAME=	GimpUserManual-1.0.0
+PKGNAME=	GimpUserManual-${DOCFORMAT}-1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://manual.gimp.org/pub/manual/
 
@@ -42,8 +43,6 @@ pre-fetch:
 .endif
 
 .if ${DOCFORMAT} == "HTML"
-PKGNAME=	GimpUserManual-HTML-1.0.0
-
 EXTRACT_SUFX=	-html.tar.bz2
 WRKSRC=		${WRKDIR}/GimpUserManaul_v1.0.0
 
@@ -66,11 +65,9 @@ do-install:
 .endif
 
 .if ${DOCFORMAT} == "PDF"
-PKGNAME=	GimpUserManual-PDF-1.0.0
-
 DISTFILES=	GimpUserManual-1.0.0-pdf
 
-NO_EXTRACT=	yes
+EXTRACT_ONLY=	#empty
 NO_BUILD=	yes
 
 USE_X11=	yes
@@ -88,8 +85,6 @@ do-install:
 
 .if ${DOCFORMAT} == "PS"
 DISTNAME=	GimpUserManual-1.0.0-ps
-PKGNAME=	GimpUserManual-PS-1.0.0
-
 EXTRACT_SUFX=	.gz
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
