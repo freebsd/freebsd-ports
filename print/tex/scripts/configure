@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $# != 3 ]; then exit 1; fi
+
+#
+# The subdirectory searching in kpathsearch sometimes  fails (don't know why)
+# so let's disable the feature (It can be reenabled with the proper environment
+# variables though.
+#
+cd $3/kpathsea || exit 1;
+mv paths.h.in paths.h.in.orig || exit 1;
+sed -e s://:/: <paths.h.in.orig >paths.h.in || exit 1;
+
+exit 0;
