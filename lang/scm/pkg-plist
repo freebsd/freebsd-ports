@@ -3,7 +3,7 @@ bin/scm
 man/man1/scm.1
 lib/scm
 lib/slib
-@cwd /usr/gnu/info
+@cwd /usr/local/info
 slib.info
 slib.info-1
 slib.info-2
