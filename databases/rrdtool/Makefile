@@ -32,11 +32,15 @@ MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
 MAN3=		RRDp.3 RRDs.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ( ${PERL_LEVEL} <= 500503 )
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-perl-shared::RRDs.xs
+.endif
+
 .if defined(WITH_LATIN2)
 CONFIGURE_ARGS+=	--with-latin2
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not build on amd64 (needs to build shared libraries with -fPIC)"
