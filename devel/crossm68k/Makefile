@@ -8,16 +8,14 @@
 PORTNAME=	crossm68k
 PORTVERSION=	2.0
 CATEGORIES=	devel
-MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 # this dependency will cause m68kbinutils and m68kgcc to be built as well
-BUILD_DEPENDS=	${PREFIX}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/m68knewlib
+BUILD_DEPENDS=	${LOCALBASE}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/m68knewlib
 RUN_DEPENDS=	m68k-coff-gdb:${PORTSDIR}/devel/m68kgdb
 
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 
 do-install:	# empty

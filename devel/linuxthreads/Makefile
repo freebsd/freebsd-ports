@@ -14,7 +14,6 @@ DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
 MAINTAINER=    jasone@freebsd.org
 
-
 .include <bsd.port.pre.mk>
 
 # This port only works on i386 right now.
