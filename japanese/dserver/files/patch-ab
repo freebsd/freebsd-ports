@@ -1,6 +1,6 @@
 patches for server2.2-pl2
---- server2.2-pl2/daemon.c.orig	Sat Aug 10 02:10:32 1996
-+++ server2.2-pl2/daemon.c	Tue Jan 28 08:22:42 1997
+--- server2.2-pl2/daemon.c.orig	Sat Jan 31 09:53:47 1998
++++ server2.2-pl2/daemon.c	Sat Jan 31 09:53:20 1998
 @@ -13,6 +13,11 @@
  #include <sys/time.h>
  #include <ctype.h>
@@ -13,20 +13,15 @@ patches for server2.2-pl2
  #ifdef linux
  #include <string.h>
  #include <stdlib.h>
-@@ -34,10 +39,11 @@
+@@ -34,7 +39,6 @@
  #include "ndtp.h"
  #include "misc.h"
  
 -
-+#ifndef __FreeBSD__
  #ifdef DEBUG
  extern int debug;
  #endif
-+#endif
- 
- ENV env[MAXUSER];
- 
-@@ -104,8 +110,11 @@
+@@ -104,8 +108,11 @@
  #endif
  		exit(1);
  	}
@@ -39,9 +34,52 @@ patches for server2.2-pl2
  #ifdef SYSLOG
  		syslog(LOG_ERR,"Unable to bind address /iserver_init\n");
  #endif
---- server2.2-pl2/lookup.c.orig	Sat Aug 10 02:10:32 1996
-+++ server2.2-pl2/lookup.c	Tue Jan 28 08:22:42 1997
-@@ -501,6 +501,54 @@
+--- server2.2-pl2/lookup.c.orig	Fri Aug  9 19:10:32 1996
++++ server2.2-pl2/lookup.c	Sat Jan 31 11:29:09 1998
+@@ -267,13 +267,25 @@
+ 	}
+ }
+ 
+-dict_read(dict,ptr,size,count)
++static int
++dict_read_new(Dict *dict,char *ptr,int size,int count)
++/* dict_read only for showhonmon function */
++{
++  int	i;
++  size *= count;
++  for( i=0; i<size; i++,ptr++ ) {
++    *ptr = dic_getc(dict);
++  }
++}
++
++static int
++dict_read_old(dict,ptr,size,count)
+ Dict *dict;
+ char *ptr;
+ {
+ 	int s;
+ #ifdef DEBUG
+-  printf( "dict_read size[%d] mode[%d]\n", size, dict->compress_type );
++  printf( "dict_read_old size[%d] mode[%d]\n", size, dict->compress_type );
+ #endif
+ 	if (dict->compress_type == COMPRESS_TYPE_EDIC) {
+ 		size *= count;
+@@ -374,12 +386,12 @@
+ 
+ 	} else {
+ 		dict_seekframe(dict,1);
+-		if(dict_read(dict,index[0],BS,1)!=1) return -1;
++		if(dict_read_old(dict,index[0],BS,1)!=1) return -1;
+ 		e = TWOBYTEUINT(index[0]);
+ 		dict->index = NULL;
+ 
+ 		for(; e>0; e--) {
+-		    if(dict_read(dict,index[0],BS,1)!=1) return -1;
++		    if(dict_read_old(dict,index[0],BS,1)!=1) return -1;
+ 		    if(!bcmp(index[0],null,BS)) break;
+ 
+ 		    new = (Index *)calloc(1,sizeof(Index));
+@@ -501,6 +513,55 @@
  	else return q+6;
  }
  
@@ -75,6 +113,7 @@ patches for server2.2-pl2
 +	    ss = (*s);
 +	    tt = (*t);
 +	    if (n <= 0)  tt = 0; /* string terminate 95.2.8 by T.Motoda */
++	    if(tt==0x20 && *(t+1)==0)tt=0; /* Delete last ' ' */
 +	    
 +		if(r==SHORT && (ss=='*' || ss=='?')) {
 +			return 0;
@@ -96,7 +135,7 @@ patches for server2.2-pl2
  findentry_int(key,realkey,frm,env_p)
  unsigned char *key,*realkey;
  ENV *env_p;
-@@ -509,6 +557,9 @@
+@@ -509,6 +570,9 @@
  	unsigned char frame[FRAMESIZE+2];
  	static char msg[32];
  	Dict *dict;
@@ -106,7 +145,7 @@ patches for server2.2-pl2
  
  	dict=env_p->dict;
  
-@@ -542,12 +593,21 @@
+@@ -542,12 +606,21 @@
  				putnstr(q,s);
  				printf("\n");
  #endif
@@ -128,7 +167,7 @@ patches for server2.2-pl2
  			}
  		}
  		else if(frame[1]==0) {
-@@ -625,7 +685,11 @@
+@@ -625,7 +698,11 @@
  						putnstr(q,s);
  #endif
  						if(!match) {
@@ -140,7 +179,7 @@ patches for server2.2-pl2
  						}
  						q+=s;
  #ifdef DEBUG
-@@ -644,7 +708,11 @@
+@@ -644,7 +721,11 @@
  					putnstr(q,s);
  #endif
  					if(!match) {
@@ -152,8 +191,198 @@ patches for server2.2-pl2
  					}
  #ifdef DEBUG
  					putchar('\n');
---- server2.2-pl2/Makefile.orig	Sat Aug 10 02:12:05 1996
-+++ server2.2-pl2/Makefile	Tue Jan 28 08:22:43 1997
+@@ -722,6 +803,28 @@
+ #endif
+ }
+ 
++static void myGetHiLo( dict, env_p, hi, lo )
++Dict *dict;
++ENV *env_p;
++int *hi;	/*(out)*/
++int *lo;	/*(out)*/
++{
++  int	c;
++
++  c = dic_getc(dict);
++  if( c == 0x1f ||
++      dict_set[env_p->dict_num].code == FULL) {
++    *hi = c;
++    *lo = dic_getc(dict);
++  } else {
++    *lo = c;
++    if ( *lo < 32) {
++       *hi = *lo;
++       *lo = dic_getc(dict);
++    } else *hi = 0x23;
++  }
++}
++
+ showhonmon(frm,ofs,raw,env_p)
+ ENV *env_p;
+ {
+@@ -742,7 +845,6 @@
+ 	int half, height,width ,ref, count, fig,size;
+ 	int i,j;
+ 	char c;
+-
+ 	fig = FALSE;
+ 	half= dict_set[env_p->dict_num].code ? 1 : 0;
+ 	dict=env_p->dict;
+@@ -774,17 +876,20 @@
+ 
+ 	  if( dic_seek(dict,frm,ofs) ) return;
+ 
+-	  hi = dic_getc(dict);            /* Fetch */
+-          lo = dic_getc(dict);
++	/*hi = dic_getc(dict);            ** Fetch */
++	/*lo = dic_getc(dict);*/
++	  myGetHiLo( dict, env_p, &hi, &lo );
+ 	  while(!(hi==0x1f && lo==0x02) && 	/* if Doc start */
+ 	        !(hi==0x1f && lo==0x41) && 	/* if Key start */
+ 	        !(hi==0x1f && lo==0x45)) {	/* if Fig start */
++		if( hi!=0x1f ) { goto loop1; }
+ 		if(hi==0x1f && lo==0x09){        /* if not  /* if TAB  skip 2byte */
+                        	hi = dic_getc(dict);
+                        	lo = dic_getc(dict);
+                 }
+-		hi = dic_getc(dict);
+-		lo = dic_getc(dict);
++	      /*hi = dic_getc(dict);*/
++	      /*lo = dic_getc(dict);*/
++		myGetHiLo( dict, env_p, &hi, &lo );
+ 	  }
+ 	 /* Doc ,Key or Fig start */
+ 	  /* if Key start */
+@@ -799,7 +904,7 @@
+ 	     fig=TRUE;
+ 	  }
+ 
+-	    if (dict_set[env_p->dict_num].code == FULL) {
++	  /*if (dict_set[env_p->dict_num].code == FULL) {
+                 hi = dic_getc(dict);
+                 lo = dic_getc(dict);
+             } else {
+@@ -808,8 +913,9 @@
+                      hi = lo;
+                      lo = dic_getc(dict);
+                 } else hi = 0x23;
+-            }
+-	  
++            }*/
++	    myGetHiLo( dict, env_p, &hi, &lo );
++loop1:
+ 	  while(!(hi==0x00 && 
+ 		   lo==dict_set[env_p->dict_num].endcode &&
+ 		    TAB ) /* 1f09(tab)+0001 -> end */ 
+@@ -867,7 +973,7 @@
+ 	      case 0x31:	/* fig start */
+ 	 	hi = dic_getc(dict);
+ 	 	lo = dic_getc(dict);
+-		dict_read(dict,rbuf,4,1);
++		dict_read_new(dict,rbuf,4,1);
+ 		/* fread(rbuf,4,1,dict->stream); */
+ 		height = TWOBCDUINT(rbuf);
+ 		width  = TWOBCDUINT(rbuf+2);
+@@ -877,7 +983,7 @@
+ 	 		hi = dic_getc(dict);
+ 	 		lo = dic_getc(dict);
+ 	        } while(!(hi==0x1f && lo==0x51 ));
+-		dict_read(dict,rbuf,6,1);
++		dict_read_new(dict,rbuf,6,1);
+ 		/*fread(rbuf,6,1,dict->stream); */
+ 		frmtmp = FOURBCDUINT(rbuf);
+ 		ofstmp  = TWOBCDUINT(rbuf+4);
+@@ -903,7 +1009,7 @@
+ 	       case 0x44:	/* fig start */
+ 	 	hi = dic_getc(dict);
+ 	 	lo = dic_getc(dict);
+-		dict_read(dict,rbuf,8,1);
++		dict_read_new(dict,rbuf,8,1);
+ 		/* fread(rbuf,8,1,dict->stream); */
+ 		height = FOURBCDUINT(rbuf);
+ 		width  = FOURBCDUINT(rbuf+4);
+@@ -916,21 +1022,21 @@
+ 		  lo = dic_getc(dict);
+ 		break;
+ 	      case 0x48:	/*  music ref start */
+-		dict_read(dict,rbuf,10,1);
++		dict_read_new(dict,rbuf,10,1);
+ 		/*fread(rbuf,10,1,dict->stream); */
+ 		frmtmp=(unsigned long int)SIXBCDUINT(rbuf);
+ 		ofstmp=FOURBCDUINT(rbuf+6);
+ 		write(cur_s,buf,strlen(buf));
+ 		break;
+ 	      case 0x51:	/* pointer to fig page:offset(BCD)*/
+-		dict_read(dict,rbuf,6,1);
++		dict_read_new(dict,rbuf,6,1);
+ 		frmtmp=FOURBCDUINT(rbuf);
+ 		ofstmp=TWOBCDUINT(rbuf+4);
+ 		sprintf(buf,"<%x:%x>",frmtmp,ofstmp);
+ 		write(cur_s,buf,strlen(buf));
+ 		break;
+ 	      case 0x52:	/* picture end with page:offset(BCD)*/
+-		dict_read(dict,rbuf,6,1);
++		dict_read_new(dict,rbuf,6,1);
+ 		frmtmp=FOURBCDUINT(rbuf);
+ 		ofstmp=TWOBCDUINT(rbuf+4);
+ 		sprintf(buf,"<%x:%x>",frmtmp,ofstmp);
+@@ -939,7 +1045,7 @@
+ 	      case 0x53:	/* end with page:offset(BCD)*/
+ 		ref   = FALSE;
+ 		if(fig==FALSE){ 
+-		  dict_read(dict,rbuf,8,1);
++		  dict_read_new(dict,rbuf,8,1);
+ 		  frmtmp=FOURBCDUINT(rbuf);
+ 		  ofstmp=FOURBCDUINT(rbuf+4);
+ 		  sprintf(buf,"<%x:%x>",frmtmp,ofstmp);
+@@ -958,7 +1064,7 @@
+ 	      case 0x62:	/* refrence end with page:offset(BCD) */
+ 	      case 0x63:	/* menu end with page:offset(BCD) */
+ 		ref   = FALSE;
+-		dict_read(dict,rbuf,6,1);
++		dict_read_new(dict,rbuf,6,1);
+ 		frmtmp=FOURBCDUINT(rbuf);
+ 		ofstmp=TWOBCDUINT(rbuf+4);
+ 		sprintf(buf,"<%x:%x>",frmtmp,ofstmp);
+@@ -966,7 +1072,7 @@
+ 		break;
+ 	      case 0x64:	/* fig ref  end with page:offset(BCD) */
+ 		honmon = TRUE;
+-		dict_read(dict,rbuf,6,1);
++		dict_read_new(dict,rbuf,6,1);
+ 		frmtmp=FOURBCDUINT(rbuf);
+ 		ofstmp=TWOBCDUINT(rbuf+4);
+ 		sprintf(buf,"<%x:%x>",frmtmp,ofstmp);
+@@ -998,7 +1104,7 @@
+ 	       puteucz2h(cur_s,hi,lo,env_p->dict_num);
+ 	    }
+ 
+-	    if (dict_set[env_p->dict_num].code == FULL) {
++	  /*if (dict_set[env_p->dict_num].code == FULL) {
+                 hi = dic_getc(dict);
+                 lo = dic_getc(dict);
+             } else {
+@@ -1007,7 +1113,8 @@
+                      hi = lo;
+                      lo = dic_getc(dict);
+                 } else hi = 0x23;
+-            }
++            }*/
++	    myGetHiLo( dict, env_p, &hi, &lo );
+ 	  }
+ 	}
+ 	write(cur_s,"\n",1);
+@@ -1108,7 +1215,7 @@
+     }
+   } else {
+     dict_seekframe(dict,frm);
+-    dict_read(dict, buff, FRAMESIZE, 1);
++    dict_read_old(dict, buff, FRAMESIZE, 1);
+   }
+   return 1;
+ 
+--- server2.2-pl2/Makefile.orig	Sat Jan 31 09:53:35 1998
++++ server2.2-pl2/Makefile	Sat Jan 31 09:53:20 1998
 @@ -2,33 +2,39 @@
  #CC=cc
  CC=gcc
@@ -227,9 +456,9 @@ patches for server2.2-pl2
  #include <net/if.h>
  #include <sys/ioctl.h>
  
---- server2.2-pl2/table/dserver_access.orig	Sat Aug 10 02:10:27 1996
-+++ server2.2-pl2/table/dserver_access	Tue Jan 28 08:22:43 1997
-@@ -1,14 +1,20 @@
+--- server2.2-pl2/table/dserver_access.orig	Sat Jan 31 09:53:59 1998
++++ server2.2-pl2/table/dserver_access	Sat Jan 31 09:53:20 1998
+@@ -1,14 +1,22 @@
 -#DICT kojien /usr/local/etc/CDdict/yrrs096/koujien/start. "¹­¼­±ñÂè£´ÈÇ" 1  600
 -##DICT eiwa /usr/local/etc/CDdict/yrrs118/chujiten/start. "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
 -##DICT eiwa /usr/local/etc/CDdict/yrrs118/chujiten/start.comp "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
@@ -241,26 +470,28 @@ patches for server2.2-pl2
 -#DICT readers /usr/local/etc/CDdict/yrrs172/readers/start. "¥ê¡¼¥À¡¼¥º±ÑÏÂ" 1  600
 -#DICTROOT /usr/local/etc/CDdict 2 500
 +#DICT kojien PREFIX_DIR/share/dict/cdrom/yrrs096/koujien/start "¹­¼­±ñÂè£´ÈÇ" 1  600
-+#DICT kojien-furoku PREFIX_DIR/share/dict/cdrom/yrrs096/furoku/start "¹­¼­±ñÂè£´ÈÇÉÕÏ¿" 1  600
-+#DICT waei PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
-+#DICT eiwa PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
-+#DICT readers PREFIX_DIR/share/dict/cdrom/yrrs172/readers/start "¥ê¡¼¥À¡¼¥º±ÑÏÂ" 1  600
-+#DICT crfre PREFIX_DIR/share/dict/cdrom/yrrs091/crfre/start "»°¾ÊÆ²¥¯¥é¥¦¥óÊ©ÏÂ" 1  600
-+#DICT crger PREFIX_DIR/share/dict/cdrom/yrrs092/crger/start "»°¾ÊÆ²¥¯¥é¥¦¥óÆÈÏÂ" 1  600
-+#DICT italian /usr/local/share/dict/cdrom/yrrs214/jiten/start "¸½Âå¥¤¥¿¥ê¥¢¸ìÉ½¸½¼­Åµ" 1  600
-+#DICT italian-j /usr/local/share/dict/cdrom/yrrs214/jiten/start "¸½Âå¥¤¥¿¥ê¥¢¸ìÉ½¸½¼­Åµ" 1  600
-+#DICT oxford /usr/local/share/dict/cdrom/san042/oxford/start "OxfordEnglishDictionary" 1  600
-+#DICT CDkojien PREFIX_DIR/share/dict/cdrom/cdkouji/koujien/data/honmon "¹­¼­±ñ£Ã£ÄÈÇ" 1  600
++##DICT kojien-furoku PREFIX_DIR/share/dict/cdrom/yrrs096/furoku/start "¹­¼­±ñÂè£´ÈÇÉÕÏ¿" 1  600
++##DICT waei PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
++##DICT eiwa PREFIX_DIR/share/dict/cdrom/cdchujiten/chujiten/data/honmon "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
++##DICT readers PREFIX_DIR/share/dict/cdrom/yrrs172/readers/start "¥ê¡¼¥À¡¼¥º±ÑÏÂ" 1  600
++##DICT crfre PREFIX_DIR/share/dict/cdrom/yrrs091/crfre/start "»°¾ÊÆ²¥¯¥é¥¦¥óÊ©ÏÂ" 1  600
++##DICT crger PREFIX_DIR/share/dict/cdrom/yrrs092/crger/start "»°¾ÊÆ²¥¯¥é¥¦¥óÆÈÏÂ" 1  600
++##DICT italian /usr/local/share/dict/cdrom/yrrs214/jiten/start "¸½Âå¥¤¥¿¥ê¥¢¸ìÉ½¸½¼­Åµ" 1  600
++##DICT italian-j /usr/local/share/dict/cdrom/yrrs214/jiten/start "¸½Âå¥¤¥¿¥ê¥¢¸ìÉ½¸½¼­Åµ" 1  600
++##DICT oxford /usr/local/share/dict/cdrom/san042/oxford/start "OxfordEnglishDictionary" 1  600
++##DICT CDkojien PREFIX_DIR/share/dict/cdrom/cdkouji/koujien/data/honmon "¹­¼­±ñ£Ã£ÄÈÇ" 1  600
++##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
++##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
++##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
++##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
++##DICT daijirin PREFIX_DIR/share/dict/cdrom/yrrs082/dgx01/start "Âç¼­ÎÓ" 1 600
++#
 +#DICTROOT PREFIX_DIR/share/dict/cdrom 2 500
  ## access controle
  #
 -topics
 +localhost
  #
-+##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
-+##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
-+##DICT eiwa PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "¸¦µæ¼ÒÃæ±ÑÏÂ" 25 600
-+##DICT waei PREFIX_DIR/share/dict/cdrom/yrrs118/chujiten/start.comp "¸¦µæ¼ÒÃæÏÂ±Ñ" 25 600
 --- server2.2-pl2/compress/Makefile.orig	Sat Aug 10 02:10:29 1996
 +++ server2.2-pl2/compress/Makefile	Tue Jan 28 08:22:43 1997
 @@ -11,11 +11,15 @@

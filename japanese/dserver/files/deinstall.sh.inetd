@@ -5,6 +5,3 @@ cp /etc/services /etc/services.bak
 echo "updating /etc/inetd.conf"
 cp /etc/inetd.conf /etc/inetd.conf.bak
 (grep -v '\bndtp\b' /etc/inetd.conf.bak) > /etc/inetd.conf
-echo "updating site-start.el"
-cp PREFIX_DIR/lib/mule/site-lisp/site-start.el PREFIX_DIR/lib/mule/site-lisp/site-start.el.bak
-grep -v diclookup-mule PREFIX_DIR/lib/mule/site-lisp/site-start.el.bak > PREFIX_DIR/lib/mule/site-lisp/site-start.el

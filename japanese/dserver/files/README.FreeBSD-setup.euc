@@ -2,17 +2,18 @@
 
                                                              3.Nov.1996
 						Revised	    20.Dec.1996
+						Revised	    31.Jan.1998
                                          三田吉郎 <mita@jp.FreeBSD.org>
 	     Special thanks to MIHIRA Yoshiro <sanpei@yy.cs.keio.ac.jp>
 
 	目次
 	I. インストール
 	   I.1. setup.sh の具体的な作業
-	   I.2. 4: 辞書のコピー・マウント
-	   I.3. サーバの動作テスト
+	   I.2. 辞書のコピー・マウント
+	   I.3. dserver_access ファイルの整備
+	   I.4. サーバの動作テスト
 	II. 使う
 	   II.1. kenjiro
-	   II.2. diclookup-mule
 	III. 削除(uninstall)
 	IV. `inetd起動のdserver'を作る方法
 	    IV.1. `inetd起動のdserverとは何か'
@@ -20,10 +21,7 @@
 	    IV.3. inetd起動のdserverを作る．
 	    IV.4. 初期設定スクリプトの違い．
 	V. エラーとその対策
-	    V.1 muleで辞書を引こうとしたのですが，
-	        いつまでたっても切り替わりません．
-	    V.2. muleで，`process *ndtp* not running'というエラーが出ます．
-	    V.3. 辞書を10種類以上にしたら途端にBus Errorで落っこちます．
+	    V.1. 辞書を10種類以上にしたら途端にBus Errorで落っこちます．
 
 ※ 文中の${PREFIX}は，/usr/localに読み変えてください，portsを利用して
    コンパイルすると，${PREFIX}を/usr/local以外にも，自分の好みの
@@ -36,11 +34,10 @@ I. インストール
 
 	1: [/etc/services] に ndtp プロトコルのエントリを追加
 	2: dserver 起動用スクリプトの準備
-	3: mule クライアント diclookup-mule 用の初期設定
-	4: 辞書をコピーまたはマウント
+	3: 辞書をコピーまたはマウント
 
     これらの作業は, [${PREFIX}/lib/dserver/setup.sh] を起動すると, 1〜
-  3 までを自動的に設定してくれます．
+  2 までを自動的に設定してくれます．
 
   ※ ${PREFIX}
      ここで ${PREFIX} とは ports をコンパイル時の環境変数 PREFIX を
@@ -56,6 +53,7 @@ I.1. setup.sh の具体的な作業
 -----
 ndtp	2010/tcp	#Network Dictionary Transfer Protocol
 -----
+   ※ この行は, dserver を利用する*全てのマシン*に追加する必要があります.
 
 2: [${PREFIX}/etc/rc.d/dserver.sh] に次の行を追加します. 
 
@@ -65,28 +63,11 @@ ndtp	2010/tcp	#Network Dictionary Transfer Protocol
 # dserver - dictionary server
 if [ -f /usr/local/lib/dserver/dserver ] ; then
 	/usr/local/lib/dserver/dserver&
-	echo 'dserver'
+	echo -n 'dserver'
 fi
 -----
 
-3: [${PREFIX}/lib/mule/site-lisp/site-start.el] に次の行を追加します.
-
-   これにより, mule から特別な設定無しに利用できるようになります.
-
------
-;;; diclookup-mule: Online dictionary
-(autoload 'online-dictionary "diclookup-mule" "Online dictionary." t nil)
-(autoload 'od:lookup-pattern-edit "diclookup-mule" "Look up a word." t nil)
-(setq od-chujiten-flag t)       ; diclookup-mule
-(setq od-dictfile-list '("od-chujiten" "od-kojien")) ; diclookup-mule
-(setq dserver-server-list '("localhost")) ; diclookup-mule
-(setq od-frame-geometry "+0-0" od-hide-frame 'make-invisible) ; diclookup-mule
-(add-hook 'od-really-quit-hook 'od-delete-frame) ; diclookup-mule
-(define-key-after menu-bar-file-menu [dictionary] ; diclookup-mule
-        '("Online Dictionary" . online-dictionary) 'calendar) ; diclookup-mule
------
-
-I.2. 4: 辞書のコピー・マウント
+I.2. 辞書のコピー・マウント
 
     [${PREFIX}/share/dict/cdrom/] に，それぞれの辞書をマウントします．
   [${PREFIX}/lib/dserver/dserver_access] のエントリと整合性を持たせる
@@ -104,7 +85,57 @@ makedic [オリジナルの辞書ファイル名] [新しい辞書ファイル名]
     広辞苑は×，研究社の事典は○であるなどと，各社異なります．
  [${PREFIX}/lib/dserver/doc/README.dserver] を御覧下さい．
 
-I.3. サーバの動作テスト
+I.3. dserver_access ファイルの整備
+    dserver は, ${PREFIX}/lib/dserver/dserver_access というファイルで,
+        1. どのマシンからのアクセスを受け付けるか
+        2. どういう名前のファイルを辞書ファイルとして登録するか, 
+           その辞書ファイルへ何人のアクセスを同時に受けるか,
+           辞書内部に埋め込まれた外字を, どうやって真似て表示するか
+    といった情報を取得します.  従って, このファイルは自分で書く必要があります.
+
+   一行一行, 辞書エントリやアクセス許可ホスト名を並べて書きます.
+   順番はどうでもいいです.
+  附属の ${PREFIX}/lib/dserver/dserver_access が参考になるでしょう.
+   1. どのホストからのアクセスを受け付けるか
+        アクセスを受け付けるホスト名を書きます.
+
+-----
+localhost 
+-----
+
+        とするのが一般的で, こうすると dserver をインストールした
+        そのホストからアクセスできるようになります.  
+   2. 辞書のエントリ
+
+-----
+#DICT eiwa /cdrom/chujiten/data/honmon "研究社中英和" 25 600
+#DICT waei /cdrom/chujiten/data/honmon "研究社中和英" 25 600
+-----
+
+のように, #DICT につづけて, 辞書にアクセスするための名前,
+辞書本体のファイルのありか, 辞書名, 同時にアクセスできるユーザ数,
+タイムアウトまでの時間を記入します.  
+
+ところで, 以上の例は, 
+パシフィックハイテックさん htt://www.pht.co.jp/ が出している,
+FreeBSD Pro 2.2.6-R に付いてくる, EPWING 版 研究社新英和辞典6.4版
+用の設定です. それで, この辞書で, 別 port になっている diclookup-mule
+(ja-diclookup-mule*という名前です) 和英検索をするためには, 
+${PREFIX}/lib/dserver/waei.tbl というファイルの先頭の,
+
+-----
+#kana=hyouki
+-----
+
+という行のコメントを外して,
+
+-----
+kana=hyouki
+-----
+
+とする必要があります. 参考までに.
+
+I.4. サーバの動作テスト
 
     desrver を立ち上げると，dserver が使えるようになるはずです．次の
    ように打ち込んで，簡単な接続試験をしてみましょう．
@@ -143,7 +174,7 @@ $A
 --------
 
 	0-1) DNS が使える環境であるが, [/etc/host.conf] で bind より 
-           host を先に書いている場合. 
+           hosts を先に書いている場合. 
 
 	0-2) DNS を使えず [/etc/hosts] だけを参照する場合. 
 
@@ -188,38 +219,6 @@ II.1. kenjiro
 
     リストに無い辞書を読みたい場合は，ports を用意して make patch の
   後 [${WRKSRC}/clients/kenjiro/config.h] を書き換えてmakeし直します．
-
-II.2. diclookup-mule
-
-    私はこちらのクライアントを気に入っています．M-x
-  online-dictionary<リターン>で起動します．
-
-    [${PRFIX}/lib/mule/site-lisp/od-***.elc]が，それぞれの辞書に
-  対応した外字ファイルです，これをハックすれば大抵の辞書を読むことが
-  できるでしょう．
-
-    ハックするときに，外字の形をどうやって調べるかが問題ですが，ひな
-  がたを適当に作っておいて実際に辞書を読むと
------
-著作権表示
-外字１
-外字２
------
-  などとメニューが表示されます．ここで外字を選択すると，
-
-	1. この辞書で登録されている外字の文字コード
-	2. 外字のビットマップ(;)表示
-	3. 外字をXウィンドウとテキスト端末とでどう表示しているか
-
-  がわかりますので，それに合わせて外字テーブル(とそのコードの上位
-  8bitの数)を書き換えます．
-
-    この ports に入っている od-crown.elc(クラウン仏和，クラウ
-  ン独和)，od-italian.elc(現代イタリア語表現辞典)，od-oxford.el
-  (オクスフォード英英辞典，シソーラス類義語辞典)は，
-  od-chujiten.el(新英和和英)を上述の方法で私三田が hack 
-  したものです．なれれば一辞書を半日で対応できます．ぜひ対応させて，
-  本家に contribute しましょう．
 
 III. 削除(uninstall)
 
@@ -299,50 +298,7 @@ IV.4. 初期設定スクリプトの違い．
    使い方はinetd, standalone用とも一緒です．
 
 V. エラーとその対策
-
-V.1. muleで辞書を引こうとしたのですが，いつまでたっても切り替わりません．
-
-    muleで，
------
-M-x online-dictionary
------
-    と入力すると，辞書用のフレームが新しく作られますが，その後いつまで
-    経ってもタイトルが表示されない症状です．
-
-    接続許可を正しく出しているかを疑ってみます．
-    I.3. サーバの動作テスト に従って，手動で接続してみます．
-    接続に失敗している場合は，${PREFIX}/dserver/dserver_accessファイルで
-    アクセス許可を正しく出します．
-
------接続に成功している例:
-% telnet localhost ndtp
-lavender: {1234} telnet localhost ndtp
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-A
-$A
------
------接続に失敗している例:
-% telnet localhost ndtp
-lavender: {1234} telnet localhost ndtp
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-A
-$N
------
-
-V.2. muleで，`process *ndtp* not running'というエラーが出ます．
-
-    standaloneの場合，dserverが何かの原因でこけたのでしょう．
-    もう一度dserverを立ちあげ直してみてください．
------
-%su root
-#/usr/local/lib/dserver/dserver&
------
-
-V.3. 辞書を10種類以上にしたら途端にBus Errorで落っこちます．
+V.1. 辞書を10種類以上にしたら途端にBus Errorで落っこちます．
 
     server2.2-pl2/config.hの，MAXDICTの値を10から増やして
     コンパイルし直しましょう．
