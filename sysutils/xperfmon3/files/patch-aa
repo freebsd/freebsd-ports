@@ -1,9 +1,9 @@
-diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
+diff -c -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 *** ../xperfmon++/freebsd_system.c	Thu Jan  1 01:00:00 1970
---- ./freebsd_system.c	Mon May  6 18:39:46 1996
+--- ./freebsd_system.c	Sun Sep 22 17:14:41 1996
 ***************
 *** 0 ****
---- 1,580 ----
+--- 1,581 ----
 + /*
 +  * Perfmon Performance Monitor
 +  *
@@ -11,7 +11,7 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 +  * Copyright 1989, PCS Computer Systeme GmbH, West Germany
 +  * Copyright 1994, Sterling Software @ NASA-Ames Research Center
 +  * Copyright 1995, Regents of the University of California,
-+  *                 Lars Köller <Lars_Koeller@odie.physik2.uni-rostock.de
++  *                 Lars Kler <Lars_Koeller@odie.physik2.uni-rostock.de
 +  *
 +  * Permission to use, copy, modify, distribute, and sell this software and its
 +  * documentation for any purpose is hereby granted without fee, provided that
@@ -102,7 +102,8 @@ diff -cd -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 +  * 2.2-current has been bumped to 199512 recently).  Recognize the old
 +  * 2.2-current as NFSv3 for a grace period.
 +  * FreeBSD 2.0.5 was 199504, btw.  Both, 2.0.5 and 2.1 don't have
-+  * NFSv3.  (FreeBSD-2.1.5 is 199607)
++  * NFSv3.
++  * Also 2.1.5 which is 199607 don't have NFSv3! So check > 199607
 +  */
 + #if __FreeBSD_version > 199607 || __FreeBSD_version == 199508
 + # define HAS_NFS_V3
