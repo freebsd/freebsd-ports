@@ -11161,6 +11161,7 @@ wakeonlan	ports/net/wakeonlan
 walker		ports/dns/walker
 wamcc		ports/lang/wamcc
 wampager	ports/x11-wm/wampager
+wanderer	ports/games/wanderer
 wanderlust	ports/mail/wanderlust
 wanderlust-emacs20	ports/mail/wanderlust-emacs20
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
