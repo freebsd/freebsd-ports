@@ -1,7 +1,7 @@
-bin/diagnostics
 bin/fitting
 bin/fitting_sd
 bin/fitting_simplex
+bin/gaul_diagnostics
 bin/goldberg1
 bin/goldberg2
 bin/mixed
@@ -24,16 +24,18 @@ bin/struggle5_forked
 bin/struggle5_mp
 bin/struggle_dc
 bin/struggle_forked
+bin/struggle_mp
+bin/struggle_mpi
 bin/struggle_randomsearch
 bin/struggle_ss
 bin/struggle_systematicsearch
+bin/struggle_threaded
 bin/test_ga
 bin/test_sd
 bin/test_simplex
 bin/wildfire
 bin/wildfire_forked
 bin/wildfire_loadbalancing
-include/gaul.h
 include/gaul/avltree.h
 include/gaul/compatibility.h
 include/gaul/ga_bitstring.h
@@ -59,14 +61,11 @@ include/gaul/linkedlist.h
 include/gaul/log_util.h
 include/gaul/memory_chunks.h
 include/gaul/memory_util.h
-include/gaul/mpi_util.h
 include/gaul/nn_util.h
 include/gaul/random_util.h
-include/gaul/str_match.h
-include/gaul/str_util.h
 include/gaul/table_util.h
 include/gaul/timer_util.h
-@dirrm include/gaul
+include/gaul.h
 lib/libgaul.a
 lib/libgaul.so
 lib/libgaul.so.0
@@ -76,3 +75,4 @@ lib/libgaul_util.so.0
 lib/libnn_util.a
 lib/libnn_util.so
 lib/libnn_util.so.0
+@dirrm include/gaul
