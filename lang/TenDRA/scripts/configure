@@ -34,6 +34,10 @@ mkdir $WRKSRC/src/lib/env/freebsd/aout/80x86
 cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-P5 <<EOF
 +FLAG_TRANS	"-K5"
 EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-aout
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-aout <<EOF
+/* This is default */
+EOF
 # Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-PIC
 cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-PIC <<EOF
 /* empty */
