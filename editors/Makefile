@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.51 1998/04/19 05:16:59 mph Exp $
+# $Id: Makefile,v 1.52 1998/05/06 12:43:02 tg Exp $
 #
 
     SUBDIR += asedit
@@ -31,6 +31,8 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
+    SUBDIR += xemacs-mule
+    SUBDIR += xemacs-mule-common
     SUBDIR += xemacs20
     SUBDIR += xvile
 
