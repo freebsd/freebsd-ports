@@ -88,6 +88,7 @@
     SUBDIR += jx
     SUBDIR += lesstif
     SUBDIR += libbonoboui
+    SUBDIR += libbonobouimm
     SUBDIR += libgail-gnome
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeprintui20
