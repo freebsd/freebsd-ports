@@ -1,0 +1,239 @@
+# $FreeBSD$
+#
+# Configurable options for mail/exim. Note that the options listed
+# here are the defaults, so if you want to change them you have to
+# specify the opposite version in the command line, e.g.
+#  `make WITHOUT_EXISCAN=yes WITH_SASLAUTHD=yes install'
+#
+# `make WITH_EXISCAN=no WITHOUT_SASLAUTHD=no' will not give the expected results.
+
+#WITH_EXISCAN
+# Exim will be built with exiscan email content scanner support.
+
+#WITH_BDB_VER=		1, 4, 41, 42
+# BDB_VER is the version of the Berkeley DB library to use, and
+# may be 1, which corresponds to version 1.85 in the base system, 4,
+# 41 or 42 which depends on the databases/db4[12] ports.
+
+#WITH_DEFAULT_CHARSET=	ISO-8859-1, *
+# When Exim is decoding MIME "words" in header lines it converts any foreign
+# character sets to the one that is set in the headers_charset option.
+# The default setting is defined by this setting
+
+#WITH_PERL
+# Embedded Perl interpreter, which allows Perl subroutines to
+# be called during string expansion.
+
+#! lookup types
+
+#WITHOUT_OPENLDAP
+#WITH_OPENLDAP_VER=	auto, 21, 22
+# Link against libldap.
+# Define OPENLDAP_VER to specify a particular version of
+# OpenLDAP to use. Valid values are currently auto, 21 and 22.
+# The use of `auto' is recommended to avoid conflicting with
+# other ports that use the OpenLDAP client libraries.
+# Exim also supports NETSCAPE and SOLARIS7 lookup types, but no
+# client libraries exist for these in the ports tree.
+
+#WITHOUT_MYSQL
+#WITH_MYSQL_VER=	auto, 323, 40, 41, 50
+#WITHOUT_PGSQL
+#WITH_POSTGRESQL_PORT=	auto, databases/postgresql7, databases/postgresql73, databases/postgresql-devel, databases/pgcluster, *
+# Link against libmysqlclient and libpq respectively.
+# Define MYSQL_VER to specify a particular version of MySQL to
+# use.  Valid values are auto, 323, 40, 41 and 50.
+# The use of `auto' is recommended to avoid conflicting with
+# other ports linking against MySQL client libraries.
+
+#WITH_CDB
+#WITH_DNSDB
+#WITH_DSEARCH
+#WITH_LSEARCH
+#WITH_NIS
+#WITH_PASSWD
+# Support for CDB-style, DNS-style, directory-list, wildcarded-file, NIS
+# and /etc/passwd lookups respectively.
+
+#! authentication mechanisms
+
+#WITH_PAM
+#WITH_AUTH_CRAM_MD5
+#WITH_AUTH_PLAINTEXT
+#WITH_AUTH_SPA
+# Built-in support for the PAM, RFC 2195, RFC 2595 and
+# Microsoft "Secure Password Authentication" authentication mechanisms,
+# used for SMTP AUTH.
+
+#WITHOUT_SASLAUTHD
+# Enable the use of the Cyrus SASL authentication daemon.
+
+#WITHOUT_PWCHECK
+# As an alternative to SASLAUTHD, you can define PWCHECK to link
+# against libsasl for SMTP AUTH authentication via the Cyrus SASL
+# pwcheck daemon.
+# THIS MECHANISM IS DEPRECATED!
+
+#WITHOUT_AUTH_RADIUS
+# Link against libradius to support radius (RFC 2865) authentication.
+
+#! optional features
+
+#WITH_TLS
+# Link against OpenSSL; required for STARTTLS.
+
+#WITH_IPV6
+# Enable IPv6 support in the compiled exim binary.  Exim compiled
+# with IPv6 support will still operate on systems that do not have
+# IPv6 kernel support, so this should not be necessary.
+
+#WITH_MAILDIR
+#WITH_MAILSTORE
+#WITH_MBX
+# Built-in support for additional mailbox formats.
+
+#WITH_LMTP
+# Support for the LMTP (RFC 2033 "SMTP over command pipe") transport.
+
+#WITHOUT_SPF
+# Enable Sender Policy Framework (SPF) checking in exiscan-acl
+
+#WITHOUT_SRS
+# Enable Sender Rewriting Scheme (SRS), a part of the SPF/SRS protocol pair.
+# SRS support depends on exiscan.
+# .
+# Additional options:
+# srs_alwaysrewrite   (boolean)      Rewrite for all domains
+# srs_hashlength      (integer)      Hash length to generate
+# srs_hashmin         (integer)      Hash length to check
+# srs_maxage          (integer)      Max age for SRS address
+# srs_secrets         (string list)  List of SRS secrets
+# srs_separator       (string*)      Separator for SRS addresses
+#
+# Additional expansion variables:
+# srs_orig_recipient  (string*)     SRS original recipient
+# srs_orig_sender     (string*)     SRS original sender
+# srs_recipient       (string*)     SRS recipient
+# srs_status          (string*)     SRS status
+
+#WITHOUT_TCP_WRAPPERS
+# Link against libwrap to support /etc/hosts.allow access control.
+
+#WITHOUT_EXIMON
+# The eximon monitor, which requires X, will be made a dependency.  
+# Note that using EXIMON will cause XFree86 to be installed
+# if it is not present.
+
+#WITHOUT_ALT_CONFIG_PREFIX
+# Allow alternate configuration files not only in ${PREFIX}/etc/exim
+
+#WITHOUT_WISHLIST
+# Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
+
+#WITHOUT_RCORDER
+# FreeBSD 5.x only: Install the rc.subr(8) script to /etc/rc.d to participate
+# in rcorder(8).
+
+## AUTOMATICALLY GENERATED FILE - DO NOT CHANGE ANYTHING BELOW THIS LINE ##
+# use `make config' to edit the local configuration
+# use `make makeconfig' to edit the defaults (MAINTAINER only)
+
+_OPTIONSNG_READ?=default
+.ifndef WITHOUT_EXISCAN
+WITH_EXISCAN?=yes
+.endif
+WITH_BDB_VER?=1
+WITH_DEFAULT_CHARSET?=ISO-8859-1
+.ifndef WITHOUT_PERL
+WITH_PERL?=yes
+.endif
+.ifndef WITH_OPENLDAP
+WITHOUT_OPENLDAP?=yes
+.endif
+WITH_OPENLDAP_VER?=auto
+.ifndef WITH_MYSQL
+WITHOUT_MYSQL?=yes
+.endif
+WITH_MYSQL_VER?=auto
+.ifndef WITH_PGSQL
+WITHOUT_PGSQL?=yes
+.endif
+WITH_POSTGRESQL_PORT?=auto
+.ifndef WITHOUT_CDB
+WITH_CDB?=yes
+.endif
+.ifndef WITHOUT_DNSDB
+WITH_DNSDB?=yes
+.endif
+.ifndef WITHOUT_DSEARCH
+WITH_DSEARCH?=yes
+.endif
+.ifndef WITHOUT_LSEARCH
+WITH_LSEARCH?=yes
+.endif
+.ifndef WITHOUT_NIS
+WITH_NIS?=yes
+.endif
+.ifndef WITHOUT_PASSWD
+WITH_PASSWD?=yes
+.endif
+.ifndef WITHOUT_PAM
+WITH_PAM?=yes
+.endif
+.ifndef WITHOUT_AUTH_CRAM_MD5
+WITH_AUTH_CRAM_MD5?=yes
+.endif
+.ifndef WITHOUT_AUTH_PLAINTEXT
+WITH_AUTH_PLAINTEXT?=yes
+.endif
+.ifndef WITHOUT_AUTH_SPA
+WITH_AUTH_SPA?=yes
+.endif
+.ifndef WITH_SASLAUTHD
+WITHOUT_SASLAUTHD?=yes
+.endif
+.ifndef WITH_PWCHECK
+WITHOUT_PWCHECK?=yes
+.endif
+.ifndef WITH_AUTH_RADIUS
+WITHOUT_AUTH_RADIUS?=yes
+.endif
+.ifndef WITHOUT_TLS
+WITH_TLS?=yes
+.endif
+.ifndef WITHOUT_IPV6
+WITH_IPV6?=yes
+.endif
+.ifndef WITHOUT_MAILDIR
+WITH_MAILDIR?=yes
+.endif
+.ifndef WITHOUT_MAILSTORE
+WITH_MAILSTORE?=yes
+.endif
+.ifndef WITHOUT_MBX
+WITH_MBX?=yes
+.endif
+.ifndef WITHOUT_LMTP
+WITH_LMTP?=yes
+.endif
+.ifndef WITH_SPF
+WITHOUT_SPF?=yes
+.endif
+.ifndef WITH_SRS
+WITHOUT_SRS?=yes
+.endif
+.ifndef WITH_TCP_WRAPPERS
+WITHOUT_TCP_WRAPPERS?=yes
+.endif
+.ifndef WITH_EXIMON
+WITHOUT_EXIMON?=yes
+.endif
+.ifndef WITH_ALT_CONFIG_PREFIX
+WITHOUT_ALT_CONFIG_PREFIX?=yes
+.endif
+.ifndef WITH_WISHLIST
+WITHOUT_WISHLIST?=yes
+.endif
+.ifndef WITH_RCORDER
+WITHOUT_RCORDER?=yes
+.endif

@@ -40,6 +40,7 @@ sbin/exiwhat
 %%PORTDOCS%%@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
 %%PORTDOCS%%%%EXAMPLESDIR%%/convert4r3
 %%PORTDOCS%%%%EXAMPLESDIR%%/convert4r4
+%%PORTDOCS%%%%EXAMPLESDIR%%/pcretest
 %%PORTDOCS%%%%EXAMPLESDIR%%/transport-filter.pl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 etc/periodic/daily/150.exim-tidydb
@@ -50,6 +51,6 @@ etc/periodic/daily/460.exim-mail-rejects
 etc/exim/configure.default
 @exec [ -f %B/configure ] || cp %B/%f %B/configure
 @unexec rmdir %B 2>/dev/null || true
-@cwd %%RC_DIR%%
-exim%%RC_SUFX%%
+%%RCORDER%%@cwd /
+etc/rc.d/exim%%RC_SUFX%%
 @unexec rmdir %%LOGDIR%% 2>/dev/null || true

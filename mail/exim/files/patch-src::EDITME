@@ -116,7 +116,7 @@
  # CFLAGS=-O -I/usr/local/include
 -# EXTRALIBS_EXIM=-L/usr/local/lib -lwrap
 -#
-+EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_SPF_LIBS_XX XX_RADIUS_LIBS_XX
++EXTRALIBS=XX_TCP_WRAPPERS_LIBS_XX XX_PAM_LIBS_XX XX_SPF_LIBS_XX XX_SRS_LIBS_XX XX_RADIUS_LIBS_XX
 +
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.

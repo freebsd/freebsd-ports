@@ -14,18 +14,21 @@ MASTER_SITE_SUBDIR=	exim4
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
 DIST_SUBDIR=	exim
 
+MAINTAINER=	eik@FreeBSD.org
+COMMENT?=	High performance MTA for Unix systems on the Internet
+
+.include "options"
+
 .if !defined(WITHOUT_EXISCAN)
 PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	exiscan-acl
 PATCHFILES=	exiscan-acl-${EXIM_VERSION}-${EXISCAN_VERSION}.patch.bz2
 PATCH_DIST_STRIP=	-p1
+EXTRA_PATCHES+=	${PATCHDIR}/xpatch-exiscan2
 .endif
 
-MAINTAINER=	eik@FreeBSD.org
-COMMENT?=	High performance MTA for Unix systems on the Internet
-
-EXIM_VERSION=	4.34
-EXISCAN_VERSION=22
+EXIM_VERSION=	4.40
+EXISCAN_VERSION=23
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
@@ -66,7 +69,7 @@ PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		filter.txt pcrepattern.txt pcretest.txt spec.txt
 
-PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
+PORT_EXAMPLES=	convert4r3 convert4r4 pcretest transport-filter.pl
 
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
@@ -82,8 +85,6 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
 .if defined(EXIMON_ONLY)
 MAKE_ENV+=	INSTALL_ARG="eximon eximon.bin"
 .endif
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 EXIM_USER?=	mailnull
 EXIM_GROUP?=	mail
@@ -205,6 +206,10 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 # Enable Sender Policy Framework (SPF) checking in exiscan-acl
 #
 #WITH_SPF=		yes
+#
+# Enable Sender Rewriting Scheme (SRS)
+#
+#WITH_SRS=		yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -257,8 +262,7 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 BROKEN=		deprecated LDAP option defined, use WITH_OPENLDAP or WITH_OPENLDAP_VER
 .endif
 
-.if defined(WITH_OPENLDAP_VER)
-WITH_OPENLDAP=		yes
+.if defined(WITH_OPENLDAP_VER) && ${WITH_OPENLDAP_VER:L} != "auto"
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 
@@ -300,8 +304,7 @@ BROKEN=		WITH_BDB_VER must be either 1, 4, 41 or 42
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
 
-.if defined(WITH_MYSQL_VER)
-WITH_MYSQL=	yes
+.if defined(WITH_MYSQL_VER) && ${WITH_MYSQL_VER:L} != "auto"
 WANT_MYSQL_VER=	${WITH_MYSQL_VER}
 .endif
 
@@ -350,6 +353,12 @@ SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient,' \
 		-e 's,^\# RADIUS_CONFIG_FILE=,RADIUS_CONFIG_FILE=${LOCALBASE},'
 .else
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
+.endif
+
+.if defined(WITH_POSTGRESQL_PORT) && ${WITH_POSTGRESQL_PORT:L} != "auto"
+POSTGRESQL_PORT=	${WITH_POSTGRESQL_PORT}
+.else
+POSTGRESQL_PORT?=	databases/postgresql7
 .endif
 
 .if defined(WITH_PGSQL)
@@ -412,11 +421,19 @@ SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
 .endif
 
 .if defined(WITH_SPF) && !defined(WITHOUT_EXISCAN)
-LIB_DEPENDS+=	spf_alt.1:${PORTSDIR}/mail/libspf-alt
+LIB_DEPENDS+=	spf2.1:${PORTSDIR}/mail/libspf2
 CFLAGS+=	-DSPF
-SEDLIST+=	-e 's,XX_SPF_LIBS_XX,-lspf_alt,'
+SEDLIST+=	-e 's,XX_SPF_LIBS_XX,-lspf2,'
 .else
 SEDLIST+=	-e 's,XX_SPF_LIBS_XX,,'
+.endif
+
+.if defined(WITH_SRS) && !defined(WITHOUT_EXISCAN)
+LIB_DEPENDS+=	srs2.0:${PORTSDIR}/mail/libsrs2
+CFLAGS+=	-DSRS
+SEDLIST+=	-e 's,XX_SRS_LIBS_XX,-lsrs2,'
+.else
+SEDLIST+=	-e 's,XX_SRS_LIBS_XX,,'
 .endif
 
 .include <bsd.port.pre.mk>
@@ -427,20 +444,22 @@ SEDLIST+=	-e 's,XX_SPF_LIBS_XX,,'
 
 .if !defined(EXIMON_ONLY)
 USE_RC_SUBR=	yes
-.if ${OSVERSION} >= 500037
-RC_DIR=		${DESTDIR}/etc/rc.d
+.if defined(WITH_RCORDER) && ${OSVERSION} >= 500037
+RC_DIR=		/etc/rc.d
 RC_SUFX=
+PLIST_SUB+=	RCORDER="" \
+		RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 .else
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
+PLIST_SUB+=	RCORDER="@comment " \
+		RC_DIR="%D/etc/rc.d" \
+		RC_SUFX=${RC_SUFX}
 .endif
-
 SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_DIR%%,${RC_DIR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
 .endif
 
 .if ${OSVERSION} < 400014
@@ -489,38 +508,39 @@ post-build:
 .if !defined(EXIMON_ONLY)
 
 pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@[ -d "${DESTDIR}/etc" ] || ${MKDIR} "${DESTDIR}/etc"
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/exim.sh ${RC_DIR}/exim${RC_SUFX}
-	@${MKDIR} ${PREFIX}/etc/periodic/daily
+	@${INSTALL_SCRIPT} ${WRKDIR}/exim.sh ${DESTDIR}${RC_DIR}/exim${RC_SUFX}
+	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
 .for script in ${DAILY_SCRIPTS}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${PREFIX}/etc/periodic/daily/${script}
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${PREFIX}/etc/periodic/daily/${script}
 .endfor
-	@[ -f ${PREFIX}/etc/exim/configure ] || \
-		${CP} ${PREFIX}/etc/exim/configure.default ${PREFIX}/etc/exim/configure
+	@[ -f ${DESTDIR}${PREFIX}/etc/exim/configure ] || \
+		${CP} ${DESTDIR}${PREFIX}/etc/exim/configure.default ${DESTDIR}${PREFIX}/etc/exim/configure
 .for manfile in ${MAN8}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${MAN8PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/doc/${manfile} ${DESTDIR}${MAN8PREFIX}/man/man8
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
+	@${MKDIR} ${DESTDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DESTDIR}${DOCSDIR}
 .if !defined(WITHOUT_EXISCAN)
-	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES.clamd ${DESTDIR}${DOCSDIR}
 .endif
 .for docfile in ${PORTDOC_BASE}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DESTDIR}${DOCSDIR}
 .endfor
 .for docfile in ${PORTDOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DESTDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${DESTDIR}${EXAMPLESDIR}
 .for example in ${PORT_EXAMPLES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/${example} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/${example} ${DESTDIR}${EXAMPLESDIR}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .else
 
