@@ -1665,7 +1665,7 @@ http_access deny Gopher</pre>
       </package>
       <package>
 	<name>pdflib</name>
-	<range><ge>0</ge></range>
+	<range><lt>6.0.1_1</lt></range>
       </package>
     </affects>
     <description>
@@ -1694,7 +1694,7 @@ http_access deny Gopher</pre>
     <dates>
       <discovery>2004-12-17</discovery>
       <entry>2005-01-06</entry>
-      <modified>2005-01-18</modified>
+      <modified>2005-01-26</modified>
     </dates>
   </vuln>
 
