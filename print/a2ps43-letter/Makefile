@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1996/11/17 08:44:16 obrien Exp $
+# $Id: Makefile,v 1.11 1997/11/25 23:50:33 chuckr Exp $
 #
 
 DISTNAME=	a2ps
@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
 DISTFILES=	a2ps.V4.3.tar.gz
 
-MAINTAINER=	jmz@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 NO_WRKSUBDIR=	yes
