@@ -3,7 +3,7 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.9 1998/09/14 20:10:51 markm Exp $
+# $Id: Makefile,v 1.10 1998/09/15 11:13:21 asami Exp $
 #
 
 DISTNAME=	fxtv-0.47
@@ -15,7 +15,7 @@ MAINTAINER=	rhh@ct.picker.com
 
 LIB_DEPENDS=	tiff34.1:${PORTSDIR}/graphics/tiff34 \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d    \
-		Xpm.5:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 # This program does not actually depend on the below, but they are pretty
 # useful if you are into digital video recording and playback.

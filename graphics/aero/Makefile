@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.10 1998/08/07 23:56:24 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/15 11:13:20 asami Exp $
 #
 
 DISTNAME=	aero_1.7.0_src
@@ -15,7 +15,7 @@ MAINTAINER=	erich@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11-toolkits/FWF
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/aero/src

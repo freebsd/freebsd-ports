@@ -3,7 +3,7 @@
 # Date created:         2 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/09/09 09:26:31 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:29 asami Exp $
 
 DISTNAME=	xpbiff
 PKGNAME?=	xpbiff-1.27
@@ -13,7 +13,7 @@ DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

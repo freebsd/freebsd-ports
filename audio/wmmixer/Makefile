@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 03:56:55 steve Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:12:58 asami Exp $
 #
 
 DISTNAME=	wmmixer
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rneswold@mcs.net
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 FETCH_BEFORE_ARGS=	-t
 NO_INSTALL_MANPAGES=	1

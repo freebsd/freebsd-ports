@@ -3,7 +3,7 @@
 # Date created:		So   6 Apr 1997 04:25:57 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.17 1998/08/23 21:20:06 asami Exp $
+# $Id: Makefile,v 1.18 1998/09/15 11:13:09 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.2
@@ -23,7 +23,7 @@ BROKEN=		qt version?
 
 BUILD_DEPENDS=	auplay:${PORTSDIR}/audio/nas \
 		xpmtoppm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
 
 USE_QT=		yes

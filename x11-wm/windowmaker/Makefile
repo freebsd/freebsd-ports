@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.27 1998/09/15 11:46:12 asami Exp $
+# $Id: Makefile,v 1.28 1998/09/15 11:57:50 asami Exp $
 
 DISTNAME=	WindowMaker-0.19.3
 PKGNAME=	windowmaker-0.19.3
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 MAINTAINER=	handy@physics.montana.edu
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \

@@ -3,7 +3,7 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.17 1998/09/15 11:46:02 asami Exp $
+# $Id: Makefile,v 1.18 1998/09/15 11:57:47 asami Exp $
 #
 
 DISTNAME=	knews-1.0b.0
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
 RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp

@@ -3,7 +3,7 @@
 # Date created:         07 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:02 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/15 11:13:19 asami Exp $
 #
 
 DISTNAME=       xsok-1.02
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 MAN6=		xsok.6x

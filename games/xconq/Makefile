@@ -3,7 +3,7 @@
 # Date created:         2 Jun 1998
 # Whom:                 Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:30:58 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:12 asami Exp $
 #
 
 DISTNAME=	xconq-7.2.2
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cygnus.com/pub/xconq/
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm

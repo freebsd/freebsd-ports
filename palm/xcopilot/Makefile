@@ -3,7 +3,7 @@
 # Date created:         July 17 1997
 # Whom:                 Nick Sayer <nsayer@quack.kfu.com>
 #
-# $Id: Makefile,v 1.4 1998/08/05 09:30:50 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/15 11:13:06 asami Exp $
 #
 
 DISTNAME=       xcopilot-v0.4
@@ -17,7 +17,7 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=     nsayer@quack.kfu.com
 
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 

@@ -3,7 +3,7 @@
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:56 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:39 asami Exp $
 #
 
 DISTNAME=	xfce-1.2.4
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	X11/toolbars
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=    Xpm.5:${PORTSDIR}/graphics/xpm \
+LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms\\.0\\.:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/XFCE-1.2.4

@@ -3,7 +3,7 @@
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:01:41 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 11:13:37 asami Exp $
 #
 
 DISTNAME=	wmx-4
@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.netcomuk.co.uk/~cannam/
 
 MAINTAINER=	sec@42.org
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	depend wmx

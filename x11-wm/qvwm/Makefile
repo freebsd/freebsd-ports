@@ -3,7 +3,7 @@
 # Date created:        2 January 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.17 1998/08/07 23:01:40 asami Exp $
+# $Id: Makefile,v 1.18 1998/09/15 11:13:37 asami Exp $
 #
 
 DISTNAME=       qvwm-1.0b10a
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www-masuda.is.s.u-tokyo.ac.jp/~kourai/qvwm/program/
 
 MAINTAINER=     Nakai@technologist.com
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=      yes
 MAN1=		qvwm.1

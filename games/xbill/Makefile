@@ -3,7 +3,7 @@
 # Date created:		12 September 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.6 1998/07/28 00:39:25 obrien Exp $
+# $Id: Makefile,v 1.7 1998/09/15 11:13:11 asami Exp $
 #
 
 DISTNAME=	xbill-2.0
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.ORG
 
-LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 
