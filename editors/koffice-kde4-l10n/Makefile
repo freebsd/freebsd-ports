@@ -30,7 +30,7 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/zh_TW/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_TW
 
 .for LANG in af bs cs da el en_GB eo es et it \
-	lo lt lv mt nb nl nn sk sl sv th tr ven xh zu
+	lo lt lv mt nb nl nn se sk sl sv th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/misc/koffice-i18n-${LANG}
 .endfor
