@@ -17,6 +17,8 @@ INSTALL_TARGET=	install-pear
 
 USE_PHP=	pcre xml
 WANT_PHP_SCR=	yes
+DEFAULT_PHP_VER=4
+BROKEN_WITH_PHP=5
 
 .include <bsd.port.pre.mk>
 
