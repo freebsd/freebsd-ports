@@ -1,3 +1,4 @@
+bin/411toppm
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
@@ -230,6 +231,7 @@ include/pnm.h
 include/ppm.h
 include/ppmcmap.h
 include/ppmdraw.h
+include/ppmfloyd.h
 lib/libpbm.a
 lib/libpbm.so
 lib/libpbm.so.1

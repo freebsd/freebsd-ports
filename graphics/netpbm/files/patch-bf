@@ -1,6 +1,6 @@
---- pnm/Makefile.orig	Tue Jan 23 14:05:35 2001
-+++ pnm/Makefile	Sat Feb 24 00:00:00 2001
-@@ -47,6 +47,8 @@
+--- pnm/Makefile.orig	Thu Mar 15 12:11:59 2001
++++ pnm/Makefile	Tue Mar 27 00:00:00 2001
+@@ -48,6 +48,8 @@
    JPEGLD = -L$(JPEGLIB_DIR) -ljpeg
  endif
  
@@ -9,7 +9,7 @@
  # We tend to separate out the build targets so that we don't have
  # any more dependencies for a given target than it really needs.
  # That way, if there is a problem with a dependency, we can still
-@@ -54,22 +56,24 @@
+@@ -55,23 +57,24 @@
  # This package is so big, it's useful even when some parts won't 
  # build.
  
@@ -27,10 +27,11 @@
  		pnmtoplainpnm pnmtops pnmtorast \
 -		pnmtosgi pnmtosir pnmtoxwd pstopnm \
 -		rasttopnm sgitopnm sirtopnm xwdtopnm zeisstopnm
--MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmscalefixed pnmshear
+-MATHBINARIES =	pnmgamma pnmnlfilt pnmpsnr pnmrotate \
+-	pnmscale pnmscalefixed pnmshear
 +		pnmtosgi pnmtosir pnmtoxwd \
 +		rasttopnm sgitopnm sirtopnm zeisstopnm
-+MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmshear
++MATHBINARIES =	pnmgamma pnmnlfilt pnmpsnr pnmrotate pnmshear
 +SHHOPTBINARIES =	giftopnm pamchannel pamcut pamfile pamtopnm pnmcrop \
 +		pnmcut pnmfile pnminterp pnmmontage pnmsplit pstopnm \
 +		xwdtopnm
@@ -44,16 +45,16 @@
  ifneq ($(PNGHDR_DIR),NONE)
    ifneq ($(PNGLIB_DIR),NONE)
      NOMERGEBINARIES += pnmtopng pngtopnm
-@@ -106,6 +110,8 @@
+@@ -108,6 +111,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o libpam.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -126,6 +132,14 @@
+@@ -128,6 +133,14 @@
  	$(MAKE) -C jbig all
  	$(MAKE) -C pnmtopalm all
  
@@ -68,7 +69,7 @@
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
  TIFFLIB_DEP = $(TIFFDIR)/$(LIBTIFF)
-@@ -136,17 +150,18 @@
+@@ -138,17 +151,18 @@
  
  # The Tiff library references math functions.
  tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o \
@@ -81,7 +82,7 @@
  
  pngtopnm pnmtopng: %: %.o $(NETPBMLIBS) $(LIBOPT)
  	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
- 	  -L$(PNGLIB_DIR) -lpng -lz -lm $(CDEBUG)
+ 	  -L$(ZLIB_DIR), -lz -L$(PNGLIB_DIR) -lpng -lm $(CDEBUG)
  
 -jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT)
 +jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
@@ -91,7 +92,7 @@
  
  ifeq ($(URTLIB_DIR),$(URTDIR))
  # We're using the internal URT library, so make sure it's built
-@@ -203,6 +218,9 @@
+@@ -205,6 +219,9 @@
  	$(MAKE) -C fiasco install.man
  	$(MAKE) -C jbig install.man
  	$(MAKE) -C pnmtopalm install.man

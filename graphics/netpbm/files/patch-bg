@@ -1,10 +1,10 @@
---- ppm/Makefile.orig	Thu Jan 25 13:38:27 2001
-+++ ppm/Makefile	Sat Feb 24 00:00:00 2001
+--- ppm/Makefile.orig	Sun Mar 11 04:30:39 2001
++++ ppm/Makefile	Tue Mar 27 00:00:00 2001
 @@ -22,26 +22,31 @@
  NETPBMLIBS = $(LIBPPM) $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  LIBLIBS = $(PBMDIR)/$(LIBPBM) $(PGMDIR)/$(LIBPGM)
  
--PORTBINARIES =	bmptoppm eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
+-PORTBINARIES =	411toppm bmptoppm eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
 +SOVER = 1
 +
 +PORTBINARIES =	eyuvtoppm gouldtoppm ilbmtoppm imgtoppm \
@@ -27,8 +27,8 @@
 -		sputoppm tgatoppm winicontoppm ximtoppm xpmtoppm xvminitoppm \
 +		sputoppm winicontoppm xpmtoppm xvminitoppm \
  		yuvtoppm yuvsplittoppm
-+SHHOPTBINARIES =	bmptoppm ppmchange ppmcolormask ppmhist ppmtobmp \
-+		ppmtogif tgatoppm ximtoppm 
++SHHOPTBINARIES =	411toppm bmptoppm ppmchange ppmcolormask ppmhist \
++		ppmtobmp ppmtogif tgatoppm ximtoppm 
  
  # We don't build vidtoppm by default, because it requires special libraries
  # and there is no known requirement for vidtoppm.
@@ -46,25 +46,25 @@
  BINARIES = $(MERGEBINARIES) $(NOMERGEBINARIES) 
  SCRIPTS = ppmquantall ppmshadow ppmfade
  
-@@ -59,6 +64,8 @@
- MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
+@@ -60,6 +65,8 @@
  
- LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
+ LIBOBJECTS = libppm1.o libppm2.o libppmcmap.o libppm4.o libppm5.o \
+ 	libppmfloyd.o bitio.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
-+LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(BUILDDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libppm
-@@ -66,7 +73,7 @@
+@@ -67,7 +74,7 @@
  
  MERGENAME= ppmmerge
  
--INTERFACE_HEADERS = ppm.h ppmcmap.h
-+INTERFACE_HEADERS = ppm.h ppmcmap.h ppmdraw.h
+-INTERFACE_HEADERS = ppm.h ppmcmap.h ppmfloyd.h
++INTERFACE_HEADERS = ppm.h ppmcmap.h ppmdraw.h ppmfloyd.h
  
  .PHONY: all
  all:        $(BINARIES)
-@@ -77,9 +84,17 @@
+@@ -78,9 +85,17 @@
  	$(MAKE) -C ppmtompeg all
  	$(MAKE) -C hpcdtoppm all
  
@@ -84,7 +84,7 @@
  
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
-@@ -108,6 +123,9 @@
+@@ -109,6 +124,9 @@
  HEADERLINKS = pbmplus.h pbm.h libpbm.h pbmfont.h pgm.h libpgm.h
  
  include $(SRCDIR)/Makefile.common

@@ -1,23 +1,6 @@
---- Makefile.common.orig	Wed Feb 21 13:04:34 2001
-+++ Makefile.common	Sat Feb 24 00:00:00 2001
-@@ -135,14 +135,14 @@
- 
- # MERGE STUFF
- 
--$(MERGE_OBJECTS): %.o2: $(SRCSUBDIR)/%.c
-+$(MERGE_OBJECTS): %.o2: $(SRCSUBDIR)/%.c $(HEADERLINKS)
- # Note that the user may have configured -I options into CFLAGS.
- 	$(CC) -c $(INCLUDE) $(CFLAGS) "-Dmain=$*_main" -o $@ $<
- 
- merge.h: 
- 	$(SRCDIR)/make_merge.sh $(MERGEBINARIES)
- 
--$(MERGENAME).o: $(SRCSUBDIR)/$(MERGENAME).c merge.h
-+$(MERGENAME).o: $(SRCSUBDIR)/$(MERGENAME).c merge.h $(HEADERLINKS)
- 	$(CC) $(CFLAGS) -Wno-implicit $(INCLUDE) -c -o $@ $<
- 
- $(MERGENAME): $(MERGENAME).o $(MERGE_OBJECTS) $(NETPBMLIBS) $(LIBOPT)
-@@ -155,24 +155,20 @@
+--- Makefile.common.orig	Tue Mar 27 00:25:04 2001
++++ Makefile.common	Tue Mar 27 00:00:00 2001
+@@ -151,24 +151,20 @@
  
  $(LIBOBJECTS): %.o: $(SRCSUBDIR)/%.c $(HEADERLINKS)
  # Note that the user may have configured -I options into CFLAGS.
@@ -49,7 +32,7 @@
  
  # Static library.  Unused by default, but with a small change to make files...
  lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-@@ -202,7 +198,7 @@
+@@ -200,7 +196,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
@@ -58,7 +41,7 @@
              $(MERGENAME) $(INSTALLBINARIES)
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
-@@ -212,7 +208,7 @@
+@@ -210,7 +206,7 @@
  ifneq ($(NOMERGEBINARIES)x,x)
  	for x in $(NOMERGEBINARIES); \
          do \
@@ -67,7 +50,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  endif
-@@ -223,7 +219,7 @@
+@@ -221,7 +217,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
  	for x in $(BINARIES); \
  	do \
@@ -76,7 +59,7 @@
                 $$x $(INSTALLBINARIES); \
  	done
  
-@@ -232,7 +228,7 @@
+@@ -230,7 +226,7 @@
  ifneq ($(SCRIPTS)x,x)
  	for x in $(SCRIPTS); \
  	do \
@@ -85,7 +68,7 @@
                 $(INSTALLSCRIPTS); \
  	done
  endif
-@@ -269,7 +265,7 @@
+@@ -267,7 +263,7 @@
  # directory when you compile your programs.
  	for x in $(INTERFACE_HEADERS); \
  	do \
@@ -94,7 +77,7 @@
                 $(INSTALLHDRS); \
  	done
  
-@@ -277,15 +273,14 @@
+@@ -275,15 +271,14 @@
  #
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).a
