@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.eidetica.com/pub/edith/x11/
 DISTFILES=	edith1.55.common.tar.gz \
 		edith1.58.linux-glibc.tar.gz
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A X11 GUI editor for binary and plain text files
 
 USE_LINUX=	yes

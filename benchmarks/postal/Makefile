@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
 
 USE_REINPLACE=	yes

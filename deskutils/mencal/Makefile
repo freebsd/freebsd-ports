@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://mencal.kyberdigi.cz/ \
 		http://unixpages.org/distfiles/
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A variation of the unix command cal
 
 USE_PERL5=	yes
