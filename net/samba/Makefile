@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://samba.anu.edu.au/pub/samba/ \
@@ -17,10 +17,9 @@ MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_BZIP2=	YES
 USE_SUBMAKE=	YES
-
-.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 USE_GMAKE=	YES
-.endif
+USE_LIBTOOL=	YES
+USE_AUTOCONF=	YES
 
 AUDIT=		"@comment "
 RECYCLE=	"@comment "
@@ -66,7 +65,6 @@ SAMBA_VFSDIR=	${PREFIX}/lib/samba
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
 
-USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
@@ -133,6 +131,8 @@ CONFIGURE_ARGS+=	--with-acl-support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME}
+
+LIBTOOLFILES=		${WRKSRC}/aclocal.m4
 
 MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
 		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 \
