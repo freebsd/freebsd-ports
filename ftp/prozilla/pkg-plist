@@ -1,13 +1,14 @@
 bin/proz
+@unexec if cmp -s %D/etc/prozilla.conf %D/etc/prozilla.conf-sample; then rm -f %D/etc/prozilla.conf; fi
 etc/prozilla.conf-sample
-%%PORTDOCS%%share/doc/prozilla/ANNOUNCE
-%%PORTDOCS%%share/doc/prozilla/AUTHORS
-%%PORTDOCS%%share/doc/prozilla/COPYING
-%%PORTDOCS%%share/doc/prozilla/CREDITS
-%%PORTDOCS%%share/doc/prozilla/ChangeLog
-%%PORTDOCS%%share/doc/prozilla/FAQ
-%%PORTDOCS%%share/doc/prozilla/INSTALL
-%%PORTDOCS%%share/doc/prozilla/NEWS
-%%PORTDOCS%%share/doc/prozilla/README
-%%PORTDOCS%%share/doc/prozilla/TODO
-%%PORTDOCS%%@dirrm share/doc/prozilla
+%%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
