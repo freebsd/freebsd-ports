@@ -342,6 +342,7 @@
     SUBDIR += xine
     SUBDIR += xine_d4d_plugin
     SUBDIR += xine_d5d_plugin
+    SUBDIR += xine_dvdnav_plugin
     SUBDIR += xine_mms_plugin
     SUBDIR += xli
     SUBDIR += xmagv
