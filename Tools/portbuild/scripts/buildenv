@@ -4,21 +4,25 @@
 
 buildenv () {
     pb=$1
-    branch=$2
+    arch=$2
+    branch=$3
 
     case "x$branch" in
 	x4)
     	export PKGSUFFIX=.tgz
     	export PKGZIPCMD=gzip
+	export INDEXFILE=INDEX
 	    ;;
 	x4-exp)
     	export PKGSUFFIX=.tgz
     	export PKGZIPCMD=gzip
 	export PORTS_AUDIT=1
+	export INDEXFILE=INDEX
 	    ;;
 	x5)
     	export PKGSUFFIX=.tbz
     	export PKGZIPCMD=bzip2
+	export INDEXFILE=INDEX-5
 	    ;;
 	*)
 	    echo "buildenv: invalid branch"
@@ -26,12 +30,15 @@ buildenv () {
 	    ;;
     esac
 
+    export ARCH=${arch}
+    export MACHINE_ARCH=${arch}
+
     export XFREE86_VERSION=4
 
     # Have to use realpath because 'make index' doesn't deal with symlinks in PORTSDIR
     # - kk 020311
-    export PORTSDIR=$(realpath ${pb}/${branch}/ports)
-    export SRCBASE=$(realpath ${pb}/${branch}/src)
+    export PORTSDIR=$(realpath ${pb}/${arch}/${branch}/ports)
+    export SRCBASE=$(realpath ${pb}/${arch}/${branch}/src)
     export SRCPREFIX=${SRCBASE} #XXX Which one is canonical?
 
     export OSVERSION=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCBASE}/sys/sys/param.h)
@@ -46,18 +53,11 @@ buildenv () {
     export USA_RESIDENT=yes
     export FTP_PASSIVE_MODE=yes
 
+    #export FETCH_BEFORE_ARGS=-vvv
+
     # Need to make it fetch a full set say once a week to catch distfiles
     # which change md5 sum but not name
     export MASTER_SITE_OVERRIDE='ftp://ftp-master.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/'
-
-    # XXX Are these supposed to be used for release CD builds?
-    #export NO_RESTRICTED=1
-    #export FOR_CDROM=1
-
-    # XXX Probably old and mouldy
-    #export INDEX_NOSORT=1
-    #export FORCE_PKG_REGISTER=1
-    #export FORCE_PACKAGE=1
-    #export PKG_NOCOMPRESS=1
+    export MASTER_SITE_OVERRIDE="${MASTER_SITE_OVERRIDE} ftp://bento.freebsd.org/pub/FreeBSD/distfiles/"
 
 }
