@@ -1,6 +1,6 @@
---- make/makeall.unx.orig	Thu Mar 21 06:01:20 2002
-+++ make/makeall.unx	Sat Jun  8 20:16:09 2002
-@@ -859,3 +859,46 @@
+--- make/makeall.unx.orig	Tue Jun  8 17:44:54 2004
++++ make/makeall.unx	Mon Nov  1 21:07:43 2004
+@@ -944,3 +944,48 @@
  	#load $(LDFLAGS) getmuid.c medutil.c \
  	$(SRC11) $(SRC8) $(SRC7) $(SRC6) $(SRC5) $(SRC3) \
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
@@ -10,7 +10,7 @@
 +		blastall blastcl3 blastclust blastpgp \
 +		cdscan checksub copymat \
 +		ddv demo_regexp demo_regexp_grep dosimple \
-+		entrcmd entrez2 errhdr fa2htgs fastacmd findspl fmerge formatdb \
++		entrcmd entrez2 errhdr fa2htgs fastacmd findspl formatdb \
 +		getfeat getmesh getpub getseq gil2bin \
 +		idfetch impala indexpub \
 +		makemat makeset megablast \
@@ -26,7 +26,9 @@
 +
 +binstall: $(EXE)
 +	${MKDIR} ${PREFIX}/bin
-+	${INSTALL_PROGRAM} -s $? /${PREFIX}/bin
++.for f in $(EXE)
++	${INSTALL_PROGRAM} -s $(f) ${PREFIX}/bin
++.endfor
 +
 +linstall: $(LIB)
 +	${MKDIR} ${PREFIX}/lib/ncbi
