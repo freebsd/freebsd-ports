@@ -7,6 +7,7 @@
 
 PORTNAME=	checkstyle
 PORTVERSION=	3.5
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +23,14 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ANT=	yes
 ALL_TARGET=	build.bindist
+USE_JIKES=	no
 
 PLIST=	${WRKDIR}/PLIST
 
 STYLEDIR=	${JAVASHAREDIR}/${PORTNAME}
 
-PLIST_FILES=	bin/checkstyle %%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-optional.jar
+PLIST_FILES=	bin/checkstyle %%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-optional.jar \
+		${STYLEDIR:S,${PREFIX}/,,}/examples/conf/sun_checks.xml
 .if !defined(NOPORTDOCS)
 BUILDDIR=	${WRKSRC}/target/dist/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README LICENSE* TODO RIGHTS* docs
@@ -57,6 +60,7 @@ do-install-data:
 	@${MKDIR} ${STYLEDIR}
 	@${CP} -r ${BUILDDIR}/contrib/* ${STYLEDIR}
 	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${STYLEDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sun_checks.xml ${STYLEDIR}/examples/conf/
 
 do-install-apidocs:
 .if !defined(NOPORTDOCS)
