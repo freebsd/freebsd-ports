@@ -205,6 +205,7 @@
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarwolf
+    SUBDIR += spacearyarya
     SUBDIR += speak
     SUBDIR += spellcast
     SUBDIR += speyes
