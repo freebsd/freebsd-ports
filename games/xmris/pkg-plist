@@ -1,4 +1,4 @@
-@cd /usr/X11R6
+@cd ${X11BASE}
 @group bin
 @mode 444
 man/man6/xmris.6.gz
@@ -13,7 +13,7 @@ bin/xmred
 @exec mkdir -p %D/lib/xmris
 @exec chmod  775 %D/lib/xmris
 @unexec rm -rf %D/lib/xmris
-@cd /usr/X11R6
+@cd ${X11BASE}
 @mode 444
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn

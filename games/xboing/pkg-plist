@@ -1,4 +1,4 @@
-@cd /usr/X11R6
+@cd ${X11BASE}
 @owner games
 @mode 555
 bin/xboing
