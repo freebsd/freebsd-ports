@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AsciiDB/TagFile/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/AsciiDB/TagFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/AsciiDB/TagRecord.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AsciiDB/TagFile
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AsciiDB 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AsciiDB 2>/dev/null || true
