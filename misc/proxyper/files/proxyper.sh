@@ -8,7 +8,7 @@ start)
 	su -m nobody -c "$dir/proxyper" 2>/dev/null >/dev/null &
 	;;
 stop)
-	killall proxyper && echo -n " proxyper"
+	kill `cat $dir/rc5desproxy.pid` && echo -n " proxyper"
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
