@@ -28,4 +28,6 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+MAN1=		cdparanoia.1
+
 .include <bsd.port.post.mk>
