@@ -172,6 +172,7 @@ XttXF86srv-VGA16	ports/x11-servers/XttXF86srv-VGA16
 XttXF86srv-W32		ports/x11-servers/XttXF86srv-W32
 XttXF86srv-common	ports/x11-servers/XttXF86srv-common
 XttXF86srv-xfs		ports/x11-servers/XttXF86srv-xfs
+ZendOptimizer	ports/devel/ZendOptimizer
 a2dev		ports/devel/a2dev
 a2ps-a4		ports/print/a2ps-a4
 a2ps-letter	ports/print/a2ps-letter
