@@ -40,6 +40,7 @@ bin/highlight
 %%DATADIR%%/langDefs/j.lang
 %%DATADIR%%/langDefs/java.lang
 %%DATADIR%%/langDefs/js.lang
+%%DATADIR%%/langDefs/jsp.lang
 %%DATADIR%%/langDefs/ldif.lang
 %%DATADIR%%/langDefs/ls.lang
 %%DATADIR%%/langDefs/lua.lang
@@ -48,6 +49,7 @@ bin/highlight
 %%DATADIR%%/langDefs/mel.lang
 %%DATADIR%%/langDefs/mo.lang
 %%DATADIR%%/langDefs/mod3.lang
+%%DATADIR%%/langDefs/nut.lang
 %%DATADIR%%/langDefs/pas.lang
 %%DATADIR%%/langDefs/php.lang
 %%DATADIR%%/langDefs/pike.lang
@@ -113,6 +115,7 @@ bin/highlight
 %%DATADIR%%/themes/rand02.style
 %%DATADIR%%/themes/slime.style
 %%DATADIR%%/themes/smoke.style
+%%DATADIR%%/themes/the.style
 %%DATADIR%%/themes/typical.style
 %%DATADIR%%/themes/untitled.style
 %%DATADIR%%/themes/untypical.style
