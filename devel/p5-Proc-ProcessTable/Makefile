@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@rgv.net
+MAINTAINER=	ahze@ahze.net
 COMMENT=	Perl interface to the unix process table
 
 PERL_CONFIGURE=	YES

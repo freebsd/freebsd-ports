@@ -9,7 +9,7 @@ PORTVERSION=	0.8.3
 CATEGORIES=	net tk82
 MASTER_SITES=	http://sisko.se.wp.cc.nc.us/~ahze/
 
-MAINTAINER=	ahze@rgv.net
+MAINTAINER=	ahze@ahze.net
 COMMENT=	A visual chat program written in Tcl/Tk
 
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
