@@ -57,7 +57,7 @@ close IN;
 # Remove leading, trailing and duplicate blank lines.
 my $i = 0;
 while ($i < scalar(@log_in)) {
-	unless ($log_in[$i] or $log_in[$i + 1]) {
+	if ($log_in[$i] eq "" && $log_in[$i + 1] eq "") {
 		splice(@log_in, $i, 1);
 		next;
         }
