@@ -32,18 +32,14 @@ LIBS+=		-lmilter -lsm -lsmutil
 LIBS+=		-lmilter -lsmutil
 .endif
 
-.if defined(BATCH)
-SENDMAIL_WITH_MILTER=	yes
-.endif
-
 .if defined(SENDMAIL_WITH_SFIO)
 LIBS+=		-lsfio
 .endif
 
-.if ! defined(SENDMAIL_WITH_MILTER)
+.if defined(SENDMAIL_WITHOUT_MILTER)
 pre-fetch:
 	@${ECHO_MSG}
-	@${ECHO_MSG} You must set variable SENDMAIL_WITH_MILTER to YES,
+	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
 	@${ECHO_MSG} and rebuild sendmail in the ports
 	@${FALSE}
 .endif
