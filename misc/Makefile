@@ -148,6 +148,7 @@
     SUBDIR += proxyper
     SUBDIR += py-distutils
     SUBDIR += pybliographer
+    SUBDIR += pypanda
     SUBDIR += qbrew
     SUBDIR += qhacc
     SUBDIR += qlas
