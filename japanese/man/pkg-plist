@@ -5,7 +5,6 @@ bin/japropos
 bin/jwhatis
 bin/jmakewhatis
 bin/jcatman
-etc/manpath.config.sample
 libexec/jmakewhatis.local
 libexec/jcatman.local
 man/man1/jman.1.gz

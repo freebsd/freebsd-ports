@@ -1,13 +1,13 @@
 # New ports collection makefile for:	jman - japanese man with EUC
-# Version required:	1.1g
+# Version required:	1.1h
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	jp-man-1.1g
-PKGNAME=	ja-man-1.1g
+DISTNAME=	jp-man-1.1h
+PKGNAME=	ja-man-1.1h
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
 		${MASTER_SITE_PORTS_JP}
