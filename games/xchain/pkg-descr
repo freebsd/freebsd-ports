@@ -1,0 +1,19 @@
+   Chain Reaction is played on an 8 by 8 board. Players take turns to move.
+On each move, the player  may  select an empty  square, or one they already
+own. Squares  belonging  to other  players may not be chosen. If the square
+was unowned, it becomes the property of the player, and is given a value of
+1. If the square was owned by the player, the value is incremented.
+
+   If  the  value of a square  ever  exceeds  the maximum permitted of that
+square, it explodes. Squares  in  the  corner  have a maximum of 1, squares
+touching an edge, but not on a  corner  have a maximum of 2, and squares in 
+the interior have a maximum of 3.
+
+   When a square explodes, it becomes unowned, and it's value  is  reset to
+0. The 4 squares  touching  it become  owned by the owner of the  exploding 
+square, and  their  values are incremented. If any of these are above their
+maximum, they explode, giving rise to the chain reaction.
+
+   If, at the  end  of a move, any of the players have no squares, they are
+dead, and get no  more  turns. When there is only one person left, they are
+the winner.

@@ -1,0 +1,11 @@
+--- xchain.c	Wed Feb 25 15:10:15 1998
++++ /home/andy/tmp/wrk/xchain.c	Fri Mar 13 21:53:20 1998
+@@ -29,7 +29,7 @@
+ #include <stdlib.h>
+ #include <time.h>
+ 
+-#define DEF_WISH_PATH "/usr/bin/wish"
++#define DEF_WISH_PATH "/usr/local/bin/wish8.0"
+ 
+ void wprintf(char *, ...);
+ void draw_screen(void);

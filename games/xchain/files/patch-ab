@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon Apr 27 00:32:58 1998
++++ Makefile	Mon Apr 27 00:33:22 1998
+@@ -1,8 +1,8 @@
+ DESTDIR = /
+ # This is so dpkg-buildpackage can build in the correct dir
+ 
+-CC=gcc
+-CFLAGS=-O2 -Wall
++#CC=gcc
++#CFLAGS=-O2 -Wall
+ 
+ OBJS=		xchain.o
+ 
