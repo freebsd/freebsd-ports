@@ -1,28 +1,27 @@
-# New ports collection makefile for:	mbox
-# Date created:		2004-11-05
-# Whom:			Michael Johnson <ahze@FreeBSD.org>
-#
+# New ports collection makefile for:	mBox
+# Date created:				01 Sep 2004
+# Whom:					Vladimir Osintsev <oc@nm.ru>
 # $FreeBSD$
-#
 
 PORTNAME=	mbox
 PORTVERSION=	0.5.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mbox.wz.cz/src/
 
-MAINTAINER=	ahze@FreeBSD.org
-COMMENT=	WxGTK GUI for audio organizing and converting
+MAINTAINER=	oc@nm.ru
+COMMENT=	Program intended to help with organizing your music files
 
-BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython \
+		${PYTHON_SITELIBDIR}/ogg/__init__.py:${PORTSDIR}/audio/py-ogg \
+		${PYTHON_SITELIBDIR}/ogg/vorbis.so:${PORTSDIR}/audio/py-vorbis \
+		lame:${PORTSDIR}/audio/lame \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		mplayer:${PORTSDIR}/multimedia/mplayer \
-		img2png:${PORTSDIR}/x11-toolkits/py-wxPython
+		mplayer:${PORTSDIR}/multimedia/mplayer
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
-USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/mBox-${PORTVERSION}
 
 .include <bsd.port.mk>
