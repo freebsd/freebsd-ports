@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ucd-snmp
-PORTVERSION=	4.2.5
-PORTREVISION=	2
+PORTVERSION=	4.2.6
+PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
@@ -67,12 +67,36 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
 .endif
+
+.if defined(WITHOUT_SSL)
+CONFIGURE_ARGS+= --without-openssl
+.else
+.if defined(WITH_PORTSSL) || ${OSVERSION} >= 500100
 .if ${OSVERSION} >= 500100
-IGNORE=		Broken with latest OpenSSL suite
+LIB_DEPENDS+=	crypto.4:${PORTSDIR}/security/openssl
+.else
+LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
+.endif
+CONFIGURE_ARGS+= --with-openssl=${LOCALBASE}
+CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
+.else
+CONFIGURE_ARGS+= --with-openssl=/usr
+.endif
 .endif
 
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_PORTSSL=yes  Use the OpenSSL Version delivered by the ports."
+	@${ECHO} "	                  With FreeBSD 5, net-snmp4 requires automaticly"
+	@${ECHO} "	                  the OpenSSL ports-version. In the 5 case, you"
+	@${ECHO} "	                  don't need to define WITH_PORTSSL (default)."
+	@${ECHO} "	WITHOUT_SSL=yes   Disable the OpenSSL support."
+	@${ECHO} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
