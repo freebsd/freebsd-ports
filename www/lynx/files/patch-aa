@@ -1,6 +1,6 @@
---- makefile.in.orig	Sat Apr  1 04:33:40 2000
-+++ makefile.in	Sun Apr 16 06:57:08 2000
-@@ -379,22 +379,19 @@
+--- makefile.in.orig	Tue Feb 13 04:33:21 2001
++++ makefile.in	Sat Mar  3 05:21:01 2001
+@@ -387,22 +387,19 @@
  		fi ; \
  		)'
  	@-rm -f $(HELPDIR)/help_files.sed
@@ -14,12 +14,12 @@
 +	@echo Updating $(libdir)/lynx.cfg.default
 +	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
 +	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
- 	@ECHO_CC@sed	-e '/^HELPFILE:http/s@^@#@' \
- 		-e '/^#HELPFILE:file/s@#@@' \
- 		-e '/^HELPFILE:file/s@/PATH_TO/lynx_help@$(helpdir)@' \
- 		-e '/^[A-Z_]*:/s@/PATH_TO/lynx_doc@$(docdir)@' \
- 		-e '/^HELPFILE:file/s@$$@$(COMPRESS_EXT)@' \
- 		-e '/^HELPFILE:file/s@$(COMPRESS_EXT)$(COMPRESS_EXT)$$@$(COMPRESS_EXT)@' \
+ 	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
+ 		-e '/^#HELPFILE:file/s!#!!' \
+ 		-e '/^HELPFILE:file/s!/PATH_TO/lynx_help!$(helpdir)!' \
+ 		-e '/^[A-Z_]*:/s!/PATH_TO/lynx_doc!$(docdir)!' \
+ 		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
 -		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
 -	chmod 644 $(LIBDIR)/lynx.cfg
 +		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
@@ -29,7 +29,7 @@
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -416,8 +413,7 @@
+@@ -424,8 +421,7 @@
  	$(SHELL) -c '$(srcdir)/cfg_defs.sh $(srcdir)'
  
  install-cfg : $(LIBDIR)
