@@ -8,8 +8,8 @@
 PORTNAME=	glove
 PORTVERSION=	1.0.1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/glove/source/ \
-		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	Glove_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
