@@ -844,6 +844,7 @@ clint		ports/devel/clint
 clip		ports/databases/clip
 clips		ports/lang/clips
 clisp		ports/lang/clisp
+clisp-hyperspec	ports/devel/clisp-hyperspec
 cln		ports/math/cln
 clo++		ports/devel/clo++
 clockspeed	ports/sysutils/clockspeed
