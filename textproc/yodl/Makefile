@@ -3,7 +3,7 @@
 # Date created:         22 Oct 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/10 10:05:02 simokawa Exp $
+# $Id: Makefile,v 1.3 1999/08/27 22:30:17 mharo Exp $
 #
 
 DISTNAME=	yodl-1.22
@@ -29,7 +29,7 @@ MAN7=		yodlmacros.7 \
 		yodlmanpage.7
 
 do-build:
-	(cd ${WRKSRC} && env CFLAGS="${CFLAGS}" ${GMAKE} PREFIX=${PREFIX} progs)
+	(cd ${WRKSRC} && ${SETENV} CFLAGS="${CFLAGS}" ${GMAKE} PREFIX=${PREFIX} progs)
 	(cd ${WRKSRC}/misc && gcc ${CFLAGS} -s -o striproff striproff.c)
 
 # this weird contortion is because the YODL makefile is broken

@@ -3,7 +3,7 @@
 # Date created:         22 July 1999
 # Whom:                 mi@aldan.algebra.com
 #
-# $Id: Makefile,v 1.1.1.1 1999/07/30 17:04:02 ache Exp $
+# $Id: Makefile,v 1.2 1999/08/23 04:23:49 mharo Exp $
 
 DISTNAME=	koi8rPS-1.0
 CATEGORIES=	russian print
@@ -77,7 +77,7 @@ do-install:
 			You can always merge ${CPS_DIR}/Fontmap.diff into \
 			${FONTMAP} manually. ; \
 		else \
-			env SIMPLE_BACKUP_SUFFIX=.CyrPS VERSION_CONTROL= \
+			${SETENV} SIMPLE_BACKUP_SUFFIX=.CyrPS VERSION_CONTROL= \
 				${PATCH} "${FONTMAP}" ${WRKSRC}/Fontmap.diff ; \
 			${RM} -f "${FONTMAP}".CyrPS ; \
 	fi

@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.7 1999/06/28 17:19:28 cpiazza Exp $
+# $Id: Makefile,v 1.8 1999/08/21 07:37:27 cpiazza Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -51,7 +51,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/texinputs/* ${PREFIX}/share/texmf/tex/latex/latex2html
 
 post-install:
-	@cd ${PREFIX}/share/latex2html && env LATEX2HTMLDIR=${PREFIX}/share/latex2html ${PERL5} ${PREFIX}/share/latex2html/install-test
+	@cd ${PREFIX}/share/latex2html && ${SETENV} LATEX2HTMLDIR=${PREFIX}/share/latex2html ${PERL5} ${PREFIX}/share/latex2html/install-test
 	@${INSTALL_SCRIPT} ${PREFIX}/share/latex2html/latex2html ${PREFIX}/bin
 	@${ECHO_MSG} "********************************************************"
 	@${ECHO_MSG} "Latex2html has now been installed with a very basic"
