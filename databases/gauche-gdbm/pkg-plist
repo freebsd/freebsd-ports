@@ -1,2 +1,3 @@
+lib/gauche/%%VERSION%%/%%TARGET%%/gdbm.la
 lib/gauche/%%VERSION%%/%%TARGET%%/gdbm.so
 share/gauche/%%VERSION%%/lib/dbm/gdbm.scm
