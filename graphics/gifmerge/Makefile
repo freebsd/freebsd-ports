@@ -3,13 +3,13 @@
 # Date created:        20 Oct 1996
 # Whom:                Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/19 12:32:02 asami Exp $
 #
 
 DISTNAME=	gifmerge
 PKGNAME=        gifmerge-1.33
 CATEGORIES=     graphics
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=     nakai@mlab.t.u-tokyo.ac.jp

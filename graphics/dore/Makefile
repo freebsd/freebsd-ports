@@ -3,12 +3,12 @@
 # Date created:		10 February 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1996/03/07 00:21:43 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:27:45 asami Exp $
 #
 
 DISTNAME=	pdore-6.0
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tar.Z
 
 USE_GMAKE=	yes

@@ -3,13 +3,13 @@
 # Date created:        31 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/11/16 09:00:17 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/29 19:47:00 torstenb Exp $
 #
 
 DISTNAME=	GB
 PKGNAME=        vgb-0.7
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	VGB.tar.Z
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

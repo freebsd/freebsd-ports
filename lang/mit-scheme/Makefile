@@ -7,7 +7,7 @@
 DISTNAME=       mit-scheme
 PKGNAME=	mit-scheme-7.3
 CATEGORIES=	lang
-MASTER_SITES=   ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
+MASTER_SITES=   ${MASTER_SITE_LOCAL}
 DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
 
 MAINTAINER= 	jmacd@FreeBSD.ORG
