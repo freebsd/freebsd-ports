@@ -306,6 +306,7 @@
     SUBDIR += solfege
     SUBDIR += songprint
     SUBDIR += sonice
+    SUBDIR += sound-juicer
     SUBDIR += soundgrab
     SUBDIR += soundtracker
     SUBDIR += sox
