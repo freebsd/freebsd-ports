@@ -21,7 +21,11 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
 .if !defined(WITHOUT_MOZILLA)
+.if !defined(WITH_FULL_MOZILLA)
 MOZILLA=	mozilla-embedded
+.else
+MOZILLA=	mozilla
+.endif
 BUILD_DEPENDS+=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
@@ -55,7 +59,14 @@ MAN1=		nautilus-xml-migrate.1
 
 .if !defined(WITHOUT_MOZILLA)
 pre-extract:
-	@${ECHO} "You can remove embedded mozilla support by defining WITHOUT_MOZILLA"
+.if !defined(WITH_FULL_MOZILLA)
+	@${ECHO_MSG}
+	@${ECHO_MSG} " By default the port uses mozilla-embedded for html rendering, but if you are"
+	@${ECHO_MSG} " planning to use both Mozilla and Nautilus you can instruct it to use mozilla by"
+	@${ECHO_MSG} " defining \"WITH_FULL_MOZILLA\"."
+	@${ECHO_MSG}
+.endif
+	@${ECHO_MSG} "You can remove embedded mozilla support by defining WITHOUT_MOZILLA."
 .endif
 
 pre-patch:
