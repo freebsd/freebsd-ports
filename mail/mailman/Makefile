@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0b6
+PORTVERSION=	2.0.r3
 CATEGORIES=	mail
-MASTER_SITES=   http://download.sourceforge.net/mailman/
-DISTNAME=       mailman-2.0beta6
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mailman
+DISTNAME=	${PORTNAME}-2.0rc3
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13  \
@@ -21,22 +22,22 @@ RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13  \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-mail-gid=daemon --with-cgi-gid=nogroup
 
-UNAME?=		mailman
-UID?=		89
+USERNAME?=	mailman
+USERID?=	89
 
 MAILMANDIR?=	${PREFIX}/mailman
 
 pre-configure:
 	# Add the username, uid, group amd gid
-	${SH} ${FILESDIR}/configure.sh ${UNAME} ${UID} ${MAILMANDIR}
+	${SH} ${FILESDIR}/configure.sh ${USERNAME} ${USERID} ${MAILMANDIR}
 
 	# Create the dir and the correct permissions for it.
 	${MKDIR} ${MAILMANDIR}
-	${CHOWN} ${UNAME}:${UNAME} ${MAILMANDIR}
+	${CHOWN} ${USERNAME}:${USERNAME} ${MAILMANDIR}
 	${CHMOD} 2775 ${MAILMANDIR}
 
 post-install:
-	@${CHOWN} -R :${UNAME} ${MAILMANDIR}
+	@${CHOWN} -R :${USERNAME} ${MAILMANDIR}
 	@echo All related binaries have been installed in ${MAILMANDIR}/bin
 	@echo See ${WRKDIR}/INSTALL for installation instructions \(prefix == ${MAILMANDIR}\).
 	@echo Sample entry for httpd.conf for Apache:
