@@ -1,0 +1,12 @@
+--- configure.in.orig
++++ configure.in
+@@ -311,7 +311,8 @@
+ AC_CHECK_HEADERS(sys/resource.h sys/time.h sys/param.h sys/wait.h)
+ AC_CHECK_HEADERS(wctype.h wchar.h)
+ 
+-AC_CHECK_TYPES([wint_t, mbstate_t])
++AC_CHECK_TYPES([wint_t, mbstate_t], , ,[#include <wchar.h>])
++AC_CHECK_TYPES([wchar_t], , ,[#include <wchar.h>])
+ 
+ echo .
+ echo Checking for system constants
