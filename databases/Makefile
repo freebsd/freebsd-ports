@@ -223,6 +223,7 @@
     SUBDIR += py-sybase
     SUBDIR += pydbdesigner
     SUBDIR += qdbm
+    SUBDIR += qt-ibase-plugin
     SUBDIR += qt-mysql-plugin
     SUBDIR += qt-odbc-plugin
     SUBDIR += qt-pgsql-plugin
