@@ -1074,6 +1074,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <bid>12636</bid>
+      <cvename>CAN-2005-0546</cvename>
       <url>http://asg.web.cmu.edu/cyrus/download/imapd/changes.html</url>
     </references>
     <dates>
