@@ -25,10 +25,6 @@ COMMENT=	FSF C/C++-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
