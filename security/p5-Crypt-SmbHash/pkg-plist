@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Crypt/SmbHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SmbHash/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SmbHash
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
