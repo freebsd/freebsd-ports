@@ -1186,6 +1186,7 @@ digger-vgl	ports/games/digger-vgl
 digikam		ports/graphics/digikam
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
+diradmin	ports/net/diradmin
 dircproxy	ports/irc/dircproxy
 dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
