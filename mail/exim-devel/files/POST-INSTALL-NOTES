@@ -32,6 +32,6 @@ To run Exim instead of sendmail on startup:
 
 You may also want to configure newsyslog(8) to rotate Exim log files:
 
-/var/log/exim/mainlog	exim:mail 640 7 * @T00 Z
-/var/log/exim/rejectlog	exim:mail 640 7 * @T00 Z
+/var/log/exim/mainlog	mailnull:mail 640 7 * @T00 Z
+/var/log/exim/rejectlog	mailnull:mail 640 7 * @T00 Z
 
