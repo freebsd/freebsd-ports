@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Dec 29 17:08:15 2000
++++ configure.in	Fri Dec 29 17:08:20 2000
+@@ -6,7 +6,7 @@
+ AC_PROG_INSTALL
+ 
+ dnl Checks for libraries.
+-AC_CHECK_LIB(icq, icq_Init)
++AC_CHECK_LIB(icq0, icq_Init)
+ AC_CHECK_LIB(nsl, gethostbyname)
+ AC_CHECK_LIB(socket, connect)
+ AC_CHECK_LIB(guile, gh_procedure_p)
