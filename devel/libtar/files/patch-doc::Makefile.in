@@ -1,0 +1,72 @@
+--- doc/Makefile.in.orig	Sat Nov 25 01:44:57 2000
++++ doc/Makefile.in	Sat Jan  6 19:00:35 2001
+@@ -67,46 +67,57 @@
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man3
+ 	$(INSTALL_DATA) $(srcdir)/tar_open.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TAR_OPEN_SO); do \
+-		echo ".so man3/tar_open.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
+-	done
++		$(LN_S) $(DESTDIR)$(mandir)/man3/tar_open.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
++        done
+ 	$(INSTALL_DATA) $(srcdir)/tar_append_file.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TAR_APPEND_FILE_SO); do \
+-		echo ".so man3/tar_append_file.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/tar_append_file.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/tar_block_read.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TAR_BLOCK_READ_SO); do \
+-		echo ".so man3/tar_block_read.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/tar_block_read.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/th_read.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TH_READ_SO); do \
+-		echo ".so man3/th_read.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/th_read.3 \
++			 $(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/th_set_from_stat.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TH_SET_FROM_STAT_SO); do \
+-		echo ".so man3/th_set_from_stat.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/th_set_from_stat.3 \
++			 $(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/tar_extract_file.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TAR_EXTRACT_FILE_SO); do \
+-		echo ".so man3/tar_extract_file.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/tar_extract_file.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/th_get_pathname.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TH_GET_PATHNAME_SO); do \
+-		echo ".so man3/th_get_pathname.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/th_get_pathname.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/th_print_long_ls.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TH_PRINT_LONG_LS_SO); do \
+-		echo ".so man3/th_print_long_ls.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/th_print_long_ls.3 \
++			 $(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) $(srcdir)/tar_extract_all.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(TAR_EXTRACT_ALL_SO); do \
+-		echo ".so man3/tar_extract_all.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/tar_extract_all.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) @LHPKG@_hash_new.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(@LHPKG@_HASH_NEW_SO); do \
+-		echo ".so man3/@LHPKG@_hash_new.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/@LHPKG@_hash_new.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 	$(INSTALL_DATA) @LHPKG@_list_new.3 $(DESTDIR)$(mandir)/man3
+ 	for i in $(@LHPKG@_LIST_NEW_SO); do \
+-		echo ".so man3/@LHPKG@_list_new.3" > $(DESTDIR)$(mandir)/man3/$${i}.3; \
++		$(LN_S) $(DESTDIR)$(mandir)/man3/@LHPKG@_list_new.3 \
++			$(DESTDIR)$(mandir)/man3/$${i}.3; \
+ 	done
+ 

@@ -1,0 +1,4 @@
+bin/libtar
+include/libtar.h
+include/libtar_listhash.h
+lib/libtar.a
