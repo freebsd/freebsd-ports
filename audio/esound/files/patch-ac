@@ -1,0 +1,34 @@
+--- ltconfig.orig	Tue Dec 15 02:22:13 1998
++++ ltconfig	Mon Feb  1 22:17:53 1999
+@@ -767,7 +767,7 @@
+     ;;
+ 
+   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
+-  freebsd3*)
++  freebsd3* | freebsd4*)
+     archive_cmds='$CC -shared -o $lib$libobjs'
+     hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+@@ -1105,10 +1105,21 @@
+   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "$lib" | sed '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
+   ;;
+ 
+-freebsd2* | freebsd3*)
++freebsd2*)
+   version_type=sunos
+   library_names_spec='$libname.so.$versuffix $libname.so'
+   finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  shlibpath_var=LD_LIBRARY_PATH
++  ;;
++
++freebsd3* | freebsd4*)
++  version_type=freebsd
++  library_names_spec='$libname.so.$versuffix $libname.so'
++  if [ $PORTOBJFORMAT = elf ]; then
++  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$PORTOBJFORMAT" ldconfig -m $libdir'
++  else
++  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  fi
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 
