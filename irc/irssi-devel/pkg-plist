@@ -1,0 +1,18 @@
+bin/irssi
+bin/irssi-bot
+lib/irssi/plugins/libexternal.a
+lib/irssi/plugins/libexternal.la
+lib/irssi/plugins/libexternal.so
+lib/irssi/plugins/libexternal.so.0
+lib/irssi/plugins/libsample.a
+lib/irssi/plugins/libsample.la
+lib/irssi/plugins/libsample.so
+lib/irssi/plugins/libsample.so.0
+lib/irssi/plugins/libspeech.a
+lib/irssi/plugins/libspeech.la
+lib/irssi/plugins/libspeech.so
+lib/irssi/plugins/libspeech.so.0
+share/examples/irssi/irssi.conf
+@dirrm lib/irssi/plugins
+@dirrm lib/irssi
+@dirrm share/examples/irssi
