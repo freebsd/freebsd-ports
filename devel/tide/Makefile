@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	tide
-PORTVERSION=	2.1.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel
-MASTER_SITES=	http://t3x.dyndns.org/files/ \
-		http://www.t3x.org/files/
+MASTER_SITES=	http://www.holm-und-jeschag.de/files/
 DISTNAME=	tide-${PORTVERSION:S/.//g}
 
-MAINTAINER=	nmh@t3x.org
-COMMENT=	T3X Integrated Development Environment and tools
+MAINTAINER=	nils@holm-und-jeschag.de
+COMMENT=	A collection of classes for the T3X language
 
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -21,8 +20,5 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 ONLY_FOR_ARCHS=	i386
 
 MAKE_ENV+=	T3XDIR=${LOCALBASE}/t3x/r8
-
-do-configure:
-	@(cd ${WRKSRC}; make unix)
 
 .include <bsd.port.mk>
