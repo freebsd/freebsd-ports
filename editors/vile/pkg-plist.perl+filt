@@ -52,6 +52,7 @@ share/vile/palettes.rc
 share/vile/pictmode.rc
 share/vile/search.rc
 share/vile/shifts.rc
+share/vile/showeach.rc
 share/vile/vileinit.rc
 share/vile/vileperl.rc
 share/vile/vile.hlp
@@ -129,6 +130,7 @@ share/vile/macros/palettes.rc
 share/vile/macros/pictmode.rc
 share/vile/macros/search.rc
 share/vile/macros/shifts.rc
+share/vile/macros/showeach.rc
 share/vile/macros/vileinit.rc
 share/vile/macros/vilemenu.rc
 share/vile/macros/vileperl.rc

@@ -90,6 +90,7 @@ share/xvile/vile/palettes.rc
 share/xvile/vile/pictmode.rc
 share/xvile/vile/search.rc
 share/xvile/vile/shifts.rc
+share/xvile/vile/showeach.rc
 share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/which.rc
@@ -168,6 +169,7 @@ share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
 share/xvile/macros/search.rc
 share/xvile/macros/shifts.rc
+share/xvile/macros/showeach.rc
 share/xvile/macros/vileinit.rc
 share/xvile/macros/vilemenu.rc
 share/xvile/macros/vileperl.rc
