@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.c.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
+RUN_DEPENDS=	XFree86:${PORTSDIR}/x11-servers/XFree86-4-Server
+
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
@@ -21,12 +23,10 @@ do-extract:
 	${GUNZIP_CMD} -c ${_DISTDIR}${DISTFILES} > ${WRKSRC}/wrapper.c
 
 do-build:
-	${CC} -o ${WRKDIR}/Xwrapper ${WRKDIR}/wrapper.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o Xwrapper wrapper.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper ${PREFIX}/bin/
-	${LN} -sf ${PREFIX}/bin/Xwrapper ${PREFIX}/bin/X
-	${CHMOD} -s ${PREFIX}/bin/XFree86
-	${CHMOD} +s ${PREFIX}/bin/Xwrapper
+	${INSTALL_PROGRAM} ${WRKSRC}/Xwrapper ${PREFIX}/bin
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
