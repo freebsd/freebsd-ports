@@ -7,6 +7,7 @@
 
 PORTNAME=	makejvf-fkr
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.tooyoo.l.u-tokyo.ac.jp/pub/TeX/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
