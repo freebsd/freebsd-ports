@@ -1,0 +1,6 @@
+%%JAVAJARDIR%%/jaxen-core.jar
+%%JAVAJARDIR%%/jaxen-dom.jar
+%%JAVAJARDIR%%/jaxen-dom4j.jar
+%%JAVAJARDIR%%/jaxen-exml.jar
+%%JAVAJARDIR%%/jaxen-full.jar
+%%JAVAJARDIR%%/jaxen-jdom.jar
