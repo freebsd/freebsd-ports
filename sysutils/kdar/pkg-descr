@@ -4,8 +4,7 @@ safely backup (with compression if you like), view and restore files
 using KDar, along with a few easy UNIX commands for mounting and
 burning CD-R's, Zip and Jazz drives, DVD-R's, floppies, or any other
 disk-based storage media.
+The KDar project was started by Johnathan K. Burchill, Ph.D., and it 
+is hosted by SourceForge.net.
 
 WWW:	http://kdar.sf.net
-
-- Lehmann
-kay_lehmann@web.de

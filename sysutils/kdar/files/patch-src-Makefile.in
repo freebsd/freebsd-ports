@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Dec  1 21:55:50 2004
++++ src/Makefile.in	Wed Dec  1 21:56:21 2004
+@@ -246,7 +246,7 @@
+ kdar_LDFLAGS = $(KDE_RPATH) $(all_libraries)
+ 
+ # the libraries to link against.
+-kdar_LDADD = $(LIB_KFILE) $(LIB_KDEPRINT)
++kdar_LDADD = $(LIB_KFILE) $(LIB_KDEPRINT) $(LIBPTHREAD)
+ 
+ # which sources should be compiled for kdar
+ #>- kdar_SOURCES = kdarConfigureDlg.ui kdardlg.ui kdarcreatedlg.ui kdarcreatewizarddlg.ui kdardirectoryfilterdlg.ui kdarcompressionfilterdlg.ui kdarfilefilterdlg.ui extractdlg.ui newarchivestoragedirdlg.ui archiveHandle.cpp kdariface.skel kdarListViewItem.cpp kdardialog.cpp kdarConfig.cpp kdarcreatedialog.cpp kdarfilefilterdialog.cpp kdarcompressionfilterdialog.cpp kdardirectoryfilterdialog.cpp kdarextractdialog.cpp kdarcreatearchivewizard.cpp newarchivestoragedirdialog.cpp createArchiveThread.cpp diffArchiveThread.cpp getUserResponseThread.cpp isolateArchiveThread.cpp listArchiveThread.cpp openArchiveThread.cpp populateTreeArchiveThread.cpp restoreArchiveThread.cpp testArchiveThread.cpp kdarview.cpp kdar.cpp main.cpp kdartestsdlg.ui kdartestsdialog.cpp kdarSplash.cpp
