@@ -9130,6 +9130,7 @@ remarp		ports/net-mgmt/remarp
 remind		ports/deskutils/remind
 renamedlgplugins	ports/misc/renamedlgplugins
 renattach	ports/mail/renattach
+rendercheck	ports/x11/rendercheck
 renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
 reoback		ports/sysutils/reoback
