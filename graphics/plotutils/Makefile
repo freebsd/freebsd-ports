@@ -3,7 +3,7 @@
 # Date created:		19 June 1998
 # Whom:			Chuck Robey (chuckr)
 #
-# $Id: Makefile,v 1.19 1998/05/04 20:23:27 jseger Exp $
+# $Id: Makefile,v 1.1.1.1 1998/06/20 03:09:11 chuckr Exp $
 #
 
 DISTNAME=	plotutils-2.1.1
@@ -15,7 +15,7 @@ MAINTAINER=	chuckr@FreeBSD.ORG
 GNU_CONFIGURE=	yes
 
 .ifdef HAVE_MOTIF
-CONFIGURE_ARGS+=--with-motif
+CONFIGURE_ARGS=	--with-motif
 .endif
 
 post-install:
