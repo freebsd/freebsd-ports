@@ -1,0 +1,52 @@
+bin/gift-setup
+bin/giftd
+include/libgift/array.h
+include/libgift/conf.h
+include/libgift/dataset.h
+include/libgift/event.h
+include/libgift/fdbuf.h
+include/libgift/file.h
+include/libgift/giftconfig.h
+include/libgift/interface.h
+include/libgift/libgift.h
+include/libgift/list.h
+include/libgift/list_lock.h
+include/libgift/log.h
+include/libgift/memory.h
+include/libgift/mime.h
+include/libgift/network.h
+include/libgift/parse.h
+include/libgift/platform.h
+include/libgift/proto/if_event_api.h
+include/libgift/proto/protocol.h
+include/libgift/proto/protocol_ver.h
+include/libgift/proto/share.h
+include/libgift/proto/share_hash.h
+include/libgift/proto/transfer_api.h
+include/libgift/stopwatch.h
+include/libgift/strobj.h
+include/libgift/tcpc.h
+include/libgift/tree.h
+lib/libgift.la
+lib/libgift.so
+lib/libgift.so.0
+lib/libgiftproto.la
+lib/libgiftproto.so
+lib/libgiftproto.so.0
+libdata/pkgconfig/libgift.pc
+%%PORTDOCS%%share/doc/giFT/AUTHORS
+%%PORTDOCS%%share/doc/giFT/COPYING
+%%PORTDOCS%%share/doc/giFT/ChangeLog
+%%PORTDOCS%%share/doc/giFT/INSTALL
+%%PORTDOCS%%share/doc/giFT/NEWS
+%%PORTDOCS%%share/doc/giFT/QUICKSTART
+%%PORTDOCS%%share/doc/giFT/README
+%%PORTDOCS%%share/doc/giFT/TODO
+%%PORTDOCS%%share/giFT/giftd.conf.template
+%%PORTDOCS%%share/giFT/mime.types
+%%PORTDOCS%%share/giFT/ui/ui.conf.template
+@dirrm include/libgift/proto
+@dirrm include/libgift
+@dirrm %%PORTDOCS%%share/doc/giFT
+@dirrm %%PORTDOCS%%share/giFT/ui
+@dirrm %%PORTDOCS%%share/giFT
