@@ -8,14 +8,14 @@
 # * Checks if the 'www' user exists. If it does, then it displays
 #   a message.
 #
-# $FreeBSD: /tmp/pcvs/ports/www/tomcat55/Attic/pkg-deinstall,v 1.1 2003-08-13 11:39:38 znerd Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/tomcat55/Attic/pkg-deinstall,v 1.2 2004-01-02 12:31:11 znerd Exp $
 #
 
 # Make sure we're in the right stage of the process
 if [ "$2" = "DEINSTALL" ]; then
 
 	# Kill the process if it is still running
-	PID_FILE=/var/run/tomcat4.pid
+	PID_FILE=/var/run/tomcat5
 	if [ -s ${PID_FILE} ]; then
 		PID=`cat ${PID_FILE}`
 		echo -n ">> Killing Jakarta Tomcat process (${PID})..."

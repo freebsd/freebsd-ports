@@ -15,7 +15,7 @@
 if [ "$2" = "DEINSTALL" ]; then
 
 	# Kill the process if it is still running
-	PID_FILE=/var/run/tomcat4.pid
+	PID_FILE=/var/run/tomcat41.pid
 	if [ -s ${PID_FILE} ]; then
 		PID=`cat ${PID_FILE}`
 		echo -n ">> Killing Jakarta Tomcat process (${PID})..."
