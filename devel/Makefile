@@ -96,6 +96,7 @@
     SUBDIR += mkmf
     SUBDIR += mm
     SUBDIR += mprof
+    SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm
     SUBDIR += ncurses

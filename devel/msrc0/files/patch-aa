@@ -1,0 +1,13 @@
+--- makeme.orig	Tue Nov  9 23:26:11 1999
++++ makeme	Tue Nov  9 23:27:44 1999
+@@ -1,4 +1,10 @@
+ #!/bin/sh
++
++# Hardcode HOSTTYPE because the bash shell uses it, too.
++
++HOSTTYPE=FREEBSD
++export HOSTTYPE
++
+ # This hack won't work for every trick you can play with /usr/msrc.
+ # If the Distfile sends different files to the various platforms, or
+ # builds a file on the meta source machine with a special tool or
