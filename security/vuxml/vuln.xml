@@ -3427,6 +3427,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>tiff</name>
+	<name>linux-tiff</name>
 	<range><le>3.6.1_2</le></range>
       </package>
     </affects>
@@ -3439,11 +3440,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <certvu>687568</certvu>
       <cvename>CAN-2004-0886</cvename>
     </references>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
+      <modified>2005-01-08</modified>
     </dates>
   </vuln>
 
@@ -3504,10 +3507,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="f6680c03-0bd8-11d9-8a8a-000c41e2cdad">
-    <topic>tiff --- RLE decoder heap overflows</topic>
+    <topic>tiff -- RLE decoder heap overflows</topic>
     <affects>
       <package>
 	<name>tiff</name>
+	<name>linux-tiff</name>
 	<range><le>3.6.1_1</le></range>
       </package>
     </affects>
@@ -3520,12 +3524,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <certvu>948752</certvu>
       <cvename>CAN-2004-0803</cvename>
       <url>http://scary.beasts.org/security/CESA-2004-006.txt</url>
     </references>
     <dates>
       <discovery>2004-10-13</discovery>
       <entry>2004-10-13</entry>
+      <modified>2005-01-08</modified>
     </dates>
   </vuln>
 
