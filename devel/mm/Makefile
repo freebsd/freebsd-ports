@@ -14,7 +14,6 @@ MASTER_SITES=	http://www.engelschall.com/sw/mm/ \
 MAINTAINER=	rse@engelschall.com
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		mm-config.1
 MAN3=		mm.3

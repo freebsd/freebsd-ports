@@ -15,8 +15,7 @@ MAINTAINER=	erich@FreeBSD.org
 LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tclconfig=${PREFIX}/lib/tcl8.2 \
+CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.2 \
 		--with-tclhdir=${PREFIX}/include/tcl8.2 \
 		--with-tclsh=${PREFIX}/bin/tclsh8.2 \
 		--with-tkconfig=${PREFIX}/lib/tk8.2 \

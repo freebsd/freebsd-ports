@@ -21,14 +21,14 @@ MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/src/   \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/FreeBSD/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-2.2.0-FreeBSD.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER= 	housel@acm.org
 
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		$(WRKDIR)/gd/src
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=$(PREFIX) --srcdir=$(WRKSRC)
+CONFIGURE_ARGS= --srcdir=$(WRKSRC)
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c"
 
 USE_GMAKE=	yes

@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/teTeX-1.0
 EXTRACT_ONLY=	${TETEX_SRC}
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --prefix=${PREFIX} --disable-multiplatform \
+CONFIGURE_ARGS= --disable-multiplatform \
 		--without-texinfo --without-dialog \
 		--with-system-ncurses --with-system-zlib \
 		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \

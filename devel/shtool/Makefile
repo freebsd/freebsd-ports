@@ -16,7 +16,7 @@ MAINTAINER=	rse@engelschall.com
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-batch
+CONFIGURE_ARGS=	--enable-batch
 
 MAN1=		shtool.1 shtoolize.1
 

@@ -10,7 +10,6 @@ The GNU's C Compiler		gcc-2.7.2.2  + crosspatch
 Cygnus's embedded libraries	newlib-1.7.1
 Cygnus's dos release utilities  dosrel-1.0
 
-
 Compiling your code
 ===================
 
@@ -37,9 +36,7 @@ site. The DOS files mentioned above should be in
 /usr/local/share/crossgo32 (or similar on your system). Please check
 the DJGPP FAQ for more information on this topic.
 
-
 WWW: http://www.delorie.com/djgpp/ (DPMI server, source, FAQs, etc)
-
 
 Related ports 
 ============= 
@@ -53,7 +50,6 @@ emulated on FreeBSD.
 If you are interested in network support and DJGPP v2 exe files,
 amongst other DJGPP bits and pieces, check out the crossgo32-dgjpp2
 selection of ports. 
-
 
 Share and enjoy,
 

@@ -20,8 +20,7 @@ MAINTAINER=	markm@FreeBSD.org
 Y2K=		http://www.pgpi.com/faq/pgpi.shtml#Year2000
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+GNU_CONFIGURE=	yes
 RESTRICTED=     "Crypto"
 MAN1=		pgp5.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
 MAN5=		pgp.cfg.5

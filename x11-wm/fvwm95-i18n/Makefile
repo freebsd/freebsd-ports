@@ -29,7 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
 EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981123.tgz
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --x-includes=${X11BASE}/include \
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include \
 		--mandir=${MANPREFIX}/man \
 		--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"

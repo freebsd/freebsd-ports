@@ -97,6 +97,8 @@ include/bfd.h
 include/ansidecl.h
 include/bfdlink.h
 include/obstack.h
+@unexec install-info --delete %D/info/cpp.info %D/info/dir
+@unexec install-info --delete %D/info/gcc.info %D/info/dir
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -127,6 +129,8 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
+@exec install-info %D/info/cpp.info %D/info/dir
+@exec install-info %D/info/gcc.info %D/info/dir
 lib/libiberty.a
 lib/libi386-go32-bfd.a
 lib/gcc-lib/i386-go32/2.7.2.2/include/syslimits.h

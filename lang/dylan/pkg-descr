@@ -1,12 +1,11 @@
-This is a port of the CMU Gwydion project's implementation of the
-Dylan programming language.  Dylan is an object-oriented language with
-many powerful features, including automatic memory management (garbage
-collection), generic functions (also known as multiple dispatch or
-multi-methods), multiple inheritance, a powerful and safe macro
-facility for extending the language's syntax, and a powerful class and
-function library.  Though it is a DYnamic LANguage, it includes
-facilities for making compiled programs more efficient than many other
-dynamic languages.
+CMU Gwydion project's implementation of the Dylan programming language.
+Dylan is an object-oriented language with many powerful features, including
+automatic memory management (garbage collection), generic functions (also
+known as multiple dispatch or multi-methods), multiple inheritance, a
+powerful and safe macro facility for extending the language's syntax, and a
+powerful class and function library.  Though it is a DYnamic LANguage, it
+includes facilities for making compiled programs more efficient than many
+other dynamic languages.
 
 The Dylan language was originally developed by Apple, but the project
 was dropped just as the language definition was being finished and

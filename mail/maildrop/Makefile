@@ -37,9 +37,8 @@ CONFIGURE_ARGS=	--enable-syslog=1 \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
 		--enable-maildrop-gid="${MAILDROP_SGID}"
-CONFIGURE_ENV=	CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
-		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" \
+		LIBS="-L${PREFIX}/lib"
 GNU_CONFIGURE=	yes
 
 .if defined(NOPORTDOCS)
