@@ -4495,6 +4495,7 @@ mod_geoip	ports/www/mod_geoip
 mod_gzip	ports/www/mod_gzip
 mod_hosts_access	ports/www/mod_hosts_access
 mod_index_rss	ports/www/mod_index_rss
+mod_injection	ports/www/mod_injection
 mod_jk		ports/www/mod_jk
 mod_jk2		ports/www/mod_jk2
 mod_layout	ports/www/mod_layout
