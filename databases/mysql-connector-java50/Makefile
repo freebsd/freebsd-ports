@@ -66,10 +66,10 @@ pre-fetch:
 	@${ECHO_MSG} "JDBC driver will operate with JVM 1.2.x or better"
 	@${ECHO_MSG} ""
 
-do-build:
 .if !defined(WITHOUT_COMPILE)
-	@(cd ${BUILD_WRKSRC}; \
-	    ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+post-build:
+.else
+do-build:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${BUILDDIR}/doc && (cd ${BUILD_WRKSRC};  \
