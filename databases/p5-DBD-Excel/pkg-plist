@@ -1,0 +1,19 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Excel/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/DBD/Excel.pm
+%%PORTDOCS%%share/examples/DBD-Excel/README
+%%PORTDOCS%%share/examples/DBD-Excel/dbdtest.xls
+%%PORTDOCS%%share/examples/DBD-Excel/newxl.xls
+%%PORTDOCS%%share/examples/DBD-Excel/res_hidden
+%%PORTDOCS%%share/examples/DBD-Excel/res_testj
+%%PORTDOCS%%share/examples/DBD-Excel/res_tex
+%%PORTDOCS%%share/examples/DBD-Excel/res_texj
+%%PORTDOCS%%share/examples/DBD-Excel/testj.pl
+%%PORTDOCS%%share/examples/DBD-Excel/testj.xls
+%%PORTDOCS%%share/examples/DBD-Excel/tex.pl
+%%PORTDOCS%%share/examples/DBD-Excel/texj.pl
+%%PORTDOCS%%share/examples/DBD-Excel/thidden.pl
+%%PORTDOCS%%share/examples/DBD-Excel/thidden.xls
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Excel 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/share/examples/DBD-Excel 2>/dev/null || true

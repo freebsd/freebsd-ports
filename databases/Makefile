@@ -70,6 +70,7 @@
     SUBDIR += p5-CDB_File-Generator
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-DBD-CSV
+    SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBD-ODBC
