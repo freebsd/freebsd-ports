@@ -8,6 +8,7 @@
 DISTNAME=	korfont
 DIST_SUBDIR=	Acrobat5
 CATEGORIES=	korean
+COMMENT=	Asian Font Packs for Acrobat Reader 5.0 (for Korean)
 
 MASTERDIR=	${.CURDIR}/../../print/acroread5-commfont
 

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Input server of Japanese text (SJ3+Wnn7)
+
 SJ3=		yes
 WNN7=		yes
 

@@ -8,6 +8,7 @@
 CATEGORIES=	japanese
 
 LANGUAGE=	Japanese
+COMMENT=	A GUI Printer manager written with Tcl/Tk (Japanese)
 
 MASTERDIR=	${.CURDIR}/../../print/gp
 PKGDIR=		${.CURDIR}

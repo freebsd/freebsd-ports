@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	A major mode for editing SGML and XML documents for mule
 
 # This is a slave port.
 PORTCLASS=	slave

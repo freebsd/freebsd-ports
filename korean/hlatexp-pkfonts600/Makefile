@@ -9,6 +9,7 @@ MASTERDIR=	${.CURDIR}/../hlatexp-pkfonts300
 FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 MD5_FILE=	${.CURDIR}/distinfo
+COMMENT=	Korean pk fonts collection of hLaTeXp(600dpi)
 
 # pkfonts dpi
 RESOLUTION=	600

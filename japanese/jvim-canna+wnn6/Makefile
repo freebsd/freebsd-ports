@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-canna+wnn6
+COMMENT=	Japanized Vim (with Canna and Wnn6)
 CANNA=		yes
 WNN6=		yes
 

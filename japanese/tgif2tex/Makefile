@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	japanese
+COMMENT=	Converting texts in figure by tgif to LaTeX commands (for Japanese)
 
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Editor texto/gráfico, banco de dados/planilha/navegador integrado
 CATEGORIES=	portuguese
 
 .if !defined (LANG) && !defined(USE_LANG)

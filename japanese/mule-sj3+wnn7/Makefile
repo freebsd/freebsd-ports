@@ -6,6 +6,8 @@
 #
 
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with sj3, FreeWnn, Wnn6 and Wnn7 support built-in
+
 SJ3=		yes
 WNN7=		yes
 

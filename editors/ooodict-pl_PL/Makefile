@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Polish (Poland) MySpell dictionary for OpenOffice.org
 CATEGORIES=	editors
 
 LANGPREFIX=	pl

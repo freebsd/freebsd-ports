@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-sj3
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with SJ3 support built in (Only the executables)
 
 SJ3=		yes
 

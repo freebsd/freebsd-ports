@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Input server of Japanese text (Canna)
+
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-freewnn/

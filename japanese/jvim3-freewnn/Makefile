@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Japanized Vim-3.0 (with FreeWnn)
+
 FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../jvim3

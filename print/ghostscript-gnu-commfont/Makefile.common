@@ -7,6 +7,7 @@ DISTNAME=	# nonexistent
 DISTFILES=	# empty
 
 MAINTAINER?=	mita@FreeBSD.org
+COMMENT?=	GNU ghostscript with Japanese Font support
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTSDIR}/print/adobe-cmaps

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Input server of Japanese text (Canna+SJ3+Wnn6)
+
 CANNA=		yes
 SJ3=		yes
 WNN6=		yes

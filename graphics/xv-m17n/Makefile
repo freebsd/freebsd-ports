@@ -8,6 +8,7 @@
 PKGNAMESUFFIX=	-m17n
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	An X11 program that displays images of various formats with multilingualization
 
 MASTERDIR=	${.CURDIR}/../../graphics/xv
 PKGDIR=		${.CURDIR}

@@ -11,6 +11,7 @@ CATEGORIES+=	print
 MASTER_SITES=	http://www.jaist.ac.jp/~knakano/tgif2tex/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	Converting texts in figure by tgif to LaTeX commands
 
 USE_PERL5=	yes
 

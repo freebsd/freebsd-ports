@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-wnn6
 CATEGORIES=	japanese
+COMMENT=	Multilingual emacs, with Wnn4, and Wnn6 support built-in
 
 WNN6=		yes
 

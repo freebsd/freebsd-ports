@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	A library for Japanese Input Method Canna and Wnn6
+
 CANNA=		yes
 WNN6=		yes
 

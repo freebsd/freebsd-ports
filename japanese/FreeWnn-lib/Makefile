@@ -13,6 +13,7 @@ PKGNAMESUFFIX?=	-lib
 DISTNAME=	${PORTNAME}-${WMMVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
 #WRKSRC=	${WRKDIR}/${DISTNAME}/Xsi
 WRKSRC=	${WRKDIR}/FreeWnn-1.1.1-a017-pl4/Xsi

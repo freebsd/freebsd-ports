@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	The Custom Library for mule
 
 # This is a slave port.
 PORTCLASS=	slave

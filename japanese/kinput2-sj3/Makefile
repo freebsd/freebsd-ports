@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+COMMENT=	Input server of Japanese text (SJ3)
+
 SJ3=		yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-freewnn/

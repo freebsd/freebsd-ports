@@ -6,6 +6,8 @@
 #
 
 CATEGORIES=	japanese
+COMMENT=	A multilingual emacs, with FreeWnn, Wnn6 and Wnn7 support built-in
+
 WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
 		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT?=	WWW browser based on emacs/mule
 
 BUILD_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs
 RUN_DEPENDS?=	emacs-19.34:${PORTSDIR}/editors/emacs

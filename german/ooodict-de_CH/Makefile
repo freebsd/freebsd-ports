@@ -7,6 +7,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	German (Switzerland) MySpell dictionary for OpenOffice.org
 CATEGORIES=	german
 
 LANGPREFIX=	de

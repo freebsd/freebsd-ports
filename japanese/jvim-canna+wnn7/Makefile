@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+COMMENT=	Japanized Vim (with Canna and Wnn7)
 CANNA=		yes
 WNN7=		yes
 

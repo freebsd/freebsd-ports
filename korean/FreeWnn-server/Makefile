@@ -6,6 +6,7 @@
 #
 
 PKGNAMESUFFIX=	-server
+COMMENT=	A Japanese/Chinese/Korean input method (Korean server)
 CATEGORIES=	korean
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
 PKGDIR=		${.CURDIR}

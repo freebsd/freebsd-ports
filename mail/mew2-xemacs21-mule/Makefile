@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Message interface to Emacs Window (version 2) for xemacs21-mule
 
 # Mew major version
 MEW_MAJOR_VER=	2

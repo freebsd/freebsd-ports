@@ -6,6 +6,8 @@
 #
 
 PKGNAMESUFFIX=	-freewnn
+COMMENT=	Japanized Vim (with FreeWnn)
+
 FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../jvim

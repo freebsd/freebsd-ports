@@ -12,6 +12,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=	http://download.sourceforge.net/lookup/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Search interface on ${EMACS_PORT_NAME} for CD-ROM books, etc
 
 RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
 

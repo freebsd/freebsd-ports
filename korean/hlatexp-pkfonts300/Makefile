@@ -14,6 +14,7 @@ DISTFILES=	han.${RESOLUTION}pk.tar.gz hanja.${RESOLUTION}pk.tar.gz symb.${RESOLU
 DIST_SUBDIR=	htex
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT?=	Korean pk fonts collection of hLaTeXp(300dpi)
 
 # it depends hLaTeXp
 RUN_DEPENDS=	hlatex:${PORTSDIR}/korean/hlatexp

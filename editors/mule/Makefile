@@ -17,6 +17,7 @@ DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
 MAINTAINER?=	taoka@FreeBSD.org
+COMMENT?=	A multilingual emacs based 19.34 (Only the executables)
 
 RUN_DEPENDS=	${PREFIX}/share/${EMACS_PREFIX}/${EMACS_VERSION}/lisp/mule.el:${PORTSDIR}/editors/mule-common
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
