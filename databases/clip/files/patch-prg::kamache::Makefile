@@ -1,11 +1,11 @@
---- prg/kamache/Makefile.orig	Thu Jul  8 10:19:30 2004
-+++ prg/kamache/Makefile	Thu Jul  8 10:19:38 2004
+--- prg/kamache/Makefile.orig	Wed Jul 21 11:24:44 2004
++++ prg/kamache/Makefile	Sun Aug 15 04:38:14 2004
 @@ -26,7 +26,7 @@
  
  install:
- 	mkdir -p $(CLIPROOT)/kamache
--	mkdir -p $(CLIPROOT)/kamache/mod-cache
-+	# mkdir -p $(CLIPROOT)/kamache/mod-cache
- 	cp kamache$(EXESUFF) $(CLIPROOT)/kamache
- 	cp kamache.ini $(CLIPROOT)/kamache
+ 	mkdir -p $(DESTDIR)$(CLIPROOT)/kamache
+-	mkdir -p $(DESTDIR)$(CLIPROOT)/kamache/mod-cache
++	# mkdir -p $(DESTDIR)$(CLIPROOT)/kamache/mod-cache
+ 	cp kamache$(EXESUFF) $(DESTDIR)$(CLIPROOT)/kamache
+ 	cp kamache.ini $(DESTDIR)$(CLIPROOT)/kamache
  	cd mod-ini; $(MAKE) install
