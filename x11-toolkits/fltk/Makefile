@@ -3,7 +3,7 @@
 # Date created:				11 February 1999
 # Whom:                			Dima Sivachenko <dima@Chg.RU>
 #
-# $Id: Makefile,v 1.7 1999/05/01 16:56:12 mharo Exp $
+# $Id: Makefile,v 1.8 1999/05/09 16:24:48 steve Exp $
 #
 
 DISTNAME=	fltk-1.0.3-source
@@ -29,7 +29,7 @@ MAN1=		fluid.1
 VERSION=	1.0.3
 
 .include <bsd.port.pre.mk>
-.if (${OBJFORMAT} == "aout")
+.if (${PORTOBJFORMAT} == "aout")
 BROKEN=	requires ELF library format
 .endif
 
