@@ -1,2 +1,4 @@
 PDKSH is the Public Domain Korn Shell. Its command language is a
 superset of the sh(1) shell language.
+
+WWW: http://www.cs.mun.ca/~michael/pdksh/
