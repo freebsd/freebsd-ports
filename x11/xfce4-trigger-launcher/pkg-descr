@@ -1,0 +1,10 @@
+xfce4-trigger-launcher is a command trigger plugin for xfce4-panel.
+The commands can be changed via the properties dialog.
+
+Authors:
+       Danny Milosavljevic <danny_milo@yahoo.com>
+       Benedikt Meurer <benedikt.meurer@unix-ag.uni-siegen.de>
+
+WWW: http://www.xfce.org/
+
+Ported: Gabor@Zahemszky.HU
