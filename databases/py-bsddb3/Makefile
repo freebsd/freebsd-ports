@@ -17,15 +17,9 @@ MAINTAINER=	perky@fallin.lv
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_BUILDARGS=	--libs="-ldb3" --berkeley-db=${LOCALBASE}
 
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
-
-do-build:
-	${SETUP_CMD} build_ext --libs="-ldb3" --berkeley-db=${LOCALBASE} \
-	  --inplace
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>

@@ -14,19 +14,12 @@ DISTNAME=	StandaloneZODB-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 
 USE_PYTHON=	yes
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
+USE_PYDISTUTILS=	yes
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
