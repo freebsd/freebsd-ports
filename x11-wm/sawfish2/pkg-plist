@@ -53,6 +53,7 @@ share/gnome/pixmaps/sawfish-placement.png
 share/gnome/pixmaps/sawfish-shortcuts.png
 share/gnome/pixmaps/sawfish-tooltips.png
 share/gnome/pixmaps/sawfish-workspaces.png
+share/gnome/wm-properties/Sawfish.desktop
 share/locale/am/LC_MESSAGES/sawfish.mo
 share/locale/az/LC_MESSAGES/sawfish.mo
 share/locale/be/LC_MESSAGES/sawfish.mo
