@@ -22,6 +22,7 @@ USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
 USE_GMAKE=	yes
+MAKE_ENV=	${CONFIGURE_ENV}
 
 pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
