@@ -1,10 +1,32 @@
 bin/bluefish
+share/bluefish/frameset.dtd
+share/bluefish/gen_php3_functions
+share/bluefish/gen_php4_functions
+share/bluefish/gen_rxml_functions
+share/bluefish/html-0.dtd
+share/bluefish/html-0s.dtd
+share/bluefish/html-1.dtd
+share/bluefish/html-1s.dtd
+share/bluefish/html-2.1e.dtd
+share/bluefish/html-3.2.dtd
+share/bluefish/html-3.dtd
+share/bluefish/html-3s.dtd
+share/bluefish/html-4-frameset.dtd
+share/bluefish/html-4-strict.dtd
+share/bluefish/html-4.dtd
+share/bluefish/html-s.dtd
+share/bluefish/html.dtd
+share/bluefish/loose.dtd
 share/bluefish/php3_functions
 share/bluefish/php4_functions
-share/bluefish/ssi_functions
 share/bluefish/rxml_functions
+share/bluefish/ssi_functions
+share/bluefish/strict.dtd
+share/bluefish/xhtml1-frameset.dtd
+share/bluefish/xhtml1-strict.dtd
+share/bluefish/xhtml1-transitional.dtd
 share/doc/bluefish/README
 share/pixmaps/bluefish_icon.xpm
-@dirrm share/pixmaps
+@dirrm share/bluefish/man1
 @dirrm share/bluefish
 @dirrm share/doc/bluefish
