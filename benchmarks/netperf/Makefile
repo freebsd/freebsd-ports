@@ -7,9 +7,13 @@
 
 PORTNAME=	netperf
 PORTVERSION=	2.1.3
-CATEGORIES=	benchmarks
+CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
 DISTNAME=	netperf-2.1pl3
+
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	netperf-21pl3-20000721.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	fenner@freebsd.org
 
@@ -18,6 +22,13 @@ MAN1=		netperf.1 netserver.1
 
 SCRIPTS=	arr_script snapshot_script tcp_range_script tcp_rr_script \
 		tcp_stream_script udp_rr_script udp_stream_script
+
+.include <bsd.port.pre.mk>
+
+BUILD_DEFS+=	USE_INET6
+.if ${OSVERSION} >= 400014
+CFLAGS+=	-DDO_IPV6
+.endif
 
 post-patch:
 .for i in ${SCRIPTS}
@@ -36,4 +47,4 @@ post-install:
 	${GZIP_CMD} ${PREFIX}/share/doc/netperf/netperf.ps
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
