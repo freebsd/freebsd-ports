@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A C library for creating IP packets (development version)
 
 CONFLICTS=	libnet-1.*
