@@ -28,5 +28,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GCC=	3.3
 .endif
 
+.if ${ARCH} == "alpha"
+BROKEN=		gp-relative relocation against dynamic symbol
+.endif
+
 .include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
