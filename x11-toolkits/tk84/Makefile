@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1998/11/11 02:02:14 asami Exp $
+# $Id: Makefile,v 1.19 1998/12/01 03:06:48 asami Exp $
 #
 
 DISTNAME=	tk8.1a2
@@ -22,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+PKGINSTALL=     ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
@@ -48,15 +49,15 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	tkvars.n tkwait.n toplevel.n winfo.n wm.n
 MANCOMPRESSED=	yes
 
+.include <bsd.port.pre.mk>
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if exists(${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish)
-	${SH} ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
+.if exists(${PKGINSTALL})
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
 test:
 	cd ${WRKSRC}; make test
 
-.include <bsd.port.mk>
-
-PKG_ARGS+=      -i ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
+.include <bsd.port.post.mk>
