@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimageview
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.11
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -15,6 +15,7 @@ MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
@@ -32,12 +33,12 @@ PKGNAMESUFFIX=	-imlib
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
+	@${REINPLACE_CMD} -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
 		${WRKSRC}/configure
 
 post-configure:
 .if !defined(USE_IMLIB)
-	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${PERL} -pi.orig -e \
+	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -Ee \
 		's/^(GDK_IMLIB_(CFLAGS|LIBS) =).*$$/$${1}/'
 .endif
 
