@@ -3,7 +3,7 @@
 # Date created:		29th April, 1997
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id: Makefile,v 1.3 1998/12/03 06:44:06 obrien Exp $
+# $Id: Makefile,v 1.4 1999/03/30 16:32:34 taoka Exp $
 #
 
 DISTNAME=	Atari800-0.8.6
@@ -17,7 +17,7 @@ MAINTAINER=	jsutton@webnet.com.au
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .if defined(ATARI) && (${ATARI} == "freebsd-xview")
-LIB_DEPENDS=	xview:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview:${PORTSDIR}/x11-toolkits/xview
 .endif
 DIST_SUBDIR=	atari
 EXTRA_FILES=	xf25.zip

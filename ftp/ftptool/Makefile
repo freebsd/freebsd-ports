@@ -3,7 +3,7 @@
 # Date created:		19 March 1996
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:42 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/21 22:15:57 steve Exp $
 #
 
 DISTNAME=	ftptool-4.6
@@ -14,7 +14,7 @@ DISTFILES=	Ftptool4.6.tar.gz
 
 MAINTAINER=	janek@gaja.ipan.lublin.pl
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/Ftptool4.6

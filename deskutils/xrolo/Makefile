@@ -3,7 +3,7 @@
 # Date created:        17 January 1999
 # Whom:                Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/18 04:16:21 steve Exp $
 #
 
 DISTNAME=	xrolo.v2p6
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 

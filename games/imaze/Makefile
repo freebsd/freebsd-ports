@@ -3,7 +3,7 @@
 # Date created:         27. April 1996
 # Whom:                 Ronald Kuehn <kuehn@rz.tu-clausthal.de>
 #
-# $Id: Makefile,v 1.12 1998/09/28 02:07:19 steve Exp $
+# $Id: Makefile,v 1.13 1999/02/22 04:00:32 steve Exp $
 #
 
 DISTNAME=       imaze
@@ -23,7 +23,7 @@ MAINTAINER=	kuehn@rz.tu-clausthal.de
 #
 .if !(defined(HAVE_MOTIF) && defined(FORCE_MOTIF) && ${FORCE_MOTIF} == "yes") \
 	|| defined(PACKAGE_BUILDING)
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 .endif
 
 EXTRACT_ONLY=	imaze1.3.tar.Z

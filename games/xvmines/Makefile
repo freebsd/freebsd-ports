@@ -3,7 +3,7 @@
 # Date created:				18 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/25 00:44:22 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/21 22:15:56 steve Exp $
 #
 
 DISTNAME=	xvmines-1.0
@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib \
-		olgx.3:${PORTSDIR}/x11-toolkits/xview-lib
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview \
+		olgx.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_IMAKE=	yes
 MAN6=		xvmines.6
