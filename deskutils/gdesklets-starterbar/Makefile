@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	starterbar
-PKGNAMEPREFIX= gdesklets-
 PORTVERSION=	0.22.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
+PKGNAMEPREFIX= gdesklets-
 DISTNAME=	starterbar-desklet-${PORTVERSION}
 
 MAINTAINER=	mezz7@cox.net
@@ -22,8 +22,8 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 NAME=		StarterBar
-LANG=		de fr pt sq sr sr@Latn sv
 DATADIR=	${PREFIX}/share/gnome
+LANG=		de fr pt sq sr sr@Latn sv
 
 .include <bsd.port.pre.mk>
 
