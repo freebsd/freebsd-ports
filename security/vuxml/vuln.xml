@@ -32,6 +32,49 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="619ef337-949a-11d9-b813-00d05964249f">
+    <topic>mysql-server -- multiple remote vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<range><ge>4.0.0</ge><lt>4.0.24</lt></range>
+	<range><ge>4.1.0</ge><lt>4.1.10a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/12781/discussion/">
+	  <p>MySQL is reported prone to an insecure temporary file creation
+	    vulnerability.</p>
+	  <p>Reports indicate that an attacker that has 'CREATE TEMPORARY TABLE'
+	    privileges on an affected installation may leverage this
+	    vulnerability to corrupt files with the privileges of the MySQL
+	    process.</p>
+	  <p>MySQL is reported prone to an input validation vulnerability that
+	    can be exploited by remote users that have INSERT and DELETE
+	    privileges on the 'mysql' administrative database.</p>
+	  <p>Reports indicate that this issue may be leveraged to load an
+	    execute a malicious library in the context of the MySQL process.</p>
+	  <p>Finally, MySQL is reported prone to a remote arbitrary code
+	    execution vulnerability. It is reported that the vulnerability may
+	    be triggered by employing the 'CREATE FUNCTION' statement to
+	    manipulate functions in order to control sensitive data
+	    structures.</p>
+	  <p>This issue may be exploited to execute arbitrary code in the
+	    context of the database process.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.securityfocus.com/bid/12781/discussion/</url>
+    </references>
+    <dates>
+      <discovery>2005-03-11</discovery>
+      <entry>2005-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d4bd4046-93a6-11d9-8378-000bdb1444a4">
     <topic>rxvt-unicode -- buffer overflow vulnerability</topic>
     <affects>
