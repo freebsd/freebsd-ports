@@ -16,10 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses based real-time logfile viewer esp. useful for ipflog
 
-BROKEN=		"Unfetchable"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-07-14
-
 ALL_TARGET=	it
 MAKE_ARGS=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS} -lcurses"
