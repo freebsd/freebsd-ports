@@ -1,0 +1,15 @@
+--- configure.orig	Thu Feb 13 11:01:47 2003
++++ configure	Tue Apr 13 20:58:41 2004
+@@ -5845,9 +5845,9 @@
+     SUBDIR_POPT=""
+ else
+     SUBDIR_POPT="lib_popt"
+-                 CPPFLAGS="$CPPFLAGS -Ilib_popt"
+-                 CFLAGS="$CFLAGS -Ilib_popt"
+-                 LDFLAGS="$LDFLAGS -Llib_popt/.libs"
++                 CPPFLAGS="-Ilib_popt $CPPFLAGS"
++                 CFLAGS="-Ilib_popt $CFLAGS"
++                 LDFLAGS="-Llib_popt/.libs $LDFLAGS"
+                  LIBS_EXTRA="$LIBS_EXTRA -lpopt"
+ fi
+ echo "$as_me:$LINENO: result: $with_popt" >&5
