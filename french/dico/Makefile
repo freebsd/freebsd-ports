@@ -8,7 +8,7 @@
 PORTNAME=	dico
 PORTVERSION= 	1.1
 PORTREVISION=	4
-CATEGORIES=	textproc
+CATEGORIES=	french
 MASTER_SITES=	http://homepages.starnet.fr/dtrystram/
 #	http://www.montefiore.ulg.ac.be/~geuzaine/BRONNE/WWW/ftp/ le_dico.tgz
 #	ftp://ftp.supelec.fr/lsi/pub/security/			le_dico.tar.gz
