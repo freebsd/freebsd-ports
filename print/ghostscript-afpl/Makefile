@@ -55,7 +55,7 @@ HP8XX_DRV=	gdevcd8.tar.gz
 HPDJ_NAME=	hpdj
 HPDJ_VERS=	2.6
 HPDJ_DIR=	${HPDJ_NAME}-${HPDJ_VERS}
-HPDJ_SRC=	hpdj-2.6.tar.gz
+HPDJ_SRC=	${HPDJ_NAME}-${HPDJ_VERS}.tar.gz
 
 # additional driver for HP DeskJet 970, supports duplex printing
 HP970_DRV=	gdevdj9.c.gz
