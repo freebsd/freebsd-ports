@@ -6,7 +6,7 @@
  /* path and name of the default EsounD domain socket */
 +#if 0
  #define ESD_UNIX_SOCKET_DIR	"/tmp/.esd"
- #define ESD_UNIX_SOCKET_NAME	ESD_UNIX_SOCKET_DIR ## "/" ## "socket"
+ #define ESD_UNIX_SOCKET_NAME	ESD_UNIX_SOCKET_DIR "/socket"
 +#else
 +char *esd_unix_socket_dir(void);
 +char *esd_unix_socket_name(void);
