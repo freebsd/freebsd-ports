@@ -313,6 +313,7 @@
     SUBDIR += qmail-scanner
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
+    SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += qsf
@@ -390,6 +391,7 @@
     SUBDIR += vmailmgr
     SUBDIR += vodmr
     SUBDIR += vpopmail
+    SUBDIR += vpopmail-devel
     SUBDIR += vpopmail-stable
     SUBDIR += vqadmin
     SUBDIR += vqregister
