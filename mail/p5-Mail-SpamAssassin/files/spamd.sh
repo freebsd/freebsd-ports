@@ -1,19 +1,41 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: spamd
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-start)
-	[ -x ${PREFIX}/bin/spamd ] && ${PREFIX}/bin/spamd -a -c -d && echo -n ' spamd'
-	;;
-stop)
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+#
+# Add the following lines to /etc/rc.conf to enable spamd:
+#
+#spamd_enable="YES"
+#
+# See spamd(8) for flags
+#
 
-exit 0
+. %%RC_SUBR%%
+
+name=spamd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/bin/spamd
+pidfile=/var/run/spamd.pid
+required_dirs=%%PREFIX%%/share/spamassassin
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+spamd_enable=${spamd_enable:-"NO"}
+spamd_flags=${spamd_flags:-"-a -c -d -r ${pidfile}"}
+
+load_rc_config $name
+run_rc_command "$1"
