@@ -1,12 +1,13 @@
---- Makefile.orig	Thu Jun 22 18:59:41 2000
-+++ Makefile	Thu Jun 22 19:04:02 2000
-@@ -1,14 +1,9 @@
+--- Makefile.orig	Thu Jun 15 06:40:52 2000
++++ Makefile	Sun Oct 19 01:13:32 2003
+@@ -1,14 +1,11 @@
  # Makefile for 9e
  
 -CC = gcc 
--
++CC ?= cc
+ 
 -CFLAGS = -g3 -ggdb
-+CFLAGS = -O
++CFLAGS ?= -O -pipe
  
  .PHONY: all clean distclean
  
@@ -16,7 +17,7 @@
  SRCS = 9e.c
  OBJS = 9e.o
  
-@@ -17,7 +12,7 @@
+@@ -17,7 +14,7 @@
  all: $(BINARIES)
  
  9e: $(OBJS)
@@ -25,3 +26,10 @@
  
  clean:
  	rm -f *.o *~ a.out
+@@ -26,4 +23,4 @@
+ distclean: clean
+ 	rm -f ${BINARIES}
+ 
+-# EOF
+\ No newline at end of file
++# EOF
