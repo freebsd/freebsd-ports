@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- configure.orig	Mon Jul 22 00:48:09 2002
-+++ configure	Mon Jul 22 00:48:28 2002
+--- configure.orig	Mon Mar 26 07:47:44 2001
++++ configure	Mon May 19 11:55:11 2003
 @@ -846,9 +846,9 @@
  echo "$ac_t""$CPP" 1>&6
  
@@ -15,3 +12,12 @@ $FreeBSD$
  	echo "WARNING:  Not using GCC to compile may be hazzardous to your health."
  	echo "          If you can get Slirp to compile and run w/o GCC, notify us so"
  	echo "          we can test for which compiler you're using.  RedWolf recommends"
+@@ -1927,7 +1927,7 @@
+ 
+ 
+ 
+-for ac_func in strdup strerror random srandom index bcmp drand48 memmove setenv inet_aton revoke grantpt fchmod
++for ac_func in strdup strerror random srandom index bcmp drand48 memmove setenv inet_aton revoke fchmod
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
+ echo "configure:1934: checking for $ac_func" >&5
