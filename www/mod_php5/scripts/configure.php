@@ -125,7 +125,7 @@ while [ "$1" ]; do
 			echo "PHP_CONF_ARGS+=	--with-ldap=\${PREFIX}"
 			;;
 		\"SNMP\")
-			echo "LIB_DEPENDS+=	snmp.3:\${PORTSDIR}/net/ucd-snmp"
+			echo "LIB_DEPENDS+=	snmp.4:\${PORTSDIR}/net/ucd-snmp"
 			echo "PHP_CONF_ARGS+=	--with-snmp=\${PREFIX} --enable-ucd-snmp-hack"
 			;;
 		\"XML\")
