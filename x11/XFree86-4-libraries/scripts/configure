@@ -68,6 +68,8 @@ configure () {
     do \
 	echo "#define $i NO" >> $LOCALDEF
     done
+    echo "#define HasFreetype2 YES" >> $LOCALDEF
+    echo "#define Freetype2Dir ${LOCALBASE}" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
 
@@ -102,4 +104,5 @@ configure () {
 }
 
 configure
+cp ${X11BASE}/lib/X11/config/version.def ${WRKSRC}/config/cf
 exit 0

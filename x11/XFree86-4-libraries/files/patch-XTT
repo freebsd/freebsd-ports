@@ -1,0 +1,48 @@
+--- extras/X-TrueType/xttfuncs.c.old	2000/09/26 15:56:41	1.8
++++ extras/X-TrueType/xttfuncs.c	2001/02/18 04:08:33
+@@ -565,8 +565,9 @@
+ 
+     /*
+      * Check invalid char index.
++     * c = 0 is the default glyph for undefined glyphs in TTF.
+      */
+-    if ( c <= 0 ) {
++    if ( c < 0 ) {
+         charInfo = &nocharinfo;
+         goto next;
+     }
+@@ -769,8 +770,9 @@
+ 
+     /*
+      * Check invalid char index.
++     * c = 0 is the default glyph for undefined glyphs in TTF.
+      */
+-    if ( c <= 0 ) {
++    if ( c < 0 ) {
+         charInfo = &nocharinfo;
+         goto next;
+     }
+@@ -934,14 +936,19 @@
+                   c1 <= pFont->info.lastRow  &&
+                   c2 >= pFont->info.firstCol &&
+                   c2 <= pFont->info.lastCol)) {
+-                *glyphs++ = &nocharinfo;
++		/* 
++		 * &nocharinfo will show garbage, just set c1 to 0. 
++		 * The default glyph for undefined glphy will be used.
++		 */
++                /* *glyphs++ = &nocharinfo; */
+                 dprintf((stderr, "invalid code\n"));
++		c1 = 0;
+             } else {
+                 c1 = ft->codeConverterInfo.ptrCodeConverter(c1<<8|c2);
++	    }
+                 dprintf((stderr, "%04x\n", c1));
+                 *glyphs++ = get_glyph(ft, TT_Char_Index(ft->charmap, c1),
+                                       spacing);
+-            }
+         }
+         break;
+     }
+
+

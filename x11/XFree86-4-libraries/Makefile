@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86Xlibraries-4.0
+# New ports collection makefile for:	XFree86-libraries
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.0.3
-PORTREVISION=	1
+PORTVERSION=	4.1.0
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
+MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X402src-1.tgz
-
-PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
-PATCHFILES=	4.0.2-4.0.3.diff.gz
-PATCH_DIST_STRIP=	-p1
+DISTFILES=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+LIB_DEPENDS=	freetype.6:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	mkhtmlindex:${PORTSDIR}/devel/imake-4
 
 XFREE86_VERSION=	4
@@ -90,7 +86,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X402src-1.tgz
+EXTRACT_ONLY=	X410src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
@@ -98,13 +94,5 @@ IGNOREFILES=	Wraphelp.c
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-
-post-build:
-	cd ${WRKSRC}/extras/freetype2/builds/unix; \
-	./configure --prefix=${PREFIX}
-
-post-install:
-	cd ${WRKSRC}/extras/freetype2/builds/unix; \
-	${INSTALL_SCRIPT} freetype-config ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

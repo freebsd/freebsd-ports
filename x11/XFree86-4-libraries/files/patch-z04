@@ -1,6 +1,15 @@
---- lib/X11/Imakefile.orig	Fri Dec 15 15:10:40 2000
-+++ lib/X11/Imakefile	Fri Dec 15 15:12:30 2000
-@@ -939,8 +939,10 @@
+--- lib/X11/Imakefile.orig	Tue May  1 19:35:05 2001
++++ lib/X11/Imakefile	Wed Jun  6 23:35:50 2001
+@@ -905,7 +905,7 @@
+ REQUIREDLIBS = -lcygipc
+ #endif
+ 
+-#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients
++#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients || FreeBSDBuildXxserv
+ #include <Library.tmpl>
+ 
+ SpecialCLibObjectRule(ErrDes,$(ICONFIGFILES),$(EDB_DEFINES))
+@@ -944,8 +944,10 @@
  #if InstallXcmsTxt
  InstallNonExecFile(Xcms.txt,$(LIBDIR))
  #endif
