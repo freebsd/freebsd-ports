@@ -1,0 +1,9 @@
+An simple video editor that is built around Xvid and ffmpeg.  Contains
+various filters for deinterlacing, cropping, resizing, etc.  Allows for
+cutting without re-encoding.  Has the ability to re-encode and re-sample.
+
+WWW: http://fixounet.free.fr/avidemux/
+
+- Anish Mistry
+amistry@am-productions.biz
+AM Productions http://am-productions.biz

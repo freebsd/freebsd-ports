@@ -1,0 +1,3 @@
+Remove any encore2.h, encore.h, and decore.h that you may have moved to the
+${PREFIX}/include directory since it may cause the built program to crash
+when opening a file.  
