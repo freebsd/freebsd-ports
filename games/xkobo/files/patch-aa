@@ -1,11 +1,11 @@
---- Imakefile.orig	Wed Nov 29 16:27:49 1995
-+++ Imakefile	Mon Feb 12 13:55:44 1996
+--- Imakefile.orig	Fri Jan 10 03:29:36 1997
++++ Imakefile	Wed Nov 12 10:55:46 1997
 @@ -6,7 +6,7 @@
- SHIPS       = 7
+ SHIPS       = 5
  
- #####  RECORDS
+ /*  RECORDS  */
 -HSCORE_DIR  = /usr/local/games/xkobo-scores
 +HSCORE_DIR  = $(LIBDIR)/xkobo-scores
  
- #####  C++ COMPILER
- #CXX         = g++
+ /*  C++ COMPILER  */
+ /*  CXX         = g++  */
