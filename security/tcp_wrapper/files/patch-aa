@@ -1,5 +1,5 @@
 *** Makefile.orig	Fri Mar 21 12:27:21 1997
---- Makefile	Mon Sep 14 15:54:25 1998
+--- Makefile	Mon Sep 14 22:41:29 1998
 ***************
 *** 47,53 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -196,7 +196,7 @@
   	scaffold.h tcpdmatch.8 README.NIS
   
 ! LIB     = libwrap.a
-! SLIB    = libwrap.so.7
+! SLIB    = libwrap.so.8
 ! 
 ! all other: config-check $(LIB) $(SLIB) tcpd tcpdmatch try-from safe_finger tcpdchk
 ! 
@@ -258,7 +258,7 @@
   
 ! $(SLIB): $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 	rm -f $(SLIB)
-! 	$(CC) -o $(SLIB) -shared -Wl,-rpath,${PREFIX}/lib -Wl,-soname,$(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
+! 	$(CC) -o $(SLIB) -shared -Wl,-soname,$(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 	ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`
 ! 
 ! tcpd:   tcpd.o $(SLIB)
