@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	latte-1.1
-CATEGORIES=	www
+CATEGORIES=	textproc	
 MASTER_SITES=	http://www.latte.org/ \
 		ftp://ftp.brasslantern.com/pub/zanshin/latte/
 
