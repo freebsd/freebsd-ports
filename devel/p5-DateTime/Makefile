@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.21.01
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
+#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A date and time object
@@ -27,5 +27,14 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DateTime.3 DateTime::Duration.3 \
 		DateTime::Infinite.3 DateTime::LeapSecond.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CREDITS Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
