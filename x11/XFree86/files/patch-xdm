@@ -1,0 +1,27 @@
+--- programs/xdm/session.c.orig	Fri Sep 28 23:31:30 2001
++++ programs/xdm/session.c	Fri Sep 28 23:33:03 2001
+@@ -525,6 +525,7 @@
+     int	pid;
+ #ifdef HAS_SETUSERCONTEXT
+     struct passwd* pwd;
++    extern char **environ;
+ #endif
+ 
+     if (verify->argv) {
+@@ -602,6 +603,8 @@
+ 	 * Set the user's credentials: uid, gid, groups,
+ 	 * environment variables, resource limits, and umask.
+ 	 */
++        /* destroy user environment before calling setusercontext */
++	environ = verify->userEnviron;
+ 	pwd = getpwnam(name);
+ 	if (pwd)
+ 	{
+@@ -611,6 +614,7 @@
+ 			 errno);
+ 		return(0);
+ 	    }
++            verify->userEnviron = environ;    
+ 	    endpwent();
+ 	}
+ 	else
