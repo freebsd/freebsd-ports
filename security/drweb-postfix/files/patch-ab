@@ -1,0 +1,93 @@
+--- etc/drweb_postfix.conf.orig	Wed Dec  4 16:17:33 2002
++++ etc/drweb_postfix.conf	Wed Dec  4 16:56:36 2002
+@@ -14,14 +14,14 @@
+ #   Address = inet:3000@localhost
+ #   Address = local:/usr/local/drweb/run/drwebd.skt
+ #   Address = pid:/usr/local/drweb/run/drwebd.pid
+-Address = inet:3000@localhost
++Address = local:%PREFIX%/drweb/run/drwebd.sock
+ 
+ # Enable/disable caching resolved daemon host 
+ # (useful only if daemon uses TCP/IP communications)
+ Cache = yes
+ 
+ # Timeout for whole scanning session (in seconds)
+-Timeout = 120
++Timeout = 160
+ 
+ ########################
+ # Scan options section #
+@@ -58,10 +58,10 @@
+ DenyOnOne = yes
+ 
+ # List with rules for users or domains to block scanning 
+-DenyList = /etc/drweb/users.conf
++DenyList = %PREFIX%/etc/drweb/users.conf
+ 
+ # Directory used for story temporary files
+-Spool = /var/drweb/spool 
++Spool = /tmp
+ 
+ # Permissions for created spool files
+ SpoolFilesMode = 0600
+@@ -144,16 +144,16 @@
+ ProcessingErrors = reject
+ 
+ # Admin mail address (may be unix-local address)
+-AdminMail = av-admin@example.com
++AdminMail = postmaster
+ 
+ # Filter address, that be used in From:
+-FilterMail = DrWeb-DAEMON@example.com
++FilterMail = DrWeb-DAEMON@%HOSTNAME%
+ 
+ # Quarantine directory. 
+ # The infected files could be moved in that dir 
+ # if you stay this field empty or commented then 
+ # infected messages would not been storied
+-Quarantine = /var/drweb/infected
++Quarantine = %PREFIX%/drweb/infected
+ 
+ # Permissions for quarantined files
+ QuarantineFilesMode = 0660
+@@ -168,32 +168,32 @@
+ RcptsNotify = yes
+ 
+ # Files with notification templates
+-AdminTemplate = /etc/drweb/templates/en-ru/postfix/virus-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/virus-sender.msg
+-RcptsTemplate = /etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-sender.msg
++RcptsTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/virus-rcpts.msg
+ 
+ [SkipNotifications]
+ AdminNotify = no
+ SenderNotify = yes
+ RcptsNotify = no
+ AdminTemplate = 
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/skip-sender.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/skip-sender.msg
+ RcptsTemplate = 
+ 
+ [MailbombNotifications]
+ AdminNotify = yes
+ SenderNotify = yes
+ RcptsNotify = no
+-AdminTemplate = /etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/mailbomb-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/mailbomb-sender.msg
+ RcptsTemplate = 
+ 
+ [ErrorNotifications]
+ AdminNotify = yes
+ SenderNotify = yes
+ RcptsNotify = no
+-AdminTemplate = /etc/drweb/templates/en-ru/postfix/error-admin.msg
+-SenderTemplate = /etc/drweb/templates/en-ru/postfix/error-sender.msg
++AdminTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-admin.msg
++SenderTemplate = %PREFIX%/etc/drweb/templates/en-ru/postfix/error-sender.msg
+ RcptsTemplate = 
+ 
+ ###################
