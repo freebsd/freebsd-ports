@@ -1,0 +1,4 @@
+bin/grun
+share/grun/consfile
+share/grun/gassoc
+@dirrm share/grun
