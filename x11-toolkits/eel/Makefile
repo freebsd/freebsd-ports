@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eel
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/eel
@@ -19,7 +19,7 @@ LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--enable-shared --enable-static
