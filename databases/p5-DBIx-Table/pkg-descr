@@ -1,0 +1,11 @@
+DBIx::Table is a class designed to act as an abstraction layer
+around a fairly large subset of SQL queries. It is called 'Table'
+because it is primarily designed such that a single subclass provides
+an object-oriented interface to a single database table. The module
+is flexible enough, though, that it can be used to abstract most
+any schema in a way that is comfortable to the perl coder who is
+not familiar with the underlying schema, or even SQL.
+
+WWW: http://search.cpan.org/search?dist=DBIx-Table
+
+Seamus Venasse <svenasse@polaris.ca>
