@@ -1,0 +1,24 @@
+pmail - GNOME/python email client
+====================================
+
+This an email client written (almost) entirely in python using pygtk and 
+gnome-python for the user interface. 
+
+Major Features
+====================================
+  * Unlimited IMAP4 and POP3 accounts (tested with cyrus and uw IMAP)
+  * Unlimited MH Mailboxes
+  * Drag and Drop (attachments, and messages between folders)
+  * MIME reading and composition
+  * Sent/Drafs/Trash can be any folder in IMAP or MH
+  * CREATE/DELETE/RENAME IMAP and MH Folders
+  * IMAP Namespace/Subscription support
+  * IMAP messages cached for faster operation on slow connections
+  * Search IMAP folders
+  * POP messages can be stored in IMAP or MH folders
+  * HTML messages can be viewed with XmHTML or GtkMozilla
+  * Smart external attachment viewing
+  * Written in python and pygtk, easy to add new folder/server types
+  * READ/SEND mail with atttached mail messages
+
+WWW: http://www.scottbender.net/pmail/
