@@ -19,6 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
 DOCDIR=		share/doc/${PORTNAME}
+DOCS=		AUTHORS Changelog README
 PLIST=		${WRKDIR}/pkg-plist
 
 post-patch:
@@ -29,6 +30,9 @@ post-patch:
 pre-install:
 	${ECHO} bin/wb0 > ${PLIST}
 .if !defined(NOPORTDOCS)
+.for i in ${DOCS}
+	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+.endfor
 	${ECHO} ${DOCDIR}/wb0.config.README >> ${PLIST}
 	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
@@ -40,9 +44,12 @@ pre-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/etc/wb0/wb0.config.README \
-		${PREFIX}/${DOCDIR}
+	${MKDIR} ${PREFIX}/${DOCDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/etc/wb0/wb0.config.README ${PREFIX}/${DOCDIR}
+	${ECHO} ${DOCDIR}/
 .endif
 
 .include <bsd.port.mk>
