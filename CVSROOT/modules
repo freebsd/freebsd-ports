@@ -3766,6 +3766,7 @@ libsndfile	ports/audio/libsndfile
 libsocket++	ports/net/libsocket++
 libsocketcpp	ports/net/libsocketcpp
 libsoup		ports/devel/libsoup
+libstatgrab	ports/devel/libstatgrab
 libstocks	ports/devel/libstocks
 libstrfunc	ports/devel/libstrfunc
 libstroke	ports/devel/libstroke
