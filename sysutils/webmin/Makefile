@@ -26,11 +26,12 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	adsl-client-1.080-1.wbm.gz \
+		lpadmin-1.080-1.wbm.gz \
 		net-1.080-7.wbm.gz \
 		proc-1.080-1.wbm.gz \
 		software-1.080-1.wbm.gz \
 		updown-1.080-1.wbm.gz \
-		useradmin-1.080-1.wbm.gz
+		useradmin-1.080-2.wbm.gz
 
 WEBMIN_THEMES=
 
