@@ -1,0 +1,16 @@
+--- pnm/pnmtopng.c.orig	Sun Jul 22 12:32:22 2001
++++ pnm/pnmtopng.c	Sat Dec  8 00:00:00 2001
+@@ -1441,8 +1441,13 @@
+       fprintf(stderr,"pnmtopng version %s.\n", VERSION);
+       fprintf(stderr, "   Compiled with libpng %s; using libpng %s.\n",
+         PNG_LIBPNG_VER_STRING, png_libpng_ver);
++#ifdef zlib_version
+       fprintf(stderr, "   Compiled with zlib %s; using zlib %s.\n",
+         ZLIB_VERSION, zlib_version);
++#else
++      fprintf(stderr, "   Compiled with zlib %s.\n",
++        ZLIB_VERSION);
++#endif
+       fprintf(stderr,    
+         "   Compiled with %d-bit netpbm support (PPM_OVERALLMAXVAL = %d).\n",
+         pm_maxvaltobits (PPM_OVERALLMAXVAL), PPM_OVERALLMAXVAL);
