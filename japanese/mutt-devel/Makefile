@@ -29,7 +29,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.24
+VERSION=	1.3.25
 JP_VERSION=	1
 MANUALVERSION=	1.3.23
 
@@ -51,6 +51,8 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
+
+FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 NOMANCOMPRESS=	yes
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
@@ -74,10 +76,13 @@ pre-patch:
 pre-configure:
 	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
-pre-build:
-	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
-		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
-		${BUILD_WRKSRC}/Makefile
+post-configure:
+	@${PERL} -pi -e "\
+		s/^(s%\@ACLOCAL\@%).+(%g)/\1${ACLOCAL}\2/; \
+		s/^(s%\@AUTOCONF\@%).+(%g)/\1${AUTOCONF}\2/; \
+		s/^(s%\@AUTOMAKE\@%).+(%g)/\1${AUTOMAKE}\2/; \
+		s/^(s%\@AUTOHEADER\@%).+(%g)/\1${AUTOHEADER}\2/" \
+		${BUILD_WRKSRC}/config.status
 
 post-install:
 	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.en ${DOCSDIR}
