@@ -1,0 +1,8 @@
+A perl script to convert MP3 files to Ogg Vorbis files, retaining ID3
+information, bitrate, and optionally renaming the output files, as well
+as deleting the originals.
+
+THIS DEGRADES THE QUALITY, because it goes from one lossy format to
+another.
+
+WWW: http://faceprint.com/software.phtml
