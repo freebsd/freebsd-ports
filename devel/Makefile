@@ -923,6 +923,7 @@
     SUBDIR += p5-Sort-ArrayOfArrays
     SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
+    SUBDIR += p5-Spiffy
     SUBDIR += p5-Storable
     SUBDIR += p5-String-Approx
     SUBDIR += p5-String-CRC32
