@@ -1,0 +1,11 @@
+The program oneko creates a cute cat chasing around your mouse cursor.
+
+patchlevel "1.2.sakura.3"
+Added bitmaps of Sakura Kinomoto, who is a character in a comic strip,
+"CARDCAPTOR SAKURA" (CLAMP, Kodansha).
+
+Sakura bitmaps by Kiichiroh Mukose <mukose@hbar.mp.es.osaka-u.ac.jp>,
+with the sanction indicated in
+CLAMP SCHOOL WEB CAMPUS (http://www.clamp.f-2.co.jp/).
+
+This port maintainer is:	HOTARU-YA <hotaru@tail.net>
