@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.105 1998/07/15 10:11:23 jkoshy Exp $
+# $Id: Makefile,v 1.106 1998/07/20 03:53:01 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -8,6 +8,7 @@
     SUBDIR += TenDRA
     SUBDIR += atlast
     SUBDIR += bwbasic
+    SUBDIR += caml-light
     SUBDIR += cim
     SUBDIR += cmucl
     SUBDIR += dylan
