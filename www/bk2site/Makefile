@@ -47,6 +47,7 @@ post-patch:
 	${WRKSRC}/dot.bk2siterc ${WRKSRC}/search.pl ${WRKSRC}/bk2site.1 \
 	${WRKSRC}/bk2site.html
 	@${PERL} -pi -e 's,/icons/,/icons/bk2site/,' ${WRKSRC}/*
+	@${PERL} -pi -e 's,long int l,time_t l,' ${WRKSRC}/reference.C
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
