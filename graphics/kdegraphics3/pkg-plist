@@ -36,14 +36,14 @@ lib/kde3/kfile_png.la
 lib/kde3/kfile_png.so
 lib/kde3/kfile_ps.la
 lib/kde3/kfile_ps.so
-%%KAMERA%%lib/kio_kamera.la
-%%KAMERA%%lib/kio_kamera.so
+%%KAMERA%%lib/kde3/kio_kamera.la
+%%KAMERA%%lib/kde3/kio_kamera.so
+%%KAMERA%%lib/kde3/libkcm_kamera.la
+%%KAMERA%%lib/kde3/libkcm_kamera.so
 %%IMLIB%%lib/kuickshow.la
 %%IMLIB%%lib/kuickshow.so
 lib/kview.la
 lib/kview.so
-%%KAMERA%%lib/libkcm_kamera.la
-%%KAMERA%%lib/libkcm_kamera.so
 lib/libkdvi.la
 lib/libkdvi.so
 lib/libkfax.la
@@ -233,6 +233,7 @@ share/icons/hicolor/16x16/apps/ksnapshot.png
 %%IMLIB%%share/icons/hicolor/16x16/apps/kuickshow.png
 share/icons/hicolor/16x16/apps/kview.png
 share/icons/hicolor/16x16/apps/kviewshell.png
+%%KAMERA%%share/icons/hicolor/16x16/devices/camera.png
 share/icons/hicolor/32x32/apps/kcoloredit.png
 share/icons/hicolor/32x32/apps/kdvi.png
 share/icons/hicolor/32x32/apps/kfax.png
@@ -244,6 +245,8 @@ share/icons/hicolor/32x32/apps/kruler.png
 share/icons/hicolor/32x32/apps/ksnapshot.png
 %%IMLIB%%share/icons/hicolor/32x32/apps/kuickshow.png
 share/icons/hicolor/32x32/apps/kview.png
+%%KAMERA%%share/icons/hicolor/32x32/devices/camera.png
+%%KAMERA%%share/icons/hicolor/32x32/filesystems/camera.png
 share/icons/hicolor/32x32/apps/kviewshell.png
 share/icons/hicolor/48x48/apps/kdvi.png
 share/icons/hicolor/48x48/apps/kfax.png
@@ -273,8 +276,11 @@ share/services/kfile_ps.desktop
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/48x48
+%%KAMERA%%@dirrm share/icons/hicolor/32x32/filesystems
+%%KAMERA%%@dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/32x32
+%%KAMERA%%@dirrm share/icons/hicolor/16x16/devices
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
@@ -315,6 +321,8 @@ share/services/kfile_ps.desktop
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
 @dirrm share/apps
+%%KAMERA%%@dirrm share/applnk/Settings/Peripherals
+%%KAMERA%%@dirrm share/applnk/Settings
 @dirrm share/applnk/Graphics
 @dirrm share/applnk
 @dirrm lib/kde3
