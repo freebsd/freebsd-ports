@@ -1,0 +1,82 @@
+--- ripit.pl.old	Thu Sep  9 02:26:37 1999
++++ ripit.pl	Thu Sep  9 02:28:45 1999
+@@ -18,6 +18,11 @@
+ #       --device                - CDROM device to rip from
+ #
+ # Version 1.5 01/08/99 - Simon Quinn
++# Version 1.5db 09/09/99 - Donald Burr <dburr@pobox.com>
++#	Modified to use cdd instead of tosha, for those of us
++#	(unfortunate enough) who have ATAPI/IDE CD-ROMs.  Tested
++#	on FreeBSD with the FreeBSD cdd port (/usr/ports/audio/cdd),
++#	YMMV if you are using a different OS.
+ #
+ # Usage: ripit.pl [--halt] [--bitrate rate] 
+ #                 [--year year] [--device cddevice] [start_track]
+@@ -26,10 +31,12 @@
+ # User configurable variables
+ #
+ 
+-$cddev 		= "/dev/cdrom";		# CD Audio device
+-$outputdir 	= "/dosc/cdrip/";	# Where the MP3s should go
++# Note: devices must be specified this way (strip the leading '/dev/'
++# and the trailing partition letter) because this is the way cdd wants it.
++$cddev 		= "acd1";		# CD Audio device
++$outputdir 	= "/home/mp3/";		# Where the MP3s should go
+ $bitrate	= 160;			# Bitrate for MP3s
+-$encoder	= 1; 			# 0 - Bladeenc, 1 - Lame
++$encoder	= 0; 			# 0 - Bladeenc, 1 - Lame
+ 
+ $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
+ 
+@@ -44,7 +51,7 @@
+ 
+ #######################################################################
+ # No User configurable parameters below here
+-#######################################################################
++######################################################################
+ 
+ require "flush.pl";
+ use Getopt::Long;
+@@ -173,9 +180,9 @@
+ 
+   system("rm $tocfile >/dev/null 2>&1");
+ 
+-  system("cda -dev $cddev on >/dev/null 2>&1") ;
+-  system("cda -dev $cddev toc >$tocfile") ;
+-  system("cda -dev $cddev off >/dev/null 2>&1") ;
++  system("cda -dev /dev/r${cddev}c on >/dev/null 2>&1") ;
++  system("cda -dev /dev/r${cddev}c toc >$tocfile") ;
++  system("cda -dev /dev/r${cddev}c off >/dev/null 2>&1") ;
+ 
+   if ( ! -r $tocfile ) { die "$tocfile is missing"; }
+ }
+@@ -327,16 +334,14 @@
+     $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
+     $riptrackno = $_;
+ 
++    print "Ripping track $tracklist[$_ - 1]...\n";
+     &printflush(RIPLOG,"Ripping $tracklist[$_ - 1]...\n");
+ 
+-    if (system("cdparanoia -d $cddev $riptrackno \"$riptrackname.rip\"")) {
+-       &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
+-       die "cdparanoia failed on $tracklist[$_ - 1]";
++    if (system("cdd -t $riptrackno -q -f $cddev - 2>/dev/null | sox -t cdr - \"$riptrackname.wav\"")) {
++       &printflush(RIPLOG,"cdd failed on $tracklist[$_ - 1]\n");
++       die "cdd failed on $tracklist[$_ - 1]";
+     }
+ 
+-    # Rename rip file to a wav for encoder
+-    rename "$riptrackname.rip","$riptrackname.wav";
+-
+     &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
+ 
+     # Start the Encoder in the background. but only once
+@@ -367,7 +372,7 @@
+     print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
+     &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
+ 
+-    # Keep looping until the file appears, ie wait for cdparanoia
++    # Keep looping until the file appears, ie wait for cdd
+     # timeout after 30 minutes
+     $x=0;
+     while( ! -r "$riptrackname.wav" ){ 
