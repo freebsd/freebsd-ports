@@ -7690,6 +7690,7 @@ php4-calendar	ports/misc/php4-calendar
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
 php4-crack	ports/security/php4-crack
+php4-ctype	ports/textproc/php4-ctype
 php4-curl	ports/ftp/php4-curl
 php4-dba	ports/databases/php4-dba
 php4-dbase	ports/databases/php4-dbase
