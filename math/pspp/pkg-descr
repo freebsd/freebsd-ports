@@ -1,0 +1,10 @@
+PSPP is a program for statistical analysis of sampled data. It
+interprets commands in the SPSS language and produces tabular output
+in ASCII or PostScript format.
+
+PSPP development is ongoing. It already supports a large subset of
+SPSS's transformation language.  Its statistical procedure support is
+currently limited, but growing.
+
+Source code for the latest development release of PSPP is available at
+ftp://alpha.gnu.org/gnu/pspp and ftp://pspp.stat.wisc.edu/pub/PSPP.

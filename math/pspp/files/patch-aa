@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jan 16 19:06:30 2000
++++ Makefile.in	Sat Apr 22 15:23:56 2000
+@@ -97,7 +97,7 @@
+ 
+ SUBDIRS = doc intl po lib src config tests
+ 
+-pkgdocdir = $(prefix)/doc/@PACKAGE@
++pkgdocdir = $(datadir)/doc/@PACKAGE@
+ pkgdoc_DATA = NEWS README TODO
+ noinst_DATA = AUTHORS THANKS
+ 
