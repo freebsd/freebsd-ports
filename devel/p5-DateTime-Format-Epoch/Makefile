@@ -35,7 +35,6 @@ MAN3=		DateTime::Format::Epoch.3 \
 		DateTime::Format::Epoch::RataDie.3 \
 		DateTime::Format::Epoch::TAI64.3 \
 		DateTime::Format::Epoch::TJD.3 \
-		DateTime::Format::Epoch::Unix.3 \
 		DateTime::Format::Epoch::Unix.3
 
 .if !defined(NOPORTDOCS)
