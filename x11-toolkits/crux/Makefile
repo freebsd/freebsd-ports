@@ -15,6 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.0.0/engines/libpixmap.so:${PORTSDIR}/x11-toolkits/gtk-engines2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
