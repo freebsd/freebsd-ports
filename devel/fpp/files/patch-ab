@@ -1,0 +1,38 @@
+*** src/Makefile.common.orig	Mon Dec 30 17:31:01 1996
+--- src/Makefile.common	Mon Dec 30 17:31:20 1996
+***************
+*** 21,27 ****
+  fpp:	$(OBJ) $(OBJ1) $(EXTRA_LIB)
+  	$(CC) $(COPTS) -o $@ $(OBJ) $(OBJ1) $(EXTRA_LIB)
+  
+! $(OBJ):	$$(@:%.o=$(SRC)/%.c)
+  	$(CC) -c $(ALL_OPTS) $(@:%.o=$(SRC)/%.c)
+  
+  y.tab.o: y.tab.c
+--- 21,27 ----
+  fpp:	$(OBJ) $(OBJ1) $(EXTRA_LIB)
+  	$(CC) $(COPTS) -o $@ $(OBJ) $(OBJ1) $(EXTRA_LIB)
+  
+! $(OBJ):	#$$(@:%.o=$(SRC)/%.c)
+  	$(CC) -c $(ALL_OPTS) $(@:%.o=$(SRC)/%.c)
+  
+  y.tab.o: y.tab.c
+***************
+*** 35,42 ****
+  lint:	$(LINTFILES)
+  	$(LINT) $(LINTFILES)
+  
+! $(LINTFILES): $$(@:%.ln=$(SRC)/%.c)
+! 	$(LINT) $(LOPTS) $(EXTRA_DEF) $(EXTRA_INC) $(@:%.ln=$(SRC)/%.c)
+  
+  clean:
+  	$(RM) fpp *.o y.tab.c $(LINTFILES)
+--- 35,42 ----
+  lint:	$(LINTFILES)
+  	$(LINT) $(LINTFILES)
+  
+! #$(LINTFILES): $$(@:%.ln=$(SRC)/%.c)
+! #	$(LINT) $(LOPTS) $(EXTRA_DEF) $(EXTRA_INC) $(@:%.ln=$(SRC)/%.c)
+  
+  clean:
+  	$(RM) fpp *.o y.tab.c $(LINTFILES)
