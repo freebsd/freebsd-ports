@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.4.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	java www
 MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
 		${MASTER_SITE_LOCAL} \
@@ -24,14 +24,13 @@ USE_ZIP=	YES
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
-ORION_HOME=	${PREFIX}/${DISTNAME}
+PLIST_SUB+=	T=${ORION_HOME:S/^${PREFIX}\///}
+ORION_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 PORTTITLE=	Orion Server
 ORIONCTL_NAME=	orionctl
 ORIONCTL_DEST=	${PREFIX}/bin/${ORIONCTL_NAME}
 RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}.sh
 JAVA_HOME?=	${LOCALBASE}/linux-jdk1.3.1
-TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -53,10 +52,14 @@ do-install:
 	${LN} -sf ${ORIONCTL_DEST} ${RC_SCRIPT}
 	${MKDIR} ${ORION_HOME}/application-deployments
 	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${ORION_HOME}/tools.jar
+.if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKDIR}/orionctl.1 ${MANPREFIX}/man/man1
+.endif
 
 post-install:
 	@${ECHO} "${PORTTITLE} ${PORTVERSION} has been installed in ${ORION_HOME}."
+.if !defined(NOPORTDOCS)
 	@${ECHO} "Use 'man orionctl' for information about starting and stopping Orion."
+.endif
 
 .include <bsd.port.post.mk>
