@@ -1,0 +1,22 @@
+Aguri is an aggregation-based traffic profiler targeted for near real-time,
+long-term, and wide-area traffic monitoring. Aguri adapts itself to spatial
+traffic distribution by aggregating small volume flows into aggregates, and
+achieves temporal aggregation by creating a summary of summaries applying the
+same algorithm to its outputs. A set of scripts are used for archiving and
+visualizing summaries in different time scales. Aguri does not need a
+predefined rule set and is capable of detecting an unexpected increase of
+unknown protocols or DoS attacks, which considerably simplifies the task of
+network monitoring.
+
+Aguri produces four separate profiles for source addresses, destination
+addresses, source protocols and destination protocols. IP addresses are
+designed to be hierarchical and aggregatable so that it is natural to apply
+aggregation. Both IPv4 and IPv6 are supported in address profiles. Although
+protocol numbers are not hierarchical, the same technique can be used to
+identify port ranges. We concatenate the IP version, the protocol number and
+the TCP/UDP port number to create a 32-bit key for a protocol profile.
+
+WWW: http://www.csl.sony.co.jp/person/kjc/software.html
+
+- Yann
+yb@sainte-barbe.org

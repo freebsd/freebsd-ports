@@ -11,6 +11,7 @@
     SUBDIR += adasockets
     SUBDIR += adns
     SUBDIR += aggregate
+    SUBDIR += aguri
     SUBDIR += aim
     SUBDIR += airport
     SUBDIR += amsn
