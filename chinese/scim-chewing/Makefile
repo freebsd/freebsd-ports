@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	scim-chewing
-PORTVERSION=	0.0.1
+PORTVERSION=	0.2.0
 CATEGORIES=	chinese
-MASTER_SITES=	http://jserv.sayya.org/qooing/
-DISTNAME=	${PORTNAME}-20041130
+MASTER_SITES=	http://chewing.csie.net/download/scim/
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM chewing Chinese input methods
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-LIB_DEPENDS=	chewing:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	chewing.2:${PORTSDIR}/chinese/libchewing
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,/1.0.0/,/,g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.pre.mk>
 
@@ -32,7 +34,8 @@ BROKEN=		scim-make-table is not available for 4.x
 post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
-	@${ECHO} To display this message again, type \`make post-install\'
+	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 	@${ECHO}
+
 
 .include <bsd.port.post.mk>
