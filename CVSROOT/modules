@@ -1513,6 +1513,7 @@ frink		ports/devel/frink
 frodo		ports/emulators/frodo
 from		src/usr.bin/from
 frontpage	ports/www/frontpage
+frontpage-ar	ports/www/frontpage-ar
 frotz		ports/games/frotz
 fsck		src/sbin/fsck
 fsck_ext2fs	ports/sysutils/fsck_ext2fs
