@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.4 1995/10/04 17:34:43 asami Exp $
+# $Id: Makefile,v 1.5 1996/02/29 01:58:14 asami Exp $
 #
 
     SUBDIR += afio
@@ -10,6 +10,7 @@
     SUBDIR += xcpustate
     SUBDIR += xdu
     SUBDIR += xperfmon
+    SUBDIR += xsysinfo
     SUBDIR += xsysstats
 
 .include <bsd.port.subdir.mk>
