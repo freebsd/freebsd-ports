@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.10 1995/12/20 10:49:09 asami Exp $
+# $Id: Makefile,v 1.11 1996/03/06 12:53:01 asami Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -21,5 +21,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	cp ${WRKSRC}/docs/xvdocs.ps ${PREFIX}/share/doc/xv
 .endif
+
+pre-clean:
+	@(cd ${PORTSDIR}/graphics/jpeg ; ${MAKE} clean)
+	@(cd ${PORTSDIR}/graphics/tiff ; ${MAKE} clean)
 
 .include <bsd.port.mk>
