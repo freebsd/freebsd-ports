@@ -1,7 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/eb.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eb/ja/test.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/eb/ja
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/eb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eb/ja/eb.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eb/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/eb.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

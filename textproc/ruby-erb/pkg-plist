@@ -7,5 +7,5 @@ bin/erb
 %%RUBY_SITELIBDIR%%/erb/main.rb
 %%RUBY_SITELIBDIR%%/erb/strio.rb
 @dirrm %%RUBY_SITELIBDIR%%/erb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/erb/ChangeLog
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/erb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

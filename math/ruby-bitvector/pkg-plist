@@ -1,11 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/bitvector.so
 %%RUBY_SITELIBDIR%%/bitvector_extras.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bitvector/perftest_bitvector.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bitvector/testscript_from_readme.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bitvector/unittest_bitvector.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bitvector/unittest_bitvector_extras.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bitvector
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bitvector/NOTWRAPPED
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bitvector/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bitvector/TODO
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bitvector
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/perftest_bitvector.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testscript_from_readme.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/unittest_bitvector.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/unittest_bitvector_extras.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NOTWRAPPED
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

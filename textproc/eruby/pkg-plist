@@ -4,16 +4,16 @@ lib/liberuby.so.09
 lib/liberuby.so
 lib/liberuby.a
 %%RUBY_SITEARCHLIBDIR%%/eruby.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/e2r.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/foo.rhtml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eruby/test.rhtml
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/eruby
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/COPYING
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/eruby.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/eruby.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/eruby/ja/README.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/eruby
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/e2r.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/foo.rhtml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rhtml
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/eruby.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/eruby.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -50,13 +50,13 @@ bin/ri
 %%RUBY_SITELIBDIR%%/ri/op/Plain.rb
 @dirrm %%RUBY_SITELIBDIR%%/ri/op
 @dirrm %%RUBY_SITELIBDIR%%/ri
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/COPYING
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/emacs/Changelog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/ri/emacs/DESCRIPTION
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri/emacs
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ri
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/emacs/Changelog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/emacs/DESCRIPTION
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/emacs
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
 lib/xemacs/site-lisp/ri.el
 share/emacs/site-lisp/ri.el
 %%RUBY_ELISPDIR%%/ri.el

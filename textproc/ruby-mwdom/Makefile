@@ -24,8 +24,8 @@ NO_BUILD=	yes
 do-install:
 	${CP} -R ${WRKSRC}/mwdom ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/*.* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.* ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

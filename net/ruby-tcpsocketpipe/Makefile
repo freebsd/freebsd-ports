@@ -25,8 +25,8 @@ NO_BUILD=	yes
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/TCPSocketPipe.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/monitor.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/monitor.rb ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

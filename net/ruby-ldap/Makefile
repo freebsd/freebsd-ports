@@ -60,12 +60,12 @@ post-patch:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC}/test/* ${WRKSRC}/example/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/
-	${LN} -fs . ${RUBY_EXAMPLESDIR}/${PORTNAME}/test
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/test/* ${WRKSRC}/example/* ${RUBY_MODEXAMPLESDIR}/
+	${LN} -fs . ${RUBY_MODEXAMPLESDIR}/test
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

@@ -1,31 +1,31 @@
 %%RUBY_SITEARCHLIBDIR%%/ClibPDF.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ChangeLog.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/TODO.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ref_ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/clibpdf/ja/ref_ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/clibpdf
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/Arcs.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/DomainDemo.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/MarkerTest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/Minimal.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/beziertest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/charwidth.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/cover.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/dashtest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/filltest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/fontlist.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/helloworld.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/landscape.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/landscape2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/linkpdfpage.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/outline.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/textalign.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/textboxfit.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/timeaxis.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/weather.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/clibpdf/ja/jpntest.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf/ja
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/clibpdf
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/ChangeLog.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/ref_ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/ref_ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Arcs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/DomainDemo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/MarkerTest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/Minimal.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/beziertest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/charwidth.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cover.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dashtest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/filltest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fontlist.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/helloworld.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/landscape.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/landscape2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linkpdfpage.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/outline.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/textalign.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/textboxfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/timeaxis.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/weather.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/jpntest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

@@ -25,11 +25,11 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/format.rb ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/test
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/test
 .for f in test_format.rb format_test.pl
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/test/
+	${INSTALL_DATA} ${WRKSRC}/test/* ${RUBY_MODEXAMPLESDIR}/test/
 .endif
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/romp_helper.so
 %%RUBY_SITELIBDIR%%/romp.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romp/client.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romp/server.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/romp
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romp/romp.html
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/romp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/client.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/server.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/romp.html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

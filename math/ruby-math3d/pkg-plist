@@ -1,4 +1,4 @@
 %%RUBY_SITEARCHLIBDIR%%/math3d.so
-%%PORTDOCS%%%%RUBY_DOCDIR%%/math3d/ja/manual.jis
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/math3d/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/math3d
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/manual.jis
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

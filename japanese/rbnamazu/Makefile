@@ -33,12 +33,12 @@ do-install:
 	cd ${WRKSRC}; \
 	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
 .endfor
-	${MKDIR} ${RUBY_DOCDIR}/rbnamazu/ja
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${RD_DOCS:S/.rd/.html/:M*.en}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rbnamazu/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${RD_DOCS:S/.rd/.html/:M*.ja}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rbnamazu/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
 

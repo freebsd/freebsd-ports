@@ -29,14 +29,14 @@ do-install:
 	@cd ${WRKSRC}; \
 	${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/acl
-	${INSTALL_DATA} ${WRKSRC}/acltest.rb ${RUBY_EXAMPLESDIR}/acl
-	${MKDIR} ${RUBY_DOCDIR}/acl/ja
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/acltest.rb ${RUBY_MODEXAMPLESDIR}
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in README doc/acl.rd doc/acl.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/acl
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}
 .endfor
 .for f in README.ja doc/acl.rd.ja doc/acl.html.ja
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/acl/ja
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja
 .endfor
 .endif
 

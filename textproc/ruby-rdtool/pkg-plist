@@ -35,13 +35,13 @@ bin/rmi2html.rb
 %%RUBY_SITELIBDIR%%/rd/version.rb
 %%RUBY_SITELIBDIR%%/rd/visitor.rb
 @dirrm %%RUBY_SITELIBDIR%%/rd
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rd/dot.rd2rc
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/README.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/README.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rd/ja/rd-draft.rd.ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rd/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rd
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dot.rd2rc
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd-draft.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rd-draft.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

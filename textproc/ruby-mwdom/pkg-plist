@@ -7,12 +7,12 @@
 @dirrm %%RUBY_SITELIBDIR%%/mwdom/builder
 @dirrm %%RUBY_SITELIBDIR%%/mwdom/visitor
 @dirrm %%RUBY_SITELIBDIR%%/mwdom
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/ns1.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/ns2.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/parsetest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/rdf1.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/rdf2.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/testdoc.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/visitortest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mwdom/xhtmltest.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mwdom
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ns1.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ns2.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/parsetest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rdf1.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rdf2.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/testdoc.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/visitortest.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/xhtmltest.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

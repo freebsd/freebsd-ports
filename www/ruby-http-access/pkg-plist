@@ -1,7 +1,7 @@
 %%RUBY_SITELIBDIR%%/http-access2.rb
 %%RUBY_SITELIBDIR%%/http-access2/http.rb
 @dirrm %%RUBY_SITELIBDIR%%/http-access2
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/http-access/dav.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/http-access/thread.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/http-access/wcat.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/http-access
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dav.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/thread.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wcat.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

@@ -1,12 +1,12 @@
 %%RUBY_SITELIBDIR%%/romkan.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romkan/ja/test.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/romkan/ja/test.sh
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/romkan/ja
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/romkan
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/romkan.en.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/romkan.en.rd
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/ja/romkan.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/romkan/ja/romkan.ja.rd
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/romkan/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/romkan
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ja/test.sh
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/romkan.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/romkan.en.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/romkan.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/romkan.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

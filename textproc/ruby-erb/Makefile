@@ -26,8 +26,8 @@ do-install:
 	${RUBY} install.rb
 	${LN} -sf ${RUBY_SITELIBDIR}/erb/erb.rb ${PREFIX}/bin/erb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_DOCDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>

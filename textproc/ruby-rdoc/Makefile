@@ -26,11 +26,11 @@ DOCS=		ChangeLog NEW_FEATURES README ToDo
 do-install:
 	cd ${WRKSRC}; ${RUBY} ./install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/markup
-	${INSTALL_DATA} ${WRKSRC}/markup/sample/sample.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/markup
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/markup
+	${INSTALL_DATA} ${WRKSRC}/markup/sample/sample.rb ${RUBY_MODEXAMPLESDIR}/markup
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

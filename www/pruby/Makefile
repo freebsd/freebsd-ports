@@ -62,9 +62,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ext_pruby_src/pruby_*.rb $${dir}/; \
 	${PERL} -i -pe "s,%%EXTENSION_DIR%%,$${dir#${PREFIX}/},g" ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

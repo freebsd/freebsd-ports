@@ -13,11 +13,11 @@
 %%RUBY_LIBDIR%%/tkscrollbox.rb
 %%RUBY_LIBDIR%%/tktext.rb
 %%RUBY_LIBDIR%%/tkvirtevent.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkbiff.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkbrowse.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkdialog.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkfrom.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkhello.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tkline.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tk/tktimer.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tk
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkbiff.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkbrowse.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkdialog.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkfrom.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkhello.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tkline.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tktimer.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

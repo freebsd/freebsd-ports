@@ -1,12 +1,12 @@
 %%RUBY_SITELIBDIR%%/application.rb
 %%RUBY_SITELIBDIR%%/devel/logger.rb
 @dirrm %%RUBY_SITELIBDIR%%/devel
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/devel-logger/app.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/devel-logger/log.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/devel-logger/logShifting.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/devel-logger/logToFile.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/devel-logger/logs/.keep_me
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/devel-logger/logs
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/devel-logger
-%%PORTDOCS%%%%RUBY_DOCDIR%%/devel-logger/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/devel-logger
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/app.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/log.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/logShifting.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/logToFile.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/logs/.keep_me
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/logs
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

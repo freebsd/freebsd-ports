@@ -1,16 +1,16 @@
 %%RUBY_ARCHLIBDIR%%/tcltklib.so
 %%RUBY_LIBDIR%%/tcltk.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcltklib/ja/MANUAL.euc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/tcltklib/ja/README.euc
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcltklib/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/tcltklib
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/batsu.gif
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/maru.gif
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample0.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/sample2.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines0.tcl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines1.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tcltklib/demo/lines2.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib/demo
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/tcltklib
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/MANUAL.euc
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.euc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/batsu.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/maru.gif
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample0.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo/lines0.tcl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo/lines1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo/lines2.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/demo
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%

@@ -5,6 +5,6 @@
 %%RUBY_SITELIBDIR%%/xpath-dom.rb
 %%RUBY_SITELIBDIR%%/xpath.rb
 %%RUBY_SITELIBDIR%%/xpathtree.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xmlscan/ja/README
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlscan/ja
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xmlscan
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

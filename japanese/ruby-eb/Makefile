@@ -28,10 +28,10 @@ PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/eb/ja/
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/eb/ja/
-	${MKDIR} ${RUBY_DOCDIR}/eb/ja
-	${INSTALL_DATA} ${WRKSRC}/eb.html ${RUBY_DOCDIR}/eb/ja/
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_MODEXAMPLESDIR}/ja/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/eb.html ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.post.mk>

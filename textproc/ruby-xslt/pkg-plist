@@ -1,11 +1,11 @@
 bin/xslt
 %%RUBY_SITELIBDIR%%/xslt.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/data.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/stylesheet.xsl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/stylesheet2.xsl
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/test.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/test_style.xsl
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xslt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xslt/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/xslt/ToDo
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xslt
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/data.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stylesheet.xsl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stylesheet2.xsl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.xml
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test_style.xsl
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
