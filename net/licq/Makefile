@@ -32,12 +32,6 @@ CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 .endif
 .endif
 
-post-patch:
-	@${PERL5} -pi -e 's|<wait.h>|<sys/wait.h>|g' \
-		${WRKSRC}/src/sighandler.c
-	@${PERL5} -pi -e 's|.program_transform_name.|s,x,x,|' \
-		${WRKSRC}/src/Makefile.in
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 

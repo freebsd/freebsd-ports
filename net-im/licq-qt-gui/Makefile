@@ -11,26 +11,10 @@ CATEGORIES=	net
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-USE_AUTOMAKE=	yes
-USE_QT_VER=	2
-
+USE_QT_VER=	3
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-
-post-patch:
-	@${PERL5} -pi -e 's|libqt-mt.so.2|libqt2-mt.so.4|g;' \
-		-e 's|-lqt-mt|-lqt2-mt|g;' -e 's|libqt.so|libqt2.so|g;' \
-		-e 's|-lqt$$|-lqt2|g;' ${WRKSRC}/acinclude.m4
-
-pre-configure:
-	@(cd ${WRKSRC} && ${ACLOCAL})
-
-post-configure:
-	@(cd ${WRKSRC} && ${PERL5} am_edit)
-	@${PERL5} -pi -e 's|^archive_cmds=.*nostdlib.*|| ; \
-		s|^build_libtool_need_lc=.*|build_libtool_need_lc=no| ; \
-		s|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+INCDIR=		${PORTSDIR}/net
 
 post-install:
 	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
@@ -40,8 +24,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_LICQ_DEVEL)
-.include "${PORTSDIR}/net/licq-devel/Makefile.inc"
+.include "${INCDIR}/licq-devel/Makefile.inc"
 .else
-.include "${PORTSDIR}/net/licq/Makefile.inc"
+.include "${INCDIR}/licq/Makefile.inc"
 .endif
 .include <bsd.port.post.mk>

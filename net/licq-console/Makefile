@@ -12,22 +12,14 @@ CATEGORIES=	net
 MAINTAINER=	dinoex@FreeBSD.org
 
 USE_AUTOMAKE=	yes
-
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-
-post-configure:
-	@${PERL5} -pi -e 's|^archive_cmds=.*nostdlib.*|| ; \
-		s|^build_libtool_need_lc=.*|build_libtool_need_lc=no|' \
-		${WRKSRC}/libtool
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/licq_console.conf \
-		${PREFIX}/etc/licq_console.conf.sample
+INCDIR=		${PORTSDIR}/net
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_LICQ_DEVEL)
-.include "${PORTSDIR}/net/licq-devel/Makefile.inc"
+.include "${INCDIR}/licq-devel/Makefile.inc"
 .else
-.include "${PORTSDIR}/net/licq/Makefile.inc"
+.include "${INCDIR}/licq/Makefile.inc"
 .endif
 .include <bsd.port.post.mk>
