@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	postmark
-PORTVERSION=	1.11
+PORTVERSION=	1.13
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netapp.com/ftp/  \
 		http://www.taronga.com/~nick/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
