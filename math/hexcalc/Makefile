@@ -1,5 +1,4 @@
 # New ports collection makefile for:	hexcalc
-# Version required:	1.11 (taken from sccsid in hexcalc.c)
 # Date created:		5 December 1994
 # Whom:			asami
 #

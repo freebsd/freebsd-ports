@@ -1,5 +1,4 @@
 # New ports collection makefile for:	xgammon
-# Version required:	0.98-14
 # Date created:		02 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #

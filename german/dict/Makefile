@@ -1,5 +1,4 @@
 # New ports collection makefile for: dict
-# Version required:     1.0
 # Date created:         6 August 1997
 # Whom:                 wosch
 #

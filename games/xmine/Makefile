@@ -1,5 +1,4 @@
 # New ports collection makefile for:	xmine
-# Version required:	1.0.3 / Athena
 # Date created:		25 December 1994
 # Whom:			joerg
 #
