@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	poseidon
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.gentleware.org/
 DISTNAME=	${PORTNAME}${EDI}-${PORTVERSION}
@@ -15,7 +15,8 @@ MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"Redistribution is not permitted"
