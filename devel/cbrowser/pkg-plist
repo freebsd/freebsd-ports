@@ -1,0 +1,8 @@
+share/cbrowser/builder.tcl
+share/cbrowser/calltree.tcl
+share/cbrowser/cbrowser
+share/cbrowser/hierarchy.tcl
+share/cbrowser/tclIndex
+share/cbrowser/widget.tcl
+bin/cbrowser
+@dirrm share/cbrowser

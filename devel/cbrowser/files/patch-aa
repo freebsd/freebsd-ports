@@ -1,0 +1,10 @@
+--- cbrowser--	Wed Oct 14 03:37:45 1998
++++ cbrowser	Thu Apr 20 16:55:12 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ # restart using wish \
+-exec wish -f "$0" "$@"
++exec wish8.2 -f "$0" "$@"
+ 
+ # $Id: cbrowser,v 0.6 1998/10/14 03:28:06 chris Exp $
+ 
