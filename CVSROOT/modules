@@ -9734,6 +9734,7 @@ rfbproxy	ports/net/rfbproxy
 rfc		ports/misc/rfc
 rfcdiff		ports/textproc/rfcdiff
 rfksay		ports/games/rfksay
+rfstool		ports/sysutils/rfstool
 rftp		ports/mail/rftp
 rhtvision	ports/devel/rhtvision
 rhythmbox	ports/audio/rhythmbox
