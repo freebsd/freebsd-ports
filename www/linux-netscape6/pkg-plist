@@ -1,8 +1,8 @@
-bin/communicator-4.61
-@exec ln -sf %f %B/communicator-4
-@exec ln -sf communicator-4 %B/netscape
+bin/%%BROWSER%%-%%BROWSER_VER%%
+@exec ln -sf %f %B/%%BROWSER%%-4
+@exec ln -sf %%BROWSER%%-4 %B/netscape
 @unexec rm -f %B/netscape
-@unexec rm -f %B/communicator-4
+@unexec rm -f %B/%%BROWSER%%-4
 %%NSUBDIR%%/java/classes/ifc11.jar
 %%NSUBDIR%%/java/classes/iiop10.jar
 %%NSUBDIR%%/java/classes/jae40.jar
