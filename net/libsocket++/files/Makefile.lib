@@ -1,0 +1,22 @@
+SHLIB_MAJOR=	1
+SHLIB_MINOR=	10
+LIB=		socket++
+LIBDIR= 	${PREFIX}/lib
+INCDIR=		${PREFIX}/include
+INFODIR=	${PREFIX}/info
+CFLAGS+=	-I.
+
+SRCS=	sockstream.C sockinet.C sockunix.C pipestream.C Fork.C \
+	echo.C smtp.C ftp.C
+
+HEADERS=Fork.h echo.h ftp.h pipestream.h protocol.h smtp.h \
+	sockinet.h sockstream.h sockunix.h
+
+afterinstall:
+	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+		${HEADERS} ${INCDIR}
+	makeinfo --no-split socket++.texi
+	${INSTALL} ${COPY} -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
+		socket++.info ${INFODIR}
+
+.include <bsd.lib.mk>

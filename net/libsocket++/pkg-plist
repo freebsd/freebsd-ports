@@ -1,0 +1,16 @@
+lib/libsocket++.a
+lib/libsocket++.so.1.10
+lib/libsocket++_p.a
+@exec /sbin/ldconfig -m %D/lib
+include/Fork.h
+include/echo.h 
+include/ftp.h
+include/pipestream.h 
+include/protocol.h
+include/smtp.h 
+include/sockinet.h 
+include/sockstream.h 
+include/sockunix.h 
+info/socket++.info
+share/doc/libsocket++/README
+share/doc/libsocket++/socket++.ps

@@ -1,0 +1,14 @@
+*** local.h	Tue Oct  8 14:58:35 1996
+--- local.h	Tue Oct  8 15:00:07 1996
+***************
+*** 75,81 ****
+--- 75,83 ----
+  
+  #if !defined (__linux__)
+    extern "C" int gethostname (char* hostname, int len);
++ #if !(defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__))
+    extern char* SYS_SIGLIST [];
++ #endif
+  #endif
+  
+  #ifdef __osf__
