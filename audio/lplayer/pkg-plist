@@ -1,21 +1,21 @@
 bin/longplayer
 bin/lplayer-bin
-share/lplayer/images/genre.png
-share/lplayer/images/go.png
-share/lplayer/images/go32.png
-share/lplayer/images/lplayericon.png
-share/lplayer/images/lplayerlogo.png
-share/lplayer/images/lplayerlogo2.png
-share/lplayer/images/lplayerlogo3.png
-share/lplayer/images/next.png
-share/lplayer/images/play.png
-share/lplayer/images/playnow.png
-share/lplayer/images/previous.png
-share/lplayer/images/queue.png
-share/lplayer/images/ratedown.png
-share/lplayer/images/ratedown32.png
-share/lplayer/images/rateup.png
-share/lplayer/images/rateup32.png
-share/lplayer/images/stop.png
-@dirrm share/lplayer/images
-@dirrm share/lplayer
+%%DATADIR%%/images/genre.png
+%%DATADIR%%/images/go.png
+%%DATADIR%%/images/go32.png
+%%DATADIR%%/images/lplayericon.png
+%%DATADIR%%/images/lplayerlogo.png
+%%DATADIR%%/images/lplayerlogo2.png
+%%DATADIR%%/images/lplayerlogo3.png
+%%DATADIR%%/images/next.png
+%%DATADIR%%/images/play.png
+%%DATADIR%%/images/playnow.png
+%%DATADIR%%/images/previous.png
+%%DATADIR%%/images/queue.png
+%%DATADIR%%/images/ratedown.png
+%%DATADIR%%/images/ratedown32.png
+%%DATADIR%%/images/rateup.png
+%%DATADIR%%/images/rateup32.png
+%%DATADIR%%/images/stop.png
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
