@@ -1,42 +1,45 @@
-@cwd /usr/local/
-share/tik/media/AOL.gif
-share/tik/media/Admin.gif
-share/tik/media/DT.gif
-share/tik/media/Login.gif
-share/tik/media/Logo.gif
-share/tik/media/Logout.gif
-share/tik/media/Oscar.gif
-share/tik/media/downarrow.gif
-share/tik/media/uparrow.gif
-share/tik/media/BuddyArrive.au
-share/tik/media/BuddyLeave.au
-share/tik/media/Pounce.au
-share/tik/media/Receive.au
-share/tik/media/Send.au
-share/tik/packages/away.tcl
-share/tik/packages/imcapture.tcl
-share/tik/packages/mynews.tcl
-share/tik/packages/pounce.tcl
-share/tik/packages/search.tcl
-share/tik/packages/socksproxy.tcl
-share/tik/packages/sslproxy.tcl
-share/tik/packages/stock.tcl
-share/tik/packages/ticker.tcl
-share/tik/PROTOCOL
-share/tik/CHANGES
-share/tik/README
-share/tik/LICENSE
-share/tik/sflap.tcl
-share/tik/configTool.tcl
-share/tik/toc.tcl
-share/tik/tik.tcl
-@exec ln -sf %f %D/bin/tik
-@unexec rm -f %D/bin/tik
-share/tik/tac.tcl
-share/tik/sag.tcl
-share/tik/example.tikrc
-share/tik/example.tacrc
-share/tik/example.tikpre
-@dirrm share/tik/media
-@dirrm share/tik/packages
-@dirrm share/tik
+bin/%%DISTNAME%%
+@exec ln -sf %%DISTNAME%% %B/tik
+@unexec rm %B/tik
+lib/%%DISTNAME%%/media/AOL.gif
+lib/%%DISTNAME%%/media/Admin.gif
+lib/%%DISTNAME%%/media/DT.gif
+lib/%%DISTNAME%%/media/Login.gif
+lib/%%DISTNAME%%/media/Logo.gif
+lib/%%DISTNAME%%/media/Logout.gif
+lib/%%DISTNAME%%/media/Oscar.gif
+lib/%%DISTNAME%%/media/downarrow.gif
+lib/%%DISTNAME%%/media/uparrow.gif
+lib/%%DISTNAME%%/media/BuddyArrive.au
+lib/%%DISTNAME%%/media/BuddyLeave.au
+lib/%%DISTNAME%%/media/Pounce.au
+lib/%%DISTNAME%%/media/Receive.au
+lib/%%DISTNAME%%/media/Send.au
+lib/%%DISTNAME%%/packages/away.tcl
+lib/%%DISTNAME%%/packages/imcapture.tcl
+lib/%%DISTNAME%%/packages/mynews.tcl
+lib/%%DISTNAME%%/packages/pounce.tcl
+lib/%%DISTNAME%%/packages/quickchat.tcl
+lib/%%DISTNAME%%/packages/search.tcl
+lib/%%DISTNAME%%/packages/socksproxy.tcl
+lib/%%DISTNAME%%/packages/sslproxy.tcl
+lib/%%DISTNAME%%/packages/stock.tcl
+lib/%%DISTNAME%%/packages/ticker.tcl
+lib/%%DISTNAME%%/sflap.tcl
+lib/%%DISTNAME%%/configTool.tcl
+lib/%%DISTNAME%%/toc.tcl
+lib/%%DISTNAME%%/tik.tcl
+lib/%%DISTNAME%%/tac.tcl
+lib/%%DISTNAME%%/sag.tcl
+share/doc/%%DISTNAME%%/PROTOCOL
+share/doc/%%DISTNAME%%/CHANGES
+share/doc/%%DISTNAME%%/README
+share/doc/%%DISTNAME%%/LICENSE
+share/examples/%%DISTNAME%%/example.tikrc
+share/examples/%%DISTNAME%%/example.tacrc
+share/examples/%%DISTNAME%%/example.tikpre
+@dirrm lib/%%DISTNAME%%/media
+@dirrm lib/%%DISTNAME%%/packages
+@dirrm lib/%%DISTNAME%%
+@dirrm share/doc/%%DISTNAME%%
+@dirrm share/examples/%%DISTNAME%%
