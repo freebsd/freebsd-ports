@@ -112,7 +112,5 @@ lib/libvdkgnome.a
 lib/libvdkgnome.la
 lib/libvdkgnome.so
 lib/libvdkgnome.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/vdk.m4
 @dirrm include/vdk

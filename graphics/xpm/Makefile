@@ -13,11 +13,11 @@ MASTER_SITES=	ftp://avahi.inria.fr/pub/xpm/
 MAINTAINER=	jseger@FreeBSD.org
 
 USE_IMAKE=	yes
+INSTALL_SHLIBS=	yes
 
 MAN1=		cxpm.1 sxpm.1
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 	@ranlib ${PREFIX}/lib/libXpm.a
 
 .include <bsd.port.mk>

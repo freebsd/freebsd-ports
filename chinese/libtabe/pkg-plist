@@ -10,8 +10,6 @@ lib/libbims.so.0.1
 lib/libtabe.a
 lib/libtabe.so
 lib/libtabe.so.0.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/tabe/BoPoMoFo.shtml
 share/doc/tabe/Changes
 share/doc/tabe/Changes.pre-0.1

@@ -23,6 +23,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ARGS= --without-gnome
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

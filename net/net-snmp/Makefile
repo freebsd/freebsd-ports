@@ -14,7 +14,8 @@ MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-USE_AUTOCONF=	YES
+USE_AUTOCONF=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ARGS+= --enable-shared
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
@@ -69,6 +70,5 @@ post-install:
 		${ECHO} "[ -x ${PREFIX}/sbin/snmpd ] && ${PREFIX}/sbin/snmpd && ${ECHO} -n ' snmpd'" >> ${STARTUP_FILE}; \
 		${CHMOD} 751 ${STARTUP_FILE}; \
 	 fi
-	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

@@ -7,6 +7,4 @@ include/xls2xml/xmldoc.h
 lib/libxls2xml.a
 lib/libxls2xml.so
 lib/libxls2xml.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/xls2xml

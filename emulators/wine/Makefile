@@ -20,6 +20,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
+INSTALL_SHLIBS=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
 MAN1=		wine.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386

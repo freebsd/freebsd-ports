@@ -15,6 +15,7 @@ MAINTAINER=	giffunip@asme.org
 
 WRKSRC=		$(WRKDIR)/twin
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	depend world
@@ -35,6 +36,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/* ${PREFIX}/share/doc/twin
 	${GZIP_CMD} ${PREFIX}/share/doc/twin/*
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

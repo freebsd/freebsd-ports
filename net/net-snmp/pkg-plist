@@ -103,5 +103,3 @@ share/snmp/mibs/UDP-MIB.txt
 @unexec rm -f %D/share/snmp/mibs/.index
 @dirrm share/snmp/mibs
 @dirrm share/snmp
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

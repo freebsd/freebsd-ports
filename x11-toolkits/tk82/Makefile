@@ -16,6 +16,7 @@ MAINTAINER=	jseger@FreeBSD.org
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
@@ -296,7 +297,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 .include <bsd.port.pre.mk>
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif

@@ -23,8 +23,6 @@ lib/libversion.so
 lib/libwin87em.so
 lib/libwinsock.so
 lib/libwinspool.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/twin/bin-convert.txt.gz
 share/doc/twin/config.doc.gz
 share/doc/twin/debugger.1.gz

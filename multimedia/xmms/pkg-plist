@@ -10,9 +10,7 @@ include/xmms/dga.h
 include/xmms/plugin.h
 lib/libxmms.so.1
 @exec ln -fs %D/%F %B/libxmms.so
-@exec /sbin/ldconfig -m %D/lib
 @unexec rm -f %B/libxmms.so
-@unexec /sbin/ldconfig -R
 lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
 lib/xmms/Input/libwav.so

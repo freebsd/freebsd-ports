@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
 
 USE_QT=		yes
 USE_X_PREFIX=	yes
+INSTALL_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/twinlib
 MAKE_ENV+=	PREFIX=${PREFIX} CXX=${CXX}
 VERSION=	0

@@ -178,9 +178,7 @@ lib/wine/libwsock32.so.1
 lib/wine/libx11drv.so
 lib/wine/libx11drv.so.1
 lib/wine/libwine.so
-@exec /sbin/ldconfig -m %B
 @dirrm include/wine
 @dirrm lib/wine/reg
 @dirrm lib/wine/documentation
 @dirrm lib/wine
-@unexec /sbin/ldconfig -R
