@@ -7,6 +7,7 @@
 
 PORTNAME=	ifc
 PORTVERSION=	6.0.159
+PORTREVISION=	1
 CATEGORIES=	lang devel emulators linux
 MASTER_SITES=#
 DISTNAME=	l_fc_pu_6.0.159
