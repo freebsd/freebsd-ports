@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-realplayer
-PORTVERSION= 	8.cs1
+PORTVERSION=	8.cs1
 CATEGORIES=	audio graphics linux
 MASTER_SITES=	# fetch manually
 DISTNAME=	rp${PORTVERSION:R}_linux20_libc6_i386_${PORTVERSION:E}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 
 EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS= | cpio -id --quiet
+EXTRACT_AFTER_ARGS=	| cpio -id --quiet
 RADIR=		${PREFIX}/lib/RealPlayer${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/usr/lib/RealPlayer${PORTVERSION:R}
 PLUGINSDIR=	${PREFIX}/lib/netscape-linux/plugins
