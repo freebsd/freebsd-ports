@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	2.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -16,8 +16,8 @@ MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Mozilla plugin for the MPlayer media player
 
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
-BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
-RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
@@ -45,19 +45,7 @@ HEADERS_SUFX=
 .if ${WITH_MOZILLA}=="mozilla-devel"
 HEADERS_SUFX=	-devel
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
-HEADERS_SUFX=	-devel-gtk1
-CONFIGURE_ARGS+=	--disable-gtk2 \
-			--enable-gtk1
-.else
-.if ${WITH_MOZILLA}=="firefox"
-CONFIGURE_ENV+=		PKG_CONFIG_PATH=${X11BASE}/lib/firefox/lib/pkgconfig
-.else
-HEADERS_SUFX=	-gtk1
-CONFIGURE_ARGS+=	--disable-gtk2 \
-			--enable-gtk1
-.endif
-.endif
+HEADERS_SUFX=
 .endif
 .endif
 .endif
@@ -69,8 +57,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} " firefox "
 	@${ECHO_MSG} " mozilla-devel "
-	@${ECHO_MSG} " mozilla-gtk1 "
-	@${ECHO_MSG} " mozilla-devel-gtk1 "
 	@${ECHO_MSG} ""
 
 post-patch:
