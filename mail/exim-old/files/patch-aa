@@ -42,10 +42,10 @@ This patch makes three changes to the exim_install script:
 -  echo $com because there is no existing configuration file.
 -  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}
 -  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}
-+  echo $com Installing sample configuration file
++  echo $com Installing default configuration file in ${CONFIGURE_FILE%/*}/configure.default
 +  ${real} mkdir -p ${CONFIGURE_FILE%/*}
-+  echo ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
-+  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
++  echo ${CP} ../src/configure.default ${CONFIGURE_FILE%/*}
++  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE%/*}
    if [ $? -ne 0 ]; then
      echo $com ""
      echo $com "*** Exim installation ${ver}failed ***"

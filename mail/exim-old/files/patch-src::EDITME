@@ -48,7 +48,7 @@
  # installations may want something like this:
  
 -# LOG_FILE_PATH=/var/log/exim_%slog
-+LOG_FILE_PATH=/var/log/exim_%slog
++LOG_FILE_PATH=/var/log/exim/%slog
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
@@ -74,7 +74,7 @@
  # them. Some installations may want something like this
  
 -# PID_FILE_PATH=/var/lock/exim%s.pid
-+# PID_FILE_PATH=/var/run/exim%s.pid
++PID_FILE_PATH=/var/run/exim%s.pid
  
  # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
  # (see SPOOL_DIRECTORY below) with the name "exim-daemon.pid" for the standard

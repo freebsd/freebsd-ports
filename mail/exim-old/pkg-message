@@ -11,5 +11,5 @@ as a comprehensive FAQ list, are available on the Exim web site:
 
 To activate Exim:
 
-1) Create exim/configure from exim/configure.sample .
+1) Create exim/configure from exim/configure.default .
 2) Use the rc.d/exim/sh script to start the Exim daemon .
