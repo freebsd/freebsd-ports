@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zenity
-PORTVERSION=	1.6
+PORTVERSION=	1.8
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
-DIST_SUBDIR=    gnome2
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
@@ -25,6 +25,8 @@ USE_GNOME=	gnomeprefix gnomehack libgnomecanvas gconf2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		zenity.1
 
