@@ -13,6 +13,7 @@
     SUBDIR += mfm
     SUBDIR += nautilus
     SUBDIR += offix-files
+    SUBDIR += systemg
     SUBDIR += tkdesk
     SUBDIR += vide
     SUBDIR += workplace
