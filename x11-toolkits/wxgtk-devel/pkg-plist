@@ -3,10 +3,12 @@ bin/wxgtk-config
 include/wx/accel.h
 include/wx/app.h
 include/wx/arrimpl.cpp
+include/wx/artprov.h
 include/wx/bitmap.h
 include/wx/bmpbuttn.h
 include/wx/brush.h
 include/wx/buffer.h
+include/wx/build.h
 include/wx/busyinfo.h
 include/wx/button.h
 include/wx/calctrl.h
@@ -41,6 +43,7 @@ include/wx/dbgrid.h
 include/wx/dbkeyg.h
 include/wx/dbtable.h
 include/wx/dc.h
+include/wx/dcbuffer.h
 include/wx/dcclient.h
 include/wx/dcmemory.h
 include/wx/dcprint.h
@@ -52,6 +55,7 @@ include/wx/defs.h
 include/wx/dialog.h
 include/wx/dialup.h
 include/wx/dir.h
+include/wx/dirctrl.h
 include/wx/dirdlg.h
 include/wx/dnd.h
 include/wx/docmdi.h
@@ -59,10 +63,13 @@ include/wx/docview.h
 include/wx/dragimag.h
 include/wx/dynarray.h
 include/wx/dynlib.h
+include/wx/dynload.h
+include/wx/effects.h
 include/wx/encconv.h
 include/wx/event.h
 include/wx/expr.h
 include/wx/fdrepdlg.h
+include/wx/features.h
 include/wx/ffile.h
 include/wx/file.h
 include/wx/fileconf.h
@@ -100,7 +107,6 @@ include/wx/generic/gridctrl.h
 include/wx/generic/gridg.h
 include/wx/generic/helpext.h
 include/wx/generic/helphtml.h
-include/wx/generic/helpwxht.h
 include/wx/generic/imaglist.h
 include/wx/generic/laywin.h
 include/wx/generic/listctrl.h
@@ -119,6 +125,7 @@ include/wx/generic/splitter.h
 include/wx/generic/statusbr.h
 include/wx/generic/tabg.h
 include/wx/generic/textdlgg.h
+include/wx/generic/timer.h
 include/wx/generic/treectlg.h
 include/wx/generic/wizard.h
 include/wx/geometry.h
@@ -171,7 +178,6 @@ include/wx/gtk/radiobut.h
 include/wx/gtk/region.h
 include/wx/gtk/scrolbar.h
 include/wx/gtk/scrolwin.h
-include/wx/gtk/settings.h
 include/wx/gtk/slider.h
 include/wx/gtk/spinbutt.h
 include/wx/gtk/spinctrl.h
@@ -190,6 +196,7 @@ include/wx/gtk/wave.h
 include/wx/gtk/win_gtk.h
 include/wx/gtk/window.h
 include/wx/hash.h
+include/wx/hashmap.h
 include/wx/help.h
 include/wx/helpbase.h
 include/wx/helphtml.h
@@ -208,9 +215,11 @@ include/wx/html/htmprint.h
 include/wx/html/m_templ.h
 include/wx/html/winpars.h
 include/wx/icon.h
+include/wx/iconbndl.h
 include/wx/imagbmp.h
 include/wx/image.h
 include/wx/imaggif.h
+include/wx/imagiff.h
 include/wx/imagjpeg.h
 include/wx/imaglist.h
 include/wx/imagpcx.h
@@ -220,6 +229,7 @@ include/wx/imagtiff.h
 include/wx/imagxpm.h
 include/wx/intl.h
 include/wx/ioswrap.h
+include/wx/ipc.h
 include/wx/ipcbase.h
 include/wx/isql.h
 include/wx/isqlext.h
@@ -227,6 +237,7 @@ include/wx/joystick.h
 include/wx/layout.h
 include/wx/laywin.h
 include/wx/list.h
+include/wx/listbase.h
 include/wx/listbox.h
 include/wx/listctrl.h
 include/wx/listimpl.cpp
@@ -244,10 +255,10 @@ include/wx/mimetype.h
 include/wx/minifram.h
 include/wx/module.h
 include/wx/msgdlg.h
+include/wx/msgout.h
 include/wx/mstream.h
 include/wx/notebook.h
 include/wx/object.h
-include/wx/objstrm.h
 include/wx/odbc.h
 include/wx/ownerdrw.h
 include/wx/palette.h
@@ -279,7 +290,6 @@ include/wx/sckipc.h
 include/wx/sckstrm.h
 include/wx/scrolbar.h
 include/wx/scrolwin.h
-include/wx/serbase.h
 include/wx/settings.h
 include/wx/setup.h
 include/wx/sizer.h
@@ -311,6 +321,7 @@ include/wx/textdlg.h
 include/wx/textfile.h
 include/wx/tglbtn.h
 include/wx/thread.h
+include/wx/thrimpl.cpp
 include/wx/time.h
 include/wx/timer.h
 include/wx/tipdlg.h
@@ -327,6 +338,7 @@ include/wx/unix/execute.h
 include/wx/unix/fontutil.h
 include/wx/unix/gsockunx.h
 include/wx/unix/mimetype.h
+include/wx/unix/utilsx11.h
 include/wx/url.h
 include/wx/utils.h
 include/wx/valgen.h
@@ -335,6 +347,7 @@ include/wx/valtext.h
 include/wx/variant.h
 include/wx/vector.h
 include/wx/version.h
+include/wx/volume.h
 include/wx/wave.h
 include/wx/wfstream.h
 include/wx/window.h
@@ -361,10 +374,15 @@ share/locale/de/LC_MESSAGES/wxstd.mo
 share/locale/es/LC_MESSAGES/wxstd.mo
 share/locale/fi/LC_MESSAGES/wxstd.mo
 share/locale/fr/LC_MESSAGES/wxstd.mo
+share/locale/hu/LC_MESSAGES/wxstd.mo
+share/locale/id/LC_MESSAGES/wxstd.mo
 share/locale/it/LC_MESSAGES/wxstd.mo
 share/locale/nl/LC_MESSAGES/wxstd.mo
+share/locale/pl/LC_MESSAGES/wxstd.mo
 share/locale/ru/LC_MESSAGES/wxstd.mo
+share/locale/sl/LC_MESSAGES/wxstd.mo
 share/locale/sv/LC_MESSAGES/wxstd.mo
+share/locale/tr/LC_MESSAGES/wxstd.mo
 share/locale/zh/LC_MESSAGES/wxstd.mo
 share/wx/afm/Cour.afm
 share/wx/afm/CourBo.afm

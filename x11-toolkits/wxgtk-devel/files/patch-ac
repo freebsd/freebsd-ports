@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon Dec 10 20:07:01 2001
-+++ Makefile.in	Sat Jan 19 16:58:06 2002
-@@ -340,17 +340,13 @@
+--- Makefile.in.orig	Sun Jan  5 13:54:59 2003
++++ Makefile.in	Tue Jan 14 18:29:58 2003
+@@ -332,17 +332,13 @@
  
  $(build_libdir)/@WX_LIBRARY_LINK1@: $(build_libdir)/@WX_LIBRARY_NAME_SHARED@
  	@$(RM) $(build_libdir)/@WX_LIBRARY_LINK1@
@@ -21,9 +21,9 @@ $FreeBSD$
 -		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK2_GL@
 +		&& $(LN_S) @WX_TARGET_LIBRARY_GL@ @WX_LIBRARY_LINK1_GL@
  
- $(OBJECTS):	$(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
+ $(OBJECTS): $(WXDIR)/include/wx/defs.h $(WXDIR)/include/wx/object.h
  
-@@ -380,26 +376,21 @@
+@@ -371,26 +367,21 @@
  
  CREATE_INSTALLED_LINKS: preinstall
  	$(RM) $(libdir)/@WX_LIBRARY_LINK1@
@@ -50,29 +50,37 @@ $FreeBSD$
 -	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/afm
 -	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/$(VER_MAJMIN)/gs_afm
 +	$(INSTALL) -d $(datadir)/wx/afm
-+	$(INSTALL) -d $(datadir)/wx/gs_afm
++	$(INSTALL) -d $(datadir)/wx//gs_afm
 +	$(INSTALL_DATA) $(top_srcdir)/misc/afm/*.afm $(datadir)/wx/afm
 +	$(INSTALL_DATA) $(top_srcdir)/misc/gs_afm/*.afm $(datadir)/wx/gs_afm
-         
+ 
  m4datainstall: preinstall
  	$(INSTALL) -d $(datadir)/aclocal
-@@ -422,12 +413,10 @@
- 	@if test "x@WX_LIBRARY_IMPORTLIB@" != "x"; then	\
+@@ -425,20 +416,16 @@
+ 	@if test "x@WX_LIBRARY_IMPORTLIB@" != "x"; then \
  		$(INSTALL_PROGRAM) $(top_builddir)/lib/@WX_LIBRARY_IMPORTLIB@ $(libdir)/@WX_LIBRARY_IMPORTLIB@; fi
  
 -	$(INSTALL) -d $(libdir)/wx
 -	$(INSTALL) -d $(libdir)/wx/include
+-	$(INSTALL) -d $(libdir)/wx/include/univ
 -	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@
 -	$(INSTALL) -d $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx
 +	$(INSTALL) -d $(prefix)/include/wx
 +	$(INSTALL) -d $(prefix)/include/wx/@TOOLCHAIN_NAME@
  	$(INSTALL_DATA) $(build_libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h \
 -                    $(libdir)/wx/include/@TOOLCHAIN_NAME@/wx/setup.h
-+                    $(prefix)/include/wx/setup.h
++		    $(prefix)/include/wx/setup.h
  
  	$(INSTALL) -d $(includedir)/wx
  	@# FIXME: This will erroneously install a wx/base dir for wxBase..
-@@ -485,13 +474,11 @@
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/@TOOLKIT_DIR@; fi
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/html; fi
+ 	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/generic; fi
+-	@if test "$(USE_GUI)" = 1; then $(INSTALL) -d $(includedir)/wx/univ; fi
+ 	@if test "@TOOLKIT_DIR@" = "msw"; then $(INSTALL) -d $(includedir)/wx/msw/ole; fi
+ 
+ 	@# always install msw headers for wxBase, it's much simpler
+@@ -494,13 +481,11 @@
  	@echo " Removing library..."
  	@$(RM) $(libdir)/@WX_TARGET_LIBRARY@
  	@$(RM) $(libdir)/@WX_LIBRARY_LINK1@
@@ -86,4 +94,4 @@ $FreeBSD$
 +	@$(RM) $(prefix)/include/wx/@TOOLCHAIN_NAME@/setup.h
  	@$(RM) $(bindir)/wx-config
  	@$(RM) $(bindir)/wx@TOOLCHAIN_NAME@-config
- 	@$(RM) $(datadir)/wx/afm/*
+ 	@$(RM) $(datadir)/wx/$(VER_MAJMIN)/afm/*

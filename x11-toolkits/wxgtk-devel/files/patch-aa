@@ -1,21 +1,21 @@
 
 $FreeBSD$
 
---- configure.in.orig	Mon Dec 10 20:07:00 2001
-+++ configure.in	Sat Jan 19 14:34:28 2002
-@@ -2393,8 +2393,8 @@
-     lib_debug_suffix=d
- fi
+--- configure.in.orig	Sun Jan  5 13:55:00 2003
++++ configure.in	Tue Jan 14 18:25:25 2003
+@@ -2723,8 +2723,8 @@
  
--TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
--TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
+ WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[[a-z]]" "[[A-Z]]"`
+ 
+-TOOLCHAIN_NAME="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}-${WX_RELEASE}"
+-TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl-${WX_RELEASE}"
 +TOOLCHAIN_NAME="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
 +TOOLCHAIN_NAME_GL="${TOOLKIT_DIR}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_gl"
  
  if test "$cross_compiling" = "yes"; then
      TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
-@@ -2406,14 +2406,12 @@
- WX_LIBRARY_GL="wx_${TOOLCHAIN_NAME_GL}"
+@@ -2737,14 +2737,12 @@
+ WX_LIBRARY_BASENAME="wx_${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
  
  dnl the name of the shared library
 -WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
@@ -31,15 +31,21 @@ $FreeBSD$
 +WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}"
 +WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
  
- dnl the name of the resources file for wxMac
- WX_RESOURCES_MACOSX="lib${WX_LIBRARY}.rsrc"
-@@ -3522,24 +3520,6 @@
-     fi
+ case "${host}" in
+     *-*-cygwin* | *-*-mingw32* )
+@@ -3459,7 +3457,7 @@
+           *-*-freebsd*)
+                 dnl look, in order, for the kernel threads, then Linux threads
+                 dnl and finally the userland threads
+-                THREAD_OPTS="-kthread lthread $THREAD_OPTS c_r"
++                THREAD_OPTS="$THREAD_OPTS pthread c_r"
+                 ;;
+           *-*-darwin* | *-*-cygwin* )
+                 dnl Darwin / Mac OS X just uses -lpthread tested below
+@@ -3817,21 +3815,6 @@
+     esac
  fi
  
--
--CXXFLAGS=`echo "${CXXFLAGS}" | sed "s/\-O.//g" `
--CFLAGS=`echo "${CFLAGS}" | sed "s/\-O.//g" `
 -if test "$wxUSE_OPTIMISE" = "no" ; then
 -    OPTIMISE=
 -else
@@ -58,7 +64,7 @@ $FreeBSD$
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      AC_DEFINE(WXWIN_COMPATIBILITY_2)
  
-@@ -4792,7 +4772,6 @@
+@@ -5288,7 +5271,6 @@
  AC_SUBST(WX_LIBRARY_IMPORTLIB)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -66,7 +72,7 @@ $FreeBSD$
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -4800,7 +4779,6 @@
+@@ -5296,7 +5278,6 @@
  AC_SUBST(WX_LIBRARY_NAME_SHARED_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)
