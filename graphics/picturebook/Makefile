@@ -13,7 +13,7 @@ MASTER_SITES=	http://samba.org/picturebook/
 DISTNAME=	capture
 EXTRACT_SUFX=  .tgz
 
-MAINTAINER=	freebsd-ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SONY VAIO camera capture utility
 
 ONLY_FOR_ARCHS=	i386
