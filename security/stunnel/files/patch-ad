@@ -1,0 +1,11 @@
+--- ssl.c.orig	Sun Feb 25 14:16:43 2001
++++ ssl.c	Sun Feb 25 14:16:51 2001
+@@ -28,7 +28,7 @@
+ 
+ /* Non-blocking sockets are disabled by default */
+ /* It works on most systems so feel free to uncomment the next line */
+-/* #define USE_NBIO */
++#define USE_NBIO
+ 
+ #ifndef NO_RSA
+ 
