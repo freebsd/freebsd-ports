@@ -15,8 +15,6 @@ DISTNAME=	hpack79src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
-BROKEN=		Checksum mismatch
-
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
