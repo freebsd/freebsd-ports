@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RDF-Notation3
-PORTVERSION=	0.70
+PORTVERSION=	0.83
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RDF
@@ -14,10 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RDF/Core.pm:${PORTSDIR}/textproc/p5-RDF-Core \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
+BUILD_DEPENDS=	${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
+		${SITE_PERL}/RDF/Core.pm:${PORTSDIR}/textproc/p5-RDF-Core \
+		${SITE_PERL}/RDFStore.pm:${PORTSDIR}/textproc/p5-RDFStore
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -35,4 +34,10 @@ pre-patch:
 	@${FIND} ${WRKSRC} -name "*.pm" | xargs ${PERL} -pi -e \
 	'$$package=$$1 if /^package\s+([^\s;]*);/; s!^require 5.005_62;!!; s!^use warnings;!!; s!^our\s+(\$$)(VERSION)\s+=!$$1$${package}::$$2=!;'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+= ${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
