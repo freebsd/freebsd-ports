@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 DISTNAME=	tiff
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to merge TIFF files into multi-page TIFF files
 
 EXTRACT_DEPENDS=	tuc:${PORTSDIR}/converters/tuc

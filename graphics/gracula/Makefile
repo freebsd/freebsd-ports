@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/cgi/gcl/ \
 		http://www.whizkidtech.redprince.net/gcl/
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphic Counter Language compiler/interpreter
 
 do-install:
