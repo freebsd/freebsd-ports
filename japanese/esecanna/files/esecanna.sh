@@ -3,6 +3,7 @@
 # $FreeBSD$
 
 esecannaserver="!!PREFIX!!/sbin/esecannaserver"
+piddir="/var/run/esecanna"
 
 case "$1" in
 start)
@@ -18,11 +19,12 @@ start)
 	if [ -x $esecannaserver ]; then
 	    rm -f /tmp/.iroha_unix/IROHA
 	    echo -n ' esecanna: '
+	    cd $piddir
 	    nohup $esecannaserver
 	fi
 	;;
 stop)
-	pidfile="/var/run/esecanna.pid"
+	pidfile=$piddir/esecanna.pid
 	if [ -f $pidfile ]; then
 	    kill `cat $pidfile` && echo -n ' esecanna'
 	    rm $pidfile
