@@ -407,6 +407,7 @@ arpack++	ports/math/arpack++
 arpd		ports/net/arpd
 arping		ports/net/arping
 arprelease	ports/net/arprelease
+arpscan		ports/net-mgmt/arpscan
 arpwatch	ports/net-mgmt/arpwatch
 arpwatch-devel	ports/net-mgmt/arpwatch-devel
 arrow		ports/mail/arrow
