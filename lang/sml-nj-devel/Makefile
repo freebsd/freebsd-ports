@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	smlnj
-PORTVERSION=	110.51
+PORTVERSION=	110.52
 CATEGORIES=	lang
-MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
+MASTER_SITES=	http://smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/ \
+		ftp://mirror.free.de/http/smlnj.cs.uchicago.edu/dist/working/${PORTVERSION}/
 DISTFILES=	config.tgz runtime.tgz
 .include <bsd.port.pre.mk>
 .if (${ARCH} == "i386")
