@@ -7,7 +7,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	3.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
 
@@ -25,6 +25,8 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_PPR_INTERFACES=${LOCALBASE}/lib/ppr/interfaces \
 		ac_cv_path_PPR_LIB=${LOCALBASE}/lib/ppr/lib \
 		ac_cv_path_TEXTTOPS=${LOCALBASE}/libexec/cups/filter/texttops
+
+MAN1=		foomatic-gswrapper.1 foomatic-rip.1
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
