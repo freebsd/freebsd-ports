@@ -47,6 +47,12 @@ HEADERFILES=		3way.h adler32.h aes.h algebra.h algparam.h arc4.h \
 			twofish.h validate.h wait.h wake.h winpipes.h words.h \
 			xormac.h xtr.h xtrcrypt.h zdeflate.h zinflate.h zlib.h
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/cryptest
 do-install:
@@ -62,4 +68,4 @@ do-install:
 	${CP} ${WRKSRC}/License.txt ${PREFIX}/share/doc/cryptopp/License
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
