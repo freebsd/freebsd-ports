@@ -7,27 +7,14 @@
 
 PORTNAME=	tinker
 PORTVERSION=	3.8
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	gjohnson@nola.srrc.usda.gov
+MAINTAINER=	gjohnson@srrc.ars.usda.gov
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400005
-LIB_DEPENDS=	U77:${PORTSDIR}/devel/libU77
-
-# If you wish to use g77 from EGCS, do the following:
-# a) comment out the LIB_DEPENDS line above and uncomment the following line
-
-# BUILD_DEPENDS= g77:${PORTSDIR}/lang/egcs
-
-# b) set env variable 'FC' to 'g77' before running `make'; or 'make FC=g77'
-
-.else
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
-.endif
 
 WRKSRC=		${WRKDIR}/tinker/source
 
@@ -36,7 +23,6 @@ ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
 
 RESTRICTED=	author requests no distribution except from his FTP site
-
 
 .if defined(WANT_VIEWER)
 .if ${XFREE86_VERSION} == 3
@@ -122,7 +108,7 @@ ${PREFIX}/share/tinker/bench
 
 .if defined(WANT_VIEWER)
 	${MKDIR} ${PREFIX}/share/tinker/rasmol
-	${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin 
+	${INSTALL_PROGRAM} ${WRKDIR}/tinker/rasmol/tview-* ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKDIR}/tinker/rasmol/rasmol.hlp ${PREFIX}/share/tinker/rasmol
 
 .endif
@@ -132,8 +118,8 @@ ${PREFIX}/share/tinker/bench
 	@${ECHO} "       The author requests that you return a license form    "
 	@${ECHO} "       to him if you find Tinker to be useful.               "
 	@${ECHO} "                                                             "
-	@${ECHO} "       See ${PREFIX}/share/tinker/doc for license forms.     "
+	@${ECHO} "       See ${PREFIX}/share/doc/tinker for license forms.     "
 	@${ECHO} "   **********************************************************"
 	@${ECHO} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

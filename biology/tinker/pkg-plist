@@ -159,6 +159,7 @@ share/tinker/test/azulene.key
 share/tinker/test/azulene.xyz
 share/tinker/test/bdna.int
 share/tinker/test/bdna.key
+share/tinker/test/bdna.make
 share/tinker/test/bdna.seq
 share/tinker/test/bdna.xyz
 share/tinker/test/bearing.key
