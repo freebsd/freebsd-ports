@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -32,9 +32,11 @@ DOC_FILES= COPYING ChangeLog README
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi -e \
-		's|(hublist)|dc_\1|;s|(\$$\(datadir\))/gnome|\1|; \
+		's|(\$$\(datadir\))/gnome|\1|; \
 		s|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
-	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|' \
+	@${PERL} -pi -e 's|(hublist)|dc_\1|m' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|; \
+		s|(cmdline.+)(hublist)|\1dc_\2|' \
 		${WRKSRC}/src/init_fnc.c
 
 post-configure:
