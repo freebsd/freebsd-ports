@@ -9,7 +9,9 @@ PORTNAME=	p-interp
 PORTVERSION=	0.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.klebsch.de/ \
-		ftp://ftp.mayn.de/pub/mirrors/apple.asimov.net/programming/apple_pascal/:disks
+		ftp://ftp.apple.asimov.net/pub/apple_II/images/utility/programming/apple_pascal/:disks \
+		ftp://ftp1.au.apple.asimov.net/pub/apple2/images/utility/programming/apple_pascal/:disks
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apple_pascal_0.dsk.gz:disks apple_pascal_1.dsk.gz:disks \
 		apple_pascal_2.dsk.gz:disks apple_pascal_3.dsk.gz:disks
@@ -23,15 +25,14 @@ BUILD_DEPENDS=	gccmakedep:${X_IMAKE_PORT}
 USE_XLIB=	yes
 
 RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
-BROKEN=		Unfetchable
 
 MAN1=	ucsd.1 svolio.1 svolcvt.1
 
 .include <bsd.port.pre.mk>
 
 post-extract:
-		@cp ${DISTDIR}/apple_pascal_?.dsk.gz ${WRKDIR}/${DISTNAME}
-		@gunzip ${WRKDIR}/${DISTNAME}/apple_pascal_?.dsk.gz
+		@${CP} ${DISTDIR}/apple_pascal_?.dsk.gz ${WRKDIR}/${DISTNAME}
+		@${GUNZIP_CMD} ${WRKDIR}/${DISTNAME}/apple_pascal_?.dsk.gz
 
 pre-build:
 		cd ${WRKDIR}/${DISTNAME} && ${MAKE} depend
