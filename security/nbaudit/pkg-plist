@@ -1,0 +1,6 @@
+bin/nat
+@exec ln -fs %D/%F %B/nbaudit
+@unexec rm %B/nbaudit
+man/man1/nat.1.gz
+@exec ln -fs %D/%F %B/nbaudit.1.gz
+@unexec rm %B/nbaudit.1.gz

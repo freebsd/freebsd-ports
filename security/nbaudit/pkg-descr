@@ -1,0 +1,9 @@
+NetBIOS Auditing Tool / Security Kit
+
+The intention of this package is to perform various security checks on
+remote servers running NetBIOS file sharing services.
+nat will attempt to retrieve all information availible from the remote
+server, and attempt to access any services provided by the server.
+
+-- David O'Brien
+   obrien@NUXI.com
