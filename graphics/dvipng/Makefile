@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dvipng
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INFO=		dvipng
-PLIST_FILES=	bin/dvipng
+PLIST_FILES=	bin/dvigif bin/dvipng
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dvipng ${PREFIX}/bin
+	${LN} -sf dvipng ${PREFIX}/bin/dvigif
+	${INSTALL_DATA} ${WRKSRC}/dvipng.info ${PREFIX}/info
+	install-info ${PREFIX}/info/dvipng.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
