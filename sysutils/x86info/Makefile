@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.codemonkey.org.uk/x86info/ \
 		ftp://ftp.suse.com/pub/people/davej/x86info/ \
