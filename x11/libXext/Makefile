@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libXext
-PORTVERSION=	6.4.2
-PORTREVISION=	2
+PORTVERSION=	6.4.3
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
