@@ -12,6 +12,8 @@ MASTER_SITES=	http://kcheckers.osdn.org.ua/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 WRKSRC=		${WRKDIR}/kcheckers
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${X11BASE}"
