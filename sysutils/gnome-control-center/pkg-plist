@@ -12,9 +12,6 @@ bin/ui-properties
 bin/url-properties
 bin/wm-properties-capplet
 etc/CORBA/servers/gnomecc.gnorba
-etc/CORBA/servers
-@dirrm etc/CORBA/servers
-@dirrm etc/CORBA
 etc/cappletConf.sh
 lib/libcapplet.a
 lib/libcapplet.la
@@ -45,8 +42,6 @@ share/gnome/apps/Settings/gnome-edit-properties.desktop
 share/gnome/apps/Settings/gnomecc.desktop
 share/gnome/apps/Settings/session-properties.desktop
 share/gnome/apps/Settings/url-properties.desktop
-@dirrm share/gnome/apps/Settings
-@dirrm share/gnome/apps
 share/gnome/control-center/.data/Ant.desktop
 share/gnome/control-center/.data/Attraction.desktop
 share/gnome/control-center/.data/Blitspin.desktop
@@ -176,14 +171,10 @@ share/gnome/control-center/session-properties.desktop
 share/gnome/control-center/url-properties.desktop
 @dirrm share/gnome/control-center
 share/gnome/idl/control-center.idl
-@dirrm share/gnome/idl
 share/gnome/pixmaps/control-center.png
-@dirrm share/gnome/pixmaps
 share/gnome/wm-properties/Enlightenment.desktop
 share/gnome/wm-properties/IceWM.desktop
 share/gnome/wm-properties/WindowMaker.desktop
-@dirrm share/gnome/wm-properties
-@dirrm share/gnome
 share/locale/cs/LC_MESSAGES/control-center.mo
 share/locale/da/LC_MESSAGES/control-center.mo
 share/locale/de/LC_MESSAGES/control-center.mo
@@ -200,4 +191,3 @@ share/locale/pl/LC_MESSAGES/control-center.mo
 share/locale/pt/LC_MESSAGES/control-center.mo
 share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
-
