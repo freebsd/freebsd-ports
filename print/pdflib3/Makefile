@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	2.01
+PORTVERSION=	3.02
 CATEGORIES=	print
-MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
 
-FETCH_BEFORE_ARGS=	-b
+RESTRICTED=	"many odd restrictions on usage and distribution"
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-perl5=${PERL} \
-		--with-tiff=${PREFIX} \
 		--with-jpeg=${PREFIX} \
+		--with-pnglib=${PREFIX} \
+		--enable-shared-pdflib \
+		--enable-cxx \
 		--with-zlib=/usr
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pdflib/libpdf.so.2 ${PREFIX}/lib
-	${LN} -s libpdf.so.2 ${PREFIX}/lib/libpdf.so
+	${INSTALL_DATA} ${WRKSRC}/pdflib/.libs/libpdf.so.3 ${PREFIX}/lib
+	${LN} -s libpdf.so.3 ${PREFIX}/lib/libpdf.so
 	${INSTALL_DATA} ${WRKSRC}/pdflib/pdflib.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/pdflib
