@@ -22,14 +22,9 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 LATEST_LINK=	gd2
 
-MAKE_ENV=	WRKSRC="${WRKSRC}" LDADD="${LDADD}"
+MAKE_ENV=	WRKSRC="${WRKSRC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 INSTALLS_SHLIB=	yes
-
-CFLAGS+=	-I${WRKSRC} -I${LOCALBASE}/include/freetype2/freetype \
-        	-I${LOCALBASE}/include/freetype2 -I${LOCALBASE}/include \
-        	-DHAVE_LIBPNG -DHAVE_LIBJPEG -DHAVE_LIBFREETYPE -DHAVE_LIBZ
-LDADD=		-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
 
 .include <bsd.port.pre.mk>
 
@@ -37,19 +32,19 @@ LDADD=		-L${LOCALBASE}/lib -lpng -lz -ljpeg -lfreetype -lm
 PKGNAMESUFFIX=	-nox11
 .if !defined(WITHOUT_XPM)
 LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
-CFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM \
+CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM \
 		-DXPM_NOX
-LDADD+=		-L${X11BASE}/lib -lXpm
+LDFLAGS+=	-L${X11BASE}/lib -lXpm
 .endif
 .else
 USE_XPM=	yes
-CFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
-LDADD+=		-L${X11BASE}/lib -lXpm -lX11
+CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
+LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
 .endif
 
 .if defined(WITH_LZW) || defined(HAVE_UNISYS_LICENSE) || \
     (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
-CFLAGS+=	-DLZW_LICENSED
+CPPFLAGS+=	-DLZW_LICENSED
 .endif
 
 .if defined(GD_FONTS)
