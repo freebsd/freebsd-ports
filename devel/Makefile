@@ -329,6 +329,7 @@
     SUBDIR += libsigc++12
     SUBDIR += libsigcx
     SUBDIR += libslang
+    SUBDIR += libsoup
     SUBDIR += libstocks
     SUBDIR += libstrfunc
     SUBDIR += libstroke
