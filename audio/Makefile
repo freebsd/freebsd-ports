@@ -95,6 +95,7 @@
     SUBDIR += mxv
     SUBDIR += napster
     SUBDIR += nas
+    SUBDIR += nosefart
     SUBDIR += nspmod
     SUBDIR += openal
     SUBDIR += opennap
