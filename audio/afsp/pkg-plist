@@ -34,27 +34,27 @@ include/libtsp/nucleus.h
 include/libtsp/sysOS.h
 lib/libAO.a
 lib/libtsp.a
-share/afsp/filters/STL_BPF5k_FIR_16k.cof
-share/afsp/filters/STL_BPF_FIR_16k.cof
-share/afsp/filters/STL_G712_IIR_16k.cof
-share/afsp/filters/STL_G712_IIR_8k.cof
-share/afsp/filters/STL_IRS_FIR_16k.cof
-share/afsp/filters/STL_IRS_FIR_8k.cof
-share/afsp/filters/STL_IRS_IIR_8k.cof
-share/afsp/filters/STL_LPx2_FIR.cof
-share/afsp/filters/STL_LPx3_FIR.cof
-share/afsp/filters/STL_LPx3_IIR.cof
-share/afsp/filters/STL_MSin_FIR_16k.cof
-share/afsp/filters/STL_P341S_FIR_16k.cof
-share/afsp/filters/STL_dc_IIR_8k.cof
-share/afsp/filters/STL_dsm_FIR_16k.cof
-share/afsp/filters/STL_hIRS_FIR_16k.cof
-share/afsp/filters/STL_mIRSR_FIR_16k.cof
-share/afsp/filters/STL_mIRSR_FIR_8k.cof
-share/afsp/filters/STL_mIRSS_FIR_16k.cof
-share/afsp/filters/STL_mIRSS_FIR_48k.cof
-share/afsp/filters/STL_pso_FIR_8k.cof
-share/afsp/filters/TIA_IRS_FIR_8k.cof
+%%DATADIR%%/filters/STL_BPF5k_FIR_16k.cof
+%%DATADIR%%/filters/STL_BPF_FIR_16k.cof
+%%DATADIR%%/filters/STL_G712_IIR_16k.cof
+%%DATADIR%%/filters/STL_G712_IIR_8k.cof
+%%DATADIR%%/filters/STL_IRS_FIR_16k.cof
+%%DATADIR%%/filters/STL_IRS_FIR_8k.cof
+%%DATADIR%%/filters/STL_IRS_IIR_8k.cof
+%%DATADIR%%/filters/STL_LPx2_FIR.cof
+%%DATADIR%%/filters/STL_LPx3_FIR.cof
+%%DATADIR%%/filters/STL_LPx3_IIR.cof
+%%DATADIR%%/filters/STL_MSin_FIR_16k.cof
+%%DATADIR%%/filters/STL_P341S_FIR_16k.cof
+%%DATADIR%%/filters/STL_dc_IIR_8k.cof
+%%DATADIR%%/filters/STL_dsm_FIR_16k.cof
+%%DATADIR%%/filters/STL_hIRS_FIR_16k.cof
+%%DATADIR%%/filters/STL_mIRSR_FIR_16k.cof
+%%DATADIR%%/filters/STL_mIRSR_FIR_8k.cof
+%%DATADIR%%/filters/STL_mIRSS_FIR_16k.cof
+%%DATADIR%%/filters/STL_mIRSS_FIR_48k.cof
+%%DATADIR%%/filters/STL_pso_FIR_8k.cof
+%%DATADIR%%/filters/TIA_IRS_FIR_8k.cof
 %%DOCSDIR%%/audio/AFsp.html
 %%DOCSDIR%%/audio/CompAudio.html
 %%DOCSDIR%%/audio/CopyAudio.html
@@ -82,5 +82,5 @@ share/afsp/filters/TIA_IRS_FIR_8k.cof
 @dirrm %%DOCSDIR%%/libtsp/AF
 @dirrm %%DOCSDIR%%/libtsp
 @dirrm %%DOCSDIR%%
-@dirrm share/afsp/filters
-@dirrm share/afsp
+@dirrm %%DATADIR%%/filters
+@dirrm %%DATADIR%%
