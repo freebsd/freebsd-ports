@@ -3,7 +3,7 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.3 1997/06/03 10:21:47 asami Exp $
+# $Id: Makefile,v 1.4 1997/08/24 23:05:29 asami Exp $
 #
 
 DISTNAME=	vt-1.10
@@ -12,7 +12,7 @@ CATEGORIES=	devel x11 tk80
 MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 		ftp://ftp.neuron.com/pub/
 
-MAINTAINER=	vanilla@MinJe.com.TW
+MAINTAINER=	vanilla@FreeBSD.ORG
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 

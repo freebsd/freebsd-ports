@@ -3,7 +3,7 @@
 # Date Created:                28 Sep 1997
 # Whom:                        Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.2 1997/11/03 22:55:01 max Exp $
+# $Id: Makefile,v 1.3 1997/11/13 09:08:35 tg Exp $
 #
 
 DISTNAME=      gtk+-971109
@@ -11,7 +11,7 @@ PKGNAME=       gtk-971109
 CATEGORIES=    x11
 MASTER_SITES=  ftp://ftp.gimp.org/pub/gtk/
 
-MAINTAINER=    vanilla@MinJe.com.TW
+MAINTAINER=    vanilla@FreeBSD.ORG
 
 GNU_CONFIGURE= yes
 USE_GMAKE=     yes

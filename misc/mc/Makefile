@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1997/10/10 11:50:09 tg Exp $
+# $Id: Makefile,v 1.15 1997/11/29 09:18:18 vanilla Exp $
 #
 
 DISTNAME=	mc-4.1.11
@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc
 
-MAINTAINER=	vanilla@MinJe.com.TW
+MAINTAINER=	vanilla@FreeBSD.ORG
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses --without-edit --without-subshell
