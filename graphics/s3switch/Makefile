@@ -22,6 +22,8 @@ MAKE_ENV+=	FREEBSD=1
 
 MAN1=		s3switch.1
 
+ONLY_FOR_ARCHS=	i386
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/s3switch ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/s3switch.1x ${PREFIX}/man/man1/s3switch.1
