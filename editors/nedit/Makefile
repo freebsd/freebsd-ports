@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nedit
-PORTVERSION=	5.1.1
+PORTVERSION=	5.2
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_1_1/ \
+MASTER_SITES=	ftp://ftp.nedit.org/pub/v5_2/ \
 		ftp://ftp.nedit.org/pub/contrib/misc/
-DISTFILES=	nedit-5.1.1-src.tar.gz nedit.app-defaults
+DISTFILES=	nedit-5.2-src.tar.Z nedit.app-defaults
 
 MAINTAINER=	deischen@freebsd.org
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-EXTRACT_ONLY=	nedit-5.1.1-src.tar.gz
+EXTRACT_ONLY=	nedit-5.2-src.tar.Z
 MAN1=		nclient.1 nedit.1
 ALL_TARGET=	freebsd
 
