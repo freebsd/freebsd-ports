@@ -6560,6 +6560,7 @@ trafcount	ports/net/trafcount
 trafd		ports/net/trafd
 trafshow	ports/net/trafshow
 tramp		ports/net/tramp
+tramp-emacs20	ports/net/tramp-emacs20
 trans		ports/converters/trans
 transfig	ports/print/transfig
 transpec	src/share/sgml/transpec
