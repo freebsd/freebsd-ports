@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/dvdtape/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/disk-management
 
-MAINTAINER=	ports@freebsd-services.com
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=		dvdtape.1
