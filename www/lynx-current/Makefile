@@ -9,16 +9,19 @@
 DISTNAME=       lynx2-4-FM
 PKGNAME=        lynx-2.4fm
 CATEGORIES+=	www
-MASTER_SITES=   http://www.wfbr.edu/lynx/
+
+#MASTER_SITES=   http://www.wfbr.edu/lynx/
+#NCFTP=          w3c
+#NCFTPFLAGS=     -v -to multipart/x-zip -timeout 240 -o ${DISTFILES}
+#FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
+
+MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/nidr/www/
 DISTFILES=      lynx2-4-fm.zip
-NCFTP=          w3c
-NCFTPFLAGS=     -to multipart/x-zip -timeout 60 -o ${DISTFILES}
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
 BUILD_DEPENDS=  ${EXTRACT_CMD}:${PORTSDIR}/archivers/unzip
 
 ALL_TARGET=     freebsd-ncurses
