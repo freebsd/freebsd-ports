@@ -3,7 +3,7 @@
 # Date created:         25 May 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/28 05:40:38 max Exp $
 #
 
 DISTNAME=	nhpf-1.42
@@ -16,6 +16,10 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 do-install:
 	${MKDIR} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nhpf ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/nhpf
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nhpf
+.endif
 	@strip ${PREFIX}/bin/nhpf
 
 .include <bsd.port.mk>
