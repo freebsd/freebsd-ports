@@ -1040,7 +1040,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>linux-png</name>
-	<range><lt>1.2.2</lt></range>
+	<range><le>1.2.2</le></range>
       </package>
       <package>
 	<name>png</name>
@@ -1059,6 +1059,9 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0421</cvename>
       <url>http://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=120508</url>
+      <url>http://rhn.redhat.com/errata/RHSA-2004-181.html</url>
+      <url>http://www.osvdb.org/5726</url>
+      <bid>10244</bid>
     </references>
     <dates>
       <discovery>2004-04-29</discovery>
