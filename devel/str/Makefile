@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
 
 MAINTAINER=	rse@engelschall.com
+COMMENT=	Generic String Library
 
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

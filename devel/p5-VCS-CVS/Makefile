@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tolid@plab.ku.dk
+COMMENT=	Perl module that provides a simple interface to CVS
 
 PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}

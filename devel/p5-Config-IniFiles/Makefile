@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jeremy@external.org
+COMMENT=	Perl5 module for reading .ini-style configuration files
 
 PERL_CONFIGURE=	YES
 

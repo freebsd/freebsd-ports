@@ -17,6 +17,7 @@ DISTFILES=	mingw-runtime-${PORTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
+COMMENT=	Headers and Libraries for Windows cross-development
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=  http://www.kerneled.com/projects/z80-asm/
 DISTNAME=      z80-asm
 
 MAINTAINER=    samy@kerneled.com
+COMMENT=	A Z80 assembly code assembler and disassembler
 
 MAN1=          z80-asm.1 z80-dis.1
 MAN5=          z80-file.5 z80-asm.5

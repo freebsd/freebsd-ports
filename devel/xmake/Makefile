@@ -13,6 +13,7 @@ MASTER_SITES=	http://apollo.backplane.com/xmake/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dlowe@saturn5.com
+COMMENT=	A powerful make utility
 
 WRKSRC=		${WRKDIR}/xmake
 MAN1=		xmake.1

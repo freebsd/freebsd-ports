@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=B
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	Perl Compiler backend to diagram OP trees
 
 PERL_CONFIGURE=	yes
 MAN3=		B::Graph.3

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.twobarleycorns.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/:S/.//g}
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	Tcl/Tk frontends to CVS and diff
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

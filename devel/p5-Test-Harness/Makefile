@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Run perl standard test scripts with statistics
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sharma-home.net/~adsharma/projects/freebsd/
 MASTER_SITE_SUBDIR=	ngpt-${PORTVERSION}.tar.gz
 
 MAINTAINER=	arun@sharmas.dhs.org
+COMMENT=	NGPT is a next generation pthread implementation based on GNU pth
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

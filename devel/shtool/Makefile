@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	shtool
 
 MAINTAINER=	rse@engelschall.com
+COMMENT=	The GNU Portable Shell Tool
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	AppConfig
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	A subclass of AppConfig that provides standard options
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser

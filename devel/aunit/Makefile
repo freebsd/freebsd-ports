@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://libre.act-europe.fr/aunit/
 
 MAINTAINER=	aidan@velvet.net
+COMMENT=	A unit testing framework for the Ada '95 programming language
 
 NO_BUILD=	yes
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://hacks.dlux.hu/Parallel-ForkManager/download/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	david@bushong.net
+COMMENT=	A simple parallel processing fork manager
 
 PERL_CONFIGURE=	YES
 

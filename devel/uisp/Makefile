@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://savannah.nongnu.org/download/uisp/
 
 MAINTAINER=	bruno@tinkerbox.org
+COMMENT=	A versatile programmer for atmel AVR microcontrollers
 
 GNU_CONFIGURE=	yes
 

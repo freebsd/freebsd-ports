@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A library to provide transparent read access to zipped files
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name="s/$$//"

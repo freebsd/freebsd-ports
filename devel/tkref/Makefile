@@ -13,6 +13,7 @@ MASTER_SITES=	http://gtcs.com/softdist/ \
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	bgingery@gtcs.com
+COMMENT=	A programmer's GUI reference for Tcl/Tk and major packages
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gcross@netspace.net.au
+COMMENT=	C++ port of the JUnit framework for unit testing
 
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

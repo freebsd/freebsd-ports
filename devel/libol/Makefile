@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.balabit.hu/downloads/libol/0.2/
 
 MAINTAINER=	vince@blue-box.net
+COMMENT=	Library needed by syslog-ng
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/libiberty/ \
 DISTNAME=	libiberty-${PORTVERSION}
 
 MAINTAINER=	ports@vocito.com
+COMMENT=	A freely-redistributable libiberty clone
 
 INSTALLS_SHLIB=	yes
 

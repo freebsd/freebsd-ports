@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/R/RC/RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
+COMMENT=	LWP and LWP::Parallel based POE component
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA

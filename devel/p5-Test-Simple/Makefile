@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Basic utilities for writing tests in perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sam@inf.enst.fr
+COMMENT=	GPUTILS is a set of utilities for Microchip PIC microcontrollers
 
 GNU_CONFIGURE=	yes
 

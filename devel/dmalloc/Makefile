@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 # Original from: Gray Watson http://256.com/gray/email.html
 MAINTAINER=	jeremy@external.org
+COMMENT=	Portable debug memory allocation library
 
 INSTALLS_SHLIB=	YES
 GNU_CONFIGURE=	YES

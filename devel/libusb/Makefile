@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	johnjen@reynoldsnet.org
+COMMENT=	Library giving userland programs access to USB devices
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-build-docs

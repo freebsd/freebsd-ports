@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tonym@biolateral.com.au
+COMMENT=	An optimized template builder base class
 
 PERL_CONFIGURE=	yes
 

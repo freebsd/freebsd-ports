@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Heap
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tolid@plab.ku.dk
+COMMENT=	Perl extensions for keeping data partially sorted
 
 PERL_CONFIGURE=	yes
 

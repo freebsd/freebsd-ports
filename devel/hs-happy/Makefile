@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	simonmar@microsoft.com
+COMMENT=	An LALR(1) parser generator for the functional language Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .if !defined(NOPORTDOCS)

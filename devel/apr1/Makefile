@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.apache.org/dist/apr/
 DISTFILES=	apr-${PORTVERSION}.tar.gz apr-util-${PORTVERSION}.tar.gz
 
 MAINTAINER=	rodrigc@attbi.com
+COMMENT=	The Apache Group's Portability Library
 
 BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2 \

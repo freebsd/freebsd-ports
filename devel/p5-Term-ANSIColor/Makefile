@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	ANSIColor-${PORTVERSION}
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	Color screen output using ANSI escape sequences
 
 PERL_CONFIGURE=	YES
 

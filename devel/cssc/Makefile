@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	CSSC-0.13alpha.pl1a
 
 MAINTAINER=	olli@fromme.com
+COMMENT=	A workalike for the source code control system SCCS
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-binary

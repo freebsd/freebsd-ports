@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Basic screen + input class
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cminusminus.org/download/
 
 MAINTAINER=	mk-port@morphisms.net
+COMMENT=	Andrew Hume's mk by way of Research Unix, Plan 9, & Inferno
 
 MAN1=		mk.1
 

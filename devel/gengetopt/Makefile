@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	A tool for generating a C function which parses command line arguments
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

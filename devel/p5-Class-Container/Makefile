@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dsh@vlink.ru
+COMMENT=	Glues object frameworks together transparently
 
 BUILD_DEPENDS=	${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}

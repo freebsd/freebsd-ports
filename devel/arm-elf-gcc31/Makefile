@@ -21,6 +21,7 @@ DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX}
 
 MAINTAINER=	esk@ira.uka.de
+COMMENT=	GNU cross compiler suite for vanilla ARM targets.
 
 BROKEN=		"Does not extract properly"
 

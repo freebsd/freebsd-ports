@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Run external processes reliably with many options
 
 PERL_CONFIGURE=	yes
 

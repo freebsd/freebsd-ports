@@ -17,6 +17,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	pbecke@javagear.com
+COMMENT=	FSF Gcc 2.95.2 for embedded ARM cross-development
 
 BROKEN=		"Does not build"
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.ntu.edu.au/pub/nana/
 
 MAINTAINER=	pjm@gnu.org
+COMMENT=	Support for assertion checking and logging using GNU C and GDB
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	DateManip-${PORTVERSION}
 
 MAINTAINER=	kapr@crosswinds.net
+COMMENT=	Perl5 module containing date manipulation routines
 
 PERL_CONFIGURE=	YES
 

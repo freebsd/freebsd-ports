@@ -14,6 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	bms@spc.org
+COMMENT=	Wrapper for gdb -k to provide kld symbol information
 
 NO_BUILD=	yes
 

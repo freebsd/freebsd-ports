@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://ellipse.mcs.drexel.edu/source/
 
 MAINTAINER=	cosine@ellipse.mcs.drexel.edu
+COMMENT=	Debugger for assembly level programs
 
 GNU_CONFIGURE=	yes
 

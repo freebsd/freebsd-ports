@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	php-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	rehsack@liwing.de
+COMMENT=	Debugger for PHP4
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \

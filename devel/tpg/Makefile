@@ -13,6 +13,7 @@ MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	sergei@kolobov.com
+COMMENT=	Toy Parser Generator -- A parser generator in Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

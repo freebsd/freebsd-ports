@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eric@cirr.com
+COMMENT=	Perl module for processing argument vectors
 
 PERL_CONFIGURE=	yes
 

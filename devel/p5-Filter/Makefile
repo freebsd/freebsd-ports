@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Filter
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	A number of source filters for perl5 programs
 
 PERL_CONFIGURE=	yes
 

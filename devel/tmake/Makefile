@@ -12,6 +12,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
+COMMENT=	Extremely portable perl-based make utility
 
 USE_PERL5=	yes
 USE_QT_VER=	2

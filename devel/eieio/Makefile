@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 #DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Enhanced Integration of Emacs Interpreted Objects
 
 EMACS_PORT_NAME?=	emacs21
 

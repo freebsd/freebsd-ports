@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	lo_gafet@users.sourceforge.net
+COMMENT=	Open Application Builder (code generator) for the GTK and/or GNOME
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Log
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesse@gallup.com
+COMMENT=	A set of perl modules that allows you to enhance logging capabilities
 
 PERL_CONFIGURE=	yes
 

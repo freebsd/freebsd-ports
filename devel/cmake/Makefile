@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cmake.org/
 DISTNAME=	CMake${PORTVERSION}-src-unix
 
 MAINTAINER=	mkm@ieee.org
+COMMENT=	A cross-platform make
 
 WRKSRC=		${WRKDIR}/CMake-${PORTVERSION}
 GNU_CONFIGURE=	yes

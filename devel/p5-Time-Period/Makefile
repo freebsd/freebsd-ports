@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Period-${PORTVERSION}
 
 MAINTAINER=	nick@netdot.net
+COMMENT=	A perl module that contains code to deal with time periods
 
 PERL_CONFIGURE=	YES
 

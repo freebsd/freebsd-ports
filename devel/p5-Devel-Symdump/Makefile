@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	A perl5 module that dumps symbol names or the symbol table
 
 PERL_CONFIGURE=	YES
 

@@ -13,6 +13,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		sam@inf.enst.fr
+COMMENT=	GNU Visual Debugger, a graphical front-end to gdb and jdb
 
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat \
 			tex:${PORTSDIR}/print/teTeX

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 DISTNAME=	tclCheck-${PORTVERSION}
 
 MAINTAINER=	sander@haldjas.folklore.ee
+COMMENT=	A program to check the nesting of parenthesis in tcl scripts
 
 MAN1=		tclCheck.1
 MANCOMPRESSED=	yes

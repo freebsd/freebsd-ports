@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://victor.worldforge.org/pub/worldforge/libs/Atlas-C++/ \
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	lehmann@ans-netz.de
+COMMENT=	A C++ reference implementation of the Atlas protocol
 
 USE_LIBTOOL=	YES
 GNU_CONFIGURE=	YES

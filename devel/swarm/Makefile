@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.santafe.edu/pub/swarm/src/swarm/
 
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
+COMMENT=	The Swarm Simulation System
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

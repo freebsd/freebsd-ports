@@ -16,6 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual.html${EXTRACT_SUFX} 
 	      	${DISTNAME}-tutorial.html${EXTRACT_SUFX}
 
 MAINTAINER=	user@unknown.nu
+COMMENT=	Pre-Processor-Pretty-Printer for Objective Caml
 
 BUILD_DEPENDS=	ocamlc.opt:${PORTSDIR}/lang/ocaml
 

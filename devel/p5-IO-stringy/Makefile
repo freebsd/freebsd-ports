@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
+COMMENT=	Perl5 module for using IO handles with non-file objects
 
 PERL_CONFIGURE=	YES
 

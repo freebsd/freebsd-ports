@@ -15,6 +15,7 @@ DISTNAME=	ccdoc_v07a_src_taz
 EXTRACT_SUFX=	.exe
 
 MAINTAINER=	lonewolf@flame.org
+COMMENT=	Extracting comments from C++ source and generating HTML
 
 WRKSRC=		${WRKDIR}/ccdoc_v07a
 USE_PERL5=	yes

@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	michaelgrunewald@yahoo.fr
+COMMENT=	Ocaml Object interface for ocaml's standard library modules
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 

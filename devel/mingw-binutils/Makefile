@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-20011113-src${EXTRACT_SUFFIX}
 DIST_SUBDIR=	mingw
 
 MAINTAINER=	doc@hisio.safenet.pl
+COMMENT=	FSF binutils-2.11.90 for Windows cross-development
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

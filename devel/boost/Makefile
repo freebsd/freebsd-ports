@@ -13,6 +13,7 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/release/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	pmarquis@pobox.com
+COMMENT=	Free peer-reviewed portable C++ source libraries
 
 MAKE_ENV=	BOOST_ROOT=${WRKSRC} TOOLS=gcc BUILD="debug release"
 COMPILED_LIBS=	regex signals thread

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/2123/
 
 MAINTAINER=	rodrigc@attbi.com
+COMMENT=	Version control system
 
 LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.23:${PORTSDIR}/www/neon \

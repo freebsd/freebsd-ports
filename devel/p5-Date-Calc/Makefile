@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bradh@uunet.co.za
+COMMENT=	Gregorian calendar date calculations
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Bit/Vector.pm:${PORTSDIR}/math/p5-Bit-Vector
 RUN_DEPENDS=	${BUILD_DEPENDS}

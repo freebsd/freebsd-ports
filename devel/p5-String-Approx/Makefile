@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ilia@cgu.chel.su
+COMMENT=	Perl extension for approximate matching (fuzzy matching)
 
 PERL_CONFIGURE=	YES
 

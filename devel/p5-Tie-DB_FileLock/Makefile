@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	josh@zipperup.org
+COMMENT=	Locking access to Berkeley DB v1.x
 
 PERL_CONFIGURE=	yes
 

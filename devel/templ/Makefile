@@ -12,6 +12,7 @@ MASTER_SITES= 	ftp://ftp.holywar.net/pub/templ/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	Source code templates generator
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+COMMENT=	A tool to minimize the compile time of C programs
 
 GNU_CONFIGURE=	yes
 MAN1=		ccache.1

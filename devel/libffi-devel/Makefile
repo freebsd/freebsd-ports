@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/libffi/
 
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
+COMMENT=	Foreign Function Interface
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

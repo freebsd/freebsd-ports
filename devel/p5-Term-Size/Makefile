@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Term
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brad@kazrak.com
+COMMENT=	A Perl5 module to handle window size changes.
 
 PERL_CONFIGURE=	YES
 

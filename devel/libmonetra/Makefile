@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mcve.com/pub/libmcve/
 
 MAINTAINER=	brad@mcve.com
+COMMENT=	Library to allow credit card processing through MCVE
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

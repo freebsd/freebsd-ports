@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.haskell.org/hmake/ \
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	Intelligent compilation management tool for Haskell programs
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 

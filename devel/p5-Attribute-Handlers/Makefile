@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Attribute
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Attribute::Handlers - Simpler definition of attribute handlers
 
 PERL_CONFIGURE=	yes
 

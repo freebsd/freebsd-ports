@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.entity.cx/Download/files/all-versions/
 
 MAINTAINER=	jesse_mcconnell@hotmail.com
+COMMENT=	A really rapid XML-based application development system
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python

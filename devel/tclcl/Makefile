@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
+COMMENT=	Tcl/C++ interface used by ns and nam
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		otcl.1:${PORTSDIR}/lang/otcl
