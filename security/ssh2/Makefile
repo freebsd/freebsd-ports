@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.27 1996/06/20 14:11:17 ache Exp $
+# $Id: Makefile,v 1.30 1996/07/18 11:33:37 torstenb Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -37,12 +37,6 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 CONFIGURE_ARGS+= --with-rsaref
-.endif
-
-# Include SOCKS firewall support
-# Warning: untested !
-.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
-CONFIGURE_ARGS+= --with-socks
 .endif
 
 # Include support for the SecureID card
@@ -114,3 +108,7 @@ CONFIGURE_ARGS+= --with-libwrap
 LIB_DEPENDS+=   wrap\\.7\\.:${PORTSDIR}/security/tcp_wrapper
 .endif
 
+# Include SOCKS firewall support
+.if defined(USE_SOCKS) && ${USE_SOCKS} == YES
+CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5"
+.endif
