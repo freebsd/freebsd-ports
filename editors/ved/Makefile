@@ -18,10 +18,15 @@ USE_GMAKE=	yes
 
 MAN1=		ved.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .for file in ved.h ved.1
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/ved/${file}
 .endfor
+.if ${ARCH} == amd64
+	${CP} ${WRKSRC}/RULES/i386-freebsd-cc.rul ${WRKSRC}/RULES/amd64-freebsd-cc.rul
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ved/OBJ/${ARCH}-freebsd-cc/ved \
@@ -30,4 +35,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ved/ved.help ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
