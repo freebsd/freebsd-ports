@@ -13,6 +13,7 @@ include/gck/gckui.h
 include/gck/gckvector.h
 include/libgimp/gimp.h
 include/libgimp/gimpenums.h
+include/libgimp/gimpfeatures.h
 include/libgimp/gimpmenu.h
 include/libgimp/gimpui.h
 lib/libgck.a
@@ -22,11 +23,11 @@ lib/libgck.so.1
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.1
+lib/libgimp.so.1.1
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.1
+lib/libgimpui.so.1.1
 lib/libgpc.a
 lib/libmegawidget.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
@@ -74,9 +75,9 @@ libexec/gimp/1.0/plug-ins/fractaltrace
 libexec/gimp/1.0/plug-ins/gauss_iir
 libexec/gimp/1.0/plug-ins/gauss_rle
 libexec/gimp/1.0/plug-ins/gbr
+libexec/gimp/1.0/plug-ins/gee
 libexec/gimp/1.0/plug-ins/gfig
 libexec/gimp/1.0/plug-ins/gfli
-libexec/gimp/1.0/plug-ins/gee
 libexec/gimp/1.0/plug-ins/gicon
 libexec/gimp/1.0/plug-ins/gif
 libexec/gimp/1.0/plug-ins/glasstile

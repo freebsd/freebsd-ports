@@ -1,6 +1,6 @@
---- configure.in.orig	Wed May 27 23:32:15 1998
-+++ configure.in	Wed May 27 23:32:30 1998
-@@ -306,7 +306,7 @@
+--- configure.in.orig	Sun Sep 27 16:50:04 1998
++++ configure.in	Tue Sep 29 22:28:31 1998
+@@ -358,7 +358,7 @@
  LIBS="$gimp_save_LIBS"
  
  gimpdatadir=$datadir/gimp
@@ -9,9 +9,9 @@
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
  gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
---- configure.orig	Wed May 27 23:32:17 1998
-+++ configure	Wed May 27 23:32:38 1998
-@@ -4146,7 +4146,7 @@
+--- configure.orig	Mon Sep 28 06:00:09 1998
++++ configure	Tue Sep 29 22:28:31 1998
+@@ -4379,7 +4379,7 @@
  LIBS="$gimp_save_LIBS"
  
  gimpdatadir=$datadir/gimp
@@ -20,3 +20,17 @@
  
  brushdata=`ls -1 $srcdir/data/brushes | grep -v Makefile`
  gradientdata=`ls -1 $srcdir/data/gradients | grep -v Makefile`
+--- Makefile.in.orig	Wed Sep 30 00:52:20 1998
++++ Makefile.in	Wed Sep 30 00:52:41 1998
+@@ -440,9 +440,9 @@
+ 
+ install-exec-am: install-binSCRIPTS
+ 
+-install-data-am: install-gimpdataSCRIPTS install-man install-gimpdataDATA install-m4dataDATA
++install-data-am: install-gimpdataSCRIPTS install-man install-gimpdataDATA
+ 
+-uninstall-am: uninstall-binSCRIPTS uninstall-gimpdataSCRIPTS uninstall-man uninstall-gimpdataDATA uninstall-m4dataDATA
++uninstall-am: uninstall-binSCRIPTS uninstall-gimpdataSCRIPTS uninstall-man uninstall-gimpdataDATA
+ 
+ install-exec: install-exec-recursive install-exec-am
+ 	@$(NORMAL_INSTALL)

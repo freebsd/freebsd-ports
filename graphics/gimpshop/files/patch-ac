@@ -1,10 +1,9 @@
---- plug-ins/gpc/Makefile.am.orig	Wed May 27 23:47:43 1998
-+++ plug-ins/gpc/Makefile.am	Wed May 27 23:48:43 1998
+--- plug-ins/gpc/Makefile.am.orig	Tue Sep 29 22:29:19 1998
++++ plug-ins/gpc/Makefile.am	Tue Sep 29 22:30:55 1998
 @@ -1,11 +1,15 @@
  ## Process this file with automake to produce Makefile.in
  
--pluginlibdir = $(gimpplugindir)/plug-ins
-+pluginlibdir = $(libdir)
+ pluginlibdir = $(libdir)
 +gimpincludedir = $(includedir)
  
  pluginlib_LIBRARIES = libgpc.a
@@ -18,14 +17,12 @@
  
  INCLUDES = \
  	$(X_CFLAGS)			\
---- plug-ins/gpc/Makefile.in.orig	Wed May 27 23:47:45 1998
-+++ plug-ins/gpc/Makefile.in	Wed May 27 23:48:52 1998
-@@ -115,12 +115,16 @@
- palettedata = @palettedata@
+--- plug-ins/gpc/Makefile.in.orig	Tue Sep 29 22:29:22 1998
++++ plug-ins/gpc/Makefile.in	Tue Sep 29 22:31:20 1998
+@@ -116,11 +116,15 @@
  patterndata = @patterndata@
  
--pluginlibdir = $(gimpplugindir)/plug-ins
-+pluginlibdir = $(libdir)
+ pluginlibdir = $(libdir)
 +gimpincludedir = $(includedir)
  
  pluginlib_LIBRARIES = libgpc.a
@@ -39,7 +36,7 @@
  
  INCLUDES = \
  	$(X_CFLAGS)			\
-@@ -163,6 +167,8 @@
+@@ -162,6 +166,8 @@
  MANS = $(man_MANS)
  
  NROFF = nroff
@@ -48,7 +45,7 @@
  DIST_COMMON =  Makefile.am Makefile.in
  
  
-@@ -170,17 +176,18 @@
+@@ -169,17 +175,18 @@
  
  TAR = tar
  GZIP = --best
@@ -70,7 +67,7 @@
  	cd $(top_builddir) \
  	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
-@@ -217,9 +224,6 @@
+@@ -216,9 +223,6 @@
  	  rm -f $(DESTDIR)$(pluginlibdir)/$$p; \
  	done
  
@@ -80,7 +77,7 @@
  .s.o:
  	$(COMPILE) -c $<
  
-@@ -236,9 +240,6 @@
+@@ -235,9 +239,6 @@
  
  maintainer-clean-compile:
  
@@ -90,7 +87,7 @@
  .s.lo:
  	$(LIBTOOL) --mode=compile $(COMPILE) -c $<
  
-@@ -299,6 +300,21 @@
+@@ -298,6 +299,21 @@
  	@$(NORMAL_UNINSTALL)
  	$(MAKE) uninstall-man3
  
@@ -112,7 +109,7 @@
  tags: TAGS
  
  ID: $(HEADERS) $(SOURCES) $(LISP)
-@@ -329,6 +345,11 @@
+@@ -328,6 +344,11 @@
  subdir = plug-ins/gpc
  
  distdir: $(DISTFILES)
@@ -124,7 +121,7 @@
  	@for file in $(DISTFILES); do \
  	  d=$(srcdir); \
  	  test -f $(distdir)/$$file \
-@@ -336,6 +357,29 @@
+@@ -335,6 +356,29 @@
  	  || cp -p $$d/$$file $(distdir)/$$file; \
  	done
  
@@ -154,7 +151,7 @@
  info:
  dvi:
  check: all
-@@ -344,18 +388,19 @@
+@@ -343,18 +387,19 @@
  install-exec: 
  	@$(NORMAL_INSTALL)
  
@@ -177,7 +174,7 @@
  
  
  mostlyclean-generic:
-@@ -373,22 +418,22 @@
+@@ -372,22 +417,22 @@
  	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
  	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
  mostlyclean:  mostlyclean-pluginlibLIBRARIES mostlyclean-compile \
@@ -206,7 +203,7 @@
  	@echo "This command is intended for maintainers to use;"
  	@echo "it deletes files that may require special tools to rebuild."
  
-@@ -398,10 +443,12 @@
+@@ -397,10 +442,12 @@
  mostlyclean-compile distclean-compile clean-compile \
  maintainer-clean-compile mostlyclean-libtool distclean-libtool \
  clean-libtool maintainer-clean-libtool install-man3 uninstall-man3 \
