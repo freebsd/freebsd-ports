@@ -1,14 +1,29 @@
+@comment $FreeBSD$
 bin/honeyd
+include/honeyd/debug.h
 include/honeyd/hooks.h
 include/honeyd/plugins.h
 include/honeyd/plugins_config.h
-include/honeyd/debug.h
-share/honeyd/README
-share/honeyd/nmap.assoc
-share/honeyd/nmap.prints
-share/honeyd/xprobe2.conf
-share/honeyd/config.sample
-@dirrm share/honeyd
+@dirrm include/honeyd
 lib/honeyd/libhoneyd.so
 @dirrm lib/honeyd
-@dirrm include/honeyd
+%%DATADIR%%/README
+%%DATADIR%%/nmap.assoc
+%%DATADIR%%/nmap.prints
+%%DATADIR%%/xprobe2.conf
+%%DATADIR%%/config.sample
+%%DATADIR%%/pf.os
+%%DATADIR%%/scripts/proxy.pl
+%%DATADIR%%/scripts/router-telnet.pl
+%%DATADIR%%/scripts/smtp.pl
+%%DATADIR%%/scripts/test.sh
+%%DATADIR%%/scripts/web.sh
+%%DATADIR%%/scripts/snmp/README
+%%DATADIR%%/scripts/snmp/buildSNMPConfig.pl
+%%DATADIR%%/scripts/snmp/default.snmp
+%%DATADIR%%/scripts/snmp/fake-snmp.pl
+%%DATADIR%%/scripts/snmp/linux-2.4.snmp.tpl
+%%DATADIR%%/scripts/snmp/windows2000.snmp.tpl
+@dirrm %%DATADIR%%/scripts/snmp
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%

@@ -6,22 +6,52 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.6a
+PORTVERSION=	0.7
 CATEGORIES=	net
 MASTER_SITES=	http://niels.xtdnet.nl/honeyd/
 
 MAINTAINER=	yb@sainte-barbe.org
-COMMENT=	A utility to simualte services and hosts on a virtual network host
+COMMENT=	Simulate virtual network hosts (honeypots)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libdnet=${LOCALBASE} \
 		--with-libevent=${LOCALBASE} \
 		--with-pcap
-INSTALLS_SHLIB=	yes
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--with-python
+.else
+CONFIGURE_ARGS+=	--without-python
+.endif
+
 MAN8=		honeyd.8
+
+.if !defined(WITH_PYTHON)
+pre-everything::
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> You can enable Python support by defining the following variable:"
+	@${ECHO_MSG} "===> WITH_PYTHON=yes   Enable Python support"
+	@${ECHO_MSG} "===>"
+.endif
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|LIBS = |LIBS = ${PTHREAD_LIBS}|' \
+		${WRKSRC}/Makefile
+
+post-install:
+	@${MKDIR} ${DATADIR}/scripts/snmp
+	@cd ${WRKSRC}/scripts && \
+		${INSTALL_SCRIPT} *.pl *.sh ${DATADIR}/scripts
+	@cd ${WRKSRC}/scripts/snmp && \
+		${INSTALL_DATA} README default.snmp *.tpl \
+			${DATADIR}/scripts/snmp && \
+		${INSTALL_SCRIPT} *.pl ${DATADIR}/scripts/snmp
 
 .include <bsd.port.mk>
