@@ -69,7 +69,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_PYTHON=yes	Turns off Python support"
 	@${ECHO_MSG} "	WITH_THREADS=yes	Turns on pthread support"
-	@${ECHO_MSG} "	WITHOUT_SCHEMA=yes	Turns on XML Schema support"
+	@${ECHO_MSG} "	WITHOUT_SCHEMA=yes	Turns off XML Schema support"
 	@${ECHO_MSG} "	WITH_MEM_DEBUG=yes	Turns on memory debugging (DEVELOPERS ONLY!)"
 	@${ECHO_MSG} "	WITH_XMLLINT_HIST=yes	Turns on history for xmllint"
 	@${ECHO_MSG} "	WITH_THREAD_ALLOC=yes	Turns on per-thread memory (DEVELOPERS ONLY!)"
