@@ -4,3 +4,7 @@ MD5 (apache-1.140-1.wbm.gz) = f51e8de8ff60875e8df17c5ed41d2df2
 SIZE (apache-1.140-1.wbm.gz) = 299782
 MD5 (cpan-1.140-1.wbm.gz) = 10a20feaad0ba1e484ac5b9db8623ff2
 SIZE (cpan-1.140-1.wbm.gz) = 25972
+MD5 (mailboxes-1.140-1.wbm.gz) = c15de5cdcf9fe030ee9e41b5cd282c48
+SIZE (mailboxes-1.140-1.wbm.gz) = 56697
+MD5 (samba-1.140-1.wbm.gz) = f6973402d13a30bd6498106b5f129b35
+SIZE (samba-1.140-1.wbm.gz) = 179106
