@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.26
-PORTREVISION=   5
+PORTREVISION=   6
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/clients/drwebdc
 .include <bsd.port.pre.mk>
 
 INST_PREFIX=	${PREFIX}/${PORTNAME}
-SENDMAIL_DIR=	/usr/src/contrib/sendmail
+WITH_DRWEBSMF_SENDMAIL_DIR=     /usr/src/contrib/sendmail
 LIBSMUTIL_DIR=  /usr/src/lib/libsmutil
 DOC_DIR=	${PREFIX}/share/doc/drweb-sendmail
 
@@ -34,9 +34,9 @@ WITH_DRWEBSMF_HOSTNAME!=hostname
 .endif
 .endif
 
-.if exists( ${SENDMAIL_DIR}/include/libmilter/mfapi.h )
+.if exists( ${WITH_DRWEBSMF_SENDMAIL_DIR}/include/libmilter/mfapi.h )
 
-SENDMAIL_VERSION!=	${AWK} '/^sendmail [0-9.]+$$/{print $$2}' ${SENDMAIL_DIR}/FREEBSD-upgrade
+SENDMAIL_VERSION!=      ${AWK} '/^sendmail [0-9.]+$$/{print $$2}' ${WITH_DRWEBSMF_SENDMAIL_DIR}/FREEBSD-upgrade
 SENDMAIL_MAJOR!=	${ECHO} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$1 }'
 SENDMAIL_MINOR!=	${ECHO} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$2 }'
 .if ${SENDMAIL_MAJOR} > 8 || ${SENDMAIL_MAJOR} == 8 && ${SENDMAIL_MINOR} >= 12
@@ -48,7 +48,7 @@ IGNORE=	"uses Sendmail sources that are expected to have version 8.10.0 or newer
 .endif
 
 .else
-IGNORE=	"depends on the system sources. Please place them under /usr/src first"
+IGNORE= "depends on the Sendmail sources. Please place them somewhere first and point WITH_DRWEBSMF_SENDMAIL_DIR there"
 .endif
 
 post-extract:
@@ -56,25 +56,23 @@ post-extract:
 
 post-configure:
 	${MKDIR} ${WRKSRC}/libmilter ${WRKSRC}/libsmutil
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/libmilter
-	${CP} ${LIBSMUTIL_DIR}/Makefile ${WRKSRC}/libsmutil
+	${CP} ${FILESDIR}/Makefile.libmilter ${WRKSRC}/libmilter/Makefile
+	${CP} ${FILESDIR}/Makefile.libsmutil ${WRKSRC}/libsmutil/Makefile
 .if ${SENDMAIL_VERSION} == "8.11.1"
-	${CP} ${SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
-	${LN} -s ${SENDMAIL_DIR}/libmilter/libmilter.h ${WRKSRC}/libmilter
+	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.11.1.patch
 .elif ${SENDMAIL_VERSION} == "8.12.0"
-	${CP} ${SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
-	${LN} -s ${SENDMAIL_DIR}/libmilter/libmilter.h ${WRKSRC}/libmilter
+	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.12.0.patch
 .endif
-	cd ${WRKSRC}/libmilter && ${MAKE} clean && ${MAKE}
-	cd ${WRKSRC}/libsmutil && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${SENDMAIL_DIR}
+	cd ${WRKSRC}/libmilter && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
+	cd ${WRKSRC}/libsmutil && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
 	cd ${WRKSRC} && { \
 		${ECHO} y; \
 		${ECHO} n; \
 		${ECHO} y; \
 		${ECHO} ${SENDMAIL8_12} ; \
-		${ECHO} ${SENDMAIL_DIR} ; \
+		${ECHO} ${WITH_DRWEBSMF_SENDMAIL_DIR} ; \
 		${ECHO} ${CFLAGS} ; \
 		${ECHO} y; \
 	} | ./configure
@@ -113,7 +111,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/drweb/
 	cd ${WRKSRC}/../sendmail; \
-		${INSTALL_DATA} readme.* sendmail.*.addon ${DOC_DIR}
+		${INSTALL_DATA} example* readme.* sendmail.*.addon ${DOC_DIR}
 	cd ${WRKSRC}/../sendmail; \
 		${INSTALL_DATA} drweb-sendmail.sh \
 		${PREFIX}/etc/rc.d/drweb-sendmail.sh-dist
