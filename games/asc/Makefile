@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.13.7
+PORTVERSION=	1.13.8.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
-
 .if defined(WITH_MUSIC)
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} frontiers.mp3 time_to_strike.mp3 machine_wars.mp3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -37,7 +36,7 @@ USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		CXXFLAGS="-D_UNICODE_BROKEN_" \
-		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
+		LIBS="`${SDL_CONFIG} --libs` -lm"
 
 CONFIGURE_ARGS=	--disable-paraguitest
 
