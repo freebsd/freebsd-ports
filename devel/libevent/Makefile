@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libevent
-PORTVERSION=	0.6
+PORTVERSION=	0.7.a
 CATEGORIES=	devel
 MASTER_SITES=	http://monkey.org/~provos/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a$/a/}
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Provides an API to execute callback functions on certain events
 
 GNU_CONFIGURE=	yes
-USE_AUTOMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN3=	event.3
 MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_set.3 \
@@ -25,13 +26,8 @@ MLINKS=	event.3 event_init.3 event.3 event_dispatch.3 event.3 event_set.3 \
 	event.3 signal_set.3 event.3 signal_add.3 event.3 signal_del.3 \
 	event.3 signal_pending.3 event.3 signal_initialized.3
 
-post-patch:
-	@${RM} ${WRKSRC}/compat/sys/time.h
-
-# install target strangely broken
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/event.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libevent.a ${PREFIX}/lib
-	${INSTALL_MAN} ${WRKSRC}/event.3 ${PREFIX}/man/man3
+do-patch:
+	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' -e 's,-O2,,' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
