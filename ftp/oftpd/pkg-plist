@@ -1,8 +1,8 @@
 sbin/oftpd
-share/doc/oftpd/README
-share/doc/oftpd/AUTHORS
-share/doc/oftpd/ChangeLog
-share/doc/oftpd/NEWS
-share/doc/oftpd/TODO
-share/doc/oftpd/BUGS
-@dirrm share/doc/oftpd
+%%PORTDOCS%%share/doc/oftpd/README
+%%PORTDOCS%%share/doc/oftpd/AUTHORS
+%%PORTDOCS%%share/doc/oftpd/ChangeLog
+%%PORTDOCS%%share/doc/oftpd/NEWS
+%%PORTDOCS%%share/doc/oftpd/TODO
+%%PORTDOCS%%share/doc/oftpd/BUGS
+%%PORTDOCS%%@dirrm share/doc/oftpd
