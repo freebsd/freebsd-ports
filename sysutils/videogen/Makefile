@@ -17,12 +17,11 @@ MAINTAINER=	markp@FreeBSD.org
 MAN1=		videogen.1
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -lm -o videogen videogen.c && \
-		${GZIP_CMD} < ${WRKSRC}/videogen.1x > ${WRKSRC}/videogen.1.gz
+	cd ${WRKSRC} ; ${CC} ${CFLAGS} -lm -o videogen videogen.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/videogen ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/some_modes.sh ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/videogen.1.gz ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/videogen.1x ${MAN1PREFIX}/man/man1/videogen.1
 
 .include <bsd.port.mk>
