@@ -17,10 +17,6 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-.if defined (WITH_GMETAD)
-LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
-.endif
-
 PKGINSTALL=	${WRKSRC}/pkg-install
 
 OPTIONS+=	GMETAD "include gmetad" on
@@ -39,6 +35,7 @@ SUB_FILES=	pkg-install
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_GMETAD)
+LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 CONFIGURE_ARGS+=	--with-gmetad
 .endif
 INSTALLS_SHLIB=	yes
