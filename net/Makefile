@@ -412,6 +412,7 @@
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-Multicast
     SUBDIR += p5-JUNOScript
+    SUBDIR += p5-Jabber-Connection
     SUBDIR += p5-Mon
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AIM
