@@ -1,4 +1,4 @@
 bin/notebook
-%%PORTDOCS:%%share/doc/%%PORTNAME%%/LICENSE
-%%PORTDOCS:%%share/doc/%%PORTNAME%%/README.binary
-%%PORTDOCS:%%@dirrm share/doc/%%PORTNAME%%
+%%PORTDOCS%%share/doc/%%PORTNAME%%/LICENSE
+%%PORTDOCS%%share/doc/%%PORTNAME%%/README.binary
+%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%
