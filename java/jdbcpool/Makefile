@@ -7,23 +7,32 @@
 
 PORTNAME=	jdbcpool
 PORTVERSION=	0.99
-CATEGORIES=	java
+PORTREVISION=	1
+CATEGORIES=	java databases
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	JDBC connection pool
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 NO_BUILD=	yes
-TARGET_DIR=	${PREFIX}/share/java/${PORTNAME}
-JAR_DEST=	${PREFIX}/share/java/classes
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
+
+PORTDOCS=	CHANGES LICENSE README
+.if !defined(NOPORTDOCS)
+PORTDOCS+=	javadoc
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -name CVS -type dir | ${XARGS} ${RM} -rf
 
 do-install:
-	${MKDIR} ${TARGET_DIR} ${JAR_DEST}
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAR_DEST}/${PORTNAME}.jar
-	cd ${WRKSRC}; \
-		${RM} -rf `${FIND} examples javadoc -name CVS -type dir`; \
-		${CP} -R examples javadoc CHANGES LICENSE README ${TARGET_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	cd ${WRKSRC}/examples \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	cd ${WRKSRC} \
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 
 .include <bsd.port.mk>
