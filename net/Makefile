@@ -219,6 +219,7 @@
     SUBDIR += ipsvd
     SUBDIR += ipv6socket_scrub
     SUBDIR += ipw
+    SUBDIR += irrd
     SUBDIR += isc-dhcp3-client
     SUBDIR += isc-dhcp3-devel
     SUBDIR += isc-dhcp3-relay
