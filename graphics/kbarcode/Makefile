@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kbarcode
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,12 +17,15 @@ COMMENT=	A barcode and label printing application for KDE
 RUN_DEPENDS=	barcode:${PORTSDIR}/graphics/barcode
 
 USE_KDELIBS_VER=	3
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's,-O2,,g ; \
+		 s,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e \
+		's,$$(LIB_KDEUI)$$,$$(LIB_KDEUI) $$(LIBPTHREAD),g' \
+			${WRKSRC}/kbarcode/Makefile.in
 
 .include <bsd.port.mk>
