@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.8.a5
-PORTREVISION?=	2
+PORTVERSION=	1.8.a6
+PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a5/a5/}/source
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a5/a5/}${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a6/a6/}/source
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a6/a6/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -73,7 +73,8 @@ CONFIGURE_ARGS=					\
 		--with-system-png=${LOCALBASE}	\
 		--with-gssapi=/usr		\
 		--prefix=${FAKEDIR}		\
-		--with-pthreads
+		--with-pthreads			\
+		--enable-application=suite
 
 PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
