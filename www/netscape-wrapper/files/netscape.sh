@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-prefix=$(dirname $(dirname $0))
+prefix='%%PREFIX%%'
 
 lockfile=$HOME/.netscape/lock
 defs="-irix-session-management"
