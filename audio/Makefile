@@ -76,6 +76,7 @@
     SUBDIR += snowstar
     SUBDIR += soundtracker
     SUBDIR += sox
+    SUBDIR += sphinx
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += tclmidi

@@ -1,0 +1,15 @@
+Sphinx 2 is a large-vocabulary, speaker-independent, continuous
+speech recognition engine.
+
+This is an early release of a research system.  The APIs and function
+names are likely to change, and several tools still need to be made
+available to make this all complete.
+
+Once the system is built, try running the Perl script sphinx2-demo.
+The sphinx2-test script should run sphinx2-batch over an example
+utterance of "go forward ten meters."
+
+WWW:  http://www.speech.cs.cmu.edu/sphinx/
+
+Trevor Johnson
+trevor@jpj.net
