@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.224 1999/08/01 03:51:12 cpiazza Exp $
+# $Id: Makefile,v 1.225 1999/08/01 04:26:44 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -10,6 +10,7 @@
     SUBDIR += 32upgrade
     SUBDIR += Howto
     SUBDIR += acron
+    SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda24
     SUBDIR += astrolog
