@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	6.0.0p1
+PORTVERSION=	6.0.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
@@ -15,11 +15,9 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A C library for dynamically generating PDF
 
 RESTRICTED=	"many odd restrictions on usage and distribution"
-BROKEN=		Unfetchable
 
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
-USE_GNOME=	lthack
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -37,8 +35,13 @@ CONFIGURE_ARGS+=--with-perl=no
 PLIST_SUB=	PERL="@comment "
 .endif
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|\(PDFLIB_LTCURRENT\)=5|\1=7|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's^\$$(top_builddir)/libtool^${LIBTOOL}^' ${WRKSRC}/config/mkcommon.inc.in
 
 post-install:
 	${MKDIR} ${DATADIR}/fonts

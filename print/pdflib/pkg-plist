@@ -7,17 +7,7 @@ lib/libpdf.so.7
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so.0
-%%PORTDOCS%%%%DOCSDIR%%/PDFlib-Lite-license.pdf
-%%PORTDOCS%%%%DOCSDIR%%/PDFlib-manual.pdf
-%%PORTDOCS%%%%DOCSDIR%%/PDFlib-purchase-order.pdf
-%%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/compatibility.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme-source-mac.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme-source-unix.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme-source-windows.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-share/pdflib/fonts/pdflib.upr
-share/pdflib/fonts/print_glyphs.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/fonts/pdflib.upr
+%%DATADIR%%/fonts/print_glyphs.ps
 @dirrm share/pdflib/fonts
 @dirrm share/pdflib
