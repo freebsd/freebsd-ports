@@ -310,6 +310,7 @@
     SUBDIR += shout
     SUBDIR += sidplay
     SUBDIR += simplemod
+    SUBDIR += slimserver
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
