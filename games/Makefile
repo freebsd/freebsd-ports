@@ -165,6 +165,7 @@
     SUBDIR += kxl
     SUBDIR += ladder
     SUBDIR += lbreakout
+    SUBDIR += lbreakout2
     SUBDIR += lexter
     SUBDIR += libshhcards
     SUBDIR += lincity
