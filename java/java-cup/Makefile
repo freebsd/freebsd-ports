@@ -6,43 +6,41 @@
 #
 
 PORTNAME=	java_cup
-PORTVERSION=	10.g
+PORTVERSION=	10.k
 CATEGORIES=	java
 MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/CUP/
-DISTNAME=	java_cup_v10g
+DISTNAME=	${PORTNAME}_v${PORTVERSION:S|.||}
 
 MAINTAINER=	nordwick@xcf.berkeley.edu
 COMMENT=	An LALR parser generator in Java
 
-BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk11
-RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
-
-JAVASUBDIR=	jdk1.1.8
-JAVADIR=	${PREFIX}/${JAVASUBDIR}
-JAVALIBDIR=	${JAVADIR}/lib
-
+USE_JAVA=	1.1+
+NEED_JAVAC=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_SUB=	JAVASUBDIR=${JAVASUBDIR}
+PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||} PORTNAME=${PORTNAME}
 
 do-build:
-	for JSRC in ${WRKSRC}/java_cup/*.java ${WRKSRC}/java_cup/runtime/*.java; \
-	do CLASSPATH=${WRKSRC} ${PREFIX}/${JAVASUBDIR}/bin/javac $$JSRC; done
+	${JAVAC} -classpath ${WRKSRC} ${WRKSRC}/java_cup/*.java \
+		${WRKSRC}/java_cup/runtime/*.java
+	cd ${WRKSRC} && \
+		${JAR} cf ${PORTNAME}.jar java_cup/*.class \
+		java_cup/runtime/*.class
 
 do-install:
-	${MKDIR} ${JAVALIBDIR}/java_cup
-	${MKDIR} ${JAVALIBDIR}/java_cup/runtime
-	${CP} ${WRKSRC}/java_cup/*.class ${JAVALIBDIR}/java_cup
-	${CP} ${WRKSRC}/java_cup/runtime/*.class ${JAVALIBDIR}/java_cup/runtime
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
 
 post-install:
-	${MKDIR} ${JAVADIR}/cup
-	${INSTALL_MAN} ${WRKSRC}/manual.html ${JAVADIR}/cup
-	${INSTALL_MAN} ${WRKSRC}/README ${JAVADIR}/cup
-	${INSTALL_MAN} ${WRKSRC}/LICENSE ${JAVADIR}/cup
-	@${ECHO_MSG} "Documentation installed in ${JAVADIR}/cup"
-	@${ECHO_MSG} "   manual.html --  How to build a grammer."
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/cup_logo.gif ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
+	@${ECHO_MSG} "Documentation installed in ${DOCSDIR}"
+	@${ECHO_MSG} "   manual.html --  How to build a grammar."
 	@${ECHO_MSG} "   README -- How to get it working."
 	@${ECHO_MSG} "   LICENSE -- How not to get sued."
+.endif
 
 .include <bsd.port.mk>
