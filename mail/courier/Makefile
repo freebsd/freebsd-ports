@@ -24,6 +24,8 @@ LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR
 
+BROKEN=		Changes permissions on previously-installed files
+
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
