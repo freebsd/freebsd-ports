@@ -7,14 +7,12 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
 		ftp://SunSITE.tus.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
-		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
-		ftp://ftp.tutrp.tut.ac.jp/pub/mirror/samba-jp/%SUBDIR%/
+		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${SAMBA_VERSION}-ja
 DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 
@@ -22,8 +20,8 @@ MAINTAINER=	nakaji@jp.FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-SAMBA_VERSION=		2.2.2
-SAMBA_JA_VERSION=	1.1
+SAMBA_VERSION=		2.2.4
+SAMBA_JA_VERSION=	1.0
 
 # directories
 VARDIR=		/var
@@ -44,22 +42,29 @@ CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-lockdir=${VARDIR}/db/samba \
 		--with-privatedir=${SAMBA_PRIVATE} \
+		--with-piddir=${VARDIR}/run \
+		--with-pam \
 		--prefix=${PREFIX}
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
 .endif
 
+.if defined(USE_OPENSSL)
+CONFIGURE_ARGS+=	--with-ssl
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		findsmb.1 nmblookup.1 rpcclient.1 smbcacls.1 \
-		smbcontrol.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
+		smbcontrol.1 smbstatus.1 smbclient.1 smbtar.1 \
 		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1 \
 		make_unicodemap.1 wbinfo.1
 MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8 \
-		smbmnt.8 smbmount.8 smbumount.8 winbindd.8
+		smbmnt.8 smbmount.8 smbumount.8 winbindd.8 \
+		pdbedit.8
 MANLANG=	"" ja
 
 post-build:

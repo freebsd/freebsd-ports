@@ -1,5 +1,5 @@
---- lib/util_sock.c.orig	Wed Sep 22 10:52:50 1999
-+++ lib/util_sock.c	Wed Sep 22 11:30:18 1999
+--- lib/util_sock.c.orig	Tue Jun 11 18:48:41 2002
++++ lib/util_sock.c	Mon Jun 17 13:24:27 2002
 @@ -28,6 +28,9 @@
  extern int  sslFd;
  #endif  /* WITH_SSL */
@@ -7,6 +7,6 @@
 +#undef MSG_WAITALL
 +#define MSG_WAITALL 0
 +
- extern int DEBUGLEVEL;
+ /* the last IP received from */
+ struct in_addr lastip;
  
- BOOL passive = False;
