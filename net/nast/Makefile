@@ -8,7 +8,8 @@
 PORTNAME=	nast
 PORTVERSION=	0.1.7e
 CATEGORIES=	net
-MASTER_SITES=	http://nast.berlios.de/src/
+MASTER_SITES=	http://nast.berlios.de/src/ \
+		http://voodoo.oberon.net/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ponomarew@oberon.net
