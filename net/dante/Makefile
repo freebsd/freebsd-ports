@@ -7,6 +7,7 @@
 
 PORTNAME=	dante
 PORTVERSION=	1.1.14
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
@@ -16,8 +17,11 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A circuit-level firewall/proxy
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 		--with-sockd-conf=${PREFIX}/etc/sockd.conf
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 INSTALLS_SHLIB=	yes
 
