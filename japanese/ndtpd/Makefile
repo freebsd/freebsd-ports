@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ndtpd
-PORTVERSION=	3.1.1
-CATEGORIES=	japanese
+PORTVERSION=	3.1.2
+CATEGORIES=	japanese ipv6
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+.diff
+#PATCHFILES=	${DISTNAME}+.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
