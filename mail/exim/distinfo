@@ -1,4 +1,4 @@
 MD5 (exim/exim-4.20.tar.bz2) = 90f9e876b60d00c0a5dd53ece7c85338
 MD5 (exim/exim-texinfo-4.20.tar.bz2) = debc6d3fdd88fd6d9c646ca0495fa92d
 MD5 (exim/exiscan-4.20-26.tar.bz2) = a3ad2a486b52cc32990888a00f8fabca
-MD5 (exim/exiscan-acl-4.20-06.patch) = 3553807b9220643e2bd1f2187550a37a
+MD5 (exim/exiscan-acl-4.20-07.patch) = 72a8ca279b401e927ab026865cd1e2ce
