@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	DBD-SQLite
-PORTVERSION=	0.31
-PORTREVISION=	1
+PORTNAME=	DBD-SQLite2
+PORTVERSION=	0.33
+PORTREVISION=	0
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -18,7 +18,7 @@ COMMENT=	Provides access to SQLite2 databases through the DBI
 
 PERL_CONFIGURE=	yes
 
-MAN3=		DBD::SQLite.3
+MAN3=		DBD::SQLite2.3
 
 .include <bsd.port.pre.mk>
 
@@ -29,5 +29,8 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
+
+post-extract:
+	${RM} -f ${WRKSRC}/getsqlite.pl
 
 .include <bsd.port.post.mk>
