@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.4.17
+PORTVERSION=	2.4.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -66,7 +66,8 @@ CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
 PLIST_SUB+=	GTK=""
 .else
 CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
-			--disable-gtktest --disable-imlibtest
+			--disable-gtktest --disable-imlibtest \
+			--with-gtk-prefix=/no/dir --with-imlib-prefix=/no/dir
 PLIST_SUB+=	GTK="@comment not installed: "
 .endif
 
