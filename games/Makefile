@@ -130,6 +130,7 @@
     SUBDIR += foobillard
     SUBDIR += fotaq
     SUBDIR += frabs
+    SUBDIR += freebooters
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv
