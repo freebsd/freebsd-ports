@@ -31,7 +31,6 @@ else
 		lbp1310 lbp1510 lbp1610 lbp1710 lbp1810 lbp1910 \
 		lips2p lips3 lips4 bjc880j lips4v \
 		m8510 coslw2p coslwxl uniprint \
-		dmprt \
 		lj250 declj250 ap3250 epson eps9mid eps9high lp8000 \
 		epag \
 		escpage lp2000 \
@@ -77,7 +76,7 @@ else
 		tiffcrle tiffg3 tiffg32d tiffg4 \
 		tiff12nc tiff24nc tifflzw tiffpack \
 		bbox \
-		devicen perm spotrgb spotcmyk
+		devicen perm spotcmyk
 fi
 
 for i; do
@@ -143,7 +142,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "coslwxl"  "CoStar LabelWriter XL" "$status_coslwxl" \
   "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" "$status_stp" \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" "$status_uniprint" \
-  "dmprt"    "Configurable dot matrix printer driver [DMPRT]" "$status_dmprt" \
   "lj250"    "DEC LJ250 Companion color printer" "$status_lj250" \
   "declj250" "DEC LJ250 driver (alternate)" "$status_declj250" \
   "ap3250"   "Epson ActionPrinter 3250" "$status_ap3250" \
@@ -329,7 +327,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "png16"    "PNG 4-bit color Portable Network Graphics" "$status_png16" \
   "png256"   "PNG 8-bit color Portable Network Graphics" "$status_png256" \
   "png16m"   "PNG 24-bit color Portable Network Graphics" "$status_png16m" \
-  "pnga"     "PNG with transparency" "$status_pnga" \
+  "pngalpha" "PNG 32-bit RGBA Portable Network Graphics" "$status_pngalpha" \
   "psmono"   "PostScript (Level 1) monochrome image" "$status_psmono" \
   "psgray"   "PostScript (Level 1) 8-bit gray image" "$status_psgray" \
   "psrgb"    "PostScript (Level 2) 24-bit color image" "$status_psrgb" \
@@ -348,7 +346,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "bbox"     "Bounding box output" "$status_bbox" \
   "devicen"  "DeviceN process color model device" "$status_devicen" \
   "perm"     "DeviceN which permutes color components" "$status_perm" \
-  "spotrgb"  "DeviceN with RGB and spot color support" "$status_spotrgb" \
   "spotcmyk" "DeviceN with CMYK and spot color support" "$status_spotcmyk" \
 2> $tempfile
 
