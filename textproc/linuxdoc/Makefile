@@ -1,12 +1,12 @@
 # New ports collection makefile for:	linuxdoc
-# Version required:	1.0
+# Version required:	1.1
 # Date created:		July 8, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.2 1997/07/09 11:23:09 jfieber Exp $
+# $Id: Makefile,v 1.3 1997/07/10 02:34:31 jfieber Exp $
 #
 
-DISTNAME=	linuxdoc-1.0
+DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 
