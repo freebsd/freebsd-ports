@@ -1,7 +1,7 @@
 ===============================================================
 
 To complete the installation of this port, you have to do the
-followings:
+following things:
 
 1. Run %%PREFIX%%/rt2/etc/insertdata <last_version_of_rt> if you're
    upgrading from an older version.
@@ -13,5 +13,6 @@ followings:
    The default is "password" (without the quotes.)
 6. Configure RT per the instructions at http://www.fsck.com/rtfm/.
 
-
+NOTE:   Please remember to use a statically compiled mod_perl,
+	and configure mod_fastcgi for a faster rt2.
 ================================================================
