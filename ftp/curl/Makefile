@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.10.3
-PORTREVISION=	2
+PORTVERSION=	7.10.4
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -15,11 +14,6 @@ MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
 MASTER_SITE_SUBDIR=	curl
-
-PATCHFILES=	curl-lib-url.c-netrc.patch
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~roam/ports/patches/ftp/curl/
-PATCH_SITE_SUBDIR=	roam
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers"
