@@ -21,6 +21,7 @@ LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 RUN_DEPENDS=	${LOCALBASE}/lib/im/csconv/csconv.so:${PORTSDIR}/textproc/iiimf-csconv
 
 IIIMF_VER=	r12_1-svn2002
+USE_BZIP2=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool

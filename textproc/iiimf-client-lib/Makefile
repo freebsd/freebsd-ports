@@ -20,6 +20,7 @@ LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib
 
 IIIMF_VER=	r12_1-svn2002
 INSTALLS_SHLIB=	yes
+USE_BZIP2=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
 USE_GNOME=	intltool

@@ -18,6 +18,7 @@ COMMENT=	Header files for Internet/Intranet Input Method Framework
 
 IIIMF_VER=	r12_1-svn2002
 WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
+USE_BZIP2=	yes
 NO_BUILD=	yes
 
 do-install:
