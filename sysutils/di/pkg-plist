@@ -1,2 +1,4 @@
 bin/di
 bin/mi
+share/locale/de_DE/LC_MESSAGES/di.mo
+share/locale/en_US/LC_MESSAGES/di.mo
