@@ -85,6 +85,7 @@
     SUBDIR += filepp
     SUBDIR += fist
     SUBDIR += fo-aspell
+    SUBDIR += foiltex
     SUBDIR += fop
     SUBDIR += freegrep
     SUBDIR += galax

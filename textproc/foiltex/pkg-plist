@@ -1,0 +1,14 @@
+%%PORTDOCS%%%%DOCSDIR%%/foiltex.dtx
+%%PORTDOCS%%%%DOCSDIR%%/foiltex.dvi
+%%PORTDOCS%%%%EXAMPLESDIR%%/sampfoil.tex
+%%FOIL_DIR%%/foil17.clo
+%%FOIL_DIR%%/foil20.clo
+%%FOIL_DIR%%/foil25.clo
+%%FOIL_DIR%%/foil30.clo
+%%FOIL_DIR%%/foils.cls
+%%FOIL_DIR%%/foils.sty
+%%FOIL_DIR%%/foilshrt.clo
+%%FOIL_DIR%%/fltfonts.def
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%FOIL_DIR%%
