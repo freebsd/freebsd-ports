@@ -1,45 +1,40 @@
-              PHYLIP - Phylogeny Inference Package (version 3.5)
+              PHYLIP - Phylogeny Inference Package (version 3.6)
 
-     This is a FREE package of programs for inferring phylogenies and  carrying
-out certain related tasks.  At present it contains 30 programs, which carry out
-different algorithms on different kinds of data.  The programs in  the  package
-are:
-      ---------- Programs for molecular sequence data ----------
-  PROTPARS  Protein parsimony          DNAPARS   Parsimony method for DNA
-  DNAMOVE   Interactive DNA parsimony  DNAPENNY  Branch and bound for DNA
-  DNACOMP   Compatibility for DNA      DNAINVAR  Phylogenetic invariants
-  DNAML     Maximum likelihood method  DNAMLK    DNA ML with molecular clock
-  DNADIST   Distances from sequences   PROTDIST  Distances from proteins
-  RESTML    ML for restriction sites   SEQBOOT   Bootstraps sequence data sets
-      ----------- Programs for distance matrix data ------------
-  FITCH     Fitch-Margoliash and least-squares methods
-  KITSCH    Fitch-Margoliash and least squares methods with evolutionary clock
-  NEIGHBOR  Neighbor-joining and UPGMA methods
-      -------- Programs for gene frequencies and continuous characters -------
-  CONTML    Maximum likelihood method  GENDIST  Computes genetic distances
-  CONTRAST  Computes contrasts and correlations for comparative method studies
-      ------------- Programs for 0-1 discrete state data -----------
-  MIX       Wagner, Camin-Sokal, and mixed parsimony criteria
-  MOVE      Interactive Wagner, C-S, mixed parsimony program
-  PENNY     Finds all most parsimonious trees by branch-and-bound
-  DOLLOP, DOLMOVE, DOLPENNY   same as preceding four programs, but for
-     the Dollo and polymorphism parsimony criteria
-  CLIQUE    Compatibility method       FACTOR    recode multistate characters
-      ---------- Programs for plotting trees and consensus trees -------
-  DRAWGRAM  Draws cladograms and phenograms on screens, plotters and printers
-  DRAWTREE  Draws unrooted phylogenies on screens, plotters and printers
-  CONSENSE  Majority-rule and strict consensus trees
-  RETREE    Reroots, changes names and branch lengths, and flips trees
+PHYLIP (the PHYLogeny Inference Package) is a package of programs for
+inferring phylogenies (evolutionary trees).  Methods that are
+available in the package include parsimony, distance matrix, and
+likelihood methods, including bootstrapping and consensus trees. Data
+types that can be handled include molecular sequences, gene
+frequencies, restriction sites, distance matrices, and 0/1 discrete
+characters.
 
-There is also an Unsupported Division  containing  two  programs,  makeinf  and
-ProtML, which were contributed by others and are maintained by their authors.
+The programs are controlled through a menu, which asks the users which
+options they want to set, and allows them to start the
+computation. The data are read into the program from a text file,
+which the user can prepare using any word processor or text editor
+(but it is important that this text file not be in the special format
+of that word processor -- it should instead be in "flat ASCII" or
+"Text Only" format). Some sequence analysis programs such as alignment
+programs can write data files in the PHYLIP format. Most of the
+programs look for the data in a file called "infile" -- if they do not
+find this file they then ask the user to type in the file name of the
+data file.
 
-The package includes extensive documentation files that provide the information
-necessary to use and modify the programs.
+Output is written onto special files with names like "outfile" and
+"treefile". Trees written onto "treefile" are in the Newick format, an
+informal standard agreed to in 1986 by authors of a number of major
+phylogeny packages.
 
-                             Joe Felsenstein
-                             joe@genetics.washington.edu
-                             Department of Genetics
-                             University of Washington
-                             Box 357360
-                             Seattle, Washington 98195-7360, U.S.A.
+PHYLIP is the most widely-distributed phylogeny package, and competes
+with PAUP to be the one responsible for the largest number of
+published trees. PHYLIP has been in distribution since 1980, and has
+over 6,000 registered users.
+
+ Joe Felsenstein
+ joe@genetics.washington.edu
+ Department of Genetics
+ University of Washington
+ Box 357360
+ Seattle, Washington 98195-7360, U.S.A.
+
+WWW: http://evolution.genetics.washington.edu/phylip.html
