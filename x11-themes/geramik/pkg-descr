@@ -1,0 +1,11 @@
+Geramik is a combined GTK theme and engine that is intended
+to make similar appearance as to the Keramik KDE theme.
+
+The engine is a modified version of the GTK pixmap engine, in
+order to obtain widget colors and to have GTK apps conform
+to the KDE color scheme.
+
+WWW: http://www.kde-look.org/content/show.php?content=3952
+
+-hc
+haesu@towardex.com

@@ -27,6 +27,7 @@
     SUBDIR += gal2
     SUBDIR += gauche-gtk
     SUBDIR += gdl
+    SUBDIR += geramik
     SUBDIR += gevas
     SUBDIR += gnome--
     SUBDIR += gnome-look
