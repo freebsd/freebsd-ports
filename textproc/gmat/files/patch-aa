@@ -1,6 +1,12 @@
---- Makefile	Thu Sep  7 16:29:25 2000
-+++ Makefile	Sun Dec 31 16:23:33 2000
-@@ -9,7 +9,7 @@
+--- Makefile.orig	Thu Sep  7 08:59:25 2000
++++ Makefile	Tue Dec  7 22:28:02 2004
+@@ -4,12 +4,12 @@
+ 
+ # set CC to the name of your C compiler.  GCC may be required...
+ #
+-CC = gcc
++#CC = gcc
+ 
  # Set PRODROOT to the directory that you want to use as the root of the
  # gmat tools tree.  Locally, we use "/usr/local/prod".
  #
@@ -9,15 +15,6 @@
  
  # Set BINDIR to the location where you keep non-standard binaries.
  # This is where gmat looks for nsgmls, crlf, and gzcat (or zcat)
-@@ -23,7 +23,7 @@
- # stretch of versions that cause errors; this version has
- # been patched for perl 5.005_3 
- #
--PERL5    = /usr/bin/perl
-+PERL5    = /usr/bin/perl5
- 
- # Set DEFAULT_PRINTER to the name of an appropriate printer
- #
 @@ -56,7 +56,7 @@
  
  # Set SOELIMPATHNAME to the path to gsoelim (or soelim) on your system
@@ -27,15 +24,3 @@
  
  # NOTE!! CHECK macros/tmac.G for some more local variables
  #
-diff -wur work/gmat-0.2.4/macros/tmac.G working/gmat-0.2.4/macros/tmac.G
---- macros/tmac.G	Fri Mar 24 03:42:38 2000
-+++ macros/tmac.G	Sun Dec 31 16:13:27 2000
-@@ -25,7 +25,7 @@
- .ds gmat_gmacroff %%BINDIR%%/gmacroff
- .\" DEFINE THE FOLLOWING paths for your local environment!
- .ds gmat_echo /bin/echo
--.ds gmat_sed /bin/sed
-+.ds gmat_sed /usr/bin/sed
- .ds gmat_rm /bin/rm
- .ds gmat_mv /bin/mv
- .\" The following strings set variables to subdirectories of the book
