@@ -19,7 +19,7 @@ EXTRACT_ONLY=	xgs050.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple IIGS emulator stable release
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	xgs
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
