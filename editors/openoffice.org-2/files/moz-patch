@@ -6,7 +6,7 @@ http://qa.openoffice.org/issues/show_bug.cgi?id=11424
 
 diff -u moz/mozilla-source-1.7b.patch moz.new/mozilla-source-1.7b.patch
 --- moz/mozilla-source-1.7b.patch	Wed Jul 14 13:22:36 2004
-+++ moz.new/mozilla-source-1.7b.patch	Fri Oct 22 22:44:42 2004
++++ moz.new/mozilla-source-1.7b.patch	Mon Nov 22 18:22:38 2004
 @@ -4447,7 +4447,6 @@
  +#MKSHLIB += -R '$$ORIGIN'
   endif
@@ -15,7 +15,7 @@ diff -u moz/mozilla-source-1.7b.patch moz.new/mozilla-source-1.7b.patch
  
  Index: mailnews/addrbook/src/nsAbMD5sum.cpp
  ===================================================================
-@@ -5104,3 +5103,64 @@
+@@ -5104,3 +5103,81 @@
  +//#define HAVE_MMX_INTEL_MNEMONICS 
  +//#define HAVE_SSE2_INTEL_MNEMONICS 
   #endif
@@ -80,3 +80,21 @@ diff -u moz/mozilla-source-1.7b.patch moz.new/mozilla-source-1.7b.patch
 + ifeq ($(OS_ARCH), NetBSD)
 + EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME)
 + endif
++
++
++--- misc/build/mozilla/extensions/negotiateauth/nsHttpGssapiAuth.cpp.org	Tue Mar 16 09:34:01 2004
+++++ misc/build/mozilla/extensions/negotiateauth/nsHttpGssapiAuth.cpp	Mon Nov 22 18:21:07 2004
++@@ -289,7 +289,7 @@
++     return NS_OK;
++ }
++ 
++-NS_IMPL_ISUPPORTS1(nsHttpGssapiAuth, nsIHttpAuthenticator);
+++NS_IMPL_ISUPPORTS1(nsHttpGssapiAuth, nsIHttpAuthenticator)
++    
++ //
++ // GenerateCredentials
++
++
++
++
++

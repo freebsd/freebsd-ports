@@ -1,19 +1,18 @@
-#iz XXXXX
-New unxfbsdi.mk, catching up linux's one.
-
 Index: solenv/inc/unxfbsdi.mk
 ===================================================================
 RCS file: /cvs/tools/solenv/inc/unxfbsdi.mk,v
 retrieving revision 1.11
 diff -u -r1.11 unxfbsdi.mk
 --- solenv/inc/unxfbsdi.mk	20 Sep 2004 08:37:13 -0000	1.11
-+++ solenv/inc/unxfbsdi.mk	3 Oct 2004 06:45:36 -0000
-@@ -61,15 +61,21 @@
++++ solenv/inc/unxfbsdi.mk	21 Nov 2004 14:26:32 -0000
+@@ -60,16 +60,26 @@
+ #
  #*************************************************************************
  
- # mak file for unxfbsdi
+-# mak file for unxfbsdi
 -ASM=$(CC)
 -AFLAGS=-x assembler-with-cpp -c $(CDEFS)
++# mk file for unxfbsdi
 +ASM=
 +AFLAGS=
 +
@@ -24,16 +23,20 @@ diff -u -r1.11 unxfbsdi.mk
  #not needed at the moment
  #LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
  
-+# options for C and C++ Compiler
-+CDEFS+=	-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=450 -DOSVERSION=$(OSVERSION)
-+CDEFS+= $(PTHREAD_CFLAGS) -D_REENTRANT
++# _PTHREADS is needed for the stl
++CDEFS+= -DX86 -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450
++
++# enable visibility define in "sal/types.h"
++.IF "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
++CDEFS += -DHAVE_GCC_VISIBILITY_FEATURE
++.ENDIF # "$(HAVE_GCC_VISIBILITY_FEATURE)" == "TRUE"
 +
  # this is a platform with JAVA support
 -SOLAR_JAVA*=TRUE
  .IF "$(SOLAR_JAVA)"!=""
  JAVADEF=-DSOLAR_JAVA
  .IF "$(debug)"==""
-@@ -77,121 +83,101 @@
+@@ -77,96 +87,82 @@
  .ELSE
  JAVA_RUNTIME=-ljava_g
  .ENDIF
@@ -78,10 +81,7 @@ diff -u -r1.11 unxfbsdi.mk
  # Flags for enabling exception handling
 -CFLAGSEXCEPTIONS= -fexceptions
 -CFLAGS_NO_EXCEPTIONS= -fno-exceptions
-+CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
-+# Flags for disabling exception handling
-+CFLAGS_NO_EXCEPTIONS=-fno-exceptions
- 
+-
 -# Compiler flags for compiling static object in single threaded
 -# environment with graphical user interface
 -CFLAGSOBJGUIST= -fPIC
@@ -105,7 +105,10 @@ diff -u -r1.11 unxfbsdi.mk
 -# Compiler flags for compiling shared object in multi threaded
 -# environment with character user interface
 -CFLAGSSLOCUIMT=	-fPIC
--
++CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
++# Flags for disabling exception handling
++CFLAGS_NO_EXCEPTIONS=-fno-exceptions
+ 
 -# Compiler flags for profilin
 -CFLAGSPROF=     -pg
 +CFLAGSCXX= -pipe $(ARCH_FLAGS)
@@ -182,10 +185,7 @@ diff -u -r1.11 unxfbsdi.mk
  
  # linker flags for linking shared libraries
  LINKFLAGSSHLGUI= -shared
- LINKFLAGSSHLCUI= -shared
--
- LINKFLAGSTACK=
- LINKFLAGSPROF=
+@@ -177,23 +173,19 @@
  LINKFLAGSDEBUG=-g
  LINKFLAGSOPT=
  
@@ -212,8 +212,11 @@ diff -u -r1.11 unxfbsdi.mk
 +STDLIBCPP=-lstdc++
  
  # default objectfilenames to link
++STDOBJVCL=$(L)$/salmain.o
  STDOBJGUI=
-@@ -201,24 +187,30 @@
+ STDSLOGUI=
+ STDOBJCUI=
+@@ -201,24 +193,30 @@
  
  # libraries for linking applications
  STDLIBCUIST=-lm
@@ -228,7 +231,7 @@ diff -u -r1.11 unxfbsdi.mk
 +STDSHLGUIMT=-lX11 -lXext $(PTHREAD_LIBS) -lm
  STDSHLCUIMT=$(PTHREAD_LIBS) -lm
 +STDSHLGUIST=-lX11 -lXext -lm
-+STDSHLCUIST=-ldl
++STDSHLCUIST=-lm
  
  LIBSALCPPRT*=-Wl,--whole-archive -lsalcpprt -Wl,--no-whole-archive
  
@@ -252,3 +255,8 @@ diff -u -r1.11 unxfbsdi.mk
  
  # tool for generating import libraries
  IMPLIB=
+@@ -237,3 +235,4 @@
+ DLLPOSTFIX=fi
+ DLLPRE=lib
+ DLLPOST=.so
++
