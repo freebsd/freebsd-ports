@@ -3,7 +3,7 @@
 # Date created:				14 April 1996
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.10 1998/04/17 18:05:17 obrien Exp $
+# $Id: Makefile,v 1.11 1998/08/07 22:17:53 asami Exp $
 #
 
 #	Also update	ports/japanese/plan/ (ja-plan) when this port is updated
@@ -15,6 +15,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	deischen@iworks.InterWorks.org
+
+BROKEN_ELF=	yes
 
 REQUIRES_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
