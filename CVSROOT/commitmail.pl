@@ -14,7 +14,11 @@ while (<ACCESS>) {
 	if ($words[0] =~ /^[#\/;]/) {
 		next;
 	}
-	push @names, $words[0];
+	if ($words[1]) {
+		push @names, $words[1];
+	} else {
+		push @names, $words[0];
+	}
 }
 $list = join(" ", @names);
 if ($list ne '') {
