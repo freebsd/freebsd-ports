@@ -3,11 +3,11 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.2 1996/02/08 01:27:44 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/03/16 05:01:43 pst Exp $
 #
 
 DISTNAME=	tclX7.5.0-b3
-PKGNAME=	tclX7.5.0-b3
+PKGNAME=	tclX-7.5b3
 CATEGORIES+=	lang
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/distrib/
 
