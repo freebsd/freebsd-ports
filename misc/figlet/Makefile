@@ -3,7 +3,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
 #
 
 DISTNAME=	figlet2.1.1
@@ -16,10 +16,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=     obrien@cs.ucdavis.edu
 
 post-install:
-.if !defined{NOMANCOMPRESS}
-.for mp in figlet.6
-	gzip -9nf ${PREFIX}/man/man6/${mp}
-.endfor
-.endif
+	${COMPRESS_MAN} ${PREFIX}/man/man6/figlet.6
 
 .include <bsd.port.mk>
