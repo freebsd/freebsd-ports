@@ -1,5 +1,5 @@
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$Id: bsd.port.subdir.mk,v 1.30 1999/04/28 06:20:15 asami Exp $
+#	$Id: bsd.port.subdir.mk,v 1.31 1999/07/23 09:36:55 asami Exp $
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
 # for building ports subdirectories. 
@@ -165,7 +165,7 @@ checksubdir:
 	done
 	@for s in ${SUBDIR}; do \
 	  if ! [ -d ${.CURDIR}/$$s ]; then \
-	    ${ECHO} "Warning: directory $s in SUBDIR does not exist"; \
+	    ${ECHO} "Warning: directory $$s in SUBDIR does not exist"; \
 	  fi \
 	done
 .endif
