@@ -14,7 +14,7 @@ MAINTAINER=	andreas@FreeBSD.org
 
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 .if defined(BATCH)
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript6
 RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
 RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
 RUN_DEPENDS+=	cjpeg:${PORTSDIR}/graphics/jpeg
