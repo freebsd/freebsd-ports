@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- Makefile.orig	Mon Aug 26 07:21:20 2002
-+++ Makefile	Mon Aug 26 09:24:19 2002
+--- src/Makefile.orig	Mon Aug 26 07:21:20 2002
++++ src/Makefile	Mon Aug 26 09:24:19 2002
 @@ -3,13 +3,12 @@
  #
  HOST=	NETBSD
