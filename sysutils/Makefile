@@ -100,7 +100,6 @@
     SUBDIR += jailer
     SUBDIR += jailutils
     SUBDIR += kdeadmin3
-    SUBDIR += koncd
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += lfm
