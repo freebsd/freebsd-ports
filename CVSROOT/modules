@@ -7496,6 +7496,7 @@ p5-MLDBM	ports/databases/p5-MLDBM
 p5-MLDBM-Sync	ports/databases/p5-MLDBM-Sync
 p5-MP3-ID3v1Tag	ports/audio/p5-MP3-ID3v1Tag
 p5-MP3-Info	ports/audio/p5-MP3-Info
+p5-MP3-Tag	ports/audio/p5-MP3-Tag
 p5-MPEG-ID3v2Tag	ports/audio/p5-MPEG-ID3v2Tag
 p5-Mac-FileSpec-Unixish	ports/devel/p5-Mac-FileSpec-Unixish
 p5-Mac-Macbinary	ports/archivers/p5-Mac-Macbinary
