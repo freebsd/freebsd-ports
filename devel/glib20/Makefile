@@ -31,6 +31,7 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
