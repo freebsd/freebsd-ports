@@ -2,6 +2,7 @@ bin/gsmctl
 bin/gsmpb
 bin/gsmsendsms
 bin/gsmsiectl
+bin/gsmsiexfer
 bin/gsmsmsd
 bin/gsmsmsstore
 include/gsmlib/gsm_at.h
@@ -25,7 +26,7 @@ include/gsmlib/gsm_util.h
 @dirrm include/gsmlib
 lib/libgsmext.a
 lib/libgsmext.so
-lib/libgsmext.so.0
+lib/libgsmext.so.1
 lib/libgsmme.a
 lib/libgsmme.so
 lib/libgsmme.so.1
