@@ -1,0 +1,13 @@
+--- ext/extconf.rb.in.orig	Tue Aug 14 01:06:08 2001
++++ ext/extconf.rb.in	Wed Sep 12 01:52:00 2001
+@@ -5,8 +5,8 @@
+ # guessing `rubylibdir' and `rubyarchdir'
+ prefix = "@prefix@"
+ if prefix == CONFIG["prefix"]
+-  rubylibdir = CONFIG["rubylibdir"]
+-  rubyarchdir = CONFIG["archdir"]
++  rubylibdir = CONFIG["sitelibdir"]
++  rubyarchdir = CONFIG["sitearchdir"]
+ else
+   rubylibdir = prefix + "/lib/ruby/" + CONFIG["MAJOR"] + "." + CONFIG["MINOR"]
+   rubyarchdir = rubylibdir + "/" + CONFIG["arch"]
