@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.blueammonite.f9.co.uk/SpiralSynth/dload/ \
 		http://jpj.net/~trevor/freebsd/ports/
 DISTNAME=	SpiralSynth-${PORTVERSION}
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

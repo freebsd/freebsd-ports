@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.prism.gatech.edu/~gte067k/xdrawchem/
 DISTNAME=	xdc083
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" QTDIR="${X11BASE}"
 USE_GMAKE=	yes

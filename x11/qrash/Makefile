@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR= X11/demos
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=      yes

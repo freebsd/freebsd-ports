@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.speech.cs.cmu.edu/festival/cstr/festival/1.4.1/ \
 		ftp://ftp.cstr.ed.ac.uk/pub/festival/1.4.1/
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 NO_BUILD=	yes
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.7.0b
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.bigfreakinserver.com/pub/
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 

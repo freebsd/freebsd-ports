@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.hdk-berlin.de/~rasca/
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

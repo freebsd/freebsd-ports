@@ -17,7 +17,7 @@ SUB=		festival/mirror.ogi-synth_home/
 DISTNAME=	voice_jph_di-2.0
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 RESTRICTED=	no-commercial-use
 
