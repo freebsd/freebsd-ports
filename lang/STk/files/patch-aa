@@ -18,6 +18,23 @@ diff -cr STk-3.1/Makefile.in STk-3.1.new/Makefile.in
   	@echo "LIB_DLD		= @LIB_DLD@"			>> config.make
   		
   	@echo "STK_LIBRARY	= $(libdir)"			>> config.make
+***************
+*** 108,114 ****
+  demos:
+  	/bin/sh -c "(cd Demos; ../Src/test-stk -f hbrowse README.html)"
+  
+! install: clean-before
+  	(cd Tcl;     	$(MAKE) install)
+  	(cd Tk;      	$(MAKE) install)
+  	(cd Mp;		$(MAKE) install)
+--- 108,114 ----
+  demos:
+  	/bin/sh -c "(cd Demos; ../Src/test-stk -f hbrowse README.html)"
+  
+! install:
+  	(cd Tcl;     	$(MAKE) install)
+  	(cd Tk;      	$(MAKE) install)
+  	(cd Mp;		$(MAKE) install)
 diff -cr STk-3.1/Snow/io.c STk-3.1.new/Snow/io.c
 *** STk-3.1/Snow/io.c	Sun Jul 21 03:54:35 1996
 --- STk-3.1.new/Snow/io.c	Tue Sep 17 15:25:42 1996
