@@ -7,32 +7,32 @@
 
 PORTNAME=	konverse
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	perky@FreeBSD.org
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=--with-extra-includes=${LOCALBASE}/include \
 		--x-includes=${X11BASE}/include \
-		--x-libraries=${X11BASE}/lib
-
-REPATCH=	cd ${WRKSRC} && ${SED}
-REPATCHSUBST=	-e 's/libqt\./lib${QTNAME}\./' \
-		-e 's/-lqt/-l${QTNAME}/' \
-		-e 's/\(LDADD.*\)-ldl/\1/' \
-		-e 's/\(QDateTime.*\)timezone/\1local-\>tm_gmtoff/g'
-REPATCHFILES=	configure ${PORTNAME}/Makefile.in ${PORTNAME}/jabbercore.cpp
-TMPSUFFIX=	.temp
+		--x-libraries=${X11BASE}/lib \
+		--with-qt-libraries=${QT_PREFIX}/lib
 
 pre-patch:
-.for file in ${REPATCHFILES}
-	${REPATCH} ${REPATCHSUBST} ${file} > ${file}${TMPSUFFIX} && \
-		${CAT} ${file}${TMPSUFFIX} > ${file}
+	${REINPLACE_CMD} -e 's/-lqt/-lqt-mt '${PTHREAD_LIBS}'/' \
+		-e 's/libqt\.\*/libqt-mt.*/' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/\(LDADD.*\)-ldl/\1/' \
+		-e 's/-lqt/'${PTHREAD_LIBS}'/' ${WRKSRC}/konverse/Makefile.in
+	${REINPLACE_CMD} -e 's/\(QDateTime.*\)timezone/\1local-\>tm_gmtoff/g' \
+		${WRKSRC}/konverse/jabbercore.cpp
+.for f in konverse/rostertree.h konverse/dlgchat.h
+	${REINPLACE_CMD} -e 's/ktmainwindow\.h/kmainwindow.h/g' ${WRKSRC}/${f}
 .endfor
 
 .include <bsd.port.mk>
