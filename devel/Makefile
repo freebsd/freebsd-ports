@@ -36,9 +36,11 @@
     SUBDIR += atk
     SUBDIR += atlas
     SUBDIR += autoconf
+    SUBDIR += autoconf213
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
+    SUBDIR += automake14
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
