@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.8 1997/07/13 18:49:22 max Exp $
+# $Id: Makefile,v 1.9 1997/07/17 15:12:48 max Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -46,6 +46,14 @@ DISTFILES+=	m3-fbsd-boot-3.6.tar.gz
 have_gcc!=	/bin/sh scripts/check_files files/T.gcc m3cc /usr/src/contrib
 .if empty(have_gcc)
 DISTFILES+=	m3-fbsd-gcc-3.6.tar.gz
+.endif
+
+# Support building on systems with or without X11 installed.  The port
+# only supports X11R6 in the standard location, so we don't bother using
+# the X11BASE macro.  It's not defined yet at this point in the Makefile
+# anyway.
+.if !exists(/usr/X11R6/lib/libX11.a)
+PLIST=		${PKGDIR}/PLIST.noX11
 .endif
 
 # Startup script, run at boot time
@@ -116,10 +124,10 @@ do-install:
 	@echo "Installing shared libraries"
 	@cd ${temp_prefix}; \
 	    umask 022; \
-	    grep '^lib/m3/' ${PKGDIR}/PLIST | \
+	    grep '^lib/m3/' ${PLIST} | \
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
-	    grep '^lib/m3/' ${PKGDIR}/PLIST | xargs chmod go=u-w; \
+	    grep '^lib/m3/' ${PLIST} | xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
 	    find -X lib/m3 -type d | xargs chmod 755
 	@echo "Installing copyright notice"

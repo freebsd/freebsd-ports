@@ -12,7 +12,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
      local link = format ("%s%s%s", dest, SL, src)
      >> M3SHIP_FILE in
 --- m3/m3build/templates/FreeBSD2.orig	Thu Jun 20 12:17:07 1996
-+++ m3/m3build/templates/FreeBSD2	Fri Oct 25 13:47:16 1996
++++ m3/m3build/templates/FreeBSD2	Sat Jun  6 10:39:25 1998
 @@ -8,8 +8,9 @@
  %      Modified On Thu Apr  8 13:45:49 PDT 1993 by muller
  %
@@ -71,7 +71,20 @@ Update the m3build templates for FreeBSD-2.1 and later.
  end
  
  readonly proc import_DECPEX() is
-@@ -128,9 +138,9 @@
+@@ -114,8 +124,10 @@
+ readonly proc import_TCP() is
+ end
+ 
+-readonly PLATFORM_SUPPORTS_X      = "TRUE"
+-readonly PLATFORM_SUPPORTS_MOTIF  = "TRUE"
++readonly PLATFORM_SUPPORTS_X      = (not stale ("/usr/X11R6/lib/libX11.a",
++                                                "/usr/X11R6/lib/libX11.a"))
++readonly PLATFORM_SUPPORTS_MOTIF  = (not stale ("/usr/X11R6/lib/libXm.a",
++                                                "/usr/X11R6/lib/libXm.a"))
+ readonly PLATFORM_SUPPORTS_DECPEX = ""
+ readonly PLATFORM_SUPPORTS_OPENGL = ""
+ 
+@@ -128,9 +140,9 @@
  % entire function.  Note, the distributed code assumes gnuemacs version 19
  % or later.
  
@@ -84,7 +97,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  
  %---------------------------------------------------- C compiler and linker ---
  % The following definitions are used to compile and link C modules.
-@@ -142,33 +152,27 @@
+@@ -142,33 +154,27 @@
  % The actual definitions must be kept on one line due to finicky details
  % of the bootstrap process.
  
@@ -129,7 +142,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  
  %------------------------------------------------------------- GNU variants ---
  % The two large pieces of GNU software used by the Modula-3 system
-@@ -179,9 +183,9 @@
+@@ -179,9 +185,9 @@
  % To use the GNU defaults for CC and CFLAGS, specify "*".
  %
  
@@ -142,7 +155,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  
  %-------------------------------------------------------- Modula-3 compiler ---
  % The syntax for the values passed to most of the M3_CONFIG options is
-@@ -192,7 +196,8 @@
+@@ -192,7 +198,8 @@
  M3 = LIB_USE & "/m3"
  
  % What are the standard flags?
@@ -152,7 +165,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  
  M3_CONFIG = [
     "-Y1" & _pack_args (CC),
-@@ -201,11 +206,11 @@
+@@ -201,11 +208,11 @@
     "-Y4" & _pack_args (RANLIB),
     "-Y7" & _pack_args (ASM),
  
@@ -167,7 +180,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  
     "-z3" & LIB_USE & SL & "report_coverage.o",
     % --- library linked in programs compiled with "-Z" coverage option
-@@ -248,7 +253,7 @@
+@@ -248,7 +255,7 @@
     % passes in a file and then deletes the file, unless "-keep" or
     % "-verbose" is specified.
  
@@ -176,7 +189,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
     % --- Set the value of "-zK" to "1" if you want the m3 driver to
     %     supply -Bdynamic/-Bstatic options to the linker, "0" otherwise.
  
-@@ -263,9 +268,9 @@
+@@ -263,9 +270,9 @@
  
  proc build_standalone() is
     % --- reset the linker to avoid shared libraries.
@@ -188,7 +201,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
  end
  
  proc build_shared() is
-@@ -282,7 +287,7 @@
+@@ -282,7 +289,7 @@
  
  proc after_library_hooks(x) is
    local lib_a  = format ("lib%s.a", x)
@@ -197,7 +210,7 @@ Update the m3build templates for FreeBSD-2.1 and later.
    local dest = format ("%s%s%s%s%s", PKG_INSTALL, SL, BUILD_PACKAGE,
                                                        SL, BUILD_DIR)
  
-@@ -291,7 +296,7 @@
+@@ -291,7 +298,7 @@
        write ("missing ", lib_a, ": not building ", lib_so, CR)
      else
        if stale (lib_so, lib_a)
