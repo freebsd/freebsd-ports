@@ -57,7 +57,7 @@ PLIST_SUB+=	WANT_RADIUS="@comment "
 .endif
 
 .if defined(WANT_MYSQL)
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 PLIST_SUB+=	WANT_MYSQL=""
 CONFIGURE_ARGS+=--with-mysqllibdir=${LOCALBASE}/lib/mysql
 .else
