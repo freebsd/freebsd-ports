@@ -1,0 +1,74 @@
+# This patch was originally sent to the ION mailing list by:
+# Alejandro Forero Cuervo <bachue@bachue.com>
+
+diff -Naur ChangeLog.orig ChangeLog
+--- ChangeLog.orig	Tue Feb  5 23:46:01 2002
++++ ChangeLog	Sat Feb  9 17:19:06 2002
+@@ -1,3 +1,6 @@
++2002-02-09:
++  * Implemented "frame" functionality for winprops (Alejandro Forero
++    <bachue@bachue.com>).
+ 
+ 2002-02-06:
+   * Added 'split_top "dir"' command.
+diff -Naur src.orig/clientwin.c src/clientwin.c
+--- src.orig/clientwin.c	Wed Feb  6 18:41:22 2002
++++ src/clientwin.c	Sat Feb  9 17:09:22 2002
+@@ -180,7 +180,10 @@
+ 		}
+ 	}
+ 	
+-	get_integer_property(win, wglobal.atom_frame_id, &frame_id);
++	if (props!=NULL && props->frame!=0)
++		frame_id=props->frame;
++	else
++		get_integer_property(win, wglobal.atom_frame_id, &frame_id);
+ 	
+ 	/* Get client to place this window in */
+ 	if(client==NULL){
+diff -Naur src.orig/readconfig.c src/readconfig.c
+--- src.orig/readconfig.c	Wed Feb  6 18:38:16 2002
++++ src/readconfig.c	Sat Feb  9 17:24:01 2002
+@@ -674,6 +674,14 @@
+ 	return TRUE;
+ }
+ 
++
++static bool opt_winprop_frame(Tokenizer *tokz, int n, Token *toks)
++{
++	tmp_winprop->frame=TOK_LONG_VAL(&(toks[1]));
++	return TRUE;
++}
++
++
+ static bool opt_winprop_transient_mode(Tokenizer *tokz, int n, Token *toks)
+ {
+ 	char *mod=TOK_IDENT_VAL(&(toks[1]));
+@@ -721,6 +729,7 @@
+ 	tmp_winprop->data=wclass=TOK_TAKE_STRING_VAL(&(toks[1]));
+ 	tmp_winprop->switchto=-1;
+ 	tmp_winprop->stubborn=0;
++	tmp_winprop->frame=0;
+ 	tmp_winprop->transient_mode=TRANSIENT_MODE_NORMAL;
+ 
+ 	winstance=strchr(wclass, '.');
+@@ -799,6 +808,7 @@
+ 	{"switchto", "b", opt_winprop_switchto, NULL},
+ 	{"stubborn", "b", opt_winprop_stubborn, NULL},
+ 	{"transient_mode", "i", opt_winprop_transient_mode, NULL},
++	{"frame", "l", opt_winprop_frame, NULL},
+ 	
+ 	{"#end", NULL, end_winprop, NULL},
+ 	/*{"#cancel", NULL, cancel_winprop, NULL},*/
+diff -Naur src.orig/winprops.h src/winprops.h
+--- src.orig/winprops.h	Mon Mar  5 16:16:06 2001
++++ src/winprops.h	Sat Feb  9 17:09:22 2002
+@@ -30,6 +30,7 @@
+ 	int transient_mode;
+ 	int max_w, max_h;
+ 	int aspect_w, aspect_h;
++	int frame;
+ 	
+ 	WWinProp *next, *prev;
+ };
+

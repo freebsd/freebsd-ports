@@ -1,5 +1,5 @@
---- system.mk.orig	Mon Mar  5 09:16:01 2001
-+++ system.mk	Thu Mar 29 11:37:26 2001
+--- system.mk.orig	Sat Jan 19 18:15:13 2002
++++ system.mk	Sat Sep  7 15:53:15 2002
 @@ -7,13 +7,13 @@
  ## Installation paths
  ##
@@ -33,8 +33,12 @@
  
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
-@@ -86,8 +86,8 @@
- 	-Wparentheses -pedantic-errors -Wuninitialized
+@@ -83,11 +83,11 @@
+ # have unused variables.
+ WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
+ 	-Wtrigraphs -Wformat -Wchar-subscripts \
+-	-Wparentheses -pedantic-errors -Wuninitialized
++	-Wparentheses -Wuninitialized
  
  
 -CFLAGS=-g -O2 $(WARN) $(DEFINES) $(INCLUDES) $(EXTRA_INCLUDES)
