@@ -361,7 +361,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	http://archive.progeny.com/GNOME/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
 	http://farbror.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
@@ -387,11 +386,9 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
 	http://ftp.rediris.es/sites/ftp.gnu.org/pub/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/linux/gnu/gnusrc/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_GNUPG+= 	\
-	ftp://gd.tuwien.ac.at/privacy/gnupg/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	http://ftp.sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
