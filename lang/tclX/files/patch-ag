@@ -1,0 +1,18 @@
+--- ../tcl/unix/tclXAppInit.c.orig	Sat Feb 19 19:05:30 2005
++++ ../tcl/unix/tclXAppInit.c	Sat Feb 19 19:05:42 2005
+@@ -19,15 +19,6 @@
+ 
+ #include "tclExtend.h"
+ 
+-/*
+- * The following variable is a special hack that insures the tcl
+- * version of matherr() is used when linking against shared libraries.
+- * Even if matherr is not used on this system, there is a dummy version
+- * in libtcl.
+- */
+-extern int matherr ();
+-int (*tclDummyMathPtr)() = matherr;
+-
+ 
+ /*-----------------------------------------------------------------------------
+  * main --

@@ -1,0 +1,17 @@
+--- bindings/Tcl/tclAppInit.c.orig	Sat Feb 19 19:14:05 2005
++++ bindings/Tcl/tclAppInit.c	Sat Feb 19 19:14:16 2005
+@@ -15,14 +15,6 @@
+ 
+ #include "tcl.h"
+ 
+-/*
+- * The following variable is a special hack that is needed in order for
+- * Sun shared libraries to be used for Tcl.
+- */
+-
+-extern int matherr();
+-int *tclDummyMathPtr = (int *) matherr;
+-
+ EXTERN int		Pitcl_Init _ANSI_ARGS_((Tcl_Interp *interp));
+ 
+ #ifdef TCL_TEST
