@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	detex
-PORTVERSION=	2.6
+PORTVERSION=	2.7
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.purdue.edu/pub/trinkle/
+MASTER_SITES=	http://www.cs.purdue.edu/homes/trinkle/detex/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,12 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	#empty
+
 NO_WRKSUBDIR=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAN1=		detex.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/detex ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1}l ${PREFIX}/man/man1/${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${MAN1}l ${MANPREFIX}/man/man1/${MAN1}
 
 
 .include <bsd.port.mk>
