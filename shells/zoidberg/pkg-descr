@@ -1,0 +1,7 @@
+A modular Perl shell written, configured, and operated entirely in Perl. It
+aspires to be a fully operational login shell with all the features one
+normally expects. But it also gives direct access to Perl objects and data
+structures from the command line, and allows you to run Perl code within the
+scope of your command line.
+
+WWW: http://zoidberg.student.utwente.nl/

@@ -28,6 +28,7 @@
     SUBDIR += v7sh
     SUBDIR += vshnu
     SUBDIR += wapsh
+    SUBDIR += zoidberg
     SUBDIR += zsh
     SUBDIR += zsh+euc_hack
     SUBDIR += zsh-devel
