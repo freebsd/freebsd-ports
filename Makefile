@@ -75,7 +75,7 @@ ${.CURDIR}/${INDEXFILE}:
 	@sed -e 's./..g' ${.CURDIR}/${INDEXFILE} | \
 		sort -t '|' +1 -2 | \
 		sed -e 's../.g' > ${.CURDIR}/${INDEXFILE}.tmp; \
-	mv -f ${.CURDIR}/INDEX.tmp ${.CURDIR}/${INDEXFILE}
+	mv -f ${.CURDIR}/${INDEXFILE}.tmp ${.CURDIR}/${INDEXFILE}
 .endif
 	@echo " Done."
 
