@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
@@ -56,6 +55,8 @@ PLIST_SUB+=	ESOUND="@comment " GNOMEDESKTOP="@comment "
 
 .if ${XFREE86_VERSION} < 4 || defined(WITHOUT_XFT)
 CONFIGURE_ARGS+=	--enable-corefonts --disable-xfreetype
+.else
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .endif
 
 post-patch:
