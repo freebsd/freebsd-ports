@@ -8,6 +8,7 @@ bin/smbcacls
 bin/smbclient
 bin/smbcontrol
 bin/smbpasswd
+bin/smbspool
 bin/smbstatus
 bin/smbtar
 bin/tdbbackup
