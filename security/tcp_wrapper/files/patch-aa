@@ -1,5 +1,5 @@
 *** Makefile.orig	Fri Mar 21 12:27:21 1997
---- Makefile	Mon Sep 14 22:41:29 1998
+--- Makefile	Tue Sep 15 09:55:40 1998
 ***************
 *** 47,53 ****
   #REAL_DAEMON_DIR=/usr/sbin
@@ -252,13 +252,17 @@
   
   shar:	$(KIT)
   	@shar $(KIT)
---- 731,762 ----
+--- 731,766 ----
   	$(AR) $(ARFLAGS) $(LIB) $(LIB_OBJ)
   	-$(RANLIB) $(LIB)
   
 ! $(SLIB): $(LIB_OBJ:S/o$/so/g) shdata.so
 ! 	rm -f $(SLIB)
+! .if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
 ! 	$(CC) -o $(SLIB) -shared -Wl,-soname,$(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
+! .else
+! 	ld -Bshareable -o $(SLIB) $(LIB_OBJ:S/o$/so/g) shdata.so
+! .endif
 ! 	ln -sf $(SLIB) `echo $(SLIB) | sed 's/\.so.*$$/.so/'`
 ! 
 ! tcpd:   tcpd.o $(SLIB)
@@ -294,7 +298,7 @@
   
   tidy:	clean
   	chmod -R a+r .
---- 772,778 ----
+--- 776,782 ----
   
   clean:
   	rm -f tcpd miscd safe_finger tcpdmatch tcpdchk try-from *.[oa] core \
