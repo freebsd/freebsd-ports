@@ -7,7 +7,7 @@
 
 PORTNAME=	qmail
 PORTVERSION?= 	${QMAIL_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
@@ -26,6 +26,13 @@ PATCH_SITES+=	http://www.ckdhr.com/ckd/:dns
 PATCHFILES+=	qmail-103.patch:dns
 PATCH_DIST_STRIP+=	-p1
 .endif # MAIN_QMAIL_PORT_DNS_PATCH_BARRIER
+
+.if !defined(MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER)
+# David Phillips noticed that sendmail's -f option sets a default
+# From: header, and so should qmail's emulation.
+PATCH_SITES+=	http://david.acz.org/software/:sendmail_flagf
+PATCHFILES+=	sendmail-flagf.patch:sendmail_flagf
+.endif # MAIN_QMAIL_PORT_SENDMAIL_F_PATCH_BARRIER
 
 PATCH_SITES+=	${MASTER_SITE_LOCAL:S/$/:local,dns,ldap,mysql,tls/}
 PATCH_SITE_SUBDIR+=	lioux/:local,dns,ldap,mysql,tls
