@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	packit
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.0c
 CATEGORIES=	net
-MASTER_SITES=	http://packit.sourceforge.net/
-DISTNAME=	${PORTNAME}-latest
+MASTER_SITES=	http://packit.sourceforge.net/downloads/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ponomarew@oberon.net
@@ -18,15 +17,18 @@ COMMENT=	Network auditing tool
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 MAN8=		packit.8
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
+		LIBS="-L${LOCALBASE}/lib"
+
+.if defined(WITHOUT_CAPTURE)
+CONFIGURE_ARGS+=	--without-capture
+.endif
+.if defined(WITHOUT_INJECTION)
+CONFIGURE_ARGS+=	--without-injection
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
