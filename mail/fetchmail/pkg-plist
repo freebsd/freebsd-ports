@@ -1,2 +1,5 @@
 bin/fetchmail
 man/man1/fetchmail.1.gz
+share/doc/fetchmail/FAQ
+share/doc/fetchmail/fetchmail.FAQ.html
+share/doc/fetchmail/sample.rcfile
