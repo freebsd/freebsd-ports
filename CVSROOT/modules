@@ -5223,6 +5223,7 @@ py-opengl	ports/graphics/py-opengl
 py-optik	ports/devel/py-optik
 py-orbit	ports/devel/py-orbit
 py-paint	ports/graphics/py-paint
+py-pcap	ports/net/py-pcap
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-qt		ports/x11-toolkits/py-qt
 py-reportlab	ports/print/py-reportlab
