@@ -1,32 +1,32 @@
 bin/ltris
-share/ltris/figures
-share/ltris/gfx/back0.bmp
-share/ltris/gfx/back1.bmp
-share/ltris/gfx/back2.bmp
-share/ltris/gfx/back3.bmp
-share/ltris/gfx/back4.bmp
-share/ltris/gfx/back5.bmp
-share/ltris/gfx/balloon.bmp
-share/ltris/gfx/balloon_peek.bmp
-share/ltris/gfx/blocks.bmp
-share/ltris/gfx/f_small_white.bmp
-share/ltris/gfx/f_small_yellow.bmp
-share/ltris/gfx/f_tiny_black.bmp
-share/ltris/gfx/f_white.bmp
-share/ltris/gfx/f_yellow.bmp
-share/ltris/gfx/logo.bmp
-share/ltris/gfx/menuback.bmp
-share/ltris/gfx/quest.bmp
-share/ltris/sounds/click.wav
-share/ltris/sounds/excellent.wav
-share/ltris/sounds/explosion.wav
-share/ltris/sounds/leftright.wav
-share/ltris/sounds/motion.wav
-share/ltris/sounds/nextlevel.wav
-share/ltris/sounds/stop.wav
-@dirrm share/ltris/sounds
-@dirrm share/ltris/gfx
-@dirrm share/ltris
+%%DATADIR%%/figures
+%%DATADIR%%/gfx/back0.bmp
+%%DATADIR%%/gfx/back1.bmp
+%%DATADIR%%/gfx/back2.bmp
+%%DATADIR%%/gfx/back3.bmp
+%%DATADIR%%/gfx/back4.bmp
+%%DATADIR%%/gfx/back5.bmp
+%%DATADIR%%/gfx/balloon.bmp
+%%DATADIR%%/gfx/balloon_peek.bmp
+%%DATADIR%%/gfx/blocks.bmp
+%%DATADIR%%/gfx/f_small_white.bmp
+%%DATADIR%%/gfx/f_small_yellow.bmp
+%%DATADIR%%/gfx/f_tiny_black.bmp
+%%DATADIR%%/gfx/f_white.bmp
+%%DATADIR%%/gfx/f_yellow.bmp
+%%DATADIR%%/gfx/logo.bmp
+%%DATADIR%%/gfx/menuback.bmp
+%%DATADIR%%/gfx/quest.bmp
+%%DATADIR%%/sounds/click.wav
+%%DATADIR%%/sounds/excellent.wav
+%%DATADIR%%/sounds/explosion.wav
+%%DATADIR%%/sounds/leftright.wav
+%%DATADIR%%/sounds/motion.wav
+%%DATADIR%%/sounds/nextlevel.wav
+%%DATADIR%%/sounds/stop.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
 @cwd /var/games
 ltris/ltris.hscr
 @dirrm ltris
