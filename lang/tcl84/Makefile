@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.4a3
-PORTREVISION=	1
+PORTVERSION=	8.4a4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 
 NO_LATEST_LINK=	yes
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
@@ -40,14 +39,15 @@ MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	DetachPids.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 DumpActiveMemory.3 \
 	Encoding.3 Eval.3 Environment.3 Exit.3 ExprLong.3 ExprLongObj.3 \
 	FileSystem.3 FindExec.3 GetCwd.3 GetHostName.3 GetIndex.3 GetInt.3 \
-	GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 Init.3 InitStubs.3 \
-	IntObj.3 Interp.3 LinkVar.3 ListObj.3 Notifier.3 Macintosh.3 Object.3 \
-	ObjectType.3 OpenFileChnl.3 OpenTcp.3 Panic.3 ParseCmd.3 PkgRequire.3 \
-	Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 RegExp.3 SaveResult.3 \
-	SetErrno.3 SetRecLmt.3 SetResult.3 SetVar.3 Signal.3 Sleep.3 \
-	SourceRCFile.3 SplitList.3 SplitPath.3 StaticPkg.3 StrMatch.3 \
-	StringObj.3 SubstObj.3 TCL_MEM_DEBUG.3 Tcl_Main.3 Thread.3 ToUpper.3 \
-	TraceVar.3 Translate.3 UniCharIsAlpha.3 UpVar.3 Utf.3 WrongNumArgs.3
+	GetTime.3 GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 Init.3 \
+	InitStubs.3 IntObj.3 Interp.3 LinkVar.3 ListObj.3 Notifier.3 \
+	Macintosh.3 Object.3 ObjectType.3 OpenFileChnl.3 OpenTcp.3 Panic.3 \
+	ParseCmd.3 PkgRequire.3 Preserve.3 PrintDbl.3 RecEvalObj.3 \
+	RecordEval.3 RegExp.3 SaveResult.3 SetErrno.3 SetRecLmt.3 SetResult.3 \
+	SetVar.3 Signal.3 Sleep.3 SourceRCFile.3 SplitList.3 SplitPath.3 \
+	StdChannels.3 StaticPkg.3 StrMatch.3 StringObj.3 SubstObj.3 \
+	TCL_MEM_DEBUG.3 Tcl_Main.3 Thread.3 ToUpper.3 TraceVar.3 Translate.3 \
+	UniCharIsAlpha.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	catch.n cd.n clock.n close.n concat.n continue.n dde.n encoding.n \
@@ -55,13 +55,13 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	fcopy.n file.n fileevent.n filename.n flush.n for.n foreach.n \
 	format.n gets.n glob.n global.n history.n http.n if.n incr.n info.n \
 	interp.n join.n lappend.n library.n lindex.n linsert.n list.n \
-	llength.n load.n lrange.n lreplace.n lsearch.n lsort.n memory.n \
-	msgcat.n namespace.n open.n package.n packagens.n pid.n pkgMkIndex.n \
-	proc.n puts.n pwd.n re_syntax.n read.n regexp.n registry.n regsub.n \
-	rename.n resource.n return.n safe.n scan.n seek.n set.n socket.n \
-	source.n split.n string.n subst.n switch.n tcltest.n tclvars.n tell.n \
-	time.n trace.n unknown.n unset.n update.n uplevel.n upvar.n \
-	variable.n vwait.n while.n
+	llength.n load.n lrange.n lreplace.n lsearch.n lset.n lsort.n \
+	memory.n  msgcat.n namespace.n open.n package.n packagens.n pid.n \
+	pkgMkIndex.n proc.n puts.n pwd.n re_syntax.n read.n regexp.n \
+	registry.n regsub.n rename.n resource.n return.n safe.n scan.n seek.n \
+	set.n socket.n source.n split.n string.n subst.n switch.n tcltest.n \
+	tclvars.n tell.n time.n trace.n unknown.n unset.n update.n uplevel.n \
+	upvar.n variable.n vwait.n while.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	Access.3 Tcl_Access.3 \
@@ -78,6 +78,11 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	Alloc.3 Tcl_Realloc.3 \
 	Alloc.3 Tcl_AttemptAlloc.3 \
 	Alloc.3 Tcl_AttemptRealloc.3 \
+	Alloc.3 ckalloc.3 \
+	Alloc.3 ckfree.3 \
+	Alloc.3 ckrealloc.3 \
+	Alloc.3 attemptckalloc.3 \
+	Alloc.3 attemptckrealloc.3 \
 	AllowExc.3 Tcl_AllowExceptions.3 \
 	AppInit.3 Tcl_AppInit.3 \
 	AssocData.3 Tcl_GetAssocData.3 \
@@ -102,6 +107,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	ChnlStack.3 Tcl_StackChannel.3 \
 	ChnlStack.3 Tcl_UnstackChannel.3 \
 	ChnlStack.3 Tcl_GetStackedChannel.3 \
+	ChnlStack.3 Tcl_GetTopChannel.3 \
 	CmdCmplt.3 Tcl_CommandComplete.3 \
 	Concat.3 Tcl_Concat.3 \
 	CrtChannel.3 Tcl_CreateChannel.3 \
@@ -135,6 +141,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtChannel.3 Tcl_IsChannelExisting.3 \
 	CrtChannel.3 Tcl_ClearChannelHandlers.3 \
 	CrtChannel.3 Tcl_GetChannelThread.3 \
+	CrtChannel.3 Tcl_ChannelBuffered.3 \
 	CrtChnlHdlr.3 Tcl_CreateChannelHandler.3 \
 	CrtChnlHdlr.3 Tcl_DeleteChannelHandler.3 \
 	CrtCloseHdlr.3 Tcl_CreateCloseHandler.3 \
@@ -152,7 +159,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtObjCmd.3 Tcl_DeleteCommand.3 \
 	CrtObjCmd.3 Tcl_DeleteCommandFromToken.3 \
 	CrtObjCmd.3 Tcl_GetCommandInfo.3 \
+	CrtObjCmd.3 Tcl_GetCommandInfoFromToken.3 \
 	CrtObjCmd.3 Tcl_SetCommandInfo.3 \
+	CrtObjCmd.3 Tcl_SetCommandInfoFromToken.3 \
 	CrtObjCmd.3 Tcl_GetCommandName.3 \
 	CrtSlave.3 Tcl_IsSafe.3 \
 	CrtSlave.3 Tcl_MakeSafe.3 \
@@ -169,6 +178,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	CrtTimerHdlr.3 Tcl_CreateTimerHandler.3 \
 	CrtTimerHdlr.3 Tcl_DeleteTimerHandler.3 \
 	CrtTrace.3 Tcl_CreateTrace.3 \
+	CrtTrace.3 Tcl_CreateObjTrace.3 \
 	CrtTrace.3 Tcl_DeleteTrace.3 \
 	DString.3 Tcl_DStringInit.3 \
 	DString.3 Tcl_DStringAppend.3 \
@@ -178,6 +188,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	DString.3 Tcl_DStringLength.3 \
 	DString.3 Tcl_DStringValue.3 \
 	DString.3 Tcl_DStringSetLength.3 \
+	DString.3 Tcl_DStringTrunc.3 \
 	DString.3 Tcl_DStringFree.3 \
 	DString.3 Tcl_DStringResult.3 \
 	DString.3 Tcl_DStringGetResult.3 \
@@ -236,6 +247,9 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	FileSystem.3 Tcl_FSRegister.3 \
 	FileSystem.3 Tcl_FSUnregister.3 \
 	FileSystem.3 Tcl_FSData.3 \
+	FileSystem.3 Tcl_FSMountsChanged.3 \
+	FileSystem.3 Tcl_FSGetFileSystemForPath.3 \
+	FileSystem.3 Tcl_FSGetPathType.3 \
 	FileSystem.3 Tcl_FSCopyFile.3 \
 	FileSystem.3 Tcl_FSCopyDirectory.3 \
 	FileSystem.3 Tcl_FSCreateDirectory.3 \
@@ -246,7 +260,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	FileSystem.3 Tcl_FSEvalFile.3 \
 	FileSystem.3 Tcl_FSLoadFile.3 \
 	FileSystem.3 Tcl_FSMatchInDirectory.3 \
-	FileSystem.3 Tcl_FSReadlink.3 \
+	FileSystem.3 Tcl_FSLink.3 \
 	FileSystem.3 Tcl_FSLstat.3 \
 	FileSystem.3 Tcl_FSUtime.3 \
 	FileSystem.3 Tcl_FSFileAttrsGet.3 \
@@ -266,9 +280,11 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	FileSystem.3 Tcl_FSConvertToPathType.3 \
 	FileSystem.3 Tcl_FSGetInternalRep.3 \
 	FileSystem.3 Tcl_FSGetTranslatedPath.3 \
+	FileSystem.3 Tcl_FSGetTranslatedStringPath.3 \
 	FileSystem.3 Tcl_FSNewNativePath.3 \
 	FileSystem.3 Tcl_FSGetNativePath.3 \
 	FileSystem.3 Tcl_FSFileSystemInfo.3 \
+	FileSystem.3 Tcl_AllocStatBuf.3 \
 	FindExec.3 Tcl_FindExecutable.3 \
 	FindExec.3 Tcl_GetNameOfExecutable.3 \
 	GetCwd.3 Tcl_GetCwd.3 \
@@ -282,6 +298,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	GetOpnFl.3 Tcl_GetOpenFile.3 \
 	GetStdChan.3 Tcl_GetStdChannel.3 \
 	GetStdChan.3 Tcl_SetStdChannel.3 \
+	GetTime.3 Tcl_GetTime.3 \
 	GetVersion.3 Tcl_GetVersion.3 \
 	Hash.3 Tcl_InitHashTable.3 \
 	Hash.3 Tcl_InitCustomHashTable.3 \
@@ -300,10 +317,13 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	InitStubs.3 Tcl_InitStubs.3 \
 	IntObj.3 Tcl_NewIntObj.3 \
 	IntObj.3 Tcl_NewLongObj.3 \
+	IntObj.3 Tcl_NewWideIntObj.3 \
 	IntObj.3 Tcl_SetIntObj.3 \
 	IntObj.3 Tcl_SetLongObj.3 \
+	IntObj.3 Tcl_SetWideIntObj.3 \
 	IntObj.3 Tcl_GetIntFromObj.3 \
 	IntObj.3 Tcl_GetLongFromObj.3 \
+	IntObj.3 Tcl_GetWideIntFromObj.3 \
 	Interp.3 Tcl_Interp.3 \
 	LinkVar.3 Tcl_LinkVar.3 \
 	LinkVar.3 Tcl_UnlinkVar.3 \
@@ -376,7 +396,10 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	OpenFileChnl.3 Tcl_Eof.3 \
 	OpenFileChnl.3 Tcl_InputBlocked.3 \
 	OpenFileChnl.3 Tcl_InputBuffered.3 \
+	OpenFileChnl.3 Tcl_OutputBuffered.3 \
 	OpenFileChnl.3 Tcl_Ungets.3 \
+	OpenFileChnl.3 Tcl_ReadRaw.3 \
+	OpenFileChnl.3 Tcl_WriteRaw.3 \
 	OpenTcp.3 Tcl_OpenTcpClient.3 \
 	OpenTcp.3 Tcl_MakeTcpClientChannel.3 \
 	OpenTcp.3 Tcl_OpenTcpServer.3 \
@@ -393,6 +416,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	ParseCmd.3 Tcl_ParseVar.3 \
 	ParseCmd.3 Tcl_FreeParse.3 \
 	ParseCmd.3 Tcl_EvalTokens.3 \
+	ParseCmd.3 Tcl_EvalTokensStandard.3 \
 	PkgRequire.3 Tcl_PkgRequire.3 \
 	PkgRequire.3 Tcl_PkgRequireEx.3 \
 	PkgRequire.3 Tcl_PkgPresent.3 \
@@ -454,6 +478,7 @@ MLINKS=	Access.3 Tcl_Access.3 \
 	SplitPath.3 Tcl_JoinPath.3 \
 	SplitPath.3 Tcl_GetPathType.3 \
 	StaticPkg.3 Tcl_StaticPackage.3 \
+	StdChannels.3 Tcl_StandardChannels.3 \
 	StrMatch.3 Tcl_StringMatch.3 \
 	StrMatch.3 Tcl_StringCaseMatch.3 \
 	StringObj.3 Tcl_NewStringObj.3 \
