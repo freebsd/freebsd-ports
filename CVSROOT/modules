@@ -8586,7 +8586,6 @@ ports_openssl	ports/security/openssl
 ports_palm	ports/palm
 ports_pam_krb5	ports/security/pam_krb5
 ports_patch	ports/devel/patch
-ports_picobsd	ports/picobsd
 ports_pkg_install	ports/sysutils/pkg_install
 ports_pkg_install-devel	ports/sysutils/pkg_install-devel
 ports_polish	ports/polish
@@ -10229,7 +10228,6 @@ ssed		ports/editors/ssed
 ssh		ports/security/ssh
 ssh-gui		ports/security/ssh-gui
 ssh-multiadd	ports/security/ssh-multiadd
-ssh-picobsd	ports/picobsd/ssh-picobsd
 ssh2		ports/security/ssh2
 ssh2-nox11	ports/security/ssh2-nox11
 ssh_askpass_gtk2	ports/security/ssh_askpass_gtk2
