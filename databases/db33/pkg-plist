@@ -13,13 +13,11 @@ bin/db_stat
 bin/db_upgrade
 bin/db_verify
 lib/libdb.so
-lib/libdb3.1.la
-lib/libdb3.1.so
 lib/libdb3.so
+lib/libdb3.so.1
 lib/libdb_cxx.so
-lib/libdb_cxx3.1.la
-lib/libdb_cxx3.1.so
 lib/libdb_cxx3.so
+lib/libdb_cxx3.so.1
 share/doc/db3/api_c/c_pindex.html
 share/doc/db3/api_c/pindex.src
 share/doc/db3/api_c/db_cursor.html
