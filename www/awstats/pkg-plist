@@ -1,44 +1,46 @@
-%%PORTDOCS%%share/doc/awstats/COPYING.TXT
-%%PORTDOCS%%share/doc/awstats/LICENSE.TXT
-%%PORTDOCS%%share/doc/awstats/awstats.htm
-%%PORTDOCS%%share/doc/awstats/awstats.pdf
-%%PORTDOCS%%share/doc/awstats/awstats.xml
-%%PORTDOCS%%share/doc/awstats/awstats_benchmark.html
-%%PORTDOCS%%share/doc/awstats/awstats_changelog.txt
-%%PORTDOCS%%share/doc/awstats/awstats_compare.html
-%%PORTDOCS%%share/doc/awstats/awstats_config.html
-%%PORTDOCS%%share/doc/awstats/awstats_faq.html
-%%PORTDOCS%%share/doc/awstats/awstats_glossary.html
-%%PORTDOCS%%share/doc/awstats/awstats_license.html
-%%PORTDOCS%%share/doc/awstats/awstats_security.html
-%%PORTDOCS%%share/doc/awstats/awstats_setup.html
-%%PORTDOCS%%share/doc/awstats/awstats_tools.html
-%%PORTDOCS%%share/doc/awstats/awstats_what.html
-%%PORTDOCS%%share/doc/awstats/images/awstats.ico
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo1.gif
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo1.png
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo2.gif
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo2.png
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo3.gif
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo3.png
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo4.gif
-%%PORTDOCS%%share/doc/awstats/images/awstats_logo4.png
-%%PORTDOCS%%share/doc/awstats/images/license_chart.png
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_1.jpg
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_1.png
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_2.png
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_3.gif
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_3.png
-%%PORTDOCS%%share/doc/awstats/images/screen_shot_4.png
-%%PORTDOCS%%share/doc/awstats/images/star.png
-%%PORTDOCS%%share/doc/awstats/index.html
-%%PORTDOCS%%share/doc/awstats/styles.css
 bin/awstats_buildstaticpages.pl
-bin/awstats_logresolvemerge.pl
 bin/awstats_updateall.pl
-www/cgi-bin/awstats.model.conf
-www/cgi-bin/awstats.pl
+bin/awstats_logresolvemerge.pl
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo2.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo3.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo4.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo5.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/license_chart.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/star.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen_shot_4.png
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.TXT
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.TXT
+%%PORTDOCS%%%%DOCSDIR%%/awstats.htm
+%%PORTDOCS%%%%DOCSDIR%%/awstats.pdf
+%%PORTDOCS%%%%DOCSDIR%%/awstats.xml
+%%PORTDOCS%%%%DOCSDIR%%/awstats_benchmark.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/awstats_compare.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_config.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_faq.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_license.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_security.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_setup.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_tools.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_what.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/styles.css
+www/cgi-bin/lang/awstats-al.txt
 www/cgi-bin/lang/awstats-ba.txt
+www/cgi-bin/lang/awstats-bg.txt
 www/cgi-bin/lang/awstats-br.txt
 www/cgi-bin/lang/awstats-cn.txt
 www/cgi-bin/lang/awstats-cz.txt
@@ -66,7 +68,9 @@ www/cgi-bin/lang/awstats-ru.txt
 www/cgi-bin/lang/awstats-se.txt
 www/cgi-bin/lang/awstats-sk.txt
 www/cgi-bin/lang/awstats-tr.txt
+www/cgi-bin/lang/awstats-tt-al.txt
 www/cgi-bin/lang/awstats-tt-ba.txt
+www/cgi-bin/lang/awstats-tt-bg.txt
 www/cgi-bin/lang/awstats-tt-cn.txt
 www/cgi-bin/lang/awstats-tt-cz.txt
 www/cgi-bin/lang/awstats-tt-de.txt
@@ -92,6 +96,7 @@ www/cgi-bin/lang/awstats-tt-tw.txt
 www/cgi-bin/lang/awstats-tt-ua.txt
 www/cgi-bin/lang/awstats-tw.txt
 www/cgi-bin/lang/awstats-ua.txt
+www/cgi-bin/lang/awstats-wlk.txt
 www/cgi-bin/lib/browsers.pm
 www/cgi-bin/lib/domains.pm
 www/cgi-bin/lib/operating_systems.pm
@@ -103,6 +108,8 @@ www/cgi-bin/plugins/graph3d.pm
 www/cgi-bin/plugins/hashfiles.pm
 www/cgi-bin/plugins/timehires.pm
 www/cgi-bin/plugins/timezone.pm
+www/cgi-bin/awstats.model.conf
+www/cgi-bin/awstats.pl
 www/icons/browser/adobe.png
 www/icons/browser/amaya.png
 www/icons/browser/da.png
@@ -224,6 +231,7 @@ www/icons/flags/eh.png
 www/icons/flags/en.png
 www/icons/flags/er.png
 www/icons/flags/es.png
+www/icons/flags/es_cat.png
 www/icons/flags/et.png
 www/icons/flags/fi.png
 www/icons/flags/fj.png
@@ -337,6 +345,7 @@ www/icons/flags/pg.png
 www/icons/flags/ph.png
 www/icons/flags/pk.png
 www/icons/flags/pl.png
+www/icons/flags/pr.png
 www/icons/flags/pro.png
 www/icons/flags/pt.png
 www/icons/flags/py.png
@@ -347,6 +356,7 @@ www/icons/flags/rw.png
 www/icons/flags/sa.png
 www/icons/flags/sb.png
 www/icons/flags/sc.png
+www/icons/flags/sd.png
 www/icons/flags/se.png
 www/icons/flags/sg.png
 www/icons/flags/si.png
@@ -387,6 +397,7 @@ www/icons/flags/vi.png
 www/icons/flags/vn.png
 www/icons/flags/vu.png
 www/icons/flags/wf.png
+www/icons/flags/wlk.png
 www/icons/flags/ws.png
 www/icons/flags/ye.png
 www/icons/flags/yt.png
@@ -405,6 +416,7 @@ www/icons/os/digital.png
 www/icons/os/dos.png
 www/icons/os/dreamcast.png
 www/icons/os/freebsd.png
+www/icons/os/gnu.png
 www/icons/os/hpux.png
 www/icons/os/ibm.png
 www/icons/os/irix.png
@@ -434,7 +446,6 @@ www/icons/os/winme.png
 www/icons/os/winnt.png
 www/icons/os/winxp.png
 www/icons/other/awstats_logo1.png
-www/icons/other/awstats_logo2.png
 www/icons/other/barrehe.png
 www/icons/other/barrehh.png
 www/icons/other/barrehk.png
@@ -446,15 +457,18 @@ www/icons/other/barrevp.png
 www/icons/other/barrevu.png
 www/icons/other/barrevv.png
 www/icons/other/page.png
-@dirrm www/icons/other
-@dirrm www/icons/os
-@dirrm www/icons/flags
-@dirrm www/icons/cpu
-@dirrm www/icons/clock
-@dirrm www/icons/browser
-@dirrm www/cgi-bin/lib
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/images
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrm www/cgi-bin/lang
+@dirrm www/cgi-bin/lib
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
-%%PORTDOCS%%@dirrm share/doc/awstats/images
-%%PORTDOCS%%@dirrm share/doc/awstats
+@dirrm www/cgi-bin
+@dirrm www/icons/browser
+@dirrm www/icons/clock
+@dirrm www/icons/cpu
+@dirrm www/icons/flags
+@dirrm www/icons/os
+@dirrm www/icons/other
+@dirrm www/icons
+@dirrm www

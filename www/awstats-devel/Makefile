@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	awstats
-PORTVERSION=	5.1
+PORTVERSION=	5.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
+MAINTAINER=	firewolf@lightningfire.net
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
