@@ -1,0 +1,9 @@
+bin/multisync
+include/multisync/multisync.h
+share/gnome/multisync/pixmaps/multisync.png
+share/gnome/multisync/pixmaps/multisync.xpm
+share/gnome/multisync/pixmaps/multisync-16.png
+share/gnome/multisync/pixmaps/multisync_small.png
+share/gnome/multisync/pixmaps/resync_small.png
+@dirrm share/gnome/multisync/pixmaps
+@dirrm include/multisync
