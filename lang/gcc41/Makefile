@@ -22,10 +22,15 @@ DISTFILES=	\
 .if defined(WITH_FORTRAN)
 DISTFILES+=	gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX}
 .endif
+
 MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 4.0
 
 LATEST_LINK?=	gcc40${PKGNAMESUFFIX}
+
+.if defined(WITH_FORTRAN)
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+.endif
 
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -61,6 +66,9 @@ CONFIGURE_ARGS=	--disable-nls \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
+.if defined(WITH_FORTRAN)
+CONFIGURE_ARGS+= --with-gmp=${LOCALBASE}
+.endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+=	--enable-shared
@@ -99,8 +107,6 @@ PLIST_SUB+=	LIBJAVA=""
 .endif
 
 .if defined(WITH_FORTRAN)
-LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=	--with-gmp=${LOCALBASE}
 MAN1+=	gfortran${SUFFIX}.1
 INFO+=	gfortran
 PLIST_SUB+=	FORTRAN=""
