@@ -4,7 +4,6 @@ bin/gdamdsp
 bin/gdamexternalrecorderhelper
 bin/gdamladspapluginscanner
 bin/gdamrtcat
-bin/gdamxmmsvishelper
 bin/gdam123
 bin/gdam-launcher
 bin/gdam-server
