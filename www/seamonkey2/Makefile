@@ -7,6 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.8.a4
+PORTREVISION=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -88,8 +89,9 @@ CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 
 ESD_LIB=	libesd.so.2
 FREETYPE_LIB=	libfreetype.so.9
-PKGCONFIG_FILES=mozilla-gtkmozembed mozilla-js mozilla-xpcom \
-		mozilla-nspr mozilla-nss mozilla-plugin
+PKGCONFIG_FILES=mozilla-gtkmozembed-devel mozilla-js-devel \
+		mozilla-xpcom-devel mozilla-nspr-devel \
+		mozilla-nss-devel mozilla-plugin-devel
 
 # JPI stuff.  List paths to Java Plug-ins here in the order to try.
 JPI_LIST?=\
