@@ -9,6 +9,8 @@ PORTNAME=	xemacs
 PORTVERSION=	20.4
 CATEGORIES=	chinese editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
+MASTER_SITES+=	ftp://ftp.tnt.uni-hannover.de/pub/editors/xemacs/20.4/ \
+		ftp://ftp.sunsite.org.uk/Mirrors/ftp.xemacs.org/pub/xemacs/%SUBDDIR%/
 MASTER_SITE_SUBDIR=	${DISTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
 
