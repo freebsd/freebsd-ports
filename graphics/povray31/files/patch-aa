@@ -3,7 +3,7 @@
 ***************
 *** 35,42 ****
   
-  #define POV_RAY_VERSION "3.1d"
+  #define POV_RAY_VERSION "3.1e"
   
 ! #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled by:"
 ! #define DISTRIBUTION_MESSAGE_2 "FILL IN NAME HERE........................."
@@ -12,7 +12,7 @@
   /* Number of help pages (numbered 0 to MAX_HELP_PAGE). */
 --- 35,42 ----
   
-  #define POV_RAY_VERSION "3.1d"
+  #define POV_RAY_VERSION "3.1e"
   
 ! #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled for"
 ! #define DISTRIBUTION_MESSAGE_2 "FreeBSD, http://www.freebsd.org/"
