@@ -62,12 +62,13 @@
     SUBDIR += gcc31
     SUBDIR += gcc32
     SUBDIR += gcc33
+    SUBDIR += gcc34
     SUBDIR += gcl
     SUBDIR += generic-haskell
     SUBDIR += gforth
     SUBDIR += ghc
-    SUBDIR += ghc6
     SUBDIR += ghc-doc
+    SUBDIR += ghc6
     SUBDIR += glibstdc++28
     SUBDIR += gnat
     SUBDIR += gnat-doc-html
