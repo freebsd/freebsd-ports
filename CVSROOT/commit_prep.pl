@@ -221,12 +221,6 @@ if ($directory =~ /^src\/release/) {
 if ($directory =~ /^src\/etc/) {
 	$check_id = 0;
 }
-$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
-if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
-	$check_id = 0;
-	print "CVS VERSION CHECK BYPASSED!\n";
-	system("ps -xww | mail -s 'version check override used' cvs $login");
-}
 #
 # Now check each file name passed in, except for dot files.  Dot files
 # are considered to be administrative files by this script.
