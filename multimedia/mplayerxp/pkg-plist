@@ -1,19 +1,40 @@
-bin/mplayer
-bin/mencoder
-%%GMPLAYER%%bin/gmplayer
-%%PORTDOCS%%share/doc/mplayer/bugreports.html
-%%PORTDOCS%%share/doc/mplayer/cd-dvd.html
-%%PORTDOCS%%share/doc/mplayer/codecs-in.html
-%%PORTDOCS%%share/doc/mplayer/codecs.html
-%%PORTDOCS%%share/doc/mplayer/documentation.html
-%%PORTDOCS%%share/doc/mplayer/encoding.html
-%%PORTDOCS%%share/doc/mplayer/faq.html
-%%PORTDOCS%%share/doc/mplayer/formats.html
-%%PORTDOCS%%share/doc/mplayer/skin-en.html
-%%PORTDOCS%%share/doc/mplayer/sound.html
-%%PORTDOCS%%share/doc/mplayer/video.html
-%%PORTDOCS%%share/doc/mplayer/users_against_developers.html
-share/mplayer/codecs.conf
-share/mplayer/example.conf
-share/mplayer/input.conf
-%%PORTDOCS%%@dirrm share/doc/mplayer
+bin/fibmap_mplayerxp
+bin/mplayerxp
+etc/mplayerxp/codecs.conf
+include/vidix/fourcc.h
+include/vidix/vidix.h
+include/vidix/vidixlib.h
+lib/libdha-0.2.so
+lib/libdha.so
+lib/libvidix.so
+lib/mplayerxp/codecs/libMP3.so
+lib/mplayerxp/codecs/liba52.so
+lib/mplayerxp/codecs/libac3-iec958.so
+lib/mplayerxp/codecs/libadpcm.so
+lib/mplayerxp/codecs/libcinepak.so
+lib/mplayerxp/codecs/libcyuv.so
+lib/mplayerxp/codecs/libfli.so
+lib/mplayerxp/codecs/libmpeg2.so
+lib/mplayerxp/codecs/libmsvidc.so
+lib/mplayerxp/codecs/libnuppelvideo.so
+lib/mplayerxp/codecs/libqtrle.so
+lib/mplayerxp/codecs/libqtrpza.so
+lib/mplayerxp/codecs/libqtsmc.so
+lib/mplayerxp/codecs/libroqav.so
+lib/mplayerxp/wine/DS_Filter.so
+lib/mplayerxp/wine/libloader.so
+lib/vidix/genfb_vid.so
+lib/vidix/mach64_vid.so
+lib/vidix/mga_crtc2_vid.so
+lib/vidix/mga_vid.so
+lib/vidix/nvidia_vid.so
+lib/vidix/pm2_vid.so
+lib/vidix/pm3_vid.so
+lib/vidix/radeon_vid.so
+lib/vidix/rage128_vid.so
+@dirrm lib/vidix
+@dirrm lib/mplayerxp/wine
+@dirrm lib/mplayerxp/codecs
+@dirrm lib/mplayerxp
+@dirrm include/vidix
+@dirrm etc/mplayerxp

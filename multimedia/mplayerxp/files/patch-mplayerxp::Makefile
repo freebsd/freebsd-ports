@@ -1,0 +1,26 @@
+--- mplayerxp/Makefile.orig	Tue Jul  2 05:38:23 2002
++++ mplayerxp/Makefile	Sun Nov 24 21:41:24 2002
+@@ -120,23 +120,11 @@
+ 	$(CC) $(CFLAGS) -g codec-cfg.c -o $(PRG_CFG) -DCODECS2HTML
+ 
+ install: $(ALL_PRG)
+-ifeq ($(INSTALL),)
+-	@echo "*** 'install' utility was not found and you can't run automatic"
+-	@echo "*** installation. Please download 'fileutils' from ftp://ftp.gnu.org and"
+-	@echo "*** install them to have possibility perform autiomatic installation"
+-	@echo "*** of this project" 
+-	@exit 1
+-endif
+ ifeq ($(VIDIX),yes)
+ 	$(DO_MAKE)
+ endif
+ 	$(INSTALL) -D -m 755 $(PRG) $(BINDIR)/$(PRG)
+ 	@if test ! -d $(DATADIR) ; then mkdir -p $(DATADIR) ; fi
+-	@if test ! -d $(DATADIR)/font ; then mkdir -p $(DATADIR)/font ; fi
+-	@if test ! -f $(DATADIR)/font/font.desc ; then \
+-	echo "*** Download font at http://www.mplayerhq.hu/homepage/dload.html" ; \
+-	echo "*** for OSD/Subtitles support and extract to $(DATADIR)/font/" ; \
+-	fi
+ 
+ ifeq ($(CSS_USE),yes)
+ 	@echo "Following task requires root privs. If it fails don't panic"
