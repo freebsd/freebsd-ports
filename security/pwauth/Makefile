@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.unixpapa.com/software/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A Unix Web Authenticator
 
+IGNORE=		changes the permissions on ${LOCALBASE}/bin
+
 USE_REINPLACE=	yes
 PLIST_FILES=	bin/pwauth
 
