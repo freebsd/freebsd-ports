@@ -314,6 +314,7 @@
     SUBDIR += magictun
     SUBDIR += mars_nwe
     SUBDIR += meanwhile
+    SUBDIR += meanwhile-gaim
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += minisapserver
