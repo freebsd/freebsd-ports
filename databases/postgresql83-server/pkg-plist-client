@@ -480,6 +480,7 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_config.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_controldata.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_ctl.mo
+%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/psql.mo
