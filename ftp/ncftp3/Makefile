@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    ncftp3
-# Version required:     3.0
-# Date created:         4 Nov 1994
-# Whom:                 ache
+# Ports collection makefile for:  ncftp3
+# Version required:		  3.0
+# Date created:			  4 Nov 1994
+# Whom:				  ache
 #
 # $FreeBSD$
 #

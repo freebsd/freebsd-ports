@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    fwtk
-# Version required:                     1.3
-# Date created:                         15th June 1996
-# Whom:                                 gpalmer
+# Ports collection makefile for:  fwtk
+# Version required:		  1.3
+# Date created:			  15th June 1996
+# Whom:				  gpalmer
 #
 # $FreeBSD$
 #
@@ -54,15 +54,15 @@ pre-configure:
 		${WRKSRC}/firewall.h.in > ${WRKSRC}/firewall.h
 
 post-install:
-	( cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS} )
-	( cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin )
+	cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS}
+	cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin
 	${MKDIR} ${PREFIX}/share/doc/fwtk
 	${INSTALL_MAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/fwtk
-	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 )
-	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5 )
-	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8 )
+	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
+	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5
+	cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	( cd ${WRKSRC}/doc ; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/fwtk )
+	cd ${WRKSRC}/doc ; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/fwtk
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  cdecl
-# Version required:     	  2.5
+# Version required:		  2.5
 # Date created:			  Sat Sep 04, 1999
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.netsw.org/netsw/SoftEng/Lang/C/Tools/cdecl/  \
 		ftp://ftp.bitcon.no//pub/linux/linuxberg/files/console/dev/  \
 		ftp://ftp.uakom.sk/pub/linux/devel/lang/c/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 ALL_TARGET=
 MAN1=		cdecl.1

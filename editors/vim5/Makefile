@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    vim
-# Version required:     5.x
-# Date created:         Sat June 29, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Ports collection makefile for:  vim
+# Version required:		  5.x
+# Date created:			  Sat June 29, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -24,7 +24,7 @@ PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
 #PATCHFILES+=	5.6.0${p}
 #.endfor
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 Y2K=		http://www.vim.org/y2k.html
 

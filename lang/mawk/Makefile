@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:	mawk
-# Version required:	1.3.3
-# Date created:		24 Dec 1998
-# Whom:			Pedro F. Giffuni <giffunip@asme.org>
+# Ports collection makefile for:  mawk
+# Version required:		  1.3.3
+# Date created:			  24 Dec 1998
+# Whom:				  Pedro F. Giffuni <giffunip@asme.org>
 #
 # $FreeBSD$
 #

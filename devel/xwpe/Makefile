@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  xwpe
-# Version required:     	  1.5.18a
+# Version required:		  1.5.18a
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://identicalsoftware.com/pub/linux/xwpe/
 MASTER_SITE_SUBDIR=	apps/editors/X
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 # LD_LIBRARY_PATH is to deal with a braindead libX11.a search in configure
 # (once again author assumes too many Linux'isms)

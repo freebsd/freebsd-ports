@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  nmap
-# Version required:     	  1.51
+# Version required:		  1.51
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://codebox.net/download/  \
 		http://www.insecure.org/nmap/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap

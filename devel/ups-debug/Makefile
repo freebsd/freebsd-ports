@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  UPS
-# Version required:     	  3.32
+# Version required:		  3.32
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		http://www.concerto.demon.co.uk/UPS/
 MASTER_SITE_SUBDIR= utilities
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes

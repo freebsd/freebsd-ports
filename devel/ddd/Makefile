@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ddd
-# Version required:     	  3.1.3
+# Version required:		  3.1.3
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

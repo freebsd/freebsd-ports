@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  hbiff
-# Version required:     	  1.2
+# Version required:		  1.2
 # Date created:			  Mon Dec 23, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuxi.com/pub/misc/  \
 		http://people.FreeBSD.org/~obrien/Distfiles/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 USE_XLIB=	yes
 MAN1=		hbiff.1

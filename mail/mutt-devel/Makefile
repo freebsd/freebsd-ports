@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    mutt w/pgp hooks
-# Version required:     0.xy
-# Date created:         Thur July 25, 1996
-# Whom:                 David O'Brien (obrien@NUXI.com)
+# Ports collection makefile for:  mutt w/pgp hooks
+# Version required:		  0.xy
+# Date created:			  Thur July 25, 1996
+# Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 
@@ -27,7 +27,7 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .if defined(BATCH)
@@ -89,8 +89,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt
 .endif
-	@(cd ${WRKSRC}/contrib ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc \
-		${PREFIX}/share/doc/mutt)
+	@cd ${WRKSRC}/contrib ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc \
+		${PREFIX}/share/doc/mutt
 .endif
 
 .include <bsd.port.mk>

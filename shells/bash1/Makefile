@@ -1,21 +1,21 @@
 # ex:ts=8
-# New ports collection makefile for:	bash
-# Version required:     1.14.7
-# Date created:		21 August 1994
-# Whom:			jkh
+# Ports collection makefile for:  bash
+# Version required:		  1.14.7
+# Date created:			  21 August 1994
+# Whom:				  jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=       bash-1.14.7
+DISTNAME=	bash-1.14.7
 CATEGORIES=	shells
-MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bash
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_LATEST_LINK=	yes
-WRKSRC=         ${WRKDIR}/${DISTNAME}
+WRKSRC=	${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.
 NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1

@@ -1,7 +1,8 @@
-# New ports collection makefile for:	bison
-# Version required:     1.28
-# Date created:		27 Mar 1999
-# Whom:			Jerry Hicks
+# ex:ts=8
+# Ports collection makefile for:  bison
+# Version required:		  1.28
+# Date created:			  27 Mar 1999
+# Whom:				  Jerry Hicks
 #
 # $FreeBSD$
 #
@@ -12,12 +13,9 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bison
 
 MAINTAINER=		wghicks@bellsouth.net
-#MAINTAINER+=	obrien@NUXI.com
-
-Y2K=			http://www.gnu.org/software/year2000.html
+MAINTAINER=		obrien@NUXI.com
 
 GNU_CONFIGURE=		yes
-
 MAN1=			bison.1
 
 post-install:

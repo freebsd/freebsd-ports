@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  agrep
-# Version required:     	  2.04
+# Version required:		  2.04
 # Date created:			  Fri May 23, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
 EXTRACT_SUFX=	.tar.Z
 #DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=	obrien@NUXI.com
 
 ALL_TARGET=
 MAN1=		agrep.1

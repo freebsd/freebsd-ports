@@ -1,7 +1,8 @@
-# New ports collection makefile for:    vscan
-# Version required:     1.0.2
-# Date created:         Thur Sept 25, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# ex:ts=8
+# Ports collection makefile for:  vscan
+# Version required:		  1.0.2
+# Date created:			  Thur Sept 25, 1996
+# Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
@@ -13,7 +14,7 @@ MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
 		http://people.FreeBSD.org/~steve/distfiles/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"Commercial software"
@@ -31,14 +32,14 @@ pre-fetch:
 .endif
 
 post-extract:
-	 (cd ${WRKSRC} && tar xzf linux-elf.e.tar.Z)
+	 cd ${WRKSRC} && tar xzf linux-elf.e.tar.Z
 
 do-build::
 
 # The binary executable file will be left unstripped as stripping the
 # file will cause attempt to validate this file to fail.
 do-install:
-	(cd ${WRKSRC}; ./install-vscan)
+	cd ${WRKSRC}; ./install-vscan
 
 post-install:
 	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/uvscan

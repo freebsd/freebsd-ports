@@ -1,7 +1,8 @@
-# New ports collection makefile for:	xsysstats
-# Version required:	1.34
-# Date created:		12 December 1994
-# Whom:			asami
+# ex:ts=8
+# Ports collection makefile for:  xsysstats
+# Version required:		  1.34
+# Date created:			  12 December 1994
+# Whom:				  asami
 #
 # $FreeBSD$
 #

@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:    lsof
-# Version required:     3.87
-# Date created:         Sat July 20, 1996
-# Whom:                 David O'Brien (obrien@FreeBSD.org)
+# Ports collection makefile for:  lsof
+# Version required:		  3.87
+# Date created:			  Sat July 20, 1996
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes

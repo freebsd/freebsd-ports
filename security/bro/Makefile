@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  bro
-# Version required:     	  0.3alpha
+# Version required:		  0.3alpha
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -13,7 +13,7 @@ CATEGORIES=	security net
 #MASTER_SITES=	ftp://ee.lbl.gov/
 #see http://www-nrg.ee.lbl.gov/bro-info.html
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 

@@ -1,8 +1,8 @@
 # ex:ts=8
-# New ports collection makefile for:	smbtcpdump
-# Version required:			3.4
-# Date created:				2 Jun 1998
-# Whom:					obrien
+# Ports collection makefile for:  smbtcpdump
+# Version required:		  3.4
+# Date created:			  2 Jun 1998
+# Whom:				  obrien
 #
 # $FreeBSD$
 #

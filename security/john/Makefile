@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  ufcjohn
-# Version required:     	  1.4
+# Version required:		  1.4
 # Date created:			  Sun Mar 09, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.false.com/security/john/ \
 		ftp://ftp.false.com/pub/security/john/
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 RESTRICTED=	"contains crypto (crypt())"
 
@@ -50,15 +50,15 @@ pre-fetch:
 do-configure:
 	@${MV} ${WRKDIR}/${DISTNAME}/run/john.ini ${WRKDIR}/${DISTNAME}/run/john.ini.in
 	@${SED} -e "s:~/all.chr:${PREFIX}/share/john/all.chr:" \
-	    -e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
-	    -e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
-	    ${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
+		-e "s:~/alpha.chr:${PREFIX}/share/john/alpha.chr:" \
+		-e "s:~/digits.chr:${PREFIX}/share/john/digits.chr:" \
+		${WRKDIR}/${DISTNAME}/run/john.ini.in > ${WRKDIR}/${DISTNAME}/run/john.ini
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/john
 	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/run/john ${PREFIX}/bin
-	@(cd ${PREFIX}/bin ; ${LN} -sf john xtract)
-	@(cd ${PREFIX}/bin ; ${LN} -sf john unshadow)
+	@cd ${PREFIX}/bin ; ${LN} -sf john xtract
+	@cd ${PREFIX}/bin ; ${LN} -sf john unshadow
 	@${INSTALL_DATA} \
 		${WRKDIR}/${DISTNAME}/run/all.chr \
 		${WRKDIR}/${DISTNAME}/run/alpha.chr \

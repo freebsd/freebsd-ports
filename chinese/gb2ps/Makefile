@@ -1,6 +1,6 @@
 # ex:ts=8
 # Ports collection makefile for:  gb2ps
-# Version required:     	  2.02
+# Version required:		  2.02
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
@@ -20,7 +20,7 @@ DISTFILES=	${DISTNAME}.tar.gz  \
 		csong24.ccf.gz ckai24.ccf.gz cfang24.ccf.gz chei24.ccf.gz \
 		cfan24.ccf.gz
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS
