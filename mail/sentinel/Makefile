@@ -7,6 +7,7 @@
 
 PORTNAME=	sentinel
 PORTVERSION=	1.6.5b
+PORTREVISION=   1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
@@ -32,7 +33,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sentinel ${PREFIX}/sbin
 	@${MKDIR} ${PREFIX}/var/sentinel
 	${CHOWN} smmsp:smmsp ${PREFIX}/var/sentinel
-	${INSTALL_SCRIPT} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d
+	${INSTALL_DATA} ${FILESDIR}/000.sentinel.sh ${PREFIX}/etc/rc.d/000.sentinel.sh-dist
 	${INSTALL_DATA} ${WRKSRC}/sentinel.cf.SAMPLE ${PREFIX}/etc/sentinel.cf.dist
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}

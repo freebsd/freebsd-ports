@@ -14,7 +14,7 @@ start)
 	if [ -x ${PREFIX}/sbin/sentinel -a -f ${PREFIX}/etc/sentinel.cf ]
 	then
 		rm -f ${SOCKET}
-		${PREFIX}/sbin/sentinel -c ${PREFIX}/etc/sentinel.cf -p unix:${SOCKET} -d && echo -n ' sentinel'
+		LC_ALL=C ${PREFIX}/sbin/sentinel -c ${PREFIX}/etc/sentinel.cf -p unix:${SOCKET} -d && echo -n ' sentinel'
 	fi
 	;;
 stop)
@@ -23,6 +23,7 @@ stop)
 		if [ -e ${SOCKET} ]
 		then
 			killall -KILL sentinel
+			rm -f ${SOCKET}
 		fi
 	;;
 *)
