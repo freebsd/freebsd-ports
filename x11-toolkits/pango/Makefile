@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.0,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -26,6 +26,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
@@ -50,9 +52,7 @@ PLIST_SUB+=	XFREE4:="@comment "
 PLIST_SUB+=	XFREE4:=""
 .endif
 
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
+post-patch:
 	@find ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
 
