@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
@@ -24,6 +24,7 @@ CONFIGURE_ENV=	LDFLAGS=-static
 post-patch:
 	@${REINPLACE_CMD} -e "s,_PRIV_FILENAME \"/etc/,_PRIV_FILENAME \"${PREFIX}/etc/,g; \
 		s,/usr/bin/X11/,${X11BASE}/,g" ${WRKSRC}/options.h
+	@${REINPLACE_CMD} -e "s,sys/dir.h,dirent.h," ${WRKSRC}/*.[ch]
 	@${SED} -e 's:__PREFIX__:${PREFIX}:g' \
 		${FILESDIR}/dropbear.sh > ${WRKSRC}/dropbear.sh
 
