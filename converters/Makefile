@@ -3,6 +3,7 @@
 
     SUBDIR += aish
     SUBDIR += btoa
+    SUBDIR += dumpasn1
     SUBDIR += fconv
     SUBDIR += i18ntools
     SUBDIR += iconv

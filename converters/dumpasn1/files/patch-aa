@@ -1,0 +1,17 @@
+--- dumpasn1.c.orig	Sat May  6 20:23:20 2000
++++ dumpasn1.c	Sat May  6 20:23:51 2000
+@@ -194,7 +194,9 @@
+    path, since this doesn't set up argv[0] to the full path).  Anything
+    beginning with a '$' uses the appropriate environment variable */
+ 
++#ifndef CONFIG_NAME
+ #define CONFIG_NAME		"dumpasn1.cfg"
++#endif
+ 
+ static const char *configPaths[] = {
+ 	/* Unix absolute paths */
+@@ -1817,4 +1819,3 @@
+ 
+ 	return( ( noErrors ) ? noErrors : EXIT_SUCCESS );
+ 	}
+-
