@@ -16,6 +16,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
+DEPRECATED=	"This port will be removed on June 18th 2004."
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
