@@ -1,0 +1,31 @@
+# New ports collection makefile for:	meanwhile-gaim
+# Date created:		24 June 2004
+# Whom:		 	marcus@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	meanwhile
+PORTVERSION=	0.78
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-gaim
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+
+MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	Provides Lotus Sametime support for Gaim
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/gaim:configure
+LIB_DEPENDS=	meanwhile.0:${PORTSDIR}/net/meanwhile
+RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
+
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack lthack gtk20
+USE_LIBTOOL_VER=13
+CONFIGURE_ARGS=	--with-gaim-source=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim-${PORTVERSION}/src
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>
