@@ -19,20 +19,19 @@ if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
 	mkdir ${FONTDIR}
 fi
 
-# font alias entry here!
-TMPFILE=/tmp/install-fonts-alias-$$
-for i in fonts.alias.e fonts.alias.j fonts.alias.euro ; do
-	cat ${PKG_PREFIX}/share/doc/mplusfonts/${i} >> ${TMPFILE}
-done
-
 if [ "$2" = "DEINSTALL" ] ; then
+	# font alias entry here!
+	TMPFILE=/tmp/install-fonts-alias-$$
+	for i in fonts.alias.e fonts.alias.j fonts.alias.euro ; do
+		cat ${PKG_PREFIX}/share/doc/mplusfonts/${i} >> ${TMPFILE}
+	done
 	echo "Updating ${FONTDIR}/fonts.alias"
 	cd ${FONTDIR}
 	touch fonts.alias
 	cp fonts.alias fonts.alias.orig
 	grep -v -e "`cat ${TMPFILE}`" fonts.alias.orig > fonts.alias
+	rm -f fonts.alias.orig ${TMPFILE}
 fi
-rm -f fonts.alias.orig ${TMPFILE}
 
 echo "**********************************************************"
 echo "You should restart X server or do 'xset fp rehash' command"

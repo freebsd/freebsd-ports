@@ -1,5 +1,5 @@
---- install_mplus_fonts.orig	Mon Mar 17 20:22:04 2003
-+++ install_mplus_fonts	Sun Mar 23 21:58:11 2003
+--- install_mplus_fonts.orig	Sat May 31 00:02:38 2003
++++ install_mplus_fonts	Sat May 31 00:06:47 2003
 @@ -2,7 +2,7 @@
  
  
@@ -9,15 +9,6 @@
  
  # Install M+ bitmap fonts EURO (iso8859-15) [ YES or NO ]
  EURO15=YES
-@@ -11,7 +11,7 @@
- MPLUSJ=YES
- 
- # Install naga10 fonts [ "source directory path" or NO ]
--NAGA10=../
-+NAGA10=NO
- 
- # Install M+ cursor [ YES or NO ]
- # Original "cursor.pcf.gz" path [ /usr/X11R6/lib/X11/fonts/misc ]
 @@ -20,19 +20,6 @@
  
  
@@ -38,7 +29,7 @@
  # Install M+ bitmap fonts E
  echo ""
  echo "Install M+ bitmap fonts E (iso8859-1)..."
-@@ -47,10 +34,10 @@
+@@ -45,10 +32,10 @@
  do
  	b=`basename $f .bdf`
  	echo "create: $b.pcf.gz"
@@ -47,11 +38,11 @@
  done
  echo "create: fonts.alias for M+ bitmap fonts E"
 -cat fonts.alias > $PREFIX/mplus/fonts.alias
-+cat fonts.alias > $PREFIX/fonts.alias
++cat fonts.alias >> $PREFIX/fonts.alias
  cd -
  
  # Install M+ bitmap fonts EURO
-@@ -65,7 +52,7 @@
+@@ -63,18 +50,18 @@
  		cp ../$b.bdf ./
  		patch $b.bdf $b.diff
  		mv $b.bdf $b-euro.bdf
@@ -60,12 +51,11 @@
  	done
  
  	echo "create: mplus_h12rw-euro.pcf.gz"
-@@ -73,11 +60,11 @@
- 	mplus_h12r-euro.bdf > mplus_h12rw-euro.bdf
- 	perl -pi -e 's/hlv/hlvw/' mplus_h12rw-euro.bdf
- 	bdftopcf mplus_h12rw-euro.bdf | gzip \
--	> $PREFIX/mplus/mplus_h12rw-euro.pcf.gz
-+	> $PREFIX/mplus_h12rw-euro.pcf.gz
+ 	awk '/^SWIDTH/{$2 += 80} /^DWIDTH/{$2 += 1} {print}' \
+ 	mplus_h12r-euro.bdf | sed 's/hlv/hlvw/' > mplus_h12rw-euro.bdf
+ 	bdftopcf mplus_h12rw-euro.bdf \
+-	| gzip > $PREFIX/mplus/mplus_h12rw-euro.pcf.gz
++	| gzip > $PREFIX/mplus_h12rw-euro.pcf.gz
  
  #	rm $b-euro.bdf
  	echo "create: fonts.alias for M+ bitmap fonts EURO"
@@ -74,7 +64,7 @@
  	cd -
  fi
  
-@@ -116,7 +103,7 @@
+@@ -128,12 +115,12 @@
  	do
  		b=`basename $f .bdf`
  		echo "create: $b.pcf.gz"
@@ -82,35 +72,19 @@
 +		bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
  	done
  
- 	if [ -f mplus_j10r.bdf~ ]; then
-@@ -125,7 +112,7 @@
- 
- #	rm mplus_j12b.bdf
+ #	rm mplus_j1*b.bdf
  	echo "create: fonts.alias for M+ bitmap fonts J"
 -	cat fonts.alias >> $PREFIX/mplus/fonts.alias
 +	cat fonts.alias >> $PREFIX/fonts.alias
  	cd -
+ fi
  
- # Install naga10 fonts
-@@ -137,11 +124,11 @@
- 		do
- 			b=`basename $f .bdf`
- 			echo "create: $b.pcf.gz"
--			bdftopcf $f | gzip > $PREFIX/mplus/$b.pcf.gz
-+			bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
- 		done
- 		cd -; cd fonts_j
- 		echo "create: fonts.alias for naga10 fonts"
--		cat fonts.alias_10 >> $PREFIX/mplus/fonts.alias
-+		cat fonts.alias_10 >> $PREFIX/fonts.alias
- 		cd -
- 	fi
- 	
-@@ -168,6 +155,4 @@
+@@ -158,7 +145,5 @@
  # Finish
  echo ""
  echo "create: fonts.dir file"
 -mkfontdir $PREFIX/mplus
--xset fp rehash
--echo "xset fp rehash... done"
+-echo -n "xset fp rehash..."
+-xset fp rehash &&
 +mkfontdir $PREFIX
+ echo " done"

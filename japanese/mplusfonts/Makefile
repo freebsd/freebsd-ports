@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mplusfonts
-PORTVERSION=	1.2.0a
+PORTVERSION=	1.2.5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/2464/ \
 		http://wids.net/archive/mplusfonts/distfiles/
@@ -26,7 +26,8 @@ RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCS=		INSTALL_E LICENSE_E README_E \
-		INSTALL_J LICENSE_J README_J
+		INSTALL_J LICENSE_J README_J \
+		README_mplusj10
 
 FONTSDIR=	${PREFIX}/lib/X11/fonts/local
 PLIST_SUB=	FONTSDIR=${FONTSDIR:S/${PREFIX}\///}
@@ -38,9 +39,11 @@ pre-install:
 .for i in e j
 	@${INSTALL_DATA} ${WRKSRC}/fonts_${i}/fonts.alias \
 		${DOCSDIR}/fonts.alias.${i}
+	@${CAT} ${DOCSDIR}/fonts.alias.${i} >> ${DOCSDIR}/fonts.alias
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/fonts_e/euro/fonts.alias \
 		${DOCSDIR}/fonts.alias.euro
+	@${CAT} ${DOCSDIR}/fonts.alias.euro >> ${DOCSDIR}/fonts.alias
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
