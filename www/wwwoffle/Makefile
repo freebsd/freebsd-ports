@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wwwoffle
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.7a
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/httpd/ \
 		${MASTER_SITE_SUNSITE}
