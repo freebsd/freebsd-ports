@@ -1,0 +1,11 @@
+mod_extract_forwarded2 hooks itself into Apache's header parsing phase and looks
+for the X-Forwarded-For header which some (most?) proxies add to the proxied
+HTTP requests. It extracts the IP from the X-Forwarded-For and modifies the
+connection data so to the rest of Apache the request looks like it came from
+that IP rather than the proxy IP.
+
+mod_extract_forwarded can be dangerous for host based access control because
+X-Forwarded-For is easily spoofed. Because of this you can configure which
+proxies you trust or don't trust.
+
+WWW: http://www.cotds.org/mod_extract_forwarded2/
