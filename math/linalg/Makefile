@@ -17,6 +17,8 @@ ALL_TARGET=	lib
 INSTALL_TARGET=	lib
 USE_GMAKE=	yes
 
+BROKEN=		"Tries to run eg++"
+
 post-install:
 	$(INSTALL_DATA) ${WRKSRC}/libla.a ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/include/LinAlg
