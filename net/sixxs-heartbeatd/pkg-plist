@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+etc/rc.d/sixxs-heartbeatd.sh
+sbin/sixxs-heartbeatd
+%%DOCSDIR%%/README
+%%DOCSDIR%%/draft-massar-v6ops-heartbeat-00.txt
+%%EXAMPLESDIR%%/heartbeat.conf
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%

@@ -600,6 +600,7 @@
     SUBDIR += silky
     SUBDIR += simicq
     SUBDIR += sipsak
+    SUBDIR += sixxs-heartbeatd
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smbfs
