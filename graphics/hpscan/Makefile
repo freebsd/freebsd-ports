@@ -3,7 +3,7 @@
 # Date created:		12 January 1996
 # Whom:			nate
 #
-# $Id: Makefile,v 1.14 1998/09/15 11:45:53 asami Exp $
+# $Id: Makefile,v 1.15 1998/10/05 18:27:26 nate Exp $
 #
 
 DISTNAME=	scanner
@@ -15,6 +15,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MAINTAINER=	jkh@FreeBSD.org
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         scsi.h
+.endif
 
 NO_WRKSUBDIR=		yes
 USE_X_PREFIX=		yes
