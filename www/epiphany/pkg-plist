@@ -59,6 +59,7 @@ share/gnome/epiphany/glade/prefs-dialog.glade
 share/gnome/epiphany/glade/print.glade
 share/gnome/epiphany/nautilus-epiphany-view.xml
 share/gnome/help/epiphany/C/epiphany.xml
+share/gnome/help/epiphany/C/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/C/figures/ephy-screenshot.png
 share/gnome/help/epiphany/C/legal.xml
 share/gnome/help/epiphany/nl/epiphany.xml
@@ -81,9 +82,13 @@ share/locale/de/LC_MESSAGES/epiphany.mo
 share/locale/el/LC_MESSAGES/epiphany.mo
 share/locale/en_GB/LC_MESSAGES/epiphany.mo
 share/locale/es/LC_MESSAGES/epiphany.mo
+share/locale/et/LC_MESSAGES/epiphany.mo
 share/locale/fi/LC_MESSAGES/epiphany.mo
 share/locale/fr/LC_MESSAGES/epiphany.mo
+share/locale/ga/LC_MESSAGES/epiphany.mo
+share/locale/hi/LC_MESSAGES/epiphany.mo
 share/locale/hu/LC_MESSAGES/epiphany.mo
+share/locale/is/LC_MESSAGES/epiphany.mo
 share/locale/ja/LC_MESSAGES/epiphany.mo
 share/locale/ko/LC_MESSAGES/epiphany.mo
 share/locale/li/LC_MESSAGES/epiphany.mo
@@ -95,6 +100,7 @@ share/locale/pl/LC_MESSAGES/epiphany.mo
 share/locale/pt/LC_MESSAGES/epiphany.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany.mo
 share/locale/ru/LC_MESSAGES/epiphany.mo
+share/locale/sl/LC_MESSAGES/epiphany.mo
 share/locale/sr/LC_MESSAGES/epiphany.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
