@@ -4321,6 +4321,7 @@ jpilot		ports/palm/jpilot
 jps		ports/sysutils/jps
 jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
+jrobin		ports/net/jrobin
 jrtplib		ports/devel/jrtplib
 jruby		ports/lang/jruby
 jsap		ports/devel/jsap
