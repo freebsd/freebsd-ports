@@ -11,13 +11,11 @@ PORTVERSION=	5.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/releases
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	gdb/releases obrien
 
-MAINTAINER=	mp@FreeBSD.org
-COMMENT=	GNU GDB 5.3 developmental snapshot
-
-BROKEN=		Unfetchable
+MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Source level debugger - GNU GDB 5.3
 
 LATEST_LINK=	gdb53
 USE_BZIP2=	yes
@@ -30,7 +28,6 @@ CONFIGURE_ARGS=	--program-suffix=53
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on 4.x"
 .endif
-
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"
 .endif
