@@ -8,8 +8,10 @@
 PORTNAME=	xls2xml
 PORTVERSION= 	1.0.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://arturo.directmail.org/filters/archive/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://arturo.directmail.org/filters/archive/ \
 		http://homepages.go.com/~sobomax/filtersweb/
+MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
