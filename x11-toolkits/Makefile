@@ -80,6 +80,7 @@
     SUBDIR += linux-gtk
     SUBDIR += linux-openmotif
     SUBDIR += mesgui
+    SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw
     SUBDIR += notif2
