@@ -21,7 +21,7 @@
 + #undef	NEED_INET_NETOF
 + #define	GETTIMEOFDAY
 + #undef	LRAND48
-+ #define	MALLOCH	<malloc.h>
++ #undef	MALLOCH
 + #define	NBLOCK_POSIX
 + #define	BSD_RELIABLE_SIGNALS
 + #undef	TIMES_2
