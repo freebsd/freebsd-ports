@@ -1251,3 +1251,4 @@ japanese/platex209-sjis|japanese/platex209|2004-08-20|renamed
 japanese/xdvik-vflib|japanese/xdvik|2004-08-20|renamed
 japanese/dvipsk-vflib|japanese/dvipsk|2004-08-20|no longer maintained
 emulators/vmware_xf4mod||2004-08-20|This module is now part of XFree86 as of 4.1.0
+misc/bibletime-doc||2004-08-27|Documentation has included in base port
