@@ -32,7 +32,7 @@ lib/afm/wncyi10.afm
 lib/afm/wncyr10.afm
 lib/afm/wncysc10.afm
 lib/afm/wncyss10.afm
-%%PORTDOCS%%share/doc/amspsfnt/READ.ME
+%%PORTDOCS%%%%DOCSDIR%%/READ.ME
 share/texmf/dvips/mapfiles.ams/psfonts.ams
 share/texmf/dvips/mapfiles.ams/psfonts.amx
 share/texmf/dvips/mapfiles.ams/psfonts.amz
@@ -171,5 +171,5 @@ share/texmf/fonts/ams/type1/wncyss10.pfb
 @dirrm share/texmf/dvips/mapfiles.ams
 @unexec rmdir %D/share/texmf/dvips 2>/dev/null || true
 @unexec rmdir %D/share/texmf 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/amspsfnt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/afm
