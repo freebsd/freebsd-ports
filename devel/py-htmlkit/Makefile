@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tar
 
 MAINTAINER=		kbyanc@posi.net
 
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
 
 NO_BUILD=		yes
 

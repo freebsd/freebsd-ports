@@ -14,8 +14,8 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.org
 
-BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
+RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 
 MAKE_ENV=		PYTHON=${PREFIX}/bin/python \

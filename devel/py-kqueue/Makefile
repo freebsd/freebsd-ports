@@ -15,8 +15,8 @@ DISTNAME=		PyKQueue-${PORTVERSION}
 
 MAINTAINER=		dwhite@FreeBSD.org
 
-BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
+RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
 
 .include <bsd.port.pre.mk>
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm \
-		python:${PORTSDIR}/lang/python
+		python1.5:${PORTSDIR}/lang/python15
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

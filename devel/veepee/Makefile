@@ -13,10 +13,10 @@ DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gd.1:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes

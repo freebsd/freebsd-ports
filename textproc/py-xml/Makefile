@@ -17,7 +17,7 @@ DISTNAME=		PyXML-${PORTVERSION}
 MAINTAINER=		nectar@FreeBSD.org
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/python1.5/site-packages/distutils/core.py:${PORTSDIR}/misc/py-distutils
-RUN_DEPENDS=		python:${PORTSDIR}/lang/python
+RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
 
 PLIST=			${WRKDIR}/PLIST
 

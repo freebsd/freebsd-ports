@@ -14,7 +14,7 @@ DISTNAME=	evg-1.01
 
 MAINTAINER=	dima@Chg.RU
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	xv:${PORTSDIR}/graphics/xv
 

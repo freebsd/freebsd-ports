@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 NO_BUILD=	yes

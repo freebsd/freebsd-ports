@@ -14,11 +14,11 @@ DISTNAME=	gnome-python-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python ${PYGTK_DEP}
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 ${PYGTK_DEP}
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter       \
 		panel_applet.4:${PORTSDIR}/x11/gnomecore
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python ${PYGTK_DEP}
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15 ${PYGTK_DEP}
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

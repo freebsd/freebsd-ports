@@ -13,8 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}

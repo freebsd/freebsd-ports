@@ -13,9 +13,9 @@ DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
