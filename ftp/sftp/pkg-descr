@@ -1,0 +1,37 @@
+sftp is an ftp replacement that runs over an ssh tunnel.  Two programs are
+included - sftp and sftpserv.  When sftp is run and a host is connected to
+(either by running 'sftp remotehost' or 'open remotehost' from the sftp
+prompt), an ssh connection is initiated to the remote host, and sftpserv is
+run.  So, sftpserv must be in your path on the remote host.  Note that since
+sftpserv is run from ssh, no root privileges are necessary.  By default,
+sftpserv is expected to be in $PATH on the remote host.  This can be overriden
+by passing '--enable-remotepath=<path>' to configure or using the
+'-P remotepath' option to sftp.  To run as a different user, use the
+'-l remoteuser' option.  To connect to an alternate port with ssh,
+use the '-p remoteport' option.  To enable ssh compression, use '-C'.
+
+From within sftp, all of the normal ftp commands are present: open, close, get,
+put, mget, mput, cd, ls, dir, lcd, delete, rm, pwd, quit.  There's also exec,
+which runs a program on the remote end.  This program must not accept input
+('exec ls' is ok, but 'exec vi' is not).  To run local commands, precede them
+with a '!'.
+
+When building sftp, a link is made to rsftp, which uses rsh instead of ssh.
+sftp has been tested with rsh (with and without .rhosts) and ssh1 (with
+ssh-agent, password, and RSA authentication).  I haven't tested ssh2, but it
+should work.  The login process is a bit of a hack, so if logging in doesn't
+work, it's a bug and should be fixed.
+
+sftp uses a fairly simple multiplexed protocol over an SSH channel.  The server
+is a state machine, and is far more capable than the client.  As an example,
+the server theoretically could handle multiple concurrent file transfers, but
+the client will only send one.
+
+This was mostly written during the summer of 1998, and resurrected in October,
+1999.  I don't know how much time I want to spend adding new features, but
+bugs will be fixed.
+
+sftp is distributed under the GNU General Public License (GPL), Version 2.
+
+WWW: http://www.xbill.org/sftp
+Author: Brian Wellington (bwelling@xbill.org)
