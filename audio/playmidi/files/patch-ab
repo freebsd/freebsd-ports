@@ -58,7 +58,7 @@
   #CFLAGS = -g
   #LDFLAGS = -g
 ! PREFIX = /usr/local
-! CFLAGS += -Wall -DPREFIX=\"$(PREFIX)\"
+! CFLAGS += -g -Wall -DPREFIX=\"$(PREFIX)\"
 ! #LDFLAGS = -s
 ! INSTALLDIR = $(PREFIX)/bin
   OBJECTS = playmidi.o midifile.o playevents.o patchload.o emumidi.o
