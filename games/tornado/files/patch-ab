@@ -1,12 +1,19 @@
-diff -ur ../tornado-1.0.3.orig/scores.h ./scores.h
---- ../tornado-1.0.3.orig/scores.h	Fri Dec  1 08:59:55 2000
-+++ ./scores.h	Sun Jul  1 16:35:36 2001
-@@ -1,7 +1,7 @@
- /* scores.h -- highscore functions */
- 
- /* score file name */
--#define SCOREFILE_NAME "/var/games/tornado.scores"
-+#define SCOREFILE_NAME "/usr/local/share/games/tornado.scores"
- 
- /* maximum length for a player name (includes \0) */
- #define MAX_PLAYER_LEN 22
+diff -ur ../tornado-1.2.orig/Makefile.inc ./Makefile.inc
+--- ../tornado-1.2.orig/Makefile.inc	Fri Oct 11 15:03:56 2002
++++ ./Makefile.inc	Mon Apr 21 14:06:43 2003
+@@ -1,9 +1,8 @@
+ CC = gcc
+-MAKE = make
+-LDFLAGS = -lncurses
++MAKE = gmake
++LDFLAGS = -L/usr/local/lib -lncurses -lintl
+ OBJFILES = main.o draw.o erwin.o network.o scores.o
+-PREFIX = /usr/local
+-LOCALEPATH = /usr/local/share/locale
+-CFLAGS = -Wall -O2 -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\""
++LOCALEPATH = ${PREFIX}/share/locale
++CFLAGS += -Wall -O2 -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\"" -I/usr/local/include 
+ LOCALES = de
+-MAN = doc/man
+\ No newline at end of file
++MAN = doc/man

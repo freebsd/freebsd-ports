@@ -1,17 +1,24 @@
-diff -ur ../tornado-1.0.3.orig/Makefile ./Makefile
---- ../tornado-1.0.3.orig/Makefile	Fri Dec  1 09:00:11 2000
-+++ ./Makefile	Sun Jul  1 17:29:21 2001
-@@ -30,26 +30,26 @@
- 	if [ ! -d "$(PREFIX)/bin" ]; then \
- 	  mkdir -p $(PREFIX)/bin; \
- 	fi
--	install -s tornado $(PREFIX)/bin
-+	install -c -s tornado $(PREFIX)/bin
- 	if [ ! -d "$(PREFIX)/man/man6" ]; then \
- 	  mkdir -p $(PREFIX)/man/man6; \
- 	fi
--	install -m 0644 tornado.6 $(PREFIX)/man/man6
-+	install -c -m 0644 tornado.6 $(PREFIX)/man/man6
+diff -ur ../tornado-1.2.orig/Makefile ./Makefile
+--- ../tornado-1.2.orig/Makefile	Thu Nov  7 12:45:59 2002
++++ ./Makefile	Mon Apr 21 14:06:38 2003
+@@ -1,10 +1,9 @@
+ CC = gcc
+-MAKE = make
+-LDFLAGS = -lncurses
++MAKE = gmake
++LDFLAGS = -L/usr/local/lib -lncurses -lintl
+ OBJFILES = main.o draw.o erwin.o network.o scores.o
+-PREFIX = /usr/local
+-LOCALEPATH = /usr/local/share/locale
+-CFLAGS = -Wall -O2 -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\""
++LOCALEPATH = ${PREFIX}/share/locale
++CFLAGS += -Wall -O2 -DPREFIX="\"$(PREFIX)\"" -DLOCALEPATH="\"$(LOCALEPATH)\"" -I/usr/local/include
+ VERSION = `echo VERSION | cpp -P -include version.h | tr -d '" ' | grep -v '^$$'`
+ LOCALES = de
+ MAN = doc/man
+@@ -50,17 +49,17 @@
+ 
+ 	$(MAKE) -C $(MAN) install-man
  
 -	if [ -f "/var/games/tornado.scores" ]; then \
 +	if [ -f "${PREFIX}/share/games/tornado.scores" ]; then \
@@ -26,16 +33,47 @@ diff -ur ../tornado-1.0.3.orig/Makefile ./Makefile
 -	  if [ ! -d "/var/games" ]; then \
 -	    mkdir /var/games; \
 +	  if [ ! -d "${PREFIX}/share/games" ]; then \
-+	    mkdir -p ${PREFIX}/share/games; \
++	    mkdir ${PREFIX}/share/games; \
  	  fi; \
 -	  install tornado.scores /var/games; \
 -	  chmod a+w-x "/var/games/tornado.scores"; \
-+	  install -c tornado.scores ${PREFIX}/share/games; \
++	  install tornado.scores ${PREFIX}/share/games/; \
 +	  chmod a+w-x "${PREFIX}/share/games/tornado.scores"; \
  	fi
  
+ install-locale-data:
+@@ -68,7 +67,7 @@
+ 
  uninstall:
  	rm -f $(PREFIX)/bin/tornado
- 	rm -f $(PREFIX)/man/man6/tornado.6
 -	rm -f /var/games/tornado.scores
 +	rm -f ${PREFIX}/share/games/tornado.scores
+ 	$(MAKE) -C $(MAN) uninstall
+ 	$(MAKE) -C po uninstall
+ 
+@@ -84,17 +83,17 @@
+ 	fi
+ 	install -m 0644 tornado.6 $(PREFIX)/man/man6
+ 
+-	if [ -f "/var/games/tornado.scores" ]; then \
++	if [ -f "${PREFIX}/share/games/tornado.scores" ]; then \
+ 	  echo "Skipping install of the highscores file. File exists."; \
+-	  cat /var/games/tornado.scores | ./convert-highscorefile > score.tmp; \
+-	  mv -f score.tmp /var/games/tornado.scores; \
+-	  chmod a+rw-x "/var/games/tornado.scores"; \
++	  cat ${PREFIX}/share/games/tornado.scores | ./convert-highscorefile > score.tmp; \
++	  mv -f score.tmp ${PREFIX}/share/games/tornado.scores; \
++	  chmod a+rw-x "${PREFIX}/share/games/tornado.scores"; \
+ 	else \
+-	  if [ ! -d "/var/games" ]; then \
+-	    mkdir /var/games; \
++	  if [ ! -d "${PREFIX}/share/games" ]; then \
++	    mkdir ${PREFIX}/share/games; \
+ 	  fi; \
+-	  install tornado.scores /var/games; \
+-	  chmod a+w-x "/var/games/tornado.scores"; \
++	  install tornado.scores ${PREFIX}/share/games; \
++	  chmod a+w-x "${PREFIX}/share/games/tornado.scores"; \
+ 	fi
+ 
+ dist: clean
