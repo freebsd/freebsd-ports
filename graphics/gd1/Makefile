@@ -3,20 +3,20 @@
 # Date created:         27 Mar 1998
 # Whom:                 jeff@cetlink.net
 #
-# $Id: Makefile,v 1.5 1998/06/25 03:13:16 vanilla Exp $
+# $Id: Makefile,v 1.6 1999/07/13 23:59:52 asami Exp $
 #
 
-DISTNAME=       gd1.3
-PKGNAME=        gd-1.3
+DISTNAME=       gd-1.6.2
 CATEGORIES=	graphics
 MASTER_SITES=   http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
 MAINTAINER=     jeff@cetlink.net
 
-RESTRICTED=	unavailable from master site due to legal problems
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
 
 FETCH_BEFORE_ARGS=	-b
+GNU_CONFIGURE=	yes
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
