@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.lzh
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
 COMMENT=	Display the moon's phase
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xtfqw=${WRKDIR}
