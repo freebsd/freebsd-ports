@@ -9,5 +9,14 @@ INCLUDEDIR=/usr/include
 install -d ${SITE_PERL}/${PERL_ARCH}
 cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h
 
+if [ -f /sbin/sysctl -a -x /sbin/sysctl ] ; then
+    	osreldate=`/sbin/sysctl -n kern.osreldate`
+else
+    	osreldate=`/usr/sbin/sysctl -n kern.osreldate`
+fi
+
+if [ $osreldate -ge 502100 ] ; then
+    	${PKG_PREFIX}/bin/use.perl port
+fi
 
 exit 0
