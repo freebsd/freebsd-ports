@@ -9473,6 +9473,7 @@ sl-aspell	ports/textproc/sl-aspell
 sl2tps		ports/net/sl2tps
 slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
+slate		ports/net-mgmt/slate
 slay		ports/sysutils/slay
 sleuth		ports/dns/sleuth
 sleuthkit	ports/sysutils/sleuthkit
