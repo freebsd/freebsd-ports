@@ -6,28 +6,25 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20020920
+PORTVERSION=	20020921
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.iDaemons.org/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 DISTNAME=	pkgtools-${DISTVERSION}
 
-DISTVERSION=	20020805
+DISTVERSION=	20020921
 
 .if ${DISTVERSION} != ${PORTVERSION}
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	${DISTNAME}-20020830.diff.bz2 \
-		pkgtools-20020830-20020902.diff.bz2 \
-		pkgtools-20020902-${PORTVERSION}.diff.bz2
+PATCHFILES=	${DISTNAME}-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1 \
-		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/sysutils/pkg_tarup
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
 # For PKG_DBDRIVER={bdb_btree,bdb_hash,bdb}
 #		${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
@@ -59,16 +56,15 @@ INSTALL_TARGET+=	install-doc
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} < 1.7
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/lang/ruby16-shim-ruby18
+# pkg_create(1) must support -b. (4.5-RELEASE or later)
+# XXX: PKG_CMD is not defined yet..
+PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
+.if empty(PKG_CREATE_OK)
+IGNORE=	pkg_create does not support -b.  Please update pkg_* tools or stick with portupgrade-20020920 + pkg_tarup-1.2_3, which work just fine
 .endif
 
-pre-install:
-.if !defined(NOPORTDOCS)
-# Cope with a bug in CURRENT's bsd.*.mk infrastructure
-	${MKDIR} ${PREFIX}/share/examples/pkgtools/bash
-	${MKDIR} ${PREFIX}/share/examples/pkgtools/tcsh
-	${MKDIR} ${PREFIX}/share/zsh/site-functions
+.if ${RUBY_VER} < 1.7
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/lang/ruby16-shim-ruby18
 .endif
 
 post-install:
