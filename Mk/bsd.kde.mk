@@ -14,7 +14,6 @@ KDE_MAINTAINER=		will@FreeBSD.org
 
 # USE_QT_VER		- Says that the port uses the Qt toolkit.  Possible values:
 #					  1, 2, or 3; each specify the major version of Qt to use.
-#					  This implies USE_NEWGCC.
 # USE_KDELIBS_VER	- Says that the port uses KDE libraries.  Possible values:
 #					  1, 2, or 3; each specify the major version of KDE to use.
 #					  This implies USE_QT of the appropriate version.
@@ -85,7 +84,6 @@ USE_QT_VER=		2
 # Qt 1.x common stuff
 .if ${USE_QT_VER} == 1
 LIB_DEPENDS+=  qt1.3:${PORTSDIR}/x11-toolkits/qt145
-USE_NEWGCC=            yes
 MOC?=                  ${X11BASE}/bin/moc1
 .if defined(PREFIX)
 QTDIR=                 ${PREFIX}
@@ -111,7 +109,6 @@ MOC?=			${QT_PREFIX}/bin/moc
 #LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30
 BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
-USE_NEWGCC=		yes
 QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
@@ -130,7 +127,6 @@ QTCGFLIBS?=
 
 # Qt 2.x common stuff -- DEFAULT
 LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
-USE_NEWGCC=		yes
 QTNAME=			qt2
 MOC?=			${X11BASE}/bin/moc2
 QTCPPFLAGS+=	-D_GETOPT_H -I${LOCALBASE}/include -I${PREFIX}/include \
