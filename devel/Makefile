@@ -1103,6 +1103,7 @@
     SUBDIR += pear-XML_RSS
     SUBDIR += pear-XML_SVG
     SUBDIR += pear-XML_Serializer
+    SUBDIR += pear-XML_Transformer
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
