@@ -8,8 +8,8 @@
 PORTNAME=	newsgrab
 PORTVERSION=	0.3.1
 CATEGORIES=	news
-MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/newsgrab/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	newsgrab
 
 MAINTAINER=	petef@FreeBSD.org
 
