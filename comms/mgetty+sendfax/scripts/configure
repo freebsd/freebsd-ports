@@ -140,7 +140,7 @@ cat <<END
 END
 wq "login file:" /etc/nologin.%s NOLOGIN_FILE 
 
-ww LOCK \"/usr/spool/lock/LCK..%s\"
+ww LOCK \"/var/spool/lock/LCK..%s\"
 
 cat <<END
  Set this to "1" if your system uses binary lock files (i.e., the pid

@@ -1,10 +1,11 @@
-*** main.c.orig	Wed Sep 21 00:33:35 1994
---- main.c	Wed Sep 21 00:35:35 1994
+*** main.c.orig	Mon Apr  6 12:59:32 1992
+--- main.c	Thu Sep 22 13:07:12 1994
 ***************
 *** 1,5 ****
---- 1,8 ----
+--- 1,9 ----
   /*	main.c : main loop of jetpack
   */
++ #include <sys/types.h>
 + #include <sys/time.h>
 + #include <sys/resource.h>
 + 
@@ -13,7 +14,7 @@
   #include "defs.h"
 ***************
 *** 18,23 ****
---- 21,29 ----
+--- 22,30 ----
   	int						seed;
   	char					lev[20];
   	register unsigned long	timer;

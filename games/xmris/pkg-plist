@@ -1,7 +1,6 @@
 @cd /usr/local
-@owner bin
 @group bin
-@mode a+r
+@mode 444
 man/man6/xmris.6
 man/man6/xmsit.6
 man/man6/xmred.6
@@ -11,8 +10,11 @@ bin/xmris
 bin/xmsit
 @mode 755
 bin/xmred
+@exec mkdir -p %D/lib/xmris
+@exec chmod  775 %D/lib/xmris
+@unexec rm -rf %D/lib/xmris
 @cd /usr/X386
-@mode a+r
+@mode 444
 lib/X11/app-defaults/Xmris
 lib/X11/app-defaults/xmris/alphabet.gdn
 lib/X11/app-defaults/xmris/digits.gdn
