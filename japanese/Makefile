@@ -312,6 +312,7 @@
     SUBDIR += ptex-tetex
     SUBDIR += py-kanjilib
     SUBDIR += pycodec
+    SUBDIR += pycodec-zope
     SUBDIR += qkc
     SUBDIR += quit
     SUBDIR += rbnamazu
