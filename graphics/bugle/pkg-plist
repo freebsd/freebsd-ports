@@ -1,14 +1,16 @@
+bin/gldb
+lib/bugle/capture.a
+lib/bugle/capture.la
+lib/bugle/capture.so
 lib/bugle/common.a
 lib/bugle/common.la
 lib/bugle/common.so
-lib/bugle/common.so.0
 lib/bugle/debugger.a
 lib/bugle/debugger.la
 lib/bugle/debugger.so
 lib/bugle/modify.a
 lib/bugle/modify.la
 lib/bugle/modify.so
-lib/bugle/modify.so.0
 lib/bugle/tracker.a
 lib/bugle/tracker.la
 lib/bugle/tracker.so
@@ -19,4 +21,8 @@ lib/libbugle.a
 lib/libbugle.la
 lib/libbugle.so
 lib/libbugle.so.0
+lib/libbugleutils.a
+lib/libbugleutils.la
+lib/libbugleutils.so
+lib/libbugleutils.so.0
 @dirrm lib/bugle

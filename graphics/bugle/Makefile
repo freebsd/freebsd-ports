@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	bugle
-PORTVERSION=	0.0.20040609
+PORTVERSION=	0.0.20040614
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bugle
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	A debugging library for OpenGL
+
+MAN1=		gldb.1
+MAN3=		bugle.3
 
 USE_GCC=	3.3
 USE_GL=		yes
