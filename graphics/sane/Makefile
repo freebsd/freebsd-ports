@@ -4,7 +4,7 @@
 # Whom:				gary@hotlava.com
 #				obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.13 1999/01/22 22:10:04 nectar Exp $
+# $Id: Makefile,v 1.14 1999/04/03 14:55:00 flathill Exp $
 #
 
 DISTNAME=       sane-1.00
@@ -17,11 +17,11 @@ MAINTAINER=	gary@hotlava.com
 LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-VERSION!=	sysctl -n kern.osreldate
+.include <bsd.port.pre.mk>
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-.if ${VERSION} < 300000
+.if ${OSVERSION} < 300000
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
@@ -62,4 +62,4 @@ post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
