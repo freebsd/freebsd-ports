@@ -29,6 +29,7 @@
     SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
+    SUBDIR += netscape47-communicator
     SUBDIR += nvi-big5
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
