@@ -7209,6 +7209,7 @@ qtools		ports/mail/qtools
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
 qtutils		ports/graphics/qtutils
+quack		ports/lang/quack
 quagga		ports/net/quagga
 quake2forge	ports/games/quake2forge
 quake2lnx	ports/games/quake2lnx
