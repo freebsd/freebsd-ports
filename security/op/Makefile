@@ -15,19 +15,20 @@ MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.nask.pl/pub/mirror/coast.cs.purdue.edu/%SUBDIR%/
 MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	clefevre@poboxes.com
 
 #
-# Clobal variables
+# Global variables
 #
 
 BINMODE=	4555
-MAKE_ARGS+=	BASE="${PREFIX}" \
-		OPTS='-Dbsdi -DOP_ACCESS=\"${PREFIX}/etc/op.access\"' \
+MAKE_ARGS=	BASE="${PREFIX}" \
+		OPTS='-Dbsdi -DOP_ACCESS=\"${CONF_DIR}/${CONF_FILE}\"' \
 		LIBS='-ll -lcrypt' \
 		BINOWN=${BINOWN} BINGRP=${BINGRP} BINMODE=${BINMODE} \
 		MANOWN=${MANOWN} MANGRP=${MANGRP} MANMODE=${MANMODE}
 ALL_TARGET=	${PORTNAME}
+PLIST_SUB=	DOCDIR="${DOC_SUBDIR}"
 
 MAN8=		op.8
 
@@ -37,17 +38,19 @@ PKGDEINSTALL=	${PKGINSTALL}
 # Local variables
 #
 
+CO?=		co
+
 RCS_SUBDIR=	RCS
 
-SAMP_DIR=	${PREFIX}/etc
-DOC_DIR=	${PREFIX}/share/doc/${PKGBASE}
+CONF_DIR=	${PREFIX}/etc
+SAMP_DIR=	${CONF_DIR}
+DOC_SUBDIR=	share/doc/${PKGBASE}
+DOC_DIR=	${PREFIX}/${DOC_SUBDIR}
 
 CONF_FILE=	op.access
 SAMP_FILE=	${CONF_FILE}
 SAMP_SUFX=	.sample
 DOC_FILES=	README op.paper
-
-CO?=		co
 
 #
 # Post-extract
@@ -62,14 +65,14 @@ checkout-files:
 # Post-patch
 #
 
-post-patch: patch-install patch-conf-file
+post-patch: patch-makefile patch-conf-file
 
-patch-install:
-	@${PERL} -pi.fbsd -e 's/(install)/$$1 -c/ if (!/:/);' \
+patch-makefile:
+	@${PERL} -pi.fbsd -e 's|(install)|$$1 -c| if (!/:/);' \
 		${WRKSRC}/Makefile
 
 patch-conf-file:
-	@${PERL} -pi.fbsd -e 's/^/#/ if (!/^#|DEFAULT|MAGIC/);' \
+	@${PERL} -pi.fbsd -e 's|^|#| if (!/^#|DEFAULT|MAGIC/);s|/usr/ucb:||;' \
 		${WRKSRC}/${CONF_FILE}
 
 #
@@ -94,4 +97,22 @@ install-doc-files:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# some sketchy hackery
+FETCH_CMD_INTERIOR!=	${ECHO} ${FETCH_CMD} | ${SED} -E -e "s!(.+/)?fetch(.+/|\s+.*)?!!"
+
+# only enable the hack if FETCH_CMD is fetch
+.if ! ${FETCH_CMD_INTERIOR}
+# coast sites dislike $USER@localhost...
+FETCH_ENV=	FTP_PASSWORD=${FTP_PASSWORD}
+
+AWK?=		awk
+IFCONFIG?=	ifconfig
+
+# well, this is a hack to make fetch happy on coast sites, ugh!
+HOSTIPADDR=	${IFCONFIG} | ${AWK} '/inet /{print $$2; exit}'
+FTP_PASSWORD?=	${USER}@`${HOSTIPADDR}`
+.endif
+
+.include <bsd.port.post.mk>
