@@ -155,6 +155,7 @@
     SUBDIR += ruby-gtktrayicon
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
+    SUBDIR += rxvt-unicode
     SUBDIR += settitle
     SUBDIR += silo
     SUBDIR += sisctrl

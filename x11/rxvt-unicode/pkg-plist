@@ -1,0 +1,14 @@
+bin/urxvt
+bin/urxvtc
+bin/urxvtd
+include/rxvtlib.h
+lib/librxvt.a
+lib/librxvt.so
+lib/librxvt.so.3
+%%PORTDOCS%%%%EXAMPLESDIR%%/example.menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/jedmenu.sl
+%%PORTDOCS%%%%EXAMPLESDIR%%/menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/rxvt.zh-menu
+%%PORTDOCS%%%%EXAMPLESDIR%%/terminal.menu
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

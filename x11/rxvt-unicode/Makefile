@@ -4,94 +4,194 @@
 #
 # $FreeBSD$
 #
-# If possible, please consider updating the simple ports/x11-clocks/rclock
-# (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
-# the same distfile.
 
-PORTNAME=	rxvt
-PORTVERSION=	2.6.4
-PORTREVISION=	1
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old devel
+PORTNAME=	rxvt-unicode
+PORTVERSION=	3.7
+CATEGORIES=	x11
+MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/
+MASTER_SITE_SUBDIR=     . Attic
 
-MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	A low memory usage xterm replacement that supports color
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	A clone of the terminal emulator rxvt modified to support Unicode
 
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-USE_SIZE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
-		--with-xpm --enable-xpm-background --enable-transparency
-USE_BZIP2=	yes
-MAN1=		rxvt.1
-PLIST_FILES=	bin/rxvt
+LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-# enable big5 support
-.if defined(WITH_BIG5)
-CONFIGURE_ARGS+=	--enable-big5
-.endif # WITH_BIG5
-#
-# enable gb support
-.if defined(WITH_GB)
-CONFIGURE_ARGS+=	--enable-gb
-.endif # WITH_GB
-#
-# enable greek keyboard support
-.if defined(WITH_GREEK_KEYBOARD)
-CONFIGURE_ARGS+=	--enable-greek
-.endif # WITH_GREEK_KEYBOARD
-#
-# enable half width/height shadows scrollbar
+USE_PERL5_BUILD=	yes
+USE_X_PREFIX=		yes
+USE_XPM=		yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ARGS=		--enable-shared --enable-everything
+CONFIGURE_TARGET=       --build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALLS_SHLIB=		yes
+USE_BZIP2=		yes
+
+CONFLICTS=	rxvt-devel-2*
+
+MAN1=		urxvt.1 urxvtc.1 urxvtd.1
+MAN7=		urxvt.7
+
+PORTDOCS1=	README.unicode Changes
+PORTDOCS=	README.menu ${PORTDOCS1}
+EXAMPLES=	example.menu jedmenu.sl menu rxvt.menu rxvt.zh-menu terminal.menu
+
+# disable XIM (X Input Method) protocol support
+.if defined(WITHOUT_XIM)
+CONFIGURE_ARGS+=	--disable-xim
+.endif
+
+# disable support for Unicode codepoints above 65535
+.if defined(WITHOUT_UNICODE3)
+CONFIGURE_ARGS+=	--disable-unicode3
+.endif
+
+# disable automatic composition of combining characters
+# into composite characters
+.if defined(WITHOUT_COMBINING)
+CONFIGURE_ARGS+=	--disable-combining
+.endif
+
+# disable support for menu bar system
+.if defined(WITHOUT_MENUBAR)
+CONFIGURE_ARGS+=	--disable-menubar
+.endif
+
+# disable support for the original rxvt scrollbar
+.if defined(WITHOUT_RXVT_SCROLLBAR)
+CONFIGURE_ARGS+=	--disable-rxvt-scroll
+.endif
+
+# disable support for a NeXT-like scrollbar
+.if defined(WITHOUT_NEXT_SCROLLBAR)
+CONFIGURE_ARGS+=	--disable-next-scroll
+.endif
+
+# disable support for an Xterm-like scrollbar
+.if defined(WITHOUT_XTERM_SCROLLBAR)
+CONFIGURE_ARGS+=	--disable-xterm-scroll
+.endif
+
+# disable support for a very unobtrusive, plain-looking scrollbar
+.if defined(WITHOUT_PLAIN_SCROLLBAR)
+CONFIGURE_ARGS+=	--disable-plain-scroll
+.endif
+
+# enable half width/height shadows rxvt scrollbar
 .if defined(WITH_HALF_SHADOW)
 CONFIGURE_ARGS+=	--enable-half-shadow
 .endif
-#
-# enable kanji support
-.if defined(WITH_KANJI)
-CONFIGURE_ARGS+=	--enable-kanji
-.endif # WITH_KANJI
-#
-# enable menubar
-.if defined(WITH_MENUBAR)
-CONFIGURE_ARGS+=	--enable-menubar
-.endif # WITH_MENUBAR
-#
-# enable NeXT style scrollbar
-.if defined(WITH_NEXT_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-next-scroll
-.endif
-#
-# XIM (X Input Method) protocol support
-.ifndef(WITHOUT_XIM)
-CONFIGURE_ARGS+=	--enable-xim
-.endif # WITH_XIM
-#
-# enable Xterm style scrollbar
-.if defined(WITH_XTERM_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-xterm-scroll
-.endif # WITH_XTERM_SCROLLBAR
-#
 
-pre-fetch:
-	@${ECHO_MSG} ""
+# disable any handling of the backspace key by rxvt
+# let the X server do it
+.if defined(WITHOUT_BACKSPACE_KEY)
+CONFIGURE_ARGS+=	--disable-backspace-key
+.endif
+
+# disable any handling of the delete key by rxvt
+.if defined(WITHOUT_DELETE_KEY)
+CONFIGURE_ARGS+=	--disable-delete-key
+.endif
+
+# disable support to provide user specified line spacing between text rows
+.if defined(WITHOUT_LINESPACE)
+CONFIGURE_ARGS+=	--disable-linespace
+.endif
+
+# enable scrolling via mouse wheel or buttons 4 & 5
+.if defined(WITHOUT_MOUSEWHEEL)
+CONFIGURE_ARGS+=	--disable-mousewheel
+.endif
+
+# enable smart resize
+.if defined(WITHOUT_SMART_RESIZE)
+CONFIGURE_ARGS+=	--disable-smart-resize
+.else
+CONFIGURE_ARGS+=	--enable-smart-resize
+.endif
+
+# add support for 256 colours rather than the base 16 colours
+.if defined(WITHOUT_256_COLORS)
+CONFIGURE_ARGS+=	--disable-256-color
+.else
+CONFIGURE_ARGS+=	--enable-256-color
+.endif
+
+CONFIGURE_ENV+=		LIBS="-lutil"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		missing wide-character functions in FreeBSD-4.x libc
+.endif
+
+.if ${OSVERSION} < 502110
+RUN_DEPENDS+=	${LOCALBASE}/share/locale/fr_FR.UTF-8/LC_TIME:${PORTSDIR}/misc/utf8locale
+.endif
+
+# compile in support for additional codeset groups
+.if defined(WITH_ENCODING)
+AVAIL_ENC=	jp jp_ext kr cn cn_ext all
+. for ENC in ${AVAIL_ENC}
+.  if (${WITH_ENCODING} == ${ENC})
+_ENC=		${ENC}
+.  endif
+. endfor
+. if !defined(_ENC)
+.  error	Invalid encoding for WITH_ENCODING
+. endif
+.else
+. if defined(PACKAGE_BUILDING)
+WITH_ENCODING=	all
+. endif
+.endif
+.if defined(WITH_ENCODING)
+CONFIGURE_ARGS+=	--with-codesets=${WITH_ENCODING}
+.endif # WITH_ENCODING
+
+pre-everything::
+	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
-	@${ECHO_MSG} "WITH_BIG5=yes		add support for Chinese characters (BIG5)"
-	@${ECHO_MSG} "WITH_GB=yes		add support for Chinese characters (GB)"
-	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
-	@${ECHO_MSG} "WITH_HALF_SHADOW=yes	use half width/height shadows on non-Xterm scrollbar"
-	@${ECHO_MSG} "WITH_KANJI=yes		add support for Kanji characters"
-	@${ECHO_MSG} "WITH_MENUBAR=yes	add support for rxvt menu bar system"
-	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes	add support for a NeXT-like scrollbar"
-	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	make the scrollbar look like an Xterm scrollbar"
-	@${ECHO_MSG} "WITH_CLEARTEXTPASSWD=yes 	use cleartext passwords"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "WITHOUT_XIM		disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITHOUT_MENUBAR		disable support for menu bar system"
+	@${ECHO_MSG} "WITHOUT_RXVT_SCROLLBAR	disable support for the original rxvt scrollbar"
+	@${ECHO_MSG} "WITHOUT_NEXT_SCROLLBAR	disable support for a NeXT-like scrollbar"
+	@${ECHO_MSG} "WITHOUT_XTERM_SCROLLBAR	disable support for an Xterm-like scrollbar"
+	@${ECHO_MSG} "WITHOUT_PLAIN_SCROLLBAR	disable support for a plain-looking scrollbar"
+	@${ECHO_MSG} "WITH_HALF_SHADOW      	use half width/height shadows on rxvt scrollbar"
+	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY	disable handling of the backspace key"
+	@${ECHO_MSG} "WITHOUT_DELETE_KEY	disable handling of the delete key"
+	@${ECHO_MSG} "WITHOUT_LINESPACE		disable support for line-spacing"
+	@${ECHO_MSG} "WITHOUT_MOUSEWHEEL	disable support for scrolling via mouse wheel"
+	@${ECHO_MSG} "WITHOUT_SMART_RESIZE	disable smart growth/shrink behaviour"
+	@${ECHO_MSG} "WITHOUT_256_COLORS	disable smart growth/shrink behaviour"
+	@${ECHO_MSG}
+.ifndef(WITH_ENCODING)
+	@${ECHO_MSG} "==> You can compile in support for additional codeset groups by setting the WITH_ENCODING variable"
+	@${ECHO_MSG} '==> Options are: "jp"     common japanese encodings;'
+	@${ECHO_MSG} '                 "jp_ext" rarely used but big japanese encodings;'
+	@${ECHO_MSG} '                 "kr"     korean encodings;'
+	@${ECHO_MSG} '                 "cn"     common chinese encodings;'
+	@${ECHO_MSG} '                 "cn_ext" rarely used but very big chinese encodigs;'
+	@${ECHO_MSG} '                 "all"    all of the above;'
+	@${ECHO_MSG} '==> For example, "WITH_ENCODING=kr" for korean encodings.'
+	@${ECHO_MSG}
+.endif
+
+pre-configure:
+	@${PERL} -pi -e 's|(PTYCHAR2\s+"[^"]+)"|\1ghijklmnopqrstuv"|' \
+		${WRKSRC}/src/ptytty.C
 
 post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
+	@${CHMOD} 4711 ${PREFIX}/bin/urxvt
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	@${CP} ${PORTDOCS1:S|^|${WRKSRC}/|} ${WRKSRC}/doc
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/doc/menu/|} ${EXAMPLESDIR}
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
