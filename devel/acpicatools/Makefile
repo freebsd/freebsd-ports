@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acpicatools
-PORTVERSION=	20020214.0
+PORTVERSION=	20020214.1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~iwasaki/acpi/ \
 		http://developer.intel.com/technology/iapc/acpi/downloads/ \
