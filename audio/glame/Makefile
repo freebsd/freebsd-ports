@@ -15,7 +15,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack libglade
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -23,13 +24,13 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lltdl ${PTHREAD_LIBS}"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g'
+	@find ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
+		's|<values[.]h>|<limits.h>|'
 
 post-install:
 	@install-info ${PREFIX}/info/glame.info \
