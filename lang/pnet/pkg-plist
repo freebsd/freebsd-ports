@@ -5,10 +5,12 @@ bin/ilnative
 bin/ilfind
 bin/cscc
 bin/resgen
+include/pnet/il_coder.h
 include/pnet/il_config.h
 include/pnet/il_decimal.h
 include/pnet/il_dumpasm.h
 include/pnet/il_image.h
+include/pnet/il_jopcodes.h
 include/pnet/il_meta.h
 include/pnet/il_opcodes.h
 include/pnet/il_program.h
@@ -17,6 +19,7 @@ include/pnet/il_types.h
 include/pnet/il_utils.h
 include/pnet/il_values.h
 include/pnet/il_writer.h
+include/pnet/il_xml.h
 lib/libILSupport.a
 lib/libILImage.a
 lib/libILDumpAsm.a
