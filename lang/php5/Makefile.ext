@@ -351,7 +351,10 @@ CONFIGURE_ARGS+=--enable-tokenizer
 .endif
 
 .if ${PHP_MODNAME} == "wddx"
-CONFIGURE_ARGS+=--enable-wddx
+CONFIGURE_ARGS+=--enable-wddx \
+		--with-libxml-dir=${LOCALBASE}
+
+USE_GNOME=	libxml2
 
 USE_PHP=	xml session
 USE_PHP_BUILD=	yes
