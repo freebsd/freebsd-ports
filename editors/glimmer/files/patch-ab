@@ -1,0 +1,13 @@
+--- src/declarations.h	2000/09/23 17:26:18	1.1
++++ src/declarations.h	2000/09/23 17:26:55
+@@ -48,8 +48,8 @@
+ 
+ #define MAX_FILES 30
+ 
+-#define PIXMAP_DIR (PREFIX "/share/pixmaps")
+-#define LANG_DIR (PREFIX "/share/" PACKAGE "/languages")
++#define PIXMAP_DIR (PREFIX "/share/gnome/pixmaps")
++#define LANG_DIR (PREFIX "/share/gnome/" PACKAGE "/languages")
+ 
+ #define URL "http://glimmer.sourceforge.net"
+ 
