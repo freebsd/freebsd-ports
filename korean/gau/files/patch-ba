@@ -1,0 +1,10 @@
+--- gnome-login-support.h~	Sun Feb  6 11:46:20 2000
++++ gnome-login-support.h	Sun Feb  6 11:47:09 2000
+@@ -7,6 +7,7 @@
+ #elif defined(HAVE_UTIL_H) /* OpenBSD */
+ #    include <util.h>
+ #elif defined(HAVE_LIBUTIL_H) /* FreeBSD */
++#    include <sys/types.h>
+ #    include <libutil.h>
+ #elif defined(HAVE_LIBUTIL) /* BSDI has libutil, but no libutil.h */
+ /* Avoid pulling in all the include files for no need */

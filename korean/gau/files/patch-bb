@@ -1,0 +1,11 @@
+--- misc/grimview/Makefile~	Fri May  1 17:30:22 1998
++++ misc/grimview/Makefile	Sun Feb  6 11:51:19 2000
+@@ -2,6 +2,6 @@
+ zilla= gzillaimage.o gzillaimgsink.o gzillabytesink.o gzillagif.o gzillajpeg.o
+ 
+ grimview: grimview.o $(zilla)
+-	gcc -o grimview grimview.o $(zilla) `gtk-config --libs` -ljpeg
++	gcc -o grimview grimview.o $(zilla) `gtk12-config --libs` -ljpeg
+ .c.o:
+-	gcc -Wall `gtk-config --cflags` -c $<
++	gcc -Wall `gtk12-config --cflags` -c $<

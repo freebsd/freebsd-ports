@@ -1,0 +1,9 @@
+--- rc/telnet-menu.bak	Sun Feb  6 12:26:46 2000
++++ rc/telnet-menu	Sun Feb  6 12:26:56 2000
+@@ -5,5 +5,5 @@
+ # 이름\t주소\t포트(0은 표준값)\tscript_file
+ 여기	localhost	0	local
+ 하이텔	home.hitel.net	0	hitel-login.scr
+-나우누리 203.238.128.51         0       now-login.scr
++나우누리 nownuri.net         0       now-login.scr
+ 천리안	chollian.dacom.co.kr	0	dacom.scr
