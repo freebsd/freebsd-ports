@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=	bash
 DISTFILES=	bash-${PORTVERSION}.tar.gz bash-doc-${PORTVERSION}.tar.gz
 .endif
 
+PATCH_SITES=	ftp://ftp.cwru.edu/pub/bash/bash-2.05b-patches/
+PATCHFILES=	bash205b-003
+
 MAINTAINER=	obrien@FreeBSD.org
 
 .include <bsd.port.pre.mk>
