@@ -41,8 +41,18 @@ lib/vtcl/images/icon_scrollbar_h.gif
 lib/vtcl/images/icon_scrollbar_v.gif
 lib/vtcl/images/icon_text.gif
 lib/vtcl/images/icon_tixComboBox.gif
+lib/vtcl/images/icon_tixFileEntry.gif
+lib/vtcl/images/icon_tixLabelEntry.gif
 lib/vtcl/images/icon_tixLabelFrame.gif
+lib/vtcl/images/icon_tixMeter.gif
 lib/vtcl/images/icon_tixNoteBook.gif
+lib/vtcl/images/icon_tixOptionMenu.gif
+lib/vtcl/images/icon_tixPanedWindow.gif
+lib/vtcl/images/icon_tixScrolledHList.gif
+lib/vtcl/images/icon_tixScrolledListBox.gif
+lib/vtcl/images/icon_tixSelect.gif
+lib/vtcl/images/icon_tixTree.gif
+lib/vtcl/images/icon_tix_unknown.gif
 lib/vtcl/images/icon_toplevel.gif
 lib/vtcl/images/justify.gif
 lib/vtcl/images/mgr_grid.gif
@@ -56,9 +66,9 @@ lib/vtcl/images/rel_ridge.gif
 lib/vtcl/images/rel_sunken.gif
 lib/vtcl/images/relief.gif
 lib/vtcl/images/title.gif
+lib/vtcl/images/unknown.gif
 lib/vtcl/lib/about.tcl
 lib/vtcl/lib/attrbar.tcl
-lib/vtcl/lib/attredit.tcl
 lib/vtcl/lib/balloon.tcl
 lib/vtcl/lib/bind.tcl
 lib/vtcl/lib/color.tcl
@@ -71,27 +81,29 @@ lib/vtcl/lib/dragsize.tcl
 lib/vtcl/lib/dump.tcl
 lib/vtcl/lib/edit.tcl
 lib/vtcl/lib/file.tcl
-lib/vtcl/lib/filedlg.tcl
 lib/vtcl/lib/globals.tcl
 lib/vtcl/lib/handle.tcl
 lib/vtcl/lib/help.tcl
 lib/vtcl/lib/input.tcl
 lib/vtcl/lib/lib_core.tcl
 lib/vtcl/lib/lib_tix.tcl
-lib/vtcl/lib/mgrs.tcl
 lib/vtcl/lib/misc.tcl
 lib/vtcl/lib/name.tcl
 lib/vtcl/lib/prefs.tcl
 lib/vtcl/lib/proc.tcl
+lib/vtcl/lib/propmgr.tcl
 lib/vtcl/lib/remove.sh
 lib/vtcl/lib/replace.sh
-lib/vtcl/lib/status.tcl
 lib/vtcl/lib/tabpanel.tcl
 lib/vtcl/lib/tclet.tcl
-lib/vtcl/lib/tmp.tmp
 lib/vtcl/lib/toolbar.tcl
 lib/vtcl/lib/tops.tcl
 lib/vtcl/lib/tree.tcl
 lib/vtcl/lib/var.tcl
 lib/vtcl/lib/vtclib.tcl
 lib/vtcl/lib/widget.tcl
+share/doc/vtcl/tutorial.txt
+@dirrm lib/vtcl/images
+@dirrm lib/vtcl/lib
+@dirrm lib/vtcl
+@dirrm share/doc/vtcl
