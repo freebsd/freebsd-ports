@@ -1,0 +1,4 @@
+bin/bmf
+bin/bmfconv
+share/bmf/README
+@dirrm share/bmf
