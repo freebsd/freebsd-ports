@@ -1,0 +1,8 @@
+
+Configuration hints:
+- Copy ${PREFIX}/etc/anacrontab.sample to ${PREFIX}/etc/anacrontab
+- Activate the 'periodic' commands in anacrontab
+- Deactivate the 'periodic' commands in /etc/crontab
+- Add 'anacron' to /etc/rc.local
+- Read anacron(8) and anacrontab(5)
+
