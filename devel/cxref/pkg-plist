@@ -1,0 +1,8 @@
+bin/cxref
+bin/cxref-query
+share/doc/cxref/README.c
+share/doc/cxref/README.cxref
+share/doc/cxref/README.query
+share/doc/cxref/cxref.sty
+share/doc/cxref/fonts.sty
+share/doc/cxref/page.sty
