@@ -410,9 +410,18 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/play.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/sound.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/stop.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/CheckBox/checkboxes.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/CheckBox/src-checkboxes.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/DifferencesFromVB/vbdiff.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/DrawFigures/DrawingArea.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/EventButtonArgument/buttonarg.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/EventMouseButtonArgument/buttonarg.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/EventMouseDown/mouseevents.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/EventMousePosition/GetMousePosition.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/Frm2form/frm2form.pl
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/GridView/gridview.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/GridView/src-gridview.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/like.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike/src-like.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings/catenate.png
@@ -490,6 +499,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUseOptionalParameters/src-optional.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUsePublicAndPrivateVariables/public-private.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoIUsePublicAndPrivateVariables/src-public-private.tgz
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowDoesGambasWork/thewayitworks.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-combo.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-enter.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate-select.png
@@ -497,16 +507,58 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/HowToTranslateGambas/translate.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/InfoExtract/gambas-info-extract.pl
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/InputBox/InputBox-0.0.2.tar.gz
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MakeMenu/menu-editor.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MakeMenu/open-menu-editor.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MakeMenu/src-MyMenu.tgz
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MakeMessages/message-info.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscApplicationArgs/guiNargs.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscExec/process_exec.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscFilesDialog/mydialog.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscFilesLoadSave/load_save.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscFilesMydatatype/mydatatype.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/MiscFilesOpen/open.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ModalForm/form.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ModalForm/newform.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/NewForm/form.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/NewForm/newform.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/OrganizeRadioButtons/message.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/OrganizeRadioButtons/radiobuttongroup.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/OrganizeRadioButtons/src-radiobuttongroup.tgz
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/PictureOnButtons/buttonpicture.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/PictureOnButtons/src-buttonpicture.tgz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/Playground/gui4bdc-0.0-6_gambas_project_source_files.zip
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/ProgressBar/progress.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/RadioButtons/radiobuttons.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/RadioButtons/src-radiobuttons.tgz
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/StringsCatenate/catenate.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/StringsCompareLike/like.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/StringsDivideChar/dividechar.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/StringsDivideWords/dividewords.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/TextLabels/TextLabel.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/Timer/arrow.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/Timer/timer---.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/Timer/timer-uu.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesArray/array.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesArrayMyDatatype/myobjectarray.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesCollection/firstcollection.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesConvertCint/cint.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesConvertCstr/cstr.png
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/VariablesConvertVal/val.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual1.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/VisualIntroductionToGambas/gambasvisual2.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebHome/arrow.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2003-07-11.jpg
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/WebSiteScreenshots/screenshot-2004-07-11b.jpg
+%%PORTDOCS%%%%DATADIR%%/help/.rsrc/WidgetsListBox/listbox.png
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/style.css
+%%PORTDOCS%%%%DATADIR%%/help/AddyProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/AhmadKamal.html
 %%PORTDOCS%%%%DATADIR%%/help/AlbertoMelgar.html
 %%PORTDOCS%%%%DATADIR%%/help/AldoPagin.html
+%%PORTDOCS%%%%DATADIR%%/help/AlessandroToscano.html
+%%PORTDOCS%%%%DATADIR%%/help/AlexandrLee.html
+%%PORTDOCS%%%%DATADIR%%/help/AndresQueralt.html
+%%PORTDOCS%%%%DATADIR%%/help/AndyBertini.html
 %%PORTDOCS%%%%DATADIR%%/help/AntonioBonfa.html
 %%PORTDOCS%%%%DATADIR%%/help/AntonioMaschio.html
 %%PORTDOCS%%%%DATADIR%%/help/ApiARG.html
@@ -714,17 +766,22 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ArticleNetworkComponent.html
 %%PORTDOCS%%%%DATADIR%%/help/ArticleSDL.html
 %%PORTDOCS%%%%DATADIR%%/help/Articles.html
+%%PORTDOCS%%%%DATADIR%%/help/AverageProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/BacktickProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/BenoitMinisini.html
 %%PORTDOCS%%%%DATADIR%%/help/BrandonBergren.html
+%%PORTDOCS%%%%DATADIR%%/help/BrianMacKenzie.html
+%%PORTDOCS%%%%DATADIR%%/help/BtnByCode.html
 %%PORTDOCS%%%%DATADIR%%/help/BudiAriefGusandi.html
 %%PORTDOCS%%%%DATADIR%%/help/CarlosDazDelCampo.html
 %%PORTDOCS%%%%DATADIR%%/help/CarlosPons.html
 %%PORTDOCS%%%%DATADIR%%/help/CarstenOlsen.html
+%%PORTDOCS%%%%DATADIR%%/help/CelalKizilay.html
 %%PORTDOCS%%%%DATADIR%%/help/CharlesARovira.html
 %%PORTDOCS%%%%DATADIR%%/help/CharlieR.html
 %%PORTDOCS%%%%DATADIR%%/help/CharlieReinl.html
 %%PORTDOCS%%%%DATADIR%%/help/ChasBigham.html
+%%PORTDOCS%%%%DATADIR%%/help/CheckBox.html
 %%PORTDOCS%%%%DATADIR%%/help/ChristianFaure.html
 %%PORTDOCS%%%%DATADIR%%/help/ChristopheBONNET.html
 %%PORTDOCS%%%%DATADIR%%/help/ClipboardProgram.html
@@ -732,22 +789,29 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/ComponentList.html
 %%PORTDOCS%%%%DATADIR%%/help/Components.html
 %%PORTDOCS%%%%DATADIR%%/help/CrossSumProgram.html
-%%PORTDOCS%%%%DATADIR%%/help/DanieleAlbano.html
 %%PORTDOCS%%%%DATADIR%%/help/DanielCampos.html
+%%PORTDOCS%%%%DATADIR%%/help/DanieleAlbano.html
 %%PORTDOCS%%%%DATADIR%%/help/DarrellOlsen.html
+%%PORTDOCS%%%%DATADIR%%/help/DataBase.html
 %%PORTDOCS%%%%DATADIR%%/help/DavidVargas.html
 %%PORTDOCS%%%%DATADIR%%/help/Deutsch.html
 %%PORTDOCS%%%%DATADIR%%/help/DiFuscoFrancesco.html
+%%PORTDOCS%%%%DATADIR%%/help/DiegoBazzanella.html
 %%PORTDOCS%%%%DATADIR%%/help/DifferencesFromVB.html
 %%PORTDOCS%%%%DATADIR%%/help/DimitriBellini.html
 %%PORTDOCS%%%%DATADIR%%/help/DjonnyStevensAbenz.html
 %%PORTDOCS%%%%DATADIR%%/help/DominicLe.html
 %%PORTDOCS%%%%DATADIR%%/help/DragDropProgram.html
+%%PORTDOCS%%%%DATADIR%%/help/DrawFigures.html
 %%PORTDOCS%%%%DATADIR%%/help/EduardoAltgott.html
 %%PORTDOCS%%%%DATADIR%%/help/EgmontSailer.html
 %%PORTDOCS%%%%DATADIR%%/help/ElenaModesto.html
 %%PORTDOCS%%%%DATADIR%%/help/ElkinRafael.html
 %%PORTDOCS%%%%DATADIR%%/help/EnzoDezi.html
+%%PORTDOCS%%%%DATADIR%%/help/EventButtonArgument.html
+%%PORTDOCS%%%%DATADIR%%/help/EventMouseButtonArgument.html
+%%PORTDOCS%%%%DATADIR%%/help/EventMouseDown.html
+%%PORTDOCS%%%%DATADIR%%/help/EventMousePosition.html
 %%PORTDOCS%%%%DATADIR%%/help/ExecuteProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/FabienBodard.html
 %%PORTDOCS%%%%DATADIR%%/help/FabricioTarelho.html
@@ -778,7 +842,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GaryFrankenbery.html
 %%PORTDOCS%%%%DATADIR%%/help/Gb.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplication.html
-%%PORTDOCS%%%%DATADIR%%/help/GbApplication.html~
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgs.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgsMget.html
 %%PORTDOCS%%%%DATADIR%%/help/GbApplicationArgsRCount.html
@@ -3238,6 +3301,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/GeorgesCannard.html
 %%PORTDOCS%%%%DATADIR%%/help/GfdsaAtGfdsaorg.html
 %%PORTDOCS%%%%DATADIR%%/help/GianniPiccini.html
+%%PORTDOCS%%%%DATADIR%%/help/GridView.html
 %%PORTDOCS%%%%DATADIR%%/help/GunnarL.html
 %%PORTDOCS%%%%DATADIR%%/help/GustavoRaul.html
 %%PORTDOCS%%%%DATADIR%%/help/HansMartinBundeshund.html
@@ -3271,6 +3335,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/HowDoIUseModules.html
 %%PORTDOCS%%%%DATADIR%%/help/HowDoIUseOptionalParameters.html
 %%PORTDOCS%%%%DATADIR%%/help/HowDoIUsePublicAndPrivateVariables.html
+%%PORTDOCS%%%%DATADIR%%/help/HowDoesGambasWork.html
 %%PORTDOCS%%%%DATADIR%%/help/HowTo.html
 %%PORTDOCS%%%%DATADIR%%/help/HowToHelpGambas.html
 %%PORTDOCS%%%%DATADIR%%/help/HowToProgramComponents.html
@@ -3298,11 +3363,15 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/JaniT.html
 %%PORTDOCS%%%%DATADIR%%/help/JeanPierreWeber.html
 %%PORTDOCS%%%%DATADIR%%/help/JimmyTellez.html
+%%PORTDOCS%%%%DATADIR%%/help/JochenGeorges.html
+%%PORTDOCS%%%%DATADIR%%/help/JohanesJapri.html
 %%PORTDOCS%%%%DATADIR%%/help/JohnTumath.html
+%%PORTDOCS%%%%DATADIR%%/help/JonHanks.html
 %%PORTDOCS%%%%DATADIR%%/help/JorgePerrone.html
 %%PORTDOCS%%%%DATADIR%%/help/JoseLRedrejo.html
 %%PORTDOCS%%%%DATADIR%%/help/JoseMunoz.html
 %%PORTDOCS%%%%DATADIR%%/help/JosefWimmer.html
+%%PORTDOCS%%%%DATADIR%%/help/JuergenZdero.html
 %%PORTDOCS%%%%DATADIR%%/help/KanwarPlaha.html
 %%PORTDOCS%%%%DATADIR%%/help/KarinaBuenaventura.html
 %%PORTDOCS%%%%DATADIR%%/help/KeyCodeProgram.html
@@ -3521,43 +3590,67 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/LinuxFrench.html
 %%PORTDOCS%%%%DATADIR%%/help/LuigiMarti.html
 %%PORTDOCS%%%%DATADIR%%/help/LuizOliveira.html
+%%PORTDOCS%%%%DATADIR%%/help/LukePlant.html
 %%PORTDOCS%%%%DATADIR%%/help/MadhuVT.html
+%%PORTDOCS%%%%DATADIR%%/help/MakeMenu.html
+%%PORTDOCS%%%%DATADIR%%/help/MakeMessages.html
 %%PORTDOCS%%%%DATADIR%%/help/MandrakePackages.html
 %%PORTDOCS%%%%DATADIR%%/help/ManoelSantana.html
+%%PORTDOCS%%%%DATADIR%%/help/MarkDootson.html
 %%PORTDOCS%%%%DATADIR%%/help/MartinJones.html
 %%PORTDOCS%%%%DATADIR%%/help/MathFunctionProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/MatteoCampanelli.html
 %%PORTDOCS%%%%DATADIR%%/help/MaurizioPz.html
 %%PORTDOCS%%%%DATADIR%%/help/MiodragBogdanovic.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscApplicationArgs.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscExec.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscFilesDialog.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscFilesLoadSave.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscFilesMydatatype.html
+%%PORTDOCS%%%%DATADIR%%/help/MiscFilesOpen.html
+%%PORTDOCS%%%%DATADIR%%/help/MoP.html
+%%PORTDOCS%%%%DATADIR%%/help/ModalForm.html
 %%PORTDOCS%%%%DATADIR%%/help/MohammedMuddassir.html
 %%PORTDOCS%%%%DATADIR%%/help/MouseCoordinateProgram.html
+%%PORTDOCS%%%%DATADIR%%/help/NaliniV.html
 %%PORTDOCS%%%%DATADIR%%/help/NarottamaKertanuraga.html
 %%PORTDOCS%%%%DATADIR%%/help/NeKe.html
 %%PORTDOCS%%%%DATADIR%%/help/NelsonFerraz.html
 %%PORTDOCS%%%%DATADIR%%/help/NewButtonProgram.html
+%%PORTDOCS%%%%DATADIR%%/help/NewForm.html
 %%PORTDOCS%%%%DATADIR%%/help/NewFormProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/NigelGerrard.html
 %%PORTDOCS%%%%DATADIR%%/help/NobodyGroup.html
 %%PORTDOCS%%%%DATADIR%%/help/OfficeLocations.html
+%%PORTDOCS%%%%DATADIR%%/help/OliverStieber.html
+%%PORTDOCS%%%%DATADIR%%/help/OopCcar.html
+%%PORTDOCS%%%%DATADIR%%/help/OrganizeRadioButtons.html
 %%PORTDOCS%%%%DATADIR%%/help/PCREPatternSyntax.html
 %%PORTDOCS%%%%DATADIR%%/help/PabloSaborio.html
 %%PORTDOCS%%%%DATADIR%%/help/PaoloSaudin.html
+%%PORTDOCS%%%%DATADIR%%/help/ParetR.html
 %%PORTDOCS%%%%DATADIR%%/help/ParrotBasic.html
+%%PORTDOCS%%%%DATADIR%%/help/PaulMorton.html
 %%PORTDOCS%%%%DATADIR%%/help/PaulRobinson.html
 %%PORTDOCS%%%%DATADIR%%/help/PaulinoMichelazzo.html
 %%PORTDOCS%%%%DATADIR%%/help/PetrYk.html
 %%PORTDOCS%%%%DATADIR%%/help/PhibBleh.html
+%%PORTDOCS%%%%DATADIR%%/help/PictureOnButtons.html
 %%PORTDOCS%%%%DATADIR%%/help/PieroProietti.html
 %%PORTDOCS%%%%DATADIR%%/help/Playground.html
+%%PORTDOCS%%%%DATADIR%%/help/ProgressBar.html
 %%PORTDOCS%%%%DATADIR%%/help/RGBColoursProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/RGBColoursProgramm.html
+%%PORTDOCS%%%%DATADIR%%/help/RadioButtons.html
 %%PORTDOCS%%%%DATADIR%%/help/RajanVinayKumar.html
 %%PORTDOCS%%%%DATADIR%%/help/RamAnanth.html
 %%PORTDOCS%%%%DATADIR%%/help/RaymondMoore.html
 %%PORTDOCS%%%%DATADIR%%/help/ReinerHoffmann.html
 %%PORTDOCS%%%%DATADIR%%/help/RenzoSolfaroli.html
+%%PORTDOCS%%%%DATADIR%%/help/RicardoBugedo.html
 %%PORTDOCS%%%%DATADIR%%/help/RicardoLuis.html
 %%PORTDOCS%%%%DATADIR%%/help/RobKudla.html
+%%PORTDOCS%%%%DATADIR%%/help/RobertLawrence.html
 %%PORTDOCS%%%%DATADIR%%/help/RomainCHAUMAIS.html
 %%PORTDOCS%%%%DATADIR%%/help/RonaldGrasso.html
 %%PORTDOCS%%%%DATADIR%%/help/RsKannan.html
@@ -3568,21 +3661,38 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/SantiagoOberto.html
 %%PORTDOCS%%%%DATADIR%%/help/ScrollTextProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/SebastianJauch.html
+%%PORTDOCS%%%%DATADIR%%/help/ShaneVolpe.html
 %%PORTDOCS%%%%DATADIR%%/help/SlawomirSek.html
 %%PORTDOCS%%%%DATADIR%%/help/SpiralProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/SpiralProgramm.html
+%%PORTDOCS%%%%DATADIR%%/help/SrikantaPrasanna.html
 %%PORTDOCS%%%%DATADIR%%/help/StefanusEddy.html
 %%PORTDOCS%%%%DATADIR%%/help/StepByStepProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/StephanGans.html
 %%PORTDOCS%%%%DATADIR%%/help/StephaneMartin.html
+%%PORTDOCS%%%%DATADIR%%/help/StringsCatenate.html
+%%PORTDOCS%%%%DATADIR%%/help/StringsCompareLike.html
+%%PORTDOCS%%%%DATADIR%%/help/StringsDivideChar.html
+%%PORTDOCS%%%%DATADIR%%/help/StringsDivideWords.html
 %%PORTDOCS%%%%DATADIR%%/help/SunsetProgram.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiAdminGroup.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiGroups.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiGuest.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiUsers.html
 %%PORTDOCS%%%%DATADIR%%/help/TWikiVariables.html
+%%PORTDOCS%%%%DATADIR%%/help/TestUser1.html
+%%PORTDOCS%%%%DATADIR%%/help/TextLabels.html
+%%PORTDOCS%%%%DATADIR%%/help/Timer.html
 %%PORTDOCS%%%%DATADIR%%/help/TrademarkAttributions.html
 %%PORTDOCS%%%%DATADIR%%/help/ValerioGuaglianone.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesArray.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesArrayMyDatatype.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesCollection.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesConvertCint.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesConvertCstr.html
+%%PORTDOCS%%%%DATADIR%%/help/VariablesConvertVal.html
+%%PORTDOCS%%%%DATADIR%%/help/VincenzoDionisioVirgilio.html
+%%PORTDOCS%%%%DATADIR%%/help/VincenzoVirgilio.html
 %%PORTDOCS%%%%DATADIR%%/help/VisualIntroductionToGambas.html
 %%PORTDOCS%%%%DATADIR%%/help/VolkerEbbert.html
 %%PORTDOCS%%%%DATADIR%%/help/WebChanges.html
@@ -3598,10 +3708,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteIntroduction.html
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteScreenshots.html
 %%PORTDOCS%%%%DATADIR%%/help/WebStatistics.html
+%%PORTDOCS%%%%DATADIR%%/help/WidgetsListBox.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiExportTodoList.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiName.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiRon.html
 %%PORTDOCS%%%%DATADIR%%/help/WishList.html
+%%PORTDOCS%%%%DATADIR%%/help/XxxYyy.html
 %%PORTDOCS%%%%DATADIR%%/help/YohanAdiSetiawan.html
 %%PORTDOCS%%%%DATADIR%%/help/YvickMiossec.html
 %%PORTDOCS%%%%DATADIR%%/help/ZenoDotus.html
@@ -3641,13 +3753,41 @@ lib/gambas/lib.gb.vb.so.0
 %%XML%%%%DATADIR%%/info/gb.xml.libxml.xslt.list
 @dirrm %%DATADIR%%/info
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/hello-world
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WidgetsListBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WebSiteScreenshots
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/WebHome
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VisualIntroductionToGambas
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesConvertVal
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesConvertCstr
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesConvertCint
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesCollection
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesArrayMyDatatype
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/VariablesArray
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Timer
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/TextLabels
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StringsDivideWords
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StringsDivideChar
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StringsCompareLike
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/StringsCatenate
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/RadioButtons
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ProgressBar
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Playground
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/PictureOnButtons
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/OrganizeRadioButtons
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/NewForm
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ModalForm
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscFilesOpen
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscFilesMydatatype
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscFilesLoadSave
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscFilesDialog
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscExec
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MiscApplicationArgs
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MakeMessages
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/MakeMenu
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/InputBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/InfoExtract
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowToTranslateGambas
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoesGambasWork
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIUsePublicAndPrivateVariables
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIUseOptionalParameters
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIUseModules
@@ -3671,9 +3811,16 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIConvertDataToStrings
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoIConcatenateStrings
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/HowDoICompareStringsUsingLike
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/GridView
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/Frm2form
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/EventMousePosition
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/EventMouseDown
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/EventMouseButtonArgument
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/EventButtonArgument
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/DrawFigures
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/DifferencesFromVB
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ChristopheBONNET
+%%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/CheckBox
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
