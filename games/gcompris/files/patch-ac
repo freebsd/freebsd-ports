@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Mon May 28 13:18:45 2001
-+++ Makefile.in	Mon May 28 13:33:59 2001
-@@ -183,9 +183,9 @@
+--- Makefile.in.orig	Thu Oct 25 15:10:26 2001
++++ Makefile.in	Thu Oct 25 15:14:53 2001
+@@ -192,9 +192,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -16,7 +16,7 @@ $FreeBSD$
  
  mostlyclean-hdr:
  
-@@ -417,7 +417,7 @@
+@@ -426,7 +426,7 @@
  install-exec-am:
  install-exec: install-exec-recursive
  
@@ -25,7 +25,7 @@ $FreeBSD$
  		install-data-local
  install-data: install-data-recursive
  
-@@ -488,14 +488,14 @@
+@@ -498,13 +498,13 @@
  	@$(NORMAL_INSTALL)
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
@@ -34,7 +34,6 @@ $FreeBSD$
  	fi
  
  dist-hook:
- 	cp gcompris.spec $(distdir)
  	if test -d @PACKAGE_DATA_DIR@; then \
  	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
 -	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
