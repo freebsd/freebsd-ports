@@ -104,6 +104,7 @@
     SUBDIR += p5-Crypt-CBC
     SUBDIR += p5-Crypt-CipherSaber
     SUBDIR += p5-Crypt-Cracklib
+    SUBDIR += p5-Crypt-Cryptix
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-ECB
     SUBDIR += p5-Crypt-IDEA
