@@ -1,0 +1,10 @@
+--- config/Default.orig	Tue Sep 12 22:07:51 2000
++++ config/Default	Tue Sep 12 22:07:59 2000
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-/usr/bin/X11/xsetroot -solid "#007777"
++/usr/X11R6/bin/xsetroot -solid "#007777"
+ 
+ 
+ 

@@ -1,0 +1,21 @@
+--- daemon/gdm.c.orig	Wed Sep 13 01:04:25 2000
++++ daemon/gdm.c	Wed Sep 13 01:05:17 2000
+@@ -271,18 +271,12 @@
+     else 
+ 	GdmUserId = pwent->pw_uid;
+ 
+-    if (GdmUserId==0)
+-	gdm_fail (_("gdm_config_parse: The gdm user should not be root. Aborting!"));
+-
+     grent = getgrnam (GdmGroup);
+ 
+     if (!grent)
+ 	gdm_fail (_("gdm_config_parse: Can't find the gdm group (%s). Aborting!"), GdmGroup);
+     else 
+ 	GdmGroupId = grent->gr_gid;   
+-
+-    if (GdmGroupId==0)
+-	gdm_fail (_("gdm_config_parse: The gdm group should not be root. Aborting!"));
+ 
+     setegid (GdmGroupId);	/* gid remains `gdm' */
+     seteuid (GdmUserId);

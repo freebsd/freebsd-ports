@@ -1,0 +1,7 @@
+--- config/PreSession.orig	Thu Sep 30 07:42:27 1999
++++ config/PreSession	Wed Sep 13 00:51:23 2000
+@@ -1,3 +1,3 @@
+ #!/bin/sh
+-/usr/bin/X11/sessreg -a -w /var/log/wtmp -u /var/run/utmp -l $DISPLAY $USER
++/usr/X11R6/bin/sessreg -a -w /var/log/wtmp -u /var/run/utmp -l $DISPLAY -x /usr/X11R6/lib/X11/xdm/Xservers $USER
+ 

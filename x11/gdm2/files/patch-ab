@@ -1,0 +1,47 @@
+--- config/gdm.conf.in.orig	Tue Sep  7 13:37:16 1999
++++ config/gdm.conf.in	Wed Sep 13 01:26:33 2000
+@@ -1,20 +1,20 @@
+ [daemon]
+ Chooser=@bindir@/gdmchooser --disable-sound --disable-crash-dialog
+-DefaultPath=/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@bindir@
++DefaultPath=/bin:/usr/bin:/usr/local/bin:@X11BASE@/bin:@LOCALBASE@/bin
+ DisplayInitDir=@sysconfdir@/gdm/Init
+ Greeter=@bindir@/gdmlogin --disable-sound --disable-crash-dialog
+-Group=gdm
++Group=wheel
+ HaltCommand=/sbin/shutdown -h now
+ KillInitClients=1
+-LogDir=@authdir@
++LogDir=/var/log
+ PidFile=/var/run/gdm.pid
+ PostSessionScriptDir=@sysconfdir@/gdm/PostSession/
+ PreSessionScriptDir=@sysconfdir@/gdm/PreSession/
+ RebootCommand=/sbin/shutdown -r now
+-RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/bin/X11:/usr/local/bin:@bindir@
++RootPath=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:@X11BASE@/bin:@LOCALBASE@/bin
+ ServAuthDir=@authdir@
+ SessionDir=@sysconfdir@/gdm/Sessions/
+-User=gdm
++User=root
+ UserAuthDir=
+ UserAuthFBDir=/tmp
+ UserAuthFile=.Xauthority
+@@ -50,7 +50,7 @@
+ GlobalFaceDir=@datadir@/faces/
+ Icon=@pixmapdir@/gdm.xpm
+ LocaleFile=@localedir@/locale.alias
+-Logo=@pixmapdir@/gnome-logo-large.png
++Logo=@pixmapdir@/Daemon.png
+ Quiver=1
+ SystemMenu=0
+ Welcome=Welcome to %n
+@@ -64,7 +64,7 @@
+ Enable=0
+ 
+ [servers]
+-0=/usr/bin/X11/X
+-#1=/usr/bin/X11/X
++0=@X11BASE@/bin/X
++#1=@X11BASE@/bin/X
+ 
+ 
