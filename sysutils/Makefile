@@ -58,6 +58,7 @@
     SUBDIR += consolehm
     SUBDIR += contool
     SUBDIR += copytape
+    SUBDIR += coreutils
     SUBDIR += cotty
     SUBDIR += cpbk
     SUBDIR += cpdup
