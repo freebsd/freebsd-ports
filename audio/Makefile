@@ -14,6 +14,7 @@
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += arts
+    SUBDIR += artswrapper
     SUBDIR += ascd
     SUBDIR += asmix
     SUBDIR += asmixer

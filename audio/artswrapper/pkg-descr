@@ -1,0 +1,3 @@
+This program launches artsd (from the audio/arts port), optionally with
+elevated priority. To do this, it needs superuser priviliges and is installed
+setuid root.
