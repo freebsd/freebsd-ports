@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	Mail
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	YES
 
