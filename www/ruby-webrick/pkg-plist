@@ -18,6 +18,7 @@
 %%RUBY_SITELIBDIR%%/webrick/httpservlet/prochandler.rb
 %%RUBY_SITELIBDIR%%/webrick/httpstatus.rb
 %%RUBY_SITELIBDIR%%/webrick/httputils.rb
+%%RUBY_SITELIBDIR%%/webrick/httpversion.rb
 %%RUBY_SITELIBDIR%%/webrick/log.rb
 %%RUBY_SITELIBDIR%%/webrick/mime.types
 %%RUBY_SITELIBDIR%%/webrick/server.rb
