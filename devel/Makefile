@@ -158,6 +158,7 @@
     SUBDIR += fc++
     SUBDIR += ffcall
     SUBDIR += fhist
+    SUBDIR += findlib
     SUBDIR += flick
     SUBDIR += flux
     SUBDIR += fnccheck
