@@ -5037,6 +5037,7 @@ p5-Class-DBI	ports/databases/p5-Class-DBI
 p5-Class-DBI-AbstractSearch	ports/databases/p5-Class-DBI-AbstractSearch
 p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-SAK	ports/databases/p5-Class-DBI-SAK
+p5-Class-DBI-SQLite	ports/databases/p5-Class-DBI-SQLite
 p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date	ports/devel/p5-Class-Date
 p5-Class-Default	ports/devel/p5-Class-Default
