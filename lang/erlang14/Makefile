@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	7.1.0
-PORTREVISION=	1
+PORTVERSION=	7.2.0
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R7B-1
+DISTNAME=	otp_src_R7B-2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -49,7 +48,9 @@ GNU_CONFIGURE=	yes
 
 UPDATED_PACKAGES=	erts lib/compiler lib/erl_interface \
 			lib/kernel lib/mnesia lib/sasl \
-			lib/snmp lib/stdlib
+			lib/snmp lib/stdlib lib/asn1 lib/debugger \
+			lib/gs lib/ic lib/inets lib/orber \
+			lib/runtime_tools lib/ssl lib/tools
 
 .if !defined(WITHOUT_JAVA)
 # The Java applications that are part of the Erlang distribution are
@@ -95,7 +96,7 @@ pre-build:
 # Check if javac is really in ${JAVABINDIR}.
 pre-configure:
 .if !defined(WITHOUT_JAVA)
-	if [ ! -x ${JAVABINDIR}/javac ]; then \
+	@if [ ! -x ${JAVABINDIR}/javac ]; then \
 		${ECHO_MSG} ">> Error: cannot find javac in JAVABINDIR."; \
 		${ECHO_MSG} ">> Please configure JAVABINDIR, or use the WITHOUT_JAVA option"; \
 		exit 1; \
@@ -118,9 +119,9 @@ post-install:
 		epkg_dirname=`dirname $${epkg_pathname}`; \
 		epkg_basename=`basename $${epkg_pathname}`; \
 		doc_release=`ls $${epkg_dirname}/ \
-			| ${GREP} $${epkg_basename}- | ${SED} -e "2d"`; \
+			| ${GREP} -E "^$${epkg_basename}-" | ${SED} -e "2d"`; \
 		app_release=`ls $${epkg_dirname}/ \
-			| ${GREP} $${epkg_basename}- | ${SED} -e "1d"`; \
+			| ${GREP} -E "^$${epkg_basename}-" | ${SED} -e "1d"`; \
 		if [ -z "$${doc_release}" -o -z "$${app_release}" ]; then \
 			${ECHO_MSG} ">> Error: post-install target failed to merge documentation"; \
 			exit 1; \
@@ -139,6 +140,10 @@ post-install:
 .endif
 	sslapp=`ls -d ${PREFIX}/lib/erlang/lib/ssl-* | tail -1`; \
 	cd $$sslapp/priv/obj && ${MAKE} && strip ../bin/ssl_esock
+	@${CP} ${PLIST} ${TMPPLIST}
+	@find ${PREFIX}/lib/erlang -type f | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
+	@find ${PREFIX}/lib/erlang -type l | ${SED} -e "s@${PREFIX}/@@" | sort >> ${TMPPLIST}
+	@find ${PREFIX}/lib/erlang -type d | ${SED} -e "s@${PREFIX}/@@" | ${PERL} -e 'print (join ("\n", reverse map ("\@dirrm " . substr ($$_, 0, -1), <STDIN>)) . "\n");' >> ${TMPPLIST}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a
 # private subdir. This is to avoid cluttering up the man page name
