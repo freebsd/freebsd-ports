@@ -1,0 +1,8 @@
+xCHM is a .chm viewer for UNIX. CHM is commonly used for a rich-text help
+files on Windows platform, and for publishing eBooks.
+
+xCHM can show the contents tree if one is available, print the displayed page,
+change fonts faces and size, work with bookmarks, do the usual history stunts
+(forward, back, home), and seach for text in the whole book.
+
+WWW: http://xchm.sourceforge.net/
