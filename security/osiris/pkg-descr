@@ -1,0 +1,5 @@
+Osiris is another file integrity checking tool.
+It creates file information databases and diff them.
+It uses GDBM database by default and optionally MySQL.
+
+WWW: http://osiris.shmoo.com/

@@ -1,0 +1,7 @@
+bin/osiris
+bin/scale
+@unexec if [ -f %D/etc/osiris.conf ] && cmp -s %D/etc/osiris.conf %D/etc/osiris.conf-sample; then rm -f %D/etc/osiris.conf; fi
+etc/osiris.conf-sample
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

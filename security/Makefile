@@ -176,6 +176,7 @@
     SUBDIR += openssl
     SUBDIR += openssl-beta
     SUBDIR += openvpn
+    SUBDIR += osiris
     SUBDIR += outguess
     SUBDIR += p5-Authen-Krb4
     SUBDIR += p5-Authen-Krb5
