@@ -1,0 +1,11 @@
+--- Imakefile	2001/09/08 12:01:26	1.1
++++ Imakefile	2001/09/08 12:02:34
+@@ -26,4 +26,7 @@
+ #endif
+ 
+ 
+-ComplexProgramTarget(wmnet)
++ComplexProgramTarget(wmnet2)
++
++wmnet2.man: wmnet.man
++	ln -sf wmnet.man wmnet2.man

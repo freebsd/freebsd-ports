@@ -425,6 +425,7 @@
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += wmnet
+    SUBDIR += wmnet2
     SUBDIR += wmnetmon
     SUBDIR += wmqmon
     SUBDIR += xarchie
