@@ -1,0 +1,13 @@
+This fixes the problem with cfd not finding the correct interfaces.
+
+--- src/misc.c.orig	Wed Jan 24 07:28:01 2001
++++ src/misc.c	Fri Aug 10 23:34:45 2001
+@@ -284,7 +284,7 @@
+ list.ifc_len = sizeof(ifbuf);
+ list.ifc_req = ifbuf;
+ 
+-if (ioctl(fd, SIOCGIFCONF, &list) == -1 || (list.ifc_len < (sizeof(struct ifreq))))
++if (ioctl(fd, OSIOCGIFCONF, &list) == -1 || (list.ifc_len < (sizeof(struct ifreq))))
+    {
+    CfLog(cferror,"Couldn't get interfaces","ioctl");
+    exit(1);
