@@ -6,28 +6,18 @@
 #
 
 PORTNAME=	popt
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.redhat.com/redhat/current/SRPMS/SRPMS/ \
-		ftp://ftp.freesoftware.com/pub/linux/redhat/current/SRPMS/SRPMS/
-EXTRACT_SUFX=	-1.src.rpm
+MASTER_SITES= ftp://ftp.rpm.org/pub/rpm/dist/rpm-3.0.x/
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/rpm2cpio:${PORTSDIR}/misc/rpm
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN3=		popt.3
-MANCOMPRESSED=	no
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${LOCALBASE}/bin/rpm2cpio ${_DISTDIR}${DISTFILES} | (cd ${WRKDIR}; cpio -i)
-	@tar -xzf ${WRKDIR}/${DISTNAME}.tar.gz -C ${WRKDIR}
 
 .include <bsd.port.mk>
