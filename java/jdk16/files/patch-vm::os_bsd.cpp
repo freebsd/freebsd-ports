@@ -11,3 +11,12 @@ $FreeBSD$
  #define EXTENSIONS_DIR "/lib/ext"
  #define ENDORSED_DIR "/lib/endorsed"
  
+@@ -1898,7 +1898,7 @@
+     } while ((res == OS_ERR) && (errno == EINTR));
+   } else {
+     assert(Thread::current()->is_Java_thread(), "must be java thread");
+-    INTERRUPTIBLE_NORESTART(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
++    INTERRUPTIBLE_NORESTART_VM(nanosleep(&t, &t), res, os::Bsd::clear_interrupted);
+   }
+   // INTERRUPTIBLE_NORESTART_VM returns res == OS_INTRPT for thread.Interrupt
+ 
