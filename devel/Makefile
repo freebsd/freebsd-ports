@@ -627,6 +627,7 @@
     SUBDIR += p5-Curses
     SUBDIR += p5-Curses-Application
     SUBDIR += p5-Curses-Forms
+    SUBDIR += p5-Curses-UI
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Data-Compare
