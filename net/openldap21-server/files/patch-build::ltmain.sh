@@ -1,5 +1,5 @@
 --- build/ltmain.sh.orig	Mon Feb 10 20:24:24 2003
-+++ build/ltmain.sh	Thu Mar 25 02:17:45 2004
++++ build/ltmain.sh	Sun Mar 28 19:11:24 2004
 @@ -1066,7 +1066,7 @@
  	  esac
  	 elif test "X$arg" = "X-lc_r"; then
@@ -9,7 +9,20 @@
  	    # Do not include libc_r directly, use -pthread flag.
  	    continue
  	    ;;
-@@ -4286,10 +4286,17 @@
+@@ -1078,6 +1078,12 @@
+ 
+       -module)
+ 	module=yes
++	case $host in
++	*-*-freebsd*)
++	  # Do not build the useless static library
++	  build_old_libs=no
++	  ;;
++	esac
+ 	continue
+ 	;;
+ 
+@@ -4286,10 +4292,17 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
