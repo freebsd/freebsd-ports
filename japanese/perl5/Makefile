@@ -3,19 +3,19 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.6 1997/05/28 19:52:34 fenner Exp $
+# $Id: Makefile,v 1.7 1997/06/09 04:53:40 fenner Exp $
 #
 
 DISTNAME=	perl5.003
 PKGNAME=	jp-perl-5.003
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
-		ftp://ftp.is.co.za/pub/perl/CPAN/src/5.0/ \
+		ftp://ftp.is.co.za/pub/packages/perl/CPAN/src/5.0/ \
 		ftp://ftp.math.ncu.edu.tw/perl/CPAN/src/5.0/ \
 		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/src/5.0/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/src/5.0/ \
 		ftp://ftp.sunet.se/pub/lang/perl/CPAN/src/5.0/ \
-		ftp://ftp.switch.ch/mirror/CPAN/src/5.0/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/CPAN/src/5.0/ \
 		ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/src/5.0/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/src/5.0/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/src/5.0/ \
@@ -23,12 +23,12 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/src/5.0/ \
 
 PATCHFILES=	jperl5.003.patch7_1.gz
 PATCH_SITES=	ftp://ftp.funet.fi/pub/languages/perl/CPAN/authors/id/WATANABE/ \
-		ftp://ftp.is.co.za/pub/perl/CPAN/authors/id/WATANABE/ \
+		ftp://ftp.is.co.za/pub/packages/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.math.ncu.edu.tw/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.lab.kdd.co.jp/lang/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.pasteur.fr/pub/computing/unix/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.sunet.se/pub/lang/perl/CPAN/authors/id/WATANABE/ \
-		ftp://ftp.switch.ch/mirror/CPAN/authors/id/WATANABE/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/CPAN/authors/id/WATANABE/ \
 		ftp://unix.hensa.ac.uk/mirrors/perl-CPAN/authors/id/WATANABE/ \
 		ftp://ftp.cis.ufl.edu/pub/perl/CPAN/authors/id/WATANABE/ \
 		ftp://ftp.delphi.com/pub/mirrors/packages/perl/CPAN/authors/id/WATANABE/ \
