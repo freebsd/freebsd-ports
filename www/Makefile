@@ -578,6 +578,7 @@
     SUBDIR += pear-HTTP_Server
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
+    SUBDIR += pear-Text_Wiki
     SUBDIR += pgdriver
     SUBDIR += pglogd
     SUBDIR += photo_gallery
