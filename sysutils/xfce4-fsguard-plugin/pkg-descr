@@ -1,0 +1,10 @@
+Written by Andre Lerche, this plugin checks the 
+chosen mountpoint for free disk space.  
+It displays 4 different icons (red, yellow, green, unknown) 
+and a message box, depending on the free space. 
+The amount of free disk space is visible in a tooltip. 
+If you left-click on its icon, it opens the 
+mountpoint directory in the file manager.
+
+Author:	Andre Lerche <a.lerche@gmx.net>
+WWW:	http://xfce-goodies.berlios.de/
