@@ -1,0 +1,45 @@
+--- gncal/Makefile.in.orig	Wed Jan 13 11:13:50 1999
++++ gncal/Makefile.in	Mon Jan 18 03:14:33 1999
+@@ -112,12 +112,12 @@
+ YACC = @YACC@
+ l = @l@
+ 
+-help_base = $(datadir)/gnome/help/cal
++help_base = $(datadir)/help/cal
+ 
+ INCLUDES = 			\
+ 	-I$(includedir)					\
+ 	$(GNOME_INCLUDEDIR)				\
+-        -DGNOMELOCALEDIR=\""$(datadir)/locale"\"
++        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"
+ 
+ bin_PROGRAMS = gnomecal
+ 
+--- gnomecard/Makefile.in.orig	Mon Jan 18 03:15:06 1999
++++ gnomecard/Makefile.in	Mon Jan 18 03:15:29 1999
+@@ -112,12 +112,12 @@
+ YACC = @YACC@
+ l = @l@
+ 
+-xpmhelp_base = $(datadir)/gnome/help/cal
++xpmhelp_base = $(datadir)/help/cal
+ 
+ INCLUDES = 			\
+ 	-I$(includedir)					\
+ 	$(GNOME_INCLUDEDIR)				\
+-        -DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
++        -DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	\
+ 	-I../../gcalendar
+ 
+ bin_PROGRAMS = gnomecard
+--- po/Makefile.in.in.orig	Mon Jan 18 03:13:29 1999
++++ po/Makefile.in.in	Mon Jan 18 03:13:39 1999
+@@ -18,7 +18,7 @@
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-datadir = $(prefix)/@DATADIRNAME@
++datadir = $(prefix)/share
+ localedir = $(datadir)/locale
+ gnulocaledir = $(prefix)/share/locale
+ gettextsrcdir = $(prefix)/share/gettext/po
