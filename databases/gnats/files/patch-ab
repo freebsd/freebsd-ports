@@ -1,11 +1,11 @@
---- gnats/Makefile.in	Sun Jun 28 18:52:04 1998
-+++ gnats/Makefile.in	Wed Jul 15 13:01:33 1998
-@@ -461,7 +461,7 @@
- install-tools-arch-indep: all-tools
- 	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
+--- gnats/Makefile.in.orig	Sun Sep 26 07:43:30 1999
++++ gnats/Makefile.in	Sun Sep 26 07:44:27 1999
+@@ -496,7 +496,7 @@
+ 	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
+ 	fi
  	$(INSTALL_DATA) gnats.el $(lispdir)/gnats.el
--	$(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
-+#	$(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
+-	test -f gnats.elc && $(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
++#	test -f gnats.elc && $(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
  
  install-tools-bin: all-tools
  	$(INSTALL_PROGRAM) query-pr $(bindir)/query-pr

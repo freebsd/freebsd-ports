@@ -1,5 +1,5 @@
---- Makefile.in	Sun Jun 28 12:52:20 1998
-+++ Makefile.in	Wed Jul 15 12:35:08 1998
+--- Makefile.in.orig	Thu Nov  5 21:54:07 1998
++++ Makefile.in	Sun Sep 26 07:45:19 1999
 @@ -68,7 +68,7 @@
  HOST_PREFIX_1 = loser-
  
