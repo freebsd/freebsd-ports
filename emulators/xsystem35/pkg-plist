@@ -1,19 +1,19 @@
 bin/instgame
 bin/xsystem35
-share/doc/ja/xsystem35/BUGS
-share/doc/ja/xsystem35/ChangeLog
-share/doc/ja/xsystem35/FAQ
-share/doc/ja/xsystem35/GRFMT.TXT
-share/doc/ja/xsystem35/INSTALL
-share/doc/ja/xsystem35/MISCGAME.TXT
-share/doc/ja/xsystem35/README
-share/doc/ja/xsystem35/README.color
-share/doc/ja/xsystem35/README.joystick
-share/doc/ja/xsystem35/README.miko
-share/doc/ja/xsystem35/README.music
-share/doc/ja/xsystem35/README.pastel
-share/doc/ja/xsystem35/THANKS
-share/doc/ja/xsystem35/TODO
+%%PORTDOCS%%share/doc/ja/xsystem35/BUGS
+%%PORTDOCS%%share/doc/ja/xsystem35/ChangeLog
+%%PORTDOCS%%share/doc/ja/xsystem35/FAQ
+%%PORTDOCS%%share/doc/ja/xsystem35/GRFMT.TXT
+%%PORTDOCS%%share/doc/ja/xsystem35/INSTALL
+%%PORTDOCS%%share/doc/ja/xsystem35/MISCGAME.TXT
+%%PORTDOCS%%share/doc/ja/xsystem35/README
+%%PORTDOCS%%share/doc/ja/xsystem35/README.color
+%%PORTDOCS%%share/doc/ja/xsystem35/README.joystick
+%%PORTDOCS%%share/doc/ja/xsystem35/README.miko
+%%PORTDOCS%%share/doc/ja/xsystem35/README.music
+%%PORTDOCS%%share/doc/ja/xsystem35/README.pastel
+%%PORTDOCS%%share/doc/ja/xsystem35/THANKS
+%%PORTDOCS%%share/doc/ja/xsystem35/TODO
 share/examples/xsystem35/README.TXT
 share/examples/xsystem35/ambi.inf
 share/examples/xsystem35/atlach.inf
@@ -41,5 +41,5 @@ share/examples/xsystem35/toushin.inf
 share/examples/xsystem35/toushin2.inf
 share/examples/xsystem35/xsys35rc.sample
 share/examples/xsystem35/zero.inf
-@dirrm share/doc/ja/xsystem35
+%%PORTDOCS%%@dirrm share/doc/ja/xsystem35
 @dirrm share/examples/xsystem35
