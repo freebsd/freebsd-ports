@@ -12,6 +12,7 @@
     SUBDIR += afbackup
     SUBDIR += afbackup-client
     SUBDIR += afbackup-server
+    SUBDIR += airoflash
     SUBDIR += alevt
     SUBDIR += amanda
     SUBDIR += amanda-client
