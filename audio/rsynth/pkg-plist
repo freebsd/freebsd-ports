@@ -1,3 +1,2 @@
-@cwd /usr/local
 bin/say
-bin/klatt
+bin/nasay

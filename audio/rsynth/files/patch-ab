@@ -1,0 +1,30 @@
+*** configure.in.orig	Tue Nov  8 14:30:51 1994
+--- configure.in	Sat Jul  1 18:02:56 1995
+***************
+*** 11,17 ****
+  dbm=none
+  make_dist=/dev/null 
+  
+! AC_PREFIX_PROGRAM(gcc)
+  
+  if test -z "$CC" && test -n "$GCC" ; then
+  CC=$GCC
+--- 11,18 ----
+  dbm=none
+  make_dist=/dev/null 
+  
+! dnl *sigh* - torstenb
+! dnl AC_PREFIX_PROGRAM(gcc)
+  
+  if test -z "$CC" && test -n "$GCC" ; then
+  CC=$GCC
+***************
+*** 41,46 ****
+--- 42,48 ----
+  *-sgi-*) hplay=sgi ;;
+  *-next-*) hplay=NeXT; AC_CHECK_HEADERS(libc.h) ;;
+  *-*-linux*) hplay=linux ;;
++ *-*-freebsd*) hplay=freebsd ;;
+  *-*-hpux*)  hplay=hpux ;;
+  *-*-*) echo "Unknown host type $host" ;;
+  esac
