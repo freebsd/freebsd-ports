@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	htmldoc
-PORTVERSION=	1.8.20
+PORTVERSION=	1.8.23
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1-source
+MASTER_SITES=	ftp://ftp.easysw.com/pub/htmldoc/htmldoc/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	glenn@trewitt.org
 
