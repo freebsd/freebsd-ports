@@ -232,6 +232,7 @@
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven
+    SUBDIR += senso
     SUBDIR += sex
     SUBDIR += sl
     SUBDIR += slashem-tty
