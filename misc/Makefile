@@ -175,7 +175,6 @@
     SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pbs
-    SUBDIR += pdfmap
     SUBDIR += pdmenu
     SUBDIR += peq
     SUBDIR += pg
