@@ -10,6 +10,7 @@ bin/lsh-upgrade
 bin/lsh-upgrade-key
 bin/lsh-writekey
 bin/lshg
+bin/nettle-lfib-stream
 bin/sexp-conv
 bin/srp-gen
 bin/ssh-conv
@@ -27,6 +28,8 @@ include/nettle/dsa.h
 include/nettle/hmac.h
 include/nettle/knuth-lfib.h
 include/nettle/macros.h
+include/nettle/md2.h
+include/nettle/md4.h
 include/nettle/md5-compat.h
 include/nettle/md5.h
 include/nettle/nettle-meta.h
