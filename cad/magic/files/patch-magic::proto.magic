@@ -1,0 +1,161 @@
+--- magic/proto.magic.orig	Tue Dec  9 16:50:51 2003
++++ magic/proto.magic	Tue Dec  9 16:51:06 2003
+@@ -1,12 +1,4 @@
+-#	$(CAD_HOME)/lib/sys/.magic 
+-# 	System wide start up file for magic, defines default macros.
+-#
+-#	rcsid $Header: /ufs/repository/magic/magic/proto.magic,v 1.4 2001/09/26 18:24:39 tim Exp $
+-#
+ #ifndef USE_NEW_MACROS
+-###############################################################################
+-#  Default .magic macro file (original)
+-###############################################################################
+ echo ""
+ macro s "select"
+ macro S "select more"
+@@ -49,104 +41,75 @@
+ macro " " "tool"
+ macro '' "iroute route -dBox"
+ macro '' "iroute route -dSelection"
+-#else	(USE_NEW_MACROS)
+-###############################################################################
+-#  Default .magic macro file (new macros)
+-###############################################################################
+-# A key
++#else
+ macro a "select visible"
+ macro A "select more visible"
+ macro '' "select less visible"
+-# B key
+ macro b "box"
+ macro B "findbox"
+-# C key
+ macro c "copy"
+-# D key
+ macro d "delete"
+ macro '' "erase $"
+-# E key
+ macro e "edit"
+-# F key
+ macro f "sideways"
+ macro F "upsidedown"
+-# G key
+ macro g "grid"
+ macro G "grid 2"
+-# I key
+ macro i "select cell"
+ macro I "select more cell"
+ #ifdef XLIB
+ macro Control_XK_i "select less cell"
+ #endif
+-# L key
+ #ifdef USE_READLINE
+ imacro l "label "
+ #endif
+ macro L "shell ls"
+ macro '' "redraw"
+-# M key
+ macro m "move"
+ macro M "stretch"
+-# N key
+ macro '' ""
+-# O key
+ macro o "openwindow"
+ macro O "closewindow"
+-# P key
+ #ifdef USE_READLINE
+ imacro p "paint "
+ #endif
+-# Q key
+ #ifdef XLIB
+ macro Control_Shift_XK_q "quit"
+ #endif
+-# R key
+ macro r "clockwise"
+ macro R "clockwise 270"
+ macro '' "clockwise 180"
+-# S key
+ macro s "select"
+ macro S "select more"
+ macro '' "select less"
+ #ifdef XLIB
+ macro Control_Shift_XK_s "undo ; select"
+ #endif
+-# U key
+ macro u "undo"
+ macro U "redo"
+-# V key
+ macro v "view"
+ macro V "xview"
+-# W key
+ macro w "writeall"
+ macro W "writeall force"
+-# X key
+ macro x "expand"
+ macro X "unexpand"
+ macro '' "expand toggle"
+-# Z key
+ macro z "zoom .5"
+ macro Z "zoom 2"
+ macro '' "findbox zoom"
+ #ifdef XLIB
+ macro Control_Shift_XK_z "center"
+ #endif
+-# Question mark
+ macro ? "drc why"
+ macro / "select area; what ; select clear"
+-# Comma key
+ macro , "select clear"
+-# Exclamation mark
+ #ifdef USE_READLINE
+ imacro ! "shell "
+ #endif
+-# Space bar
+ macro " " "tool"
+ #ifdef XLIB
+ macro Shift_XK_space "tool box"
+ macro Control_XK_space "tool wiring"
+-# Arrow keys (X11 versions only)
+ macro XK_Left "scroll l .1"
+ macro Shift_XK_Left "scroll l 1"
+ macro Control_XK_Left "box +l 1"
+@@ -163,8 +126,6 @@
+ macro Shift_XK_Down "scroll d 1"
+ macro Control_XK_Down "box +d 1"
+ macro Control_Shift_XK_Down "box -u 1"
+-# Keypad keys (X11 versions only)
+-# Functions duplicated for use both with Num_Lock ON and OFF
+ macro XK_KP_Delete "box w 0; box h 0"
+ macro XK_KP_0 "box w 4; box h 4"
+ macro XK_KP_Insert "box w 4; box h 4"
+@@ -208,7 +169,6 @@
+ macro XK_KP_Prior "move r 1; move u 1"
+ macro Shift_XK_KP_9 "stretch r 1; stretch u 1"
+ macro XK_9 "stretch r 1; stretch u 1"
+-# Quick macro function keys for scmos tech (X11 versions only)
+ macro XK_F1  "paint ndiff"
+ macro XK_F2  "paint pdiff"
+ macro XK_F3  "paint poly"
+@@ -222,19 +182,13 @@
+ macro XK_F11 "paint pc"
+ macro XK_F12 "paint via"
+ #endif
+-#endif	(USE_NEW_MACROS)
++#endif
+ #ifndef NO_PLOT
+-#
+-# additions for plot package
+-#
+ plot parameter spoolCommand "echo use 'lpr -P%s -v -s -JMagic %s' to print plot"
+ plot parameter directory "."
+-#endif	(NO_PLOT)
++#endif
+ #ifndef NO_SCHEME_INTERPRETER
+-#
+-# additions for default scm path
+-#
+ define scm-library-path "~cad/lib/magic/scm"
+ load-scm "default.scm"
+ load-scm "layout.scm"
+-#endif (NO_SCHEME_INTERPRETER)
++#endif

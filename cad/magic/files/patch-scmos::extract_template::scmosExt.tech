@@ -1,0 +1,42 @@
+--- scmos/extract_template/scmosExt.tech.orig	Tue Dec  9 17:06:27 2003
++++ scmos/extract_template/scmosExt.tech	Tue Dec  9 17:05:57 2003
+@@ -10,9 +10,10 @@
+ 
+ 
+ /* Make sure local cap defs don't appear before regardless of what cpp does*/
+-#ifdef M1ContactsAct|M1Contacts|PNplusCap|PolyCap|\
+-	M1Cap|M2Cap|M3Cap|M1CapNoDiff|NdRes|PdRes|M1Res|\
+-	PolyRes|M2Res|M3Res|nothing
++#if defined(M1ContactsAct) || defined(M1Contacts) || defined(PNplusCap) ||\
++    defined(PolyCap) || defined(M1Cap) || defined(M2Cap) || defined(M3Cap) ||\
++    defined(M1CapNoDiff) || defined(NdRes) || defined(PdRes) || defined(M1Res) ||\
++    defined(PolyRes) || defined(M2Res) || defined(M3Res) || defined(nothing)
+ THERE_IS_AN_ERROR_SOME_LOCAL_CAPACITANCE_DEFINITIONS_HAVE_ALREADY_BEEN_DEFINED
+ #endif
+ 
+@@ -43,14 +44,14 @@
+ #define	sideOverlap(l1,sep,l2,cap,shield)\
+ 	sideoverlap	l1	sep	l2	cap	shield
+ 
+-#else /* V5 */
++#else
+ 
+ #define	planeOrder(l,ord)	
+ #define	noplaneOrdering	
+ #define	sideOverlap(l1,sep,l2,cap,shield)\
+ 	sideoverlap	l1	sep	l2	cap	
+ 
+-#endif /* V5 */
++#endif
+ 
+ 
+ #define	 extForSpice
+@@ -69,7 +70,7 @@
+ #include "scmosExt060_orb.tech"
+ #include "scmosExt34.tech"
+ #include "scmosExt26b.tech"
+-#endif /* STANDARD */
++#endif
+ 
+ #if defined(TIGHTMETAL)
+ #include "scmosExt34.tech"
