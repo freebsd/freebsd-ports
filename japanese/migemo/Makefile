@@ -13,6 +13,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT?=	Japanese incremental search tool
 
 .if !defined(EMACS_PORT_NAME)
 USE_AUTOMAKE=	yes

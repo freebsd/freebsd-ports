@@ -10,6 +10,7 @@ MASTERDIR=	${.CURDIR}/../emacs-w3m
 PORTCLASS=	slave
 
 EMACS_PORT_NAME=	xemacs21-mule
+COMMENT=	Simple front-end to w3m for xemacs21-mule
 
 CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
 			--with-packagedir=${PREFIX}/${EMACS_PACKAGESDIR}

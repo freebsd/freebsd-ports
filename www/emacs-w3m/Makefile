@@ -13,6 +13,7 @@ MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT?=	Simple front-end to w3m for emacs21
 
 EMACS_PORT_NAME?=	emacs21
 

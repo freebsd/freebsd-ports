@@ -7,6 +7,7 @@
 
 PKGNAMESUFFIX=	-img
 CATEGORIES=	japanese
+COMMENT=	A pager/text-based WWW browser with Japanese and inline image support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}

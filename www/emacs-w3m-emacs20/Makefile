@@ -8,7 +8,7 @@
 MASTERDIR=	${.CURDIR}/../emacs-w3m
 
 PORTCLASS=	slave
-
 EMACS_PORT_NAME=	emacs20
+COMMENT=	Simple front-end to w3m for emacs20
 
 .include <${MASTERDIR}/Makefile>

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	monafont
 DISTNAME=	monafont-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	X11 12,14,16-dot kanji fonts
 
 FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes

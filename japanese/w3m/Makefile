@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	japanese
+COMMENT=	A pager/text-based WWW browser with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
 PKGDIR=		${.CURDIR}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.unixuser.org/~haruyama/software/goRua/
 DISTNAME=	goRua-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	Gtk+ on Ruby User Agent for 2ch BBS
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk \
 		${RUBY_SITEARCHLIBDIR}/zlib.so:${PORTSDIR}/archivers/ruby-zlib \

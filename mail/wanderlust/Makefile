@@ -17,6 +17,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	wl-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT?=	Yet another message interface on Emacsen
 
 EMACS_PORT_NAME?=	emacs21
 
