@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Interface.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Interface/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Interface/Interface.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Interface/Interface.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Interface/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Interface
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO 2>/dev/null || true
