@@ -1,6 +1,16 @@
+# New ports collection makefile for:    Fudgit
+# Version required:     2.41
+# Date created:         17 November 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	Fudgit_2.41
-DISTFILES=	fudgit_2.41.tar.gz
+PKGNAME=	Fudgit-2.41
 MASTER_SITES=	ftp://ftp.physics.mcgill.ca/pub/Fudgit/
+DISTFILES=	fudgit_2.41.tar.gz
+
 USE_GMAKE=	yes
 
 pre-install:

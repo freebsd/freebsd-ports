@@ -1,13 +1,25 @@
+# New ports collection makefile for:    blas
+# Version required:     ?
+# Date created:         27 October 1994
+# Whom:                 ljo
+#
+# $Id$
+#
+
 DISTNAME=	blas
+
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+
 MASTER_SITES=	ftp://netlib.att.com/netlib/blas/
 .if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/blas/
 .undef MASTER_SITE_OVERRIDE
 .endif
+
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
+
 WRKSRC=${WRKDIR}
 
 SRCS =	caxpy.f cblas1.f cblas2.f ccopy.f cdotc.f cdotu.f cgbmv.f cgemv.f \

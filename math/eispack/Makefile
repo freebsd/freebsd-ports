@@ -1,13 +1,25 @@
+# New ports collection makefile for:    eispack
+# Version required:     ?
+# Date created:         31 October 1994
+# Whom:                 ljo
+#
+# $Id$
+#
+
 DISTNAME=	eispack
+
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+
 MASTER_SITES=	ftp://netlib.att.com/netlib/eispack/
 .if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/eispack/
 .undef MASTER_SITE_OVERRIDE
 .endif
+
 EXTRACT_CMD=${.CURDIR}/scripts/uncomp
 EXTRACT_SUFX=.Z
 EXTRACT_ARGS= ${WRKDIR}
+
 WRKSRC=${WRKDIR}
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
