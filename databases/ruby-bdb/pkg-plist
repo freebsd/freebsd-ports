@@ -3,6 +3,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/cursor.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/func.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/join.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/log.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/queue.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/recno.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
@@ -19,6 +20,8 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/transaction.html
