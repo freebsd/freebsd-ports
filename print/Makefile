@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.49 1997/11/04 13:45:22 tg Exp $
+# $Id: Makefile,v 1.50 1997/11/06 14:50:09 tg Exp $
 #
 
     SUBDIR += a2ps
+    SUBDIR += a2ps43
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
