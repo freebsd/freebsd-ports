@@ -1,0 +1,11 @@
+DateTime::Calendar::Hebrew is the implementation of the Hebrew calendar. Read
+on for more details on the Hebrew calendar.
+
+The Hebrew/Jewish calendar is a Luni-Solar calendar. Torah Law mandates that
+months are Lunar. The first day of a month coincides with the new moon in
+Jerusalem. (In ancient times, this was determined by witnesses. Read the books
+in the bibliography for more info). The Torah also mandates that certain
+holidays must occur in certain seasons. Seasons are solar, so a calendar that
+can work with lunar & solar events is needed.
+
+WWW: http://datetime.perl.org/
