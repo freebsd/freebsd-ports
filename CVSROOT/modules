@@ -5819,6 +5819,7 @@ p5-I18N-Charset	ports/misc/p5-I18N-Charset
 p5-I18N-LangTags	ports/misc/p5-I18N-LangTags
 p5-IMAP-Admin	ports/mail/p5-IMAP-Admin
 p5-IMAP-Sieve	ports/mail/p5-IMAP-Sieve
+p5-IMDB-Movie	ports/www/p5-IMDB-Movie
 p5-IO		ports/devel/p5-IO
 p5-IO-INET6	ports/net/p5-IO-INET6
 p5-IO-Interface	ports/net/p5-IO-Interface
