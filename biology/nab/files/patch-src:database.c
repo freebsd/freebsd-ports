@@ -14,3 +14,12 @@
  
  
  
+@@ -71,7 +78,7 @@
+ 
+ #include	<stdio.h>
+ #include	<string.h>
+-#include	<malloc.h>
++#include	<stdlib.h>
+ 
+ #include        "database.h"
+ 

@@ -9,6 +9,10 @@ bin/transform
 bin/tss_init
 bin/tss_main
 bin/tss_next
+include/defreal.h
+include/nab.h
+include/nabcode.h
+include/nabtypes.h
 lib/cifparse.a
 lib/libnab.a
 lib/libsym.a
@@ -70,9 +74,6 @@ share/nab/dgdb/basepairs/ct.XVII.pdb
 share/nab/dgdb/basepairs/ct.XVIII.pdb
 share/nab/dgdb/basepairs/cu.XVII.pdb
 share/nab/dgdb/basepairs/cu.XVIII.pdb
-share/nab/dgdb/basepairs/CVS/Entries
-share/nab/dgdb/basepairs/CVS/Repository
-share/nab/dgdb/basepairs/CVS/Root
 share/nab/dgdb/basepairs/ga.IX.pdb
 share/nab/dgdb/basepairs/ga.VIII.pdb
 share/nab/dgdb/basepairs/ga.X.pdb
@@ -142,9 +143,6 @@ share/nab/dgdb/stacking/ag.ddna.pdb
 share/nab/dgdb/stacking/ag.tdna.pdb
 share/nab/dgdb/stacking/at.adna.pdb
 share/nab/dgdb/stacking/at.bdna.pdb
-share/nab/dgdb/stacking/CVS/Entries
-share/nab/dgdb/stacking/CVS/Repository
-share/nab/dgdb/stacking/CVS/Root
 share/nab/dgdb/stacking/at.cdna.pdb
 share/nab/dgdb/stacking/at.ddna.pdb
 share/nab/dgdb/stacking/at.tdna.pdb
@@ -244,6 +242,7 @@ share/nab/examples/acgtacgt.pdb
 share/nab/examples/gcg10.pdb
 share/nab/examples/gcg10.pdb.save
 share/nab/examples/getbase.nab
+share/nab/examples/mme_typical_calling_sequence.nab
 share/nab/examples/program_1.nab
 share/nab/examples/program_10.nab
 share/nab/examples/program_11.nab
@@ -299,8 +298,6 @@ share/nab/reslib/bdna.std/bdna.std.chi
 share/nab/reslib/bdna.std/bdna.std.pdb
 share/nab/reslib/bdna.std/dna.qr
 share/nab/reslib/bounds.db
-share/nab/reslib/cdd.mol2
-share/nab/reslib/charlie.star.note
 share/nab/reslib/conf.lib
 share/nab/reslib/dna.amber94.3.rlb
 share/nab/reslib/dna.amber94.5.rlb
@@ -346,7 +343,6 @@ share/nab/reslib/hetatm.amber94/hetatm.amber94.bnd
 share/nab/reslib/hetatm.amber94/hetatm.amber94.chi
 share/nab/reslib/hetatm.amber94/hetatm.amber94.pdb
 share/nab/reslib/hetatm.amber94/hetatm.amber94.qr
-share/nab/reslib/leap.log
 share/nab/reslib/leap/0README
 share/nab/reslib/leap/Notes
 share/nab/reslib/leap/all_amino91.lib
@@ -361,12 +357,15 @@ share/nab/reslib/leap/dna.amberua.lib
 share/nab/reslib/leap/dna.amberua.redch.lib
 share/nab/reslib/leap/ions91.lib
 share/nab/reslib/leap/ions94.lib
-share/nab/reslib/leap/parm94.dat.istvan
-share/nab/reslib/leap/leap.log
 share/nab/reslib/leap/leaprc.dna.amberua
 share/nab/reslib/leap/leaprc.dna.amberua.redch
 share/nab/reslib/leap/leaprc.nmr
 share/nab/reslib/leap/leaprc.protein.amberua
+share/nab/reslib/leap/leaprc.ff03
+share/nab/reslib/leap/solvents.lib
+share/nab/reslib/leap/frcmod.ff03
+share/nab/reslib/leap/all_amino03.lib
+share/nab/reslib/leap/parm99.dat
 share/nab/reslib/leap/leaprc.rna
 share/nab/reslib/leap/leaprc.rna.amberua
 share/nab/reslib/leap/leaprc.std
@@ -446,7 +445,6 @@ share/nab/reslib/rna.amberua/rna.amberua.bnd
 share/nab/reslib/rna.amberua/rna.amberua.chi
 share/nab/reslib/rna.amberua/rna.amberua.pdb
 share/nab/reslib/rna.amberua/rna.amberua.qr
-share/nab/reslib/syblCDD.lib
 share/nab/suppose/Makefile
 share/nab/suppose/PCA_suppose.nab
 share/nab/suppose/ccmath.h
@@ -463,8 +461,13 @@ share/nab/test/5pti.pdb
 share/nab/test/5pti.shifts.check
 share/nab/test/d01.lin.check
 share/nab/test/d01.pdb.check
+share/nab/test/dhfrndpmtx.prmtop
 share/nab/test/dg_gyrate.nab
 share/nab/test/dg_gyrate.out.check
+share/nab/test/dg_gyrate2.nab
+share/nab/test/dhfrndpmtx.ambpdb
+share/nab/test/dhfrndpmtx.nab
+share/nab/test/dhfrndpmtx.out.check
 share/nab/test/dna.circle.nab
 share/nab/test/duplex.in
 share/nab/test/duplex.nab
@@ -475,7 +478,6 @@ share/nab/test/gbrna.out.check
 share/nab/test/gbrna.pdb
 share/nab/test/gbrna.prmtop
 share/nab/test/gbrna_long.nab
-share/nab/test/gbrna_sa.nab
 share/nab/test/gbtrx.nab
 share/nab/test/gbtrx.out.check
 share/nab/test/get_pep_info.nab
@@ -489,11 +491,11 @@ share/nab/test/ico.sym
 share/nab/test/ico.sym.out.check
 share/nab/test/ltest.nab
 share/nab/test/ltest.out.check
-share/nab/test/msurf.nab
+share/nab/test/mm_plus_dg.nab
 share/nab/test/pointplane.nab
 share/nab/test/prmtop
 share/nab/test/prmtop.gb2
-share/nab/test/prmtop.new
+share/nab/test/pseudoknot.nab
 share/nab/test/rattle_md.nab
 share/nab/test/rattle_md.out.check
 share/nab/test/rattle_min.nab
@@ -512,18 +514,6 @@ share/nab/test/tbv.com.pdb
 share/nab/test/trxox.2.4ns.pdb
 share/nab/test/trxox.2.4ns.x
 share/nab/test/write_sander_inp.nab
-share/nab/test/lCmd
-share/nab/test/1ubq/1ubq.pdb
-share/nab/test/1ubq/5pti.pdb
-share/nab/test/1ubq/leap.log
-share/nab/test/1ubq/out.1
-share/nab/test/1ubq/prmtop
-share/nab/test/1ubq/prmtop.1
-share/nab/test/1ubq/rattle_min.nab
-share/nab/test/1ubq/runleap.nab
-share/nab/test/2strand.nab
-share/nab/test/2strand.pdb
-@dirrm share/nab/test/1ubq
 @dirrm share/nab/test
 @dirrm share/nab/suppose
 @dirrm share/nab/reslib/rna.amberua
@@ -546,9 +536,7 @@ share/nab/test/2strand.pdb
 @dirrm share/nab/include
 @dirrm share/nab/fd_data
 @dirrm share/nab/examples
-@dirrm share/nab/dgdb/stacking/CVS
 @dirrm share/nab/dgdb/stacking
-@dirrm share/nab/dgdb/basepairs/CVS
 @dirrm share/nab/dgdb/basepairs
 @dirrm share/nab/dgdb
 @dirrm share/nab/bin
