@@ -6,35 +6,30 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.silcnet.org/download/ \
-		ftp://ftp.silcnet.org/pub/silc/ \
-		http://ftp.silcnet.org/ \
+MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
+		ftp://ftp.silcnet.org/silc/toolkit/sources/ \
+		http://www.planetmirror.com/pub/silcnet/toolkit/sources / \
+		ftp://ftp.au.silcnet.org/pub/silcnet/toolkit/sources/ \
+		http://the.wiretapped.net/security/network-security/silc/toolkit/sources/ \
+		ftp://ftp.wiretapped.net/pub/security/network-security/silc/toolkit/sources/ \
 		http://munitions.vipul.net/software/mirrors/silc/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
-		http://www.au.silcnet.org/download/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/ \
-		http://www.planetmirror.com/pub/silcnet/ \
-		http://the.wiretapped.net/security/network-security/silc/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
-		http://www.no.silcnet.org/download/ \
-		ftp://ftp.no.silcnet.org/pub/silc/
+		ftp://ftp.no.silcnet.org/pub/silc/toolkit/sources/
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	dotconf.0:${PORTSDIR}/devel/dotconf
 RUN_DEPENDS=	silc:${PORTSDIR}/net/silc-client
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GLIB=	yes
 CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME} \
-		--with-docdir=share/doc/${PORTNAME}${PKGNAMESUFFIX} \
+		--with-docdir=${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX} \
 		--with-etcdir=${PREFIX}/etc/${PORTNAME} \
-		--with-helpdir=share/${PORTNAME}${PKGNAMESUFFIX}/help \
+		--with-helpdir=${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}/help \
 		--with-logsdir=${PORTNAME}/logs \
 		--with-simdir=libexec/${PORTNAME}/modules \
 		--includedir=${PREFIX}/include/${PORTNAME}

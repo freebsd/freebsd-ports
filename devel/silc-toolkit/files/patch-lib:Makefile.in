@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Fri Nov  9 01:18:20 2001
-+++ lib/Makefile.in	Fri Nov  9 01:18:29 2001
-@@ -116,7 +116,6 @@
+--- lib/Makefile.in.orig	Fri Dec 21 02:55:51 2001
++++ lib/Makefile.in	Fri Dec 21 02:56:04 2001
+@@ -123,7 +123,6 @@
  	silcutil \
  	silcclient \
  	silcsftp \
@@ -8,7 +8,7 @@
  	trq
  
  
-@@ -134,8 +133,7 @@
+@@ -141,8 +140,7 @@
  	silcske \
  	silcutil \
  	silcsftp \

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Oct 23 02:36:24 2001
-+++ Makefile.in	Fri Nov  9 19:12:35 2001
-@@ -145,9 +145,9 @@
+--- Makefile.in.orig	Fri Dec 21 02:51:02 2001
++++ Makefile.in	Fri Dec 21 02:53:28 2001
+@@ -152,9 +152,9 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -8,12 +8,12 @@
 -SUBDIRS = lib irssi silc silcd doc includes win32
 -DIST_SUBDIRS = lib irssi silc silcd doc includes win32
 +COMMONDIRS = lib irssi doc includes
-+SUBDIRS = lib irssi doc includes win32
-+DIST_SUBDIRS = lib irssi doc includes win32
++SUBDIRS = lib irssi doc includes
++DIST_SUBDIRS = lib irssi doc includes
  
  #
  # INCLUDE defines
-@@ -511,11 +511,8 @@
+@@ -529,11 +529,8 @@
  	-rm -rf $(distdir)
  
  install-dirs:
@@ -25,22 +25,24 @@
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -528,7 +525,8 @@
+@@ -546,7 +543,8 @@
  doc-install:
  	$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/doc/FAQ $(docdir)/
--	$(INSTALL_DATA) $(srcdir)/doc/example* $(docdir)/
+-	$(INSTALL_DATA) $(srcdir)/doc/example_* $(docdir)/
 +	$(INSTALL_DATA) $(srcdir)/doc/examples/* $(docdir)/
 +	$(INSTALL_DATA) $(srcdir)/doc/example*.conf $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/doc/*.txt $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
  	$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/
-@@ -548,7 +546,7 @@
+@@ -566,8 +564,8 @@
  	  $(etcdir)/silc.conf; \
  	fi
  
--install-data-hook: install-dirs generate-server-key sim-install doc-install etc-install
-+install-data-hook: install-dirs sim-install doc-install
+-@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
+-@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install etc-install
++@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install
++@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs sim-install doc-install 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:
