@@ -86,13 +86,6 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 MAN1=		mutt.1 mutt_dotlock.1
 MAN5=		muttrc.5
 
-pre-patch:
-	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
-
-pre-configure:
-	cd ${WRKSRC}/charmaps/maps; ${LN} CP1251 WINDOWS-1251
-	cd ${WRKSRC}/charmaps/maps; ${RM} -f *.orig
-
 # XXX
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
