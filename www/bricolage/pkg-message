@@ -62,10 +62,9 @@ the %%PREFIX%%/bricolage path and the bric database:
 Common Supported Options:
   -u Database user login.
   -p Database user password.
-  -d Database name.
 
 Example:
 
-	%%PREFIX%%/bin/bric_upgrade -u pgsql -d bric 1.8.0 
+	%%PREFIX%%/bin/bric_upgrade -u pgsql 1.8.0 
 
 ************************************************************
