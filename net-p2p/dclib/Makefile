@@ -9,7 +9,8 @@
 PORTNAME=	dclib
 PORTVERSION=	0.3.7
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/dcgui/
+MASTER_SITES=	http://download.berlios.de/dcgui/ \
+		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Direct connect interface library for dcgui
