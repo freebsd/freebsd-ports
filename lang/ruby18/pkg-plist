@@ -1,3 +1,5 @@
+%%IF_DEFAULT%%bin/h2rb%%RUBY_R%%
+bin/h2rb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/irb%%RUBY_R%%
 bin/irb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby%%RUBY_R%%
@@ -10,6 +12,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/dbm.so
 %%RUBY_ARCHLIBDIR%%/defines.h
 %%RUBY_ARCHLIBDIR%%/digest.so
+%%RUBY_ARCHLIBDIR%%/dl.so
 %%RUBY_ARCHLIBDIR%%/dln.h
 %%RUBY_ARCHLIBDIR%%/env.h
 %%RUBY_ARCHLIBDIR%%/etc.so
@@ -105,6 +108,10 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi/session.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/dl/import.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/dl/struct.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/dl/types.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/dl/win32.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/xmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/ws-for-case-2.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb/workspace.rb
@@ -154,6 +161,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @unexec rmdir %D/lib/ruby/site_ruby 2>/dev/null || true
 @dirrm %%RUBY_ARCHLIBDIR%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/cgi
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/dl
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc/ja
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb/lc
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/irb
@@ -178,6 +186,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/forwardable.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dl/dl.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest/digest.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/digest/digest.txt.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt
@@ -193,6 +202,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/syslog.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/digest
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
@@ -252,10 +262,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/rain.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/view.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/drives.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/getch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/libc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/stream.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/expect_sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 %%RUBY_EXAMPLESDIR%%/.keep_me
 @unexec rmdir %D/%%RUBY_EXAMPLESDIR%% 2>/dev/null || true
