@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openupsd
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://frmb.org/download/
 

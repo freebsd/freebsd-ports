@@ -13,18 +13,11 @@ openupsd_enable=${openupsd_enable:-"NO"}
 name="openupsd"
 rcvar=`set_rcvar`
 
-start_cmd="${name}_start"
-stop_cmd="${name}_stop"
+pidfile=/var/run/${name}.pid
+required_files=%%PREFIX%%/etc/${name}.conf
 
-openupsd_start()
-{
-	%%PREFIX%%/sbin/openupsd
-}
-
-openupsd_stop()
-{
-	killall openupsd
-}
+command=%%PREFIX%%/sbin/openupsd
+command_args="-p ${pidfile}"
 
 load_rc_config $name
 run_rc_command "$1"
