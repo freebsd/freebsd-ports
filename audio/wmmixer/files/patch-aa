@@ -1,6 +1,6 @@
 --- Imakefile.orig	Sat Sep  5 08:11:33 1998
-+++ Imakefile	Thu Sep 12 15:09:14 2002
-@@ -10,4 +10,14 @@
++++ Imakefile	Sat Sep 28 21:22:48 2002
+@@ -10,4 +10,16 @@
  SRCS = wmmixer.cc
  OBJS = wmmixer.o
  
@@ -12,6 +12,8 @@
 +	RemoveTargetProgram(wmmixer)
 +	CplusplusLinkRule($@,$(LDOPTIONS),$(OBJS),$(LOCAL_LIBRARIES) $(LDLIBS))
 + 
++InstallProgram(wmmixer,$(BINDIR))
++
 +DependTarget()
 +LintTarget()
 +clean::
