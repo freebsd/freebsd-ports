@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.11
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.no.mostang.com/pub/sane/%SUBDIR%/
-MASTER_SITE_SUBDIR=	sane-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb \
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		usb-0.1.7:${PORTSDIR}/devel/libusb \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}

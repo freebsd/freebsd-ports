@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Tue Oct 15 07:52:38 2002
-+++ doc/Makefile.in	Fri Oct 25 15:21:46 2002
-@@ -24,7 +24,7 @@
+--- doc/Makefile.in.orig	Sat Feb  1 05:04:56 2003
++++ doc/Makefile.in	Wed Feb  5 00:25:50 2003
+@@ -25,7 +25,7 @@
  includedir = @includedir@
  oldincludedir = /usr/include
  configdir = ${sysconfdir}/sane.d
@@ -9,25 +9,25 @@
  
  MKDIR = $(top_srcdir)/mkinstalldirs
  INSTALL = @INSTALL@
-@@ -52,7 +52,7 @@
-           sane-coolscan2.5 sane-hpsj5s.5
+@@ -53,7 +53,7 @@
+           sane-coolscan2.5 sane-hpsj5s.5 sane-gt68xx.5 sane-artec_eplus48u.5
  SECT7   = sane.7
  MANPAGES = $(SECT1) $(SECT5) $(SECT7)
--READMES = README AUTHORS COPYING ChangeLog LEVEL2 LICENSE NEWS PROBLEMS \
-+READMES = README AUTHORS ChangeLog LEVEL2 LICENSE NEWS PROBLEMS \
+-READMES = README AUTHORS COPYING ChangeLog LICENSE NEWS PROBLEMS \
++READMES = README AUTHORS ChangeLog LICENSE NEWS PROBLEMS \
            PROJECTS README README.aix README.beos README.darwin README.freebsd \
            README.hp-ux README.linux README.netbsd README.openbsd README.os2 \
            README.solaris README.unixware2 README.unixware7 TODO
-@@ -92,7 +92,7 @@
+@@ -93,7 +93,7 @@
  .PHONY: all clean depend dist distclean html html-man install \
    install-mostang sane-html uninstall
  
--all: sane.ps $(MANPAGES) 
-+all: $(MANPAGES) 
+-all: sane.ps $(MANPAGES)
++all: $(MANPAGES)
  
  %.1 %.5 %.7: %.man
  	@sed -e 's|@DATADIR@|$(datadir)|g' \
-@@ -118,6 +118,7 @@
+@@ -120,6 +120,7 @@
  	  echo installing $${page} in $(mandir)/man7/$${page}...; \
  	  $(INSTALL_DATA) $${page} $(DESTDIR)$(mandir)/man7/$${page} || exit 1; \
  	done
@@ -35,7 +35,7 @@
  	$(MKDIR) $(DESTDIR)$(docdir)
  	@for readme in $(READMES); do \
  	  echo installing $${readme} in $(docdir)/$${readme}...; \
-@@ -138,6 +139,7 @@
+@@ -140,6 +141,7 @@
  	    echo installing $${doc} in $(docdir)/$${doc}...; \
  	    $(INSTALL_DATA) $${doc} $(DESTDIR)$(docdir)/$${doc}; \
  	  done
