@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-w3m
-PORTVERSION=	1.2.7
+PORTVERSION=	1.3.1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -28,15 +28,14 @@ USE_AUTOCONF=	yes
 ALL_TARGET=	default
 
 PLIST_SUB+=	EMACS_NAME=${EMACS_NAME} \
-		XEMACS_ONLY=${XEMACS_ONLY} \
-		EMACS20_ONLY=${EMACS20_ONLY} \
-		EMACS21_ONLY=${EMACS21_ONLY} \
-		EMACS_ONLY=${EMACS_ONLY} \
+		XEMACS=${XEMACS} \
+		EMACS20=${EMACS20} \
+		EMACS21=${EMACS21} \
+		EMACS=${EMACS} \
 		LISPDIR=${LISPDIR} \
 		ICONDIR=${ICONDIR} \
 		ETCDIR=${ETCDIR} \
 		PKGINFODIR=${PKGINFODIR} \
-		SHIMBUN=${SHIMBUN} \
 		ICONS=${ICONS} \
 		ETC=${ETC}
 
@@ -47,25 +46,25 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 DOCSDIR_JA=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")
-XEMACS_ONLY=	""
-EMACS_ONLY=	"@comment "
-EMACS20_ONLY=	"@comment "
-EMACS21_ONLY=	"@comment "
+XEMACS=		""
+EMACS=		"@comment "
+EMACS20=	"@comment "
+EMACS21=	"@comment "
 ICONS=		""
 ETC=		"@comment "
 .else
 .if (${EMACS_PORT_NAME} == "emacs20")
-XEMACS_ONLY=	"@comment "
-EMACS_ONLY=	""
-EMACS20_ONLY=	""
-EMACS21_ONLY=	"@comment "
+XEMACS=		"@comment "
+EMACS=		""
+EMACS20=	""
+EMACS21=	"@comment "
 ICONS=		"@comment "
 ETC=		"@comment "
 .else
-XEMACS_ONLY=	"@comment "
-EMACS_ONLY=	""
-EMACS20_ONLY=	"@comment "
-EMACS21_ONLY=	""
+XEMACS=		"@comment "
+EMACS=		""
+EMACS20=	"@comment "
+EMACS21=	""
 ICONS=		""
 ETC=		""
 INSTALL_TARGET=	install install-icons
@@ -74,38 +73,40 @@ INSTALL_TARGET=	install install-icons
 
 .include <bsd.port.pre.mk>
 
-FLIM_TRUNK=	1.14
-FLIM_COOKIE=	${LOCALBASE}/share/flim/flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 .if (${EMACS_PORT_NAME} == "emacs21")
 FLIM_PORT=	${PORTSDIR}/editors/flim
-.else
-FLIM_PORT=	${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}
+SEMI_PORT=	${PORTSDIR}/editors/semi
+MULE_UCS_PORT=	${PORTSDIR}/converters/mule-ucs
 .endif
 
-.if defined(WITH_SHIMBUN)
-HAVE_FLIM=	yes
-SHIMBUN=	""
-.else
-.if exists(${FLIM_COOKIE})
-HAVE_FLIM=	yes
-SHIMBUN=	""
-.else
-SHIMBUN=	"@comment "
-.endif
+FLIM_TRUNK=	1.14
+FLIM_COOKIE=	${LOCALBASE}/share/flim/flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+FLIM_PORT?=	${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}
+
+SEMI_TRUNK=	1.14
+SEMI_COOKIE=	${LOCALBASE}/share/semi/semi-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
+SEMI_PORT?=	${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}
+
+MULE_UCS_PORT?=	${PORTSDIR}/converters/mule-ucs-${EMACS_PORT_NAME}
+MULE_UCS_ELISP_FILE=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs/un-define.el
+
+BUILD_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n \
+		${FLIM_COOKIE}:${FLIM_PORT}
+RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m-m17n \
+		${FLIM_COOKIE}:${FLIM_PORT}
+.if (${EMACS_PORT_NAME} != "xemacs21-mule" && !defined(WITHOUT_OCTET_VIEWER))
+RUN_DEPENDS+=	${SEMI_COOKIE}:${SEMI_PORT} \
+		wvHtml:${PORTSDIR}/textproc/wv \
+		xlhtml:${PORTSDIR}/textproc/xlhtml \
+		${MULE_UCS_ELISP_FILE}:${MULE_UCS_PORT}
 .endif
 
-.if defined(HAVE_FLIM)
-BUILD_DEPENDS+=	${FLIM_COOKIE}:${FLIM_PORT}
-RUN_DEPENDS+=		${FLIM_COOKIE}:${FLIM_PORT}
-.endif
-BUILD_DEPENDS+=	w3m:${PORTSDIR}/www/w3m-m17n
-RUN_DEPENDS+=		w3m:${PORTSDIR}/www/w3m-m17n
-
-.if !defined(HAVE_FLIM)
 pre-everything::
-	@${ECHO_MSG} "====>"
-	@${ECHO_MSG} "====> You can have shimbun support by adding \"WITH_SHIMBUN=yes\" to argument of make."
-	@${ECHO_MSG} "====>"
+.if (${EMACS_PORT_NAME} != "xemacs21-mule" || !defined(WITHOUT_OCTET_VIEWER))
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===>  If you don't use octet stream viewer,"
+	@${ECHO_MSG} "===>  please define WITHOUT_OCTET_VIEWER."
+	@${ECHO_MSG} "===>"
 .endif
 
 post-extract:

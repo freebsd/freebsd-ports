@@ -1,10 +1,10 @@
---- Makefile.in.orig	Sat Mar 24 03:52:13 2001
-+++ Makefile.in	Sat Mar 24 03:52:22 2001
-@@ -41,7 +41,7 @@
+--- Makefile.in.orig	Mon Jul  1 00:49:09 2002
++++ Makefile.in	Mon Jul  1 00:49:17 2002
+@@ -32,7 +32,7 @@
  
  install: default
  	@$(SHELL) ./mkinstalldirs $(lispdir);\
--	for p in ChangeLog *.el; do\
+-	for p in ChangeLog* *.el; do\
 +	for p in *.el; do\
  	  echo " $(INSTALL_DATA) $$p $(lispdir)/$$p";\
  	  $(INSTALL_DATA) $$p $(lispdir)/$$p;\

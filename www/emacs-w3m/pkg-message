@@ -5,22 +5,16 @@
 *                                                                  *
 * To use emacs-w3m on Wanderlust, add this to your own .emacs:     *
 *                                                                  *
-* (setq mime-setup-enable-inline-html nil)                         *
-* (eval-after-load "mime-view"                                     *
-*   '(progn                                                        *
-*     (autoload 'mime-w3m-preview-text/html "mime-w3m")            *
-*     (ctree-set-calist-strictly                                   *
-*      'mime-preview-condition                                     *
-*      '((type . text) (subtype . html) (body . visible)           *
-*	 (body-presentation-method . mime-w3m-preview-text/html))) *
-*     (set-alist 'mime-view-type-subtype-score-alist               *
-*		 '(text . html) 3)))                               *
+* (require 'mime-w3m)                                              *
 *                                                                  *
-* And to use emacs-w3m on Mew, add this to your own .mew.el:       *
+* To use emacs-w3m on Mew, add this to your own .mew.el:           *
 *                                                                  *
-* (condition-case nil                                              *
-*     (require 'mew-w3m)                                           *
-*   (file-error nil))                                              *
-* (setq w3m-type 'w3m-m17n)                                        *
+* (require 'mew-w3m)                                               *
+* (setq mew-prog-html '(mew-mime-text/html-w3m nil nil))           *
 *                                                                  *
+* And to use octet stream viewer, add this to your own .emacs:     *
+*                                                                  *
+* (require 'w3m)                                                   *
+* (require 'octet)                                                 *
+* (octet-mime-setup)                                               *
 ********************************************************************
