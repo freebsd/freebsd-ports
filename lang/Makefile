@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.104 1998/07/12 21:59:15 hsu Exp $
+# $Id: Makefile,v 1.105 1998/07/15 10:11:23 jkoshy Exp $
 #
 
+    SUBDIR += ETHOberonV4
     SUBDIR += Gofer
     SUBDIR += STk
     SUBDIR += Sather
