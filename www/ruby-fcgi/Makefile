@@ -7,6 +7,7 @@
 
 PORTNAME=	fcgi
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -19,12 +20,9 @@ COMMENT=	FastCGI library for Ruby
 LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-
-CONFIGURE_WRKSRC=	${WRKSRC}/ext/fcgi
-BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
-INSTALL_WRKSRC=		${CONFIGURE_WRKSRC}
-INSTALL_TARGET=	site-install
+USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
+CONFIGURE_ARGS=	-- --with-opt-dir="${LOCALBASE}"
 
 DOCS=		README README.signals
 
