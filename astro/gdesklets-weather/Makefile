@@ -27,7 +27,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
@@ -43,6 +42,8 @@ do-install:
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' \
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
