@@ -146,6 +146,7 @@ netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
 nte-1.*			ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
+opmixer			ports/audio/opmixer	missing license
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 perforce-*		ports/devel/perforce	Restricted distribution
 perltools		ports/java/perltools	No redistribution
