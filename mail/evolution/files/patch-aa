@@ -1,6 +1,6 @@
---- configure.orig	Fri Sep 13 15:38:11 2002
-+++ configure	Fri Oct 11 00:11:31 2002
-@@ -7258,7 +7258,7 @@
+--- configure.orig	Wed Nov  6 16:01:40 2002
++++ configure	Tue Nov 12 00:12:54 2002
+@@ -7260,7 +7260,7 @@
  fi
  rm -f conftest*
  
@@ -9,7 +9,7 @@
  # Extract the first word of "ranlib", so it can be a program name with args.
  set dummy ranlib; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -9634,7 +9634,7 @@
+@@ -9636,7 +9636,7 @@
  
  CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
@@ -18,7 +18,7 @@
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -9708,7 +9708,7 @@
+@@ -9710,7 +9710,7 @@
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -27,7 +27,20 @@
  fi
  rm -f conftest*
  
-@@ -13706,10 +13708,10 @@
+@@ -12054,10 +12054,10 @@
+ 				     Please specify the path to libnspr4.a
+ 				     Example: --with-nspr-libs=/usr/lib" 1>&2; exit 1; }
+        		    else
+-               		nsprlibs="-ldl $with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
++               		nsprlibs="$with_nspr_libs/libplc4.a $with_nspr_libs/libplds4.a $with_nspr_libs/libnspr4.a $PTHREAD_LIB"
+       		    fi
+ 		else
+-               	    nsprlibs="-ldl -lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
++               	    nsprlibs="-lplc4 -lplds4 -lnspr4 $PTHREAD_LIB"
+ 		fi
+ 
+ 		echo $ac_n "checking for Mozilla nspr libraries""... $ac_c" 1>&6
+@@ -13857,10 +13857,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
