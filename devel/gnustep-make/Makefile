@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-make
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 .else
 PORTVERSION=	1.6.0
 .endif
@@ -18,7 +18,9 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.easynet.nl/mirror/GNUstep/%SUBDIR%/
 MASTER_SITE_SUBDIR=	core
 .if defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=	${FILESDIR}/configure.patch
+EXTRA_PATCHES+=	${FILESDIR}/target.make.patch-devel
+.else
+EXTRA_PATCHES+=	${FILESDIR}/target.make.patch
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -34,6 +36,12 @@ USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
 
+.if defined(WITH_GNUSTEP_DEVEL)
+PLIST_SUB+=	NOFLAT2=""
+.else
+PLIST_SUB+=	NOFLAT2="${GNU_ARCH}/${OPSYS:L}/"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
@@ -43,9 +51,4 @@ post-configure:
 	${SED} -e "s|\(objc_threaded:=\).*|\1 ${PTHREAD_LIBS}|" \
 		< ${WRKSRC}/config.make.sed > ${WRKSRC}/config.make
 
-.if defined(WITH_GNUSTEP_DEVEL)
-post-install:
-	${RM} -f ${PREFIX}/System/Makefiles/Makefiles
-
-.endif
 .include <bsd.port.post.mk>

@@ -1,3 +1,5 @@
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Makefiles
+%%GNUSTEP_DEVEL%%@exec ln -s Library/Makefiles %D/System
 System/Makefiles/GNUstep-reset.sh
 System/Makefiles/GNUstep.csh
 System/Makefiles/GNUstep.sh
@@ -76,9 +78,9 @@ System/Makefiles/framework.make
 System/Makefiles/gswapp.make
 System/Makefiles/gswbundle.make
 System/Makefiles/install-sh
-System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/config.make
-System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/user_home
-System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%/which_lib
+System/Makefiles/%%NOFLAT2%%config.make
+System/Makefiles/%%NOFLAT2%%user_home
+System/Makefiles/%%NOFLAT2%%which_lib
 System/Makefiles/java-executable.template
 System/Makefiles/java-tool.make
 System/Makefiles/java.make
@@ -116,7 +118,7 @@ System/share/config.site
 @dirrm System/Tools/Resources
 @dirrm System/Tools/Java
 @dirrm System/Tools
-@dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Makefiles/%%GNU_ARCH%%
 @dirrm System/Makefiles/Master
 @dirrm System/Makefiles/Instance/Shared
@@ -124,7 +126,9 @@ System/share/config.site
 @dirrm System/Makefiles/Instance
 @dirrm System/Makefiles/Auxiliary
 @dirrm System/Makefiles/Additional
-@dirrm System/Makefiles
+%%GNUSTEP_STABLE%%@dirrm System/Makefiles
+%%GNUSTEP_DEVEL%%@unexec rm -f %D/System/Makefiles
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Makefiles
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Sounds
 @dirrm System/Library/Services
 @dirrm System/Library/PostScript
@@ -174,6 +178,7 @@ System/share/config.site
 %%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Images
 %%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/KeyBindings
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Java
+%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
 @exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Resources
 @comment @exec mkdir -p %D/System/Library/Makefiles
 @exec mkdir -p %D/System/Library/PostScript

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 .else
 PORTVERSION=	1.6.0
 .endif
@@ -29,7 +29,6 @@ NO_MTREE=	yes
 NO_BUILD=	yes
 SYSTEMDIR=	${PREFIX}/System
 SYSMAKEDIR=	${SYSTEMDIR}/Makefiles
-COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 BUNDLEDIR=	${SYSTEMDIR}/Library/Bundles
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
@@ -44,13 +43,16 @@ GNU_ARCH=	ix86
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
+COMBOPATH=	${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 .if defined(WITH_GNUSTEP_DEVEL)
-SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries/${GNU_ARCH}/${OPSYS:L}
+SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
+COMBOLIBDIR=	${SYSLIBDIR}
+BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle
 .else
 SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
-.endif
-COMBOPATH=	${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
+COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle/${COMBOPATH}
+.endif
 
 do-install:	# empty
 
