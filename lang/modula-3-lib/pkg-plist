@@ -1,4 +1,4 @@
-etc/rc.d/m3.sh
+etc/rc.d/50.m3.sh
 lib/m3/FreeBSD2/libDiGraph.so.4.0
 lib/m3/FreeBSD2/libGeometry.so.4.0
 lib/m3/FreeBSD2/libImages.so.4.0
