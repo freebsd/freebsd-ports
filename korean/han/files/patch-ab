@@ -1,0 +1,44 @@
+--- src/child.c.orig	Sat Mar 29 05:29:53 1997
++++ src/child.c	Sun Jul 16 12:48:02 2000
+@@ -26,6 +26,7 @@
+ 
+ #ifdef __FreeBSD__
+ #include        <errno.h>
++#include        <sys/ioctl.h>
+ #endif
+ 
+ #include	<getcap.h>
+@@ -98,6 +99,9 @@
+ {
+ 	char	*shell, *tail, *tcap;
+ 	char	buff[80];
++#if defined(__FreeBSD__)
++	struct winsize win;
++#endif
+ 
+ 	setgid(getgid());
+ 	setuid(getuid());
+@@ -107,6 +111,10 @@
+ 	sprintf(buff, "TERMCAP=:co#%d:li#%d:tc=console:",
+ 		dInfo.txmax + 1, dInfo.tymax + 1);
+ #elif defined(__FreeBSD__)
++	win.ws_row = dInfo.tymax + 1;
++	win.ws_col = dInfo.txmax + 1;
++	win.ws_xpixel = win.ws_ypixel = 0;
++	ioctl(STDIN_FILENO, TIOCSWINSZ, &win);
+ 	sprintf(buff,"TERM=vt100");
+ #endif
+ 	tcap = strdup(buff);
+@@ -120,10 +128,10 @@
+ 		   "HAN is free software, and you are welcome to redistribute it\r\n"
+ 		   "HAN under certain conditions; show COPYING for details.\r\n");
+ #if defined(__FreeBSD__)
+-	    printf("\rHAN for FreeBSD-2.x\r\n");
++	    printf("\rHAN for FreeBSD\r\n");
+ #endif
+ 	}
+-	printf("HAN using VT number %c.\n\n",
++	printf("HAN using VT number %c.\r\n",
+ #if defined(linux)
+ 	       *(ttyname(fileno(errfp))+8));
+ #elif defined(__FreeBSD__)

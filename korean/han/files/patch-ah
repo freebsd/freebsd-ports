@@ -1,0 +1,23 @@
+--- src/display/vga.c.orig	Wed Apr  9 21:34:02 1997
++++ src/display/vga.c	Sun Jul 16 12:52:41 2000
+@@ -379,7 +379,7 @@
+ /*    if (!code) return;*/
+     VgaSetColor(fc);
+     if (bc & 0x8) *(vcls - dInfo.glineByte) = 0;
+-    for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
++    if (code) for (x = 0;x < sbFReg->high;x ++, code ++, fm >>= 1) {
+ 	if (*code) {
+ 	    VgaOutByte(*code);
+ 	    *gram = *gram;
+@@ -617,7 +617,11 @@
+        Perror("ioctl CONSOLE_IO_ENABLE/KDSETMODE");
+        return FAILURE;
+      }
++#if (__FreeBSD__ <= 3)
+      if ((devMem = open("/dev/vga", O_RDWR|O_NDELAY) ) < 0) {
++#else
++     if ((devMem = open("/dev/mem", O_RDWR|O_NDELAY) ) < 0) {
++#endif
+        Perror("/dev/mem");
+        return FAILURE;
+      }

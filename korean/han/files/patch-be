@@ -1,0 +1,12 @@
+--- src/mouse.c.orig	Mon Jan 27 20:40:27 1997
++++ src/mouse.c	Tue May  9 18:08:44 2000
+@@ -176,7 +176,8 @@
+
+ 	mouseType = MOUSE_NONE;
+ 	mInfo.has_mouse = FALSE;
+-	sscanf(config, "%s", name);
++	strncpy(name, config, MAX_COLS - 1);
++	name[MAX_COLS - 1] = '\0';
+ 	for (p = mice; p->name != NULL; p++) {
+ 		if (strcasecmp(name, p->name) == 0) {
+ 			mouseType = p->type;
