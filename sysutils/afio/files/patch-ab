@@ -1,6 +1,6 @@
---- afio.c.orig	Fri Nov 26 01:24:39 1999
-+++ afio.c	Thu Jan 27 14:23:28 2000
-@@ -609,7 +609,7 @@
+--- afio.c.orig	Tue Oct  9 23:03:53 2001
++++ afio.c	Mon Sep 29 16:34:02 2003
+@@ -613,7 +613,7 @@
                 aruntil, arbsize);    
  #else
        fprintf (stderr, "Media size %ld is less than block size %d\n",
@@ -9,3 +9,25 @@
  #endif
     usage ();
      }
+@@ -2929,10 +2929,10 @@
+          see out(). 
+        */
+       if(asb->sb_rdev==0) asb->sb_rdev=(asb->sb_dev << 16) + asb->sb_ino;
+-      if (mknod (name, asb->sb_mode, asb->sb_rdev) < 0
++      if (mkfifo (name, asb->sb_mode) < 0
+ 	  && (errno != ENOENT
+ 	      || dirneed (name) < 0
+-	      || mknod (name, asb->sb_mode, asb->sb_rdev) < 0))
++	      || mkfifo (name, asb->sb_mode) < 0))
+ 	return (warn (name, syserr ()));
+       break;
+     case S_IFDIR:
+@@ -2960,7 +2960,7 @@
+ 	return (warn (name, syserr ()));
+       break;
+ #endif /* S_IFIFO */
+-#ifdef	S_IFSOCK
++#ifdef	S_IFSOCK && !defined (__FreeBSD__)
+     case S_IFSOCK:
+       fd = 0;
+       if (exists)
