@@ -7618,6 +7618,7 @@ p5-Module-Refresh	ports/devel/p5-Module-Refresh
 p5-Module-Reload	ports/devel/p5-Module-Reload
 p5-Module-ScanDeps	ports/devel/p5-Module-ScanDeps
 p5-Module-Signature	ports/security/p5-Module-Signature
+p5-Module-Starter	ports/devel/p5-Module-Starter
 p5-Module-Versions-Report	ports/devel/p5-Module-Versions-Report
 p5-Mon		ports/net-mgmt/p5-Mon
 p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
