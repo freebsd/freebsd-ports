@@ -20,3 +20,5 @@ You should read the file doc/implementation_notes.txt
 This is an ALPHA release.  It really works and is not vaporware, but the
 API is still subject to change, and several OFX structures are not fully
 implemented, notably currency conversions and the <PAYEE> aggregate.
+
+WWW: http://libofx.sourceforge.net/
