@@ -52,7 +52,6 @@
     SUBDIR += flim113-xemacs21-mule
     SUBDIR += fte
     SUBDIR += gate
-    SUBDIR += gedit
     SUBDIR += gedit2
     SUBDIR += ghex
     SUBDIR += ghex2

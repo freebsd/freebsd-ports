@@ -39,7 +39,6 @@
     SUBDIR += fspanel
     SUBDIR += gbackground
     SUBDIR += gdkxft
-    SUBDIR += gdm
     SUBDIR += gdm2
     SUBDIR += gmessage
     SUBDIR += gmrun
