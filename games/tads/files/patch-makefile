@@ -1,0 +1,29 @@
+--- makefile.orig	Fri Jan 17 00:30:32 2003
++++ makefile	Fri Jan 17 00:30:49 2003
+@@ -238,16 +238,16 @@
+ # compatibility libraries installed.  It has not been tested with a bare
+ # FreeBSD system without the Linux libraries.
+ #
+-#CC=gcc
+-#OPTIMIZE=
+-#UNIXFLAGS=-g -DOSANSI -DUNIX -DHAVE_STRCASECMP
+-#SYSFLAGS= -DOS_SYSTEM_NAME=\""FREEBSD_386"\" -DSYSNAME=\""i386+ running FreeBSD"\" -DSYSPL=\"1\" -DPORTER=\""$(DAVE)"\" -DSYSMAINTAINER=\""FreeBSD port maintained by $(DAVE)\n"\"
+-#CFLAGS= $(UNIXFLAGS) $(SYSFLAGS) -DFREEBSD_386
+-#AFLAGS=
+-#OVLFLG=
+-#MACHDEP=
+-#LIBS=-ltermcap
+-#MAKEXEC=touch
++CC?=cc
++OPTIMIZE=
++UNIXFLAGS=-g -DOSANSI -DUNIX -DHAVE_STRCASECMP
++SYSFLAGS= -DOS_SYSTEM_NAME=\""FREEBSD_386"\" -DSYSNAME=\""i386+ running FreeBSD"\" -DSYSPL=\"1\" -DPORTER=\""$(DAVE)"\" -DSYSMAINTAINER=\""FreeBSD port maintained by $(DAVE)\n"\"
++CFLAGS+= $(UNIXFLAGS) $(SYSFLAGS) -DFREEBSD_386
++AFLAGS=
++OVLFLG=
++MACHDEP=
++LIBS=-ltermcap
++MAKEXEC=touch
+ 
+ # OpenBSD 3.0 with gcc 2.95.3
+ # This has been compiled on an i386 system running OPENBSD 3.0
