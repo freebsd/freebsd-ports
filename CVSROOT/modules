@@ -8523,6 +8523,7 @@ ruby-google	ports/www/ruby-google
 ruby-gpgme	ports/security/ruby-gpgme
 ruby-gphys	ports/science/ruby-gphys
 ruby-graph	ports/graphics/ruby-graph
+ruby-gsl	ports/math/ruby-gsl
 ruby-gst	ports/multimedia/ruby-gst
 ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
