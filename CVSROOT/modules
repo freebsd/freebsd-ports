@@ -9042,6 +9042,7 @@ qscintilla	ports/x11-toolkits/qscintilla
 qsf		ports/mail/qsf
 qslim		ports/graphics/qslim
 qssl		ports/devel/qssl
+qsstv		ports/comms/qsstv
 qstat		ports/games/qstat
 qt-bluecurve-theme	ports/x11-themes/qt-bluecurve-theme
 qt-ibase-plugin	ports/databases/qt-ibase-plugin
