@@ -1,4 +1,4 @@
-etc/netperm-table
+etc/netperm-table.sample
 libexec/authsrv
 libexec/ftp-gw
 libexec/http-gw

@@ -15,7 +15,7 @@
 -	if [ ! -f $(DEST)/netperm-table ]; then \
 -		$(CP) netperm-table $(DEST); \
 -		chmod 644 $(DEST)/netperm-table; \
-+	if [ ! -f $(DEST)/../etc/netperm-table ]; then \
-+		$(CP) netperm-table $(DEST)/../etc/; \
-+		chmod 644 $(DEST)/../etc/netperm-table; \
++	if [ ! -f $(DEST)/../etc/netperm-table.sample ]; then \
++		$(CP) netperm-table $(DEST)/../etc/netperm-table.sample; \
++		chmod 644 $(DEST)/../etc/netperm-table.sample; \
  	fi

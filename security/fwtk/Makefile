@@ -56,6 +56,10 @@ pre-configure:
 post-install:
 	cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS}
 	cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin
+	if [ ! -f ${PREFIX}/etc/netperm-table ]; then \
+		${INSTALL_DATA} ${WRKSRC}/config/netperm-table \
+		${PREFIX}/etc/netperm-table;\
+	fi
 .for man in ${MAN3}
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} ${PREFIX}/man/man3
 .endfor
