@@ -15,12 +15,12 @@ MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ysmv7_2_9_0
 
-MAINTAINER=	vampiro@rusunix.org
+MAINTAINER=	aquatique@rusunix.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_BZIP2=      yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
