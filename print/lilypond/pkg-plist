@@ -1,0 +1,315 @@
+bin/abc2ly
+bin/as2text
+bin/convert-ly
+bin/etf2ly
+bin/lilypond
+bin/lilypond-book
+bin/ly2dvi
+bin/midi2ly
+bin/musedata2ly
+bin/pmx2ly
+@comment @exec install-info --delete %D/info/lilypond.info %D/info/dir
+@comment @exec install-info --delete %D/info/lilypond-internals.info %D/info/dir
+@comment info/lilypond-internals.info
+@comment info/lilypond-internals.info-1
+@comment info/lilypond-internals.info-10
+@comment info/lilypond-internals.info-11
+@comment info/lilypond-internals.info-2
+@comment info/lilypond-internals.info-3
+@comment info/lilypond-internals.info-4
+@comment info/lilypond-internals.info-5
+@comment info/lilypond-internals.info-6
+@comment info/lilypond-internals.info-7
+@comment info/lilypond-internals.info-8
+@comment info/lilypond-internals.info-9
+@comment info/lilypond.info
+@comment info/lilypond.info-1
+@comment info/lilypond.info-2
+@comment info/lilypond.info-3
+@comment info/lilypond.info-4
+@comment info/lilypond.info-5
+@comment @exec install-info %D/info/lilypond.info %D/info/dir
+@comment @exec install-info %D/info/lilypond-internals.info %D/info/dir
+share/lilypond/VERSION
+share/lilypond/afm/as-braces5.afm
+share/lilypond/afm/as-braces9.afm
+share/lilypond/afm/as-dummy.afm
+share/lilypond/afm/as-dummy1.afm
+share/lilypond/afm/as-number1.afm
+share/lilypond/afm/as-number4.afm
+share/lilypond/afm/as5.afm
+share/lilypond/afm/as9.afm
+share/lilypond/afm/feta11.afm
+share/lilypond/afm/feta13.afm
+share/lilypond/afm/feta16.afm
+share/lilypond/afm/feta19.afm
+share/lilypond/afm/feta20.afm
+share/lilypond/afm/feta23.afm
+share/lilypond/afm/feta26.afm
+share/lilypond/ly/a4.ly
+share/lilypond/ly/accordion-defs.ly
+share/lilypond/ly/book-fragment.ly
+share/lilypond/ly/book-init.ly
+share/lilypond/ly/catalan.ly
+share/lilypond/ly/center-fragment.ly
+share/lilypond/ly/center.ly
+share/lilypond/ly/chord-modifiers.ly
+share/lilypond/ly/declarations-as.ly
+share/lilypond/ly/declarations.ly
+share/lilypond/ly/deutsch.ly
+share/lilypond/ly/dynamic-scripts.ly
+share/lilypond/ly/english.ly
+share/lilypond/ly/engraver.ly
+share/lilypond/ly/fragment.ly
+share/lilypond/ly/generate-documentation.ly
+share/lilypond/ly/generic-paper.ly
+share/lilypond/ly/init-as.fly
+share/lilypond/ly/init-as.ly
+share/lilypond/ly/init.fly
+share/lilypond/ly/init.ly
+share/lilypond/ly/init.sly
+share/lilypond/ly/italiano.ly
+share/lilypond/ly/key.ly
+share/lilypond/ly/ledger.ly
+share/lilypond/ly/legal.ly
+share/lilypond/ly/letter.ly
+share/lilypond/ly/midi.ly
+share/lilypond/ly/nederlands.ly
+share/lilypond/ly/norsk.ly
+share/lilypond/ly/paper-as5.ly
+share/lilypond/ly/paper-as9.ly
+share/lilypond/ly/paper.ly
+share/lilypond/ly/paper11.ly
+share/lilypond/ly/paper13.ly
+share/lilypond/ly/paper16.ly
+share/lilypond/ly/paper20.ly
+share/lilypond/ly/paper23.ly
+share/lilypond/ly/paper26.ly
+share/lilypond/ly/params-as.ly
+share/lilypond/ly/params.ly
+share/lilypond/ly/part-paper.ly
+share/lilypond/ly/performer.ly
+share/lilypond/ly/property.ly
+share/lilypond/ly/scale-definitions.ly
+share/lilypond/ly/script.ly
+share/lilypond/ly/spanners.ly
+share/lilypond/ly/svenska.ly
+share/lilypond/mf/as-braces5.af
+share/lilypond/mf/as-braces9.af
+share/lilypond/mf/as-dummy.af
+share/lilypond/mf/as-dummy1.af
+share/lilypond/mf/as-number1.af
+share/lilypond/mf/as-number4.af
+share/lilypond/mf/as5.af
+share/lilypond/mf/as9.af
+share/lilypond/mf/cmbase.mf
+share/lilypond/mf/feta-accordion.mf
+share/lilypond/mf/feta-autometric.mf
+share/lilypond/mf/feta-banier.mf
+share/lilypond/mf/feta-beugel.mf
+share/lilypond/mf/feta-beum.mf
+share/lilypond/mf/feta-bolletjes.mf
+share/lilypond/mf/feta-braces11.mf
+share/lilypond/mf/feta-braces13.mf
+share/lilypond/mf/feta-braces16.mf
+share/lilypond/mf/feta-braces20.mf
+share/lilypond/mf/feta-braces23.mf
+share/lilypond/mf/feta-braces26.mf
+share/lilypond/mf/feta-custodes.mf
+share/lilypond/mf/feta-din-code.mf
+share/lilypond/mf/feta-din.mf
+share/lilypond/mf/feta-din10.mf
+share/lilypond/mf/feta-din11.mf
+share/lilypond/mf/feta-din12.mf
+share/lilypond/mf/feta-din13.mf
+share/lilypond/mf/feta-din14.mf
+share/lilypond/mf/feta-din17.mf
+share/lilypond/mf/feta-din19.mf
+share/lilypond/mf/feta-din4.mf
+share/lilypond/mf/feta-din5.mf
+share/lilypond/mf/feta-din6.mf
+share/lilypond/mf/feta-din7.mf
+share/lilypond/mf/feta-din8.mf
+share/lilypond/mf/feta-din9.mf
+share/lilypond/mf/feta-eindelijk.mf
+share/lilypond/mf/feta-generic.mf
+share/lilypond/mf/feta-haak.mf
+share/lilypond/mf/feta-harmonica.mf
+share/lilypond/mf/feta-ital-f.mf
+share/lilypond/mf/feta-ital-m.mf
+share/lilypond/mf/feta-ital-p.mf
+share/lilypond/mf/feta-ital-r.mf
+share/lilypond/mf/feta-ital-s.mf
+share/lilypond/mf/feta-ital-z.mf
+share/lilypond/mf/feta-klef.mf
+share/lilypond/mf/feta-macros.mf
+share/lilypond/mf/feta-nummer-code.mf
+share/lilypond/mf/feta-nummer.mf
+share/lilypond/mf/feta-nummer10.mf
+share/lilypond/mf/feta-nummer11.mf
+share/lilypond/mf/feta-nummer13.mf
+share/lilypond/mf/feta-nummer4.mf
+share/lilypond/mf/feta-nummer5.mf
+share/lilypond/mf/feta-nummer6.mf
+share/lilypond/mf/feta-nummer7.mf
+share/lilypond/mf/feta-nummer8.mf
+share/lilypond/mf/feta-params.mf
+share/lilypond/mf/feta-pendaal.mf
+share/lilypond/mf/feta-puntje.mf
+share/lilypond/mf/feta-schrift.mf
+share/lilypond/mf/feta-slag.mf
+share/lilypond/mf/feta-sleur.mf
+share/lilypond/mf/feta-test11.mf
+share/lilypond/mf/feta-test13.mf
+share/lilypond/mf/feta-test16.mf
+share/lilypond/mf/feta-test20.mf
+share/lilypond/mf/feta-test23.mf
+share/lilypond/mf/feta-test26.mf
+share/lilypond/mf/feta-timesig.mf
+share/lilypond/mf/feta-toevallig.mf
+share/lilypond/mf/feta11.mf
+share/lilypond/mf/feta13.mf
+share/lilypond/mf/feta16.mf
+share/lilypond/mf/feta19.mf
+share/lilypond/mf/feta20.mf
+share/lilypond/mf/feta23.mf
+share/lilypond/mf/feta26.mf
+share/lilypond/mf/graycx.mf
+share/lilypond/mf/slur.mf
+share/lilypond/pfa/feta-braces11.pfa
+share/lilypond/pfa/feta-braces13.pfa
+share/lilypond/pfa/feta-braces16.pfa
+share/lilypond/pfa/feta-braces20.pfa
+share/lilypond/pfa/feta-braces23.pfa
+share/lilypond/pfa/feta-braces26.pfa
+share/lilypond/pfa/feta-din10.pfa
+share/lilypond/pfa/feta-din11.pfa
+share/lilypond/pfa/feta-din12.pfa
+share/lilypond/pfa/feta-din13.pfa
+share/lilypond/pfa/feta-din14.pfa
+share/lilypond/pfa/feta-din17.pfa
+share/lilypond/pfa/feta-din19.pfa
+share/lilypond/pfa/feta-din4.pfa
+share/lilypond/pfa/feta-din5.pfa
+share/lilypond/pfa/feta-din6.pfa
+share/lilypond/pfa/feta-din7.pfa
+share/lilypond/pfa/feta-din8.pfa
+share/lilypond/pfa/feta-din9.pfa
+share/lilypond/pfa/feta-nummer10.pfa
+share/lilypond/pfa/feta-nummer11.pfa
+share/lilypond/pfa/feta-nummer13.pfa
+share/lilypond/pfa/feta-nummer4.pfa
+share/lilypond/pfa/feta-nummer5.pfa
+share/lilypond/pfa/feta-nummer6.pfa
+share/lilypond/pfa/feta-nummer7.pfa
+share/lilypond/pfa/feta-nummer8.pfa
+share/lilypond/pfa/feta11.pfa
+share/lilypond/pfa/feta13.pfa
+share/lilypond/pfa/feta16.pfa
+share/lilypond/pfa/feta19.pfa
+share/lilypond/pfa/feta20.pfa
+share/lilypond/pfa/feta23.pfa
+share/lilypond/pfa/feta26.pfa
+share/lilypond/ps/lily.ps
+share/lilypond/ps/lilyponddefs.ps
+share/lilypond/scm/ascii-script.scm
+share/lilypond/scm/auto-beam.scm
+share/lilypond/scm/backend-documentation-lib.scm
+share/lilypond/scm/basic-properties.scm
+share/lilypond/scm/beam.scm
+share/lilypond/scm/c++.scm
+share/lilypond/scm/chord-name.scm
+share/lilypond/scm/clef.scm
+share/lilypond/scm/documentation-lib.scm
+share/lilypond/scm/engraver-documentation-lib.scm
+share/lilypond/scm/font.scm
+share/lilypond/scm/foo.scm
+share/lilypond/scm/generate-documentation.scm
+share/lilypond/scm/generic-property.scm
+share/lilypond/scm/grob-description.scm
+share/lilypond/scm/grob-property-description.scm
+share/lilypond/scm/interface-description.scm
+share/lilypond/scm/lily.scm
+share/lilypond/scm/midi.scm
+share/lilypond/scm/music-functions.scm
+share/lilypond/scm/music-property-description.scm
+share/lilypond/scm/output-lib.scm
+share/lilypond/scm/ps.scm
+share/lilypond/scm/script.scm
+share/lilypond/scm/slur.scm
+share/lilypond/scm/standalone.scm
+share/lilypond/scm/tex.scm
+share/lilypond/scm/translator-description.scm
+share/lilypond/scm/translator-property-description.scm
+share/lilypond/tex/dyn.tex
+share/lilypond/tex/feta11.tex
+share/lilypond/tex/feta13.tex
+share/lilypond/tex/feta16.tex
+share/lilypond/tex/feta19.tex
+share/lilypond/tex/feta20.tex
+share/lilypond/tex/feta23.tex
+share/lilypond/tex/feta26.tex
+share/lilypond/tex/fetdefs.tex
+share/lilypond/tex/headers.tex
+share/lilypond/tex/lily-debug.tex
+share/lilypond/tex/lily-pdf-defs.tex
+share/lilypond/tex/lily-ps-defs.tex
+share/lilypond/tex/lilypond-latex.tex
+share/lilypond/tex/lilypond-plaintex.tex
+share/lilypond/tex/lilyponddefs.tex
+share/lilypond/tex/ltest.tex
+share/lilypond/tex/mudela-book.tex
+share/lilypond/tex/number.tex
+share/lilypond/tex/p.tex
+share/lilypond/tex/titledefs.tex
+share/lilypond/tfm.1
+share/lilypond/tfm.2
+share/lilypond/tfm/feta-braces11.tfm
+share/lilypond/tfm/feta-braces13.tfm
+share/lilypond/tfm/feta-braces16.tfm
+share/lilypond/tfm/feta-braces20.tfm
+share/lilypond/tfm/feta-braces23.tfm
+share/lilypond/tfm/feta-braces26.tfm
+share/lilypond/tfm/feta-din10.tfm
+share/lilypond/tfm/feta-din11.tfm
+share/lilypond/tfm/feta-din12.tfm
+share/lilypond/tfm/feta-din13.tfm
+share/lilypond/tfm/feta-din14.tfm
+share/lilypond/tfm/feta-din17.tfm
+share/lilypond/tfm/feta-din19.tfm
+share/lilypond/tfm/feta-din4.tfm
+share/lilypond/tfm/feta-din5.tfm
+share/lilypond/tfm/feta-din6.tfm
+share/lilypond/tfm/feta-din7.tfm
+share/lilypond/tfm/feta-din8.tfm
+share/lilypond/tfm/feta-din9.tfm
+share/lilypond/tfm/feta-nummer10.tfm
+share/lilypond/tfm/feta-nummer11.tfm
+share/lilypond/tfm/feta-nummer13.tfm
+share/lilypond/tfm/feta-nummer4.tfm
+share/lilypond/tfm/feta-nummer5.tfm
+share/lilypond/tfm/feta-nummer6.tfm
+share/lilypond/tfm/feta-nummer7.tfm
+share/lilypond/tfm/feta-nummer8.tfm
+share/lilypond/tfm/feta11.tfm
+share/lilypond/tfm/feta13.tfm
+share/lilypond/tfm/feta16.tfm
+share/lilypond/tfm/feta19.tfm
+share/lilypond/tfm/feta20.tfm
+share/lilypond/tfm/feta23.tfm
+share/lilypond/tfm/feta26.tfm
+share/locale/de/LC_MESSAGES/lilypond.mo
+share/locale/fr/LC_MESSAGES/lilypond.mo
+share/locale/it/LC_MESSAGES/lilypond.mo
+share/locale/ja/LC_MESSAGES/lilypond.mo
+share/locale/nl/LC_MESSAGES/lilypond.mo
+share/locale/ru/LC_MESSAGES/lilypond.mo
+@dirrm share/lilypond/tfm
+@dirrm share/lilypond/tex
+@dirrm share/lilypond/scm
+@dirrm share/lilypond/ps
+@dirrm share/lilypond/pfa
+@dirrm share/lilypond/mf
+@dirrm share/lilypond/ly
+@dirrm share/lilypond/afm
+@dirrm share/lilypond

@@ -55,6 +55,7 @@
     SUBDIR += klyx
     SUBDIR += latex
     SUBDIR += latex2rtf
+    SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lprps-a4
     SUBDIR += lprps-letter
