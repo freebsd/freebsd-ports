@@ -11,6 +11,9 @@ PORTREVISION=	0
 CATEGORIES=	graphics linux
 MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 
+DEPRECATED=	http://vuxml.freebsd.org/f9e3e60b-e650-11d8-9b0a-000347a4fa7d.html (security)
+EXPIRATION_DATE=November 21, 2004
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RPM of the PNG lib
 
