@@ -34,7 +34,7 @@ include/namazu/wakati.h
 lib/libnmz.a
 lib/libnmz.la
 lib/libnmz.so
-lib/libnmz.so.6
+lib/libnmz.so.7
 libexec/namazu.cgi
 share/locale/es/LC_MESSAGES/namazu.mo
 share/locale/fr/LC_MESSAGES/namazu.mo
@@ -69,6 +69,7 @@ share/namazu/etc/THANKS
 share/namazu/etc/TODO
 share/namazu/etc/namazu.png
 @dirrm share/namazu/etc
+share/namazu/filter/apachecache.pl
 share/namazu/filter/bzip2.pl
 share/namazu/filter/compress.pl
 share/namazu/filter/deb.pl
@@ -78,16 +79,22 @@ share/namazu/filter/gzip.pl
 share/namazu/filter/hdml.pl
 share/namazu/filter/hnf.pl
 share/namazu/filter/html.pl
+share/namazu/filter/macbinary.pl
 share/namazu/filter/mailnews.pl
 share/namazu/filter/man.pl
 share/namazu/filter/mhonarc.pl
+share/namazu/filter/mp3.pl
 share/namazu/filter/msword.pl
+share/namazu/filter/ooo.pl
 share/namazu/filter/pdf.pl
 share/namazu/filter/postscript.pl
 share/namazu/filter/powerpoint.pl
 share/namazu/filter/rfc.pl
 share/namazu/filter/rpm.pl
+share/namazu/filter/rtf.pl
 share/namazu/filter/taro.pl
+share/namazu/filter/taro56.pl
+share/namazu/filter/taro7_10.pl
 share/namazu/filter/tex.pl
 @dirrm share/namazu/filter
 share/namazu/pl/codeconv.pl
@@ -106,30 +113,36 @@ share/namazu/template/NMZ.body
 share/namazu/template/NMZ.body.es
 share/namazu/template/NMZ.body.fr
 share/namazu/template/NMZ.body.ja
+share/namazu/template/NMZ.body.pl
 share/namazu/template/NMZ.foot
 share/namazu/template/NMZ.foot.de
 share/namazu/template/NMZ.foot.es
 share/namazu/template/NMZ.foot.fr
 share/namazu/template/NMZ.foot.ja
+share/namazu/template/NMZ.foot.pl
 share/namazu/template/NMZ.head
 share/namazu/template/NMZ.head.de
 share/namazu/template/NMZ.head.es
 share/namazu/template/NMZ.head.fr
 share/namazu/template/NMZ.head.ja
+share/namazu/template/NMZ.head.pl
 share/namazu/template/NMZ.result.normal
 share/namazu/template/NMZ.result.normal.de
 share/namazu/template/NMZ.result.normal.es
 share/namazu/template/NMZ.result.normal.fr
 share/namazu/template/NMZ.result.normal.ja
+share/namazu/template/NMZ.result.normal.pl
 share/namazu/template/NMZ.result.short
 share/namazu/template/NMZ.result.short.de
 share/namazu/template/NMZ.result.short.es
 share/namazu/template/NMZ.result.short.fr
 share/namazu/template/NMZ.result.short.ja
+share/namazu/template/NMZ.result.short.pl
 share/namazu/template/NMZ.tips
 share/namazu/template/NMZ.tips.es
 share/namazu/template/NMZ.tips.fr
 share/namazu/template/NMZ.tips.ja
+share/namazu/template/NMZ.tips.pl
 @dirrm share/namazu/template
 @dirrm share/namazu
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
