@@ -7900,6 +7900,7 @@ xspread		ports/math/xspread
 xspringies	ports/games/xspringies
 xstarroll	ports/x11/xstarroll
 xstr		src/usr.bin/xstr
+xstroke		ports/x11/xstroke
 xswallow	ports/www/xswallow
 xsysinfo	ports/sysutils/xsysinfo
 xsysstats	ports/sysutils/xsysstats
