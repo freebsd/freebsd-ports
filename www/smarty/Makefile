@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.phpinsider.com/php/code/Smarty/download/
+MASTER_SITES=	http://smarty.php.net/distributions/ \
+		http://smarty.php.net/distributions/manual/en/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}
+DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
 .endif
 
 MAINTAINER=	corecode@corecode.ath.cx
@@ -29,14 +30,14 @@ MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
 do-install:
 	@${MKDIR} ${DATADIR}
-.for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php overlib.js templates/debug.tpl
+.for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
 .endfor
 	@${MKDIR} ${DATADIR}/plugins
 	@${INSTALL_DATA} ${WRKSRC}/plugins/* ${DATADIR}/plugins
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in BUGS FAQ INSTALL QUICKSTART README RESOURCES
+.for f in BUGS FAQ INSTALL NEWS QUICKSTART README RESOURCES
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/manual
