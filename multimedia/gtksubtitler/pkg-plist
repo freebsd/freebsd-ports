@@ -1,2 +1,7 @@
 bin/GTKsubtitler
-share/gnome/pixmaps/GTKsubtitler.xpm
+share/gnome/GTKsubtitler/conf
+share/gnome/GTKsubtitler/lang.en
+share/gnome/GTKsubtitler/lang.pl
+share/gnome/pixmaps/GTKsubtitler/GTKsubtitler.xpm
+@dirrm share/gnome/pixmaps/GTKsubtitler
+@dirrm share/gnome/GTKsubtitler

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	GTKsubtitler
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.0.p1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://dark.pkn.com.pl/~pawel/gtksubtitler/download/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
+DISTNAME=	${PORTNAME}-v${PORTVERSION:C/.p(.)$/pre\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
 
