@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.48 1996/12/18 05:28:04 asami Exp $
+# $Id: Makefile,v 1.49 1996/12/19 03:39:24 max Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
+    SUBDIR += camltk41
     SUBDIR += chimera
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
@@ -35,6 +36,7 @@
     SUBDIR += mew
     SUBDIR += mh
     SUBDIR += mimekit
+    SUBDIR += mmm
     SUBDIR += mnews
     SUBDIR += mule-canna
     SUBDIR += mule-sj3
