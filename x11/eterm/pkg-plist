@@ -13,7 +13,6 @@ share/Eterm/themes/mutt/rv-pixmaps.list
 share/Eterm/themes/tn3270/MAIN
 share/Eterm/themes/tn3270/good-pixmaps.list
 share/Eterm/themes/tn3270/rv-pixmaps.list
-man/man1/Eterm.1.gz
 share/Eterm/RELNOTES.Eterm
 share/Eterm/Eterm.help
 share/Eterm/Eterm.menu

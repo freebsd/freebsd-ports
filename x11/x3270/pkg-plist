@@ -22,8 +22,4 @@ lib/X11/x3270/ibm_hosts
 @exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/misc
 @exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/misc
 @exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/misc/fonts.dir
-man/man1/x3270.1.gz
-man/man1/x3270if.1.gz
-man/man1/x3270-script.1.gz
-man/man1/ibm_hosts.1.gz
 @dirrm lib/X11/x3270
