@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sdl_gfx
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-${PORTVERSION:R}/
 DISTNAME=	SDL_gfx-${PORTVERSION}
@@ -24,10 +23,15 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	${REINPLACE_CMD} 's,^libSDL_gfxincludedir.*,&/SDL11,' \
+	@${REINPLACE_CMD} 's|^libSDL_gfxincludedir.*|&/SDL11|' \
 		${WRKSRC}/Makefile.in
+.for file in configure SDL_gfxPrimitives.h SDL_framerate.h SDL_rotozoom.h
+	@${REINPLACE_CMD} 's|<SDL/SDL|<SDL|g' ${WRKSRC}/${file}
+.endfor
 
 .include <bsd.port.mk>
