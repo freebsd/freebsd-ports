@@ -19,6 +19,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim.0:${PORTSDIR}/japanese/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GNOME=	lthack
 USE_X_PREFIX=	yes
 USE_ICONV=	yes
