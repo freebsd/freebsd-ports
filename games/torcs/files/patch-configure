@@ -1,0 +1,132 @@
+--- configure.orig	Sat Apr 19 11:46:59 2003
++++ configure	Sat Apr 26 10:36:45 2003
+@@ -2720,58 +2720,6 @@
+ fi
+ 
+ 
+-echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
+-echo "configure:2725: checking for dlopen in -ldl" >&5
+-ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
+-if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
+-cat > conftest.$ac_ext <<EOF
+-#line 2733 "configure"
+-#include "confdefs.h"
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-    builtin and then its argument prototype would still apply.  */
+-char dlopen();
+-
+-int main() {
+-dlopen()
+-; return 0; }
+-EOF
+-if { (eval echo configure:2747: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=yes"
+-else
+-  echo "configure: failed program was:" >&5
+-  cat conftest.$ac_ext >&5
+-  rm -rf conftest*
+-  eval "ac_cv_lib_$ac_lib_var=no"
+-fi
+-rm -f conftest*
+-LIBS="$ac_save_LIBS"
+-
+-fi
+-if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-  echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo dl | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+-    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_lib 1
+-EOF
+-
+-  LIBS="-ldl $LIBS"
+-
+-else
+-  echo "$ac_t""no" 1>&6
+-{ echo "configure: error: Can't find libdl. Please check config.log and if you can't solve the problem send the file to eric.espie@free.fr with the subject \"torcs compilation problem\"" 1>&2; exit 1; }
+-fi
+-
+-
+ echo $ac_n "checking for crc32 in -lz""... $ac_c" 1>&6
+ echo "configure:2777: checking for crc32 in -lz" >&5
+ ac_lib_var=`echo z'_'crc32 | sed 'y%./+-%__p_%'`
+@@ -2963,6 +2911,52 @@
+ { echo "configure: error: Can't find libGLU. Please check config.log and if you can't solve the problem send the file to eric.espie@free.fr with the subject \"torcs compilation problem\"" 1>&2; exit 1; }
+ fi
+ 
++if test "${USE_FREEGLUT+set}"   = set; then
++echo $ac_n "checking for main in -lfreeglut""... $ac_c" 1>&6
++echo "configure:2968: checking for main in -lfreeglut" >&5
++ac_lib_var=`echo glut'_'main | sed 'y%./+-%__p_%'`
++if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&6
++else
++  ac_save_LIBS="$LIBS"
++LIBS="-lfreeglut-1.3  $LIBS"
++cat > conftest.$ac_ext <<EOF
++#line 2976 "configure"
++#include "confdefs.h"
++
++int main() {
++main()
++; return 0; }
++EOF
++if { (eval echo configure:2983: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=yes"
++else
++  echo "configure: failed program was:" >&5
++  cat conftest.$ac_ext >&5
++  rm -rf conftest*
++  eval "ac_cv_lib_$ac_lib_var=no"
++fi
++rm -f conftest*
++LIBS="$ac_save_LIBS"
++
++fi
++if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++  echo "$ac_t""yes" 1>&6
++    ac_tr_lib=HAVE_LIB`echo glut | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
++  cat >> confdefs.h <<EOF
++#define $ac_tr_lib 1
++EOF
++
++  LIBS="-lfreeglut-1.3 $LIBS"
++
++else
++  echo "$ac_t""no" 1>&6
++{ echo "configure: error: Can't find freeglut. Please check config.log and if you can't solve the problem send the file to ports@FreeBSD.org with the subject \"torcs compilation problem\"" 1>&2; exit 1; }
++fi
++
++else
+ echo $ac_n "checking for main in -lglut""... $ac_c" 1>&6
+ echo "configure:2968: checking for main in -lglut" >&5
+ ac_lib_var=`echo glut'_'main | sed 'y%./+-%__p_%'`
+@@ -3006,6 +3000,7 @@
+   echo "$ac_t""no" 1>&6
+ { echo "configure: error: Can't find libglut. Please check config.log and if you can't solve the problem send the file to eric.espie@free.fr with the subject \"torcs compilation problem\"" 1>&2; exit 1; }
+ fi
++fi
+ 
+ 
+ echo $ac_n "checking for main in -lplibul""... $ac_c" 1>&6
+@@ -3282,9 +3277,6 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 3284 "configure"
+ #include "confdefs.h"
+-#ifdef __cplusplus
+-extern "C" void exit(int) throw ();
+-#endif
+ 
+ #include <unistd.h>
+ #include <plib/ul.h>
