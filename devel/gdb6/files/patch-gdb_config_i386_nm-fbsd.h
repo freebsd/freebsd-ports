@@ -1,16 +1,5 @@
 --- gdb/config/i386/nm-fbsd.h	Sat Jul 21 13:16:44 2001
 +++ gdb/config/i386/nm-fbsd.h	Mon Jun  3 10:04:54 2002
-@@ -28,6 +28,10 @@
- 
- #include "i386/nm-i386.h"
- 
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
- /* Provide access to the i386 hardware debugging registers.  */
- 
- #define I386_DR_LOW_SET_CONTROL(control) \
 @@ -148,5 +152,32 @@
  #define ld_2		d_sdt
  
