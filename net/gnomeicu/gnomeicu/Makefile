@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	gnomeicu
-PORTVERSION=	0.98
+PORTVERSION=	0.98.2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= gnomeicu
+MASTER_SITE_SUBDIR=	gnomeicu
 
 MAINTAINER=	gnome@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=		yes
-BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet
+BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet \
+		msgfmt-new:${PORTSDIR}/devel/gettext
 .if defined(WITH_DANTE)
 LIB_DEPENDS+=	socks.1:${PORTSDIR}/net/dante
 SOCKSFLAGS=	-Dconnect=Rconnect -Dbind=Rbind -Dgetsockname=Rgetsockname \
@@ -35,10 +37,13 @@ SOCKSFLAGS=	-DSOCKS -include ${LOCALBASE}/include/socks.h
 SOCKSLIBS=	-lsocks5
 .endif
 
-CONFIGURE_ARGS= --with-statusmenu
+CONFIGURE_ARGS=	--with-statusmenu
 CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS}" \
-		CFLAGS="${CFLAGS}"
+		CFLAGS="${CFLAGS}" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
