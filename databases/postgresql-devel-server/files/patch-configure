@@ -1,0 +1,59 @@
+--- configure.orig	Wed Jun 26 21:28:24 2002
++++ configure	Wed Jun 26 21:35:16 2002
+@@ -2007,11 +2007,13 @@
+ EOF
+ 
+ 
+-  if test -d "$krb4_prefix/include"; then
+-    INCLUDES="$INCLUDES -I$krb4_prefix/include"
+-  fi
+-  if test -d "$krb4_prefix/lib"; then
+-    LIBDIRS="$LIBDIRS -L$krb4_prefix/lib"
++  if test "$krb4_prefix" != "/usr"; then
++    if test -d "$krb4_prefix/include"; then
++      INCLUDES="$INCLUDES -I$krb4_prefix/include"
++    fi
++    if test -d "$krb4_prefix/lib"; then
++      LIBDIRS="$LIBDIRS -L$krb4_prefix/lib"
++    fi
+   fi
+ 
+   krb_srvtab="/etc/srvtab"
+@@ -2052,11 +2054,13 @@
+ EOF
+ 
+ 
+-  if test -d "$krb5_prefix/include"; then
+-    INCLUDES="$INCLUDES -I$krb5_prefix/include"
+-  fi
+-  if test -d "$krb5_prefix/lib"; then
+-    LIBDIRS="$LIBDIRS -L$krb5_prefix/lib"
++  if test "$krb5_prefix" != "/usr"; then
++    if test -d "$krb5_prefix/include"; then
++      INCLUDES="$INCLUDES -I$krb5_prefix/include"
++    fi
++    if test -d "$krb5_prefix/lib"; then
++      LIBDIRS="$LIBDIRS -L$krb5_prefix/lib"
++    fi
+   fi
+ 
+   krb_srvtab="FILE:\$(sysconfdir)/krb5.keytab"
+@@ -2157,11 +2161,13 @@
+ EOF
+ 
+ 
+-  if test -d "${openssl_prefix}/include" ; then
+-    INCLUDES="$INCLUDES -I${openssl_prefix}/include"
+-  fi
+-  if test -d "${openssl_prefix}/lib" ; then
+-    LIBDIRS="$LIBDIRS -L${openssl_prefix}/lib"
++  if test "${openssl_prefix}" != "/usr"; then
++    if test -d "${openssl_prefix}/include" ; then
++      INCLUDES="$INCLUDES -I${openssl_prefix}/include"
++    fi
++    if test -d "${openssl_prefix}/lib" ; then
++      LIBDIRS="$LIBDIRS -L${openssl_prefix}/lib"
++    fi
+   fi
+ 
+ fi
