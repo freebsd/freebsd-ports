@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.8.0
+PORTVERSION= 	0.8.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	ftp://ftp.newton.cx/pub/balsa/ \
 		http://www.theochem.kth.se/~pawsa/balsa/
@@ -33,8 +33,5 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--enable-system-install
 
 MAN1=		balsa.1
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/balsa.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
