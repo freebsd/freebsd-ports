@@ -22,4 +22,5 @@ share/py-smb/WinME_PlainPassword.reg
 %%PORTDOCS%%share/doc/py-smb/smb_shareddevice.html
 %%PORTDOCS%%share/doc/py-smb/smb_sharedfile.html
 %%PORTDOCS%%share/doc/py-smb/smb_smb.html
+%%PORTDOCS%%share/doc/py-smb/smb_smbmachine.html
 %%PORTDOCS%%@dirrm share/doc/py-smb
