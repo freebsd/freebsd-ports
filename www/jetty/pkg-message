@@ -1,15 +1,23 @@
 
 - The environment variable JETTY_HOME should be set to the 
   installation directory. Typically :
-
+	
+	For shells like bash:
 	JETTY_HOME=%%PREFIX%%/share/java/jetty-%%PORTVERSION%%
         export JETTY_HOME
+	
+	For shells like	(t)csh:
+	setenv JETTY_HOME %%PREFIX%%/share/java/jetty-%%PORTVERSION%%
 
 - The environment variable JAVA_HOME should be set to the 
   Java installation directory. For instance :
 
+	For shells like bash:
 	JAVA_HOME=%%PREFIX%%/jdk1.3.1
         export JAVA_HOME
+
+	For shells like (t)csh:
+	setenv JAVA_HOME %%PREFIX%%/jdk1.3.1
 
 - Running the Demo :
 
