@@ -8,7 +8,7 @@
 
 DISTNAME=	jam-2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/jam/
+MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
 
 MAINTAINER=	hsu@freebsd.org
 
