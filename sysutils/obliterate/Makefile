@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= wes
 
 
-MAINTAINER=	wes@softweyr.com
+MAINTAINER=	wes@FreeBSD.ORG
 COMMENT=	Securely delete file[s]
 
 .include <bsd.port.mk>
