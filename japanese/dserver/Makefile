@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1997/01/30 09:12:38 max Exp $
+# $Id: Makefile,v 1.4 1997/07/13 18:49:15 max Exp $
 #
 
 DISTNAME=	dserver2.2betapl2
@@ -18,7 +18,7 @@ MAINTAINER=	mita@jp.FreeBSD.org
 
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less \
 		${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11/etlfonts
-BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn
+BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn4
 
 EXTRACT_ONLY=	dserver2.2betapl2.tar.gz dserver2.2betapl2.addtable.tar.gz
 WRKSRC=		${WRKDIR}/dserver
