@@ -1,5 +1,5 @@
---- man/Makefile.in.orig	Mon Jan  8 11:19:50 2001
-+++ man/Makefile.in	Wed Jul  4 01:58:15 2001
+--- man/Makefile.in.orig	Sun Mar 31 21:50:56 2002
++++ man/Makefile.in	Sun Apr 28 16:56:03 2002
 @@ -18,7 +18,7 @@
  INSTALL=@INSTALL@
  
@@ -9,21 +9,21 @@
  
  ## fix up prefix to be a make variable
  prefix = @prefix@
-@@ -66,8 +66,11 @@
+@@ -111,8 +111,11 @@
  		    ${SRC}/mkinstalldirs $(DESTDIR)$(MAN)/man$${suffix}; \
  	    fi; \
- 	    for i in ${SRC}/*.$$suffix; do \
+ 	    for i in *.$$suffix; do \
 -		echo   $(INSTALL) -m 644 $$i $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
 -		$(INSTALL)   -m 644 $$i $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
 +		echo $(COMPRESS) $$i ; \
-+		$(COMPRESS) < $$i >_; \
-+		echo $(INSTALL) -m 644 _ $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
-+		$(INSTALL) -m 644 _ $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
-+		rm _; \
++		$(COMPRESS) < $$i >_ ; \
++		echo   $(INSTALL) -m 644 _ $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++		$(INSTALL)   -m 644 _  $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++		rm _ ; \
  	    done; \
  	  fi; \
  	done;
-@@ -81,7 +84,6 @@
+@@ -126,7 +129,6 @@
  	    done; \
  	  fi; \
  	done;

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LPRng
-PORTVERSION=	3.7.6
+PORTVERSION=	3.8.10
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.astart.com/pub/%SUBDIR%/ \
@@ -18,12 +18,12 @@ MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	LPRng/LPRng
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	desmo@bandwidth.org
+MAINTAINER=	papowell@astart.com
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= \
+CONFIGURE_ARGS=	\
 		--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \
 		--with-lpd_conf_path=${PREFIX}/etc/lpd.conf \
