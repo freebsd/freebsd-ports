@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-bin/tnef
 etc/MailScanner/MailScanner.conf.sample
 etc/MailScanner/filename.rules.conf.sample
 etc/MailScanner/filetype.rules.conf.sample
@@ -372,92 +371,92 @@ libexec/MailScanner/update_virus_scanners
 %%DATADIR%%/reports/sk/stored.content.message.txt.sample
 %%DATADIR%%/reports/sk/stored.filename.message.txt.sample
 %%DATADIR%%/reports/sk/stored.virus.message.txt.sample
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/INSTALL.FreeBSD
-%%DOCSDIR%%/INSTALL.OpenBSD
-%%DOCSDIR%%/QuickInstall.txt
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.FreeBSD.port
-%%DOCSDIR%%/README.sql-logging
-%%DOCSDIR%%/building.txt
-%%DOCSDIR%%/donations.shtml
-%%DOCSDIR%%/downloadgraphs.shtml
-%%DOCSDIR%%/downloads.shtml
-%%DOCSDIR%%/ecs.css
-%%DOCSDIR%%/faq.shtml
-%%DOCSDIR%%/images/JulianField1_small.jpg
-%%DOCSDIR%%/images/bigmailscannerlogo.gif
-%%DOCSDIR%%/images/smallmailscannerlogo.gif
-%%DOCSDIR%%/images/thumb_JulianField2.jpg
-%%DOCSDIR%%/images/thumb_JulianField3.jpg
-%%DOCSDIR%%/images/thumb_JulianField4.jpg
-%%DOCSDIR%%/images/thumb_JulianField5.jpg
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/install/ClamAVModule.shtml
-%%DOCSDIR%%/install/OS-virus-scan-web.htm
-%%DOCSDIR%%/install/README.trend
-%%DOCSDIR%%/install/SAVI.shtml
-%%DOCSDIR%%/install/codestatus.shtml
-%%DOCSDIR%%/install/conf.shtml
-%%DOCSDIR%%/install/exim-old.shtml
-%%DOCSDIR%%/install/exim.shtml
-%%DOCSDIR%%/install/filesnscripts.shtml
-%%DOCSDIR%%/install/gcc.shtml
-%%DOCSDIR%%/install/index.shtml
-%%DOCSDIR%%/install/linux.shtml
-%%DOCSDIR%%/install/mailscanner.shtml
-%%DOCSDIR%%/install/mcafee.shtml
-%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
-%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
-%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
-%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
-%%DOCSDIR%%/install/mcp/index.html
-%%DOCSDIR%%/install/mime-tools-patch.txt
-%%DOCSDIR%%/install/mime-tools-patch2.txt
-%%DOCSDIR%%/install/mime-tools-patch3.txt
-%%DOCSDIR%%/install/mime-tools-patch4.txt
-%%DOCSDIR%%/install/osborne.txt
-%%DOCSDIR%%/install/other.shtml
-%%DOCSDIR%%/install/perl.shtml
-%%DOCSDIR%%/install/postfix.shtml
-%%DOCSDIR%%/install/sendmail.shtml
-%%DOCSDIR%%/install/solaris9.txt
-%%DOCSDIR%%/install/sophos.shtml
-%%DOCSDIR%%/install/spamassassin.shtml
-%%DOCSDIR%%/install/tnef.shtml
-%%DOCSDIR%%/install/zmailer.shtml
-%%DOCSDIR%%/introduction.shtml
-%%DOCSDIR%%/jobs
-%%DOCSDIR%%/mailscanner_trans.gif
-%%DOCSDIR%%/man/MailScanner.8
-%%DOCSDIR%%/man/MailScanner.8.html
-%%DOCSDIR%%/man/MailScanner.conf.5
-%%DOCSDIR%%/man/MailScanner.conf.5.html
-%%DOCSDIR%%/mrtg.shtml
-%%DOCSDIR%%/newinv4.shtml
-%%DOCSDIR%%/nextversion.shtml
-%%DOCSDIR%%/oldnews.shtml
-%%DOCSDIR%%/osdir.png
-%%DOCSDIR%%/performance.shtml
-%%DOCSDIR%%/poetry.shtml
-%%DOCSDIR%%/poweredby.google.gif
-%%DOCSDIR%%/poweredby.transtec.gif
-%%DOCSDIR%%/presentations.html
-%%DOCSDIR%%/press.html
-%%DOCSDIR%%/readme.shtml
-%%DOCSDIR%%/reject.html
-%%DOCSDIR%%/sobig.html
-%%DOCSDIR%%/support.html
-%%DOCSDIR%%/transtec.logo.gif
-%%DOCSDIR%%/users.shtml
-@dirrm %%DOCSDIR%%/man
-@dirrm %%DOCSDIR%%/install/mcp
-@dirrm %%DOCSDIR%%/install/tcp
-@dirrm %%DOCSDIR%%/install
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.OpenBSD
+%%PORTDOCS%%%%DOCSDIR%%/QuickInstall.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
+%%PORTDOCS%%%%DOCSDIR%%/README.sql-logging
+%%PORTDOCS%%%%DOCSDIR%%/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/donations.shtml
+%%PORTDOCS%%%%DOCSDIR%%/downloadgraphs.shtml
+%%PORTDOCS%%%%DOCSDIR%%/downloads.shtml
+%%PORTDOCS%%%%DOCSDIR%%/ecs.css
+%%PORTDOCS%%%%DOCSDIR%%/faq.shtml
+%%PORTDOCS%%%%DOCSDIR%%/images/JulianField1_small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/bigmailscannerlogo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/smallmailscannerlogo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField4.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/thumb_JulianField5.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install/ClamAVModule.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/OS-virus-scan-web.htm
+%%PORTDOCS%%%%DOCSDIR%%/install/README.trend
+%%PORTDOCS%%%%DOCSDIR%%/install/SAVI.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/codestatus.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/conf.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/exim-old.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/exim.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/filesnscripts.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/gcc.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/index.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/linux.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/mailscanner.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/mcafee.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.55
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/Conf.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.55
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/PerMsgStatus.pm.patch.2.60
+%%PORTDOCS%%%%DOCSDIR%%/install/mcp/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch2.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch3.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/mime-tools-patch4.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/osborne.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/other.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/perl.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/postfix.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/sendmail.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/solaris9.txt
+%%PORTDOCS%%%%DOCSDIR%%/install/sophos.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/spamassassin.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/tnef.shtml
+%%PORTDOCS%%%%DOCSDIR%%/install/zmailer.shtml
+%%PORTDOCS%%%%DOCSDIR%%/introduction.shtml
+%%PORTDOCS%%%%DOCSDIR%%/jobs
+%%PORTDOCS%%%%DOCSDIR%%/mailscanner_trans.gif
+%%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8
+%%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.8.html
+%%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.conf.5
+%%PORTDOCS%%%%DOCSDIR%%/man/MailScanner.conf.5.html
+%%PORTDOCS%%%%DOCSDIR%%/mrtg.shtml
+%%PORTDOCS%%%%DOCSDIR%%/newinv4.shtml
+%%PORTDOCS%%%%DOCSDIR%%/nextversion.shtml
+%%PORTDOCS%%%%DOCSDIR%%/oldnews.shtml
+%%PORTDOCS%%%%DOCSDIR%%/osdir.png
+%%PORTDOCS%%%%DOCSDIR%%/performance.shtml
+%%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
+%%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
+%%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
+%%PORTDOCS%%%%DOCSDIR%%/presentations.html
+%%PORTDOCS%%%%DOCSDIR%%/press.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.shtml
+%%PORTDOCS%%%%DOCSDIR%%/reject.html
+%%PORTDOCS%%%%DOCSDIR%%/sobig.html
+%%PORTDOCS%%%%DOCSDIR%%/support.html
+%%PORTDOCS%%%%DOCSDIR%%/transtec.logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/users.shtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/install/tcp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/install/mcp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/install
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/reports/sk
 @dirrm %%DATADIR%%/reports/se
 @dirrm %%DATADIR%%/reports/ro
