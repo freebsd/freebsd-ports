@@ -27,6 +27,7 @@
     SUBDIR += bjfilters6300
     SUBDIR += c2ps-a4
     SUBDIR += c2ps-letter
+    SUBDIR += catdvi
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
     SUBDIR += clibpdf
