@@ -1,0 +1,12 @@
+--- config/conf.php.dist.orig	Sun Mar  3 17:50:25 2002
++++ config/conf.php.dist	Sun Mar  3 21:58:46 2002
+@@ -16,7 +16,8 @@
+ $conf['driver']['type'] = 'sql';
+ 
+ //
+-$conf['driver']['dsn']  = 'mysql://user:pass@localhost/whups';
++//$conf['driver']['dsn']  = 'mysql://user:pass@localhost/database';
++$conf['driver']['dsn']  = 'mysql://hordemgr:hordemgr@localhost/horde';
+ 
+ //
+ $conf['mail']['contact_addr'] = 'Whups Administrator <root@localhost>';

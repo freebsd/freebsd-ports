@@ -1,0 +1,66 @@
+%%PORTDOCS%%share/doc/whups/LICENSE
+%%PORTDOCS%%share/doc/whups/CHANGES
+%%WHUPSDIR%%/config/conf.php.dist
+%%WHUPSDIR%%/config/html.php.dist
+%%WHUPSDIR%%/config/prefs.php.dist
+%%WHUPSDIR%%/config/conf.php
+%%WHUPSDIR%%/config/html.php
+%%WHUPSDIR%%/config/prefs.php
+%%WHUPSDIR%%/graphics/continue.gif
+%%WHUPSDIR%%/graphics/last.gif
+%%WHUPSDIR%%/graphics/middle.gif
+%%WHUPSDIR%%/graphics/spacer.gif
+%%WHUPSDIR%%/graphics/whups.gif
+%%WHUPSDIR%%/lib/Driver/sql.php
+%%WHUPSDIR%%/lib/Create.php
+%%WHUPSDIR%%/lib/Driver.php
+%%WHUPSDIR%%/lib/Forms.php
+%%WHUPSDIR%%/lib/Query.php
+%%WHUPSDIR%%/lib/Search.php
+%%WHUPSDIR%%/lib/Whups.php
+%%WHUPSDIR%%/lib/WhupsVars.php
+%%WHUPSDIR%%/lib/api.php
+%%WHUPSDIR%%/lib/base.php
+%%WHUPSDIR%%/lib/version.php
+%%WHUPSDIR%%/lib/Admin.php
+%%WHUPSDIR%%/locale/de_DE/LC_MESSAGES/whups.mo
+%%WHUPSDIR%%/po/Makefile
+%%WHUPSDIR%%/po/README
+%%WHUPSDIR%%/po/de_DE.po
+%%WHUPSDIR%%/po/extract.pl
+%%WHUPSDIR%%/po/shtool
+%%WHUPSDIR%%/po/xgettext.sh
+%%WHUPSDIR%%/scripts/drivers/whups.sql
+%%WHUPSDIR%%/templates/index/css.inc
+%%WHUPSDIR%%/templates/index/notconfigured.inc
+%%WHUPSDIR%%/templates/actions.inc
+%%WHUPSDIR%%/templates/comment.inc
+%%WHUPSDIR%%/templates/common.inc
+%%WHUPSDIR%%/templates/formrenderer.inc
+%%WHUPSDIR%%/templates/headerbar.inc
+%%WHUPSDIR%%/templates/page.inc
+%%WHUPSDIR%%/templates/queryrenderer.inc
+%%WHUPSDIR%%/templates/searchresults.inc
+%%WHUPSDIR%%/templates/useractions.inc
+%%WHUPSDIR%%/templates/actionresult.inc
+%%WHUPSDIR%%/search.php
+%%WHUPSDIR%%/query.php
+%%WHUPSDIR%%/index.php
+%%WHUPSDIR%%/details.php
+%%WHUPSDIR%%/create.php
+%%WHUPSDIR%%/admin.php
+%%PORTDOCS%%@dirrm share/doc/whups
+@dirrm %%WHUPSDIR%%/config
+@dirrm %%WHUPSDIR%%/graphics
+@dirrm %%WHUPSDIR%%/lib/Driver
+@dirrm %%WHUPSDIR%%/lib
+@dirrm %%WHUPSDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%WHUPSDIR%%/locale/de_DE
+@dirrm %%WHUPSDIR%%/locale
+@dirrm %%WHUPSDIR%%/po
+@dirrm %%WHUPSDIR%%/scripts/backend
+@dirrm %%WHUPSDIR%%/scripts/drivers
+@dirrm %%WHUPSDIR%%/scripts
+@dirrm %%WHUPSDIR%%/templates/index
+@dirrm %%WHUPSDIR%%/templates
+@dirrm %%WHUPSDIR%%

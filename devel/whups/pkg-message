@@ -1,0 +1,29 @@
+************************************************************************
+Whups has been installed in %%WHUPSDIR%% with your blank
+configuration files.
+
+Horde must be configured; if not, see:
+- %%PORTSDIR%%/www/horde2/pkg-message
+
+Then, you have to create the tables required by Whups, from the SQL script
+%%WHUPSDIR%%/scripts/drivers/whups.sql,
+in the horde database or in a special database.
+For example, if your database is MySQL, you may run
+mysql --user=hordemgr --password=yourpass horde < whups.sql
+(If you run another database server, see
+ %%HORDEDIR%%/scripts/db/README
+ for more explanations.)
+
+Finally, you may have to tune the configuration files located in
+%%CONFDIR%%/, specially the files conf.php.
+In the file %%HORDEDIR%%/config/horde.php,
+at least one user should be defined as an admin:
+$conf['auth']['admins'] = array('admin', 'insert_user_login');
+
+Go to the <URL:http://localhost/horde/>;, log in with this user,
+and click on "Administration" to define your parameters.
+
+N.B.: permissions are not yet implemented!
+
+To protect your configuration files, you have to restart Apache.
+************************************************************************
