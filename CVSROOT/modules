@@ -8215,7 +8215,6 @@ simulavr	ports/devel/simulavr
 since		ports/misc/since
 sing		ports/net/sing
 siod		ports/lang/siod
-sip		ports/devel/sip
 sipcalc		ports/net/sipcalc
 siphon		ports/security/siphon
 sipsak		ports/net/sipsak
