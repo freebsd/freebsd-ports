@@ -1,5 +1,7 @@
 bin/jcc
 bin/dirdiff
+@exec %%LN%% jcc %D/bin/codecrusader
+@unexec %%RM%% %D/bin/codecrusader
 %%PORTDOCS%%share/doc/%%PORTNAME%%/FAQ
 %%PORTDOCS%%share/doc/%%PORTNAME%%/LICENSE
 %%PORTDOCS%%share/doc/%%PORTNAME%%/README.binary

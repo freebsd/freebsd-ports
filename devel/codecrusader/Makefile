@@ -31,7 +31,8 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 MAKE_ENV=	JX_INSTALL_ROOT="${X11BASE}/bin" \
 		JX_LIB_ROOT="${X11BASE}/lib"
-PLIST_SUB=	PORTNAME="${PORTNAME}"
+PLIST_SUB=	PORTNAME="${PORTNAME}" LN="${LN} -s" \
+		RM="${RM} -f"
 
 # Make environment
 PORTINCLUDES=	-I${X11BASE}/include -I${X11BASE}/include/jx \
@@ -129,5 +130,6 @@ do-install:
 .for i in ${PROGRAMFILES_SCRIPT}
 	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
 .endfor
+	@${LN} -s jcc ${PREFIX}/bin/codecrusader
 
 .include <bsd.port.post.mk>
