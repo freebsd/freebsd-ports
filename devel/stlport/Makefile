@@ -72,7 +72,7 @@ post-install:
 post-build:	test
 .endif
 
-test:
+test:	do-build
 	cd ${WRKSRC}/../test/eh && ${SETENV} CC=${CC} CXX=${CXX} \
 	${GMAKE} -f ${MAKEFILE} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 	PTHREAD_LIBS=${PTHREAD_LIBS} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
