@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.7
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${VER}-i386
 
@@ -53,6 +53,10 @@ ZEND_PATH=	5.0.x
 
 PLIST_SUB+=	ZEND_PATH=${ZEND_PATH}
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/Optimizer/php-${ZEND_PATH}
 	${INSTALL_DATA} ${WRKSRC}/data/${ZEND_PATH:S/./_/g}_comp/ZendOptimizer.so \
@@ -66,7 +70,7 @@ do-install:
 		${PREFIX}/lib/php/${PHP_EXT_DIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/data/doc/ZendOptimizer_* ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/data/doc/* ${DOCSDIR}
 .endif
 
 post-install:
