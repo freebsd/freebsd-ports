@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cafelog
@@ -17,7 +18,7 @@ COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_PHP=	mysql
+USE_PHP=	mysql pcre xml
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
