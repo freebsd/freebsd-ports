@@ -53,6 +53,7 @@ L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_PKGNAME=   cs
 LANG_EXT=       42
 LANG_CONFIGURE_ARG=     CZECH
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "dk"
@@ -215,6 +216,7 @@ CATEGORIES=	russian
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "es"
@@ -235,6 +237,7 @@ LANG_CONFIGURE_ARG=	SWED
 LANG_PKGNAME=	sk
 LANG_EXT=	43
 LANG_CONFIGURE_ARG=	SLOVAK
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "sl-SI"
@@ -242,6 +245,7 @@ LANG_PKGNAME=	sl
 LANG_SUFFIX=	SI
 LANG_EXT=	50
 LANG_CONFIGURE_ARG=	SLOVENIAN
+L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "th"

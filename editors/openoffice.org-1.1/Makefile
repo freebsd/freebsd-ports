@@ -18,9 +18,11 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent-1.0/&,}:help3 \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
+		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
+		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Files/:help2
 MASTER_SITE_SUBDIR=     stable/${PORTVERSION}
 DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
@@ -61,17 +63,21 @@ LANG_CONFIGURE_ARG?=	ENUS
 DISTFILES+=	${L10NHELP}:help
 .endif
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
-		helpcontent_34_unix.tgz:help helpcontent_39_unix.tgz:help \
-		helpcontent_46_unix.tgz:help helpcontent_49_unix.tgz:help \
-		helpcontent_55_unix.tgz:help \
-		helpcontent_81_unix.tgz:help helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help \
+DISTFILES+=	helpcontent_07_unix.tgz:help3 \
+		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
+		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
+		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
+		helpcontent_46_unix.tgz:help  helpcontent_49_unix.tgz:help \
+		helpcontent_50_unix.tgz:help2 helpcontent_55_unix.tgz:help \
+		helpcontent_81_unix.tgz:help  helpcontent_82_unix.tgz:help \
+		helpcontent_86_unix.tgz:help  helpcontent_88_unix.tgz:help \
 		helpcontent_90_unix.tgz:help
-L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
+L10NHELPS=	helpcontent_07_unix.tgz \
+		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
+		helpcontent_42_unix.tgz helpcontent_43_unix.tgz \
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
-		helpcontent_55_unix.tgz \
+		helpcontent_50_unix.tgz helpcontent_55_unix.tgz \
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
 		helpcontent_90_unix.tgz
