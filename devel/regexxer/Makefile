@@ -30,14 +30,12 @@ GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 USE_GNOME=		gnomehack gnomeprefix gnometarget intltool intlhack
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${PCRE_WRKDIR}/.install/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${PCRE_WRKDIR}/.install/lib -L${LOCALBASE}/lib"
 
 PCRE_NAME=		pcre
 PCRE_VERSION=		4.5
 PCRE_WRKDIR=		${WRKDIR}/${PCRE_NAME}-${PCRE_VERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -E 's,(\$$\(PKG_(CFLAGS|LIBS)\)) (\$$\(PCRE_(CFLAGS|LIBS)\)),\3 \1,' ${WRKSRC}/src/Makefile.in
 
 pre-configure:
 	@(cd ${PCRE_WRKDIR} && \
