@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/02/05 09:46:12	1.1
++++ Makefile.in	2002/02/05 09:46:25
+@@ -151,7 +151,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-always_built_SUBDIRS = control-center capplets idl doc omf-install man
++always_built_SUBDIRS = control-center capplets idl doc omf-install
+ 
+ SUBDIRS = intl po macros \
+ 	 $(always_built_SUBDIRS)
