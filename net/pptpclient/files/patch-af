@@ -1,0 +1,11 @@
+--- pptp_ctrl.c~	Thu Feb 19 07:42:14 1998
++++ pptp_ctrl.c	Sun Nov 14 11:12:03 1999
+@@ -513,7 +513,7 @@
+ 	  close_reason = PPTP_STOP_PROTOCOL;
+ 	  goto pptp_conn_close;
+ 	}
+-	if (ntoh8(packet->result_code)!=1) { /* some problem with start */
++	if (ntoh8(packet->result_code)!=1 && ntoh8(packet->result_code)!=0) { /* some problem with start */
+ 	  /* if result_code == 5, we might fall back to different version */
+ 	  if (conn->callback!=NULL) conn->callback(conn, CONN_OPEN_FAIL);
+ 	  close_reason = PPTP_STOP_PROTOCOL;
