@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	0.45.1
+PORTVERSION=	0.45.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
@@ -17,7 +17,11 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-modelpath=${PREFIX}/libexec/nut \
 		--with-statepath=/var/db
 
-MAN8=		apcsmart.8 powercom.8
+MAN5=		ups.conf.5 upsd.conf.5 upsd.users.5 upsmon.conf.5 \
+		upssched.conf.5
+MAN8=		apcsmart.8 belkin.8 bestups.8 fentonups.8 nutupsdrv.8 \
+		powercom.8 upsc.8 upscmd.8 upsct.8 upsct2.8 upsd.8 \
+		upsdrvctl.8 upslog.8 upsmon.8 upssched.8
 
 ALL_TARGET=	all
 
