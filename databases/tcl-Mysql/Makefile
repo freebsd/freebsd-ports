@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tcl-sql-990813
+DISTNAME=	tcl-sql-20000114
 CATEGORIES=	databases tcl80
 MASTER_SITES=	http://www.binevolve.com/~tdarugar/tcl-sql/download/
 EXTRACT_SUFX=	.tgz
