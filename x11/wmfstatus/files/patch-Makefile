@@ -1,0 +1,33 @@
+--- Makefile.orig	Mon Nov 22 17:38:07 1999
++++ Makefile	Thu Dec 27 18:35:43 2001
+@@ -1,6 +1,6 @@
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${X11BASE}/lib
+ LIBS   = -lXpm -lXext -lX11
+-FLAGS = -O2
++FLAGS = ${CFLAGS}
+ OBJS =	wmfstatus.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+@@ -8,10 +8,10 @@
+ 
+ 
+ .c.o:
+-	cc -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
++	${CC} -I${X11BASE}/include $(FLAGS) -c -Wall $< -o $*.o
+ 
+ wmfstatus: $(OBJS)
+-	cc $(FLAGS) -o wmfstatus $^ -lXext $(LIBDIR) $(LIBS)
++	${CC} $(FLAGS) -o wmfstatus $? -lXext $(LIBDIR) $(LIBS)
+ 
+ all:: wmfstatus
+ 
+@@ -23,7 +23,4 @@
+ 	rm -f *~
+ 
+ install:: wmfstatus
+-	cp -f wmfstatus /usr/local/bin/
+-	chmod 755 /usr/local/bin/wmfstatus
+-	chown root:root /usr/local/bin/wmfstatus
+-	@echo "WMFSTATUS Installation finished..."
++	${BSD_INSTALL_PROGRAM} ./wmfstatus ${PREFIX}/bin/
