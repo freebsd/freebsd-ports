@@ -4099,6 +4099,7 @@ libXfixes	ports/x11/libXfixes
 libXfont	ports/x11/libXfont
 libXi		ports/x11/libXi
 libXrandr	ports/x11/libXrandr
+libXrender	ports/x11/libXrender
 libXres		ports/x11/libXres
 libXtrans	ports/x11/libXtrans
 libXv		ports/x11/libXv
@@ -7847,7 +7848,7 @@ relay		ports/net/relay
 relay-ctrl	ports/mail/relay-ctrl
 relaydb		ports/mail/relaydb
 remarp		ports/net/remarp
-render		ports/x11-toolkits/render
+renderext	ports/x11/renderext
 renderpark	ports/graphics/renderpark
 reoback		ports/sysutils/reoback
 rep-gtk		ports/x11-toolkits/rep-gtk
@@ -10053,7 +10054,6 @@ xqf		ports/games/xqf
 xquarto		ports/games/xquarto
 xquote		ports/finance/xquote
 xracer		ports/games/xracer
-xrender		ports/x11-toolkits/xrender
 xrestop		ports/x11/xrestop
 xrick		ports/games/xrick
 xripple		ports/games/xripple
