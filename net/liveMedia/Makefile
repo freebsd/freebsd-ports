@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2002.10.22
+PORTVERSION=	2002.11.04
+PORTCOMMENT=	LIVE.COM Streaming Media
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -78,6 +79,7 @@ liveMedia= \
 		liveMedia/include/MediaSource.hh \
 		liveMedia/include/MultiFramedRTPSink.hh \
 		liveMedia/include/MultiFramedRTPSource.hh \
+		liveMedia/include/PassiveServerMediaSession.hh \
 		liveMedia/include/PrioritizedRTPStreamSelector.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
 		liveMedia/include/QuickTimeFileSink.hh \

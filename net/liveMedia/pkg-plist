@@ -56,6 +56,7 @@ live/liveMedia/include/MediaSink.hh
 live/liveMedia/include/MediaSource.hh
 live/liveMedia/include/MultiFramedRTPSink.hh
 live/liveMedia/include/MultiFramedRTPSource.hh
+live/liveMedia/include/PassiveServerMediaSession.hh
 live/liveMedia/include/PrioritizedRTPStreamSelector.hh
 live/liveMedia/include/QCELPAudioRTPSource.hh
 live/liveMedia/include/QuickTimeFileSink.hh
