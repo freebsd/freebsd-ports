@@ -2889,6 +2889,7 @@ jaf		ports/java/jaf
 jags		ports/net/jags
 jail		src/usr.sbin/jail
 jakarta-ant	ports/devel/jakarta-ant
+jakarta-bcel	ports/java/jakarta-bcel
 jakarta-oro	ports/java/jakarta-oro
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-tomcat3	ports/www/jakarta-tomcat3
