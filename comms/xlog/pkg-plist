@@ -1,13 +1,12 @@
 bin/xlog
 share/application-registry/xlog.applications
 share/applications/xlog.desktop
-share/mime-info/xlog.keys
-share/mime-info/xlog.mime
-share/mime/XMLnamespaces
-share/mime/globs
-share/mime/magic
+share/applnk/Applications/xlog.desktop
 share/mime/packages/xlog.xml
 share/mime/text/x-xlog.xml
+share/mimelnk/text/x-xlog.desktop
+share/mime-info/xlog.keys
+share/mime-info/xlog.mime
 share/pixmaps/gnome-mime-text-x-xlog.png
 share/pixmaps/xlog/gnome-mime-text-x-xlog.png
 share/pixmaps/xlog/mini-clock.xpm
@@ -42,3 +41,5 @@ share/xlog/qsllabels.glabels
 @dirrm share/xlog/dxcc
 @dirrm share/xlog
 @dirrm share/pixmaps/xlog
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
