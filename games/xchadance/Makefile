@@ -8,10 +8,12 @@
 PORTNAME=	xchadance
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	motoyuki
 DISTFILES=	xchada01.lzh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	motoyuki@FreeBSD.org
 COMMENT=	Display a dancing girl "ChaCha."
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
@@ -23,9 +25,6 @@ NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	e
 EXTRACT_AFTER_ARGS=
-
-BROKEN=		"Unfetchable"
-DEPRECATED=	"This port will be removed on April 16 if still broken at that time."
 
 RESTRICTED=	'contains commercial character data'
 
