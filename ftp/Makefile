@@ -31,6 +31,7 @@
     SUBDIR += kmago
     SUBDIR += kwebget
     SUBDIR += lftp
+    SUBDIR += libfxp
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += lukemftp
