@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shtool
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ossp.org/pkg/tool/shtool/
