@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portmon
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.aboleo.net/software/portmon/downloads/
 
@@ -14,6 +14,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 
 MAN8=		portmon.8
