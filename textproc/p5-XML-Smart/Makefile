@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-Smart
-PORTVERSION=	1.6.8
+PORTVERSION=	1.6.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -21,6 +21,15 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	YES
 
 MAN3=		XML::Smart.3 XML::Smart::DTD.3 XML::Smart::FAQ.3 XML::Smart::Tutorial.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
