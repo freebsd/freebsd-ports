@@ -1,6 +1,6 @@
---- bulk_mailer.c.ORIG	Tue Apr 14 19:38:46 1998
-+++ bulk_mailer.c	Fri Aug 14 22:02:19 1998
-@@ -91,11 +91,16 @@
+--- bulk_mailer.c.orig	Wed May 24 22:34:33 2000
++++ bulk_mailer.c	Thu Jun  8 12:35:46 2000
+@@ -95,11 +95,16 @@
  #include <sysexits.h>
  #include <errno.h>
  #include <time.h>
@@ -17,7 +17,7 @@
  #ifndef PIPECOMMAND
  #define PIPECOMMAND "/usr/lib/sendmail -bs %s"
  #endif
-@@ -271,6 +276,7 @@
+@@ -296,6 +301,7 @@
   * memory, appending a NUL to the copy.
   */
  
@@ -25,7 +25,7 @@
  static char *
  strndup (str, len)
  char *str;
-@@ -282,6 +288,7 @@
+@@ -307,6 +313,7 @@
      result[len] = '\0';
      return result;
  }
@@ -33,7 +33,7 @@
  
  /*
   * sort by case-folded reversed domain
-@@ -312,15 +319,15 @@
+@@ -337,15 +344,15 @@
  {
      char *at;
      char *ptr;
@@ -52,7 +52,7 @@
  	
  	num_addr_slots += 1000;
  	if (address_list == NULL)
-@@ -544,12 +551,12 @@
+@@ -571,12 +578,12 @@
  open_envelope ()
  {
      FILE *fp;
@@ -67,7 +67,7 @@
  
  	if ((fp = popen (command_buf, "w")) == NULL) {
  	    fprintf (stderr, "can't open pipe to sendmail: %s\n",
-@@ -867,7 +874,7 @@
+@@ -927,7 +934,7 @@
  {
      struct tm gmt;
      struct tm *lt;
@@ -76,7 +76,7 @@
      int gmtoff;
      char sign;
      static char *months[] = {
-@@ -900,7 +907,7 @@
+@@ -960,7 +967,7 @@
  	sign = '-';
  	gmtoff = -gmtoff;
      }
@@ -85,7 +85,7 @@
  	     wdays[lt->tm_wday], lt->tm_mday, months[lt->tm_mon], lt->tm_year + 1900,
  	     lt->tm_hour, lt->tm_min, lt->tm_sec,
  	     sign,
-@@ -925,7 +932,7 @@
+@@ -985,7 +992,7 @@
  copy_message (out, in)
  FILE *out, *in;
  {
@@ -94,7 +94,7 @@
      char linebuf[32*1024];
      int has_valid_approved_hdr = 0;
      int has_resent_to_hdr = 0;
-@@ -1114,14 +1121,14 @@
+@@ -1218,14 +1225,14 @@
       */
      lines = 0;
      while (fgets (linebuf, sizeof (linebuf), in) != NULL) {
@@ -111,7 +111,7 @@
  	    saw_command = 1;
  	++lines;
  	fputs (linebuf, out);
-@@ -1222,13 +1229,13 @@
+@@ -1326,13 +1333,14 @@
  int argc;
  char *argv[];
  {
@@ -125,10 +125,23 @@
 -    char buf[1024];
 +/*    int c; */
 +/*    char buf[1024]; */
++    int fd;
  
      while (argc > 1 && (*argv[1] == '-' || *argv[1] == '+')) {
  	if (strcmp (argv[1], "-comment") == 0 && argc > 2) {
-@@ -1396,4 +1403,5 @@
+@@ -1513,8 +1521,9 @@
+ 	exit (EX_OSFILE);
+     }
+ 
+-    tempname = mktemp (template);
+-    tmp = fopen (template, "w");
++    fd = mkstemp (template);
++    tempname = template;
++    tmp = fdopen (fd, "w+");
+     switch (copy_message (tmp, stdin)) {
+ 
+     case HAS_EMBEDDED_COMMAND:
+@@ -1592,4 +1601,5 @@
  	
  	exit (EX_OK);
      }

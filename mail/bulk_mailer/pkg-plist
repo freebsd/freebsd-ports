@@ -1,2 +1,3 @@
 bin/bulk_mailer
-share/doc/bulk_mailer.README
+share/doc/bulk_mailer/README
+@dirrm share/doc/bulk_mailer
