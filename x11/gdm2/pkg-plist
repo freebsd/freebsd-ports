@@ -63,6 +63,7 @@ share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
 share/locale/ar/LC_MESSAGES/gdm-2.4.mo
 share/locale/az/LC_MESSAGES/gdm-2.4.mo
+share/locale/be/LC_MESSAGES/gdm-2.4.mo
 share/locale/bg/LC_MESSAGES/gdm-2.4.mo
 share/locale/ca/LC_MESSAGES/gdm-2.4.mo
 share/locale/cs/LC_MESSAGES/gdm-2.4.mo
