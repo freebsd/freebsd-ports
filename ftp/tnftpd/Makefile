@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	tnftpd
-PORTVERSION=	20031217
-PORTREVISION=	1
+PORTVERSION=	20040810
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
-FORBIDDEN=	http://vuxml.freebsd.org/c4b025bb-f05d-11d8-9837-000c41e2cdad.html
 MAINTAINER=	cejkar@fit.vutbr.cz
 COMMENT=	Enhanced ftp server from NetBSD
 
