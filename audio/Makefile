@@ -111,6 +111,7 @@
     SUBDIR += mikmod
     SUBDIR += mixer.app
     SUBDIR += mp3_check
+    SUBDIR += mp3asm
     SUBDIR += mp3blaster
     SUBDIR += mp3butler
     SUBDIR += mp3check
