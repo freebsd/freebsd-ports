@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ewipe
-# Version required:	0.6.0
+# Version required:	0.7.0
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.7 1997/12/25 10:56:19 itojun Exp $
+# $Id: Makefile,v 1.8 1998/02/03 12:45:43 itojun Exp $
 #
 
-DISTNAME=	ewipe0.6.0
-PKGNAME=	ewipe-0.6.0
+DISTNAME=	ewipe0.7.0
+PKGNAME=	ewipe-0.7.0
 CATEGORIES=	misc
 MASTER_SITES=	http://al.ei.tuat.ac.jp/~sekisita/ewipe/
 
@@ -18,16 +18,25 @@ RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
 NO_BUILD=	yes
 NO_CONFIGURE=	yes
 
+DOCS=		README Changes dot.ewipe
+SAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp \
+		sample2.ewp sample3.ewp tutorial.ewp
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/ewipe
-	${MKDIR} ${PREFIX}/share/doc/ewipe
 	${INSTALL_SCRIPT} ${WRKSRC}/ewipe ${PREFIX}/bin
-	for i in edittable.tcl setpointer.tcl viewer.tcl tclIndex; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/ewipe; \
+	for i in edittable.tcl setpointer.tcl viewer.tcl tclIndex; do\
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/ewipe;\
 	done
 .if !defined(NOPORTDOCS)
-	for i in README Changes blue1.gif dot.ewipe sample.ewp; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ewipe; \
+	${MKDIR} ${PREFIX}/share/doc/ewipe
+	${MKDIR} ${PREFIX}/share/doc/ewipe/sample
+	for i in ${DOCS}; do\
+		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ewipe;\
+	done
+	for i in ${SAMPLES}; do\
+		${INSTALL_DATA} ${WRKSRC}/sample/$$i \
+			${PREFIX}/share/doc/ewipe/sample;\
 	done
 .endif
 
