@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.54 1999/03/19 22:35:25 asami Exp $
+# $Id: Makefile,v 1.55 1999/07/20 22:14:55 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -25,6 +25,7 @@ ALL_TARGET=	World
 INSTALL_TARGET=	install install.man
 DIST_SUBDIR=	xc
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
+SCRIPTS_ENV=	OSVERSION=${OSVERSION}
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
 PREFIX=		${X11BASE}
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
