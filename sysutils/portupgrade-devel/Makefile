@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20020429
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
