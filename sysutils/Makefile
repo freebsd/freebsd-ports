@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.14 1997/01/06 09:51:41 obrien Exp $
+# $Id: Makefile,v 1.15 1997/02/16 15:22:27 wosch Exp $
 #
 
     SUBDIR += afio
     SUBDIR += contool
+    SUBDIR += idled
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mkisofs
