@@ -179,6 +179,7 @@
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpg321
+    SUBDIR += mpio-driver
     SUBDIR += mpmf20
     SUBDIR += mppdec
     SUBDIR += mpt

@@ -1,0 +1,18 @@
+#!/bin/sh
+# MPIO-kmod sample startup script
+# Created by Sergey Akifyev <asa@gascom.ru>
+#
+# $Id: mpio-driver.sh.sample,v 1.1 2003/06/19 15:36:18 asa Exp $
+
+case "${1}" in
+	start)
+		echo -n "mpio-driver "
+		kldload mpio
+		;;
+	stop)
+		kldunload mpio
+		;;
+	*)
+		echo Usage: `basename ${0}` "{start|stop}"
+		;;
+esac
