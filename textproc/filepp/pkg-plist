@@ -7,6 +7,8 @@ share/filepp/modules/function.pm
 share/filepp/modules/hash-comment.pm
 share/filepp/modules/literal.pm
 share/filepp/modules/maths.pm
+share/filepp/modules/regexp.pm
+share/filepp/modules/test.pm
 share/filepp/modules/tolower.pm
 share/filepp/modules/toupper.pm
 @dirrm share/filepp/modules
