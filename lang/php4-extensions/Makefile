@@ -18,6 +18,10 @@ COMMENT=	A "meta-port" to install PHP extensions
 
 NO_BUILD=	# none
 
+USE_PHP=	yes
+DEFAULT_PHP_VER=4
+BROKEN_WITH_PHP=5
+
 OPTIONS=	BCMATH          "bc style precision math functions" off \
 		BZ2             "bzip2 library support" off \
 		CALENDAR        "calendar conversion support" off \
