@@ -1,0 +1,33 @@
+--- configure.orig	Fri Jul 11 17:50:57 2003
++++ configure	Mon Jul 14 17:32:58 2003
+@@ -3597,7 +3597,7 @@
+ 
+ echo "$as_me:$LINENO: checking for egrep" >&5
+ echo $ECHO_N "checking for egrep... $ECHO_C" >&6
+-if test "${ac_cv_prog_egrep+set}" = set; then
++if test "${ac_cv_prog_egrep+set}" = set ; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   if echo a | (grep -E '(a|b)') >/dev/null 2>&1
+@@ -3858,6 +3858,9 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
+ #include <$ac_header>
+ _ACEOF
+ rm -f conftest.$ac_objext
+@@ -5478,6 +5481,11 @@
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ $ac_includes_default
++#include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
++#include <netinet/ip_compat.h>
++#include <netinet/ip_fil.h>
+ #include <netinet/ip_nat.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
