@@ -101,6 +101,7 @@
     SUBDIR += openoffice-nl
     SUBDIR += openoffice-pl
     SUBDIR += openoffice-pt
+    SUBDIR += openoffice-se
     SUBDIR += openoffice-tr
     SUBDIR += pico
     SUBDIR += poedit
