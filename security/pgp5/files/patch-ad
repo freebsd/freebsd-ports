@@ -1,0 +1,20 @@
+--- include/pgpUsuals.h.orig	Sun Sep 19 16:40:16 1999
++++ include/pgpUsuals.h	Sun Sep 19 16:41:51 1999
+@@ -48,11 +48,17 @@
+ * will choke lesser preprocessors (like 0xffffffffffffffff) unless
+ * we're reasonably certain that they'll be acceptable.
+ */
++#if defined(__FreeBSD__) && defined(__alpha__)
++typedef unsigned long word64;
++typedef long int64;
++#define HAVE64 1
++#else
+ #if ULONG_MAX > 0xfffffffful
+ #if ULONG_MAX == 0xfffffffffffffffful
+ typedef ulong bnword64;
+ #define BNWORD64 bnword64
+ #define HAVE64 1
++#endif
+ #endif
+ #endif
+ 
