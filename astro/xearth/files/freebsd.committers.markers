@@ -52,13 +52,13 @@
  45.27,		9.17,		"olgeni"			# Milano, Italy
  45.458,	9.169,		"ale"		align=left	# Milano, Italy
  50.1025,	8.6841,		"tomsoft"			# Frankfurt, Hessen, Germany
- 43.6,		7.00,		"clement"	align=left	# Mougins, France
  51.32,		7.27,		"ue"				# Dortmund, Germany
+ 43.6,		7.00,		"clement"	align=left	# Mougins, France
  49.404722,	6.950555,	"netchild"			# Eppelborn, Germany
  50.92,		6.95,		"se"				# Cologne, Germany
  51.3,		6.75,		"alex"		align=left	# Meerbusch, Germany
- 51.13,		6.47,		"krion"				# Duesseldorf, Germany
  51.13,		6.56		"oliver"			# Erkrath, Germany
+ 51.13,		6.47,		"krion"				# Duesseldorf, Germany
  50.47,		6.42,		"brueffer"			# Aachen, Germany
  50.70,		6.2,		"tg"				# Aachen, Germany
  50.7797,	6.0982,		"markus"			# Aachen, Germany
@@ -94,6 +94,7 @@
  42.34,		-71.19,		"wollman"			# Brighton, MA, USA
  42.727,	-73.676,	"dec,jon,gad"			# RPI @ Troy, NY, USA
  45.3991,	-75.6942,	"jake"				# Ottawa, ON, Canada
+ 45.417,	-75.700,	"adamw"				# Ottawa, ON, Canada
  39.00,		-76.88,		"         ,chuckr"		# Greenbelt, MD, USA
  39.2,		-77.0,		"jmb,gpalmer"			# Silver Spring, MD, USA
  38.981024,	-77.119791,	"rwatson"			# (CORE) Bethesda, MD, USA
@@ -114,13 +115,13 @@
  29.7,		-95.4,		"rich        ,dwcjr"		# Houston, TX, USA
  41.259,	-95.938,	"smkelly"			# Omaha, NE, USA
  30.427,	-97.753,	"   ,dbaker"			# Austin, TX, USA
- 30.192,	-97.881,	"ade"				# Austin, TX, USA
  30.343,	-97.881,	"          ,linimon"		# Austin, TX, USA
+ 30.192,	-97.881,	"ade"				# Austin, TX, USA
  40.1,		-105.3,		"imp"				# (CORE) Boulder, CO, USA
  40.1,		-105.3,		"    ,gibbs,ken,fsmp"		# Boulder, CO, USA
- 33.05,		-117.09,	"wes"				# (CORE) San Diego, CA, USA
  46.59,		-112.04,	"nate"				# Helena, MT, USA
  51.09,		-114.12,	"cpiazza"			# Calgary, AB, Canada
+ 33.05,		-117.09,	"wes"				# (CORE) San Diego, CA, USA
  33.66,		-117.80,	"dd"				# Irvine, CA, USA
  34.13637,	-118.12704,	"mph"				# Pasadena, CA, USA
  33.83,		-118.22,	"             ,trevor"		# Dominguez, CA, USA
@@ -136,7 +137,6 @@
  37.68,		-122.03,	"bmah"				# Castro Valley, CA, USA
  37.39,		-122.06,	"marcel"			# Mountain View, CA, USA
  47.756,	-122.14,	"seanc"				# Shoreline, WA, USA
- 45.417,	-75.700,	"adamw"				# Ottawa, ON, Canada
  37.55,		-122.26,	"terry"				# Foster City, CA, USA
  37.887398,	-122.264896,	"gsutter"			# Berkeley, CA, USA
  37.843858,	-122.294535,	"gshapiro"			# Emeryville, CA, USA
