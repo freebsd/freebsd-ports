@@ -115,9 +115,11 @@ mpich/build/freebsd/ch_p4/include/mpidefs.h
 mpich/build/freebsd/ch_p4/include/mpif.h
 mpich/build/freebsd/ch_p4/include/mpio.h
 mpich/build/freebsd/ch_p4/include/mpiof.h
+mpich/build/freebsd/ch_p4/lib/libampi.a
 mpich/build/freebsd/ch_p4/lib/libfmpich.a
 mpich/build/freebsd/ch_p4/lib/liblmpi.a
 mpich/build/freebsd/ch_p4/lib/libmpe.a
+mpich/build/freebsd/ch_p4/lib/libmpe_nompi.a
 mpich/build/freebsd/ch_p4/lib/libmpich++.a
 mpich/build/freebsd/ch_p4/lib/libmpich.a
 mpich/build/freebsd/ch_p4/lib/libpmpich.a
