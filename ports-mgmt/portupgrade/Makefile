@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -20,6 +21,12 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 USE_RUBY=	yes
 
 NO_BUILD=	yes
+
+post-extract:
+	${RM} ${WRKSRC}/misc/zsh/_portversion
+
+post-patch:
+	${RUBY} -i -pe "sub /, 'portversion'/, ''" ${WRKSRC}/install.rb
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
