@@ -1,23 +1,26 @@
---- htdocs/index.html.en.orig	Fri Jan 19 13:39:47 2001
-+++ htdocs/index.html.en	Thu Feb  8 22:10:30 2001
-@@ -32,13 +32,25 @@
+--- htdocs/index.html.en.orig	Thu May  3 19:00:38 2001
++++ htdocs/index.html.en	Wed Aug  1 22:58:29 2001
+@@ -26,13 +26,29 @@
+ issues.</p>
  
- <HR WIDTH="50%" SIZE="8">
+ <hr width="50%" size="8" />
+-<p>The Apache <a href="manual/">documentation</a> has been included
++<p>The Apache <a href="http://@@HOSTNAME@@:8080/manual/">documentation</a> has been included
+ with this distribution.</p>
  
--<p>The Apache <A HREF="manual/">documentation</A> has been included with
-+<p>The Apache <A HREF="http://@@HOSTNAME@@:8080/manual/">documentation</A> has been included with
- this distribution.</p>
- 
+-<p>You are free to use the image below on an Apache-powered web
+-server. Thanks for using Apache!</p>
 +<p>The Microsoft FrontPage 2000 Extentions has been installed with this
-+Apache Server.  Read the <A HREF="http://@@HOSTNAME@@:8080/manual/mod/mod_frontpage/">Microsoft FrontPage 2000 documentation</A> carefully.<p>
++Apache Server.  Read the 
++<A HREF="http://@@HOSTNAME@@:8080/manual/mod/mod_frontpage/">Microsoft FrontPage 2000 documentation</A>
++carefully.</p>
 +
-+<p>Information of the FreeBSD operating system can be found on the <A HREF="http://www.freebsd.org">FreeBSD</A> web site.<p>
++<p>Information of the FreeBSD operating system can be found on the
++<A HREF="http://www.freebsd.org">FreeBSD</A> web site.</p>
 +
- <p>You are free to use the image below on an Apache-powered web server. 
--Thanks for using Apache!</p>
-+Thanks for using Apache and FreeBSD!</p>
- 
--<DIV ALIGN="CENTER"><IMG SRC="apache_pb.gif" ALT=""></DIV>
++<p>You are free to use the images below on the Apache-powered web
++server. Thanks for using Apache and FreeBSD!</p>
++
 +<DIV ALIGN="CENTER">
 +  <A HREF="http://www.apache.org">
 +    <IMG SRC="/images/apache_pb.gif" ALT="Powered by Apache"></A>
@@ -27,5 +30,7 @@
 +    <IMG SRC="/images/fplogo.gif" ALT="Create with Microsoft Frontpage 2000"></A>
 +</DIV>
  
- </BODY>
- </HTML>
+-<div align="center"><img src="apache_pb.gif" alt="" /></div>
+ </body>
+ </html>
+ 

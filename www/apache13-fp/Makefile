@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	apache_fp
-PORTVERSION=	1.3.19
-PORTREVISION=	1
+PORTVERSION=	1.3.20
+#PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
@@ -51,7 +51,7 @@ PKGMESSAGE=	pkg-message.freebsd
 .else
 FRONTPAGE=	fp40.bsdi.tar.Z
 EXTRA_PATCHES=	${FILESDIR}/change_server.bsdi ${FILESDIR}/fp_install.bsdi
-.if ${OSVERSION} < 50016
+.if ${OSVERSION} < 500016
 PKGMESSAGE=	pkg-message.bsdi
 .endif
 .endif
@@ -97,10 +97,11 @@ CONFIGURE_ARGS=	 \
 		  --server-uid=${HTTPD_USER} \
 		  --server-gid=${HTTPD_GROUP} \
 		  --without-confadjust \
-		  --enable-shared=max \
 		  --enable-module=most \
 		  --enable-module=auth_db \
+		  --enable-module=mmap_static \
 		  --disable-module=auth_dbm \
+		  --enable-shared=max \
 		  --add-module=${MOD_FP} \
 		  --enable-shared=frontpage
 
