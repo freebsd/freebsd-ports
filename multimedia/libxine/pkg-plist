@@ -32,7 +32,7 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
-lib/libxine.so.3
+lib/libxine.so.4
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_invert.so
 lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
@@ -44,8 +44,6 @@ lib/xine/plugins/1.0.0/xineplug_decode_adpcm.so
 lib/xine/plugins/1.0.0/xineplug_decode_cinepak.so
 lib/xine/plugins/1.0.0/xineplug_decode_cyuv.so
 lib/xine/plugins/1.0.0/xineplug_decode_dts.so
-lib/xine/plugins/1.0.0/xineplug_decode_dxr3_spu.so
-lib/xine/plugins/1.0.0/xineplug_decode_dxr3_video.so
 lib/xine/plugins/1.0.0/xineplug_decode_faad.so
 lib/xine/plugins/1.0.0/xineplug_decode_ff.so
 lib/xine/plugins/1.0.0/xineplug_decode_fli.so
@@ -109,7 +107,6 @@ lib/xine/plugins/1.0.0/xineplug_inp_rtsp.so
 lib/xine/plugins/1.0.0/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/1.0.0/xineplug_inp_vcd.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_aa.so
-lib/xine/plugins/1.0.0/xineplug_vo_out_dxr3.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_none.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_pgx64.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_sdl.so
