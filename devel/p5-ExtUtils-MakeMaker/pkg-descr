@@ -1,0 +1,14 @@
+This utility is designed to write a Makefile for an extension module from a 
+Makefile.PL. It is based on the Makefile.SH model provided by Andy Dougherty 
+and the perl5-porters.
+
+It splits the task of generating the Makefile into several subroutines that 
+can be individually overridden. Each subroutine returns the text it wishes to 
+have written to the Makefile.
+
+MakeMaker is object oriented. Each directory below the current directory that
+contains a Makefile.PL is treated as a separate object. This makes it possible
+to write an unlimited number of Makefiles with a single invocation of 
+WriteMakefile().
+
+WWW: http://search.cpan.org/dist/ExtUtils-MakeMaker/
