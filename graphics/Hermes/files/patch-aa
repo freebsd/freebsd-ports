@@ -1,0 +1,29 @@
+--- ltconfig.orig	Mon Feb 22 16:03:35 1999
++++ ltconfig	Sat May  1 21:40:42 1999
+@@ -1236,7 +1236,7 @@
+     ;;
+ 
+   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
+-  freebsd3*)
++  freebsd*)
+     archive_cmds='$CC -shared -o $lib $libobjs $deplibs'
+     hardcode_libdir_flag_spec='-R$libdir'
+     hardcode_direct=yes
+@@ -1670,7 +1670,7 @@
+   shlibpath_var=PATH
+   ;;
+ 
+-freebsd2* | freebsd3*)
++freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case "$version_type" in
+@@ -1683,7 +1683,7 @@
+       ;;
+   esac
+   library_names_spec='${libname}${release}.so$versuffix $libname.so$versuffix'
+-  finish_cmds='PATH="$PATH:/sbin" OBJFORMAT="$objformat" ldconfig -m $libdir'
++  finish_cmds="PATH=\"\$PATH:/sbin\" OBJFORMAT=$objformat ldconfig -m \$libdir"
+   shlibpath_var=LD_LIBRARY_PATH
+   need_version=yes
+   ;;
