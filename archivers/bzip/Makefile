@@ -3,12 +3,12 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1996/12/07 09:28:40 max Exp $
+# $Id: Makefile,v 1.10 1997/10/09 21:04:36 andreas Exp $
 #
 
 DISTNAME=       bzip-0.21
 CATEGORIES=	archivers
-MASTER_SITES=   http://www.cs.man.ac.uk/arch/people/j-seward/
+MASTER_SITES=   ftp://ftp.connectnet.com/pub/bzip/
 
 MAINTAINER=     andreas@FreeBSD.ORG
 
