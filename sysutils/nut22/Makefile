@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	0.44.0
+PORTVERSION=	0.44.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
@@ -20,11 +20,11 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc/nut \
 		--with-cgipath=${PREFIX}/share/nut/cgi \
 		--with-modelpath=${PREFIX}/sbin \
-		--with-uid=65534 --with-gid=68 
+		--with-statepath=/var/db
 
 ALL_TARGET=	all
 
-PLIST=	${WRKDIR}/PLIST.DYN
+PLIST=		${WRKDIR}/PLIST.DYN
 
 NDOCDIR=	${PREFIX}/share/doc/nut
 

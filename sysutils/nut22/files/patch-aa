@@ -1,6 +1,6 @@
-diff -ur ../440/Makefile.in ./Makefile.in
---- ../440/Makefile.in	Mon Jun 12 06:48:07 2000
-+++ ./Makefile.in	Tue Jul 18 11:51:25 2000
+diff -ur ../441/Makefile.in ./Makefile.in
+--- ../441/Makefile.in	Sun Jul 30 10:10:14 2000
++++ ./Makefile.in	Mon Oct 16 11:41:03 2000
 @@ -5,7 +5,7 @@
  BASEPATH = $(INSTALLROOT)@prefix@
  CONFPATH = $(INSTALLROOT)@sysconfdir@
@@ -10,9 +10,9 @@ diff -ur ../440/Makefile.in ./Makefile.in
  
  STATEPATH = $(INSTALLROOT)@STATEPATH@
  SUBDIRS = common models server clients
-diff -ur ../440/clients/Makefile.in ./clients/Makefile.in
---- ../440/clients/Makefile.in	Fri Jul 14 05:55:41 2000
-+++ ./clients/Makefile.in	Mon Jul 17 17:48:29 2000
+diff -ur ../441/clients/Makefile.in ./clients/Makefile.in
+--- ../441/clients/Makefile.in	Fri Jul 14 05:55:41 2000
++++ ./clients/Makefile.in	Mon Oct 16 11:42:15 2000
 @@ -57,7 +57,7 @@
  
  install: all
@@ -22,9 +22,9 @@ diff -ur ../440/clients/Makefile.in ./clients/Makefile.in
  	done
  
  install-cgi: cgi
-diff -ur ../440/conf/Makefile.in ./conf/Makefile.in
---- ../440/conf/Makefile.in	Mon May  8 04:17:20 2000
-+++ ./conf/Makefile.in	Mon Jul 17 17:49:43 2000
+diff -ur ../441/conf/Makefile.in ./conf/Makefile.in
+--- ../441/conf/Makefile.in	Mon May  8 04:17:20 2000
++++ ./conf/Makefile.in	Mon Oct 16 11:43:25 2000
 @@ -13,17 +13,9 @@
  
  install:
@@ -45,23 +45,9 @@ diff -ur ../440/conf/Makefile.in ./conf/Makefile.in
 -		fi; \
 +		$(INSTALLCMD) -m 0644 $$f $(CONFPATH)/$$f.sample; \
  	done
-diff -ur ../440/models/Makefile.in ./models/Makefile.in
---- ../440/models/Makefile.in	Fri Jul 14 05:27:27 2000
-+++ ./models/Makefile.in	Tue Jul 18 10:59:01 2000
-@@ -20,9 +20,7 @@
- # in the future ala the Linux "make config" process...
- 
- $(PROGS): upscommon.o ../include/shared.h ../common/common.o
--
--.c:
--	$(CC) $(CFLAGS) -o $* $*.c upscommon.o ../common/common.o
-+	$(CC) $(CFLAGS) -o $* $*.c upscommon.o @SERLIBS@ ../common/common.o
- 
- #
- # Housekeeping stuff
-diff -ur ../440/server/Makefile.in ./server/Makefile.in
---- ../440/server/Makefile.in	Fri Jul 14 05:30:40 2000
-+++ ./server/Makefile.in	Mon Jul 17 17:51:19 2000
+diff -ur ../441/server/Makefile.in ./server/Makefile.in
+--- ../441/server/Makefile.in	Fri Jul 14 05:30:40 2000
++++ ./server/Makefile.in	Mon Oct 16 11:44:41 2000
 @@ -24,5 +24,5 @@
  
  install: all
