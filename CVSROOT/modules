@@ -2294,6 +2294,7 @@ freevo		ports/multimedia/freevo
 freevrrpd	ports/net/freevrrpd
 freewais-sf	ports/net/freewais-sf
 freeze		ports/archivers/freeze
+freshmeat-submit	ports/misc/freshmeat-submit
 fressh		ports/security/fressh
 fribidi		ports/converters/fribidi
 frink		ports/devel/frink
