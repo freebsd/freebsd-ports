@@ -11,6 +11,8 @@ COMMENT=	Message interface to Emacs Window for xemacs21-mule
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew
 
+IGNORE=		hangs during build
+
 # Set emacs port
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages

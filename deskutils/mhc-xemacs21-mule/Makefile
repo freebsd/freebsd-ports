@@ -9,5 +9,6 @@ MASTERDIR=	${.CURDIR}/../mhc
 MAINTAINER=	yoichi@FreeBSD.org
 
 EMACS_PORT_NAME=	xemacs21-mule
+IGNORE=		hangs during build
 
 .include "${MASTERDIR}/Makefile"

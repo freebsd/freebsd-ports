@@ -16,6 +16,8 @@ LATEST_LINK=	mew3-xemacs21-mule
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
 
+IGNORE=		hangs during build
+
 # Set emacs port
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
