@@ -14,8 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johnston@vectaport.com
 
-BROKEN=		"Does not build"
+BUILD_DEPENDS=	imake:${PORTDIR}/devel/imake
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
