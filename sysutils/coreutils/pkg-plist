@@ -1,3 +1,4 @@
+bin/g[
 bin/gbasename
 bin/gcat
 bin/gchgrp
@@ -107,6 +108,8 @@ share/locale/fi/LC_MESSAGES/coreutils.mo
 share/locale/fi/LC_TIME/coreutils.mo
 share/locale/fr/LC_MESSAGES/coreutils.mo
 share/locale/fr/LC_TIME/coreutils.mo
+share/locale/ga/LC_MESSAGES/coreutils.mo
+share/locale/ga/LC_TIME/coreutils.mo
 share/locale/gl/LC_MESSAGES/coreutils.mo
 share/locale/gl/LC_TIME/coreutils.mo
 share/locale/hu/LC_MESSAGES/coreutils.mo
