@@ -330,6 +330,7 @@
     SUBDIR += net-snmp
     SUBDIR += net-snmp-tkmib
     SUBDIR += net-snmp4
+    SUBDIR += netams
     SUBDIR += netatalk
     SUBDIR += netcat
     SUBDIR += netdude

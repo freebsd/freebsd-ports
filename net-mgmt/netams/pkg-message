@@ -1,0 +1,15 @@
+--------------------------------------------------------------------------
+
+The NetAMS package has been successfully installed.
+
+To use the programm, make a copy of %%PREFIX%%/etc/rc.d/netams.sh.sample under
+%%PREFIX%%/etc/rc.d/netams.sh and do: chmod +x %%PREFIX%%/etc/rc.d/netams.sh.
+Check %%EXAMPLESDIR%% for examples.
+
+A sample configuration file has been installed to %%PREFIX%%/etc as
+"netams.conf.sample". This may be renamed to "netams.conf" and edited.
+
+In order to use the netamsctl programs, a user must copy 
+%%EXAMPLESDIR%%/.netamsctl.rc to home directory and edit.
+
+--------------------------------------------------------------------------
