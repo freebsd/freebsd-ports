@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_geoip
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	An Apache module that provides the country code of the client's IP
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
-LIB_DEPENDS=	GeoIP.2:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.3:${PORTSDIR}/net/GeoIP
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
@@ -25,7 +26,7 @@ DOCS=		Changes INSTALL README README.php
 
 do-build:
 	@cd ${WRKSRC} && \
-	${APXS} -c -L${LOCALBASE}/lib -I${LOCALBASE}/include mod_geoip.c
+	${APXS} -c -L${LOCALBASE}/lib -I${LOCALBASE}/include -lGeoIP mod_geoip.c
 
 do-install:
 	${APXS} -i -A -n geoip ${WRKSRC}/mod_geoip.so
