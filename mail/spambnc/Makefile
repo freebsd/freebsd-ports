@@ -18,6 +18,7 @@ MAINTAINER=	greid@FreeBSD.org
 IGNOREFILES=	index.shtml
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/.pkg-plist
 
 pre-install:
 	@${RM} -f ${PLIST}
