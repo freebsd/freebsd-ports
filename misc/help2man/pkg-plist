@@ -1,0 +1,4 @@
+bin/help2man
+@unexec install-info --delete %D/info/help2man.info %D/info/dir
+info/help2man.info
+@exec install-info %D/info/help2man.info %D/info/dir

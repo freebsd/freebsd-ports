@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Mon Dec  3 16:06:09 2001
++++ Makefile.in	Wed Jan 30 20:48:38 2002
+@@ -17,6 +17,7 @@
+ 
+ INSTALL = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_INFO = @INSTALL_INFO@
+ MAKEINFO = @MAKEINFO@
+@@ -28,7 +29,7 @@
+ all: $(target)
+ install: $(target) $(target)$(manext) $(target).info
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(bindir)
+-	$(INSTALL_PROGRAM) $(target) $(DESTDIR)$(bindir)/$(target)
++	$(INSTALL_SCRIPT) $(target) $(DESTDIR)$(bindir)/$(target)
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(man1dir)
+ 	$(INSTALL_DATA) $(target)$(manext) \
+ 	    $(DESTDIR)$(man1dir)/$(target)$(manext)
