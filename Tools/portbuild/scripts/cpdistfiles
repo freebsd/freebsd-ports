@@ -13,10 +13,20 @@ cpdistfile () {
   tar -C distfiles -cf - $1 | ssh $rhost -l $ruser tar -C $rdir -xvf -
 }
 
-cd $pb/distfiles
-find . -type f | sort | xargs md5 > ../md5-2
-cd $pb
-for i in $(diff md5 md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//'); do
+echo "================================================"
+echo "md5 generation started at $(date)"
+
+cd $pb/bak/distfiles
+find . -type f | sort | xargs md5 > ../../md5-2
+
+echo "================================================"
+echo "copying started at $(date)"
+
+cd $pb/bak
+for i in $(diff ../md5 ../md5-2 | grep '^>' | sed -e 's^.*(\./^^' -e 's/).*//'); do
   cpdistfile $i
 done
-mv md5-2 md5
+mv ../md5-2 ../md5
+
+echo "================================================"
+echo "all done at $(date)"
