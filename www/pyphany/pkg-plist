@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/gtk-2.0/epiphany.so
+share/pygtk/2.0/defs/epiphany.defs
+@cwd %%X11BASE%%
+lib/epiphany-%%VERSION%%/extensions/gtkcons.py
+lib/epiphany-%%VERSION%%/extensions/gtkcons.xml
+lib/epiphany-%%VERSION%%/extensions/sample-python-location.py
+lib/epiphany-%%VERSION%%/extensions/sample-python-location.xml
+lib/epiphany-%%VERSION%%/extensions/sample-python-menu.py
+lib/epiphany-%%VERSION%%/extensions/sample-python-menu.xml
+lib/epiphany-%%VERSION%%/extensions/sample-python-statusbar.py
+lib/epiphany-%%VERSION%%/extensions/sample-python-statusbar.xml
+lib/epiphany-%%VERSION%%/extensions/sample-python.py
+lib/epiphany-%%VERSION%%/extensions/sample-python.xml
+lib/epiphany-%%VERSION%%/loaders/libpythonloader.a
+lib/epiphany-%%VERSION%%/loaders/libpythonloader.so
+lib/epiphany-%%VERSION%%/loaders/libpythonloader.so.0
+@dirrm lib/epiphany-%%VERSION%%/loaders
+@unexec rmdir %D/lib/epiphany-%%VERSION%%/extensions 2>/dev/null || true
+@unexec rmdir %D/lib/epiphany-%%VERSION%% 2>/dev/null || true
