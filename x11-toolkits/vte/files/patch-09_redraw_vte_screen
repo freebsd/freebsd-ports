@@ -1,0 +1,17 @@
+--- src/vte.c.orig	2004-12-19 19:14:50 -0800
++++ src/vte.c	2004-12-19 19:14:24 -0800
+@@ -10534,9 +10534,13 @@
+ static gint
+ vte_terminal_visibility_notify(GtkWidget *widget, GdkEventVisibility *event)
+ {
++	VteTerminal *terminal;
+ 	g_return_val_if_fail(GTK_WIDGET(widget), FALSE);
+ 	g_return_val_if_fail(VTE_IS_TERMINAL(widget), FALSE);
+-	(VTE_TERMINAL(widget))->pvt->visibility_state = event->state;
++	terminal = VTE_TERMINAL(widget);
++	terminal->pvt->visibility_state = event->state;
++	if (terminal->pvt->visibility_state == GDK_VISIBILITY_UNOBSCURED)
++		vte_invalidate_all(terminal);
+ 	return FALSE;
+ }
+ 
