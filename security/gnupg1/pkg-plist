@@ -1,5 +1,7 @@
 bin/gpg
 bin/gpgv
+info/gpg.info
+info/gpgv.info
 lib/gnupg/rndegd
 lib/gnupg/rndunix
 lib/gnupg/tiger
@@ -10,6 +12,7 @@ share/locale/da/LC_MESSAGES/gnupg.mo
 share/locale/de/LC_MESSAGES/gnupg.mo
 share/locale/eo/LC_MESSAGES/gnupg.mo
 share/locale/es_ES/LC_MESSAGES/gnupg.mo
+share/locale/et/LC_MESSAGES/gnupg.mo
 share/locale/fr/LC_MESSAGES/gnupg.mo
 share/locale/id/LC_MESSAGES/gnupg.mo
 share/locale/it/LC_MESSAGES/gnupg.mo
@@ -20,6 +23,7 @@ share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 share/locale/pt_PT/LC_MESSAGES/gnupg.mo
 share/locale/ru/LC_MESSAGES/gnupg.mo
 share/locale/sv/LC_MESSAGES/gnupg.mo
+share/locale/tr/LC_MESSAGES/gnupg.mo
 share/doc/gnupg/README
 share/doc/gnupg/DETAILS
 share/doc/gnupg/FAQ
@@ -41,6 +45,8 @@ share/doc/gnupg/VERSION
 @unexec rmdir %D/share/locale/da 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/et 2>/dev/null || true
 @unexec rmdir %D/share/locale/es_ES/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/es_ES 2>/dev/null || true
 @unexec rmdir %D/share/locale/eo/LC_MESSAGES 2>/dev/null || true
@@ -65,5 +71,7 @@ share/doc/gnupg/VERSION
 @unexec rmdir %D/share/locale/ru 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/gnupg
