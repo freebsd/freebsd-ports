@@ -1,12 +1,12 @@
 # New ports collection makefile for:	majordomo
-# Version required:	1.94
+# Version required:	1.94.1
 # Date created:		23 October 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1996/12/08 01:44:53 max Exp $
+# $Id: Makefile,v 1.7 1996/12/20 03:32:37 jfitz Exp $
 #
 
-DISTNAME=	majordomo-1.94
+DISTNAME=	majordomo-1.94.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.greatcircle.com/pub/majordomo/ \
 		ftp://ftp.sgi.com/other/majordomo/ \
@@ -31,8 +31,7 @@ pre-install:
 		@ ${CP} ${WRKSRC}/sample.cf ${WRKSRC}/majordomo.cf
 
 post-install:
-		@ ln -sf ${PREFIX}/majordomo/Tools/digest ${PREFIX}/majordomo
-		@ ln -sf ${PREFIX}/majordomo/Tools/archive2.pl ${PREFIX}/majordomo/archive
+		@ ln -sf ${PREFIX}/majordomo/archive2.pl ${PREFIX}/majordomo/archive
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} -p ${PREFIX}/majordomo/$$dir; \
 		done

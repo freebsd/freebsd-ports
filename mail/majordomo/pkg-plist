@@ -1,4 +1,5 @@
 majordomo/archive
+majordomo/archive2.pl
 majordomo/bin/approve
 majordomo/bin/bounce
 majordomo/bin/medit
@@ -12,7 +13,6 @@ majordomo/request-answer
 majordomo/resend
 majordomo/shlock.pl
 majordomo/config-test
-majordomo/Tools/archive2.pl
 majordomo/Tools/archive.pl
 majordomo/Tools/archive_mh.pl
 majordomo/Tools/digest.send
@@ -20,7 +20,6 @@ majordomo/Tools/makeindex.pl
 majordomo/Tools/logsummary.pl
 majordomo/Tools/new-list
 majordomo/Tools/sequencer
-majordomo/Tools/digest
 majordomo/majordomo.cf
 majordomo/sample.cf
 majordomo/wrapper

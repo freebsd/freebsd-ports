@@ -24,4 +24,6 @@ chop( $hostname = `hostname` );
 system( "/usr/bin/perl -pi -e 's|%%MJUID%%|$mjUID|g' $ENV{'WRKSRC'}/Makefile" );
 system( "/usr/bin/perl -pi -e 's|%%MJGID%%|$mjGID|g' $ENV{'WRKSRC'}/Makefile" );
 system( "/usr/bin/perl -pi -e 's|%%HOSTNAME%%|$hostname|g' $ENV{'WRKSRC'}/sample.cf $ENV{'WRKSRC'}/aliases.majordomo" );
-system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $ENV{'WRKSRC'}/sample.cf $ENV{'WRKSRC'}/contrib/digest" );
+foreach $file( "bounce-remind", "contrib/archive_mh.pl", "archive2.pl", "digest", "contrib/digest.num", "contrib/new-list", "contrib/sequencer", "majordomo", "medit", "request-answer", "resend", "sample.cf" ) {
+	system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $ENV{'WRKSRC'}/$file" ); 
+}
