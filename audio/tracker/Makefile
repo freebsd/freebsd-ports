@@ -8,7 +8,7 @@
 PORTNAME=	tracker
 PORTVERSION=	5.3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
+MASTER_SITES=	${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
