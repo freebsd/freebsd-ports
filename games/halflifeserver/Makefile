@@ -74,4 +74,7 @@ install-files:
 scan-libs:
 	@${LDCONFIG_LINUX}
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
