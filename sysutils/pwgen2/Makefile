@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
 
-LIB_DEPENDS=	getopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1
 
