@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1996/11/18 14:13:26 asami Exp $
+# $Id: Makefile,v 1.19 1997/02/02 21:45:31 ache Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -67,8 +67,8 @@ post-extract:
 .else
 DISTNAME=       pgp263is
 PKGNAME=        pgp-2.6.3ia
-MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/src/ \
-		ftp://ftp.relcom.ru/unix/crypto/pgp/
+MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
+		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 WRKSRC=         ${WRKDIR}/src
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
