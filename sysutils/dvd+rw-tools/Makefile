@@ -19,14 +19,17 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/cdrtools
 USE_REINPLACE=	yes
 
 MAN1=		growisofs.1
-
-# This software is installed setuid-root (mode 4755) by default.
-INSTALL_TARGET=		BIN_MODE=00755 install
+BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo
+PLIST_FILES=	${BIN_FILES:S|^|bin/|}
+PORTDOCS=	index.html
 
 post-patch:
 	${REINPLACE_CMD} -e 's/-O2//' ${WRKSRC}/Makefile.m4
 
-post-install:
+do-install:
+.for i in ${BIN_FILES}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/growisofs.1 ${MANPREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
