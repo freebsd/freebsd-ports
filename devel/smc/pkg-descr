@@ -1,0 +1,5 @@
+SMC takes a state machine stored in a .sm file and generates a State pattern
+in C++, Java or [incr Tcl]. Includes: default transitions, transition args,
+transition guards, push/pop transitions and Entry/Exit actions.
+
+WWW: http://smc.sourceforge.net/
