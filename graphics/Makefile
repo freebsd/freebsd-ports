@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1996/12/23 07:34:57 tg Exp $
+# $Id: Makefile,v 1.36 1996/12/23 17:43:31 jmz Exp $
 #
 
     SUBDIR += ImageMagick
@@ -33,6 +33,7 @@
     SUBDIR += splitmpg
     SUBDIR += tgif
     SUBDIR += tiff
+    SUBDIR += tiff34
     SUBDIR += txtmerge
     SUBDIR += vcg
     SUBDIR += xanim
