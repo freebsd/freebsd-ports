@@ -1,0 +1,213 @@
+diff -rud ../../xsw1.23.orig/client/.xshipwarsrc ./.xshipwarsrc
+--- ../../xsw1.23.orig/client/.xshipwarsrc	Mon Nov 22 17:07:39 1999
++++ ./.xshipwarsrc	Mon Nov 22 17:09:13 1999
+@@ -12,7 +12,7 @@
+ 
+ # Directories and files:
+ 
+-ToplevelDir = /usr/games/xshipwars
++ToplevelDir = /usr/local/share/xshipwars
+ EtcDir = etc
+ ImagesDir = images
+ SoundsDir = sounds
+Only in .: .xshipwarsrc.orig
+diff -rud ../../xsw1.23.orig/client/Makefile.FreeBSD ./Makefile.FreeBSD
+--- ../../xsw1.23.orig/client/Makefile.FreeBSD	Mon Nov 22 17:07:40 1999
++++ ./Makefile.FreeBSD	Mon Nov 22 17:09:13 1999
+@@ -68,16 +68,16 @@
+ COPY         = cp
+ MKDIR        = mkdir
+ 
+-INSTBINFLAGS = -m 0755
+-INSTUIDFLAGS = -m 4755
+-INSTLIBFLAGS = -m 0644
+-INSTINCFLAGS = -m 0444
+-INSTMANFLAGS = -m 0444
+-INSTCFGFLAGS = -m 0644
+-INSTDATFLAGS = -m 0444
++INSTBINFLAGS = -c -m 0755
++INSTUIDFLAGS = -c -m 4755
++INSTLIBFLAGS = -c -m 0644
++INSTINCFLAGS = -c -m 0444
++INSTMANFLAGS = -c -m 0444
++INSTCFGFLAGS = -c -m 0644
++INSTDATFLAGS = -c -m 0444
+ 
+-DIR_XBIN     = ${X11BASE}/bin
+-DIR_XSW      = ${X11BASE}/share/xshipwars
++DIR_XBIN     = ${PREFIX}/bin
++DIR_XSW      = ${PREFIX}/share/xshipwars
+ RCFILELOCAL  = .xshipwarsrc
+ RCFILEGLOBAL = xshipwarsrc
+ 
+@@ -106,11 +106,6 @@
+ 	$(INSTALL) $(INSTCFGFLAGS) default.ocsn $(DIR_XSW)/etc
+ 	$(INSTALL) $(INSTCFGFLAGS) mainmenu.conf $(DIR_XSW)/etc
+ 	$(COPY) -R images $(DIR_XSW)
+-	@echo "-------------------------------------------------------------------------"
+-	@echo "Installation of client complete!  Make sure that you have atleast one"
+-	@echo "image set (sometimes called graphics set) package installed."
+-	@echo "Image set packages are listed on the same location you obtained this"
+-	@echo "source."
+ 
+ 
+ # ########################################################################
+Only in .: Makefile.FreeBSD.orig
+diff -rud ../../xsw1.23.orig/client/disk.c ./disk.c
+--- ../../xsw1.23.orig/client/disk.c	Mon Nov 22 17:07:33 1999
++++ ./disk.c	Mon Nov 22 17:09:13 1999
+@@ -39,7 +39,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ #include <ctype.h>
+ #include <fcntl.h>
+Only in .: disk.c.orig
+diff -rud ../../xsw1.23.orig/client/fio.c ./fio.c
+--- ../../xsw1.23.orig/client/fio.c	Mon Nov 22 17:07:33 1999
++++ ./fio.c	Mon Nov 22 17:09:13 1999
+@@ -11,7 +11,7 @@
+ */
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ 
+ #include "../include/fio.h"
+Only in .: fio.c.orig
+diff -rud ../../xsw1.23.orig/client/mf.c ./mf.c
+--- ../../xsw1.23.orig/client/mf.c	Mon Nov 22 17:07:33 1999
++++ ./mf.c	Mon Nov 22 17:09:13 1999
+@@ -1,6 +1,6 @@
+ #include <stdio.h>
+ #include <db.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+Only in .: mf.c.orig
+diff -rud ../../xsw1.23.orig/client/netsend.c ./netsend.c
+--- ../../xsw1.23.orig/client/netsend.c	Mon Nov 22 17:07:39 1999
++++ ./netsend.c	Mon Nov 22 17:09:13 1999
+@@ -56,6 +56,7 @@
+ 
+  */
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ 
+ #include "xsw.h"
+Only in .: netsend.c.orig
+diff -rud ../../xsw1.23.orig/client/osw-x.c ./osw-x.c
+--- ../../xsw1.23.orig/client/osw-x.c	Mon Nov 22 17:07:33 1999
++++ ./osw-x.c	Mon Nov 22 17:09:13 1999
+@@ -271,7 +271,7 @@
+ */
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <stdlib.h>   
+ #include <string.h>
+ #include <unistd.h>
+Only in .: osw-x.c.orig
+diff -rud ../../xsw1.23.orig/client/prochandle.c ./prochandle.c
+--- ../../xsw1.23.orig/client/prochandle.c	Mon Nov 22 17:07:33 1999
++++ ./prochandle.c	Mon Nov 22 17:09:13 1999
+@@ -29,7 +29,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <unistd.h>
+ #include <signal.h>
+ 
+Only in .: prochandle.c.orig
+diff -rud ../../xsw1.23.orig/client/string.c ./string.c
+--- ../../xsw1.23.orig/client/string.c	Mon Nov 22 17:07:33 1999
++++ ./string.c	Mon Nov 22 17:09:13 1999
+@@ -62,7 +62,7 @@
+ 
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <ctype.h>
+Only in .: string.c.orig
+diff -rud ../../xsw1.23.orig/client/tga.c ./tga.c
+--- ../../xsw1.23.orig/client/tga.c	Mon Nov 22 17:07:33 1999
++++ ./tga.c	Mon Nov 22 17:09:13 1999
+@@ -48,7 +48,7 @@
+ 
+ 
+ #include <stdio.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ #include <db.h>
+ #include <sys/types.h>
+Only in .: tga.c.orig
+diff -rud ../../xsw1.23.orig/client/unvfile.c ./unvfile.c
+--- ../../xsw1.23.orig/client/unvfile.c	Mon Nov 22 17:07:33 1999
++++ ./unvfile.c	Mon Nov 22 17:09:13 1999
+@@ -34,7 +34,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <db.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+Only in .: unvfile.c.orig
+diff -rud ../../xsw1.23.orig/client/wfbrowser.c ./wfbrowser.c
+--- ../../xsw1.23.orig/client/wfbrowser.c	Mon Nov 22 17:07:33 1999
++++ ./wfbrowser.c	Mon Nov 22 17:09:13 1999
+@@ -62,7 +62,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <fnmatch.h>
+ #include <sys/stat.h>
+ 
+Only in .: wfbrowser.c.orig
+diff -rud ../../xsw1.23.orig/client/xsw.h ./xsw.h
+--- ../../xsw1.23.orig/client/xsw.h	Mon Nov 22 17:07:39 1999
++++ ./xsw.h	Mon Nov 22 17:09:13 1999
+@@ -14,7 +14,7 @@
+ #include <stdio.h>
+ #include <db.h>
+ #include <sys/types.h>
+-#include <malloc.h>
++//#include <malloc.h>
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -152,11 +152,11 @@
+  *	exist.  These are only default values, they can be changed in the
+  *	XSW_RCFILE or XSW_RCFILE_GLOBAL.
+  */
+-#define DEF_XSW_TOPLEVEL_DIR	"/usr/games/xshipwars"
+-#define DEF_XSW_IMAGES_DIR	"/usr/games/xshipwars/images"
+-#define DEF_XSW_SOUNDS_DIR	"/usr/games/xshipwars/sounds"
+-#define DEF_XSW_ETC_DIR		"/usr/games/xshipwars/etc"
+-#define DEF_ETC_DIR		"/etc"
++#define DEF_XSW_TOPLEVEL_DIR	"/usr/local/share/xshipwars"
++#define DEF_XSW_IMAGES_DIR	"/usr/local/share/xshipwars/images"
++#define DEF_XSW_SOUNDS_DIR	"/usr/local/share/xshipwars/sounds"
++#define DEF_XSW_ETC_DIR		"/usr/local/share/xshipwars/etc"
++#define DEF_ETC_DIR		"/usr/local/etc"
+ #define DEF_SW_SERVER_DIR	"/home/swserv"
+ 
+ 
+Only in .: xsw.h.orig

@@ -1,0 +1,134 @@
+bin/xsw
+share/doc/xshipwars/CREDITS
+share/doc/xshipwars/DOCS_NOW_ONLINE
+share/doc/xshipwars/INSTALL
+share/doc/xshipwars/LICENSE
+share/doc/xshipwars/README
+share/doc/xshipwars/TODO
+share/xshipwars/etc/default.ocsn
+share/xshipwars/etc/mainmenu.conf
+share/xshipwars/etc/xshipwarsrc
+share/xshipwars/images/celestial/asteroid01.tga
+share/xshipwars/images/celestial/bajor.tga
+share/xshipwars/images/celestial/cardassia.tga
+share/xshipwars/images/celestial/comet.tga
+share/xshipwars/images/celestial/earth.tga
+share/xshipwars/images/celestial/moon01.tga
+share/xshipwars/images/celestial/moon02.tga
+share/xshipwars/images/celestial/nebula01.tga
+share/xshipwars/images/celestial/nebula02.tga
+share/xshipwars/images/celestial/planet01.tga
+share/xshipwars/images/celestial/planet02.tga
+share/xshipwars/images/celestial/planet03.tga
+share/xshipwars/images/celestial/planet04.tga
+share/xshipwars/images/celestial/planet05.tga
+share/xshipwars/images/celestial/qonos.tga
+share/xshipwars/images/celestial/star01.tga
+share/xshipwars/images/celestial/star02.tga
+share/xshipwars/images/celestial/star03.tga
+share/xshipwars/images/celestial/star04.tga
+share/xshipwars/images/client/bpanel_l1.tga
+share/xshipwars/images/client/bpanel_l2.tga
+share/xshipwars/images/client/bpanel_l3.tga
+share/xshipwars/images/client/bpanel_l4.tga
+share/xshipwars/images/client/bpanel_mesg.tga
+share/xshipwars/images/client/bpanel_ol_dmgctl.tga
+share/xshipwars/images/client/bpanel_ol_hull.tga
+share/xshipwars/images/client/bpanel_ol_power.tga
+share/xshipwars/images/client/bpanel_ol_shields.tga
+share/xshipwars/images/client/bpanel_ol_throttlel.tga
+share/xshipwars/images/client/bpanel_ol_throttler.tga
+share/xshipwars/images/client/bpanel_ol_thrustvector.tga
+share/xshipwars/images/client/bpanel_ol_vis.tga
+share/xshipwars/images/client/bpanel_r1.tga
+share/xshipwars/images/client/bpanel_r2.tga
+share/xshipwars/images/client/bpanel_r3.tga
+share/xshipwars/images/client/bpanel_r4.tga
+share/xshipwars/images/client/lensflare1.tga
+share/xshipwars/images/client/lensflare2.tga
+share/xshipwars/images/client/mesg_scr_bkg.tga
+share/xshipwars/images/client/scanner_mark_area.tga
+share/xshipwars/images/client/scanner_mark_home.tga
+share/xshipwars/images/client/scanner_mark_locked.tga
+share/xshipwars/images/client/scanner_mark_unknown.tga
+share/xshipwars/images/client/scanner_mark_weapon.tga
+share/xshipwars/images/client/splash_bkg.tga
+share/xshipwars/images/client/splash_pb_l.tga
+share/xshipwars/images/client/splash_pb_r.tga
+share/xshipwars/images/client/splash_pb_t.tga
+share/xshipwars/images/client/strobeglow1.tga
+share/xshipwars/images/client/vs_mark_incoming_fire.tga
+share/xshipwars/images/client/vs_tmark_object.tga
+share/xshipwars/images/client/vs_tmark_vessel.tga
+share/xshipwars/images/client/vs_wep_projectile.tga
+share/xshipwars/images/client/vs_wep_pulse.tga
+share/xshipwars/images/client/vs_wep_stream.tga
+share/xshipwars/images/default.isr
+share/xshipwars/images/effects/explosion1.tga
+share/xshipwars/images/effects/explosion2.tga
+share/xshipwars/images/effects/explosion3.tga
+share/xshipwars/images/effects/explosion4.tga
+share/xshipwars/images/icons/bridge.tga
+share/xshipwars/images/icons/economy.tga
+share/xshipwars/images/icons/messages.tga
+share/xshipwars/images/icons/options.tga
+share/xshipwars/images/icons/universe.tga
+share/xshipwars/images/mainmenu/background.tga
+share/xshipwars/images/mainmenu/connect0.tga
+share/xshipwars/images/mainmenu/connect1.tga
+share/xshipwars/images/mainmenu/connect2.tga
+share/xshipwars/images/mainmenu/connectlast0.tga
+share/xshipwars/images/mainmenu/connectlast1.tga
+share/xshipwars/images/mainmenu/connectlast2.tga
+share/xshipwars/images/mainmenu/exit0.tga
+share/xshipwars/images/mainmenu/exit1.tga
+share/xshipwars/images/mainmenu/exit2.tga
+share/xshipwars/images/mainmenu/options0.tga
+share/xshipwars/images/mainmenu/options1.tga
+share/xshipwars/images/mainmenu/options2.tga
+share/xshipwars/images/mainmenu/title1.tga
+share/xshipwars/images/misc/buoy.tga
+share/xshipwars/images/misc/debris01.tga
+share/xshipwars/images/misc/debris02.tga
+share/xshipwars/images/misc/pdp01.tga
+share/xshipwars/images/misc/ptr01.tga
+share/xshipwars/images/projectiles/pulse_green.tga
+share/xshipwars/images/projectiles/pulse_yellow.tga
+share/xshipwars/images/projectiles/torpedo_blue.tga
+share/xshipwars/images/projectiles/torpedo_purple.tga
+share/xshipwars/images/projectiles/torpedo_red.tga
+share/xshipwars/images/projectiles/warhead01.tga
+share/xshipwars/images/stations/cardassian01.tga
+share/xshipwars/images/stations/satelite01.tga
+share/xshipwars/images/stations/starbase01.tga
+share/xshipwars/images/stations/starbase02.tga
+share/xshipwars/images/vessels/bird_of_prey.tga
+share/xshipwars/images/vessels/borg_cube.tga
+share/xshipwars/images/vessels/borg_diamond.tga
+share/xshipwars/images/vessels/borg_superquadratic.tga
+share/xshipwars/images/vessels/defiant.tga
+share/xshipwars/images/vessels/ferrengi_freighter.tga
+share/xshipwars/images/vessels/galor.tga
+share/xshipwars/images/vessels/intrepid.tga
+share/xshipwars/images/vessels/jemhaddar.tga
+share/xshipwars/images/vessels/nebula.tga
+share/xshipwars/images/vessels/runabout.tga
+share/xshipwars/images/vessels/s8472_bioship.tga
+share/xshipwars/images/vessels/vixen.tga
+share/xshipwars/images/vessels/vortcha.tga
+share/xshipwars/images/vessels/warbird.tga
+share/xshipwars/sounds/SoundsGoHere
+@dirrm share/doc/xshipwars
+@dirrm share/xshipwars/etc
+@dirrm share/xshipwars/images/celestial
+@dirrm share/xshipwars/images/client
+@dirrm share/xshipwars/images/effects
+@dirrm share/xshipwars/images/icons
+@dirrm share/xshipwars/images/mainmenu
+@dirrm share/xshipwars/images/misc
+@dirrm share/xshipwars/images/projectiles
+@dirrm share/xshipwars/images/stations
+@dirrm share/xshipwars/images/vessels
+@dirrm share/xshipwars/images
+@dirrm share/xshipwars/sounds
+@dirrm share/xshipwars
