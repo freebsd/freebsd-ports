@@ -12,7 +12,7 @@ CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 
-MAINTAINER=	th@cis.ibaraki.ac.jp
+MAINTAINER=	cbc06942@pop06.odn.ne.jp
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 RUN_DEPENDS=	setiathome:${PORTSDIR}/astro/setiathome
