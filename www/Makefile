@@ -72,7 +72,6 @@
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux-netscape6
     SUBDIR += lynx
-    SUBDIR += lynx-current
     SUBDIR += lynx-ssl
     SUBDIR += mapedit
     SUBDIR += marc-search
