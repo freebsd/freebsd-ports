@@ -1,0 +1,10 @@
+--- unit/Xctim/Makefile.am.orig	Wed Sep  8 02:37:17 2004
++++ unit/Xctim/Makefile.am	Wed Sep  8 02:37:32 2004
+@@ -1,6 +1,6 @@
+ moduledir = $(IM_LOCALEDIR)/UNIT/common
+ xctim_la_SOURCES = ctim.c codetable.c ctfilter.c keymap.c
+-xctim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include
++xctim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include $(X_CFLAGS)
+ xctim_la_LDFLAGS = -module -rpath $(moduledir) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
+ xctim_la_LIBADD = ../xaux_common/libxaux_common.la
+ module_LTLIBRARIES = xctim.la

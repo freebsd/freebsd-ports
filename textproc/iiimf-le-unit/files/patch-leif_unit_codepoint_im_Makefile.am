@@ -1,0 +1,10 @@
+--- unit/codepoint_im/Makefile.am.orig	Wed Sep  8 02:38:05 2004
++++ unit/codepoint_im/Makefile.am	Wed Sep  8 02:38:34 2004
+@@ -1,6 +1,6 @@
+ moduledir = $(IM_LOCALEDIR)/UNIT/common
+ codepoint_im_la_SOURCES = codepoint_im.c codepoint_table.c codepoint_filter.c
+-codepoint_im_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include
++codepoint_im_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include $(X_CFLAGS)
+ codepoint_im_la_LDFLAGS = -module --no-undefined -rpath $(moduledir) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
+ codepoint_im_la_LIBADD = ../xaux_common/libxaux_common.la
+ module_LTLIBRARIES = codepoint_im.la

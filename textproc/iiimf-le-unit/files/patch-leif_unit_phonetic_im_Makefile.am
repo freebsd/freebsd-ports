@@ -1,0 +1,11 @@
+--- unit/phonetic_im/Makefile.am.orig	Wed Sep  8 02:40:35 2004
++++ unit/phonetic_im/Makefile.am	Wed Sep  8 02:40:42 2004
+@@ -1,7 +1,7 @@
+ SUBDIRS = mapfile
+ moduledir = $(IM_LOCALEDIR)/UNIT/common
+ phonetic_im_la_SOURCES = phonetic_im.c phonetic_table.c phonetic_filter.c phonetic_im.h
+-phonetic_im_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include
++phonetic_im_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) -I$(IM_INCLUDEDIR)/iml -I../include $(X_CFLAGS)
+ phonetic_im_la_LDFLAGS = -module -rpath $(moduledir) $(SHLIBLDFLAGS) $(THREAD_LDFLAGS)
+ phonetic_im_la_LIBADD = \
+ 	../xaux_common/libxaux_common.la \

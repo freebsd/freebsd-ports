@@ -5,37 +5,49 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-le-unit
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	1
+PORTNAME=	le-unit
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
-COMMENT=	Internet/Intranet Input Method Framework language engine unit
+COMMENT=	IIIMF UNIcode Table based generic composition engine
 
-IIIMF_VER=	r11_4-1467
+RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
+
+IIIMF_VER=	r12_0_1-svn1891
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/leif
 BUILD_WRKSRC=	${WRKSRC}/unit
 INSTALL_WRKSRC=	${WRKSRC}/unit
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_XLIB=	yes
-INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
+AUTOMAKE_ARGS=	--add-missing --copy --gnu
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		does not build on FreBSD 4.x because of missing fputwc() function in libc
+.endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/configure
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/unit/include/indic_input.h
+		${WRKSRC}/../acfiles/im_common.m4 \
+		${WRKSRC}/configure.ac \
+		${WRKSRC}/unit/include/unit_input.h \
+		${WRKSRC}/unit/phonetic_im/phonetic_im.c
 
-.include <bsd.port.mk>
+pre-configure:
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
+	${TOUCH} ${WRKSRC}/config.h.in
+	cd ${WRKSRC} && ${LIBTOOLIZE} --copy --force --automake
+
+.include <bsd.port.post.mk>
