@@ -508,6 +508,7 @@
     SUBDIR += pcnfsd
     SUBDIR += pear-Net_DIME
     SUBDIR += pear-Net_NNTP
+    SUBDIR += pear-Net_POP3
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
