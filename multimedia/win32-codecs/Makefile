@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	win32-codecs
-PORTVERSION=	${CODEC_VERSION}.2.${CODEC_MPLAYER_VERSION:S/pre/.p/}
+PORTVERSION=	2.${CODEC_MPLAYER_VERSION:S/pre/.p/}
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:avifile/} \
-		http://avifile.sourceforge.net/:binaries \
-		http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
+MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
 		http://www2.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
 		http://www.mplayerhq.hu/MPlayer/releases/codecs/:w32codec \
 		http://ftp.lug.udel.edu/MPlayer/releases/codecs/:mplayer_extracodec,w32codec \
@@ -18,11 +16,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:avifile/} \
 		http://www2.mplayerhq.hu/MPlayer/releases/codecs/:mplayer_extracodec \
 		ftp://ftp.mplayerhq.hu/MPlayer/releases/codecs/:w32codec \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/codecs/:mplayer_extracodec,w32codec
-MASTER_SITE_SUBDIR=	avifile/:avifile
+DIST_SUBDIR=	win32
 DISTFILES=	win32codecs.tar.bz2:w32codec \
-		binaries-${CODEC_VERSION}.tgz:avifile,binaries \
-		Win32_dmo.tgz:avifile,binaries \
-		qt5dlls.tar.bz2:mplayer_extracodec
+		qt6dlls.tar.bz2:mplayer_extracodec \
+		rp9codecs.tar.bz2:mplayer_extracodec \
+		xanimdlls.tar.bz2:mplayer_extracodec
 EXTRACT_ONLY=	win32codecs.tar.bz2
 
 MAINTAINER=	holger@e-gitt.net
@@ -37,29 +35,21 @@ WRKSRC=		${WRKDIR}/w32codec-${CODEC_MPLAYER_VERSION:S/pre7//}
 
 PLIST_SUB=	PKGNAME=${PKGNAME}
 
-CODEC_VERSION=	011002
-CODEC_MPLAYER_VERSION=	0.90pre7
+CODEC_MPLAYER_VERSION=	0.90
 # Used by other ports to detect if this is installed
 CODEC_DETECTION_FILE=	${LOCALBASE}/lib/win32/${PKGNAME}
 
 # additional codec packs
-ADDITIONAL_CODECS_DISTFILES=	binaries-${CODEC_VERSION}.tgz \
-				Win32_dmo.tgz
-# additional QuickTime(TM) codec packs
-ADDITIONAL_CODECS_QT_DISTFILES=	qt5dlls.tar.bz2
+ADDITIONAL_CODECS_DISTFILES=	qt6dlls.tar.bz2 xanimdlls.tar.bz2 \
+				rp9codecs.tar.bz2
 # extraction wrksrc
-ADDITIONAL_CODECS_WRKSRC=	Win32_dmo win32 \
-				win32codecs \
-				qt5dlls
+ADDITIONAL_CODECS_WRKSRC=	win32codecs \
+				qt6dlls rp9codecs xanimdlls
 
 post-extract:
 .for file in ${ADDITIONAL_CODECS_DISTFILES}
-	@cd ${WRKDIR} && ${TAR} xzf \
-		${DISTDIR}/${file}
-.endfor
-.for file in ${ADDITIONAL_CODECS_QT_DISTFILES}
 	@cd ${WRKDIR} && ${TAR} xyf \
-		${DISTDIR}/${file}
+		${DISTDIR}/${DIST_SUBDIR}/${file}
 .endfor
 	@${MKDIR} ${WRKSRC}
 .for dir in ${ADDITIONAL_CODECS_WRKSRC}
