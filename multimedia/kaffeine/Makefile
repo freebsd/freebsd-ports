@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://members.chello.at/kaffeine/download/
 
