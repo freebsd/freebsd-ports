@@ -23,6 +23,7 @@ USE_PERL5_BUILD=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
+USE_REINPLACE=	yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
 		BUILD_OPT=1
 ALL_TARGET=	nss_build_all
@@ -31,6 +32,10 @@ CFLAGS+=	-I${LOCALBASE}/include/nspr
 DIST=		${WRKSRC}/../../dist
 
 CONFLICTS=	btoa-5.* digest-* emboss-2.4.* oases-2.* p5-PAR-0.*
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/../../security/coreconf/FreeBSD.mk
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nss
