@@ -3,15 +3,12 @@ bin/indexmaker
 bin/mrtg
 bin/rateup
 etc/mrtg/mrtg.cfg.sample
-lib/perl5/site_perl/%%PERL_VER%%/BER.pm
 lib/perl5/site_perl/%%PERL_VER%%/MRTG_lib.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pod/InputObjects.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pod/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pod/PlainText.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pod/Select.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pod/Usage.pm
-lib/perl5/site_perl/%%PERL_VER%%/SNMP_Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/SNMP_util.pm
 lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
 %%PORTDOCS%%share/doc/mrtg/ANNOUNCE
 %%PORTDOCS%%share/doc/mrtg/CHANGES
