@@ -30,6 +30,8 @@ INSTALLS_SHLIB=	yes
 MAN1=		fam.1m
 MAN3=		fam.3x
 
+CONFLICTS=	gamin-[0-9]*
+
 pre-configure:
 	@${RM} -fr ${WRKSRC}/util
 	@${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
