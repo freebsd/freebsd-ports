@@ -38,6 +38,8 @@ CLASS_FILES=	subfig.dtx subfig.ins subfig.sty subfig.cfg
 DOC_FILES=	README test1.tex test2.tex test3.tex \
 		test4.tex test5.tex test6.tex
 
+IGNORE=		is already included in the teTeX distribution
+
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}

@@ -34,6 +34,8 @@ CLASS_FILES=	bibtopic.sty bibtopic.ins bibtopic.dtx
 
 DOC_FILES=	README bibtopic.pdf
 
+IGNORE=		is already included in the teTeX distribution
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

@@ -36,6 +36,8 @@ DOC_FILES=	README.txt CHANGES.txt \
 		ulineno.tex ulineno.pdf \
 		lineno.tex lineno.pdf
 
+IGNORE=		is already included in the teTeX distribution
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	cd ${DISTDIR}/${DIST_SUBDIR} && ${CP} ${DISTFILES} ${WRKSRC}

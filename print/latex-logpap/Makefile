@@ -6,6 +6,7 @@
 
 PORTNAME=	latex-logpap
 PORTVERSION=	0.6.20040201
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -28,7 +29,7 @@ USE_GMAKE=	YES
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
 
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}

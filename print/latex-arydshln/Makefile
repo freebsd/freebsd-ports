@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-arydshln
 PORTVERSION=	1.71.20040831
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -27,7 +27,7 @@ PLIST=		${WRKDIR}/pkg-plist
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/tex
+TEX_BIN=	${LOCALBASE}/bin/etex
 YES_CMD=	/usr/bin/yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
