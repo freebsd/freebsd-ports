@@ -3,11 +3,11 @@
 # Date created:        17 February 1999
 # Whom:                wagner@luthien.in-berlin.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/01 04:11:23 jdp Exp $
 #
 
 DISTNAME=      m3gdb-4.17
-CATEGORIES=    lang
+CATEGORIES=    lang devel
 MASTER_SITES=  http://www.freebsd.org/~jdp/distfiles/
 
 MAINTAINER=    jdp@FreeBSD.ORG
