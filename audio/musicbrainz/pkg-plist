@@ -1,9 +1,8 @@
-include/musicbrainz/musicbrainz.h
-include/musicbrainz/queries.h
 include/musicbrainz/errors.h
 include/musicbrainz/mb_c.h
-lib/libmusicbrainz.so.1
-lib/libmusicbrainz.so
-lib/libmusicbrainz.la
+include/musicbrainz/musicbrainz.h
+include/musicbrainz/queries.h
 lib/libmusicbrainz.a
+lib/libmusicbrainz.so
+lib/libmusicbrainz.so.1
 @dirrm include/musicbrainz
