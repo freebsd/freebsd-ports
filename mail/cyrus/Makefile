@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3, KPOP, and IMAP4 protocols
 
+FORBIDDEN=	remote exploitable buffer overflow (US-CERT VU#740169, SecurityFocus BID 6298)
+
 CONFLICTS=	cyrus-imapd-*
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
