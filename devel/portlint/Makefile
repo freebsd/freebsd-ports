@@ -8,7 +8,7 @@
 
 DISTNAME=       portlint-2.1.2
 CATEGORIES=	devel
-DISTFILES=	#empty
+DISTFILES=	# empty
 
 MAINTAINER=	mharo@FreeBSD.org
 
