@@ -19,6 +19,7 @@ sbin/exiwhat
 %%EXIMON%%sbin/eximon
 %%EXIMON%%sbin/eximon.bin
 %%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/README.UPDATING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -50,6 +51,9 @@ etc/periodic/daily/460.exim-mail-rejects
 @unexec if cmp -s %D/etc/exim/configure %D/etc/exim/configure.default; then rm -f %D/etc/exim/configure; fi
 etc/exim/configure.default
 @exec [ -f %B/configure ] || cp %B/%f %B/configure
+%%SA_EXIM%%@unexec if cmp -s %D/etc/exim/sa-exim.conf %D/etc/exim/sa-exim.conf.default; then rm -f %D/etc/exim/sa-exim.conf; fi
+%%SA_EXIM%%etc/exim/sa-exim.conf.default
+%%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
 @unexec rmdir %B 2>/dev/null || true
 %%RCORDER%%@cwd /
 etc/rc.d/exim%%RC_SUFX%%

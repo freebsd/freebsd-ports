@@ -1,7 +1,7 @@
 diff -u scripts/MakeLinks scripts/MakeLinks
 --- scripts/MakeLinks	Sat Jul 17 11:12:00 2004
 +++ scripts/MakeLinks	Sat Jul 17 11:34:48 2004
-@@ -185,7 +185,7 @@
+@@ -187,7 +187,7 @@
  ln -s ../src/osfunctions.h     osfunctions.h
  ln -s ../src/spam.h            spam.h
  ln -s ../src/spf.h             spf.h
@@ -13,7 +13,7 @@ diff -u scripts/MakeLinks scripts/MakeLinks
 diff -u src/expand.c src/expand.c
 --- src/expand.c	Sat Jul 17 11:12:00 2004
 +++ src/expand.c	Sat Jul 17 11:37:42 2004
-@@ -452,8 +452,6 @@
+@@ -454,8 +454,6 @@
  #endif
    { "spool_directory",     vtype_stringptr,   &spool_directory },
  #ifdef SRS
@@ -25,7 +25,7 @@ diff -u src/expand.c src/expand.c
 diff -u src/globals.c src/globals.c
 --- src/globals.c	Sat Jul 17 11:12:00 2004
 +++ src/globals.c	Sat Jul 17 11:38:52 2004
-@@ -975,9 +975,12 @@
+@@ -987,9 +987,12 @@
  uschar *spool_directory        = US SPOOL_DIRECTORY
                             "\0<--------------Space to patch spool_directory->";
  #ifdef SRS
@@ -44,7 +44,7 @@ diff -u src/globals.c src/globals.c
 diff -u src/globals.h src/globals.h
 --- src/globals.h	Sat Jul 17 11:12:00 2004
 +++ src/globals.h	Sat Jul 17 11:43:06 2004
-@@ -590,13 +590,16 @@
+@@ -596,13 +596,16 @@
  #endif
  extern uschar *spool_directory;        /* Name of spool directory */
  #ifdef SRS
@@ -71,7 +71,7 @@ diff -u src/globals.h src/globals.h
 diff -u src/readconf.c src/readconf.c
 --- src/readconf.c	Sat Jul 17 11:12:00 2004
 +++ src/readconf.c	Sat Jul 17 11:44:21 2004
-@@ -321,7 +321,12 @@
+@@ -325,7 +325,12 @@
    { "split_spool_directory",    opt_bool,        &split_spool_directory },
    { "spool_directory",          opt_stringptr,   &spool_directory },
  #ifdef SRS
@@ -88,29 +88,32 @@ diff -u src/readconf.c src/readconf.c
 diff -u src/routers/redirect.c src/routers/redirect.c
 --- src/routers/redirect.c	Sat Jul 17 11:12:00 2004
 +++ src/routers/redirect.c	Sat Jul 17 12:26:47 2004
-@@ -98,11 +98,7 @@
+@@ -98,13 +98,7 @@
        (void *)offsetof(redirect_router_options_block, skip_syntax_errors) },
  #ifdef SRS
    { "srs",                opt_stringptr,
 -  (void *)offsetof(redirect_router_options_block, srs) },
+-  { "srs_alias",          opt_stringptr,
+-  (void *)offsetof(redirect_router_options_block, srs_alias) },
 -  { "srs_condition",      opt_stringptr,
--  (void *)offsetof(redirect_router_options_block, srs) },
+-  (void *)offsetof(redirect_router_options_block, srs_condition) },
 -  { "srs_db",             opt_stringptr,
 -  (void *)offsetof(redirect_router_options_block, srs_db) },
 +      (void *)offsetof(redirect_router_options_block, srs) },
  #endif
    { "syntax_errors_text", opt_stringptr,
        (void *)offsetof(redirect_router_options_block, syntax_errors_text) },
-@@ -139,8 +135,6 @@
+@@ -141,9 +135,6 @@
    NULL,        /* owngroups */
  #ifdef SRS
    NULL,        /* srs */
 -  NULL,        /* srs_condition */
 -  NULL,        /* srs_db */
+-  NULL,        /* srs_alias */
  #endif
    022,         /* modemask */
    RDO_REWRITE, /* bit_options */
-@@ -535,39 +529,33 @@
+@@ -538,39 +532,33 @@
    ugid.gid_set = TRUE;
    }
  
@@ -169,7 +172,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
  /* Call the function that interprets redirection data, either inline or from a
  file. This is a separate function so that the system filter can use it. It will
  run the function in a subprocess if necessary. If qualify_preserve_domain is
-@@ -795,28 +783,23 @@
+@@ -798,33 +789,23 @@
  #ifdef SRS
  /* On successful redirection, check for SRS forwarding and adjust sender */
  
@@ -185,13 +188,18 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 -      if((Ustrcmp(ob->srs, "forward") == 0 || Ustrcmp(ob->srs, "reverseandforward") == 0) && !verify)
 -      {
 -        uschar *res;
+-        uschar *usedomain;
 -        int n_srs;
 -      
 -        srs_orig_sender = sender_address;
 -        eximsrs_init();
 -        if(ob->srs_db)
 -          eximsrs_db_set(FALSE, ob->srs_db);
--        if((n_srs = eximsrs_forward(&res, sender_address, deliver_domain)) != OK)
+-
+-        if(ob->srs_alias != NULL ? (usedomain = expand_string(ob->srs_alias)) == NULL : 1)
+-          usedomain = deliver_domain;
+-                
+-        if((n_srs = eximsrs_forward(&res, sender_address, usedomain)) != OK)
 -          return n_srs;
 -        sender_address = res;
 -        DEBUG(D_any)
@@ -217,23 +225,24 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 diff -u src/routers/redirect.h src/routers/redirect.h
 --- src/routers/redirect.h	Sat Jul 17 11:12:00 2004
 +++ src/routers/redirect.h	Sat Jul 17 11:55:47 2004
-@@ -33,8 +33,6 @@
+@@ -33,9 +33,6 @@
  
  #ifdef SRS
    uschar *srs;
 -  uschar *srs_condition;
 -  uschar *srs_db;
+-  uschar *srs_alias;
  #endif
  
    int   modemask;
 diff -u src/srs.c src/srs.c
 --- src/srs.c	Sat Jul 17 11:12:00 2004
 +++ src/srs.c	Sat Jul 17 12:28:31 2004
-@@ -5,205 +5,125 @@
+@@ -5,205 +5,127 @@
  /* This file is an extension to Exim and is not part of the standard
     Exim distribution */
     
--/* (C)2004 Miles Wilton <miles@mirtol.com> */
+-/* (c)2004 Miles Wilton <miles@mirtol.com> */
 +/* (c) 2004 Shevek
 + * Based on work by Miles Wilton <miles@mirtol.com>
 + * Updated by Shevek to use libsrs2
@@ -248,10 +257,10 @@ diff -u src/srs.c src/srs.c
  #ifdef SRS
  
 -#include <srs_alt.h>
--
--#include "exim.h"
--#include "srs.h"
 +#include <srs2.h>
+ 
+-#include "exim.h"
+ #include "srs.h"
  
 -srs_t    *srs                   = NULL;
 -uschar   *srs_db_forward        = NULL;
@@ -262,19 +271,112 @@ diff -u src/srs.c src/srs.c
 +			DEBUG(D_any) \
 +				debug_printf("srs: %s\n", srs_strerror(__ret)); \
 +		} while(0)
- 
++
 +srs_t	*srs = NULL;
++
++int
++eximsrs_init()
++{
++	char	 sbuf[1024];
++	uschar	*list;
++	int		 co;
++
++	char	*secret;
++
++	if (srs == NULL) {
++		srs = srs_new();
++
++		if (srs_secrets == NULL) {
++			log_write(0, LOG_MAIN | LOG_PANIC,
++							"SRS: No secrets specified");
++			return DEFER;
++		}
++
++		/* Get config */
++		list = srs_secrets;
++
++		co = 0;
++		while ((secret = string_nextinlist(&list, &co,
++						sbuf, sizeof(sbuf))) != NULL) {
++			SRS_WARN_UNLESS(srs_add_secret(srs, secret));
++		}
++
++		SRS_WARN_UNLESS(srs_set_alwaysrewrite(srs, srs_alwaysrewrite));
++		if (srs_hashlength != -1)
++			SRS_WARN_UNLESS(srs_set_hashlength(srs, srs_hashlength));
++		if (srs_hashmin != -1)
++			SRS_WARN_UNLESS(srs_set_hashmin(srs, srs_hashmin));
++		if (srs_maxage != -1)
++			SRS_WARN_UNLESS(srs_set_maxage(srs, srs_maxage));
++		if (srs_separator != NULL)
++			SRS_WARN_UNLESS(srs_set_separator(srs, srs_separator[0]));
++
++		DEBUG(D_any)
++			debug_printf("SRS initialised\n");
++	}
++
++	return OK;
++}
++
++int
++eximsrs_done()
++{
++	if (srs != NULL)
++		srs_free(srs);
++	srs = NULL;
++	return OK;
++}
++
++int
++eximsrs_forward(uschar **result, uschar *sender, uschar *domain)
++{
++	char	 res[1024];
++	int		 ret;
++
++	ret = srs_forward(srs, res, sizeof(res), sender, domain);
++	if (ret != SRS_SUCCESS) {
++		DEBUG(D_any)
++			debug_printf("srs_forward failed (%s, %s): %s\n",
++							sender, domain, srs_strerror(ret));
++		return DEFER;
++	}
++
++	*result = string_copy(res);
++	return OK;
++}
++
++int
++eximsrs_reverse(uschar **result, uschar *sender)
++{
++	char	 res[1024];
++	int		 ret;
++
++	ret = srs_reverse(srs, res, sizeof(res), sender);
++	if (ret != SRS_SUCCESS) {
++		switch (SRS_ERROR_TYPE(ret)) {
++			case SRS_ERRTYPE_CONFIG:
++				/* This should never happen */
++				return DEFER;
++			case SRS_ERRTYPE_INPUT:
++				/* This should never happen */
++				return DEFER;
++			case SRS_ERRTYPE_SYNTAX:
++				return DECLINE;
++			case SRS_ERRTYPE_SRS:
++				return FAIL;
++		}
++	}
+ 
++	*result = string_copy(res);
  
 -/* srs_init just initialises libsrs and creates (if necessary)
 -   an srs object to use for all srs calls in this instance */
 -   
 -int eximsrs_init()
-+int
-+eximsrs_init()
- {
+-{
 -  int co;
 -  uschar *list = srs_config;
--  char secret_buf[32];
+-  char secret_buf[SRS_MAX_SECRET_LENGTH];
 -  char *secret;
 -  char sbuf[4];
 -  char *sbufp;
@@ -294,7 +396,7 @@ diff -u src/srs.c src/srs.c
 -    // Get config
 -    co = 0;
 -    if((secret = string_nextinlist(&list, &co, secret_buf,
--                                   sizeof(secret_buf))) == NULL)
+-                                   SRS_MAX_SECRET_LENGTH)) == NULL)
 -    {
 -      log_write(0, LOG_MAIN | LOG_PANIC,
 -          "SRS Configuration Error: No secret specified");
@@ -311,10 +413,7 @@ diff -u src/srs.c src/srs.c
 -          "SRS Configuration Error: Invalid maximum timestamp age");
 -      return DEFER;
 -    }
-+	char	 sbuf[1024];
-+	uschar	*list;
-+	int		 co;
- 
+-
 -    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) == NULL)
 -      hashlen = 6;
 -    else
@@ -327,72 +426,42 @@ diff -u src/srs.c src/srs.c
 -    }
 -    
 -    
--    if((srs = srs_open(secret, strnlen(secret, sizeof(secret)),
+-    if((srs = srs_open(secret, strnlen(secret, SRS_MAX_SECRET_LENGTH),
 -                      maxage, hashlen, hashlen)) == NULL)
 -    {
 -      log_write(0, LOG_MAIN | LOG_PANIC,
 -          "Failed to allocate SRS memory");
 -      return DEFER;
 -    }
-+	char	*secret;
- 
-+	if (srs == NULL) {
-+		srs = srs_new();
- 
+-
+-
 -    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
 -      srs_set_option(srs, SRS_OPTION_USETIMESTAMP, atoi(sbuf));
 -    
 -    if((sbufp = string_nextinlist(&list, &co, sbuf, sizeof(sbuf))) != NULL)
 -      srs_set_option(srs, SRS_OPTION_USEHASH, atoi(sbuf));
-+		if (srs_secrets == NULL) {
-+			log_write(0, LOG_MAIN | LOG_PANIC,
-+							"SRS: No secrets specified");
-+			return DEFER;
-+		}
- 
+-
 -    DEBUG(D_any)
 -      debug_printf("SRS initialized\n");
 -  }
-+		/* Get config */
-+		list = srs_secrets;
- 
+-
 -  return OK;
 -}
-+		co = 0;
-+		while ((secret = string_nextinlist(&list, &co,
-+						sbuf, sizeof(sbuf))) != NULL) {
-+			SRS_WARN_UNLESS(srs_add_secret(srs, secret));
-+		}
- 
-+		SRS_WARN_UNLESS(srs_set_alwaysrewrite(srs, srs_alwaysrewrite));
-+		if (srs_hashlength != -1)
-+			SRS_WARN_UNLESS(srs_set_hashlength(srs, srs_hashlength));
-+		if (srs_hashmin != -1)
-+			SRS_WARN_UNLESS(srs_set_hashmin(srs, srs_hashmin));
-+		if (srs_maxage != -1)
-+			SRS_WARN_UNLESS(srs_set_maxage(srs, srs_maxage));
-+		if (srs_separator != NULL)
-+			SRS_WARN_UNLESS(srs_set_separator(srs, srs_separator[0]));
- 
+-
+-
 -int eximsrs_done()
 -{
 -  if(srs)
 -    srs_close(srs);
 -  
 -  srs = NULL;
-+		DEBUG(D_any)
-+			debug_printf("SRS initialised\n");
-+	}
- 
+-
 -  return OK;
-+	return OK;
- }
- 
+-}
+-
 -
 -int eximsrs_forward(uschar **result, uschar *orig_sender, uschar *domain)
-+int
-+eximsrs_done()
- {
+-{
 -  char res[512];
 -  int n;
 -
@@ -405,17 +474,11 @@ diff -u src/srs.c src/srs.c
 -
 -  *result = string_copy(res);
 -  return OK;
-+	if (srs != NULL)
-+		srs_free(srs);
-+	srs = NULL;
-+	return OK;
- }
- 
+-}
+-
 -
 -int eximsrs_reverse(uschar **result, uschar *address)
-+int
-+eximsrs_forward(uschar **result, uschar *sender, uschar *domain)
- {
+-{
 -  char res[512];
 -  int n;
 -
@@ -432,18 +495,10 @@ diff -u src/srs.c src/srs.c
 -
 -  *result = string_copy(res);
 -  return OK;
--}
-+	char	 res[1024];
-+	int		 ret;
- 
-+	ret = srs_forward(srs, res, sizeof(res), sender, domain);
-+	if (ret != SRS_SUCCESS) {
-+		DEBUG(D_any)
-+			debug_printf("srs_forward failed (%s, %s): %s\n",
-+							sender, domain, srs_strerror(ret));
-+		return DEFER;
-+	}
- 
++	return OK;
+ }
+-
+-
 -int eximsrs_db_set(BOOL reverse, uschar *srs_db)
 -{
 -  if(reverse)
@@ -455,15 +510,11 @@ diff -u src/srs.c src/srs.c
 -    return DEFER;
 -  
 -  return OK;
-+	*result = string_copy(res);
-+	return OK;
- }
- 
+-}
+-
 -
 -srs_result eximsrs_db_insert(srs_t *srs, char *data, uint data_len, char *result, uint result_len)
-+int
-+eximsrs_reverse(uschar **result, uschar *sender)
- {
+-{
 -  uschar *res;
 -  char buf[64];
 -
@@ -484,28 +535,11 @@ diff -u src/srs.c src/srs.c
 -  return SRS_RESULT_OK;
 -}
 -
-+	char	 res[1024];
-+	int		 ret;
- 
+-
 -srs_result eximsrs_db_lookup(srs_t *srs, char *data, uint data_len, char *result, uint result_len)
 -{
 -  uschar *res;
-+	ret = srs_reverse(srs, res, sizeof(res), sender);
-+	if (ret != SRS_SUCCESS) {
-+		switch (SRS_ERROR_TYPE(ret)) {
-+			case SRS_ERRTYPE_CONFIG:
-+				/* This should never happen */
-+				return DEFER;
-+			case SRS_ERRTYPE_INPUT:
-+				/* This should never happen */
-+				return DEFER;
-+			case SRS_ERRTYPE_SYNTAX:
-+				return DECLINE;
-+			case SRS_ERRTYPE_SRS:
-+				return FAIL;
-+		}
-+	}
- 
+-
 -  srs_db_key = string_copyn(data, data_len);
 -  if((res = expand_string(srs_db_reverse)) == NULL)
 -    return SRS_RESULT_DBERROR;
@@ -514,11 +548,9 @@ diff -u src/srs.c src/srs.c
 -    return SRS_RESULT_ADDRESSTOOLONG;
 -    
 -  strncpy(result, res, result_len);
-+	*result = string_copy(res);
- 
+-
 -  return SRS_RESULT_OK;
-+	return OK;
- }
+-}
 -
 -
  #endif

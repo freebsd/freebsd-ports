@@ -16,9 +16,9 @@ then
     source_periodic_confs
 fi
 
-exim_status_mail_rejects_enable=${exim_status_mail_rejects_enable:-"YES"}
-exim_status_mail_rejects_logs=${exim_status_mail_rejects_logs:-2}
-exim_rejectlog=${exim_rejectlog:-"%%LOGDIR%%/rejectlog"}
+: ${exim_status_mail_rejects_enable="YES"}
+: ${exim_status_mail_rejects_logs=2}
+: ${exim_rejectlog="%%LOGDIR%%/rejectlog"}
 
 case "$exim_status_mail_rejects_enable" in
     [Yy][Ee][Ss])
@@ -34,7 +34,7 @@ case "$exim_status_mail_rejects_enable" in
 	    rc=2
 	else
 	    echo
-	    echo Checking for rejected mail:
+	    echo "Checking for rejected mail:"
 
 	    start=`date -v-1d '+%Y-%m-%d'`
 	    n=$(($exim_status_mail_rejects_logs - 2))

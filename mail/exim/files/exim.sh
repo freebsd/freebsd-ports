@@ -55,10 +55,9 @@ stop_postcmd()
   rm -f $pidfile
 }
 
-# set defaults
-
-exim_enable=${exim_enable:-"NO"}
-exim_flags=${exim_flags:-"-bd -q30m"}
-
+# read settings, set default values
 load_rc_config $name
+: ${exim_enable="NO"}
+: ${exim_flags="-bd -q30m"}
+
 run_rc_command "$1"

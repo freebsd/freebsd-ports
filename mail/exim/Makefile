@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	${EXIM_VERSION}+${EXISCAN_VERSION}
+PORTVERSION?=	${EXIM_VERSION}+${EXISCAN_VERSION}
 PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_EXIM}
-MASTER_SITE_SUBDIR=	exim4
+MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
+MASTER_SITE_SUBDIR=	exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim FAQ.txt.bz2:exim
 DIST_SUBDIR=	exim
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
@@ -27,14 +29,24 @@ PATCH_DIST_STRIP=	-p1
 EXTRA_PATCHES+=	${PATCHDIR}/xpatch-exiscan2
 .endif
 
-EXIM_VERSION=	4.42
-EXISCAN_VERSION=27
+.if defined(WITH_SA_EXIM)
+MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
+		${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sa_exim/}
+MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
+DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
+.endif
+
+EXIM_VERSION=	4.43
+EXISCAN_VERSION=28
+SA_EXIM_VERSION=4.1
+
+IGNOREFILES=	FAQ.txt.bz2
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4.*
 .endif
-.for suffix in -ldap2 -mysql -postgresql
+.for suffix in -ldap2 -mysql -postgresql -sa-exim
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != ${suffix}
 CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}-4.*
 .endif
@@ -64,7 +76,7 @@ MAN8=		exim.8
 NO_INSTALL_MANPAGES=	yes
 .endif
 
-PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
+PORTDOC_BASE=	ACKNOWLEDGMENTS FAQ NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		filter.txt pcrepattern.txt pcretest.txt spec.txt
@@ -101,7 +113,8 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 
 PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 		EXIM_USER=${EXIM_USER} \
-		EXIM_GROUP=${EXIM_GROUP}
+		EXIM_GROUP=${EXIM_GROUP} \
+		LOGDIR="${LOGDIR}"
 
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
 # will be made a dependency.  Note that using WITH_EXIMON will cause
@@ -111,6 +124,10 @@ PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
 # If WITHOUT_EXISCAN is defined, exim will be built without exiscan
 # email content scanner support.
 #WITHOUT_EXISCAN=	yes
+
+# If WITH_SA_EXIM is defined, exim will be built with the SA-Exim
+# local_scan function (<http://marc.merlins.org/linux/exim/sa.html>)
+#WITH_SA_EXIM=		yes
 
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
 # libwrap, libmysqlclient and libpq respectively.  Define
@@ -175,8 +192,14 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITHOUT_AUTH_PLAINTEXT=	yes
 #WITHOUT_AUTH_SPA=		yes
 #
+# Enable support for authenticating via the Cyrus SASL library
+#WITH_AUTH_SASL=		yes
+#
 # Enable built-in Exim support for radius (RFC 2865) authentication
+# RADIUS_TYPE can either be RADLIB (to use the radius library supplied
+# with FreeBSD) or RADIUSCLIENT (to use port net/radiusclient)
 #WITH_AUTH_RADIUS=		yes
+#WITH_RADIUS_TYPE=		RADLIB
 #
 # Disable built-in Exim support for additional mailbox formats.
 #WITHOUT_MAILDIR=	yes
@@ -204,12 +227,13 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITH_WISHLIST=		yes
 #
 # Enable Sender Policy Framework (SPF) checking in exiscan-acl
-#
 #WITH_SPF=		yes
 #
 # Enable Sender Rewriting Scheme (SRS)
-#
 #WITH_SRS=		yes
+#
+# Use the readline(3) library for the test expansion option
+#WITH_READLINE=		yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -232,26 +256,26 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
 
 .if defined(WITH_EXIMON)
-SEDLIST+=	-e 's,^\# EXIM_MONITOR=,EXIM_MONITOR=,'
+SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
 PLIST_SUB+=	EXIMON=""
 .else
 PLIST_SUB+=	EXIMON="@comment "
 .endif
 
 .if !defined(WITHOUT_TLS)
-SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
+SEDLIST+=	-e 's,^\# (SUPPORT_TLS=),\1,'
 USE_OPENSSL=	yes
 .else
-SEDLIST+=	-e 's,^TLS_LIBS=,\#TLS_LIBS=,'
+SEDLIST+=	-e 's,^(TLS_LIBS=),\# \1,'
 .endif
 
 .if !defined(WITHOUT_PERL)
-SEDLIST+=	-e 's,^\# EXIM_PERL=,EXIM_PERL=,'
+SEDLIST+=	-e 's,^\# (EXIM_PERL=),\1,'
 .endif
 
 .if defined(WITH_TCP_WRAPPERS)
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
-		-e 's,^\# USE_TCP_WRAPPERS=,USE_TCP_WRAPPERS=,'
+		-e 's,^\# (USE_TCP_WRAPPERS=),\1,'
 .else
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
@@ -272,10 +296,10 @@ LDAP_LIB_TYPE=	OPENLDAP2
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${LOCALBASE}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${LOCALBASE}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
-		-e 's,^\# LOOKUP_LDAP=,LOOKUP_LDAP=,'
+		-e 's,^\# (LOOKUP_LDAP=),\1,'
 .else
 SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
-		-e 's,^LDAP_LIB_TYPE=,\#LDAP_LIB_TYPE=,'
+		-e 's,^(LDAP_LIB_TYPE=),\# \1,'
 .endif
 
 .if defined(DB_LIB_VERSION)
@@ -285,7 +309,7 @@ BROKEN=		deprecated option DB_LIB_VERSION used, use WITH_BDB_VER
 .if ${WITH_BDB_VER} == 1
 DB_LIBS=
 DB_INCLUDES=
-SEDLIST+=	-e 's,^DBMLIB=,\#DBMLIB=,'
+SEDLIST+=	-e 's,^(DBMLIB=),\# \1,'
 .elif (${WITH_BDB_VER} == 4)
 DB_LIBS=	-L${LOCALBASE}/lib -ldb4
 DB_INCLUDES=	-I${LOCALBASE}/include/db4
@@ -314,45 +338,61 @@ WANT_MYSQL_VER=	${WITH_MYSQL_VER}
 USE_MYSQL=	yes
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${LOCALBASE}/include/mysql,' \
-		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
+		-e 's,^\# (LOOKUP_MYSQL=),\1,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
 .if defined(WITH_SASLAUTHD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
-SEDLIST+=	-e 's,^\# CYRUS_SASLAUTHD_SOCKET=,CYRUS_SASLAUTHD_SOCKET=,'
+SEDLIST+=	-e 's,^\# (CYRUS_SASLAUTHD_SOCKET=),\1,'
 .endif
 
 .if defined(WITH_PWCHECK)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
-SEDLIST+=	-e 's,^\# SUPPORT_CYRUS_PWCHECK=,SUPPORT_CYRUS_PWCHECK=,' \
-		-e 's,^\# CYRUS_PWCHECK_SOCKET=,CYRUS_PWCHECK_SOCKET=,'
+SEDLIST+=	-e 's,^\# (SUPPORT_CYRUS_PWCHECK=),\1,' \
+		-e 's,^\# (CYRUS_PWCHECK_SOCKET=),\1,'
 .endif
 
 .if !defined(WITHOUT_PAM)
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,' \
-		-e 's,^\# SUPPORT_PAM=,SUPPORT_PAM=,'
+		-e 's,^\# (SUPPORT_PAM=),\1,'
 .else
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,'
 .endif
 
 .if !defined(WITHOUT_AUTH_CRAM_MD5)
-SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5=,AUTH_CRAM_MD5=,'
+SEDLIST+=	-e 's,^\# (AUTH_CRAM_MD5=),\1,'
 .endif
 
 .if !defined(WITHOUT_AUTH_PLAINTEXT)
-SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
+SEDLIST+=	-e 's,^\# (AUTH_PLAINTEXT=),\1,'
 .endif
 
 .if !defined(WITHOUT_AUTH_SPA)
-SEDLIST+=	-e 's,^\# AUTH_SPA=,AUTH_SPA=,'
+SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
+.endif
+
+.if defined(WITH_AUTH_SASL)
+LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
+		-e 's,^\# (AUTH_LIBS=),\1,'
 .endif
 
 .if defined(WITH_AUTH_RADIUS)
+WITH_RADIUS_TYPE?=	RADLIB
+.if ${WITH_RADIUS_TYPE:L} == radlib
+SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-lradius,' \
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1/etc/radius.conf,' \
+		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADLIB,'
+.elif ${WITH_RADIUS_TYPE:L} == radiusclient
 LIB_DEPENDS+=	radiusclient.0:${PORTSDIR}/net/radiusclient
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,-L${LOCALBASE}/lib -lradiusclient,' \
-		-e 's,^\# RADIUS_CONFIG_FILE=,RADIUS_CONFIG_FILE=${LOCALBASE},'
+		-e 's,^\# (RADIUS_CONFIG_FILE=).*,\1${LOCALBASE}/radiusclient.conf,' \
+		-e 's,^\# (RADIUS_LIB_TYPE=).*,\1RADIUSCLIENT,'
+.else
+IGNORE=		WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
+.endif
 .else
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
 .endif
@@ -367,59 +407,59 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE}/include/pgsql,' \
-		-e 's,^\# LOOKUP_PGSQL=,LOOKUP_PGSQL=,'
+		-e 's,^\# (LOOKUP_PGSQL=),\1,'
 .else
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
 .if !defined(WITH_PGSQL) && !defined(WITH_MYSQL) && !defined(LDAP_LIB_TYPE) && \
     ${WITH_BDB_VER} == 1
-SEDLIST+=	-e 's,^LOOKUP_LIBS=,\#LOOKUP_LIBS=,' \
-		-e 's,^LOOKUP_INCLUDE=,\#LOOKUP_INCLUDE=,'
+SEDLIST+=	-e 's,^(LOOKUP_LIBS=),\# \1,' \
+		-e 's,^(LOOKUP_INCLUDE=),\# \1,'
 .endif
 
 .if !defined(WITHOUT_DNSDB)
-SEDLIST+=	-e 's,^\# LOOKUP_DNSDB=,LOOKUP_DNSDB=,'
+SEDLIST+=	-e 's,^\# (LOOKUP_DNSDB=),\1,'
 .endif
 
 .if !defined(WITHOUT_MAILDIR)
-SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR=,SUPPORT_MAILDIR=,'
+SEDLIST+=	-e 's,^\# (SUPPORT_MAILDIR=),\1,'
 .endif
 
 .if !defined(WITHOUT_MAILSTORE)
-SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE=,SUPPORT_MAILSTORE=,'
+SEDLIST+=	-e 's,^\# (SUPPORT_MAILSTORE=),\1,'
 .endif
 
 .if !defined(WITHOUT_MBX)
-SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
+SEDLIST+=	-e 's,^\# (SUPPORT_MBX=),\1,'
 .endif
 
 .if !defined(WITHOUT_CDB)
-SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
+SEDLIST+=	-e 's,^\# (LOOKUP_CDB=),\1,'
 .endif
 
 .if !defined(WITHOUT_DSEARCH)
-SEDLIST+=	-e 's,^\# LOOKUP_DSEARCH=,LOOKUP_DSEARCH=,'
+SEDLIST+=	-e 's,^\# (LOOKUP_DSEARCH=),\1,'
 .endif
 
 .if defined(WITHOUT_LSEARCH)
-SEDLIST+=	-e 's,^LOOKUP_LSEARCH=,\#LOOKUP_LSEARCH=,'
+SEDLIST+=	-e 's,^(LOOKUP_LSEARCH=),\# \1,'
 .endif
 
 .if !defined(WITHOUT_NIS)
-SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
+SEDLIST+=	-e 's,^\# (LOOKUP_NIS=),\1,'
 .endif
 
 .if !defined(WITHOUT_PASSWD)
-SEDLIST+=	-e 's,^\# LOOKUP_PASSWD=,LOOKUP_PASSWD=,'
+SEDLIST+=	-e 's,^\# (LOOKUP_PASSWD=),\1,'
 .endif
 
 .if !defined(WITHOUT_LMTP)
-SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
+SEDLIST+=	-e 's,^\# (TRANSPORT_LMTP=),\1,'
 .endif
 
 .if defined(WITHOUT_ALT_CONFIG_PREFIX)
-SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
+SEDLIST+=	-e 's,^(ALT_CONFIG_PREFIX=),\# \1,'
 .endif
 
 .if defined(WITH_SPF) && !defined(WITHOUT_EXISCAN)
@@ -438,6 +478,17 @@ SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,-DSRS,' \
 .else
 SEDLIST+=	-e 's,XX_SRS_FLAGS_XX,,' \
 		-e 's,XX_SRS_LIBS_XX,,'
+.endif
+
+.if defined(WITH_SA_EXIM)
+RUN_DEPENDS+=	${LOCALBASE}/bin/spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+PLIST_SUB+=	SA_EXIM=""
+.else
+PLIST_SUB+=	SA_EXIM="@comment "
+.endif
+
+.if defined(WITH_READLINE)
+SEDLIST+=	-e 's,^\# (USE_READLINE=),\1,'
 .endif
 
 .include <bsd.port.pre.mk>
@@ -471,7 +522,7 @@ WITHOUT_IPV6=	yes
 .endif
 
 .if !defined(WITHOUT_IPV6)
-SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
+SEDLIST+=	-e 's,^\# (HAVE_IPV6=),\1,'
 .endif
 
 pre-everything::
@@ -483,19 +534,39 @@ pre-everything::
 	@${ECHO} ''
 .endif
 
+post-extract:
+	@${BZCAT} ${_DISTDIR}/FAQ.txt.bz2 > ${WRKSRC}/FAQ
+.if defined(WITH_SA_EXIM)
+	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
+.endif
+
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
-	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
+	@${SED} -E ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
 .if defined(WITH_EXIMON)
 	@${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
 .endif
 	@[ ! -f ${PKGDIR}/pkg-install ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install > ${PKGINSTALL}
-	@${REINPLACE_CMD} ${SEDLIST} ${WRKSRC}/src/configure.default
+	@${REINPLACE_CMD} -E ${SEDLIST} ${WRKSRC}/src/configure.default
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number (${OPSYS}))\\n\\t"/' \
 		${WRKSRC}/src/globals.c
+	@${REINPLACE_CMD} -e 's/Exim version %s \(#%s \)\{0,1\}/&(${OPSYS} ${OSREL}) /' ${WRKSRC}/src/exim.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
-	@${REINPLACE_CMD} -e 's/^PERL_COMMAND=.*/PERL_COMMAND=${PERL:S,/,\/,g}/' \
-		-e 's/^CC=.*/CC=${CC:S,/,\/,g}/' ${WRKSRC}/OS/Makefile-Default
+	@${REINPLACE_CMD} -E -e 's/^(PERL_COMMAND=).*/\1${PERL:S,/,\/,g}/' \
+		-e 's/^(CC=).*/\1${CC:S,/,\/,g}/' ${WRKSRC}/OS/Makefile-Default
+.if defined(WITH_SA_EXIM)
+	@${REINPLACE_CMD} -E -e 's/^(LOCAL_SCAN_SOURCE=).*/\1Local\/sa-exim.c/' \
+		${WRKSRC}/OS/Makefile-Default
+	@${CP} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.c ${WRKSRC}/Local
+	@{ \
+	    ${ECHO_CMD} "char *version=\"${SA_EXIM_VERSION}\";"; \
+	    ${ECHO_CMD} "#define DLOPEN_LOCAL_SCAN	1"; \
+	    ${ECHO_CMD} "#define SPAMC_LOCATION		\"${LOCALBASE}/bin/spamc\""; \
+	    ${ECHO_CMD} "#define SPAMASSASSIN_CONF	\"${PREFIX}/etc/exim/sa-exim.conf\""; \
+	} > ${WRKSRC}/Local/sa-exim.h
+	@${REINPLACE_CMD} -e 's,/usr/bin/spamc,${LOCALBASE}/bin/spamc,' \
+	    ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf
+.endif
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-build:
@@ -544,6 +615,13 @@ post-install:
 .for example in ${PORT_EXAMPLES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/build-${OPSYS}-${ARCH}/${example} ${DESTDIR}${EXAMPLESDIR}
 .endfor
+.endif
+.if defined(WITH_SA_EXIM)
+	@${INSTALL_DATA} ${WRKDIR}/sa-exim-${SA_EXIM_VERSION}/sa-exim.conf \
+		${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf.default
+	@[ -f ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf ] || \
+	    ${CP} ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf.default \
+	    ${DESTDIR}${PREFIX}/etc/exim/sa-exim.conf
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
