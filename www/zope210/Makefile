@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.3.2
-PORTREVISION=	0
+PORTVERSION=	2.3.3
 CATEGORIES=	www python
-MASTER_SITES=  http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix_2001-05-01/
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
-DISTFILES=     ${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_2001-05-01.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nbm@FreeBSD.org
 
@@ -65,7 +62,7 @@ do-install:
 	@${ECHO} "===>   Please be patient, some builds need their time."
 	@${ECHO} "===>   Copying..."
 	@${CP} -Rp ${WRKSRC}/* ${ZOPEBASEDIR}/
-	@${CP} -Rp ${WRKDIR}/lib ${ZOPEBASEDIR}/
+	@${CP} -Rp ${WRKSRC}/lib ${ZOPEBASEDIR}/
 	@#
 	@${CHMOD} -R u+w ${ZOPEBASEDIR}
 	@(cd ${ZOPEBASEDIR} && ${PYTHON_CMD} w_pcgi.py)
