@@ -1,585 +1,214 @@
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTableCompact.java
+share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTableLarge.java
+share/examples/biojava/demos-1.4/ssaha/CreateDNAFastaHashTable.java
+share/examples/biojava/demos-1.4/ssaha/CreateEmblHashTable.java
+share/examples/biojava/demos-1.4/ssaha/CreateEmblHashTableLarge.java
+share/examples/biojava/demos-1.4/ssaha/ResultPrinter.java
+share/examples/biojava/demos-1.4/ssaha/SSAHA.java
+share/examples/biojava/demos-1.4/ssaha/SSAHALarge.java
+share/examples/biojava/demos-1.4/ssaha/SSAHASeq.java
+share/examples/biojava/demos-1.4/ssaha/SSAHASeqLarge.java
+share/examples/biojava/demos-1.4/unigene/CreateUnigeneFlat.java
+share/examples/biojava/demos-1.4/unigene/ParseLibInfo.java
+share/examples/biojava/demos-1.4/unigene/ParseUnigene.java
+share/examples/biojava/demos-1.4/unigene/SearchUnigeneFlat.java
+share/examples/biojava/demos-obsolete/bioseqdb/UploadSwissprot.java
+share/examples/biojava/demos-obsolete/search/FastaSearchParse.java
+share/examples/biojava/demos-obsolete/seq/TestSwissprotOrg.java
+share/examples/biojava/demos-obsolete/symbol/TestPackedSymbolList.java
+share/examples/biojava/demos/CircLocTest/CircularLocationTester.java
+share/examples/biojava/demos/CircLocTest/TestFrame.java
+share/examples/biojava/demos/ListChangeTypes.java
+share/examples/biojava/demos/RFetch.java
+share/examples/biojava/demos/biosql/DummyFromGFF.java
+share/examples/biojava/demos/biosql/LargeSequenceTest.java
+share/examples/biojava/demos/biosql/SeqDumper.java
+share/examples/biojava/demos/biosql/SeqEMBL.java
+share/examples/biojava/demos/biosql/SeqGFF.java
+share/examples/biojava/demos/biosql/SequenceTest.java
+share/examples/biojava/demos/biosql/UploadFlat.java
+share/examples/biojava/demos/das/TestDAS.java
+share/examples/biojava/demos/das/TestDASG.java
+share/examples/biojava/demos/das/TestDASH.java
+share/examples/biojava/demos/das/TestDSN.java
+share/examples/biojava/demos/dist/TestDistribution.java
+share/examples/biojava/demos/dist/TestOrderNAlphabet.java
+share/examples/biojava/demos/dist/TestOrderNDistribution.java
+share/examples/biojava/demos/dist/Tools.java
+share/examples/biojava/demos/dp/Dice.java
+share/examples/biojava/demos/dp/PairwiseAlignment.java
+share/examples/biojava/demos/dp/SearchProfile.java
+share/examples/biojava/demos/dp/ViterbiAlign.java
+share/examples/biojava/demos/dp/fake.fasta
+share/examples/biojava/demos/dp/fakepromoter.xml
+share/examples/biojava/demos/dp/package.html
+share/examples/biojava/demos/eventbasedparsing/Blast2HTML.java
+share/examples/biojava/demos/eventbasedparsing/BlastLike2XML.java
+share/examples/biojava/demos/eventbasedparsing/Fasta2XML.java
+share/examples/biojava/demos/eventbasedparsing/Pdb2XML.java
+share/examples/biojava/demos/eventbasedparsing/TutorialEx1.java
+share/examples/biojava/demos/eventbasedparsing/TutorialEx1Handler.java
+share/examples/biojava/demos/eventbasedparsing/stylesheets/copyall.xsl
+share/examples/biojava/demos/eventbasedparsing/stylesheets/hitlisthtml.xsl
+share/examples/biojava/demos/files/AL121903.embl
+share/examples/biojava/demos/files/AL121903.genbank
+share/examples/biojava/demos/files/ChrI.prom.fasta
+share/examples/biojava/demos/files/GCG/blast.report
+share/examples/biojava/demos/files/clustal/keratin.aln
+share/examples/biojava/demos/files/fake.fasta
+share/examples/biojava/demos/files/fakepromoter.xml
+share/examples/biojava/demos/files/fp_demo.db
+share/examples/biojava/demos/files/fp_demo.m10
+share/examples/biojava/demos/files/fp_queries.db
+share/examples/biojava/demos/files/hmmer/plus_tot.out
+share/examples/biojava/demos/files/ncbiblast/Massive.out
+share/examples/biojava/demos/files/ncbiblast/ReadMe
+share/examples/biojava/demos/files/ncbiblast/blastn.out
+share/examples/biojava/demos/files/ncbiblast/blastp.out
+share/examples/biojava/demos/files/ncbiblast/blastx.out
+share/examples/biojava/demos/files/ncbiblast/shortBlastn.out
+share/examples/biojava/demos/files/ncbiblast/tblastn.out
+share/examples/biojava/demos/files/ncbiblast/tblastx.out
+share/examples/biojava/demos/files/ncbiblast/unsuppVersionBlastn.out
+share/examples/biojava/demos/files/out.gff
+share/examples/biojava/demos/files/pdb/12E8.pdb
+share/examples/biojava/demos/files/pdb/hgh_ori.pdb
+share/examples/biojava/demos/files/pdb/hmga_1.pdb
+share/examples/biojava/demos/files/pdb/tnf.pdb
+share/examples/biojava/demos/files/scoptest.fa
+share/examples/biojava/demos/files/test.hmm
+share/examples/biojava/demos/files/varC4-2.dna
+share/examples/biojava/demos/files/varC4-2.gff
+share/examples/biojava/demos/files/wublast/blastn.out
+share/examples/biojava/demos/files/wublast/blastp.out
+share/examples/biojava/demos/files/wublast/blastx.out
+share/examples/biojava/demos/files/wublast/sh_blastn.out
+share/examples/biojava/demos/files/wublast/sh_blastp.out
+share/examples/biojava/demos/files/wublast/sh_blastx.out
+share/examples/biojava/demos/files/wublast/sh_tblastx.out
+share/examples/biojava/demos/files/wublast/tblastn.out
+share/examples/biojava/demos/files/wublast/tblastx.out
+share/examples/biojava/demos/game/AE002734.game
+share/examples/biojava/demos/game/README.txt
+share/examples/biojava/demos/game/SeqIOTatler.java
+share/examples/biojava/demos/game/TestGAME.java
+share/examples/biojava/demos/gff/AL121903.embl
+share/examples/biojava/demos/gff/EmblToGffFasta.java
+share/examples/biojava/demos/gff/GFFCompare.java
+share/examples/biojava/demos/gff/GFFFilter.java
+share/examples/biojava/demos/gff/GFFMask.java
+share/examples/biojava/demos/gff/GFFToFeatures.java
+share/examples/biojava/demos/gff/GenbankToGffFasta.java
+share/examples/biojava/demos/gff/SwissprotToGffFasta.java
+share/examples/biojava/demos/gff/XFF2GFF.java
+share/examples/biojava/demos/gff/varC4-2.gff
+share/examples/biojava/demos/indexing/CreateFAIndex.java
+share/examples/biojava/demos/indexing/CreateIndex.java
+share/examples/biojava/demos/indexing/CreateSPIndex.java
+share/examples/biojava/demos/indexing/ListIDs.java
+share/examples/biojava/demos/indexing/ReadRaw.java
+share/examples/biojava/demos/indexing/ReadRawSecondary.java
+share/examples/biojava/demos/nativeapps/BlastLike2XML.java
+share/examples/biojava/demos/nativeapps/Pdb2XML.java
+share/examples/biojava/demos/prot/TestDigestIO.java
+share/examples/biojava/demos/ragbag/README
+share/examples/biojava/demos/ragbag/SequenceDumper.java
+share/examples/biojava/demos/ragbag/TestRagbagAssembly.java
+share/examples/biojava/demos/ragbag/embldir.tgz
+share/examples/biojava/demos/ragbag/seqdir.tgz
+share/examples/biojava/demos/ragbag/testfeature.game
+share/examples/biojava/demos/ragbag/virtdir.tgz
+share/examples/biojava/demos/search/IndexFastaDB.java
+share/examples/biojava/demos/seq/AL121903.embl
+share/examples/biojava/demos/seq/AL121903.genbank
+share/examples/biojava/demos/seq/FetchSeq.java
+share/examples/biojava/demos/seq/GCContent.java
+share/examples/biojava/demos/seq/MotifFinder2.java
+share/examples/biojava/demos/seq/ReverseComplement.java
+share/examples/biojava/demos/seq/SimpleAssemblyTest.java
+share/examples/biojava/demos/seq/TestEmbl.java
+share/examples/biojava/demos/seq/TestEmbl2.java
+share/examples/biojava/demos/seq/TestGenbank.java
+share/examples/biojava/demos/seq/TestRefSeqPrt.java
+share/examples/biojava/demos/seq/TestSubSequence.java
+share/examples/biojava/demos/seq/TestSwissprot.java
+share/examples/biojava/demos/seq/TestTranslation.java
+share/examples/biojava/demos/seq/db/AddFilesToIndex.java
+share/examples/biojava/demos/seq/db/CreateIndex.java
+share/examples/biojava/demos/seq/db/FetchSequence.java
+share/examples/biojava/demos/seq/db/ListSeqsInIndex.java
+share/examples/biojava/demos/seq/utrs.fa
+share/examples/biojava/demos/seqviewer/BeadDemo.java
+share/examples/biojava/demos/seqviewer/EmblViewer.java
+share/examples/biojava/demos/seqviewer/EmblViewer2.java
+share/examples/biojava/demos/seqviewer/FastBeadDemo.java
+share/examples/biojava/demos/seqviewer/TraceViewer.java
+share/examples/biojava/demos/seqviewer/test.fa
+share/examples/biojava/demos/ssbind/AlignmentBuilder.java
+share/examples/biojava/demos/ssbind/CountHits.java
+share/examples/biojava/demos/ssbind/CountSubHits.java
+share/examples/biojava/demos/ssbind/Echoer.java
+share/examples/biojava/demos/ssbind/FilterByValue.java
+share/examples/biojava/demos/ssbind/ListQueries.java
+share/examples/biojava/demos/ssbind/ListSubjects.java
+share/examples/biojava/demos/ssbind/ProcessBlastReport.java
+share/examples/biojava/demos/ssbind/PropertyEchoer.java
+share/examples/biojava/demos/ssbind/SubHitBuilder.java
+share/examples/biojava/demos/ssbind/SubHitFilter.java
+share/examples/biojava/demos/symbol/MatrixValue.java
+share/examples/biojava/demos/symbol/PatternDemo.java
+share/examples/biojava/demos/symbol/TestAlphabetIndexers.java
+share/examples/biojava/demos/symbol/TestAmbiguity.java
+share/examples/biojava/demos/symbol/TestGappedSymbolList.java
+share/examples/biojava/demos/symbol/TestIndexedIntegers.java
+share/examples/biojava/demos/symbol/TestLocation.java
+share/examples/biojava/demos/symbol/TestOrderNSymbolList.java
+share/examples/biojava/demos/symbol/TestSimpleAlignment.java
+share/examples/biojava/demos/symbol/TestWindowedSymbolList.java
+share/examples/biojava/demos/symbol/Tools.java
+share/examples/biojava/demos/symbol/WindowCount.java
+share/examples/biojava/demos/tagvalue/ParseEmbl.java
+share/examples/biojava/demos/tagvalue/ParseSwissprot.java
+share/examples/biojava/demos/xff/TestXFFStreaming.java
 share/java/classes/biojava.jar
-share/java/classes/xml.jar
-share/java/biojava-1.01/LICENSE
-share/java/biojava-1.01/README
-share/java/biojava-1.01/demos/acedb/AceTreeView.java
-share/java/biojava-1.01/demos/acedb/ServeAceAsCorba.java
-share/java/biojava-1.01/demos/acedb/AceClient.java
-share/java/biojava-1.01/demos/acedb/SequenceFetch.java
-share/java/biojava-1.01/demos/gff/GFFFilter.java
-share/java/biojava-1.01/demos/gff/EmblToGffFasta.java
-share/java/biojava-1.01/demos/gff/GFFToFeatures.java
-share/java/biojava-1.01/demos/gff/varC4-2.gff
-share/java/biojava-1.01/demos/gff/AL121903.embl
-share/java/biojava-1.01/demos/seq/db/AddFilesToIndex.java
-share/java/biojava-1.01/demos/seq/db/CreateIndex.java
-share/java/biojava-1.01/demos/seq/db/FetchSequence.java
-share/java/biojava-1.01/demos/seq/db/ListSeqsInIndex.java
-share/java/biojava-1.01/demos/seq/TestGenbank.java
-share/java/biojava-1.01/demos/seq/AL121903.genbank
-share/java/biojava-1.01/demos/seq/TestTranslation.java
-share/java/biojava-1.01/demos/seq/TestEmbl.java
-share/java/biojava-1.01/demos/seq/AL121903.embl
-share/java/biojava-1.01/demos/dist/TestDistribution.java
-share/java/biojava-1.01/demos/dp/PairwiseAlignment.java
-share/java/biojava-1.01/demos/dp/fake.fasta
-share/java/biojava-1.01/demos/dp/ViterbiAlign.java
-share/java/biojava-1.01/demos/dp/package.html
-share/java/biojava-1.01/demos/dp/SearchProfile.java
-share/java/biojava-1.01/demos/dp/fakepromoter.xml
-share/java/biojava-1.01/demos/dp/Dice.java
-share/java/biojava-1.01/demos/BioCorba/CorbaDBServer.java
-share/java/biojava-1.01/demos/BioCorba/ChrI.prom.fasta
-share/java/biojava-1.01/demos/BioCorba/CorbaDBClient.java
-share/java/biojava-1.01/demos/files/AL121903.embl
-share/java/biojava-1.01/demos/files/test.hmm
-share/java/biojava-1.01/demos/files/out.gff
-share/java/biojava-1.01/demos/files/AL121903.genbank
-share/java/biojava-1.01/demos/files/ChrI.prom.fasta
-share/java/biojava-1.01/demos/files/fakepromoter.xml
-share/java/biojava-1.01/demos/files/scoptest.fa
-share/java/biojava-1.01/demos/files/varC4-2.gff
-share/java/biojava-1.01/demos/files/varC4-2.dna
-share/java/biojava-1.01/demos/files/fake.fasta
-share/java/biojava-1.01/demos/symbol/TestAmbiguity.java
-share/java/biojava-1.01/demos/symbol/TestSimpleAlignment.java
-share/java/biojava-1.01/demos/symbol/Tools.java
-share/java/biojava-1.01/demos/symbol/TestOrderNSymbolList.java
-share/java/biojava-1.01/demos/symbol/TestGappedSymbolList.java
-share/java/biojava-1.01/demos/symbol/TestWindowedSymbolList.java
-share/java/biojava-1.01/demos/seqviewer/test.fa
-share/java/biojava-1.01/demos/seqviewer/EmblViewer.java
-share/java/biojava-1.01/demos/seqviewer/TestSequencePanel.java
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/UnknownHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/_Unknown_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/Unknown.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/_Unknown_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/_UnknownImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/_UnknownStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/UnknownHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/GNOME/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/socket/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/socket/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/socket/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/socket/SocketDriver.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/socket/SocketResultSet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticStringValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticAceNode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticAceObject.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticAceSet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticDateValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticFloatValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticIntValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticModelInclude.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticModelNode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticModelReference.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticModelType.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/StaticReference.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/staticobj/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/AceAnnotation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/AceSequence.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/seq/AceSequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceElement.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceNode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceObject.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceSet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Connection.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Database.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/DateValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Driver.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/FloatValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/IntValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/ModelInclude.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/ModelNode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/ModelReference.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/ModelType.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Reference.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/StringValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Ace.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AcePerlParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceURL.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceUtils.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/Handler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceURLException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/AceError.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/acedb/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/UnableToProcess.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_AnonymousSeq_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeq_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqDB_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqIterator_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_Seq_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqDB_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeature_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureIterator_Operations.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/AnonymousSeq.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeq.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqIterator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/Seq.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeature.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureIterator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_AnonymousSeq_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_AnonymousSeqImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_AnonymousSeqStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeq_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqDB_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqDBImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqDBStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqIterator_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqIteratorImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_PrimarySeqIteratorStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_Seq_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqDB_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqDBImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqDBStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeature_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureIterator_Tie.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureIteratorImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureIteratorStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqFeatureStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqImplBase.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/_SeqStub.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/AnonymousSeqHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/AnonymousSeqHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/EndOfStreamHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/EndOfStreamHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/NameValueSet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/NameValueSetHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/NameValueSetHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/NameValueSetListHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/NameValueSetListHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/OutOfRangeHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/OutOfRangeHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/primaryidListHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/primaryidListHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqDBHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqDBHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqIteratorHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/PrimarySeqIteratorHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/RequestTooLargeHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/RequestTooLargeHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqDBHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqDBHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureIteratorHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureIteratorHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureListHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqFeatureListHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqType.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqTypeHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/SeqTypeHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/stringListHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/stringListHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/UnableToProcessHelper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/UnableToProcessHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/EndOfStream.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/OutOfRange.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/RequestTooLarge.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/IgnoreRecordException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFDocumentHandler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFErrorHandler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecord.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecordFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFEntrySet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFErrorHandler.AbortErrorHandler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFErrorHandler.SkipRecordErrorHandler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFFilterer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecordFilter.AcceptAll.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecordFilter.FeatureFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecordFilter.SequenceFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFRecordFilter.SourceFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/GFFWriter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/SequencesAsGFF.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/SimpleGFFRecord.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/program/Meme.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelVetoException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/DotState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/DPMatrix.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/EmissionState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/MarkovModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelInState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/State.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/StatePath.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/StoppingCriteria.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/Trainable.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/TrainingAlgorithm.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/TransitionListener.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/TransitionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/WeightMatrix.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/DP.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/AbstractTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/BaumWelchSampler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/BaumWelchTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/DP.ReverseIterator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/DPFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/MagicalState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelChangeEvent.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelView.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ModelView.ViewTransitionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/PairDPMatrix.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/PairwiseDP.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/ProfileHMM.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleDotState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleEmissionState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleMarkovModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleModelInState.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/Transition.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleModelTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleStatePath.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleTransitionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/SimpleWeightMatrix.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/TrainerTransition.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/TransitionEvent.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/WeightMatrixAnnotator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/WMAsMM.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/XmlMarkovModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/IllegalTransitionException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dp/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/SymbolSequenceRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/FeatureRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/SequenceRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/BasicFeatureRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/FeatureBlockSequenceRenderer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/LogoPainter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/SymbolStyle.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/BarLogoPainter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/DistributionLogo.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/DNAStyle.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/PlainStyle.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/SequencePanel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/SequencePanel.Border.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/SimpleSymbolStyle.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/gui/TextLogoPainter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/UniformDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/Distribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/DistributionFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/DistributionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/DistributionTrainerContext.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/AbstractDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/ComplementaryDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/DistributionFactory.DefaultDistributionFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/DNADistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/GapDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/IgnoreCountsTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/PairDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/SimpleDistribution.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/SimpleDistributionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/SimpleDistributionTrainerContext.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/dist/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SimpleSeqSimilaritySearchSubHit.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SeqSimilaritySearcher.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SeqSimilaritySearchHit.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SeqSimilaritySearchResult.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SeqSimilaritySearchSubHit.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SimpleSeqSimilaritySearchHit.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/SimpleSeqSimilaritySearchResult.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/search/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/SimpleSequenceDBInstallation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/IDMaker.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/SequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/SequenceDBInstallation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/AnnotatedSequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/CachingSequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/HashSequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/IDMaker.ByName.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/IDMaker.ByURN.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/IndexedSequenceDB.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/StreamWriter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/AlignmentFormat.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/FastaDescriptionReader.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/FeatureBuilder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/SequenceFormat.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/DefaultDescriptionReader.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/EmblFormat.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/FastaFormat.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/GenbankFormat.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/SimpleFeatureBuilder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/StreamReader.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/StreamReader.Context.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/Feature.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureRealizer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/RealizingFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/Sequence.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SequenceAnnotator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SequenceFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SequenceIterator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/StrandedFeature.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/AbstractFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/DNATools.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/Feature.Template.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.AcceptAllFilter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.And.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.BySource.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.ByType.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.ContainedByLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.Not.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.Or.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureFilter.OverlapsLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/FeatureHolder.EmptyFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/GeneticCode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/MergeFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/ProteinTools.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SimpleFeatureHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SimpleFeatureRealizer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SimpleSequence.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/SimpleSequenceFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/StrandedFeature.Strand.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/StrandedFeature.Template.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/ViewSequence.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/seq/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/IllegalSymbolException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Alignment.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Alphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AtomicSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/CrossProductAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/CrossProductSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/FiniteAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Location.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Symbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SymbolParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/TranslationTable.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AbstractAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AbstractSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AllTokensAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Alphabet.EmptyAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AlphabetManager.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/AlphabetManager.ListWrapper.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/CompoundLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/CrossProductSymbolNameParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/DoubleAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/DoubleAlphabet.DoubleSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/FixedWidthParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/GappedSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/IntegerAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/IntegerAlphabet.IntegerSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Location.EmptyLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/Location.LocationComparator.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/NameParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/OrderNSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/PointLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/RangeLocation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/ReverseSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleAlignment.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleAtomicSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleSymbol.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SimpleTranslationTable.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SingletonAlphabet.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SuffixTree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SuffixTree.SuffixNode.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/SymbolList.EmptySymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/TokenParser.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/TranslatedSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/WindowedSymbolList.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/IllegalAlphabetException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/symbol/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/SimpleAnnotation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/BioException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/BioError.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/Annotatable.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/Annotation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/Annotation.EmptyAnnotation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bio/OverlayAnnotation.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SymbolListAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/AnonymousSeqImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/FeatureAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/PrimarySeqDBImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/PrimarySeqImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/PrimarySeqIteratorImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SeqDBImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SeqFeatureImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SeqFeatureIteratorImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SeqImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SequenceAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SequenceDBAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/SequenceIteratorAdapter.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/GNOME/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/GNOME/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/GNOME/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/bridge/GNOME/UnknownImpl.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/TrainRegression.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.DepthScaler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/ClassifierExample.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/ClassifierExample.PointClassifier.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/Classify.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.MultipleScalar.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.NullModelScaler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.SelectionScalar.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SuffixTreeKernel.UniformScaler.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SVM_Light.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/SVM_Light.LabelledVector.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/Train.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/ItemValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SVMClassifierModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SVMKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SVMTarget.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/TrainingContext.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/TrainingListener.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/AbstractSVMClassifierModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/AbstractSVMTarget.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/CachingKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/DiagonalAddKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/DiagonalCachingKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/LinearKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/ListSumKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SMOTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/NestedKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/NormalizingKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/PolynomialKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/RadialBaseKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SigmoidKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SimpleItemValue.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SimpleSVMClassifierModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SimpleSVMTarget.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SMORegressionTrainer.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SparseVector.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SparseVector.NormalizingKernel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/SVMRegressionModel.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/stats/svm/TrainingEvent.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/Contract.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/AssertionFailedException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/PostconditionNotMetException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/contract/PreconditionNotMetException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/XMLPeerFactory.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/XMLDispatcher.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/xml/XMLPeerBuilder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/package-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/ObjectUtil.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/StaticMemberPlaceHolder.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/TypedProperties.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/package-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/ParserException.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/org/biojava/utils/package-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/deprecated-list.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/allclasses-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/index.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/packages.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/overview-summary.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/overview-frame.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/serialized-form.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/package-list
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/help-doc.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/overview-tree.html
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/stylesheet.css
-%%PORTDOCS%%%%DOCSDIR%%-1.01/api/index-all.html
-@dirrm share/java/biojava-1.01/demos/acedb
-@dirrm share/java/biojava-1.01/demos/gff
-@dirrm share/java/biojava-1.01/demos/seq/db
-@dirrm share/java/biojava-1.01/demos/seq
-@dirrm share/java/biojava-1.01/demos/dist
-@dirrm share/java/biojava-1.01/demos/dp
-@dirrm share/java/biojava-1.01/demos/BioCorba
-@dirrm share/java/biojava-1.01/demos/files
-@dirrm share/java/biojava-1.01/demos/symbol
-@dirrm share/java/biojava-1.01/demos/seqviewer
-@dirrm share/java/biojava-1.01/demos
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/GNOME
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/acedb/socket
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/acedb/staticobj
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/acedb/seq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/acedb
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/Biocorba/Seqcore
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/Biocorba
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/program/gff
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/program
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/dp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/gui/sequence
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/gui
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/dist
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/search
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/seq/db
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/seq/io
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/seq
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio/symbol
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bio
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba/Seqcore
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bridge/Biocorba
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bridge/GNOME
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/bridge
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/stats/svm/tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/stats/svm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/stats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/utils/contract
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/utils/xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava/utils
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org/biojava
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api/org
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.01
+share/java/classes/bytecode.jar
+@dirrm share/examples/biojava/demos/xff
+@dirrm share/examples/biojava/demos/tagvalue
+@dirrm share/examples/biojava/demos/symbol
+@dirrm share/examples/biojava/demos/ssbind
+@dirrm share/examples/biojava/demos/seqviewer
+@dirrm share/examples/biojava/demos/seq/db
+@dirrm share/examples/biojava/demos/seq
+@dirrm share/examples/biojava/demos/search
+@dirrm share/examples/biojava/demos/ragbag
+@dirrm share/examples/biojava/demos/prot
+@dirrm share/examples/biojava/demos/nativeapps
+@dirrm share/examples/biojava/demos/indexing
+@dirrm share/examples/biojava/demos/gff
+@dirrm share/examples/biojava/demos/game
+@dirrm share/examples/biojava/demos/files/wublast
+@dirrm share/examples/biojava/demos/files/pdb
+@dirrm share/examples/biojava/demos/files/ncbiblast
+@dirrm share/examples/biojava/demos/files/hmmer
+@dirrm share/examples/biojava/demos/files/clustal
+@dirrm share/examples/biojava/demos/files/GCG
+@dirrm share/examples/biojava/demos/files
+@dirrm share/examples/biojava/demos/eventbasedparsing/stylesheets
+@dirrm share/examples/biojava/demos/eventbasedparsing
+@dirrm share/examples/biojava/demos/dp
+@dirrm share/examples/biojava/demos/dist
+@dirrm share/examples/biojava/demos/das
+@dirrm share/examples/biojava/demos/biosql
+@dirrm share/examples/biojava/demos/CircLocTest
+@dirrm share/examples/biojava/demos-obsolete/symbol
+@dirrm share/examples/biojava/demos-obsolete/seq
+@dirrm share/examples/biojava/demos-obsolete/search
+@dirrm share/examples/biojava/demos-obsolete/bioseqdb
+@dirrm share/examples/biojava/demos-obsolete
+@dirrm share/examples/biojava/demos-1.4/unigene
+@dirrm share/examples/biojava/demos-1.4/ssaha
+@dirrm share/examples/biojava/demos-1.4
+@dirrm share/examples/biojava/demos
+@dirrm share/examples/biojava
