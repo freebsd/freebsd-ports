@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	0.970
-PORTREVISION=	4
+PORTVERSION=	0.980
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -24,9 +23,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	file-0.970-1.wbm.gz bind8-0.970-5.wbm.gz acl-0.970-3.wbm.gz \
-		apache-0.970-3.wbm.gz cpan-0.970-3.wbm.gz \
-		status-0.970-4.wbm.gz cluster-useradmin-0.970-7.wbm.gz
+WEBMIN_MODULES=
 WEBMIN_THEMES=
 
 post-extract:
