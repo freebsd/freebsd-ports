@@ -12,6 +12,3 @@ vlc@videolan.org is a mailing list for support and discussion
 The VideoLAN web site at http://www.videolan.org/ is a good start for
 information about MPEG and DVD playing. Have a look at the documentation
 section (http://www.videolan.org/doc.html), as well as the bookmarks.
-
-vlc is in it's early days.  It may be necessary to run it with with
-``-V x11'' to make it work.
