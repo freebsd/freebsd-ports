@@ -39,6 +39,7 @@
     SUBDIR += doom
     SUBDIR += dopewars
     SUBDIR += drm
+    SUBDIR += dungeon
     SUBDIR += empire
     SUBDIR += fkiss
     SUBDIR += flightgear
@@ -71,6 +72,7 @@
     SUBDIR += kdegames11
     SUBDIR += kdegames11-i18n
     SUBDIR += klondike
+    SUBDIR += krubik
     SUBDIR += ktamaga
     SUBDIR += ladder
     SUBDIR += libshhcards
@@ -94,6 +96,7 @@
     SUBDIR += pmars
     SUBDIR += powerpak
     SUBDIR += pp
+    SUBDIR += ptkei
     SUBDIR += pysol
     SUBDIR += qcc
     SUBDIR += qstat
@@ -105,6 +108,7 @@
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += spellcast
+    SUBDIR += speyes
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tank
@@ -118,6 +122,7 @@
     SUBDIR += wmminichess
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
+    SUBDIR += wolfpack
     SUBDIR += xabacus
     SUBDIR += xasteroids
     SUBDIR += xataxx
