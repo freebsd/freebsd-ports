@@ -31,7 +31,7 @@ USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
 
-.include "${PORTSDIR}/security/openssl/Makefile.ssl"
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
 
 .if ${MACHINE_ARCH} == "i386"
 GNU_ARCH=	ix86
