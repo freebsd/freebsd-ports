@@ -40,16 +40,16 @@ CONFLICTS=	apache+ipv6-* \
 		apache-* \
 		apache_fp-* \
 		publicfile-* \
-		apache+mod_ssl-*
+		ru-apache-*
 
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-VERSION_APACHE=	1.3.27
-VERSION_MODSSL=	2.8.14
-VERSION_RA=	30.17
+VERSION_APACHE=	1.3.28
+VERSION_MODSSL=	2.8.15
+VERSION_RA=	30.18
 
 #
 # some defaults
