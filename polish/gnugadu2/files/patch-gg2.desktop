@@ -1,16 +1,14 @@
---- gg2.desktop.orig	Sat Dec 13 15:43:17 2003
-+++ gg2.desktop	Mon Jan 12 13:01:30 2004
-@@ -3,10 +3,10 @@
+--- gg2.desktop.orig	Sun Jan 18 23:34:10 2004
++++ gg2.desktop	Mon Jan 19 00:27:55 2004
+@@ -3,9 +3,9 @@
  Encoding=UTF-8
  Name=GNU Gadu
  Comment=Instant Messanger Client
 -Comment[pl]=Wolne Gadanie
 +Comment[pl]=Free-wolne Gadanie
- Exec=gg2
+ TryExec=gg2
 -Icon=gg2.png
-+Icon=/usr/X11R6/share/gg2/pixmaps/icon.png
++Icon=%%PREFIX%%/share/gg2/pixmaps/icon.png
  Terminal=false
  Type=Application
--Categories=GTK;Application;Network;InstantMessaging;
-+Categories=Application;Network;
- # vi: encoding=utf-8
+ Categories=Application;Network;InstantMessaging;GTK;
