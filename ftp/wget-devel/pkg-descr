@@ -8,4 +8,8 @@ supported -- you can use Wget to make mirrors of archives and home
 pages, or traverse the web like a WWW robot (Wget understands
 /robots.txt).
 
-WWW: http://sunsite.auc.dk/wget/
+Of course, since this is the latest bleeding edge version, it is
+possible that things don't work. Please report them to the maintainer
+and to the authors of wget!
+
+WWW: http://wget.sunsite.dk/

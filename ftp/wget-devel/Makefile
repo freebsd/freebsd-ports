@@ -1,34 +1,33 @@
-# Ports collection makefile for:  wget
-# Date created:			  31 December 1996
-# Whom:				  Thomas Gellekum <tg@FreeBSD.org>
+# Ports collection makefile for:  wget-devel
+# Date created:			  10 january 2004
+# Whom:				  Edwin Groothuis <edwin@mavetju.org>
 #
 # $FreeBSD$
 #
 
-# NOTE: I would like to skip wget-1.9 and wait for stabilization.
-#       Please don't push me to update. Thank you.
-
-PORTNAME=	wget
-PORTVERSION=	1.8.2
-PORTREVISION=	5
+PORTNAME=	wget-devel
+PORTVERSION=	1.9.1
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
+DISTNAME=	wget-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	sf
-PATCHFILES=	wget_${PORTVERSION}-12.diff.gz
-PATCH_DIST_STRIP=	-p1
+#PATCH_SITES=	${MASTER_SITE_LOCAL}
+#PATCH_SITE_SUBDIR=	sf
+#PATCHFILES=	wget_${PORTVERSION}-12.diff.gz
+#PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sf@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP and FTP
 
 .if !defined(WITHOUT_NLS)
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 .endif
 
+CONFLICTS=	wget-*
+
 USE_REINPLACE=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

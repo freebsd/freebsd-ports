@@ -27,6 +27,8 @@ COMMENT=	Retrieve files from the Net via HTTP and FTP
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 .endif
 
+CONFLICTS=	wget-devel-*
+
 USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
