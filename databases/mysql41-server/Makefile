@@ -113,8 +113,6 @@ CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR}
 
-ONLY_FOR_ARCHS=	i386 alpha sparc64
-
 DOCS=		manual.html manual.txt manual_toc.html
 
 INFO=		mysql
