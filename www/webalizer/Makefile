@@ -1,12 +1,12 @@
 # New ports collection makefile for:	webalizer
-# Version required:	1.12
+# Version required:	1.20
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.2 1998/07/30 13:23:24 andreas Exp $
+# $Id: Makefile,v 1.3 1998/07/31 08:48:02 andreas Exp $
 
-DISTNAME=	webalizer-1.12-09-src
-PKGNAME=	webalizer-1.12
+DISTNAME=	webalizer-1.20-07-src
+PKGNAME=	webalizer-1.20
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
@@ -59,7 +59,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/webalizer
-.for i in CHANGES COPYING Copyright README TODO webalizer.LSM
+.for i in CHANGES COPYING Copyright README webalizer.LSM
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/webalizer/${i}
 .endfor
 .endif

@@ -4,7 +4,6 @@ share/doc/webalizer/CHANGES
 share/doc/webalizer/COPYING
 share/doc/webalizer/Copyright
 share/doc/webalizer/README
-share/doc/webalizer/TODO
 share/doc/webalizer/webalizer.LSM
 share/examples/webalizer/msfree.gif
 share/examples/webalizer/sample.conf
