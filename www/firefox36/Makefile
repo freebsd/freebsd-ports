@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.4
-PORTREVISION=		7
+PORTREVISION=		8
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -49,29 +49,9 @@ LOCAL_PREFIX=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-.if !defined(PERL_LEVEL)
-.if !exists(${LOCALBASE}/bin/perl)
-PERL_LEVEL=0
-.endif # !exists(${LOCALBASE}/bin/perl)
-perl_major=${PERL_VERSION:C|^([1-9]+).*|\1|}
-_perl_minor=00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
-perl_minor=${_perl_minor:C|^.*(...)|\1|}
-.if ${perl_minor} >= 100
-perl_minor=${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
-perl_patch=${PERL_VERSION:C|^.*(..)|\1|}
-.else # ${perl_minor} < 100
-_perl_patch=0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
-perl_patch=${_perl_patch:C|^.*(..)|\1|}
-.endif # ${perl_minor} < 100
-PERL_LEVEL=${perl_major}${perl_minor}${perl_patch}
-.endif # !defined(PERL_LEVEL)
-
-SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-
 .if ${PERL_LEVEL} < 500601
 .undef NO_IGNORE
-BROKEN=	"right now, we can only support the ports versions of Perl."
-BROKEN+="We are working on the problem. Sorry for the inconvenience."
+BROKEN=	"Phoenix only supports the ports versions of Perl."
 BROKEN+="If you have installed a Perl port, and are getting this message,"
 BROKEN+="please make sure you have issued the command 'use.perl port'"
 .endif # ${PERL_LEVEL} < 500601
@@ -90,7 +70,6 @@ post-extract::
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
-	@${CAT} ${PKGMESSAGE} 2>/dev/null; sleep 5
 
 # fix for Xft (thanks to marcus@)
 post-patch:
@@ -105,7 +84,7 @@ post-install:
 	@${RM} -f ${PREFIX}/bin/phoenix-config
 	@${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
-	@${CAT} ${PKGMESSAGE} 2>/dev/null; sleep 5
+	@${CAT} ${PKGMESSAGE} 2>/dev/null
 	@${RM} -fr ${LOCAL_PREFIX}/share/idl
 	@${RM} -fr ${LOCAL_PREFIX}/include
 
