@@ -9,7 +9,9 @@
 PORTNAME=	forg
 PORTVERSION=	0.5.1
 CATEGORIES=	net python
-MASTER_SITES=	http://opop.nols.com/proggie/
+MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
+# Old home website doesn't seem to work anymore (19/05/03)
+#MASTER_SITES=	http://opop.nols.com/proggie/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gopher client
