@@ -138,6 +138,7 @@ lib/modules/drivers/radeon_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/savage_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/siliconmotion_drv.o
 %%I386%%lib/modules/drivers/sis_drv.o
+%%SPARC64%%lib/modules/drivers/sunffb_drv.o
 %%SPARC64_NA%%lib/modules/drivers/tdfx_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/tga_drv.o
 %%I386%%lib/modules/drivers/trident_drv.o
