@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qstat
-PORTVERSION=	2.5.c
+PORTVERSION=	2.6
 CATEGORIES=	games net
-MASTER_SITES=	http://www.qstat.org/
-DISTNAME=	qstat${PORTVERSION:S/.//g}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	A command line program to query game servers on the net
@@ -21,10 +21,10 @@ do-install:
 	@${ECHO_MSG} "Installing documents and templates in: \
 		${DOCSDIR}"
 	@${ECHO_MSG} ""
-	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/template
+	@${MKDIR} ${DOCSDIR}/info ${DOCSDIR}/template
 	@${INSTALL_DATA} ${WRKSRC}/qstatdoc.html ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/template/* ${DOCSDIR}/template
+	@${INSTALL_DATA} ${WRKSRC}/info/* ${DOCSDIR}/info
 .endif
 
 .include <bsd.port.mk>
