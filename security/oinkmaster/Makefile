@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	oinkmaster
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/andreas/oinkmaster/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 COMMENT=	Help you update your snort rules after each update
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
@@ -21,7 +21,9 @@ NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/oinkmaster.pl
+	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g;\
+		s,\./oinkmaster.conf,${PREFIX}/etc/oinkmaster.conf,g' \
+		${WRKSRC}/oinkmaster.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/oinkmaster.pl ${PREFIX}/bin/oinkmaster
