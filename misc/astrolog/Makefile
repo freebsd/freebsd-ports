@@ -7,21 +7,20 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.6 1996/12/03 04:07:24 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/13 22:56:39 ache Exp $
 #
 
-PKGNAME=        astrolog-5.30
 DISTNAME=       ast53src
-EXTRACT_SUFX=   .zip
+PKGNAME=        astrolog-5.30
 CATEGORIES=     misc
 MASTER_SITES=   http://rpkalf2.mach.uni-karlsruhe.de/~ferber/astrolog/
 DISTFILES=      ${EXTRACT_ONLY} ast53dos.zip
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=     ache@FreeBSD.ORG
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
+EXTRACT_ONLY=   ${DISTNAME}.zip
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -oqLaa
 DIST_SUBDIR=    astrolog
