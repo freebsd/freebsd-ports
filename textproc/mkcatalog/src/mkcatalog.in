@@ -116,7 +116,7 @@ Usage:
  ${ARGV0} [-c toplv-catalog-filename] [-pqv] [install|add|deinstall|delete|enable|disable] dtd-directory-name [catalog-filename].
 
         -c filename   specifies top-level catalog file
-                      (default: ${PREFIX}/catalog)
+                      (default: ${CAT_DIR}/${CAT_FILE})
         -p            preseve old catalog file (as .old)
         -q            quiet mode
         -v            verbose mode (for debug)
