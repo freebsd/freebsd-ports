@@ -25,7 +25,7 @@
  
  list.o :	list.c list.h
 -		gcc -c list.c -I/usr/X11R6/include
-+		${CC} ${CFLAGS} -c list.c -I/usr/X11R6/include
++		${CC} ${CFLAGS} -c list.c -I${X11BASE}/include
  
  readme.h :	README mkstr
  		cat README | ./mkstr readme > readme.h
