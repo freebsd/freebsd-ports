@@ -7,8 +7,8 @@
 PORTNAME=	pam_smb
 PORTVERSION=	2.0.0.r5
 CATEGORIES=	security
-MASTER_SITES=	http://samba.org/~airlied/ \
-		http://www.csn.ul.ie/~airlied/pam_smb/devel/
+MASTER_SITES=	http://pamsmb.sourceforge.net/v2/ \
+		http://www.csn.ul.ie/~airlied/pam_smb/v2/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	ports@FreeBSD.org
