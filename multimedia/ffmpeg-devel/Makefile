@@ -6,6 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
+PORTREVISION=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -39,7 +40,7 @@ PORTDOCS=	${DOC_FILES} ${DOC_DOCFILES}
 HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 		libavcodec/dsputil.h
 LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
-MAN1=		ffmpeg.1 ffplay.1
+MAN1=		ffmpeg.1
 
 .include <bsd.port.pre.mk>
 
@@ -134,6 +135,8 @@ CONFIGURE_ARGS+=	--disable-mmx
 ## SDL
 .ifdef(WITH_SDL)
 USE_SDL=	sdl
+
+MAN1+=		ffplay.1
 
 PLIST_SUB+=	SDL=""
 .else
