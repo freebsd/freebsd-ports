@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/GD/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Text/Wrap.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Text/Align.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDTextUtil/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/GD/Text
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GD 2>/dev/null || true
