@@ -2405,6 +2405,7 @@ hexcurse	ports/editors/hexcurse
 hexedit		ports/editors/hexedit
 hexpert		ports/editors/hexpert
 heyu		ports/misc/heyu
+hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
