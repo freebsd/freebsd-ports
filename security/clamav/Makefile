@@ -12,10 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	markun@onohara.to
-MAINTAINER=	eik@FreeBSD.org
-# I've just adopted the port to ensure timely updates. Please
-# reset the maintainer if TERAMOTO Masahiro shows up again.
+MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
