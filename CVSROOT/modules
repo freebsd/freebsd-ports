@@ -6182,6 +6182,7 @@ srp		ports/security/srp
 ss		ports/math/ss
 sscalc		ports/astro/sscalc
 ssh		ports/security/ssh
+ssh-gui		ports/security/ssh-gui
 ssh-multiadd	ports/security/ssh-multiadd
 ssh2		ports/security/ssh2
 sshbuddy	ports/misc/sshbuddy
