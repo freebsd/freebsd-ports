@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	qico
-PORTVERSION=	0.48.5
-PORTREVISION=	1
+PORTVERSION=	0.49.10.3
 CATEGORIES=	comms
-MASTER_SITES=	http://lev.serebryakov.spb.ru/download/0.48/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-0.49.10-p3
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	An FidoNet Technology Network (FTN) compatible mailer for Unix systems
 
-USE_GMAKE=	yes
-MAKE_ENV+=	SH=${SH} AWK=${AWK} MORDA="${MORDA}" DEFS="${DEFS}"
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
 
 .if defined(WITH_QICO_AMIGA4D)
-DEFS+=		-DAMIGA4D
+CONFIGURE_ARGS+=	--enable-aso
 .endif
 
 .if defined(WITH_QICO_MORDA)
-MORDA=		1
 PLIST_SUB+=	WITH_QICO_MORDA=""
 .else
+CONFIGURE_ARGS+=	--disable-qcc
 PLIST_SUB+=	WITH_QICO_MORDA="@comment "
 .endif
 
