@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	mph@freebsd.org
 
+BROKEN=		"Does not build"
+
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
