@@ -17,6 +17,7 @@ WRKSRC=		${WRKDIR}/c-hey_cvs_latest/c-hey
 GNU_CONFIGURE=	yes
 
 MAN1=		c-hey.1
-PLIST_FILES=	bin/c-hey
+MLINKS=		c-hey.1 hey.1
+PLIST_FILES=	bin/c-hey bin/hey
 
 .include <bsd.port.mk>
