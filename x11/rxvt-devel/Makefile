@@ -9,7 +9,7 @@
 # the same distfile.
 
 PORTNAME=	rxvt-devel
-PORTVERSION= 	2.7.3
+PORTVERSION= 	2.7.5
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
@@ -17,18 +17,17 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/
 DISTNAME=	rxvt-${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	rxvt-2.7.3.patch1.gz
-PATCH_DIST_STRIP+=      -p1
-
 MAINTAINER=	lioux@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--enable-utmp --enable-wtmp \
+CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB= yes
 USE_BZIP2=	yes
+
 MAN1=		rxvt.1
 
 post-install:
