@@ -5,8 +5,6 @@ lib/zinf/plugins/cd.lmc
 lib/zinf/plugins/cd.pmo
 lib/zinf/plugins/download.ui
 %%ESOUND%%lib/zinf/plugins/esound.pmo
-lib/zinf/plugins/zinf.ui
-lib/zinf/plugins/zinfcmd.ui
 lib/zinf/plugins/httpinput.pmi
 lib/zinf/plugins/id3v1.mdf
 lib/zinf/plugins/id3v2.mdf
@@ -31,8 +29,10 @@ lib/zinf/plugins/wavout.pmo
 lib/zinf/plugins/winamp.ftf
 lib/zinf/plugins/winamp_theme.xml
 lib/zinf/plugins/xingmp3.lmc
+lib/zinf/plugins/zinf.ui
+lib/zinf/plugins/zinfcmd.ui
 share/gnome/apps/Audio/Zinf.desktop
-share/pixmaps/zinf.png
+share/gnome/pixmaps/zinf.png
 share/zinf/themes/Aquatica.fat
 share/zinf/themes/Zinf.fat
 share/zinf/themes/ZinfClassic.fat
