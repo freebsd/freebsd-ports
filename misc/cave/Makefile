@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cave
-PORTVERSION=	1.0
+PORTVERSION=	1.0b
 CATEGORIES=	misc
 MASTER_SITES=	http://cyclic.sourceforge.net/cave/ \
 		${MASTER_SITE_SUNSITE}
@@ -19,5 +19,8 @@ GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	yes
 MAN1=	cave.1
+
+pre-build:
+	${CP} ${WRKSRC}/doc/cave.man ${WRKSRC}/doc/cave.1
 
 .include <bsd.port.mk>
