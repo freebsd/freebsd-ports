@@ -14,13 +14,8 @@ MAINTAINER=	andrews@technologist.com
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11/
 
+USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BROKEN=		"obsolete compiler"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
