@@ -221,6 +221,7 @@
     SUBDIR += xmx
     SUBDIR += xnee
     SUBDIR += xnodecor
+    SUBDIR += xorg
     SUBDIR += xorg-clients
     SUBDIR += xorg-libraries
     SUBDIR += xorg-manpages
