@@ -24,6 +24,7 @@
     SUBDIR += kdetoys3
     SUBDIR += mlclock
     SUBDIR += mouseclock
+    SUBDIR += osdclock
     SUBDIR += pclock
     SUBDIR += rclock
     SUBDIR += sanduhr
