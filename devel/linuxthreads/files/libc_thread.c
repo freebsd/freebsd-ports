@@ -68,38 +68,6 @@ extern int __isthreaded;
 int _posix_priority_scheduling;
 #endif
 
-#if defined(NEWLIBC)
-/* The following are needed if we're going to get thread safe behavior
- * in the time functions in lib/libc/stdtime/localtime.c
- */
-#if defined(COMPILING_UTHREADS)
-static struct pthread_mutex	_lcl_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
-static struct pthread_mutex	_gmt_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
-static struct pthread_mutex	_localtime_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
-static struct pthread_mutex	_gmtime_mutexd = PTHREAD_MUTEX_STATIC_INITIALIZER;
-static pthread_mutex_t		_lcl_mutex   = &_lcl_mutexd;
-static pthread_mutex_t		_gmt_mutex   = &_gmt_mutexd;
-static pthread_mutex_t		_localtime_mutex = &_localtime_mutexd;
-static pthread_mutex_t		_gmtime_mutex = &_gmtime_mutexd;
-#endif
-#if defined(LINUXTHREADS)
-static pthread_mutex_t	_lcl_mutex	= PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_gmt_mutex	= PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_localtime_mutex = PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_gmtime_mutex	= PTHREAD_MUTEX_INITIALIZER;
-#else
-/* Customize this based on your mutex declarations */
-static pthread_mutex_t	_lcl_mutex	= PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_gmt_mutex	= PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_localtime_mutex = PTHREAD_MUTEX_INITIALIZER;
-static pthread_mutex_t	_gmtime_mutex	= PTHREAD_MUTEX_INITIALIZER;
-#endif
-extern pthread_mutex_t	*lcl_mutex;
-extern pthread_mutex_t	*gmt_mutex;
-extern pthread_mutex_t	*localtime_mutex;
-extern pthread_mutex_t	*gmtime_mutex;
-#endif
-
 void *lock_create (void *context);
 void rlock_acquire (void *lock);
 void wlock_acquire (void *lock);
@@ -127,13 +95,6 @@ static void _pthread_initialize(void)
 	/* This turns on thread safe behaviour in libc when we link with it */
 	__isthreaded = 1;
 
-#if defined(NEWLIBC)
-	/* Set up pointers for lib/libc/stdtime/localtime.c */
-	lcl_mutex       = &_lcl_mutex;
-	gmt_mutex       = &_gmt_mutex;
-	localtime_mutex = &_localtime_mutex;
-	gmtime_mutex    = &_gmtime_mutex;
-#endif
 }
 
 void _spinlock (int * spinlock)

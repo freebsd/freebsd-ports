@@ -105,6 +105,7 @@ convert (struct hostent *host, struct hostent *result,
   return 0;
 }
 
+#if __FreeBSD__ < 5
 struct hostent *
 gethostbyaddr_r (const char *addr, int length, int type,
        struct hostent *result, char *buffer, int buflen,
@@ -124,6 +125,7 @@ gethostbyaddr_r (const char *addr, int length, int type,
   pthread_mutex_unlock (&gethostby_mutex);
   return result;
 }
+#endif
 
 struct hostent *
 gethostbyname_r (const char *name,

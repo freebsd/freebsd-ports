@@ -23,13 +23,21 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.1 2001-02-20 00:34:57 tegge Exp $
+ * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.2 2001-06-14 01:34:18 tegge Exp $
  */
 
 #include <pthread.h>
 #include <stdlib.h>
 #include <sys/errno.h>
 
+void *__pthread_getspecific(pthread_key_t);
+int   __pthread_setspecific(pthread_key_t, const void *);
+int   __pthread_key_create(pthread_key_t *, void (*) (void *));
+int   __pthread_mutex_destroy(pthread_mutex_t *);
+int   __pthread_mutex_init(pthread_mutex_t *, const pthread_mutexattr_t *);
+int   __pthread_mutex_lock(pthread_mutex_t *);
+int   __pthread_mutex_trylock(pthread_mutex_t *);
+int   __pthread_mutex_unlock(pthread_mutex_t *);
 
 void *
 _pthread_getspecific(pthread_key_t key)
