@@ -78,32 +78,36 @@ fi
 host=$1
 . ${pb}/${arch}/portbuild.${host}
 
-echo "Claiming a directory for ${pkgname} on ${host}"
-chroot=$(ssh -a -n root@${host} ${pb}/scripts/claim-chroot ${arch} ${branch} ${pkgname})
-status=$?
-if [ ! ${status} ]; then
+while [ -z "${chroot}" ]; do
+  echo "Claiming a directory for ${pkgname} on ${host}"
+  # May still fail if ssh times out?
+  chroot=$(ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/claim-chroot ${arch} ${branch} ${pkgname})
+  status=$?
+  if [ ! ${status} ]; then
+    echo "!!! Exiting from claim-chroot with status ${status} (${host} ${pkgname})"
     exit ${status}
-fi
+  fi
+done
 echo "--> got directory ${chroot}"
 
-echo "dispatching: ssh -a -t -n root@${host} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
-${pb}/scripts/ptimeout.host $timeout ssh -a -t -n root@${host} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}
+echo "dispatching: ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}"
+${pb}/scripts/ptimeout.host $timeout ssh -a -t -n ${client_user}@${host} ${sudo_cmd} ${command} ${arch} ${branch} ${chroot} ${flags} \"$ED\" \"$PD\" \"$FD\" \"$BD\" \"$RD\" ${args}
 error=$?
 
 # Pull in the results of the build from the client
 
-scp root@${host}:${chroot}/tmp/${pkgname}.log ${pb}/${arch}/${branch}/logs/${pkgname}.log
-(ssh -a -n root@${host} test -f ${chroot}/tmp/work.tbz ) && scp root@${host}:${chroot}/tmp/work.tbz ${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
+scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${pb}/${arch}/${branch}/logs/${pkgname}.log
+(ssh -a -n ${client_user}@${host} test -f ${chroot}/tmp/work.tbz ) && scp ${client_user}@${host}:${chroot}/tmp/work.tbz ${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
 
 if [ "x$WANT_DISTFILES" != "x" ]; then
   mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
-  ssh -a -n root@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
+  ssh -a -n ${client_user}@${host} tar -C ${chroot}/tmp/distfiles -cf - . | \
     tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
   touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
 fi
 
 if [ "${error}" = 0 ]; then
-  ssh -a -n root@${host} tar -C ${chroot}/tmp -cf - packages | \
+  ssh -a -n ${client_user}@${host} tar -C ${chroot}/tmp -cf - packages | \
     tar --unlink -C ${pb}/${arch}/${branch} -xvf -
   test -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} && \
     touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
@@ -114,13 +118,13 @@ if [ "${error}" = 0 ]; then
   fi
 else
   log=${pb}/${arch}/${branch}/errors/${pkgname}.log
-  scp root@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ssh -a -n root@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" kris@FreeBSD.org
+  scp ${client_user}@${host}:${chroot}/tmp/${pkgname}.log ${log} || (echo ${chroot}@${host}; ssh -a -n ${client_user}@${host} ls -laR ${chroot}/tmp) | mail -s "${pkgname} logfile not found" kris@FreeBSD.org
   if ! grep -q "even though it is marked BROKEN" ${log}; then
     tail -1000 ${log} | mail -s "${pkgname} failed on ${arch} ${branch}" kris@FreeBSD.org
   fi
   lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
 fi
 
-ssh -a -n root@${host} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${noclean}
+ssh -a -n ${client_user}@${host} ${sudo_cmd} ${pb}/scripts/clean-chroot ${arch} ${branch} ${chroot} ${noclean}
 
 exit ${error}
