@@ -12,6 +12,7 @@ DISTNAME=	xmms_ladspa-${PORTVERSION}
 
 MAINTAINER=	freebsdports@arved.de
 
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
