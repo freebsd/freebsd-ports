@@ -13,6 +13,7 @@ share/licq/utilities/nmap.utility
 share/licq/utilities/pine.utility
 share/licq/utilities/ping.utility
 share/licq/utilities/queso.utility
+share/licq/utilities/speakfreely.utility
 share/licq/utilities/talk.utility
 share/licq/utilities/traceroute.utility
 share/licq/utilities/vnc.utility
@@ -144,6 +145,22 @@ share/licq/qt-gui/dock.pli/regmsg.xpm
 share/licq/qt-gui/dock.pli/statusmask.xpm
 share/licq/qt-gui/dock.pli/sysmsg.xpm
 @dirrm share/licq/qt-gui/dock.pli
+share/licq/qt-gui/dock.kde2/away.xpm
+share/licq/qt-gui/dock.kde2/bothmsg.xpm
+share/licq/qt-gui/dock.kde2/dnd.xpm
+share/licq/qt-gui/dock.kde2/ffc.xpm
+share/licq/qt-gui/dock.kde2/invisible.xpm
+share/licq/qt-gui/dock.kde2/kde2.dock
+share/licq/qt-gui/dock.kde2/mask.xpm
+share/licq/qt-gui/dock.kde2/na.xpm
+share/licq/qt-gui/dock.kde2/nomsg.xpm
+share/licq/qt-gui/dock.kde2/occupied.xpm
+share/licq/qt-gui/dock.kde2/offline.xpm
+share/licq/qt-gui/dock.kde2/online.xpm
+share/licq/qt-gui/dock.kde2/regmsg.xpm
+share/licq/qt-gui/dock.kde2/statusmask.xpm
+share/licq/qt-gui/dock.kde2/sysmsg.xpm
+@dirrm share/licq/qt-gui/dock.kde2
 share/licq/qt-gui/icons.computer/chat.xpm
 share/licq/qt-gui/icons.computer/chess.xpm
 share/licq/qt-gui/icons.computer/computer.icons
