@@ -1,0 +1,11 @@
+--- scripts/e_gen_menu.orig	Sun Oct  3 17:34:49 1999
++++ scripts/e_gen_menu	Sun Oct  3 17:35:01 1999
+@@ -49,7 +49,7 @@
+   echo \"Netscape Mail\" NULL exec \"netscape -mail -no-about-splash\" >> $OUT
+   echo \"Balsa\" NULL exec \"balsa\" >> $OUT
+   echo \"Exmh\" NULL exec \"exmh\" >> $OUT
+-  echo \"Electric Eyes\" NULL exec \"ee\" >> $OUT
++  echo \"Electric Eyes\" NULL exec \"ElectricEyes\" >> $OUT
+   echo \"The GIMP\" NULL exec \"gimp\" >> $OUT
+   echo \"XV\" NULL exec \"xv\" >> $OUT
+   echo \"GQView\" NULL exec \"gqview\" >> $OUT
