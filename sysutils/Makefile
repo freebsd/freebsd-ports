@@ -261,6 +261,7 @@
     SUBDIR += sjog
     SUBDIR += skill
     SUBDIR += slay
+    SUBDIR += sleuthkit
     SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += socket
