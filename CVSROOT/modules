@@ -6761,9 +6761,8 @@ wakeonlan	ports/net/wakeonlan
 walker		ports/net/walker
 wall		src/usr.bin/wall
 wamcc		ports/lang/wamcc
-wanderlust-emacs	ports/mail/wanderlust-emacs
+wanderlust	ports/mail/wanderlust
 wanderlust-emacs20	ports/mail/wanderlust-emacs20
-wanderlust-mule	ports/mail/wanderlust-mule
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
 wapsh		ports/shells/wapsh
 wargames	src/games/wargames
