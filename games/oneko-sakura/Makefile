@@ -21,6 +21,7 @@ MAINTAINER=	hotaru@tail.net
 USE_IMAKE=	yes
 MAN6=		oneko.6
 NO_CDROM=	"Including a derivative from CARDCAPTOR SAKURA. See http://www.clamp.f-2.co.jp/"
+RESTRICTED_FILES=	${PATCHFILES}
 
 pre-configure:
 	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/Imakefile
