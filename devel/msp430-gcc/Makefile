@@ -9,7 +9,7 @@ PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
-		http://lev.serebryakov.spb.ru/download/msp430/:patches/
+		http://lev.serebryakov.spb.ru/download/msp430/:patches
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
 PKGNAMEPREFIX=	msp430-
 DISTFILES=	${PORTNAME}-core-${GCCVERSION}${EXTRACT_SUFX} \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
 GCCVERSION=	3.2
-PATCHVERSION=	20021016
+PATCHVERSION=	20021105
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 
@@ -40,7 +40,7 @@ MAN7=		fsf-funding.7 gfdl.7 gpl.7
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
 
-BINARIES	= gcc cpp
+BINARIES=	gcc cpp
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=).+$$,\1,' ${WRKSRC}/Makefile
