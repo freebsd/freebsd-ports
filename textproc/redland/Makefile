@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	redland
-PORTVERSION=	0.9.15
-PORTREVISION=	1
+PORTVERSION=	0.9.16
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
