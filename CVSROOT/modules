@@ -2068,6 +2068,7 @@ gdesklets-imapmail	ports/mail/gdesklets-imapmail
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-sensor-psi_iconbutton	ports/deskutils/gdesklets-sensor-psi_iconbutton
+gdesklets-sensor-psi_variableborder	ports/deskutils/gdesklets-sensor-psi_variableborder
 gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-sysinfo	ports/sysutils/gdesklets-sysinfo
