@@ -1,0 +1,6 @@
+@owner bin
+@mode 755
+bin/rtf2LaTeX
+@mode 644
+man/man1/rtf2LaTeX.1
+lib/rtf
