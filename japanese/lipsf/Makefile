@@ -3,7 +3,7 @@
 # Date created:		6 Dec 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1997/04/30 03:18:03 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/14 21:34:53 max Exp $
 #
 
 DISTNAME=	lipsf113
@@ -11,12 +11,12 @@ PKGNAME=	ja-lipsf-1.13c
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/tools/
 
-PATCHFILES=	lipsf113c.patch.gz
 PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCHFILES=	lipsf113c.patch.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 MAN1=		lipsf.1 pols.1
 
 DOCDIR=		${PREFIX}/share/doc/lipsf

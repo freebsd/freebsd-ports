@@ -1,8 +1,9 @@
 bin/lipsf
 bin/pols
-man/ja_JP.EUC/man1/lipsf.1.gz
-man/ja_JP.EUC/man1/pols.1.gz
+man/ja/man1/lipsf.1.gz
+man/ja/man1/pols.1.gz
 share/doc/lipsf/HISTORY
 share/doc/lipsf/Install
 share/doc/lipsf/README
 share/doc/lipsf/TECHKNOW
+@dirrm share/doc/lipsf
