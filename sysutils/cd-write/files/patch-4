@@ -1,5 +1,5 @@
---- c++tk/c++tk.cc.orig	Sun Nov 28 19:32:37 1999
-+++ c++tk/c++tk.cc	Sun Nov 28 19:42:32 1999
+--- c++tk/c++tk.cc.orig	Thu Sep 25 03:43:24 1997
++++ c++tk/c++tk.cc	Sun Dec  5 17:06:02 1999
 @@ -28,6 +28,9 @@
  //  $Id: c++tk.cc,v 1.22 1997/05/19 04:06:12 jmz Exp $
  //
@@ -29,12 +29,16 @@
      sprintf (xstr, "%s configure -variable %s%x", pname, VARNAME, v);\
      TkError = Tcl_GlobalEval (interp, xstr);\
      sprintf (xstr, "%s%x", VARNAME, v);\
-@@ -289,7 +294,7 @@
-     Tk_Init (interp);
-     Tcl_StaticPackage (interp, "Tk", Tk_Init, 0);
- #ifdef TIX
--    if (Tixsam_Init (interp) != TCL_OK ) {
-+    if (Tix_Init (interp) != TCL_OK ) {
-         fprintf(stderr,"Can't initialize the Tix extension.\n");
-         exit(1);
+@@ -270,7 +275,11 @@
      }
+     return 0;
+ }
+-
++#ifdef TIX
++extern "C" {
++    int Tixsam_Init (Tcl_Interp *);
++}
++#endif
+ static void
+ initialize ()
+ {
