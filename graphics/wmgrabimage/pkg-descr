@@ -1,4 +1,4 @@
-wmGrabImage is a WindowMaker DockApp that maintains a small thumbnail copy of
+wmGrabImage is a Window Maker DockApp that maintains a small thumbnail copy of
 your favorite image from the WWW.  The image to monitor is specified via the
 "-url <Image URL>" command-line option and it gets updated approximately every
 5 minutes.  The update interval can be overridden via the "-delay <Time>"
