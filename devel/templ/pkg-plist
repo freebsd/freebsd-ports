@@ -1,0 +1,15 @@
+bin/templ
+share/templates/t.c
+share/templates/t.cc
+share/templates/t.css
+share/templates/t.html
+share/templates/t.makefile
+share/templates/t.pl
+share/templates/t.pmakefile
+share/templates/t.py
+share/templates/t.sgml
+share/templates/t.sh
+share/templates/t.txt
+share/doc/templates/README
+@dirrm share/templates
+@dirrm share/doc/templates

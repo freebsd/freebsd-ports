@@ -1,0 +1,20 @@
+templ
+-----
+
+templ is a source code templates generator utility.
+supported type list :
+
+[ c          : C                        ]
+[ cc         : C++                      ]
+[ css        : Cascading Style Sheet    ]
+[ html       : HTML                     ]
+[ makefile   : Makefile                 ]
+[ pl         : Perl                     ]
+[ pmakefile  : BSD Port Makefile        ]
+[ py         : Python                   ]
+[ sh         : Shell Script             ]
+[ sgml       : SGML                     ]
+[ txt        : Text File                ]
+
+--
+Made by Oh Junseon <hollywar@mail.holywar.net>
