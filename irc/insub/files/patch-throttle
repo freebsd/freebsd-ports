@@ -1,0 +1,10 @@
+--- insub.old	Tue Feb 22 22:53:08 2005
++++ insub.pl	Tue Feb 22 22:54:22 2005
+@@ -916,6 +916,7 @@
+ 	}
+ 
+ 
++	$| = 1 if ($throttle);
+ 	foreach my $line (split(/\n/, $text)) {
+ 		if ($CONTEXT eq 'irssi') {
+ 			$cmd = "msg $sendto" unless $cmd;
