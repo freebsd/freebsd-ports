@@ -142,6 +142,7 @@
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
+    SUBDIR += py-rijndael
     SUBDIR += racoon
     SUBDIR += radiusniff
     SUBDIR += rid

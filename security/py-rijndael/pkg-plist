@@ -1,0 +1,3 @@
+lib/%%PYTHON_VERSION%%/site-packages/pyRijndael.py
+lib/%%PYTHON_VERSION%%/site-packages/pyRijndael.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pyRijndael.pyo
