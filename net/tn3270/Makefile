@@ -13,7 +13,7 @@ MASTER_SITES=	http://people.freebsd.org/~markm/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/distfiles/
 DISTNAME=	tn3270
 
-MAINTAINER=	pdseniura@techie.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Full-screen remote login to IBM VM/CMS
 
 MAN1=		tn3270.1 mset.1
