@@ -222,13 +222,11 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
-    SUBDIR += kdetelnet
     SUBDIR += kmess
     SUBDIR += konverse
     SUBDIR += kopete
     SUBDIR += krdesktop
     SUBDIR += kxicq-devel
-    SUBDIR += kxicq2
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldapdiff
