@@ -1,0 +1,26 @@
+--- Makefile.orig	Wed Oct 22 16:44:56 2003
++++ Makefile	Wed Oct 22 16:45:37 2003
+@@ -1,10 +1,11 @@
+-CC = gcc
++CC ?= cc
+ OBJ = edit.o term.o screen.o stuff.o io.o editor.o
+ 
+ #----------------------------------------------------------
+ # FreeBSD
+ #----------------------------------------------------------
+-CFLAGS = -DVEDITOR
++CFLAGS ?= -O -pipe
++CFLAGS += -DVEDITOR
+ LIBS = -ltermcap -lcompat
+ 
+ #----------------------------------------------------------
+@@ -31,7 +32,7 @@
+ 	cp 00readme.txt ve.hlp /usr/local/share/ve
+ 
+ ve: $(OBJ)
+-	gcc $(CFLAGS) -o ve $(OBJ) $(LIBS)
++	$(CC) $(CFLAGS) -o ve $(OBJ) $(LIBS)
+ 
+ entab: entab.o
+-	gcc -o entab entab.o
++	$(CC) -o entab entab.o

@@ -1,0 +1,16 @@
+--- Makefile.orig	Wed Oct 22 16:58:23 2003
++++ Makefile	Wed Oct 22 16:58:37 2003
+@@ -1,11 +1,11 @@
+ # Makefile
+ 
+-CC=gcc
++CC?=cc
+ #DEBUG=-g -DDEBUG
+ 
+ # Add -DLINUX if you compile on Linux
+ # Thanks to Gary Miller <gem@rellim.com>
+-CFLAGS=-O2 -Wall
++CFLAGS?=-O -pipe
+ OBJS=main.o null.o ether.o ip.o
+ LIBS= -lpcap
+ SRC=$(OBJS:%.o=%.c)
