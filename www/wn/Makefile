@@ -3,10 +3,10 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.21 1997/08/10 23:50:33 adam Exp $
+# $Id: Makefile,v 1.22 1997/09/07 17:24:44 adam Exp $
 #
 
-DISTNAME=       wn-1.18.1
+DISTNAME=       wn-1.18.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
@@ -25,7 +25,7 @@ post-install:
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wn ${PREFIX}/libexec
 	@install -c -o bin -g bin  ${WRKSRC}/bin/swn ${PREFIX}/sbin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/wndex ${PREFIX}/bin
-	@install -c -o bin -g bin  ${WRKSRC}/bin/mkpasswd ${PREFIX}/wn/bin
+	@install -c -o bin -g bin  ${WRKSRC}/bin/mkwnpasswd ${PREFIX}/wn/bin
 	@install -c -o bin -g bin  ${WRKSRC}/bin/authwn ${PREFIX}/wn/bin
 	@if [ -s ${PREFIX}/etc/wn_mime.types ]; then \
 	    cmp -s ${PREFIX}/etc/wn_mime.types ${WRKSRC}/lib/mime.types || \
