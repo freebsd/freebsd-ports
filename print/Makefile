@@ -160,6 +160,7 @@
     SUBDIR += pdflib-perl
     SUBDIR += pdftk
     SUBDIR += pdq
+    SUBDIR += pecl-pdflib
     SUBDIR += perlftlib
     SUBDIR += pfbtopfa
     SUBDIR += phppdflib
