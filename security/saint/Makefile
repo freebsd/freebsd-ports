@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.wwdsi.com/saint/downloads/	\
-		ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
-		ftp://ftp.wwdsi.com/pub/saint/
+MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
+		http://www.wwdsi.com/saint/downloads/		\
+		ftp://ukug.uk.freebsd.org/pub/lord_cj/
 DISTNAME=	${PKGNAME}.beta2
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
+RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/saint-2.0.1
+WRKSRC=		${WRKDIR}/saint-2.0.2
 MAKE_ENV=	XFLAGS="DAUTH_GID_T=int -DSYS_ERRLIST_DECLARED -DFDSETSIZE=2048"
 ALL_TARGET=	freebsd
 INSTALL_TARGET=	all
