@@ -1,0 +1,11 @@
+%%SITE_PERL%%/IO/Capture.pm
+%%SITE_PERL%%/IO/Capture/ErrorMessages.pm
+%%SITE_PERL%%/IO/Capture/Overview.pod
+%%SITE_PERL%%/IO/Capture/Stderr.pm
+%%SITE_PERL%%/IO/Capture/Stdout.pm
+%%SITE_PERL%%/IO/Capture/Tie_STDx.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Capture/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Capture 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO/Capture 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true

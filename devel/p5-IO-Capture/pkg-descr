@@ -1,0 +1,11 @@
+The C<IO::Capture> Module defines an abstract base class that can be
+used to build modules that capture output being sent on a filehandle 
+such as STDOUT or STDERR.
+  Several modules that come with the distribution, do just that.  
+(I.e., Capture STDOUT and STDERR)  See L<IO::Capture::Overview> for a 
+discussion of these modules and examples of how to build a module to 
+sub-class from C<IO::Capture> yourself.   If after reading the overview, 
+you would like to build a class from C<IO::Capture>, look here for 
+details on the internals.
+
+WWW: http://search.cpan.org/dist/IO-Capture
