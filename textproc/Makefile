@@ -16,11 +16,14 @@
     SUBDIR += ascii2pdf
     SUBDIR += asm2html
     SUBDIR += aspell
+    SUBDIR += az-aspell
+    SUBDIR += be-aspell
     SUBDIR += bedic-data
     SUBDIR += bg-aspell
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bidiv
+    SUBDIR += bn-aspell
     SUBDIR += br-aspell
     SUBDIR += british-ispell
     SUBDIR += c2html
@@ -95,9 +98,11 @@
     SUBDIR += eo-aspell
     SUBDIR += eruby
     SUBDIR += es-aspell
+    SUBDIR += et-aspell
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += fdp-tools
+    SUBDIR += fi-aspell
     SUBDIR += filepp
     SUBDIR += fist
     SUBDIR += fo-aspell
@@ -132,6 +137,7 @@
     SUBDIR += highlight
     SUBDIR += hr-aspell
     SUBDIR += hs-haxml
+    SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += html-pretty
@@ -171,6 +177,7 @@
     SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += l2a
+    SUBDIR += la-aspell
     SUBDIR += lacheck
     SUBDIR += latex2html
     SUBDIR += latte
@@ -194,7 +201,9 @@
     SUBDIR += linux-expat
     SUBDIR += linux-libxml
     SUBDIR += linuxdoc
+    SUBDIR += lt-aspell
     SUBDIR += ltxml
+    SUBDIR += lv-aspell
     SUBDIR += makefaq
     SUBDIR += makepatch
     SUBDIR += maketeidtd
@@ -208,7 +217,9 @@
     SUBDIR += mifluz
     SUBDIR += mini-xml
     SUBDIR += minidom
+    SUBDIR += mk-aspell
     SUBDIR += mkcatalog
+    SUBDIR += mn-aspell
     SUBDIR += modlogan
     SUBDIR += ms-aspell
     SUBDIR += mt-aspell
@@ -220,6 +231,7 @@
     SUBDIR += nltk
     SUBDIR += nn-aspell
     SUBDIR += nunnimcax
+    SUBDIR += ny-aspell
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo
@@ -490,6 +502,7 @@
     SUBDIR += py-xmltools
     SUBDIR += py2html
     SUBDIR += pybook
+    SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand
     SUBDIR += raptor
@@ -542,6 +555,7 @@
     SUBDIR += ruby-xmlscan-old
     SUBDIR += ruby-xslt
     SUBDIR += ruby-xtemplate
+    SUBDIR += rw-aspell
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sagasu
@@ -549,6 +563,7 @@
     SUBDIR += sary
     SUBDIR += saxon
     SUBDIR += saxon-devel
+    SUBDIR += sc-aspell
     SUBDIR += scim
     SUBDIR += scr2txt
     SUBDIR += scrollkeeper
@@ -578,6 +593,7 @@
     SUBDIR += stardict2
     SUBDIR += sv-aspell
     SUBDIR += sw-aspell
+    SUBDIR += ta-aspell
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += tei-guidelines-p3
@@ -588,11 +604,13 @@
     SUBDIR += tei-xlite
     SUBDIR += tei-xsl-fo
     SUBDIR += tei-xsl-html
+    SUBDIR += tet-aspell
     SUBDIR += tex2im
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += tinyxml
     SUBDIR += tkdiff
+    SUBDIR += tl-aspell
     SUBDIR += tn-aspell
     SUBDIR += tnef2txt
     SUBDIR += tr-aspell
@@ -605,6 +623,7 @@
     SUBDIR += unroff
     SUBDIR += unrtf
     SUBDIR += urlview
+    SUBDIR += uz-aspell
     SUBDIR += wa-aspell
     SUBDIR += wdiff
     SUBDIR += webcpp
@@ -651,6 +670,7 @@
     SUBDIR += xt
     SUBDIR += xxdiff
     SUBDIR += y2l
+    SUBDIR += yi-aspell
     SUBDIR += yodl
     SUBDIR += zu-aspell
 

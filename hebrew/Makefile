@@ -3,6 +3,7 @@
 
     COMMENT = Hebrew support
 
+    SUBDIR += aspell
     SUBDIR += culmus
     SUBDIR += elmar-fonts
     SUBDIR += he2

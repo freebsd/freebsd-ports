@@ -6,6 +6,7 @@
 .if !defined(NO_VIET_KDE)
     SUBDIR += kde3-i18n
 .endif
+    SUBDIR += aspell
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
     SUBDIR += vi2vn

@@ -537,6 +537,7 @@ axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
 ayam		ports/graphics/ayam
 ayttm		ports/net/ayttm
+az-aspell	ports/textproc/az-aspell
 b2bua		ports/net/b2bua
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
@@ -590,6 +591,7 @@ bclock		ports/x11-clocks/bclock
 bcpp		ports/devel/bcpp
 bcwipe		ports/security/bcwipe
 bdfresize	ports/x11-fonts/bdfresize
+be-aspell	ports/textproc/be-aspell
 beacon		ports/net/beacon
 beacon-server	ports/net/beacon-server
 beagle		ports/devel/beagle
@@ -701,6 +703,7 @@ bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
 bmp-wma		ports/audio/bmp-wma
+bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net/bnbt
 bnc		ports/irc/bnc
 bnf		ports/devel/bnf
@@ -1789,6 +1792,7 @@ esound		ports/audio/esound
 est		ports/sysutils/est
 estic		ports/misc/estic
 esvn		ports/devel/esvn
+et-aspell	ports/textproc/et-aspell
 etcmerge	ports/sysutils/etcmerge
 eterm		ports/x11/eterm
 eterm-bg	ports/graphics/eterm-bg
@@ -1934,6 +1938,7 @@ fget		ports/ftp/fget
 fgkicker	ports/games/fgkicker
 fhist		ports/devel/fhist
 fhttpd		ports/www/fhttpd
+fi-aspell	ports/textproc/fi-aspell
 fib		ports/devel/fib
 ficl-devel	ports/lang/ficl-devel
 fidelio		ports/net/fidelio
@@ -3147,6 +3152,7 @@ hs-popenhs	ports/devel/hs-popenhs
 hs-port		ports/x11-toolkits/hs-port
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hs-uni		ports/devel/hs-uni
+hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
 hsftp		ports/ftp/hsftp
 htdig		ports/textproc/htdig
@@ -3175,6 +3181,7 @@ httpgrabber	ports/www/httpgrabber
 httplog		ports/sysutils/httplog
 httptunnel	ports/www/httptunnel
 httrack		ports/www/httrack
+hu-aspell	ports/hungarian/aspell
 hu-hu-phone	ports/hungarian/hu-phone
 hu-hu-zipcodes	ports/hungarian/hu-zipcodes
 hu-hunspell	ports/hungarian/hunspell
@@ -3431,6 +3438,7 @@ its		ports/emulators/its
 its4		ports/security/its4
 iverilog	ports/cad/iverilog
 ivtools		ports/graphics/ivtools
+iw-aspell	ports/hebrew/aspell
 iw-culmus	ports/hebrew/culmus
 iw-elmar-fonts	ports/hebrew/elmar-fonts
 iw-he2		ports/hebrew/he2
@@ -4416,6 +4424,7 @@ l0phtcrack	ports/security/l0phtcrack
 l2a		ports/textproc/l2a
 l2tpd		ports/net/l2tpd
 l5		ports/security/l5
+la-aspell	ports/textproc/la-aspell
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
@@ -5062,6 +5071,7 @@ lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
 lsysexp		ports/biology/lsysexp
+lt-aspell	ports/textproc/lt-aspell
 ltmdm		ports/comms/ltmdm
 ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
@@ -5075,6 +5085,7 @@ luna		ports/astro/luna
 lupe		ports/x11/lupe
 lush		ports/lang/lush
 lv		ports/misc/lv
+lv-aspell	ports/textproc/lv-aspell
 lwm		ports/x11-wm/lwm
 lwp		ports/devel/lwp
 lws		ports/www/lws
@@ -5345,6 +5356,7 @@ mixminion	ports/mail/mixminion
 mixmos		ports/audio/mixmos
 mixxx		ports/audio/mixxx
 mjpegtools	ports/multimedia/mjpegtools
+mk-aspell	ports/textproc/mk-aspell
 mkbold		ports/x11-fonts/mkbold
 mkcatalog	ports/textproc/mkcatalog
 mkcmd		ports/devel/mkcmd
@@ -5388,6 +5400,7 @@ mmsclient	ports/multimedia/mmsclient
 mmtk		ports/science/mmtk
 mmucl		ports/net/mmucl
 mmv		ports/misc/mmv
+mn-aspell	ports/textproc/mn-aspell
 mnemo		ports/deskutils/mnemo
 mnogosearch	ports/www/mnogosearch
 mob		ports/devel/mob
@@ -5983,6 +5996,7 @@ nwreckdum	ports/archivers/nwreckdum
 nwrite		ports/misc/nwrite
 nxml-emacs21	ports/editors/nxml-emacs21
 nxtvepg		ports/multimedia/nxtvepg
+ny-aspell	ports/textproc/ny-aspell
 nylon		ports/net/nylon
 nzbget		ports/news/nzbget
 o2c		ports/lang/o2c
@@ -8879,6 +8893,7 @@ qtpcr		ports/comms/qtpcr
 qtpixmap	ports/x11-toolkits/qtpixmap
 qtpkg		ports/sysutils/qtpkg
 qtutils		ports/graphics/qtutils
+qu-aspell	ports/textproc/qu-aspell
 quack		ports/lang/quack
 quagga		ports/net/quagga
 quake2forge	ports/games/quake2forge
@@ -9417,6 +9432,7 @@ runit		ports/sysutils/runit
 runwhen		ports/sysutils/runwhen
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
+rw-aspell	ports/textproc/rw-aspell
 rwhois		ports/net/rwhois
 rxp		ports/textproc/rxp
 rxvt		ports/x11/rxvt
@@ -9472,6 +9488,7 @@ sbcl		ports/lang/sbcl
 sbd		ports/net/sbd
 sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
+sc-aspell	ports/textproc/sc-aspell
 scalapack	ports/math/scalapack
 scan_ffs	ports/sysutils/scan_ffs
 scand		ports/net/scand
@@ -10067,6 +10084,7 @@ t3d		ports/x11-clocks/t3d
 t3x		ports/lang/t3x
 tRNAscan-SE	ports/biology/tRNAscan-SE
 t_coffee	ports/biology/t_coffee
+ta-aspell	ports/textproc/ta-aspell
 tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
@@ -10178,6 +10196,7 @@ termlog		ports/security/termlog
 terraform	ports/misc/terraform
 testdisk	ports/sysutils/testdisk
 tet		ports/misc/tet
+tet-aspell	ports/textproc/tet-aspell
 tethereal	ports/net/tethereal
 tethereal-lite	ports/net/tethereal-lite
 tetradraw	ports/editors/tetradraw
@@ -10291,6 +10310,7 @@ tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
+tl-aspell	ports/textproc/tl-aspell
 tla		ports/devel/tla
 tlb		ports/mail/tlb
 tmake		ports/devel/tmake
@@ -10543,6 +10563,7 @@ uulib		ports/converters/uulib
 uvscan-dat	ports/security/uvscan-dat
 uwatch		ports/sysutils/uwatch
 uwm		ports/x11-wm/uwm
+uz-aspell	ports/textproc/uz-aspell
 uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
 v6eval		ports/net/v6eval
@@ -10581,6 +10602,7 @@ vertex		ports/graphics/vertex
 vgb		ports/emulators/vgb
 vgb-bin		ports/emulators/vgb-bin
 vgba-bin	ports/emulators/vgba-bin
+vi-aspell	ports/vietnamese/aspell
 vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
@@ -11590,6 +11612,7 @@ yazproxy	ports/net/yazproxy
 yell		ports/audio/yell
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
+yi-aspell	ports/textproc/yi-aspell
 ymessenger	ports/net/ymessenger
 yodl		ports/textproc/yodl
 yorick		ports/lang/yorick
