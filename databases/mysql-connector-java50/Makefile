@@ -26,16 +26,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
-PLIST_FILES=	share/java/classes/jdbc2_0-stdext.jar \
-		share/java/classes/jta-spec1_0_1.jar \
-		share/java/classes/mysql-connector-java.jar
-
 .if !defined(WITHOUT_COMPILE)
 
 BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
-USE_JAVA=	1.4+
-NEED_JAVAC=	YES
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_BUILD=	yes
 
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
@@ -44,7 +41,9 @@ BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
 
 .else
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+JAVA_RUN=	yes
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 
 .endif
@@ -55,6 +54,10 @@ EXTRAJARS=	jdbc2_0-stdext.jar jta-spec1_0_1.jar
 EXTRADOCS=	README CHANGES
 JARFILE=	${DISTNAME}-bin.jar
 JDCLASSPATH=	${WRKSRC}:${WRKSRC}/lib/jdbc2_0-stdext.jar:${WRKSRC}/lib/jta-spec1_0_1.jar:${CLASSPATH}
+
+PLIST_FILES=	share/java/classes/jdbc2_0-stdext.jar \
+		share/java/classes/jta-spec1_0_1.jar \
+		share/java/classes/mysql-connector-java.jar
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
