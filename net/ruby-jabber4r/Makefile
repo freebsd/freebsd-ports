@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jabber4r
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	net ruby
-MASTER_SITES=	http://www.infoether.com/ruby/jabber4r/releases/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	http://rubyforge.org/download.php/5/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
@@ -18,17 +17,21 @@ COMMENT=	A Ruby library to connect to an existing Jabber account
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
 
-USE_ZIP=	yes
-
 USE_RUBY=	yes
+USE_RUBY_RDOC=		yes
 
-NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DOCS=		LICENSE.txt README doc
 EXAMPLES=	examples/*
 
 post-extract:
 	${RM} ${WRKSRC}/lib/jabber4r/LICENSE.txt
+
+do-build:
+.if !defined(NOPORTDOCS)
+	cd ${BUILD_WRKSRC}; ${RUBY_RDOC}
+.endif
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
@@ -39,7 +42,7 @@ do-install:
 .endfor
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 .endif
 

@@ -15,4 +15,4 @@ does support:
 * Pluggable xml parsers (rexml/xmlparser)
 
 Author:	Richard Kilmer <rich@infoether.com>
-WWW:	http://www.infoether.com/ruby/jabber4r/
+WWW:	http://jabber4r.rubyforge.org/
