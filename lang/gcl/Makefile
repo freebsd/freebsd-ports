@@ -1,16 +1,15 @@
 # New ports collection makefile for:    gcl
-# Version required:     1.1
+# Version required:     2.0
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:46:51 jkh Exp $
+# $Id$
 #
 
-DISTNAME=       gcl-1.1
+DISTNAME=       gcl-2.0
 CATEGORIES+=	languages
 MASTER_SITES=   ftp://ftp.cli.com/pub/gcl/ ftp://math.utexas.edu/pub/gcl/
 EXTRACT_SUFX=	.tgz
-
 MAKEFILE=	makefile
 
 INSTALL_COOKIE=	${WRKDIR}/.install_done
