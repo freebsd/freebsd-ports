@@ -14,6 +14,8 @@ share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/gnome/pixmaps/glunarclock/moon_60frames.png
 share/locale/de/LC_MESSAGES/glunarclock.mo
 share/locale/fr/LC_MESSAGES/glunarclock.mo
+share/locale/hu/LC_MESSAGES/glunarclock.mo
+share/locale/sv/LC_MESSAGES/glunarclock.mo
 @dirrm share/gnome/pixmaps/glunarclock
 @dirrm share/gnome/help/glunarclock_applet/C/stylesheet-images
 @dirrm share/gnome/help/glunarclock_applet/C

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glunarclock
-PORTVERSION=	0.22.2
+PORTVERSION=	0.22.3
 CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,9 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@${RM} -f ${WRKSRC}/config.cache
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
