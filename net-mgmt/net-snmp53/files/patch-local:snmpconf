@@ -1,30 +1,30 @@
---- local/snmpconf.orig	Tue Apr 20 23:20:51 2004
-+++ local/snmpconf	Thu Jun 24 23:12:06 2004
+--- local/snmpconf.orig	Sat Oct  9 01:01:37 2004
++++ local/snmpconf	Mon Oct 25 08:42:23 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -w
 +#!%%PERL%% -w
  
  #
  # A simple configuration file builder based on questions listed in
-@@ -21,7 +21,7 @@
-   $opts{'c'} = "$ENV{SNMPSHAREPATH}/snmpconf-data";
+@@ -32,7 +32,7 @@
+     $opts{'c'} = "$ENV{SNMPSHAREPATH}/snmpconf-data";
+   }
+   else {
+-    $opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
++    $opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
+   }
+   
+   # default config file path
+@@ -40,7 +40,7 @@
+     $confpath = "$ENV{SNMPCONFPATH}";
+   }
+   else {
+-    $confpath = "/usr/local/share/snmp";
++    $confpath = "%%PREFIX%%/share/snmp";
+   }
  }
- else {
--  $opts{'c'} = "/usr/local/share/snmp/snmpconf-data";
-+  $opts{'c'} = "%%PREFIX%%/share/snmp/snmpconf-data";
- }
- 
- # default config file path
-@@ -29,7 +29,7 @@
-   $confpath = "$ENV{SNMPCONFPATH}";
- }
- else {
--  $confpath = "/usr/local/share/snmp";
-+  $confpath = "%%PREFIX%%/share/snmp";
- }
- 
- # home environment variable
-@@ -84,7 +84,7 @@
+ else
+@@ -128,7 +128,7 @@
  #
  # Find existing files to possibly read in.
  #
@@ -33,7 +33,7 @@
  push @searchpath, $opts{I} if ($opts{I});
  foreach my $i (@searchpath) {
      debug("searching $i\n");
-@@ -183,7 +183,7 @@
+@@ -227,7 +227,7 @@
  	if ($opts{'i'} || $opts{'I'}) {
            $opts{'I'} = "$confpath" if (!$opts{'I'});
  
@@ -42,7 +42,7 @@
  	    print "\nCould not create $opts{'I'} directory: $!\n";
  	    print ("File $didfile{$i} left in current directory\n");
  	  }
-@@ -198,7 +198,7 @@
+@@ -242,7 +242,7 @@
              }
            }
  	} elsif ($opts{'p'}) {

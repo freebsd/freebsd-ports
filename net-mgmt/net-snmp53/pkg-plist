@@ -2,6 +2,7 @@ bin/encode_keychange
 bin/fixproc
 bin/ipf-mod.pl
 bin/mib2c
+bin/mib2c-update
 bin/net-snmp-config
 bin/snmpbulkget
 bin/snmpbulkwalk
@@ -30,6 +31,7 @@ etc/rc.d/snmptrapd.sh
 include/net-snmp/agent/agent_callbacks.h
 include/net-snmp/agent/agent_handler.h
 include/net-snmp/agent/agent_index.h
+include/net-snmp/agent/agent_module_config.h
 include/net-snmp/agent/agent_read_config.h
 include/net-snmp/agent/agent_registry.h
 include/net-snmp/agent/agent_trap.h
@@ -41,8 +43,10 @@ include/net-snmp/agent/cache_handler.h
 include/net-snmp/agent/debug_handler.h
 include/net-snmp/agent/ds_agent.h
 include/net-snmp/agent/instance.h
+include/net-snmp/agent/mfd.h
 include/net-snmp/agent/mib_module_config.h
 include/net-snmp/agent/mib_module_includes.h
+include/net-snmp/agent/mib_modules.h
 include/net-snmp/agent/mode_end_call.h
 include/net-snmp/agent/multiplexer.h
 include/net-snmp/agent/net-snmp-agent-includes.h
@@ -58,6 +62,7 @@ include/net-snmp/agent/snmp_agent.h
 include/net-snmp/agent/snmp_vars.h
 include/net-snmp/agent/table.h
 include/net-snmp/agent/table_array.h
+include/net-snmp/agent/table_container.h
 include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
@@ -134,6 +139,7 @@ include/net-snmp/system/bsdi3.h
 include/net-snmp/system/bsdi4.h
 include/net-snmp/system/cygwin.h
 include/net-snmp/system/darwin.h
+include/net-snmp/system/darwin7.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
 include/net-snmp/system/freebsd2.h
@@ -186,6 +192,7 @@ lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Makefile.subs.pl
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/ASN.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/OID.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/TrapReceiver.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/default_store.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/agent/netsnmp_request_infoPtr.pm
@@ -198,6 +205,9 @@ lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/OID.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/TrapReceiver/TrapReceiver.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/TrapReceiver/TrapReceiver.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/TrapReceiver/autosplit.ix
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/agent.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/autosplit.ix
@@ -222,20 +232,88 @@ sbin/snmptrapd
 %%PORTDOCS%%%%DOCSDIR%%/README.snmpv3
 %%PORTDOCS%%%%DOCSDIR%%/README.thread
 %%PORTDOCS%%%%DOCSDIR%%/README.smux
+%%DATADIR%%/snmpd.conf.example
+%%DATADIR%%/snmp_perl_trapd.pl
 %%DATADIR%%/mib2c.access_functions.conf
 %%DATADIR%%/mib2c.array-user.conf
 %%DATADIR%%/mib2c.check_values.conf
 %%DATADIR%%/mib2c.check_values_local.conf
 %%DATADIR%%/mib2c.column_defines.conf
 %%DATADIR%%/mib2c.column_enums.conf
+%%DATADIR%%/mib2c.column_storage.conf
 %%DATADIR%%/mib2c.conf
 %%DATADIR%%/mib2c.create-dataset.conf
+%%DATADIR%%/mib2c.genhtml.conf
 %%DATADIR%%/mib2c.int_watch.conf
 %%DATADIR%%/mib2c.iterate.conf
 %%DATADIR%%/mib2c.iterate_access.conf
+%%DATADIR%%/mib2c.mfd.conf
 %%DATADIR%%/mib2c.notify.conf
 %%DATADIR%%/mib2c.old-api.conf
 %%DATADIR%%/mib2c.scalar.conf
+%%DATADIR%%/mib2c-data/default-mfd-top.m2c
+%%DATADIR%%/mib2c-data/details-enums.m2i
+%%DATADIR%%/mib2c-data/details-node.m2i
+%%DATADIR%%/mib2c-data/details-table.m2i
+%%DATADIR%%/mib2c-data/generic-ctx-copy.m2i
+%%DATADIR%%/mib2c-data/generic-ctx-get.m2i
+%%DATADIR%%/mib2c-data/generic-ctx-set.m2i
+%%DATADIR%%/mib2c-data/generic-data-allocate.m2i
+%%DATADIR%%/mib2c-data/generic-data-context.m2i
+%%DATADIR%%/mib2c-data/generic-get-char.m2i
+%%DATADIR%%/mib2c-data/generic-get-decl-bot.m2i
+%%DATADIR%%/mib2c-data/generic-get-decl.m2i
+%%DATADIR%%/mib2c-data/generic-get-long.m2i
+%%DATADIR%%/mib2c-data/generic-get-oid.m2i
+%%DATADIR%%/mib2c-data/generic-header-bottom.m2i
+%%DATADIR%%/mib2c-data/generic-header-top.m2i
+%%DATADIR%%/mib2c-data/generic-source-includes.m2i
+%%DATADIR%%/mib2c-data/generic-table-constants.m2c
+%%DATADIR%%/mib2c-data/generic-table-enums.m2c
+%%DATADIR%%/mib2c-data/generic-table-indexes-from-oid.m2i
+%%DATADIR%%/mib2c-data/generic-table-indexes-set.m2i
+%%DATADIR%%/mib2c-data/generic-table-indexes-to-oid.m2i
+%%DATADIR%%/mib2c-data/generic-table-indexes-varbind-setup.m2i
+%%DATADIR%%/mib2c-data/generic-table-indexes.m2i
+%%DATADIR%%/mib2c-data/generic-table-oids.m2c
+%%DATADIR%%/mib2c-data/generic-value-map-func.m2i
+%%DATADIR%%/mib2c-data/generic-value-map-reverse.m2i
+%%DATADIR%%/mib2c-data/generic-value-map.m2i
+%%DATADIR%%/mib2c-data/m2c-internal-warning.m2i
+%%DATADIR%%/mib2c-data/m2c_setup_enum.m2i
+%%DATADIR%%/mib2c-data/m2c_setup_node.m2i
+%%DATADIR%%/mib2c-data/m2c_setup_table.m2i
+%%DATADIR%%/mib2c-data/mfd-access-container-cached-defines.m2i
+%%DATADIR%%/mib2c-data/mfd-access-unsorted-external-defines.m2i
+%%DATADIR%%/mib2c-data/mfd-data-access.m2c
+%%DATADIR%%/mib2c-data/mfd-data-get.m2c
+%%DATADIR%%/mib2c-data/mfd-data-set.m2c
+%%DATADIR%%/mib2c-data/mfd-doxygen.m2c
+%%DATADIR%%/mib2c-data/mfd-interactive-setup.m2c
+%%DATADIR%%/mib2c-data/mfd-interface.m2c
+%%DATADIR%%/mib2c-data/mfd-makefile.m2m
+%%DATADIR%%/mib2c-data/mfd-readme.m2c
+%%DATADIR%%/mib2c-data/mfd-top.m2c
+%%DATADIR%%/mib2c-data/node-get.m2i
+%%DATADIR%%/mib2c-data/node-set.m2i
+%%DATADIR%%/mib2c-data/node-storage.m2i
+%%DATADIR%%/mib2c-data/node-varbind-validate.m2i
+%%DATADIR%%/mib2c-data/parent-dependencies.m2i
+%%DATADIR%%/mib2c-data/parent-set.m2i
+%%DATADIR%%/mib2c-data/subagent.m2c
+%%DATADIR%%/mib2c-data/syntax-COUNTER64-get.m2i
+%%DATADIR%%/mib2c-data/syntax-DateAndTime-get.m2d
+%%DATADIR%%/mib2c-data/syntax-DateAndTime-get.m2i
+%%DATADIR%%/mib2c-data/syntax-DateAndTime-readme.m2i
+%%DATADIR%%/mib2c-data/syntax-InetAddress-get.m2i
+%%DATADIR%%/mib2c-data/syntax-InetAddress-set.m2i
+%%DATADIR%%/mib2c-data/syntax-InetAddressType-get.m2i
+%%DATADIR%%/mib2c-data/syntax-InetAddressType-set.m2i
+%%DATADIR%%/mib2c-data/syntax-RowStatus-dependencies.m2i
+%%DATADIR%%/mib2c-data/syntax-RowStatus-get.m2i
+%%DATADIR%%/mib2c-data/syntax-RowStatus-varbind-validate.m2i
+%%DATADIR%%/mib2c-data/syntax-StorageType-dependencies.m2i
+%%DATADIR%%/mib2c-data/syntax-TestAndIncr-get.m2i
 %%DATADIR%%/mibs/AGENTX-MIB.txt
 %%WITH_EVENT-MIB%%%%DATADIR%%/mibs/DISMAN-EVENT-MIB.txt
 %%DATADIR%%/mibs/DISMAN-SCHEDULE-MIB.txt
@@ -260,6 +338,7 @@ sbin/snmptrapd
 %%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/MTA-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-AGENT-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXAMPLES-MIB.txt
+%%DATADIR%%/mibs/NET-SNMP-EXTEND-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-TC.txt
 %%WITH_MTA_SENDMAIL%%%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
@@ -277,6 +356,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMP-TARGET-MIB.txt
 %%DATADIR%%/mibs/SNMP-USER-BASED-SM-MIB.txt
 %%DATADIR%%/mibs/SNMP-USM-AES-MIB.txt
+%%DATADIR%%/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
 %%DATADIR%%/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
 %%DATADIR%%/mibs/SNMPv2-CONF.txt
 %%DATADIR%%/mibs/SNMPv2-MIB.txt
@@ -284,6 +364,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMPv2-TC.txt
 %%DATADIR%%/mibs/SNMPv2-TM.txt
 %%DATADIR%%/mibs/TCP-MIB.txt
+%%DATADIR%%/mibs/TRANSPORT-ADDRESS-MIB.txt
 %%DATADIR%%/mibs/UCD-DEMO-MIB.txt
 %%DATADIR%%/mibs/UCD-DISKIO-MIB.txt
 %%DATADIR%%/mibs/UCD-DLMOD-MIB.txt
@@ -305,9 +386,13 @@ sbin/snmptrapd
 %%DATADIR%%/snmpconf-data/snmpd-data/snmpconf-config
 %%DATADIR%%/snmpconf-data/snmpd-data/system
 %%DATADIR%%/snmpconf-data/snmpd-data/trapsinks
+%%DATADIR%%/snmpconf-data/snmptrapd-data/authentication
 %%DATADIR%%/snmpconf-data/snmptrapd-data/formatting
+%%DATADIR%%/snmpconf-data/snmptrapd-data/logging
+%%DATADIR%%/snmpconf-data/snmptrapd-data/runtime
 %%DATADIR%%/snmpconf-data/snmptrapd-data/snmpconf-config
 %%DATADIR%%/snmpconf-data/snmptrapd-data/traphandle
+@dirrm %%DATADIR%%/mib2c-data/
 @dirrm %%DATADIR%%/snmpconf-data/snmptrapd-data
 @dirrm %%DATADIR%%/snmpconf-data/snmpd-data
 @dirrm %%DATADIR%%/snmpconf-data/snmp-data
@@ -319,6 +404,7 @@ sbin/snmptrapd
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/default_store
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent/default_store
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/agent
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/TrapReceiver
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/OID
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP

@@ -4,9 +4,9 @@
      lines into /etc/rc.conf.
 
 	snmpd_enable="YES"
-	snmpd_flags="-as -p /var/run/snmpd.pid"
+	snmpd_flags="-a -p /var/run/snmpd.pid"
 	snmptrapd_enable="YES"
-	snmptrapd_flags="-as -p /var/run/snmptrapd.pid"
+	snmptrapd_flags="-a -p /var/run/snmptrapd.pid"
 
 **** You may specify the following make variables:
 
