@@ -43,6 +43,9 @@ pre-install:
 	${ECHO_CMD} share/openbox/nls/${ii}/openbox.cat >> ${PLIST}
 	${ECHO_CMD} @dirrm share/openbox/nls/${ii} >> ${PLIST}
 .endfor
+.for ii in POSIX US_ASCII de en en_US es fr it nl
+	${ECHO_CMD} share/openbox/nls/${ii} >> ${PLIST}
+.endfor
 .for ii in ${STYLES}
 	${ECHO_CMD} share/openbox/styles/${ii} >> ${PLIST}
 .endfor
@@ -67,6 +70,16 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/nls/${ii}/openbox.cat \
 		${PREFIX}/share/openbox/nls/${ii}/
 .endfor
+	cd ${PREFIX}/share/openbox/nls/ && \
+		${LN} -s C POSIX && \
+		${LN} -s C US_ASCII && \
+		${LN} -s C en && \
+		${LN} -s C en_US && \
+		${LN} -s de_DE de && \
+		${LN} -s es_ES es && \
+		${LN} -s fr_FR fr && \
+		${LN} -s it_IT it && \
+		${LN} -s nl_NL nl
 .for ii in ${STYLES}
 	${INSTALL_DATA} ${WRKSRC}/data/styles/${ii} \
 		${PREFIX}/share/openbox/styles/
