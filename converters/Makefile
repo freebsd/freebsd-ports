@@ -43,6 +43,7 @@
     SUBDIR += trans
     SUBDIR += tuc
     SUBDIR += unix2dos
+    SUBDIR += utf8conv
     SUBDIR += uudeview
     SUBDIR += uudx
     SUBDIR += uulib
