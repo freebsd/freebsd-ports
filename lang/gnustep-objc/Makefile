@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gnustep-objc
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.0
+#PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 

@@ -2,7 +2,6 @@
 ../etc/rc.d/GNUstep.sh
 System/Headers/%%GNU_ARCH%%/%%OPSYS%%/GSConfig.h
 System/Headers/%%GNU_ARCH%%/%%OPSYS%%/mframe.h
-System/Headers/Foundation/DistributedObjects.h
 System/Headers/Foundation/Foundation.h
 System/Headers/Foundation/GSMime.h
 System/Headers/Foundation/GSXML.h
@@ -74,6 +73,7 @@ System/Headers/Foundation/NSUtilities.h
 System/Headers/Foundation/NSValue.h
 System/Headers/Foundation/NSZone.h
 System/Headers/Foundation/objc-load.h
+System/Headers/gnustep/base/DistributedObjects.h
 System/Headers/gnustep/base/GSIArray.h
 System/Headers/gnustep/base/GSIMap.h
 System/Headers/gnustep/base/GSLocale.h
@@ -108,8 +108,14 @@ System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%MAJORVE
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%VERSION%%
 System/Libraries/Resources/DTDs/gsdoc-0_6_5.dtd
 System/Libraries/Resources/DTDs/gsdoc-0_6_6.dtd
+System/Libraries/Resources/DTDs/gsdoc-0_6_7.dtd
+System/Libraries/Resources/DTDs/plist-0_9.dtd
 System/Libraries/Resources/DocTemplates/AutoDocTemplate.gsdoc
 System/Libraries/Resources/DocTemplates/indextemplate.gsdoc
+System/Libraries/Resources/English.lproj/Localizable.strings
+System/Libraries/Resources/French.lproj/Localizable.strings
+System/Libraries/Resources/German.lproj/Localizable.strings
+System/Libraries/Resources/Italian.lproj/Localizable.strings
 System/Libraries/Resources/Languages/Dutch
 System/Libraries/Resources/Languages/English
 System/Libraries/Resources/Languages/French
@@ -289,6 +295,7 @@ System/Libraries/Resources/NSTimeZones/zones/America/Rainy_River
 System/Libraries/Resources/NSTimeZones/zones/America/Rankin_Inlet
 System/Libraries/Resources/NSTimeZones/zones/America/Recife
 System/Libraries/Resources/NSTimeZones/zones/America/Regina
+System/Libraries/Resources/NSTimeZones/zones/America/Rio_Branco
 System/Libraries/Resources/NSTimeZones/zones/America/Rosario
 System/Libraries/Resources/NSTimeZones/zones/America/Santiago
 System/Libraries/Resources/NSTimeZones/zones/America/Santo_Domingo
@@ -320,6 +327,7 @@ System/Libraries/Resources/NSTimeZones/zones/Antarctica/McMurdo
 System/Libraries/Resources/NSTimeZones/zones/Antarctica/Palmer
 System/Libraries/Resources/NSTimeZones/zones/Antarctica/South_Pole
 System/Libraries/Resources/NSTimeZones/zones/Antarctica/Syowa
+System/Libraries/Resources/NSTimeZones/zones/Antarctica/Vostok
 System/Libraries/Resources/NSTimeZones/zones/Arctic/Longyearbyen
 System/Libraries/Resources/NSTimeZones/zones/Asia/Aden
 System/Libraries/Resources/NSTimeZones/zones/Asia/Almaty
@@ -371,6 +379,7 @@ System/Libraries/Resources/NSTimeZones/zones/Asia/Nicosia
 System/Libraries/Resources/NSTimeZones/zones/Asia/Novosibirsk
 System/Libraries/Resources/NSTimeZones/zones/Asia/Omsk
 System/Libraries/Resources/NSTimeZones/zones/Asia/Phnom_Penh
+System/Libraries/Resources/NSTimeZones/zones/Asia/Pontianak
 System/Libraries/Resources/NSTimeZones/zones/Asia/Pyongyang
 System/Libraries/Resources/NSTimeZones/zones/Asia/Qatar
 System/Libraries/Resources/NSTimeZones/zones/Asia/Rangoon
@@ -689,25 +698,43 @@ System/Libraries/Resources/NSTimeZones/zones/Universal
 System/Libraries/Resources/NSTimeZones/zones/W-SU
 System/Libraries/Resources/NSTimeZones/zones/WET
 System/Libraries/Resources/NSTimeZones/zones/Zulu
+System/Library/Bundles/SSL.bundle/Contents/Info.plist
+System/Library/Bundles/SSL.bundle/Resources/Info-gnustep.plist
+System/Library/Bundles/SSL.bundle/Resources/Info.plist
+System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SSL
 System/Makefiles/Additional/base.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gdomap
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HTMLLinker
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/autogsdoc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/defaults
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gdnc
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gsdoc
+System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pl2link
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pldes
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plmerge
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plparse
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plser
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
+System/Tools/HTMLLinker
+System/Tools/autogsdoc
 System/Tools/defaults
 System/Tools/gdnc
 System/Tools/gdomap
 System/Tools/gsdoc
+System/Tools/pl2link
 System/Tools/pldes
 System/Tools/plmerge
 System/Tools/plparse
 System/Tools/plser
 System/Tools/sfparse
+@exec ln -sf ../Resources %D/System/Library/Bundles/SSL.bundle/Contents/Resources
+@unexec rm -f %D/System/Library/Bundles/SSL.bundle/Contents/Resources
+@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%
+@dirrm System/Library/Bundles/SSL.bundle/Resources
+@dirrm System/Library/Bundles/SSL.bundle/Contents
+@dirrm System/Library/Bundles/SSL.bundle
 @dirrm System/Libraries/Resources/NSTimeZones/zones/US
 @dirrm System/Libraries/Resources/NSTimeZones/zones/SystemV
 @dirrm System/Libraries/Resources/NSTimeZones/zones/Pacific
@@ -732,9 +759,12 @@ System/Tools/sfparse
 @dirrm System/Libraries/Resources/NSTimeZones
 @dirrm System/Libraries/Resources/NSCharacterSets
 @dirrm System/Libraries/Resources/Languages
+@dirrm System/Libraries/Resources/Italian.lproj
+@dirrm System/Libraries/Resources/German.lproj
+@dirrm System/Libraries/Resources/French.lproj
+@dirrm System/Libraries/Resources/English.lproj
 @dirrm System/Libraries/Resources/DocTemplates
 @dirrm System/Libraries/Resources/DTDs
-@dirrm System/Libraries/Resources
 @dirrm System/Headers/gnustep/unicode
 @dirrm System/Headers/gnustep/base
 @dirrm System/Headers/gnustep
