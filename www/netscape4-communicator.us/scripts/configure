@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed -e "s;@X11BASE@;${X11BASE};g" -e "s;@PREFIX@;${PREFIX};g" \
+	${FILESDIR}/netscape.sh >${WRKSRC}/netscape
+chmod +x ${WRKSRC}/netscape
+
