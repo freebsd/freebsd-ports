@@ -33,7 +33,7 @@ CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
-.ifndef NO_OPENSSL
+.if !defined(NO_OPENSSL) && !defined(WITHOUT_MNOGO_SSL)
 USE_OPENSSL=    yes
 .endif
 
