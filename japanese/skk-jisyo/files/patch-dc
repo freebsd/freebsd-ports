@@ -1,0 +1,11 @@
+--- lisp/skk-tut.el.orig	Wed Feb 12 18:01:28 1997
++++ lisp/skk-tut.el	Sat Oct 31 18:39:33 1998
+@@ -767,7 +767,7 @@
+ 
+ (defun skktut-end-tutorial ()
+   (message "")
+-  (switch-to-buffer " *Ã‰*")
++  (switch-to-buffer "*Ã‰*")
+   (delete-other-windows)
+   (erase-buffer)
+   (goto-char (point-min))

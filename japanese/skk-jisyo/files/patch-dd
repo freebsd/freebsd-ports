@@ -1,0 +1,10 @@
+--- lisp/skk.el.orig	Tue Feb 11 18:25:17 1997
++++ lisp/skk.el	Sat Oct 31 18:40:40 1998
+@@ -1736,6 +1736,7 @@
+              (while (looking-at "¡¼")
+                (skk-forward-char 1) )
+              (setq char (skk-what-char-type)) )
++           (skk-set-marker skk-henkan-end-point (point))
+            (cond ((eq char 'hirakana)
+                   (skk-katakana-henkan arg) )
+                  ((eq char 'katakana)

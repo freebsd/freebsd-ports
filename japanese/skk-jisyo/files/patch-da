@@ -1,0 +1,33 @@
+--- lisp/Makefile.in.orig	Tue Jan 28 16:03:47 1997
++++ lisp/Makefile.in	Sat Oct 31 18:36:53 1998
+@@ -12,19 +12,19 @@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+ prefix = @prefix@
+ datadir = $(prefix)/share
+ 
+ EMACS = @EMACS@
+ ELISPDIR = $(datadir)/emacs/site-lisp
+ 
+ SOURCES = stack-m.el queue-m.el elib-node.el avltree.el string.el \
+-          skk-e19.el skk.el skk-auto.el skk-comp.el \
++          skk-e19.el skk-auto.el skk-comp.el \
+           skk-gadget.el skk-kakasi.el skk-kcode.el skk-num.el \
+           skk-server.el skk-tree.el skk-tut.el skk-vip.el skk-isearch.el \
+           skk.el #skk-tools.el
+ 
+ COMPILED = stack-m.elc queue-m.elc elib-node.elc avltree.elc string.elc \
+-           skk-e19.elc skk.elc skk-auto.elc skk-comp.elc \
++           skk-e19.elc skk-auto.elc skk-comp.elc \
+            skk-gadget.elc skk-kakasi.elc skk-kcode.elc skk-num.elc \
+            skk-server.elc skk-tree.elc skk-tut.elc skk-vip.elc skk-isearch.elc \
+            skk.elc #skk-tools.elc
+@@ -55,7 +55,7 @@
+ 
+ .PHONY: clean
+ clean:
+-	-rm *~ $(COMPILED) lp.el
++	-rm -f *~ $(COMPILED) lp.el
+ 
+ stack-m.elc: stack-m.el
+ queue-m.elc: queue-m.el
