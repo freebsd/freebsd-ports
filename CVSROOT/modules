@@ -8178,6 +8178,7 @@ tth		ports/textproc/tth
 ttlscan		ports/net/ttlscan
 ttmkfdir	ports/x11-fonts/ttmkfdir
 ttraffic	ports/games/ttraffic
+tt		ports/games/tt
 ttt		ports/net/ttt
 ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
