@@ -17,9 +17,7 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \
-		gif.5:${PORTSDIR}/graphics/giflib \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
-		tiff.4:${PORTSDIR}/graphics/tiff \
 		ttf.4:${PORTSDIR}/print/freetype \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
