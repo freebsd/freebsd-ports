@@ -246,6 +246,7 @@
     SUBDIR += linux-jpeg
     SUBDIR += linux-libmng
     SUBDIR += linux-png
+    SUBDIR += linux-png10
     SUBDIR += linux-tiff
     SUBDIR += linux-ungif
     SUBDIR += linux_dri
