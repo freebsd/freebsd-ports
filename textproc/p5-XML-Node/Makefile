@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	Perl5 module to extend and simplify XML::Parser
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		XML::Node.3
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Array/Compare.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/Compare/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/auto/Array/Compare/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Array/Compare
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Array 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array/Compare
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Array 2>/dev/null || true
+%%SITE_PERL%%/Array/Compare.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare/.packlist
+%%SITE_PERL%%/auto/Array/Compare/autosplit.ix
+@dirrm %%SITE_PERL%%/auto/Array/Compare
+@unexec rmdir %D/%%SITE_PERL%%/auto/Array 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Array/Compare
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Array 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Array 2>/dev/null || true

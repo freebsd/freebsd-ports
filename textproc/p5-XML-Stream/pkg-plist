@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Hash.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Namespace.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Node.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Parser/DTD.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Tree.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Stream
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Parser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Stream
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
+%%SITE_PERL%%/XML/Stream.pm
+%%SITE_PERL%%/XML/Stream/Hash.pm
+%%SITE_PERL%%/XML/Stream/Namespace.pm
+%%SITE_PERL%%/XML/Stream/Node.pm
+%%SITE_PERL%%/XML/Stream/Parser.pm
+%%SITE_PERL%%/XML/Stream/Parser/DTD.pm
+%%SITE_PERL%%/XML/Stream/Tree.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
+@dirrm %%SITE_PERL%%/XML/Stream/Parser
+@dirrm %%SITE_PERL%%/XML/Stream
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

@@ -17,7 +17,6 @@ COMMENT=	Perl5 anti-virus file scanning package
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		File::Scan.3
 
 post-install:

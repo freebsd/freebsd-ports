@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the Automated Password Generator standard
 
 PERL_CONFIGURE=	yes
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Crypt::RandPasswd.3

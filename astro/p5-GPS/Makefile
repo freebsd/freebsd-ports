@@ -17,7 +17,6 @@ COMMENT=	Perl interface to GPS receivers
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GPS::Garmin.3 \
 		GPS::Serial.3 \
 		GPS::Garmin::Handler.3

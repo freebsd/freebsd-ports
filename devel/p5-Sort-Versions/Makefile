@@ -17,7 +17,6 @@ COMMENT=	A perl 5 module for sorting of revision-like numbers
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Sort::Versions.3
 
 .include <bsd.port.mk>

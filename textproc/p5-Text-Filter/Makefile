@@ -18,6 +18,5 @@ COMMENT=	Base class for objects that can read and write text lines
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Filter.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

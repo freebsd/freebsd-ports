@@ -17,7 +17,6 @@ COMMENT=	Read/write buffer class
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Data::Buffer.3
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Perl5 module for single call read & write file routines
 PERL_CONFIGURE=	YES
 
 MAN3=		File::Slurp.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	Inflect pronouns for gender
 PERL_CONFIGURE=		yes
 
 MAN3=			Lingua::EN::Gender.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -19,10 +19,9 @@ BUILD_DEPENDS=	${SITE_PERL}/CGI/Base.pm:${PORTSDIR}/www/p5-CGI-modules \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Navigation.3
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/Config/Setting.pm
-lib/perl5/site_perl/%%PERL_VER%%/Config/Setting/FileProvider.pm
-lib/perl5/site_perl/%%PERL_VER%%/Config/Setting/IniParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Config/Setting/XMLParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Config/Setting/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Config/Setting
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Config/Setting
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Config 2>/dev/null || true
+%%SITE_PERL%%/Config/Setting.pm
+%%SITE_PERL%%/Config/Setting/FileProvider.pm
+%%SITE_PERL%%/Config/Setting/IniParser.pm
+%%SITE_PERL%%/Config/Setting/XMLParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Setting/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Setting
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Config/Setting
+@unexec rmdir %D/%%SITE_PERL%%/Config 2>/dev/null || true

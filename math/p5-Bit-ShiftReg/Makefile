@@ -17,7 +17,6 @@ COMMENT=	Perl module implementing various bit shifting operations
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Bit::ShiftReg.3
 
 .include <bsd.port.mk>

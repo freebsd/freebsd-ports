@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A text graphics rendering toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper
+BUILD_DEPENDS=	${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Graphics.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	@${RM} ${WRKSRC}/lib/Text/Graphics.pm.orig

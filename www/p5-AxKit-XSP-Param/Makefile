@@ -17,7 +17,7 @@ COMMENT=	A namespace wrapper for accessing HTTP request paramaters
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		AxKit::XSP::Param.3

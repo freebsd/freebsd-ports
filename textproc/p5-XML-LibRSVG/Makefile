@@ -27,6 +27,5 @@ CONFIGURE_ENV=	INC='-I${LOCALBASE}/include' LIBS='-L${LOCALBASE}/lib'
 USE_GNOME=	gdkpixbuf
 
 MAN3=		XML::LibRSVG.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

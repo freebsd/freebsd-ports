@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Object for handling Usenet articles in mail or news form
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
+RUN_DEPENDS=	${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
+		${SITE_PERL}/PGP/Sign.pm:${PORTSDIR}/security/p5-PGP-Sign
 
 PERL_CONFIGURE=	yes
 
 MAN3=		News::Article.3 News::AutoReply.3 News::FormArticle.3 \
 		News::FormReply.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

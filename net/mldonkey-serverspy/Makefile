@@ -16,10 +16,10 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	MLDonkey Server Spy broadcasts your whereabouts on the eDonkey network
 
 RUN_DEPENDS=	\
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto/TimeDate:${PORTSDIR}/devel/p5-TimeDate \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
+	${SITE_PERL}/${PERL_ARCH}/auto/TimeDate:${PORTSDIR}/devel/p5-TimeDate \
+	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
+	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	yes
 NO_BUILD=	yes

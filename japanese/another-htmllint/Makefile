@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Another HTML-lint (all messages are written in Japanese)
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}

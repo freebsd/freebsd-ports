@@ -18,12 +18,11 @@ COMMENT=	A UPS Interface Module
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 PERL_CONFIGURE=	yes
 
 MAN3=		Business::UPS.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,12 +1,12 @@
 bin/pdbdump
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Palm/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Palm/Address.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/Datebook.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/Mail.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/Memo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/PDB.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/Raw.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/StdAppInfo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Palm/ToDo.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Palm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Palm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Palm/.packlist
+%%SITE_PERL%%/Palm/Address.pm
+%%SITE_PERL%%/Palm/Datebook.pm
+%%SITE_PERL%%/Palm/Mail.pm
+%%SITE_PERL%%/Palm/Memo.pm
+%%SITE_PERL%%/Palm/PDB.pm
+%%SITE_PERL%%/Palm/Raw.pm
+%%SITE_PERL%%/Palm/StdAppInfo.pm
+%%SITE_PERL%%/Palm/ToDo.pm
+@dirrm %%SITE_PERL%%/Palm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Palm

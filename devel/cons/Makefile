@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rv@gnu.org
 COMMENT=	A Perl-based Make Replacement
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
 NO_BUILD=	yes

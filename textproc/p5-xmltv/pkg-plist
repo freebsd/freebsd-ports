@@ -21,26 +21,26 @@ bin/tv_sort
 bin/tv_split
 bin/tv_to_latex
 bin/tv_to_text
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ask.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/AskTerm.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/AskTk.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Clumps.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Config_file.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Europe_TZ.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Get_nice.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Grab_XML.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Grep.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Gunzip.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/IMDB.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Memoize.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Mode.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Summarize.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/TZ.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Usage.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Version.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/ZapListings.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
+%%SITE_PERL%%/XMLTV.pm
+%%SITE_PERL%%/XMLTV/Ask.pm
+%%SITE_PERL%%/XMLTV/AskTerm.pm
+%%SITE_PERL%%/XMLTV/AskTk.pm
+%%SITE_PERL%%/XMLTV/Clumps.pm
+%%SITE_PERL%%/XMLTV/Config_file.pm
+%%SITE_PERL%%/XMLTV/Europe_TZ.pm
+%%SITE_PERL%%/XMLTV/Get_nice.pm
+%%SITE_PERL%%/XMLTV/Grab_XML.pm
+%%SITE_PERL%%/XMLTV/Grep.pm
+%%SITE_PERL%%/XMLTV/Gunzip.pm
+%%SITE_PERL%%/XMLTV/IMDB.pm
+%%SITE_PERL%%/XMLTV/Memoize.pm
+%%SITE_PERL%%/XMLTV/Mode.pm
+%%SITE_PERL%%/XMLTV/Summarize.pm
+%%SITE_PERL%%/XMLTV/TZ.pm
+%%SITE_PERL%%/XMLTV/Usage.pm
+%%SITE_PERL%%/XMLTV/Version.pm
+%%SITE_PERL%%/XMLTV/ZapListings.pm
 share/doc/xmltv-%%VERSION%%/COPYING
 share/doc/xmltv-%%VERSION%%/QuickStart
 share/doc/xmltv-%%VERSION%%/README
@@ -102,5 +102,5 @@ share/xmltv/tv_grab_uk_rt/channel_ids
 @dirrm share/xmltv/tv_grab_it
 @dirrm share/xmltv
 @dirrm share/doc/xmltv-%%VERSION%%
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLTV
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV
+@dirrm %%SITE_PERL%%/XMLTV
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XMLTV

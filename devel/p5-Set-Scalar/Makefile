@@ -17,7 +17,6 @@ COMMENT=	Perl module containing a set of scalars, including references
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Set::Scalar.3 \
 		Set::Scalar::Base.3 \
 		Set::Scalar::Null.3 \

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
 		${site_perl}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
 		${site_perl}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
 
-site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+site_perl=	${SITE_PERL}
 
 PERL_CONFIGURE=	YES
 
@@ -28,6 +28,5 @@ MAN3=		Xmms::Remote.3 \
 		Xmms::SongChange.3 \
 		Xmms.3 \
 		Bundle::Xmms.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Plugin/SaveUpload.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SaveUpload/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SaveUpload
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sledge/Plugin 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Sledge/Plugin 2>/dev/null || true
+%%SITE_PERL%%/Sledge/Plugin/SaveUpload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SaveUpload/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin/SaveUpload
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Sledge/Plugin 2>/dev/null || true

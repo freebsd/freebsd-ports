@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/pie.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/utils.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/axestype.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/colour.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/bars.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/linespoints.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/area.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/lines.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/mixed.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/points.pm
-lib/perl5/site_perl/%%PERL_VER%%/GIFgraph.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GIFgraph/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GIFgraph
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GIFgraph
+%%SITE_PERL%%/GIFgraph/pie.pm
+%%SITE_PERL%%/GIFgraph/utils.pm
+%%SITE_PERL%%/GIFgraph/axestype.pm
+%%SITE_PERL%%/GIFgraph/colour.pm
+%%SITE_PERL%%/GIFgraph/bars.pm
+%%SITE_PERL%%/GIFgraph/linespoints.pm
+%%SITE_PERL%%/GIFgraph/area.pm
+%%SITE_PERL%%/GIFgraph/lines.pm
+%%SITE_PERL%%/GIFgraph/mixed.pm
+%%SITE_PERL%%/GIFgraph/points.pm
+%%SITE_PERL%%/GIFgraph.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GIFgraph/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIFgraph
+@dirrm %%SITE_PERL%%/GIFgraph

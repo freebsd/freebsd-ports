@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive command line frontend of Deja
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	yes
 

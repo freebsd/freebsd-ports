@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::ECB.3
 
 .include <bsd.port.mk>

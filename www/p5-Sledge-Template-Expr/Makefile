@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PM_DEPENDS}
 PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
 PM_DEPENDS+=	${SITE_PERL}/HTML/Template/Expr.pm:${PORTSDIR}/www/p5-HTML-Template-Expr
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 PERL_CONFIGURE=	yes
 

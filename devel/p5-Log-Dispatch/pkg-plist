@@ -1,19 +1,19 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Dispatch/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/ApacheLog.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MIMELite.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSend.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email/MailSendmail.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Output.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Screen.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Syslog.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Email
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Dispatch 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/.packlist
+%%SITE_PERL%%/Log/Dispatch.pm
+%%SITE_PERL%%/Log/Dispatch/ApacheLog.pm
+%%SITE_PERL%%/Log/Dispatch/Base.pm
+%%SITE_PERL%%/Log/Dispatch/Email.pm
+%%SITE_PERL%%/Log/Dispatch/Email/MIMELite.pm
+%%SITE_PERL%%/Log/Dispatch/Email/MailSend.pm
+%%SITE_PERL%%/Log/Dispatch/Email/MailSender.pm
+%%SITE_PERL%%/Log/Dispatch/Email/MailSendmail.pm
+%%SITE_PERL%%/Log/Dispatch/File.pm
+%%SITE_PERL%%/Log/Dispatch/Handle.pm
+%%SITE_PERL%%/Log/Dispatch/Output.pm
+%%SITE_PERL%%/Log/Dispatch/Screen.pm
+%%SITE_PERL%%/Log/Dispatch/Syslog.pm
+@dirrm %%SITE_PERL%%/Log/Dispatch/Email
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true

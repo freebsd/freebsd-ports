@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A robust log colorizer
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
+RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 

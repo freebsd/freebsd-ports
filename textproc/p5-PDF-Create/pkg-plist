@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF/Create/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/PDF/Create/Page.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDF/Create/Outline.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDF/sample.pl
-lib/perl5/site_perl/%%PERL_VER%%/PDF/Create.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF/Create
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDF/Create
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/PDF 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Create/.packlist
+%%SITE_PERL%%/PDF/Create/Page.pm
+%%SITE_PERL%%/PDF/Create/Outline.pm
+%%SITE_PERL%%/PDF/sample.pl
+%%SITE_PERL%%/PDF/Create.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Create
+@dirrm %%SITE_PERL%%/PDF/Create
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PDF 2>/dev/null || true

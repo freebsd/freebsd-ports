@@ -17,7 +17,6 @@ COMMENT=	Perl module implementing simple file locking
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		LockFile::Simple.3
 
 .include <bsd.port.mk>

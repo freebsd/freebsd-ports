@@ -1,23 +1,23 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Boulder/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Stone/Cursor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Stone/GB_Sequence.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Swissprot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Medline.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/NCBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/WU.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Labbase.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/LocusLink.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Unigene.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Stream.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Store.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/XML.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Omim.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/Genbank.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder/String.pm
-lib/perl5/site_perl/%%PERL_VER%%/Stone.pm
-lib/perl5/site_perl/%%PERL_VER%%/Boulder.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Boulder
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Boulder
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Stone
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Boulder/.packlist
+%%SITE_PERL%%/Stone/Cursor.pm
+%%SITE_PERL%%/Stone/GB_Sequence.pm
+%%SITE_PERL%%/Boulder/Swissprot.pm
+%%SITE_PERL%%/Boulder/Medline.pm
+%%SITE_PERL%%/Boulder/Blast/NCBI.pm
+%%SITE_PERL%%/Boulder/Blast/WU.pm
+%%SITE_PERL%%/Boulder/Labbase.pm
+%%SITE_PERL%%/Boulder/LocusLink.pm
+%%SITE_PERL%%/Boulder/Unigene.pm
+%%SITE_PERL%%/Boulder/Stream.pm
+%%SITE_PERL%%/Boulder/Store.pm
+%%SITE_PERL%%/Boulder/XML.pm
+%%SITE_PERL%%/Boulder/Omim.pm
+%%SITE_PERL%%/Boulder/Blast.pm
+%%SITE_PERL%%/Boulder/Genbank.pm
+%%SITE_PERL%%/Boulder/String.pm
+%%SITE_PERL%%/Stone.pm
+%%SITE_PERL%%/Boulder.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Boulder
+@dirrm %%SITE_PERL%%/Boulder/Blast
+@dirrm %%SITE_PERL%%/Boulder
+@dirrm %%SITE_PERL%%/Stone

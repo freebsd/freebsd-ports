@@ -18,6 +18,5 @@ COMMENT=	A module for manipulating bibliographic records in the USMARC format
 PERL_CONFIGURE=	yes
 
 MAN3=		MARC.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

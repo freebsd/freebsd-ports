@@ -14,13 +14,12 @@ MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to convert Japanese text
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
 PERL_CONFIGURE=	yes
 MAN3=		Jcode.3 Jcode::Unicode.3 Jcode::Unicode::Constants.3 \
 		Jcode::Unicode::NoXS.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

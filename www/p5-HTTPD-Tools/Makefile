@@ -18,6 +18,5 @@ COMMENT=	Perl5 module for a HTTP server authentication class
 PERL_CONFIGURE=	yes
 
 MAN3=		HTTPD::Authen.3 HTTPD::UserAdmin.3 HTTPD::GroupAdmin.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -24,13 +24,12 @@ PM_DEPENDS+=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 PM_DEPENDS+=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 PERL_CONFIGURE=	yes
 
 #MAN3=		Log::Dispatch::Config.3 \
 #		Log::Dispatch::Configurator.3 \
 #		Log::Dispatch::Configurator::AppConfig.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

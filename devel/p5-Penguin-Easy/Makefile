@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quick and easy implemention of the p5-Penguin module
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Penguin.pm:${PORTSDIR}/devel/p5-Penguin
+BUILD_DEPENDS=	${SITE_PERL}/Penguin.pm:${PORTSDIR}/devel/p5-Penguin
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Penguin::Easy.3
 
 post-install:

@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-IO-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perl module with object interface to AF_INET6 domain sockets
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=		IO::Socket::INET6.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 PERL_CONFIGURE=	yes
 

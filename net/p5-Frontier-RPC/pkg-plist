@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/Frontier/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Frontier/Daemon.pm
-lib/perl5/site_perl/%%PERL_VER%%/Frontier/RPC2.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Frontier
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Frontier/RPC/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Frontier/RPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Frontier
+%%SITE_PERL%%/Frontier/Client.pm
+%%SITE_PERL%%/Frontier/Daemon.pm
+%%SITE_PERL%%/Frontier/RPC2.pm
+@dirrm %%SITE_PERL%%/Frontier
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier/RPC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Frontier

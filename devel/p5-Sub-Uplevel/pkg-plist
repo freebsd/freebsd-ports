@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Sub/Uplevel/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Sub/Uplevel.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Sub/Uplevel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Sub 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/mach/auto 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Sub 2>/dev/null || true
+%%SITE_PERL%%/mach/auto/Sub/Uplevel/.packlist
+%%SITE_PERL%%/Sub/Uplevel.pm
+@dirrm %%SITE_PERL%%/mach/auto/Sub/Uplevel
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Sub 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Sub 2>/dev/null || true

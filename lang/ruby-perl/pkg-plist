@@ -9,8 +9,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ruby.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby/Ruby.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby/Ruby.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby
+%%SITE_PERL%%/%%PERL_ARCH%%/Ruby.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/Ruby.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby/Ruby.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ruby

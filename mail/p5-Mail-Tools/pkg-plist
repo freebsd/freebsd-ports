@@ -1,39 +1,39 @@
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Address.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Cap.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Field.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Field/AddrList.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Field/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Header.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Internet.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/qmail.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/rfc822.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/sendmail.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/smtp.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer/test.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Send.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/_prephdr.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/add_signature.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/escape_from.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/nntppost.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/reply.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/send.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/sign.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/smtpsend.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet/unescape_from.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/mailaddress.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/maildomain.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util/read_mbox.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Util
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Internet
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Mailer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Field
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
+%%SITE_PERL%%/Mail/Address.pm
+%%SITE_PERL%%/Mail/Cap.pm
+%%SITE_PERL%%/Mail/Field.pm
+%%SITE_PERL%%/Mail/Field/AddrList.pm
+%%SITE_PERL%%/Mail/Field/Date.pm
+%%SITE_PERL%%/Mail/Filter.pm
+%%SITE_PERL%%/Mail/Header.pm
+%%SITE_PERL%%/Mail/Internet.pm
+%%SITE_PERL%%/Mail/Mailer.pm
+%%SITE_PERL%%/Mail/Mailer/qmail.pm
+%%SITE_PERL%%/Mail/Mailer/rfc822.pm
+%%SITE_PERL%%/Mail/Mailer/sendmail.pm
+%%SITE_PERL%%/Mail/Mailer/smtp.pm
+%%SITE_PERL%%/Mail/Mailer/test.pm
+%%SITE_PERL%%/Mail/Send.pm
+%%SITE_PERL%%/Mail/Util.pm
+%%SITE_PERL%%/auto/Mail/Internet/_prephdr.al
+%%SITE_PERL%%/auto/Mail/Internet/add_signature.al
+%%SITE_PERL%%/auto/Mail/Internet/autosplit.ix
+%%SITE_PERL%%/auto/Mail/Internet/escape_from.al
+%%SITE_PERL%%/auto/Mail/Internet/nntppost.al
+%%SITE_PERL%%/auto/Mail/Internet/reply.al
+%%SITE_PERL%%/auto/Mail/Internet/send.al
+%%SITE_PERL%%/auto/Mail/Internet/sign.al
+%%SITE_PERL%%/auto/Mail/Internet/smtpsend.al
+%%SITE_PERL%%/auto/Mail/Internet/unescape_from.al
+%%SITE_PERL%%/auto/Mail/Util/autosplit.ix
+%%SITE_PERL%%/auto/Mail/Util/mailaddress.al
+%%SITE_PERL%%/auto/Mail/Util/maildomain.al
+%%SITE_PERL%%/auto/Mail/Util/read_mbox.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Mail/Util
+@dirrm %%SITE_PERL%%/auto/Mail/Internet
+@dirrm %%SITE_PERL%%/auto/Mail
+@unexec rmdir %D/%%SITE_PERL%%/auto 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/Mailer
+@dirrm %%SITE_PERL%%/Mail/Field
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

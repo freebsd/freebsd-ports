@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/OLS/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Statistics/OLS.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics/OLS
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Statistics 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Statistics 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/OLS/.packlist
+%%SITE_PERL%%/Statistics/OLS.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/OLS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Statistics 2>/dev/null || true

@@ -17,7 +17,6 @@ COMMENT=	Perl5 module to validate/generate credit card checksums/names
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Business::CreditCard.3
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP mirroring program written in PERL (REQUIRES PERL5,Net::FTP)
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 
 USE_PERL5=	YES
 NO_BUILD=	YES

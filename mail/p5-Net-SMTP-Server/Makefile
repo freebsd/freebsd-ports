@@ -16,7 +16,7 @@ DISTNAME=	SMTP-Server-${PORTVERSION}
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A native Perl SMTP Server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MASTER_SITE_BACKUP+=	http://www.macgyver.org/software/perl/
@@ -30,8 +30,8 @@ MAN3=		Net::SMTP::Server.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 .endif
 
 .include <bsd.port.post.mk>

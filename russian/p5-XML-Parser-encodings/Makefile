@@ -14,9 +14,9 @@ DISTFILES=
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Additional russian encodings for XML::Parser
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Encoding.pm:${PORTSDIR}/textproc/p5-XML-Encoding \
+		${SITE_PERL}/XML/Encoding.pm:${PORTSDIR}/textproc/p5-XML-Encoding \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv:extract \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv-extra:extract
 

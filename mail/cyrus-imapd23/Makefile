@@ -133,10 +133,10 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
 .if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
+RUN_DEPENDS+=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
@@ -168,7 +168,7 @@ post-patch:
 			${WRKSRC}/tools/masssievec
 		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
 .if ${PERL_LEVEL} < 500600
-		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
+		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${SITE_PERL} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
 

@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/Penguin.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Compartment.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame/Code.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame/Data.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/PGP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Rights.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/PGP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/Transparent.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin/.packlist
+%%SITE_PERL%%/Penguin.pm
+%%SITE_PERL%%/Penguin/Channel/TCP.pm
+%%SITE_PERL%%/Penguin/Channel/TCP/Client.pm
+%%SITE_PERL%%/Penguin/Channel/TCP/Server.pm
+%%SITE_PERL%%/Penguin/Compartment.pm
+%%SITE_PERL%%/Penguin/Frame/Code.pm
+%%SITE_PERL%%/Penguin/Frame/Data.pm
+%%SITE_PERL%%/Penguin/PGP.pm
+%%SITE_PERL%%/Penguin/Rights.pm
+%%SITE_PERL%%/Penguin/Trivial/Client.pm
+%%SITE_PERL%%/Penguin/Trivial/Server.pm
+%%SITE_PERL%%/Penguin/Wrapper/PGP.pm
+%%SITE_PERL%%/Penguin/Wrapper/Transparent.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin/.packlist
 lib/perl5/site_perl/Penguin/bin/.pen
 lib/perl5/site_perl/Penguin/bin/makeapplet
 lib/perl5/site_perl/Penguin/bin/pclient
@@ -31,14 +31,14 @@ lib/perl5/site_perl/Penguin/doc/MODULE_NOTES
 lib/perl5/site_perl/Penguin/doc/README
 lib/perl5/site_perl/Penguin/doc/SECURITY
 lib/perl5/site_perl/Penguin/doc/TODO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Penguin 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Penguin/Channel/TCP
+@dirrm %%SITE_PERL%%/Penguin/Channel
+@dirrm %%SITE_PERL%%/Penguin/Frame
+@dirrm %%SITE_PERL%%/Penguin/Trivial
+@dirrm %%SITE_PERL%%/Penguin/Wrapper
+@unexec rmdir %D/%%SITE_PERL%%/Penguin 2>/dev/null || true
 @dirrm lib/perl5/site_perl/Penguin/bin
 @dirrm lib/perl5/site_perl/Penguin/misc
 @dirrm lib/perl5/site_perl/Penguin/doc
 @unexec rmdir %D/lib/perl5/site_perl/Penguin 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Penguin 2>/dev/null || true

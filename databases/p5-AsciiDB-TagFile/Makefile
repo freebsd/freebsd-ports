@@ -18,6 +18,5 @@ COMMENT=	Perl tie class for a simple ASCII database
 PERL_CONFIGURE=	yes
 
 MAN3=		AsciiDB::TagFile.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/beta/
 MAINTAINER=	yasuf@big.or.jp
 COMMENT=	An utility to mirror directory hierarchy with FTP
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
 
 USE_PERL5=	YES
 GNU_CONFIGURE=	YES

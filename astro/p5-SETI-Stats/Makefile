@@ -17,7 +17,6 @@ COMMENT=	Perl module for local/remote access to SETI@home stats
 
 PERL_CONFIGURE=	yes
 MAN3=		SETI::Stats.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -1,9 +1,9 @@
 bin/xpcc
 bin/xpcd
-lib/perl5/site_perl/%%PERL_VER%%/XPC.pm
-lib/perl5/site_perl/%%PERL_VER%%/XPC/Agent.pm
-lib/perl5/site_perl/%%PERL_VER%%/XPC/Daemon.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XPC
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XPC/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto
+%%SITE_PERL%%/XPC.pm
+%%SITE_PERL%%/XPC/Agent.pm
+%%SITE_PERL%%/XPC/Daemon.pm
+@dirrm %%SITE_PERL%%/XPC
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XPC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto

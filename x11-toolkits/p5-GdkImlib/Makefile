@@ -16,7 +16,7 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The Imlib module of Gtk-Perl
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes

@@ -18,10 +18,10 @@ MAINTAINER=	jeremy@external.org
 COMMENT=	A web site statistics post-processor for Analog
 
 RUN_DEPENDS=	analog:${PORTSDIR}/www/analog \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/GD/Graph3d.pm:${PORTSDIR}/graphics/p5-GD-Graph3d \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	YES

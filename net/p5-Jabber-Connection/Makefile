@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Jabber::Connection.3 Jabber::NS.3 Jabber::NodeFactory.3
 
 .include <bsd.port.mk>

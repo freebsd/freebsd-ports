@@ -29,7 +29,6 @@ MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 		Apache::Test.3 Apache::TestUtil.3 Apache::Build.3 \
 		Bundle::Apache2.3 ModPerl::Code.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 APACHE2_PORT?=	${PORTSDIR}/www/apache2
 
 .include <bsd.port.pre.mk>

@@ -25,7 +25,6 @@ PERL_CONFIGURE=	yes
 MAN3=		XML::Filter::CharacterChunk.3 \
 		XML::Filter::GenericChunk.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e '$$_="" if /use warnings/;' \

@@ -20,10 +20,9 @@ BUILD_DEPENDS=	${PERL_SITELIBDIR}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
 		${PERL_SITELIBDIR}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERL_SITELIBDIR=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	GraphViz::Data::Structure.3
 
 .include <bsd.port.mk>

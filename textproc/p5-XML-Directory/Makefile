@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@protey.ru
 COMMENT=	Returns a content of directory as XML
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RDF/Notation3.pm:${PORTSDIR}/textproc/p5-RDF-Notation3
+BUILD_DEPENDS=	${SITE_PERL}/RDF/Notation3.pm:${PORTSDIR}/textproc/p5-RDF-Notation3
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -24,7 +24,6 @@ MAN3=		XML::Directory.3 XML::Directory::Apache.3 \
 		XML::Directory::Exception.3 XML::Directory::SAX.3 \
 		XML::Directory::String.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 		@find ${WRKSRC} -name "*.pm" | xargs ${PERL} -pi -e \

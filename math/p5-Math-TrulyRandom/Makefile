@@ -18,7 +18,6 @@ COMMENT=	Perl interface to a truly random number generator function
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::TrulyRandom.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -17,7 +17,6 @@ COMMENT=	Perl interface to compute differences between two objects
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Algorithm::Diff.3 Algorithm::DiffOld.3
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/Beanstream.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Beanstream/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/Beanstream
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment 2>/dev/null || true
+%%SITE_PERL%%/Business/OnlinePayment/Beanstream.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/Beanstream/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/Beanstream
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/Beanstream
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

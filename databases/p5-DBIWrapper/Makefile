@@ -16,12 +16,11 @@ DISTNAME=	dbi_wrapper-${PORTVERSION}
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Perl extension for generic DBI database access
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	DBIWrapper.3 DBIWrapper::ResultSet.3 DBIWrapper::XMLParser.3
 
 .include <bsd.port.pre.mk>

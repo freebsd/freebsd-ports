@@ -1,9 +1,9 @@
 bin/ipv4calc
-lib/perl5/site_perl/%%PERL_VER%%/Net/IPv4Addr.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Net/IPv4Addr/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IPv4Addr/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/IPv4Addr
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Net/IPv4Addr
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/IPv4Addr.pm
+%%SITE_PERL%%/auto/Net/IPv4Addr/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IPv4Addr/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IPv4Addr
+@dirrm %%SITE_PERL%%/auto/Net/IPv4Addr
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

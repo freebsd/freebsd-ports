@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Perl5 interface to SSL sockets
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		IO::Socket::SSL.3
 
 .include <bsd.port.mk>

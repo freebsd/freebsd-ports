@@ -17,7 +17,7 @@ COMMENT=	Perl5 module implements both the SSH1 and SSH2 protocols
 
 NO_PACKAGE=	"Runaway package build"
 
-PERL_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERL_BASE=	${SITE_PERL}
 BUILD_DEPENDS=	${PERL_BASE}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
 		${PERL_BASE}/Crypt/DH.pm:${PORTSDIR}/security/p5-Crypt-DH \
 		${PERL_BASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
@@ -38,7 +38,6 @@ FETCH_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::SSH::Perl::Constants.3 \
 		Net::SSH::Perl::Util.3 \
 		Net::SSH::Perl::ChannelMgr.3 \

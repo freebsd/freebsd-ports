@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dburr@FreeBSD.ORG
 COMMENT=	A module that tracks what's being transferred in a DBI database
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
+BUILD_DEPENDS=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes

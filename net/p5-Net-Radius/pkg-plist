@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/Radius/Dictionary.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Radius/Packet.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Radius/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Radius
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Radius
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Radius/Dictionary.pm
+%%SITE_PERL%%/Net/Radius/Packet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius/.packlist
+@dirrm %%SITE_PERL%%/Net/Radius
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Radius
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
 

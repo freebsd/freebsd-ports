@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Render graph described in a .dot file
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}

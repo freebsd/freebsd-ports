@@ -1,12 +1,12 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/AirHPhone.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/Display.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/DoCoMo.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/DoCoMoDisplayMap.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/EZweb.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/JPhone.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/NonMobile.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/MobileAgent
+%%SITE_PERL%%/HTTP/MobileAgent.pm
+%%SITE_PERL%%/HTTP/MobileAgent/AirHPhone.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Display.pm
+%%SITE_PERL%%/HTTP/MobileAgent/DoCoMo.pm
+%%SITE_PERL%%/HTTP/MobileAgent/DoCoMoDisplayMap.pm
+%%SITE_PERL%%/HTTP/MobileAgent/EZweb.pm
+%%SITE_PERL%%/HTTP/MobileAgent/JPhone.pm
+%%SITE_PERL%%/HTTP/MobileAgent/NonMobile.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Request.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent

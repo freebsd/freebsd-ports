@@ -19,6 +19,5 @@ COMMENT=	A perl module to manipulate raw IP packets
 
 PERL_CONFIGURE=	yes
 MAN3=		Net::RawIP.3 Net::RawIP::libpcap.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

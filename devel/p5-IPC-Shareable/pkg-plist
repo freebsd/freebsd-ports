@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/IPC/Shareable.pm
-lib/perl5/site_perl/%%PERL_VER%%/IPC/Shareable/SharedMem.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Shareable/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Shareable
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC/Shareable
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC
+%%SITE_PERL%%/IPC/Shareable.pm
+%%SITE_PERL%%/IPC/Shareable/SharedMem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Shareable/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Shareable
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
+@dirrm %%SITE_PERL%%/IPC/Shareable
+@dirrm %%SITE_PERL%%/IPC

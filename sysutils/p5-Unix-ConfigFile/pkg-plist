@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/Unix/AliasFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Unix/AutomountFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Unix/ConfigFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Unix/GroupFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Unix/PasswdFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/ConfigFile/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/ConfigFile
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Unix 2>/dev/null || true
+%%SITE_PERL%%/Unix/AliasFile.pm
+%%SITE_PERL%%/Unix/AutomountFile.pm
+%%SITE_PERL%%/Unix/ConfigFile.pm
+%%SITE_PERL%%/Unix/GroupFile.pm
+%%SITE_PERL%%/Unix/PasswdFile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/ConfigFile
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Unix 2>/dev/null || true

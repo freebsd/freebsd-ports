@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/version.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/new.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/status.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/error_input.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/string.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/fields.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/combine.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/parse.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/_bite.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Text/CSV/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/CSV/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Text/CSV.pm
+%%SITE_PERL%%/auto/Text/CSV/version.al
+%%SITE_PERL%%/auto/Text/CSV/new.al
+%%SITE_PERL%%/auto/Text/CSV/status.al
+%%SITE_PERL%%/auto/Text/CSV/error_input.al
+%%SITE_PERL%%/auto/Text/CSV/string.al
+%%SITE_PERL%%/auto/Text/CSV/fields.al
+%%SITE_PERL%%/auto/Text/CSV/combine.al
+%%SITE_PERL%%/auto/Text/CSV/parse.al
+%%SITE_PERL%%/auto/Text/CSV/_bite.al
+%%SITE_PERL%%/auto/Text/CSV/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/CSV/.packlist
+%%SITE_PERL%%/Text/CSV.pm
 @dirrm lib/perl5/site_perl/5.6.0/mach/auto/Text/CSV
 @dirrm lib/perl5/site_perl/5.6.0/mach/auto/Text
 @dirrm lib/perl5/site_perl/5.6.0/auto/Text/CSV

@@ -18,6 +18,5 @@ COMMENT=	Super class for representing nodes in a tree
 PERL_CONFIGURE=	yes
 
 MAN3=	Tree::DAG_Node.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GDBM_File.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
+%%SITE_PERL%%/%%PERL_ARCH%%/GDBM_File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/GDBM_File.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GDBM_File

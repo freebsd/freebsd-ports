@@ -29,7 +29,6 @@ CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_INCPATH="${LOCALBASE}/include/freetype1/freetype"
 USE_GMAKE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
 	Imager::Expr::Assem.3 Imager::Fill.3 Imager::Font.3 \
 	Imager::Font::FreeType2.3 Imager::Font::Truetype.3 \

@@ -1,20 +1,20 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/AdminBase.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/Authen.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/DBM.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/DBM/apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/Text/cern.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/DBM.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/SQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text/cern.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin/Text
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/UserAdmin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/Text
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin/DBM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTPD/GroupAdmin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD-Tools
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTTPD 2>/dev/null || true
+%%SITE_PERL%%/HTTPD/AdminBase.pm
+%%SITE_PERL%%/HTTPD/Authen.pm
+%%SITE_PERL%%/HTTPD/GroupAdmin.pm
+%%SITE_PERL%%/HTTPD/GroupAdmin/DBM.pm
+%%SITE_PERL%%/HTTPD/GroupAdmin/DBM/apache.pm
+%%SITE_PERL%%/HTTPD/GroupAdmin/Text.pm
+%%SITE_PERL%%/HTTPD/GroupAdmin/Text/cern.pm
+%%SITE_PERL%%/HTTPD/UserAdmin.pm
+%%SITE_PERL%%/HTTPD/UserAdmin/DBM.pm
+%%SITE_PERL%%/HTTPD/UserAdmin/SQL.pm
+%%SITE_PERL%%/HTTPD/UserAdmin/Text.pm
+%%SITE_PERL%%/HTTPD/UserAdmin/Text/cern.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD-Tools/.packlist
+@dirrm %%SITE_PERL%%/HTTPD/UserAdmin/Text
+@dirrm %%SITE_PERL%%/HTTPD/UserAdmin
+@dirrm %%SITE_PERL%%/HTTPD/GroupAdmin/Text
+@dirrm %%SITE_PERL%%/HTTPD/GroupAdmin/DBM
+@dirrm %%SITE_PERL%%/HTTPD/GroupAdmin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD-Tools
+@unexec rmdir %D/%%SITE_PERL%%/HTTPD 2>/dev/null || true

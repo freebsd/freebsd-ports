@@ -22,6 +22,5 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 MAN3=		Locale::gettext.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -16,12 +16,12 @@ DISTNAME=	perlmenu.v4.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for displaying menus with Curses
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/perlmenu.pm ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+	${INSTALL_DATA} ${WRKSRC}/perlmenu.pm ${SITE_PERL}
 
 .include <bsd.port.mk>

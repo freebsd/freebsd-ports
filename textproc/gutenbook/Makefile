@@ -20,7 +20,7 @@ RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${site_perl}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${site_perl}/URI/URL.pm:${PORTSDIR}/net/p5-URI
 
-site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+site_perl=	${SITE_PERL}
 
 USE_GNOME=	gtk12
 NO_BUILD=	yes

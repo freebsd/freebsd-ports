@@ -2,36 +2,36 @@ bin/rss-to-site
 bin/sitescooper
 bin/subs-to-site
 etc/sitescooper.cf.sample
-lib/perl5/site_perl/%%PERL_VER%%/Exten/README
-lib/perl5/site_perl/%%PERL_VER%%/Exten/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDA/PilotInstall.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheObject.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/CacheSingleton.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ConsolePasswordAsker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/DirCacheFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ForkHTTPClient.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ForkedPasswordAsker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTMLFindNew.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTMLLobotomize.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/HTTPClient.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/ImageURLProcessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/LWPHTTPClient.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/LinksURLProcessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Main.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/NewsHound.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PasswordAsker.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PerSiteCache.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PerSiteDirCache.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/PreloadURLProcessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Robot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/SCF.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/StoryURLProcessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/StripTablesFilter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/UI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/URLProcessor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/UserAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sitescooper/Util.pm
+%%SITE_PERL%%/Exten/README
+%%SITE_PERL%%/Exten/Table.pm
+%%SITE_PERL%%/PDA/PilotInstall.pm
+%%SITE_PERL%%/Sitescooper/CacheFactory.pm
+%%SITE_PERL%%/Sitescooper/CacheObject.pm
+%%SITE_PERL%%/Sitescooper/CacheSingleton.pm
+%%SITE_PERL%%/Sitescooper/ConsolePasswordAsker.pm
+%%SITE_PERL%%/Sitescooper/DirCacheFactory.pm
+%%SITE_PERL%%/Sitescooper/ForkHTTPClient.pm
+%%SITE_PERL%%/Sitescooper/ForkedPasswordAsker.pm
+%%SITE_PERL%%/Sitescooper/HTMLFindNew.pm
+%%SITE_PERL%%/Sitescooper/HTMLLobotomize.pm
+%%SITE_PERL%%/Sitescooper/HTTPClient.pm
+%%SITE_PERL%%/Sitescooper/ImageURLProcessor.pm
+%%SITE_PERL%%/Sitescooper/LWPHTTPClient.pm
+%%SITE_PERL%%/Sitescooper/LinksURLProcessor.pm
+%%SITE_PERL%%/Sitescooper/Main.pm
+%%SITE_PERL%%/Sitescooper/NewsHound.pm
+%%SITE_PERL%%/Sitescooper/PasswordAsker.pm
+%%SITE_PERL%%/Sitescooper/PerSiteCache.pm
+%%SITE_PERL%%/Sitescooper/PerSiteDirCache.pm
+%%SITE_PERL%%/Sitescooper/PreloadURLProcessor.pm
+%%SITE_PERL%%/Sitescooper/Robot.pm
+%%SITE_PERL%%/Sitescooper/SCF.pm
+%%SITE_PERL%%/Sitescooper/StoryURLProcessor.pm
+%%SITE_PERL%%/Sitescooper/StripTablesFilter.pm
+%%SITE_PERL%%/Sitescooper/UI.pm
+%%SITE_PERL%%/Sitescooper/URLProcessor.pm
+%%SITE_PERL%%/Sitescooper/UserAgent.pm
+%%SITE_PERL%%/Sitescooper/Util.pm
 %%PORTDOCS%%share/doc/sitescooper/contributing.html
 %%PORTDOCS%%share/doc/sitescooper/running.html
 %%PORTDOCS%%share/doc/sitescooper/site_params.html
@@ -531,9 +531,9 @@ share/sitescooper/site_samples/windows/betanews.site
 share/sitescooper/site_samples/windows/cewire.site
 share/sitescooper/site_samples/windows/fileforum.site
 share/sitescooper/site_samples/windows/ntfaq.site
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Exten
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDA
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sitescooper
+@dirrm %%SITE_PERL%%/Exten
+@dirrm %%SITE_PERL%%/PDA
+@dirrm %%SITE_PERL%%/Sitescooper
 @dirrm share/sitescooper/profile_samples
 @dirrm share/sitescooper/site_samples/admin
 @dirrm share/sitescooper/site_samples/books

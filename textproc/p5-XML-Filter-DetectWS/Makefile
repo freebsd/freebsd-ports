@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A PerlSAX filter that detects ignorable whitespace
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Filter/SAXT.pm:${PORTSDIR}/textproc/p5-XML-Filter-SAXT
+RUN_DEPENDS=	${SITE_PERL}/XML/Filter/SAXT.pm:${PORTSDIR}/textproc/p5-XML-Filter-SAXT
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Filter::DetectWS.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

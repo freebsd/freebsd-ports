@@ -14,11 +14,11 @@ MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 MAINTAINER=     ache@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
+		${SITE_PERL}/Net/XWhois.pm:${PORTSDIR}/net/p5-Net-XWhois \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
 
 NO_BUILD=	yes
 PERL_CONFIGURE= yes

@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/2CheckOut.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/2CheckOut/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/2CheckOut
+%%SITE_PERL%%/Business/OnlinePayment/2CheckOut.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/2CheckOut/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/2CheckOut
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/2CheckOut
 @unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

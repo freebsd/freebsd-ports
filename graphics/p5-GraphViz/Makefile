@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	GraphViz - Perl interface to the GraphViz graphing tool
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Graph.pm:${PORTSDIR}/math/p5-Graph \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Math/Bezier.pm:${PORTSDIR}/math/p5-Math-Bezier
+BUILD_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run \
+		${SITE_PERL}/Graph.pm:${PORTSDIR}/math/p5-Graph \
+		${SITE_PERL}/Math/Bezier.pm:${PORTSDIR}/math/p5-Math-Bezier
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		dot:${PORTSDIR}/graphics/graphviz
 

@@ -16,7 +16,7 @@ COMMENT=	Track uptime and DNS status for machines on your networks
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
 		safe_mysqld:${PORTSDIR}/databases/mysql323-server \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask
 
 do-patch:
 	@${SED} -e 's#dirname.*"/hawk#"${PREFIX}/etc/hawk/daemon#' \

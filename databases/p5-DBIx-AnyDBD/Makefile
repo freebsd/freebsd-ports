@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svenasse@polaris.ca
 COMMENT=	DBD independant class
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::AnyDBD.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

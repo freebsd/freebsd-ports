@@ -18,7 +18,6 @@ COMMENT=	Perl module that implements a generic binary search algorithm
 PERL_CONFIGURE=	yes
 
 MAN3=		Search::Binary.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e 's|Seach|Search|' ${WRKSRC}/Binary.pm

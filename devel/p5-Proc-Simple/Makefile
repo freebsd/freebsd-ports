@@ -17,7 +17,6 @@ COMMENT=	Perl5 module to launch and control background processes
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Proc::Simple.3
 
 .include <bsd.port.mk>

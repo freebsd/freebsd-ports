@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Google.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/Google/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/Google
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search 2>&1 || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>&1 || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW/Search 2>&1 || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW 2>&1 || true
+%%SITE_PERL%%/WWW/Search/Google.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/Google/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search/Google
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Search 2>&1 || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>&1 || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW/Search 2>&1 || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>&1 || true

@@ -7,29 +7,29 @@ bin/gnump3d2
 etc/gnump3d/gnump3d.conf-default
 @exec [ -f %B/gnump3d.conf ] || cp %B/%f %B/gnump3d.conf
 etc/gnump3d/mime.types
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/IP.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/base64.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/config.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/files.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/mp3info.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/ogginfo.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/oggtagreader.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/lang/en.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/lang/lookup.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/playlist.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/COPYING.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/bug.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/info.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/now.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/playlist.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/prefs.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/random.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/recent.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/search.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/size.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins/stats.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/tagcache.pm
-lib/perl5/site_perl/%%PERL_VER%%/gnump3d/url.pm
+%%SITE_PERL%%/gnump3d/IP.pm
+%%SITE_PERL%%/gnump3d/base64.pm
+%%SITE_PERL%%/gnump3d/config.pm
+%%SITE_PERL%%/gnump3d/files.pm
+%%SITE_PERL%%/gnump3d/mp3info.pm
+%%SITE_PERL%%/gnump3d/ogginfo.pm
+%%SITE_PERL%%/gnump3d/oggtagreader.pm
+%%SITE_PERL%%/gnump3d/lang/en.pm
+%%SITE_PERL%%/gnump3d/lang/lookup.pm
+%%SITE_PERL%%/gnump3d/playlist.pm
+%%SITE_PERL%%/gnump3d/plugins/COPYING.pm
+%%SITE_PERL%%/gnump3d/plugins/bug.pm
+%%SITE_PERL%%/gnump3d/plugins/info.pm
+%%SITE_PERL%%/gnump3d/plugins/now.pm
+%%SITE_PERL%%/gnump3d/plugins/playlist.pm
+%%SITE_PERL%%/gnump3d/plugins/prefs.pm
+%%SITE_PERL%%/gnump3d/plugins/random.pm
+%%SITE_PERL%%/gnump3d/plugins/recent.pm
+%%SITE_PERL%%/gnump3d/plugins/search.pm
+%%SITE_PERL%%/gnump3d/plugins/size.pm
+%%SITE_PERL%%/gnump3d/plugins/stats.pm
+%%SITE_PERL%%/gnump3d/tagcache.pm
+%%SITE_PERL%%/gnump3d/url.pm
 %%DATADIR%%/Clean/AUTHOR
 %%DATADIR%%/Clean/COPYING.html
 %%DATADIR%%/Clean/bug.html
@@ -224,9 +224,9 @@ lib/perl5/site_perl/%%PERL_VER%%/gnump3d/url.pm
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d/plugins
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d/lang
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/gnump3d
+@dirrm %%SITE_PERL%%/gnump3d/plugins
+@dirrm %%SITE_PERL%%/gnump3d/lang
+@dirrm %%SITE_PERL%%/gnump3d
 @unexec rmdir %D/etc/gnump3d 2>/dev/null || true
 @unexec rmdir /var/log/gnump3d 2>/dev/null || true
 @exec mkdir -p /var/log/gnump3d

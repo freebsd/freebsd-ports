@@ -17,7 +17,6 @@ COMMENT=	Net::SMPP - pure Perl implementation of SMPP 3.4 over TCP
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::SMPP.3
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/XML/TreeBuilder.pm
-lib/perl5/site_perl/%%PERL_VER%%/XML/Element.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML-TreeBuilder/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML-TreeBuilder
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true
+%%SITE_PERL%%/XML/TreeBuilder.pm
+%%SITE_PERL%%/XML/Element.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-TreeBuilder/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-TreeBuilder
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

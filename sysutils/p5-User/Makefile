@@ -17,7 +17,6 @@ COMMENT=	User - API for locating user information regardless of OS
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		User.3
 
 .include <bsd.port.mk>

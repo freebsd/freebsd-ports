@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Table/matrix extension to perl/tk for displaying table formatted data
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tk::TableMatrix.3 \
 		Tk::TableMatrix::Spreadsheet.3 \
 		Tk::TableMatrix::SpreadsheetHideRows.3

@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/IMAP/Admin.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMAP/Admin/.packlist
+%%SITE_PERL%%/IMAP/Admin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Admin/.packlist
 share/examples/p5-IMAP-Admin/create.pl
 share/examples/p5-IMAP-Admin/delete.pl
 @dirrm share/examples/p5-IMAP-Admin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMAP/Admin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMAP
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/IMAP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP/Admin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMAP
+@dirrm %%SITE_PERL%%/IMAP

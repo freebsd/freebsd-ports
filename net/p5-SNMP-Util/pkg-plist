@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/SNMP/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/SNMP/Util_env.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP/Util/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SNMP/Util
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SNMP
+%%SITE_PERL%%/SNMP/Util.pm
+%%SITE_PERL%%/SNMP/Util_env.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Util/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Util
+@dirrm %%SITE_PERL%%/SNMP

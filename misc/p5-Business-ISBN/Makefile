@@ -19,6 +19,5 @@ PERL_CONFIGURE=		yes
 
 MAN3=			Business::ISBN.3 \
 			Business::Data.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

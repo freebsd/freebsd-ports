@@ -18,6 +18,5 @@ COMMENT=	This is a thin wrapper around the shellwords.pl package
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Shellwords.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,27 +1,27 @@
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Body.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Entity.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/QuotedPrint.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Base64.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Binary.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/Gzip64.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/NBit.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder/UU.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ConTraEnc.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ContDisp.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ContType.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Field/ParamVal.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Head.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Filer.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Reader.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser/Results.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Tools.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/WordDecoder.pm
-lib/perl5/site_perl/%%PERL_VER%%/MIME/Words.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MIME-tools
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Field
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Decoder
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MIME/Parser
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MIME 2>/dev/null || true
+%%SITE_PERL%%/MIME/Body.pm
+%%SITE_PERL%%/MIME/Entity.pm
+%%SITE_PERL%%/MIME/Decoder.pm
+%%SITE_PERL%%/MIME/Decoder/QuotedPrint.pm
+%%SITE_PERL%%/MIME/Decoder/Base64.pm
+%%SITE_PERL%%/MIME/Decoder/Binary.pm
+%%SITE_PERL%%/MIME/Decoder/Gzip64.pm
+%%SITE_PERL%%/MIME/Decoder/NBit.pm
+%%SITE_PERL%%/MIME/Decoder/UU.pm
+%%SITE_PERL%%/MIME/Field/ConTraEnc.pm
+%%SITE_PERL%%/MIME/Field/ContDisp.pm
+%%SITE_PERL%%/MIME/Field/ContType.pm
+%%SITE_PERL%%/MIME/Field/ParamVal.pm
+%%SITE_PERL%%/MIME/Head.pm
+%%SITE_PERL%%/MIME/Parser.pm
+%%SITE_PERL%%/MIME/Parser/Filer.pm
+%%SITE_PERL%%/MIME/Parser/Reader.pm
+%%SITE_PERL%%/MIME/Parser/Results.pm
+%%SITE_PERL%%/MIME/Tools.pm
+%%SITE_PERL%%/MIME/WordDecoder.pm
+%%SITE_PERL%%/MIME/Words.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools
+@dirrm %%SITE_PERL%%/MIME/Field
+@dirrm %%SITE_PERL%%/MIME/Decoder
+@dirrm %%SITE_PERL%%/MIME/Parser
+@unexec rmdir %D/%%SITE_PERL%%/MIME 2>/dev/null || true

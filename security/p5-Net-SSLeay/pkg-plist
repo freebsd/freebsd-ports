@@ -1,48 +1,48 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSLeay.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSLeay/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/ptrtstrun.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/debug_read.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https2.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https3.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https4.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/dump_peer_certificate.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https3.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https4.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https3.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https4.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/https_cat.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_form.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_headers.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/new_x_ctx.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/open_proxy_tcp_connection.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/open_tcp_connection.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https3.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https4.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https3.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https4.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/randomize.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_cert_and_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_proxy.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_server_cert_and_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_CRLF.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_all.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_until.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_write_CRLF.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_write_all.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/sslcat.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_X509_lookup.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_nothing.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_read.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/ptrtstrun.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/SSLeay.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/debug_read.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https2.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https3.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/do_https4.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/dump_peer_certificate.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https3.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/get_https4.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https3.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/head_https4.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/https_cat.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_form.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/make_headers.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/new_x_ctx.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/open_proxy_tcp_connection.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/open_tcp_connection.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https3.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/post_https4.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https3.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/put_https4.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/randomize.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_cert_and_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_proxy.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/set_server_cert_and_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_CRLF.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_all.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_read_until.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_write_CRLF.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/ssl_write_all.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/sslcat.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_X509_lookup.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_nothing.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_read.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/bio.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/bulk.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/callback.pl
@@ -63,7 +63,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay/want_write.al
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/sslecho.pl
 %%PORTDOCS%%share/examples/p5-Net-SSLeay/stdio_bulk.pl
 %%PORTDOCS%%@dirrm share/examples/p5-Net-SSLeay
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/SSLeay
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSLeay
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSLeay
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSLeay
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true

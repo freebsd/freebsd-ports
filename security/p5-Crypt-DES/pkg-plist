@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2> /dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt 2> /dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/DES.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/DES
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt 2> /dev/null || true

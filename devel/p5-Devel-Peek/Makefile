@@ -23,7 +23,6 @@ BROKEN=         "Does not compile"
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::Peek.3
 
 .include <bsd.port.post.mk>

@@ -18,6 +18,5 @@ COMMENT=	Sort a file or merge sort multiple files
 PERL_CONFIGURE=		yes
 
 MAN3=			File::Sort.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

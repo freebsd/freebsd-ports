@@ -1,17 +1,17 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/Files.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/GdkPixbufDefs.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/GdkPixbufTypemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/PerlGdkPixbufInt.h
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/pkg.typemap
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Types.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/Gdk 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/Gdk 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/GdkPixbufDefs.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/GdkPixbufTypemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/PerlGdkPixbufInt.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install/pkg.typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/Pixbuf.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf/Pixbuf.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf/Install
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk/Pixbuf
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk/Gdk 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Gtk 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk/Pixbuf
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk/Gdk 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk 2>/dev/null || true

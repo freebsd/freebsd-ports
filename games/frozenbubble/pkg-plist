@@ -1,12 +1,12 @@
 bin/frozen-bubble.pl
 bin/frozen-bubble
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/build_fbsyms
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/fb_c_stuff.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/fbsyms.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/fbmdkcommon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/fb_c_stuff.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/build_fbsyms
+%%SITE_PERL%%/%%PERL_ARCH%%/fb_c_stuff.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fbsyms.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/fbmdkcommon.pm
 share/frozen-bubble/data/levels
 share/frozen-bubble/data/plasma.raw
 share/frozen-bubble/snd/applause.wav
@@ -285,7 +285,7 @@ share/frozen-bubble/gfx/tomate.png
 share/frozen-bubble/gfx/win_panel_p1.png
 share/frozen-bubble/gfx/win_panel_p2.png
 share/frozen-bubble/highscores.default
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/fb_c_stuff
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/fb_c_stuff
 @dirrm share/frozen-bubble/data
 @dirrm share/frozen-bubble/snd
 @dirrm share/frozen-bubble/gfx/balls

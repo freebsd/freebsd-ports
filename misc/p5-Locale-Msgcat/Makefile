@@ -17,6 +17,5 @@ COMMENT=	Msgcat, a small Perl module for systems to support the XPG4 message cat
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ COMMENT=	Perl module containing common functions for loans and annuities
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Financial.3
 
 .include <bsd.port.mk>

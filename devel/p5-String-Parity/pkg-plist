@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/String/Parity.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Parity/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Parity
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/String
+%%SITE_PERL%%/String/Parity.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Parity/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Parity
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
+@dirrm %%SITE_PERL%%/String

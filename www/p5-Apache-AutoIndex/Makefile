@@ -15,14 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module that can completely replace mod_dir and mod_autoindex
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/Icon.pm:${PORTSDIR}/www/p5-Apache-Icon \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/Language.pm:${PORTSDIR}/www/p5-Apache-Language \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Icon.pm:${PORTSDIR}/www/p5-Apache-Icon \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Language.pm:${PORTSDIR}/www/p5-Apache-Language \
+		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::AutoIndex.3
 
 .include <bsd.port.mk>

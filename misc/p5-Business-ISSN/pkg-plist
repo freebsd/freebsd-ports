@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/ISSN.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISSN/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/ISSN
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business 2>/dev/null || true
+%%SITE_PERL%%/Business/ISSN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISSN/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISSN
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Business 2>/dev/null || true

@@ -1,5 +1,5 @@
 sbin/remarp
 etc/remarp.conf.sample
-lib/perl5/site_perl/%%PERL_VER%%/remarp/config.pm
-lib/perl5/site_perl/%%PERL_VER%%/remarp/configure.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/remarp
+%%SITE_PERL%%/remarp/config.pm
+%%SITE_PERL%%/remarp/configure.pm
+@dirrm %%SITE_PERL%%/remarp

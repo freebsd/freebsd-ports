@@ -18,6 +18,5 @@ COMMENT=	Load modules and create objects on demand
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::Loader.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

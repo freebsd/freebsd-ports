@@ -17,7 +17,7 @@ COMMENT=	Domain Registry software
 RUN_DEPENDS=	${LOCALBASE}/sbin/stunnel:${PORTSDIR}/security/stunnel \
 		${LOCALBASE}/sbin/named:${PORTSDIR}/dns/bind9 \
 		${LOCALBASE}/bin/postgres:${PORTSDIR}/${POSTGRESQL_PORT} \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 BUILD_DEPENDS=	${LOCALBASE}/include/isc/buffer.h:${PORTSDIR}/dns/bind9
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 

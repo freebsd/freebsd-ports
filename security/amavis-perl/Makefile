@@ -19,16 +19,16 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/uvscan:${PORTSDIR}/security/vscan \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
 		${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
+		${SITE_PERL}/IO/AtomicFile.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/MIME/Body.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
+		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
 .endif

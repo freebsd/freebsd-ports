@@ -13,7 +13,7 @@ MASTER_SITES=	http://fastest-cvsup.sourceforge.net/download/
 MAINTAINER=	ajr@subdimension.com
 COMMENT=	Finds fastest CVSup server
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
 USE_PERL5=	yes
 

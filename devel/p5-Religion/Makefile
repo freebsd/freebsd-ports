@@ -18,6 +18,5 @@ COMMENT=	Perl5 module to install die() and warn() handlers
 PERL_CONFIGURE=	YES
 
 MAN3=		Religion.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

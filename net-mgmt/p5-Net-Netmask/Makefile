@@ -17,7 +17,6 @@ COMMENT=	Perl module to parse, manipulate and lookup IP network blocks
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Netmask.3
 
 .include <bsd.port.mk>

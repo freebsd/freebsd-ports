@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/Chatbot/Eliza.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chatbot/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Chatbot
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Chatbot
+%%SITE_PERL%%/Chatbot/Eliza.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot/.packlist
+@dirrm %%SITE_PERL%%/Chatbot
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chatbot

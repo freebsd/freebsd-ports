@@ -1,13 +1,13 @@
 bin/w3mfix
 bin/w3mir
-lib/perl5/site_perl/%%PERL_VER%%/htmlop.pm
-lib/perl5/site_perl/%%PERL_VER%%/w3http.pm
-lib/perl5/site_perl/%%PERL_VER%%/w3pdfuri.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/w3mir/.packlist
+%%SITE_PERL%%/htmlop.pm
+%%SITE_PERL%%/w3http.pm
+%%SITE_PERL%%/w3pdfuri.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/w3mir/.packlist
 share/doc/w3mir/Artistic
 share/doc/w3mir/README
 share/doc/w3mir/example.cfg
 share/doc/w3mir/multiscope.cfg
 share/doc/w3mir/w3mir-HOWTO.html
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/w3mir
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/w3mir
 @dirrm share/doc/w3mir

@@ -17,11 +17,10 @@ DISTNAME=	GIFgraph-${PORTVERSION}
 MAINTAINER=	ls@gambit.com.ru
 COMMENT=	A Perl package to generate PNG charts
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GIFgraph.3 GIFgraph::colour.3
 
 post-patch:

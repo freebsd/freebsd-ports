@@ -18,10 +18,9 @@ COMMENT=	Perl module to parse daily newsletters from freshmeat.net
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Freshmeat.3
 
 .include <bsd.port.mk>

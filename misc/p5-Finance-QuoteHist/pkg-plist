@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance-QuoteHist/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist/Generic.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist/SiliconInvestor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist/Yahoo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist/WallStreetCity.pm
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance/QuoteHist 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance-QuoteHist 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist/.packlist
+%%SITE_PERL%%/Finance/QuoteHist.pm
+%%SITE_PERL%%/Finance/QuoteHist/Generic.pm
+%%SITE_PERL%%/Finance/QuoteHist/SiliconInvestor.pm
+%%SITE_PERL%%/Finance/QuoteHist/Yahoo.pm
+%%SITE_PERL%%/Finance/QuoteHist/WallStreetCity.pm
+@unexec rmdir %D/%%SITE_PERL%%/Finance/QuoteHist 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Finance 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance-QuoteHist 2>/dev/null || true

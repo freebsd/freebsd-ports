@@ -1,16 +1,16 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GraphViz/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz.pm
-lib/perl5/site_perl/%%PERL_VER%%/Devel/GraphVizProf.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Small.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Regex.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/XML.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/No.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/Yapp.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/RecDescent.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse/Yacc.pm
-lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Data/Grapher.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Parse
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/GraphViz/Data
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GraphViz 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Devel 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/GraphViz 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz/.packlist
+%%SITE_PERL%%/GraphViz.pm
+%%SITE_PERL%%/Devel/GraphVizProf.pm
+%%SITE_PERL%%/GraphViz/Small.pm
+%%SITE_PERL%%/GraphViz/Regex.pm
+%%SITE_PERL%%/GraphViz/XML.pm
+%%SITE_PERL%%/GraphViz/No.pm
+%%SITE_PERL%%/GraphViz/Parse/Yapp.pm
+%%SITE_PERL%%/GraphViz/Parse/RecDescent.pm
+%%SITE_PERL%%/GraphViz/Parse/Yacc.pm
+%%SITE_PERL%%/GraphViz/Data/Grapher.pm
+@dirrm %%SITE_PERL%%/GraphViz/Parse
+@dirrm %%SITE_PERL%%/GraphViz/Data
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GraphViz 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/GraphViz 2>/dev/null || true

@@ -21,6 +21,5 @@ PERL_CONFIGURE=	YES
 MAN3=		Date::Format.3 \
 		Date::Parse.3 \
 		Time::Zone.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

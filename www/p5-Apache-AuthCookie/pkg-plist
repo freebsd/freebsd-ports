@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthCookie.pm
-lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthCookie/Util.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache/AuthCookie
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+%%SITE_PERL%%/Apache/AuthCookie.pm
+%%SITE_PERL%%/Apache/AuthCookie/Util.pm
+@dirrm %%SITE_PERL%%/Apache/AuthCookie
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/AuthCookie
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true

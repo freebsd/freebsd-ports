@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Log::Agent::Logger - a logging interface for perl
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long
+BUILD_DEPENDS=	${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
+		${SITE_PERL}/Getargs/Long.pm:${PORTSDIR}/devel/p5-Getargs-Long
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Log::Agent::Logger.3
 
 .include <bsd.port.mk>

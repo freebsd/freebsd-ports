@@ -17,7 +17,6 @@ COMMENT=	Perl module to parse traceroute6(8) output
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Traceroute6.3
 
 .include <bsd.port.mk>

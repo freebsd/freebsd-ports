@@ -3,13 +3,13 @@ bin/indexmaker
 bin/mrtg
 bin/rateup
 etc/mrtg/mrtg.cfg.sample
-lib/perl5/site_perl/%%PERL_VER%%/MRTG_lib.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pod/InputObjects.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pod/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pod/PlainText.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pod/Select.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pod/Usage.pm
-lib/perl5/site_perl/%%PERL_VER%%/locales_mrtg.pm
+%%SITE_PERL%%/MRTG_lib.pm
+%%SITE_PERL%%/Pod/InputObjects.pm
+%%SITE_PERL%%/Pod/Parser.pm
+%%SITE_PERL%%/Pod/PlainText.pm
+%%SITE_PERL%%/Pod/Select.pm
+%%SITE_PERL%%/Pod/Usage.pm
+%%SITE_PERL%%/locales_mrtg.pm
 %%PORTDOCS%%share/doc/mrtg/ANNOUNCE
 %%PORTDOCS%%share/doc/mrtg/CHANGES
 %%PORTDOCS%%share/doc/mrtg/COPYRIGHT
@@ -80,6 +80,6 @@ share/mrtg/mrtg-r.png
 share/mrtg/mrtg-ti.gif
 share/mrtg/mrtg-ti.png
 @dirrm etc/mrtg
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pod
+@dirrm %%SITE_PERL%%/Pod
 %%PORTDOCS%%@dirrm share/doc/mrtg
 @dirrm share/mrtg

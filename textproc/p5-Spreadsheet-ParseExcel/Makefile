@@ -24,7 +24,6 @@ PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 MAN3=		Spreadsheet::ParseExcel.3 \
 		Spreadsheet::ParseExcel::SaveParser.3 \
 		Spreadsheet::ParseExcel::Utility.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 

@@ -17,7 +17,6 @@ COMMENT=	Perl5 module providing access to ISO3166 and ISO639 Country Codes
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Locale::Country.3 Locale::Constants.3 Locale::Currency.3 \
 		Locale::Language.3 Locale::Script.3
 

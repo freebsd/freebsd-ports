@@ -1,92 +1,92 @@
 bin/tpage
 bin/ttree
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Context.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Directive.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Document.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Filters.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Grammar.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/HTML.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/PostScript.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library/Splash.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Config.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Credits.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Directives.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Filters.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Internals.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Intro.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Plugins.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Refs.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Syntax.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/VMethods.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Variables.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual/Views.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Modules.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Namespace/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Autoformat.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Datafile.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Directory.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Dumper.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/File.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Format.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/area.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/linespoints.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/mixed.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie3d.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/points.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Image.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Polygon.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Align.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/String.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/URL.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/View.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/DOM.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/RSS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/Style.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/XPath.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugins.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Provider.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Service.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash/Context.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash/XS.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools/tpage.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools/ttree.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial/Datafile.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial/Web.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/View.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Template.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Base.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Config.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Context.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Directive.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Document.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Exception.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/FAQ.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Filters.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Grammar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Library/HTML.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Library/PostScript.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Library/Splash.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Config.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Credits.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Directives.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Filters.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Internals.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Intro.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Plugins.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Refs.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Syntax.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/VMethods.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Variables.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual/Views.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Modules.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Namespace/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Autoformat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/CGI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/DBI.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Datafile.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Date.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Directory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Dumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Filter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Format.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/area.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/bars3d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/lines3d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/linespoints.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/mixed.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/pie3d.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/points.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Image.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Polygon.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Align.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Wrap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/String.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Table.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/URL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/View.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Wrap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML/DOM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML/RSS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML/Style.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML/XPath.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugins.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Provider.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Service.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash/Context.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Tools/tpage.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Tools/ttree.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial/Datafile.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial/Web.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Template/View.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/XS/XS.so
 share/tt2/docs/README
 share/tt2/docs/html/FAQ/FAQ.html
 share/tt2/docs/html/FAQ/index.html
@@ -1364,21 +1364,21 @@ share/tt2/templates/splash/tabset
 share/tt2/templates/splash/text
 share/tt2/templates/splash/ttdotorg
 share/tt2/templates/splash/ttpower
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash/XS
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template/Stash
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Template
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tools
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Stash
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Library
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Tutorial
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Namespace
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Manual
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash/XS
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Stash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tools
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Stash
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Library
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Tutorial
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Namespace
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Manual
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/XML
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Text
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/GD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Template
 @dirrm share/tt2/docs/html/Tools
 @dirrm share/tt2/docs/html/Tutorial
 @dirrm share/tt2/docs/html/Library

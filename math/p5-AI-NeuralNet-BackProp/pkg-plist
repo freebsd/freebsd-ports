@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/AI/NeuralNet/BackProp.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/AI/NeuralNet
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AI 2>/dev/null || true
+%%SITE_PERL%%/AI/NeuralNet/BackProp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AI/NeuralNet
+@dirrm %%SITE_PERL%%/AI/NeuralNet
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/AI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/AI 2>/dev/null || true

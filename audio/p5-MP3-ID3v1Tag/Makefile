@@ -18,6 +18,5 @@ COMMENT=	Edit ID3v1 Tags from an Audio MPEG Layer 3
 PERL_CONFIGURE=	yes
 
 MAN3=		MP3::ID3v1Tag.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

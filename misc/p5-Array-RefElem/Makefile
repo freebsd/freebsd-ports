@@ -18,6 +18,5 @@ COMMENT=	Set up array elements as aliases
 PERL_CONFIGURE=	yes
 
 MAN3=	Array::RefElem.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

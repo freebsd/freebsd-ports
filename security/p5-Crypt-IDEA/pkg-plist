@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2> /dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt 2> /dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/IDEA.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/IDEA
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2> /dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt 2> /dev/null || true

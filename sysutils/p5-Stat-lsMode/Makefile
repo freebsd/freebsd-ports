@@ -18,6 +18,5 @@ COMMENT=	Stat::lsMode - format file modes like the ls -l command does
 PERL_CONFIGURE=	yes
 
 MAN3=		Stat::lsMode.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -20,10 +20,9 @@ BUILD_DEPENDS=	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::Box.3 \
 		Mail::Box::Index.3 \
 		Mail::Box::Locker.3 \

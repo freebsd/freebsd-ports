@@ -2,12 +2,12 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Client.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Server.3
 lib/perl5/%%PERL_VERSION%%/man/man3/Authen::Ticket::Signature.3
-lib/perl5/site_perl/%%PERL_VER%%/Authen/Ticket.pm
-lib/perl5/site_perl/%%PERL_VER%%/Authen/Ticket/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Authen/Ticket/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Authen/Ticket/Signature.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Ticket/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen/Ticket
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Authen/Ticket
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Authen 2>/dev/null || true
+%%SITE_PERL%%/Authen/Ticket.pm
+%%SITE_PERL%%/Authen/Ticket/Client.pm
+%%SITE_PERL%%/Authen/Ticket/Server.pm
+%%SITE_PERL%%/Authen/Ticket/Signature.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Ticket/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Ticket
+@dirrm %%SITE_PERL%%/Authen/Ticket
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Authen 2>/dev/null || true

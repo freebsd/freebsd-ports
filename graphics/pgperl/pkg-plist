@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PGPLOT.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/old_test.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/PGPLOT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/old_test.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PGPLOT/.packlist
 share/doc/pgperl/LICENSE
 share/doc/pgperl/test.img
 share/doc/pgperl/test.pl
@@ -18,5 +18,5 @@ share/doc/pgperl/test6.p
 share/doc/pgperl/test7.p
 share/doc/pgperl/test8.p
 share/doc/pgperl/test9.p
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PGPLOT
 @dirrm share/doc/pgperl

@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	croyle@gelemna.org
 COMMENT=	Robomoderation and mail to news gatewaying toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
+BUILD_DEPENDS=	${SITE_PERL}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
+RUN_DEPENDS=	${SITE_PERL}/News/Article.pm:${PORTSDIR}/news/p5-News-Article
 
 PERL_CONFIGURE=	yes
 
 MAN3=		News::Gateway.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

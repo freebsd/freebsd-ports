@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Tie/IxHash.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/IxHash/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie/IxHash
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Tie 2>/dev/null || true
+%%SITE_PERL%%/Tie/IxHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/IxHash/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/IxHash
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Tie 2>/dev/null || true

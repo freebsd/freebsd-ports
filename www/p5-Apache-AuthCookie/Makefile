@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module to provide custom forms for reauthentication
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -29,7 +29,6 @@ CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
 		TESTGRP="${CURGRP}" \
 		TESTPORT="${TESTPORT}"
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::AuthCookie.3
 
 .include <bsd.port.mk>

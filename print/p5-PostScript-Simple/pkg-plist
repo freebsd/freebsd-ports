@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PostScript/Simple/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/PostScript/Simple.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PostScript/Simple
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/PostScript 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/PostScript 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple/.packlist
+%%SITE_PERL%%/PostScript/Simple.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PostScript/Simple
+@unexec rmdir %D/%%SITE_PERL%%/i386-freebsd/auto/PostScript 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PostScript 2>/dev/null || true

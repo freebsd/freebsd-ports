@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Minimal.pm
-lib/perl5/site_perl/%%PERL_VER%%/CGI/Minimal.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/Minimal
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal/.packlist
+%%SITE_PERL%%/CGI/Minimal.pm
+%%SITE_PERL%%/CGI/Minimal.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Minimal
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrm %%SITE_PERL%%/CGI

@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Watches HTTP transactions under mod_perl, looking at the headers
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DumpHeaders.3 Apache::ProxyPassThru.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

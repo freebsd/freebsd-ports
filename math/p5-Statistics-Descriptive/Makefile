@@ -18,6 +18,5 @@ COMMENT=	Perl module that supplies statistical methods for perl5
 PERL_CONFIGURE=	yes
 
 MAN3=		Statistics::Descriptive.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PM_BASE}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PM_BASE=	${SITE_PERL}
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN1=		datum_strip.1

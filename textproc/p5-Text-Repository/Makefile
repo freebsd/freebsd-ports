@@ -18,6 +18,5 @@ COMMENT=	A simple way to manage text without mixing it with Perl
 PERL_CONFIGURE=		yes
 
 MAN3=			Text::Repository.3
-MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Hashes (and objects based on hashes) with encrypting fields
 
-PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERLBASE=	${SITE_PERL}
 
 BUILD_DEPENDS=	${PERLBASE}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tie::EncryptedHash.3
 
 .include <bsd.port.mk>

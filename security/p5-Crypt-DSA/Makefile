@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	DSA signature and key generation
 
-PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERLBASE=	${SITE_PERL}
 
 BUILD_DEPENDS=	${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random \
 		${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
@@ -25,7 +25,6 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random 
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::DSA::Key::SSH2.3 Crypt::DSA.3 Crypt::DSA::Key.3 \
 		Crypt::DSA::Key::PEM.3 Crypt::DSA::Signature.3 \
 		Crypt::DSA::KeyChain.3 Crypt::DSA::Util.3

@@ -17,6 +17,5 @@ COMMENT=	Perl module that provides a way to get the value of C ioctl constants
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -23,6 +23,5 @@ MAN3=		Crypt::DES.3 \
 		Math::BigInteger.3 \
 		Math::TrulyRandom.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@protey.ru
 COMMENT=	POE Component for simple inter-kernel communication
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE/Component/IKC/Responder.pm:${PORTSDIR}/devel/p5-POE-Component-IKC
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/POE/Component/IKC/Responder.pm:${PORTSDIR}/devel/p5-POE-Component-IKC
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Component::IKC::ReallySimple.3
 
 .include <bsd.port.mk>

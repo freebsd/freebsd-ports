@@ -17,7 +17,6 @@ COMMENT=	A perl5 module that dumps symbol names or the symbol table
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Devel::Symdump.3
 
 .include <bsd.port.mk>

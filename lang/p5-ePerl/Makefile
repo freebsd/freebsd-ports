@@ -19,6 +19,5 @@ COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 PERL_CONFIGURE=	yes
 
 MAN3=		Parse::ePerl.3 Apache::ePerl.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

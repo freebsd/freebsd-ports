@@ -18,7 +18,7 @@ COMMENT=	Perl module to convert between Arabic and Roman numerals
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 do-install:
 	${CP} ${WRKSRC}/Roman.pm ${SITE_PERL}

@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/E2U.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/Object.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/S2U.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/TTF.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/U2C.pm
-lib/perl5/site_perl/%%PERL_VER%%/PDFJ/Unicode.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDFJ
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDFJ
+%%SITE_PERL%%/PDFJ.pm
+%%SITE_PERL%%/PDFJ/E2U.pm
+%%SITE_PERL%%/PDFJ/Object.pm
+%%SITE_PERL%%/PDFJ/S2U.pm
+%%SITE_PERL%%/PDFJ/TTF.pm
+%%SITE_PERL%%/PDFJ/U2C.pm
+%%SITE_PERL%%/PDFJ/Unicode.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
+@dirrm %%SITE_PERL%%/PDFJ
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ

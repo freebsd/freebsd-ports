@@ -1,2 +1,2 @@
-lib/perl5/site_perl/%%PERL_VER%%/Archie.pm
+%%SITE_PERL%%/Archie.pm
 bin/archie_gateway

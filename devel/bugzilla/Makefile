@@ -46,7 +46,7 @@ NO_BUILD=	yes
 BINMODE=	700
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PERL_SITEDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERL_SITEDIR=	${SITE_PERL}
 
 BUGZILLADIR?=	www/data/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt

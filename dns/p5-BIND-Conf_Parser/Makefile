@@ -18,6 +18,5 @@ COMMENT=	Perl5 module to parse BIND 8 configuration files
 PERL_CONFIGURE=	yes
 
 MAN3=	BIND::Conf_Parser.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

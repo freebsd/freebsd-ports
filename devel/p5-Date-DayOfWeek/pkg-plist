@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/Date/Doomsday.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Birthday.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Nails.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek/Sneeze.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/DayOfWeek/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/DayOfWeek
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/DayOfWeek
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+%%SITE_PERL%%/Date/Doomsday.pm
+%%SITE_PERL%%/Date/DayOfWeek.pm
+%%SITE_PERL%%/Date/DayOfWeek/Birthday.pm
+%%SITE_PERL%%/Date/DayOfWeek/Nails.pm
+%%SITE_PERL%%/Date/DayOfWeek/Sneeze.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/DayOfWeek/.packlist
+@dirrm %%SITE_PERL%%/Date/DayOfWeek
+@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/DayOfWeek
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true

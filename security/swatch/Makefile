@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${site_perl}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${site_perl}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 	${site_perl}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+site_perl=	${SITE_PERL}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLMAN1DIR=${PREFIX}/man/man1

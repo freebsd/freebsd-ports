@@ -17,6 +17,5 @@ COMMENT=	A perl script to convert text files to PDF files
 
 PERL_CONFIGURE=	yes
 MAN3=		PDF::Create.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

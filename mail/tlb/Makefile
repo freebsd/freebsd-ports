@@ -16,9 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 
 NO_BUILD=	yes
 USE_PERL5=	yes

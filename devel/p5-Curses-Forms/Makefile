@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Curses::Forms.3 \
 	Curses::Forms::Dialog.3 \
 	Curses::Forms::Dialog::Input.3 \

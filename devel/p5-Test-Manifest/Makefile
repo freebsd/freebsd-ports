@@ -17,7 +17,6 @@ COMMENT=	Perl module to interact with a t/test_manifest file
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Test::Manifest.3
 
 .include <bsd.port.mk>

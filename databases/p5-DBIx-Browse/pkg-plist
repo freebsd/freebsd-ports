@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/Browse.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/Browse/CGI.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/Browse/
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/Browse/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/Browse/
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx 2>/dev/null || true
+%%SITE_PERL%%/DBIx/Browse.pm
+%%SITE_PERL%%/DBIx/Browse/CGI.pm
+@dirrm %%SITE_PERL%%/DBIx/Browse/
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Browse/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Browse/
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true
 

@@ -1,1 +1,1 @@
-lib/perl5/site_perl/%%PERL_VER%%/PV.pm
+%%SITE_PERL%%/PV.pm

@@ -15,7 +15,7 @@ MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	An encyclopedia  "Mypaedia" (EPWING V1 format)
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+		${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
 RESTRICTED=	"The original dictionary is not free"

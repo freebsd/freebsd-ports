@@ -14,11 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A class that provides an easy interface to use config files
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Config::Setting.3 \
 	Config::Setting::Fileprovider.3 \
 	Config::Setting::IniParser.3 \

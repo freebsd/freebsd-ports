@@ -18,6 +18,5 @@ COMMENT=	Data::Properties - persistent properties
 PERL_CONFIGURE=	yes
 
 MAN3=		Data::Properties.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

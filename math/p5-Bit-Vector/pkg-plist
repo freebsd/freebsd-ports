@@ -1,14 +1,14 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector/Overload.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector/Overload.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Carp/Clan.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Carp/Clan.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Carp 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector/Overload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector/Overload.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Carp/Clan.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Carp/Clan.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit/Vector
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Bit/Vector
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bit 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Carp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bit 2>/dev/null || true

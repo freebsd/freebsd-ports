@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/Apache/Archive.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Apache/Archive/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Archive/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Archive
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Apache/Archive
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Apache 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
+%%SITE_PERL%%/Apache/Archive.pm
+%%SITE_PERL%%/auto/Apache/Archive/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Archive/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Archive
+@dirrm %%SITE_PERL%%/auto/Apache/Archive
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Apache 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true

@@ -18,12 +18,11 @@ COMMENT=	Perl5 interface to MD5 Message-Digest Algorithm
 PERL_CONFIGURE=	yes
 
 MAN3=		MD5.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
 .endif
 

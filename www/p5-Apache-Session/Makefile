@@ -51,7 +51,7 @@ MAN3=		Apache::Session.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 .endif
 
 .include <bsd.port.post.mk>

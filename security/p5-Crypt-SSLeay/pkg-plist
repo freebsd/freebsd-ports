@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/Conn.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/CTX.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/Err.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/MainContext.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay/X509.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/SSL.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/SSLeay.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/SSLeay.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SSLeay
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SSLeay
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay/Conn.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay/CTX.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay/Err.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay/MainContext.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay/X509.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/SSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/SSLeay.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay/SSLeay.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/SSLeay
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/SSLeay
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt 2>/dev/null || true

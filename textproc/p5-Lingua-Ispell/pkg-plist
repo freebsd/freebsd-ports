@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/Ispell/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Lingua/Ispell.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Lingua/Ispell
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Ispell/.packlist
+%%SITE_PERL%%/Lingua/Ispell.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Ispell
+@dirrm %%SITE_PERL%%/Lingua

@@ -20,6 +20,5 @@ PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/Statistics/Table/F
 
 MAN3=		Statistics::Table::F.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

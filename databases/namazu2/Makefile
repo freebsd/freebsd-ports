@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 #		xlHtml:${PORTSDIR}/textproc/xlhtml \
 #		wvHtml:${PORTSDIR}/textproc/wv
 
-PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PM_BASE=	${SITE_PERL}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -17,7 +17,6 @@ COMMENT=	Base class to treat unhandled method calls as errors
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::WhiteHole.3
 
 .include <bsd.port.mk>

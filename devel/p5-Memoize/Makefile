@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Transparently speed up perl functions by caching return values
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -29,7 +29,6 @@ MAN3=		Memoize.3 \
 		Memoize::SDBM_File.3 \
 		Memoize::Saves.3 \
 		Memoize::Storable.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e '$$_=";" if /warnings::/' ${WRKSRC}/Memoize.pm

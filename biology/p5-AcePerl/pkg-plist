@@ -1,121 +1,121 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/AceSubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/GeneSubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SearchSubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/SiteDefs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser/TreeSubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Freesubs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Fk.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/anchored_arrow.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/arrow.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/box.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/crossbox.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/dot.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/ex.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/graded_segments.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/group.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/line.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/primers.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/segments.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/span.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/toomany.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/transcript.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/triangle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/GlyphFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Panel.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Track.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Iterator.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Local.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Model.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object/Wormbase.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/RPC.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Feature.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/FeatureList.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/GappedAlignment.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Gene.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Homol.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Multi.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Transcript.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/SocketServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/AceSubs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/GeneSubs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/SearchSubs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/SiteDefs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser/TreeSubs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Freesubs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Fk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/anchored_arrow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/arrow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/box.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/crossbox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/dot.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/ex.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/graded_segments.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/group.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/line.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/primers.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/segments.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/span.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/toomany.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/transcript.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/triangle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/GlyphFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Panel.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Track.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Iterator.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Local.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Model.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Object/Wormbase.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/RPC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/Feature.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/FeatureList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/GappedAlignment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/Gene.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/Homol.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/Multi.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence/Transcript.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Ace/SocketServer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GFF/Filehandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_asAce.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_asHTML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_asTable.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_asXML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_default_makeHTML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_insert.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_special_dump.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/_to_ace_date.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/add_row.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/add_tree.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asAce.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asDNA.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asGif.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asHTML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asPeptide.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asString.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asTable.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/asXML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/comment.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/commit.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/date_style.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/debug.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/delete.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/escapeXML.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/isComment.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/kill.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/replace.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/rollback.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/tags.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object/timestamp.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Sequence/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/_register_iterator.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/_restore_iterator.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/_save_iterator.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/_unregister_iterator.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/auto_save.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/class_count.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/classes.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/count.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/date.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/date_style.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/datetime.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/fetch_many.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/find.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/freeprotect.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/grep.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/layout.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/new.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/parse.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/parse_file.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/parse_longtext.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/pick.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/ping.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/put.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/split.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/status.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/timestamps.al
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Sequence
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/RPC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Object
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GFF
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Object
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Browser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asAce.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asHTML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asTable.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_asXML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_default_makeHTML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_insert.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_special_dump.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/_to_ace_date.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/add_row.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/add_tree.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asAce.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asDNA.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asGif.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asHTML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asPeptide.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asString.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asTable.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/asXML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/comment.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/commit.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/date_style.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/debug.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/delete.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/escapeXML.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/isComment.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/kill.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/replace.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/rollback.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/tags.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object/timestamp.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC/RPC.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/_register_iterator.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/_restore_iterator.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/_save_iterator.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/_unregister_iterator.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/auto_save.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/class_count.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/classes.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/count.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/date.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/date_style.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/datetime.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/fetch_many.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/find.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/freeprotect.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/grep.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/layout.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/new.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/parse.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/parse_file.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/parse_longtext.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/pick.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/ping.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/put.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/split.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/status.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/timestamps.al
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Freesubs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GFF
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Sequence
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Object
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics/Glyph
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Graphics
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace/Browser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Ace

@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/SETI/Stats.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SETI-Stats/.packlist
+%%SITE_PERL%%/SETI/Stats.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SETI-Stats/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SETI-Stats
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/SETI
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SETI-Stats
+@dirrm %%SITE_PERL%%/SETI
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

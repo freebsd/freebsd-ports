@@ -16,11 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Implementation of RIPE Whois
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO.pm:${PORTSDIR}/devel/p5-IO
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Net::Whois::RIPE::Iterator.3 \
 	Net::Whois::RIPE::Object.3 \
 	Net::Whois::RIPE.3

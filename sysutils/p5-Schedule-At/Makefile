@@ -18,6 +18,5 @@ COMMENT=	OS independent interface to the Unix 'at' command
 PERL_CONFIGURE=	yes
 
 MAN3=		Schedule::At.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

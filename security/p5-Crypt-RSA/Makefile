@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	RSA public-key cryptosystem
 
-PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PERLBASE=	${SITE_PERL}
 
 BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
 		${PERLBASE}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
@@ -33,7 +33,6 @@ BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::RSA::Key.3 Crypt::RSA::SS::PSS.3 \
 		Crypt::RSA::Primitives.3 Crypt::RSA::ES::OAEP.3 \
 		Crypt::RSA.3 Crypt::RSA::SS::PKCS1v15.3 \

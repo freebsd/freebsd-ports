@@ -22,8 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+SITE_PERL=	${SITE_PERL}
 MAN3=		Net::DNS::ZoneFile.3
 
 post-patch:

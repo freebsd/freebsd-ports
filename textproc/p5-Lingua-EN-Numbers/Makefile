@@ -18,6 +18,5 @@ COMMENT=	Converts numeric values into their English string equivalents
 PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::EN::Numbers.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

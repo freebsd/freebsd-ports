@@ -18,7 +18,6 @@ COMMENT=	Perl interface to LDAP
 LIB_DEPENDS=	mozldap.1:${PORTSDIR}/net/ldapsdk
 
 WRKSRC=		${WRKDIR}/$(PORTNAME)-$(PORTVERSION)
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mozilla::LDAP::Conn.3 \
 			Mozilla::LDAP::LDIF.3 \
 			Mozilla::LDAP::Utils.3 \

@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Tom.3
 
 .include <bsd.port.mk>

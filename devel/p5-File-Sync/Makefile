@@ -18,6 +18,5 @@ COMMENT=	Perl5 module interface to the UNIX sync(2) and POSIX.1b fsync(2)
 PERL_CONFIGURE=	yes
 
 MAN3=		File::Sync.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

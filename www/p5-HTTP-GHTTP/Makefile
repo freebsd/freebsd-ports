@@ -20,7 +20,6 @@ LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	LIBS="-L${LOCALBASE}/lib -lghttp" INC="-I${LOCALBASE}/include"
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTTP::GHTTP.3
 
 .include <bsd.port.mk>

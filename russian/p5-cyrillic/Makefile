@@ -17,7 +17,6 @@ COMMENT=	Library for fast and easy cyrillic text manipulation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	cyrillic.3
 
 .include <bsd.port.mk>

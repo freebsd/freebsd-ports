@@ -17,7 +17,6 @@ COMMENT=	Reload changed modules
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Apache::Reload.3
 
 .include <bsd.port.mk>

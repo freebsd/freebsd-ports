@@ -1285,8 +1285,8 @@ lib/perl5/%%PERL_VER%%/AutoSplit.pm
 @dirrm lib/perl5/5.8.0/BSDPAN/BSDPAN
 @dirrm lib/perl5/5.8.0/BSDPAN/ExtUtils
 @dirrm lib/perl5/5.8.0/BSDPAN
-@unexec find %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%% 2>/dev/null || true
+@unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads 2>/dev/null || true
@@ -1447,9 +1447,9 @@ lib/perl5/%%PERL_VER%%/AutoSplit.pm
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/man/man3 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/man 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/sys 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/machine 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%% 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/sys 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/machine 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%% 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%% 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
 @unexec rmdir %D/lib/perl5 2>/dev/null || true

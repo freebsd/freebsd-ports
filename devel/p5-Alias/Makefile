@@ -17,7 +17,6 @@ COMMENT=	A perl module that performs aliasing services
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Alias.3
 
 .include <bsd.port.mk>

@@ -18,6 +18,5 @@ COMMENT=	A class implementing a fill-in template
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::FillIn.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

@@ -1,50 +1,50 @@
 bin/sledge-setup
-lib/perl5/site_perl/%%PERL_VER%%/Sledge.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Authorizer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Authorizer/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Charset.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Charset/Default.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Charset/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Charset/Shift_JIS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Doc/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Doc/Hooks.pod
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Doc/Install.pod
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Doc/Tutorial.pod
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Exception.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Exceptions.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/FillInForm.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Install.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Install/Stub.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Pages/Apache.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Pages/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Pages/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Pages/Compat.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Registrar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Request/CGI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Request/Table.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Request/Upload.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session/MySQL.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session/Pg.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session/SQLite.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/SessionManager.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/SessionManager/Cookie.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/SessionManager/Rewrite.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/SessionManager/StickyQuery.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Template.pm
-lib/perl5/site_perl/%%PERL_VER%%/Sledge/Template/TT.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sledge/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sledge
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Template
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/SessionManager
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Session
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Request
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Pages
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Install
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Doc
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Charset
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge/Authorizer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Sledge
+%%SITE_PERL%%/Sledge.pm
+%%SITE_PERL%%/Sledge/Authorizer.pm
+%%SITE_PERL%%/Sledge/Authorizer/Null.pm
+%%SITE_PERL%%/Sledge/Charset.pm
+%%SITE_PERL%%/Sledge/Charset/Default.pm
+%%SITE_PERL%%/Sledge/Charset/Null.pm
+%%SITE_PERL%%/Sledge/Charset/Shift_JIS.pm
+%%SITE_PERL%%/Sledge/Config.pm
+%%SITE_PERL%%/Sledge/Constants.pm
+%%SITE_PERL%%/Sledge/Doc/FAQ.pod
+%%SITE_PERL%%/Sledge/Doc/Hooks.pod
+%%SITE_PERL%%/Sledge/Doc/Install.pod
+%%SITE_PERL%%/Sledge/Doc/Tutorial.pod
+%%SITE_PERL%%/Sledge/Exception.pm
+%%SITE_PERL%%/Sledge/Exceptions.pm
+%%SITE_PERL%%/Sledge/FillInForm.pm
+%%SITE_PERL%%/Sledge/Install.pm
+%%SITE_PERL%%/Sledge/Install/Stub.pm
+%%SITE_PERL%%/Sledge/Pages/Apache.pm
+%%SITE_PERL%%/Sledge/Pages/Base.pm
+%%SITE_PERL%%/Sledge/Pages/CGI.pm
+%%SITE_PERL%%/Sledge/Pages/Compat.pm
+%%SITE_PERL%%/Sledge/Registrar.pm
+%%SITE_PERL%%/Sledge/Request/CGI.pm
+%%SITE_PERL%%/Sledge/Request/Table.pm
+%%SITE_PERL%%/Sledge/Request/Upload.pm
+%%SITE_PERL%%/Sledge/Session.pm
+%%SITE_PERL%%/Sledge/Session/DBI.pm
+%%SITE_PERL%%/Sledge/Session/MySQL.pm
+%%SITE_PERL%%/Sledge/Session/Pg.pm
+%%SITE_PERL%%/Sledge/Session/SQLite.pm
+%%SITE_PERL%%/Sledge/SessionManager.pm
+%%SITE_PERL%%/Sledge/SessionManager/Cookie.pm
+%%SITE_PERL%%/Sledge/SessionManager/Rewrite.pm
+%%SITE_PERL%%/Sledge/SessionManager/StickyQuery.pm
+%%SITE_PERL%%/Sledge/Template.pm
+%%SITE_PERL%%/Sledge/Template/TT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sledge
+@dirrm %%SITE_PERL%%/Sledge/Template
+@dirrm %%SITE_PERL%%/Sledge/SessionManager
+@dirrm %%SITE_PERL%%/Sledge/Session
+@dirrm %%SITE_PERL%%/Sledge/Request
+@dirrm %%SITE_PERL%%/Sledge/Pages
+@dirrm %%SITE_PERL%%/Sledge/Install
+@dirrm %%SITE_PERL%%/Sledge/Doc
+@dirrm %%SITE_PERL%%/Sledge/Charset
+@dirrm %%SITE_PERL%%/Sledge/Authorizer
+@dirrm %%SITE_PERL%%/Sledge

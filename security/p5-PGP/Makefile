@@ -20,7 +20,6 @@ BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 PERL_CONFIGURE=	yes
 
 MAN3=		PGP::Pipe.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${CP} ${WRKSRC}/PGP/Pipe.pm ${WRKSRC}

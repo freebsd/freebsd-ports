@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTML/ElementGlob.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/ElementRaw.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/ElementSuper.pm
-lib/perl5/site_perl/%%PERL_VER%%/HTML/ElementTable.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Element-Extended/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Element-Extended
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+%%SITE_PERL%%/HTML/ElementGlob.pm
+%%SITE_PERL%%/HTML/ElementRaw.pm
+%%SITE_PERL%%/HTML/ElementSuper.pm
+%%SITE_PERL%%/HTML/ElementTable.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Element-Extended/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Element-Extended
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true

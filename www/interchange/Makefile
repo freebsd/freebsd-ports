@@ -27,7 +27,7 @@ RUN_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statemen
 
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
 MAN1=		configdump.1 config_prog.1 expire.1 localize.1 \

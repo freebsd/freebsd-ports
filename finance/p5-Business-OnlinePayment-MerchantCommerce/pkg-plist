@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/MerchantCommerce.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/MerchantCommerce/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/MerchantCommerce
+%%SITE_PERL%%/Business/OnlinePayment/MerchantCommerce.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/MerchantCommerce
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/MerchantCommerce

@@ -18,10 +18,9 @@ COMMENT=	Perl extension for trace messages used in debugging
 BUILD_DEPENDS=	${SITE_PERL}/HTML/FromText.pm:${PORTSDIR}/www/p5-HTML-FromText
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Log::TraceMessages.3
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Sendmail/Milter.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Sendmail/sample.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail/Milter/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail/Milter/Milter.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail/Milter/Milter.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail/Milter/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail/Milter
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Sendmail
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Sendmail
+%%SITE_PERL%%/%%PERL_ARCH%%/Sendmail/Milter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Sendmail/sample.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail/Milter/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail/Milter/Milter.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail/Milter/Milter.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail/Milter/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail/Milter
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sendmail
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Sendmail

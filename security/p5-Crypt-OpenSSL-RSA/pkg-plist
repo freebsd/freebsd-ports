@@ -1,27 +1,27 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL/RSA.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/DESTROY.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_new.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_set_padding_mode.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/generate_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_padding_mode.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_private_key_string.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_public_key_string.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/import_random_seed.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_private_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_public_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_key_from_parameters.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_private_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_public_key.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/use_sslv23_padding.al
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL     2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt             2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/OpenSSL          2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt                  2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL/RSA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/RSA.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/DESTROY.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_new.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/_set_padding_mode.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/generate_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_key_parameters.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_padding_mode.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_private_key_string.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/get_public_key_string.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/import_random_seed.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_private_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/load_public_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_key_from_parameters.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_private_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/new_public_key.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/set_padding_mode.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA/use_sslv23_padding.al
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/RSA 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL     2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt             2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt/OpenSSL          2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Crypt                  2>/dev/null || true

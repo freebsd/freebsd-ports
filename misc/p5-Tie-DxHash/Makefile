@@ -18,6 +18,5 @@ COMMENT=	Keeps insertion order, allows duplicate keys
 PERL_CONFIGURE=	yes
 
 MAN3=		Tie::DxHash.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

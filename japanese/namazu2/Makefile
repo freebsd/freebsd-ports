@@ -20,7 +20,7 @@ LIB_DEPENDS=	nmz.6:${PORTSDIR}/databases/namazu2
 RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
 		${PM_BASE}/${PERL_ARCH}/Text/${MODULE_NAME}.pm:${PORTSDIR}/japanese/p5-Text-${MODULE_NAME}
 
-PM_BASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+PM_BASE=	${SITE_PERL}
 
 .if defined(WITH_CHASEN)
 MODULE_NAME=	ChaSen

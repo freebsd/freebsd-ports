@@ -17,7 +17,6 @@ COMMENT=	A stat() with BSD 4.4 extentions
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		BSD::stat.3
 
 .include <bsd.port.mk>

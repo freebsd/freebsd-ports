@@ -18,6 +18,5 @@ COMMENT=	Composition and decomposition of comma-separated values
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::CSV.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

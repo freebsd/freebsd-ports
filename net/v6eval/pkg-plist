@@ -499,6 +499,6 @@ v6eval/man/man1/pktsend.1.gz
 @unexec rmdir %D/v6eval/etc 2>/dev/null || true
 @dirrm v6eval/include
 @dirrm v6eval
-lib/perl5/site_perl/%%PERL_VER%%/V6evalTool.pm
-lib/perl5/site_perl/%%PERL_VER%%/V6evalCommon.pm
-lib/perl5/site_perl/%%PERL_VER%%/V6evalRemote.pm
+%%SITE_PERL%%/V6evalTool.pm
+%%SITE_PERL%%/V6evalCommon.pm
+%%SITE_PERL%%/V6evalRemote.pm

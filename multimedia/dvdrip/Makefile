@@ -16,8 +16,8 @@ MAINTAINER=	michaelnottebrock@gmx.net
 COMMENT=	This is dvd::rip, a Perl Gtk+ based dvd-ripper
 
 .if !defined(WITHOUT_CLUSTER)
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		pstree:${PORTSDIR}/sysutils/pstree
 .endif
@@ -35,8 +35,8 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		rar:${PORTSDIR}/archivers/rar \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
+		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes

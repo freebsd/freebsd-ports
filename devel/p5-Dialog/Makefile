@@ -22,7 +22,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-Dialog.xs
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Dialog.3
 
 .include <bsd.port.post.mk>

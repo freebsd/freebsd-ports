@@ -22,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Pa
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 MAN1=		rss-to-site.1 sitescooper.1 subs-to-site.1
 
 post-patch:

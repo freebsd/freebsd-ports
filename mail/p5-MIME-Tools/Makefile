@@ -16,14 +16,13 @@ DISTNAME=	MIME-tools-${PORTVERSION}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A set of perl5 modules for MIME
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
+BUILD_DEPENDS=	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/MIME-tools-5.411
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	MIME::Body.3 \
 	MIME::Decoder.3	\
 	MIME::Decoder::Base64.3 \
@@ -49,7 +48,7 @@ MAN3=	MIME::Body.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
 post-patch:

@@ -18,6 +18,5 @@ COMMENT=	Perl module for quote strings for passing through the shell
 PERL_CONFIGURE=	yes
 
 MAN3=		String::ShellQuote.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

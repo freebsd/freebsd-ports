@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Text-Query-SQL provides query builders for SQL databases
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Query.pm:${PORTSDIR}/textproc/p5-Text-Query
+BUILD_DEPENDS=	${SITE_PERL}/Text/Query.pm:${PORTSDIR}/textproc/p5-Text-Query
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -24,7 +24,6 @@ MAN3=		Text::Query::BuildSQLMifluz.3 Text::Query::BuildSQLMySQL.3 \
 		Text::Query::BuildSQLFulcrum.3 Text::Query::BuildSQL.3 \
 		Text::Query::BuildSQLPg.3 Text::Query::SolveSQL.3 \
 		Bundle::Text::Query::BuildSQL.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e '/DBI/ and $$_=""' ${WRKSRC}/Makefile.PL

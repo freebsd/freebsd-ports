@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/mj/net/
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A tool for checking DNS zones
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
+RUN_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 USE_PERL5=	yes
 

@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Dispatch/Config/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Configurator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Configurator/AppConfig.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Dispatch/Config
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Dispatch 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch/Configurator 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log/Dispatch 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Config/.packlist
+%%SITE_PERL%%/Log/Dispatch/Configurator.pm
+%%SITE_PERL%%/Log/Dispatch/Config.pm
+%%SITE_PERL%%/Log/Dispatch/Configurator/AppConfig.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch/Config
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log/Dispatch/Configurator 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log/Dispatch 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true

@@ -1,18 +1,18 @@
-lib/perl5/site_perl/%%PERL_VER%%/Bundle/ParallelUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/file.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/ftp.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/http.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol/https.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/RobotUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/UserAgent.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/ParallelUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/LWP/RobotPUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP/Parallel/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/LWP 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP/Parallel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP
+%%SITE_PERL%%/Bundle/ParallelUA.pm
+%%SITE_PERL%%/LWP/Parallel.pm
+%%SITE_PERL%%/LWP/Parallel/Protocol.pm
+%%SITE_PERL%%/LWP/Parallel/Protocol/file.pm
+%%SITE_PERL%%/LWP/Parallel/Protocol/ftp.pm
+%%SITE_PERL%%/LWP/Parallel/Protocol/http.pm
+%%SITE_PERL%%/LWP/Parallel/Protocol/https.pm
+%%SITE_PERL%%/LWP/Parallel/RobotUA.pm
+%%SITE_PERL%%/LWP/Parallel/UserAgent.pm
+%%SITE_PERL%%/LWP/ParallelUA.pm
+%%SITE_PERL%%/LWP/RobotPUA.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel/.packlist
+@dirrm %%SITE_PERL%%/LWP/Parallel/Protocol
+@dirrm %%SITE_PERL%%/LWP/Parallel
+@unexec rmdir %D/%%SITE_PERL%%/LWP 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Parallel
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP

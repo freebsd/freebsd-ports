@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/MLDBM.pm
-lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Serializer/FreezeThaw.pm
-lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Serializer/Storable.pm
-lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Serializer/Data/Dumper.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MLDBM/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MLDBM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Serializer/Data
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Serializer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/MLDBM
+%%SITE_PERL%%/MLDBM.pm
+%%SITE_PERL%%/MLDBM/Serializer/FreezeThaw.pm
+%%SITE_PERL%%/MLDBM/Serializer/Storable.pm
+%%SITE_PERL%%/MLDBM/Serializer/Data/Dumper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MLDBM
+@dirrm %%SITE_PERL%%/MLDBM/Serializer/Data
+@dirrm %%SITE_PERL%%/MLDBM/Serializer
+@dirrm %%SITE_PERL%%/MLDBM

@@ -16,7 +16,7 @@ DISTNAME=	perlreactor_${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Automatically add links found in web pages to MLDonkey queue
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 USE_PERL5=	yes
 NO_BUILD=	yes

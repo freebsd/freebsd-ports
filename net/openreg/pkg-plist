@@ -9,43 +9,43 @@ lib/perl5/%%PERL_VER%%/man/man3/ISC::Random.3
 lib/perl5/%%PERL_VER%%/man/man3/ISC::SRS::DB.3
 lib/perl5/%%PERL_VER%%/man/man3/ISC::SRS::Version.3
 lib/perl5/%%PERL_VER%%/man/man3/ISC::Stats::Report.3
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct/Connect.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct/Listen.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group/Connect.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/DB/ReplicationMaster.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/DB/ReplicationSlave.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Date.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Log.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/NameVerify.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/CRLF.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/Connect.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/LengthPrefix.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Net/Listen.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Random.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/DB.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPConnection.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPRegistrar.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPResultCode.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/EPPWriter.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/SAX/EPPHandler.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/Version.pm
-lib/perl5/site_perl/%%PERL_VER%%/ISC/Stats/Report.pm
-lib/perl5/site_perl/%%PERL_VER%%/mach/auto/ISC/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/ISC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Direct
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC/Group
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/CC
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/DB
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/Net
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS/SAX
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/SRS
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC/Stats
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ISC
+%%SITE_PERL%%/ISC/CC/Direct.pm
+%%SITE_PERL%%/ISC/CC/Direct/Connect.pm
+%%SITE_PERL%%/ISC/CC/Direct/Listen.pm
+%%SITE_PERL%%/ISC/CC/Group.pm
+%%SITE_PERL%%/ISC/CC/Group/Connect.pm
+%%SITE_PERL%%/ISC/CC/Message.pm
+%%SITE_PERL%%/ISC/DB/ReplicationMaster.pm
+%%SITE_PERL%%/ISC/DB/ReplicationSlave.pm
+%%SITE_PERL%%/ISC/DBI.pm
+%%SITE_PERL%%/ISC/Date.pm
+%%SITE_PERL%%/ISC/Log.pm
+%%SITE_PERL%%/ISC/NameVerify.pm
+%%SITE_PERL%%/ISC/Net/CRLF.pm
+%%SITE_PERL%%/ISC/Net/Connect.pm
+%%SITE_PERL%%/ISC/Net/LengthPrefix.pm
+%%SITE_PERL%%/ISC/Net/Listen.pm
+%%SITE_PERL%%/ISC/Random.pm
+%%SITE_PERL%%/ISC/SRS/DB.pm
+%%SITE_PERL%%/ISC/SRS/EPPConnection.pm
+%%SITE_PERL%%/ISC/SRS/EPPParser.pm
+%%SITE_PERL%%/ISC/SRS/EPPRegistrar.pm
+%%SITE_PERL%%/ISC/SRS/EPPResultCode.pm
+%%SITE_PERL%%/ISC/SRS/EPPWriter.pm
+%%SITE_PERL%%/ISC/SRS/SAX/EPPHandler.pm
+%%SITE_PERL%%/ISC/SRS/Version.pm
+%%SITE_PERL%%/ISC/Stats/Report.pm
+%%SITE_PERL%%/mach/auto/ISC/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/ISC
+@dirrm %%SITE_PERL%%/ISC/CC/Direct
+@dirrm %%SITE_PERL%%/ISC/CC/Group
+@dirrm %%SITE_PERL%%/ISC/CC
+@dirrm %%SITE_PERL%%/ISC/DB
+@dirrm %%SITE_PERL%%/ISC/Net
+@dirrm %%SITE_PERL%%/ISC/SRS/SAX
+@dirrm %%SITE_PERL%%/ISC/SRS
+@dirrm %%SITE_PERL%%/ISC/Stats
+@dirrm %%SITE_PERL%%/ISC
 bin/group-sniff
 bin/epp-from-file
 sbin/msgq

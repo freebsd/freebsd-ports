@@ -1,7 +1,7 @@
-lib/perl5/site_perl/%%PERL_VER%%/IO/Socket/SSL.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/SSL/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket/SSL
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/Socket
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/IO/Socket
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
+%%SITE_PERL%%/IO/Socket/SSL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/SSL
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket
+@dirrm %%SITE_PERL%%/IO/Socket
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true

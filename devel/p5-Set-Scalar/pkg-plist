@@ -1,13 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Real.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/ValuedUniverse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Valued.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Virtual.pm
-lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar/Universe.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/Scalar/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set/Scalar
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Set/Scalar
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Set 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Set 2>/dev/null || true
+%%SITE_PERL%%/Set/Scalar.pm
+%%SITE_PERL%%/Set/Scalar/Base.pm
+%%SITE_PERL%%/Set/Scalar/Null.pm
+%%SITE_PERL%%/Set/Scalar/Real.pm
+%%SITE_PERL%%/Set/Scalar/ValuedUniverse.pm
+%%SITE_PERL%%/Set/Scalar/Valued.pm
+%%SITE_PERL%%/Set/Scalar/Virtual.pm
+%%SITE_PERL%%/Set/Scalar/Universe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Scalar/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Scalar
+@dirrm %%SITE_PERL%%/Set/Scalar
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Set 2>/dev/null || true

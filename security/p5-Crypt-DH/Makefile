@@ -15,13 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jesper@FreeBSD.org
 COMMENT=	Perl5 interface to a Diffie-Hellman key exchange system
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
+		${SITE_PERL}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Crypt::DH.3
 
 .include <bsd.port.mk>

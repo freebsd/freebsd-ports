@@ -14,7 +14,7 @@ COMMENT=	A netsaint addon for running plugins on remote hosts
 
 # Note that this port depends on neither netsaint-plugins OR netsaint, because it
 # installs both a client and a server, and so could need EITHER. Bummer.
-RUN_DEPENDS=  	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Crypt/TripleDES.pm:${PORTSDIR}/security/p5-Crypt-TripleDES
+RUN_DEPENDS=  	${SITE_PERL}/Crypt/TripleDES.pm:${PORTSDIR}/security/p5-Crypt-TripleDES
 
 USE_PERL5_RUN=	yes
 

@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text/Iconv.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Iconv/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Iconv/Iconv.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Iconv/Iconv.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Iconv/autosplit.ix
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Iconv
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Text 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/Text/Iconv.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Iconv/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Iconv/Iconv.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Iconv/Iconv.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Iconv/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Iconv
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Text 2>/dev/null || true

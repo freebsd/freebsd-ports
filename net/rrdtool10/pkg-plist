@@ -73,16 +73,16 @@ share/doc/rrdtool/html/rrdtutorial.es.html
 share/doc/rrdtool/html/RRDs.html
 share/doc/rrdtool/html/RRDp.html
 share/doc/rrdtool/html/rrdxport.html
-lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/RRDs.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ntmake.pl
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs/.packlist
+%%SITE_PERL%%/RRDp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/RRDs.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/ntmake.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/RRDs.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs/.packlist
 @dirrm share/examples/rrdtool/trytime
 @dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool/html
 @dirrm share/doc/rrdtool
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDp
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RRDs

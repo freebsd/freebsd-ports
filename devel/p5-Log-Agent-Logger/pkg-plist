@@ -1,4 +1,4 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Agent/Logger/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Log/Agent/Logger.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Agent/Logger
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Agent 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/Logger/.packlist
+%%SITE_PERL%%/Log/Agent/Logger.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent/Logger
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Agent 2>/dev/null || true

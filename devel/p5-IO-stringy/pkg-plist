@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/IO/AtomicFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/InnerFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/Lines.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/Scalar.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/Scalar.pm.html
-lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/Stringy.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/Wrap.pm
-lib/perl5/site_perl/%%PERL_VER%%/IO/WrapTie.pm
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy
+%%SITE_PERL%%/IO/AtomicFile.pm
+%%SITE_PERL%%/IO/InnerFile.pm
+%%SITE_PERL%%/IO/Lines.pm
+%%SITE_PERL%%/IO/Scalar.pm
+%%SITE_PERL%%/IO/Scalar.pm.html
+%%SITE_PERL%%/IO/ScalarArray.pm
+%%SITE_PERL%%/IO/Stringy.pm
+%%SITE_PERL%%/IO/Wrap.pm
+%%SITE_PERL%%/IO/WrapTie.pm
+@unexec rmdir %D/%%SITE_PERL%%/IO 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO-stringy
 %%PORTDOCS%%share/doc/p5-IO-stringy/IO/AtomicFile.pm.html
 %%PORTDOCS%%share/doc/p5-IO-stringy/IO/InnerFile.pm.html
 %%PORTDOCS%%share/doc/p5-IO-stringy/IO/Lines.pm.html

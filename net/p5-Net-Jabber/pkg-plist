@@ -1,26 +1,26 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Component.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Data.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Debug.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback/Result.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback/Verify.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/IQ.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/JID.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Key.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Log.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Namespaces.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Presence.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Protocol.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Query.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/X.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/XDB.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Jabber
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber/Dialback
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Jabber
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Jabber.pm
+%%SITE_PERL%%/Net/Jabber/Client.pm
+%%SITE_PERL%%/Net/Jabber/Component.pm
+%%SITE_PERL%%/Net/Jabber/Data.pm
+%%SITE_PERL%%/Net/Jabber/Debug.pm
+%%SITE_PERL%%/Net/Jabber/Dialback.pm
+%%SITE_PERL%%/Net/Jabber/Dialback/Result.pm
+%%SITE_PERL%%/Net/Jabber/Dialback/Verify.pm
+%%SITE_PERL%%/Net/Jabber/IQ.pm
+%%SITE_PERL%%/Net/Jabber/JID.pm
+%%SITE_PERL%%/Net/Jabber/Key.pm
+%%SITE_PERL%%/Net/Jabber/Log.pm
+%%SITE_PERL%%/Net/Jabber/Message.pm
+%%SITE_PERL%%/Net/Jabber/Namespaces.pm
+%%SITE_PERL%%/Net/Jabber/Presence.pm
+%%SITE_PERL%%/Net/Jabber/Protocol.pm
+%%SITE_PERL%%/Net/Jabber/Query.pm
+%%SITE_PERL%%/Net/Jabber/Server.pm
+%%SITE_PERL%%/Net/Jabber/X.pm
+%%SITE_PERL%%/Net/Jabber/XDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jabber
+@dirrm %%SITE_PERL%%/Net/Jabber/Dialback
+@dirrm %%SITE_PERL%%/Net/Jabber
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true

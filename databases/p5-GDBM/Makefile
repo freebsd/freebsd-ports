@@ -24,6 +24,5 @@ PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/GDBM_File
 
 MAN3=		GDBM_File.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

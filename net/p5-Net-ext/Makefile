@@ -17,7 +17,6 @@ COMMENT=	Perl modules for using sockets
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Net::Gen.3 \
 		Net::Inet.3 \
 		Net::TCP.3 \

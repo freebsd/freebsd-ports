@@ -20,7 +20,6 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 
 PERL_CONFIGURE=	YES
 CONFIGURE_ENV=	PREFIX=${PREFIX}
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Search::Namazu.3
 
 .include <bsd.port.mk>

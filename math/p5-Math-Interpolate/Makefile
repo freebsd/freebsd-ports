@@ -17,7 +17,6 @@ COMMENT=	Perl routines for data sets interpolation and interval search
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Interpolate.3 Math::IntervalSearch.3
 
 .include <bsd.port.mk>

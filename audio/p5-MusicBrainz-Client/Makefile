@@ -23,7 +23,6 @@ LIBMUSICBRAINZ_PORTDIR=	${PORTSDIR}/audio/libmusicbrainz
 PERL_CONFIGURE=	yes
 
 MAN3=		MusicBrainz::Client.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 

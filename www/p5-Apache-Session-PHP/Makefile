@@ -15,15 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Glue Apache::Session with PHP::Session
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/PHP/Session.pm:${PORTSDIR}/www/p5-PHP-Session \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${SITE_PERL}/PHP/Session.pm:${PORTSDIR}/www/p5-PHP-Session \
+		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
+		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Session::PHP.3 Apache::Session::Serialize::PHP.3 Apache::Session::Store::PHP.3
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

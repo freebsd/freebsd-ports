@@ -17,7 +17,6 @@ COMMENT=	A perl class that defines RGB values for common color names
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=	Graphics::ColorNames.3 \
 	Graphics::HTML.3 \
 	Graphics::Netscape.3 \

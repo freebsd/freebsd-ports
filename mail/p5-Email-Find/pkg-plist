@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/Email/Find.pm
-lib/perl5/site_perl/%%PERL_VER%%/Email/Find/addrspec.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Email/Find/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Email/Find
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Email/Find
+%%SITE_PERL%%/Email/Find.pm
+%%SITE_PERL%%/Email/Find/addrspec.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Find/.packlist
+@dirrm %%SITE_PERL%%/Email/Find
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Find

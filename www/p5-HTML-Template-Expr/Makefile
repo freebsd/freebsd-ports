@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Perl module to use HTML Templates which allows expressions
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${RUN_DEPENDS}
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+		${SITE_PERL}/Text/Balanced.pm:${PORTSDIR}/textproc/p5-Text-Balanced \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 
 PERL_CONFIGURE=	yes
 

@@ -18,7 +18,6 @@ COMMENT=	A perl module that provides authentication using a tacacs+ server
 PERL_CONFIGURE=	yes
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Authen::TacacsPlus.3
 
 pre-build:

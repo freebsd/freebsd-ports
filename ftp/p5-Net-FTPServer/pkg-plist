@@ -1,23 +1,23 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/IOBlob.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/DirHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/FileHandle.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO/Server.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/DirHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/IOBlob.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DirHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/Full/DirHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/Full/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/Full/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/InMem/DirHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/InMem/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/InMem/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/RO/DirHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/RO/FileHandle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/RO/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/FTPServer.so
 sbin/dbeg1-ftpd.pl
 sbin/ftpd.pl
 sbin/inmem-ftpd.pl
@@ -37,11 +37,11 @@ sbin/ro-ftpd.pl
 share/examples/Net-FTPServer/ftpd.conf
 @dirrm share/examples/Net-FTPServer
 %%PORTDOCS%%@dirrm share/doc/Net-FTPServer
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/FTPServer
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/RO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/InMem
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/Full
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/FTPServer
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/RO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/InMem
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/Full
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer/DBeg1
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/FTPServer
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true

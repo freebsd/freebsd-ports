@@ -1,13 +1,13 @@
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Country.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Country.pod
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Language.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Language.pod
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Constants.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Constants.pod
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Currency.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Currency.pod
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Script.pm
-lib/perl5/site_perl/%%PERL_VER%%/Locale/Script.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale-Codes/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale-Codes
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Locale
+%%SITE_PERL%%/Locale/Country.pm
+%%SITE_PERL%%/Locale/Country.pod
+%%SITE_PERL%%/Locale/Language.pm
+%%SITE_PERL%%/Locale/Language.pod
+%%SITE_PERL%%/Locale/Constants.pm
+%%SITE_PERL%%/Locale/Constants.pod
+%%SITE_PERL%%/Locale/Currency.pm
+%%SITE_PERL%%/Locale/Currency.pod
+%%SITE_PERL%%/Locale/Script.pm
+%%SITE_PERL%%/Locale/Script.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale-Codes
+@dirrm %%SITE_PERL%%/Locale

@@ -17,7 +17,6 @@ COMMENT=	Provides access to SQLite2 databases through the DBI
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBD::SQLite.3
 
 .include <bsd.port.pre.mk>

@@ -18,7 +18,6 @@ LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Shout.3
 
 pre-configure:

@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PM_DEPENDS}
 
 PM_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL=	${SITE_PERL}
 
 PERL_CONFIGURE=	yes
 

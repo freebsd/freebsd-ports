@@ -18,7 +18,6 @@ COMMENT=	Perl Object Class for Revision Control System (RCS)
 PERL_CONFIGURE=	yes
 
 MAN3=		Rcs.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLES=	access.pl ci-tree.pl ci.pl co-tree.pl co.pl \

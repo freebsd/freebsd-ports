@@ -1,9 +1,9 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Random/MT/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/Random/MT.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Random/MT/MT.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Random/MT/MT.so
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/Random 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math 2>/dev/null || true
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Random/MT
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Random 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Math/Random/MT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/MT.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT/MT.so
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Math/Random 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Math 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/MT
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true

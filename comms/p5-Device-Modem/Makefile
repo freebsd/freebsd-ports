@@ -21,7 +21,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Device::Modem::Log::File.3 Device::Modem::Log::Syslog.3 Device::Modem.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)

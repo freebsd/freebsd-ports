@@ -3,10 +3,10 @@ include/pdflib.h
 lib/libpdf.a
 lib/libpdf.so
 lib/libpdf.so.4
-%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.a
-%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.pm
-%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so
-%%PERL%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/pdflib_pl.so.0
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.a
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.pm
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so
+%%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/pdflib_pl.so.0
 %%PORTDOCS%%share/doc/pdflib/PDFlib-license.pdf
 %%PORTDOCS%%share/doc/pdflib/PDFlib-manual.pdf
 %%PORTDOCS%%share/doc/pdflib/PDFlib-purchase-order.pdf

@@ -18,7 +18,6 @@ COMMENT=	A perl module to manipulate Apache configuration files
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Admin::Config.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e 's/(!\$$)/0 && $1/;' \

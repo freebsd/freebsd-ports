@@ -17,7 +17,6 @@ COMMENT=	Perl module for abstraction and simplification of database access
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBIx::Compat.3 DBIx::Database.3 DBIx::Intrors.3 \
 		DBIx::Recordset.3 DBIx::Recordset::DBSeq.3 \
 		DBIx::Recordset::FileSeq.3

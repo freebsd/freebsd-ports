@@ -18,7 +18,6 @@ COMMENT=	Clone - recursively copy Perl datatypes
 PERL_CONFIGURE=	yes
 
 MAN3=		Clone.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
 	${PERL} -pi -e 'm.OPTIMIZE.&&s,.,,sg' ${WRKSRC}/Makefile.PL

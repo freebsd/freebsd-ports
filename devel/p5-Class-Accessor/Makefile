@@ -17,7 +17,6 @@ COMMENT=	Automated accessor generation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Accessor.3 Class::Accessor::Fast.3
 
 .include <bsd.port.pre.mk>

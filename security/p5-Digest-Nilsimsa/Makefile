@@ -17,7 +17,6 @@ COMMENT=	Perl version of Nilsimsa code
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Digest::Nilsimsa.3
 
 .include <bsd.port.mk>

@@ -16,7 +16,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Perl module providing pure 2, 3 or multi-value logic
 
 PERL_CONFIGURE=	yes
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Math::Logic.3
 
 .include <bsd.port.mk>

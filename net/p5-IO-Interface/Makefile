@@ -18,6 +18,5 @@ COMMENT=	Perl extension for access to network card configuration information
 PERL_CONFIGURE=	yes
 
 MAN3=		IO::Interface.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

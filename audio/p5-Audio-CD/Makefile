@@ -23,6 +23,5 @@ CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include " \
 		LIBS="-L${LOCALBASE}/lib -lcdaudio"
 
 MAN3=		Audio::CD.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

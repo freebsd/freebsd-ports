@@ -1,32 +1,32 @@
-lib/perl5/site_perl/%%PERL_VER%%/Date/Format.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Afar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Amharic.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Austrian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Brazilian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Chinese_GB.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Czech.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Danish.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Dutch.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/English.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Finnish.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/French.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Gedeo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/German.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Greek.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Italian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Norwegian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Oromo.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Sidama.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Somali.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Swedish.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/Tigrinya.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/TigrinyaEritrean.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Language/TigrinyaEthiopian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Parse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Time/Zone.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Date/Language
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Time 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
+%%SITE_PERL%%/Date/Format.pm
+%%SITE_PERL%%/Date/Language.pm
+%%SITE_PERL%%/Date/Language/Afar.pm
+%%SITE_PERL%%/Date/Language/Amharic.pm
+%%SITE_PERL%%/Date/Language/Austrian.pm
+%%SITE_PERL%%/Date/Language/Brazilian.pm
+%%SITE_PERL%%/Date/Language/Chinese_GB.pm
+%%SITE_PERL%%/Date/Language/Czech.pm
+%%SITE_PERL%%/Date/Language/Danish.pm
+%%SITE_PERL%%/Date/Language/Dutch.pm
+%%SITE_PERL%%/Date/Language/English.pm
+%%SITE_PERL%%/Date/Language/Finnish.pm
+%%SITE_PERL%%/Date/Language/French.pm
+%%SITE_PERL%%/Date/Language/Gedeo.pm
+%%SITE_PERL%%/Date/Language/German.pm
+%%SITE_PERL%%/Date/Language/Greek.pm
+%%SITE_PERL%%/Date/Language/Italian.pm
+%%SITE_PERL%%/Date/Language/Norwegian.pm
+%%SITE_PERL%%/Date/Language/Oromo.pm
+%%SITE_PERL%%/Date/Language/Sidama.pm
+%%SITE_PERL%%/Date/Language/Somali.pm
+%%SITE_PERL%%/Date/Language/Swedish.pm
+%%SITE_PERL%%/Date/Language/Tigrinya.pm
+%%SITE_PERL%%/Date/Language/TigrinyaEritrean.pm
+%%SITE_PERL%%/Date/Language/TigrinyaEthiopian.pm
+%%SITE_PERL%%/Date/Parse.pm
+%%SITE_PERL%%/Time/Zone.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
+@dirrm %%SITE_PERL%%/Date/Language
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TimeDate
+@unexec rmdir %D/%%SITE_PERL%%/Time 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true

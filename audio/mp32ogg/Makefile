@@ -17,8 +17,8 @@ COMMENT=	Convert MP3 files to Ogg Vorbis files
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
+		${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
+		${SITE_PERL}/String/ShellQuote.pm:${PORTSDIR}/textproc/p5-String-ShellQuote
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

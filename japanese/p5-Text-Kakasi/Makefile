@@ -18,7 +18,6 @@ LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	PREFIX="${PREFIX}"
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Text::Kakasi.3
 
 .include <bsd.port.pre.mk>

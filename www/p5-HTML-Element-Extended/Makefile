@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wollman@FreeBSD.org
 COMMENT=	An extended interface to HTML::Tree's HTML::Element class
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree
+BUILD_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree
 
 PERL_CONFIGURE=	yes
 

@@ -1,6 +1,6 @@
 %%SITE_PERL%%/Parse/RecDescent.pm
 %%SITE_PERL%%/Parse/RecDescent.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/RecDescent
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parse 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/RecDescent
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true

@@ -20,6 +20,5 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
 MAN3=		Net::Z3950::GRS1.3 Net::Z3950::SimpleServer.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

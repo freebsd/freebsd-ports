@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/AuthorizeNet.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/AuthorizeNet/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/AuthorizeNet
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment 2>/dev/null || true
+%%SITE_PERL%%/Business/OnlinePayment/AuthorizeNet.pm
+%%SITE_PERL%%/auto/Business/OnlinePayment/AuthorizeNet/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/AuthorizeNet
+@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/AuthorizeNet
+@unexec rmdir %D/%%SITE_PERL%%/Business/OnlinePayment 2>/dev/null || true

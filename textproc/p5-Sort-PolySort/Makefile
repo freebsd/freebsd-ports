@@ -18,7 +18,6 @@ COMMENT=	General rules-based sorting of lists
 PERL_CONFIGURE=	yes
 
 MAN3=		Sort::PolySort.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-patch:
 	@${PERL} -pi -e '/^\$$Sort::PolySort::VERSION =/ && chomp' \
