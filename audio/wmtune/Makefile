@@ -40,6 +40,9 @@ WMTUNE_DIFF=	wmtune.radiotrack.diff.gz
 
 post-patch:
 	@${GUNZIP_CMD} -c ${DISTDIR}/${WMTUNE_DIFF} | ${PATCH} ${PATCH_ARGS}
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+	@${SED} -e 's|-O2|${CFLAGS}|' -e 's|cc|${CC}|' \
+		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
 
 do-configure:
 	@${PERL} -pi.orig -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/src/wmtune.c
