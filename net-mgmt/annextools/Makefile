@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 DIST_SUBDIR=	microannex_xl
 
 MAINTAINER=     bms@FreeBSD.org
-COMMENT=	"BSD tools for the MicroAnnex-XL Terminal Server"
+COMMENT=	BSD tools for the MicroAnnex-XL Terminal Server
 
 WRKSRC=		${WRKDIR}/src
 
