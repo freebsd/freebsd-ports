@@ -4,7 +4,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1995/12/16 04:07:45 ache Exp $
+# $Id: Makefile,v 1.16 1996/01/16 03:43:25 ache Exp $
 #
 
 DISTNAME=       lynx2-4-FM
@@ -17,8 +17,12 @@ CATEGORIES+=	www
 #NCFTPFLAGS=     -to multipart/x-zip -timeout 120 -o ${DISTFILES}
 #FETCH_DEPENDS=  ${NCFTP}:${PORTSDIR}/www/comline
 
-MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/nidr/www/
+# Beware ugly VMS names
+NCFTPFLAGS=     -c
+MASTER_SITES=   ftp://ftp.hhs.dk//fote_mirror/
 DISTFILES=      lynx2-4-fm.zip
+NCFTPTAIL=      > ${DISTFILES}
+
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 
