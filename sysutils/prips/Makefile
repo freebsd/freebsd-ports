@@ -8,7 +8,7 @@
 PORTNAME=	prips
 PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.interloper.net/~dan/software/dist/prips/
+MASTER_SITES=	http://ipsc.sourceforge.net/dist/prips/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	jeremy@external.org
