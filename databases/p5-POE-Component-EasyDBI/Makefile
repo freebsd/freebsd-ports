@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-EasyDBI
-PORTVERSION=	0.03
+PORTVERSION=	0.07
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -30,9 +30,10 @@ MAN3=		POE::Component::EasyDBI.3 \
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/;' \
+	@${PERL} -pi -e 's/^our\s+(.VERSION).+?Revision:\s+(\S+).+$$/use vars qw($$1);\n$$1 = q($$2);/o;' \
 			-e '$$_ = "" if /(no|use) warnings/;' \
-       			${WRKSRC}/EasyDBI.pm ${WRKSRC}/EasyDBI/SubProcess.pm
+       			${WRKSRC}/lib/POE/Component/EasyDBI.pm \
+			${WRKSRC}/lib/POE/Component/EasyDBI/SubProcess.pm
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
