@@ -37,6 +37,7 @@ PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all
+NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \

@@ -28,6 +28,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
+NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--verbose
