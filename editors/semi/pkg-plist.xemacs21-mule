@@ -1,6 +1,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/ChangeLog
 %%EMACS_PACKAGESDIR%%/lisp/semi/NEWS
 %%EMACS_PACKAGESDIR%%/lisp/semi/README.en
+%%EMACS_PACKAGESDIR%%/lisp/semi/README.ja
 %%EMACS_PACKAGESDIR%%/lisp/semi/TODO
 %%EMACS_PACKAGESDIR%%/lisp/semi/VERSION
 %%EMACS_PACKAGESDIR%%/lisp/semi/_pkg.el
