@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aumix
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://jpj.net/~trevor/aumix/ \
@@ -24,7 +24,6 @@ GTK_CONFIG=	${X11BASE}/bin/gtk12-config
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--enable-own-labels \
 		--libdir="${LOCALBASE}/lib"
