@@ -30,6 +30,12 @@ USE_X_PREFIX=	yes
 
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 do-build:
 	@(cd ${WRKSRC}; \
 	    for i in ${BITMAP_FONTS} ; do \
@@ -57,4 +63,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${X11BASE} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
