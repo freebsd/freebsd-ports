@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
@@ -15,13 +15,14 @@ MASTER_SITES=	\
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
 DISTFILES=	\
+		apel-1.16-pkg.tar.gz \
 		auctex-1.19-pkg.tar.gz \
 		c-support-1.14-pkg.tar.gz \
-		cc-mode-1.17-pkg.tar.gz  \
-		debug-1.11-pkg.tar.gz  \
-		dired-1.07-pkg.tar.gz  \
-		edit-utils-1.45-pkg.tar.gz  \
-		efs-1.16-pkg.tar.gz   \
+		cc-mode-1.17-pkg.tar.gz \
+		debug-1.11-pkg.tar.gz \
+		dired-1.07-pkg.tar.gz \
+		edit-utils-1.45-pkg.tar.gz \
+		efs-1.16-pkg.tar.gz \
 		fsf-compat-1.07-pkg.tar.gz \
 		hm--html-menus-1.14-pkg.tar.gz \
 		ispell-1.18-pkg.tar.gz \
@@ -44,7 +45,7 @@ DISTFILES=	\
 		xemacs-base-1.37-pkg.tar.gz \
 		xemacs-devel-1.25-pkg.tar.gz
 
-MAINTAINER=	gj@FreeBSD.org
+MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 DIST_SUBDIR=	xemacs
 
