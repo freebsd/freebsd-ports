@@ -9,7 +9,7 @@ etc/rc.d/fd.sh.sample
 %%SERVER%%sbin/bls
 %%SERVER%%sbin/bscan
 %%SERVER%%sbin/btape
-%%SERVER%%sbin/bconsole
+sbin/bconsole
 %%WXCONS%%sbin/wx-console
 %%GNOMECONS%%sbin/gnome-console
 %%SERVER%%sbin/dbcheck

@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.34.2
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -96,18 +96,20 @@ PLIST_SUB+=		DBTYPE=${DBTYPE}
 PLIST_SUB+=		SERVER=""
 .endif
 
-PORTDOCS=	bacula.pdf html-manual/*
+PORTDOCS=	bacula.pdf ReleaseNotes html-manual/*
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "=======> ATTENTION <======="
 	@${ECHO_MSG} "######################################################"
-	@${ECHO_MSG} "===> READ the file ReleaseNotes for upgrade procedure!"
+	@${ECHO_MSG} "===> Please read the file"
+	@${ECHO_MSG} "===>     ${DOCSDIR}/ReleaseNotes"
+	@${ECHO_MSG} "===> for the upgrade procedure!"
 	@${ECHO_MSG} "===> IF YOU IGNORE, it is possible to !! LOOSE DATA !!"
 	@${ECHO_MSG} "######################################################"
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
 	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in newer versinon of FreeBSD"
-	@${ECHO_MSG} "===> READ ${WRKDIR}/bacula-1.34.1/platforms/freebsd/pthreads-fix.txt"
+	@${ECHO_MSG} "===> READ ${WRKSRC}/platforms/freebsd/pthreads-fix.txt"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
@@ -147,26 +149,29 @@ post-install:
 		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
 		${ECHO_CMD} "etc/bacula-barcodes.new" >> ${TMPPLIST}; \
 	else \
-		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc ; \
-		${ECHO_CMD} "etc/bacula-barcodes" >> ${TMPPLIST}; \
+		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.samples ; \
+		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
 	fi
-	if [ -f ${PREFIX}/etc/console.conf.new ]; then \
+	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/console.conf.new" >> ${TMPPLIST}; \
-	elif [ -f ${PREFIX}/etc/console.conf ]; then \
-		${ECHO_CMD} "etc/console.conf" >> ${TMPPLIST}; \
+	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
+		${MV} ${PREFIX}/etc/bconsole.conf ${PREFIX}/etc/bconsole.conf.sample; \
+		${ECHO_CMD} "etc/bconsole.conf.sample" >> ${TMPPLIST}; \
 	fi
 .if defined(WITH_WXCONSOLE)
 	if [ -f ${PREFIX}/etc/wx-console.conf.new ]; then \
 		${ECHO_CMD} "etc/wx-console.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/wx-console.conf ]; then \
-		${ECHO_CMD} "etc/wx-console.conf" >> ${TMPPLIST}; \
+		${MV} ${PREFIX}/etc/wx-console.conf ${PREFIX}/etc/wx-console.conf.sample;
+		${ECHO_CMD} "etc/wx-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif
 .if defined(WITH_GNOMECONSOLE)
 	if [ -f ${PREFIX}/etc/gnome-console.conf.new ]; then \
 		${ECHO_CMD} "etc/gnome-console.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/gnome-console.conf ]; then \
-		${ECHO_CMD} "etc/gnome-console.conf" >> ${TMPPLIST}; \
+		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample;
+		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
 .endif	# chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
@@ -177,21 +182,26 @@ post-install:
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
-			${ECHO_CMD} "etc/bacula-$$na.conf" >> ${TMPPLIST}; \
+			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.sample;
+			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
 		fi \
 	done; \
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html-manual
 	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/html-manual
 	cd ${WRKSRC}/doc && ${FIND} html-manual | \
 		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
 .endif
 
 # Inform user after install about important things ....
-.if !defined(WITH_CLIENT_ONLY)
-	@${ECHO_MSG} "*******************************************************"
+	@${ECHO_MSG} "*********************************************************************"
 	@${ECHO_MSG} "NOTE:"
+	@${ECHO_MSG} "Sample files are installed in ${PREFIX}/etc:"
+	@${ECHO_MSG} "  bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample"
+.if !defined(WITH_CLIENT_ONLY)
+	@${ECHO_MSG} "  bacula-sd.conf.sample, bacula-dir.conf.sample"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "An auto-changer manipulation script based on FreeBSDs"
 	@${ECHO_MSG} "chio command is included and installed at"
@@ -220,8 +230,7 @@ post-install:
 	@${ECHO_MSG} "It is also important that all the scripts accessed"
 	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob could be executed by"
 	@${ECHO_MSG} "the user bacula, too."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*******************************************************"
 .endif
+	@${ECHO_MSG} "*********************************************************************"
 
 .include <bsd.port.post.mk>

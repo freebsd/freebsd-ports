@@ -1,0 +1,19 @@
+*** src/console/Makefile.in.org	Sat Apr  3 20:40:26 2004
+--- src/console/Makefile.in	Sat May  8 14:01:49 2004
+***************
+*** 89,95 ****
+  	   destconf=$$srcconf; \
+  	   if  test -f ${DESTDIR}${sysconfdir}/console.conf; then \
+  	      echo "Existing console.conf moved to bconsole.conf"; \
+! 	      @$(MV) ${DESTDIR}${sysconfdir}/console.conf ${DESTDIR}${sysconfdir}/bconsole.conf; \
+  	      destconf=$$srcconf.new; \
+  	   fi; \
+  	fi; \
+--- 89,95 ----
+  	   destconf=$$srcconf; \
+  	   if  test -f ${DESTDIR}${sysconfdir}/console.conf; then \
+  	      echo "Existing console.conf moved to bconsole.conf"; \
+! 	      $(MV) ${DESTDIR}${sysconfdir}/console.conf ${DESTDIR}${sysconfdir}/bconsole.conf; \
+  	      destconf=$$srcconf.new; \
+  	   fi; \
+  	fi; \

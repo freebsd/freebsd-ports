@@ -32,7 +32,8 @@ BARCODE_FILE=/usr/local/etc/bacula-barcodes
 MTX=/bin/chio
 # Set default values (see case statement below for
 # free mapping of drive index and tape device
-TAPE=/dev/nrsa0
+# We have a double drive Qualstar where drive 1 is the default bacula drive
+TAPE=/dev/nrsa1
 DRIVE=0
 # Time to wait for (un)loading
 SLEEP=20
@@ -143,8 +144,23 @@ case ${COMMAND} in
 	# echo "Request loaded"
 	${MTX} -f ${CHANGER} status -S > /tmp/mtx.$$
 	rtn=$?
-	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: <FULL> .*slot" | awk '{print $6+1}' | tr -d ">"
-	cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: .* source: <>" | awk "{print 0}"
+	# Try to get chio slot source from drive entry
+	SLOT=$(cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: <FULL> .*slot" | awk '{print $6+1}' | tr -d ">")
+	if [ -z "$SLOT" ]; then
+	    # This handles the case a source slot is not available (power on
+	    # of the changer with a drive loaded) and all other slots are
+	    # occupied with a tape!
+	    SLOT=$(cat /tmp/mtx.$$ | grep "^slot .*: <ACCESS>" | awk '{print $2+1}')
+	    if [ -z "$SLOT" ]; then
+		echo 0
+	    else
+		echo $SLOT
+	    fi
+	else
+	    echo $SLOT
+	fi
+	# All tapes are in the slots
+	#cat /tmp/mtx.$$ | grep "^drive ${DRIVE}: .* source: <>" | awk "{print 0}"
 	rm -f /tmp/mtx.$$
 	exit $rtn
 	;;
@@ -152,7 +168,7 @@ case ${COMMAND} in
     slots)
 	# echo "Request slots"
 	${MTX} -f ${CHANGER} status | grep "^slot " | tail -1 | awk '{print $2+1}' | tr -d ":"
-      ;;
+	;;
 
     *)
 	usage
