@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.10
-PORTREVISION=	1
+PORTVERSION=	0.6.12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.zebra.fh-weingarten.de/~transcode/pre/
 
@@ -26,7 +25,7 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config"
-CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
@@ -37,16 +36,12 @@ MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if exists(${LOCALBASE}/lib/libtheora.so)
+WITH_LIBTHEORA=		yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libMagick.so)
 WITH_IMAGEMAGICK=	yes
-.endif
-
-.if exists(${LOCALBASE}/bin/nasm)
-WITH_NASM=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libaviplay.so)
@@ -108,6 +103,12 @@ WITH_LZO=	yes
 
 .if exists(${LINUXBASE}/usr/lib/libdivxdecore.so)
 WITH_DIVX5=	yes
+.endif
+
+.if defined(WITH_LIBTHEORA)
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+.else
+CONFIGURE_ARGS+=	--with-theora=no
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
@@ -245,6 +246,10 @@ pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable extra optimizations by defining WITH_OPTIMIZED_CFLAGS."
+.endif
+.if !defined(WITH_LIBTHEORA)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You can enable Libtheora by defining WITH_LIBTHEORA."
 .endif
 .if !defined(WITH_IMAGEMAGICK)
 	@${ECHO_MSG}
