@@ -84,3 +84,4 @@ share/locale/uk/LC_MESSAGES/d4x.mo
 @dirrm share/d4x/themes/glass
 @dirrm share/d4x/themes
 @dirrm share/d4x/sounds
+@dirrm share/d4x
