@@ -7,6 +7,7 @@
 
 PORTNAME=	skipstone
 PORTVERSION=	0.8.3
+PORTCOMMENT=	Web browser that uses the mozilla-embedded renderer
 CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 
