@@ -30,6 +30,62 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2e129846-8fbb-11d8-8b29-0020ed76ef5a">
+    <topic>MySQL insecure temporary file creation (mysqlbug)</topic>
+    <affects>
+      <package>
+        <name>mysql-client</name>
+	<range><gt>3.2</gt></range>
+      </package>
+    </affects>
+    <description>
+       <body xmlns="http://www.w3.org/1999/xhtml">
+	 <p>Shaun Colley reports that the script `mysqlbug' included
+	   with MySQL sometimes creates temporary files in an unsafe
+	   manner.  As a result, an attacker may create a symlink in
+	   /tmp so that if another user invokes `mysqlbug' and <em>quits
+	   without making <strong>any</strong> changes</em>, an
+	   arbitrary file may be overwritten with the bug report
+	   template.</p>
+       </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108023246916294&amp;w=2</url>
+      <bid>9976</bid>
+      <cvename>CAN-2004-0381</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-25</discovery>
+      <entry>2004-04-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99230277-8fb4-11d8-8b29-0020ed76ef5a">
+    <topic>ident2 double byte buffer overflow</topic>
+    <affects>
+      <package>
+	<name>ident2</name>
+	<range><le>1.04</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jack of RaptureSecurity reported a double byte buffer
+          overflow in ident2. The bug may allow a remote attacker to
+          execute arbitrary code within the context of the ident2
+          daemon.  The daemon typically runs as user-ID `nobody', but
+          with group-ID `wheel'.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://cvsweb.freebsd.org/ports/security/ident2/files/patch-common.c</url>
+    </references>
+    <dates>
+      <discovery>2004-04-15</discovery>
+      <entry>2004-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da6f265b-8f3d-11d8-8b29-0020ed76ef5a">
     <topic>kdepim exploitable buffer overflow in VCF reader</topic>
     <affects>
@@ -131,9 +187,54 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </dates>
   </vuln>
 
+  <vuln vid="27c331d5-64c7-11d8-80e3-0020ed76ef5a">
+    <topic>Vulnerabilities in H.323 implementations</topic>
+    <affects>
+      <package>
+        <name>pwlib</name>
+        <range><lt>1.6.0</lt></range>
+      </package>
+      <package>
+        <name>asterisk</name>
+        <range><le>0.7.2</le></range>
+      </package>
+      <package>
+        <name>openh323</name>
+        <range><lt>1.13.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
+          developed a test suite for the H.323 protocol.  This test
+          suite has uncovered vulnerabilities in several H.323
+          implementations with impacts ranging from denial-of-service
+          to arbitrary code execution.</p>
+        <p>In the FreeBSD Ports Collection, `pwlib' is directly
+          affected.  Other applications such as `asterisk' and
+          `openh323' incorporate `pwlib' statically and so are also
+          independently affected.</p>
+      </body>
+    </description>
+    <references>
+      <!-- General references -->
+      <url>http://www.uniras.gov.uk/vuls/2004/006489/h323.htm</url>
+      <url>http://www.ee.oulu.fi/research/ouspg/protos/testing/c07/h2250v4/index.html</url>
+      <certsa>CA-2004-01</certsa>
+      <certvu>749342</certvu>
+      <!-- pwlib and pwlib-using applications -->
+      <cvename>CAN-2004-0097</cvename>
+      <url>http://www.southeren.com/blog/archives/000055.html</url>
+    </references>
+    <dates>
+      <discovery>2004-01-13</discovery>
+      <entry>2004-02-22</entry>
+      <modified>2004-04-15</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="ccd698df-8e20-11d8-90d1-0020ed76ef5a">
-    <topic>racoon remote denial of service vulnerability
-      (ISAKMP header length field)</topic>
+    <topic>racoon remote denial of service vulnerability (ISAKMP header length field)</topic>
     <affects>
       <package>
 	<name>racoon</name>
@@ -162,8 +263,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="40fcf20f-8891-11d8-90d1-0020ed76ef5a">
-    <topic>racoon remote denial of service vulnerability (IKE Generic
-      Payload Header)</topic>
+    <topic>racoon remote denial of service vulnerability (IKE Generic Payload Header)</topic>
     <affects>
       <package>
 	<name>racoon</name>
@@ -184,6 +284,48 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2003-12-03</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-04-14</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8551668-de09-4d7b-9720-f1360929df07">
+    <topic>tcpdump ISAKMP payload handling remote denial-of-service</topic>
+    <affects>
+      <package>
+	<name>tcpdump</name>
+	<range><lt>3.8.3</lt></range>
+      </package>
+      <package>
+	<name>racoon</name>
+	<range><lt>20040408a</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chad Loder has discovered vulnerabilities in tcpdump's
+          ISAKMP protocol handler.  During an audit to repair these
+          issues, Bill Fenner discovered some related problems.</p>
+        <p>These vulnerabilities may be used by an attacker to crash a
+	  running `tcpdump' process.  They can only be triggered if
+	  the `-v' command line option is being used.</p>
+	<p>NOTE: the racoon ISAKMP/IKE daemon incorporates the ISAKMP
+	  protocol handler from tcpdump, and so is also affected by
+	  this issue.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</url>
+      <url>http://www.rapid7.com/advisories/R7-0017.html</url>
+      <cvename>CAN-2004-0183</cvename>
+      <cvename>CAN-2004-0184</cvename>
+    </references>
+    <dates>
+      <discovery>2004-03-12</discovery>
+      <entry>2004-03-31</entry>
       <modified>2004-04-14</modified>
     </dates>
   </vuln>
@@ -674,48 +816,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-03-30</discovery>
       <entry>2004-03-31</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="f8551668-de09-4d7b-9720-f1360929df07">
-    <topic>tcpdump ISAKMP payload handling remote denial-of-service</topic>
-    <affects>
-      <package>
-	<name>tcpdump</name>
-	<range><lt>3.8.3</lt></range>
-      </package>
-      <package>
-	<name>racoon</name>
-	<range><lt>20040408a</lt></range>
-      </package>
-      <system>
-	<name>FreeBSD</name>
-	<range><ge>0</ge></range>
-      </system>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>Chad Loder has discovered vulnerabilities in tcpdump's
-          ISAKMP protocol handler.  During an audit to repair these
-          issues, Bill Fenner discovered some related problems.</p>
-        <p>These vulnerabilities may be used by an attacker to crash a
-	  running `tcpdump' process.  They can only be triggered if
-	  the `-v' command line option is being used.</p>
-	<p>NOTE: the racoon ISAKMP/IKE daemon incorporates the ISAKMP
-	  protocol handler from tcpdump, and so is also affected by
-	  this issue.</p>
-      </body>
-    </description>
-    <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=108067265931525</url>
-      <url>http://www.rapid7.com/advisories/R7-0017.html</url>
-      <cvename>CAN-2004-0183</cvename>
-      <cvename>CAN-2004-0184</cvename>
-    </references>
-    <dates>
-      <discovery>2004-03-12</discovery>
-      <entry>2004-03-31</entry>
-      <modified>2004-04-14</modified>
     </dates>
   </vuln>
 
@@ -1764,52 +1864,6 @@ misc.c:
     <dates>
       <discovery>2004-02-17</discovery>
       <entry>2004-02-22</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="27c331d5-64c7-11d8-80e3-0020ed76ef5a">
-    <topic>Vulnerabilities in H.323 implementations</topic>
-    <affects>
-      <package>
-        <name>pwlib</name>
-        <range><lt>1.6.0</lt></range>
-      </package>
-      <package>
-        <name>asterisk</name>
-        <range><le>0.7.2</le></range>
-      </package>
-      <package>
-        <name>openh323</name>
-        <range><lt>1.13.0</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The <a href="http://www.niscc.gov.uk/">NISCC</a> and the <a href="http://www.ee.oulu.fi/research/ouspg/">OUSPG</a>
-          developed a test suite for the H.323 protocol.  This test
-          suite has uncovered vulnerabilities in several H.323
-          implementations with impacts ranging from denial-of-service
-          to arbitrary code execution.</p>
-        <p>In the FreeBSD Ports Collection, `pwlib' is directly
-          affected.  Other applications such as `asterisk' and
-          `openh323' incorporate `pwlib' statically and so are also
-          independently affected.</p>
-      </body>
-    </description>
-    <references>
-      <!-- General references -->
-      <url>http://www.uniras.gov.uk/vuls/2004/006489/h323.htm</url>
-      <url>http://www.ee.oulu.fi/research/ouspg/protos/testing/c07/h2250v4/index.html</url>
-      <certsa>CA-2004-01</certsa>
-      <certvu>749342</certvu>
-      <!-- pwlib and pwlib-using applications -->
-      <cvename>CAN-2004-0097</cvename>
-      <url>http://www.southeren.com/blog/archives/000055.html</url>
-    </references>
-    <dates>
-      <discovery>2004-01-13</discovery>
-      <entry>2004-02-22</entry>
-      <modified>2004-04-15</modified>
     </dates>
   </vuln>
 
