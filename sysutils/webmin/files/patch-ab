@@ -1,0 +1,11 @@
+--- os_list.txt.orig	Wed Nov  1 13:30:46 2000
++++ os_list.txt	Wed Nov  1 13:30:19 2000
+@@ -74,6 +74,8 @@
+ FreeBSD				3.4	freebsd		3.4	$uname =~ /FreeBSD.*\s3\.4/i
+ FreeBSD				3.5	freebsd		3.5	$uname =~ /FreeBSD.*\s3\.5/i
+ FreeBSD				4.0	freebsd		4.0	$uname =~ /FreeBSD.*\s4\.0/i
++FreeBSD				4.1	freebsd		4.0	$uname =~ /FreeBSD.*\s4\.1/i
++FreeBSD				4.2	freebsd		4.0	$uname =~ /FreeBSD.*\s4\.2/i
+ FreeBSD				5.0	freebsd		5.0	$uname =~ /FreeBSD.*\s5\.0/i
+ OpenBSD				2.5	openbsd		2.5	$uname =~ /OpenBSD.*\s2\.5/i
+ OpenBSD				2.6	openbsd		2.6	$uname =~ /OpenBSD.*\s2\.6/i

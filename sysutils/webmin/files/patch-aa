@@ -41,3 +41,20 @@
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
+@@ -313,11 +315,11 @@
+ 		initsupp=`grep "^os_support=" $wadir/init/module.info | sed -e 's/os_support=//g' | grep $os_type`
+ 		atboot=0
+ 		if [ "$initsupp" != "" ]; then
+-			printf "Start Webmin at boot time (y/n): "
+-			read atbootyn
+-			if [ "$atbootyn" = "y" -o "$atbootyn" = "Y" ]; then
+-				atboot=1
+-			fi
++			# printf "Start Webmin at boot time (y/n): "
++			# read atbootyn
++			# if [ "$atbootyn" = "y" -o "$atbootyn" = "Y" ]; then
++			# 	atboot=1
++			# fi
+ 		else
+ 			echo "Webmin does not support being started at boot time on your system."
+ 		fi
