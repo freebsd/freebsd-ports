@@ -23,4 +23,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		XML::SimpleObject::LibXML.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not build"
+.endif
+
+.include <bsd.port.post.mk>
