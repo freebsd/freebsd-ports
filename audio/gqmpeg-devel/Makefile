@@ -3,7 +3,7 @@
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/12/09 06:56:52 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/12/28 01:02:05 vanilla Exp $
 #
 
 DISTNAME=	gqmpeg-0.4.4
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Haven/5235/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 LIB_DEPENDS=	gtk11d.1:${PORTSDIR}/x11-toolkits/gtk11-devel \

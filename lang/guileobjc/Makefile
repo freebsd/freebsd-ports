@@ -3,14 +3,14 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.5 1998/11/17 20:21:54 billf Exp $
+# $Id: Makefile,v 1.6 1998/11/26 05:35:42 asami Exp $
 #
 
 DISTNAME=	guileobjc-0.3.8
 CATEGORIES=	lang
-MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.1.2.4/
+MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.1.2.4/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libobjects.a:${PORTSDIR}/lang/libobjects
 LIB_DEPENDS=	guile.4:${PORTSDIR}/lang/guile

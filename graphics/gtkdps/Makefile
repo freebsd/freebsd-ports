@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1998/10/05 02:59:02 steve Exp $
+# $Id: Makefile,v 1.7 1999/01/05 01:04:37 steve Exp $
 #
 
 DISTNAME=	gtkDPS-0.2.16
@@ -11,7 +11,7 @@ PKGNAME=	gtkdps-0.2.16
 CATEGORIES=	graphics
 MASTER_SITES= 	ftp://ftp.aist-nara.ac.jp/pub/personal/masata-y/gyve/fullkit/gyve-0.2.1/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs

@@ -3,7 +3,7 @@
 # Date created:        28 December 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:13:12 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/17 00:32:36 asami Exp $
 #
 
 DISTNAME=	xdeblo_v1.0
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://www.vector.co.jp/pack/unix/game/action/block/
 DISTFILES=	xdeblock.tgz
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

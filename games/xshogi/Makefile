@@ -3,17 +3,17 @@
 # Date created:        20 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/01/03 09:26:34 obrien Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:31:02 asami Exp $
 #
 
 DISTNAME=	xshogi-1.2p03
-PKGNAME=        xshogi-1.2.3
-CATEGORIES=     games
-MASTER_SITES=   ${MASTER_SITE_GNU}
+PKGNAME=	xshogi-1.2.3
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
-RUN_DEPENDS=    ${LOCALBASE}/libexec/gnushogix:${PORTSDIR}/games/gnushogi
+RUN_DEPENDS=	${LOCALBASE}/libexec/gnushogix:${PORTSDIR}/games/gnushogi
 
 USE_X_PREFIX=	yes
 MAKEFILE=	Makefile.custom

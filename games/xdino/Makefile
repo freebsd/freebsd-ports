@@ -3,15 +3,15 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/07/24 12:48:56 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/08/25 00:43:52 asami Exp $
 #
 
-DISTNAME=        xdino-5.4.4
+DISTNAME=	xdino-5.4.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 WRKSRC=		${WRKDIR}/xdino
 USE_IMAKE=	yes

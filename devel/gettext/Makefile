@@ -3,14 +3,14 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1998/11/18 15:09:35 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/12/01 22:38:45 billf Exp $
 #
 
 DISTNAME=	gettext-0.10.35
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.ai.mit.edu/gnu/
 
-MAINTAINER=	Nakai@technologist.com
+MAINTAINER=	nacai@iname.com
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-gnu-gettext

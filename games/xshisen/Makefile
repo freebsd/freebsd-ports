@@ -3,14 +3,14 @@
 # Date created:               9 Oct 1996
 # Whom:                 Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/09/15 11:13:19 asami Exp $
+# $Id: Makefile,v 1.10 1998/09/17 00:32:39 asami Exp $
 #
 
-DISTNAME=       xshisen-1.36
+DISTNAME=	xshisen-1.36
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/doc-sources/fj.sources/1996/feb/
 
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
