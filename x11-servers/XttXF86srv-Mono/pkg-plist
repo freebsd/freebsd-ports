@@ -1,3 +1,0 @@
-bin/XF86_Mono.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_Mono ] && /bin/ln -fs %B/XF86_Mono %B/X) || /bin/rm -f %B/X

@@ -270,7 +270,6 @@
     SUBDIR += gindent
     SUBDIR += glade2
     SUBDIR += glademm
-    SUBDIR += glg
     SUBDIR += glib12
     SUBDIR += glib20
     SUBDIR += global
@@ -1030,7 +1029,6 @@
     SUBDIR += py-ncurses
     SUBDIR += py-omniorb
     SUBDIR += py-optik
-    SUBDIR += py-orbit
     SUBDIR += py-orbit2
     SUBDIR += py-period
     SUBDIR += py-plex
@@ -1227,7 +1225,6 @@
     SUBDIR += ustl
     SUBDIR += varconf
     SUBDIR += vb2c
-    SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vstr
     SUBDIR += vtcl

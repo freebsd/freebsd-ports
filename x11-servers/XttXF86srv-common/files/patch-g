@@ -1,9 +1,0 @@
-Index: programs/Xserver/hw/xfree86/vga256/drivers/i810/i810_accel.c
-@@ -39,6 +39,7 @@
- 
- #include <math.h>
- #include <stdio.h>
-+#include <sys/types.h>
- #include <sys/mman.h>
- #include <signal.h>
- 

@@ -1,5 +1,0 @@
-bin/orbit-python-config
-include/orbit-python/orbit-python.h
-lib/%%PYTHON_VERSION%%/site-packages/CORBAmodule.so
-lib/%%PYTHON_VERSION%%/site-packages/PortableServermodule.so
-@dirrm include/orbit-python

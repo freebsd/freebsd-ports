@@ -1,3 +1,0 @@
-bin/XF86_3DLabs.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF86_3DLabs ] && /bin/ln -fs %B/XF86_3DLabs %B/X) || /bin/rm -f %B/X

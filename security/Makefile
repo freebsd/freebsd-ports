@@ -129,7 +129,6 @@
     SUBDIR += ifd-gempc410
     SUBDIR += ifd-gpr400
     SUBDIR += ike-scan
-    SUBDIR += inflex
     SUBDIR += integrit
     SUBDIR += ipfmeta
     SUBDIR += isakmpd
