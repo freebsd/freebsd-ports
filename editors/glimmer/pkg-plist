@@ -38,6 +38,7 @@ share/gnome/glimmer/languages/z80.lang
 share/gnome/glimmer/scripts/Delete_To_End.py
 share/gnome/glimmer/scripts/Delete_To_Start.py
 share/gnome/glimmer/scripts/FileSelector.py
+share/gnome/glimmer/scripts/Global.py
 share/gnome/glimmer/scripts/ISO2HTML.py
 share/gnome/glimmer/scripts/Replace_Spaces.py
 share/gnome/glimmer/scripts/Replace_Tabs.py
@@ -60,6 +61,7 @@ share/gnome/pixmaps/glimmer-title.png
 share/locale/es/LC_MESSAGES/glimmer.mo
 share/locale/ja/LC_MESSAGES/glimmer.mo
 share/locale/sv/LC_MESSAGES/glimmer.mo
+share/locale/zh_TW/LC_MESSAGES/glimmer.mo
 @dirrm share/gnome/help/glimmer/C
 @dirrm share/gnome/help/glimmer
 @dirrm share/gnome/glimmer/scripts

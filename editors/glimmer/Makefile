@@ -6,22 +6,26 @@
 #
 
 PORTNAME=	glimmer
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.12
 CATEGORIES=	editors gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_X_PREFIX=	yes
 USE_PYTHON=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-regex
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REGEX_H_ -D_REGEX_H" \
+		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 .if exists(/usr/lib/libcrypto.a)
 PYTHON_LIBS=	-lssl -lcrypto
 .endif

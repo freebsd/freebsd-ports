@@ -1,12 +1,12 @@
 
 $FreeBSD$
 
---- configure	2001/07/02 06:14:02	1.1
-+++ configure	2001/07/02 06:14:16
-@@ -4731,7 +4731,7 @@
- if test "$python" = yes; then
-   echo Python version.....$PY_VERSION
+--- configure.orig	Fri Nov 16 16:02:10 2001
++++ configure	Fri Nov 16 16:02:49 2001
+@@ -8320,7 +8320,7 @@
  fi
+ echo System regex.......$use_system_regex
+ 
 -echo GTK+ version.......`gtk-config --version`
 +echo GTK+ version.......`$GTK_CONFIG --version`
  echo GNOME version......`gnome-config --version`
