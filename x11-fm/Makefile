@@ -10,6 +10,7 @@
     SUBDIR += filerunner
     SUBDIR += fsv
     SUBDIR += gentoo
+    SUBDIR += gnome-commander
     SUBDIR += gnomemc
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
