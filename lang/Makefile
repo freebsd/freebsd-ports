@@ -1,5 +1,7 @@
-# $Id: Makefile,v 1.14 1995/01/05 22:03:24 jkh Exp $
+# $Id: Makefile,v 1.15 1995/01/24 18:44:33 gpalmer Exp $
 
-SUBDIR=	STk Sather expect forth logo p2c schemetoc scm tcl tclX
+#Broken - expect
+
+SUBDIR=	STk Sather forth logo p2c schemetoc scm tcl tclX
 
 .include <bsd.port.subdir.mk>
