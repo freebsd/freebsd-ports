@@ -11,7 +11,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
