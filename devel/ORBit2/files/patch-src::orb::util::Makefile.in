@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/orb/util/Makefile.in	2002/02/13 09:54:15	1.1
++++ src/orb/util/Makefile.in	2002/02/13 09:54:28
+@@ -97,7 +97,7 @@
+ 
+ noinst_LTLIBRARIES = liborb-util.la
+ 
+-INCLUDES =  	-I$(top_srcdir)/include					-I$(top_builddir)/include				-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbitrc\"		-DORBIT2_INTERNAL_API					$(WARN_CFLAGS)						$(ORBIT_DEBUG_CFLAGS)					$(ORBIT_CFLAGS)
++INCLUDES =  	-I$(top_srcdir)/include					-I$(top_builddir)/include				-DORBIT_SYSTEM_RCFILE=\"$(sysconfdir)/orbit2rc\"		-DORBIT2_INTERNAL_API					$(WARN_CFLAGS)						$(ORBIT_DEBUG_CFLAGS)					$(ORBIT_CFLAGS)
+ 
+ 
+ liborb_util_la_SOURCES =  	orbit-purify.h  	genrand.c       	orbit-options.c 	orbit-options.h 	orbit-util.c
