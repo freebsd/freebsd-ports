@@ -1,0 +1,11 @@
+--- util/wm-oldmenu2new.orig	Wed Jan 20 21:39:18 1999
++++ util/wm-oldmenu2new	Wed Jan 20 21:39:29 1999
+@@ -112,7 +112,7 @@
+ # This is the interesting bit.  Edit the old style menu and
+ # convert into new style property-list menu.
+ #
+-perl - $T <<-'EOF' > $T-p
++%%PERL%% - $T <<-'EOF' > $T-p
+ 	$v=chr(22);
+ 	for (<>) {
+ 		push @foo,$_;
