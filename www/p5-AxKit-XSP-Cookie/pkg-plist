@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/AxKit/XSP/Cookie.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP/Cookie/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP/Cookie
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AxKit/XSP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AxKit/XSP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/AxKit 2>/dev/null || true
