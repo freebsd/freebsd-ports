@@ -24,7 +24,7 @@ dhcpd_conf=${dhcpd_conf:-%%PREFIX%%/etc/${name}.conf}	# configuration file
 dhcpd_ifaces=${dhcpd_ifaces:-}				# ethernet interface(s)
 dhcpd_withumask=${dhcpd_withumask:-022}			# file creation mask
 
-dhcpd_chuser_enable=${dhcpd_chuser_enable:-"YES"}	# runs w/o privileges?
+dhcpd_chuser_enable=${dhcpd_chuser_enable:-"%%PARANOIA%%"}	# runs w/o privileges?
 dhcpd_withuser=${dhcpd_withuser:-${name}}		# user name to run as
 dhcpd_withgroup=${dhcpd_withgroup:-${name}}		# group name to run as
 
