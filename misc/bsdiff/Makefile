@@ -14,5 +14,6 @@ MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Generates and applies patches to binary files
 
 MAN1=		bsdiff.1 bspatch.1
+PLIST_FILES=	bin/bsdiff bin/bspatch
 
 .include <bsd.port.mk>
