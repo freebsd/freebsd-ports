@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines-collection
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -27,6 +27,7 @@ RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
 		${THEMESBASE}/libqnx.so:${THEMESPORTDIR}/gtk-qn-x11-theme \
 		${THEMESBASE}/libstep.so:${THEMESPORTDIR}/gtkstep \
 		${THEMESBASE}/libsteppastel.so:${THEMESPORTDIR}/gtkstep-pastel \
+		${THEMESBASE}/libzenith.so:${THEMESPORTDIR}/gtk-zenith-theme \
 		${THEMESBASE}/libthinice.so:${THEMESPORTDIR}/thinice \
 		${THEMESBASE}/libXenoStep.so:${THEMESPORTDIR}/xenostep \
 		${THEMESBASE}/libxeno.so:${THEMESPORTDIR}/xenophilia \
