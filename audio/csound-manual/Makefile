@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	csound-manual
-PORTVERSION=	4.10
+PORTVERSION=	4.23
 CATEGORIES=	audio
-MASTER_SITES=	ftp://csounds.com/manual/current/
-DISTFILES=	ascii.zip \
-		espanol.zip \
-		html.zip \
-		manual1.zip \
-		manual2.zip \
-		spplmnt1.zip \
-		spplmnt2.zip \
-		spplmtxt.zip \
-		toots.zip
+MASTER_SITES=	http://www.kevindumpscore.com/download/ \
+		ftp://ftp.cs.bath.ac.uk/pub/dream/documentation/manuals/
+DISTFILES=	manual-docbook-${PORTVERSION}.tar.gz \
+		manual-html-${PORTVERSION}.tar.gz \
+		manual-pdf-${PORTVERSION}.tar.gz \
+		manual-text-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -25,29 +21,17 @@ COMMENT=	Manuals for Csound
 
 RUN_DEPENDS=	csound:${PORTSDIR}/audio/csound
 
-BROKEN=		Files are not available for distribution anymore. \
-		Owner has withdrawn the files due to bandwidth costs.
-
-RESTRICTED=	"no redistribution; no commercial use except to make music (see http://mitpress.mit.edu/e-books/csound/fpage/FAQml/faq/faq.html)"
-NO_CDROM=	${RESTRICTED}
-NO_FTP=		${RESTRICTED}
-
 NO_BUILD=		yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/pkg-plist
 PREFIX=			${X11BASE}/share/doc/csound
-USE_ZIP=		yes
-WRKSRC=			${WRKDIR}/manual
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-
-pre-extract:
-	${MKDIR} ${WRKSRC}
+WRKSRC=			${WRKDIR}/csound-${PORTVERSION}
 
 pre-install:
 	${RM} -f ${PLIST}
-	cd ${WRKDIR}/manual && ${FIND} -s . -type f | \
+	cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${CUT} -c3-999 >> ${PLIST} \
-		&& ${FIND} * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
 	cd ${WRKSRC} && pax -r -w * ${PREFIX}
