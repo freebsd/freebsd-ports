@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v1.5/ \
 
 MAINTAINER?=    ache@FreeBSD.org
 
-LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
+LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
