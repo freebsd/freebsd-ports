@@ -17,6 +17,8 @@ LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO doc/html/*
 
+BROKEN=		Unfetchable
+
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
