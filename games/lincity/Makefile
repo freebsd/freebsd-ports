@@ -6,16 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=       lincity109
-PKGNAME=	lincity-1.09
+DISTNAME=       lincity-1.11
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
-EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	proff@iq.org
 
 USE_XLIB=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	freebsd
 MAN6=		lincity.6
 MANCOMPRESSED=	no
