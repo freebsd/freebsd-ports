@@ -5817,6 +5817,7 @@ phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
 phppgadmin	ports/databases/phppgadmin
+phraze		ports/misc/phraze
 phylip		ports/biology/phylip
 physcalc	ports/math/physcalc
 pib		ports/sysutils/pib
