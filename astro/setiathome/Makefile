@@ -3,10 +3,10 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.6 1999/04/23 18:27:31 stb Exp $
+# $Id: Makefile,v 1.7 1999/05/06 22:50:03 stb Exp $
 #
 
-PKGNAME=	setiathome-0.47
+PKGNAME=	setiathome-1.1
 CATEGORIES=	astro
 MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
 		http://www.freebsd.org/~stb/mirror/setiathome.ssl.berkeley.edu/software/
@@ -22,30 +22,30 @@ EXTRACT_AFTER_ARGS=
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400000
-DISTFILES=      setiathome-0.47.i386-unknown-freebsd4.0.tar
-WRKSRC=         setiathome-0.47.i386-unknown-freebsd4.0
+DISTFILES=      setiathome-1.1.i386-unknown-freebsd4.0.tar
+WRKSRC=         setiathome-1.1.i386-unknown-freebsd4.0
 .elif ${OSVERSION} >= 310000
-DISTFILES=      setiathome-0.47.i386-unknown-freebsd3.1.tar
-WRKSRC=         setiathome-0.47.i386-unknown-freebsd3.1
+DISTFILES=      setiathome-1.1.i386-unknown-freebsd3.1.tar
+WRKSRC=         setiathome-1.1.i386-unknown-freebsd3.1
 .elif ${OSVERSION} >= 228000
-DISTFILES=      setiathome-0.47.i386-unknown-freebsd2.2.8.tar
-WRKSRC=         setiathome-0.47.i386-unknown-freebsd2.2.8
+DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.8.tar
+WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.8
 .elif ${OSVERSION} >= 227000
-DISTFILES=      setiathome-0.47.i386-unknown-freebsd2.2.7.tar
-WRKSRC=         setiathome-0.47.i386-unknown-freebsd2.2.7
+DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.7.tar
+WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.7
 .elif ${OSVERSION} >= 226000
-DISTFILES=      setiathome-0.47.i386-unknown-freebsd2.2.6.tar
-WRKSRC=         setiathome-0.47.i386-unknown-freebsd2.2.6
+DISTFILES=      setiathome-1.1.i386-unknown-freebsd2.2.6.tar
+WRKSRC=         setiathome-1.1.i386-unknown-freebsd2.2.6
 .else
 DISTFILES=
 .endif
 
-.if make(makesum) | make(fetch-all)
-DISTFILES=	setiathome-0.47.i386-unknown-freebsd2.2.6.tar	\
-			setiathome-0.47.i386-unknown-freebsd2.2.7.tar	\
-			setiathome-0.47.i386-unknown-freebsd2.2.8.tar	\
-			setiathome-0.47.i386-unknown-freebsd3.1.tar	\
-			setiathome-0.47.i386-unknown-freebsd4.0.tar
+.if make(makesum) | defined(FETCH_ALL)
+DISTFILES=	setiathome-1.1.i386-unknown-freebsd2.2.6.tar	\
+			setiathome-1.1.i386-unknown-freebsd2.2.7.tar	\
+			setiathome-1.1.i386-unknown-freebsd2.2.8.tar	\
+			setiathome-1.1.i386-unknown-freebsd3.1.tar	\
+			setiathome-1.1.i386-unknown-freebsd4.0.tar
 .endif
 
 NO_BUILD=	"binary distribution"
