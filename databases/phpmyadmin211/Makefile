@@ -6,50 +6,45 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.3.2
+PORTVERSION=	2.5.1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc/-rc/}
-DISTFILES=	${DISTNAME}-${PHP_VERSION}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-${PHP_SUFX}${EXTRACT_SUFX}
 
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A set of PHP-scripts to adminstrate MySQL over the web
 
-RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
-.if !defined(WITH_PHP3)
-.if defined(WITH_APACHE2)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
-.else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-.endif
-PHP_VERSION=	php
-.else
+.if defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
-PHP_VERSION=	php3
 .endif
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
-MYADMDIR?=	www/data.default/phpMyAdmin
+MYADMDIR?=	www/data/phpMyAdmin
 
-ORIG_PLIST=	${PKGDIR}/pkg-plist
-PLIST=		${WRKDIR}/PLIST
-PLIST_SUB+=	MYADMDIR=${MYADMDIR} PHP_VERSION=${PHP_VERSION}
+.if defined(WITH_PHP3)
+PHP_SUFX=	php3
+.else
+PHP_SUFX=	php
+.endif
+
+PLIST_SUB+=	MYADMDIR=${MYADMDIR} PHP_SUFX=${PHP_SUFX}
+
+.include <bsd.port.pre.mk>
+.if !defined(WITH_PHP3)
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+.endif
 
 post-patch:
-	@${MV}	${WRKSRC}/config.inc.${PHP_VERSION} ${WRKSRC}/config.inc.${PHP_VERSION}.sample
+	@${MV} ${WRKSRC}/config.inc.${PHP_SUFX} ${WRKSRC}/config.inc.${PHP_SUFX}.sample
 
 do-install:
-	@${CP}	${ORIG_PLIST} ${PLIST}
-	@f=${MYADMDIR}; while ${TEST} $${#f} -gt 0; do \
-		${ECHO} "@unexec rmdir %D/$$f || true"; \
-		f=`${ECHO} $$f | ${SED} -e 's,/*[^/]*$$,,'`; \
-	done >> ${PLIST}
 	@${MKDIR} ${PREFIX}/${MYADMDIR}
-	@${FIND} ${WRKSRC} ! -path '*/CVS*' | ${XARGS} -n1 ${SH} -c 'if ${TEST} -d $$0; \
+	@${FIND} ${WRKSRC} ! -path '*/CVS*' ! -path '*/.cvsignore' | \
+		${XARGS} -n1 ${SH} -c 'if ${TEST} -d $$0; \
 			then ${MKDIR} ${PREFIX}/${MYADMDIR}$${0#${WRKSRC}}; \
 			else ${INSTALL_DATA} $$0 ${PREFIX}/${MYADMDIR}$${0#${WRKSRC}}; fi'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -10,5 +10,6 @@ Currently it can:
  - create and read dumps of tables
  - export and import CSV data
  - administer multiple servers and single databases
+ - communicate in more than 38 different languages
 
-WWW: http://phpwizard.net/projects/phpMyAdmin/
+WWW: http://www.phpmyadmin.net/
