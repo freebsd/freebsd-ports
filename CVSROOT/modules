@@ -7978,6 +7978,7 @@ sr		ports/lang/sr
 src		src
 sredird		ports/comms/sredird
 srm		ports/security/srm
+srmt		ports/sysutils/srmt
 srp		ports/security/srp
 ss		ports/math/ss
 sscalc		ports/astro/sscalc
