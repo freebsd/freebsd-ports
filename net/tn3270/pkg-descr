@@ -1,0 +1,8 @@
+ Tn3270 permits a full-screen, full-duplex connection from a UNIX machine
+ to an IBM (or compatible) machine.  Tn3270 gives the appearance of being
+ logged in to the remote machine from an IBM 3270 terminal.  Of course,
+ you must have an account on the machine to which you connect in order to
+ log in.  Tn3270 looks to the user in many respects like the Yale ASCII
+ Terminal Communication System II.  Tn3270 is actually a modification of
+ the Arpanet TELNET user interface (see telnet(1))  which will, in certain
+ circumstances, interpret and generate raw 3270 control streams.
