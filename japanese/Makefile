@@ -266,6 +266,7 @@
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tkdesk
+    SUBDIR += tkhonyaku
     SUBDIR += tkstep80
     SUBDIR += today
     SUBDIR += truetypefonts
