@@ -25,6 +25,7 @@ DIST_SUBDIR=	KDE/kde-i18n
 post-extract:
 	@${FIND} ${WRKDIR} -type f -name index.cache.bz2 \
 		| ${XARGS} -n 10 -x ${TOUCH}
+	@${TOUCH} ${WRKSRC}/config.h.in
 .endif # !target(post-extract)
 .endif # defined(KDE_I18N)
 
