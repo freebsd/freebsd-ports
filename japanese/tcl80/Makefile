@@ -28,8 +28,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-shared
 RANLIB=		ranlib
-PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg/INSTALL.tclsh
-PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/DEINSTALL.tclsh
+PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh
+PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg-deinstall.tclsh
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -60,7 +60,7 @@ post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
-	@${CAT}	${PKGDIR}/MESSAGE
+	@${CAT}	${PKGMESSAGE}
 
 test:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
