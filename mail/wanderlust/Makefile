@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wanderlust
-PORTVERSION=	1.1.1
+PORTVERSION=	2.4.0
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.gohome.org/wl/stable/ \
 		ftp://ftp.ring.gr.jp/pub/text/elisp/wl/stable/ \
@@ -38,6 +38,11 @@ WITHOUT_MULE=yes
 BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
+# depends on nkf
+.if (${EMACS_PORT_NAME} == "emacs" || ${EMACS_PORT_NAME} == "xemacs20")
+BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
+.endif
+
 .if defined(EMACS_PACKAGESDIR)
 ALL_TARGET=	package
 INSTALL_TARGET=	install-package
@@ -64,9 +69,7 @@ SAMPLESLANG=	en ja
 SAMPLES=	dot.addresses dot.folders dot.wl
 UTILS=		bbdb-wl.el im-wl.el ssl.el
 
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} \
-		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
-		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
+PLIST_SUB+=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		DIRSECTION=${DIRSECTION}
 
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
@@ -94,6 +97,10 @@ post-configure:
 		-e "s,%%EMACS_LIBDIR_WITH_VER%%,${EMACS_LIBDIR_WITH_VER},g" \
 		-e "s,%%EMACS_PACKAGESDIR%%,${EMACS_PACKAGESDIR},g" \
 		< ${FILESDIR}/wanderlust-startup.${EMACS_PORT_NAME}.el.tmpl > ${WRKDIR}/wanderlust-startup.el
+	@${CP} ${WRKSRC}/wl/wl-vars.el ${WRKSRC}/wl/wl-vars.el.temp
+.if (${EMACS_PORT_NAME} == "emacs" || ${EMACS_PORT_NAME} == "xemacs20")
+	@nkf -e ${WRKSRC}/wl/wl-vars.el.temp > ${WRKSRC}/wl/wl-vars.el
+.endif
 
 pre-build:
 .if defined(EMACS_PACKAGESDIR)
@@ -106,9 +113,6 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MAKE} install-docs
-.endif
-.if (${EMACS_PORT_NAME} == "xemacs20")
-	@${MAKE} install-icons
 .endif
 	@${MAKE} install-samples
 	@${MAKE} install-utils
@@ -132,13 +136,6 @@ install-docs:
 	${INSTALL_DATA} ${WRKSRC}/elmo/ChangeLog ${PREFIX}/${PORTDOCDIR}/ChangeLog.elmo
 	${INSTALL_DATA} ${WRKSRC}/wl/ChangeLog ${PREFIX}/${PORTDOCDIR}/ChangeLog.wl
 
-install-icons:
-	@${MKDIR} ${PREFIX}/${EMACS_LIBDIR}/etc/wl
-	cd ${WRKSRC}/etc/icons ; \
-	for i in *.xpm ; do \
-		${INSTALL_DATA} $$i ${PREFIX}/${EMACS_LIBDIR}/etc/wl ; \
-	done
-
 install-samples:
 .for l in ${SAMPLESLANG}
 	${MKDIR} ${PREFIX}/${SAMPLESDIR}/$l
@@ -146,6 +143,8 @@ install-samples:
 		${INSTALL_DATA} ${WRKSRC}/samples/$l/$$i ${PREFIX}/${SAMPLESDIR}/$l; \
 	done
 .endfor
+	${MKDIR} ${PREFIX}/share/wanderlust
+	${INSTALL_DATA} ${WRKSRC}/etc/ja.Emacs ${PREFIX}/share/wanderlust
 
 install-utils:
 	@${MKDIR} ${PREFIX}/${UTILSDIR}
