@@ -3,7 +3,7 @@
 # Date created:				16 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/18 04:10:04 mph Exp $
 #
 
 DISTNAME=		UnixFrotz232R2Std10
@@ -16,8 +16,11 @@ MAINTAINER=		andy@icc.surw.chel.su
 ALL_TARGET=
 WRKSRC=			${WRKDIR}/frotz-2.32
 
+MAN6=			frotz.6
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/frotz ${PREFIX}/bin
+	@ ${INSTALL_MAN} ${WRKSRC}/frotz.6 ${PREFIX}/man/man6
 
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/frotz
