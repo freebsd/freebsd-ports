@@ -2614,6 +2614,9 @@ share/doc/HTML/en/common/web-doctop.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
 share/doc/HTML/en/kdelibs-apidocs/common
+share/doc/HTML/en/kspell/common
+share/doc/HTML/en/kspell/index.cache.bz2
+share/doc/HTML/en/kspell/index.docbook
 share/icons/crystalsvg/128x128/actions/player_playlist.png
 share/icons/crystalsvg/128x128/apps/password.png
 share/icons/crystalsvg/128x128/devices/blockdevice.png
@@ -4728,6 +4731,7 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/icons/crystalsvg/scalable/mimetypes
 @dirrm share/icons/crystalsvg/32x32/actions/kde
 @dirrm share/icons/crystalsvg/22x22/actions/kde
+@dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kwallet/html
