@@ -1,0 +1,16 @@
+--- ../ui/sound/TIASound.c.orig	Sun Jan 21 11:26:38 2001
++++ ../ui/sound/TIASound.c	Mon Jan 22 06:37:37 2001
+@@ -168,10 +168,12 @@
+    uint8 chan;
+    int16 n;
+ 
++   srandom(time(NULL));
++
+    /* fill the 9bit polynomial with random bits */
+    for (n=0; n<POLY9_SIZE; n++)
+    {
+-      Bit9[n] = rand() & 0x01;       /* fill poly9 with random bits */
++      Bit9[n] = random() & 0x01;       /* fill poly9 with random bits */
+    }
+ 
+    /* calculate the sample 'divide by N' value based on the playback freq. */
