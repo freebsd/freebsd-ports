@@ -1,5 +1,5 @@
---- Makefile	Fri Dec  3 17:22:38 1993
-+++ /home/andy/tmp/wrk/Makefile	Wed Aug 18 13:51:45 1999
+--- Makefile.orig	Fri Dec  3 23:22:38 1993
++++ Makefile	Sat Aug  5 07:47:54 2000
 @@ -3,20 +3,20 @@
  #
  # make clean	removes all temporary files.
@@ -10,12 +10,12 @@
 -LIBRARY = /usr/X386/lib
 -BIN = /usr/X386/bin
 -SCOREFILES = /usr/X386/lib/X11/games
-+#CFLAGS = -O
++CFLAGS += -DSCOREfILE=\"$(SCOREFILES)/scores\"
 +CC ?= gcc
 +INCLUDE = ${X11BASE}/include
 +LIBRARY = ${X11BASE}/lib
-+BIN = ${X11BASE}/bin
-+SCOREFILES = ${X11BASE}/share/xmines
++BIN = ${PREFIX}/bin
++SCOREFILES = ${PREFIX}/share/xmines
  
  .c.o:
  	$(CC) $(CFLAGS) -I $(INCLUDE) -c $<
@@ -37,5 +37,5 @@
 -	install -g games -o games -m 0664  scores/scores $(SCOREFILES)/xbomb-scores
 -	install -g games -o games -m 2755 xbombs $(BIN) 
 +	mkdir -p $(SCOREFILES)
-+	install -g games -o games -m 0666 scores/scores $(SCOREFILES)/scores
-+	install -g games -o games -m 0755 xmines $(BIN)
++	${INSTALL} -g games -o games -m 0666 scores/scores $(SCOREFILES)/scores
++	${INSTALL} -s -g games -o games -m 0755 xmines $(BIN)
