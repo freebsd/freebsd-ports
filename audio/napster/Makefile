@@ -1,29 +1,24 @@
 # New ports collection makefile for:    napster
-# Version required:     0.6b
+# Version required:     0.7BETA
 # Date created:         Thu Nov 18 01:07:00 PST 1999
 # Whom:                 dburr@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nap-linux-0.6BETA
-PKGNAME=	napster-0.6b
+DISTNAME=	nap-bsd-0.7BETA
+PKGNAME=	napster-0.7b
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.gis.net/~nite/
 
 MAINTAINER=	dburr@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
-
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/nap
 NO_BUILD=	yes
 
-do-patch:
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nap ${PREFIX}/bin/nap
-	brandelf -t Linux ${PREFIX}/bin/nap
 	${MKDIR} ${PREFIX}/share/nap
 	${INSTALL_DATA} ${WRKSRC}/nap.conf ${PREFIX}/share/nap
 .if (!defined(NOPORTDOCS))
