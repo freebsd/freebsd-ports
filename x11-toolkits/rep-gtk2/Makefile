@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		rep:${PORTSDIR}/lang/librep
+BUILD_DEPENDS=	rep:${PORTSDIR}/lang/librep
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
