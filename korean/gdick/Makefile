@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gdick
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	korean python
-MASTER_SITES=	http://ddt.mirstyle.org/data/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gdick
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	English-Korean Dictionary Client for GNOME2
