@@ -511,6 +511,7 @@ bdfresize	ports/x11-fonts/bdfresize
 beav		ports/editors/beav
 bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
+beonex		ports/www/beonex
 bestfit		ports/misc/bestfit
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
