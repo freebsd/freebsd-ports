@@ -3,7 +3,7 @@
 # Date created:		Nov 28 ,1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/15 17:57:48 vanilla Exp $
+# $Id: Makefile,v 1.2 1997/12/17 04:32:09 vanilla Exp $
 #
 
 DISTNAME=       xcin-2.3.01
@@ -14,13 +14,13 @@ MASTER_SITES=   ftp://ftp.ncu.edu.tw/OS/linux/chinese/xcin/ \
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/chinese/kc15.pcf.gz:${PORTSDIR}/chinese/kcfonts
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/chinese/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
 
 USE_X11=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS	=-prefix="${X11BASE}" \
 		-x-font-prefix="${X11BASE}/lib/X11/fonts"
-MAN1=		xcin.1 cin2tab.1
+MAN1=		xcin.1 crxvt.1 cin2tab.1
 
 .if defined(USE_24_FONT)
 CONFIGURE_ARGS+=-use-24-fonts
