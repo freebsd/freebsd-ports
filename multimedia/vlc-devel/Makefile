@@ -98,6 +98,9 @@
 #
 # Multimedia Knbos:
 #
+# WITHOUT_H264
+#  Disable H.264/AVC Video Support
+#
 # WITHOUT_LIBMATROSKA=yes
 #  Matroska Container Format Support
 #
@@ -433,6 +436,13 @@ CONFIGURE_ARGS+=--enable-fribidi
 .if defined(WITH_AALIB) && !defined(WITHOUT_AALIB)
 LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 CONFIGUR_ARGSE+=	--enable-aa
+.endif
+
+.if !defined(WITHOUT_H264)
+CONFIGURE_ARGS+=--enable-x264
+BUILD_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
+.else
+CONFIGURE_ARGS+=--disable-x264
 .endif
 
 .if defined(WITH_LIBCACA) && !defined(WITHOUT_LIBCACA)
