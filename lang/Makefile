@@ -77,6 +77,7 @@
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
     SUBDIR += perl5
+    SUBDIR += pfe-devel
     SUBDIR += pgcc
     SUBDIR += pike
     SUBDIR += pm3-base
