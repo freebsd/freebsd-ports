@@ -22,11 +22,8 @@ CONFIGURE_ARGS=	--without-fam
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomelibs gdkpixbuf gtk12
+USE_GNOME=	gnomeprefix gnomehack gnometarget gnomevfs gnomelibs gdkpixbuf
 GNU_CONFIGURE=	yes
-WANT_AUTOCONF_VER=	253
-USE_AUTOMAKE=	yes
-WANT_AUTOMAKE_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
 
