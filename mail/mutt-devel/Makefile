@@ -1,7 +1,7 @@
 # ex:ts=8
 # Ports collection makefile for:  mutt development
-# Date created:			  
-# Whom:				  
+# Date created:			  6 Jun 2001
+# Whom:				  Udo Schweigert
 #
 # $FreeBSD$
 #
@@ -21,9 +21,13 @@ MAINTAINER=	ust@cert.siemens.de
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 
+.if !defined(PATCH_VERSION)
+PATCH_VERSION=	${PORTVERSION}
+.endif
+
 .if defined(PACKAGE_BUILDING)
 WITH_SLANG=	yes
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .if ${MACHINE_ARCH} != "alpha"
@@ -48,7 +52,6 @@ USE_OPENSSL=	yes
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 
-
 DIST_SUBDIR=	mutt
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
@@ -71,6 +74,19 @@ CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
+
+.if defined(WITH_VVV_PATCHES)
+PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.gz \
+		patch-${PATCH_VERSION}.vvv.nntp.gz \
+		patch-${PATCH_VERSION}.vvv.initials.gz \
+		patch-${PATCH_VERSION}.vvv.quote.gz \
+		patch-${PATCH_VERSION}.vvv.ru.gz
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
+		ftp://mutt.org.ua/mutt/mutt-${PATCH_VERSION}/
+CONFIGURE_ARGS+=	--enable-nntp --with-regex 
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
 MAN5=		muttrc.5 mbox.5
@@ -100,7 +116,7 @@ post-install:
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
 .if defined(WITH_DOCS)
-	env MANMODE=0755 ${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
+	${SETENV} MANMODE=0755 ${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
 .endif
