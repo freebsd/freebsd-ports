@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.50 1996/11/21 10:04:27 asami Exp $
+# $Id: LEGAL,v 1.51 1996/12/01 12:17:19 max Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -53,7 +53,7 @@ radius-2.4.21		ports/net/radius	Restrictive copyright in
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
-sattrack-3.1.4		ports/misc/sattrack	Don't sell for profit
+sattrack-3.1.4		ports/astro/sattrack	Don't sell for profit
 sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
