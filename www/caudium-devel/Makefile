@@ -39,6 +39,12 @@ USE_GMAKE=	yes
 
 PLIST_SUB+=	PIKEVERSION=${PIKEVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 pre-configure:
 	@${ECHO} ${CONFIGURE_ENV}
 	@${ECHO} ${CONFIGURE_ARGS}
@@ -52,4 +58,4 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/caudium.sh ${PREFIX}/etc/rc.d/caudium.sh.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
