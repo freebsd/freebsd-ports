@@ -1,11 +1,15 @@
-In order to use wine you need to build and install a new kernel with
+In order to use Wine you need to build and install a new kernel with
 options USER_LDT, SYSVSHM, SYSVSEM, and SYSVMSG.
 
-And the port now also installs some of wine's doc files which
-describe additional things that are not in the manual pages, see
-%%PREFIX%%/lib/wine/documentation.  There are more in the source tree
-but the others are only useful in conjunction with the rest of the
-source tree, and then you can as well look at them there.  (If you
-just installed this as a package and don't know how to use the ports
-system to have it fetch and extract the source for you have a look at
-<http://www.freebsd.org/handbook/ports.html>.)
+The port also installs some of Wine's doc files which describe additional
+things that are not in the manual pages, see
+  %%PREFIX%%/lib/wine/documentation.
+There are more in the source tree but the others are only useful in
+conjunction with the rest of the source tree, and then you can as well
+look at them there.  (If you just installed this as a package and do not
+know how to use the ports system to have it fetch and extract the source,
+have a look at <http://www.freebsd.org/handbook/ports.html>.)
+
+This port has not been upgraded to 2001.10.04 because that snapshots does
+not work as well as the previous ones -- it builds, but then hangs while
+running several applications.  (This has already been fixed in Wine CVS.)
