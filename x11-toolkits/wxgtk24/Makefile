@@ -62,7 +62,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 .if ${WXGTK_FLAVOR} != "gtk-contrib-common"
 RUN_DEPENDS=	${X11BASE}/include/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk-contrib-common
 .if ${WXGTK_FLAVOR} == "gtk-contrib"
-LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS+=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
 .elif ${WXGTK_FLAVOR} == "gtk2-contrib"
 LIB_DEPENDS+=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 .elif ${WXGTK_FLAVOR} == "gtk2-unicode-contrib"
