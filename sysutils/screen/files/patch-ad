@@ -1,22 +1,20 @@
---- configure.orig	Mon Aug 12 07:34:23 2002
-+++ configure	Mon Sep  2 07:03:25 2002
-@@ -4358,49 +4358,6 @@
-   echo "$as_me: failed program was:" >&5
- cat conftest.$ac_ext >&5
+--- configure.orig	Mon Jan 26 15:55:18 2004
++++ configure	Mon Jan 26 15:58:50 2004
+@@ -4746,48 +4746,6 @@
+ sed 's/^/| /' conftest.$ac_ext >&5
+ 
  olibs="$LIBS"
 -LIBS="-lcurses $olibs"
 -{ echo "$as_me:$LINENO: checking libcurses..." >&5
 -echo "$as_me: checking libcurses..." >&6;}
 -cat >conftest.$ac_ext <<_ACEOF
 -#line $LINENO "configure"
--#include "confdefs.h"
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
 -
--#ifdef F77_DUMMY_MAIN
--#  ifdef __cplusplus
--     extern "C"
--#  endif
--   int F77_DUMMY_MAIN() { return 1; }
--#endif
 -int
 -main ()
 -{
@@ -46,11 +44,12 @@
 -  :
 -else
 -  echo "$as_me: failed program was:" >&5
--cat conftest.$ac_ext >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
  LIBS="-ltermcap $olibs"
  { echo "$as_me:$LINENO: checking libtermcap..." >&5
  echo "$as_me: checking libtermcap..." >&6;}
-@@ -4523,8 +4480,6 @@
+@@ -4907,8 +4865,6 @@
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  fi
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
@@ -58,8 +57,8 @@
 -rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  
  if test "$cross_compiling" = yes; then
-   { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling" >&5
-@@ -4537,7 +4492,7 @@
+   { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling
+@@ -4927,7 +4883,7 @@
  
  main()
  {
@@ -68,7 +67,7 @@
  }
  _ACEOF
  rm -f conftest$ac_exeext
-@@ -4762,18 +4717,15 @@
+@@ -5314,18 +5270,15 @@
  fi
  rm -f conftest*
  
@@ -89,5 +88,5 @@
 -
 -fi
  
- { echo "$as_me:$LINENO: checking default tty permissions/group..." >&5
- echo "$as_me: checking default tty permissions/group..." >&6;}
+ 
+ # Check whether --with-pty-mode or --without-pty-mode was given.
