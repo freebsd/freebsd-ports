@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.67.2
+PORTVERSION?=	0.74.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -17,7 +17,7 @@ DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	refugee@vt.edu
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 USE_BZIP2=	yes
@@ -51,11 +51,9 @@ SPOOLGAMES?=	/var/games
 
 # Docs list
 GENERALDOCS=	changes.unix \
-		ctrlr.txt \
 		dga2.txt \
 		img/xmame.jpg \
 		liesmich.unix \
-		listinfo.txt \
 		multiplayer-readme.txt \
 		xmame-doc-1.html \
 		xmame-doc-2.html \
@@ -78,9 +76,7 @@ GENERALDOCS=	changes.unix \
 		xmame-gdoc-8.html \
 		xmame-gdoc.html \
 		xmame.css
-XMAMEDOCS=	changes.mame \
-		gamelist.mame \
-		readme.mame
+XMAMEDOCS=
 XMESSDOCS=	changes.mess \
 		credits.mess \
 		gamelist.mess \
@@ -150,7 +146,7 @@ WITH_ASM68K=	no
 .if ${WITH_ASM68K:L} == "yes"
 ASM_COMMENT=
 .else
-ASM_COMMENT=\#\ 
+ASM_COMMENT=\#
 .endif
 
 # Option WITH_OPTIMIZATION
@@ -162,7 +158,7 @@ CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 .endif
 .endif
 
-SDLSOUNDCOMMENT= \#\ 
+SDLSOUNDCOMMENT= \#
 
 # Option DISPLAY_TARGET
 .if !defined(DISPLAY_TARGET)
@@ -217,7 +213,7 @@ WITH_ESOUND=	no
 ESOUNDCOMMENT=
 USE_GNOME=	esound
 .else
-ESOUNDCOMMENT=\#\ 
+ESOUNDCOMMENT=\#
 .endif
 
 # Option WITH_NETWORK
@@ -229,7 +225,7 @@ WITH_NETWORK=	yes
 .if ${WITH_NETWORK:L} != "no"
 NETWORK=
 .else
-NETWORK=\#\ 
+NETWORK=\#
 .endif
 .endif
 
