@@ -37,7 +37,7 @@ OpenLDAP2	"OpenLDAP 2.x support" OFF \
 OpenSSL		"OpenSSL support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
-XMLRPC		"XMLRPC-EPI support (implies XML)" OFF \
+XMLRPC		"XMLRPC-EPI support (implies XML and iconv)" OFF \
 XSLT		"Sablotron support (implies XML and iconv)" OFF \
 WDDX		"WDDX support (implies XML)" OFF \
 DOMXML		"DOM support" OFF \
@@ -259,6 +259,9 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-xmlrpc"
 			if [ -z "$XML" ]; then
 				set $* \"XML\"
+			fi
+			if [ -z "$ICONV" ]; then
+				set $* \"iconv\"
 			fi
 			;;
 		\"XSLT\")
