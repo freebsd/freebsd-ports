@@ -1781,7 +1781,7 @@ flick		ports/devel/flick
 flightgear	ports/games/flightgear
 flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
-flim-xemacs21-mule	ports/editors/flim-emacs21-mule
+flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flim113		ports/editors/flim113
 flim113-emacs19	ports/editors/flim113-emacs19
 flim113-emacs20	ports/editors/flim113-emacs20
@@ -3895,7 +3895,7 @@ libdv		ports/multimedia/libdv
 libdvbpsi	ports/graphics/libdvbpsi
 libdvdcss	ports/multimedia/libdvdcss
 libdvdnav	ports/graphics/libdvdnav
-libdvdplay	ports/graphics/libdvdplay
+libdvdplay	ports/multimedia/libdvdplay
 libdvdread	ports/multimedia/libdvdread
 libecc		ports/security/libecc
 libedit		src/lib/libedit
