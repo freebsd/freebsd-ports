@@ -48,14 +48,14 @@
 -		# -mthreads flag.
 +	*-*-freebsd*)
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE"
-+			G_THREAD_LIBS="-pthread"
++			G_THREAD_CFLAGS="${PTHREAD_CFLAGS}"
++			G_THREAD_LIBS="${PTHREAD_LIBS}"
 +			case $host in
 +			*-*-freebsd4*) ;;
 +			default) have_poll=no ;;
 +			esac
 +		else
-+			G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
++			G_THREAD_CFLAGS="${PTHREAD_CFLAGS} -DLINUXTHREADS"
 +		fi
  		;;
      esac
