@@ -16,22 +16,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Panel component for the GNOME 2.0 Desktop
 
-LIB_DEPENDS=	wnck-1.9:${PORTSDIR}/x11-toolkits/libwnck \
-		gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop
-
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier libwnck gnomedesktop
+GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-kde-docdir=${LOCALBASE}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	gnome-panel.1 gnome-panel-preferences.1
 
