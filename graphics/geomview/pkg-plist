@@ -415,7 +415,6 @@ share/geomview/modules/tcl/NDview
 share/geomview/modules/tcl/Slicer
 @dirrm libexec/geomview/bin/x11
 @dirrm libexec/geomview/bin
-@dirrm libexec/geomview/modules/tcl
 @dirrm libexec/geomview/modules/x11
 @dirrm libexec/geomview/modules
 @dirrm libexec/geomview
@@ -443,5 +442,6 @@ share/geomview/modules/tcl/Slicer
 @dirrm share/geomview/data
 @dirrm share/geomview/maple
 @dirrm share/geomview/mathematica
+@dirrm share/geomview/modules/tcl
 @dirrm share/geomview/modules
 @dirrm share/geomview
