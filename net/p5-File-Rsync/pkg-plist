@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File/Rsync.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File/Rsync/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Rsync/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Rsync
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File/Rsync
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File 2>/dev/null || true
