@@ -12,7 +12,7 @@ fi
 unset DISPLAY
 
 pkgname=$(basename $1 .tgz)
-buildroot=$(dirname $0)
+buildroot=$(dirname $(dirname $0))
 
 if grep -qxF $pkgname ${buildroot}/${branch}/duds; then
   echo "skipping $pkgname"
