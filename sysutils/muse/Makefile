@@ -15,4 +15,8 @@ MAINTAINER=	freebsd@spatula.net
 MAN1=		muse.1
 MANCOMPRESSED=	yes
 
+pre-patch:
+	${RM} -f ${WRKSRC}/Makefile
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+
 .include <bsd.port.mk>
