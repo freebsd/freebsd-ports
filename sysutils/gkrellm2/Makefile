@@ -10,7 +10,7 @@ PORTVERSION=	2.2.4
 PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
-MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
+MASTER_SITES=	http://members.dslextreme.com/users/billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ume
 
