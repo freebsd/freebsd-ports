@@ -1,0 +1,6 @@
+bin/maildirqmtp
+bin/maildirserial
+bin/maildirsmtp
+bin/serialqmtp
+bin/serialsmtp
+bin/setlock
