@@ -28,17 +28,11 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -A -i ${PORTNAME}.so
 
-.if !defined(NOPORTDOCS)
-DISTFILES+=	readme.txt
-PLIST_SUB+=	DOC=''
-
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${_DISTDIR}/${DISTFILES:N*gz} \
 		${PREFIX}/share/doc/${PORTNAME}
-
-.else
-PLIST_SUB+=	DOC='@comment '
 .endif
 
 .include <bsd.port.mk>

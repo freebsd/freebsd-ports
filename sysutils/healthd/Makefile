@@ -25,12 +25,6 @@ INSTALL_TARGET=	install-all
 
 HDDOCDIR=	${PREFIX}/share/doc/healthd
 
-.if !defined(NOPORTDOCS)
-PLIST_SUB=	HDDOCS=''
-.else
-PLIST_SUB=	HDDOCS='@comment '
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400014

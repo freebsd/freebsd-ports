@@ -93,12 +93,6 @@ LIBJTOOL=	0.5
 LIBJX=		1.5
 .endif
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS:="@comment "
-.else
-PLIST_SUB+=	PORTDOCS:=
-.endif # !defined(NOPORTDOCS)
-
 post-patch:
 .for i in ${CONFIGURE_PREPROCESSING_FILES}
 	@${CP} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i} ${WRKDIR}/${i}.in

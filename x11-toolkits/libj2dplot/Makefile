@@ -73,12 +73,6 @@ ALL_TARGET=	freebsd2.x
 LIBNUMBER=	0.6
 .endif
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS:="@comment "
-.else
-PLIST_SUB+=	PORTDOCS:=
-.endif # !defined(NOPORTDOCS)
-
 post-extract:
 .for i in ${COPY_JXDIRS}
 	@${CP} -Rp ${JXPORT_WRKSRC}/${i} ${WRKSRC}

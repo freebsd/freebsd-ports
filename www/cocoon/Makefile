@@ -25,11 +25,6 @@ LIBS=		fop_0_13_0.jar xalan_1_2_D02.jar xerces_1_2.jar
 JDIR=		${PREFIX}/share/java/classes
 CDIR=		${PREFIX}/etc/apache/cocoon
 SDIR=		${PREFIX}/share/java/cocoon
-.if defined(NOPORTDOCS)
-PLIST_SUB=	DOC="@comment "
-.else
-PLIST_SUB=	DOC=""
-.endif
 
 pre-build:
 	${CHMOD} a+rx ${WRKSRC}/build.sh

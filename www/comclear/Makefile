@@ -24,11 +24,6 @@ USE_AUTOMAKE=	yes
 post-configure:
 		${PERL} -pi.fbsd -e 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
 
-.if		defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS:="@comment "
-.else
-PLIST_SUB+=	PORTDOCS:=
-
 post-install:
 		cd ${WRKSRC} && ${GMAKE} install-docDATA
 .endif

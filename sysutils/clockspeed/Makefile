@@ -21,12 +21,6 @@ INSTALL_TARGET=	setup check
 MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
 		taiclock.1 taiclockd.1
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS:="@comment "
-.else
-PLIST_SUB+=	PORTDOCS:=
-.endif
-
 do-configure:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/INSTALL
 	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc

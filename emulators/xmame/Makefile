@@ -30,12 +30,6 @@ XMAMEDOCS=	changes.mame changes.unix gamelist.mame \
 		xmame-doc-6.html xmame-doc-7.html xmame-doc.html \
 		xmame-doc.lyx xmame-doc.ps xmame-doc.sgml xmame-doc.txt
 
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
-
 # the large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 post-patch:
