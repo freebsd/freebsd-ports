@@ -21,6 +21,7 @@ lib/libCw.so.1
 %%DATADIR%%/syntax/java.syntax
 %%DATADIR%%/syntax/latex.syntax
 %%DATADIR%%/syntax/lsm.syntax
+%%DATADIR%%/syntax/lsm4.syntax
 %%DATADIR%%/syntax/lua.syntax
 %%DATADIR%%/syntax/mail.syntax
 %%DATADIR%%/syntax/makefile.syntax
@@ -33,6 +34,7 @@ lib/libCw.so.1
 %%DATADIR%%/syntax/php.syntax
 %%DATADIR%%/syntax/prolog.syntax
 %%DATADIR%%/syntax/python.syntax
+%%DATADIR%%/syntax/scm.syntax
 %%DATADIR%%/syntax/sh.syntax
 %%DATADIR%%/syntax/smalltalk.syntax
 %%DATADIR%%/syntax/sql.syntax
