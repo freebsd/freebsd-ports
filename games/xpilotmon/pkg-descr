@@ -1,0 +1,6 @@
+XPilotmon is a Tcl/Tk interface to the XPilot meta server(s). Although the
+standard XPilot binary now contains its own interface, it is not really
+user friendly, and it lacks a few features provided by XPilotmon.
+
+- Jean-Yves Lefort
+jylefort@brutele.be
