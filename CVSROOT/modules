@@ -2029,6 +2029,7 @@ gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
+gdesklets-sensor-psi_iconbutton	ports/deskutils/gdesklets-sensor-psi_iconbutton
 gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-sysinfo	ports/sysutils/gdesklets-sysinfo
