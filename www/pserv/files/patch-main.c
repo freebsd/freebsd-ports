@@ -1,5 +1,5 @@
---- main.c.orig	Mon Sep 22 10:39:24 2003
-+++ main.c	Thu Oct 16 14:00:02 2003
+--- sources/main.c.orig	Sat Dec 20 11:16:21 2003
++++ sources/main.c	Thu Jan  8 12:27:13 2004
 @@ -23,6 +23,7 @@
  char defaultFileName[MAX_PATH_LEN+1];
  char logFileName[MAX_PATH_LEN+1];
@@ -8,68 +8,10 @@
  char cgiRoot[MAX_PATH_LEN+1]; /* root for CGI scripts exec */
  struct timeval sockTimeVal;
  mimeData *mimeArray; /* here we will hold all MIME data, inited once, never to be changed */
-@@ -206,10 +207,10 @@
-     int reqSize;
-     int readLines;
-     int tokenEnd;
--   
--    /* we copy the header lines to an array for easier parsing */ 
-+
-+    /* we copy the header lines to an array for easier parsing */
-     /* but first we make sure that our string has a newline and an end */
--    req[BUFFER_SIZE] = '\0';    
-+    req[BUFFER_SIZE] = '\0';
-     reqSize = strlen(req);
-     req[reqSize] = '\n';
-     reqSize++;
-@@ -230,7 +231,7 @@
-     for (k = 0; k < readLines; k++)
-         printf("%d - |%s|\n", k, reqArray[k]);
- #endif
--    
-+
-     /* first line: method, path and protocol version */
-     /* we copy to a temporary buffer to be more secure against overflows */
-     i = j = 0;
-@@ -246,7 +247,7 @@
-     else
-         tokenEnd = NO;
-     i++;
--    
-+
-     /* we look for the document address */
-     j = 0;
-     reqStruct->documentAddress[0] = '\0';
-@@ -259,14 +260,14 @@
-         else
-             token[j] = '\0';      /* to make sure we have a string */
-         /* now we need to convert some escapings from the path like %20 */
--	convertPercents(token, j);
-+        convertPercents(token, j);
-         strcpy(reqStruct->documentAddress, token);  /* copy back */
-         if (reqArray[0][i] == '\0')
-             tokenEnd = YES;
-         else
-             tokenEnd = NO;
-         i++;
--    
-+
-         /* we need now to separate path from query string ("?" separated) */
-         if (reqArray[0][i-1] == '?')
-         {
-@@ -282,7 +283,7 @@
-             i++;
-         }
-     }
--    
-+
-     /* we analyze the HTTP protocol version */
-     /* default is 0.9 since that version didn't report itself */
-     strcpy(reqStruct->protocolVersion, "HTTP/0.9");
-@@ -306,10 +307,13 @@
+@@ -316,10 +317,13 @@
+         reqStruct->keepAlive = YES;
      else if (!strncmp(reqArray[1], "Connection: Keep-Alive", strlen("Connection: keep-alive")))
          reqStruct->keepAlive = YES;
- 
 -    /* user-agent, content-length and else */
 +    /* user-agent, content-length, content-type, cookie and else */
      i = 1;
@@ -81,7 +23,7 @@
      while (i < readLines)
      {
          if (!strncmp(reqArray[i], "User-Agent:", strlen("User-Agent:")))
-@@ -317,14 +321,28 @@
+@@ -327,14 +331,28 @@
              strncpy(reqStruct->userAgent, &reqArray[i][strlen("User-Agent: ")], USER_AGENT_LEN - 1);
              reqStruct->userAgent[USER_AGENT_LEN] = '\0';
          }
@@ -93,11 +35,9 @@
 +        {
 +            strcpy(token, &reqArray[i][strlen("Content-length: ")]);
 +            sscanf(token, "%ld", &(reqStruct->contentLength));
- #ifdef PRINTF_DEBUG
--	    printf("content length %ld\n", reqStruct->contentLength);
++#ifdef PRINTF_DEBUG
 +            printf("content length %ld\n", reqStruct->contentLength);
- #endif
--	}
++#endif
 +        }
 +        else if (!strncmp(reqArray[i], "Content-Type:", strlen("Content-type:")) || !strncmp(reqArray[i], "Content-type:", strlen("Content-type:")))
 +        {
@@ -109,14 +49,16 @@
 +        else if (!strncmp(reqArray[i], "Cookie:", strlen("Cookie:")))
 +        {
 +            strncpy(reqStruct->cookie, &reqArray[i][strlen("Cookie: ")], MAX_COOKIE_LEN - 1);
-+#ifdef PRINTF_DEBUG
+ #ifdef PRINTF_DEBUG
+-	    printf("content length %ld\n", reqStruct->contentLength);
 +            printf("cookie %s\n", reqStruct->cookie);
-+#endif
+ #endif
+-	}
 +        }
          i++;
      }
-     /* if we didn't find a User-Aget we fill in a (N)ot(R)ecognized */
-@@ -414,18 +432,39 @@
+     /* if we didn't find a User-Agent we fill in a (N)ot(R)ecognized */
+@@ -431,18 +449,39 @@
                      /* we append the default file name */
                      strcat(completeFilePath, defaultFileName);
                      analyzeExtension(mimeType, completeFilePath);
@@ -159,7 +101,7 @@
              }
          }
      } else if (!strcmp(req.method, "HEAD"))
-@@ -494,7 +533,14 @@
+@@ -511,7 +550,14 @@
                  strcat(completeFilePath, defaultFileName);
              }
              analyzeExtension(mimeType, completeFilePath);
@@ -175,7 +117,7 @@
          }
      } else if (!strcmp(req.method, "POST"))
      {
-@@ -507,13 +553,6 @@
+@@ -525,13 +571,6 @@
          int readFinished;
          
          printf("Handling of POST method\n");
@@ -189,50 +131,7 @@
  #ifdef PRINTF_DEBUG
          printf ("begin of post handling\n");
  
-@@ -523,9 +562,15 @@
-         totalRead = 0;
-         stuckCounter = 0;
-         timeOutCounter = 0;
--        while (!readFinished)
--        {
--            howMany = recv(newSocket, tempBuff, BUFFER_SIZE, 0);
-+
-+        /* SECURITY: Avoid malicious Content-Length -- check \r\n\r\n\0 also */
-+        if (req.contentLength < 0 || req.contentLength >= BUFFER_SIZE-5) {
-+                sayError(sock, 500, "", req);
-+                return -1;
-+        }
-+
-+        /* SECURITY: Remove loop to prevent buffer overflow */
-+            howMany = recv(newSocket, tempBuff, req.contentLength+5, 0);
- 	    tempBuff[howMany] = '\0'; /* seems that some Unices need this */
- #ifdef PRINTF_DEBUG
-         printf ("read: %d\n%s\n", howMany, tempBuff);
-@@ -579,16 +624,15 @@
- 	    	if (howMany == req.contentLength)
- 		    readFinished = YES;
-             }
--    }
- #ifdef PRINTF_DEBUG
--    printf("total read %d\n", totalRead);
-+        printf("total read %d\n", totalRead);
- #endif
--    if (totalRead == 0)
--    {
--        printf("Request read error\n");
--    } else
--    {
--        if (buff[totalRead - 1] != '\n') /* we need a trailing \n or the script will wait forever */
-+        if (totalRead == 0)
-+        {
-+            printf("Request read error\n");
-+        } else
-+        {
-+            if (buff[totalRead - 1] != '\n') /* we need a trailing \n or the script will wait forever */
-             {
-                 buff[totalRead++] = '\n';
-                 buff[totalRead] = '\0';
-@@ -596,7 +640,77 @@
+@@ -625,7 +664,77 @@
  #ifdef PRINTF_DEBUG
              printf("buff: |%s|\n", buff);
  #endif
@@ -311,7 +210,7 @@
          }
      } else
      {
-@@ -625,7 +739,7 @@
+@@ -654,7 +763,7 @@
      f = fopen(configFile, "r");
      if (f == NULL)
      {
@@ -320,7 +219,7 @@
          *serverPort = DEFAULT_PORT;
          *maxChildren = DEFAULT_MAX_CHILDREN;
          strcpy(homePath, DEFAULT_DOCS_LOCATION);
-@@ -634,7 +748,9 @@
+@@ -663,7 +772,9 @@
          sockTimeVal.tv_usec = DEFAULT_USEC_TO;
          strcpy(logFileName, DEFAULT_LOG_FILE);
          strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
@@ -330,7 +229,7 @@
          return -1;
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
-@@ -735,11 +851,25 @@
+@@ -764,11 +875,25 @@
          if (mimeTypesFileName == NULL)
          {
              strcpy(mimeTypesFileName, DEFAULT_MIME_FILE);
@@ -358,29 +257,3 @@
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
      if (str1 != NULL && str2 != NULL && !strcmp(str1, "cgiRoot"))
-@@ -775,6 +905,7 @@
-     int readFinished;
-     struct request gottenReq;
-     int isKeepAlive;
-+    int bool;
-     struct sockaddr_in listenName;           /* data struct for the listen port */
-     struct sockaddr_in acceptedSockStruct;   /* sockaddr for the internetworking */
-     int acceptedSocketLen;                   /* size of the structure */
-@@ -808,9 +939,16 @@
-         printf("socket creation error occoured\n");
-         return -1;
-     }
-+    bool = 1;
-+    error = setsockopt (theSocket, SOL_SOCKET, SO_REUSEADDR, &bool, sizeof(bool));
-+    if (error == -1)
-+    {   if (errno == EADDRINUSE)
-+        printf("set socket option error occoured\n");
-+        return -1;
-+    }
-     error = bind (theSocket, (struct sockaddr*)  &listenName, sizeof(listenName));
-     if (error == -1)
--    {
-+    {   if (errno == EADDRINUSE)
-         printf("socket binding error occoured\n");
-         return -2;
-     }

@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	pserv
-PORTVERSION=	3.0.b2
+PORTVERSION=	3.0.b3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-20-Oct-03
+DISTNAME=	${PORTNAME}-08-Jan-04
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A portable and small webserver written in C
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/sources
 USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g;s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		${WRKSRC}/pserv.conf
+		${WRKSRC}/defaults/pserv.conf
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pserv ${PREFIX}/sbin/
-	${INSTALL_DATA} ${WRKSRC}/mime_types.dat ${PREFIX}/etc/mime.types
-	${INSTALL_DATA} ${WRKSRC}/pserv.conf ${PREFIX}/etc/
+	${INSTALL_PROGRAM} ${WRKSRC}/sources/pserv ${PREFIX}/sbin/
+	${INSTALL_DATA} ${WRKSRC}/defaults/mime_types.dat ${PREFIX}/etc/mime.types
+	${INSTALL_DATA} ${WRKSRC}/defaults/pserv.conf ${PREFIX}/etc/
 	${INSTALL_SCRIPT} ${FILESDIR}/pserv.sh ${PREFIX}/etc/rc.d/
 
 .include <bsd.port.mk>
