@@ -13,11 +13,11 @@ core libraries which are under the LGPL.
 EMBASSY packages are third party applications which have been integrated with
 the EMBOSS suite, but which are not included in the base EMBOSS distribution
 for licensing or other reasons.  This port includes the currently available
-EMBASSY applications - EMNU, MSE, PHYLIP and TOPO.  During an interactive
-install the user will be asked to choose which of these will be installed
-(default: all).  Note that the EMBASSY version of PHYLIP should not clash
-with the standalone Phylip application due to the fact that its binaries have
-been renamed.
+EMBASSY applications.  During an interactive install the user will be asked
+to choose which of these will be installed (default: all).  Note that the
+EMBASSY versions of PHYLIP and HMMER should not clash with the standalone
+versions (also in ports/biology) due to the fact that their binaries have been
+renamed.
 
 WWW: http://www.emboss.org/
 

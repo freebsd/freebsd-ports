@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.13.3
+PORTVERSION=	2.0.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
@@ -22,6 +22,7 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -38,13 +39,15 @@ SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
 EMNU_VERSION=	1.0.4
+HMMER_VERSION=	2.1.1
+MEME_VERSION=	2.3.1
 MSE_VERSION=	0.0.4
 TOPO_VERSION=	0.1
 PHYLIP_VERSION=	3.573c
 DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
 CONFIG_FILE=	${WRKSRC}/emboss/emboss.default.template
 
-.for app in EMNU MSE PHYLIP TOPO
+.for app in EMNU HMMER MEME MSE PHYLIP TOPO
 SCRIPTS_ENV+=	${app}_VERSION="${${app}_VERSION}"
 .if defined(WITH_${app})
 APPLIST+=	${app}

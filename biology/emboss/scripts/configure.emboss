@@ -5,14 +5,16 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 fi
 
 if [ "${BATCH}" ]; then
-  set \"EMNU\" \"MSE\" \"PHYLIP\" \"TOPO\"
+  set \"EMNU\" \"HMMER\" \"MEME\" \"MSE\" \"PHYLIP\" \"TOPO\"
 else
   /usr/bin/dialog --title "EMBOSS: EMBASSY applications" --clear \
   --checklist "\n\
 These third party applications have been adapted to
 function as part of EMBOSS.\n
-Please select EMBASSY applications to install:" -1 -1 4 \
+Please select EMBASSY applications to install:" -1 -1 6 \
 EMNU	"v${EMNU_VERSION} - Text-based menu" ON \
+HMMER	"v${HMMER_VERSION} - HMM alignment" ON \
+MEME	"v${MEME_VERSION} - Motif detection" ON \
 MSE	"v${MSE_VERSION} - Phylogeny inference" ON \
 PHYLIP	"v${PHYLIP_VERSION} - Sequence editor" ON \
 TOPO	"v${TOPO_VERSION} - Transmembrane display" ON \
@@ -45,6 +47,12 @@ while [ "$1" ]; do
   case $1 in
     \"EMNU\")
       echo "WITH_EMNU=	yes"
+    ;;
+    \"HMMER\")
+      echo "WITH_HMMER=	yes"
+    ;;
+    \"MEME\")
+      echo "WITH_MEME=	yes"
     ;;
     \"MSE\")
       echo "WITH_MSE=	yes"
