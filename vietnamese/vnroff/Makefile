@@ -1,0 +1,38 @@
+# ex:ts=8
+# Ports collection makefile for:  vnTeX
+# Version required:	2.0
+# Date created:		Monday, Dec 9, 1996
+# Whom:			David O'Brien (obrien@cs.ucdavis.edu)
+#
+# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+#
+
+PKGNAME=	vn-vnroff-2.0
+CATEGORIES=	vietnamese
+MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Troff/
+DISTFILES=	vnroff.c.Z vnroff.1.Z
+
+MAINTAINER=     obrien@cs.ucdavis.edu
+
+NO_WRKSUBDIR=	yes
+MAN1=		vnroff.1
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.c.Z  \
+		| /usr/bin/sed -e '1,/-cut here-/d'    \
+		> vnroff.c)
+	@(cd ${WRKDIR} && ${GZCAT} ${DISTDIR}/vnroff.1.Z  \
+		| /usr/bin/sed -e '1,/Status:/d' -e '//,//d'  \
+		| /usr/bin/sed -e '1,1d'  \
+		> vnroff.1)
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o vnroff vnroff.c)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/vnroff ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vnroff.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>

@@ -1,0 +1,7 @@
+VNroff converts VIQR format Vietnamese characters into troff format so
+groff/troff can print it out.
+
+   To use this program:
+
+   vnroff file | groff | ...   or
+   vnroff file | whater_program_that_print_out_a_troff_file

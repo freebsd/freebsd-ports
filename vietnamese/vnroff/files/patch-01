@@ -1,0 +1,20 @@
+--- vnroff.c.orig	Tue Dec 10 04:12:31 1996
++++ vnroff.c	Tue Dec 10 04:13:02 1996
+@@ -19,7 +19,7 @@
+  * #define Dau_Mu          '^'                                          *
+  * #define Dau_Trang       '('                                          *
+  * #define Dau_Rau         '+'                                          *
+- * #define Escape_Symbol   '#'                                          *
++ * #define Escape_Symbol   '\\'                                         *
+  *                                                                      *
+  * Change them to any symbol you are comfortable with.                  *
+  *                                                                      *
+@@ -54,7 +54,7 @@
+ #define Dau_Mu          '^'
+ #define Dau_Trang       '('
+ #define Dau_Rau         '+'
+-#define Escape_Symbol   '#'
++#define Escape_Symbol   '\\'
+ 
+ #define NON     0          /* ^ as in a^ */
+ #define RAU     1          /* + as in u+, o+ */
