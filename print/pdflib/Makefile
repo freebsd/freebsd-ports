@@ -3,7 +3,7 @@
 # Date created:		Mon Jan 18 17:03:33 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/20 14:49:12 dirk Exp $
 #
 
 DISTNAME=	pdflib-0.6
@@ -19,6 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile.gcc
+MAKE_ENV=	CC=${CC}
 
 pre-build:
 	${SED} -e "s#!!PREFIX!!#${PREFIX}#" < ${WRKSRC}/pdf.h > ${WRKSRC}/pdf.h.tmp
