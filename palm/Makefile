@@ -14,6 +14,7 @@
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += palmos-sdk
+    SUBDIR += palmpower
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
     SUBDIR += pilrc
