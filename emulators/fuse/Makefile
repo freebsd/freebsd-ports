@@ -17,10 +17,11 @@ COMMENT=	Free Unix (Sinclair ZX-)Spectrum Emulator
 LIB_DEPENDS=	spectrum.2:${PORTSDIR}/emulators/libspectrum \
 		765.3:${PORTSDIR}/emulators/lib765 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		png.5:${PORTSDIR}/graphics/png 
+		png.5:${PORTSDIR}/graphics/png
 
 USE_XLIB=		yes
 USE_PERL5_BUILD=	yes
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-plus3-disk-prefix=${LOCALBASE}
 
