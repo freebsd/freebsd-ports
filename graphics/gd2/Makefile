@@ -53,7 +53,10 @@ post-extract:
 
 post-patch:
 .if !defined(WITH_LZW)
-	@${PERL} -pi -e "s|#define LZW_LICENCED||g" ${WRKSRC}/gd_gif_out.c
+	${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.gif && \
+		${SED} -e "s|#define LZW_LICENCED||g" \
+			< ${WRKSRC}/gd_gif_out.c.nogif \
+			> ${WRKSRC}/gd_gif_out.c
 .endif
 
 post-install:
@@ -63,6 +66,7 @@ post-install:
 .endif
 
 .if defined(GD_FONTS)
+BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
 
