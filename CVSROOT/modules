@@ -477,6 +477,7 @@ avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
 avida		ports/biology/avida
 avidemux	ports/multimedia/avidemux
+avidemux2	ports/multimedia/avidemux2
 aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
 avinfo		ports/multimedia/avinfo
@@ -3641,6 +3642,7 @@ kimagemapeiditor	ports/graphics/kimagemapeditor
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
 kinemage	ports/biology/kinemage
+kinterbasdb	ports/databases/kinterbasdb
 kisomandel	ports/graphics/kisomandel
 kix-kmod	ports/graphics/kix-kmod
 kkbswitch	ports/sysutils/kkbswitch
@@ -6787,6 +6789,7 @@ pork		ports/net/pork
 pornview	ports/graphics/pornview
 portaudio	ports/audio/portaudio
 portcheckout	ports/devel/portcheckout
+portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
 portell		ports/misc/portell
 portfwd		ports/net/portfwd
