@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	brlcad
 
 MAINTAINER=	giffunip@asme.org
-COMMENT=	CSG modelling system from the US Balistic Research Laboratory
+COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
