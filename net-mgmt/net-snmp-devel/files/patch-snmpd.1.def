@@ -1,0 +1,13 @@
+--- man/snmpd.1.def.orig	Tue May  7 06:28:37 2002
++++ man/snmpd.1.def	Thu Jul 25 18:49:40 2002
+@@ -205,6 +205,10 @@
+ the error "Error opening specified endpoint".  Likewise, since AAL5
+ PVC support is only currently available on Linux, it will fail with
+ the same error on other platforms.
++.PP
++.B snmpd
++uses libwrap's access control if configured by --with-libwrap.
++Access control patterns may only reference IP addresses.
+ 
+ .RE
+ .SH CONFIGURATION FILES
