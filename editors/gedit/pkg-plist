@@ -63,8 +63,52 @@ share/gnome/help/gedit/C/stylesheet-images/up.gif
 share/gnome/help/gedit/C/stylesheet-images/warning.gif
 share/gnome/help/gedit/C/topic.dat
 share/gnome/help/gedit/C/usage.html
+share/gnome/help/gedit/ja/authors.html
+share/gnome/help/gedit/ja/bugs.html
+share/gnome/help/gedit/ja/docbook.css
+share/gnome/help/gedit/ja/faq.html
+share/gnome/help/gedit/ja/images/browse.png
+share/gnome/help/gedit/ja/images/convert.png
+share/gnome/help/gedit/ja/images/diff.png
+share/gnome/help/gedit/ja/images/email.png
+share/gnome/help/gedit/ja/images/find.png
+share/gnome/help/gedit/ja/images/gedit.png
+share/gnome/help/gedit/ja/images/goto-line.png
+share/gnome/help/gedit/ja/images/lynx.png
+share/gnome/help/gedit/ja/images/manager.png
+share/gnome/help/gedit/ja/images/mta.png
+share/gnome/help/gedit/ja/images/prefs-documents.png
+share/gnome/help/gedit/ja/images/prefs-font.png
+share/gnome/help/gedit/ja/images/prefs-general.png
+share/gnome/help/gedit/ja/images/prefs-paper.png
+share/gnome/help/gedit/ja/images/prefs-printing.png
+share/gnome/help/gedit/ja/images/print-preview.png
+share/gnome/help/gedit/ja/images/print.png
+share/gnome/help/gedit/ja/images/replace.png
+share/gnome/help/gedit/ja/images/shell.png
+share/gnome/help/gedit/ja/images/toolbar.png
+share/gnome/help/gedit/ja/index.html
+share/gnome/help/gedit/ja/license.html
+share/gnome/help/gedit/ja/ln13.html
+share/gnome/help/gedit/ja/menus.html
+share/gnome/help/gedit/ja/plugins.html
+share/gnome/help/gedit/ja/prefs.html
+share/gnome/help/gedit/ja/stylesheet-images/caution.gif
+share/gnome/help/gedit/ja/stylesheet-images/home.gif
+share/gnome/help/gedit/ja/stylesheet-images/important.gif
+share/gnome/help/gedit/ja/stylesheet-images/next.gif
+share/gnome/help/gedit/ja/stylesheet-images/note.gif
+share/gnome/help/gedit/ja/stylesheet-images/prev.gif
+share/gnome/help/gedit/ja/stylesheet-images/tip.gif
+share/gnome/help/gedit/ja/stylesheet-images/toc-blank.gif
+share/gnome/help/gedit/ja/stylesheet-images/toc-minus.gif
+share/gnome/help/gedit/ja/stylesheet-images/toc-plus.gif
+share/gnome/help/gedit/ja/stylesheet-images/up.gif
+share/gnome/help/gedit/ja/stylesheet-images/warning.gif
+share/gnome/help/gedit/ja/topic.dat
+share/gnome/help/gedit/ja/usage.html
 share/gnome/mime-info/gedit.keys
-share/gnome/pixmaps/gedit-icon.xpm
+share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
 share/locale/ca/LC_MESSAGES/gedit.mo
 share/locale/cs/LC_MESSAGES/gedit.mo
@@ -94,6 +138,9 @@ share/locale/uk/LC_MESSAGES/gedit.mo
 share/locale/wa/LC_MESSAGES/gedit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gedit.mo
+@dirrm share/gnome/help/gedit/ja/stylesheet-images
+@dirrm share/gnome/help/gedit/ja/images
+@dirrm share/gnome/help/gedit/ja
 @dirrm share/gnome/help/gedit/C/stylesheet-images
 @dirrm share/gnome/help/gedit/C/images
 @dirrm share/gnome/help/gedit/C
