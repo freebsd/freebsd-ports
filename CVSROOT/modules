@@ -7268,6 +7268,7 @@ ruby-gnomevfs	ports/devel/ruby-gnomevfs
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
+ruby-gpgme	ports/security/ruby-gpgme
 ruby-graph	ports/graphics/ruby-graph
 ruby-gserver	ports/net/ruby-gserver
 ruby-gsl	ports/math/ruby-gsl
