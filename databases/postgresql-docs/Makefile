@@ -4,26 +4,28 @@
 #
 # $FreeBSD$
 #
+POSTGRESQL_PORT?=	databases/postgresql7
 
 PORTNAME=	postgresql
+PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
+PORTREVISION?=	0
+CATEGORIES=	databases java
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
 PKGNAMESUFFIX=	-docs
-PORTREVISION=	0
+DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The PostgreSQL documentation set
 
-POSTGRESQL_SUBPORT=	YES
-POSTGRESQL_PORT?=	databases/postgresql7
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
-DISTFILES=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
-.undef USE_GMAKE
-.undef GNU_CONFIGURE
+MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 NO_BUILD=	YES
 
 do-install:
-	@ $(MKDIR) ${PREFIX}/share/doc/postgresql/html; \
+	@ $(MKDIR) ${DOCSDIR}/html; \
 	${GZIP_CMD} -dc ${WRKSRC}/doc/postgres.tar.gz | \
-	( cd $(PREFIX)/share/doc/postgresql/html && $(TAR) xf - )
+	( cd $(DOCSDIR)/html && $(TAR) xf - )
 
 post-install:
 	@ ${TAR} ztf ${WRKSRC}/doc/postgres.tar.gz | ${GREP} -v /$$ | \
