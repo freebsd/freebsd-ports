@@ -182,12 +182,10 @@
 %%EMACS_LIBDIR%%/site-lisp/wl/sha1.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/sasl.el
 %%EMACS_LIBDIR%%/site-lisp/wl/sasl.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.el
-%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.el
-%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.el
-%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-cram.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-cram.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-digest.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-digest.elc
 %%EMACS_LIBDIR%%/site-lisp/wanderlust-startup.el
 @unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl.info %D/info/dir
 info/wl.info

@@ -187,12 +187,10 @@
 %%EMACS_PACKAGESDIR%%/lisp/wl/sha1.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/sasl.el
 %%EMACS_PACKAGESDIR%%/lisp/wl/sasl.elc
-%%EMACS_PACKAGESDIR%%/lisp/wl/digest-md5.el
-%%EMACS_PACKAGESDIR%%/lisp/wl/digest-md5.elc
-%%EMACS_PACKAGESDIR%%/lisp/wl/scram-md5.el
-%%EMACS_PACKAGESDIR%%/lisp/wl/scram-md5.elc
-%%EMACS_PACKAGESDIR%%/lisp/wl/unique-id.el
-%%EMACS_PACKAGESDIR%%/lisp/wl/unique-id.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/sasl-cram.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/sasl-cram.elc
+%%EMACS_PACKAGESDIR%%/lisp/wl/sasl-digest.el
+%%EMACS_PACKAGESDIR%%/lisp/wl/sasl-digest.elc
 %%EMACS_PACKAGESDIR%%/lisp/wl/wanderlust-startup.el
 %%EMACS_PACKAGESDIR%%/info/wl-ja.info
 %%EMACS_PACKAGESDIR%%/info/wl.info
