@@ -1,8 +1,8 @@
---- auth.c.orig	Fri Mar  1 14:12:10 2002
-+++ auth.c	Fri Mar  8 20:57:17 2002
+--- auth.c.orig	Fri May 17 16:27:55 2002
++++ auth.c	Sat Jun 22 12:40:31 2002
 @@ -25,7 +25,77 @@
  #include "includes.h"
- RCSID("$OpenBSD: auth.c,v 1.35 2002/03/01 13:12:10 markus Exp $");
+ RCSID("$OpenBSD: auth.c,v 1.43 2002/05/17 14:27:55 millert Exp $");
  
 +#if defined(__FreeBSD__) && __FreeBSD__ <= 3
 +/*
@@ -78,20 +78,3 @@
  
  #include "xmalloc.h"
  #include "match.h"
-@@ -141,6 +211,16 @@
- 			}
- 		ga_free();
- 	}
-+#ifdef __FreeBSD__  
-+	/* Fail if the account's expiration time has passed. */
-+	if (pw->pw_expire != 0) {
-+		struct timeval tv;
-+
-+		(void)gettimeofday(&tv, NULL);
-+		if (tv.tv_sec >= pw->pw_expire)
-+			return 0;
-+	}
-+#endif /* __FreeBSD__ */
- 	/* We found no reason not to let this user try to log on... */
- 	return 1;
- }

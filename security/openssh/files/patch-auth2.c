@@ -1,5 +1,5 @@
 --- auth2.c.orig	Fri May 31 13:35:15 2002
-+++ auth2.c	Fri Jun 21 22:49:07 2002
++++ auth2.c	Mon Jun 24 07:02:04 2002
 @@ -133,6 +133,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
@@ -16,19 +16,22 @@
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -152,6 +161,11 @@
+@@ -152,8 +161,14 @@
  		if (authctxt->pw && strcmp(service, "ssh-connection")==0) {
  			authctxt->valid = 1;
  			debug2("input_userauth_request: setting up authctxt for %s", user);
 +
 +#ifdef USE_PAM
-+			start_pam(pw);
++			start_pam(authctxt->pw);
 +#endif
 +
  		} else {
  			log("input_userauth_request: illegal user %s", user);
++			authctxt->pw = NULL;
  		}
-@@ -168,6 +182,41 @@
+ 		setproctitle("%s%s", authctxt->pw ? user : "unknown",
+ 		    use_privsep ? " [net]" : "");
+@@ -168,6 +183,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
@@ -70,7 +73,7 @@
  	/* reset state */
  	auth2_challenge_stop(authctxt);
  	authctxt->postponed = 0;
-@@ -178,6 +227,12 @@
+@@ -178,6 +228,12 @@
  		debug2("input_userauth_request: try method %s", method);
  		authenticated =	m->userauth(authctxt);
  	}
