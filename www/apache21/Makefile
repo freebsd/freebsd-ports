@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/26 17:14:02 ache Exp $
+# $Id: Makefile,v 1.37 1997/08/12 18:20:00 peter Exp $
 #
 
 DISTNAME=       apache_1.3a1
@@ -13,7 +13,6 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
 MAINTAINER=     ache@freebsd.org
 
-# User-controlled variable:
 # Set it for local-supplied patch, f.e.
 # VERS_ID = mods-1.0/me
 
