@@ -16,32 +16,41 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A regression testing utility for use with the Java(TM) Language
 
 USE_ZIP=	yes
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 NO_BUILD=	yes
-NO_BUILD_DEPENDS_JAVA=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${USE_JAVA} == "1.1"
-RUN_DEPENDS+=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
+.if ${JAVA_PORT_VERSION} == "1.1"
+RUN_DEPENDS+=	${JAVALIBDIR}/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 .endif
 
 .if !defined(NOPORTDOCS)
-DATADIRS=	doc javadoc junit
+PORTDOCS=	README.html cpl-v10.html doc javadoc
 .endif
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+PLIST_FILES=	%%JAVAJARDIR%%/junit.jar %%DATADIR%%/src.jar
+PLIST_DIRS=	%%DATADIR%%
 
 do-install:
-	${MKDIR} ${PREFIX}/share/java/classes ${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit.jar ${PREFIX}/share/java/classes
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/src.jar ${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/README.html ${DOCSDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/cpl-v10.html ${DOCSDIR}
-.if defined(DATADIRS)
-.for DIR in ${DATADIRS}
-	cd ${INSTALL_WRKSRC}; \
-		${FIND} ${DIR} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; ;\
-		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endfor
+	${MKDIR} ${JAVAJARDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/junit.jar ${JAVAJARDIR}/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/src.jar ${DATADIR}/
+	cd ${INSTALL_WRKSRC}/junit/samples \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
+.if !defined(NOPORTDOCS)
+	cd ${INSTALL_WRKSRC} \
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
 .endif
+
+post-install:
+	@cd ${INSTALL_WRKSRC}/junit/samples \
+	  && ${FIND} -s . -type f \
+	    | ${SED} 's,^\.,${EXAMPLESDIR:S,^${PREFIX}/,,},' >>${TMPPLIST} \
+	  && ${FIND} -s -d . -type d \
+	    | ${SED} 's,^\.,@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},' >>${TMPPLIST}
 
 .include <bsd.port.post.mk>
