@@ -1,51 +1,43 @@
-# New ports collection makefile for:	popper 3.*
-# Date created:		1 April 1995
-# Whom:			pst
+# New ports collection makefile for:	qpopper 3.1.b5
+# Date created:				Di  18 Jul 2000 22:36:34 CEST
+# Whom:					alex
 #
 # $FreeBSD$
 #
 
-PORTNAME=	qpopper3
-PORTVERSION=	3.0.2
+PORTNAME=	qpopper
+PORTVERSION= 	3.1.b5
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
-DISTNAME=	qpopper${PORTVERSION}
+MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/beta/
+DISTNAME=	${PORTNAME}3.1b5
 
-MAINTAINER=	jeff@isni.net
-
-# If APOP_ONLY variable present in the environment, popper builds
-# with APOP authentification only.
-#
-# If FULL_POPD_DEBUG variable present in the environment, popper builds
-# with more verbose debugging.
-
-OS_DEFS=	-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM \
-		-DNONAUTHFILE='\"/etc/ftpusers\"'
-
-.if defined(APOP_ONLY)
-OS_DEFS+=	-DAPOP_ONLY
-.endif
-
-P_LIBS+=	-lmd -lutil
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
-		--with-apopuid=pop
+CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth
+
+O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
+		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
+P_LIBS+=        -lmd -lutil
+
+# Set FULL_POPD_DEBUG for debug-mode. See also -d option to popper
 .if defined(FULL_POPD_DEBUG)
 CONFIGURE_ARGS+=--enable-debugging
 .endif
-CONFIGURE_ENV=	LIBS="${P_LIBS}" OS_DEFS="${OS_DEFS}"
 
-MAN8=		popauth3.8 popper3.8
+CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
-post-patch:
-	@$(RM) -f ${WRKSRC}/popper/md5.h
+MAN8=		popauth.8 popper.8
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} popper/popauth ${PREFIX}/bin/popauth3 && \
-		${INSTALL_PROGRAM} popper/popper ${PREFIX}/libexec/popper3 && \
-		${INSTALL_MAN} man/popauth.8 ${PREFIX}/man/man8/popauth3.8 && \
-		${INSTALL_MAN} man/popper.8 ${PREFIX}/man/man8/popper3.8
+		${INSTALL_PROGRAM} popper/popauth ${PREFIX}/bin
+	cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} popper/popper ${PREFIX}/libexec
+	cd ${WRKSRC} && \
+		${INSTALL_MAN} man/popauth.8 man/popper.8 ${PREFIX}/man/man8
+
+post-install:
+	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
