@@ -371,14 +371,46 @@
  
  gnome_terminal_help_DATA =  	index.html			topic.dat
  
+--- gnome-terminal/da/Makefile.in.orig	Fri Dec 17 16:27:57 1999
++++ gnome-terminal/da/Makefile.in	Mon Dec 27 13:30:32 1999
+@@ -154,7 +154,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/da
++gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/da
+ 
+ gnome_terminal_help_DATA =  	index.html			topic.dat
+ 
+--- gnome-terminal/es/Makefile.in.orig	Fri Dec 17 16:28:04 1999
++++ gnome-terminal/es/Makefile.in	Mon Dec 27 13:30:53 1999
+@@ -154,7 +154,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/es
++gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/es
+ 
+ gnome_terminal_help_DATA =  	index.html			topic.dat
+ 
+--- gnome-terminal/no/Makefile.in.orig	Fri Dec 17 16:28:12 1999
++++ gnome-terminal/no/Makefile.in	Mon Dec 27 13:31:07 1999
+@@ -154,7 +154,7 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-gnome_terminal_helpdir = $(datadir)/gnome/help/gnome-terminal/no
++gnome_terminal_helpdir = $(datadir)/help/gnome-terminal/no
+ 
+ gnome_terminal_help_DATA =  	index.html			topic.dat
+ 
 --- gnome-terminal/Makefile.in.orig	Tue Mar  2 01:52:55 1999
 +++ gnome-terminal/Makefile.in	Sat Mar  6 18:05:08 1999
 @@ -155,9 +155,9 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
--SUBDIRS = C no
-+# SUBDIRS = C no
+ SUBDIRS = C da es no
  
 -INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(datadir)/locale\""
 +INCLUDES =  	-I$(includedir)			-I$(top_srcdir)/intl		-I$(top_builddir)/intl		$(GNOME_INCLUDEDIR)		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\""
@@ -456,6 +488,28 @@
  
 -help_browser_helpdir = $(datadir)/gnome/help/help-browser/ca
 +help_browser_helpdir = $(datadir)/help/help-browser/ca
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/da/Makefile.in.orig	Fri Dec 17 16:26:15 1999
++++ help-browser/help/da/Makefile.in	Mon Dec 27 13:50:51 1999
+@@ -157,7 +157,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/da
++help_browser_helpdir = $(datadir)/help/help-browser/da
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/el/Makefile.in.orig	Fri Dec 17 16:26:21 1999
++++ help-browser/help/el/Makefile.in	Mon Dec 27 13:51:00 1999
+@@ -158,7 +158,7 @@
+ 
+ EXTRA_DIST = default-page.html
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/el
++help_browser_helpdir = $(datadir)/help/help-browser/el
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
