@@ -7,7 +7,7 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -65,8 +65,12 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
+.if ${OSVERSION} >= 501111 && !defined(NO_BLUETOOTH)
+_LBLUETOOTH=	-lbluetooth
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-lgnokii|-lgnokii -liconv -lintl|' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-lgnokii|-lgnokii -liconv -lintl ${_LBLUETOOTH}|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
