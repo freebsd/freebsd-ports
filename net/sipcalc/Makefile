@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sipcalc
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.routemeister.net/projects/sipcalc/files/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
-COMMENT=	Sipcalc is an IP subnet calculator with IPv6 and CGI interface support
+COMMENT=	Sipcalc is an IP subnet calculator with IPv6 support
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=	yes
 
 GNU_CONFIGURE=	yes
 MAN1=		sipcalc.1
