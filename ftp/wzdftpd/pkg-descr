@@ -1,0 +1,22 @@
+wzdftpd is a ftp server designed to be modular and entirely configurable online
+using SITE commands.
+
+wzdftpd offers the following features:
+- Simple configuration file, supporting inclusions
+- Online administration, using SITE commands
+- Backends to store users/groups in different structures
+- Modules: internal, using shared librairies, or external
+  (scripts/applications)
+- Users are virtual: you do not need to create users in system
+- SSL/TLS support
+- Server is designed to run as a non-privileged user to enforce security
+- Server can detect ip changes (dynamic ips) and set ip and passive ip
+  accordingly
+- Cross devices operations (copy/move) (though can be slow)
+- Logging support (compatible with the wu-ftpd standard)
+- Designed for high performances: coded with C, multithreaded
+
+WWW:	http://www.wzdftpd.net/
+
+- Roman Bogorodskiy
+bogorodskiy@inbox.ru

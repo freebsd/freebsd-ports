@@ -1,0 +1,20 @@
+--- configure.orig	Fri Oct 24 13:24:16 2003
++++ configure	Thu Dec 18 18:30:49 2003
+@@ -4359,7 +4359,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+       # Double quotes because CPP needs to be expanded
+-    for CPP in "$CC -E" "$CC -E -traditional-cpp" "/lib/cpp"
++    for CPP in "$CC -E" "$CC -E -traditional-cpp" "/usr/bin/cpp"
+     do
+       ac_preproc_ok=false
+ for ac_c_preproc_warn_flag in '' yes
+@@ -5376,7 +5376,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+       # Double quotes because CXXCPP needs to be expanded
+-    for CXXCPP in "$CXX -E" "/lib/cpp"
++    for CXXCPP in "$CXX -E" "/usr/bin/cpp"
+     do
+       ac_preproc_ok=false
+ for ac_cxx_preproc_warn_flag in '' yes

@@ -1,0 +1,42 @@
+@comment $FreeBSD$
+bin/siteconfig
+bin/siteuptime
+bin/sitewho
+etc/wzd.cfg.sample
+etc/init.d/wzdftpd
+lib/libwzd.a
+lib/libwzd.so
+lib/libwzd.la
+sbin/wzdftpd
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Permissions.ReadMeFirst
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TLS.ReadMeFirst
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/DOCS_XFERLOG_FORMAT
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/file_ginfo.txt
+%%DATADIR%%/file_help.txt
+%%DATADIR%%/file_swho.txt
+%%DATADIR%%/file_user.txt
+%%DATADIR%%/file_group.txt
+%%DATADIR%%/file_rules.txt
+%%DATADIR%%/file_users.txt
+%%DATADIR%%/file_vfs.txt
+%%DATADIR%%/file_who.txt
+%%DATADIR%%/file_groups.txt
+%%DATADIR%%/users.sample
+%%DATADIR%%/backends/libwzdplaintext.a
+%%DATADIR%%/backends/libwzdplaintext.so
+%%DATADIR%%/backends/libwzdplaintext.la
+%%DATADIR%%/modules/libwzd_sfv.la
+%%DATADIR%%/modules/libwzd_sfv.a
+%%DATADIR%%/modules/libwzd_test.la
+%%DATADIR%%/modules/libwzd_test.a
+%%DATADIR%%/modules/libwzd_test.so
+%%DATADIR%%/modules/libwzd_sfv.so
+@dirrm %%DATADIR%%/modules/
+@dirrm %%DATADIR%%/backends/
+@dirrm %%DATADIR%%/
