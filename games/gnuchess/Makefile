@@ -1,13 +1,13 @@
 # New ports collection makefile for:	Gnu Chess
-# Version required:	4.0pl77
+# Version required:	4.0pl79
 # Date created:		04 July 1996
 # Whom:			markm
 #
-# $Id: Makefile,v 1.3 1996/11/18 10:23:11 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/18 13:58:39 asami Exp $
 #
 
-DISTNAME=	gnuchess-4.0.pl77
-PKGNAME=	gnuchess-4.0.77
+DISTNAME=	gnuchess-4.0.pl79
+PKGNAME=	gnuchess-4.0.79
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
