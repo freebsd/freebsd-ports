@@ -1,3 +1,4 @@
+bin/freetype-config
 include/DPS/ColorSB.h
 include/DPS/ColorSBP.h
 include/DPS/DPSScrollW.h
