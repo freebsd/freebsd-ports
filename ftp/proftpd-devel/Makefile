@@ -40,7 +40,6 @@ PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-# USE_AUTOCONF_VER=213
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 
@@ -73,6 +72,11 @@ MODULES?=	mod_ratio:mod_readme:mod_wrap
 
 INCLUDEDIRS=
 LIBDIRS=
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+MODULES:=${MODULES}:mod_tls
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
