@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	vshnu
-PORTVERSION=	1.0008
+PORTVERSION=	1.0107
 CATEGORIES=	shells perl5
-MASTER_SITES=	http://www.cs.indiana.edu/hyplan/kinzler/vshnu/
+MASTER_SITES=	http://www.cs.indiana.edu/~kinzler/vshnu/
 
 MAINTAINER=	ports@FreeBSD.org
 
