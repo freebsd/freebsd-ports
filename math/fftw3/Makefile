@@ -27,11 +27,11 @@ INSTALLS_SHLIB=	yes
 MAN1=	fftw-wisdom-to-conf.1 fftw-wisdom.1 fftwf-wisdom.1
 INFO=	fftw3
 
-CONFIGURE_ARGS=	--enable-shared --with-our-malloc16
+CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 # FFTW --enable-single Options
-CONFIGURE_ARGS_FFTW3F=--enable-single ${CONFIGURE_ARGS}
+CONFIGURE_ARGS_FFTW3F=--enable-single ${CONFIGURE_ARGS:N--enable-sse2}
 FFTW3F_WRKSRC=	${WRKDIR}/${DISTNAME}-3F
 FFTW3F_INSTALL_TARGET=install-pkgconfigDATA install-libLTLIBRARIES install-exec
 
@@ -54,6 +54,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedul
 .endif
 
 .if defined(WITH_SSE)
+CONFIGURE_ARGS+=--enable-sse2
 CONFIGURE_ARGS_FFTW3F+=--enable-sse
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2"
 .endif
