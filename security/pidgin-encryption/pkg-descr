@@ -1,0 +1,22 @@
+Gaim-Encryption uses NSS to provide transparent RSA encryption as a Gaim plugin.
+
+Features include:
+	* Automatically creates a public/private key pair for you upon loading
+	  the plugin
+	* Automatically transmits your public key to other users.
+	* Supports 512 - 4096 bit keys.
+	* Saves keys of known users, and warns you if their public key has
+	  changed.
+	* Embeds all encryption and keys inside HTML, so if the other user
+	  doesn't have the plugin, they will get a little message telling them
+	  about the plugin, and won't get a screen full of garbage.
+	* Stores keys in human readable files in your .gaim directory, in case
+	  you ever need to copy/edit them by hand. Which you really shouldn't
+	  have to do.
+	* Automatically recognizes if you are chatting with someone who has the
+	  plugin- see the Preferences dialog.
+	* Modular and extensible. If you want to define a different type of
+	  encryption, you can use this plugin as a wrapper to take care of
+	  transporting the encrypted binary over the IM pipe.
+
+WWW:	http://gaim-encryption.sourceforge.net/
