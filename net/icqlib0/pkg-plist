@@ -1,4 +1,4 @@
-lib/libicq.a
-lib/libicq.so
-lib/libicq.so.1
-include/icq.h
+lib/libicq0.a
+lib/libicq0.so
+lib/libicq0.so.1
+include/icq0.h
