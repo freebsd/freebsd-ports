@@ -1,2 +1,2 @@
-book create /dev/fd/3 60 3
+book create gamefifo 60 3
 quit
