@@ -19,6 +19,7 @@
 %%RUBY_SITELIBDIR%%/log4r/outputter/remoteoutputter.rb
 %%RUBY_SITELIBDIR%%/log4r/outputter/rollingfileoutputter.rb
 %%RUBY_SITELIBDIR%%/log4r/outputter/staticoutputter.rb
+%%RUBY_SITELIBDIR%%/log4r/outputter/syslogoutputter.rb
 %%RUBY_SITELIBDIR%%/log4r/repository.rb
 %%RUBY_SITELIBDIR%%/log4r/staticlogger.rb
 @dirrm %%RUBY_SITELIBDIR%%/log4r/outputter
@@ -44,9 +45,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/changelog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/contact.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/contribute.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/images/crush/logo2.png
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/images/log4r-logo.png
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/images/logo2.png
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/images/crush/logo2.png
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/license.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/log4r.css
@@ -54,9 +55,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/blank.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000066.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000067.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000068.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000069.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/BasicFormatter.src/M000071.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/ConfigError.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Configurator.src/M000003.html
@@ -71,8 +72,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/FileOutputter.src/M000010.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000069.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000072.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/Formatter.src/M000073.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000043.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/IOOutputter.src/M000044.html
@@ -150,6 +151,10 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000066.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000067.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src/M000068.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/classes/REXML.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/base_rb.html
@@ -172,6 +177,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/remoteoutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/rollingfileoutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/staticoutputter_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/outputter/syslogoutputter_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/repository_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r/staticlogger_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rdoc/files/log4r_rb.html
@@ -185,6 +191,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r/formatter
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files/log4r
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SyslogOutputter.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StdoutOutputter.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/StderrOutputter.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rdoc/classes/Log4r/SimpleFormatter.src
