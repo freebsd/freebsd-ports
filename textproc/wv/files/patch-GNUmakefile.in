@@ -1,0 +1,11 @@
+--- GNUmakefile.in.orig	Sat Sep 13 09:37:27 2003
++++ GNUmakefile.in	Sun Sep 14 18:12:59 2003
+@@ -281,7 +281,7 @@
+ 
+ OTHERSCRIPTS = wvMime
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ 
+ pkgconfig_DATA = wv-1.0.pc
+ 
