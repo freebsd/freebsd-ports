@@ -258,6 +258,7 @@
     SUBDIR += p5-Text-MagicTemplate
     SUBDIR += p5-Text-Metaphone
     SUBDIR += p5-Text-Netstring
+    SUBDIR += p5-Text-ParagraphDiff
     SUBDIR += p5-Text-Query
     SUBDIR += p5-Text-Quoted
     SUBDIR += p5-Text-Reflow
