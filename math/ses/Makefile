@@ -29,6 +29,12 @@ PLIST_FILES=	${ELISP_FILES:S/^/${ELISP_DIR}\//} \
 		${DOC_FILES:S/^/${DOC_DIR}\//}
 PLIST_DIRS=	${ELISP_DIR} ${DOC_DIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 do-build:
 .for __f in ${ELISP_FILES}
 	cd ${WRKSRC} && echo '(setq load-path (cons "." load-path)) \
@@ -47,4 +53,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${__f} ${PREFIX}/${DOC_DIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
