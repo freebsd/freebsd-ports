@@ -5,7 +5,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.28 1996/10/22 02:10:12 ache Exp $
+# $Id: Makefile,v 1.29 1996/11/02 00:55:08 ache Exp $
 #
 
 DISTNAME=       lynx2-6
@@ -20,8 +20,8 @@ BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q -o
 
-PATCH_SITES=    http://www.nyu.edu/pages/wsn/subir/lynx/patches/
-PATCHFILES=     2-6-patch11.txt
+#PATCH_SITES=    http://www.nyu.edu/pages/wsn/subir/lynx/patches/
+#PATCHFILES=     2-6-patch11.txt
 
 MAINTAINER=	ache@FreeBSD.ORG
 
@@ -31,4 +31,4 @@ ALL_TARGET=     freebsd-ncurses
 
 # must be after bsd.port.mk
 
-PATCH_DIST_ARGS+= -d ${WRKSRC}/src
+#PATCH_DIST_ARGS+= -d ${WRKSRC}/src
