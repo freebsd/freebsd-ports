@@ -131,6 +131,7 @@
     SUBDIR += hlserver-oz
     SUBDIR += hlserver-si
     SUBDIR += hlserver-svencoop
+    SUBDIR += hlserver-vs
     SUBDIR += hlserver-wasteland
     SUBDIR += hlserver-wizwars
     SUBDIR += icbm3d
