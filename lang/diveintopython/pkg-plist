@@ -21,12 +21,12 @@ share/doc/diveintopython/dialect_quoting.html
 share/doc/diveintopython/dialect_re.html
 share/doc/diveintopython/dialect_sgmllib.html
 share/doc/diveintopython/diveintopython.css
-share/doc/diveintopython/download/diveintopython-examples-3.2-1.tgz
-share/doc/diveintopython/download/diveintopython-html-3.2-1.tgz
-share/doc/diveintopython/download/diveintopython-html-flat-3.2-1.tgz
-share/doc/diveintopython/download/diveintopython-pdf-3.2-1.tgz
-share/doc/diveintopython/download/diveintopython-text-3.2-1.tgz
-share/doc/diveintopython/download/diveintopython-xml-3.2-1.tgz
+share/doc/diveintopython/download/diveintopython-examples-3.3-1.tgz
+share/doc/diveintopython/download/diveintopython-html-3.3-1.tgz
+share/doc/diveintopython/download/diveintopython-html-flat-3.3-1.tgz
+share/doc/diveintopython/download/diveintopython-pdf-3.3-1.tgz
+share/doc/diveintopython/download/diveintopython-text-3.3-1.tgz
+share/doc/diveintopython/download/diveintopython-xml-3.3-1.tgz
 share/doc/diveintopython/download/diveintopython.html
 share/doc/diveintopython/download/diveintopython.pdf
 share/doc/diveintopython/download/diveintopython.txt
@@ -76,6 +76,7 @@ share/doc/diveintopython/images/callouts/7.png
 share/doc/diveintopython/images/callouts/8.png
 share/doc/diveintopython/images/callouts/9.png
 share/doc/diveintopython/images/caution.png
+share/doc/diveintopython/images/dot.png
 share/doc/diveintopython/images/important.png
 share/doc/diveintopython/images/note.png
 share/doc/diveintopython/images/tip.png
@@ -98,6 +99,19 @@ share/doc/diveintopython/odbchelper_tuple.html
 share/doc/diveintopython/odbchelper_vardef.html
 share/doc/diveintopython/olde.html
 share/doc/diveintopython/preface.html
+share/doc/diveintopython/roman_bugs.html
+share/doc/diveintopython/roman_change.html
+share/doc/diveintopython/roman_divein.html
+share/doc/diveintopython/roman_failure.html
+share/doc/diveintopython/roman_getopt.html
+share/doc/diveintopython/roman_romantest.html
+share/doc/diveintopython/roman_sanity.html
+share/doc/diveintopython/roman_stage1.html
+share/doc/diveintopython/roman_stage2.html
+share/doc/diveintopython/roman_stage3.html
+share/doc/diveintopython/roman_stage4.html
+share/doc/diveintopython/roman_stage5.html
+share/doc/diveintopython/roman_success.html
 share/doc/diveintopython/tips.html
 share/doc/diveintopython/toc.html
 @dirrm share/doc/diveintopython/images/callouts
