@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	edict-fpw
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/edict/
 DISTNAME=	${PORTNAME}${PORTVERSION}
