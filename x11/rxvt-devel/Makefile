@@ -9,8 +9,7 @@
 # the same distfile.
 
 PORTNAME=	rxvt
-PORTVERSION=	2.7.7
-PORTREVISION=	1
+PORTVERSION=	2.7.8
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
@@ -30,16 +29,30 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
-USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 
 MAN1=		rxvt.1
 
+# disable backspace key
+.if defined(WITHOUT_BACKSPACE_KEY)
+CONFIGURE_ARGS+=	--disable-backspace-key
+.endif # WITHOUT_BACKSPACE_KEY
+#
+# disable delete key
+.if defined(WITHOUT_DELETE_KEY)
+CONFIGURE_ARGS+=	--disable-delete-key
+.endif # WITHOUT_DELETE_KEY
+#
 # set the default encoding for multi-char glyph languages
 .if defined(WITH_ENCODING)
 CONFIGURE_ARGS+=	--with-encoding=${WITH_ENCODING}
 .endif # WITH_ENCODING
+#
+# enable graphics support
+.if defined(WITH_GRAPHICS)
+CONFIGURE_ARGS+=	--enable-graphics
+.endif # WITH_GRAPHICS
 #
 # enable greek keyboard support
 .if defined(WITH_GREEK_KEYBOARD)
@@ -66,6 +79,11 @@ CONFIGURE_ARGS+=	--enable-next-scroll
 CONFIGURE_ARGS+=	--enable-rxvt-scroll
 .endif # WITH_RXVT_SCROLLBAR
 #
+# enable smart resize
+.if defined(WITH_SMART_RESIZE)
+CONFIGURE_ARGS+=	--enable-smart-resize
+.endif # WITH_SMART_RESIZE
+#
 # XIM (X Input Method) protocol support
 .ifndef(WITHOUT_XIM)
 CONFIGURE_ARGS+=	--enable-xim
@@ -76,15 +94,19 @@ CONFIGURE_ARGS+=	--enable-xim
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
 
-pre-fetch:
+pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITHOUT_XIM=yes		disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITHOUT_BACKSPACE_KEY=yes	disable handling of the backspace key"
+	@${ECHO_MSG} "WITHOUT_DELETE_KEY=yes		disable handling of the delete key"
+	@${ECHO_MSG} "WITHOUT_XIM=yes			disable support for XIM (X Input Method) protocol"
+	@${ECHO_MSG} "WITH_GRAPHICS=yes		enable rxvt own graphics mode"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
 	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
-	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes	add support for scrolling via mouse wheel"
+	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes		add support for scrolling via mouse wheel"
 	@${ECHO_MSG} "				or buttons 4 & 5"
+	@${ECHO_MSG} "WITH_SMART_RESIZE=yes		enable smart growth/shrink behaviour"
 	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes		add support for a NeXT-like scrollbar"
 	@${ECHO_MSG} "WITH_RXVT_SCROLLBAR=yes		add support for the original rxvt scrollbar"
 	@${ECHO_MSG} "WITH_XTERM_SCROLLBAR=yes	add support for an Xterm-like scrollbar"
