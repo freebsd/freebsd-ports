@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03t
+PORTVERSION=	1.03u
 CATEGORIES=	misc
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/ \
+		ftp://ftp.vector.co.jp/pack/unix/util/file/filer/fd/
 MASTER_SITE_SUBDIR=	steve
 DISTNAME=	FD-${PORTVERSION}
 
