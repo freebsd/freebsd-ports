@@ -1,0 +1,6 @@
+Luma - a graphical tool for accessing and managing LDAP server. 
+It is written in Python, using PyQt and python-ldap. 
+Plugin-support is included and useful widgets with 
+LDAP-functionality for easy creation of plugins are delivered. 
+
+WWW: http://luma.sourceforge.net
