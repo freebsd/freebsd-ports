@@ -1,0 +1,11 @@
+--- configure.orig	Wed Aug 20 03:40:08 1997
++++ configure	Wed Aug 20 03:40:21 1997
+@@ -662,7 +662,7 @@
+ if test -n "$withval"; then
+   TCL_BIN_DIR=$withval
+ else
+-  TCL_BIN_DIR=`cd ../../tcl8.0/unix; pwd`
++  TCL_BIN_DIR=`cd ../../../../../lang/tcl80/work/tcl8.0/unix; pwd`
+ fi
+ 
+ if test ! -d $TCL_BIN_DIR; then
