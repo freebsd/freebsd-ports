@@ -14,7 +14,8 @@ MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Generic mail checking library
 
 LIB_DEPENDS=	gnutls.8:${PORTSDIR}/security/gnutls \
-		oop.4:${PORTSDIR}/devel/liboop
+		oop.4:${PORTSDIR}/devel/liboop \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
