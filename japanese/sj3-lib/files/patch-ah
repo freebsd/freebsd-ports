@@ -1,0 +1,12 @@
+--- sj3/sjgetchar.c.orig	Sun Feb  6 18:59:26 2000
++++ sj3/sjgetchar.c	Sun Feb  6 19:00:02 2000
+@@ -52,6 +52,9 @@
+ #if defined(__NetBSD__) || defined(__bsdi__)
+ #define	USE_OLD_TTY
+ #endif
++#if defined(__FreeBSD__)
++#include <sys/ioctl_compat.h>
++#endif
+ #include <curses.h>
+ #endif
+ 
