@@ -795,13 +795,11 @@
     SUBDIR += p5-POE-Component-DebugShell
     SUBDIR += p5-POE-Component-DirWatch
     SUBDIR += p5-POE-Component-IKC
-    SUBDIR += p5-POE-Component-IKC-ReallySimple
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Logger
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-POE-Exceptions
-    SUBDIR += p5-POE-Session-Cascading
     SUBDIR += p5-POE-Session-MultiDispatch
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
