@@ -81,6 +81,7 @@ share/gnome/pixmaps/ggv/toggleeven.xpm
 share/gnome/pixmaps/ggv/toggleodd.xpm
 share/gnome/pixmaps/ggv/zoom.xpm
 share/gnome/pixmaps/gnome-ghostview.png
+share/locale/af/LC_MESSAGES/ggv.mo
 share/locale/am/LC_MESSAGES/ggv.mo
 share/locale/ar/LC_MESSAGES/ggv.mo
 share/locale/az/LC_MESSAGES/ggv.mo
@@ -93,6 +94,7 @@ share/locale/cy/LC_MESSAGES/ggv.mo
 share/locale/da/LC_MESSAGES/ggv.mo
 share/locale/de/LC_MESSAGES/ggv.mo
 share/locale/el/LC_MESSAGES/ggv.mo
+share/locale/en_CA/LC_MESSAGES/ggv.mo
 share/locale/en_GB/LC_MESSAGES/ggv.mo
 share/locale/es/LC_MESSAGES/ggv.mo
 share/locale/et/LC_MESSAGES/ggv.mo
@@ -107,6 +109,7 @@ share/locale/hi/LC_MESSAGES/ggv.mo
 share/locale/hr/LC_MESSAGES/ggv.mo
 share/locale/hu/LC_MESSAGES/ggv.mo
 share/locale/id/LC_MESSAGES/ggv.mo
+share/locale/is/LC_MESSAGES/ggv.mo
 share/locale/it/LC_MESSAGES/ggv.mo
 share/locale/ja/LC_MESSAGES/ggv.mo
 share/locale/kn/LC_MESSAGES/ggv.mo
@@ -120,6 +123,7 @@ share/locale/ms/LC_MESSAGES/ggv.mo
 share/locale/nl/LC_MESSAGES/ggv.mo
 share/locale/nn/LC_MESSAGES/ggv.mo
 share/locale/no/LC_MESSAGES/ggv.mo
+share/locale/pa/LC_MESSAGES/ggv.mo
 share/locale/pl/LC_MESSAGES/ggv.mo
 share/locale/pt/LC_MESSAGES/ggv.mo
 share/locale/pt_BR/LC_MESSAGES/ggv.mo
@@ -127,9 +131,9 @@ share/locale/ro/LC_MESSAGES/ggv.mo
 share/locale/ru/LC_MESSAGES/ggv.mo
 share/locale/sk/LC_MESSAGES/ggv.mo
 share/locale/sl/LC_MESSAGES/ggv.mo
+share/locale/sq/LC_MESSAGES/ggv.mo
 share/locale/sr/LC_MESSAGES/ggv.mo
 share/locale/sr@Latn/LC_MESSAGES/ggv.mo
-share/locale/sq/LC_MESSAGES/ggv.mo
 share/locale/sv/LC_MESSAGES/ggv.mo
 share/locale/ta/LC_MESSAGES/ggv.mo
 share/locale/th/LC_MESSAGES/ggv.mo
