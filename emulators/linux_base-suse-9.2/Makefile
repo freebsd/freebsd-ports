@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		7.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -43,6 +43,10 @@ PATCH_SITE_SUBDIR=	updates/${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}
 PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
+.if (${MACHINE_ARCH} == "alpha")
+FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
+ <URL:http://www.cert.org/advisories/CA-2003-10.html>"
+.endif
 COMMENT=	The base set of packages needed in Linux mode
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
@@ -60,8 +64,8 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 # Let's avoid hardcoding 'en' as the language.
 LANG=			en
 
-UPD_SET1=		glibc-common-2.2.4-31.${MACHINE_ARCH}.rpm \
-			glibc-2.2.4-31.${MACHINE_ARCH}.rpm
+UPD_SET1=		glibc-common-2.2.4-32.${MACHINE_ARCH}.rpm \
+			glibc-2.2.4-32.${MACHINE_ARCH}.rpm
 UPD_SET2=		zlib-1.1.3-25.7.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
