@@ -8,6 +8,5 @@ share/themes/Redmond95/README.html
 share/themes/Redmond95/gtk-2.0/gtkrc
 @dirrm share/themes/Redmond95/gtk-2.0
 @dirrm share/themes/Metal/gtk-2.0
-@dirrm lib/gtk-2.0/%%GTK_VERSION%%/engines
 @unexec /bin/rmdir %D/share/themes/Redmond95 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/themes/Metal 2>/dev/null || /usr/bin/true
