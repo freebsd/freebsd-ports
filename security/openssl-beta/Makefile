@@ -26,7 +26,7 @@ NOSHARED=	yes
 
 USE_PERL5=	yes
 .if defined(NOSHARED)
-PLIST=		${PKGDIR}/PLIST.noshared
+PLIST=		${PKGDIR}/pkg-plist.noshared
 .else
 ALL_TARGET=	freebsd-shared all
 SHLIBVER=	1
