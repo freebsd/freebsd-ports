@@ -2,7 +2,6 @@ avr/include/avr/boot.h
 avr/include/avr/crc16.h
 avr/include/avr/delay.h
 avr/include/avr/eeprom.h
-avr/include/avr/ina90.h
 avr/include/avr/interrupt.h
 avr/include/avr/io.h
 avr/include/avr/io1200.h
@@ -21,23 +20,35 @@ avr/include/avr/io8534.h
 avr/include/avr/io8535.h
 avr/include/avr/io86r401.h
 avr/include/avr/ioat94k.h
+avr/include/avr/iocan128.h
 avr/include/avr/iom103.h
 avr/include/avr/iom128.h
 avr/include/avr/iom16.h
 avr/include/avr/iom161.h
 avr/include/avr/iom162.h
 avr/include/avr/iom163.h
+avr/include/avr/iom165.h
+avr/include/avr/iom168.h
 avr/include/avr/iom169.h
 avr/include/avr/iom32.h
 avr/include/avr/iom323.h
+avr/include/avr/iom325.h
+avr/include/avr/iom3250.h
+avr/include/avr/iom48.h
 avr/include/avr/iom64.h
+avr/include/avr/iom645.h
+avr/include/avr/iom6450.h
 avr/include/avr/iom8.h
 avr/include/avr/iom8515.h
 avr/include/avr/iom8535.h
+avr/include/avr/iom88.h
+avr/include/avr/iomx8.h
 avr/include/avr/iotn11.h
 avr/include/avr/iotn12.h
+avr/include/avr/iotn13.h
 avr/include/avr/iotn15.h
 avr/include/avr/iotn22.h
+avr/include/avr/iotn2313.h
 avr/include/avr/iotn26.h
 avr/include/avr/iotn28.h
 avr/include/avr/parity.h
@@ -46,28 +57,18 @@ avr/include/avr/portpins.h
 avr/include/avr/sfr_defs.h
 avr/include/avr/signal.h
 avr/include/avr/sleep.h
-avr/include/avr/timer.h
-avr/include/avr/twi.h
 avr/include/avr/wdt.h
+avr/include/compat/ina90.h
+avr/include/compat/twi.h
 avr/include/ctype.h
-avr/include/eeprom.h
 avr/include/errno.h
-avr/include/ina90.h
-avr/include/interrupt.h
 avr/include/inttypes.h
-avr/include/io.h
 avr/include/math.h
-avr/include/pgmspace.h
-avr/include/progmem.h
 avr/include/setjmp.h
-avr/include/sig-avr.h
 avr/include/stdint.h
 avr/include/stdio.h
 avr/include/stdlib.h
 avr/include/string.h
-avr/include/timer.h
-avr/include/twi.h
-avr/include/wdt.h
 avr/lib/avr3/crt43320.o
 avr/lib/avr3/crt43355.o
 avr/lib/avr3/crt76711.o
@@ -127,6 +128,7 @@ avr/lib/libprintf_flt.a
 avr/lib/libprintf_min.a
 avr/lib/libscanf_flt.a
 avr/lib/libscanf_min.a
+bin/avr-man
 share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/LICENSE
 share/doc/avr-libc/examples/avr-recv.c
@@ -140,6 +142,7 @@ share/doc/avr-libc/examples/send_byte.s
 share/doc/avr-libc/examples/signal.c
 share/doc/avr-libc/examples/twitest/Makefile
 share/doc/avr-libc/examples/twitest/twitest.c
+@dirrm avr/include/compat
 @dirrm avr/include/avr
 @dirrm avr/include
 @dirrm avr/lib/avr3
