@@ -1,0 +1,13 @@
+run_aster a été installé dans le répertoire %%inst_dir%%/tcl.
+
+Après avoir installé Code_Aster, vous devriez installer ASTK
+[cad/astk-serveur et cad/astk-client].
+ASTK est une interface graphique qui lance Code_Aster à partir de run_aster.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+run_aster has been installed in the directory %%inst_dir%%/tcl.
+
+After Code_Aster installation you could install ASTK
+[cad/astk-serveur and cad/astk-client].
+ASTK is a graphic interface to run Code_Aster using run_aster.

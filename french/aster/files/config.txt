@@ -1,0 +1,68 @@
+# Configuration file
+# $FreeBSD$
+#
+# Fields are separated by a "|" (the space is significative)
+#
+# Keywords :
+#  "LIB "      : archiver
+#	"BIBL "     : librairies linked with Code_Aster (with options -L/-l eventually)
+#  "INCL "     : C include C for compilation
+#  "PYTHON "   : Python binary
+#  "LINK "     : loader command
+#  "OPTL "     : loader options
+#  "CC "       : C compiler command
+#  "OPTC_D "   : C compiler options using DEBUG mode
+#  "OPTC_O "   : C compiler options using NODEBUG mode
+#  "F77 "      : Fortran compiler command
+#  "OPTF_D "   : Fortran compiler options using DEBUG mode
+#  "OPTF_O "   : Fortran compiler options using NODEBUG mode
+#  "G77_AGLA " : used configuration management of EDF version
+#  "SUPERV "   : Python modules imported from Aster
+#  "ARGPYT "   : supervisor
+#  "ARGEXE "   : arguments passed to exec
+#
+LIB | ar | ? | HOME_AR/ar -rv
+#
+BIBL | python | 2.1 | HOME_PYTHON/lib/pythonPYTHON_VERSION/config/libpythonPYTHON_VERSION.a
+BIBL | fpe    | ?   |  
+BIBL | med    | 2.1 | OPT_MED
+BIBL | hdf    | 5.1 | OPT_HDF
+BIBL | blas   | ?   | OPT_BLAS
+BIBL | tcl    | 8.3 | OPT_TCL
+BIBL | tk     | 8.3 | OPT_TK
+BIBL | X11    | ?   | OPT_X11
+BIBL | sys    | ?   | -Xlinker -export-dynamic PTHREAD -lutil -lm -lz
+#
+INCL | python | 2.1 | -IHOME_PYTHON/include/pythonPYTHON_VERSION
+#
+PYTHON | python | 2.1 | HOME_PYTHON/bin/PYTHON_BIN
+#
+LINK | link | ? | %%F77%%
+#
+OPTL | f90    | ?   | -v  
+#
+CC | cc | ? | %%CC%%
+#
+OPTC_D | cc   | ?   | -c -g -DP_LINUX
+OPTC_O | cc   | ?   | -c CFLAGS -DP_LINUX
+#
+F77 | f77 | ? | %%F77%%
+#
+OPTF_D | f90  | ?   | -c -g
+OPTF_O | f90  | ?   | -c -O2
+#
+G77_AGLA | g77  | ?   | %%F77%%
+#
+SUPERV | exec | 03-2002 | Accas
+SUPERV | exec | 03-2002 | Build
+SUPERV | exec | 03-2002 | Execution
+SUPERV | exec | 03-2002 | Macro
+SUPERV | exec | 03-2002 | Noyau
+SUPERV | exec | 03-2002 | Stanley
+SUPERV | exec | 03-2002 | Utilitai
+SUPERV | exec | 03-2002 | Validation
+#
+ARGPYT | exec | 03-2002 | Execution/E_SUPERV.py
+ARGEXE | exec | 03-2002 | -eficas_path ./Eficas
+#
+GZIP | tool | ? | HOME_GZIP/gzip

@@ -3,6 +3,7 @@
 
     SUBDIR += abispell-fr-FR
     SUBDIR += aspell
+    SUBDIR += aster
     SUBDIR += daCode
     SUBDIR += eficas
     SUBDIR += facturier
