@@ -76,3 +76,4 @@ libexec/apache/libperl.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Constants
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle
+@unexec rmdir %D/etc/apache 2> /dev/null || true
