@@ -10,7 +10,7 @@ PORTVERSION=	0.990
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
-		http://www.webmin.com/webmin/updates/
+		http://www.webmin.com/updates/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WEBMIN_MODULES} ${WEBMIN_THEMES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
