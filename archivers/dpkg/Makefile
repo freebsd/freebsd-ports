@@ -14,11 +14,10 @@ DISTNAME=	dpkg_${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Package maintenance system for Debian
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_AUTOCONF_VER=	213
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}

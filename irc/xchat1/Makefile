@@ -15,8 +15,6 @@ MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 MAINTAINER?=		ports@FreeBSD.org
 COMMENT=	An X11 IRC client using the GTK+ toolkit, and optionally, GNOME
 
-LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
-
 # This port has a slave port japanese/xchat.  Do not carelessly overwrite
 # the variables or the targets defined in it.  When you need to, please
 # contact its maintainer.
@@ -24,6 +22,7 @@ LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 USE_X_PREFIX=		yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
+USE_ICONV=		yes
 USE_PERL5=		yes
 USE_GNOME=		gtk12
 WANT_GNOME=		yes

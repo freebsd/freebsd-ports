@@ -15,14 +15,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	esk@ira.uka.de
 COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnomehack libxml
 USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

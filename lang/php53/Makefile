@@ -327,7 +327,7 @@ CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .endif
 
 .if defined(WITH_ICONV) || defined(WITH_ICONV_DEP)
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
 .endif
 

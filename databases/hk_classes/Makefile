@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR=	hk-classes
 MAINTAINER=	sem@ciam.ru
 COMMENT=	C++ Library for rapid development of database applications
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_PYTHON=	yes
 CONFIGURE_ENV+=	LIBPYTHON="-l${PYTHON_VERSION} ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

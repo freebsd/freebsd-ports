@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
 MAINTAINER?=	kiesel@schlund.de
 COMMENT=	Sybase/Microsoft TDS protocol library
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_GONFIGURE=	yes

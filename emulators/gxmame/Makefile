@@ -16,10 +16,10 @@ MAINTAINER=	tlp@liquidx.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GETTEXT=	yes
 USE_GZIP=	yes
+USE_ICONV=	yes
 USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_REINPLACE=	yes

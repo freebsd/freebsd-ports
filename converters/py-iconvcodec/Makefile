@@ -13,8 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Universal unicode codec using iconv(3) for Python
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	--with-libiconv=${LOCALBASE}

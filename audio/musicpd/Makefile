@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--disable-aac
 .ifdef(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--disable-iconv
 .else
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 .endif
 
 .ifdef(WITHOUT_IPV6)

@@ -15,9 +15,9 @@ DISTNAME=	hanterm${PKGNAMESUFFIX}-2.0.5-173
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	X11R6-based xterm hacked for managing Korean languages
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
+USE_ICONV=	yes
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-boxchar --enable-ansi-color \

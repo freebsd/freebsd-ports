@@ -133,7 +133,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 .endif	# LITE
 
 .if exists(${PREFIX}/lib/libiconv.so)
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 .endif
 
 pre-configure:

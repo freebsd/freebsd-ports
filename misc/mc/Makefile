@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \
 
 .if !defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--enable-charset
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+USE_ICONV=	yes
 PLIST_SUB=	CHARSETS=""
 .else
 PLIST_SUB=	CHARSETS="@comment "

@@ -23,7 +23,6 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		aspell:${PORTSDIR}/textproc/aspell \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		paper.2:${PORTSDIR}/print/libpaper \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
@@ -35,6 +34,7 @@ PREFIX=			${KDE_PREFIX}
 KDE_BUILD_PLIST=	yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
+USE_ICONV=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
 

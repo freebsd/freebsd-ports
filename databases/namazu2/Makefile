@@ -21,12 +21,10 @@ COMMENT=	Full-text search system intended for easy use
 
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
 RUN_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-#		xlHtml:${PORTSDIR}/textproc/xlhtml \
-#		wvHtml:${PORTSDIR}/textproc/wv
 
 PM_BASE=	${SITE_PERL}
 
+USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

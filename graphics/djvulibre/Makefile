@@ -15,8 +15,8 @@ MAINTAINER=	coop9211@uidaho.edu
 
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+
 .ifndef WITHOUT_X11
 USE_X_PREFIX= yes
 USE_QT_VER=   3
@@ -24,6 +24,7 @@ USE_QT_VER=   3
 PKGNAMESUFFIX=	-nox11
 .endif
 
+USE_ICONV=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	JPEG_CFLAGS=-I"${LOCALBASE}/include" \

@@ -16,8 +16,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An iconv wrapper with unicode codec for Python
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}

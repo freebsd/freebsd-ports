@@ -23,7 +23,6 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gd.4:${PORTSDIR}/graphics/gd \
 		fftw.2:${PORTSDIR}/math/fftw \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		pq.3:${PORTSDIR}/${POSTGRESQL_PORT} \
@@ -38,6 +37,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude *CVS*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
+USE_ICONV=	yes
 USE_XLIB=	yes
 USE_MESA=	yes
 USE_PERL5=	yes
