@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -101,7 +101,6 @@ do-install:
 
 	@${ECHO_CMD} -n ">> Copying files to destination directory..."
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${CP} ${WRKDIR}/workers.properties ${APP_HOME}/conf
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Compiling and installing control script..."
