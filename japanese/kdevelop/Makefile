@@ -15,6 +15,8 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 MAINTAINER=	sahiro@crest.ocn.ne.jp
 
+BROKEN=		"Broken by master port update"
+
 PATCH_SITES=	http://www.kde.gr.jp/patch/ \
 		http://www7.ocn.ne.jp/~s-sahiro/kde/patches/
 PATCHFILES=	kdevelop-2.0.2-font-i18n-20011127.diff \
