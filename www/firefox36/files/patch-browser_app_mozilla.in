@@ -1,0 +1,10 @@
+--- browser/app/mozilla.in.orig	Sat Oct  2 02:05:53 2004
++++ browser/app/mozilla.in	Sat Oct  2 02:06:15 2004
+@@ -110,6 +110,7 @@
+   # Check default compile-time libdir
+   if [ -x "$moz_libdir/run-mozilla.sh" ]; then
+     dist_bin="$moz_libdir"
++    run_moz="$dist_bin/run-mozilla.sh"
+   else 
+     echo "Cannot find mozilla runtime directory. Exiting."
+     exit 1
