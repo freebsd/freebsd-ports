@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -18,14 +18,13 @@ PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-extra-includes="${LOCALBASE}/include" \
-			--with-extra-libs="${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	distcc.1 distccd.1
 DOC_FILES=	AUTHORS COPYING COPYING.FDL NEWS OLDNEWS README \
 		linuxdoc/distcc.info.gz linuxdoc/distcc.sgml
 HTML_DOC_FILES=	distcc.html distcc-1.html distcc-2.html distcc-3.html \
-		distcc-4.html distcc-5.html distcc-6.html distcc-7.html
+		distcc-4.html distcc-5.html distcc-6.html
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
