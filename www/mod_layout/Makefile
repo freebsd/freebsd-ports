@@ -16,10 +16,8 @@ MAINTAINER=	petef@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
-MAKE_ENV=	APXS=${LOCALBASE}/sbin/apxs
-
 post-patch:
-	@${PERL} -pi -e 's!APXS=apxs!APXS?=apxs!' \
+	@${PERL} -pi -e 's!apxs!${LOCALBASE}/sbin/apxs!g' \
 		${WRKSRC}/Makefile
 
 post-install:
