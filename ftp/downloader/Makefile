@@ -22,7 +22,7 @@ USE_GTK=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
 		GTKCONFIG="${GTK_CONFIG}" MAKE="${GMAKE}" \
-		MSGFMT_CMD="${LOCALBASE}/bin/msgfmt"
+		MSGFMT_CMD="${LOCALBASE}/bin/msgfmt" PTHREAD=-pthread
 MAN1=		nt.1
 
 PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
