@@ -7,6 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.3.27
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -291,6 +292,7 @@ pre-configure:
 	${MKDIR} ${VCFGDIR}
 
 post-install:
+	${CHOWN} -R vpopmail:vchkpw ${PREFIX}/vpopmail
 	${CHMOD} o-rwx ${PREFIX}/vpopmail/bin ${PREFIX}/vpopmail/lib
 	${MKDIR} ${PREFIX}/vpopmail/etc
 	if [ ! -f "${PREFIX}/vpopmail/etc/tcp.smtp" ]; then \
