@@ -36,8 +36,14 @@ www/postfixadmin/edit-mailbox.php
 www/postfixadmin/functions.inc.php
 www/postfixadmin/index.php
 www/postfixadmin/languages/de.lang
+www/postfixadmin/languages/dk.lang
 www/postfixadmin/languages/en.lang
 www/postfixadmin/languages/es.lang
+www/postfixadmin/languages/fi.lang
+www/postfixadmin/languages/fo.lang
+www/postfixadmin/languages/fr.lang
+www/postfixadmin/languages/nl.lang
+www/postfixadmin/languages/se.lang
 www/postfixadmin/login.php
 www/postfixadmin/logout.php
 www/postfixadmin/main.php
