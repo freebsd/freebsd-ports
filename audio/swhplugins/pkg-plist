@@ -2,6 +2,8 @@ lib/ladspa/alias_1407.so
 lib/ladspa/am_pitchshift_1433.so
 lib/ladspa/amp_1181.so
 lib/ladspa/analogue_osc_1416.so
+lib/ladspa/bandpass_a_iir_1893.so
+lib/ladspa/bandpass_iir_1892.so
 lib/ladspa/bode_shifter_1431.so
 lib/ladspa/bode_shifter_cv_1432.so
 lib/ladspa/chebstortion_1430.so
@@ -31,18 +33,21 @@ lib/ladspa/gverb_1216.so
 lib/ladspa/hard_limiter_1413.so
 lib/ladspa/harmonic_gen_1220.so
 lib/ladspa/hermes_filter_1200.so
+lib/ladspa/highpass_iir_1890.so
 lib/ladspa/hilbert_1440.so
 lib/ladspa/imp_1199.so
 lib/ladspa/inv_1429.so
 lib/ladspa/karaoke_1409.so
 lib/ladspa/lcr_delay_1436.so
 lib/ladspa/lookahead_limiter_1435.so
+lib/ladspa/lowpass_iir_1891.so
 lib/ladspa/matrix_ms_st_1421.so
 lib/ladspa/matrix_spatialiser_1422.so
 lib/ladspa/matrix_st_ms_1420.so
 lib/ladspa/mbeq_1197.so
 lib/ladspa/mod_delay_1419.so
 lib/ladspa/multivoice_chorus_1201.so
+lib/ladspa/notch_iir_1894.so
 lib/ladspa/phasers_1217.so
 lib/ladspa/pitch_scale_1193.so
 lib/ladspa/pitch_scale_1194.so
@@ -72,6 +77,7 @@ lib/ladspa/valve_1209.so
 lib/ladspa/valve_rect_1405.so
 lib/ladspa/wave_terrain_1412.so
 lib/ladspa/zm1_1428.so
+share/ladspa/rdf/swh-aux.rdf
 share/ladspa/rdf/swh-plugins.rdf
 share/locale/en_GB/LC_MESSAGES/swh-plugins.mo
 @unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true

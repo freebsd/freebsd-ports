@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -31,5 +31,7 @@ post-patch:
 		 s|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
 		 s|\\\$${top_builddir}/intl/libintl.a|-lintl|g ' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#include <bits/nan.h>||g' \
+		${WRKSRC}/gverb/gverb-test.c
 
 .include <bsd.port.mk>
