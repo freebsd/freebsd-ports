@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/06 15:28:33 peter Exp $
+# $Id: Makefile,v 1.2 1997/01/07 06:46:45 asami Exp $
 #
 
 DISTNAME=	nntpcache-1.0.1
@@ -13,6 +13,15 @@ MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/
 MAINTAINER=	nntpcache@nntpcache.org
 
 GNU_CONFIGURE=	TRUE
+CONFIGURE_ARGS+=	--localstatedir=/var/spool
 MAN8=		nntpcache.8
+
+post-configure:
+	@sed -e "s:%%PREFIX%%:${PREFIX}:g"  \
+		${FILESDIR}/nntpcached.rc > ${WRKSRC}/nntpcached.sh
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/nntpcached.sh ${PREFIX}/etc/rc.d
+	@${RM} ${PREFIX}/etc/nntpcache/*.bak
 
 .include <bsd.port.mk>
