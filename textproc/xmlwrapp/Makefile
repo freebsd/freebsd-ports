@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlwrapp
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://pmade.org/pjones/software/xmlwrapp/download/
 
