@@ -7,20 +7,22 @@
 
 PORTNAME=	skim
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	http://freedesktop.org/~cougar/skim/downloads/
 
 MAINTAINER=	gaoj@cpsc.ucalgary.ca
 COMMENT=	An input method platform based on SCIM library and KDE/QT
 
-LIB_DEPENDS=	scim-1.0.3:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	scim-1.0.4:${PORTSDIR}/textproc/scim
 
 USE_KDELIBS_VER=3
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CFLAGS="-D__STDC_ISO_10646__" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 pre-configure:

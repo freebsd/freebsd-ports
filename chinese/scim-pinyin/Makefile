@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-chinese
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://freedesktop.org/~suzhe/scim-chinese/
 
@@ -21,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
