@@ -51,7 +51,7 @@ PLIST_SUB+=	LIBARTS="@comment "
 .endif
 
 .if defined(WITH_VORBIS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
