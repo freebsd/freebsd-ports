@@ -60,7 +60,7 @@ post-install:
 	cd ${WRKSRC}/input ; \
 	${TAR} -chf - --exclude=out --exclude=CVS --exclude=GNUmakefile . | \
 		${TAR} -xf - -C ${EXAMPLESDIR};\
-	${FIND} ${EXAMPLESDIR} -name "out" | xargs ${RM} -rf ;\
+	${FIND} ${EXAMPLESDIR} -name "out" | xargs ${RM} -rf ;
 .for ii in login profile
 	${INSTALL_SCRIPT} ${WRKSRC}/buildscripts/out/lilypond-${ii} \
 		${EXAMPLESDIR}/scripts
