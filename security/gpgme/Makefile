@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		gpgsm:${PORTSDIR}/security/gnupg-devel
 
 LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error \
-		pth.20:${PORTSDIR}/devel/pth
+		pth:${PORTSDIR}/devel/pth
 
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
@@ -31,12 +31,15 @@ CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 	
 INFO=	gpgme
 
+.include <bsd.port.pre.mk>
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 					${WRKSRC}/${CONFIGURE_SCRIPT} \
 					${WRKSRC}/gpgme/Makefile.in \
 					${WRKSRC}/gpgme/gpgme-config.in
-	@${REINPLACE_CMD} -e 's|@RUN_GPG_TESTS_TRUE@tests = tests|@RUN_GPG_TESTS_TRUE@tests =|g' \
-					${WRKSRC}/Makefile.in
+.if ${OSVERSION} < 503100 || defined(PTHREAD_LIBS) && ${PTHREAD_LIBS} != "-pthread"
+	@${REINPLACE_CMD} -e 's|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la|t_thread1_LDADD = ../../gpgme/libgpgme-pthread.la -lpthread|g' \
+					${WRKSRC}/tests/gpg/Makefile.in
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
