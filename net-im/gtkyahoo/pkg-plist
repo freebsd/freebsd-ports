@@ -1,11 +1,17 @@
 bin/gtkyahoo
+bin/libyahoo-config
+include/libyahoo/libyahoo.h
+include/libyahoo/libyahoo-debug.h
+include/libyahoo/libyahoo-proto.h
+lib/libyahoo.a
 libexec/gtkyahoo-sound-handler
+share/gtkyahoo/sample.gtkyahoorc
+share/gtkyahoo/simple.gtkyahoorc
 share/gtkyahoo/sounds/beep.au
 share/gtkyahoo/sounds/logoff.au
 share/gtkyahoo/sounds/logon.au
 share/gtkyahoo/sounds/receive.au
 share/gtkyahoo/sounds/send.au
+@dirrm include/libyahoo
 @dirrm share/gtkyahoo/sounds
-share/gtkyahoo/sample.gtkyahoorc
-share/gtkyahoo/simple.gtkyahoorc
 @dirrm share/gtkyahoo
