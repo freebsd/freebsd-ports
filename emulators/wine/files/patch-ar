@@ -4,25 +4,25 @@
 *** 2616,2620 ****
   ; return 0; }
   EOF
-! if { (eval echo configure:2993: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+! if { (eval echo configure:3304: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_extern_prefix="yes"
 --- 2616,2620 ----
   ; return 0; }
   EOF
-! if { (eval echo configure:2993: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
+! if { (eval echo configure:3304: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_extern_prefix="yes"
 ***************
 *** 2657,2661 ****
   ; return 0; }
   EOF
-! if { (eval echo configure:3034: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+! if { (eval echo configure:3345: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_asm_string="yes"
 --- 2657,2661 ----
   ; return 0; }
   EOF
-! if { (eval echo configure:3034: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
+! if { (eval echo configure:3345: \"$ac_link\") 1>&5; (eval $ac_link) </dev/null 2>&5; } && test -s conftest; then
     rm -rf conftest*
     ac_cv_c_asm_string="yes"
