@@ -10,6 +10,7 @@ export OS_LIBS="%%PTHREAD_LIBS%%"
 export CFLAGS="%%CFLAGS%%"
 export CXXFLAGS="%%CXXFLAGS%%"
 
+ac_add_options  --enable-single-profile
 ac_add_options  --disable-svg
 ac_add_options  --disable-ldap
 ac_add_options  --disable-mailnews
