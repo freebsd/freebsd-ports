@@ -20,6 +20,7 @@ lib/libskadns.a
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/service/log/run
 %%EXAMPLESDIR%%/service/run
+@dirrm include/skadns
 @dirrm %%EXAMPLESDIR%%/service/log
 @dirrm %%EXAMPLESDIR%%/service
 @dirrm %%EXAMPLESDIR%%

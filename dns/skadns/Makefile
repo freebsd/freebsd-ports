@@ -7,6 +7,7 @@
 
 PORTNAME=	skadns
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	dns devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
