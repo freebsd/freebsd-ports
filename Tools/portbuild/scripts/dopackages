@@ -19,7 +19,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-nodummy] [-ftp] branch date"
+  echo "usage: [-nobuild] [-nocdrom] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-noportscvs] [-norestr] [-plistcheck] [-nodummy] [-ftp] branch date"
   errorexit 1
 }
 
