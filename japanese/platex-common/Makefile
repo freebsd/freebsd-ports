@@ -3,18 +3,17 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.10 1996/11/02 05:28:19 max Exp $
+# $Id: Makefile,v 1.11 1996/11/07 14:52:26 max Exp $
 #
 
 DISTNAME=	platex2e
 PKGNAME=	jp-platex2e-96.03
-CATEGORIES+=	japanese print
+CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1996-03-05/ \
 		ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
 		ftp://ftp.riken.go.jp/pub/tex-archive/systems/knuth/lib/ 
 DISTFILES=	base-9512.tar.gz hyphen.tex.gz lib-6.9.tar.gz
-EXTRACT_ONLY=	base-9512.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
@@ -22,6 +21,7 @@ BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
 
 WRKSRC=		${WRKDIR}/9603
+EXTRACT_ONLY=	base-9512.tar.gz
 
 pre-fetch:
 .if !defined(KANJI-CODE)

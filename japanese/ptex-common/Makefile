@@ -3,12 +3,12 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.11 1996/11/02 20:23:57 max Exp $
+# $Id: Makefile,v 1.12 1996/11/07 14:49:57 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
 PKGNAME=	jp-ptex-2.1.4
-CATEGORIES+=	japanese print
+CATEGORIES=	japanese print
 MASTER_SITES=			ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
 		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ \
@@ -21,14 +21,14 @@ MASTER_SITES=			ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
 
 DISTFILES=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		web2c.kpathsea-2.6.help xdvik-18f.tar.gz lib-6.9.tar.gz
-EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
-		xdvik-18f.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/kpathsea-2.6
 STRIP=		# some shell scripts
+EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
+		xdvik-18f.tar.gz
 
 BINARIES=kpsewhich dvicopy dvitype pdvitype gftodvi gftopk \
 	mft pktogf pktype vftovp vptovf gftype pltotf tftopl initex \
