@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.5 1995/04/11 01:18:49 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/22 11:30:05 asami Exp $
 #
 
 DISTNAME=	eispack
@@ -11,6 +11,7 @@ PKGNAME=	eispack-1.0
 
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 
+CATEGORIES+=	math
 MASTER_SITES=	ftp://netlib.att.com/netlib/eispack/
 .if defined(MASTER_SITE_OVERRIDE)
 MASTER_SITES:= ${MASTER_SITE_OVERRIDE}/eispack/
@@ -43,4 +44,3 @@ pre-extract:
 	chmod +x scripts/uncomp
 
 .include <bsd.port.mk>
-
