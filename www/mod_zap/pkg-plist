@@ -9,6 +9,8 @@ share/mod_zap/gils-display-f.zap
 share/mod_zap/search.html
 share/mod_zap/simple.html
 share/mod_zap/simple.zap
+share/mod_zap/testutf8.zap
 share/mod_zap/thesaurus.zap
 share/mod_zap/try.html
+share/mod_zap/wincgi.html
 @dirrm share/mod_zap
