@@ -450,6 +450,7 @@
     SUBDIR += uisp
     SUBDIR += understand_c
     SUBDIR += ups-debug
+    SUBDIR += varconf
     SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vtcl
