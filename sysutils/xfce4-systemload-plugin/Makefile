@@ -8,7 +8,9 @@
 PORTNAME=	xfce4-systemload-plugin
 PORTVERSION=	0.3.4
 CATEGORIES=	sysutils xfce
-MASTER_SITES=	http://download.berlios.de/xfce-goodies/
+MASTER_SITES=	http://download.berlios.de/xfce-goodies/ \
+		http://matt.nerim.net/xfce-goodies/ \
+		http://xfce.org/~kelnos/mirrors/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	thorsten.greiner@web.de
