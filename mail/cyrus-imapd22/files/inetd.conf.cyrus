@@ -1,6 +1,6 @@
 #
 # Example entry for inetd.conf for the Cyrus IMAP server.
-# $Id$
+# $Id: inetd.conf.cyrus,v 1.1 1999/05/10 02:31:20 stb Exp $
 #
 # Replace /usr/local with the path where you've installed the package.
 #
@@ -8,5 +8,5 @@
 imap4	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/imapd	imapd
 #
 # To be able to access the IMAP mailbox by POP-3, use this line.
-pop3	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/pop3d	imapd
+pop3	stream	tcp	nowait	cyrus	/usr/local/cyrus/bin/pop3d	pop3d
 #
