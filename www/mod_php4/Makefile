@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.17 1996/08/11 14:49:21 markm Exp $
+# $Id: Makefile,v 1.18 1996/10/26 18:49:52 markm Exp $
 #
 
 DISTNAME=       apache_1.1.1
@@ -25,7 +25,7 @@ MD5_FILE=	${FILESDIR}/md5.SSL
 PATCHDIR=	${.CURDIR}/patches.SSL
 PKGDIR=		${.CURDIR}/pkg.SSL
 CONFIGURE_SCRIPT=	configure.SSL
-#DEPENDS=	${PORTSDIR}/security/SSLeay
+DEPENDS=	${PORTSDIR}/security/SSLeay
 
 post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/${SSL_EXTRAS}
