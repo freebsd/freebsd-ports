@@ -318,6 +318,7 @@
     SUBDIR += pine4
     SUBDIR += pm-lib
     SUBDIR += pmail
+    SUBDIR += policyd
     SUBDIR += pop-before-smtp
     SUBDIR += pop3gwd
     SUBDIR += pop3lite

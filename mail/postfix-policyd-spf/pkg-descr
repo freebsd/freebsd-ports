@@ -1,0 +1,7 @@
+This is a C port of Meng Wong's policyd for Postfix. The original
+code is available from http://spf.pobox.com/postfix-policyd.txt.
+It implements SPF for postfix, as a policy daemon.
+
+WWW: http://www.libspf2.org/
+
+Marcus Grando <marcus@corp.grupos.com.br>
