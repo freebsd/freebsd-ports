@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Template/Plugin/Class.pm
+@unexec rmdir %D/%%SITE_PERL%%/Template/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true
