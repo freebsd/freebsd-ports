@@ -89,7 +89,7 @@ share/xvile/vile/perl/search.pm
 share/xvile/vile/perl/shell.pm
 share/xvile/vile/perl/spell.pm
 share/xvile/vile/perl/winops.pm
-@unexec rm -f %D/share/xvile/vile/.vilemenu
+@unexec rm -f %D/share/xvile/vile/vilemenu.rc
 share/xvile/vile/color-ls.rc
 share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.2u
+PORTVERSION=	9.2v
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -34,7 +34,8 @@ PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2r.patch.gz \
 		vile-9.2s.patch.gz \
 		vile-9.2t.patch.gz \
-		vile-9.2u.patch.gz
+		vile-9.2u.patch.gz \
+		vile-9.2v.patch.gz
 
 MAINTAINER=	gj@freebsd.org
 
@@ -73,6 +74,7 @@ pre-configure:
 .if defined(WITH_MENUS)
 CONFIGURE_ARGS+= --with-screen=Xaw
 .if defined(WITH_XAW3D)
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+= --with-Xaw3d
 .endif
 .else
