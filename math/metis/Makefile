@@ -17,27 +17,19 @@ CONFLICTS=	metis-edf-*
 
 ALL_TARGET=
 
+PROGRAMS=	graphchk kmetis mesh2dual mesh2nodal	\
+		oemetis onmetis partnmesh partdmesh pmetis
+
 do-install:
-	$(INSTALL_PROGRAM) $(WRKSRC)/pmetis	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/kmetis	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/oemetis	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/onmetis	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/partnmesh	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/partdmesh	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/mesh2nodal	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/mesh2dual	$(PREFIX)/bin
-	$(INSTALL_PROGRAM) $(WRKSRC)/graphchk	$(PREFIX)/bin
-	$(INSTALL_DATA) $(WRKSRC)/libmetis.a $(PREFIX)/lib
-	${MKDIR} $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/defs.h    $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/macros.h  $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/metis.h   $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/proto.h   $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/rename.h  $(PREFIX)/include/metis
-	$(INSTALL_DATA) $(WRKSRC)/Lib/struct.h  $(PREFIX)/include/metis
-.if !defined(NOPORTDOCS)
-	${MKDIR} $(PREFIX)/share/doc/METIS
-	$(INSTALL_DATA) ${WRKSRC}/Doc/manual.ps $(PREFIX)/share/doc/METIS
+.for p in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin
+.endfor
+	@${MKDIR} ${PREFIX}/include/metis
+	${INSTALL_DATA} ${WRKSRC}/Lib/*.h    ${PREFIX}/include/metis
+	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
+.ifndef NOPORTDOCS
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/manual.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

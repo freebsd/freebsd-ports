@@ -14,7 +14,7 @@
 --- 1,9 ----
   
   # Which compiler to use
-! CC ?= gcc
+! CC ?= cc
   
   # What optimization level to use
 ! OPTFLAGS += -O2 

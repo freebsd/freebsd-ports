@@ -1,12 +1,12 @@
-bin/pmetis
+bin/graphchk
 bin/kmetis
+bin/mesh2dual
+bin/mesh2nodal
 bin/oemetis
 bin/onmetis
-bin/partnmesh
 bin/partdmesh
-bin/mesh2nodal
-bin/mesh2dual
-bin/graphchk
+bin/partnmesh
+bin/pmetis
 lib/libmetis.a
 include/metis/defs.h
 include/metis/macros.h
@@ -14,6 +14,6 @@ include/metis/metis.h
 include/metis/proto.h
 include/metis/rename.h
 include/metis/struct.h
-%%PORTDOCS%%share/doc/METIS/manual.ps
-%%PORTDOCS%%@dirrm share/doc/METIS
 @dirrm include/metis
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
