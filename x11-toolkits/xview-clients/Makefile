@@ -6,6 +6,8 @@ NO_EXTRACT=     yes
 PREFIX=		${X11BASE}
 #USE_IMAKE=	yes
 
+fetch:
+
 depend:
 	(cd $(WRKSRC)/..; $(MAKE) SUBDIRS=clients depend)
 
