@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:  sfio
 # Version required:	1999
 # Date created: 	8 November 1997
@@ -12,12 +13,12 @@ CATEGORIES=	devel
 #Users must register with AT&T before downloading tarball.
 #MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
 EXTRACT_SUFX=	.src.unix.cpio
+
+MAINTAINER=	obrien@FreeBSD.org
+
 EXTRACT_CMD=	cpio
 EXTRACT_BEFORE_ARGS=	-idF
 EXTRACT_AFTER_ARGS=	# empty
-
-MAINTAINER=	ports@FreeBSD.org
-
 NO_WRKSUBDIR=	yes
 IS_INTERACTIVE=	yes
 MAN1=		iffe.1
