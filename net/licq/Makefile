@@ -28,7 +28,8 @@ CONFIGURE_ARGS+=--program-transform-name=s,y,y,
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=--enable-socks5
 CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
