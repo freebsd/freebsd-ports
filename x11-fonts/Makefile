@@ -12,6 +12,7 @@
     SUBDIR += bitmap-fonts
     SUBDIR += etlfonts
     SUBDIR += freefonts
+    SUBDIR += geminifonts
     SUBDIR += getbdf
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
