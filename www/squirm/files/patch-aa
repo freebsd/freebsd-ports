@@ -1,5 +1,5 @@
---- Makefile.real.orig	Wed Mar 11 02:23:51 1998
-+++ Makefile.real	Thu Jun 17 18:13:00 1999
+--- Makefile.real.orig	Wed Mar 11 10:23:51 1998
++++ Makefile.real	Tue Jun 29 15:21:37 1999
 @@ -1,31 +1,31 @@
  # Makefile for Squirm
  #
@@ -36,9 +36,9 @@
 -			/usr/local/squirm/etc
 -			install -m 755 -o root -g root --strip squirm /usr/local/squirm/bin
 +	install -c -m 755 -o root -g wheel -d $(PREFIX)/squirm
-+	install -c -m 770 -o root -g wheel -d $(PREFIX)/etc/squirm
-+	install -c -m 750 -o nobody -g nogroup -d $(PREFIX)/squirm/logs
-+	install -c -m 660 -o root -g nogroup squirm.local.dist squirm.patterns.dist \
++	install -c -m 750 -o root -g $(SQUID_GID) -d $(PREFIX)/etc/squirm
++	install -c -m 750 -o $(SQUID_UID) -g $(SQUID_GID) -d $(PREFIX)/squirm/logs
++	install -c -m 640 -o root -g $(SQUID_GID) squirm.local.dist squirm.patterns.dist \
 +		$(PREFIX)/etc/squirm
 +	install -c -m 755 -o root -g wheel --strip squirm $(PREFIX)/bin
  			
