@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Pager
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
-COMMENT=	PEAR Data paging class
+COMMENT=	PEAR data paging class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
