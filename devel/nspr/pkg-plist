@@ -1,6 +1,5 @@
 include/nspr/md/_aix.h
 include/nspr/md/_aix32.cfg
-include/nspr/md/_aix32in6.cfg
 include/nspr/md/_aix64.cfg
 include/nspr/md/_beos.cfg
 include/nspr/md/_beos.h
