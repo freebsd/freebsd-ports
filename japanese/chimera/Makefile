@@ -3,7 +3,7 @@
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.8 1998/09/05 00:47:04 max Exp $
+# $Id: Makefile,v 1.9 1998/10/16 01:11:39 jseger Exp $
 #
 
 DISTNAME=	chimera-1.65
@@ -16,7 +16,7 @@ PATCHFILES=	chimera-1.65-kanji.patch
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BROKEN_ELF=	yes
+BROKEN=		build
 
 USE_IMAKE=		yes
 PATCH_DIST_STRIP=	-p1
