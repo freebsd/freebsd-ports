@@ -594,6 +594,7 @@ lib/nessus/plugins/nmap_wrapper.nes
 lib/nessus/plugins/nntp_info.nasl
 lib/nessus/plugins/nntpserver_detect.nasl
 lib/nessus/plugins/no404.nasl
+lib/nessus/plugins/nortel_annex_default_pass.nasl
 lib/nessus/plugins/nortel_cgiproc_dos.nasl
 lib/nessus/plugins/nortel_passport_default_pass.nasl
 lib/nessus/plugins/nortel_pwdless1.nasl
@@ -694,6 +695,7 @@ lib/nessus/plugins/pimp.nasl
 lib/nessus/plugins/ping_asp.nasl
 lib/nessus/plugins/ping_host.nasl
 lib/nessus/plugins/piranha.nasl
+lib/nessus/plugins/platinum_ftp.nasl
 lib/nessus/plugins/plusmail.nasl
 lib/nessus/plugins/pmcrash.nasl
 lib/nessus/plugins/pnserver.nasl
