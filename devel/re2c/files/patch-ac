@@ -1,0 +1,72 @@
+--- dfa.cc.old	Fri Feb  4 15:18:55 2000
++++ dfa.cc	Fri Feb  4 15:22:57 2000
+@@ -109,6 +109,7 @@
+     uint nc = ub - lb;
+     GoTo *goTo = new GoTo[nc];
+     Span *span = new Span[nc];
++    uint j;
+     memset((char*) goTo, 0, nc*sizeof(GoTo));
+     tail = &head;
+     head = NULL;
+@@ -123,7 +124,7 @@
+ 	uint nGoTos = 0;
+ 
+ 	s->rule = NULL;
+-	for(iP = s->kernel; i = *iP; ++iP){
++	for(iP = s->kernel; (i = *iP) != NULL; ++iP){
+ 	    if(i->i.tag == CHAR){
+ 		for(Ins *j = i + 1; j < (Ins*) i->i.link; ++j){
+ 		    if(!(j->c.link = goTo[j->c.value - lb].to))
+@@ -136,7 +137,7 @@
+ 	    }
+ 	}
+ 
+-	for(uint j = 0; j < nGoTos; ++j){
++	for(j = 0; j < nGoTos; ++j){
+ 	    GoTo *go = &goTo[goTo[j].ch - lb];
+ 	    i = (Ins*) go->to;
+ 	    for(cP = work; i; i = (Ins*) i->c.link)
+@@ -169,7 +170,7 @@
+ 
+ DFA::~DFA(){
+     State *s;
+-    while(s = head){
++    while((s = head) != NULL){
+ 	head = s->next;
+ 	delete s;
+     }
+@@ -185,11 +186,12 @@
+ 
+ State *DFA::findState(Ins **kernel, uint kCount){
+     Ins **cP, **iP, *i;
++	State *s;
+ 
+     kernel[kCount] = NULL;
+ 
+     cP = kernel;
+-    for(iP = kernel; i = *iP; ++iP){
++    for(iP = kernel; (i = *iP) != NULL; ++iP){
+ 	 if(i->i.tag == CHAR || i->i.tag == TERM){
+ 	     *cP++ = i;
+ 	} else {
+@@ -199,9 +201,9 @@
+     kCount = cP - kernel;
+     kernel[kCount] = NULL;
+ 
+-    for(State *s = head; s; s = s->next){
++    for(s = head; s; s = s->next){
+ 	 if(s->kCount == kCount){
+-	     for(iP = s->kernel; i = *iP; ++iP)
++	     for(iP = s->kernel; (i = *iP) != NULL; ++iP)
+ 		 if(!isMarked(i))
+ 		     goto nextState;
+ 	     goto unmarkAll;
+@@ -218,7 +220,7 @@
+     toDo = s;
+ 
+ unmarkAll:
+-    for(iP = kernel; i = *iP; ++iP)
++    for(iP = kernel; (i = *iP) != NULL; ++iP)
+ 	 unmark(i);
+ 
+     return s;

@@ -1,0 +1,28 @@
+--- main.c.old	Thu Feb  3 15:39:27 2000
++++ main.c	Thu Feb  3 16:52:18 2000
+@@ -160,8 +160,8 @@
+ 	exit (EX_USAGE);
+ }
+ 
+ 
+-void main(int argc, char *argv[]) {
++int main(int argc, char *argv[]) {
+ 	struct sigaction	sv;
+ 	u_long			net=0, mask=0, ns=0;
+ 	char 			*zone = "*";
+@@ -209,7 +208,7 @@
+ 	openlog ("macipgw", LOG_PID | gDebug ? LOG_PERROR : 0, LOG_DAEMON);
+ 
+ 	sv.sa_handler = die;
+-	sv.sa_mask = 0;
++	sigemptyset(&(sv.sa_mask));
+ 	sv.sa_flags = 0;
+ 	if (sigaction( SIGTERM, &sv, 0 ) < 0 ) {
+ 		syslog( LOG_ERR, "sigaction: %m" );
+@@ -243,5 +242,6 @@
+ 	server();
+ 
+ 	die (0);
++	return(0);
+ }
+ 

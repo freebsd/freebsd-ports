@@ -1,0 +1,29 @@
+--- editor/bw_window.C.orig	Mon May  8 16:15:00 1995
++++ editor/bw_window.C	Thu Feb  3 21:29:23 2000
+@@ -24,6 +24,8 @@
+ #include <assert.h>
+ #include <stdlib.h>
+ 
++extern "C" int XShmGetEventBase(Display *);
++
+ BwWindow::BwWindow(UI_Globals *parent,world_c x,world_c y,unsigned int height,
+ 		   unsigned int width, void (*cb)(void) )
+ : YUV_Window(parent,x,y,height,width,this, ButtonPressMask |
+@@ -143,7 +145,7 @@
+ 			  height,8,0);
+       ximage->byte_order = MSBFirst;
+       ximage->bitmap_bit_order = MSBFirst;
+-      ximage->data = new byte[ximage->bytes_per_line*height];
++      ximage->data = (char *) new byte[ximage->bytes_per_line*height];
+       assert(ximage->data!=NULL);
+ #ifdef SH_MEM
+     }
+@@ -213,7 +215,7 @@
+ {
+   assert(Frame.width()==ximage->width);
+   assert(Frame.height()==ximage->height);
+-  DitherImage(Frame.lum_ptr(),ximage->data,ximage->height,ximage->width);
++  DitherImage(Frame.lum_ptr(),(unsigned char*)ximage->data,ximage->height,ximage->width);
+   if(nicely)
+     {
+       XEvent Event;

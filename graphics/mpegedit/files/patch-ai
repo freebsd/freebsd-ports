@@ -1,0 +1,65 @@
+--- ui/main_win.C.orig	Mon May  8 16:16:44 1995
++++ ui/main_win.C	Thu Feb  3 21:39:37 2000
+@@ -137,8 +137,8 @@
+ // Call XWMGeometry.  It will decide the actual geometry of the window
+ 
+   int bitmask = XWMGeometry(DispPointer(),DefaultScreen(DispPointer()), geom,
+-			    def_geom,BorderWidth,&xsh,&main_x,&main_y,
+-			    &main_width,&main_height,&main_gravity);
++			    def_geom,BorderWidth,&xsh,(int *) &main_x,(int *) &main_y,
++			    (int *) &main_width, (int *) &main_height,&main_gravity);
+ 
+ // bitmask will hold the values that need to be changed to reflect the
+ // suggestions made by XWMGeometry.  This will be done by the window
+@@ -167,7 +167,7 @@
+ 
+ // Have a little chat with the window manager....
+ 
+-  win_name.value = name;
++  win_name.value = (unsigned char *) name;
+   win_name.encoding = XA_STRING;
+   win_name.format = 8;
+   win_name.nitems = strlen(name);
+@@ -276,6 +276,7 @@
+ 
+ MainWindow::status MainWindow::event_handler(XEvent *Event)
+ {
++#if 0
+   switch(Event->type)
+     {
+     case Expose:
+@@ -309,6 +310,7 @@
+     default:
+       break;
+     }
++#endif
+   return(okay);
+ }
+ 
+@@ -348,7 +350,7 @@
+   Window root;
+   unsigned int x,y,width,height;
+   unsigned int bd_width, depth;
+-  XGetGeometry(DispPointer(),WinId(),&root,&x,&y,&width,&height,
++  XGetGeometry(DispPointer(),WinId(),&root,(int *) &x,(int *) &y,&width,&height,
+ 	       &bd_width,&depth);
+   return depth;
+ }
+@@ -359,7 +361,7 @@
+   Window root2;
+   unsigned int x,y,width,height;
+   unsigned int bd_width, depth;
+-  XGetGeometry(DispPointer(),root,&root2,&x,&y,&width,&height,
++  XGetGeometry(DispPointer(),root,&root2,(int *) &x,(int *) &y,&width,&height,
+ 	       &bd_width,&depth);
+   return height;
+ }
+@@ -370,7 +372,7 @@
+   Window root2;
+   unsigned int x,y,width,height;
+   unsigned int bd_width, depth;
+-  XGetGeometry(DispPointer(),root,&root2,&x,&y,&width,&height,
++  XGetGeometry(DispPointer(),root,&root2,(int *) &x, (int *) &y,&width,&height,
+ 	       &bd_width,&depth);
+   return width;
+ }

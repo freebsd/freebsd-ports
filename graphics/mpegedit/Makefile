@@ -16,7 +16,7 @@ MAINTAINER=	erich@FreeBSD.org
 BUILD_DEPENDS=	${X11BASE}/include/pbmplus.h:${PORTSDIR}/graphics/netpbm
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} > 400002
+.if ${OSVERSION} > 400002 && ${OSVERSION} < 400012
 BROKEN=		won\'t build with egcs compiler
 .endif
 

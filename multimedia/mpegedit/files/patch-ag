@@ -1,0 +1,47 @@
+--- editor/tiny_window.C.orig	Mon May  8 16:09:07 1995
++++ editor/tiny_window.C	Thu Feb  3 21:33:57 2000
+@@ -24,6 +24,8 @@
+ #include <assert.h>
+ #include <stdlib.h>
+ 
++extern "C" int XShmGetEventBase(Display *);
++
+ TinyWindow::TinyWindow(UI_Globals *parent,world_c x,world_c y,
+ 		       unsigned int height,unsigned int width,
+ 		       void (*cb)(void) )
+@@ -137,7 +139,7 @@
+       
+       ximage=XCreateImage(DispPointer(),None,8,ZPixmap,0,&dummy,
+ 			  width/2,height/2,8,0);
+-      ximage->data = new byte[ximage->bytes_per_line*height/2];
++      ximage->data = (char *) new byte[ximage->bytes_per_line*height/2];
+       assert(ximage->data!=NULL);
+ #ifdef SH_MEM
+     }
+@@ -154,7 +156,7 @@
+   for(int j = 0; j < GRAY_RANGE; j ++)
+     {
+       tmp_pixel = col_array[j];
+-      XFreeColors(DispPointer(), Colourmap, &tmp_pixel, 1, 0);
++      XFreeColors(DispPointer(), Colourmap, (unsigned long int *) &tmp_pixel, 1, 0);
+     }
+   XFreeGC(DispPointer(),gc);
+ 
+@@ -222,7 +224,7 @@
+ 	  for(int j = 0; j < i; j ++)
+ 	    {
+ 	      tmp_pixel = col_array[j];
+-	      XFreeColors(DispPointer(), Colourmap, &tmp_pixel, 1, 0);
++	      XFreeColors(DispPointer(), Colourmap, (unsigned long int*) &tmp_pixel, 1, 0);
+ 	    }
+ 	  cerr << "Unable to allocate the colours required to make the\n"
+ 	       << "monochrome window.  Please re-run with the option "
+@@ -254,7 +256,7 @@
+ {
+   assert(Frame.width()/2==ximage->width);
+   assert(Frame.height()/2==ximage->height);
+-  DitherImage(Frame.lum_ptr(),ximage->data,ximage->height,ximage->width);
++  DitherImage(Frame.lum_ptr(),(unsigned char *)ximage->data,ximage->height,ximage->width);
+   if(nicely)
+     {
+       XEvent Event;
