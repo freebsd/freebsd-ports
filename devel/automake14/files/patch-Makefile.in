@@ -1,5 +1,18 @@
 --- Makefile.in.orig	Sun Jul 15 13:23:30 2001
-+++ Makefile.in	Mon Mar 18 21:47:17 2002
++++ Makefile.in	Sun Oct 13 08:44:55 2002
+@@ -34,9 +34,9 @@
+ 
+ DESTDIR =
+ 
+-pkgdatadir = $(datadir)/@PACKAGE@
+-pkglibdir = $(libdir)/@PACKAGE@
+-pkgincludedir = $(includedir)/@PACKAGE@
++pkgdatadir = $(datadir)/@PACKAGE@14
++pkglibdir = $(libdir)/@PACKAGE@14
++pkgincludedir = $(includedir)/@PACKAGE@14
+ 
+ top_builddir = .
+ 
 @@ -69,7 +69,7 @@
  SUBDIRS = . m4 tests
  

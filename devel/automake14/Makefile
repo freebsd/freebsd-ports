@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -16,32 +16,40 @@ DISTNAME=	automake-1.4-p5
 MAINTAINER=	ports@geeksrus.net
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL5:C/[0-9.]//g}
-CONFIGURE_ARGS=	--program-suffix=14 --datadir=${PREFIX}/share/automake14
+CONFIGURE_ENV=	PERL=${PERL5} # :C/[0-9.]//g}
+CONFIGURE_ARGS=	--program-suffix=14
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
+# WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-.error You have `USE_AUTOMAKE' or `USE_AUTOMAKE_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+pre-everything:
+	@${ECHO} ===========================================================
+	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
+	@${ECHO} "defined either in environment or in make(1) arguments."
+	@${ECHO} "Please undefine them and try again."
+	@${ECHO} ===========================================================
+	@${FALSE}
+.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 post-patch:
-	@-${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi
 	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi
+	@${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi >/dev/null 2>&1 || true
 
 pre-configure:
 	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
 		${WRKSRC}/aclocal.in
 
 post-install:
-	@-${RM} -fr ${PREFIX}/libexec/automake14
-	@${MKDIR} ${PREFIX}/libexec/automake14
+	@-${RM} -fr ${DESTDIR}${PREFIX}/libexec/automake14
+	@${MKDIR} ${DESTDIR}${PREFIX}/libexec/automake14
 .for i in aclocal automake
-	@${LN} -s ../../bin/${i}14 ${PREFIX}/libexec/automake14/${i}
+	@${LN} -s ../../bin/${i}14 \
+		${DESTDIR}${PREFIX}/libexec/automake14/${i}
 .endfor
-	@install-info ${PREFIX}/info/automake14.info ${PREFIX}/info/dir
+	@install-info ${DESTDIR}${PREFIX}/info/automake14.info \
+		${DESTDIR}${PREFIX}/info/dir
 
 .include <bsd.port.mk>
