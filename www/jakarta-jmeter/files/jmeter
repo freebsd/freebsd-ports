@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+%%JAVA%% -jar %%APP_HOME%%/bin/ApacheJMeter.jar "$@"

@@ -7,7 +7,7 @@
 
 PORTNAME=	jmeter
 PORTVERSION=	1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-jmeter/release/v${PORTVERSION}/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -24,7 +24,9 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}
-REPLACE_FILES=	${WRKSRC}/bin/jmeter
+REPLACE_FILES=	${FILESDIR}/jmeter
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${ECHO_CMD} -n ">> Removing unneeded files..."
@@ -58,7 +60,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating symlink ${PREFIX}/bin/jmeter..."
-	@${LN} -s ${APP_HOME}/bin/jmeter ${PREFIX}/bin/jmeter
+	@${LN} -sf ${APP_HOME}/bin/jmeter ${PREFIX}/bin/jmeter
 	@${ECHO_CMD} " [ DONE ]"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
