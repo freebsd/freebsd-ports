@@ -50,6 +50,7 @@ VCHKPWLOC?=	${LOCALBASE}/vpopmail
 
 # End of user variables
 
+USE_PERL5=	yes
 HAS_CONFIGURE=	YES
 
 CONFIGURE_ARGS= \
