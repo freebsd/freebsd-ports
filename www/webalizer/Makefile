@@ -17,10 +17,9 @@ MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
 
 .if !defined(LIB_DEPENDS)
-.if defined(WEBALIZER_WITH_GD2)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
-.else
-LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
+.if defined(WEBALIZER_WITH_GD2) 
+GD_PORT?=	graphics/gd2
 .endif
 .endif
 
@@ -28,6 +27,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+GD_PORT?=	graphics/gd-nox11
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
