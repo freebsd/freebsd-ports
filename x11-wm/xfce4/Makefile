@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-conf-dir=${PREFIX}/etc/xfce \
 
 MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfumed.1 xfglob.1 xfgnome.1 \
 		xfhelp.1 xflock.1 xfmountdev.1 xfmouse.1 xfpager.1 xfprint.1 \
-		xfrun.1 xfsound.1 xfterm.1 xftrash.1 xftree.1 xfwm.1
+		xfrun.1 xfskin.1 xfsound.1 xfterm.1 xftrash.1 xftree.1 xfwm.1
 
 .include <bsd.port.pre.mk>
 
