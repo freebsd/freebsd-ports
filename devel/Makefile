@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.33 1996/10/24 10:47:43 asami Exp $
+# $Id: Makefile,v 1.34 1996/10/24 13:48:24 jfitz Exp $
 #
 
     SUBDIR += SWIG
     SUBDIR += autoconf
     SUBDIR += bcc
+    SUBDIR += boehm-gc
     SUBDIR += cflow
     SUBDIR += cxref
     SUBDIR += dmake
