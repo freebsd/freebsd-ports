@@ -276,10 +276,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <mlist msgid="Pine.SOC.4.61.0501041452540.1114@draco.cus.cam.ac.uk">http://www.exim.org/mail-archives/exim-announce/2005/msg00000.html</mlist>
+      <cvename>CAN-2005-0021</cvename>
+      <cvename>CAN-2005-0022</cvename>
     </references>
     <dates>
       <discovery>2005-01-05</discovery>
       <entry>2005-01-05</entry>
+      <modified>2005-01-09</modified>
     </dates>
   </vuln>
 
