@@ -41,6 +41,7 @@
     SUBDIR += plan
     SUBDIR += sliderule
     SUBDIR += teapot
+    SUBDIR += tuxcards
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
     SUBDIR += xinvest
