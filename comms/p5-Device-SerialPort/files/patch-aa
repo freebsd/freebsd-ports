@@ -6,7 +6,7 @@
  unless (@SERIALS) {
 -	@SERIALS=( "/dev/ttyS1", "/dev/cua01", "/dev/cua/b", "/dev/tty1",
 -		   "/dev/tty.modem" );
-+	@SERIALS=( "/dev/ttyd0", "/dev/cuaa0", "/dev/ucom0", "/dev/ttya", "/dev/ttyb" );
++	@SERIALS=( "/dev/ttyd0", "/dev/cuad0", "/dev/ttyu0", "/dev/cuau0", "/dev/ucom0", "/dev/cuaa0", "/dev/ttya", "/dev/ttyb" );
  	print "(use 'perl Makefile.PL TESTPORT=<DEVICE>' to override this search)\n";
  }
  
