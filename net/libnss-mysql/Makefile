@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libnss-mysql
 
-MAINTAINER=	sheepkiller@culteadsheep.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	NSS module using a MySQL database for backend
 
 GNU_CONFIGURE=	yes
