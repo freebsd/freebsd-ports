@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	isync
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	mail
-MASTER_SITES=	http://www.sigpipe.org/isync/
+MASTER_SITES=	http://www.sigpipe.org:8080/isync/
 
 MAINTAINER=	eivind@FreeBSD.org
 
