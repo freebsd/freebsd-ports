@@ -1,0 +1,28 @@
+*** src/misc.c~	Wed May 26 06:51:17 1993
+--- src/misc.c	Wed Mar 13 23:37:13 1996
+***************
+*** 68,76 ****
+  	HASHBLK *htinstall();		/* install hash table entry */
+  
+! 	if (gets(answerbuf) == NULL)
+  		exit(1);
+  	if (*answerbuf != '\0')
+  		if (htinstall(mdefkey, answerbuf, mdefval, MDEFTABLE) == NULL)
+  			exit(1);
+  }
+  
+--- 68,81 ----
+  	HASHBLK *htinstall();		/* install hash table entry */
+  
+! 	if (fgets(answerbuf, ANSWERBUFSIZE, stdin) == NULL)
+  		exit(1);
+  	if (*answerbuf != '\0')
++ 		{
++ 		char *nlpos = strchr(answerbuf, '\n');
++ 		if (nlpos)
++ 			*nlpos = '\0';
+  		if (htinstall(mdefkey, answerbuf, mdefval, MDEFTABLE) == NULL)
+  			exit(1);
++ 		}
+  }
+  

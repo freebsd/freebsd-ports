@@ -1,0 +1,14 @@
+The mkmf makefile editor creates  program and library  makefiles for the
+make(1) command. Mkmf has the following features:
+
+    - Automatically inserts source and object code file names in
+      makefiles.
+
+    - Provides standard makefile templates for programs and libraries.
+
+    - Allows user-defined makefile templates.
+
+    - Generates included file dependencies for C, C++, Pascal, and Fortran
+      source code
+
+    - Allows arbitrary editing of makefiles with a regular text editor

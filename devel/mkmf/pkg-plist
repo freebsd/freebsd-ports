@@ -1,0 +1,8 @@
+bin/mkmf
+lib/mkmf/C++.L
+lib/mkmf/C++.l
+lib/mkmf/C++.p
+lib/mkmf/C.L
+lib/mkmf/C.l
+lib/mkmf/C.p
+man/man1/mkmf.1.gz

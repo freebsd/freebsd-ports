@@ -1,0 +1,49 @@
+*** Makefile.orig	Tue Nov 26 17:16:37 1991
+--- Makefile	Wed Mar 13 23:38:28 1996
+***************
+*** 1,3 ****
+! INSTALLDIR=	/usr/contrib
+  
+  SUBDIR=		src templates
+--- 1,3 ----
+! INSTALLDIR=	$(PREFIX)
+  
+  SUBDIR=		src templates
+*** src/Makefile.orig	Wed May 26 09:19:57 1993
+--- src/Makefile	Wed Mar 13 23:39:35 1996
+***************
+*** 5,11 ****
+  #CFLAGS=	-O -DUNICOS5 -DINSTALLDIR=\"$(INSTALLDIR)\" # Cray Unicos 5.x
+  
+! CFLAGS	      =	-O -DBSD4X -DINSTALLDIR=\"$(INSTALLDIR)\" # Generic BSD
+  
+! INSTALLDIR=	/usr/contrib
+  
+  PROG=		mkmf
+--- 5,15 ----
+  #CFLAGS=	-O -DUNICOS5 -DINSTALLDIR=\"$(INSTALLDIR)\" # Cray Unicos 5.x
+  
+! #CFLAGS	      =	-O -DBSD4X -DINSTALLDIR=\"$(INSTALLDIR)\" # Generic BSD
+  
+! CFLAGS+=	-DBSD4X -DINSTALLDIR=\"$(INSTALLDIR)\"
+! 
+! INSTALLDIR=	$(PREFIX)
+! BINDIR=		$(INSTALLDIR)/bin
+! MANDIR=		$(INSTALLDIR)/man/man
+  
+  PROG=		mkmf
+*** templates/Makefile~	Tue Nov 26 17:16:50 1991
+--- templates/Makefile	Wed Mar 13 23:42:36 1996
+***************
+*** 10,14 ****
+  		C.p
+  
+! INSTALLDIR=	/usr/contrib
+  
+  MKMFLIB=	${DESTDIR}$(INSTALLDIR)/lib/mkmf
+--- 10,14 ----
+  		C.p
+  
+! INSTALLDIR=	$(PREFIX)
+  
+  MKMFLIB=	${DESTDIR}$(INSTALLDIR)/lib/mkmf
