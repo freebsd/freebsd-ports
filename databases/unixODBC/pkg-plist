@@ -31,15 +31,13 @@ lib/libnn.so.1
 lib/libodbc.a
 lib/libodbc.so
 lib/libodbc.so.1
+lib/libodbccr.a
 lib/libodbccr.so
 lib/libodbccr.so.1
 lib/libodbcdrvcfg1S.so
 lib/libodbcdrvcfg1S.so.1
 lib/libodbcdrvcfg2S.so
 lib/libodbcdrvcfg2S.so.1
-lib/libodbcextras.a
-lib/libodbcextras.so
-lib/libodbcextras.so.1
 lib/libodbcinst.a
 lib/libodbcinst.so
 lib/libodbcinst.so.1
