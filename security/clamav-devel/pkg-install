@@ -1,31 +1,39 @@
 #!/bin/sh
 
-
-if [ "$2" != "PRE-INSTALL" ]; then
-    chown -R clamav:clamav ${PKG_PREFIX}/share/clamav
+if [ -z "${CLAMAVUSER}" ]; then
+	CLAMAVUSER=clamav
 fi
 
-USER=clamav
-GROUP=clamav
+if [ -z "${SPOOLDIR}" ]; then
+	SPOOLDIR=/var/clamd
+fi
 
-if ! pw groupshow "$GROUP" 2>/dev/null 1>&2; then
-	if pw groupadd $GROUP; then
-		echo "===> Added group \"$GROUP\"."
+CLAMAVGROUP=${CLAMAVUSER}
+
+echo "===> Adding user \"${CLAMAVUSER}\" if necessary."
+if ! pw groupshow "${CLAMAVGROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${CLAMAVGROUP}; then
+		echo "===> Added group \"${CLAMAVGROUP}\"."
 	else
-                echo "===> Adding group \"$GROUP\" failed..."
+                echo "===> Adding group \"${CLAMAVGROUP}\" failed..."
+                exit 1
+	fi
+fi
+
+if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
+	if pw useradd ${CLAMAVUSER} -g ${CLAMAVGROUP} -h - \
+		-s "/usr/sbin/nologin" -d "${SPOOLDIR}" \
+		-c "Clam Antivirus"; \
+        then
+                echo "===> Added user \"${CLAMAVUSER}\"."
+        else
+                echo "===> Adding user \"${CLAMAVUSER}\" failed..."
                 exit 1
         fi
 fi
 
-if ! pw usershow "$USER" 2>/dev/null 1>&2; then
-        if pw useradd $USER -g $GROUP -h - \
-                -s "/sbin/nologin" -d "/nonexistent" \
-                -c "Clam Antivirus"; \
-        then
-                echo "===> Added user \"$USER\"."
-        else
-                echo "===> Adding user \"$USER\" failed..."
-                exit 1
-        fi
-fi
+echo "===> Setting permissions..."
+mkdir ${SPOOLDIR}
+chown -R ${CLAMAVUSER}:${CLAMAVGROUP} ${PKG_PREFIX}/share/clamav ${SPOOLDIR}
+
 exit 0

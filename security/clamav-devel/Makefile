@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030829
-PORTREVISION=	1
+PORTVERSION=	20030926
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
@@ -39,6 +38,11 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
+CLAMAVUSER?=	clamav
+SPOOLDIR?=	/var/clamd
+PLIST_SUB+=	SPOOLDIR="${SPOOLDIR}"
+PLIST_SUB+=	CLAMAVUSER="${CLAMAVUSER}"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 510001
@@ -65,14 +69,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
 
-pre-install:
-	@${ECHO} "===>  Creating custom user to run clamav..."
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
-	@${ECHO} "===>  Setting permissions..."
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PREFIX}
 	${INSTALL_SCRIPT} ${WRKSRC}/clamav-clamd.sh \
 		${LOCALBASE}/etc/rc.d/clamav-clamd.sh.sample
 .if defined(WITH_MILTER)
