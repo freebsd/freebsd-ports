@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Sep  4 17:59:26 2001
-+++ configure	Tue Sep  4 18:11:25 2001
-@@ -5667,7 +5667,7 @@
+--- configure.orig	Tue Sep 11 19:38:48 2001
++++ configure	Tue Sep 11 19:38:55 2001
+@@ -5554,7 +5554,7 @@
  
  CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$CPPFLAGS $DB3_CFLAGS"
@@ -12,7 +12,7 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -5741,7 +5741,7 @@
+@@ -5628,7 +5628,7 @@
    echo "configure: failed program was:" >&5
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -21,7 +21,7 @@ $FreeBSD$
  fi
  rm -f conftest*
  
-@@ -5852,7 +5852,7 @@
+@@ -5739,7 +5739,7 @@
  
  echo "$ac_t""$ac_cv_db3_lib_version_match" 1>&6
  if test "$ac_cv_db3_lib_version_match" = no; then
@@ -30,29 +30,7 @@ $FreeBSD$
  fi
  
  CPPFLAGS="$CPPFLAGS_save"
-@@ -6333,8 +6333,8 @@
- fi
- 
- 
--THREADS_LIBS="$PTHREAD_LIB `glib-config --libs gthread`"
--THREADS_CFLAGS="`glib-config --cflags gthread`"
-+THREADS_LIBS="$PTHREAD_LIB `$GLIB_CONFIG --libs gthread`"
-+THREADS_CFLAGS="`$GLIB_CONFIG --cflags gthread`"
- 
- 
- 
-@@ -6894,8 +6894,8 @@
- 	fi
- 
- 
--GLIB_CFLAGS="`glib-config --cflags`"
--GLIB_LIBS="`glib-config --libs`"
-+GLIB_CFLAGS="`$GLIB_CONFIG --cflags`"
-+GLIB_LIBS="`$GLIB_CONFIG --libs`"
- 
- 
- 
-@@ -9415,10 +9415,10 @@
+@@ -9349,10 +9349,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
