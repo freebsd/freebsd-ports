@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	wx_gtk-2.2:${PORTSDIR}/x11-toolkits/wxgtk
+
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
