@@ -1,0 +1,8 @@
+bin/perltidy
+%%PORTDOCS%%share/doc/perltidy/perltidy.html
+%%PORTDOCS%%share/doc/perltidy/perltidy.pod
+%%PORTDOCS%%share/doc/perltidy/perltidy.txt
+%%PORTDOCS%%share/doc/perltidy/tutorial.html
+%%PORTDOCS%%share/doc/perltidy/tutorial.pod
+%%PORTDOCS%%share/doc/perltidy/tutorial.txt
+%%PORTDOCS%%@dirrm share/doc/perltidy
