@@ -3,7 +3,7 @@
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1996/11/12 02:18:53 obrien Exp $
+# $Id: Makefile,v 1.5 1996/11/17 06:12:39 obrien Exp $
 #
 
 DISTNAME=	pbasic-2.0-950813
@@ -26,6 +26,5 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/basic ${PREFIX}/bin/pbasic
 	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${PREFIX}/man/man1/pbasic.1
-.endif
 
 .include <bsd.port.mk>
