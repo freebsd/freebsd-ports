@@ -7,7 +7,8 @@ NB:  A sample configuration file has been installed to %%PREFIX%%/etc as
 to suit the requirements of a particular site (for example in order
 to add song directories).
 
-If you get performance problems, install devel/py-psyco, the "Python
-Specializing Compiler". It should make pydance a lot faster.
+For some reason, MP3 playback seems to be broken here or in
+devel/py-game. Please inform me if you get it working. OggVorbis
+files however should work fine.
 
 --------------------------------------------------------------------------
