@@ -48,7 +48,7 @@ MAN5=	pagesizes.5f typerules.5f hosts.hfaxd.5f xferfaxlog.5f \
 	hylafax-server.5f hylafax-shutdown.5f status.5f tsi.5f
 MAN8=	cqtest.8c choptest.8c dialtest.8c faxabort.8c faxaddmodem.8c \
 	faxadduser.8c faxanswer.8c faxconfig.8c faxdeluser.8c faxmodem.8c \
-	faxstate.8c faxcron.8c faxgetty.8c faxinfo.8c faxlock.8c faxq.8c
+	faxstate.8c faxcron.8c faxgetty.8c faxinfo.8c faxlock.8c faxq.8c \
 	faxqclean.8c faxquit.8c faxrcvd.8c faxsend.8c faxsetup.8c \
 	faxwatch.8c hfaxd.8c mkcover.8c notify.8c pagesend.8c pdf2fax.8c \
 	pollrcvd.8c ps2fax.8c recvstats.8c \
