@@ -4,6 +4,7 @@ bin/burst
 bin/comp
 bin/dist
 bin/flist
+bin/flists
 bin/folder
 bin/folders
 bin/forw
