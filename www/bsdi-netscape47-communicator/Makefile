@@ -7,40 +7,37 @@
 #
 
 PORTNAME=	bsdi-netscape-${BROWSER}
-PORTVERSION=	${BROWSER_VER}
-CATEGORIES=	www
-
-.if !defined(MASTER_SITES)
-MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/english/4.73/unix/unsupported/bsdi21/complete_install/ \
-		ftp://ftp.sunet.se/pub/www/Netscape/communicator/english/4.73/unix/unsupported/bsdi21/complete_install/
-.endif
-
-DISTFILES=	${BROWSER}-v473-export.x86-bsdi-bsd2.tar.gz
 
 MAINTAINER=	trevor@jpj.net
 
-NO_FORTIFY=	"frozen until further notice--http://www.fortify.net/latest_main.html"
-
-RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape-wrapper
-
 ONLY_FOR_ARCHS=	i386
+
+NETSCAPE_DIST_ARCH=	unsupported/bsdi21
+NETSCAPE_DIST_TAG=	x86-bsdi-bsd2
 
 # don't overwrite the FreeBSD port's shell script wrapper in ${PREFIX}/bin
 BROWSER_ARC=	${BROWSER}-bsdi
 
-MASTERDIR=	${.CURDIR}/../netscape4-communicator
-WRKSRC=		${WRKDIR}/${BROWSER}-v473.x86-bsdi-bsd2
-
-BROWSER_VER=	4.73
-#	taken from ,${BLDVERS} in ns-install
-INFILE_HEAD?=	'Communicator,4.73.0.20000502'
-NO_AUTOADMIN=	yes
-
 MAILCAP=	${.CURDIR}/../bsdi-netscape47-communicator/files/mailcap
 NSUBDIR=	lib/netscape-bsdi
 
-PRE_MK_INCLUDED=	yes
 # don't require a.out libraries
 WITHOUT_AOUT=		yes
 
-.include "${MASTERDIR}/Makefile"
+pre-fetch:
+	@${ECHO} "************************************************************"
+	@${ECHO} "None of the Software or underlying information or technology"
+	@${ECHO} "may be downloaded or otherwise exported or re-exported (i)"
+	@${ECHO} "into (or to a national or resident of) Cuba, Iraq, Libya,"
+	@${ECHO} "Sudan, North Korea, Iran, Syria or any other country to"
+	@${ECHO} "which the U.S.  has embargoed goods; or (ii) to anyone on"
+	@${ECHO} "the U.S.  Treasury Department's list of Specially Designated"
+	@${ECHO} "Nationals or the U.S.  Commerce Department's Table of Denial"
+	@${ECHO} "Orders.  By downloading or using the Software, you are"
+	@${ECHO} "agreeing to the foregoing and you are representing and"
+	@${ECHO} "warranting that you are not located in, under the control"
+	@${ECHO} "of, or a national or resident of any such country or on"
+	@${ECHO} "any such list."
+	@${ECHO} "************************************************************"
+
+.include "../netscape47-communicator/Makefile"
