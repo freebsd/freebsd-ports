@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	4.2.1.19
+PORTVERSION=	4.2.1.21
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.uptimes.net/pub/uptimes/ \
-		http://www.uptimes.net/download/ \
-		http://uptimes.atomicvoid.net/
+MASTER_SITES=	http://uptimes.atomicvoid.net/files/ \
+		ftp://ftp.uptimes.net/pub/uptimes/ \
+		http://www.uptimes.net/download/
 
 MAINTAINER=	clefevre@citeweb.net
 

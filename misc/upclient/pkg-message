@@ -19,6 +19,7 @@ You will also have to edit /usr/local/etc/upclient.conf:
 	(WWW: http://www.uptimes.net/bottom.html?show=hosts).
 
   - Interval is the amount of time between each update.
+	(WWW: http://www.uptimes.net/stuff/protocol.html)
 
     Don't set this higher than 10 minutes, or else your host
     won't appear in the list.
