@@ -16,7 +16,7 @@ DIST_SUBDIR=	PEAR
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy parsing of Urls
 
-BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
