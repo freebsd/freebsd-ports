@@ -7,7 +7,7 @@
 
 PORTNAME=	heroes
 PORTVERSION=	0.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCH_SITES=	ftp://heroes.sourceforge.net/pub/heroes/patches/
 #PATCHFILES=	heroes-0.7-errata.patch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jre@vineyard.net
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
@@ -41,7 +41,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii
+CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
 
 MAN6=		heroes.6 heroeslvl.6
 INFO=		heroes
