@@ -7,10 +7,10 @@
 
 PORTNAME=		gcal
 PORTVERSION=		3.01
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	gcal
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	The GNU Gregorian calendar program
@@ -19,20 +19,13 @@ COMMENT=	The GNU Gregorian calendar program
 #
 
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
-
 # required to rebuild info files if needed.
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix="${PREFIX}"
-
+INFO=		gcal
 MAN1=		gcal.1 gcal2txt.1 tcal.1 txt2gcal.1
-
-# Local variables
-#
-
-INSTALL_INFO?=	install-info
 
 # Post-extract
 #
@@ -41,13 +34,5 @@ INSTALL_INFO?=	install-info
 # w/ hacking doc/Makefile.in. so, do nothing and left them.
 # post-extract:
 # 	@${RM} -f ${WRKSRC}/doc/*/${PORTNAME}.info*
-
-# Post-install
-#
-
-post-install: install-info
-
-install-info:
-	@${INSTALL_INFO} ${PREFIX}/info/${PORTNAME}.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
