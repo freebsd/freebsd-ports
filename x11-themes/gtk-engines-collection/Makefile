@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines-collection
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -14,8 +14,6 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-# I intentionally did not put gtk-engines in the list below because
-# this package is uterly buggy.
 RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
 		${THEMESBASE}/libclean.so:${THEMESPORTDIR}/clean-theme-gtk \
 		${THEMESBASE}/libcolorstep.so:${THEMESPORTDIR}/colorstep \
@@ -25,6 +23,8 @@ RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
 		${THEMESBASE}/libgtkbe.so:${THEMESPORTDIR}/gtkbe \
 		${THEMESBASE}/libicegradient.so:${THEMESPORTDIR}/icegradient \
 		${THEMESBASE}/libmac2.so:${THEMESPORTDIR}/gtk-Mac2-theme \
+		${THEMESBASE}/libpixmap.so:${THEMESPORTDIR}/gtk-engines \
+		${THEMESBASE}/libqnx.so:${THEMESPORTDIR}/gtk-qn-x11-theme \
 		${THEMESBASE}/libstep.so:${THEMESPORTDIR}/gtkstep \
 		${THEMESBASE}/libsteppastel.so:${THEMESPORTDIR}/gtkstep-pastel \
 		${THEMESBASE}/libthinice.so:${THEMESPORTDIR}/thinice \
