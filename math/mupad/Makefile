@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mupad.de/MuPAD/distrib/unix/ \
 DISTFILES=	bin_linux_scilab_251.tgz share_251.tgz
 DIST_SUBDIR=	mupad
 
-MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
+MAINTAINER=	maho@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
