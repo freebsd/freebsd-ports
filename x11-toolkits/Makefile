@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1998/12/28 15:57:44 vanilla Exp $
+# $Id: Makefile,v 1.15 1999/01/03 13:15:19 asami Exp $
 #
 
     SUBDIR += FWF
@@ -20,7 +20,7 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += pmw
-    SUBDIR += pygtk
+    SUBDIR += py-gtk
     SUBDIR += qt141
     SUBDIR += slingshot
     SUBDIR += tix
