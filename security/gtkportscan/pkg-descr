@@ -2,5 +2,5 @@ A simple port scanner written in Gtk+.  It does simple scanning
 and printing of the open ports on the machine you are scanning.
 Includes a command-line and GUI port scanner.
 
-WWW: http://www.calpoly.edu/~rbarrero/gtkportscan.html
+WWW: http://armageddon.splorg.org/gtkportscan/
 Author: Rafael Barrero, Jr. <rbarrero@polymail.calpoly.edu>
