@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/ \
-		ftp://fox.mit.edu/pub/xsw/
+MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -23,7 +22,7 @@ MAKEFILE=	Makefile.FreeBSD
 MAN1=		manedit.1
 
 pre-patch:
-	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
+	@find ${WRKSRC} -name "*.[ch]" | \
 		xargs ${PERL} -pi -e 's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>
