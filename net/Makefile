@@ -485,6 +485,7 @@
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
     SUBDIR += pear-Net_URL
+    SUBDIR += pear-SOAP
     SUBDIR += pebrot
     SUBDIR += pen
     SUBDIR += perldap
