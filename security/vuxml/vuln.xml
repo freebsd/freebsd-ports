@@ -32,6 +32,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="cacaffbc-5e64-11d8-80e3-0020ed76ef5a">
+    <topic>GNU libtool insecure temporary file handling</topic>
+    <affects>
+      <package>
+	<name>libtool</name>
+	<range><ge>1.3</ge><lt>1.3.5_2</lt></range>
+	<range><ge>1.4</ge><lt>1.4.3_3</lt></range>
+	<range><ge>1.5</ge><lt>1.5.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>libtool attempts to create a temporary directory in
+          which to write scratch files needed during processing.  A
+	  malicious user may create a symlink and then manipulate
+	  the directory so as to write to files to which she normally
+	  has no permissions.</p>
+	<p>This has been reported as a ``symlink vulnerability'',
+	  although I do not think that is an accurate description.</p>
+        <p>This vulnerability could possibly be used on a multi-user
+          system to gain elevated privileges, e.g. root builds some
+          packages, and another user successfully exploits this
+          vulnerability to write to a system file.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.geocrawler.com/mail/msg.php3?msg_id=3438808&amp;list=405</url>
+      <url>http://www.securityfocus.com/archive/1/352333</url>
+    </references>
+    <dates>
+      <discovery>2004/01/30</discovery>
+      <entry>2004/02/13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0e154a9c-5d7a-11d8-80e3-0020ed76ef5a">
     <topic>seti@home remotely exploitable buffer overflow</topic>
     <affects>
@@ -409,7 +444,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>XFree86-Server</name>
-	<range><le>4.3.0_13</le></range>
+	<range><le>4.3.0_14</le></range>
 	<range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
       </package>
     </affects>
