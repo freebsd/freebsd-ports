@@ -8,15 +8,15 @@
 PORTNAME=	opera
 PORTVERSION=	7.23.20031119
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/723/final/en/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/723/final/en/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/723/final/en/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/723/final/en/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/723/final/en/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/723/final/en/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/723/final/en/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/723/final/en/static/ \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/723/final/en/static/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/723/final/en/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/723/final/en/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/723/final/en/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/723/final/en/ \
+		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/723/final/en/ \
+		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/723/final/en/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/723/final/en/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/723/final/en/ \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/723/final/en/
 
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/3./3-/}.1-static-qt.i386.freebsd-en
 
