@@ -1432,7 +1432,6 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/messages
 @dirrm %%MMDIR%%/mail
 @dirrm %%MMDIR%%/icons
-@dirrm %%MMDIR%%/data
 @dirrm %%MMDIR%%/cron
 @dirrm %%MMDIR%%/cgi-bin
 @dirrm %%MMDIR%%/bin
@@ -1452,6 +1451,7 @@ etc/rc.d/mailman.sh
 @unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/locks 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/lists 2>/dev/null || true
+@unexec rmdir %D/%%MMDIR%%/data 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
