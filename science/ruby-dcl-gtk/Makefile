@@ -12,4 +12,7 @@ CATEGORIES=	science graphics ruby
 
 WITH_GTK=	yes
 
+MD5_FILE=	${.CURDIR}/../ruby-dcl/distinfo
+DESCR=		${.CURDIR}/../ruby-dcl/pkg-descr
+
 .include 	"${.CURDIR}/../ruby-dcl/Makefile"

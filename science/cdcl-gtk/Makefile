@@ -10,4 +10,7 @@ COMMENT=	Scientific graphic library for geoscience (with gtk support)
 
 WITH_GTK=	yes
 
+MD5_FILE=	${.CURDIR}/../cdcl/distinfo
+DESCR=		${.CURDIR}/../cdcl/pkg-descr
+
 .include	"${.CURDIR}/../cdcl/Makefile"
