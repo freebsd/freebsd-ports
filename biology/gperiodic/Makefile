@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/ \
 MAINTAINER=	chris@unixpages.org
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
