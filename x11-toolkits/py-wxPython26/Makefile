@@ -15,10 +15,8 @@ DISTNAME=	wxPython-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
-
-BROKEN=		"requires unstable development version of wxGTK, which isn't here yet"
 
 WX_CONFIG=	${X11BASE}/bin/wx-config
 
