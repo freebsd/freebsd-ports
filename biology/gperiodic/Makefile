@@ -6,28 +6,30 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	1.3.3
+PORTVERSION=	2.0.5
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/ \
-		http://www.unixpages.org/distfiles/
+MASTER_SITES=	http://www.acclab.helsinki.fi/~frantz/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Displays a periodic table of the elements
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+USE_GNOME=	gtk20
+MAKE_ARGS=	CC="${CC} ${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
 
-MAN1=		gperiodic.1
+post-build:
+.for lang in da pl sv
+	cd ${WRKSRC}/po && msgfmt -f -v -o ${lang}.mo ${lang}.po
+.endfor
 
-post-extract:
-	@${LN} -sf Makefile.in.in ${WRKSRC}/po/Makefile.in
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/gperiodic.1 ${MANPREFIX}/man/man1
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
+.for lang in da pl sv
+	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
+		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS ChangeLog README

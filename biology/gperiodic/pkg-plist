@@ -1,12 +1,8 @@
 bin/gperiodic
-%%PORTDOCS%%share/doc/gperiodic/AUTHORS
-%%PORTDOCS%%share/doc/gperiodic/ChangeLog
-%%PORTDOCS%%share/doc/gperiodic/README
-share/locale/de/LC_MESSAGES/gperiodic.mo
-share/locale/es/LC_MESSAGES/gperiodic.mo
-share/locale/fr/LC_MESSAGES/gperiodic.mo
-share/locale/it/LC_MESSAGES/gperiodic.mo
-share/locale/nl/LC_MESSAGES/gperiodic.mo
-share/locale/pt/LC_MESSAGES/gperiodic.mo
-share/locale/ru/LC_MESSAGES/gperiodic.mo
-%%PORTDOCS%%@dirrm share/doc/gperiodic
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/da/LC_MESSAGES/gperiodic.mo
+share/locale/pl/LC_MESSAGES/gperiodic.mo
+share/locale/sv/LC_MESSAGES/gperiodic.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
