@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	sverrir@hem.passagen.se
 
+BROKEN=		"Does not configure"
+
 BUILD_DEPENS=	autoconf:${PORTSDIR}/devel/autoconf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/-1//}
