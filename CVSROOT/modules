@@ -8686,6 +8686,7 @@ xine_d4d_plugin	ports/multimedia/xine_d4d_plugin
 xine_d5d_plugin	ports/multimedia/xine_d5d_plugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
+xinput		ports/x11/xinput
 xinvaders	ports/games/xinvaders
 xinvaders3d	ports/games/xinvaders3d
 xinvest		ports/deskutils/xinvest
