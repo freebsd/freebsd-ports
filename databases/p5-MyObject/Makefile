@@ -2,15 +2,16 @@
 # Date created:				14 November 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/databases/p5-MyObject/Attic/Makefile,v 1.3 2000-04-08 22:48:45 mharo Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/p5-MyObject/Attic/Makefile,v 1.4 2000-04-16 23:12:25 mharo Exp $
 #
 
-PORTNAME=	p5-MyObject
+PORTNAME=	MyObject
 PORTVERSION=	1.1
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.frontierworld.com/perl/
-EXTRACT_SUFX=
-DISTNAME=	MyObject.pm
+PKGNAMEPREFIX=	p5-
+DISTNAME=	MyObject
+EXTRACT_SUFX=	.pm
 
 MAINTAINER=	jedgar@FreeBSD.org
 
