@@ -30,9 +30,15 @@ CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include \
 		-DHAVE_DECL_GETOPT -fPIC
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Configure fails on ia64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 $$CFLAGS|$$CFLAGS|g' ${WRKSRC}/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
