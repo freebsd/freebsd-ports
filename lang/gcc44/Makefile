@@ -5,18 +5,16 @@
 #
 # $FreeBSD$
 #
-SNAPDATE=	2004-02-11
+SNAPDATE=	2004-02-18
 
 PORTNAME=	gcc
 PORTVERSION=	3.4.0
-PORTREVISION=	1
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
 VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-.if !defined(CVS_DATE)
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
@@ -24,9 +22,8 @@ DISTFILES=	\
 		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
-.endif
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	gerald@FreeBSD.org
 COMMENT?=	GNU Compiler Collection 3.4
 
 LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
@@ -43,6 +40,10 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN= "Configure broken due to renaming this architecture from x86_84."
+.endif
 
 .if ${ARCH} == sparc64
 BROKEN=	"libgcj is not supported/packaging is broken on this platform"
@@ -94,34 +95,6 @@ INFO=		cpp cppinternals g77 gcc gccinstall gccint gcj fastjar
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
-
-.if defined(CVS_DATE)
-NO_CHECKSUM=	yes
-DIST_SUBDIR=	${PKGNAME}
-CVS_CMD?=	cvs -z3 -qR
-CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
-STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
-do-fetch:
-	@if [ ! -e ${STAMPFILE} ] || \
-	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
-		${MKDIR} ${DISTDIR}/${DIST_SUBDIR} && \
-		cd ${DISTDIR}/${DIST_SUBDIR} ; \
-		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
-		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
-		if ${CVS_CMD} -d ${CVSROOT} co -D "${CVS_DATE}" gcc ; \
-		then \
-			( ${ECHO_CMD} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
-			exit ; \
-		fi ; \
-		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
-		${ECHO_MSG} ">> Please try again later."; \
-		exit 1; \
-	fi
-
-do-extract:
-	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; ${PAX} -pe -rwt . ${SRCDIR}
-.endif	# CVS_DATE
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
