@@ -273,4 +273,17 @@ SITE+=	${FILESDIR}/site.config.m4.smtps
 SITE+=	${FILESDIR}/site.config.m4.local
 .endif
 
+.if exists(${DESTDIR}/etc/mail/mailer.conf) && ${PREFIX} == "/usr"
+pre-everything:
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# You can't override the base sendmail this way."
+	@${ECHO_CMD} "# your version FreeBSD use mailwrapper."
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# Please install with normal PREFIX"
+	@${ECHO_CMD} "# and activate the port version with"
+	@${ECHO_CMD} "# cd /usr/ports/mail/sendmail && make mailer.conf"
+	@${ECHO_CMD} "#"
+	@${FALSE}
+.endif
+
 .include <bsd.port.post.mk>
