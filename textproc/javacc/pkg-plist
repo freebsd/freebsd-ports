@@ -190,8 +190,3 @@ share/java/classes/JavaCC.jar
 @dirrm share/examples/javacc/examples/VTransformer
 @dirrm share/examples/javacc/examples
 @dirrm share/examples/javacc
-@unexec rmdir share/doc			2> /dev/null || true
-@unexec rmdir share/examples		2> /dev/null || true
-@unexec rmdir share/java/classes	2> /dev/null || true
-@unexec rmdir share/java		2> /dev/null || true
-@unexec rmdir share			2> /dev/null || true
