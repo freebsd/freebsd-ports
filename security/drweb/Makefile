@@ -7,7 +7,7 @@
 
 PORTNAME=	drweb
 PORTVERSION=    4.26
-PORTREVISION=   5
+PORTREVISION=   6
 CATEGORIES=	security
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}-freebsd4
@@ -19,8 +19,6 @@ NO_BUILD=	YES
 
 # Needed for update.pl
 RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
-
-SCRIPTS_ENV+=   BINOWN=${BINOWN} BINGRP=${BINGRP}
 
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
@@ -56,5 +54,8 @@ do-install:
 	fi
 	cd ${DRWEB_PREFIX}/update; \
 		${PATCH} -s < ${FILESDIR}/update-patch && ${RM} update.pl.orig
+
+post-install:
+	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

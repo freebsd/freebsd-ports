@@ -1,11 +1,20 @@
 #!/bin/sh
-ex=0
+# $FreeBSD$
+#
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
 USER=drweb
 GROUP=${USER}
 UID=426
 GID=${UID}
+BINOWN=root
+BINGRP=wheel
+ex=0
 
-if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
 		echo "Added group \"${GROUP}\"."
 	else
@@ -14,7 +23,7 @@ if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-if ! pw user show "${USER}" 2>/dev/null 1>&2; then
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 		-s "/sbin/nologin" -d "/nonexistent" -c "Dr. Web Scanner"
 	then
@@ -25,19 +34,19 @@ if ! pw user show "${USER}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-if ! grep -q "^!drweb" /etc/syslog.conf; then
+if ! grep -q "^!${USER}" /etc/syslog.conf; then
   echo "You may also add this lines to your /etc/syslog.conf:"
   echo "*.*             /var/log/drwebd.log"
   echo ""
 fi
-if ! grep -q drweb /etc/crontab; then
-  if ! crontab -l -u root | grep -q drweb; then
+if ! grep -q ${USER} /etc/crontab; then
+  if ! crontab -l -u ${BINOWN} | grep -q ${USER}; then
       echo "You may also add this crontab entry to /etc/crontab"
-      echo "0 12 * * * ${BINOWN} ${PREFIX}/drweb/update/update.pl ${PREFIX}/drweb"
+      echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl ${PKG_PREFIX}/drweb"
       echo ""
   fi
 fi
 [ "$ex" = "1" ] && exit 1
-install -dv -m 0755 -o drweb -g ${BINGRP} ${PREFIX}/drweb/run
-install -dv -m 0700 -o drweb -g ${BINGRP} ${PREFIX}/drweb/infected.!!!
+install -dv -m 0755 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/run
+install -dv -m 0700 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/infected.!!!
 exit 0
