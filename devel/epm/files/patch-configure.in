@@ -1,0 +1,18 @@
+--- configure.in.orig	Wed Feb  2 16:54:27 2005
++++ configure.in	Wed Feb  2 16:55:09 2005
+@@ -174,13 +174,13 @@
+ 		AC_MSG_RESULT(no)
+  	fi
+ 
+-	CXX="$CC"
++#	CXX="$CC"
+ 
+ 	if test -z "$OPTIM"; then
+         	OPTIM="-O2 -fforce-mem -fforce-addr -fcaller-saves"
+ 	fi
+ 
+-	CXX="$CC"
++#	CXX="$CC"
+ 	OPTIM="-Wall -Wno-return-type $OPTIM"
+ 
+ 	# See if GCC supports -fno-rtti...
