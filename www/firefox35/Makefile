@@ -1,4 +1,4 @@
-# ex:ts=8
+# ex:ts=8 -*-mode: makefile-*-
 #
 # New ports collection makefile for:	phoenix
 # Date created:			2002/10/21
@@ -8,11 +8,11 @@
 #
 
 PORTNAME=		phoenix
-PORTVERSION=		0.4
-PORTREVISION=		9
+PORTVERSION=		0.5.20021209
+PORTREVISION=		0
 CATEGORIES=		www # pita
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trevor
+MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
+MASTER_SITE_SUBDIR=	alane
 
 MAINTAINER=		phoenix@freebsd.org # alane@fbsd and trevor@fbsd
 
@@ -23,9 +23,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		IDL.2:${PORTSDIR}/devel/ORBit \
 		Xft2.2:${PORTSDIR}/x11-fonts/Xft \
 		iconv.3:${PORTSDIR}/converters/libiconv
-
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
+
+BSD_WEBDIR=http://people.freebsd.org/~${MASTER_SITE_SUBDIR}/
 
 USE_X_PREFIX=		yes
 
@@ -48,7 +49,8 @@ WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 JREDIR=			${LOCALBASE}/jdk1.3.1/jre
-PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-1.2b/plugins/
+MOZVER=			1.3a
+PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-${MOZVER}/plugins/
 
 .include <bsd.port.pre.mk>
 
@@ -83,37 +85,50 @@ post-patch:
 	${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g'	\
 		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
-pre-install:
+post-build:
 	${RM} -f ${PLIST}
 	${TOUCH} ${PLIST}
 
-post-install:
-	@${RM} -f ${PREFIX}/bin/phoenix
-	@${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
+pre-install:
+	${RM} -fr ${LOCAL_PREFIX}
+
+link-bins:
+	${RM} -f ${PREFIX}/bin/phoenix
+	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
 		${PREFIX}/bin/phoenix
-	@${RM} -f ${PREFIX}/bin/phoenix-config
-	@${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
+	${RM} -f ${PREFIX}/bin/phoenix-config
+	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
-	@${CAT} ${PKGMESSAGE} 2>/dev/null
-	@${RM} -fr ${LOCAL_PREFIX}/share/idl
-	@${RM} -fr ${LOCAL_PREFIX}/include
+
+link-java:
 	-${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
 	-${LN} -sf \
 	  ${JREDIR}/plugin/i386/ns600/libjavaplugin_oji.so \
 	  ${PLUGINSDIR}/libjavaplugin_oji.so
+
+cleanup-install:
+	${RM} -fr ${LOCAL_PREFIX}/share/idl
+	${RM} -fr ${LOCAL_PREFIX}/include
+
+cons-plist:
 	-${RM} -f ${PLIST}
 	${ECHO_CMD} bin/phoenix >>${PLIST}
 	${ECHO_CMD} bin/phoenix-config >>${PLIST}
 	cd ${PREFIX}; \
 	${FIND} ${LOCAL_SUBDIR} ! -type d | ${SORT} >>${PLIST}; \
 	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
-	  | ${SED} -e "s:^:@exec /bin/mkdir -p %D/:" -e "s:$$: || true:" \
+	  | ${SED} -e "s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" \
 	  >> ${PLIST}; \
 	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r \
-	  | ${SED} -e "s:^:@unexec /bin/rmdir %D/:" -e "s:$$: || true:" \
+	  | ${SED} -e "s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" \
 	  >> ${PLIST}; \
 	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
 		| ${SED} -e "s:^:@dirrm :" >> ${PLIST}
 
+.PHONY: link-bins link-java cleanup-install cons-plist
+
 .include <bsd.port.post.mk>
+
+generate-plist: link-bins link-java cleanup-install cons-plist
+
 #EOF

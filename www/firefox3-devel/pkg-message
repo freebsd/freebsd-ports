@@ -1,4 +1,27 @@
 ======================================================================
+0.5.20021209:
+Phoenix 0.5 snap on 20021209. Most of the files are PHOENIX_0_5_RELEASE,
+but they didn't tag the browser and toolkit dirs, so those are from this
+AM.
+
+****WARNING! DANGER, WILL ROBINSON!**** You must delete your old .phoenix
+dir! Save your bookmarks.html somewhere and then let it create a new
+directory. You can import your old bookmark file. Bug reports from people
+who did not do this are going to be taken at extremely low priority.
+
+Also, please see the nifty new phoenix themes and extensions at the new
+website http://texturizer.net/phoenix/index.html.
+
+Finally make portlint STFU about the Makefile.
+
+The distfile is on my distfiles dir this time, so I have mirrored it on my
+html page until the distfiles dir gets mirrored in 24-48 hours.
+
+I had to disable Xinerama since no port ever finds it and it was breaking
+the build.
+
+-- AlanE <phoenix@freebsd.org>
+
 0.4_9:
 Install link to java plugin.
 Build plist after install using find/sed.

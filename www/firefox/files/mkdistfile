@@ -119,56 +119,53 @@ done
 test $# -eq 1 || usage 1
 
 REV=$1
-test ${REV#*.} = today && REV=${REV%.*}.$DATE
+test ${REV##*.} = today && REV=${REV%.*}.$DATE
 
+status "pruning tree..."
 exfile=$(tmpfile)
 cat >>$exfile <<'EOF'
-*/CVS
-*/CVS/*
-*/macbuild
-*/macbuild/*
-*/package
-*/package/*
-*/.cvsignore
-*/windows
-*/windows/*
-*/activex
-*/activex/*
-*/os2
-*/os2/*
-*/solaris
-*/solaris/*
-*/gc
-*/gc/*
-mozilla/apache
-mozilla/calendar
-mozilla/cck
-mozilla/chimera
-mozilla/ef
-mozilla/embed.mak
-mozilla/embed.mk
-mozilla/gconfig
-mozilla/gfx2
-mozilla/grendel
-mozilla/java
-mozilla/js2
-mozilla/mail
-mozilla/mailnews
-mozilla/mozilla
-mozilla/mozilla.kdevprj
-mozilla/mozilla.lsm
-mozilla/msgsdk
-mozilla/mstone
-mozilla/nglayout.mac
-mozilla/nunet
-mozilla/other-licenses
-mozilla/privacy
-mozilla/silentdl
-mozilla/timer
-mozilla/trex.mak
-mozilla/trex.mk
-mozilla/webtools
+^.*/CVS($|/)
+^.*/macbuild($|/)
+^.*/package($|/)
+^.*/.cvsignore($|/)
+^.*/windows($|/)
+^.*/activex($|/)
+^.*/os2($|/)
+^.*/solaris($|/)
+^.*/gc($|/)
+^mozilla/apache($|/)
+^mozilla/calendar($|/)
+^mozilla/cck($|/)
+^mozilla/chimera($|/)
+^mozilla/ef($|/)
+^mozilla/embed.mak($|/)
+^mozilla/embed.mk($|/)
+^mozilla/gconfig($|/)
+^mozilla/gfx2($|/)
+^mozilla/grendel($|/)
+^mozilla/java($|/)
+^mozilla/js2($|/)
+^mozilla/mail($|/)
+^mozilla/mailnews($|/)
+^mozilla/mozilla($|/)
+^mozilla/mozilla.kdevprj($|/)
+^mozilla/mozilla.lsm($|/)
+^mozilla/msgsdk($|/)
+^mozilla/mstone($|/)
+^mozilla/nglayout.mac($|/)
+^mozilla/nunet($|/)
+^mozilla/other-licenses($|/)
+^mozilla/privacy($|/)
+^mozilla/silentdl($|/)
+^mozilla/timer($|/)
+^mozilla/trex.mak($|/)
+^mozilla/trex.mk($|/)
+^mozilla/webtools($|/)
 EOF
-tar -cjp -X $exfile -f phoenix-$REV.tar.bz2 mozilla
+test -d mozilla || die "No mozilla dir here."
+find mozilla 2>/dev/null | egrep -f $exfile | xargs rm -fr
 rm -f $exfile
+status "making phoenix-$REV.tar.bz2 ..."
+tar -cjpf phoenix-$REV.tar.bz2 mozilla
+status "done."
 #EOF
