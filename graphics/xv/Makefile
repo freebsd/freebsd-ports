@@ -3,13 +3,14 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.31 1998/11/25 09:01:21 asami Exp $
+# $Id: Makefile,v 1.32 1999/01/23 07:05:35 vanilla Exp $
 #
 
 DISTNAME=	xv-3.10a
 CATEGORIES?=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
+		http://www.freebsd.org/~shige/ports/xv/ \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xv310a-jp-extension-rev5.3.3.tar.gz \
@@ -22,7 +23,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 PATCH_SITES=    ftp://ftp.cis.upenn.edu/pub/xv/
 PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 
-MAINTAINER?=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER?=	shige@FreeBSD.ORG
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
