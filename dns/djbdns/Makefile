@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	8
+PORTREVISION?=	9
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -35,6 +35,7 @@ PORTVERSION=	${DJBDNS_VER}.${DJBDNS_V6_VER:S/test/b/:S/diff//}
 PATCH_SITES+=	http://www.fefe.de/dns/:ipv6
 PATCHFILES+=	${PORTNAME}-${DJBDNS_VER}-${DJBDNS_V6_VER}.diff.bz2:ipv6
 PATCH_DIST_STRIP=	-p1
+EXTRA_PATCHES+=	${FILESDIR}/uint32.patch
 .endif
 
 .if defined(WITH_DNSCACHE_DUMPCACHE)

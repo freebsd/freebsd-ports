@@ -1,0 +1,80 @@
+--- Makefile.orig	Wed Dec 29 09:37:36 2004
++++ Makefile	Wed Dec 29 09:52:11 2004
+@@ -333,7 +333,7 @@
+ dns_transmit.o: \
+ compile dns_transmit.c socket.h uint16.h alloc.h error.h byte.h \
+ uint16.h dns.h stralloc.h gen_alloc.h iopause.h taia.h tai.h uint64.h \
+-taia.h
++taia.h uint32.h
+ 	./compile dns_transmit.c
+ 
+ dns_txt.o: \
+@@ -855,15 +855,15 @@
+ 	rm -f trylsock.o trylsock
+ 
+ socket_accept.o: \
+-compile socket_accept.c byte.h socket.h uint16.h
++compile socket_accept.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_accept.c
+ 
+ socket_accept6.o: \
+-compile socket_accept6.c byte.h socket.h uint16.h
++compile socket_accept6.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_accept6.c
+ 
+ socket_bind.o: \
+-compile socket_bind.c byte.h socket.h uint16.h
++compile socket_bind.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_bind.c
+ 
+ socket_bind6.o: \
+@@ -871,7 +871,7 @@
+ 	./compile socket_bind6.c
+ 
+ socket_conn.o: \
+-compile socket_conn.c byte.h socket.h uint16.h
++compile socket_conn.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_conn.c
+ 
+ socket_connect6.o: \
+@@ -879,11 +879,11 @@
+ 	./compile socket_connect6.c
+ 
+ socket_listen.o: \
+-compile socket_listen.c socket.h uint16.h
++compile socket_listen.c socket.h uint16.h uint32.h
+ 	./compile socket_listen.c
+ 
+ socket_recv.o: \
+-compile socket_recv.c byte.h socket.h uint16.h
++compile socket_recv.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_recv.c
+ 
+ socket_recv6.o: \
+@@ -891,7 +891,7 @@
+ 	./compile socket_recv6.c
+ 
+ socket_send.o: \
+-compile socket_send.c byte.h socket.h uint16.h
++compile socket_send.c byte.h socket.h uint16.h uint32.h
+ 	./compile socket_send.c
+ 
+ socket_send6.o: \
+@@ -899,7 +899,7 @@
+ 	./compile socket_send6.c
+ 
+ socket_tcp.o: \
+-compile socket_tcp.c ndelay.h socket.h uint16.h
++compile socket_tcp.c ndelay.h socket.h uint16.h uint32.h
+ 	./compile socket_tcp.c
+ 
+ socket_tcp6.o: \
+@@ -907,7 +907,7 @@
+ 	./compile socket_tcp6.c
+ 
+ socket_udp.o: \
+-compile socket_udp.c ndelay.h socket.h uint16.h
++compile socket_udp.c ndelay.h socket.h uint16.h uint32.h
+ 	./compile socket_udp.c
+ 
+ socket_udp6.o: \
