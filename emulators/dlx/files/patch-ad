@@ -1,0 +1,35 @@
+--- dlxsim/tcl/panic.c.orig	Fri Aug 29 18:38:56 2003
++++ dlxsim/tcl/panic.c	Fri Aug 29 18:41:19 2003
+@@ -19,7 +19,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ /*
+  *----------------------------------------------------------------------
+@@ -39,19 +39,18 @@
+ 
+ #ifndef lint
+ void
+-panic(va_alist)
+-    va_dcl			/* char *format, then any number of additional
++panic(char *format, ...)
++    				/* char *format, then any number of additional
+ 				 * values to be printed under the control of
+ 				 * format.  This is all just the same as you'd
+ 				 * pass to printf. */
+ {
+-    char *format;
+     va_list args;
+ 
+-    va_start(args);
+-    format = va_arg(args, char *);
++    va_start(args, format);
+     (void) vfprintf(stderr, format, args);
+     (void) fflush(stderr);
++    va_end(args);
+     abort();
+ }
+ #else
