@@ -60,6 +60,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .if defined(WITHOUT_OTP)
 CONFIGURE_ARGS+=	--disable-otp
+OTP=	"@comment "
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -95,6 +96,7 @@ HTDOCS=	advanced appconvert gssapi index install macosx options \
 	plugprog programming readme sysadmin upgrading
 
 PLIST_SUB=	PREFIX=${PREFIX} \
+		OTP=${OTP} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \

@@ -28,9 +28,9 @@ lib/sasl2/libdigestmd5.so.2
 lib/sasl2/liblogin.a
 lib/sasl2/liblogin.so
 lib/sasl2/liblogin.so.2
-lib/sasl2/libotp.a
-lib/sasl2/libotp.so
-lib/sasl2/libotp.so.2
+%%OTP%%lib/sasl2/libotp.a
+%%OTP%%lib/sasl2/libotp.so
+%%OTP%%lib/sasl2/libotp.so.2
 lib/sasl2/libplain.a
 lib/sasl2/libplain.so
 lib/sasl2/libplain.so.2
