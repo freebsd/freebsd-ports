@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	duke3d
-PORTVERSION=	20012306
-PORTREVISION=	1
+PORTVERSION=	20041505
 CATEGORIES=	games
-MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
+MASTER_SITES=	http://520061600655-0001.bei.t-online.de/ports/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arundel@h3c.de
 COMMENT=	Icculus Duke Nukem 3D port for various Operating Systems
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
