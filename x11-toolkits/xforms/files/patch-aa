@@ -1,6 +1,6 @@
 --- Imakefile.orig	Thu Jun  6 10:45:33 2002
-+++ Imakefile	Sun Jun 30 21:18:25 2002
-@@ -3,13 +3,13 @@
++++ Imakefile	Tue Jul 16 02:25:45 2002
+@@ -3,7 +3,7 @@
  /* Fairly important stuff */
  
  #define DoOptimize YES
@@ -9,10 +9,3 @@
  #define DoWall NO
  
  #define BuildShared YES
- #define StaticLink NO
- 
--#define BuildGL YES
-+#define BuildGL NO
- 
- /* Less Important or System Specific */
- 

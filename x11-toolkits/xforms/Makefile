@@ -7,6 +7,7 @@
 
 PORTNAME=	xforms
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/OpenSource/
