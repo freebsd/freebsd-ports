@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	xerces
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
 DISTNAME=	Xerces-J-bin.${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./_/g}
-JDK_VERSION=	1.1.8
 NO_BUILD=	yes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
@@ -32,5 +31,6 @@ do-install:
 		${CP} -R docs ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} -R data ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} -R samples ${PREFIX}/share/java/${PKGNAME}/
+	${RMDIR} ${PREFIX}/share/java/${PKGNAME}/docs/dtd
 
 .include <bsd.port.post.mk>
