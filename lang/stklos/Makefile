@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	stklos
-PORTVERSION=	0.54
+PORTVERSION=	0.55
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The successor of the STk Scheme interpreter
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
