@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O
 
+CONFLICTS=	iozone-2.*
+
 WRKSRC=		${WRKDIR}/src/current
 
 MAKEFILE=	makefile

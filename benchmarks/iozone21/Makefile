@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.shar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance Test of Sequential File I/O (older version)
 
+CONFLICTS=	iozone-3.*
+
 LATEST_LINK=	iozone21
 
 EXTRACT_CMD=	( ${GZCAT} | ${AWK} '{if (/^\#!/) x++} {if(x) print $$0'}| ${SH} )
