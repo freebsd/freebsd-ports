@@ -113,22 +113,24 @@ sub check_version {
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
 
-	# Only check this file if it doesn't match an exclusion.
+	# If an exclusion list exists use it to see whether this
+	# file should be exempt from version checking.
 	my $exclude = $cvsroot . "/CVSROOT/exclude";
 	my $path = $directory . "/" . $filename;
-	open(EX, "<$exclude") || die("cannot open $exclude: $!");
-	while (<EX>) {
-		chomp;
-		my $ex_entry = $_;
+	if (open(EX, "<$exclude")) {
+		while (<EX>) {
+			chomp;
+			my $ex_entry = $_;
 
-		next if $ex_entry =~ /^#/;
+			next if $ex_entry =~ /^#/;
 
-		if ($path =~ /$ex_entry/) {
-			close(EX);
-			return(0);
+			if ($path =~ /$ex_entry/) {
+				close(EX);
+				return(0);
+			}
 		}
+		close(EX);
 	}
-	close(EX);
 
 	# Search the file for our rcsid.
 	# NOTE: We stop after finding the first potential match.
