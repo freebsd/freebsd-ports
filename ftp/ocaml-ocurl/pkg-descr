@@ -1,0 +1,9 @@
+The Ocaml Curl Library (Ocurl) is an interface library for the
+programming language Ocaml to the networking library
+libcurl. Currently Ocurl requires libcurl 7.9.8 or newer (using older
+versions may yield compilation errors).
+
+WWW: http://sourceforge.net/projects/ocurl
+
+- Marwan Burelle
+  <marwan.burelle@lri.fr>
