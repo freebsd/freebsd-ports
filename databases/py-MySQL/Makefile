@@ -16,7 +16,12 @@ MAINTAINER=	dr@domix.de
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_PYTHON=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} != "python2.1"
 ALL_TARGET=	MySQLmodule.so
+.endif
 
 pre-configure:
 	${CP} ${FILESDIR}/Setup ${WRKSRC}/Setup
@@ -34,4 +39,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
