@@ -12,7 +12,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Compiler Collection ${COMMENT2} with threads and shared libs
 
 WANT_SHAREDLIBS=	yes
-WANT_THREADS_SUPPORT=	yes
 WITHOUT_LIBJAVA=	yes
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
@@ -26,6 +25,7 @@ GNUSTEP_WITH_GCC33=	yes
 MASTERDIR?=		${.CURDIR}/../gcc32
 CONFLICTS?=		gcc-3.2*
 COMMENT2=		3.2.x
+WANT_THREADS_SUPPORT=	yes
 .endif
 .if defined(GNUSTEP_WITH_GCC33)
 MASTERDIR?=		${.CURDIR}/../gcc33
