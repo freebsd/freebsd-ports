@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+
 USE_RUBY=	yes
 USE_RUBY_RDTOOL=	yes
 USE_RUBY_SETUP=	yes
