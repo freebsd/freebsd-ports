@@ -1,0 +1,13 @@
+bin/miscom
+share/doc/miscom/COPYING
+share/doc/miscom/ChangeLog
+share/doc/miscom/README
+share/doc/miscom/TODO
+share/miscom/citybang.raw
+share/miscom/explode.raw
+share/miscom/gameover.raw
+share/miscom/launch.raw
+share/miscom/levelend.raw
+share/miscom/levelst.raw
+@dirrm share/doc/miscom
+@dirrm share/miscom
