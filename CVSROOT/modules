@@ -7687,6 +7687,7 @@ php4		ports/lang/php4
 php4-bz2	ports/archivers/php4-bz2
 php4-cgi	ports/www/php4-cgi
 php4-cli	ports/lang/php4-cli
+php4-curl	ports/ftp/php4-curl
 php4-dba	ports/databases/php4-dba
 php4-dbase	ports/databases/php4-dbase
 php4-dbx	ports/databases/php4-dbx
