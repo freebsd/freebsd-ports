@@ -43,6 +43,7 @@ share/apps/kbear/kpartplugins/kbearsitemanagerui.rc
 share/apps/kbear/kpartplugins/kbeartoolsplugin.rc
 share/apps/kbear/sitemanager.xml
 share/apps/kbear/tips
+share/apps/kbeardirsynchpart/kbeardirsynchpartui.rc
 share/apps/kbearfilesyspart/kbearfilesyspart.rc
 share/doc/HTML/cs/kbear/index.cache.bz2
 share/doc/HTML/cs/kbear/index.docbook
@@ -50,6 +51,9 @@ share/doc/HTML/cs/kbear/common
 share/doc/HTML/en/kbear/index.cache.bz2
 share/doc/HTML/en/kbear/index.docbook
 share/doc/HTML/en/kbear/common
+share/doc/HTML/es/kbear/index.cache.bz2
+share/doc/HTML/es/kbear/index.docbook
+share/doc/HTML/es/kbear/common
 share/doc/HTML/fr/kbear/index.cache.bz2
 share/doc/HTML/fr/kbear/index.docbook
 share/doc/HTML/fr/kbear/common
@@ -68,12 +72,11 @@ share/locale/cs/LC_MESSAGES/kbear.mo
 share/locale/de/LC_MESSAGES/kbear.mo
 share/locale/es/LC_MESSAGES/kbear.mo
 share/locale/fr/LC_MESSAGES/kbear.mo
+share/locale/he/LC_MESSAGES/kbear.mo
+share/locale/id/LC_MESSAGES/kbear.mo
 share/locale/it/LC_MESSAGES/kbear.mo
-share/locale/ja/LC_MESSAGES/kbear.mo
 share/locale/nl/LC_MESSAGES/kbear.mo
-share/locale/pl/LC_MESSAGES/kbear.mo
 share/locale/pt/LC_MESSAGES/kbear.mo
-share/locale/pt_BR/LC_MESSAGES/kbear.mo
 share/locale/ro/LC_MESSAGES/kbear.mo
 share/locale/ru/LC_MESSAGES/kbear.mo
 share/locale/sv/LC_MESSAGES/kbear.mo
@@ -86,14 +89,11 @@ share/services/kbearwincommanderimportfilter.desktop
 share/services/kbearws_ftpimportfilter.desktop
 share/servicetypes/kbearimportfilter.desktop
 @dirrm share/doc/HTML/sv/kbear
-@dirrm share/doc/HTML/sv
 @dirrm share/doc/HTML/fr/kbear
-@dirrm share/doc/HTML/fr
 @dirrm share/doc/HTML/en/kbear
-@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML/es/kbear
 @dirrm share/doc/HTML/cs/kbear
-@dirrm share/doc/HTML/cs
-@dirrm share/doc/HTML
+@dirrm share/apps/kbeardirsynchpart
 @dirrm share/apps/kbearfilesyspart
 @dirrm share/apps/kbear/kpartplugins
 @dirrm share/apps/kbear/icons/hicolor/16x16/actions
@@ -101,5 +101,4 @@ share/servicetypes/kbearimportfilter.desktop
 @dirrm share/apps/kbear/icons/hicolor
 @dirrm share/apps/kbear/icons
 @dirrm share/apps/kbear
-@dirrm share/applnk/Internet
 @dirrm include/kbear
