@@ -32,5 +32,6 @@ post-patch:
 	@${RM} ${WRKSRC}/src/login.h ${WRKSRC}/src/login.cpp
 	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|;;|;|g;' ${WRKSRC}/src/kmerlindock.h
 
 .include <bsd.port.mk>
