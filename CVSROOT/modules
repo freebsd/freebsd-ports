@@ -1035,6 +1035,7 @@ crafty-open-medium	ports/games/crafty-open-medium
 crafty-open-rock	ports/games/crafty-open-rock
 crafty-open-small	ports/games/crafty-open-small
 crank		ports/security/crank
+crashmail	ports/news/crashmail
 crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
 crescendo	ports/net/crescendo
