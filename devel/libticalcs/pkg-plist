@@ -16,6 +16,5 @@ lib/libticalcs-4.la
 lib/libticalcs-4.so
 lib/libticalcs-4.so.5
 libdata/pkgconfig/ticalcs-4.pc
-share/aclocal/ticalcs.m4
 share/locale/fr/LC_MESSAGES/libticalcs.mo
 @unexec rmdir %D/include/tilp 2>/dev/null || true
