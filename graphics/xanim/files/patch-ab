@@ -63,3 +63,20 @@
   XCOMM XA_AUDIO_LIBS = -lc
   XCOMM
   XCOMM -- SGI Indigo -----------------------------------------------------------
+***************
+*** 334,340 ****
+  
+  PROGRAMS = xanim
+  
+! INCLUDES = -I$(INCDIR) $(XA_INCS)
+  
+  
+     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
+--- 334,340 ----
+  
+  PROGRAMS = xanim
+  
+! INCLUDES = -I$(INCDIR)/X11 $(XA_INCS)
+  
+  
+     LIBS1 = $(XA_LIBS) $(EXTENSIONLIB) $(XTOOLLIB) $(XLIB) -lm
