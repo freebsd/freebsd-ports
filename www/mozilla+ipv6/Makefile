@@ -1,43 +1,66 @@
 # New ports collection makefile for:	mozilla
-# Version required:	1998-04-29
+# Version required:	M8
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.27 1998/10/15 01:16:23 jseger Exp $
+# $Id: Makefile,v 1.28 1998/11/11 05:37:32 asami Exp $
 #
 
-DISTNAME=	unix-19980429
-PKGNAME=	mozilla-1998.04.29
+DISTNAME=	mozilla-source-M8
+PKGNAME=	mozilla-M8
 CATEGORIES=	www
-MASTER_SITES=	ftp://mirror.neosoft.com/pub/mozilla/mozilla/source/ \
-		ftp://ftp.bitcon.no/pub/www/mozilla/mozilla/source/ \
-		ftp://ftp.mozilla.org/pub/mozilla/source/
+MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla/releases/m8/src/
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	reg@shale.csir.co.za
 
-BROKEN_ELF=	library numbers
+LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
+		IDL.2:${PORTSDIR}/devel/ORBit \
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-WRKSRC=		${WRKDIR}/`${ECHO} ${DISTNAME} | ${SED} 's/unix-//'`/mozilla
+.include <bsd.port.mk>
+
+.if ${OSVERSION} < 400004
+BUILD_DEPENDS+=	eg++:${PORTSDIR}/lang/egcs
+CC=		egcc
+CXX=		eg++
+.endif
+
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+WRKSRC=		${WRKDIR}/mozilla
+USE_X_PREFIX=	yes
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-DIST_SUBDIR=	mozilla
-MAKE_ENV=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1 \
-	BUILD_OPT=1 NO_NETSCAPE_STATIC=1 LD_LIBRARY_PATH=${LOCALBASE}/lib
-REQUIRES_MOTIF=	yes
-
-.include <bsd.port.pre.mk>
-
-OBJDIR=	${WRKSRC}/dist/${OPSYS}${OSREL}_OPT.OBJ
+CONFIGURE_ARGS=					\
+		--disable-cpp-rtti		\
+		--disable-md			\
+		--disable-pedantic		\
+		--disable-xterm-updates		\
+		--enable-cpp-exceptions		\
+		--enable-debug			\
+		--enable-double-buffer		\
+		--enable-editor			\
+		--enable-idltool		\
+		--enable-mailnews		\
+		--enable-optimize		\
+		--enable-pics			\
+		--enable-tests			\
+		--enable-toolkit=gtk		\
+		--with-jpeg=${LOCALBASE}	\
+		--with-png=${LOCALBASE}
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"	\
+		GTK_CONFIG="${GTK_CONFIG}"
+MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/mozilla/bin
-	@cd ${OBJDIR}/bin && tar -chf - bsdecho lib* moz-export \
-		nsinstall vreg | tar -xf - -C ${PREFIX}/lib/mozilla/bin
-	@chmod 755 ${PREFIX}/lib/mozilla/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
-	@if [ ! -f ${PREFIX}/lib/mozilla/mailcap ] ; then \
-		${INSTALL_DATA} ${FILESDIR}/mailcap ${PREFIX}/lib/mozilla ; \
-	fi
-	@strip ${PREFIX}/lib/mozilla/bin/moz-export
-	@chown -R bin.bin ${PREFIX}/lib/mozilla
+	${MKDIR} ${PREFIX}/lib/mozilla
+	chmod 755 ${PREFIX}/lib/mozilla
+	cd ${WRKSRC}/dist/bin && tar -chf - * | \
+		tar -xf - -C ${PREFIX}/lib/mozilla
+	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
+	${TOUCH} ${PREFIX}/lib/mozilla/component.reg
+	chmod 666 ${PREFIX}/lib/mozilla/component.reg
 
 .include <bsd.port.post.mk>
