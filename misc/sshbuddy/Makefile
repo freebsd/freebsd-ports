@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	dan@freebsd.org
 
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/beta1.02
