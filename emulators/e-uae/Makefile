@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	e-uae
-PORTVERSION=	0.8.27.r2
+PORTVERSION=	0.8.27
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION:R}-RC${PORTVERSION:C/^.*r//}/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-RC${PORTVERSION:C/^.*r//}
+MASTER_SITES=	http://www.rcdrummond.net/uae/${PORTNAME}-${PORTVERSION}/
+#DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Enhanced version of UAE, the Amiga emulator
@@ -32,13 +32,13 @@ do-install:
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/COMPATIBILITY ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/CREDITS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/FAQ ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/README.PROGRAMMERS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/unix/README ${DOCSDIR}/README.unix
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/bsdsocket.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/compiling.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/configuration.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/floppies.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/keyboard.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/scsi.txt ${DOCSDIR}
 .endif
 	@${MKDIR} ${DATADIR}/amiga
 	${INSTALL_DATA} ${WRKSRC}/amiga/mousehack ${DATADIR}/amiga/
