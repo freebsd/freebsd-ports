@@ -92,6 +92,7 @@
     SUBDIR += xhippo
     SUBDIR += xmcd
     SUBDIR += xmix
+    SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms
     SUBDIR += xmp
