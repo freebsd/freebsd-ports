@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Mar 23 15:35:30 2004
++++ Makefile.in	Tue Mar 23 15:36:13 2004
+@@ -110,7 +110,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = libvanessa_logger sample debian
++SUBDIRS = libvanessa_logger
+ 
+ EXTRA_DIST =  configure configure.in README TODO INSTALL.in INSTALL vanessa_logger.spec.in vanessa_logger.spec autogen.sh
+ 
