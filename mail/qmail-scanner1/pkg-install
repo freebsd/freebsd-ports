@@ -30,6 +30,7 @@ POST-INSTALL)
   ${MKDIR} -p ${SPOOLDIR}/tmp
 
   # Mod and owner
+  ${CHOWN} -R ${GU_NAME}:${GU_NAME} ${SPOOLDIR}
   ${CHOWN} ${GU_NAME}:${GU_NAME} ${PREFIX}/bin/qmail-scanner-queue.pl
   ${CHMOD} 4755 ${PREFIX}/bin/qmail-scanner-queue.pl
 

@@ -21,12 +21,12 @@
  
  #Array of local domains that are checked against for
  #deciding whether or not to send recipient alerts to
-@@ -294,6 +300,7 @@ if (! -d "$scandir/tmp") {
+@@ -294,6 +300,7 @@
  }
- 
+
  my $quarantine_event=0;
 +my $spam_event=0;
- 
+
  my $file_id = &uniq_id();
  
 @@ -415,7 +422,18 @@ eval {
