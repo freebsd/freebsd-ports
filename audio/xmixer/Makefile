@@ -11,7 +11,9 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.hdk-berlin.de/~rasca/
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		seems incompatible with newpcm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
