@@ -31,7 +31,7 @@ MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 XMKMF=		xmkmf
 
 .if !defined(DISPLAY) || ${DISPLAY} == ""
-BROKEN=		"Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X."
+IGNORE=		Requires an active X session (and DISPLAY variable) to run xrdb.  Please compile this while running X.
 .endif
 
 MAN1=		xgrab.1 xgrabsc.1
