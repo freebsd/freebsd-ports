@@ -17,7 +17,7 @@ COMMENT=	PIM for IPv6 sparse mode daemon
 USE_REINPLACE=	yes
 
 MAN5=		pim6sd.conf.5
-MAN8=		pim6sd.8
+MAN8=		pim6sd.8 mtrace6.8
 MANCOMPRESSED=	yes
 
 DOCS=		BUGS.TODO BUGS.V6 LICENSE.mrouted LICENSE.pim6dd \
