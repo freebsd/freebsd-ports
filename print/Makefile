@@ -67,6 +67,7 @@
     SUBDIR += foomatic-db
     SUBDIR += foomatic-db-engine
     SUBDIR += foomatic-filters
+    SUBDIR += fpdf
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos

@@ -1,0 +1,2 @@
+You should add the FPDF path %%PREFIX%%/%%FPDF_DIR%%
+to the "include_path=" directive in your php.ini.
