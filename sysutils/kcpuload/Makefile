@@ -7,19 +7,20 @@
 
 PORTNAME=	kcpuload
 PORTVERSION=	1.99
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://ftp.kde.com/Administration/Monitoring/Resources/KCPULoad/
+MASTER_SITES=	http://www.brueffer.de/distfiles/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	CPU meter for Kicker
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name="-e s,x,x,"
+USE_REINPLACE=	yes
 
-# Hmm, I don't know how to tell meinproc where it should search for DTDs...
 post-patch:
-	@${LN} -s ${PREFIX}/share/apps/ksgmltools2/customization/dtd ${WRKSRC}/doc/en/dtd
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
