@@ -14,15 +14,14 @@ MASTER_SITES=	http://www.clearskyinstitute.com/xephem/xephem/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XPM=	yes
-REQUIRES_MOTIF=	yes
-USE_IMAKE=	yes
-MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/${DISTNAME}/GUI/xephem
 
-LIBSRC=		${WRKDIR}/${DISTNAME}/libastro
-
+REQUIRES_MOTIF=	yes
+USE_XPM=	yes
+USE_IMAKE=	yes
 MAN1=		xephem.1
+
+LIBSRC=		${WRKDIR}/${DISTNAME}/libastro
 
 AUXIL=		README jupiter.9910 logo.gif mars.9910 mars_db marsmap.fts \
 		moon.fts moon_db saturne.9910 uranus.9910 xephem.hlp \
@@ -46,9 +45,7 @@ pre-build:
 	@(cd ${LIBSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 	${SED} -e "s^@PREFIX@^${PREFIX}^" ${WRKSRC}/XEphem.ad > ${WRKSRC}/XEphem.ad.new
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xephem.man ${PREFIX}/man/man1/xephem.1
+post-install:
 	${INSTALL_DATA} ${WRKSRC}/XEphem.ad.new ${PREFIX}/lib/X11/app-defaults/XEphem
 	${MKDIR} ${PREFIX}/lib/X11/xephem
 
