@@ -1,0 +1,22 @@
+kame-dhcp6 is an open-source implementation of Dynamic Host
+Configuration Protocol for IPv6 (DHCPv6) developed by the KAME
+project.
+
+The implementation mainly conforms to the following standards:
+
+- RFC3315: Dynamic Host Configuration Protocol for IPv6 (DHCPv6)
+- RFC3319: Dynamic Host Configuration Protocol (DHCPv6) Options 
+ 	   for Session Initiation Protocol (SIP) Servers
+- RFC3633: IPv6 Prefix Options for Dynamic Host Configuration
+           Protocol (DHCP)
+- RFC3646: DNS Configuration options for Dynamic Host
+           Configuration Protocol for IPv6 (DHCPv6)
+
+Note that the current implementation does not support IPv6 address
+allocation by DHCPv6, and there is no plan to implement that feature
+at the moment.  The main purpose of this implementation is to provide
+a way of IPv6 prefix delegation (RFC3633) and to provide some
+"stateless" configuration information such as DNS recursive server
+addresses.
+
+WWW: http://www.kame.net/
