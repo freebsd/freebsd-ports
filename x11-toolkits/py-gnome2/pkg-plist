@@ -36,6 +36,7 @@ share/examples/pygtk/neil/gtk-logo.xpm
 share/examples/pygtk/neil/notebook.py
 share/examples/pygtk/neil/question.xpm
 share/examples/pygtk/simple/README
+share/examples/pygtk/simple/dnd.py
 share/examples/pygtk/simple/hello1.py
 share/examples/pygtk/simple/hello2.py
 share/examples/pygtk/simple/scribble.py
@@ -52,4 +53,5 @@ share/examples/pygtk/testgtk/testgtkrc
 @dirrm share/examples/pygtk/neil
 @dirrm share/examples/pygtk/imlib
 @dirrm share/examples/pygtk/ide
+@dirrm share/examples/pygtk
 @dirrm share/doc/pygtk
