@@ -51,6 +51,7 @@
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += terminus-font
+    SUBDIR += texcm-ttf
     SUBDIR += tkfont
     SUBDIR += ttmkfdir
     SUBDIR += tv-fonts
