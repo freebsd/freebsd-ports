@@ -60,6 +60,7 @@
     SUBDIR += dsbl-testers
     SUBDIR += dspam
     SUBDIR += dspam-devel
+    SUBDIR += dspampd
     SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elm+ME

@@ -1,0 +1,14 @@
+--- dspampd.dist	Sun Jan  2 00:05:34 2005
++++ dspampd	Sun Jan  2 00:40:10 2005
+@@ -2017,6 +2017,11 @@
+             $dspam{'dspam-user'} = ${applytoList}[0];
+             ## Remove angled arrows on addresses like: <caspian@dotconf.net>
+             $dspam{'dspam-user'} =~ s/^<|>$//go;
++			## FreeBSD-local patch if port built with WITHOUT_DSPAM_VIRT_USERS= on
++			## This works if you relay mail for system users ONLY
++			$dspam{'dspam-user'} =~ s/@.*$//go;			
++			## FreeBSD-local patch WITHOUT_DSPAM_VIRT_USERS= on
++			## end 
+             $dspam{'dspam-user'} =~ tr/A-Z/a-z/;    # convert to lower case
+         }
+         else {

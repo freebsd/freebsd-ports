@@ -1,0 +1,9 @@
+DspamPD is a GPL'ed transparent smtp proxy written in perl 
+which can do content scanning through DSPAM and/or ClamAV.
+DspamPD version v2.00 supports DSPAM version 3.x, both stable and -devel ports
+and both clamav ports.
+
+WWW: http://caspian.dotconf.net/menu/Software/DspamPD/
+
+-IOnut
+<itetcu@people.tecnik93.com>
