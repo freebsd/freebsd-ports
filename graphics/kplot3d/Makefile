@@ -19,10 +19,4 @@ USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BROKEN=		"Obsolete compiler"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
