@@ -57,6 +57,7 @@
     SUBDIR += gcc30
     SUBDIR += gcc31
     SUBDIR += gcc32
+    SUBDIR += gcc33
     SUBDIR += gcl
     SUBDIR += generic-haskell
     SUBDIR += gforth
@@ -223,6 +224,7 @@
     SUBDIR += tcl82
     SUBDIR += tcl83
     SUBDIR += tcl84
+    SUBDIR += tclX
     SUBDIR += tclX80
     SUBDIR += tclX82
     SUBDIR += tcltutor
