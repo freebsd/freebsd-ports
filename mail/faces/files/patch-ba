@@ -1,6 +1,6 @@
---- compface/Makefile.orig	Wed Oct 23 21:28:06 1991
-+++ compface/Makefile	Fri Sep 18 19:17:01 1998
-@@ -19,62 +19,70 @@
+--- compface/Makefile.orig	Wed Oct 23 19:28:06 1991
++++ compface/Makefile	Sat Mar 10 15:38:13 2001
+@@ -19,62 +19,69 @@
  #
  #SYSV           = -DSYSV32
  #--------------------------------------------------------------------------
@@ -39,11 +39,12 @@
  HDRS		= compface.h data.h
  OTHERS		= README $(NAME).1 $(NAME).3 Makefile
  
- CC		= cc
+-CC		= cc
++CC		?= cc
  CDEFS		= $(SYSV)
 -CCOMP		= -g
-+CCOMP		= -pipe -O2
- CFLAGS		= $(CDEFS) $(CCOMP)
+-CFLAGS		= $(CDEFS) $(CCOMP)
++CFLAGS		+= $(CDEFS) $(CCOMP)
  
 -all:		$(NAME) $(UNNAME)
 +all:		lib$(NAME).a $(SOLIB) $(NAME) $(UNNAME) 
@@ -95,7 +96,7 @@
  
  shar :
  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
-@@ -88,3 +96,5 @@
+@@ -88,3 +95,5 @@
  gen.o:		gen.c compface.h data.h
  uncmain.o:	uncmain.c compface.h data.h
  uncompface.o:	uncompface.c compface.h data.h
