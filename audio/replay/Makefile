@@ -8,9 +8,8 @@
 PORTNAME=	replay
 PORTVERSION=	0.61
 CATEGORIES=	audio
-MASTER_SITES=	http://replay.replicant.nu/files/ \
-		ftp://ftp.icemark.ch/pub/replay/ \
-		ftp://k2.lund.se/pub/replay/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/replay
 DISTNAME=	${PORTNAME}-source-dgtk_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
