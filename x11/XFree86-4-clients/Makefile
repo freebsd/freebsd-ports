@@ -36,7 +36,8 @@ XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
 XINSTALL_DIRS=		programs fonts/util
 XINSTALL_MAN_DIRS=	programs
 
-.for pf in patch-bdftruncate.pl patch-ucs2any.pl
+.for pf in patch-bdftruncate.pl patch-ucs2any.pl \
+	   patch-Xres.cpp patch-Imake.rules
 EXTRA_PATCHES+=		${FILESDIR}/${pf}
 .endfor
 
