@@ -1,0 +1,21 @@
+--- src/smt/xitami.c.orig	Sat Aug  8 15:48:29 1998
++++ src/smt/xitami.c	Sat Aug  8 15:50:15 1998
+@@ -163,13 +163,17 @@
+         fclose (stdout);                /*  Kill standard output             */
+         fclose (stderr);                /*   and standard error              */
+       }
+-    else
++    else if (*background == '0')
++      {
+         puts (COPYRIGHT);
++      }
+ 
+     if (*background == '1')
+       {
+         puts ("Moving into the background");
+         process_server (NULL, NULL);    /*  Put process into background      */
++        if (process_server (NULL, "/var/run/xitami.pid") != 0)
++            exit (EXIT_FAILURE);
+       }
+     /*  Initialise SMT and run the HTTP agent until it has finished          */
+     server_name = "Xitami";

@@ -1,0 +1,15 @@
+Based on the SMT multithreading kernel from iMatix, the Xitami ['shi-tami'] 
+web server is scalable and efficient, especially at high loads. Unlike Apache, 
+NCSA httpd, Netscape's Enterprise Server, or IIS, Xitami handles all 
+connections (except CGI) within a single process, without creating child 
+processes or multiple threads. The cost of a connection ('hit') is extremely 
+low.
+
+Xitami supports the main HTTP operations: GET, POST, HEADER. It also supports 
+virtual hosts, CGI, clickable image maps, CERN/NCSA logging, log cycling, 
+protected directories, direct execution of Perl programs, and browser-based 
+configuration and management. It does not support secure sockets.
+
+Xitami is available for multiple platforms (UNIX, OpenVMS, Win 3.x, Win 95, 
+Win NT, OS/2) and is free software. Please read the Xitami license agreement 
+for details.
