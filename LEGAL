@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.142 1999/05/29 08:30:19 kuriyama Exp $
+# $Id: LEGAL,v 1.143 1999/06/19 10:41:47 andreas Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -33,6 +33,7 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 cap60/*			ports/net/cap		Don't sell for profit
 cfs-*			ports/security/cfs	Crypto; export-controlled
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
+cls-*			ports/deskutils/cls	Restrictive copyright.
 contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
