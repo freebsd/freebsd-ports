@@ -15,10 +15,6 @@ DISTNAME=	tf-40s1
 
 MAINTAINER=	fjoe@FreeBSD.org
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-BROKEN=		tries to cd to directory that do not exist yet
-.endif
-
 PLIST_SUB=	DISTNAME=${DISTNAME}
 
 MAKEFILE=	${WRKSRC}/unix/Makefile
