@@ -8,8 +8,7 @@
 PORTNAME=	i18n-man
 PORTVERSION=	1.1
 CATEGORIES=	misc elisp
-MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
-		${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
