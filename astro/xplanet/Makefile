@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	0.73
+PORTVERSION=	0.81
 CATEGORIES=	astro x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.radcyberzine.com/xglobe/
