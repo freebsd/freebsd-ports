@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	addttfont
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
@@ -15,7 +15,10 @@ MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 		VTPSfont:${PORTSDIR}/japanese/VTPSfont \
-		${X11BASE}/lib/X11/ja_JP.EUC/app-defaults/Tgif:${PORTSDIR}/graphics/tgif-nls
+		${X11BASE}/lib/X11/ja_JP.EUC/app-defaults/Tgif:${PORTSDIR}/japanese/tgif
+#		${PREFIX}/share/ghostscript/5.50vflib/Fontmap:${PORTSDIR}/japanese/vfghostscript5
+# or
+#		${PREFIX}/share/ghostscript/5.10vflib/Fontmap:${PORTSDIR}/japanese/vfghostscript55
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
