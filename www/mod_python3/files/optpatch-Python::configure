@@ -1,0 +1,20 @@
+--- work/Python-2.0/configure.orig	Fri Mar 16 07:32:48 2001
++++ work/Python-2.0/configure	Fri Mar 16 07:35:20 2001
+@@ -3975,7 +3975,7 @@
+ fi
+ done
+ 
+-
++if false; then
+ # check for openpty and forkpty
+ 
+ for ac_func in openpty
+@@ -4173,7 +4173,7 @@
+ 
+ fi
+ done
+-
++fi
+ 
+ # check for long file support functions
+ for ac_func in fseek64 fseeko fstatvfs ftell64 ftello statvfs
