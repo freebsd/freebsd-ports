@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.2
+PORTVERSION=	1.2.2
 CATEGORIES=	games net
 MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/
 DISTNAME=	mj-${PORTVERSION}-src
@@ -15,8 +15,8 @@ DISTNAME=	mj-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GTK=	yes
-
 USE_GMAKE=	yes
+MAKE_ENV=	PERL="${PERL}"
 
 INSTALL_TARGET=	install install.man
 
