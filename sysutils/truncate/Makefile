@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	truncate
-PORTVERSION=	3.0
+PORTVERSION=	20010323
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://big.endian.de/pub/FreeBSD/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alex
 
 MAINTAINER=	alex@FreeBSD.org
 
@@ -18,7 +19,7 @@ MAKE_ENV+=	MANDIR=${PREFIX}/man/man BINDIR=${PREFIX}/bin
 WRKSRC=		${WRKDIR}/truncate
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500011
-BROKEN=		"truncate(1) is in the base-system"
+.if ${OSVERSION} >= 420000
+#BROKEN=		"truncate(1) is in the base-system"
 .endif
 .include <bsd.port.post.mk>
