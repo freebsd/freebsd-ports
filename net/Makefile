@@ -356,6 +356,7 @@
     SUBDIR += netstrain
     SUBDIR += nettest
     SUBDIR += newsbot
+    SUBDIR += ng_daphne
     SUBDIR += ng_netflow
     SUBDIR += ngrep
     SUBDIR += ngrep-lib

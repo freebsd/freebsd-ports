@@ -1,0 +1,8 @@
+ng_daphne is a FreeBSD netgraph kernel module which allows the easy
+creation of multihop ad hoc networks. ng_daphne employs the GSR
+(Global State Routing) algorithm with hardware addresses, in order to
+give the impression to upper layers that all network nodes are within
+one hop from each other. 
+
+- Gerasimos Dimitriadis
+gedimitr@auth.gr
