@@ -24,6 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		geg.1
 
 pre-configure:
-	@cd ${WRKSRC}; aclocal -I ${X11BASE}/share/aclocal
+	@cd ${WRKSRC}; ${ACLOCAL} -I ${X11BASE}/share/aclocal
 
 .include <bsd.port.mk>
