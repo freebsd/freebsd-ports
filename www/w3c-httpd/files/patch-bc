@@ -1,0 +1,81 @@
+--- Daemon/Implementation/HTPasswd.c.orig	Sun Sep 25 06:48:03 1994
++++ Daemon/Implementation/HTPasswd.c	Sat Mar  8 10:02:19 1997
+@@ -77,6 +77,7 @@
+ **	string at once, but then again, we are not that paranoid
+ **	about the security inside the machine.
+ **
++   NOTE: MD5: 28 characters (8 - setting, 20 - crypted password)
+ */
+ PUBLIC char *HTAA_encryptPasswd ARGS1(CONST char *, password)
+ {
+@@ -101,7 +102,7 @@
+ 	strncpy(chunk, cur, 8);
+ 	chunk[8] = (char)0;
+ 
+-	tmp = crypt((char*)password, salt);  /*crypt() doesn't change its args*/
++	tmp = crypt((char*)chunk , salt);  /*crypt() doesn't change its args*/
+ 	strcat(result, tmp);
+ 
+ 	cur += 8;
+@@ -139,11 +140,24 @@
+     char *result;
+     int len;
+     int status;
++#ifdef MD5_PW
++    char salt[9];
++#else
++    char salt[3];
++#endif
++    char chunk[9];
++    CONST char *cur1 = password;
++    CONST char *cur2 = encrypted;
++    char *tmp;
+ 
+     if (!password || !encrypted)
+ 	return NO;
+ 
++#ifdef MD5_PW
++    len = 28*(((int)strlen(password)+7)/8);
++#else
+     len = 13*(((int)strlen(password)+7)/8);
++#endif
+     if (len < (int)strlen(encrypted))
+ 	return NO;
+ 
+@@ -152,25 +166,30 @@
+ 
+     *result = (char)0;
+     while (len > 0) {
+-	char salt[3];
+-	char chunk[9];
+-	CONST char *cur1 = password;
+-	CONST char *cur2 = encrypted;
+-	char *tmp;
+ 
++#ifdef MD5_PW
++	for(status=0;status<8;status++) salt[status]=cur2[status];
++	salt[8]=0;
++#else
+ 	salt[0] = *cur2;
+ 	salt[1] = *(cur2+1);
+ 	salt[2] = (char)0;
++#endif
+ 
+ 	strncpy(chunk, cur1, 8);
+ 	chunk[8] = (char)0;
+ 
+-	tmp = crypt((char*)password, salt);
++	tmp = crypt((char*)chunk, salt);
+ 	strcat(result, tmp);
+ 
+ 	cur1 += 8;
++#ifdef MD5_PW
++	cur2 += 28;
++	len -= 28;
++#else
+ 	cur2 += 13;
+ 	len -= 13;
++#endif
+     } /* while */
+ 
+     status = strncmp(result, encrypted, strlen(encrypted));
