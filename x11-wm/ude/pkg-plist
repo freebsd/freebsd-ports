@@ -1,11 +1,7 @@
 bin/uwm
-%%PORTDOCS%%%%DOCSDIR%%/html/contents.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/crossref.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/manual.css
 %%PORTDOCS%%%%DOCSDIR%%/html/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/html/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/next_g.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node11.html
@@ -21,10 +17,6 @@ bin/uwm
 %%PORTDOCS%%%%DOCSDIR%%/html/node7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node8.html
 %%PORTDOCS%%%%DOCSDIR%%/html/node9.html
-%%PORTDOCS%%%%DOCSDIR%%/html/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/prev_g.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/up.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/up_g.gif
 %%NLS%%share/locale/de/LC_MESSAGES/ude.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ude.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ude.mo
