@@ -261,6 +261,7 @@
     SUBDIR += gconf
     SUBDIR += gconf2
     SUBDIR += gconfmm
+    SUBDIR += gconfmm26
     SUBDIR += gcvs
     SUBDIR += gdb52
     SUBDIR += gdb53
