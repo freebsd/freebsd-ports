@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nicotine
-PORTVERSION=	1.0.8.r1
-PORTREVISION=	1
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://nicotine.thegraveyard.org/
-DISTNAME=	${PORTNAME}-1.0.8rc1
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	GTK2 SoulSeek filesharing client
