@@ -1,0 +1,11 @@
+--- lib/45/mk_req.c.orig	Mon Apr 17 20:38:38 2000
++++ lib/45/mk_req.c	Mon Apr 17 20:38:50 2000
+@@ -63,7 +63,7 @@
+ 
+ int
+ krb_mk_req(KTEXT authent,
+-	   const char *service, const char *instance, const char *realm, 
++	   char *service, char *instance, char *realm, 
+ 	   int32_t checksum)
+ {
+     CREDENTIALS cr;

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=		0.2q
+PORTVERSION=		0.2r
 CATEGORIES=		security ipv6
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -18,7 +18,7 @@ MAINTAINER=		nectar@FreeBSD.ORG
 RESTRICTED=             "Crypto; export-controlled"
 
 MAN1=			ftp.1 kdestroy.1 kgetcred.1 kinit.1 klist.1 kpasswd.1 \
-			telnet.1 kx.1 rxtelnet.1 rxterm.1 tenletxr.1
+			telnet.1 kx.1 rxtelnet.1 rxterm.1 tenletxr.1 pfrom.1
 MAN3=			editline.3 krb5_425_conv_principal.3 kafs.3 \
 			krb5_build_principal.3 krb5_free_principal.3 \
 			krb5_openlog.3 krb5_parse_name.3 \
@@ -26,7 +26,8 @@ MAN3=			editline.3 krb5_425_conv_principal.3 kafs.3 \
 			krb5_warn.3
 MAN5=			ftpusers.5 krb5.conf.5
 MAN8=			ftpd.8 hprop.8 hpropd.8 kdc.8 kpasswdd.8 kstash.8 \
-			ktutil.8 push.8 telnetd.8 kxd.8
+			ktutil.8 push.8 telnetd.8 kxd.8 verify_krb5_conf.8 \
+			string2key.8
 
 USE_LIBTOOL=		YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
@@ -37,8 +38,12 @@ PREFIX=                        ${HEIMDAL_HOME}
 
 .if exists(${X11BASE}/lib/libX11.a) && !defined(WITHOUT_X11)
 USE_XLIB=		yes
-MAN1+=			kx.1 rxtelnet.1 rxterm.1 tenletxr.1
-MAN8+=			kxd.8
+.endif
+
+.if defined(USE_XLIB)
+# These man pages are always installed, so I moved them up
+#MAN1+=			kx.1 rxtelnet.1 rxterm.1 tenletxr.1
+#MAN8+=			kxd.8
 CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--without-x
