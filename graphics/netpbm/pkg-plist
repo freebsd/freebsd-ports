@@ -1,7 +1,3 @@
-bin/pbmmerge
-bin/pgmmerge
-bin/ppmmerge
-bin/pnmmerge
 bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
@@ -28,6 +24,7 @@ bin/pbmclean
 bin/pbmlife
 bin/pbmmake
 bin/pbmmask
+bin/pbmmerge
 bin/pbmpscale
 bin/pbmreduce
 bin/pbmtext
@@ -65,6 +62,7 @@ bin/pgmedge
 bin/pgmenhance
 bin/pgmhist
 bin/pgmkernel
+bin/pgmmerge
 bin/pgmnoise
 bin/pgmnorm
 bin/pgmoil
@@ -90,15 +88,19 @@ bin/pnmdepth
 bin/pnmenlarge
 bin/pnmfile
 bin/pnmflip
+bin/pnmgamma
 bin/pnmhistmap
 bin/pnmindex
 bin/pnminvert
 bin/pnmmargin
+bin/pnmmerge
 bin/pnmnlfilt
 bin/pnmnoraw
 bin/pnmpad
 bin/pnmpaste
+bin/pnmrotate
 bin/pnmscale
+bin/pnmshear
 bin/pnmsmooth
 bin/pnmtile
 bin/pnmtoddif
@@ -119,6 +121,7 @@ bin/ppmflash
 bin/ppmforge
 bin/ppmhist
 bin/ppmmake
+bin/ppmmerge
 bin/ppmmix
 bin/ppmnorm
 bin/ppmntsc
@@ -271,6 +274,7 @@ man/man1/pnmdepth.1.gz
 man/man1/pnmenlarge.1.gz
 man/man1/pnmfile.1.gz
 man/man1/pnmflip.1.gz
+man/man1/pnmgamma.1.gz
 man/man1/pnmhistmap.1.gz
 man/man1/pnmindex.1.gz
 man/man1/pnminvert.1.gz
@@ -279,7 +283,9 @@ man/man1/pnmnlfilt.1.gz
 man/man1/pnmnoraw.1.gz
 man/man1/pnmpad.1.gz
 man/man1/pnmpaste.1.gz
+man/man1/pnmrotate.1.gz
 man/man1/pnmscale.1.gz
+man/man1/pnmshear.1.gz
 man/man1/pnmsmooth.1.gz
 man/man1/pnmtile.1.gz
 man/man1/pnmtoddif.1.gz
