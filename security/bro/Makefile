@@ -4,7 +4,7 @@
 # Date created:			  Sat Feb 28, 1998
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.4 1998/03/16 10:27:31 obrien Exp $
+# $Id: Makefile,v 1.5 1998/09/14 00:20:20 obrien Exp $
 #
 
 DISTNAME=	vp-bro-0.4-alpha
@@ -16,6 +16,7 @@ MAINTAINER=     obrien@FreeBSD.org
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 
+IS_INTERACTIVE=	"manual fetch"
 WRKSRC=		${WRKDIR}/bro-0.4
 CONFIGURE_ARGS= --libdir=${PREFIX}/share
 GNU_CONFIGURE=	yes
