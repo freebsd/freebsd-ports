@@ -14,7 +14,7 @@ static char rcsid[] = "$FreeBSD$";
 /* char *stock_cpp[] = {  */
 char *cpp[] = { 
 	"/usr/libexec/cpp",
-	"-undef", "-nostdinc", "-lang-c", "-U__GNUC__",
+	"-nostdinc", "-lang-c", "-U__GNUC__",
 	"-D_POSIX_SOURCE", "-D__STDC__", "-D__STRICT_ANSI__",
 	"-Dunix", "-Di386", "-DFreeBSD",
 	"-D__unix__", "-D__i386__", "-D__FreeBSD__",
