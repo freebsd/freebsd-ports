@@ -1,0 +1,19 @@
+*** cpp-Makefile.orig	Thu Sep 15 21:14:19 1994
+--- cpp-Makefile	Thu Sep 15 21:14:45 1994
+***************
+*** 383,389 ****
+  Program = bash
+  
+  /**/# The type of machine and OS Bash is being compiled on.
+! HOSTTYPE_DECL = -DHOSTTYPE='$(SYSTEM_NAME)' -DOSTYPE='$(OS_NAME)'
+  
+  MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
+  
+--- 383,389 ----
+  Program = bash
+  
+  /**/# The type of machine and OS Bash is being compiled on.
+! HOSTTYPE_DECL = -DHOSTTYPE='"$(SYSTEM_NAME)"' -DOSTYPE='"$(OS_NAME)"'
+  
+  MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
+  
