@@ -1,0 +1,6 @@
+BitVector is a fairly extensive and fast BitVector class for Ruby.
+Handles sequences of up to 2**32-1 bits (about 500 Mb).  Implemented
+as a wrapper around Bit::Vector version 6.0 by Steffen Beyer.
+
+Author:	Robert Feldt <feldt@ce.chalmers.se>
+WWW:	http://www.ce.chalmers.se/~feldt/ruby/extensions/bitvector/
