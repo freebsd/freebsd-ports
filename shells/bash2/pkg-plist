@@ -1,3 +1,5 @@
 @cwd /usr/local
 bin/bash
+bin/bashbug
 man/man1/bash.1
+man/man1/bash_builtins.1

@@ -1,5 +1,5 @@
-*** cpp-Makefile.orig	Thu Sep 29 05:00:51 1994
---- cpp-Makefile	Tue Jul 19 14:02:14 1994
+*** cpp-Makefile.orig	Mon Dec 12 04:14:30 1994
+--- cpp-Makefile	Mon Dec 12 04:14:30 1994
 ***************
 *** 136,144 ****
   /* This is guaranteed to work, even if you have the fixed includes!
@@ -21,6 +21,23 @@
   #  endif /* HAVE_FIXED_INCLUDES */
   #else /* !HAVE_GCC */
   CC = CPP_CC
+***************
+*** 304,310 ****
+  /**/# The GNU coding standards don't recognize the possibility that
+  /**/# other information besides optimization and debugging might be
+  /**/# passed to cc.  A different name should have been used.
+! CFLAGS = -O -g
+  
+  SYSTEM_FLAGS = $(LINEBUF) $(VPRINTF) $(UNISTD) $(STDLIB) $(LIMITSH) \
+         $(GROUPS) $(RESOURCE) $(PARAM) $(SIGHANDLER) $(SYSDEP) $(WAITH) \
+--- 304,310 ----
+  /**/# The GNU coding standards don't recognize the possibility that
+  /**/# other information besides optimization and debugging might be
+  /**/# passed to cc.  A different name should have been used.
+! #CFLAGS = -O -g
+  
+  SYSTEM_FLAGS = $(LINEBUF) $(VPRINTF) $(UNISTD) $(STDLIB) $(LIMITSH) \
+         $(GROUPS) $(RESOURCE) $(PARAM) $(SIGHANDLER) $(SYSDEP) $(WAITH) \
 ***************
 *** 383,389 ****
   Program = bash
