@@ -55,13 +55,14 @@ FFMPEG_CONFIGURE_ARGS+=	--enable-gpl --disable-ffserver \
 			--enable-pthreads \
 			--enable-faac \
 			--enable-mp3lame \
-			--enable-faad \
 			--enable-a52 \
 			--enable-xvid
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
+USE_GETOPT_LONG=	yes
+MAKE_ENV=		EXTRA_LIBS="-lcipher"
 WITH_DVD_DEVICE?=	acd0c
 .else
 WITH_DVD_DEVICE?=	acd0
@@ -96,6 +97,7 @@ post-patch:
 		${FFMPEG_SRC_DIR}/libavcodec/xvidff.c
 .endif
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		-e 's|-Wall||' \
 		${FFMPEG_SRC_DIR}/configure
 	cd ${FFMPEG_SRC_DIR} && \
 		${PATCH} -p0 < ${PATCHDIR}/ffmpeg-patch
