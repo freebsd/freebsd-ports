@@ -3,18 +3,15 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.14 1996/07/11 11:03:17 ache Exp $
+# $Id: Makefile,v 1.15 1996/07/12 06:41:05 pst Exp $
 #
 
 DISTNAME=       apache_1.1.1
 PKGNAME=        apache-1.1.1
 CATEGORIES+=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
-DISTFILES=      ${DISTNAME}.tar.gz
 
-MAINTAINER=	ache@freebsd.org,pst@freebsd.org
-
-EXTRACT_ONLY=   ${DISTNAME}.tar.gz
+MAINTAINER=	ache@freebsd.org
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
