@@ -16,6 +16,7 @@ COMMENT=	A library to access GSM mobile phones through GSM modems
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -30,11 +31,6 @@ MAN8=	gsmsmsd.8
 CPPFLAGS=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT \
 		${PTHREAD_CFLAGS} 
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=   gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-LDFLAGS+=       -lgnugetopt
-.endif
 
 post-patch:
 	@${GREP} -lR "<malloc.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
