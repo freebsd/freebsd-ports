@@ -1,8 +1,8 @@
 bin/emc2
 bin/prf_f3d
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/emc2.doc.en.ps.gz
-%%PORTDOCS%%%%DOCSDIR%%/emc2.doc.fr.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/emc2-doc-en.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/emc2-doc-fr.ps.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/c.emc2_bd
 %%PORTDOCS%%%%EXAMPLESDIR%%/cooler.emc2_bd
 %%PORTDOCS%%%%EXAMPLESDIR%%/culot1.emc2_bd
