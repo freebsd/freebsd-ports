@@ -28,6 +28,12 @@ bin/tkaenc
 bin/tkaepa
 bin/tkaer
 bin/xaegis
+share/locale/de/LC_MESSAGES/aegis.mo
+share/locale/es/LC_MESSAGES/aegis.mo
+share/locale/fr/LC_MESSAGES/aegis.mo
+share/locale/nl/LC_MESSAGES/aegis.mo
+share/locale/ro/LC_MESSAGES/aegis.mo
+share/locale/ru/LC_MESSAGES/aegis.mo
 %%DATADIR%%/aedefault.css
 %%DATADIR%%/aegis.icon
 %%DATADIR%%/aegis.mask
