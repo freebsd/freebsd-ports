@@ -25,7 +25,7 @@
 #	your port depends on the gnustep-gui port.
 #
 # USE_GNUSTEP_BACK=yes
-#	your port depends on teh gnustep-back port.
+#	your port depends on the gnustep-back port.
 #
 # USE_GNUSTEP_CONFIGURE=yes
 #	call configure script with GNUstep.sh sourced in the current shell
