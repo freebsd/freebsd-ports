@@ -1,0 +1,11 @@
+--- freebsd-update	Sun Oct  3 21:08:21 2004
++++ freebsd-update	Sun Oct  3 21:12:04 2004
+@@ -371,7 +371,7 @@
+ 
+ # Fetch updates; send output to a file, and
+ # append a message in case of error.
+-  real-fetch-update > $WRKDIR/log ||
++  real-fetch-update > $WRKDIR/log 2>&1 ||
+     echo "Error fetching updates" >> $WRKDIR/log
+ 
+ # Send an email to root if $VERBOSE == yes, or
