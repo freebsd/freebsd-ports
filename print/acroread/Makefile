@@ -42,9 +42,9 @@ PLIST_SUB=	"ARCHDIR=alphaosf"
 
 pre-configure:
 .if ${ARCH} == "i386"
-	@${REINPLACE_CMD} -e 's:Linux\):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e 's:Linux):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
 .elif ${ARCH} == "alpha"
-	@${REINPLACE_CMD} -e 's:OSF1\):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
+	@${REINPLACE_CMD} -e 's:OSF1):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
 .endif
 
 do-build:
@@ -56,10 +56,10 @@ do-install:
 
 post-install:
 .if ${ARCH} == "i386"
-	@${REINPLACE_CMD} -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat3/bin/acroread
+	@${REINPLACE_CMD} -e 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat3/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat3/Reader/intellinux/bin/acroread
 .elif ${ARCH} == "alpha"
-	@${REINPLACE_CMD} -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat3/bin/acroread
+	@${REINPLACE_CMD} -e 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat3/bin/acroread
 .endif
 	@cd ${PREFIX}/Acrobat3/bin && \
 	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
