@@ -1,4 +1,5 @@
 bin/add_file_priv
+bin/add_func_table
 bin/add_long_password
 bin/comp_err
 bin/isamchk
@@ -16,6 +17,7 @@ bin/mysqlimport
 bin/mysqlshow
 bin/perror
 bin/replace
+bin/resolveip
 bin/safe_mysqld
 bin/which1
 bin/zap
@@ -28,6 +30,7 @@ include/mysql/my_sys.h
 include/mysql/mysql.h
 include/mysql/mysql_com.h
 include/mysql/mysql_version.h
+include/mysql/mysqld_error.h
 @unexec install-info --delete %D/info/mysql.info %D/info/dir
 info/mysql.info
 @exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
@@ -36,6 +39,9 @@ lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.la
+lib/mysql/libmysqlclient.so
+lib/mysql/libmysqlclient.so.4.0
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
@@ -56,6 +62,13 @@ share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
 share/mysql/german/errmsg.sys
 share/mysql/german/errmsg.txt
+share/mysql/hungarian/errmsg.sys
+share/mysql/hungarian/errmsg.txt
+share/mysql/italian/errmsg.sys
+share/mysql/italian/errmsg.txt
+share/mysql/my-example.cnf
+share/mysql/mysql-3.22.6-alpha.spec
+share/mysql/mysql-log-rotate
 share/mysql/mysql/db.frm
 share/mysql/mysql/func.frm
 share/mysql/mysql/host.frm
@@ -82,6 +95,8 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/english
 @dirrm share/mysql/french
 @dirrm share/mysql/german
+@dirrm share/mysql/hungarian
+@dirrm share/mysql/italian
 @dirrm share/mysql/mysql
 @dirrm share/mysql/norwegian
 @dirrm share/mysql/norwegian-ny
@@ -93,3 +108,5 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql
 @exec %D/bin/mysql_install_db
 @exec /usr/bin/killall mysqld
+@unexec /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %D/lib

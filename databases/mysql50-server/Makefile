@@ -1,35 +1,63 @@
-# ports collection makefile for:	mySQL
-# Version required:			v3.21.33
-# Date created:				14 Aug 1998
+# ports collection makefile for:	MySQL
+# Version required:			v3.22.6-alpha
+# Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.24 1998/09/01 15:27:36 thepish Exp $
+# $Id$
 #
 
-DISTNAME=	mysql-3.21.33
-PKGNAME=	mysql-3.21.33
+DISTNAME=	mysql-3.22.6-alpha
+PKGNAME=	mysql-3.22.6a
 CATEGORIES=	databases
-MASTER_SITES=	http://www.buoy.com/mysql/Downloads/ \
-		http://mysql.bluep.com/Downloads/ \
-		http://mysql.polaris.ca/Downloads/MySQL-3.21/ \
-		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.21/ \
-		http://www.tcx.se/Downloads/MySQL-3.21/
+MASTER_SITES=	http://mysql.polaris.ca/Downloads/MySQL-3.22/ \
+		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
+		http://www.tcx.se/Downloads/MySQL-3.22/
 
 MAINTAINER=	ibex@physik.TU-Berlin.DE
 
+NO_LATEST_LINK=	yes
 MAN1=		mysql.1
 
-USE_GMAKE=	YES
 USE_PERL5=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
-		--with-MAKE=gmake \
 		--without-perl \
 		--without-debug \
 		--without-readline \
 		--without-bench
-CONFIGURE_ENV+=	PERL=${PREFIX}/bin/perl INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+CONFIGURE_ENV+=	PERL=${PREFIX}/bin/perl \
+		PERL5=${PREFIX}/bin/perl5 \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
+OSVERSION!=	sysctl -n kern.osreldate
+.if defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
+CONFIGURE_ARGS+=	--with-named-thread-libs=-lc_r
+.else
+CONFIGURE_ARGS+=	--with-mit-threads
+.endif
+
+.if !defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "You may set NATIVE_THREADS (make NATIVE_THREADS=yes)"
+	@${ECHO} "to compile mysql with the native FreeBSD threads (libc_r)."
+	@${ECHO} "Warning: There are still some bugs in libc_r which prevent"
+	@${ECHO} "         'mysqladmin shutdown' from working properly."
+	@${ECHO}
+.elif defined(NATIVE_THREADS) && ${OSVERSION} >= 300000
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "Using native FreeBSD threads (libc_r)."
+	@${ECHO}
+.elif defined(NATIVE_THREADS) && ${OSVERSION} < 300000
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "Sorry, native FreeBSD threads (libc_r) in 2.2-branch"
+	@${ECHO} "are still to buggy to use with mysql."
+	@${ECHO} "Using mit-pthreads."
+	@${ECHO}
+.endif
+	
 pre-install:
 .if defined(PACKAGE_BUILDING)
 	@ ${RM} -rf /var/db/mysql
@@ -39,24 +67,29 @@ pre-install:
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
 	${CP} ${WRKSRC}/data/mysql/*.frm ${PREFIX}/share/mysql/mysql
-	(cd ${WRKSRC};scripts/mysql_install_db)
+	${PREFIX}/bin/mysql_install_db
 	@ /usr/bin/killall mysqld
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "if [ -x ${PREFIX}/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ ${ECHO} "	${PREFIX}/bin/safe_mysqld & && ${ECHO} -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "	${PREFIX}/bin/safe_mysqld > /dev/null & && ${ECHO} -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ /bin/chmod 750 ${PREFIX}/etc/rc.d/mysql.sh
+
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mysql
 .for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
 	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
 .endfor
 	@if [ ! -f ${PREFIX}/info/dir -a -f /usr/share/info/dir ]; then \
-	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
+.endif
+
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
