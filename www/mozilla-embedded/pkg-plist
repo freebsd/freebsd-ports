@@ -75,6 +75,7 @@ lib/mozilla-embedded/components/libucvibm.so
 lib/mozilla-embedded/components/libucvja.so
 lib/mozilla-embedded/components/libucvko.so
 lib/mozilla-embedded/components/libucvlatin.so
+lib/mozilla-embedded/components/libucvmath.so
 lib/mozilla-embedded/components/libucvtw.so
 lib/mozilla-embedded/components/libucvtw2.so
 lib/mozilla-embedded/components/libunicharutil.so
@@ -130,6 +131,7 @@ lib/mozilla-embedded/libmozjs.so
 lib/mozilla-embedded/libmozz.so
 lib/mozilla-embedded/libnspr4.so
 lib/mozilla-embedded/libnss3.so
+lib/mozilla-embedded/libnssckbi.so
 lib/mozilla-embedded/libplc4.so
 lib/mozilla-embedded/libplds4.so
 lib/mozilla-embedded/libsmime3.so
@@ -153,11 +155,21 @@ lib/mozilla-embedded/res/entityTables/html40Special.properties
 lib/mozilla-embedded/res/entityTables/html40Symbols.properties
 lib/mozilla-embedded/res/entityTables/htmlEntityVersions.properties
 lib/mozilla-embedded/res/entityTables/transliterate.properties
+lib/mozilla-embedded/res/fonts/mathfont.properties
+lib/mozilla-embedded/res/fonts/mathfontCMEX10.properties
+lib/mozilla-embedded/res/fonts/mathfontCMSY10.properties
+lib/mozilla-embedded/res/fonts/mathfontMTExtra.properties
+lib/mozilla-embedded/res/fonts/mathfontMath1.properties
+lib/mozilla-embedded/res/fonts/mathfontMath2.properties
+lib/mozilla-embedded/res/fonts/mathfontMath4.properties
+lib/mozilla-embedded/res/fonts/mathfontPUA.properties
+lib/mozilla-embedded/res/fonts/mathfontSymbol.properties
 lib/mozilla-embedded/res/forms.css
 lib/mozilla-embedded/res/html.css
 lib/mozilla-embedded/res/langGroups.properties
 lib/mozilla-embedded/res/language.properties
 lib/mozilla-embedded/res/loading-image.gif
+lib/mozilla-embedded/res/mathml.css
 lib/mozilla-embedded/res/quirk.css
 lib/mozilla-embedded/res/ua.css
 lib/mozilla-embedded/res/unixcharset.properties
@@ -165,6 +177,7 @@ lib/mozilla-embedded/res/viewsource.css
 lib/mozilla-embedded/run-mozilla.sh
 @unexec rm -f %D/lib/mozilla-embedded/component.reg || true
 @unexec rm -f %D/lib/mozilla-embedded/components/xpti.dat || true
+@dirrm lib/mozilla-embedded/res/fonts
 @dirrm lib/mozilla-embedded/res/entityTables
 @dirrm lib/mozilla-embedded/res/dtd
 @dirrm lib/mozilla-embedded/res/builtin
