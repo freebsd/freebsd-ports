@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cplay
-PORTVERSION=	1.47
+PORTVERSION=	1.48
 CATEGORIES=	audio
 MASTER_SITES=	http://www.tf.hut.fi/~flu/cplay/ \
 		http://www.tf.hut.fi/~flu/cplay/old/
@@ -24,10 +24,10 @@ MAKE_ARGS+=	PREFIX="${PREFIX}"
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/cplay
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/cplay
-	${INSTALL_MAN} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/cplay
-	${INSTALL_MAN} ${WRKSRC}/TODO ${PREFIX}/share/doc/cplay
+	${MKDIR} ${DOCSDIR}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
