@@ -12,7 +12,7 @@
 %%DATADIR%%/images/online.png
 %%DATADIR%%/images/submitted.png
 %%DATADIR%%/trayicon/__init__.py
-%%DATADIR%%/trayicon.so
+%%DATADIR%%/trayicon/trayicon.so
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/trayicon
 @dirrm %%DATADIR%%
