@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	python
-PORTVERSION=	2.3.c1
+PORTVERSION=	2.4.a0.20030801
 CATEGORIES=	lang python ipv6
-MASTER_SITES=	${MASTER_SITE_PYTHON}
-MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION:S/.c1//}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	perky
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -23,7 +23,7 @@ INSTALL_TARGET=	altinstall
 MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.3
+PYTHON_VERSION=	python2.4
 PYTHON_NO_DEPENDS=	yes
 LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
@@ -97,9 +97,9 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 
 post-extract:
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.3
+		${WRKSRC}/Tools/scripts/pydoc > ${WRKDIR}/pydoc2.4
 	${SED} -e '1s,^.*$$,#!${PREFIX}/bin/${PYTHON_VERSION},' \
-		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.3
+		${WRKSRC}/Tools/scripts/idle > ${WRKDIR}/idle2.4
 
 pre-install:
 .for platform in ${PLATFORMS}
@@ -111,7 +111,7 @@ pre-install:
 .endfor
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
+	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.4 ${WRKDIR}/idle2.4 \
 		${PREFIX}/bin
 	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
