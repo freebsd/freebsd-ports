@@ -181,6 +181,7 @@
     SUBDIR += ruby-narray
     SUBDIR += ruby-narray_miss
     SUBDIR += ruby-netcdf
+    SUBDIR += ruby-numru_misc
     SUBDIR += sc
     SUBDIR += scalapack
     SUBDIR += scigraphica
