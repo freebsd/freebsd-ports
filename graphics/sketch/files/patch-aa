@@ -1,11 +1,12 @@
---- setup.py.orig	Tue May 18 18:37:04 1999
-+++ setup.py	Wed May 19 09:44:38 1999
-@@ -212,7 +212,7 @@
+--- setup.py.orig	Thu Feb 10 19:01:49 2000
++++ setup.py	Thu Apr 27 15:56:03 2000
+@@ -233,8 +233,7 @@
+         flags['sketch']['imaging-include'] = '-I' + dir
  
      if setup == None:
-         setup = os.path.join(sys.prefix, 'lib/python' + sys.version[:3],
+-        setup = os.path.join(sys.prefix, 'lib/python' + sys.version[:3],
 -                             'config/Setup')
-+                             'config/Setup.local')
++        setup = '%%PORTSDIR%%/x11-toolkits/py-tkinter/files/Setup'
      print 'reading configuration from', setup, '...',
-     configs = extract_config(setup, ['_tkinter'])
+     configs = extract_config(setup)
      print 'done'
