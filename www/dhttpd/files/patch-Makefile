@@ -1,0 +1,28 @@
+--- src/Makefile.orig	Mon Mar  3 16:35:53 1997
++++ src/Makefile	Sun Oct 20 17:42:06 2002
+@@ -1,22 +1,21 @@
+ # if compiling for SunOS, you need to add -lsocket to the LIBS variable
+ 
+ SH	= /bin/sh
+-CC	= gcc
++CXX	?= c++
+ MAKEFILE= Makefile
+-CFLAGS	= -O2 --pipe
+ LIBS	=
+ 
+ OBJECTS = main.o socket.o httpsock.o
+ 
+ .cc.o:
+-	$(CC) $(CFLAGS) -c -o $*.o $<
++	$(CXX) $(CXXFLAGS) -c -o $*.o $<
+ 
+ all:	compile dhttpd
+ 
+ compile: $(OBJECTS)
+ 
+ dhttpd: $(OBJECTS)
+-	$(CC) -o dhttpd $(OBJECTS) $(LIBS)
++	$(CXX) -o dhttpd $(OBJECTS) $(LIBS)
+ 	strip dhttpd
+ 
+ clean:
