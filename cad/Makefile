@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += atlc
     SUBDIR += cascade
     SUBDIR += chipmunk
     SUBDIR += cider
