@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/old/ \
 DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
@@ -37,21 +37,26 @@ do-configure:
 		@ ${CP} ${FILESDIR}/stopserver.sh ${WRKSRC}
 		@ ${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/quakeserver.sh ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
 
+pre-install:
+		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
 		@ ${MKDIR} ${PREFIX}/quakeserver
 		@ ${MKDIR} ${PREFIX}/quakeserver/id1
 		${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${PREFIX}/quakeserver/id1
-		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/unixded ${PREFIX}/quakeserver
+		${INSTALL} -c -g quakerun -m 0510 ${WRKSRC}/unixded ${PREFIX}/quakeserver
 		${INSTALL_DATA} ${WRKSRC}/readme.unixded ${PREFIX}/quakeserver
 		${INSTALL_DATA} ${WRKSRC}/readme.port ${PREFIX}/quakeserver
-		${INSTALL_SCRIPT} -m 0750 ${WRKSRC}/quakeserver.sh ${PREFIX}/etc/rc.d
-		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/qserver.sh ${PREFIX}/quakeserver
-		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
+		${INSTALL_SCRIPT} -m 0755 ${WRKSRC}/quakeserver.sh ${PREFIX}/etc/rc.d
+		${INSTALL} -c -m 0755 ${WRKSRC}/qserver.sh ${PREFIX}/quakeserver
+		${INSTALL} -c -m 0755 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
+		${TOUCH} ${PREFIX}/quakeserver/quakeserver.log
+		${CHOWN} :quakerun ${PREFIX}/quakeserver/quakeserver.log
+		${CHMOD} 660 ${PREFIX}/quakeserver/quakeserver.log
 		@ ${RM} -f ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
-		${TOUCH} ${PREFIX}/quakeserver/quakeserver.log
-		@ ${CHMOD} 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
-		@ ${CHOWN} -R nobody:nobody ${PREFIX}/quakeserver
+		@ ${CHMOD} 660 ${PREFIX}/quakeserver/quakeserver.in
+		@ ${CHOWN} :quakerun ${PREFIX}/quakeserver/quakeserver.in
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
 .endif
