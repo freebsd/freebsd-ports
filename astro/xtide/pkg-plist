@@ -1,3 +1,5 @@
 bin/xtide
-lib/xtide/harmonics
-@dirrm lib/xtide
+bin/tide
+sbin/xttpd
+share/xtide/harmonics
+@dirrm share/xtide
