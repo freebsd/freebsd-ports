@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gap
-PORTVERSION=	4.4.4.20050131
+PORTVERSION=	4.4.4.20050214
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gap-system.org/pub/gap/gap4/tar.bz2/:new \
 		ftp://ftp.gap-system.org/pub/gap/gap4/old/:old
-DISTFILES=	packages-2005_01_31-19_34_UTC.tar.bz2:new \
+DISTFILES=	packages-2005_02_14-19_42_UTC.tar.bz2:new \
 		gap4r4p4.tar.bz2:new \
 		xtom1r1.tar.bz2:new
 DIST_SUBDIR=	gap
@@ -31,7 +31,7 @@ do-extract:
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/gap4r4p4.tar.bz2; \
 	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/xtom1r1.tar.bz2 ; \
 	cd ${GAP_WRKSRC}/pkg; \
-	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-2005_01_31-19_34_UTC.tar.bz2 )
+	${TAR} xyf ${DISTDIR}/${DIST_SUBDIR}/packages-2005_02_14-19_42_UTC.tar.bz2 )
 
 do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
