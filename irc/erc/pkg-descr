@@ -1,0 +1,24 @@
+ERC is an Emacs InternetRelayChat client. It provides all features
+that users may expect from an IRC client:
+    * multi channels / multi servers: every channel is put in a
+      separate buffer, also, several IRC servers may be used at the
+      same time.
+    * queries: private conversation are treated as channels and are
+      put into private buffers.
+    * highlighting: some occurences of words can be highlighted, thus
+      easing conversation tracking (ErcHighlighting)
+    * notification: ERC can notify you that users are online
+      (ErcNotify)
+    * channel tracking: channels can be hidden and conversation
+      continue in the background. You are notified when something is
+      said in such an hidden channel. (ErcChannelTracking)
+    * nick completion: ERC can complete words so as to ease nicknames
+      writing. (ErcCompletion)
+    * history: past actions are kept in history rings for future
+      use. (ErcHistory)
+    * multi languages: messages are multilingual and can be
+      customized. (ErcCatalog)
+    * user scripting: users can load scripts (i.e. auto greeting
+      scripts) at ERC startup.
+
+WWW: http://www.emacswiki.org/cgi-bin/wiki.pl/EmacsIRCClient

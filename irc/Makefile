@@ -19,6 +19,7 @@
     SUBDIR += eggcreator
     SUBDIR += eggdrop
     SUBDIR += epic4
+    SUBDIR += erc
     SUBDIR += ezbounce
     SUBDIR += gruftistats
     SUBDIR += hybserv

@@ -1,0 +1,9 @@
+********************************************************************
+* Remember to add this to your  .emacs:                            *
+*                                                                  *
+* (require 'erc-auto)                                              *
+*                                                                  *
+* Please refer to                                                  *
+* http://www.emacswiki.org/cgi-bin/wiki.pl?EmacsIRCClient          *
+* for more usage instructions                                      *
+********************************************************************
