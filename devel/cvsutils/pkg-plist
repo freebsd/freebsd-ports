@@ -1,10 +1,10 @@
 bin/cvschroot
 bin/cvsco
-bin/cvsdiff
 bin/cvsdo
 bin/cvsdiscard
 bin/cvspurge
 bin/cvsrmadm
+bin/cvstrim
 bin/cvsu
 %%PORTDOCS%%share/doc/cvsutils/AUTHORS
 %%PORTDOCS%%share/doc/cvsutils/ChangeLog
