@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 INTERFACE=	slang
 JAPANESE=	yes
 

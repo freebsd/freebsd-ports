@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${LANGPREF}timidity++-${INTERFACE}
+PORTNAME=	timidity++
 PORTVERSION=	2.9.0
+PKGNAMESUFFIX=	-${INTERFACE}
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 DISTNAME=	TiMidity++-${PORTVERSION}
@@ -17,9 +18,6 @@ RUN_DEPENDS=	${PREFIX}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
 
 INTERFACE?=	emacs
-.if defined(JAPANESE)
-LANGPREFIX=	ja-
-.endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
