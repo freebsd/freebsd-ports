@@ -27,7 +27,7 @@ GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 GHCMAJOR=	5
 .else
-GHC=		ghc-6.2
+GHC=		ghc-6.2.1
 GHCDEP=		ghc
 GHCMAJOR=	6
 EXTRA_PATCHES=	${PATCHDIR}/extra-ghc6-patch-gdk-GdkGC.chs
