@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abs
-PORTVERSION=	0.8
+PORTVERSION=	0908
 CATEGORIES=	math
 MASTER_SITES=	http://www.ping.be/bertin/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -16,9 +16,12 @@ MAINTAINER=	gmarco@giovannelli.it
 
 USE_XLIB=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
+WRKSRC=		${WRKDIR}/abs-src-0.908
 
 post-patch:
-	@${PERL} -pi -e 's,strcasestr,strcasestr_,' ${WRKSRC}/Database/cell.c
+	@${REINPLACE_CMD} -e 's/trcasestr/strcasestr_/g' < ${WRKSRC}/Database/cell.c >${WRKSRC}/Database/cell.c.new
+	@${MV} ${WRKSRC}/Database/cell.c.new ${WRKSRC}/Database/cell.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abs ${PREFIX}/bin
