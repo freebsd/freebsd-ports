@@ -24,7 +24,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		javascript.tar.bz2 \
 		php.tar.bz2
 
-MAINTAINER=	alane@freebsd.org
+MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext	\
 		autoconf:${PORTSDIR}/devel/autoconf	\
