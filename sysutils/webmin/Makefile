@@ -3,7 +3,7 @@
 # Date created:		Do  19 Nov 1998 21:13:55 CET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1999/04/12 18:58:45 andreas Exp $
+# $Id: Makefile,v 1.7 1999/06/05 13:00:32 andreas Exp $
 #
 
 DISTNAME=	webmin-0.72
@@ -17,7 +17,7 @@ IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 
 pre-extract:
-	@if [ -x ${PREFIX}/sbin/httpd ]; then \
+	@if [ -x ${PREFIX}/sbin/httpd -o -x ${PREFIX}/sbin/apache ]; then \
 	${ECHO_MSG} Good ! You seem to have a webserver installed ...; \
 	else \
 	${ECHO_MSG} You need to install one of the avail. apache webservers; \
