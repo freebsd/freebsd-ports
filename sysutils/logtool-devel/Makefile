@@ -20,7 +20,7 @@ CONFIGURE_ARGS=	--prefix=/usr/local --sysconfdir=/usr/local/etc/logtool
 
 ALL_TARGET=	build
 
-MAN1:		logtool.1
+MAN1=		logtool.1
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/logtool.1 ${PREFIX}/man/man1
