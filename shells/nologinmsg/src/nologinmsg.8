@@ -1,0 +1,73 @@
+.\" Copyright (c) 2002
+.\" Richard Rose. All Rights Reserved
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.Dd July 8, 2002
+.Dt NOLOGINMSG 8
+.Os
+.Sh NAME
+.Nm nologinmsg
+.Nd politely refuse a login
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+.Nm Nologinmsg
+displays a message that an account is not availavle and
+exits non-zero.
+It is intended as a replacement shell field for accounts that
+have been disabled.
+It can also print per-user messages, or special messages,
+depending on how it is called, or whether it can find a better
+message to print.
+.Pp
+To create a per-user message, put the text of the message in
+.Pa /usr/local/etc/nologinmsgs/USER
+file. Its contents will be printed if the user names USER logs
+in.
+.Pp
+To create a message that can be used for a group of users,
+create a symbolic link to a new name for the binary, and use
+that name. In the
+.Pa /usr/local/etc/nologinmsgs/
+directory, place a text file of the same name, with the text
+you want printed when a user with this shell name logs in.
+.Pp
+If the program name is not nologinmsg, then that file name
+is checked, and printed if that exists. If it does not, then
+the standard error is printed.
+If the program name is nologinmsg, and a user named file exists
+then that file is printed if possible, if not, the standard
+error message exists.
+In all other cases, the standard message is printed.
+.Pp
+To disable all logins,
+investigage
+.Xr nologin 5 .
+.Sh SEE ALSO
+.Xr login 1
+.Xr nologin 5
+.Xr nologin 8
+.Sh HISTORY
+The
+.Nm
+command was written by Richard Rose and contributed to the FreeBSD Project
+This man page needs looking at and checking.
