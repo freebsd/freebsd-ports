@@ -1,6 +1,6 @@
---- configure.orig	Wed Mar  6 09:51:50 2002
-+++ configure	Thu May  9 10:43:59 2002
-@@ -2482,22 +2482,23 @@
+--- configure.orig	Tue Sep 10 21:13:52 2002
++++ configure	Mon Sep 30 20:45:39 2002
+@@ -2669,12 +2669,13 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"
@@ -13,9 +13,10 @@
  	    DL_LIBS=""
 -	    LDFLAGS="-export-dynamic"
 +	    LDFLAGS=""
- 	    LD_SEARCH_FLAGS=""
+ 	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ 	    LD_SEARCH_FLAGS='-rpath ${LIB_RUNTIME_DIR}'
  	    if test "${TCL_THREADS}" = "1" ; then
- 		EXTRA_CFLAGS="-pthread"
+@@ -2684,10 +2685,10 @@
  	    	LDFLAGS="$LDFLAGS -pthread"
  	    fi
  	    case $system in
@@ -24,32 +25,15 @@
  	    	# FreeBSD-3 doesn't handle version numbers with dots.
  	    	UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 -	    	SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
-+	        SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}${DBGX}.so.1'
++		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}${DBGX}.so.1'
  	    	TCL_LIB_VERSIONS_OK=nodots
  		;;
  	    esac
-@@ -3030,6 +3031,7 @@
- 	echo "$ac_t""no" 1>&6
-     fi
+@@ -2913,6 +2914,7 @@
+ #define _POSIX_PTHREAD_SEMANTICS 1
+ EOF
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
  
- LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
- 
-@@ -4733,7 +4735,7 @@
- if test "${SHARED_BUILD}" = "1" -a "${SHLIB_SUFFIX}" != ""; then
-     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
-     TK_LIB_FILE=libtk${TK_SHARED_LIB_SUFFIX}
--    MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) \${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
-+    MAKE_LIB="\${SHLIB_LD} \${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} \$(TK_LD_SEARCH_FLAGS) \${TCL_STUB_LIB_SPEC} \${SHLIB_LD_LIBS}"
-     RANLIB=":"
- 
-     TCL_STUB_FLAGS="-DUSE_TCL_STUBS"
-@@ -5046,6 +5048,7 @@
- s%@STLIB_LD@%$STLIB_LD%g
- s%@SHLIB_LD@%$SHLIB_LD%g
- s%@SHLIB_LD_LIBS@%$SHLIB_LD_LIBS%g
-+s%@TCL_SHLIB_LD_EXTRAS@%$TCL_SHLIB_LD_EXTRAS%g
- s%@SHLIB_SUFFIX@%$SHLIB_SUFFIX%g
- s%@SHLIB_VERSION@%$SHLIB_VERSION%g
- s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g
+ 	    SHLIB_CFLAGS="-KPIC"
+ 	    LDFLAGS=""

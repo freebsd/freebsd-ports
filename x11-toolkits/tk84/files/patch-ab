@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Mar  6 09:51:50 2002
-+++ Makefile.in	Thu May  9 10:44:55 2002
-@@ -58,7 +58,9 @@
+--- Makefile.in.orig	Tue Sep 10 21:13:52 2002
++++ Makefile.in	Mon Sep 30 21:11:16 2002
+@@ -61,7 +61,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)
  
  # Directory in which to install the include file tk.h:
@@ -11,7 +11,7 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR		= $(INSTALL_ROOT)$(mandir)
-@@ -101,7 +103,7 @@
+@@ -113,7 +115,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -20,15 +20,16 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -213,6 +215,7 @@
+@@ -232,7 +234,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
-+TCL_SHLIB_LD_EXTRAS	= @TCL_SHLIB_LD_EXTRAS@
+-TK_SHLIB_LD_EXTRAS	= @TK_SHLIB_LD_EXTRAS@
++TK_SHLIB_LD_EXTRAS	= @TCL_SHLIB_LD_EXTRAS@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -356,6 +359,8 @@
+@@ -381,6 +383,8 @@
  	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
  	tkPort.h tkScrollbar.h tkText.h
  
@@ -37,51 +38,48 @@
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
  all: binaries libraries doc
-@@ -375,8 +380,14 @@
- ${TK_LIB_FILE}: ${OBJS}
- 	rm -f ${TK_LIB_FILE}
+@@ -400,6 +404,12 @@
+ ${LIB_FILE}: ${OBJS}
+ 	rm -f $@
  	@MAKE_LIB@
 +	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
- 	$(RANLIB) ${TK_LIB_FILE}
- 
++
 +libtk${SHORT_TK_VER}.a: ${OBJS}
 +	rm -f libtk${SHORT_TK_VER}.a
 +	ar cr libtk${SHORT_TK_VER}.a ${OBJS}
 +	$(RANLIB) libtk${SHORT_TK_VER}.a
-+
+ 
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
- 	rm -f ${STUB_LIB_FILE}
- 	@MAKE_STUB_LIB@
-@@ -485,7 +496,7 @@
+ 	rm -f $@
+@@ -497,7 +507,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
 -install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk${SHORT_TK_VER}.a wish
- 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) \
++	libtk${SHORT_TK_VER}.a wish
+ 	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR); \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -503,12 +514,18 @@
- 	    fi
- 	@echo "Installing $(TK_LIB_FILE) to $(LIB_INSTALL_DIR)/"
- 	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
+@@ -523,10 +534,15 @@
+ 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
 +	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
- 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
- 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk${SHORT_TK_VER}.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
  	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
- 	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
+-	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
 -	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
++	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/tk$(VERSION)"
 +	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
 +	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -522,6 +539,7 @@
+@@ -539,6 +555,7 @@
  
  install-libraries:
  	@for i in $(INCLUDE_INSTALL_DIR) \
@@ -89,7 +87,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images \
  		$(SCRIPT_INSTALL_DIR)/msgs; \
  	    do \
-@@ -536,10 +554,18 @@
+@@ -553,10 +570,18 @@
  	    chmod +x $(UNIX_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -111,27 +109,27 @@
  	    done;
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
-@@ -613,7 +639,6 @@
+@@ -633,7 +658,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
--	@$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+-	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN1_INSTALL_DIR)
  	@echo "Installing C API (.3) docs";
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
-@@ -623,7 +648,6 @@
+@@ -643,7 +667,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.3) docs";
--	@$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+-	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MAN3_INSTALL_DIR)
  	@echo "Installing command (.n) docs";
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
-@@ -633,7 +657,6 @@
+@@ -653,7 +676,6 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";
--	@$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+-	@$(UNIX_DIR)/mkLinks $(MKLINKS_FLAGS) $(MANN_INSTALL_DIR)
  
  Makefile: $(UNIX_DIR)/Makefile.in
  	$(SHELL) config.status

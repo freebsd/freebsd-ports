@@ -22,6 +22,7 @@ include/tk%%TK_VER%%/generic/tkScale.h
 include/tk%%TK_VER%%/generic/tkScrollbar.h
 include/tk%%TK_VER%%/generic/tkSelect.h
 include/tk%%TK_VER%%/generic/tkText.h
+include/tk%%TK_VER%%/generic/tkUndo.h
 include/tk%%TK_VER%%/tk.h
 include/tk%%TK_VER%%/tkDecls.h
 include/tk%%TK_VER%%/tkInt.h
@@ -123,13 +124,16 @@ lib/tk%%TK_VER%%/msgs/cs.msg
 lib/tk%%TK_VER%%/msgs/de.msg
 lib/tk%%TK_VER%%/msgs/el.msg
 lib/tk%%TK_VER%%/msgs/en.msg
+lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/es.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/it.msg
 lib/tk%%TK_VER%%/msgs/nl.msg
+lib/tk%%TK_VER%%/msgs/ru.msg
 lib/tk%%TK_VER%%/listbox.tcl
 lib/tk%%TK_VER%%/menu.tcl
 lib/tk%%TK_VER%%/msgbox.tcl
+lib/tk%%TK_VER%%/mkpsenc.tcl
 lib/tk%%TK_VER%%/obsolete.tcl
 lib/tk%%TK_VER%%/optMenu.tcl
 lib/tk%%TK_VER%%/palette.tcl

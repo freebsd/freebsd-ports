@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.4a4
-PORTREVISION=	1
+PORTVERSION=	8.4.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -47,9 +46,9 @@ MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	IdToWindow.3 ImgChanged.3 InternAtom.3 MainLoop.3 MainWin.3 \
 	MaintGeom.3 ManageGeom.3 MapWindow.3 MeasureChar.3 MoveToplev.3 \
 	Name.3 NameOfImg.3 OwnSelect.3 ParseArgv.3 QWinEvent.3 Restack.3 \
-	RestrictEv.3 SetAppName.3 SetClass.3 SetClassProcs.3 SetGrid.3 \
-	SetOptions.3 SetVisual.3 StrictMotif.3 TextLayout.3 Tk_Init.3 \
-	Tk_Main.3 TkInitStubs.3 WindowId.3
+	RestrictEv.3 SetAppName.3 SetCaret.3 SetClass.3 SetClassProcs.3 \
+	SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 TextLayout.3 \
+	Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3
 
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	chooseColor.n chooseDirectory.n clipboard.n colors.n console.n \
@@ -171,7 +170,6 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	GetBitmap.3 Tk_SizeOfBitmap.3 \
 	GetBitmap.3 Tk_FreeBitmapFromObj.3 \
 	GetBitmap.3 Tk_FreeBitmap.3 \
-	GetBitmap.3 Tk_GetBitmapFromData.3 \
 	GetCapStyl.3 Tk_GetCapStyle.3 \
 	GetCapStyl.3 Tk_NameOfCapStyle.3 \
 	GetClrmap.3 Tk_GetColormap.3 \
@@ -255,10 +253,12 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	NameOfImg.3 Tk_NameOfImage.3 \
 	OwnSelect.3 Tk_OwnSelection.3 \
 	ParseArgv.3 Tk_ParseArgv.3 \
+	QWinEvent.3 Tk_CollapseMotionEvents.3 \
 	QWinEvent.3 Tk_QueueWindowEvent.3 \
 	Restack.3 Tk_RestackWindow.3 \
 	RestrictEv.3 Tk_RestrictEvents.3 \
 	SetAppName.3 Tk_SetAppName.3 \
+	SetCaret.3 Tk_SetCaretPos.3 \
 	SetClass.3 Tk_SetClass.3 \
 	SetClass.3 Tk_Class.3 \
 	SetClassProcs.3 Tk_SetClassProcs.3 \
@@ -273,6 +273,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetOptions.3 Tk_GetOptionValue.3 \
 	SetOptions.3 Tk_GetOptionInfo.3 \
 	SetOptions.3 Tk_FreeConfigOptions.3 \
+	SetOptions.3 Tk_Offset.3 \
 	SetVisual.3 Tk_SetWindowVisual.3 \
 	StrictMotif.3 Tk_StrictMotif.3 \
 	TextLayout.3 Tk_ComputeTextLayout.3 \

@@ -120,10 +120,10 @@ lib/tcl%%TCL_VER%%/safe.tcl
 lib/tcl%%TCL_VER%%/tclAppInit.c
 lib/tcl%%TCL_VER%%/tclConfig.sh
 lib/tcl%%TCL_VER%%/tclIndex
-lib/tcl%%TCL_VER%%/tcltest2.1/pkgIndex.tcl
-lib/tcl%%TCL_VER%%/tcltest2.1/tcltest.tcl
+lib/tcl%%TCL_VER%%/tcltest2.2/pkgIndex.tcl
+lib/tcl%%TCL_VER%%/tcltest2.2/tcltest.tcl
 lib/tcl%%TCL_VER%%/word.tcl
-@dirrm lib/tcl%%TCL_VER%%/tcltest2.1
+@dirrm lib/tcl%%TCL_VER%%/tcltest2.2
 @dirrm lib/tcl%%TCL_VER%%/opt0.4
 @dirrm lib/tcl%%TCL_VER%%/msgcat1.3
 @dirrm lib/tcl%%TCL_VER%%/http2.4
