@@ -9,8 +9,8 @@ PORTNAME=	teamspeak_server
 PORTVERSION=	2.0.19.40
 PORTREVISION=1
 CATEGORIES=	audio net
-MASTER_SITES=	http://www.teamspeak.org/files/ \
-		ftp://ftp.ngz-network.de/pub/11/4/releases/ \
+MASTER_SITES=	ftp://ftp2.teamspeak.org/releases/ \
+		http://www.teamspeak.org/files/ \
 		http://www.gsoft.com.au/~doconnor/
 DISTNAME=	ts2_server_rc2_201940
 
@@ -24,12 +24,20 @@ USE_LINUX=	yes
 NO_FILTER_SHLIBS=yes
 
 do-install:
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/lib/teamspeak_server
 	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX}/lib/teamspeak_server -xf -
-	${CHOWN} -R nobody:nobody ${PREFIX}/lib/teamspeak_server
-	${CHMOD} -R u+w,o-rx ${PREFIX}/lib/teamspeak_server
 	${SED} -e 's#%%TSHOME%%#${PREFIX}/lib/teamspeak_server#' <${FILESDIR}/teamspeak_server.sh >${WRKSRC}/teamspeak_server.sh
-	${INSTALL_SCRIPT} ${WRKSRC}/teamspeak_server.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKSRC}/teamspeak_server.sh ${PREFIX}/etc/rc.d/teamspeak_server.sh.sample
 	${RM} ${WRKSRC}/teamspeak_server.sh
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+post-deinstall:
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
+
+.include <bsd.port.pre.mk>
+PKGDEINSTALL=	${PKGINSTALL}
+.include <bsd.port.post.mk>
