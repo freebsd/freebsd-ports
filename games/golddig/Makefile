@@ -23,8 +23,6 @@ pre-patch:
 	  done; ${MV} golddig2/* .)
 
 pre-install:
-	@${MKDIR} ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/lib/golddig
-	@${MKDIR} ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
