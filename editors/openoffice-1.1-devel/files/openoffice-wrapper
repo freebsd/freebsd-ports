@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1-devel/files/Attic/openoffice-wrapper,v 1.12 2003-09-25 22:43:58 mbr Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1-devel/files/Attic/openoffice-wrapper,v 1.13 2004-07-31 04:06:32 maho Exp $
 
-oopath=%%PREFIX%%/OpenOffice.org%%FRELEASE_NR%%/program/
+oopath=%%PREFIX%%/OpenOffice.org%%RELEASE_NR%%/program/
 program=`echo $0 | sed -e 's|.*-%%RELEASE_NR%%-||'`
 
 case $program in
