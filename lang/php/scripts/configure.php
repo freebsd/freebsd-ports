@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/lang/php/scripts/Attic/configure.php,v 1.3 2001-01-21 15:40:39 dirk Exp $
+# $FreeBSD: /tmp/pcvs/ports/lang/php/scripts/Attic/configure.php,v 1.4 2001-02-21 10:23:21 roam Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -76,8 +76,9 @@ while [ "$1" ]; do
 			ZLIB=1
 			;;
 		\"mcrypt\")
-			echo "LIB_DEPENDS+=	mcrypt.2:\${PORTSDIR}/security/libmcrypt"
-			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
+			#echo "LIB_DEPENDS+=	mcrypt.2:\${PORTSDIR}/security/libmcrypt"
+			#echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
+			echo 'mcrypt support does not compile at the moment. Ignoring.' > /dev/stderr
 			;;
 		\"mhash\")
 			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
@@ -96,7 +97,7 @@ while [ "$1" ]; do
 			fi
 			;;
 		\"IMAP\")
-			echo "LIB_DEPENDS+=	c-client4.7:\${PORTSDIR}/mail/cclient"
+			echo "LIB_DEPENDS+=	c-client4.8:\${PORTSDIR}/mail/cclient"
 			echo "CONFIGURE_ARGS+=--with-imap=\${PREFIX}"
 			;;
 		\"MySQL\")
