@@ -6,17 +6,24 @@
 #
 
 PORTNAME=	xaric
-PORTVERSION=	0.12.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.xaric.org/pub/xaric/
+MASTER_SITES=	http://www.xaric.org/downloads/ \
+		ftp://ftp.xaric.org/xaric/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Xaric IRC Client
-
-MAN1=		xaric.1
+COMMENT=	IRC Client similer to BitchX or ircII
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+MAN1=		xaric.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xaric ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/xaric.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}/help
+	${INSTALL_DATA} ${WRKSRC}/help/* ${DATADIR}/help
 
 .include <bsd.port.mk>
