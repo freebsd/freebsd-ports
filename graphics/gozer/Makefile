@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gozer
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
@@ -16,6 +16,10 @@ LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+
+.if defined(NOPORTDOCS)
+MAKE_ENV=	NO_DOC=yes
+.endif
 
 MAN1=		gozer.1
 
