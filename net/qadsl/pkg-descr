@@ -1,0 +1,10 @@
+This is a port of qadsl, a small utility to login on the Telia AB ADSL
+service. It also works fine with COMHEM Cable internet. It has
+features like keep-alive daemon, login/logout functions. The
+keep-alive daemon can be configured to either login or to ping your
+login-server after a chosen delay in minutes.
+
+WWW: http://qba.linuxsweden.nu
+
+-- Arne Lundberg
+arlu@telia.com

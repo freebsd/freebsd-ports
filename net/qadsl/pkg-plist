@@ -1,0 +1,3 @@
+sbin/qadsl
+etc/qadsl.conf.sample
+etc/rc.d/qadsl.sh
