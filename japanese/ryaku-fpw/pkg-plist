@@ -1,0 +1,7 @@
+share/dict/ryaku-fpw/ryaku/data/honmon
+share/dict/ryaku-fpw/catalogs
+@dirrm share/dict/ryaku-fpw/ryaku/data
+@dirrm share/dict/ryaku-fpw/ryaku
+@dirrm share/dict/ryaku-fpw
+share/doc/ryaku-fpw/readme
+@dirrm share/doc/ryaku-fpw
