@@ -1,0 +1,9 @@
+include/libelf/libelf.h
+include/libelf/nlist.h
+include/libelf/sys_elf.h
+include/libelf/elf_repl.h
+lib/libelf.a
+lib/libelf.so
+lib/libelf.so.%%LIBVER_SHORT%%
+lib/libelf.so.%%LIBVER%%
+@dirrm include/libelf
