@@ -7,7 +7,7 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.7.a
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -223,6 +223,8 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
+	@${REINPLACE_CMD} -e 's|libfreetype.so.6|libfreetype.so.9|g' \
+		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
 		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
