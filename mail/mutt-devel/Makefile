@@ -133,7 +133,7 @@ DW_PATCH_VERSION=	${PORTVERSION}
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
 pre-build:
-	${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
+	@${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
 			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
 			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
@@ -181,13 +181,13 @@ LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 
 .if ! defined(WITHOUT_MUTT_PGP_PATCH)
 SGML_NEEDED=	yes
 pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
 .endif
 
 .if defined(WITH_MUTT_LOCALES_FIX)
@@ -243,7 +243,7 @@ MAN5=		muttrc.5 mbox.5
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
-	${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
+	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.in
 
 pre-configure::
@@ -275,17 +275,21 @@ SCRIPTS_ENV+=	MUTT_HTML="yes"
 .endif
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 post-patch::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-quote
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-quote
 .endif
 
 .if !defined(NOPORTDOCS)
 SCRIPTS_ENV+=	MUTT_PORTDOCS="yes"
 post-build:
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
-	${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
+	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/mutt.man
+	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
+		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
+		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
+		${WRKSRC}/doc/muttrc.man
 .if ! defined(WITHOUT_MUTT_HTML)
 SGML_USED=	yes
 .endif
@@ -294,14 +298,14 @@ SGML_USED=	yes
 .endif
 .else 	# ! NOPORTDOCS
 post-patch::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif # ! NOPORTDOCS
 
 .if ${SGML_USED} == yes
 SCRIPTS_ENV+=	MUTT_SGML="yes"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 post-patch::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sgmlformat
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sgmlformat
 .endif
 
 pre-install:
