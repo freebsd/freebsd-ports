@@ -7,7 +7,7 @@
 
 PORTNAME=	kdeaddons
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -30,9 +30,9 @@ CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
-#post-configure:
-#	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-#		"s@sdl-config@${SDL_CONFIG}@g"
+pre-configure:
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+		"s@sdl-config@${SDL_CONFIG}@g"
 
 .include <bsd.port.pre.mk>
 
