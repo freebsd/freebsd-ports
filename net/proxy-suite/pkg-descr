@@ -2,7 +2,7 @@ The SuSE Proxy-Suite, a set of programs to enhance firewall security.
 The first (and currently only) component being released is the FTP-Proxy.
 
 * Securely relays FTP connections between clients and servers 
-* Can switch connections from active to passive and vice versa 
+* Can switch connections from active to passive and vice versa
 * Utilizes port ranges for both control and data connections 
 * Provides extensive auditing (via syslog or rotating log files) 
 * Can separate user related from system triggered audit events 
@@ -15,7 +15,8 @@ The first (and currently only) component being released is the FTP-Proxy.
 * Planned to support RFC 2428 (IPv6 Extensions for FTP) 
 * Based on GNU AutoConf, supposed to run on many UNIX systems 
 
-Ported to FreeBSD using OpenBSD port by Camiel Dobbelaar <cd@sentia.nl>
+Ported to FreeBSD using OpenBSD port by Camiel Dobbelaar <cd@sentia.nl>,
+with updates contributed by Marius Tomaschewski <mat@mt-home.net>.
 
 WWW: http://www.suse.de/en/support/proxy_suite/
 
