@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	xbindkeys_config
-PORTVERSION=	0.0.3
+PORTVERSION=	0.1.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.netchampagne.com/xbindkeys_config/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 USE_GTK=	yes
 MAKE_ENV=	CC="${CC} ${CFLAGS}"
