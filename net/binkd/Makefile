@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	binkd
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	net
-MASTER_SITES=	http://2f.ru/binkd/
-DISTNAME=	binkd094
+MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
+DISTNAME=	binkd096
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Fidonet TCP/IP mailer
@@ -20,29 +20,29 @@ GNU_CONFIGURE=	yes
 
 MAN8=		binkd.8
 
-.if defined(WITH_AMIGA4D)
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	binkdaso.diff
-DEFINES+=	-DAMIGADOS_4D_OUTBOUND
-MAKE_ENV+=	DEFINES="${DEFINES}"
+.if !defined(WITHOUT_AMIGA4D)
+CONFIGURE_ARGS+=	--with-aso
+.endif
+
+.if !defined(WITHOUT_HTTPS)
+CONFIGURE_ARGS+=	--with-https
 .endif
 
 pre-configure:
-	@ ${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}
-	@ ${CHMOD} a+x ${WRKSRC}/configure
+	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
+	@${CHMOD} a+x ${WRKSRC}/configure
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/binkd ${PREFIX}/sbin
-	@ ${INSTALL_MAN} ${WRKSRC}/binkd.8 ${PREFIX}/man/man8
-	@ ${INSTALL_DATA} ${WRKSRC}/binkd.cfg ${PREFIX}/etc/binkd.cfg.sample
+	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${PREFIX}/sbin
+	@${INSTALL_MAN} ${WRKSRC}/binkd.8 ${MANPREFIX}/man/man8
+	@${INSTALL_DATA} ${WRKSRC}/binkd.cfg ${PREFIX}/etc/binkd.cfg.sample
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/binkd
-	@ ${INSTALL_DATA} ${WRKSRC}/!README ${PREFIX}/share/doc/binkd/README
-	@ ${INSTALL_DATA} ${WRKSRC}/!README.FIX ${PREFIX}/share/doc/binkd/README.FIX
-	@ ${INSTALL_DATA} ${WRKSRC}/!SRIF.TXT ${PREFIX}/share/doc/binkd/SRIF.TXT
-	@ ${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/binkd
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/!README ${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/!README.FIX ${DOCSDIR}/README.FIX
+	@${INSTALL_DATA} ${WRKSRC}/!SRIF.TXT ${DOCSDIR}/SRIF.TXT
 .endif
 
 .include <bsd.port.mk>
