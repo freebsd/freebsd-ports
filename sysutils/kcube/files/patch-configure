@@ -1,0 +1,11 @@
+--- configure.orig	Wed Feb 25 17:47:43 2004
++++ configure	Wed Feb 25 17:50:20 2004
+@@ -22088,7 +22088,7 @@
+     kde_styledir='\${libdir}/kde3/plugins/styles'
+   fi
+   if test -z "$kde_widgetdir"; then
+-    kde_widgetdir='\${libdir}/kde3/plugins/designer'
++    kde_widgetdir='\${kde_libraries}/kde3/plugins/designer'
+   fi
+ 
+ 

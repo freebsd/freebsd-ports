@@ -167,6 +167,7 @@
     SUBDIR += jdiskreport
     SUBDIR += k3b
     SUBDIR += kcpuload
+    SUBDIR += kcube
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
     SUBDIR += kkbswitch
