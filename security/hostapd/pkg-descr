@@ -1,0 +1,9 @@
+hostapd is an authenticator (server) for the WPA, 802.11i, and
+802.1x security protocols typically used over wireless networks.
+You must have a WPA, 802.11i, or 802.1x supplicant (client) to
+make use of this program.
+
+WWW: http://hostap.epitest.fi/
+
+- Sam Leffler
+sam@FreeBSD.org

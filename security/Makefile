@@ -128,6 +128,7 @@
     SUBDIR += heimdal
     SUBDIR += hlfl
     SUBDIR += hmap
+    SUBDIR += hostapd
     SUBDIR += hostsentry
     SUBDIR += hping
     SUBDIR += hpn-ssh
