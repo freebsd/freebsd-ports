@@ -9,7 +9,7 @@ PORTNAME=	frontpage
 CATEGORIES=	www german
 PKGNAMEPREFIX=	de-
 
-MAINTAINER=	hetzels@westbend.net
+MAINTAINER=	freebsd-maintainer@westbend.net
 COMMENT=	Microsoft Frontpage German Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

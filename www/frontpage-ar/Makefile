@@ -14,7 +14,7 @@ PKGNAMEPREFIX?=	ar-
 DISTFILES=
 EXTRACT_ONLY=
 
-MAINTAINER?=	hetzels@westbend.net
+MAINTAINER?=	freebsd-maintainer@westbend.net
 COMMENT?=	Microsoft Frontpage Arabic Web Administration
 
 RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage
