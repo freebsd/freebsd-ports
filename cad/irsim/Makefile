@@ -20,6 +20,6 @@ MAN5=		netchange.5
 
 # othewise patch will complain
 post-extract:
-	@find ${WRKSRC} -name RCS | xargs ${RM} -rf
+	@${FIND} ${WRKSRC} -name RCS | ${XARGS} ${RM} -rf
 
 .include <bsd.port.mk>

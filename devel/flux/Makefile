@@ -41,8 +41,8 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/flux
 	${TAR} -C ${WRKSRC}/doc --exclude ChangeLog -cf - . | \
 		${TAR} -C ${PREFIX}/share/doc/flux --unlink -xf -
-	@find ${PREFIX}/share/doc/flux | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@find ${PREFIX}/share/doc/flux -type f | xargs ${CHMOD} ${SHAREMODE}
+	@${FIND} ${PREFIX}/share/doc/flux | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${PREFIX}/share/doc/flux -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .for DOC in AUTHORS NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/doc/flux
 .endfor

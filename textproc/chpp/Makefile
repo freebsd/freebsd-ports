@@ -21,8 +21,8 @@ post-install:
 	@${MKDIR} ${EXAMPLES_DIR}
 	${TAR} -C ${WRKSRC}/test -cf - . | \
 		${TAR} -C ${EXAMPLES_DIR} --unlink -xf -
-	@find ${EXAMPLES_DIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@find ${EXAMPLES_DIR} -type f | xargs ${CHMOD} ${SHAREMODE}
+	@${FIND} ${EXAMPLES_DIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${EXAMPLES_DIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README

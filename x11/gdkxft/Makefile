@@ -43,14 +43,14 @@ CONFIGURE_ARGS+=	--without-gnome
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gtk-config --prefix|\$$GTK_CONFIG --prefix|g ; \
+	@${REINPLACE_CMD} -e 's|gtk-config --prefix|$$GTK_CONFIG --prefix|g ; \
 		 s|libgdk.la|libgdk12.so|g ; \
 		 s|libgdk.so|libgdk12.so|g ; \
 		 s|GDK_DLOPEN_NAME=.*$$|GDK_DLOPEN_NAME="libgdk12.so"|g' \
 			${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|src capplet|src \@BUILD_CAPPLET_TRUE\@capplet|g ; \
-		 s|DESTDIR)\$$(datadir|DESTDIR\)\$$\(pkgdatadir|g ; \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|src capplet|src @BUILD_CAPPLET_TRUE@capplet|g ; \
+		 s|DESTDIR)\$$(datadir|DESTDIR)\$$(pkgdatadir|g ; \
 		 s|/gnome/apps/|/apps/|g ; \
 		 s|la_LDFLAGS =.*$$|la_LDFLAGS = -module -avoid-version|g'
 .for file in gdkxft_sysinstall.in gdkxft.c generate.pl

@@ -38,7 +38,7 @@ EXEC=	beam/beam/bm \
 	truss/truss_gr/tspost
 
 post-patch:
-	@(find ${WRKSRC} -name Makefile | xargs \
+	@(${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	  ${REINPLACE_CMD} -E -e "s,^CC = (.*),CC = ${CC} ${CFLAGS},g ; \
 	    s,-lglut,-lglut ${PTHREAD_LIBS},g")
 

@@ -27,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include "${FILESDIR}/manpages"
 
 post-extract:
-	find ${WRKSRC} -name CVS | xargs ${RM} -rf
+	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 post-install:
 .for file in ${MAN3}
@@ -38,14 +38,14 @@ post-install:
 		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
 	${TAR} -C ${WRKSRC} --exclude 'Makefile.in' -cf - demos | \
 		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
-	find ${PREFIX}/share/examples/EZ | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	find ${PREFIX}/share/examples/EZ -type f | xargs ${CHMOD} ${SHAREMODE}
+	${FIND} ${PREFIX}/share/examples/EZ | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/share/examples/EZ -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/EZ
 	${TAR} -C ${WRKSRC}/doc --exclude 'misc' -cf - html ps | \
 		${TAR} -C ${PREFIX}/share/doc/EZ --unlink -xf -
-	find ${PREFIX}/share/doc/EZ | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	find ${PREFIX}/share/doc/EZ -type f | xargs ${CHMOD} ${SHAREMODE}
+	${FIND} ${PREFIX}/share/doc/EZ | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${FIND} ${PREFIX}/share/doc/EZ -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .endif
 
 .include <bsd.port.post.mk>

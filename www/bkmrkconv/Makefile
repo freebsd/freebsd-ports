@@ -16,7 +16,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@find ${WRKSRC} -name '*.pl' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${PERL} -pi -e \
 		's|/usr/bin/perl|${PERL}|g ; \
 		 s|%%PREFIX%%|${PREFIX}|g'
 

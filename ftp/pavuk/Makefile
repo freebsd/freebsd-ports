@@ -44,8 +44,8 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|-pthread -DHAVE_MT|${PTHREAD_CFLAGS} -DHAVE_MT|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g ; \
 		 s|-lpthreads|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find  ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/icons|\$$(pkgdatadir)/icons|g'
+	@${FIND}  ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\$$(datadir)/icons|$$(pkgdatadir)/icons|g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc

@@ -21,6 +21,6 @@ USE_IMAKE=	yes
 MAN1=		xmille.1
 
 post-extract:
-	@find ${WRKSRC} -name '*.[ao]' -delete
+	@${FIND} ${WRKSRC} -name '*.[ao]' -delete
 
 .include <bsd.port.mk>

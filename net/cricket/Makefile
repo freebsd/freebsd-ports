@@ -35,8 +35,8 @@ do-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
-	@find ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
-		-name \*.bak | xargs ${RM} -f
+	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
+		-name \*.bak | ${XARGS} ${RM} -f
 	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
 	@if [ -L ${PREFIX}/cricket/cricket ]; then \
 		${ECHO} "Updating ${PREFIX}/cricket/cricket symbolic link" ; \

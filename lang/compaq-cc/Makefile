@@ -88,7 +88,7 @@ do-install:
 	    ; mkdir -p ${PREFIX}/lib					\
 	    ; cc -c ld-linux.c -o ${PREFIX}/lib/ld-linux.so.2		\
 # cpio creates directories with stupid permissions
-	${FIND} ${PREFIX}/usr/lib/compaq -type d | xargs ${CHMOD} 755
+	${FIND} ${PREFIX}/usr/lib/compaq -type d | ${XARGS} ${CHMOD} 755
 # tweaks to compile FreeBSD bits better
 	${MV} ${CCC_ROOT}/alpha-linux/bin/comp.config \
 		${CCC_ROOT}/alpha-linux/bin/comp.config.ORIG

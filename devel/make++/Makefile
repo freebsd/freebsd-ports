@@ -29,11 +29,11 @@ do-install:
 	@${MKDIR} ${DATADIR}/Signature
 	${INSTALL_SCRIPT} ${WRKSRC}/recursive_makepp ${DATADIR}
 	@(cd ${WRKSRC} ; \
-	  find . -name "*.pm" -maxdepth 1 -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
+	  ${FIND} . -name "*.pm" -maxdepth 1 -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
 	@(cd ${WRKSRC}/Signature ; \
-	  find . -name "*.pm" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/Signature \;)
+	  ${FIND} . -name "*.pm" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/Signature \;)
 	@(cd ${WRKSRC} ; \
-	  find . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
+	  ${FIND} . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
 	@${MKDIR} ${DATADIR}/html
 	${CP} ${WRKSRC}/doc/* ${DATADIR}/html
 

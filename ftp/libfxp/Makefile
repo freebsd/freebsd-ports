@@ -24,7 +24,7 @@ post-patch:
 		s,^PREFIX,#PREFIX,g" ${WRKSRC}/${file}
 .endfor
 	@(cd ${WRKSRC} ; \
-	  ${GREP} -l -R malloc.h * | xargs \
+	  ${GREP} -l -R malloc.h * | ${XARGS} \
 	  ${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g")
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ INSTALLS_SHLIB=	yes
 do-install:
 	@(cd ${WRKSRC} ; \
 	  ${INSTALL_DATA} ray++.so ${PREFIX}/lib ; \
-	  find * -name "*.h" | cpio -pdum ${PREFIX}/include/${PORTNAME} ; \
+	  ${FIND} * -name "*.h" | cpio -pdum ${PREFIX}/include/${PORTNAME} ; \
 	  ${CHMOD} -R 755 ${PREFIX}/include/${PORTNAME} )
 
 .include <bsd.port.mk>

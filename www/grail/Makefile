@@ -24,7 +24,6 @@ GRAILDIR=	${PREFIX}/${GRAILSUBDIR}
 DIRS_CMD=	${SED} -e '/^@dirrm/bok' -e 'D' -e ':ok' -e 's,@dirrm ,,' < ${PLIST}
 FILES_CMD=	${SED} -e '/^share\//bok' -e 'D' -e ':ok' -e 's,${GRAILSUBDIR}/,,' < ${PLIST}
 
-FIND?=find
 PYTHON?=python
 
 do-build:
