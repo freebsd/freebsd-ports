@@ -3,18 +3,17 @@
 # Date created:		5 Nov 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.7 1998/10/21 08:58:13 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/09 14:45:20 itojun Exp $
 #
 
 DISTNAME=	ken_all
 PKGNAME=	ja-zipcodes-19980130
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/
+MASTER_SITES=	http://www.postal.mpt.go.jp/lzh/ \
+		http://freefall.freebsd.org/~itojun/distfiles/
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	itojun@itojun.org
-
-BROKEN=		"Post office stopped supplying the original distribution"
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
