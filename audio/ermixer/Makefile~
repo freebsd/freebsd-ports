@@ -1,0 +1,32 @@
+# ex:ts=8	-*-mode: makefile-*-
+#
+# New ports collection makefile for:	ermixer
+# Date created:		2003-01-20
+# Whom:			Alan Eldridge <alane@geeksrus.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ermixer
+PORTVERSION=	0.8
+PORTREVISION=	0
+PORTEPOCH=	0
+CATEGORIES=	audio kde
+MASTER_SITES=	http://erevan.cuore.org/files/ermixer/
+
+MAINTAINER=	alane@FreeBSD.org
+
+USE_QT_VERSION=	3
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--enable-qt
+
+CONFIGURE_ENV+=	QTDIR="${X11BASE}"
+CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS} -L${X11BASE}/lib"
+CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
+
+.include "${FILESDIR}/manpages.mk"
+.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
+
+#EOF
