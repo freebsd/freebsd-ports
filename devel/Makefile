@@ -182,6 +182,7 @@
     SUBDIR += ktranslator
     SUBDIR += lclint
     SUBDIR += lemon
+    SUBDIR += leoarg
     SUBDIR += libPropList
     SUBDIR += libU77
     SUBDIR += libcache
