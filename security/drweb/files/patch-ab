@@ -1,20 +1,20 @@
---- usr/local/drweb/update/update.pl.orig	Sat Nov  1 07:59:33 2003
-+++ usr/local/drweb/update/update.pl	Sat Nov  1 08:00:54 2003
-@@ -41,7 +41,7 @@
+--- usr/local/drweb/update/update.pl.orig	Wed Nov 24 13:39:08 2004
++++ usr/local/drweb/update/update.pl	Wed Nov 24 13:39:36 2004
+@@ -20,7 +20,7 @@
  my $ini = $ARGV[0];
  if( $ini eq '' )
  {
--  $ini = '/usr/local/etc/drweb/drweb32.ini' if $^O =~ /BSD/i;  
-+  $ini = '%INSTALL%/drweb32.ini' if $^O =~ /BSD/i;  
-   $ini = '/etc/drweb/drweb32.ini' if $ini eq '';    
+-  $ini = '/usr/local/etc/drweb/drweb32.ini';  
++  $ini = '%INSTALL%/drweb32.ini';  
  }
  
-@@ -79,7 +79,7 @@
-    die "Bases path is not defined!" unless $bases;
-    die "Update path is not defined!" unless $update;
-    
--   $pidFile = "/var/drweb/run/drwebd.pid" if( $pidFile eq '' );
-+   $pidFile = "%INSTALL%/drwebd.pid" if( $pidFile eq '' );
+ my $wget = `which wget 2>&1`;
+@@ -47,7 +47,7 @@
+ die 'Bases path is not defined!' unless $bases;
+ die 'Update path is not defined!' unless $update;
  
- my $version = readVersion( $engine ); 
-    die "Engine version error (invalid engine?)" unless $version;
+-$pidFile = '/var/drweb/run/drwebd.pid' if $pidFile eq '';
++$pidFile = '%INSTALL%/run/drwebd.pid' if $pidFile eq '';
+ 
+ my ( $kmd5, $knum ) = parseKey($keyFile);
+ $wget = $wget.' -q --header="X-DrWeb-Validate: '.$kmd5.'" --header="X-DrWeb-KeyNumber: '.$knum.'" -O';

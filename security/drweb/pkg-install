@@ -16,8 +16,10 @@ ex=0
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
+		echo ""
 		echo "Added group \"${GROUP}\"."
 	else
+		echo ""
 		echo "Adding group \"${GROUP}\" failed..."
 		ex=1
 	fi
@@ -27,26 +29,25 @@ if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 		-s "/sbin/nologin" -d "/nonexistent" -c "Dr. Web Scanner"
 	then
+		echo ""
 		echo "Added user \"${USER}\"."
 	else
+		echo ""
 		echo "Adding user \"${USER}\" failed..."
 		ex=1
 	fi
 fi
 
-if ! grep -q "^!${USER}" /etc/syslog.conf; then
-  echo "You may also add this lines to your /etc/syslog.conf:"
-  echo "!drwebd"
-  echo "*.*             /var/log/drwebd.log"
-  echo ""
-fi
-if ! grep -q ${USER} /etc/crontab; then
-  if ! crontab -l -u ${BINOWN} | grep -q ${USER}; then
-      echo "You may also add this crontab entry to /etc/crontab"
-      echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl"
-      echo ""
-  fi
-fi
+echo ""
+echo "You may also add this lines to your /etc/syslog.conf:"
+echo "!drwebd"
+echo "*.*             /var/log/drwebd.log"
+
+echo ""
+echo "You may also add this crontab entry to /etc/crontab"
+echo "0 12 * * * ${BINOWN} ${PKG_PREFIX}/drweb/update/update.pl"
+echo ""
+
 [ "$ex" = "1" ] && exit 1
 install -dv -m 0755 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/run
 install -dv -m 0700 -o ${USER} -g ${BINGRP} ${PKG_PREFIX}/drweb/infected
