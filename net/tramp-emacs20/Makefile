@@ -9,4 +9,9 @@ MASTERDIR=	${.CURDIR}/../tramp
 
 EMACS_PORT_NAME=	emacs20
 
+BROKEN=		Does not configure
+
+DEPRECATED=	Emacs21 version is available
+EXPIRATION_DATE=2005-04-20
+
 .include "${MASTERDIR}/Makefile"
