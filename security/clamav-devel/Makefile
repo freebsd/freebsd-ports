@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20031229
+PORTVERSION=	20040103
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-fixed
 
 MAINTAINER=	rob@debank.tv
 COMMENT=	Command line virus scanner written entirely in C
@@ -22,6 +22,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		zoo:${PORTSDIR}/archivers/zoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
+
+WRKSRC=		work/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
