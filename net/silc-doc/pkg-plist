@@ -12,4 +12,4 @@ share/doc/silc/draft-riikonen-silc-flags-payloads-02.txt
 share/doc/silc/draft-riikonen-silc-ke-auth-06.txt
 share/doc/silc/draft-riikonen-silc-pp-06.txt
 share/doc/silc/draft-riikonen-silc-spec-06.txt
-@unexec %D/share/doc/silc 2>/dev/null || true
+@unexec rmdir %D/share/doc/silc 2>/dev/null || true
