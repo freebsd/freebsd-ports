@@ -14,11 +14,12 @@ DISTNAME=	dlint${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 MAN8=		dlint.8
 
 do-configure:
-	@${PERL} -pi.orig -e 's:/usr/local/bin:${PREFIX}/sbin:g' ${WRKSRC}/dlint
+	@${REINPLACE_CMD} -e 's:/usr/local/bin:${PREFIX}/sbin:g' ${WRKSRC}/dlint
 	@${SED} -e 's:DLINT 1:DLINT 8:g' ${WRKSRC}/dlint.1  >${WRKSRC}/dlint.8
 
 do-install:

@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 WANT_GTK=	yes
 
 .include <bsd.port.pre.mk>
@@ -29,7 +30,7 @@ ALL_TARGET=	bsd
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netscript ${PREFIX}/bin

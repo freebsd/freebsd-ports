@@ -19,12 +19,13 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
+USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; \
 		s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR},g ; \
 		s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
