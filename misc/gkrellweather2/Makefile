@@ -3,27 +3,31 @@
 # Whom:			Jean-Yves Lefort <jylefort@brutele.be>
 #
 # $FreeBSD$
-# $Id: Makefile,v 1.1.1.1 2002/11/24 03:13:54 jylefort Exp $
 #
 
 PORTNAME=	gkrellweather
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	misc
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jylefort@brutele.be
+MAINTAINER=	pav@oook.cz
 COMMENT=	GKrellWeather is a weather plugin for GKrellM
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2 \
 		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
 
+USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+ALL_TARGET=	gkrellweather.so
 
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MKDIR="${MKDIR}" \
-		INSTALL_DATA="${INSTALL_DATA}"
+MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
+
+do-install:
+	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
+	${INSTALL_DATA} ${WRKSRC}/gkrellweather.so ${PREFIX}/libexec/gkrellm2/plugins
+	${MKDIR} ${PREFIX}/share/locale/ru/
+	${INSTALL_DATA} ${WRKSRC}/po/ru.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/gkrellweather.mo
 
 .include <bsd.port.mk>

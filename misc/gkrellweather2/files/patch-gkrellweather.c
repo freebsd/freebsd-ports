@@ -1,15 +1,6 @@
---- gkrellweather.c.orig	Sun Nov 24 04:49:42 2002
-+++ gkrellweather.c	Sun Nov 24 04:50:58 2002
-@@ -720,7 +720,7 @@
-         options.station[1] = c[1];
-         options.station[2] = c[2];
-         options.station[3] = c[3];
--        sprintf(options.command, "/usr/local/bin/GrabWeather %s", options.station);
-+        sprintf(options.command, "GrabWeather %s", options.station);
-         sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
-                 getenv("HOME"), options.station);
- 	net_update = FALSE;
-@@ -981,7 +981,7 @@
+--- gkrellweather.c.orig	Mon Mar 31 13:12:57 2003
++++ gkrellweather.c	Sun Jul 13 14:30:14 2003
+@@ -983,7 +983,7 @@
      options.windspeed_unit = 1;
      options.pressure_unit = 1;
      strcpy(options.station, DEFAULT_STATION_ID);
@@ -18,3 +9,11 @@
      sprintf(options.filename, "%s/.wmWeatherReports/%s.dat",
              getenv("HOME"), options.station);
  }
+@@ -993,6 +993,7 @@
+ gkrellm_init_plugin(void)
+ {
+     #ifdef ENABLE_NLS
++    	bindtextdomain(PACKAGE, LOCALEDIR);
+         bind_textdomain_codeset(PACKAGE, "UTF-8");
+     #endif /* ENABLE_NLS */
+     style_id = gkrellm_add_meter_style(&air_mon, STYLE_NAME);
