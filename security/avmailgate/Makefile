@@ -1,5 +1,4 @@
 # New ports collection makefile for:	avmailgate
-# Version required:	6.12
 # Date created:		January 29, 2002
 # Whom:			Oliver Breuninger <ob@breuninger.org>
 #
@@ -10,13 +9,16 @@
 #
 
 PORTNAME=	avmailgate
-PORTVERSION=	6.12
-DISTFILES=	avmailgate-6.12.0.0-freebsd.tgz
+PORTVERSION=	6.12.0.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.antivir.de/freebsd/distfiles/
-MAINTAINER=	ob@breuninger.org
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd
+EXTRACT_SUFX=	.tgz
 
-WRKSRC=		${WRKDIR}/avmailgate-6.12.0.0-FreeBSD
+MAINTAINER=	ob@breuninger.org
+COMMENT=	AntiVir MailGate mail virusscanner
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-FreeBSD
 
 NO_BUILD=	yes
 
@@ -50,8 +52,8 @@ post-install:
 	@${ECHO_MSG} "For full functionality of AntiVir MailGate you need an license key"
 	@${ECHO_MSG} "from H+BEDV Datentechnik GmbH."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Put the file avmgate.key into the directory /usr/local/etc/antivir"
-	@${ECHO_MSG} ""	
+	@${ECHO_MSG} "Put the file avmgate.key into the directory ${LOCALBASE}/etc/antivir"
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "For more information on AntiVir please visit our web site"
 	@${ECHO_MSG} "http://www.antivir.de or http://www.hbedv.com."
 	@${ECHO_MSG} "mailto: support@antivir.de"
@@ -62,4 +64,3 @@ post-install:
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
-
