@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  bison
 # Date created:			  27 Mar 1999
 # Whom:				  Jerry Hicks
@@ -15,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
+
+CONFLICTS=	bison-[0-9]+
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 .if !defined(WITHOUT_NLS)
