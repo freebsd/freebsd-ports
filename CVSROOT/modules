@@ -7740,6 +7740,7 @@ php4-sysvmsg	ports/devel/php4-sysvmsg
 php4-sysvsem	ports/devel/php4-sysvsem
 php4-sysvshm	ports/devel/php4-sysvshm
 php4-tokenizer	ports/devel/php4-tokenizer
+php4-wddx	ports/textproc/php4-wddx
 php4-xml	ports/textproc/php4-xml
 php4-xmlrpc	ports/net/php4-xmlrpc
 php4-yp		ports/net/php4-yp
