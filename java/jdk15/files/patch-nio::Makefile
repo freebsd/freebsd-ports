@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- ../../j2se/make/java/nio/Makefile	15 Feb 2003 14:45:49 -0000	1.4
++++ ../../j2se/make/java/nio/Makefile	24 Aug 2003 05:37:04 -0000
+@@ -131,7 +131,7 @@
+ 
+ # XXXBSD: really need it for BSD ?
+ ifeq ($(PLATFORM), bsd)
+-OTHER_CFLAGS += -Werror
++#OTHER_CFLAGS += -Werror
+ OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH)$(SUFFIX) -ljava$(SUFFIX) -lnet$(SUFFIX)
+ endif
+ 
