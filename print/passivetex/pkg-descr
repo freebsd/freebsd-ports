@@ -1,0 +1,10 @@
+PassiveTeX is a library of TeX macros which can be used to process 
+an XML document conforming to the Formatting Objects (FO) spec.
+This provides a relatively easy mechanism to convert FO files to
+Postscript and PDF.
+
+For example, to generate a PDF file from an FO file, run
+
+    pdftex --interaction nonstopmode "&pdfxmltex" file.fo
+
+WWW: http://www.hcu.ox.ac.uk/TEI/Software/passivetex/

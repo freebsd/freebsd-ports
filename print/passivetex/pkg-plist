@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+share/texmf/tex/passivetex/dummyels.sty
+share/texmf/tex/passivetex/fotex.xmt
+share/texmf/tex/passivetex/fotex.sty
+share/texmf/tex/passivetex/mlnames.sty
+share/texmf/tex/passivetex/ucharacters.sty
+share/texmf/tex/passivetex/unicode.sty
+@dirrm share/texmf/tex/passivetex
+@exec %D/bin/mktexlsr
+@unexec %D/bin/mktexlsr
