@@ -7724,6 +7724,7 @@ php4-pgsql	ports/databases/php4-pgsql
 php4-readline	ports/devel/php4-readline
 php4-recode	ports/converters/php4-recode
 php4-shmop	ports/devel/php4-shmop
+php4-sockets	ports/net/php4-sockets
 php4-sybase	ports/databases/php4-sybase
 php4-sybase_ct	ports/databases/php4-sybase_ct
 php4-sysvmsg	ports/devel/php4-sysvmsg
