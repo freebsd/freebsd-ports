@@ -32,6 +32,117 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="131bd7c4-64a3-11d9-829a-000a95bc6fae">
+    <topic>libxine -- DVD subpicture decoder heap overflow</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.0.r6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A xine security announcement states:</p>
+	<blockquote cite="http://xinehq.de/index.php/security/XSA-2004-5">
+	  <p>A heap overflow has been found in the DVD subpicture
+	    decoder of xine-lib. This can be used for a remote heap
+	    overflow exploit, which can, on some systems, lead to or
+	    help in executing malicious code with the permissions of the
+	    user running a xine-lib based media application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://xinehq.de/index.php/security/XSA-2004-5</url>
+    </references>
+    <dates>
+      <discovery>2004-09-06</discovery>
+      <entry>2005-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6939d5b-64a1-11d9-9106-000a95bc6fae">
+    <topic>libxine -- multiple vulnerabilities in VideoCD handling</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><ge>1.0.r2</ge><lt>1.0.r6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A xine security announcement states:</p>
+	<blockquote cite="http://xinehq.de/index.php/security/XSA-2004-4">
+	  <p>Several string overflows on the stack have been fixed in
+	    xine-lib, some of them can be used for remote buffer
+	    overflow exploits leading to the execution of arbitrary code
+	    with the permissions of the user running a xine-lib based
+	    media application.</p>
+	  <p>Stack-based string overflows have been found:</p>
+	  <ol>
+	    <li>in the code which handles VideoCD MRLs</li>
+	    <li>in VideoCD code reading the disc label</li>
+	    <li>in the code which parses text subtitles and prepares
+	      them for display</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://xinehq.de/index.php/security/XSA-2004-4</url>
+    </references>
+    <dates>
+      <discovery>2004-09-07</discovery>
+      <entry>2005-01-12</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1b70bef4-649f-11d9-a30e-000a95bc6fae">
+    <topic>libxine -- multiple buffer overflows in RTSP</topic>
+    <affects>
+      <package>
+	<name>mplayer</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.4</lt></range>
+      </package>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.0.r4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A xine security announcement states:</p>
+	<blockquote cite="http://xinehq.de/index.php/security/XSA-2004-3">
+	  <p>Multiple vulnerabilities have been found and fixed in the
+	    Real-Time Streaming Protocol (RTSP) client for RealNetworks
+	    servers, including a series of potentially remotely
+	    exploitable buffer overflows. This is a joint advisory by
+	    the MPlayer and xine teams as the code in question is common
+	    to these projects.</p>
+	  <p>Severity: High (arbitrary remote code execution under the
+	    user ID running the player) when playing Real RTSP streams.
+	    At this time, there is no known exploit for these
+	    vulnerabilities.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0433</cvename>
+      <url>http://xinehq.de/index.php/security/XSA-2004-3</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16019</url>
+      <bid>10245</bid>
+    </references>
+    <dates>
+      <discovery>2004-05-25</discovery>
+      <entry>2005-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8eabaad9-641f-11d9-92a7-000a95bc6fae">
     <topic>hylafax -- unauthorized login vulnerability</topic>
     <affects>
@@ -619,10 +730,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-1300</cvename>
       <url>http://tigger.uic.edu/~jlongs2/holes/xine-lib.txt</url>
+      <url>http://xinehq.de/index.php/security/XSA-2004-7</url>
     </references>
     <dates>
       <discovery>2004-12-15</discovery>
       <entry>2004-12-29</entry>
+      <modified>2005-01-12</modified>
     </dates>
   </vuln>
 
@@ -872,7 +985,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>iDEFENSE and the MPlayer Team has found multiple
+	<p>iDEFENSE and the MPlayer Team have found multiple
 	  vulnerabilities in MPlayer:</p>
 	<ul>
 	  <li>Potential heap overflow in Real RTSP streaming code</li>
@@ -891,13 +1004,17 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2004-1188</cvename>
       <url>http://mplayerhq.hu/homepage/design7/news.html#mplayer10pre5try2</url>
       <mlist msgid="IDSERV04yz5b6KZmcK80000000c@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322526210300</mlist>
+      <url>http://www.idefense.com/application/poi/display?id=166</url>
       <mlist msgid="IDSERV04FVjCRGryWtI0000000f@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110322829807443</mlist>
+      <url>http://www.idefense.com/application/poi/display?id=167</url>
       <mlist msgid="IDSERV046beUzmRf6Ci00000012@exchange.idefense.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110323022605345</mlist>
+      <url>http://www.idefense.com/application/poi/display?id=168</url>
+      <url>http://xinehq.de/index.php/security/XSA-2004-6</url>
     </references>
     <dates>
       <discovery>2004-12-10</discovery>
       <entry>2004-12-21</entry>
-      <modified>2004-12-29</modified>
+      <modified>2005-01-12</modified>
     </dates>
   </vuln>
 
@@ -6370,45 +6487,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="bef4515b-eaa9-11d8-9440-000347a4fa7d">
-    <topic>xine -- vcd URL buffer overflow</topic>
-    <affects>
-      <package>
-	<name>libxine</name>
-	<range><lt>1.0.r5_2</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>c0ntex[at]open-security.org reports a buffer overflow in
-	  xine's handling of vcd:// URLs:</p>
-	<blockquote cite="http://www.open-security.org/advisories/6">
-          <p>Like the excellent Mplayer, Xine is a superb free media
-            player for Linux. Sadly there is a generic stack based
-            buffer overflow in all versions of Xine-lib, including
-            Xine-lib-rc5 that allows for local and remote malicious
-	    code execution.</p>
-          <p>By overflowing the vcd:// input source identifier buffer,
-            it is possible to modify the instruction pointer with a
-            value that a malicious attacker can control. The issue
-            can be replicated in a remote context by embedding the
-            input source idientifier within a playlist file, such as
-            an asx.  When a user plays the file, this stack overflow
-            will occur, exploit code can then be executed with the
-	    rights of the user running Xine.</p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.open-security.org/advisories/6</url>
-      <url>http://cvs.sourceforge.net/viewcvs.py/xine/xine-vcdnav/input/xineplug_inp_vcd.c#rev1.109</url>
-      <url>http://secunia.com/advisories/12194</url>
-      <url>http://sourceforge.net/mailarchive/forum.php?thread_id=5143955&amp;forum_id=11923</url>
-      <url>http://www.osvdb.org/8409</url>
-    </references>
-    <dates>
-      <discovery>2004-07-18</discovery>
-      <entry>2004-08-23</entry>
-    </dates>
+    <cancelled superseded="b6939d5b-64a1-11d9-9106-000a95bc6fae" />
   </vuln>
 
   <vuln vid="3243e839-f489-11d8-9837-000c41e2cdad">
