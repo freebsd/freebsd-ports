@@ -18,13 +18,15 @@ LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 ALL_TARGET=	acidwarp
 DOCFILES=	README TODO Thanks
 PLIST=		${WRKDIR}/pkg-plist
+REINPLACE_ARGS=	-i'' -E
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/acidwarp
 
 post-extract:
 	${RM} ${WRKSRC}/acidwarp
 
 post-patch:
-	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO_CMD} "bin/acidwarp" > ${PLIST}
