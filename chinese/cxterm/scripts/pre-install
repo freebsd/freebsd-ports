@@ -19,3 +19,12 @@ echo "CXTERM_AD=${PREFIX}/lib/X11/cxterm.dic/CXterm.ad"    >> $CXTERM_SH
 echo "XFONTDIR=${PREFIX}/lib/X11/fonts/chinese"            >> $CXTERM_SH
 echo ""                                                    >> $CXTERM_SH
 /bin/cat ${WRKSRC}/scripts/CXterm.sh                       >> $CXTERM_SH
+
+
+#	look for Simple fonts from the X11R6 misc fonts collection
+if [ ! -f ${X11BASE}/lib/X11/fonts/misc/gb16st.pcf.Z ]; then
+	echo ""
+	echo "You need to install the X11R6 misc fonts in order to get the"
+	echo "Simple Chinese fonts."
+	echo ""
+fi
