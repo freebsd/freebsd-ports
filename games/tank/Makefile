@@ -24,7 +24,7 @@ ALL_TARGET=	linux-mesa-elf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=i	"does not build on FreeBSD ${OSVERSION}"
+BROKEN=		"does not build on FreeBSD ${OSVERSION}"
 .endif
 
 do-install:
