@@ -68,6 +68,7 @@ mkdir /var/chroot/
 
 echo "==> Starting make installworld"
 if [ "$client" = "0" ]; then
+	export NEWSPARC_TIMETYPE=__int64_t
 	make installworld DESTDIR=/var/chroot
 	error=$?
 	if [ "$error" != "0" ]; then
