@@ -1,21 +1,23 @@
 # New ports collection makefile for:	X-Emacs
-# Version required:	20.2
+# Version required:	20.3
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.3 1997/11/12 21:41:33 gj Exp $
+# $Id: Makefile,v 1.4 1997/11/18 20:41:44 gj Exp $
 #
 
-DISTNAME=	xemacs-20.2
+DISTNAME=	xemacs-20.3
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs-20.2/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs-20.2/ \
-		ftp://ftp.usyd.edu.au:/pub/Xemacs/xemacs-20.2/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.2/ \
-		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/xemacs-20.2/ \
-		ftp://SunSITE.sut.ac.jp/pub/archives/xemacs/xemacs-20.2/ \
-		ftp://ftp.miranova.com/pub/xemacs/ \
-		ftp://ftp.gw.com/mirrors/pub/unix/xemacs/xemacs-20.2/
+MASTER_SITES=	\
+		ftp://ftp.xemacs.org/pub/${DISTNAME}/ \
+		ftp://ftp2.xemacs.org/pub/xemacs/${DISTNAME}/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/${DISTNAME}/ \
+		ftp://ftp.usyd.edu.au:/pub/Xemacs/${DISTNAME}/ \
+		ftp://ftp.lab.kdd.co.jp/xemacs/${DISTNAME}/ \
+		ftp://ftp.th-darmstadt.de:/pub/editors/xemacs/${DISTNAME}/ \
+		ftp://SunSITE.sut.ac.jp/pub/archives/xemacs/${DISTNAME}/ \
+		ftp://ftp.gw.com/mirrors/pub/unix/xemacs/${DISTNAME}/ \
+
 
 MAINTAINER=	me@FreeBSD.org
 
@@ -35,7 +37,9 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		${WITH_MULE} ${WITH_DIALOGS}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
+ALL_TARGET=	all dist
 
+# Have 
 pre-configure:
 	@echo "To compile in the MULE features, set the environment variable USE_MULE"
 
@@ -49,8 +53,7 @@ WITH_DIALOGS=	--with-dialogs=athena
 .endif
 
 post-install:
-.for file in b2m ctags etags emacsclient gnuattach gnuclient \
-	gnudoit xemacs-20.2
+.for file in b2m ctags etags gnuclient ${DISTNAME}
 	strip ${PREFIX}/bin/${file}
 .endfor
 # ``make install'' does not set the permissions like pkg_add does.
