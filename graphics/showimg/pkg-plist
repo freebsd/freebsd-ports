@@ -150,6 +150,7 @@ share/locale/fr/LC_MESSAGES/showimg.mo
 share/locale/it/LC_MESSAGES/showimg.mo
 share/locale/ja/LC_MESSAGES/showimg.mo
 share/locale/nl/LC_MESSAGES/showimg.mo
+share/locale/pl/LC_MESSAGES/showimg.mo
 share/locale/pt/LC_MESSAGES/showimg.mo
 share/locale/pt_BR/LC_MESSAGES/showimg.mo
 share/locale/ru/LC_MESSAGES/showimg.mo
@@ -160,6 +161,7 @@ share/locale/ta/LC_MESSAGES/showimg.mo
 share/locale/tr/LC_MESSAGES/showimg.mo
 share/locale/zh_CN/LC_MESSAGES/showimg.mo
 share/mimelnk/image/x-psd.desktop
+share/mimelnk/image/x-sia.desktop
 @dirrm share/doc/HTML/en/showimg
 @dirrm share/doc/HTML/de/showimg
 @dirrm share/apps/showimg/pics
