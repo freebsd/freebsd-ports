@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	flf
-PORTVERSION=	1.7a
-MASTER_SITES=	http://www.flfmod.com/download/ \
-		http://www.bannie.net/bannie/downloads/mods/flfmod/ \
-		http://mirror.nuclearfallout.net:113/ \
-		http://nephilim.net/files/ \
-		ftp://www.fragland.net/halflife/mods/flf/ \
-		ftp://ftp.daddeln.de/pub/hostings/gw.de/other/
+PORTVERSION=	1.7b
+MASTER_SITES=	http://www.frontlineforce.com/download/ \
+		ftp://ftp.clanserver4u.de/exp/hl/mod/flf/
+
 DISTFILES=	frontline17_linux${EXTRACT_SUFX} \
-		frontline17a_up_linux${EXTRACT_SUFX}
+		frontline17b-update${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/frontline
 USE_ZIP=	yes
