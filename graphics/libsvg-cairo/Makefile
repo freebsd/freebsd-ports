@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libsvg-cairo
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ahze
+MASTER_SITES=	http://cairographics.org/snapshots/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	SVG rendering library
