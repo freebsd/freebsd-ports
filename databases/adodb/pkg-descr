@@ -1,32 +1,12 @@
 ADODB stands for Active Data Objects Data Base.
 
-ADODB currently supports: 
+ADODB provides a common API to communicate with any supported database.
+
+Supported databases:
 	MySQL, PostgreSQL, Interbase, Oracle, MS SQL 7
 	Foxpro, Access, ADO, Sybase and generic ODBC.
 
-Unique Features of ADODB:
-
-* Easy for Windows programmers to adapt to because many of the conventions 
-  are similar to Microsoft's ADO.
-
-* Unlike other PHP database classes which focus only on select statements
-  ADODB provides support code to handle inserts and updates which can be
-  adapted to multiple databases quickly. Methods are provided for date
-  handling, string concatenation and string quoting characters for 
-  differing databases.
-
-* A metatype system is built in so that types such as CHAR, TEXT and STRING
-  are equivalent in different databases.
-
-* Easy to port because all the database dependant code are stored in stub
-  functions. You do not need to port the core logic of the classes.
-
-* PHP4 session support. You can store your session information using ADODB
-  for true portability and scalability. See adodb-session.php for more 
-  information.
-
 WWW: http://php.weblogs.com/ADODB
 
--- Andre
+- Ago
 abgoeree@uwnet.nl
-

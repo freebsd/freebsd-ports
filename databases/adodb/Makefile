@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.20
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
-DISTNAME=	${PORTNAME}112
+DISTNAME=	${PORTNAME}120
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	abgoeree@uwnet.nl
@@ -21,18 +20,48 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
 ADODB_DIR=	share/doc/apache/php/adodb
+ADODB_TEST=	share/examples/adodb/test
+PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
+		ADODB_TEST=${ADODB_TEST}
+
+DOCS=	readme.htm tute.htm readme.txt
+LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
+	adodb-ado_mssql.inc.php adodb-csv.inc.php adodb-db2.inc.php \
+	adodb-fbsql.inc.php adodb-ibase.inc.php adodb-mssql.inc.php \
+	adodb-mysql.inc.php adodb-mysqlt.inc.php adodb-oci8.inc.php \
+	adodb-odbc.inc.php  adodb-odbc_mssql.inc.php adodb-oracle.inc.php \
+	adodb-postgres.inc.php adodb-postgres7.inc.php adodb-sybase.inc.php \
+	adodb.inc.php adodb-vfp.inc.php tohtml.inc.php
+SAMPLES=server.php adodb-session.php
+TESTS=	benchmark.php client.php test.php test2.php test3.php \
+	testcache.php testdatabases.inc.php
 
 post-patch:
-	${PERL} -pi -e 's!^readme\.htm!${PREFIX}/${ADODB_DIR}/readme\.htm!' \
-		${WRKSRC}/readme.txt
-	${PERL} -pi -e 's!^tute\.htm!${PREFIX}/${ADODB_DIR}/tute\.htm!' \
-		${WRKSRC}/readme.txt
+.for FILE in adodb-session.php benchmark.php client.php server.php test.php \
+	test2.php test3.php testcache.php
+	${PERL} -pi -e "s#(\./)?(adodb(-session)?|tohtml)+(\.inc)?\.php#${PREFIX}/${ADODB_DIR}/\2\4\.php#" ${WRKSRC}/${FILE}
+.endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/adodb
-	${MKDIR} ${PREFIX}/${ADODB_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/doc/adodb
-	${INSTALL_DATA} ${WRKSRC}/*.php ${PREFIX}/${ADODB_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.htm ${PREFIX}/${ADODB_DIR}
+	@${MKDIR} ${PREFIX}/${ADODB_DIR}
+.for FILE in ${SAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} \
+		${PREFIX}/${ADODB_DIR}/${FILE}.sample
+.endfor
+.for FILE in ${LIBS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}
+.endfor
+	@${MKDIR} ${PREFIX}/${ADODB_TEST}
+.for FILE in ${TESTS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_TEST}
+.endfor
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/adodb
+.for FILE in ${DOCS}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${PREFIX}/share/doc/adodb
+.endfor
+.endif
 
 .include <bsd.port.mk>
