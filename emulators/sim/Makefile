@@ -9,7 +9,8 @@
 DISTNAME=	sim_2.3d
 PKGNAME=	sim-2.3d
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/
+MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/ \
+		http://www.freebsd.org/~jedgar/distfiles/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
