@@ -1,3 +1,9 @@
+%%PORTDOCS%%share/doc/arch/README.000.first-steps
+%%PORTDOCS%%share/doc/arch/README.010.first-archive
+%%PORTDOCS%%share/doc/arch/README.020.branching-arch
+%%PORTDOCS%%share/doc/arch/README.025.branching-advice
+%%PORTDOCS%%share/doc/arch/README.030.importing-arch-releases
+%%PORTDOCS%%share/doc/arch/README.040.importing-other-releases
 %%PORTDOCS%%share/doc/arch/html/arbitrary-patching.html
 %%PORTDOCS%%share/doc/arch/html/arch.html
 %%PORTDOCS%%share/doc/arch/html/archive-format.html
@@ -31,6 +37,7 @@
 %%PORTDOCS%%share/doc/arch/html/revision-lib.html
 %%PORTDOCS%%share/doc/arch/html/source-license.html
 %%PORTDOCS%%share/doc/arch/html/star-topology.html
+%%PORTDOCS%%share/doc/arch/html/sync.html
 %%PORTDOCS%%share/doc/arch/html/system-requirements.html
 %%PORTDOCS%%share/doc/arch/html/theory-of-patches.html
 %%PORTDOCS%%share/doc/arch/html/triggers.html
@@ -71,14 +78,14 @@
 %%PORTDOCS%%share/doc/arch/texi/revision-lib.texi
 %%PORTDOCS%%share/doc/arch/texi/source-license.texi
 %%PORTDOCS%%share/doc/arch/texi/star-topology.texi
+%%PORTDOCS%%share/doc/arch/texi/sync.texi
 %%PORTDOCS%%share/doc/arch/texi/system-requirements.texi
 %%PORTDOCS%%share/doc/arch/texi/theory-of-patches.texi
 %%PORTDOCS%%share/doc/arch/texi/triggers.texi
 %%PORTDOCS%%share/doc/arch/texi/user-names.texi
 %%PORTDOCS%%share/doc/arch/texi/using-triggers.texi
 %%PORTDOCS%%share/doc/arch/texi/web-site.texi
-bin/arch
-bin/arch--release-arch--1.0--patch-5-cfg
+bin/arch--release-arch--1.0--patch-16-cfg
 bin/arch--release-arch-cfg
 bin/arch-cfg
 bin/as-daemon
@@ -87,9 +94,12 @@ bin/dangerous-rename
 bin/file-metadata
 bin/file-tag
 bin/ftp-push
+bin/inventory
+bin/larch
+bin/mkpatch
 bin/need-args
-bin/readlink
-bin/sb
+bin/pipe-friendly
+bin/read-link
 bin/set-file-metadata
 bin/unfold
 bin/wftp-cd
@@ -131,7 +141,9 @@ include/hackerlab/fmt/cvt-double-constants.h
 include/hackerlab/fmt/cvt-double-tables.h
 include/hackerlab/fmt/cvt-double.h
 include/hackerlab/fmt/cvt.h
+include/hackerlab/fs/cwd.h
 include/hackerlab/fs/file-names.h
+include/hackerlab/fs/tmp-files.h
 include/hackerlab/hash/hash-utils.h
 include/hackerlab/hash/hashtree.h
 include/hackerlab/machine/alignment.h
@@ -160,6 +172,7 @@ include/hackerlab/os/signal.h
 include/hackerlab/os/stdarg.h
 include/hackerlab/os/stddef.h
 include/hackerlab/os/stdlib.h
+include/hackerlab/os/sys/mman.h
 include/hackerlab/os/sys/param.h
 include/hackerlab/os/sys/socket.h
 include/hackerlab/os/sys/stat.h
@@ -191,6 +204,7 @@ include/hackerlab/rx/nfa-cache.h
 include/hackerlab/rx/nfa.h
 include/hackerlab/rx/super.h
 include/hackerlab/rx/tree.h
+include/hackerlab/sort/qsort.h
 include/hackerlab/uni/coding-inlines.h
 include/hackerlab/uni/coding.h
 include/hackerlab/uni/invariant.h
@@ -278,7 +292,6 @@ libexec/arch/arch/file-diffs
 libexec/arch/arch/file-history
 libexec/arch/arch/file-list
 libexec/arch/arch/file-syntax-filter
-libexec/arch/arch/file-tag
 libexec/arch/arch/find-in-cache
 libexec/arch/arch/finish-branch
 libexec/arch/arch/get
@@ -286,10 +299,12 @@ libexec/arch/arch/get-archive-name
 libexec/arch/arch/get-patch
 libexec/arch/arch/heading
 libexec/arch/arch/import
+libexec/arch/arch/indicated-config-file
 libexec/arch/arch/indicated-revision
 libexec/arch/arch/init-tree
 libexec/arch/arch/inventory
-libexec/arch/arch/join
+libexec/arch/arch/join-branch
+libexec/arch/arch/larch
 libexec/arch/arch/library-add
 libexec/arch/arch/library-archives
 libexec/arch/arch/library-branches
@@ -318,6 +333,7 @@ libexec/arch/arch/make-category
 libexec/arch/arch/make-library-browser
 libexec/arch/arch/make-lock
 libexec/arch/arch/make-log
+libexec/arch/arch/make-sync-tree
 libexec/arch/arch/make-version
 libexec/arch/arch/manifest
 libexec/arch/arch/merge-points
@@ -352,6 +368,7 @@ libexec/arch/arch/putlast
 libexec/arch/arch/reconcile
 libexec/arch/arch/record-config
 libexec/arch/arch/register-archive
+libexec/arch/arch/remove-log
 libexec/arch/arch/replay
 libexec/arch/arch/replay-config
 libexec/arch/arch/revisions
@@ -365,6 +382,7 @@ libexec/arch/arch/tag
 libexec/arch/arch/tagging-method
 libexec/arch/arch/take-from-cache
 libexec/arch/arch/top
+libexec/arch/arch/touched-files-prereqs
 libexec/arch/arch/tree-lint
 libexec/arch/arch/tree-repair
 libexec/arch/arch/tree-root
@@ -374,6 +392,7 @@ libexec/arch/arch/update-config
 libexec/arch/arch/update-distributions
 libexec/arch/arch/valid-archive-location
 libexec/arch/arch/valid-archive-name
+libexec/arch/arch/valid-config-name
 libexec/arch/arch/valid-id
 libexec/arch/arch/valid-log-file
 libexec/arch/arch/valid-package-name
@@ -435,7 +454,8 @@ libexec/arch/branching-and-merging/Help.category_title
 libexec/arch/branching-and-merging/Help.list
 libexec/arch/branching-and-merging/delta-patch
 libexec/arch/branching-and-merging/finish-branch
-libexec/arch/branching-and-merging/join
+libexec/arch/branching-and-merging/join-branch
+libexec/arch/branching-and-merging/make-sync-tree
 libexec/arch/branching-and-merging/prepare-branch
 libexec/arch/branching-and-merging/reconcile
 libexec/arch/branching-and-merging/replay
@@ -463,7 +483,6 @@ libexec/arch/inventory/add
 libexec/arch/inventory/check-manifest
 libexec/arch/inventory/delete
 libexec/arch/inventory/explicit-default
-libexec/arch/inventory/file-tag
 libexec/arch/inventory/inventory
 libexec/arch/inventory/manifest
 libexec/arch/inventory/missing-tags
@@ -489,6 +508,7 @@ libexec/arch/library/library-remove
 libexec/arch/library/library-revisions
 libexec/arch/library/library-versions
 libexec/arch/library/my-revision-library
+libexec/arch/library/touched-files-prereqs
 libexec/arch/local-cache/Help.category
 libexec/arch/local-cache/Help.category_title
 libexec/arch/local-cache/Help.list
@@ -509,12 +529,14 @@ libexec/arch/local-cache/what-changed
 libexec/arch/naming-conventions/Help.category
 libexec/arch/naming-conventions/Help.category_title
 libexec/arch/naming-conventions/Help.list
+libexec/arch/naming-conventions/indicated-config-file
 libexec/arch/naming-conventions/indicated-revision
 libexec/arch/naming-conventions/parse-package-name
 libexec/arch/naming-conventions/patch-level-lt
 libexec/arch/naming-conventions/sort-revisions
 libexec/arch/naming-conventions/valid-archive-location
 libexec/arch/naming-conventions/valid-archive-name
+libexec/arch/naming-conventions/valid-config-name
 libexec/arch/naming-conventions/valid-id
 libexec/arch/naming-conventions/valid-package-name
 libexec/arch/naming-conventions/valid-patch-level-name
@@ -555,6 +577,7 @@ libexec/arch/patch-logs/make-log
 libexec/arch/patch-logs/merge-points
 libexec/arch/patch-logs/new-on-branch
 libexec/arch/patch-logs/patch-list-description.awk
+libexec/arch/patch-logs/remove-log
 libexec/arch/patch-logs/valid-log-file
 libexec/arch/patch-logs/wd-check-for-patch-log
 libexec/arch/patch-sets/Help.category
@@ -642,6 +665,7 @@ libexec/arch/web/update-distributions
 @dirrm include/hackerlab/unidata
 @dirrm include/hackerlab/unicode
 @dirrm include/hackerlab/uni
+@dirrm include/hackerlab/sort
 @dirrm include/hackerlab/rx-xml
 @dirrm include/hackerlab/rx-posix
 @dirrm include/hackerlab/rx
