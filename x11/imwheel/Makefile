@@ -20,7 +20,7 @@ WRKSRC=	${WRKDIR}/imwheel
 MAN1=		imwheel.1
 
 .if defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/PLIST.nodocs
+PLIST=		${PKGDIR}/pkg-plist.nodocs
 .endif
 
 post-patch:
