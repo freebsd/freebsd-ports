@@ -4,9 +4,9 @@
  # Send bug-reports and/or questions to: gerard@research.bell-labs.com
  # The book is available frm www.amazon.com
  
--CC=gcc -O2 -DNXT	# or any other ansi compatible c compiler
+-CC=cc -O2 -DNXT	# or any other ansi compatible c compiler
 -CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
-+# CC=gcc -O2 -DNXT	# or any other ansi compatible c compiler
++# CC=cc -O2 -DNXT	# or any other ansi compatible c compiler
 +# CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
  
  #	on Solaris:	add -DSOLARIS
