@@ -1,0 +1,11 @@
+This program is an application-level gateway, or proxy, designed to allow
+mail retrieval from POP3 servers by systems that either:
+
+        (a) are behind a firewall or screening router OR
+        (b) do not have an assigned IP number OR
+        (c) must share a SLIP/PPP connection on another system
+
+It connects to the POP3 server on behalf of the client, performs the login
+and then passes data both ways until either the client or the server shut
+down the connection. In the meanwhile, the connection will appear to have
+originated on the host running the proxy.

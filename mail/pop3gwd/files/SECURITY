@@ -1,0 +1,8 @@
+# $OpenBSD: SECURITY,v 1.1.1.1 2000/01/03 02:22:42 kevlo Exp $
+
+ianm@cit.nepean.uws.edu.au	1999/12/29.
+
+Makes good use of snprintf.
+
+Made use of strncpy. I've converted them all to
+strlcpy for some performance improvements.

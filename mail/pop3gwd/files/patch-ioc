@@ -1,0 +1,21 @@
+# $OpenBSD: patch-ioc,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- io.c.orig	Wed Dec 29 12:26:16 1999
++++ io.c	Wed Dec 29 12:27:39 1999
+@@ -52,7 +52,7 @@
+ 	
+ 	while (++count < maxlen && term_flag == FALSE) {
+ 	
+-		bcopy(&master, &copy, sizeof(fd_set));	/* select() trashes copy */
++		memcpy(&copy, &master, sizeof(fd_set));	/* select() trashes copy */
+ 		deadline.tv_sec = maxwait;
+ 		deadline.tv_usec = 0;
+ 
+@@ -115,7 +115,7 @@
+ 	nleft = nbytes;
+ 	
+ 	do {
+-		bcopy(&master, &copy, sizeof(fd_set));  /* select() trashes copy */
++		memcpy(&copy, &master, sizeof(fd_set));  /* select() trashes copy */
+ 		deadline.tv_sec = maxwait;
+ 		deadline.tv_usec = 0;
+ 

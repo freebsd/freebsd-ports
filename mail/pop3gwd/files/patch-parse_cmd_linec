@@ -1,0 +1,25 @@
+# $OpenBSD: patch-parse_cmd_linec,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- parse_cmd_line.c.orig	Thu Jun 19 19:06:28 1997
++++ parse_cmd_line.c	Wed Dec 29 12:41:02 1999
+@@ -21,6 +21,7 @@
+ /* parse_cmd_line.c:	modify setup according to command line parameters */
+ /* ---------------------------------------------------------------------- */
+ 
++#include <ctype.h>
+ #include "pop3-gw.h"
+ 
+ 
+@@ -34,11 +35,11 @@
+ 	
+ 	
+ 	/* there is always at least 1 arg and that's the name of the program */
+-	strncpy(log_id, argv[0], maxlen);
++	strlcpy(log_id, argv[0], maxlen);
+ 
+ 	/* arguments must be in the form <id><value>, without blanks in between */
+ 	while (count < argc) {
+-		strncpy(value, argv[count]+1, MAX_IO_LEN);
++		strlcpy(value, argv[count]+1, MAX_IO_LEN);
+ 		if (strlen(value) != 0)
+ 			switch (*argv[count]) {
+ 				case 'd':	if (ispunct(value[0]))

@@ -1,0 +1,65 @@
+# $OpenBSD: patch-get_remote_datac,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- get_remote_data.c.orig	Wed Dec 29 12:30:32 1999
++++ get_remote_data.c	Wed Dec 29 12:31:29 1999
+@@ -39,36 +39,36 @@
+ 
+ 	/* look for user command, can be USER or QUIT */
+ 	if ((next_tok = strtok(input, " ")) != NULL)
+-		strncpy(cmd, next_tok, maxlen);
++		strlcpy(cmd, next_tok, maxlen);
+ 	else {
+ 		result = BAD;
+-		strncpy(error, "no command in input", maxlen);
++		strlcpy(error, "no command in input", maxlen);
+ 		cmd[0] = 0;	/* we terminate the string anyway, better be safe than sorry */
+ 	}
+ 
+ 	if (result == GOOD && strcasecmp(cmd, user_c) == 0) {
+ 		/* look for hostname to connect to (after last delimiter, if present) */
+ 		if (delim_pos != NULL) {
+-			strncpy(hostname, delim_pos+1, MAXHOSTNAMELEN);
++			strlcpy(hostname, delim_pos+1, MAXHOSTNAMELEN);
+ 			*delim_pos = 0;	/* terminate the string here, so strtok will ignore this part */			
+ 			if (strlen(hostname) != 0) {
+ 				if ((next_tok = strtok(NULL, " ")) != NULL) {
+-					strncpy(username, next_tok, maxlen);
++					strlcpy(username, next_tok, maxlen);
+ 				}
+ 				else {
+ 					result = BAD;
+-					strncpy(error, "no username in input", maxlen);
++					strlcpy(error, "no username in input", maxlen);
+ 				}
+ 			
+ 			}
+ 			else {
+ 				result = BAD;
+-				strncpy(error, "no hostname in input", maxlen);
++				strlcpy(error, "no hostname in input", maxlen);
+ 			}
+ 		}
+ 		else {
+ 			result = BAD;
+-			strncpy(error, "no username/hostname delimiter in input", maxlen);
++			strlcpy(error, "no username/hostname delimiter in input", maxlen);
+ 		}
+ 	}
+ 	
+@@ -76,7 +76,7 @@
+ 	if (result == GOOD) {
+ 		if (strcasecmp(cmd, user_c) != 0 && strcasecmp(cmd, quit_c) != 0) {
+ 			result = BAD;
+-			strncpy(error, "command must be either USER or QUIT", maxlen);
++			strlcpy(error, "command must be either USER or QUIT", maxlen);
+ 		}
+ 	}
+ 	
+@@ -133,7 +133,7 @@
+ 	if (parse_res == GOOD && strcasecmp(cmd, quit_c) == 0) {
+ 		/* set server's hostname and setup farewell */
+ 		if (gethostname(server_name, MAXHOSTNAMELEN) != 0)
+-			strncpy(server_name, "localhost", MAXHOSTNAMELEN);
++			strlcpy(server_name, "localhost", MAXHOSTNAMELEN);
+ 		snprintf(output, MAX_IO_LEN, "%s %s %s %s%s", pos_re, server_name,
+ 				GREETING, "signing off", termin);
+ 		if  ((count = writen(client_filedes, output, strlen(output), maxwait)) == strlen(output))

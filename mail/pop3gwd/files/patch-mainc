@@ -1,0 +1,28 @@
+# $OpenBSD: patch-mainc,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $
+--- main.c.orig	Tue Dec 28 12:16:25 1999
++++ main.c	Tue Dec 28 12:28:45 1999
+@@ -23,7 +23,7 @@
+ static char rcsid[] = "$Id: patch-mainc,v 1.1.1.1 2000/01/03 02:22:43 kevlo Exp $";
+ 
+ 
+-void main(int argc, char *argv[]) {
++int main(int argc, char *argv[]) {
+ 	/* default proxy identification and setup */
+ 	char delimiter = '#';			/* needed to parse username and hostname */
+ 	int timeout = 120;			/* timeout is 2 minutes */
+@@ -60,7 +60,7 @@
+ 
+ 	/* set server's hostname and setup greeting */
+ 	if (gethostname(server_name, MAXHOSTNAMELEN) != 0)
+-		strncpy(server_name, "localhost", MAXHOSTNAMELEN);
++		(void)strlcpy(server_name, "localhost", MAXHOSTNAMELEN);
+ 	snprintf(output, MAX_IO_LEN, "%s %s %s %s%s", pos_reply, server_name, 
+ 		GREETING, "ready", terminator);
+ 
+@@ -88,5 +88,6 @@
+ 
+ 	syslog(LOG_PRIO, "signing off (in: %d bytes, out: %d bytes)", in_bytes, out_bytes);
+ 	closelog();
++	return(0);
+ }
+ 
