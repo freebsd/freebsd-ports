@@ -4,10 +4,10 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.43 1998/02/04 16:41:45 ache Exp $
+# $Id: Makefile,v 1.44 1998/04/27 21:10:09 ache Exp $
 #
 
-DISTNAME=       elm-2.4ME+40
+DISTNAME=       elm-2.4ME+43
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \
@@ -15,9 +15,10 @@ MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/ \
 
 MAINTAINER=	ache@FreeBSD.ORG
 
-WRKSRC=         ${WRKDIR}/elm2.4.ME+.40
+WRKSRC=         ${WRKDIR}/elm2.4.ME+.43
 MAN1=           answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 \
-		listalias.1 messages.1 newalias.1 printmail.1 readmsg.1
+		frm.1 listalias.1 messages.1 newalias.1 newmail.1 \
+		printmail.1 readmsg.1
 
 HAS_CONFIGURE=  Yes
 CONFIGURE_SCRIPT= Configure
