@@ -88,7 +88,6 @@ share/locale/sl/LC_MESSAGES/gnome-db.mo
 share/locale/sv/LC_MESSAGES/gnome-db.mo
 share/locale/tr/LC_MESSAGES/gnome-db.mo
 share/locale/uk/LC_MESSAGES/gnome-db.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/pt_BR/images
 @dirrm share/gnome/help/gnome-db/pt_BR
 @dirrm share/gnome/help/gnome-db/it/images
