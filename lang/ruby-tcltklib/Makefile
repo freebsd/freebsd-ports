@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_RUBY}
 DISTNAME=	ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER?=	yasuf@bsdclub.org
+MAINTAINER?=	knu@FreeBSD.org
 
 LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \
 		${TK_LIB}.1:${PORTSDIR}/${TK_CATEGORY}/tk${TK_VERSION}
@@ -21,6 +21,9 @@ LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
+
+MD5_FILE=	${PORTSDIR}/lang/ruby/files/md5
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tcltklib
 CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
 		--with-tcl-lib="${LOCALBASE}/lib/${TCL_DIR}" \

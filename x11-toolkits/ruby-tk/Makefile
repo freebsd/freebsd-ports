@@ -13,14 +13,16 @@ MASTER_SITE_SUBDIR=	${RUBY_VER}
 DISTNAME=	ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER?=	yasuf@bsdclub.org
+MAINTAINER?=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/tcltklib.so:${PORTSDIR}/${TCLTKLIB_CATEGORY}/ruby-tcltklib
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tk
-
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+
+MD5_FILE=	${PORTSDIR}/lang/ruby/files/md5
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/ext/tk
 
 TK_VERSION?=	82
 .if defined(WITH_TCLTK_JP)
