@@ -1,0 +1,7 @@
+Lsof (LiSt Open Files) lists information about files that are open by the
+running processes.  An open file may be a regular file, a directory, a block
+special file, a character special file, an executing text reference, a
+library, a stream or a network file (Internet socket, NFS file or Unix domain
+socket).
+
+-- David	(obrien@cs.ucdavis.edu)
