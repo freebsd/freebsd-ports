@@ -13,23 +13,19 @@ MASTER_SITE_SUBDIR=	anjuta
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomevfs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's#-lpthread#${PTHREAD_LIBS}#g ; \
 		 s#DATADIRNAME=lib#DATADIRNAME=share#g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

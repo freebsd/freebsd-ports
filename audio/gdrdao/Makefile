@@ -14,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	cdrdao:${PORTSDIR}/audio/cdrdao
 
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
