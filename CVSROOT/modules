@@ -1481,6 +1481,7 @@ freefem		ports/math/freefem
 freefonts	ports/x11-fonts/freefonts
 freegrep	ports/textproc/freegrep
 freelibiberty	ports/devel/freelibiberty
+freenet6	ports/net/freenet6
 freeradius-devel	ports/net/freeradius-devel
 freesci		ports/emulators/freesci
 freescope	ports/devel/freescope
