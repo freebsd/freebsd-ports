@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-12-11
+SNAPDATE=	2000-12-18
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -28,14 +28,6 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
-##WRKSRC=		${WRKDIR}/gcc-${SNAPVER}
-##CONFIGURE_WRKSRC=	${WRKDIR}/build
-##BUILD_WRKSRC=		${WRKDIR}/build
-##INSTALL_WRKSRC=		${WRKDIR}/build
-##CONFIGURE_SCRIPT=	${WRKSRC}/configure
-EGCS_REV=	2.97
-SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
-WRKSRC=		${WRKDIR}/build
 PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
 .if !defined(PATCH_DEBUG)
 PATCH_ARGS+=	--forward --quiet
@@ -50,6 +42,15 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
+##WRKSRC=		${WRKDIR}/gcc-${SNAPVER}
+##CONFIGURE_WRKSRC=	${WRKDIR}/build
+##BUILD_WRKSRC=		${WRKDIR}/build
+##INSTALL_WRKSRC=		${WRKDIR}/build
+##CONFIGURE_SCRIPT=	${WRKSRC}/configure
+EGCS_REV=	2.97
+SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
+WRKSRC=		${WRKDIR}/build
+TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}  \
 		SNAPVER=${SNAPVER}
 GNU_CONFIGURE=	yes
@@ -104,35 +105,30 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/ggcc
-	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/gg++
-	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/gg77
-	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/gg++filt
-	${MV} ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
+	${MV} -f ${PREFIX}/bin/gcc ${PREFIX}/bin/ggcc
+	${MV} -f ${PREFIX}/bin/g++ ${PREFIX}/bin/gg++
+	${MV} -f ${PREFIX}/bin/g77 ${PREFIX}/bin/gg77
+	${MV} -f ${PREFIX}/bin/g++filt ${PREFIX}/bin/gg++filt
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	${RM} -f ${PREFIX}/bin/${GNU_HOST}-c++
 	${RM} -f ${PREFIX}/bin/cpp
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-	${MV} ${PREFIX}/lib/libiberty.a  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} -f ${PREFIX}/lib/libstdc++.a  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} -f ${PREFIX}/lib/libzgcj.*  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
-	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/ggcc.1
-	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
-	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
-	${MV} ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
+	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
+	${MV} -f ${PREFIX}/lib/libstdc++.* ${PREFIX}/lib/libsupc++.* ${TARGLIB}
+	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+	${MV} -f ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/ggcc.1
+	${MV} -f ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/gg++.1
+	${MV} -f ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/gg77.1
+	${MV} -f ${PREFIX}/man/man1/cpp.1 ${PREFIX}/man/man1/gcpp.1
 .if defined(WANT_SHAREDLIBS)
-	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
+	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
 .endif
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 	cd ${PREFIX} ;\
-	    find lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} \
-		-type f -o -type l >${WRKDIR}/PLIST.gcc-lib
+	    find ${TARGLIB} -type f -o -type l	>${WRKDIR}/PLIST.gcc-lib
 	${ECHO} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO} "/Insert PLIST.gcc-lib"		>> ${WRKDIR}/ex.script
 	${ECHO} "d"				>> ${WRKDIR}/ex.script
