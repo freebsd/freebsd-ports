@@ -330,7 +330,7 @@ sub inq_m {
      modem setup command.", $def{'answer-chat-timeout'});
 
     $settings .= " autobauding";
-    $def{'autobauding'} = "YES" if !$def{'autobauding'};
+    $def{'autobauding'} = "NO" if !$def{'autobauding'};
     $def{'autobauding'} = &ask ("  - `autobauding'
      Some modems switch their DTE line speed to the communication line
      speed after connecting, e.g., after sending `CONNECT 2400', the
