@@ -1,0 +1,11 @@
+--- bind.c	2000/11/03 10:27:18	1.1
++++ bind.c	2000/11/03 10:27:22
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ #ifdef REGEX
+-#include <gnu_regex.h>
++#include <gnuregex.h>
+ #endif
+ 
+ #include "jcc.h"	/* For atoip() */

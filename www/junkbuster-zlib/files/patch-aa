@@ -1,20 +1,31 @@
-diff -ruN /usr/ports/www/ijb/work/ijb20/Makefile ./Makefile
---- /usr/ports/www/ijb/work/ijb20/Makefile	Mon Feb 28 02:35:10 2000
-+++ ./Makefile	Mon Feb 28 02:37:39 2000
-@@ -8,10 +8,11 @@
+--- Makefile.orig	Fri Aug  4 15:40:15 2000
++++ Makefile	Fri Nov  3 12:23:48 2000
+@@ -5,20 +5,20 @@
+ 
+ # set include and library paths for the zlib compression library
+ #
+-ZLIB_INC_FLAGS=-I../zlib
+-ZLIB_LIB_FLAGS=-L ../zlib
++#ZLIB_INC_FLAGS=-I../zlib
++#ZLIB_LIB_FLAGS=-L ../zlib
+ 
+ DEFAULT_CFLAGS = -I. $(ZLIB_INC_FLAGS) $(REGEX) -DSTDC_HEADERS -DHAVE_STRING
+ 
  PROG   = junkbuster
  O      = o
  RM     = rm -f
 -MORE_CFLAGS = -g
 +MORE_CFLAGS =
+ LD = $(CC) $(CFLAGS) $(ZLIB_LIB)
+ LDFLAGS = -lz
  
  # use this for Solaris 2.x
- #LDFLAGS = -lnsl -lsocket 
+-#LDFLAGS = -lnsl -lsocket -lz
 +LDFLAGS += -lgnuregex
  
  # use these for SunOS 4.x
- #LDFLAGS = -nsl
-@@ -47,10 +48,10 @@
+ #LDFLAGS = -nsl -lz
+@@ -63,10 +63,10 @@
  #MORE_CFLAGS = -relax_pointers
  #LDFLAGS = -map junkbuster.xMAP
  
@@ -26,4 +37,4 @@ diff -ruN /usr/ports/www/ijb/work/ijb20/Makefile ./Makefile
 +	encode.$(O) ssplit.$(O) socks4.$(O) acl.$(O) win32.$(O)
  
  $(PROG): $(OBJS)
- 	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
+ 	$(LD) -o $(PROG) $(ZLIB_LIB_FLAGS) $(OBJS) $(LDFLAGS)

@@ -1,7 +1,6 @@
-diff -ruN /usr/ports/www/ijb/work/ijb20/jcc.c ./jcc.c
---- /usr/ports/www/ijb/work/ijb20/jcc.c	Mon Feb 28 02:35:10 2000
-+++ ./jcc.c	Mon Feb 28 02:31:06 2000
-@@ -39,7 +39,7 @@
+--- jcc.c.orig	Fri Nov  3 12:28:39 2000
++++ jcc.c	Fri Nov  3 12:31:58 2000
+@@ -39,11 +39,12 @@
  #endif
  
  #ifdef REGEX
@@ -10,4 +9,9 @@ diff -ruN /usr/ports/www/ijb/work/ijb20/jcc.c ./jcc.c
  #endif
  
  #include "jcc.h"
-Binary files /usr/ports/www/ijb/work/ijb20/junkbuster and ./junkbuster differ
+-#include "zutil.h"
++#include "zlib.h"
++#define DEF_MEM_LEVEL 8
+ 
+ char *prog;
+ 

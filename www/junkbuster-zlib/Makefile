@@ -1,46 +1,43 @@
-# New ports collection makefile for:	junkbuster
+# New ports collection makefile for:	junkbuster-zlib
 # Date created:		2 May 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
 # $FreeBSD$
+#
 
-# You need to delete the old distfile if you are upgrading, as the tar ball
-# for ijb has not been changing names between minor revisions(ie 2.0->2.0.1).
-# I have contacted the author about this though so we may see something new
-# in the next revision.
-
-PORTNAME=	junkbuster
-PORTVERSION= 	2.0.2
+PORTNAME=	junkbuster-zlib
+PORTVERSION= 	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.junkbusters.com/ht/en/
-DISTNAME=	ijb20
+MASTER_SITES=	http://f2.org/download/
+DISTNAME=	ijb-zlib-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ian@broken.net
+MAINTAINER=	sobomax@altavista.net
 
-USE_ZIP=	yes
 ALL_TARGET=	# yes, an empty target.
-JDIR=		${PREFIX}/etc/junkbuster
-MAN1=		junkbuster.1
+JDIR=		${PREFIX}/etc/junkbuster-zlib
+MAN1=		junkbuster-zlib.1
 
 post-patch:
 	@${PERL} -pi -e 's:\r::' ${WRKSRC}/*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster
-	${MKDIR} -m 755 ${PREFIX}/etc/junkbuster
-	${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${PREFIX}/etc/junkbuster/configfile.sample
-	${INSTALL_DATA} ${WRKSRC}/sblock.ini ${PREFIX}/etc/junkbuster/blockfile.sample
-	${INSTALL_DATA} ${WRKSRC}/saclfile.ini ${PREFIX}/etc/junkbuster/aclfile.sample
-	${INSTALL_DATA} ${WRKSRC}/scookie.ini ${PREFIX}/etc/junkbuster/cookiefile.sample
-	${INSTALL_DATA} ${WRKSRC}/sforward.ini ${PREFIX}/etc/junkbuster/forwardfile.sample
-	${INSTALL_DATA} ${WRKSRC}/strust.ini ${PREFIX}/etc/junkbuster/trustfile.sample
-	$(INSTALL_MAN) ${WRKSRC}/junkbuster.1 $(PREFIX)/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster-zlib
+	${MKDIR} -m 755 ${JDIR}
+	${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${JDIR}/configfile.sample
+	${INSTALL_DATA} ${WRKSRC}/sblock.ini ${JDIR}/blockfile.sample
+	${INSTALL_DATA} ${WRKSRC}/saclfile.ini ${JDIR}/aclfile.sample
+	${INSTALL_DATA} ${WRKSRC}/scookie.ini ${JDIR}/cookiefile.sample
+	${INSTALL_DATA} ${WRKSRC}/sforward.ini ${JDIR}/forwardfile.sample
+	${INSTALL_DATA} ${WRKSRC}/strust.ini ${JDIR}/trustfile.sample
+	$(INSTALL_MAN) ${WRKSRC}/junkbuster.1 $(PREFIX)/man/man1/junkbuster-zlib.1
 # Create the startup script.  JB will run as user nobody.
-	@${SED} -e 's%JDIR%${JDIR}%g' -e 's%PREFIX%${PREFIX}%g' \
-	    ${FILESDIR}/junkbuster.sh.in > ${PREFIX}/etc/rc.d/junkbuster.sh
-	${CHMOD} 755 ${PREFIX}/etc/rc.d/junkbuster.sh
+	@${SED} 's|%%JDIR%%|${JDIR}|g ; s|%%PREFIX%%|${PREFIX}|g' \
+	    ${FILESDIR}/junkbuster.sh.in > ${WRKDIR}/junkbuster-zlib.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/junkbuster-zlib.sh \
+	    ${PREFIX}/etc/rc.d/junkbuster-zlib.sh
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

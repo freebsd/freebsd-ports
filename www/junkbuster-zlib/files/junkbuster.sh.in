@@ -2,9 +2,9 @@
 
 case $1 in
 start)
-	test -d JDIR -a -x PREFIX/sbin/junkbuster -a -f JDIR/configfile || exit 1
-	cd JDIR
-	su -m nobody -c "PREFIX/sbin/junkbuster configfile &"
+	test -d %%JDIR%% -a -x %%PREFIX%%/sbin/junkbuster -a -f %%JDIR%%/configfile || exit 1
+	cd %%JDIR%%
+	su -m nobody -c "%%PREFIX%%/sbin/junkbuster configfile &"
 	echo -n " junkbuster"
 	;;
 stop)
