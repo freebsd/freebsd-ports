@@ -1,12 +1,12 @@
 # New ports collection makefile for:	serialmail
-# Version required:	0.75
 # Date created:		2 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	serialmail-0.75
+PORTNAME=	serialmail
+PORTVERSION= 	0.75
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \

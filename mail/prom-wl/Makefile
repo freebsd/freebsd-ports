@@ -1,12 +1,12 @@
 # New ports collection makefile for:	prom-wl
-# Version required:     1.0.2
 # Date created:		28 Aug 1999
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       prom-wl-1.0.2
+PORTNAME=	prom-wl
+PORTVERSION= 	1.0.2
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 

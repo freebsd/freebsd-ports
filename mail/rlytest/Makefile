@@ -1,15 +1,15 @@
 # New ports collection makefile for:	rlytest
-# Version required:	1.16
 # Date created:		16 January 1999
 # Whom:			Paul Chvostek <paul@it.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rlytest
-PKGNAME=	rlytest-1.16
+PORTNAME=	rlytest
+PORTVERSION= 	1.16
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.unicom.com/sw/rlytest/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	paul@it.ca
 

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  mutt w/pgp hooks
-# Version required: 0.0
 # Date created:			  Thur July 25, 1996
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
+#
 
-DISTNAME=	mutt-1.0.1i
-PKGNAME=	mutt-1.0.1
+PORTNAME=	mutt
+PORTVERSION= 	1.0.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
 		ftp://ftp.uib.no/pub/mutt/  \
@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/mutt-international/ \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/  \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
+DISTNAME=	${PKGNAME}i
 
 PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \

@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  foo
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	muttzilla-0.40
+PORTNAME=	muttzilla
+PORTVERSION= 	0.40
 CATEGORIES=	mail www
 MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 

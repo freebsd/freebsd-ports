@@ -1,14 +1,15 @@
 # New ports collection makefile for:    xpbiff
-# Version required:     1.27
 # Date created:         2 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	xpbiff
-PKGNAME?=	xpbiff-1.27
+PORTNAME?=	xpbiff
+PORTVERSION?= 	1.27
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/xpbiff/
+DISTNAME=	xpbiff
 DISTFILES=	xpbiff-1.27-with-YOUBIN.tar.gz.uu
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp

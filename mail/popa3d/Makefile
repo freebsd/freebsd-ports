@@ -1,12 +1,12 @@
 # New ports collection makefile for:	popa3d
-# Version required:	0.4
 # Date created:		Sun Feb  6 12:31:29 MSK 2000
 # Whom:			Sergey Samoyloff <gonza@techline.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	popa3d-0.4
+PORTNAME=	popa3d
+PORTVERSION= 	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/popa3d/ \

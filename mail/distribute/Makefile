@@ -1,15 +1,15 @@
 # New ports collection makefile for:	distribute
-# Version required:	2.1pl24
 # Date created:		1 Oct 1997
 # Whom:			itojun@itojun.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	distribute-2.1-pl19
-PKGNAME=	distribute-2.1.24
+PORTNAME=	distribute
+PORTVERSION= 	2.1.24
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.foretune.co.jp/pub/network/mail/distribute/
+DISTNAME=	${PORTNAME}-2.1-pl19
 
 PATCH_SITES=	${MASTER_SITES}BETA/
 PATCHFILES=	patch.20.gz patch.21e.gz patch.22e.gz patch.23e.gz patch.24e.gz

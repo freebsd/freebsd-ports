@@ -1,14 +1,13 @@
 # New ports collection makefile for:    elm ME+ (unofficial Elm)
-# See also: http://www.ozone.fmi.fi/KEH/
-# Version required:     2.4ME+
 # Date created:         26 June 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
-
 # WARNING: it is NOT official Elm 2.*
-DISTNAME=       elm-2.4ME+68
+
+PORTNAME=	elm
+PORTVERSION=	2.4ME+68
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.ozone.fmi.fi/KEH/ \
 		ftp://ftp.funet.fi/pub/unix/mail/elm/elm-2.4ME+/ \

@@ -1,17 +1,17 @@
 # New ports collection makefile for: Mew
-# Version required:	1.94.1
 # Date created:		21 November 1997
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mew-${VERSION}
-PKGNAME=	mew-${EMACS_PORT_NAME}-${VERSION}
+PORTNAME=	mew-${EMACS_PORT_NAME}
+PORTVERSION=	1.94.1
 CATEGORIES=	mail elisp
 MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		ftp://ftp.kyushu-u.ac.jp/pub/Misc/mew/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+DISTNAME=	mew-${PORTVERSION}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
@@ -26,7 +26,8 @@ SCRIPTS_ENV=	AWK=${AWK} CAT=${CAT} CP=${CP} ECHO=${ECHO} MKDIR="${MKDIR}" \
 		ETCDIR=${ETCDIR} SAMPLEDIR=${SAMPLEDIR} WRKTMPDIR=${WRKTMPDIR} \
 		PORTDIR=${.CURDIR:S!^${PORTSDIR}/!!} \
 		EMACS_CMD=${EMACS_CMD} EMACS_PORT_NAME=${EMACS_PORT_NAME} \
-		PKGNAME=${PKGNAME} TMPL_FILES="${TMPL_FILES}" VERSION=${VERSION} \
+		PKGNAME=${PKGNAME} TMPL_FILES="${TMPL_FILES}" \
+		VERSION=${PORTVERSION} \
 		SITE_STARTUP_FILE=${SITE_STARTUP_FILE} REQUIRE="${REQUIRE}"
 MAKE_ARGS=	PREFIX=${PREFIX} EMACS=${EMACS_CMD} ELISPDIR=${ELISPDIR} \
 		INFODIR=${INFODIR} ETCDIR=${ETCDIR}
@@ -42,7 +43,6 @@ PATCHDIR=	${.CURDIR}/../mew/patches
 SCRIPTDIR=	${.CURDIR}/../mew/scripts
 FILESDIR=	${.CURDIR}/../mew/files
 
-VERSION=		1.94.1
 EMACS_PORT_NAME?=	emacs
 SAMPLEFILES=		Addrbook
 SAMPLEDOTEMACS=		dot.emacs.el

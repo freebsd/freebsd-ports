@@ -1,11 +1,12 @@
 # New ports collection makefile for:	qmail-contrib
-# Version required:     1.0
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
+#
 
-DISTNAME=       qmail-contrib-0.1
+PORTNAME=	qmail-contrib
+PORTVERSION= 	0.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
 		ftp://rucus.ru.ac.za/pub/mail/qmail/src/

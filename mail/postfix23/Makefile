@@ -1,13 +1,12 @@
 # New ports collection makefile for:	postfix
-# Version required:	19991231
 # Date created:		18 Mar 1999
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=	postfix-19991231-pl06
-PKGNAME=	postfix-19991231.06
+PORTNAME=	postfix
+PORTVERSION= 	19991231.06
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.snoopy.net/pub/mirrors/postfix/official/ \
@@ -16,6 +15,7 @@ MASTER_SITES=	ftp://ftp.merit.edu/postfix/official/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/official/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/postfix/official/ \
 		ftp://ftp.postfix.oaktree.co.uk/pub/postfix/official/
+DISTNAME=	${PORTNAME}-19991231-pl06
 
 MAINTAINER=	torstenb@FreeBSD.org
 

@@ -1,5 +1,4 @@
 # New ports collection makefile for:	pine4-ssl
-# Version required:     1.4
 # Date created:		29 Jul 1999
 # Whom:			Nick Sayer <nsayer@freebsd.org>
 #
@@ -11,11 +10,12 @@
 # The warnings are getting harder to fix.
 # Good luck to you. :-P
 
-DISTNAME=	pine4+ssl-1.4
-PKGNAME=	pine4-ssl-4.21.1.4
+PORTNAME=	pine4-ssl
+PORTVERSION= 	4.21.1.4
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://www.kfu.com/~nsayer/encryption/software/
+DISTNAME=	pine4+ssl-1.4
 DISTFILES=	pine4.21${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.kfu.com/~nsayer/encryption/software/

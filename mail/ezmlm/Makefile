@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ezmlm
-# Version required:     0.53
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ezmlm-0.53
+PORTNAME=	ezmlm
+PORTVERSION= 	0.53
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ezmlm.org/pub/qmail/ \
 		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \

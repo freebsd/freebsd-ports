@@ -1,13 +1,12 @@
 # New ports collection makefile for:	procmail
-# http://www.procmail.org/
-# Version required:     3.*
 # Date created:		24 September 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=       procmail-3.14
+PORTNAME=	procmail
+PORTVERSION= 	3.14
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	coolmail
-# Version required:		1.3
 # Date created:			Mon  6 Jul 12:00:06 CEST 1998
 # Whom:				Udo Schweigert <ust@cert.siemens.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	coolmail-1.3
+PORTNAME=	coolmail
+PORTVERSION= 	1.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=system/mail/biffs

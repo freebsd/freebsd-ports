@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Mail-Tools
-# Version required:			1.12
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MailTools-1.12
-PKGNAME=	p5-Mail-Tools-1.12
+PORTNAME=	MailTools
+PORTVERSION= 	1.12
+PKGNAMEPREFIX=	p5-
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail

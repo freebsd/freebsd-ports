@@ -35,7 +35,8 @@
 #           program).
 #
 
-DISTNAME=	nmh-1.0.3
+PORTNAME=	nmh
+PORTVERSION=	1.0.3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mhost.com/pub/nmh/ \
 		http://people.FreeBSD.org/~jkoshy/PORTS/

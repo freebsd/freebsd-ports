@@ -1,16 +1,16 @@
 # New ports collection makefile for: xmail
-# Version required:	1.6
 # Date created:		15 July 1997
 # Whom:			Stephen Roznowski <sjr1@flash.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmail_1.6
-PKGNAME=	xmail-1.6
+PORTNAME=	xmail
+PORTVERSION= 	1.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

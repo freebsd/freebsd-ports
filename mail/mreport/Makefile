@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mreport
-# Version required:	0.9
 # Date created:		19 Dec 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mreport-0.9
+PORTNAME=	mreport
+PORTVERSION= 	0.9
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.datrix.co.za/pub/mreport/
 

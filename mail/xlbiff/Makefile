@@ -1,12 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  xlbiff
-# Version required: 0.0
 # Date created:			  23-Aug-1995
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	xlbiff-3.0
+PORTNAME=	xlbiff
+PORTVERSION= 	3.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/  \
 		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
