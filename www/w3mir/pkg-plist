@@ -1,10 +1,12 @@
+bin/w3mfix
+bin/w3mir
+lib/perl5/site_perl/htmlop.pm
 lib/perl5/site_perl/w3http.pm
 lib/perl5/site_perl/w3pdfuri.pm
-lib/perl5/site_perl/htmlop.pm
-man/man1/w3mir.1.gz
 man/man1/w3mfix.1.gz
-bin/w3mir
-bin/w3mfix
-share/doc/w3mir/README
+man/man1/w3mir.1.gz
 share/doc/w3mir/Artistic
+share/doc/w3mir/README
+share/doc/w3mir/example.cfg
+share/doc/w3mir/multiscope.cfg
 share/doc/w3mir/w3mir-HOWTO.html
