@@ -22,16 +22,22 @@ INSTALLS_SHLIB=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if ${CC} == cc || ${CC} == gcc
+CC_BASENAME=	${CC:T}
+# Should run ${CC} -v and check the output instead
+.if ${CC_BASENAME} == cc || ${CC_BASENAME} == gcc
 COMPILER?=	gcc
+STLPORT_PORT?=	devel/stlport
+.elif ${CC_BASENAME} == icc
+COMPILER?=	icc
+STLPORT_PORT?=	devel/stlport-icc
 .else
-COMPILER?=	${CC}
+STLPORT_PORT?=	# empty
 .endif
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_${COMPILER}.so:${PORTSDIR}/devel/stlport${COMPILER:C/^/-/:S/-gcc//}
+.if ${OSVERSION} >= 500000 && !empty(STLPORT_PORT)
+RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_${COMPILER}.so:${PORTSDIR}/${STLPORT_PORT}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 LDFLAGS+=	-lstlport_${COMPILER}
