@@ -1,20 +1,24 @@
 The design goal for waimea is to create the most efficient desktop
-working environment available.  To achieve this waimea is a fast and
-highly customizable virtual desktop window manager.  It uses blackbox
-image rendering engine (blackbox styles support) and can use Xft library
-for font rendering (anti-aliased font support).  It also features a very
-advanced configuration system with which it's possible to make waimea
-behave as almost any other window manager.
+working environment available, being fast and highly customizable
+virtual desktop window manager.  It uses blackbox image rendering engine
+and can use Xft library for font rendering (anti-aliased font support).
+It also features a very advanced configuration system with which it's
+possible to make waimea behave as almost any other window manager.
 
 Features already included are:
 
-    * Virtual desktop
     * Blackbox image rendering engine (blackbox style support)
-    * Action Configuration System
-    * Advanced Menu System
+    * Virtual desktops
+    * Action configuration system
+    * Advanced menu system, dynamic menus
     * Standard X core fonts
-    * Xft fonts (anti-aliased fonts)
+    * Xft fonts (anti-aliased fonts, optional Xft2 support)
+    * Transparent textures and text, text shadow support
+    * Configurable titlebar buttons
     * Dockapp handler system
     * Task switcher
+    * Multiple screen support
+    * KDE3 and GNOME2 support
+    * Xinerama and RandR extension support
 
 WWW: http://waimea.sourceforge.net/
