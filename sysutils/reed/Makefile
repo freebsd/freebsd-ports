@@ -9,8 +9,7 @@ PORTNAME=	reed
 PORTVERSION=	5.4
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	petef
+MASTER_SITES=	http://www.sacredchao.net/~piman/archive/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A text pager with autoscrolling and more
