@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  hc
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hc-3.0
-PKGNAME=	zh-hc-3.0
+PORTNAME=	hc
+PORTVERSION=	3.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \

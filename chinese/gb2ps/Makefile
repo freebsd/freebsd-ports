@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  gb2ps
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gb2ps.2.02
-PKGNAME=	zh-gb2ps-2.02
+PORTNAME=	gb2ps
+PORTVERSION=	2.02
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \
@@ -16,6 +15,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/fonts/gb/misc/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/print/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/fonts/gb/misc/
+DISTNAME=	gb2ps.2.02
 DISTFILES=	${DISTNAME}.tar.gz  \
 		csong24.ccf.gz ckai24.ccf.gz cfang24.ccf.gz chei24.ccf.gz \
 		cfan24.ccf.gz

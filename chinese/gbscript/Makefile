@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  gbscript
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gbscript-1.11
-PKGNAME=	zh-gbscript-1.11
+PORTNAME=	gbscript
+PORTVERSION=	1.11
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/print/  \
 		ftp://ftp.ifcss.org/pub/software/fonts/gb/misc/  \

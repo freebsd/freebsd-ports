@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  cless
-# Version required: 0.0
 # Date created:			  Sat Aug 10, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cless-290
-PKGNAME=	zh-${DISTNAME}
+PORTNAME=	cless
+PORTVERSION=	290
 CATEGORIES=	chinese misc
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/c-utils/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/c-utils/ \

@@ -1,16 +1,15 @@
 # New ports collection makefile for:	pine
-# http://www.washington.edu/pine/
-# Version required:     4.21
 # Date created:		15 July 1998
 # Whom:			Tai-hwa Liang <avatar@www.mmlab.cse.yzu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pine4.21
-PKGNAME=	zh-pine-4.21
+PORTNAME=	pine
+PORTVERSION=	4.21
 CATEGORIES=	chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
+DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 

@@ -1,13 +1,12 @@
 # Ports collection makefile for:  hztty
-# Version required:     	  2.0
 # Date created:			  Wed Sep 24, 1997
 # Whom:				  Ada T Lim <ada@not-enough.bandwidth.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	hztty-2.0
-PKGNAME=	zh-hztty-2.0
+PORTNAME=	hztty
+PORTVERSION=	2.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/unix/convert/ \

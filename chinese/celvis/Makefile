@@ -1,20 +1,20 @@
 # ex:ts=8
 # Ports collection makefile for:  celvis
-# Version required: 0.0
 # Date created:			  Thur Aug 15, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	celvis
-PKGNAME=	zh-celvis-1.3
+PORTNAME=	celvis
+PORTVERSION=	1.3
 CATEGORIES=	chinese editors
 MASTER_SITES=	ftp://ftp.edu.cn/pub/Chinese/
 #
 # switch to http://www.ifcss.org/ftp-pub/software/unix/editor/celvis-1.3.tar.gz
 #	if the distfile becomes unfetchable again.  Note this ver is slightly
 #	different.
+DISTNAME=	celvis
 
 MAINTAINER=	obrien@FreeBSD.org
 

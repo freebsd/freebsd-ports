@@ -1,16 +1,17 @@
 # New ports collection makefile for:	Chinese Big5 TrueType fonts
-# Version required:	1.0
 # Date created:		9 July 1999
 # Whom:			Keith Jang <keith@freebsd.sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zh-moettf-1.0
+PORTNAME=	moettf
+PORTVERSION=	1.0
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/ \
 		ftp://ftp.ncu.edu.tw/Linux/Chinese/fonts/twmoefont/ttf/ \
 		ftp://www.edu.tw/download/mandr/allbook/lishu/
+DISTNAME=	${PKGNAME}
 DISTFILES=	moe_kai.ttf moe_sung.ttf edustd-15.exe
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw

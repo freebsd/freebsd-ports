@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  c2t
-# Version required: 0.0
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	c2t
-PKGNAME=	zh-c2t-1.0
+PORTNAME=	c2t
+PORTVERSION=	1.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.ifcss.org/pub/software/x-win/cxterm/dict/gb/  \

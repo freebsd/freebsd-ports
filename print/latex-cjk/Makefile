@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zh-CJK
-# Version required:	4.3.0
 # Date created:		5 Sep 1999
 # Whom:			Keith Jang (keith@freebsd.sinica.edu.tw)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zh-CJK-4.3.0
+PORTNAME=	CJK
+PORTVERSION=	4.3.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
 DISTFILES=	cjk-20000127.tar.gz

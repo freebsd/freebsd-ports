@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xcin25
-# Version required:	xcin-2.5.2-p2
 # Date created:		18 Oct 1999
 # Whom:			Keith Jang <keith@freebsd.sinica.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xcin-2.5.2-pre2
-PKGNAME=	zh-xcin-2.5.2p2
+PORTNAME=	xcin
+PORTVERSION=	2.5.2.p2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
+DISTNAME=	xcin-2.5.2-pre2
 
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
