@@ -1,139 +1,19 @@
---- install.sh.orig	Thu May 10 16:10:28 2001
-+++ install.sh	Wed May 16 13:32:59 2001
-@@ -125,8 +125,8 @@
- runinstall()
- {
-     # Executable
--	cp $v -fp opera $exec_dir/
--        chmod $vv 755 $exec_dir/opera
-+	cp $v -fp opera $exec_dir/opera-bin
-+        chmod $vv 755 $exec_dir/opera-bin
+--- install.sh.orig	Fri Aug 10 14:29:05 2001
++++ install.sh	Tue Aug 14 13:14:35 2001
+@@ -186,14 +186,9 @@
+ 	mkdir $v -p $plugin_dir/
+ 	chmod $vv 755 $plugin_dir
  
-     # Documentation
- 	mkdir $v -p $doc_dir/
-@@ -175,52 +175,46 @@
+-	cp $v -fdp plugins/* $plugin_dir
++	(cd plugins && tar -cf - . | tar $v -xf - -C $plugin_dir)
+         chmod $vv 755 $plugin_dir/operamotifwrapper
+-        chmod $vv 755 $plugin_dir/libnpp.so.0.1.0
+-
+-	icons
+-	gnome
+-	kde2
+-	kde
++        chmod $vv 755 $plugin_dir/libnpp.so.0.1.1
  
- 	echo
- 	echo 'Installation successful. Enjoy !'
--	if test "$flag_mode" = "--prefix="; then
--	  echo "You've completed a forced installation, please"
--	  echo "remember to set the enviroment variable OPERADIR"
--	  echo "export OPERADIR=$share_dir"
--	fi
--	echo "Start with \$PATH/opera, $exec_dir/opera or ./opera"
- }
- 
- icons()
- {
--    if test ! -d /usr/share/icons; then install $v -m 755 -o 0 -g 0 -d /usr/share/icons/; fi
--    install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /usr/share/icons/opera.xpm
-+    if test ! -d $share_dir/icons; then install $v -m 755 -o 0 -g 0 -d $share_dir/icons/; fi
-+    install $v -m 644 -o 0 -g 0 -c $share_dir/opera.xpm $share_dir/icons/opera.xpm
-   
--    if test ! -d /usr/share/pixmaps; then install $v -m 755 -o 0 -g 0 -d /usr/share/pixmaps/; fi   
--    install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /usr/share/pixmaps/opera.xpm
-+    if test ! -d $share_dir/pixmaps; then install $v -m 755 -o 0 -g 0 -d $share_dir/pixmaps/; fi   
-+    install $v -m 644 -o 0 -g 0 -c $share_dir/opera.xpm $share_dir/pixmaps/opera.xpm
-   
--    if test -d /etc/X11/wmconfig/; then install $v -m 644 -o 0 -g 0 $share_dir/opera.wmconfig /etc/X11/wmconfig/opera; fi
-+    if test -d /etc/X11/wmconfig/; then install $v -m 644 -o 0 -g 0 -c $share_dir/opera.wmconfig /etc/X11/wmconfig/opera; fi
-     
-     if test -d /etc/X11/applnk/; then
-       if test ! -d /etc/X11/applnk/Internet/; then install $v -m 755 -o 0 -g 0 -d /etc/X11/applnk/Internet/; fi
--      install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /etc/X11/applnk/Internet/opera.desktop 
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /etc/X11/applnk/Internet/opera.desktop 
-     fi
- }
- 
- gnome()
- {
--    if test -d /opt/gnome/; then
-+    if test -d just_dont/opt/gnome/; then
-       if test ! -d /opt/gnome/share/pixmaps/; then install $v -m 755 -o 0 -g 0 -d /opt/gnome/share/pixmaps/; fi
--      install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera.xpm /opt/gnome/share/pixmaps/opera.xpm
-       if test -d /opt/gnome/share/gnome/apps/Internet/; then
--        install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Internet/opera.desktop
-+        install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Internet/opera.desktop
-       elif test -d /opt/gnome/share/gnome/apps/Networking/WWW/; then
--        install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Networking/WWW/opera.desktop
-+        install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Networking/WWW/opera.desktop
-       else
-         install $v -m 755 -o 0 -g 0 /opt/gnome/share/gnome/apps/Internet/
--        install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Internet/opera.desktop
-+        install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /opt/gnome/share/gnome/apps/Internet/opera.desktop
-       fi
-     else
--      if test -d /usr/share/gnome/apps/; then
--        if test -d /usr/share/gnome/apps/Internet/; then
--          install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /usr/share/gnome/apps/Internet/opera.desktop
--        elif test -d /usr/share/gnome/apps/Networking/WWW; then
--          install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /usr/share/gnome/apps/Networking/WWW/opera.desktop
-+      if test -d $share_dir/gnome/apps/; then
-+        if test -d $share_dir/gnome/apps/Internet/; then
-+          install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop $share_dir/gnome/apps/Internet/opera.desktop
-+        elif test -d $share_dir/gnome/apps/Networking/WWW; then
-+          install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop $share_dir/gnome/apps/Networking/WWW/opera.desktop
-         else
--          install $v -m 755 -o 0 -g 0 -d /usr/share/gnome/apps/Internet/
--          install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /usr/share/gnome/apps/Internet/opera.desktop
-+          install $v -m 755 -o 0 -g 0 -d $share_dir/gnome/apps/Internet/
-+          install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop $share_dir/gnome/apps/Internet/opera.desktop
-         fi
-       fi   
-     fi
-@@ -228,7 +222,7 @@
- 
- kde2()
- {
--    if test -d /opt/kde2/; then
-+    if test -d just_dont/opt/kde2/; then
-       DIR_HI=/opt/kde2/share/icons/hicolor
-       DIR_LO=/opt/kde2/share/icons/locolor
-       if test ! -d $DIR_HI/48x48/apps/; then install $v -m 755 -o 0 -g 0 -d $DIR_HI/48x48/apps/; fi
-@@ -237,31 +231,31 @@
-       if test ! -d $DIR_LO/32x32/apps/; then install $v -m 755 -o 0 -g 0 -d $DIR_LO/32x32/apps/; fi
-       if test ! -d $DIR_LO/22x22/apps/; then install $v -m 755 -o 0 -g 0 -d $DIR_LO/22x22/apps/; fi
-       if test ! -d $DIR_LO/16x16/apps/; then install $v -m 755 -o 0 -g 0 -d $DIR_LO/16x16/apps/; fi
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_48x48.png $DIR_HI/48x48/apps/opera.png
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_32x32.png $DIR_HI/32x32/apps/opera.png
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_22x22.png $DIR_HI/22x22/apps/opera.png
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_32x32.png $DIR_LO/32x32/apps/opera.png
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_22x22.png $DIR_LO/22x22/apps/opera.png
--      install $v -m 644 -o 0 -g 0 $share_dir/opera_16x16.png $DIR_LO/16x16/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_48x48.png $DIR_HI/48x48/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_32x32.png $DIR_HI/32x32/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_22x22.png $DIR_HI/22x22/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_32x32.png $DIR_LO/32x32/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_22x22.png $DIR_LO/22x22/apps/opera.png
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera_16x16.png $DIR_LO/16x16/apps/opera.png
-       if test ! -d /opt/kde2/share/applnk/Internet/; then install $v -m 755 -o 0 -g 0 -d /opt/kde2/share/applnk/Internet/; fi
--      install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /opt/kde2/share/applnk/Internet/opera.desktop
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /opt/kde2/share/applnk/Internet/opera.desktop
-     else
--      if test -d /usr/share/applnk/Networking; then
--        if test ! -d /usr/share/applnk/Networking/WWW/; then install $v -m 755 -o 0 -g 0 -d /usr/share/applnk/Networking/WWW/; fi
--        install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /usr/share/applnk/Networking/WWW/opera.desktop
-+      if test -d $share_dir/applnk/Networking; then
-+        if test ! -d $share_dir/applnk/Networking/WWW/; then install $v -m 755 -o 0 -g 0 -d $share_dir/applnk/Networking/WWW/; fi
-+        install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop $share_dir/applnk/Networking/WWW/opera.desktop
-       fi
-     fi
- }
- 
- kde()
- {
--    if test -d /opt/kde/; then
-+    if test -d just_dont/opt/kde/; then
-       if test ! -d /opt/kde/share/icons/; then install $v -m 755 -o 0 -g 0 -d /opt/kde/share/icons/; fi
-       if test ! -d /opt/kde/share/applnk/Internet/; then install $v -m 755 -o 0 -g 0 -d /opt/kde/share/applnk/Internet/; fi
--      install $v -m 644 -o 0 -g 0 $share_dir/opera.xpm /opt/kde/share/icons/opera.xpm
--      install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /opt/kde/share/applnk/Internet/opera.desktop
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera.xpm /opt/kde/share/icons/opera.xpm
-+      install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop /opt/kde/share/applnk/Internet/opera.desktop
-     else
--      if test -d /usr/share/applnk/Internet/; then install $v -m 644 -o 0 -g 0 $share_dir/opera.desktop /usr/share/applnk/Internet/opera.desktop; fi
-+      if test -d $share_dir/applnk/Internet/; then install $v -m 644 -o 0 -g 0 -c $share_dir/opera.desktop $share_dir/applnk/Internet/opera.desktop; fi
-     fi
- }
+ # Add uninstallation here
  
