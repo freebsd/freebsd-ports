@@ -6,9 +6,9 @@ sbin/zebractl
 etc/zebra/README.mbgp
 etc/zebra/bgpd.conf.sample
 etc/zebra/bgpd.conf.sample2
+etc/zebra/ospfd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/zebra.conf.sample
-etc/zebra/ospfd.conf.sample
 @unexec install-info --delete %D/info/zebra.info %D/info/dir
 info/zebra.info
 @exec install-info %D/info/zebra.info %D/info/dir
