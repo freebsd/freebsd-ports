@@ -15,7 +15,15 @@ MASTER_SITE_SUBDIR=	bash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell -- old version
 
-BROKEN=		"does not compile on 5.x; consider upgrading to shells/bash2"
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 501000 && ${MACHINE_ARCH} != i386
+BROKEN=		"does not compile on ${MACHINE_ARCH}"
+.endif
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"does not compile on FreeBSD ${OSVERSION}"
+.endif
 
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
@@ -27,4 +35,4 @@ INFO=		bash
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
