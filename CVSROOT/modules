@@ -11035,7 +11035,6 @@ zh-bitchx	ports/chinese/bitchx
 zh-c2t		ports/chinese/c2t
 zh-cce		ports/chinese/cce
 zh-cdict5	ports/chinese/cdict5
-zh-cdrtools	ports/chinese/cdrtools
 zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
@@ -11085,7 +11084,6 @@ zh-linux-mozillafirebird-zh_TW	ports/chinese/linux-mozillafirebird-zh_TW
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
 zh-miniChinput	ports/chinese/miniChinput
-zh-mkisofs	ports/chinese/mkisofs
 zh-mldonkey-core	ports/chinese/mldonkey-core
 zh-moefonts-cid	ports/chinese/moefonts-cid
 zh-moettf	ports/chinese/moettf
