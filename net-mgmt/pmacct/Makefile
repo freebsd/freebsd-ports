@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -18,8 +18,20 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--enable-mysql
+CFLAGS+=	"-I${LOCALBASE}/include"
+PLIST_SUB+=	WITH_MYSQL=""
 .else
 CONFIGURE_ARGS+=	--disable-mysql
+PLIST_SUB+=	WITH_MYSQL="@comment "
+.endif
+
+.if defined(WITH_PGSQL)
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+CONFIGURE_ARGS+=--enable-pgsql
+PLIST_SUB+=	WITH_PGSQL=""
+.else
+CONFIGURE_ARGS+=	--disable-pgsql
+PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 GNU_CONFIGURE=	yes
@@ -33,7 +45,7 @@ pre-patch:
 	's,<mysql/mysql.h>,<mysql.h>,' \
 		${WRKSRC}/mysql_plugin.h
 	@${REINPLACE_CMD} -e \
-	's|-O2|${CFLAGS}|g' ${WRKSRC}/configure
+	's|-O2||g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
