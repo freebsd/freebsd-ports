@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/CGI/XMLApplication.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/CGI 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication/.packlist
+%%SITE_PERL%%/CGI/XMLApplication.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/XMLApplication
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex2_finish.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/ex2_form.xsl
 %%PORTDOCS%%%%EXAMPLESDIR%%/example1.pl
