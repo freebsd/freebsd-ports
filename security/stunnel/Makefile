@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.10
+PORTVERSION=	3.11
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 MAINTAINER=	martti.kuparinen@ericsson.com
 
 USE_OPENSSL=	YES
+IS_INTERACTIVE=	YES	# prompts for information while generating certificate
 
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run
