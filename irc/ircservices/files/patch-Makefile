@@ -1,0 +1,11 @@
+--- Makefile.orig	Fri Mar  7 19:55:54 2003
++++ Makefile	Fri Mar  7 19:56:15 2003
+@@ -163,7 +163,7 @@
+             modes.h users.h channels.h servers.h extern.h
+ 	-touch $@
+ 
+-version.c: $(OBJS) modules/.stamp
++version.c: $(OBJS)
+ 	sh version.sh
+ 
+ language.h: langstrs.h
