@@ -5,3 +5,5 @@ how the requests come in as each server responds.
 ParallelUserAgent is basically an extension of the current UserAgent and
 RobotUA modules that come with libwww5. It installs into the ::Parallel
 subtree under the standard LWP directory that ships with libwww5. 
+
+WWW: http://www.cs.washington.edu/homes/marclang/ParallelUA/
