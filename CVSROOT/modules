@@ -7341,7 +7341,6 @@ sketch		ports/graphics/sketch
 ski		ports/emulators/ski
 skill		ports/sysutils/skill
 skip		ports/security/skip
-skipstone	ports/www/skipstone
 sl		ports/games/sl
 slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
