@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Mon Mar  5 03:45:44 2001
++++ Makefile.in	Tue Apr 17 03:21:27 2001
+@@ -528,12 +528,12 @@
+ 
+ 
+ install-data-local:
+-	install -d $(prefix)/include
+-	for i in $(iHEADERS); do install -m 444 $$i $(prefix)/include; done
++	install -d $(includedir)
++	for i in $(iHEADERS); do install -m 444 $$i $(includedir); done
+ 	if [ -d man ] ; then install -d $(prefix)/man; fi
+ 	if [ -d man ] ; then for i in man/* ; do if [ $$i != "man/*" ]; then install $$i $(prefix)/man; fi; done; fi
+-	if [ -d tutorial ] ; then cp -r tutorial $(prefix); fi;
+-	if [ -d doc ] ; then cp -r doc $(prefix); fi;
++	if [ -d tutorial ] ; then cp -r tutorial $(datadir); fi;
++	if [ -d doc ] ; then cp -r doc $(datadir); fi;
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
