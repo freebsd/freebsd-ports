@@ -1888,6 +1888,7 @@ gerbv		ports/cad/gerbv
 geta		ports/net/geta
 getbdf		ports/x11-fonts/getbdf
 getmail		ports/mail/getmail
+getopt		ports/misc/getopt
 gettext		ports/devel/gettext
 getxml		ports/devel/getxml
 gevas		ports/x11-toolkits/gevas
