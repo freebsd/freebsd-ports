@@ -84,10 +84,13 @@ LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
 WITH_INPUT_METHOD+=	--with-wnn6 --with-wnn-libraries=${LOCALBASE}/lib \
 			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .elif defined(WNN7)
+# mule 2.3 cannot use Wnn7SDK (Wnn7-lib) 
+# so it uses Wnn6SDK (Wnn6-lib) instead of Wnn7SDK.
+# But it can partly support Wnn7 by ${PREFIX}/share/mule/19.34/lisp/eggrc-wnn
 INPUT_METHOD+=		wnn7
-LIB_INPUT_METHOD+=	wnn6_for_wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
-WITH_INPUT_METHOD+=	--with-wnn6=-lwnn6_for_wnn7 --with-wnn-libraries=${LOCALBASE}/lib \
-			--with-wnn-includes=${LOCALBASE}/include/wnn7/wnn
+LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+WITH_INPUT_METHOD+=	--with-wnn6=-lwnn6 --with-wnn-libraries=${LOCALBASE}/lib \
+			--with-wnn-includes=${LOCALBASE}/include/wnn6/wnn
 .endif
 .endif
 COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
