@@ -1,0 +1,79 @@
+*** Makefile.custom.orig	Wed May 24 14:12:05 1995
+--- Makefile.custom	Fri Oct 25 06:38:10 1996
+***************
+*** 28,45 ****
+  VERS = 1.2p03
+  
+  # Installation directory
+! prefix=/usr/local
+  #prefix=/public/projects/shogi
+  
+  # Change these to something less transitory, like /usr/games, and then
+  # compile. 
+  # Where the binaries live (especially gnushogix).
+! BINDIR= $(prefix)/games
+  #BINDIR=/public/projects/shogi/bin
+  
+- 
+  # Distribution directory
+! DISTDIR=/public/projects/shogi
+  
+  # Compress program
+  COMPRESS = gzip
+--- 28,44 ----
+  VERS = 1.2p03
+  
+  # Installation directory
+! prefix=/usr/X11R6
+  #prefix=/public/projects/shogi
+  
+  # Change these to something less transitory, like /usr/games, and then
+  # compile. 
+  # Where the binaries live (especially gnushogix).
+! BINDIR= $(prefix)/bin
+  #BINDIR=/public/projects/shogi/bin
+  
+  # Distribution directory
+! DISTDIR=/usr/ports/games/xshogi/work
+  
+  # Compress program
+  COMPRESS = gzip
+***************
+*** 73,80 ****
+  #CCOPTIONS= -g 
+  #LDOPTIONS= -lXaw -lXmu -lXt -lXext -lX11
+  # This is for cc on SunOS with debug
+! CCOPTIONS= -g -I/usr/include
+! LDOPTIONS= -L/usr/lib -lXaw -lXmu -lXt -lXext -lX11
+  
+  # Options for xshogi
+  # Use -DSENDTIME with at least gnushogix 1.2 patchlevel 3
+--- 72,80 ----
+  #CCOPTIONS= -g 
+  #LDOPTIONS= -lXaw -lXmu -lXt -lXext -lX11
+  # This is for cc on SunOS with debug
+! CCOPTIONS= -g -O2 -m486 -pipe -fno-strength-reduce \
+! 	-I/usr/include -I/usr/X11R6/include 
+! LDOPTIONS= -L/usr/lib -L/usr/X11R6/lib -lXaw -lXmu -lXt -lXext -lX11
+  
+  # Options for xshogi
+  # Use -DSENDTIME with at least gnushogix 1.2 patchlevel 3
+***************
+*** 88,95 ****
+  # The option -DISS compiles xshogi for supporting the Internet Shogi Server. 
+  OPT = -DHAS_GETTIMEOFDAY -DSENDTIME -DISS -DTOP_PART_BITMAPS # -DBOTH_BITMAPS -DWESTERN_BITMAPS
+  
+! FIRST_PROGRAM  = -DFIRST_CHESS_PROGRAM=\"$(BINDIR)/gnushogix\"
+! SECOND_PROGRAM = -DSECOND_CHESS_PROGRAM=\"$(BINDIR)/gnushogix\"
+  FIRST_HOST     = -DFIRST_HOST=\"localhost\"
+  SECOND_HOST    = -DSECOND_HOST=\"localhost\"
+  
+--- 88,95 ----
+  # The option -DISS compiles xshogi for supporting the Internet Shogi Server. 
+  OPT = -DHAS_GETTIMEOFDAY -DSENDTIME -DISS -DTOP_PART_BITMAPS # -DBOTH_BITMAPS -DWESTERN_BITMAPS
+  
+! FIRST_PROGRAM  = -DFIRST_CHESS_PROGRAM=\"/usr/local/libexec/gnushogix\"
+! SECOND_PROGRAM = -DSECOND_CHESS_PROGRAM=\"/usr/local/libexec/gnushogix\"
+  FIRST_HOST     = -DFIRST_HOST=\"localhost\"
+  SECOND_HOST    = -DSECOND_HOST=\"localhost\"
+  

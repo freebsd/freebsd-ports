@@ -1,0 +1,19 @@
+*** xshogi.c.org	Tue Oct  8 01:04:00 1996
+--- xshogi.c	Tue Oct  8 01:04:26 1996
+***************
+*** 7132,7138 ****
+          XtInputId *id;
+  {
+  	char message[MSG_SIZ], *end_str, *number, *name;
+!         extern char *sys_errlist[];
+  
+  	if (fgets(message, MSG_SIZ, fp) == NULL) {
+  		if (fp == fromFirstProgFP) {
+--- 7132,7138 ----
+          XtInputId *id;
+  {
+  	char message[MSG_SIZ], *end_str, *number, *name;
+!         /*extern char *sys_errlist[];*/
+  
+  	if (fgets(message, MSG_SIZ, fp) == NULL) {
+  		if (fp == fromFirstProgFP) {
