@@ -1,23 +1,24 @@
 # New ports collection makefile for:	netpbm
-# Version required:	1mar1994
+# Version required:	8.0
 # Date created:		?
 # Whom:			jmz (original)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	netpbm
-PKGNAME=	netpbm-94.3.1
+DISTNAME=	netpbm-8.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-DISTFILES=	netpbm-1mar1994.tar.gz
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/graphics/convert
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+WRKSRC=		${WRKDIR}/netpbm
 USE_IMAKE=	yes
+
 MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	brushtopbm.1 cmuwmtopbm.1 fitstopnm.1 fstopgm.1 g3topbm.1 gemtopbm.1 \
 	giftopnm.1 gouldtoppm.1 hipstopgm.1 hpcdtoppm.1 icontopbm.1 \
@@ -50,5 +51,8 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	xwdtopnm.1 ybmtopbm.1 yuvsplittoppm.1 yuvtoppm.1 zeisstopnm.1
 MAN3=	libpbm.3 libpgm.3 libpnm.3 libppm.3
 MAN5=	pbm.5 pgm.5 pnm.5 ppm.5
+
+post-patch:
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Pbmplus.tmpl
 
 .include <bsd.port.mk>
