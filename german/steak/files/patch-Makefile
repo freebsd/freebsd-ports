@@ -1,0 +1,15 @@
+--- Makefile.orig	Tue Jan  4 03:37:16 2000
++++ Makefile	Sun Jan 26 10:57:39 2003
+@@ -18,8 +18,10 @@
+ 	cp SpaceFilter/spacefilter .
+ 	cd Datensatz/ ; \
+ 	./datenbankaktualisieren.sh
+-
+-
++.ifdef(xsteak)
++	cd Xsteak/ ; \
++	${MAKE} -f Makefile_gtk_1.2
++.endif
+ 
+ clean:
+ 	rm -f *~ .*~ Datensatz/*~ 
