@@ -1,5 +1,7 @@
 # $FreeBSD$
 
+.PATH: ${.CURDIR}/actioncompiler ${.CURDIR}/blocks
+
 LIB=		ming
 SHLIB_MAJOR?=	3
 SHLIB_MINOR?=	0
@@ -15,43 +17,43 @@ SRCS=		blocklist.c \
 		shape_cubic.c \
 		shape_util.c \
 		text_util.c \
-		actioncompiler/assembler.c \
-		actioncompiler/compile.c \
-		actioncompiler/compileaction.c \
-		actioncompiler/lex.swf4.c \
-		actioncompiler/lex.swf5.c \
-		actioncompiler/swf4compiler.tab.c \
-		actioncompiler/swf5compiler.tab.c \
-		blocks/action.c \
-		blocks/bitmap.c \
-		blocks/block.c \
-		blocks/browserfont.c \
-		blocks/button.c \
-		blocks/character.c \
-		blocks/cxform.c \
-		blocks/dbl.c \
-		blocks/error.c \
-		blocks/fillstyle.c \
-		blocks/font.c \
-		blocks/fontinfo.c \
-		blocks/gradient.c \
-		blocks/input.c \
-		blocks/jpeg.c \
-		blocks/linestyle.c \
-		blocks/loadfont.c \
-		blocks/matrix.c \
-		blocks/method.c \
-		blocks/morph.c \
-		blocks/mp3.c \
-		blocks/output.c \
-		blocks/outputblock.c \
-		blocks/placeobject.c \
-		blocks/rect.c \
-		blocks/shape.c \
-		blocks/soundstream.c \
-		blocks/sprite.c \
-		blocks/text.c \
-		blocks/textfield.c
+		assembler.c \
+		compile.c \
+		compileaction.c \
+		lex.swf4.c \
+		lex.swf5.c \
+		swf4compiler.tab.c \
+		swf5compiler.tab.c \
+		action.c \
+		bitmap.c \
+		block.c \
+		browserfont.c \
+		button.c \
+		character.c \
+		cxform.c \
+		dbl.c \
+		error.c \
+		fillstyle.c \
+		font.c \
+		fontinfo.c \
+		gradient.c \
+		input.c \
+		jpeg.c \
+		linestyle.c \
+		loadfont.c \
+		matrix.c \
+		method.c \
+		morph.c \
+		mp3.c \
+		output.c \
+		outputblock.c \
+		placeobject.c \
+		rect.c \
+		shape.c \
+		soundstream.c \
+		sprite.c \
+		text.c \
+		textfield.c
 INCSGROUPS=	INCS BLKS
 INCS=		blocklist.h \
 		blocktypes.h \
