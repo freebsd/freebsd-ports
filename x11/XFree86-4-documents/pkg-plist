@@ -90,3 +90,4 @@ lib/X11/doc/xsmp.txt
 lib/X11/doc/xtest.txt
 lib/X11/doc/xtestlib.txt
 lib/X11/doc/xv-protocol-v2.txt
+@unexec rmdir %D/lib/X11/doc/PDF 2>/dev/null || true
