@@ -36,6 +36,7 @@ lib/ocaml/caml/intext.h
 lib/ocaml/caml/memory.h
 lib/ocaml/caml/misc.h
 lib/ocaml/caml/mlvalues.h
+lib/ocaml/caml/printexc.h
 lib/ocaml/caml/signals.h
 lib/ocaml/camlp4/ast2pt.cmi
 lib/ocaml/camlp4/ast2pt.mli
