@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsmail
-PORTVERSION=	1.7
+PORTVERSION=	1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.smithurst.org/ben/software/mail/dists/
 DISTNAME=	mailutils-${PORTVERSION}
