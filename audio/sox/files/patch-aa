@@ -1,0 +1,24 @@
+make --with-oss-dsp still check to see that the header files exist.
+
+--- configure.in.old	Sun Jul 18 13:57:27 1999
++++ configure.in	Sat Jul 24 22:08:09 1999
+@@ -194,13 +194,13 @@
+ 			ac_cv_dev_oss_dsp=no,
+ 			ac_cv_dev_oss_dsp=no)
+ 		)
+-	if test "$ac_cv_dev_oss_dsp" = yes
++fi
++if test "$ac_cv_dev_oss_dsp" = yes -o "$oss_dsp" = yes
++then
++	AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h, oss_dsp=yes, oss_dsp=no)
++	if test "$oss_dsp" = no
+ 	then
+-		AC_CHECK_HEADERS(sys/soundcard.h machine/soundcard.h, oss_dsp=yes)
+-		if test "$oss_dsp" = auto
+-		then
+-			AC_WARN([No soundcard.h to compile with OSS /dev/dsp])
+-		fi
++		AC_WARN([No soundcard.h to compile with OSS /dev/dsp])
+ 	fi
+ fi
+ if test "$oss_dsp" = yes
