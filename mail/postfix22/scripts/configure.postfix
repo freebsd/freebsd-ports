@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.50 2004-06-25 09:11:35 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.51 2004-07-13 16:23:12 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -23,6 +23,7 @@ NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
 SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
+SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
 TLS		"SSL and TLS" "$status_TLS" \
 IPv6		"IPv6 support" "$status_IPv6" \
 IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
@@ -102,6 +103,9 @@ while [ "$1" ]; do
 			;;
 		SASLKRB)
                         echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
+			;;
+		SASLKRB5)
+                        echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcom_err"
 			;;
 		TLS)
 			echo "MAN8+=		tlsmgr.8"
