@@ -5,7 +5,11 @@
 %%RUBY_SITELIBDIR%%/shell/filter.rb
 %%RUBY_SITELIBDIR%%/shell/process-controller.rb
 %%RUBY_SITELIBDIR%%/shell/system-command.rb
+%%RUBY_SITELIBDIR%%/shell/version.rb
 @dirrm %%RUBY_SITELIBDIR%%/shell
-%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/ja/shell.doc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/shell.doc
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/ja/README.jp
+%%PORTDOCS%%%%RUBY_DOCDIR%%/shell/ja/shell.doc.jp
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/shell/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/shell
