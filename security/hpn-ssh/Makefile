@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 PORTABLE_SUFFIX=
 GSSAPI_SUFFIX=	-gssapi
 CONFLICTS+=	openssh-portable-*
@@ -129,7 +129,7 @@ test:
 
 .include <bsd.port.pre.mk>
 
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+.if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if ${OPENSSLBASE} == "/usr"
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=
