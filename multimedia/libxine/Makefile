@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0.r0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,32 +18,33 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		mad.1:${PORTSDIR}/audio/mad \
-		aa.1:${PORTSDIR}/graphics/aalib \
-		intl.4:${PORTSDIR}/devel/gettext \
-		iconv.3:${PORTSDIR}/converters/libiconv \
-		vorbis.2:${PORTSDIR}/audio/libvorbis \
+LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
+		a52.0:${PORTSDIR}/audio/liba52 \
 		ogg.4:${PORTSDIR}/audio/libogg \
+		vorbis.2:${PORTSDIR}/audio/libvorbis \
+		mad.1:${PORTSDIR}/audio/mad \
+		speex.2:${PORTSDIR}/audio/speex \
+		iconv.3:${PORTSDIR}/converters/libiconv \
+		intl.4:${PORTSDIR}/devel/gettext \
+		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_SDL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		SDL_CONFIG="${LOCALBASE}/bin/sdl11-config" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
 		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 \
-		--program-transform-name="" --disable-vidix
+		--disable-vidix
 INSTALLS_SHLIB=	yes
 
 MAN1=		xine-config.1
@@ -61,7 +63,7 @@ PLIST_SUB=	HAVE_LIBXV="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
-LIB_DEPENDS+=    artsc.0:${PORTSDIR}/audio/arts
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	HAVE_ARTS=""
 .else
 PLIST_SUB+=	HAVE_ARTS="@comment "
