@@ -154,6 +154,7 @@
     SUBDIR += poptop
     SUBDIR += ppp-nt
     SUBDIR += pppload
+    SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ppxp
     SUBDIR += priss
