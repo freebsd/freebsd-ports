@@ -1,0 +1,11 @@
+--- src/exec/ORIG/mklib	Thu Jan 11 12:08:51 2001
++++ src/exec/mklib	Wed Jun 20 20:19:45 2001
+@@ -33,7 +33,7 @@
+    for i in $FMT_LIBS "" ; do
+ 	if test "$i" != "" ; then
+ 		lib=""
+-		for j in /lib /usr/lib /usr/local/lib -lnsl -ldl -lm -lSM -lICE -lXm -lGL -lm -lXext -lXt -lX11 -lSM -lICE -lpthread ;  do
++		for j in /lib /usr/lib /usr/local/lib -lnsl -ldl -lm -lSM -lICE ${MOTIFLIB} -lGL -lm -lXext -lXt -lX11 -lSM -lICE -lpthread ;  do
+ 			k=`echo $j | sed -e "s/-L//"` 
+ 			if test -f $k/$i ; then
+ 				lib=$k/$i 

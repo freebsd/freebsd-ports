@@ -1,20 +1,41 @@
---- bin/dxworker.in.orig	Mon Mar 13 23:48:28 2000
-+++ bin/dxworker.in	Fri Mar 16 18:53:29 2001
-@@ -25,7 +25,7 @@
-     set exarch=freebsd
-     set uiarch=freebsd
+--- bin/ORIG/dxworker.in	Tue May  8 11:01:28 2001
++++ bin/dxworker.in	Wed Jun 20 20:11:39 2001
+@@ -15,7 +15,7 @@
+ set thismach=`uname  -m`
+ set thishost=`hostname | sed -e 's/\..*$//'` 
+ set thisver=`uname  -r`
+-set remote=/usr/bin/rsh
++set remote=/usr/bin/ssh
+ set showversion=0
  
--    set remote=/usr/bin/rsh
-+    set remote=/usr/bin/ssh
  
-     breaksw
+@@ -155,9 +155,9 @@
+     
+ setenv DXARCH $exarch
  
-@@ -140,7 +140,7 @@
- 
- # default to running locally, from /usr/lpp/dx  
+-# default to running locally, from /usr/lpp/dx  
++# default to running locally, from @prefix@/dx  
  set exhost=$thishost
 -set dxroot=/usr/lpp/dx
 +set dxroot=@prefix@/dx
  set startup=1   # run the startup window by default
  
  
+@@ -1137,7 +1137,7 @@
+ if (! $?port)     set port=1900        # default socket
+ if (! $?cdto)     set cdto=`pwd`       # default current dir for exec
+ 
+-if (! $?dxdata)   set dxdata="/usr/lpp/dx/samples/data"
++if (! $?dxdata)   set dxdata="@prefix@/dx/samples/data"
+ 
+ 
+ #
+@@ -1605,7 +1605,7 @@
+                       For example, 
+                         dx -key 193495946952abed bar.net 
+ 
+- -dxroot dirname      dx root directory; defaults to /usr/lpp/dx
++ -dxroot dirname      dx root directory; defaults to @prefix@/dx
+ 
+  -macros pathlist     directory list to search for UI macros
+  -data pathlist       directory list to search for data files
