@@ -5,3 +5,4 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/Sync.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Sync
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
