@@ -12,6 +12,8 @@ modssl		"Apache: SSL support" OFF \
 GD		"PHP3:   GD library support" ON \
 FreeType	"PHP3:   TrueType font rendering (implies GD)" OFF \
 zlib		"PHP3:   zlib library support" ON \
+mcrypt		"PHP3:   Encryption support" OFF \
+mhash		"PHP3:   Crypto-hashing support" OFF \
 pdflib		"PHP3:   pdflib support" OFF \
 IMAP		"PHP3:   IMAP support" OFF \
 MySQL		"PHP3:   MySQL database support" ON \
@@ -59,6 +61,14 @@ while [ "$1" ]; do
 			;;
 		\"zlib\")
 			echo "PHP3_CONF_ARGS+=	--with-zlib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			;;
+		\"mcrypt\")
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libmcrypt.a:\${PORTSDIR}/security/mcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-mcrypt" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			;;
+		\"mhash\")
+			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libmhash.a:\${PORTSDIR}/security/mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-mhash" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			;;
 		\"pdflib\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
