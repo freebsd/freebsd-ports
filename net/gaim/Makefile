@@ -101,8 +101,7 @@ pre-everything::
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
 .if !defined(WITH_GNUTLS) && defined(WITHOUT_NSS)
-	@${ECHO_MSG} "WARNING: In order to use MSN, you must define WITH_GNUTLS and/or WITH_NSS"
-	@${ECHO_MSG} "         if you disable OpenSSL support"
+	@${ECHO_MSG} "WARNING: In order to use MSN, you must define WITH_GNUTLS and/or WITH_NSS."
 	@${ECHO_MSG} ""
 .endif
 
