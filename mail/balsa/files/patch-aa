@@ -1,11 +1,13 @@
---- src/Makefile.in	Tue Sep 18 07:25:22 2001
-+++ src/Makefile.in.new	Tue Sep 18 16:06:40 2001
-@@ -149,7 +149,7 @@
- 
- CFLAGS = @CFLAGS@ $(PCRE_CFLAGS) 
- 
--balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 	-lltdl 	$(INTLLIBS) 	$(PCRE_LIBS) 	$(PTHREAD_LIB)
-+balsa_LDADD =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a 	-lpspell 	$(INTLLIBS) 	$(PCRE_LIBS) 	$(PTHREAD_LIB)
- 
- 
- balsa_DEPENDENCIES =  	$(top_builddir)/libbalsa/libbalsa.a		$(top_builddir)/libmutt/libmutt.a	        $(top_builddir)/libmutt/imap/libimap.a		$(top_builddir)/libmutt/libmutt.a		$(top_builddir)/libinit_balsa/libinit_balsa.a
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Tue Nov  6 12:02:00 2001
++++ src/Makefile.in	Tue Nov  6 12:03:19 2001
+@@ -216,7 +216,6 @@
+ 	$(top_builddir)/libmutt/libmutt.a	\
+ 	$(top_builddir)/libinit_balsa/libinit_balsa.a \
+ 	-lpspell \
+-	-lltdl \
+ 	$(INTLLIBS) \
+ 	$(PCRE_LIBS) \
+ 	$(PTHREAD_LIB)
