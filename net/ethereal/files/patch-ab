@@ -1,0 +1,13 @@
+--- gtk/main.h.orig	Sat Apr 22 20:17:29 2000
++++ gtk/main.h	Sat Apr 22 20:17:42 2000
+@@ -38,8 +38,8 @@
+ #define MONO_MEDIUM_FONT "-*-lucida console-medium-*-*-*-*-100-*-*-*-*-*-*"
+ #define MONO_BOLD_FONT "-*-lucida console-bold-*-*-*-*-100-*-*-*-*-*-*"
+ #else
+-#define MONO_MEDIUM_FONT "-*-lucidatypewriter-medium-r-normal-*-*-120-*-*-*-*-iso8859-1"
+-#define MONO_BOLD_FONT "-*-lucidatypewriter-bold-r-normal-*-*-120-*-*-*-*-iso8859-1"
++#define MONO_MEDIUM_FONT "-*-lucidatypewriter-medium-r-normal-*-*-120-*-*-*-*-iso8859-1,*"
++#define MONO_BOLD_FONT "-*-lucidatypewriter-bold-r-normal-*-*-120-*-*-*-*-iso8859-1,*"
+ #endif
+ #define RC_FILE PF_DIR "/gtkrc"
+ #define DEF_WIDTH 750
