@@ -38,4 +38,4 @@ lib/libodbc.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/iodbctest.c
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/libiodbc
+@unexec rmdir %D/etc/libiodbc 2>/dev/null || true
