@@ -9,6 +9,6 @@ MASTERDIR=      ${.CURDIR}/../nethack34
 
 MAINTAINER=	Jan.Stocker@t-online.de
 
-WITH_GNOME_GRAPHICS=	yes
+PKGNAMESUFFIX=	-gnome
 
 .include "${MASTERDIR}/Makefile"

@@ -7,8 +7,8 @@
 
 MASTERDIR=      ${.CURDIR}/../nethack34
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	kde@FreeBSD.org
 
-WITH_QT_GRAPHICS=	yes
+PKGNAMESUFFIX=	-qt
 
 .include "${MASTERDIR}/Makefile"
