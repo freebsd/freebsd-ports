@@ -1,11 +1,6 @@
-XFce is an easy-to-use and easy-to-configure environment for X11 released 
-under the terms of the GNU/GPL license, based on GTK+, with pulldown menus 
-and color icons, 3D widgets, etc. 
+XFce 4 Desktop Environment
 
-XFce features now a set of applications including a powerful Window Manager 
-xfwm, a toolbar/application launcher, a backdrop manager, a system sound 
-manager for X11, a user friendly  interface for mouse configuration, a 
-pager providing a miniature view of all XFce desktops, a clock/calendar 
-and at last but not least a filemanager, all sharing the same look'n feel.
+This package does not contain anything by itself - it is a "meta-port" that
+depends on other XFce 4 packages.
 
-WWW: http://www.xfce.org/
+WWW: http://www.xfce.org
