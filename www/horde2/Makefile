@@ -36,6 +36,7 @@ RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
+IS_INTERACTIVE=	'need to build php4 with XML support.'
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
