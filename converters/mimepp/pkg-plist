@@ -10,6 +10,7 @@ include/mimepp/config.h
 include/mimepp/datetime.h
 include/mimepp/debug.h
 include/mimepp/disptype.h
+include/mimepp/encoded.h
 include/mimepp/entity.h
 include/mimepp/enum.h
 include/mimepp/except.h
@@ -51,6 +52,7 @@ share/doc/mimepp/bodypart.html
 share/doc/mimepp/boyermor.html
 share/doc/mimepp/datetime.html
 share/doc/mimepp/disptype.html
+share/doc/mimepp/encoded.html
 share/doc/mimepp/entity.html
 share/doc/mimepp/field.html
 share/doc/mimepp/fieldbdy.html
