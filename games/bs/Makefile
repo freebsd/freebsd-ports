@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bs
-PORTVERSION=	2.5
+PORTVERSION=	2.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bs/
 
