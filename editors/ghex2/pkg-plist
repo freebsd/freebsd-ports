@@ -1,9 +1,4 @@
 bin/ghex2
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/ghex2.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/ghex2.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/ghex2.schemas > /dev/null || /usr/bin/true
-include/gtkhex/accessiblegtkhex.h
-include/gtkhex/accessiblegtkhexfactory.h
 include/gtkhex/gtkhex.h
 include/gtkhex/hex-document.h
 lib/libgtkhex.a
@@ -86,6 +81,7 @@ share/locale/cs/LC_MESSAGES/ghex-2.0.mo
 share/locale/da/LC_MESSAGES/ghex-2.0.mo
 share/locale/de/LC_MESSAGES/ghex-2.0.mo
 share/locale/el/LC_MESSAGES/ghex-2.0.mo
+share/locale/en_CA/LC_MESSAGES/ghex-2.0.mo
 share/locale/en_GB/LC_MESSAGES/ghex-2.0.mo
 share/locale/es/LC_MESSAGES/ghex-2.0.mo
 share/locale/et/LC_MESSAGES/ghex-2.0.mo
@@ -96,6 +92,7 @@ share/locale/ga/LC_MESSAGES/ghex-2.0.mo
 share/locale/gl/LC_MESSAGES/ghex-2.0.mo
 share/locale/hr/LC_MESSAGES/ghex-2.0.mo
 share/locale/hu/LC_MESSAGES/ghex-2.0.mo
+share/locale/id/LC_MESSAGES/ghex-2.0.mo
 share/locale/it/LC_MESSAGES/ghex-2.0.mo
 share/locale/ja/LC_MESSAGES/ghex-2.0.mo
 share/locale/ko/LC_MESSAGES/ghex-2.0.mo
@@ -111,6 +108,7 @@ share/locale/ro/LC_MESSAGES/ghex-2.0.mo
 share/locale/ru/LC_MESSAGES/ghex-2.0.mo
 share/locale/sk/LC_MESSAGES/ghex-2.0.mo
 share/locale/sl/LC_MESSAGES/ghex-2.0.mo
+share/locale/sq/LC_MESSAGES/ghex-2.0.mo
 share/locale/sr/LC_MESSAGES/ghex-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/ghex-2.0.mo
 share/locale/sv/LC_MESSAGES/ghex-2.0.mo
