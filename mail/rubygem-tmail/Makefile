@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,6 @@ COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
-RUBY_SETUP=	install.rb
 USE_RUBY_FEATURES=	racc-runtime
 
 DOCS_EN=	Incompatibilities	README.en	doc.en/*	\
