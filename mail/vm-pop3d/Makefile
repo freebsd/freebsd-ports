@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vm-pop3d
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.6
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
+		http://www.ibiblio.org/
 MASTER_SITE_SUBDIR=	system/mail/pop
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
@@ -16,21 +17,25 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_IPVIRTUAL)
-CONFIGURE_ARGS+=	--enable-ip-based-virtual
+CONFIGURE_ARGS+=	--enable-ip-based-virtual --enable-virtual
+.elsif defined(WITH_VIRTUAL)
+CONFIGURE_ARGS+=	--enable-virtual
 .endif
 
 MAN8=		vm-pop3d.8
 
 DOCS=		AUTHORS CHANGES COPYING FAQ INSTALL README
 
-pre-fetch:
+pre-patch:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
+	@${ECHO} "	WITH_VIRTUAL	enable virtual passwd files and spool directories."
 	@${ECHO} "	WITH_IPVIRTUAL	enable IP-based virtual passwd files and spool directories."
 	@${ECHO} ""
 
 post-patch:
+	@${PERL} -pi -e "s@LIBS -ldl@LIBS@" ${WRKSRC}/configure
 	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/vm-pop3d.h
 
 post-install:
