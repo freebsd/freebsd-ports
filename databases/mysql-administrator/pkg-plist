@@ -1,4 +1,5 @@
 bin/mysql-administrator
+bin/mysql-administrator-bin
 share/applications/MySQLAdministrator.desktop
 share/mysql-gui/MySQLIcon_Admin_16x16.png
 share/mysql-gui/MySQLIcon_Admin_32x32.png
@@ -59,7 +60,8 @@ share/mysql-gui/administrator/24x24_Thread.png
 share/mysql-gui/administrator/24x24_User.png
 share/mysql-gui/administrator/24x24_UserAdmin.png
 share/mysql-gui/administrator/24x24_Users.png
-share/mysql-gui/administrator/about_bg.jpg
+share/mysql-gui/administrator/about.png
+share/mysql-gui/administrator/admin_preferences.glade
 share/mysql-gui/administrator/backup.glade
 share/mysql-gui/administrator/backup.png
 share/mysql-gui/administrator/backup_gray.png
@@ -75,11 +77,11 @@ share/mysql-gui/administrator/health_level_bg.png
 share/mysql-gui/administrator/health_level_fg.png
 share/mysql-gui/administrator/innodb_data_file.glade
 share/mysql-gui/administrator/main_window.glade
-share/mysql-gui/administrator/mysqlx_health.xml
-share/mysql-gui/administrator/mysqlx_startup_variables_description.dtd
-share/mysql-gui/administrator/mysqlx_startup_variables_description.xml
-share/mysql-gui/administrator/mysqlx_status_variables.xml
-share/mysql-gui/administrator/mysqlx_system_variables.xml
+share/mysql-gui/administrator/mysqladmin_health.xml
+share/mysql-gui/administrator/mysqladmin_startup_variables_description.dtd
+share/mysql-gui/administrator/mysqladmin_startup_variables_description.xml
+share/mysql-gui/administrator/mysqladmin_status_variables.xml
+share/mysql-gui/administrator/mysqladmin_system_variables.xml
 share/mysql-gui/administrator/mysqlx_translations_administrator.xml
 share/mysql-gui/administrator/mysqlx_translations_general.xml
 share/mysql-gui/administrator/option_checked.xpm
@@ -117,14 +119,42 @@ share/mysql-gui/administrator/user_admin.png
 share/mysql-gui/administrator/user_admin_gray.png
 share/mysql-gui/administrator/user_administration.glade
 share/mysql-gui/administrator/variable.png
-share/mysql-gui/administrator/variable_editable.png
 share/mysql-gui/administrator/variable_disabled.png
+share/mysql-gui/administrator/variable_editable.png
+share/mysql-gui/common/16x16_Catalog.png
+share/mysql-gui/common/16x16_Database.png
+share/mysql-gui/common/16x16_Field.png
+share/mysql-gui/common/16x16_KeyColumn.png
+share/mysql-gui/common/16x16_Table.png
+share/mysql-gui/common/blob_icon.png
+share/mysql-gui/common/busy.gif
+share/mysql-gui/common/busy.png
 share/mysql-gui/common/connect_dialog.glade
 share/mysql-gui/common/connect_to_instance.png
+share/mysql-gui/common/datatype_blob.png
+share/mysql-gui/common/datatype_datetime.png
+share/mysql-gui/common/datatype_numeric.png
+share/mysql-gui/common/datatype_spatial.png
+share/mysql-gui/common/datatype_string.png
+share/mysql-gui/common/datatype_userdefined.png
 share/mysql-gui/common/dockpnl_bg_logo.png
+share/mysql-gui/common/editor_table_auto_inc.png
+share/mysql-gui/common/editor_table_not_null.png
+share/mysql-gui/common/field_overlay_clear.png
+share/mysql-gui/common/field_overlay_edit.png
+share/mysql-gui/common/field_overlay_load.png
+share/mysql-gui/common/field_overlay_save.png
+share/mysql-gui/common/field_overlay_view.png
 share/mysql-gui/common/folder_16x16.png
 share/mysql-gui/common/magnify_glass.png
 share/mysql-gui/common/magnify_glass_with_popup.png
+share/mysql-gui/common/mysql_logo.png
+share/mysql-gui/common/mysqlx_dbm_charsets.xml
+share/mysql-gui/common/mysqlx_dbm_datatypes.xml
+share/mysql-gui/common/myx_schema_16x16.png
+share/mysql-gui/common/myx_schema_sp_16x16.png
+share/mysql-gui/common/myx_schema_table_16x16.png
+share/mysql-gui/common/myx_schema_view_16x16.png
 share/mysql-gui/common/networkhost_16x16.png
 share/mysql-gui/common/options_admin.png
 share/mysql-gui/common/options_bg.png
@@ -132,8 +162,8 @@ share/mysql-gui/common/options_connections.png
 share/mysql-gui/common/options_general.png
 share/mysql-gui/common/preferences.glade
 share/mysql-gui/common/progress_indicator.gif
+share/mysql-gui/common/table_editor.glade
 share/mysql-gui/common/thread_stop.png
 @dirrm share/mysql-gui/common
 @dirrm share/mysql-gui/administrator
 @dirrm share/mysql-gui
-@dirrm share/applications

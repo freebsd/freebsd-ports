@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mysql-administrator
-PORTVERSION=	1.0.2b.a
-PORTREVISION=	1
+PORTVERSION=	1.0.14
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/%SUBDIR%/ \
-		http://www.softagency.co.jp/MySQL/%SUBDIR%/ \
+MASTER_SITES=	http://www.softagency.co.jp/MySQL/%SUBDIR%/ \
 		ftp://sunsite.dk/mirrors/mysql/%SUBDIR%/ \
 		http://mysql.mediatraffic.fi/%SUBDIR%/ \
 		ftp://filepile.tiscali.de/mirror/mysql/%SUBDIR%/ \
@@ -19,7 +17,6 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/%SUBDIR%/ \
 		ftp://ftp.u-paris10.fr/mysql.com/%SUBDIR%/ \
 		http://mysql.oms-net.nl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	Downloads/MySQLAdministrationSuite
-DISTNAME=	${PORTNAME}-1.0.2b-alpha
 
 MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Powerful visual administration console for MySQL environment
@@ -27,32 +24,33 @@ COMMENT=	Powerful visual administration console for MySQL environment
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-WANT_AUTOMAKE_VER=	14
 WANT_AUTOCONF_VER=	259
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome
 USE_ICONV=	yes
-USE_GNOME=	libglade2
+USE_GNOME=	libglade2 gnomehack
 USE_MYSQL=	yes
-BROKEN_WITH_MYSQL=	323
+BROKEN_WITH_MYSQL=	323 40
 GNU_CONFIGURE=	yes
 
 LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 		pcre.0:${PORTSDIR}/devel/pcre
 
+BUILD_DEPENDS=  scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 DIRS_ORDER=	mysql-gui-common mysql-administrator
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s#%%PTHREAD_CFLAGS%%#${PTHREAD_CFLAGS}#" \
 			${WRKSRC}/mysql-administrator/source/linux/Makefile.am
 	@${CHMOD} a+x 	${WRKSRC}/mysql-gui-common/missing \
 			${WRKSRC}/mysql-administrator/missing
+	@${REINPLACE_CMD} -e 's#$$(datadir)/omf#$$(datadir)/gnome#' \
+			${WRKSRC}/mysql-administrator/omf.make
 
 do-configure:
 	@${DO_NADA}
@@ -64,10 +62,6 @@ do-build:
 		${ECHO_MSG} "---> Building: $${d}"; \
 		${ECHO_MSG} "--->"; \
 		cd ${WRKSRC}/$${d}; \
-		${AUTOMAKE} --foreign; ${AUTOCONF}; \
-		${CP} -f ${TEMPLATES}/config.sub ./config.sub; \
-		${CP} -f ${TEMPLATES}/config.guess ./config.guess; \
-		${CHMOD} a+rx ./config.sub; \
 		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
 		${GMAKE} DATADIRNAME=share; \
 	done
