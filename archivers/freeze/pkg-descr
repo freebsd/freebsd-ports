@@ -1,0 +1,28 @@
+		FREEZE / MELT COMPRESSION PROGRAM
+
+This version is tested under SunOS 4.1.2, Xenix 2.3.2, MS-DOS.
+
+The format of frozen (2.X) file is incompatible with that of frozen (1.0),
+but if this package is compiled with -DCOMPAT switch, you will able to
+unpack frozen (1.0) files, if you have them.
+
+--------- CALGARY COMPRESSION CORPUS RESULTS --------
+
+  41127  bib.F
+ 340447  book1.F
+ 229188  book2.F
+  68610  geo.F
+ 155157  news.F
+  10551  obj1.F
+  86216  obj2.F
+  19924  paper1.F
+  32439  paper2.F
+  54993  pic.F
+  14180  progc.F
+  17136  progl.F
+  11771  progp.F
+  22903  trans.F
+
+Average bits/byte on the standard set (except paper3-6) =
+	1104642 * 8 / 3141622 = 2.813
+

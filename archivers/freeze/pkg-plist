@@ -1,0 +1,10 @@
+bin/freeze
+bin/melt
+bin/unfreeze
+bin/fcat
+bin/statist
+man/man1/freeze.1.gz
+man/man1/melt.1.gz
+man/man1/unfreeze.1.gz
+man/man1/fcat.1.gz
+man/man1/statist.1.gz
