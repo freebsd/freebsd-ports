@@ -1,0 +1,17 @@
+--- src/gnome-btdownload.orig	Wed Oct 22 12:43:59 2003
++++ src/gnome-btdownload	Wed Oct 22 12:56:24 2003
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/env python
+ 
+ import BitTorrent.download
+ import os.path, threading, sys, time
+@@ -36,7 +36,7 @@
+ if not locate_file:
+ 	try:
+ 		def fallback_locate_attempt_prefixes(path):
+-			prefixes = ['', 'usr/', 'usr/local/']
++			prefixes = ['', '%%X11PREFIX%%/', 'usr/', 'usr/local/']
+ 
+ 			# Try them locally
+ 			for prefix in prefixes:
