@@ -8,19 +8,19 @@ etc/rc.d/mimedefang.sh-dist
 etc/mimedefang/mimedefang-filter.example
 @unexec if cmp -s %D/etc/mimedefang/spamassassin/sa-mimedefang.cf %D/etc/mimedefang/spamassassin/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/spamassassin/sa-mimedefang.cf; fi
 etc/mimedefang/spamassassin/sa-mimedefang.cf.example
-%%PORTDOCS%%share/doc/mimedefang/README
-%%PORTDOCS%%share/doc/mimedefang/README.ANOMY
-%%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
-%%PORTDOCS%%share/doc/mimedefang/README.SOPHIE
-%%PORTDOCS%%share/doc/mimedefang/README.NONROOT
-%%PORTDOCS%%share/doc/mimedefang/README.SECURITY
-%%PORTDOCS%%share/doc/mimedefang/README.TRU64
-%%PORTDOCS%%share/doc/mimedefang/README.IRIX
-%%PORTDOCS%%share/examples/mimedefang/suggested-minimum-filter-for-windows-clients
-%%PORTDOCS%%share/examples/mimedefang/stream-by-domain-filter
-%%PORTDOCS%%share/examples/mimedefang/README
-%%PORTDOCS%%@dirrm share/doc/mimedefang
-%%PORTDOCS%%@dirrm share/examples/mimedefang
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.ANOMY
+%%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
+%%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
+%%PORTDOCS%%%%DOCSDIR%%/README.NONROOT
+%%PORTDOCS%%%%DOCSDIR%%/README.SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/README.TRU64
+%%PORTDOCS%%%%DOCSDIR%%/README.IRIX
+%%PORTDOCS%%%%EXAMPLESSDIR%%/suggested-minimum-filter-for-windows-clients
+%%PORTDOCS%%%%EXAMPLESSDIR%%/stream-by-domain-filter
+%%PORTDOCS%%%%EXAMPLESSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESSDIR%%
 @dirrm etc/mimedefang/spamassassin
 @dirrm etc/mimedefang
 @cwd /var/spool
