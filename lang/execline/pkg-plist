@@ -38,6 +38,7 @@ bin/wait
 include/execline/execline.h
 include/execline/exls1.h
 lib/libexecline.a
+lib/libexlp.a
 lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -51,8 +52,8 @@ lib/libexls1.a
 %%PORTDOCS%%%%DOCSDIR%%/dollarat.html
 %%PORTDOCS%%%%DOCSDIR%%/el_pushenv.html
 %%PORTDOCS%%%%DOCSDIR%%/el_semicolon.html
-%%PORTDOCS%%%%DOCSDIR%%/el_split.html
 %%PORTDOCS%%%%DOCSDIR%%/el_substitute.html
+%%PORTDOCS%%%%DOCSDIR%%/el_transform.html
 %%PORTDOCS%%%%DOCSDIR%%/elgetopt.html
 %%PORTDOCS%%%%DOCSDIR%%/elgetpositionals.html
 %%PORTDOCS%%%%DOCSDIR%%/elglob.html
