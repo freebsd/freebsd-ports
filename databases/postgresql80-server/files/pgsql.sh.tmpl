@@ -14,12 +14,23 @@
 #   because the postmaster process, which starts up under the
 #   environment of the pgsql user, sets this with the PGDATA
 #   environment variable in !!PREFIX!!/pgsql/.profile
-#
+# - added (ugly) support for shutting down (girgen)
+# - moved 2>&1 to end of line, so it'll actually work [if -S is removed] (girgen)
 
-[ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
-
-[ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
+case $1 in
+start)
+    [ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
+    [ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
 	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster -i -S -o -F \
-		2>&1 > !!PREFIX!!/pgsql/errlog'
-	echo -n ' pgsql' 
-}
+	    > !!PREFIX!!/pgsql/errlog 2>&1'
+	echo -n ' pgsql'
+    }
+    ;;
+stop)
+    /usr/bin/killall postgres
+    ;;
+*)
+    echo "usage: `basename $0` {start|stop}" >&2
+    exit 64
+    ;;
+esac

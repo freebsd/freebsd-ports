@@ -1,1 +1,4 @@
-MD5 (postgresql-7.0beta5.tar.gz) = 26518db34cf4dbe2e0eebb5717633a8a
+MD5 (postgresql/postgresql-7.0.base.tar.gz) = dfa6b0a1241b59049edfccff3f14ed7f
+MD5 (postgresql/postgresql-7.0.support.tar.gz) = 2cb3285bbfa367536141fbc7e4fcb5ab
+MD5 (postgresql/postgresql-7.0.test.tar.gz) = 77f1ce5f8a4a5a63cae85390319097c9
+MD5 (postgresql/postgresql-7.0.docs.tar.gz) = e999c54e52e1d6c93522788beafe4b5a
