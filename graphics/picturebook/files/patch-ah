@@ -56,11 +56,11 @@
 - press capture button to take photo
 - rotate jogger to change mode
 - press jogger to exit
-+	printf("\
-+started snap mode\
-+ press capture button to take photo\
-+ rotate jogger to change mode\
-+ press jogger to exit\
++	printf("\n\
++started snap mode\n\
++ press capture button to take photo\n\
++ rotate jogger to change mode\n\
++ press jogger to exit\n\
  \n");
  
  	sdelay(100);
