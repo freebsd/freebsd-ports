@@ -107,6 +107,7 @@
     SUBDIR += gnomesystemmonitor
     SUBDIR += gok
     SUBDIR += gpart
+    SUBDIR += gpkgdep
     SUBDIR += grub
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr
