@@ -45,13 +45,6 @@ CFLAGS+=	-include ${FILESDIR}/fbsd4.h
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
-PLIST_SUB+=	NO_NATIVE_GDB=""
-post-install:
-	cd ${PREFIX}/bin ; ${LN} -sf gdb${PORTVERSION} gdb
-.else
-PLIST_SUB+=	NO_NATIVE_GDB="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/$$/ [GDB v6.x for FreeBSD]/' \
