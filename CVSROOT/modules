@@ -4008,6 +4008,7 @@ mysql2pgsql	ports/databases/mysql2pgsql
 mysql323-client	ports/databases/mysql323-client
 mysql323-server	ports/databases/mysql323-server
 mysqltcl	ports/databases/mysqltcl
+mythserver	ports/games/mythserver
 mytop		ports/databases/mytop
 mziq		ports/audio/mziq
 nab		ports/biology/nab
