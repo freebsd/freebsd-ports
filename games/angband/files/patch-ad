@@ -1,5 +1,5 @@
---- src/Makefile.orig	Fri Sep  5 18:01:33 1997
-+++ src/Makefile	Fri Sep  5 18:05:13 1997
+--- src/Makefile.orig	Fri Sep  5 13:52:03 1997
++++ src/Makefile	Fri Sep 19 10:57:27 1997
 @@ -94,7 +94,7 @@
  #
  # This is my compiler of choice, it seems to work most everywhere
@@ -16,7 +16,7 @@
 -CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
 -LIBS = -lX11 -lcurses -ltermcap
 +#CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
-+#LIBS = -L/usr/X11-lX11 -lcurses -ltermcap
++LIBS = -L/usr/X11R6/lib -lX11 -lcurses -ltermcap
  
  
  ##
@@ -25,7 +25,7 @@
  ##
  #CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
 -#LIBS = -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
-+LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
++#LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
  
  
  ##

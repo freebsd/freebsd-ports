@@ -1,4 +1,5 @@
 bin/angband
+lib/X11/angband/CHANGES-2.8.2
 lib/X11/angband/apex/scores.raw
 lib/X11/angband/edit/a_info.txt
 lib/X11/angband/edit/e_info.txt
