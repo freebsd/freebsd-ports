@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=--enable-ntlm
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME}
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME}
+CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
 .elif !defined(WITHOUT_GSSAPI) && defined(MAKE_KERBEROS5) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=--enable-gssapi
 .else
