@@ -1,4 +1,4 @@
 bin/keynote
-share/doc/keynote/keynote-spec
-share/doc/keynote/keynote-spec.nroff
+lib/libkeynote.a
+share/doc/keynote/rfc2704.txt
 @dirrm share/doc/keynote/
