@@ -2,7 +2,7 @@ xscreensaver will run several programs to continuously update the
 screen instead of going blank.  You can specify the programs and their 
 arguments using resources.
 
-It doesn't work very well with on my XF86_S3 with the MIT-SCREEN-SAVER
+It doesn't work very well with my XF86_S3 with the MIT-SCREEN-SAVER
 extension, so it is disabled in config.h.  It makes very little
 difference anyway as the saver still watches the keyboard and mouse
 activity.
