@@ -1,11 +1,9 @@
---- template/freebsd44.sh.orig	Thu Nov  8 03:54:41 2001
-+++ template/freebsd44.sh	Sun Feb 17 12:18:47 2002
-@@ -117,7 +117,10 @@
- 
+--- template/freebsd44.sh.orig	Sat Feb 23 06:32:37 2002
++++ template/freebsd44.sh	Sat Mar  2 09:53:54 2002
+@@ -118,6 +118,9 @@
     # Delete any default IPv6 route first
     ExecNoCheck $route delete -inet6 default
--   Exec $route add -inet6 default  -interface $TSP_TUNNEL_INTERFACE
-+   Exec $route add -inet6 default $TSP_SERVER_ADDRESS_IPV6
+    Exec $route add -inet6 default $TSP_SERVER_ADDRESS_IPV6
 +
 +   # Save interface for later
 +   echo $TSP_TUNNEL_INTERFACE > /var/run/tspc.if
