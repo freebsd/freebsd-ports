@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.7.92
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 CATEGORIES=	multimedia python gnome
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kwm
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gst-python-${PORTVERSION}
 
-MAINTAINER=	kwm@rainbow-runner.nl
+MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	A set of Python bindings for gstreamer
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
+
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
+BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 		lynx:${PORTSDIR}/www/lynx
 .endif
 
@@ -26,15 +30,12 @@ USE_GMAKE=	yes
 USE_GNOME=	gstreamerplugins \
 		pygtk2 \
 		gnomehack \
-		pkgconfig \
-		lthack
-USE_LIBTOOL_VER=13
+		pkgconfig
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"
 DOCS=		README.html README.txt
-EXAMPLES=	gst/bps.py gst/cp.py gst/dvdplay.py gst/f2f.py \
-		gst/identity.py gst/ilat.py gst/lat.py gst/rot13.py \
-		gst/vorbisplay.py gst/wavenc.py gstplay/player.py
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS=	--enable-docs
@@ -42,13 +43,13 @@ CONFIGURE_ARGS=	--enable-docs
 CONFIGURE_ARGS=	--disable-docs
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|DLFCN|dl|g' ${WRKSRC}/gst/__init__.py
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.for i in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${i} ${DOCSDIR}/
-.endfor
 .endif
 
 .include <bsd.port.mk>
