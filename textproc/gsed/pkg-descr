@@ -4,7 +4,7 @@ This utility exist in the FreeBSD base collection, but the GNU
 versions have added functionality that is sometimes useful.
 
 Note that this port will install this utility with a `g' prefix,
-eg., gsed, but the texinfo documentation will refer to these
+for example gsed, but the texinfo documentation will refer to these
 utilities without the `g' prefix.
 
 WWW: http://www.gnu.org/software/sed/sed.html
