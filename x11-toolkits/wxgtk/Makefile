@@ -15,7 +15,7 @@ EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
