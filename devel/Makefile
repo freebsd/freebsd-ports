@@ -1080,6 +1080,7 @@
     SUBDIR += py-yaml
     SUBDIR += py_otp_interface
     SUBDIR += pychecker
+    SUBDIR += pylint
     SUBDIR += pyobfuscate
     SUBDIR += pyrex
     SUBDIR += pyumlgraph
