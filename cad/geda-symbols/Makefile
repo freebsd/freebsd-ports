@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	symbols
-PORTVERSION=	20020209
+PORTVERSION=	20020825
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020209/ \
-		http://geda.seul.org/devel/20020209/ \
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
+		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
+DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
 
-USE_AUTOCONF=	yes
+#USE_AUTOCONF=	yes
+
+GNU_CONFIGURE=	yes
+AUTOCONF=	autoconf
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-DISTNAME=       geda-${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20020209
+PORTVERSION=	20020825
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/20020209/ \
-		http://geda.seul.org/devel/20020209/ \
+MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
+		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
 MAINTAINER=	bruno@tinkerbox.org
@@ -19,6 +19,9 @@ LIB_DEPENDS=	gdgeda.4:${PORTSDIR}/graphics/libgdgeda \
 
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
+
+AUTOCONF=	autoconf
+
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes

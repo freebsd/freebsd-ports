@@ -1,5 +1,5 @@
 bin/gschem
-@unexec install-info --delete %D/info/info/gschemdoc.info %D/info/dir
+@unexec install-info --delete %D/info/gschemdoc.info %D/info/dir
 info/gschemdoc.info
 info/gschemdoc.info-1
 info/gschemdoc.info-2
@@ -18,3 +18,5 @@ info/gschemdoc.info-14
 info/gschemdoc.info-15
 info/gschemdoc.info-16
 info/gschemdoc.info-17
+@exec install-info %D/info/gschemdoc.info %D/info/dir
+share/locale/pt_BR/LC_MESSAGES/geda-gschem.mo
