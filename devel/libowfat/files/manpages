@@ -22,10 +22,10 @@ fmt_ip6_flat.3 fmt_ip6c.3 fmt_ip6if.3 fmt_ip6ifc.3 fmt_long.3 \
 fmt_longlong.3 fmt_minus.3 fmt_pad.3 fmt_plusminus.3 fmt_str.3 \
 fmt_strn.3 fmt_uint.3 fmt_uint0.3 fmt_ulong.3 fmt_ulong0.3 \
 fmt_ulonglong.3 fmt_xlong.3 fmt_xlonglong.3 imult16.3 imult32.3 \
-imult64.3 io_canread.3 io_canwrite.3 io_check.3 io_close.3 \
+imult64.3 io_appendfile.3 io_canread.3 io_canwrite.3 io_check.3 io_close.3 \
 io_closeonexec.3 io_createfile.3 io_dontwantread.3 io_dontwantwrite.3 \
 io_eagain.3 io_fd.3 io_finishandshutdown.3 io_getcookie.3 io_nonblock.3 \
-io_passfd.3 io_pipe.3 io_readfile.3 io_receivefd.3 io_sendfile.3 \
+io_passfd.3 io_pipe.3 io_readfile.3 io_readwritefile.3 io_receivefd.3 io_sendfile.3 \
 io_setcookie.3 io_socketpair.3 io_timeout.3 io_timeouted.3 io_tryread.3 \
 io_tryreadtimeout.3 io_trywrite.3 io_trywritetimeout.3 io_wait.3 \
 io_waitread.3 io_waituntil.3 io_wantread.3 io_wantwrite.3 iob_addbuf.3 \
