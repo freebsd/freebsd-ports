@@ -6923,6 +6923,7 @@ scintilla	ports/x11-toolkits/scintilla
 scite		ports/editors/scite
 scli		ports/net/scli
 scm		ports/lang/scm
+scmxx		ports/comms/scmxx
 scons		ports/devel/scons
 scotty		ports/net/scotty
 scotty3		ports/net/scotty3
