@@ -8405,6 +8405,7 @@ sed_inplace	ports/textproc/sed_inplace
 sedsed		ports/devel/sedsed
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
+selectwm	ports/x11-wm/selectwm
 semantic	ports/devel/semantic
 semantic-emacs20	ports/devel/semantic-emacs20
 semi		ports/editors/semi
