@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	jailutils
-PORTVERSION=	0.6
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/nielsen/freebsd/jails/jailutils/
 
 MAINTAINER=	skv@FreeBSD.org
-COMMENT=	Several utilies for managing jails
+COMMENT=	Several utilities for managing jails
 
 GNU_CONFIGURE=	YES
 
 .include <bsd.port.pre.mk>
 
-SUP_OS_VER=     400000
+SUP_OS_VER=	400000
 .if ${OSVERSION} < ${SUP_OS_VER}
-BROKEN=         "OS versions prior to ${SUP_OS_VER} is not supported"
+BROKEN=		"OS versions prior to ${SUP_OS_VER} is not supported"
 .elif ${OSVERSION} > 501000
-PLIST_FILES=	sbin/jps sbin/jid sbin/jstart sbin/jkill sbin/jails
-MAN8=		jps.8 jid.8 jstart.8 jkill.8 jails.8
+PLIST_FILES=	sbin/injail sbin/jails sbin/jid sbin/jkill sbin/jps sbin/jstart\
+		sbin/killjail
+MAN8=		injail.8 jails.8 jid.8 jkill.8 jps.8 jstart.8
 .else
 PLIST_FILES=	sbin/jails sbin/jstart sbin/killjail
 MAN8=		jails.8 jstart.8 killjail.8

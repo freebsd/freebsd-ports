@@ -1,4 +1,4 @@
-Several utilies for managing jails.
+Several utilities for managing jails.
 
 4.x:
 
@@ -13,5 +13,6 @@ jid		Print id of a jail
 jstart		Start up a jail securily
 jkill		Shutdown a jail in an orderly fashion
 jails		List running jails
+injail		Determine if a process is running in a jail
 
 WWW: http://memberwebs.com/nielsen/freebsd/jails/jailutils/
