@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.209 1999/05/20 09:16:16 tg Exp $
+# $Id: Makefile,v 1.210 1999/05/20 20:48:37 asami Exp $
 #
 
     SUBDIR += 221upgrade
@@ -47,7 +47,6 @@
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
-    SUBDIR += kdeutils
     SUBDIR += kdeutils11
     SUBDIR += kp
     SUBDIR += kwatch
