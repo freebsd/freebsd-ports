@@ -22,25 +22,28 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/atk.so:${PORTSDIR}/accessibility/ruby-atk \
 		${RUBY_SITEARCHLIBDIR}/pango.so:${PORTSDIR}/x11-toolkits/ruby-pango
 
 USE_RUBY=	yes
+USE_XLIB=	yes
 USE_GNOME=	gtk20
 USE_RUBY_EXTCONF=	yes
-USE_XLIB=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
 WRKSRC=		${RUBY_GNOME_WRKSRC}/gtk
 INSTALL_TARGET=	site-install
 
-DOCS=		ChangeLog \
-		README
+DOCS=		COPYING.LIB ChangeLog README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/gtk-demo
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/misc
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/testgtk
+	@${INSTALL_DATA} ${WRKSRC}/sample/gtk-demo/* ${RUBY_MODEXAMPLESDIR}/gtk-demo/
+	@${INSTALL_DATA} ${WRKSRC}/sample/misc/* ${RUBY_MODEXAMPLESDIR}/misc/
+	@${INSTALL_DATA} ${WRKSRC}/sample/testgtk/* ${RUBY_MODEXAMPLESDIR}/testgtk/
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 

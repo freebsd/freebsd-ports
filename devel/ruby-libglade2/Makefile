@@ -30,16 +30,19 @@ INSTALL_TARGET=	site-install
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/ruby-glade-create-template
 
-DOCS=		ChangeLog \
-		README
+DOCS=		COPYING.LIB ChangeLog README
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	@${MKDIR} ${RUBY_MODEXAMPLESDIR}/po/ja
+	@${INSTALL_DATA} ${WRKSRC}/sample/README ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/sample/*.glade ${RUBY_MODEXAMPLESDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/sample/po/*.pot ${RUBY_MODEXAMPLESDIR}/po/
+	@${INSTALL_DATA} ${WRKSRC}/sample/po/ja/*.po ${RUBY_MODEXAMPLESDIR}/po/ja/
+	@${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
