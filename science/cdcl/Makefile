@@ -6,30 +6,38 @@
 #
 
 PORTNAME=	cdcl
-PORTVERSION=	5.2.3
+PORTVERSION=	5.3
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
-DISTNAME=	dcl-5.2-C.3
+DISTNAME=	dcl-5.3-C
 
-MAINTAINER?=	murakami@ahs.scitec.kobe-u.ac.jp
-COMMENT?=	Scientific graphic library for geoscience
+MAINTAINER=	murakami@ahs.scitec.kobe-u.ac.jp
+COMMENT=	Scientific graphic library for geoscience
 
-.if defined(WITH_GTK)
-PKGNAMESUFFIX=	-gtk
-PATCH_SITES=	http://www-mete.kugi.kyoto-u.ac.jp/seiya/dcl/tarball/
-PATCHFILES=	${DISTNAME}-gtk2-5.patch
-PATCH_DIST_STRIP=	-p1
+.if defined(WITHOUT_GTK)
+.else
 USE_GNOME=	gtk20
 .endif
 
-WRKSRC=		${WRKDIR}/dcl-5.2-C
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV=	DCLDIR=${WRKDIR}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --libdir=${PREFIX}/lb/${PORTNAME}-${PORTVERSION} --with-x
 
-BINARIES=	cdclclr cdcldate cdcldbs cdclexec cdclfont cdclpara \
-		cdcltone cdcltrf cdclver
-DOCFILES=	CHECK CREDITS HISTORY README
+.if defined(WITHOUT_GTK)
+CUNFIGURE_ARGS+=	--disable-gtk --disable-gtk2
+.endif
+
+DCL_VERSION=	${PORTVERSION}-C
+PLIST_SUB=	DCL_VERSION=${DCL_VERSION}
+
+BINARIES=	cdclcmap cdclclr cdcldate cdcldbs cdclexec cdclfont \
+		cdclpara cdcltone cdcltrf cdclver
+PSLIBS=		dclps2kdraw dclpscat dclpsfix dclpsfont dclpsline \
+		dclpsmargin dclpsmerge dclpsnup dclpsrmcm dclpsrot \
+		dclpsselect dclpsseparate dclpsunrot
+DOCFILES=	CHECK CREDITS HISTORY README README_clrmap README_gt2dlib \
+		README_itr51 README_pslib README_umfmap
 DEMODIRS=	gokuraku grph1 grph2 math1 math2 misc1 misc2 rakuraku
 DEMOGOKUDIR=	hop jump layout step u1d u2d
 DEMOGRPH1DIR=	scpack sgpack slpack
@@ -42,6 +50,15 @@ DEMOMISC1DIR=	bitlib chglib chklib chnlib clcklib datelib fmtlib hexlib \
 DEMORAKUDIR=	color kihon layout map3d miss quick u2d uspack uxyz
 
 RESTRICTED=	"No commercial use"
+
+pre-build:
+	@cd ${WRKSRC}
+	@${REINPLACE_CMD} -e 's+dcldbase+dcldbase-${PORTVERSION}-C+' ${WRKSRC}/Mkinclude
+	@${REINPLACE_CMD} -e 's+dclps+cdclps+g' ${WRKSRC}/bin/Makefile
+	@${REINPLACE_CMD} -e 's+dclps+cdclps+g' ${WRKSRC}/src/env2/pslib/Makefile
+.for i in ${PSLIBS}
+	${MV} ${WRKSRC}/src/env2/pslib/${i} ${WRKSRC}/src/env2/pslib/c${i}
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

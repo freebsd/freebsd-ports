@@ -9,7 +9,6 @@
     SUBDIR += bblimage
     SUBDIR += buddy
     SUBDIR += cdcl
-    SUBDIR += cdcl-gtk
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
@@ -51,7 +50,6 @@
     SUBDIR += py-scipy
     SUBDIR += qcl
     SUBDIR += ruby-dcl
-    SUBDIR += ruby-dcl-gtk
     SUBDIR += ruby-gphys
     SUBDIR += simlib
     SUBDIR += udunits
