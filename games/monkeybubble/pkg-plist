@@ -1,5 +1,4 @@
 bin/monkey-bubble
-bin/monkey-srv
 etc/gconf/schemas/monkey-bubble.schemas
 lib/libgdkview.a
 lib/libgdkview.so
@@ -13,9 +12,6 @@ lib/libmonkey.so.0
 lib/libmonkeyutil.a
 lib/libmonkeyutil.so
 lib/libmonkeyutil.so.0
-lib/libnetcltmonkey.a
-lib/libnetcltmonkey.so
-lib/libnetcltmonkey.so.0
 share/gnome/applications/monkey-bubble.desktop
 share/gnome/monkey-bubble/gfx/banana.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_01.svg
@@ -27,7 +23,6 @@ share/gnome/monkey-bubble/gfx/bubbles/bubble_06.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_07.svg
 share/gnome/monkey-bubble/gfx/bubbles/bubble_08.svg
 share/gnome/monkey-bubble/gfx/frozen-bubble/back_hiscores.png
-share/gnome/monkey-bubble/gfx/frozen-bubble/data
 share/gnome/monkey-bubble/gfx/harm.svg
 share/gnome/monkey-bubble/gfx/layout_1_player.svg
 share/gnome/monkey-bubble/gfx/layout_2_players.svg
@@ -132,12 +127,16 @@ share/gnome/monkey-bubble/gfx/snake/snake_6.svg
 share/gnome/monkey-bubble/gfx/snake/snake_7.svg
 share/gnome/monkey-bubble/gfx/snake/snake_8.svg
 share/gnome/monkey-bubble/gfx/snake/snake_9.svg
+share/gnome/monkey-bubble/gfx/splash.svg
+share/gnome/monkey-bubble/gfx/star.svg
 share/gnome/monkey-bubble/gfx/tomato.svg
 share/gnome/monkey-bubble/gfx/win.svg
 share/gnome/monkey-bubble/glade/keybinding.glade
 share/gnome/monkey-bubble/glade/monkey-bubble.glade
 share/gnome/monkey-bubble/levels
 share/locale/de/LC_MESSAGES/monkey-bubble.mo
+share/locale/es/LC_MESSAGES/monkey-bubble.mo
+share/locale/eu/LC_MESSAGES/monkey-bubble.mo
 share/locale/fr/LC_MESSAGES/monkey-bubble.mo
 @dirrm share/gnome/monkey-bubble/glade
 @dirrm share/gnome/monkey-bubble/gfx/snake
