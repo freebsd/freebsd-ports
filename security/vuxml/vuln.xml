@@ -194,11 +194,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-0392</cvename>
       <url>http://orange.kame.net/dev/query-pr.cgi?pr=555</url>
     </references>
     <dates>
       <discovery>2003-12-03</discovery>
       <entry>2004-04-07</entry>
+      <modified>2004-04-13</modified>
     </dates>
   </vuln>
 
