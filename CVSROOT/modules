@@ -344,6 +344,7 @@ apr		ports/devel/apr
 apsfilter	ports/print/apsfilter
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
+aquaosk		ports/x11-wm/aquaosk
 ar-ae_fonts_mono	ports/arabic/ae_fonts_mono
 ar-ae_fonts_ttf	ports/arabic/ae_fonts_ttf
 ar-kacst_fonts	ports/arabic/kacst_fonts
