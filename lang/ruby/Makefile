@@ -6,25 +6,21 @@
 #
 
 PORTNAME=	ruby
-PORTVERSION=	1.4.6
+PORTVERSION=	${RUBY_VERSION}.p3
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	1.4
+MASTER_SITE_SUBDIR=	# ${RUBY_VER}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-preview/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	yasuf@bsdclub.org
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared
-MAN1=		ruby.1
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
+MAN1=		${RUBY_NAME}.1
 
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-DOCDIR=		${PREFIX}/share/doc/ruby
-EXAMPLESDIR=	${PREFIX}/share/examples/ruby
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 ELISP_FILES=	inf-ruby.el ruby-mode.el rubydb3x.el
 
@@ -32,6 +28,12 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+
+.if !empty(RUBY_SUFFIX)
+CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
+MLINKS=		${RUBY_NAME}.1 ruby.1
+.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
@@ -41,35 +43,35 @@ post-patch:
 	${RM} -f ${WRKSRC}/ext/gdbm/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tcltklib/MANIFEST
 	${RM} -f ${WRKSRC}/ext/tk/MANIFEST
-	${RM} -rf ${WRKSRC}/lib/irb ${WRKSRC}/sample/irb.rb
 
 post-install:
-	strip ${PREFIX}/bin/ruby
+	strip ${RUBY}
+	${LN} -fs ${RUBY} ${PREFIX}/ruby
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
-	${MKDIR} ${EXAMPLESDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/misc/* ${EXAMPLESDIR}/misc
+	${MKDIR} ${RUBY_EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
+	${MKDIR} ${RUBY_EXAMPLESDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/misc/* ${RUBY_EXAMPLESDIR}/misc
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
 .for f in ${ELISP_FILES}
-	${LN} -sf ${EXAMPLESDIR}/misc/${f} ${EMACSLISPDIR}/
-	${LN} -sf ${EXAMPLESDIR}/misc/${f} ${XEMACSLISPDIR}/
+	${LN} -sf ${RUBY_EXAMPLESDIR}/misc/${f} ${EMACSLISPDIR}/
+	${LN} -sf ${RUBY_EXAMPLESDIR}/misc/${f} ${XEMACSLISPDIR}/
 .endfor
-	${MKDIR} ${EXAMPLESDIR}/curses
-	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${EXAMPLESDIR}/curses
-	${MKDIR} ${EXAMPLESDIR}/pty
-	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${EXAMPLESDIR}/pty
-	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${DOCDIR}
-	${MKDIR} ${DOCDIR}/etc
-	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${DOCDIR}/etc
-	${MKDIR} ${DOCDIR}/md5
-	${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.txt* ${DOCDIR}/md5
-	${MKDIR} ${DOCDIR}/pty
-	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${DOCDIR}/pty
-	${MKDIR} ${DOCDIR}/readline
-	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${DOCDIR}/readline
+	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
+	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
+	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
+	${INSTALL_DATA} ${WRKSRC}/ext/pty/expect_sample.rb ${WRKSRC}/ext/pty/script.rb ${WRKSRC}/ext/pty/shl.rb ${RUBY_EXAMPLESDIR}/pty
+	${MKDIR} ${RUBY_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${RUBY_DOCDIR}
+	${MKDIR} ${RUBY_DOCDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/ext/etc/etc.txt* ${RUBY_DOCDIR}/etc
+	${MKDIR} ${RUBY_DOCDIR}/md5
+	${INSTALL_DATA} ${WRKSRC}/ext/md5/md5.txt* ${RUBY_DOCDIR}/md5
+	${MKDIR} ${RUBY_DOCDIR}/pty
+	${INSTALL_DATA} ${WRKSRC}/ext/pty/README* ${RUBY_DOCDIR}/pty
+	${MKDIR} ${RUBY_DOCDIR}/readline
+	${INSTALL_DATA} ${WRKSRC}/ext/readline/README ${RUBY_DOCDIR}/readline
 .endif
 	@${CAT} ${PKGMESSAGE}
 

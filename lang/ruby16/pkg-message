@@ -25,7 +25,6 @@ Note that some stuff that comes with the standard Ruby distribution is
 provided as separate ports:
 
 	databases/ruby-gdbm:	GDBM module
-	lang/irb:		Interactive Ruby
 	japanese/rubytk or
 	x11-toolkits/rubytk:	TclTkLib & Ruby/Tk modules
 
