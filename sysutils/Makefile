@@ -144,6 +144,7 @@
     SUBDIR += rotate
     SUBDIR += rtty
     SUBDIR += ruby-application.rb
+    SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
     SUBDIR += safecat
     SUBDIR += samefile
