@@ -20,4 +20,5 @@ bin/mkisofs
 %%PORTDOCS%%%%DOCSDIR%%/README.session
 %%PORTDOCS%%%%DOCSDIR%%/README.sort
 %%PORTDOCS%%%%DOCSDIR%%/README.sparcboot
+%%PORTDOCS%%%%DOCSDIR%%/README.sunx86boot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
