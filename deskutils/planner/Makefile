@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	planner
-PORTVERSION=	0.11
-PORTREVISION=	4
+PORTVERSION=	0.12
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.11
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,19 +18,31 @@ COMMENT=	Project management application for Gnome 2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui libgsf
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgnomeprintui \
+		libgsf
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--enable-static \
+		--disable-python \
+		--disable-dotnet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=	--enable-postgres
-PLIST_SUB+=		POSTGRESQL:=""
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgda2}!=""
+USE_GNOME+=	libgda2
+CONFIGURE_ARGS+=--enable-database=yes
+PLIST_SUB+=	GDA=""
 .else
-CONFIGURE_ARGS+=	--disable-postgres
-PLIST_SUB+=		POSTGRESQL:="@comment "
+PLIST_SUB+=	GDA="@comment "
 .endif
 
-.include <bsd.port.mk>
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]datadir[)]/doc|(prefix)/share/doc|g ; \
+		 s|[(]datadir[)]/mime/|(prefix)/share/mime/|g ; \
+		 s|[(]datadir[)]/mime"|(prefix)/share/mime"|g'
+
+.include <bsd.port.post.mk>
