@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1/-1/}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/DateTime/DateTime.py:${PORTSDIR}/devel/py-mxDateTime
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime/DateTime.py:${PORTSDIR}/lang/py-mx-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1//}
 

@@ -15,8 +15,8 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.org
 
-BUILD_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/devel/py-mxDateTime
-RUN_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/devel/py-mxDateTime
+BUILD_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
+RUN_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 
 USE_PYTHON=		yes
@@ -26,7 +26,7 @@ MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION} \
 			PYTHON=${PYTHON_CMD} \
 			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
 
-DATETIME_DEP=		${PYTHON_SITELIBDIR}/DateTime/__init__.py
+DATETIME_DEP=		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile

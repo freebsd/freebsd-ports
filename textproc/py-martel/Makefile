@@ -16,8 +16,9 @@ DISTNAME=	Martel-${PORTVERSION}
 
 MAINTAINER=	johann@egenetics.com
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/TextTools/__init__.py:${PORTSDIR}/textproc/py-mxTextTools
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
+USE_PYTHON=	yes
 PYTHON_VERSION=	python2.0
 
 MARTEL_DIR=	${PYTHON_SITELIBDIR}/Martel
