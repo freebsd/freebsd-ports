@@ -7,10 +7,11 @@
 
 PORTNAME=	silc
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel ipv6 net security
 MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
 		ftp://ftp.silcnet.org/silc/toolkit/sources/ \
-		http://www.planetmirror.com/pub/silcnet/toolkit/sources / \
+		http://www.planetmirror.com/pub/silcnet/toolkit/sources/ \
 		ftp://ftp.au.silcnet.org/pub/silcnet/toolkit/sources/ \
 		http://the.wiretapped.net/security/network-security/silc/toolkit/sources/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/silc/toolkit/sources/ \
@@ -36,10 +37,6 @@ CONFIGURE_ARGS=	--with-silcd-config-file=${PREFIX}/etc/${PORTNAME} \
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-
-.ifdef(WITHOUT_OPTIMIZED_ASM)
-CONFIGURE_ARGS+=	--disable-asm
-.endif
 
 .ifndef(WITH_PTHREADS)
 CONFIGURE_ARGS+=	--disable-threads
@@ -73,6 +70,10 @@ WITHOUT_OPTIMIZED_ASM=	yes
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
+.ifdef(WITHOUT_OPTIMIZED_ASM)
+CONFIGURE_ARGS+=	--disable-asm
 .endif
 
 .include <bsd.port.post.mk>
