@@ -19,7 +19,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa.on.arena.ne.jp/gslpd/data/V${EPLASER_VERS:S/.//g}/:eplaser \
+		http://www.epkowa2.on.arena.ne.jp/gslpd/data/V${EPLASER_VERS:S/.//g}/:eplaser \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
