@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Email-MIME-Attachment-Stripper
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.31
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -17,7 +16,8 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Strip the attachments from a mail
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/MIME.pm:${PORTSDIR}/mail/p5-Email-MIME \
-		${SITE_PERL}/Email/MIME/Encodings.pm:${PORTSDIR}/mail/p5-Email-MIME-Encodings
+		${SITE_PERL}/Email/MIME/ContentType.pm:${PORTSDIR}/mail/p5-Email-MIME-ContentType \
+		${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-ContentType
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
