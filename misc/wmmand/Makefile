@@ -14,15 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmMand
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 ALL_TARGET=	clean all
 
 MAN1=		wmMand.1
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmMand ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/wmMand.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
