@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	proma
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.jodal.no/projects/proma/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sexbear@tmu.edu.tw
 COMMENT=	Administrating a ProFTPd server storing users in a MySQL database
