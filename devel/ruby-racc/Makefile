@@ -25,29 +25,18 @@ USE_RUBY=	yes
 USE_RUBY_AMSTD=	yes
 USE_RUBY_SETUP=	yes
 
+.if defined(RUNTIME)
+CONFIGURE_ARGS=	--with=lib/raccrt,ext/cparse
+.else
+CONFIGURE_ARGS=	--with=bin/racc,lib/racc,ext/cscan
+.endif
+
 DOCS_EN=	changes.html command.html debug.html grammer.html \
 		index.html parser.html usage.html
 DOCS_JA=	changes.html command.html debug.html grammer.html \
 		index.html parser.html usage.html
 EXAMPLES=	array.y array2.y calc-ja.y calc.y conflict.y \
 		hash.y lalr.y lists.y syntax.y yyerr.y
-
-post-extract:
-	${PERL} -i -ne '/^amstd\b/ || /^strscan\b/ || print' ${WRKSRC}/lib/PATHCONV
-	${RM} -rf ${WRKSRC}/lib/amstd ${WRKSRC}/lib/strscan
-.if defined(RUNTIME)
-	${PERL} -i -ne '/^racc\b/ || print' ${WRKSRC}/bin/PATHCONV
-	${RM} -rf ${WRKSRC}/bin/racc
-	${PERL} -i -ne '/^cscan\b/ || print' ${WRKSRC}/ext/PATHCONV
-	${RM} -rf ${WRKSRC}/ext/cscan
-	${PERL} -i -ne '/^racc\b/ || print' ${WRKSRC}/lib/PATHCONV
-	${RM} -rf ${WRKSRC}/lib/racc
-.else
-	${RM} -rf ${WRKSRC}/ext
-	${PERL} -i -ne '/^raccrt\b/ || print' ${WRKSRC}/lib/PATHCONV
-	${RM} -rf ${WRKSRC}/lib/raccrt
-	${RM} -rf ${WRKSRC}/lib/racc/parser.rb
-.endif
 
 .if !defined(RUNTIME)
 post-patch:
