@@ -22,6 +22,7 @@ USE_AUTOCONF=	yes
 USE_AUTOMAKE=	yes
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
 		--with-lang=ua \
