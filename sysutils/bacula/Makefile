@@ -18,7 +18,7 @@ COMMENT=	The network backup solution
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
 #
-BACULA_DIR=/var/db/bacula
+BACULA_DIR?=/var/db/bacula
 #
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
