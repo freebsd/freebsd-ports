@@ -1,12 +1,12 @@
 # New ports collection makefile for:	iconv
-# Version required:	0.1
 # Date created:		21 Sep 1999
 # Whom:			joy@urc.ac.ru
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iconv-0.2
+PORTNAME=	iconv
+PORTVERSION=	0.2
 CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.urc.ac.ru/pub/OS/FreeBSD/converters/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	kermit
-# Version required:     6.0.192
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cku196
-PKGNAME=        kermit-7.0.196
+PKGNAME=	kermit
+PORTVERSION=	7.0.196
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/
+DISTNAME=	cku196
 
 MAINTAINER=	joerg@FreeBSD.org
 

@@ -1,19 +1,19 @@
 # ex:ts=8
 # Ports collection makefile for:  zmtx-zmrx
-# Version required: 0.0
 # Date created:			  29 July 1996
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zmtx-zmrx
-PKGNAME=	zmtx-zmrx-1.02
+PORTNAME=	zmtx-zmrx
+PORTVERSION=	1.02
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.inria.fr/network/modem/  \
 		ftp://ftp.vex.net/pub/software/
 # see also comp.unix.sources for version 1.0
 # ftp://ftp.lth.se/pub/usenet/comp.sources.unix/volume28/zm/part01.gz
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	obrien@FreeBSD.org

@@ -1,17 +1,17 @@
 # New ports collection makefile for:    ecu
-# Version required:     4.08
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       ecu-4.08
+PORTNAME=	ecu
+PORTVERSION=	4.08
 CATEGORIES=	comms
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/comm/
-#MASTER_SITES=   ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/comm/
+#MASTER_SITES=	ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
 do-configure:
 	cd ${WRKSRC}; yes "" | ./Configure

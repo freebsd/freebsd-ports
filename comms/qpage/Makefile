@@ -6,7 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	qpage-3.2
+PORTNAME=	qpage
+PORTVERSION=	3.2
 CATEGORIES=	comms
 #MASTER_SITES=	http://www.qpage.org/download/
 MASTER_SITES=	http://people.FreeBSD.org/~fenner/

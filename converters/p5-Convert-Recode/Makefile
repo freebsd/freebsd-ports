@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Convert-Recode
-# Version required:			1.03
 # Date created:				17 January 2000
 # Whom:					Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Convert-Recode-1.03
-PKGNAME=	p5-Convert-Recode-1.03
+PKGNAME=	p5-Convert-Recode
+PORTVERSION=	1.03
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
+DISTNAME=	Convert-Recode-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.RU
 

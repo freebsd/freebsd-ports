@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Compress-Zlib
-# Version required:			1.01
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Compress-Zlib-1.08
-PKGNAME=	p5-Compress-Zlib-1.08
+PORTNAME=	p5-Compress-Zlib
+PORTVERSION=	1.08
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Compress
+DISTNAME=	Compress-Zlib-1.08
 
 MAINTAINER=	jfitz@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    viewfax
-# Version required:     2.3
 # Date created:         16 sept 1995
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=       viewfax-2.3
+PORTNAME=	viewfax
+PORTVERSION=	2.3
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 

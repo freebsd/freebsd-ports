@@ -1,12 +1,12 @@
 # ex:ts=8
 # Ports collection makefile for:  lrzsz
-# Version required: 0.0
 # Date created:			  29 Sept 1996
 # Whom:				  David O'Brien <obrien@cs.ucdavis.edu>
 #
 # $FreeBSD$
 
-DISTNAME=	lrzsz-0.12.20
+PORTNAME=	lrzsz
+PORTVERSION=	0.12.20
 CATEGORIES=	comms
 MASTER_SITES=	ftp://tirka.ohse.de/uwe/releases/  \
 		ftp://ftp.netsw.org/netsw/Network/Modem/Protocols/ZModem/lrzsz/  \

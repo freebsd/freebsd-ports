@@ -1,15 +1,15 @@
 # New ports collection makefile for:	bpl+
-# Version required:		?
 # Date created:			22 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	bpl+
-PKGNAME=	bpl+-1.0
+PORTNAME=	bpl+
+PORTVERSION=	1.0
 CATEGORIES=	comms
 MASTER_SITES=	http://people.FreeBSD.org/~max/distfiles/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	max@FreeBSD.org
 

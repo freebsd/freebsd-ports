@@ -1,17 +1,17 @@
 # New ports collection makefile for:	libutf-8
-# Version required:			1.0
 # Date created:				1 April 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libutf-8-1.0
-PKGNAME=	libutf-8.1.0
+PORTNAME=	libutf
+PORTVERSION=	8.1.0
 CATEGORIES=	converters
 MASTER_SITES=	http://www.whizkidtech.net/fports/ \
 		ftp://ftp.whizkidtech.net/unix/ \
 		http://www.whizkidtech.net/ISO-8859-2/
+DISTNAME=	libutf-8-1.0
 
 MAINTAINER=	adam@whizkidtech.net
 

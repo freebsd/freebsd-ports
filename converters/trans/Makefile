@@ -1,20 +1,20 @@
 # New ports collection makefile for:    trans
-# Version required:     1.20
 # Date created:         6 May 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       trans120
-PKGNAME=        trans-1.20
-CATEGORIES=     converters russian
-MASTER_SITES=   http://www.kostis.net/freeware/
+PORTNAME=	trans
+PORTVERSION=	1.20
+CATEGORIES=	converters russian
+MASTER_SITES=	http://www.kostis.net/freeware/
+DISTNAME=	trans120
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-LIBDIR= ${PREFIX}/lib/trans
-ALL= transhtm transiso transce8 transtab checkiso checkuni
+LIBDIR=		${PREFIX}/lib/trans
+ALL=		transhtm transiso transce8 transtab checkiso checkuni
 
 do-install:
 	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin

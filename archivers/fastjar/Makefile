@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fastjar
-# Version required:     0.90
 # Date created:		18 March 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fastjar-0.90
+PORTNAME=	fastjar
+PORTVERSION=	0.90
 CATEGORIES=	archivers java
 MASTER_SITES=	http://download.sourceforge.net/fastjar/
 EXTRACT_SUFX=	.tgz

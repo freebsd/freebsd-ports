@@ -1,20 +1,20 @@
 # New ports collection makefile for:    rar
 # http://www.rarsoft.com/
-# Version required:     2.*
 # Date created:         15 May 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       rarbsd
-PKGNAME=        rar-2.02
+PORTNAME=	rar
+PORTVERSION=	2.02
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://rarsoft.ti.sk/pub/rar/ \
+MASTER_SITES=	ftp://rarsoft.ti.sk/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
-EXTRACT_SUFX=   .sfx
+DISTNAME=	rarbsd
+EXTRACT_SUFX=	.sfx
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
 CAT1=		rar.1
 

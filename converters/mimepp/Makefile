@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mimepp
-# Version required:			1.0
 # Date created:				3 July 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		mimepp-1.0
+PORTNAME=		mimepp
+PORTVERSION=		1.0
 CATEGORIES=		converters
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++

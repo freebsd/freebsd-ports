@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mgetty+sendfax
-# Version required:			1.1.21
 # Date created:				20 April 1998
 # Whom:					rkw
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mgetty1.1.21-Jul24
-PKGNAME=	mgetty-1.1.21
+PORTNAME=	mgetty
+PORTVERSION=	1.1.21.07.24
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
+DISTNAME=	mgetty1.1.21-Jul24
 
 MAINTAINER=	jmz@FreeBSD.org
 

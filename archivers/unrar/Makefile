@@ -1,19 +1,19 @@
 # New ports collection makefile for:    unrar
 # http://www.rarsoft.com/
-# Version required:     2.*
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       unrar-2.50
+PORTNAME=	unrar
+PORTVERSION=	2.50
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 
-NO_WRKSUBDIR=   Yes
+NO_WRKSUBDIR=	Yes
 
 do-build:
 	cd ${WRKSRC} && \

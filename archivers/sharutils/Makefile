@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gshar+gunshar
-# Version required:	4.2.1
 # Date created:		28 Dec 1994
 # Whom:			ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sharutils-4.2.1
+PORTNAME=	sharutils
+PORTVERSION=	4.2.1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	sharutils

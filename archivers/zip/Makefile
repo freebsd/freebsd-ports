@@ -1,15 +1,15 @@
 # New ports collection makefile for:	zip (without encryption)
-# Version required:	2.3
 # Date created:		22 Dec 1994
 # Whom:			ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zip23
-PKGNAME=	zip-2.3
+PORTNAME=	zip
+PORTVERSION=	2.3
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/infozip/src/
+DISTNAME=	zip23
 
 MAINTAINER=	ache@FreeBSD.org
 
