@@ -7381,6 +7381,7 @@ qmail-ldap	ports/mail/qmail-ldap
 qmail-mysql	ports/mail/qmail-mysql
 qmail-notify	ports/mail/qmail-notify
 qmail-remove	ports/mail/qmail-remove
+qmail-scanner	ports/mail/qmail-scanner
 qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
 qmailanalog	ports/mail/qmailanalog
