@@ -22,7 +22,6 @@ sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/OptionLists.txt
 %%PORTDOCS%%share/doc/exim/README
 %%PORTDOCS%%share/doc/exim/dbm.discuss.txt
-%%PORTDOCS%%share/doc/exim/exim.8
 %%PORTDOCS%%share/doc/exim/filter.txt
 %%PORTDOCS%%share/doc/exim/pcre.txt
 %%PORTDOCS%%share/doc/exim/pcretest.txt
