@@ -3,13 +3,13 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.15 1999/02/03 11:11:48 asami Exp $
+# $Id: Makefile,v 1.16 1999/03/20 17:32:21 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.bres.tsukuba.ac.jp/~yohta/netscape/ \
-		${PORTKIT_SITES}
+MASTER_SITES=	${PORTKIT_SITES}
+		http://www.bres.tsukuba.ac.jp/~yohta/netscape/ \
 DISTFILES=	${JAPANIZE_KIT} ${PORTKIT}
 
 MAINTAINER=	sada@FreeBSD.ORG
@@ -43,9 +43,8 @@ NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
 PORTKIT=	ja-netscape-portkit.1999.0320.tar.gz
 PORTKIT_DIR=	${WRKDIR}/portkit
-PORTKIT_SITES=	http://WWW.JP.FreeBSD.ORG/~sada/distfiles/ \
+PORTKIT_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
-
 .SILENT:
 
 do-configure:

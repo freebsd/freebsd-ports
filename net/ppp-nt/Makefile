@@ -3,13 +3,13 @@
 # Date created:		10 August 1998
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/12/07 22:22:10 sada Exp $
+# $Id: Makefile,v 1.4 1999/03/28 18:04:44 sada Exp $
 #
 
 DISTNAME=	ppp-2.2.7
 PKGNAME=	ppp-nt-2.2.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.jp.freebsd.org/~sada/distfiles/ \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.freebsd.org/~sada/distfiles/
 
 PATCH_SITES=	http://www.rr.iij4u.or.jp/~sada/patches/ \

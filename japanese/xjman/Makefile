@@ -5,13 +5,13 @@
 #			japanese/man-doc
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/29 22:31:14 sada Exp $
+# $Id: Makefile,v 1.2 1999/03/31 05:25:49 asami Exp $
 #
 
 DISTNAME=	xjman-0.2
 PKGNAME=	ja-xjman-0.2
 CATEGORIES=	japanese
-MASTER_SITES=	http://WWW.jp.FreeBSD.ORG/~sada/distfiles/ \
+MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.dsl.gr.jp/~go/xjman/ \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
 
