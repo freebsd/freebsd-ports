@@ -3,7 +3,7 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/19 02:13:54 itojun Exp $
+# $Id: Makefile,v 1.2 1997/09/19 02:20:20 itojun Exp $
 #
 
 DISTNAME=	mei-1.53
@@ -13,7 +13,7 @@ DISTFILES=	mei153s.tgz mei153d.tgz
 
 MAINTAINER=	itojun@itojun.org
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/nkf
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 MAN1=	mei.1 moe.1
 MANLANG=	"" ja_JP.EUC
