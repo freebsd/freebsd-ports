@@ -1,0 +1,19 @@
+*** configure.orig	Sun May 14 17:28:39 2000
+--- configure	Sun May 14 17:33:16 2000
+***************
+*** 2657,2663 ****
+  MKDEP_FILE="$srcdir/util/make-depend"
+  echo $ac_n "checking how to calculate deps""... $ac_c" 1>&6
+  echo "configure:2660: checking how to calculate deps" >&5
+! if test $ac_cv_prog_CC = gcc; then
+  				MKDEP="\$(top_srcdir)/util/mkdep"
+  elif $CC -V 2>&1 | grep WorkShop > /dev/null; then
+  				MKDEP="\$(top_srcdir)/util/mkdep -flag -xM"
+--- 2657,2663 ----
+  MKDEP_FILE="$srcdir/util/make-depend"
+  echo $ac_n "checking how to calculate deps""... $ac_c" 1>&6
+  echo "configure:2660: checking how to calculate deps" >&5
+! if test $ac_cv_prog_gcc = yes; then
+  				MKDEP="\$(top_srcdir)/util/mkdep"
+  elif $CC -V 2>&1 | grep WorkShop > /dev/null; then
+  				MKDEP="\$(top_srcdir)/util/mkdep -flag -xM"
