@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	varconf
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://victor.worldforge.org/%SUBDIR%/ \
 		http://purple.worldforge.org/wf/downloads/libs/varconf/ \
