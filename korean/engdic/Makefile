@@ -15,4 +15,9 @@ MAINTAINER=	hollywar@mail.holywar.net
 
 ALL_TARGET=	clean all
 
+post-patch:
+	@for f in ${WRKSRC}/Makefile ${WRKSRC}/engdic.h; do \
+	 ${PERL} -pi -e 's,/usr/local,${PREFIX},g' $$f; \
+	done
+
 .include <bsd.port.mk>
