@@ -12,8 +12,6 @@ MASTER_SITES=	http://flo.mech.eng.usyd.edu.au/~norris/src/
 
 MAINTAINER=	ports@FreeBSD.org
 
-.include <bsd.port.pre.mk>
-
 pre-build:
 	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
 
@@ -28,9 +26,6 @@ MAN3=   access.3f alarm.3f chdir.3f chmod.3f ctime.3f drand.3f dsecnd.3f    \
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
-	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-		${LN} -sf libU77.so.1.0 ${PREFIX}/lib/libU77.so; \
-	fi
 	${INSTALL_MAN} ${WRKSRC}/man/*.3f ${PREFIX}/man/man3
 
 .if !defined(NOPORTDOCS)
@@ -38,4 +33,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.ps ${PREFIX}/share/doc/libU77
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
