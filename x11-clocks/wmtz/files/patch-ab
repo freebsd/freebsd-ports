@@ -1,13 +1,11 @@
---- wmtz.c.orig	Sun Jun 13 20:36:28 1999
-+++ wmtz.c	Sat Oct  2 15:49:31 1999
-@@ -107,8 +107,8 @@
- 
- 	month[0] = "JAN\0";  month[1] = "FEB\0";  month[2] = "MAR\0";
- 	month[3] = "APR\0";  month[4] = "MAY\0";  month[5] = "JUN\0";
--	month[6] = "JUL\0";  month[7] = "AUG\0";  month[8] = "OCT\0";
--	month[9] = "SEP\0";  month[10] = "NOV\0";  month[11] = "DEC\0";
-+	month[6] = "JUL\0";  month[7] = "AUG\0";  month[8] = "SEP\0";
-+	month[9] = "OCT\0";  month[10] = "NOV\0";  month[11] = "DEC\0";
- 
- 	week_day[0] = "SUNDAY   \0";
- 	week_day[1] = "MONDAY   \0";
+--- wmtz.c.orig	Tue Dec 28 17:23:11 1999
++++ wmtz.c	Tue Dec 28 17:23:47 1999
+@@ -111,7 +111,7 @@
+   month[0] = "JAN";  month[1] = "FEB";  month[2] = "MAR";
+   month[3] = "APR";  month[4] = "MAY";  month[5] = "JUN";
+   month[6] = "JUL";  month[7] = "AUG";  month[8] = "SEP";
+-  month[9] = "OUT";  month[10] = "NOV";  month[11] = "DEC";
++  month[9] = "OCT";  month[10] = "NOV";  month[11] = "DEC";
+   
+   week_day[0] = "SUNDAY   ";
+   week_day[1] = "MONDAY   ";
