@@ -1,0 +1,19 @@
+*** configure.orig     Thu Nov 19 16:18:19 1998
+--- configure  Thu Nov 19 16:19:02 1998
+***************
+*** 805,811 ****
+      for perl in perl5 perl miniperl; do
+           if test -x "$dir/$perl"; then
+               perl="$dir/$perl"
+!              version=`$perl -v | grep version | sed -e 's/.* version //' -e 's/ with.*//'`
+               versionnum="`echo $version | sed -e 's/\.//g' -e 's/_//g'`"
+               versionnum=`expr $versionnum - $c`
+               echo "$versionnum $version $perl" >>$TMPFILE
+--- 805,811 ----
+      for perl in perl5 perl miniperl; do
+           if test -x "$dir/$perl"; then
+               perl="$dir/$perl"
+!              version=`$perl -v | grep version | sed -e 's/.* version //' -e 's/ built.*//'`
+               versionnum="`echo $version | sed -e 's/\.//g' -e 's/_//g'`"
+               versionnum=`expr $versionnum - $c`
+               echo "$versionnum $version $perl" >>$TMPFILE

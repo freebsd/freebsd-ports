@@ -3,7 +3,7 @@
 # Date created:			09-Sep-1997
 # Whom:				Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.5 1998/11/15 20:47:32 jseger Exp $
+# $Id: Makefile,v 1.6 1998/11/16 07:12:06 asami Exp $
 #
 
 DISTNAME=	gfont-1.0.2
@@ -20,12 +20,8 @@ RUN_DEPENDS=	mf:${PORTSDIR}/print/teTeX \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 300003
-BROKEN=		perl5
-.endif
-
 USE_PERL5=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		gfont.1
 
