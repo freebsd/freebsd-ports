@@ -5611,7 +5611,7 @@ p5-Mail-RBL	ports/mail/p5-Mail-RBL
 p5-Mail-Sender	ports/mail/p5-Mail-Sender
 p5-Mail-Sendmail	ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
-p5-Mail-SpamAssassin-devel	ports/mail/p5-Mail-SpamAssassin-devel
+p5-Mail-SpamAssassin-snapshot	ports/mail/p5-Mail-SpamAssassin-snapshot
 p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
