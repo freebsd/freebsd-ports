@@ -31,6 +31,7 @@ bin/flow
 bin/forest
 bin/galaxy
 bin/gears
+bin/gflux
 bin/glplanet
 bin/goop
 bin/grav
@@ -38,6 +39,7 @@ bin/greynetic
 bin/halo
 bin/helix
 bin/hopalong
+bin/hyperball
 bin/hypercube
 bin/ifs
 bin/imsmap
@@ -60,6 +62,7 @@ bin/moire2
 bin/morph3d
 bin/mountain
 bin/munch
+bin/nerverot
 bin/noseguy
 bin/pedal
 bin/penetrate
@@ -104,9 +107,11 @@ bin/xflame
 bin/xjack
 bin/xlyap
 bin/xmatrix
+bin/xrayswarm
 bin/xroger
 bin/xscreensaver
 bin/xscreensaver-command
+bin/xscreensaver-gl-helper
 bin/xspirograph
 bin/xsublim
 bin/xteevee
