@@ -9902,6 +9902,7 @@ zinf		ports/audio/zinf
 zip		ports/archivers/zip
 zipios++	ports/archivers/zipios++
 zircon		ports/irc/zircon
+zisofs-tools	ports/sysutils/zisofs-tools
 zmailer		ports/mail/zmailer
 zmtx-zmrx	ports/comms/zmtx-zmrx
 znavigator	ports/www/znavigator
