@@ -15,5 +15,6 @@ MAINTAINER=	pat@databits.net
 
 GNU_CONFIGURE=	yes
 USE_KDELIBS_VER=	2
+USE_X_PREFIX=	yes 
 
 .include <bsd.port.mk>
