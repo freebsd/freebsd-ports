@@ -513,4 +513,3 @@ info/liboctave.info-2
 info/liboctave.info-3
 @exec install-info --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
 @exec install-info --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir
-@unexec /sbin/ldconfig -R

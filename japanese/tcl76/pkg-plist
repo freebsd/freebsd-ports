@@ -1,6 +1,7 @@
 lib/libtcl76jp.a
 lib/libtcl76jp.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 bin/tclsh7.6jp
 include/tcl7.6jp/tcl.h
 include/tcl7.6jp/unix/tclUnixPort.h

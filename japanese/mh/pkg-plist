@@ -52,6 +52,7 @@ lib/mh/slocal
 lib/mh/rcvtty
 lib/libmh.so.3.2
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 lib/mh/mtstailor
 lib/mh/MailAliases
 lib/mh/components

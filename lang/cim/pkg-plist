@@ -7,6 +7,7 @@ lib/libcim.a
 lib/libcim.la
 lib/libcim.so.1.0
 @exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 include/cim.h
 @unexec install-info --delete %D/info/cim.info %D/info/dir
 info/cim.info
