@@ -3,10 +3,10 @@
 # Date created:        31 December 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.5 1999/05/27 12:49:55 kris Exp $
+# $Id: Makefile,v 1.6 1999/05/29 03:56:15 steve Exp $
 #
 
-DISTNAME=	xwhois-0.3.5
+DISTNAME=	xwhois-0.3.6
 CATEGORIES=	net
 MASTER_SITES=	http://c64.org/~nr/ \
 		http://www.goatnet.ml.org/ \
