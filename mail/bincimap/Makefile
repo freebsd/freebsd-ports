@@ -12,12 +12,13 @@
 #
 
 PORTNAME=	bincimap
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 		http://www.bincimap.andreas.hanssen.name/%SUBDIR%/ \
 		http://bincimap.argonsoft.de/www.bincimap.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dl/tarballs/1.2
+DISTNAME=	${PORTNAME}-${PORTVERSION}final
 
 PATCH_SITES=	${MASTER_SITES:S!%SUBDIR%!${MASTER_SITE_SUBDIR}!}
 #PATCHFILES=	bincimap-1.2.1-patch000-mimeparser
