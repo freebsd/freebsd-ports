@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.10 2001-08-01 11:56:18 knu Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.11 2001-08-20 10:05:43 kris Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -12,7 +12,7 @@ if [ "${BATCH}" = "yes" ]; then
 else
 	/usr/bin/dialog --title "Postfix configuration options" --clear \
 			--checklist "\n\
-Please select desired options:" -1 -1 16 \
+Please select desired options:" -1 -1 8 \
 PCRE		"Perl Compatible Regular Expressions" OFF \
 SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
