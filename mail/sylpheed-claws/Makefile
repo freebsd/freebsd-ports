@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.10
-PORTREVISION=	2
+PORTVERSION=	0.9.11
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -20,7 +19,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-THEMEVERSION=	20040206
+THEMEVERSION=	20040525
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
@@ -175,8 +174,8 @@ post-install:
 		convert_mbox.pl eud2gc.py filter_conv.pl freshmeat_search.pl \
 		gif2xface.pl google_msgid.pl google_search.pl \
 		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		launch_firebird maildir2sylpheed.pl multiwebsearch.conf \
-		multiwebsearch.pl newscache_clean.pl outlook2sylpheed.pl \
+		maildir2sylpheed.pl multiwebsearch.conf multiwebsearch.pl \
+		nautilus2sylpheed.sh newscache_clean.pl outlook2sylpheed.pl \
 		tb2sylpheed update-po uudec vcard2xml.py ${DATADIR}
 .if !defined(WITHOUT_THEMES)
 	@${MKDIR} ${DATADIR}/themes
