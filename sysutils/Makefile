@@ -294,6 +294,7 @@
     SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += rotate
+    SUBDIR += rsnapshot
     SUBDIR += rtty
     SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
