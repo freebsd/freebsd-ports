@@ -7,6 +7,7 @@
 
 PORTNAME=	clhep
 PORTVERSION=	1.8.0.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://wwwinfo.cern.ch/asd/lhc++/export/share/CLHEP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}

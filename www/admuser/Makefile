@@ -7,6 +7,7 @@
 
 PORTNAME=	admuser
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://web.onda.com.br/orso/
 

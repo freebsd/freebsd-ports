@@ -7,7 +7,7 @@
 
 PORTNAME=	pwm
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 

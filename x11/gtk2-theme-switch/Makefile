@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk2-theme-switch
 PORTVERSION=	2.0.0.r2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
 DISTNAME=	${PORTNAME:S/gtk2/gtk/}-${PORTVERSION:S/.r/rc/}

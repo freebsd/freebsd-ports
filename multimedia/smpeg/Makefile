@@ -7,7 +7,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \

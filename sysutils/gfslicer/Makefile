@@ -8,6 +8,7 @@
 
 PORTNAME=	gfslicer
 PORTVERSION=	1.5.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/gfslicer/
 

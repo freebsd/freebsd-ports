@@ -7,6 +7,7 @@
 
 PORTNAME=	nic
 PORTVERSION=	0.0.2.011230
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://pompo.net/horde/nic/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmg
 PORTVERSION=	0.15.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm gnome
 MASTER_SITES=	http://ductape.net/~reeve/downloads/ \
 		http://www.geocities.com/SiliconValley/Screen/4079/downloads/

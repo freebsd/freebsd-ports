@@ -7,6 +7,7 @@
 
 PORTNAME=	libunp
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://www.cs.columbia.edu/networks98/stevens/

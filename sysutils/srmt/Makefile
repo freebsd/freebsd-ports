@@ -7,6 +7,7 @@
 
 PORTNAME=	srmt
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 DISTNAME=	star-${PORTVERSION}

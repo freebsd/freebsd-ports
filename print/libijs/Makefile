@@ -7,6 +7,7 @@
 
 PORTNAME=	libijs
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/ijs/download/
 DISTNAME=	ijs-${PORTVERSION}

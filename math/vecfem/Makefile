@@ -7,7 +7,7 @@
 
 PORTNAME=	vecfem
 PORTVERSION=	3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.massey.ac.nz/~lgrosz/vecfem/downloads/
 DISTNAME=	vem

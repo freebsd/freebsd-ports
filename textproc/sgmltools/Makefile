@@ -7,6 +7,7 @@
 
 PORTNAME=	sgmltools
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.us.sgmltools.org/pub/SGMLtools/v2.0/source/ \
 		ftp://ftp.nllgg.nl/pub/SGMLtools/v2.0/source/

@@ -7,6 +7,7 @@
 
 PORTNAME=	irrtoolset
 PORTVERSION=	4.7.3
+PORTREVISION=	1
 CATEGORIES=	net tk82
 MASTER_SITES=	ftp://ftp.ripe.net/tools/IRRToolSet/IRRToolSet-${PORTVERSION}/
 DISTNAME=	IRRToolSet-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	bnbt
 PORTVERSION=	7.3b
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}

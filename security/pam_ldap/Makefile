@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_ldap
 PORTVERSION=	1.6.7
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/

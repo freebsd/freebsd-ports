@@ -7,6 +7,7 @@
 
 PORTNAME=	twig
 PORTVERSION=	2.7.7
+PORTREVISION=	1
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.informationgateway.org/download/
 

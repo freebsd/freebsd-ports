@@ -7,6 +7,7 @@
 
 PORTNAME=	Fudgit
 PORTVERSION=	2.41
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.physics.mcgill.ca/pub/Fudgit/
 DISTNAME=	Fudgit_${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	usrinfo
 PORTVERSION=	.02
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.snaphat.com/pub/software/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

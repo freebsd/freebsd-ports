@@ -7,6 +7,7 @@
 
 PORTNAME=	gscommander
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.nice.ch/~phip/
 DISTNAME=	GSCommander-${PORTVERSION}

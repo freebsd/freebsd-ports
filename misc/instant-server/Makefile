@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-server
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MASTER_SITE_SUBDIR=	pub/instant-server

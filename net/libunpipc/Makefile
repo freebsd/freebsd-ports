@@ -7,6 +7,7 @@
 
 PORTNAME=	libunpipc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.kohala.com/pub/rstevens/ \
 		http://compass.net.edu.cn:8000/programming/

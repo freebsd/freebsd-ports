@@ -6,7 +6,7 @@
 
 PORTNAME=	pam_smb
 PORTVERSION=	2.0.0.r5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://pamsmb.sourceforge.net/v2/ \
 		http://www.csn.ul.ie/~airlied/pam_smb/v2/

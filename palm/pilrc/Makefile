@@ -7,6 +7,7 @@
 
 PORTNAME=	pilrc
 PORTVERSION=	2.9p9
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.ardiri.com/download/files/palm/
 EXTRACT_SUFX=	.tgz

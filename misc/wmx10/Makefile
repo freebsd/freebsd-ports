@@ -7,6 +7,7 @@
 
 PORTNAME=	wmx10
 PORTVERSION=	0.03
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_webapp
 PORTVERSION=	4.1.24
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://jakarta.apache.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	builds/jakarta-tomcat-4.0/release/v${TOMCAT_RELEASE}/src

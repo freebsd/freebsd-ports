@@ -5,6 +5,7 @@
 
 PORTNAME=	nessus-devel
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \

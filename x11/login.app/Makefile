@@ -7,6 +7,7 @@
 
 PORTNAME=	login.app
 PORTVERSION=	2.0.0.a7
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://wm.current.nu/files/Login.app/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	ion
 PORTVERSION=	20020207
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.cs.tut.fi/~tuomov/dl/
 

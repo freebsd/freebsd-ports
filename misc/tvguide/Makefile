@@ -7,6 +7,7 @@
 
 PORTNAME=	tvguide
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.cherrynebula.net/downloads/
 

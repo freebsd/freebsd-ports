@@ -8,6 +8,7 @@
 
 PORTNAME=	oinkmaster
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/andreas/oinkmaster/
 

@@ -5,6 +5,7 @@
 
 PORTNAME=	netmask
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://trap.mtview.ca.us/~talby/ \
 		${MASTER_SITE_DEBIAN}

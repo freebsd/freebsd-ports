@@ -7,6 +7,7 @@
 
 PORTNAME=	malsync
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	palm
 MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=		adtool
 PORTVERSION=		1.2
+PORTREVISION=	1
 CATEGORIES=		sysutils
 MASTER_SITES=		http://dexy.mine.nu/adtool/
 

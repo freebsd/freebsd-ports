@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-engines-collection
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -7,7 +7,7 @@
 
 PORTNAME=	tkdesk
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm tk83
 MASTER_SITES=	http://tkdesk.sourceforge.net/dist/ \
 		${MASTER_SITE_SUNSITE}

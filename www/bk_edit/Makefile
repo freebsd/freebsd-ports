@@ -8,6 +8,7 @@
 
 PORTNAME=	bk_edit
 PORTVERSION=	0.6.23
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www2.fht-esslingen.de/~clfuit00/sasnt/packages/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	chpasswd
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://web.onda.com.br/orso/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	nscache
 PORTVERSION= 	0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/

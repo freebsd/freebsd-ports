@@ -7,6 +7,7 @@
 
 PORTNAME=	gkrellscore
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://ssl.usu.edu/paul/gkrellscore/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

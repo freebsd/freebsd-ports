@@ -8,6 +8,7 @@
 
 PORTNAME=	eukleides
 PORTVERSION=	0.9.2.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION:R}rev${PORTVERSION:E}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gyroscope
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
 

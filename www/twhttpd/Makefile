@@ -7,6 +7,7 @@
 
 PORTNAME=	twhttpd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.geocities.com/samngms/twhttpd/download/
 DISTNAME=	twhttpd-${PORTVERSION}

@@ -8,6 +8,7 @@
 
 PORTNAME=	scribus
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/ \
 		http://scribus.planetmirror.com/

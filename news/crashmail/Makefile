@@ -7,6 +7,7 @@
 
 PORTNAME=	crashmail
 PORTVERSION=	0.70
+PORTREVISION=	1
 CATEGORIES=	news mail
 MASTER_SITES=	http://www.df.lth.se/~billing/crashmail/
 DISTNAME=	cm07linux

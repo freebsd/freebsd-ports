@@ -8,6 +8,7 @@
 
 PORTNAME=	gtkglareamm
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ece.ucdavis.edu/~kenelson/gtk-glarea/dist/
 

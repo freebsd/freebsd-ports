@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	ftp://ftp.unix-ag.org/user/bmeurer/xfce4/xfce4-session/ \
 		http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/

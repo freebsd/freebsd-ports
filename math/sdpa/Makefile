@@ -7,7 +7,7 @@
 
 PORTNAME=	sdpa
 PORTVERSION=	6.00
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	math
 MASTER_SITES=	http://sdpa.is.titech.ac.jp/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz

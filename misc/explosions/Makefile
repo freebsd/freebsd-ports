@@ -7,6 +7,7 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2001.10.29
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/explosions/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}

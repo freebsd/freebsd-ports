@@ -7,7 +7,7 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.corest.com/download/msyslog/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

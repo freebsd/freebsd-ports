@@ -7,6 +7,7 @@
 
 PORTNAME=	libmatroska
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://matroska.sourceforge.net/downloads/
 

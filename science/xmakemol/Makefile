@@ -6,6 +6,7 @@
 
 PORTNAME=	xmakemol
 PORTVERSION=	4.40
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://vegemite.chem.nottingham.ac.uk/~xmakemol/dists/
 

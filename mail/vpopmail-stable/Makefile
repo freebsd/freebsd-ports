@@ -7,7 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 PKGNAMESUFFIX=	-stable

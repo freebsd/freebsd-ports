@@ -6,7 +6,7 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/
 

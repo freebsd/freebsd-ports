@@ -7,6 +7,7 @@
 
 PORTNAME=	docker
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.kerneled.com/projects/docker/ \
 		http://icculus.org/openbox/docker/

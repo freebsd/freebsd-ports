@@ -7,6 +7,7 @@
 
 PORTNAME=	qinx
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.usermode.org/code/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	echolot
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITES=	http://echolot.sourceforge.net/download/

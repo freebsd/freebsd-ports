@@ -7,6 +7,7 @@
 
 PORTNAME=	nicotine
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nicotine.thegraveyard.org/
 

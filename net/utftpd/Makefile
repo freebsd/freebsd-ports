@@ -7,6 +7,7 @@
 
 PORTNAME=	utftpd
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ohse.de/uwe/releases/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/downloads/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/downloads/ \

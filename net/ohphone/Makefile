@@ -7,6 +7,7 @@
 
 PORTNAME=	ohphone
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \

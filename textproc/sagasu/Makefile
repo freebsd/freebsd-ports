@@ -6,6 +6,7 @@
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/

@@ -7,6 +7,7 @@
 
 PORTNAME=	gforge
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/download.php/44/
 

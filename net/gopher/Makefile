@@ -7,6 +7,7 @@
 
 PORTNAME=	gopher
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
 		http://dl.droso.net/FreeBSD/distfiles/

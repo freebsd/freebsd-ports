@@ -7,6 +7,7 @@
 
 PORTNAME=	bbapm
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ndir
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.Informatik.Uni-Oldenburg.DE/~mw/software/
 DISTNAME=	NDir-${PORTVERSION}

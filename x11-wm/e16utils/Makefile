@@ -7,6 +7,7 @@
 
 PORTNAME=	e16utils
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://public.planetmirror.com/pub/enlightenment/e16utils/

@@ -7,6 +7,7 @@
 
 PORTNAME=	nte
 PORTVERSION=	1.5a29
+PORTREVISION=	1
 CATEGORIES=	mbone tk80
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/nte/1.5a29/
 

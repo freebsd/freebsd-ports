@@ -7,6 +7,7 @@
 
 PORTNAME=	pari
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.1/ \
 		http://www.gn-50uma.de/ftp/pari-2.1/

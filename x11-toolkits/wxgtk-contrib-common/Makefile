@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit contributed libraries (common files)

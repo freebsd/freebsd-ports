@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	obconf
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/obconf/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	telbook
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 

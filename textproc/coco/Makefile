@@ -7,6 +7,7 @@
 
 PORTNAME=       coco
 PORTVERSION=    ${MULE_VERSION}
+PORTREVISION=	1
 CATEGORIES=     textproc
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \

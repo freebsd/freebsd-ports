@@ -7,6 +7,7 @@
 
 PORTNAME=	nast
 PORTVERSION=	0.1.7e
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nast.berlios.de/src/ \
 		http://voodoo.oberon.net/downloads/

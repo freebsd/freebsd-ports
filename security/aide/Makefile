@@ -7,6 +7,7 @@
 
 PORTNAME=	aide
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
 		ftp://ftp.cs.tut.fi/pub/src/gnu/

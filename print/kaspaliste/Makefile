@@ -7,6 +7,7 @@
 
 PORTNAME=		kaspaliste
 PORTVERSION=		0.94
+PORTREVISION=	1
 CATEGORIES=		print kde
 MASTER_SITES=		http://kaspaliste.sourceforge.net/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	pppload
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=		system/network/serial/ppp

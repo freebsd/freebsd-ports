@@ -6,6 +6,7 @@
 
 PORTNAME=	mboxcheck-applet
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://perso.wanadoo.fr/seb128/fichiers/
 

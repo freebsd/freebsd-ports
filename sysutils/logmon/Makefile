@@ -7,6 +7,7 @@
 
 PORTNAME=	logmon
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.edespot.com/code/LogMon/
 DISTNAME=	LogMon-${PORTVERSION}

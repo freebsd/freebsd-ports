@@ -7,6 +7,7 @@
 
 PORTNAME=	libXmu
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 

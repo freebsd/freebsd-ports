@@ -7,6 +7,7 @@
 
 PORTNAME=	pgp
 PORTVERSION=	6.5.8
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.no.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/ \
 		ftp://ftp.fi.pgpi.org/pub/pgp/${PORTVERSION:R}/${PORTVERSION}/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.stillhq.com/panda/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}

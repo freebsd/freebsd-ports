@@ -8,6 +8,7 @@
 
 PORTNAME=	libfreenet
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://thalassocracy.org/libfreenet/
 

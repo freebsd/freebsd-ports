@@ -6,6 +6,7 @@
 
 PORTNAME=	aim-transport
 PORTVERSION=	0.9.24c
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.jabber.org/dists/transports/aim-transport/
 PKGNAMEPREFIX=	jabber-

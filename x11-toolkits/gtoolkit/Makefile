@@ -7,7 +7,7 @@
 
 PORTNAME=	gtoolkit
 PORTVERSION=	0.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 

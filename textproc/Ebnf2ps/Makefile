@@ -7,6 +7,7 @@
 
 PORTNAME=	Ebnf2ps
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.informatik.uni-freiburg.de/~thiemann/haskell/ebnf2ps/
 DISTNAME=	ebnf2ps-${PORTVERSION}

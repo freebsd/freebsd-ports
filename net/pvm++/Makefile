@@ -8,7 +8,7 @@
 
 PORTNAME=	pvm++
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://goethe.ira.uka.de/~wilhelmi/pvm++/

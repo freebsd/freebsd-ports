@@ -7,7 +7,7 @@
 
 PORTNAME=	avidemux
 PORTVERSION=	0.9.0.110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
 DISTNAME=	avidemux-0.9

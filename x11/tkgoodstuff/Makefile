@@ -7,6 +7,7 @@
 
 PORTNAME=	tkgoodstuff
 PORTVERSION=	8.0
+PORTREVISION=	1
 CATEGORIES=	x11 tk80
 #
 # No longer published by original developer.  This port still works, although

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-avi
 PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/avi-xmms/ \

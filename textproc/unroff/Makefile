@@ -7,7 +7,7 @@
 
 PORTNAME=	unroff
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/unroff/%SUBDIR%/
 MASTER_SITE_SUBDIR=	dist

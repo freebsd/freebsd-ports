@@ -7,6 +7,7 @@
 
 PORTNAME=	imwheel
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://jonatkins.org/imwheel/files/
 

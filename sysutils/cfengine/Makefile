@@ -7,7 +7,7 @@
 
 PORTNAME=	cfengine
 PORTVERSION=	1.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		ftp://ftp.sunsite.utk.edu/pub/cfengine/cfengine-ftp/ \

@@ -6,6 +6,7 @@
 
 PORTNAME=	dog
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://jl.photodex.com/dog/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	cnslock
 PORTVERSION=	1.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.dockapps.com/download.php/id/181/ \
 		http://freebsd.nsu.ru/distfiles/

@@ -6,6 +6,7 @@
 
 PORTNAME=	wmWeather
 PORTVERSION=	1.31
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker
 MASTER_SITES= 	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	detachtty
 PORTVERSION=	8
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/detachtty/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

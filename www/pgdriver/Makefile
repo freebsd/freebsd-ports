@@ -7,7 +7,7 @@
 
 PORTNAME=	pgdriver
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www databases
 MASTER_SITES=	http://openacs.org/sdm/download-package/2/38/
 EXTRACT_SUFX=	.tgz

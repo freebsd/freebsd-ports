@@ -7,6 +7,7 @@
 
 PORTNAME=	xdf
 PORTVERSION=    1.3
+PORTREVISION=	1
 CATEGORIES=     misc
 MASTER_SITES=   http://home.in.tum.de/~vidalrod/ports/
 

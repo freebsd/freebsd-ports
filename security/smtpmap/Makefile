@@ -7,7 +7,7 @@
 
 PORTNAME=	smtpmap
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security mail net
 MASTER_SITES=	http://plasmahh.hopto.org/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libXrandr
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 

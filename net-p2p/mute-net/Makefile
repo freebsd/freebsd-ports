@@ -7,6 +7,7 @@
 
 PORTNAME=	mute
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mute-net.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sforge/}

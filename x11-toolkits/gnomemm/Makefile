@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomemm
 PORTVERSION=	1.3.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=   # empty
 DISTFILES=      # empty

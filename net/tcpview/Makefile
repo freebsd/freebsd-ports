@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpview
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
 EXTRACT_SUFX=	.tar.Z

@@ -7,6 +7,7 @@
 
 PORTNAME=	gtoaster
 PORTVERSION=	1.0.b6
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gnometoaster.rulez.org/archive/

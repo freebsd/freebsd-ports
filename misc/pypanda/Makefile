@@ -7,6 +7,7 @@
 
 PORTNAME=	pypanda
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www3.telus.net/futility/futility/warez/
 

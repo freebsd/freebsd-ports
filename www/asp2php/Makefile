@@ -7,6 +7,7 @@
 
 PORTNAME=	asp2php
 PORTVERSION=	0.76.17
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.mikekohn.com/asp2php/ \
 		http://dl.droso.net/ports/

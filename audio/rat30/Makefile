@@ -7,6 +7,7 @@
 
 PORTNAME=	rat
 PORTVERSION=	3.0.35
+PORTREVISION=	1
 CATEGORIES=	mbone audio
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/
 

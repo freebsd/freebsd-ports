@@ -7,6 +7,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmShutdown
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://grad.icmc.usp.br/~rva/pkgs/
 

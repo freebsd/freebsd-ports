@@ -7,7 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.25.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION:C/\.([0-9]+)$/-\1/}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gxanim
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.greslin.org/code/
 DISTNAME=	GXAnim-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xicq
 PORTVERSION=	19980712	
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://projekt.pinknet.cz/ftp/ICQ/linux/Xicq/
 DISTNAME=	xicq-071298-snapshot.src

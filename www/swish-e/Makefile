@@ -7,6 +7,7 @@
 
 PORTNAME=	swish-e
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://swish-e.org/Download/
 

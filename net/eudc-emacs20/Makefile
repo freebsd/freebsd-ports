@@ -7,6 +7,7 @@
 
 PORTNAME=	eudc
 PORTVERSION=	1.30b
+PORTREVISION=	1
 CATEGORIES=	net mail elisp
 MASTER_SITES=	http://diwww.epfl.ch/~figueire/Software/eudc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

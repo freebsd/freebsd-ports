@@ -7,7 +7,7 @@
 
 PORTNAME=	arts++
 PORTVERSION=	1.1.a8
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/

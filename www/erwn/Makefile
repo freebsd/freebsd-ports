@@ -7,6 +7,7 @@
 
 PORTNAME=	erwn
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	washerdryer
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://lucille.dhs.org/
 DISTNAME=	washerDryer-${PORTVERSION}

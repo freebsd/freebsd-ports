@@ -7,6 +7,7 @@
 
 PORTNAME=	wterm
 PORTVERSION=	6.2.9
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES= 	http://largo.windowmaker.org/files/
 

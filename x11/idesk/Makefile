@@ -7,6 +7,7 @@
 
 PORTNAME=	idesk
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://idesk.timmfin.net/releases/ \
 		${MASTER_SITE_SOURCEFORGE}

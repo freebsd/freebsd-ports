@@ -7,6 +7,7 @@
 
 PORTNAME=	radiusclient
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/ \
 		ftp://ftp.ecrc.net//pub/netsw/net/ip/management/radius/

@@ -7,6 +7,7 @@
 
 PORTNAME=	nocatsplash
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://nocat.net/download/NoCatSplash/
 DISTNAME=	NoCatSplash-nightly

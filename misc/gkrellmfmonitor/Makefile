@@ -8,6 +8,7 @@
 
 PORTNAME=	gkrellmfmonitor
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	misc
 # the orignal master site is down
 # MASTER_SITES=	http://alice.nc.huji.ac.il/~arsen/

@@ -7,6 +7,7 @@
 
 PORTNAME=	click
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.pdos.lcs.mit.edu/click/
 

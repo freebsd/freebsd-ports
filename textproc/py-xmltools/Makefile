@@ -8,6 +8,7 @@
 
 PORTNAME=	xmltools
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/xmltools/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	libpathan
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://software.decisionsoft.com/software/pathan-1.2r2/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2-src

@@ -7,6 +7,7 @@
 
 PORTNAME=	libutf
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/ \
 		http://www.westley.demon.co.uk/src/

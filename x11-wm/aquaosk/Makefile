@@ -7,6 +7,7 @@
 
 PORTNAME=	aquaosk
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.davidsansome.com/ \
 		http://cottage.quynh-and-brian.org/freebsd/ports/distfiles/

@@ -7,6 +7,7 @@
 
 PORTNAME=	iiimf-protocol-lib
 PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
 DISTNAME=	im-sdk

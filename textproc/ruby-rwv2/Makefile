@@ -7,6 +7,7 @@
 
 PORTNAME=	rwv2
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://download.ywesee.com/ruby/rwv2/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

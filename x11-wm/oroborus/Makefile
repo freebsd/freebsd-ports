@@ -7,6 +7,7 @@
 
 PORTNAME=	oroborus
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.oroborus.org/debian/dists/sid/main/source/x11/ \
 		http://matt.peterson.org/FreeBSD/ports/

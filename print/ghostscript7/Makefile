@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \

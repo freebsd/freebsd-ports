@@ -7,6 +7,7 @@
 
 PORTNAME=	ttmkfdir
 PORTVERSION=	20021109
+PORTREVISION=	1
 CATEGORIES=	x11-fonts x11
 MASTER_SITES=	http://people.redhat.com/yshao/
 DISTNAME=	${PORTNAME}2

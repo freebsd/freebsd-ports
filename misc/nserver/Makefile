@@ -7,6 +7,7 @@
 
 PORTNAME=	nserver
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.version6.net/misc/
 

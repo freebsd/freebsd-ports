@@ -7,7 +7,7 @@
 
 PORTNAME=	multitail
 PORTVERSION=	0.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

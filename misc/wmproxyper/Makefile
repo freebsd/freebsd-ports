@@ -7,6 +7,7 @@
 
 PORTNAME=	wmproxyper
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://home.student.utwente.nl/w.k.havinga/wmproxyper/
 DISTNAME=	WMProxyPer-${PORTVERSION}

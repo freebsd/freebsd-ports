@@ -7,6 +7,7 @@
 
 PORTNAME=	lookat
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://staf.patat.org/downloads/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	mpqc
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	science parallel
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 DISTFILES=      mpqc-${PORTVERSION}.tar.gz mpqc-val-2.2.0.tar.gz

@@ -7,6 +7,7 @@
 
 PORTNAME=	grdb
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.win.tue.nl/~stijn/grdb/
 

@@ -7,6 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.4.1
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://aspell.net/	\
 		${MASTER_SITE_GNU}

@@ -8,6 +8,7 @@
 
 PORTNAME=	tosvcd
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://muse.seh.de/tosvcd/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	cbedic
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	todorov@freebsd-bg.org

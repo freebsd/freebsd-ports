@@ -7,6 +7,7 @@
 
 PORTNAME=	reminder
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	misc
 # The original distribution site has gone walking. This site is the
 # gkrellm website with a reference to the plugin, but only with version

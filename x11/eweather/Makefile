@@ -7,6 +7,7 @@
 
 PORTNAME=	E-Weather
 PORTVERSION=	0.4b
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://streiff.net/software/
 

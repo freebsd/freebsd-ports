@@ -7,6 +7,7 @@
 
 PORTNAME=	gnocl
 PORTVERSION=	0.5.12
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://www.dr-baum.net/gnocl/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	calcoo
 PORTVERSION=	1.3.15
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://webusers.physics.umn.edu/~kaminski/calcoo/

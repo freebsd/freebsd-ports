@@ -7,6 +7,7 @@
 
 PORTNAME=	gctpc
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://edcftp.cr.usgs.gov/pub/software/gctpc/
 DISTNAME=	gctpc

@@ -7,6 +7,7 @@
 
 PORTNAME=	dropbear
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 

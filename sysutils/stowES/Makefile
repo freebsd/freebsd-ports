@@ -8,6 +8,7 @@
 
 PORTNAME=	stowES
 PORTVERSION=	0.5.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.inf.tu-dresden.de/~al10/stowES/download/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	gkrellmqst
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	net games
 MASTER_SITES=	http://tadpol.org/projects/binaries/
 DISTNAME=	gkrellm_qst-${PORTVERSION}

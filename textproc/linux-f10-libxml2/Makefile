@@ -7,6 +7,7 @@
 
 PORTNAME=	libxml
 PORTVERSION=	1.8.10
+PORTREVISION=	1
 CATEGORIES=	textproc linux
 
 MAINTAINER=	taoka@FreeBSD.org

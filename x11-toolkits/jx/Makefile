@@ -7,7 +7,7 @@
 
 PORTNAME=	JX
 PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/dev/ \

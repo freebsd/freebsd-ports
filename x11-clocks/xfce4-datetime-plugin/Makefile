@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-datetime-plugin
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/ 
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	palmpower
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	palm
 #
 # The original MASTER_SITE has disappeared:

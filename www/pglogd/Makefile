@@ -7,6 +7,7 @@
 
 PORTNAME=	pglogd
 PORTVERSION=	2.2b
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.digitalstratum.com/pglogd/
 DISTNAME=	pglogd-2.2beta

@@ -7,6 +7,7 @@
 
 PORTNAME=	smb_auth
 PORTVERSION=	0.05
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hacom.nl/~richard/software/
 

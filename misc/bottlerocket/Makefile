@@ -7,6 +7,7 @@
 
 PORTNAME=	bottlerocket
 PORTVERSION=	0.04c
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://mlug.missouri.edu/~tymm/
 

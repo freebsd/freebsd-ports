@@ -7,6 +7,7 @@
 
 PORTNAME=	bugs
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.encryptsolutions.com/english/download/
 EXTRACT_SUFX=	.tgz

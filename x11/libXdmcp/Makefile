@@ -7,6 +7,7 @@
 
 PORTNAME=	libXdmcp
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/:fdo \
 		${MASTER_SITE_LOCAL:S/$/:local/}

@@ -7,6 +7,7 @@
 
 PORTNAME=	saferpay
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.saferpay.com/download/
 DISTFILES=	${PORTNAME}_${PORTVERSION}_linux-g++_src.tar.gz

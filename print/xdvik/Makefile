@@ -7,6 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	20a
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.tug.org/ftp/historic/systems/dviware/xdvik/
 

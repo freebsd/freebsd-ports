@@ -7,6 +7,7 @@
 
 PORTNAME=	networkinfo
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

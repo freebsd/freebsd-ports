@@ -8,6 +8,7 @@
 
 PORTNAME=	jigdo
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 #PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	http://home.in.tum.de/~atterer/jigdo/

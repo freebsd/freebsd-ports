@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_encoding
 PORTVERSION=	20021209
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 

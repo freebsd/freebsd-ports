@@ -7,7 +7,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/

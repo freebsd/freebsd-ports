@@ -6,6 +6,7 @@
 
 PORTNAME=	slrnconf
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	ssync
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://angrypot.com/ssync/
 

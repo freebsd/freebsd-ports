@@ -7,6 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/

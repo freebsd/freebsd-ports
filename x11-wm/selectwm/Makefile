@@ -7,6 +7,7 @@
 
 PORTNAME=	selectwm
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ordiluc.net/selectwm/
 

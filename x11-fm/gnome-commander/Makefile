@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://savannah.nongnu.org/download/gcmd/gcmd.pkg/${PORTVERSION}/
 

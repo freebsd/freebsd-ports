@@ -10,7 +10,7 @@
 
 PORTNAME=	xmlto
 PORTVERSION=	0.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}

@@ -7,6 +7,7 @@
 
 PORTNAME=	PicMonger
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	news graphics
 MASTER_SITES=	http://download.sourceforge.net/PicMonger/
 

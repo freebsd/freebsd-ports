@@ -7,6 +7,7 @@
 
 PORTNAME=	gutenmark
 PORTVERSION=	20020714
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.sandroid.org/GutenMark/SoftwareSnapshots/
 DISTNAME=	GutenMark_source_${PORTVERSION}

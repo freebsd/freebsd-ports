@@ -7,6 +7,7 @@
 
 PORTNAME=	pyfind
 PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	sysutils python gnome
 MASTER_SITES=	http://www.anti-particle.com/downloads/
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.8a
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz

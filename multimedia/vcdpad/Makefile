@@ -8,6 +8,7 @@
 
 PORTNAME=	vcdpad
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 

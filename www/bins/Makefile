@@ -7,6 +7,7 @@
 
 PORTNAME=	bins
 PORTVERSION=	1.1.20
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://jsautret.free.fr/BINS/
 

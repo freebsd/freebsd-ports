@@ -7,6 +7,7 @@
 
 PORTNAME=	memtest
 PORTVERSION=	2.93.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.qcc.sk.ca/~charlesc/software/memtester/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}

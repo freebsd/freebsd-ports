@@ -7,6 +7,7 @@
 
 PORTNAME=	newsfish
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	http://download.sourceforge.net/newsfish/ \
 		ftp://ftp.philosophysw.com/pub/software/

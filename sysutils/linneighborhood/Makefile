@@ -8,7 +8,7 @@
 
 PORTNAME=	LinNeighborhood
 PORTVERSION=	0.6.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 

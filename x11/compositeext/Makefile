@@ -7,6 +7,7 @@
 
 PORTNAME=	compositeext
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 

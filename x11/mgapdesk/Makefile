@@ -7,7 +7,7 @@
 
 PORTNAME=	mgapdesk
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/powerdesk_1_00_7/
 DISTNAME=	${PORTNAME}-1_00-7beta_src
