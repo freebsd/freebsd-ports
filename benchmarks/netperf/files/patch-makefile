@@ -17,7 +17,7 @@
  LOG_FILE=DEBUG_LOG_FILE="\"/tmp/netperf.debug\""
 -CFLAGS = -Ae -O -D$(LOG_FILE) -DUSE_PSTAT -DHAVE_SENDFILE -DDO_FIRST_BURST
 +CFLAGS = %CFLAGS% -D$(LOG_FILE) -DDO_FIRST_BURST #-DHAVE_SENDFILE
-+CFLAGS+= -DHISTOGRAM -DDO_UNIX -DDO_1644 -DO_IPV6
++CFLAGS+= -DHISTOGRAM -DDO_UNIX -DDO_1644 -DDO_IPV6
  
  # Some platforms, and some options, require additional libraries.
  # you can add to the "LIBS =" line to accomplish this. if you find
