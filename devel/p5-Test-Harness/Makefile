@@ -22,14 +22,24 @@ MAN1=		prove.1
 MAN3=		Test::Harness.3 Test::Harness::Assert.3 \
 		Test::Harness::Iterator.3 Test::Harness::Straps.3
 
-post-patch:
-	${PERL} -pi -e 'm.INSTALLDIRS.&&s,.,,sg' ${WRKSRC}/Makefile.PL
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+.endif
+
+.if ${PERL_LEVEL} >= 500800
+.undef MAN1
+PLIST_SUB+=	PL_FILES="@comment "
+.else
+PLIST_SUB+=	PL_FILES=""
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
+.if ${PERL_LEVEL} >= 500800
+	@${REINPLACE_CMD} -e '/EXE_FILES/d' ${WRKSRC}/Makefile.PL
 .endif
 
 .include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
-bin/prove
+%%PL_FILES%%bin/prove
 %%SITE_PERL%%/Test/Harness.pm
 %%SITE_PERL%%/Test/Harness/Assert.pm
 %%SITE_PERL%%/Test/Harness/Iterator.pm
