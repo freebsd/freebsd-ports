@@ -29,7 +29,6 @@ my $n = ""; $n = "-n " if $opts{'n'};
 my $u = $ENV{USER};
 $u = $opts{'u'} if ($opts{'u'} ne "");
 my $more_testing = $opts{'t'};
-my $vanilla = $opts{'v'};
 my $interactive = $opts{'i'};
 
 my $tmpdir;
@@ -74,24 +73,6 @@ END {
 	}
 }
 
-# setup the list of commands to run on the new port(s).
-my @commands;
-if (!$vanilla) {
-	push(@commands, "$make clean check-categories");
-	push(@commands, "$portlint");
-	if (-d $distdir) {
-		push(@commands, "$make DISTDIR='$distdir' FETCH_BEFORE_ARGS='-btA' checksum");
-	} elsif ($myhost eq "freefall.freebsd.org") {
-		push(@commands, "$make DISTDIR='$tmpdir' FETCH_BEFORE_ARGS='-btA' checksum");
-	} else {
-		push(@commands, "$make FETCH_BEFORE_ARGS='-btA' checksum");
-	}
-	if ($more_testing) {
-		push(@commands, "$make distclean");
-		push(@commands, "$make build");
-	}
-}
-
 if ($dir eq "") {
 	warnx("Need to specify a directory with -d argument!");
 	usage();
@@ -119,11 +100,6 @@ foreach my $thisdir (@dirs) {
 	}
 
 	chdir $thisdir or err(1, "$thisdir");
-
-	# now run the tests on this baby.
-	for (@commands) {
-		system("$_") && errx(1, "'$_' had problems. aborting.");
-	}
 
 	# Get the category name and make it suitable for use with cvs
 	my $category;
@@ -268,8 +244,6 @@ OPTIONS
 			temporary directory set up on freefall.
 	-u user		Use a different username (default: $u).
 	-t		Do more port testing
-	-v		Plain vanilla "add it" - no testing at all.
-			This option overrides -t in all cases.
 
 EXAMPLES
 	% addport -n -d greatgame,helpfuldev,shoot
