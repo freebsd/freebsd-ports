@@ -469,6 +469,7 @@
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-IMDB-Movie
     SUBDIR += p5-Kwiki
+    SUBDIR += p5-Kwiki-RecentChanges
     SUBDIR += p5-Kwiki-Revisions
     SUBDIR += p5-Kwiki-Search
     SUBDIR += p5-Kwiki-UserPreferences
