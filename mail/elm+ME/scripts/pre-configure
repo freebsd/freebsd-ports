@@ -6,7 +6,9 @@
 
 [ -r /usr/include/inttypes.h ] && has_inttypes=define || has_inttypes=undef
 
-	cat > ${WRKSRC}/config.sh << EOF
+[ -d  ${WRKSRC}/shlib ] || mkdir ${WRKSRC}/shlib
+
+cat > ${WRKSRC}/config.sh << EOF
 #!/bin/sh
 # config.sh
 # This file was produced by running the Configure script.
@@ -30,6 +32,7 @@ d_socket='define'
 d_connect_reopen='undef'
 d_netdb='define'
 d_netinet_in='define'
+d_use_aton='define'
 d_inttypes='$has_inttypes'
 d_nointtypes='undef'
 n='-n'
@@ -162,7 +165,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='sun nls c_s'
 noaddlib='yes'
-c_date='Wed Feb  7 02:17:00 CET 2001'
+c_date='Sun May 13 02:00:14 CEST 2001'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -215,7 +218,6 @@ d_ptem='undef'
 d_putenv='define'
 maxattempts='6'
 d_setgid='define'
-d_savegrpmboxid='define'
 mailermode='2755'
 d_sigvec='undef'
 d_sigvectr='undef'
@@ -238,6 +240,16 @@ d_strstr='define'
 d_strtok='define'
 d_subshell='define'
 d_tempnam='define'
+d_setlinebuf='define'
+d_shared='define'
+d_shared_rev='${SO_REV}'
+d_dlopen_libs='define'
+shared_list='tls'
+d_dynamic_main='define'
+dynamic_opt='-rdynamic'
+dlopen_lib=''
+rpath_opt='-rpath '
+soname_opt='-shared -soname '
 tempnamo=''
 tempnamc=''
 d_termio='undef'
@@ -260,14 +272,16 @@ d_systimekernel='undef'
 i_unistd='define'
 i_utime='define'
 i_sysutime='undef'
-lib='${PREFIX}/lib/elm'
+lib='${PREFIX}/${LIB_SUBDIR}'
+shlib='${PREFIX}/${SHLIB_SUBDIR}'
+libdirname='lib'
 libc='/usr/lib/libc.so'
 linepr='/usr/bin/lp'
 maildir='/var/mail'
 mailer='/usr/sbin/sendmail'
 mailgrp='mail'
-mansrc='${PREFIX}/man/man1'
-catmansrc='${PREFIX}/man/cat1'
+mansrc='${MAN1PREFIX}/man/man1'
+catmansrc='${MAN1PREFIX}/man/cat1'
 manext='.1'
 manext_choice='.1'
 catmanext='.1'
@@ -312,6 +326,17 @@ special_path='/usr/bin'
 special_path2='${PREFIX}/bin'
 locale_dir='/usr/share/locale'
 CONFIG=true
+tls_ok='define'
+EOF
+
+mv  ${WRKSRC}/shared_libs/tls/README.ME+ ${WRKSRC}/shared_libs/tls/README.TLS
+
+cat > ${WRKSRC}/shared_libs/tls/config.res << EOF
+#  Support for TLS
+tls_ok='define'
+tls_dir='system'
+tls_include_dir=''
+tls_lib_dir=''
 EOF
 
 exit 0
