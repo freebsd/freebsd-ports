@@ -20,6 +20,8 @@ DISTFILES=	X430src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 client programs and related files
 
+CONFLICTS=	xorg-clients-*
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.5:${PORTSDIR}/textproc/expat2 \
 		Xcursor.1:${PORTSDIR}/x11/XFree86-4-libraries \
