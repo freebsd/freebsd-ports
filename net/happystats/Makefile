@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kiwi@oav.net
 COMMENT=	Universal log converter into graph
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		rrd.0:${PORTSDIR}/net/rrdtool

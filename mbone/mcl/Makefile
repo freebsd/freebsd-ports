@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	past@noc.ntua.gr
 COMMENT=	Implementation of the ALC and NORM Reliable Multicast Protocols
 
-BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/imake-4 \
+BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT} \
 		gdome-config:${PORTSDIR}/textproc/gdome2 \
 		glib-gettextize:${PORTSDIR}/devel/glib20
 
