@@ -192,26 +192,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/trojan.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tsvr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uumerge.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/misc/README
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/misc/inf-ruby.el
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/misc/ruby-mode.el
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/misc/rubydb2x.el
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/misc/rubydb3x.el
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/rain.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curses/view.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/expect_sample.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/misc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%
-share/emacs/site-lisp/inf-ruby.el
-share/emacs/site-lisp/ruby-mode.el
-share/emacs/site-lisp/rubydb3x.el
-@comment share/emacs/site-lisp is created by mtree
-lib/xemacs/site-lisp/inf-ruby.el
-lib/xemacs/site-lisp/ruby-mode.el
-lib/xemacs/site-lisp/rubydb3x.el
-@unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true

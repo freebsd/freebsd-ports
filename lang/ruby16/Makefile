@@ -7,6 +7,7 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${RUBY_VER}
@@ -29,11 +30,6 @@ WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	--enable-shared
 MAN1=		ruby${_RUBY_SUFFIX}.1
 MLINKS=		ruby${_RUBY_SUFFIX}.1 ruby.1
-
-ELISP_FILES=	inf-ruby.el ruby-mode.el rubydb3x.el
-
-EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 .include <bsd.port.pre.mk>
 
@@ -68,14 +64,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
-	${MKDIR} ${RUBY_EXAMPLESDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/misc/* ${RUBY_EXAMPLESDIR}/misc
-	${MKDIR} ${EMACSLISPDIR}
-	${MKDIR} ${XEMACSLISPDIR}
-.for f in ${ELISP_FILES}
-	${LN} -sf ${RUBY_EXAMPLESDIR}/misc/${f} ${EMACSLISPDIR}/
-	${LN} -sf ${RUBY_EXAMPLESDIR}/misc/${f} ${XEMACSLISPDIR}/
-.endfor
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/pty
