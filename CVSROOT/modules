@@ -8809,9 +8809,6 @@ zh-pyDict	ports/chinese/pyDict
 zh-pycodec	ports/chinese/pycodec
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
-zh-rxvt		ports/chinese/rxvt
-zh-rxvt-big5	ports/chinese/rxvt-big5
-zh-rxvt-gb		ports/chinese/rxvt-gb
 zh-stardict	ports/chinese/stardict
 zh-stardict2	ports/chinese/stardict2
 zh-tcl		ports/chinese/tcl83
