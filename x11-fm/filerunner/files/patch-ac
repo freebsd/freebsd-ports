@@ -1,0 +1,17 @@
+--- ext.c.orig	Wed Jun 10 05:55:32 1998
++++ ext.c	Sat Sep  2 23:56:45 2000
+@@ -123,11 +123,12 @@
+   HANDLE2(*p != '\0', "Error converting arg to int");
+ 
+   time_s = localtime(&t);
++  time_s->tm_year = 1900 + time_s->tm_year;
+   if (dateformat)
+-    sprintf(interp->result, "%02d%02d%02d %02d:%02d:%02d", time_s->tm_mday, time_s->tm_mon+1,
++    sprintf(interp->result, "%02d%02d%04d %02d:%02d:%02d", time_s->tm_mday, time_s->tm_mon+1,
+           time_s->tm_year, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
+   else
+-    sprintf(interp->result, "%02d%02d%02d %02d:%02d:%02d", time_s->tm_year, time_s->tm_mon+1,
++    sprintf(interp->result, "%04d%02d%02d %02d:%02d:%02d", time_s->tm_year, time_s->tm_mon+1,
+           time_s->tm_mday, time_s->tm_hour, time_s->tm_min, time_s->tm_sec);
+   return TCL_OK;
+ }
