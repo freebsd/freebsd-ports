@@ -1,3 +1,5 @@
+bin/xpcc
+bin/xpcd
 lib/perl5/site_perl/%%PERL_VER%%/XPC.pm
 lib/perl5/site_perl/%%PERL_VER%%/XPC/Agent.pm
 lib/perl5/site_perl/%%PERL_VER%%/XPC/Daemon.pm
