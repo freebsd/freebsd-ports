@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	uudeview
-PORTVERSION=	0.5.18
+PORTVERSION=	0.5.19
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 
 MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
-LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
