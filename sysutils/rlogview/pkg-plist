@@ -1,0 +1,8 @@
+bin/rlogview
+share/rlogview/log4rview.glade
+@dirrm share/rlogview
+%%RUBY_SITELIBDIR%%/log4r/outputter/drbviewoutputter.rb
+%%RUBY_SITELIBDIR%%/log4r/outputter/rompviewoutputter.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changelog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
