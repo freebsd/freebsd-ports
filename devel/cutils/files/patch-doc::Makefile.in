@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Fri Jul 13 21:09:55 2001
++++ doc/Makefile.in	Fri Nov  2 17:31:48 2001
+@@ -16,7 +16,7 @@
+ 
+ all: $(FILES)
+ 
+-cutils.info: cutils.texi
++$(srcdir)/cutils.info: cutils.texi
+ 	cd $(srcdir) && $(MAKEINFO) cutils.texi
+ 
+ dvi: cutils.dvi

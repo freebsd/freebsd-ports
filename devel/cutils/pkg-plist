@@ -1,15 +1,10 @@
 bin/cdecl
-bin/cundecl
 bin/chilight
-bin/cinfo
-bin/cinfoc
-bin/cinfodc
 bin/cobfusc
+bin/cundecl
 bin/cunloop
 bin/yyextract
 bin/yyref
-share/cutils/cinfo/stdc.cinfo.db
-share/cutils/cinfo/stdclib.cinfo.db
-share/cutils/cinfo/unix.cinfo.db
-@dirrm share/cutils/cinfo
-@dirrm share/cutils
+@unexec install-info --delete %D/info/cutils.info %D/info/dir
+info/cutils.info
+@exec install-info %B/%f %D/info/dir
