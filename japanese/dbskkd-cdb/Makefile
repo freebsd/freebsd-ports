@@ -7,6 +7,7 @@
 
 PORTNAME=	dbskkd-cdb
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.ne.jp/asahi/bdx/info/software/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -14,44 +15,30 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	matusita@FreeBSD.org
 
+RUN_DEPENDS=	${LOCALBASE}/${SKKDIR}/SKK-JISYO.${SKKJISYO_TYPE}.cdb:${PORTSDIR}/japanese/skk-jisyo-cdb
+
 CDB_DISTNAME=	cdb-0.55
 
-SKKJISYO_SIZE?=	L
-SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
+SKKDIR?=	share/skk
+SKKJISYO_TYPE?=	L
 DOCS=		Release-Notes.English Release-Notes.Japanese LICENSE
 
-MAKE_ENV+=	SKKJISYO=${SKKJISYO}
-PLIST_SUB=	JISYONAME=${SKKJISYO}
+MAKE_ENV+=	SKKDIR=${SKKDIR} SKKJISYO=SKK-JISYO.${SKKJISYO_TYPE}
 
 post-patch:
 .for docs in ${DOCS}
-	${SED} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%JISYONAME%%!${SKKJISYO}!g" < ${WRKSRC}/${docs} > ${WRKSRC}/.tmp
+	${SED} -e "s!%%PREFIX%%!${PREFIX}!g" -e "s!%%SKKDIR%%!${SKKDIR}!g" -e "s!%%JISYONAME%%!SKK-JISYO.${SKKJISYO_TYPE}!g" < ${WRKSRC}/${docs} > ${WRKSRC}/.tmp
 	${MV} -f ${WRKSRC}/.tmp ${WRKSRC}/${docs}
 .endfor
 
 post-install:
-	${MKDIR} ${PREFIX}/share/dbskkd-cdb ${PREFIX}/share/doc/dbskkd-cdb
-	${INSTALL_DATA} ${WRKSRC}/${SKKJISYO}.cdb ${PREFIX}/share/dbskkd-cdb
 .for docs in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${PREFIX}/share/doc/dbskkd-cdb
 .endfor
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_JISYO) || (exists(${LOCALBASE}/share/skk/${SKKJISYO}) \
-	&& !defined(WITHOUT_JISYO))
-pre-build::
-	${CP} ${LOCALBASE}/share/skk/${SKKJISYO} ${WRKSRC}
-.else
-BUILD_DEPENDS+=	${NONEXISTENT}:${.CURDIR}/../../japanese/skk-jisyo:extract
-pre-build::
-	${CP} ${WRKDIR}/../../../japanese/skk-jisyo/work/*/jisyo/${SKKJISYO} ${WRKSRC}
-.endif
 
 pre-build::
 	(cd ${WRKDIR}/${CDB_DISTNAME}; make it)
 	${CP} ${WRKDIR}/${CDB_DISTNAME}/libcdb.a ${WRKSRC}
 	${CP} ${WRKDIR}/${CDB_DISTNAME}/cdbmake ${WRKSRC}
-	(cd ${WRKSRC}; SKKJISYO=${SKKJISYO} ./makeskkcdb.sh)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -6,7 +6,7 @@
  # please define SERVERDIR
 -SERVERDIR = /usr/local/libexec
 +SERVERDIR = ${PREFIX}/libexec
-+JISHOFILE = ${PREFIX}/share/dbskkd-cdb/${SKKJISYO}.cdb
++JISHOFILE = ${PREFIX}/${SKKDIR}/${SKKJISYO}.cdb
  # for FreeBSD-2.x and BSD/OS (without shlib)
  CC = gcc -O -g
  COMPAT =

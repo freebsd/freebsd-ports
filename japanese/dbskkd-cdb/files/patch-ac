@@ -9,7 +9,7 @@
     This script invokes skktocdbm.sh and
 -   redirect /usr/local/share/skk/SKK-JISYO.L as the stdin of skktocdbm.sh.
 -   The SKK-JISYO.L.cdb is created under the current directory as default.
-+   redirect %%PREFIX%%/share/skk/%%JISYONAME%% as the stdin of skktocdbm.sh.
++   redirect %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%% as the stdin of skktocdbm.sh.
 +   The %%JISYONAME%%.cdb is created under the current directory as default.
     Change the default pathnames if you need to do so.
  
@@ -28,7 +28,7 @@
  2. Set the pathname of JISHO_FILE in dbskkd-cdb.c to the directory
     where the cdb-style dictionary resides.
 -   The defaule value is /usr/local/share/skk/SKK-JISYO.L.cdb.
-+   The defaule value is %%PREFIX%%/share/dbskkd-cdb/%%JISYONAME%%.cdb.
++   The defaule value is %%PREFIX%%/%%SKKDIR%%/%%JISYONAME%%.cdb.
  
  3. Setting the compile-time flag LOG_PEERINFO lets the dbskkd-cdb log the
     source address of the client connected to the server.  This flag is
