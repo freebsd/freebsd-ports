@@ -1,4 +1,6 @@
 bin/gliv
+share/gnome/applications/gliv.desktop
+share/gnome/pixmaps/gliv.png
 share/locale/fr/LC_MESSAGES/gliv.mo
 share/locale/nl/LC_MESSAGES/gliv.mo
 share/locale/pt_BR/LC_MESSAGES/gliv.mo
