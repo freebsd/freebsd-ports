@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	gperf
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
 GNU_CONFIGURE=	yes
-MAN=		gperf.1
+MAN1=		gperf.1
 
 .include <bsd.port.mk>
