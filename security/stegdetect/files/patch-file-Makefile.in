@@ -1,0 +1,14 @@
+--- file/Makefile.in.orig	Thu Oct 16 11:42:44 2003
++++ file/Makefile.in	Thu Oct 16 11:42:50 2003
+@@ -504,9 +504,8 @@
+ 	done >> $@
+ 
+ magic.inc: magic
+-	echo -n "\"" > $@
+-	sed -e 's/\\/\\\\/g' -e 's/"/\\\"/g' magic >> $@
+-	echo -n "\"" >> $@
++	sed -e 's/\\/\\\\/g' -e 's/"/\\\"/g' \
++		-e 's/^/"/' -e 's/\(.*\)/\1"/' magic > $@
+ 
+ file.1:	Makefile file.man
+ 	@rm -f $@
