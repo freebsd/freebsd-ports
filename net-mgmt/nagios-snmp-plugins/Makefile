@@ -7,7 +7,7 @@
 
 PORTNAME=	nagios-snmp-plugins
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.hometree.net/pub/${PORTNAME}/
 
@@ -15,7 +15,6 @@ MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Additional SNMP plugins for Nagios
 
 LIB_DEPENDS=    netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 GNU_CONFIGURE=		yes
 USE_AUTOMAKE_VER=	14
