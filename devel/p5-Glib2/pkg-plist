@@ -20,6 +20,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Int.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/String.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/UInt.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param/Unichar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParamSpec.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/ParseXSDoc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Signal.pod
