@@ -1,5 +1,4 @@
 bin/darcs
-%%SERVER%%%%CGIDIR%%/darcs
 %%SERVER%%%%CGIDIR%%/darcs.cgi
 %%SERVER%%sbin/darcs-createrepo
 %%SERVER%%etc/darcs/cgi.conf.sample
@@ -10,6 +9,7 @@ etc/darcs/bash_completion.d/darcs
 %%SERVER%%share/darcs/xslt/errors.xslt
 %%SERVER%%share/darcs/xslt/patches.xslt
 %%SERVER%%share/darcs/xslt/repos.xslt
+%%SERVER%%share/darcs/xslt/rss.xslt
 %%SERVER%%share/darcs/xslt/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
@@ -53,7 +53,6 @@ etc/darcs/bash_completion.d/darcs
 %%PORTDOCS%%%%DOCSDIR%%/manual/node1.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node10.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node11.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/node12.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node2.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node3.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/node4.html
