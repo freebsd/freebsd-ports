@@ -6134,6 +6134,7 @@ poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
 poink		ports/net/poink
+pointless	ports/misc/pointless
 polygraph	ports/benchmarks/polygraph
 pop3gwd		ports/mail/pop3gwd
 pop3lite	ports/mail/pop3lite
