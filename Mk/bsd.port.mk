@@ -287,8 +287,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  ${DEPENDS_TARGET}.
 # LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
 #				  package depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the
-#				  library.  Note that lib can not contain regular expressions.
+#				  make will use "ldconfig -r" to search for the library.
+#				  lib can contain extended regular expressions.
 # DEPENDS		- A list of "dir[:target]" tuples of other ports this
 #				  package depends on being made first.  Use this only for
 #				  things that don't fall into the above four categories.
