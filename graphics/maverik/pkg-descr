@@ -1,0 +1,16 @@
+MAVERIK is a publicly available virtual reality (VR) system, which has been
+under development by the Advanced Interfaces Group since 1995. MAVERIKenables
+rapid production of complex virtual environments as well as providing many
+functions that are valuable to anyone developing applications with 3D graphics
+or using 3D peripherals. MAVERIK deals primarily with graphical and spatial
+management, and integrates with our other VR system, Deva, which extends
+MAVERIK abilities to multi user and multi application virtual reality.
+
+Within this wider context, MAVERIK is designed to support high-performance
+rendering, including large-model processing, customised representations of
+environments for different applications, and customisable techniques for
+interaction and navigation. Although it is a component of a larger system,
+MAVERIK works equally well stand-alone and forms an ideal platform for the
+construction of VR applications for individual users.
+
+WWW: http://aig.cs.man.ac.uk/maverik/

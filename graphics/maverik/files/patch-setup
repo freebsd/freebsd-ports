@@ -1,0 +1,52 @@
+--- setup.orig	Thu May 24 17:32:53 2001
++++ setup	Mon Nov 12 12:03:44 2001
+@@ -244,26 +244,26 @@
+ FreeBSD)
+     if [ $ECH = "1" ] ; then echo A FreeBSD box...; fi
+ 
+-    CC="gcc"
++#    CC="gcc"
+     DLLIBS=""
+     if [ "$DEBUG" = "1" ] ; then 
+         OT="-Wall -ansi -g"
+ 	CXXFLAG=`echo -g ${CXXFLAG}`
+     else
+-        OT="-Wall -ansi -O2 -finline-functions -fomit-frame-pointer -funroll-loops -ffast-math -march=`uname -m`"
++#        OT="-Wall -ansi -O2 -finline-functions -fomit-frame-pointer -funroll-loops -ffast-math -march=`uname -m`"
+     fi
+     OS="-DMAV_LINUX -DMAV_FREEBSD" # The Linux defs also work for FreeBSD with a few exceptions
+-    CFLAG=`echo $OS $OT`
+-    LD="ld -shared"
++    CFLAG=`echo $OS $OT -O -pipe -s -march=pentiumpro`
++    LD="${CC} -shared"
+     LEX="flex"
+-    YACC="bison -y"
+-    CXX="g++"
+-    CXXFLAG=`echo $OS ${CXXFLAG}`
+-    if [ "$MESADEFAULT" = "1" ] ; then
+-	MESAPATH="/usr/X11R6"
+-    fi
+-    OPENGLINCL="-I${MESAPATH}/include"
+-    OPENGLLIBS="-L${MESAPATH}/lib -lGL -lGLU -L${XLIBPATH} -lX11 -lXext"
++    YACC="yacc"
++#    CXX="g++"
++    CXXFLAG=`echo $OS ${CXXFLAG}  -O -pipe -s -march=pentiumpro -fmemoize-lookups -fsave-memoized`
++#    if [ "$MESADEFAULT" = "1" ] ; then
++#	MESAPATH="/usr/X11R6"
++#    fi
++    OPENGLINCL="-I${MESAPATH}/include "
++    OPENGLLIBS="-L${MESAPATH}/lib -lGL -lGLU -lX11 -lXext -lc_r"
+ 
+     if [ $ECH = "1" ] ; then echo Looking for OpenGL include file in ${MESAPATH}/include/GL/gl.h ; fi
+ 
+@@ -383,8 +383,8 @@
+ if [ $GTK = "1" ] ; then
+ cat <<EOF >>Makefile
+ 	"GTKLIB= ../../lib/libmav_gfxOpenGLGTK${OPT_EXT}.so" \\
+-	"GTKINCL= \`gtk-config --cflags\`" \\
+-	"GTKLIBS= \`gtk-config --libs | sed 's/-rdynamic//g'\` -lgtkgl" \\
++	"GTKINCL= \`/usr/X11R6/bin/gtk12-config --cflags\`" \\
++	"GTKLIBS= \`/usr/X11R6/bin/gtk12-config --libs | sed 's/-rdynamic//g'\` -lgtkgl" \\
+ EOF
+ fi
+ 
