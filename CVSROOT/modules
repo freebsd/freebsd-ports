@@ -4370,6 +4370,7 @@ koffice-i18n-xh	ports/misc/koffice-i18n-xh
 koffice-i18n-zu	ports/misc/koffice-i18n-zu
 koffice-kde3	ports/editors/koffice-kde3
 kolourpaint	ports/graphics/kolourpaint
+kompose		ports/deskutils/kompose
 konq-plugins	ports/misc/konq-plugins
 konqueror-nsplugins	ports/www/konqueror-nsplugins
 konversation	ports/irc/konversation
