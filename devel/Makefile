@@ -225,6 +225,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-ConfigReader
+    SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Curses
