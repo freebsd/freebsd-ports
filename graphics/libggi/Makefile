@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libggi
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.0
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -27,16 +27,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.ifdef USE_THREADS
 CFLAGS+=	${PTHREAD_CFLAGS}
-CONFIGURE_ARGS+=	--enable-threads
-.endif
 
 .if exists(/usr/include/dev/kgi/kgi.h)
 CONFIGURE_ARGS+=	--enable-kgi --with-extra-includes=/usr/include/dev
 .endif
 
-MAN1=		cube3d.1 ggiteleserver.1 monitest.1
+MAN1=		cube3d.1 ggi-demo.1 ggiteleserver.1 monitest.1
 MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
 		ggiDBGetNumBuffers.3 ggiDrawBox.3 ggiDrawHLine.3 \
 		ggiDrawLine.3 ggiDrawPixel.3 ggiDrawVLine.3 \
@@ -48,15 +45,18 @@ MAN3=		ggiCheckMode.3 ggiCopyBox.3 ggiCrossBlit.3 \
 		ggiPutc.3 ggiResourceAcquire.3 ggiSetColorfulPalette.3 \
 		ggiSetDisplayFrame.3 ggiSetFlags.3 ggiSetGCClipping.3 \
 		ggiSetGCForeground.3 ggiSetMode.3 ggiSetOrigin.3 \
-		ggiSetPalette.3 ggi_color.3 ggi_directbuffer.3 \
-		ggi_mode.3 ggi_pixelformat.3
-MAN7=		libggi.7 display-aa.7 display-dga.7 display-directx.7 \
+		ggiSetPalette.3 ggi_color.3 ggi_colormap.3 \
+		ggi_directbuffer.3 ggi_mode.3 ggi_pixelformat.3
+MAN7=		libggi.7 display-aa.7 display-auto.7 \
+		display-dga.7 display-directx.7 \
 		display-fbdev.7 display-file.7 display-glide.7 \
-		display-memory.7 display-monotext.7 display-multi.7 \
-		display-palemu.7 display-sub.7 display-svgalib.7 \
-		display-tele.7 display-tile.7 display-trueemu.7 \
+		display-mansync.7 display-memory.7 display-monotext.7 \
+		display-multi.7 display-palemu.7 display-sub.7 \
+		display-svgalib.7 display-tele.7 display-terminfo.7 \
+		display-tile.7 display-trueemu.7 \
 		display-vcsa.7 display-vgl.7 display-x.7
-MLINKS=		display-directx.7 display-directxnt.7 \
+MLINKS=		ggi-demo.1 demo.1 \
+		display-directx.7 display-directxnt.7 \
 		ggiCheckMode.3 ggiCheckGraphMode.3 - ggiCheckSimpleMode.3 \
 		- ggiCheckTextMode.3 ggiDBGetNumBuffers.3 ggiDBGetBuffer.3 \
 		ggiDrawBox.3 ggiGetBox.3 - ggiPutBox.3 \
@@ -93,6 +93,7 @@ MLINKS=		display-directx.7 display-directxnt.7 \
 		ggiSetOrigin.3 ggiGetOrigin.3 \
 		ggiSetPalette.3 ggiGetPalette.3 \
 		ggi_color.3 ggi_pixel.3 \
+		ggi_colormap.3 ggi_colormap_region.3 \
 		ggi_directbuffer.3 ggi_pixellinearbuffer.3 \
 		- ggi_pixelplanarbuffer.3 - ggi_samplelinearbuffer.3 \
 		- ggi_sampleplanarbuffer.3 \
