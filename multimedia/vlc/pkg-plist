@@ -4,7 +4,7 @@ include/videolan/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.so
 lib/libdvdcss.so.0
-lib/libdvdcss.so.0.0.2
+lib/libdvdcss.so.0.0.3
 lib/videolan/vlc/dsp.so
 lib/videolan/vlc/gtk.so
 lib/videolan/vlc/sdl.so
