@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	lame
-PORTVERSION=	3.93
+PORTVERSION=	3.93.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lame
-DISTFILES=	lame-3.93.0.tar.gz
 
 MAINTAINER=	netchild@FreeBSD.org
 
