@@ -1,55 +1,76 @@
-bin/contact-update.pl
-bin/everybuddy
-bin/update.pl
-lib/everybuddy/modules/aim-toc.la
-lib/everybuddy/modules/aim-toc.so
-lib/everybuddy/modules/autotrans.la
-lib/everybuddy/modules/autotrans.so
-lib/everybuddy/modules/giles_smiles.la
-lib/everybuddy/modules/giles_smiles.so
-lib/everybuddy/modules/icq.la
-lib/everybuddy/modules/icq.so
-lib/everybuddy/modules/import_gaim.la
-lib/everybuddy/modules/import_gaim.so
-lib/everybuddy/modules/import_gnomeicu.la
-lib/everybuddy/modules/import_gnomeicu.so
-lib/everybuddy/modules/importicq.la
-lib/everybuddy/modules/importicq.so
-lib/everybuddy/modules/importlicq.la
-lib/everybuddy/modules/importlicq.so
-lib/everybuddy/modules/irc.la
-lib/everybuddy/modules/irc.so
-lib/everybuddy/modules/jabber.la
-lib/everybuddy/modules/jabber.so
-lib/everybuddy/modules/middle.la
-lib/everybuddy/modules/middle.so
-lib/everybuddy/modules/msn_smileys.la
-lib/everybuddy/modules/msn_smileys.so
-lib/everybuddy/modules/msn2.la
-lib/everybuddy/modules/msn2.so
-lib/everybuddy/modules/notes.la
-lib/everybuddy/modules/notes.so
-lib/everybuddy/modules/rainbow.la
-lib/everybuddy/modules/rainbow.so
-lib/everybuddy/modules/smileys2.la
-lib/everybuddy/modules/smileys2.so
-lib/everybuddy/modules/smileysc.la
-lib/everybuddy/modules/smileysc.so
-lib/everybuddy/modules/yahoo_smileys.la
-lib/everybuddy/modules/yahoo_smileys.so
-lib/everybuddy/modules/yahoo2.la
-lib/everybuddy/modules/yahoo2.so
-share/locale/fr/LC_MESSAGES/everybuddy.mo
-share/locale/de/LC_MESSAGES/everybuddy.mo
-share/locale/pt_PT/LC_MESSAGES/everybuddy.mo
-share/locale/tr/LC_MESSAGES/everybuddy.mo
-share/locale/es/LC_MESSAGES/everybuddy.mo
-share/locale/ja/LC_MESSAGES/everybuddy.mo
-share/sounds/everybuddy/BuddyArrive.au
-share/sounds/everybuddy/BuddyLeave.au
-share/sounds/everybuddy/Receive.au
-share/sounds/everybuddy/Send.au
-@dirrm share/sounds/everybuddy
-@unexec rmdir %D/share/sounds 2>/dev/null || true
-@dirrm lib/everybuddy/modules
-@dirrm lib/everybuddy
+bin/ayttm
+etc/ayttmrc
+lib/ayttm/aim-toc.la
+lib/ayttm/aim-toc.so
+lib/ayttm/autotrans.la
+lib/ayttm/autotrans.so
+lib/ayttm/aycryption.la
+lib/ayttm/aycryption.so
+lib/ayttm/icq-toc.la
+lib/ayttm/icq-toc.so
+lib/ayttm/import_everybuddy.la
+lib/ayttm/import_everybuddy.so
+lib/ayttm/import_gaim.la
+lib/ayttm/import_gaim.so
+lib/ayttm/import_gnomeicu.la
+lib/ayttm/import_gnomeicu.so
+lib/ayttm/importicq.la
+lib/ayttm/importicq.so
+lib/ayttm/importlicq.la
+lib/ayttm/importlicq.so
+lib/ayttm/irc.la
+lib/ayttm/irc.so
+lib/ayttm/jabber.la
+lib/ayttm/jabber.so
+lib/ayttm/middle.la
+lib/ayttm/middle.so
+lib/ayttm/msn2.la
+lib/ayttm/msn2.so
+lib/ayttm/notes.la
+lib/ayttm/notes.so
+lib/ayttm/rainbow.la
+lib/ayttm/rainbow.so
+lib/ayttm/smiley-themer.la
+lib/ayttm/smiley-themer.so
+lib/ayttm/yahoo2.la
+lib/ayttm/yahoo2.so
+share/ayttm/smileys/Console Smileys/aysmile.rc
+share/ayttm/smileys/Console Smileys/blank.xpm
+share/ayttm/smileys/Console Smileys/blush.xpm
+share/ayttm/smileys/Console Smileys/confused.xpm
+share/ayttm/smileys/Console Smileys/cooldude.xpm
+share/ayttm/smileys/Console Smileys/grin.xpm
+share/ayttm/smileys/Console Smileys/heyy.xpm
+share/ayttm/smileys/Console Smileys/kiss.xpm
+share/ayttm/smileys/Console Smileys/laugh.xpm
+share/ayttm/smileys/Console Smileys/oh.xpm
+share/ayttm/smileys/Console Smileys/sad.xpm
+share/ayttm/smileys/Console Smileys/smile.xpm
+share/ayttm/smileys/Console Smileys/sob.xpm
+share/ayttm/smileys/Console Smileys/tongue.xpm
+share/ayttm/smileys/Console Smileys/wink.xpm
+share/ayttm/smileys/Console Smileys/worried.xpm
+share/ayttm/smileys/Giles Smileys/aysmile.rc
+share/ayttm/smileys/Giles Smileys/dead.xpm
+share/ayttm/smileys/Giles Smileys/embarrased.xpm
+share/ayttm/smileys/Giles Smileys/grin.xpm
+share/ayttm/smileys/Giles Smileys/indifferent.xpm
+share/ayttm/smileys/Giles Smileys/kiss.xpm
+share/ayttm/smileys/Giles Smileys/quiet.xpm
+share/ayttm/smileys/Giles Smileys/sad.xpm
+share/ayttm/smileys/Giles Smileys/shades.xpm
+share/ayttm/smileys/Giles Smileys/shocked.xpm
+share/ayttm/smileys/Giles Smileys/smile.xpm
+share/ayttm/smileys/Giles Smileys/tears.xpm
+share/ayttm/smileys/Giles Smileys/tongue.xpm
+share/ayttm/smileys/Giles Smileys/wink.xpm
+share/ayttm/sounds/BuddyArrive.au
+share/ayttm/sounds/BuddyLeave.au
+share/ayttm/sounds/Receive.au
+share/ayttm/sounds/Send.au
+@dirrm share/ayttm/sounds
+@dirrm share/ayttm/smileys/Giles Smileys
+@dirrm share/ayttm/smileys/Console Smileys
+@dirrm share/ayttm/smileys
+@dirrm share/ayttm
+@dirrm lib/ayttm

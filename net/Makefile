@@ -35,6 +35,7 @@
     SUBDIR += aslookup
     SUBDIR += aspathtree
     SUBDIR += asterisk
+    SUBDIR += ayttm
     SUBDIR += b2bua
     SUBDIR += balance
     SUBDIR += bandwidthd
