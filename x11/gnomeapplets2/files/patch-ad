@@ -1,17 +1,18 @@
---- cdplayer/cdplayer.c.orig	Thu Aug 10 15:58:16 2000
-+++ cdplayer/cdplayer.c	Mon Sep 25 15:02:16 2000
-@@ -84,6 +84,11 @@
- 				break;
- 			case DISC_COMPLETED:
- 				/* check for looping or ? */
-+				led_time(cd->panel.time,
-+					 stat.relative_address.minute,
-+					 stat.relative_address.second,
-+					 cd->panel.track_control.display,
-+					 stat.track);
- 				break;
- 			case DISC_STOP:
- 			case DISC_ERROR:
+--- cdplayer/cdplayer.c.orig     Tue Apr 16 16:42:54 2002
++++ cdplayer/cdplayer.c  Tue Apr 30 17:31:41 2002
+@@ -671,6 +671,12 @@
+                     description = TRUE;
+                     break;
+                 case DISC_COMPLETED:
++                       led_time(cd->panel.time,
++                               stat.relative_address.minute,
++                               stat.relative_address.second,
++                               cd->panel.track_control.display,
++                               stat.track);
++                       break;
+                 case DISC_STOP:
+                 case DISC_ERROR:
+                     led_stop(cd->panel.time, cd->panel.track_control.display);
 --- /dev/null	Mon May 29 02:15:42 2000
 +++ cdplayer/cdrom-freebsd.c	Mon May 29 10:37:28 2000
 @@ -0,0 +1,336 @@

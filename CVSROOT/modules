@@ -1924,6 +1924,7 @@ gnome-look	ports/x11-toolkits/gnome-look
 gnome-vnc	ports/net/gnome-vnc
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets	ports/x11/gnomeapplets
+gnomeapplets2	ports/x11/gnomeapplets2
 gnomeaudio	ports/audio/gnomeaudio
 gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
