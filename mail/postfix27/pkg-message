@@ -4,6 +4,7 @@ please set these variables in your /etc/rc.conf file:
 
 sendmail_enable="YES"
 sendmail_flags="-bd"
+sendmail_pidfile="/var/spool/postfix/pid/master.pid"
 sendmail_outbound_enable="NO"
 sendmail_submit_enable="NO"
 sendmail_msp_queue_enable="NO"
