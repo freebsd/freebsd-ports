@@ -6,6 +6,7 @@ lib/charset.alias
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/configfile.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/credits.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/developer.html
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/example-cfg
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/i18n.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/index.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/installation.html
