@@ -11,9 +11,11 @@ Mail Notification features include:
 	* mbox, MH, Maildir, Sylpheed, POP3, IMAP and Gmail support
 	* SASL authentication support
 	* APOP authentication support
-	* SSL support
+	* SSL/TLS support
 	* automatic detection of mailbox format
-	* automatic notification
+	* immediate notification (the status icon is updated within
+	  seconds after a mailbox changes)
+	* a mail summary
 	* HIG 2.0 compliance
 
 WWW: http://www.nongnu.org/mailnotify/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mail-notification
-PORTVERSION=		0.6.1
+PORTVERSION=		0.7.0
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -30,7 +30,8 @@ OPTIONS=		MBOX "mbox support" on \
 			SSL "SSL support" on \
 			SASL "SASL authentication support" on \
 			SYLPHEED "Sylpheed support" on \
-			GMAIL "Gmail support" on
+			GMAIL "Gmail support" on \
+			MIME "MIME support" on
 
 .include <bsd.port.pre.mk>
 
@@ -54,13 +55,28 @@ CONFIGURE_ARGS+=	--disable-imap
 WITHOUT_SSL=		yes
 WITHOUT_SASL=		yes
 .endif
+.if defined(WITHOUT_MBOX) \
+	&& defined(WITHOUT_MH) \
+	&& defined(WITHOUT_MAILDIR) \
+	&& defined(WITHOUT_POP3) \
+	&& defined(WITHOUT_IMAP) \
+	&& defined(WITHOUT_SYLPHEED)
+# MIME support not needed
+WITHOUT_MIME=		yes
+.endif
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=	--disable-sylpheed
 .endif
-.if defined(WITHOUT_GMAIL)
+# .if defined(WITHOUT_GMAIL)
+WITHOUT_GMAIL=		yes	# depends on libsoup-2.2, which is in Marcus's CVS
 CONFIGURE_ARGS+=	--disable-gmail
+# .else
+# LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
+# .endif
+.if defined(WITHOUT_MIME)
+CONFIGURE_ARGS+=	--disable-mime
 .else
-LIB_DEPENDS+=		soup-2.0:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=		gmime-2.0:${PORTSDIR}/mail/gmime2
 .endif
 
 .if defined(WITHOUT_SSL)
