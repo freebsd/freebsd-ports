@@ -262,6 +262,7 @@
     SUBDIR += mbrowse
     SUBDIR += merlinmon
     SUBDIR += micq
+    SUBDIR += mldonkey
     SUBDIR += mmucl
     SUBDIR += mopd
     SUBDIR += mpd
