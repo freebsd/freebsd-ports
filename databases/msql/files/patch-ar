@@ -1,0 +1,11 @@
+--- src/lite/mod_lite.c.bak	Thu Aug 19 07:33:12 1999
++++ src/lite/mod_lite.c	Sat Jan 27 08:52:54 2001
+@@ -31,7 +31,7 @@
+ #include <sys/socket.h>
+ 
+ #include "lite.h"
+-#include "regexp/regexp.h"
++#include <regexp.h>
+ 
+ #include <time.h>
+ 

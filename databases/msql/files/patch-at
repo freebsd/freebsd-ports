@@ -1,0 +1,11 @@
+--- src/lang-common/code-sim.c.bak	Thu Aug 19 07:33:10 1999
++++ src/lang-common/code-sim.c	Sat Jan 27 08:57:29 2001
+@@ -42,7 +42,7 @@
+ #include "y.tab.h"
+ #include "lite.h"
+ #include "lite_priv.h"
+-#include "regexp/regexp.h"
++#include <regexp.h>
+ 
+ extern	char	*scriptBuf;
+ extern	code_t	*codeHead;

@@ -1,7 +1,11 @@
---- misc/msql.conf.orig	Mon Jul  7 01:44:29 1997
-+++ misc/msql.conf	Thu Jul 10 13:49:56 1997
-@@ -20,9 +20,9 @@
+--- misc/msql.conf.orig	Thu Aug 19 07:33:07 1999
++++ misc/msql.conf	Sat Jan 27 07:56:32 2001
+@@ -18,12 +18,12 @@
+ [general]
+ 
  Inst_Dir = _INST_
+-DB_Dir = %I/msqldb
++DB_Dir = /var/db/msqldb
  mSQL_User = msql
  Admin_User = root
 -Pid_File = %I/msql2d.pid

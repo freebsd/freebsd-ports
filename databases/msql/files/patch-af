@@ -1,6 +1,24 @@
---- src/msql/Makefile.tmpl.orig	Mon Jan 13 10:15:48 1997
-+++ src/msql/Makefile.tmpl	Sun Jan 19 14:47:28 1997
-@@ -78,7 +78,7 @@
+--- src/msql/Makefile.tmpl.orig	Thu Aug 19 07:33:13 1999
++++ src/msql/Makefile.tmpl	Sat Jan 27 11:04:06 2001
+@@ -67,7 +67,7 @@
+ !object select_test.o select_test.c 
+ !program select_test select_test.o,libmsql.a
+ 
+-!program msql2d msqld.o,msql_yacc.o,msql_lex.o,msql_proc.o,net.o,msqldb.o,acl.o,index.o,types.o,regex.o,varchar.o,memory.o,table.o,select.o,cra.o,sort.o,distinct.o,sysvar.o,funct.o,avl_tree.o ../common/debug.o,../common/strtoul.o,-lregexp,libmsql.a
++!program msql2d msqld.o,msql_yacc.o,msql_lex.o,msql_proc.o,net.o,msqldb.o,acl.o,index.o,types.o,regex.o,varchar.o,memory.o,table.o,select.o,cra.o,sort.o,distinct.o,sysvar.o,funct.o,avl_tree.o ../common/debug.o,../common/strtoul.o,-lcompat,libmsql.a
+ 
+ msql2d: libmsql.a
+ 
+@@ -76,7 +76,7 @@
+ 	msqldb.o 
+ 
+ !install msql $(INST_DIR)/bin/msql 0755
+-!install msql2d $(INST_DIR)/bin/msql2d 0750 $(ROOT)
++!install msql2d $(INST_DIR)/sbin/msql2d 0750 $(ROOT)
+ !install msqladmin $(INST_DIR)/bin/msqladmin 0750 $(ROOT)
+ !install msqlexport $(INST_DIR)/bin/msqlexport 0750 $(ROOT)
+ !install msqlimport $(INST_DIR)/bin/msqlimport 0750 $(ROOT)
+@@ -84,7 +84,7 @@
  !install msqldump $(INST_DIR)/bin/msqldump 0755 $(ROOT)
  !libinstall libmsql.a $(INST_DIR)/lib/libmsql.a 744 $(ROOT)
  !install msql.h $(INST_DIR)/include/msql.h 744 $(ROOT)

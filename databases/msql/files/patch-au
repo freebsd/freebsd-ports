@@ -1,0 +1,11 @@
+--- src/lang-common/mod_std.c.bak	Thu Aug 19 07:33:11 1999
++++ src/lang-common/mod_std.c	Sat Jan 27 08:57:29 2001
+@@ -43,7 +43,7 @@
+ 
+ #include <common/portability.h>
+ #include "lite.h"
+-#include "regexp/regexp.h"
++#include <regexp.h>
+ 
+ #include <time.h>
+ #ifdef HAVE_SYS_TIMEB_H

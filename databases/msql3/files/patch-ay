@@ -1,0 +1,11 @@
+--- src/lang-common//extern.c.bak	Thu Aug 19 07:33:10 1999
++++ src/lang-common//extern.c	Sat Jan 27 10:38:40 2001
+@@ -282,7 +282,7 @@
+ #if defined(_OS_OS2) || defined(_OS_WIN32)
+ 	sprintf(path,"%s.dll", tmp);
+ #else
+-	sprintf(path,"%s/modules/%s.so", INST_DIR,tmp);
++	sprintf(path,"%s/libexec/msql/%s.so", INST_DIR,tmp);
+ #endif
+ 	modPtr = dlopen(path,1);
+ 	if (modPtr == NULL)

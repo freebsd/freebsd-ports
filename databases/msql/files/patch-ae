@@ -1,6 +1,14 @@
---- src/Makefile.tmpl.orig	Tue Jul  8 03:06:49 1997
-+++ src/Makefile.tmpl	Thu Jul 10 13:46:24 1997
-@@ -31,19 +31,19 @@
+--- src/Makefile.tmpl.orig	Thu Aug 19 07:33:07 1999
++++ src/Makefile.tmpl	Sat Jan 27 08:10:08 2001
+@@ -14,7 +14,6 @@
+ 
+ 
+ !directory common all,clean,install
+-!directory regexp all,clean,install
+ !directory msql all,clean,install
+ 
+ !directory lang-common all,clean,install
+@@ -31,19 +30,19 @@
  	echo
  
  install ::

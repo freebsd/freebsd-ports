@@ -1,6 +1,6 @@
---- src/msql/config.c.orig	Fri May 29 19:21:56 1998
-+++ src/msql/config.c	Fri Aug 28 17:14:21 1998
-@@ -306,11 +306,11 @@
+--- src/msql/config.c.orig	Thu Aug 19 07:33:13 1999
++++ src/msql/config.c	Sat Jan 27 07:42:07 2001
+@@ -344,11 +344,11 @@
  	msqlConfigLoaded = 1;
  	if (file)
  	{
@@ -14,12 +14,12 @@
  			fp = fopen(buf,"r");
  		}
  		if (!fp)
-@@ -325,7 +325,7 @@
- 	}
- 	else
- 	{
+@@ -385,7 +385,7 @@
+ #endif
+ 
+ #if defined(_OS_UNIX)
 -		snprintf(buf,sizeof(buf),"%s/msql.conf", INST_DIR);
 +		snprintf(buf,sizeof(buf),"%s/etc/msql2/msql.conf", INST_DIR);
+ #endif
  		fp = fopen(buf,"r");
  	}
- 	if (!fp)

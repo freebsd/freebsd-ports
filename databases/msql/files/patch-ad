@@ -1,5 +1,5 @@
---- scripts/make-install.orig	Sat Jan 18 08:53:09 1997
-+++ scripts/make-install	Thu Jul 10 14:08:57 1997
+--- scripts/make-install.orig	Thu Aug 19 07:33:07 1999
++++ scripts/make-install	Sat Jan 27 10:52:17 2001
 @@ -1,16 +1,15 @@
  #!/bin/sh
  
@@ -16,6 +16,7 @@
 -scripts/mkinstalldirs 0755    $INST_DIR/www
 -scripts/mkinstalldirs 0755    $INST_DIR/misc
 -scripts/mkinstalldirs 0755    $INST_DIR/makegen
+-scripts/mkinstalldirs 0755    $INST_DIR/modules
 +scripts/mkinstalldirs 0755    $INST_DIR/etc/msql2
 +scripts/mkinstalldirs 0700    /var/db/msqldb
 +scripts/mkinstalldirs 0700    /var/db/msqldb/.tmp
@@ -24,5 +25,5 @@
 +scripts/mkinstalldirs 0755    $INST_DIR/share/msql/www
 +scripts/mkinstalldirs 0755    $INST_DIR/share/msql/makegen
 +/usr/sbin/chown -R msql.msql /var/db/msqldb
- scripts/mkinstalldirs 0755    $INST_DIR/modules
++scripts/mkinstalldirs 0755    $INST_DIR/libexec/msql
  

@@ -1,0 +1,25 @@
+--- src/lite/Makefile.tmpl.orig	Thu Aug 19 07:33:12 1999
++++ src/lite/Makefile.tmpl	Sat Jan 27 11:16:03 2001
+@@ -10,11 +10,11 @@
+ 
+ !object lite.o lite.c
+ !object lite_lex.o lite_lex.c
+-!object mod_lite.o mod_lite.c
++!sobject mod_lite.o mod_lite.c
+ !object modules.o modules.c
+ 
+ 
+-!program lite mod_lite.o,../lang-common/mod_std.o,../lang-common/mod_msql.o,lite.o,lite_lex.o,modules.o,../msql/libmsql.a,../regexp/libregexp.a,../lang-common/liblite.a
++!program lite mod_lite.o,../lang-common/mod_std.o,../lang-common/mod_msql.o,lite.o,lite_lex.o,modules.o,../msql/libmsql.a,../lang-common/liblite.a,-lcompat
+ 
+ #
+ # Debugging compilations
+@@ -33,7 +33,7 @@
+ 
+ !install lite $(INST_DIR)/bin/lite 0755
+ !install lite_lex.o $(INST_DIR)/lib/lite_lex.o 0755
+-!install mod_lite.o $(INST_DIR)/lib/mod_lite.o 0755
++!install mod_lite.o $(INST_DIR)/libexec/msql/mod_lite.so 0755
+ 
+ mod_lite.o: ../lang-common/lite.h 
+ mod_lite.o: ../common/portability.h
