@@ -1,6 +1,6 @@
---- Makefile.orig	Tue Dec  4 12:49:24 2001
-+++ Makefile	Tue Jan  1 23:26:16 2002
-@@ -13,21 +13,18 @@
+--- Makefile.orig	Thu Nov 28 16:11:25 2002
++++ Makefile	Thu Nov 28 16:14:44 2002
+@@ -13,22 +13,22 @@
  # QTDIR =       /usr/lib/qt
  
  # DESTDIR (location for installing)
@@ -12,20 +12,24 @@
 -CC	=	gcc
 -CXX	=	g++
 -CFLAGS	=	-pipe -DNO_DEBUG
--CXXFLAGS=	-pipe -DNO_DEBUG
+-CXXFLAGS=	-pipe -DNO_DEBUG -Wall -ansi
 -INCPATH	=	-I$(QTDIR)/include
 -LINK	=	g++
-+CFLAGS	+=	-DNO_DEBUG
-+CXXFLAGS+=	-DNO_DEBUG
++#CC	=	gcc
++#CXX	=	g++
++CFLAGS	+=	-pipe -DNO_DEBUG
++CXXFLAGS+=	-pipe -DNO_DEBUG -Wall -ansi
 +INCPATH	=	${QTCPPFLAGS}
-+LINK	=	$(CXX)
++LINK	=	${CXX}
  LFLAGS	=	
- #LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
 -LIBS    =       $(SUBLIBS) -lqt
++LIBS    =       ${QTCFGLIBS} ${LIBQT}
+ # you might try this if icemc segfaults when starting up:
+ #LIBS	=	$(SUBLIBS) -lqt-mt
 -MOC	=	$(QTDIR)/bin/moc
 -UIC	=	$(QTDIR)/bin/uic
-+LIBS    =       ${QTCFGLIBS} ${LIBQT}
-+UIC	=	${X11BASE}/uic
++#MOC	=	$(QTDIR)/bin/moc
++UIC	=	${X11BASE}/bin/uic
  
  TAR	=	tar -cf
  GZIP	=	gzip -9f
