@@ -1,21 +1,21 @@
---- Imlib/Makefile.in.orig	Thu Feb 25 02:17:45 1999
-+++ Imlib/Makefile.in	Mon Mar  1 19:55:08 1999
-@@ -123,7 +123,7 @@
+--- Imlib/Makefile.in.orig	Tue Oct 19 07:55:03 1999
++++ Imlib/Makefile.in	Thu Oct 28 19:35:24 1999
+@@ -125,7 +125,7 @@
  libImlib_la_SOURCES =  	cache.c			colors.c		load.c			misc.c			rend.c			utils.c			save.c			snprintf.c
  
  
--libImlib_la_LDFLAGS = -version-info 10:7:9
+-libImlib_la_LDFLAGS = -version-info 10:8:9
 +libImlib_la_LDFLAGS = -version-info 5:0:0
  #libImlib_la_LDDADD     = $(SUPPORT_LIBS)
  libImlib_la_LIBADD = $(SUPPORT_LIBS)
  
---- gdk_imlib/Makefile.in.orig	Thu Feb 25 02:17:39 1999
-+++ gdk_imlib/Makefile.in	Mon Mar  1 19:56:18 1999
-@@ -157,7 +157,7 @@
+--- gdk_imlib/Makefile.in.orig	Tue Oct 19 07:55:01 1999
++++ gdk_imlib/Makefile.in	Thu Oct 28 19:36:16 1999
+@@ -152,7 +152,7 @@
  libgdk_imlib_la_SOURCES =  	cache.c      			colors.c     			globals.c    			load.c       			misc.c       			rend.c       			utils.c      			save.c				modules.c
  
  
--libgdk_imlib_la_LDFLAGS = -version-info 10:7:9
+-libgdk_imlib_la_LDFLAGS = -version-info 10:8:9
 +libgdk_imlib_la_LDFLAGS = -version-info 5:0:0
  libgdk_imlib_la_LIBADD = $(GMODULE_LIBS)
  
