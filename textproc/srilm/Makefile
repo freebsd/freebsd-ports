@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srilm
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc
 DISTNAME=	srilm
 EXTRACT_SUFX?=	.tgz
@@ -14,7 +14,7 @@ EXTRACT_SUFX?=	.tgz
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Toolkit for building and applying statistical language models
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 DOWNLOAD_URL?=	http://www.speech.sri.com/projects/srilm/download.html
 

@@ -1,5 +1,16 @@
 --- common/Makefile.machine.freebsd.orig	Mon Oct 20 02:59:58 2003
-+++ common/Makefile.machine.freebsd	Sat Apr  3 16:44:00 2004
++++ common/Makefile.machine.freebsd	Sat Oct 23 11:12:06 2004
+@@ -49,8 +49,8 @@
+    RLD_FLAG = -R
+ 
+    # Tcl support (part of cygwin)
+-   TCL_INCLUDE = -I/usr/local/include/tcl8.3
+-   TCL_LIBRARY = -L/usr/local/lib -ltcl83
++   TCL_INCLUDE = -I/usr/local/include/tcl8.4
++   TCL_LIBRARY = -L/usr/local/lib -ltcl84
+ 
+    # No ranlib
+    RANLIB = :
 @@ -65,6 +65,6 @@
     LINT_FLAGS = -DDEBUG $(CFLAGS)
  
