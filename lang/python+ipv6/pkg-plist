@@ -526,6 +526,19 @@ lib/python1.5/plat-freebsd4/TERMIOS.py
 lib/python1.5/plat-freebsd4/TERMIOS.pyc
 lib/python1.5/plat-freebsd4/TERMIOS.pyo
 lib/python1.5/plat-freebsd4/regen
+lib/python1.5/plat-freebsd5/FCNTL.py
+lib/python1.5/plat-freebsd5/FCNTL.pyc
+lib/python1.5/plat-freebsd5/FCNTL.pyo
+lib/python1.5/plat-freebsd5/IN.py
+lib/python1.5/plat-freebsd5/IN.pyc
+lib/python1.5/plat-freebsd5/IN.pyo
+lib/python1.5/plat-freebsd5/SOCKET.py
+lib/python1.5/plat-freebsd5/SOCKET.pyc
+lib/python1.5/plat-freebsd5/SOCKET.pyo
+lib/python1.5/plat-freebsd5/TERMIOS.py
+lib/python1.5/plat-freebsd5/TERMIOS.pyc
+lib/python1.5/plat-freebsd5/TERMIOS.pyo
+lib/python1.5/plat-freebsd5/regen
 lib/python1.5/popen2.py
 lib/python1.5/popen2.pyc
 lib/python1.5/popen2.pyo
@@ -991,6 +1004,7 @@ lib/python1.5/xmllib.pyo
 @dirrm lib/python1.5/plat-freebsd2
 @dirrm lib/python1.5/plat-freebsd3
 @dirrm lib/python1.5/plat-freebsd4
+@dirrm lib/python1.5/plat-freebsd5
 @dirrm lib/python1.5/site-packages
 @dirrm lib/python1.5/test/output
 @dirrm lib/python1.5/test
