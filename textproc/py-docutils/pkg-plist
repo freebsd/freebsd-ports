@@ -19,15 +19,24 @@
 %%PYTHON_SITELIBDIR%%/docutils/languages/en.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/en.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/en.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/es.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/es.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/es.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/fr.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/fr.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/it.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/it.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/it.pyo
+%%PYTHON_SITELIBDIR%%/docutils/languages/sk.py
+%%PYTHON_SITELIBDIR%%/docutils/languages/sk.pyc
+%%PYTHON_SITELIBDIR%%/docutils/languages/sk.pyo
 %%PYTHON_SITELIBDIR%%/docutils/languages/sv.py
 %%PYTHON_SITELIBDIR%%/docutils/languages/sv.pyc
 %%PYTHON_SITELIBDIR%%/docutils/languages/sv.pyo
 %%PYTHON_SITELIBDIR%%/docutils/nodes.py
 %%PYTHON_SITELIBDIR%%/docutils/nodes.pyc
 %%PYTHON_SITELIBDIR%%/docutils/nodes.pyo
-%%PYTHON_SITELIBDIR%%/docutils/optik.py
-%%PYTHON_SITELIBDIR%%/docutils/optik.pyc
-%%PYTHON_SITELIBDIR%%/docutils/optik.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/__init__.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/__init__.pyo
@@ -40,6 +49,9 @@
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/admonitions.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/admonitions.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/admonitions.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/body.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/body.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/body.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/html.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/html.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/html.pyo
@@ -52,12 +64,30 @@
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/parts.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/parts.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/parts.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/references.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/references.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives/references.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/de.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/en.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/en.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/en.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/es.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/es.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/es.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/fr.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/it.pyo
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sk.py
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sk.pyc
+%%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sk.pyo
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sv.py
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sv.pyc
 %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages/sv.pyo
@@ -73,12 +103,15 @@
 %%PYTHON_SITELIBDIR%%/docutils/readers/pep.py
 %%PYTHON_SITELIBDIR%%/docutils/readers/pep.pyc
 %%PYTHON_SITELIBDIR%%/docutils/readers/pep.pyo
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/__init__.py
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/__init__.pyc
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/__init__.pyo
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/moduleparser.py
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/moduleparser.pyc
+%%PYTHON_SITELIBDIR%%/docutils/readers/python/moduleparser.pyo
 %%PYTHON_SITELIBDIR%%/docutils/readers/standalone.py
 %%PYTHON_SITELIBDIR%%/docutils/readers/standalone.pyc
 %%PYTHON_SITELIBDIR%%/docutils/readers/standalone.pyo
-%%PYTHON_SITELIBDIR%%/docutils/roman.py
-%%PYTHON_SITELIBDIR%%/docutils/roman.pyc
-%%PYTHON_SITELIBDIR%%/docutils/roman.pyo
 %%PYTHON_SITELIBDIR%%/docutils/statemachine.py
 %%PYTHON_SITELIBDIR%%/docutils/statemachine.pyc
 %%PYTHON_SITELIBDIR%%/docutils/statemachine.pyo
@@ -91,6 +124,9 @@
 %%PYTHON_SITELIBDIR%%/docutils/transforms/frontmatter.py
 %%PYTHON_SITELIBDIR%%/docutils/transforms/frontmatter.pyc
 %%PYTHON_SITELIBDIR%%/docutils/transforms/frontmatter.pyo
+%%PYTHON_SITELIBDIR%%/docutils/transforms/misc.py
+%%PYTHON_SITELIBDIR%%/docutils/transforms/misc.pyc
+%%PYTHON_SITELIBDIR%%/docutils/transforms/misc.pyo
 %%PYTHON_SITELIBDIR%%/docutils/transforms/parts.py
 %%PYTHON_SITELIBDIR%%/docutils/transforms/parts.pyc
 %%PYTHON_SITELIBDIR%%/docutils/transforms/parts.pyo
@@ -118,18 +154,22 @@
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1.py
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/html4css1.pyo
+%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e.py
+%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e.pyc
+%%PYTHON_SITELIBDIR%%/docutils/writers/latex2e.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html.py
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/pep_html.pyo
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.py
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.pyc
 %%PYTHON_SITELIBDIR%%/docutils/writers/pseudoxml.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/docutils/languages
-@dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/writers
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/transforms
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/readers/python
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/readers
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/languages
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers/rst/directives
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers/rst
 @dirrm %%PYTHON_SITELIBDIR%%/docutils/parsers
-@dirrm %%PYTHON_SITELIBDIR%%/docutils/readers
-@dirrm %%PYTHON_SITELIBDIR%%/docutils/transforms
-@dirrm %%PYTHON_SITELIBDIR%%/docutils/writers
+@dirrm %%PYTHON_SITELIBDIR%%/docutils/languages
 @dirrm %%PYTHON_SITELIBDIR%%/docutils
