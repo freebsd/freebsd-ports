@@ -1,0 +1,8 @@
+sbin/darkstat
+%%PORTDOCS%%share/doc/darkstat/AUTHORS
+%%PORTDOCS%%share/doc/darkstat/ChangeLog
+%%PORTDOCS%%share/doc/darkstat/ISSUES
+%%PORTDOCS%%share/doc/darkstat/INSTALL
+%%PORTDOCS%%share/doc/darkstat/README
+%%PORTDOCS%%share/doc/darkstat/TODO
+%%PORTDOCS%%@dirrm share/doc/darkstat
