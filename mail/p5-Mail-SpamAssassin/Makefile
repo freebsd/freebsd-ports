@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.50
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -45,6 +46,9 @@ MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
