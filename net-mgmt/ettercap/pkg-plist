@@ -26,6 +26,7 @@ etc/etter.conf.sample
 %%PLUGINS%%lib/ettercap/ec_rand_flood.so
 %%PLUGINS%%lib/ettercap/ec_remote_browser.so
 %%PLUGINS%%lib/ettercap/ec_reply_arp.so
+%%PLUGINS%%lib/ettercap/ec_repoison_arp.so
 %%PLUGINS%%lib/ettercap/ec_scan_poisoner.so
 %%PLUGINS%%lib/ettercap/ec_search_promisc.so
 %%PLUGINS%%lib/ettercap/ec_smb_clear.so
