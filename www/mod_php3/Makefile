@@ -62,8 +62,6 @@ pre-fetch:
 
 post-install:
 .if !defined(STANDALONE)
-	@${ECHO} "Restarting Apache..."
-	@${PREFIX}/sbin/apachectl restart
 	@${INSTALL_DATA} ${WRKSRC}/php3.ini-dist ${PREFIX}/etc
 .else
 	@${MKDIR} ${PREFIX}/etc/php.standalone
