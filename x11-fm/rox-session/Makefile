@@ -17,8 +17,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${LOCALBASE}/share/Choices:${PORTSDIR}/x11-fm/rox-base \
-		${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
+RUN_DEPENDS=	${LOCALBASE}/bin/rox:${PORTSDIR}/x11-fm/rox-filer
 
 WRKSRC=		${WRKDIR}/ROX-Session-${PORTVERSION}
 
