@@ -10,12 +10,12 @@ PORTVERSION=	${LAST_UPDATED}
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.linkclub.or.jp/~clover/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	imura
+MASTER_SITE_SUBDIR=	asami
 DISTNAME=	${PORTNAME}-ja-20000421
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mount_msdos-20000701.tar.gz
 
-MAINTAINER=	imura@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
 
