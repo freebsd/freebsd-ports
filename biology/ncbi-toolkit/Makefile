@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncbi-toolkit
-PORTVERSION=	2001.12.20
+PORTVERSION=	2002.04.26
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -36,7 +36,7 @@ CPIO=		cpio --quiet -pdum -R
 pre-configure:
 	@${CP} ${FILESDIR}/${DUMMYMAKE} ${WRKSRC}
 	@${CP} ${FILESDIR}/freebsd.ncbi.mk ${PLATFORMDIR}
-	@${PERL} -pi.orig -e 's#NetBSD#FreeBSD#;'  -e 's#netbsd#freebsd#' ${BUILDSCRIPT}
+	@${REINPLACE_CMD} -e 's#NetBSD#FreeBSD#;'  -e 's#netbsd#freebsd#' ${BUILDSCRIPT}
 
 post-install:
 	@${MKDIR} ${DATADIR}

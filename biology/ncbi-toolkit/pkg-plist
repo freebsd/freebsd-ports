@@ -37,12 +37,12 @@
 %%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn19.gif
 %%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn20.gif
 %%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn21.gif
+%%PORTDOCS%%share/doc/ncbi-toolkit/images/seqn22.gif
 %%PORTDOCS%%share/doc/ncbi-toolkit/ncbixml.txt
 %%PORTDOCS%%share/doc/ncbi-toolkit/sdk.doc
 %%PORTDOCS%%share/doc/ncbi-toolkit/sequin.htm
 bin/Nentrez
 bin/Psequin
-bin/asn2fast
 bin/asn2ff
 bin/asn2xml
 bin/asndhuff
@@ -87,6 +87,7 @@ bin/testobj
 bin/testval
 bin/udv
 bin/vecscreen
+lib/ncbi/libddvlib.a
 lib/ncbi/libncbi.a
 lib/ncbi/libncbiCacc.a
 lib/ncbi/libncbiNacc.a
@@ -102,7 +103,6 @@ lib/ncbi/libncbitool.a
 lib/ncbi/libncbitxc2.a
 lib/ncbi/libnetblast.a
 lib/ncbi/libnetcli.a
-lib/ncbi/libnetcli_.a
 lib/ncbi/libnetentr.a
 lib/ncbi/libvibgif.a
 lib/ncbi/libvibnet.a
@@ -110,6 +110,7 @@ lib/ncbi/libvibrant.a
 include/ncbi/connect/ncbi_ansi_ext.h
 include/ncbi/connect/ncbi_buffer.h
 include/ncbi/connect/ncbi_comm.h
+include/ncbi/connect/ncbi_config.h
 include/ncbi/connect/ncbi_connection.h
 include/ncbi/connect/ncbi_connector.h
 include/ncbi/connect/ncbi_connutil.h
@@ -117,6 +118,7 @@ include/ncbi/connect/ncbi_core.h
 include/ncbi/connect/ncbi_file_connector.h
 include/ncbi/connect/ncbi_heapmgr.h
 include/ncbi/connect/ncbi_http_connector.h
+include/ncbi/connect/ncbi_memory_connector.h
 include/ncbi/connect/ncbi_priv.h
 include/ncbi/connect/ncbi_sendmail.h
 include/ncbi/connect/ncbi_server_info.h
