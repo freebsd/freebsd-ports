@@ -1,9 +1,0 @@
-Encompass is a web browser for the Gnome Desktop Environment. 
-
-It is designed to be a small fast browser using the GtkHTML engine. It will be
-able to share cookies with other apps. It will handle all special URIs and MIME
-types. All of this functionality will be provided by the latest version of
-Gnome. Bonobo components will also be used, as well as plugins. No file-manager
-functions will be implemented. 
-
-WWW: http://encompass.sourceforge.net/
