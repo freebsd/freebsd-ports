@@ -1,0 +1,26 @@
+--- ../install--	Thu Jun 20 21:30:33 2002
++++ ../install	Wed Jul 24 13:23:48 2002
+@@ -138,11 +138,12 @@
+ 
+ (define in-rpm-install? (getenv "RPM_INSTALL_PREFIX"))
+ (define in-rpm-build? (and (getenv "RPM_OPT_FLAGS") (not in-rpm-install?)))
++(define in-freebsd-port-build? #t)
+ 
+ (define check-version?
+   (if in-osx-install?
+       #f ;; until the version checker can work better with the GUI...
+-      (if (or in-rpm-install? in-rpm-build?)
++      (if (or in-freebsd-port-build? in-rpm-install? in-rpm-build?)
+ 	  #f
+ 	  (begin
+ 	    (printf "Check for updates of PLT software over the Internet (y/n)? [y] ")
+@@ -152,7 +153,8 @@
+   (check-version))
+ 
+ (define zo?
+-  (or in-rpm-install?
++  (or in-freebsd-port-build? 
++      in-rpm-install?
+       in-osx-install?
+       (and (not in-rpm-build?)
+ 	   (begin
