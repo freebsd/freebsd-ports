@@ -6363,6 +6363,7 @@ revnetgroup	src/libexec/revnetgroup
 rexecd		src/libexec/rexecd
 rexx-imc	ports/lang/rexx-imc
 rfc		ports/misc/rfc
+rfksay		ports/games/rfksay
 rftp		ports/mail/rftp
 rhtvision	ports/devel/rhtvision
 ricochet	ports/mail/ricochet
