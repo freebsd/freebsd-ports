@@ -2847,6 +2847,7 @@ ja-ical		ports/japanese/ical
 ja-ipadic	ports/japanese/ipadic
 ja-ircII	ports/japanese/ircII
 ja-iv		ports/japanese/iv
+ja-jadetex-ptex	ports/japanese/jadetex-ptex
 ja-japaneseAFM	ports/japanese/japaneseAFM
 ja-jargon-fpw	ports/japanese/jargon-fpw
 ja-jcode.pl	ports/japanese/jcode.pl
