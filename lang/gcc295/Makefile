@@ -4,17 +4,18 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.58 1999/08/05 16:07:53 obrien Exp $
+# $Id: Makefile,v 1.59 1999/08/09 15:50:58 obrien Exp $
 #
 
 DISTNAME=	gcc-2.95
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/gcc-2.95/ \
 		ftp://egcs.cygnus.com/pub/egcs/releases/gcc-2.95/ \
+		${MASTER_SITE_GNU} \
 		ftp://ftp.nluug.nl/pub/languages/egcs/releases/gcc-2.95/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/releases/gcc-2.95/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/gcc-2.95/ \
-		ftp://cambridge.cygnus.com/pub/egcs/releases/gcc-2.95/
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/gcc-2.95/
+MASTER_SITE_SUBDIR=	gcc
 DISTFILES=	gcc-chill-2.95${EXTRACT_SUFX} \
 		gcc-core-2.95${EXTRACT_SUFX} \
 		gcc-g++-2.95${EXTRACT_SUFX} \
@@ -28,8 +29,7 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	2.95
-#EGCS_REV=	${DISTNAME:S/gcc-//g}
+EGCS_REV=	${DISTNAME:S/gcc-//g}
 LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+= --enable-shared
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
+MAN1=		cccp.1 g++295.1 g77.1 gcc295.1
 
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
@@ -92,18 +92,18 @@ post-install:
 	do \
 		strip $$prog ; \
 	done)
-	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/egcc
-	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
-	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/eg77
-	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/eg++filt
+	${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc295
+	${MV} ${PREFIX}/bin/g++ ${PREFIX}/bin/g++295
+	${MV} ${PREFIX}/bin/g77 ${PREFIX}/bin/g77
+	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt295
 	${RM} -f ${PREFIX}/bin/cpp
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/libstdc++.a
-	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/egcc.1
-	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/eg++.1
-	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/eg77.1
+	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc295.1
+	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++295.1
+	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
