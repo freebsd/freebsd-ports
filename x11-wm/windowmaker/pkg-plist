@@ -348,7 +348,7 @@ share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
-@exec mkdir -p %B/Sounds
+@exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Themes/STEP2000.themed
 @dirrm share/WindowMaker/Themes/Night.themed
 @dirrm share/WindowMaker/Themes/LeetWM.themed
