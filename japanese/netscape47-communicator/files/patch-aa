@@ -1,5 +1,5 @@
 --- Netscape.ad-ja_euc.orig	Tue May 18 22:57:53 1999
-+++ Netscape.ad-ja_euc	Thu Jun 24 06:23:10 1999
++++ Netscape.ad-ja_euc	Thu Jul  1 02:54:48 1999
 @@ -1,5 +1,5 @@
  ! Insert copyright and license here 1994
 -! Netscape.ad --- app-defaults file for Netscape 4.6.
@@ -250,7 +250,7 @@
  
  ! For SUN platforms, user wants default font size to be 12 pt on the message list to be readable
 -Netscape*banner*folderDropdown*XmLabel.fontList: -dt-interface system-medium-*-*-S*-*-*-*-*-*-*-*-*:
-+Netscape*banner*folderDropdown*XmLabel.fontList: 
++Netscape*banner*folderDropdown*XmLabel.fontList:\
 +-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
 +-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
 +-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
