@@ -1,0 +1,29 @@
+# New ports collection makefile for:	xfce4-systray
+# Date created:		3 July 2003
+# Whom:			James Earl <jdearl@telus.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xfce4-systray
+PORTVERSION=	3.99.2
+CATEGORIES=	x11-wm
+MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
+		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
+		http://usuarios.lycos.es/xfce4/tarballs/rc2/separate/ \
+		http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/
+DIST_SUBDIR=	xfce4
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XFce 4 system tray module for xfce4-panel
+
+BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+
+USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+.include <bsd.port.mk>
