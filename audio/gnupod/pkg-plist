@@ -3,10 +3,10 @@ bin/gnupod_addsong.pl
 bin/gnupod_search.pl
 bin/mktunes.pl
 bin/tunes2pod.pl
-%%SITE_PERL%%/mach/GNUpod/FileMagic.pm
-%%SITE_PERL%%/mach/GNUpod/FooBar.pm
-%%SITE_PERL%%/mach/GNUpod/iTunesDB.pm
-%%SITE_PERL%%/mach/GNUpod/XMLhelper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/FileMagic.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/FooBar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/iTunesDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/XMLhelper.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
 %%PORTDOCS%%%%DOCSDIR%%/gnupod.html
