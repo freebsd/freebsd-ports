@@ -20,8 +20,7 @@ DISTNAME=	nessus-plugins-${PORTVERSION}
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Plugins for Nessus, the security scanner
 
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
-		libnet-config:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus \
 		nmap:${PORTSDIR}/security/nmap \
 		wget:${PORTSDIR}/ftp/wget
@@ -38,7 +37,12 @@ MAN8=		nessus-update-plugins.8
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (libnet needs to provide a shared library)"
+PLIST_SUB+=	AMD="@comment "
+pre-configure:
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-3com-hub-amd64
+.else
+PLIST_SUB+=	AMD=""
+BUILD_DEPENDS+=	libnet-config:${PORTSDIR}/net/libnet
 .endif
 
 post-install:
