@@ -23,7 +23,7 @@ do-fetch:
 	@${DO_NADA}
 
 do-install:
-	${LN} -shf ${LOCALBASE}/bin/sdl11-config ${PREFIX}/bin/sdl-config
+	${LN} -shf ${SDL_CONFIG} ${PREFIX}/bin/sdl-config
 	${LN} -shf ${LOCALBASE}/include/SDL11 ${PREFIX}/include/SDL
 .for lib in SDL-1.1.a SDL-1.1.so SDL-1.1.so.7 SDLmain-1.1.a
 	${LN} -shf ${LOCALBASE}/lib/lib${lib} ${PREFIX}/lib/lib${lib:S/-1.1//}
