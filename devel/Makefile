@@ -538,6 +538,7 @@
     SUBDIR += p5-File-Cache
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-FTS
+    SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
     SUBDIR += p5-File-Lock
