@@ -8,7 +8,7 @@
 PORTNAME=	pilrc
 PORTVERSION=	2.5c
 CATEGORIES=	palm
-MASTER_SITES=	http://www.ardiri.com/download/pilrc/
+MASTER_SITES=	http://www.ardiri.com/download/palm/pilrc/
 DISTNAME=	pilrc_src
 EXTRACT_SUFX=	.tgz
 
