@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	16.1a
-PORTREVISION=	1
+PORTVERSION=	16.1b
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp3.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
 		ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/snapshots/ \
 		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/snapshots/
-DISTNAME=	cvsup-snap-16.1a
+DISTNAME=	cvsup-snap-16.1b
 
 MASTERDIR=	${.CURDIR}/../cvsup
 FILESDIR=	${.CURDIR}/files
