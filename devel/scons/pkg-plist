@@ -26,6 +26,21 @@ lib/scons/SCons/Node/FS.pyo
 lib/scons/SCons/Node/__init__.py
 lib/scons/SCons/Node/__init__.pyc
 lib/scons/SCons/Node/__init__.pyo
+lib/scons/SCons/Optik/__init__.py
+lib/scons/SCons/Optik/__init__.pyc
+lib/scons/SCons/Optik/__init__.pyo
+lib/scons/SCons/Optik/errors.py
+lib/scons/SCons/Optik/errors.pyc
+lib/scons/SCons/Optik/errors.pyo
+lib/scons/SCons/Optik/option.py
+lib/scons/SCons/Optik/option.pyc
+lib/scons/SCons/Optik/option.pyo
+lib/scons/SCons/Optik/option_parser.py
+lib/scons/SCons/Optik/option_parser.pyc
+lib/scons/SCons/Optik/option_parser.pyo
+lib/scons/SCons/Options.py
+lib/scons/SCons/Options.pyc
+lib/scons/SCons/Options.pyo
 lib/scons/SCons/Platform/__init__.py
 lib/scons/SCons/Platform/__init__.pyc
 lib/scons/SCons/Platform/__init__.pyo
@@ -77,6 +92,9 @@ lib/scons/SCons/Tool/__init__.pyo
 lib/scons/SCons/Tool/ar.py
 lib/scons/SCons/Tool/ar.pyc
 lib/scons/SCons/Tool/ar.pyo
+lib/scons/SCons/Tool/default.py
+lib/scons/SCons/Tool/default.pyc
+lib/scons/SCons/Tool/default.pyo
 lib/scons/SCons/Tool/dvipdf.py
 lib/scons/SCons/Tool/dvipdf.pyc
 lib/scons/SCons/Tool/dvipdf.pyo
@@ -101,6 +119,9 @@ lib/scons/SCons/Tool/gnulink.pyo
 lib/scons/SCons/Tool/icc.py
 lib/scons/SCons/Tool/icc.pyc
 lib/scons/SCons/Tool/icc.pyo
+lib/scons/SCons/Tool/ifl.py
+lib/scons/SCons/Tool/ifl.pyc
+lib/scons/SCons/Tool/ifl.pyo
 lib/scons/SCons/Tool/ilink.py
 lib/scons/SCons/Tool/ilink.pyc
 lib/scons/SCons/Tool/ilink.pyo
@@ -110,12 +131,12 @@ lib/scons/SCons/Tool/latex.pyo
 lib/scons/SCons/Tool/lex.py
 lib/scons/SCons/Tool/lex.pyc
 lib/scons/SCons/Tool/lex.pyo
-lib/scons/SCons/Tool/lib.py
-lib/scons/SCons/Tool/lib.pyc
-lib/scons/SCons/Tool/lib.pyo
 lib/scons/SCons/Tool/masm.py
 lib/scons/SCons/Tool/masm.pyc
 lib/scons/SCons/Tool/masm.pyo
+lib/scons/SCons/Tool/mslib.py
+lib/scons/SCons/Tool/mslib.pyc
+lib/scons/SCons/Tool/mslib.pyo
 lib/scons/SCons/Tool/mslink.py
 lib/scons/SCons/Tool/mslink.pyc
 lib/scons/SCons/Tool/mslink.pyo
@@ -157,6 +178,7 @@ lib/scons/SCons/exitfuncs.pyo
 @dirrm lib/scons/SCons/Script
 @dirrm lib/scons/SCons/Scanner
 @dirrm lib/scons/SCons/Platform
+@dirrm lib/scons/SCons/Optik
 @dirrm lib/scons/SCons/Node
 @dirrm lib/scons/SCons
 @dirrm lib/scons
