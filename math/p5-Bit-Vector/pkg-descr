@@ -13,5 +13,6 @@ overloaded operators for maximum ease of use.
 The C library can nevertheless be used stand-alone, without Perl.
 
 Author: Steffen Beyer <sb@engelschall.com>
+WWW: http://search.cpan.org/search?dist=Bit-Vector
 
 --will
