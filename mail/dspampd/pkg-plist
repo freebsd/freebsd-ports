@@ -1,0 +1,10 @@
+sbin/dspampd
+etc/dspampd/dspampd.conf.sample
+etc/dspampd/dspampd.applyto.sample
+etc/dspampd/dspampd.relaycontrol.sample
+@dirrm etc/dspampd
+@unexec if cmp -s %D/etc/dspampd/dspampd.conf %D/etc/dspampd/dspampd.conf.sample; then rm -f %D/etc/dspampd/dspampd.conf; fi
+@exec echo "eeeee" ; %B
+@exec [-f %B/dspampd.conf] || cp %B/%f %B/dspampd.conf
+@cwd /
+@dirrm %%ARCHIVE_DIR%%

@@ -1,0 +1,10 @@
+--- dspampd.relaycontrol.dist	Sun Jan  2 02:12:40 2005
++++ dspampd.relaycontrol	Sat Jan  1 17:34:25 2005
+@@ -39,6 +39,7 @@
+     ## relayed. Subdomains are included.
+     ## The only supported key type at the moment is 'allow'.
+     //allow => my.domain
++	allow => 127.0.0.1
+ 
+ [relay OK to Address]
+     
