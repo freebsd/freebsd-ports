@@ -9729,6 +9729,7 @@ ruby-libxslt	ports/textproc/ruby-libxslt
 ruby-locale	ports/devel/ruby-locale
 ruby-log4r	ports/sysutils/ruby-log4r
 ruby-lua	ports/lang/ruby-lua
+ruby-lua4	ports/lang/ruby-lua4
 ruby-lv		ports/converters/ruby-lv
 ruby-man	ports/lang/ruby-man
 ruby-mcrypt	ports/security/ruby-mcrypt
