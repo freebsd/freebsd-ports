@@ -74,6 +74,7 @@
     SUBDIR += discid
     SUBDIR += drumpiler
     SUBDIR += easytag
+    SUBDIR += easytag-devel
     SUBDIR += eawpats
     SUBDIR += ecasound
     SUBDIR += ecawave
