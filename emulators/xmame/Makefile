@@ -272,7 +272,7 @@ do-configure:
 		-e "s@# X11_DGA@X11_DGA@g" \
 		-e "s@/usr/X11R6@${X11BASE}@g" \
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
-		-e "s@^GLLIBS=.*@GLLIBS= ${PTHREAD_LIBS}@g" \
+		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
 
 post-build:
