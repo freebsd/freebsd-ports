@@ -7,8 +7,8 @@ bin/gcov
 bin/gcc
 bin/gcc28
 bin/%%GNUHOST%%-gcc
-@comment @unexec install-info --delete %D/info/cpp.info %D/info/dir
-@comment @unexec install-info --delete %D/info/gcc.info %D/info/dir
+@unexec install-info --delete %D/info/cpp.info %D/info/dir
+@unexec install-info --delete %D/info/gcc.info %D/info/dir
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -42,7 +42,9 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec install-info
+@exec install-info %D/info/cpp.info %D/info/dir
+@exec install-info %D/info/gcc.info %D/info/dir
+lib/gcc-lib/%%GNUHOST%%/2.8.1/include/float.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/math.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/syslimits.h
 lib/gcc-lib/%%GNUHOST%%/2.8.1/include/typeinfo
@@ -71,3 +73,10 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/cpp
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libgcc.a
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libobjc.a
 %%GNUHOST%%/include/assert.h
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include/objc
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/include
+@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1
+@dirrm lib/gcc-lib/%%GNUHOST%%
+@dirrm lib/gcc-lib
+@dirrm %%GNUHOST%%/include
+@dirrm %%GNUHOST%%
