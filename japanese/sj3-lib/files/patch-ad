@@ -1,0 +1,11 @@
+--- sj3.tmpl.~1~	Thu Jan 23 20:20:58 1997
++++ sj3.tmpl	Tue Aug 18 11:07:42 1998
+@@ -48,7 +48,7 @@
+ #if defined(FreeBSDArchitecture)
+ 
+ CODE_LIBS	= -lxpg4
+-SJ3OWNER	= root
++SJ3OWNER	= bin
+ SJ3GROUP	= bin
+ 
+ #else

@@ -1,0 +1,11 @@
+--- doc/man/Imakefile.~1~	Thu Jan 23 20:20:52 1997
++++ doc/man/Imakefile	Tue Aug 18 12:15:20 1998
+@@ -40,7 +40,7 @@
+  */
+ 
+ #ifndef JapaneseManLocale
+-#define JapaneseManLocale	ja_JP.EUC
++#define JapaneseManLocale	ja
+ #endif
+ JMANLOCALE = JapaneseManLocale
+ 

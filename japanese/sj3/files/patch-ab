@@ -1,0 +1,21 @@
+diff -arcN ../sj3-2.0.1.13.old/include/Const.h ./include/Const.h
+*** ../sj3-2.0.1.13.old/include/Const.h	Tue Aug 13 03:13:39 1996
+--- ./include/Const.h	Wed Aug 21 14:01:27 1996
+***************
+*** 87,93 ****
+--- 87,101 ----
+  #define ProtoName               "tcp"
+  #define	PortNumber		"3000"
+  #else
++ /*
++  * Change the default Port number of sj3 for FreeBSD.
++  * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++  */
++ #ifdef __FreeBSD__
++ #define	PortNumber		3086
++ #else /* ! __FreeBSD__ */
+  #define	PortNumber		3000
++ #endif /* ! __FreeBSD__ */
+  #endif
+  #define	SocketName		"/tmp/sj3sock"
+  #define	LockFile		"/tmp/SJ3SERV.EXIST"

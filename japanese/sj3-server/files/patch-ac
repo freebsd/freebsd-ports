@@ -1,0 +1,11 @@
+--- dict/dict/Imakefile.~1~	Thu Jan 23 20:20:51 1997
++++ dict/dict/Imakefile	Tue Aug 18 10:51:14 1998
+@@ -48,7 +48,7 @@
+ 
+ XCOMM INSTFLAGS	= -o $(SJ3OWNER) -g $(SJ3GROUP) -m 444
+ 
+-all:		$(OBJS)
++all::		$(OBJS)
+ 
+ $(OBJS):	$(SRCS)
+ 		$(TOOL_DIR)/$(TOOL_NAME) $(SRCS) $(OBJS) > $(OUTPUT)
