@@ -19,6 +19,12 @@ WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		tvtwm.1
+MANCOMPRESSED=	no
 PLIST_FILES=	bin/tvtwm
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tvtwm ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tvtwm.man ${MANPREFIX}/man/man1/tvtwm.1
+	${INSTALL_DATA} ${WRKSRC}/tvtwm.1.html ${PREFIX}/lib/X11/doc/html
 
 .include <bsd.port.mk>
