@@ -3,7 +3,7 @@
 # Date created:         2 August 1998
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.9 1998/08/02 17:38:18 chuckr Exp $
+# $Id: Makefile,v 1.10 1998/08/02 17:42:01 chuckr Exp $
 #
 
 DISTNAME=       mos14src
@@ -40,6 +40,6 @@ post-install:
 .endif
 	for file in $(PREFIX)/moscow_ml/bin/*;do \
 	if [ -f $${file} ]; then\
-	$(LN) -s $${file} $(PREFIX)/bin;fi;done
+	$(LN) -sf $${file} $(PREFIX)/bin;fi;done
 
 .include <bsd.port.mk>
