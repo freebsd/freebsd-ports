@@ -1,0 +1,9 @@
+--- configs/freebsd.h.orig	Wed Jul 29 05:07:27 1998
++++ configs/freebsd.h	Wed Jul 29 05:07:47 1998
+@@ -12,5 +12,5 @@
+ #include <libutil.h>	/* for openpty() */
+ 
+ #if makefile_parameter
+-SYSLIBS=-lutil
++SYSLIBS=-lutil -lxpg4
+ #endif
