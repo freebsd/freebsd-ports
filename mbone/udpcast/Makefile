@@ -46,6 +46,7 @@ do-configure:
 
 do-install:
 .ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
 . for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 . endfor
