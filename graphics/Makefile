@@ -36,6 +36,7 @@
     SUBDIR += gcolor
     SUBDIR += gd
     SUBDIR += gdk-pixbuf
+    SUBDIR += gdtclft
     SUBDIR += geomview
     SUBDIR += gfont
     SUBDIR += gif2png

@@ -1,0 +1,39 @@
+PACKAGE		= Gdtclft
+VERSION		= 2.2
+LIB		= ${PACKAGE}2
+SHLIB_MAJOR	= 2
+SHLIB_MINOR	= 1
+
+SRCS		= gdhandle.c gdCmd.c
+
+PREFIX		?=/usr/local
+TCL_VER		?=8.2
+
+LDADD		= -L${PREFIX}/lib -lgd -lttf -lpng -lz -lm
+
+CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
+CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
+CFLAGS		+=-DVERSION=\"${VERSION}\"
+
+MANn		= gdtclft.n
+INTERNALLIB	= don't build the useless static version
+
+all: ${SHLIB_NAME} pkgIndex.tcl
+
+pkgIndex.tcl:
+	echo 'package ifneeded $(PACKAGE) $(VERSION) [list load [file join $$dir $(SHLIB_NAME)] $(PACKAGE)]' > pkgIndex.tcl
+
+DIR		= lib/tcl${TCL_VER}/gdtclft
+SHLIBDIR	= ${PREFIX}/${DIR}
+MANDIR		= ${PREFIX}/man/man
+
+${SHLIBDIR}:
+	${MKDIR} ${SHLIBDIR}
+
+env:
+	@${ECHO} SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} DIR=${DIR}
+
+beforeinstall: ${SHLIBDIR}
+	${INSTALL_DATA} pkgIndex.tcl ${SHLIBDIR}
+
+.include <bsd.lib.mk>
