@@ -2,7 +2,11 @@ rt3/etc/RT_Config.pm
 rt3/etc/initialdata
 rt3/etc/schema.SQLite
 rt3/etc/schema.Pg
+rt3/etc/schema.Oracle
 rt3/etc/schema.mysql
+rt3/etc/rt.spec
+rt3/etc/constraints.mysql
+rt3/etc/drop.Oracle
 rt3/etc/acl.mysql
 rt3/etc/acl.Pg
 rt3/etc/acl.Oracle
@@ -135,7 +139,22 @@ rt3/share/html/Search/Elements/TicketHeaderCell
 rt3/share/html/Search/Elements/TicketRow
 rt3/share/html/Search/Bulk.html
 rt3/share/html/Search/Listing.html
+rt3/share/html/REST/1.0/Forms/queue/default
+rt3/share/html/REST/1.0/Forms/queue/ns
+rt3/share/html/REST/1.0/Forms/ticket/attachments
+rt3/share/html/REST/1.0/Forms/ticket/default
+rt3/share/html/REST/1.0/Forms/ticket/links
+rt3/share/html/REST/1.0/Forms/user/default
+rt3/share/html/REST/1.0/Forms/user/ns
 rt3/share/html/REST/1.0/NoAuth/mail-gateway
+rt3/share/html/REST/1.0/autohandler
+rt3/share/html/REST/1.0/dhandler
+rt3/share/html/REST/1.0/logout
+rt3/share/html/REST/1.0/search/dhandler
+rt3/share/html/REST/1.0/search/ticket
+rt3/share/html/REST/1.0/ticket/comment
+rt3/share/html/REST/1.0/ticket/link
+rt3/share/html/REST/1.0/ticket/merge
 rt3/share/html/Admin/Elements/UserTabs
 rt3/share/html/Admin/Elements/CreateUserCalled
 rt3/share/html/Admin/Elements/EditCustomField
@@ -228,7 +247,6 @@ rt3/lib/RT/URI/base.pm
 rt3/lib/RT/URI/fsck_com_rt.pm
 rt3/lib/RT/Search/ActiveTicketsInQueue.pm
 rt3/lib/RT/Search/Generic.pm
-rt3/lib/RT/I18N/zh_tw.po
 rt3/lib/RT/I18N/i_default.pm
 rt3/lib/RT/I18N/pt_br.po
 rt3/lib/RT/I18N/cs.po
@@ -241,6 +259,7 @@ rt3/lib/RT/I18N/ja.po
 rt3/lib/RT/I18N/he.po
 rt3/lib/RT/I18N/nl.po
 rt3/lib/RT/I18N/ru.po
+rt3/lib/RT/I18N/zh_tw.po
 rt3/lib/RT/I18N/zh_cn.po
 rt3/lib/RT/I18N/fr.po
 rt3/lib/RT/Interface/Email/Auth/MailFrom.pm
@@ -343,12 +362,14 @@ rt3/lib/RT/Attachment.pm
 rt3/lib/RT/Attachment_Overlay.pm
 rt3/lib/RT.pm.in
 rt3/lib/RT.pm
-rt3/bin/ap2mp2-fix.pl
-rt3/bin/rt-crontool
 rt3/bin/webmux.pl
 rt3/bin/mason_handler.svc
+rt3/bin/mason_handler.scgi
 rt3/bin/mason_handler.fcgi
 rt3/bin/rt-mailgate
+rt3/bin/rt-crontool
+rt3/bin/rt
+rt3/bin/ap2mp2-fix.pl
 rt3/sbin/rt-test-dependencies
 rt3/sbin/rt-setup-database
 rt3/README
@@ -370,7 +391,10 @@ rt3/README
 @dirrm rt3/share/html/SelfService
 @dirrm rt3/share/html/Search/Elements
 @dirrm rt3/share/html/Search
+@dirrm rt3/share/html/REST/1.0/ticket
+@dirrm rt3/share/html/REST/1.0/search
 @dirrm rt3/share/html/REST/1.0/NoAuth
+@dirrm rt3/share/html/REST/1.0/Forms
 @dirrm rt3/share/html/REST/1.0
 @dirrm rt3/share/html/REST
 @dirrm rt3/share/html/NoAuth/images
