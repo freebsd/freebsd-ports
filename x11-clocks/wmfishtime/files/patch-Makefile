@@ -1,0 +1,21 @@
+--- Makefile.orig	Sat May 26 22:49:41 2001
++++ Makefile	Sun May 27 00:14:26 2001
+@@ -6,17 +6,15 @@
+ 
+ # no user serviceable parts below this line
+ # optimization cflags
+-CFLAGS = -O3 -Wall `gtk-config --cflags` ${EXTRA}
+ # profiling cflags
+ # CFLAGS=-ansi -pedantic -Wall -pg -O3 `gtk-config --cflags` ${EXTRA} -DPRO
+ # test coverage cflags
+ # CFLAGS=-fprofile-arcs -ftest-coverage -Wall -ansi -pedantic -g `gtk-config --cflags` ${EXTRA} -DPRO
+ 
+ 
+-CC = gcc
+ SHELL = sh
+ OBJS = fishmon.o
+-LIBS = `gtk-config --libs | sed "s/-lgtk//g"`
++LIBS = `echo $(GTK_LIBS) | sed "s/-lgtk12//g"` -lgnugetopt
+ INSTALL = -m 755
+ 
+ all: wmfishtime
