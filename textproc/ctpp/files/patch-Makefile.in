@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Wed Feb  9 11:50:31 2005
++++ Makefile.in	Wed Feb  9 22:09:28 2005
+@@ -75,8 +75,8 @@
+ 		fi; \
+ 	done;
+ 	@echo -------------------------------------- Installing documentation ----------
+-	if test ! -d "$(PREFIX)/doc"; then \
+-		$(INSTALL) -d -m 0755 $(PREFIX)/doc; \
++	if test ! -d "$(PREFIX)/share/doc"; then \
++		$(INSTALL) -d -m 0755 $(PREFIX)/share/doc; \
+ 	fi; \
+ 	ELEM_LIST=`ls -R -1 $(BUILDROOT)/doc | sed 's!:$$!!';` ; \
+ 	CURR_DIR=''; \
+@@ -85,10 +85,10 @@
+ 			EXCL_PATH=`echo $(BUILDROOT)/doc | sed 's!\.!\\\\.!g'`; \
+ 			INST_PATH=`eval "echo $$ELEMENT | sed 's!^$$EXCL_PATH!!g'"`; \
+ 			CURR_DIR=$$ELEMENT; \
+-			$(INSTALL) -d -m 0755 $(PREFIX)/doc/$$INST_PATH; \
++			$(INSTALL) -d -m 0755 $(PREFIX)/share/doc/ctpp/$$INST_PATH; \
+ 		else \
+ 			if test -f "$$CURR_DIR/$$ELEMENT"; then \
+-				$(INSTALL) -m 0644 $$CURR_DIR/$$ELEMENT $(PREFIX)/doc/$$INST_PATH/$$ELEMENT; \
++				$(INSTALL) -m 0644 $$CURR_DIR/$$ELEMENT $(PREFIX)/share/doc/ctpp/$$INST_PATH/$$ELEMENT; \
+ 			fi; \
+ 		fi; \
+ 	done;
