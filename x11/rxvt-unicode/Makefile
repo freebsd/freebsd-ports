@@ -113,6 +113,10 @@ CONFIGURE_ENV+=		LIBS="-lutil"
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"libsupc++.a cannot be used when making a shared object (missing -fPIC)"
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=		missing wide-character functions in FreeBSD-4.x libc
 .endif
