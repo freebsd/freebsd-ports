@@ -3,7 +3,7 @@
 # Date created: 	1 August 1998
 # Whom:			jkoshy
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/01 23:34:42 jkoshy Exp $
 #
 
 DISTNAME=	dbs-1.1.5
@@ -11,6 +11,8 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://shika.aist-nara.ac.jp/member/yukio-m/dbs/software1.1.5/
 
 MAINTAINER=	jkoshy@freebsd.org
+
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 DOCDIR=		${PREFIX}/share/doc/dbs/
 DOCS=		dbs.man dbs.man.jis dbs_paper.ps Copyright
