@@ -26,7 +26,6 @@ share/libtool%%BUILD_VERSION%%/libltdl/ltdl.c
 share/libtool%%BUILD_VERSION%%/libltdl/ltdl.h
 share/libtool%%BUILD_VERSION%%/libltdl/ltmain.sh
 share/libtool%%BUILD_VERSION%%/libltdl/missing
-share/libtool%%BUILD_VERSION%%/libltdl/mkinstalldirs
 share/libtool%%BUILD_VERSION%%/ltmain.sh
 @dirrm share/libtool%%BUILD_VERSION%%/libltdl
 @dirrm share/libtool%%BUILD_VERSION%%
