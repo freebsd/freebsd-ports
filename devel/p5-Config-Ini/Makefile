@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
 PERL_CONFIGURE=	YES
 
+DEPRECATED=	"no longer on CPAN"
+EXPIRATION_DATE=	2005-04-17
 MAN3=		Config::Ini.3
 
 .include <bsd.port.mk>
