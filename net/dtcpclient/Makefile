@@ -25,7 +25,7 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 pre-install:
 	@if [ -f ${RC_SCRIPT} ]; then \
-		echo "Remove old ${RC_SCRIPT} before install."; \
+		${ECHO_CMD} "Remove old ${RC_SCRIPT} before install."; \
 		exit 1; \
 	fi
 
