@@ -10313,6 +10313,7 @@ user-selector-applet	ports/x11/user-selector-applet
 useracc		ports/databases/useracc
 userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
+usermatic	ports/sysutils/usermatic
 usermin		ports/sysutils/usermin
 userneu		ports/sysutils/userneu
 userneu-devel	ports/sysutils/userneu-devel
