@@ -7705,6 +7705,7 @@ php4-horde	ports/lang/php4-horde
 php4-iconv	ports/converters/php4-iconv
 php4-imap	ports/mail/php4-imap
 php4-interbase	ports/databases/php4-interbase
+php4-ldap	ports/net/php4-ldap
 php4-mbstring	ports/converters/php4-mbstring
 php4-mcal	ports/misc/php4-mcal
 php4-mcve	ports/devel/php4-mcve
