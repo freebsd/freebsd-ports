@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	epoz
-PORTVERSION=	0.7.4
+PORTVERSION=	0.8.0
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/mjablonski/Epoz/${PORTVERSION}/
+MASTER_SITES=	http://mjablonski.zope.de/Epoz/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Epoz-${PORTVERSION}
 
