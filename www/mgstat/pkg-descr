@@ -1,0 +1,14 @@
+Mgstat produces html reports for years, months and days (with png or 
+gif charts generated with GD library) that shows you how many bytes you 
+saved by using this excellent free Apache module. It produces history 
+files so you can rotate your logs without losing previous statistics.  
+You can also run mgstat on the same log file and statistics won't be 
+doubled because program will start from the place where previous 
+processing ended. You can also run mgstat on totally unsorted (date order) 
+log file (that were produced for example by merging various log files); 
+program will run a little bit slower but will produce correct reports. 
+
+WWW: http://wizard.ae.krakow.pl/~mike/mgstat/
+
+- Jim
+jim@thehousleys.net

@@ -108,6 +108,7 @@
     SUBDIR += mapedit
     SUBDIR += marc-search
     SUBDIR += mathopd
+    SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += mmosaic
     SUBDIR += mnoGoSearch-current
