@@ -1,3 +1,4 @@
-another kana-kanji conversion system
+Anthy is a Japanese input method working on X11 and emacs.
+It converts Hiragana text to Kana Kanji mixed text.
 
-WWW: http://www.kyoto.trans-nt.com/anthy/ (Japanese)
+WWW: http://anthy.sourceforge.jp/ (Japanese)
