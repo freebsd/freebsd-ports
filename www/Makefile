@@ -364,6 +364,9 @@
     SUBDIR += openvrml
     SUBDIR += opera
     SUBDIR += opera-devel
+    SUBDIR += osb-browser
+    SUBDIR += osb-nrcit
+    SUBDIR += osb-nrcore
     SUBDIR += oscommerce
     SUBDIR += p5-AMF-Perl
     SUBDIR += p5-Apache-ASP
