@@ -1,4 +1,0 @@
-bin/ac3dec
-bin/extract_ac3
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
