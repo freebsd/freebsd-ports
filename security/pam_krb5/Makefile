@@ -50,7 +50,7 @@ LIB_DEPENDS=		krb5.3:${PORTSDIR}/security/krb5
 KRB5_DIR?=		${KRB5_HOME}
 .endif
 .else
-BROKEN=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
+IGNORE=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .endif
 
 .include <bsd.port.pre.mk>
