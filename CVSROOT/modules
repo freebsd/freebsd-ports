@@ -171,6 +171,7 @@ abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abinit		ports/science/abinit
 abiword		ports/editors/abiword
+abiword-plugins	ports/editors/abiword-plugins
 abntex		ports/print/abntex
 abook		ports/mail/abook
 abridge		ports/games/abridge
