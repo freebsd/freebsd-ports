@@ -9,11 +9,13 @@ PORTNAME=	smtpfeed
 PORTVERSION=	1.18
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.kyoto.wide.ad.jp/pub/mail/smtpfeed/ \
+		ftp://netsw.org/net/mail/transport/smtp/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/smtpfeed/&,}
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/sendmail
+COMMENT=	SMTP Fast Exploding External Deliverer for Sendmail
 
 NO_PACKAGE=	"complex configuration for sendmail.cf needed"
 
