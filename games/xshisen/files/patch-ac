@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Jan 23 17:35:21 1996
++++ Makefile.in	Sun Nov 28 13:59:53 1999
+@@ -64,6 +64,9 @@
+ 		$(INSTALLD) $$file $(XSHISENLIB)/`basename $$file`; \
+ 	done
+ 	$(INSTALLD) $(AD) $(XAD_DIR)/$(class_name)
++	@if [ ! -f $(JXAD_DIR) ]; then \
++	$(MKDIR) $(JXAD_DIR); \
++	fi
+ 	$(INSTALLD) $(ADJ) $(JXAD_DIR)/$(class_name)
+ 
+ install.man: $(exec_name).jman $(exec_name).man

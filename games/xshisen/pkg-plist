@@ -39,4 +39,5 @@ lib/X11/xshisen/ton.xpm
 lib/X11/app-defaults/XShisen
 lib/X11/ja_JP.EUC/app-defaults/XShisen
 @unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.EUC 2>/dev/null || true
 @dirrm lib/X11/xshisen
