@@ -149,6 +149,7 @@
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += cssc
+    SUBDIR += cstringbuffer
     SUBDIR += ctags
     SUBDIR += cutils
     SUBDIR += cvs+ipv6
