@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	vmsbackup
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	emulators sysutils
-MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
-# slightly different version
-# MASTER_SITES+=	ftp://ftp.uni-passau.de/pub/unix/system/backup/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://www.bsdberlin.org/~dako/distfiles/emulators/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dako@bsdberlin.org
 COMMENT=	Reads VMS BACKUP tapes
 
 MAN1=		vmsbackup.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/vmsbackup
-
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 -f
+USE_REINPLACE=  yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#gets(ans);#fgets(ans, 80, stdin);#' ${WRKSRC}/vmsbackup.c
+	@${REINPLACE_CMD} -e 's#"getopt.h"#<unistd.h>#' ${WRKSRC}/getoptmain.c
 
 .include <bsd.port.mk>
