@@ -1,0 +1,15 @@
+--- kipi-plugins/Makefile.in.orig	Tue Nov  9 23:15:56 2004
++++ kipi-plugins/Makefile.in	Tue Nov  9 23:16:31 2004
+@@ -283,11 +283,7 @@
+ 
+ @compile_JPEGLOSSLESS_TRUE@JPEGLOSSLESSDIR = jpeglossless
+ 
+-SUBDIRS = printwizard calendar mpegencoder cdarchiving imagesgallery \
+-	sendimages acquireimages batchprocessimages \
+-	timeadjust wallpaper \
+-	rawconverter findimages \
+-	$(SLIDESHOWDIR) $(KAMERAKLIENTDIR) $(JPEGLOSSLESSDIR)
++SUBDIRS = %%SUBDIRS%%
+ 
+ 
+ rcdir = $(kde_datadir)/kipi
