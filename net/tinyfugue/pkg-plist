@@ -2,6 +2,7 @@ bin/tf
 bin/%%DISTNAME%%
 lib/%%DISTNAME%%-lib/CHANGES
 lib/%%DISTNAME%%-lib/README
+lib/%%DISTNAME%%-lib/activity_status.tf
 lib/%%DISTNAME%%-lib/alias.tf
 lib/%%DISTNAME%%-lib/at.tf
 lib/%%DISTNAME%%-lib/bind-bash.tf
@@ -35,7 +36,9 @@ lib/%%DISTNAME%%-lib/psh.tf
 lib/%%DISTNAME%%-lib/quoter.tf
 lib/%%DISTNAME%%-lib/relog.tf
 lib/%%DISTNAME%%-lib/rwho.tf
+lib/%%DISTNAME%%-lib/savehist.tf
 lib/%%DISTNAME%%-lib/self.tf
+lib/%%DISTNAME%%-lib/separator.tf
 lib/%%DISTNAME%%-lib/space_page.tf
 lib/%%DISTNAME%%-lib/spc-page.tf
 lib/%%DISTNAME%%-lib/spedwalk.tf
@@ -44,14 +47,18 @@ lib/%%DISTNAME%%-lib/spell.tf
 lib/%%DISTNAME%%-lib/stack-q.tf
 lib/%%DISTNAME%%-lib/stack_queue.tf
 lib/%%DISTNAME%%-lib/stdlib.tf
+lib/%%DISTNAME%%-lib/teraterm.keyboard.cnf
+lib/%%DISTNAME%%-lib/textencode.tf
 lib/%%DISTNAME%%-lib/textutil.tf
 lib/%%DISTNAME%%-lib/tf-help
 lib/%%DISTNAME%%-lib/tf-help.idx
 lib/%%DISTNAME%%-lib/tfrc
+lib/%%DISTNAME%%-lib/tfstatus.tf
 lib/%%DISTNAME%%-lib/tick.tf
 lib/%%DISTNAME%%-lib/tintin.tf
 lib/%%DISTNAME%%-lib/tools.tf
 lib/%%DISTNAME%%-lib/tr.tf
+lib/%%DISTNAME%%-lib/updown.tf
 lib/%%DISTNAME%%-lib/watch.tf
 lib/%%DISTNAME%%-lib/world-q.tf
 lib/%%DISTNAME%%-lib/worldqueue.tf
