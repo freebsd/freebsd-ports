@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	yabasic
-PORTVERSION=	2.66
+PORTVERSION=	2.681
 CATEGORIES=	lang
 MASTER_SITES=	http://www.yabasic.de/download/
-DISTFILES=	yab.tar.Z
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
+
+BROKEN=		"Patches fail to apply; needs to be updated to new version"
 
 USE_BISON=	yes
 USE_XLIB=	yes
