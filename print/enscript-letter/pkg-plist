@@ -67,3 +67,4 @@ share/enscript/ps.enc
 share/enscript/pslatin1.enc
 share/enscript/simple.hdr
 share/enscript/vms.enc
+@dirrm share/enscript
