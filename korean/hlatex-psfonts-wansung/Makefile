@@ -1,31 +1,49 @@
-# New ports collection makefile for:	HLaTeX-0.95 PS fonts
-# Version required:     0.95
-# Date created:		2 Apr 1997
-# Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
+# New ports collection makefile for:    HLaTeX PS fonts-wansungstd
+# Version required:             0.98
+# Date created:                 Sun Aug  9 18:05:29 KST 1998
+# Whom:                         CHOI Junho <cjh@kr.freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       PS-HLaTeX-pfb
-PKGNAME=	ko-hlatexpsfonts-0.95
-CATEGORIES=	korean
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
+DISTNAME=               HLaTeXpsfonts-wansung-0.98
+PKGNAME=                ko-HLaTeXpsfonts-${HLATEX_ENCODING}std-0.98
+CATEGORIES=             korean print
+MASTER_SITES=           ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/${HLATEX_ENCODING}/
+DISTFILES=              ${HLATEX_PSFONTS_BASE}
 
-MAINTAINER=	junker@jazz.snu.ac.kr
+MAINTAINER=             cjh@kr.freebsd.org
 
-NO_WRKSUBDIR=	yes
-NO_BUILD=	yes
+# it depends ko-HLaTeX.
+RUN_DEPENDS=		${PREFIX}/share/texmf/doc/latex/hlatex/wansung.ks:${PORTSDIR}/korean/hlatex-${HLATEX_ENCODING}std
+BUILD_DEPENDS=		${PREFIX}/share/texmf/doc/latex/hlatex/wansung.ks:${PORTSDIR}/korean/hlatex-${HLATEX_ENCODING}std
 
+# just install directly
+EXTRACT_ONLY=
+NO_BUILD=		yes
+USE_BZIP2=		yes
+DIST_SUBDIR=            hlatex98        # too many distfiles
+
+TEXMF=			${PREFIX}/share/texmf
+# default encoding
+HLATEX_ENCODING=        wansung
+# default font. includes complete Myoungjo and Gothic fonts.
+HLATEX_PSFONTS_BASE     = pkmj.tar.bz2 pkgt.tar.bz2 \
+			  pshanja-myoungjo.tar.bz2 pshanja-gothic.tar.bz2 \
+			  phsym.tar.bz2 ptaza.tar.bz2
+
+# it is a trick
+post-fetch:
+	${MKDIR} ${WRKDIR}
+
+# Installation according to readme.ks
 do-install:
-	@cd ${WRKDIR}; \
-	${MKDIR} ${PREFIX}/share/fonts/HLaTeX-0.95-pfb/; \
-	for dir in phmj pkgs pkmg pkyt phgt pkgr pkgt pkmj; \
+	cd ${TEXMF}/fonts/; \
+	for fonts in ${HLATEX_PSFONTS_BASE}; \
 	do \
-	  ${CP} -r $$dir ${PREFIX}/share/fonts/HLaTeX-0.95-pfb/; \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+			${_DISTDIR}/$$fonts ${EXTRACT_AFTER_ARGS}; \
 	done; \
-	${INSTALL_DATA} Fontmap.local ${PREFIX}/share/fonts/HLaTeX-0.95-pfb/
-
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	${PREFIX}/bin/texhash
 
 .include <bsd.port.mk>
