@@ -1,30 +1,31 @@
 # New ports collection makefile for:   ntop
-# Version required:    1.0
+# Version required:    1.1a3
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1998/11/12 00:01:32 billf Exp $
+# $Id: Makefile,v 1.5 1998/11/12 15:21:53 billf Exp $
 #
 
-DISTNAME=	ntop-1.0.src
-PKGNAME=	ntop-1.0
+DISTNAME=
+PKGNAME=	ntop-1.1a3
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/
+MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/snapshots/ \
+		ftp://ftp.ee.lbl.gov/ \
+		http://www.FreeBSD.org/~billf/
+DISTFILES=	libpcap-0.4.tar.Z ${NTOPDISTFILE}.tar.gz
 
-MAINTAINER=	billf@chc-chimes.com
+MAINTAINER=	billf@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
+NTOPDISTFILE=	ntop-1.1a3
+WRKSRC=		${WRKDIR}/${NTOPDISTFILE}
 USE_AUTOCONF=	yes
 ALL_TARGET=
 INSTALL_TARGET=	install
-CFLAGS+=	-D__dead=
 
 MAN8=		ntop.8
 
-post-extract:
-
-	${CP} ${FILESDIR}/ethertype.h ${WRKSRC}
-	${CP} ${FILESDIR}/gnuc.h ${WRKSRC}
+post-patch:
+	@cd ${WRKDIR}/libpcap-0.4/; ./configure; make
 
 post-install:
 	strip ${PREFIX}/sbin/ntop

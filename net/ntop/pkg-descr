@@ -1,6 +1,6 @@
-ntop is a tool that shows the network usage, similar to what the popular top
-Unix command does. ntop is based on libpcap.
+ntop is a tool that shows the network usage, similar to what the popular
+top(1) Unix command does. ntop is based on libpcap.
 
 http://jake.unipi.it/~deri/ntop/
 
-Bill Fumerola <billf@chc-chimes.com>
+Bill Fumerola <billf@FreeBSD.org>
