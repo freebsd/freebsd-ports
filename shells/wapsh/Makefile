@@ -11,7 +11,7 @@ CATEGORIES=     	shells
 MASTER_SITES=   	http://www.exolution.de/wapsh/
 DISTNAME=		${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 #RUN_DEPENDS=		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 #			${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3

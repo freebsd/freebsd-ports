@@ -89,3 +89,4 @@ share/doc/wapsh/user_guide/index.html
 @dirrm share/doc/wapsh/user_guide
 @dirrm share/doc/wapsh
 @dirrm share/wapsh/htdocs
+@dirrm share/wapsh
