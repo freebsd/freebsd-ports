@@ -1,4 +1,5 @@
 bin/swatch
+etc/rc.d/swatch.sh
 %%SITE_PERL%%/Swatch/Actions.pm
 %%SITE_PERL%%/Swatch/Throttle.pm
 %%SITE_PERL%%/auto/Swatch/Actions/autosplit.ix

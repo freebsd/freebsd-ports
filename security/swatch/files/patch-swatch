@@ -1,0 +1,11 @@
+--- swatch.orig	Fri Nov  5 12:06:30 2004
++++ swatch	Fri Nov  5 12:06:46 2004
+@@ -396,7 +396,7 @@
+ my $Now = 0;  # The current time in Unix seconds. Gets set when set_restart_time is called
+ my $thCounter = 0;
+ my $tail_cmd_name = ''; # We'll try to find it in the PATH later
+-my $tail_cmd_args = '-n 0 -f'; 
++my $tail_cmd_args = '-n 0 -F'; 
+ $awk_field_syntax = 0;
+ 
+ my $USAGE = qq/
