@@ -16,7 +16,6 @@ etc/ffproxy.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/html/connect
 %%PORTDOCS%%%%DOCSDIR%%/html/filtered
 %%PORTDOCS%%%%DOCSDIR%%/html/invalid
-%%PORTDOCS%%%%DOCSDIR%%/html/notcached
 %%PORTDOCS%%%%DOCSDIR%%/html/post
 %%PORTDOCS%%%%DOCSDIR%%/html/resolve
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/db
