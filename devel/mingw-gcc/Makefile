@@ -19,8 +19,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tino@pa2.so-net.ne.jp
 
 BUILD_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
+		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt \
+		autoheader:${PORTSDIR}/devel/autoconf
+RUN_DEPENDS=	i386-mingw32msvc-as:${PORTSDIR}/devel/mingw-binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw-bin-msvcrt
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
