@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Dec 18 13:52:15 1997
-+++ Makefile	Sat May 23 21:08:52 1998
+--- Makefile	Thu Dec 18 07:52:15 1997
++++ Makefile.new	Sat Jan 22 16:57:49 2000
 @@ -1,28 +1,28 @@
  
 -kde_libraries = /opt/kde/lib
@@ -14,10 +14,11 @@
  ############ Autoconf-generated variables  ###################
 -CXXFLAGS= -O2 -Wall -I/opt/kde/include -I/usr/lib/qt/include  -I.. 
 -LDFLAGS	= -s -L/opt/kde/lib -L/usr/lib -L/usr/X11/lib -lkdecore -lkdeui -lqt -lXext -lX11 
+-CXX     = c++
+-MOC   	= /usr/bin/moc
 +CXXFLAGS= -O2 -Wall -I$(LOCALBASE)/include -I$(X11BASE)/include -I$(X11BASE)/include/X11/qt  -I.. 
 +LDFLAGS	= -s -L$(kde_libraries) -L$(qt_libraries) -lkdecore -lkdeui -lqt -lXext -lX11 
- CXX     = c++
--MOC   	= /usr/bin/moc
++CXX     ?= c++
 +MOC   	= $(X11BASE)/bin/moc
  
  install = /usr/bin/install -c
@@ -28,7 +29,7 @@
  INSTALL_DIR_PRIVATE = $(install) -d -m 0700
  
 -prefix = /opt/kde
-+prefix = /usr/local
++prefix = $(PREFIX)
  KDEINC = $(prefix)/include
  BINDIR = $(prefix)/bin
  LIBDIR = $(prefix)/lib

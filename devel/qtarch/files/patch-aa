@@ -39,15 +39,18 @@
  #CFLAGS	= -O2 -fno-strength-reduce -W -Wtemplate-debugging -Wparentheses \
  #	-Wuninitialized -Wchar-subscripts -Wformat -Wtrigraphs -Wcomment \
  #	-Wswitch -Wunused -Wreturn-type -Wimplicit -Wpointer-arith -Wsynth \
-@@ -26,7 +26,7 @@
+@@ -26,9 +26,9 @@
  	bmp/libbmp.a \
  	layout/liblayout.a \
  	pixmap/libpixmap.a \
 -	-lfl -lqt -lstdc++ -ldl -rdynamic
 +	-lfl -lqt -lstdc++ -lX11 -lm -rdynamic
  ARFLAGS	= -crs
- CC	= g++
+-CC	= g++
++CC	= $(CXX)
  AR	= ar
+ FLEX	= flex
+ MAKE	= gmake
 --- bmp/Makefile.orig	Fri Jan 29 04:41:35 1999
 +++ bmp/Makefile	Sat May  8 00:50:27 1999
 @@ -85,7 +85,7 @@
@@ -67,12 +70,14 @@
  
  ifdef BUILD_RELEASE
  CFLAGS = -O2 -fno-strength-reduce -Wall -W -pipe -fPIC
-@@ -6,7 +6,7 @@
+@@ -6,8 +6,8 @@
  CFLAGS = -g -Wall -W -pipe -fPIC
  endif
  
 -LDFLAGS = -g -shared -L$(QTDIR)/lib -L/opt/kde/lib -lqt -lkdecore -lkdeui
+-CC = g++
 +LDFLAGS = -g -shared -L$(X11BASE)/lib -L$(PREFIX)/lib -lqt -lkdecore -lkdeui
- CC = g++
++CC = $(CXX)
  MOC = moc
  QTARCHBIN = ../../qtarch
+
