@@ -1,8 +1,10 @@
 bin/aclocal14
 bin/automake14
-@unexec install-info --delete %D/info/automake.info %D/info/dir
-info/automake.info
-@exec install-info %D/info/automake.info %D/info/dir
+@unexec install-info --delete %D/info/automake14.info %D/info/dir
+info/automake14.info
+@exec install-info %D/info/automake14.info %D/info/dir
+libexec/automake14/aclocal
+libexec/automake14/automake
 share/automake14/aclocal/ccstdc.m4
 share/automake14/aclocal/cond.m4
 share/automake14/aclocal/dmalloc.m4
@@ -77,6 +79,7 @@ share/automake14/automake/texi-vers.am
 share/automake14/automake/texinfo.tex
 share/automake14/automake/texinfos.am
 share/automake14/automake/ylwrap
+@dirrm libexec/automake14
 @dirrm share/automake14/aclocal
 @dirrm share/automake14/automake
 @dirrm share/automake14

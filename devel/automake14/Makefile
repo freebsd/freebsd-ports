@@ -7,6 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -22,10 +23,19 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
+post-patch:
+	@-${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi
+	${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi
+
 pre-configure:
 	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
 
 post-install:
-	@install-info ${PREFIX}/info/automake.info ${PREFIX}/info/dir
+	@-${RM} -fr ${PREFIX}/libexec/automake14
+	@${MKDIR} ${PREFIX}/libexec/automake14
+.for i in aclocal automake
+	@${LN} -s ../../bin/${i}14 ${PREFIX}/libexec/automake14/${i}
+.endfor
+	@install-info ${PREFIX}/info/automake14.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
