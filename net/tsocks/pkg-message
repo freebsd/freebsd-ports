@@ -1,0 +1,9 @@
+
+###
+
+Simple setup file was copied to ${PREFIX}/etc/tsocks.conf.sample
+An example of a more complex setup file can be found in
+${PREFIX}/share/examples/tsocks/
+Some more details avaliable in ${PREFIX}/share/examples/tsocks/README
+
+###

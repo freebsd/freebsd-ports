@@ -673,6 +673,7 @@
     SUBDIR += trickle
     SUBDIR += tridiavnc
     SUBDIR += tsclient
+    SUBDIR += tsocks
     SUBDIR += ttcp
     SUBDIR += ttlscan
     SUBDIR += ttt
