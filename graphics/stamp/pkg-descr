@@ -5,6 +5,6 @@ image via FTP, with the configuration of a stamprc file. It also features a
 "quad" option which will take the latest image and composite it with up to 
 three previous images, while timestamping the latest one. 
 
-WWW: http://www.telepath.com/booger/
+WWW: http://stamp.netpedia.net/
 
 Bill Fumerola <billf@chc-chimes.com>
