@@ -187,7 +187,7 @@ post-patch::
 	@(cd ${WRKSRC}; \
 	  ${MV} programs/Xserver/hw/xfree86/drivers/mga \
 		programs/Xserver/hw/xfree86/drivers/mga.old; \
-	  ${MV} ../mgadrivers-${MGA_DRIVER_VERSION}-src/${PORTVERSION}/drivers/src programs/Xserver/hw/xfree86/drivers/mga)
+	  ${MV} ../mgadrivers-${MGA_DRIVER_VERSION}-src/4.2.0/drivers/src programs/Xserver/hw/xfree86/drivers/mga)
 post-install::
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
