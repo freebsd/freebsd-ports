@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	5.0.16
-PORTREVISION=	1
+PORTVERSION=	5.0.18
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
-		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v{PORTVERSION}/bin/ \
+		http://apache.lemon4ssc.org/dist/jakarta/tomcat-5/v${PORTVERSION}/bin/ \
 		http://distfiles.coredump.cn/
 
 MAINTAINER=	liukang@bjpu.edu.cn
