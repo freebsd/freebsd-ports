@@ -1,6 +1,14 @@
+
+$FreeBSD$
+
 --- ferite-config.in.orig	Wed Jul 25 15:47:03 2001
-+++ ferite-config.in	Sat Aug 25 19:13:09 2001
-@@ -46,7 +46,7 @@
++++ ferite-config.in	Thu Nov 15 18:21:57 2001
+@@ -42,11 +42,11 @@
+       if test @includedir@ != /usr/include ; then
+         includes=-I@includedir@
+       fi
+-      echo $includes @debugdefs@
++      echo %%PTHREAD_CFLAGS%% $includes @debugdefs@
        ;;
      --libs)
        libdirs=-L@libdir@
