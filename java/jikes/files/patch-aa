@@ -15,7 +15,7 @@ diff -ur --unidirectional-new-file jikes.orig/src/Makefile.in work/jikes/src/Mak
 +	${INSTALL} -c ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 +	  ${EXECUTABLE} ${PREFIX}/bin/jikes
 +	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
-+	  ${FILESDIR}/jikes.1 ${PREFIX}/man/man1
++	  ${WRKDIR}/jikes/jikes.1 ${PREFIX}/man/man1
 +
 +.include <bsd.own.mk>
  
