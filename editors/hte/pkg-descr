@@ -1,0 +1,20 @@
+HT is a file editor/viewer/analyzer for executables. The goal is to combine
+the low-level functionality of a debugger and the usability of IDEs. We aim
+towards a perfect hex-editing ability and support of the most important file
+formats.
+
+Support means that HT will be able to correctly display and modify the
+executable header, image and other extensions specific to the file (import/
+export sections, relocations, debugging information etc.). Support will
+probably include the following file formats: 
+
+   - Win32 portable executables (PE) (good support) 
+   - Unix executable and linkable format (ELF) (good support) 
+   - DOS standard executables (MZ) (supported) 
+   - Win32 linear executables (LE) (supported) 
+   - Windows/OS2 "new" executables (NE) (supported) 
+   - Unix common object file format (COFF) + DJGPP COFF (supported) 
+   - OS2 linear executables (LX) 
+   - M$ object files (.obj) 
+
+WWW: http://hte.sourceforge.net/
