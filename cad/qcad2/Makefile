@@ -17,6 +17,12 @@ USE_XLIB=	yes
 USE_QT2=	yes
 MAKE_ENV=	QTDIR="${X11BASE}"
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
 
@@ -37,4 +43,4 @@ do-install:
 	@${LN} -sf ${PREFIX}/share/doc/qcad ${PREFIX}/share/qcad/doc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -30,7 +30,13 @@ CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-x-includes=${X11BASE}/include \
 		--with-x-libraries=${X11BASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

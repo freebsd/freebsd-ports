@@ -25,6 +25,12 @@ CONFIGURE_ENV=	QTDIR="${X11BASE}" MOC="${X11BASE}/bin/moc2" \
 CONFIGURE_ARGS=	--disable-shared
 MAKE_ENV=	QTEZ="${X11BASE}/share/qtez"
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@find ${WRKSRC} -name "Makefile.am" | xargs ${PERL} -pi -e \
 		's|\@DEBUG\@|\@CXXFLAGS\@ \@DEBUG\@|g'
@@ -35,4 +41,4 @@ pre-configure:
 post-install:
 	@${SED} -e "s:/usr/X11R6:${PREFIX}:g" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
