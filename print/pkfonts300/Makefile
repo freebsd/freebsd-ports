@@ -9,8 +9,8 @@
 DISTNAME=	pkfonts
 PKGNAME=	pkfonts${RESOLUTION}-1.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.tut.ac.jp/TeX/fonts/ \
-		ftp://ftp.univ-evry.fr/.04/system/OpenBSD/distfiles/pkfonts/
+MASTER_SITES=	ftp://ftp.univ-evry.fr/.04/system/OpenBSD/distfiles/pkfonts/
+#		ftp://ftp.tut.ac.jp/TeX/fonts/
 DISTFILES=	pk${RESOLUTION}.tar.gz
 # see below for RESOLUTION definition
 
