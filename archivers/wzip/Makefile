@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzip
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/w/wzip/
 DISTNAME=	wzip_${PORTVERSION}
