@@ -7,6 +7,7 @@
 
 PORTNAME=	spice
 PORTVERSION=	3f5.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
 DISTNAME=	sp3f4.kit
