@@ -31,6 +31,9 @@ rm -f $F
 # set ProjectRoot to be ${PREFIX}
 echo "#define ProjectRoot ${PREFIX}" >>$F
 
+# XXX the build of XF86Setup us broken in 4.0.2 (undefined reference to xf86OpenConfigFile)
+if false; then
+
 # Tk detection
 tkversion=
 for v in 42 80 81 82 83 42jp 80jp; do
@@ -111,6 +114,7 @@ if [ X$tkversion != X ]; then
     echo "#define TclLibName		tcl$tclversion" >>$F
     ;;
   esac
+  echo "#define BuildXF86Setup        YES" >>$F
 else
 cat <<EOF
 *** I don't see the static library for tk version $tkversion in /usr/local/lib.
@@ -119,22 +123,24 @@ cat <<EOF
 
 EOF
 fi
-
+fi # false
 cat >> $F <<END
 #ifdef i386Architecture
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx \
                                 cirrus tseng trident chips apm \
-                                GlideDriver fbdev \
-                                ati r128 AgpGartDrivers cyrix \
-                                vga XF86OSCardDrivers XF86ExtraCardDrivers
+                                GlideDriver fbdev i128 \
+                                ati AgpGartDrivers ark cyrix \
+                                siliconmotion \
+                                vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #else
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx \
                                 cirrus tseng trident chips apm \
-                                GlideDriver fbdev \
-                                ati r128 cyrix \
-                                vga XF86OSCardDrivers XF86ExtraCardDrivers
+                                GlideDriver fbdev i128 \
+                                ati ark cyrix \
+                                siliconmotion \
+                                vesa vga XF86OSCardDrivers XF86ExtraCardDrivers
 #endif
 END
 
@@ -203,7 +209,7 @@ if [ $answ = NO ]; then
   echo "#define XInputDrivers mouse"  >> $F
 else
   echo "#define XInputDrivers mouse dynapro elo2300 elographics magellan microtouch \
-        mutouch spaceorb wacom"  >> $F
+        mutouch spaceorb wacom void"  >> $F
 # XXX broken in 3.9.18
 #  if [ X${MACHINE} != X"alpha" ]; then
 #    echo "#define JoystickSupport		YES" >> $F

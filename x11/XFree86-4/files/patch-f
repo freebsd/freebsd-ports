@@ -1,29 +1,28 @@
---- nls/compose.dir.orig	Wed Feb  9 01:18:46 2000
-+++ nls/compose.dir	Sun Jul 16 04:33:35 2000
-@@ -179,7 +179,7 @@
- vi_VN.tcvn/Compose	vi_VN.TCVN
- iso8859-1/Compose	wa_BE.ISO8859-1
+--- nls/compose.dir~	Tue Dec 12 03:52:39 2000
++++ nls/compose.dir	Tue Dec 12 03:53:04 2000
+@@ -209,7 +209,7 @@
  zh/Compose		zh_CN.eucCN
--zh_TW.big5/Compose	zh_TW.big5
+ zh/Compose		zh_CN.GB2312
+ zh_TW.big5/Compose	zh_TW.big5
+-zh_TW.big5/Compose	zh_TW.Big5
 +zh_TW.Big5/Compose	zh_TW.Big5
  zh_TW/Compose		zh_TW.eucTW
- en_US.utf/Compose	en_US.utf
  #endif /* R63_COMPAT */
-@@ -355,6 +355,6 @@
- vi_VN.tcvn/Compose:	vi_VN.TCVN
- iso8859-1/Compose:	wa_BE.ISO8859-1
- zh/Compose:		zh_CN.eucCN
--zh_TW.big5/Compose:	zh_TW.big5
+ 
+@@ -415,5 +415,5 @@
+ zh/Compose:		zh_CN.GB2312
+ microsoft-cp1255/Compose:	yi_US.CP1256
+ zh_TW.big5/Compose:	zh_TW.big5
+-zh_TW.big5/Compose:	zh_TW.Big5
 +zh_TW.Big5/Compose:	zh_TW.Big5
  zh_TW/Compose:		zh_TW.eucTW
- en_US.utf/Compose:	en_US.utf
---- nls/locale.alias.orig	Wed Apr  5 03:24:45 2000
-+++ nls/locale.alias	Sun Jul 16 04:33:35 2000
-@@ -438,14 +438,14 @@
- wa_BE.iso885915					wa_BE.ISO8859-15
+--- nls/locale.alias~	Tue Dec 12 03:18:29 2000
++++ nls/locale.alias	Tue Dec 12 03:58:51 2000
+@@ -444,11 +444,11 @@
  zh						zh_CN.eucCN
  zh_CN						zh_CN.eucCN
--zh_CN.big5					zh_TW.big5
+ zh_CN.big5					zh_TW.big5
+-zh_CN.Big5					zh_TW.big5
 +zh_CN.Big5					zh_TW.Big5
  zh_CN.EUC					zh_CN.eucCN
  zh_CN.euc					zh_CN.eucCN
@@ -32,22 +31,19 @@
 +zh_TW						zh_TW.Big5
  zh_TW.EUC					zh_TW.eucTW
  zh_TW.euc					zh_TW.eucTW
--zh_TW.big5					zh_TW.big5
-+zh_TW.Big5					zh_TW.Big5
  
- XCOMM The following locale names are used in SCO 3.0
- english_uk.8859					en_GB.ISO8859-1
-@@ -936,14 +936,14 @@
- wa_BE.iso885915:				wa_BE.ISO8859-15
+@@ -1034,15 +1034,15 @@
+ yi_US.MICROSOFT-CP1255:				yi_US.CP1255
  zh:						zh_CN.eucCN
  zh_CN:						zh_CN.eucCN
 -zh_CN.big5:					zh_TW.big5
+-zh_CN.Big5:					zh_TW.big5
++zh_CN.Big5:					zh_TW.Big5
 +zh_CN.Big5:					zh_TW.Big5
  zh_CN.EUC:					zh_CN.eucCN
  zh_CN.euc:					zh_CN.eucCN
  zh_CN.gb2312:					zh_CN.eucCN
--zh_TW:						zh_TW.big5
-+zh_TW:						zh_TW.Big5
+ zh_TW:						zh_TW.big5
  zh_TW.EUC:					zh_TW.eucTW
  zh_TW.euc:					zh_TW.eucTW
 -zh_TW.big5:					zh_TW.big5
@@ -55,29 +51,29 @@
  
  XCOMM The following locale names are used in SCO 3.0
  english_uk.8859:				en_GB.ISO8859-1
---- nls/locale.dir.orig	Sat Feb 12 10:54:28 2000
-+++ nls/locale.dir	Sun Jul 16 04:33:35 2000
-@@ -165,7 +165,7 @@
- iso8859-1/XLC_LOCALE	wa_BE.ISO8859-1
- iso8859-15/XLC_LOCALE	wa_BE.ISO8859-15
+--- nls/locale.dir~	Tue Dec 12 03:18:29 2000
++++ nls/locale.dir	Tue Dec 12 04:01:54 2000
+@@ -199,7 +199,7 @@
  zh/XLC_LOCALE		zh_CN.eucCN
--zh_TW.big5/XLC_LOCALE	zh_TW.big5
+ zh/XLC_LOCALE		zh_CN.GB2312
+ zh_TW.big5/XLC_LOCALE	zh_TW.big5
+-zh_TW.big5/XLC_LOCALE	zh_TW.Big5
 +zh_TW.Big5/XLC_LOCALE	zh_TW.Big5
- zh_TW.cns11643/XLC_LOCALE	zh_TW.eucTW
- en_US.utf/XLC_LOCALE	en_US.utf
+ zh_TW/XLC_LOCALE	zh_TW.eucTW
  XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
-@@ -447,7 +447,7 @@
- iso8859-1/XLC_LOCALE:	wa_BE.ISO8859-1
- iso8859-15/XLC_LOCALE:	wa_BE.ISO8859-15
+ en_US.UTF-8/XLC_LOCALE	af_ZA.UTF-8
+@@ -533,7 +533,7 @@
  zh/XLC_LOCALE:		zh_CN.eucCN
--zh_TW.big5/XLC_LOCALE:	zh_TW.big5
+ zh/XLC_LOCALE:		zh_CN.GB2312
+ zh_TW.big5/XLC_LOCALE:	zh_TW.big5
+-zh_TW.big5/XLC_LOCALE:	zh_TW.Big5
 +zh_TW.Big5/XLC_LOCALE:	zh_TW.Big5
- zh_TW.cns11643/XLC_LOCALE:	zh_TW.eucTW
- en_US.utf/XLC_LOCALE:	en_US.utf
+ zh_TW/XLC_LOCALE:	zh_TW.eucTW
  XCOMM Note: The UTF-8 locales don't work correctly yet. Work in progress.
---- nls/Compose/Imakefile.orig	Fri Mar 17 05:59:40 2000
-+++ nls/Compose/Imakefile	Sun Jul 16 04:33:35 2000
-@@ -55,5 +55,5 @@
+ en_US.UTF-8/XLC_LOCALE:	af_ZA.UTF-8
+--- nls/Compose/Imakefile.orig	Fri Dec  8 02:52:48 2000
++++ nls/Compose/Imakefile	Tue Dec 12 03:18:29 2000
+@@ -58,5 +58,5 @@
  ComposeTarget(vi_VN.viscii)
  ComposeTarget(zh)
  ComposeTarget(zh_TW)
@@ -102,16 +98,17 @@
 +# Special Character
 +
 +# End of Sequence Definition
---- nls/XLC_LOCALE/Imakefile.orig	Sat Feb 12 10:54:29 2000
-+++ nls/XLC_LOCALE/Imakefile	Sun Jul 16 04:33:35 2000
-@@ -76,6 +76,7 @@
+--- nls/XLC_LOCALE/Imakefile~	Tue Dec 12 03:18:29 2000
++++ nls/XLC_LOCALE/Imakefile	Tue Dec 12 04:07:10 2000
+@@ -86,7 +86,7 @@
  LTarget(vi_VN.viscii)
  LTarget(zh)
  LTarget(zh_TW)
+-LTarget(zh_TW.big5)
 +LTarget(zh_TW.Big5)
  LTarget(th_TH.TACTIS)
- LTarget(en_US.utf)
  LTarget(en_US.UTF-8)
+ #ifdef UXPArchitecture
 --- nls/XLC_LOCALE/zh_TW.Big5.orig	Sun Jul 16 04:33:35 2000
 +++ nls/XLC_LOCALE/zh_TW.Big5	Sun Jul 16 04:36:58 2000
 @@ -0,0 +1,70 @@
