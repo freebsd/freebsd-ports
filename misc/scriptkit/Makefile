@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 02:08:41 steve Exp $
+# $Id: Makefile,v 1.2 1998/09/24 00:33:28 vanilla Exp $
 #
 
 DISTNAME=	ScriptKit-0.1.6
@@ -16,8 +16,5 @@ MAINTAINER=	Nakai@technologist.com
 BUILD_DEPENDS=	goconfig:${PORTSDIR}/lang/guileobjc
 
 GNU_CONFIGURE=	yes
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
