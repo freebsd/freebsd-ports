@@ -86,6 +86,7 @@
     SUBDIR += p5-Math-FixedPrecision
     SUBDIR += p5-Math-GMP
     SUBDIR += p5-Math-Interpolate
+    SUBDIR += p5-Math-LinearCombination
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Random

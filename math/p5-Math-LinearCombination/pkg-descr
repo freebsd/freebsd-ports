@@ -1,0 +1,8 @@
+Math::LinearCombination is a module for representing mathematical linear
+combinations of variables.  Evaluation and manipulation of linear
+combinations is also supported.
+
+WWW: http://search.cpan.org/search?dist=Math-LinearCombination
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
