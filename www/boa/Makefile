@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	boa
-PORTVERSION=	0.94.14.r7
+PORTVERSION=	0.94.14.r13
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.boa.org/

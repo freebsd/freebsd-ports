@@ -1,0 +1,10 @@
+--- configure.orig	Fri Jan 31 18:58:53 2003
++++ configure	Fri Jan 31 18:59:01 2003
+@@ -1846,6 +1846,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1848 "configure"
+ #include "confdefs.h"
++#include <sys/types.h>
+ #include <sys/socket.h>
+ int main() {
+ sa_family_t foo2;
