@@ -9,7 +9,7 @@ PORTNAME=	vpnd
 PORTVERSION=	1.1.0
 CATEGORIES=	security
 MASTER_SITES=	http://sunsite.dk/vpnd/archive/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 

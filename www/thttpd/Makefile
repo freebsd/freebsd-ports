@@ -9,7 +9,7 @@ PORTNAME=	thttpd
 PORTVERSION= 	2.22
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.acme.com/software/thttpd/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 DISTNAME=	${PORTNAME}-${PORTVERSION}beta4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} notes.html
 DIST_SUBDIR=	${PORTNAME}

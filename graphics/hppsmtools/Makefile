@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://unimut.fsk.uni-heidelberg.de/demi/photosmart/ \
-		http://www.freenix.no/~anders/ \
+		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
 MAINTAINER=	ports@FreeBSD.org

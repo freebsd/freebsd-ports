@@ -9,7 +9,7 @@ PORTNAME=	zorro
 PORTVERSION=	1.1.8
 CATEGORIES=	deskutils tk82
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://www.freenix.no/~anders/ \
+		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
 DISTNAME=	${PORTNAME}-1.1p8

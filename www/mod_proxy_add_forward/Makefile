@@ -9,7 +9,7 @@ PORTNAME=	mod_proxy_add_forward
 PORTVERSION=	20010201
 CATEGORIES=	www
 MASTER_SITES=	http://develooper.com/code/mpaf/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 

@@ -9,7 +9,7 @@ PORTNAME=	xmms-tfmx
 PORTVERSION=	0.3
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
-		http://www.freenix.no/~anders/
+		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
 
