@@ -16,6 +16,8 @@ DISTNAME=	HaXml-${PORTVERSION}
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A collection of utilities for using Haskell and XML together
 
+BROKEN=		"Patch fails"
+
 USE_SIZE=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
