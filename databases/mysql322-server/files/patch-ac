@@ -5,7 +5,7 @@
  	name=m68000-netbsd
  	;;
 -    i386-*-freebsd2.*)
-+    i386-*-freebsd2.* | i386-*-freebsd3.*)
++    i386-*-freebsd2.* | i386-*-freebsd3.* | i386-*-freebsd4.*)
          name=i386-freebsd-2.0
          sysincludes=freebsd-2.0
          except="fork lseek ftruncate sigsuspend sigprocmask"
