@@ -25,6 +25,7 @@ ONLY_FOR_ARCHS=	i386
 IGNORE=		"This port requires FreeBSD 3.X or greater."
 .endif
 
+USE_RC_SUBR=	yes
 NO_BUILD=	yes
 
 BINDIR=		${PREFIX}/distributed.net/proxy
@@ -37,8 +38,9 @@ SHAREGRP=	${PROXYGROUP}
 SHAREMODE=	644
 
 post-extract:
-	@${SED} -e 's#CHANGETHIS#${BINDIR}#' ${FILESDIR}/proxyper.sh \
-		> ${WRKDIR}/proxyper.sh
+	@${SED} -e 's#%%BINDIR%%#${BINDIR}#'g \
+		-e 's#%%RC_SUBR%%#${RC_SUBR}#g' \
+		${FILESDIR}/proxyper.sh > ${WRKDIR}/proxyper.sh
 
 do-install:
 	if [ ! -d ${BINDIR} ]; then \
@@ -52,7 +54,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/ChangeLog.txt ${BINDIR}
 	${INSTALL_MAN} ${WRKSRC}/manual.html ${BINDIR}
 
-	${INSTALL_SCRIPT} ${WRKDIR}/proxyper.sh ${PREFIX}/etc/rc.d/proxyper.sh.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/proxyper.sh ${PREFIX}/etc/rc.d/proxyper.sh
 
 	${INSTALL_DATA} ${WRKSRC}/proxyper.ini ${BINDIR}/proxyper.ini.sample
 .if !exists(${BINDIR}/proxyper.ini)

@@ -4,6 +4,6 @@ distributed.net/proxy/proxyper
 @unexec if cmp -s %D/distributed.net/proxy/proxyper.ini %D/distributed.net/proxy/proxyper.ini.sample; then rm -f %D/distributed.net/proxy/proxyper.ini; fi
 distributed.net/proxy/proxyper.ini.sample
 @exec [ -f %B/proxyper.ini ] || cp %B/%f %B/proxyper.ini
-etc/rc.d/proxyper.sh.sample
+etc/rc.d/proxyper.sh
 @dirrm distributed.net/proxy
 @dirrm distributed.net
