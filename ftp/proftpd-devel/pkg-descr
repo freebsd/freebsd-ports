@@ -3,7 +3,7 @@ and unix-like operating systems. ProFTPD is designed
 to be somewhat of a "drop-in" replacement for wu-ftpd
 with a configuration format like Apache.
 
-Full online documentation is available at 
+Full online documentation is available at
 http://www.proftpd.org/, including a server
 configuration directive reference manual.
 
