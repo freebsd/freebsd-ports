@@ -2996,6 +2996,7 @@ ja-ptex-pkfonts360	ports/japanese/ptex-pkfonts360
 ja-ptex-pkfonts400	ports/japanese/ptex-pkfonts400
 ja-ptex-pkfonts600	ports/japanese/ptex-pkfonts600
 ja-ptex-sjis	ports/japanese/ptex-sjis
+ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
 ja-qkc		ports/japanese/qkc
 ja-qt23		ports/japanese/qt23
