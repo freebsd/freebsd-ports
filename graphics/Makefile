@@ -123,6 +123,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += librsvg
     SUBDIR += libungif
     SUBDIR += libwmf
     SUBDIR += linplasma
