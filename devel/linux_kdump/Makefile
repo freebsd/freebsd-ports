@@ -3,12 +3,13 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.7 1999/07/23 07:41:36 marcel Exp $
 #
 
 DISTNAME=	linux_kdump-1.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.scc.nl/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://www.FreeBSD.org/~marcel/			\
+		ftp://ftp.scc.nl/pub/FreeBSD/distfiles/
 
 MAINTAINER=	marcel@FreeBSD.org
 
