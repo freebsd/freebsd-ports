@@ -1,102 +1,11 @@
---- builds/original/prefix.freebsd.orig	Sat Jan 13 05:18:13 2001
-+++ builds/original/prefix.freebsd	Sat Nov  9 16:49:17 2002
-@@ -28,20 +28,20 @@
- 
- 
+--- builds/original/prefix.freebsd.orig	Sun Oct 13 17:12:42 2002
++++ builds/original/prefix.freebsd	Fri Jan 10 13:00:32 2003
+@@ -30,7 +30,7 @@
  PROD_DEBUG_OBJECTS=	nodebug.o
--PROD_SHRLIB_DIR=	-Lsource/jrd
-+PROD_SHRLIB_DIR=	-Lsource/jrd -Lsource/interbase/lib
+ PROD_SHRLIB_DIR=	-Lsource/jrd -Lsource/interbase/lib
  PROD_VERSION_FLAG=	-DPROD_BUILD
 -PROD_CFLAGS=            -O -m486 -fpic -DFLINTSTONE
-+PROD_CFLAGS=            -O -pipe -march=i486 -fpic -DFLINTSTONE
++PROD_CFLAGS=		-O -pipe -march=i486 -fpic -DFLINTSTONE
  
  
  DEV_DEBUG_OBJECTS=	grammar.o dbg.o dbt.o dmp.o
--DEV_SHRLIB_DIR=		-Lsource/jrd
-+DEV_SHRLIB_DIR=		-Lsource/jrd -Lsource/interbase/lib
- DEV_VERSION_FLAG=	-DDEV_BUILD
- DEV_CFLAGS=		-ggdb
- 
- DEBUG_OBJECTS=		$($(VERSION)_DEBUG_OBJECTS)
- SHRLIB_DIR=		$($(VERSION)_SHRLIB_DIR)
- VERSION_FLAG=		$($(VERSION)_VERSION_FLAG)
--CFLAGS_COMMON=		$($(VERSION)_CFLAGS)  -Isource/interbase/include -DFREEBSD -w -fwritable-strings
-+CFLAGS_COMMON=		$($(VERSION)_CFLAGS) -DFREEBSD -w -fwritable-strings -Isource/interbase/include 
- CFLAGS=			$(CFLAGS_COMMON) $(SUPER_FLAG)
- PIC_J_CFLAGS=		$(CFLAGS_COMMON) -DPIPE_IS_SHRLIB -fPIC
- SPECIAL_OBJECTS=	j
-@@ -62,21 +62,21 @@
- BIN_PATH=		interbase/bin
- BRIDGE_MISC=		head5.o allp.o
- CHMOD_VAL=		666
--CURSES_LIB=             -lncurses
-+CURSES_LIB=
- DSQL_P_OBJS=		dsql_p_objects
--FORM_OBJECTS=		form.o
--FORM_TRN_OBJECTS=	form_trn.o
-+FORM_OBJECTS=		noform.o
-+FORM_TRN_OBJECTS=
- FUNCTIONS=		functions.bin
- FUNCSHR=		source/interbase/lib/gdsf.so
- GDS_LINK=		$(GDSSHR_LINK)
--GDS_PYXIS=		gds_pyxis.a
-+GDS_PYXIS=
- GDSLIB_BACKEND=		source/interbase/lib/gds_b.a
- GDSLIB_LINK=		-Lsource/jrd -lgds_b -lc -ldescrypt
- 
- GDSSHR=			source/interbase/lib/gds.so
- LINUX_GDSSHR=		$(GDSSHR)
--GDSSHR_LINK=		$(SHRLIB_DIR) -lgds -lgds_pyxis -ldescrypt
--PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -lgds -lgds_pyxis
-+GDSSHR_LINK=		$(SHRLIB_DIR) -lgds -ldescrypt
-+PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -lgds
- HLPDIR=			source/qli/
- HOSTNAME=		`hostname | cut -d'.' -f1`
- INCLUDES=		include_so include_so_ada	
-@@ -92,7 +92,7 @@
- JRD_J_MISC_OBJECTS=	source/jrd/sun_ftn.j 
- JRD_P_MISC_OBJECTS=	source/jrd/sun_ftn.bin source/jrd/nodebug.bin
- LANG_OBJECTS=		ada.o ftn.o cob.o
--LANGUAGES=		cc cxx ada sun_ada microfocus_cob make16 gdl1 sun_ftn
-+LANGUAGES=		cc cxx ada microfocus_cob make16 gdl1 sun_ftn
- LD_LIBS=		-lc
- LD_LIBS_J=		-lc
- LD_OPTS=		-shared
-@@ -104,28 +104,28 @@
- MUISQL_LINK_OPTS=	$(MUISQL_MU_LIB) $(PIPE_GDSSHR_LINK) -lm 
- PIC_FLAGS=		$(CFLAGS) -fPIC
- PIPE=			gds.a gds_pipe
--PYXIS=			pyxis
--PYXIS_MISC_OBJS=	$(PYXIS_MISC)
--PYXIS_P_MISC_OBJS=	$(PYXIS_P_MISC)
--PYXIS_OBJECTS=		pyxis_objects
--PYXIS_MISC_OBJECTS=	$(PYXDIR)cdm.o $(PYXDIR)vt100.o $(PYXDIR)sun_ftn_pyxis.o
-+PYXIS=
-+PYXIS_MISC_OBJS=
-+PYXIS_P_MISC_OBJS=
-+PYXIS_OBJECTS=
-+PYXIS_MISC_OBJECTS=
- REG_HELP=		isc_ins_hlp.dat
- REMOTE_GDSSHR=		$(GDSSHR)
- REMOTE_GDSSHR_LINK=	$(SERVER_LINK)
- REMOTE_P_OBJS=		rem_p_objects
--SCREEN_LIBS=
--#SCREEN_LIBS=		-lncurses
-+#SCREEN_LIBS=
-+SCREEN_LIBS=		-lncurses
- SERVER_LINK=		$(GDSSHR_LINK)
- SETUP_ISC=              ISC_USER=sysdba; ISC_PASSWORD=masterkey; export ISC_USER ISC_PASSWORD;
- SPECIAL_OPT=		source/special_opt
- NETWORK_LIB=		
- SOCKET_LIB=		-lc
--THREAD_LIB=		-llthread
-+THREAD_LIB=		-pthread
- SUN_FUNCSHR=		$(FUNCSHR)
- LX_SUPER_GDSSHR=		source/interbase/lib/gds.so.1
- SUPER_CLIENT_GDSSHR=    $(LX_SUPER_GDSSHR)
- SUPER_BACKEND=		source/jrd/gds_ss.a
--SUPER_LINK=		-Lsource/jrd -lgds_ss -lc -ldescrypt -L/usr/local/lib -llthread
-+SUPER_LINK=		-pthread -Lsource/jrd -lgds_ss -ldescrypt
- SUPER_SERVER=	
- UTILITIES=		
- WAL_P_OBJS=		wal_p_objects

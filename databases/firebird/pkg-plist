@@ -64,10 +64,8 @@ firebird/lib/gds.a
 firebird/lib/gds.so
 firebird/lib/libgds.so
 firebird/lib/libgds.so.1
-firebird/lib/libgds_pyxis.a
 firebird/lib/libgds.a
 firebird/lib/libib_util.so
-firebird/lib/gds_pyxis.a
 firebird/help/help.gbak
 firebird/help/help.gdb
 firebird/bin/ibguard
@@ -87,7 +85,6 @@ firebird/bin/qli
 firebird/bin/gds_inet_server
 firebird/bin/gsplit
 firebird/bin/gstat
-firebird/bin/gds_relay
 firebird/bin/gsec
 firebird/bin/gbak
 firebird/misc/firebird.init.d.generic
