@@ -57,4 +57,8 @@ post-install:
 BROKEN=	"Does not build on FreeBSD 4.x or earlier"
 .endif
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .include <bsd.port.post.mk>
