@@ -61,6 +61,7 @@
     SUBDIR += gimp1
     SUBDIR += giram
     SUBDIR += gle
+    SUBDIR += gliv
     SUBDIR += gltk
     SUBDIR += gnofract4d
     SUBDIR += gnomeiconedit
