@@ -19,7 +19,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		fam.0:${PORTSDIR}/devel/fam \
 		cups.2:${PORTSDIR}/print/cups \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		bz2.1:${PORTSDIR}/archivers/bzip2
+		bz2.1:${PORTSDIR}/archivers/bzip2 \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_OPENSSL=	yes
 USE_QT_VER=	2
