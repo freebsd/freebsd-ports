@@ -1,7 +1,7 @@
-*** Makefile.orig	Thu Jul 18 18:18:08 1996
---- Makefile	Sun Jul 21 08:36:58 1996
+*** Makefile.orig	Sat Jan 25 07:43:10 1997
+--- Makefile	Mon Jan 27 23:17:17 1997
 ***************
-*** 11,28 ****
+*** 14,31 ****
   
   ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
@@ -20,7 +20,7 @@
   
   ##set the relative location of the WWW library Implementation directory,
   ##from this directory
---- 11,28 ----
+--- 14,31 ----
   
   ##change the next line if you want lynx installed somewhere
   ##besides /usr/local/bin
@@ -40,41 +40,36 @@
   ##set the relative location of the WWW library Implementation directory,
   ##from this directory
 ***************
-*** 394,401 ****
+*** 268,274 ****
+  SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
+  
+  # Set SITE_DEFS to one or more of the defines for lynx below:
+! SITE_DEFS = $(DIR_DEFS) # Your defines here
+  
+  # if you are compiling on a previously unsupported system, modify
+  # this generic entry!!
+--- 268,274 ----
+  SITE_LYDEFS = $(DIR_LYDEFS) # Your defines here
+  
+  # Set SITE_DEFS to one or more of the defines for lynx below:
+! SITE_DEFS = $(DIR_DEFS) -DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"'
+  
+  # if you are compiling on a previously unsupported system, modify
+  # this generic entry!!
+***************
+*** 406,412 ****
   # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
   freebsd-ncurses:
   	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
 ! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
-! 		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
+  		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
   		LIBS="-lncurses -lmytinfo \
-  		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
---- 394,401 ----
+--- 406,412 ----
   # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
   freebsd-ncurses:
   	cd WWW/Library/freebsd; $(MAKE) LYFLAGS="$(SITE_LYDEFS)"
 ! 	cd src; $(MAKE) all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DNCURSESHEADER -DUNIX \
-! 		-DLYNX_CFG_FILE='\"${PREFIX}/etc/lynx.cfg\"' -DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
+  		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE \
   		-I../$(WWWINC) $(SITE_DEFS)" \
   		LIBS="-lncurses -lmytinfo \
-  		$(WAISLIB) $(SOCKSLIB) $(SITE_LIBS)" \
-***************
-*** 902,908 ****
-  
-  install:
-  	-mv -f $(exec)/lynx $(exec)/lynx.old
-- 	-mv -f $(cfg)/lynx.cfg $(cfg)/lynx.oldcfg
-  	$(installbin) lynx $(exec)/lynx
-  	$(installdoc) lynx.man $(doc)/lynx.1
-! 	$(installdoc) lynx.cfg $(cfg)/lynx.cfg
---- 902,911 ----
-  
-  install:
-  	-mv -f $(exec)/lynx $(exec)/lynx.old
-  	$(installbin) lynx $(exec)/lynx
-  	$(installdoc) lynx.man $(doc)/lynx.1
-! 	if [ -f $(cfg)/lynx.cfg ] ; then \
-! 		$(installdoc) lynx.cfg $(cfg)/lynx.cfg-dist; \
-! 	else \
-! 		$(installdoc) lynx.cfg $(cfg)/lynx.cfg; \
-! 	fi
