@@ -1,0 +1,11 @@
+--- macros/Makefile.in.orig	Sat Sep 20 12:42:11 2003
++++ macros/Makefile.in	Sat Sep 20 12:42:36 2003
+@@ -189,7 +189,7 @@
+         done
+ 
+ 
+-aclocaldir = @ACLOCALDIR@
++aclocaldir = ${datadir}/aclocal
+ 
+ @Aclocal_TRUE@aclocal_DATA = ticables.m4
+ subdir = macros
