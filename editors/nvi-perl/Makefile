@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.9 1998/02/19 16:49:58 itojun Exp $
 #
 
 DISTNAME=	nvi-1.79
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.bostic.com/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 
 MAINTAINER=	itojun@itojun.org
+
+BROKEN=		perl upgrade
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	yes
