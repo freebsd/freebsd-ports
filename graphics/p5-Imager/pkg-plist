@@ -1,10 +1,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Float.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/BBox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/FreeType2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Type1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Win32.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Font/Truetype.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/Color/Table.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Draw.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Engines.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/Expr.pm
