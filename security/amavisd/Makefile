@@ -39,6 +39,7 @@ AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
 
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --with-amavisuser=${AMAVISUSER}:${AMAVISGROUP}
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 STARTSCRIPT=	amavisd.sh
 
