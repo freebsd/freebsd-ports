@@ -126,8 +126,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/AqAlg.pyc
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/COPYRIGHT.txt
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ComputedAttribute.c
-%%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ComputedAttribute.py
-%%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ComputedAttribute.pyc
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ExtensionClass.c
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ExtensionClass.h
 %%ZOPEBASEDIR%%/lib/Components/ExtensionClass/ExtensionClass.stx
