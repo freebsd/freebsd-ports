@@ -7,6 +7,7 @@
     SUBDIR += esh
     SUBDIR += ksh93
     SUBDIR += pdksh
+    SUBDIR += perlsh
     SUBDIR += rc
     SUBDIR += scsh
     SUBDIR += tcsh
