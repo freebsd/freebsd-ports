@@ -3,13 +3,13 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.12 1998/02/01 02:05:57 vanilla Exp $
+# $Id: Makefile,v 1.13 1998/02/18 15:36:01 vanilla Exp $
 #
 
 DISTNAME=	Imlib-1.0
 PKGNAME=	imlib-1.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/imlib/ \
+MASTER_SITES=	ftp://ftp.enlightenment.org/pub/imlib/TAR/ \
 		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
