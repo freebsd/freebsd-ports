@@ -30,6 +30,7 @@ LIB_DEPENDS=	nasl.4:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	YES
@@ -56,6 +57,14 @@ MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 		RC_SUBR=${RC_SUBR}
+
+SED_SCRIPT=	-e 's,%%PKGNAME%%,${PKGNAME},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g'
+
+post-build:
+.for script in pkg-deinstall
+	@${SED} ${SED_SCRIPT} ${SCRIPTDIR}/${script} > ${WRKDIR}/${script}.sh
+.endfor
 
 post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
