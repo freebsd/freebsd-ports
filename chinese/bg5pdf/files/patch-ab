@@ -1,0 +1,5 @@
+--- Makefile.orig	Mon Dec  3 07:46:28 2001
++++ Makefile	Mon Dec  3 07:46:51 2001
+@@ -0,0 +1,2 @@
++all:
++	gcc -shared bg5pdflib.c -I/usr/local/include -I /usr/local/include/python2.1 -L/usr/local/lib -lpdf -o bg5pdflib.so

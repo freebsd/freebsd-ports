@@ -1,0 +1,9 @@
+Bg5pdf is a simple wrapper for wrapping big5 encoding text file into
+PDF file by using PDFlib. The output of this program does not contain
+embedding fonts.  You have to download Acrobat Acroread Asianfont pack
+to view and print the output file.  This wrapper does not provide any
+formatting function except simple line wrapping.  If you need
+sophisticated formatting, you should try CJK-LaTex or other equivalent
+tools.
+
+WWW: http://students.washington.edu/cschin/
