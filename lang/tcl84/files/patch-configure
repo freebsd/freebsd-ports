@@ -1,5 +1,5 @@
 --- configure.orig	Tue Aug  7 05:06:23 2001
-+++ configure	Wed Nov 14 09:26:26 2001
++++ configure	Sun Jan 27 14:54:59 2002
 @@ -4769,7 +4769,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -9,12 +9,13 @@
      ECHO_VERSION='`echo ${VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
-@@ -5300,13 +5300,16 @@
+@@ -5300,13 +5300,17 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
-+	    SHLIB_LD="ld -shared -x -soname \$@"
++	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
++	    SHLIB_LD="ld -shared -x"
  	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
@@ -28,3 +29,12 @@
  	    ;;
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
+@@ -5985,7 +5989,7 @@
+     if test "x$DL_OBJS" = "xtclLoadAout.o"; then
+ 	MAKE_LIB="\${STLIB_LD} \$@ \${OBJS}"
+     else
+-	MAKE_LIB="\${SHLIB_LD} -o \$@ \${OBJS} ${SHLIB_LD_LIBS}"
++	MAKE_LIB="\${SHLIB_LD} \${TCL_SHLIB_LD_EXTRAS} -o \$@ \${OBJS} ${SHLIB_LD_LIBS}"
+ 	RANLIB=":"
+     fi
+ else

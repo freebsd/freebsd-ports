@@ -1,5 +1,5 @@
---- configure.orig	Tue Dec 14 22:59:18 1999
-+++ configure	Wed Jan  5 00:56:06 2000
+--- configure.orig	Wed Dec 15 04:59:18 1999
++++ configure	Sun Jan 27 14:59:38 2002
 @@ -4648,7 +4648,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
@@ -18,7 +18,7 @@
  	    # Not available on all versions:  check for include file.
  	    ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
-@@ -4922,16 +4922,20 @@
+@@ -4922,16 +4922,21 @@
  fi
  if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -34,7 +34,8 @@
 -		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
 +	if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf" ; then
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
-+		SHLIB_LD="ld -shared -x -soname \$@"
++		TCL_SHLIB_LD_EXTRAS="-soname \$@"
++		SHLIB_LD="ld -shared -x"
 +	else
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
 +		SHLIB_LD="ld -Bshareable -x"
@@ -42,7 +43,7 @@
  	    
  else
    echo "$ac_t""no" 1>&6
-@@ -4954,17 +4958,6 @@
+@@ -4954,17 +4959,6 @@
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
@@ -60,7 +61,7 @@
  	NEXTSTEP-*)
  	    SHLIB_CFLAGS=""
  	    SHLIB_LD="cc -nostdlib -r"
-@@ -5371,7 +5364,7 @@
+@@ -5371,7 +5365,7 @@
  	SHARED_LIB_SUFFIX='${VERSION}\$\{DBGX\}${SHLIB_SUFFIX}'
      fi
      if test "$UNSHARED_LIB_SUFFIX" = "" ; then
@@ -69,7 +70,16 @@
      fi
  
      
-@@ -5628,11 +5621,7 @@
+@@ -5594,7 +5588,7 @@
+     if test "x$DL_OBJS" = "xtclLoadAout.o"; then
+ 	MAKE_LIB="ar cr \${TCL_LIB_FILE} \${OBJS}"
+     else
+-	MAKE_LIB="\${SHLIB_LD} -o \${TCL_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
++	MAKE_LIB="\${SHLIB_LD} \${TCL_SHLIB_LD_EXTRAS} -o \${TCL_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
+ 	RANLIB=":"
+     fi
+ else
+@@ -5628,11 +5622,7 @@
  # up the Tcl library.
  
  if test "$SHARED_BUILD" = "0" -o $TCL_NEEDS_EXP_FILE = 0; then
@@ -82,7 +92,7 @@
      TCL_BUILD_LIB_SPEC="-L`pwd` ${TCL_LIB_FLAG}"
      TCL_LIB_SPEC="-L${exec_prefix}/lib ${TCL_LIB_FLAG}"
  else
-@@ -5678,11 +5667,7 @@
+@@ -5678,11 +5668,7 @@
  
  TCL_STUB_LIB_FILE=${STUB_LIB_FILE}
  
