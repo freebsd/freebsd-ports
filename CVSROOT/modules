@@ -9772,6 +9772,7 @@ urban		ports/games/urban
 urban-sounds	ports/games/urban-sounds
 urchin5		ports/www/urchin5
 urlendec	ports/net/urlendec
+urlgfe		ports/ftp/urlgfe
 urlview		ports/textproc/urlview
 urt		ports/graphics/urt
 urwfonts	ports/x11-fonts/urwfonts
