@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Personal file-sharing service for the GNOME Desktop
 
 LIB_DEPENDS=	howl:${PORTSDIR}/net/howl
