@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	py-gtk
-PORTVERSION=	0.6.8
+PORTVERSION=	0.6.9
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python	
-DISTNAME=	gnome-python-1.4.1
+DISTNAME=	gnome-python-1.4.2
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
