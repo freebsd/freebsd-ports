@@ -19,7 +19,7 @@ PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/ \
 PATCH_SITE_SUBDIR=	cracauer
 PATCHFILES=	${DISTNAME}-patches.html.gz
 
-MAINTAINER=	cracauer@cons.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not build"
 
