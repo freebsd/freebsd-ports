@@ -1,0 +1,11 @@
+--- sweep.h.in	Sun Jul 25 03:39:50 1999
++++ /home/andy/tmp/wrk/sweep.h.in	Sun Jul 25 17:51:44 1999
+@@ -36,7 +36,7 @@
+ #include <signal.h>
+ 
+ #ifdef HAVE_LIBNCURSES
+-#include "@NCURSES_HINT@/include/curses.h"
++#include <ncurses.h>
+ #else /* HAVE_LIBNCURSES */
+ #include <curses.h>
+ #endif /* HAVE_LIBNCURSES */
