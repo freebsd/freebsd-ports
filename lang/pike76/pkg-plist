@@ -1,4 +1,5 @@
 bin/pike
+bin/pike76
 bin/hilfe
 pike/%%PORTVERSION%%/bin/pike
 pike/%%PORTVERSION%%/bin/pike.syms
