@@ -9,7 +9,6 @@
 %%SITE_PERL%%/auto/Config/Simple/TIEHASH.al
 %%SITE_PERL%%/auto/Config/Simple/autosplit.ix
 %%SITE_PERL%%/auto/Config/Simple/block.al
-%%SITE_PERL%%/auto/Config/Simple/clear.al
 %%SITE_PERL%%/auto/Config/Simple/dump.al
 %%SITE_PERL%%/auto/Config/Simple/error.al
 %%SITE_PERL%%/auto/Config/Simple/errstr.al
