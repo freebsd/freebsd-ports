@@ -23,7 +23,7 @@ MAN1=		44bsd-more.1
 RELDATE=	20000521
 
 post-extract:
-	-cd ${WRKSRC} && co -d${RELDATE} RCS/*,v
+	-cd ${WRKSRC} && co RCS/*,v
 
 post-patch:
 	${REINPLACE_CMD} -e \
