@@ -3761,6 +3761,7 @@ ja-gxditview	ports/japanese/gxditview
 ja-hex		ports/japanese/hex
 ja-hns		ports/japanese/hns
 ja-ical		ports/japanese/ical
+ja-iiimf-le-canna	ports/japanese/iiimf-le-canna
 ja-ipa-ttfonts	ports/japanese/ipa-ttfonts
 ja-ipadic	ports/japanese/ipadic
 ja-ircII	ports/japanese/ircII
