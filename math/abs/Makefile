@@ -17,6 +17,9 @@ MAINTAINER=	gmarco@giovannelli.it
 USE_XLIB=	yes
 USE_XPM=	yes
 
+post-patch:
+	@${PERL} -pi -e 's,strcasestr,strcasestr_,' ${WRKSRC}/Database/cell.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/abs ${PREFIX}/bin
 
