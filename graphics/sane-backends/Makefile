@@ -4,7 +4,7 @@
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/01 00:44:58 obrien Exp $
 #
 
 DISTNAME=       sane-0.65
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/capture
 
 MAINTAINER=	gary@hotlava.com
+
+BROKEN=	"X front end doesn't build right agaist our gtk port"
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
