@@ -147,6 +147,7 @@
     SUBDIR += py-rijndael
     SUBDIR += racoon
     SUBDIR += radiusniff
+    SUBDIR += rain
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += ruby-acl
