@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dnscache
-PORTVERSION=	1.00
+PORTNAME=	djbdns
+PORTVERSION=	1.02
 CATEGORIES=	net
-MASTER_SITES=	http://cr.yp.to/dnscache/ \
-		ftp://cr.yp.to/dnscache/
+MASTER_SITES=	http://cr.yp.to/djbdns/ \
+		ftp://cr.yp.to/djbdns/
 
 MAINTAINER=	nbm@FreeBSD.org
 
