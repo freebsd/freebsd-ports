@@ -1187,6 +1187,7 @@ darts		ports/devel/darts
 datapipe	ports/net/datapipe
 dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
+db		ports/databases/db
 db2		ports/databases/db2
 db3		ports/databases/db3
 db4		ports/databases/db4
