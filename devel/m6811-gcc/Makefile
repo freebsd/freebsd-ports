@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gcc
 PKGNAMEPREFIX=	m6811-
 
-PATCH_SITES=	http://home.worldnet.fr/~stcarrez/snapshots/
+PATCH_SITES=	http://stephane.carrez.free.fr/snapshots/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20010922.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
