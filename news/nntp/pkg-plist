@@ -4,5 +4,6 @@ man/man8/nntpd.8c
 man/man8/mkgrdates.8c
 man/man1/nntpxmit.1
 libexec/news/nntpxmit
+libexec/news/nntpxfer
 @comment     just in case anyone wants it
 libexec/news/shlock
