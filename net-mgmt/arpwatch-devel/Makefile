@@ -7,7 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
@@ -25,7 +25,14 @@ CONFIGURE_ARGS=	--quiet
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+
+post-patch:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/arpwatch.sh > ${WRKDIR}/arpwatch.sh
 
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
@@ -41,6 +48,7 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch/.;	\
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch/.
-	${INSTALL_SCRIPT} ${FILESDIR}/arpwatch.sh ${PREFIX}/etc/rc.d/arpwatch.sh.sample
+	${INSTALL_SCRIPT} ${WRKDIR}/arpwatch.sh ${PREFIX}/etc/rc.d/arpwatch.sh
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
