@@ -1,0 +1,8 @@
+Holyshout feeds an mp3 stream to your icecast or shoutcast server.
+It also supports multiple bitrate streams. (re-encode using lame)
+
+WWW: http://www.icecast.org/
+WWW: http://www.shoutcast.com/
+
+--
+Made by JunSeon Oh <hollywar@mail.holywar.net>
