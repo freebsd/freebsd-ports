@@ -15,15 +15,13 @@ bin/dspam_stats
 lib/libdspam.so
 lib/libdspam.so.4
 lib/libdspam.a
-@comment lib/libdspam.la
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/CHANGE
-%%PORTDOCS%%%%MYSQL%%%%DOCSDIR%%/mysql/README
-%%PORTDOCS%%%%MYSQL%%%%DOCSDIR%%/mysql/mysql_objects.sql
-%%PORTDOCS%%%%MYSQL%%%%DOCSDIR%%/mysql/virtual_users.sql
-%%PORTDOCS%%%%MYSQL%%%%DOCSDIR%%/mysql/purge.sql
-%%PORTDOCS%%%%MYSQL%%@dirrm %%DOCSDIR%%/mysql
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%MYSQL%%%%EXAMPLESDIR%%/README
 %%MYSQL%%%%EXAMPLESDIR%%/mysql.data
+%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql
+%%MYSQL%%%%EXAMPLESDIR%%/purge.sql
+%%MYSQL%%%%EXAMPLESDIR%%/virtual_users.sql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%
 @dirrm etc/dspam
