@@ -4,6 +4,7 @@
 bin/dltest
 bin/isql
 bin/odbcinst
+bin/sqi
 etc/odbc.ini
 etc/odbcinst.ini
 include/odbcinst.h
@@ -67,67 +68,67 @@ lib/libtdsS.so.1
 lib/libtemplate.a
 lib/libtemplate.so
 lib/libtemplate.so.1
-share/doc/unixODBC/AdministratorManual/index.html
-share/doc/unixODBC/AdministratorManual/odbcinst.html
-share/doc/unixODBC/AdministratorManual/php3.html
-share/doc/unixODBC/AdministratorManual/unixODBC.gif
-share/doc/unixODBC/AdministratorManual/unixODBCsetup.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/close.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/conne.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/dsn.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/gloss.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/index.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/intro.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/navi.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/odbc.css
-share/doc/unixODBC/ProgrammerManual/Tutorial/query.html
-share/doc/unixODBC/ProgrammerManual/Tutorial/resul.html
-share/doc/unixODBC/ProgrammerManual/index.html
-share/doc/unixODBC/ProgrammerManual/unixODBC.gif
-share/doc/unixODBC/UserManual/Figure1.gif
-share/doc/unixODBC/UserManual/Figure2.gif
-share/doc/unixODBC/UserManual/Figure3.gif
-share/doc/unixODBC/UserManual/Figure4.gif
-share/doc/unixODBC/UserManual/Figure6.gif
-share/doc/unixODBC/UserManual/My.sql
-share/doc/unixODBC/UserManual/StarOfficeDataGrid.gif
-share/doc/unixODBC/UserManual/index.html
-share/doc/unixODBC/UserManual/unixODBC.gif
-share/doc/unixODBC/index.html
-share/doc/unixODBC/lst/InternalStructure.gif
-share/doc/unixODBC/lst/InternalStructure.html
-share/doc/unixODBC/lst/InternalStructure.vsd
-share/doc/unixODBC/lst/InternalStructure2.gif
-share/doc/unixODBC/lst/InternalStructure2.html
-share/doc/unixODBC/lst/InternalStructure3.gif
-share/doc/unixODBC/lst/InternalStructure3.html
-share/doc/unixODBC/lst/InternalStructure4.gif
-share/doc/unixODBC/lst/InternalStructure4.html
-share/doc/unixODBC/lst/InternalStructure5.gif
-share/doc/unixODBC/lst/InternalStructure5.html
-share/doc/unixODBC/lst/InternalStructure6.gif
-share/doc/unixODBC/lst/InternalStructure6.html
-share/doc/unixODBC/lst/InternalStructure7.gif
-share/doc/unixODBC/lst/InternalStructure7.html
-share/doc/unixODBC/lst/InternalStructure8.gif
-share/doc/unixODBC/lst/InternalStructure8.html
-share/doc/unixODBC/lst/InternalStructure9.gif
-share/doc/unixODBC/lst/InternalStructure9.html
-share/doc/unixODBC/lst/back.gif
-share/doc/unixODBC/lst/next.gif
-share/doc/unixODBC/smallbook.gif
-share/doc/unixODBC/sqi/InternalStructure.gif
-share/doc/unixODBC/sqi/InternalStructure.html
-share/doc/unixODBC/sqi/InternalStructure.vsd
-share/doc/unixODBC/sqi/InternalStructure2.gif
-share/doc/unixODBC/sqi/InternalStructure2.html
-share/doc/unixODBC/sqi/back.gif
-share/doc/unixODBC/sqi/next.gif
-share/doc/unixODBC/unixODBC.gif
-@dirrm share/doc/unixODBC/sqi
-@dirrm share/doc/unixODBC/lst
-@dirrm share/doc/unixODBC/UserManual
-@dirrm share/doc/unixODBC/ProgrammerManual/Tutorial
-@dirrm share/doc/unixODBC/ProgrammerManual
-@dirrm share/doc/unixODBC/AdministratorManual
-@dirrm share/doc/unixODBC
+%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/index.html
+%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/odbcinst.html
+%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/php3.html
+%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/unixODBC.gif
+%%PORTDOCS%%share/doc/unixODBC/AdministratorManual/unixODBCsetup.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/close.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/conne.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/dsn.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/gloss.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/index.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/intro.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/navi.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/odbc.css
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/query.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/Tutorial/resul.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/index.html
+%%PORTDOCS%%share/doc/unixODBC/ProgrammerManual/unixODBC.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure1.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure2.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure3.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure4.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/Figure6.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/My.sql
+%%PORTDOCS%%share/doc/unixODBC/UserManual/StarOfficeDataGrid.gif
+%%PORTDOCS%%share/doc/unixODBC/UserManual/index.html
+%%PORTDOCS%%share/doc/unixODBC/UserManual/unixODBC.gif
+%%PORTDOCS%%share/doc/unixODBC/index.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure.vsd
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure2.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure2.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure3.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure3.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure4.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure4.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure5.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure5.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure6.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure6.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure7.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure7.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure8.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure8.html
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure9.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/InternalStructure9.html
+%%PORTDOCS%%share/doc/unixODBC/lst/back.gif
+%%PORTDOCS%%share/doc/unixODBC/lst/next.gif
+%%PORTDOCS%%share/doc/unixODBC/smallbook.gif
+%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.gif
+%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.html
+%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure.vsd
+%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure2.gif
+%%PORTDOCS%%share/doc/unixODBC/sqi/InternalStructure2.html
+%%PORTDOCS%%share/doc/unixODBC/sqi/back.gif
+%%PORTDOCS%%share/doc/unixODBC/sqi/next.gif
+%%PORTDOCS%%share/doc/unixODBC/unixODBC.gif
+%%PORTDOCS%%@dirrm share/doc/unixODBC/sqi
+%%PORTDOCS%%@dirrm share/doc/unixODBC/lst
+%%PORTDOCS%%@dirrm share/doc/unixODBC/UserManual
+%%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual/Tutorial
+%%PORTDOCS%%@dirrm share/doc/unixODBC/ProgrammerManual
+%%PORTDOCS%%@dirrm share/doc/unixODBC/AdministratorManual
+%%PORTDOCS%%@dirrm share/doc/unixODBC
